@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>([B)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public final a()Llibs/Theme;
-    .registers 5
+    .locals 4
 
     .line 1
     :try_start_0
@@ -82,14 +82,14 @@
     .line 5
     .line 6
     move-result-object v0
-    :try_end_6
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 7
     return-object v0
 
     .line 8
-    :catch_7
+    :catch_0
     move-exception v0
 
     .line 9
@@ -135,14 +135,14 @@
 .end method
 
 .method public final hasMoreElements()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/nk1;->Y:Llibs/Theme;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -152,7 +152,7 @@
     return v0
 
     .line 7
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
     .line 8
@@ -160,7 +160,7 @@
 .end method
 
 .method public final nextElement()Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/nk1;->Y:Llibs/Theme;

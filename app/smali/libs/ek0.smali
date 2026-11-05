@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/hk0;Llibs/u02;Llibs/ek0;Ljava/lang/String;)V
-    .registers 7
+    .locals 2
 
     .line 1
     invoke-direct {p0, p1, p2, p3, p4}, Llibs/fk0;-><init>(Llibs/hk0;Llibs/u02;Llibs/ek0;Ljava/lang/String;)V
@@ -99,7 +99,7 @@
 
     .line 45
     .line 46
-    if-nez p2, :cond_3c
+    if-nez p2, :cond_0
 
     .line 47
     .line 48
@@ -128,7 +128,7 @@
     return-void
 
     .line 61
-    :cond_3c
+    :cond_0
     const-string p1, "already had an upcase table"
 
     .line 62
@@ -147,7 +147,7 @@
 
 # virtual methods
 .method public final d(Ljava/lang/String;)Llibs/br3;
-    .registers 8
+    .locals 6
 
     .line 1
     sget-object v0, Llibs/cr0;->a:Ljava/lang/Object;
@@ -157,7 +157,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     invoke-virtual {p0}, Llibs/ek0;->t()Ljava/lang/String;
 
     .line 5
@@ -223,7 +223,7 @@
     move-result p1
 
     .line 37
-    if-nez p1, :cond_31
+    if-nez p1, :cond_0
 
     .line 38
     .line 39
@@ -246,14 +246,14 @@
     return-object p1
 
     .line 48
-    :catchall_2f
+    :catchall_0
     move-exception p1
 
     .line 49
-    goto :goto_39
+    goto :goto_0
 
     .line 50
-    :cond_31
+    :cond_0
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     .line 51
@@ -270,17 +270,17 @@
     throw p1
 
     .line 58
-    :goto_39
+    :goto_0
     monitor-exit v0
-    :try_end_3a
-    .catchall {:try_start_3 .. :try_end_3a} :catchall_2f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 59
     throw p1
 .end method
 
 .method public final i()Ljava/util/List;
-    .registers 9
+    .locals 8
 
     .line 1
     sget-object v0, Llibs/cr0;->a:Ljava/lang/Object;
@@ -290,7 +290,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     new-instance v1, Ljava/util/ArrayList;
 
     .line 5
@@ -344,8 +344,8 @@
     move-result-object v4
 
     .line 31
-    :cond_1e
-    :goto_1e
+    :cond_0
+    :goto_0
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     .line 32
@@ -354,7 +354,7 @@
     move-result v5
 
     .line 35
-    if-eqz v5, :cond_8a
+    if-eqz v5, :cond_6
 
     .line 36
     .line 37
@@ -366,7 +366,7 @@
     move-result v5
 
     .line 41
-    if-eqz v5, :cond_33
+    if-eqz v5, :cond_1
 
     .line 42
     .line 43
@@ -385,14 +385,14 @@
     return-object v1
 
     .line 50
-    :catchall_31
+    :catchall_0
     move-exception v1
 
     .line 51
-    goto :goto_8c
+    goto :goto_1
 
     .line 52
-    :cond_33
+    :cond_1
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     .line 53
@@ -425,7 +425,7 @@
     move-result v7
 
     .line 68
-    if-nez v7, :cond_1e
+    if-nez v7, :cond_0
 
     .line 69
     .line 70
@@ -441,14 +441,14 @@
     move-result v6
 
     .line 76
-    if-eqz v6, :cond_4e
+    if-eqz v6, :cond_2
 
     .line 77
     .line 78
-    goto :goto_1e
+    goto :goto_0
 
     .line 79
-    :cond_4e
+    :cond_2
     invoke-virtual {v5}, Llibs/fk0;->n()Z
 
     .line 80
@@ -457,7 +457,7 @@
     move-result v6
 
     .line 83
-    if-eqz v6, :cond_6f
+    if-eqz v6, :cond_4
 
     .line 84
     .line 85
@@ -469,7 +469,7 @@
     move-result v6
 
     .line 89
-    if-eqz v6, :cond_67
+    if-eqz v6, :cond_3
 
     .line 90
     .line 91
@@ -495,10 +495,10 @@
     .line 101
     .line 102
     .line 103
-    goto :goto_1e
+    goto :goto_0
 
     .line 104
-    :cond_67
+    :cond_3
     new-instance v1, Ljava/lang/UnsupportedOperationException;
 
     .line 105
@@ -515,7 +515,7 @@
     throw v1
 
     .line 112
-    :cond_6f
+    :cond_4
     invoke-virtual {v5}, Llibs/fk0;->n()Z
 
     .line 113
@@ -524,7 +524,7 @@
     move-result v6
 
     .line 116
-    if-nez v6, :cond_82
+    if-nez v6, :cond_5
 
     .line 117
     .line 118
@@ -550,10 +550,10 @@
     .line 128
     .line 129
     .line 130
-    goto :goto_1e
+    goto :goto_0
 
     .line 131
-    :cond_82
+    :cond_5
     new-instance v1, Ljava/lang/UnsupportedOperationException;
 
     .line 132
@@ -570,32 +570,32 @@
     throw v1
 
     .line 139
-    :cond_8a
+    :cond_6
     monitor-exit v0
 
     .line 140
     return-object v1
 
     .line 141
-    :goto_8c
+    :goto_1
     monitor-exit v0
-    :try_end_8d
-    .catchall {:try_start_3 .. :try_end_8d} :catchall_31
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 142
-    goto :goto_8f
+    goto :goto_3
 
     .line 143
-    :goto_8e
+    :goto_2
     throw v1
 
     .line 144
-    :goto_8f
-    goto :goto_8e
+    :goto_3
+    goto :goto_2
 .end method
 
 .method public final k()J
-    .registers 3
+    .locals 2
 
     .line 1
     const-wide/16 v0, 0x0
@@ -606,7 +606,7 @@
 .end method
 
 .method public final l(Ljava/lang/String;)Llibs/br3;
-    .registers 8
+    .locals 6
 
     .line 1
     sget-object v0, Llibs/cr0;->a:Ljava/lang/Object;
@@ -616,7 +616,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     invoke-virtual {p0}, Llibs/ek0;->t()Ljava/lang/String;
 
     .line 5
@@ -682,7 +682,7 @@
     move-result p1
 
     .line 37
-    if-eqz p1, :cond_31
+    if-eqz p1, :cond_0
 
     .line 38
     .line 39
@@ -705,14 +705,14 @@
     return-object p1
 
     .line 48
-    :catchall_2f
+    :catchall_0
     move-exception p1
 
     .line 49
-    goto :goto_39
+    goto :goto_0
 
     .line 50
-    :cond_31
+    :cond_0
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     .line 51
@@ -729,17 +729,17 @@
     throw p1
 
     .line 58
-    :goto_39
+    :goto_0
     monitor-exit v0
-    :try_end_3a
-    .catchall {:try_start_3 .. :try_end_3a} :catchall_2f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 59
     throw p1
 .end method
 
 .method public final n()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -749,14 +749,14 @@
 .end method
 
 .method public final t()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/fk0;->Lambda:Ljava/lang/String;
 
     .line 2
     .line 3
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -767,7 +767,7 @@
     return-object v0
 
     .line 8
-    :cond_7
+    :cond_0
     invoke-virtual {p0}, Llibs/fk0;->getName()Ljava/lang/String;
 
     .line 9

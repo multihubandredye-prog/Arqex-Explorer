@@ -87,7 +87,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 20
+    .locals 20
 
     .line 1
     new-instance v0, Llibs/i23;

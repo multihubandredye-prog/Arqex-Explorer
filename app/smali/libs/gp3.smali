@@ -16,7 +16,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -34,7 +34,7 @@
 .end method
 
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/gp3;->a:B
@@ -50,14 +50,14 @@
 .end method
 
 .method private final a([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final b([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 1
     return-void
@@ -66,14 +66,14 @@
 
 # virtual methods
 .method public final checkClientTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/gp3;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_c
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -87,40 +87,40 @@
     .line 9
     .line 10
     .line 11
-    :pswitch_a
+    :pswitch_0
     return-void
 
     .line 12
     nop
 
     .line 13
-    :pswitch_data_c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final checkServerTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/gp3;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_18
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     sget-object v0, Llibs/hp3;->a:Ljavax/net/ssl/X509TrustManager;
 
     .line 7
     .line 8
     invoke-interface {v0, p1, p2}, Ljavax/net/ssl/X509TrustManager;->checkServerTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
-    :try_end_a
-    .catch Ljava/security/cert/CertificateException; {:try_start_5 .. :try_end_a} :catch_b
+    :try_end_0
+    .catch Ljava/security/cert/CertificateException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 9
     .line 10
@@ -128,7 +128,7 @@
     return-void
 
     .line 12
-    :catch_b
+    :catch_0
     move-exception p1
 
     .line 13
@@ -152,28 +152,28 @@
     throw p2
 
     .line 23
-    :pswitch_16
+    :pswitch_0
     return-void
 
     .line 24
     nop
 
     .line 25
-    :pswitch_data_18
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_16
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final getAcceptedIssuers()[Ljava/security/cert/X509Certificate;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/gp3;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_10
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -193,7 +193,7 @@
     return-object v0
 
     .line 13
-    :pswitch_c
+    :pswitch_0
     sget-object v0, Llibs/gp3;->b:[Ljava/security/cert/X509Certificate;
 
     .line 14
@@ -204,8 +204,8 @@
     nop
 
     .line 17
-    :pswitch_data_10
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_c
+        :pswitch_0
     .end packed-switch
 .end method

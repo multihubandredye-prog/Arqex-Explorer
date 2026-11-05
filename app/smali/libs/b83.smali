@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Llibs/Six;-><init>(Ljava/lang/String;Ljava/lang/String;)V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final a([B)[B
-    .registers 9
+    .locals 7
 
     .line 1
     new-instance v0, Ljava/io/ByteArrayInputStream;
@@ -66,7 +66,7 @@
     const/4 v3, 0x0
 
     .line 19
-    :try_start_12
+    :try_start_0
     invoke-virtual {p1}, Llibs/Url;->c()Llibs/Sign;
 
     .line 20
@@ -136,8 +136,8 @@
     .line 54
     .line 55
     move-result-object v4
-    :try_end_37
-    .catchall {:try_start_12 .. :try_end_37} :catchall_41
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 56
     new-array v1, v1, [Ljava/io/Closeable;
@@ -160,7 +160,7 @@
     return-object v4
 
     .line 66
-    :catchall_41
+    :catchall_0
     move-exception v4
 
     .line 67
@@ -185,13 +185,13 @@
 .end method
 
 .method public final e([B)Z
-    .registers 5
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v1, p0, Llibs/b83;->c:Ljava/lang/String;
 
     .line 3
@@ -247,29 +247,29 @@
     .line 29
     .line 30
     move-result p1
-    :try_end_1e
-    .catch Ljava/security/SignatureException; {:try_start_1 .. :try_end_1e} :catch_21
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1e} :catch_1f
+    :try_end_0
+    .catch Ljava/security/SignatureException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 31
     return p1
 
     .line 32
-    :catch_1f
+    :catch_0
     move-exception p1
 
     .line 33
-    goto :goto_23
+    goto :goto_0
 
     .line 34
-    :catch_21
+    :catch_1
     move-exception p1
 
     .line 35
-    goto :goto_2b
+    goto :goto_1
 
     .line 36
-    :goto_23
+    :goto_0
     invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     .line 37
@@ -286,7 +286,7 @@
     return v0
 
     .line 44
-    :goto_2b
+    :goto_1
     invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     .line 45

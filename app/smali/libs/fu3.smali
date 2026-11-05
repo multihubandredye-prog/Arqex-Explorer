@@ -23,7 +23,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/high16 v0, 0x425c0000    # 55.0f
@@ -46,7 +46,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 4
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
@@ -100,7 +100,7 @@
 .end method
 
 .method private setPosition(F)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-static {p1}, Ljava/lang/Float;->isInfinite(F)Z
@@ -111,7 +111,7 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_4f
+    if-nez v0, :cond_5
 
     .line 6
     .line 7
@@ -123,14 +123,14 @@
     move-result v0
 
     .line 11
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
-    goto :goto_4f
+    goto :goto_1
 
     .line 14
-    :cond_d
+    :cond_0
     iget-object v0, p0, Llibs/fu3;->Mu:Llibs/eu3;
 
     .line 15
@@ -160,17 +160,17 @@
 
     .line 26
     .line 27
-    if-gez v2, :cond_1e
+    if-gez v2, :cond_1
 
     .line 28
     .line 29
     const/4 p1, 0x0
 
     .line 30
-    goto :goto_27
+    goto :goto_0
 
     .line 31
-    :cond_1e
+    :cond_1
     sget v2, Llibs/fu3;->Rho:I
 
     .line 32
@@ -185,15 +185,15 @@
 
     .line 36
     .line 37
-    if-lez v2, :cond_27
+    if-lez v2, :cond_2
 
     .line 38
     .line 39
     move p1, v0
 
     .line 40
-    :cond_27
-    :goto_27
+    :cond_2
+    :goto_0
     sget-object v0, Llibs/ut3;->a:Ljava/lang/reflect/Method;
 
     .line 41
@@ -206,7 +206,7 @@
 
     .line 45
     .line 46
-    if-lt v0, v2, :cond_32
+    if-lt v0, v2, :cond_3
 
     .line 47
     .line 48
@@ -215,8 +215,8 @@
     .line 49
     .line 50
     .line 51
-    :cond_32
-    if-lt v0, v2, :cond_38
+    :cond_3
+    if-lt v0, v2, :cond_4
 
     .line 52
     .line 53
@@ -228,7 +228,7 @@
     move-result v1
 
     .line 57
-    :cond_38
+    :cond_4
     invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     .line 58
@@ -278,22 +278,22 @@
     .line 78
     .line 79
     .line 80
-    :cond_4f
-    :goto_4f
+    :cond_5
+    :goto_1
     return-void
 .end method
 
 
 # virtual methods
 .method public final onTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 8
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/fu3;->Mu:Llibs/eu3;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_6b
+    if-eqz v0, :cond_4
 
     .line 4
     .line 5
@@ -316,39 +316,39 @@
     const/4 v3, 0x1
 
     .line 14
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_1
 
     .line 15
     .line 16
-    if-eq v0, v3, :cond_22
+    if-eq v0, v3, :cond_0
 
     .line 17
     .line 18
     const/4 v4, 0x2
 
     .line 19
-    if-eq v0, v4, :cond_45
+    if-eq v0, v4, :cond_3
 
     .line 20
     .line 21
     const/4 v4, 0x3
 
     .line 22
-    if-eq v0, v4, :cond_22
+    if-eq v0, v4, :cond_0
 
     .line 23
     .line 24
     const/4 v4, 0x5
 
     .line 25
-    if-eq v0, v4, :cond_2b
+    if-eq v0, v4, :cond_1
 
     .line 26
     .line 27
     const/4 v4, 0x6
 
     .line 28
-    if-eq v0, v4, :cond_22
+    if-eq v0, v4, :cond_0
 
     .line 29
     .line 30
@@ -363,7 +363,7 @@
     return p1
 
     .line 35
-    :cond_22
+    :cond_0
     const/4 p1, 0x0
 
     .line 36
@@ -383,7 +383,7 @@
     return v3
 
     .line 44
-    :cond_2b
+    :cond_1
     iput-boolean v3, p0, Llibs/fu3;->Xi:Z
 
     .line 45
@@ -413,7 +413,7 @@
 
     .line 58
     .line 59
-    if-lt v1, v2, :cond_41
+    if-lt v1, v2, :cond_2
 
     .line 60
     .line 61
@@ -425,14 +425,14 @@
     move-result v1
 
     .line 65
-    goto :goto_42
+    goto :goto_0
 
     .line 66
-    :cond_41
+    :cond_2
     const/4 v1, 0x0
 
     .line 67
-    :goto_42
+    :goto_0
     sub-float/2addr v0, v1
 
     .line 68
@@ -440,7 +440,7 @@
 
     .line 69
     .line 70
-    :cond_45
+    :cond_3
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
 
     .line 71
@@ -519,7 +519,7 @@
     return v3
 
     .line 108
-    :cond_6b
+    :cond_4
     invoke-super {p0, p1}, Landroid/widget/RelativeLayout;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     .line 109
@@ -532,7 +532,7 @@
 .end method
 
 .method public setScroll(F)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
@@ -543,7 +543,7 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -560,10 +560,10 @@
     .line 12
     .line 13
     .line 14
-    goto :goto_12
+    goto :goto_0
 
     .line 15
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
     .line 16
@@ -572,12 +572,12 @@
     .line 17
     .line 18
     .line 19
-    :goto_12
+    :goto_0
     iget-object v0, p0, Llibs/fu3;->Mu:Llibs/eu3;
 
     .line 20
     .line 21
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_1
 
     .line 22
     .line 23
@@ -601,12 +601,12 @@
     .line 31
     .line 32
     .line 33
-    :cond_20
+    :cond_1
     return-void
 .end method
 
 .method public setupLayout(Llibs/eu3;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/fu3;->Mu:Llibs/eu3;

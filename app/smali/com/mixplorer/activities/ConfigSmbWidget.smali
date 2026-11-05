@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Lcom/mixplorer/activities/ConfigServerActivity;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final onCreate(Landroid/os/Bundle;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x3
@@ -38,7 +38,7 @@
 .end method
 
 .method public final onNewIntent(Landroid/content/Intent;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x3
@@ -57,7 +57,7 @@
 .end method
 
 .method public final setContentView(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-super {p0, p1}, Llibs/ia2;->setContentView(I)V

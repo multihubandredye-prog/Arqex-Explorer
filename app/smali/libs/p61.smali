@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,7 +17,7 @@
 .end method
 
 .method public static a(Llibs/fa2;)Llibs/o61;
-    .registers 5
+    .locals 4
 
     .line 1
     const/16 v0, 0x80
@@ -27,7 +27,7 @@
     const/4 v1, 0x0
 
     .line 4
-    if-nez p0, :cond_c
+    if-nez p0, :cond_0
 
     .line 5
     .line 6
@@ -46,7 +46,7 @@
     return-object p0
 
     .line 13
-    :cond_c
+    :cond_0
     iget-object p0, p0, Llibs/yj;->d:Llibs/cg;
 
     .line 14
@@ -71,7 +71,7 @@
     move-result v2
 
     .line 25
-    if-nez v2, :cond_6d
+    if-nez v2, :cond_4
 
     .line 26
     .line 27
@@ -95,7 +95,7 @@
     move-result v2
 
     .line 37
-    if-nez v2, :cond_6d
+    if-nez v2, :cond_4
 
     .line 38
     .line 39
@@ -119,7 +119,7 @@
     move-result v2
 
     .line 49
-    if-nez v2, :cond_6d
+    if-nez v2, :cond_4
 
     .line 50
     .line 51
@@ -143,14 +143,14 @@
     move-result v2
 
     .line 61
-    if-eqz v2, :cond_3f
+    if-eqz v2, :cond_1
 
     .line 62
     .line 63
-    goto :goto_6d
+    goto :goto_0
 
     .line 64
-    :cond_3f
+    :cond_1
     invoke-interface {p0}, Llibs/cg;->b()Ljava/lang/String;
 
     .line 65
@@ -171,7 +171,7 @@
     move-result v2
 
     .line 74
-    if-eqz v2, :cond_53
+    if-eqz v2, :cond_2
 
     .line 75
     .line 76
@@ -191,7 +191,7 @@
     return-object p0
 
     .line 84
-    :cond_53
+    :cond_2
     invoke-interface {p0}, Llibs/cg;->b()Ljava/lang/String;
 
     .line 85
@@ -212,7 +212,7 @@
     move-result p0
 
     .line 94
-    if-eqz p0, :cond_67
+    if-eqz p0, :cond_3
 
     .line 95
     .line 96
@@ -232,7 +232,7 @@
     return-object p0
 
     .line 104
-    :cond_67
+    :cond_3
     new-instance p0, Llibs/o61;
 
     .line 105
@@ -245,8 +245,8 @@
     return-object p0
 
     .line 110
-    :cond_6d
-    :goto_6d
+    :cond_4
+    :goto_0
     new-instance p0, Llibs/o61;
 
     .line 111

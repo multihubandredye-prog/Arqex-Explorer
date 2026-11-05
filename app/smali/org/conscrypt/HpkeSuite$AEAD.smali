@@ -35,7 +35,7 @@
 
 # direct methods
 .method private static synthetic $values()[Lorg/conscrypt/HpkeSuite$AEAD;
-    .registers 3
+    .locals 3
 
     .line 1
     const/4 v0, 0x3
@@ -82,7 +82,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 9
+    .locals 9
 
     .line 1
     new-instance v0, Lorg/conscrypt/HpkeSuite$AEAD;
@@ -200,7 +200,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;IIIII)V
-    .registers 7
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(IIII)V"
@@ -233,7 +233,7 @@
 .end method
 
 .method public static forId(I)Lorg/conscrypt/HpkeSuite$AEAD;
-    .registers 6
+    .locals 5
 
     .line 1
     invoke-static {}, Lorg/conscrypt/HpkeSuite$AEAD;->values()[Lorg/conscrypt/HpkeSuite$AEAD;
@@ -250,8 +250,8 @@
     const/4 v2, 0x0
 
     .line 7
-    :goto_6
-    if-ge v2, v1, :cond_14
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     .line 8
     .line 9
@@ -267,22 +267,22 @@
     move-result v4
 
     .line 15
-    if-ne v4, p0, :cond_11
+    if-ne v4, p0, :cond_0
 
     .line 16
     .line 17
     return-object v3
 
     .line 18
-    :cond_11
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
     .line 19
     .line 20
-    goto :goto_6
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_1
     const-string v0, "Unknown AEAD "
 
     .line 22
@@ -307,7 +307,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lorg/conscrypt/HpkeSuite$AEAD;
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Lorg/conscrypt/HpkeSuite$AEAD;
@@ -330,7 +330,7 @@
 .end method
 
 .method public static values()[Lorg/conscrypt/HpkeSuite$AEAD;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/HpkeSuite$AEAD;->$VALUES:[Lorg/conscrypt/HpkeSuite$AEAD;
@@ -355,7 +355,7 @@
 
 # virtual methods
 .method public getId()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/HpkeSuite$AEAD;->id:I
@@ -366,7 +366,7 @@
 .end method
 
 .method public getKeyLength()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/HpkeSuite$AEAD;->nk:I
@@ -377,7 +377,7 @@
 .end method
 
 .method public getNk()I
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -394,7 +394,7 @@
 .end method
 
 .method public getNn()I
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -411,7 +411,7 @@
 .end method
 
 .method public getNonceLength()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/HpkeSuite$AEAD;->nn:I
@@ -422,7 +422,7 @@
 .end method
 
 .method public getNt()I
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -435,7 +435,7 @@
 .end method
 
 .method public getTagLength()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/HpkeSuite$AEAD;->nt:I

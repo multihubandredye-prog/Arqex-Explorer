@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>([BLlibs/s20;)V
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,7 +33,7 @@
     monitor-enter p2
 
     .line 7
-    :try_start_6
+    :try_start_0
     iget-object v0, p2, Llibs/s20;->Y:Ljava/lang/Object;
 
     .line 8
@@ -42,13 +42,13 @@
 
     .line 10
     .line 11
-    if-nez v0, :cond_4d
+    if-nez v0, :cond_0
 
     .line 12
     .line 13
     iput-object p0, p2, Llibs/s20;->Y:Ljava/lang/Object;
-    :try_end_e
-    .catchall {:try_start_6 .. :try_end_e} :catchall_4b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 14
     .line 15
@@ -173,15 +173,15 @@
     return-void
 
     .line 76
-    :catchall_4b
+    :catchall_0
     move-exception p1
 
     .line 77
-    goto :goto_55
+    goto :goto_0
 
     .line 78
-    :cond_4d
-    :try_start_4d
+    :cond_0
+    :try_start_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     .line 79
@@ -198,10 +198,10 @@
     throw p1
 
     .line 86
-    :goto_55
+    :goto_0
     monitor-exit p2
-    :try_end_56
-    .catchall {:try_start_4d .. :try_end_56} :catchall_4b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 87
     throw p1
@@ -210,7 +210,7 @@
 
 # virtual methods
 .method public final a([B)Llibs/zg0;
-    .registers 41
+    .locals 39
 
     .line 1
     move-object/from16 v0, p1
@@ -777,21 +777,21 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Llibs/no0;
 
     .line 2
     .line 3
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
-    goto :goto_13
+    goto :goto_0
 
     .line 6
-    :cond_5
+    :cond_0
     check-cast p1, Llibs/no0;
 
     .line 7
@@ -812,7 +812,7 @@
     move-result p1
 
     .line 16
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_1
 
     .line 17
     .line 18
@@ -822,8 +822,8 @@
     return p1
 
     .line 20
-    :cond_13
-    :goto_13
+    :cond_1
+    :goto_0
     const/4 p1, 0x0
 
     .line 21
@@ -831,7 +831,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/no0;->Z:Llibs/zg0;

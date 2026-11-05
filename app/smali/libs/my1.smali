@@ -79,7 +79,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 11
+    .locals 11
 
     .line 1
     new-instance v0, Llibs/App;

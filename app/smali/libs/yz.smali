@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/ContentViewerActivity;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/yz;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 6
+    .locals 0
 
     .line 1
     iget-byte p2, p0, Llibs/yz;->X:B
@@ -50,7 +50,7 @@
 
     .line 5
     .line 6
-    packed-switch p2, :pswitch_data_84
+    packed-switch p2, :pswitch_data_0
 
     .line 7
     .line 8
@@ -136,7 +136,7 @@
     return-void
 
     .line 50
-    :pswitch_31
+    :pswitch_0
     sget p2, Lcom/mixplorer/activities/ContentViewerActivity;->III:I
 
     .line 51
@@ -218,7 +218,7 @@
     return-void
 
     .line 91
-    :pswitch_5a
+    :pswitch_1
     sget p2, Lcom/mixplorer/activities/ContentViewerActivity;->III:I
 
     .line 92
@@ -303,9 +303,9 @@
     nop
 
     .line 133
-    :pswitch_data_84
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_5a
-        :pswitch_31
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

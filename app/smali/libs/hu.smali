@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/nw;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final e(Llibs/en0;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Llibs/nw;->l()Ljava/lang/String;
@@ -38,7 +38,7 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -58,12 +58,12 @@
     return-void
 
     .line 19
-    :cond_12
+    :cond_0
     const/16 v0, 0x1f6
 
     .line 20
     .line 21
-    :try_start_14
+    :try_start_0
     const-string v1, "TLS"
 
     .line 22
@@ -76,7 +76,7 @@
     move-result v1
 
     .line 27
-    if-nez v1, :cond_3d
+    if-nez v1, :cond_2
 
     .line 28
     .line 29
@@ -92,7 +92,7 @@
     move-result v1
 
     .line 35
-    if-nez v1, :cond_3d
+    if-nez v1, :cond_2
 
     .line 36
     .line 37
@@ -108,7 +108,7 @@
     move-result v1
 
     .line 43
-    if-nez v1, :cond_3d
+    if-nez v1, :cond_2
 
     .line 44
     .line 45
@@ -124,14 +124,14 @@
     move-result p1
 
     .line 51
-    if-eqz p1, :cond_35
+    if-eqz p1, :cond_1
 
     .line 52
     .line 53
-    goto :goto_3d
+    goto :goto_0
 
     .line 54
-    :cond_35
+    :cond_1
     const-string p1, "Auth type not supported."
 
     .line 55
@@ -144,15 +144,15 @@
     return-void
 
     .line 60
-    :catchall_3b
+    :catchall_0
     move-exception p1
 
     .line 61
-    goto :goto_6e
+    goto :goto_1
 
     .line 62
-    :cond_3d
-    :goto_3d
+    :cond_2
+    :goto_0
     iget-object p1, p0, Llibs/nw;->b:Llibs/cn0;
 
     .line 63
@@ -169,7 +169,7 @@
     move-result p1
 
     .line 70
-    if-eqz p1, :cond_4f
+    if-eqz p1, :cond_3
 
     .line 71
     .line 72
@@ -189,7 +189,7 @@
     return-void
 
     .line 80
-    :cond_4f
+    :cond_3
     iget-object p1, p0, Llibs/nw;->b:Llibs/cn0;
 
     .line 81
@@ -206,7 +206,7 @@
     move-result p1
 
     .line 88
-    if-nez p1, :cond_5f
+    if-nez p1, :cond_4
 
     .line 89
     .line 90
@@ -222,7 +222,7 @@
     return-void
 
     .line 96
-    :cond_5f
+    :cond_4
     const-string p1, "Enabling TLS/SSL..."
 
     .line 97
@@ -245,8 +245,8 @@
     .line 106
     .line 107
     invoke-virtual {p1}, Llibs/v60;->Bundle()V
-    :try_end_6d
-    .catchall {:try_start_14 .. :try_end_6d} :catchall_3b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 108
     .line 109
@@ -254,7 +254,7 @@
     return-void
 
     .line 111
-    :goto_6e
+    :goto_1
     new-instance v1, Ljava/lang/StringBuilder;
 
     .line 112

@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Param;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -30,7 +30,7 @@
     const/4 v1, 0x2
 
     .line 9
-    if-ne v0, v1, :cond_21
+    if-ne v0, v1, :cond_0
 
     .line 10
     .line 11
@@ -83,7 +83,7 @@
     return-void
 
     .line 34
-    :cond_21
+    :cond_0
     const-string v0, "Bad sequence size: "
 
     .line 35
@@ -110,7 +110,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/Init;

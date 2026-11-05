@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/security/PrivateKey;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -28,7 +28,7 @@
 .end method
 
 .method public constructor <init>(Ljava/security/PrivateKey;I)V
-    .registers 3
+    .locals 0
 
     .line 7
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final d(Ljava/lang/String;)Ljava/security/Signature;
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-static {p1}, Llibs/ad1;->c(Ljava/lang/String;)Ljava/security/Provider;
@@ -53,7 +53,7 @@
     move-result-object v0
 
     .line 5
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -68,7 +68,7 @@
     return-object p1
 
     .line 12
-    :cond_b
+    :cond_0
     invoke-static {p1}, Llibs/ad1;->c(Ljava/lang/String;)Ljava/security/Provider;
 
     .line 13

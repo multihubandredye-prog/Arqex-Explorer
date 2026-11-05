@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/PreferenceActivity;Ljava/util/ArrayList;Llibs/ml1;)V
-    .registers 5
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -49,7 +49,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/PreferenceActivity;Llibs/ml1;Ljava/util/ArrayList;)V
-    .registers 5
+    .locals 1
 
     .line 14
     const/4 v0, 0x0
@@ -70,7 +70,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/we2;->X:B
@@ -89,7 +89,7 @@
 
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_16
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
@@ -102,7 +102,7 @@
     return-void
 
     .line 16
-    :pswitch_f
+    :pswitch_0
     sget-boolean v0, Lcom/mixplorer/activities/PreferenceActivity;->O:Z
 
     .line 17
@@ -118,8 +118,8 @@
     nop
 
     .line 23
-    :pswitch_data_16
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_f
+        :pswitch_0
     .end packed-switch
 .end method

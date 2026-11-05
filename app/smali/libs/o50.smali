@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ra;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/zj0;-><init>()V
@@ -84,7 +84,7 @@
 
 # virtual methods
 .method public final l(Llibs/ta;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/o50;->Omicron:Llibs/qo1;

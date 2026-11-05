@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     invoke-static {}, Llibs/t43;->w()I
@@ -24,7 +24,7 @@
 
     .line 6
     .line 7
-    if-lt v0, v1, :cond_10
+    if-lt v0, v1, :cond_0
 
     .line 8
     .line 9
@@ -44,7 +44,7 @@
     return-void
 
     .line 17
-    :cond_10
+    :cond_0
     new-instance v0, Llibs/e72;
 
     .line 18

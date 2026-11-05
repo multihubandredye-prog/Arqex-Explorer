@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "Okio Watchdog"
@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 4
+    .locals 3
 
     .line 1
     :catchall_0
@@ -42,11 +42,11 @@
     .line 2
     .line 3
     monitor-enter v0
-    :try_end_3
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_3} :catch_1d
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 4
-    :try_start_3
+    :try_start_1
     invoke-static {}, Llibs/p6;->h()Llibs/p6;
 
     .line 5
@@ -55,7 +55,7 @@
     move-result-object v1
 
     .line 8
-    if-nez v1, :cond_d
+    if-nez v1, :cond_0
 
     .line 9
     .line 10
@@ -65,19 +65,19 @@
     goto :goto_0
 
     .line 12
-    :catchall_b
+    :catchall_1
     move-exception v1
 
     .line 13
-    goto :goto_1b
+    goto :goto_1
 
     .line 14
-    :cond_d
+    :cond_0
     sget-object v2, Llibs/p6;->i:Llibs/p6;
 
     .line 15
     .line 16
-    if-ne v1, v2, :cond_16
+    if-ne v1, v2, :cond_1
 
     .line 17
     .line 18
@@ -94,16 +94,16 @@
     return-void
 
     .line 23
-    :cond_16
+    :cond_1
     monitor-exit v0
-    :try_end_17
-    .catchall {:try_start_3 .. :try_end_17} :catchall_b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 24
-    :try_start_17
+    :try_start_2
     invoke-virtual {v1}, Llibs/p6;->m()V
-    :try_end_1a
-    .catch Ljava/lang/InterruptedException; {:try_start_17 .. :try_end_1a} :catch_1d
+    :try_end_2
+    .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 25
     .line 26
@@ -111,28 +111,28 @@
     goto :goto_0
 
     .line 28
-    :goto_1b
-    :try_start_1b
+    :goto_1
+    :try_start_3
     monitor-exit v0
-    :try_end_1c
-    .catchall {:try_start_1b .. :try_end_1c} :catchall_b
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 29
-    :try_start_1c
+    :try_start_4
     throw v1
-    :try_end_1d
-    .catch Ljava/lang/InterruptedException; {:try_start_1c .. :try_end_1d} :catch_1d
+    :try_end_4
+    .catch Ljava/lang/InterruptedException; {:try_start_4 .. :try_end_4} :catch_0
 
     .line 30
-    :catch_1d
+    :catch_0
     const-wide/16 v0, 0xa
 
     .line 31
     .line 32
-    :try_start_1f
+    :try_start_5
     invoke-static {v0, v1}, Ljava/lang/Thread;->sleep(J)V
-    :try_end_22
-    .catchall {:try_start_1f .. :try_end_22} :catchall_0
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 33
     .line 34

@@ -11,7 +11,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(I[Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 6
     invoke-direct {p0, p2}, Lorg/conscrypt/DefaultSSLContextImpl;-><init>([Ljava/lang/String;)V
@@ -20,7 +20,7 @@
 .end method
 
 .method private constructor <init>([Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public engineInit([Ljavax/net/ssl/KeyManager;[Ljavax/net/ssl/TrustManager;Ljava/security/SecureRandom;)V
-    .registers 4
+    .locals 0
 
     .line 1
     new-instance p1, Ljava/security/KeyManagementException;
@@ -57,21 +57,21 @@
 .end method
 
 .method public getKeyManagers()[Ljavax/net/ssl/KeyManager;
-    .registers 8
+    .locals 7
 
     .line 1
     sget-object v0, Lorg/conscrypt/DefaultSSLContextImpl;->KEY_MANAGERS:[Ljavax/net/ssl/KeyManager;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     return-object v0
 
     .line 6
-    :cond_5
+    :cond_0
     const-string v0, "javax.net.ssl.keyStore"
 
     .line 7
@@ -87,14 +87,14 @@
     const/4 v1, 0x0
 
     .line 13
-    if-nez v0, :cond_f
+    if-nez v0, :cond_1
 
     .line 14
     .line 15
     return-object v1
 
     .line 16
-    :cond_f
+    :cond_1
     const-string v2, "javax.net.ssl.keyStorePassword"
 
     .line 17
@@ -107,14 +107,14 @@
     move-result-object v2
 
     .line 22
-    if-nez v2, :cond_18
+    if-nez v2, :cond_2
 
     .line 23
     .line 24
-    goto :goto_1c
+    goto :goto_0
 
     .line 25
-    :cond_18
+    :cond_2
     invoke-virtual {v2}, Ljava/lang/String;->toCharArray()[C
 
     .line 26
@@ -123,7 +123,7 @@
     move-result-object v1
 
     .line 29
-    :goto_1c
+    :goto_0
     invoke-static {}, Ljava/security/KeyStore;->getDefaultType()Ljava/lang/String;
 
     .line 30
@@ -158,10 +158,10 @@
     .line 45
     .line 46
     .line 47
-    :try_start_2e
+    :try_start_0
     invoke-virtual {v2, v3, v1}, Ljava/security/KeyStore;->load(Ljava/io/InputStream;[C)V
-    :try_end_31
-    .catchall {:try_start_2e .. :try_end_31} :catchall_46
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 48
     .line 49
@@ -207,26 +207,26 @@
     return-object v0
 
     .line 71
-    :catchall_46
+    :catchall_0
     move-exception v0
 
     .line 72
-    :try_start_47
+    :try_start_1
     invoke-virtual {v3}, Ljava/io/InputStream;->close()V
-    :try_end_4a
-    .catchall {:try_start_47 .. :try_end_4a} :catchall_4b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 73
     .line 74
     .line 75
-    goto :goto_61
+    goto :goto_1
 
     .line 76
-    :catchall_4b
+    :catchall_1
     move-exception v1
 
     .line 77
-    :try_start_4c
+    :try_start_2
     const-class v2, Ljava/lang/Throwable;
 
     .line 78
@@ -266,33 +266,33 @@
     .line 94
     .line 95
     invoke-virtual {v2, v0, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_61
-    .catch Ljava/lang/Exception; {:try_start_4c .. :try_end_61} :catch_61
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 96
     .line 97
     .line 98
-    :catch_61
-    :goto_61
+    :catch_0
+    :goto_1
     throw v0
 .end method
 
 .method public getTrustManagers()[Ljavax/net/ssl/TrustManager;
-    .registers 8
+    .locals 7
 
     .line 1
     sget-object v0, Lorg/conscrypt/DefaultSSLContextImpl;->TRUST_MANAGERS:[Ljavax/net/ssl/TrustManager;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     return-object v0
 
     .line 6
-    :cond_5
+    :cond_0
     const-string v0, "javax.net.ssl.trustStore"
 
     .line 7
@@ -308,14 +308,14 @@
     const/4 v1, 0x0
 
     .line 13
-    if-nez v0, :cond_f
+    if-nez v0, :cond_1
 
     .line 14
     .line 15
     return-object v1
 
     .line 16
-    :cond_f
+    :cond_1
     const-string v2, "javax.net.ssl.trustStorePassword"
 
     .line 17
@@ -328,14 +328,14 @@
     move-result-object v2
 
     .line 22
-    if-nez v2, :cond_18
+    if-nez v2, :cond_2
 
     .line 23
     .line 24
-    goto :goto_1c
+    goto :goto_0
 
     .line 25
-    :cond_18
+    :cond_2
     invoke-virtual {v2}, Ljava/lang/String;->toCharArray()[C
 
     .line 26
@@ -344,7 +344,7 @@
     move-result-object v1
 
     .line 29
-    :goto_1c
+    :goto_0
     invoke-static {}, Ljava/security/KeyStore;->getDefaultType()Ljava/lang/String;
 
     .line 30
@@ -379,10 +379,10 @@
     .line 45
     .line 46
     .line 47
-    :try_start_2e
+    :try_start_0
     invoke-virtual {v2, v3, v1}, Ljava/security/KeyStore;->load(Ljava/io/InputStream;[C)V
-    :try_end_31
-    .catchall {:try_start_2e .. :try_end_31} :catchall_46
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 48
     .line 49
@@ -428,26 +428,26 @@
     return-object v0
 
     .line 71
-    :catchall_46
+    :catchall_0
     move-exception v0
 
     .line 72
-    :try_start_47
+    :try_start_1
     invoke-virtual {v3}, Ljava/io/InputStream;->close()V
-    :try_end_4a
-    .catchall {:try_start_47 .. :try_end_4a} :catchall_4b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 73
     .line 74
     .line 75
-    goto :goto_61
+    goto :goto_1
 
     .line 76
-    :catchall_4b
+    :catchall_1
     move-exception v1
 
     .line 77
-    :try_start_4c
+    :try_start_2
     const-class v2, Ljava/lang/Throwable;
 
     .line 78
@@ -487,13 +487,13 @@
     .line 94
     .line 95
     invoke-virtual {v2, v0, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_61
-    .catch Ljava/lang/Exception; {:try_start_4c .. :try_end_61} :catch_61
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 96
     .line 97
     .line 98
-    :catch_61
-    :goto_61
+    :catch_0
+    :goto_1
     throw v0
 .end method

@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/bl1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/xk1;->e:Llibs/bl1;
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public final a()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-boolean v0, p0, Llibs/xk1;->c:Z
@@ -55,7 +55,7 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -67,10 +67,10 @@
     move-result v0
 
     .line 13
-    goto :goto_11
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     invoke-virtual {v1}, Llibs/b62;->i()I
 
     .line 15
@@ -79,7 +79,7 @@
     move-result v0
 
     .line 18
-    :goto_11
+    :goto_0
     iput v0, p0, Llibs/xk1;->b:I
 
     .line 19
@@ -88,7 +88,7 @@
 .end method
 
 .method public final b(Landroid/view/View;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-boolean v0, p0, Llibs/xk1;->c:Z
@@ -103,7 +103,7 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_1
 
     .line 8
     .line 9
@@ -127,17 +127,17 @@
 
     .line 18
     .line 19
-    if-ne v2, v3, :cond_16
+    if-ne v2, v3, :cond_0
 
     .line 20
     .line 21
     const/4 v1, 0x0
 
     .line 22
-    goto :goto_1e
+    goto :goto_0
 
     .line 23
-    :cond_16
+    :cond_0
     invoke-virtual {v1}, Llibs/b62;->j()I
 
     .line 24
@@ -154,7 +154,7 @@
 
     .line 30
     .line 31
-    :goto_1e
+    :goto_0
     add-int/2addr v1, v0
 
     .line 32
@@ -162,10 +162,10 @@
 
     .line 33
     .line 34
-    goto :goto_28
+    goto :goto_1
 
     .line 35
-    :cond_22
+    :cond_1
     invoke-virtual {v2, p1}, Llibs/b62;->d(Landroid/view/View;)I
 
     .line 36
@@ -178,7 +178,7 @@
 
     .line 40
     .line 41
-    :goto_28
+    :goto_1
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     .line 42
@@ -207,7 +207,7 @@
 .end method
 
 .method public final c()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, -0x1
@@ -240,7 +240,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

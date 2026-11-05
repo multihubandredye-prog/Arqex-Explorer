@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(I[B)V
-    .registers 6
+    .locals 3
 
     .line 41
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -36,7 +36,7 @@
 .end method
 
 .method public constructor <init>(Llibs/Param;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -58,7 +58,7 @@
     const/4 v2, 0x1
 
     .line 10
-    if-ne v0, v2, :cond_17
+    if-ne v0, v2, :cond_0
 
     .line 11
     .line 12
@@ -88,7 +88,7 @@
     return-void
 
     .line 24
-    :cond_17
+    :cond_0
     invoke-virtual {p1, v1}, Llibs/Param;->q(I)Llibs/Core;
 
     .line 25
@@ -125,7 +125,7 @@
 .end method
 
 .method public constructor <init>([B)V
-    .registers 3
+    .locals 1
 
     .line 44
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -148,7 +148,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/Init;
@@ -167,7 +167,7 @@
 
     .line 8
     .line 9
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
     .line 10
     .line 11
@@ -176,7 +176,7 @@
     .line 12
     .line 13
     .line 14
-    :cond_d
+    :cond_0
     iget-object v1, p0, Llibs/wi2;->Y:Llibs/Part;
 
     .line 15

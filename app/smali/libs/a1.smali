@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/a1;
@@ -51,7 +51,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Llibs/v0;-><init>(Ljava/lang/String;Ljava/lang/String;)V
@@ -63,10 +63,10 @@
 .end method
 
 .method public static c(Ljava/lang/String;Ljava/lang/String;)Llibs/a1;
-    .registers 3
+    .locals 1
 
     .line 1
-    if-nez p0, :cond_5
+    if-nez p0, :cond_0
 
     .line 2
     .line 3
@@ -77,7 +77,7 @@
     return-object p0
 
     .line 6
-    :cond_5
+    :cond_0
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     .line 7
@@ -86,7 +86,7 @@
     move-result v0
 
     .line 10
-    if-nez v0, :cond_e
+    if-nez v0, :cond_1
 
     .line 11
     .line 12
@@ -97,7 +97,7 @@
     return-object p0
 
     .line 15
-    :cond_e
+    :cond_1
     new-instance v0, Llibs/a1;
 
     .line 16
@@ -113,7 +113,7 @@
 
 # virtual methods
 .method public final d()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/v0;->a:Ljava/lang/String;
@@ -124,7 +124,7 @@
 
     .line 4
     .line 5
-    if-eq v0, v1, :cond_9
+    if-eq v0, v1, :cond_0
 
     .line 6
     .line 7
@@ -135,7 +135,7 @@
     return-object v0
 
     .line 10
-    :cond_9
+    :cond_0
     iget-object v0, p0, Llibs/v0;->b:Ljava/lang/String;
 
     .line 11

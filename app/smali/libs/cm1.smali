@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ra;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0, p1}, Llibs/ka1;-><init>(Llibs/ra;)V
@@ -41,7 +41,7 @@
     const/4 v0, 0x0
 
     .line 16
-    :goto_f
+    :goto_0
     iget-object v1, p0, Llibs/cm1;->k:[B
 
     .line 17
@@ -49,7 +49,7 @@
     array-length v2, v1
 
     .line 19
-    if-eq v0, v2, :cond_1e
+    if-eq v0, v2, :cond_0
 
     .line 20
     .line 21
@@ -72,10 +72,10 @@
 
     .line 29
     .line 30
-    goto :goto_f
+    goto :goto_0
 
     .line 31
-    :cond_1e
+    :cond_0
     invoke-virtual {p1}, Llibs/ra;->read()I
 
     .line 32

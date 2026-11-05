@@ -22,7 +22,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/vn2;Llibs/rp0;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Lcom/mixplorer/widgets/MiEditText;Lcom/mixplorer/widgets/MiEditText;)V
-    .registers 7
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public final onCheckedChanged(Landroid/widget/RadioGroup;I)V
-    .registers 10
+    .locals 7
 
     .line 1
     sget p1, Llibs/bi2;->auto_rename:I
@@ -74,22 +74,22 @@
     const/4 v1, 0x0
 
     .line 6
-    if-eq p2, p1, :cond_9
+    if-eq p2, p1, :cond_0
 
     .line 7
     .line 8
     const/4 p1, 0x0
 
     .line 9
-    goto :goto_b
+    goto :goto_0
 
     .line 10
-    :cond_9
+    :cond_0
     const/16 p1, 0x8
 
     .line 11
     .line 12
-    :goto_b
+    :goto_0
     iget-object v2, p0, Llibs/un2;->c:Landroid/widget/LinearLayout;
 
     .line 13
@@ -103,14 +103,14 @@
 
     .line 18
     .line 19
-    if-ne p2, p1, :cond_15
+    if-ne p2, p1, :cond_1
 
     .line 20
     .line 21
     const/4 v0, 0x0
 
     .line 22
-    :cond_15
+    :cond_1
     iget-object p1, p0, Llibs/un2;->d:Landroid/widget/LinearLayout;
 
     .line 23
@@ -186,7 +186,7 @@
 
     .line 60
     .line 61
-    if-ne p2, v3, :cond_76
+    if-ne p2, v3, :cond_6
 
     .line 62
     .line 63
@@ -198,7 +198,7 @@
     move-result v0
 
     .line 67
-    if-nez v0, :cond_67
+    if-nez v0, :cond_4
 
     .line 68
     .line 69
@@ -206,19 +206,19 @@
 
     .line 70
     .line 71
-    if-eqz v0, :cond_49
+    if-eqz v0, :cond_2
 
     .line 72
     .line 73
-    goto :goto_67
+    goto :goto_2
 
     .line 74
-    :cond_49
+    :cond_2
     iget-boolean v0, v5, Llibs/rp0;->One:Z
 
     .line 75
     .line 76
-    if-nez v0, :cond_65
+    if-nez v0, :cond_3
 
     .line 77
     .line 78
@@ -256,7 +256,7 @@
     move-result v0
 
     .line 96
-    if-eqz v0, :cond_65
+    if-eqz v0, :cond_3
 
     .line 97
     .line 98
@@ -268,21 +268,21 @@
     move-result-object p1
 
     .line 102
-    :cond_65
-    :goto_65
+    :cond_3
+    :goto_1
     move-object v0, p1
 
     .line 103
-    goto :goto_73
+    goto :goto_3
 
     .line 104
-    :cond_67
-    :goto_67
+    :cond_4
+    :goto_2
     iget-boolean p1, v5, Llibs/rp0;->One:Z
 
     .line 105
     .line 106
-    if-eqz p1, :cond_6e
+    if-eqz p1, :cond_5
 
     .line 107
     .line 108
@@ -290,10 +290,10 @@
 
     .line 109
     .line 110
-    goto :goto_65
+    goto :goto_1
 
     .line 111
-    :cond_6e
+    :cond_5
     invoke-static {v5}, Llibs/tr3;->a(Llibs/rp0;)Ljava/lang/String;
 
     .line 112
@@ -302,23 +302,23 @@
     move-result-object p1
 
     .line 115
-    goto :goto_65
+    goto :goto_1
 
     .line 116
-    :goto_73
+    :goto_3
     iput-boolean v1, v4, Llibs/vn2;->e:Z
 
     .line 117
     .line 118
-    goto :goto_c1
+    goto :goto_7
 
     .line 119
-    :cond_76
+    :cond_6
     sget v3, Llibs/bi2;->full_name:I
 
     .line 120
     .line 121
-    if-ne p2, v3, :cond_a6
+    if-ne p2, v3, :cond_a
 
     .line 122
     .line 123
@@ -330,7 +330,7 @@
     move-result v0
 
     .line 127
-    if-nez v0, :cond_a0
+    if-nez v0, :cond_9
 
     .line 128
     .line 129
@@ -338,19 +338,19 @@
 
     .line 130
     .line 131
-    if-eqz v0, :cond_85
+    if-eqz v0, :cond_7
 
     .line 132
     .line 133
-    goto :goto_a0
+    goto :goto_5
 
     .line 134
-    :cond_85
+    :cond_7
     iget-boolean v0, v5, Llibs/rp0;->One:Z
 
     .line 135
     .line 136
-    if-nez v0, :cond_9e
+    if-nez v0, :cond_8
 
     .line 137
     .line 138
@@ -366,7 +366,7 @@
     move-result v0
 
     .line 144
-    if-lez v0, :cond_9e
+    if-lez v0, :cond_8
 
     .line 145
     .line 146
@@ -395,32 +395,32 @@
     move-result-object p1
 
     .line 159
-    :cond_9e
-    :goto_9e
+    :cond_8
+    :goto_4
     move-object v0, p1
 
     .line 160
-    goto :goto_a3
+    goto :goto_6
 
     .line 161
-    :cond_a0
-    :goto_a0
+    :cond_9
+    :goto_5
     iget-object p1, v5, Llibs/rp0;->Two:Ljava/lang/String;
 
     .line 162
     .line 163
-    goto :goto_9e
+    goto :goto_4
 
     .line 164
-    :goto_a3
+    :goto_6
     iput-boolean v1, v4, Llibs/vn2;->e:Z
 
     .line 165
     .line 166
-    goto :goto_c1
+    goto :goto_7
 
     .line 167
-    :cond_a6
+    :cond_a
     sget p1, Llibs/bi2;->extension:I
 
     .line 168
@@ -428,7 +428,7 @@
     const/4 v3, 0x1
 
     .line 170
-    if-ne p2, p1, :cond_b7
+    if-ne p2, p1, :cond_b
 
     .line 171
     .line 172
@@ -453,15 +453,15 @@
 
     .line 182
     .line 183
-    goto :goto_c1
+    goto :goto_7
 
     .line 184
-    :cond_b7
+    :cond_b
     sget p1, Llibs/bi2;->regex:I
 
     .line 185
     .line 186
-    if-eq p2, p1, :cond_bf
+    if-eq p2, p1, :cond_c
 
     .line 187
     .line 188
@@ -469,23 +469,23 @@
 
     .line 189
     .line 190
-    if-ne p2, p1, :cond_c1
+    if-ne p2, p1, :cond_d
 
     .line 191
     .line 192
-    :cond_bf
+    :cond_c
     iput-boolean v3, v4, Llibs/vn2;->e:Z
 
     .line 193
     .line 194
-    :cond_c1
-    :goto_c1
+    :cond_d
+    :goto_7
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 195
     .line 196
     .line 197
-    :try_start_c4
+    :try_start_0
     const-string p1, ".lnk"
 
     .line 198
@@ -498,7 +498,7 @@
     move-result p1
 
     .line 203
-    if-eqz p1, :cond_d5
+    if-eqz p1, :cond_e
 
     .line 204
     .line 205
@@ -514,17 +514,17 @@
 
     .line 210
     .line 211
-    goto :goto_d9
+    goto :goto_8
 
     .line 212
-    :catchall_d3
+    :catchall_0
     nop
 
     .line 213
-    goto :goto_dc
+    goto :goto_9
 
     .line 214
-    :cond_d5
+    :cond_e
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     .line 215
@@ -533,20 +533,20 @@
     move-result p1
 
     .line 218
-    :goto_d9
+    :goto_8
     invoke-virtual {v2, v1, p1}, Landroid/widget/EditText;->setSelection(II)V
-    :try_end_dc
-    .catchall {:try_start_c4 .. :try_end_dc} :catchall_d3
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 219
     .line 220
     .line 221
-    :goto_dc
+    :goto_9
     sget p1, Llibs/bi2;->auto_rename:I
 
     .line 222
     .line 223
-    if-ne p2, p1, :cond_e7
+    if-ne p2, p1, :cond_f
 
     .line 224
     .line 225
@@ -562,15 +562,15 @@
     .line 229
     .line 230
     .line 231
-    goto :goto_ea
+    goto :goto_a
 
     .line 232
-    :cond_e7
+    :cond_f
     invoke-virtual {v2}, Landroid/view/View;->requestFocus()Z
 
     .line 233
     .line 234
     .line 235
-    :goto_ea
+    :goto_a
     return-void
 .end method

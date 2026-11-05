@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/os/IBinder;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final asBinder()Landroid/os/IBinder;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/v61;->a:Landroid/os/IBinder;
@@ -41,7 +41,7 @@
 .end method
 
 .method public final j(Llibs/n13;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
@@ -60,7 +60,7 @@
     move-result-object v1
 
     .line 9
-    :try_start_8
+    :try_start_0
     const-string v2, "moe.shizuku.api.IFileFilter"
 
     .line 10
@@ -106,22 +106,22 @@
     .line 32
     .line 33
     move-result p1
-    :try_end_21
-    .catchall {:try_start_8 .. :try_end_21} :catchall_2c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 34
-    if-eqz p1, :cond_24
+    if-eqz p1, :cond_0
 
     .line 35
     .line 36
-    goto :goto_25
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_0
     const/4 v2, 0x0
 
     .line 38
-    :goto_25
+    :goto_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
     .line 39
@@ -135,7 +135,7 @@
     return v2
 
     .line 45
-    :catchall_2c
+    :catchall_0
     move-exception p1
 
     .line 46

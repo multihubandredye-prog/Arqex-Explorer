@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(IJLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/nio/charset/Charset;ZZZZZ)V
-    .registers 28
+    .locals 14
 
     .line 1
     invoke-direct {p0}, Llibs/b02;-><init>()V
@@ -25,7 +25,7 @@
     move-result v1
 
     .line 10
-    if-nez v1, :cond_23
+    if-nez v1, :cond_0
 
     .line 11
     .line 12
@@ -76,10 +76,10 @@
 
     .line 34
     .line 35
-    goto :goto_3b
+    goto :goto_0
 
     .line 36
-    :cond_23
+    :cond_0
     const-string v1, "DUwCgJBa"
 
     .line 37
@@ -130,7 +130,7 @@
     move v1, p1
 
     .line 60
-    :goto_3b
+    :goto_0
     invoke-direct/range {v0 .. v13}, Llibs/i2;-><init>(IJLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/nio/charset/Charset;ZZZZZ)V
 
     .line 61
@@ -146,7 +146,7 @@
 
 # virtual methods
 .method public final Link()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -156,7 +156,7 @@
 .end method
 
 .method public final a()Ljava/util/LinkedHashMap;
-    .registers 4
+    .locals 3
 
     .line 1
     invoke-super {p0}, Llibs/b02;->a()Ljava/util/LinkedHashMap;

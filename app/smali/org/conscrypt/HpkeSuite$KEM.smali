@@ -35,7 +35,7 @@
 
 # direct methods
 .method private static synthetic $values()[Lorg/conscrypt/HpkeSuite$KEM;
-    .registers 3
+    .locals 3
 
     .line 1
     const/4 v0, 0x2
@@ -71,7 +71,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 9
+    .locals 9
 
     .line 1
     new-instance v0, Lorg/conscrypt/HpkeSuite$KEM;
@@ -166,7 +166,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;IIIIII)V
-    .registers 8
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(IIIII)V"
@@ -203,7 +203,7 @@
 .end method
 
 .method public static forId(I)Lorg/conscrypt/HpkeSuite$KEM;
-    .registers 6
+    .locals 5
 
     .line 1
     invoke-static {}, Lorg/conscrypt/HpkeSuite$KEM;->values()[Lorg/conscrypt/HpkeSuite$KEM;
@@ -220,8 +220,8 @@
     const/4 v2, 0x0
 
     .line 7
-    :goto_6
-    if-ge v2, v1, :cond_14
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     .line 8
     .line 9
@@ -237,22 +237,22 @@
     move-result v4
 
     .line 15
-    if-ne v4, p0, :cond_11
+    if-ne v4, p0, :cond_0
 
     .line 16
     .line 17
     return-object v3
 
     .line 18
-    :cond_11
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
     .line 19
     .line 20
-    goto :goto_6
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_1
     const-string v0, "Unknown KEM "
 
     .line 22
@@ -277,7 +277,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lorg/conscrypt/HpkeSuite$KEM;
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Lorg/conscrypt/HpkeSuite$KEM;
@@ -300,7 +300,7 @@
 .end method
 
 .method public static values()[Lorg/conscrypt/HpkeSuite$KEM;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/HpkeSuite$KEM;->$VALUES:[Lorg/conscrypt/HpkeSuite$KEM;
@@ -325,7 +325,7 @@
 
 # virtual methods
 .method public getEncapsulatedLength()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/HpkeSuite$KEM;->nEnc:I
@@ -336,7 +336,7 @@
 .end method
 
 .method public getId()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/HpkeSuite$KEM;->id:I
@@ -347,7 +347,7 @@
 .end method
 
 .method public getPrivateKeyLength()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/HpkeSuite$KEM;->nSk:I
@@ -358,7 +358,7 @@
 .end method
 
 .method public getPublicKeyLength()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/HpkeSuite$KEM;->nPk:I
@@ -369,7 +369,7 @@
 .end method
 
 .method public getSecretLength()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/HpkeSuite$KEM;->nSecret:I
@@ -380,7 +380,7 @@
 .end method
 
 .method public getnEnc()I
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 

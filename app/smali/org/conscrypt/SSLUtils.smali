@@ -19,7 +19,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-string v0, "org.conscrypt.useEngineSocketByDefault"
@@ -54,7 +54,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -66,7 +66,7 @@
 .end method
 
 .method public static calculateOutNetBufSize(I)I
-    .registers 2
+    .locals 1
 
     .line 1
     const v0, 0x7fffffa9
@@ -102,7 +102,7 @@
 .end method
 
 .method public static varargs concat([[Ljava/lang/String;)[Ljava/lang/String;
-    .registers 8
+    .locals 7
 
     .line 1
     array-length v0, p0
@@ -117,8 +117,8 @@
     const/4 v3, 0x0
 
     .line 5
-    :goto_4
-    if-ge v2, v0, :cond_d
+    :goto_0
+    if-ge v2, v0, :cond_0
 
     .line 6
     .line 7
@@ -136,10 +136,10 @@
 
     .line 12
     .line 13
-    goto :goto_4
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     new-array v0, v3, [Ljava/lang/String;
 
     .line 15
@@ -153,8 +153,8 @@
     const/4 v4, 0x0
 
     .line 19
-    :goto_12
-    if-ge v3, v2, :cond_1f
+    :goto_1
+    if-ge v3, v2, :cond_1
 
     .line 20
     .line 21
@@ -180,21 +180,21 @@
 
     .line 30
     .line 31
-    goto :goto_12
+    goto :goto_1
 
     .line 32
-    :cond_1f
+    :cond_1
     return-object v0
 .end method
 
 .method public static decodeProtocols([B)[Ljava/lang/String;
-    .registers 9
+    .locals 8
 
     .line 1
     array-length v0, p0
 
     .line 2
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 3
     .line 4
@@ -205,7 +205,7 @@
     return-object p0
 
     .line 7
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
     .line 8
@@ -215,11 +215,11 @@
     const/4 v2, 0x0
 
     .line 10
-    :goto_9
+    :goto_0
     array-length v3, p0
 
     .line 11
-    if-ge v1, v3, :cond_55
+    if-ge v1, v3, :cond_4
 
     .line 12
     .line 13
@@ -227,7 +227,7 @@
 
     .line 14
     .line 15
-    if-ltz v3, :cond_1b
+    if-ltz v3, :cond_2
 
     .line 16
     .line 17
@@ -237,14 +237,14 @@
     sub-int/2addr v4, v1
 
     .line 19
-    if-le v3, v4, :cond_15
+    if-le v3, v4, :cond_1
 
     .line 20
     .line 21
-    goto :goto_1b
+    goto :goto_1
 
     .line 22
-    :cond_15
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
     .line 23
@@ -256,11 +256,11 @@
     add-int/2addr v1, v3
 
     .line 27
-    goto :goto_9
+    goto :goto_0
 
     .line 28
-    :cond_1b
-    :goto_1b
+    :cond_2
+    :goto_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     .line 29
@@ -313,7 +313,7 @@
 
     .line 55
     .line 56
-    if-ge v1, v3, :cond_3e
+    if-ge v1, v3, :cond_3
 
     .line 57
     .line 58
@@ -325,10 +325,10 @@
     move-result-object p0
 
     .line 62
-    goto :goto_4a
+    goto :goto_2
 
     .line 63
-    :cond_3e
+    :cond_3
     new-instance v1, Ljava/lang/StringBuilder;
 
     .line 64
@@ -353,7 +353,7 @@
     move-result-object p0
 
     .line 75
-    :goto_4a
+    :goto_2
     invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 76
@@ -375,7 +375,7 @@
     throw v0
 
     .line 86
-    :cond_55
+    :cond_4
     new-array v1, v2, [Ljava/lang/String;
 
     .line 87
@@ -383,11 +383,11 @@
     const/4 v2, 0x0
 
     .line 89
-    :goto_58
+    :goto_3
     array-length v3, p0
 
     .line 90
-    if-ge v0, v3, :cond_76
+    if-ge v0, v3, :cond_6
 
     .line 91
     .line 92
@@ -399,7 +399,7 @@
 
     .line 95
     .line 96
-    if-lez v3, :cond_6d
+    if-lez v3, :cond_5
 
     .line 97
     .line 98
@@ -424,15 +424,15 @@
     .line 107
     .line 108
     .line 109
-    goto :goto_6f
+    goto :goto_4
 
     .line 110
-    :cond_6d
+    :cond_5
     const-string v5, ""
 
     .line 111
     .line 112
-    :goto_6f
+    :goto_4
     aput-object v5, v1, v2
 
     .line 113
@@ -447,18 +447,18 @@
     move v2, v4
 
     .line 118
-    goto :goto_58
+    goto :goto_3
 
     .line 119
-    :cond_76
+    :cond_6
     return-object v1
 .end method
 
 .method private static decodeX509Certificate(Ljava/security/cert/CertificateFactory;[B)Ljava/security/cert/X509Certificate;
-    .registers 3
+    .locals 1
 
     .line 1
-    if-eqz p0, :cond_e
+    if-eqz p0, :cond_0
 
     .line 2
     .line 3
@@ -486,7 +486,7 @@
     return-object p0
 
     .line 15
-    :cond_e
+    :cond_0
     invoke-static {p1}, Lorg/conscrypt/OpenSSLX509Certificate;->fromX509Der([B)Lorg/conscrypt/OpenSSLX509Certificate;
 
     .line 16
@@ -499,7 +499,7 @@
 .end method
 
 .method public static decodeX509CertificateChain([[B)[Ljava/security/cert/X509Certificate;
-    .registers 6
+    .locals 5
 
     .line 1
     invoke-static {}, Lorg/conscrypt/SSLUtils;->getCertificateFactory()Ljava/security/cert/CertificateFactory;
@@ -520,8 +520,8 @@
     const/4 v3, 0x0
 
     .line 9
-    :goto_8
-    if-ge v3, v1, :cond_15
+    :goto_0
+    if-ge v3, v1, :cond_0
 
     .line 10
     .line 11
@@ -545,28 +545,28 @@
 
     .line 20
     .line 21
-    goto :goto_8
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     return-object v2
 .end method
 
 .method public static encodeProtocols([Ljava/lang/String;)[B
-    .registers 10
+    .locals 9
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-eqz p0, :cond_81
+    if-eqz p0, :cond_7
 
     .line 3
     .line 4
     array-length v1, p0
 
     .line 5
-    if-nez v1, :cond_9
+    if-nez v1, :cond_0
 
     .line 6
     .line 7
@@ -577,7 +577,7 @@
     return-object p0
 
     .line 10
-    :cond_9
+    :cond_0
     const/4 v1, 0x0
 
     .line 11
@@ -587,11 +587,11 @@
     const/4 v3, 0x0
 
     .line 13
-    :goto_c
+    :goto_0
     array-length v4, p0
 
     .line 14
-    if-ge v2, v4, :cond_35
+    if-ge v2, v4, :cond_3
 
     .line 15
     .line 16
@@ -603,7 +603,7 @@
 
     .line 19
     .line 20
-    if-eqz v4, :cond_2b
+    if-eqz v4, :cond_2
 
     .line 21
     .line 22
@@ -615,7 +615,7 @@
     move-result v4
 
     .line 26
-    if-eqz v4, :cond_25
+    if-eqz v4, :cond_1
 
     .line 27
     .line 28
@@ -623,7 +623,7 @@
 
     .line 29
     .line 30
-    if-gt v4, v6, :cond_25
+    if-gt v4, v6, :cond_1
 
     .line 31
     .line 32
@@ -638,10 +638,10 @@
 
     .line 36
     .line 37
-    goto :goto_c
+    goto :goto_0
 
     .line 38
-    :cond_25
+    :cond_1
     const-string p0, "] has invalid length: "
 
     .line 39
@@ -654,7 +654,7 @@
     return-object v0
 
     .line 44
-    :cond_2b
+    :cond_2
     const-string p0, "] is null"
 
     .line 45
@@ -675,7 +675,7 @@
     return-object v0
 
     .line 54
-    :cond_35
+    :cond_3
     new-array v0, v3, [B
 
     .line 55
@@ -686,11 +686,11 @@
     const/4 v3, 0x0
 
     .line 58
-    :goto_39
+    :goto_1
     array-length v4, p0
 
     .line 59
-    if-ge v2, v4, :cond_80
+    if-ge v2, v4, :cond_6
 
     .line 60
     .line 61
@@ -723,8 +723,8 @@
     const/4 v6, 0x0
 
     .line 74
-    :goto_49
-    if-ge v6, v5, :cond_7d
+    :goto_2
+    if-ge v6, v5, :cond_5
 
     .line 75
     .line 76
@@ -740,7 +740,7 @@
 
     .line 81
     .line 82
-    if-gt v7, v8, :cond_5c
+    if-gt v7, v8, :cond_4
 
     .line 83
     .line 84
@@ -762,10 +762,10 @@
     move v3, v8
 
     .line 92
-    goto :goto_49
+    goto :goto_2
 
     .line 93
-    :cond_5c
+    :cond_4
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     .line 94
@@ -827,19 +827,19 @@
     throw p0
 
     .line 126
-    :cond_7d
+    :cond_5
     add-int/lit8 v2, v2, 0x1
 
     .line 127
     .line 128
-    goto :goto_39
+    goto :goto_1
 
     .line 129
-    :cond_80
+    :cond_6
     return-object v0
 
     .line 130
-    :cond_81
+    :cond_7
     const-string p0, "protocols array must be non-null"
 
     .line 131
@@ -853,7 +853,7 @@
 .end method
 
 .method public static encodeSubjectX509Principals([Ljava/security/cert/X509Certificate;)[[B
-    .registers 4
+    .locals 3
 
     .line 1
     array-length v0, p0
@@ -866,11 +866,11 @@
     const/4 v1, 0x0
 
     .line 5
-    :goto_4
+    :goto_0
     array-length v2, p0
 
     .line 6
-    if-ge v1, v2, :cond_16
+    if-ge v1, v2, :cond_0
 
     .line 7
     .line 8
@@ -902,15 +902,15 @@
 
     .line 21
     .line 22
-    goto :goto_4
+    goto :goto_0
 
     .line 23
-    :cond_16
+    :cond_0
     return-object v0
 .end method
 
 .method private static getCertificateFactory()Ljava/security/cert/CertificateFactory;
-    .registers 1
+    .locals 1
 
     .line 1
     :try_start_0
@@ -924,14 +924,14 @@
     .line 5
     .line 6
     move-result-object v0
-    :try_end_6
-    .catch Ljava/security/cert/CertificateException; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Ljava/security/cert/CertificateException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 7
     return-object v0
 
     .line 8
-    :catch_7
+    :catch_0
     const/4 v0, 0x0
 
     .line 9
@@ -939,13 +939,13 @@
 .end method
 
 .method public static getClientKeyType(B)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-eq p0, v0, :cond_c
+    if-eq p0, v0, :cond_1
 
     .line 3
     .line 4
@@ -953,7 +953,7 @@
 
     .line 5
     .line 6
-    if-eq p0, v0, :cond_9
+    if-eq p0, v0, :cond_0
 
     .line 7
     .line 8
@@ -963,7 +963,7 @@
     return-object p0
 
     .line 10
-    :cond_9
+    :cond_0
     const-string p0, "EC"
 
     .line 11
@@ -971,7 +971,7 @@
     return-object p0
 
     .line 13
-    :cond_c
+    :cond_1
     const-string p0, "RSA"
 
     .line 14
@@ -980,7 +980,7 @@
 .end method
 
 .method public static getClientKeyTypeFromSignatureAlg(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-static {p0}, Lorg/conscrypt/NativeCrypto;->SSL_get_signature_algorithm_key_type(I)I
@@ -994,7 +994,7 @@
     const/4 v0, 0x6
 
     .line 6
-    if-eq p0, v0, :cond_10
+    if-eq p0, v0, :cond_1
 
     .line 7
     .line 8
@@ -1002,7 +1002,7 @@
 
     .line 9
     .line 10
-    if-eq p0, v0, :cond_d
+    if-eq p0, v0, :cond_0
 
     .line 11
     .line 12
@@ -1012,7 +1012,7 @@
     return-object p0
 
     .line 14
-    :cond_d
+    :cond_0
     const-string p0, "EC"
 
     .line 15
@@ -1020,7 +1020,7 @@
     return-object p0
 
     .line 17
-    :cond_10
+    :cond_1
     const-string p0, "RSA"
 
     .line 18
@@ -1029,7 +1029,7 @@
 .end method
 
 .method private static getEncryptedPacketLength(Ljava/nio/ByteBuffer;)I
-    .registers 5
+    .locals 4
 
     .line 84
     invoke-virtual {p0}, Ljava/nio/Buffer;->position()I
@@ -1047,11 +1047,11 @@
 
     const/4 v2, -0x1
 
-    packed-switch v1, :pswitch_data_2e
+    packed-switch v1, :pswitch_data_0
 
     return v2
 
-    :pswitch_11
+    :pswitch_0
     add-int/lit8 v1, v0, 0x1
 
     .line 86
@@ -1065,11 +1065,11 @@
 
     const/4 v3, 0x3
 
-    if-eq v1, v3, :cond_1f
+    if-eq v1, v3, :cond_0
 
     return v2
 
-    :cond_1f
+    :cond_0
     add-int/2addr v0, v3
 
     .line 87
@@ -1085,24 +1085,24 @@
 
     add-int/2addr p0, v0
 
-    if-gt p0, v0, :cond_2d
+    if-gt p0, v0, :cond_1
 
     return v2
 
-    :cond_2d
+    :cond_1
     return p0
 
-    :pswitch_data_2e
+    :pswitch_data_0
     .packed-switch 0x14
-        :pswitch_11
-        :pswitch_11
-        :pswitch_11
-        :pswitch_11
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static getEncryptedPacketLength([Ljava/nio/ByteBuffer;I)I
-    .registers 8
+    .locals 6
 
     .line 1
     aget-object v0, p0, p1
@@ -1120,7 +1120,7 @@
     const/4 v2, 0x5
 
     .line 8
-    if-lt v1, v2, :cond_e
+    if-lt v1, v2, :cond_0
 
     .line 9
     .line 10
@@ -1135,7 +1135,7 @@
     return p0
 
     .line 15
-    :cond_e
+    :cond_0
     invoke-static {v2}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     .line 16
@@ -1144,7 +1144,7 @@
     move-result-object v0
 
     .line 19
-    :goto_12
+    :goto_0
     add-int/lit8 v1, p1, 0x1
 
     .line 20
@@ -1185,7 +1185,7 @@
     move-result v5
 
     .line 39
-    if-le v4, v5, :cond_30
+    if-le v4, v5, :cond_1
 
     .line 40
     .line 41
@@ -1205,11 +1205,11 @@
     .line 47
     .line 48
     .line 49
-    :cond_30
-    :try_start_30
+    :cond_1
+    :try_start_0
     invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
-    :try_end_33
-    .catchall {:try_start_30 .. :try_end_33} :catchall_49
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 50
     .line 51
@@ -1232,7 +1232,7 @@
     move-result p1
 
     .line 62
-    if-nez p1, :cond_47
+    if-nez p1, :cond_2
 
     .line 63
     .line 64
@@ -1252,14 +1252,14 @@
     return p0
 
     .line 72
-    :cond_47
+    :cond_2
     move p1, v1
 
     .line 73
-    goto :goto_12
+    goto :goto_0
 
     .line 74
-    :catchall_49
+    :catchall_0
     move-exception p0
 
     .line 75
@@ -1273,19 +1273,19 @@
     .line 79
     .line 80
     .line 81
-    goto :goto_52
+    goto :goto_2
 
     .line 82
-    :goto_51
+    :goto_1
     throw p0
 
     .line 83
-    :goto_52
-    goto :goto_51
+    :goto_2
+    goto :goto_1
 .end method
 
 .method public static getServerX509KeyType(J)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-static {p0, p1}, Lorg/conscrypt/NativeCrypto;->SSL_CIPHER_get_kx_name(J)Ljava/lang/String;
@@ -1308,7 +1308,7 @@
     move-result v0
 
     .line 11
-    if-nez v0, :cond_2a
+    if-nez v0, :cond_2
 
     .line 12
     .line 13
@@ -1324,7 +1324,7 @@
     move-result v0
 
     .line 19
-    if-nez v0, :cond_2a
+    if-nez v0, :cond_2
 
     .line 20
     .line 21
@@ -1340,14 +1340,14 @@
     move-result v0
 
     .line 27
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     .line 28
     .line 29
-    goto :goto_2a
+    goto :goto_0
 
     .line 30
-    :cond_1d
+    :cond_0
     const-string p1, "ECDHE_ECDSA"
 
     .line 31
@@ -1360,7 +1360,7 @@
     move-result p0
 
     .line 36
-    if-eqz p0, :cond_28
+    if-eqz p0, :cond_1
 
     .line 37
     .line 38
@@ -1371,20 +1371,20 @@
     return-object p0
 
     .line 41
-    :cond_28
+    :cond_1
     const/4 p0, 0x0
 
     .line 42
     return-object p0
 
     .line 43
-    :cond_2a
-    :goto_2a
+    :cond_2
+    :goto_0
     return-object p1
 .end method
 
 .method public static getSupportedClientKeyTypes([B[I)Ljava/util/Set;
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B[I)",
@@ -1416,8 +1416,8 @@
     const/4 v3, 0x0
 
     .line 10
-    :goto_9
-    if-ge v3, v1, :cond_1a
+    :goto_0
+    if-ge v3, v1, :cond_1
 
     .line 11
     .line 12
@@ -1433,28 +1433,28 @@
     move-result-object v4
 
     .line 18
-    if-nez v4, :cond_14
+    if-nez v4, :cond_0
 
     .line 19
     .line 20
-    goto :goto_17
+    goto :goto_1
 
     .line 21
-    :cond_14
+    :cond_0
     invoke-virtual {v0, v4}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 22
     .line 23
     .line 24
-    :goto_17
+    :goto_1
     add-int/lit8 v3, v3, 0x1
 
     .line 25
     .line 26
-    goto :goto_9
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_1
     new-instance v1, Ljava/util/LinkedHashSet;
 
     .line 28
@@ -1470,8 +1470,8 @@
     array-length v3, p1
 
     .line 34
-    :goto_21
-    if-ge v2, v3, :cond_32
+    :goto_2
+    if-ge v2, v3, :cond_3
 
     .line 35
     .line 36
@@ -1487,39 +1487,39 @@
     move-result-object v4
 
     .line 42
-    if-nez v4, :cond_2c
+    if-nez v4, :cond_2
 
     .line 43
     .line 44
-    goto :goto_2f
+    goto :goto_3
 
     .line 45
-    :cond_2c
+    :cond_2
     invoke-interface {v1, v4}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     .line 46
     .line 47
     .line 48
-    :goto_2f
+    :goto_3
     add-int/lit8 v2, v2, 0x1
 
     .line 49
     .line 50
-    goto :goto_21
+    goto :goto_2
 
     .line 51
-    :cond_32
+    :cond_3
     array-length p0, p0
 
     .line 52
-    if-lez p0, :cond_3c
+    if-lez p0, :cond_4
 
     .line 53
     .line 54
     array-length p0, p1
 
     .line 55
-    if-lez p0, :cond_3c
+    if-lez p0, :cond_4
 
     .line 56
     .line 57
@@ -1531,23 +1531,23 @@
     return-object v1
 
     .line 61
-    :cond_3c
+    :cond_4
     array-length p0, p1
 
     .line 62
-    if-lez p0, :cond_40
+    if-lez p0, :cond_5
 
     .line 63
     .line 64
     return-object v1
 
     .line 65
-    :cond_40
+    :cond_5
     return-object v0
 .end method
 
 .method public static toCertificateChain([Ljava/security/cert/X509Certificate;)[Ljavax/security/cert/X509Certificate;
-    .registers 4
+    .locals 3
 
     .line 1
     :try_start_0
@@ -1561,11 +1561,11 @@
     const/4 v1, 0x0
 
     .line 5
-    :goto_4
+    :goto_0
     array-length v2, p0
 
     .line 6
-    if-ge v1, v2, :cond_16
+    if-ge v1, v2, :cond_0
 
     .line 7
     .line 8
@@ -1590,9 +1590,9 @@
 
     .line 18
     aput-object v2, v0, v1
-    :try_end_13
-    .catch Ljava/security/cert/CertificateEncodingException; {:try_start_0 .. :try_end_13} :catch_17
-    .catch Ljavax/security/cert/CertificateException; {:try_start_0 .. :try_end_13} :catch_17
+    :try_end_0
+    .catch Ljava/security/cert/CertificateEncodingException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljavax/security/cert/CertificateException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 19
     .line 20
@@ -1600,14 +1600,14 @@
 
     .line 21
     .line 22
-    goto :goto_4
+    goto :goto_0
 
     .line 23
-    :cond_16
+    :cond_0
     return-object v0
 
     .line 24
-    :catch_17
+    :catch_0
     move-exception p0
 
     .line 25
@@ -1633,22 +1633,22 @@
     .line 35
     .line 36
     .line 37
-    goto :goto_26
+    goto :goto_2
 
     .line 38
-    :goto_25
+    :goto_1
     throw v0
 
     .line 39
-    :goto_26
-    goto :goto_25
+    :goto_2
+    goto :goto_1
 .end method
 
 .method public static toProtocolBytes(Ljava/lang/String;)[B
-    .registers 2
+    .locals 1
 
     .line 1
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     .line 2
     .line 3
@@ -1658,7 +1658,7 @@
     return-object p0
 
     .line 5
-    :cond_4
+    :cond_0
     invoke-static {}, Llibs/xf2;->d()Ljava/nio/charset/Charset;
 
     .line 6
@@ -1679,10 +1679,10 @@
 .end method
 
 .method public static toProtocolString([B)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     .line 2
     .line 3
@@ -1692,7 +1692,7 @@
     return-object p0
 
     .line 5
-    :cond_4
+    :cond_0
     new-instance v0, Ljava/lang/String;
 
     .line 6
@@ -1714,14 +1714,14 @@
 .end method
 
 .method public static toSSLException(Ljava/lang/Throwable;)Ljavax/net/ssl/SSLException;
-    .registers 2
+    .locals 1
 
     .line 1
     instance-of v0, p0, Ljavax/net/ssl/SSLException;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -1732,7 +1732,7 @@
     return-object p0
 
     .line 8
-    :cond_7
+    :cond_0
     new-instance v0, Ljavax/net/ssl/SSLException;
 
     .line 9
@@ -1746,14 +1746,14 @@
 .end method
 
 .method public static toSSLHandshakeException(Ljava/lang/Throwable;)Ljavax/net/ssl/SSLHandshakeException;
-    .registers 3
+    .locals 2
 
     .line 1
     instance-of v0, p0, Ljavax/net/ssl/SSLHandshakeException;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -1764,7 +1764,7 @@
     return-object p0
 
     .line 8
-    :cond_7
+    :cond_0
     new-instance v0, Ljavax/net/ssl/SSLHandshakeException;
 
     .line 9
@@ -1798,7 +1798,7 @@
 .end method
 
 .method private static unsignedByte(B)S
-    .registers 1
+    .locals 0
 
     .line 1
     and-int/lit16 p0, p0, 0xff
@@ -1812,7 +1812,7 @@
 .end method
 
 .method private static unsignedShort(S)I
-    .registers 2
+    .locals 1
 
     .line 1
     const v0, 0xffff

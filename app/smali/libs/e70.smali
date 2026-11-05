@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/app/Activity;IZ)V
-    .registers 5
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -49,7 +49,7 @@
 .end method
 
 .method public synthetic constructor <init>(Llibs/k70;ZI)V
-    .registers 5
+    .locals 1
 
     .line 14
     const/4 v0, 0x0
@@ -70,7 +70,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/e70;->X:B
@@ -89,7 +89,7 @@
 
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_1a
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
@@ -106,12 +106,12 @@
     return-void
 
     .line 18
-    :pswitch_11
+    :pswitch_0
     check-cast v3, Llibs/k70;
 
     .line 19
     .line 20
-    if-nez v1, :cond_18
+    if-nez v1, :cond_0
 
     .line 21
     .line 22
@@ -120,15 +120,15 @@
     .line 23
     .line 24
     .line 25
-    :cond_18
+    :cond_0
     return-void
 
     .line 26
     nop
 
     .line 27
-    :pswitch_data_1a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_11
+        :pswitch_0
     .end packed-switch
 .end method

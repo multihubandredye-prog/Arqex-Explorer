@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/cg;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/yj;-><init>()V
@@ -17,7 +17,7 @@
 
     .line 5
     .line 6
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
     .line 7
     .line 8
@@ -55,7 +55,7 @@
     return-void
 
     .line 24
-    :cond_17
+    :cond_0
     const-string p1, "CTSBlockCipher can only accept ECB, or CBC ciphers"
 
     .line 25
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public final a(I[B)I
-    .registers 12
+    .locals 9
 
     .line 1
     iget v0, p0, Llibs/yj;->b:I
@@ -90,7 +90,7 @@
     const/4 v2, 0x0
 
     .line 6
-    if-gt v0, v1, :cond_ba
+    if-gt v0, v1, :cond_a
 
     .line 7
     .line 8
@@ -126,11 +126,11 @@
 
     .line 23
     .line 24
-    if-eqz v5, :cond_6a
+    if-eqz v5, :cond_5
 
     .line 25
     .line 26
-    if-lt v1, v0, :cond_66
+    if-lt v1, v0, :cond_4
 
     .line 27
     .line 28
@@ -151,11 +151,11 @@
 
     .line 36
     .line 37
-    if-le v1, v0, :cond_62
+    if-le v1, v0, :cond_3
 
     .line 38
     .line 39
-    :goto_26
+    :goto_0
     iget-object v5, p0, Llibs/yj;->a:[B
 
     .line 40
@@ -163,7 +163,7 @@
     array-length v6, v5
 
     .line 42
-    if-eq v1, v6, :cond_34
+    if-eq v1, v6, :cond_0
 
     .line 43
     .line 44
@@ -183,19 +183,19 @@
 
     .line 51
     .line 52
-    goto :goto_26
+    goto :goto_0
 
     .line 53
-    :cond_34
+    :cond_0
     move v1, v0
 
     .line 54
-    :goto_35
+    :goto_1
     iget v5, p0, Llibs/yj;->b:I
 
     .line 55
     .line 56
-    if-eq v1, v5, :cond_48
+    if-eq v1, v5, :cond_1
 
     .line 57
     .line 58
@@ -229,10 +229,10 @@
 
     .line 71
     .line 72
-    goto :goto_35
+    goto :goto_1
 
     .line 73
-    :cond_48
+    :cond_1
     iget-object v1, p0, Llibs/yj;->d:Llibs/cg;
 
     .line 74
@@ -241,7 +241,7 @@
 
     .line 76
     .line 77
-    if-eqz v5, :cond_58
+    if-eqz v5, :cond_2
 
     .line 78
     .line 79
@@ -262,10 +262,10 @@
     .line 86
     .line 87
     .line 88
-    goto :goto_5d
+    goto :goto_2
 
     .line 89
-    :cond_58
+    :cond_2
     iget-object v5, p0, Llibs/yj;->a:[B
 
     .line 90
@@ -275,7 +275,7 @@
     .line 92
     .line 93
     .line 94
-    :goto_5d
+    :goto_2
     add-int/2addr p1, v0
 
     .line 95
@@ -284,19 +284,19 @@
     .line 96
     .line 97
     .line 98
-    goto :goto_b0
+    goto :goto_5
 
     .line 99
-    :cond_62
+    :cond_3
     invoke-static {v4, v2, p2, p1, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 100
     .line 101
     .line 102
-    goto :goto_b0
+    goto :goto_5
 
     .line 103
-    :cond_66
+    :cond_4
     invoke-static {v6}, Llibs/fg3;->f(Ljava/lang/String;)V
 
     .line 104
@@ -305,8 +305,8 @@
     return v2
 
     .line 107
-    :cond_6a
-    if-lt v1, v0, :cond_b6
+    :cond_5
+    if-lt v1, v0, :cond_9
 
     .line 108
     .line 109
@@ -318,7 +318,7 @@
 
     .line 112
     .line 113
-    if-le v1, v0, :cond_a8
+    if-le v1, v0, :cond_8
 
     .line 114
     .line 115
@@ -326,7 +326,7 @@
 
     .line 116
     .line 117
-    if-eqz v1, :cond_80
+    if-eqz v1, :cond_6
 
     .line 118
     .line 119
@@ -347,10 +347,10 @@
     .line 126
     .line 127
     .line 128
-    goto :goto_85
+    goto :goto_3
 
     .line 129
-    :cond_80
+    :cond_6
     iget-object v1, p0, Llibs/yj;->a:[B
 
     .line 130
@@ -360,16 +360,16 @@
     .line 132
     .line 133
     .line 134
-    :goto_85
+    :goto_3
     move v1, v0
 
     .line 135
-    :goto_86
+    :goto_4
     iget v6, p0, Llibs/yj;->b:I
 
     .line 136
     .line 137
-    if-eq v1, v6, :cond_99
+    if-eq v1, v6, :cond_7
 
     .line 138
     .line 139
@@ -403,10 +403,10 @@
 
     .line 152
     .line 153
-    goto :goto_86
+    goto :goto_4
 
     .line 154
-    :cond_99
+    :cond_7
     iget-object v1, p0, Llibs/yj;->a:[B
 
     .line 155
@@ -433,10 +433,10 @@
     .line 166
     .line 167
     .line 168
-    goto :goto_b0
+    goto :goto_5
 
     .line 169
-    :cond_a8
+    :cond_8
     iget-object v1, p0, Llibs/yj;->a:[B
 
     .line 170
@@ -451,7 +451,7 @@
     .line 175
     .line 176
     .line 177
-    :goto_b0
+    :goto_5
     iget p1, p0, Llibs/yj;->b:I
 
     .line 178
@@ -464,7 +464,7 @@
     return p1
 
     .line 183
-    :cond_b6
+    :cond_9
     invoke-static {v6}, Llibs/fg3;->f(Ljava/lang/String;)V
 
     .line 184
@@ -473,7 +473,7 @@
     return v2
 
     .line 187
-    :cond_ba
+    :cond_a
     const-string p1, "output buffer to small in doFinal"
 
     .line 188
@@ -487,7 +487,7 @@
 .end method
 
 .method public final b(I)I
-    .registers 3
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/yj;->b:I
@@ -501,7 +501,7 @@
 .end method
 
 .method public final c(I)I
-    .registers 4
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/yj;->b:I
@@ -522,7 +522,7 @@
 
     .line 8
     .line 9
-    if-nez v1, :cond_d
+    if-nez v1, :cond_0
 
     .line 10
     .line 11
@@ -535,7 +535,7 @@
     return p1
 
     .line 14
-    :cond_d
+    :cond_0
     sub-int/2addr p1, v1
 
     .line 15
@@ -543,13 +543,13 @@
 .end method
 
 .method public final e(III[B[B)I
-    .registers 12
+    .locals 6
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-ltz p2, :cond_60
+    if-ltz p2, :cond_4
 
     .line 3
     .line 4
@@ -573,7 +573,7 @@
     move-result v2
 
     .line 14
-    if-lez v2, :cond_1a
+    if-lez v2, :cond_1
 
     .line 15
     .line 16
@@ -583,14 +583,14 @@
     array-length v3, p5
 
     .line 18
-    if-gt v2, v3, :cond_14
+    if-gt v2, v3, :cond_0
 
     .line 19
     .line 20
-    goto :goto_1a
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_0
     const-string p1, "output buffer too short"
 
     .line 22
@@ -603,8 +603,8 @@
     return v0
 
     .line 27
-    :cond_1a
-    :goto_1a
+    :cond_1
+    :goto_0
     iget-object v2, p0, Llibs/yj;->a:[B
 
     .line 28
@@ -619,7 +619,7 @@
     sub-int/2addr v3, v4
 
     .line 33
-    if-le p2, v3, :cond_53
+    if-le p2, v3, :cond_3
 
     .line 34
     .line 35
@@ -663,8 +663,8 @@
     add-int/2addr p1, v3
 
     .line 55
-    :goto_36
-    if-le p2, v1, :cond_52
+    :goto_1
+    if-le p2, v1, :cond_2
 
     .line 56
     .line 57
@@ -719,14 +719,14 @@
     add-int/2addr p1, v1
 
     .line 82
-    goto :goto_36
+    goto :goto_1
 
     .line 83
-    :cond_52
+    :cond_2
     move v0, v2
 
     .line 84
-    :cond_53
+    :cond_3
     iget-object p3, p0, Llibs/yj;->a:[B
 
     .line 85
@@ -754,7 +754,7 @@
     return v0
 
     .line 97
-    :cond_60
+    :cond_4
     const-string p1, "Can\'t have a negative input length!"
 
     .line 98

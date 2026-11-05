@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 6
+    .locals 6
 
     .line 1
     new-instance v0, Llibs/no0;
@@ -178,7 +178,7 @@
     monitor-enter v2
 
     .line 85
-    :try_start_54
+    :try_start_0
     new-instance v3, Ljava/util/HashMap;
 
     .line 86
@@ -198,8 +198,8 @@
     .line 94
     .line 95
     sput-object v3, Llibs/fh0;->b:Ljava/util/HashMap;
-    :try_end_60
-    .catchall {:try_start_54 .. :try_end_60} :catchall_62
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 96
     .line 97
@@ -209,21 +209,21 @@
     return-void
 
     .line 99
-    :catchall_62
+    :catchall_0
     move-exception v0
 
     .line 100
-    :try_start_63
+    :try_start_1
     monitor-exit v2
-    :try_end_64
-    .catchall {:try_start_63 .. :try_end_64} :catchall_62
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 101
     throw v0
 .end method
 
 .method public static a()Llibs/eh0;
-    .registers 3
+    .locals 3
 
     .line 1
     sget-object v0, Llibs/fh0;->b:Ljava/util/HashMap;

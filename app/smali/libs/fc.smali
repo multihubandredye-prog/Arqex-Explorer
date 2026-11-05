@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic a(Landroid/content/pm/PackageInfo;)J
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Landroid/content/pm/PackageInfo;->getLongVersionCode()J
@@ -20,7 +20,7 @@
 .end method
 
 .method public static bridge synthetic b(Lcom/mixplorer/widgets/MiEditor;)Landroid/text/PrecomputedText$Params;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/widget/TextView;->getTextMetricsParams()Landroid/text/PrecomputedText$Params;
@@ -35,7 +35,7 @@
 .end method
 
 .method public static bridge synthetic c(Ljava/lang/String;Landroid/text/PrecomputedText$Params;)Landroid/text/PrecomputedText;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p0, p1}, Landroid/text/PrecomputedText;->create(Ljava/lang/CharSequence;Landroid/text/PrecomputedText$Params;)Landroid/text/PrecomputedText;
@@ -50,7 +50,7 @@
 .end method
 
 .method public static bridge synthetic d()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 1
     invoke-static {}, Landroid/app/Application;->getProcessName()Ljava/lang/String;
@@ -65,7 +65,7 @@
 .end method
 
 .method public static bridge synthetic e(Landroid/view/Window;I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/Window;->setNavigationBarDividerColor(I)V
@@ -77,7 +77,7 @@
 .end method
 
 .method public static bridge synthetic f(Landroid/view/WindowManager$LayoutParams;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x3
@@ -91,7 +91,7 @@
 .end method
 
 .method public static bridge synthetic g(Ljava/lang/String;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-static {p0}, Landroid/webkit/WebView;->setDataDirectorySuffix(Ljava/lang/String;)V
@@ -103,7 +103,7 @@
 .end method
 
 .method public static bridge synthetic h(Ljava/lang/Object;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     instance-of p0, p0, Landroid/text/PrecomputedText;
@@ -114,7 +114,7 @@
 .end method
 
 .method public static bridge synthetic i(Landroid/view/WindowManager$LayoutParams;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1

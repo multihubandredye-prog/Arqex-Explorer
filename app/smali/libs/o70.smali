@@ -14,7 +14,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     const/16 v0, 0x9
@@ -25,7 +25,7 @@
 
     .line 4
     .line 5
-    fill-array-data v1, :array_3c
+    fill-array-data v1, :array_0
 
     .line 6
     .line 7
@@ -145,7 +145,7 @@
     return-void
 
     .line 61
-    :array_3c
+    :array_0
     .array-data 4
         0x1
         0x5
@@ -160,7 +160,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const-string v0, "Decryption failed"
 
@@ -171,7 +171,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
@@ -181,8 +181,8 @@
 
     .line 3
     .line 4
-    :goto_3
-    if-lt v1, v0, :cond_1e
+    :goto_0
+    if-lt v1, v0, :cond_2
 
     .line 5
     .line 6
@@ -202,7 +202,7 @@
 
     .line 13
     .line 14
-    if-le p1, v3, :cond_13
+    if-le p1, v3, :cond_0
 
     .line 15
     .line 16
@@ -213,11 +213,11 @@
     move v0, v2
 
     .line 19
-    goto :goto_3
+    goto :goto_0
 
     .line 20
-    :cond_13
-    if-ge p1, v3, :cond_19
+    :cond_0
+    if-ge p1, v3, :cond_1
 
     .line 21
     .line 22
@@ -228,10 +228,10 @@
     move v1, v2
 
     .line 25
-    goto :goto_3
+    goto :goto_0
 
     .line 26
-    :cond_19
+    :cond_1
     sget-object p1, Llibs/o70;->Y:[Ljava/lang/String;
 
     .line 27
@@ -240,10 +240,10 @@
 
     .line 29
     .line 30
-    goto :goto_2a
+    goto :goto_1
 
     .line 31
-    :cond_1e
+    :cond_2
     const/16 v0, 0x8
 
     .line 32
@@ -268,7 +268,7 @@
     move-result-object p1
 
     .line 43
-    :goto_2a
+    :goto_1
     invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
     .line 44
@@ -278,23 +278,23 @@
 .end method
 
 .method public constructor <init>(ILjava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 49
     invoke-direct {p0, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
     const/4 p2, 0x1
 
-    if-lt p1, p2, :cond_a
+    if-lt p1, p2, :cond_0
 
     const/4 p2, 0x6
 
-    if-gt p1, p2, :cond_a
+    if-gt p1, p2, :cond_0
 
     return-void
 
     .line 50
-    :cond_a
+    :cond_0
     invoke-static {}, Llibs/ic0;->l()V
 
     const/4 p1, 0x0
@@ -303,7 +303,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 47
     invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V

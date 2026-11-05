@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljavax/net/ssl/TrustManagerFactorySpi;-><init>()V
@@ -23,14 +23,14 @@
 
 # virtual methods
 .method public engineGetTrustManagers()[Ljavax/net/ssl/TrustManager;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/TrustManagerFactoryImpl;->keyStore:Ljava/security/KeyStore;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -64,7 +64,7 @@
     return-object v1
 
     .line 19
-    :cond_12
+    :cond_0
     const-string v0, "TrustManagerFactory is not initialized"
 
     .line 20
@@ -81,10 +81,10 @@
 .end method
 
 .method public engineInit(Ljava/security/KeyStore;)V
-    .registers 2
+    .locals 0
 
     .line 1
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 2
     .line 3
@@ -95,7 +95,7 @@
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     invoke-static {}, Lorg/conscrypt/Platform;->getDefaultCertKeyStore()Ljava/security/KeyStore;
 
     .line 7
@@ -112,7 +112,7 @@
 .end method
 
 .method public engineInit(Ljavax/net/ssl/ManagerFactoryParameters;)V
-    .registers 3
+    .locals 1
 
     .line 13
     new-instance p1, Ljava/security/InvalidAlgorithmParameterException;

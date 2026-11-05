@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     sget-boolean v0, Lorg/conscrypt/SSLUtils;->USE_ENGINE_SOCKET_BY_DEFAULT:Z
@@ -32,7 +32,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 5
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljavax/net/ssl/SSLSocketFactory;-><init>()V
@@ -51,15 +51,15 @@
     const/4 v0, 0x0
 
     .line 9
-    :try_start_8
+    :try_start_0
     invoke-static {}, Lorg/conscrypt/SSLParametersImpl;->getDefault()Lorg/conscrypt/SSLParametersImpl;
 
     .line 10
     .line 11
     .line 12
     move-result-object v1
-    :try_end_c
-    .catch Ljava/security/KeyManagementException; {:try_start_8 .. :try_end_c} :catch_f
+    :try_end_0
+    .catch Ljava/security/KeyManagementException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 13
     move-object v2, v0
@@ -68,10 +68,10 @@
     move-object v0, v1
 
     .line 15
-    goto :goto_17
+    goto :goto_0
 
     .line 16
-    :catch_f
+    :catch_0
     move-exception v1
 
     .line 17
@@ -88,7 +88,7 @@
     .line 22
     .line 23
     .line 24
-    :goto_17
+    :goto_0
     iput-object v0, p0, Lorg/conscrypt/OpenSSLSocketFactoryImpl;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
 
     .line 25
@@ -101,7 +101,7 @@
 .end method
 
 .method public constructor <init>(Lorg/conscrypt/SSLParametersImpl;)V
-    .registers 3
+    .locals 1
 
     .line 29
     invoke-direct {p0}, Ljavax/net/ssl/SSLSocketFactory;-><init>()V
@@ -123,13 +123,13 @@
 .end method
 
 .method private hasFileDescriptor(Ljava/net/Socket;)Z
-    .registers 2
+    .locals 0
 
     .line 1
     :try_start_0
     invoke-static {p1}, Lorg/conscrypt/Platform;->getFileDescriptor(Ljava/net/Socket;)Ljava/io/FileDescriptor;
-    :try_end_3
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_3} :catch_5
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 2
     .line 3
@@ -140,7 +140,7 @@
     return p1
 
     .line 6
-    :catch_5
+    :catch_0
     const/4 p1, 0x0
 
     .line 7
@@ -148,7 +148,7 @@
 .end method
 
 .method public static setUseEngineSocketByDefault(Z)V
-    .registers 3
+    .locals 2
 
     .line 1
     sput-boolean p0, Lorg/conscrypt/OpenSSLSocketFactoryImpl;->useEngineSocketByDefault:Z
@@ -167,7 +167,7 @@
 
     .line 8
     .line 9
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     .line 10
     .line 11
@@ -180,19 +180,19 @@
     .line 14
     .line 15
     .line 16
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public createSocket()Ljava/net/Socket;
-    .registers 3
+    .locals 2
 
     .line 80
     iget-object v0, p0, Lorg/conscrypt/OpenSSLSocketFactoryImpl;->instantiationException:Ljava/io/IOException;
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_1
 
     .line 81
     iget-boolean v0, p0, Lorg/conscrypt/OpenSSLSocketFactoryImpl;->useEngineSocket:Z
@@ -200,7 +200,7 @@
     .line 82
     iget-object v1, p0, Lorg/conscrypt/OpenSSLSocketFactoryImpl;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 83
     invoke-virtual {v1}, Lorg/conscrypt/SSLParametersImpl;->clone()Ljava/lang/Object;
@@ -216,7 +216,7 @@
     return-object v0
 
     .line 84
-    :cond_15
+    :cond_0
     invoke-virtual {v1}, Lorg/conscrypt/SSLParametersImpl;->clone()Ljava/lang/Object;
 
     move-result-object v0
@@ -230,12 +230,12 @@
     return-object v0
 
     .line 85
-    :cond_20
+    :cond_1
     throw v0
 .end method
 
 .method public createSocket(Ljava/lang/String;I)Ljava/net/Socket;
-    .registers 5
+    .locals 2
 
     .line 56
     iget-boolean v0, p0, Lorg/conscrypt/OpenSSLSocketFactoryImpl;->useEngineSocket:Z
@@ -243,7 +243,7 @@
     .line 57
     iget-object v1, p0, Lorg/conscrypt/OpenSSLSocketFactoryImpl;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 58
     invoke-virtual {v1}, Lorg/conscrypt/SSLParametersImpl;->clone()Ljava/lang/Object;
@@ -260,7 +260,7 @@
     return-object p1
 
     .line 60
-    :cond_11
+    :cond_0
     invoke-virtual {v1}, Lorg/conscrypt/SSLParametersImpl;->clone()Ljava/lang/Object;
 
     move-result-object v0
@@ -276,7 +276,7 @@
 .end method
 
 .method public createSocket(Ljava/lang/String;ILjava/net/InetAddress;I)Ljava/net/Socket;
-    .registers 7
+    .locals 2
 
     .line 62
     iget-boolean v0, p0, Lorg/conscrypt/OpenSSLSocketFactoryImpl;->useEngineSocket:Z
@@ -284,7 +284,7 @@
     .line 63
     iget-object v1, p0, Lorg/conscrypt/OpenSSLSocketFactoryImpl;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 64
     invoke-virtual {v1}, Lorg/conscrypt/SSLParametersImpl;->clone()Ljava/lang/Object;
@@ -301,7 +301,7 @@
     return-object p1
 
     .line 66
-    :cond_11
+    :cond_0
     invoke-virtual {v1}, Lorg/conscrypt/SSLParametersImpl;->clone()Ljava/lang/Object;
 
     move-result-object v0
@@ -317,7 +317,7 @@
 .end method
 
 .method public createSocket(Ljava/net/InetAddress;I)Ljava/net/Socket;
-    .registers 5
+    .locals 2
 
     .line 68
     iget-boolean v0, p0, Lorg/conscrypt/OpenSSLSocketFactoryImpl;->useEngineSocket:Z
@@ -325,7 +325,7 @@
     .line 69
     iget-object v1, p0, Lorg/conscrypt/OpenSSLSocketFactoryImpl;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 70
     invoke-virtual {v1}, Lorg/conscrypt/SSLParametersImpl;->clone()Ljava/lang/Object;
@@ -342,7 +342,7 @@
     return-object p1
 
     .line 72
-    :cond_11
+    :cond_0
     invoke-virtual {v1}, Lorg/conscrypt/SSLParametersImpl;->clone()Ljava/lang/Object;
 
     move-result-object v0
@@ -358,7 +358,7 @@
 .end method
 
 .method public createSocket(Ljava/net/InetAddress;ILjava/net/InetAddress;I)Ljava/net/Socket;
-    .registers 7
+    .locals 2
 
     .line 74
     iget-boolean v0, p0, Lorg/conscrypt/OpenSSLSocketFactoryImpl;->useEngineSocket:Z
@@ -366,7 +366,7 @@
     .line 75
     iget-object v1, p0, Lorg/conscrypt/OpenSSLSocketFactoryImpl;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 76
     invoke-virtual {v1}, Lorg/conscrypt/SSLParametersImpl;->clone()Ljava/lang/Object;
@@ -383,7 +383,7 @@
     return-object p1
 
     .line 78
-    :cond_11
+    :cond_0
     invoke-virtual {v1}, Lorg/conscrypt/SSLParametersImpl;->clone()Ljava/lang/Object;
 
     move-result-object v0
@@ -399,7 +399,7 @@
 .end method
 
 .method public createSocket(Ljava/net/Socket;Ljava/lang/String;IZ)Ljava/net/Socket;
-    .registers 6
+    .locals 1
 
     .line 1
     const-string v0, "socket"
@@ -419,7 +419,7 @@
     move-result v0
 
     .line 10
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_1
 
     .line 11
     .line 12
@@ -427,7 +427,7 @@
 
     .line 13
     .line 14
-    if-nez v0, :cond_22
+    if-nez v0, :cond_0
 
     .line 15
     .line 16
@@ -439,7 +439,7 @@
     move-result v0
 
     .line 20
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_0
 
     .line 21
     .line 22
@@ -470,7 +470,7 @@
     return-object p1
 
     .line 35
-    :cond_22
+    :cond_0
     iget-object v0, p0, Lorg/conscrypt/OpenSSLSocketFactoryImpl;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
 
     .line 36
@@ -498,7 +498,7 @@
     return-object p1
 
     .line 48
-    :cond_2f
+    :cond_1
     new-instance p1, Ljava/net/SocketException;
 
     .line 49
@@ -516,7 +516,7 @@
 .end method
 
 .method public getDefaultCipherSuites()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLSocketFactoryImpl;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -535,7 +535,7 @@
 .end method
 
 .method public getSupportedCipherSuites()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-static {}, Lorg/conscrypt/NativeCrypto;->getSupportedCipherSuites()[Ljava/lang/String;
@@ -550,7 +550,7 @@
 .end method
 
 .method public setUseEngineSocket(Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-boolean p1, p0, Lorg/conscrypt/OpenSSLSocketFactoryImpl;->useEngineSocket:Z

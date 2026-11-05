@@ -15,7 +15,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(BLjava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 10
     iput-byte p1, p0, Llibs/xg;->X:B
@@ -28,7 +28,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;ZZZ)V
-    .registers 5
+    .locals 0
 
     .line 1
     const/4 p2, 0x0
@@ -53,14 +53,14 @@
 
 # virtual methods
 .method public a()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/xg;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_a
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -71,7 +71,7 @@
     return-object v0
 
     .line 8
-    :pswitch_7
+    :pswitch_0
     const/4 v0, 0x0
 
     .line 9
@@ -81,14 +81,14 @@
     nop
 
     .line 11
-    :pswitch_data_a
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_7
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public b()Z
-    .registers 4
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/xg;->X:B
@@ -98,7 +98,7 @@
     const/4 v1, 0x0
 
     .line 4
-    packed-switch v0, :pswitch_data_1c
+    packed-switch v0, :pswitch_data_0
 
     .line 5
     .line 6
@@ -106,7 +106,7 @@
     return v1
 
     .line 8
-    :pswitch_7
+    :pswitch_0
     iget-object v0, p0, Llibs/xg;->Y:Ljava/lang/String;
 
     .line 9
@@ -123,7 +123,7 @@
     move-result v2
 
     .line 16
-    if-nez v2, :cond_19
+    if-nez v2, :cond_0
 
     .line 17
     .line 18
@@ -139,29 +139,29 @@
     move-result v0
 
     .line 24
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
     .line 25
     .line 26
-    :cond_19
+    :cond_0
     const/4 v1, 0x1
 
     .line 27
-    :cond_1a
+    :cond_1
     return v1
 
     .line 28
     nop
 
     .line 29
-    :pswitch_data_1c
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_7
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public d()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/xg;->Y:Ljava/lang/String;
@@ -172,7 +172,7 @@
 .end method
 
 .method public getMethod()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "GET"
@@ -183,7 +183,7 @@
 .end method
 
 .method public j()Ljava/io/InputStream;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -193,14 +193,14 @@
 .end method
 
 .method public k(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public l(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/xg;->Y:Ljava/lang/String;
@@ -211,14 +211,14 @@
 .end method
 
 .method public stream()Ljava/io/InputStream;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/xg;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_2a
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -250,7 +250,7 @@
     return-object v0
 
     .line 19
-    :pswitch_12
+    :pswitch_0
     iget-object v0, p0, Llibs/xg;->Y:Ljava/lang/String;
 
     .line 20
@@ -267,7 +267,7 @@
     move-result-object v0
 
     .line 27
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_0
 
     .line 28
     .line 29
@@ -279,7 +279,7 @@
     move-result v1
 
     .line 33
-    if-nez v1, :cond_28
+    if-nez v1, :cond_0
 
     .line 34
     .line 35
@@ -295,21 +295,21 @@
     move-object v0, v1
 
     .line 41
-    :cond_28
+    :cond_0
     return-object v0
 
     .line 42
     nop
 
     .line 43
-    :pswitch_data_2a
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_12
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public t()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -319,7 +319,7 @@
 .end method
 
 .method public u()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0

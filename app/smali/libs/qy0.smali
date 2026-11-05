@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     const-string v0, "HmacSha256"
@@ -27,14 +27,14 @@
 
 # virtual methods
 .method public final d([B)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/Upsilon;->d:Ljava/lang/String;
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     invoke-static {v0}, Llibs/ad1;->c(Ljava/lang/String;)Ljava/security/Provider;
 
     .line 4
@@ -43,7 +43,7 @@
     move-result-object v1
 
     .line 7
-    if-nez v1, :cond_f
+    if-nez v1, :cond_0
 
     .line 8
     .line 9
@@ -55,17 +55,17 @@
     move-result-object v1
 
     .line 13
-    goto :goto_17
+    goto :goto_0
 
     .line 14
-    :catchall_d
+    :catchall_0
     move-exception p1
 
     .line 15
-    goto :goto_2c
+    goto :goto_1
 
     .line 16
-    :cond_f
+    :cond_0
     invoke-static {v0}, Llibs/ad1;->c(Ljava/lang/String;)Ljava/security/Provider;
 
     .line 17
@@ -82,7 +82,7 @@
     move-result-object v1
 
     .line 24
-    :goto_17
+    :goto_0
     iput-object v1, p0, Llibs/Upsilon;->a:Ljavax/crypto/Mac;
 
     .line 25
@@ -117,8 +117,8 @@
     .line 40
     .line 41
     invoke-virtual {v0, p1}, Ljavax/crypto/Mac;->init(Ljava/security/Key;)V
-    :try_end_2b
-    .catchall {:try_start_2 .. :try_end_2b} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 42
     .line 43
@@ -126,7 +126,7 @@
     return-void
 
     .line 45
-    :goto_2c
+    :goto_1
     new-instance v0, Llibs/fe3;
 
     .line 46

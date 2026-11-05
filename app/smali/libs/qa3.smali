@@ -26,7 +26,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 1
     const/4 v0, 0x2
@@ -113,7 +113,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -173,14 +173,14 @@
 
 # virtual methods
 .method public final a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
-    .registers 15
+    .locals 11
 
     .line 1
     sget v0, Llibs/y81;->a:I
 
     .line 2
     .line 3
-    if-nez p3, :cond_7
+    if-nez p3, :cond_0
 
     .line 4
     .line 5
@@ -188,14 +188,14 @@
 
     .line 6
     .line 7
-    goto :goto_8
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     move-object v0, p3
 
     .line 9
-    :goto_8
+    :goto_0
     sget-object v1, Llibs/w81;->a:[I
 
     .line 10
@@ -224,36 +224,36 @@
     const/4 v4, 0x1
 
     .line 21
-    if-eq v0, v4, :cond_1e
+    if-eq v0, v4, :cond_2
 
     .line 22
     .line 23
-    if-eq v0, v3, :cond_1c
+    if-eq v0, v3, :cond_1
 
     .line 24
     .line 25
-    if-eq v0, v2, :cond_1c
+    if-eq v0, v2, :cond_1
 
     .line 26
     .line 27
     const/4 v0, 0x4
 
     .line 28
-    goto :goto_1f
+    goto :goto_1
 
     .line 29
-    :cond_1c
+    :cond_1
     const/4 v0, 0x2
 
     .line 30
-    goto :goto_1f
+    goto :goto_1
 
     .line 31
-    :cond_1e
+    :cond_2
     const/4 v0, 0x1
 
     .line 32
-    :goto_1f
+    :goto_1
     mul-int v5, p1, p2
 
     .line 33
@@ -286,7 +286,7 @@
 
     .line 47
     .line 48
-    if-nez v7, :cond_35
+    if-nez v7, :cond_3
 
     .line 49
     .line 50
@@ -298,7 +298,7 @@
     move-result-object v7
 
     .line 54
-    :cond_35
+    :cond_3
     check-cast v7, Llibs/pa3;
 
     .line 55
@@ -330,19 +330,19 @@
     const/4 v9, 0x0
 
     .line 69
-    if-eq v8, v4, :cond_5a
+    if-eq v8, v4, :cond_7
 
     .line 70
     .line 71
-    if-eq v8, v3, :cond_57
+    if-eq v8, v3, :cond_6
 
     .line 72
     .line 73
-    if-eq v8, v2, :cond_54
+    if-eq v8, v2, :cond_5
 
     .line 74
     .line 75
-    if-eq v8, v1, :cond_51
+    if-eq v8, v1, :cond_4
 
     .line 76
     .line 77
@@ -354,44 +354,44 @@
 
     .line 80
     .line 81
-    goto :goto_5c
+    goto :goto_2
 
     .line 82
-    :cond_51
+    :cond_4
     sget-object v1, Llibs/qa3;->Xi:[Landroid/graphics/Bitmap$Config;
 
     .line 83
     .line 84
-    goto :goto_5c
+    goto :goto_2
 
     .line 85
-    :cond_54
+    :cond_5
     sget-object v1, Llibs/qa3;->Nu:[Landroid/graphics/Bitmap$Config;
 
     .line 86
     .line 87
-    goto :goto_5c
+    goto :goto_2
 
     .line 88
-    :cond_57
+    :cond_6
     sget-object v1, Llibs/qa3;->Mu:[Landroid/graphics/Bitmap$Config;
 
     .line 89
     .line 90
-    goto :goto_5c
+    goto :goto_2
 
     .line 91
-    :cond_5a
+    :cond_7
     sget-object v1, Llibs/qa3;->Lambda:[Landroid/graphics/Bitmap$Config;
 
     .line 92
     .line 93
-    :goto_5c
+    :goto_2
     array-length v2, v1
 
     .line 94
-    :goto_5d
-    if-ge v9, v2, :cond_a5
+    :goto_3
+    if-ge v9, v2, :cond_b
 
     .line 95
     .line 96
@@ -427,7 +427,7 @@
 
     .line 111
     .line 112
-    if-eqz v4, :cond_a2
+    if-eqz v4, :cond_a
 
     .line 113
     .line 114
@@ -443,7 +443,7 @@
 
     .line 119
     .line 120
-    if-gt v8, v10, :cond_a2
+    if-gt v8, v10, :cond_a
 
     .line 121
     .line 122
@@ -455,11 +455,11 @@
     move-result v1
 
     .line 126
-    if-ne v1, v5, :cond_87
+    if-ne v1, v5, :cond_8
 
     .line 127
     .line 128
-    if-eqz v3, :cond_87
+    if-eqz v3, :cond_8
 
     .line 129
     .line 130
@@ -471,11 +471,11 @@
     move-result p3
 
     .line 134
-    if-nez p3, :cond_a5
+    if-nez p3, :cond_b
 
     .line 135
     .line 136
-    :cond_87
+    :cond_8
     invoke-virtual {v0, v7}, Llibs/Color;->d(Llibs/ae2;)V
 
     .line 137
@@ -501,7 +501,7 @@
 
     .line 148
     .line 149
-    if-nez v1, :cond_9a
+    if-nez v1, :cond_9
 
     .line 150
     .line 151
@@ -513,7 +513,7 @@
     move-result-object v1
 
     .line 155
-    :cond_9a
+    :cond_9
     move-object v7, v1
 
     .line 156
@@ -529,19 +529,19 @@
 
     .line 161
     .line 162
-    goto :goto_a5
+    goto :goto_4
 
     .line 163
-    :cond_a2
+    :cond_a
     add-int/lit8 v9, v9, 0x1
 
     .line 164
     .line 165
-    goto :goto_5d
+    goto :goto_3
 
     .line 166
-    :cond_a5
-    :goto_a5
+    :cond_b
+    :goto_4
     iget-object p3, p0, Llibs/qa3;->Y:Llibs/za;
 
     .line 167
@@ -558,7 +558,7 @@
 
     .line 173
     .line 174
-    if-eqz p3, :cond_d0
+    if-eqz p3, :cond_e
 
     .line 175
     .line 176
@@ -570,7 +570,7 @@
     move-result v0
 
     .line 180
-    if-nez v0, :cond_cb
+    if-nez v0, :cond_d
 
     .line 181
     .line 182
@@ -599,19 +599,19 @@
     .line 193
     .line 194
     .line 195
-    if-eqz v0, :cond_c5
+    if-eqz v0, :cond_c
 
     .line 196
     .line 197
-    goto :goto_c7
+    goto :goto_5
 
     .line 198
-    :cond_c5
+    :cond_c
     sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     .line 199
     .line 200
-    :goto_c7
+    :goto_5
     invoke-static {p3, p1, p2, v0}, Llibs/qc0;->q(Landroid/graphics/Bitmap;IILandroid/graphics/Bitmap$Config;)V
 
     .line 201
@@ -620,7 +620,7 @@
     return-object p3
 
     .line 204
-    :cond_cb
+    :cond_d
     const-string p1, "RECYCLED!!! > Shouldn\'t happen, find it!!"
 
     .line 205
@@ -630,12 +630,12 @@
     .line 207
     .line 208
     .line 209
-    :cond_d0
+    :cond_e
     return-object p3
 .end method
 
 .method public final b(Landroid/graphics/Bitmap;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-static {p1}, Llibs/y81;->List(Landroid/graphics/Bitmap;)I
@@ -678,7 +678,7 @@
 
     .line 20
     .line 21
-    if-nez v3, :cond_1a
+    if-nez v3, :cond_0
 
     .line 22
     .line 23
@@ -690,7 +690,7 @@
     move-result-object v3
 
     .line 27
-    :cond_1a
+    :cond_0
     check-cast v3, Llibs/pa3;
 
     .line 28
@@ -767,14 +767,14 @@
     const/4 v2, 0x1
 
     .line 65
-    if-nez v0, :cond_43
+    if-nez v0, :cond_1
 
     .line 66
     .line 67
-    goto :goto_48
+    goto :goto_0
 
     .line 68
-    :cond_43
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     .line 69
@@ -786,7 +786,7 @@
     add-int/2addr v2, v0
 
     .line 73
-    :goto_48
+    :goto_0
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 74
@@ -804,7 +804,7 @@
 .end method
 
 .method public final c(Ljava/lang/Integer;Landroid/graphics/Bitmap$Config;)V
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-virtual {p0, p2}, Llibs/qa3;->d(Landroid/graphics/Bitmap$Config;)Ljava/util/NavigableMap;
@@ -827,14 +827,14 @@
 
     .line 10
     .line 11
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 12
     .line 13
     return-void
 
     .line 14
-    :cond_d
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     .line 15
@@ -846,7 +846,7 @@
     const/4 v2, 0x1
 
     .line 19
-    if-ne v1, v2, :cond_18
+    if-ne v1, v2, :cond_1
 
     .line 20
     .line 21
@@ -858,7 +858,7 @@
     return-void
 
     .line 25
-    :cond_18
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     .line 26
@@ -887,7 +887,7 @@
 .end method
 
 .method public final d(Landroid/graphics/Bitmap$Config;)Ljava/util/NavigableMap;
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/qa3;->Z:Ljava/util/HashMap;
@@ -906,7 +906,7 @@
 
     .line 8
     .line 9
-    if-nez v1, :cond_12
+    if-nez v1, :cond_0
 
     .line 10
     .line 11
@@ -924,12 +924,12 @@
     .line 17
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     return-object v1
 .end method
 
 .method public final k(Landroid/graphics/Bitmap;)I
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p1}, Llibs/y81;->List(Landroid/graphics/Bitmap;)I
@@ -944,7 +944,7 @@
 .end method
 
 .method public final removeLast()Landroid/graphics/Bitmap;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/qa3;->Y:Llibs/za;
@@ -963,7 +963,7 @@
 
     .line 8
     .line 9
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -996,6 +996,6 @@
     .line 24
     .line 25
     .line 26
-    :cond_19
+    :cond_0
     return-object v0
 .end method

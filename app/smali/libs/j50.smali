@@ -9,7 +9,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(ZLlibs/et;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/d6;-><init>(Z)V

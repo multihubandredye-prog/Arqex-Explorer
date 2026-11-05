@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/yp1;Llibs/xp1;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/up1;->b:Llibs/yp1;
@@ -36,14 +36,14 @@
 
 # virtual methods
 .method public final onAnimationEnd(Landroid/view/animation/Animation;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final onAnimationRepeat(Landroid/view/animation/Animation;)V
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/up1;->a:Llibs/xp1;
@@ -113,7 +113,7 @@
 
     .line 33
     .line 34
-    if-eqz v2, :cond_35
+    if-eqz v2, :cond_1
 
     .line 35
     .line 36
@@ -137,7 +137,7 @@
 
     .line 45
     .line 46
-    if-eqz p1, :cond_34
+    if-eqz p1, :cond_0
 
     .line 47
     .line 48
@@ -150,11 +150,11 @@
     .line 51
     .line 52
     .line 53
-    :cond_34
+    :cond_0
     return-void
 
     .line 54
-    :cond_35
+    :cond_1
     iget p1, v1, Llibs/yp1;->Xi:F
 
     .line 55
@@ -181,7 +181,7 @@
 .end method
 
 .method public final onAnimationStart(Landroid/view/animation/Animation;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object p1, p0, Llibs/up1;->b:Llibs/yp1;

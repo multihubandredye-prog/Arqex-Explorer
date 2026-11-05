@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(IZ)V
-    .registers 5
+    .locals 2
 
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
@@ -71,7 +71,7 @@
 
 # virtual methods
 .method public draw(Landroid/graphics/Canvas;)V
-    .registers 13
+    .locals 11
 
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
@@ -103,13 +103,13 @@
 
     cmpg-float v3, v0, v3
 
-    if-gtz v3, :cond_1f
+    if-gtz v3, :cond_0
 
     iget v0, p0, Llibs/SmartFeaturesV116$HiddenFilesIconDrawable;->sizePx:I
 
     int-to-float v0, v0
 
-    :cond_1f
+    :cond_0
     iget-object v3, p0, Llibs/SmartFeaturesV116$HiddenFilesIconDrawable;->path:Landroid/graphics/Path;
 
     invoke-virtual {v3}, Landroid/graphics/Path;->reset()V
@@ -168,7 +168,7 @@
 
     iget-boolean v3, p0, Llibs/SmartFeaturesV116$HiddenFilesIconDrawable;->active:Z
 
-    if-nez v3, :cond_7c
+    if-nez v3, :cond_1
 
     const v3, 0x3e23d70a    # 0.16f
 
@@ -198,12 +198,12 @@
 
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    :cond_7c
+    :cond_1
     return-void
 .end method
 
 .method public getIntrinsicHeight()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Llibs/SmartFeaturesV116$HiddenFilesIconDrawable;->sizePx:I
 
@@ -211,7 +211,7 @@
 .end method
 
 .method public getIntrinsicWidth()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Llibs/SmartFeaturesV116$HiddenFilesIconDrawable;->sizePx:I
 
@@ -219,7 +219,7 @@
 .end method
 
 .method public getOpacity()I
-    .registers 2
+    .locals 1
 
     const/4 v0, -0x3
 
@@ -227,7 +227,7 @@
 .end method
 
 .method public setAlpha(I)V
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Llibs/SmartFeaturesV116$HiddenFilesIconDrawable;->paint:Landroid/graphics/Paint;
 
@@ -237,7 +237,7 @@
 .end method
 
 .method public setColorFilter(Landroid/graphics/ColorFilter;)V
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Llibs/SmartFeaturesV116$HiddenFilesIconDrawable;->paint:Landroid/graphics/Paint;
 

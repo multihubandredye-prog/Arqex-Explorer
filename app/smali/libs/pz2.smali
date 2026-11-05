@@ -18,7 +18,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/pz2;
@@ -41,7 +41,7 @@
 .end method
 
 .method public constructor <init>(F)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -64,7 +64,7 @@
 .end method
 
 .method public constructor <init>(IF)V
-    .registers 3
+    .locals 0
 
     .line 10
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -81,7 +81,7 @@
 
 # virtual methods
 .method public final a()F
-    .registers 5
+    .locals 4
 
     .line 1
     iget v0, p0, Llibs/pz2;->Y:I
@@ -107,42 +107,42 @@
 
     .line 11
     .line 12
-    if-eq v0, v1, :cond_31
+    if-eq v0, v1, :cond_4
 
     .line 13
     .line 14
     const/4 v1, 0x4
 
     .line 15
-    if-eq v0, v1, :cond_2b
+    if-eq v0, v1, :cond_3
 
     .line 16
     .line 17
     const/4 v1, 0x5
 
     .line 18
-    if-eq v0, v1, :cond_25
+    if-eq v0, v1, :cond_2
 
     .line 19
     .line 20
     const/4 v1, 0x6
 
     .line 21
-    if-eq v0, v1, :cond_20
+    if-eq v0, v1, :cond_1
 
     .line 22
     .line 23
     const/4 v1, 0x7
 
     .line 24
-    if-eq v0, v1, :cond_1a
+    if-eq v0, v1, :cond_0
 
     .line 25
     .line 26
     return v3
 
     .line 27
-    :cond_1a
+    :cond_0
     mul-float v3, v3, v2
 
     .line 28
@@ -151,14 +151,14 @@
 
     .line 30
     .line 31
-    :goto_1e
+    :goto_0
     div-float/2addr v3, v0
 
     .line 32
     return v3
 
     .line 33
-    :cond_20
+    :cond_1
     mul-float v3, v3, v2
 
     .line 34
@@ -167,10 +167,10 @@
 
     .line 36
     .line 37
-    goto :goto_1e
+    goto :goto_0
 
     .line 38
-    :cond_25
+    :cond_2
     mul-float v3, v3, v2
 
     .line 39
@@ -180,10 +180,10 @@
     .line 41
     .line 42
     .line 43
-    goto :goto_1e
+    goto :goto_0
 
     .line 44
-    :cond_2b
+    :cond_3
     mul-float v3, v3, v2
 
     .line 45
@@ -193,10 +193,10 @@
     .line 47
     .line 48
     .line 49
-    goto :goto_1e
+    goto :goto_0
 
     .line 50
-    :cond_31
+    :cond_4
     mul-float v3, v3, v2
 
     .line 51
@@ -205,7 +205,7 @@
 .end method
 
 .method public final b(Llibs/az2;)F
-    .registers 7
+    .locals 5
 
     .line 1
     iget v0, p0, Llibs/pz2;->Y:I
@@ -216,7 +216,7 @@
 
     .line 4
     .line 5
-    if-ne v0, v1, :cond_36
+    if-ne v0, v1, :cond_3
 
     .line 6
     .line 7
@@ -228,31 +228,31 @@
 
     .line 10
     .line 11
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
-    goto :goto_f
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     iget-object v0, p1, Llibs/yy2;->d:Llibs/cz2;
 
     .line 15
     .line 16
-    :goto_f
+    :goto_0
     iget p1, p0, Llibs/pz2;->X:F
 
     .line 17
     .line 18
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     .line 19
     .line 20
     return p1
 
     .line 21
-    :cond_14
+    :cond_1
     iget v1, v0, Llibs/cz2;->c:F
 
     .line 22
@@ -269,7 +269,7 @@
 
     .line 28
     .line 29
-    if-nez v3, :cond_22
+    if-nez v3, :cond_2
 
     .line 30
     .line 31
@@ -277,14 +277,14 @@
 
     .line 32
     .line 33
-    :goto_20
+    :goto_1
     div-float/2addr p1, v2
 
     .line 34
     return p1
 
     .line 35
-    :cond_22
+    :cond_2
     mul-float v1, v1, v1
 
     .line 36
@@ -324,10 +324,10 @@
 
     .line 53
     .line 54
-    goto :goto_20
+    goto :goto_1
 
     .line 55
-    :cond_36
+    :cond_3
     invoke-virtual {p0, p1}, Llibs/pz2;->d(Llibs/az2;)F
 
     .line 56
@@ -340,7 +340,7 @@
 .end method
 
 .method public final c(Llibs/az2;F)F
-    .registers 5
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/pz2;->Y:I
@@ -351,7 +351,7 @@
 
     .line 4
     .line 5
-    if-ne v0, v1, :cond_e
+    if-ne v0, v1, :cond_0
 
     .line 6
     .line 7
@@ -373,7 +373,7 @@
     return p1
 
     .line 15
-    :cond_e
+    :cond_0
     invoke-virtual {p0, p1}, Llibs/pz2;->d(Llibs/az2;)F
 
     .line 16
@@ -386,7 +386,7 @@
 .end method
 
 .method public final d(Llibs/az2;)F
-    .registers 5
+    .locals 3
 
     .line 1
     iget v0, p0, Llibs/pz2;->Y:I
@@ -409,15 +409,15 @@
 
     .line 10
     .line 11
-    packed-switch v0, :pswitch_data_66
+    packed-switch v0, :pswitch_data_0
 
     .line 12
     .line 13
     .line 14
-    goto :goto_19
+    goto :goto_1
 
     .line 15
-    :pswitch_e
+    :pswitch_0
     iget-object p1, p1, Llibs/az2;->c:Llibs/yy2;
 
     .line 16
@@ -426,28 +426,28 @@
 
     .line 18
     .line 19
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 20
     .line 21
-    goto :goto_17
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     iget-object v0, p1, Llibs/yy2;->d:Llibs/cz2;
 
     .line 23
     .line 24
-    :goto_17
-    if-nez v0, :cond_1a
+    :goto_0
+    if-nez v0, :cond_1
 
     .line 25
     .line 26
-    :goto_19
+    :goto_1
     return v2
 
     .line 27
-    :cond_1a
+    :cond_1
     iget p1, v0, Llibs/cz2;->c:F
 
     .line 28
@@ -466,7 +466,7 @@
     return v2
 
     .line 35
-    :pswitch_22
+    :pswitch_1
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 36
@@ -486,7 +486,7 @@
     return v2
 
     .line 44
-    :pswitch_2b
+    :pswitch_2
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 45
@@ -506,7 +506,7 @@
     return v2
 
     .line 53
-    :pswitch_34
+    :pswitch_3
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 54
@@ -527,7 +527,7 @@
     return v2
 
     .line 63
-    :pswitch_3e
+    :pswitch_4
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 64
@@ -548,7 +548,7 @@
     return v2
 
     .line 73
-    :pswitch_48
+    :pswitch_5
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 74
@@ -561,7 +561,7 @@
     return v2
 
     .line 79
-    :pswitch_4e
+    :pswitch_6
     iget-object p1, p1, Llibs/az2;->c:Llibs/yy2;
 
     .line 80
@@ -585,7 +585,7 @@
     div-float/2addr p1, v0
 
     .line 90
-    :goto_59
+    :goto_2
     mul-float p1, p1, v2
 
     .line 91
@@ -593,7 +593,7 @@
     return p1
 
     .line 93
-    :pswitch_5c
+    :pswitch_7
     iget-object p1, p1, Llibs/az2;->c:Llibs/yy2;
 
     .line 94
@@ -610,27 +610,27 @@
     move-result p1
 
     .line 101
-    goto :goto_59
+    goto :goto_2
 
     .line 102
     nop
 
     .line 103
-    :pswitch_data_66
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_5c
-        :pswitch_4e
-        :pswitch_48
-        :pswitch_3e
-        :pswitch_34
-        :pswitch_2b
-        :pswitch_22
-        :pswitch_e
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final e(Llibs/az2;)F
-    .registers 4
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/pz2;->Y:I
@@ -641,7 +641,7 @@
 
     .line 4
     .line 5
-    if-ne v0, v1, :cond_1c
+    if-ne v0, v1, :cond_2
 
     .line 6
     .line 7
@@ -653,31 +653,31 @@
 
     .line 10
     .line 11
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
-    goto :goto_f
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     iget-object v0, p1, Llibs/yy2;->d:Llibs/cz2;
 
     .line 15
     .line 16
-    :goto_f
+    :goto_0
     iget p1, p0, Llibs/pz2;->X:F
 
     .line 17
     .line 18
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     .line 19
     .line 20
     return p1
 
     .line 21
-    :cond_14
+    :cond_1
     iget v0, v0, Llibs/cz2;->d:F
 
     .line 22
@@ -696,7 +696,7 @@
     return p1
 
     .line 29
-    :cond_1c
+    :cond_2
     invoke-virtual {p0, p1}, Llibs/pz2;->d(Llibs/az2;)F
 
     .line 30
@@ -709,7 +709,7 @@
 .end method
 
 .method public final f()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/pz2;->X:F
@@ -723,7 +723,7 @@
 
     .line 5
     .line 6
-    if-gez v0, :cond_9
+    if-gez v0, :cond_0
 
     .line 7
     .line 8
@@ -733,7 +733,7 @@
     return v0
 
     .line 10
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
     .line 11
@@ -741,7 +741,7 @@
 .end method
 
 .method public final g()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/pz2;->X:F
@@ -755,7 +755,7 @@
 
     .line 5
     .line 6
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     .line 7
     .line 8
@@ -765,7 +765,7 @@
     return v0
 
     .line 10
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
     .line 11
@@ -773,7 +773,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -806,7 +806,7 @@
 
     .line 16
     .line 17
-    packed-switch v1, :pswitch_data_38
+    packed-switch v1, :pswitch_data_0
 
     .line 18
     .line 19
@@ -815,79 +815,79 @@
 
     .line 21
     .line 22
-    goto :goto_30
+    goto :goto_0
 
     .line 23
-    :pswitch_16
+    :pswitch_0
     const-string v1, "percent"
 
     .line 24
     .line 25
-    goto :goto_30
+    goto :goto_0
 
     .line 26
-    :pswitch_19
+    :pswitch_1
     const-string v1, "pc"
 
     .line 27
     .line 28
-    goto :goto_30
+    goto :goto_0
 
     .line 29
-    :pswitch_1c
+    :pswitch_2
     const-string v1, "pt"
 
     .line 30
     .line 31
-    goto :goto_30
+    goto :goto_0
 
     .line 32
-    :pswitch_1f
+    :pswitch_3
     const-string v1, "mm"
 
     .line 33
     .line 34
-    goto :goto_30
+    goto :goto_0
 
     .line 35
-    :pswitch_22
+    :pswitch_4
     const-string v1, "cm"
 
     .line 36
     .line 37
-    goto :goto_30
+    goto :goto_0
 
     .line 38
-    :pswitch_25
+    :pswitch_5
     const-string v1, "in"
 
     .line 39
     .line 40
-    goto :goto_30
+    goto :goto_0
 
     .line 41
-    :pswitch_28
+    :pswitch_6
     const-string v1, "ex"
 
     .line 42
     .line 43
-    goto :goto_30
+    goto :goto_0
 
     .line 44
-    :pswitch_2b
+    :pswitch_7
     const-string v1, "em"
 
     .line 45
     .line 46
-    goto :goto_30
+    goto :goto_0
 
     .line 47
-    :pswitch_2e
+    :pswitch_8
     const-string v1, "px"
 
     .line 48
     .line 49
-    :goto_30
+    :goto_0
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 50
@@ -904,16 +904,16 @@
     return-object v0
 
     .line 57
-    :pswitch_data_38
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_2e
-        :pswitch_2b
-        :pswitch_28
-        :pswitch_25
-        :pswitch_22
-        :pswitch_1f
-        :pswitch_1c
-        :pswitch_19
-        :pswitch_16
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

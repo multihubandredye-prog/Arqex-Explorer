@@ -22,7 +22,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const-class v0, Lorg/conscrypt/FileClientSessionCache;
@@ -66,7 +66,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -78,7 +78,7 @@
 .end method
 
 .method public static bridge synthetic a()Ljava/util/logging/Logger;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/FileClientSessionCache;->logger:Ljava/util/logging/Logger;
@@ -89,7 +89,7 @@
 .end method
 
 .method public static declared-synchronized reset()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-class v0, Lorg/conscrypt/FileClientSessionCache;
@@ -99,14 +99,14 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     sget-object v1, Lorg/conscrypt/FileClientSessionCache;->caches:Ljava/util/Map;
 
     .line 5
     .line 6
     invoke-interface {v1}, Ljava/util/Map;->clear()V
-    :try_end_8
-    .catchall {:try_start_3 .. :try_end_8} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 7
     .line 8
@@ -117,21 +117,21 @@
     return-void
 
     .line 11
-    :catchall_a
+    :catchall_0
     move-exception v1
 
     .line 12
-    :try_start_b
+    :try_start_1
     monitor-exit v0
-    :try_end_c
-    .catchall {:try_start_b .. :try_end_c} :catchall_a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 13
     throw v1
 .end method
 
 .method public static declared-synchronized usingDirectory(Ljava/io/File;)Lorg/conscrypt/SSLClientSessionCache;
-    .registers 4
+    .locals 3
 
     .line 1
     const-class v0, Lorg/conscrypt/FileClientSessionCache;
@@ -141,7 +141,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     sget-object v1, Lorg/conscrypt/FileClientSessionCache;->caches:Ljava/util/Map;
 
     .line 5
@@ -158,7 +158,7 @@
 
     .line 11
     .line 12
-    if-nez v2, :cond_18
+    if-nez v2, :cond_0
 
     .line 13
     .line 14
@@ -172,35 +172,35 @@
     .line 18
     .line 19
     invoke-interface {v1, p0, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_15
-    .catchall {:try_start_3 .. :try_end_15} :catchall_16
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 20
     .line 21
     .line 22
-    goto :goto_18
+    goto :goto_0
 
     .line 23
-    :catchall_16
+    :catchall_0
     move-exception p0
 
     .line 24
-    goto :goto_1a
+    goto :goto_1
 
     .line 25
-    :cond_18
-    :goto_18
+    :cond_0
+    :goto_0
     monitor-exit v0
 
     .line 26
     return-object v2
 
     .line 27
-    :goto_1a
-    :try_start_1a
+    :goto_1
+    :try_start_1
     monitor-exit v0
-    :try_end_1b
-    .catchall {:try_start_1a .. :try_end_1b} :catchall_16
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 28
     throw p0

@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -32,7 +32,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 5
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
@@ -120,7 +120,7 @@
     move-result p1
 
     .line 46
-    if-eqz p1, :cond_32
+    if-eqz p1, :cond_0
 
     .line 47
     .line 48
@@ -129,14 +129,14 @@
     .line 49
     .line 50
     .line 51
-    :cond_32
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final addView(Landroid/view/View;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -147,7 +147,7 @@
 .end method
 
 .method public final addView(Landroid/view/View;I)V
-    .registers 5
+    .locals 2
 
     .line 98
     new-instance v0, Landroid/view/ViewGroup$LayoutParams;
@@ -162,7 +162,7 @@
 .end method
 
 .method public final addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
-    .registers 9
+    .locals 5
 
     .line 1
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
@@ -173,7 +173,7 @@
     move-result v0
 
     .line 5
-    if-lez v0, :cond_9
+    if-lez v0, :cond_0
 
     .line 6
     .line 7
@@ -182,12 +182,12 @@
     .line 8
     .line 9
     .line 10
-    :cond_9
+    :cond_0
     iget-object v0, p0, Lcom/mixplorer/widgets/MiScrollView;->Mu:Lcom/mixplorer/widgets/MiHorizontalScrollView;
 
     .line 11
     .line 12
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     .line 13
     .line 14
@@ -199,7 +199,7 @@
     move-result v0
 
     .line 18
-    if-lez v0, :cond_18
+    if-lez v0, :cond_1
 
     .line 19
     .line 20
@@ -212,7 +212,7 @@
     .line 23
     .line 24
     .line 25
-    :cond_18
+    :cond_1
     iget v0, p3, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 26
@@ -224,7 +224,7 @@
 
     .line 29
     .line 30
-    if-ne v0, v1, :cond_58
+    if-ne v0, v1, :cond_4
 
     .line 31
     .line 32
@@ -242,7 +242,7 @@
     const/4 v3, 0x0
 
     .line 38
-    if-nez v1, :cond_35
+    if-nez v1, :cond_2
 
     .line 39
     .line 40
@@ -272,7 +272,7 @@
     .line 52
     .line 53
     .line 54
-    :cond_35
+    :cond_2
     iget-object v1, p0, Lcom/mixplorer/widgets/MiScrollView;->Mu:Lcom/mixplorer/widgets/MiHorizontalScrollView;
 
     .line 55
@@ -304,7 +304,7 @@
     .line 69
     .line 70
     .line 71
-    if-eqz v2, :cond_4c
+    if-eqz v2, :cond_3
 
     .line 72
     .line 73
@@ -316,7 +316,7 @@
 
     .line 76
     .line 77
-    :cond_4c
+    :cond_3
     iget-object p1, p0, Lcom/mixplorer/widgets/MiScrollView;->Mu:Lcom/mixplorer/widgets/MiHorizontalScrollView;
 
     .line 78
@@ -341,8 +341,8 @@
     return-void
 
     .line 89
-    :cond_58
-    if-eqz v2, :cond_5d
+    :cond_4
+    if-eqz v2, :cond_5
 
     .line 90
     .line 91
@@ -353,7 +353,7 @@
 
     .line 93
     .line 94
-    :cond_5d
+    :cond_5
     invoke-super {p0, p1, p2, p3}, Landroid/widget/ScrollView;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
     .line 95
@@ -363,7 +363,7 @@
 .end method
 
 .method public final addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -374,7 +374,7 @@
 .end method
 
 .method public final draw(Landroid/graphics/Canvas;)V
-    .registers 13
+    .locals 11
 
     .line 1
     invoke-super {p0, p1}, Landroid/widget/ScrollView;->draw(Landroid/graphics/Canvas;)V
@@ -398,7 +398,7 @@
 
     .line 11
     .line 12
-    if-lt v0, v1, :cond_68
+    if-lt v0, v1, :cond_1
 
     .line 13
     .line 14
@@ -406,7 +406,7 @@
 
     .line 15
     .line 16
-    if-lt v0, v2, :cond_68
+    if-lt v0, v2, :cond_1
 
     .line 17
     .line 18
@@ -414,7 +414,7 @@
 
     .line 19
     .line 20
-    if-eqz v0, :cond_68
+    if-eqz v0, :cond_1
 
     .line 21
     .line 22
@@ -446,7 +446,7 @@
     move-result v3
 
     .line 36
-    if-eqz v3, :cond_4c
+    if-eqz v3, :cond_0
 
     .line 37
     .line 38
@@ -528,10 +528,10 @@
     .line 74
     .line 75
     .line 76
-    goto :goto_68
+    goto :goto_0
 
     .line 77
-    :cond_4c
+    :cond_0
     invoke-static {}, Llibs/va3;->State()Landroid/graphics/drawable/Drawable;
 
     .line 78
@@ -588,13 +588,13 @@
     .line 103
     .line 104
     .line 105
-    :cond_68
-    :goto_68
+    :cond_1
+    :goto_0
     iget-object v0, p0, Lcom/mixplorer/widgets/MiScrollView;->Lambda:Llibs/gv1;
 
     .line 106
     .line 107
-    if-eqz v0, :cond_10c
+    if-eqz v0, :cond_9
 
     .line 108
     .line 109
@@ -606,15 +606,15 @@
 
     .line 112
     .line 113
-    if-nez v3, :cond_74
+    if-nez v3, :cond_2
 
     .line 114
     .line 115
-    goto/16 :goto_10c
+    goto/16 :goto_2
 
     .line 116
     .line 117
-    :cond_74
+    :cond_2
     invoke-virtual {v1}, Landroid/view/View;->getWidth()I
 
     .line 118
@@ -660,7 +660,7 @@
     const/4 v6, 0x5
 
     .line 138
-    if-ne v5, v6, :cond_a2
+    if-ne v5, v6, :cond_3
 
     .line 139
     .line 140
@@ -676,7 +676,7 @@
     move-result v5
 
     .line 146
-    if-ge v5, v2, :cond_b1
+    if-ge v5, v2, :cond_5
 
     .line 147
     .line 148
@@ -697,7 +697,7 @@
 
     .line 156
     .line 157
-    if-eqz v2, :cond_b1
+    if-eqz v2, :cond_5
 
     .line 158
     .line 159
@@ -706,10 +706,10 @@
     .line 160
     .line 161
     .line 162
-    goto :goto_b1
+    goto :goto_1
 
     .line 163
-    :cond_a2
+    :cond_3
     iget-object v2, v0, Llibs/gv1;->f:Landroid/graphics/drawable/Drawable;
 
     .line 164
@@ -727,7 +727,7 @@
 
     .line 171
     .line 172
-    if-eqz v2, :cond_b0
+    if-eqz v2, :cond_4
 
     .line 173
     .line 174
@@ -736,17 +736,17 @@
     .line 175
     .line 176
     .line 177
-    :cond_b0
+    :cond_4
     const/4 v5, -0x1
 
     .line 178
-    :cond_b1
-    :goto_b1
+    :cond_5
+    :goto_1
     iget-boolean v2, v0, Llibs/gv1;->n:Z
 
     .line 179
     .line 180
-    if-eqz v2, :cond_d8
+    if-eqz v2, :cond_6
 
     .line 181
     .line 182
@@ -821,12 +821,12 @@
     .line 215
     .line 216
     .line 217
-    :cond_d8
+    :cond_6
     iget-object v2, v0, Llibs/gv1;->g:Landroid/graphics/drawable/Drawable;
 
     .line 218
     .line 219
-    if-eqz v2, :cond_fe
+    if-eqz v2, :cond_7
 
     .line 220
     .line 221
@@ -834,7 +834,7 @@
 
     .line 222
     .line 223
-    if-eqz v7, :cond_fe
+    if-eqz v7, :cond_7
 
     .line 224
     .line 225
@@ -900,16 +900,16 @@
     .line 253
     .line 254
     .line 255
-    :cond_fe
+    :cond_7
     iget p1, v0, Llibs/gv1;->c:I
 
     .line 256
     .line 257
-    if-ne p1, v6, :cond_10c
+    if-ne p1, v6, :cond_9
 
     .line 258
     .line 259
-    if-nez v5, :cond_109
+    if-nez v5, :cond_8
 
     .line 260
     .line 261
@@ -924,26 +924,26 @@
     return-void
 
     .line 266
-    :cond_109
+    :cond_8
     invoke-virtual {v0, v3, v4}, Llibs/gv1;->a(II)V
 
     .line 267
     .line 268
     .line 269
-    :cond_10c
-    :goto_10c
+    :cond_9
+    :goto_2
     return-void
 .end method
 
 .method public getHScrollX()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiScrollView;->Mu:Lcom/mixplorer/widgets/MiHorizontalScrollView;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -958,7 +958,7 @@
     return v0
 
     .line 10
-    :cond_9
+    :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getScrollX()I
 
     .line 11
@@ -971,7 +971,7 @@
 .end method
 
 .method public final onConfigurationChanged(Landroid/content/res/Configuration;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-super {p0, p1}, Landroid/widget/ScrollView;->onConfigurationChanged(Landroid/content/res/Configuration;)V
@@ -983,7 +983,7 @@
 
     .line 5
     .line 6
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_0
 
     .line 7
     .line 8
@@ -998,19 +998,19 @@
 
     .line 12
     .line 13
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method public final onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 12
+    .locals 10
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiScrollView;->Lambda:Llibs/gv1;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5d
+    if-eqz v0, :cond_4
 
     .line 4
     .line 5
@@ -1018,7 +1018,7 @@
 
     .line 6
     .line 7
-    if-lez v1, :cond_5d
+    if-lez v1, :cond_4
 
     .line 8
     .line 9
@@ -1030,14 +1030,14 @@
     move-result v1
 
     .line 13
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     .line 14
     .line 15
-    goto :goto_5d
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     .line 17
@@ -1062,7 +1062,7 @@
     move-result v1
 
     .line 28
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_2
 
     .line 29
     .line 30
@@ -1094,7 +1094,7 @@
     move-result-object p1
 
     .line 42
-    if-eqz p1, :cond_31
+    if-eqz p1, :cond_1
 
     .line 43
     .line 44
@@ -1108,7 +1108,7 @@
     .line 48
     .line 49
     .line 50
-    :cond_31
+    :cond_1
     const/4 p1, 0x3
 
     .line 51
@@ -1117,10 +1117,10 @@
     .line 52
     .line 53
     .line 54
-    goto :goto_63
+    goto :goto_1
 
     .line 55
-    :cond_36
+    :cond_2
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     .line 56
@@ -1145,7 +1145,7 @@
     move-result v1
 
     .line 67
-    if-eqz v1, :cond_5d
+    if-eqz v1, :cond_4
 
     .line 68
     .line 69
@@ -1177,7 +1177,7 @@
     move-result-object p1
 
     .line 81
-    if-eqz p1, :cond_58
+    if-eqz p1, :cond_3
 
     .line 82
     .line 83
@@ -1191,7 +1191,7 @@
     .line 87
     .line 88
     .line 89
-    :cond_58
+    :cond_3
     const/4 p1, 0x4
 
     .line 90
@@ -1200,11 +1200,11 @@
     .line 91
     .line 92
     .line 93
-    goto :goto_63
+    goto :goto_1
 
     .line 94
-    :cond_5d
-    :goto_5d
+    :cond_4
+    :goto_0
     invoke-super {p0, p1}, Landroid/widget/ScrollView;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
     .line 95
@@ -1213,18 +1213,18 @@
     move-result p1
 
     .line 98
-    if-eqz p1, :cond_65
+    if-eqz p1, :cond_5
 
     .line 99
     .line 100
-    :goto_63
+    :goto_1
     const/4 p1, 0x1
 
     .line 101
     return p1
 
     .line 102
-    :cond_65
+    :cond_5
     const/4 p1, 0x0
 
     .line 103
@@ -1232,7 +1232,7 @@
 .end method
 
 .method public final onScrollChanged(IIII)V
-    .registers 6
+    .locals 1
 
     .line 1
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/ScrollView;->onScrollChanged(IIII)V
@@ -1244,7 +1244,7 @@
 
     .line 5
     .line 6
-    if-eqz p3, :cond_b
+    if-eqz p3, :cond_0
 
     .line 7
     .line 8
@@ -1256,12 +1256,12 @@
     move-result p1
 
     .line 12
-    :cond_b
+    :cond_0
     iget-object p3, p0, Lcom/mixplorer/widgets/MiScrollView;->Xi:Llibs/fv1;
 
     .line 13
     .line 14
-    if-eqz p3, :cond_15
+    if-eqz p3, :cond_1
 
     .line 15
     .line 16
@@ -1277,12 +1277,12 @@
     .line 20
     .line 21
     .line 22
-    :cond_15
+    :cond_1
     iget-object p3, p0, Lcom/mixplorer/widgets/MiScrollView;->Lambda:Llibs/gv1;
 
     .line 23
     .line 24
-    if-eqz p3, :cond_1c
+    if-eqz p3, :cond_2
 
     .line 25
     .line 26
@@ -1291,12 +1291,12 @@
     .line 27
     .line 28
     .line 29
-    :cond_1c
+    :cond_2
     return-void
 .end method
 
 .method public final onSizeChanged(IIII)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/ScrollView;->onSizeChanged(IIII)V
@@ -1308,7 +1308,7 @@
 
     .line 5
     .line 6
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_0
 
     .line 7
     .line 8
@@ -1323,19 +1323,19 @@
 
     .line 12
     .line 13
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method public final onTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiScrollView;->Lambda:Llibs/gv1;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -1347,11 +1347,11 @@
     move-result v0
 
     .line 9
-    if-nez v0, :cond_10
+    if-nez v0, :cond_1
 
     .line 10
     .line 11
-    :cond_a
+    :cond_0
     invoke-super {p0, p1}, Landroid/widget/ScrollView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     .line 12
@@ -1360,18 +1360,18 @@
     move-result p1
 
     .line 15
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_2
 
     .line 16
     .line 17
-    :cond_10
+    :cond_1
     const/4 p1, 0x1
 
     .line 18
     return p1
 
     .line 19
-    :cond_12
+    :cond_2
     const/4 p1, 0x0
 
     .line 20
@@ -1379,13 +1379,13 @@
 .end method
 
 .method public final scrollTo(II)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-ltz p2, :cond_7
+    if-ltz p2, :cond_0
 
     .line 3
     .line 4
@@ -1397,16 +1397,16 @@
     return-void
 
     .line 8
-    :cond_7
+    :cond_0
     iget-object p2, p0, Lcom/mixplorer/widgets/MiScrollView;->Mu:Lcom/mixplorer/widgets/MiHorizontalScrollView;
 
     .line 9
     .line 10
-    if-eqz p2, :cond_10
+    if-eqz p2, :cond_1
 
     .line 11
     .line 12
-    if-ltz p1, :cond_10
+    if-ltz p1, :cond_1
 
     .line 13
     .line 14
@@ -1415,12 +1415,12 @@
     .line 15
     .line 16
     .line 17
-    :cond_10
+    :cond_1
     return-void
 .end method
 
 .method public setDrawShadow(Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-boolean p1, p0, Lcom/mixplorer/widgets/MiScrollView;->Nu:Z
@@ -1431,7 +1431,7 @@
 .end method
 
 .method public setOnScrollChanged(Llibs/fv1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Lcom/mixplorer/widgets/MiScrollView;->Xi:Llibs/fv1;
@@ -1442,14 +1442,14 @@
 .end method
 
 .method public setThumb(Landroid/graphics/drawable/Drawable;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiScrollView;->Lambda:Llibs/gv1;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -1461,6 +1461,6 @@
     .line 7
     .line 8
     .line 9
-    :cond_8
+    :cond_0
     return-void
 .end method

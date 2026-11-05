@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljavax/net/ssl/KeyManagerFactorySpi;-><init>()V
@@ -25,14 +25,14 @@
 
 # virtual methods
 .method public engineGetKeyManagers()[Ljavax/net/ssl/KeyManager;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/KeyManagerFactoryImpl;->keyStore:Ljava/security/KeyStore;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -70,7 +70,7 @@
     return-object v1
 
     .line 21
-    :cond_14
+    :cond_0
     const-string v0, "KeyManagerFactory is not initialized"
 
     .line 22
@@ -87,10 +87,10 @@
 .end method
 
 .method public engineInit(Ljava/security/KeyStore;[C)V
-    .registers 5
+    .locals 2
 
     .line 1
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_1
 
     .line 2
     .line 3
@@ -98,7 +98,7 @@
 
     .line 4
     .line 5
-    if-eqz p2, :cond_f
+    if-eqz p2, :cond_0
 
     .line 6
     .line 7
@@ -121,7 +121,7 @@
     return-void
 
     .line 16
-    :cond_f
+    :cond_0
     sget-object p1, Lorg/conscrypt/EmptyArray;->CHAR:[C
 
     .line 17
@@ -133,7 +133,7 @@
     return-void
 
     .line 21
-    :cond_14
+    :cond_1
     invoke-static {}, Ljava/security/KeyStore;->getDefaultType()Ljava/lang/String;
 
     .line 22
@@ -169,7 +169,7 @@
     const/4 p2, 0x0
 
     .line 38
-    if-eqz p1, :cond_88
+    if-eqz p1, :cond_4
 
     .line 39
     .line 40
@@ -185,7 +185,7 @@
     move-result v0
 
     .line 46
-    if-nez v0, :cond_88
+    if-nez v0, :cond_4
 
     .line 47
     .line 48
@@ -197,14 +197,14 @@
     move-result v0
 
     .line 52
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_2
 
     .line 53
     .line 54
-    goto :goto_88
+    goto :goto_5
 
     .line 55
-    :cond_36
+    :cond_2
     const-string v0, "javax.net.ssl.keyStorePassword"
 
     .line 56
@@ -217,7 +217,7 @@
     move-result-object v0
 
     .line 61
-    if-nez v0, :cond_43
+    if-nez v0, :cond_3
 
     .line 62
     .line 63
@@ -229,10 +229,10 @@
 
     .line 66
     .line 67
-    goto :goto_49
+    goto :goto_0
 
     .line 68
-    :cond_43
+    :cond_3
     invoke-virtual {v0}, Ljava/lang/String;->toCharArray()[C
 
     .line 69
@@ -245,8 +245,8 @@
 
     .line 73
     .line 74
-    :goto_49
-    :try_start_49
+    :goto_0
+    :try_start_0
     new-instance v0, Ljava/io/FileInputStream;
 
     .line 75
@@ -261,16 +261,16 @@
     .line 80
     .line 81
     invoke-direct {v0, v1}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
-    :try_end_53
-    .catch Ljava/io/FileNotFoundException; {:try_start_49 .. :try_end_53} :catch_70
-    .catch Ljava/io/IOException; {:try_start_49 .. :try_end_53} :catch_6e
-    .catch Ljava/security/cert/CertificateException; {:try_start_49 .. :try_end_53} :catch_6c
-    .catchall {:try_start_49 .. :try_end_53} :catchall_6a
+    :try_end_0
+    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_5
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_4
+    .catch Ljava/security/cert/CertificateException; {:try_start_0 .. :try_end_0} :catch_3
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 82
     .line 83
     .line 84
-    :try_start_53
+    :try_start_1
     iget-object p1, p0, Lorg/conscrypt/KeyManagerFactoryImpl;->keyStore:Ljava/security/KeyStore;
 
     .line 85
@@ -280,11 +280,11 @@
     .line 87
     .line 88
     invoke-virtual {p1, v0, p2}, Ljava/security/KeyStore;->load(Ljava/io/InputStream;[C)V
-    :try_end_5a
-    .catch Ljava/io/FileNotFoundException; {:try_start_53 .. :try_end_5a} :catch_67
-    .catch Ljava/io/IOException; {:try_start_53 .. :try_end_5a} :catch_64
-    .catch Ljava/security/cert/CertificateException; {:try_start_53 .. :try_end_5a} :catch_61
-    .catchall {:try_start_53 .. :try_end_5a} :catchall_5e
+    :try_end_1
+    .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/security/cert/CertificateException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 89
     .line 90
@@ -297,76 +297,76 @@
     return-void
 
     .line 95
-    :catchall_5e
+    :catchall_0
     move-exception p1
 
     .line 96
     move-object p2, v0
 
     .line 97
-    goto :goto_84
+    goto :goto_4
 
     .line 98
-    :catch_61
+    :catch_0
     move-exception p1
 
     .line 99
     move-object p2, v0
 
     .line 100
-    goto :goto_72
+    goto :goto_1
 
     .line 101
-    :catch_64
+    :catch_1
     move-exception p1
 
     .line 102
     move-object p2, v0
 
     .line 103
-    goto :goto_78
+    goto :goto_2
 
     .line 104
-    :catch_67
+    :catch_2
     move-exception p1
 
     .line 105
     move-object p2, v0
 
     .line 106
-    goto :goto_7e
+    goto :goto_3
 
     .line 107
-    :catchall_6a
+    :catchall_1
     move-exception p1
 
     .line 108
-    goto :goto_84
+    goto :goto_4
 
     .line 109
-    :catch_6c
+    :catch_3
     move-exception p1
 
     .line 110
-    goto :goto_72
+    goto :goto_1
 
     .line 111
-    :catch_6e
+    :catch_4
     move-exception p1
 
     .line 112
-    goto :goto_78
+    goto :goto_2
 
     .line 113
-    :catch_70
+    :catch_5
     move-exception p1
 
     .line 114
-    goto :goto_7e
+    goto :goto_3
 
     .line 115
-    :goto_72
-    :try_start_72
+    :goto_1
+    :try_start_2
     new-instance v0, Ljava/security/KeyStoreException;
 
     .line 116
@@ -379,7 +379,7 @@
     throw v0
 
     .line 121
-    :goto_78
+    :goto_2
     new-instance v0, Ljava/security/KeyStoreException;
 
     .line 122
@@ -392,7 +392,7 @@
     throw v0
 
     .line 127
-    :goto_7e
+    :goto_3
     new-instance v0, Ljava/security/KeyStoreException;
 
     .line 128
@@ -403,11 +403,11 @@
     .line 131
     .line 132
     throw v0
-    :try_end_84
-    .catchall {:try_start_72 .. :try_end_84} :catchall_6a
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 133
-    :goto_84
+    :goto_4
     invoke-static {p2}, Lorg/conscrypt/io/IoUtils;->closeQuietly(Ljava/io/Closeable;)V
 
     .line 134
@@ -416,17 +416,17 @@
     throw p1
 
     .line 137
-    :cond_88
-    :goto_88
-    :try_start_88
+    :cond_4
+    :goto_5
+    :try_start_3
     iget-object p1, p0, Lorg/conscrypt/KeyManagerFactoryImpl;->keyStore:Ljava/security/KeyStore;
 
     .line 138
     .line 139
     invoke-virtual {p1, p2, p2}, Ljava/security/KeyStore;->load(Ljava/io/InputStream;[C)V
-    :try_end_8d
-    .catch Ljava/io/IOException; {:try_start_88 .. :try_end_8d} :catch_90
-    .catch Ljava/security/cert/CertificateException; {:try_start_88 .. :try_end_8d} :catch_8e
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_7
+    .catch Ljava/security/cert/CertificateException; {:try_start_3 .. :try_end_3} :catch_6
 
     .line 140
     .line 141
@@ -434,21 +434,21 @@
     return-void
 
     .line 143
-    :catch_8e
+    :catch_6
     move-exception p1
 
     .line 144
-    goto :goto_92
+    goto :goto_6
 
     .line 145
-    :catch_90
+    :catch_7
     move-exception p1
 
     .line 146
-    goto :goto_98
+    goto :goto_7
 
     .line 147
-    :goto_92
+    :goto_6
     new-instance p2, Ljava/security/KeyStoreException;
 
     .line 148
@@ -461,7 +461,7 @@
     throw p2
 
     .line 153
-    :goto_98
+    :goto_7
     new-instance p2, Ljava/security/KeyStoreException;
 
     .line 154
@@ -475,7 +475,7 @@
 .end method
 
 .method public engineInit(Ljavax/net/ssl/ManagerFactoryParameters;)V
-    .registers 3
+    .locals 1
 
     .line 159
     new-instance p1, Ljava/security/InvalidAlgorithmParameterException;

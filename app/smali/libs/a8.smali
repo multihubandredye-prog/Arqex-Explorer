@@ -20,7 +20,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/BrowseActivity;Llibs/xt1;Ljava/lang/String;Llibs/$d;)V
-    .registers 6
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -55,7 +55,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;B)V
-    .registers 6
+    .locals 0
 
     .line 16
     iput-byte p5, p0, Llibs/a8;->X:B
@@ -76,7 +76,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 16
+    .locals 14
 
     .line 1
     iget-byte v0, p0, Llibs/a8;->X:B
@@ -102,7 +102,7 @@
 
     .line 11
     .line 12
-    packed-switch v0, :pswitch_data_13e
+    packed-switch v0, :pswitch_data_0
 
     .line 13
     .line 14
@@ -155,14 +155,14 @@
     move-result v6
 
     .line 39
-    if-eqz v6, :cond_29
+    if-eqz v6, :cond_0
 
     .line 40
     .line 41
-    goto :goto_91
+    goto :goto_0
 
     .line 42
-    :cond_29
+    :cond_0
     sget v6, Llibs/bi2;->author:I
 
     .line 43
@@ -191,14 +191,14 @@
     move-result v6
 
     .line 56
-    if-eqz v6, :cond_3a
+    if-eqz v6, :cond_1
 
     .line 57
     .line 58
-    goto :goto_91
+    goto :goto_0
 
     .line 59
-    :cond_3a
+    :cond_1
     invoke-virtual {v0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     .line 60
@@ -223,7 +223,7 @@
     move-result v4
 
     .line 71
-    if-eqz v4, :cond_58
+    if-eqz v4, :cond_2
 
     .line 72
     .line 73
@@ -254,10 +254,10 @@
     .line 86
     .line 87
     .line 88
-    goto :goto_91
+    goto :goto_0
 
     .line 89
-    :cond_58
+    :cond_2
     invoke-virtual {p1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     .line 90
@@ -300,7 +300,7 @@
     move-result p1
 
     .line 111
-    if-nez p1, :cond_8b
+    if-nez p1, :cond_3
 
     .line 112
     .line 113
@@ -355,7 +355,7 @@
 
     .line 139
     .line 140
-    :cond_8b
+    :cond_3
     invoke-virtual {v5}, Lcom/mixplorer/activities/PreferenceActivity;->User()V
 
     .line 141
@@ -366,11 +366,11 @@
     .line 144
     .line 145
     .line 146
-    :goto_91
+    :goto_0
     return-void
 
     .line 147
-    :pswitch_92
+    :pswitch_0
     move-object v10, v5
 
     .line 148
@@ -430,14 +430,14 @@
     move-result p1
 
     .line 174
-    if-eqz p1, :cond_b0
+    if-eqz p1, :cond_4
 
     .line 175
     .line 176
-    goto :goto_c0
+    goto :goto_1
 
     .line 177
-    :cond_b0
+    :cond_4
     new-instance p1, Llibs/xv1;
 
     .line 178
@@ -468,11 +468,11 @@
     .line 191
     .line 192
     .line 193
-    :goto_c0
+    :goto_1
     return-void
 
     .line 194
-    :pswitch_c1
+    :pswitch_1
     check-cast v3, Lcom/mixplorer/activities/BrowseActivity;
 
     .line 195
@@ -529,14 +529,14 @@
     move-result v1
 
     .line 222
-    if-eqz v1, :cond_e0
+    if-eqz v1, :cond_5
 
     .line 223
     .line 224
-    goto :goto_101
+    goto :goto_2
 
     .line 225
-    :cond_e0
+    :cond_5
     invoke-virtual {p1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     .line 226
@@ -604,11 +604,11 @@
     .line 256
     .line 257
     .line 258
-    :goto_101
+    :goto_2
     return-void
 
     .line 259
-    :pswitch_102
+    :pswitch_2
     check-cast v5, Llibs/za;
 
     .line 260
@@ -662,14 +662,14 @@
     move-result v0
 
     .line 286
-    if-eqz v0, :cond_120
+    if-eqz v0, :cond_6
 
     .line 287
     .line 288
-    goto :goto_13c
+    goto :goto_3
 
     .line 289
-    :cond_120
+    :cond_6
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 290
@@ -722,17 +722,17 @@
     .line 315
     .line 316
     .line 317
-    :goto_13c
+    :goto_3
     return-void
 
     .line 318
     nop
 
     .line 319
-    :pswitch_data_13e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_102
-        :pswitch_c1
-        :pswitch_92
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Param;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -39,7 +39,7 @@
     const/4 v2, 0x0
 
     .line 10
-    if-lt v0, v1, :cond_77
+    if-lt v0, v1, :cond_5
 
     .line 11
     .line 12
@@ -54,7 +54,7 @@
     const/4 v1, 0x5
 
     .line 17
-    if-gt v0, v1, :cond_77
+    if-gt v0, v1, :cond_5
 
     .line 18
     .line 19
@@ -134,7 +134,7 @@
     move-result v0
 
     .line 57
-    if-eqz v0, :cond_41
+    if-eqz v0, :cond_0
 
     .line 58
     .line 59
@@ -150,15 +150,15 @@
 
     .line 64
     .line 65
-    goto :goto_42
+    goto :goto_0
 
     .line 66
-    :cond_41
+    :cond_0
     move-object v0, v2
 
     .line 67
-    :goto_42
-    if-eqz v0, :cond_5e
+    :goto_0
+    if-eqz v0, :cond_2
 
     .line 68
     .line 69
@@ -166,7 +166,7 @@
 
     .line 70
     .line 71
-    if-eqz v1, :cond_5e
+    if-eqz v1, :cond_2
 
     .line 72
     .line 73
@@ -190,7 +190,7 @@
     move-result v0
 
     .line 83
-    if-eqz v0, :cond_5c
+    if-eqz v0, :cond_1
 
     .line 84
     .line 85
@@ -209,23 +209,23 @@
     move-object v0, p1
 
     .line 92
-    goto :goto_60
+    goto :goto_1
 
     .line 93
-    :cond_5c
+    :cond_1
     move-object v0, v2
 
     .line 94
-    goto :goto_60
+    goto :goto_1
 
     .line 95
-    :cond_5e
+    :cond_2
     iput-object v2, p0, Llibs/ld0;->Lambda:Llibs/Api;
 
     .line 96
     .line 97
-    :goto_60
-    if-eqz v0, :cond_74
+    :goto_1
+    if-eqz v0, :cond_4
 
     .line 98
     .line 99
@@ -237,7 +237,7 @@
     move-result-object p1
 
     .line 103
-    if-eqz p1, :cond_71
+    if-eqz p1, :cond_3
 
     .line 104
     .line 105
@@ -258,7 +258,7 @@
     .line 112
     .line 113
     .line 114
-    :cond_71
+    :cond_3
     iput-object v2, p0, Llibs/ld0;->Mu:Llibs/us3;
 
     .line 115
@@ -266,7 +266,7 @@
     return-void
 
     .line 117
-    :cond_74
+    :cond_4
     iput-object v2, p0, Llibs/ld0;->Mu:Llibs/us3;
 
     .line 118
@@ -274,7 +274,7 @@
     return-void
 
     .line 120
-    :cond_77
+    :cond_5
     const-string v0, "Bad sequence size: "
 
     .line 121
@@ -298,7 +298,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/Init;
@@ -344,7 +344,7 @@
 
     .line 23
     .line 24
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_0
 
     .line 25
     .line 26
@@ -353,12 +353,12 @@
     .line 27
     .line 28
     .line 29
-    :cond_1c
+    :cond_0
     iget-object v1, p0, Llibs/ld0;->Mu:Llibs/us3;
 
     .line 30
     .line 31
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_1
 
     .line 32
     .line 33
@@ -367,7 +367,7 @@
     .line 34
     .line 35
     .line 36
-    :cond_23
+    :cond_1
     new-instance v1, Llibs/p10;
 
     .line 37

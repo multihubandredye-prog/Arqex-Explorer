@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/bn1;
@@ -41,7 +41,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 .end method
 
 .method public static a(Llibs/lv2;Llibs/mv2;)Llibs/lv2;
-    .registers 11
+    .locals 9
 
     .line 1
     invoke-virtual {p1}, Llibs/qj0;->b()Llibs/xw2;
@@ -83,7 +83,7 @@
     const/4 v2, 0x1
 
     .line 14
-    packed-switch v1, :pswitch_data_138
+    packed-switch v1, :pswitch_data_0
 
     .line 15
     .line 16
@@ -161,7 +161,7 @@
     throw p0
 
     .line 56
-    :pswitch_37
+    :pswitch_0
     new-instance v0, Llibs/eu2;
 
     .line 57
@@ -174,11 +174,11 @@
     .line 60
     .line 61
     .line 62
-    goto/16 :goto_a7
+    goto/16 :goto_0
 
     .line 63
     .line 64
-    :pswitch_3f
+    :pswitch_1
     new-instance v0, Llibs/vv2;
 
     .line 65
@@ -188,11 +188,11 @@
     .line 67
     .line 68
     .line 69
-    goto/16 :goto_a7
+    goto/16 :goto_0
 
     .line 70
     .line 71
-    :pswitch_46
+    :pswitch_2
     new-instance v0, Llibs/eu2;
 
     .line 72
@@ -202,10 +202,10 @@
     .line 74
     .line 75
     .line 76
-    goto :goto_a7
+    goto :goto_0
 
     .line 77
-    :pswitch_4c
+    :pswitch_3
     new-instance v0, Llibs/tv2;
 
     .line 78
@@ -215,10 +215,10 @@
     .line 80
     .line 81
     .line 82
-    goto :goto_a7
+    goto :goto_0
 
     .line 83
-    :pswitch_52
+    :pswitch_4
     new-instance v0, Llibs/eu2;
 
     .line 84
@@ -228,10 +228,10 @@
     .line 86
     .line 87
     .line 88
-    goto :goto_a7
+    goto :goto_0
 
     .line 89
-    :pswitch_58
+    :pswitch_5
     new-instance v0, Llibs/du2;
 
     .line 90
@@ -241,10 +241,10 @@
     .line 92
     .line 93
     .line 94
-    goto :goto_a7
+    goto :goto_0
 
     .line 95
-    :pswitch_5e
+    :pswitch_6
     new-instance v0, Llibs/zu2;
 
     .line 96
@@ -254,10 +254,10 @@
     .line 98
     .line 99
     .line 100
-    goto :goto_a7
+    goto :goto_0
 
     .line 101
-    :pswitch_64
+    :pswitch_7
     new-instance v0, Llibs/eu2;
 
     .line 102
@@ -270,10 +270,10 @@
     .line 105
     .line 106
     .line 107
-    goto :goto_a7
+    goto :goto_0
 
     .line 108
-    :pswitch_6b
+    :pswitch_8
     new-instance v0, Llibs/jw2;
 
     .line 109
@@ -283,10 +283,10 @@
     .line 111
     .line 112
     .line 113
-    goto :goto_a7
+    goto :goto_0
 
     .line 114
-    :pswitch_71
+    :pswitch_9
     new-instance v0, Llibs/xv2;
 
     .line 115
@@ -296,10 +296,10 @@
     .line 117
     .line 118
     .line 119
-    goto :goto_a7
+    goto :goto_0
 
     .line 120
-    :pswitch_77
+    :pswitch_a
     new-instance v0, Llibs/uu2;
 
     .line 121
@@ -309,10 +309,10 @@
     .line 123
     .line 124
     .line 125
-    goto :goto_a7
+    goto :goto_0
 
     .line 126
-    :pswitch_7d
+    :pswitch_b
     new-instance v0, Llibs/fu2;
 
     .line 127
@@ -322,10 +322,10 @@
     .line 129
     .line 130
     .line 131
-    goto :goto_a7
+    goto :goto_0
 
     .line 132
-    :pswitch_83
+    :pswitch_c
     new-instance v0, Llibs/mu2;
 
     .line 133
@@ -335,10 +335,10 @@
     .line 135
     .line 136
     .line 137
-    goto :goto_a7
+    goto :goto_0
 
     .line 138
-    :pswitch_89
+    :pswitch_d
     new-instance v0, Llibs/eu2;
 
     .line 139
@@ -351,10 +351,10 @@
     .line 142
     .line 143
     .line 144
-    goto :goto_a7
+    goto :goto_0
 
     .line 145
-    :pswitch_90
+    :pswitch_e
     new-instance v0, Llibs/hw2;
 
     .line 146
@@ -364,10 +364,10 @@
     .line 148
     .line 149
     .line 150
-    goto :goto_a7
+    goto :goto_0
 
     .line 151
-    :pswitch_96
+    :pswitch_f
     new-instance v0, Llibs/bv2;
 
     .line 152
@@ -377,10 +377,10 @@
     .line 154
     .line 155
     .line 156
-    goto :goto_a7
+    goto :goto_0
 
     .line 157
-    :pswitch_9c
+    :pswitch_10
     new-instance v0, Llibs/aw2;
 
     .line 158
@@ -390,10 +390,10 @@
     .line 160
     .line 161
     .line 162
-    goto :goto_a7
+    goto :goto_0
 
     .line 163
-    :pswitch_a2
+    :pswitch_11
     new-instance v0, Llibs/jv2;
 
     .line 164
@@ -403,7 +403,7 @@
     .line 166
     .line 167
     .line 168
-    :goto_a7
+    :goto_0
     invoke-virtual {p1}, Llibs/mv2;->j()Z
 
     .line 169
@@ -412,15 +412,15 @@
     move-result v1
 
     .line 172
-    if-eqz v1, :cond_af
+    if-eqz v1, :cond_0
 
     .line 173
     .line 174
-    goto/16 :goto_12f
+    goto/16 :goto_2
 
     .line 175
     .line 176
-    :cond_af
+    :cond_0
     invoke-virtual {p1}, Llibs/qj0;->b()Llibs/xw2;
 
     .line 177
@@ -461,7 +461,7 @@
     move-result v1
 
     .line 196
-    if-eq v1, v2, :cond_126
+    if-eq v1, v2, :cond_7
 
     .line 197
     .line 198
@@ -476,7 +476,7 @@
     .line 203
     .line 204
     .line 205
-    if-eq v1, v2, :cond_121
+    if-eq v1, v2, :cond_6
 
     .line 206
     .line 207
@@ -484,7 +484,7 @@
 
     .line 208
     .line 209
-    if-eq v1, v2, :cond_e2
+    if-eq v1, v2, :cond_2
 
     .line 210
     .line 211
@@ -492,7 +492,7 @@
 
     .line 212
     .line 213
-    if-eq v1, p0, :cond_db
+    if-eq v1, p0, :cond_1
 
     .line 214
     .line 215
@@ -500,14 +500,14 @@
 
     .line 216
     .line 217
-    if-eq v1, p0, :cond_121
+    if-eq v1, p0, :cond_6
 
     .line 218
     .line 219
-    goto :goto_133
+    goto :goto_3
 
     .line 220
-    :cond_db
+    :cond_1
     const-wide/16 v1, 0x10c
 
     .line 221
@@ -516,14 +516,14 @@
 
     .line 223
     .line 224
-    if-nez p0, :cond_133
+    if-nez p0, :cond_8
 
     .line 225
     .line 226
-    goto :goto_12f
+    goto :goto_2
 
     .line 227
-    :cond_e2
+    :cond_2
     check-cast p0, Llibs/yu2;
 
     .line 228
@@ -544,7 +544,7 @@
 
     .line 236
     .line 237
-    if-eqz p0, :cond_11c
+    if-eqz p0, :cond_5
 
     .line 238
     .line 239
@@ -557,7 +557,7 @@
 
     .line 243
     .line 244
-    if-eqz p0, :cond_11c
+    if-eqz p0, :cond_5
 
     .line 245
     .line 246
@@ -570,7 +570,7 @@
 
     .line 250
     .line 251
-    if-eqz p0, :cond_11c
+    if-eqz p0, :cond_5
 
     .line 252
     .line 253
@@ -583,14 +583,14 @@
 
     .line 257
     .line 258
-    if-nez p0, :cond_104
+    if-nez p0, :cond_3
 
     .line 259
     .line 260
-    goto :goto_11c
+    goto :goto_1
 
     .line 261
-    :cond_104
+    :cond_3
     const-wide/32 v5, 0x1440f2
 
     .line 262
@@ -600,7 +600,7 @@
 
     .line 265
     .line 266
-    if-eqz p0, :cond_112
+    if-eqz p0, :cond_4
 
     .line 267
     .line 268
@@ -613,11 +613,11 @@
 
     .line 272
     .line 273
-    if-nez p0, :cond_133
+    if-nez p0, :cond_8
 
     .line 274
     .line 275
-    :cond_112
+    :cond_4
     const-wide v1, 0xc000000dL
 
     .line 276
@@ -629,39 +629,39 @@
 
     .line 281
     .line 282
-    if-nez p0, :cond_133
+    if-nez p0, :cond_8
 
     .line 283
     .line 284
-    goto :goto_12f
+    goto :goto_2
 
     .line 285
-    :cond_11c
-    :goto_11c
+    :cond_5
+    :goto_1
     cmp-long p0, v3, v5
 
     .line 286
     .line 287
-    if-nez p0, :cond_133
+    if-nez p0, :cond_8
 
     .line 288
     .line 289
-    goto :goto_12f
+    goto :goto_2
 
     .line 290
-    :cond_121
+    :cond_6
     cmp-long p0, v3, v5
 
     .line 291
     .line 292
-    if-nez p0, :cond_133
+    if-nez p0, :cond_8
 
     .line 293
     .line 294
-    goto :goto_12f
+    goto :goto_2
 
     .line 295
-    :cond_126
+    :cond_7
     const-wide v1, 0xc0000016L
 
     .line 296
@@ -673,11 +673,11 @@
 
     .line 301
     .line 302
-    if-nez p0, :cond_133
+    if-nez p0, :cond_8
 
     .line 303
     .line 304
-    :goto_12f
+    :goto_2
     invoke-virtual {v0, p1}, Llibs/lv2;->e(Llibs/mv2;)V
 
     .line 305
@@ -686,8 +686,8 @@
     return-object v0
 
     .line 308
-    :cond_133
-    :goto_133
+    :cond_8
+    :goto_3
     invoke-virtual {v0, p1}, Llibs/lv2;->f(Llibs/mv2;)V
 
     .line 309
@@ -699,25 +699,25 @@
     nop
 
     .line 313
-    :pswitch_data_138
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a2
-        :pswitch_9c
-        :pswitch_96
-        :pswitch_90
-        :pswitch_89
-        :pswitch_83
-        :pswitch_7d
-        :pswitch_77
-        :pswitch_71
-        :pswitch_6b
-        :pswitch_64
-        :pswitch_5e
-        :pswitch_58
-        :pswitch_52
-        :pswitch_4c
-        :pswitch_46
-        :pswitch_3f
-        :pswitch_37
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

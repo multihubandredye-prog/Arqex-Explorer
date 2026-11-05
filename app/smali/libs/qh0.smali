@@ -57,7 +57,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-string v0, "([^=\r\n]*)(\\n|$)"
@@ -467,14 +467,14 @@
 .end method
 
 .method public static a(I)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
-    if-eqz p0, :cond_2d
+    if-eqz p0, :cond_0
 
     .line 2
     .line 3
-    packed-switch p0, :pswitch_data_34
+    packed-switch p0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -494,7 +494,7 @@
     return-object p0
 
     .line 13
-    :pswitch_c
+    :pswitch_0
     const-string p0, "SQL"
 
     .line 14
@@ -502,7 +502,7 @@
     return-object p0
 
     .line 16
-    :pswitch_f
+    :pswitch_1
     const-string p0, "SHELL"
 
     .line 17
@@ -510,7 +510,7 @@
     return-object p0
 
     .line 19
-    :pswitch_12
+    :pswitch_2
     const-string p0, "PY"
 
     .line 20
@@ -518,7 +518,7 @@
     return-object p0
 
     .line 22
-    :pswitch_15
+    :pswitch_3
     const-string p0, "PROP"
 
     .line 23
@@ -526,7 +526,7 @@
     return-object p0
 
     .line 25
-    :pswitch_18
+    :pswitch_4
     const-string p0, "PHP"
 
     .line 26
@@ -534,7 +534,7 @@
     return-object p0
 
     .line 28
-    :pswitch_1b
+    :pswitch_5
     const-string p0, "MARKDOWN"
 
     .line 29
@@ -542,7 +542,7 @@
     return-object p0
 
     .line 31
-    :pswitch_1e
+    :pswitch_6
     const-string p0, "MARKUP"
 
     .line 32
@@ -550,7 +550,7 @@
     return-object p0
 
     .line 34
-    :pswitch_21
+    :pswitch_7
     const-string p0, "JSON"
 
     .line 35
@@ -558,7 +558,7 @@
     return-object p0
 
     .line 37
-    :pswitch_24
+    :pswitch_8
     const-string p0, "JAVA"
 
     .line 38
@@ -566,7 +566,7 @@
     return-object p0
 
     .line 40
-    :pswitch_27
+    :pswitch_9
     const-string p0, "CSS"
 
     .line 41
@@ -574,7 +574,7 @@
     return-object p0
 
     .line 43
-    :pswitch_2a
+    :pswitch_a
     const-string p0, "C"
 
     .line 44
@@ -582,7 +582,7 @@
     return-object p0
 
     .line 46
-    :cond_2d
+    :cond_0
     sget p0, Llibs/bi2;->none:I
 
     .line 47
@@ -598,24 +598,24 @@
     return-object p0
 
     .line 53
-    :pswitch_data_34
+    :pswitch_data_0
     .packed-switch 0x2
-        :pswitch_2a
-        :pswitch_27
-        :pswitch_24
-        :pswitch_21
-        :pswitch_1e
-        :pswitch_1b
-        :pswitch_18
-        :pswitch_15
-        :pswitch_12
-        :pswitch_f
-        :pswitch_c
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static b()[I
-    .registers 1
+    .locals 1
 
     .line 1
     const/16 v0, 0xd
@@ -626,7 +626,7 @@
 
     .line 4
     .line 5
-    fill-array-data v0, :array_8
+    fill-array-data v0, :array_0
 
     .line 6
     .line 7
@@ -634,7 +634,7 @@
     return-object v0
 
     .line 9
-    :array_8
+    :array_0
     .array-data 4
         0x0
         0x1

@@ -13,7 +13,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/d31;Llibs/xt1;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/h31;->a:B
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final a(Landroid/view/View;Llibs/rp0;Llibs/$d;)V
-    .registers 23
+    .locals 19
 
     .line 1
     move-object/from16 v0, p0
@@ -54,7 +54,7 @@
 
     .line 6
     .line 7
-    packed-switch v1, :pswitch_data_32
+    packed-switch v1, :pswitch_data_0
 
     .line 8
     .line 9
@@ -97,7 +97,7 @@
     return-void
 
     .line 28
-    :pswitch_1b
+    :pswitch_0
     iget-object v15, v2, Llibs/d31;->e:Llibs/r31;
 
     .line 29
@@ -145,8 +145,8 @@
     nop
 
     .line 51
-    :pswitch_data_32
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1b
+        :pswitch_0
     .end packed-switch
 .end method

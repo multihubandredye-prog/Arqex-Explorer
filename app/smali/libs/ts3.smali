@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public final a(B)V
-    .registers 12
+    .locals 10
 
     .line 1
     iget-object v0, p0, Llibs/ts3;->c:[B
@@ -401,7 +401,7 @@
 .end method
 
 .method public final b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "VMPC-MAC"
@@ -412,14 +412,14 @@
 .end method
 
 .method public final c(Llibs/et;)V
-    .registers 5
+    .locals 3
 
     .line 1
     instance-of v0, p1, Llibs/ta2;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_2
 
     .line 4
     .line 5
@@ -442,7 +442,7 @@
 
     .line 13
     .line 14
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_1
 
     .line 15
     .line 16
@@ -454,7 +454,7 @@
 
     .line 19
     .line 20
-    if-eqz p1, :cond_26
+    if-eqz p1, :cond_0
 
     .line 21
     .line 22
@@ -464,7 +464,7 @@
     const/4 v2, 0x1
 
     .line 24
-    if-lt v0, v2, :cond_26
+    if-lt v0, v2, :cond_0
 
     .line 25
     .line 26
@@ -475,7 +475,7 @@
 
     .line 28
     .line 29
-    if-gt p1, v0, :cond_26
+    if-gt p1, v0, :cond_0
 
     .line 30
     .line 31
@@ -495,7 +495,7 @@
     return-void
 
     .line 39
-    :cond_26
+    :cond_0
     const-string p1, "VMPC-MAC requires 1 to 768 bytes of IV"
 
     .line 40
@@ -508,7 +508,7 @@
     return-void
 
     .line 45
-    :cond_2c
+    :cond_1
     const-string p1, "VMPC-MAC Init parameters must include a key"
 
     .line 46
@@ -521,7 +521,7 @@
     return-void
 
     .line 51
-    :cond_32
+    :cond_2
     const-string p1, "VMPC-MAC Init parameters must include an IV"
 
     .line 52
@@ -535,7 +535,7 @@
 .end method
 
 .method public final d([B)I
-    .registers 16
+    .locals 14
 
     .line 1
     const/4 v0, 0x1
@@ -544,12 +544,12 @@
     const/4 v1, 0x1
 
     .line 3
-    :goto_2
+    :goto_0
     const/16 v2, 0x19
 
     .line 4
     .line 5
-    if-ge v1, v2, :cond_84
+    if-ge v1, v2, :cond_0
 
     .line 6
     .line 7
@@ -821,23 +821,23 @@
 
     .line 130
     .line 131
-    goto/16 :goto_2
+    goto/16 :goto_0
 
     .line 132
     .line 133
-    :cond_84
+    :cond_0
     const/4 v1, 0x0
 
     .line 134
     const/4 v2, 0x0
 
     .line 135
-    :goto_86
+    :goto_1
     const/16 v3, 0x300
 
     .line 136
     .line 137
-    if-ge v2, v3, :cond_ab
+    if-ge v2, v3, :cond_1
 
     .line 138
     .line 139
@@ -907,10 +907,10 @@
 
     .line 170
     .line 171
-    goto :goto_86
+    goto :goto_1
 
     .line 172
-    :cond_ab
+    :cond_1
     const/16 v2, 0x14
 
     .line 173
@@ -922,8 +922,8 @@
     const/4 v4, 0x0
 
     .line 177
-    :goto_b0
-    if-ge v4, v2, :cond_db
+    :goto_2
+    if-ge v4, v2, :cond_2
 
     .line 178
     .line 179
@@ -1009,10 +1009,10 @@
 
     .line 218
     .line 219
-    goto :goto_b0
+    goto :goto_2
 
     .line 220
-    :cond_db
+    :cond_2
     invoke-static {v3, v1, p1, v1, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 221
@@ -1027,7 +1027,7 @@
 .end method
 
 .method public final e()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x14
@@ -1038,7 +1038,7 @@
 .end method
 
 .method public final reset()V
-    .registers 10
+    .locals 9
 
     .line 1
     iget-object v0, p0, Llibs/ts3;->g:[B
@@ -1071,8 +1071,8 @@
     const/4 v4, 0x0
 
     .line 15
-    :goto_e
-    if-ge v4, v3, :cond_18
+    :goto_0
+    if-ge v4, v3, :cond_0
 
     .line 16
     .line 17
@@ -1091,19 +1091,19 @@
 
     .line 23
     .line 24
-    goto :goto_e
+    goto :goto_0
 
     .line 25
-    :cond_18
+    :cond_0
     const/4 v3, 0x0
 
     .line 26
-    :goto_19
+    :goto_1
     const/16 v4, 0x300
 
     .line 27
     .line 28
-    if-ge v3, v4, :cond_3d
+    if-ge v3, v4, :cond_1
 
     .line 29
     .line 30
@@ -1172,15 +1172,15 @@
 
     .line 60
     .line 61
-    goto :goto_19
+    goto :goto_1
 
     .line 62
-    :cond_3d
+    :cond_1
     const/4 v0, 0x0
 
     .line 63
-    :goto_3e
-    if-ge v0, v4, :cond_60
+    :goto_2
+    if-ge v0, v4, :cond_2
 
     .line 64
     .line 65
@@ -1249,10 +1249,10 @@
 
     .line 95
     .line 96
-    goto :goto_3e
+    goto :goto_2
 
     .line 97
-    :cond_60
+    :cond_2
     iput-byte v2, p0, Llibs/ts3;->b:B
 
     .line 98
@@ -1292,8 +1292,8 @@
     const/4 v1, 0x0
 
     .line 116
-    :goto_73
-    if-ge v1, v0, :cond_7c
+    :goto_3
+    if-ge v1, v0, :cond_3
 
     .line 117
     .line 118
@@ -1309,15 +1309,15 @@
 
     .line 123
     .line 124
-    goto :goto_73
+    goto :goto_3
 
     .line 125
-    :cond_7c
+    :cond_3
     return-void
 .end method
 
 .method public final update([BII)V
-    .registers 6
+    .locals 2
 
     .line 1
     add-int v0, p2, p3
@@ -1327,15 +1327,15 @@
     array-length v1, p1
 
     .line 4
-    if-gt v0, v1, :cond_13
+    if-gt v0, v1, :cond_1
 
     .line 5
     .line 6
     const/4 v0, 0x0
 
     .line 7
-    :goto_6
-    if-ge v0, p3, :cond_12
+    :goto_0
+    if-ge v0, p3, :cond_0
 
     .line 8
     .line 9
@@ -1356,14 +1356,14 @@
 
     .line 17
     .line 18
-    goto :goto_6
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     return-void
 
     .line 20
-    :cond_13
+    :cond_1
     const-string p1, "input buffer too short"
 
     .line 21

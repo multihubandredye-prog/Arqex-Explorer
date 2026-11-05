@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/un1;->X:B
@@ -33,14 +33,14 @@
 .end method
 
 .method public final next()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/un1;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_1e
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -64,7 +64,7 @@
     return-object v0
 
     .line 15
-    :pswitch_e
+    :pswitch_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 16
@@ -73,7 +73,7 @@
     move-result v0
 
     .line 19
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     .line 20
     .line 21
@@ -85,10 +85,10 @@
     move-result-object v0
 
     .line 25
-    goto :goto_1d
+    goto :goto_0
 
     .line 26
-    :cond_19
+    :cond_0
     invoke-static {}, Llibs/t22;->b()V
 
     .line 27
@@ -97,18 +97,18 @@
     const/4 v0, 0x0
 
     .line 30
-    :goto_1d
+    :goto_0
     return-object v0
 
     .line 31
-    :pswitch_data_1e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_e
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public nextInt()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -118,14 +118,14 @@
 .end method
 
 .method public final remove()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/un1;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_16
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -146,7 +146,7 @@
     throw v0
 
     .line 14
-    :pswitch_d
+    :pswitch_0
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     .line 15
@@ -166,8 +166,8 @@
     nop
 
     .line 23
-    :pswitch_data_16
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_d
+        :pswitch_0
     .end packed-switch
 .end method

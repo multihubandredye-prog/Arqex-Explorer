@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const-string v0, "\\\\"
@@ -32,10 +32,10 @@
 .end method
 
 .method public static a(Ljava/lang/String;)Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     .line 2
     .line 3
@@ -45,7 +45,7 @@
     return-object p0
 
     .line 5
-    :cond_4
+    :cond_0
     sget-object v0, Llibs/az3;->a:Ljava/util/regex/Pattern;
 
     .line 6
@@ -85,7 +85,7 @@
 
     .line 23
     .line 24
-    if-eq v2, v3, :cond_1d
+    if-eq v2, v3, :cond_1
 
     .line 25
     .line 26
@@ -97,7 +97,7 @@
     move-result-object p0
 
     .line 30
-    :cond_1d
+    :cond_1
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     .line 31
@@ -120,7 +120,7 @@
     move-result v0
 
     .line 40
-    if-ne v0, v3, :cond_2d
+    if-ne v0, v3, :cond_2
 
     .line 41
     .line 42
@@ -132,34 +132,34 @@
     move-result-object p0
 
     .line 46
-    :cond_2d
+    :cond_2
     return-object p0
 .end method
 
 .method public static b(Llibs/rp0;Ljava/lang/Thread;)J
-    .registers 6
+    .locals 4
 
     .line 1
     const-wide/16 v0, 0x0
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     invoke-virtual {p0, v0, v1}, Llibs/rp0;->Post(J)Ljava/io/InputStream;
 
     .line 4
     .line 5
     .line 6
     move-result-object p0
-    :try_end_6
-    .catchall {:try_start_2 .. :try_end_6} :catchall_31
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 7
     const/16 v0, 0x4000
 
     .line 8
     .line 9
-    :try_start_8
+    :try_start_1
     new-array v0, v0, [B
 
     .line 10
@@ -173,7 +173,7 @@
     .line 14
     .line 15
     .line 16
-    :goto_f
+    :goto_0
     invoke-virtual {p0, v0}, Ljava/io/InputStream;->read([B)I
 
     .line 17
@@ -185,7 +185,7 @@
     const/4 v3, -0x1
 
     .line 21
-    if-eq v2, v3, :cond_29
+    if-eq v2, v3, :cond_1
 
     .line 22
     .line 23
@@ -205,14 +205,14 @@
     move-result v2
 
     .line 31
-    if-nez v2, :cond_21
+    if-nez v2, :cond_0
 
     .line 32
     .line 33
-    goto :goto_f
+    goto :goto_0
 
     .line 34
-    :cond_21
+    :cond_0
     new-instance p1, Ljava/io/InterruptedIOException;
 
     .line 35
@@ -225,22 +225,22 @@
     throw p1
 
     .line 40
-    :catchall_27
+    :catchall_0
     move-exception p1
 
     .line 41
-    goto :goto_33
+    goto :goto_1
 
     .line 42
-    :cond_29
+    :cond_1
     invoke-virtual {v1}, Ljava/util/zip/CRC32;->getValue()J
 
     .line 43
     .line 44
     .line 45
     move-result-wide v0
-    :try_end_2d
-    .catchall {:try_start_8 .. :try_end_2d} :catchall_27
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 46
     invoke-static {p0}, Llibs/ji0;->k(Ljava/io/Closeable;)V
@@ -251,32 +251,32 @@
     return-wide v0
 
     .line 50
-    :catchall_31
+    :catchall_1
     move-exception p1
 
     .line 51
     const/4 p0, 0x0
 
     .line 52
-    :goto_33
+    :goto_1
     invoke-static {p0}, Llibs/ji0;->k(Ljava/io/Closeable;)V
 
     .line 53
     .line 54
     .line 55
-    goto :goto_38
+    goto :goto_3
 
     .line 56
-    :goto_37
+    :goto_2
     throw p1
 
     .line 57
-    :goto_38
-    goto :goto_37
+    :goto_3
+    goto :goto_2
 .end method
 
 .method public static c(J)I
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
@@ -307,7 +307,7 @@
 
     .line 14
     .line 15
-    if-ge p1, v1, :cond_13
+    if-ge p1, v1, :cond_0
 
     .line 16
     .line 17
@@ -318,7 +318,7 @@
     return p0
 
     .line 20
-    :cond_13
+    :cond_0
     sub-int/2addr p1, v1
 
     .line 21

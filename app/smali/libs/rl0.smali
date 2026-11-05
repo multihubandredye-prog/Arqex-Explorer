@@ -5,10 +5,10 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ra;B)V
-    .registers 5
+    .locals 2
 
     .line 1
-    packed-switch p2, :pswitch_data_16
+    packed-switch p2, :pswitch_data_0
 
     .line 2
     .line 3
@@ -26,7 +26,7 @@
     return-void
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     invoke-direct {p0}, Llibs/jz;-><init>()V
 
     .line 12
@@ -51,8 +51,8 @@
     return-void
 
     .line 23
-    :pswitch_data_16
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method

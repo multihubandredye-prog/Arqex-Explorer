@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -16,7 +16,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public final onDraw(Landroid/graphics/Canvas;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
@@ -104,7 +104,7 @@
 .end method
 
 .method public final onSizeChanged(IIII)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-super {p0, p2, p1, p4, p3}, Landroid/widget/SeekBar;->onSizeChanged(IIII)V
@@ -116,7 +116,7 @@
 .end method
 
 .method public final onTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->isEnabled()Z
@@ -130,14 +130,14 @@
     const/4 v1, 0x0
 
     .line 6
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     .line 7
     .line 8
     return v1
 
     .line 9
-    :cond_8
+    :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     .line 10
@@ -149,25 +149,25 @@
     const/4 v2, 0x1
 
     .line 14
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_1
 
     .line 15
     .line 16
-    if-eq v0, v2, :cond_15
+    if-eq v0, v2, :cond_1
 
     .line 17
     .line 18
     const/4 v3, 0x2
 
     .line 19
-    if-eq v0, v3, :cond_15
+    if-eq v0, v3, :cond_1
 
     .line 20
     .line 21
-    goto :goto_3a
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_1
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->getMax()I
 
     .line 23
@@ -245,26 +245,26 @@
     .line 57
     .line 58
     .line 59
-    :goto_3a
+    :goto_0
     return v2
 .end method
 
 .method public declared-synchronized setProgress(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     invoke-super {p0, p1}, Landroid/widget/SeekBar;->setProgress(I)V
 
     .line 3
     .line 4
     .line 5
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
-    :try_end_7
-    .catchall {:try_start_1 .. :try_end_7} :catchall_9
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 6
     .line 7
@@ -275,14 +275,14 @@
     return-void
 
     .line 10
-    :catchall_9
+    :catchall_0
     move-exception p1
 
     .line 11
-    :try_start_a
+    :try_start_1
     monitor-exit p0
-    :try_end_b
-    .catchall {:try_start_a .. :try_end_b} :catchall_9
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 12
     throw p1

@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/bn1;
@@ -45,7 +45,7 @@
 .end method
 
 .method public constructor <init>(Llibs/za;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/nv2;-><init>()V
@@ -63,7 +63,7 @@
 
 # virtual methods
 .method public final h(Llibs/mv2;)V
-    .registers 7
+    .locals 5
 
     .line 1
     invoke-virtual {p1}, Llibs/qj0;->b()Llibs/xw2;

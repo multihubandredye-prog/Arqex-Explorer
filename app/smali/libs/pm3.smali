@@ -35,7 +35,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/x61;Ljava/lang/String;Llibs/rp0;ZJJLjava/lang/String;ZLlibs/om3;ZZZ)V
-    .registers 15
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -125,7 +125,7 @@
 .end method
 
 .method public static bridge synthetic a(Llibs/pm3;)J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Llibs/pm3;->d:J
@@ -136,7 +136,7 @@
 .end method
 
 .method public static bridge synthetic b(Llibs/pm3;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     iget-boolean p0, p0, Llibs/pm3;->k:Z
@@ -147,7 +147,7 @@
 .end method
 
 .method public static bridge synthetic c(Llibs/pm3;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     iget-boolean p0, p0, Llibs/pm3;->n:Z
@@ -158,7 +158,7 @@
 .end method
 
 .method public static bridge synthetic d(Llibs/pm3;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     iget-boolean p0, p0, Llibs/pm3;->g:Z
@@ -169,7 +169,7 @@
 .end method
 
 .method public static bridge synthetic e(Llibs/pm3;)Llibs/rp0;
-    .registers 1
+    .locals 0
 
     .line 1
     iget-object p0, p0, Llibs/pm3;->e:Llibs/rp0;
@@ -180,7 +180,7 @@
 .end method
 
 .method public static bridge synthetic f(Llibs/pm3;)Llibs/x61;
-    .registers 1
+    .locals 0
 
     .line 1
     iget-object p0, p0, Llibs/pm3;->c:Llibs/x61;
@@ -191,7 +191,7 @@
 .end method
 
 .method public static bridge synthetic g(Llibs/pm3;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     iget-boolean p0, p0, Llibs/pm3;->j:Z
@@ -202,7 +202,7 @@
 .end method
 
 .method public static bridge synthetic h(Llibs/pm3;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     iget-boolean p0, p0, Llibs/pm3;->i:Z
@@ -213,7 +213,7 @@
 .end method
 
 .method public static bridge synthetic i(Llibs/pm3;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
     iget-object p0, p0, Llibs/pm3;->a:Ljava/lang/String;
@@ -224,7 +224,7 @@
 .end method
 
 .method public static bridge synthetic j(Llibs/pm3;)Llibs/om3;
-    .registers 1
+    .locals 0
 
     .line 1
     iget-object p0, p0, Llibs/pm3;->h:Llibs/om3;
@@ -235,7 +235,7 @@
 .end method
 
 .method public static bridge synthetic k(Llibs/pm3;)J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Llibs/pm3;->f:J
@@ -246,7 +246,7 @@
 .end method
 
 .method public static bridge synthetic l(Llibs/pm3;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
     iget-object p0, p0, Llibs/pm3;->b:Ljava/lang/String;
@@ -257,7 +257,7 @@
 .end method
 
 .method public static bridge synthetic m(Llibs/pm3;)I
-    .registers 1
+    .locals 0
 
     .line 1
     iget p0, p0, Llibs/pm3;->m:I
@@ -268,7 +268,7 @@
 .end method
 
 .method public static bridge synthetic n(Llibs/pm3;)I
-    .registers 1
+    .locals 0
 
     .line 1
     iget p0, p0, Llibs/pm3;->l:I

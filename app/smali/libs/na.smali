@@ -16,7 +16,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/util/HashMap;
@@ -123,7 +123,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -147,7 +147,7 @@
 
     .line 11
     .line 12
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 13
     .line 14
@@ -170,7 +170,7 @@
     return-void
 
     .line 23
-    :cond_16
+    :cond_0
     const-string v0, "No MessageDigest "
 
     .line 24
@@ -201,7 +201,7 @@
 
 # virtual methods
 .method public final e()[B
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/na;->X:Llibs/la0;
@@ -232,7 +232,7 @@
 .end method
 
 .method public final q()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/na;->X:Llibs/la0;
@@ -251,7 +251,7 @@
 .end method
 
 .method public final reset()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/na;->X:Llibs/la0;
@@ -267,7 +267,7 @@
 .end method
 
 .method public final update([B)V
-    .registers 5
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
@@ -289,7 +289,7 @@
 .end method
 
 .method public final update([BII)V
-    .registers 5
+    .locals 1
 
     .line 9
     iget-object v0, p0, Llibs/na;->X:Llibs/la0;

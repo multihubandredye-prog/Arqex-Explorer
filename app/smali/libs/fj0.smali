@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Param;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -48,7 +48,7 @@
     move-result v0
 
     .line 19
-    if-nez v0, :cond_20
+    if-nez v0, :cond_0
 
     .line 20
     .line 21
@@ -78,7 +78,7 @@
     return-void
 
     .line 33
-    :cond_20
+    :cond_0
     const-string p1, "sequence not version 0"
 
     .line 34
@@ -97,7 +97,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Llibs/Init;

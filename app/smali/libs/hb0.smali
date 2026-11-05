@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/wx;Ljava/lang/String;I)V
-    .registers 5
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/sa2;
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final m()Llibs/oy2;
-    .registers 7
+    .locals 6
 
     .line 1
     invoke-super {p0}, Llibs/Xi;->m()Llibs/oy2;

@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r4;ZZ)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 8
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/o4;->X:Llibs/r4;
@@ -93,7 +93,7 @@
     move-result p1
 
     .line 25
-    if-eqz p1, :cond_1f
+    if-eqz p1, :cond_0
 
     .line 26
     .line 27
@@ -101,18 +101,18 @@
 
     .line 28
     .line 29
-    if-eqz p1, :cond_1f
+    if-eqz p1, :cond_0
 
     .line 30
     .line 31
-    goto :goto_20
+    goto :goto_0
 
     .line 32
-    :cond_1f
+    :cond_0
     const/4 v3, 0x0
 
     .line 33
-    :goto_20
+    :goto_0
     iget-boolean p1, p0, Llibs/o4;->Y:Z
 
     .line 34

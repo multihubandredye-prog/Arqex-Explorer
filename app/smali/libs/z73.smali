@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>([B)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/i93;-><init>([B)V

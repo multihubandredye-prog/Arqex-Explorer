@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/td1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final a(Llibs/k00;)V
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/vd1;
@@ -63,7 +63,7 @@
 .end method
 
 .method public final b([B)I
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/aa;->a:Llibs/td1;

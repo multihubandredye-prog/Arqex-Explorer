@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic List(Ljavax/net/ssl/X509TrustManager;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     instance-of p0, p0, Ljavax/net/ssl/X509ExtendedTrustManager;
@@ -16,7 +16,7 @@
 .end method
 
 .method public static bridge synthetic Map()Ljava/security/cert/PKIXRevocationChecker$Option;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Ljava/security/cert/PKIXRevocationChecker$Option;->NO_FALLBACK:Ljava/security/cert/PKIXRevocationChecker$Option;
@@ -27,7 +27,7 @@
 .end method
 
 .method public static bridge synthetic Object(Lcom/mixplorer/activities/PlayerActivity;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/app/Activity;->isInPictureInPictureMode()Z
@@ -42,7 +42,7 @@
 .end method
 
 .method public static bridge synthetic Set(Ljavax/net/ssl/X509ExtendedTrustManager;[Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/net/Socket;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2, p3}, Ljavax/net/ssl/X509ExtendedTrustManager;->checkServerTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/net/Socket;)V
@@ -54,7 +54,7 @@
 .end method
 
 .method public static bridge synthetic String(Ljava/security/cert/PKIXCertPathChecker;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     instance-of p0, p0, Ljava/security/cert/PKIXRevocationChecker;
@@ -65,7 +65,7 @@
 .end method
 
 .method public static bridge synthetic a(Ljava/util/Locale;)Landroid/icu/text/PluralRules;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-static {p0}, Landroid/icu/text/PluralRules;->forLocale(Ljava/util/Locale;)Landroid/icu/text/PluralRules;
@@ -80,7 +80,7 @@
 .end method
 
 .method public static bridge synthetic b(Lcom/mixplorer/services/TileServiceFTP;)Landroid/service/quicksettings/Tile;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/service/quicksettings/TileService;->getQsTile()Landroid/service/quicksettings/Tile;
@@ -95,7 +95,7 @@
 .end method
 
 .method public static bridge synthetic c(Lcom/mixplorer/services/TileServiceHTTP;)Landroid/service/quicksettings/Tile;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/service/quicksettings/TileService;->getQsTile()Landroid/service/quicksettings/Tile;
@@ -110,7 +110,7 @@
 .end method
 
 .method public static bridge synthetic d(Lcom/mixplorer/services/TileServiceSFTP;)Landroid/service/quicksettings/Tile;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/service/quicksettings/TileService;->getQsTile()Landroid/service/quicksettings/Tile;
@@ -125,7 +125,7 @@
 .end method
 
 .method public static bridge synthetic e(Lcom/mixplorer/services/TileServiceSMB;)Landroid/service/quicksettings/Tile;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/service/quicksettings/TileService;->getQsTile()Landroid/service/quicksettings/Tile;
@@ -140,7 +140,7 @@
 .end method
 
 .method public static bridge synthetic f()Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_SET_PROGRESS:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
@@ -151,7 +151,7 @@
 .end method
 
 .method public static bridge synthetic g(Ljava/util/function/BiFunction;Ljavax/net/ssl/SSLEngine;Ljava/util/List;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-interface {p0, p1, p2}, Ljava/util/function/BiFunction;->apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -166,7 +166,7 @@
 .end method
 
 .method public static bridge synthetic h(Ljava/util/function/BiFunction;Ljavax/net/ssl/SSLSocket;Ljava/util/List;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-interface {p0, p1, p2}, Ljava/util/function/BiFunction;->apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -181,7 +181,7 @@
 .end method
 
 .method public static bridge synthetic i(Ljavax/net/ssl/SSLParameters;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Ljavax/net/ssl/SSLParameters;->getEndpointIdentificationAlgorithm()Ljava/lang/String;
@@ -196,7 +196,7 @@
 .end method
 
 .method public static bridge synthetic j()Ljava/security/cert/PKIXRevocationChecker$Option;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Ljava/security/cert/PKIXRevocationChecker$Option;->ONLY_END_ENTITY:Ljava/security/cert/PKIXRevocationChecker$Option;
@@ -207,7 +207,7 @@
 .end method
 
 .method public static bridge synthetic k(Ljava/security/cert/PKIXCertPathChecker;)Ljava/security/cert/PKIXRevocationChecker;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Ljava/security/cert/PKIXRevocationChecker;
@@ -218,7 +218,7 @@
 .end method
 
 .method public static bridge synthetic l(Landroid/icu/text/PluralRules;)Ljava/util/Set;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/icu/text/PluralRules;->getKeywords()Ljava/util/Set;
@@ -233,7 +233,7 @@
 .end method
 
 .method public static bridge synthetic m(Ljavax/net/ssl/SSLEngine;)Ljavax/net/ssl/SSLSession;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Ljavax/net/ssl/SSLEngine;->getHandshakeSession()Ljavax/net/ssl/SSLSession;
@@ -248,7 +248,7 @@
 .end method
 
 .method public static bridge synthetic n(Ljavax/net/ssl/SSLSocket;)Ljavax/net/ssl/SSLSession;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Ljavax/net/ssl/SSLSocket;->getHandshakeSession()Ljavax/net/ssl/SSLSession;
@@ -263,7 +263,7 @@
 .end method
 
 .method public static bridge synthetic p(Ljavax/net/ssl/X509TrustManager;)Ljavax/net/ssl/X509ExtendedTrustManager;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Ljavax/net/ssl/X509ExtendedTrustManager;
@@ -274,7 +274,7 @@
 .end method
 
 .method public static bridge synthetic q(Landroid/app/Notification$Builder;Landroid/widget/RemoteViews;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setCustomBigContentView(Landroid/widget/RemoteViews;)Landroid/app/Notification$Builder;
@@ -286,7 +286,7 @@
 .end method
 
 .method public static bridge synthetic r(Landroid/app/WallpaperManager;Landroid/graphics/Bitmap;I)V
-    .registers 5
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
@@ -304,7 +304,7 @@
 .end method
 
 .method public static bridge synthetic s(Landroid/content/Context;Landroid/content/ComponentName;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p0, p1}, Landroid/service/quicksettings/TileService;->requestListeningState(Landroid/content/Context;Landroid/content/ComponentName;)V
@@ -316,7 +316,7 @@
 .end method
 
 .method public static bridge synthetic t(Landroid/service/quicksettings/Tile;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/service/quicksettings/Tile;->updateTile()V
@@ -328,7 +328,7 @@
 .end method
 
 .method public static bridge synthetic u(Landroid/service/quicksettings/Tile;I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/service/quicksettings/Tile;->setState(I)V
@@ -340,7 +340,7 @@
 .end method
 
 .method public static bridge synthetic v(Landroid/service/quicksettings/Tile;Landroid/graphics/drawable/Icon;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/service/quicksettings/Tile;->setIcon(Landroid/graphics/drawable/Icon;)V
@@ -352,7 +352,7 @@
 .end method
 
 .method public static bridge synthetic w(Ljava/security/cert/PKIXRevocationChecker;Ljava/util/Map;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Ljava/security/cert/PKIXRevocationChecker;->setOcspResponses(Ljava/util/Map;)V
@@ -364,7 +364,7 @@
 .end method
 
 .method public static bridge synthetic x(Ljava/security/cert/X509Certificate;Ljava/security/PublicKey;Ljava/security/Provider;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2}, Ljava/security/cert/X509Certificate;->verify(Ljava/security/PublicKey;Ljava/security/Provider;)V
@@ -376,7 +376,7 @@
 .end method
 
 .method public static bridge synthetic y(Ljavax/net/ssl/X509ExtendedTrustManager;[Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/net/Socket;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2, p3}, Ljavax/net/ssl/X509ExtendedTrustManager;->checkClientTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/net/Socket;)V
@@ -388,7 +388,7 @@
 .end method
 
 .method public static bridge synthetic z(Landroid/app/WallpaperManager;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/app/WallpaperManager;->isSetWallpaperAllowed()Z

@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(F)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput p1, p0, Llibs/rm3;->a:F
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final onDismiss(Landroid/content/DialogInterface;)V
-    .registers 3
+    .locals 1
 
     .line 1
     sget p1, Llibs/sm3;->a:F
@@ -45,7 +45,7 @@
 
     .line 6
     .line 7
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_0
 
     .line 8
     .line 9
@@ -65,6 +65,6 @@
     .line 15
     .line 16
     .line 17
-    :cond_10
+    :cond_0
     return-void
 .end method

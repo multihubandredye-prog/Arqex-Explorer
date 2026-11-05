@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/a;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/mc;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onLongClick(Landroid/view/View;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/mc;->X:B
@@ -53,7 +53,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_32
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -118,7 +118,7 @@
     return v1
 
     .line 40
-    :pswitch_27
+    :pswitch_0
     invoke-static {}, Llibs/gx1;->a()V
 
     .line 41
@@ -140,8 +140,8 @@
     return v1
 
     .line 51
-    :pswitch_data_32
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_27
+        :pswitch_0
     .end packed-switch
 .end method

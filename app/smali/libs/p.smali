@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/yc;-><init>()V
@@ -23,14 +23,14 @@
 
 # virtual methods
 .method public final b(Ljava/lang/Class;)Ljava/security/spec/AlgorithmParameterSpec;
-    .registers 4
+    .locals 2
 
     .line 1
     const-class v0, Ljava/security/spec/AlgorithmParameterSpec;
 
     .line 2
     .line 3
-    if-eq p1, v0, :cond_2b
+    if-eq p1, v0, :cond_2
 
     .line 4
     .line 5
@@ -38,19 +38,19 @@
 
     .line 6
     .line 7
-    if-ne v0, p1, :cond_9
+    if-ne v0, p1, :cond_0
 
     .line 8
     .line 9
-    goto :goto_2b
+    goto :goto_0
 
     .line 10
-    :cond_9
+    :cond_0
     const-class v0, Ljavax/crypto/spec/IvParameterSpec;
 
     .line 11
     .line 12
-    if-ne p1, v0, :cond_1b
+    if-ne p1, v0, :cond_1
 
     .line 13
     .line 14
@@ -82,7 +82,7 @@
     return-object p1
 
     .line 28
-    :cond_1b
+    :cond_1
     new-instance v0, Ljava/security/spec/InvalidParameterSpecException;
 
     .line 29
@@ -115,13 +115,13 @@
     throw v0
 
     .line 44
-    :cond_2b
-    :goto_2b
+    :cond_2
+    :goto_0
     sget-object p1, Llibs/fu0;->a:Ljava/lang/Class;
 
     .line 45
     .line 46
-    if-eqz p1, :cond_3c
+    if-eqz p1, :cond_3
 
     .line 47
     .line 48
@@ -152,7 +152,7 @@
     return-object p1
 
     .line 61
-    :cond_3c
+    :cond_3
     new-instance p1, Ljavax/crypto/spec/IvParameterSpec;
 
     .line 62
@@ -182,7 +182,7 @@
 .end method
 
 .method public final engineGetEncoded()[B
-    .registers 2
+    .locals 1
 
     .line 21
     iget-object v0, p0, Llibs/p;->a:Llibs/ks0;
@@ -195,7 +195,7 @@
 .end method
 
 .method public final engineGetEncoded(Ljava/lang/String;)[B
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p1}, Llibs/yc;->a(Ljava/lang/String;)Z
@@ -206,7 +206,7 @@
     move-result p1
 
     .line 5
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_0
 
     .line 6
     .line 7
@@ -225,7 +225,7 @@
     return-object p1
 
     .line 14
-    :cond_d
+    :cond_0
     const-string p1, "unknown format specified"
 
     .line 15
@@ -242,14 +242,14 @@
 .end method
 
 .method public final engineInit(Ljava/security/spec/AlgorithmParameterSpec;)V
-    .registers 4
+    .locals 2
 
     .line 1
     sget-object v0, Llibs/fu0;->a:Ljava/lang/Class;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -261,7 +261,7 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -280,7 +280,7 @@
     return-void
 
     .line 18
-    :cond_11
+    :cond_0
     new-instance v0, Ljava/security/spec/InvalidParameterSpecException;
 
     .line 19
@@ -322,7 +322,7 @@
 .end method
 
 .method public final engineInit([B)V
-    .registers 2
+    .locals 0
 
     .line 38
     invoke-static {p1}, Llibs/ks0;->g(Ljava/lang/Object;)Llibs/ks0;
@@ -335,14 +335,14 @@
 .end method
 
 .method public final engineInit([BLjava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 39
     invoke-static {p2}, Llibs/yc;->a(Ljava/lang/String;)Z
 
     move-result p2
 
-    if-eqz p2, :cond_d
+    if-eqz p2, :cond_0
 
     .line 40
     invoke-static {p1}, Llibs/ks0;->g(Ljava/lang/Object;)Llibs/ks0;
@@ -354,7 +354,7 @@
     return-void
 
     .line 41
-    :cond_d
+    :cond_0
     const-string p1, "unknown format specified"
 
     invoke-static {p1}, Llibs/ic0;->t(Ljava/lang/String;)V
@@ -363,7 +363,7 @@
 .end method
 
 .method public final engineToString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "GCM"

@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic a(Landroid/print/PrintAttributes$Margins;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/print/PrintAttributes$Margins;->getRightMils()I
@@ -20,7 +20,7 @@
 .end method
 
 .method public static bridge synthetic b(Landroid/graphics/pdf/PdfDocument$Page;)Landroid/graphics/Canvas;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/graphics/pdf/PdfDocument$Page;->getCanvas()Landroid/graphics/Canvas;
@@ -35,7 +35,7 @@
 .end method
 
 .method public static bridge synthetic c()Landroid/graphics/Path$Op;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/Path$Op;->UNION:Landroid/graphics/Path$Op;
@@ -46,7 +46,7 @@
 .end method
 
 .method public static bridge synthetic d()Ljava/nio/charset/Charset;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Ljava/nio/charset/StandardCharsets;->US_ASCII:Ljava/nio/charset/Charset;
@@ -57,7 +57,7 @@
 .end method
 
 .method public static bridge synthetic e(Landroid/graphics/Path;Landroid/graphics/Path;)V
-    .registers 3
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/Path$Op;->UNION:Landroid/graphics/Path$Op;
@@ -73,7 +73,7 @@
 .end method
 
 .method public static bridge synthetic f(Landroid/view/View;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->isAttachedToWindow()Z
@@ -88,7 +88,7 @@
 .end method
 
 .method public static bridge synthetic g(Landroid/print/PrintAttributes$Margins;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/print/PrintAttributes$Margins;->getBottomMils()I
@@ -103,7 +103,7 @@
 .end method
 
 .method public static bridge synthetic h(Landroid/graphics/pdf/PdfDocument$Page;)Landroid/graphics/Canvas;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/graphics/pdf/PdfDocument$Page;->getCanvas()Landroid/graphics/Canvas;
@@ -118,7 +118,7 @@
 .end method
 
 .method public static bridge synthetic i()Landroid/graphics/Path$Op;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/Path$Op;->INTERSECT:Landroid/graphics/Path$Op;
@@ -129,7 +129,7 @@
 .end method
 
 .method public static bridge synthetic j(Landroid/graphics/Path;Landroid/graphics/Path;)V
-    .registers 3
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/Path$Op;->INTERSECT:Landroid/graphics/Path$Op;

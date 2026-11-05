@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/conscrypt/ConscryptEngine;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Lorg/conscrypt/ConscryptEngine$2;->this$0:Lorg/conscrypt/ConscryptEngine;
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public provideSession()Lorg/conscrypt/ConscryptSession;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngine$2;->this$0:Lorg/conscrypt/ConscryptEngine;

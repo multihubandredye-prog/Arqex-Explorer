@@ -15,7 +15,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/t22;->X:B
@@ -31,7 +31,7 @@
 .end method
 
 .method public static synthetic b()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/util/NoSuchElementException;
@@ -47,7 +47,7 @@
 .end method
 
 .method public static synthetic c(Ljava/lang/Object;Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/security/InvalidKeyException;
@@ -85,7 +85,7 @@
 .end method
 
 .method public static synthetic d(Ljava/lang/String;)V
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/security/spec/InvalidKeySpecException;
@@ -101,7 +101,7 @@
 .end method
 
 .method public static synthetic e(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 5
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/io/IOException;
@@ -144,7 +144,7 @@
 .end method
 
 .method public static synthetic f(Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/RuntimeException;
@@ -160,7 +160,7 @@
 .end method
 
 .method public static synthetic h(Ljava/lang/Object;Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/io/IOException;
@@ -206,7 +206,7 @@
 .end method
 
 .method public static synthetic i(Ljava/lang/String;)V
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/security/InvalidAlgorithmParameterException;
@@ -222,7 +222,7 @@
 .end method
 
 .method public static synthetic j(Ljava/lang/String;)V
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/security/SignatureException;
@@ -238,7 +238,7 @@
 .end method
 
 .method public static synthetic k(Ljava/lang/String;)V
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/b13;
@@ -256,7 +256,7 @@
 
 # virtual methods
 .method public a(Llibs/h3;)V
-    .registers 4
+    .locals 2
 
     .line 1
     sget v0, Llibs/gq2;->a:I
@@ -297,7 +297,7 @@
 .end method
 
 .method public apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 8
+    .locals 6
 
     .line 1
     iget-byte v0, p0, Llibs/t22;->X:B
@@ -308,7 +308,7 @@
 
     .line 4
     .line 5
-    sparse-switch v0, :sswitch_data_c8
+    sparse-switch v0, :sswitch_data_0
 
     .line 6
     .line 7
@@ -336,7 +336,7 @@
     return-object p1
 
     .line 19
-    :sswitch_12
+    :sswitch_0
     check-cast p1, Llibs/xf1;
 
     .line 20
@@ -347,7 +347,7 @@
     return-object p1
 
     .line 23
-    :sswitch_16
+    :sswitch_1
     check-cast p1, Llibs/ux3;
 
     .line 24
@@ -400,7 +400,7 @@
     return-object v2
 
     .line 49
-    :sswitch_30
+    :sswitch_2
     check-cast p1, Llibs/bn2;
 
     .line 50
@@ -412,7 +412,7 @@
     return-object p1
 
     .line 54
-    :sswitch_35
+    :sswitch_3
     check-cast p1, Llibs/bn2;
 
     .line 55
@@ -467,7 +467,7 @@
     return-object p1
 
     .line 82
-    :sswitch_51
+    :sswitch_4
     check-cast p1, Llibs/hl2;
 
     .line 83
@@ -479,7 +479,7 @@
     return-object p1
 
     .line 87
-    :sswitch_56
+    :sswitch_5
     check-cast p1, Llibs/hl2;
 
     .line 88
@@ -491,7 +491,7 @@
     return-object p1
 
     .line 92
-    :sswitch_5b
+    :sswitch_6
     check-cast p1, Llibs/hl2;
 
     .line 93
@@ -503,7 +503,7 @@
     return-object p1
 
     .line 97
-    :sswitch_60
+    :sswitch_7
     check-cast p1, Llibs/zx3;
 
     .line 98
@@ -536,7 +536,7 @@
     return-object p1
 
     .line 113
-    :sswitch_70
+    :sswitch_8
     check-cast p1, Llibs/ux3;
 
     .line 114
@@ -626,7 +626,7 @@
     return-object p1
 
     .line 158
-    :sswitch_9d
+    :sswitch_9
     check-cast p1, Llibs/ux3;
 
     .line 159
@@ -712,30 +712,30 @@
     nop
 
     .line 201
-    :sswitch_data_c8
+    :sswitch_data_0
     .sparse-switch
-        0x0 -> :sswitch_9d
-        0x1 -> :sswitch_70
-        0x2 -> :sswitch_60
-        0xc -> :sswitch_5b
-        0xd -> :sswitch_56
-        0xe -> :sswitch_51
-        0xf -> :sswitch_35
-        0x10 -> :sswitch_30
-        0x11 -> :sswitch_16
-        0x1c -> :sswitch_12
+        0x0 -> :sswitch_9
+        0x1 -> :sswitch_8
+        0x2 -> :sswitch_7
+        0xc -> :sswitch_6
+        0xd -> :sswitch_5
+        0xe -> :sswitch_4
+        0xf -> :sswitch_3
+        0x10 -> :sswitch_2
+        0x11 -> :sswitch_1
+        0x1c -> :sswitch_0
     .end sparse-switch
 .end method
 
 .method public g()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public get()Llibs/cg;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/t22;->X:B
@@ -748,7 +748,7 @@
     const/4 v2, 0x1
 
     .line 5
-    sparse-switch v0, :sswitch_data_40
+    sparse-switch v0, :sswitch_data_0
 
     .line 6
     .line 7
@@ -769,7 +769,7 @@
     return-object v0
 
     .line 16
-    :sswitch_f
+    :sswitch_0
     sget v0, Llibs/o53;->x:I
 
     .line 17
@@ -786,7 +786,7 @@
     return-object v0
 
     .line 24
-    :sswitch_17
+    :sswitch_1
     sget v0, Llibs/g53;->x:I
 
     .line 25
@@ -803,7 +803,7 @@
     return-object v0
 
     .line 32
-    :sswitch_1f
+    :sswitch_2
     sget v0, Llibs/ut2;->x:I
 
     .line 33
@@ -820,7 +820,7 @@
     return-object v0
 
     .line 40
-    :sswitch_27
+    :sswitch_3
     sget v0, Llibs/uq2;->x:I
 
     .line 41
@@ -837,7 +837,7 @@
     return-object v0
 
     .line 48
-    :sswitch_2f
+    :sswitch_4
     sget v0, Llibs/kp2;->x:I
 
     .line 49
@@ -854,7 +854,7 @@
     return-object v0
 
     .line 56
-    :sswitch_37
+    :sswitch_5
     sget v0, Llibs/kj2;->x:I
 
     .line 57
@@ -874,13 +874,13 @@
     return-object v0
 
     .line 65
-    :sswitch_data_40
+    :sswitch_data_0
     .sparse-switch
-        0xb -> :sswitch_37
-        0x12 -> :sswitch_2f
-        0x14 -> :sswitch_27
-        0x15 -> :sswitch_1f
-        0x18 -> :sswitch_17
-        0x19 -> :sswitch_f
+        0xb -> :sswitch_5
+        0x12 -> :sswitch_4
+        0x14 -> :sswitch_3
+        0x15 -> :sswitch_2
+        0x18 -> :sswitch_1
+        0x19 -> :sswitch_0
     .end sparse-switch
 .end method

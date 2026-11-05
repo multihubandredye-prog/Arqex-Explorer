@@ -12,7 +12,7 @@
 
 # direct methods
 .method public varargs constructor <init>([Ljava/security/cert/X509Certificate;)V
-    .registers 8
+    .locals 6
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,8 +39,8 @@
     const/4 v1, 0x0
 
     .line 13
-    :goto_c
-    if-ge v1, v0, :cond_2f
+    :goto_0
+    if-ge v1, v0, :cond_1
 
     .line 14
     .line 15
@@ -72,7 +72,7 @@
 
     .line 28
     .line 29
-    if-nez v4, :cond_29
+    if-nez v4, :cond_0
 
     .line 30
     .line 31
@@ -97,7 +97,7 @@
     .line 40
     .line 41
     .line 42
-    :cond_29
+    :cond_0
     invoke-interface {v4, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     .line 43
@@ -107,17 +107,17 @@
 
     .line 46
     .line 47
-    goto :goto_c
+    goto :goto_0
 
     .line 48
-    :cond_2f
+    :cond_1
     return-void
 .end method
 
 
 # virtual methods
 .method public final a(Ljava/security/cert/X509Certificate;)Ljava/security/cert/X509Certificate;
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-virtual {p1}, Ljava/security/cert/X509Certificate;->getIssuerX500Principal()Ljavax/security/auth/x500/X500Principal;
@@ -144,14 +144,14 @@
 
     .line 12
     .line 13
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     .line 14
     .line 15
-    goto :goto_29
+    goto :goto_1
 
     .line 16
-    :cond_f
+    :cond_0
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     .line 17
@@ -160,7 +160,7 @@
     move-result-object v0
 
     .line 20
-    :goto_13
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 21
@@ -169,7 +169,7 @@
     move-result v1
 
     .line 24
-    if-eqz v1, :cond_29
+    if-eqz v1, :cond_1
 
     .line 25
     .line 26
@@ -193,10 +193,10 @@
     move-result-object v2
 
     .line 36
-    :try_start_23
+    :try_start_0
     invoke-virtual {p1, v2}, Ljava/security/cert/Certificate;->verify(Ljava/security/PublicKey;)V
-    :try_end_26
-    .catch Ljava/lang/Exception; {:try_start_23 .. :try_end_26} :catch_27
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 37
     .line 38
@@ -204,15 +204,15 @@
     return-object v1
 
     .line 40
-    :catch_27
+    :catch_0
     nop
 
     .line 41
-    goto :goto_13
+    goto :goto_0
 
     .line 42
-    :cond_29
-    :goto_29
+    :cond_1
+    :goto_1
     const/4 p1, 0x0
 
     .line 43
@@ -220,22 +220,22 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
-    if-ne p1, p0, :cond_3
+    if-ne p1, p0, :cond_0
 
     .line 2
     .line 3
-    goto :goto_13
+    goto :goto_0
 
     .line 4
-    :cond_3
+    :cond_0
     instance-of v0, p1, Llibs/se;
 
     .line 5
     .line 6
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_1
 
     .line 7
     .line 8
@@ -259,18 +259,18 @@
     move-result p1
 
     .line 18
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_1
 
     .line 19
     .line 20
-    :goto_13
+    :goto_0
     const/4 p1, 0x1
 
     .line 21
     return p1
 
     .line 22
-    :cond_15
+    :cond_1
     const/4 p1, 0x0
 
     .line 23
@@ -278,7 +278,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/se;->a:Ljava/util/LinkedHashMap;

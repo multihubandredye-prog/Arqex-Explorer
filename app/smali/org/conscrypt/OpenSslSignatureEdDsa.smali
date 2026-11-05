@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/security/SignatureSpi;-><init>()V
@@ -38,7 +38,7 @@
 .end method
 
 .method private static verifyKey(Lorg/conscrypt/OpenSSLKey;)Lorg/conscrypt/OpenSSLKey;
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLKey;->getNativeRef()Lorg/conscrypt/NativeRef$EVP_PKEY;
@@ -61,14 +61,14 @@
 
     .line 10
     .line 11
-    if-ne v0, v1, :cond_d
+    if-ne v0, v1, :cond_0
 
     .line 12
     .line 13
     return-object p0
 
     .line 14
-    :cond_d
+    :cond_0
     const-string p0, "Non-ED25519 key used to initialize ED25519 signature."
 
     .line 15
@@ -87,7 +87,7 @@
 
 # virtual methods
 .method public engineGetParameter(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -97,7 +97,7 @@
 .end method
 
 .method public engineInitSign(Ljava/security/PrivateKey;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-static {p1}, Lorg/conscrypt/OpenSSLKey;->fromPrivateKey(Ljava/security/PrivateKey;)Lorg/conscrypt/OpenSSLKey;
@@ -175,7 +175,7 @@
 .end method
 
 .method public engineInitVerify(Ljava/security/PublicKey;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-static {p1}, Lorg/conscrypt/OpenSSLKey;->fromPublicKey(Ljava/security/PublicKey;)Lorg/conscrypt/OpenSSLKey;
@@ -253,14 +253,14 @@
 .end method
 
 .method public engineSetParameter(Ljava/lang/String;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public engineSign()[B
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSslSignatureEdDsa;->ctx:Lorg/conscrypt/NativeRef$EVP_MD_CTX;
@@ -271,7 +271,7 @@
 
     .line 4
     .line 5
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_0
 
     .line 6
     .line 7
@@ -322,7 +322,7 @@
     return-object v0
 
     .line 30
-    :cond_1d
+    :cond_0
     const-string v0, "No key provided"
 
     .line 31
@@ -339,7 +339,7 @@
 .end method
 
 .method public engineUpdate(B)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSslSignatureEdDsa;->buffer:Lorg/conscrypt/ExposedByteArrayOutputStream;
@@ -355,7 +355,7 @@
 .end method
 
 .method public engineUpdate([BII)V
-    .registers 5
+    .locals 1
 
     .line 7
     iget-object v0, p0, Lorg/conscrypt/OpenSslSignatureEdDsa;->buffer:Lorg/conscrypt/ExposedByteArrayOutputStream;
@@ -366,7 +366,7 @@
 .end method
 
 .method public engineVerify([B)Z
-    .registers 9
+    .locals 7
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSslSignatureEdDsa;->ctx:Lorg/conscrypt/NativeRef$EVP_MD_CTX;
@@ -377,7 +377,7 @@
 
     .line 4
     .line 5
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_0
 
     .line 6
     .line 7
@@ -437,7 +437,7 @@
     return p1
 
     .line 33
-    :cond_20
+    :cond_0
     const-string p1, "No key provided"
 
     .line 34

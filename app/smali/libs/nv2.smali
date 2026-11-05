@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x2
@@ -22,7 +22,7 @@
 
 # virtual methods
 .method public a(Llibs/qj0;)Z
-    .registers 2
+    .locals 0
 
     .line 1
     instance-of p1, p1, Llibs/mv2;
@@ -33,7 +33,7 @@
 .end method
 
 .method public final b(Llibs/qj0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     check-cast p1, Llibs/mv2;

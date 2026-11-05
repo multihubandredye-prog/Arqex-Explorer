@@ -31,7 +31,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 11
+    .locals 11
 
     .line 1
     new-instance v7, Ljava/util/ArrayList;
@@ -106,7 +106,7 @@
 .end method
 
 .method public constructor <init>(Llibs/w52;Llibs/w52;Llibs/w52;Llibs/w52;Llibs/w52;Llibs/w52;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
-    .registers 11
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -158,7 +158,7 @@
 .end method
 
 .method public static a(Llibs/ei3;Llibs/ei3;)Llibs/ei3;
-    .registers 13
+    .locals 11
 
     .line 1
     new-instance v0, Llibs/ei3;

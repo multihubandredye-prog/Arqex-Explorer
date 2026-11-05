@@ -11,14 +11,14 @@
 
 # direct methods
 .method public constructor <init>(Llibs/la0;Llibs/qk2;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/w71;->a:B
 
     .line 2
     .line 3
-    packed-switch p3, :pswitch_data_1c
+    packed-switch p3, :pswitch_data_0
 
     .line 4
     .line 5
@@ -44,7 +44,7 @@
     return-void
 
     .line 17
-    :pswitch_10
+    :pswitch_0
     invoke-direct {p0}, Ljava/security/SignatureSpi;-><init>()V
 
     .line 18
@@ -69,23 +69,23 @@
     nop
 
     .line 29
-    :pswitch_data_1c
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_10
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public final engineGetParameter(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-byte p1, p0, Llibs/w71;->a:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_16
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -106,7 +106,7 @@
     throw p1
 
     .line 14
-    :pswitch_d
+    :pswitch_0
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     .line 15
@@ -126,14 +126,14 @@
     nop
 
     .line 23
-    :pswitch_data_16
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_d
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final engineInitSign(Ljava/security/PrivateKey;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/w71;->a:B
@@ -147,7 +147,7 @@
 
     .line 5
     .line 6
-    packed-switch v0, :pswitch_data_20
+    packed-switch v0, :pswitch_data_0
 
     .line 7
     .line 8
@@ -176,7 +176,7 @@
     return-void
 
     .line 21
-    :pswitch_14
+    :pswitch_0
     check-cast p1, Ljava/security/interfaces/RSAPrivateKey;
 
     .line 22
@@ -201,14 +201,14 @@
     return-void
 
     .line 33
-    :pswitch_data_20
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_14
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final engineInitVerify(Ljava/security/PublicKey;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/w71;->a:B
@@ -222,7 +222,7 @@
 
     .line 5
     .line 6
-    packed-switch v0, :pswitch_data_20
+    packed-switch v0, :pswitch_data_0
 
     .line 7
     .line 8
@@ -251,7 +251,7 @@
     return-void
 
     .line 21
-    :pswitch_14
+    :pswitch_0
     check-cast p1, Ljava/security/interfaces/RSAPublicKey;
 
     .line 22
@@ -276,18 +276,18 @@
     return-void
 
     .line 33
-    :pswitch_data_20
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_14
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final engineSetParameter(Ljava/lang/String;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     iget-byte p1, p0, Llibs/w71;->a:B
 
-    packed-switch p1, :pswitch_data_16
+    packed-switch p1, :pswitch_data_0
 
     .line 23
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -299,7 +299,7 @@
     throw p1
 
     .line 24
-    :pswitch_d
+    :pswitch_0
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     const-string p2, "engineSetParameter unsupported"
@@ -310,21 +310,21 @@
 
     nop
 
-    :pswitch_data_16
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_d
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final engineSetParameter(Ljava/security/spec/AlgorithmParameterSpec;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-byte p1, p0, Llibs/w71;->a:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_16
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -345,7 +345,7 @@
     throw p1
 
     .line 14
-    :pswitch_d
+    :pswitch_0
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     .line 15
@@ -365,14 +365,14 @@
     nop
 
     .line 23
-    :pswitch_data_16
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_d
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final engineSign()[B
-    .registers 4
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/w71;->a:B
@@ -386,12 +386,12 @@
 
     .line 5
     .line 6
-    packed-switch v0, :pswitch_data_20
+    packed-switch v0, :pswitch_data_0
 
     .line 7
     .line 8
     .line 9
-    :try_start_8
+    :try_start_0
     check-cast v2, Llibs/fi1;
 
     .line 10
@@ -402,14 +402,14 @@
     .line 13
     .line 14
     move-result-object v1
-    :try_end_e
-    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_e} :catch_f
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 15
-    goto :goto_13
+    goto :goto_0
 
     .line 16
-    :catch_f
+    :catch_0
     move-exception v0
 
     .line 17
@@ -418,12 +418,12 @@
     .line 18
     .line 19
     .line 20
-    :goto_13
+    :goto_0
     return-object v1
 
     .line 21
-    :pswitch_14
-    :try_start_14
+    :pswitch_0
+    :try_start_1
     check-cast v2, Llibs/k71;
 
     .line 22
@@ -434,14 +434,14 @@
     .line 25
     .line 26
     move-result-object v1
-    :try_end_1a
-    .catch Ljava/lang/Exception; {:try_start_14 .. :try_end_1a} :catch_1b
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 27
-    goto :goto_1f
+    goto :goto_1
 
     .line 28
-    :catch_1b
+    :catch_1
     move-exception v0
 
     .line 29
@@ -450,24 +450,24 @@
     .line 30
     .line 31
     .line 32
-    :goto_1f
+    :goto_1
     return-object v1
 
     .line 33
-    :pswitch_data_20
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_14
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final engineUpdate(B)V
-    .registers 6
+    .locals 4
 
     iget-byte v0, p0, Llibs/w71;->a:B
 
     iget-object v1, p0, Llibs/w71;->b:Ljava/lang/Object;
 
-    packed-switch v0, :pswitch_data_26
+    packed-switch v0, :pswitch_data_0
 
     .line 63
     check-cast v1, Llibs/fi1;
@@ -483,7 +483,7 @@
     return-void
 
     .line 66
-    :pswitch_11
+    :pswitch_0
     check-cast v1, Llibs/k71;
 
     .line 67
@@ -498,12 +498,12 @@
 
     array-length v3, v2
 
-    if-ge v0, v3, :cond_21
+    if-ge v0, v3, :cond_0
 
     .line 69
     aput-byte p1, v2, v0
 
-    :cond_21
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
     .line 70
@@ -511,14 +511,14 @@
 
     return-void
 
-    :pswitch_data_26
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_11
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final engineUpdate([BII)V
-    .registers 10
+    .locals 6
 
     .line 1
     iget-byte v0, p0, Llibs/w71;->a:B
@@ -529,7 +529,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_3e
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -554,7 +554,7 @@
     return-void
 
     .line 18
-    :pswitch_11
+    :pswitch_0
     check-cast v1, Llibs/k71;
 
     .line 19
@@ -563,8 +563,8 @@
 
     .line 21
     .line 22
-    :goto_15
-    if-lez p3, :cond_35
+    :goto_0
+    if-lez p3, :cond_1
 
     .line 23
     .line 24
@@ -579,7 +579,7 @@
     array-length v3, v3
 
     .line 29
-    if-ge v2, v3, :cond_35
+    if-ge v2, v3, :cond_1
 
     .line 30
     .line 31
@@ -603,7 +603,7 @@
     array-length v5, v4
 
     .line 41
-    if-ge v3, v5, :cond_2c
+    if-ge v3, v5, :cond_0
 
     .line 42
     .line 43
@@ -611,7 +611,7 @@
 
     .line 44
     .line 45
-    :cond_2c
+    :cond_0
     add-int/lit8 v3, v3, 0x1
 
     .line 46
@@ -628,10 +628,10 @@
 
     .line 52
     .line 53
-    goto :goto_15
+    goto :goto_0
 
     .line 54
-    :cond_35
+    :cond_1
     invoke-interface {v0, p1, p2, p3}, Llibs/la0;->update([BII)V
 
     .line 55
@@ -651,14 +651,14 @@
     return-void
 
     .line 63
-    :pswitch_data_3e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_11
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final engineVerify([B)Z
-    .registers 15
+    .locals 13
 
     .line 1
     iget-byte v0, p0, Llibs/w71;->a:B
@@ -679,7 +679,7 @@
     const/4 v4, 0x0
 
     .line 9
-    packed-switch v0, :pswitch_data_198
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
@@ -688,7 +688,7 @@
 
     .line 13
     .line 14
-    :try_start_d
+    :try_start_0
     iget-object v0, v2, Llibs/fi1;->d:Ljava/lang/Object;
 
     .line 15
@@ -709,8 +709,8 @@
 
     .line 23
     iput-object p1, v2, Llibs/fi1;->f:Ljava/lang/Object;
-    :try_end_18
-    .catch Ljava/lang/Exception; {:try_start_d .. :try_end_18} :catch_67
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 24
     .line 25
@@ -743,14 +743,14 @@
 
     .line 39
     .line 40
-    if-ne v0, v1, :cond_2a
+    if-ne v0, v1, :cond_0
 
     .line 41
     .line 42
-    goto :goto_3c
+    goto :goto_0
 
     .line 43
-    :cond_2a
+    :cond_0
     iget-object v0, v2, Llibs/fi1;->e:Ljava/lang/Object;
 
     .line 44
@@ -783,11 +783,11 @@
 
     .line 58
     .line 59
-    if-ne v0, v1, :cond_67
+    if-ne v0, v1, :cond_3
 
     .line 60
     .line 61
-    :goto_3c
+    :goto_0
     invoke-virtual {v2}, Llibs/fi1;->b()V
 
     .line 62
@@ -839,11 +839,11 @@
     const/4 v2, 0x0
 
     .line 86
-    :goto_55
+    :goto_1
     array-length v3, v1
 
     .line 87
-    if-eq v2, v3, :cond_5d
+    if-eq v2, v3, :cond_1
 
     .line 88
     .line 89
@@ -855,18 +855,18 @@
 
     .line 92
     .line 93
-    goto :goto_55
+    goto :goto_1
 
     .line 94
-    :cond_5d
+    :cond_1
     const/4 v1, 0x0
 
     .line 95
-    :goto_5e
+    :goto_2
     array-length v2, p1
 
     .line 96
-    if-eq v1, v2, :cond_66
+    if-eq v1, v2, :cond_2
 
     .line 97
     .line 98
@@ -878,19 +878,19 @@
 
     .line 101
     .line 102
-    goto :goto_5e
+    goto :goto_2
 
     .line 103
-    :cond_66
+    :cond_2
     move v4, v0
 
     .line 104
-    :catch_67
-    :cond_67
+    :catch_0
+    :cond_3
     return v4
 
     .line 105
-    :pswitch_68
+    :pswitch_0
     check-cast v2, Llibs/k71;
 
     .line 106
@@ -899,7 +899,7 @@
 
     .line 108
     .line 109
-    :try_start_6c
+    :try_start_1
     iget-object v5, v2, Llibs/k71;->b:Llibs/qk2;
 
     .line 110
@@ -913,8 +913,8 @@
     .line 114
     .line 115
     move-result-object p1
-    :try_end_73
-    .catch Ljava/lang/Exception; {:try_start_6c .. :try_end_73} :catch_7e
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 116
     aget-byte v5, p1, v4
@@ -929,7 +929,7 @@
 
     .line 121
     .line 122
-    if-eqz v5, :cond_81
+    if-eqz v5, :cond_4
 
     .line 123
     .line 124
@@ -938,16 +938,16 @@
     .line 125
     .line 126
     .line 127
-    :catch_7e
-    :goto_7e
+    :catch_1
+    :goto_3
     const/4 v3, 0x0
 
     .line 128
-    goto/16 :goto_197
+    goto/16 :goto_e
 
     .line 129
     .line 130
-    :cond_81
+    :cond_4
     array-length v5, p1
 
     .line 131
@@ -965,7 +965,7 @@
     xor-int/2addr v1, v5
 
     .line 137
-    if-eqz v1, :cond_8e
+    if-eqz v1, :cond_5
 
     .line 138
     .line 139
@@ -974,10 +974,10 @@
     .line 140
     .line 141
     .line 142
-    goto :goto_7e
+    goto :goto_3
 
     .line 143
-    :cond_8e
+    :cond_5
     array-length v1, p1
 
     .line 144
@@ -996,17 +996,17 @@
 
     .line 150
     .line 151
-    if-nez v1, :cond_9a
+    if-nez v1, :cond_6
 
     .line 152
     .line 153
     const/4 v5, 0x1
 
     .line 154
-    goto :goto_be
+    goto :goto_4
 
     .line 155
-    :cond_9a
+    :cond_6
     array-length v1, p1
 
     .line 156
@@ -1069,7 +1069,7 @@
 
     .line 182
     .line 183
-    if-eqz v6, :cond_190
+    if-eqz v6, :cond_1a
 
     .line 184
     .line 185
@@ -1081,19 +1081,19 @@
     move-result v6
 
     .line 189
-    if-ne v1, v6, :cond_185
+    if-ne v1, v6, :cond_19
 
     .line 190
     .line 191
-    :goto_be
+    :goto_4
     const/4 v1, 0x0
 
     .line 192
-    :goto_bf
+    :goto_5
     array-length v6, p1
 
     .line 193
-    if-eq v1, v6, :cond_ce
+    if-eq v1, v6, :cond_8
 
     .line 194
     .line 195
@@ -1109,23 +1109,23 @@
 
     .line 200
     .line 201
-    if-nez v6, :cond_cb
+    if-nez v6, :cond_7
 
     .line 202
     .line 203
-    goto :goto_ce
+    goto :goto_6
 
     .line 204
-    :cond_cb
+    :cond_7
     add-int/lit8 v1, v1, 0x1
 
     .line 205
     .line 206
-    goto :goto_bf
+    goto :goto_5
 
     .line 207
-    :cond_ce
-    :goto_ce
+    :cond_8
+    :goto_6
     add-int/2addr v1, v3
 
     .line 208
@@ -1154,7 +1154,7 @@
 
     .line 218
     .line 219
-    if-gtz v5, :cond_e0
+    if-gtz v5, :cond_9
 
     .line 220
     .line 221
@@ -1163,10 +1163,10 @@
     .line 222
     .line 223
     .line 224
-    goto :goto_7e
+    goto :goto_3
 
     .line 225
-    :cond_e0
+    :cond_9
     aget-byte v9, p1, v4
 
     .line 226
@@ -1175,7 +1175,7 @@
 
     .line 228
     .line 229
-    if-nez v9, :cond_11a
+    if-nez v9, :cond_e
 
     .line 230
     .line 231
@@ -1183,7 +1183,7 @@
 
     .line 232
     .line 233
-    if-le v9, v5, :cond_ee
+    if-le v9, v5, :cond_a
 
     .line 234
     .line 235
@@ -1192,10 +1192,10 @@
     .line 236
     .line 237
     .line 238
-    goto :goto_7e
+    goto :goto_3
 
     .line 239
-    :cond_ee
+    :cond_a
     invoke-interface {v0}, Llibs/la0;->reset()V
 
     .line 240
@@ -1217,8 +1217,8 @@
     const/4 v9, 0x1
 
     .line 250
-    :goto_f9
-    if-eq v0, v6, :cond_10b
+    :goto_7
+    if-eq v0, v6, :cond_c
 
     .line 251
     .line 252
@@ -1244,23 +1244,23 @@
 
     .line 261
     .line 262
-    if-eqz v11, :cond_108
+    if-eqz v11, :cond_b
 
     .line 263
     .line 264
     const/4 v9, 0x0
 
     .line 265
-    :cond_108
+    :cond_b
     add-int/lit8 v0, v0, 0x1
 
     .line 266
     .line 267
-    goto :goto_f9
+    goto :goto_7
 
     .line 268
-    :cond_10b
-    if-nez v9, :cond_112
+    :cond_c
+    if-nez v9, :cond_d
 
     .line 269
     .line 270
@@ -1269,11 +1269,11 @@
     .line 271
     .line 272
     .line 273
-    goto/16 :goto_7e
+    goto/16 :goto_3
 
     .line 274
     .line 275
-    :cond_112
+    :cond_d
     new-array v0, v5, [B
 
     .line 276
@@ -1287,10 +1287,10 @@
     .line 280
     .line 281
     .line 282
-    goto :goto_13f
+    goto :goto_9
 
     .line 283
-    :cond_11a
+    :cond_e
     invoke-interface {v0, v4, v7}, Llibs/la0;->c(I[B)I
 
     .line 284
@@ -1302,8 +1302,8 @@
     const/4 v9, 0x1
 
     .line 288
-    :goto_11f
-    if-eq v0, v6, :cond_131
+    :goto_8
+    if-eq v0, v6, :cond_10
 
     .line 289
     .line 290
@@ -1329,23 +1329,23 @@
 
     .line 299
     .line 300
-    if-eqz v11, :cond_12e
+    if-eqz v11, :cond_f
 
     .line 301
     .line 302
     const/4 v9, 0x0
 
     .line 303
-    :cond_12e
+    :cond_f
     add-int/lit8 v0, v0, 0x1
 
     .line 304
     .line 305
-    goto :goto_11f
+    goto :goto_8
 
     .line 306
-    :cond_131
-    if-nez v9, :cond_138
+    :cond_10
+    if-nez v9, :cond_11
 
     .line 307
     .line 308
@@ -1354,11 +1354,11 @@
     .line 309
     .line 310
     .line 311
-    goto/16 :goto_7e
+    goto/16 :goto_3
 
     .line 312
     .line 313
-    :cond_138
+    :cond_11
     new-array v0, v5, [B
 
     .line 314
@@ -1372,12 +1372,12 @@
     .line 318
     .line 319
     .line 320
-    :goto_13f
+    :goto_9
     iget v0, v2, Llibs/k71;->g:I
 
     .line 321
     .line 322
-    if-eqz v0, :cond_17c
+    if-eqz v0, :cond_18
 
     .line 323
     .line 324
@@ -1392,7 +1392,7 @@
     array-length v6, v1
 
     .line 329
-    if-le v0, v6, :cond_161
+    if-le v0, v6, :cond_14
 
     .line 330
     .line 331
@@ -1402,25 +1402,25 @@
     array-length v6, v5
 
     .line 333
-    if-le v0, v6, :cond_150
+    if-le v0, v6, :cond_12
 
     .line 334
     .line 335
     const/4 v0, 0x0
 
     .line 336
-    goto :goto_151
+    goto :goto_a
 
     .line 337
-    :cond_150
+    :cond_12
     const/4 v0, 0x1
 
     .line 338
-    :goto_151
+    :goto_a
     const/4 v6, 0x0
 
     .line 339
-    :goto_152
+    :goto_b
     iget-object v7, v2, Llibs/k71;->f:[B
 
     .line 340
@@ -1428,7 +1428,7 @@
     array-length v7, v7
 
     .line 342
-    if-eq v6, v7, :cond_175
+    if-eq v6, v7, :cond_17
 
     .line 343
     .line 344
@@ -1440,48 +1440,48 @@
 
     .line 347
     .line 348
-    if-eq v7, v8, :cond_15e
+    if-eq v7, v8, :cond_13
 
     .line 349
     .line 350
     const/4 v0, 0x0
 
     .line 351
-    :cond_15e
+    :cond_13
     add-int/lit8 v6, v6, 0x1
 
     .line 352
     .line 353
-    goto :goto_152
+    goto :goto_b
 
     .line 354
-    :cond_161
+    :cond_14
     array-length v6, v5
 
     .line 355
-    if-eq v0, v6, :cond_166
+    if-eq v0, v6, :cond_15
 
     .line 356
     .line 357
     const/4 v0, 0x0
 
     .line 358
-    goto :goto_167
+    goto :goto_c
 
     .line 359
-    :cond_166
+    :cond_15
     const/4 v0, 0x1
 
     .line 360
-    :goto_167
+    :goto_c
     const/4 v6, 0x0
 
     .line 361
-    :goto_168
+    :goto_d
     array-length v7, v5
 
     .line 362
-    if-eq v6, v7, :cond_175
+    if-eq v6, v7, :cond_17
 
     .line 363
     .line 364
@@ -1493,23 +1493,23 @@
 
     .line 367
     .line 368
-    if-eq v7, v8, :cond_172
+    if-eq v7, v8, :cond_16
 
     .line 369
     .line 370
     const/4 v0, 0x0
 
     .line 371
-    :cond_172
+    :cond_16
     add-int/lit8 v6, v6, 0x1
 
     .line 372
     .line 373
-    goto :goto_168
+    goto :goto_d
 
     .line 374
-    :cond_175
-    if-nez v0, :cond_17c
+    :cond_17
+    if-nez v0, :cond_18
 
     .line 375
     .line 376
@@ -1518,11 +1518,11 @@
     .line 377
     .line 378
     .line 379
-    goto/16 :goto_7e
+    goto/16 :goto_3
 
     .line 380
     .line 381
-    :cond_17c
+    :cond_18
     iget-object v0, v2, Llibs/k71;->f:[B
 
     .line 382
@@ -1537,10 +1537,10 @@
     .line 387
     .line 388
     .line 389
-    goto :goto_197
+    goto :goto_e
 
     .line 390
-    :cond_185
+    :cond_19
     const-string p1, "signer initialised with wrong digest for trailer "
 
     .line 391
@@ -1558,11 +1558,11 @@
     .line 397
     .line 398
     .line 399
-    goto/16 :goto_7e
+    goto/16 :goto_3
 
     .line 400
     .line 401
-    :cond_190
+    :cond_1a
     const-string p1, "unrecognised hash in signature"
 
     .line 402
@@ -1572,16 +1572,16 @@
     .line 404
     .line 405
     .line 406
-    goto/16 :goto_7e
+    goto/16 :goto_3
 
     .line 407
     .line 408
-    :goto_197
+    :goto_e
     return v3
 
     .line 409
-    :pswitch_data_198
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_68
+        :pswitch_0
     .end packed-switch
 .end method

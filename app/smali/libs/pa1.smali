@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>([I)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final hasNext()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/pa1;->Z:I
@@ -49,14 +49,14 @@
     const/4 v1, 0x1
 
     .line 4
-    if-ge v0, v1, :cond_6
+    if-ge v0, v1, :cond_0
 
     .line 5
     .line 6
     return v1
 
     .line 7
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
     .line 8
@@ -64,7 +64,7 @@
 .end method
 
 .method public final nextInt()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/pa1;->Z:I

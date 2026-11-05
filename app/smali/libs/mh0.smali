@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0xc
@@ -23,7 +23,7 @@
 
 # virtual methods
 .method public final Put(ILjava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-static {p2}, Llibs/rt1;->b(Ljava/lang/Object;)Landroid/widget/EdgeEffect;
@@ -43,7 +43,7 @@
 .end method
 
 .method public final Work(Ljava/lang/Object;FF)Z
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-static {p1}, Llibs/rt1;->b(Ljava/lang/Object;)Landroid/widget/EdgeEffect;

@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(ZILlibs/Core;)V
-    .registers 6
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Llibs/Theme;-><init>()V
@@ -42,7 +42,7 @@
 
     .line 11
     .line 12
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     .line 13
     .line 14
@@ -53,20 +53,20 @@
     const/4 p1, 0x1
 
     .line 17
-    goto :goto_13
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     iput-boolean p1, p0, Llibs/Height;->Y:Z
 
     .line 19
     .line 20
-    :goto_13
+    :goto_0
     iput p2, p0, Llibs/Height;->X:I
 
     .line 21
     .line 22
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_1
 
     .line 23
     .line 24
@@ -77,7 +77,7 @@
     return-void
 
     .line 27
-    :cond_1a
+    :cond_1
     invoke-interface {p3}, Llibs/Core;->b()Llibs/Theme;
 
     .line 28
@@ -91,10 +91,10 @@
 .end method
 
 .method public static n(Ljava/lang/Object;)Llibs/Height;
-    .registers 4
+    .locals 3
 
     .line 1
-    if-eqz p0, :cond_39
+    if-eqz p0, :cond_2
 
     .line 2
     .line 3
@@ -102,14 +102,14 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
-    goto :goto_39
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     instance-of v0, p0, [B
 
     .line 9
@@ -117,11 +117,11 @@
     const/4 v1, 0x0
 
     .line 11
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_1
 
     .line 12
     .line 13
-    :try_start_c
+    :try_start_0
     check-cast p0, [B
 
     .line 14
@@ -140,14 +140,14 @@
     .line 21
     .line 22
     move-result-object p0
-    :try_end_16
-    .catch Ljava/io/IOException; {:try_start_c .. :try_end_16} :catch_17
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 23
     return-object p0
 
     .line 24
-    :catch_17
+    :catch_0
     move-exception p0
 
     .line 25
@@ -180,7 +180,7 @@
     return-object v1
 
     .line 40
-    :cond_27
+    :cond_1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 41
@@ -217,8 +217,8 @@
     return-object v1
 
     .line 58
-    :cond_39
-    :goto_39
+    :cond_2
+    :goto_0
     check-cast p0, Llibs/Height;
 
     .line 59
@@ -229,28 +229,28 @@
 
 # virtual methods
 .method public final d()Llibs/Theme;
-    .registers 1
+    .locals 0
 
     .line 1
     return-object p0
 .end method
 
 .method public final g(Llibs/Theme;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     instance-of v0, p1, Llibs/Height;
 
     .line 2
     .line 3
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
-    goto :goto_2e
+    goto :goto_0
 
     .line 6
-    :cond_5
+    :cond_0
     check-cast p1, Llibs/Height;
 
     .line 7
@@ -267,7 +267,7 @@
 
     .line 13
     .line 14
-    if-ne v1, v2, :cond_2e
+    if-ne v1, v2, :cond_4
 
     .line 15
     .line 16
@@ -279,30 +279,30 @@
 
     .line 19
     .line 20
-    if-eq v1, p1, :cond_16
+    if-eq v1, p1, :cond_1
 
     .line 21
     .line 22
-    goto :goto_2e
+    goto :goto_0
 
     .line 23
-    :cond_16
+    :cond_1
     iget-object p1, p0, Llibs/Height;->Z:Llibs/Core;
 
     .line 24
     .line 25
-    if-nez p1, :cond_1d
+    if-nez p1, :cond_2
 
     .line 26
     .line 27
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_3
 
     .line 28
     .line 29
-    goto :goto_2e
+    goto :goto_0
 
     .line 30
-    :cond_1d
+    :cond_2
     invoke-interface {p1}, Llibs/Core;->b()Llibs/Theme;
 
     .line 31
@@ -327,22 +327,22 @@
     move-result p1
 
     .line 42
-    if-nez p1, :cond_2c
+    if-nez p1, :cond_3
 
     .line 43
     .line 44
-    goto :goto_2e
+    goto :goto_0
 
     .line 45
-    :cond_2c
+    :cond_3
     const/4 p1, 0x1
 
     .line 46
     return p1
 
     .line 47
-    :cond_2e
-    :goto_2e
+    :cond_4
+    :goto_0
     const/4 p1, 0x0
 
     .line 48
@@ -350,7 +350,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/Height;->X:I
@@ -361,7 +361,7 @@
 
     .line 4
     .line 5
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_0
 
     .line 6
     .line 7
@@ -376,12 +376,12 @@
     xor-int/2addr v0, v1
 
     .line 12
-    :cond_b
+    :cond_0
     return v0
 .end method
 
 .method public final l()Llibs/Theme;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Llibs/s10;
@@ -409,7 +409,7 @@
 .end method
 
 .method public final m()Llibs/Theme;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Llibs/b50;
@@ -437,14 +437,14 @@
 .end method
 
 .method public final p()Llibs/Theme;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/Height;->Z:Llibs/Core;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -459,7 +459,7 @@
     return-object v0
 
     .line 10
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
     .line 11
@@ -467,7 +467,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/content/Intent;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/eq2;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/eq2;->X:B
@@ -47,33 +47,33 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_46
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
     .line 8
-    :try_start_7
+    :try_start_0
     sget-object v0, Llibs/zt0;->g:Landroid/content/Context;
 
     .line 9
     .line 10
     invoke-virtual {v0, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
-    :try_end_c
-    .catchall {:try_start_7 .. :try_end_c} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 11
     .line 12
     .line 13
-    :catchall_c
+    :catchall_0
     return-void
 
     .line 14
-    :pswitch_d
+    :pswitch_0
     sget v0, Lcom/mixplorer/activities/RunActivity;->X:I
 
     .line 15
     .line 16
-    :try_start_f
+    :try_start_1
     const-string v0, "shortcut"
 
     .line 17
@@ -89,7 +89,7 @@
     move-result v0
 
     .line 23
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_0
 
     .line 24
     .line 25
@@ -105,17 +105,17 @@
     move-result-object v0
 
     .line 31
-    goto :goto_2c
+    goto :goto_0
 
     .line 32
-    :catchall_1f
+    :catchall_1
     move-exception v0
 
     .line 33
-    goto :goto_3c
+    goto :goto_1
 
     .line 34
-    :cond_21
+    :cond_0
     const-string v0, "thread_id"
 
     .line 35
@@ -139,7 +139,7 @@
     move-result-object v0
 
     .line 45
-    :goto_2c
+    :goto_0
     invoke-static {v1, v0}, Llibs/e9;->g(Landroid/content/Intent;Ljava/lang/Object;)Z
 
     .line 46
@@ -148,7 +148,7 @@
     move-result v0
 
     .line 49
-    if-nez v0, :cond_45
+    if-nez v0, :cond_1
 
     .line 50
     .line 51
@@ -165,16 +165,16 @@
 
     .line 57
     invoke-static {v0}, Llibs/gx1;->d(Ljava/lang/Object;)V
-    :try_end_3b
-    .catchall {:try_start_f .. :try_end_3b} :catchall_1f
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 58
     .line 59
     .line 60
-    goto :goto_45
+    goto :goto_2
 
     .line 61
-    :goto_3c
+    :goto_1
     const-string v1, "TASKER"
 
     .line 62
@@ -192,13 +192,13 @@
     .line 68
     .line 69
     .line 70
-    :cond_45
-    :goto_45
+    :cond_1
+    :goto_2
     return-void
 
     .line 71
-    :pswitch_data_46
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_d
+        :pswitch_0
     .end packed-switch
 .end method

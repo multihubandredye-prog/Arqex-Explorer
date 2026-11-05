@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     invoke-static {}, Llibs/t43;->Set()Z
@@ -20,7 +20,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -44,7 +44,7 @@
     return-void
 
     .line 17
-    :cond_10
+    :cond_0
     new-instance v0, Llibs/e72;
 
     .line 18
@@ -66,7 +66,7 @@
 .end method
 
 .method public static a(Landroid/view/VelocityTracker;I)F
-    .registers 3
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/it3;->a:Llibs/e72;
@@ -85,7 +85,7 @@
 .end method
 
 .method public static b(Landroid/view/VelocityTracker;I)F
-    .registers 3
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/it3;->a:Llibs/e72;

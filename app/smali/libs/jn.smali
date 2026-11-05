@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ln;Llibs/ci3;I)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -76,14 +76,14 @@
 
     .line 18
     .line 19
-    if-eq v2, v1, :cond_1d
+    if-eq v2, v1, :cond_1
 
     .line 20
     .line 21
     const/4 v1, 0x2
 
     .line 22
-    if-eq v2, v1, :cond_1a
+    if-eq v2, v1, :cond_0
 
     .line 23
     .line 24
@@ -91,23 +91,23 @@
 
     .line 25
     .line 26
-    goto :goto_1f
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_0
     const-string v1, "RenderOptions"
 
     .line 28
     .line 29
-    goto :goto_1f
+    goto :goto_0
 
     .line 30
-    :cond_1d
+    :cond_1
     const-string v1, "Document"
 
     .line 31
     .line 32
-    :goto_1f
+    :goto_0
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 33

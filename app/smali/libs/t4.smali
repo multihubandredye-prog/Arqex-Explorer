@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;)V
-    .registers 4
+    .locals 2
 
     .line 1
     const/4 v0, 0x2
@@ -44,7 +44,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lcom/mixplorer/ProgressListener;JB)V
-    .registers 5
+    .locals 0
 
     .line 14
     iput-byte p4, p0, Llibs/t4;->a:B
@@ -61,7 +61,7 @@
 
 # virtual methods
 .method public final onProgress(JJ)V
-    .registers 7
+    .locals 2
 
     .line 1
     iget-byte p3, p0, Llibs/t4;->a:B
@@ -72,7 +72,7 @@
 
     .line 4
     .line 5
-    packed-switch p3, :pswitch_data_36
+    packed-switch p3, :pswitch_data_0
 
     .line 6
     .line 7
@@ -81,7 +81,7 @@
 
     .line 9
     .line 10
-    if-nez p3, :cond_1d
+    if-nez p3, :cond_0
 
     .line 11
     .line 12
@@ -118,25 +118,25 @@
     .line 27
     .line 28
     .line 29
-    goto :goto_20
+    goto :goto_0
 
     .line 30
-    :cond_1d
+    :cond_0
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 31
     .line 32
     .line 33
-    :goto_20
+    :goto_0
     return-void
 
     .line 34
-    :pswitch_21
+    :pswitch_0
     check-cast p4, Lcom/mixplorer/ProgressListener;
 
     .line 35
     .line 36
-    if-eqz p4, :cond_2a
+    if-eqz p4, :cond_1
 
     .line 37
     .line 38
@@ -149,16 +149,16 @@
     .line 41
     .line 42
     .line 43
-    :cond_2a
+    :cond_1
     return-void
 
     .line 44
-    :pswitch_2b
+    :pswitch_1
     check-cast p4, Lcom/mixplorer/ProgressListener;
 
     .line 45
     .line 46
-    if-eqz p4, :cond_34
+    if-eqz p4, :cond_2
 
     .line 47
     .line 48
@@ -171,16 +171,16 @@
     .line 51
     .line 52
     .line 53
-    :cond_34
+    :cond_2
     return-void
 
     .line 54
     nop
 
     .line 55
-    :pswitch_data_36
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2b
-        :pswitch_21
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

@@ -54,7 +54,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/cg;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -100,7 +100,7 @@
     move-result v1
 
     .line 22
-    if-ne v1, v0, :cond_1a
+    if-ne v1, v0, :cond_0
 
     .line 23
     .line 24
@@ -111,7 +111,7 @@
     return-void
 
     .line 27
-    :cond_1a
+    :cond_0
     const-string p1, "Poly1305 requires a 128 bit block cipher."
 
     .line 28
@@ -130,7 +130,7 @@
 
 # virtual methods
 .method public final a(B)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/yd2;->b:[B
@@ -156,7 +156,7 @@
 .end method
 
 .method public final b()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/yd2;->a:Llibs/cg;
@@ -187,14 +187,14 @@
 .end method
 
 .method public final c(Llibs/et;)V
-    .registers 10
+    .locals 8
 
     .line 1
     instance-of v0, p1, Llibs/ta2;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_e4
+    if-eqz v0, :cond_3
 
     .line 4
     .line 5
@@ -214,7 +214,7 @@
 
     .line 12
     .line 13
-    if-eqz v1, :cond_de
+    if-eqz v1, :cond_2
 
     .line 14
     .line 15
@@ -226,7 +226,7 @@
 
     .line 18
     .line 19
-    if-eqz v0, :cond_d8
+    if-eqz v0, :cond_1
 
     .line 20
     .line 21
@@ -237,7 +237,7 @@
 
     .line 23
     .line 24
-    if-ne v1, v2, :cond_d8
+    if-ne v1, v2, :cond_1
 
     .line 25
     .line 26
@@ -248,7 +248,7 @@
 
     .line 28
     .line 29
-    if-ne v1, v3, :cond_d2
+    if-ne v1, v3, :cond_0
 
     .line 30
     .line 31
@@ -610,7 +610,7 @@
     return-void
 
     .line 211
-    :cond_d2
+    :cond_0
     const-string p1, "Poly1305 key must be 256 bits."
 
     .line 212
@@ -623,7 +623,7 @@
     return-void
 
     .line 217
-    :cond_d8
+    :cond_1
     const-string p1, "Poly1305 requires a 128 bit IV."
 
     .line 218
@@ -636,7 +636,7 @@
     return-void
 
     .line 223
-    :cond_de
+    :cond_2
     const-string p1, "Poly1305 requires a key."
 
     .line 224
@@ -649,7 +649,7 @@
     return-void
 
     .line 229
-    :cond_e4
+    :cond_3
     const-string p1, "Poly1305 requires an IV when used with a block cipher."
 
     .line 230
@@ -663,7 +663,7 @@
 .end method
 
 .method public final d([B)I
-    .registers 20
+    .locals 18
 
     .line 1
     move-object/from16 v0, p0
@@ -684,7 +684,7 @@
 
     .line 8
     .line 9
-    if-gt v4, v2, :cond_ce
+    if-gt v4, v2, :cond_1
 
     .line 10
     .line 11
@@ -692,7 +692,7 @@
 
     .line 12
     .line 13
-    if-lez v2, :cond_11
+    if-lez v2, :cond_0
 
     .line 14
     .line 15
@@ -701,7 +701,7 @@
     .line 16
     .line 17
     .line 18
-    :cond_11
+    :cond_0
     iget v2, v0, Llibs/yd2;->s:I
 
     .line 19
@@ -1129,7 +1129,7 @@
     return v15
 
     .line 207
-    :cond_ce
+    :cond_1
     const-string v1, "Output buffer is too short."
 
     .line 208
@@ -1143,7 +1143,7 @@
 .end method
 
 .method public final e()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x10
@@ -1154,7 +1154,7 @@
 .end method
 
 .method public final f()V
-    .registers 37
+    .locals 36
 
     .line 1
     move-object/from16 v0, p0
@@ -1176,7 +1176,7 @@
 
     .line 9
     .line 10
-    if-ge v1, v4, :cond_16
+    if-ge v1, v4, :cond_0
 
     .line 11
     .line 12
@@ -1190,8 +1190,8 @@
     add-int/2addr v1, v5
 
     .line 16
-    :goto_f
-    if-ge v1, v4, :cond_16
+    :goto_0
+    if-ge v1, v4, :cond_0
 
     .line 17
     .line 18
@@ -1203,10 +1203,10 @@
 
     .line 21
     .line 22
-    goto :goto_f
+    goto :goto_0
 
     .line 23
-    :cond_16
+    :cond_0
     invoke-static {v2, v3}, Llibs/ji0;->Run(I[B)I
 
     .line 24
@@ -1443,7 +1443,7 @@
 
     .line 128
     .line 129
-    if-ne v6, v4, :cond_87
+    if-ne v6, v4, :cond_1
 
     .line 130
     .line 131
@@ -1458,7 +1458,7 @@
 
     .line 135
     .line 136
-    :cond_87
+    :cond_1
     iget v4, v0, Llibs/yd2;->c:I
 
     .line 137
@@ -1859,7 +1859,7 @@
 .end method
 
 .method public final reset()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -1893,7 +1893,7 @@
 .end method
 
 .method public final update([BII)V
-    .registers 10
+    .locals 6
 
     .line 1
     const/4 v0, 0x0
@@ -1902,8 +1902,8 @@
     const/4 v1, 0x0
 
     .line 3
-    :goto_2
-    if-le p3, v1, :cond_27
+    :goto_0
+    if-le p3, v1, :cond_1
 
     .line 4
     .line 5
@@ -1915,7 +1915,7 @@
 
     .line 8
     .line 9
-    if-ne v2, v3, :cond_10
+    if-ne v2, v3, :cond_0
 
     .line 10
     .line 11
@@ -1931,7 +1931,7 @@
     const/4 v2, 0x0
 
     .line 17
-    :cond_10
+    :cond_0
     sub-int v4, p3, v1
 
     .line 18
@@ -1978,9 +1978,9 @@
 
     .line 38
     .line 39
-    goto :goto_2
+    goto :goto_0
 
     .line 40
-    :cond_27
+    :cond_1
     return-void
 .end method

@@ -13,7 +13,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/BrowseActivity;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/ti;->a:Lcom/mixplorer/activities/BrowseActivity;
@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public a()Z
-    .registers 8
+    .locals 7
 
     .line 1
     sget-object v0, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
@@ -53,7 +53,7 @@
 
     .line 9
     .line 10
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_1
 
     .line 11
     .line 12
@@ -69,7 +69,7 @@
     move-result v0
 
     .line 18
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     .line 19
     .line 20
@@ -82,12 +82,12 @@
     .line 23
     .line 24
     .line 25
-    :cond_18
+    :cond_0
     sget-boolean v0, Lcom/mixplorer/widgets/MiPager;->Xray:Z
 
     .line 26
     .line 27
-    if-eqz v0, :cond_7f
+    if-eqz v0, :cond_5
 
     .line 28
     .line 29
@@ -114,7 +114,7 @@
     return v1
 
     .line 40
-    :cond_27
+    :cond_1
     sget-object v0, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 41
@@ -127,7 +127,7 @@
     move-result v0
 
     .line 46
-    if-eqz v0, :cond_7f
+    if-eqz v0, :cond_5
 
     .line 47
     .line 48
@@ -146,7 +146,7 @@
     const/4 v3, 0x1
 
     .line 55
-    if-le v0, v3, :cond_7f
+    if-le v0, v3, :cond_5
 
     .line 56
     .line 57
@@ -161,7 +161,7 @@
     const/4 v5, 0x2
 
     .line 62
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_2
 
     .line 63
     .line 64
@@ -176,10 +176,10 @@
     div-int/2addr v0, v5
 
     .line 69
-    goto :goto_49
+    goto :goto_0
 
     .line 70
-    :cond_45
+    :cond_2
     invoke-virtual {v4}, Landroid/view/View;->getWidth()I
 
     .line 71
@@ -188,7 +188,7 @@
     move-result v0
 
     .line 74
-    :goto_49
+    :goto_0
     sget-boolean v4, Lcom/mixplorer/widgets/MiPager;->Xray:Z
 
     .line 75
@@ -197,7 +197,7 @@
 
     .line 77
     .line 78
-    if-eqz v4, :cond_5e
+    if-eqz v4, :cond_3
 
     .line 79
     .line 80
@@ -216,7 +216,7 @@
 
     .line 86
     .line 87
-    if-eqz v4, :cond_5e
+    if-eqz v4, :cond_3
 
     .line 88
     .line 89
@@ -231,10 +231,10 @@
     sub-int/2addr v4, v3
 
     .line 94
-    goto :goto_62
+    goto :goto_1
 
     .line 95
-    :cond_5e
+    :cond_3
     invoke-virtual {v6}, Lcom/mixplorer/widgets/MiPager;->getCount()I
 
     .line 96
@@ -243,7 +243,7 @@
     move-result v4
 
     .line 99
-    :goto_62
+    :goto_1
     iget-object v6, v2, Lcom/mixplorer/activities/BrowseActivity;->Sierra:Lcom/mixplorer/widgets/MiPager;
 
     .line 100
@@ -273,18 +273,18 @@
 
     .line 113
     .line 114
-    if-eqz v1, :cond_74
+    if-eqz v1, :cond_4
 
     .line 115
     .line 116
-    goto :goto_75
+    goto :goto_2
 
     .line 117
-    :cond_74
+    :cond_4
     const/4 v5, 0x1
 
     .line 118
-    :goto_75
+    :goto_2
     sub-int/2addr v0, v5
 
     .line 119
@@ -305,12 +305,12 @@
     return v3
 
     .line 128
-    :cond_7f
+    :cond_5
     return v1
 .end method
 
 .method public b(Z)Z
-    .registers 11
+    .locals 9
 
     .line 1
     sget-object v0, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
@@ -332,7 +332,7 @@
     const/4 v2, 0x1
 
     .line 10
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_1
 
     .line 11
     .line 12
@@ -356,7 +356,7 @@
     move-result v3
 
     .line 22
-    if-eqz v3, :cond_1b
+    if-eqz v3, :cond_0
 
     .line 23
     .line 24
@@ -368,7 +368,7 @@
     move-result-object v0
 
     .line 28
-    :cond_1b
+    :cond_0
     move-object v4, v0
 
     .line 29
@@ -397,7 +397,7 @@
 
     .line 39
     .line 40
-    if-eqz p1, :cond_66
+    if-eqz p1, :cond_3
 
     .line 41
     .line 42
@@ -424,7 +424,7 @@
     return v2
 
     .line 53
-    :cond_34
+    :cond_1
     sget-object p1, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 54
@@ -440,7 +440,7 @@
     const/4 v0, 0x0
 
     .line 60
-    if-eqz p1, :cond_67
+    if-eqz p1, :cond_4
 
     .line 61
     .line 62
@@ -456,7 +456,7 @@
     move-result p1
 
     .line 68
-    if-le p1, v2, :cond_67
+    if-le p1, v2, :cond_4
 
     .line 69
     .line 70
@@ -479,21 +479,21 @@
 
     .line 78
     .line 79
-    if-eqz v4, :cond_52
+    if-eqz v4, :cond_2
 
     .line 80
     .line 81
     const/4 v4, 0x2
 
     .line 82
-    goto :goto_53
+    goto :goto_0
 
     .line 83
-    :cond_52
+    :cond_2
     const/4 v4, 0x1
 
     .line 84
-    :goto_53
+    :goto_0
     div-int/2addr v3, v4
 
     .line 85
@@ -520,7 +520,7 @@
 
     .line 97
     .line 98
-    if-eqz p1, :cond_66
+    if-eqz p1, :cond_3
 
     .line 99
     .line 100
@@ -529,16 +529,16 @@
     .line 101
     .line 102
     .line 103
-    :cond_66
+    :cond_3
     return v2
 
     .line 104
-    :cond_67
+    :cond_4
     return v0
 .end method
 
 .method public c(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/ti;->a:Lcom/mixplorer/activities/BrowseActivity;
@@ -561,7 +561,7 @@
 
     .line 10
     .line 11
-    if-eq v1, p1, :cond_11
+    if-eq v1, p1, :cond_0
 
     .line 12
     .line 13
@@ -576,7 +576,7 @@
     return-void
 
     .line 18
-    :cond_11
+    :cond_0
     const/4 p1, 0x0
 
     .line 19
@@ -589,7 +589,7 @@
 .end method
 
 .method public d(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/ti;->a:Lcom/mixplorer/activities/BrowseActivity;
@@ -608,7 +608,7 @@
     move-result-object p1
 
     .line 9
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_1
 
     .line 10
     .line 11
@@ -620,7 +620,7 @@
     move-result-object v1
 
     .line 15
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     .line 16
     .line 17
@@ -628,11 +628,11 @@
 
     .line 18
     .line 19
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_1
 
     .line 20
     .line 21
-    :cond_14
+    :cond_0
     iget-object v0, v0, Lcom/mixplorer/activities/BrowseActivity;->Romeo:Llibs/r31;
 
     .line 22
@@ -645,6 +645,6 @@
     .line 25
     .line 26
     .line 27
-    :cond_1a
+    :cond_1
     return-void
 .end method

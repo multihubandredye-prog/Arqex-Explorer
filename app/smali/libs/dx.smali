@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/ConfigServerActivity;Ljava/lang/String;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/dx;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/dx;->X:B
@@ -57,7 +57,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_20
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -77,7 +77,7 @@
     return-void
 
     .line 17
-    :pswitch_10
+    :pswitch_0
     invoke-static {v1}, Lcom/mixplorer/activities/ConfigServerActivity;->Call(Ljava/lang/String;)Landroid/graphics/Bitmap;
 
     .line 18
@@ -110,8 +110,8 @@
     nop
 
     .line 33
-    :pswitch_data_20
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_10
+        :pswitch_0
     .end packed-switch
 .end method

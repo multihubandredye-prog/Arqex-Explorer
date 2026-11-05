@@ -15,7 +15,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/16 v0, 0x8
@@ -26,7 +26,7 @@
 
     .line 4
     .line 5
-    fill-array-data v0, :array_e
+    fill-array-data v0, :array_0
 
     .line 6
     .line 7
@@ -46,7 +46,7 @@
     return-void
 
     .line 15
-    :array_e
+    :array_0
     .array-data 1
         0x4et
         0x54t
@@ -60,7 +60,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -72,7 +72,7 @@
 .end method
 
 .method public static a(I[B)[B
-    .registers 5
+    .locals 3
 
     .line 1
     aget-byte v0, p1, p0
@@ -130,7 +130,7 @@
 .end method
 
 .method public static b(I[B)I
-    .registers 4
+    .locals 2
 
     .line 1
     aget-byte v0, p1, p0
@@ -202,35 +202,35 @@
 .end method
 
 .method public static c(II[B[B)V
-    .registers 7
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     .line 3
     .line 4
     array-length v1, p3
 
     .line 5
-    goto :goto_6
+    goto :goto_0
 
     .line 6
-    :cond_5
+    :cond_0
     const/4 v1, 0x0
 
     .line 7
-    :goto_6
-    if-nez v1, :cond_9
+    :goto_0
+    if-nez v1, :cond_1
 
     .line 8
     .line 9
     return-void
 
     .line 10
-    :cond_9
+    :cond_1
     invoke-static {p0, v1, p2}, Llibs/c22;->e(II[B)V
 
     .line 11
@@ -263,7 +263,7 @@
 .end method
 
 .method public static d(II[B)V
-    .registers 5
+    .locals 2
 
     .line 1
     and-int/lit16 v0, p1, 0xff
@@ -338,7 +338,7 @@
 .end method
 
 .method public static e(II[B)V
-    .registers 4
+    .locals 1
 
     .line 1
     and-int/lit16 v0, p1, 0xff

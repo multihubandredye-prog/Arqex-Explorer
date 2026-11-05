@@ -19,7 +19,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-string v0, "([ |\t]*content-type[ |\t]*:)(.*)"

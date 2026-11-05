@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/nw;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final e(Llibs/en0;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Llibs/nw;->l()Ljava/lang/String;
@@ -38,7 +38,7 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -58,7 +58,7 @@
     return-void
 
     .line 19
-    :cond_12
+    :cond_0
     const/16 v0, 0x14b
 
     .line 20

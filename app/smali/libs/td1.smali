@@ -32,7 +32,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-wide/32 v0, 0x7fffffff
@@ -72,7 +72,7 @@
 .end method
 
 .method public constructor <init>(Llibs/lw0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -106,7 +106,7 @@
 
 # virtual methods
 .method public final a()V
-    .registers 9
+    .locals 8
 
     .line 1
     iget v0, p0, Llibs/td1;->Xi:I
@@ -136,28 +136,28 @@
     const/4 v4, 0x0
 
     .line 12
-    if-eq v3, v1, :cond_30
+    if-eq v3, v1, :cond_3
 
     .line 13
     .line 14
     const/4 v5, 0x2
 
     .line 15
-    if-eq v3, v5, :cond_29
+    if-eq v3, v5, :cond_2
 
     .line 16
     .line 17
     const/4 v6, 0x3
 
     .line 18
-    if-eq v3, v6, :cond_22
+    if-eq v3, v6, :cond_1
 
     .line 19
     .line 20
     const/4 v7, 0x4
 
     .line 21
-    if-ne v3, v7, :cond_1c
+    if-ne v3, v7, :cond_0
 
     .line 22
     .line 23
@@ -172,10 +172,10 @@
 
     .line 27
     .line 28
-    goto :goto_22
+    goto :goto_0
 
     .line 29
-    :cond_1c
+    :cond_0
     const-string v0, "Unsupported size of counter i"
 
     .line 30
@@ -188,8 +188,8 @@
     return-void
 
     .line 35
-    :cond_22
-    :goto_22
+    :cond_1
+    :goto_0
     array-length v3, v2
 
     .line 36
@@ -207,7 +207,7 @@
 
     .line 41
     .line 42
-    :cond_29
+    :cond_2
     array-length v3, v2
 
     .line 43
@@ -225,7 +225,7 @@
 
     .line 48
     .line 49
-    :cond_30
+    :cond_3
     array-length v3, v2
 
     .line 50
@@ -292,14 +292,14 @@
 .end method
 
 .method public final b(Llibs/g90;)V
-    .registers 4
+    .locals 2
 
     .line 1
     instance-of v0, p1, Llibs/vd1;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_51
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
@@ -426,7 +426,7 @@
     const/4 v1, 0x1
 
     .line 66
-    if-ne v0, v1, :cond_47
+    if-ne v0, v1, :cond_0
 
     .line 67
     .line 68
@@ -435,10 +435,10 @@
     .line 69
     .line 70
     .line 71
-    goto :goto_4b
+    goto :goto_0
 
     .line 72
-    :cond_47
+    :cond_0
     invoke-virtual {p1}, Ljava/math/BigInteger;->intValue()I
 
     .line 73
@@ -447,7 +447,7 @@
     move-result p1
 
     .line 76
-    :goto_4b
+    :goto_0
     iput p1, p0, Llibs/td1;->Mu:I
 
     .line 77
@@ -462,7 +462,7 @@
     return-void
 
     .line 82
-    :cond_51
+    :cond_1
     const-string p1, "Wrong type of arguments given"
 
     .line 83
@@ -476,7 +476,7 @@
 .end method
 
 .method public final d(I[B)I
-    .registers 10
+    .locals 7
 
     .line 1
     iget v0, p0, Llibs/td1;->Xi:I
@@ -490,7 +490,7 @@
     const/4 v2, 0x0
 
     .line 6
-    if-ltz v1, :cond_3d
+    if-ltz v1, :cond_2
 
     .line 7
     .line 8
@@ -498,7 +498,7 @@
 
     .line 9
     .line 10
-    if-ge v1, v3, :cond_3d
+    if-ge v1, v3, :cond_2
 
     .line 11
     .line 12
@@ -509,7 +509,7 @@
     rem-int/2addr v0, v1
 
     .line 15
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     .line 16
     .line 17
@@ -518,7 +518,7 @@
     .line 18
     .line 19
     .line 20
-    :cond_13
+    :cond_0
     iget v0, p0, Llibs/td1;->Xi:I
 
     .line 21
@@ -562,8 +562,8 @@
 
     .line 40
     .line 41
-    :goto_28
-    if-lez v0, :cond_3c
+    :goto_0
+    if-lez v0, :cond_1
 
     .line 42
     .line 43
@@ -602,14 +602,14 @@
     add-int/2addr v3, v5
 
     .line 60
-    goto :goto_28
+    goto :goto_0
 
     .line 61
-    :cond_3c
+    :cond_1
     return p1
 
     .line 62
-    :cond_3d
+    :cond_2
     new-instance p1, Ljava/lang/StringBuilder;
 
     .line 63

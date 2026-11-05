@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ck3;)V
-    .registers 3
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/zs;->Nu:Llibs/zs;
@@ -29,7 +29,7 @@
 
 # virtual methods
 .method public final g(Llibs/f1;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/yf3;->e:Ljava/lang/String;

@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 5
+    .locals 4
 
     .line 100
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,13 +47,13 @@
     .line 103
     sget-boolean v2, Llibs/az2;->h:Z
 
-    if-eqz v2, :cond_16
+    if-eqz v2, :cond_0
 
     .line 104
     invoke-static {v0}, Llibs/oc2;->e(Landroid/graphics/Paint;)V
 
     .line 105
-    :cond_16
+    :cond_0
     sget-object v3, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
@@ -73,13 +73,13 @@
     .line 108
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setFlags(I)V
 
-    if-eqz v2, :cond_2f
+    if-eqz v2, :cond_1
 
     .line 109
     invoke-static {v0}, Llibs/oc2;->e(Landroid/graphics/Paint;)V
 
     .line 110
-    :cond_2f
+    :cond_1
     sget-object v1, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
@@ -114,7 +114,7 @@
 .end method
 
 .method public constructor <init>(Llibs/yy2;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -176,7 +176,7 @@
 
     .line 31
     .line 32
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_0
 
     .line 33
     .line 34
@@ -193,12 +193,12 @@
 
     .line 40
     .line 41
-    :cond_28
+    :cond_0
     iget-object v0, p1, Llibs/yy2;->e:Llibs/cz2;
 
     .line 42
     .line 43
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_1
 
     .line 44
     .line 45
@@ -215,7 +215,7 @@
 
     .line 51
     .line 52
-    :cond_33
+    :cond_1
     iget-boolean v0, p1, Llibs/yy2;->f:Z
 
     .line 53
@@ -258,7 +258,7 @@
 
     .line 73
     .line 74
-    :try_start_49
+    :try_start_0
     iget-object p1, p1, Llibs/yy2;->a:Llibs/ci3;
 
     .line 75
@@ -276,15 +276,15 @@
     .line 81
     .line 82
     iput-object p1, p0, Llibs/yy2;->a:Llibs/ci3;
-    :try_end_53
-    .catch Ljava/lang/CloneNotSupportedException; {:try_start_49 .. :try_end_53} :catch_54
+    :try_end_0
+    .catch Ljava/lang/CloneNotSupportedException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 83
     .line 84
     return-void
 
     .line 85
-    :catch_54
+    :catch_0
     move-exception p1
 
     .line 86

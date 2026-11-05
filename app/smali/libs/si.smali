@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/BrowseActivity;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/si;->a:Lcom/mixplorer/activities/BrowseActivity;
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final a(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-static {p1}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
@@ -38,14 +38,14 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
     return-void
 
     .line 8
-    :cond_7
+    :cond_0
     new-instance v0, Llibs/ri;
 
     .line 9
@@ -71,7 +71,7 @@
 .end method
 
 .method public final b(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-static {p1}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
@@ -82,14 +82,14 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
     return-void
 
     .line 8
-    :cond_7
+    :cond_0
     new-instance v0, Llibs/ri;
 
     .line 9
@@ -115,7 +115,7 @@
 .end method
 
 .method public final c()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/si;->a:Lcom/mixplorer/activities/BrowseActivity;
@@ -130,7 +130,7 @@
     move-result-object v1
 
     .line 7
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
@@ -146,12 +146,12 @@
     .line 13
     .line 14
     .line 15
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method public final d(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 5
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/si;->a:Lcom/mixplorer/activities/BrowseActivity;
@@ -162,7 +162,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -174,6 +174,6 @@
     .line 9
     .line 10
     .line 11
-    :cond_a
+    :cond_0
     return-void
 .end method

@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final a()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/kr3;->c:Ljava/lang/String;
@@ -50,7 +50,7 @@
 .end method
 
 .method public final b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/kr3;->b:Ljava/lang/String;
@@ -61,7 +61,7 @@
 .end method
 
 .method public final c()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/kr3;->a:Ljava/lang/String;
@@ -72,7 +72,7 @@
 .end method
 
 .method public final d()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/kr3;->b:Ljava/lang/String;

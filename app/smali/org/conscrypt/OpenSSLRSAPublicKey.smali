@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/security/spec/RSAPublicKeySpec;)V
-    .registers 12
+    .locals 10
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,7 +31,7 @@
     .line 2
     .line 3
     .line 4
-    :try_start_3
+    :try_start_0
     new-instance v0, Lorg/conscrypt/OpenSSLKey;
 
     .line 5
@@ -100,15 +100,15 @@
     .line 34
     .line 35
     iput-object v0, p0, Lorg/conscrypt/OpenSSLRSAPublicKey;->key:Lorg/conscrypt/OpenSSLKey;
-    :try_end_24
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_24} :catch_25
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 36
     .line 37
     return-void
 
     .line 38
-    :catch_25
+    :catch_0
     move-exception v0
 
     .line 39
@@ -128,7 +128,7 @@
 .end method
 
 .method public constructor <init>(Lorg/conscrypt/OpenSSLKey;)V
-    .registers 2
+    .locals 0
 
     .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -140,20 +140,20 @@
 .end method
 
 .method private declared-synchronized ensureReadParams()V
-    .registers 4
+    .locals 3
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Lorg/conscrypt/OpenSSLRSAPublicKey;->fetchedParams:Z
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_29
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 3
     .line 4
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 5
     .line 6
@@ -163,8 +163,8 @@
     return-void
 
     .line 8
-    :cond_7
-    :try_start_7
+    :cond_0
+    :try_start_1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLRSAPublicKey;->key:Lorg/conscrypt/OpenSSLKey;
 
     .line 9
@@ -226,8 +226,8 @@
     .line 37
     .line 38
     iput-boolean v2, p0, Lorg/conscrypt/OpenSSLRSAPublicKey;->fetchedParams:Z
-    :try_end_27
-    .catchall {:try_start_7 .. :try_end_27} :catchall_29
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 39
     .line 40
@@ -237,21 +237,21 @@
     return-void
 
     .line 42
-    :catchall_29
+    :catchall_0
     move-exception v0
 
     .line 43
-    :try_start_2a
+    :try_start_2
     monitor-exit p0
-    :try_end_2b
-    .catchall {:try_start_2a .. :try_end_2b} :catchall_29
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 44
     throw v0
 .end method
 
 .method public static getInstance(Ljava/security/interfaces/RSAPublicKey;)Lorg/conscrypt/OpenSSLKey;
-    .registers 11
+    .locals 10
 
     .line 1
     :try_start_0
@@ -318,8 +318,8 @@
 
     .line 29
     invoke-direct {v0, v1, v2}, Lorg/conscrypt/OpenSSLKey;-><init>(J)V
-    :try_end_1f
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_1f} :catch_20
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 30
     .line 31
@@ -327,7 +327,7 @@
     return-object v0
 
     .line 33
-    :catch_20
+    :catch_0
     move-exception v0
 
     .line 34
@@ -347,7 +347,7 @@
 .end method
 
 .method private readObject(Ljava/io/ObjectInputStream;)V
-    .registers 11
+    .locals 9
 
     .line 1
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
@@ -429,7 +429,7 @@
 .end method
 
 .method private writeObject(Ljava/io/ObjectOutputStream;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/OpenSSLRSAPublicKey;->ensureReadParams()V
@@ -448,25 +448,25 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v1, p1, Lorg/conscrypt/OpenSSLRSAPublicKey;
 
     .line 6
     .line 7
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_1
 
     .line 8
     .line 9
@@ -497,14 +497,14 @@
     move-result v1
 
     .line 22
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_1
 
     .line 23
     .line 24
     return v0
 
     .line 25
-    :cond_18
+    :cond_1
     instance-of v1, p1, Ljava/security/interfaces/RSAPublicKey;
 
     .line 26
@@ -512,14 +512,14 @@
     const/4 v2, 0x0
 
     .line 28
-    if-nez v1, :cond_1e
+    if-nez v1, :cond_2
 
     .line 29
     .line 30
     return v2
 
     .line 31
-    :cond_1e
+    :cond_2
     invoke-direct {p0}, Lorg/conscrypt/OpenSSLRSAPublicKey;->ensureReadParams()V
 
     .line 32
@@ -549,7 +549,7 @@
     move-result v1
 
     .line 46
-    if-eqz v1, :cond_3c
+    if-eqz v1, :cond_3
 
     .line 47
     .line 48
@@ -573,19 +573,19 @@
     move-result p1
 
     .line 58
-    if-eqz p1, :cond_3c
+    if-eqz p1, :cond_3
 
     .line 59
     .line 60
     return v0
 
     .line 61
-    :cond_3c
+    :cond_3
     return v2
 .end method
 
 .method public getAlgorithm()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "RSA"
@@ -596,7 +596,7 @@
 .end method
 
 .method public getEncoded()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLRSAPublicKey;->key:Lorg/conscrypt/OpenSSLKey;
@@ -623,7 +623,7 @@
 .end method
 
 .method public getFormat()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "X.509"
@@ -634,7 +634,7 @@
 .end method
 
 .method public getModulus()Ljava/math/BigInteger;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/OpenSSLRSAPublicKey;->ensureReadParams()V
@@ -650,7 +650,7 @@
 .end method
 
 .method public getOpenSSLKey()Lorg/conscrypt/OpenSSLKey;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLRSAPublicKey;->key:Lorg/conscrypt/OpenSSLKey;
@@ -661,7 +661,7 @@
 .end method
 
 .method public getPublicExponent()Ljava/math/BigInteger;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/OpenSSLRSAPublicKey;->ensureReadParams()V
@@ -677,7 +677,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/OpenSSLRSAPublicKey;->ensureReadParams()V
@@ -716,7 +716,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/OpenSSLRSAPublicKey;->ensureReadParams()V

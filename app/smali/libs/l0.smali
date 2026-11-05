@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/security/AlgorithmParametersSpi;-><init>()V
@@ -23,7 +23,7 @@
 
 # virtual methods
 .method public final engineGetEncoded()[B
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Llibs/k40;
@@ -71,7 +71,7 @@
     .line 22
     .line 23
     .line 24
-    :try_start_17
+    :try_start_0
     const-string v1, "DER"
 
     .line 25
@@ -82,14 +82,14 @@
     .line 28
     .line 29
     move-result-object v0
-    :try_end_1d
-    .catch Ljava/io/IOException; {:try_start_17 .. :try_end_1d} :catch_1e
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 30
     return-object v0
 
     .line 31
-    :catch_1e
+    :catch_0
     const-string v0, "Error encoding DHParameters"
 
     .line 32
@@ -106,9 +106,9 @@
 .end method
 
 .method public final engineGetEncoded(Ljava/lang/String;)[B
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_1
 
     .line 38
     const-string v0, "ASN.1"
@@ -117,18 +117,18 @@
 
     move-result p1
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 p1, 0x0
 
     return-object p1
 
     .line 39
-    :cond_d
-    :goto_d
+    :cond_1
+    :goto_0
     invoke-virtual {p0}, Llibs/l0;->engineGetEncoded()[B
 
     move-result-object p1
@@ -137,13 +137,13 @@
 .end method
 
 .method public final engineGetParameterSpec(Ljava/lang/Class;)Ljava/security/spec/AlgorithmParameterSpec;
-    .registers 4
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_2
 
     .line 3
     .line 4
@@ -151,7 +151,7 @@
 
     .line 5
     .line 6
-    if-eq p1, v1, :cond_12
+    if-eq p1, v1, :cond_1
 
     .line 7
     .line 8
@@ -159,14 +159,14 @@
 
     .line 9
     .line 10
-    if-ne p1, v1, :cond_c
+    if-ne p1, v1, :cond_0
 
     .line 11
     .line 12
-    goto :goto_12
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     const-string p1, "unknown parameter spec passed to DH parameters object."
 
     .line 14
@@ -179,8 +179,8 @@
     return-object v0
 
     .line 19
-    :cond_12
-    :goto_12
+    :cond_1
+    :goto_0
     iget-object p1, p0, Llibs/l0;->a:Ljavax/crypto/spec/DHParameterSpec;
 
     .line 20
@@ -188,7 +188,7 @@
     return-object p1
 
     .line 22
-    :cond_15
+    :cond_2
     const-string p1, "argument to getParameterSpec must not be null"
 
     .line 23
@@ -202,12 +202,12 @@
 .end method
 
 .method public final engineInit(Ljava/security/spec/AlgorithmParameterSpec;)V
-    .registers 3
+    .locals 1
 
     .line 65
     instance-of v0, p1, Ljavax/crypto/spec/DHParameterSpec;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 66
     check-cast p1, Ljavax/crypto/spec/DHParameterSpec;
@@ -217,7 +217,7 @@
     return-void
 
     .line 67
-    :cond_9
+    :cond_0
     const-string p1, "DHParameterSpec required to initialise a Diffie-Hellman algorithm parameters object"
 
     invoke-static {p1}, Llibs/bf0;->d(Ljava/lang/String;)V
@@ -226,14 +226,14 @@
 .end method
 
 .method public final engineInit([B)V
-    .registers 6
+    .locals 4
 
     .line 1
     const-string v0, "Not a valid DH Parameter encoding."
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     invoke-static {p1}, Llibs/k40;->g(Ljava/lang/Object;)Llibs/k40;
 
     .line 4
@@ -248,9 +248,9 @@
     .line 9
     .line 10
     move-result-object v1
-    :try_end_a
-    .catch Ljava/lang/ClassCastException; {:try_start_2 .. :try_end_a} :catch_3c
-    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_2 .. :try_end_a} :catch_38
+    :try_end_0
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 11
     iget-object v2, p1, Llibs/k40;->Y:Llibs/Api;
@@ -261,11 +261,11 @@
 
     .line 14
     .line 15
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_0
 
     .line 16
     .line 17
-    :try_start_10
+    :try_start_1
     new-instance v1, Ljavax/crypto/spec/DHParameterSpec;
 
     .line 18
@@ -314,7 +314,7 @@
     return-void
 
     .line 41
-    :cond_28
+    :cond_0
     new-instance p1, Ljavax/crypto/spec/DHParameterSpec;
 
     .line 42
@@ -341,16 +341,16 @@
     .line 53
     .line 54
     iput-object p1, p0, Llibs/l0;->a:Ljavax/crypto/spec/DHParameterSpec;
-    :try_end_37
-    .catch Ljava/lang/ClassCastException; {:try_start_10 .. :try_end_37} :catch_3c
-    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_10 .. :try_end_37} :catch_38
+    :try_end_1
+    .catch Ljava/lang/ClassCastException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 55
     .line 56
     return-void
 
     .line 57
-    :catch_38
+    :catch_0
     invoke-static {v0}, Llibs/ic0;->t(Ljava/lang/String;)V
 
     .line 58
@@ -359,7 +359,7 @@
     return-void
 
     .line 61
-    :catch_3c
+    :catch_1
     invoke-static {v0}, Llibs/ic0;->t(Ljava/lang/String;)V
 
     .line 62
@@ -369,9 +369,9 @@
 .end method
 
 .method public final engineInit([BLjava/lang/String;)V
-    .registers 4
+    .locals 1
 
-    if-eqz p2, :cond_15
+    if-eqz p2, :cond_1
 
     .line 68
     const-string v0, "ASN.1"
@@ -380,12 +380,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
-    goto :goto_15
+    goto :goto_0
 
     .line 69
-    :cond_b
+    :cond_0
     const-string p1, "Unknown parameter format "
 
     .line 70
@@ -399,15 +399,15 @@
     return-void
 
     .line 72
-    :cond_15
-    :goto_15
+    :cond_1
+    :goto_0
     invoke-virtual {p0, p1}, Llibs/l0;->engineInit([B)V
 
     return-void
 .end method
 
 .method public final engineToString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "Diffie-Hellman Parameters"

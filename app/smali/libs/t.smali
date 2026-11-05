@@ -17,7 +17,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/t;->X:B
@@ -33,7 +33,7 @@
 .end method
 
 .method public static synthetic a(II)V
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -89,7 +89,7 @@
 .end method
 
 .method public static synthetic c(IILjava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -141,7 +141,7 @@
 .end method
 
 .method public static synthetic d(Ljava/lang/Object;)V
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/io/IOException;
@@ -165,7 +165,7 @@
 .end method
 
 .method public static synthetic e(Ljava/lang/Object;Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/RuntimeException;
@@ -203,7 +203,7 @@
 .end method
 
 .method public static synthetic f(Ljava/lang/String;)V
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/d62;
@@ -219,7 +219,7 @@
 .end method
 
 .method public static synthetic g(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 5
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/IllegalArgumentException;
@@ -262,7 +262,7 @@
 .end method
 
 .method public static synthetic h(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 5
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -310,7 +310,7 @@
 .end method
 
 .method public static synthetic i(Ljava/lang/Object;)V
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/security/SignatureException;
@@ -334,7 +334,7 @@
 .end method
 
 .method public static synthetic j(Ljava/lang/Object;Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/security/spec/InvalidKeySpecException;
@@ -372,7 +372,7 @@
 .end method
 
 .method public static synthetic k(Ljava/lang/String;)V
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
@@ -388,7 +388,7 @@
 .end method
 
 .method public static synthetic l(Ljava/lang/Object;Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -428,14 +428,14 @@
 
 # virtual methods
 .method public accept(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/t;->X:B
 
     .line 2
     .line 3
-    sparse-switch v0, :sswitch_data_66
+    sparse-switch v0, :sswitch_data_0
 
     .line 4
     .line 5
@@ -469,7 +469,7 @@
     return-void
 
     .line 21
-    :sswitch_14
+    :sswitch_0
     check-cast p1, Llibs/fi3;
 
     .line 22
@@ -499,7 +499,7 @@
     return-void
 
     .line 36
-    :sswitch_23
+    :sswitch_1
     check-cast p1, Llibs/fi3;
 
     .line 37
@@ -529,7 +529,7 @@
     return-void
 
     .line 51
-    :sswitch_32
+    :sswitch_2
     check-cast p1, Llibs/fi3;
 
     .line 52
@@ -559,7 +559,7 @@
     return-void
 
     .line 66
-    :sswitch_41
+    :sswitch_3
     check-cast p1, Llibs/fi3;
 
     .line 67
@@ -589,7 +589,7 @@
     return-void
 
     .line 81
-    :sswitch_50
+    :sswitch_4
     check-cast p1, Llibs/fi3;
 
     .line 82
@@ -619,7 +619,7 @@
     return-void
 
     .line 96
-    :sswitch_5f
+    :sswitch_5
     check-cast p1, Ljava/util/List;
 
     .line 97
@@ -635,26 +635,26 @@
     nop
 
     .line 103
-    :sswitch_data_66
+    :sswitch_data_0
     .sparse-switch
-        0xa -> :sswitch_5f
-        0x11 -> :sswitch_50
-        0x12 -> :sswitch_41
-        0x13 -> :sswitch_32
-        0x14 -> :sswitch_23
-        0x15 -> :sswitch_14
+        0xa -> :sswitch_5
+        0x11 -> :sswitch_4
+        0x12 -> :sswitch_3
+        0x13 -> :sswitch_2
+        0x14 -> :sswitch_1
+        0x15 -> :sswitch_0
     .end sparse-switch
 .end method
 
 .method public apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 8
+    .locals 6
 
     .line 1
     iget-byte v0, p0, Llibs/t;->X:B
 
     .line 2
     .line 3
-    sparse-switch v0, :sswitch_data_118
+    sparse-switch v0, :sswitch_data_0
 
     .line 4
     .line 5
@@ -704,7 +704,7 @@
     move-result-object v1
 
     .line 29
-    :goto_1c
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 30
@@ -717,7 +717,7 @@
 
     .line 34
     .line 35
-    if-eqz v3, :cond_38
+    if-eqz v3, :cond_0
 
     .line 36
     .line 37
@@ -758,10 +758,10 @@
     .line 54
     .line 55
     .line 56
-    goto :goto_1c
+    goto :goto_0
 
     .line 57
-    :cond_38
+    :cond_0
     const-string v1, "content-types:Override"
 
     .line 58
@@ -799,7 +799,7 @@
     move-result-object p1
 
     .line 76
-    :goto_4b
+    :goto_1
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 77
@@ -808,7 +808,7 @@
     move-result v3
 
     .line 80
-    if-eqz v3, :cond_69
+    if-eqz v3, :cond_1
 
     .line 81
     .line 82
@@ -857,10 +857,10 @@
     .line 103
     .line 104
     .line 105
-    goto :goto_4b
+    goto :goto_1
 
     .line 106
-    :cond_69
+    :cond_1
     invoke-direct {v0, v2, v1}, Llibs/wz;-><init>(Ljava/util/Map;Ljava/util/Map;)V
 
     .line 107
@@ -869,7 +869,7 @@
     return-object v0
 
     .line 110
-    :sswitch_6d
+    :sswitch_0
     check-cast p1, Ljava/io/InputStream;
 
     .line 111
@@ -924,7 +924,7 @@
     const/4 v3, 0x0
 
     .line 138
-    :try_start_89
+    :try_start_0
     invoke-virtual {p1}, Ljavax/xml/parsers/SAXParserFactory;->newSAXParser()Ljavax/xml/parsers/SAXParser;
 
     .line 139
@@ -959,10 +959,10 @@
     .line 154
     .line 155
     invoke-interface {p1, v0}, Lorg/xml/sax/XMLReader;->parse(Lorg/xml/sax/InputSource;)V
-    :try_end_9d
-    .catch Ljava/io/IOException; {:try_start_89 .. :try_end_9d} :catch_106
-    .catch Ljavax/xml/parsers/ParserConfigurationException; {:try_start_89 .. :try_end_9d} :catch_104
-    .catch Lorg/xml/sax/SAXException; {:try_start_89 .. :try_end_9d} :catch_102
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljavax/xml/parsers/ParserConfigurationException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Lorg/xml/sax/SAXException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 156
     .line 157
@@ -987,7 +987,7 @@
 
     .line 167
     .line 168
-    if-eqz p1, :cond_fe
+    if-eqz p1, :cond_4
 
     .line 169
     .line 170
@@ -1019,7 +1019,7 @@
     move-result v3
 
     .line 184
-    if-eqz v3, :cond_e3
+    if-eqz v3, :cond_3
 
     .line 185
     .line 186
@@ -1073,7 +1073,7 @@
     move-result v0
 
     .line 212
-    if-eqz v0, :cond_da
+    if-eqz v0, :cond_2
 
     .line 213
     .line 214
@@ -1085,15 +1085,15 @@
     move-result-object p1
 
     .line 218
-    goto :goto_dc
+    goto :goto_2
 
     .line 219
-    :cond_da
+    :cond_2
     sget-object p1, Llibs/m22;->a:Llibs/m22;
 
     .line 220
     .line 221
-    :goto_dc
+    :goto_2
     check-cast p1, Llibs/wx3;
 
     .line 222
@@ -1106,10 +1106,10 @@
     move-result-object p1
 
     .line 227
-    goto :goto_f6
+    goto :goto_3
 
     .line 228
-    :cond_e3
+    :cond_3
     new-instance v2, Llibs/ux3;
 
     .line 229
@@ -1147,7 +1147,7 @@
     move-result-object p1
 
     .line 247
-    :goto_f6
+    :goto_3
     invoke-interface {p1, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     .line 248
@@ -1163,59 +1163,59 @@
 
     .line 253
     .line 254
-    goto :goto_10f
+    goto :goto_6
 
     .line 255
-    :cond_fe
+    :cond_4
     invoke-static {}, Llibs/t22;->b()V
 
     .line 256
     .line 257
     .line 258
-    goto :goto_10f
+    goto :goto_6
 
     .line 259
-    :catch_102
+    :catch_0
     move-exception p1
 
     .line 260
-    goto :goto_108
+    goto :goto_4
 
     .line 261
-    :catch_104
+    :catch_1
     move-exception p1
 
     .line 262
-    goto :goto_10c
+    goto :goto_5
 
     .line 263
-    :catch_106
+    :catch_2
     move-exception p1
 
     .line 264
-    goto :goto_110
+    goto :goto_7
 
     .line 265
-    :goto_108
+    :goto_4
     invoke-static {p1}, Llibs/ic0;->k(Ljava/lang/Throwable;)V
 
     .line 266
     .line 267
     .line 268
-    goto :goto_10f
+    goto :goto_6
 
     .line 269
-    :goto_10c
+    :goto_5
     invoke-static {p1}, Llibs/ic0;->k(Ljava/lang/Throwable;)V
 
     .line 270
     .line 271
     .line 272
-    :goto_10f
+    :goto_6
     return-object v3
 
     .line 273
-    :goto_110
+    :goto_7
     new-instance v0, Llibs/jb2;
 
     .line 274
@@ -1228,22 +1228,22 @@
     throw v0
 
     .line 279
-    :sswitch_116
+    :sswitch_1
     return-object p1
 
     .line 280
     nop
 
     .line 281
-    :sswitch_data_118
+    :sswitch_data_0
     .sparse-switch
-        0xb -> :sswitch_116
-        0x17 -> :sswitch_6d
+        0xb -> :sswitch_1
+        0x17 -> :sswitch_0
     .end sparse-switch
 .end method
 
 .method public apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 4
 
     iget-byte v0, p0, Llibs/t;->X:B
 
@@ -1253,7 +1253,7 @@
 
     check-cast p2, Llibs/ch;
 
-    packed-switch v0, :pswitch_data_62
+    packed-switch v0, :pswitch_data_0
 
     .line 281
     new-instance v0, Llibs/Init;
@@ -1321,7 +1321,7 @@
     return-object p2
 
     .line 290
-    :pswitch_46
+    :pswitch_0
     new-instance v0, Llibs/is;
 
     const-string v2, "endnote"
@@ -1338,7 +1338,7 @@
     return-object p1
 
     .line 292
-    :pswitch_54
+    :pswitch_1
     new-instance v0, Llibs/is;
 
     const-string v2, "footnote"
@@ -1354,15 +1354,15 @@
 
     return-object p1
 
-    :pswitch_data_62
+    :pswitch_data_0
     .packed-switch 0x18
-        :pswitch_54
-        :pswitch_46
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public b(Llibs/v1;)Ljava/util/Map;
-    .registers 8
+    .locals 6
 
     .line 1
     iget-object v0, p1, Llibs/v1;->Y:Ljava/lang/Object;
@@ -1402,7 +1402,7 @@
 
     .line 19
     .line 20
-    :goto_13
+    :goto_0
     invoke-virtual {v0, v2}, Ljava/io/InputStream;->read([B)I
 
     .line 21
@@ -1417,7 +1417,7 @@
     const/4 v5, 0x0
 
     .line 26
-    if-ne v3, v4, :cond_44
+    if-ne v3, v4, :cond_0
 
     .line 27
     .line 28
@@ -1500,21 +1500,21 @@
     return-object p1
 
     .line 69
-    :cond_44
+    :cond_0
     invoke-virtual {v1, v2, v5, v3}, Llibs/fl;->write([BII)V
 
     .line 70
     .line 71
     .line 72
-    goto :goto_13
+    goto :goto_0
 .end method
 
 .method public get()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     iget-byte v0, p0, Llibs/t;->X:B
 
-    packed-switch v0, :pswitch_data_e
+    packed-switch v0, :pswitch_data_0
 
     .line 31
     sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
@@ -1522,28 +1522,28 @@
     return-object v0
 
     .line 32
-    :pswitch_8
+    :pswitch_0
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     return-object v0
 
-    :pswitch_data_e
+    :pswitch_data_0
     .packed-switch 0x9
-        :pswitch_8
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public get()Llibs/cg;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/t;->X:B
 
     .line 2
     .line 3
-    sparse-switch v0, :sswitch_data_1e
+    sparse-switch v0, :sswitch_data_0
 
     .line 4
     .line 5
@@ -1564,7 +1564,7 @@
     return-object v0
 
     .line 14
-    :sswitch_d
+    :sswitch_0
     sget v0, Llibs/am;->x:I
 
     .line 15
@@ -1581,7 +1581,7 @@
     return-object v0
 
     .line 22
-    :sswitch_15
+    :sswitch_1
     sget v0, Llibs/u;->x:I
 
     .line 23
@@ -1601,9 +1601,9 @@
     nop
 
     .line 31
-    :sswitch_data_1e
+    :sswitch_data_0
     .sparse-switch
-        0x0 -> :sswitch_15
-        0x5 -> :sswitch_d
+        0x0 -> :sswitch_1
+        0x5 -> :sswitch_0
     .end sparse-switch
 .end method

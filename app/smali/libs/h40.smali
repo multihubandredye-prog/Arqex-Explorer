@@ -9,21 +9,21 @@
 
 # direct methods
 .method public constructor <init>(Ljava/security/SecureRandom;Llibs/l40;)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget v0, p2, Llibs/l40;->e:I
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
-    goto :goto_b
+    goto :goto_0
 
     .line 6
-    :cond_5
+    :cond_0
     iget-object v0, p2, Llibs/l40;->b:Ljava/math/BigInteger;
 
     .line 7
@@ -36,7 +36,7 @@
     move-result v0
 
     .line 12
-    :goto_b
+    :goto_0
     invoke-direct {p0, v0, p1}, Llibs/ct;-><init>(ILjava/security/SecureRandom;)V
 
     .line 13

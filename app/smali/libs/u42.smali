@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/c2;Ljava/lang/String;Llibs/m52;Llibs/sg3;)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/u42;->d:Llibs/c2;
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public final e(Llibs/rp0;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/u42;->b:Llibs/m52;

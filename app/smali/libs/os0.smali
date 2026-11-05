@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/kf0;Llibs/ps0;)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x4
@@ -26,7 +26,7 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -41,7 +41,7 @@
     return-void
 
     .line 14
-    :cond_d
+    :cond_0
     const-string p1, "Need curve with known group order"
 
     .line 15
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public final Call(Llibs/ig0;Ljava/math/BigInteger;)Llibs/ig0;
-    .registers 15
+    .locals 12
 
     .line 1
     iget-object v0, p1, Llibs/ig0;->a:Llibs/kf0;
@@ -83,7 +83,7 @@
     move-result v0
 
     .line 11
-    if-eqz v0, :cond_b0
+    if-eqz v0, :cond_8
 
     .line 12
     .line 13
@@ -137,21 +137,21 @@
     move-result v5
 
     .line 37
-    if-gez v5, :cond_28
+    if-gez v5, :cond_0
 
     .line 38
     .line 39
     const/4 v5, 0x1
 
     .line 40
-    goto :goto_29
+    goto :goto_0
 
     .line 41
-    :cond_28
+    :cond_0
     const/4 v5, 0x0
 
     .line 42
-    :goto_29
+    :goto_0
     invoke-virtual {p2}, Ljava/math/BigInteger;->signum()I
 
     .line 43
@@ -160,14 +160,14 @@
     move-result v6
 
     .line 46
-    if-gez v6, :cond_30
+    if-gez v6, :cond_1
 
     .line 47
     .line 48
     const/4 v2, 0x1
 
     .line 49
-    :cond_30
+    :cond_1
     invoke-virtual {v3}, Ljava/math/BigInteger;->abs()Ljava/math/BigInteger;
 
     .line 50
@@ -259,7 +259,7 @@
     move-result-object p1
 
     .line 94
-    if-eqz p1, :cond_66
+    if-eqz p1, :cond_2
 
     .line 95
     .line 96
@@ -267,7 +267,7 @@
 
     .line 97
     .line 98
-    if-eqz v1, :cond_66
+    if-eqz v1, :cond_2
 
     .line 99
     .line 100
@@ -275,10 +275,10 @@
 
     .line 101
     .line 102
-    goto :goto_6b
+    goto :goto_1
 
     .line 103
-    :cond_66
+    :cond_2
     new-instance p1, Llibs/bu3;
 
     .line 104
@@ -288,7 +288,7 @@
     .line 106
     .line 107
     .line 108
-    :goto_6b
+    :goto_1
     iget-object v1, v0, Llibs/ig0;->a:Llibs/kf0;
 
     .line 109
@@ -301,7 +301,7 @@
     move-result-object v0
 
     .line 114
-    if-eqz v0, :cond_7a
+    if-eqz v0, :cond_3
 
     .line 115
     .line 116
@@ -309,7 +309,7 @@
 
     .line 117
     .line 118
-    if-eqz v1, :cond_7a
+    if-eqz v1, :cond_3
 
     .line 119
     .line 120
@@ -317,10 +317,10 @@
 
     .line 121
     .line 122
-    goto :goto_7f
+    goto :goto_2
 
     .line 123
-    :cond_7a
+    :cond_3
     new-instance v0, Llibs/bu3;
 
     .line 124
@@ -330,8 +330,8 @@
     .line 126
     .line 127
     .line 128
-    :goto_7f
-    if-eqz v5, :cond_85
+    :goto_2
+    if-eqz v5, :cond_4
 
     .line 129
     .line 130
@@ -339,23 +339,23 @@
 
     .line 131
     .line 132
-    :goto_83
+    :goto_3
     move-object v6, v1
 
     .line 133
-    goto :goto_88
+    goto :goto_4
 
     .line 134
-    :cond_85
+    :cond_4
     iget-object v1, p1, Llibs/bu3;->a:[Llibs/ig0;
 
     .line 135
     .line 136
-    goto :goto_83
+    goto :goto_3
 
     .line 137
-    :goto_88
-    if-eqz v2, :cond_8e
+    :goto_4
+    if-eqz v2, :cond_5
 
     .line 138
     .line 139
@@ -363,23 +363,23 @@
 
     .line 140
     .line 141
-    :goto_8c
+    :goto_5
     move-object v9, v1
 
     .line 142
-    goto :goto_91
+    goto :goto_6
 
     .line 143
-    :cond_8e
+    :cond_5
     iget-object v1, v0, Llibs/bu3;->a:[Llibs/ig0;
 
     .line 144
     .line 145
-    goto :goto_8c
+    goto :goto_5
 
     .line 146
-    :goto_91
-    if-eqz v5, :cond_97
+    :goto_6
+    if-eqz v5, :cond_6
 
     .line 147
     .line 148
@@ -387,23 +387,23 @@
 
     .line 149
     .line 150
-    :goto_95
+    :goto_7
     move-object v7, p1
 
     .line 151
-    goto :goto_9a
+    goto :goto_8
 
     .line 152
-    :cond_97
+    :cond_6
     iget-object p1, p1, Llibs/bu3;->b:[Llibs/ig0;
 
     .line 153
     .line 154
-    goto :goto_95
+    goto :goto_7
 
     .line 155
-    :goto_9a
-    if-eqz v2, :cond_a0
+    :goto_8
+    if-eqz v2, :cond_7
 
     .line 156
     .line 157
@@ -411,22 +411,22 @@
 
     .line 158
     .line 159
-    :goto_9e
+    :goto_9
     move-object v10, p1
 
     .line 160
-    goto :goto_a3
+    goto :goto_a
 
     .line 161
-    :cond_a0
+    :cond_7
     iget-object p1, v0, Llibs/bu3;->b:[Llibs/ig0;
 
     .line 162
     .line 163
-    goto :goto_9e
+    goto :goto_9
 
     .line 164
-    :goto_a3
+    :goto_a
     invoke-static {v4, v3}, Llibs/zm1;->u(ILjava/math/BigInteger;)[B
 
     .line 165
@@ -454,7 +454,7 @@
     return-object p1
 
     .line 177
-    :cond_b0
+    :cond_8
     invoke-static {}, Llibs/ic0;->r()V
 
     .line 178

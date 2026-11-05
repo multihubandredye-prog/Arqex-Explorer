@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/nio/charset/Charset;[C)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/high16 v0, 0x3f800000    # 1.0f
@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public final decodeLoop(Ljava/nio/ByteBuffer;Ljava/nio/CharBuffer;)Ljava/nio/charset/CoderResult;
-    .registers 14
+    .locals 11
 
     .line 1
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->hasArray()Z
@@ -54,7 +54,7 @@
     const/4 v3, 0x1
 
     .line 11
-    if-eqz v0, :cond_67
+    if-eqz v0, :cond_3
 
     .line 12
     .line 13
@@ -66,7 +66,7 @@
     move-result v0
 
     .line 17
-    if-eqz v0, :cond_67
+    if-eqz v0, :cond_3
 
     .line 18
     .line 19
@@ -173,7 +173,7 @@
 
     .line 67
     .line 68
-    if-ge v9, v10, :cond_49
+    if-ge v9, v10, :cond_0
 
     .line 69
     .line 70
@@ -185,9 +185,9 @@
 
     .line 73
     .line 74
-    :cond_49
-    :goto_49
-    if-ge v5, v6, :cond_63
+    :cond_0
+    :goto_0
+    if-ge v5, v6, :cond_2
 
     .line 75
     .line 76
@@ -203,7 +203,7 @@
 
     .line 81
     .line 82
-    if-ne v9, v2, :cond_5b
+    if-ne v9, v2, :cond_1
 
     .line 83
     .line 84
@@ -223,7 +223,7 @@
     return-object v0
 
     .line 92
-    :cond_5b
+    :cond_1
     add-int/lit8 v10, v8, 0x1
 
     .line 93
@@ -239,10 +239,10 @@
     move v8, v10
 
     .line 99
-    goto :goto_49
+    goto :goto_0
 
     .line 100
-    :cond_63
+    :cond_2
     invoke-static {v7, p1, v5, p2, v8}, Llibs/i81;->View(Ljava/nio/charset/CoderResult;Ljava/nio/Buffer;ILjava/nio/Buffer;I)V
 
     .line 101
@@ -251,7 +251,7 @@
     return-object v7
 
     .line 104
-    :cond_67
+    :cond_3
     invoke-virtual {p1}, Ljava/nio/Buffer;->position()I
 
     .line 105
@@ -260,8 +260,8 @@
     move-result v0
 
     .line 108
-    :goto_6b
-    :try_start_6b
+    :goto_1
+    :try_start_0
     invoke-virtual {p1}, Ljava/nio/Buffer;->hasRemaining()Z
 
     .line 109
@@ -270,7 +270,7 @@
     move-result v4
 
     .line 112
-    if-eqz v4, :cond_97
+    if-eqz v4, :cond_6
 
     .line 113
     .line 114
@@ -290,7 +290,7 @@
 
     .line 121
     .line 122
-    if-ne v4, v2, :cond_85
+    if-ne v4, v2, :cond_4
 
     .line 123
     .line 124
@@ -300,8 +300,8 @@
     .line 126
     .line 127
     move-result-object p2
-    :try_end_7f
-    .catchall {:try_start_6b .. :try_end_7f} :catchall_83
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 128
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
@@ -312,15 +312,15 @@
     return-object p2
 
     .line 132
-    :catchall_83
+    :catchall_0
     move-exception p2
 
     .line 133
-    goto :goto_9d
+    goto :goto_2
 
     .line 134
-    :cond_85
-    :try_start_85
+    :cond_4
+    :try_start_1
     invoke-virtual {p2}, Ljava/nio/Buffer;->hasRemaining()Z
 
     .line 135
@@ -329,13 +329,13 @@
     move-result v5
 
     .line 138
-    if-nez v5, :cond_91
+    if-nez v5, :cond_5
 
     .line 139
     .line 140
     sget-object p2, Ljava/nio/charset/CoderResult;->OVERFLOW:Ljava/nio/charset/CoderResult;
-    :try_end_8d
-    .catchall {:try_start_85 .. :try_end_8d} :catchall_83
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 141
     .line 142
@@ -347,8 +347,8 @@
     return-object p2
 
     .line 146
-    :cond_91
-    :try_start_91
+    :cond_5
+    :try_start_2
     invoke-virtual {p2, v4}, Ljava/nio/CharBuffer;->put(C)Ljava/nio/CharBuffer;
 
     .line 147
@@ -358,13 +358,13 @@
 
     .line 150
     .line 151
-    goto :goto_6b
+    goto :goto_1
 
     .line 152
-    :cond_97
+    :cond_6
     sget-object p2, Ljava/nio/charset/CoderResult;->UNDERFLOW:Ljava/nio/charset/CoderResult;
-    :try_end_99
-    .catchall {:try_start_91 .. :try_end_99} :catchall_83
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 153
     .line 154
@@ -376,25 +376,25 @@
     return-object p2
 
     .line 158
-    :goto_9d
+    :goto_2
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     .line 159
     .line 160
     .line 161
-    goto :goto_a2
+    goto :goto_4
 
     .line 162
-    :goto_a1
+    :goto_3
     throw p2
 
     .line 163
-    :goto_a2
-    goto :goto_a1
+    :goto_4
+    goto :goto_3
 .end method
 
 .method public final implReplaceWith(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x0

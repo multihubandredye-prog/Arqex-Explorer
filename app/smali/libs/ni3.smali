@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -82,7 +82,7 @@
 
 # virtual methods
 .method public final a()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ni3;->b:Ljava/lang/String;
@@ -93,7 +93,7 @@
 .end method
 
 .method public final b()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/ni3;->d:I
@@ -104,7 +104,7 @@
 .end method
 
 .method public final c()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ni3;->a:Ljava/lang/String;
@@ -115,7 +115,7 @@
 .end method
 
 .method public final d()V
-    .registers 8
+    .locals 7
 
     .line 1
     iget-wide v0, p0, Llibs/ni3;->g:J
@@ -137,7 +137,7 @@
 
     .line 11
     .line 12
-    if-nez v6, :cond_10
+    if-nez v6, :cond_0
 
     .line 13
     .line 14
@@ -148,7 +148,7 @@
     return-void
 
     .line 17
-    :cond_10
+    :cond_0
     add-long/2addr v0, v4
 
     .line 18
@@ -160,7 +160,7 @@
 .end method
 
 .method public final e()Z
-    .registers 10
+    .locals 9
 
     .line 1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -186,14 +186,14 @@
 
     .line 11
     .line 12
-    if-nez v7, :cond_e
+    if-nez v7, :cond_0
 
     .line 13
     .line 14
     return v6
 
     .line 15
-    :cond_e
+    :cond_0
     iget-wide v4, p0, Llibs/ni3;->f:J
 
     .line 16
@@ -213,7 +213,7 @@
 
     .line 23
     .line 24
-    if-gez v4, :cond_1b
+    if-gez v4, :cond_1
 
     .line 25
     .line 26
@@ -223,12 +223,12 @@
     return v0
 
     .line 28
-    :cond_1b
+    :cond_1
     return v6
 .end method
 
 .method public final f()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -255,7 +255,7 @@
 .end method
 
 .method public final g(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     :try_start_0
@@ -301,17 +301,17 @@
 
     .line 22
     iput p1, p0, Llibs/ni3;->d:I
-    :try_end_17
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_17} :catch_17
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 23
     .line 24
-    :catch_17
+    :catch_0
     return-void
 .end method
 
 .method public final h(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/ni3;->a:Ljava/lang/String;
@@ -322,7 +322,7 @@
 .end method
 
 .method public final i(J)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-wide p1, p0, Llibs/ni3;->e:J

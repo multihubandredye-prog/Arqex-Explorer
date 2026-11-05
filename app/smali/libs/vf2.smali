@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;Landroid/graphics/Bitmap;Ljava/lang/String;)V
-    .registers 5
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -36,7 +36,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Llibs/v1;Landroid/app/Activity;)V
-    .registers 5
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -67,14 +67,14 @@
 .end method
 
 .method private final a()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final b()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
@@ -83,14 +83,14 @@
 
 # virtual methods
 .method public final onFinish()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/vf2;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_e
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -108,21 +108,21 @@
     .line 11
     .line 12
     .line 13
-    :pswitch_c
+    :pswitch_0
     return-void
 
     .line 14
     nop
 
     .line 15
-    :pswitch_data_e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_c
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final onLayout(Landroid/print/PrintAttributes;Landroid/print/PrintAttributes;Landroid/os/CancellationSignal;Landroid/print/PrintDocumentAdapter$LayoutResultCallback;Landroid/os/Bundle;)V
-    .registers 7
+    .locals 1
 
     .line 1
     iget-byte p5, p0, Llibs/vf2;->a:B
@@ -132,7 +132,7 @@
     const/4 v0, 0x1
 
     .line 4
-    packed-switch p5, :pswitch_data_60
+    packed-switch p5, :pswitch_data_0
 
     .line 5
     .line 6
@@ -145,7 +145,7 @@
     move-result p3
 
     .line 11
-    if-eqz p3, :cond_10
+    if-eqz p3, :cond_0
 
     .line 12
     .line 13
@@ -154,10 +154,10 @@
     .line 14
     .line 15
     .line 16
-    goto :goto_2d
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     iput-object p2, p0, Llibs/vf2;->b:Landroid/print/PrintAttributes;
 
     .line 18
@@ -215,11 +215,11 @@
     .line 44
     .line 45
     .line 46
-    :goto_2d
+    :goto_0
     return-void
 
     .line 47
-    :pswitch_2e
+    :pswitch_0
     invoke-virtual {p3}, Landroid/os/CancellationSignal;->isCanceled()Z
 
     .line 48
@@ -228,7 +228,7 @@
     move-result p3
 
     .line 51
-    if-eqz p3, :cond_38
+    if-eqz p3, :cond_1
 
     .line 52
     .line 53
@@ -237,10 +237,10 @@
     .line 54
     .line 55
     .line 56
-    goto :goto_5f
+    goto :goto_1
 
     .line 57
-    :cond_38
+    :cond_1
     iput-object p2, p0, Llibs/vf2;->b:Landroid/print/PrintAttributes;
 
     .line 58
@@ -318,25 +318,25 @@
     .line 94
     .line 95
     .line 96
-    :goto_5f
+    :goto_1
     return-void
 
     .line 97
-    :pswitch_data_60
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2e
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public onStart()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/vf2;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_a
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -346,21 +346,21 @@
     .line 7
     .line 8
     .line 9
-    :pswitch_8
+    :pswitch_0
     return-void
 
     .line 10
     nop
 
     .line 11
-    :pswitch_data_a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_8
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final onWrite([Landroid/print/PageRange;Landroid/os/ParcelFileDescriptor;Landroid/os/CancellationSignal;Landroid/print/PrintDocumentAdapter$WriteResultCallback;)V
-    .registers 21
+    .locals 16
 
     .line 1
     move-object/from16 v1, p0
@@ -388,12 +388,12 @@
     const/4 v6, 0x1
 
     .line 12
-    packed-switch v0, :pswitch_data_188
+    packed-switch v0, :pswitch_data_0
 
     .line 13
     .line 14
     .line 15
-    :try_start_e
+    :try_start_0
     new-instance v2, Landroid/print/pdf/PrintedPdfDocument;
 
     .line 16
@@ -407,13 +407,13 @@
     .line 20
     .line 21
     invoke-direct {v2, v0, v7}, Landroid/print/pdf/PrintedPdfDocument;-><init>(Landroid/content/Context;Landroid/print/PrintAttributes;)V
-    :try_end_17
-    .catchall {:try_start_e .. :try_end_17} :catchall_87
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
     .line 22
     .line 23
     .line 24
-    :try_start_17
+    :try_start_1
     invoke-virtual {v2, v6}, Landroid/print/pdf/PrintedPdfDocument;->startPage(I)Landroid/graphics/pdf/PdfDocument$Page;
 
     .line 25
@@ -509,13 +509,13 @@
     .line 71
     .line 72
     invoke-virtual {v2, v0}, Landroid/print/pdf/PrintedPdfDocument;->finishPage(Landroid/graphics/pdf/PdfDocument$Page;)V
-    :try_end_4a
-    .catchall {:try_start_17 .. :try_end_4a} :catchall_63
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 73
     .line 74
     .line 75
-    :try_start_4a
+    :try_start_2
     new-instance v4, Ljava/io/FileOutputStream;
 
     .line 76
@@ -529,22 +529,22 @@
 
     .line 81
     invoke-direct {v4, v0}, Ljava/io/FileOutputStream;-><init>(Ljava/io/FileDescriptor;)V
-    :try_end_53
-    .catch Ljava/io/IOException; {:try_start_4a .. :try_end_53} :catch_66
-    .catchall {:try_start_4a .. :try_end_53} :catchall_63
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 82
     .line 83
     .line 84
-    :try_start_53
+    :try_start_3
     invoke-virtual {v2, v4}, Landroid/print/pdf/PrintedPdfDocument;->writeTo(Ljava/io/OutputStream;)V
-    :try_end_56
-    .catchall {:try_start_53 .. :try_end_56} :catchall_68
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 85
     .line 86
     .line 87
-    :try_start_56
+    :try_start_4
     invoke-static {v4}, Llibs/ji0;->k(Ljava/io/Closeable;)V
 
     .line 88
@@ -567,27 +567,27 @@
     .line 97
     .line 98
     .line 99
-    goto :goto_80
+    goto :goto_1
 
     .line 100
-    :catchall_63
+    :catchall_0
     move-exception v0
 
     .line 101
     move-object v4, v2
 
     .line 102
-    goto :goto_88
+    goto :goto_2
 
     .line 103
-    :catch_66
+    :catch_0
     move-exception v0
 
     .line 104
-    goto :goto_6d
+    goto :goto_0
 
     .line 105
-    :catchall_68
+    :catchall_1
     move-exception v0
 
     .line 106
@@ -597,13 +597,13 @@
     .line 108
     .line 109
     throw v0
-    :try_end_6d
-    .catch Ljava/io/IOException; {:try_start_56 .. :try_end_6d} :catch_66
-    .catchall {:try_start_56 .. :try_end_6d} :catchall_63
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 110
-    :goto_6d
-    :try_start_6d
+    :goto_0
+    :try_start_5
     sget-object v4, Llibs/vw1;->b:Ljava/lang/Object;
 
     .line 111
@@ -635,13 +635,13 @@
     .line 125
     .line 126
     invoke-virtual {v3, v0}, Landroid/print/PrintDocumentAdapter$WriteResultCallback;->onWriteFailed(Ljava/lang/CharSequence;)V
-    :try_end_80
-    .catchall {:try_start_6d .. :try_end_80} :catchall_63
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 127
     .line 128
     .line 129
-    :goto_80
+    :goto_1
     invoke-virtual {v2}, Landroid/print/pdf/PrintedPdfDocument;->close()V
 
     .line 130
@@ -655,12 +655,12 @@
     return-void
 
     .line 136
-    :catchall_87
+    :catchall_2
     move-exception v0
 
     .line 137
-    :goto_88
-    if-eqz v4, :cond_8d
+    :goto_2
+    if-eqz v4, :cond_0
 
     .line 138
     .line 139
@@ -669,7 +669,7 @@
     .line 140
     .line 141
     .line 142
-    :cond_8d
+    :cond_0
     invoke-static/range {p2 .. p2}, Llibs/ji0;->j(Landroid/os/ParcelFileDescriptor;)V
 
     .line 143
@@ -678,12 +678,12 @@
     throw v0
 
     .line 146
-    :pswitch_91
+    :pswitch_0
     const-string v7, "PrintPolicy"
 
     .line 147
     .line 148
-    :try_start_93
+    :try_start_6
     new-instance v8, Landroid/print/pdf/PrintedPdfDocument;
 
     .line 149
@@ -697,13 +697,13 @@
     .line 153
     .line 154
     invoke-direct {v8, v0, v9}, Landroid/print/pdf/PrintedPdfDocument;-><init>(Landroid/content/Context;Landroid/print/PrintAttributes;)V
-    :try_end_9c
-    .catchall {:try_start_93 .. :try_end_9c} :catchall_15e
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_8
 
     .line 155
     .line 156
     .line 157
-    :try_start_9c
+    :try_start_7
     iget-object v0, v1, Llibs/vf2;->e:Ljava/lang/Object;
 
     .line 158
@@ -727,8 +727,8 @@
     const/4 v10, 0x0
 
     .line 168
-    :goto_a7
-    if-ge v10, v9, :cond_142
+    :goto_3
+    if-ge v10, v9, :cond_7
 
     .line 169
     .line 170
@@ -740,7 +740,7 @@
     move-result v0
 
     .line 174
-    if-eqz v0, :cond_be
+    if-eqz v0, :cond_2
 
     .line 175
     .line 176
@@ -750,44 +750,44 @@
     .line 178
     .line 179
     invoke-virtual {v8}, Landroid/print/pdf/PrintedPdfDocument;->close()V
-    :try_end_b5
-    .catchall {:try_start_9c .. :try_end_b5} :catchall_ba
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_3
 
     .line 180
     .line 181
     .line 182
-    :cond_b5
-    :goto_b5
+    :cond_1
+    :goto_4
     invoke-static/range {p2 .. p2}, Llibs/ji0;->j(Landroid/os/ParcelFileDescriptor;)V
 
     .line 183
     .line 184
     .line 185
-    goto/16 :goto_17a
+    goto/16 :goto_b
 
     .line 186
     .line 187
-    :catchall_ba
+    :catchall_3
     move-exception v0
 
     .line 188
     move-object v4, v8
 
     .line 189
-    goto/16 :goto_15f
+    goto/16 :goto_a
 
     .line 190
     .line 191
-    :cond_be
-    :try_start_be
+    :cond_2
+    :try_start_8
     array-length v0, v2
 
     .line 192
     const/4 v11, 0x0
 
     .line 193
-    :goto_c0
-    if-ge v11, v0, :cond_13e
+    :goto_5
+    if-ge v11, v0, :cond_6
 
     .line 194
     .line 195
@@ -803,7 +803,7 @@
     move-result v13
 
     .line 201
-    if-lt v10, v13, :cond_13b
+    if-lt v10, v13, :cond_5
 
     .line 202
     .line 203
@@ -815,7 +815,7 @@
     move-result v12
 
     .line 207
-    if-gt v10, v12, :cond_13b
+    if-gt v10, v12, :cond_5
 
     .line 208
     .line 209
@@ -848,13 +848,13 @@
 
     .line 223
     invoke-direct {v0, v12}, Landroid/graphics/RectF;-><init>(Landroid/graphics/Rect;)V
-    :try_end_e1
-    .catchall {:try_start_be .. :try_end_e1} :catchall_ba
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_3
 
     .line 224
     .line 225
     .line 226
-    :try_start_e1
+    :try_start_9
     iget-object v12, v1, Llibs/vf2;->e:Ljava/lang/Object;
 
     .line 227
@@ -869,11 +869,11 @@
     .line 232
     .line 233
     move-result-object v12
-    :try_end_e9
-    .catchall {:try_start_e1 .. :try_end_e9} :catchall_102
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_5
 
     .line 234
-    :try_start_e9
+    :try_start_a
     invoke-virtual {v12}, Landroid/graphics/Bitmap;->getWidth()I
 
     .line 235
@@ -907,40 +907,40 @@
 
     .line 250
     invoke-virtual {v13, v12, v0, v4}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Matrix;Landroid/graphics/Paint;)V
-    :try_end_fc
-    .catchall {:try_start_e9 .. :try_end_fc} :catchall_100
+    :try_end_a
+    .catchall {:try_start_a .. :try_end_a} :catchall_4
 
     .line 251
     .line 252
     .line 253
-    :goto_fc
-    :try_start_fc
+    :goto_6
+    :try_start_b
     invoke-virtual {v12}, Landroid/graphics/Bitmap;->recycle()V
-    :try_end_ff
-    .catchall {:try_start_fc .. :try_end_ff} :catchall_ba
+    :try_end_b
+    .catchall {:try_start_b .. :try_end_b} :catchall_3
 
     .line 254
     .line 255
     .line 256
-    goto :goto_12d
+    goto :goto_8
 
     .line 257
-    :catchall_100
+    :catchall_4
     move-exception v0
 
     .line 258
-    goto :goto_104
+    goto :goto_7
 
     .line 259
-    :catchall_102
+    :catchall_5
     move-exception v0
 
     .line 260
     move-object v12, v4
 
     .line 261
-    :goto_104
-    :try_start_104
+    :goto_7
+    :try_start_c
     const-string v13, "FAILED"
 
     .line 262
@@ -1007,35 +1007,35 @@
     .line 295
     .line 296
     invoke-static {v7, v13, v14}, Llibs/vw1;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_12a
-    .catchall {:try_start_104 .. :try_end_12a} :catchall_131
+    :try_end_c
+    .catchall {:try_start_c .. :try_end_c} :catchall_6
 
     .line 297
     .line 298
     .line 299
-    if-eqz v12, :cond_12d
+    if-eqz v12, :cond_3
 
     .line 300
     .line 301
-    goto :goto_fc
+    goto :goto_6
 
     .line 302
-    :cond_12d
-    :goto_12d
-    :try_start_12d
+    :cond_3
+    :goto_8
+    :try_start_d
     invoke-virtual {v8, v11}, Landroid/print/pdf/PrintedPdfDocument;->finishPage(Landroid/graphics/pdf/PdfDocument$Page;)V
 
     .line 303
     .line 304
     .line 305
-    goto :goto_13e
+    goto :goto_9
 
     .line 306
-    :catchall_131
+    :catchall_6
     move-exception v0
 
     .line 307
-    if-eqz v12, :cond_137
+    if-eqz v12, :cond_4
 
     .line 308
     .line 309
@@ -1044,7 +1044,7 @@
     .line 310
     .line 311
     .line 312
-    :cond_137
+    :cond_4
     invoke-virtual {v8, v11}, Landroid/print/pdf/PrintedPdfDocument;->finishPage(Landroid/graphics/pdf/PdfDocument$Page;)V
 
     .line 313
@@ -1053,25 +1053,25 @@
     throw v0
 
     .line 316
-    :cond_13b
+    :cond_5
     add-int/lit8 v11, v11, 0x1
 
     .line 317
     .line 318
-    goto :goto_c0
+    goto :goto_5
 
     .line 319
-    :cond_13e
-    :goto_13e
+    :cond_6
+    :goto_9
     add-int/lit8 v10, v10, 0x1
 
     .line 320
     .line 321
-    goto/16 :goto_a7
+    goto/16 :goto_3
 
     .line 322
     .line 323
-    :cond_142
+    :cond_7
     new-instance v4, Ljava/io/FileOutputStream;
 
     .line 324
@@ -1085,29 +1085,29 @@
 
     .line 329
     invoke-direct {v4, v0}, Ljava/io/FileOutputStream;-><init>(Ljava/io/FileDescriptor;)V
-    :try_end_14b
-    .catchall {:try_start_12d .. :try_end_14b} :catchall_ba
+    :try_end_d
+    .catchall {:try_start_d .. :try_end_d} :catchall_3
 
     .line 330
     .line 331
     .line 332
-    :try_start_14b
+    :try_start_e
     invoke-virtual {v8, v4}, Landroid/print/pdf/PrintedPdfDocument;->writeTo(Ljava/io/OutputStream;)V
-    :try_end_14e
-    .catchall {:try_start_14b .. :try_end_14e} :catchall_159
+    :try_end_e
+    .catchall {:try_start_e .. :try_end_e} :catchall_7
 
     .line 333
     .line 334
     .line 335
-    :try_start_14e
+    :try_start_f
     invoke-static {v4}, Llibs/ji0;->k(Ljava/io/Closeable;)V
 
     .line 336
     .line 337
     .line 338
     invoke-virtual {v3, v2}, Landroid/print/PrintDocumentAdapter$WriteResultCallback;->onWriteFinished([Landroid/print/PageRange;)V
-    :try_end_154
-    .catchall {:try_start_14e .. :try_end_154} :catchall_ba
+    :try_end_f
+    .catchall {:try_start_f .. :try_end_f} :catchall_3
 
     .line 339
     .line 340
@@ -1117,31 +1117,31 @@
     .line 342
     .line 343
     .line 344
-    goto/16 :goto_b5
+    goto/16 :goto_4
 
     .line 345
     .line 346
-    :catchall_159
+    :catchall_7
     move-exception v0
 
     .line 347
-    :try_start_15a
+    :try_start_10
     invoke-static {v4}, Llibs/ji0;->k(Ljava/io/Closeable;)V
 
     .line 348
     .line 349
     .line 350
     throw v0
-    :try_end_15e
-    .catchall {:try_start_15a .. :try_end_15e} :catchall_ba
+    :try_end_10
+    .catchall {:try_start_10 .. :try_end_10} :catchall_3
 
     .line 351
-    :catchall_15e
+    :catchall_8
     move-exception v0
 
     .line 352
-    :goto_15f
-    :try_start_15f
+    :goto_a
+    :try_start_11
     const-string v2, "PAGES"
 
     .line 353
@@ -1176,13 +1176,13 @@
 
     .line 369
     invoke-virtual {v3, v0}, Landroid/print/PrintDocumentAdapter$WriteResultCallback;->onWriteFailed(Ljava/lang/CharSequence;)V
-    :try_end_173
-    .catchall {:try_start_15f .. :try_end_173} :catchall_17b
+    :try_end_11
+    .catchall {:try_start_11 .. :try_end_11} :catchall_9
 
     .line 370
     .line 371
     .line 372
-    if-eqz v4, :cond_b5
+    if-eqz v4, :cond_1
 
     .line 373
     .line 374
@@ -1191,19 +1191,19 @@
     .line 375
     .line 376
     .line 377
-    goto/16 :goto_b5
+    goto/16 :goto_4
 
     .line 378
     .line 379
-    :goto_17a
+    :goto_b
     return-void
 
     .line 380
-    :catchall_17b
+    :catchall_9
     move-exception v0
 
     .line 381
-    if-eqz v4, :cond_181
+    if-eqz v4, :cond_8
 
     .line 382
     .line 383
@@ -1212,28 +1212,28 @@
     .line 384
     .line 385
     .line 386
-    :cond_181
+    :cond_8
     invoke-static/range {p2 .. p2}, Llibs/ji0;->j(Landroid/os/ParcelFileDescriptor;)V
 
     .line 387
     .line 388
     .line 389
-    goto :goto_186
+    goto :goto_d
 
     .line 390
-    :goto_185
+    :goto_c
     throw v0
 
     .line 391
-    :goto_186
-    goto :goto_185
+    :goto_d
+    goto :goto_c
 
     .line 392
     nop
 
     .line 393
-    :pswitch_data_188
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_91
+        :pswitch_0
     .end packed-switch
 .end method

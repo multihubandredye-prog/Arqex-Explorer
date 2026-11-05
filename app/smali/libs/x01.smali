@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(ILjava/util/concurrent/atomic/AtomicInteger;Ljava/util/ArrayList;Ljava/lang/Thread;)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput p1, p0, Llibs/x01;->Mu:I
@@ -69,14 +69,14 @@
 
 # virtual methods
 .method public final close()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/x01;->Lambda:Llibs/kc2;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -111,7 +111,7 @@
     .line 18
     .line 19
     .line 20
-    :cond_13
+    :cond_0
     iget-object v0, p0, Llibs/x01;->Lambda:Llibs/kc2;
 
     .line 21
@@ -132,7 +132,7 @@
 .end method
 
 .method public final read()I
-    .registers 5
+    .locals 4
 
     const/4 v0, 0x1
 
@@ -148,12 +148,12 @@
 
     const/4 v3, -0x1
 
-    if-ne v0, v3, :cond_c
+    if-ne v0, v3, :cond_0
 
     return v3
 
     .line 76
-    :cond_c
+    :cond_0
     aget-byte v0, v1, v2
 
     and-int/lit16 v0, v0, 0xff
@@ -162,7 +162,7 @@
 .end method
 
 .method public final read([B)I
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -177,14 +177,14 @@
 .end method
 
 .method public final read([BII)I
-    .registers 11
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/x01;->Lambda:Llibs/kc2;
 
     .line 2
     .line 3
-    if-nez v0, :cond_16
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -222,12 +222,12 @@
 
     .line 22
     .line 23
-    :cond_16
+    :cond_0
     iget-object v0, p0, Llibs/x01;->X:Llibs/xv1;
 
     .line 24
     .line 25
-    if-nez v0, :cond_32
+    if-nez v0, :cond_1
 
     .line 26
     .line 27
@@ -277,7 +277,7 @@
     .line 49
     .line 50
     .line 51
-    :cond_32
+    :cond_1
     iget-object v0, p0, Llibs/x01;->Y:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     .line 52
@@ -290,7 +290,7 @@
     move-result v0
 
     .line 57
-    if-nez v0, :cond_41
+    if-nez v0, :cond_2
 
     .line 58
     .line 59
@@ -309,7 +309,7 @@
     return p1
 
     .line 66
-    :cond_41
+    :cond_2
     const-string p1, "Stream failed"
 
     .line 67

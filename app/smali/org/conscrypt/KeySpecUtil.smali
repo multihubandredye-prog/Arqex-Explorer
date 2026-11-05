@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,7 +17,7 @@
 .end method
 
 .method public static makeRawKeySpec([BLjava/lang/Class;)Ljava/security/spec/KeySpec;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -32,7 +32,7 @@
     const/4 v0, 0x1
 
     .line 2
-    :try_start_1
+    :try_start_0
     new-array v1, v0, [Ljava/lang/Class;
 
     .line 3
@@ -103,14 +103,14 @@
     move-result v0
 
     .line 36
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_0
 
     .line 37
     .line 38
     return-object p0
 
     .line 39
-    :cond_26
+    :cond_0
     new-instance p0, Ljava/security/spec/InvalidKeySpecException;
 
     .line 40
@@ -125,39 +125,39 @@
     .line 45
     .line 46
     throw p0
-    :try_end_2e
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_1 .. :try_end_2e} :catch_34
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_1 .. :try_end_2e} :catch_32
-    .catch Ljava/lang/InstantiationException; {:try_start_1 .. :try_end_2e} :catch_30
-    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_2e} :catch_2e
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 47
-    :catch_2e
+    :catch_0
     move-exception p0
 
     .line 48
-    goto :goto_35
+    goto :goto_0
 
     .line 49
-    :catch_30
+    :catch_1
     move-exception p0
 
     .line 50
-    goto :goto_35
+    goto :goto_0
 
     .line 51
-    :catch_32
+    :catch_2
     move-exception p0
 
     .line 52
-    goto :goto_35
+    goto :goto_0
 
     .line 53
-    :catch_34
+    :catch_3
     move-exception p0
 
     .line 54
-    :goto_35
+    :goto_0
     new-instance v0, Ljava/security/spec/InvalidKeySpecException;
 
     .line 55

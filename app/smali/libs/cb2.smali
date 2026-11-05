@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const-string v0, "UTF-8"
@@ -32,7 +32,7 @@
 .end method
 
 .method public static a(Ljava/nio/ByteBuffer;)I
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->get()B
@@ -54,7 +54,7 @@
 
     .line 9
     .line 10
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_0
 
     .line 11
     .line 12
@@ -84,12 +84,12 @@
     add-int/2addr v0, p0
 
     .line 24
-    :cond_17
+    :cond_0
     return v0
 .end method
 
 .method public static b(Ljava/nio/ByteBuffer;Llibs/qh3;)Llibs/ap2;
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-static {p0}, Llibs/lr2;->String(Ljava/nio/ByteBuffer;)I
@@ -117,17 +117,17 @@
     int-to-short v0, v0
 
     .line 14
-    packed-switch v0, :pswitch_data_9e
+    packed-switch v0, :pswitch_data_0
 
     .line 15
     .line 16
     .line 17
-    packed-switch v0, :pswitch_data_b0
+    packed-switch v0, :pswitch_data_1
 
     .line 18
     .line 19
     .line 20
-    packed-switch v0, :pswitch_data_ba
+    packed-switch v0, :pswitch_data_2
 
     .line 21
     .line 22
@@ -152,7 +152,7 @@
     return-object p1
 
     .line 33
-    :pswitch_20
+    :pswitch_0
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getInt()I
 
     .line 34
@@ -176,7 +176,7 @@
     return-object p1
 
     .line 44
-    :pswitch_2b
+    :pswitch_1
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getInt()I
 
     .line 45
@@ -201,7 +201,7 @@
     return-object p1
 
     .line 56
-    :pswitch_37
+    :pswitch_2
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getInt()I
 
     .line 57
@@ -225,7 +225,7 @@
     return-object p1
 
     .line 67
-    :pswitch_42
+    :pswitch_3
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getInt()I
 
     .line 68
@@ -246,7 +246,7 @@
     return-object p1
 
     .line 77
-    :pswitch_4c
+    :pswitch_4
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getInt()I
 
     .line 78
@@ -267,7 +267,7 @@
     return-object p1
 
     .line 87
-    :pswitch_56
+    :pswitch_5
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getInt()I
 
     .line 88
@@ -291,7 +291,7 @@
     return-object p1
 
     .line 98
-    :pswitch_61
+    :pswitch_6
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getInt()I
 
     .line 99
@@ -315,7 +315,7 @@
     return-object p1
 
     .line 109
-    :pswitch_6c
+    :pswitch_7
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getInt()I
 
     .line 110
@@ -339,7 +339,7 @@
     return-object p1
 
     .line 120
-    :pswitch_77
+    :pswitch_8
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getInt()I
 
     .line 121
@@ -348,7 +348,7 @@
     move-result p0
 
     .line 124
-    if-ltz p0, :cond_83
+    if-ltz p0, :cond_0
 
     .line 125
     .line 126
@@ -364,14 +364,14 @@
     return-object v0
 
     .line 132
-    :cond_83
+    :cond_0
     const/4 p0, 0x0
 
     .line 133
     return-object p0
 
     .line 134
-    :pswitch_85
+    :pswitch_9
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getInt()I
 
     .line 135
@@ -395,7 +395,7 @@
     return-object p1
 
     .line 145
-    :pswitch_90
+    :pswitch_a
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getInt()I
 
     .line 146
@@ -416,7 +416,7 @@
     return-object p1
 
     .line 155
-    :pswitch_9a
+    :pswitch_b
     sget-object p0, Llibs/vo2;->d:Llibs/vo2;
 
     .line 156
@@ -427,15 +427,15 @@
     nop
 
     .line 159
-    :pswitch_data_9e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_9a
-        :pswitch_90
-        :pswitch_85
-        :pswitch_77
-        :pswitch_6c
-        :pswitch_61
-        :pswitch_56
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
     .end packed-switch
 
     .line 160
@@ -456,11 +456,11 @@
     .line 175
     .line 176
     .line 177
-    :pswitch_data_b0
+    :pswitch_data_1
     .packed-switch 0x10
-        :pswitch_4c
-        :pswitch_42
-        :pswitch_37
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
     .end packed-switch
 
     .line 178
@@ -473,17 +473,17 @@
     .line 185
     .line 186
     .line 187
-    :pswitch_data_ba
+    :pswitch_data_2
     .packed-switch 0x1c
-        :pswitch_2b
-        :pswitch_20
-        :pswitch_2b
-        :pswitch_20
+        :pswitch_1
+        :pswitch_0
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static c(Ljava/nio/ByteBuffer;Llibs/uh3;)Llibs/qh3;
-    .registers 20
+    .locals 18
 
     .line 1
     move-object/from16 v0, p0
@@ -520,19 +520,19 @@
     .line 17
     .line 18
     .line 19
-    if-lez v4, :cond_25
+    if-lez v4, :cond_0
 
     .line 20
     .line 21
     const/4 v9, 0x0
 
     .line 22
-    :goto_15
+    :goto_0
     iget v10, v1, Llibs/uh3;->d:I
 
     .line 23
     .line 24
-    if-ge v9, v10, :cond_25
+    if-ge v9, v10, :cond_0
 
     .line 25
     .line 26
@@ -561,10 +561,10 @@
 
     .line 36
     .line 37
-    goto :goto_15
+    goto :goto_0
 
     .line 38
-    :cond_25
+    :cond_0
     iget-wide v9, v1, Llibs/uh3;->e:J
 
     .line 39
@@ -584,21 +584,21 @@
 
     .line 46
     .line 47
-    if-eqz v13, :cond_32
+    if-eqz v13, :cond_1
 
     .line 48
     .line 49
     const/4 v9, 0x1
 
     .line 50
-    goto :goto_33
+    goto :goto_1
 
     .line 51
-    :cond_32
+    :cond_1
     const/4 v9, 0x0
 
     .line 52
-    :goto_33
+    :goto_1
     iget-wide v10, v1, Llibs/uh3;->f:J
 
     .line 53
@@ -628,8 +628,8 @@
     const/4 v13, 0x0
 
     .line 65
-    :goto_40
-    if-ge v13, v4, :cond_56
+    :goto_2
+    if-ge v13, v4, :cond_2
 
     .line 66
     .line 67
@@ -672,10 +672,10 @@
 
     .line 85
     .line 86
-    goto :goto_40
+    goto :goto_2
 
     .line 87
-    :cond_56
+    :cond_2
     new-instance v5, Llibs/qh3;
 
     .line 88
@@ -699,8 +699,8 @@
     const/4 v7, 0x0
 
     .line 98
-    :goto_61
-    if-ge v7, v4, :cond_c9
+    :goto_3
+    if-ge v7, v4, :cond_7
 
     .line 99
     .line 100
@@ -724,7 +724,7 @@
 
     .line 109
     .line 110
-    if-nez v17, :cond_72
+    if-nez v17, :cond_3
 
     .line 111
     .line 112
@@ -732,10 +732,10 @@
 
     .line 113
     .line 114
-    goto :goto_c4
+    goto :goto_6
 
     .line 115
-    :cond_72
+    :cond_3
     invoke-static {v0, v14, v15}, Llibs/lr2;->n(Ljava/nio/ByteBuffer;J)V
 
     .line 116
@@ -745,7 +745,7 @@
 
     .line 119
     .line 120
-    if-eqz v9, :cond_8f
+    if-eqz v9, :cond_4
 
     .line 121
     .line 122
@@ -788,10 +788,10 @@
     .line 141
     .line 142
     .line 143
-    goto :goto_c2
+    goto :goto_5
 
     .line 144
-    :cond_8f
+    :cond_4
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->getShort()S
 
     .line 145
@@ -817,7 +817,7 @@
     and-int/2addr v15, v6
 
     .line 157
-    if-eqz v15, :cond_a9
+    if-eqz v15, :cond_5
 
     .line 158
     .line 159
@@ -844,7 +844,7 @@
 
     .line 169
     .line 170
-    :cond_a9
+    :cond_5
     new-instance v6, Ljava/lang/StringBuilder;
 
     .line 171
@@ -857,8 +857,8 @@
     const/4 v13, 0x0
 
     .line 176
-    :goto_af
-    if-ge v13, v14, :cond_bb
+    :goto_4
+    if-ge v13, v14, :cond_6
 
     .line 177
     .line 178
@@ -879,10 +879,10 @@
 
     .line 186
     .line 187
-    goto :goto_af
+    goto :goto_4
 
     .line 188
-    :cond_bb
+    :cond_6
     invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 189
@@ -896,12 +896,12 @@
     .line 193
     .line 194
     .line 195
-    :goto_c2
+    :goto_5
     aput-object v6, v1, v8
 
     .line 196
     .line 197
-    :goto_c4
+    :goto_6
     add-int/lit8 v7, v7, 0x1
 
     .line 198
@@ -910,10 +910,10 @@
 
     .line 200
     .line 201
-    goto :goto_61
+    goto :goto_3
 
     .line 202
-    :cond_c9
+    :cond_7
     invoke-virtual/range {p1 .. p1}, Llibs/ys;->a()I
 
     .line 203

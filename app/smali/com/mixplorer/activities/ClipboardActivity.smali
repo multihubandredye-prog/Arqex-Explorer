@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/bs1;-><init>()V
@@ -17,7 +17,7 @@
 .end method
 
 .method public static a(Ljava/util/HashSet;)Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
@@ -32,7 +32,7 @@
 
     .line 6
     .line 7
-    :goto_6
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 8
@@ -45,7 +45,7 @@
 
     .line 12
     .line 13
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_1
 
     .line 14
     .line 15
@@ -73,7 +73,7 @@
     move-result v3
 
     .line 27
-    if-eqz v3, :cond_21
+    if-eqz v3, :cond_0
 
     .line 28
     .line 29
@@ -88,7 +88,7 @@
     move-result-object v1
 
     .line 34
-    :cond_21
+    :cond_0
     invoke-static {v0, v1, v2}, Llibs/sk1;->q(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 35
@@ -97,10 +97,10 @@
     move-result-object v0
 
     .line 38
-    goto :goto_6
+    goto :goto_0
 
     .line 39
-    :cond_26
+    :cond_1
     invoke-virtual {v0, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
     .line 40
@@ -109,7 +109,7 @@
     move-result p0
 
     .line 43
-    if-eqz p0, :cond_33
+    if-eqz p0, :cond_2
 
     .line 44
     .line 45
@@ -130,14 +130,14 @@
     return-object p0
 
     .line 52
-    :cond_33
+    :cond_2
     return-object v0
 .end method
 
 
 # virtual methods
 .method public final onCreate(Landroid/os/Bundle;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-super {p0, p1}, Llibs/bs1;->onCreate(Landroid/os/Bundle;)V
@@ -232,7 +232,7 @@
 .end method
 
 .method public final onResume()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/app/Activity;->finish()V

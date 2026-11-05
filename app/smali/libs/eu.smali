@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/du;Z)V
-    .registers 8
+    .locals 5
 
     .line 1
     iget-object v0, p1, Llibs/du;->Nu:Llibs/zn0;
@@ -57,10 +57,10 @@
 
 # virtual methods
 .method public final b(I)V
-    .registers 6
+    .locals 4
 
     .line 1
-    if-ltz p1, :cond_35
+    if-ltz p1, :cond_2
 
     .line 2
     .line 3
@@ -80,7 +80,7 @@
 
     .line 10
     .line 11
-    if-gtz p1, :cond_2e
+    if-gtz p1, :cond_1
 
     .line 12
     .line 13
@@ -130,7 +130,7 @@
 
     .line 34
     .line 35
-    if-gtz p1, :cond_28
+    if-gtz p1, :cond_0
 
     .line 36
     .line 37
@@ -144,7 +144,7 @@
     return-void
 
     .line 41
-    :cond_28
+    :cond_0
     const-string p1, "directory too large"
 
     .line 42
@@ -157,7 +157,7 @@
     return-void
 
     .line 47
-    :cond_2e
+    :cond_1
     new-instance p1, Llibs/ts;
 
     .line 48
@@ -173,7 +173,7 @@
     throw p1
 
     .line 54
-    :cond_35
+    :cond_2
     invoke-static {}, Llibs/ic0;->w()V
 
     .line 55
@@ -183,14 +183,14 @@
 .end method
 
 .method public final f()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-boolean v0, p0, Llibs/Omicron;->c:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -201,7 +201,7 @@
     return-wide v0
 
     .line 8
-    :cond_7
+    :cond_0
     iget-object v0, p0, Llibs/eu;->g:Llibs/du;
 
     .line 9
@@ -214,7 +214,7 @@
 .end method
 
 .method public final h(Ljava/nio/ByteBuffer;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/eu;->g:Llibs/du;
@@ -234,7 +234,7 @@
 .end method
 
 .method public final i(Ljava/nio/ByteBuffer;)V
-    .registers 8
+    .locals 6
 
     .line 1
     invoke-virtual {p1}, Ljava/nio/Buffer;->remaining()I
@@ -273,7 +273,7 @@
 
     .line 18
     .line 19
-    if-lez p1, :cond_1d
+    if-lez p1, :cond_0
 
     .line 20
     .line 21
@@ -296,6 +296,6 @@
     .line 28
     .line 29
     .line 30
-    :cond_1d
+    :cond_0
     return-void
 .end method

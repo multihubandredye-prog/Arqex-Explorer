@@ -22,7 +22,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/ga1;ZLlibs/rp0;Ljava/util/ArrayList;II)V
-    .registers 7
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,14 +60,14 @@
 
 # virtual methods
 .method public final run()V
-    .registers 14
+    .locals 13
 
     .line 1
     iget-boolean v5, p0, Llibs/y91;->Y:Z
 
     .line 2
     .line 3
-    if-eqz v5, :cond_8
+    if-eqz v5, :cond_0
 
     .line 4
     .line 5
@@ -75,22 +75,22 @@
 
     .line 6
     .line 7
-    :goto_6
+    :goto_0
     move v7, v0
 
     .line 8
-    goto :goto_b
+    goto :goto_1
 
     .line 9
-    :cond_8
+    :cond_0
     sget v0, Llibs/bi2;->perm_group:I
 
     .line 10
     .line 11
-    goto :goto_6
+    goto :goto_0
 
     .line 12
-    :goto_b
+    :goto_1
     invoke-static {v7}, Llibs/ho2;->Add(I)Ljava/lang/String;
 
     .line 13
@@ -127,7 +127,7 @@
 
     .line 29
     .line 30
-    if-eqz v3, :cond_38
+    if-eqz v3, :cond_1
 
     .line 31
     .line 32
@@ -143,7 +143,7 @@
 
     .line 37
     .line 38
-    if-eqz v0, :cond_38
+    if-eqz v0, :cond_1
 
     .line 39
     .line 40
@@ -179,19 +179,19 @@
     move-object v3, v0
 
     .line 56
-    goto :goto_39
+    goto :goto_2
 
     .line 57
-    :cond_38
+    :cond_1
     move-object v3, v2
 
     .line 58
-    :goto_39
+    :goto_2
     iget-boolean v0, v1, Llibs/ga1;->Zero:Z
 
     .line 59
     .line 60
-    if-eqz v0, :cond_4d
+    if-eqz v0, :cond_2
 
     .line 61
     .line 62
@@ -227,7 +227,7 @@
 
     .line 77
     .line 78
-    :cond_4d
+    :cond_2
     move-object v4, v2
 
     .line 79

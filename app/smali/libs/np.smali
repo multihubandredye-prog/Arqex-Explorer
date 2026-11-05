@@ -13,14 +13,14 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/np;->Y:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_14
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -40,7 +40,7 @@
     return-void
 
     .line 13
-    :pswitch_c
+    :pswitch_0
     invoke-direct {p0}, Llibs/ju0;-><init>()V
 
     .line 14
@@ -59,16 +59,16 @@
     nop
 
     .line 21
-    :pswitch_data_14
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_c
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public b()Lcast/chromecast/CastChannel$AuthChallenge;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Lcast/chromecast/CastChannel$AuthChallenge;
@@ -90,18 +90,18 @@
     and-int/2addr v1, v2
 
     .line 10
-    if-ne v1, v2, :cond_c
+    if-ne v1, v2, :cond_0
 
     .line 11
     .line 12
-    goto :goto_d
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     const/4 v2, 0x0
 
     .line 14
-    :goto_d
+    :goto_0
     iget v1, p0, Llibs/np;->Lambda:I
 
     .line 15
@@ -118,7 +118,7 @@
 .end method
 
 .method public c()Lcast/chromecast/CastChannel$AuthError;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Lcast/chromecast/CastChannel$AuthError;
@@ -140,18 +140,18 @@
     and-int/2addr v1, v2
 
     .line 10
-    if-ne v1, v2, :cond_c
+    if-ne v1, v2, :cond_0
 
     .line 11
     .line 12
-    goto :goto_d
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     const/4 v2, 0x0
 
     .line 14
-    :goto_d
+    :goto_0
     iget v1, p0, Llibs/np;->Lambda:I
 
     .line 15
@@ -168,14 +168,14 @@
 .end method
 
 .method public final clone()Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/np;->Y:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_22
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -208,7 +208,7 @@
     return-object v0
 
     .line 20
-    :pswitch_13
+    :pswitch_0
     new-instance v0, Llibs/np;
 
     .line 21
@@ -240,28 +240,28 @@
     nop
 
     .line 35
-    :pswitch_data_22
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_13
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public d(Lcast/chromecast/CastChannel$AuthChallenge;)V
-    .registers 5
+    .locals 3
 
     .line 1
     sget-object v0, Lcast/chromecast/CastChannel$AuthChallenge;->Three:Lcast/chromecast/CastChannel$AuthChallenge;
 
     .line 2
     .line 3
-    if-ne p1, v0, :cond_5
+    if-ne p1, v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     iget v0, p1, Lcast/chromecast/CastChannel$AuthChallenge;->Psi:I
 
     .line 7
@@ -272,7 +272,7 @@
     and-int/2addr v0, v1
 
     .line 10
-    if-ne v0, v1, :cond_19
+    if-ne v0, v1, :cond_2
 
     .line 11
     .line 12
@@ -280,7 +280,7 @@
 
     .line 13
     .line 14
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1
 
     .line 15
     .line 16
@@ -299,18 +299,18 @@
 
     .line 22
     .line 23
-    goto :goto_19
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_1
     const/4 p1, 0x0
 
     .line 25
     throw p1
 
     .line 26
-    :cond_19
-    :goto_19
+    :cond_2
+    :goto_0
     iget-object v0, p0, Llibs/ju0;->X:Llibs/rl;
 
     .line 27
@@ -335,21 +335,21 @@
 .end method
 
 .method public e(Lcast/chromecast/CastChannel$AuthError;)V
-    .registers 5
+    .locals 3
 
     .line 1
     sget-object v0, Lcast/chromecast/CastChannel$AuthError;->Three:Lcast/chromecast/CastChannel$AuthError;
 
     .line 2
     .line 3
-    if-ne p1, v0, :cond_5
+    if-ne p1, v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     iget v0, p1, Lcast/chromecast/CastChannel$AuthError;->Psi:I
 
     .line 7
@@ -360,7 +360,7 @@
     and-int/2addr v0, v1
 
     .line 10
-    if-ne v0, v1, :cond_19
+    if-ne v0, v1, :cond_2
 
     .line 11
     .line 12
@@ -368,7 +368,7 @@
 
     .line 13
     .line 14
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1
 
     .line 15
     .line 16
@@ -387,18 +387,18 @@
 
     .line 22
     .line 23
-    goto :goto_19
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_1
     const/4 p1, 0x0
 
     .line 25
     throw p1
 
     .line 26
-    :cond_19
-    :goto_19
+    :cond_2
+    :goto_0
     iget-object v0, p0, Llibs/ju0;->X:Llibs/rl;
 
     .line 27

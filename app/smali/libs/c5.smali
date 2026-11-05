@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .end method
 
 .method public constructor <init>(Llibs/t02;)V
-    .registers 2
+    .locals 0
 
     .line 14
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +52,7 @@
 
 # virtual methods
 .method public final a()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/c5;->a:Llibs/t02;
@@ -75,7 +75,7 @@
 .end method
 
 .method public final b()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/c5;->a:Llibs/t02;
@@ -90,7 +90,7 @@
 
     .line 6
     .line 7
-    if-nez v1, :cond_f
+    if-nez v1, :cond_0
 
     .line 8
     .line 9
@@ -107,7 +107,7 @@
 
     .line 15
     .line 16
-    :cond_f
+    :cond_0
     invoke-virtual {v1}, Llibs/d5;->Node()Ljava/lang/String;
 
     .line 17
@@ -120,7 +120,7 @@
 .end method
 
 .method public final c(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -140,7 +140,7 @@
 .end method
 
 .method public final d(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/c5;->a:Llibs/t02;
@@ -155,7 +155,7 @@
 
     .line 6
     .line 7
-    if-nez v1, :cond_f
+    if-nez v1, :cond_0
 
     .line 8
     .line 9
@@ -172,7 +172,7 @@
 
     .line 15
     .line 16
-    :cond_f
+    :cond_0
     invoke-virtual {v1, p1}, Llibs/d5;->Link(Ljava/lang/String;)V
 
     .line 17

@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ea2;J)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/mr2;-><init>(Llibs/ea2;)V
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

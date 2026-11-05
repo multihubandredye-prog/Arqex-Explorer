@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/zo3;Llibs/wd3;I[BJ)V
-    .registers 7
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/wo3;->Omicron:Llibs/zo3;
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public final b()V
-    .registers 7
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/wo3;->Omicron:Llibs/zo3;
@@ -55,7 +55,7 @@
     const/4 v1, 0x6
 
     .line 4
-    :try_start_3
+    :try_start_0
     invoke-static {v1}, Llibs/zm1;->Context(I)Z
 
     .line 5
@@ -70,7 +70,7 @@
     const/4 v3, 0x0
 
     .line 10
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_0
 
     .line 11
     .line 12
@@ -103,21 +103,21 @@
     .line 25
     .line 26
     .line 27
-    goto :goto_1d
+    goto :goto_0
 
     .line 28
-    :catch_1b
+    :catch_0
     move-exception v1
 
     .line 29
-    goto :goto_4b
+    goto :goto_1
 
     .line 30
-    :cond_1d
-    :goto_1d
+    :cond_0
+    :goto_0
     iget-object v1, v0, Llibs/zo3;->v:Llibs/g63;
-    :try_end_1f
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_1f} :catch_1b
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 31
     .line 32
@@ -125,11 +125,11 @@
 
     .line 33
     .line 34
-    if-eqz v1, :cond_2a
+    if-eqz v1, :cond_1
 
     .line 35
     .line 36
-    :try_start_23
+    :try_start_1
     invoke-interface {v1, v4}, Llibs/g63;->b([B)Z
 
     .line 37
@@ -138,14 +138,14 @@
     move-result v1
 
     .line 40
-    if-eqz v1, :cond_2a
+    if-eqz v1, :cond_1
 
     .line 41
     .line 42
     return-void
 
     .line 43
-    :cond_2a
+    :cond_1
     const/4 v1, 0x5
 
     .line 44
@@ -157,7 +157,7 @@
     move-result v1
 
     .line 48
-    if-eqz v1, :cond_40
+    if-eqz v1, :cond_2
 
     .line 49
     .line 50
@@ -190,7 +190,7 @@
     .line 63
     .line 64
     .line 65
-    :cond_40
+    :cond_2
     new-instance v1, Llibs/yo3;
 
     .line 66
@@ -205,8 +205,8 @@
     .line 71
     .line 72
     invoke-virtual {v0, v1}, Llibs/zo3;->Map(Llibs/ie3;)V
-    :try_end_4a
-    .catch Ljava/io/IOException; {:try_start_23 .. :try_end_4a} :catch_1b
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 73
     .line 74
@@ -214,7 +214,7 @@
     return-void
 
     .line 76
-    :goto_4b
+    :goto_1
     const/4 v2, 0x2
 
     .line 77

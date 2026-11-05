@@ -13,7 +13,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/cz3;->Lambda:B
@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public final f(Llibs/mz1;)V
-    .registers 7
+    .locals 5
 
     .line 1
     iget-byte v0, p0, Llibs/cz3;->Lambda:B
@@ -44,7 +44,7 @@
     const/4 v2, 0x0
 
     .line 5
-    packed-switch v0, :pswitch_data_82
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -79,7 +79,7 @@
     move-result v0
 
     .line 24
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_1
 
     .line 25
     .line 26
@@ -91,7 +91,7 @@
 
     .line 29
     .line 30
-    if-nez v0, :cond_26
+    if-nez v0, :cond_0
 
     .line 31
     .line 32
@@ -108,7 +108,7 @@
 
     .line 38
     .line 39
-    :cond_26
+    :cond_0
     iget-object p1, p1, Llibs/mz1;->e:Llibs/mz1;
 
     .line 40
@@ -118,11 +118,11 @@
     .line 42
     .line 43
     .line 44
-    :cond_2b
+    :cond_1
     return-void
 
     .line 45
-    :pswitch_2c
+    :pswitch_0
     invoke-virtual {p1, v1}, Llibs/mz1;->b(I)V
 
     .line 46
@@ -148,7 +148,7 @@
     move-result v0
 
     .line 58
-    if-eqz v0, :cond_80
+    if-eqz v0, :cond_5
 
     .line 59
     .line 60
@@ -185,11 +185,11 @@
 
     .line 76
     .line 77
-    if-nez v3, :cond_62
+    if-nez v3, :cond_3
 
     .line 78
     .line 79
-    if-ltz v0, :cond_5a
+    if-ltz v0, :cond_2
 
     .line 80
     .line 81
@@ -198,7 +198,7 @@
     .line 82
     .line 83
     .line 84
-    if-gt v0, v3, :cond_5a
+    if-gt v0, v3, :cond_2
 
     .line 85
     .line 86
@@ -210,10 +210,10 @@
 
     .line 89
     .line 90
-    goto :goto_62
+    goto :goto_0
 
     .line 91
-    :cond_5a
+    :cond_2
     new-instance p1, Llibs/o70;
 
     .line 92
@@ -230,8 +230,8 @@
     throw p1
 
     .line 99
-    :cond_62
-    :goto_62
+    :cond_3
+    :goto_0
     invoke-virtual {p1, v1}, Llibs/mz1;->g(I)Llibs/mz1;
 
     .line 100
@@ -243,8 +243,8 @@
     const/4 v1, 0x0
 
     .line 104
-    :goto_67
-    if-ge v1, v0, :cond_80
+    :goto_1
+    if-ge v1, v0, :cond_5
 
     .line 105
     .line 106
@@ -260,7 +260,7 @@
 
     .line 111
     .line 112
-    if-nez v4, :cond_78
+    if-nez v4, :cond_4
 
     .line 113
     .line 114
@@ -277,7 +277,7 @@
 
     .line 120
     .line 121
-    :cond_78
+    :cond_4
     aget-object v3, v3, v1
 
     .line 122
@@ -291,24 +291,24 @@
 
     .line 127
     .line 128
-    goto :goto_67
+    goto :goto_1
 
     .line 129
-    :cond_80
+    :cond_5
     return-void
 
     .line 130
     nop
 
     .line 131
-    :pswitch_data_82
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2c
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final h(Llibs/mz1;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/cz3;->Lambda:B
@@ -318,7 +318,7 @@
     const/4 v1, 0x4
 
     .line 4
-    packed-switch v0, :pswitch_data_5e
+    packed-switch v0, :pswitch_data_0
 
     .line 5
     .line 6
@@ -367,7 +367,7 @@
 
     .line 30
     .line 31
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_0
 
     .line 32
     .line 33
@@ -380,11 +380,11 @@
     .line 36
     .line 37
     .line 38
-    :cond_25
+    :cond_0
     return-void
 
     .line 39
-    :pswitch_26
+    :pswitch_0
     invoke-virtual {p1, v1}, Llibs/mz1;->b(I)V
 
     .line 40
@@ -420,7 +420,7 @@
 
     .line 57
     .line 58
-    if-eqz v0, :cond_5c
+    if-eqz v0, :cond_1
 
     .line 59
     .line 60
@@ -461,8 +461,8 @@
     const/4 v1, 0x0
 
     .line 79
-    :goto_4e
-    if-ge v1, v0, :cond_5c
+    :goto_0
+    if-ge v1, v0, :cond_1
 
     .line 80
     .line 81
@@ -487,18 +487,18 @@
 
     .line 91
     .line 92
-    goto :goto_4e
+    goto :goto_0
 
     .line 93
-    :cond_5c
+    :cond_1
     return-void
 
     .line 94
     nop
 
     .line 95
-    :pswitch_data_5e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_26
+        :pswitch_0
     .end packed-switch
 .end method

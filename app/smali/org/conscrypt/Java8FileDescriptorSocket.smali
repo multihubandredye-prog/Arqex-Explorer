@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;ILjava/net/InetAddress;ILorg/conscrypt/SSLParametersImpl;)V
-    .registers 6
+    .locals 0
 
     .line 7
     invoke-direct/range {p0 .. p5}, Lorg/conscrypt/ConscryptFileDescriptorSocket;-><init>(Ljava/lang/String;ILjava/net/InetAddress;ILorg/conscrypt/SSLParametersImpl;)V
@@ -30,7 +30,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;ILorg/conscrypt/SSLParametersImpl;)V
-    .registers 4
+    .locals 0
 
     .line 5
     invoke-direct {p0, p1, p2, p3}, Lorg/conscrypt/ConscryptFileDescriptorSocket;-><init>(Ljava/lang/String;ILorg/conscrypt/SSLParametersImpl;)V
@@ -39,7 +39,7 @@
 .end method
 
 .method public constructor <init>(Ljava/net/InetAddress;ILjava/net/InetAddress;ILorg/conscrypt/SSLParametersImpl;)V
-    .registers 6
+    .locals 0
 
     .line 8
     invoke-direct/range {p0 .. p5}, Lorg/conscrypt/ConscryptFileDescriptorSocket;-><init>(Ljava/net/InetAddress;ILjava/net/InetAddress;ILorg/conscrypt/SSLParametersImpl;)V
@@ -48,7 +48,7 @@
 .end method
 
 .method public constructor <init>(Ljava/net/InetAddress;ILorg/conscrypt/SSLParametersImpl;)V
-    .registers 4
+    .locals 0
 
     .line 6
     invoke-direct {p0, p1, p2, p3}, Lorg/conscrypt/ConscryptFileDescriptorSocket;-><init>(Ljava/net/InetAddress;ILorg/conscrypt/SSLParametersImpl;)V
@@ -57,7 +57,7 @@
 .end method
 
 .method public constructor <init>(Ljava/net/Socket;Ljava/lang/String;IZLorg/conscrypt/SSLParametersImpl;)V
-    .registers 6
+    .locals 0
 
     .line 9
     invoke-direct/range {p0 .. p5}, Lorg/conscrypt/ConscryptFileDescriptorSocket;-><init>(Ljava/net/Socket;Ljava/lang/String;IZLorg/conscrypt/SSLParametersImpl;)V
@@ -66,7 +66,7 @@
 .end method
 
 .method public constructor <init>(Lorg/conscrypt/SSLParametersImpl;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Lorg/conscrypt/ConscryptFileDescriptorSocket;-><init>(Lorg/conscrypt/SSLParametersImpl;)V
@@ -78,7 +78,7 @@
 .end method
 
 .method private static toApplicationProtocolSelector(Ljava/util/function/BiFunction;)Lorg/conscrypt/ApplicationProtocolSelector;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -94,7 +94,7 @@
     .end annotation
 
     .line 1
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     .line 2
     .line 3
@@ -104,7 +104,7 @@
     return-object p0
 
     .line 5
-    :cond_4
+    :cond_0
     new-instance v0, Lorg/conscrypt/Java8FileDescriptorSocket$1;
 
     .line 6
@@ -120,7 +120,7 @@
 
 # virtual methods
 .method public getHandshakeApplicationProtocolSelector()Ljava/util/function/BiFunction;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -143,7 +143,7 @@
 .end method
 
 .method public setHandshakeApplicationProtocolSelector(Ljava/util/function/BiFunction;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

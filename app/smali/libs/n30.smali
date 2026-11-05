@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -22,7 +22,7 @@
 
 # virtual methods
 .method public final a()[B
-    .registers 7
+    .locals 6
 
     .line 1
     iget v0, p0, Llibs/ct;->b:I
@@ -39,8 +39,8 @@
     const/4 v3, 0x0
 
     .line 7
-    :cond_6
-    :goto_6
+    :cond_0
+    :goto_0
     iget-object v4, p0, Llibs/ct;->a:Ljava/security/SecureRandom;
 
     .line 8
@@ -63,15 +63,15 @@
 
     .line 18
     .line 19
-    if-ge v3, v4, :cond_27
+    if-ge v3, v4, :cond_3
 
     .line 20
     .line 21
     const/4 v4, 0x0
 
     .line 22
-    :goto_15
-    if-ge v4, v0, :cond_21
+    :goto_1
+    if-ge v4, v0, :cond_2
 
     .line 23
     .line 24
@@ -83,22 +83,22 @@
     move-result v5
 
     .line 28
-    if-eqz v5, :cond_1e
+    if-eqz v5, :cond_1
 
     .line 29
     .line 30
-    goto :goto_6
+    goto :goto_0
 
     .line 31
-    :cond_1e
+    :cond_1
     add-int/lit8 v4, v4, 0x8
 
     .line 32
     .line 33
-    goto :goto_15
+    goto :goto_1
 
     .line 34
-    :cond_21
+    :cond_2
     invoke-static {v1}, Llibs/o30;->a([B)Z
 
     .line 35
@@ -107,13 +107,13 @@
     move-result v4
 
     .line 38
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_0
 
     .line 39
     .line 40
-    :cond_27
-    :goto_27
-    if-ge v2, v0, :cond_32
+    :cond_3
+    :goto_2
+    if-ge v2, v0, :cond_4
 
     .line 41
     .line 42
@@ -125,7 +125,7 @@
     move-result v3
 
     .line 46
-    if-nez v3, :cond_39
+    if-nez v3, :cond_5
 
     .line 47
     .line 48
@@ -133,10 +133,10 @@
 
     .line 49
     .line 50
-    goto :goto_27
+    goto :goto_2
 
     .line 51
-    :cond_32
+    :cond_4
     invoke-static {v1}, Llibs/o30;->a([B)Z
 
     .line 52
@@ -145,14 +145,14 @@
     move-result v0
 
     .line 55
-    if-eqz v0, :cond_39
+    if-eqz v0, :cond_5
 
     .line 56
     .line 57
     return-object v1
 
     .line 58
-    :cond_39
+    :cond_5
     const-string v0, "Unable to generate DES-EDE key"
 
     .line 59
@@ -169,7 +169,7 @@
 .end method
 
 .method public final b(Llibs/ct;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p1, Llibs/ct;->a:Ljava/security/SecureRandom;
@@ -200,7 +200,7 @@
 
     .line 14
     .line 15
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_4
 
     .line 16
     .line 17
@@ -208,14 +208,14 @@
 
     .line 18
     .line 19
-    if-ne p1, v1, :cond_15
+    if-ne p1, v1, :cond_0
 
     .line 20
     .line 21
-    goto :goto_29
+    goto :goto_1
 
     .line 22
-    :cond_15
+    :cond_0
     const/16 v1, 0xe
 
     .line 23
@@ -224,7 +224,7 @@
 
     .line 25
     .line 26
-    if-ne p1, v1, :cond_1e
+    if-ne p1, v1, :cond_1
 
     .line 27
     .line 28
@@ -235,19 +235,19 @@
     return-void
 
     .line 31
-    :cond_1e
-    if-eq p1, v0, :cond_28
+    :cond_1
+    if-eq p1, v0, :cond_3
 
     .line 32
     .line 33
-    if-ne p1, v2, :cond_23
+    if-ne p1, v2, :cond_2
 
     .line 34
     .line 35
-    goto :goto_28
+    goto :goto_0
 
     .line 36
-    :cond_23
+    :cond_2
     const-string p1, "DESede key must be 192 or 128 bits long."
 
     .line 37
@@ -257,13 +257,13 @@
     .line 39
     .line 40
     .line 41
-    :cond_28
-    :goto_28
+    :cond_3
+    :goto_0
     return-void
 
     .line 42
-    :cond_29
-    :goto_29
+    :cond_4
+    :goto_1
     iput v0, p0, Llibs/ct;->b:I
 
     .line 43

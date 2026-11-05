@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ev3;Landroid/view/WindowInsets;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Llibs/zu3;-><init>(Llibs/ev3;Landroid/view/WindowInsets;)V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final l(Llibs/na1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void

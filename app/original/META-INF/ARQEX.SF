@@ -1,10 +1,10 @@
 Signature-Version: 1.0
 Created-By: 1.0 (Android)
-SHA1-Digest-Manifest: mBWU1KhFuG5TPa3+Sg+d3vHb5iI=
+SHA1-Digest-Manifest: g6zgRasHjSV5UizEt+8duZYf94o=
 X-Android-APK-Signed: 2, 3
 
 Name: AndroidManifest.xml
-SHA1-Digest: enU4ZfLvC9iulPy8Ssy46J7Yl3g=
+SHA1-Digest: CePQHbtlXUfCM3MVv6U6JUVNy2I=
 
 Name: META-INF/com/android/build/gradle/app-metadata.properties
 SHA1-Digest: lZMAVEhM80S4ffJYuy+50Jt6Ats=
@@ -142,7 +142,7 @@ Name: assets/templates/Text.txt
 SHA1-Digest: PJ9foARDsJECQ4/FiEPsas3Fq6c=
 
 Name: classes.dex
-SHA1-Digest: gQQiRQ5d27/lwHVEhyB9bnMfqKo=
+SHA1-Digest: KngvYVnEnuNl+wGVoC3arSqDsNM=
 
 Name: lib/arm64-v8a/libconscrypt_jni.so
 SHA1-Digest: eJc4mYEr1APdAVWPxoUNtTLLtv0=
@@ -169,7 +169,7 @@ Name: res/drawable-anydpi-v26/icon_mix_background.xml
 SHA1-Digest: cGTbZUAqDfrm8IYWrvm78o+Niss=
 
 Name: res/drawable-anydpi-v26/icon_mix_monochrome_foreground.xml
-SHA1-Digest: Lwu1g389WE5hGC3MBncJeGFXMTM=
+SHA1-Digest: qSZssTWzTEzP9cfNl5PRlBmsnOo=
 
 Name: res/drawable-mdpi/bg_popup_shadow.9.png
 SHA1-Digest: CjGZv/LQYfgkj5DMmsUZUwwTDo8=
@@ -1260,6 +1260,39 @@ SHA1-Digest: eXtuPy0t8V2xQtVjuwnDwlECUS4=
 Name: res/drawable-xxxhdpi/icon_mix_foreground.png
 SHA1-Digest: ifRBdYvxjvSmZwU2sMtF+Xw1+2g=
 
+Name: res/drawable/arqex_menu_execute.xml
+SHA1-Digest: 5oRru/7wRxjJOBP/Uy0eT79KSGk=
+
+Name: res/drawable/arqex_menu_exit.xml
+SHA1-Digest: AfsgzdRXLJHWSOZjC8+K6IMwcxc=
+
+Name: res/drawable/arqex_menu_filter.xml
+SHA1-Digest: QlGHPQlU8foZBTE45+yGWdvsSAc=
+
+Name: res/drawable/arqex_menu_lock.xml
+SHA1-Digest: 5WvnCY915u6GRnxGIxLS3uqncMs=
+
+Name: res/drawable/arqex_menu_log.xml
+SHA1-Digest: /34UZfA1MMXn71wFomiP7DwbeKs=
+
+Name: res/drawable/arqex_menu_servers.xml
+SHA1-Digest: BZ+dX+cFWKdG4BA4ow+CCAPPpxc=
+
+Name: res/drawable/arqex_menu_settings.xml
+SHA1-Digest: Ezkb0LmDXE/TEu+mcPrbVrQa9gA=
+
+Name: res/drawable/arqex_menu_tasks.xml
+SHA1-Digest: tmW4eDI7xTXCEuSLKfzcN4fq9Ak=
+
+Name: res/drawable/arqex_menu_terminal.xml
+SHA1-Digest: z1Y7dJ+hqeHZhE/FGkYqrEtKi7M=
+
+Name: res/drawable/arqex_menu_tools.xml
+SHA1-Digest: 81nat9fE8FkoYdmt/nUJKEmYRic=
+
+Name: res/drawable/arqex_menu_undo.xml
+SHA1-Digest: hV1+w9ag6e8MgWUHxT5SIr9NvTQ=
+
 Name: res/layout-v11/dialog_footer.xml
 SHA1-Digest: TzO4YSpdNrmteRXDfthO0BpmPDY=
 
@@ -1537,7 +1570,7 @@ Name: res/menu/localizer_menu.xml
 SHA1-Digest: GMSnla9d8cRDPRrOpNfnWPcGgxM=
 
 Name: res/menu/main_menu.xml
-SHA1-Digest: vceSFiXYAtrl0opMCNE0+661Rfo=
+SHA1-Digest: efIvQWfSv9g3Mh1BrwgvBVFmuD4=
 
 Name: res/menu/navbar_menu.xml
 SHA1-Digest: 1vH9s5DMdXIVJN1no3RiOoUzxNc=
@@ -1729,5 +1762,5 @@ Name: res/xml/widget_smb_info.xml
 SHA1-Digest: pyyHAsWB1tgp6B3hJ1ypH8mr5C0=
 
 Name: resources.arsc
-SHA1-Digest: a3HdTqLI63xeDVvu5yQIyIh7juY=
+SHA1-Digest: X/4FW9fZhrW8MPO7EDAXYaxbXr4=
 

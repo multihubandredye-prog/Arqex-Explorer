@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/bg;
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public final clone()Ljava/lang/Object;
-    .registers 4
+    .locals 3
 
     .line 1
     invoke-super {p0}, Ljava/security/MessageDigest;->clone()Ljava/lang/Object;

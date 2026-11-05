@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 1
     invoke-static {}, Lorg/conscrypt/OpenSSLCipher$Padding;->values()[Lorg/conscrypt/OpenSSLCipher$Padding;
@@ -36,7 +36,7 @@
     const/4 v1, 0x1
 
     .line 11
-    :try_start_a
+    :try_start_0
     sget-object v2, Lorg/conscrypt/OpenSSLCipher$Padding;->NOPADDING:Lorg/conscrypt/OpenSSLCipher$Padding;
 
     .line 12
@@ -50,16 +50,16 @@
 
     .line 17
     aput v1, v0, v2
-    :try_end_12
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_a .. :try_end_12} :catch_12
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 18
     .line 19
-    :catch_12
+    :catch_0
     const/4 v0, 0x2
 
     .line 20
-    :try_start_13
+    :try_start_1
     sget-object v2, Lorg/conscrypt/OpenSSLEvpCipherAES$1;->$SwitchMap$org$conscrypt$OpenSSLCipher$Padding:[I
 
     .line 21
@@ -77,12 +77,12 @@
 
     .line 28
     aput v0, v2, v3
-    :try_end_1d
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_13 .. :try_end_1d} :catch_1d
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 29
     .line 30
-    :catch_1d
+    :catch_1
     invoke-static {}, Lorg/conscrypt/OpenSSLCipher$Mode;->values()[Lorg/conscrypt/OpenSSLCipher$Mode;
 
     .line 31
@@ -102,7 +102,7 @@
 
     .line 38
     .line 39
-    :try_start_26
+    :try_start_2
     sget-object v3, Lorg/conscrypt/OpenSSLCipher$Mode;->CBC:Lorg/conscrypt/OpenSSLCipher$Mode;
 
     .line 40
@@ -116,13 +116,13 @@
 
     .line 45
     aput v1, v2, v3
-    :try_end_2e
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_26 .. :try_end_2e} :catch_2e
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
     .line 46
     .line 47
-    :catch_2e
-    :try_start_2e
+    :catch_2
+    :try_start_3
     sget-object v1, Lorg/conscrypt/OpenSSLEvpCipherAES$1;->$SwitchMap$org$conscrypt$OpenSSLCipher$Mode:[I
 
     .line 48
@@ -140,13 +140,13 @@
 
     .line 55
     aput v0, v1, v2
-    :try_end_38
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2e .. :try_end_38} :catch_38
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
     .line 56
     .line 57
-    :catch_38
-    :try_start_38
+    :catch_3
+    :try_start_4
     sget-object v0, Lorg/conscrypt/OpenSSLEvpCipherAES$1;->$SwitchMap$org$conscrypt$OpenSSLCipher$Mode:[I
 
     .line 58
@@ -167,11 +167,11 @@
 
     .line 66
     aput v2, v0, v1
-    :try_end_43
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_38 .. :try_end_43} :catch_43
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
 
     .line 67
     .line 68
-    :catch_43
+    :catch_4
     return-void
 .end method

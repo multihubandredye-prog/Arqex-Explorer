@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0xa
@@ -23,7 +23,7 @@
 
 # virtual methods
 .method public final l(Ljava/lang/Object;)F
-    .registers 2
+    .locals 0
 
     .line 1
     check-cast p1, Landroid/widget/OverScroller;

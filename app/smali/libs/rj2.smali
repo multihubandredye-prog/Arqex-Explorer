@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ID;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/rj2;->X:Llibs/ID;
@@ -38,7 +38,7 @@
 .end method
 
 .method public final g()Llibs/h7;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/rj2;->X:Llibs/ID;
@@ -60,14 +60,14 @@
     const/4 v2, 0x0
 
     .line 10
-    if-nez v1, :cond_c
+    if-nez v1, :cond_0
 
     .line 11
     .line 12
     return-object v2
 
     .line 13
-    :cond_c
+    :cond_0
     const/4 v1, 0x0
 
     .line 14
@@ -83,7 +83,7 @@
 
     .line 19
     .line 20
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_1
 
     .line 21
     .line 22
@@ -94,8 +94,8 @@
     return-object v0
 
     .line 25
-    :cond_18
-    if-eqz v0, :cond_24
+    :cond_1
+    if-eqz v0, :cond_2
 
     .line 26
     .line 27
@@ -119,7 +119,7 @@
     return-object v1
 
     .line 37
-    :cond_24
+    :cond_2
     const-string v0, "null value in getInstance()"
 
     .line 38
@@ -133,7 +133,7 @@
 .end method
 
 .method public final h()[Llibs/h7;
-    .registers 7
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/rj2;->X:Llibs/ID;
@@ -159,8 +159,8 @@
     const/4 v3, 0x0
 
     .line 12
-    :goto_b
-    if-eq v3, v1, :cond_30
+    :goto_0
+    if-eq v3, v1, :cond_2
 
     .line 13
     .line 14
@@ -176,7 +176,7 @@
 
     .line 19
     .line 20
-    if-eqz v5, :cond_18
+    if-eqz v5, :cond_0
 
     .line 21
     .line 22
@@ -184,11 +184,11 @@
 
     .line 23
     .line 24
-    goto :goto_24
+    goto :goto_1
 
     .line 25
-    :cond_18
-    if-eqz v4, :cond_29
+    :cond_0
+    if-eqz v4, :cond_1
 
     .line 26
     .line 27
@@ -212,7 +212,7 @@
     move-object v4, v5
 
     .line 37
-    :goto_24
+    :goto_1
     aput-object v4, v2, v3
 
     .line 38
@@ -221,10 +221,10 @@
 
     .line 40
     .line 41
-    goto :goto_b
+    goto :goto_0
 
     .line 42
-    :cond_29
+    :cond_1
     const-string v0, "null value in getInstance()"
 
     .line 43
@@ -240,12 +240,12 @@
     return-object v0
 
     .line 49
-    :cond_30
+    :cond_2
     return-object v2
 .end method
 
 .method public final i()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/rj2;->X:Llibs/ID;
@@ -267,14 +267,14 @@
     const/4 v1, 0x1
 
     .line 10
-    if-le v0, v1, :cond_c
+    if-le v0, v1, :cond_0
 
     .line 11
     .line 12
     return v1
 
     .line 13
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
     .line 14

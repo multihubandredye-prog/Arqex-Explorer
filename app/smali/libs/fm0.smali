@@ -49,7 +49,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/App;
@@ -616,7 +616,7 @@
 .end method
 
 .method public constructor <init>(Llibs/Param;)V
-    .registers 7
+    .locals 5
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -641,7 +641,7 @@
     const/4 v3, 0x2
 
     .line 11
-    if-ne v0, v3, :cond_23
+    if-ne v0, v3, :cond_0
 
     .line 12
     .line 13
@@ -692,7 +692,7 @@
     return-void
 
     .line 36
-    :cond_23
+    :cond_0
     invoke-virtual {p1}, Llibs/Param;->size()I
 
     .line 37
@@ -704,7 +704,7 @@
     const/4 v4, 0x3
 
     .line 41
-    if-ne v0, v4, :cond_4d
+    if-ne v0, v4, :cond_1
 
     .line 42
     .line 43
@@ -779,7 +779,7 @@
     return-void
 
     .line 78
-    :cond_4d
+    :cond_1
     const-string v0, "Bad sequence size: "
 
     .line 79
@@ -804,7 +804,7 @@
 .end method
 
 .method public static g(Llibs/fm0;)Llibs/Theme;
-    .registers 2
+    .locals 1
 
     .line 1
     :try_start_0
@@ -826,14 +826,14 @@
     .line 9
     .line 10
     move-result-object p0
-    :try_end_a
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_a} :catch_b
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 11
     return-object p0
 
     .line 12
-    :catch_b
+    :catch_0
     move-exception p0
 
     .line 13
@@ -855,7 +855,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/Init;
@@ -883,7 +883,7 @@
 
     .line 13
     .line 14
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     .line 15
     .line 16
@@ -896,7 +896,7 @@
     .line 19
     .line 20
     .line 21
-    :cond_14
+    :cond_0
     iget-object v1, p0, Llibs/fm0;->Z:Llibs/Part;
 
     .line 22
@@ -919,7 +919,7 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     instance-of v0, p1, Llibs/fm0;
@@ -929,14 +929,14 @@
     const/4 v1, 0x0
 
     .line 4
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 5
     .line 6
     return v1
 
     .line 7
-    :cond_6
+    :cond_0
     check-cast p1, Llibs/fm0;
 
     .line 8
@@ -957,7 +957,7 @@
     move-result v0
 
     .line 17
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
     .line 18
     .line 19
@@ -977,7 +977,7 @@
     move-result v0
 
     .line 27
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
     .line 28
     .line 29
@@ -989,7 +989,7 @@
 
     .line 32
     .line 33
-    if-ne p1, v0, :cond_24
+    if-ne p1, v0, :cond_1
 
     .line 34
     .line 35
@@ -999,12 +999,12 @@
     return p1
 
     .line 37
-    :cond_24
+    :cond_1
     return v1
 .end method
 
 .method public final hashCode()I
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/fm0;->X:Llibs/App;
@@ -1019,7 +1019,7 @@
 
     .line 6
     .line 7
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
@@ -1049,7 +1049,7 @@
     return v0
 
     .line 21
-    :cond_14
+    :cond_0
     invoke-virtual {v2}, Llibs/Part;->hashCode()I
 
     .line 22

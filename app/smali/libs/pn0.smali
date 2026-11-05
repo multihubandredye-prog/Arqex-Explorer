@@ -19,7 +19,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/pn0;->X:B
@@ -41,7 +41,7 @@
 
 # virtual methods
 .method public a(J)Llibs/fh3;
-    .registers 9
+    .locals 6
 
     .line 1
     iget-object p1, p0, Llibs/pn0;->Y:Ljava/lang/Object;
@@ -88,7 +88,7 @@
 .end method
 
 .method public b(ILjava/lang/String;Llibs/rp0;)V
-    .registers 6
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/pn0;->X:B
@@ -99,7 +99,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_24
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -116,7 +116,7 @@
     return-void
 
     .line 14
-    :pswitch_d
+    :pswitch_0
     check-cast v1, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     .line 15
@@ -124,7 +124,7 @@
     const/4 p3, 0x2
 
     .line 17
-    if-ne p1, p3, :cond_22
+    if-ne p1, p3, :cond_0
 
     .line 18
     .line 19
@@ -160,21 +160,21 @@
     .line 33
     .line 34
     .line 35
-    :cond_22
+    :cond_0
     return-void
 
     .line 36
     nop
 
     .line 37
-    :pswitch_data_24
+    :pswitch_data_0
     .packed-switch 0x2
-        :pswitch_d
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public f(Llibs/t4;)V
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object p1, p0, Llibs/pn0;->Y:Ljava/lang/Object;
@@ -185,7 +185,7 @@
 
     .line 4
     .line 5
-    :try_start_4
+    :try_start_0
     invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     .line 6
@@ -194,7 +194,7 @@
     move-result-object p1
 
     .line 9
-    :goto_8
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 10
@@ -203,7 +203,7 @@
     move-result v0
 
     .line 13
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_1
 
     .line 14
     .line 15
@@ -239,7 +239,7 @@
     move-result v3
 
     .line 31
-    if-nez v3, :cond_37
+    if-nez v3, :cond_0
 
     .line 32
     .line 33
@@ -283,17 +283,17 @@
     .line 51
     .line 52
     .line 53
-    goto :goto_8
+    goto :goto_0
 
     .line 54
-    :catchall_35
+    :catchall_0
     move-exception p1
 
     .line 55
-    goto :goto_3e
+    goto :goto_1
 
     .line 56
-    :cond_37
+    :cond_0
     new-instance p1, Ljava/lang/InterruptedException;
 
     .line 57
@@ -304,15 +304,15 @@
     .line 60
     .line 61
     throw p1
-    :try_end_3d
-    .catchall {:try_start_4 .. :try_end_3d} :catchall_35
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 62
-    :cond_3d
+    :cond_1
     return-void
 
     .line 63
-    :goto_3e
+    :goto_1
     const-string v0, "HUB_ST"
 
     .line 64
@@ -351,7 +351,7 @@
 .end method
 
 .method public onProgress(J)Z
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/pn0;->Y:Ljava/lang/Object;

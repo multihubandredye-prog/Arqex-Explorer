@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/security/AlgorithmParametersSpi;-><init>()V
@@ -23,12 +23,12 @@
 
 # virtual methods
 .method public engineGetEncoded()[B
-    .registers 4
+    .locals 3
 
     const-wide/16 v0, 0x0
 
     .line 45
-    :try_start_2
+    :try_start_0
     invoke-static {}, Lorg/conscrypt/NativeCrypto;->asn1_write_init()J
 
     move-result-wide v0
@@ -42,34 +42,34 @@
     invoke-static {v0, v1}, Lorg/conscrypt/NativeCrypto;->asn1_write_finish(J)[B
 
     move-result-object v2
-    :try_end_f
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_f} :catch_15
-    .catchall {:try_start_2 .. :try_end_f} :catchall_13
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 48
     invoke-static {v0, v1}, Lorg/conscrypt/NativeCrypto;->asn1_write_free(J)V
 
     return-object v2
 
-    :catchall_13
+    :catchall_0
     move-exception v2
 
-    goto :goto_1a
+    goto :goto_0
 
-    :catch_15
+    :catch_0
     move-exception v2
 
     .line 49
-    :try_start_16
+    :try_start_1
     invoke-static {v0, v1}, Lorg/conscrypt/NativeCrypto;->asn1_write_cleanup(J)V
 
     .line 50
     throw v2
-    :try_end_1a
-    .catchall {:try_start_16 .. :try_end_1a} :catchall_13
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 51
-    :goto_1a
+    :goto_0
     invoke-static {v0, v1}, Lorg/conscrypt/NativeCrypto;->asn1_write_free(J)V
 
     .line 52
@@ -77,10 +77,10 @@
 .end method
 
 .method public engineGetEncoded(Ljava/lang/String;)[B
-    .registers 3
+    .locals 1
 
     .line 1
-    if-eqz p1, :cond_27
+    if-eqz p1, :cond_2
 
     .line 2
     .line 3
@@ -96,14 +96,14 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
-    goto :goto_27
+    goto :goto_0
 
     .line 12
-    :cond_b
+    :cond_0
     const-string v0, "RAW"
 
     .line 13
@@ -116,7 +116,7 @@
     move-result v0
 
     .line 18
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_1
 
     .line 19
     .line 20
@@ -139,7 +139,7 @@
     return-object p1
 
     .line 29
-    :cond_1c
+    :cond_1
     const-string v0, "Unsupported format: "
 
     .line 30
@@ -163,8 +163,8 @@
     return-object p1
 
     .line 40
-    :cond_27
-    :goto_27
+    :cond_2
+    :goto_0
     invoke-virtual {p0}, Lorg/conscrypt/IvParameters;->engineGetEncoded()[B
 
     .line 41
@@ -177,7 +177,7 @@
 .end method
 
 .method public engineGetParameterSpec(Ljava/lang/Class;)Ljava/security/spec/AlgorithmParameterSpec;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -193,7 +193,7 @@
 
     .line 2
     .line 3
-    if-ne p1, v0, :cond_c
+    if-ne p1, v0, :cond_0
 
     .line 4
     .line 5
@@ -213,7 +213,7 @@
     return-object p1
 
     .line 13
-    :cond_c
+    :cond_0
     const-string v0, "Incompatible AlgorithmParametersSpec class: "
 
     .line 14
@@ -230,12 +230,12 @@
 .end method
 
 .method public engineInit(Ljava/security/spec/AlgorithmParameterSpec;)V
-    .registers 3
+    .locals 1
 
     .line 51
     instance-of v0, p1, Ljavax/crypto/spec/IvParameterSpec;
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 52
     check-cast p1, Ljavax/crypto/spec/IvParameterSpec;
@@ -255,7 +255,7 @@
     return-void
 
     .line 53
-    :cond_13
+    :cond_0
     const-string p1, "Only IvParameterSpec is supported"
 
     invoke-static {p1}, Llibs/bf0;->d(Ljava/lang/String;)V
@@ -264,18 +264,18 @@
 .end method
 
 .method public engineInit([B)V
-    .registers 5
+    .locals 3
 
     .line 43
     :try_start_0
     invoke-static {p1}, Lorg/conscrypt/NativeCrypto;->asn1_read_init([B)J
 
     move-result-wide v0
-    :try_end_4
-    .catchall {:try_start_0 .. :try_end_4} :catchall_1e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 44
-    :try_start_4
+    :try_start_1
     invoke-static {v0, v1}, Lorg/conscrypt/NativeCrypto;->asn1_read_octetstring(J)[B
 
     move-result-object p1
@@ -285,26 +285,26 @@
 
     move-result v2
 
-    if-eqz v2, :cond_16
+    if-eqz v2, :cond_0
 
     .line 46
     iput-object p1, p0, Lorg/conscrypt/IvParameters;->iv:[B
-    :try_end_10
-    .catchall {:try_start_4 .. :try_end_10} :catchall_14
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 47
     invoke-static {v0, v1}, Lorg/conscrypt/NativeCrypto;->asn1_read_free(J)V
 
     return-void
 
-    :catchall_14
+    :catchall_0
     move-exception p1
 
-    goto :goto_21
+    goto :goto_0
 
     .line 48
-    :cond_16
-    :try_start_16
+    :cond_0
+    :try_start_2
     new-instance p1, Ljava/io/IOException;
 
     const-string v2, "Error reading ASN.1 encoding"
@@ -312,16 +312,16 @@
     invoke-direct {p1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
     throw p1
-    :try_end_1e
-    .catchall {:try_start_16 .. :try_end_1e} :catchall_14
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    :catchall_1e
+    :catchall_1
     move-exception p1
 
     const-wide/16 v0, 0x0
 
     .line 49
-    :goto_21
+    :goto_0
     invoke-static {v0, v1}, Lorg/conscrypt/NativeCrypto;->asn1_read_free(J)V
 
     .line 50
@@ -329,10 +329,10 @@
 .end method
 
 .method public engineInit([BLjava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 1
-    if-eqz p2, :cond_26
+    if-eqz p2, :cond_2
 
     .line 2
     .line 3
@@ -348,14 +348,14 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
-    goto :goto_26
+    goto :goto_0
 
     .line 12
-    :cond_b
+    :cond_0
     const-string v0, "RAW"
 
     .line 13
@@ -368,7 +368,7 @@
     move-result v0
 
     .line 18
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_1
 
     .line 19
     .line 20
@@ -391,7 +391,7 @@
     return-void
 
     .line 29
-    :cond_1c
+    :cond_1
     const-string p1, "Unsupported format: "
 
     .line 30
@@ -412,8 +412,8 @@
     return-void
 
     .line 39
-    :cond_26
-    :goto_26
+    :cond_2
+    :goto_0
     invoke-virtual {p0, p1}, Lorg/conscrypt/IvParameters;->engineInit([B)V
 
     .line 40
@@ -423,7 +423,7 @@
 .end method
 
 .method public engineToString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "Conscrypt IV AlgorithmParameters"

@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -35,7 +35,7 @@
 .end method
 
 .method public constructor <init>(Llibs/pu2;IIIZ)V
-    .registers 7
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -58,14 +58,14 @@
 
     .line 10
     .line 11
-    if-eqz p5, :cond_d
+    if-eqz p5, :cond_0
 
     .line 12
     .line 13
-    goto :goto_11
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     invoke-static {p2, p1}, Ljava/lang/Math;->max(II)I
 
     .line 15
@@ -74,19 +74,19 @@
     move-result p2
 
     .line 18
-    :goto_11
+    :goto_0
     iput p2, p0, Llibs/sz1;->b:I
 
     .line 19
     .line 20
-    if-eqz p5, :cond_16
+    if-eqz p5, :cond_1
 
     .line 21
     .line 22
-    goto :goto_1a
+    goto :goto_1
 
     .line 23
-    :cond_16
+    :cond_1
     invoke-static {p3, p1}, Ljava/lang/Math;->max(II)I
 
     .line 24
@@ -95,19 +95,19 @@
     move-result p3
 
     .line 27
-    :goto_1a
+    :goto_1
     iput p3, p0, Llibs/sz1;->c:I
 
     .line 28
     .line 29
-    if-eqz p5, :cond_1f
+    if-eqz p5, :cond_2
 
     .line 30
     .line 31
-    goto :goto_23
+    goto :goto_2
 
     .line 32
-    :cond_1f
+    :cond_2
     invoke-static {p4, p1}, Ljava/lang/Math;->max(II)I
 
     .line 33
@@ -116,7 +116,7 @@
     move-result p4
 
     .line 36
-    :goto_23
+    :goto_2
     iput p4, p0, Llibs/sz1;->d:I
 
     .line 37
@@ -127,13 +127,13 @@
 
 # virtual methods
 .method public declared-synchronized a(I[B)I
-    .registers 8
+    .locals 5
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget v0, p0, Llibs/sz1;->d:I
 
     .line 3
@@ -168,7 +168,7 @@
     const/4 v4, 0x0
 
     .line 18
-    if-gt v1, v3, :cond_17
+    if-gt v1, v3, :cond_0
 
     .line 19
     .line 20
@@ -177,10 +177,10 @@
     .line 21
     .line 22
     .line 23
-    goto :goto_21
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_0
     array-length v1, v2
 
     .line 25
@@ -201,7 +201,7 @@
     .line 32
     .line 33
     .line 34
-    :goto_21
+    :goto_0
     iget p2, p0, Llibs/sz1;->c:I
 
     .line 35
@@ -235,8 +235,8 @@
 
     .line 48
     iput p2, p0, Llibs/sz1;->d:I
-    :try_end_31
-    .catchall {:try_start_1 .. :try_end_31} :catchall_33
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 49
     .line 50
@@ -246,30 +246,30 @@
     return p1
 
     .line 52
-    :catchall_33
+    :catchall_0
     move-exception p1
 
     .line 53
-    :try_start_34
+    :try_start_1
     monitor-exit p0
-    :try_end_35
-    .catchall {:try_start_34 .. :try_end_35} :catchall_33
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 54
     throw p1
 .end method
 
 .method public declared-synchronized b()I
-    .registers 2
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget v0, p0, Llibs/sz1;->d:I
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 3
     .line 4
@@ -279,28 +279,28 @@
     return v0
 
     .line 6
-    :catchall_5
+    :catchall_0
     move-exception v0
 
     .line 7
-    :try_start_6
+    :try_start_1
     monitor-exit p0
-    :try_end_7
-    .catchall {:try_start_6 .. :try_end_7} :catchall_5
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 8
     throw v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/sz1;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_40
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -316,7 +316,7 @@
     return-object v0
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 12
@@ -417,8 +417,8 @@
     return-object v0
 
     .line 65
-    :pswitch_data_40
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method

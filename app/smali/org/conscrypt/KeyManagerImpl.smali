@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/security/KeyStore;[C)V
-    .registers 8
+    .locals 5
 
     .line 1
     invoke-direct {p0}, Ljavax/net/ssl/X509ExtendedKeyManager;-><init>()V
@@ -39,19 +39,19 @@
 
     .line 10
     .line 11
-    :try_start_a
+    :try_start_0
     invoke-virtual {p1}, Ljava/security/KeyStore;->aliases()Ljava/util/Enumeration;
 
     .line 12
     .line 13
     .line 14
     move-result-object v0
-    :try_end_e
-    .catch Ljava/security/KeyStoreException; {:try_start_a .. :try_end_e} :catch_46
+    :try_end_0
+    .catch Ljava/security/KeyStoreException; {:try_start_0 .. :try_end_0} :catch_2
 
     .line 15
-    :cond_e
-    :goto_e
+    :cond_0
+    :goto_0
     invoke-interface {v0}, Ljava/util/Enumeration;->hasMoreElements()Z
 
     .line 16
@@ -60,7 +60,7 @@
     move-result v1
 
     .line 19
-    if-eqz v1, :cond_46
+    if-eqz v1, :cond_1
 
     .line 20
     .line 21
@@ -76,7 +76,7 @@
 
     .line 26
     .line 27
-    :try_start_1a
+    :try_start_1
     const-class v2, Ljava/security/KeyStore$PrivateKeyEntry;
 
     .line 28
@@ -87,17 +87,17 @@
     .line 31
     .line 32
     move-result v2
-    :try_end_20
-    .catch Ljava/security/KeyStoreException; {:try_start_1a .. :try_end_20} :catch_2e
-    .catch Ljava/security/UnrecoverableEntryException; {:try_start_1a .. :try_end_20} :catch_2e
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_1a .. :try_end_20} :catch_2e
+    :try_end_1
+    .catch Ljava/security/KeyStoreException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/security/UnrecoverableEntryException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 33
-    if-eqz v2, :cond_e
+    if-eqz v2, :cond_0
 
     .line 34
     .line 35
-    :try_start_22
+    :try_start_2
     new-instance v2, Ljava/security/KeyStore$PasswordProtection;
 
     .line 36
@@ -116,26 +116,26 @@
 
     .line 44
     check-cast v2, Ljava/security/KeyStore$PrivateKeyEntry;
-    :try_end_2d
-    .catch Ljava/lang/UnsupportedOperationException; {:try_start_22 .. :try_end_2d} :catch_30
-    .catch Ljava/security/KeyStoreException; {:try_start_22 .. :try_end_2d} :catch_2e
-    .catch Ljava/security/UnrecoverableEntryException; {:try_start_22 .. :try_end_2d} :catch_2e
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_22 .. :try_end_2d} :catch_2e
+    :try_end_2
+    .catch Ljava/lang/UnsupportedOperationException; {:try_start_2 .. :try_end_2} :catch_1
+    .catch Ljava/security/KeyStoreException; {:try_start_2 .. :try_end_2} :catch_0
+    .catch Ljava/security/UnrecoverableEntryException; {:try_start_2 .. :try_end_2} :catch_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 45
     .line 46
-    goto :goto_40
+    goto :goto_1
 
     .line 47
-    :catch_2e
+    :catch_0
     nop
 
     .line 48
-    goto :goto_e
+    goto :goto_0
 
     .line 49
-    :catch_30
-    :try_start_30
+    :catch_1
+    :try_start_3
     invoke-virtual {p1, v1, p2}, Ljava/security/KeyStore;->getKey(Ljava/lang/String;[C)Ljava/security/Key;
 
     .line 50
@@ -168,30 +168,30 @@
     move-object v2, v4
 
     .line 65
-    :goto_40
+    :goto_1
     iget-object v3, p0, Lorg/conscrypt/KeyManagerImpl;->hash:Ljava/util/HashMap;
 
     .line 66
     .line 67
     invoke-virtual {v3, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_45
-    .catch Ljava/security/KeyStoreException; {:try_start_30 .. :try_end_45} :catch_2e
-    .catch Ljava/security/UnrecoverableEntryException; {:try_start_30 .. :try_end_45} :catch_2e
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_30 .. :try_end_45} :catch_2e
+    :try_end_3
+    .catch Ljava/security/KeyStoreException; {:try_start_3 .. :try_end_3} :catch_0
+    .catch Ljava/security/UnrecoverableEntryException; {:try_start_3 .. :try_end_3} :catch_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_3 .. :try_end_3} :catch_0
 
     .line 68
     .line 69
     .line 70
-    goto :goto_e
+    goto :goto_0
 
     .line 71
-    :catch_46
-    :cond_46
+    :catch_2
+    :cond_1
     return-void
 .end method
 
 .method private chooseAlias([Ljava/lang/String;[Ljava/security/Principal;)[Ljava/lang/String;
-    .registers 20
+    .locals 17
 
     .line 1
     move-object/from16 v0, p1
@@ -202,18 +202,18 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
     array-length v3, v0
 
     .line 8
-    if-nez v3, :cond_f
+    if-nez v3, :cond_1
 
     .line 9
     .line 10
-    :cond_9
+    :cond_0
     move-object/from16 v5, p0
 
     .line 11
@@ -222,22 +222,22 @@
 
     .line 13
     .line 14
-    goto/16 :goto_d3
+    goto/16 :goto_8
 
     .line 15
     .line 16
-    :cond_f
-    if-nez v1, :cond_13
+    :cond_1
+    if-nez v1, :cond_2
 
     .line 17
     .line 18
     const/4 v3, 0x0
 
     .line 19
-    goto :goto_17
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_2
     invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     .line 21
@@ -246,7 +246,7 @@
     move-result-object v3
 
     .line 24
-    :goto_17
+    :goto_0
     new-instance v4, Ljava/util/ArrayList;
 
     .line 25
@@ -280,7 +280,7 @@
     move-result-object v6
 
     .line 41
-    :cond_28
+    :cond_3
     invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
 
     .line 42
@@ -292,7 +292,7 @@
     const/4 v8, 0x0
 
     .line 46
-    if-eqz v7, :cond_c1
+    if-eqz v7, :cond_e
 
     .line 47
     .line 48
@@ -364,7 +364,7 @@
 
     .line 81
     .line 82
-    if-eqz v12, :cond_60
+    if-eqz v12, :cond_4
 
     .line 83
     .line 84
@@ -392,22 +392,22 @@
     move-result-object v10
 
     .line 96
-    goto :goto_61
+    goto :goto_1
 
     .line 97
-    :cond_60
+    :cond_4
     const/4 v10, 0x0
 
     .line 98
-    :goto_61
+    :goto_1
     array-length v12, v0
 
     .line 99
     const/4 v13, 0x0
 
     .line 100
-    :goto_63
-    if-ge v13, v12, :cond_28
+    :goto_2
+    if-ge v13, v12, :cond_3
 
     .line 101
     .line 102
@@ -415,7 +415,7 @@
 
     .line 103
     .line 104
-    if-nez v14, :cond_6c
+    if-nez v14, :cond_5
 
     .line 105
     .line 106
@@ -423,10 +423,10 @@
 
     .line 107
     .line 108
-    goto :goto_bd
+    goto :goto_7
 
     .line 109
-    :cond_6c
+    :cond_5
     const/16 v15, 0x5f
 
     .line 110
@@ -446,7 +446,7 @@
     const/4 v2, -0x1
 
     .line 118
-    if-ne v15, v2, :cond_7a
+    if-ne v15, v2, :cond_6
 
     .line 119
     .line 120
@@ -454,10 +454,10 @@
 
     .line 121
     .line 122
-    goto :goto_84
+    goto :goto_3
 
     .line 123
-    :cond_7a
+    :cond_6
     add-int/lit8 v2, v15, 0x1
 
     .line 124
@@ -478,7 +478,7 @@
     move-result-object v14
 
     .line 133
-    :goto_84
+    :goto_3
     invoke-virtual {v11, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     .line 134
@@ -487,19 +487,19 @@
     move-result v14
 
     .line 137
-    if-nez v14, :cond_8b
+    if-nez v14, :cond_7
 
     .line 138
     .line 139
-    goto :goto_bd
+    goto :goto_7
 
     .line 140
-    :cond_8b
-    if-eqz v2, :cond_96
+    :cond_7
+    if-eqz v2, :cond_8
 
     .line 141
     .line 142
-    if-eqz v10, :cond_96
+    if-eqz v10, :cond_8
 
     .line 143
     .line 144
@@ -511,37 +511,37 @@
     move-result v2
 
     .line 148
-    if-nez v2, :cond_96
+    if-nez v2, :cond_8
 
     .line 149
     .line 150
-    goto :goto_bd
+    goto :goto_7
 
     .line 151
-    :cond_96
-    if-eqz v1, :cond_ba
+    :cond_8
+    if-eqz v1, :cond_c
 
     .line 152
     .line 153
     array-length v2, v1
 
     .line 154
-    if-nez v2, :cond_9c
+    if-nez v2, :cond_9
 
     .line 155
     .line 156
-    goto :goto_ba
+    goto :goto_6
 
     .line 157
-    :cond_9c
+    :cond_9
     array-length v2, v7
 
     .line 158
     const/4 v14, 0x0
 
     .line 159
-    :goto_9e
-    if-ge v14, v2, :cond_bd
+    :goto_4
+    if-ge v14, v2, :cond_d
 
     .line 160
     .line 161
@@ -553,14 +553,14 @@
 
     .line 164
     .line 165
-    if-nez v8, :cond_a7
+    if-nez v8, :cond_a
 
     .line 166
     .line 167
-    goto :goto_b6
+    goto :goto_5
 
     .line 168
-    :cond_a7
+    :cond_a
     check-cast v15, Ljava/security/cert/X509Certificate;
 
     .line 169
@@ -581,7 +581,7 @@
     move-result v8
 
     .line 178
-    if-eqz v8, :cond_b6
+    if-eqz v8, :cond_b
 
     .line 179
     .line 180
@@ -590,8 +590,8 @@
     .line 181
     .line 182
     .line 183
-    :cond_b6
-    :goto_b6
+    :cond_b
+    :goto_5
     add-int/lit8 v14, v14, 0x1
 
     .line 184
@@ -599,18 +599,18 @@
     const/4 v8, 0x0
 
     .line 186
-    goto :goto_9e
+    goto :goto_4
 
     .line 187
-    :cond_ba
-    :goto_ba
+    :cond_c
+    :goto_6
     invoke-virtual {v4, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 188
     .line 189
     .line 190
-    :cond_bd
-    :goto_bd
+    :cond_d
+    :goto_7
     add-int/lit8 v13, v13, 0x1
 
     .line 191
@@ -618,10 +618,10 @@
     const/4 v8, 0x0
 
     .line 193
-    goto :goto_63
+    goto :goto_2
 
     .line 194
-    :cond_c1
+    :cond_e
     const/16 v16, 0x0
 
     .line 195
@@ -634,7 +634,7 @@
     move-result v0
 
     .line 200
-    if-nez v0, :cond_d3
+    if-nez v0, :cond_f
 
     .line 201
     .line 202
@@ -660,15 +660,15 @@
     return-object v0
 
     .line 212
-    :cond_d3
-    :goto_d3
+    :cond_f
+    :goto_8
     return-object v16
 .end method
 
 
 # virtual methods
 .method public chooseClientAlias([Ljava/lang/String;[Ljava/security/Principal;Ljava/net/Socket;)Ljava/lang/String;
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Lorg/conscrypt/KeyManagerImpl;->chooseAlias([Ljava/lang/String;[Ljava/security/Principal;)[Ljava/lang/String;
@@ -679,7 +679,7 @@
     move-result-object p1
 
     .line 5
-    if-nez p1, :cond_8
+    if-nez p1, :cond_0
 
     .line 6
     .line 7
@@ -689,7 +689,7 @@
     return-object p1
 
     .line 9
-    :cond_8
+    :cond_0
     const/4 p2, 0x0
 
     .line 10
@@ -701,7 +701,7 @@
 .end method
 
 .method public chooseEngineClientAlias([Ljava/lang/String;[Ljava/security/Principal;Ljavax/net/ssl/SSLEngine;)Ljava/lang/String;
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Lorg/conscrypt/KeyManagerImpl;->chooseAlias([Ljava/lang/String;[Ljava/security/Principal;)[Ljava/lang/String;
@@ -712,7 +712,7 @@
     move-result-object p1
 
     .line 5
-    if-nez p1, :cond_8
+    if-nez p1, :cond_0
 
     .line 6
     .line 7
@@ -722,7 +722,7 @@
     return-object p1
 
     .line 9
-    :cond_8
+    :cond_0
     const/4 p2, 0x0
 
     .line 10
@@ -734,7 +734,7 @@
 .end method
 
 .method public chooseEngineServerAlias(Ljava/lang/String;[Ljava/security/Principal;Ljavax/net/ssl/SSLEngine;)Ljava/lang/String;
-    .registers 5
+    .locals 1
 
     .line 1
     const/4 p3, 0x1
@@ -759,7 +759,7 @@
     move-result-object p1
 
     .line 11
-    if-nez p1, :cond_e
+    if-nez p1, :cond_0
 
     .line 12
     .line 13
@@ -769,7 +769,7 @@
     return-object p1
 
     .line 15
-    :cond_e
+    :cond_0
     aget-object p1, p1, v0
 
     .line 16
@@ -778,7 +778,7 @@
 .end method
 
 .method public chooseServerAlias(Ljava/lang/String;[Ljava/security/Principal;Ljava/net/Socket;)Ljava/lang/String;
-    .registers 5
+    .locals 1
 
     .line 1
     const/4 p3, 0x1
@@ -803,7 +803,7 @@
     move-result-object p1
 
     .line 11
-    if-nez p1, :cond_e
+    if-nez p1, :cond_0
 
     .line 12
     .line 13
@@ -813,7 +813,7 @@
     return-object p1
 
     .line 15
-    :cond_e
+    :cond_0
     aget-object p1, p1, v0
 
     .line 16
@@ -822,20 +822,20 @@
 .end method
 
 .method public getCertificateChain(Ljava/lang/String;)[Ljava/security/cert/X509Certificate;
-    .registers 5
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     .line 3
     .line 4
     return-object v0
 
     .line 5
-    :cond_4
+    :cond_0
     iget-object v1, p0, Lorg/conscrypt/KeyManagerImpl;->hash:Ljava/util/HashMap;
 
     .line 6
@@ -848,7 +848,7 @@
     move-result v1
 
     .line 11
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_1
 
     .line 12
     .line 13
@@ -887,7 +887,7 @@
 
     .line 29
     .line 30
-    if-eqz v2, :cond_2e
+    if-eqz v2, :cond_1
 
     .line 31
     .line 32
@@ -898,11 +898,11 @@
 
     .line 34
     .line 35
-    :goto_22
+    :goto_0
     array-length v2, p1
 
     .line 36
-    if-ge v1, v2, :cond_2e
+    if-ge v1, v2, :cond_1
 
     .line 37
     .line 38
@@ -922,15 +922,15 @@
 
     .line 45
     .line 46
-    goto :goto_22
+    goto :goto_0
 
     .line 47
-    :cond_2e
+    :cond_1
     return-object v0
 .end method
 
 .method public getClientAliases(Ljava/lang/String;[Ljava/security/Principal;)[Ljava/lang/String;
-    .registers 5
+    .locals 2
 
     .line 1
     const/4 v0, 0x1
@@ -959,20 +959,20 @@
 .end method
 
 .method public getPrivateKey(Ljava/lang/String;)Ljava/security/PrivateKey;
-    .registers 4
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     .line 3
     .line 4
     return-object v0
 
     .line 5
-    :cond_4
+    :cond_0
     iget-object v1, p0, Lorg/conscrypt/KeyManagerImpl;->hash:Ljava/util/HashMap;
 
     .line 6
@@ -985,7 +985,7 @@
     move-result v1
 
     .line 11
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_1
 
     .line 12
     .line 13
@@ -1016,12 +1016,12 @@
     return-object p1
 
     .line 26
-    :cond_19
+    :cond_1
     return-object v0
 .end method
 
 .method public getServerAliases(Ljava/lang/String;[Ljava/security/Principal;)[Ljava/lang/String;
-    .registers 5
+    .locals 2
 
     .line 1
     const/4 v0, 0x1

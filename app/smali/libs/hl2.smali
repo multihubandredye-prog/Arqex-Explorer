@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
@@ -41,7 +41,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/List;Ljava/util/List;Ljava/lang/Iterable;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -65,7 +65,7 @@
 .end method
 
 .method public static a(Ljava/lang/Iterable;Llibs/gs0;)Llibs/hl2;
-    .registers 7
+    .locals 5
 
     .line 1
     invoke-static {p0, p1}, Llibs/kr0;->j(Ljava/lang/Iterable;Llibs/gs0;)Ljava/util/List;
@@ -168,7 +168,7 @@
 .end method
 
 .method public static b(Llibs/zc0;)Llibs/hl2;
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-static {p0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
@@ -196,7 +196,7 @@
 .end method
 
 .method public static c(Ljava/lang/String;Ljava/util/List;)Llibs/hl2;
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/hl2;

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/zs;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/qx0;-><init>(Llibs/zs;)V
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public final a(Llibs/f1;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-short v0, p0, Llibs/qx0;->a:S
@@ -89,7 +89,7 @@
 .end method
 
 .method public final b(Llibs/f1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void

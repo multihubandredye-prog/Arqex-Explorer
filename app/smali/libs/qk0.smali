@@ -22,7 +22,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;B)V
-    .registers 7
+    .locals 0
 
     .line 1
     iput-byte p6, p0, Llibs/qk0;->X:B
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public final c([Ljava/lang/Object;)Z
-    .registers 19
+    .locals 17
 
     .line 1
     move-object/from16 v0, p0
@@ -97,7 +97,7 @@
 
     .line 16
     .line 17
-    packed-switch v1, :pswitch_data_fc
+    packed-switch v1, :pswitch_data_0
 
     .line 18
     .line 19
@@ -189,7 +189,7 @@
     return v2
 
     .line 63
-    :pswitch_3e
+    :pswitch_0
     check-cast v8, Llibs/n31;
 
     .line 64
@@ -246,7 +246,7 @@
     return v2
 
     .line 89
-    :pswitch_58
+    :pswitch_1
     move-object v10, v8
 
     .line 90
@@ -279,18 +279,18 @@
 
     .line 102
     .line 103
-    if-eqz v7, :cond_6a
+    if-eqz v7, :cond_0
 
     .line 104
     .line 105
-    :goto_68
+    :goto_0
     move-object v15, v7
 
     .line 106
-    goto :goto_70
+    goto :goto_1
 
     .line 107
-    :cond_6a
+    :cond_0
     new-instance v7, Ljava/util/Properties;
 
     .line 108
@@ -300,10 +300,10 @@
     .line 110
     .line 111
     .line 112
-    goto :goto_68
+    goto :goto_0
 
     .line 113
-    :goto_70
+    :goto_1
     aget-object v1, p1, v3
 
     .line 114
@@ -578,9 +578,9 @@
     return v2
 
     .line 253
-    :pswitch_data_fc
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_58
-        :pswitch_3e
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

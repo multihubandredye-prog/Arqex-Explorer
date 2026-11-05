@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/bs1;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final onCreate(Landroid/os/Bundle;)V
-    .registers 8
+    .locals 6
 
     .line 1
     const-string v0, "ARCHIVE_TO"
@@ -35,7 +35,7 @@
     .line 6
     .line 7
     .line 8
-    :try_start_7
+    :try_start_0
     invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
     .line 9
@@ -103,7 +103,7 @@
     move-result v4
 
     .line 43
-    if-nez v4, :cond_37
+    if-nez v4, :cond_0
 
     .line 44
     .line 45
@@ -119,22 +119,22 @@
     move-result v3
 
     .line 51
-    if-eqz v3, :cond_3d
+    if-eqz v3, :cond_1
 
     .line 52
     .line 53
-    goto :goto_37
+    goto :goto_0
 
     .line 54
-    :catchall_35
+    :catchall_0
     move-exception p1
 
     .line 55
-    goto :goto_5d
+    goto :goto_1
 
     .line 56
-    :cond_37
-    :goto_37
+    :cond_0
+    :goto_0
     const-string v3, "extra_archive_to"
 
     .line 57
@@ -147,7 +147,7 @@
     .line 60
     .line 61
     .line 62
-    :cond_3d
+    :cond_1
     new-instance v3, Ljava/lang/StringBuilder;
 
     .line 63
@@ -194,8 +194,8 @@
     .line 86
     .line 87
     invoke-static {v1, v2, p1}, Llibs/sw1;->Data(Landroid/content/Context;Landroid/content/Intent;Landroid/os/Bundle;)V
-    :try_end_59
-    .catchall {:try_start_7 .. :try_end_59} :catchall_35
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 88
     .line 89
@@ -208,8 +208,8 @@
     return-void
 
     .line 94
-    :goto_5d
-    :try_start_5d
+    :goto_1
+    :try_start_1
     invoke-static {p1}, Llibs/vl3;->Map(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 95
@@ -224,8 +224,8 @@
     .line 100
     .line 101
     invoke-static {p1}, Llibs/gx1;->d(Ljava/lang/Object;)V
-    :try_end_67
-    .catchall {:try_start_5d .. :try_end_67} :catchall_6b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 102
     .line 103
@@ -238,7 +238,7 @@
     return-void
 
     .line 108
-    :catchall_6b
+    :catchall_1
     move-exception p1
 
     .line 109

@@ -24,7 +24,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r31;Landroid/view/View;Ljava/util/LinkedHashSet;Llibs/zl0;Ljava/lang/String;Llibs/bv1;Z)V
-    .registers 8
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 10
+    .locals 9
 
     .line 1
     sget v0, Llibs/bi2;->only_files:I

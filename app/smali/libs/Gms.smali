@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Size;[BI)V
-    .registers 9
+    .locals 5
 
     .line 1
     invoke-direct {p0, p1, p2}, Llibs/Kind;-><init>(Llibs/Size;[B)V
@@ -43,8 +43,8 @@
     const/4 v1, 0x0
 
     .line 14
-    :goto_d
-    if-ge v1, p1, :cond_24
+    :goto_0
+    if-ge v1, p1, :cond_1
 
     .line 15
     .line 16
@@ -74,18 +74,18 @@
     and-int/2addr v2, v3
 
     .line 28
-    if-eqz v2, :cond_1e
+    if-eqz v2, :cond_0
 
     .line 29
     .line 30
-    goto :goto_1f
+    goto :goto_1
 
     .line 31
-    :cond_1e
+    :cond_0
     const/4 v4, 0x0
 
     .line 32
-    :goto_1f
+    :goto_1
     aput-boolean v4, p3, v1
 
     .line 33
@@ -94,10 +94,10 @@
 
     .line 35
     .line 36
-    goto :goto_d
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_1
     iput-object p3, p0, Llibs/Gms;->Lambda:[Z
 
     .line 38
@@ -108,7 +108,7 @@
 
 # virtual methods
 .method public final a()Ljava/lang/Object;
-    .registers 7
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/Gms;->Lambda:[Z
@@ -118,7 +118,7 @@
     array-length v1, v0
 
     .line 4
-    if-ltz v1, :cond_26
+    if-ltz v1, :cond_2
 
     .line 5
     .line 6
@@ -133,14 +133,14 @@
 
     .line 10
     .line 11
-    if-gtz v5, :cond_21
+    if-gtz v5, :cond_1
 
     .line 12
     .line 13
     array-length v3, v0
 
     .line 14
-    if-ltz v3, :cond_1b
+    if-ltz v3, :cond_0
 
     .line 15
     .line 16
@@ -170,7 +170,7 @@
     return-object v2
 
     .line 28
-    :cond_1b
+    :cond_0
     new-instance v0, Ljava/lang/ArrayIndexOutOfBoundsException;
 
     .line 29
@@ -183,7 +183,7 @@
     throw v0
 
     .line 34
-    :cond_21
+    :cond_1
     invoke-static {}, Llibs/ic0;->l()V
 
     .line 35
@@ -195,7 +195,7 @@
     return-object v0
 
     .line 39
-    :cond_26
+    :cond_2
     new-instance v0, Ljava/lang/NegativeArraySizeException;
 
     .line 40
@@ -217,7 +217,7 @@
 .end method
 
 .method public final b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/Gms;->Lambda:[Z

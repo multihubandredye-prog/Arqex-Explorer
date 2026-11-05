@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     const/16 v0, 0xf
 
@@ -36,7 +36,7 @@
 .end method
 
 .method public constructor <init>(Llibs/c70;)V
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x6
 
@@ -47,7 +47,7 @@
 
     const-wide/16 v0, 0x0
 
-    if-nez p1, :cond_12
+    if-nez p1, :cond_0
 
     .line 428
     new-instance p1, Llibs/dc;
@@ -56,10 +56,10 @@
 
     iput-object p1, p0, Llibs/Zulu;->b:Llibs/dc;
 
-    goto :goto_34
+    goto :goto_0
 
     .line 429
-    :cond_12
+    :cond_0
     iget-object p1, p1, Llibs/c70;->b:Llibs/s20;
 
     .line 430
@@ -101,12 +101,12 @@
 
     iput-object p1, p0, Llibs/Zulu;->b:Llibs/dc;
 
-    :goto_34
+    :goto_0
     return-void
 .end method
 
 .method public constructor <init>(Lorg/json/JSONObject;B)V
-    .registers 12
+    .locals 9
 
     .line 1
     iput-byte p2, p0, Llibs/Zulu;->a:B
@@ -125,12 +125,12 @@
 
     .line 8
     .line 9
-    packed-switch p2, :pswitch_data_1aa
+    packed-switch p2, :pswitch_data_0
 
     .line 10
     .line 11
     .line 12
-    :pswitch_b
+    :pswitch_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 13
@@ -176,7 +176,7 @@
     return-void
 
     .line 35
-    :pswitch_22
+    :pswitch_1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 36
@@ -207,7 +207,7 @@
 
     .line 50
     .line 51
-    if-nez p2, :cond_3a
+    if-nez p2, :cond_0
 
     .line 52
     .line 53
@@ -223,7 +223,7 @@
     move-result-wide v1
 
     .line 59
-    :cond_3a
+    :cond_0
     invoke-virtual {p1, v0}, Lorg/json/JSONObject;->optLong(Ljava/lang/String;)J
 
     .line 60
@@ -240,7 +240,7 @@
 
     .line 66
     .line 67
-    if-nez p2, :cond_4a
+    if-nez p2, :cond_1
 
     .line 68
     .line 69
@@ -256,7 +256,7 @@
     move-result-wide v7
 
     .line 75
-    :cond_4a
+    :cond_1
     new-instance p1, Llibs/dc;
 
     .line 76
@@ -273,7 +273,7 @@
     return-void
 
     .line 83
-    :pswitch_52
+    :pswitch_2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 84
@@ -311,7 +311,7 @@
     return-void
 
     .line 102
-    :pswitch_65
+    :pswitch_3
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 103
@@ -349,7 +349,7 @@
     return-void
 
     .line 121
-    :pswitch_78
+    :pswitch_4
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 122
@@ -403,7 +403,7 @@
     return-void
 
     .line 148
-    :pswitch_93
+    :pswitch_5
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 149
@@ -461,7 +461,7 @@
     return-void
 
     .line 177
-    :pswitch_b0
+    :pswitch_6
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 178
@@ -635,7 +635,7 @@
     return-void
 
     .line 270
-    :pswitch_10d
+    :pswitch_7
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 271
@@ -673,7 +673,7 @@
     return-void
 
     .line 289
-    :pswitch_120
+    :pswitch_8
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 290
@@ -719,7 +719,7 @@
     return-void
 
     .line 312
-    :pswitch_137
+    :pswitch_9
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 313
@@ -779,7 +779,7 @@
     return-void
 
     .line 343
-    :pswitch_156
+    :pswitch_a
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 344
@@ -858,7 +858,7 @@
     return-void
 
     .line 383
-    :pswitch_17e
+    :pswitch_b
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 384
@@ -945,27 +945,27 @@
     return-void
 
     .line 427
-    :pswitch_data_1aa
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_17e
-        :pswitch_156
-        :pswitch_137
         :pswitch_b
-        :pswitch_b
-        :pswitch_b
-        :pswitch_120
-        :pswitch_10d
-        :pswitch_b0
-        :pswitch_93
-        :pswitch_78
-        :pswitch_65
-        :pswitch_52
-        :pswitch_22
+        :pswitch_a
+        :pswitch_9
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
     .end packed-switch
 .end method
 
 .method public constructor <init>(Lorg/json/JSONObject;Lorg/json/JSONObject;)V
-    .registers 6
+    .locals 3
 
     const/4 v0, 0x5
 
@@ -1004,7 +1004,7 @@
 .end method
 
 .method public constructor <init>(Lorg/w3c/dom/Element;)V
-    .registers 7
+    .locals 5
 
     const/4 v0, 0x4
 
@@ -1023,7 +1023,7 @@
     const-wide/16 v0, 0x0
 
     .line 446
-    :try_start_e
+    :try_start_0
     const-string v2, "limit"
 
     invoke-static {v2, p1}, Llibs/u73;->Call(Ljava/lang/String;Lorg/w3c/dom/Element;)Ljava/lang/String;
@@ -1033,17 +1033,17 @@
     invoke-static {v2}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
     move-result-wide v2
-    :try_end_18
-    .catch Ljava/lang/Exception; {:try_start_e .. :try_end_18} :catch_19
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_1a
+    goto :goto_0
 
-    :catch_19
+    :catch_0
     move-wide v2, v0
 
     .line 447
-    :goto_1a
-    :try_start_1a
+    :goto_0
+    :try_start_1
     const-string v4, "usage"
 
     invoke-static {v4, p1}, Llibs/u73;->Call(Ljava/lang/String;Lorg/w3c/dom/Element;)Ljava/lang/String;
@@ -1053,11 +1053,11 @@
     invoke-static {p1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
     move-result-wide v0
-    :try_end_24
-    .catch Ljava/lang/Exception; {:try_start_1a .. :try_end_24} :catch_24
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 448
-    :catch_24
+    :catch_1
     new-instance p1, Llibs/dc;
 
     invoke-direct {p1, v2, v3, v0, v1}, Llibs/dc;-><init>(JJ)V
@@ -1070,7 +1070,7 @@
 
 # virtual methods
 .method public final a()Llibs/dc;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/Zulu;->a:B

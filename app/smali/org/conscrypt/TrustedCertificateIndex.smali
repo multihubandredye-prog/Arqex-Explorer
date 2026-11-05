@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/Set;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -73,7 +73,7 @@
 .end method
 
 .method private static findBySubjectAndPublicKey(Ljava/security/cert/X509Certificate;Ljava/util/Collection;)Ljava/security/cert/TrustAnchor;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -106,8 +106,8 @@
     move-result-object p1
 
     .line 11
-    :cond_a
-    :goto_a
+    :cond_0
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 12
@@ -116,7 +116,7 @@
     move-result v1
 
     .line 15
-    if-eqz v1, :cond_55
+    if-eqz v1, :cond_3
 
     .line 16
     .line 17
@@ -132,7 +132,7 @@
 
     .line 22
     .line 23
-    :try_start_16
+    :try_start_0
     invoke-virtual {v1}, Ljava/security/cert/TrustAnchor;->getTrustedCert()Ljava/security/cert/X509Certificate;
 
     .line 24
@@ -141,7 +141,7 @@
     move-result-object v2
 
     .line 27
-    if-eqz v2, :cond_23
+    if-eqz v2, :cond_1
 
     .line 28
     .line 29
@@ -153,17 +153,17 @@
     move-result-object v2
 
     .line 33
-    goto :goto_27
+    goto :goto_1
 
     .line 34
-    :catch_21
+    :catch_0
     nop
 
     .line 35
-    goto :goto_a
+    goto :goto_0
 
     .line 36
-    :cond_23
+    :cond_1
     invoke-virtual {v1}, Ljava/security/cert/TrustAnchor;->getCAPublicKey()Ljava/security/PublicKey;
 
     .line 37
@@ -172,7 +172,7 @@
     move-result-object v2
 
     .line 40
-    :goto_27
+    :goto_1
     invoke-virtual {v2, p0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     .line 41
@@ -181,14 +181,14 @@
     move-result v3
 
     .line 44
-    if-eqz v3, :cond_2e
+    if-eqz v3, :cond_2
 
     .line 45
     .line 46
-    goto :goto_54
+    goto :goto_2
 
     .line 47
-    :cond_2e
+    :cond_2
     invoke-interface {v2}, Ljava/security/Key;->getFormat()Ljava/lang/String;
 
     .line 48
@@ -205,7 +205,7 @@
     move-result v3
 
     .line 55
-    if-eqz v3, :cond_a
+    if-eqz v3, :cond_0
 
     .line 56
     .line 57
@@ -225,7 +225,7 @@
     move-result v3
 
     .line 65
-    if-eqz v3, :cond_a
+    if-eqz v3, :cond_0
 
     .line 66
     .line 67
@@ -245,11 +245,11 @@
     move-result-object v3
 
     .line 75
-    if-eqz v3, :cond_a
+    if-eqz v3, :cond_0
 
     .line 76
     .line 77
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_0
 
     .line 78
     .line 79
@@ -259,19 +259,19 @@
     .line 81
     .line 82
     move-result v2
-    :try_end_52
-    .catch Ljava/lang/Exception; {:try_start_16 .. :try_end_52} :catch_21
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 83
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_0
 
     .line 84
     .line 85
-    :goto_54
+    :goto_2
     return-object v1
 
     .line 86
-    :cond_55
+    :cond_3
     const/4 p0, 0x0
 
     .line 87
@@ -279,7 +279,7 @@
 .end method
 
 .method private index(Ljava/util/Set;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -294,12 +294,12 @@
 
     move-result-object p1
 
-    :goto_4
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -310,16 +310,16 @@
     .line 85
     invoke-virtual {p0, v0}, Lorg/conscrypt/TrustedCertificateIndex;->index(Ljava/security/cert/TrustAnchor;)V
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public findAllByIssuerAndSignature(Ljava/security/cert/X509Certificate;)Ljava/util/Set;
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -347,7 +347,7 @@
     monitor-enter v1
 
     .line 8
-    :try_start_7
+    :try_start_0
     iget-object v2, p0, Lorg/conscrypt/TrustedCertificateIndex;->subjectToTrustAnchors:Ljava/util/Map;
 
     .line 9
@@ -364,7 +364,7 @@
 
     .line 15
     .line 16
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
     .line 17
     .line 18
@@ -378,14 +378,14 @@
     return-object p1
 
     .line 22
-    :catchall_15
+    :catchall_0
     move-exception p1
 
     .line 23
-    goto :goto_47
+    goto :goto_2
 
     .line 24
-    :cond_17
+    :cond_0
     new-instance v2, Ljava/util/HashSet;
 
     .line 25
@@ -403,8 +403,8 @@
     move-result-object v0
 
     .line 33
-    :catch_20
-    :goto_20
+    :catch_0
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 34
@@ -413,7 +413,7 @@
     move-result v3
 
     .line 37
-    if-eqz v3, :cond_45
+    if-eqz v3, :cond_3
 
     .line 38
     .line 39
@@ -426,12 +426,12 @@
 
     .line 43
     check-cast v3, Ljava/security/cert/TrustAnchor;
-    :try_end_2c
-    .catchall {:try_start_7 .. :try_end_2c} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 44
     .line 45
-    :try_start_2c
+    :try_start_1
     invoke-virtual {v3}, Ljava/security/cert/TrustAnchor;->getTrustedCert()Ljava/security/cert/X509Certificate;
 
     .line 46
@@ -440,7 +440,7 @@
     move-result-object v4
 
     .line 49
-    if-eqz v4, :cond_37
+    if-eqz v4, :cond_1
 
     .line 50
     .line 51
@@ -452,10 +452,10 @@
     move-result-object v4
 
     .line 55
-    goto :goto_3b
+    goto :goto_1
 
     .line 56
-    :cond_37
+    :cond_1
     invoke-virtual {v3}, Ljava/security/cert/TrustAnchor;->getCAPublicKey()Ljava/security/PublicKey;
 
     .line 57
@@ -464,58 +464,58 @@
     move-result-object v4
 
     .line 60
-    :goto_3b
-    if-nez v4, :cond_3e
+    :goto_1
+    if-nez v4, :cond_2
 
     .line 61
     .line 62
-    goto :goto_20
+    goto :goto_0
 
     .line 63
-    :cond_3e
+    :cond_2
     invoke-virtual {p1, v4}, Ljava/security/cert/Certificate;->verify(Ljava/security/PublicKey;)V
 
     .line 64
     .line 65
     .line 66
     invoke-virtual {v2, v3}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-    :try_end_44
-    .catch Ljava/lang/Exception; {:try_start_2c .. :try_end_44} :catch_20
-    .catchall {:try_start_2c .. :try_end_44} :catchall_15
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 67
     .line 68
     .line 69
-    goto :goto_20
+    goto :goto_0
 
     .line 70
-    :cond_45
-    :try_start_45
+    :cond_3
+    :try_start_2
     monitor-exit v1
 
     .line 71
     return-object v2
 
     .line 72
-    :goto_47
+    :goto_2
     monitor-exit v1
-    :try_end_48
-    .catchall {:try_start_45 .. :try_end_48} :catchall_15
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 73
-    goto :goto_4a
+    goto :goto_4
 
     .line 74
-    :goto_49
+    :goto_3
     throw p1
 
     .line 75
-    :goto_4a
-    goto :goto_49
+    :goto_4
+    goto :goto_3
 .end method
 
 .method public findByIssuerAndSignature(Ljava/security/cert/X509Certificate;)Ljava/security/cert/TrustAnchor;
-    .registers 7
+    .locals 5
 
     .line 1
     invoke-virtual {p1}, Ljava/security/cert/X509Certificate;->getIssuerX500Principal()Ljavax/security/auth/x500/X500Principal;
@@ -533,7 +533,7 @@
     monitor-enter v1
 
     .line 8
-    :try_start_7
+    :try_start_0
     iget-object v2, p0, Lorg/conscrypt/TrustedCertificateIndex;->subjectToTrustAnchors:Ljava/util/Map;
 
     .line 9
@@ -553,7 +553,7 @@
     const/4 v2, 0x0
 
     .line 17
-    if-nez v0, :cond_16
+    if-nez v0, :cond_0
 
     .line 18
     .line 19
@@ -563,14 +563,14 @@
     return-object v2
 
     .line 21
-    :catchall_14
+    :catchall_0
     move-exception p1
 
     .line 22
-    goto :goto_3c
+    goto :goto_1
 
     .line 23
-    :cond_16
+    :cond_0
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     .line 24
@@ -579,7 +579,7 @@
     move-result-object v0
 
     .line 27
-    :catch_1a
+    :catch_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 28
@@ -588,7 +588,7 @@
     move-result v3
 
     .line 31
-    if-eqz v3, :cond_3a
+    if-eqz v3, :cond_2
 
     .line 32
     .line 33
@@ -601,12 +601,12 @@
 
     .line 37
     check-cast v3, Ljava/security/cert/TrustAnchor;
-    :try_end_26
-    .catchall {:try_start_7 .. :try_end_26} :catchall_14
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 38
     .line 39
-    :try_start_26
+    :try_start_1
     invoke-virtual {v3}, Ljava/security/cert/TrustAnchor;->getTrustedCert()Ljava/security/cert/X509Certificate;
 
     .line 40
@@ -615,7 +615,7 @@
     move-result-object v4
 
     .line 43
-    if-eqz v4, :cond_31
+    if-eqz v4, :cond_1
 
     .line 44
     .line 45
@@ -627,10 +627,10 @@
     move-result-object v4
 
     .line 49
-    goto :goto_35
+    goto :goto_0
 
     .line 50
-    :cond_31
+    :cond_1
     invoke-virtual {v3}, Ljava/security/cert/TrustAnchor;->getCAPublicKey()Ljava/security/PublicKey;
 
     .line 51
@@ -639,40 +639,40 @@
     move-result-object v4
 
     .line 54
-    :goto_35
+    :goto_0
     invoke-virtual {p1, v4}, Ljava/security/cert/Certificate;->verify(Ljava/security/PublicKey;)V
-    :try_end_38
-    .catch Ljava/lang/Exception; {:try_start_26 .. :try_end_38} :catch_1a
-    .catchall {:try_start_26 .. :try_end_38} :catchall_14
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 55
     .line 56
     .line 57
-    :try_start_38
+    :try_start_2
     monitor-exit v1
 
     .line 58
     return-object v3
 
     .line 59
-    :cond_3a
+    :cond_2
     monitor-exit v1
 
     .line 60
     return-object v2
 
     .line 61
-    :goto_3c
+    :goto_1
     monitor-exit v1
-    :try_end_3d
-    .catchall {:try_start_38 .. :try_end_3d} :catchall_14
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 62
     throw p1
 .end method
 
 .method public findBySubjectAndPublicKey(Ljava/security/cert/X509Certificate;)Ljava/security/cert/TrustAnchor;
-    .registers 5
+    .locals 3
 
     .line 88
     invoke-virtual {p1}, Ljava/security/cert/X509Certificate;->getSubjectX500Principal()Ljavax/security/auth/x500/X500Principal;
@@ -685,7 +685,7 @@
     monitor-enter v1
 
     .line 90
-    :try_start_7
+    :try_start_0
     iget-object v2, p0, Lorg/conscrypt/TrustedCertificateIndex;->subjectToTrustAnchors:Ljava/util/Map;
 
     invoke-interface {v2, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -694,7 +694,7 @@
 
     check-cast v0, Ljava/util/List;
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_0
 
     const/4 p1, 0x0
 
@@ -703,13 +703,13 @@
 
     return-object p1
 
-    :catchall_14
+    :catchall_0
     move-exception p1
 
-    goto :goto_1c
+    goto :goto_0
 
     .line 92
-    :cond_16
+    :cond_0
     invoke-static {p1, v0}, Lorg/conscrypt/TrustedCertificateIndex;->findBySubjectAndPublicKey(Ljava/security/cert/X509Certificate;Ljava/util/Collection;)Ljava/security/cert/TrustAnchor;
 
     move-result-object p1
@@ -719,16 +719,16 @@
     return-object p1
 
     .line 93
-    :goto_1c
+    :goto_0
     monitor-exit v1
-    :try_end_1d
-    .catchall {:try_start_7 .. :try_end_1d} :catchall_14
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public index(Ljava/security/cert/X509Certificate;)Ljava/security/cert/TrustAnchor;
-    .registers 4
+    .locals 2
 
     .line 82
     new-instance v0, Ljava/security/cert/TrustAnchor;
@@ -744,7 +744,7 @@
 .end method
 
 .method public index(Ljava/security/cert/TrustAnchor;)V
-    .registers 7
+    .locals 5
 
     .line 1
     invoke-virtual {p1}, Ljava/security/cert/TrustAnchor;->getTrustedCert()Ljava/security/cert/X509Certificate;
@@ -755,7 +755,7 @@
     move-result-object v0
 
     .line 5
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -767,10 +767,10 @@
     move-result-object v1
 
     .line 11
-    goto :goto_f
+    goto :goto_0
 
     .line 12
-    :cond_b
+    :cond_0
     invoke-virtual {p1}, Ljava/security/cert/TrustAnchor;->getCA()Ljavax/security/auth/x500/X500Principal;
 
     .line 13
@@ -779,7 +779,7 @@
     move-result-object v1
 
     .line 16
-    :goto_f
+    :goto_0
     iget-object v2, p0, Lorg/conscrypt/TrustedCertificateIndex;->subjectToTrustAnchors:Ljava/util/Map;
 
     .line 17
@@ -787,7 +787,7 @@
     monitor-enter v2
 
     .line 19
-    :try_start_12
+    :try_start_0
     iget-object v3, p0, Lorg/conscrypt/TrustedCertificateIndex;->subjectToTrustAnchors:Ljava/util/Map;
 
     .line 20
@@ -804,7 +804,7 @@
 
     .line 26
     .line 27
-    if-nez v3, :cond_2a
+    if-nez v3, :cond_1
 
     .line 28
     .line 29
@@ -829,18 +829,18 @@
     .line 38
     .line 39
     .line 40
-    goto :goto_48
+    goto :goto_1
 
     .line 41
-    :catchall_28
+    :catchall_0
     move-exception p1
 
     .line 42
-    goto :goto_4d
+    goto :goto_2
 
     .line 43
-    :cond_2a
-    if-eqz v0, :cond_48
+    :cond_1
+    if-eqz v0, :cond_3
 
     .line 44
     .line 45
@@ -852,7 +852,7 @@
     move-result-object v1
 
     .line 49
-    :cond_30
+    :cond_2
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 50
@@ -861,7 +861,7 @@
     move-result v4
 
     .line 53
-    if-eqz v4, :cond_48
+    if-eqz v4, :cond_3
 
     .line 54
     .line 55
@@ -893,7 +893,7 @@
     move-result v4
 
     .line 69
-    if-eqz v4, :cond_30
+    if-eqz v4, :cond_2
 
     .line 70
     .line 71
@@ -903,8 +903,8 @@
     return-void
 
     .line 73
-    :cond_48
-    :goto_48
+    :cond_3
+    :goto_1
     invoke-interface {v3, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 74
@@ -916,25 +916,25 @@
     return-void
 
     .line 78
-    :goto_4d
+    :goto_2
     monitor-exit v2
-    :try_end_4e
-    .catchall {:try_start_12 .. :try_end_4e} :catchall_28
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 79
-    goto :goto_50
+    goto :goto_4
 
     .line 80
-    :goto_4f
+    :goto_3
     throw p1
 
     .line 81
-    :goto_50
-    goto :goto_4f
+    :goto_4
+    goto :goto_3
 .end method
 
 .method public reset()V
-    .registers 3
+    .locals 2
 
     .line 15
     iget-object v0, p0, Lorg/conscrypt/TrustedCertificateIndex;->subjectToTrustAnchors:Ljava/util/Map;
@@ -942,7 +942,7 @@
     monitor-enter v0
 
     .line 16
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Lorg/conscrypt/TrustedCertificateIndex;->subjectToTrustAnchors:Ljava/util/Map;
 
     invoke-interface {v1}, Ljava/util/Map;->clear()V
@@ -952,18 +952,18 @@
 
     return-void
 
-    :catchall_a
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public reset(Ljava/util/Set;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -981,7 +981,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     invoke-virtual {p0}, Lorg/conscrypt/TrustedCertificateIndex;->reset()V
 
     .line 5
@@ -998,13 +998,13 @@
     return-void
 
     .line 12
-    :catchall_b
+    :catchall_0
     move-exception p1
 
     .line 13
     monitor-exit v0
-    :try_end_d
-    .catchall {:try_start_3 .. :try_end_d} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 14
     throw p1

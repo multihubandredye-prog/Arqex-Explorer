@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>([BLlibs/eh0;)V
-    .registers 8
+    .locals 5
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
     const/4 v2, 0x0
 
     .line 12
-    if-ne v0, v1, :cond_4e
+    if-ne v0, v1, :cond_0
 
     .line 13
     .line 14
@@ -58,7 +58,7 @@
 
     .line 17
     .line 18
-    :try_start_11
+    :try_start_0
     iget-object v0, p2, Llibs/eh0;->Y:Ljava/lang/String;
 
     .line 19
@@ -168,15 +168,15 @@
 
     .line 70
     iput-object p1, p0, Llibs/hh0;->Lambda:Llibs/aw0;
-    :try_end_47
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_11 .. :try_end_47} :catch_48
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 71
     .line 72
     return-void
 
     .line 73
-    :catch_48
+    :catch_0
     const-string p1, "Unsupported hash algorithm"
 
     .line 74
@@ -189,7 +189,7 @@
     throw v2
 
     .line 79
-    :cond_4e
+    :cond_0
     const-string p1, "seed length is wrong"
 
     .line 80
@@ -203,7 +203,7 @@
 .end method
 
 .method public constructor <init>([B[B[BLlibs/aw0;Llibs/eh0;)V
-    .registers 6
+    .locals 0
 
     .line 85
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

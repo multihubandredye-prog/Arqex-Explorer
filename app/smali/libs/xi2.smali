@@ -18,7 +18,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/16 v0, 0x100
@@ -29,7 +29,7 @@
 
     .line 4
     .line 5
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     .line 6
     .line 7
@@ -41,7 +41,7 @@
     return-void
 
     .line 11
-    :array_a
+    :array_0
     .array-data 1
         -0x27t
         0x78t
@@ -303,7 +303,7 @@
 .end method
 
 .method public synthetic constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -312,7 +312,7 @@
 .end method
 
 .method public constructor <init>(Llibs/xi2;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -344,7 +344,7 @@
 .end method
 
 .method public static c(I[B)[I
-    .registers 10
+    .locals 8
 
     .line 1
     const/16 v0, 0x80
@@ -361,7 +361,7 @@
     const/4 v3, 0x0
 
     .line 7
-    :goto_6
+    :goto_0
     array-length v4, p1
 
     .line 8
@@ -369,7 +369,7 @@
 
     .line 9
     .line 10
-    if-eq v3, v4, :cond_13
+    if-eq v3, v4, :cond_0
 
     .line 11
     .line 12
@@ -388,10 +388,10 @@
 
     .line 18
     .line 19
-    goto :goto_6
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     array-length p1, p1
 
     .line 21
@@ -399,7 +399,7 @@
 
     .line 22
     .line 23
-    if-ge p1, v0, :cond_30
+    if-ge p1, v0, :cond_2
 
     .line 24
     .line 25
@@ -414,7 +414,7 @@
     const/4 v6, 0x0
 
     .line 30
-    :goto_1d
+    :goto_1
     add-int/lit8 v7, v6, 0x1
 
     .line 31
@@ -444,25 +444,25 @@
 
     .line 42
     .line 43
-    if-lt v6, v0, :cond_2d
+    if-lt v6, v0, :cond_1
 
     .line 44
     .line 45
-    goto :goto_30
+    goto :goto_2
 
     .line 46
-    :cond_2d
+    :cond_1
     move p1, v6
 
     .line 47
     move v6, v7
 
     .line 48
-    goto :goto_1d
+    goto :goto_1
 
     .line 49
-    :cond_30
-    :goto_30
+    :cond_2
+    :goto_2
     add-int/lit8 p1, p0, 0x7
 
     .line 50
@@ -508,8 +508,8 @@
 
     .line 69
     .line 70
-    :goto_45
-    if-ltz v0, :cond_54
+    :goto_3
+    if-ltz v0, :cond_3
 
     .line 71
     .line 72
@@ -539,10 +539,10 @@
 
     .line 83
     .line 84
-    goto :goto_45
+    goto :goto_3
 
     .line 85
-    :cond_54
+    :cond_3
     const/16 p0, 0x40
 
     .line 86
@@ -551,8 +551,8 @@
 
     .line 88
     .line 89
-    :goto_58
-    if-eq v2, p0, :cond_6a
+    :goto_4
+    if-eq v2, p0, :cond_4
 
     .line 90
     .line 91
@@ -587,15 +587,15 @@
 
     .line 105
     .line 106
-    goto :goto_58
+    goto :goto_4
 
     .line 107
-    :cond_6a
+    :cond_4
     return-object p1
 .end method
 
 .method public static d(II)I
-    .registers 3
+    .locals 1
 
     .line 1
     const v0, 0xffff
@@ -626,7 +626,7 @@
 
 # virtual methods
 .method public a(ZLlibs/et;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-boolean p1, p0, Llibs/xi2;->X:Z
@@ -637,7 +637,7 @@
 
     .line 4
     .line 5
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_0
 
     .line 6
     .line 7
@@ -668,12 +668,12 @@
     return-void
 
     .line 20
-    :cond_13
+    :cond_0
     instance-of p1, p2, Llibs/hh1;
 
     .line 21
     .line 22
-    if-eqz p1, :cond_25
+    if-eqz p1, :cond_1
 
     .line 23
     .line 24
@@ -707,7 +707,7 @@
     return-void
 
     .line 38
-    :cond_25
+    :cond_1
     const-string p1, "invalid parameter passed to RC2 init - "
 
     .line 39
@@ -729,7 +729,7 @@
 .end method
 
 .method public b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "RC2"
@@ -740,7 +740,7 @@
 .end method
 
 .method public i()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x8
@@ -751,7 +751,7 @@
 .end method
 
 .method public r(II[B[B)I
-    .registers 23
+    .locals 18
 
     .line 1
     move-object/from16 v0, p0
@@ -777,7 +777,7 @@
     const/4 v4, 0x0
 
     .line 12
-    if-eqz v3, :cond_362
+    if-eqz v3, :cond_9
 
     .line 13
     .line 14
@@ -788,7 +788,7 @@
     array-length v5, v1
 
     .line 17
-    if-gt v3, v5, :cond_35c
+    if-gt v3, v5, :cond_8
 
     .line 18
     .line 19
@@ -799,7 +799,7 @@
     array-length v5, v2
 
     .line 22
-    if-gt v3, v5, :cond_356
+    if-gt v3, v5, :cond_7
 
     .line 23
     .line 24
@@ -827,7 +827,7 @@
 
     .line 35
     .line 36
-    if-eqz v3, :cond_1b8
+    if-eqz v3, :cond_3
 
     .line 37
     .line 38
@@ -947,7 +947,7 @@
     add-int/2addr v12, v1
 
     .line 92
-    :goto_5b
+    :goto_0
     iget-object v1, v0, Llibs/xi2;->Y:Ljava/lang/Object;
 
     .line 93
@@ -972,7 +972,7 @@
     const/4 v9, 0x5
 
     .line 102
-    if-gt v4, v8, :cond_b9
+    if-gt v4, v8, :cond_0
 
     .line 103
     .line 104
@@ -1151,10 +1151,10 @@
 
     .line 184
     .line 185
-    goto :goto_5b
+    goto :goto_0
 
     .line 186
-    :cond_b9
+    :cond_0
     and-int/lit8 v4, v3, 0x3f
 
     .line 187
@@ -1199,7 +1199,7 @@
     add-int/2addr v3, v1
 
     .line 206
-    :goto_cd
+    :goto_1
     iget-object v1, v0, Llibs/xi2;->Y:Ljava/lang/Object;
 
     .line 207
@@ -1208,7 +1208,7 @@
 
     .line 209
     .line 210
-    if-gt v7, v6, :cond_120
+    if-gt v7, v6, :cond_1
 
     .line 211
     .line 212
@@ -1380,10 +1380,10 @@
 
     .line 287
     .line 288
-    goto :goto_cd
+    goto :goto_1
 
     .line 289
-    :cond_120
+    :cond_1
     and-int/lit8 v4, v3, 0x3f
 
     .line 290
@@ -1428,12 +1428,12 @@
     add-int/2addr v3, v1
 
     .line 309
-    :goto_134
+    :goto_2
     const/16 v1, 0x40
 
     .line 310
     .line 311
-    if-ge v5, v1, :cond_189
+    if-ge v5, v1, :cond_2
 
     .line 312
     .line 313
@@ -1613,10 +1613,10 @@
 
     .line 392
     .line 393
-    goto :goto_134
+    goto :goto_2
 
     .line 394
-    :cond_189
+    :cond_2
     int-to-byte v1, v12
 
     .line 395
@@ -1720,7 +1720,7 @@
     return v16
 
     .line 441
-    :cond_1b8
+    :cond_3
     const/16 v16, 0x8
 
     .line 442
@@ -1849,7 +1849,7 @@
 
     .line 502
     .line 503
-    :goto_1f6
+    :goto_3
     iget-object v11, v0, Llibs/xi2;->Y:Ljava/lang/Object;
 
     .line 504
@@ -1874,7 +1874,7 @@
 
     .line 514
     .line 515
-    if-lt v1, v5, :cond_252
+    if-lt v1, v5, :cond_4
 
     .line 516
     .line 517
@@ -2047,10 +2047,10 @@
 
     .line 593
     .line 594
-    goto :goto_1f6
+    goto :goto_3
 
     .line 595
-    :cond_252
+    :cond_4
     and-int/lit8 v1, v4, 0x3f
 
     .line 596
@@ -2095,7 +2095,7 @@
     sub-int/2addr v10, v1
 
     .line 615
-    :goto_266
+    :goto_4
     iget-object v1, v0, Llibs/xi2;->Y:Ljava/lang/Object;
 
     .line 616
@@ -2104,7 +2104,7 @@
 
     .line 618
     .line 619
-    if-lt v6, v7, :cond_2bc
+    if-lt v6, v7, :cond_5
 
     .line 620
     .line 621
@@ -2279,10 +2279,10 @@
 
     .line 699
     .line 700
-    goto :goto_266
+    goto :goto_4
 
     .line 701
-    :cond_2bc
+    :cond_5
     and-int/lit8 v5, v4, 0x3f
 
     .line 702
@@ -2327,8 +2327,8 @@
     sub-int/2addr v10, v1
 
     .line 721
-    :goto_2d0
-    if-ltz v8, :cond_327
+    :goto_5
+    if-ltz v8, :cond_6
 
     .line 722
     .line 723
@@ -2512,10 +2512,10 @@
 
     .line 806
     .line 807
-    goto :goto_2d0
+    goto :goto_5
 
     .line 808
-    :cond_327
+    :cond_6
     int-to-byte v1, v10
 
     .line 809
@@ -2619,7 +2619,7 @@
     return v16
 
     .line 855
-    :cond_356
+    :cond_7
     const-string v1, "output buffer too short"
 
     .line 856
@@ -2632,7 +2632,7 @@
     return v4
 
     .line 861
-    :cond_35c
+    :cond_8
     const-string v1, "input buffer too short"
 
     .line 862
@@ -2645,7 +2645,7 @@
     return v4
 
     .line 867
-    :cond_362
+    :cond_9
     const-string v1, "RC2 engine not initialised"
 
     .line 868
@@ -2659,7 +2659,7 @@
 .end method
 
 .method public reset()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void

@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/widgets/MiSliderLayout;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/hv1;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/hv1;->X:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_24
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -64,7 +64,7 @@
     return-void
 
     .line 14
-    :pswitch_d
+    :pswitch_0
     sget v0, Lcom/mixplorer/widgets/MiSliderLayout;->Two:I
 
     .line 15
@@ -73,7 +73,7 @@
 
     .line 17
     .line 18
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_1
 
     .line 19
     .line 20
@@ -81,7 +81,7 @@
 
     .line 21
     .line 22
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 23
     .line 24
@@ -90,7 +90,7 @@
     .line 25
     .line 26
     .line 27
-    :cond_1a
+    :cond_0
     iget-object v0, v1, Lcom/mixplorer/widgets/MiSliderLayout;->Lambda:Llibs/fb3;
 
     .line 28
@@ -99,7 +99,7 @@
 
     .line 30
     .line 31
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_1
 
     .line 32
     .line 33
@@ -108,12 +108,12 @@
     .line 34
     .line 35
     .line 36
-    :cond_23
+    :cond_1
     return-void
 
     .line 37
-    :pswitch_data_24
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_d
+        :pswitch_0
     .end packed-switch
 .end method

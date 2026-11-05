@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/vq0;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Llibs/ry1;-><init>(Llibs/vq0;I)V
@@ -22,7 +22,7 @@
 
 # virtual methods
 .method public final a()Llibs/c7;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/ny1;->e:Llibs/vq0;

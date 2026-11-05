@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/InputStreamReader;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/bk;-><init>(Ljava/io/Reader;)V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final close()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -62,7 +62,7 @@
 .end method
 
 .method public final read()I
-    .registers 6
+    .locals 5
 
     .line 72
     invoke-super {p0}, Llibs/bk;->read()I
@@ -73,19 +73,19 @@
 
     const/16 v3, 0xd
 
-    if-eq v0, v3, :cond_12
+    if-eq v0, v3, :cond_0
 
     const/16 v4, 0xa
 
-    if-ne v0, v4, :cond_17
+    if-ne v0, v4, :cond_1
 
     .line 73
     iget v4, p0, Llibs/cm0;->Pi:I
 
-    if-eq v4, v3, :cond_17
+    if-eq v4, v3, :cond_1
 
     .line 74
-    :cond_12
+    :cond_0
     iget-wide v3, p0, Llibs/cm0;->Rho:J
 
     add-long/2addr v3, v1
@@ -93,7 +93,7 @@
     iput-wide v3, p0, Llibs/cm0;->Rho:J
 
     .line 75
-    :cond_17
+    :cond_1
     iput v0, p0, Llibs/cm0;->Pi:I
 
     .line 76
@@ -107,10 +107,10 @@
 .end method
 
 .method public final read([CII)I
-    .registers 10
+    .locals 6
 
     .line 1
-    if-nez p3, :cond_4
+    if-nez p3, :cond_0
 
     .line 2
     .line 3
@@ -120,7 +120,7 @@
     return p1
 
     .line 5
-    :cond_4
+    :cond_0
     invoke-super {p0, p1, p2, p3}, Llibs/bk;->read([CII)I
 
     .line 6
@@ -129,19 +129,19 @@
     move-result p3
 
     .line 9
-    if-lez p3, :cond_3b
+    if-lez p3, :cond_5
 
     .line 10
     .line 11
     move v0, p2
 
     .line 12
-    :goto_b
+    :goto_0
     add-int v1, p2, p3
 
     .line 13
     .line 14
-    if-ge v0, v1, :cond_34
+    if-ge v0, v1, :cond_4
 
     .line 15
     .line 16
@@ -161,11 +161,11 @@
 
     .line 23
     .line 24
-    if-ne v1, v2, :cond_2a
+    if-ne v1, v2, :cond_2
 
     .line 25
     .line 26
-    if-lez v0, :cond_20
+    if-lez v0, :cond_1
 
     .line 27
     .line 28
@@ -177,16 +177,16 @@
 
     .line 31
     .line 32
-    goto :goto_22
+    goto :goto_1
 
     .line 33
-    :cond_20
+    :cond_1
     iget v1, p0, Llibs/cm0;->Pi:I
 
     .line 34
     .line 35
-    :goto_22
-    if-eq v5, v1, :cond_31
+    :goto_1
+    if-eq v5, v1, :cond_3
 
     .line 36
     .line 37
@@ -201,11 +201,11 @@
 
     .line 41
     .line 42
-    goto :goto_31
+    goto :goto_2
 
     .line 43
-    :cond_2a
-    if-ne v1, v5, :cond_31
+    :cond_2
+    if-ne v1, v5, :cond_3
 
     .line 44
     .line 45
@@ -220,16 +220,16 @@
 
     .line 49
     .line 50
-    :cond_31
-    :goto_31
+    :cond_3
+    :goto_2
     add-int/lit8 v0, v0, 0x1
 
     .line 51
     .line 52
-    goto :goto_b
+    goto :goto_0
 
     .line 53
-    :cond_34
+    :cond_4
     add-int/lit8 v1, v1, -0x1
 
     .line 54
@@ -242,14 +242,14 @@
 
     .line 58
     .line 59
-    goto :goto_40
+    goto :goto_3
 
     .line 60
-    :cond_3b
+    :cond_5
     const/4 p1, -0x1
 
     .line 61
-    if-ne p3, p1, :cond_40
+    if-ne p3, p1, :cond_6
 
     .line 62
     .line 63
@@ -257,8 +257,8 @@
 
     .line 64
     .line 65
-    :cond_40
-    :goto_40
+    :cond_6
+    :goto_3
     iget-wide p1, p0, Llibs/cm0;->Sigma:J
 
     .line 66
@@ -277,7 +277,7 @@
 .end method
 
 .method public final w()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     invoke-super {p0}, Llibs/bk;->w()Ljava/lang/String;
@@ -288,7 +288,7 @@
     move-result-object v0
 
     .line 5
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -318,7 +318,7 @@
     return-object v0
 
     .line 19
-    :cond_12
+    :cond_0
     const/4 v1, -0x1
 
     .line 20
@@ -330,7 +330,7 @@
 .end method
 
 .method public final x()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1

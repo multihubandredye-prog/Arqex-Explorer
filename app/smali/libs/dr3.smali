@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/gr3;JJI)V
-    .registers 8
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/io/OutputStream;-><init>()V
@@ -66,21 +66,21 @@
 
 # virtual methods
 .method public final close()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-boolean v0, p0, Llibs/dr3;->Xi:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     const/4 v0, 0x1
 
     .line 7
@@ -146,14 +146,14 @@
 .end method
 
 .method public final flush()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final write(I)V
-    .registers 9
+    .locals 7
 
     .line 79
     iget-object v0, p0, Llibs/dr3;->Nu:Llibs/gr3;
@@ -171,7 +171,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_34
+    if-nez v1, :cond_0
 
     .line 81
     iget-object v1, p0, Llibs/dr3;->X:Ljava/nio/ByteBuffer;
@@ -216,7 +216,7 @@
     return-void
 
     .line 87
-    :cond_34
+    :cond_0
     const-string p1, "Busy!"
 
     invoke-static {p1}, Llibs/ic0;->t(Ljava/lang/String;)V
@@ -225,7 +225,7 @@
 .end method
 
 .method public final write([B)V
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -238,7 +238,7 @@
 .end method
 
 .method public final write([BII)V
-    .registers 11
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/dr3;->Nu:Llibs/gr3;
@@ -269,7 +269,7 @@
     move-result v1
 
     .line 15
-    if-nez v1, :cond_47
+    if-nez v1, :cond_2
 
     .line 16
     .line 17
@@ -277,7 +277,7 @@
 
     .line 18
     .line 19
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_0
 
     .line 20
     .line 21
@@ -289,11 +289,11 @@
     move-result-object v1
 
     .line 25
-    if-eq v1, p1, :cond_20
+    if-eq v1, p1, :cond_1
 
     .line 26
     .line 27
-    :cond_1a
+    :cond_0
     invoke-static {p1}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
 
     .line 28
@@ -306,7 +306,7 @@
 
     .line 32
     .line 33
-    :cond_20
+    :cond_1
     iget-object p1, p0, Llibs/dr3;->Y:Ljava/nio/ByteBuffer;
 
     .line 34
@@ -386,7 +386,7 @@
     return-void
 
     .line 72
-    :cond_47
+    :cond_2
     const-string p1, "Busy!"
 
     .line 73

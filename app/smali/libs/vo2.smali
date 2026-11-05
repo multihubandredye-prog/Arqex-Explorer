@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/vo2;
@@ -33,7 +33,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -55,7 +55,7 @@
 .end method
 
 .method public synthetic constructor <init>(BI)V
-    .registers 3
+    .locals 0
 
     .line 9
     iput-byte p1, p0, Llibs/vo2;->c:B
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public final b(Llibs/za;Ljava/util/Locale;)Ljava/lang/String;
-    .registers 11
+    .locals 8
 
     .line 1
     iget-byte p1, p0, Llibs/vo2;->c:B
@@ -92,7 +92,7 @@
 
     .line 9
     .line 10
-    packed-switch p1, :pswitch_data_a4
+    packed-switch p1, :pswitch_data_0
 
     .line 11
     .line 12
@@ -158,11 +158,11 @@
     long-to-int p2, v0
 
     .line 42
-    if-eqz p2, :cond_33
+    if-eqz p2, :cond_1
 
     .line 43
     .line 44
-    if-eq p2, v2, :cond_30
+    if-eq p2, v2, :cond_0
 
     .line 45
     .line 46
@@ -170,23 +170,23 @@
 
     .line 47
     .line 48
-    goto :goto_35
+    goto :goto_0
 
     .line 49
-    :cond_30
+    :cond_0
     const-string p2, "%p"
 
     .line 50
     .line 51
-    goto :goto_35
+    goto :goto_0
 
     .line 52
-    :cond_33
+    :cond_1
     const-string p2, "%"
 
     .line 53
     .line 54
-    :goto_35
+    :goto_0
     invoke-virtual {p1, p2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     .line 55
@@ -198,7 +198,7 @@
     return-object p1
 
     .line 59
-    :pswitch_3a
+    :pswitch_0
     invoke-static {v3}, Ljava/lang/Float;->intBitsToFloat(I)F
 
     .line 60
@@ -218,7 +218,7 @@
     return-object p1
 
     .line 68
-    :pswitch_43
+    :pswitch_1
     and-int/lit16 p1, v3, 0xff
 
     .line 69
@@ -226,36 +226,36 @@
     int-to-short p1, p1
 
     .line 71
-    if-eqz p1, :cond_70
+    if-eqz p1, :cond_7
 
     .line 72
     .line 73
-    if-eq p1, v2, :cond_6d
+    if-eq p1, v2, :cond_6
 
     .line 74
     .line 75
-    if-eq p1, v0, :cond_6a
+    if-eq p1, v0, :cond_5
 
     .line 76
     .line 77
     const/4 p2, 0x3
 
     .line 78
-    if-eq p1, p2, :cond_67
+    if-eq p1, p2, :cond_4
 
     .line 79
     .line 80
     const/4 p2, 0x4
 
     .line 81
-    if-eq p1, p2, :cond_64
+    if-eq p1, p2, :cond_3
 
     .line 82
     .line 83
     const/4 p2, 0x5
 
     .line 84
-    if-eq p1, p2, :cond_61
+    if-eq p1, p2, :cond_2
 
     .line 85
     .line 86
@@ -280,55 +280,55 @@
     move-result-object p1
 
     .line 97
-    goto :goto_72
+    goto :goto_1
 
     .line 98
-    :cond_61
+    :cond_2
     const-string p1, "mm"
 
     .line 99
     .line 100
-    goto :goto_72
+    goto :goto_1
 
     .line 101
-    :cond_64
+    :cond_3
     const-string p1, "in"
 
     .line 102
     .line 103
-    goto :goto_72
+    goto :goto_1
 
     .line 104
-    :cond_67
+    :cond_4
     const-string p1, "pt"
 
     .line 105
     .line 106
-    goto :goto_72
+    goto :goto_1
 
     .line 107
-    :cond_6a
+    :cond_5
     const-string p1, "sp"
 
     .line 108
     .line 109
-    goto :goto_72
+    goto :goto_1
 
     .line 110
-    :cond_6d
+    :cond_6
     const-string p1, "dp"
 
     .line 111
     .line 112
-    goto :goto_72
+    goto :goto_1
 
     .line 113
-    :cond_70
+    :cond_7
     const-string p1, "px"
 
     .line 114
     .line 115
-    :goto_72
+    :goto_1
     new-instance p2, Ljava/lang/StringBuilder;
 
     .line 116
@@ -353,15 +353,15 @@
     return-object p1
 
     .line 127
-    :pswitch_7e
-    if-eqz v3, :cond_81
+    :pswitch_2
+    if-eqz v3, :cond_8
 
     .line 128
     .line 129
     const/4 v1, 0x1
 
     .line 130
-    :cond_81
+    :cond_8
     invoke-static {v1}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
 
     .line 131
@@ -373,7 +373,7 @@
     return-object p1
 
     .line 135
-    :pswitch_86
+    :pswitch_3
     int-to-long v4, v3
 
     .line 136
@@ -392,7 +392,7 @@
 
     .line 142
     .line 143
-    if-nez p1, :cond_92
+    if-nez p1, :cond_9
 
     .line 144
     .line 145
@@ -400,7 +400,7 @@
 
     .line 146
     .line 147
-    :cond_92
+    :cond_9
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 148
@@ -436,16 +436,16 @@
     return-object p1
 
     .line 164
-    :pswitch_a3
+    :pswitch_4
     return-object p2
 
     .line 165
-    :pswitch_data_a4
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a3
-        :pswitch_86
-        :pswitch_7e
-        :pswitch_43
-        :pswitch_3a
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

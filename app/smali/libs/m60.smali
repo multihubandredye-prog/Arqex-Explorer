@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/m60;->a:B
@@ -30,14 +30,14 @@
 
 # virtual methods
 .method public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/m60;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_44
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -71,7 +71,7 @@
     return-object v0
 
     .line 21
-    :pswitch_14
+    :pswitch_0
     new-instance v0, Llibs/xv1;
 
     .line 22
@@ -96,7 +96,7 @@
     return-object v0
 
     .line 33
-    :pswitch_20
+    :pswitch_1
     new-instance v0, Llibs/xv1;
 
     .line 34
@@ -121,7 +121,7 @@
     return-object v0
 
     .line 45
-    :pswitch_2c
+    :pswitch_2
     new-instance v0, Llibs/xv1;
 
     .line 46
@@ -146,7 +146,7 @@
     return-object v0
 
     .line 57
-    :pswitch_38
+    :pswitch_3
     new-instance v0, Llibs/xv1;
 
     .line 58
@@ -171,11 +171,11 @@
     return-object v0
 
     .line 69
-    :pswitch_data_44
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_38
-        :pswitch_2c
-        :pswitch_20
-        :pswitch_14
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

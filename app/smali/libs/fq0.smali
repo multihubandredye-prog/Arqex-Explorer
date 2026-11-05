@@ -11,7 +11,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/fq0;->X:B
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/fq0;->X:B
@@ -44,7 +44,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_30
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -68,7 +68,7 @@
     return-void
 
     .line 17
-    :pswitch_10
+    :pswitch_0
     check-cast v1, Llibs/xd3;
 
     .line 18
@@ -86,7 +86,7 @@
     .line 24
     .line 25
     .line 26
-    :try_start_19
+    :try_start_0
     invoke-virtual {v1}, Llibs/xd3;->b()Ljava/util/concurrent/ExecutorService;
 
     .line 27
@@ -104,17 +104,17 @@
     .line 33
     .line 34
     invoke-interface {v0, v2, v3, v1}, Ljava/util/concurrent/ExecutorService;->awaitTermination(JLjava/util/concurrent/TimeUnit;)Z
-    :try_end_24
-    .catch Ljava/lang/InterruptedException; {:try_start_19 .. :try_end_24} :catch_24
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 35
     .line 36
     .line 37
-    :catch_24
+    :catch_0
     return-void
 
     .line 38
-    :pswitch_25
+    :pswitch_1
     check-cast v1, Llibs/gq0;
 
     .line 39
@@ -123,30 +123,30 @@
 
     .line 41
     .line 42
-    if-nez v0, :cond_2c
+    if-nez v0, :cond_0
 
     .line 43
     .line 44
-    goto :goto_2f
+    goto :goto_0
 
     .line 45
-    :cond_2c
-    :try_start_2c
+    :cond_0
+    :try_start_1
     invoke-virtual {v0}, Ljava/io/BufferedWriter;->close()V
-    :try_end_2f
-    .catch Ljava/io/IOException; {:try_start_2c .. :try_end_2f} :catch_2f
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 46
     .line 47
     .line 48
-    :catch_2f
-    :goto_2f
+    :catch_1
+    :goto_0
     return-void
 
     .line 49
-    :pswitch_data_30
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_25
-        :pswitch_10
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

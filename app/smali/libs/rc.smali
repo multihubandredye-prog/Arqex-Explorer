@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Comparable;ZB)V
-    .registers 5
+    .locals 0
 
     .line 14
     iput-byte p4, p0, Llibs/rc;->X:B
@@ -35,7 +35,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/String;ZLjava/lang/String;)V
-    .registers 5
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 11
+    .locals 10
 
     .line 1
     iget-byte v0, p0, Llibs/rc;->X:B
@@ -87,7 +87,7 @@
 
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_ee
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
@@ -108,7 +108,7 @@
     return-void
 
     .line 20
-    :pswitch_13
+    :pswitch_0
     check-cast v2, Ljava/lang/String;
 
     .line 21
@@ -117,7 +117,7 @@
 
     .line 23
     .line 24
-    :try_start_17
+    :try_start_0
     new-instance v0, Landroid/os/Bundle;
 
     .line 25
@@ -227,8 +227,8 @@
     .line 83
     .line 84
     move-result-object v4
-    :try_end_54
-    .catchall {:try_start_17 .. :try_end_54} :catchall_dc
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 85
     const/4 v5, 0x2
@@ -248,11 +248,11 @@
 
     .line 91
     .line 92
-    if-eqz v1, :cond_6d
+    if-eqz v1, :cond_0
 
     .line 93
     .line 94
-    :try_start_5d
+    :try_start_1
     invoke-virtual {v3, v8}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     .line 95
@@ -284,10 +284,10 @@
 
     .line 108
     .line 109
-    goto :goto_77
+    goto :goto_0
 
     .line 110
-    :cond_6d
+    :cond_0
     invoke-virtual {v3, v8}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     .line 111
@@ -308,7 +308,7 @@
 
     .line 119
     .line 120
-    :goto_77
+    :goto_0
     invoke-virtual {v0, v4, v3}, Landroid/os/Bundle;->putStringArray(Ljava/lang/String;[Ljava/lang/String;)V
 
     .line 121
@@ -486,17 +486,17 @@
     .line 217
     .line 218
     invoke-static {v1}, Llibs/rb2;->u(Landroid/content/Intent;)V
-    :try_end_dc
-    .catchall {:try_start_5d .. :try_end_dc} :catchall_dc
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 219
     .line 220
     .line 221
-    :catchall_dc
+    :catchall_0
     return-void
 
     .line 222
-    :pswitch_dd
+    :pswitch_1
     check-cast v3, Lcom/mixplorer/activities/a;
 
     .line 223
@@ -518,7 +518,7 @@
     .line 231
     .line 232
     .line 233
-    if-eqz v1, :cond_ed
+    if-eqz v1, :cond_1
 
     .line 234
     .line 235
@@ -527,13 +527,13 @@
     .line 236
     .line 237
     .line 238
-    :cond_ed
+    :cond_1
     return-void
 
     .line 239
-    :pswitch_data_ee
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_dd
-        :pswitch_13
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

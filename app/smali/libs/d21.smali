@@ -17,7 +17,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r31;ZLlibs/r90;Llibs/xq3;Llibs/xt1;)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 21
     invoke-direct {p0}, Ljavax/crypto/CipherSpi;-><init>()V
@@ -38,7 +38,7 @@
 .end method
 
 .method public constructor <init>(Lorg/conscrypt/OpenSSLCipher$Mode;Lorg/conscrypt/OpenSSLCipher$Padding;)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljavax/crypto/CipherSpi;-><init>()V
@@ -82,45 +82,45 @@
 .end method
 
 .method private checkAndSetEncodedKey(ILjava/security/Key;)[B
-    .registers 5
+    .locals 2
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-eq p1, v0, :cond_1e
+    if-eq p1, v0, :cond_3
 
     .line 3
     .line 4
     const/4 v1, 0x3
 
     .line 5
-    if-ne p1, v1, :cond_7
+    if-ne p1, v1, :cond_0
 
     .line 6
     .line 7
-    goto :goto_1e
+    goto :goto_1
 
     .line 8
-    :cond_7
+    :cond_0
     const/4 v0, 0x2
 
     .line 9
-    if-eq p1, v0, :cond_1a
+    if-eq p1, v0, :cond_2
 
     .line 10
     .line 11
     const/4 v0, 0x4
 
     .line 12
-    if-ne p1, v0, :cond_e
+    if-ne p1, v0, :cond_1
 
     .line 13
     .line 14
-    goto :goto_1a
+    goto :goto_0
 
     .line 15
-    :cond_e
+    :cond_1
     new-instance p2, Ljava/security/InvalidParameterException;
 
     .line 16
@@ -145,8 +145,8 @@
     throw p2
 
     .line 27
-    :cond_1a
-    :goto_1a
+    :cond_2
+    :goto_0
     const/4 p1, 0x0
 
     .line 28
@@ -154,16 +154,16 @@
 
     .line 29
     .line 30
-    goto :goto_20
+    goto :goto_2
 
     .line 31
-    :cond_1e
-    :goto_1e
+    :cond_3
+    :goto_1
     iput-boolean v0, p0, Lorg/conscrypt/OpenSSLCipher;->encrypting:Z
 
     .line 32
     .line 33
-    :goto_20
+    :goto_2
     instance-of p1, p2, Ljavax/crypto/SecretKey;
 
     .line 34
@@ -171,7 +171,7 @@
     const/4 v0, 0x0
 
     .line 36
-    if-eqz p1, :cond_38
+    if-eqz p1, :cond_5
 
     .line 37
     .line 38
@@ -183,7 +183,7 @@
     move-result-object p1
 
     .line 42
-    if-eqz p1, :cond_32
+    if-eqz p1, :cond_4
 
     .line 43
     .line 44
@@ -202,7 +202,7 @@
     return-object p1
 
     .line 51
-    :cond_32
+    :cond_4
     const-string p1, "key.getEncoded() == null"
 
     .line 52
@@ -215,7 +215,7 @@
     return-object v0
 
     .line 57
-    :cond_38
+    :cond_5
     const-string p1, "Only SecretKey is supported"
 
     .line 58
@@ -240,7 +240,7 @@
 .end method
 
 .method public engineGetBlockSize()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/OpenSSLCipher;->blockSize:I
@@ -251,7 +251,7 @@
 .end method
 
 .method public engineGetIV()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLCipher;->iv:[B
@@ -262,7 +262,7 @@
 .end method
 
 .method public engineGetKeySize(Ljava/security/Key;)I
-    .registers 4
+    .locals 2
 
     .line 1
     instance-of v0, p1, Ljavax/crypto/SecretKey;
@@ -272,7 +272,7 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1
 
     .line 5
     .line 6
@@ -284,7 +284,7 @@
     move-result-object p1
 
     .line 10
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_0
 
     .line 11
     .line 12
@@ -306,7 +306,7 @@
     return p1
 
     .line 20
-    :cond_13
+    :cond_0
     const-string p1, "key.getEncoded() == null"
 
     .line 21
@@ -319,7 +319,7 @@
     return v1
 
     .line 26
-    :cond_19
+    :cond_1
     const-string p1, "Only SecretKey is supported"
 
     .line 27
@@ -333,7 +333,7 @@
 .end method
 
 .method public engineGetOutputSize(I)I
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p0, p1}, Lorg/conscrypt/OpenSSLCipher;->getOutputSizeForUpdate(I)I
@@ -364,7 +364,7 @@
 .end method
 
 .method public engineGetParameters()Ljava/security/AlgorithmParameters;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLCipher;->iv:[B
@@ -374,18 +374,18 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 5
     .line 6
     array-length v0, v0
 
     .line 7
-    if-lez v0, :cond_1b
+    if-lez v0, :cond_0
 
     .line 8
     .line 9
-    :try_start_8
+    :try_start_0
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLCipher;->getBaseCipherName()Ljava/lang/String;
 
     .line 10
@@ -416,9 +416,9 @@
     .line 23
     .line 24
     invoke-virtual {v0, v2}, Ljava/security/AlgorithmParameters;->init(Ljava/security/spec/AlgorithmParameterSpec;)V
-    :try_end_1a
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_8 .. :try_end_1a} :catch_1b
-    .catch Ljava/security/spec/InvalidParameterSpecException; {:try_start_8 .. :try_end_1a} :catch_1b
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/security/spec/InvalidParameterSpecException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 25
     .line 26
@@ -426,13 +426,13 @@
     return-object v0
 
     .line 28
-    :catch_1b
-    :cond_1b
+    :catch_0
+    :cond_0
     return-object v1
 .end method
 
 .method public engineInit(ILjava/security/Key;Ljava/security/AlgorithmParameters;Ljava/security/SecureRandom;)V
-    .registers 5
+    .locals 0
 
     .line 18
     invoke-virtual {p0, p3}, Lorg/conscrypt/OpenSSLCipher;->getParameterSpec(Ljava/security/AlgorithmParameters;)Ljava/security/spec/AlgorithmParameterSpec;
@@ -446,7 +446,7 @@
 .end method
 
 .method public engineInit(ILjava/security/Key;Ljava/security/SecureRandom;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Lorg/conscrypt/OpenSSLCipher;->checkAndSetEncodedKey(ILjava/security/Key;)[B
@@ -454,7 +454,7 @@
     .line 2
     .line 3
     .line 4
-    :try_start_3
+    :try_start_0
     iget-object p1, p0, Lorg/conscrypt/OpenSSLCipher;->encodedKey:[B
 
     .line 5
@@ -463,8 +463,8 @@
 
     .line 7
     invoke-virtual {p0, p1, p2, p3}, Lorg/conscrypt/OpenSSLCipher;->engineInitInternal([BLjava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    :try_end_9
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_3 .. :try_end_9} :catch_a
+    :try_end_0
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 8
     .line 9
@@ -472,7 +472,7 @@
     return-void
 
     .line 11
-    :catch_a
+    :catch_0
     move-exception p1
 
     .line 12
@@ -485,7 +485,7 @@
 .end method
 
 .method public engineInit(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    .registers 5
+    .locals 0
 
     .line 16
     invoke-direct {p0, p1, p2}, Lorg/conscrypt/OpenSSLCipher;->checkAndSetEncodedKey(ILjava/security/Key;)[B
@@ -502,7 +502,7 @@
 .end method
 
 .method public engineSetMode(Ljava/lang/String;)V
-    .registers 5
+    .locals 3
 
     .line 1
     :try_start_0
@@ -512,8 +512,8 @@
     .line 3
     .line 4
     move-result-object p1
-    :try_end_4
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_4} :catch_a
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 5
     invoke-virtual {p0, p1}, Lorg/conscrypt/OpenSSLCipher;->checkSupportedMode(Lorg/conscrypt/OpenSSLCipher$Mode;)V
@@ -528,7 +528,7 @@
     return-void
 
     .line 11
-    :catch_a
+    :catch_0
     move-exception v0
 
     .line 12
@@ -562,7 +562,7 @@
 .end method
 
 .method public engineSetPadding(Ljava/lang/String;)V
-    .registers 5
+    .locals 3
 
     .line 1
     :try_start_0
@@ -572,8 +572,8 @@
     .line 3
     .line 4
     move-result-object p1
-    :try_end_4
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_4} :catch_a
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 5
     invoke-virtual {p0, p1}, Lorg/conscrypt/OpenSSLCipher;->checkSupportedPadding(Lorg/conscrypt/OpenSSLCipher$Padding;)V
@@ -588,7 +588,7 @@
     return-void
 
     .line 11
-    :catch_a
+    :catch_0
     move-exception v0
 
     .line 12
@@ -622,14 +622,14 @@
 .end method
 
 .method public engineUnwrap([BLjava/lang/String;I)Ljava/security/Key;
-    .registers 7
+    .locals 3
 
     .line 1
     const-string v0, "wrappedKeyType == "
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     array-length v1, p1
 
     .line 4
@@ -647,7 +647,7 @@
     const/4 v1, 0x1
 
     .line 10
-    if-ne p3, v1, :cond_1f
+    if-ne p3, v1, :cond_0
 
     .line 11
     .line 12
@@ -679,32 +679,32 @@
     return-object p1
 
     .line 26
-    :catch_19
+    :catch_0
     move-exception p1
 
     .line 27
-    goto :goto_4b
+    goto :goto_0
 
     .line 28
-    :catch_1b
+    :catch_1
     move-exception p1
 
     .line 29
-    goto :goto_51
+    goto :goto_1
 
     .line 30
-    :catch_1d
+    :catch_2
     move-exception p1
 
     .line 31
-    goto :goto_57
+    goto :goto_2
 
     .line 32
-    :cond_1f
+    :cond_0
     const/4 v1, 0x2
 
     .line 33
-    if-ne p3, v1, :cond_30
+    if-ne p3, v1, :cond_1
 
     .line 34
     .line 35
@@ -736,11 +736,11 @@
     return-object p1
 
     .line 49
-    :cond_30
+    :cond_1
     const/4 v1, 0x3
 
     .line 50
-    if-ne p3, v1, :cond_39
+    if-ne p3, v1, :cond_2
 
     .line 51
     .line 52
@@ -756,7 +756,7 @@
     return-object p3
 
     .line 58
-    :cond_39
+    :cond_2
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     .line 59
@@ -789,13 +789,13 @@
     .line 74
     .line 75
     throw p1
-    :try_end_4b
-    .catch Ljavax/crypto/IllegalBlockSizeException; {:try_start_2 .. :try_end_4b} :catch_1d
-    .catch Ljavax/crypto/BadPaddingException; {:try_start_2 .. :try_end_4b} :catch_1b
-    .catch Ljava/security/spec/InvalidKeySpecException; {:try_start_2 .. :try_end_4b} :catch_19
+    :try_end_0
+    .catch Ljavax/crypto/IllegalBlockSizeException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljavax/crypto/BadPaddingException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/security/spec/InvalidKeySpecException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 76
-    :goto_4b
+    :goto_0
     new-instance p2, Ljava/security/InvalidKeyException;
 
     .line 77
@@ -808,7 +808,7 @@
     throw p2
 
     .line 82
-    :goto_51
+    :goto_1
     new-instance p2, Ljava/security/InvalidKeyException;
 
     .line 83
@@ -821,7 +821,7 @@
     throw p2
 
     .line 88
-    :goto_57
+    :goto_2
     new-instance p2, Ljava/security/InvalidKeyException;
 
     .line 89
@@ -835,7 +835,7 @@
 .end method
 
 .method public engineUpdate([BII[BI)I
-    .registers 13
+    .locals 7
 
     .line 49
     invoke-virtual {p0, p3}, Lorg/conscrypt/OpenSSLCipher;->getOutputSizeForUpdate(I)I
@@ -863,7 +863,7 @@
 .end method
 
 .method public engineUpdate([BII)[B
-    .registers 11
+    .locals 7
 
     .line 1
     invoke-virtual {p0, p3}, Lorg/conscrypt/OpenSSLCipher;->getOutputSizeForUpdate(I)I
@@ -874,7 +874,7 @@
     move-result v6
 
     .line 5
-    if-lez v6, :cond_a
+    if-lez v6, :cond_0
 
     .line 6
     .line 7
@@ -882,22 +882,22 @@
 
     .line 8
     .line 9
-    :goto_8
+    :goto_0
     move-object v4, v0
 
     .line 10
-    goto :goto_d
+    goto :goto_1
 
     .line 11
-    :cond_a
+    :cond_0
     sget-object v0, Lorg/conscrypt/EmptyArray;->BYTE:[B
 
     .line 12
     .line 13
-    goto :goto_8
+    goto :goto_0
 
     .line 14
-    :goto_d
+    :goto_1
     const/4 v5, 0x0
 
     .line 15
@@ -913,29 +913,29 @@
     move v3, p3
 
     .line 19
-    :try_start_12
+    :try_start_0
     invoke-virtual/range {v0 .. v6}, Lorg/conscrypt/OpenSSLCipher;->updateInternal([BII[BII)I
 
     .line 20
     .line 21
     .line 22
     move-result p1
-    :try_end_16
-    .catch Ljavax/crypto/ShortBufferException; {:try_start_12 .. :try_end_16} :catch_25
+    :try_end_0
+    .catch Ljavax/crypto/ShortBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 23
     array-length p2, v4
 
     .line 24
-    if-ne p2, p1, :cond_1a
+    if-ne p2, p1, :cond_1
 
     .line 25
     .line 26
     return-object v4
 
     .line 27
-    :cond_1a
-    if-nez p1, :cond_1f
+    :cond_1
+    if-nez p1, :cond_2
 
     .line 28
     .line 29
@@ -946,7 +946,7 @@
     return-object p1
 
     .line 32
-    :cond_1f
+    :cond_2
     const/4 p2, 0x0
 
     .line 33
@@ -961,7 +961,7 @@
     return-object p1
 
     .line 38
-    :catch_25
+    :catch_0
     const-string p1, "calculated buffer size was wrong: "
 
     .line 39
@@ -986,7 +986,7 @@
 .end method
 
 .method public engineWrap(Ljava/security/Key;)[B
-    .registers 4
+    .locals 2
 
     .line 1
     :try_start_0
@@ -1010,14 +1010,14 @@
     .line 9
     .line 10
     move-result-object p1
-    :try_end_a
-    .catch Ljavax/crypto/BadPaddingException; {:try_start_0 .. :try_end_a} :catch_b
+    :try_end_0
+    .catch Ljavax/crypto/BadPaddingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 11
     return-object p1
 
     .line 12
-    :catch_b
+    :catch_0
     move-exception p1
 
     .line 13
@@ -1051,7 +1051,7 @@
 .end method
 
 .method public getPadding()Lorg/conscrypt/OpenSSLCipher$Padding;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLCipher;->padding:Lorg/conscrypt/OpenSSLCipher$Padding;
@@ -1062,14 +1062,14 @@
 .end method
 
 .method public getParameterSpec(Ljava/security/AlgorithmParameters;)Ljava/security/spec/AlgorithmParameterSpec;
-    .registers 4
+    .locals 2
 
     .line 1
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     const-class v0, Ljavax/crypto/spec/IvParameterSpec;
 
     .line 4
@@ -1080,14 +1080,14 @@
     .line 7
     .line 8
     move-result-object p1
-    :try_end_8
-    .catch Ljava/security/spec/InvalidParameterSpecException; {:try_start_2 .. :try_end_8} :catch_9
+    :try_end_0
+    .catch Ljava/security/spec/InvalidParameterSpecException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 9
     return-object p1
 
     .line 10
-    :catch_9
+    :catch_0
     move-exception p1
 
     .line 11
@@ -1107,7 +1107,7 @@
     throw v0
 
     .line 19
-    :cond_12
+    :cond_0
     const/4 p1, 0x0
 
     .line 20
@@ -1115,7 +1115,7 @@
 .end method
 
 .method public isEncrypting()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Lorg/conscrypt/OpenSSLCipher;->encrypting:Z
@@ -1126,7 +1126,7 @@
 .end method
 
 .method public supportsVariableSizeIv()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -1136,7 +1136,7 @@
 .end method
 
 .method public supportsVariableSizeKey()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0

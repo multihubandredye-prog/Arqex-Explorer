@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ga1;ZLcom/mixplorer/widgets/MiEditText;Llibs/rp0;Llibs/yq3;)V
-    .registers 6
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/da1;->Nu:Llibs/ga1;
@@ -69,21 +69,21 @@
 
 # virtual methods
 .method public final afterTextChanged(Landroid/text/Editable;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final beforeTextChanged(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final onTextChanged(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     .line 1
     iget-object p1, p0, Llibs/da1;->Nu:Llibs/ga1;

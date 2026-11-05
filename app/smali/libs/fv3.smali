@@ -18,7 +18,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/fv3;
@@ -56,7 +56,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     const-string v0, "NTLMSSP_REVISION_W2K3"
@@ -83,7 +83,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Llibs/fv3;
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Llibs/fv3;
@@ -106,7 +106,7 @@
 .end method
 
 .method public static values()[Llibs/fv3;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/fv3;->Z:[Llibs/fv3;
@@ -131,7 +131,7 @@
 
 # virtual methods
 .method public final getValue()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Llibs/fv3;->X:J

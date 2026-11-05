@@ -30,7 +30,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/v1;Llibs/bv1;Ljava/util/Properties;Llibs/m52;Ljava/lang/String;Llibs/zl0;Llibs/$d;Llibs/zl0;Llibs/rp0;Landroid/app/Activity;)V
-    .registers 11
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -84,7 +84,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 14
+    .locals 12
 
     .line 1
     sget v0, Llibs/bi2;->enter_key:I
@@ -107,7 +107,7 @@
 
     .line 10
     .line 11
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
@@ -131,14 +131,14 @@
     move-result v1
 
     .line 23
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_0
 
     .line 24
     .line 25
     return-void
 
     .line 26
-    :cond_19
+    :cond_0
     iget-object v1, p0, Llibs/rk0;->Y:Llibs/bv1;
 
     .line 27
@@ -155,21 +155,21 @@
 
     .line 33
     .line 34
-    if-ne v3, v4, :cond_25
+    if-ne v3, v4, :cond_1
 
     .line 35
     .line 36
     const/4 v3, 0x0
 
     .line 37
-    goto :goto_26
+    goto :goto_0
 
     .line 38
-    :cond_25
+    :cond_1
     const/4 v3, 0x1
 
     .line 39
-    :goto_26
+    :goto_0
     sget v4, Llibs/bi2;->delete_source:I
 
     .line 40
@@ -198,18 +198,18 @@
 
     .line 52
     .line 53
-    if-eqz v5, :cond_38
+    if-eqz v5, :cond_2
 
     .line 54
     .line 55
-    :goto_36
+    :goto_1
     move-object v7, v5
 
     .line 56
-    goto :goto_3e
+    goto :goto_2
 
     .line 57
-    :cond_38
+    :cond_2
     new-instance v5, Ljava/util/Properties;
 
     .line 58
@@ -219,10 +219,10 @@
     .line 60
     .line 61
     .line 62
-    goto :goto_36
+    goto :goto_1
 
     .line 63
-    :goto_3e
+    :goto_2
     sget-object v5, Llibs/ou0;->h:Ljava/lang/String;
 
     .line 64
@@ -280,7 +280,7 @@
     .line 92
     .line 93
     .line 94
-    if-eqz v0, :cond_69
+    if-eqz v0, :cond_3
 
     .line 95
     .line 96
@@ -300,21 +300,21 @@
     move-result-object v0
 
     .line 104
-    :goto_67
+    :goto_3
     move-object v6, v0
 
     .line 105
-    goto :goto_6b
+    goto :goto_4
 
     .line 106
-    :cond_69
+    :cond_3
     const/4 v0, 0x0
 
     .line 107
-    goto :goto_67
+    goto :goto_3
 
     .line 108
-    :goto_6b
+    :goto_4
     sget v0, Llibs/bi2;->remember:I
 
     .line 109
@@ -343,7 +343,7 @@
     move-result p1
 
     .line 122
-    if-eqz p1, :cond_9d
+    if-eqz p1, :cond_4
 
     .line 123
     .line 124
@@ -409,7 +409,7 @@
     move-result-object v3
 
     .line 158
-    :cond_9d
+    :cond_4
     const-string p1, "EXTRACT_REM_KEY"
 
     .line 159
@@ -443,7 +443,7 @@
 
     .line 174
     .line 175
-    if-eqz p1, :cond_c3
+    if-eqz p1, :cond_5
 
     .line 176
     .line 177
@@ -484,7 +484,7 @@
     return-void
 
     .line 196
-    :cond_c3
+    :cond_5
     move-object p1, v4
 
     .line 197

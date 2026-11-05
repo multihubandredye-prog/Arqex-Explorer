@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
 .end method
 
 .method public constructor <init>(JI)V
-    .registers 4
+    .locals 0
 
     .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -58,17 +58,17 @@
 .end method
 
 .method public static b(IILjava/lang/String;)Llibs/ua1;
-    .registers 9
+    .locals 6
 
     .line 1
-    if-lt p0, p1, :cond_3
+    if-lt p0, p1, :cond_0
 
     .line 2
     .line 3
-    goto :goto_29
+    goto :goto_1
 
     .line 4
-    :cond_3
+    :cond_0
     const-wide/16 v0, 0x0
 
     .line 5
@@ -76,8 +76,8 @@
     move v2, p0
 
     .line 7
-    :goto_6
-    if-ge v2, p1, :cond_27
+    :goto_0
+    if-ge v2, p1, :cond_2
 
     .line 8
     .line 9
@@ -93,7 +93,7 @@
 
     .line 14
     .line 15
-    if-lt v3, v4, :cond_27
+    if-lt v3, v4, :cond_2
 
     .line 16
     .line 17
@@ -101,7 +101,7 @@
 
     .line 18
     .line 19
-    if-gt v3, v4, :cond_27
+    if-gt v3, v4, :cond_2
 
     .line 20
     .line 21
@@ -132,34 +132,34 @@
 
     .line 33
     .line 34
-    if-lez v5, :cond_24
+    if-lez v5, :cond_1
 
     .line 35
     .line 36
-    goto :goto_29
+    goto :goto_1
 
     .line 37
-    :cond_24
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
     .line 38
     .line 39
-    goto :goto_6
+    goto :goto_0
 
     .line 40
-    :cond_27
-    if-ne v2, p0, :cond_2b
+    :cond_2
+    if-ne v2, p0, :cond_3
 
     .line 41
     .line 42
-    :goto_29
+    :goto_1
     const/4 p0, 0x0
 
     .line 43
     return-object p0
 
     .line 44
-    :cond_2b
+    :cond_3
     new-instance p0, Llibs/ua1;
 
     .line 45
@@ -175,14 +175,14 @@
 
 # virtual methods
 .method public a()Z
-    .registers 8
+    .locals 7
 
     .line 1
     iget v0, p0, Llibs/ua1;->b:I
 
     .line 2
     .line 3
-    if-lez v0, :cond_22
+    if-lez v0, :cond_0
 
     .line 4
     .line 5
@@ -208,7 +208,7 @@
 
     .line 14
     .line 15
-    if-lez v5, :cond_22
+    if-lez v5, :cond_0
 
     .line 16
     .line 17
@@ -250,7 +250,7 @@
     return v0
 
     .line 35
-    :cond_22
+    :cond_0
     const/4 v0, 0x0
 
     .line 36

@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/Date;Ljava/util/Date;)V
-    .registers 3
+    .locals 0
 
     .line 117
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,7 +29,7 @@
 .end method
 
 .method public constructor <init>(Llibs/b90;)V
-    .registers 8
+    .locals 6
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
     const/4 v3, 0x0
 
     .line 15
-    if-ne v0, v2, :cond_6e
+    if-ne v0, v2, :cond_6
 
     .line 16
     .line 17
@@ -76,7 +76,7 @@
     move-result v0
 
     .line 23
-    if-eqz v0, :cond_68
+    if-eqz v0, :cond_5
 
     .line 24
     .line 25
@@ -115,7 +115,7 @@
 
     .line 41
     .line 42
-    if-ne v2, p1, :cond_64
+    if-ne v2, p1, :cond_4
 
     .line 43
     .line 44
@@ -138,7 +138,7 @@
 
     .line 52
     .line 53
-    if-ne p1, v5, :cond_3d
+    if-ne p1, v5, :cond_0
 
     .line 54
     .line 55
@@ -154,11 +154,11 @@
 
     .line 60
     .line 61
-    goto :goto_45
+    goto :goto_0
 
     .line 62
-    :cond_3d
-    if-ne p1, v2, :cond_60
+    :cond_0
+    if-ne p1, v2, :cond_3
 
     .line 63
     .line 64
@@ -174,7 +174,7 @@
 
     .line 69
     .line 70
-    :goto_45
+    :goto_0
     const/4 p1, 0x1
 
     .line 71
@@ -186,7 +186,7 @@
 
     .line 74
     .line 75
-    if-ne p1, v5, :cond_53
+    if-ne p1, v5, :cond_1
 
     .line 76
     .line 77
@@ -205,8 +205,8 @@
     return-void
 
     .line 84
-    :cond_53
-    if-ne p1, v2, :cond_5c
+    :cond_1
+    if-ne p1, v2, :cond_2
 
     .line 85
     .line 86
@@ -225,7 +225,7 @@
     return-void
 
     .line 93
-    :cond_5c
+    :cond_2
     invoke-static {v4}, Llibs/ic0;->t(Ljava/lang/String;)V
 
     .line 94
@@ -234,7 +234,7 @@
     throw v3
 
     .line 97
-    :cond_60
+    :cond_3
     invoke-static {v4}, Llibs/ic0;->t(Ljava/lang/String;)V
 
     .line 98
@@ -243,7 +243,7 @@
     throw v3
 
     .line 101
-    :cond_64
+    :cond_4
     invoke-static {v4}, Llibs/ic0;->t(Ljava/lang/String;)V
 
     .line 102
@@ -252,7 +252,7 @@
     throw v3
 
     .line 105
-    :cond_68
+    :cond_5
     const-string p1, "No data encoded for CertificateValidity"
 
     .line 106
@@ -265,7 +265,7 @@
     throw v3
 
     .line 111
-    :cond_6e
+    :cond_6
     const-string p1, "Invalid encoded CertificateValidity, starting sequence tag missing."
 
     .line 112
@@ -281,14 +281,14 @@
 
 # virtual methods
 .method public final a(Llibs/c90;)V
-    .registers 10
+    .locals 8
 
     .line 1
     iget-object v0, p0, Llibs/zq;->a:Ljava/util/Date;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_4e
+    if-eqz v0, :cond_2
 
     .line 4
     .line 5
@@ -296,7 +296,7 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_4e
+    if-eqz v0, :cond_2
 
     .line 8
     .line 9
@@ -344,7 +344,7 @@
 
     .line 32
     .line 33
-    if-gez v7, :cond_26
+    if-gez v7, :cond_0
 
     .line 34
     .line 35
@@ -353,16 +353,16 @@
     .line 36
     .line 37
     .line 38
-    goto :goto_29
+    goto :goto_0
 
     .line 39
-    :cond_26
+    :cond_0
     invoke-virtual {v0, v1, v3}, Llibs/c90;->List(Ljava/util/Date;B)V
 
     .line 40
     .line 41
     .line 42
-    :goto_29
+    :goto_0
     iget-object v1, p0, Llibs/zq;->b:Ljava/util/Date;
 
     .line 43
@@ -383,7 +383,7 @@
 
     .line 51
     .line 52
-    if-gez v7, :cond_39
+    if-gez v7, :cond_1
 
     .line 53
     .line 54
@@ -392,16 +392,16 @@
     .line 55
     .line 56
     .line 57
-    goto :goto_3c
+    goto :goto_1
 
     .line 58
-    :cond_39
+    :cond_1
     invoke-virtual {v0, v1, v3}, Llibs/c90;->List(Ljava/util/Date;B)V
 
     .line 59
     .line 60
     .line 61
-    :goto_3c
+    :goto_1
     new-instance v1, Llibs/c90;
 
     .line 62
@@ -436,7 +436,7 @@
     return-void
 
     .line 79
-    :cond_4e
+    :cond_2
     const-string p1, "CertAttrSet:CertificateValidity: null values to encode.\n"
 
     .line 80
@@ -450,7 +450,7 @@
 .end method
 
 .method public final getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "validity"
@@ -461,14 +461,14 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/zq;->a:Ljava/util/Date;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
@@ -476,14 +476,14 @@
 
     .line 6
     .line 7
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     .line 8
     .line 9
-    goto :goto_31
+    goto :goto_0
 
     .line 10
-    :cond_9
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 11
@@ -560,8 +560,8 @@
     return-object v0
 
     .line 50
-    :cond_31
-    :goto_31
+    :cond_1
+    :goto_0
     const-string v0, ""
 
     .line 51

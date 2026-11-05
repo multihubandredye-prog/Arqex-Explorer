@@ -20,7 +20,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;IZLjava/lang/Object;B)V
-    .registers 6
+    .locals 0
 
     .line 1
     iput-byte p5, p0, Llibs/pl3;->X:B
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 15
+    .locals 14
 
     .line 1
     iget-byte v0, p0, Llibs/pl3;->X:B
@@ -83,7 +83,7 @@
 
     .line 12
     .line 13
-    packed-switch v0, :pswitch_data_108
+    packed-switch v0, :pswitch_data_0
 
     .line 14
     .line 15
@@ -114,8 +114,8 @@
     const/4 v9, 0x0
 
     .line 28
-    :goto_1b
-    if-ge v9, v7, :cond_87
+    :goto_0
+    if-ge v9, v7, :cond_5
 
     .line 29
     .line 30
@@ -143,7 +143,7 @@
 
     .line 41
     .line 42
-    if-nez v12, :cond_33
+    if-nez v12, :cond_0
 
     .line 43
     .line 44
@@ -155,7 +155,7 @@
     move-result-object v13
 
     .line 48
-    if-eqz v13, :cond_33
+    if-eqz v13, :cond_0
 
     .line 49
     .line 50
@@ -163,8 +163,8 @@
 
     .line 51
     .line 52
-    :cond_33
-    if-nez v12, :cond_3d
+    :cond_0
+    if-nez v12, :cond_1
 
     .line 53
     .line 54
@@ -181,10 +181,10 @@
     .line 59
     .line 60
     .line 61
-    goto :goto_1b
+    goto :goto_0
 
     .line 62
-    :cond_3d
+    :cond_1
     invoke-virtual {v10}, Llibs/rp0;->View()Llibs/zl0;
 
     .line 63
@@ -201,7 +201,7 @@
     move-result v8
 
     .line 70
-    if-eqz v8, :cond_85
+    if-eqz v8, :cond_4
 
     .line 71
     .line 72
@@ -229,7 +229,7 @@
     move-result v11
 
     .line 84
-    if-nez v11, :cond_71
+    if-nez v11, :cond_2
 
     .line 85
     .line 86
@@ -253,7 +253,7 @@
 
     .line 95
     .line 96
-    if-lt v11, v12, :cond_71
+    if-lt v11, v12, :cond_2
 
     .line 97
     .line 98
@@ -281,26 +281,26 @@
     move-result v11
 
     .line 110
-    if-eqz v11, :cond_71
+    if-eqz v11, :cond_2
 
     .line 111
     .line 112
     const/4 v11, 0x1
 
     .line 113
-    goto :goto_72
+    goto :goto_1
 
     .line 114
-    :cond_71
+    :cond_2
     const/4 v11, 0x0
 
     .line 115
-    :goto_72
+    :goto_1
     iget-object v10, v10, Llibs/rp0;->Hotel:Llibs/ie;
 
     .line 116
     .line 117
-    if-eqz v10, :cond_83
+    if-eqz v10, :cond_3
 
     .line 118
     .line 119
@@ -329,21 +329,21 @@
     .line 130
     .line 131
     .line 132
-    :cond_83
+    :cond_3
     move v8, v11
 
     .line 133
-    goto :goto_1b
+    goto :goto_0
 
     .line 134
-    :cond_85
+    :cond_4
     const/4 v8, 0x0
 
     .line 135
-    goto :goto_1b
+    goto :goto_0
 
     .line 136
-    :cond_87
+    :cond_5
     invoke-static {}, Llibs/zt0;->j()Landroid/os/Handler;
 
     .line 137
@@ -372,7 +372,7 @@
     return-void
 
     .line 150
-    :pswitch_95
+    :pswitch_0
     check-cast v6, Llibs/rl3;
 
     .line 151
@@ -385,7 +385,7 @@
 
     .line 155
     .line 156
-    if-eqz v1, :cond_a1
+    if-eqz v1, :cond_6
 
     .line 157
     .line 158
@@ -394,16 +394,16 @@
     .line 159
     .line 160
     .line 161
-    goto :goto_a4
+    goto :goto_2
 
     .line 162
-    :cond_a1
+    :cond_6
     invoke-virtual {v5}, Llibs/yu;->e()V
 
     .line 163
     .line 164
     .line 165
-    :goto_a4
+    :goto_2
     iput-boolean v4, v6, Llibs/rl3;->e:Z
 
     .line 166
@@ -453,7 +453,7 @@
     return-void
 
     .line 190
-    :pswitch_bd
+    :pswitch_1
     check-cast v6, Llibs/rl3;
 
     .line 191
@@ -494,7 +494,7 @@
 
     .line 209
     .line 210
-    :try_start_d1
+    :try_start_0
     iget-object v2, v6, Llibs/rl3;->g:Llibs/fd3;
 
     .line 211
@@ -532,14 +532,14 @@
     move-result v0
 
     .line 229
-    if-eqz v0, :cond_e7
+    if-eqz v0, :cond_7
 
     .line 230
     .line 231
-    goto :goto_107
+    goto :goto_3
 
     .line 232
-    :cond_e7
+    :cond_7
     new-instance v5, Llibs/pl3;
 
     .line 233
@@ -553,16 +553,16 @@
     .line 237
     .line 238
     invoke-virtual {v1, v5}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-    :try_end_f0
-    .catchall {:try_start_d1 .. :try_end_f0} :catchall_f1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 239
     .line 240
     .line 241
-    goto :goto_107
+    goto :goto_3
 
     .line 242
-    :catchall_f1
+    :catchall_0
     move-exception v0
 
     .line 243
@@ -605,13 +605,13 @@
     .line 262
     .line 263
     .line 264
-    :goto_107
+    :goto_3
     return-void
 
     .line 265
-    :pswitch_data_108
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_bd
-        :pswitch_95
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

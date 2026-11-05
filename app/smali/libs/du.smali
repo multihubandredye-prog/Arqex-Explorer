@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/zn0;JZ)V
-    .registers 7
+    .locals 2
 
     .line 1
     invoke-direct {p0, p4}, Llibs/Tau;-><init>(Z)V
@@ -43,7 +43,7 @@
 
     .line 9
     .line 10
-    if-eqz p4, :cond_2e
+    if-eqz p4, :cond_1
 
     .line 11
     .line 12
@@ -60,14 +60,14 @@
     move-result p4
 
     .line 19
-    if-nez p4, :cond_15
+    if-nez p4, :cond_0
 
     .line 20
     .line 21
-    goto :goto_2e
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     new-instance p1, Ljava/io/IOException;
 
     .line 23
@@ -115,8 +115,8 @@
     throw p1
 
     .line 47
-    :cond_2e
-    :goto_2e
+    :cond_1
+    :goto_0
     iget-object p4, p1, Llibs/zn0;->b:Llibs/hl;
 
     .line 48
@@ -170,7 +170,7 @@
 
 # virtual methods
 .method public final Object(J)J
-    .registers 8
+    .locals 5
 
     .line 1
     iget-wide v0, p0, Llibs/du;->Z:J
@@ -199,7 +199,7 @@
 
     .line 12
     .line 13
-    if-gtz v4, :cond_15
+    if-gtz v4, :cond_0
 
     .line 14
     .line 15
@@ -218,7 +218,7 @@
     return-wide v0
 
     .line 22
-    :cond_15
+    :cond_0
     const-string p1, "too many clusters"
 
     .line 23
@@ -236,7 +236,7 @@
 .end method
 
 .method public final String(Ljava/nio/ByteBuffer;J)V
-    .registers 13
+    .locals 9
 
     .line 1
     invoke-virtual {p1}, Ljava/nio/Buffer;->remaining()I
@@ -247,14 +247,14 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
-    goto :goto_62
+    goto :goto_1
 
     .line 8
-    :cond_7
+    :cond_0
     int-to-long v1, v0
 
     .line 9
@@ -273,7 +273,7 @@
 
     .line 15
     .line 16
-    if-gez v5, :cond_14
+    if-gez v5, :cond_1
 
     .line 17
     .line 18
@@ -282,7 +282,7 @@
     .line 19
     .line 20
     .line 21
-    :cond_14
+    :cond_1
     invoke-virtual {p0, p2, p3}, Llibs/du;->v(J)J
 
     .line 22
@@ -310,7 +310,7 @@
 
     .line 33
     .line 34
-    if-eqz v8, :cond_40
+    if-eqz v8, :cond_2
 
     .line 35
     .line 36
@@ -375,14 +375,14 @@
     move-result-wide v1
 
     .line 65
-    :cond_40
-    if-lez v0, :cond_62
+    :cond_2
+    if-lez v0, :cond_4
 
     .line 66
     .line 67
-    :cond_42
-    :goto_42
-    if-lez v0, :cond_62
+    :cond_3
+    :goto_0
+    if-lez v0, :cond_4
 
     .line 68
     .line 69
@@ -432,7 +432,7 @@
     sub-int/2addr v0, p2
 
     .line 91
-    if-lez v0, :cond_42
+    if-lez v0, :cond_3
 
     .line 92
     .line 93
@@ -447,30 +447,30 @@
     move-wide v1, p2
 
     .line 98
-    goto :goto_42
+    goto :goto_0
 
     .line 99
-    :cond_62
-    :goto_62
+    :cond_4
+    :goto_1
     return-void
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     instance-of v0, p1, Llibs/du;
 
     .line 2
     .line 3
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
-    goto :goto_1d
+    goto :goto_0
 
     .line 6
-    :cond_5
+    :cond_0
     check-cast p1, Llibs/du;
 
     .line 7
@@ -483,7 +483,7 @@
 
     .line 11
     .line 12
-    if-eq v1, v0, :cond_13
+    if-eq v1, v0, :cond_1
 
     .line 13
     .line 14
@@ -495,11 +495,11 @@
     move-result v0
 
     .line 18
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_2
 
     .line 19
     .line 20
-    :cond_13
+    :cond_1
     iget-wide v0, p0, Llibs/du;->Pi:J
 
     .line 21
@@ -512,7 +512,7 @@
 
     .line 25
     .line 26
-    if-nez p1, :cond_1d
+    if-nez p1, :cond_2
 
     .line 27
     .line 28
@@ -522,8 +522,8 @@
     return p1
 
     .line 30
-    :cond_1d
-    :goto_1d
+    :cond_2
+    :goto_0
     const/4 p1, 0x0
 
     .line 31
@@ -531,7 +531,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/du;->Nu:Llibs/zn0;
@@ -579,7 +579,7 @@
 .end method
 
 .method public final k()J
-    .registers 6
+    .locals 5
 
     .line 1
     iget-wide v0, p0, Llibs/du;->Pi:J
@@ -594,14 +594,14 @@
 
     .line 6
     .line 7
-    if-nez v4, :cond_9
+    if-nez v4, :cond_0
 
     .line 8
     .line 9
     return-wide v2
 
     .line 10
-    :cond_9
+    :cond_0
     invoke-virtual {p0}, Llibs/du;->u()I
 
     .line 11
@@ -625,7 +625,7 @@
 .end method
 
 .method public final u()I
-    .registers 7
+    .locals 6
 
     .line 1
     iget-wide v0, p0, Llibs/du;->Pi:J
@@ -640,7 +640,7 @@
 
     .line 6
     .line 7
-    if-nez v4, :cond_a
+    if-nez v4, :cond_0
 
     .line 8
     .line 9
@@ -650,19 +650,19 @@
     return v0
 
     .line 11
-    :cond_a
+    :cond_0
     iget v2, p0, Llibs/du;->Y:I
 
     .line 12
     .line 13
-    if-nez v2, :cond_21
+    if-nez v2, :cond_2
 
     .line 14
     .line 15
     const/4 v2, 0x1
 
     .line 16
-    :goto_f
+    :goto_0
     iget-object v3, p0, Llibs/du;->Nu:Llibs/zn0;
 
     .line 17
@@ -683,7 +683,7 @@
 
     .line 25
     .line 26
-    if-nez v5, :cond_1e
+    if-nez v5, :cond_1
 
     .line 27
     .line 28
@@ -694,20 +694,20 @@
     return v2
 
     .line 31
-    :cond_1e
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
     .line 32
     .line 33
-    goto :goto_f
+    goto :goto_0
 
     .line 34
-    :cond_21
+    :cond_2
     return v2
 .end method
 
 .method public final v(J)J
-    .registers 7
+    .locals 4
 
     .line 1
     const-wide/16 v0, 0x0
@@ -721,7 +721,7 @@
 
     .line 5
     .line 6
-    if-nez v3, :cond_c
+    if-nez v3, :cond_0
 
     .line 7
     .line 8
@@ -733,10 +733,10 @@
 
     .line 11
     .line 12
-    goto :goto_2d
+    goto :goto_1
 
     .line 13
-    :cond_c
+    :cond_0
     iget-wide v0, p0, Llibs/du;->Z:J
 
     .line 14
@@ -751,7 +751,7 @@
 
     .line 18
     .line 19
-    if-lt p2, p1, :cond_17
+    if-lt p2, p1, :cond_1
 
     .line 20
     .line 21
@@ -759,10 +759,10 @@
 
     .line 22
     .line 23
-    goto :goto_1b
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_1
     iget-wide v0, p0, Llibs/du;->Pi:J
 
     .line 25
@@ -771,12 +771,12 @@
 
     .line 27
     .line 28
-    :goto_1b
+    :goto_0
     iget p1, p0, Llibs/du;->Omicron:I
 
     .line 29
     .line 30
-    if-ge p1, p2, :cond_2c
+    if-ge p1, p2, :cond_2
 
     .line 31
     .line 32
@@ -804,14 +804,14 @@
 
     .line 43
     .line 44
-    goto :goto_1b
+    goto :goto_0
 
     .line 45
-    :cond_2c
+    :cond_2
     move-wide p1, v0
 
     .line 46
-    :goto_2d
+    :goto_1
     iput-wide p1, p0, Llibs/du;->Xi:J
 
     .line 47
@@ -820,7 +820,7 @@
 .end method
 
 .method public final w(IJ)J
-    .registers 8
+    .locals 4
 
     .line 1
     iget-wide v0, p0, Llibs/du;->Lambda:J
@@ -855,7 +855,7 @@
 .end method
 
 .method public final x()J
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/du;->Nu:Llibs/zn0;
@@ -894,7 +894,7 @@
 .end method
 
 .method public final y(Ljava/nio/ByteBuffer;J)V
-    .registers 13
+    .locals 9
 
     .line 1
     invoke-virtual {p1}, Ljava/nio/Buffer;->remaining()I
@@ -917,18 +917,18 @@
 
     .line 10
     .line 11
-    if-nez v5, :cond_17
+    if-nez v5, :cond_1
 
     .line 12
     .line 13
-    if-gtz v0, :cond_f
+    if-gtz v0, :cond_0
 
     .line 14
     .line 15
-    goto :goto_17
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_0
     new-instance p1, Ljava/io/EOFException;
 
     .line 17
@@ -945,8 +945,8 @@
     throw p1
 
     .line 24
-    :cond_17
-    :goto_17
+    :cond_1
+    :goto_0
     invoke-virtual {p0, p2, p3}, Llibs/du;->v(J)J
 
     .line 25
@@ -970,7 +970,7 @@
 
     .line 34
     .line 35
-    if-eqz v8, :cond_40
+    if-eqz v8, :cond_2
 
     .line 36
     .line 37
@@ -1032,14 +1032,14 @@
     move-result-wide v1
 
     .line 65
-    :cond_40
-    if-lez v0, :cond_62
+    :cond_2
+    if-lez v0, :cond_4
 
     .line 66
     .line 67
-    :cond_42
-    :goto_42
-    if-lez v0, :cond_62
+    :cond_3
+    :goto_1
+    if-lez v0, :cond_4
 
     .line 68
     .line 69
@@ -1089,7 +1089,7 @@
     sub-int/2addr v0, p2
 
     .line 91
-    if-lez v0, :cond_42
+    if-lez v0, :cond_3
 
     .line 92
     .line 93
@@ -1104,15 +1104,15 @@
     move-wide v1, p2
 
     .line 98
-    goto :goto_42
+    goto :goto_1
 
     .line 99
-    :cond_62
+    :cond_4
     return-void
 .end method
 
 .method public final z(I)V
-    .registers 15
+    .locals 13
 
     .line 1
     iget-object v0, p0, Llibs/du;->Nu:Llibs/zn0;
@@ -1123,14 +1123,14 @@
 
     .line 4
     .line 5
-    if-ltz p1, :cond_99
+    if-ltz p1, :cond_9
 
     .line 6
     .line 7
-    :try_start_6
+    :try_start_0
     iget-wide v2, p0, Llibs/du;->Pi:J
-    :try_end_8
-    .catchall {:try_start_6 .. :try_end_8} :catchall_2e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 8
     .line 9
@@ -1142,11 +1142,11 @@
 
     .line 12
     .line 13
-    if-nez v6, :cond_13
+    if-nez v6, :cond_0
 
     .line 14
     .line 15
-    if-nez p1, :cond_13
+    if-nez p1, :cond_0
 
     .line 16
     .line 17
@@ -1157,7 +1157,7 @@
     return-void
 
     .line 20
-    :cond_13
+    :cond_0
     const/4 v6, 0x0
 
     .line 21
@@ -1165,11 +1165,11 @@
 
     .line 22
     .line 23
-    if-nez v7, :cond_30
+    if-nez v7, :cond_2
 
     .line 24
     .line 25
-    :try_start_18
+    :try_start_1
     invoke-virtual {v0}, Llibs/zn0;->b()J
 
     .line 26
@@ -1181,12 +1181,12 @@
     move-wide v3, v1
 
     .line 30
-    :goto_1d
+    :goto_0
     add-int/lit8 v5, p1, -0x1
 
     .line 31
     .line 32
-    if-ge v6, v5, :cond_29
+    if-ge v6, v5, :cond_1
 
     .line 33
     .line 34
@@ -1205,13 +1205,13 @@
 
     .line 40
     .line 41
-    goto :goto_1d
+    goto :goto_0
 
     .line 42
-    :cond_29
+    :cond_1
     iput-wide v1, p0, Llibs/du;->Pi:J
-    :try_end_2b
-    .catchall {:try_start_18 .. :try_end_2b} :catchall_2e
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 43
     .line 44
@@ -1222,26 +1222,26 @@
     return-void
 
     .line 47
-    :catchall_2e
+    :catchall_0
     move-exception v0
 
     .line 48
-    goto :goto_96
+    goto :goto_4
 
     .line 49
-    :cond_30
-    :try_start_30
+    :cond_2
+    :try_start_2
     invoke-virtual {p0}, Llibs/du;->u()I
 
     .line 50
     .line 51
     .line 52
     move-result v2
-    :try_end_34
-    .catchall {:try_start_30 .. :try_end_34} :catchall_2e
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 53
-    if-ne p1, v2, :cond_39
+    if-ne p1, v2, :cond_3
 
     .line 54
     .line 55
@@ -1252,12 +1252,12 @@
     return-void
 
     .line 58
-    :cond_39
+    :cond_3
     iget-wide v7, p0, Llibs/du;->Pi:J
 
     .line 59
     .line 60
-    if-le p1, v2, :cond_45
+    if-le p1, v2, :cond_4
 
     .line 61
     .line 62
@@ -1265,10 +1265,10 @@
 
     .line 63
     .line 64
-    :try_start_3f
+    :try_start_3
     invoke-virtual {v0, v1, v7, v8}, Llibs/zn0;->a(IJ)J
-    :try_end_42
-    .catchall {:try_start_3f .. :try_end_42} :catchall_2e
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 65
     .line 66
@@ -1280,17 +1280,17 @@
     return-void
 
     .line 70
-    :cond_45
+    :cond_4
     const-wide/16 v2, 0x1
 
     .line 71
     .line 72
-    if-gtz p1, :cond_65
+    if-gtz p1, :cond_6
 
     .line 73
     .line 74
-    :goto_49
-    :try_start_49
+    :goto_1
+    :try_start_4
     iget-wide v9, v1, Llibs/ko0;->X:J
 
     .line 75
@@ -1299,13 +1299,13 @@
 
     .line 77
     .line 78
-    if-ltz v6, :cond_54
+    if-ltz v6, :cond_5
 
     .line 79
     .line 80
     iput-wide v4, p0, Llibs/du;->Pi:J
-    :try_end_51
-    .catchall {:try_start_49 .. :try_end_51} :catchall_2e
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 81
     .line 82
@@ -1316,8 +1316,8 @@
     return-void
 
     .line 85
-    :cond_54
-    :try_start_54
+    :cond_5
+    :try_start_5
     invoke-virtual {v0, v7, v8}, Llibs/zn0;->i(J)V
 
     .line 86
@@ -1350,16 +1350,16 @@
     move-wide v7, v9
 
     .line 101
-    goto :goto_49
+    goto :goto_1
 
     .line 102
-    :cond_65
+    :cond_6
     add-int/lit8 v9, p1, -0x1
 
     .line 103
     .line 104
-    :goto_67
-    if-eq v6, v9, :cond_70
+    :goto_2
+    if-eq v6, v9, :cond_7
 
     .line 105
     .line 106
@@ -1375,10 +1375,10 @@
 
     .line 111
     .line 112
-    goto :goto_67
+    goto :goto_2
 
     .line 113
-    :cond_70
+    :cond_7
     invoke-virtual {v0, v7, v8}, Llibs/zn0;->i(J)V
 
     .line 114
@@ -1401,10 +1401,10 @@
     .line 123
     .line 124
     .line 125
-    :goto_7c
+    :goto_3
     iget-wide v6, v1, Llibs/ko0;->X:J
-    :try_end_7e
-    .catchall {:try_start_54 .. :try_end_7e} :catchall_2e
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 126
     .line 127
@@ -1412,7 +1412,7 @@
 
     .line 128
     .line 129
-    if-ltz v8, :cond_85
+    if-ltz v8, :cond_8
 
     .line 130
     .line 131
@@ -1423,8 +1423,8 @@
     return-void
 
     .line 134
-    :cond_85
-    :try_start_85
+    :cond_8
+    :try_start_6
     invoke-virtual {v0, v9, v10}, Llibs/zn0;->i(J)V
 
     .line 135
@@ -1451,18 +1451,18 @@
 
     .line 147
     iput-wide v8, v0, Llibs/zn0;->i:J
-    :try_end_94
-    .catchall {:try_start_85 .. :try_end_94} :catchall_2e
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
     .line 148
     .line 149
     move-wide v9, v6
 
     .line 150
-    goto :goto_7c
+    goto :goto_3
 
     .line 151
-    :goto_96
+    :goto_4
     iput p1, p0, Llibs/du;->Y:I
 
     .line 152
@@ -1470,7 +1470,7 @@
     throw v0
 
     .line 154
-    :cond_99
+    :cond_9
     const-string p1, "negative cluster count"
 
     .line 155

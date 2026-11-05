@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     invoke-static {}, Llibs/t43;->Context()Z
@@ -20,7 +20,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -40,7 +40,7 @@
     return-void
 
     .line 15
-    :cond_e
+    :cond_0
     invoke-static {}, Llibs/t43;->View()Z
 
     .line 16
@@ -49,7 +49,7 @@
     move-result v0
 
     .line 19
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_1
 
     .line 20
     .line 21
@@ -69,7 +69,7 @@
     return-void
 
     .line 29
-    :cond_1c
+    :cond_1
     new-instance v0, Llibs/Eta;
 
     .line 30
@@ -91,7 +91,7 @@
 .end method
 
 .method public static a(Landroid/view/MotionEvent;)I
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Landroid/view/MotionEvent;->getAction()I
@@ -118,7 +118,7 @@
 .end method
 
 .method public static b(Landroid/view/MotionEvent;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/MotionEvent;->getAction()I
@@ -137,7 +137,7 @@
 .end method
 
 .method public static c(Landroid/view/MotionEvent;I)F
-    .registers 3
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/wx1;->a:Llibs/Eta;

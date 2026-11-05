@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     .line 1
     new-instance v0, Ljava/util/Hashtable;
@@ -90,7 +90,7 @@
     move-result-object v2
 
     .line 41
-    :goto_28
+    :goto_0
     invoke-interface {v2}, Ljava/util/Enumeration;->hasMoreElements()Z
 
     .line 42
@@ -99,7 +99,7 @@
     move-result v3
 
     .line 45
-    if-eqz v3, :cond_3e
+    if-eqz v3, :cond_0
 
     .line 46
     .line 47
@@ -132,10 +132,10 @@
     .line 60
     .line 61
     .line 62
-    goto :goto_28
+    goto :goto_0
 
     .line 63
-    :cond_3e
+    :cond_0
     sget-object v0, Llibs/hx1;->b:Ljava/util/Hashtable;
 
     .line 64
@@ -197,7 +197,7 @@
 .end method
 
 .method public static a(Ljava/lang/String;)V
-    .registers 24
+    .locals 23
 
     .line 1
     move-object/from16 v0, p0
@@ -269,7 +269,7 @@
     const/4 v11, -0x1
 
     .line 36
-    if-eq v10, v11, :cond_29c
+    if-eq v10, v11, :cond_26
 
     .line 37
     .line 38
@@ -296,7 +296,7 @@
     move-result v13
 
     .line 49
-    if-eqz v13, :cond_296
+    if-eqz v13, :cond_25
 
     .line 50
     .line 51
@@ -312,7 +312,7 @@
     move-result v13
 
     .line 57
-    if-nez v13, :cond_43
+    if-nez v13, :cond_1
 
     .line 58
     .line 59
@@ -324,31 +324,31 @@
     move-result v13
 
     .line 63
-    if-eqz v13, :cond_41
+    if-eqz v13, :cond_0
 
     .line 64
     .line 65
-    goto :goto_43
+    goto :goto_0
 
     .line 66
-    :cond_41
+    :cond_0
     const/4 v13, 0x0
 
     .line 67
-    goto :goto_44
+    goto :goto_1
 
     .line 68
-    :cond_43
-    :goto_43
+    :cond_1
+    :goto_0
     const/4 v13, 0x1
 
     .line 69
-    :goto_44
+    :goto_1
     const/16 v16, 0x0
 
     .line 70
     .line 71
-    if-eqz v13, :cond_60
+    if-eqz v13, :cond_3
 
     .line 72
     .line 73
@@ -367,18 +367,18 @@
 
     .line 79
     .line 80
-    :try_start_4f
+    :try_start_0
     iget-object v14, v15, Llibs/ug;->a:Ljava/security/AccessControlContext;
 
     .line 81
     .line 82
-    if-eqz v14, :cond_5a
+    if-eqz v14, :cond_2
 
     .line 83
     .line 84
     invoke-virtual {v15}, Llibs/ug;->b()V
-    :try_end_56
-    .catchall {:try_start_4f .. :try_end_56} :catchall_58
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 85
     .line 86
@@ -386,18 +386,18 @@
     monitor-exit v15
 
     .line 88
-    goto :goto_62
+    goto :goto_3
 
     .line 89
-    :catchall_58
+    :catchall_0
     move-exception v0
 
     .line 90
-    goto :goto_5e
+    goto :goto_2
 
     .line 91
-    :cond_5a
-    :try_start_5a
+    :cond_2
+    :try_start_1
     invoke-static {}, Llibs/ug;->a()V
 
     .line 92
@@ -406,21 +406,21 @@
     throw v16
 
     .line 95
-    :goto_5e
+    :goto_2
     monitor-exit v15
-    :try_end_5f
-    .catchall {:try_start_5a .. :try_end_5f} :catchall_58
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 96
     throw v0
 
     .line 97
-    :cond_60
+    :cond_3
     const/16 v17, 0x1
 
     .line 98
     .line 99
-    :goto_62
+    :goto_3
     invoke-virtual {v10}, Ljava/lang/String;->length()I
 
     .line 100
@@ -445,7 +445,7 @@
     move-result v14
 
     .line 111
-    if-le v14, v11, :cond_286
+    if-le v14, v11, :cond_24
 
     .line 112
     .line 113
@@ -481,7 +481,7 @@
     move-result v12
 
     .line 129
-    if-eqz v12, :cond_87
+    if-eqz v12, :cond_4
 
     .line 130
     .line 131
@@ -489,23 +489,23 @@
 
     .line 132
     .line 133
-    :goto_84
+    :goto_4
     move-object/from16 v19, v18
 
     .line 134
     .line 135
-    goto :goto_8a
+    goto :goto_5
 
     .line 136
-    :cond_87
+    :cond_4
     sget-object v18, Llibs/hx1;->c:Ljava/util/Hashtable;
 
     .line 137
     .line 138
-    goto :goto_84
+    goto :goto_4
 
     .line 139
-    :goto_8a
+    :goto_5
     add-int/lit8 v14, v14, 0x1
 
     .line 140
@@ -539,7 +539,7 @@
     move-result v11
 
     .line 156
-    if-eqz v11, :cond_a1
+    if-eqz v11, :cond_5
 
     .line 157
     .line 158
@@ -551,8 +551,8 @@
     move-result-object v0
 
     .line 162
-    :cond_a1
-    :goto_a1
+    :cond_5
+    :goto_6
     invoke-virtual {v14}, Llibs/xr3;->a()Z
 
     .line 163
@@ -561,7 +561,7 @@
     move-result v11
 
     .line 166
-    if-eqz v11, :cond_123
+    if-eqz v11, :cond_c
 
     .line 167
     .line 168
@@ -596,7 +596,7 @@
     const/4 v13, -0x1
 
     .line 183
-    if-le v12, v13, :cond_119
+    if-le v12, v13, :cond_b
 
     .line 184
     .line 185
@@ -663,17 +663,17 @@
 
     .line 215
     .line 216
-    if-eqz v13, :cond_db
+    if-eqz v13, :cond_6
 
     .line 217
     .line 218
     move-object v12, v13
 
     .line 219
-    goto :goto_e4
+    goto :goto_7
 
     .line 220
-    :cond_db
+    :cond_6
     invoke-virtual {v12, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     .line 221
@@ -682,20 +682,20 @@
     move-result v13
 
     .line 224
-    if-eqz v13, :cond_e2
+    if-eqz v13, :cond_7
 
     .line 225
     .line 226
-    goto :goto_e4
+    goto :goto_7
 
     .line 227
-    :cond_e2
+    :cond_7
     move-object/from16 v12, v16
 
     .line 228
     .line 229
-    :goto_e4
-    if-eqz v12, :cond_10f
+    :goto_7
+    if-eqz v12, :cond_a
 
     .line 230
     .line 231
@@ -711,7 +711,7 @@
 
     .line 236
     .line 237
-    if-eqz v13, :cond_101
+    if-eqz v13, :cond_9
 
     .line 238
     .line 239
@@ -723,14 +723,14 @@
     move-result v13
 
     .line 243
-    if-eqz v13, :cond_f5
+    if-eqz v13, :cond_8
 
     .line 244
     .line 245
-    goto :goto_101
+    goto :goto_8
 
     .line 246
-    :cond_f5
+    :cond_8
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     .line 247
@@ -755,8 +755,8 @@
     throw v0
 
     .line 258
-    :cond_101
-    :goto_101
+    :cond_9
+    :goto_8
     invoke-virtual {v9, v12, v11}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 259
@@ -782,10 +782,10 @@
 
     .line 270
     .line 271
-    goto :goto_a1
+    goto :goto_6
 
     .line 272
-    :cond_10f
+    :cond_a
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     .line 273
@@ -806,7 +806,7 @@
     throw v0
 
     .line 282
-    :cond_119
+    :cond_b
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     .line 283
@@ -827,7 +827,7 @@
     throw v0
 
     .line 292
-    :cond_123
+    :cond_c
     move/from16 v20, v12
 
     .line 293
@@ -843,7 +843,7 @@
     const/4 v3, 0x6
 
     .line 299
-    if-eqz v20, :cond_1fd
+    if-eqz v20, :cond_19
 
     .line 300
     .line 301
@@ -855,7 +855,7 @@
     move-result-object v4
 
     .line 305
-    if-nez v4, :cond_138
+    if-nez v4, :cond_d
 
     .line 306
     .line 307
@@ -868,11 +868,11 @@
     .line 310
     .line 311
     .line 312
-    goto :goto_199
+    goto :goto_c
 
     .line 313
-    :cond_138
-    if-eqz v21, :cond_199
+    :cond_d
+    if-eqz v21, :cond_14
 
     .line 314
     .line 315
@@ -896,7 +896,7 @@
     move-result v11
 
     .line 325
-    if-eqz v11, :cond_191
+    if-eqz v11, :cond_13
 
     .line 326
     .line 327
@@ -907,7 +907,7 @@
     const/4 v12, 0x0
 
     .line 330
-    :goto_149
+    :goto_9
     invoke-virtual {v4}, Ljava/lang/String;->length()I
 
     .line 331
@@ -916,7 +916,7 @@
     move-result v13
 
     .line 334
-    if-ge v12, v13, :cond_199
+    if-ge v12, v13, :cond_14
 
     .line 335
     .line 336
@@ -932,7 +932,7 @@
 
     .line 341
     .line 342
-    if-lt v13, v14, :cond_15e
+    if-lt v13, v14, :cond_f
 
     .line 343
     .line 344
@@ -940,27 +940,27 @@
 
     .line 345
     .line 346
-    if-le v13, v14, :cond_15c
+    if-le v13, v14, :cond_e
 
     .line 347
     .line 348
-    goto :goto_15e
+    goto :goto_a
 
     .line 349
-    :cond_15c
+    :cond_e
     const/4 v15, -0x1
 
     .line 350
-    goto :goto_175
+    goto :goto_b
 
     .line 351
-    :cond_15e
-    :goto_15e
+    :cond_f
+    :goto_a
     const/16 v14, 0x61
 
     .line 352
     .line 353
-    if-lt v13, v14, :cond_166
+    if-lt v13, v14, :cond_10
 
     .line 354
     .line 355
@@ -968,16 +968,16 @@
 
     .line 356
     .line 357
-    if-le v13, v14, :cond_15c
+    if-le v13, v14, :cond_e
 
     .line 358
     .line 359
-    :cond_166
+    :cond_10
     const/16 v14, 0x30
 
     .line 360
     .line 361
-    if-lt v13, v14, :cond_16e
+    if-lt v13, v14, :cond_11
 
     .line 362
     .line 363
@@ -985,11 +985,11 @@
 
     .line 364
     .line 365
-    if-le v13, v14, :cond_15c
+    if-le v13, v14, :cond_e
 
     .line 366
     .line 367
-    :cond_16e
+    :cond_11
     invoke-virtual {v11, v13}, Ljava/lang/String;->indexOf(I)I
 
     .line 368
@@ -1001,19 +1001,19 @@
     const/4 v15, -0x1
 
     .line 372
-    if-eq v14, v15, :cond_178
+    if-eq v14, v15, :cond_12
 
     .line 373
     .line 374
-    :goto_175
+    :goto_b
     add-int/lit8 v12, v12, 0x1
 
     .line 375
     .line 376
-    goto :goto_149
+    goto :goto_9
 
     .line 377
-    :cond_178
+    :cond_12
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     .line 378
@@ -1061,7 +1061,7 @@
     throw v0
 
     .line 402
-    :cond_191
+    :cond_13
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     .line 403
@@ -1078,9 +1078,9 @@
     throw v0
 
     .line 410
-    :cond_199
-    :goto_199
-    if-eqz v21, :cond_226
+    :cond_14
+    :goto_c
+    if-eqz v21, :cond_1c
 
     .line 411
     .line 412
@@ -1099,7 +1099,7 @@
     const/4 v12, 0x1
 
     .line 419
-    if-lt v11, v12, :cond_1f7
+    if-lt v11, v12, :cond_18
 
     .line 420
     .line 421
@@ -1107,7 +1107,7 @@
 
     .line 422
     .line 423
-    if-gt v11, v13, :cond_1f7
+    if-gt v11, v13, :cond_18
 
     .line 424
     .line 425
@@ -1190,11 +1190,11 @@
     .line 464
     .line 465
     .line 466
-    if-eqz v2, :cond_1e3
+    if-eqz v2, :cond_16
 
     .line 467
     .line 468
-    if-nez v0, :cond_1e3
+    if-nez v0, :cond_16
 
     .line 469
     .line 470
@@ -1206,17 +1206,17 @@
     move-result-object v0
 
     .line 474
-    if-nez v0, :cond_1dd
+    if-nez v0, :cond_15
 
     .line 475
     .line 476
     const/4 v14, 0x1
 
     .line 477
-    goto :goto_1e4
+    goto :goto_d
 
     .line 478
-    :cond_1dd
+    :cond_15
     new-instance v0, Llibs/o70;
 
     .line 479
@@ -1229,16 +1229,16 @@
     throw v0
 
     .line 484
-    :cond_1e3
+    :cond_16
     move v14, v0
 
     .line 485
-    :goto_1e4
-    if-eqz v11, :cond_235
+    :goto_d
+    if-eqz v11, :cond_1d
 
     .line 486
     .line 487
-    if-nez v14, :cond_235
+    if-nez v14, :cond_1d
 
     .line 488
     .line 489
@@ -1250,14 +1250,14 @@
     move-result-object v0
 
     .line 493
-    if-nez v0, :cond_1ef
+    if-nez v0, :cond_17
 
     .line 494
     .line 495
-    goto :goto_235
+    goto :goto_f
 
     .line 496
-    :cond_1ef
+    :cond_17
     new-instance v0, Llibs/o70;
 
     .line 497
@@ -1274,7 +1274,7 @@
     throw v0
 
     .line 504
-    :cond_1f7
+    :cond_18
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     .line 505
@@ -1287,12 +1287,12 @@
     throw v0
 
     .line 510
-    :cond_1fd
-    if-eqz v21, :cond_226
+    :cond_19
+    if-eqz v21, :cond_1c
 
     .line 511
     .line 512
-    :try_start_1ff
+    :try_start_2
     invoke-static/range {v22 .. v22}, Llibs/jn2;->a(Ljava/lang/String;)J
 
     .line 513
@@ -1312,15 +1312,15 @@
     .line 521
     .line 522
     move-result v2
-    :try_end_20a
-    .catch Ljava/lang/Exception; {:try_start_1ff .. :try_end_20a} :catch_229
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 523
-    if-eqz v2, :cond_21b
+    if-eqz v2, :cond_1b
 
     .line 524
     .line 525
-    if-nez v0, :cond_21b
+    if-nez v0, :cond_1b
 
     .line 526
     .line 527
@@ -1332,14 +1332,14 @@
     move-result-object v0
 
     .line 531
-    if-nez v0, :cond_215
+    if-nez v0, :cond_1a
 
     .line 532
     .line 533
-    goto :goto_21b
+    goto :goto_e
 
     .line 534
-    :cond_215
+    :cond_1a
     new-instance v0, Llibs/o70;
 
     .line 535
@@ -1352,8 +1352,8 @@
     throw v0
 
     .line 540
-    :cond_21b
-    :goto_21b
+    :cond_1b
+    :goto_e
     const-string v0, "bluecove.connect.timeout"
 
     .line 541
@@ -1366,7 +1366,7 @@
     move-result-object v0
 
     .line 546
-    if-eqz v0, :cond_226
+    if-eqz v0, :cond_1c
 
     .line 547
     .line 548
@@ -1375,15 +1375,15 @@
     .line 549
     .line 550
     .line 551
-    :cond_226
+    :cond_1c
     move-object/from16 v4, v16
 
     .line 552
     .line 553
-    goto :goto_235
+    goto :goto_f
 
     .line 554
-    :catch_229
+    :catch_0
     move-exception v0
 
     .line 555
@@ -1410,8 +1410,8 @@
     throw v1
 
     .line 566
-    :cond_235
-    :goto_235
+    :cond_1d
+    :goto_f
     invoke-virtual {v10, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     .line 567
@@ -1420,7 +1420,7 @@
     move-result v0
 
     .line 570
-    if-eqz v0, :cond_251
+    if-eqz v0, :cond_1f
 
     .line 571
     .line 572
@@ -1436,7 +1436,7 @@
     move-result-object v0
 
     .line 578
-    if-eqz v0, :cond_246
+    if-eqz v0, :cond_1e
 
     .line 579
     .line 580
@@ -1445,7 +1445,7 @@
     .line 581
     .line 582
     .line 583
-    :cond_246
+    :cond_1e
     const-string v0, "bluecove.obex.mtu"
 
     .line 584
@@ -1458,7 +1458,7 @@
     move-result-object v0
 
     .line 589
-    if-eqz v0, :cond_251
+    if-eqz v0, :cond_1f
 
     .line 590
     .line 591
@@ -1467,7 +1467,7 @@
     .line 592
     .line 593
     .line 594
-    :cond_251
+    :cond_1f
     const-string v0, "btgoep"
 
     .line 595
@@ -1480,7 +1480,7 @@
     move-result v0
 
     .line 600
-    if-nez v0, :cond_276
+    if-nez v0, :cond_22
 
     .line 601
     .line 602
@@ -1496,11 +1496,11 @@
     move-result v0
 
     .line 608
-    if-eqz v0, :cond_26a
+    if-eqz v0, :cond_21
 
     .line 609
     .line 610
-    if-eqz v20, :cond_269
+    if-eqz v20, :cond_20
 
     .line 611
     .line 612
@@ -1516,11 +1516,11 @@
     throw v16
 
     .line 618
-    :cond_269
+    :cond_20
     throw v16
 
     .line 619
-    :cond_26a
+    :cond_21
     new-instance v0, Llibs/o70;
 
     .line 620
@@ -1545,8 +1545,8 @@
     throw v0
 
     .line 631
-    :cond_276
-    if-eqz v20, :cond_283
+    :cond_22
+    if-eqz v20, :cond_23
 
     .line 632
     .line 633
@@ -1571,7 +1571,7 @@
     throw v16
 
     .line 644
-    :cond_283
+    :cond_23
     new-instance v0, Llibs/w22;
 
     .line 645
@@ -1579,7 +1579,7 @@
     throw v16
 
     .line 647
-    :cond_286
+    :cond_24
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     .line 648
@@ -1612,7 +1612,7 @@
     throw v1
 
     .line 663
-    :cond_296
+    :cond_25
     new-instance v0, Llibs/o70;
 
     .line 664
@@ -1625,7 +1625,7 @@
     throw v0
 
     .line 669
-    :cond_29c
+    :cond_26
     new-instance v1, Llibs/o70;
 
     .line 670
@@ -1635,19 +1635,19 @@
     .line 672
     .line 673
     .line 674
-    goto :goto_2a3
+    goto :goto_11
 
     .line 675
-    :goto_2a2
+    :goto_10
     throw v1
 
     .line 676
-    :goto_2a3
-    goto :goto_2a2
+    :goto_11
+    goto :goto_10
 .end method
 
 .method public static b(Ljava/util/Hashtable;Ljava/lang/String;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-virtual {p0, p1}, Ljava/util/Hashtable;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1665,14 +1665,14 @@
     const/4 v0, 0x0
 
     .line 8
-    if-nez p0, :cond_a
+    if-nez p0, :cond_0
 
     .line 9
     .line 10
-    goto :goto_1c
+    goto :goto_0
 
     .line 11
-    :cond_a
+    :cond_0
     const-string v1, "true"
 
     .line 12
@@ -1685,7 +1685,7 @@
     move-result v1
 
     .line 17
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_1
 
     .line 18
     .line 19
@@ -1695,7 +1695,7 @@
     return p0
 
     .line 21
-    :cond_14
+    :cond_1
     const-string v1, "false"
 
     .line 22
@@ -1708,15 +1708,15 @@
     move-result v1
 
     .line 27
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_2
 
     .line 28
     .line 29
-    :goto_1c
+    :goto_0
     return v0
 
     .line 30
-    :cond_1d
+    :cond_2
     const-string v1, "invalid param value "
 
     .line 31

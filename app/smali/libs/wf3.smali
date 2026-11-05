@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ng3;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x0

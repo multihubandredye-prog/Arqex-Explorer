@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 1
     const/4 v0, 0x5
@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public final d(Ljava/security/Key;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     const-string v0, "EdDSA"
@@ -82,7 +82,7 @@
     move-result v0
 
     .line 11
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_1
 
     .line 12
     .line 13
@@ -106,22 +106,22 @@
     move-result p1
 
     .line 23
-    if-eqz p1, :cond_19
+    if-eqz p1, :cond_0
 
     .line 24
     .line 25
-    goto :goto_1b
+    goto :goto_0
 
     .line 26
-    :cond_19
+    :cond_0
     const/4 p1, 0x0
 
     .line 27
     return p1
 
     .line 28
-    :cond_1b
-    :goto_1b
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
     .line 29
@@ -129,14 +129,14 @@
 .end method
 
 .method public final g(Llibs/tj;)Ljava/security/PublicKey;
-    .registers 8
+    .locals 6
 
     .line 1
     const-string v0, "Key algo: "
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     invoke-virtual {p1}, Llibs/uj;->String()J
 
     .line 4
@@ -165,7 +165,7 @@
 
     .line 16
     .line 17
-    if-eqz v3, :cond_3a
+    if-eqz v3, :cond_0
 
     .line 18
     .line 19
@@ -236,32 +236,32 @@
     .line 54
     .line 55
     .line 56
-    goto :goto_3a
+    goto :goto_0
 
     .line 57
-    :catch_38
+    :catch_0
     move-exception p1
 
     .line 58
-    goto :goto_3f
+    goto :goto_1
 
     .line 59
-    :cond_3a
-    :goto_3a
+    :cond_0
+    :goto_0
     invoke-static {v1}, Llibs/en1;->m([B)Llibs/ih0;
 
     .line 60
     .line 61
     .line 62
     move-result-object p1
-    :try_end_3e
-    .catch Llibs/rj; {:try_start_2 .. :try_end_3e} :catch_38
+    :try_end_0
+    .catch Llibs/rj; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 63
     return-object p1
 
     .line 64
-    :goto_3f
+    :goto_1
     invoke-virtual {p1}, Llibs/ny2;->getMessage()Ljava/lang/String;
 
     .line 65
@@ -282,7 +282,7 @@
 .end method
 
 .method public final h(Ljava/security/PublicKey;Llibs/uj;)V
-    .registers 7
+    .locals 4
 
     .line 1
     invoke-interface {p1}, Ljava/security/Key;->getEncoded()[B

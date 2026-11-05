@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/kc0;Ljava/lang/String;Ljava/lang/ThreadGroup;JLlibs/fi1;I)V
-    .registers 8
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/jc0;->Lambda:Llibs/kc0;
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 6
+    .locals 5
 
     .line 1
     sget-object v0, Llibs/kc0;->Sigma:Ljava/util/concurrent/atomic/AtomicInteger;
@@ -57,7 +57,7 @@
     .line 4
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     iget-object v0, p0, Llibs/jc0;->Lambda:Llibs/kc0;
 
     .line 7
@@ -75,13 +75,13 @@
     .line 13
     .line 14
     invoke-virtual {v0, v1, v2, v3, v4}, Llibs/kc0;->c(JLlibs/fi1;I)V
-    :try_end_10
-    .catchall {:try_start_5 .. :try_end_10} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 15
     .line 16
     .line 17
-    :catchall_10
+    :catchall_0
     sget-object v0, Llibs/kc0;->Sigma:Ljava/util/concurrent/atomic/AtomicInteger;
 
     .line 18

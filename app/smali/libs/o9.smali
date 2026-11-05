@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const-string v0, "winamp-b4s"
@@ -40,7 +40,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/mg3;-><init>()V
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public final Get(Ljava/io/InputStream;Llibs/kn;Ljava/nio/charset/Charset;)V
-    .registers 6
+    .locals 2
 
     .line 1
     invoke-static {}, Ljavax/xml/parsers/SAXParserFactory;->newInstance()Ljavax/xml/parsers/SAXParserFactory;
@@ -65,7 +65,7 @@
     move-result-object v0
 
     .line 5
-    :try_start_4
+    :try_start_0
     invoke-virtual {v0}, Ljavax/xml/parsers/SAXParserFactory;->newSAXParser()Ljavax/xml/parsers/SAXParser;
 
     .line 6
@@ -84,9 +84,9 @@
     .line 13
     .line 14
     invoke-virtual {v0, p1, v1}, Ljavax/xml/parsers/SAXParser;->parse(Ljava/io/InputStream;Lorg/xml/sax/helpers/DefaultHandler;)V
-    :try_end_10
-    .catch Ljavax/xml/parsers/ParserConfigurationException; {:try_start_4 .. :try_end_10} :catch_13
-    .catch Lorg/xml/sax/SAXException; {:try_start_4 .. :try_end_10} :catch_11
+    :try_end_0
+    .catch Ljavax/xml/parsers/ParserConfigurationException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Lorg/xml/sax/SAXException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 15
     .line 16
@@ -94,21 +94,21 @@
     return-void
 
     .line 18
-    :catch_11
+    :catch_0
     move-exception p1
 
     .line 19
-    goto :goto_15
+    goto :goto_0
 
     .line 20
-    :catch_13
+    :catch_1
     move-exception p1
 
     .line 21
-    goto :goto_2d
+    goto :goto_1
 
     .line 22
-    :goto_15
+    :goto_0
     new-instance p2, Llibs/cd1;
 
     .line 23
@@ -155,7 +155,7 @@
     throw p2
 
     .line 46
-    :goto_2d
+    :goto_1
     new-instance p2, Llibs/cd1;
 
     .line 47

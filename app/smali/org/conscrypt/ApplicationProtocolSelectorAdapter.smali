@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Ljavax/net/ssl/SSLEngine;Lorg/conscrypt/ApplicationProtocolSelector;)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -76,7 +76,7 @@
 .end method
 
 .method public constructor <init>(Ljavax/net/ssl/SSLSocket;Lorg/conscrypt/ApplicationProtocolSelector;)V
-    .registers 4
+    .locals 1
 
     .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -114,27 +114,27 @@
 
 # virtual methods
 .method public selectApplicationProtocol([B)I
-    .registers 7
+    .locals 5
 
     .line 1
     const/4 v0, -0x1
 
     .line 2
-    if-eqz p1, :cond_49
+    if-eqz p1, :cond_4
 
     .line 3
     .line 4
     array-length v1, p1
 
     .line 5
-    if-nez v1, :cond_7
+    if-nez v1, :cond_0
 
     .line 6
     .line 7
-    goto :goto_49
+    goto :goto_2
 
     .line 8
-    :cond_7
+    :cond_0
     invoke-static {p1}, Lorg/conscrypt/SSLUtils;->decodeProtocols([B)[Ljava/lang/String;
 
     .line 9
@@ -159,7 +159,7 @@
 
     .line 19
     .line 20
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_1
 
     .line 21
     .line 22
@@ -171,10 +171,10 @@
     move-result-object v1
 
     .line 26
-    goto :goto_20
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_1
     iget-object v1, p0, Lorg/conscrypt/ApplicationProtocolSelectorAdapter;->socket:Ljavax/net/ssl/SSLSocket;
 
     .line 28
@@ -187,8 +187,8 @@
     move-result-object v1
 
     .line 33
-    :goto_20
-    if-eqz v1, :cond_49
+    :goto_0
+    if-eqz v1, :cond_4
 
     .line 34
     .line 35
@@ -200,14 +200,14 @@
     move-result v2
 
     .line 39
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_2
 
     .line 40
     .line 41
-    goto :goto_49
+    goto :goto_2
 
     .line 42
-    :cond_29
+    :cond_2
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     .line 43
@@ -219,7 +219,7 @@
     const/4 v2, 0x0
 
     .line 47
-    :goto_2e
+    :goto_1
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 48
@@ -228,7 +228,7 @@
     move-result v3
 
     .line 51
-    if-eqz v3, :cond_49
+    if-eqz v3, :cond_4
 
     .line 52
     .line 53
@@ -252,14 +252,14 @@
     move-result v4
 
     .line 63
-    if-eqz v4, :cond_41
+    if-eqz v4, :cond_3
 
     .line 64
     .line 65
     return v2
 
     .line 66
-    :cond_41
+    :cond_3
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
     .line 67
@@ -275,10 +275,10 @@
     add-int/2addr v2, v3
 
     .line 73
-    goto :goto_2e
+    goto :goto_1
 
     .line 74
-    :cond_49
-    :goto_49
+    :cond_4
+    :goto_2
     return v0
 .end method

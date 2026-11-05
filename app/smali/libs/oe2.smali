@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/PreferenceActivity;Ljava/lang/String;Landroid/widget/TextView;B)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-byte p4, p0, Llibs/oe2;->X:B
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final c([Ljava/lang/Object;)Z
-    .registers 11
+    .locals 9
 
     .line 1
     iget-byte v0, p0, Llibs/oe2;->X:B
@@ -81,7 +81,7 @@
 
     .line 14
     .line 15
-    packed-switch v0, :pswitch_data_70
+    packed-switch v0, :pswitch_data_0
 
     .line 16
     .line 17
@@ -181,7 +181,7 @@
     return v1
 
     .line 67
-    :pswitch_42
+    :pswitch_0
     sget-boolean v0, Lcom/mixplorer/activities/PreferenceActivity;->O:Z
 
     .line 68
@@ -272,8 +272,8 @@
     return v1
 
     .line 113
-    :pswitch_data_70
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_42
+        :pswitch_0
     .end packed-switch
 .end method

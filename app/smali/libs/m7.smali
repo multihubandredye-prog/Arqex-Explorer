@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Param;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -45,7 +45,7 @@
     const/4 v0, 0x0
 
     .line 16
-    :goto_f
+    :goto_0
     iget-object v1, p0, Llibs/m7;->X:[Llibs/rz;
 
     .line 17
@@ -53,7 +53,7 @@
     array-length v2, v1
 
     .line 19
-    if-eq v0, v2, :cond_21
+    if-eq v0, v2, :cond_0
 
     .line 20
     .line 21
@@ -81,10 +81,10 @@
 
     .line 32
     .line 33
-    goto :goto_f
+    goto :goto_0
 
     .line 34
-    :cond_21
+    :cond_0
     instance-of p1, p1, Llibs/hb;
 
     .line 35
@@ -99,7 +99,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Llibs/Init;
@@ -114,7 +114,7 @@
     .line 5
     .line 6
     .line 7
-    :goto_6
+    :goto_0
     iget-object v2, p0, Llibs/m7;->X:[Llibs/rz;
 
     .line 8
@@ -122,7 +122,7 @@
     array-length v3, v2
 
     .line 10
-    if-eq v1, v3, :cond_13
+    if-eq v1, v3, :cond_0
 
     .line 11
     .line 12
@@ -139,15 +139,15 @@
 
     .line 18
     .line 19
-    goto :goto_6
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     iget-boolean v1, p0, Llibs/m7;->Y:Z
 
     .line 21
     .line 22
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_1
 
     .line 23
     .line 24
@@ -163,7 +163,7 @@
     return-object v1
 
     .line 30
-    :cond_1d
+    :cond_1
     new-instance v1, Llibs/a50;
 
     .line 31

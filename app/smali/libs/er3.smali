@@ -22,7 +22,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/c;ZLlibs/ir3;ZLjava/util/LinkedHashSet;Landroid/hardware/usb/UsbDevice;)V
-    .registers 7
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 7
+    .locals 6
 
     .line 1
     iget-object v4, p0, Llibs/er3;->Mu:Ljava/util/LinkedHashSet;

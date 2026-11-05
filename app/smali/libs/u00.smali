@@ -9,7 +9,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/u00;->b:B
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final a()Llibs/zw3;
-    .registers 35
+    .locals 34
 
     .line 1
     move-object/from16 v0, p0
@@ -113,7 +113,7 @@
 
     .line 41
     .line 42
-    packed-switch v1, :pswitch_data_752
+    packed-switch v1, :pswitch_data_0
 
     .line 43
     .line 44
@@ -236,7 +236,7 @@
     return-object v2
 
     .line 105
-    :pswitch_68
+    :pswitch_0
     invoke-static {v13}, Llibs/nq2;->c(Ljava/lang/String;)Ljava/math/BigInteger;
 
     .line 106
@@ -352,7 +352,7 @@
     return-object v7
 
     .line 162
-    :pswitch_a1
+    :pswitch_1
     invoke-static/range {v22 .. v23}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
 
     .line 163
@@ -471,7 +471,7 @@
     return-object v2
 
     .line 220
-    :pswitch_db
+    :pswitch_2
     sget-object v8, Llibs/ff0;->f:Ljava/math/BigInteger;
 
     .line 221
@@ -575,7 +575,7 @@
     return-object v2
 
     .line 269
-    :pswitch_10c
+    :pswitch_3
     invoke-static/range {v22 .. v23}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
 
     .line 270
@@ -687,7 +687,7 @@
     return-object v8
 
     .line 324
-    :pswitch_143
+    :pswitch_4
     sget-object v4, Llibs/ff0;->f:Ljava/math/BigInteger;
 
     .line 325
@@ -782,7 +782,7 @@
     return-object v6
 
     .line 370
-    :pswitch_171
+    :pswitch_5
     invoke-static {v12}, Llibs/nq2;->c(Ljava/lang/String;)Ljava/math/BigInteger;
 
     .line 371
@@ -901,7 +901,7 @@
     return-object v2
 
     .line 428
-    :pswitch_1ab
+    :pswitch_6
     invoke-static/range {v22 .. v23}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
 
     .line 429
@@ -1025,7 +1025,7 @@
     return-object v2
 
     .line 487
-    :pswitch_1e6
+    :pswitch_7
     sget-object v8, Llibs/ff0;->f:Ljava/math/BigInteger;
 
     .line 488
@@ -1129,7 +1129,7 @@
     return-object v2
 
     .line 536
-    :pswitch_217
+    :pswitch_8
     sget-object v6, Llibs/ff0;->f:Ljava/math/BigInteger;
 
     .line 537
@@ -1224,7 +1224,7 @@
     return-object v8
 
     .line 582
-    :pswitch_245
+    :pswitch_9
     invoke-static/range {v22 .. v23}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
 
     .line 583
@@ -1336,7 +1336,7 @@
     return-object v6
 
     .line 637
-    :pswitch_27c
+    :pswitch_a
     sget-object v10, Llibs/ff0;->f:Ljava/math/BigInteger;
 
     .line 638
@@ -1431,7 +1431,7 @@
     return-object v2
 
     .line 683
-    :pswitch_2aa
+    :pswitch_b
     const-string v1, "0163F35A5137C2CE3EA6ED8667190B0BC43ECD69977702709B"
 
     .line 684
@@ -1547,7 +1547,7 @@
     return-object v7
 
     .line 740
-    :pswitch_2e3
+    :pswitch_c
     const-string v1, "0017858FEB7A98975169E171F77B4087DE098AC8A911DF7B01"
 
     .line 741
@@ -1663,7 +1663,7 @@
     return-object v7
 
     .line 797
-    :pswitch_31c
+    :pswitch_d
     invoke-static/range {v22 .. v23}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
 
     .line 798
@@ -1781,7 +1781,7 @@
     return-object v2
 
     .line 854
-    :pswitch_355
+    :pswitch_e
     const-string v1, "07B6882CAAEFA84F9554FF8428BD88E246D2782AE2"
 
     .line 855
@@ -1902,7 +1902,7 @@
     return-object v9
 
     .line 912
-    :pswitch_38f
+    :pswitch_f
     invoke-static/range {v22 .. v23}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
 
     .line 913
@@ -2008,7 +2008,7 @@
     return-object v2
 
     .line 963
-    :pswitch_3c2
+    :pswitch_10
     invoke-static {v12}, Llibs/nq2;->c(Ljava/lang/String;)Ljava/math/BigInteger;
 
     .line 964
@@ -2124,7 +2124,7 @@
     return-object v7
 
     .line 1020
-    :pswitch_3fb
+    :pswitch_11
     const-string v1, "03E5A88919D7CAFCBF415F07C2176573B2"
 
     .line 1021
@@ -2246,7 +2246,7 @@
     return-object v9
 
     .line 1079
-    :pswitch_436
+    :pswitch_12
     const-string v1, "07A11B09A76B562144418FF3FF8C2570B8"
 
     .line 1080
@@ -2368,7 +2368,7 @@
     return-object v9
 
     .line 1138
-    :pswitch_471
+    :pswitch_13
     const-string v1, "00689918DBEC7E5A0DD6DFC0AA55C7"
 
     .line 1139
@@ -2484,7 +2484,7 @@
     return-object v7
 
     .line 1195
-    :pswitch_4aa
+    :pswitch_14
     const-string v1, "003088250CA6E7C7FE649CE85820F7"
 
     .line 1196
@@ -2600,7 +2600,7 @@
     return-object v7
 
     .line 1252
-    :pswitch_4e3
+    :pswitch_15
     const-string v1, "01FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
 
     .line 1253
@@ -2720,7 +2720,7 @@
     return-object v6
 
     .line 1311
-    :pswitch_51e
+    :pswitch_16
     const-string v1, "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFF0000000000000000FFFFFFFF"
 
     .line 1312
@@ -2840,7 +2840,7 @@
     return-object v6
 
     .line 1370
-    :pswitch_559
+    :pswitch_17
     const-string v1, "FFFFFFFF00000001000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFF"
 
     .line 1371
@@ -2960,7 +2960,7 @@
     return-object v6
 
     .line 1429
-    :pswitch_594
+    :pswitch_18
     const-string v1, "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFC2F"
 
     .line 1430
@@ -3232,7 +3232,7 @@
     return-object v6
 
     .line 1568
-    :pswitch_61f
+    :pswitch_19
     const-string v1, "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000000000000001"
 
     .line 1569
@@ -3345,7 +3345,7 @@
     return-object v12
 
     .line 1624
-    :pswitch_657
+    :pswitch_1a
     const-string v1, "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFE56D"
 
     .line 1625
@@ -3597,7 +3597,7 @@
     return-object v28
 
     .line 1755
-    :pswitch_6da
+    :pswitch_1b
     invoke-static {v11}, Llibs/tx0;->a(Ljava/lang/String;)[B
 
     .line 1756
@@ -3652,7 +3652,7 @@
     return-object v1
 
     .line 1783
-    :pswitch_6f6
+    :pswitch_1c
     new-instance v1, Llibs/qs0;
 
     .line 1784
@@ -3831,36 +3831,36 @@
     return-object v4
 
     .line 1875
-    :pswitch_data_752
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_6f6
-        :pswitch_6da
-        :pswitch_657
-        :pswitch_61f
-        :pswitch_594
-        :pswitch_559
-        :pswitch_51e
-        :pswitch_4e3
-        :pswitch_4aa
-        :pswitch_471
-        :pswitch_436
-        :pswitch_3fb
-        :pswitch_3c2
-        :pswitch_38f
-        :pswitch_355
-        :pswitch_31c
-        :pswitch_2e3
-        :pswitch_2aa
-        :pswitch_27c
-        :pswitch_245
-        :pswitch_217
-        :pswitch_1e6
-        :pswitch_1ab
-        :pswitch_171
-        :pswitch_143
-        :pswitch_10c
-        :pswitch_db
-        :pswitch_a1
-        :pswitch_68
+        :pswitch_1c
+        :pswitch_1b
+        :pswitch_1a
+        :pswitch_19
+        :pswitch_18
+        :pswitch_17
+        :pswitch_16
+        :pswitch_15
+        :pswitch_14
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

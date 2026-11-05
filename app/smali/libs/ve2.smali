@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(BLjava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/ve2;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final c([Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     iget-byte p1, p0, Llibs/ve2;->X:B
@@ -53,7 +53,7 @@
 
     .line 6
     .line 7
-    packed-switch p1, :pswitch_data_3c
+    packed-switch p1, :pswitch_data_0
 
     .line 8
     .line 9
@@ -92,7 +92,7 @@
     return v0
 
     .line 28
-    :pswitch_1b
+    :pswitch_0
     sget-boolean p1, Lcom/mixplorer/activities/PreferenceActivity;->O:Z
 
     .line 29
@@ -127,7 +127,7 @@
     return v0
 
     .line 46
-    :pswitch_2d
+    :pswitch_1
     sget-boolean p1, Lcom/mixplorer/activities/PreferenceActivity;->O:Z
 
     .line 47
@@ -136,14 +136,14 @@
 
     .line 49
     .line 50
-    if-eqz p1, :cond_34
+    if-eqz p1, :cond_0
 
     .line 51
     .line 52
     move-object v1, p1
 
     .line 53
-    :cond_34
+    :cond_0
     invoke-static {v2}, Llibs/_f;->a(Ljava/lang/String;)Llibs/_f;
 
     .line 54
@@ -160,9 +160,9 @@
     nop
 
     .line 61
-    :pswitch_data_3c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2d
-        :pswitch_1b
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>(Lorg/conscrypt/HpkeSpi;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Lorg/conscrypt/HpkeContext;-><init>(Lorg/conscrypt/HpkeSpi;)V
@@ -17,7 +17,7 @@
 .end method
 
 .method public static getInstance(Ljava/lang/String;)Lorg/conscrypt/HpkeContextRecipient;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Lorg/conscrypt/HpkeContextRecipient;
@@ -41,7 +41,7 @@
 .end method
 
 .method public static getInstance(Ljava/lang/String;Ljava/lang/String;)Lorg/conscrypt/HpkeContextRecipient;
-    .registers 3
+    .locals 1
 
     .line 11
     new-instance v0, Lorg/conscrypt/HpkeContextRecipient;
@@ -56,7 +56,7 @@
 .end method
 
 .method public static getInstance(Ljava/lang/String;Ljava/security/Provider;)Lorg/conscrypt/HpkeContextRecipient;
-    .registers 3
+    .locals 1
 
     .line 12
     new-instance v0, Lorg/conscrypt/HpkeContextRecipient;
@@ -73,7 +73,7 @@
 
 # virtual methods
 .method public init([BLjava/security/PrivateKey;[B)V
-    .registers 11
+    .locals 7
 
     .line 23
     iget-object v0, p0, Lorg/conscrypt/HpkeContext;->spi:Lorg/conscrypt/HpkeSpi;
@@ -96,10 +96,10 @@
 .end method
 
 .method public init([BLjava/security/PrivateKey;[BLjava/security/PublicKey;)V
-    .registers 12
+    .locals 7
 
     .line 1
-    if-eqz p4, :cond_10
+    if-eqz p4, :cond_0
 
     .line 2
     .line 3
@@ -135,7 +135,7 @@
     return-void
 
     .line 17
-    :cond_10
+    :cond_0
     const-string p1, "null sender key"
 
     .line 18
@@ -149,9 +149,9 @@
 .end method
 
 .method public init([BLjava/security/PrivateKey;[BLjava/security/PublicKey;[B[B)V
-    .registers 14
+    .locals 7
 
-    if-eqz p4, :cond_e
+    if-eqz p4, :cond_0
 
     .line 25
     iget-object v0, p0, Lorg/conscrypt/HpkeContext;->spi:Lorg/conscrypt/HpkeSpi;
@@ -173,7 +173,7 @@
     return-void
 
     .line 26
-    :cond_e
+    :cond_0
     const-string p1, "null sender key"
 
     invoke-static {p1}, Llibs/bf0;->k(Ljava/lang/String;)V
@@ -182,7 +182,7 @@
 .end method
 
 .method public init([BLjava/security/PrivateKey;[B[B[B)V
-    .registers 13
+    .locals 7
 
     .line 24
     iget-object v0, p0, Lorg/conscrypt/HpkeContext;->spi:Lorg/conscrypt/HpkeSpi;
@@ -205,7 +205,7 @@
 .end method
 
 .method public open([B[B)[B
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/HpkeContext;->spi:Lorg/conscrypt/HpkeSpi;

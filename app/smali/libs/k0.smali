@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/security/AlgorithmParametersSpi;-><init>()V
@@ -22,10 +22,10 @@
 .end method
 
 .method public final engineGetParameterSpec(Ljava/lang/Class;)Ljava/security/spec/AlgorithmParameterSpec;
-    .registers 2
+    .locals 0
 
     .line 1
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_0
 
     .line 2
     .line 3
@@ -40,7 +40,7 @@
     return-object p1
 
     .line 8
-    :cond_7
+    :cond_0
     const-string p1, "argument to getParameterSpec must not be null"
 
     .line 9

@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/BrowseActivity;Llibs/od;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
-    .registers 5
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 9
+    .locals 7
 
     new-instance v3, Ljava/util/ArrayList;
 
@@ -48,9 +48,9 @@
 
     const/4 v4, 0x0
 
-    if-eqz v0, :cond_35
+    if-eqz v0, :cond_1
 
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_1
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -66,8 +66,8 @@
 
     const/4 v5, 0x0
 
-    :goto_1b
-    if-ge v5, v2, :cond_35
+    :goto_0
+    if-ge v5, v2, :cond_1
 
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -75,13 +75,13 @@
 
     check-cast v6, Landroid/widget/CheckBox;
 
-    if-eqz v6, :cond_32
+    if-eqz v6, :cond_0
 
     invoke-virtual {v6}, Landroid/widget/CompoundButton;->isChecked()Z
 
     move-result v6
 
-    if-eqz v6, :cond_32
+    if-eqz v6, :cond_0
 
     invoke-virtual {v0, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -89,21 +89,21 @@
 
     invoke-virtual {v3, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :cond_32
+    :cond_0
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_35
+    :cond_1
     invoke-virtual {v3}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_49
+    if-eqz v0, :cond_3
 
     iget-object v0, p0, Llibs/SmartFeaturesV116$DeleteEmptyConfirmListener;->activity:Lcom/mixplorer/activities/BrowseActivity;
 
-    if-eqz v0, :cond_48
+    if-eqz v0, :cond_2
 
     const-string v1, "Nenhuma pasta marcada para excluir"
 
@@ -113,22 +113,22 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    :cond_48
+    :cond_2
     return-void
 
-    :cond_49
-    if-eqz p1, :cond_4e
+    :cond_3
+    if-eqz p1, :cond_4
 
     invoke-virtual {p1, v4}, Landroid/view/View;->setEnabled(Z)V
 
-    :cond_4e
+    :cond_4
     iget-object v2, p0, Llibs/SmartFeaturesV116$DeleteEmptyConfirmListener;->dialog:Llibs/od;
 
-    if-eqz v2, :cond_55
+    if-eqz v2, :cond_5
 
     invoke-virtual {v2}, Llibs/od;->Load()V
 
-    :cond_55
+    :cond_5
     new-instance v6, Ljava/lang/Thread;
 
     new-instance v0, Llibs/SmartFeaturesV116$DeleteEmptyWorkerRunnable;

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/oi0;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -31,7 +31,7 @@
 .end method
 
 .method public constructor <init>(Llibs/oi0;Ljava/lang/String;I)V
-    .registers 5
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -46,36 +46,36 @@
 
 # virtual methods
 .method public final a(Llibs/oi0;[B[B)[B
-    .registers 5
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/jg;->c:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_48
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     invoke-static {p1, p3, p2}, Llibs/eh3;->d(Llibs/oi0;[B[B)[B
 
     .line 7
     .line 8
     .line 9
     move-result-object p1
-    :try_end_9
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_5 .. :try_end_9} :catch_1f
-    .catch Ljavax/crypto/IllegalBlockSizeException; {:try_start_5 .. :try_end_9} :catch_18
-    .catch Ljavax/crypto/BadPaddingException; {:try_start_5 .. :try_end_9} :catch_11
-    .catch Llibs/ni0; {:try_start_5 .. :try_end_9} :catch_a
+    :try_end_0
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljavax/crypto/IllegalBlockSizeException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljavax/crypto/BadPaddingException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Llibs/ni0; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 10
     return-object p1
 
     .line 11
-    :catch_a
+    :catch_0
     move-exception p1
 
     .line 12
@@ -91,7 +91,7 @@
     throw p2
 
     .line 18
-    :catch_11
+    :catch_1
     move-exception p1
 
     .line 19
@@ -107,7 +107,7 @@
     throw p2
 
     .line 25
-    :catch_18
+    :catch_2
     move-exception p1
 
     .line 26
@@ -123,7 +123,7 @@
     throw p2
 
     .line 32
-    :catch_1f
+    :catch_3
     move-exception p1
 
     .line 33
@@ -139,28 +139,28 @@
     throw p2
 
     .line 39
-    :pswitch_26
+    :pswitch_0
     const/4 v0, 0x2
 
     .line 40
-    :try_start_27
+    :try_start_1
     invoke-static {p1, p3, p2, v0}, Llibs/hg;->a(Llibs/oi0;[B[BI)[B
 
     .line 41
     .line 42
     .line 43
     move-result-object p1
-    :try_end_2b
-    .catch Llibs/ni0; {:try_start_27 .. :try_end_2b} :catch_41
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_27 .. :try_end_2b} :catch_3a
-    .catch Ljavax/crypto/IllegalBlockSizeException; {:try_start_27 .. :try_end_2b} :catch_33
-    .catch Ljavax/crypto/BadPaddingException; {:try_start_27 .. :try_end_2b} :catch_2c
+    :try_end_1
+    .catch Llibs/ni0; {:try_start_1 .. :try_end_1} :catch_7
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_1 .. :try_end_1} :catch_6
+    .catch Ljavax/crypto/IllegalBlockSizeException; {:try_start_1 .. :try_end_1} :catch_5
+    .catch Ljavax/crypto/BadPaddingException; {:try_start_1 .. :try_end_1} :catch_4
 
     .line 44
     return-object p1
 
     .line 45
-    :catch_2c
+    :catch_4
     move-exception p1
 
     .line 46
@@ -176,7 +176,7 @@
     throw p2
 
     .line 52
-    :catch_33
+    :catch_5
     move-exception p1
 
     .line 53
@@ -192,7 +192,7 @@
     throw p2
 
     .line 59
-    :catch_3a
+    :catch_6
     move-exception p1
 
     .line 60
@@ -208,7 +208,7 @@
     throw p2
 
     .line 66
-    :catch_41
+    :catch_7
     move-exception p1
 
     .line 67
@@ -224,21 +224,21 @@
     throw p2
 
     .line 73
-    :pswitch_data_48
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_26
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final c([B)Ljava/lang/String;
-    .registers 5
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/jg;->c:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_1e
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -255,7 +255,7 @@
     return-object v0
 
     .line 12
-    :pswitch_b
+    :pswitch_0
     array-length v0, p1
 
     .line 13
@@ -299,8 +299,8 @@
     nop
 
     .line 31
-    :pswitch_data_1e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_b
+        :pswitch_0
     .end packed-switch
 .end method

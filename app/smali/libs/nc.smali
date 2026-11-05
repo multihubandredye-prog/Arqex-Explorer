@@ -22,7 +22,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/a;ZLjava/lang/String;Ljava/lang/String;Z)V
-    .registers 7
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -61,7 +61,7 @@
 .end method
 
 .method public synthetic constructor <init>(Llibs/c;Ljava/lang/Thread;Ljava/util/ArrayList;ZZ)V
-    .registers 7
+    .locals 1
 
     .line 18
     const/4 v0, 0x2
@@ -84,7 +84,7 @@
 .end method
 
 .method public synthetic constructor <init>(Llibs/k70;Landroid/app/Activity;ZLjava/util/concurrent/atomic/AtomicBoolean;Z)V
-    .registers 7
+    .locals 1
 
     .line 19
     const/4 v0, 0x1
@@ -109,7 +109,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 21
+    .locals 20
 
     .line 1
     move-object/from16 v0, p0
@@ -140,7 +140,7 @@
 
     .line 14
     .line 15
-    packed-switch v1, :pswitch_data_94
+    packed-switch v1, :pswitch_data_0
 
     .line 16
     .line 17
@@ -165,7 +165,7 @@
     return-void
 
     .line 28
-    :pswitch_1b
+    :pswitch_0
     move-object v7, v6
 
     .line 29
@@ -206,7 +206,7 @@
     return-void
 
     .line 46
-    :pswitch_2d
+    :pswitch_1
     move-object v13, v6
 
     .line 47
@@ -222,7 +222,7 @@
 
     .line 52
     .line 53
-    :try_start_34
+    :try_start_0
     sget v1, Llibs/bi2;->attention:I
 
     .line 54
@@ -235,7 +235,7 @@
     move-result-object v14
 
     .line 59
-    if-eqz v3, :cond_44
+    if-eqz v3, :cond_0
 
     .line 60
     .line 61
@@ -251,14 +251,14 @@
     move-result-object v1
 
     .line 67
-    :goto_42
+    :goto_0
     move-object v15, v1
 
     .line 68
-    goto :goto_5f
+    goto :goto_1
 
     .line 69
-    :cond_44
+    :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     .line 70
@@ -307,10 +307,10 @@
     move-result-object v1
 
     .line 95
-    goto :goto_42
+    goto :goto_0
 
     .line 96
-    :goto_5f
+    :goto_1
     sget v1, Llibs/bi2;->agree:I
 
     .line 97
@@ -362,7 +362,7 @@
     const/4 v5, 0x0
 
     .line 121
-    if-eqz v1, :cond_87
+    if-eqz v1, :cond_1
 
     .line 122
     .line 123
@@ -388,10 +388,10 @@
     .line 133
     .line 134
     .line 135
-    goto :goto_93
+    goto :goto_2
 
     .line 136
-    :cond_87
+    :cond_1
     invoke-static {}, Llibs/zt0;->j()Landroid/os/Handler;
 
     .line 137
@@ -410,20 +410,20 @@
     .line 144
     .line 145
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-    :try_end_93
-    .catchall {:try_start_34 .. :try_end_93} :catchall_93
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 146
     .line 147
     .line 148
-    :catchall_93
-    :goto_93
+    :catchall_0
+    :goto_2
     return-void
 
     .line 149
-    :pswitch_data_94
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2d
-        :pswitch_1b
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

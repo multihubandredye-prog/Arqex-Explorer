@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(ILandroid/content/Intent;Llibs/ex1;)V
-    .registers 21
+    .locals 17
 
     .line 1
     move-object/from16 v1, p0
@@ -168,19 +168,19 @@
 
     .line 72
     .line 73
-    if-eqz v5, :cond_83
+    if-eqz v5, :cond_1
 
     .line 74
     .line 75
-    if-nez v2, :cond_4e
+    if-nez v2, :cond_0
 
     .line 76
     .line 77
-    goto/16 :goto_10e
+    goto/16 :goto_1
 
     .line 78
     .line 79
-    :cond_4e
+    :cond_0
     new-instance v5, Landroid/content/Intent;
 
     .line 80
@@ -278,11 +278,11 @@
     .line 128
     .line 129
     .line 130
-    goto/16 :goto_10e
+    goto/16 :goto_1
 
     .line 131
     .line 132
-    :cond_83
+    :cond_1
     invoke-static {}, Llibs/t43;->Set()Z
 
     .line 133
@@ -295,7 +295,7 @@
 
     .line 137
     .line 138
-    if-eqz v0, :cond_f0
+    if-eqz v0, :cond_3
 
     .line 139
     .line 140
@@ -303,7 +303,7 @@
 
     .line 141
     .line 142
-    :try_start_8d
+    :try_start_0
     iget-object v0, v3, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
 
     .line 143
@@ -339,8 +339,8 @@
     .line 159
     .line 160
     invoke-virtual {v0, v11, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
-    :try_end_a2
-    .catchall {:try_start_8d .. :try_end_a2} :catchall_ac
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 161
     .line 162
@@ -349,11 +349,11 @@
 
     .line 164
     .line 165
-    if-nez v2, :cond_ae
+    if-nez v2, :cond_2
 
     .line 166
     .line 167
-    :try_start_a6
+    :try_start_1
     sget v3, Llibs/wh2;->notification_stop:I
 
     .line 168
@@ -363,17 +363,17 @@
     .line 170
     .line 171
     .line 172
-    goto :goto_10e
+    goto :goto_1
 
     .line 173
-    :catchall_ac
+    :catchall_0
     move-exception v0
 
     .line 174
-    goto :goto_e0
+    goto :goto_0
 
     .line 175
-    :cond_ae
+    :cond_2
     sget v5, Llibs/wh2;->notification_stop:I
 
     .line 176
@@ -463,16 +463,16 @@
 
     .line 221
     invoke-virtual {v3, v9, v0}, Landroid/widget/RemoteViews;->setOnClickPendingIntent(ILandroid/app/PendingIntent;)V
-    :try_end_df
-    .catchall {:try_start_a6 .. :try_end_df} :catchall_ac
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 222
     .line 223
     .line 224
-    goto :goto_10e
+    goto :goto_1
 
     .line 225
-    :goto_e0
+    :goto_0
     invoke-static {v0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 226
@@ -502,10 +502,10 @@
     .line 238
     .line 239
     .line 240
-    goto :goto_10e
+    goto :goto_1
 
     .line 241
-    :cond_f0
+    :cond_3
     check-cast v3, Landroid/app/Notification;
 
     .line 242
@@ -562,7 +562,7 @@
     .line 269
     .line 270
     .line 271
-    :goto_10e
+    :goto_1
     iget v0, v1, Llibs/t12;->a:I
 
     .line 272
@@ -595,14 +595,14 @@
 
 # virtual methods
 .method public final a(Landroid/content/Intent;Ljava/lang/String;Z)V
-    .registers 13
+    .locals 9
 
     .line 1
     sget-object v0, Llibs/zt0;->g:Landroid/content/Context;
 
     .line 2
     .line 3
-    if-eqz p3, :cond_7
+    if-eqz p3, :cond_0
 
     .line 4
     .line 5
@@ -610,15 +610,15 @@
 
     .line 6
     .line 7
-    goto :goto_9
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     sget v1, Llibs/bi2;->operation_finished:I
 
     .line 9
     .line 10
-    :goto_9
+    :goto_0
     invoke-static {v1}, Llibs/ho2;->Add(I)Ljava/lang/String;
 
     .line 11
@@ -627,7 +627,7 @@
     move-result-object v2
 
     .line 14
-    if-eqz p3, :cond_13
+    if-eqz p3, :cond_1
 
     .line 15
     .line 16
@@ -635,22 +635,22 @@
 
     .line 17
     .line 18
-    :goto_11
+    :goto_1
     move v6, p3
 
     .line 19
-    goto :goto_16
+    goto :goto_2
 
     .line 20
-    :cond_13
+    :cond_1
     sget p3, Llibs/vh2;->notification_task_done:I
 
     .line 21
     .line 22
-    goto :goto_11
+    goto :goto_1
 
     .line 23
-    :goto_16
+    :goto_2
     iget v7, p0, Llibs/t12;->a:I
 
     .line 24
@@ -679,7 +679,7 @@
 .end method
 
 .method public final b(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 10
+    .locals 7
 
     .line 1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -705,14 +705,14 @@
 
     .line 11
     .line 12
-    if-gtz v4, :cond_e
+    if-gtz v4, :cond_0
 
     .line 13
     .line 14
     return-void
 
     .line 15
-    :cond_e
+    :cond_0
     iput-wide v0, p0, Llibs/t12;->c:J
 
     .line 16
@@ -739,7 +739,7 @@
 
     .line 26
     .line 27
-    if-eqz v1, :cond_39
+    if-eqz v1, :cond_1
 
     .line 28
     .line 29
@@ -795,10 +795,10 @@
     .line 55
     .line 56
     .line 57
-    goto :goto_64
+    goto :goto_0
 
     .line 58
-    :cond_39
+    :cond_1
     move-object v1, v0
 
     .line 59
@@ -810,7 +810,7 @@
 
     .line 62
     .line 63
-    if-eqz v5, :cond_5d
+    if-eqz v5, :cond_2
 
     .line 64
     .line 65
@@ -866,10 +866,10 @@
     .line 91
     .line 92
     .line 93
-    goto :goto_64
+    goto :goto_0
 
     .line 94
-    :cond_5d
+    :cond_2
     const-string p1, "Notifier"
 
     .line 95
@@ -883,7 +883,7 @@
     .line 99
     .line 100
     .line 101
-    :goto_64
+    :goto_0
     iget p1, p0, Llibs/t12;->a:I
 
     .line 102

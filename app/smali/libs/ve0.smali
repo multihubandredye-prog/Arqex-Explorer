@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,34 +47,34 @@
 
 # virtual methods
 .method public final a(II)V
-    .registers 8
+    .locals 5
 
     .line 1
     iget v0, p0, Llibs/ve0;->Y:I
 
     .line 2
     .line 3
-    if-le p1, v0, :cond_5
+    if-le p1, v0, :cond_0
 
     .line 4
     .line 5
-    goto :goto_9
+    goto :goto_0
 
     .line 6
-    :cond_5
+    :cond_0
     sub-int v1, v0, p1
 
     .line 7
     .line 8
-    if-gtz v1, :cond_a
+    if-gtz v1, :cond_1
 
     .line 9
     .line 10
-    :goto_9
+    :goto_0
     return-void
 
     .line 11
-    :cond_a
+    :cond_1
     add-int v2, v0, p2
 
     .line 12
@@ -86,7 +86,7 @@
     array-length v4, v3
 
     .line 16
-    if-le v2, v4, :cond_23
+    if-le v2, v4, :cond_3
 
     .line 17
     .line 18
@@ -102,18 +102,18 @@
 
     .line 23
     .line 24
-    if-ge v4, v2, :cond_1a
+    if-ge v4, v2, :cond_2
 
     .line 25
     .line 26
-    goto :goto_1b
+    goto :goto_1
 
     .line 27
-    :cond_1a
+    :cond_2
     move v2, v4
 
     .line 28
-    :goto_1b
+    :goto_1
     new-array v2, v2, [I
 
     .line 29
@@ -130,7 +130,7 @@
     .line 34
     .line 35
     .line 36
-    :cond_23
+    :cond_3
     iget-object v0, p0, Llibs/ve0;->X:[I
 
     .line 37
@@ -159,7 +159,7 @@
 .end method
 
 .method public final b(I)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget v0, p0, Llibs/ve0;->Y:I
@@ -169,7 +169,7 @@
     add-int/2addr p1, v0
 
     .line 4
-    if-lt p1, v0, :cond_15
+    if-lt p1, v0, :cond_0
 
     .line 5
     .line 6
@@ -205,12 +205,12 @@
     .line 20
     .line 21
     .line 22
-    :cond_15
+    :cond_0
     return-void
 .end method
 
 .method public final c(II)V
-    .registers 6
+    .locals 3
 
     .line 1
     iget v0, p0, Llibs/ve0;->Y:I
@@ -223,7 +223,7 @@
     sub-int/2addr v0, p2
 
     .line 5
-    if-ltz v0, :cond_19
+    if-ltz v0, :cond_0
 
     .line 6
     .line 7
@@ -266,12 +266,12 @@
     .line 24
     .line 25
     .line 26
-    :cond_19
+    :cond_0
     return-void
 .end method
 
 .method public final d(I)V
-    .registers 5
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;

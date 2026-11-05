@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/text/Editable;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/nr1;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/nr1;->X:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_10
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -60,7 +60,7 @@
     return-void
 
     .line 12
-    :pswitch_b
+    :pswitch_0
     invoke-static {v1}, Llibs/yr1;->r(Ljava/lang/CharSequence;)V
 
     .line 13
@@ -72,8 +72,8 @@
     nop
 
     .line 17
-    :pswitch_data_10
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_b
+        :pswitch_0
     .end packed-switch
 .end method

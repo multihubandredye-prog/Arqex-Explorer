@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -17,7 +17,7 @@
 .end method
 
 .method public static j([B)Llibs/Theme;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/Uri;
@@ -29,7 +29,7 @@
     .line 4
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     invoke-virtual {v0}, Llibs/Uri;->Object()Llibs/Theme;
 
     .line 7
@@ -46,14 +46,14 @@
     move-result v0
 
     .line 14
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 15
     .line 16
     return-object p0
 
     .line 17
-    :cond_10
+    :cond_0
     new-instance p0, Ljava/io/IOException;
 
     .line 18
@@ -68,11 +68,11 @@
     .line 23
     .line 24
     throw p0
-    :try_end_18
-    .catch Ljava/lang/ClassCastException; {:try_start_5 .. :try_end_18} :catch_18
+    :try_end_0
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 25
-    :catch_18
+    :catch_0
     const-string p0, "cannot recognise object in stream"
 
     .line 26
@@ -91,29 +91,29 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 1
+    .locals 0
 
     .line 1
     return-object p0
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
-    if-ne p0, p1, :cond_3
+    if-ne p0, p1, :cond_0
 
     .line 2
     .line 3
-    goto :goto_13
+    goto :goto_0
 
     .line 4
-    :cond_3
+    :cond_0
     instance-of v0, p1, Llibs/Core;
 
     .line 5
     .line 6
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_1
 
     .line 7
     .line 8
@@ -137,18 +137,18 @@
     move-result p1
 
     .line 18
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_1
 
     .line 19
     .line 20
-    :goto_13
+    :goto_0
     const/4 p1, 0x1
 
     .line 21
     return p1
 
     .line 22
-    :cond_15
+    :cond_1
     const/4 p1, 0x0
 
     .line 23
@@ -156,14 +156,14 @@
 .end method
 
 .method public g(Llibs/Theme;)Z
-    .registers 2
+    .locals 0
 
     .line 1
     instance-of p1, p1, Llibs/k10;
 
     .line 2
     .line 3
-    if-nez p1, :cond_6
+    if-nez p1, :cond_0
 
     .line 4
     .line 5
@@ -173,7 +173,7 @@
     return p1
 
     .line 7
-    :cond_6
+    :cond_0
     const/4 p1, 0x1
 
     .line 8
@@ -181,7 +181,7 @@
 .end method
 
 .method public h(Llibs/v60;)V
-    .registers 4
+    .locals 2
 
     .line 1
     const/4 v0, 0x5
@@ -200,7 +200,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, -0x1
@@ -210,7 +210,7 @@
 .end method
 
 .method public i()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x3
@@ -220,7 +220,7 @@
 .end method
 
 .method public k()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -230,14 +230,14 @@
 .end method
 
 .method public l()Llibs/Theme;
-    .registers 1
+    .locals 0
 
     .line 1
     return-object p0
 .end method
 
 .method public m()Llibs/Theme;
-    .registers 1
+    .locals 0
 
     .line 1
     return-object p0

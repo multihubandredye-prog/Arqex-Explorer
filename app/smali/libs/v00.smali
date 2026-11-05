@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 34
+    .locals 34
 
     .line 1
     new-instance v0, Llibs/Err;
@@ -1179,13 +1179,13 @@
 .end method
 
 .method public static a(Llibs/hf0;Llibs/qs0;)Llibs/kf0;
-    .registers 6
+    .locals 4
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     new-instance v0, Llibs/l3;
 
     .line 3
@@ -1203,8 +1203,8 @@
     .line 9
     .line 10
     invoke-direct {v0, p0, v1, v2, v3}, Llibs/l3;-><init>(Llibs/kf0;ILlibs/ps0;Llibs/zd2;)V
-    :try_end_c
-    .catchall {:try_start_1 .. :try_end_c} :catchall_19
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 11
     .line 12
@@ -1236,21 +1236,21 @@
     return-object p0
 
     .line 26
-    :catchall_19
+    :catchall_0
     move-exception p1
 
     .line 27
-    :try_start_1a
+    :try_start_1
     monitor-exit p0
-    :try_end_1b
-    .catchall {:try_start_1a .. :try_end_1b} :catchall_19
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 28
     throw p1
 .end method
 
 .method public static b(Ljava/lang/String;Llibs/App;)V
-    .registers 4
+    .locals 2
 
     .line 1
     sget-object v0, Llibs/v00;->c:Ljava/util/Hashtable;
@@ -1265,7 +1265,7 @@
     move-result-object v0
 
     .line 7
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -1298,7 +1298,7 @@
     return-void
 
     .line 24
-    :cond_17
+    :cond_0
     invoke-static {}, Llibs/ic0;->r()V
 
     .line 25
@@ -1308,7 +1308,7 @@
 .end method
 
 .method public static c(Ljava/lang/String;Llibs/App;Llibs/ax3;)V
-    .registers 4
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/v00;->e:Ljava/util/Vector;

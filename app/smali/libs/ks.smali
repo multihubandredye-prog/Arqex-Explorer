@@ -19,14 +19,14 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-string v0, "Cp850"
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     const-string v1, ""
 
     .line 4
@@ -45,15 +45,15 @@
 
     .line 12
     sput-object v0, Llibs/ks;->a:Ljava/nio/charset/Charset;
-    :try_end_d
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_2 .. :try_end_d} :catch_e
+    :try_end_0
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 13
     .line 14
-    goto :goto_12
+    goto :goto_0
 
     .line 15
-    :catch_e
+    :catch_0
     sget-object v0, Llibs/ue3;->b:Ljava/nio/charset/Charset;
 
     .line 16
@@ -62,7 +62,7 @@
 
     .line 18
     .line 19
-    :goto_12
+    :goto_0
     sget-object v0, Llibs/ue3;->c:Ljava/nio/charset/Charset;
 
     .line 20

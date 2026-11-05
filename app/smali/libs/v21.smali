@@ -26,7 +26,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r31;Llibs/yq3;Lcom/mixplorer/widgets/MiEditText;Llibs/pp1;Landroid/widget/CheckBox;Ljava/lang/String;Llibs/xt1;Llibs/$d;)V
-    .registers 9
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -72,7 +72,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 15
+    .locals 13
 
     .line 1
     iget-object p1, p0, Llibs/v21;->Z:Lcom/mixplorer/widgets/MiEditText;
@@ -115,11 +115,11 @@
 
     .line 20
     .line 21
-    if-eqz v1, :cond_54
+    if-eqz v1, :cond_2
 
     .line 22
     .line 23
-    if-eqz v2, :cond_32
+    if-eqz v2, :cond_0
 
     .line 24
     .line 25
@@ -135,7 +135,7 @@
     move-result v1
 
     .line 31
-    if-nez v1, :cond_32
+    if-nez v1, :cond_0
 
     .line 32
     .line 33
@@ -155,7 +155,7 @@
     move-result v1
 
     .line 41
-    if-nez v1, :cond_32
+    if-nez v1, :cond_0
 
     .line 42
     .line 43
@@ -171,14 +171,14 @@
 
     .line 48
     .line 49
-    :goto_30
+    :goto_0
     move-object v8, p1
 
     .line 50
-    goto :goto_65
+    goto :goto_1
 
     .line 51
-    :cond_32
+    :cond_0
     invoke-static {v0}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
 
     .line 52
@@ -187,7 +187,7 @@
     move-result v1
 
     .line 55
-    if-nez v1, :cond_43
+    if-nez v1, :cond_1
 
     .line 56
     .line 57
@@ -211,10 +211,10 @@
     move-result-object p1
 
     .line 67
-    goto :goto_30
+    goto :goto_0
 
     .line 68
-    :cond_43
+    :cond_1
     invoke-virtual {p1}, Landroid/view/View;->requestFocus()Z
 
     .line 69
@@ -242,11 +242,11 @@
     .line 81
     .line 82
     .line 83
-    goto/16 :goto_fb
+    goto/16 :goto_2
 
     .line 84
     .line 85
-    :cond_54
+    :cond_2
     invoke-static {v0}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
 
     .line 86
@@ -255,7 +255,7 @@
     move-result v1
 
     .line 89
-    if-nez v1, :cond_ec
+    if-nez v1, :cond_7
 
     .line 90
     .line 91
@@ -279,10 +279,10 @@
     move-result-object p1
 
     .line 101
-    goto :goto_30
+    goto :goto_0
 
     .line 102
-    :goto_65
+    :goto_1
     iget-object p1, p0, Llibs/v21;->X:Llibs/r31;
 
     .line 103
@@ -306,7 +306,7 @@
     const/4 v12, 0x0
 
     .line 113
-    if-eqz v1, :cond_9c
+    if-eqz v1, :cond_4
 
     .line 114
     .line 115
@@ -318,7 +318,7 @@
     move-result v1
 
     .line 119
-    if-eqz v1, :cond_9c
+    if-eqz v1, :cond_4
 
     .line 120
     .line 121
@@ -334,7 +334,7 @@
     move-result v0
 
     .line 127
-    if-eqz v0, :cond_92
+    if-eqz v0, :cond_3
 
     .line 128
     .line 129
@@ -369,10 +369,10 @@
     .line 144
     .line 145
     .line 146
-    goto :goto_fb
+    goto :goto_2
 
     .line 147
-    :cond_92
+    :cond_3
     sget p1, Llibs/bi2;->wrong_key:I
 
     .line 148
@@ -390,11 +390,11 @@
     .line 154
     .line 155
     .line 156
-    goto :goto_fb
+    goto :goto_2
 
     .line 157
-    :cond_9c
-    if-nez v2, :cond_b7
+    :cond_4
+    if-nez v2, :cond_5
 
     .line 158
     .line 159
@@ -425,7 +425,7 @@
     move-result-object v2
 
     .line 172
-    if-nez v2, :cond_b7
+    if-nez v2, :cond_5
 
     .line 173
     .line 174
@@ -446,10 +446,10 @@
     .line 181
     .line 182
     .line 183
-    goto :goto_fb
+    goto :goto_2
 
     .line 184
-    :cond_b7
+    :cond_5
     iget-object v1, v2, Llibs/yq3;->Nu:Ljava/lang/String;
 
     .line 185
@@ -462,7 +462,7 @@
     move-result v1
 
     .line 190
-    if-eqz v1, :cond_e2
+    if-eqz v1, :cond_6
 
     .line 191
     .line 192
@@ -528,10 +528,10 @@
     .line 224
     .line 225
     .line 226
-    goto :goto_fb
+    goto :goto_2
 
     .line 227
-    :cond_e2
+    :cond_6
     sget p1, Llibs/bi2;->wrong_key:I
 
     .line 228
@@ -549,10 +549,10 @@
     .line 234
     .line 235
     .line 236
-    goto :goto_fb
+    goto :goto_2
 
     .line 237
-    :cond_ec
+    :cond_7
     invoke-virtual {p1}, Landroid/view/View;->requestFocus()Z
 
     .line 238
@@ -580,6 +580,6 @@
     .line 250
     .line 251
     .line 252
-    :goto_fb
+    :goto_2
     return-void
 .end method

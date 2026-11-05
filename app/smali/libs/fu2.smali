@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -24,7 +24,7 @@
 .end method
 
 .method public constructor <init>(JJLlibs/k00;Llibs/pu2;)V
-    .registers 16
+    .locals 9
 
     const/4 v0, 0x0
 
@@ -52,7 +52,7 @@
 .end method
 
 .method public constructor <init>(Llibs/pu2;Llibs/qc3;J)V
-    .registers 14
+    .locals 9
 
     .line 1
     const/4 v0, 0x1
@@ -98,14 +98,14 @@
 
 # virtual methods
 .method public g(Llibs/rw2;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/fu2;->e:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_2c
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -118,7 +118,7 @@
     return-void
 
     .line 10
-    :pswitch_9
+    :pswitch_0
     invoke-virtual {p1}, Llibs/rw2;->v()V
 
     .line 11
@@ -182,14 +182,14 @@
     nop
 
     .line 45
-    :pswitch_data_2c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_9
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final i(Llibs/rw2;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/fu2;->e:B
@@ -204,7 +204,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_3c
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -273,7 +273,7 @@
     return-void
 
     .line 44
-    :pswitch_2b
+    :pswitch_0
     invoke-virtual {p1, v2}, Llibs/rw2;->m(I)V
 
     .line 45
@@ -307,8 +307,8 @@
     nop
 
     .line 61
-    :pswitch_data_3c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2b
+        :pswitch_0
     .end packed-switch
 .end method

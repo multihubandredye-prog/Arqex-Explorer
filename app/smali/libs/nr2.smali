@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;I)V
-    .registers 4
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/s82;->Bundle:Llibs/App;
@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public final engineGenerateSecret(Ljava/security/spec/KeySpec;)Ljavax/crypto/SecretKey;
-    .registers 13
+    .locals 11
 
     .line 1
     instance-of v0, p1, Ljavax/crypto/spec/PBEKeySpec;
@@ -41,7 +41,7 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_75
+    if-eqz v0, :cond_4
 
     .line 5
     .line 6
@@ -60,7 +60,7 @@
     move-result-object p1
 
     .line 13
-    if-eqz p1, :cond_6f
+    if-eqz p1, :cond_3
 
     .line 14
     .line 15
@@ -72,7 +72,7 @@
     move-result p1
 
     .line 19
-    if-lez p1, :cond_57
+    if-lez p1, :cond_2
 
     .line 20
     .line 21
@@ -84,7 +84,7 @@
     move-result p1
 
     .line 25
-    if-lez p1, :cond_3f
+    if-lez p1, :cond_1
 
     .line 26
     .line 27
@@ -99,7 +99,7 @@
     array-length p1, p1
 
     .line 32
-    if-eqz p1, :cond_39
+    if-eqz p1, :cond_0
 
     .line 33
     .line 34
@@ -153,7 +153,7 @@
     return-object v2
 
     .line 58
-    :cond_39
+    :cond_0
     const-string p1, "password empty"
 
     .line 59
@@ -166,7 +166,7 @@
     return-object v1
 
     .line 64
-    :cond_3f
+    :cond_1
     new-instance p1, Ljava/security/spec/InvalidKeySpecException;
 
     .line 65
@@ -213,7 +213,7 @@
     throw p1
 
     .line 88
-    :cond_57
+    :cond_2
     new-instance p1, Ljava/security/spec/InvalidKeySpecException;
 
     .line 89
@@ -260,7 +260,7 @@
     throw p1
 
     .line 112
-    :cond_6f
+    :cond_3
     const-string p1, "missing required salt"
 
     .line 113
@@ -273,7 +273,7 @@
     return-object v1
 
     .line 118
-    :cond_75
+    :cond_4
     const-string p1, "Invalid KeySpec"
 
     .line 119

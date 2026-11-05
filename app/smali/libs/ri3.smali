@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/u3;
@@ -44,7 +44,7 @@
 .end method
 
 .method public constructor <init>(IILjava/lang/String;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 
     .line 7
     .line 8
-    if-nez p3, :cond_b
+    if-nez p3, :cond_0
 
     .line 9
     .line 10
@@ -68,7 +68,7 @@
 
     .line 11
     .line 12
-    :cond_b
+    :cond_0
     iput-object p3, p0, Llibs/ri3;->Z:Ljava/lang/String;
 
     .line 13
@@ -77,7 +77,7 @@
 .end method
 
 .method public static a(I)Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     const v0, 0x36ee80
@@ -197,7 +197,7 @@
 
 # virtual methods
 .method public final compareTo(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
 
     .line 1
     check-cast p1, Llibs/ri3;
@@ -220,7 +220,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

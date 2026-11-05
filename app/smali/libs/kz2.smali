@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static a(Lorg/xml/sax/Attributes;I)I
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-interface {p0, p1}, Lorg/xml/sax/Attributes;->getLocalName(I)Ljava/lang/String;
@@ -36,13 +36,13 @@
 .end method
 
 .method public static synthetic b(Ljava/lang/String;)I
-    .registers 3
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-eqz p0, :cond_69
+    if-eqz p0, :cond_9
 
     .line 3
     .line 4
@@ -58,7 +58,7 @@
     move-result v1
 
     .line 10
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
     .line 11
     .line 12
@@ -68,7 +68,7 @@
     return p0
 
     .line 14
-    :cond_d
+    :cond_0
     const-string v1, "em"
 
     .line 15
@@ -81,7 +81,7 @@
     move-result v1
 
     .line 20
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_1
 
     .line 21
     .line 22
@@ -91,7 +91,7 @@
     return p0
 
     .line 24
-    :cond_17
+    :cond_1
     const-string v1, "ex"
 
     .line 25
@@ -104,7 +104,7 @@
     move-result v1
 
     .line 30
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_2
 
     .line 31
     .line 32
@@ -114,7 +114,7 @@
     return p0
 
     .line 34
-    :cond_21
+    :cond_2
     const-string v1, "in"
 
     .line 35
@@ -127,7 +127,7 @@
     move-result v1
 
     .line 40
-    if-eqz v1, :cond_2b
+    if-eqz v1, :cond_3
 
     .line 41
     .line 42
@@ -137,7 +137,7 @@
     return p0
 
     .line 44
-    :cond_2b
+    :cond_3
     const-string v1, "cm"
 
     .line 45
@@ -150,7 +150,7 @@
     move-result v1
 
     .line 50
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_4
 
     .line 51
     .line 52
@@ -160,7 +160,7 @@
     return p0
 
     .line 54
-    :cond_35
+    :cond_4
     const-string v1, "mm"
 
     .line 55
@@ -173,7 +173,7 @@
     move-result v1
 
     .line 60
-    if-eqz v1, :cond_3f
+    if-eqz v1, :cond_5
 
     .line 61
     .line 62
@@ -183,7 +183,7 @@
     return p0
 
     .line 64
-    :cond_3f
+    :cond_5
     const-string v1, "pt"
 
     .line 65
@@ -196,7 +196,7 @@
     move-result v1
 
     .line 70
-    if-eqz v1, :cond_49
+    if-eqz v1, :cond_6
 
     .line 71
     .line 72
@@ -206,7 +206,7 @@
     return p0
 
     .line 74
-    :cond_49
+    :cond_6
     const-string v1, "pc"
 
     .line 75
@@ -219,7 +219,7 @@
     move-result v1
 
     .line 80
-    if-eqz v1, :cond_54
+    if-eqz v1, :cond_7
 
     .line 81
     .line 82
@@ -230,7 +230,7 @@
     return p0
 
     .line 85
-    :cond_54
+    :cond_7
     const-string v1, "percent"
 
     .line 86
@@ -243,7 +243,7 @@
     move-result v1
 
     .line 91
-    if-eqz v1, :cond_5f
+    if-eqz v1, :cond_8
 
     .line 92
     .line 93
@@ -254,7 +254,7 @@
     return p0
 
     .line 96
-    :cond_5f
+    :cond_8
     const-string v1, "No enum constant image.androidsvg.utils.SVGBase.Unit."
 
     .line 97
@@ -275,7 +275,7 @@
     return v0
 
     .line 106
-    :cond_69
+    :cond_9
     const-string p0, "Name is null"
 
     .line 107

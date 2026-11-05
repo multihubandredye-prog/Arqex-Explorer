@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0xa
@@ -23,7 +23,7 @@
 
 # virtual methods
 .method public final Intent(Landroid/graphics/drawable/Drawable;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p1}, Llibs/ce0;->q(Landroid/graphics/drawable/Drawable;)V

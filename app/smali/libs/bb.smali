@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(ILlibs/ap3;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 5
+    .locals 4
 
     .line 1
     :try_start_0
@@ -47,14 +47,14 @@
     .line 3
     .line 4
     move-result-object v0
-    :try_end_4
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_4} :catch_5
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 5
     return-object v0
 
     .line 6
-    :catch_5
+    :catch_0
     move-exception v0
 
     .line 7
@@ -82,7 +82,7 @@
 .end method
 
 .method public final d()Llibs/Theme;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/ab;

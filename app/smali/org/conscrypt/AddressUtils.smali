@@ -11,7 +11,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,14 +23,14 @@
 .end method
 
 .method public static isLiteralIpAddress(Ljava/lang/String;)Z
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/AddressUtils;->ipPattern:Ljava/util/regex/Pattern;
 
     .line 2
     .line 3
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -50,7 +50,7 @@
 
     .line 12
     .line 13
-    :cond_c
+    :cond_0
     invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     .line 14
@@ -71,20 +71,20 @@
 .end method
 
 .method public static isValidSniHostname(Ljava/lang/String;)Z
-    .registers 4
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
+    :cond_0
     const-string v1, "localhost"
 
     .line 6
@@ -100,7 +100,7 @@
     const/4 v2, -0x1
 
     .line 12
-    if-nez v1, :cond_15
+    if-nez v1, :cond_1
 
     .line 13
     .line 14
@@ -116,11 +116,11 @@
     move-result v1
 
     .line 20
-    if-eq v1, v2, :cond_2b
+    if-eq v1, v2, :cond_2
 
     .line 21
     .line 22
-    :cond_15
+    :cond_1
     invoke-static {p0}, Lorg/conscrypt/AddressUtils;->isLiteralIpAddress(Ljava/lang/String;)Z
 
     .line 23
@@ -129,7 +129,7 @@
     move-result v1
 
     .line 26
-    if-nez v1, :cond_2b
+    if-nez v1, :cond_2
 
     .line 27
     .line 28
@@ -145,7 +145,7 @@
     move-result v1
 
     .line 34
-    if-nez v1, :cond_2b
+    if-nez v1, :cond_2
 
     .line 35
     .line 36
@@ -157,7 +157,7 @@
     move-result p0
 
     .line 40
-    if-ne p0, v2, :cond_2b
+    if-ne p0, v2, :cond_2
 
     .line 41
     .line 42
@@ -167,6 +167,6 @@
     return p0
 
     .line 44
-    :cond_2b
+    :cond_2
     return v0
 .end method

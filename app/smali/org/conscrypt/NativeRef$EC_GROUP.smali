@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(J)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Lorg/conscrypt/NativeRef;-><init>(J)V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public doFree(J)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-static {p1, p2}, Lorg/conscrypt/NativeCrypto;->EC_GROUP_clear_free(J)V

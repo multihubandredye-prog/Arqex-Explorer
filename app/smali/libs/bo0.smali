@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ao0;Llibs/du;)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-boolean v0, p1, Llibs/Tau;->X:Z
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -120,7 +120,7 @@
 .end method
 
 .method public final u(J)V
-    .registers 9
+    .locals 6
 
     .line 1
     invoke-virtual {p0}, Llibs/Tau;->t()V
@@ -144,14 +144,14 @@
 
     .line 11
     .line 12
-    if-nez v3, :cond_e
+    if-nez v3, :cond_0
 
     .line 13
     .line 14
     return-void
 
     .line 15
-    :cond_e
+    :cond_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     .line 16

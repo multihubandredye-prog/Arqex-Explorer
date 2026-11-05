@@ -33,7 +33,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 .end method
 
 .method public constructor <init>(Llibs/cp2;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -185,14 +185,14 @@
 .end method
 
 .method public static b(Ljava/lang/String;Llibs/cp2;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p1, Llibs/cp2;->Xi:Llibs/fp2;
 
     .line 2
     .line 3
-    if-nez v0, :cond_2f
+    if-nez v0, :cond_3
 
     .line 4
     .line 5
@@ -200,7 +200,7 @@
 
     .line 6
     .line 7
-    if-nez v0, :cond_25
+    if-nez v0, :cond_2
 
     .line 8
     .line 9
@@ -208,7 +208,7 @@
 
     .line 10
     .line 11
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_1
 
     .line 12
     .line 13
@@ -216,14 +216,14 @@
 
     .line 14
     .line 15
-    if-nez p1, :cond_11
+    if-nez p1, :cond_0
 
     .line 16
     .line 17
     return-void
 
     .line 18
-    :cond_11
+    :cond_0
     const-string p1, ".priorResponse != null"
 
     .line 19
@@ -244,7 +244,7 @@
     return-void
 
     .line 28
-    :cond_1b
+    :cond_1
     const-string p1, ".cacheResponse != null"
 
     .line 29
@@ -265,7 +265,7 @@
     return-void
 
     .line 38
-    :cond_25
+    :cond_2
     const-string p1, ".networkResponse != null"
 
     .line 39
@@ -286,7 +286,7 @@
     return-void
 
     .line 48
-    :cond_2f
+    :cond_3
     const-string p1, ".body != null"
 
     .line 49
@@ -310,14 +310,14 @@
 
 # virtual methods
 .method public final a()Llibs/cp2;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/bp2;->a:Llibs/do2;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_3
 
     .line 4
     .line 5
@@ -325,7 +325,7 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_2
 
     .line 8
     .line 9
@@ -333,7 +333,7 @@
 
     .line 10
     .line 11
-    if-ltz v0, :cond_1d
+    if-ltz v0, :cond_1
 
     .line 12
     .line 13
@@ -341,7 +341,7 @@
 
     .line 14
     .line 15
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 16
     .line 17
@@ -357,7 +357,7 @@
     return-object v0
 
     .line 23
-    :cond_16
+    :cond_0
     const-string v0, "message == null"
 
     .line 24
@@ -373,7 +373,7 @@
     return-object v0
 
     .line 30
-    :cond_1d
+    :cond_1
     const-string v0, "code < 0: "
 
     .line 31
@@ -393,7 +393,7 @@
     return-object v0
 
     .line 39
-    :cond_26
+    :cond_2
     const-string v0, "protocol == null"
 
     .line 40
@@ -409,7 +409,7 @@
     return-object v0
 
     .line 46
-    :cond_2d
+    :cond_3
     const-string v0, "request == null"
 
     .line 47

@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/vq0;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Llibs/ry1;-><init>(Llibs/vq0;I)V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final k(Llibs/j91;J)Llibs/g91;
-    .registers 12
+    .locals 8
 
     .line 1
     const/16 v0, 0x8
@@ -53,14 +53,14 @@
     const/4 v1, 0x1
 
     .line 16
-    if-gez p1, :cond_12
+    if-gez p1, :cond_0
 
     .line 17
     .line 18
     const/4 p1, 0x1
 
     .line 19
-    :cond_12
+    :cond_0
     div-int p1, v0, p1
 
     .line 20
@@ -122,7 +122,7 @@
     move-result p3
 
     .line 46
-    if-ne p3, v0, :cond_35
+    if-ne p3, v0, :cond_1
 
     .line 47
     .line 48
@@ -138,7 +138,7 @@
     return-object p3
 
     .line 54
-    :cond_35
+    :cond_1
     new-instance p1, Ljava/io/IOException;
 
     .line 55

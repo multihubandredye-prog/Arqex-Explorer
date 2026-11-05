@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/InputStream;)V
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x1
@@ -48,7 +48,7 @@
     const/4 v1, 0x0
 
     .line 15
-    :goto_e
+    :goto_0
     iget-object v2, p0, Llibs/by0;->Lambda:Ljava/lang/Object;
 
     .line 16
@@ -60,7 +60,7 @@
     array-length v3, v2
 
     .line 20
-    if-eq v1, v3, :cond_25
+    if-eq v1, v3, :cond_1
 
     .line 21
     .line 22
@@ -76,7 +76,7 @@
 
     .line 27
     .line 28
-    if-ltz v3, :cond_20
+    if-ltz v3, :cond_0
 
     .line 29
     .line 30
@@ -84,10 +84,10 @@
 
     .line 31
     .line 32
-    goto :goto_e
+    goto :goto_0
 
     .line 33
-    :cond_20
+    :cond_0
     invoke-static {}, Llibs/ic0;->u()V
 
     .line 34
@@ -99,7 +99,7 @@
     throw p1
 
     .line 38
-    :cond_25
+    :cond_1
     iput v0, p0, Llibs/by0;->Y:I
 
     .line 39
@@ -112,7 +112,7 @@
 .end method
 
 .method public constructor <init>(Llibs/cy0;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -133,14 +133,14 @@
 
 # virtual methods
 .method public close()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/by0;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_1e
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -153,7 +153,7 @@
     return-void
 
     .line 10
-    :pswitch_9
+    :pswitch_0
     iget-object v0, p0, Llibs/by0;->Z:Ljava/io/InputStream;
 
     .line 11
@@ -195,14 +195,14 @@
     nop
 
     .line 31
-    :pswitch_data_1e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_9
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final read()I
-    .registers 6
+    .locals 5
 
     iget-byte v0, p0, Llibs/by0;->X:B
 
@@ -210,7 +210,7 @@
 
     const/4 v2, 0x1
 
-    packed-switch v0, :pswitch_data_30
+    packed-switch v0, :pswitch_data_0
 
     .line 171
     iget-object v0, p0, Llibs/by0;->Z:Ljava/io/InputStream;
@@ -219,7 +219,7 @@
 
     move-result v0
 
-    if-ltz v0, :cond_1f
+    if-ltz v0, :cond_0
 
     .line 172
     iget-object v1, p0, Llibs/by0;->Lambda:Ljava/lang/Object;
@@ -244,11 +244,11 @@
 
     move v1, v4
 
-    :cond_1f
+    :cond_0
     return v1
 
     .line 175
-    :pswitch_20
+    :pswitch_0
     new-array v0, v2, [B
 
     const/4 v3, 0x0
@@ -258,36 +258,36 @@
 
     move-result v2
 
-    if-ne v2, v1, :cond_2a
+    if-ne v2, v1, :cond_1
 
-    goto :goto_2e
+    goto :goto_0
 
     .line 177
-    :cond_2a
+    :cond_1
     aget-byte v0, v0, v3
 
     and-int/lit16 v1, v0, 0xff
 
-    :goto_2e
+    :goto_0
     return v1
 
     nop
 
-    :pswitch_data_30
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_20
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public read([BII)I
-    .registers 11
+    .locals 7
 
     .line 1
     iget-byte v0, p0, Llibs/by0;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_aa
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -303,7 +303,7 @@
     return p1
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     const-string v0, " for "
 
     .line 12
@@ -336,7 +336,7 @@
     move-result v2
 
     .line 27
-    if-nez v2, :cond_a3
+    if-nez v2, :cond_4
 
     .line 28
     .line 29
@@ -347,7 +347,7 @@
     const/4 v4, -0x1
 
     .line 32
-    if-nez v2, :cond_8e
+    if-nez v2, :cond_2
 
     .line 33
     .line 34
@@ -363,15 +363,15 @@
     move-result v5
 
     .line 40
-    if-lt v2, v5, :cond_2b
+    if-lt v2, v5, :cond_0
 
     .line 41
     .line 42
-    goto/16 :goto_a9
+    goto/16 :goto_2
 
     .line 43
     .line 44
-    :cond_2b
+    :cond_0
     iget v2, p0, Llibs/by0;->Y:I
 
     .line 45
@@ -388,7 +388,7 @@
 
     .line 51
     .line 52
-    :try_start_33
+    :try_start_0
     new-instance v3, Ljava/net/URL;
 
     .line 53
@@ -436,7 +436,7 @@
 
     .line 76
     .line 77
-    if-ne v5, v6, :cond_5e
+    if-ne v5, v6, :cond_1
 
     .line 78
     .line 79
@@ -467,17 +467,17 @@
     move-object v2, v0
 
     .line 92
-    goto :goto_8e
+    goto :goto_1
 
     .line 93
-    :catch_5c
+    :catch_0
     move-exception p1
 
     .line 94
-    goto :goto_7a
+    goto :goto_0
 
     .line 95
-    :cond_5e
+    :cond_1
     new-instance p1, Ljava/io/IOException;
 
     .line 96
@@ -528,11 +528,11 @@
     .line 121
     .line 122
     throw p1
-    :try_end_7a
-    .catch Ljava/io/IOException; {:try_start_33 .. :try_end_7a} :catch_5c
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 123
-    :goto_7a
+    :goto_0
     new-instance p2, Ljava/lang/StringBuilder;
 
     .line 124
@@ -571,8 +571,8 @@
     throw p1
 
     .line 143
-    :cond_8e
-    :goto_8e
+    :cond_2
+    :goto_1
     invoke-virtual {v2, p1, p2, p3}, Ljava/io/InputStream;->read([BII)I
 
     .line 144
@@ -581,7 +581,7 @@
     move-result v0
 
     .line 147
-    if-ne v0, v4, :cond_a1
+    if-ne v0, v4, :cond_3
 
     .line 148
     .line 149
@@ -609,17 +609,17 @@
     move-result v4
 
     .line 161
-    goto :goto_a9
+    goto :goto_2
 
     .line 162
-    :cond_a1
+    :cond_3
     move v4, v0
 
     .line 163
-    goto :goto_a9
+    goto :goto_2
 
     .line 164
-    :cond_a3
+    :cond_4
     const-string p1, "Calling thread was interrupted."
 
     .line 165
@@ -632,12 +632,12 @@
     const/4 v4, 0x0
 
     .line 170
-    :goto_a9
+    :goto_2
     return v4
 
     .line 171
-    :pswitch_data_aa
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method

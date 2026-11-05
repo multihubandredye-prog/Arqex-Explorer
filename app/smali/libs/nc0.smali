@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/xl1;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/nc0;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte p1, p0, Llibs/nc0;->X:B
@@ -50,7 +50,7 @@
 
     .line 5
     .line 6
-    packed-switch p1, :pswitch_data_18
+    packed-switch p1, :pswitch_data_0
 
     .line 7
     .line 8
@@ -59,7 +59,7 @@
 
     .line 10
     .line 11
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     .line 12
     .line 13
@@ -72,11 +72,11 @@
     .line 16
     .line 17
     .line 18
-    :cond_11
+    :cond_0
     return-void
 
     .line 19
-    :pswitch_12
+    :pswitch_0
     new-array p1, v0, [Ljava/lang/Object;
 
     .line 20
@@ -89,8 +89,8 @@
     return-void
 
     .line 25
-    :pswitch_data_18
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_12
+        :pswitch_0
     .end packed-switch
 .end method

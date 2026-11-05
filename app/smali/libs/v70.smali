@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final a(Llibs/v52;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/v70;->a:Llibs/j5;
@@ -51,7 +51,7 @@
     move-result v1
 
     .line 7
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
@@ -66,7 +66,7 @@
     return-object p1
 
     .line 14
-    :cond_d
+    :cond_0
     iget-object p1, p1, Llibs/v52;->a:Ljava/lang/Object;
 
     .line 15
@@ -75,7 +75,7 @@
 .end method
 
 .method public final b(Llibs/v52;Ljava/lang/Object;)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/v70;->a:Llibs/j5;
@@ -91,14 +91,14 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Llibs/v70;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -125,7 +125,7 @@
     return p1
 
     .line 16
-    :cond_f
+    :cond_0
     const/4 p1, 0x0
 
     .line 17
@@ -133,7 +133,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/v70;->a:Llibs/j5;
@@ -152,7 +152,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

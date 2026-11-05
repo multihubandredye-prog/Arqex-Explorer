@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/PreferenceActivity;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/se2;->a:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onCheckedChanged(Landroid/widget/CompoundButton;Z)V
-    .registers 5
+    .locals 2
 
     .line 1
     iget-byte p1, p0, Llibs/se2;->a:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch p1, :pswitch_data_58
+    packed-switch p1, :pswitch_data_0
 
     .line 6
     .line 7
@@ -92,7 +92,7 @@
     return-void
 
     .line 28
-    :pswitch_1b
+    :pswitch_0
     sget-boolean p1, Lcom/mixplorer/activities/PreferenceActivity;->O:Z
 
     .line 29
@@ -133,7 +133,7 @@
     return-void
 
     .line 48
-    :pswitch_2f
+    :pswitch_1
     sget-boolean p1, Lcom/mixplorer/activities/PreferenceActivity;->O:Z
 
     .line 49
@@ -174,7 +174,7 @@
     return-void
 
     .line 68
-    :pswitch_43
+    :pswitch_2
     sget-boolean p1, Lcom/mixplorer/activities/PreferenceActivity;->O:Z
 
     .line 69
@@ -218,10 +218,10 @@
     nop
 
     .line 89
-    :pswitch_data_58
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_43
-        :pswitch_2f
-        :pswitch_1b
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

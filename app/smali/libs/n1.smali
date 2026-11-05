@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -32,7 +32,7 @@
 .end method
 
 .method public synthetic constructor <init>(BI)V
-    .registers 3
+    .locals 0
 
     .line 8
     iput-byte p1, p0, Llibs/n1;->X:B
@@ -43,7 +43,7 @@
 .end method
 
 .method private final i()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
@@ -52,10 +52,10 @@
 
 # virtual methods
 .method public Object(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 1
-    if-nez p1, :cond_7
+    if-nez p1, :cond_0
 
     .line 2
     .line 3
@@ -70,12 +70,12 @@
     return-void
 
     .line 8
-    :cond_7
+    :cond_0
     sget-boolean v0, Llibs/gl;->Y:Z
 
     .line 9
     .line 10
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_1
 
     .line 11
     .line 12
@@ -87,10 +87,10 @@
     move-result-object p1
 
     .line 16
-    goto :goto_14
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_1
     invoke-virtual {p1}, Ljava/lang/String;->getBytes()[B
 
     .line 18
@@ -99,7 +99,7 @@
     move-result-object p1
 
     .line 21
-    :goto_14
+    :goto_0
     array-length p2, p1
 
     .line 22
@@ -117,7 +117,7 @@
 .end method
 
 .method public String(Llibs/rq3;)V
-    .registers 6
+    .locals 4
 
     .line 1
     const/16 v0, 0x8
@@ -166,7 +166,7 @@
 .end method
 
 .method public c()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Ljava/io/ByteArrayOutputStream;->buf:[B
@@ -177,14 +177,14 @@
 .end method
 
 .method public close()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/n1;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_a
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -194,21 +194,21 @@
     .line 7
     .line 8
     .line 9
-    :pswitch_8
+    :pswitch_0
     return-void
 
     .line 10
     nop
 
     .line 11
-    :pswitch_data_a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_8
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public m(Ljava/math/BigInteger;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p1}, Ljava/math/BigInteger;->toByteArray()[B
@@ -236,13 +236,13 @@
 .end method
 
 .method public w([B)V
-    .registers 4
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-nez p1, :cond_7
+    if-nez p1, :cond_0
 
     .line 3
     .line 4
@@ -254,7 +254,7 @@
     return-void
 
     .line 8
-    :cond_7
+    :cond_0
     array-length v1, p1
 
     .line 9
@@ -272,14 +272,14 @@
 .end method
 
 .method public write([B)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/n1;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_10
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -292,7 +292,7 @@
     return-void
 
     .line 10
-    :pswitch_9
+    :pswitch_0
     const/4 v0, 0x0
 
     .line 11
@@ -310,14 +310,14 @@
     nop
 
     .line 17
-    :pswitch_data_10
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_9
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public x(I)V
-    .registers 7
+    .locals 5
 
     .line 1
     shr-int/lit8 v0, p1, 0x18
@@ -388,7 +388,7 @@
 .end method
 
 .method public y(J)V
-    .registers 7
+    .locals 4
 
     .line 1
     const/16 v0, 0x18
@@ -483,7 +483,7 @@
 .end method
 
 .method public z(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/gl;->X:Ljava/lang/String;

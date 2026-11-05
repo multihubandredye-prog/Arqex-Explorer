@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/16 v0, 0x18
@@ -31,7 +31,7 @@
 
     .line 4
     .line 5
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     .line 6
     .line 7
@@ -43,7 +43,7 @@
     return-void
 
     .line 11
-    :array_a
+    :array_0
     .array-data 1
         0x30t
         -0x7et
@@ -73,7 +73,7 @@
 .end method
 
 .method public constructor <init>(Ljava/security/spec/EncodedKeySpec;)V
-    .registers 7
+    .locals 5
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -120,7 +120,7 @@
 
     .line 22
     .line 23
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_2
 
     .line 24
     .line 25
@@ -136,7 +136,7 @@
     move-result v1
 
     .line 31
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_1
 
     .line 32
     .line 33
@@ -161,14 +161,14 @@
     array-length p1, p1
 
     .line 42
-    if-ne p1, v4, :cond_2c
+    if-ne p1, v4, :cond_0
 
     .line 43
     .line 44
     return-void
 
     .line 45
-    :cond_2c
+    :cond_0
     invoke-static {v3}, Llibs/t22;->d(Ljava/lang/String;)V
 
     .line 46
@@ -177,7 +177,7 @@
     throw v2
 
     .line 49
-    :cond_30
+    :cond_1
     const-string p1, "Invalid X-Wing X.509 key preamble"
 
     .line 50
@@ -190,7 +190,7 @@
     throw v2
 
     .line 55
-    :cond_36
+    :cond_2
     invoke-virtual {p1}, Ljava/security/spec/EncodedKeySpec;->getFormat()Ljava/lang/String;
 
     .line 56
@@ -211,14 +211,14 @@
     move-result p1
 
     .line 65
-    if-eqz p1, :cond_4c
+    if-eqz p1, :cond_4
 
     .line 66
     .line 67
     array-length p1, v0
 
     .line 68
-    if-ne p1, v4, :cond_48
+    if-ne p1, v4, :cond_3
 
     .line 69
     .line 70
@@ -229,7 +229,7 @@
     return-void
 
     .line 73
-    :cond_48
+    :cond_3
     invoke-static {v3}, Llibs/t22;->d(Ljava/lang/String;)V
 
     .line 74
@@ -238,7 +238,7 @@
     throw v2
 
     .line 77
-    :cond_4c
+    :cond_4
     const-string p1, "Encoding must be in raw format"
 
     .line 78
@@ -252,7 +252,7 @@
 .end method
 
 .method public constructor <init>([B)V
-    .registers 4
+    .locals 2
 
     .line 83
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -262,7 +262,7 @@
 
     const/16 v1, 0x4c0
 
-    if-ne v0, v1, :cond_11
+    if-ne v0, v1, :cond_0
 
     .line 85
     invoke-virtual {p1}, [B->clone()Ljava/lang/Object;
@@ -276,7 +276,7 @@
     return-void
 
     .line 86
-    :cond_11
+    :cond_0
     const-string p1, "Invalid key size"
 
     invoke-static {p1}, Llibs/ic0;->p(Ljava/lang/String;)V
@@ -287,7 +287,7 @@
 .end method
 
 .method private readObject(Ljava/io/ObjectInputStream;)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -307,7 +307,7 @@
 .end method
 
 .method private writeObject(Ljava/io/ObjectOutputStream;)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -329,7 +329,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSslXwingPublicKey;->raw:[B
@@ -339,11 +339,11 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_2
 
     .line 5
     .line 6
-    if-ne p0, p1, :cond_9
+    if-ne p0, p1, :cond_0
 
     .line 7
     .line 8
@@ -353,19 +353,19 @@
     return p1
 
     .line 10
-    :cond_9
+    :cond_0
     instance-of v2, p1, Lorg/conscrypt/OpenSslXwingPublicKey;
 
     .line 11
     .line 12
-    if-nez v2, :cond_e
+    if-nez v2, :cond_1
 
     .line 13
     .line 14
     return v1
 
     .line 15
-    :cond_e
+    :cond_1
     check-cast p1, Lorg/conscrypt/OpenSslXwingPublicKey;
 
     .line 16
@@ -385,7 +385,7 @@
     return p1
 
     .line 24
-    :cond_17
+    :cond_2
     const-string p1, "key is destroyed"
 
     .line 25
@@ -399,7 +399,7 @@
 .end method
 
 .method public getAlgorithm()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "XWING"
@@ -410,14 +410,14 @@
 .end method
 
 .method public getEncoded()[B
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSslXwingPublicKey;->raw:[B
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -436,7 +436,7 @@
     return-object v0
 
     .line 12
-    :cond_b
+    :cond_0
     const-string v0, "key is destroyed"
 
     .line 13
@@ -453,7 +453,7 @@
 .end method
 
 .method public getFormat()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "X.509"
@@ -464,14 +464,14 @@
 .end method
 
 .method public getRaw()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSslXwingPublicKey;->raw:[B
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -490,7 +490,7 @@
     return-object v0
 
     .line 12
-    :cond_b
+    :cond_0
     const-string v0, "key is destroyed"
 
     .line 13
@@ -507,14 +507,14 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSslXwingPublicKey;->raw:[B
 
     .line 2
     .line 3
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -529,7 +529,7 @@
     return v0
 
     .line 10
-    :cond_9
+    :cond_0
     const-string v0, "key is destroyed"
 
     .line 11

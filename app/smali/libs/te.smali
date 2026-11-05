@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -22,7 +22,7 @@
 
 # virtual methods
 .method public final engineLoad(Ljava/io/InputStream;[C)V
-    .registers 13
+    .locals 10
 
     .line 1
     iget-object v0, p0, Llibs/xe;->a:Ljava/util/Hashtable;
@@ -34,14 +34,14 @@
     .line 4
     .line 5
     .line 6
-    if-nez p1, :cond_8
+    if-nez p1, :cond_0
 
     .line 7
     .line 8
-    goto :goto_6c
+    goto :goto_3
 
     .line 9
-    :cond_8
+    :cond_0
     new-instance v1, Ljava/io/DataInputStream;
 
     .line 10
@@ -62,25 +62,25 @@
     const/4 v2, 0x2
 
     .line 19
-    if-eq p1, v2, :cond_20
+    if-eq p1, v2, :cond_2
 
     .line 20
     .line 21
-    if-eqz p1, :cond_20
+    if-eqz p1, :cond_2
 
     .line 22
     .line 23
     const/4 v2, 0x1
 
     .line 24
-    if-ne p1, v2, :cond_1a
+    if-ne p1, v2, :cond_1
 
     .line 25
     .line 26
-    goto :goto_20
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_1
     const-string p1, "Wrong version of key store."
 
     .line 28
@@ -93,8 +93,8 @@
     return-void
 
     .line 33
-    :cond_20
-    :goto_20
+    :cond_2
+    :goto_0
     invoke-virtual {v1}, Ljava/io/DataInputStream;->readInt()I
 
     .line 34
@@ -115,7 +115,7 @@
 
     .line 42
     .line 43
-    if-ne v2, v9, :cond_7a
+    if-ne v2, v9, :cond_6
 
     .line 44
     .line 45
@@ -132,7 +132,7 @@
     move-result v8
 
     .line 52
-    if-ltz v8, :cond_76
+    if-ltz v8, :cond_5
 
     .line 53
     .line 54
@@ -140,11 +140,11 @@
 
     .line 55
     .line 56
-    if-gt v8, v2, :cond_76
+    if-gt v8, v2, :cond_5
 
     .line 57
     .line 58
-    if-nez p1, :cond_3f
+    if-nez p1, :cond_3
 
     .line 59
     .line 60
@@ -152,22 +152,22 @@
 
     .line 61
     .line 62
-    :goto_3d
+    :goto_1
     move-object v4, p1
 
     .line 63
-    goto :goto_42
+    goto :goto_2
 
     .line 64
-    :cond_3f
+    :cond_3
     const-string p1, "PBEWithSHAAndTwofish-CBC"
 
     .line 65
     .line 66
-    goto :goto_3d
+    goto :goto_1
 
     .line 67
-    :goto_42
+    :goto_2
     const/4 v5, 0x2
 
     .line 68
@@ -246,15 +246,15 @@
     move-result p1
 
     .line 107
-    if-eqz p1, :cond_6d
+    if-eqz p1, :cond_4
 
     .line 108
     .line 109
-    :goto_6c
+    :goto_3
     return-void
 
     .line 110
-    :cond_6d
+    :cond_4
     invoke-virtual {v0}, Ljava/util/Hashtable;->clear()V
 
     .line 111
@@ -272,7 +272,7 @@
     return-void
 
     .line 119
-    :cond_76
+    :cond_5
     invoke-static {v3}, Llibs/ic0;->t(Ljava/lang/String;)V
 
     .line 120
@@ -281,7 +281,7 @@
     return-void
 
     .line 123
-    :cond_7a
+    :cond_6
     invoke-static {v3}, Llibs/ic0;->t(Ljava/lang/String;)V
 
     .line 124
@@ -291,7 +291,7 @@
 .end method
 
 .method public final engineStore(Ljava/io/OutputStream;[C)V
-    .registers 10
+    .locals 7
 
     .line 1
     new-instance v0, Ljava/io/DataOutputStream;

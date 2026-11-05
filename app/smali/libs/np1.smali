@@ -28,7 +28,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 6
+    .locals 6
 
     .line 1
     const/4 v0, 0x2
@@ -78,16 +78,16 @@
     const/4 v0, 0x0
 
     .line 22
-    :goto_15
-    if-ge v0, v2, :cond_2b
+    :goto_0
+    if-ge v0, v2, :cond_1
 
     .line 23
     .line 24
     const/4 v3, 0x0
 
     .line 25
-    :goto_18
-    if-ge v3, v2, :cond_28
+    :goto_1
+    if-ge v3, v2, :cond_0
 
     .line 26
     .line 27
@@ -116,18 +116,18 @@
 
     .line 39
     .line 40
-    goto :goto_18
+    goto :goto_1
 
     .line 41
-    :cond_28
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
     .line 42
     .line 43
-    goto :goto_15
+    goto :goto_0
 
     .line 44
-    :cond_2b
+    :cond_1
     new-instance v0, Llibs/hf;
 
     .line 45
@@ -148,7 +148,7 @@
 .end method
 
 .method public constructor <init>(II)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -156,22 +156,22 @@
     .line 2
     .line 3
     .line 4
-    if-ltz p1, :cond_18
+    if-ltz p1, :cond_1
 
     .line 5
     .line 6
     const/4 v0, 0x2
 
     .line 7
-    if-gt p1, v0, :cond_18
+    if-gt p1, v0, :cond_1
 
     .line 8
     .line 9
-    if-ltz p2, :cond_11
+    if-ltz p2, :cond_0
 
     .line 10
     .line 11
-    if-gt p2, v0, :cond_11
+    if-gt p2, v0, :cond_0
 
     .line 12
     .line 13
@@ -186,7 +186,7 @@
     return-void
 
     .line 18
-    :cond_11
+    :cond_0
     const-string p1, "column must be in range 0-2"
 
     .line 19
@@ -202,7 +202,7 @@
     throw p1
 
     .line 25
-    :cond_18
+    :cond_1
     const-string p1, "row must be in range 0-2"
 
     .line 26
@@ -219,7 +219,7 @@
 .end method
 
 .method public constructor <init>(Landroid/os/Parcel;)V
-    .registers 3
+    .locals 1
 
     .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -242,7 +242,7 @@
 .end method
 
 .method public static declared-synchronized a(II)Llibs/np1;
-    .registers 4
+    .locals 2
 
     .line 1
     const-class v0, Llibs/np1;
@@ -252,26 +252,26 @@
     monitor-enter v0
 
     .line 4
-    if-ltz p0, :cond_1e
+    if-ltz p0, :cond_1
 
     .line 5
     .line 6
     const/4 v1, 0x2
 
     .line 7
-    if-gt p0, v1, :cond_1e
+    if-gt p0, v1, :cond_1
 
     .line 8
     .line 9
-    if-ltz p1, :cond_16
+    if-ltz p1, :cond_0
 
     .line 10
     .line 11
-    if-gt p1, v1, :cond_16
+    if-gt p1, v1, :cond_0
 
     .line 12
     .line 13
-    :try_start_c
+    :try_start_0
     sget-object v1, Llibs/np1;->Z:[[Llibs/np1;
 
     .line 14
@@ -281,8 +281,8 @@
     .line 16
     .line 17
     aget-object p0, p0, p1
-    :try_end_12
-    .catchall {:try_start_c .. :try_end_12} :catchall_14
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 18
     .line 19
@@ -292,15 +292,15 @@
     return-object p0
 
     .line 21
-    :catchall_14
+    :catchall_0
     move-exception p0
 
     .line 22
-    goto :goto_26
+    goto :goto_0
 
     .line 23
-    :cond_16
-    :try_start_16
+    :cond_0
+    :try_start_1
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     .line 24
@@ -317,7 +317,7 @@
     throw p0
 
     .line 31
-    :cond_1e
+    :cond_1
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     .line 32
@@ -334,10 +334,10 @@
     throw p0
 
     .line 39
-    :goto_26
+    :goto_0
     monitor-exit v0
-    :try_end_27
-    .catchall {:try_start_16 .. :try_end_27} :catchall_14
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 40
     throw p0
@@ -346,7 +346,7 @@
 
 # virtual methods
 .method public final describeContents()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -356,7 +356,7 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     instance-of v0, p1, Llibs/np1;
@@ -369,7 +369,7 @@
     const/4 v2, 0x1
 
     .line 5
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     .line 6
     .line 7
@@ -385,7 +385,7 @@
 
     .line 12
     .line 13
-    if-ne v3, v0, :cond_15
+    if-ne v3, v0, :cond_0
 
     .line 14
     .line 15
@@ -397,31 +397,31 @@
 
     .line 18
     .line 19
-    if-ne v0, p1, :cond_15
+    if-ne v0, p1, :cond_0
 
     .line 20
     .line 21
     return v2
 
     .line 22
-    :cond_15
+    :cond_0
     return v1
 
     .line 23
-    :cond_16
-    if-eq p0, p1, :cond_19
+    :cond_1
+    if-eq p0, p1, :cond_2
 
     .line 24
     .line 25
     return v1
 
     .line 26
-    :cond_19
+    :cond_2
     return v2
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -475,7 +475,7 @@
 .end method
 
 .method public final writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     iget p2, p0, Llibs/np1;->Y:I

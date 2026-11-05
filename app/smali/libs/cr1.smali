@@ -61,7 +61,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 62
+    .locals 62
 
     .line 1
     new-instance v0, Llibs/cr1;
@@ -1323,8 +1323,8 @@
     const/4 v3, 0x0
 
     .line 644
-    :goto_283
-    if-ge v3, v2, :cond_290
+    :goto_0
+    if-ge v3, v2, :cond_0
 
     .line 645
     .line 646
@@ -1348,15 +1348,15 @@
 
     .line 655
     .line 656
-    goto :goto_283
+    goto :goto_0
 
     .line 657
-    :cond_290
+    :cond_0
     const/4 v2, 0x0
 
     .line 658
-    :goto_291
-    if-ge v2, v0, :cond_2a0
+    :goto_1
+    if-ge v2, v0, :cond_2
 
     .line 659
     .line 660
@@ -1368,7 +1368,7 @@
 
     .line 663
     .line 664
-    if-nez v3, :cond_29d
+    if-nez v3, :cond_1
 
     .line 665
     .line 666
@@ -1380,20 +1380,20 @@
 
     .line 669
     .line 670
-    :cond_29d
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
     .line 671
     .line 672
-    goto :goto_291
+    goto :goto_1
 
     .line 673
-    :cond_2a0
+    :cond_2
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;II)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
@@ -1412,7 +1412,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Llibs/cr1;
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Llibs/cr1;
@@ -1435,7 +1435,7 @@
 .end method
 
 .method public static values()[Llibs/cr1;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/cr1;->Nine:[Llibs/cr1;
@@ -1460,18 +1460,18 @@
 
 # virtual methods
 .method public final a(II)Z
-    .registers 4
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/cr1;->X:B
 
     .line 2
     .line 3
-    if-lt v0, p1, :cond_8
+    if-lt v0, p1, :cond_0
 
     .line 4
     .line 5
-    if-gt v0, p2, :cond_8
+    if-gt v0, p2, :cond_0
 
     .line 6
     .line 7
@@ -1481,7 +1481,7 @@
     return p1
 
     .line 9
-    :cond_8
+    :cond_0
     const/4 p1, 0x0
 
     .line 10

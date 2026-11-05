@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/za;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -32,7 +32,7 @@
 
 # virtual methods
 .method public final a(Llibs/yp2;Llibs/cp2;)Llibs/do2;
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object p1, p2, Llibs/cp2;->X:Llibs/do2;
@@ -47,21 +47,21 @@
 
     .line 6
     .line 7
-    if-ne p2, v0, :cond_a
+    if-ne p2, v0, :cond_0
 
     .line 8
     .line 9
     const/4 p2, 0x1
 
     .line 10
-    goto :goto_b
+    goto :goto_0
 
     .line 11
-    :cond_a
+    :cond_0
     const/4 p2, 0x0
 
     .line 12
-    :goto_b
+    :goto_0
     iput-boolean p2, p0, Llibs/me;->c:Z
 
     .line 13
@@ -78,7 +78,7 @@
 .end method
 
 .method public final b(Llibs/yp2;Llibs/do2;)Llibs/do2;
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p2}, Llibs/me;->c(Llibs/do2;)Llibs/do2;
@@ -93,14 +93,14 @@
 .end method
 
 .method public final c(Llibs/do2;)Llibs/do2;
-    .registers 5
+    .locals 3
 
     .line 1
     iget-boolean v0, p0, Llibs/me;->c:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -108,15 +108,15 @@
 
     .line 6
     .line 7
-    goto :goto_9
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     const-string v0, "Authorization"
 
     .line 9
     .line 10
-    :goto_9
+    :goto_0
     iget-object v1, p1, Llibs/do2;->c:Llibs/sx0;
 
     .line 11
@@ -129,7 +129,7 @@
     move-result-object v1
 
     .line 16
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_1
 
     .line 17
     .line 18
@@ -145,7 +145,7 @@
     move-result v1
 
     .line 24
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_1
 
     .line 25
     .line 26
@@ -176,7 +176,7 @@
     return-object v1
 
     .line 39
-    :cond_26
+    :cond_1
     iget-object v1, p0, Llibs/me;->b:Llibs/za;
 
     .line 40

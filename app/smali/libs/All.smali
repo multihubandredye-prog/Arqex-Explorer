@@ -30,7 +30,7 @@
 
 # direct methods
 .method public constructor <init>([CI)V
-    .registers 14
+    .locals 11
 
     .line 1
     const-string v0, "HmacSHA1"
@@ -52,32 +52,32 @@
     const/4 v2, 0x0
 
     .line 10
-    if-eqz p1, :cond_d9
+    if-eqz p1, :cond_a
 
     .line 11
     .line 12
     array-length v3, p1
 
     .line 13
-    if-eqz v3, :cond_d9
+    if-eqz v3, :cond_a
 
     .line 14
     .line 15
     const/4 v3, 0x3
 
     .line 16
-    if-eq p2, v1, :cond_1a
+    if-eq p2, v1, :cond_1
 
     .line 17
     .line 18
-    if-ne p2, v3, :cond_14
+    if-ne p2, v3, :cond_0
 
     .line 19
     .line 20
-    goto :goto_1a
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_0
     const-string p1, "Invalid key strength in AES encrypter constructor"
 
     .line 22
@@ -90,8 +90,8 @@
     throw v2
 
     .line 27
-    :cond_1a
-    :goto_1a
+    :cond_1
+    :goto_0
     const/4 v4, 0x0
 
     .line 28
@@ -123,11 +123,11 @@
 
     .line 41
     .line 42
-    if-eq p2, v1, :cond_3c
+    if-eq p2, v1, :cond_3
 
     .line 43
     .line 44
-    if-ne p2, v3, :cond_36
+    if-ne p2, v3, :cond_2
 
     .line 45
     .line 46
@@ -147,10 +147,10 @@
 
     .line 53
     .line 54
-    goto :goto_42
+    goto :goto_1
 
     .line 55
-    :cond_36
+    :cond_2
     const-string p1, "invalid aes key strength, cannot determine key sizes"
 
     .line 56
@@ -163,7 +163,7 @@
     throw v2
 
     .line 61
-    :cond_3c
+    :cond_3
     iput v5, p0, Llibs/All;->c:I
 
     .line 62
@@ -176,19 +176,19 @@
 
     .line 66
     .line 67
-    :goto_42
-    if-eq p2, v6, :cond_4d
+    :goto_1
+    if-eq p2, v6, :cond_5
 
     .line 68
     .line 69
-    if-ne p2, v5, :cond_47
+    if-ne p2, v5, :cond_4
 
     .line 70
     .line 71
-    goto :goto_4d
+    goto :goto_2
 
     .line 72
-    :cond_47
+    :cond_4
     const-string p1, "invalid salt size, cannot generate salt"
 
     .line 73
@@ -201,34 +201,34 @@
     throw v2
 
     .line 78
-    :cond_4d
-    :goto_4d
+    :cond_5
+    :goto_2
     const/4 v1, 0x2
 
     .line 79
-    if-ne p2, v6, :cond_52
+    if-ne p2, v6, :cond_6
 
     .line 80
     .line 81
     const/4 v6, 0x2
 
     .line 82
-    goto :goto_53
+    goto :goto_3
 
     .line 83
-    :cond_52
+    :cond_6
     const/4 v6, 0x0
 
     .line 84
-    :goto_53
-    if-ne p2, v5, :cond_56
+    :goto_3
+    if-ne p2, v5, :cond_7
 
     .line 85
     .line 86
     const/4 v6, 0x4
 
     .line 87
-    :cond_56
+    :cond_7
     new-array p2, p2, [B
 
     .line 88
@@ -236,8 +236,8 @@
     const/4 v5, 0x0
 
     .line 90
-    :goto_59
-    if-ge v5, v6, :cond_80
+    :goto_4
+    if-ge v5, v6, :cond_8
 
     .line 91
     .line 92
@@ -317,15 +317,15 @@
 
     .line 127
     .line 128
-    goto :goto_59
+    goto :goto_4
 
     .line 129
-    :cond_80
+    :cond_8
     iput-object p2, p0, Llibs/All;->f:[B
 
     .line 130
     .line 131
-    :try_start_82
+    :try_start_0
     new-instance v3, Llibs/vo1;
 
     .line 132
@@ -368,8 +368,8 @@
     .line 151
     .line 152
     move-result-object p1
-    :try_end_98
-    .catch Ljava/lang/Exception; {:try_start_82 .. :try_end_98} :catch_d4
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 153
     array-length p2, p1
@@ -390,7 +390,7 @@
     add-int/2addr v6, v1
 
     .line 161
-    if-ne p2, v6, :cond_ce
+    if-ne p2, v6, :cond_9
 
     .line 162
     .line 163
@@ -478,7 +478,7 @@
     return-void
 
     .line 207
-    :cond_ce
+    :cond_9
     const-string p1, "invalid key generated, cannot decrypt file"
 
     .line 208
@@ -491,7 +491,7 @@
     throw v2
 
     .line 213
-    :catch_d4
+    :catch_0
     move-exception p1
 
     .line 214
@@ -503,7 +503,7 @@
     throw v2
 
     .line 218
-    :cond_d9
+    :cond_a
     const-string p1, "input password is empty or null in AES encrypter constructor"
 
     .line 219
@@ -513,21 +513,21 @@
     .line 221
     .line 222
     .line 223
-    goto :goto_e0
+    goto :goto_6
 
     .line 224
-    :goto_df
+    :goto_5
     throw v2
 
     .line 225
-    :goto_e0
-    goto :goto_df
+    :goto_6
+    goto :goto_5
 .end method
 
 
 # virtual methods
 .method public final a(II[B)I
-    .registers 14
+    .locals 10
 
     .line 1
     iget-boolean v0, p0, Llibs/All;->g:Z
@@ -537,7 +537,7 @@
     const/4 v1, 0x0
 
     .line 4
-    if-nez v0, :cond_50
+    if-nez v0, :cond_4
 
     .line 5
     .line 6
@@ -548,7 +548,7 @@
     const/4 v2, 0x1
 
     .line 9
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -556,16 +556,16 @@
 
     .line 12
     .line 13
-    :cond_c
+    :cond_0
     move v0, p1
 
     .line 14
-    :goto_d
+    :goto_0
     add-int v3, p1, p2
 
     .line 15
     .line 16
-    if-ge v0, v3, :cond_4f
+    if-ge v0, v3, :cond_3
 
     .line 17
     .line 18
@@ -573,7 +573,7 @@
 
     .line 19
     .line 20
-    if-gt v4, v3, :cond_18
+    if-gt v4, v3, :cond_1
 
     .line 21
     .line 22
@@ -581,14 +581,14 @@
 
     .line 23
     .line 24
-    goto :goto_19
+    goto :goto_1
 
     .line 25
-    :cond_18
+    :cond_1
     sub-int/2addr v3, v0
 
     .line 26
-    :goto_19
+    :goto_1
     iget v5, p0, Llibs/All;->h:I
 
     .line 27
@@ -618,8 +618,8 @@
     const/4 v5, 0x0
 
     .line 41
-    :goto_28
-    if-ge v5, v3, :cond_37
+    :goto_2
+    if-ge v5, v3, :cond_2
 
     .line 42
     .line 43
@@ -649,10 +649,10 @@
 
     .line 54
     .line 55
-    goto :goto_28
+    goto :goto_2
 
     .line 56
-    :cond_37
+    :cond_2
     iget-object v5, p0, Llibs/All;->b:Llibs/vo1;
 
     .line 57
@@ -662,7 +662,7 @@
     .line 59
     .line 60
     .line 61
-    :try_start_3c
+    :try_start_0
     iget-object v5, v5, Llibs/vo1;->d:Ljava/lang/Object;
 
     .line 62
@@ -672,8 +672,8 @@
     .line 64
     .line 65
     invoke-virtual {v5, p3, v0, v3}, Ljavax/crypto/Mac;->update([BII)V
-    :try_end_43
-    .catch Ljava/lang/IllegalStateException; {:try_start_3c .. :try_end_43} :catch_4a
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 66
     .line 67
@@ -692,10 +692,10 @@
     move v0, v4
 
     .line 74
-    goto :goto_d
+    goto :goto_0
 
     .line 75
-    :catch_4a
+    :catch_0
     move-exception p1
 
     .line 76
@@ -707,11 +707,11 @@
     return v1
 
     .line 80
-    :cond_4f
+    :cond_3
     return p2
 
     .line 81
-    :cond_50
+    :cond_4
     const-string p1, "AES Encrypter is in finished state (A non 16 byte block has already been passed to encrypter)"
 
     .line 82

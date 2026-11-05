@@ -15,7 +15,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     sget-object v0, Llibs/f22;->Tau:Llibs/f22;
@@ -42,7 +42,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/Set;Llibs/iv3;)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/en1;-><init>()V

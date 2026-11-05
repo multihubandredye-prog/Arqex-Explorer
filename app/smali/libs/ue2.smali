@@ -20,7 +20,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/ds1;ZLlibs/xl1;Llibs/$d;Landroid/app/Activity;)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 8
+    .locals 6
 
     .line 1
     iget-object p1, p0, Llibs/ue2;->X:Llibs/ds1;
@@ -76,7 +76,7 @@
     const/4 v2, 0x0
 
     .line 10
-    :try_start_9
+    :try_start_0
     sget v3, Llibs/bi2;->color:I
 
     .line 11
@@ -188,8 +188,8 @@
     .line 65
     .line 66
     move-result v1
-    :try_end_42
-    .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_42} :catch_6a
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 67
     iget-boolean v3, p0, Llibs/ue2;->Y:Z
@@ -203,11 +203,11 @@
     const/4 v5, 0x1
 
     .line 72
-    if-eqz v3, :cond_55
+    if-eqz v3, :cond_0
 
     .line 73
     .line 74
-    :try_start_49
+    :try_start_1
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 75
@@ -229,29 +229,29 @@
     .line 83
     .line 84
     .line 85
-    goto :goto_67
+    goto :goto_1
 
     .line 86
-    :cond_55
+    :cond_0
     const/16 v3, 0xff
 
     .line 87
     .line 88
-    if-eq p1, v3, :cond_5b
+    if-eq p1, v3, :cond_1
 
     .line 89
     .line 90
     const/4 p1, 0x1
 
     .line 91
-    goto :goto_5c
+    goto :goto_0
 
     .line 92
-    :cond_5b
+    :cond_1
     const/4 p1, 0x0
 
     .line 93
-    :goto_5c
+    :goto_0
     invoke-static {v1, v5, p1}, Llibs/ah;->j(IZZ)Ljava/lang/String;
 
     .line 94
@@ -273,17 +273,17 @@
     .line 102
     .line 103
     .line 104
-    :goto_67
+    :goto_1
     iput-boolean v5, v0, Llibs/od;->Mu:Z
-    :try_end_69
-    .catch Ljava/lang/Exception; {:try_start_49 .. :try_end_69} :catch_6a
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 105
     .line 106
     return-void
 
     .line 107
-    :catch_6a
+    :catch_0
     sget p1, Llibs/bi2;->failed:I
 
     .line 108

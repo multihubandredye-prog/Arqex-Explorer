@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 1
     const/high16 v0, 0x3f400000    # 0.75f
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final removeEldestEntry(Ljava/util/Map$Entry;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Ljava/util/AbstractMap;->size()I
@@ -45,7 +45,7 @@
 
     .line 6
     .line 7
-    if-le p1, v0, :cond_a
+    if-le p1, v0, :cond_0
 
     .line 8
     .line 9
@@ -55,7 +55,7 @@
     return p1
 
     .line 11
-    :cond_a
+    :cond_0
     const/4 p1, 0x0
 
     .line 12

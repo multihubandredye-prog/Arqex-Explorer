@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/xv;->a:B
@@ -30,28 +30,28 @@
 .end method
 
 .method private final a(Landroid/widget/SeekBar;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final b(Landroid/widget/SeekBar;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final c(Landroid/widget/SeekBar;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final d(Landroid/widget/SeekBar;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
@@ -60,14 +60,14 @@
 
 # virtual methods
 .method public final onProgressChanged(Landroid/widget/SeekBar;IZ)V
-    .registers 4
+    .locals 0
 
     .line 1
     iget-byte p3, p0, Llibs/xv;->a:B
 
     .line 2
     .line 3
-    packed-switch p3, :pswitch_data_34
+    packed-switch p3, :pswitch_data_0
 
     .line 4
     .line 5
@@ -76,7 +76,7 @@
 
     .line 7
     .line 8
-    if-nez p3, :cond_14
+    if-nez p3, :cond_0
 
     .line 9
     .line 10
@@ -103,7 +103,7 @@
 
     .line 20
     .line 21
-    :cond_14
+    :cond_0
     invoke-static {p2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     .line 22
@@ -120,12 +120,12 @@
     return-void
 
     .line 29
-    :pswitch_1c
+    :pswitch_0
     iget-object p3, p0, Llibs/xv;->b:Landroid/widget/TextView;
 
     .line 30
     .line 31
-    if-nez p3, :cond_2b
+    if-nez p3, :cond_1
 
     .line 32
     .line 33
@@ -152,7 +152,7 @@
 
     .line 43
     .line 44
-    :cond_2b
+    :cond_1
     invoke-static {p2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     .line 45
@@ -172,14 +172,14 @@
     nop
 
     .line 53
-    :pswitch_data_34
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1c
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final onStartTrackingTouch(Landroid/widget/SeekBar;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iget-byte p1, p0, Llibs/xv;->a:B
@@ -190,7 +190,7 @@
 .end method
 
 .method public final onStopTrackingTouch(Landroid/widget/SeekBar;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iget-byte p1, p0, Llibs/xv;->a:B

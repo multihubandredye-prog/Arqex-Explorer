@@ -31,7 +31,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const-string v0, "(\\d*):0\\*([^/]+)"
@@ -54,7 +54,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 270
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -76,7 +76,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/LinkedHashMap;Llibs/x02;I)V
-    .registers 11
+    .locals 7
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -139,7 +139,7 @@
     const/4 v1, -0x2
 
     .line 31
-    if-eq p3, v1, :cond_10c
+    if-eq p3, v1, :cond_9
 
     .line 32
     .line 33
@@ -147,28 +147,28 @@
 
     .line 34
     .line 35
-    if-eq p3, v1, :cond_100
+    if-eq p3, v1, :cond_8
 
     .line 36
     .line 37
     const/4 v1, 0x2
 
     .line 38
-    if-eq p3, v1, :cond_f3
+    if-eq p3, v1, :cond_7
 
     .line 39
     .line 40
     const/4 v2, 0x3
 
     .line 41
-    if-eq p3, v2, :cond_e6
+    if-eq p3, v2, :cond_6
 
     .line 42
     .line 43
     const/4 v2, 0x4
 
     .line 44
-    if-eq p3, v2, :cond_d9
+    if-eq p3, v2, :cond_5
 
     .line 45
     .line 46
@@ -203,7 +203,7 @@
     const/4 v6, 0x0
 
     .line 61
-    if-eqz v5, :cond_42
+    if-eqz v5, :cond_0
 
     .line 62
     .line 63
@@ -215,7 +215,7 @@
     move-result-object v3
 
     .line 67
-    :cond_42
+    :cond_0
     invoke-interface {p1, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 68
@@ -254,7 +254,7 @@
     move-result v4
 
     .line 85
-    if-ltz v4, :cond_5a
+    if-ltz v4, :cond_1
 
     .line 86
     .line 87
@@ -266,7 +266,7 @@
     move-result-object p3
 
     .line 91
-    :cond_5a
+    :cond_1
     invoke-static {p1, p3}, Llibs/yq1;->b(Ljava/security/Key;Ljava/lang/String;)[B
 
     .line 92
@@ -363,7 +363,7 @@
     move-result p3
 
     .line 139
-    if-eqz p3, :cond_aa
+    if-eqz p3, :cond_3
 
     .line 140
     .line 141
@@ -379,7 +379,7 @@
     move-result p3
 
     .line 147
-    if-le p3, v2, :cond_a7
+    if-le p3, v2, :cond_2
 
     .line 148
     .line 149
@@ -419,23 +419,23 @@
 
     .line 166
     .line 167
-    goto :goto_ac
+    goto :goto_0
 
     .line 168
-    :cond_a7
+    :cond_2
     iput-object p1, p0, Llibs/v02;->c:Ljava/lang/String;
 
     .line 169
     .line 170
-    goto :goto_ac
+    goto :goto_0
 
     .line 171
-    :cond_aa
+    :cond_3
     iput-object p1, p0, Llibs/v02;->c:Ljava/lang/String;
 
     .line 172
     .line 173
-    :goto_ac
+    :goto_0
     iget-object p1, p2, Llibs/x02;->h:Ljava/lang/String;
 
     .line 174
@@ -448,11 +448,11 @@
     move-result p1
 
     .line 179
-    if-nez p1, :cond_10c
+    if-nez p1, :cond_9
 
     .line 180
     .line 181
-    :try_start_b4
+    :try_start_0
     new-array p1, v1, [Ljava/lang/String;
 
     .line 182
@@ -489,7 +489,7 @@
     move-result p3
 
     .line 199
-    if-eqz p3, :cond_d4
+    if-eqz p3, :cond_4
 
     .line 200
     .line 201
@@ -517,21 +517,21 @@
 
     .line 212
     .line 213
-    :cond_d4
+    :cond_4
     aget-object p1, p1, v3
 
     .line 214
     .line 215
     iput-object p1, p0, Llibs/v02;->h:Ljava/lang/String;
-    :try_end_d8
-    .catchall {:try_start_b4 .. :try_end_d8} :catchall_10c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 216
     .line 217
     return-void
 
     .line 218
-    :cond_d9
+    :cond_5
     sget p1, Llibs/bi2;->trash:I
 
     .line 219
@@ -559,7 +559,7 @@
     return-void
 
     .line 231
-    :cond_e6
+    :cond_6
     sget p1, Llibs/bi2;->shared:I
 
     .line 232
@@ -587,7 +587,7 @@
     return-void
 
     .line 244
-    :cond_f3
+    :cond_7
     sget p1, Llibs/bi2;->files:I
 
     .line 245
@@ -615,7 +615,7 @@
     return-void
 
     .line 257
-    :cond_100
+    :cond_8
     sget p1, Llibs/bi2;->home:I
 
     .line 258
@@ -640,7 +640,7 @@
 
     .line 268
     .line 269
-    :catchall_10c
-    :cond_10c
+    :catchall_0
+    :cond_9
     return-void
 .end method

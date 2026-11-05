@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/math/BigInteger;Llibs/gg0;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p2}, Llibs/bg0;-><init>(Llibs/gg0;)V

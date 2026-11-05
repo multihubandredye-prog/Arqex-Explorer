@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/math/BigInteger;Ljava/math/BigInteger;)V
-    .registers 3
+    .locals 0
 
     .line 55
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -26,7 +26,7 @@
 .end method
 
 .method public constructor <init>(Llibs/Param;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -45,7 +45,7 @@
     const/4 v1, 0x2
 
     .line 9
-    if-ne v0, v1, :cond_2b
+    if-ne v0, v1, :cond_0
 
     .line 10
     .line 11
@@ -116,7 +116,7 @@
     return-void
 
     .line 44
-    :cond_2b
+    :cond_0
     const-string v0, "Bad sequence size: "
 
     .line 45
@@ -143,7 +143,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/Init;

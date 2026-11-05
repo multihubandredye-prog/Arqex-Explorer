@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 
     .line 14
     .line 15
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_0
 
     .line 16
     .line 17
@@ -69,12 +69,12 @@
     .line 18
     .line 19
     .line 20
-    :cond_13
+    :cond_0
     return-void
 .end method
 
 .method public static b([I[Ljava/lang/Object;I)V
-    .registers 10
+    .locals 7
 
     .line 1
     array-length v0, p0
@@ -100,7 +100,7 @@
     const/4 v6, 0x1
 
     .line 10
-    if-ne v0, v1, :cond_2d
+    if-ne v0, v1, :cond_2
 
     .line 11
     .line 12
@@ -111,12 +111,12 @@
     monitor-enter v0
 
     .line 15
-    :try_start_e
+    :try_start_0
     sget v1, Llibs/l5;->Omicron:I
 
     .line 16
     .line 17
-    if-ge v1, v5, :cond_29
+    if-ge v1, v5, :cond_1
 
     .line 18
     .line 19
@@ -135,8 +135,8 @@
     sub-int/2addr p2, v6
 
     .line 26
-    :goto_19
-    if-lt p2, v3, :cond_22
+    :goto_0
+    if-lt p2, v3, :cond_0
 
     .line 27
     .line 28
@@ -148,17 +148,17 @@
 
     .line 31
     .line 32
-    goto :goto_19
+    goto :goto_0
 
     .line 33
-    :catchall_20
+    :catchall_0
     move-exception p0
 
     .line 34
-    goto :goto_2b
+    goto :goto_1
 
     .line 35
-    :cond_22
+    :cond_0
     sput-object p1, Llibs/l5;->Xi:[Ljava/lang/Object;
 
     .line 36
@@ -174,30 +174,30 @@
 
     .line 41
     .line 42
-    :cond_29
+    :cond_1
     monitor-exit v0
 
     .line 43
     return-void
 
     .line 44
-    :goto_2b
+    :goto_1
     monitor-exit v0
-    :try_end_2c
-    .catchall {:try_start_e .. :try_end_2c} :catchall_20
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 45
     throw p0
 
     .line 46
-    :cond_2d
+    :cond_2
     array-length v0, p0
 
     .line 47
     const/4 v1, 0x4
 
     .line 48
-    if-ne v0, v1, :cond_53
+    if-ne v0, v1, :cond_5
 
     .line 49
     .line 50
@@ -208,12 +208,12 @@
     monitor-enter v0
 
     .line 53
-    :try_start_34
+    :try_start_1
     sget v1, Llibs/l5;->Nu:I
 
     .line 54
     .line 55
-    if-ge v1, v5, :cond_4f
+    if-ge v1, v5, :cond_4
 
     .line 56
     .line 57
@@ -232,8 +232,8 @@
     sub-int/2addr p2, v6
 
     .line 64
-    :goto_3f
-    if-lt p2, v3, :cond_48
+    :goto_2
+    if-lt p2, v3, :cond_3
 
     .line 65
     .line 66
@@ -245,17 +245,17 @@
 
     .line 69
     .line 70
-    goto :goto_3f
+    goto :goto_2
 
     .line 71
-    :catchall_46
+    :catchall_1
     move-exception p0
 
     .line 72
-    goto :goto_51
+    goto :goto_3
 
     .line 73
-    :cond_48
+    :cond_3
     sput-object p1, Llibs/l5;->Mu:[Ljava/lang/Object;
 
     .line 74
@@ -271,30 +271,30 @@
 
     .line 79
     .line 80
-    :cond_4f
+    :cond_4
     monitor-exit v0
 
     .line 81
     return-void
 
     .line 82
-    :goto_51
+    :goto_3
     monitor-exit v0
-    :try_end_52
-    .catchall {:try_start_34 .. :try_end_52} :catchall_46
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 83
     throw p0
 
     .line 84
-    :cond_53
+    :cond_5
     return-void
 .end method
 
 
 # virtual methods
 .method public final a(I)V
-    .registers 10
+    .locals 8
 
     .line 1
     const-string v0, "Found corrupt ArraySet cache: [0]="
@@ -318,7 +318,7 @@
     const/4 v5, 0x0
 
     .line 10
-    if-ne p1, v2, :cond_52
+    if-ne p1, v2, :cond_1
 
     .line 11
     .line 12
@@ -329,18 +329,18 @@
     monitor-enter v2
 
     .line 15
-    :try_start_e
+    :try_start_0
     sget-object v0, Llibs/l5;->Xi:[Ljava/lang/Object;
-    :try_end_10
-    .catchall {:try_start_e .. :try_end_10} :catchall_2b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 16
     .line 17
-    if-eqz v0, :cond_4e
+    if-eqz v0, :cond_0
 
     .line 18
     .line 19
-    :try_start_12
+    :try_start_1
     iput-object v0, p0, Llibs/l5;->Y:[Ljava/lang/Object;
 
     .line 20
@@ -385,27 +385,27 @@
 
     .line 40
     sput v6, Llibs/l5;->Omicron:I
-    :try_end_29
-    .catch Ljava/lang/ClassCastException; {:try_start_12 .. :try_end_29} :catch_2d
-    .catchall {:try_start_12 .. :try_end_29} :catchall_2b
+    :try_end_1
+    .catch Ljava/lang/ClassCastException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 41
     .line 42
-    :try_start_29
+    :try_start_2
     monitor-exit v2
 
     .line 43
     return-void
 
     .line 44
-    :catchall_2b
+    :catchall_0
     move-exception p1
 
     .line 45
-    goto :goto_50
+    goto :goto_0
 
     .line 46
-    :catch_2d
+    :catch_0
     const-string v6, "ArraySet"
 
     .line 47
@@ -467,27 +467,27 @@
 
     .line 78
     .line 79
-    :cond_4e
+    :cond_0
     monitor-exit v2
 
     .line 80
-    goto :goto_9c
+    goto :goto_2
 
     .line 81
-    :goto_50
+    :goto_0
     monitor-exit v2
-    :try_end_51
-    .catchall {:try_start_29 .. :try_end_51} :catchall_2b
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 82
     throw p1
 
     .line 83
-    :cond_52
+    :cond_1
     const/4 v1, 0x4
 
     .line 84
-    if-ne p1, v1, :cond_9c
+    if-ne p1, v1, :cond_3
 
     .line 85
     .line 86
@@ -498,18 +498,18 @@
     monitor-enter v1
 
     .line 89
-    :try_start_58
+    :try_start_3
     sget-object v2, Llibs/l5;->Mu:[Ljava/lang/Object;
-    :try_end_5a
-    .catchall {:try_start_58 .. :try_end_5a} :catchall_75
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 90
     .line 91
-    if-eqz v2, :cond_98
+    if-eqz v2, :cond_2
 
     .line 92
     .line 93
-    :try_start_5c
+    :try_start_4
     iput-object v2, p0, Llibs/l5;->Y:[Ljava/lang/Object;
 
     .line 94
@@ -554,27 +554,27 @@
 
     .line 114
     sput v6, Llibs/l5;->Nu:I
-    :try_end_73
-    .catch Ljava/lang/ClassCastException; {:try_start_5c .. :try_end_73} :catch_77
-    .catchall {:try_start_5c .. :try_end_73} :catchall_75
+    :try_end_4
+    .catch Ljava/lang/ClassCastException; {:try_start_4 .. :try_end_4} :catch_1
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 115
     .line 116
-    :try_start_73
+    :try_start_5
     monitor-exit v1
 
     .line 117
     return-void
 
     .line 118
-    :catchall_75
+    :catchall_1
     move-exception p1
 
     .line 119
-    goto :goto_9a
+    goto :goto_1
 
     .line 120
-    :catch_77
+    :catch_1
     const-string v6, "ArraySet"
 
     .line 121
@@ -636,24 +636,24 @@
 
     .line 152
     .line 153
-    :cond_98
+    :cond_2
     monitor-exit v1
 
     .line 154
-    goto :goto_9c
+    goto :goto_2
 
     .line 155
-    :goto_9a
+    :goto_1
     monitor-exit v1
-    :try_end_9b
-    .catchall {:try_start_73 .. :try_end_9b} :catchall_75
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
     .line 156
     throw p1
 
     .line 157
-    :cond_9c
-    :goto_9c
+    :cond_3
+    :goto_2
     new-array v0, p1, [I
 
     .line 158
@@ -674,13 +674,13 @@
 .end method
 
 .method public final add(Ljava/lang/Object;)Z
-    .registers 10
+    .locals 8
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-nez p1, :cond_9
+    if-nez p1, :cond_0
 
     .line 3
     .line 4
@@ -695,10 +695,10 @@
     const/4 v2, 0x0
 
     .line 9
-    goto :goto_14
+    goto :goto_0
 
     .line 10
-    :cond_9
+    :cond_0
     invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
 
     .line 11
@@ -724,15 +724,15 @@
     move v1, v7
 
     .line 21
-    :goto_14
-    if-ltz v1, :cond_17
+    :goto_0
+    if-ltz v1, :cond_1
 
     .line 22
     .line 23
     return v0
 
     .line 24
-    :cond_17
+    :cond_1
     xor-int/lit8 v1, v1, -0x1
 
     .line 25
@@ -748,7 +748,7 @@
     array-length v5, v4
 
     .line 31
-    if-lt v3, v5, :cond_46
+    if-lt v3, v5, :cond_5
 
     .line 32
     .line 33
@@ -756,7 +756,7 @@
 
     .line 34
     .line 35
-    if-lt v3, v5, :cond_28
+    if-lt v3, v5, :cond_2
 
     .line 36
     .line 37
@@ -767,25 +767,25 @@
     add-int/2addr v5, v3
 
     .line 40
-    goto :goto_2d
+    goto :goto_1
 
     .line 41
-    :cond_28
+    :cond_2
     const/4 v6, 0x4
 
     .line 42
-    if-lt v3, v6, :cond_2c
+    if-lt v3, v6, :cond_3
 
     .line 43
     .line 44
-    goto :goto_2d
+    goto :goto_1
 
     .line 45
-    :cond_2c
+    :cond_3
     const/4 v5, 0x4
 
     .line 46
-    :goto_2d
+    :goto_1
     iget-object v3, p0, Llibs/l5;->Y:[Ljava/lang/Object;
 
     .line 47
@@ -802,7 +802,7 @@
     array-length v6, v5
 
     .line 54
-    if-lez v6, :cond_41
+    if-lez v6, :cond_4
 
     .line 55
     .line 56
@@ -826,7 +826,7 @@
     .line 64
     .line 65
     .line 66
-    :cond_41
+    :cond_4
     iget v0, p0, Llibs/l5;->Z:I
 
     .line 67
@@ -836,12 +836,12 @@
     .line 69
     .line 70
     .line 71
-    :cond_46
+    :cond_5
     iget v0, p0, Llibs/l5;->Z:I
 
     .line 72
     .line 73
-    if-ge v1, v0, :cond_5a
+    if-ge v1, v0, :cond_6
 
     .line 74
     .line 75
@@ -877,7 +877,7 @@
     .line 89
     .line 90
     .line 91
-    :cond_5a
+    :cond_6
     iget-object v0, p0, Llibs/l5;->X:[I
 
     .line 92
@@ -912,7 +912,7 @@
 .end method
 
 .method public final addAll(Ljava/util/Collection;)Z
-    .registers 7
+    .locals 5
 
     .line 1
     iget v0, p0, Llibs/l5;->Z:I
@@ -940,7 +940,7 @@
     const/4 v3, 0x0
 
     .line 12
-    if-ge v2, v1, :cond_27
+    if-ge v2, v1, :cond_1
 
     .line 13
     .line 14
@@ -957,7 +957,7 @@
 
     .line 20
     .line 21
-    if-lez v1, :cond_22
+    if-lez v1, :cond_0
 
     .line 22
     .line 23
@@ -983,7 +983,7 @@
     .line 33
     .line 34
     .line 35
-    :cond_22
+    :cond_0
     iget v1, p0, Llibs/l5;->Z:I
 
     .line 36
@@ -993,7 +993,7 @@
     .line 38
     .line 39
     .line 40
-    :cond_27
+    :cond_1
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     .line 41
@@ -1002,7 +1002,7 @@
     move-result-object p1
 
     .line 44
-    :goto_2b
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 45
@@ -1011,7 +1011,7 @@
     move-result v0
 
     .line 48
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_2
 
     .line 49
     .line 50
@@ -1034,15 +1034,15 @@
     or-int/2addr v3, v0
 
     .line 59
-    goto :goto_2b
+    goto :goto_0
 
     .line 60
-    :cond_3b
+    :cond_2
     return v3
 .end method
 
 .method public final c(ILjava/lang/Object;)I
-    .registers 8
+    .locals 5
 
     .line 1
     iget v0, p0, Llibs/l5;->Z:I
@@ -1052,14 +1052,14 @@
     const/4 v1, -0x1
 
     .line 4
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 5
     .line 6
     return v1
 
     .line 7
-    :cond_6
+    :cond_0
     iget-object v2, p0, Llibs/l5;->X:[I
 
     .line 8
@@ -1072,14 +1072,14 @@
     move-result v2
 
     .line 13
-    if-gez v2, :cond_f
+    if-gez v2, :cond_1
 
     .line 14
     .line 15
-    goto :goto_19
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_1
     iget-object v3, p0, Llibs/l5;->Y:[Ljava/lang/Object;
 
     .line 17
@@ -1096,21 +1096,21 @@
     move-result v3
 
     .line 24
-    if-eqz v3, :cond_1a
+    if-eqz v3, :cond_2
 
     .line 25
     .line 26
-    :goto_19
+    :goto_0
     return v2
 
     .line 27
-    :cond_1a
+    :cond_2
     add-int/lit8 v3, v2, 0x1
 
     .line 28
     .line 29
-    :goto_1c
-    if-ge v3, v0, :cond_32
+    :goto_1
+    if-ge v3, v0, :cond_4
 
     .line 30
     .line 31
@@ -1122,7 +1122,7 @@
 
     .line 34
     .line 35
-    if-ne v4, p1, :cond_32
+    if-ne v4, p1, :cond_4
 
     .line 36
     .line 37
@@ -1142,28 +1142,28 @@
     move-result v4
 
     .line 45
-    if-eqz v4, :cond_2f
+    if-eqz v4, :cond_3
 
     .line 46
     .line 47
     return v3
 
     .line 48
-    :cond_2f
+    :cond_3
     add-int/lit8 v3, v3, 0x1
 
     .line 49
     .line 50
-    goto :goto_1c
+    goto :goto_1
 
     .line 51
-    :cond_32
+    :cond_4
     add-int/lit8 v2, v2, -0x1
 
     .line 52
     .line 53
-    :goto_34
-    if-ltz v2, :cond_4a
+    :goto_2
+    if-ltz v2, :cond_6
 
     .line 54
     .line 55
@@ -1175,7 +1175,7 @@
 
     .line 58
     .line 59
-    if-ne v0, p1, :cond_4a
+    if-ne v0, p1, :cond_6
 
     .line 60
     .line 61
@@ -1195,22 +1195,22 @@
     move-result v0
 
     .line 69
-    if-eqz v0, :cond_47
+    if-eqz v0, :cond_5
 
     .line 70
     .line 71
     return v2
 
     .line 72
-    :cond_47
+    :cond_5
     add-int/lit8 v2, v2, -0x1
 
     .line 73
     .line 74
-    goto :goto_34
+    goto :goto_2
 
     .line 75
-    :cond_4a
+    :cond_6
     xor-int/lit8 p1, v3, -0x1
 
     .line 76
@@ -1219,14 +1219,14 @@
 .end method
 
 .method public final clear()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget v0, p0, Llibs/l5;->Z:I
 
     .line 2
     .line 3
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -1266,12 +1266,12 @@
 
     .line 22
     .line 23
-    :cond_16
+    :cond_0
     return-void
 .end method
 
 .method public final contains(Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Llibs/l5;->indexOf(Ljava/lang/Object;)I
@@ -1282,7 +1282,7 @@
     move-result p1
 
     .line 5
-    if-ltz p1, :cond_8
+    if-ltz p1, :cond_0
 
     .line 6
     .line 7
@@ -1292,7 +1292,7 @@
     return p1
 
     .line 9
-    :cond_8
+    :cond_0
     const/4 p1, 0x0
 
     .line 10
@@ -1300,7 +1300,7 @@
 .end method
 
 .method public final containsAll(Ljava/util/Collection;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
@@ -1311,7 +1311,7 @@
     move-result-object p1
 
     .line 5
-    :cond_4
+    :cond_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 6
@@ -1320,7 +1320,7 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     .line 10
     .line 11
@@ -1340,7 +1340,7 @@
     move-result v0
 
     .line 19
-    if-nez v0, :cond_4
+    if-nez v0, :cond_0
 
     .line 20
     .line 21
@@ -1350,7 +1350,7 @@
     return p1
 
     .line 23
-    :cond_16
+    :cond_1
     const/4 p1, 0x1
 
     .line 24
@@ -1358,7 +1358,7 @@
 .end method
 
 .method public final d()I
-    .registers 6
+    .locals 5
 
     .line 1
     iget v0, p0, Llibs/l5;->Z:I
@@ -1368,14 +1368,14 @@
     const/4 v1, -0x1
 
     .line 4
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 5
     .line 6
     return v1
 
     .line 7
-    :cond_6
+    :cond_0
     iget-object v2, p0, Llibs/l5;->X:[I
 
     .line 8
@@ -1391,14 +1391,14 @@
     move-result v2
 
     .line 14
-    if-gez v2, :cond_10
+    if-gez v2, :cond_1
 
     .line 15
     .line 16
-    goto :goto_16
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_1
     iget-object v3, p0, Llibs/l5;->Y:[Ljava/lang/Object;
 
     .line 18
@@ -1407,21 +1407,21 @@
 
     .line 20
     .line 21
-    if-nez v3, :cond_17
+    if-nez v3, :cond_2
 
     .line 22
     .line 23
-    :goto_16
+    :goto_0
     return v2
 
     .line 24
-    :cond_17
+    :cond_2
     add-int/lit8 v3, v2, 0x1
 
     .line 25
     .line 26
-    :goto_19
-    if-ge v3, v0, :cond_2b
+    :goto_1
+    if-ge v3, v0, :cond_4
 
     .line 27
     .line 28
@@ -1433,7 +1433,7 @@
 
     .line 31
     .line 32
-    if-nez v4, :cond_2b
+    if-nez v4, :cond_4
 
     .line 33
     .line 34
@@ -1445,28 +1445,28 @@
 
     .line 37
     .line 38
-    if-nez v4, :cond_28
+    if-nez v4, :cond_3
 
     .line 39
     .line 40
     return v3
 
     .line 41
-    :cond_28
+    :cond_3
     add-int/lit8 v3, v3, 0x1
 
     .line 42
     .line 43
-    goto :goto_19
+    goto :goto_1
 
     .line 44
-    :cond_2b
+    :cond_4
     add-int/lit8 v2, v2, -0x1
 
     .line 45
     .line 46
-    :goto_2d
-    if-ltz v2, :cond_3f
+    :goto_2
+    if-ltz v2, :cond_6
 
     .line 47
     .line 48
@@ -1478,7 +1478,7 @@
 
     .line 51
     .line 52
-    if-nez v0, :cond_3f
+    if-nez v0, :cond_6
 
     .line 53
     .line 54
@@ -1490,22 +1490,22 @@
 
     .line 57
     .line 58
-    if-nez v0, :cond_3c
+    if-nez v0, :cond_5
 
     .line 59
     .line 60
     return v2
 
     .line 61
-    :cond_3c
+    :cond_5
     add-int/lit8 v2, v2, -0x1
 
     .line 62
     .line 63
-    goto :goto_2d
+    goto :goto_2
 
     .line 64
-    :cond_3f
+    :cond_6
     xor-int/lit8 v0, v3, -0x1
 
     .line 65
@@ -1514,7 +1514,7 @@
 .end method
 
 .method public final e(I)V
-    .registers 8
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/l5;->Y:[Ljava/lang/Object;
@@ -1532,7 +1532,7 @@
     const/4 v2, 0x1
 
     .line 8
-    if-gt v1, v2, :cond_d
+    if-gt v1, v2, :cond_0
 
     .line 9
     .line 10
@@ -1544,7 +1544,7 @@
     return-void
 
     .line 14
-    :cond_d
+    :cond_0
     iget-object v3, p0, Llibs/l5;->X:[I
 
     .line 15
@@ -1556,7 +1556,7 @@
 
     .line 18
     .line 19
-    if-le v4, v5, :cond_49
+    if-le v4, v5, :cond_4
 
     .line 20
     .line 21
@@ -1567,11 +1567,11 @@
 
     .line 23
     .line 24
-    if-ge v1, v4, :cond_49
+    if-ge v1, v4, :cond_4
 
     .line 25
     .line 26
-    if-le v1, v5, :cond_1f
+    if-le v1, v5, :cond_1
 
     .line 27
     .line 28
@@ -1583,7 +1583,7 @@
 
     .line 31
     .line 32
-    :cond_1f
+    :cond_1
     invoke-virtual {p0, v5}, Llibs/l5;->a(I)V
 
     .line 33
@@ -1600,7 +1600,7 @@
 
     .line 39
     .line 40
-    if-lez p1, :cond_34
+    if-lez p1, :cond_2
 
     .line 41
     .line 42
@@ -1625,12 +1625,12 @@
     .line 51
     .line 52
     .line 53
-    :cond_34
+    :cond_2
     iget v1, p0, Llibs/l5;->Z:I
 
     .line 54
     .line 55
-    if-ge p1, v1, :cond_48
+    if-ge p1, v1, :cond_3
 
     .line 56
     .line 57
@@ -1666,11 +1666,11 @@
     .line 71
     .line 72
     .line 73
-    :cond_48
+    :cond_3
     return-void
 
     .line 74
-    :cond_49
+    :cond_4
     sub-int/2addr v1, v2
 
     .line 75
@@ -1678,7 +1678,7 @@
 
     .line 76
     .line 77
-    if-ge p1, v1, :cond_5c
+    if-ge p1, v1, :cond_5
 
     .line 78
     .line 79
@@ -1710,7 +1710,7 @@
     .line 91
     .line 92
     .line 93
-    :cond_5c
+    :cond_5
     iget-object p1, p0, Llibs/l5;->Y:[Ljava/lang/Object;
 
     .line 94
@@ -1730,20 +1730,20 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v1, p1, Ljava/util/Set;
 
     .line 6
@@ -1751,7 +1751,7 @@
     const/4 v2, 0x0
 
     .line 8
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_4
 
     .line 9
     .line 10
@@ -1771,24 +1771,24 @@
     move-result v3
 
     .line 18
-    if-eq v1, v3, :cond_14
+    if-eq v1, v3, :cond_1
 
     .line 19
     .line 20
     return v2
 
     .line 21
-    :cond_14
+    :cond_1
     const/4 v1, 0x0
 
     .line 22
-    :goto_15
-    :try_start_15
+    :goto_0
+    :try_start_0
     iget v3, p0, Llibs/l5;->Z:I
 
     .line 23
     .line 24
-    if-ge v1, v3, :cond_27
+    if-ge v1, v3, :cond_3
 
     .line 25
     .line 26
@@ -1806,37 +1806,37 @@
     .line 32
     .line 33
     move-result v3
-    :try_end_21
-    .catch Ljava/lang/NullPointerException; {:try_start_15 .. :try_end_21} :catch_28
-    .catch Ljava/lang/ClassCastException; {:try_start_15 .. :try_end_21} :catch_28
+    :try_end_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 34
-    if-nez v3, :cond_24
+    if-nez v3, :cond_2
 
     .line 35
     .line 36
     return v2
 
     .line 37
-    :cond_24
+    :cond_2
     add-int/lit8 v1, v1, 0x1
 
     .line 38
     .line 39
-    goto :goto_15
+    goto :goto_0
 
     .line 40
-    :cond_27
+    :cond_3
     return v0
 
     .line 41
-    :catch_28
-    :cond_28
+    :catch_0
+    :cond_4
     return v2
 .end method
 
 .method public final hashCode()I
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/l5;->X:[I
@@ -1853,8 +1853,8 @@
     const/4 v3, 0x0
 
     .line 7
-    :goto_6
-    if-ge v2, v1, :cond_e
+    :goto_0
+    if-ge v2, v1, :cond_0
 
     .line 8
     .line 9
@@ -1869,18 +1869,18 @@
 
     .line 13
     .line 14
-    goto :goto_6
+    goto :goto_0
 
     .line 15
-    :cond_e
+    :cond_0
     return v3
 .end method
 
 .method public final indexOf(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
 
     .line 1
-    if-nez p1, :cond_7
+    if-nez p1, :cond_0
 
     .line 2
     .line 3
@@ -1895,7 +1895,7 @@
     return p1
 
     .line 8
-    :cond_7
+    :cond_0
     invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
 
     .line 9
@@ -1916,14 +1916,14 @@
 .end method
 
 .method public final isEmpty()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/l5;->Z:I
 
     .line 2
     .line 3
-    if-gtz v0, :cond_6
+    if-gtz v0, :cond_0
 
     .line 4
     .line 5
@@ -1933,7 +1933,7 @@
     return v0
 
     .line 7
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
     .line 8
@@ -1941,14 +1941,14 @@
 .end method
 
 .method public final iterator()Ljava/util/Iterator;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/l5;->Lambda:Llibs/k5;
 
     .line 2
     .line 3
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -1965,7 +1965,7 @@
 
     .line 11
     .line 12
-    :cond_b
+    :cond_0
     invoke-virtual {v0}, Llibs/qw0;->m()Llibs/bp1;
 
     .line 13
@@ -1986,7 +1986,7 @@
 .end method
 
 .method public final remove(Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Llibs/l5;->indexOf(Ljava/lang/Object;)I
@@ -1997,7 +1997,7 @@
     move-result p1
 
     .line 5
-    if-ltz p1, :cond_b
+    if-ltz p1, :cond_0
 
     .line 6
     .line 7
@@ -2012,7 +2012,7 @@
     return p1
 
     .line 12
-    :cond_b
+    :cond_0
     const/4 p1, 0x0
 
     .line 13
@@ -2020,7 +2020,7 @@
 .end method
 
 .method public final removeAll(Ljava/util/Collection;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
@@ -2034,7 +2034,7 @@
     const/4 v0, 0x0
 
     .line 6
-    :goto_5
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 7
@@ -2043,7 +2043,7 @@
     move-result v1
 
     .line 10
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     .line 11
     .line 12
@@ -2066,15 +2066,15 @@
     or-int/2addr v0, v1
 
     .line 21
-    goto :goto_5
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     return v0
 .end method
 
 .method public final retainAll(Ljava/util/Collection;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     iget v0, p0, Llibs/l5;->Z:I
@@ -2090,8 +2090,8 @@
     const/4 v2, 0x0
 
     .line 6
-    :goto_5
-    if-ltz v0, :cond_18
+    :goto_0
+    if-ltz v0, :cond_1
 
     .line 7
     .line 8
@@ -2111,7 +2111,7 @@
     move-result v3
 
     .line 16
-    if-nez v3, :cond_15
+    if-nez v3, :cond_0
 
     .line 17
     .line 18
@@ -2123,20 +2123,20 @@
     const/4 v2, 0x1
 
     .line 22
-    :cond_15
+    :cond_0
     add-int/lit8 v0, v0, -0x1
 
     .line 23
     .line 24
-    goto :goto_5
+    goto :goto_0
 
     .line 25
-    :cond_18
+    :cond_1
     return v2
 .end method
 
 .method public final size()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/l5;->Z:I
@@ -2147,7 +2147,7 @@
 .end method
 
 .method public final toArray()[Ljava/lang/Object;
-    .registers 5
+    .locals 4
 
     .line 39
     iget v0, p0, Llibs/l5;->Z:I
@@ -2165,7 +2165,7 @@
 .end method
 
 .method public final toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-    .registers 5
+    .locals 3
 
     .line 1
     array-length v0, p1
@@ -2175,7 +2175,7 @@
 
     .line 3
     .line 4
-    if-ge v0, v1, :cond_15
+    if-ge v0, v1, :cond_0
 
     .line 5
     .line 6
@@ -2211,7 +2211,7 @@
 
     .line 21
     .line 22
-    :cond_15
+    :cond_0
     iget-object v0, p0, Llibs/l5;->Y:[Ljava/lang/Object;
 
     .line 23
@@ -2235,7 +2235,7 @@
 
     .line 32
     .line 33
-    if-le v0, v1, :cond_25
+    if-le v0, v1, :cond_1
 
     .line 34
     .line 35
@@ -2246,12 +2246,12 @@
 
     .line 37
     .line 38
-    :cond_25
+    :cond_1
     return-object p1
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Llibs/l5;->isEmpty()Z
@@ -2262,7 +2262,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -2273,7 +2273,7 @@
     return-object v0
 
     .line 10
-    :cond_9
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 11
@@ -2303,16 +2303,16 @@
     const/4 v1, 0x0
 
     .line 25
-    :goto_18
+    :goto_0
     iget v2, p0, Llibs/l5;->Z:I
 
     .line 26
     .line 27
-    if-ge v1, v2, :cond_35
+    if-ge v1, v2, :cond_3
 
     .line 28
     .line 29
-    if-lez v1, :cond_23
+    if-lez v1, :cond_1
 
     .line 30
     .line 31
@@ -2325,7 +2325,7 @@
     .line 34
     .line 35
     .line 36
-    :cond_23
+    :cond_1
     iget-object v2, p0, Llibs/l5;->Y:[Ljava/lang/Object;
 
     .line 37
@@ -2334,7 +2334,7 @@
 
     .line 39
     .line 40
-    if-eq v2, p0, :cond_2d
+    if-eq v2, p0, :cond_2
 
     .line 41
     .line 42
@@ -2343,10 +2343,10 @@
     .line 43
     .line 44
     .line 45
-    goto :goto_32
+    goto :goto_1
 
     .line 46
-    :cond_2d
+    :cond_2
     const-string v2, "(this Set)"
 
     .line 47
@@ -2356,15 +2356,15 @@
     .line 49
     .line 50
     .line 51
-    :goto_32
+    :goto_1
     add-int/lit8 v1, v1, 0x1
 
     .line 52
     .line 53
-    goto :goto_18
+    goto :goto_0
 
     .line 54
-    :cond_35
+    :cond_3
     const/16 v1, 0x7d
 
     .line 55

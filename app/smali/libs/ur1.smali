@@ -22,7 +22,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/app/Activity;Llibs/rp0;Llibs/yr1;Llibs/ek3;ZZ)V
-    .registers 7
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public final c([Ljava/lang/Object;)Z
-    .registers 12
+    .locals 10
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -119,7 +119,7 @@
     const/4 v9, 0x1
 
     .line 29
-    if-nez v0, :cond_22
+    if-nez v0, :cond_0
 
     .line 30
     .line 31
@@ -128,10 +128,10 @@
     .line 32
     .line 33
     .line 34
-    goto :goto_36
+    goto :goto_0
 
     .line 35
-    :cond_22
+    :cond_0
     new-instance v1, Llibs/ir1;
 
     .line 36
@@ -170,6 +170,6 @@
     .line 53
     .line 54
     .line 55
-    :goto_36
+    :goto_0
     return v9
 .end method

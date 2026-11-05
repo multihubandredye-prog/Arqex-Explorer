@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -20,7 +20,7 @@
 .end method
 
 .method public constructor <init>(JJ)V
-    .registers 5
+    .locals 0
 
     .line 16
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
 .end method
 
 .method public constructor <init>(JJJJ)V
-    .registers 9
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -67,7 +67,7 @@
 .end method
 
 .method public static a(Llibs/rw2;)Llibs/dc;
-    .registers 11
+    .locals 10
 
     .line 1
     iget-object v0, p0, Llibs/rw2;->b:Llibs/oj0;

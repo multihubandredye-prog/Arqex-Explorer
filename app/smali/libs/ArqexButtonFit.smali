@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -13,11 +13,11 @@
 .end method
 
 .method public static fit(Landroid/widget/TextView;)V
-    .registers 6
+    .locals 5
 
-    if-eqz p0, :cond_25
+    if-eqz p0, :cond_1
 
-    :try_start_2
+    :try_start_0
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Landroid/widget/TextView;->setSingleLine(Z)V
@@ -32,7 +32,7 @@
 
     const/16 v2, 0x1a
 
-    if-lt v1, v2, :cond_1d
+    if-lt v1, v2, :cond_0
 
     const/16 v0, 0x9
 
@@ -44,23 +44,23 @@
 
     invoke-virtual {p0, v0, v1, v2, v3}, Landroid/widget/TextView;->setAutoSizeTextTypeUniformWithConfiguration(IIII)V
 
-    goto :goto_22
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     const/high16 v0, 0x41300000    # 11.0f
 
     invoke-virtual {p0, v0}, Landroid/widget/TextView;->setTextSize(F)V
-    :try_end_22
-    .catchall {:try_start_2 .. :try_end_22} :catchall_23
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :goto_22
+    :goto_0
     return-void
 
-    :catchall_23
+    :catchall_0
     move-exception v0
 
     return-void
 
-    :cond_25
+    :cond_1
     return-void
 .end method

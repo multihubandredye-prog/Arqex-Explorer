@@ -8,7 +8,7 @@
 
 # direct methods
 .method public synthetic constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,7 +22,7 @@
 
 # virtual methods
 .method public final getInterpolation(F)F
-    .registers 4
+    .locals 2
 
     .line 1
     const/high16 v0, 0x3f800000    # 1.0f

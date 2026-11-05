@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/nio/channels/SelectableChannel;ILjava/lang/Object;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

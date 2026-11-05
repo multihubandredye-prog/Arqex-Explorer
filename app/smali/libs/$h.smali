@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/xc;-><init>()V
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final engineGenerateParameters()Ljava/security/AlgorithmParameters;
-    .registers 7
+    .locals 6
 
     .line 1
     iget v0, p0, Llibs/$h;->c:I
@@ -44,7 +44,7 @@
 
     .line 4
     .line 5
-    if-gt v0, v1, :cond_c
+    if-gt v0, v1, :cond_0
 
     .line 6
     .line 7
@@ -57,10 +57,10 @@
     .line 10
     .line 11
     .line 12
-    goto :goto_16
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     new-instance v0, Llibs/m50;
 
     .line 14
@@ -79,12 +79,12 @@
     .line 21
     .line 22
     .line 23
-    :goto_16
+    :goto_0
     iget-object v2, p0, Llibs/$h;->b:Ljava/security/SecureRandom;
 
     .line 24
     .line 25
-    if-nez v2, :cond_21
+    if-nez v2, :cond_1
 
     .line 26
     .line 27
@@ -101,7 +101,7 @@
 
     .line 33
     .line 34
-    :cond_21
+    :cond_1
     iget v3, p0, Llibs/$h;->c:I
 
     .line 35
@@ -110,7 +110,7 @@
 
     .line 37
     .line 38
-    if-ne v3, v1, :cond_30
+    if-ne v3, v1, :cond_2
 
     .line 39
     .line 40
@@ -128,15 +128,15 @@
     .line 46
     .line 47
     .line 48
-    goto :goto_51
+    goto :goto_1
 
     .line 49
-    :cond_30
+    :cond_2
     const/16 v5, 0x100
 
     .line 50
     .line 51
-    if-le v3, v1, :cond_3d
+    if-le v3, v1, :cond_3
 
     .line 52
     .line 53
@@ -154,15 +154,15 @@
     .line 59
     .line 60
     .line 61
-    goto :goto_51
+    goto :goto_1
 
     .line 62
-    :cond_3d
+    :cond_3
     iput v3, v0, Llibs/m50;->b:I
 
     .line 63
     .line 64
-    if-le v3, v1, :cond_43
+    if-le v3, v1, :cond_4
 
     .line 65
     .line 66
@@ -170,7 +170,7 @@
 
     .line 67
     .line 68
-    :cond_43
+    :cond_4
     iput v4, v0, Llibs/m50;->c:I
 
     .line 69
@@ -201,7 +201,7 @@
 
     .line 81
     .line 82
-    :goto_51
+    :goto_1
     invoke-virtual {v0}, Llibs/m50;->a()Llibs/l50;
 
     .line 83
@@ -210,7 +210,7 @@
     move-result-object v0
 
     .line 86
-    :try_start_55
+    :try_start_0
     const-string v1, "DSA"
 
     .line 87
@@ -257,8 +257,8 @@
     .line 108
     .line 109
     invoke-virtual {v1, v2}, Ljava/security/AlgorithmParameters;->init(Ljava/security/spec/AlgorithmParameterSpec;)V
-    :try_end_6f
-    .catch Ljava/lang/Exception; {:try_start_55 .. :try_end_6f} :catch_70
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 110
     .line 111
@@ -266,7 +266,7 @@
     return-object v1
 
     .line 113
-    :catch_70
+    :catch_0
     move-exception v0
 
     .line 114
@@ -290,14 +290,14 @@
 .end method
 
 .method public final engineInit(ILjava/security/SecureRandom;)V
-    .registers 5
+    .locals 2
 
     .line 1
     const/16 v0, 0x200
 
     .line 2
     .line 3
-    if-lt p1, v0, :cond_29
+    if-lt p1, v0, :cond_4
 
     .line 4
     .line 5
@@ -305,7 +305,7 @@
 
     .line 6
     .line 7
-    if-gt p1, v0, :cond_29
+    if-gt p1, v0, :cond_4
 
     .line 8
     .line 9
@@ -313,7 +313,7 @@
 
     .line 10
     .line 11
-    if-gt p1, v0, :cond_17
+    if-gt p1, v0, :cond_1
 
     .line 12
     .line 13
@@ -321,14 +321,14 @@
 
     .line 14
     .line 15
-    if-nez v1, :cond_11
+    if-nez v1, :cond_0
 
     .line 16
     .line 17
-    goto :goto_17
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     const-string p1, "strength must be a multiple of 64 below 1024 bits."
 
     .line 19
@@ -341,9 +341,9 @@
     return-void
 
     .line 24
-    :cond_17
-    :goto_17
-    if-le p1, v0, :cond_24
+    :cond_1
+    :goto_0
+    if-le p1, v0, :cond_3
 
     .line 25
     .line 26
@@ -351,14 +351,14 @@
 
     .line 27
     .line 28
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_2
 
     .line 29
     .line 30
-    goto :goto_24
+    goto :goto_1
 
     .line 31
-    :cond_1e
+    :cond_2
     const-string p1, "strength must be a multiple of 1024 above 1024 bits."
 
     .line 32
@@ -371,8 +371,8 @@
     return-void
 
     .line 37
-    :cond_24
-    :goto_24
+    :cond_3
+    :goto_1
     iput p1, p0, Llibs/$h;->c:I
 
     .line 38
@@ -384,7 +384,7 @@
     return-void
 
     .line 42
-    :cond_29
+    :cond_4
     const-string p1, "strength must be from 512 - 3072"
 
     .line 43
@@ -398,7 +398,7 @@
 .end method
 
 .method public final engineInit(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    .registers 3
+    .locals 0
 
     .line 48
     new-instance p1, Ljava/security/InvalidAlgorithmParameterException;

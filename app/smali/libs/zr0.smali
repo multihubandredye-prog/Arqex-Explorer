@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/FontViewerActivity;Landroid/content/Context;Ljava/util/ArrayList;)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/zr0;->a:Lcom/mixplorer/activities/FontViewerActivity;
@@ -30,10 +30,10 @@
 
 # virtual methods
 .method public final getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .registers 13
+    .locals 9
 
     .line 1
-    if-nez p2, :cond_2e
+    if-nez p2, :cond_0
 
     .line 2
     .line 3
@@ -121,7 +121,7 @@
 
     .line 46
     .line 47
-    :cond_2e
+    :cond_0
     invoke-virtual {p0, p1}, Landroid/widget/ArrayAdapter;->getItem(I)Ljava/lang/Object;
 
     .line 48
@@ -154,19 +154,19 @@
 
     .line 62
     .line 63
-    if-eqz v1, :cond_41
+    if-eqz v1, :cond_1
 
     .line 64
     .line 65
-    goto :goto_43
+    goto :goto_0
 
     .line 66
-    :cond_41
+    :cond_1
     sget-object v1, Llibs/va3;->e:Landroid/graphics/Typeface;
 
     .line 67
     .line 68
-    :goto_43
+    :goto_0
     invoke-virtual {v0, v1}, Llibs/dt1;->setTypeFace(Landroid/graphics/Typeface;)V
 
     .line 69
@@ -253,7 +253,7 @@
     move-result v8
 
     .line 112
-    if-eqz v8, :cond_73
+    if-eqz v8, :cond_2
 
     .line 113
     .line 114
@@ -261,7 +261,7 @@
 
     .line 115
     .line 116
-    :cond_73
+    :cond_2
     iput-object v0, p3, Llibs/dt1;->Psi:Ljava/lang/String;
 
     .line 117
@@ -282,14 +282,14 @@
 
     .line 125
     .line 126
-    if-eqz v0, :cond_80
+    if-eqz v0, :cond_3
 
     .line 127
     .line 128
     move-object v2, v1
 
     .line 129
-    :cond_80
+    :cond_3
     iput-object v2, p3, Llibs/dt1;->Sigma:Ljava/lang/String;
 
     .line 130
@@ -302,14 +302,14 @@
     move-result v0
 
     .line 135
-    if-eqz v0, :cond_89
+    if-eqz v0, :cond_4
 
     .line 136
     .line 137
     move-object v3, v1
 
     .line 138
-    :cond_89
+    :cond_4
     iput-object v3, p3, Llibs/dt1;->Tau:Ljava/lang/String;
 
     .line 139
@@ -334,7 +334,7 @@
     move-result v0
 
     .line 150
-    if-nez v0, :cond_99
+    if-nez v0, :cond_5
 
     .line 151
     .line 152
@@ -342,7 +342,7 @@
 
     .line 153
     .line 154
-    :cond_99
+    :cond_5
     iget-object p1, p3, Llibs/dt1;->Xi:Landroid/text/TextPaint;
 
     .line 155
@@ -377,7 +377,7 @@
     const/4 v2, 0x0
 
     .line 170
-    if-eqz v1, :cond_c0
+    if-eqz v1, :cond_6
 
     .line 171
     .line 172
@@ -424,7 +424,7 @@
 
     .line 192
     .line 193
-    :cond_c0
+    :cond_6
     iget p1, p3, Llibs/dt1;->Lambda:I
 
     .line 194
@@ -455,7 +455,7 @@
 
     .line 206
     .line 207
-    if-eqz v0, :cond_d4
+    if-eqz v0, :cond_7
 
     .line 208
     .line 209
@@ -467,7 +467,7 @@
     move-result v2
 
     .line 213
-    :cond_d4
+    :cond_7
     add-int/2addr p1, v2
 
     .line 214
@@ -475,7 +475,7 @@
 
     .line 215
     .line 216
-    if-eq v0, p1, :cond_e2
+    if-eq v0, p1, :cond_8
 
     .line 217
     .line 218
@@ -496,6 +496,6 @@
     .line 225
     .line 226
     .line 227
-    :cond_e2
+    :cond_8
     return-object p2
 .end method

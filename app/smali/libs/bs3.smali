@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/security/cert/X509Certificate;[B)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/security/cert/X509Certificate;-><init>()V
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public final checkValidity()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bs3;->X:Ljava/security/cert/X509Certificate;
@@ -61,7 +61,7 @@
 .end method
 
 .method public final checkValidity(Ljava/util/Date;)V
-    .registers 3
+    .locals 1
 
     .line 7
     iget-object v0, p0, Llibs/bs3;->X:Ljava/security/cert/X509Certificate;
@@ -72,7 +72,7 @@
 .end method
 
 .method public final getBasicConstraints()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bs3;->X:Ljava/security/cert/X509Certificate;
@@ -91,7 +91,7 @@
 .end method
 
 .method public final getCriticalExtensionOIDs()Ljava/util/Set;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bs3;->X:Ljava/security/cert/X509Certificate;
@@ -110,14 +110,14 @@
 .end method
 
 .method public final getEncoded()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bs3;->Y:[B
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -136,7 +136,7 @@
     return-object v0
 
     .line 12
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
     .line 13
@@ -144,7 +144,7 @@
 .end method
 
 .method public final getExtendedKeyUsage()Ljava/util/List;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bs3;->X:Ljava/security/cert/X509Certificate;
@@ -163,7 +163,7 @@
 .end method
 
 .method public final getExtensionValue(Ljava/lang/String;)[B
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bs3;->X:Ljava/security/cert/X509Certificate;
@@ -182,7 +182,7 @@
 .end method
 
 .method public final getIssuerAlternativeNames()Ljava/util/Collection;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bs3;->X:Ljava/security/cert/X509Certificate;
@@ -201,7 +201,7 @@
 .end method
 
 .method public final getIssuerDN()Ljava/security/Principal;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bs3;->X:Ljava/security/cert/X509Certificate;
@@ -220,7 +220,7 @@
 .end method
 
 .method public final getIssuerUniqueID()[Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bs3;->X:Ljava/security/cert/X509Certificate;
@@ -239,7 +239,7 @@
 .end method
 
 .method public final getIssuerX500Principal()Ljavax/security/auth/x500/X500Principal;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bs3;->X:Ljava/security/cert/X509Certificate;
@@ -258,7 +258,7 @@
 .end method
 
 .method public final getKeyUsage()[Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bs3;->X:Ljava/security/cert/X509Certificate;
@@ -277,7 +277,7 @@
 .end method
 
 .method public final getNonCriticalExtensionOIDs()Ljava/util/Set;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bs3;->X:Ljava/security/cert/X509Certificate;
@@ -296,7 +296,7 @@
 .end method
 
 .method public final getNotAfter()Ljava/util/Date;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bs3;->X:Ljava/security/cert/X509Certificate;
@@ -315,7 +315,7 @@
 .end method
 
 .method public final getNotBefore()Ljava/util/Date;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bs3;->X:Ljava/security/cert/X509Certificate;
@@ -334,7 +334,7 @@
 .end method
 
 .method public final getPublicKey()Ljava/security/PublicKey;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bs3;->X:Ljava/security/cert/X509Certificate;
@@ -353,7 +353,7 @@
 .end method
 
 .method public final getSerialNumber()Ljava/math/BigInteger;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bs3;->X:Ljava/security/cert/X509Certificate;
@@ -372,7 +372,7 @@
 .end method
 
 .method public final getSigAlgName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bs3;->X:Ljava/security/cert/X509Certificate;
@@ -391,7 +391,7 @@
 .end method
 
 .method public final getSigAlgOID()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bs3;->X:Ljava/security/cert/X509Certificate;
@@ -410,7 +410,7 @@
 .end method
 
 .method public final getSigAlgParams()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bs3;->X:Ljava/security/cert/X509Certificate;
@@ -429,7 +429,7 @@
 .end method
 
 .method public final getSignature()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bs3;->X:Ljava/security/cert/X509Certificate;
@@ -448,7 +448,7 @@
 .end method
 
 .method public final getSubjectAlternativeNames()Ljava/util/Collection;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bs3;->X:Ljava/security/cert/X509Certificate;
@@ -467,7 +467,7 @@
 .end method
 
 .method public final getSubjectDN()Ljava/security/Principal;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bs3;->X:Ljava/security/cert/X509Certificate;
@@ -486,7 +486,7 @@
 .end method
 
 .method public final getSubjectUniqueID()[Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bs3;->X:Ljava/security/cert/X509Certificate;
@@ -505,7 +505,7 @@
 .end method
 
 .method public final getSubjectX500Principal()Ljavax/security/auth/x500/X500Principal;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bs3;->X:Ljava/security/cert/X509Certificate;
@@ -524,7 +524,7 @@
 .end method
 
 .method public final getTBSCertificate()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bs3;->X:Ljava/security/cert/X509Certificate;
@@ -543,7 +543,7 @@
 .end method
 
 .method public final getVersion()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bs3;->X:Ljava/security/cert/X509Certificate;
@@ -562,7 +562,7 @@
 .end method
 
 .method public final hasUnsupportedCriticalExtension()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bs3;->X:Ljava/security/cert/X509Certificate;
@@ -581,7 +581,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bs3;->X:Ljava/security/cert/X509Certificate;
@@ -600,7 +600,7 @@
 .end method
 
 .method public final verify(Ljava/security/PublicKey;)V
-    .registers 3
+    .locals 1
 
     .line 39
     iget-object v0, p0, Llibs/bs3;->X:Ljava/security/cert/X509Certificate;
@@ -611,7 +611,7 @@
 .end method
 
 .method public final verify(Ljava/security/PublicKey;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 38
     iget-object v0, p0, Llibs/bs3;->X:Ljava/security/cert/X509Certificate;
@@ -622,7 +622,7 @@
 .end method
 
 .method public final verify(Ljava/security/PublicKey;Ljava/security/Provider;)V
-    .registers 5
+    .locals 2
 
     .line 1
     :try_start_0
@@ -639,8 +639,8 @@
 
     .line 7
     invoke-virtual {v0, p1, v1}, Ljava/security/cert/Certificate;->verify(Ljava/security/PublicKey;Ljava/lang/String;)V
-    :try_end_9
-    .catchall {:try_start_0 .. :try_end_9} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 8
     .line 9
@@ -648,7 +648,7 @@
     return-void
 
     .line 11
-    :catchall_a
+    :catchall_0
     new-instance p1, Ljava/security/NoSuchAlgorithmException;
 
     .line 12

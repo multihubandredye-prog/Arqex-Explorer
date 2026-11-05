@@ -13,7 +13,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/PreferenceActivity;Ljava/util/ArrayList;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/bf2;->c:B
@@ -37,13 +37,13 @@
 .end method
 
 .method private final declared-synchronized Link(Landroid/view/View;I)V
-    .registers 7
+    .locals 4
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object p1, p0, Llibs/bf2;->d:Ljava/util/ArrayList;
 
     .line 3
@@ -100,8 +100,8 @@
     .line 28
     .line 29
     aput-object v2, v3, p2
-    :try_end_1e
-    .catchall {:try_start_1 .. :try_end_1e} :catchall_25
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 30
     .line 31
@@ -109,31 +109,31 @@
 
     .line 32
     .line 33
-    if-nez v0, :cond_27
+    if-nez v0, :cond_0
 
     .line 34
     .line 35
-    :try_start_22
+    :try_start_1
     iget-object p2, p2, Lcom/mixplorer/activities/PreferenceActivity;->Romeo:Landroid/graphics/drawable/Drawable;
 
     .line 36
     .line 37
-    goto :goto_29
+    goto :goto_0
 
     .line 38
-    :catchall_25
+    :catchall_0
     move-exception p1
 
     .line 39
-    goto :goto_33
+    goto :goto_1
 
     .line 40
-    :cond_27
+    :cond_0
     iget-object p2, p2, Lcom/mixplorer/activities/PreferenceActivity;->Sierra:Landroid/graphics/drawable/Drawable;
 
     .line 41
     .line 42
-    :goto_29
+    :goto_0
     iput-object p2, p1, Llibs/r90;->Lambda:Landroid/graphics/drawable/Drawable;
 
     .line 43
@@ -144,8 +144,8 @@
     .line 46
     .line 47
     invoke-static {v1}, Llibs/tr3;->c(Z)V
-    :try_end_31
-    .catchall {:try_start_22 .. :try_end_31} :catchall_25
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 48
     .line 49
@@ -156,24 +156,24 @@
     return-void
 
     .line 52
-    :goto_33
-    :try_start_33
+    :goto_1
+    :try_start_2
     monitor-exit p0
-    :try_end_34
-    .catchall {:try_start_33 .. :try_end_34} :catchall_25
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 53
     throw p1
 .end method
 
 .method private final declared-synchronized Node(Landroid/view/View;I)V
-    .registers 7
+    .locals 4
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object p1, p0, Llibs/bf2;->d:Ljava/util/ArrayList;
 
     .line 3
@@ -202,12 +202,12 @@
 
     .line 15
     check-cast p2, Ljava/lang/Class;
-    :try_end_10
-    .catchall {:try_start_1 .. :try_end_10} :catchall_39
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 16
     .line 17
-    if-nez p2, :cond_14
+    if-nez p2, :cond_0
 
     .line 18
     .line 19
@@ -217,19 +217,19 @@
     return-void
 
     .line 21
-    :cond_14
-    :try_start_14
+    :cond_0
+    :try_start_1
     invoke-static {p2}, Llibs/u92;->Bundle(Ljava/lang/Class;)Z
 
     .line 22
     .line 23
     .line 24
     move-result v0
-    :try_end_18
-    .catchall {:try_start_14 .. :try_end_18} :catchall_39
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 25
-    :try_start_18
+    :try_start_2
     sget-object v1, Llibs/zt0;->g:Landroid/content/Context;
 
     .line 26
@@ -258,69 +258,69 @@
     const/4 v3, 0x1
 
     .line 39
-    if-nez v0, :cond_2a
+    if-nez v0, :cond_1
 
     .line 40
     .line 41
     const/4 v0, 0x1
 
     .line 42
-    goto :goto_2b
+    goto :goto_0
 
     .line 43
-    :cond_2a
+    :cond_1
     const/4 v0, 0x2
 
     .line 44
-    :goto_2b
+    :goto_0
     invoke-virtual {v1, v2, v0, v3}, Landroid/content/pm/PackageManager;->setComponentEnabledSetting(Landroid/content/ComponentName;II)V
-    :try_end_2e
-    .catchall {:try_start_18 .. :try_end_2e} :catchall_2e
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 45
     .line 46
     .line 47
-    :catchall_2e
-    :try_start_2e
+    :catchall_0
+    :try_start_3
     invoke-static {p2}, Llibs/u92;->Bundle(Ljava/lang/Class;)Z
 
     .line 48
     .line 49
     .line 50
     move-result v0
-    :try_end_32
-    .catchall {:try_start_2e .. :try_end_32} :catchall_39
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 51
     iget-object v1, p0, Llibs/bf2;->e:Lcom/mixplorer/activities/PreferenceActivity;
 
     .line 52
     .line 53
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_2
 
     .line 54
     .line 55
-    :try_start_36
+    :try_start_4
     iget-object v1, v1, Lcom/mixplorer/activities/PreferenceActivity;->Romeo:Landroid/graphics/drawable/Drawable;
 
     .line 56
     .line 57
-    goto :goto_3d
+    goto :goto_1
 
     .line 58
-    :catchall_39
+    :catchall_1
     move-exception p1
 
     .line 59
-    goto :goto_6c
+    goto :goto_2
 
     .line 60
-    :cond_3b
+    :cond_2
     iget-object v1, v1, Lcom/mixplorer/activities/PreferenceActivity;->Sierra:Landroid/graphics/drawable/Drawable;
 
     .line 61
     .line 62
-    :goto_3d
+    :goto_1
     iput-object v1, p1, Llibs/r90;->Omicron:Landroid/graphics/drawable/Drawable;
 
     .line 63
@@ -352,7 +352,7 @@
     move-result p1
 
     .line 79
-    if-eqz p1, :cond_5f
+    if-eqz p1, :cond_3
 
     .line 80
     .line 81
@@ -376,7 +376,7 @@
     move-result p1
 
     .line 91
-    if-eqz p1, :cond_5f
+    if-eqz p1, :cond_3
 
     .line 92
     .line 93
@@ -385,7 +385,7 @@
     .line 94
     .line 95
     .line 96
-    :cond_5f
+    :cond_3
     iget-object p1, p0, Llibs/bf2;->e:Lcom/mixplorer/activities/PreferenceActivity;
 
     .line 97
@@ -403,8 +403,8 @@
     .line 103
     .line 104
     invoke-virtual {p1, p2}, Landroid/app/Activity;->setResult(I)V
-    :try_end_6a
-    .catchall {:try_start_36 .. :try_end_6a} :catchall_39
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 105
     .line 106
@@ -415,24 +415,24 @@
     return-void
 
     .line 109
-    :goto_6c
-    :try_start_6c
+    :goto_2
+    :try_start_5
     monitor-exit p0
-    :try_end_6d
-    .catchall {:try_start_6c .. :try_end_6d} :catchall_39
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
     .line 110
     throw p1
 .end method
 
 .method private final declared-synchronized State(Landroid/view/View;I)V
-    .registers 5
+    .locals 2
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object p1, p0, Llibs/bf2;->d:Ljava/util/ArrayList;
 
     .line 3
@@ -456,21 +456,21 @@
     const/4 p2, 0x1
 
     .line 13
-    if-eq p1, p2, :cond_4e
+    if-eq p1, p2, :cond_5
 
     .line 14
     .line 15
     const/4 v0, 0x2
 
     .line 16
-    if-eq p1, v0, :cond_46
+    if-eq p1, v0, :cond_4
 
     .line 17
     .line 18
     const/4 v0, 0x3
 
     .line 19
-    if-eq p1, v0, :cond_34
+    if-eq p1, v0, :cond_3
 
     .line 20
     .line 21
@@ -480,37 +480,37 @@
     const/4 v1, 0x0
 
     .line 23
-    if-eq p1, v0, :cond_22
+    if-eq p1, v0, :cond_1
 
     .line 24
     .line 25
     const/4 v0, 0x5
 
     .line 26
-    if-eq p1, v0, :cond_1c
+    if-eq p1, v0, :cond_0
 
     .line 27
     .line 28
-    goto :goto_55
+    goto :goto_0
 
     .line 29
-    :cond_1c
+    :cond_0
     invoke-static {p2, v1}, Lcom/mixplorer/activities/PreferenceActivity;->Bot(ZZ)V
 
     .line 30
     .line 31
     .line 32
-    goto :goto_55
+    goto :goto_0
 
     .line 33
-    :catchall_20
+    :catchall_0
     move-exception p1
 
     .line 34
-    goto :goto_57
+    goto :goto_1
 
     .line 35
-    :cond_22
+    :cond_1
     invoke-static {}, Llibs/_g;->c()Z
 
     .line 36
@@ -519,7 +519,7 @@
     move-result p1
 
     .line 39
-    if-eqz p1, :cond_30
+    if-eqz p1, :cond_2
 
     .line 40
     .line 41
@@ -536,19 +536,19 @@
     .line 46
     .line 47
     .line 48
-    goto :goto_55
+    goto :goto_0
 
     .line 49
-    :cond_30
+    :cond_2
     invoke-static {v1, p2}, Lcom/mixplorer/activities/PreferenceActivity;->Bot(ZZ)V
 
     .line 50
     .line 51
     .line 52
-    goto :goto_55
+    goto :goto_0
 
     .line 53
-    :cond_34
+    :cond_3
     sget-boolean p1, Lcom/mixplorer/activities/PreferenceActivity;->O:Z
 
     .line 54
@@ -580,10 +580,10 @@
     .line 68
     .line 69
     .line 70
-    goto :goto_55
+    goto :goto_0
 
     .line 71
-    :cond_46
+    :cond_4
     iget-object p1, p0, Llibs/bf2;->e:Lcom/mixplorer/activities/PreferenceActivity;
 
     .line 72
@@ -597,10 +597,10 @@
     .line 76
     .line 77
     .line 78
-    goto :goto_55
+    goto :goto_0
 
     .line 79
-    :cond_4e
+    :cond_5
     iget-object p1, p0, Llibs/bf2;->e:Lcom/mixplorer/activities/PreferenceActivity;
 
     .line 80
@@ -610,37 +610,37 @@
     .line 82
     .line 83
     invoke-static {p1, p2}, Lcom/mixplorer/activities/PreferenceActivity;->Main(Landroid/app/Activity;Ljava/lang/String;)Z
-    :try_end_55
-    .catchall {:try_start_1 .. :try_end_55} :catchall_20
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 84
     .line 85
     .line 86
-    :goto_55
+    :goto_0
     monitor-exit p0
 
     .line 87
     return-void
 
     .line 88
-    :goto_57
-    :try_start_57
+    :goto_1
+    :try_start_1
     monitor-exit p0
-    :try_end_58
-    .catchall {:try_start_57 .. :try_end_58} :catchall_20
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 89
     throw p1
 .end method
 
 .method private final declared-synchronized Task(Landroid/view/View;I)V
-    .registers 6
+    .locals 3
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object p1, p0, Llibs/bf2;->d:Ljava/util/ArrayList;
 
     .line 3
@@ -697,8 +697,8 @@
     .line 28
     .line 29
     aput-object v1, v2, p2
-    :try_end_1e
-    .catchall {:try_start_1 .. :try_end_1e} :catchall_25
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 30
     .line 31
@@ -706,31 +706,31 @@
 
     .line 32
     .line 33
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_0
 
     .line 34
     .line 35
-    :try_start_22
+    :try_start_1
     iget-object p2, p2, Lcom/mixplorer/activities/PreferenceActivity;->Romeo:Landroid/graphics/drawable/Drawable;
 
     .line 36
     .line 37
-    goto :goto_29
+    goto :goto_0
 
     .line 38
-    :catchall_25
+    :catchall_0
     move-exception p1
 
     .line 39
-    goto :goto_33
+    goto :goto_1
 
     .line 40
-    :cond_27
+    :cond_0
     iget-object p2, p2, Lcom/mixplorer/activities/PreferenceActivity;->Sierra:Landroid/graphics/drawable/Drawable;
 
     .line 41
     .line 42
-    :goto_29
+    :goto_0
     iput-object p2, p1, Llibs/r90;->Omicron:Landroid/graphics/drawable/Drawable;
 
     .line 43
@@ -741,8 +741,8 @@
     .line 46
     .line 47
     invoke-static {v0}, Llibs/tr3;->c(Z)V
-    :try_end_31
-    .catchall {:try_start_22 .. :try_end_31} :catchall_25
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 48
     .line 49
@@ -753,11 +753,11 @@
     return-void
 
     .line 52
-    :goto_33
-    :try_start_33
+    :goto_1
+    :try_start_2
     monitor-exit p0
-    :try_end_34
-    .catchall {:try_start_33 .. :try_end_34} :catchall_25
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 53
     throw p1
@@ -766,14 +766,14 @@
 
 # virtual methods
 .method public final declared-synchronized z(Landroid/view/View;I)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/bf2;->c:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_16
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -786,7 +786,7 @@
     return-void
 
     .line 10
-    :pswitch_9
+    :pswitch_0
     invoke-direct {p0, p1, p2}, Llibs/bf2;->State(Landroid/view/View;I)V
 
     .line 11
@@ -795,7 +795,7 @@
     return-void
 
     .line 14
-    :pswitch_d
+    :pswitch_1
     invoke-direct {p0, p1, p2}, Llibs/bf2;->Node(Landroid/view/View;I)V
 
     .line 15
@@ -804,7 +804,7 @@
     return-void
 
     .line 18
-    :pswitch_11
+    :pswitch_2
     invoke-direct {p0, p1, p2}, Llibs/bf2;->Link(Landroid/view/View;I)V
 
     .line 19
@@ -816,10 +816,10 @@
     nop
 
     .line 23
-    :pswitch_data_16
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_11
-        :pswitch_d
-        :pswitch_9
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

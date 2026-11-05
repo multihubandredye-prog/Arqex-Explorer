@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/la0;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/pe;-><init>()V
@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public final e(I)Llibs/hh1;
-    .registers 5
+    .locals 3
 
     .line 1
     div-int/lit8 p1, p1, 0x8
@@ -93,7 +93,7 @@
 .end method
 
 .method public final f(I)Llibs/hh1;
-    .registers 5
+    .locals 3
 
     .line 1
     div-int/lit8 p1, p1, 0x8
@@ -127,7 +127,7 @@
 .end method
 
 .method public final g(II)Llibs/ta2;
-    .registers 8
+    .locals 5
 
     .line 1
     div-int/lit8 p1, p1, 0x8
@@ -185,7 +185,7 @@
 .end method
 
 .method public final j(II)[B
-    .registers 21
+    .locals 18
 
     .line 1
     move-object/from16 v0, p0
@@ -214,8 +214,8 @@
     const/4 v6, 0x0
 
     .line 13
-    :goto_c
-    if-eq v6, v2, :cond_16
+    :goto_0
+    if-eq v6, v2, :cond_0
 
     .line 14
     .line 15
@@ -234,10 +234,10 @@
 
     .line 21
     .line 22
-    goto :goto_c
+    goto :goto_0
 
     .line 23
-    :cond_16
+    :cond_0
     iget-object v6, v0, Llibs/pe;->c:Ljava/io/Serializable;
 
     .line 24
@@ -249,14 +249,14 @@
     const/4 v7, 0x1
 
     .line 28
-    if-eqz v6, :cond_39
+    if-eqz v6, :cond_1
 
     .line 29
     .line 30
     array-length v8, v6
 
     .line 31
-    if-eqz v8, :cond_39
+    if-eqz v8, :cond_1
 
     .line 32
     .line 33
@@ -283,8 +283,8 @@
     const/4 v9, 0x0
 
     .line 42
-    :goto_29
-    if-eq v9, v6, :cond_3b
+    :goto_1
+    if-eq v9, v6, :cond_2
 
     .line 43
     .line 44
@@ -315,15 +315,15 @@
 
     .line 56
     .line 57
-    goto :goto_29
+    goto :goto_1
 
     .line 58
-    :cond_39
+    :cond_1
     new-array v8, v5, [B
 
     .line 59
     .line 60
-    :cond_3b
+    :cond_2
     iget-object v6, v0, Llibs/pe;->b:Ljava/lang/Object;
 
     .line 61
@@ -332,14 +332,14 @@
 
     .line 63
     .line 64
-    if-eqz v6, :cond_5d
+    if-eqz v6, :cond_3
 
     .line 65
     .line 66
     array-length v9, v6
 
     .line 67
-    if-eqz v9, :cond_5d
+    if-eqz v9, :cond_3
 
     .line 68
     .line 69
@@ -366,8 +366,8 @@
     const/4 v10, 0x0
 
     .line 78
-    :goto_4d
-    if-eq v10, v6, :cond_5f
+    :goto_2
+    if-eq v10, v6, :cond_4
 
     .line 79
     .line 80
@@ -398,15 +398,15 @@
 
     .line 92
     .line 93
-    goto :goto_4d
+    goto :goto_2
 
     .line 94
-    :cond_5d
+    :cond_3
     new-array v9, v5, [B
 
     .line 95
     .line 96
-    :cond_5f
+    :cond_4
     array-length v6, v8
 
     .line 97
@@ -464,8 +464,8 @@
     const/4 v13, 0x1
 
     .line 121
-    :goto_78
-    if-gt v13, v11, :cond_fe
+    :goto_3
+    if-gt v13, v11, :cond_a
 
     .line 122
     .line 123
@@ -495,12 +495,12 @@
     const/4 v15, 0x1
 
     .line 137
-    :goto_88
+    :goto_4
     iget v7, v0, Llibs/pe;->a:I
 
     .line 138
     .line 139
-    if-ge v15, v7, :cond_95
+    if-ge v15, v7, :cond_5
 
     .line 140
     .line 141
@@ -518,15 +518,15 @@
 
     .line 148
     .line 149
-    goto :goto_88
+    goto :goto_4
 
     .line 150
-    :cond_95
+    :cond_5
     const/4 v7, 0x0
 
     .line 151
-    :goto_96
-    if-eq v7, v2, :cond_a1
+    :goto_5
+    if-eq v7, v2, :cond_6
 
     .line 152
     .line 153
@@ -546,19 +546,19 @@
 
     .line 160
     .line 161
-    goto :goto_96
+    goto :goto_5
 
     .line 162
-    :cond_a1
+    :cond_6
     const/4 v7, 0x0
 
     .line 163
-    :goto_a2
+    :goto_6
     div-int v14, v6, v2
 
     .line 164
     .line 165
-    if-eq v7, v14, :cond_e1
+    if-eq v7, v14, :cond_8
 
     .line 166
     .line 167
@@ -616,8 +616,8 @@
 
     .line 192
     .line 193
-    :goto_c0
-    if-ltz v15, :cond_db
+    :goto_7
+    if-ltz v15, :cond_7
 
     .line 194
     .line 195
@@ -671,10 +671,10 @@
 
     .line 218
     .line 219
-    goto :goto_c0
+    goto :goto_7
 
     .line 220
-    :cond_db
+    :cond_7
     add-int/lit8 v7, v7, 0x1
 
     .line 221
@@ -686,11 +686,11 @@
     const/4 v5, 0x0
 
     .line 225
-    goto :goto_a2
+    goto :goto_6
 
     .line 226
-    :cond_e1
-    if-ne v13, v11, :cond_ee
+    :cond_8
+    if-ne v13, v11, :cond_9
 
     .line 227
     .line 228
@@ -714,10 +714,10 @@
     .line 236
     .line 237
     .line 238
-    goto :goto_f6
+    goto :goto_8
 
     .line 239
-    :cond_ee
+    :cond_9
     const/4 v7, 0x0
 
     .line 240
@@ -734,7 +734,7 @@
     .line 245
     .line 246
     .line 247
-    :goto_f6
+    :goto_8
     add-int/lit8 v13, v13, 0x1
 
     .line 248
@@ -749,10 +749,10 @@
     const/4 v7, 0x1
 
     .line 253
-    goto/16 :goto_78
+    goto/16 :goto_3
 
     .line 254
     .line 255
-    :cond_fe
+    :cond_a
     return-object v4
 .end method

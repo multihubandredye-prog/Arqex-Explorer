@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/dm0;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-interface {p1}, Llibs/la0;->b()Ljava/lang/String;
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public final engineDigest()[B
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/ma;->X:Llibs/dm0;
@@ -70,7 +70,7 @@
 .end method
 
 .method public final engineReset()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ma;->X:Llibs/dm0;
@@ -86,7 +86,7 @@
 .end method
 
 .method public final engineUpdate(B)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ma;->X:Llibs/dm0;
@@ -102,7 +102,7 @@
 .end method
 
 .method public final engineUpdate([BII)V
-    .registers 5
+    .locals 1
 
     .line 7
     iget-object v0, p0, Llibs/ma;->X:Llibs/dm0;

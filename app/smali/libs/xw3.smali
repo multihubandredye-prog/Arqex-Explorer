@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 16
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -26,7 +26,7 @@
 .end method
 
 .method public constructor <init>(Llibs/App;)V
-    .registers 2
+    .locals 0
 
     .line 14
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -38,7 +38,7 @@
 .end method
 
 .method public constructor <init>(Llibs/Theme;)V
-    .registers 2
+    .locals 0
 
     .line 18
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -50,7 +50,7 @@
 .end method
 
 .method public constructor <init>(Llibs/zw3;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -81,10 +81,10 @@
 .end method
 
 .method public static g(Ljava/lang/Object;)Llibs/xw3;
-    .registers 4
+    .locals 3
 
     .line 1
-    if-eqz p0, :cond_3a
+    if-eqz p0, :cond_3
 
     .line 2
     .line 3
@@ -92,19 +92,19 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
-    goto :goto_3a
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     instance-of v0, p0, Llibs/Theme;
 
     .line 9
     .line 10
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_1
 
     .line 11
     .line 12
@@ -124,7 +124,7 @@
     return-object v0
 
     .line 20
-    :cond_13
+    :cond_1
     instance-of v0, p0, [B
 
     .line 21
@@ -132,11 +132,11 @@
     const/4 v1, 0x0
 
     .line 23
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_2
 
     .line 24
     .line 25
-    :try_start_18
+    :try_start_0
     new-instance v0, Llibs/xw3;
 
     .line 26
@@ -154,8 +154,8 @@
 
     .line 33
     invoke-direct {v0, p0}, Llibs/xw3;-><init>(Llibs/Theme;)V
-    :try_end_23
-    .catch Ljava/io/IOException; {:try_start_18 .. :try_end_23} :catch_24
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 34
     .line 35
@@ -163,7 +163,7 @@
     return-object v0
 
     .line 37
-    :catch_24
+    :catch_0
     move-exception p0
 
     .line 38
@@ -196,7 +196,7 @@
     return-object v1
 
     .line 53
-    :cond_34
+    :cond_2
     const-string p0, "unknown object in getInstance()"
 
     .line 54
@@ -209,8 +209,8 @@
     return-object v1
 
     .line 59
-    :cond_3a
-    :goto_3a
+    :cond_3
+    :goto_0
     check-cast p0, Llibs/xw3;
 
     .line 60
@@ -221,7 +221,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/xw3;->X:Llibs/Theme;

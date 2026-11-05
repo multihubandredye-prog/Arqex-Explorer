@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const-string v0, "video/xspf+xml"
@@ -42,7 +42,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/mg3;-><init>()V
@@ -56,7 +56,7 @@
 
 # virtual methods
 .method public final Get(Ljava/io/InputStream;Llibs/kn;Ljava/nio/charset/Charset;)V
-    .registers 14
+    .locals 10
 
     .line 1
     :try_start_0
@@ -103,7 +103,7 @@
     move-object v2, v1
 
     .line 22
-    :cond_15
+    :cond_0
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     .line 23
@@ -126,8 +126,8 @@
     .line 32
     .line 33
     move-result-object v5
-    :try_end_21
-    .catchall {:try_start_0 .. :try_end_21} :catchall_3d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 34
     const/4 v6, 0x2
@@ -144,11 +144,11 @@
 
     .line 39
     .line 40
-    if-ne v4, v6, :cond_8e
+    if-ne v4, v6, :cond_6
 
     .line 41
     .line 42
-    :try_start_29
+    :try_start_1
     invoke-virtual {v9, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     .line 43
@@ -157,14 +157,14 @@
     move-result v4
 
     .line 46
-    if-eqz v4, :cond_30
+    if-eqz v4, :cond_1
 
     .line 47
     .line 48
-    goto :goto_40
+    goto :goto_0
 
     .line 49
-    :cond_30
+    :cond_1
     invoke-virtual {v8, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     .line 50
@@ -173,7 +173,7 @@
     move-result v4
 
     .line 53
-    if-eqz v4, :cond_40
+    if-eqz v4, :cond_2
 
     .line 54
     .line 55
@@ -186,29 +186,29 @@
     .line 58
     .line 59
     .line 60
-    goto/16 :goto_b2
+    goto/16 :goto_2
 
     .line 61
     .line 62
-    :catchall_3d
+    :catchall_0
     move-exception p1
 
     .line 63
-    goto/16 :goto_bb
+    goto/16 :goto_4
 
     .line 64
     .line 65
-    :cond_40
-    :goto_40
-    if-nez v2, :cond_44
+    :cond_2
+    :goto_0
+    if-nez v2, :cond_3
 
     .line 66
     .line 67
-    goto/16 :goto_b2
+    goto/16 :goto_2
 
     .line 68
     .line 69
-    :cond_44
+    :cond_3
     const-string v4, "LOCATION"
 
     .line 70
@@ -219,19 +219,19 @@
     .line 73
     .line 74
     move-result v4
-    :try_end_4a
-    .catchall {:try_start_29 .. :try_end_4a} :catchall_3d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 75
     const-string v6, ""
 
     .line 76
     .line 77
-    if-eqz v4, :cond_6b
+    if-eqz v4, :cond_5
 
     .line 78
     .line 79
-    :try_start_4e
+    :try_start_2
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->nextText()Ljava/lang/String;
 
     .line 80
@@ -240,18 +240,18 @@
     move-result-object v4
 
     .line 83
-    if-nez v4, :cond_56
+    if-nez v4, :cond_4
 
     .line 84
     .line 85
-    :goto_54
+    :goto_1
     move-object v2, v1
 
     .line 86
-    goto :goto_b2
+    goto :goto_2
 
     .line 87
-    :cond_56
+    :cond_4
     const-string v5, "uri"
 
     .line 88
@@ -288,10 +288,10 @@
     .line 105
     .line 106
     .line 107
-    goto :goto_b2
+    goto :goto_2
 
     .line 108
-    :cond_6b
+    :cond_5
     const-string v4, "TITLE"
 
     .line 109
@@ -304,7 +304,7 @@
     move-result v4
 
     .line 114
-    if-eqz v4, :cond_b2
+    if-eqz v4, :cond_8
 
     .line 115
     .line 116
@@ -316,7 +316,7 @@
     move-result-object v4
 
     .line 120
-    if-eqz v4, :cond_b2
+    if-eqz v4, :cond_8
 
     .line 121
     .line 122
@@ -356,14 +356,14 @@
     .line 140
     .line 141
     .line 142
-    goto :goto_b2
+    goto :goto_2
 
     .line 143
-    :cond_8e
+    :cond_6
     const/4 v6, 0x3
 
     .line 144
-    if-ne v4, v6, :cond_b2
+    if-ne v4, v6, :cond_8
 
     .line 145
     .line 146
@@ -375,14 +375,14 @@
     move-result v4
 
     .line 150
-    if-eqz v4, :cond_98
+    if-eqz v4, :cond_7
 
     .line 151
     .line 152
-    goto :goto_ba
+    goto :goto_3
 
     .line 153
-    :cond_98
+    :cond_7
     invoke-virtual {v8, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     .line 154
@@ -391,11 +391,11 @@
     move-result v4
 
     .line 157
-    if-eqz v4, :cond_b2
+    if-eqz v4, :cond_8
 
     .line 158
     .line 159
-    if-eqz v2, :cond_b2
+    if-eqz v2, :cond_8
 
     .line 160
     .line 161
@@ -432,12 +432,12 @@
     .line 176
     .line 177
     .line 178
-    goto :goto_54
+    goto :goto_1
 
     .line 179
-    :cond_b2
-    :goto_b2
-    if-eq v3, v7, :cond_ba
+    :cond_8
+    :goto_2
+    if-eq v3, v7, :cond_9
 
     .line 180
     .line 181
@@ -447,20 +447,20 @@
     .line 183
     .line 184
     move-result v3
-    :try_end_b8
-    .catchall {:try_start_4e .. :try_end_b8} :catchall_3d
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 185
-    if-eqz v3, :cond_15
+    if-eqz v3, :cond_0
 
     .line 186
     .line 187
-    :cond_ba
-    :goto_ba
+    :cond_9
+    :goto_3
     return-void
 
     .line 188
-    :goto_bb
+    :goto_4
     const-string p2, "XSPF"
 
     .line 189

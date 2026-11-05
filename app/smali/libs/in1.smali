@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/jn1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/in1;->a:Llibs/jn1;
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final a(Ljava/lang/String;ILjava/lang/String;)V
-    .registers 5
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -118,13 +118,13 @@
 .end method
 
 .method public final b(Ljava/lang/String;)Z
-    .registers 8
+    .locals 6
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-eqz p1, :cond_64
+    if-eqz p1, :cond_3
 
     .line 3
     .line 4
@@ -155,7 +155,7 @@
     const/4 v3, 0x1
 
     .line 17
-    if-eqz v2, :cond_16
+    if-eqz v2, :cond_0
 
     .line 18
     .line 19
@@ -167,7 +167,7 @@
     return v3
 
     .line 23
-    :cond_16
+    :cond_0
     const-string v2, "http://"
 
     .line 24
@@ -180,7 +180,7 @@
     move-result v2
 
     .line 29
-    if-nez v2, :cond_64
+    if-nez v2, :cond_3
 
     .line 30
     .line 31
@@ -196,14 +196,14 @@
     move-result v2
 
     .line 37
-    if-eqz v2, :cond_27
+    if-eqz v2, :cond_1
 
     .line 38
     .line 39
-    goto :goto_64
+    goto :goto_1
 
     .line 40
-    :cond_27
+    :cond_1
     new-array v2, v3, [Ljava/lang/Object;
 
     .line 41
@@ -225,7 +225,7 @@
     .line 49
     .line 50
     .line 51
-    :try_start_32
+    :try_start_0
     const-string v2, "intent:"
 
     .line 52
@@ -238,7 +238,7 @@
     move-result v2
 
     .line 57
-    if-eqz v2, :cond_57
+    if-eqz v2, :cond_2
 
     .line 58
     .line 59
@@ -254,7 +254,7 @@
     move-result p1
 
     .line 65
-    if-eqz p1, :cond_57
+    if-eqz p1, :cond_2
 
     .line 66
     .line 67
@@ -288,8 +288,8 @@
 
     .line 82
     invoke-static {v1, p1, v2}, Llibs/sw1;->Data(Landroid/content/Context;Landroid/content/Intent;Landroid/os/Bundle;)V
-    :try_end_54
-    .catchall {:try_start_32 .. :try_end_54} :catchall_55
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 83
     .line 84
@@ -297,18 +297,18 @@
     return v3
 
     .line 86
-    :catchall_55
+    :catchall_0
     move-exception p1
 
     .line 87
-    goto :goto_58
+    goto :goto_0
 
     .line 88
-    :cond_57
+    :cond_2
     return v3
 
     .line 89
-    :goto_58
+    :goto_0
     invoke-static {p1}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 90
@@ -333,20 +333,20 @@
     return v3
 
     .line 101
-    :cond_64
-    :goto_64
+    :cond_3
+    :goto_1
     return v0
 .end method
 
 .method public final doUpdateVisitedHistory(Landroid/webkit/WebView;Ljava/lang/String;Z)V
-    .registers 4
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final onFormResubmission(Landroid/webkit/WebView;Landroid/os/Message;Landroid/os/Message;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-virtual {p2}, Landroid/os/Message;->sendToTarget()V
@@ -358,14 +358,14 @@
 .end method
 
 .method public final onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
-    .registers 5
+    .locals 2
 
     .line 1
     const-string p1, "data:"
@@ -384,7 +384,7 @@
 
     .line 8
     .line 9
-    if-nez p1, :cond_1a
+    if-nez p1, :cond_0
 
     .line 10
     .line 11
@@ -418,7 +418,7 @@
     .line 25
     .line 26
     .line 27
-    :cond_1a
+    :cond_0
     invoke-virtual {v0, p2}, Llibs/jn1;->a(Ljava/lang/String;)V
 
     .line 28
@@ -428,7 +428,7 @@
 .end method
 
 .method public final onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V
-    .registers 4
+    .locals 0
 
     .line 1
     iget-object p1, p0, Llibs/in1;->a:Llibs/jn1;
@@ -468,7 +468,7 @@
 .end method
 
 .method public final onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V
-    .registers 5
+    .locals 0
 
     .line 41
     invoke-super {p0, p1, p2, p3, p4}, Landroid/webkit/WebViewClient;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V
@@ -480,7 +480,7 @@
 .end method
 
 .method public final onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V
-    .registers 5
+    .locals 1
 
     .line 1
     invoke-super {p0, p1, p2, p3}, Landroid/webkit/WebViewClient;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V
@@ -560,7 +560,7 @@
 .end method
 
 .method public final onReceivedHttpAuthRequest(Landroid/webkit/WebView;Landroid/webkit/HttpAuthHandler;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-virtual {p2}, Landroid/webkit/HttpAuthHandler;->cancel()V
@@ -572,14 +572,14 @@
 .end method
 
 .method public final onScaleChanged(Landroid/webkit/WebView;FF)V
-    .registers 4
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final onTooManyRedirects(Landroid/webkit/WebView;Landroid/os/Message;Landroid/os/Message;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-virtual {p2}, Landroid/os/Message;->sendToTarget()V
@@ -591,14 +591,14 @@
 .end method
 
 .method public final onUnhandledKeyEvent(Landroid/webkit/WebView;Landroid/view/KeyEvent;)V
-    .registers 3
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final shouldOverrideKeyEvent(Landroid/webkit/WebView;Landroid/view/KeyEvent;)Z
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -608,7 +608,7 @@
 .end method
 
 .method public final shouldOverrideUrlLoading(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Z
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-interface {p2}, Landroid/webkit/WebResourceRequest;->getUrl()Landroid/net/Uri;
@@ -635,7 +635,7 @@
     move-result v0
 
     .line 13
-    if-nez v0, :cond_17
+    if-nez v0, :cond_1
 
     .line 14
     .line 15
@@ -647,22 +647,22 @@
     move-result p1
 
     .line 19
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_0
 
     .line 20
     .line 21
-    goto :goto_17
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     const/4 p1, 0x0
 
     .line 23
     return p1
 
     .line 24
-    :cond_17
-    :goto_17
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
     .line 25
@@ -670,31 +670,31 @@
 .end method
 
 .method public final shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
-    .registers 4
+    .locals 1
 
     .line 26
     invoke-virtual {p0, p2}, Llibs/in1;->b(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_1
 
     .line 27
     invoke-super {p0, p1, p2}, Landroid/webkit/WebViewClient;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 
-    :cond_f
-    :goto_f
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
     return p1

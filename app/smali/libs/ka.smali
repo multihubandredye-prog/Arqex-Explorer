@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     const-string v0, "SC"
@@ -20,7 +20,7 @@
     move-result-object v1
 
     .line 7
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
@@ -32,10 +32,10 @@
     move-result-object v0
 
     .line 13
-    goto :goto_12
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     new-instance v0, Llibs/hh;
 
     .line 15
@@ -45,7 +45,7 @@
     .line 17
     .line 18
     .line 19
-    :goto_12
+    :goto_0
     const/16 v1, 0xc
 
     .line 20

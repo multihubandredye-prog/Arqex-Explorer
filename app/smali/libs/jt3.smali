@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
@@ -59,7 +59,7 @@
 .end method
 
 .method public constructor <init>([B)V
-    .registers 10
+    .locals 8
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -140,7 +140,7 @@
 .end method
 
 .method public static w(Ljava/nio/ByteBuffer;II)Ljava/nio/ByteBuffer;
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->duplicate()Ljava/nio/ByteBuffer;
@@ -183,7 +183,7 @@
 
 # virtual methods
 .method public final c(Llibs/t60;Llibs/jl;)V
-    .registers 25
+    .locals 22
 
     .line 1
     invoke-interface/range {p1 .. p1}, Llibs/t60;->size()J
@@ -238,12 +238,12 @@
     const/4 v11, 0x0
 
     .line 25
-    :goto_18
+    :goto_0
     cmp-long v10, v8, v0
 
     .line 26
     .line 27
-    if-gez v10, :cond_5b
+    if-gez v10, :cond_0
 
     .line 28
     .line 29
@@ -375,10 +375,10 @@
 
     .line 90
     .line 91
-    goto :goto_18
+    goto :goto_0
 
     .line 92
-    :cond_5b
+    :cond_0
     move-object/from16 v9, p0
 
     .line 93
@@ -391,8 +391,8 @@
     const/4 v0, 0x0
 
     .line 98
-    :goto_61
-    if-ge v0, v5, :cond_6e
+    :goto_1
+    if-ge v0, v5, :cond_1
 
     .line 99
     .line 100
@@ -416,15 +416,15 @@
 
     .line 109
     .line 110
-    goto :goto_61
+    goto :goto_1
 
     .line 111
-    :cond_6e
+    :cond_1
     return-void
 .end method
 
 .method public final close()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/jt3;->Z:Ljava/util/concurrent/ThreadPoolExecutor;
@@ -440,7 +440,7 @@
 .end method
 
 .method public final i(Llibs/t60;)Ljava/nio/ByteBuffer;
-    .registers 21
+    .locals 19
 
     .line 1
     move-object/from16 v0, p0
@@ -455,7 +455,7 @@
     move-result v1
 
     .line 7
-    if-eqz v1, :cond_cc
+    if-eqz v1, :cond_6
 
     .line 8
     .line 9
@@ -488,7 +488,7 @@
     .line 22
     .line 23
     .line 24
-    :goto_17
+    :goto_0
     const-wide/16 v5, 0xfff
 
     .line 25
@@ -538,7 +538,7 @@
 
     .line 46
     .line 47
-    if-gtz v11, :cond_c8
+    if-gtz v11, :cond_5
 
     .line 48
     .line 49
@@ -568,7 +568,7 @@
     const/4 v11, 0x0
 
     .line 61
-    :goto_3c
+    :goto_1
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     .line 62
@@ -580,7 +580,7 @@
     const/4 v13, 0x1
 
     .line 66
-    if-ge v11, v12, :cond_6e
+    if-ge v11, v12, :cond_1
 
     .line 67
     .line 68
@@ -643,7 +643,7 @@
 
     .line 94
     .line 95
-    if-nez v13, :cond_68
+    if-nez v13, :cond_0
 
     .line 96
     .line 97
@@ -664,10 +664,10 @@
 
     .line 103
     .line 104
-    goto :goto_3c
+    goto :goto_1
 
     .line 105
-    :cond_68
+    :cond_0
     new-instance v1, Ljava/lang/ArithmeticException;
 
     .line 106
@@ -680,7 +680,7 @@
     throw v1
 
     .line 111
-    :cond_6e
+    :cond_1
     move-wide v15, v5
 
     .line 112
@@ -707,8 +707,8 @@
     move v5, v1
 
     .line 123
-    :goto_7a
-    if-ltz v5, :cond_c7
+    :goto_2
+    if-ltz v5, :cond_4
 
     .line 124
     .line 125
@@ -741,7 +741,7 @@
     .line 138
     .line 139
     .line 140
-    if-ne v5, v1, :cond_94
+    if-ne v5, v1, :cond_2
 
     .line 141
     .line 142
@@ -757,10 +757,10 @@
     move-object v11, v7
 
     .line 148
-    goto :goto_af
+    goto :goto_3
 
     .line 149
-    :cond_94
+    :cond_2
     move-object/from16 v7, p1
 
     .line 150
@@ -812,7 +812,7 @@
     .line 174
     .line 175
     .line 176
-    :goto_af
+    :goto_3
     invoke-interface {v11}, Llibs/t60;->size()J
 
     .line 177
@@ -839,7 +839,7 @@
     long-to-int v8, v11
 
     .line 188
-    if-lez v8, :cond_c4
+    if-lez v8, :cond_3
 
     .line 189
     .line 190
@@ -856,28 +856,28 @@
     .line 195
     .line 196
     .line 197
-    :cond_c4
+    :cond_3
     add-int/lit8 v5, v5, -0x1
 
     .line 198
     .line 199
-    goto :goto_7a
+    goto :goto_2
 
     .line 200
-    :cond_c7
+    :cond_4
     return-object v4
 
     .line 201
-    :cond_c8
+    :cond_5
     move-object/from16 v7, p1
 
     .line 202
     .line 203
-    goto/16 :goto_17
+    goto/16 :goto_0
 
     .line 204
     .line 205
-    :cond_cc
+    :cond_6
     new-instance v1, Lexceptions/NotSupportedException;
 
     .line 206
@@ -891,19 +891,19 @@
     .line 210
     .line 211
     .line 212
-    goto :goto_d5
+    goto :goto_5
 
     .line 213
-    :goto_d4
+    :goto_4
     throw v1
 
     .line 214
-    :goto_d5
-    goto :goto_d4
+    :goto_5
+    goto :goto_4
 .end method
 
 .method public final m(Llibs/t60;Llibs/kl;Llibs/kl;)[B
-    .registers 12
+    .locals 8
 
     .line 1
     iget v0, p3, Llibs/kl;->b:I
@@ -933,7 +933,7 @@
 
     .line 13
     .line 14
-    if-nez v5, :cond_6a
+    if-nez v5, :cond_1
 
     .line 15
     .line 16
@@ -1093,7 +1093,7 @@
 
     .line 93
     .line 94
-    if-eqz p3, :cond_62
+    if-eqz p3, :cond_0
 
     .line 95
     .line 96
@@ -1102,7 +1102,7 @@
     .line 97
     .line 98
     .line 99
-    :cond_62
+    :cond_0
     invoke-virtual {p2, p1}, Ljava/security/MessageDigest;->update(Ljava/nio/ByteBuffer;)V
 
     .line 100
@@ -1119,7 +1119,7 @@
     return-object p1
 
     .line 107
-    :cond_6a
+    :cond_1
     new-instance p2, Ljava/lang/IllegalStateException;
 
     .line 108

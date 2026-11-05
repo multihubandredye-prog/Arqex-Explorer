@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/conscrypt/AbstractConscryptSocket;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public addHandshakeCompletedListener(Ljavax/net/ssl/HandshakeCompletedListener;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -46,7 +46,7 @@
 .end method
 
 .method public bind(Ljava/net/SocketAddress;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -62,7 +62,7 @@
 .end method
 
 .method public close()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -78,7 +78,7 @@
 .end method
 
 .method public connect(Ljava/net/SocketAddress;)V
-    .registers 3
+    .locals 1
 
     .line 7
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -89,7 +89,7 @@
 .end method
 
 .method public connect(Ljava/net/SocketAddress;I)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -105,7 +105,7 @@
 .end method
 
 .method public getAlpnSelectedProtocol()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -124,7 +124,7 @@
 .end method
 
 .method public getChannel()Ljava/nio/channels/SocketChannel;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -143,7 +143,7 @@
 .end method
 
 .method public getEnableSessionCreation()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -162,7 +162,7 @@
 .end method
 
 .method public getEnabledCipherSuites()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -181,7 +181,7 @@
 .end method
 
 .method public getEnabledProtocols()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -200,7 +200,7 @@
 .end method
 
 .method public getInetAddress()Ljava/net/InetAddress;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -219,7 +219,7 @@
 .end method
 
 .method public getInputStream()Ljava/io/InputStream;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -238,7 +238,7 @@
 .end method
 
 .method public getKeepAlive()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -257,7 +257,7 @@
 .end method
 
 .method public getLocalAddress()Ljava/net/InetAddress;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -276,7 +276,7 @@
 .end method
 
 .method public getLocalPort()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -295,7 +295,7 @@
 .end method
 
 .method public getLocalSocketAddress()Ljava/net/SocketAddress;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -314,7 +314,7 @@
 .end method
 
 .method public getNeedClientAuth()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -333,7 +333,7 @@
 .end method
 
 .method public getOOBInline()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -352,7 +352,7 @@
 .end method
 
 .method public getOutputStream()Ljava/io/OutputStream;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -371,7 +371,7 @@
 .end method
 
 .method public getPort()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -390,7 +390,7 @@
 .end method
 
 .method public getReceiveBufferSize()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -409,7 +409,7 @@
 .end method
 
 .method public getRemoteSocketAddress()Ljava/net/SocketAddress;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -428,7 +428,7 @@
 .end method
 
 .method public getReuseAddress()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -447,7 +447,7 @@
 .end method
 
 .method public getSSLParameters()Ljavax/net/ssl/SSLParameters;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -466,7 +466,7 @@
 .end method
 
 .method public getSendBufferSize()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -485,7 +485,7 @@
 .end method
 
 .method public getSession()Ljavax/net/ssl/SSLSession;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -504,7 +504,7 @@
 .end method
 
 .method public getSoLinger()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -523,7 +523,7 @@
 .end method
 
 .method public getSoTimeout()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -542,7 +542,7 @@
 .end method
 
 .method public getSupportedCipherSuites()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -561,7 +561,7 @@
 .end method
 
 .method public getSupportedProtocols()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -580,7 +580,7 @@
 .end method
 
 .method public getTcpNoDelay()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -599,7 +599,7 @@
 .end method
 
 .method public getTrafficClass()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -618,7 +618,7 @@
 .end method
 
 .method public getUseClientMode()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -637,7 +637,7 @@
 .end method
 
 .method public getWantClientAuth()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -656,7 +656,7 @@
 .end method
 
 .method public isBound()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -675,7 +675,7 @@
 .end method
 
 .method public isClosed()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -694,7 +694,7 @@
 .end method
 
 .method public isConnected()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -713,7 +713,7 @@
 .end method
 
 .method public isInputShutdown()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -732,7 +732,7 @@
 .end method
 
 .method public isOutputShutdown()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -751,7 +751,7 @@
 .end method
 
 .method public removeHandshakeCompletedListener(Ljavax/net/ssl/HandshakeCompletedListener;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -767,7 +767,7 @@
 .end method
 
 .method public sendUrgentData(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -783,7 +783,7 @@
 .end method
 
 .method public setAlpnProtocols([B)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -799,7 +799,7 @@
 .end method
 
 .method public setEnableSessionCreation(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -815,7 +815,7 @@
 .end method
 
 .method public setEnabledCipherSuites([Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -831,7 +831,7 @@
 .end method
 
 .method public setEnabledProtocols([Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -847,7 +847,7 @@
 .end method
 
 .method public setHandshakeTimeout(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -863,7 +863,7 @@
 .end method
 
 .method public setHostname(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -879,7 +879,7 @@
 .end method
 
 .method public setKeepAlive(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -895,7 +895,7 @@
 .end method
 
 .method public setNeedClientAuth(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -911,7 +911,7 @@
 .end method
 
 .method public setOOBInline(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -927,7 +927,7 @@
 .end method
 
 .method public setPerformancePreferences(III)V
-    .registers 5
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -943,7 +943,7 @@
 .end method
 
 .method public setReceiveBufferSize(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -959,7 +959,7 @@
 .end method
 
 .method public setReuseAddress(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -975,7 +975,7 @@
 .end method
 
 .method public setSSLParameters(Ljavax/net/ssl/SSLParameters;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -991,7 +991,7 @@
 .end method
 
 .method public setSendBufferSize(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -1007,7 +1007,7 @@
 .end method
 
 .method public setSoLinger(ZI)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -1023,7 +1023,7 @@
 .end method
 
 .method public setSoTimeout(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -1039,7 +1039,7 @@
 .end method
 
 .method public setTcpNoDelay(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -1055,7 +1055,7 @@
 .end method
 
 .method public setTrafficClass(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -1071,7 +1071,7 @@
 .end method
 
 .method public setUseClientMode(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -1087,7 +1087,7 @@
 .end method
 
 .method public setUseSessionTickets(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -1103,7 +1103,7 @@
 .end method
 
 .method public setWantClientAuth(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -1119,7 +1119,7 @@
 .end method
 
 .method public shutdownInput()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -1135,7 +1135,7 @@
 .end method
 
 .method public shutdownOutput()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -1151,7 +1151,7 @@
 .end method
 
 .method public startHandshake()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;
@@ -1167,7 +1167,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;->delegate:Lorg/conscrypt/AbstractConscryptSocket;

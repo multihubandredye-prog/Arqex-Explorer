@@ -19,7 +19,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/bn1;
@@ -51,7 +51,7 @@
 .end method
 
 .method public constructor <init>(Ljava/net/InetAddress;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -95,7 +95,7 @@
 .end method
 
 .method public static a([BLjava/net/InetAddress;)[B
-    .registers 63
+    .locals 61
 
     .line 1
     const/16 v0, 0x20
@@ -132,7 +132,7 @@
     const/4 v4, 0x0
 
     .line 17
-    :goto_10
+    :goto_0
     const/16 v5, 0xf
 
     .line 18
@@ -147,14 +147,14 @@
     const/4 v8, 0x1
 
     .line 23
-    if-ge v4, v7, :cond_35
+    if-ge v4, v7, :cond_1
 
     .line 24
     .line 25
     array-length v7, v2
 
     .line 26
-    if-ge v4, v7, :cond_1e
+    if-ge v4, v7, :cond_0
 
     .line 27
     .line 28
@@ -162,15 +162,15 @@
 
     .line 29
     .line 30
-    goto :goto_20
+    goto :goto_1
 
     .line 31
-    :cond_1e
+    :cond_0
     const/16 v7, 0x20
 
     .line 32
     .line 33
-    :goto_20
+    :goto_1
     mul-int/lit8 v9, v4, 0x2
 
     .line 34
@@ -215,10 +215,10 @@
 
     .line 52
     .line 53
-    goto :goto_10
+    goto :goto_0
 
     .line 54
-    :cond_35
+    :cond_1
     invoke-virtual/range {p1 .. p1}, Ljava/net/InetAddress;->getAddress()[B
 
     .line 55
@@ -918,7 +918,7 @@
 
 # virtual methods
 .method public final b()V
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/vz1;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -936,19 +936,19 @@
     move-result v0
 
     .line 8
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 9
     .line 10
     return-void
 
     .line 11
-    :cond_a
+    :cond_0
     const/16 v0, 0x89
 
     .line 12
     .line 13
-    :try_start_c
+    :try_start_0
     new-instance v2, Ljava/net/DatagramSocket;
 
     .line 14
@@ -959,15 +959,15 @@
     .line 17
     .line 18
     iput-object v2, p0, Llibs/vz1;->b:Ljava/net/DatagramSocket;
-    :try_end_13
-    .catch Ljava/net/SocketException; {:try_start_c .. :try_end_13} :catch_14
+    :try_end_0
+    .catch Ljava/net/SocketException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 19
     .line 20
-    goto :goto_1d
+    goto :goto_0
 
     .line 21
-    :catch_14
+    :catch_0
     new-instance v2, Ljava/net/DatagramSocket;
 
     .line 22
@@ -985,7 +985,7 @@
 
     .line 29
     .line 30
-    :goto_1d
+    :goto_0
     invoke-virtual {v2, v1}, Ljava/net/DatagramSocket;->setBroadcast(Z)V
 
     .line 31

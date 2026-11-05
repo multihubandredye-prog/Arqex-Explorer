@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/c11;ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Llibs/y01;)V
-    .registers 7
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/z01;->f:Llibs/c11;
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public final e(Llibs/rp0;)Z
-    .registers 8
+    .locals 6
 
     .line 1
     iget-boolean v0, p0, Llibs/z01;->a:Z
@@ -81,15 +81,15 @@
     const/4 v2, 0x0
 
     .line 10
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 11
     .line 12
     return v2
 
     .line 13
-    :cond_c
-    :try_start_c
+    :cond_0
+    :try_start_0
     iget-object v0, p0, Llibs/z01;->f:Llibs/c11;
 
     .line 14
@@ -99,11 +99,11 @@
     .line 16
     .line 17
     monitor-enter v0
-    :try_end_11
-    .catchall {:try_start_c .. :try_end_11} :catchall_32
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 18
-    :try_start_11
+    :try_start_1
     iget-object v3, p0, Llibs/z01;->f:Llibs/c11;
 
     .line 19
@@ -122,11 +122,11 @@
     .line 26
     .line 27
     monitor-exit v0
-    :try_end_1b
-    .catchall {:try_start_11 .. :try_end_1b} :catchall_2f
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 28
-    :try_start_1b
+    :try_start_2
     iget-object v0, p0, Llibs/z01;->b:Ljava/lang/String;
 
     .line 29
@@ -160,8 +160,8 @@
     .line 43
     .line 44
     invoke-static {p1, v0, v3, v4, v5}, Llibs/c11;->k(Llibs/rp0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Llibs/y01;)V
-    :try_end_2e
-    .catchall {:try_start_1b .. :try_end_2e} :catchall_32
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 45
     .line 46
@@ -169,22 +169,22 @@
     return v2
 
     .line 48
-    :catchall_2f
+    :catchall_0
     move-exception p1
 
     .line 49
-    :try_start_30
+    :try_start_3
     monitor-exit v0
-    :try_end_31
-    .catchall {:try_start_30 .. :try_end_31} :catchall_2f
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 50
-    :try_start_31
+    :try_start_4
     throw p1
-    :try_end_32
-    .catchall {:try_start_31 .. :try_end_32} :catchall_32
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 51
-    :catchall_32
+    :catchall_1
     return v1
 .end method

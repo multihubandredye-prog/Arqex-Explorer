@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/conscrypt/OpenSSLKey;Lorg/conscrypt/MlDsaAlgorithm;)V
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
     move-result v2
 
     .line 19
-    if-ne v1, v2, :cond_19
+    if-ne v1, v2, :cond_0
 
     .line 20
     .line 21
@@ -75,7 +75,7 @@
     return-void
 
     .line 26
-    :cond_19
+    :cond_0
     const-string p1, "Invalid key type"
 
     .line 27
@@ -89,7 +89,7 @@
 .end method
 
 .method public constructor <init>([BLorg/conscrypt/MlDsaAlgorithm;)V
-    .registers 4
+    .locals 1
 
     .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -103,18 +103,18 @@
     iput-object p2, p0, Lorg/conscrypt/OpenSslMlDsaPrivateKey;->algorithm:Lorg/conscrypt/MlDsaAlgorithm;
 
     .line 35
-    :try_start_8
+    :try_start_0
     invoke-static {p1, p2}, Lorg/conscrypt/OpenSslMlDsaPrivateKey;->getOpenSslKeyFromSeed([BLorg/conscrypt/MlDsaAlgorithm;)Lorg/conscrypt/OpenSSLKey;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/conscrypt/OpenSslMlDsaPrivateKey;->key:Lorg/conscrypt/OpenSSLKey;
-    :try_end_e
-    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_8 .. :try_end_e} :catch_f
+    :try_end_0
+    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_f
+    :catch_0
     move-exception p1
 
     .line 36
@@ -128,7 +128,7 @@
 .end method
 
 .method private static encodeSeed([BLorg/conscrypt/MlDsaAlgorithm;)[B
-    .registers 4
+    .locals 2
 
     .line 1
     array-length v0, p0
@@ -138,7 +138,7 @@
 
     .line 3
     .line 4
-    if-ne v0, v1, :cond_1b
+    if-ne v0, v1, :cond_1
 
     .line 5
     .line 6
@@ -146,7 +146,7 @@
 
     .line 7
     .line 8
-    if-ne p1, v0, :cond_10
+    if-ne p1, v0, :cond_0
 
     .line 9
     .line 10
@@ -165,7 +165,7 @@
     return-object p0
 
     .line 17
-    :cond_10
+    :cond_0
     const/16 p1, 0x21
 
     .line 18
@@ -189,7 +189,7 @@
     return-object p0
 
     .line 28
-    :cond_1b
+    :cond_1
     const-string p0, "Invalid seed"
 
     .line 29
@@ -206,7 +206,7 @@
 .end method
 
 .method private static getAlgorithmFromEncodedSeed([B)Lorg/conscrypt/MlDsaAlgorithm;
-    .registers 4
+    .locals 3
 
     .line 1
     array-length v0, p0
@@ -216,7 +216,7 @@
 
     .line 3
     .line 4
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_0
 
     .line 5
     .line 6
@@ -227,7 +227,7 @@
     return-object p0
 
     .line 9
-    :cond_8
+    :cond_0
     array-length v0, p0
 
     .line 10
@@ -235,7 +235,7 @@
 
     .line 11
     .line 12
-    if-ne v0, v2, :cond_16
+    if-ne v0, v2, :cond_1
 
     .line 13
     .line 14
@@ -247,7 +247,7 @@
 
     .line 17
     .line 18
-    if-ne p0, v0, :cond_16
+    if-ne p0, v0, :cond_1
 
     .line 19
     .line 20
@@ -258,7 +258,7 @@
     return-object p0
 
     .line 23
-    :cond_16
+    :cond_1
     const-string p0, "Invalid encoded seed"
 
     .line 24
@@ -275,7 +275,7 @@
 .end method
 
 .method private static getOpenSslKeyFromSeed([BLorg/conscrypt/MlDsaAlgorithm;)Lorg/conscrypt/OpenSSLKey;
-    .registers 4
+    .locals 2
 
     .line 1
     array-length v0, p0
@@ -285,7 +285,7 @@
 
     .line 3
     .line 4
-    if-ne v0, v1, :cond_13
+    if-ne v0, v1, :cond_0
 
     .line 5
     .line 6
@@ -317,7 +317,7 @@
     return-object v0
 
     .line 20
-    :cond_13
+    :cond_0
     new-instance p0, Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException;
 
     .line 21
@@ -335,7 +335,7 @@
 .end method
 
 .method private static isValid([BLorg/conscrypt/MlDsaAlgorithm;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     sget-object v0, Lorg/conscrypt/MlDsaAlgorithm;->ML_DSA_65:Lorg/conscrypt/MlDsaAlgorithm;
@@ -352,30 +352,30 @@
     const/4 v3, 0x0
 
     .line 7
-    if-ne p1, v0, :cond_d
+    if-ne p1, v0, :cond_1
 
     .line 8
     .line 9
     array-length p0, p0
 
     .line 10
-    if-ne p0, v2, :cond_c
+    if-ne p0, v2, :cond_0
 
     .line 11
     .line 12
     return v1
 
     .line 13
-    :cond_c
+    :cond_0
     return v3
 
     .line 14
-    :cond_d
+    :cond_1
     sget-object v0, Lorg/conscrypt/MlDsaAlgorithm;->ML_DSA_87:Lorg/conscrypt/MlDsaAlgorithm;
 
     .line 15
     .line 16
-    if-ne p1, v0, :cond_1d
+    if-ne p1, v0, :cond_2
 
     .line 17
     .line 18
@@ -386,7 +386,7 @@
 
     .line 20
     .line 21
-    if-ne p1, v0, :cond_1d
+    if-ne p1, v0, :cond_2
 
     .line 22
     .line 23
@@ -398,19 +398,19 @@
 
     .line 26
     .line 27
-    if-ne p0, p1, :cond_1d
+    if-ne p0, p1, :cond_2
 
     .line 28
     .line 29
     return v1
 
     .line 30
-    :cond_1d
+    :cond_2
     return v3
 .end method
 
 .method private readObject(Ljava/io/ObjectInputStream;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
@@ -450,7 +450,7 @@
 
     .line 19
     .line 20
-    if-eqz p1, :cond_30
+    if-eqz p1, :cond_0
 
     .line 21
     .line 22
@@ -470,7 +470,7 @@
     move-result-object p1
 
     .line 30
-    :try_start_1d
+    :try_start_0
     iget-object v1, p0, Lorg/conscrypt/OpenSslMlDsaPrivateKey;->algorithm:Lorg/conscrypt/MlDsaAlgorithm;
 
     .line 31
@@ -484,8 +484,8 @@
 
     .line 36
     iput-object p1, p0, Lorg/conscrypt/OpenSslMlDsaPrivateKey;->key:Lorg/conscrypt/OpenSSLKey;
-    :try_end_25
-    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_1d .. :try_end_25} :catch_29
+    :try_end_0
+    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 37
     .line 38
@@ -499,7 +499,7 @@
     return-void
 
     .line 42
-    :catch_29
+    :catch_0
     move-exception p1
 
     .line 43
@@ -515,7 +515,7 @@
     throw v1
 
     .line 49
-    :cond_30
+    :cond_0
     invoke-static {v0}, Llibs/ic0;->t(Ljava/lang/String;)V
 
     .line 50
@@ -525,13 +525,13 @@
 .end method
 
 .method private writeObject(Ljava/io/ObjectOutputStream;)V
-    .registers 4
+    .locals 2
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     invoke-virtual {p0}, Lorg/conscrypt/OpenSslMlDsaPrivateKey;->getSeed()[B
 
     .line 3
@@ -574,13 +574,13 @@
     return-void
 
     .line 22
-    :catchall_15
+    :catchall_0
     move-exception p1
 
     .line 23
     monitor-exit p0
-    :try_end_17
-    .catchall {:try_start_1 .. :try_end_17} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 24
     throw p1
@@ -589,7 +589,7 @@
 
 # virtual methods
 .method public destroy()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -603,10 +603,10 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     .line 2
     .line 3
@@ -616,12 +616,12 @@
     return p1
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v0, p1, Lorg/conscrypt/OpenSslMlDsaPrivateKey;
 
     .line 6
     .line 7
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     .line 8
     .line 9
@@ -631,7 +631,7 @@
     return p1
 
     .line 11
-    :cond_a
+    :cond_1
     check-cast p1, Lorg/conscrypt/OpenSslMlDsaPrivateKey;
 
     .line 12
@@ -664,7 +664,7 @@
 .end method
 
 .method public getAlgorithm()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "ML-DSA"
@@ -675,14 +675,14 @@
 .end method
 
 .method public getEncoded()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSslMlDsaPrivateKey;->key:Lorg/conscrypt/OpenSSLKey;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -705,7 +705,7 @@
     return-object v0
 
     .line 14
-    :cond_d
+    :cond_0
     const-string v0, "key is destroyed"
 
     .line 15
@@ -722,7 +722,7 @@
 .end method
 
 .method public getFormat()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "PKCS#8"
@@ -733,7 +733,7 @@
 .end method
 
 .method public getMlDsaAlgorithm()Lorg/conscrypt/MlDsaAlgorithm;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSslMlDsaPrivateKey;->algorithm:Lorg/conscrypt/MlDsaAlgorithm;
@@ -744,7 +744,7 @@
 .end method
 
 .method public getOpenSSLKey()Lorg/conscrypt/OpenSSLKey;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSslMlDsaPrivateKey;->key:Lorg/conscrypt/OpenSSLKey;
@@ -755,14 +755,14 @@
 .end method
 
 .method public getSeed()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSslMlDsaPrivateKey;->key:Lorg/conscrypt/OpenSSLKey;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -785,7 +785,7 @@
     return-object v0
 
     .line 14
-    :cond_d
+    :cond_0
     const-string v0, "key is destroyed"
 
     .line 15
@@ -802,7 +802,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/OpenSslMlDsaPrivateKey;->getEncoded()[B
@@ -825,14 +825,14 @@
 .end method
 
 .method public isDestroyed()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSslMlDsaPrivateKey;->key:Lorg/conscrypt/OpenSSLKey;
 
     .line 2
     .line 3
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -842,7 +842,7 @@
     return v0
 
     .line 7
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
     .line 8

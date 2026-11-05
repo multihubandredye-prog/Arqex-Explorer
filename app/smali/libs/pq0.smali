@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/rp0;ZLlibs/xl1;)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/pq0;->a:Llibs/rp0;
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final a(Ljava/io/Closeable;)V
-    .registers 5
+    .locals 3
 
     .line 1
     :try_start_0
@@ -47,7 +47,7 @@
 
     .line 2
     .line 3
-    if-nez v0, :cond_16
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -91,14 +91,14 @@
     return-void
 
     .line 23
-    :cond_16
+    :cond_0
     invoke-static {p1}, Llibs/ji0;->k(Ljava/io/Closeable;)V
-    :try_end_19
-    .catchall {:try_start_0 .. :try_end_19} :catchall_19
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 24
     .line 25
     .line 26
-    :catchall_19
+    :catchall_0
     return-void
 .end method

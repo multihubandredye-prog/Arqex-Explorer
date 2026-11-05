@@ -39,7 +39,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 42
+    .locals 42
 
     .line 1
     new-instance v0, Llibs/y73;
@@ -785,7 +785,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;IILlibs/nz;Ljava/lang/String;Llibs/la2;II)V
-    .registers 9
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
@@ -817,7 +817,7 @@
 .end method
 
 .method public static a(I)Llibs/y73;
-    .registers 6
+    .locals 5
 
     .line 1
     invoke-static {}, Llibs/y73;->values()[Llibs/y73;
@@ -834,8 +834,8 @@
     const/4 v2, 0x0
 
     .line 7
-    :goto_6
-    if-ge v2, v1, :cond_12
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     .line 8
     .line 9
@@ -847,22 +847,22 @@
 
     .line 12
     .line 13
-    if-ne v4, p0, :cond_f
+    if-ne v4, p0, :cond_0
 
     .line 14
     .line 15
     return-object v3
 
     .line 16
-    :cond_f
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
     .line 17
     .line 18
-    goto :goto_6
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_1
     const/4 p0, 0x0
 
     .line 20
@@ -870,7 +870,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Llibs/y73;
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Llibs/y73;
@@ -893,7 +893,7 @@
 .end method
 
 .method public static values()[Llibs/y73;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/y73;->Chi:[Llibs/y73;

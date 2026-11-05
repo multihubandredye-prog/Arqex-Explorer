@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/fi1;[BI)V
-    .registers 10
+    .locals 6
 
     .line 1
     invoke-direct {p0, p3, p2}, Llibs/uy1;-><init>(I[B)V
@@ -66,8 +66,8 @@
     const/4 v1, 0x1
 
     .line 27
-    :goto_1a
-    if-ge v1, v0, :cond_3f
+    :goto_0
+    if-ge v1, v0, :cond_1
 
     .line 28
     .line 29
@@ -94,7 +94,7 @@
     move-result v4
 
     .line 40
-    if-ne v4, p3, :cond_38
+    if-ne v4, p3, :cond_0
 
     .line 41
     .line 42
@@ -126,10 +126,10 @@
 
     .line 55
     .line 56
-    goto :goto_1a
+    goto :goto_0
 
     .line 57
-    :cond_38
+    :cond_0
     const-string p1, "Fixup error"
 
     .line 58
@@ -145,6 +145,6 @@
     throw p1
 
     .line 64
-    :cond_3f
+    :cond_1
     return-void
 .end method

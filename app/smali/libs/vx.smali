@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/s73;
@@ -36,7 +36,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 6
     invoke-direct {p0, p1}, Llibs/ny2;-><init>(Ljava/lang/String;)V
@@ -45,7 +45,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Throwable;)V
-    .registers 2
+    .locals 0
 
     .line 7
     invoke-direct {p0, p1}, Llibs/ny2;-><init>(Ljava/lang/Throwable;)V
@@ -54,7 +54,7 @@
 .end method
 
 .method public constructor <init>(Llibs/pb0;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x0

@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/m80;Ljava/io/File;)V
-    .registers 4
+    .locals 1
 
     .line 1
     iput-object p1, p0, Llibs/l80;->Lambda:Llibs/m80;
@@ -61,7 +61,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 11
+    .locals 10
 
     .line 1
     invoke-static {}, Llibs/t43;->Task()Z
@@ -80,11 +80,11 @@
 
     .line 8
     .line 9
-    if-eqz v0, :cond_c1
+    if-eqz v0, :cond_8
 
     .line 10
     .line 11
-    :try_start_a
+    :try_start_0
     invoke-static {}, Llibs/Mike;->e()Ljava/nio/file/FileSystem;
 
     .line 12
@@ -99,8 +99,8 @@
     .line 17
     .line 18
     move-result-object v0
-    :try_end_12
-    .catchall {:try_start_a .. :try_end_12} :catchall_28
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 19
     const/4 v3, 0x0
@@ -109,7 +109,7 @@
     const/4 v4, 0x1
 
     .line 21
-    :try_start_14
+    :try_start_1
     invoke-virtual {v2}, Ljava/io/File;->getAbsoluteFile()Ljava/io/File;
 
     .line 22
@@ -132,23 +132,23 @@
     .line 31
     .line 32
     move-result-object v5
-    :try_end_20
-    .catchall {:try_start_14 .. :try_end_20} :catchall_46
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 33
-    if-nez v5, :cond_2b
+    if-nez v5, :cond_0
 
     .line 34
     .line 35
-    if-eqz v0, :cond_f6
+    if-eqz v0, :cond_b
 
     .line 36
     .line 37
-    :goto_24
-    :try_start_24
+    :goto_0
+    :try_start_2
     invoke-static {v0}, Llibs/Mike;->List(Ljava/nio/file/WatchService;)V
-    :try_end_27
-    .catchall {:try_start_24 .. :try_end_27} :catchall_28
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 38
     .line 39
@@ -156,16 +156,16 @@
     return-void
 
     .line 41
-    :catchall_28
+    :catchall_0
     move-exception v0
 
     .line 42
-    goto/16 :goto_bd
+    goto/16 :goto_6
 
     .line 43
     .line 44
-    :cond_2b
-    :try_start_2b
+    :cond_0
+    :try_start_3
     new-array v6, v4, [Ljava/nio/file/WatchEvent$Kind;
 
     .line 45
@@ -187,55 +187,55 @@
     .line 53
     .line 54
     .line 55
-    :cond_36
-    :goto_36
+    :cond_1
+    :goto_1
     invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
     .line 56
     .line 57
     .line 58
     move-result v5
-    :try_end_3a
-    .catchall {:try_start_2b .. :try_end_3a} :catchall_46
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 59
-    if-nez v5, :cond_9f
+    if-nez v5, :cond_6
 
     .line 60
     .line 61
-    :try_start_3c
+    :try_start_4
     invoke-static {v0}, Llibs/Mike;->l(Ljava/nio/file/WatchService;)Ljava/nio/file/WatchKey;
 
     .line 62
     .line 63
     .line 64
     move-result-object v5
-    :try_end_40
-    .catch Ljava/lang/InterruptedException; {:try_start_3c .. :try_end_40} :catch_92
-    .catchall {:try_start_3c .. :try_end_40} :catchall_46
+    :try_end_4
+    .catch Ljava/lang/InterruptedException; {:try_start_4 .. :try_end_4} :catch_0
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 65
-    if-nez v5, :cond_48
+    if-nez v5, :cond_2
 
     .line 66
     .line 67
-    :try_start_42
+    :try_start_5
     invoke-static {}, Ljava/lang/Thread;->yield()V
 
     .line 68
     .line 69
     .line 70
-    goto :goto_36
+    goto :goto_1
 
     .line 71
-    :catchall_46
+    :catchall_1
     move-exception v1
 
     .line 72
-    goto :goto_a2
+    goto :goto_4
 
     .line 73
-    :cond_48
+    :cond_2
     invoke-static {v5}, Llibs/Mike;->n(Ljava/nio/file/WatchKey;)Ljava/util/List;
 
     .line 74
@@ -252,8 +252,8 @@
     move-result-object v6
 
     .line 81
-    :cond_50
-    :goto_50
+    :cond_3
+    :goto_2
     invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
 
     .line 82
@@ -262,7 +262,7 @@
     move-result v7
 
     .line 85
-    if-eqz v7, :cond_8b
+    if-eqz v7, :cond_5
 
     .line 86
     .line 87
@@ -298,14 +298,14 @@
     move-result-object v9
 
     .line 103
-    if-ne v8, v9, :cond_69
+    if-ne v8, v9, :cond_4
 
     .line 104
     .line 105
-    goto :goto_50
+    goto :goto_2
 
     .line 106
-    :cond_69
+    :cond_4
     invoke-static {v7}, Llibs/Mike;->c(Ljava/nio/file/WatchEvent;)Ljava/lang/Object;
 
     .line 107
@@ -330,7 +330,7 @@
     move-result-object v9
 
     .line 118
-    if-ne v8, v9, :cond_50
+    if-ne v8, v9, :cond_3
 
     .line 119
     .line 120
@@ -358,7 +358,7 @@
     move-result v7
 
     .line 132
-    if-eqz v7, :cond_50
+    if-eqz v7, :cond_3
 
     .line 133
     .line 134
@@ -371,10 +371,10 @@
     .line 137
     .line 138
     .line 139
-    goto :goto_50
+    goto :goto_2
 
     .line 140
-    :cond_8b
+    :cond_5
     invoke-static {v5}, Llibs/Mike;->Map(Ljava/nio/file/WatchKey;)Z
 
     .line 141
@@ -383,14 +383,14 @@
     move-result v5
 
     .line 144
-    if-nez v5, :cond_36
+    if-nez v5, :cond_1
 
     .line 145
     .line 146
-    goto :goto_9f
+    goto :goto_3
 
     .line 147
-    :catch_92
+    :catch_0
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     .line 148
@@ -400,57 +400,57 @@
 
     .line 151
     invoke-virtual {v1}, Ljava/lang/Thread;->interrupt()V
-    :try_end_99
-    .catchall {:try_start_42 .. :try_end_99} :catchall_46
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
     .line 152
     .line 153
     .line 154
-    if-eqz v0, :cond_f6
+    if-eqz v0, :cond_b
 
     .line 155
     .line 156
-    :try_start_9b
+    :try_start_6
     invoke-static {v0}, Llibs/Mike;->List(Ljava/nio/file/WatchService;)V
-    :try_end_9e
-    .catchall {:try_start_9b .. :try_end_9e} :catchall_28
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
     .line 157
     .line 158
     .line 159
-    goto :goto_f6
+    goto :goto_8
 
     .line 160
-    :cond_9f
-    :goto_9f
-    if-eqz v0, :cond_f6
+    :cond_6
+    :goto_3
+    if-eqz v0, :cond_b
 
     .line 161
     .line 162
-    goto :goto_24
+    goto :goto_0
 
     .line 163
-    :goto_a2
-    if-eqz v0, :cond_bc
+    :goto_4
+    if-eqz v0, :cond_7
 
     .line 164
     .line 165
-    :try_start_a4
+    :try_start_7
     invoke-static {v0}, Llibs/Mike;->List(Ljava/nio/file/WatchService;)V
-    :try_end_a7
-    .catchall {:try_start_a4 .. :try_end_a7} :catchall_a8
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_2
 
     .line 166
     .line 167
     .line 168
-    goto :goto_bc
+    goto :goto_5
 
     .line 169
-    :catchall_a8
+    :catchall_2
     move-exception v0
 
     .line 170
-    :try_start_a9
+    :try_start_8
     const-class v2, Ljava/lang/Throwable;
 
     .line 171
@@ -484,32 +484,32 @@
     .line 185
     .line 186
     invoke-virtual {v2, v1, v4}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_bc
-    .catch Ljava/lang/Exception; {:try_start_a9 .. :try_end_bc} :catch_bc
-    .catchall {:try_start_a9 .. :try_end_bc} :catchall_28
+    :try_end_8
+    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_1
+    .catchall {:try_start_8 .. :try_end_8} :catchall_0
 
     .line 187
     .line 188
     .line 189
-    :catch_bc
-    :cond_bc
-    :goto_bc
-    :try_start_bc
+    :catch_1
+    :cond_7
+    :goto_5
+    :try_start_9
     throw v1
-    :try_end_bd
-    .catchall {:try_start_bc .. :try_end_bd} :catchall_28
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_0
 
     .line 190
-    :goto_bd
+    :goto_6
     invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
     .line 191
     .line 192
     .line 193
-    goto :goto_f6
+    goto :goto_8
 
     .line 194
-    :cond_c1
+    :cond_8
     invoke-virtual {v2}, Ljava/io/File;->getParentFile()Ljava/io/File;
 
     .line 195
@@ -518,14 +518,14 @@
     move-result-object v0
 
     .line 198
-    if-nez v0, :cond_c8
+    if-nez v0, :cond_9
 
     .line 199
     .line 200
-    goto :goto_f6
+    goto :goto_8
 
     .line 201
-    :cond_c8
+    :cond_9
     new-instance v2, Llibs/k80;
 
     .line 202
@@ -552,8 +552,8 @@
     .line 213
     .line 214
     .line 215
-    :goto_d6
-    :try_start_d6
+    :goto_7
+    :try_start_a
     invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
     .line 216
@@ -562,7 +562,7 @@
     move-result v0
 
     .line 219
-    if-nez v0, :cond_e4
+    if-nez v0, :cond_a
 
     .line 220
     .line 221
@@ -571,24 +571,24 @@
     .line 222
     .line 223
     invoke-static {v2, v3}, Ljava/lang/Thread;->sleep(J)V
-    :try_end_e1
-    .catch Ljava/lang/InterruptedException; {:try_start_d6 .. :try_end_e1} :catch_ea
-    .catchall {:try_start_d6 .. :try_end_e1} :catchall_e2
+    :try_end_a
+    .catch Ljava/lang/InterruptedException; {:try_start_a .. :try_end_a} :catch_2
+    .catchall {:try_start_a .. :try_end_a} :catchall_3
 
     .line 224
     .line 225
     .line 226
-    goto :goto_d6
+    goto :goto_7
 
     .line 227
-    :catchall_e2
+    :catchall_3
     move-exception v0
 
     .line 228
-    goto :goto_f7
+    goto :goto_9
 
     .line 229
-    :cond_e4
+    :cond_a
     iget-object v0, p0, Llibs/l80;->Z:Llibs/k80;
 
     .line 230
@@ -601,8 +601,8 @@
     return-void
 
     .line 235
-    :catch_ea
-    :try_start_ea
+    :catch_2
+    :try_start_b
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     .line 236
@@ -612,8 +612,8 @@
 
     .line 239
     invoke-virtual {v0}, Ljava/lang/Thread;->interrupt()V
-    :try_end_f1
-    .catchall {:try_start_ea .. :try_end_f1} :catchall_e2
+    :try_end_b
+    .catchall {:try_start_b .. :try_end_b} :catchall_3
 
     .line 240
     .line 241
@@ -627,12 +627,12 @@
     .line 245
     .line 246
     .line 247
-    :cond_f6
-    :goto_f6
+    :cond_b
+    :goto_8
     return-void
 
     .line 248
-    :goto_f7
+    :goto_9
     iget-object v1, p0, Llibs/l80;->Z:Llibs/k80;
 
     .line 249
@@ -642,13 +642,13 @@
     .line 251
     .line 252
     .line 253
-    goto :goto_fe
+    goto :goto_b
 
     .line 254
-    :goto_fd
+    :goto_a
     throw v0
 
     .line 255
-    :goto_fe
-    goto :goto_fd
+    :goto_b
+    goto :goto_a
 .end method

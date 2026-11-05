@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/za;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/md2;->a:Llibs/za;
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final onDismiss(Landroid/content/DialogInterface;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object p1, p0, Llibs/md2;->a:Llibs/za;
@@ -66,7 +66,7 @@
     monitor-enter v0
 
     .line 18
-    :try_start_11
+    :try_start_0
     iget-object p1, p1, Llibs/za;->Z:Ljava/lang/Object;
 
     .line 19
@@ -82,13 +82,13 @@
     return-void
 
     .line 25
-    :catchall_18
+    :catchall_0
     move-exception p1
 
     .line 26
     monitor-exit v0
-    :try_end_1a
-    .catchall {:try_start_11 .. :try_end_1a} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 27
     throw p1

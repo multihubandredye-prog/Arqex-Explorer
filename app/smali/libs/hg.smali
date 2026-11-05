@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/ThreadLocal;
@@ -29,7 +29,7 @@
 .end method
 
 .method public static a(Llibs/oi0;[B[BI)[B
-    .registers 5
+    .locals 1
 
     .line 1
     invoke-static {}, Llibs/hg;->b()Ljavax/crypto/Cipher;
@@ -57,7 +57,7 @@
 .end method
 
 .method public static b()Ljavax/crypto/Cipher;
-    .registers 2
+    .locals 2
 
     .line 1
     sget-object v0, Llibs/hg;->a:Ljava/lang/ThreadLocal;
@@ -76,7 +76,7 @@
 
     .line 8
     .line 9
-    if-nez v1, :cond_22
+    if-nez v1, :cond_0
 
     .line 10
     .line 11
@@ -84,16 +84,16 @@
 
     .line 12
     .line 13
-    :try_start_c
+    :try_start_0
     invoke-static {v1}, Ljavax/crypto/Cipher;->getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;
 
     .line 14
     .line 15
     .line 16
     move-result-object v1
-    :try_end_10
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_c .. :try_end_10} :catch_1b
-    .catch Ljavax/crypto/NoSuchPaddingException; {:try_start_c .. :try_end_10} :catch_14
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljavax/crypto/NoSuchPaddingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 17
     invoke-virtual {v0, v1}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
@@ -104,7 +104,7 @@
     return-object v1
 
     .line 21
-    :catch_14
+    :catch_0
     move-exception v0
 
     .line 22
@@ -120,7 +120,7 @@
     throw v1
 
     .line 28
-    :catch_1b
+    :catch_1
     move-exception v0
 
     .line 29
@@ -136,6 +136,6 @@
     throw v1
 
     .line 35
-    :cond_22
+    :cond_0
     return-object v1
 .end method

@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/LinkedHashSet;Ljava/util/ArrayList;Ljava/util/UUID;ZLjava/util/EnumSet;[B)V
-    .registers 15
+    .locals 8
 
     .line 1
     sget-object v3, Llibs/cv2;->Y:Llibs/cv2;
@@ -76,7 +76,7 @@
     move-result p1
 
     .line 29
-    if-eqz p1, :cond_55
+    if-eqz p1, :cond_0
 
     .line 30
     .line 31
@@ -164,7 +164,7 @@
     move-result p3
 
     .line 75
-    if-eqz p3, :cond_57
+    if-eqz p3, :cond_1
 
     .line 76
     .line 77
@@ -182,16 +182,16 @@
     .line 83
     .line 84
     .line 85
-    goto :goto_57
+    goto :goto_0
 
     .line 86
-    :cond_55
+    :cond_0
     sget-object p1, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     .line 87
     .line 88
-    :cond_57
-    :goto_57
+    :cond_1
+    :goto_0
     iput-object p1, p0, Llibs/iv2;->i:Ljava/util/List;
 
     .line 89
@@ -202,7 +202,7 @@
 
 # virtual methods
 .method public final i(Llibs/rw2;)V
-    .registers 16
+    .locals 14
 
     .line 1
     iget v0, p0, Llibs/lv2;->c:I
@@ -241,21 +241,21 @@
     const/4 v4, 0x2
 
     .line 19
-    if-eqz v2, :cond_16
+    if-eqz v2, :cond_0
 
     .line 20
     .line 21
     const/4 v2, 0x2
 
     .line 22
-    goto :goto_17
+    goto :goto_0
 
     .line 23
-    :cond_16
+    :cond_0
     const/4 v2, 0x1
 
     .line 24
-    :goto_17
+    :goto_0
     invoke-virtual {p1, v2}, Llibs/rw2;->m(I)V
 
     .line 25
@@ -274,7 +274,7 @@
     move-result v2
 
     .line 34
-    if-eqz v2, :cond_2d
+    if-eqz v2, :cond_1
 
     .line 35
     .line 36
@@ -295,16 +295,16 @@
     .line 43
     .line 44
     .line 45
-    goto :goto_30
+    goto :goto_1
 
     .line 46
-    :cond_2d
+    :cond_1
     invoke-virtual {p1}, Llibs/rw2;->k()V
 
     .line 47
     .line 48
     .line 49
-    :goto_30
+    :goto_1
     iget-object v2, p0, Llibs/iv2;->f:Ljava/util/UUID;
 
     .line 50
@@ -334,7 +334,7 @@
 
     .line 63
     .line 64
-    if-eqz v5, :cond_68
+    if-eqz v5, :cond_2
 
     .line 65
     .line 66
@@ -418,16 +418,16 @@
     .line 102
     .line 103
     .line 104
-    goto :goto_6b
+    goto :goto_2
 
     .line 105
-    :cond_68
+    :cond_2
     invoke-virtual {p1, v7}, Llibs/rw2;->i(I)V
 
     .line 106
     .line 107
     .line 108
-    :goto_6b
+    :goto_2
     invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     .line 109
@@ -436,7 +436,7 @@
     move-result-object v5
 
     .line 112
-    :goto_6f
+    :goto_3
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
     .line 113
@@ -445,7 +445,7 @@
     move-result v8
 
     .line 116
-    if-eqz v8, :cond_81
+    if-eqz v8, :cond_3
 
     .line 117
     .line 118
@@ -470,10 +470,10 @@
     .line 127
     .line 128
     .line 129
-    goto :goto_6f
+    goto :goto_3
 
     .line 130
-    :cond_81
+    :cond_3
     invoke-interface {v1}, Ljava/util/Set;->size()I
 
     .line 131
@@ -492,7 +492,7 @@
     rem-int/2addr v5, v7
 
     .line 138
-    if-lez v5, :cond_90
+    if-lez v5, :cond_4
 
     .line 139
     .line 140
@@ -505,7 +505,7 @@
     .line 143
     .line 144
     .line 145
-    :cond_90
+    :cond_4
     invoke-interface {v1, v2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     .line 146
@@ -514,14 +514,14 @@
     move-result v0
 
     .line 149
-    if-eqz v0, :cond_e8
+    if-eqz v0, :cond_6
 
     .line 150
     .line 151
     const/4 v0, 0x0
 
     .line 152
-    :goto_97
+    :goto_4
     invoke-interface {v6}, Ljava/util/List;->size()I
 
     .line 153
@@ -530,7 +530,7 @@
     move-result v1
 
     .line 156
-    if-ge v0, v1, :cond_e8
+    if-ge v0, v1, :cond_6
 
     .line 157
     .line 158
@@ -656,14 +656,14 @@
     sub-int/2addr v1, v3
 
     .line 220
-    if-ge v0, v1, :cond_e5
+    if-ge v0, v1, :cond_5
 
     .line 221
     .line 222
     rem-int/2addr v4, v7
 
     .line 223
-    if-eqz v4, :cond_e5
+    if-eqz v4, :cond_5
 
     .line 224
     .line 225
@@ -676,14 +676,14 @@
     .line 228
     .line 229
     .line 230
-    :cond_e5
+    :cond_5
     add-int/lit8 v0, v0, 0x1
 
     .line 231
     .line 232
-    goto :goto_97
+    goto :goto_4
 
     .line 233
-    :cond_e8
+    :cond_6
     return-void
 .end method

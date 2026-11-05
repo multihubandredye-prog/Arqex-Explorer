@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -13,11 +13,11 @@
 .end method
 
 .method public static appendSettingsRow(Lcom/mixplorer/activities/PreferenceActivity;Landroid/view/ViewGroup;Landroid/graphics/drawable/Drawable;)V
-    .registers 9
+    .locals 6
 
-    if-eqz p0, :cond_4b
+    if-eqz p0, :cond_0
 
-    if-eqz p1, :cond_4b
+    if-eqz p1, :cond_0
 
     new-instance v0, Landroid/widget/TextView;
 
@@ -83,22 +83,22 @@
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    :cond_4b
+    :cond_0
     return-void
 .end method
 
 .method public static applyActiveSkinLive(Landroid/content/Context;Ljava/lang/String;Landroid/widget/TextView;)V
-    .registers 9
+    .locals 6
 
     sget-object v0, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_1
 
     iget-object v1, v0, Llibs/p63;->Api:Landroid/content/SharedPreferences;
 
     const-string v2, ""
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_0
 
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
@@ -114,7 +114,7 @@
 
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    :cond_1b
+    :cond_0
     iput-object p1, v0, Llibs/p63;->Android:Ljava/lang/String;
 
     iput-object v2, v0, Llibs/p63;->Google:Ljava/lang/String;
@@ -123,17 +123,17 @@
 
     iput-object p1, v0, Llibs/p63;->g:Ljava/util/List;
 
-    :cond_22
+    :cond_1
     invoke-static {}, Llibs/va3;->Add()V
 
-    if-eqz p2, :cond_2a
+    if-eqz p2, :cond_2
 
     invoke-static {p2}, Llibs/CustomThemeV128;->refreshSettingsRowText(Landroid/widget/TextView;)V
 
-    :cond_2a
+    :cond_2
     instance-of p1, p0, Lcom/mixplorer/activities/PreferenceActivity;
 
-    if-eqz p1, :cond_34
+    if-eqz p1, :cond_3
 
     check-cast p0, Lcom/mixplorer/activities/PreferenceActivity;
 
@@ -141,21 +141,21 @@
 
     return-void
 
-    :cond_34
+    :cond_3
     instance-of p1, p0, Landroid/app/Activity;
 
-    if-eqz p1, :cond_3d
+    if-eqz p1, :cond_4
 
     check-cast p0, Landroid/app/Activity;
 
     invoke-virtual {p0}, Landroid/app/Activity;->recreate()V
 
-    :cond_3d
+    :cond_4
     return-void
 .end method
 
 .method private static buildActionCard(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;IIILandroid/view/View$OnClickListener;)Landroid/view/View;
-    .registers 14
+    .locals 7
 
     new-instance v0, Landroid/widget/LinearLayout;
 
@@ -267,42 +267,42 @@
 .end method
 
 .method private static collectBackupFiles(Landroid/content/Context;)Ljava/util/ArrayList;
-    .registers 6
+    .locals 5
 
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    if-eqz p0, :cond_39
+    if-eqz p0, :cond_1
 
     invoke-static {p0}, Llibs/CustomThemeV128;->resolveBackupDir(Landroid/content/Context;)Ljava/io/File;
 
     move-result-object v1
 
-    if-eqz v1, :cond_39
+    if-eqz v1, :cond_1
 
     invoke-virtual {v1}, Ljava/io/File;->listFiles()[Ljava/io/File;
 
     move-result-object v2
 
-    if-eqz v2, :cond_39
+    if-eqz v2, :cond_1
 
     array-length v3, v2
 
     const/4 v4, 0x0
 
-    :goto_15
-    if-ge v4, v3, :cond_39
+    :goto_0
+    if-ge v4, v3, :cond_1
 
     aget-object p0, v2, v4
 
-    if-eqz p0, :cond_36
+    if-eqz p0, :cond_0
 
     invoke-virtual {p0}, Ljava/io/File;->isFile()Z
 
     move-result v1
 
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_0
 
     invoke-virtual {p0}, Ljava/io/File;->getName()Ljava/lang/String;
 
@@ -320,21 +320,21 @@
 
     move-result v1
 
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_0
 
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :cond_36
+    :cond_0
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_39
+    :cond_1
     return-object v0
 .end method
 
 .method public static createPillButton(Landroid/content/Context;Ljava/lang/String;IZ)Landroid/widget/TextView;
-    .registers 8
+    .locals 4
 
     new-instance v0, Landroid/widget/TextView;
 
@@ -362,7 +362,7 @@
 
     move-result p0
 
-    if-eqz p3, :cond_36
+    if-eqz p3, :cond_1
 
     const/4 p3, 0x0
 
@@ -376,21 +376,21 @@
 
     move-result p0
 
-    if-eqz p0, :cond_31
+    if-eqz p0, :cond_0
 
     const p0, -0xf0e8d6
 
-    goto :goto_32
+    goto :goto_0
 
-    :cond_31
+    :cond_0
     const/4 p0, -0x1
 
-    :goto_32
+    :goto_0
     invoke-virtual {v0, p0}, Landroid/widget/TextView;->setTextColor(I)V
 
-    goto :goto_52
+    goto :goto_1
 
-    :cond_36
+    :cond_1
     const/16 p3, 0x20
 
     invoke-static {p2, p3}, Llibs/ModernUiTheme;->withAlpha(II)I
@@ -417,7 +417,7 @@
 
     invoke-virtual {v0, p2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    :goto_52
+    :goto_1
     const/4 p0, 0x2
 
     const/high16 p2, 0x41480000    # 12.5f
@@ -438,55 +438,55 @@
 .end method
 
 .method private static encodePrefValue(Ljava/lang/Object;)Ljava/lang/String;
-    .registers 4
+    .locals 3
 
-    if-eqz p0, :cond_2f
+    if-eqz p0, :cond_4
 
     const-string v0, ""
 
     instance-of v1, p0, Ljava/lang/Boolean;
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_0
 
     const-string v0, "B:"
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     instance-of v1, p0, Ljava/lang/Integer;
 
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_1
 
     const-string v0, "I:"
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_12
+    :cond_1
     instance-of v1, p0, Ljava/lang/Long;
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_2
 
     const-string v0, "L:"
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_19
+    :cond_2
     instance-of v1, p0, Ljava/lang/Float;
 
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_3
 
     const-string v0, "F:"
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_20
+    :cond_3
     instance-of v1, p0, Ljava/lang/String;
 
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_4
 
     const-string v0, "S:"
 
-    :goto_26
+    :goto_0
     invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
@@ -497,18 +497,18 @@
 
     return-object p0
 
-    :cond_2f
+    :cond_4
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method public static exportBackup(Landroid/content/Context;Z)V
-    .registers 14
+    .locals 12
 
-    if-eqz p0, :cond_121
+    if-eqz p0, :cond_6
 
-    :try_start_2
+    :try_start_0
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
@@ -549,13 +549,13 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_5e
+    if-eqz v2, :cond_1
 
     invoke-interface {v2}, Landroid/content/SharedPreferences;->getAll()Ljava/util/Map;
 
     move-result-object v2
 
-    if-eqz v2, :cond_5e
+    if-eqz v2, :cond_1
 
     invoke-interface {v2}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -565,13 +565,13 @@
 
     move-result-object v2
 
-    :cond_40
-    :goto_40
+    :cond_0
+    :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_5e
+    if-eqz v3, :cond_1
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -591,18 +591,18 @@
 
     instance-of v5, v3, Ljava/lang/String;
 
-    if-eqz v5, :cond_40
+    if-eqz v5, :cond_0
 
     invoke-virtual {v1, v4, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    goto :goto_40
+    goto :goto_0
 
-    :cond_5e
+    :cond_1
     const-string v2, "skins"
 
     invoke-virtual {v0, v2, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    if-eqz p1, :cond_a3
+    if-eqz p1, :cond_4
 
     new-instance v1, Lorg/json/JSONObject;
 
@@ -612,13 +612,13 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_9e
+    if-eqz v2, :cond_3
 
     invoke-interface {v2}, Landroid/content/SharedPreferences;->getAll()Ljava/util/Map;
 
     move-result-object v2
 
-    if-eqz v2, :cond_9e
+    if-eqz v2, :cond_3
 
     invoke-interface {v2}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -628,13 +628,13 @@
 
     move-result-object v2
 
-    :cond_7e
-    :goto_7e
+    :cond_2
+    :goto_1
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_9e
+    if-eqz v3, :cond_3
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -656,18 +656,18 @@
 
     move-result-object v5
 
-    if-eqz v5, :cond_7e
+    if-eqz v5, :cond_2
 
     invoke-virtual {v1, v4, v5}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    goto :goto_7e
+    goto :goto_1
 
-    :cond_9e
+    :cond_3
     const-string v2, "preferences"
 
     invoke-virtual {v0, v2, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    :cond_a3
+    :cond_4
     new-instance v1, Ljava/text/SimpleDateFormat;
 
     const-string v2, "yyyyMMdd_HHmmss"
@@ -686,16 +686,16 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    if-eqz p1, :cond_bc
+    if-eqz p1, :cond_5
 
     const-string v3, "Arqex_Config_"
 
-    goto :goto_be
+    goto :goto_2
 
-    :cond_bc
+    :cond_5
     const-string v3, "Arqex_Temas_"
 
-    :goto_be
+    :goto_2
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -767,12 +767,12 @@
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
-    :try_end_10f
-    .catchall {:try_start_2 .. :try_end_10f} :catchall_110
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_121
+    goto :goto_3
 
-    :catchall_110
+    :catchall_0
     move-exception v2
 
     const-string v3, "arqex_theme_backup_export_failed"
@@ -791,13 +791,13 @@
 
     invoke-virtual {v3}, Landroid/widget/Toast;->show()V
 
-    :cond_121
-    :goto_121
+    :cond_6
+    :goto_3
     return-void
 .end method
 
 .method public static finalizeSingleBtnDialog(Llibs/ml1;)V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -809,7 +809,7 @@
 
     iget-object v0, p0, Llibs/od;->Z:Lcom/mixplorer/widgets/MiButton;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     const/16 v1, 0x8
 
@@ -817,14 +817,14 @@
 
     invoke-virtual {p0}, Llibs/od;->Cur()V
 
-    :cond_14
+    :cond_0
     invoke-virtual {p0}, Llibs/od;->show()V
 
     return-void
 .end method
 
 .method public static getActiveThemeName()Ljava/lang/String;
-    .registers 3
+    .locals 3
 
     invoke-static {}, Llibs/CustomThemeV128;->getPrefs()Landroid/content/SharedPreferences;
 
@@ -832,60 +832,60 @@
 
     const-string v1, "Dark"
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     return-object v1
 
-    :cond_9
+    :cond_0
     const-string v2, "saved_customized"
 
     invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_2
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v2
 
-    if-nez v2, :cond_18
+    if-nez v2, :cond_1
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_18
+    :cond_1
     return-object v0
 
-    :cond_19
-    :goto_19
+    :cond_2
+    :goto_0
     return-object v1
 .end method
 
 .method public static getPrefs()Landroid/content/SharedPreferences;
-    .registers 1
+    .locals 1
 
     sget-object v0, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     iget-object v0, v0, Llibs/p63;->Api:Landroid/content/SharedPreferences;
 
     return-object v0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
 .method public static importBackupPath(Landroid/content/Context;Ljava/lang/String;Landroid/widget/TextView;)V
-    .registers 11
+    .locals 8
 
-    if-eqz p0, :cond_88
+    if-eqz p0, :cond_4
 
-    if-eqz p1, :cond_88
+    if-eqz p1, :cond_4
 
-    :try_start_4
+    :try_start_0
     invoke-static {p1}, Llibs/CustomThemeV128;->readUtf8File(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -900,7 +900,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_1
 
     const-string v2, "Skins"
 
@@ -908,7 +908,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_3c
+    if-eqz v2, :cond_1
 
     invoke-interface {v2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
@@ -918,12 +918,12 @@
 
     move-result-object v3
 
-    :goto_25
+    :goto_0
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_39
+    if-eqz v4, :cond_0
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -937,25 +937,25 @@
 
     invoke-interface {v2, v4, v5}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_39
+    :cond_0
     invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    :cond_3c
+    :cond_1
     const-string v0, "preferences"
 
     invoke-virtual {v1, v0}, Lorg/json/JSONObject;->optJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v0
 
-    if-eqz v0, :cond_6b
+    if-eqz v0, :cond_3
 
     invoke-static {}, Llibs/CustomThemeV128;->getPrefs()Landroid/content/SharedPreferences;
 
     move-result-object v2
 
-    if-eqz v2, :cond_6b
+    if-eqz v2, :cond_3
 
     invoke-interface {v2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
@@ -965,12 +965,12 @@
 
     move-result-object v3
 
-    :goto_52
+    :goto_1
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_68
+    if-eqz v4, :cond_2
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -986,12 +986,12 @@
 
     invoke-static {v2, v4, v5}, Llibs/CustomThemeV128;->restorePreference(Landroid/content/SharedPreferences$Editor;Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_52
+    goto :goto_1
 
-    :cond_68
+    :cond_2
     invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    :cond_6b
+    :cond_3
     const-string v0, "active_skin"
 
     invoke-static {}, Llibs/CustomThemeV128;->getActiveThemeName()Ljava/lang/String;
@@ -1019,16 +1019,16 @@
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
-    :try_end_88
-    .catchall {:try_start_4 .. :try_end_88} :catchall_88
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_88
-    :cond_88
+    :catchall_0
+    :cond_4
     return-void
 .end method
 
 .method private static readUtf8File(Ljava/lang/String;)Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     :try_start_0
     new-instance v0, Ljava/io/FileInputStream;
@@ -1047,22 +1047,22 @@
 
     new-array v2, v2, [B
 
-    :goto_13
+    :goto_0
     invoke-virtual {v0, v2}, Ljava/io/InputStream;->read([B)I
 
     move-result v3
 
     const/4 v4, -0x1
 
-    if-eq v3, v4, :cond_1f
+    if-eq v3, v4, :cond_0
 
     const/4 v4, 0x0
 
     invoke-virtual {v1, v2, v4, v3}, Ljava/io/ByteArrayOutputStream;->write([BII)V
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     invoke-virtual {v0}, Ljava/io/FileInputStream;->close()V
 
     new-instance v0, Ljava/lang/String;
@@ -1074,25 +1074,25 @@
     const-string v2, "UTF-8"
 
     invoke-direct {v0, v1, v2}, Ljava/lang/String;-><init>([BLjava/lang/String;)V
-    :try_end_2d
-    .catchall {:try_start_0 .. :try_end_2d} :catchall_2e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object v0
 
-    :catchall_2e
+    :catchall_0
     const-string p0, "{}"
 
     return-object p0
 .end method
 
 .method public static refreshSettingsRowText(Landroid/widget/TextView;)V
-    .registers 10
+    .locals 9
 
-    if-nez p0, :cond_3
+    if-nez p0, :cond_0
 
     return-void
 
-    :cond_3
+    :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v8
@@ -1205,7 +1205,7 @@
 .end method
 
 .method public static resolveAccent()I
-    .registers 2
+    .locals 2
 
     const-string v0, "TINT_TAB_INDICATOR_SELECTED"
 
@@ -1215,16 +1215,16 @@
 
     move-result v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     const v0, -0xff1a01
 
-    :cond_d
+    :cond_0
     return v0
 .end method
 
 .method private static resolveBackupDir(Landroid/content/Context;)Ljava/io/File;
-    .registers 5
+    .locals 4
 
     sget-object v0, Landroid/os/Environment;->DIRECTORY_DOWNLOADS:Ljava/lang/String;
 
@@ -1232,7 +1232,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_1
 
     new-instance v2, Ljava/io/File;
 
@@ -1244,31 +1244,31 @@
 
     move-result v1
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_0
 
     invoke-virtual {v2}, Ljava/io/File;->mkdirs()Z
 
-    :cond_18
+    :cond_0
     invoke-virtual {v2}, Ljava/io/File;->canWrite()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_1
 
     return-object v2
 
-    :cond_1f
+    :cond_1
     const-string v1, "ArqexExplorer"
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getExternalFilesDir(Ljava/lang/String;)Ljava/io/File;
 
     move-result-object v1
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_2
 
     return-object v1
 
-    :cond_28
+    :cond_2
     invoke-virtual {p0}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
 
     move-result-object p0
@@ -1277,18 +1277,18 @@
 .end method
 
 .method private static restorePreference(Landroid/content/SharedPreferences$Editor;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 7
+    .locals 4
 
-    if-eqz p2, :cond_4a
+    if-eqz p2, :cond_4
 
-    :try_start_2
+    :try_start_0
     invoke-virtual {p2}, Ljava/lang/String;->length()I
 
     move-result v0
 
     const/4 v1, 0x2
 
-    if-lt v0, v1, :cond_4a
+    if-lt v0, v1, :cond_4
 
     const/4 v0, 0x2
 
@@ -1304,7 +1304,7 @@
 
     const/16 v2, 0x42
 
-    if-ne v1, v2, :cond_1f
+    if-ne v1, v2, :cond_0
 
     invoke-static {v0}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
 
@@ -1312,12 +1312,12 @@
 
     invoke-interface {p0, p1, v0}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    goto :goto_4a
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     const/16 v2, 0x49
 
-    if-ne v1, v2, :cond_2b
+    if-ne v1, v2, :cond_1
 
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
@@ -1325,12 +1325,12 @@
 
     invoke-interface {p0, p1, v0}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    goto :goto_4a
+    goto :goto_0
 
-    :cond_2b
+    :cond_1
     const/16 v2, 0x4c
 
-    if-ne v1, v2, :cond_37
+    if-ne v1, v2, :cond_2
 
     invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
@@ -1338,12 +1338,12 @@
 
     invoke-interface {p0, p1, v0, v1}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
-    goto :goto_4a
+    goto :goto_0
 
-    :cond_37
+    :cond_2
     const/16 v2, 0x46
 
-    if-ne v1, v2, :cond_43
+    if-ne v1, v2, :cond_3
 
     invoke-static {v0}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
 
@@ -1351,38 +1351,38 @@
 
     invoke-interface {p0, p1, v0}, Landroid/content/SharedPreferences$Editor;->putFloat(Ljava/lang/String;F)Landroid/content/SharedPreferences$Editor;
 
-    goto :goto_4a
+    goto :goto_0
 
-    :cond_43
+    :cond_3
     const/16 v2, 0x53
 
-    if-ne v1, v2, :cond_4a
+    if-ne v1, v2, :cond_4
 
     invoke-interface {p0, p1, v0}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-    :try_end_4a
-    .catchall {:try_start_2 .. :try_end_4a} :catchall_4a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_4a
-    :cond_4a
-    :goto_4a
+    :catchall_0
+    :cond_4
+    :goto_0
     return-void
 .end method
 
 .method public static sanitizeBrandText(Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 3
 
-    if-nez p0, :cond_3
+    if-nez p0, :cond_0
 
     return-object p0
 
-    :cond_3
+    :cond_0
     const-string v0, "Arqex Explorer"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v1
 
-    if-ltz v1, :cond_11
+    if-ltz v1, :cond_1
 
     const-string v1, "Arqex Explorer"
 
@@ -1390,14 +1390,14 @@
 
     move-result-object p0
 
-    :cond_11
+    :cond_1
     const-string v0, "-ARQEX-RELEASE"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v1
 
-    if-ltz v1, :cond_1f
+    if-ltz v1, :cond_2
 
     const-string v1, ""
 
@@ -1405,14 +1405,14 @@
 
     move-result-object p0
 
-    :cond_1f
+    :cond_2
     const-string v0, "Andredye Oliveira"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v1
 
-    if-ltz v1, :cond_2d
+    if-ltz v1, :cond_3
 
     const-string v1, "Andredye Oliveira"
 
@@ -1420,18 +1420,18 @@
 
     move-result-object p0
 
-    :cond_2d
+    :cond_3
     return-object p0
 .end method
 
 .method public static shareExportedFile(Landroid/content/Context;Ljava/lang/String;)V
-    .registers 5
+    .locals 3
 
-    if-eqz p0, :cond_2a
+    if-eqz p0, :cond_0
 
-    if-eqz p1, :cond_2a
+    if-eqz p1, :cond_0
 
-    :try_start_4
+    :try_start_0
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.SEND"
@@ -1463,28 +1463,28 @@
     move-result-object v0
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
-    :try_end_28
-    .catchall {:try_start_4 .. :try_end_28} :catchall_29
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_2a
+    goto :goto_0
 
-    :catchall_29
+    :catchall_0
     nop
 
-    :cond_2a
-    :goto_2a
+    :cond_0
+    :goto_0
     return-void
 .end method
 
 .method public static showHubDialog(Landroid/content/Context;Landroid/widget/TextView;)V
-    .registers 13
+    .locals 11
 
-    if-nez p0, :cond_3
+    if-nez p0, :cond_0
 
     return-void
 
-    :cond_3
-    :try_start_3
+    :cond_0
+    :try_start_0
     new-instance v0, Llibs/ml1;
 
     const-string v1, "arqex_theme_hub_title"
@@ -1501,19 +1501,19 @@
 
     iget-object v1, v0, Llibs/ml1;->Six:Landroid/widget/LinearLayout;
 
-    if-eqz v1, :cond_8d
+    if-eqz v1, :cond_2
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v2, v0, Llibs/ml1;->Zero:Lcom/mixplorer/widgets/MiDraggableListView;
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_1
 
     const/16 v3, 0x8
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_21
+    :cond_1
     const-string v2, "TEXT_GRID_PRIMARY"
 
     const-string v3, "#FFEFF3F8"
@@ -1613,20 +1613,20 @@
     invoke-virtual {v3, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     invoke-static {v0}, Llibs/CustomThemeV128;->finalizeSingleBtnDialog(Llibs/ml1;)V
-    :try_end_8d
-    .catchall {:try_start_3 .. :try_end_8d} :catchall_8d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_8d
-    :cond_8d
+    :catchall_0
+    :cond_2
     return-void
 .end method
 
 .method public static showImportDialog(Landroid/content/Context;Landroid/widget/TextView;)V
-    .registers 13
+    .locals 11
 
-    if-eqz p0, :cond_fc
+    if-eqz p0, :cond_2
 
-    :try_start_2
+    :try_start_0
     new-instance v0, Llibs/ml1;
 
     const-string v1, "arqex_theme_import_title"
@@ -1643,19 +1643,19 @@
 
     iget-object v1, v0, Llibs/ml1;->Six:Landroid/widget/LinearLayout;
 
-    if-eqz v1, :cond_fc
+    if-eqz v1, :cond_2
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v2, v0, Llibs/ml1;->Zero:Lcom/mixplorer/widgets/MiDraggableListView;
 
-    if-eqz v2, :cond_20
+    if-eqz v2, :cond_0
 
     const/16 v3, 0x8
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_20
+    :cond_0
     new-instance v2, Landroid/widget/ScrollView;
 
     invoke-direct {v2, p0}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
@@ -1784,7 +1784,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_f9
+    if-eqz v2, :cond_1
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
@@ -1792,8 +1792,8 @@
 
     const/4 v5, 0x0
 
-    :goto_b7
-    if-ge v5, v4, :cond_f9
+    :goto_0
+    if-ge v5, v4, :cond_1
 
     invoke-virtual {v2, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1851,14 +1851,14 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_b7
+    goto :goto_0
 
-    :cond_f9
+    :cond_1
     invoke-static {v0}, Llibs/CustomThemeV128;->finalizeSingleBtnDialog(Llibs/ml1;)V
-    :try_end_fc
-    .catchall {:try_start_2 .. :try_end_fc} :catchall_fc
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_fc
-    :cond_fc
+    :catchall_0
+    :cond_2
     return-void
 .end method

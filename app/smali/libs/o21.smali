@@ -22,7 +22,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r31;Llibs/rp0;ZZILlibs/$d;)V
-    .registers 7
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 9
+    .locals 7
 
     .line 1
     sget v0, Llibs/bi2;->enter_key:I
@@ -102,14 +102,14 @@
     move-result v0
 
     .line 20
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 21
     .line 22
     return-void
 
     .line 23
-    :cond_16
+    :cond_0
     new-instance v0, Llibs/b31;
 
     .line 24

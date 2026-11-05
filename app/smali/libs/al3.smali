@@ -20,7 +20,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/TextEditorActivity;ZLcom/mixplorer/widgets/MiEditor;JI)V
-    .registers 7
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public final onDismiss(Landroid/content/DialogInterface;)V
-    .registers 6
+    .locals 4
 
     .line 1
     sget p1, Lcom/mixplorer/activities/TextEditorActivity;->$c:I
@@ -65,7 +65,7 @@
 
     .line 4
     .line 5
-    if-nez p1, :cond_19
+    if-nez p1, :cond_0
 
     .line 6
     .line 7
@@ -85,7 +85,7 @@
     move-result v0
 
     .line 15
-    if-nez v0, :cond_19
+    if-nez v0, :cond_0
 
     .line 16
     .line 17
@@ -106,6 +106,6 @@
     .line 24
     .line 25
     .line 26
-    :cond_19
+    :cond_0
     return-void
 .end method

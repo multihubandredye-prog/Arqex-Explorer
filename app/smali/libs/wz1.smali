@@ -22,7 +22,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/zz1;IJLjava/lang/String;JLjava/lang/Thread;)V
-    .registers 9
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 17
+    .locals 16
 
     .line 1
     move-object/from16 v1, p0
@@ -100,7 +100,7 @@
     const/4 v5, 0x1
 
     .line 18
-    :try_start_11
+    :try_start_0
     iget-object v4, v13, Llibs/zz1;->Psi:Llibs/b02;
 
     .line 19
@@ -110,9 +110,9 @@
     .line 21
     .line 22
     invoke-direct {v6, v13, v0, v2, v3}, Llibs/xz1;-><init>(Llibs/zz1;IJ)V
-    :try_end_18
-    .catch Ljava/lang/Exception; {:try_start_11 .. :try_end_18} :catch_3b
-    .catchall {:try_start_11 .. :try_end_18} :catchall_38
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 23
     .line 24
@@ -120,15 +120,15 @@
     const/4 v2, 0x1
 
     .line 26
-    :try_start_19
+    :try_start_1
     new-instance v5, Llibs/hh3;
 
     .line 27
     .line 28
     invoke-direct {v5, v6}, Llibs/hh3;-><init>(Llibs/gh3;)V
-    :try_end_1e
-    .catch Ljava/lang/Exception; {:try_start_19 .. :try_end_1e} :catch_36
-    .catchall {:try_start_19 .. :try_end_1e} :catchall_34
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 29
     .line 30
@@ -145,21 +145,21 @@
 
     .line 36
     .line 37
-    if-gez v0, :cond_28
+    if-gez v0, :cond_0
 
     .line 38
     .line 39
     const/4 v11, 0x1
 
     .line 40
-    goto :goto_29
+    goto :goto_0
 
     .line 41
-    :cond_28
+    :cond_0
     const/4 v11, 0x0
 
     .line 42
-    :goto_29
+    :goto_0
     const-wide/16 v6, 0x0
 
     .line 43
@@ -170,11 +170,11 @@
     const/4 v10, 0x0
 
     .line 46
-    :try_start_2d
+    :try_start_2
     invoke-virtual/range {v4 .. v11}, Llibs/b02;->Firebase(Llibs/hh3;JLjava/lang/String;Lcom/mixplorer/ProgressListener;Ljava/util/Properties;Z)Llibs/rp0;
-    :try_end_30
-    .catch Ljava/lang/Exception; {:try_start_2d .. :try_end_30} :catch_36
-    .catchall {:try_start_2d .. :try_end_30} :catchall_34
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 47
     .line 48
@@ -187,39 +187,39 @@
     return-void
 
     .line 53
-    :catchall_34
+    :catchall_0
     move-exception v0
 
     .line 54
-    goto :goto_5d
+    goto :goto_2
 
     .line 55
-    :catch_36
+    :catch_0
     move-exception v0
 
     .line 56
-    goto :goto_3d
+    goto :goto_1
 
     .line 57
-    :catchall_38
+    :catchall_1
     move-exception v0
 
     .line 58
     const/4 v2, 0x1
 
     .line 59
-    goto :goto_5d
+    goto :goto_2
 
     .line 60
-    :catch_3b
+    :catch_1
     move-exception v0
 
     .line 61
     const/4 v2, 0x1
 
     .line 62
-    :goto_3d
-    :try_start_3d
+    :goto_1
+    :try_start_3
     iget-object v3, v13, Llibs/zz1;->Omicron:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     .line 63
@@ -268,8 +268,8 @@
     .line 86
     .line 87
     invoke-virtual {v12}, Ljava/lang/Thread;->interrupt()V
-    :try_end_59
-    .catchall {:try_start_3d .. :try_end_59} :catchall_34
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 88
     .line 89
@@ -282,7 +282,7 @@
     return-void
 
     .line 94
-    :goto_5d
+    :goto_2
     invoke-virtual {v14, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
     .line 95

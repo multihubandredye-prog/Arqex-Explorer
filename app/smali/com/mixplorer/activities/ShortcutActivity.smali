@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Lcom/mixplorer/activities/a;-><init>()V
@@ -23,7 +23,7 @@
 
 # virtual methods
 .method public final onCreate(Landroid/os/Bundle;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-super {p0, p1}, Lcom/mixplorer/activities/a;->onCreate(Landroid/os/Bundle;)V

@@ -30,7 +30,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljavax/crypto/KeyAgreementSpi;-><init>()V
@@ -42,21 +42,21 @@
 .end method
 
 .method private checkCompleted()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLBaseDHKeyAgreement;->mResult:[B
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     const-string v0, "Key agreement not completed"
 
     .line 7
@@ -100,7 +100,7 @@
 .end method
 
 .method public engineDoPhase(Ljava/security/Key;Z)Ljava/security/Key;
-    .registers 7
+    .locals 4
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLBaseDHKeyAgreement;->mPrivateKey:Ljava/lang/Object;
@@ -110,15 +110,15 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_7c
+    if-eqz v0, :cond_6
 
     .line 5
     .line 6
-    if-eqz p2, :cond_76
+    if-eqz p2, :cond_5
 
     .line 7
     .line 8
-    if-eqz p1, :cond_70
+    if-eqz p1, :cond_4
 
     .line 9
     .line 10
@@ -126,7 +126,7 @@
 
     .line 11
     .line 12
-    if-eqz p2, :cond_58
+    if-eqz p2, :cond_3
 
     .line 13
     .line 14
@@ -165,7 +165,7 @@
     const/4 v0, -0x1
 
     .line 31
-    if-eq p1, v0, :cond_52
+    if-eq p1, v0, :cond_2
 
     .line 32
     .line 33
@@ -173,15 +173,15 @@
 
     .line 34
     .line 35
-    if-ne p1, v0, :cond_25
+    if-ne p1, v0, :cond_0
 
     .line 36
     .line 37
-    goto :goto_31
+    goto :goto_0
 
     .line 38
-    :cond_25
-    if-ge p1, v0, :cond_34
+    :cond_0
+    if-ge p1, v0, :cond_1
 
     .line 39
     .line 40
@@ -207,7 +207,7 @@
     move-object p2, p1
 
     .line 50
-    :goto_31
+    :goto_0
     iput-object p2, p0, Lorg/conscrypt/OpenSSLBaseDHKeyAgreement;->mResult:[B
 
     .line 51
@@ -215,7 +215,7 @@
     return-object v1
 
     .line 53
-    :cond_34
+    :cond_1
     new-instance p2, Ljava/lang/RuntimeException;
 
     .line 54
@@ -272,7 +272,7 @@
     throw p2
 
     .line 83
-    :cond_52
+    :cond_2
     const-string p1, "Engine returned -1"
 
     .line 84
@@ -285,7 +285,7 @@
     return-object v1
 
     .line 89
-    :cond_58
+    :cond_3
     new-instance p2, Ljava/security/InvalidKeyException;
 
     .line 90
@@ -332,7 +332,7 @@
     throw p2
 
     .line 113
-    :cond_70
+    :cond_4
     const-string p1, "key == null"
 
     .line 114
@@ -345,7 +345,7 @@
     return-object v1
 
     .line 119
-    :cond_76
+    :cond_5
     const-string p1, "DH only has one phase"
 
     .line 120
@@ -358,7 +358,7 @@
     return-object v1
 
     .line 125
-    :cond_7c
+    :cond_6
     const-string p1, "Not initialized"
 
     .line 126
@@ -372,7 +372,7 @@
 .end method
 
 .method public engineGenerateSecret([BI)I
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/OpenSSLBaseDHKeyAgreement;->checkCompleted()V
@@ -393,7 +393,7 @@
     array-length v2, v1
 
     .line 9
-    if-gt v2, v0, :cond_13
+    if-gt v2, v0, :cond_0
 
     .line 10
     .line 11
@@ -418,7 +418,7 @@
     return p1
 
     .line 20
-    :cond_13
+    :cond_0
     new-instance p1, Lorg/conscrypt/ShortBufferWithoutStackTraceException;
 
     .line 21
@@ -479,7 +479,7 @@
 .end method
 
 .method public engineGenerateSecret(Ljava/lang/String;)Ljavax/crypto/SecretKey;
-    .registers 4
+    .locals 2
 
     .line 53
     invoke-direct {p0}, Lorg/conscrypt/OpenSSLBaseDHKeyAgreement;->checkCompleted()V
@@ -497,7 +497,7 @@
 .end method
 
 .method public engineGenerateSecret()[B
-    .registers 2
+    .locals 1
 
     .line 51
     invoke-direct {p0}, Lorg/conscrypt/OpenSSLBaseDHKeyAgreement;->checkCompleted()V
@@ -509,10 +509,10 @@
 .end method
 
 .method public engineInit(Ljava/security/Key;Ljava/security/SecureRandom;)V
-    .registers 5
+    .locals 2
 
     .line 1
-    if-eqz p1, :cond_2d
+    if-eqz p1, :cond_1
 
     .line 2
     .line 3
@@ -520,7 +520,7 @@
 
     .line 4
     .line 5
-    if-eqz p2, :cond_15
+    if-eqz p2, :cond_0
 
     .line 6
     .line 7
@@ -555,7 +555,7 @@
     return-void
 
     .line 22
-    :cond_15
+    :cond_0
     new-instance p2, Ljava/security/InvalidKeyException;
 
     .line 23
@@ -602,7 +602,7 @@
     throw p2
 
     .line 46
-    :cond_2d
+    :cond_1
     const-string p1, "key == null"
 
     .line 47
@@ -616,9 +616,9 @@
 .end method
 
 .method public engineInit(Ljava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    .registers 4
+    .locals 0
 
-    if-nez p2, :cond_6
+    if-nez p2, :cond_0
 
     .line 52
     invoke-virtual {p0, p1, p3}, Lorg/conscrypt/OpenSSLBaseDHKeyAgreement;->engineInit(Ljava/security/Key;Ljava/security/SecureRandom;)V
@@ -626,7 +626,7 @@
     return-void
 
     .line 53
-    :cond_6
+    :cond_0
     const-string p1, "No algorithm parameters supported"
 
     invoke-static {p1}, Llibs/t22;->i(Ljava/lang/String;)V

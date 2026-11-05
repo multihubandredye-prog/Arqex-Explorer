@@ -13,14 +13,14 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/nio/charset/Charset;ZLjava/lang/String;ZZZJLjava/lang/String;IB)V
-    .registers 13
+    .locals 0
 
     .line 1
     iput-byte p12, p0, Llibs/h2;->Set:B
 
     .line 2
     .line 3
-    packed-switch p12, :pswitch_data_86
+    packed-switch p12, :pswitch_data_0
 
     .line 4
     .line 5
@@ -71,7 +71,7 @@
     return-void
 
     .line 30
-    :pswitch_1d
+    :pswitch_0
     invoke-direct/range {p0 .. p11}, Llibs/vd;-><init>(Ljava/lang/String;Ljava/nio/charset/Charset;ZLjava/lang/String;ZZZJLjava/lang/String;I)V
 
     .line 31
@@ -123,7 +123,7 @@
     return-void
 
     .line 57
-    :pswitch_38
+    :pswitch_1
     invoke-direct/range {p0 .. p11}, Llibs/vd;-><init>(Ljava/lang/String;Ljava/nio/charset/Charset;ZLjava/lang/String;ZZZJLjava/lang/String;I)V
 
     .line 58
@@ -183,7 +183,7 @@
     return-void
 
     .line 88
-    :pswitch_57
+    :pswitch_2
     invoke-static {p10}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
 
     .line 89
@@ -192,7 +192,7 @@
     move-result p12
 
     .line 92
-    if-eqz p12, :cond_5f
+    if-eqz p12, :cond_0
 
     .line 93
     .line 94
@@ -200,7 +200,7 @@
 
     .line 95
     .line 96
-    :cond_5f
+    :cond_0
     move p12, p11
 
     .line 97
@@ -288,16 +288,16 @@
     return-void
 
     .line 135
-    :pswitch_data_86
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_57
-        :pswitch_38
-        :pswitch_1d
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static Mid(Ljava/util/ArrayList;Lorg/json/JSONArray;Ljava/lang/String;)V
-    .registers 8
+    .locals 5
 
     .line 1
     invoke-virtual {p1}, Lorg/json/JSONArray;->length()I
@@ -311,8 +311,8 @@
     const/4 v1, 0x0
 
     .line 6
-    :goto_5
-    if-ge v1, v0, :cond_2a
+    :goto_0
+    if-ge v1, v0, :cond_2
 
     .line 7
     .line 8
@@ -336,7 +336,7 @@
     move-result-object v3
 
     .line 18
-    if-eqz v3, :cond_16
+    if-eqz v3, :cond_0
 
     .line 19
     .line 20
@@ -345,7 +345,7 @@
     .line 21
     .line 22
     .line 23
-    :cond_16
+    :cond_0
     new-instance v3, Llibs/fc1;
 
     .line 24
@@ -370,7 +370,7 @@
     move-result v2
 
     .line 35
-    if-eqz v2, :cond_27
+    if-eqz v2, :cond_1
 
     .line 36
     .line 37
@@ -379,22 +379,22 @@
     .line 38
     .line 39
     .line 40
-    :cond_27
+    :cond_1
     add-int/lit8 v1, v1, 0x1
 
     .line 41
     .line 42
-    goto :goto_5
+    goto :goto_0
 
     .line 43
-    :cond_2a
+    :cond_2
     return-void
 .end method
 
 
 # virtual methods
 .method public final Add(Llibs/rp0;Ljava/lang/String;Z)Ljava/lang/String;
-    .registers 13
+    .locals 9
 
     .line 1
     iget-byte v0, p0, Llibs/h2;->Set:B
@@ -429,7 +429,7 @@
 
     .line 14
     .line 15
-    packed-switch v0, :pswitch_data_16e
+    packed-switch v0, :pswitch_data_0
 
     .line 16
     .line 17
@@ -439,7 +439,7 @@
     .line 19
     .line 20
     .line 21
-    if-eqz p3, :cond_5b
+    if-eqz p3, :cond_1
 
     .line 22
     .line 23
@@ -447,7 +447,7 @@
 
     .line 24
     .line 25
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_0
 
     .line 26
     .line 27
@@ -455,7 +455,7 @@
 
     .line 28
     .line 29
-    :cond_1c
+    :cond_0
     const-string p1, "\",\"uri\":\""
 
     .line 30
@@ -579,7 +579,7 @@
     return-object p1
 
     .line 92
-    :cond_5b
+    :cond_1
     new-instance p1, Lexceptions/NotSupportedException;
 
     .line 93
@@ -596,7 +596,7 @@
     throw p1
 
     .line 100
-    :pswitch_63
+    :pswitch_0
     invoke-virtual {p0}, Llibs/h2;->h()V
 
     .line 101
@@ -606,7 +606,7 @@
 
     .line 104
     .line 105
-    if-eqz p1, :cond_6c
+    if-eqz p1, :cond_2
 
     .line 106
     .line 107
@@ -614,7 +614,7 @@
 
     .line 108
     .line 109
-    :cond_6c
+    :cond_2
     new-instance p1, Ljava/lang/StringBuilder;
 
     .line 110
@@ -780,7 +780,7 @@
     move-result p2
 
     .line 196
-    if-eqz p2, :cond_cb
+    if-eqz p2, :cond_3
 
     .line 197
     .line 198
@@ -793,10 +793,10 @@
     .line 201
     .line 202
     .line 203
-    goto :goto_df
+    goto :goto_0
 
     .line 204
-    :cond_cb
+    :cond_3
     const-string p2, "size"
 
     .line 205
@@ -835,7 +835,7 @@
     .line 222
     .line 223
     .line 224
-    :goto_df
+    :goto_0
     const-string p2, "publicLink"
 
     .line 225
@@ -851,12 +851,12 @@
     return-object p1
 
     .line 231
-    :pswitch_e6
+    :pswitch_1
     iget-boolean p1, p1, Llibs/rp0;->One:Z
 
     .line 232
     .line 233
-    if-eqz p1, :cond_ed
+    if-eqz p1, :cond_4
 
     .line 234
     .line 235
@@ -864,15 +864,15 @@
 
     .line 236
     .line 237
-    goto :goto_ef
+    goto :goto_1
 
     .line 238
-    :cond_ed
+    :cond_4
     const-string p1, "%s/getfilepublink?path=%s"
 
     .line 239
     .line 240
-    :goto_ef
+    :goto_1
     iget-object p3, p0, Llibs/h2;->Context:Ljava/lang/String;
 
     .line 241
@@ -962,12 +962,12 @@
     return-object p1
 
     .line 285
-    :pswitch_11c
+    :pswitch_2
     iget-boolean v0, p1, Llibs/rp0;->One:Z
 
     .line 286
     .line 287
-    if-eqz v0, :cond_123
+    if-eqz v0, :cond_5
 
     .line 288
     .line 289
@@ -975,15 +975,15 @@
 
     .line 290
     .line 291
-    goto :goto_125
+    goto :goto_2
 
     .line 292
-    :cond_123
+    :cond_5
     const-string v0, "https://www.mediafire.com/api/1.5/file/update.php?session_token=%s&quick_key=%s&privacy=%s&response_format=json"
 
     .line 293
     .line 294
-    :goto_125
+    :goto_2
     invoke-virtual {p0}, Llibs/h2;->Top()Ljava/lang/String;
 
     .line 295
@@ -992,7 +992,7 @@
     move-result-object v4
 
     .line 298
-    if-eqz p3, :cond_12e
+    if-eqz p3, :cond_6
 
     .line 299
     .line 300
@@ -1000,15 +1000,15 @@
 
     .line 301
     .line 302
-    goto :goto_130
+    goto :goto_3
 
     .line 303
-    :cond_12e
+    :cond_6
     const-string v5, "private"
 
     .line 304
     .line 305
-    :goto_130
+    :goto_3
     new-array v6, v7, [Ljava/lang/Object;
 
     .line 306
@@ -1054,22 +1054,22 @@
     .line 326
     .line 327
     .line 328
-    if-nez p3, :cond_14b
+    if-nez p3, :cond_7
 
     .line 329
     .line 330
     const/4 p1, 0x0
 
     .line 331
-    goto :goto_16c
+    goto :goto_4
 
     .line 332
-    :cond_14b
+    :cond_7
     iget-boolean p3, p1, Llibs/rp0;->One:Z
 
     .line 333
     .line 334
-    if-eqz p3, :cond_166
+    if-eqz p3, :cond_8
 
     .line 335
     .line 336
@@ -1117,10 +1117,10 @@
     move-result-object p1
 
     .line 358
-    goto :goto_16c
+    goto :goto_4
 
     .line 359
-    :cond_166
+    :cond_8
     const-string p1, "https://www.mediafire.com/view/"
 
     .line 360
@@ -1133,23 +1133,23 @@
     move-result-object p1
 
     .line 365
-    :goto_16c
+    :goto_4
     return-object p1
 
     .line 366
     nop
 
     .line 367
-    :pswitch_data_16e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_11c
-        :pswitch_e6
-        :pswitch_63
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public All(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JZ)Llibs/ec1;
-    .registers 13
+    .locals 6
 
     .line 1
     invoke-virtual {p0}, Llibs/h2;->h()V
@@ -1161,7 +1161,7 @@
 
     .line 5
     .line 6
-    if-eqz p6, :cond_a
+    if-eqz p6, :cond_0
 
     .line 7
     .line 8
@@ -1169,14 +1169,14 @@
 
     .line 9
     .line 10
-    goto :goto_b
+    goto :goto_0
 
     .line 11
-    :cond_a
+    :cond_0
     move-object v1, v0
 
     .line 12
-    :goto_b
+    :goto_0
     const-string v2, ">"
 
     .line 13
@@ -1185,7 +1185,7 @@
 
     .line 15
     .line 16
-    if-nez p2, :cond_22
+    if-nez p2, :cond_1
 
     .line 17
     .line 18
@@ -1221,10 +1221,10 @@
     move-result-object p2
 
     .line 34
-    goto :goto_2e
+    goto :goto_1
 
     .line 35
-    :cond_22
+    :cond_1
     const-string v4, "><parent>"
 
     .line 36
@@ -1249,7 +1249,7 @@
     move-result-object p2
 
     .line 47
-    :goto_2e
+    :goto_1
     iget-object v1, p0, Llibs/vd;->d:Ljava/lang/String;
 
     .line 48
@@ -1358,7 +1358,7 @@
 
     .line 102
     .line 103
-    if-eqz p6, :cond_6a
+    if-eqz p6, :cond_2
 
     .line 104
     .line 105
@@ -1366,12 +1366,12 @@
 
     .line 106
     .line 107
-    :cond_6a
+    :cond_2
     iput-object v0, p2, Llibs/ec1;->Y:Ljava/lang/String;
 
     .line 108
     .line 109
-    if-nez p6, :cond_7e
+    if-nez p6, :cond_3
 
     .line 110
     .line 111
@@ -1407,12 +1407,12 @@
 
     .line 126
     .line 127
-    :cond_7e
+    :cond_3
     return-object p2
 .end method
 
 .method public Any(ILjava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;)V
-    .registers 11
+    .locals 6
 
     .line 1
     invoke-static {p2}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
@@ -1435,7 +1435,7 @@
 
     .line 10
     .line 11
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
@@ -1492,10 +1492,10 @@
     move-result-object p1
 
     .line 42
-    goto :goto_47
+    goto :goto_0
 
     .line 43
-    :cond_2a
+    :cond_0
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     .line 44
@@ -1549,7 +1549,7 @@
     move-result-object p1
 
     .line 72
-    :goto_47
+    :goto_0
     const-string v0, "https://www.mediafire.com/api/1.5/folder/get_content.php?"
 
     .line 73
@@ -1651,14 +1651,14 @@
     move-result-object p1
 
     .line 123
-    if-nez p1, :cond_7d
+    if-nez p1, :cond_1
 
     .line 124
     .line 125
-    goto :goto_bb
+    goto :goto_4
 
     .line 126
-    :cond_7d
+    :cond_1
     invoke-virtual {p1}, Lorg/json/JSONArray;->length()I
 
     .line 127
@@ -1678,8 +1678,8 @@
     const/4 v3, 0x0
 
     .line 135
-    :goto_86
-    if-ge v3, v1, :cond_b0
+    :goto_1
+    if-ge v3, v1, :cond_4
 
     .line 136
     .line 137
@@ -1691,14 +1691,14 @@
     move-result v4
 
     .line 141
-    if-eqz v4, :cond_8f
+    if-eqz v4, :cond_2
 
     .line 142
     .line 143
-    goto :goto_b0
+    goto :goto_3
 
     .line 144
-    :cond_8f
+    :cond_2
     const-string v4, "files"
 
     .line 145
@@ -1711,7 +1711,7 @@
     move-result v4
 
     .line 150
-    if-eqz v4, :cond_a1
+    if-eqz v4, :cond_3
 
     .line 151
     .line 152
@@ -1732,10 +1732,10 @@
     .line 159
     .line 160
     .line 161
-    goto :goto_aa
+    goto :goto_2
 
     .line 162
-    :cond_a1
+    :cond_3
     new-instance v4, Llibs/tr0;
 
     .line 163
@@ -1753,7 +1753,7 @@
     .line 169
     .line 170
     .line 171
-    :goto_aa
+    :goto_2
     invoke-interface {p4, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 172
@@ -1763,12 +1763,12 @@
 
     .line 175
     .line 176
-    goto :goto_86
+    goto :goto_1
 
     .line 177
-    :cond_b0
-    :goto_b0
-    if-eqz v0, :cond_bb
+    :cond_4
+    :goto_3
+    if-eqz v0, :cond_5
 
     .line 178
     .line 179
@@ -1789,13 +1789,13 @@
     .line 186
     .line 187
     .line 188
-    :cond_bb
-    :goto_bb
+    :cond_5
+    :goto_4
     return-void
 .end method
 
 .method public Bot(Llibs/d11;)Lorg/json/JSONObject;
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-virtual {p0, p1}, Llibs/vd;->i(Llibs/d11;)V
@@ -1803,7 +1803,7 @@
     .line 2
     .line 3
     .line 4
-    :try_start_3
+    :try_start_0
     const-string v0, "response"
 
     .line 5
@@ -1840,14 +1840,14 @@
     move-result v0
 
     .line 22
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 23
     .line 24
     return-object p1
 
     .line 25
-    :cond_18
+    :cond_0
     const-string v0, "message"
 
     .line 26
@@ -1873,16 +1873,16 @@
 
     .line 37
     invoke-static {v1, p1}, Llibs/vw1;->i(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_27
-    .catchall {:try_start_3 .. :try_end_27} :catchall_28
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 38
     .line 39
     .line 40
-    goto :goto_2d
+    goto :goto_0
 
     .line 41
-    :catchall_28
+    :catchall_0
     move-exception p1
 
     .line 42
@@ -1894,7 +1894,7 @@
     move-result-object v0
 
     .line 46
-    :goto_2d
+    :goto_0
     invoke-static {v0}, Llibs/fg3;->d(Ljava/lang/String;)V
 
     .line 47
@@ -1907,7 +1907,7 @@
 .end method
 
 .method public final Bundle(Ljava/lang/String;)Ljava/util/List;
-    .registers 14
+    .locals 12
 
     .line 1
     iget-byte v0, p0, Llibs/h2;->Set:B
@@ -1928,7 +1928,7 @@
     const/4 v4, 0x1
 
     .line 9
-    packed-switch v0, :pswitch_data_1dc
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
@@ -2121,8 +2121,8 @@
     move-result-object v3
 
     .line 112
-    :goto_6f
-    if-ge v2, v1, :cond_9f
+    :goto_0
+    if-ge v2, v1, :cond_2
 
     .line 113
     .line 114
@@ -2134,14 +2134,14 @@
     move-result v4
 
     .line 118
-    if-eqz v4, :cond_78
+    if-eqz v4, :cond_0
 
     .line 119
     .line 120
-    goto :goto_9f
+    goto :goto_1
 
     .line 121
-    :cond_78
+    :cond_0
     new-instance v4, Llibs/lc1;
 
     .line 122
@@ -2171,7 +2171,7 @@
     move-result v6
 
     .line 136
-    if-nez v6, :cond_9c
+    if-nez v6, :cond_1
 
     .line 137
     .line 138
@@ -2187,7 +2187,7 @@
     move-result v6
 
     .line 144
-    if-nez v6, :cond_9c
+    if-nez v6, :cond_1
 
     .line 145
     .line 146
@@ -2203,7 +2203,7 @@
     move-result v5
 
     .line 152
-    if-nez v5, :cond_9c
+    if-nez v5, :cond_1
 
     .line 153
     .line 154
@@ -2212,16 +2212,16 @@
     .line 155
     .line 156
     .line 157
-    :cond_9c
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
     .line 158
     .line 159
-    goto :goto_6f
+    goto :goto_0
 
     .line 160
-    :cond_9f
-    :goto_9f
+    :cond_2
+    :goto_1
     invoke-virtual {p0}, Llibs/vd;->Wait()V
 
     .line 161
@@ -2230,7 +2230,7 @@
     return-object p1
 
     .line 164
-    :pswitch_a3
+    :pswitch_0
     invoke-virtual {p0}, Llibs/h2;->h()V
 
     .line 165
@@ -2244,7 +2244,7 @@
     move-result v0
 
     .line 171
-    if-eqz v0, :cond_ae
+    if-eqz v0, :cond_3
 
     .line 172
     .line 173
@@ -2252,7 +2252,7 @@
 
     .line 174
     .line 175
-    :cond_ae
+    :cond_3
     const-string v0, "/contents"
 
     .line 176
@@ -2265,7 +2265,7 @@
     move-result v1
 
     .line 181
-    if-nez v1, :cond_ba
+    if-nez v1, :cond_4
 
     .line 182
     .line 183
@@ -2277,7 +2277,7 @@
     move-result-object p1
 
     .line 187
-    :cond_ba
+    :cond_4
     new-instance v0, Ljava/util/ArrayList;
 
     .line 188
@@ -2290,8 +2290,8 @@
     const/4 v1, 0x0
 
     .line 193
-    :goto_c0
-    if-lez v1, :cond_d3
+    :goto_2
+    if-lez v1, :cond_5
 
     .line 194
     .line 195
@@ -2326,7 +2326,7 @@
     move-result-object p1
 
     .line 212
-    :cond_d3
+    :cond_5
     invoke-static {p1}, Llibs/vd;->Work(Ljava/lang/String;)Llibs/c;
 
     .line 213
@@ -2405,7 +2405,7 @@
     move-result v6
 
     .line 252
-    if-nez v6, :cond_102
+    if-nez v6, :cond_6
 
     .line 253
     .line 254
@@ -2417,14 +2417,14 @@
     move-result v5
 
     .line 258
-    goto :goto_103
+    goto :goto_3
 
     .line 259
-    :cond_102
+    :cond_6
     const/4 v5, 0x0
 
     .line 260
-    :goto_103
+    :goto_3
     const-string v6, "start"
 
     .line 261
@@ -2445,7 +2445,7 @@
     move-result v7
 
     .line 270
-    if-nez v7, :cond_112
+    if-nez v7, :cond_7
 
     .line 271
     .line 272
@@ -2454,7 +2454,7 @@
     .line 273
     .line 274
     .line 275
-    :cond_112
+    :cond_7
     const-string v6, "end"
 
     .line 276
@@ -2475,7 +2475,7 @@
     move-result v7
 
     .line 285
-    if-nez v7, :cond_123
+    if-nez v7, :cond_8
 
     .line 286
     .line 287
@@ -2487,14 +2487,14 @@
     move-result v6
 
     .line 291
-    goto :goto_124
+    goto :goto_4
 
     .line 292
-    :cond_123
+    :cond_8
     const/4 v6, 0x0
 
     .line 293
-    :goto_124
+    :goto_4
     invoke-interface {v1}, Lorg/w3c/dom/Node;->getChildNodes()Lorg/w3c/dom/NodeList;
 
     .line 294
@@ -2522,8 +2522,8 @@
     const/4 v9, 0x0
 
     .line 306
-    :goto_131
-    if-ge v9, v7, :cond_14b
+    :goto_5
+    if-ge v9, v7, :cond_a
 
     .line 307
     .line 308
@@ -2535,14 +2535,14 @@
     move-result v10
 
     .line 312
-    if-eqz v10, :cond_13a
+    if-eqz v10, :cond_9
 
     .line 313
     .line 314
-    goto :goto_14b
+    goto :goto_6
 
     .line 315
-    :cond_13a
+    :cond_9
     new-instance v10, Llibs/ec1;
 
     .line 316
@@ -2573,17 +2573,17 @@
 
     .line 330
     .line 331
-    goto :goto_131
+    goto :goto_5
 
     .line 332
-    :cond_14b
-    :goto_14b
+    :cond_a
+    :goto_6
     invoke-interface {v0, v4}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
     .line 333
     .line 334
     .line 335
-    if-nez v5, :cond_154
+    if-nez v5, :cond_b
 
     .line 336
     .line 337
@@ -2595,15 +2595,15 @@
     return-object v0
 
     .line 341
-    :cond_154
+    :cond_b
     move v1, v6
 
     .line 342
-    goto/16 :goto_c0
+    goto/16 :goto_2
 
     .line 343
     .line 344
-    :pswitch_157
+    :pswitch_1
     iget-object v0, p0, Llibs/h2;->Context:Ljava/lang/String;
 
     .line 345
@@ -2722,7 +2722,7 @@
     move-result-object p1
 
     .line 406
-    if-nez p1, :cond_19d
+    if-nez p1, :cond_c
 
     .line 407
     .line 408
@@ -2735,10 +2735,10 @@
     .line 411
     .line 412
     .line 413
-    goto :goto_1c7
+    goto :goto_9
 
     .line 414
-    :cond_19d
+    :cond_c
     new-instance v0, Ljava/util/ArrayList;
 
     .line 415
@@ -2764,8 +2764,8 @@
     move-result-object v3
 
     .line 427
-    :goto_1aa
-    if-ge v2, v1, :cond_1c3
+    :goto_7
+    if-ge v2, v1, :cond_e
 
     .line 428
     .line 429
@@ -2777,14 +2777,14 @@
     move-result v4
 
     .line 433
-    if-eqz v4, :cond_1b3
+    if-eqz v4, :cond_d
 
     .line 434
     .line 435
-    goto :goto_1c3
+    goto :goto_8
 
     .line 436
-    :cond_1b3
+    :cond_d
     new-instance v4, Llibs/fc1;
 
     .line 437
@@ -2814,11 +2814,11 @@
 
     .line 450
     .line 451
-    goto :goto_1aa
+    goto :goto_7
 
     .line 452
-    :cond_1c3
-    :goto_1c3
+    :cond_e
+    :goto_8
     invoke-virtual {p0}, Llibs/vd;->Wait()V
 
     .line 453
@@ -2827,11 +2827,11 @@
     move-object p1, v0
 
     .line 456
-    :goto_1c7
+    :goto_9
     return-object p1
 
     .line 457
-    :pswitch_1c8
+    :pswitch_2
     new-instance v0, Ljava/util/ArrayList;
 
     .line 458
@@ -2870,16 +2870,16 @@
     nop
 
     .line 477
-    :pswitch_data_1dc
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1c8
-        :pswitch_157
-        :pswitch_a3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final Context(JLjava/lang/String;)Llibs/d11;
-    .registers 14
+    .locals 10
 
     .line 1
     iget-byte v0, p0, Llibs/h2;->Set:B
@@ -2905,7 +2905,7 @@
 
     .line 11
     .line 12
-    packed-switch v0, :pswitch_data_142
+    packed-switch v0, :pswitch_data_0
 
     .line 13
     .line 14
@@ -3047,7 +3047,7 @@
     return-object p1
 
     .line 88
-    :pswitch_57
+    :pswitch_0
     invoke-virtual {p0}, Llibs/h2;->h()V
 
     .line 89
@@ -3129,7 +3129,7 @@
     return-object p1
 
     .line 131
-    :pswitch_82
+    :pswitch_1
     iget-object v0, p0, Llibs/h2;->Context:Ljava/lang/String;
 
     .line 132
@@ -3340,7 +3340,7 @@
     return-object p1
 
     .line 241
-    :pswitch_f0
+    :pswitch_2
     invoke-virtual {p0}, Llibs/h2;->Top()Ljava/lang/String;
 
     .line 242
@@ -3499,16 +3499,16 @@
     nop
 
     .line 323
-    :pswitch_data_142
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_f0
-        :pswitch_82
-        :pswitch_57
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public End(Ljava/lang/String;)Llibs/ec1;
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Llibs/h2;->h()V
@@ -3582,7 +3582,7 @@
 .end method
 
 .method public final Item(Ljava/lang/String;Ljava/lang/String;Z)Llibs/qd;
-    .registers 12
+    .locals 8
 
     .line 1
     iget-byte v0, p0, Llibs/h2;->Set:B
@@ -3612,12 +3612,12 @@
     const/4 v7, 0x0
 
     .line 12
-    packed-switch v0, :pswitch_data_a6
+    packed-switch v0, :pswitch_data_0
 
     .line 13
     .line 14
     .line 15
-    if-nez p3, :cond_1a
+    if-nez p3, :cond_0
 
     .line 16
     .line 17
@@ -3639,7 +3639,7 @@
     return-object v3
 
     .line 27
-    :cond_1a
+    :cond_0
     new-instance p1, Ljava/lang/Exception;
 
     .line 28
@@ -3652,7 +3652,7 @@
     throw p1
 
     .line 33
-    :pswitch_20
+    :pswitch_0
     invoke-static {p2}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
 
     .line 34
@@ -3661,7 +3661,7 @@
     move-result v0
 
     .line 37
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_1
 
     .line 38
     .line 39
@@ -3669,7 +3669,7 @@
 
     .line 40
     .line 41
-    :cond_28
+    :cond_1
     move-object v2, p2
 
     .line 42
@@ -3709,7 +3709,7 @@
     return-object p1
 
     .line 58
-    :pswitch_39
+    :pswitch_1
     invoke-static {p1, v7, v7}, Llibs/vl3;->Set(Ljava/lang/String;ZZ)Ljava/lang/String;
 
     .line 59
@@ -3726,7 +3726,7 @@
     move-result-object p2
 
     .line 66
-    if-eqz p3, :cond_46
+    if-eqz p3, :cond_2
 
     .line 67
     .line 68
@@ -3734,15 +3734,15 @@
 
     .line 69
     .line 70
-    goto :goto_48
+    goto :goto_0
 
     .line 71
-    :cond_46
+    :cond_2
     const-string p3, "%s/renamefile?path=%s&topath=%s"
 
     .line 72
     .line 73
-    :goto_48
+    :goto_0
     iget-object v0, p0, Llibs/h2;->Context:Ljava/lang/String;
 
     .line 74
@@ -3845,8 +3845,8 @@
     return-object p2
 
     .line 125
-    :pswitch_7c
-    if-eqz p3, :cond_81
+    :pswitch_2
+    if-eqz p3, :cond_3
 
     .line 126
     .line 127
@@ -3854,15 +3854,15 @@
 
     .line 128
     .line 129
-    goto :goto_83
+    goto :goto_1
 
     .line 130
-    :cond_81
+    :cond_3
     const-string p3, "https://www.mediafire.com/api/1.5/file/move.php?session_token=%s&quick_key=%s&folder_key=%s&response_format=json"
 
     .line 131
     .line 132
-    :goto_83
+    :goto_1
     invoke-virtual {p0}, Llibs/h2;->Top()Ljava/lang/String;
 
     .line 133
@@ -3932,16 +3932,16 @@
     return-object v3
 
     .line 167
-    :pswitch_data_a6
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_7c
-        :pswitch_39
-        :pswitch_20
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final Map(Ljava/lang/String;II)Llibs/rr0;
-    .registers 12
+    .locals 8
 
     .line 1
     iget-byte v0, p0, Llibs/h2;->Set:B
@@ -3972,7 +3972,7 @@
     const/4 v7, 0x0
 
     .line 13
-    packed-switch v0, :pswitch_data_1a2
+    packed-switch v0, :pswitch_data_0
 
     .line 14
     .line 15
@@ -3981,7 +3981,7 @@
 
     .line 17
     .line 18
-    :try_start_11
+    :try_start_0
     invoke-virtual {p0}, Llibs/h2;->h()V
 
     .line 19
@@ -4120,20 +4120,20 @@
     .line 92
     .line 93
     move-result-object v7
-    :try_end_5d
-    .catch Ljava/lang/Exception; {:try_start_11 .. :try_end_5d} :catch_5d
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 94
-    :catch_5d
+    :catch_0
     return-object v7
 
     .line 95
-    :pswitch_5e
+    :pswitch_0
     const-string p2, "https://api.sugarsync.com/file/"
 
     .line 96
     .line 97
-    :try_start_60
+    :try_start_1
     invoke-virtual {p0}, Llibs/h2;->h()V
 
     .line 98
@@ -4214,20 +4214,20 @@
     .line 139
     .line 140
     move-result-object v7
-    :try_end_8c
-    .catch Ljava/lang/Exception; {:try_start_60 .. :try_end_8c} :catch_8c
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 141
-    :catch_8c
+    :catch_1
     return-object v7
 
     .line 142
-    :pswitch_8d
+    :pswitch_1
     const-string v0, "https://"
 
     .line 143
     .line 144
-    :try_start_8f
+    :try_start_2
     div-int/lit8 p2, p2, 0x5
 
     .line 145
@@ -4482,20 +4482,20 @@
     .line 278
     .line 279
     move-result-object v7
-    :try_end_117
-    .catch Ljava/lang/Exception; {:try_start_8f .. :try_end_117} :catch_117
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
 
     .line 280
-    :catch_117
+    :catch_2
     return-object v7
 
     .line 281
-    :pswitch_118
+    :pswitch_2
     const-string p3, "https://www.mediafire.com/convkey/"
 
     .line 282
     .line 283
-    :try_start_11a
+    :try_start_3
     invoke-virtual {p0}, Llibs/h2;->Top()Ljava/lang/String;
 
     .line 284
@@ -4535,7 +4535,7 @@
 
     .line 301
     .line 302
-    if-gt p2, v4, :cond_132
+    if-gt p2, v4, :cond_0
 
     .line 303
     .line 304
@@ -4543,15 +4543,15 @@
 
     .line 305
     .line 306
-    goto :goto_157
+    goto :goto_0
 
     .line 307
-    :cond_132
+    :cond_0
     const/16 v4, 0x12c
 
     .line 308
     .line 309
-    if-gt p2, v4, :cond_139
+    if-gt p2, v4, :cond_1
 
     .line 310
     .line 311
@@ -4559,15 +4559,15 @@
 
     .line 312
     .line 313
-    goto :goto_157
+    goto :goto_0
 
     .line 314
-    :cond_139
+    :cond_1
     const/16 v4, 0x190
 
     .line 315
     .line 316
-    if-gt p2, v4, :cond_140
+    if-gt p2, v4, :cond_2
 
     .line 317
     .line 318
@@ -4575,15 +4575,15 @@
 
     .line 319
     .line 320
-    goto :goto_157
+    goto :goto_0
 
     .line 321
-    :cond_140
+    :cond_2
     const/16 v4, 0x1f4
 
     .line 322
     .line 323
-    if-gt p2, v4, :cond_147
+    if-gt p2, v4, :cond_3
 
     .line 324
     .line 325
@@ -4591,15 +4591,15 @@
 
     .line 326
     .line 327
-    goto :goto_157
+    goto :goto_0
 
     .line 328
-    :cond_147
+    :cond_3
     const/16 v4, 0x258
 
     .line 329
     .line 330
-    if-gt p2, v4, :cond_14e
+    if-gt p2, v4, :cond_4
 
     .line 331
     .line 332
@@ -4607,15 +4607,15 @@
 
     .line 333
     .line 334
-    goto :goto_157
+    goto :goto_0
 
     .line 335
-    :cond_14e
+    :cond_4
     const/16 v4, 0x2bc
 
     .line 336
     .line 337
-    if-gt p2, v4, :cond_155
+    if-gt p2, v4, :cond_5
 
     .line 338
     .line 339
@@ -4623,15 +4623,15 @@
 
     .line 340
     .line 341
-    goto :goto_157
+    goto :goto_0
 
     .line 342
-    :cond_155
+    :cond_5
     const-string p2, "8"
 
     .line 343
     .line 344
-    :goto_157
+    :goto_0
     const-string v4, "image"
 
     .line 345
@@ -4644,14 +4644,14 @@
     move-result v0
 
     .line 350
-    if-nez v0, :cond_160
+    if-nez v0, :cond_6
 
     .line 351
     .line 352
-    goto :goto_1a0
+    goto :goto_1
 
     .line 353
-    :cond_160
+    :cond_6
     invoke-virtual {p1, v1, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     .line 354
@@ -4768,35 +4768,35 @@
     .line 415
     .line 416
     move-result-object v7
-    :try_end_1a0
-    .catchall {:try_start_11a .. :try_end_1a0} :catchall_1a0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 417
-    :catchall_1a0
-    :goto_1a0
+    :catchall_0
+    :goto_1
     return-object v7
 
     .line 418
     nop
 
     .line 419
-    :pswitch_data_1a2
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_118
-        :pswitch_8d
-        :pswitch_5e
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public Node()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/h2;->Set:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_c
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -4812,21 +4812,21 @@
     return v0
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     const/4 v0, 0x1
 
     .line 12
     return v0
 
     .line 13
-    :pswitch_data_c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public Nxt(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Llibs/hh3;ZLcom/mixplorer/ProgressListener;)Llibs/qd;
-    .registers 43
+    .locals 36
 
     .line 1
     move-object/from16 v1, p0
@@ -4845,7 +4845,7 @@
 
     .line 8
     .line 9
-    packed-switch v2, :pswitch_data_2b0
+    packed-switch v2, :pswitch_data_0
 
     .line 10
     .line 11
@@ -4861,7 +4861,7 @@
     return-object v0
 
     .line 17
-    :pswitch_10
+    :pswitch_0
     const-string v11, "SHA-256"
 
     .line 18
@@ -4887,7 +4887,7 @@
 
     .line 29
     .line 30
-    :try_start_1d
+    :try_start_0
     iget-object v2, v14, Llibs/fh3;->X:Ljava/io/InputStream;
 
     .line 31
@@ -4905,8 +4905,8 @@
 
     .line 38
     iput-object v2, v9, Lcom/mixplorer/ProgressListener;->hash:Ljava/lang/String;
-    :try_end_27
-    .catchall {:try_start_1d .. :try_end_27} :catchall_2a8
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 39
     .line 40
@@ -4919,7 +4919,7 @@
 
     .line 44
     .line 45
-    if-gtz v2, :cond_51
+    if-gtz v2, :cond_0
 
     .line 46
     .line 47
@@ -4992,11 +4992,11 @@
     .line 78
     .line 79
     .line 80
-    goto/16 :goto_2a7
+    goto/16 :goto_f
 
     .line 81
     .line 82
-    :cond_51
+    :cond_0
     move-object/from16 v2, p3
 
     .line 83
@@ -5020,7 +5020,7 @@
 
     .line 92
     .line 93
-    if-eqz p5, :cond_61
+    if-eqz p5, :cond_1
 
     .line 94
     .line 95
@@ -5028,15 +5028,15 @@
 
     .line 96
     .line 97
-    goto :goto_63
+    goto :goto_0
 
     .line 98
-    :cond_61
+    :cond_1
     move-object/from16 v5, v16
 
     .line 99
     .line 100
-    :goto_63
+    :goto_0
     iget-object v6, v9, Lcom/mixplorer/ProgressListener;->hash:Ljava/lang/String;
 
     .line 101
@@ -5057,7 +5057,7 @@
 
     .line 109
     .line 110
-    if-eqz v7, :cond_72
+    if-eqz v7, :cond_2
 
     .line 111
     .line 112
@@ -5065,10 +5065,10 @@
 
     .line 113
     .line 114
-    goto :goto_76
+    goto :goto_1
 
     .line 115
-    :cond_72
+    :cond_2
     invoke-static {v8, v1}, Llibs/k42;->e(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 116
@@ -5077,7 +5077,7 @@
     move-result-object v7
 
     .line 119
-    :goto_76
+    :goto_1
     invoke-virtual {v15}, Llibs/h2;->Top()Ljava/lang/String;
 
     .line 120
@@ -5421,8 +5421,8 @@
     const/4 v6, 0x0
 
     .line 302
-    :goto_12d
-    if-ge v6, v12, :cond_299
+    :goto_2
+    if-ge v6, v12, :cond_11
 
     .line 303
     .line 304
@@ -5438,7 +5438,7 @@
 
     .line 309
     .line 310
-    if-nez v10, :cond_295
+    if-nez v10, :cond_10
 
     .line 311
     .line 312
@@ -5446,7 +5446,7 @@
 
     .line 313
     .line 314
-    if-eqz p5, :cond_13e
+    if-eqz p5, :cond_3
 
     .line 315
     .line 316
@@ -5454,15 +5454,15 @@
 
     .line 317
     .line 318
-    goto :goto_140
+    goto :goto_3
 
     .line 319
-    :cond_13e
+    :cond_3
     move-object/from16 v10, v16
 
     .line 320
     .line 321
-    :goto_140
+    :goto_3
     invoke-static {v1}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
 
     .line 322
@@ -5471,7 +5471,7 @@
     move-result v26
 
     .line 325
-    if-eqz v26, :cond_149
+    if-eqz v26, :cond_4
 
     .line 326
     .line 327
@@ -5479,10 +5479,10 @@
 
     .line 328
     .line 329
-    goto :goto_14f
+    goto :goto_4
 
     .line 330
-    :cond_149
+    :cond_4
     invoke-static {v8, v1}, Llibs/k42;->e(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 331
@@ -5495,7 +5495,7 @@
 
     .line 335
     .line 336
-    :goto_14f
+    :goto_4
     invoke-virtual {v15}, Llibs/h2;->Top()Ljava/lang/String;
 
     .line 337
@@ -5512,7 +5512,7 @@
     move-result-object v1
 
     .line 344
-    if-lt v6, v12, :cond_15c
+    if-lt v6, v12, :cond_5
 
     .line 345
     .line 346
@@ -5522,10 +5522,10 @@
     const/4 v2, 0x0
 
     .line 348
-    goto :goto_16c
+    goto :goto_6
 
     .line 349
-    :cond_15c
+    :cond_5
     move-object v10, v5
 
     .line 350
@@ -5540,34 +5540,34 @@
 
     .line 354
     .line 355
-    if-nez v26, :cond_165
+    if-nez v26, :cond_6
 
     .line 356
     .line 357
-    goto :goto_169
+    goto :goto_5
 
     .line 358
-    :cond_165
+    :cond_6
     add-int/lit8 v2, v12, -0x1
 
     .line 359
     .line 360
-    if-ge v6, v2, :cond_16b
+    if-ge v6, v2, :cond_7
 
     .line 361
     .line 362
-    :goto_169
+    :goto_5
     move v2, v7
 
     .line 363
-    goto :goto_16c
+    goto :goto_6
 
     .line 364
-    :cond_16b
+    :cond_7
     long-to-int v2, v4
 
     .line 365
-    :goto_16c
+    :goto_6
     int-to-long v4, v7
 
     .line 366
@@ -5607,15 +5607,15 @@
     const/4 v6, 0x0
 
     .line 382
-    :goto_17d
-    if-nez v2, :cond_18b
+    :goto_7
+    if-nez v2, :cond_8
 
     .line 383
     .line 384
     const/4 v9, 0x2
 
     .line 385
-    if-ge v6, v9, :cond_18b
+    if-ge v6, v9, :cond_8
 
     .line 386
     .line 387
@@ -5635,11 +5635,11 @@
 
     .line 394
     .line 395
-    goto :goto_17d
+    goto :goto_7
 
     .line 396
-    :cond_18b
-    if-eqz v2, :cond_288
+    :cond_8
+    if-eqz v2, :cond_f
 
     .line 397
     .line 398
@@ -5663,7 +5663,7 @@
 
     .line 407
     .line 408
-    :try_start_197
+    :try_start_1
     new-array v8, v8, [B
 
     .line 409
@@ -5674,8 +5674,8 @@
     const/4 v9, 0x0
 
     .line 412
-    :goto_19b
-    if-ltz v9, :cond_1cc
+    :goto_8
+    if-ltz v9, :cond_b
 
     .line 413
     .line 414
@@ -5691,7 +5691,7 @@
 
     .line 419
     .line 420
-    if-lez v9, :cond_1ca
+    if-lez v9, :cond_a
 
     .line 421
     .line 422
@@ -5702,7 +5702,7 @@
 
     .line 424
     .line 425
-    if-gtz v33, :cond_1ca
+    if-gtz v33, :cond_a
 
     .line 426
     .line 427
@@ -5724,7 +5724,7 @@
 
     .line 434
     .line 435
-    if-lez v33, :cond_1c2
+    if-lez v33, :cond_9
 
     .line 436
     .line 437
@@ -5748,48 +5748,48 @@
     .line 445
     .line 446
     .line 447
-    goto :goto_1c6
+    goto :goto_9
 
     .line 448
-    :catchall_1bf
+    :catchall_0
     move-exception v0
 
     .line 449
-    goto/16 :goto_284
+    goto/16 :goto_d
 
     .line 450
     .line 451
-    :cond_1c2
+    :cond_9
     const/4 v5, 0x0
 
     .line 452
     invoke-virtual {v6, v8, v5, v9}, Llibs/fl;->write([BII)V
-    :try_end_1c6
-    .catchall {:try_start_197 .. :try_end_1c6} :catchall_1bf
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 453
     .line 454
     .line 455
-    :goto_1c6
+    :goto_9
     add-int/2addr v0, v9
 
     .line 456
-    :goto_1c7
+    :goto_a
     move-wide/from16 v4, v31
 
     .line 457
     .line 458
-    goto :goto_19b
+    goto :goto_8
 
     .line 459
-    :cond_1ca
+    :cond_a
     const/4 v5, 0x0
 
     .line 460
-    goto :goto_1c7
+    goto :goto_a
 
     .line 461
-    :cond_1cc
+    :cond_b
     const/4 v5, 0x0
 
     .line 462
@@ -6044,14 +6044,14 @@
     move-result v1
 
     .line 587
-    if-eqz v1, :cond_24d
+    if-eqz v1, :cond_c
 
     .line 588
     .line 589
-    goto :goto_270
+    goto :goto_c
 
     .line 590
-    :cond_24d
+    :cond_c
     invoke-virtual {v15, v0}, Llibs/h2;->Bot(Llibs/d11;)Lorg/json/JSONObject;
 
     .line 591
@@ -6072,11 +6072,11 @@
     move-result-object v0
 
     .line 600
-    if-eqz v23, :cond_270
+    if-eqz v23, :cond_e
 
     .line 601
     .line 602
-    if-eqz v0, :cond_270
+    if-eqz v0, :cond_e
 
     .line 603
     .line 604
@@ -6100,14 +6100,14 @@
     move-result v0
 
     .line 614
-    if-nez v0, :cond_268
+    if-nez v0, :cond_d
 
     .line 615
     .line 616
-    goto :goto_299
+    goto :goto_e
 
     .line 617
-    :cond_268
+    :cond_d
     const-string v0, "Upload Failed!"
 
     .line 618
@@ -6117,16 +6117,16 @@
     .line 620
     .line 621
     .line 622
-    :goto_26d
+    :goto_b
     move-object/from16 v0, v25
 
     .line 623
     .line 624
-    goto :goto_2a7
+    goto :goto_f
 
     .line 625
-    :cond_270
-    :goto_270
+    :cond_e
+    :goto_c
     add-int/lit8 v6, v30, 0x1
 
     .line 626
@@ -6163,11 +6163,11 @@
 
     .line 642
     .line 643
-    goto/16 :goto_12d
+    goto/16 :goto_2
 
     .line 644
     .line 645
-    :goto_284
+    :goto_d
     invoke-static {v2}, Llibs/ji0;->k(Ljava/io/Closeable;)V
 
     .line 646
@@ -6176,7 +6176,7 @@
     throw v0
 
     .line 649
-    :cond_288
+    :cond_f
     const-string v0, "BaseHttp"
 
     .line 650
@@ -6202,17 +6202,17 @@
     throw v0
 
     .line 662
-    :cond_295
+    :cond_10
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 663
     .line 664
     .line 665
-    goto :goto_26d
+    goto :goto_b
 
     .line 666
-    :cond_299
-    :goto_299
+    :cond_11
+    :goto_e
     iget-wide v1, v14, Llibs/fh3;->Z:J
 
     .line 667
@@ -6241,11 +6241,11 @@
     .line 678
     .line 679
     .line 680
-    :goto_2a7
+    :goto_f
     return-object v0
 
     .line 681
-    :catchall_2a8
+    :catchall_1
     move-exception v0
 
     .line 682
@@ -6257,32 +6257,32 @@
     .line 684
     .line 685
     .line 686
-    goto :goto_2af
+    goto :goto_11
 
     .line 687
-    :goto_2ae
+    :goto_10
     throw v0
 
     .line 688
-    :goto_2af
-    goto :goto_2ae
+    :goto_11
+    goto :goto_10
 
     .line 689
-    :pswitch_data_2b0
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_10
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public Object()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/h2;->Set:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_e
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -6298,7 +6298,7 @@
     return-object v0
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     const-string v0, "https://mixplorer.com/callback/"
 
     .line 12
@@ -6309,14 +6309,14 @@
     nop
 
     .line 15
-    :pswitch_data_e
+    :pswitch_data_0
     .packed-switch 0x3
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final Put(Ljava/lang/String;Ljava/lang/String;JJLjava/io/InputStream;ZLcom/mixplorer/ProgressListener;)Llibs/qd;
-    .registers 23
+    .locals 13
 
     .line 1
     move-wide/from16 v2, p3
@@ -6354,7 +6354,7 @@
 
     .line 17
     .line 18
-    packed-switch v1, :pswitch_data_1cc
+    packed-switch v1, :pswitch_data_0
 
     .line 19
     .line 20
@@ -6517,7 +6517,7 @@
     return-object v10
 
     .line 105
-    :pswitch_68
+    :pswitch_0
     invoke-virtual {p0}, Llibs/h2;->h()V
 
     .line 106
@@ -6531,7 +6531,7 @@
     move-result v1
 
     .line 112
-    if-eqz v1, :cond_73
+    if-eqz v1, :cond_0
 
     .line 113
     .line 114
@@ -6539,7 +6539,7 @@
 
     .line 115
     .line 116
-    :cond_73
+    :cond_0
     invoke-virtual {p0}, Llibs/h2;->h()V
 
     .line 117
@@ -6553,7 +6553,7 @@
     move-result v1
 
     .line 123
-    if-eqz v1, :cond_7e
+    if-eqz v1, :cond_1
 
     .line 124
     .line 125
@@ -6561,7 +6561,7 @@
 
     .line 126
     .line 127
-    :cond_7e
+    :cond_1
     invoke-static {p2}, Landroid/text/TextUtils;->htmlEncode(Ljava/lang/String;)Ljava/lang/String;
 
     .line 128
@@ -6817,7 +6817,7 @@
     return-object v4
 
     .line 258
-    :pswitch_101
+    :pswitch_1
     iget-object v1, p0, Llibs/h2;->Context:Ljava/lang/String;
 
     .line 259
@@ -6989,12 +6989,12 @@
     return-object v0
 
     .line 347
-    :pswitch_15a
+    :pswitch_2
     sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     .line 348
     .line 349
-    if-eqz p8, :cond_161
+    if-eqz p8, :cond_2
 
     .line 350
     .line 351
@@ -7002,15 +7002,15 @@
 
     .line 352
     .line 353
-    goto :goto_163
+    goto :goto_0
 
     .line 354
-    :cond_161
+    :cond_2
     const-string v1, "keep"
 
     .line 355
     .line 356
-    :goto_163
+    :goto_0
     iget-object v5, v8, Lcom/mixplorer/ProgressListener;->hash:Ljava/lang/String;
 
     .line 357
@@ -7023,7 +7023,7 @@
     move-result v6
 
     .line 362
-    if-eqz v6, :cond_16e
+    if-eqz v6, :cond_3
 
     .line 363
     .line 364
@@ -7031,10 +7031,10 @@
 
     .line 365
     .line 366
-    goto :goto_174
+    goto :goto_1
 
     .line 367
-    :cond_16e
+    :cond_3
     const-string v6, "&folder_key="
 
     .line 368
@@ -7047,7 +7047,7 @@
     move-result-object p1
 
     .line 373
-    :goto_174
+    :goto_1
     invoke-virtual {p0}, Llibs/h2;->Top()Ljava/lang/String;
 
     .line 374
@@ -7214,16 +7214,16 @@
     nop
 
     .line 461
-    :pswitch_data_1cc
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_15a
-        :pswitch_101
-        :pswitch_68
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final Run(Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
-    .registers 8
+    .locals 5
 
     .line 1
     iget-byte v0, p0, Llibs/h2;->Set:B
@@ -7241,7 +7241,7 @@
 
     .line 7
     .line 8
-    packed-switch v0, :pswitch_data_120
+    packed-switch v0, :pswitch_data_0
 
     .line 9
     .line 10
@@ -7405,8 +7405,8 @@
     .line 94
     .line 95
     .line 96
-    :goto_5f
-    if-ge v1, p1, :cond_72
+    :goto_0
+    if-ge v1, p1, :cond_0
 
     .line 97
     .line 98
@@ -7440,14 +7440,14 @@
 
     .line 113
     .line 114
-    goto :goto_5f
+    goto :goto_0
 
     .line 115
-    :cond_72
+    :cond_0
     return-object v0
 
     .line 116
-    :pswitch_73
+    :pswitch_0
     new-instance p1, Ljava/lang/Exception;
 
     .line 117
@@ -7460,7 +7460,7 @@
     throw p1
 
     .line 122
-    :pswitch_79
+    :pswitch_1
     iget-object v0, p0, Llibs/h2;->Context:Ljava/lang/String;
 
     .line 123
@@ -7579,7 +7579,7 @@
     move-result-object p1
 
     .line 184
-    if-nez p1, :cond_bf
+    if-nez p1, :cond_1
 
     .line 185
     .line 186
@@ -7592,10 +7592,10 @@
     .line 189
     .line 190
     .line 191
-    goto :goto_c8
+    goto :goto_1
 
     .line 192
-    :cond_bf
+    :cond_1
     new-instance v0, Ljava/util/ArrayList;
 
     .line 193
@@ -7613,11 +7613,11 @@
     move-object p1, v0
 
     .line 201
-    :goto_c8
+    :goto_1
     return-object p1
 
     .line 202
-    :pswitch_c9
+    :pswitch_2
     invoke-virtual {p0}, Llibs/h2;->Top()Ljava/lang/String;
 
     .line 203
@@ -7733,7 +7733,7 @@
     move-result-object p1
 
     .line 263
-    if-eqz p1, :cond_11f
+    if-eqz p1, :cond_2
 
     .line 264
     .line 265
@@ -7745,8 +7745,8 @@
     move-result v0
 
     .line 269
-    :goto_10c
-    if-ge v1, v0, :cond_11f
+    :goto_2
+    if-ge v1, v0, :cond_2
 
     .line 270
     .line 271
@@ -7780,30 +7780,30 @@
 
     .line 286
     .line 287
-    goto :goto_10c
+    goto :goto_2
 
     .line 288
-    :cond_11f
+    :cond_2
     return-object p2
 
     .line 289
-    :pswitch_data_120
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_c9
-        :pswitch_79
-        :pswitch_73
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final Set()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/h2;->Set:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_12
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -7815,7 +7815,7 @@
     return-object v0
 
     .line 9
-    :pswitch_8
+    :pswitch_0
     const-string v0, "SugarSync"
 
     .line 10
@@ -7823,7 +7823,7 @@
     return-object v0
 
     .line 12
-    :pswitch_b
+    :pswitch_1
     const-string v0, "pCloud"
 
     .line 13
@@ -7831,7 +7831,7 @@
     return-object v0
 
     .line 15
-    :pswitch_e
+    :pswitch_2
     const-string v0, "MediaFire"
 
     .line 16
@@ -7842,16 +7842,16 @@
     nop
 
     .line 19
-    :pswitch_data_12
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_e
-        :pswitch_b
-        :pswitch_8
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final Task(Ljava/lang/String;Ljava/lang/String;Z)Llibs/qd;
-    .registers 12
+    .locals 8
 
     .line 1
     iget-byte v0, p0, Llibs/h2;->Set:B
@@ -7878,7 +7878,7 @@
     const/4 v6, 0x3
 
     .line 11
-    packed-switch v0, :pswitch_data_92
+    packed-switch v0, :pswitch_data_0
 
     .line 12
     .line 13
@@ -7895,7 +7895,7 @@
     throw p1
 
     .line 20
-    :pswitch_13
+    :pswitch_0
     const/4 v2, 0x0
 
     .line 21
@@ -7926,7 +7926,7 @@
     return-object p1
 
     .line 32
-    :pswitch_1f
+    :pswitch_1
     invoke-static {p1}, Llibs/vl3;->Bundle(Ljava/lang/String;)Ljava/lang/String;
 
     .line 33
@@ -7943,7 +7943,7 @@
     move-result-object p2
 
     .line 40
-    if-eqz p3, :cond_2c
+    if-eqz p3, :cond_0
 
     .line 41
     .line 42
@@ -7951,15 +7951,15 @@
 
     .line 43
     .line 44
-    goto :goto_2e
+    goto :goto_0
 
     .line 45
-    :cond_2c
+    :cond_0
     const-string p3, "%s/renamefile?path=%s&topath=%s"
 
     .line 46
     .line 47
-    :goto_2e
+    :goto_0
     iget-object v0, p0, Llibs/h2;->Context:Ljava/lang/String;
 
     .line 48
@@ -8062,8 +8062,8 @@
     return-object p2
 
     .line 99
-    :pswitch_62
-    if-eqz p3, :cond_67
+    :pswitch_2
+    if-eqz p3, :cond_1
 
     .line 100
     .line 101
@@ -8071,15 +8071,15 @@
 
     .line 102
     .line 103
-    goto :goto_69
+    goto :goto_1
 
     .line 104
-    :cond_67
+    :cond_1
     const-string p3, "https://www.mediafire.com/api/1.5/file/update.php?session_token=%s&quick_key=%s&filename=%s&response_format=json"
 
     .line 105
     .line 106
-    :goto_69
+    :goto_1
     invoke-virtual {p0}, Llibs/h2;->Top()Ljava/lang/String;
 
     .line 107
@@ -8163,16 +8163,16 @@
     nop
 
     .line 147
-    :pswitch_data_92
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_62
-        :pswitch_1f
-        :pswitch_13
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public declared-synchronized Top()Ljava/lang/String;
-    .registers 8
+    .locals 7
 
     .line 1
     const-string v0, "https://www.mediafire.com/api/1.5/user/renew_session_token.php?"
@@ -8186,7 +8186,7 @@
     monitor-enter p0
 
     .line 6
-    :try_start_5
+    :try_start_0
     invoke-virtual {p0}, Llibs/vd;->Intent()Z
 
     .line 7
@@ -8195,7 +8195,7 @@
     move-result v2
 
     .line 10
-    if-nez v2, :cond_62
+    if-nez v2, :cond_1
 
     .line 11
     .line 12
@@ -8291,7 +8291,7 @@
     move-result v1
 
     .line 60
-    if-nez v1, :cond_58
+    if-nez v1, :cond_0
 
     .line 61
     .line 62
@@ -8343,17 +8343,17 @@
 
     .line 85
     .line 86
-    goto :goto_62
+    goto :goto_0
 
     .line 87
-    :catchall_56
+    :catchall_0
     move-exception v0
 
     .line 88
-    goto :goto_68
+    goto :goto_1
 
     .line 89
-    :cond_58
+    :cond_0
     new-instance v1, Lexceptions/UnauthorizedException;
 
     .line 90
@@ -8374,15 +8374,15 @@
     throw v1
 
     .line 99
-    :cond_62
-    :goto_62
+    :cond_1
+    :goto_0
     iget-object v0, p0, Llibs/vd;->Object:Llibs/in3;
 
     .line 100
     .line 101
     iget-object v0, v0, Llibs/in3;->Lambda:Ljava/lang/String;
-    :try_end_66
-    .catchall {:try_start_5 .. :try_end_66} :catchall_56
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 102
     .line 103
@@ -8392,25 +8392,25 @@
     return-object v0
 
     .line 105
-    :goto_68
-    :try_start_68
+    :goto_1
+    :try_start_1
     monitor-exit p0
-    :try_end_69
-    .catchall {:try_start_68 .. :try_end_69} :catchall_56
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 106
     throw v0
 .end method
 
 .method public final d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 12
+    .locals 7
 
     .line 1
     iget-byte v0, p0, Llibs/h2;->Set:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_178
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -8423,7 +8423,7 @@
     move-result v0
 
     .line 10
-    if-nez v0, :cond_33
+    if-nez v0, :cond_1
 
     .line 11
     .line 12
@@ -8435,7 +8435,7 @@
     move-result v0
 
     .line 16
-    if-nez v0, :cond_33
+    if-nez v0, :cond_1
 
     .line 17
     .line 18
@@ -8447,14 +8447,14 @@
     move-result v0
 
     .line 22
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 23
     .line 24
-    goto :goto_36
+    goto :goto_0
 
     .line 25
-    :cond_18
+    :cond_0
     new-instance v1, Llibs/in3;
 
     .line 26
@@ -8489,7 +8489,7 @@
     move-result p2
 
     .line 41
-    if-nez p2, :cond_36
+    if-nez p2, :cond_2
 
     .line 42
     .line 43
@@ -8507,21 +8507,21 @@
     .line 49
     .line 50
     .line 51
-    goto :goto_36
+    goto :goto_0
 
     .line 52
-    :cond_33
+    :cond_1
     invoke-static {}, Llibs/ic0;->d()V
 
     .line 53
     .line 54
     .line 55
-    :cond_36
-    :goto_36
+    :cond_2
+    :goto_0
     return-void
 
     .line 56
-    :pswitch_37
+    :pswitch_0
     move-object v1, p2
 
     .line 57
@@ -8536,7 +8536,7 @@
     move-result p1
 
     .line 62
-    if-nez p1, :cond_57
+    if-nez p1, :cond_4
 
     .line 63
     .line 64
@@ -8548,7 +8548,7 @@
     move-result p1
 
     .line 68
-    if-nez p1, :cond_57
+    if-nez p1, :cond_4
 
     .line 69
     .line 70
@@ -8560,14 +8560,14 @@
     move-result p1
 
     .line 74
-    if-eqz p1, :cond_4c
+    if-eqz p1, :cond_3
 
     .line 75
     .line 76
-    goto :goto_5a
+    goto :goto_1
 
     .line 77
-    :cond_4c
+    :cond_3
     new-instance v0, Llibs/in3;
 
     .line 78
@@ -8588,20 +8588,20 @@
 
     .line 86
     .line 87
-    goto :goto_5a
+    goto :goto_1
 
     .line 88
-    :cond_57
+    :cond_4
     invoke-static {}, Llibs/ic0;->d()V
 
     .line 89
     .line 90
     .line 91
-    :goto_5a
+    :goto_1
     return-void
 
     .line 92
-    :pswitch_5b
+    :pswitch_1
     move-object v1, p2
 
     .line 93
@@ -8616,7 +8616,7 @@
     move-result p1
 
     .line 98
-    if-nez p1, :cond_b1
+    if-nez p1, :cond_8
 
     .line 99
     .line 100
@@ -8628,7 +8628,7 @@
     move-result p1
 
     .line 104
-    if-nez p1, :cond_b1
+    if-nez p1, :cond_8
 
     .line 105
     .line 106
@@ -8647,7 +8647,7 @@
 
     .line 112
     .line 113
-    if-ne p1, p2, :cond_ad
+    if-ne p1, p2, :cond_7
 
     .line 114
     .line 115
@@ -8659,14 +8659,14 @@
     move-result p1
 
     .line 119
-    if-eqz p1, :cond_79
+    if-eqz p1, :cond_5
 
     .line 120
     .line 121
-    goto :goto_b4
+    goto :goto_3
 
     .line 122
-    :cond_79
+    :cond_5
     new-instance p1, Ljava/lang/StringBuilder;
 
     .line 123
@@ -8725,7 +8725,7 @@
     move-result p1
 
     .line 152
-    if-eqz p1, :cond_9c
+    if-eqz p1, :cond_6
 
     .line 153
     .line 154
@@ -8733,15 +8733,15 @@
 
     .line 155
     .line 156
-    goto :goto_9e
+    goto :goto_2
 
     .line 157
-    :cond_9c
+    :cond_6
     const-string p1, "https://api.pcloud.com"
 
     .line 158
     .line 159
-    :goto_9e
+    :goto_2
     iput-object p1, p0, Llibs/h2;->Context:Ljava/lang/String;
 
     .line 160
@@ -8770,29 +8770,29 @@
 
     .line 172
     .line 173
-    goto :goto_b4
+    goto :goto_3
 
     .line 174
-    :cond_ad
+    :cond_7
     invoke-static {}, Llibs/ic0;->d()V
 
     .line 175
     .line 176
     .line 177
-    goto :goto_b4
+    goto :goto_3
 
     .line 178
-    :cond_b1
+    :cond_8
     invoke-static {}, Llibs/ic0;->d()V
 
     .line 179
     .line 180
     .line 181
-    :goto_b4
+    :goto_3
     return-void
 
     .line 182
-    :pswitch_b5
+    :pswitch_2
     move-object v1, p2
 
     .line 183
@@ -8811,7 +8811,7 @@
     move-result p2
 
     .line 190
-    if-nez p2, :cond_174
+    if-nez p2, :cond_b
 
     .line 191
     .line 192
@@ -8823,7 +8823,7 @@
     move-result p2
 
     .line 196
-    if-nez p2, :cond_174
+    if-nez p2, :cond_b
 
     .line 197
     .line 198
@@ -8835,15 +8835,15 @@
     move-result p2
 
     .line 202
-    if-eqz p2, :cond_cd
+    if-eqz p2, :cond_9
 
     .line 203
     .line 204
-    goto/16 :goto_177
+    goto/16 :goto_4
 
     .line 205
     .line 206
-    :cond_cd
+    :cond_9
     new-instance v0, Llibs/in3;
 
     .line 207
@@ -9092,7 +9092,7 @@
     move-result p2
 
     .line 336
-    if-nez p2, :cond_16a
+    if-nez p2, :cond_a
 
     .line 337
     .line 338
@@ -9144,10 +9144,10 @@
 
     .line 361
     .line 362
-    goto :goto_177
+    goto :goto_4
 
     .line 363
-    :cond_16a
+    :cond_a
     new-instance p2, Lexceptions/UnauthorizedException;
 
     .line 364
@@ -9168,26 +9168,26 @@
     throw p2
 
     .line 373
-    :cond_174
+    :cond_b
     invoke-static {}, Llibs/ic0;->d()V
 
     .line 374
     .line 375
     .line 376
-    :goto_177
+    :goto_4
     return-void
 
     .line 377
-    :pswitch_data_178
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_b5
-        :pswitch_5b
-        :pswitch_37
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public h()V
-    .registers 11
+    .locals 10
 
     .line 1
     iget-byte v0, p0, Llibs/h2;->Set:B
@@ -9202,7 +9202,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_166
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -9215,7 +9215,7 @@
     return-void
 
     .line 14
-    :pswitch_d
+    :pswitch_0
     invoke-super {p0}, Llibs/vd;->h()V
 
     .line 15
@@ -9233,7 +9233,7 @@
 
     .line 22
     .line 23
-    if-nez v0, :cond_8e
+    if-nez v0, :cond_1
 
     .line 24
     .line 25
@@ -9385,7 +9385,7 @@
     move-result v1
 
     .line 101
-    if-nez v1, :cond_84
+    if-nez v1, :cond_0
 
     .line 102
     .line 103
@@ -9448,10 +9448,10 @@
 
     .line 131
     .line 132
-    goto :goto_8e
+    goto :goto_0
 
     .line 133
-    :cond_84
+    :cond_0
     new-instance v1, Lexceptions/UnauthorizedException;
 
     .line 134
@@ -9472,8 +9472,8 @@
     throw v1
 
     .line 143
-    :cond_8e
-    :goto_8e
+    :cond_1
+    :goto_0
     iget-object v0, p0, Llibs/h2;->View:Ljava/lang/String;
 
     .line 144
@@ -9486,7 +9486,7 @@
     move-result v0
 
     .line 149
-    if-eqz v0, :cond_bf
+    if-eqz v0, :cond_2
 
     .line 150
     .line 151
@@ -9571,11 +9571,11 @@
 
     .line 191
     .line 192
-    :cond_bf
+    :cond_2
     return-void
 
     .line 193
-    :pswitch_c0
+    :pswitch_1
     invoke-super {p0}, Llibs/vd;->h()V
 
     .line 194
@@ -9589,15 +9589,15 @@
     move-result v0
 
     .line 200
-    if-eqz v0, :cond_cb
+    if-eqz v0, :cond_3
 
     .line 201
     .line 202
-    goto/16 :goto_15b
+    goto/16 :goto_1
 
     .line 203
     .line 204
-    :cond_cb
+    :cond_3
     iget-object v0, p0, Llibs/vd;->z:Llibs/in3;
 
     .line 205
@@ -9743,7 +9743,7 @@
     move-result v1
 
     .line 279
-    if-nez v1, :cond_15c
+    if-nez v1, :cond_4
 
     .line 280
     .line 281
@@ -9880,11 +9880,11 @@
 
     .line 347
     .line 348
-    :goto_15b
+    :goto_1
     return-void
 
     .line 349
-    :cond_15c
+    :cond_4
     new-instance v1, Lexceptions/UnauthorizedException;
 
     .line 350
@@ -9905,15 +9905,15 @@
     throw v1
 
     .line 359
-    :pswitch_data_166
+    :pswitch_data_0
     .packed-switch 0x2
-        :pswitch_c0
-        :pswitch_d
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public j(Ljava/lang/String;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/h2;->Set:B
@@ -9926,12 +9926,12 @@
     const/4 v2, 0x1
 
     .line 5
-    packed-switch v0, :pswitch_data_34
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
     .line 8
-    :pswitch_7
+    :pswitch_0
     invoke-super {p0, p1}, Llibs/vd;->j(Ljava/lang/String;)Z
 
     .line 9
@@ -9943,7 +9943,7 @@
     return p1
 
     .line 13
-    :pswitch_c
+    :pswitch_1
     invoke-static {p1}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
 
     .line 14
@@ -9952,7 +9952,7 @@
     move-result v0
 
     .line 17
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_0
 
     .line 18
     .line 19
@@ -9968,18 +9968,18 @@
     move-result p1
 
     .line 25
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_0
 
     .line 26
     .line 27
     const/4 v1, 0x1
 
     .line 28
-    :cond_1b
+    :cond_0
     return v1
 
     .line 29
-    :pswitch_1c
+    :pswitch_2
     invoke-static {p1}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
 
     .line 30
@@ -9988,7 +9988,7 @@
     move-result v0
 
     .line 33
-    if-nez v0, :cond_33
+    if-nez v0, :cond_1
 
     .line 34
     .line 35
@@ -10004,7 +10004,7 @@
     move-result v0
 
     .line 41
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_1
 
     .line 42
     .line 43
@@ -10020,27 +10020,27 @@
     move-result p1
 
     .line 49
-    if-eqz p1, :cond_33
+    if-eqz p1, :cond_1
 
     .line 50
     .line 51
     const/4 v1, 0x1
 
     .line 52
-    :cond_33
+    :cond_1
     return v1
 
     .line 53
-    :pswitch_data_34
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_1c
-        :pswitch_7
-        :pswitch_c
+        :pswitch_2
+        :pswitch_0
+        :pswitch_1
     .end packed-switch
 .end method
 
 .method public final k(Ljava/lang/String;Ljava/lang/String;ZZ)Llibs/qd;
-    .registers 11
+    .locals 6
 
     .line 1
     iget-byte p4, p0, Llibs/h2;->Set:B
@@ -10058,12 +10058,12 @@
     const/4 v2, 0x0
 
     .line 8
-    packed-switch p4, :pswitch_data_1ce
+    packed-switch p4, :pswitch_data_0
 
     .line 9
     .line 10
     .line 11
-    if-nez p3, :cond_77
+    if-nez p3, :cond_0
 
     .line 12
     .line 13
@@ -10270,7 +10270,7 @@
     return-object p1
 
     .line 120
-    :cond_77
+    :cond_0
     new-instance p1, Ljava/lang/Exception;
 
     .line 121
@@ -10283,7 +10283,7 @@
     throw p1
 
     .line 126
-    :pswitch_7d
+    :pswitch_0
     invoke-virtual {p0}, Llibs/h2;->h()V
 
     .line 127
@@ -10297,7 +10297,7 @@
     move-result p4
 
     .line 133
-    if-eqz p4, :cond_88
+    if-eqz p4, :cond_1
 
     .line 134
     .line 135
@@ -10305,7 +10305,7 @@
 
     .line 136
     .line 137
-    :cond_88
+    :cond_1
     invoke-virtual {p0, p1}, Llibs/h2;->End(Ljava/lang/String;)Llibs/ec1;
 
     .line 138
@@ -10454,7 +10454,7 @@
 
     .line 212
     .line 213
-    if-eqz p3, :cond_d9
+    if-eqz p3, :cond_2
 
     .line 214
     .line 215
@@ -10462,20 +10462,20 @@
 
     .line 216
     .line 217
-    goto :goto_db
+    goto :goto_0
 
     .line 218
-    :cond_d9
+    :cond_2
     const-string v0, "file"
 
     .line 219
     .line 220
-    :goto_db
+    :goto_0
     iput-object v0, p2, Llibs/ec1;->Y:Ljava/lang/String;
 
     .line 221
     .line 222
-    if-nez p3, :cond_f1
+    if-nez p3, :cond_3
 
     .line 223
     .line 224
@@ -10515,12 +10515,12 @@
 
     .line 241
     .line 242
-    :cond_f1
+    :cond_3
     return-object p2
 
     .line 243
-    :pswitch_f2
-    if-nez p3, :cond_147
+    :pswitch_1
+    if-nez p3, :cond_4
 
     .line 244
     .line 245
@@ -10683,7 +10683,7 @@
     return-object p2
 
     .line 328
-    :cond_147
+    :cond_4
     new-instance p1, Ljava/lang/Exception;
 
     .line 329
@@ -10696,8 +10696,8 @@
     throw p1
 
     .line 334
-    :pswitch_14d
-    if-nez p3, :cond_1c2
+    :pswitch_2
+    if-nez p3, :cond_6
 
     .line 335
     .line 336
@@ -10721,7 +10721,7 @@
 
     .line 345
     .line 346
-    if-eqz p3, :cond_164
+    if-eqz p3, :cond_5
 
     .line 347
     .line 348
@@ -10741,10 +10741,10 @@
     move-result-object p1
 
     .line 356
-    goto :goto_172
+    goto :goto_1
 
     .line 357
-    :cond_164
+    :cond_5
     invoke-virtual {p0}, Llibs/h2;->Top()Ljava/lang/String;
 
     .line 358
@@ -10773,7 +10773,7 @@
     move-result-object p1
 
     .line 371
-    :goto_172
+    :goto_1
     invoke-static {p1}, Llibs/vd;->Work(Ljava/lang/String;)Llibs/c;
 
     .line 372
@@ -10928,7 +10928,7 @@
     return-object p2
 
     .line 451
-    :cond_1c2
+    :cond_6
     new-instance p1, Ljava/lang/Exception;
 
     .line 452
@@ -10953,16 +10953,16 @@
     throw p1
 
     .line 463
-    :pswitch_data_1ce
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_14d
-        :pswitch_f2
-        :pswitch_7d
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final l(Ljava/lang/String;Ljava/lang/String;)Llibs/qd;
-    .registers 10
+    .locals 7
 
     .line 1
     iget-byte v0, p0, Llibs/h2;->Set:B
@@ -10981,7 +10981,7 @@
 
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_156
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
@@ -10999,7 +10999,7 @@
     move-result v0
 
     .line 19
-    if-nez v0, :cond_74
+    if-nez v0, :cond_0
 
     .line 20
     .line 21
@@ -11015,7 +11015,7 @@
     move-result v0
 
     .line 27
-    if-nez v0, :cond_74
+    if-nez v0, :cond_0
 
     .line 28
     .line 29
@@ -11031,7 +11031,7 @@
     move-result v0
 
     .line 35
-    if-nez v0, :cond_74
+    if-nez v0, :cond_0
 
     .line 36
     .line 37
@@ -11185,14 +11185,14 @@
     .line 115
     .line 116
     .line 117
-    :cond_74
+    :cond_0
     const/4 p1, 0x0
 
     .line 118
     return-object p1
 
     .line 119
-    :pswitch_76
+    :pswitch_0
     invoke-virtual {p0}, Llibs/h2;->h()V
 
     .line 120
@@ -11206,7 +11206,7 @@
     move-result v0
 
     .line 126
-    if-eqz v0, :cond_81
+    if-eqz v0, :cond_1
 
     .line 127
     .line 128
@@ -11214,7 +11214,7 @@
 
     .line 129
     .line 130
-    :cond_81
+    :cond_1
     invoke-static {p2}, Landroid/text/TextUtils;->htmlEncode(Ljava/lang/String;)Ljava/lang/String;
 
     .line 131
@@ -11354,7 +11354,7 @@
     return-object v0
 
     .line 201
-    :pswitch_c8
+    :pswitch_1
     invoke-static {p1, p2}, Llibs/vl3;->String(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 202
@@ -11497,7 +11497,7 @@
     return-object p2
 
     .line 275
-    :pswitch_112
+    :pswitch_2
     invoke-static {p1}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
 
     .line 276
@@ -11518,7 +11518,7 @@
 
     .line 284
     .line 285
-    if-eqz v0, :cond_12b
+    if-eqz v0, :cond_2
 
     .line 286
     .line 287
@@ -11546,10 +11546,10 @@
     move-result-object p1
 
     .line 299
-    goto :goto_13d
+    goto :goto_0
 
     .line 300
-    :cond_12b
+    :cond_2
     invoke-virtual {p0}, Llibs/h2;->Top()Ljava/lang/String;
 
     .line 301
@@ -11586,7 +11586,7 @@
     move-result-object p1
 
     .line 318
-    :goto_13d
+    :goto_0
     invoke-static {p1}, Llibs/vd;->Work(Ljava/lang/String;)Llibs/c;
 
     .line 319
@@ -11636,23 +11636,23 @@
     return-object p2
 
     .line 343
-    :pswitch_data_156
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_112
-        :pswitch_c8
-        :pswitch_76
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final m(Ljava/lang/String;ZZ)V
-    .registers 6
+    .locals 2
 
     .line 1
     iget-byte p3, p0, Llibs/h2;->Set:B
 
     .line 2
     .line 3
-    packed-switch p3, :pswitch_data_be
+    packed-switch p3, :pswitch_data_0
 
     .line 4
     .line 5
@@ -11786,7 +11786,7 @@
     return-void
 
     .line 75
-    :pswitch_4a
+    :pswitch_0
     invoke-virtual {p0}, Llibs/h2;->h()V
 
     .line 76
@@ -11829,8 +11829,8 @@
     return-void
 
     .line 97
-    :pswitch_60
-    if-eqz p2, :cond_65
+    :pswitch_1
+    if-eqz p2, :cond_0
 
     .line 98
     .line 99
@@ -11838,15 +11838,15 @@
 
     .line 100
     .line 101
-    goto :goto_67
+    goto :goto_0
 
     .line 102
-    :cond_65
+    :cond_0
     const-string p2, "%s/deletefile?path=%s"
 
     .line 103
     .line 104
-    :goto_67
+    :goto_0
     iget-object p3, p0, Llibs/h2;->Context:Ljava/lang/String;
 
     .line 105
@@ -11941,12 +11941,12 @@
     return-void
 
     .line 150
-    :pswitch_95
+    :pswitch_2
     const-string p3, "&response_format=json"
 
     .line 151
     .line 152
-    if-eqz p2, :cond_a6
+    if-eqz p2, :cond_1
 
     .line 153
     .line 154
@@ -11974,10 +11974,10 @@
     move-result-object p1
 
     .line 166
-    goto :goto_b2
+    goto :goto_1
 
     .line 167
-    :cond_a6
+    :cond_1
     invoke-virtual {p0}, Llibs/h2;->Top()Ljava/lang/String;
 
     .line 168
@@ -12002,7 +12002,7 @@
     move-result-object p1
 
     .line 179
-    :goto_b2
+    :goto_1
     invoke-static {p1}, Llibs/vd;->Work(Ljava/lang/String;)Llibs/c;
 
     .line 180
@@ -12027,16 +12027,16 @@
     return-void
 
     .line 191
-    :pswitch_data_be
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_95
-        :pswitch_60
-        :pswitch_4a
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final w()Llibs/ec;
-    .registers 6
+    .locals 5
 
     .line 1
     iget-byte v0, p0, Llibs/h2;->Set:B
@@ -12054,7 +12054,7 @@
 
     .line 7
     .line 8
-    packed-switch v0, :pswitch_data_b8
+    packed-switch v0, :pswitch_data_0
 
     .line 9
     .line 10
@@ -12126,7 +12126,7 @@
     return-object v1
 
     .line 46
-    :pswitch_2d
+    :pswitch_0
     invoke-virtual {p0}, Llibs/h2;->h()V
 
     .line 47
@@ -12201,7 +12201,7 @@
     return-object v1
 
     .line 84
-    :pswitch_53
+    :pswitch_1
     iget-object v0, p0, Llibs/h2;->Context:Ljava/lang/String;
 
     .line 85
@@ -12291,7 +12291,7 @@
     return-object v2
 
     .line 131
-    :pswitch_82
+    :pswitch_2
     invoke-virtual {p0}, Llibs/h2;->Top()Ljava/lang/String;
 
     .line 132
@@ -12396,16 +12396,16 @@
     return-object v1
 
     .line 185
-    :pswitch_data_b8
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_82
-        :pswitch_53
-        :pswitch_2d
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final x(Ljava/lang/String;Ljava/lang/String;)Llibs/in3;
-    .registers 14
+    .locals 11
 
     .line 1
     iget-byte v0, p0, Llibs/h2;->Set:B
@@ -12448,7 +12448,7 @@
 
     .line 20
     .line 21
-    packed-switch v0, :pswitch_data_1a4
+    packed-switch v0, :pswitch_data_0
 
     .line 22
     .line 23
@@ -12641,7 +12641,7 @@
     return-object v2
 
     .line 120
-    :pswitch_77
+    :pswitch_0
     new-instance v3, Llibs/in3;
 
     .line 121
@@ -12827,7 +12827,7 @@
     move-result p2
 
     .line 215
-    if-nez p2, :cond_f5
+    if-nez p2, :cond_0
 
     .line 216
     .line 217
@@ -12890,7 +12890,7 @@
     return-object p1
 
     .line 246
-    :cond_f5
+    :cond_0
     new-instance p2, Lexceptions/UnauthorizedException;
 
     .line 247
@@ -12911,7 +12911,7 @@
     throw p2
 
     .line 256
-    :pswitch_ff
+    :pswitch_1
     const-string p2, "locationid"
 
     .line 257
@@ -12940,7 +12940,7 @@
     move-result p2
 
     .line 270
-    if-eqz p2, :cond_112
+    if-eqz p2, :cond_1
 
     .line 271
     .line 272
@@ -12948,15 +12948,15 @@
 
     .line 273
     .line 274
-    goto :goto_114
+    goto :goto_0
 
     .line 275
-    :cond_112
+    :cond_1
     const-string p2, "https://api.pcloud.com"
 
     .line 276
     .line 277
-    :goto_114
+    :goto_0
     iput-object p2, p0, Llibs/h2;->Context:Ljava/lang/String;
 
     .line 278
@@ -13218,7 +13218,7 @@
     return-object v2
 
     .line 414
-    :pswitch_19d
+    :pswitch_2
     move-object v5, p2
 
     .line 415
@@ -13234,16 +13234,16 @@
     return-object p2
 
     .line 421
-    :pswitch_data_1a4
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_19d
-        :pswitch_ff
-        :pswitch_77
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final y()Ljava/lang/String;
-    .registers 7
+    .locals 6
 
     .line 1
     iget-byte v0, p0, Llibs/h2;->Set:B
@@ -13262,7 +13262,7 @@
 
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_50
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
@@ -13323,7 +13323,7 @@
     return-object v0
 
     .line 40
-    :pswitch_27
+    :pswitch_0
     new-instance v0, Ljava/lang/Exception;
 
     .line 41
@@ -13336,7 +13336,7 @@
     throw v0
 
     .line 46
-    :pswitch_2d
+    :pswitch_1
     iget-object v0, p0, Llibs/vd;->z:Llibs/in3;
 
     .line 47
@@ -13393,7 +13393,7 @@
     return-object v0
 
     .line 74
-    :pswitch_49
+    :pswitch_2
     new-instance v0, Ljava/lang/Exception;
 
     .line 75
@@ -13409,10 +13409,10 @@
     nop
 
     .line 81
-    :pswitch_data_50
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_49
-        :pswitch_2d
-        :pswitch_27
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

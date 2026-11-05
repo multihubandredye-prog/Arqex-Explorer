@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/util/Hashtable;
@@ -63,7 +63,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/security/KeyPairGeneratorSpi;-><init>()V
@@ -77,14 +77,14 @@
 
 # virtual methods
 .method public final generateKeyPair()Ljava/security/KeyPair;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-boolean v0, p0, Llibs/tg1;->c:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -106,7 +106,7 @@
     .line 13
     .line 14
     .line 15
-    :cond_e
+    :cond_0
     iget-object v0, p0, Llibs/tg1;->a:Llibs/eh0;
 
     .line 16
@@ -197,7 +197,7 @@
 .end method
 
 .method public final initialize(ILjava/security/SecureRandom;)V
-    .registers 4
+    .locals 1
 
     .line 40
     sget-object v0, Llibs/tg1;->d:Ljava/util/Hashtable;
@@ -212,18 +212,18 @@
 
     check-cast p1, Ljava/security/spec/AlgorithmParameterSpec;
 
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_0
 
     .line 41
-    :try_start_e
+    :try_start_0
     invoke-virtual {p0, p1, p2}, Llibs/tg1;->initialize(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    :try_end_11
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_e .. :try_end_11} :catch_12
+    :try_end_0
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
     .line 42
-    :catch_12
+    :catch_0
     const-string p1, "key type not configurable."
 
     invoke-static {p1}, Llibs/bf0;->m(Ljava/lang/String;)V
@@ -231,7 +231,7 @@
     return-void
 
     .line 43
-    :cond_18
+    :cond_0
     const-string p1, "unknown key type."
 
     invoke-static {p1}, Llibs/bf0;->m(Ljava/lang/String;)V
@@ -240,14 +240,14 @@
 .end method
 
 .method public final initialize(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    .registers 4
+    .locals 1
 
     .line 1
     instance-of v0, p1, Llibs/eh0;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -259,15 +259,15 @@
 
     .line 8
     .line 9
-    goto :goto_15
+    goto :goto_0
 
     .line 10
-    :cond_9
+    :cond_0
     instance-of p1, p1, Llibs/ch0;
 
     .line 11
     .line 12
-    if-eqz p1, :cond_21
+    if-eqz p1, :cond_2
 
     .line 13
     .line 14
@@ -279,7 +279,7 @@
     move-result-object p1
 
     .line 18
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_1
 
     .line 19
     .line 20
@@ -287,7 +287,7 @@
 
     .line 21
     .line 22
-    :goto_15
+    :goto_0
     iput-object p2, p0, Llibs/tg1;->b:Ljava/security/SecureRandom;
 
     .line 23
@@ -302,7 +302,7 @@
     return-void
 
     .line 28
-    :cond_1b
+    :cond_1
     const-string p1, "unknown curve name: Ed25519"
 
     .line 29
@@ -315,7 +315,7 @@
     return-void
 
     .line 34
-    :cond_21
+    :cond_2
     const-string p1, "parameter object not a EdDSAParameterSpec"
 
     .line 35

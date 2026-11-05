@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/InputStream;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/zj;-><init>(Ljava/io/InputStream;)V
@@ -19,24 +19,24 @@
 
 # virtual methods
 .method public final declared-synchronized available()I
-    .registers 2
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     invoke-super {p0}, Llibs/zj;->available()I
 
     .line 3
     .line 4
     .line 5
     move-result v0
-    :try_end_5
-    .catchall {:try_start_1 .. :try_end_5} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 6
-    if-gez v0, :cond_a
+    if-gez v0, :cond_0
 
     .line 7
     .line 8
@@ -45,21 +45,21 @@
     .line 9
     .line 10
     .line 11
-    :cond_a
+    :cond_0
     monitor-exit p0
 
     .line 12
     return v0
 
     .line 13
-    :catchall_c
+    :catchall_0
     move-exception v0
 
     .line 14
-    :try_start_d
+    :try_start_1
     monitor-exit p0
-    :try_end_e
-    .catchall {:try_start_d .. :try_end_e} :catchall_c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 15
     throw v0

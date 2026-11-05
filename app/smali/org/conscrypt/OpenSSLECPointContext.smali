@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/conscrypt/OpenSSLECGroupContext;Lorg/conscrypt/NativeRef$EC_POINT;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,7 +31,7 @@
 .end method
 
 .method public static getInstance(Lorg/conscrypt/OpenSSLECGroupContext;Ljava/security/spec/ECPoint;)Lorg/conscrypt/OpenSSLECPointContext;
-    .registers 6
+    .locals 4
 
     .line 1
     new-instance v0, Lorg/conscrypt/OpenSSLECPointContext;
@@ -127,7 +127,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Ljava/lang/IllegalArgumentException;
@@ -147,7 +147,7 @@
 .end method
 
 .method public getECPoint()Ljava/security/spec/ECPoint;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLECPointContext;->group:Lorg/conscrypt/OpenSSLECGroupContext;
@@ -219,7 +219,7 @@
 .end method
 
 .method public getNativeRef()Lorg/conscrypt/NativeRef$EC_POINT;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLECPointContext;->pointCtx:Lorg/conscrypt/NativeRef$EC_POINT;
@@ -230,7 +230,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Ljava/lang/Object;->hashCode()I

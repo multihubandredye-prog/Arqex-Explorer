@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/kk1;DZF)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 10
+    .locals 9
 
     .line 1
     iget-object v0, p0, Llibs/nq1;->X:Llibs/kk1;
@@ -63,7 +63,7 @@
 
     .line 6
     .line 7
-    :try_start_6
+    :try_start_0
     iget-object v4, v0, Llibs/kk1;->Y:Ljava/lang/Object;
 
     .line 8
@@ -88,15 +88,15 @@
     move-result-object v4
 
     .line 19
-    if-nez v4, :cond_16
+    if-nez v4, :cond_0
 
     .line 20
     .line 21
-    goto/16 :goto_99
+    goto/16 :goto_1
 
     .line 22
     .line 23
-    :cond_16
+    :cond_0
     const-wide v5, 0x408f400000000000L    # 1000.0
 
     .line 24
@@ -305,25 +305,25 @@
 
     .line 136
     invoke-virtual {v4, v1}, Llibs/bg3;->Run(Ljava/lang/String;)V
-    :try_end_8a
-    .catchall {:try_start_6 .. :try_end_8a} :catchall_8b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 137
     .line 138
     .line 139
-    goto :goto_8c
+    goto :goto_0
 
     .line 140
-    :catchall_8b
+    :catchall_0
     nop
 
     .line 141
-    :goto_8c
+    :goto_0
     iget-boolean v1, p0, Llibs/nq1;->Z:Z
 
     .line 142
     .line 143
-    if-eqz v1, :cond_96
+    if-eqz v1, :cond_1
 
     .line 144
     .line 145
@@ -336,15 +336,15 @@
     .line 148
     .line 149
     .line 150
-    goto :goto_99
+    goto :goto_1
 
     .line 151
-    :cond_96
+    :cond_1
     invoke-virtual {v0}, Llibs/kk1;->w()Z
 
     .line 152
     .line 153
     .line 154
-    :goto_99
+    :goto_1
     return-void
 .end method

@@ -11,7 +11,7 @@
 
 # direct methods
 .method private constructor <init>(Lorg/conscrypt/NativeSsl;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iput-object p1, p0, Lorg/conscrypt/NativeSsl$BioWrapper;->this$0:Lorg/conscrypt/NativeSsl;
@@ -47,7 +47,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lorg/conscrypt/NativeSsl;I)V
-    .registers 3
+    .locals 0
 
     .line 17
     invoke-direct {p0, p1}, Lorg/conscrypt/NativeSsl$BioWrapper;-><init>(Lorg/conscrypt/NativeSsl;)V
@@ -58,7 +58,7 @@
 
 # virtual methods
 .method public close()V
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/NativeSsl$BioWrapper;->this$0:Lorg/conscrypt/NativeSsl;
@@ -86,7 +86,7 @@
     .line 12
     .line 13
     .line 14
-    :try_start_d
+    :try_start_0
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl$BioWrapper;->bio:J
 
     .line 15
@@ -103,29 +103,29 @@
 
     .line 21
     .line 22
-    if-eqz v4, :cond_1d
+    if-eqz v4, :cond_0
 
     .line 23
     .line 24
     invoke-static {v0, v1}, Lorg/conscrypt/NativeCrypto;->BIO_free_all(J)V
-    :try_end_1a
-    .catchall {:try_start_d .. :try_end_1a} :catchall_1b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 25
     .line 26
     .line 27
-    goto :goto_1d
+    goto :goto_0
 
     .line 28
-    :catchall_1b
+    :catchall_0
     move-exception v0
 
     .line 29
-    goto :goto_2b
+    goto :goto_1
 
     .line 30
-    :cond_1d
-    :goto_1d
+    :cond_0
+    :goto_0
     iget-object v0, p0, Lorg/conscrypt/NativeSsl$BioWrapper;->this$0:Lorg/conscrypt/NativeSsl;
 
     .line 31
@@ -154,7 +154,7 @@
     return-void
 
     .line 44
-    :goto_2b
+    :goto_1
     iget-object v1, p0, Lorg/conscrypt/NativeSsl$BioWrapper;->this$0:Lorg/conscrypt/NativeSsl;
 
     .line 45
@@ -184,7 +184,7 @@
 .end method
 
 .method public getPendingWrittenBytes()I
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/NativeSsl$BioWrapper;->this$0:Lorg/conscrypt/NativeSsl;
@@ -212,7 +212,7 @@
     .line 12
     .line 13
     .line 14
-    :try_start_d
+    :try_start_0
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl$BioWrapper;->bio:J
 
     .line 15
@@ -225,17 +225,17 @@
 
     .line 19
     .line 20
-    if-nez v4, :cond_17
+    if-nez v4, :cond_0
 
     .line 21
     .line 22
     const/4 v0, 0x0
 
     .line 23
-    goto :goto_1d
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_0
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl$BioWrapper;->bio:J
 
     .line 25
@@ -246,11 +246,11 @@
     .line 28
     .line 29
     move-result v0
-    :try_end_1d
-    .catchall {:try_start_d .. :try_end_1d} :catchall_2b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 30
-    :goto_1d
+    :goto_0
     iget-object v1, p0, Lorg/conscrypt/NativeSsl$BioWrapper;->this$0:Lorg/conscrypt/NativeSsl;
 
     .line 31
@@ -279,7 +279,7 @@
     return v0
 
     .line 44
-    :catchall_2b
+    :catchall_0
     move-exception v0
 
     .line 45
@@ -312,7 +312,7 @@
 .end method
 
 .method public readDirectByteBuffer(JI)I
-    .registers 14
+    .locals 10
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/NativeSsl$BioWrapper;->this$0:Lorg/conscrypt/NativeSsl;
@@ -340,7 +340,7 @@
     .line 12
     .line 13
     .line 14
-    :try_start_d
+    :try_start_0
     iget-object v0, p0, Lorg/conscrypt/NativeSsl$BioWrapper;->this$0:Lorg/conscrypt/NativeSsl;
 
     .line 15
@@ -353,7 +353,7 @@
     move-result v0
 
     .line 20
-    if-nez v0, :cond_3c
+    if-nez v0, :cond_0
 
     .line 21
     .line 22
@@ -401,8 +401,8 @@
     .line 42
     .line 43
     move-result p1
-    :try_end_2b
-    .catchall {:try_start_d .. :try_end_2b} :catchall_39
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 44
     iget-object p2, p0, Lorg/conscrypt/NativeSsl$BioWrapper;->this$0:Lorg/conscrypt/NativeSsl;
@@ -433,18 +433,18 @@
     return p1
 
     .line 58
-    :catchall_39
+    :catchall_0
     move-exception v0
 
     .line 59
     move-object p1, v0
 
     .line 60
-    goto :goto_44
+    goto :goto_0
 
     .line 61
-    :cond_3c
-    :try_start_3c
+    :cond_0
+    :try_start_1
     new-instance p1, Ljavax/net/ssl/SSLException;
 
     .line 62
@@ -459,11 +459,11 @@
     .line 67
     .line 68
     throw p1
-    :try_end_44
-    .catchall {:try_start_3c .. :try_end_44} :catchall_39
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 69
-    :goto_44
+    :goto_0
     iget-object p2, p0, Lorg/conscrypt/NativeSsl$BioWrapper;->this$0:Lorg/conscrypt/NativeSsl;
 
     .line 70
@@ -493,7 +493,7 @@
 .end method
 
 .method public writeDirectByteBuffer(JI)I
-    .registers 14
+    .locals 10
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/NativeSsl$BioWrapper;->this$0:Lorg/conscrypt/NativeSsl;
@@ -521,7 +521,7 @@
     .line 12
     .line 13
     .line 14
-    :try_start_d
+    :try_start_0
     iget-object v0, p0, Lorg/conscrypt/NativeSsl$BioWrapper;->this$0:Lorg/conscrypt/NativeSsl;
 
     .line 15
@@ -534,7 +534,7 @@
     move-result v0
 
     .line 20
-    if-nez v0, :cond_3c
+    if-nez v0, :cond_0
 
     .line 21
     .line 22
@@ -582,8 +582,8 @@
     .line 42
     .line 43
     move-result p1
-    :try_end_2b
-    .catchall {:try_start_d .. :try_end_2b} :catchall_39
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 44
     iget-object p2, p0, Lorg/conscrypt/NativeSsl$BioWrapper;->this$0:Lorg/conscrypt/NativeSsl;
@@ -614,18 +614,18 @@
     return p1
 
     .line 58
-    :catchall_39
+    :catchall_0
     move-exception v0
 
     .line 59
     move-object p1, v0
 
     .line 60
-    goto :goto_44
+    goto :goto_0
 
     .line 61
-    :cond_3c
-    :try_start_3c
+    :cond_0
+    :try_start_1
     new-instance p1, Ljavax/net/ssl/SSLException;
 
     .line 62
@@ -640,11 +640,11 @@
     .line 67
     .line 68
     throw p1
-    :try_end_44
-    .catchall {:try_start_3c .. :try_end_44} :catchall_39
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 69
-    :goto_44
+    :goto_0
     iget-object p2, p0, Lorg/conscrypt/NativeSsl$BioWrapper;->this$0:Lorg/conscrypt/NativeSsl;
 
     .line 70

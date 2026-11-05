@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/ev3;
@@ -30,7 +30,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 10
     iput-object p1, p0, Llibs/wq3;->a:Ljava/lang/Object;
@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public a()Llibs/ev3;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/wq3;->a:Ljava/lang/Object;
@@ -58,21 +58,21 @@
 .end method
 
 .method public b(Llibs/na1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public c(Llibs/na1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public d(Ljava/lang/String;)Ljava/lang/String;
-    .registers 8
+    .locals 6
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -106,8 +106,8 @@
     const/4 v2, 0x0
 
     .line 16
-    :goto_f
-    if-ge v2, v1, :cond_23
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     .line 17
     .line 18
@@ -126,19 +126,19 @@
     array-length v5, v4
 
     .line 25
-    if-lt v3, v5, :cond_1b
+    if-lt v3, v5, :cond_0
 
     .line 26
     .line 27
-    goto :goto_1d
+    goto :goto_1
 
     .line 28
-    :cond_1b
+    :cond_0
     aget-char v3, v4, v3
 
     .line 29
     .line 30
-    :goto_1d
+    :goto_1
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 31
@@ -148,10 +148,10 @@
 
     .line 34
     .line 35
-    goto :goto_f
+    goto :goto_0
 
     .line 36
-    :cond_23
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 37

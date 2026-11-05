@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Thread;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/xw1;->X:B
@@ -36,14 +36,14 @@
 
 # virtual methods
 .method public final onProgress(J)Z
-    .registers 3
+    .locals 0
 
     .line 1
     iget-byte p1, p0, Llibs/xw1;->X:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_16
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -60,7 +60,7 @@
     move-result p1
 
     .line 12
-    :goto_b
+    :goto_0
     xor-int/lit8 p1, p1, 0x1
 
     .line 13
@@ -68,7 +68,7 @@
     return p1
 
     .line 15
-    :pswitch_e
+    :pswitch_0
     iget-object p1, p0, Llibs/xw1;->Y:Ljava/lang/Thread;
 
     .line 16
@@ -81,14 +81,14 @@
     move-result p1
 
     .line 21
-    goto :goto_b
+    goto :goto_0
 
     .line 22
     nop
 
     .line 23
-    :pswitch_data_16
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_e
+        :pswitch_0
     .end packed-switch
 .end method

@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/as3;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -40,7 +40,7 @@
 .end method
 
 .method public constructor <init>(Llibs/iu0;)V
-    .registers 2
+    .locals 0
 
     .line 13
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -58,7 +58,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/q6;->X:Llibs/Theme;

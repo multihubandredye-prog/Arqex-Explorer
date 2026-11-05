@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 2
+    .locals 1
 
     .line 1
     sget-boolean v0, Lcom/mixplorer/activities/PreferenceActivity;->O:Z
@@ -46,7 +46,7 @@
 
     .line 7
     .line 8
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 9
     .line 10
@@ -54,15 +54,15 @@
 
     .line 11
     .line 12
-    goto :goto_e
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     sget v0, Llibs/bi2;->failed:I
 
     .line 14
     .line 15
-    :goto_e
+    :goto_0
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 16

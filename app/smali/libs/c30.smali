@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     const-string v0, "DESede"
@@ -26,14 +26,14 @@
 
 # virtual methods
 .method public final engineGenerateSecret(Ljava/security/spec/KeySpec;)Ljavax/crypto/SecretKey;
-    .registers 4
+    .locals 2
 
     .line 1
     instance-of v0, p1, Ljavax/crypto/spec/DESedeKeySpec;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -65,7 +65,7 @@
     return-object v0
 
     .line 19
-    :cond_12
+    :cond_0
     invoke-super {p0, p1}, Llibs/ee;->engineGenerateSecret(Ljava/security/spec/KeySpec;)Ljavax/crypto/SecretKey;
 
     .line 20
@@ -78,17 +78,17 @@
 .end method
 
 .method public final engineGetKeySpec(Ljavax/crypto/SecretKey;Ljava/lang/Class;)Ljava/security/spec/KeySpec;
-    .registers 6
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-eqz p2, :cond_5b
+    if-eqz p2, :cond_4
 
     .line 3
     .line 4
-    if-eqz p1, :cond_55
+    if-eqz p1, :cond_3
 
     .line 5
     .line 6
@@ -104,7 +104,7 @@
     move-result v1
 
     .line 12
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_0
 
     .line 13
     .line 14
@@ -132,7 +132,7 @@
     return-object p2
 
     .line 26
-    :cond_19
+    :cond_0
     const-class v1, Ljavax/crypto/spec/DESedeKeySpec;
 
     .line 27
@@ -145,7 +145,7 @@
     move-result p2
 
     .line 32
-    if-eqz p2, :cond_4f
+    if-eqz p2, :cond_2
 
     .line 33
     .line 34
@@ -157,7 +157,7 @@
     move-result-object p1
 
     .line 38
-    :try_start_25
+    :try_start_0
     array-length p2, p1
 
     .line 39
@@ -165,7 +165,7 @@
 
     .line 40
     .line 41
-    if-ne p2, v0, :cond_3f
+    if-ne p2, v0, :cond_1
 
     .line 42
     .line 43
@@ -206,21 +206,21 @@
     return-object p1
 
     .line 62
-    :catch_3d
+    :catch_0
     move-exception p1
 
     .line 63
-    goto :goto_45
+    goto :goto_0
 
     .line 64
-    :cond_3f
+    :cond_1
     new-instance p2, Ljavax/crypto/spec/DESedeKeySpec;
 
     .line 65
     .line 66
     invoke-direct {p2, p1}, Ljavax/crypto/spec/DESedeKeySpec;-><init>([B)V
-    :try_end_44
-    .catch Ljava/lang/Exception; {:try_start_25 .. :try_end_44} :catch_3d
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 67
     .line 68
@@ -228,7 +228,7 @@
     return-object p2
 
     .line 70
-    :goto_45
+    :goto_0
     new-instance p2, Ljava/security/spec/InvalidKeySpecException;
 
     .line 71
@@ -249,7 +249,7 @@
     throw p2
 
     .line 80
-    :cond_4f
+    :cond_2
     const-string p1, "Invalid KeySpec"
 
     .line 81
@@ -262,7 +262,7 @@
     return-object v0
 
     .line 86
-    :cond_55
+    :cond_3
     const-string p1, "key parameter is null"
 
     .line 87
@@ -275,7 +275,7 @@
     return-object v0
 
     .line 92
-    :cond_5b
+    :cond_4
     const-string p1, "keySpec parameter is null"
 
     .line 93

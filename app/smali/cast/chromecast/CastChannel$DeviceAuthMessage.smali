@@ -27,7 +27,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/mp;
@@ -87,7 +87,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 262
     invoke-direct {p0}, Llibs/ku0;-><init>()V
@@ -109,7 +109,7 @@
 .end method
 
 .method public constructor <init>(Llibs/fw;)V
-    .registers 10
+    .locals 8
 
     .line 1
     invoke-direct {p0}, Llibs/ku0;-><init>()V
@@ -179,13 +179,13 @@
     const/4 v3, 0x0
 
     .line 34
-    :cond_21
-    :goto_21
-    if-nez v3, :cond_f1
+    :cond_0
+    :goto_0
+    if-nez v3, :cond_b
 
     .line 35
     .line 36
-    :try_start_23
+    :try_start_0
     invoke-virtual {p1}, Llibs/fw;->g()I
 
     .line 37
@@ -197,7 +197,7 @@
     const/4 v5, 0x1
 
     .line 41
-    if-eqz v4, :cond_3d
+    if-eqz v4, :cond_1
 
     .line 42
     .line 43
@@ -208,7 +208,7 @@
     const/4 v7, 0x0
 
     .line 46
-    if-eq v4, v6, :cond_a5
+    if-eq v4, v6, :cond_8
 
     .line 47
     .line 48
@@ -216,7 +216,7 @@
 
     .line 49
     .line 50
-    if-eq v4, v6, :cond_76
+    if-eq v4, v6, :cond_5
 
     .line 51
     .line 52
@@ -224,7 +224,7 @@
 
     .line 53
     .line 54
-    if-eq v4, v6, :cond_48
+    if-eq v4, v6, :cond_2
 
     .line 55
     .line 56
@@ -236,42 +236,42 @@
     move-result v4
 
     .line 60
-    if-nez v4, :cond_21
+    if-nez v4, :cond_0
 
     .line 61
     .line 62
-    :cond_3d
+    :cond_1
     const/4 v3, 0x1
 
     .line 63
-    goto :goto_21
+    goto :goto_0
 
     .line 64
-    :catchall_3f
+    :catchall_0
     move-exception p1
 
     .line 65
-    goto/16 :goto_de
+    goto/16 :goto_3
 
     .line 66
     .line 67
-    :catch_42
+    :catch_0
     move-exception p1
 
     .line 68
-    goto/16 :goto_d3
+    goto/16 :goto_1
 
     .line 69
     .line 70
-    :catch_45
+    :catch_1
     move-exception p1
 
     .line 71
-    goto/16 :goto_dd
+    goto/16 :goto_2
 
     .line 72
     .line 73
-    :cond_48
+    :cond_2
     iget v4, p0, Lcast/chromecast/CastChannel$DeviceAuthMessage;->Psi:I
 
     .line 74
@@ -282,7 +282,7 @@
     and-int/2addr v4, v6
 
     .line 77
-    if-ne v4, v6, :cond_5b
+    if-ne v4, v6, :cond_3
 
     .line 78
     .line 79
@@ -309,7 +309,7 @@
     .line 90
     .line 91
     .line 92
-    :cond_5b
+    :cond_3
     sget-object v4, Lcast/chromecast/CastChannel$AuthError;->Four:Llibs/mp;
 
     .line 93
@@ -330,7 +330,7 @@
 
     .line 101
     .line 102
-    if-eqz v7, :cond_70
+    if-eqz v7, :cond_4
 
     .line 103
     .line 104
@@ -351,7 +351,7 @@
 
     .line 112
     .line 113
-    :cond_70
+    :cond_4
     iget v4, p0, Lcast/chromecast/CastChannel$DeviceAuthMessage;->Psi:I
 
     .line 114
@@ -363,10 +363,10 @@
 
     .line 117
     .line 118
-    goto :goto_21
+    goto :goto_0
 
     .line 119
-    :cond_76
+    :cond_5
     iget v4, p0, Lcast/chromecast/CastChannel$DeviceAuthMessage;->Psi:I
 
     .line 120
@@ -377,7 +377,7 @@
     and-int/2addr v4, v5
 
     .line 123
-    if-ne v4, v5, :cond_89
+    if-ne v4, v5, :cond_6
 
     .line 124
     .line 125
@@ -404,7 +404,7 @@
     .line 136
     .line 137
     .line 138
-    :cond_89
+    :cond_6
     sget-object v4, Lcast/chromecast/CastChannel$AuthResponse;->Seven:Llibs/mp;
 
     .line 139
@@ -425,7 +425,7 @@
 
     .line 147
     .line 148
-    if-eqz v7, :cond_9e
+    if-eqz v7, :cond_7
 
     .line 149
     .line 150
@@ -446,7 +446,7 @@
 
     .line 158
     .line 159
-    :cond_9e
+    :cond_7
     iget v4, p0, Lcast/chromecast/CastChannel$DeviceAuthMessage;->Psi:I
 
     .line 160
@@ -458,11 +458,11 @@
 
     .line 163
     .line 164
-    goto/16 :goto_21
+    goto/16 :goto_0
 
     .line 165
     .line 166
-    :cond_a5
+    :cond_8
     iget v4, p0, Lcast/chromecast/CastChannel$DeviceAuthMessage;->Psi:I
 
     .line 167
@@ -470,7 +470,7 @@
     and-int/2addr v4, v5
 
     .line 169
-    if-ne v4, v5, :cond_b7
+    if-ne v4, v5, :cond_9
 
     .line 170
     .line 171
@@ -497,7 +497,7 @@
     .line 182
     .line 183
     .line 184
-    :cond_b7
+    :cond_9
     sget-object v4, Lcast/chromecast/CastChannel$AuthChallenge;->Four:Llibs/mp;
 
     .line 185
@@ -518,7 +518,7 @@
 
     .line 193
     .line 194
-    if-eqz v7, :cond_cc
+    if-eqz v7, :cond_a
 
     .line 195
     .line 196
@@ -539,7 +539,7 @@
 
     .line 204
     .line 205
-    :cond_cc
+    :cond_a
     iget v4, p0, Lcast/chromecast/CastChannel$DeviceAuthMessage;->Psi:I
 
     .line 206
@@ -548,19 +548,19 @@
 
     .line 208
     iput v4, p0, Lcast/chromecast/CastChannel$DeviceAuthMessage;->Psi:I
-    :try_end_d1
-    .catch Llibs/vb1; {:try_start_23 .. :try_end_d1} :catch_45
-    .catch Ljava/io/IOException; {:try_start_23 .. :try_end_d1} :catch_42
-    .catchall {:try_start_23 .. :try_end_d1} :catchall_3f
+    :try_end_0
+    .catch Llibs/vb1; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 209
     .line 210
-    goto/16 :goto_21
+    goto/16 :goto_0
 
     .line 211
     .line 212
-    :goto_d3
-    :try_start_d3
+    :goto_1
+    :try_start_1
     new-instance v2, Llibs/vb1;
 
     .line 213
@@ -581,23 +581,23 @@
     throw v2
 
     .line 222
-    :goto_dd
+    :goto_2
     throw p1
-    :try_end_de
-    .catchall {:try_start_d3 .. :try_end_de} :catchall_3f
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 223
-    :goto_de
-    :try_start_de
+    :goto_3
+    :try_start_2
     invoke-virtual {v1}, Llibs/af;->s()V
-    :try_end_e1
-    .catch Ljava/io/IOException; {:try_start_de .. :try_end_e1} :catch_e1
-    .catchall {:try_start_de .. :try_end_e1} :catchall_e8
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 224
     .line 225
     .line 226
-    :catch_e1
+    :catch_2
     invoke-virtual {v0}, Llibs/pl;->m()Llibs/rl;
 
     .line 227
@@ -610,10 +610,10 @@
 
     .line 231
     .line 232
-    goto :goto_f0
+    goto :goto_4
 
     .line 233
-    :catchall_e8
+    :catchall_1
     move-exception p1
 
     .line 234
@@ -632,21 +632,21 @@
     throw p1
 
     .line 241
-    :goto_f0
+    :goto_4
     throw p1
 
     .line 242
-    :cond_f1
-    :try_start_f1
+    :cond_b
+    :try_start_3
     invoke-virtual {v1}, Llibs/af;->s()V
-    :try_end_f4
-    .catch Ljava/io/IOException; {:try_start_f1 .. :try_end_f4} :catch_f4
-    .catchall {:try_start_f1 .. :try_end_f4} :catchall_fb
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
     .line 243
     .line 244
     .line 245
-    :catch_f4
+    :catch_3
     invoke-virtual {v0}, Llibs/pl;->m()Llibs/rl;
 
     .line 246
@@ -662,7 +662,7 @@
     return-void
 
     .line 252
-    :catchall_fb
+    :catchall_2
     move-exception p1
 
     .line 253
@@ -678,19 +678,19 @@
 
     .line 258
     .line 259
-    goto :goto_104
+    goto :goto_6
 
     .line 260
-    :goto_103
+    :goto_5
     throw p1
 
     .line 261
-    :goto_104
-    goto :goto_103
+    :goto_6
+    goto :goto_5
 .end method
 
 .method public constructor <init>(Llibs/rp;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -717,7 +717,7 @@
 
 # virtual methods
 .method public final Room(Llibs/af;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Lcast/chromecast/CastChannel$DeviceAuthMessage;->y()I
@@ -735,7 +735,7 @@
     and-int/2addr v0, v1
 
     .line 8
-    if-ne v0, v1, :cond_1a
+    if-ne v0, v1, :cond_0
 
     .line 9
     .line 10
@@ -770,7 +770,7 @@
     .line 25
     .line 26
     .line 27
-    :cond_1a
+    :cond_0
     iget v0, p0, Lcast/chromecast/CastChannel$DeviceAuthMessage;->Psi:I
 
     .line 28
@@ -781,7 +781,7 @@
     and-int/2addr v0, v1
 
     .line 31
-    if-ne v0, v1, :cond_31
+    if-ne v0, v1, :cond_1
 
     .line 32
     .line 33
@@ -816,7 +816,7 @@
     .line 48
     .line 49
     .line 50
-    :cond_31
+    :cond_1
     iget v0, p0, Lcast/chromecast/CastChannel$DeviceAuthMessage;->Psi:I
 
     .line 51
@@ -827,7 +827,7 @@
     and-int/2addr v0, v1
 
     .line 54
-    if-ne v0, v1, :cond_48
+    if-ne v0, v1, :cond_2
 
     .line 55
     .line 56
@@ -862,7 +862,7 @@
     .line 71
     .line 72
     .line 73
-    :cond_48
+    :cond_2
     iget-object v0, p0, Lcast/chromecast/CastChannel$DeviceAuthMessage;->Chi:Llibs/rl;
 
     .line 74
@@ -876,7 +876,7 @@
 .end method
 
 .method public final a()Z
-    .registers 5
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Lcast/chromecast/CastChannel$DeviceAuthMessage;->Three:B
@@ -886,25 +886,25 @@
     const/4 v1, 0x1
 
     .line 4
-    if-ne v0, v1, :cond_6
+    if-ne v0, v1, :cond_0
 
     .line 5
     .line 6
     return v1
 
     .line 7
-    :cond_6
+    :cond_0
     const/4 v2, 0x0
 
     .line 8
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     .line 9
     .line 10
     return v2
 
     .line 11
-    :cond_a
+    :cond_1
     iget v0, p0, Lcast/chromecast/CastChannel$DeviceAuthMessage;->Psi:I
 
     .line 12
@@ -915,7 +915,7 @@
     and-int/2addr v0, v3
 
     .line 15
-    if-ne v0, v3, :cond_1b
+    if-ne v0, v3, :cond_2
 
     .line 16
     .line 17
@@ -931,7 +931,7 @@
     move-result v0
 
     .line 23
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_2
 
     .line 24
     .line 25
@@ -942,7 +942,7 @@
     return v2
 
     .line 28
-    :cond_1b
+    :cond_2
     iget v0, p0, Lcast/chromecast/CastChannel$DeviceAuthMessage;->Psi:I
 
     .line 29
@@ -953,7 +953,7 @@
     and-int/2addr v0, v3
 
     .line 32
-    if-ne v0, v3, :cond_2c
+    if-ne v0, v3, :cond_3
 
     .line 33
     .line 34
@@ -969,7 +969,7 @@
     move-result v0
 
     .line 40
-    if-nez v0, :cond_2c
+    if-nez v0, :cond_3
 
     .line 41
     .line 42
@@ -980,7 +980,7 @@
     return v2
 
     .line 45
-    :cond_2c
+    :cond_3
     iput-byte v1, p0, Lcast/chromecast/CastChannel$DeviceAuthMessage;->Three:B
 
     .line 46
@@ -989,7 +989,7 @@
 .end method
 
 .method public final y()I
-    .registers 5
+    .locals 4
 
     .line 1
     iget v0, p0, Lcast/chromecast/CastChannel$DeviceAuthMessage;->Four:I
@@ -999,14 +999,14 @@
     const/4 v1, -0x1
 
     .line 4
-    if-eq v0, v1, :cond_6
+    if-eq v0, v1, :cond_0
 
     .line 5
     .line 6
     return v0
 
     .line 7
-    :cond_6
+    :cond_0
     iget v0, p0, Lcast/chromecast/CastChannel$DeviceAuthMessage;->Psi:I
 
     .line 8
@@ -1017,7 +1017,7 @@
     and-int/2addr v0, v1
 
     .line 11
-    if-ne v0, v1, :cond_1f
+    if-ne v0, v1, :cond_1
 
     .line 12
     .line 13
@@ -1059,14 +1059,14 @@
     add-int/2addr v2, v1
 
     .line 31
-    goto :goto_20
+    goto :goto_0
 
     .line 32
-    :cond_1f
+    :cond_1
     const/4 v2, 0x0
 
     .line 33
-    :goto_20
+    :goto_0
     iget v0, p0, Lcast/chromecast/CastChannel$DeviceAuthMessage;->Psi:I
 
     .line 34
@@ -1077,7 +1077,7 @@
     and-int/2addr v0, v1
 
     .line 37
-    if-ne v0, v1, :cond_39
+    if-ne v0, v1, :cond_2
 
     .line 38
     .line 39
@@ -1122,7 +1122,7 @@
     add-int/2addr v2, v3
 
     .line 58
-    :cond_39
+    :cond_2
     iget v0, p0, Lcast/chromecast/CastChannel$DeviceAuthMessage;->Psi:I
 
     .line 59
@@ -1133,7 +1133,7 @@
     and-int/2addr v0, v1
 
     .line 62
-    if-ne v0, v1, :cond_52
+    if-ne v0, v1, :cond_3
 
     .line 63
     .line 64
@@ -1178,7 +1178,7 @@
     add-int/2addr v2, v3
 
     .line 83
-    :cond_52
+    :cond_3
     iget-object v0, p0, Lcast/chromecast/CastChannel$DeviceAuthMessage;->Chi:Llibs/rl;
 
     .line 84

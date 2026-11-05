@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/BrowseActivity;Llibs/vd;Llibs/dj;)V
-    .registers 5
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -98,7 +98,7 @@
 
     .line 38
     .line 39
-    if-eqz p3, :cond_2e
+    if-eqz p3, :cond_0
 
     .line 40
     .line 41
@@ -111,10 +111,10 @@
     .line 44
     .line 45
     .line 46
-    goto :goto_40
+    goto :goto_1
 
     .line 47
-    :cond_2e
+    :cond_0
     invoke-virtual {p2}, Llibs/vd;->Node()Z
 
     .line 48
@@ -123,7 +123,7 @@
     move-result p2
 
     .line 51
-    if-eqz p2, :cond_37
+    if-eqz p2, :cond_1
 
     .line 52
     .line 53
@@ -131,15 +131,15 @@
 
     .line 54
     .line 55
-    goto :goto_39
+    goto :goto_0
 
     .line 56
-    :cond_37
+    :cond_1
     sget p2, Llibs/bi2;->username:I
 
     .line 57
     .line 58
-    :goto_39
+    :goto_0
     invoke-static {p2}, Llibs/ho2;->Add(I)Ljava/lang/String;
 
     .line 59
@@ -153,7 +153,7 @@
     .line 63
     .line 64
     .line 65
-    :goto_40
+    :goto_1
     sget p1, Llibs/wh2;->password:I
 
     .line 66
@@ -174,7 +174,7 @@
 
     .line 74
     .line 75
-    if-eqz p3, :cond_52
+    if-eqz p3, :cond_2
 
     .line 76
     .line 77
@@ -187,10 +187,10 @@
     .line 80
     .line 81
     .line 82
-    goto :goto_5b
+    goto :goto_2
 
     .line 83
-    :cond_52
+    :cond_2
     sget p2, Llibs/bi2;->password:I
 
     .line 84
@@ -208,7 +208,7 @@
     .line 90
     .line 91
     .line 92
-    :goto_5b
+    :goto_2
     sget p1, Llibs/wh2;->txt_error:I
 
     .line 93
@@ -272,7 +272,7 @@
 
 # virtual methods
 .method public final Gms(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/od;->X:Lcom/mixplorer/activities/a;
@@ -287,7 +287,7 @@
 .end method
 
 .method public final Ok()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/od;->X:Lcom/mixplorer/activities/a;
@@ -302,7 +302,7 @@
 .end method
 
 .method public final Uri(Z)V
-    .registers 6
+    .locals 4
 
     .line 1
     sget v0, Llibs/wh2;->auth_form:I
@@ -324,28 +324,28 @@
     const/4 v2, 0x0
 
     .line 10
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_0
 
     .line 11
     .line 12
     const/4 v3, 0x0
 
     .line 13
-    goto :goto_f
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     const/16 v3, 0x8
 
     .line 15
     .line 16
-    :goto_f
+    :goto_0
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
     .line 17
     .line 18
     .line 19
-    if-eqz p1, :cond_17
+    if-eqz p1, :cond_1
 
     .line 20
     .line 21
@@ -353,14 +353,14 @@
 
     .line 22
     .line 23
-    goto :goto_18
+    goto :goto_1
 
     .line 24
-    :cond_17
+    :cond_1
     const/4 v0, 0x0
 
     .line 25
-    :goto_18
+    :goto_1
     iget-object v3, p0, Llibs/fn1;->Nine:Lcom/mixplorer/widgets/MiCircleView;
 
     .line 26
@@ -370,7 +370,7 @@
     .line 28
     .line 29
     .line 30
-    if-eqz p1, :cond_23
+    if-eqz p1, :cond_2
 
     .line 31
     .line 32
@@ -379,24 +379,24 @@
     .line 33
     .line 34
     .line 35
-    goto :goto_26
+    goto :goto_2
 
     .line 36
-    :cond_23
+    :cond_2
     invoke-virtual {v3}, Lcom/mixplorer/widgets/MiCircleView;->b()V
 
     .line 37
     .line 38
     .line 39
-    :goto_26
-    if-eqz p1, :cond_29
+    :goto_2
+    if-eqz p1, :cond_3
 
     .line 40
     .line 41
     const/4 v1, 0x0
 
     .line 42
-    :cond_29
+    :cond_3
     iget-object p1, p0, Llibs/fn1;->Eight:Landroid/widget/TextView;
 
     .line 43
@@ -410,7 +410,7 @@
 .end method
 
 .method public final onClick(Landroid/view/View;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-virtual {p0}, Landroid/app/Dialog;->getCurrentFocus()Landroid/view/View;
@@ -438,7 +438,7 @@
 
     .line 13
     .line 14
-    if-ne v0, v1, :cond_50
+    if-ne v0, v1, :cond_3
 
     .line 15
     .line 16
@@ -446,14 +446,14 @@
 
     .line 17
     .line 18
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_0
 
     .line 19
     .line 20
     return-void
 
     .line 21
-    :cond_14
+    :cond_0
     const/4 p1, 0x1
 
     .line 22
@@ -515,7 +515,7 @@
     move-result v1
 
     .line 52
-    if-nez v1, :cond_4c
+    if-nez v1, :cond_2
 
     .line 53
     .line 54
@@ -527,14 +527,14 @@
     move-result v1
 
     .line 58
-    if-eqz v1, :cond_3c
+    if-eqz v1, :cond_1
 
     .line 59
     .line 60
-    goto :goto_4c
+    goto :goto_0
 
     .line 61
-    :cond_3c
+    :cond_1
     new-instance v1, Llibs/xv1;
 
     .line 62
@@ -565,8 +565,8 @@
     return-void
 
     .line 77
-    :cond_4c
-    :goto_4c
+    :cond_2
+    :goto_0
     const/4 p1, 0x0
 
     .line 78
@@ -577,7 +577,7 @@
     return-void
 
     .line 81
-    :cond_50
+    :cond_3
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     .line 82
@@ -590,7 +590,7 @@
 
     .line 86
     .line 87
-    if-ne v0, v1, :cond_5c
+    if-ne v0, v1, :cond_4
 
     .line 88
     .line 89
@@ -599,16 +599,16 @@
     .line 90
     .line 91
     .line 92
-    goto :goto_5f
+    goto :goto_1
 
     .line 93
-    :cond_5c
+    :cond_4
     invoke-virtual {p0}, Llibs/od;->dismiss()V
 
     .line 94
     .line 95
     .line 96
-    :goto_5f
+    :goto_1
     invoke-super {p0, p1}, Llibs/od;->onClick(Landroid/view/View;)V
 
     .line 97

@@ -25,7 +25,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 14
+    .locals 14
 
     .line 1
     new-instance v0, Llibs/og2;
@@ -211,7 +211,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
@@ -227,7 +227,7 @@
 .end method
 
 .method public static a(Ljava/lang/String;)Llibs/og2;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "http/1.0"
@@ -242,7 +242,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -253,7 +253,7 @@
     return-object p0
 
     .line 12
-    :cond_b
+    :cond_0
     const-string v0, "http/1.1"
 
     .line 13
@@ -266,7 +266,7 @@
     move-result v0
 
     .line 18
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     .line 19
     .line 20
@@ -277,7 +277,7 @@
     return-object p0
 
     .line 23
-    :cond_16
+    :cond_1
     const-string v0, "h2_prior_knowledge"
 
     .line 24
@@ -290,7 +290,7 @@
     move-result v0
 
     .line 29
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_2
 
     .line 30
     .line 31
@@ -301,7 +301,7 @@
     return-object p0
 
     .line 34
-    :cond_21
+    :cond_2
     const-string v0, "h2"
 
     .line 35
@@ -314,7 +314,7 @@
     move-result v0
 
     .line 40
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_3
 
     .line 41
     .line 42
@@ -325,7 +325,7 @@
     return-object p0
 
     .line 45
-    :cond_2c
+    :cond_3
     const-string v0, "spdy/3.1"
 
     .line 46
@@ -338,7 +338,7 @@
     move-result v0
 
     .line 51
-    if-eqz v0, :cond_37
+    if-eqz v0, :cond_4
 
     .line 52
     .line 53
@@ -349,7 +349,7 @@
     return-object p0
 
     .line 56
-    :cond_37
+    :cond_4
     const-string v0, "quic"
 
     .line 57
@@ -362,7 +362,7 @@
     move-result v0
 
     .line 62
-    if-eqz v0, :cond_42
+    if-eqz v0, :cond_5
 
     .line 63
     .line 64
@@ -373,7 +373,7 @@
     return-object p0
 
     .line 67
-    :cond_42
+    :cond_5
     const-string v0, "Unexpected protocol: "
 
     .line 68
@@ -398,7 +398,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Llibs/og2;
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Llibs/og2;
@@ -421,7 +421,7 @@
 .end method
 
 .method public static values()[Llibs/og2;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/og2;->Omicron:[Llibs/og2;
@@ -446,7 +446,7 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/og2;->X:Ljava/lang/String;

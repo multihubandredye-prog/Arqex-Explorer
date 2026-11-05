@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>(Lorg/conscrypt/HpkeSpi;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Lorg/conscrypt/HpkeContext;-><init>(Lorg/conscrypt/HpkeSpi;)V
@@ -17,7 +17,7 @@
 .end method
 
 .method public static getInstance(Ljava/lang/String;)Lorg/conscrypt/HpkeContextSender;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Lorg/conscrypt/HpkeContextSender;
@@ -41,7 +41,7 @@
 .end method
 
 .method public static getInstance(Ljava/lang/String;Ljava/lang/String;)Lorg/conscrypt/HpkeContextSender;
-    .registers 3
+    .locals 1
 
     .line 11
     new-instance v0, Lorg/conscrypt/HpkeContextSender;
@@ -56,7 +56,7 @@
 .end method
 
 .method public static getInstance(Ljava/lang/String;Ljava/security/Provider;)Lorg/conscrypt/HpkeContextSender;
-    .registers 3
+    .locals 1
 
     .line 12
     new-instance v0, Lorg/conscrypt/HpkeContextSender;
@@ -73,7 +73,7 @@
 
 # virtual methods
 .method public getEncapsulated()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/HpkeContext;->spi:Lorg/conscrypt/HpkeSpi;
@@ -92,7 +92,7 @@
 .end method
 
 .method public init(Ljava/security/PublicKey;[B)V
-    .registers 9
+    .locals 6
 
     .line 22
     iget-object v0, p0, Lorg/conscrypt/HpkeContext;->spi:Lorg/conscrypt/HpkeSpi;
@@ -113,10 +113,10 @@
 .end method
 
 .method public init(Ljava/security/PublicKey;[BLjava/security/PrivateKey;)V
-    .registers 10
+    .locals 6
 
     .line 1
-    if-eqz p3, :cond_f
+    if-eqz p3, :cond_0
 
     .line 2
     .line 3
@@ -149,7 +149,7 @@
     return-void
 
     .line 16
-    :cond_f
+    :cond_0
     const-string p1, "Sender private key is null"
 
     .line 17
@@ -163,9 +163,9 @@
 .end method
 
 .method public init(Ljava/security/PublicKey;[BLjava/security/PrivateKey;[B[B)V
-    .registers 12
+    .locals 6
 
-    if-eqz p3, :cond_d
+    if-eqz p3, :cond_0
 
     .line 24
     iget-object v0, p0, Lorg/conscrypt/HpkeContext;->spi:Lorg/conscrypt/HpkeSpi;
@@ -185,7 +185,7 @@
     return-void
 
     .line 25
-    :cond_d
+    :cond_0
     const-string p1, "Sender private key is null"
 
     invoke-static {p1}, Llibs/bf0;->k(Ljava/lang/String;)V
@@ -194,7 +194,7 @@
 .end method
 
 .method public init(Ljava/security/PublicKey;[B[B[B)V
-    .registers 11
+    .locals 6
 
     .line 23
     iget-object v0, p0, Lorg/conscrypt/HpkeContext;->spi:Lorg/conscrypt/HpkeSpi;
@@ -215,10 +215,10 @@
 .end method
 
 .method public initForTesting(Ljava/security/PublicKey;[B[B)V
-    .registers 11
+    .locals 7
 
     .line 1
-    if-eqz p3, :cond_f
+    if-eqz p3, :cond_0
 
     .line 2
     .line 3
@@ -253,7 +253,7 @@
     return-void
 
     .line 16
-    :cond_f
+    :cond_0
     const-string p1, "null seed"
 
     .line 17
@@ -267,7 +267,7 @@
 .end method
 
 .method public seal([B[B)[B
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/HpkeContext;->spi:Lorg/conscrypt/HpkeSpi;

@@ -20,7 +20,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r31;Ljava/util/LinkedHashSet;Ljava/lang/String;Llibs/xt1;I)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public final f(Llibs/t4;)V
-    .registers 19
+    .locals 17
 
     .line 1
     move-object/from16 v1, p0
@@ -88,7 +88,7 @@
     const/4 v7, 0x1
 
     .line 16
-    :try_start_f
+    :try_start_0
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     .line 17
@@ -97,7 +97,7 @@
     move-result-object v0
 
     .line 20
-    :goto_13
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 21
@@ -106,7 +106,7 @@
     move-result v9
 
     .line 24
-    if-eqz v9, :cond_e8
+    if-eqz v9, :cond_6
 
     .line 25
     .line 26
@@ -130,7 +130,7 @@
     move-result v10
 
     .line 36
-    if-nez v10, :cond_e2
+    if-nez v10, :cond_5
 
     .line 37
     .line 38
@@ -142,7 +142,7 @@
     move-result v10
 
     .line 42
-    if-nez v10, :cond_38
+    if-nez v10, :cond_0
 
     .line 43
     .line 44
@@ -159,22 +159,22 @@
 
     .line 50
     .line 51
-    if-eqz v14, :cond_38
+    if-eqz v14, :cond_0
 
     .line 52
     .line 53
-    goto :goto_13
+    goto :goto_0
 
     .line 54
-    :catchall_35
+    :catchall_0
     move-exception v0
 
     .line 55
-    goto/16 :goto_f6
+    goto/16 :goto_2
 
     .line 56
     .line 57
-    :cond_38
+    :cond_0
     iget-object v10, v9, Llibs/rp0;->Three:Ljava/lang/String;
 
     .line 58
@@ -193,23 +193,23 @@
     .line 65
     .line 66
     move-result v11
-    :try_end_42
-    .catchall {:try_start_f .. :try_end_42} :catchall_35
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 67
     const/4 v12, 0x0
 
     .line 68
-    :goto_43
+    :goto_1
     const-string v13, " > "
 
     .line 69
     .line 70
-    if-ge v12, v11, :cond_ac
+    if-ge v12, v11, :cond_3
 
     .line 71
     .line 72
-    :try_start_47
+    :try_start_1
     invoke-virtual {v10, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     .line 73
@@ -234,7 +234,7 @@
     move-result v15
 
     .line 84
-    if-nez v15, :cond_a6
+    if-nez v15, :cond_2
 
     .line 85
     .line 86
@@ -302,7 +302,7 @@
     move-result-object v0
 
     .line 118
-    if-eqz v0, :cond_84
+    if-eqz v0, :cond_1
 
     .line 119
     .line 120
@@ -328,10 +328,10 @@
 
     .line 131
     .line 132
-    goto :goto_43
+    goto :goto_1
 
     .line 133
-    :cond_84
+    :cond_1
     new-instance v0, Ljava/lang/Exception;
 
     .line 134
@@ -396,7 +396,7 @@
     throw v0
 
     .line 167
-    :cond_a6
+    :cond_2
     new-instance v0, Ljava/lang/InterruptedException;
 
     .line 168
@@ -409,7 +409,7 @@
     throw v0
 
     .line 173
-    :cond_ac
+    :cond_3
     move-object/from16 v16, v0
 
     .line 174
@@ -425,7 +425,7 @@
     move-result v0
 
     .line 180
-    if-eqz v0, :cond_c0
+    if-eqz v0, :cond_4
 
     .line 181
     .line 182
@@ -446,11 +446,11 @@
 
     .line 190
     .line 191
-    goto/16 :goto_13
+    goto/16 :goto_0
 
     .line 192
     .line 193
-    :cond_c0
+    :cond_4
     new-instance v0, Ljava/lang/Exception;
 
     .line 194
@@ -515,7 +515,7 @@
     throw v0
 
     .line 227
-    :cond_e2
+    :cond_5
     new-instance v0, Ljava/lang/InterruptedException;
 
     .line 228
@@ -528,7 +528,7 @@
     throw v0
 
     .line 233
-    :cond_e8
+    :cond_6
     const/4 v8, 0x0
 
     .line 234
@@ -550,8 +550,8 @@
     .line 242
     .line 243
     invoke-virtual {v6, v0}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
-    :try_end_f5
-    .catchall {:try_start_47 .. :try_end_f5} :catchall_35
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 244
     .line 245
@@ -559,7 +559,7 @@
     return-void
 
     .line 247
-    :goto_f6
+    :goto_2
     invoke-static {v0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 248

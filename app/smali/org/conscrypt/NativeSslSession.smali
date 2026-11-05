@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const-class v0, Lorg/conscrypt/NativeSslSession;
@@ -40,7 +40,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +52,7 @@
 .end method
 
 .method public static bridge synthetic a()Ljava/util/logging/Logger;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/NativeSslSession;->logger:Ljava/util/logging/Logger;
@@ -63,7 +63,7 @@
 .end method
 
 .method public static bridge synthetic b(Ljava/security/cert/CertificateEncodingException;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-static {p0}, Lorg/conscrypt/NativeSslSession;->log(Ljava/lang/Throwable;)V
@@ -75,10 +75,10 @@
 .end method
 
 .method private static checkRemaining(Ljava/nio/ByteBuffer;I)V
-    .registers 5
+    .locals 3
 
     .line 1
-    if-ltz p1, :cond_22
+    if-ltz p1, :cond_1
 
     .line 2
     .line 3
@@ -90,14 +90,14 @@
     move-result v0
 
     .line 7
-    if-gt p1, v0, :cond_9
+    if-gt p1, v0, :cond_0
 
     .line 8
     .line 9
     return-void
 
     .line 10
-    :cond_9
+    :cond_0
     new-instance v0, Ljava/io/IOException;
 
     .line 11
@@ -147,7 +147,7 @@
     throw v0
 
     .line 35
-    :cond_22
+    :cond_1
     const-string p0, "Length is negative: "
 
     .line 36
@@ -169,7 +169,7 @@
 .end method
 
 .method private static getOcspResponse(Lorg/conscrypt/ConscryptSession;)[B
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-interface {p0}, Lorg/conscrypt/ConscryptSession;->getStatusResponses()Ljava/util/List;
@@ -191,7 +191,7 @@
     const/4 v1, 0x1
 
     .line 10
-    if-lt v0, v1, :cond_13
+    if-lt v0, v1, :cond_0
 
     .line 11
     .line 12
@@ -213,7 +213,7 @@
     return-object p0
 
     .line 20
-    :cond_13
+    :cond_0
     const/4 p0, 0x0
 
     .line 21
@@ -221,7 +221,7 @@
 .end method
 
 .method private static log(Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 3
 
     .line 1
     sget-object v0, Lorg/conscrypt/NativeSslSession;->logger:Ljava/util/logging/Logger;
@@ -240,7 +240,7 @@
     move-result-object v2
 
     .line 9
-    if-eqz v2, :cond_f
+    if-eqz v2, :cond_0
 
     .line 10
     .line 11
@@ -252,10 +252,10 @@
     move-result-object p0
 
     .line 15
-    goto :goto_17
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_0
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 17
@@ -272,7 +272,7 @@
     move-result-object p0
 
     .line 24
-    :goto_17
+    :goto_0
     const-string v2, "Error inflating SSL session: {0}"
 
     .line 25
@@ -286,7 +286,7 @@
 .end method
 
 .method public static newInstance(Lorg/conscrypt/AbstractSessionContext;[BLjava/lang/String;I)Lorg/conscrypt/NativeSslSession;
-    .registers 17
+    .locals 13
 
     .line 1
     const-string v0, "Unexpected type ID: "
@@ -304,7 +304,7 @@
     const/4 v1, 0x0
 
     .line 8
-    :try_start_7
+    :try_start_0
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->getInt()I
 
     .line 9
@@ -321,7 +321,7 @@
     move-result v3
 
     .line 16
-    if-eqz v3, :cond_d2
+    if-eqz v3, :cond_5
 
     .line 17
     .line 18
@@ -367,8 +367,8 @@
     const/4 v4, 0x0
 
     .line 40
-    :goto_27
-    if-ge v4, v3, :cond_63
+    :goto_0
+    if-ge v4, v3, :cond_0
 
     .line 41
     .line 42
@@ -390,14 +390,14 @@
     .line 50
     .line 51
     invoke-virtual {p1, v5}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
-    :try_end_35
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_35} :catch_61
-    .catch Ljava/nio/BufferUnderflowException; {:try_start_7 .. :try_end_35} :catch_5d
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/nio/BufferUnderflowException; {:try_start_0 .. :try_end_0} :catch_1
 
     .line 52
     .line 53
     .line 54
-    :try_start_35
+    :try_start_1
     invoke-static {v5}, Lorg/conscrypt/OpenSSLX509Certificate;->fromX509Der([B)Lorg/conscrypt/OpenSSLX509Certificate;
 
     .line 55
@@ -407,8 +407,8 @@
 
     .line 58
     aput-object v5, v9, v4
-    :try_end_3b
-    .catch Ljava/lang/Exception; {:try_start_35 .. :try_end_3b} :catch_3e
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 59
     .line 60
@@ -416,11 +416,11 @@
 
     .line 61
     .line 62
-    goto :goto_27
+    goto :goto_0
 
     .line 63
-    :catch_3e
-    :try_start_3e
+    :catch_0
+    :try_start_2
     new-instance p0, Ljava/io/IOException;
 
     .line 64
@@ -478,26 +478,26 @@
     throw p0
 
     .line 94
-    :catch_5d
+    :catch_1
     move-exception v0
 
     .line 95
-    :goto_5e
+    :goto_1
     move-object p0, v0
 
     .line 96
-    goto/16 :goto_e4
+    goto/16 :goto_5
 
     .line 97
     .line 98
-    :catch_61
+    :catch_2
     move-exception v0
 
     .line 99
-    goto :goto_5e
+    goto :goto_1
 
     .line 100
-    :cond_63
+    :cond_0
     sget-object v3, Lorg/conscrypt/SSLUtils$SessionType;->OPEN_SSL_WITH_OCSP:Lorg/conscrypt/SSLUtils$SessionType;
 
     .line 101
@@ -506,7 +506,7 @@
 
     .line 103
     .line 104
-    if-lt v2, v3, :cond_95
+    if-lt v2, v3, :cond_2
 
     .line 105
     .line 106
@@ -526,7 +526,7 @@
     const/4 v4, 0x1
 
     .line 114
-    if-lt v3, v4, :cond_95
+    if-lt v3, v4, :cond_2
 
     .line 115
     .line 116
@@ -552,8 +552,8 @@
     .line 126
     .line 127
     .line 128
-    :goto_7f
-    if-ge v4, v3, :cond_93
+    :goto_2
+    if-ge v4, v3, :cond_1
 
     .line 129
     .line 130
@@ -590,21 +590,21 @@
 
     .line 146
     .line 147
-    goto :goto_7f
+    goto :goto_2
 
     .line 148
-    :cond_93
+    :cond_1
     move-object v10, v5
 
     .line 149
-    goto :goto_96
+    goto :goto_3
 
     .line 150
-    :cond_95
+    :cond_2
     move-object v10, v1
 
     .line 151
-    :goto_96
+    :goto_3
     sget-object v3, Lorg/conscrypt/SSLUtils$SessionType;->OPEN_SSL_WITH_TLS_SCT:Lorg/conscrypt/SSLUtils$SessionType;
 
     .line 152
@@ -613,7 +613,7 @@
 
     .line 154
     .line 155
-    if-ne v2, v3, :cond_ac
+    if-ne v2, v3, :cond_3
 
     .line 156
     .line 157
@@ -630,7 +630,7 @@
     .line 162
     .line 163
     .line 164
-    if-lez v2, :cond_ac
+    if-lez v2, :cond_3
 
     .line 165
     .line 166
@@ -646,14 +646,14 @@
     move-object v11, v2
 
     .line 172
-    goto :goto_ad
+    goto :goto_4
 
     .line 173
-    :cond_ac
+    :cond_3
     move-object v11, v1
 
     .line 174
-    :goto_ad
+    :goto_4
     invoke-virtual {p1}, Ljava/nio/Buffer;->remaining()I
 
     .line 175
@@ -662,7 +662,7 @@
     move-result p1
 
     .line 178
-    if-eqz p1, :cond_be
+    if-eqz p1, :cond_4
 
     .line 179
     .line 180
@@ -687,7 +687,7 @@
     return-object v1
 
     .line 191
-    :cond_be
+    :cond_4
     new-instance v6, Lorg/conscrypt/NativeRef$SSL_SESSION;
 
     .line 192
@@ -730,7 +730,7 @@
     return-object v4
 
     .line 211
-    :cond_d2
+    :cond_5
     new-instance p0, Ljava/io/IOException;
 
     .line 212
@@ -763,12 +763,12 @@
     .line 227
     .line 228
     throw p0
-    :try_end_e4
-    .catch Ljava/io/IOException; {:try_start_3e .. :try_end_e4} :catch_61
-    .catch Ljava/nio/BufferUnderflowException; {:try_start_3e .. :try_end_e4} :catch_5d
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
+    .catch Ljava/nio/BufferUnderflowException; {:try_start_2 .. :try_end_2} :catch_1
 
     .line 229
-    :goto_e4
+    :goto_5
     invoke-static {p0}, Lorg/conscrypt/NativeSslSession;->log(Ljava/lang/Throwable;)V
 
     .line 230
@@ -778,7 +778,7 @@
 .end method
 
 .method public static newInstance(Lorg/conscrypt/NativeRef$SSL_SESSION;Lorg/conscrypt/ConscryptSession;)Lorg/conscrypt/NativeSslSession;
-    .registers 12
+    .locals 10
 
     .line 233
     invoke-interface {p1}, Ljavax/net/ssl/SSLSession;->getSessionContext()Ljavax/net/ssl/SSLSessionContext;
@@ -792,7 +792,7 @@
     .line 234
     instance-of v0, v2, Lorg/conscrypt/ClientSessionContext;
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_0
 
     .line 235
     new-instance v1, Lorg/conscrypt/NativeSslSession$Impl;
@@ -827,7 +827,7 @@
 
     return-object v1
 
-    :cond_27
+    :cond_0
     move-object v3, p0
 
     .line 238

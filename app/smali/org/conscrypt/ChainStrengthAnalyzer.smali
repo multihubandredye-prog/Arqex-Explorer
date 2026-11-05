@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     const/4 v0, 0x6
@@ -101,7 +101,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -113,7 +113,7 @@
 .end method
 
 .method public static final check(Ljava/util/List;)V
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -132,7 +132,7 @@
     move-result-object p0
 
     .line 5
-    :goto_4
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 6
@@ -141,7 +141,7 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -157,18 +157,18 @@
 
     .line 16
     .line 17
-    :try_start_10
+    :try_start_0
     invoke-static {v0}, Lorg/conscrypt/ChainStrengthAnalyzer;->checkCert(Ljava/security/cert/X509Certificate;)V
-    :try_end_13
-    .catch Ljava/security/cert/CertificateException; {:try_start_10 .. :try_end_13} :catch_14
+    :try_end_0
+    .catch Ljava/security/cert/CertificateException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 18
     .line 19
     .line 20
-    goto :goto_4
+    goto :goto_0
 
     .line 21
-    :catch_14
+    :catch_0
     move-exception p0
 
     .line 22
@@ -218,34 +218,34 @@
     throw v1
 
     .line 46
-    :cond_2d
+    :cond_0
     return-void
 .end method
 
 .method public static final check([Ljava/security/cert/X509Certificate;)V
-    .registers 5
+    .locals 4
 
     .line 47
     array-length v0, p0
 
     const/4 v1, 0x0
 
-    :goto_2
-    if-ge v1, v0, :cond_25
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     aget-object v2, p0, v1
 
     .line 48
-    :try_start_6
+    :try_start_0
     invoke-static {v2}, Lorg/conscrypt/ChainStrengthAnalyzer;->checkCert(Ljava/security/cert/X509Certificate;)V
-    :try_end_9
-    .catch Ljava/security/cert/CertificateException; {:try_start_6 .. :try_end_9} :catch_c
+    :try_end_0
+    .catch Ljava/security/cert/CertificateException; {:try_start_0 .. :try_end_0} :catch_0
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :catch_c
+    :catch_0
     move-exception p0
 
     .line 49
@@ -274,12 +274,12 @@
 
     throw v0
 
-    :cond_25
+    :cond_0
     return-void
 .end method
 
 .method public static final checkCert(Ljava/security/cert/X509Certificate;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-static {p0}, Lorg/conscrypt/ChainStrengthAnalyzer;->checkKeyLength(Ljava/security/cert/X509Certificate;)V
@@ -296,7 +296,7 @@
 .end method
 
 .method private static checkKeyLength(Ljava/security/cert/X509Certificate;)V
-    .registers 4
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Ljava/security/cert/Certificate;->getPublicKey()Ljava/security/PublicKey;
@@ -315,7 +315,7 @@
 
     .line 8
     .line 9
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_1
 
     .line 10
     .line 11
@@ -339,14 +339,14 @@
     move-result p0
 
     .line 21
-    if-lt p0, v1, :cond_17
+    if-lt p0, v1, :cond_0
 
     .line 22
     .line 23
-    goto :goto_60
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_0
     const-string p0, "RSA modulus is < 1024 bits"
 
     .line 25
@@ -359,7 +359,7 @@
     return-void
 
     .line 30
-    :cond_1d
+    :cond_1
     instance-of v0, p0, Ljava/security/interfaces/ECPublicKey;
 
     .line 31
@@ -368,7 +368,7 @@
 
     .line 33
     .line 34
-    if-eqz v0, :cond_3e
+    if-eqz v0, :cond_3
 
     .line 35
     .line 36
@@ -408,14 +408,14 @@
     move-result p0
 
     .line 54
-    if-lt p0, v2, :cond_38
+    if-lt p0, v2, :cond_2
 
     .line 55
     .line 56
-    goto :goto_60
+    goto :goto_0
 
     .line 57
-    :cond_38
+    :cond_2
     const-string p0, "EC key field size is < 160 bits"
 
     .line 58
@@ -428,12 +428,12 @@
     return-void
 
     .line 63
-    :cond_3e
+    :cond_3
     instance-of v0, p0, Ljava/security/interfaces/DSAPublicKey;
 
     .line 64
     .line 65
-    if-eqz v0, :cond_67
+    if-eqz v0, :cond_5
 
     .line 66
     .line 67
@@ -489,19 +489,19 @@
     move-result p0
 
     .line 93
-    if-lt v0, v1, :cond_61
+    if-lt v0, v1, :cond_4
 
     .line 94
     .line 95
-    if-lt p0, v2, :cond_61
+    if-lt p0, v2, :cond_4
 
     .line 96
     .line 97
-    :goto_60
+    :goto_0
     return-void
 
     .line 98
-    :cond_61
+    :cond_4
     const-string p0, "DSA key length is < (1024, 160) bits"
 
     .line 99
@@ -514,7 +514,7 @@
     return-void
 
     .line 104
-    :cond_67
+    :cond_5
     new-instance v0, Ljava/security/cert/CertificateException;
 
     .line 105
@@ -556,7 +556,7 @@
 .end method
 
 .method private static checkSignatureAlgorithm(Ljava/security/cert/X509Certificate;)V
-    .registers 5
+    .locals 4
 
     .line 1
     invoke-virtual {p0}, Ljava/security/cert/X509Certificate;->getSigAlgOID()Ljava/lang/String;
@@ -577,8 +577,8 @@
     const/4 v2, 0x0
 
     .line 9
-    :goto_8
-    if-ge v2, v1, :cond_21
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     .line 10
     .line 11
@@ -594,7 +594,7 @@
     move-result v3
 
     .line 17
-    if-nez v3, :cond_15
+    if-nez v3, :cond_0
 
     .line 18
     .line 19
@@ -602,10 +602,10 @@
 
     .line 20
     .line 21
-    goto :goto_8
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     new-instance v0, Ljava/security/cert/CertificateException;
 
     .line 23
@@ -630,6 +630,6 @@
     throw v0
 
     .line 34
-    :cond_21
+    :cond_1
     return-void
 .end method

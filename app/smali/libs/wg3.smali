@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/yg3;Ljava/util/concurrent/atomic/AtomicBoolean;Ljava/util/Queue;)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/wg3;->c:Llibs/yg3;
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final e(Llibs/rp0;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/wg3;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -54,7 +54,7 @@
     move-result v1
 
     .line 7
-    if-nez v1, :cond_c
+    if-nez v1, :cond_0
 
     .line 8
     .line 9
@@ -66,7 +66,7 @@
     .line 11
     .line 12
     .line 13
-    :cond_c
+    :cond_0
     invoke-virtual {p1}, Llibs/rp0;->Run()Z
 
     .line 14
@@ -75,7 +75,7 @@
     move-result v0
 
     .line 17
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     .line 18
     .line 19
@@ -88,10 +88,10 @@
     .line 22
     .line 23
     .line 24
-    goto :goto_21
+    goto :goto_0
 
     .line 25
-    :cond_18
+    :cond_1
     iget-object v0, p0, Llibs/wg3;->c:Llibs/yg3;
 
     .line 26
@@ -109,7 +109,7 @@
     .line 32
     .line 33
     .line 34
-    :goto_21
+    :goto_0
     const/4 p1, 0x0
 
     .line 35

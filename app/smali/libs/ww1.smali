@@ -20,7 +20,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Thread;Ljava/lang/String;Llibs/t61;Ljava/util/HashSet;Ljava/util/concurrent/atomic/AtomicReference;)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public final accept(Lcom/mixplorer/libs/MixBox$FileData;)Z
-    .registers 10
+    .locals 8
 
     .line 1
     iget-object v0, p0, Llibs/ww1;->X:Ljava/lang/Thread;
@@ -88,26 +88,26 @@
     const/4 v5, 0x1
 
     .line 16
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 17
     .line 18
     return v5
 
     .line 19
-    :cond_12
+    :cond_0
     const/4 v0, 0x0
 
     .line 20
-    if-nez p1, :cond_16
+    if-nez p1, :cond_1
 
     .line 21
     .line 22
-    goto :goto_2a
+    goto :goto_0
 
     .line 23
-    :cond_16
-    :try_start_16
+    :cond_1
+    :try_start_0
     iget-object v6, p1, Lcom/mixplorer/libs/MixBox$FileData;->name:Ljava/lang/String;
 
     .line 24
@@ -128,7 +128,7 @@
     move-result v7
 
     .line 33
-    if-eqz v7, :cond_2d
+    if-eqz v7, :cond_2
 
     .line 34
     .line 35
@@ -144,22 +144,22 @@
     move-result v6
 
     .line 41
-    if-nez v6, :cond_2d
+    if-nez v6, :cond_2
 
     .line 42
     .line 43
-    :goto_2a
+    :goto_0
     return v0
 
     .line 44
-    :catchall_2b
+    :catchall_0
     move-exception p1
 
     .line 45
-    goto :goto_45
+    goto :goto_1
 
     .line 46
-    :cond_2d
+    :cond_2
     invoke-static {p1, v1}, Llibs/yw1;->State(Lcom/mixplorer/libs/MixBox$FileData;Ljava/lang/String;)Llibs/rp0;
 
     .line 47
@@ -169,11 +169,11 @@
 
     .line 50
     monitor-enter v3
-    :try_end_32
-    .catchall {:try_start_16 .. :try_end_32} :catchall_2b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 51
-    :try_start_32
+    :try_start_1
     iget-object v1, p1, Llibs/rp0;->Three:Ljava/lang/String;
 
     .line 52
@@ -184,11 +184,11 @@
     .line 55
     .line 56
     monitor-exit v3
-    :try_end_38
-    .catchall {:try_start_32 .. :try_end_38} :catchall_42
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 57
-    :try_start_38
+    :try_start_2
     invoke-virtual {v2, p1}, Llibs/t61;->e(Llibs/rp0;)Z
 
     .line 58
@@ -197,13 +197,13 @@
     move-result v1
 
     .line 61
-    if-eqz v1, :cond_5b
+    if-eqz v1, :cond_4
 
     .line 62
     .line 63
     invoke-virtual {v4, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
-    :try_end_41
-    .catchall {:try_start_38 .. :try_end_41} :catchall_2b
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 64
     .line 65
@@ -211,23 +211,23 @@
     return v5
 
     .line 67
-    :catchall_42
+    :catchall_1
     move-exception p1
 
     .line 68
-    :try_start_43
+    :try_start_3
     monitor-exit v3
-    :try_end_44
-    .catchall {:try_start_43 .. :try_end_44} :catchall_42
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 69
-    :try_start_44
+    :try_start_4
     throw p1
-    :try_end_45
-    .catchall {:try_start_44 .. :try_end_45} :catchall_2b
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 70
-    :goto_45
+    :goto_1
     invoke-static {p1}, Llibs/hp0;->y(Ljava/lang/Throwable;)Z
 
     .line 71
@@ -236,14 +236,14 @@
     move-result v1
 
     .line 74
-    if-eqz v1, :cond_4c
+    if-eqz v1, :cond_3
 
     .line 75
     .line 76
-    goto :goto_5c
+    goto :goto_2
 
     .line 77
-    :cond_4c
+    :cond_3
     const-string v1, "ROOT"
 
     .line 78
@@ -273,10 +273,10 @@
     .line 90
     .line 91
     .line 92
-    :cond_5b
+    :cond_4
     const/4 v5, 0x0
 
     .line 93
-    :goto_5c
+    :goto_2
     return v5
 .end method

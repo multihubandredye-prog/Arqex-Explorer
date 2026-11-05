@@ -37,7 +37,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 17
+    .locals 17
 
     .line 1
     new-instance v0, Ljava/util/HashMap;
@@ -359,7 +359,7 @@
 .end method
 
 .method public constructor <init>(ILlibs/Exec;)V
-    .registers 5
+    .locals 2
 
     sget-object v0, Llibs/Width;->Y:Llibs/Width;
 
@@ -374,7 +374,7 @@
 .end method
 
 .method public constructor <init>(Llibs/Width;ILjava/util/Set;)V
-    .registers 6
+    .locals 2
 
     .line 1
     sget-object v0, Llibs/Exec;->Y:Llibs/Exec;
@@ -389,19 +389,19 @@
     move-result v1
 
     .line 7
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
-    goto :goto_b
+    goto :goto_0
 
     .line 10
-    :cond_9
+    :cond_0
     sget-object v0, Llibs/Exec;->Z:Llibs/Exec;
 
     .line 11
     .line 12
-    :goto_b
+    :goto_0
     invoke-direct {p0, p1, p2, v0, p3}, Llibs/Size;-><init>(Llibs/Width;ILlibs/Exec;Ljava/util/Set;)V
 
     .line 13
@@ -411,7 +411,7 @@
 .end method
 
 .method public constructor <init>(Llibs/Width;ILlibs/Exec;Ljava/util/Set;)V
-    .registers 5
+    .locals 0
 
     .line 17
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -432,7 +432,7 @@
 .end method
 
 .method public static b(Llibs/Width;I)Llibs/Size;
-    .registers 9
+    .locals 7
 
     .line 1
     invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
@@ -456,23 +456,23 @@
 
     .line 9
     .line 10
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1
 
     .line 11
     .line 12
-    if-eq v0, v3, :cond_11
+    if-eq v0, v3, :cond_0
 
     .line 13
     .line 14
-    if-eq v0, v2, :cond_11
+    if-eq v0, v2, :cond_0
 
     .line 15
     .line 16
-    if-ne v0, v1, :cond_3c
+    if-ne v0, v1, :cond_3
 
     .line 17
     .line 18
-    :cond_11
+    :cond_0
     new-instance v0, Llibs/Mode;
 
     .line 19
@@ -501,7 +501,7 @@
     return-object v0
 
     .line 32
-    :cond_1f
+    :cond_1
     invoke-interface {v4}, Ljava/util/Map;->values()Ljava/util/Collection;
 
     .line 33
@@ -518,7 +518,7 @@
     move-result-object v0
 
     .line 40
-    :cond_27
+    :cond_2
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 41
@@ -527,7 +527,7 @@
     move-result v5
 
     .line 44
-    if-eqz v5, :cond_3c
+    if-eqz v5, :cond_3
 
     .line 45
     .line 46
@@ -547,7 +547,7 @@
 
     .line 53
     .line 54
-    if-ne v6, p1, :cond_27
+    if-ne v6, p1, :cond_2
 
     .line 55
     .line 56
@@ -555,14 +555,14 @@
 
     .line 57
     .line 58
-    if-ne p0, v6, :cond_27
+    if-ne p0, v6, :cond_2
 
     .line 59
     .line 60
     return-object v5
 
     .line 61
-    :cond_3c
+    :cond_3
     new-instance v0, Llibs/Icon;
 
     .line 62
@@ -611,35 +611,35 @@
     .line 83
     .line 84
     .line 85
-    goto :goto_56
+    goto :goto_1
 
     .line 86
-    :goto_55
+    :goto_0
     throw v0
 
     .line 87
-    :goto_56
-    goto :goto_55
+    :goto_1
+    goto :goto_0
 .end method
 
 
 # virtual methods
 .method public final a(Llibs/Exec;)Llibs/Size;
-    .registers 9
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/Size;->d:Llibs/Exec;
 
     .line 2
     .line 3
-    if-ne v0, p1, :cond_5
+    if-ne v0, p1, :cond_0
 
     .line 4
     .line 5
     return-object p0
 
     .line 6
-    :cond_5
+    :cond_0
     iget-object v0, p0, Llibs/Size;->c:Ljava/util/Set;
 
     .line 7
@@ -652,7 +652,7 @@
     move-result v0
 
     .line 12
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_1
 
     .line 13
     .line 14
@@ -686,7 +686,7 @@
     return-object v1
 
     .line 28
-    :cond_1b
+    :cond_1
     move-object v2, p0
 
     .line 29
@@ -739,7 +739,7 @@
 .end method
 
 .method public c(Llibs/s73;)Llibs/Color;
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/Google;
@@ -759,7 +759,7 @@
 .end method
 
 .method public d(Llibs/s73;)Llibs/Color;
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/Firebase;
@@ -779,24 +779,24 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
     .line 6
-    if-eqz p1, :cond_27
+    if-eqz p1, :cond_2
 
     .line 7
     .line 8
@@ -816,14 +816,14 @@
     move-result-object v3
 
     .line 16
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
     .line 17
     .line 18
-    goto :goto_27
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_1
     check-cast p1, Llibs/Size;
 
     .line 20
@@ -836,7 +836,7 @@
 
     .line 24
     .line 25
-    if-ne v2, v3, :cond_27
+    if-ne v2, v3, :cond_2
 
     .line 26
     .line 27
@@ -848,7 +848,7 @@
 
     .line 30
     .line 31
-    if-ne v2, v3, :cond_27
+    if-ne v2, v3, :cond_2
 
     .line 32
     .line 33
@@ -860,20 +860,20 @@
 
     .line 36
     .line 37
-    if-ne v2, p1, :cond_27
+    if-ne v2, p1, :cond_2
 
     .line 38
     .line 39
     return v0
 
     .line 40
-    :cond_27
-    :goto_27
+    :cond_2
+    :goto_0
     return v1
 .end method
 
 .method public final hashCode()I
-    .registers 5
+    .locals 4
 
     .line 1
     iget v0, p0, Llibs/Size;->b:I
@@ -936,7 +936,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(IJLlibs/kn2;)V
-    .registers 6
+    .locals 1
 
     .line 1
     iput-object p4, p0, Llibs/mn2;->Pi:Llibs/kn2;
@@ -115,18 +115,18 @@
 
 # virtual methods
 .method public final available()I
-    .registers 3
+    .locals 2
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    :goto_1
+    :goto_0
     iget-boolean v1, p0, Llibs/mn2;->Xi:Z
 
     .line 3
     .line 4
-    if-nez v1, :cond_15
+    if-nez v1, :cond_0
 
     .line 5
     .line 6
@@ -142,11 +142,11 @@
     move-result v1
 
     .line 12
-    if-gtz v1, :cond_15
+    if-gtz v1, :cond_0
 
     .line 13
     .line 14
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 15
     .line 16
@@ -161,10 +161,10 @@
     move-result v0
 
     .line 21
-    goto :goto_1
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     iget-object v0, p0, Llibs/mn2;->Omicron:Ljava/io/ByteArrayInputStream;
 
     .line 23
@@ -181,7 +181,7 @@
 .end method
 
 .method public final c(Z)Z
-    .registers 11
+    .locals 9
 
     .line 1
     iget-object v0, p0, Llibs/mn2;->Lambda:Ljava/util/ArrayDeque;
@@ -203,11 +203,11 @@
     const/4 v2, 0x0
 
     .line 10
-    if-eqz v1, :cond_7c
+    if-eqz v1, :cond_5
 
     .line 11
     .line 12
-    if-nez p1, :cond_18
+    if-nez p1, :cond_0
 
     .line 13
     .line 14
@@ -227,14 +227,14 @@
     move-result p1
 
     .line 22
-    if-nez p1, :cond_18
+    if-nez p1, :cond_0
 
     .line 23
     .line 24
-    goto :goto_7c
+    goto :goto_0
 
     .line 25
-    :cond_18
+    :cond_0
     invoke-interface {v0, v1}, Ljava/util/Deque;->remove(Ljava/lang/Object;)Z
 
     .line 26
@@ -296,7 +296,7 @@
     const/4 v6, 0x1
 
     .line 56
-    if-eq v4, v5, :cond_6d
+    if-eq v4, v5, :cond_3
 
     .line 57
     .line 58
@@ -304,7 +304,7 @@
 
     .line 59
     .line 60
-    if-ne v4, v5, :cond_67
+    if-ne v4, v5, :cond_2
 
     .line 61
     .line 62
@@ -335,7 +335,7 @@
 
     .line 74
     .line 75
-    if-nez v2, :cond_66
+    if-nez v2, :cond_1
 
     .line 76
     .line 77
@@ -378,7 +378,7 @@
     move-result p1
 
     .line 96
-    if-ge v3, p1, :cond_66
+    if-ge v3, p1, :cond_1
 
     .line 97
     .line 98
@@ -391,11 +391,11 @@
     .line 101
     .line 102
     .line 103
-    :cond_66
+    :cond_1
     return v6
 
     .line 104
-    :cond_67
+    :cond_2
     const-string p1, "Unexpected packet: "
 
     .line 105
@@ -408,7 +408,7 @@
     return v2
 
     .line 110
-    :cond_6d
+    :cond_3
     invoke-virtual {p1}, Llibs/dp2;->Result()I
 
     .line 111
@@ -420,7 +420,7 @@
     const/4 v1, 0x3
 
     .line 115
-    if-ne v0, v1, :cond_77
+    if-ne v0, v1, :cond_4
 
     .line 116
     .line 117
@@ -431,7 +431,7 @@
     return v6
 
     .line 120
-    :cond_77
+    :cond_4
     invoke-virtual {p1, v0}, Llibs/dp2;->Bundle(I)V
 
     .line 121
@@ -443,13 +443,13 @@
     throw p1
 
     .line 125
-    :cond_7c
-    :goto_7c
+    :cond_5
+    :goto_0
     return v2
 .end method
 
 .method public final read()I
-    .registers 5
+    .locals 4
 
     const/4 v0, 0x1
 
@@ -464,11 +464,11 @@
 
     const/4 v3, -0x1
 
-    if-ne v0, v3, :cond_c
+    if-ne v0, v3, :cond_0
 
     return v3
 
-    :cond_c
+    :cond_0
     aget-byte v0, v1, v2
 
     and-int/lit16 v0, v0, 0xff
@@ -477,7 +477,7 @@
 .end method
 
 .method public final read([BII)I
-    .registers 15
+    .locals 11
 
     .line 1
     :goto_0
@@ -485,7 +485,7 @@
 
     .line 2
     .line 3
-    if-nez v0, :cond_67
+    if-nez v0, :cond_5
 
     .line 4
     .line 5
@@ -501,7 +501,7 @@
     move-result v0
 
     .line 11
-    if-gtz v0, :cond_67
+    if-gtz v0, :cond_5
 
     .line 12
     .line 13
@@ -517,7 +517,7 @@
     move-result v1
 
     .line 19
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_0
 
     .line 20
     .line 21
@@ -525,10 +525,10 @@
 
     .line 22
     .line 23
-    goto :goto_28
+    goto :goto_1
 
     .line 24
-    :cond_17
+    :cond_0
     invoke-interface {v0}, Ljava/util/Deque;->getLast()Ljava/lang/Object;
 
     .line 25
@@ -566,8 +566,8 @@
     move-wide v1, v2
 
     .line 41
-    :cond_28
-    :goto_28
+    :cond_1
+    :goto_1
     invoke-interface {v0}, Ljava/util/Deque;->size()I
 
     .line 42
@@ -580,7 +580,7 @@
 
     .line 46
     .line 47
-    if-gt v3, v4, :cond_58
+    if-gt v3, v4, :cond_3
 
     .line 48
     .line 49
@@ -616,7 +616,7 @@
 
     .line 64
     .line 65
-    if-lez v6, :cond_4a
+    if-lez v6, :cond_2
 
     .line 66
     .line 67
@@ -631,14 +631,14 @@
 
     .line 71
     .line 72
-    if-lez v10, :cond_4a
+    if-lez v10, :cond_2
 
     .line 73
     .line 74
     long-to-int v3, v6
 
     .line 75
-    :cond_4a
+    :cond_2
     new-instance v6, Llibs/ln2;
 
     .line 76
@@ -663,11 +663,11 @@
 
     .line 86
     .line 87
-    if-ltz v3, :cond_28
+    if-ltz v3, :cond_1
 
     .line 88
     .line 89
-    :cond_58
+    :cond_3
     const/4 v0, 0x1
 
     .line 90
@@ -679,14 +679,14 @@
     move-result v0
 
     .line 94
-    if-eqz v0, :cond_60
+    if-eqz v0, :cond_4
 
     .line 95
     .line 96
     goto :goto_0
 
     .line 97
-    :cond_60
+    :cond_4
     const-string p1, "Could not retrieve data for pending read request"
 
     .line 98
@@ -702,7 +702,7 @@
     return p1
 
     .line 104
-    :cond_67
+    :cond_5
     iget-object v0, p0, Llibs/mn2;->Omicron:Ljava/io/ByteArrayInputStream;
 
     .line 105

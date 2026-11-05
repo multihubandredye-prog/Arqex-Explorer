@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Size;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public a()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -37,7 +37,7 @@
 .end method
 
 .method public b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/Sign;->a()Ljava/lang/Object;
@@ -48,7 +48,7 @@
     move-result-object v0
 
     .line 5
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -71,7 +71,7 @@
     return-object v0
 
     .line 16
-    :cond_f
+    :cond_0
     const/4 v0, 0x0
 
     .line 17
@@ -79,18 +79,18 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     .line 1
-    if-ne p0, p1, :cond_3
+    if-ne p0, p1, :cond_0
 
     .line 2
     .line 3
-    goto :goto_32
+    goto :goto_0
 
     .line 4
-    :cond_3
-    if-eqz p1, :cond_34
+    :cond_0
+    if-eqz p1, :cond_4
 
     .line 5
     .line 6
@@ -110,14 +110,14 @@
     move-result-object v1
 
     .line 14
-    if-eq v0, v1, :cond_10
+    if-eq v0, v1, :cond_1
 
     .line 15
     .line 16
-    goto :goto_34
+    goto :goto_1
 
     .line 17
-    :cond_10
+    :cond_1
     check-cast p1, Llibs/Sign;
 
     .line 18
@@ -130,14 +130,14 @@
 
     .line 22
     .line 23
-    if-eq v0, v1, :cond_19
+    if-eq v0, v1, :cond_2
 
     .line 24
     .line 25
-    goto :goto_34
+    goto :goto_1
 
     .line 26
-    :cond_19
+    :cond_2
     invoke-virtual {p0}, Llibs/Sign;->a()Ljava/lang/Object;
 
     .line 27
@@ -146,7 +146,7 @@
     move-result-object v0
 
     .line 30
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_3
 
     .line 31
     .line 32
@@ -177,7 +177,7 @@
     return p1
 
     .line 45
-    :cond_2c
+    :cond_3
     invoke-virtual {p1}, Llibs/Sign;->a()Ljava/lang/Object;
 
     .line 46
@@ -186,19 +186,19 @@
     move-result-object p1
 
     .line 49
-    if-nez p1, :cond_34
+    if-nez p1, :cond_4
 
     .line 50
     .line 51
-    :goto_32
+    :goto_0
     const/4 p1, 0x1
 
     .line 52
     return p1
 
     .line 53
-    :cond_34
-    :goto_34
+    :cond_4
+    :goto_1
     const/4 p1, 0x0
 
     .line 54
@@ -206,7 +206,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/Sign;->X:Llibs/Size;
@@ -221,7 +221,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

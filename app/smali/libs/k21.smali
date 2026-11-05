@@ -22,7 +22,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r31;Ljava/lang/String;Landroid/view/View;Ljava/util/LinkedHashSet;Llibs/bv1;Z)V
-    .registers 7
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public final f(Llibs/t4;)V
-    .registers 13
+    .locals 11
 
     .line 1
     iget-object v1, p0, Llibs/k21;->Y:Ljava/lang/String;
@@ -95,7 +95,7 @@
     const/4 v10, 0x0
 
     .line 17
-    :try_start_10
+    :try_start_0
     invoke-static {}, Llibs/c2;->z()Llibs/m52;
 
     .line 18
@@ -140,7 +140,7 @@
     .line 37
     .line 38
     .line 39
-    if-eqz v0, :cond_4f
+    if-eqz v0, :cond_1
 
     .line 40
     .line 41
@@ -172,7 +172,7 @@
     move-result v1
 
     .line 55
-    if-nez v1, :cond_49
+    if-nez v1, :cond_0
 
     .line 56
     .line 57
@@ -203,20 +203,20 @@
     .line 68
     .line 69
     .line 70
-    goto :goto_70
+    goto :goto_1
 
     .line 71
-    :catchall_46
+    :catchall_0
     move-exception v0
 
     .line 72
     move-object p1, v0
 
     .line 73
-    goto :goto_57
+    goto :goto_0
 
     .line 74
-    :cond_49
+    :cond_0
     new-instance p1, Ljava/lang/InterruptedException;
 
     .line 75
@@ -229,7 +229,7 @@
     throw p1
 
     .line 80
-    :cond_4f
+    :cond_1
     new-instance p1, Ljava/lang/NullPointerException;
 
     .line 81
@@ -244,11 +244,11 @@
     .line 86
     .line 87
     throw p1
-    :try_end_57
-    .catchall {:try_start_10 .. :try_end_57} :catchall_46
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 88
-    :goto_57
+    :goto_0
     invoke-static {p1}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 89
@@ -298,6 +298,6 @@
     .line 111
     .line 112
     .line 113
-    :goto_70
+    :goto_1
     return-void
 .end method

@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(IF)V
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Landroid/text/style/ReplacementSpan;-><init>()V
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public final draw(Landroid/graphics/Canvas;Ljava/lang/CharSequence;IIFIIILandroid/graphics/Paint;)V
-    .registers 17
+    .locals 7
 
     .line 1
     move-object/from16 v6, p9
@@ -170,7 +170,7 @@
 .end method
 
 .method public final getSize(Landroid/graphics/Paint;Ljava/lang/CharSequence;IILandroid/graphics/Paint$FontMetricsInt;)I
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-virtual {p1, p2, p3, p4}, Landroid/graphics/Paint;->measureText(Ljava/lang/CharSequence;II)F

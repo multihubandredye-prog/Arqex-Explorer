@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 3
+    .locals 1
 
     const/high16 v0, 0x41780000    # 15.5f
 
@@ -21,7 +21,7 @@
 .end method
 
 .method public constructor <init>(IF)V
-    .registers 5
+    .locals 2
 
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
@@ -53,16 +53,16 @@
 
     cmpl-float v1, p2, v1
 
-    if-ltz v1, :cond_28
+    if-ltz v1, :cond_0
 
     const v1, 0x3fd9999a    # 1.7f
 
-    goto :goto_2a
+    goto :goto_0
 
-    :cond_28
+    :cond_0
     const/high16 v1, 0x3fc00000    # 1.5f
 
-    :goto_2a
+    :goto_0
     invoke-static {v1}, Llibs/ModernUiTheme;->dpF(F)F
 
     move-result v1
@@ -79,17 +79,17 @@
 
 # virtual methods
 .method public draw(Landroid/graphics/Canvas;)V
-    .registers 13
+    .locals 11
 
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-void
 
-    :cond_7
+    :cond_0
     invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
 
     move-result v1
@@ -106,15 +106,15 @@
 
     cmpg-float v4, v1, v3
 
-    if-lez v4, :cond_a3
+    if-lez v4, :cond_2
 
     cmpg-float v3, v2, v3
 
-    if-gtz v3, :cond_1c
+    if-gtz v3, :cond_1
 
-    goto/16 :goto_a3
+    goto/16 :goto_0
 
-    :cond_1c
+    :cond_1
     iget v3, v0, Landroid/graphics/Rect;->left:I
 
     int-to-float v3, v3
@@ -263,13 +263,13 @@
 
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    :cond_a3
-    :goto_a3
+    :cond_2
+    :goto_0
     return-void
 .end method
 
 .method public getIntrinsicHeight()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Llibs/SmartFeaturesV116$CopyPathIconDrawable;->sizePx:I
 
@@ -277,7 +277,7 @@
 .end method
 
 .method public getIntrinsicWidth()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Llibs/SmartFeaturesV116$CopyPathIconDrawable;->sizePx:I
 
@@ -285,7 +285,7 @@
 .end method
 
 .method public getOpacity()I
-    .registers 2
+    .locals 1
 
     const/4 v0, -0x3
 
@@ -293,7 +293,7 @@
 .end method
 
 .method public setAlpha(I)V
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Llibs/SmartFeaturesV116$CopyPathIconDrawable;->paint:Landroid/graphics/Paint;
 
@@ -303,7 +303,7 @@
 .end method
 
 .method public setColorFilter(Landroid/graphics/ColorFilter;)V
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Llibs/SmartFeaturesV116$CopyPathIconDrawable;->paint:Landroid/graphics/Paint;
 

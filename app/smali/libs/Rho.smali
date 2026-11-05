@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/w53;Llibs/qq3;)V
-    .registers 8
+    .locals 5
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -61,21 +61,21 @@
     const/4 v2, 0x1
 
     .line 18
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     .line 19
     .line 20
     const/4 v1, 0x1
 
     .line 21
-    goto :goto_16
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     const/4 v1, 0x0
 
     .line 23
-    :goto_16
+    :goto_0
     invoke-virtual {p1}, Llibs/w53;->c()Z
 
     .line 24
@@ -84,7 +84,7 @@
     move-result v3
 
     .line 27
-    if-eqz v3, :cond_68
+    if-eqz v3, :cond_5
 
     .line 28
     .line 29
@@ -96,7 +96,7 @@
 
     .line 32
     .line 33
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_1
 
     .line 34
     .line 35
@@ -104,15 +104,15 @@
 
     .line 36
     .line 37
-    goto :goto_27
+    goto :goto_1
 
     .line 38
-    :cond_25
+    :cond_1
     const-string v1, "r"
 
     .line 39
     .line 40
-    :goto_27
+    :goto_1
     invoke-direct {v3, v4, v1}, Llibs/di2;-><init>(Llibs/rp0;Ljava/lang/String;)V
 
     .line 41
@@ -147,23 +147,23 @@
 
     .line 57
     .line 58
-    if-eqz p2, :cond_3c
+    if-eqz p2, :cond_2
 
     .line 59
     .line 60
-    goto :goto_3d
+    goto :goto_2
 
     .line 61
-    :cond_3c
+    :cond_2
     const/4 v2, 0x0
 
     .line 62
-    :goto_3d
+    :goto_2
     iput-boolean v2, p0, Llibs/Rho;->d:Z
 
     .line 63
     .line 64
-    if-eqz v2, :cond_67
+    if-eqz v2, :cond_4
 
     .line 65
     .line 66
@@ -178,7 +178,7 @@
     move-result p2
 
     .line 71
-    if-eqz p2, :cond_67
+    if-eqz p2, :cond_4
 
     .line 72
     .line 73
@@ -195,7 +195,7 @@
 
     .line 79
     .line 80
-    if-eqz v1, :cond_54
+    if-eqz v1, :cond_3
 
     .line 81
     .line 82
@@ -203,10 +203,10 @@
 
     .line 83
     .line 84
-    goto :goto_5c
+    goto :goto_3
 
     .line 85
-    :cond_54
+    :cond_3
     invoke-virtual {p1}, Llibs/w53;->d()Ljava/lang/String;
 
     .line 86
@@ -223,7 +223,7 @@
     move-result-object p1
 
     .line 93
-    :goto_5c
+    :goto_3
     const-string v1, " is being opened in TEXT mode"
 
     .line 94
@@ -245,11 +245,11 @@
     .line 102
     .line 103
     .line 104
-    :cond_67
+    :cond_4
     return-void
 
     .line 105
-    :cond_68
+    :cond_5
     new-instance p1, Ljava/io/FileNotFoundException;
 
     .line 106
@@ -265,14 +265,14 @@
 
 # virtual methods
 .method public final a(J)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/Rho;->h:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_15
+    if-nez v0, :cond_1
 
     .line 4
     .line 5
@@ -280,7 +280,7 @@
 
     .line 6
     .line 7
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 8
     .line 9
@@ -295,7 +295,7 @@
     return-void
 
     .line 14
-    :cond_d
+    :cond_0
     iget-object v0, v0, Llibs/kk1;->Y:Ljava/lang/Object;
 
     .line 15
@@ -312,7 +312,7 @@
     return-void
 
     .line 22
-    :cond_15
+    :cond_1
     const-string p1, "File has been closed [getOutputStream]."
 
     .line 23

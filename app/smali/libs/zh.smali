@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/BrowseActivity;Ljava/lang/String;Ljava/lang/String;B)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-byte p4, p0, Llibs/zh;->X:B
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 7
+    .locals 6
 
     .line 1
     iget-byte v0, p0, Llibs/zh;->X:B
@@ -67,7 +67,7 @@
 
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_5e
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
@@ -88,7 +88,7 @@
     move-result v0
 
     .line 20
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_0
 
     .line 21
     .line 22
@@ -109,11 +109,11 @@
     .line 29
     .line 30
     .line 31
-    :cond_1e
+    :cond_0
     return-void
 
     .line 32
-    :pswitch_1f
+    :pswitch_0
     sget-object v0, Lcom/mixplorer/activities/BrowseActivity;->Il:Ljava/lang/ThreadGroup;
 
     .line 33
@@ -150,7 +150,7 @@
     return-void
 
     .line 50
-    :pswitch_31
+    :pswitch_1
     sget-object v0, Lcom/mixplorer/activities/BrowseActivity;->Il:Ljava/lang/ThreadGroup;
 
     .line 51
@@ -175,7 +175,7 @@
     move-result-object v0
 
     .line 62
-    if-eqz v0, :cond_5d
+    if-eqz v0, :cond_1
 
     .line 63
     .line 64
@@ -233,13 +233,13 @@
     .line 92
     .line 93
     .line 94
-    :cond_5d
+    :cond_1
     return-void
 
     .line 95
-    :pswitch_data_5e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_31
-        :pswitch_1f
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

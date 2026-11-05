@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 5
+    .locals 4
 
     .line 1
     sget-object v0, Llibs/zt0;->g:Landroid/content/Context;
@@ -33,13 +33,13 @@
 
 # virtual methods
 .method public final declared-synchronized onCreate(Landroid/database/sqlite/SQLiteDatabase;)V
-    .registers 4
+    .locals 2
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     const-string v0, "DB"
 
     .line 3
@@ -93,8 +93,8 @@
 
     .line 30
     sput-boolean p1, Llibs/k70;->t:Z
-    :try_end_1f
-    .catchall {:try_start_1 .. :try_end_1f} :catchall_21
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 31
     .line 32
@@ -104,28 +104,28 @@
     return-void
 
     .line 34
-    :catchall_21
+    :catchall_0
     move-exception p1
 
     .line 35
-    :try_start_22
+    :try_start_1
     monitor-exit p0
-    :try_end_23
-    .catchall {:try_start_22 .. :try_end_23} :catchall_21
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 36
     throw p1
 .end method
 
 .method public final onDowngrade(Landroid/database/sqlite/SQLiteDatabase;II)V
-    .registers 4
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final declared-synchronized onUpgrade(Landroid/database/sqlite/SQLiteDatabase;II)V
-    .registers 7
+    .locals 3
 
     .line 1
     const-string v0, "Upgrading DB from v"
@@ -135,7 +135,7 @@
     monitor-enter p0
 
     .line 4
-    :try_start_3
+    :try_start_0
     const-string v1, "DB"
 
     .line 5
@@ -193,14 +193,14 @@
     const/4 v0, 0x2
 
     .line 35
-    if-lt p3, v0, :cond_2f
+    if-lt p3, v0, :cond_0
 
     .line 36
     .line 37
     const/4 v0, 0x1
 
     .line 38
-    if-ne p2, v0, :cond_2f
+    if-ne p2, v0, :cond_0
 
     .line 39
     .line 40
@@ -213,26 +213,26 @@
     .line 43
     .line 44
     .line 45
-    goto :goto_2f
+    goto :goto_0
 
     .line 46
-    :catchall_2d
+    :catchall_0
     move-exception p1
 
     .line 47
-    goto :goto_3b
+    goto :goto_1
 
     .line 48
-    :cond_2f
-    :goto_2f
+    :cond_0
+    :goto_0
     const/4 v0, 0x3
 
     .line 49
-    if-lt p3, v0, :cond_39
+    if-lt p3, v0, :cond_1
 
     .line 50
     .line 51
-    if-ge p2, v0, :cond_39
+    if-ge p2, v0, :cond_1
 
     .line 52
     .line 53
@@ -241,24 +241,24 @@
     .line 54
     .line 55
     invoke-virtual {p1, p2}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-    :try_end_39
-    .catchall {:try_start_3 .. :try_end_39} :catchall_2d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 56
     .line 57
     .line 58
-    :cond_39
+    :cond_1
     monitor-exit p0
 
     .line 59
     return-void
 
     .line 60
-    :goto_3b
-    :try_start_3b
+    :goto_1
+    :try_start_1
     monitor-exit p0
-    :try_end_3c
-    .catchall {:try_start_3b .. :try_end_3c} :catchall_2d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 61
     throw p1

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/d90;)V
-    .registers 9
+    .locals 7
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -32,14 +32,14 @@
     const/4 v2, 0x0
 
     .line 11
-    if-lt v0, v1, :cond_d
+    if-lt v0, v1, :cond_0
 
     .line 12
     .line 13
-    goto :goto_37
+    goto :goto_1
 
     .line 14
-    :cond_d
+    :cond_0
     invoke-virtual {p1}, Llibs/dl;->available()I
 
     .line 15
@@ -67,7 +67,7 @@
     const/4 v5, 0x7
 
     .line 27
-    if-gt v4, v5, :cond_3a
+    if-gt v4, v5, :cond_2
 
     .line 28
     .line 29
@@ -82,17 +82,17 @@
     const/4 v5, 0x0
 
     .line 34
-    if-nez v0, :cond_25
+    if-nez v0, :cond_1
 
     .line 35
     .line 36
     const/4 v6, 0x0
 
     .line 37
-    goto :goto_28
+    goto :goto_0
 
     .line 38
-    :cond_25
+    :cond_1
     mul-int/lit8 v6, v0, 0x8
 
     .line 39
@@ -100,7 +100,7 @@
     sub-int/2addr v6, v4
 
     .line 41
-    :goto_28
+    :goto_0
     add-int/lit8 v3, v3, 0x1
 
     .line 42
@@ -130,7 +130,7 @@
     move-object v2, v0
 
     .line 56
-    :goto_37
+    :goto_1
     iput-object v2, p0, Llibs/oq3;->a:Llibs/nf;
 
     .line 57
@@ -138,7 +138,7 @@
     return-void
 
     .line 59
-    :cond_3a
+    :cond_2
     const-string p1, "Invalid value for unused bits: "
 
     .line 60
@@ -162,7 +162,7 @@
 
 # virtual methods
 .method public final a(BLlibs/c90;)V
-    .registers 6
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/oq3;->a:Llibs/nf;
@@ -230,14 +230,14 @@
 .end method
 
 .method public final b()[Z
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/oq3;->a:Llibs/nf;
 
     .line 2
     .line 3
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -247,7 +247,7 @@
     return-object v0
 
     .line 7
-    :cond_6
+    :cond_0
     iget v1, v0, Llibs/nf;->b:I
 
     .line 8
@@ -259,8 +259,8 @@
     const/4 v3, 0x0
 
     .line 12
-    :goto_b
-    if-ge v3, v1, :cond_16
+    :goto_0
+    if-ge v3, v1, :cond_1
 
     .line 13
     .line 14
@@ -280,15 +280,15 @@
 
     .line 21
     .line 22
-    goto :goto_b
+    goto :goto_0
 
     .line 23
-    :cond_16
+    :cond_1
     return-object v2
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

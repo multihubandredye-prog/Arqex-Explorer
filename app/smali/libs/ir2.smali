@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,7 +22,7 @@
 
 # virtual methods
 .method public final a()V
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
@@ -33,7 +33,7 @@
 .end method
 
 .method public final b(Ljava/lang/String;ILjava/security/PublicKey;)Z
-    .registers 4
+    .locals 0
 
     .line 1
     const/4 p1, 0x1

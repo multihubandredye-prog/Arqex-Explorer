@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(II[B)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-static {p1}, Lorg/conscrypt/ct/DigitallySigned$HashAlgorithm;->valueOf(I)Lorg/conscrypt/ct/DigitallySigned$HashAlgorithm;
@@ -41,7 +41,7 @@
 .end method
 
 .method public constructor <init>(Lorg/conscrypt/ct/DigitallySigned$HashAlgorithm;Lorg/conscrypt/ct/DigitallySigned$SignatureAlgorithm;[B)V
-    .registers 4
+    .locals 0
 
     .line 13
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -59,7 +59,7 @@
 .end method
 
 .method public static decode(Ljava/io/InputStream;)Lorg/conscrypt/ct/DigitallySigned;
-    .registers 5
+    .locals 4
 
     .line 1
     :try_start_0
@@ -98,8 +98,8 @@
 
     .line 17
     invoke-direct {v0, v2, v1, p0}, Lorg/conscrypt/ct/DigitallySigned;-><init>(II[B)V
-    :try_end_13
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_13} :catch_14
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 18
     .line 19
@@ -107,7 +107,7 @@
     return-object v0
 
     .line 21
-    :catch_14
+    :catch_0
     move-exception p0
 
     .line 22
@@ -124,7 +124,7 @@
 .end method
 
 .method public static decode([B)Lorg/conscrypt/ct/DigitallySigned;
-    .registers 2
+    .locals 1
 
     .line 28
     new-instance v0, Ljava/io/ByteArrayInputStream;
@@ -141,7 +141,7 @@
 
 # virtual methods
 .method public getAlgorithm()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ct/DigitallySigned;->hashAlgorithm:Lorg/conscrypt/ct/DigitallySigned$HashAlgorithm;
@@ -192,7 +192,7 @@
 .end method
 
 .method public getHashAlgorithm()Lorg/conscrypt/ct/DigitallySigned$HashAlgorithm;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ct/DigitallySigned;->hashAlgorithm:Lorg/conscrypt/ct/DigitallySigned$HashAlgorithm;
@@ -203,7 +203,7 @@
 .end method
 
 .method public getSignature()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ct/DigitallySigned;->signature:[B
@@ -214,7 +214,7 @@
 .end method
 
 .method public getSignatureAlgorithm()Lorg/conscrypt/ct/DigitallySigned$SignatureAlgorithm;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ct/DigitallySigned;->signatureAlgorithm:Lorg/conscrypt/ct/DigitallySigned$SignatureAlgorithm;

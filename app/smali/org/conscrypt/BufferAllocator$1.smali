@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/BufferAllocator;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public allocateDirectBuffer(I)Lorg/conscrypt/AllocatedBuffer;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p1}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
@@ -42,7 +42,7 @@
 .end method
 
 .method public allocateHeapBuffer(I)Lorg/conscrypt/AllocatedBuffer;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p1}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;

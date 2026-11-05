@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/conscrypt/ConscryptEngineSocket;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iput-object p1, p0, Lorg/conscrypt/ConscryptEngineSocket$SSLInputStream;->this$0:Lorg/conscrypt/ConscryptEngineSocket;
@@ -67,7 +67,7 @@
     move-result-object v0
 
     .line 22
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_0
 
     .line 23
     .line 24
@@ -127,10 +127,10 @@
 
     .line 51
     .line 52
-    goto :goto_49
+    goto :goto_0
 
     .line 53
-    :cond_34
+    :cond_0
     const/4 v0, 0x0
 
     .line 54
@@ -174,7 +174,7 @@
 
     .line 73
     .line 74
-    :goto_49
+    :goto_0
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->flip()Ljava/nio/Buffer;
 
     .line 75
@@ -232,7 +232,7 @@
 .end method
 
 .method public static bridge synthetic c(Lorg/conscrypt/ConscryptEngineSocket$SSLInputStream;[B)I
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -250,14 +250,14 @@
 .end method
 
 .method private init()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket$SSLInputStream;->socketInputStream:Ljava/io/InputStream;
 
     .line 2
     .line 3
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -277,12 +277,12 @@
 
     .line 12
     .line 13
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method private isHandshakeFinished()Z
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket$SSLInputStream;->this$0:Lorg/conscrypt/ConscryptEngineSocket;
@@ -300,7 +300,7 @@
     monitor-enter v0
 
     .line 8
-    :try_start_7
+    :try_start_0
     iget-object v1, p0, Lorg/conscrypt/ConscryptEngineSocket$SSLInputStream;->this$0:Lorg/conscrypt/ConscryptEngineSocket;
 
     .line 9
@@ -316,41 +316,41 @@
     const/4 v2, 0x2
 
     .line 15
-    if-le v1, v2, :cond_12
+    if-le v1, v2, :cond_0
 
     .line 16
     .line 17
     const/4 v1, 0x1
 
     .line 18
-    goto :goto_13
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     const/4 v1, 0x0
 
     .line 20
-    :goto_13
+    :goto_0
     monitor-exit v0
 
     .line 21
     return v1
 
     .line 22
-    :catchall_15
+    :catchall_0
     move-exception v1
 
     .line 23
     monitor-exit v0
-    :try_end_17
-    .catchall {:try_start_7 .. :try_end_17} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 24
     throw v1
 .end method
 
 .method private isHandshaking(Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     sget-object v0, Lorg/conscrypt/ConscryptEngineSocket$3;->$SwitchMap$javax$net$ssl$SSLEngineResult$HandshakeStatus:[I
@@ -372,21 +372,21 @@
     const/4 v0, 0x1
 
     .line 10
-    if-eq p1, v0, :cond_13
+    if-eq p1, v0, :cond_0
 
     .line 11
     .line 12
     const/4 v1, 0x2
 
     .line 13
-    if-eq p1, v1, :cond_13
+    if-eq p1, v1, :cond_0
 
     .line 14
     .line 15
     const/4 v1, 0x3
 
     .line 16
-    if-eq p1, v1, :cond_13
+    if-eq p1, v1, :cond_0
 
     .line 17
     .line 18
@@ -396,12 +396,12 @@
     return p1
 
     .line 20
-    :cond_13
+    :cond_0
     return v0
 .end method
 
 .method private processDataFromSocket([BII)I
-    .registers 10
+    .locals 6
 
     .line 1
     invoke-static {}, Lorg/conscrypt/Platform;->blockGuardOnNetwork()V
@@ -423,7 +423,7 @@
     .line 10
     .line 11
     .line 12
-    :cond_b
+    :cond_0
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket$SSLInputStream;->fromEngine:Ljava/nio/ByteBuffer;
 
     .line 13
@@ -436,7 +436,7 @@
     move-result v0
 
     .line 18
-    if-lez v0, :cond_23
+    if-lez v0, :cond_1
 
     .line 19
     .line 20
@@ -472,7 +472,7 @@
     return p3
 
     .line 36
-    :cond_23
+    :cond_1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket$SSLInputStream;->fromSocket:Ljava/nio/ByteBuffer;
 
     .line 37
@@ -598,28 +598,28 @@
     const/4 v5, 0x0
 
     .line 99
-    if-eq v2, v3, :cond_9b
+    if-eq v2, v3, :cond_5
 
     .line 100
     .line 101
     const/4 v3, 0x2
 
     .line 102
-    if-eq v2, v3, :cond_83
+    if-eq v2, v3, :cond_3
 
     .line 103
     .line 104
     const/4 p1, 0x3
 
     .line 105
-    if-ne v2, p1, :cond_6b
+    if-ne v2, p1, :cond_2
 
     .line 106
     .line 107
     return v4
 
     .line 108
-    :cond_6b
+    :cond_2
     new-instance p1, Ljavax/net/ssl/SSLException;
 
     .line 109
@@ -666,8 +666,8 @@
     throw p1
 
     .line 132
-    :cond_83
-    if-nez v0, :cond_99
+    :cond_3
+    if-nez v0, :cond_4
 
     .line 133
     .line 134
@@ -687,7 +687,7 @@
     move-result v0
 
     .line 142
-    if-eqz v0, :cond_99
+    if-eqz v0, :cond_4
 
     .line 143
     .line 144
@@ -699,7 +699,7 @@
     move-result v0
 
     .line 148
-    if-eqz v0, :cond_99
+    if-eqz v0, :cond_4
 
     .line 149
     .line 150
@@ -711,14 +711,14 @@
     return v5
 
     .line 154
-    :cond_99
+    :cond_4
     const/4 v3, 0x0
 
     .line 155
-    goto :goto_a1
+    goto :goto_0
 
     .line 156
-    :cond_9b
+    :cond_5
     invoke-virtual {v1}, Ljavax/net/ssl/SSLEngineResult;->bytesProduced()I
 
     .line 157
@@ -727,12 +727,12 @@
     move-result v0
 
     .line 160
-    if-nez v0, :cond_99
+    if-nez v0, :cond_4
 
     .line 161
     .line 162
-    :goto_a1
-    if-nez v3, :cond_aa
+    :goto_0
+    if-nez v3, :cond_6
 
     .line 163
     .line 164
@@ -744,15 +744,15 @@
     move-result v0
 
     .line 168
-    if-nez v0, :cond_aa
+    if-nez v0, :cond_6
 
     .line 169
     .line 170
     return v5
 
     .line 171
-    :cond_aa
-    if-eqz v3, :cond_b
+    :cond_6
+    if-eqz v3, :cond_0
 
     .line 172
     .line 173
@@ -764,7 +764,7 @@
     move-result v0
 
     .line 177
-    if-ne v0, v4, :cond_b
+    if-ne v0, v4, :cond_0
 
     .line 178
     .line 179
@@ -772,7 +772,7 @@
 .end method
 
 .method private readFromSocket()I
-    .registers 6
+    .locals 5
 
     .line 1
     :try_start_0
@@ -834,7 +834,7 @@
     move-result v1
 
     .line 29
-    if-lez v1, :cond_24
+    if-lez v1, :cond_0
 
     .line 30
     .line 31
@@ -846,17 +846,17 @@
 
     .line 34
     invoke-virtual {v2, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
-    :try_end_24
-    .catch Ljava/io/EOFException; {:try_start_0 .. :try_end_24} :catch_25
+    :try_end_0
+    .catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 35
     .line 36
     .line 37
-    :cond_24
+    :cond_0
     return v1
 
     .line 38
-    :catch_25
+    :catch_0
     const/4 v0, -0x1
 
     .line 39
@@ -864,7 +864,7 @@
 .end method
 
 .method private readUntilDataAvailable([BII)I
-    .registers 5
+    .locals 1
 
     .line 1
     :cond_0
@@ -884,7 +884,7 @@
 .end method
 
 .method private renegotiate()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket$SSLInputStream;->this$0:Lorg/conscrypt/ConscryptEngineSocket;
@@ -902,7 +902,7 @@
     monitor-enter v0
 
     .line 8
-    :try_start_7
+    :try_start_0
     iget-object v1, p0, Lorg/conscrypt/ConscryptEngineSocket$SSLInputStream;->this$0:Lorg/conscrypt/ConscryptEngineSocket;
 
     .line 9
@@ -918,13 +918,13 @@
     return-void
 
     .line 15
-    :catchall_e
+    :catchall_0
     move-exception v1
 
     .line 16
     monitor-exit v0
-    :try_end_10
-    .catchall {:try_start_7 .. :try_end_10} :catchall_e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 17
     throw v1
@@ -933,7 +933,7 @@
 
 # virtual methods
 .method public available()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket$SSLInputStream;->this$0:Lorg/conscrypt/ConscryptEngineSocket;
@@ -952,7 +952,7 @@
     monitor-enter v0
 
     .line 9
-    :try_start_8
+    :try_start_0
     invoke-direct {p0}, Lorg/conscrypt/ConscryptEngineSocket$SSLInputStream;->init()V
 
     .line 10
@@ -976,20 +976,20 @@
     return v1
 
     .line 20
-    :catchall_13
+    :catchall_0
     move-exception v1
 
     .line 21
     monitor-exit v0
-    :try_end_15
-    .catchall {:try_start_8 .. :try_end_15} :catchall_13
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 22
     throw v1
 .end method
 
 .method public close()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket$SSLInputStream;->this$0:Lorg/conscrypt/ConscryptEngineSocket;
@@ -1005,7 +1005,7 @@
 .end method
 
 .method public read()I
-    .registers 7
+    .locals 6
 
     .line 1
     const-string v0, "read incorrect number of bytes "
@@ -1028,7 +1028,7 @@
     monitor-enter v1
 
     .line 11
-    :try_start_a
+    :try_start_0
     iget-object v2, p0, Lorg/conscrypt/ConscryptEngineSocket$SSLInputStream;->singleByte:[B
 
     .line 12
@@ -1050,7 +1050,7 @@
     const/4 v5, -0x1
 
     .line 20
-    if-ne v2, v5, :cond_19
+    if-ne v2, v5, :cond_0
 
     .line 21
     .line 22
@@ -1060,15 +1060,15 @@
     return v5
 
     .line 24
-    :catchall_17
+    :catchall_0
     move-exception v0
 
     .line 25
-    goto :goto_35
+    goto :goto_0
 
     .line 26
-    :cond_19
-    if-ne v2, v3, :cond_23
+    :cond_0
+    if-ne v2, v3, :cond_1
 
     .line 27
     .line 28
@@ -1090,7 +1090,7 @@
     return v0
 
     .line 36
-    :cond_23
+    :cond_1
     new-instance v3, Ljavax/net/ssl/SSLException;
 
     .line 37
@@ -1125,17 +1125,17 @@
     throw v3
 
     .line 54
-    :goto_35
+    :goto_0
     monitor-exit v1
-    :try_end_36
-    .catchall {:try_start_a .. :try_end_36} :catchall_17
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 55
     throw v0
 .end method
 
 .method public read([B)I
-    .registers 5
+    .locals 3
 
     .line 56
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket$SSLInputStream;->this$0:Lorg/conscrypt/ConscryptEngineSocket;
@@ -1148,7 +1148,7 @@
     monitor-enter v0
 
     .line 58
-    :try_start_8
+    :try_start_0
     array-length v1, p1
 
     const/4 v2, 0x0
@@ -1161,39 +1161,39 @@
 
     return p1
 
-    :catchall_10
+    :catchall_0
     move-exception p1
 
     .line 59
     monitor-exit v0
-    :try_end_12
-    .catchall {:try_start_8 .. :try_end_12} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public read([BII)I
-    .registers 5
+    .locals 1
 
     .line 60
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket$SSLInputStream;->this$0:Lorg/conscrypt/ConscryptEngineSocket;
 
     invoke-static {v0}, Lorg/conscrypt/ConscryptEngineSocket;->List(Lorg/conscrypt/ConscryptEngineSocket;)V
 
-    if-nez p3, :cond_9
+    if-nez p3, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 61
-    :cond_9
+    :cond_0
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket$SSLInputStream;->readLock:Ljava/lang/Object;
 
     monitor-enter v0
 
     .line 62
-    :try_start_c
+    :try_start_0
     invoke-direct {p0, p1, p2, p3}, Lorg/conscrypt/ConscryptEngineSocket$SSLInputStream;->readUntilDataAvailable([BII)I
 
     move-result p1
@@ -1202,19 +1202,19 @@
 
     return p1
 
-    :catchall_12
+    :catchall_0
     move-exception p1
 
     .line 63
     monitor-exit v0
-    :try_end_14
-    .catchall {:try_start_c .. :try_end_14} :catchall_12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public release()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket$SSLInputStream;->readLock:Ljava/lang/Object;
@@ -1224,12 +1224,12 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Lorg/conscrypt/ConscryptEngineSocket$SSLInputStream;->allocatedBuffer:Lorg/conscrypt/AllocatedBuffer;
 
     .line 5
     .line 6
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
     .line 7
     .line 8
@@ -1238,28 +1238,28 @@
     .line 9
     .line 10
     .line 11
-    goto :goto_d
+    goto :goto_0
 
     .line 12
-    :catchall_b
+    :catchall_0
     move-exception v1
 
     .line 13
-    goto :goto_f
+    goto :goto_1
 
     .line 14
-    :cond_d
-    :goto_d
+    :cond_0
+    :goto_0
     monitor-exit v0
 
     .line 15
     return-void
 
     .line 16
-    :goto_f
+    :goto_1
     monitor-exit v0
-    :try_end_10
-    .catchall {:try_start_3 .. :try_end_10} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 17
     throw v1

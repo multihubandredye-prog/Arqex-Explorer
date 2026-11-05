@@ -9,14 +9,14 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/ie2;->b:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_12
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -33,7 +33,7 @@
     return-void
 
     .line 12
-    :pswitch_b
+    :pswitch_0
     const-string p1, "scrollY"
 
     .line 13
@@ -49,14 +49,14 @@
     nop
 
     .line 19
-    :pswitch_data_12
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_b
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 19
     invoke-direct {p0, p1}, Llibs/jg2;-><init>(Ljava/lang/String;)V
@@ -65,7 +65,7 @@
 .end method
 
 .method public static c(Ljava/lang/Integer;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -84,7 +84,7 @@
 
 # virtual methods
 .method public final a(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/ie2;->b:B
@@ -94,7 +94,7 @@
     const/4 v1, 0x0
 
     .line 4
-    packed-switch v0, :pswitch_data_3a
+    packed-switch v0, :pswitch_data_0
 
     .line 5
     .line 6
@@ -127,14 +127,14 @@
 
     .line 20
     .line 21
-    if-nez p1, :cond_17
+    if-nez p1, :cond_0
 
     .line 22
     .line 23
-    goto :goto_1b
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_0
     invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
 
     .line 25
@@ -143,7 +143,7 @@
     move-result v1
 
     .line 28
-    :goto_1b
+    :goto_0
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 29
@@ -155,7 +155,7 @@
     return-object p1
 
     .line 33
-    :pswitch_20
+    :pswitch_0
     check-cast p1, Landroid/view/View;
 
     .line 34
@@ -184,14 +184,14 @@
 
     .line 46
     .line 47
-    if-nez p1, :cond_31
+    if-nez p1, :cond_1
 
     .line 48
     .line 49
-    goto :goto_35
+    goto :goto_1
 
     .line 50
-    :cond_31
+    :cond_1
     invoke-virtual {p1}, Landroid/view/View;->getScrollX()I
 
     .line 51
@@ -200,7 +200,7 @@
     move-result v1
 
     .line 54
-    :goto_35
+    :goto_1
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 55
@@ -212,8 +212,8 @@
     return-object p1
 
     .line 59
-    :pswitch_data_3a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_20
+        :pswitch_0
     .end packed-switch
 .end method

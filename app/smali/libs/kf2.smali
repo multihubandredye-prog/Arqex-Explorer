@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/PreferenceActivity;Lcom/mixplorer/widgets/MiTextView;Lcom/mixplorer/widgets/MiEditText;)V
-    .registers 5
+    .locals 1
 
     .line 1
     iput-object p1, p0, Llibs/kf2;->Z:Lcom/mixplorer/activities/PreferenceActivity;
@@ -55,7 +55,7 @@
 
 # virtual methods
 .method public final afterTextChanged(Landroid/text/Editable;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object p1, p0, Llibs/kf2;->Y:Lcom/mixplorer/widgets/MiTextView;
@@ -84,14 +84,14 @@
 .end method
 
 .method public final beforeTextChanged(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final onTextChanged(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     .line 1
     return-void

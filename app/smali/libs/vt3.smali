@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     invoke-static {}, Llibs/t43;->w()I
@@ -24,11 +24,11 @@
 
     .line 6
     .line 7
-    if-ne v0, v1, :cond_18
+    if-ne v0, v1, :cond_0
 
     .line 8
     .line 9
-    :try_start_8
+    :try_start_0
     const-class v0, Landroid/view/ViewConfiguration;
 
     .line 10
@@ -41,8 +41,8 @@
 
     .line 14
     invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    :try_end_10
-    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_10} :catch_11
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 15
     .line 16
@@ -50,7 +50,7 @@
     return-void
 
     .line 18
-    :catch_11
+    :catch_0
     const-string v0, "ViewConfigCompat"
 
     .line 19
@@ -64,6 +64,6 @@
     .line 23
     .line 24
     .line 25
-    :cond_18
+    :cond_0
     return-void
 .end method

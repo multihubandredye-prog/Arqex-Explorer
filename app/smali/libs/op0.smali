@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(JJLjava/lang/String;)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2, p5}, Llibs/ep0;-><init>(JLjava/lang/String;)V

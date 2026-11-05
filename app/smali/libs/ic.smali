@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic List(Ljava/lang/String;)Landroid/text/Spanned;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -23,7 +23,7 @@
 .end method
 
 .method public static bridge synthetic Map(Llibs/ex1;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -38,7 +38,7 @@
 .end method
 
 .method public static bridge synthetic Object(Lcom/mixplorer/activities/a;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/app/Activity;->isInMultiWindowMode()Z
@@ -53,7 +53,7 @@
 .end method
 
 .method public static bridge synthetic String(Llibs/tv1;Landroid/content/ClipData;Landroid/view/View$DragShadowBuilder;Llibs/tv1;)Z
-    .registers 5
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -71,7 +71,7 @@
 .end method
 
 .method public static bridge synthetic a(Landroid/content/pm/ApplicationInfo;)I
-    .registers 1
+    .locals 0
 
     .line 1
     iget p0, p0, Landroid/content/pm/ApplicationInfo;->minSdkVersion:I
@@ -82,7 +82,7 @@
 .end method
 
 .method public static bridge synthetic b(Ljavax/net/ssl/SNIServerName;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Ljavax/net/ssl/SNIServerName;->getType()I
@@ -97,7 +97,7 @@
 .end method
 
 .method public static bridge synthetic c(Ljava/util/stream/LongStream;)J
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-interface {p0}, Ljava/util/stream/LongStream;->sum()J
@@ -112,7 +112,7 @@
 .end method
 
 .method public static bridge synthetic d(Landroid/os/storage/StorageVolume;)Landroid/content/Intent;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -130,7 +130,7 @@
 .end method
 
 .method public static bridge synthetic e(Landroid/content/ContentResolver;Landroid/net/Uri;Landroid/net/Uri;Landroid/net/Uri;)Landroid/net/Uri;
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-static {p0, p1, p2, p3}, Landroid/provider/DocumentsContract;->moveDocument(Landroid/content/ContentResolver;Landroid/net/Uri;Landroid/net/Uri;Landroid/net/Uri;)Landroid/net/Uri;
@@ -145,7 +145,7 @@
 .end method
 
 .method public static bridge synthetic f(Ljava/lang/Object;)Landroid/os/storage/StorageVolume;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Landroid/os/storage/StorageVolume;
@@ -156,7 +156,7 @@
 .end method
 
 .method public static bridge synthetic g(Ljava/lang/String;)Landroid/text/Spanned;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -174,7 +174,7 @@
 .end method
 
 .method public static bridge synthetic h(Landroid/content/Context;)Ljava/io/File;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/content/Context;->getDataDir()Ljava/io/File;
@@ -189,7 +189,7 @@
 .end method
 
 .method public static bridge synthetic i(Lcom/mixplorer/AppImpl;)Ljava/io/File;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/app/Application;->getDataDir()Ljava/io/File;
@@ -204,7 +204,7 @@
 .end method
 
 .method public static bridge synthetic j(Landroid/content/pm/ApplicationInfo;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
     iget-object p0, p0, Landroid/content/pm/ApplicationInfo;->deviceProtectedDataDir:Ljava/lang/String;
@@ -215,7 +215,7 @@
 .end method
 
 .method public static bridge synthetic k(Landroid/os/storage/StorageVolume;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/os/storage/StorageVolume;->getUuid()Ljava/lang/String;
@@ -230,7 +230,7 @@
 .end method
 
 .method public static bridge synthetic l(Landroid/text/SpannableString;)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -248,7 +248,7 @@
 .end method
 
 .method public static bridge synthetic m(Ljavax/net/ssl/SNIHostName;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Ljavax/net/ssl/SNIHostName;->getAsciiName()Ljava/lang/String;
@@ -263,7 +263,7 @@
 .end method
 
 .method public static bridge synthetic n(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Llibs/q5;
@@ -282,7 +282,7 @@
 .end method
 
 .method public static bridge synthetic p(Ljava/lang/reflect/Field;)Ljava/lang/annotation/Annotation;
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Lcom/android/apksig/internal/asn1/Asn1Field;
@@ -301,7 +301,7 @@
 .end method
 
 .method public static bridge synthetic q()Ljava/net/SocketOption;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Ljava/net/StandardSocketOptions;->TCP_NODELAY:Ljava/net/SocketOption;
@@ -312,7 +312,7 @@
 .end method
 
 .method public static bridge synthetic r(Landroid/os/storage/StorageManager;)Ljava/util/List;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/os/storage/StorageManager;->getStorageVolumes()Ljava/util/List;
@@ -327,7 +327,7 @@
 .end method
 
 .method public static bridge synthetic s([J)Ljava/util/stream/LongStream;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-static {p0}, Ljava/util/Arrays;->stream([J)Ljava/util/stream/LongStream;
@@ -342,7 +342,7 @@
 .end method
 
 .method public static bridge synthetic t(Ljava/lang/Object;)Ljavax/net/ssl/SNIHostName;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Ljavax/net/ssl/SNIHostName;
@@ -353,7 +353,7 @@
 .end method
 
 .method public static bridge synthetic u(Ljava/lang/Object;)Ljavax/net/ssl/SNIServerName;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Ljavax/net/ssl/SNIServerName;
@@ -364,7 +364,7 @@
 .end method
 
 .method public static bridge synthetic v(Landroid/app/Service;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -379,7 +379,7 @@
 .end method
 
 .method public static bridge synthetic w(Landroid/content/pm/ApplicationInfo;I)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput p1, p0, Landroid/content/pm/ApplicationInfo;->minSdkVersion:I
@@ -390,7 +390,7 @@
 .end method
 
 .method public static bridge synthetic x(Llibs/ex1;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -405,7 +405,7 @@
 .end method
 
 .method public static bridge synthetic y()Z
-    .registers 1
+    .locals 1
 
     .line 1
     invoke-static {}, Landroid/os/UserManager;->supportsMultipleUsers()Z
@@ -420,7 +420,7 @@
 .end method
 
 .method public static bridge synthetic z(Landroid/app/NotificationManager;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/app/NotificationManager;->areNotificationsEnabled()Z

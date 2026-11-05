@@ -9,7 +9,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/up;->a:B
@@ -27,14 +27,14 @@
 
 # virtual methods
 .method public a()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/up;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_18
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -50,7 +50,7 @@
     return v0
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     invoke-static {}, Llibs/t43;->Wait()Z
 
     .line 12
@@ -59,7 +59,7 @@
     move-result v0
 
     .line 15
-    :goto_e
+    :goto_0
     xor-int/lit8 v0, v0, 0x1
 
     .line 16
@@ -67,14 +67,14 @@
     return v0
 
     .line 18
-    :pswitch_11
+    :pswitch_1
     const/4 v0, 0x1
 
     .line 19
     return v0
 
     .line 20
-    :pswitch_13
+    :pswitch_2
     invoke-static {}, Llibs/t43;->Wait()Z
 
     .line 21
@@ -83,19 +83,19 @@
     move-result v0
 
     .line 24
-    goto :goto_e
+    goto :goto_0
 
     .line 25
-    :pswitch_data_18
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_13
-        :pswitch_11
-        :pswitch_a
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public e(Llibs/rp0;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/up;->a:B
@@ -112,7 +112,7 @@
     const/4 v3, 0x1
 
     .line 7
-    packed-switch v0, :pswitch_data_40
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -128,12 +128,12 @@
     return p1
 
     .line 15
-    :pswitch_e
+    :pswitch_0
     iget-boolean v0, p1, Llibs/rp0;->One:Z
 
     .line 16
     .line 17
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_0
 
     .line 18
     .line 19
@@ -157,23 +157,23 @@
     move-result p1
 
     .line 29
-    if-eqz p1, :cond_1f
+    if-eqz p1, :cond_0
 
     .line 30
     .line 31
     const/4 v2, 0x1
 
     .line 32
-    :cond_1f
+    :cond_0
     return v2
 
     .line 33
-    :pswitch_20
+    :pswitch_1
     iget-boolean v0, p1, Llibs/rp0;->One:Z
 
     .line 34
     .line 35
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_1
 
     .line 36
     .line 37
@@ -193,23 +193,23 @@
     move-result p1
 
     .line 45
-    if-eqz p1, :cond_2f
+    if-eqz p1, :cond_1
 
     .line 46
     .line 47
     const/4 v2, 0x1
 
     .line 48
-    :cond_2f
+    :cond_1
     return v2
 
     .line 49
-    :pswitch_30
+    :pswitch_2
     iget-boolean v0, p1, Llibs/rp0;->One:Z
 
     .line 50
     .line 51
-    if-eqz v0, :cond_3f
+    if-eqz v0, :cond_2
 
     .line 52
     .line 53
@@ -229,21 +229,21 @@
     move-result p1
 
     .line 61
-    if-eqz p1, :cond_3f
+    if-eqz p1, :cond_2
 
     .line 62
     .line 63
     const/4 v2, 0x1
 
     .line 64
-    :cond_3f
+    :cond_2
     return v2
 
     .line 65
-    :pswitch_data_40
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_30
-        :pswitch_20
-        :pswitch_e
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

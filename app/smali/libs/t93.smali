@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/u93;->a:Ljava/lang/String;

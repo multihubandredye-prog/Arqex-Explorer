@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,14 +33,14 @@
 
 # virtual methods
 .method public final a()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/wl3;->X:Ljava/lang/Thread;
 
     .line 2
     .line 3
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -66,6 +66,6 @@
     .line 15
     .line 16
     .line 17
-    :cond_10
+    :cond_0
     return-void
 .end method

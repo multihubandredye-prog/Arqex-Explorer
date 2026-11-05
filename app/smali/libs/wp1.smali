@@ -9,7 +9,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/wp1;->a:B
@@ -27,14 +27,14 @@
 
 # virtual methods
 .method public final getInterpolation(F)F
-    .registers 3
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/wp1;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_26
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -70,7 +70,7 @@
     return p1
 
     .line 21
-    :pswitch_14
+    :pswitch_0
     const/high16 v0, 0x3f000000    # 0.5f
 
     .line 22
@@ -111,8 +111,8 @@
     nop
 
     .line 39
-    :pswitch_data_26
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_14
+        :pswitch_0
     .end packed-switch
 .end method

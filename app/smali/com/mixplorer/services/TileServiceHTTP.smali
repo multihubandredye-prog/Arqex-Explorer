@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/zm3;-><init>()V
@@ -23,7 +23,7 @@
 
 # virtual methods
 .method public final a()Ljava/lang/Class;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -38,7 +38,7 @@
 .end method
 
 .method public final d()I
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-static {}, Llibs/u53;->d()Z
@@ -49,7 +49,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -59,7 +59,7 @@
     return v0
 
     .line 9
-    :cond_8
+    :cond_0
     const/4 v0, 0x1
 
     .line 10
@@ -67,7 +67,7 @@
 .end method
 
 .method public final e()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -81,7 +81,7 @@
 .end method
 
 .method public final f()Landroid/service/quicksettings/Tile;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-static {p0}, Llibs/Lima;->c(Lcom/mixplorer/services/TileServiceHTTP;)Landroid/service/quicksettings/Tile;
@@ -100,7 +100,7 @@
 .end method
 
 .method public final onClick()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Landroid/service/quicksettings/TileService;->onClick()V

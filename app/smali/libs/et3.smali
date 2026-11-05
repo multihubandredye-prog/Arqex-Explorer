@@ -39,7 +39,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Landroid/graphics/Matrix;
@@ -59,7 +59,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 93
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -127,7 +127,7 @@
 .end method
 
 .method public constructor <init>(Llibs/et3;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -298,7 +298,7 @@
 
     .line 86
     .line 87
-    if-eqz p1, :cond_5b
+    if-eqz p1, :cond_0
 
     .line 88
     .line 89
@@ -307,14 +307,14 @@
     .line 90
     .line 91
     .line 92
-    :cond_5b
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final a(Llibs/ct3;Landroid/graphics/Matrix;Landroid/graphics/Canvas;II)V
-    .registers 44
+    .locals 38
 
     .line 1
     move-object/from16 v0, p1
@@ -362,7 +362,7 @@
     const/4 v8, 0x0
 
     .line 24
-    :goto_17
+    :goto_0
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
     .line 25
@@ -371,7 +371,7 @@
     move-result v0
 
     .line 28
-    if-ge v8, v0, :cond_597
+    if-ge v8, v0, :cond_33
 
     .line 29
     .line 30
@@ -387,7 +387,7 @@
 
     .line 35
     .line 36
-    if-eqz v1, :cond_3c
+    if-eqz v1, :cond_1
 
     .line 37
     .line 38
@@ -422,7 +422,7 @@
     move-object v1, v0
 
     .line 53
-    :cond_34
+    :cond_0
     move-object/from16 v32, v2
 
     .line 54
@@ -435,11 +435,11 @@
 
     .line 58
     .line 59
-    goto/16 :goto_58f
+    goto/16 :goto_25
 
     .line 60
     .line 61
-    :cond_3c
+    :cond_1
     move-object/from16 v1, p0
 
     .line 62
@@ -452,7 +452,7 @@
 
     .line 66
     .line 67
-    if-eqz v4, :cond_34
+    if-eqz v4, :cond_0
 
     .line 68
     .line 69
@@ -517,7 +517,7 @@
 
     .line 97
     .line 98
-    fill-array-data v10, :array_5da
+    fill-array-data v10, :array_0
 
     .line 99
     .line 100
@@ -648,7 +648,7 @@
 
     .line 158
     .line 159
-    if-lez v9, :cond_a6
+    if-lez v9, :cond_2
 
     .line 160
     .line 161
@@ -663,19 +663,19 @@
     div-float/2addr v8, v5
 
     .line 166
-    goto :goto_a7
+    goto :goto_1
 
     .line 167
-    :cond_a6
+    :cond_2
     const/4 v8, 0x0
 
     .line 168
-    :goto_a7
+    :goto_1
     cmpl-float v5, v8, v7
 
     .line 169
     .line 170
-    if-nez v5, :cond_b2
+    if-nez v5, :cond_3
 
     .line 171
     .line 172
@@ -687,15 +687,15 @@
 
     .line 175
     .line 176
-    :goto_af
+    :goto_2
     const/4 v7, 0x0
 
     .line 177
-    goto/16 :goto_58f
+    goto/16 :goto_25
 
     .line 178
     .line 179
-    :cond_b2
+    :cond_3
     iget-object v5, v1, Llibs/et3;->a:Landroid/graphics/Path;
 
     .line 180
@@ -709,7 +709,7 @@
 
     .line 185
     .line 186
-    if-eqz v9, :cond_496
+    if-eqz v9, :cond_26
 
     .line 187
     .line 188
@@ -731,11 +731,11 @@
 
     .line 195
     .line 196
-    :goto_c3
+    :goto_3
     array-length v15, v9
 
     .line 197
-    if-ge v10, v15, :cond_491
+    if-ge v10, v15, :cond_25
 
     .line 198
     .line 199
@@ -783,20 +783,20 @@
 
     .line 220
     .line 221
-    sparse-switch v7, :sswitch_data_5a0
+    sparse-switch v7, :sswitch_data_0
 
     .line 222
     .line 223
     .line 224
-    :goto_df
+    :goto_4
     const/16 v33, 0x2
 
     .line 225
     .line 226
-    goto :goto_fe
+    goto :goto_5
 
     .line 227
-    :sswitch_e2
+    :sswitch_0
     invoke-virtual {v5}, Landroid/graphics/Path;->close()V
 
     .line 228
@@ -823,34 +823,34 @@
 
     .line 240
     .line 241
-    goto :goto_df
+    goto :goto_4
 
     .line 242
-    :sswitch_f1
+    :sswitch_1
     const/16 v33, 0x4
 
     .line 243
     .line 244
-    goto :goto_fe
+    goto :goto_5
 
     .line 245
-    :sswitch_f4
+    :sswitch_2
     const/16 v33, 0x1
 
     .line 246
     .line 247
-    goto :goto_fe
+    goto :goto_5
 
     .line 248
-    :sswitch_f7
+    :sswitch_3
     const/16 v33, 0x6
 
     .line 249
     .line 250
-    goto :goto_fe
+    goto :goto_5
 
     .line 251
-    :sswitch_fa
+    :sswitch_4
     const/16 v24, 0x7
 
     .line 252
@@ -859,7 +859,7 @@
 
     .line 254
     .line 255
-    :goto_fe
+    :goto_5
     move/from16 v34, v2
 
     .line 256
@@ -883,11 +883,11 @@
     const/4 v4, 0x0
 
     .line 266
-    :goto_109
+    :goto_6
     array-length v6, v15
 
     .line 267
-    if-ge v4, v6, :cond_470
+    if-ge v4, v6, :cond_24
 
     .line 268
     .line 269
@@ -895,7 +895,7 @@
 
     .line 270
     .line 271
-    if-eq v7, v6, :cond_41b
+    if-eq v7, v6, :cond_21
 
     .line 272
     .line 273
@@ -903,7 +903,7 @@
 
     .line 274
     .line 275
-    if-eq v7, v6, :cond_3e9
+    if-eq v7, v6, :cond_20
 
     .line 276
     .line 277
@@ -911,7 +911,7 @@
 
     .line 278
     .line 279
-    if-eq v7, v6, :cond_3d7
+    if-eq v7, v6, :cond_1f
 
     .line 280
     .line 281
@@ -919,7 +919,7 @@
 
     .line 282
     .line 283
-    if-eq v7, v6, :cond_3ac
+    if-eq v7, v6, :cond_1e
 
     .line 284
     .line 285
@@ -927,7 +927,7 @@
 
     .line 286
     .line 287
-    if-eq v7, v6, :cond_399
+    if-eq v7, v6, :cond_1d
 
     .line 288
     .line 289
@@ -935,7 +935,7 @@
 
     .line 290
     .line 291
-    if-eq v7, v6, :cond_342
+    if-eq v7, v6, :cond_1a
 
     .line 292
     .line 293
@@ -943,7 +943,7 @@
 
     .line 294
     .line 295
-    if-eq v7, v6, :cond_30b
+    if-eq v7, v6, :cond_19
 
     .line 296
     .line 297
@@ -951,7 +951,7 @@
 
     .line 298
     .line 299
-    if-eq v7, v6, :cond_2fb
+    if-eq v7, v6, :cond_18
 
     .line 300
     .line 301
@@ -959,7 +959,7 @@
 
     .line 302
     .line 303
-    if-eq v7, v6, :cond_2d2
+    if-eq v7, v6, :cond_17
 
     .line 304
     .line 305
@@ -967,7 +967,7 @@
 
     .line 306
     .line 307
-    if-eq v7, v6, :cond_2c4
+    if-eq v7, v6, :cond_16
 
     .line 308
     .line 309
@@ -975,7 +975,7 @@
 
     .line 310
     .line 311
-    if-eq v7, v6, :cond_2b2
+    if-eq v7, v6, :cond_15
 
     .line 312
     .line 313
@@ -983,7 +983,7 @@
 
     .line 314
     .line 315
-    if-eq v7, v6, :cond_293
+    if-eq v7, v6, :cond_13
 
     .line 316
     .line 317
@@ -995,7 +995,7 @@
 
     .line 320
     .line 321
-    if-eq v7, v6, :cond_24d
+    if-eq v7, v6, :cond_10
 
     .line 322
     .line 323
@@ -1003,7 +1003,7 @@
 
     .line 324
     .line 325
-    if-eq v7, v6, :cond_211
+    if-eq v7, v6, :cond_d
 
     .line 326
     .line 327
@@ -1011,7 +1011,7 @@
 
     .line 328
     .line 329
-    if-eq v7, v6, :cond_1fa
+    if-eq v7, v6, :cond_c
 
     .line 330
     .line 331
@@ -1019,7 +1019,7 @@
 
     .line 332
     .line 333
-    if-eq v7, v6, :cond_1dc
+    if-eq v7, v6, :cond_a
 
     .line 334
     .line 335
@@ -1027,7 +1027,7 @@
 
     .line 336
     .line 337
-    if-eq v7, v6, :cond_191
+    if-eq v7, v6, :cond_7
 
     .line 338
     .line 339
@@ -1035,7 +1035,7 @@
 
     .line 340
     .line 341
-    if-eq v7, v6, :cond_15c
+    if-eq v7, v6, :cond_4
 
     .line 342
     .line 343
@@ -1047,11 +1047,11 @@
 
     .line 346
     .line 347
-    goto/16 :goto_469
+    goto/16 :goto_1e
 
     .line 348
     .line 349
-    :cond_15c
+    :cond_4
     move/from16 v36, v4
 
     .line 350
@@ -1060,11 +1060,11 @@
 
     .line 352
     .line 353
-    if-eq v2, v4, :cond_170
+    if-eq v2, v4, :cond_6
 
     .line 354
     .line 355
-    if-eq v2, v6, :cond_170
+    if-eq v2, v6, :cond_6
 
     .line 356
     .line 357
@@ -1072,7 +1072,7 @@
 
     .line 358
     .line 359
-    if-eq v2, v4, :cond_170
+    if-eq v2, v4, :cond_6
 
     .line 360
     .line 361
@@ -1080,25 +1080,25 @@
 
     .line 362
     .line 363
-    if-ne v2, v4, :cond_16d
+    if-ne v2, v4, :cond_5
 
     .line 364
     .line 365
-    goto :goto_170
+    goto :goto_7
 
     .line 366
-    :cond_16d
+    :cond_5
     const/4 v2, 0x0
 
     .line 367
     const/4 v4, 0x0
 
     .line 368
-    goto :goto_174
+    goto :goto_8
 
     .line 369
-    :cond_170
-    :goto_170
+    :cond_6
+    :goto_7
     sub-float v2, v26, v22
 
     .line 370
@@ -1107,7 +1107,7 @@
 
     .line 372
     .line 373
-    :goto_174
+    :goto_8
     aget v6, v15, v36
 
     .line 374
@@ -1149,7 +1149,7 @@
 
     .line 393
     .line 394
-    :goto_189
+    :goto_9
     add-float v27, v27, v6
 
     .line 395
@@ -1162,11 +1162,11 @@
 
     .line 399
     .line 400
-    goto/16 :goto_469
+    goto/16 :goto_1e
 
     .line 401
     .line 402
-    :cond_191
+    :cond_7
     move/from16 v36, v4
 
     .line 403
@@ -1179,7 +1179,7 @@
 
     .line 407
     .line 408
-    if-eq v2, v4, :cond_1ab
+    if-eq v2, v4, :cond_9
 
     .line 409
     .line 410
@@ -1187,7 +1187,7 @@
 
     .line 411
     .line 412
-    if-eq v2, v6, :cond_1ab
+    if-eq v2, v6, :cond_9
 
     .line 413
     .line 414
@@ -1195,7 +1195,7 @@
 
     .line 415
     .line 416
-    if-eq v2, v4, :cond_1ab
+    if-eq v2, v4, :cond_9
 
     .line 417
     .line 418
@@ -1203,14 +1203,14 @@
 
     .line 419
     .line 420
-    if-ne v2, v4, :cond_1a6
+    if-ne v2, v4, :cond_8
 
     .line 421
     .line 422
-    goto :goto_1ab
+    goto :goto_a
 
     .line 423
-    :cond_1a6
+    :cond_8
     const/16 v20, 0x0
 
     .line 424
@@ -1219,11 +1219,11 @@
 
     .line 426
     .line 427
-    goto :goto_1b3
+    goto :goto_b
 
     .line 428
-    :cond_1ab
-    :goto_1ab
+    :cond_9
+    :goto_a
     sub-float v2, v26, v22
 
     .line 429
@@ -1240,7 +1240,7 @@
 
     .line 435
     .line 436
-    :goto_1b3
+    :goto_b
     aget v22, v15, v36
 
     .line 437
@@ -1314,16 +1314,16 @@
 
     .line 472
     .line 473
-    :goto_1d8
+    :goto_c
     move/from16 v22, v7
 
     .line 474
     .line 475
-    goto/16 :goto_469
+    goto/16 :goto_1e
 
     .line 476
     .line 477
-    :cond_1dc
+    :cond_a
     move/from16 v36, v4
 
     .line 478
@@ -1352,7 +1352,7 @@
 
     .line 490
     .line 491
-    if-lez v36, :cond_1f1
+    if-lez v36, :cond_b
 
     .line 492
     .line 493
@@ -1361,11 +1361,11 @@
     .line 494
     .line 495
     .line 496
-    goto/16 :goto_469
+    goto/16 :goto_1e
 
     .line 497
     .line 498
-    :cond_1f1
+    :cond_b
     invoke-virtual {v5, v2, v4}, Landroid/graphics/Path;->rMoveTo(FF)V
 
     .line 499
@@ -1375,16 +1375,16 @@
 
     .line 502
     .line 503
-    :goto_1f6
+    :goto_d
     move/from16 v34, v27
 
     .line 504
     .line 505
-    goto/16 :goto_469
+    goto/16 :goto_1e
 
     .line 506
     .line 507
-    :cond_1fa
+    :cond_c
     move/from16 v36, v4
 
     .line 508
@@ -1422,16 +1422,16 @@
 
     .line 525
     .line 526
-    :goto_20d
+    :goto_e
     add-float v27, v27, v2
 
     .line 527
     .line 528
-    goto/16 :goto_469
+    goto/16 :goto_1e
 
     .line 529
     .line 530
-    :cond_211
+    :cond_d
     move/from16 v36, v4
 
     .line 531
@@ -1444,7 +1444,7 @@
 
     .line 535
     .line 536
-    if-eq v2, v4, :cond_22b
+    if-eq v2, v4, :cond_f
 
     .line 537
     .line 538
@@ -1452,7 +1452,7 @@
 
     .line 539
     .line 540
-    if-eq v2, v6, :cond_22b
+    if-eq v2, v6, :cond_f
 
     .line 541
     .line 542
@@ -1460,7 +1460,7 @@
 
     .line 543
     .line 544
-    if-eq v2, v4, :cond_22b
+    if-eq v2, v4, :cond_f
 
     .line 545
     .line 546
@@ -1468,15 +1468,15 @@
 
     .line 547
     .line 548
-    if-ne v2, v4, :cond_226
+    if-ne v2, v4, :cond_e
 
     .line 549
     .line 550
-    goto :goto_22b
+    goto :goto_10
 
     .line 551
-    :cond_226
-    :goto_226
+    :cond_e
+    :goto_f
     move/from16 v2, v26
 
     .line 552
@@ -1485,11 +1485,11 @@
 
     .line 554
     .line 555
-    goto :goto_234
+    goto :goto_11
 
     .line 556
-    :cond_22b
-    :goto_22b
+    :cond_f
+    :goto_10
     mul-float v26, v26, v28
 
     .line 557
@@ -1506,10 +1506,10 @@
 
     .line 563
     .line 564
-    goto :goto_226
+    goto :goto_f
 
     .line 565
-    :goto_234
+    :goto_11
     aget v6, v15, v36
 
     .line 566
@@ -1555,11 +1555,11 @@
 
     .line 587
     .line 588
-    goto/16 :goto_469
+    goto/16 :goto_1e
 
     .line 589
     .line 590
-    :cond_24d
+    :cond_10
     move/from16 v36, v4
 
     .line 591
@@ -1572,7 +1572,7 @@
 
     .line 595
     .line 596
-    if-eq v2, v4, :cond_267
+    if-eq v2, v4, :cond_12
 
     .line 597
     .line 598
@@ -1580,7 +1580,7 @@
 
     .line 599
     .line 600
-    if-eq v2, v6, :cond_267
+    if-eq v2, v6, :cond_12
 
     .line 601
     .line 602
@@ -1588,7 +1588,7 @@
 
     .line 603
     .line 604
-    if-eq v2, v4, :cond_267
+    if-eq v2, v4, :cond_12
 
     .line 605
     .line 606
@@ -1596,15 +1596,15 @@
 
     .line 607
     .line 608
-    if-ne v2, v4, :cond_262
+    if-ne v2, v4, :cond_11
 
     .line 609
     .line 610
-    goto :goto_267
+    goto :goto_13
 
     .line 611
-    :cond_262
-    :goto_262
+    :cond_11
+    :goto_12
     move/from16 v20, v26
 
     .line 612
@@ -1613,11 +1613,11 @@
 
     .line 614
     .line 615
-    goto :goto_270
+    goto :goto_14
 
     .line 616
-    :cond_267
-    :goto_267
+    :cond_12
+    :goto_13
     mul-float v26, v26, v28
 
     .line 617
@@ -1634,10 +1634,10 @@
 
     .line 623
     .line 624
-    goto :goto_262
+    goto :goto_12
 
     .line 625
-    :goto_270
+    :goto_14
     aget v22, v15, v36
 
     .line 626
@@ -1703,11 +1703,11 @@
 
     .line 657
     .line 658
-    goto/16 :goto_1d8
+    goto/16 :goto_c
 
     .line 659
     .line 660
-    :cond_293
+    :cond_13
     move/from16 v36, v4
 
     .line 661
@@ -1728,7 +1728,7 @@
 
     .line 669
     .line 670
-    if-lez v36, :cond_2a8
+    if-lez v36, :cond_14
 
     .line 671
     .line 672
@@ -1737,7 +1737,7 @@
     .line 673
     .line 674
     .line 675
-    :goto_2a2
+    :goto_15
     move/from16 v26, v2
 
     .line 676
@@ -1746,11 +1746,11 @@
 
     .line 678
     .line 679
-    goto/16 :goto_469
+    goto/16 :goto_1e
 
     .line 680
     .line 681
-    :cond_2a8
+    :cond_14
     invoke-virtual {v5, v2, v4}, Landroid/graphics/Path;->moveTo(FF)V
 
     .line 682
@@ -1767,11 +1767,11 @@
 
     .line 688
     .line 689
-    goto/16 :goto_1f6
+    goto/16 :goto_d
 
     .line 690
     .line 691
-    :cond_2b2
+    :cond_15
     move/from16 v36, v4
 
     .line 692
@@ -1805,10 +1805,10 @@
 
     .line 707
     .line 708
-    goto :goto_2a2
+    goto :goto_15
 
     .line 709
-    :cond_2c4
+    :cond_16
     move/from16 v36, v4
 
     .line 710
@@ -1833,11 +1833,11 @@
 
     .line 720
     .line 721
-    goto/16 :goto_20d
+    goto/16 :goto_e
 
     .line 722
     .line 723
-    :cond_2d2
+    :cond_17
     move/from16 v36, v4
 
     .line 724
@@ -1915,11 +1915,11 @@
 
     .line 761
     .line 762
-    goto/16 :goto_189
+    goto/16 :goto_9
 
     .line 763
     .line 764
-    :cond_2fb
+    :cond_18
     move/from16 v36, v4
 
     .line 765
@@ -1948,11 +1948,11 @@
 
     .line 777
     .line 778
-    goto/16 :goto_469
+    goto/16 :goto_1e
 
     .line 779
     .line 780
-    :cond_30b
+    :cond_19
     move/from16 v36, v4
 
     .line 781
@@ -2054,16 +2054,16 @@
 
     .line 830
     .line 831
-    :goto_33e
+    :goto_16
     move-object/from16 v5, v19
 
     .line 832
     .line 833
-    goto/16 :goto_469
+    goto/16 :goto_1e
 
     .line 834
     .line 835
-    :cond_342
+    :cond_1a
     move/from16 v36, v4
 
     .line 836
@@ -2140,7 +2140,7 @@
 
     .line 872
     .line 873
-    if-eqz v6, :cond_36d
+    if-eqz v6, :cond_1b
 
     .line 874
     .line 875
@@ -2148,15 +2148,15 @@
 
     .line 876
     .line 877
-    goto :goto_36f
+    goto :goto_17
 
     .line 878
-    :cond_36d
+    :cond_1b
     const/16 v27, 0x0
 
     .line 879
     .line 880
-    :goto_36f
+    :goto_17
     add-int/lit8 v6, v36, 0x4
 
     .line 881
@@ -2169,7 +2169,7 @@
 
     .line 885
     .line 886
-    if-eqz v6, :cond_37e
+    if-eqz v6, :cond_1c
 
     .line 887
     .line 888
@@ -2177,7 +2177,7 @@
 
     .line 889
     .line 890
-    :goto_379
+    :goto_18
     move/from16 v20, v26
 
     .line 891
@@ -2186,18 +2186,18 @@
 
     .line 893
     .line 894
-    goto :goto_381
+    goto :goto_19
 
     .line 895
-    :cond_37e
+    :cond_1c
     const/16 v28, 0x0
 
     .line 896
     .line 897
-    goto :goto_379
+    goto :goto_18
 
     .line 898
-    :goto_381
+    :goto_19
     invoke-static/range {v19 .. v28}, Llibs/tb2;->a(Landroid/graphics/Path;FFFFFFFZZ)V
 
     .line 899
@@ -2242,11 +2242,11 @@
 
     .line 919
     .line 920
-    goto/16 :goto_469
+    goto/16 :goto_1e
 
     .line 921
     .line 922
-    :cond_399
+    :cond_1d
     move/from16 v36, v4
 
     .line 923
@@ -2279,15 +2279,15 @@
 
     .line 937
     .line 938
-    :goto_3a9
+    :goto_1a
     move-object v5, v7
 
     .line 939
-    goto/16 :goto_469
+    goto/16 :goto_1e
 
     .line 940
     .line 941
-    :cond_3ac
+    :cond_1e
     move/from16 v36, v4
 
     .line 942
@@ -2372,10 +2372,10 @@
 
     .line 982
     .line 983
-    goto :goto_3a9
+    goto :goto_1a
 
     .line 984
-    :cond_3d7
+    :cond_1f
     move/from16 v36, v4
 
     .line 985
@@ -2408,11 +2408,11 @@
 
     .line 999
     .line 1000
-    goto/16 :goto_469
+    goto/16 :goto_1e
 
     .line 1001
     .line 1002
-    :cond_3e9
+    :cond_20
     move/from16 v36, v4
 
     .line 1003
@@ -2509,11 +2509,11 @@
 
     .line 1049
     .line 1050
-    goto/16 :goto_33e
+    goto/16 :goto_16
 
     .line 1051
     .line 1052
-    :cond_41b
+    :cond_21
     move/from16 v36, v4
 
     .line 1053
@@ -2586,7 +2586,7 @@
 
     .line 1087
     .line 1088
-    if-eqz v7, :cond_444
+    if-eqz v7, :cond_22
 
     .line 1089
     .line 1090
@@ -2594,15 +2594,15 @@
 
     .line 1091
     .line 1092
-    goto :goto_446
+    goto :goto_1b
 
     .line 1093
-    :cond_444
+    :cond_22
     const/16 v27, 0x0
 
     .line 1094
     .line 1095
-    :goto_446
+    :goto_1b
     add-int/lit8 v7, v36, 0x4
 
     .line 1096
@@ -2615,7 +2615,7 @@
 
     .line 1100
     .line 1101
-    if-eqz v7, :cond_455
+    if-eqz v7, :cond_23
 
     .line 1102
     .line 1103
@@ -2623,7 +2623,7 @@
 
     .line 1104
     .line 1105
-    :goto_450
+    :goto_1c
     move/from16 v20, v5
 
     .line 1106
@@ -2632,18 +2632,18 @@
 
     .line 1108
     .line 1109
-    goto :goto_458
+    goto :goto_1d
 
     .line 1110
-    :cond_455
+    :cond_23
     const/16 v28, 0x0
 
     .line 1111
     .line 1112
-    goto :goto_450
+    goto :goto_1c
 
     .line 1113
-    :goto_458
+    :goto_1d
     invoke-static/range {v19 .. v28}, Llibs/tb2;->a(Landroid/graphics/Path;FFFFFFFZZ)V
 
     .line 1114
@@ -2677,7 +2677,7 @@
 
     .line 1129
     .line 1130
-    :goto_469
+    :goto_1e
     add-int v4, v36, v33
 
     .line 1131
@@ -2689,11 +2689,11 @@
     move v7, v2
 
     .line 1135
-    goto/16 :goto_109
+    goto/16 :goto_6
 
     .line 1136
     .line 1137
-    :cond_470
+    :cond_24
     move/from16 v20, v26
 
     .line 1138
@@ -2757,12 +2757,12 @@
     const/4 v7, 0x0
 
     .line 1168
-    goto/16 :goto_c3
+    goto/16 :goto_3
 
     .line 1169
     .line 1170
-    :cond_491
-    :goto_491
+    :cond_25
+    :goto_1f
     move-object/from16 v32, v2
 
     .line 1171
@@ -2771,18 +2771,18 @@
 
     .line 1173
     .line 1174
-    goto :goto_499
+    goto :goto_20
 
     .line 1175
-    :cond_496
+    :cond_26
     const/16 v29, 0x1
 
     .line 1176
     .line 1177
-    goto :goto_491
+    goto :goto_1f
 
     .line 1178
-    :goto_499
+    :goto_20
     iget-object v2, v1, Llibs/et3;->b:Landroid/graphics/Path;
 
     .line 1179
@@ -2796,7 +2796,7 @@
 
     .line 1184
     .line 1185
-    if-eqz v4, :cond_4aa
+    if-eqz v4, :cond_27
 
     .line 1186
     .line 1187
@@ -2810,11 +2810,11 @@
     .line 1191
     .line 1192
     .line 1193
-    goto/16 :goto_af
+    goto/16 :goto_2
 
     .line 1194
     .line 1195
-    :cond_4aa
+    :cond_27
     check-cast v0, Llibs/bt3;
 
     .line 1196
@@ -2835,7 +2835,7 @@
 
     .line 1204
     .line 1205
-    if-nez v7, :cond_4bf
+    if-nez v7, :cond_29
 
     .line 1206
     .line 1207
@@ -2847,22 +2847,22 @@
 
     .line 1210
     .line 1211
-    if-eqz v7, :cond_4bd
+    if-eqz v7, :cond_28
 
     .line 1212
     .line 1213
-    goto :goto_4bf
+    goto :goto_21
 
     .line 1214
-    :cond_4bd
+    :cond_28
     const/4 v7, 0x0
 
     .line 1215
-    goto :goto_4fc
+    goto :goto_23
 
     .line 1216
-    :cond_4bf
-    :goto_4bf
+    :cond_29
+    :goto_21
     iget v7, v0, Llibs/bt3;->k:F
 
     .line 1217
@@ -2887,7 +2887,7 @@
 
     .line 1225
     .line 1226
-    if-nez v6, :cond_4d2
+    if-nez v6, :cond_2a
 
     .line 1227
     .line 1228
@@ -2904,7 +2904,7 @@
 
     .line 1234
     .line 1235
-    :cond_4d2
+    :cond_2a
     const/4 v7, 0x0
 
     .line 1236
@@ -2946,7 +2946,7 @@
 
     .line 1255
     .line 1256
-    if-lez v10, :cond_4f4
+    if-lez v10, :cond_2b
 
     .line 1257
     .line 1258
@@ -2970,10 +2970,10 @@
     .line 1266
     .line 1267
     .line 1268
-    goto :goto_4f9
+    goto :goto_22
 
     .line 1269
-    :cond_4f4
+    :cond_2b
     const/4 v6, 0x0
 
     .line 1270
@@ -2985,13 +2985,13 @@
     .line 1272
     .line 1273
     .line 1274
-    :goto_4f9
+    :goto_22
     invoke-virtual {v5, v6, v6}, Landroid/graphics/Path;->rLineTo(FF)V
 
     .line 1275
     .line 1276
     .line 1277
-    :goto_4fc
+    :goto_23
     invoke-virtual {v2, v5, v12}, Landroid/graphics/Path;->addPath(Landroid/graphics/Path;Landroid/graphics/Matrix;)V
 
     .line 1278
@@ -3009,7 +3009,7 @@
     const/4 v6, 0x0
 
     .line 1286
-    if-eqz v4, :cond_541
+    if-eqz v4, :cond_2e
 
     .line 1287
     .line 1288
@@ -3017,7 +3017,7 @@
 
     .line 1289
     .line 1290
-    if-nez v4, :cond_518
+    if-nez v4, :cond_2c
 
     .line 1291
     .line 1292
@@ -3046,7 +3046,7 @@
     .line 1303
     .line 1304
     .line 1305
-    :cond_518
+    :cond_2c
     iget-object v4, v1, Llibs/et3;->e:Landroid/graphics/Paint;
 
     .line 1306
@@ -3105,7 +3105,7 @@
 
     .line 1332
     .line 1333
-    if-nez v9, :cond_539
+    if-nez v9, :cond_2d
 
     .line 1334
     .line 1335
@@ -3113,15 +3113,15 @@
 
     .line 1336
     .line 1337
-    goto :goto_53b
+    goto :goto_24
 
     .line 1338
-    :cond_539
+    :cond_2d
     sget-object v9, Landroid/graphics/Path$FillType;->EVEN_ODD:Landroid/graphics/Path$FillType;
 
     .line 1339
     .line 1340
-    :goto_53b
+    :goto_24
     invoke-virtual {v2, v9}, Landroid/graphics/Path;->setFillType(Landroid/graphics/Path$FillType;)V
 
     .line 1341
@@ -3132,12 +3132,12 @@
     .line 1344
     .line 1345
     .line 1346
-    :cond_541
+    :cond_2e
     iget v4, v0, Llibs/bt3;->c:I
 
     .line 1347
     .line 1348
-    if-eqz v4, :cond_58f
+    if-eqz v4, :cond_32
 
     .line 1349
     .line 1350
@@ -3145,7 +3145,7 @@
 
     .line 1351
     .line 1352
-    if-nez v4, :cond_556
+    if-nez v4, :cond_2f
 
     .line 1353
     .line 1354
@@ -3174,7 +3174,7 @@
     .line 1365
     .line 1366
     .line 1367
-    :cond_556
+    :cond_2f
     iget-object v4, v1, Llibs/et3;->d:Landroid/graphics/Paint;
 
     .line 1368
@@ -3183,7 +3183,7 @@
 
     .line 1370
     .line 1371
-    if-eqz v9, :cond_55f
+    if-eqz v9, :cond_30
 
     .line 1372
     .line 1373
@@ -3192,12 +3192,12 @@
     .line 1374
     .line 1375
     .line 1376
-    :cond_55f
+    :cond_30
     iget-object v9, v0, Llibs/bt3;->l:Landroid/graphics/Paint$Cap;
 
     .line 1377
     .line 1378
-    if-eqz v9, :cond_566
+    if-eqz v9, :cond_31
 
     .line 1379
     .line 1380
@@ -3206,7 +3206,7 @@
     .line 1381
     .line 1382
     .line 1383
-    :cond_566
+    :cond_31
     iget v9, v0, Llibs/bt3;->n:F
 
     .line 1384
@@ -3288,8 +3288,8 @@
     .line 1422
     .line 1423
     .line 1424
-    :cond_58f
-    :goto_58f
+    :cond_32
+    :goto_25
     add-int/lit8 v8, v16, 0x1
 
     .line 1425
@@ -3302,11 +3302,11 @@
 
     .line 1429
     .line 1430
-    goto/16 :goto_17
+    goto/16 :goto_0
 
     .line 1431
     .line 1432
-    :cond_597
+    :cond_33
     move-object/from16 v1, p0
 
     .line 1433
@@ -3326,22 +3326,22 @@
     nop
 
     .line 1441
-    :sswitch_data_5a0
+    :sswitch_data_0
     .sparse-switch
-        0x41 -> :sswitch_fa
-        0x43 -> :sswitch_f7
-        0x48 -> :sswitch_f4
-        0x51 -> :sswitch_f1
-        0x53 -> :sswitch_f1
-        0x56 -> :sswitch_f4
-        0x5a -> :sswitch_e2
-        0x61 -> :sswitch_fa
-        0x63 -> :sswitch_f7
-        0x68 -> :sswitch_f4
-        0x71 -> :sswitch_f1
-        0x73 -> :sswitch_f1
-        0x76 -> :sswitch_f4
-        0x7a -> :sswitch_e2
+        0x41 -> :sswitch_4
+        0x43 -> :sswitch_3
+        0x48 -> :sswitch_2
+        0x51 -> :sswitch_1
+        0x53 -> :sswitch_1
+        0x56 -> :sswitch_2
+        0x5a -> :sswitch_0
+        0x61 -> :sswitch_4
+        0x63 -> :sswitch_3
+        0x68 -> :sswitch_2
+        0x71 -> :sswitch_1
+        0x73 -> :sswitch_1
+        0x76 -> :sswitch_2
+        0x7a -> :sswitch_0
     .end sparse-switch
 
     .line 1442
@@ -3402,7 +3402,7 @@
     .line 1497
     .line 1498
     .line 1499
-    :array_5da
+    :array_0
     .array-data 4
         0x0
         0x3f800000    # 1.0f

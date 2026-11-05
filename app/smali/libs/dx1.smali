@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -28,14 +28,14 @@
 
 # virtual methods
 .method public final a()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/dx1;->a:Llibs/ex1;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -45,7 +45,7 @@
     return v0
 
     .line 7
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
     .line 8
@@ -53,7 +53,7 @@
 .end method
 
 .method public final b(Llibs/cx1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/dx1;->b:Llibs/cx1;
@@ -64,21 +64,21 @@
 .end method
 
 .method public final onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
-    .registers 4
+    .locals 1
 
     .line 1
     instance-of p1, p2, Llibs/ax1;
 
     .line 2
     .line 3
-    if-nez p1, :cond_5
+    if-nez p1, :cond_0
 
     .line 4
     .line 5
-    goto :goto_3e
+    goto :goto_0
 
     .line 6
-    :cond_5
+    :cond_0
     check-cast p2, Llibs/ax1;
 
     .line 7
@@ -164,7 +164,7 @@
     move-result p2
 
     .line 49
-    if-nez p2, :cond_37
+    if-nez p2, :cond_1
 
     .line 50
     .line 51
@@ -177,12 +177,12 @@
     .line 54
     .line 55
     .line 56
-    :cond_37
+    :cond_1
     iget-object p1, p0, Llibs/dx1;->b:Llibs/cx1;
 
     .line 57
     .line 58
-    if-eqz p1, :cond_3e
+    if-eqz p1, :cond_2
 
     .line 59
     .line 60
@@ -191,13 +191,13 @@
     .line 61
     .line 62
     .line 63
-    :cond_3e
-    :goto_3e
+    :cond_2
+    :goto_0
     return-void
 .end method
 
 .method public onServiceDisconnected(Landroid/content/ComponentName;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 p1, 0x0
@@ -224,7 +224,7 @@
 
     .line 12
     .line 13
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_0
 
     .line 14
     .line 15
@@ -233,6 +233,6 @@
     .line 16
     .line 17
     .line 18
-    :cond_11
+    :cond_0
     return-void
 .end method

@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
 
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     invoke-static {p1}, Llibs/Chi;->a(Ljava/lang/String;)Ljavax/crypto/Cipher;
 
     .line 11
@@ -45,20 +45,20 @@
 
     .line 14
     iput-object p2, p0, Llibs/Chi;->a:Ljavax/crypto/Cipher;
-    :try_end_f
-    .catch Ljavax/crypto/NoSuchPaddingException; {:try_start_9 .. :try_end_f} :catch_28
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_9 .. :try_end_f} :catch_1d
+    :try_end_0
+    .catch Ljavax/crypto/NoSuchPaddingException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 15
     .line 16
-    if-eqz p2, :cond_12
+    if-eqz p2, :cond_0
 
     .line 17
     .line 18
     return-void
 
     .line 19
-    :cond_12
+    :cond_0
     const-string p2, "Failed to create cipher engine for "
 
     .line 20
@@ -82,7 +82,7 @@
     throw p1
 
     .line 30
-    :catch_1d
+    :catch_0
     const-string p2, "Algorithm not supported:"
 
     .line 31
@@ -106,7 +106,7 @@
     throw p1
 
     .line 41
-    :catch_28
+    :catch_1
     const-string p1, "Padding type not supported"
 
     .line 42
@@ -123,7 +123,7 @@
 .end method
 
 .method public static a(Ljava/lang/String;)Ljavax/crypto/Cipher;
-    .registers 2
+    .locals 1
 
     .line 1
     :try_start_0
@@ -133,14 +133,14 @@
     .line 3
     .line 4
     move-result-object p0
-    :try_end_4
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_4} :catch_5
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 5
     return-object p0
 
     .line 6
-    :catch_5
+    :catch_0
     invoke-static {p0}, Llibs/ad1;->c(Ljava/lang/String;)Ljava/security/Provider;
 
     .line 7
@@ -149,7 +149,7 @@
     move-result-object v0
 
     .line 10
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 11
     .line 12
@@ -161,10 +161,10 @@
     move-result-object p0
 
     .line 16
-    goto :goto_18
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     invoke-static {p0}, Llibs/ad1;->c(Ljava/lang/String;)Ljava/security/Provider;
 
     .line 18
@@ -181,14 +181,14 @@
     move-result-object p0
 
     .line 25
-    :goto_18
+    :goto_0
     return-object p0
 .end method
 
 
 # virtual methods
 .method public b()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/Chi;->a:Ljavax/crypto/Cipher;
@@ -207,7 +207,7 @@
 .end method
 
 .method public final c()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/Chi;->d:I
@@ -218,7 +218,7 @@
 .end method
 
 .method public d()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -228,7 +228,7 @@
 .end method
 
 .method public e([BI[B)V
-    .registers 8
+    .locals 4
 
     .line 1
     :try_start_0
@@ -265,21 +265,21 @@
 
     .line 17
     .line 18
-    if-nez p2, :cond_15
+    if-nez p2, :cond_0
 
     .line 19
     .line 20
     const/4 p2, 0x1
 
     .line 21
-    goto :goto_16
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     const/4 p2, 0x2
 
     .line 23
-    :goto_16
+    :goto_0
     new-instance v1, Ljavax/crypto/spec/IvParameterSpec;
 
     .line 24
@@ -298,9 +298,9 @@
     .line 31
     .line 32
     invoke-virtual {v0, p2, p3, v1}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
-    :try_end_22
-    .catch Ljava/security/InvalidKeyException; {:try_start_0 .. :try_end_22} :catch_29
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_0 .. :try_end_22} :catch_23
+    :try_end_0
+    .catch Ljava/security/InvalidKeyException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 33
     .line 34
@@ -308,7 +308,7 @@
     return-void
 
     .line 36
-    :catch_23
+    :catch_0
     const-string p1, "Invalid algorithm parameter"
 
     .line 37
@@ -321,7 +321,7 @@
     return-void
 
     .line 42
-    :catch_29
+    :catch_1
     const-string p1, "Invalid encryption key"
 
     .line 43
@@ -335,7 +335,7 @@
 .end method
 
 .method public f()Z
-    .registers 2
+    .locals 1
 
     .line 1
     instance-of v0, p0, Llibs/Put;
@@ -346,10 +346,10 @@
 .end method
 
 .method public g(III[B[B)V
-    .registers 13
+    .locals 7
 
     .line 1
-    if-lez p3, :cond_31
+    if-lez p3, :cond_2
 
     .line 2
     .line 3
@@ -359,7 +359,7 @@
     sub-int/2addr v0, p1
 
     .line 5
-    if-lt v0, p3, :cond_29
+    if-lt v0, p3, :cond_1
 
     .line 6
     .line 7
@@ -369,11 +369,11 @@
     sub-int/2addr v0, p2
 
     .line 9
-    if-lt v0, p3, :cond_20
+    if-lt v0, p3, :cond_0
 
     .line 10
     .line 11
-    :try_start_a
+    :try_start_0
     iget-object v1, p0, Llibs/Chi;->a:Ljavax/crypto/Cipher;
 
     .line 12
@@ -394,8 +394,8 @@
 
     .line 18
     invoke-virtual/range {v1 .. v6}, Ljavax/crypto/Cipher;->update([BII[BI)I
-    :try_end_14
-    .catch Ljavax/crypto/ShortBufferException; {:try_start_a .. :try_end_14} :catch_15
+    :try_end_0
+    .catch Ljavax/crypto/ShortBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 19
     .line 20
@@ -403,7 +403,7 @@
     return-void
 
     .line 22
-    :catch_15
+    :catch_0
     move-exception v0
 
     .line 23
@@ -429,7 +429,7 @@
     throw p1
 
     .line 33
-    :cond_20
+    :cond_0
     move v4, p3
 
     .line 34
@@ -451,7 +451,7 @@
     return-void
 
     .line 42
-    :cond_29
+    :cond_1
     move v4, p3
 
     .line 43
@@ -470,6 +470,6 @@
     .line 48
     .line 49
     .line 50
-    :cond_31
+    :cond_2
     return-void
 .end method

@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x15
@@ -23,7 +23,7 @@
 
 # virtual methods
 .method public final Item(II)Z
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-static {}, Llibs/t43;->Set()Z
@@ -34,7 +34,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -49,7 +49,7 @@
     return p1
 
     .line 12
-    :cond_b
+    :cond_0
     const/4 p1, 0x0
 
     .line 13
@@ -57,7 +57,7 @@
 .end method
 
 .method public final Link(I)I
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-static {}, Llibs/t43;->Set()Z
@@ -68,7 +68,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -83,7 +83,7 @@
     return p1
 
     .line 12
-    :cond_b
+    :cond_0
     const/4 p1, 0x0
 
     .line 13
@@ -91,7 +91,7 @@
 .end method
 
 .method public final Node(I)Z
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-static {}, Llibs/t43;->Set()Z
@@ -102,7 +102,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -117,7 +117,7 @@
     return p1
 
     .line 12
-    :cond_b
+    :cond_0
     const/4 p1, 0x0
 
     .line 13
@@ -125,7 +125,7 @@
 .end method
 
 .method public final View(Landroid/view/KeyEvent;)Z
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p1}, Llibs/ce0;->y(Landroid/view/KeyEvent;)Z

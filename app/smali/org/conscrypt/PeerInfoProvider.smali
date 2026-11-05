@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Lorg/conscrypt/PeerInfoProvider$1;
@@ -29,7 +29,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
 .end method
 
 .method public static forHostAndPort(Ljava/lang/String;I)Lorg/conscrypt/PeerInfoProvider;
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance v0, Lorg/conscrypt/PeerInfoProvider$2;
@@ -57,7 +57,7 @@
 .end method
 
 .method public static nullProvider()Lorg/conscrypt/PeerInfoProvider;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/PeerInfoProvider;->NULL_PEER_INFO_PROVIDER:Lorg/conscrypt/PeerInfoProvider;

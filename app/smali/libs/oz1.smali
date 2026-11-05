@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/pz1;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final b(Llibs/Rect;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-virtual {p1}, Llibs/Rect;->c()Llibs/Sign;
@@ -54,54 +54,54 @@
     move-result v0
 
     .line 17
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 18
     .line 19
-    goto :goto_40
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     iget v0, v1, Llibs/Size;->b:I
 
     .line 21
     .line 22
-    if-eqz v0, :cond_41
+    if-eqz v0, :cond_4
 
     .line 23
     .line 24
     const/4 v2, 0x1
 
     .line 25
-    if-eq v0, v2, :cond_40
+    if-eq v0, v2, :cond_3
 
     .line 26
     .line 27
     const/4 v2, 0x2
 
     .line 28
-    if-eq v0, v2, :cond_39
+    if-eq v0, v2, :cond_2
 
     .line 29
     .line 30
     const/4 p1, 0x3
 
     .line 31
-    if-eq v0, p1, :cond_40
+    if-eq v0, p1, :cond_3
 
     .line 32
     .line 33
     const/4 p1, 0x4
 
     .line 34
-    if-ne v0, p1, :cond_24
+    if-ne v0, p1, :cond_1
 
     .line 35
     .line 36
-    goto :goto_40
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_1
     new-instance p1, Llibs/id3;
 
     .line 38
@@ -143,7 +143,7 @@
     throw p1
 
     .line 58
-    :cond_39
+    :cond_2
     invoke-virtual {p1}, Llibs/Rect;->c()Llibs/Sign;
 
     .line 59
@@ -157,12 +157,12 @@
     .line 63
     .line 64
     .line 65
-    :cond_40
-    :goto_40
+    :cond_3
+    :goto_0
     return-void
 
     .line 66
-    :cond_41
+    :cond_4
     invoke-virtual {p1}, Llibs/Rect;->c()Llibs/Sign;
 
     .line 67

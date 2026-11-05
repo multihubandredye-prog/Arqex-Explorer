@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/Enumeration;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final hasMoreElements()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/oj3;->X:Ljava/util/Enumeration;
@@ -49,7 +49,7 @@
 .end method
 
 .method public final nextElement()Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/oj3;->X:Ljava/util/Enumeration;
@@ -68,7 +68,7 @@
 
     .line 8
     .line 9
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
     .line 10
     .line 11
@@ -79,8 +79,8 @@
     return-object v0
 
     .line 14
-    :cond_d
-    if-eqz v0, :cond_19
+    :cond_0
+    if-eqz v0, :cond_1
 
     .line 15
     .line 16
@@ -104,7 +104,7 @@
     return-object v1
 
     .line 26
-    :cond_19
+    :cond_1
     const/4 v0, 0x0
 
     .line 27

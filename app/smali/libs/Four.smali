@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Llibs/to3;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public final a()V
-    .registers 8
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/Four;->Z:Llibs/to3;
@@ -90,7 +90,7 @@
     move-result v1
 
     .line 11
-    if-nez v1, :cond_6d
+    if-nez v1, :cond_1
 
     .line 12
     .line 13
@@ -114,7 +114,7 @@
 
     .line 22
     .line 23
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 24
     .line 25
@@ -126,7 +126,7 @@
     return-void
 
     .line 29
-    :cond_1c
+    :cond_0
     iget-object v0, v1, Llibs/to3;->Rho:Llibs/xj0;
 
     .line 30
@@ -147,7 +147,7 @@
     const/4 v0, 0x0
 
     .line 39
-    :try_start_26
+    :try_start_0
     iget-object v2, v1, Llibs/to3;->Rho:Llibs/xj0;
 
     .line 40
@@ -250,8 +250,8 @@
     .line 89
     .line 90
     invoke-virtual {v2, v3, v4}, Llibs/xj0;->a(J)V
-    :try_end_5c
-    .catchall {:try_start_26 .. :try_end_5c} :catchall_64
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 91
     .line 92
@@ -272,7 +272,7 @@
     return-void
 
     .line 101
-    :catchall_64
+    :catchall_0
     move-exception v2
 
     .line 102
@@ -292,12 +292,12 @@
     throw v2
 
     .line 110
-    :cond_6d
+    :cond_1
     return-void
 .end method
 
 .method public c(Llibs/cr1;Llibs/oy2;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iget-object p1, p0, Llibs/Four;->Z:Llibs/to3;
@@ -313,7 +313,7 @@
 .end method
 
 .method public i(Llibs/ny2;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-virtual {p1}, Llibs/ny2;->toString()Ljava/lang/String;

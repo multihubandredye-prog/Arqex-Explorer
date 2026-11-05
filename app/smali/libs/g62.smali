@@ -25,7 +25,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 21
+    .locals 21
 
     .line 1
     const-wide v0, 0x3fe8f5c28f5c28f6L    # 0.78
@@ -84,7 +84,7 @@
     const/4 v2, 0x0
 
     .line 31
-    :goto_1e
+    :goto_0
     const/16 v3, 0x64
 
     .line 32
@@ -93,7 +93,7 @@
 
     .line 34
     .line 35
-    if-ge v2, v3, :cond_b0
+    if-ge v2, v3, :cond_4
 
     .line 36
     .line 37
@@ -112,7 +112,7 @@
 
     .line 43
     .line 44
-    :goto_2b
+    :goto_1
     sub-float v6, v3, v0
 
     .line 45
@@ -213,7 +213,7 @@
 
     .line 93
     .line 94
-    if-gez v15, :cond_a3
+    if-gez v15, :cond_2
 
     .line 95
     .line 96
@@ -247,7 +247,7 @@
 
     .line 109
     .line 110
-    :goto_6d
+    :goto_2
     sub-float v5, v3, v1
 
     .line 111
@@ -311,7 +311,7 @@
 
     .line 138
     .line 139
-    if-gez v20, :cond_9b
+    if-gez v20, :cond_0
 
     .line 140
     .line 141
@@ -345,44 +345,44 @@
 
     .line 154
     .line 155
-    goto :goto_1e
+    goto :goto_0
 
     .line 156
-    :cond_9b
+    :cond_0
     cmpl-float v6, v10, v17
 
     .line 157
     .line 158
-    if-lez v6, :cond_a1
+    if-lez v6, :cond_1
 
     .line 159
     .line 160
     move v3, v5
 
     .line 161
-    goto :goto_6d
+    goto :goto_2
 
     .line 162
-    :cond_a1
+    :cond_1
     move v1, v5
 
     .line 163
-    goto :goto_6d
+    goto :goto_2
 
     .line 164
-    :cond_a3
+    :cond_2
     cmpl-float v4, v14, v17
 
     .line 165
     .line 166
-    if-lez v4, :cond_ae
+    if-lez v4, :cond_3
 
     .line 167
     .line 168
     move v3, v6
 
     .line 169
-    :goto_a8
+    :goto_3
     move/from16 v5, v17
 
     .line 170
@@ -391,18 +391,18 @@
 
     .line 172
     .line 173
-    goto/16 :goto_2b
+    goto/16 :goto_1
 
     .line 174
     .line 175
-    :cond_ae
+    :cond_3
     move v0, v6
 
     .line 176
-    goto :goto_a8
+    goto :goto_3
 
     .line 177
-    :cond_b0
+    :cond_4
     const/high16 v16, 0x3f800000    # 1.0f
 
     .line 178
@@ -427,7 +427,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

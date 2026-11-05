@@ -38,7 +38,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     .line 1
     const/16 v0, 0x10
@@ -49,7 +49,7 @@
 
     .line 4
     .line 5
-    fill-array-data v0, :array_2c
+    fill-array-data v0, :array_0
 
     .line 6
     .line 7
@@ -133,7 +133,7 @@
     nop
 
     .line 45
-    :array_2c
+    :array_0
     .array-data 1
         0x2dt
         0x2dt
@@ -155,7 +155,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -184,9 +184,9 @@
 .end method
 
 .method public static fromEncoding(Ljava/io/InputStream;)Ljava/security/cert/CertPath;
-    .registers 2
+    .locals 1
 
-    if-eqz p0, :cond_9
+    if-eqz p0, :cond_0
 
     .line 37
     sget-object v0, Lorg/conscrypt/OpenSSLX509CertPath;->DEFAULT_ENCODING:Lorg/conscrypt/OpenSSLX509CertPath$Encoding;
@@ -198,7 +198,7 @@
     return-object p0
 
     .line 38
-    :cond_9
+    :cond_0
     const-string p0, "inStream == null"
 
     invoke-static {p0}, Llibs/fg3;->e(Ljava/lang/String;)V
@@ -209,10 +209,10 @@
 .end method
 
 .method public static fromEncoding(Ljava/io/InputStream;Ljava/lang/String;)Ljava/security/cert/CertPath;
-    .registers 3
+    .locals 1
 
     .line 1
-    if-eqz p0, :cond_19
+    if-eqz p0, :cond_1
 
     .line 2
     .line 3
@@ -224,7 +224,7 @@
     move-result-object v0
 
     .line 7
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -239,7 +239,7 @@
     return-object p0
 
     .line 14
-    :cond_d
+    :cond_0
     new-instance p0, Ljava/security/cert/CertificateException;
 
     .line 15
@@ -264,7 +264,7 @@
     throw p0
 
     .line 26
-    :cond_19
+    :cond_1
     const-string p0, "inStream == null"
 
     .line 27
@@ -281,18 +281,18 @@
 .end method
 
 .method private static fromEncoding(Ljava/io/InputStream;Lorg/conscrypt/OpenSSLX509CertPath$Encoding;)Ljava/security/cert/CertPath;
-    .registers 3
+    .locals 1
 
     .line 33
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
 
     move-result p1
 
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_1
 
     const/4 v0, 0x1
 
-    if-ne p1, v0, :cond_e
+    if-ne p1, v0, :cond_0
 
     .line 34
     invoke-static {p0}, Lorg/conscrypt/OpenSSLX509CertPath;->fromPkcs7Encoding(Ljava/io/InputStream;)Ljava/security/cert/CertPath;
@@ -302,7 +302,7 @@
     return-object p0
 
     .line 35
-    :cond_e
+    :cond_0
     new-instance p0, Ljava/security/cert/CertificateEncodingException;
 
     const-string p1, "Unknown encoding"
@@ -312,7 +312,7 @@
     throw p0
 
     .line 36
-    :cond_16
+    :cond_1
     invoke-static {p0}, Lorg/conscrypt/OpenSSLX509CertPath;->fromPkiPathEncoding(Ljava/io/InputStream;)Ljava/security/cert/CertPath;
 
     move-result-object p0
@@ -321,32 +321,32 @@
 .end method
 
 .method private static fromPkcs7Encoding(Ljava/io/InputStream;)Ljava/security/cert/CertPath;
-    .registers 7
+    .locals 6
 
     .line 1
-    if-eqz p0, :cond_5a
+    if-eqz p0, :cond_5
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     invoke-virtual {p0}, Ljava/io/InputStream;->available()I
 
     .line 4
     .line 5
     .line 6
     move-result v0
-    :try_end_6
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_6} :catch_62
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
 
     .line 7
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     .line 8
     .line 9
-    goto :goto_5a
+    goto :goto_1
 
     .line 10
-    :cond_9
+    :cond_0
     invoke-virtual {p0}, Ljava/io/InputStream;->markSupported()Z
 
     .line 11
@@ -359,7 +359,7 @@
 
     .line 15
     .line 16
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_1
 
     .line 17
     .line 18
@@ -368,7 +368,7 @@
     .line 19
     .line 20
     .line 21
-    :cond_14
+    :cond_1
     new-instance v2, Ljava/io/PushbackInputStream;
 
     .line 22
@@ -378,7 +378,7 @@
     .line 24
     .line 25
     .line 26
-    :try_start_19
+    :try_start_1
     sget-object v1, Lorg/conscrypt/OpenSSLX509CertPath;->PKCS7_MARKER:[B
 
     .line 27
@@ -398,7 +398,7 @@
     move-result v4
 
     .line 35
-    if-ltz v4, :cond_47
+    if-ltz v4, :cond_3
 
     .line 36
     .line 37
@@ -413,7 +413,7 @@
     array-length v5, v1
 
     .line 42
-    if-ne v4, v5, :cond_3d
+    if-ne v4, v5, :cond_2
 
     .line 43
     .line 44
@@ -425,7 +425,7 @@
     move-result v1
 
     .line 48
-    if-eqz v1, :cond_3d
+    if-eqz v1, :cond_2
 
     .line 49
     .line 50
@@ -449,14 +449,14 @@
     return-object v1
 
     .line 60
-    :catch_3b
+    :catch_0
     move-exception v1
 
     .line 61
-    goto :goto_4f
+    goto :goto_0
 
     .line 62
-    :cond_3d
+    :cond_2
     new-instance v1, Lorg/conscrypt/OpenSSLX509CertPath;
 
     .line 63
@@ -477,7 +477,7 @@
     return-object v1
 
     .line 72
-    :cond_47
+    :cond_3
     new-instance v1, Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException;
 
     .line 73
@@ -492,25 +492,25 @@
     .line 78
     .line 79
     throw v1
-    :try_end_4f
-    .catch Ljava/lang/Exception; {:try_start_19 .. :try_end_4f} :catch_3b
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 80
-    :goto_4f
-    if-eqz v0, :cond_54
+    :goto_0
+    if-eqz v0, :cond_4
 
     .line 81
     .line 82
-    :try_start_51
+    :try_start_2
     invoke-virtual {p0}, Ljava/io/InputStream;->reset()V
-    :try_end_54
-    .catch Ljava/io/IOException; {:try_start_51 .. :try_end_54} :catch_54
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
 
     .line 83
     .line 84
     .line 85
-    :catch_54
-    :cond_54
+    :catch_1
+    :cond_4
     new-instance p0, Ljava/security/cert/CertificateException;
 
     .line 86
@@ -523,9 +523,9 @@
     throw p0
 
     .line 91
-    :cond_5a
-    :goto_5a
-    :try_start_5a
+    :cond_5
+    :goto_1
+    :try_start_3
     new-instance p0, Lorg/conscrypt/OpenSSLX509CertPath;
 
     .line 92
@@ -535,8 +535,8 @@
     .line 94
     .line 95
     invoke-direct {p0, v0}, Lorg/conscrypt/OpenSSLX509CertPath;-><init>(Ljava/util/List;)V
-    :try_end_61
-    .catch Ljava/io/IOException; {:try_start_5a .. :try_end_61} :catch_62
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
 
     .line 96
     .line 97
@@ -544,7 +544,7 @@
     return-object p0
 
     .line 99
-    :catch_62
+    :catch_2
     move-exception p0
 
     .line 100
@@ -565,7 +565,7 @@
 .end method
 
 .method private static fromPkiPathEncoding(Ljava/io/InputStream;)Ljava/security/cert/CertPath;
-    .registers 8
+    .locals 7
 
     .line 1
     new-instance v0, Lorg/conscrypt/OpenSSLBIOInputStream;
@@ -588,7 +588,7 @@
     move-result v2
 
     .line 11
-    if-eqz v2, :cond_11
+    if-eqz v2, :cond_0
 
     .line 12
     .line 13
@@ -601,8 +601,8 @@
     .line 16
     .line 17
     .line 18
-    :cond_11
-    :try_start_11
+    :cond_0
+    :try_start_0
     invoke-virtual {v0}, Lorg/conscrypt/OpenSSLBIOInputStream;->getBioContext()J
 
     .line 19
@@ -617,9 +617,9 @@
     .line 24
     .line 25
     move-result-object p0
-    :try_end_19
-    .catch Ljava/lang/Exception; {:try_start_11 .. :try_end_19} :catch_55
-    .catchall {:try_start_11 .. :try_end_19} :catchall_53
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 26
     invoke-virtual {v0}, Lorg/conscrypt/OpenSSLBIOInputStream;->release()V
@@ -627,7 +627,7 @@
     .line 27
     .line 28
     .line 29
-    if-nez p0, :cond_26
+    if-nez p0, :cond_1
 
     .line 30
     .line 31
@@ -647,7 +647,7 @@
     return-object p0
 
     .line 39
-    :cond_26
+    :cond_1
     new-instance v0, Ljava/util/ArrayList;
 
     .line 40
@@ -666,8 +666,8 @@
     sub-int/2addr v2, v1
 
     .line 47
-    :goto_2e
-    if-ltz v2, :cond_4d
+    :goto_0
+    if-ltz v2, :cond_3
 
     .line 48
     .line 49
@@ -683,15 +683,15 @@
 
     .line 54
     .line 55
-    if-nez v1, :cond_39
+    if-nez v1, :cond_2
 
     .line 56
     .line 57
-    goto :goto_43
+    goto :goto_1
 
     .line 58
-    :cond_39
-    :try_start_39
+    :cond_2
+    :try_start_1
     new-instance v1, Lorg/conscrypt/OpenSSLX509Certificate;
 
     .line 59
@@ -706,21 +706,21 @@
     .line 64
     .line 65
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_43
-    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_39 .. :try_end_43} :catch_46
+    :try_end_1
+    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 66
     .line 67
     .line 68
-    :goto_43
+    :goto_1
     add-int/lit8 v2, v2, -0x1
 
     .line 69
     .line 70
-    goto :goto_2e
+    goto :goto_0
 
     .line 71
-    :catch_46
+    :catch_0
     move-exception p0
 
     .line 72
@@ -736,7 +736,7 @@
     throw v0
 
     .line 78
-    :cond_4d
+    :cond_3
     new-instance p0, Lorg/conscrypt/OpenSSLX509CertPath;
 
     .line 79
@@ -749,33 +749,33 @@
     return-object p0
 
     .line 84
-    :catchall_53
+    :catchall_0
     move-exception p0
 
     .line 85
-    goto :goto_61
+    goto :goto_2
 
     .line 86
-    :catch_55
+    :catch_1
     move-exception v1
 
     .line 87
-    if-eqz v2, :cond_5b
+    if-eqz v2, :cond_4
 
     .line 88
     .line 89
-    :try_start_58
+    :try_start_2
     invoke-virtual {p0}, Ljava/io/InputStream;->reset()V
-    :try_end_5b
-    .catch Ljava/io/IOException; {:try_start_58 .. :try_end_5b} :catch_5b
-    .catchall {:try_start_58 .. :try_end_5b} :catchall_53
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 90
     .line 91
     .line 92
-    :catch_5b
-    :cond_5b
-    :try_start_5b
+    :catch_2
+    :cond_4
+    :try_start_3
     new-instance p0, Ljava/security/cert/CertificateException;
 
     .line 93
@@ -786,29 +786,29 @@
     .line 96
     .line 97
     throw p0
-    :try_end_61
-    .catchall {:try_start_5b .. :try_end_61} :catchall_53
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 98
-    :goto_61
+    :goto_2
     invoke-virtual {v0}, Lorg/conscrypt/OpenSSLBIOInputStream;->release()V
 
     .line 99
     .line 100
     .line 101
-    goto :goto_66
+    goto :goto_4
 
     .line 102
-    :goto_65
+    :goto_3
     throw p0
 
     .line 103
-    :goto_66
-    goto :goto_65
+    :goto_4
+    goto :goto_3
 .end method
 
 .method private getEncoded(Lorg/conscrypt/OpenSSLX509CertPath$Encoding;)[B
-    .registers 9
+    .locals 7
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLX509CertPath;->mCertificates:Ljava/util/List;
@@ -840,8 +840,8 @@
     const/4 v4, 0x0
 
     .line 14
-    :goto_d
-    if-ltz v0, :cond_37
+    :goto_0
+    if-ltz v0, :cond_1
 
     .line 15
     .line 16
@@ -865,7 +865,7 @@
 
     .line 25
     .line 26
-    if-eqz v6, :cond_20
+    if-eqz v6, :cond_0
 
     .line 27
     .line 28
@@ -877,10 +877,10 @@
 
     .line 31
     .line 32
-    goto :goto_2a
+    goto :goto_1
 
     .line 33
-    :cond_20
+    :cond_0
     invoke-virtual {v5}, Ljava/security/cert/Certificate;->getEncoded()[B
 
     .line 34
@@ -901,7 +901,7 @@
 
     .line 42
     .line 43
-    :goto_2a
+    :goto_1
     aget-object v5, v1, v0
 
     .line 44
@@ -926,10 +926,10 @@
 
     .line 54
     .line 55
-    goto :goto_d
+    goto :goto_0
 
     .line 56
-    :cond_37
+    :cond_1
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
 
     .line 57
@@ -938,11 +938,11 @@
     move-result p1
 
     .line 60
-    if-eqz p1, :cond_4c
+    if-eqz p1, :cond_3
 
     .line 61
     .line 62
-    if-ne p1, v3, :cond_44
+    if-ne p1, v3, :cond_2
 
     .line 63
     .line 64
@@ -957,7 +957,7 @@
     return-object p1
 
     .line 69
-    :cond_44
+    :cond_2
     new-instance p1, Ljava/security/cert/CertificateEncodingException;
 
     .line 70
@@ -974,7 +974,7 @@
     throw p1
 
     .line 77
-    :cond_4c
+    :cond_3
     invoke-static {v2}, Lorg/conscrypt/NativeCrypto;->ASN1_seq_pack_X509([J)[B
 
     .line 78
@@ -987,7 +987,7 @@
 .end method
 
 .method public static getEncodingsIterator()Ljava/util/Iterator;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1016,7 +1016,7 @@
 
 # virtual methods
 .method public getCertificates()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1044,7 +1044,7 @@
 .end method
 
 .method public getEncoded()[B
-    .registers 2
+    .locals 1
 
     .line 82
     sget-object v0, Lorg/conscrypt/OpenSSLX509CertPath;->DEFAULT_ENCODING:Lorg/conscrypt/OpenSSLX509CertPath$Encoding;
@@ -1057,14 +1057,14 @@
 .end method
 
 .method public getEncoded(Ljava/lang/String;)[B
-    .registers 4
+    .locals 2
 
     .line 83
     invoke-static {p1}, Lorg/conscrypt/OpenSSLX509CertPath$Encoding;->findByApiName(Ljava/lang/String;)Lorg/conscrypt/OpenSSLX509CertPath$Encoding;
 
     move-result-object v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 84
     invoke-direct {p0, v0}, Lorg/conscrypt/OpenSSLX509CertPath;->getEncoded(Lorg/conscrypt/OpenSSLX509CertPath$Encoding;)[B
@@ -1074,7 +1074,7 @@
     return-object p1
 
     .line 85
-    :cond_b
+    :cond_0
     new-instance v0, Ljava/security/cert/CertificateEncodingException;
 
     const-string v1, "Invalid encoding: "
@@ -1091,7 +1091,7 @@
 .end method
 
 .method public getEncodings()Ljava/util/Iterator;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

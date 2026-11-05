@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/ln1;-><init>()V
@@ -17,7 +17,7 @@
 .end method
 
 .method public constructor <init>(Llibs/lt2;)V
-    .registers 2
+    .locals 0
 
     .line 5
     invoke-direct {p0, p1}, Llibs/ln1;-><init>(Llibs/ln1;)V
@@ -28,7 +28,7 @@
 
 # virtual methods
 .method public final b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "SHA-512"
@@ -39,7 +39,7 @@
 .end method
 
 .method public final c(I[B)I
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Llibs/ln1;->m()V
@@ -160,7 +160,7 @@
 .end method
 
 .method public final d()Llibs/ar1;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/lt2;
@@ -176,7 +176,7 @@
 .end method
 
 .method public final e()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x40
@@ -187,7 +187,7 @@
 .end method
 
 .method public final f(Llibs/ar1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     check-cast p1, Llibs/lt2;
@@ -203,7 +203,7 @@
 .end method
 
 .method public final reset()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-super {p0}, Llibs/ln1;->reset()V

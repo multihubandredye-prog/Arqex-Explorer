@@ -22,7 +22,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Thread;Llibs/ku;Ljava/lang/String;ZLlibs/ug3;Ljava/util/concurrent/atomic/AtomicReference;)V
-    .registers 7
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public final accept(Lcom/mixplorer/libs/MixBox$FileData;)Z
-    .registers 11
+    .locals 9
 
     .line 1
     iget-object v0, p0, Llibs/kq2;->Y:Llibs/ku;
@@ -98,45 +98,45 @@
     const/4 v5, 0x1
 
     .line 18
-    if-eqz v4, :cond_14
+    if-eqz v4, :cond_0
 
     .line 19
     .line 20
     return v5
 
     .line 21
-    :cond_14
+    :cond_0
     const/4 v4, 0x0
 
     .line 22
-    if-nez p1, :cond_18
+    if-nez p1, :cond_1
 
     .line 23
     .line 24
-    goto :goto_2e
+    goto :goto_0
 
     .line 25
-    :cond_18
-    :try_start_18
+    :cond_1
+    :try_start_0
     invoke-virtual {v1}, Llibs/t61;->f()Z
 
     .line 26
     .line 27
     .line 28
     move-result v6
-    :try_end_1c
-    .catchall {:try_start_18 .. :try_end_1c} :catchall_2f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 29
     iget-object v7, p0, Llibs/kq2;->Z:Ljava/lang/String;
 
     .line 30
     .line 31
-    if-eqz v6, :cond_31
+    if-eqz v6, :cond_2
 
     .line 32
     .line 33
-    :try_start_20
+    :try_start_1
     iget-object v6, p1, Lcom/mixplorer/libs/MixBox$FileData;->name:Ljava/lang/String;
 
     .line 34
@@ -161,22 +161,22 @@
     move-result v1
 
     .line 45
-    if-nez v1, :cond_31
+    if-nez v1, :cond_2
 
     .line 46
     .line 47
-    :goto_2e
+    :goto_0
     return v4
 
     .line 48
-    :catchall_2f
+    :catchall_0
     move-exception p1
 
     .line 49
-    goto :goto_4b
+    goto :goto_2
 
     .line 50
-    :cond_31
+    :cond_2
     invoke-static {p1, v7}, Llibs/yw1;->State(Lcom/mixplorer/libs/MixBox$FileData;Ljava/lang/String;)Llibs/rp0;
 
     .line 51
@@ -186,8 +186,8 @@
 
     .line 54
     iput-boolean v2, p1, Llibs/rp0;->Romeo:Z
-    :try_end_37
-    .catchall {:try_start_20 .. :try_end_37} :catchall_2f
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 55
     .line 56
@@ -195,23 +195,23 @@
 
     .line 57
     .line 58
-    if-eqz v1, :cond_3e
+    if-eqz v1, :cond_3
 
     .line 59
     .line 60
-    :try_start_3b
+    :try_start_2
     iget-object v1, v1, Llibs/ug3;->X:Ljava/lang/String;
 
     .line 61
     .line 62
-    goto :goto_3f
+    goto :goto_1
 
     .line 63
-    :cond_3e
+    :cond_3
     const/4 v1, 0x0
 
     .line 64
-    :goto_3f
+    :goto_1
     iput-object v1, p1, Llibs/rp0;->Tango:Ljava/lang/String;
 
     .line 65
@@ -224,13 +224,13 @@
     move-result v0
 
     .line 70
-    if-eqz v0, :cond_61
+    if-eqz v0, :cond_5
 
     .line 71
     .line 72
     invoke-virtual {v3, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
-    :try_end_4a
-    .catchall {:try_start_3b .. :try_end_4a} :catchall_2f
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 73
     .line 74
@@ -238,7 +238,7 @@
     return v5
 
     .line 76
-    :goto_4b
+    :goto_2
     invoke-static {p1}, Llibs/hp0;->y(Ljava/lang/Throwable;)Z
 
     .line 77
@@ -247,14 +247,14 @@
     move-result v0
 
     .line 80
-    if-eqz v0, :cond_52
+    if-eqz v0, :cond_4
 
     .line 81
     .line 82
-    goto :goto_62
+    goto :goto_3
 
     .line 83
-    :cond_52
+    :cond_4
     invoke-static {p1}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 84
@@ -284,10 +284,10 @@
     .line 96
     .line 97
     .line 98
-    :cond_61
+    :cond_5
     const/4 v5, 0x0
 
     .line 99
-    :goto_62
+    :goto_3
     return v5
 .end method

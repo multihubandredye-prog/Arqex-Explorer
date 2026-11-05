@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/br3;Llibs/ar0;I)V
-    .registers 6
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
@@ -54,7 +54,7 @@
     move-result p3
 
     .line 15
-    if-nez p3, :cond_21
+    if-nez p3, :cond_0
 
     .line 16
     .line 17
@@ -93,7 +93,7 @@
     return-void
 
     .line 34
-    :cond_21
+    :cond_0
     const-string p1, "UsbFileInputStream cannot be created on directory!"
 
     .line 35
@@ -112,7 +112,7 @@
 
 # virtual methods
 .method public final available()I
-    .registers 5
+    .locals 4
 
     .line 1
     iget-wide v0, p0, Llibs/cr3;->Z:J
@@ -146,7 +146,7 @@
 .end method
 
 .method public final c(IJ)V
-    .registers 8
+    .locals 4
 
     .line 1
     invoke-virtual {p0}, Llibs/cr3;->markSupported()Z
@@ -157,7 +157,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_4
 
     .line 6
     .line 7
@@ -165,31 +165,31 @@
 
     .line 8
     .line 9
-    if-eqz p1, :cond_1f
+    if-eqz p1, :cond_2
 
     .line 10
     .line 11
     const/4 v2, 0x1
 
     .line 12
-    if-eq p1, v2, :cond_1c
+    if-eq p1, v2, :cond_1
 
     .line 13
     .line 14
     const/4 v2, 0x2
 
     .line 15
-    if-ne p1, v2, :cond_12
+    if-ne p1, v2, :cond_0
 
     .line 16
     .line 17
     add-long/2addr p2, v0
 
     .line 18
-    goto :goto_1f
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     const-string p2, "Skip > Unknown: "
 
     .line 20
@@ -210,7 +210,7 @@
     return-void
 
     .line 29
-    :cond_1c
+    :cond_1
     iget-wide v2, p0, Llibs/cr3;->Y:J
 
     .line 30
@@ -218,8 +218,8 @@
     add-long/2addr p2, v2
 
     .line 32
-    :cond_1f
-    :goto_1f
+    :cond_2
+    :goto_0
     const-wide/16 v2, 0x0
 
     .line 33
@@ -236,7 +236,7 @@
 
     .line 39
     .line 40
-    if-gtz p1, :cond_2c
+    if-gtz p1, :cond_3
 
     .line 41
     .line 42
@@ -247,7 +247,7 @@
     return-void
 
     .line 45
-    :cond_2c
+    :cond_3
     new-instance p1, Ljava/io/IOException;
 
     .line 46
@@ -293,7 +293,7 @@
     throw p1
 
     .line 68
-    :cond_43
+    :cond_4
     const-string p1, "Skip not supported!"
 
     .line 69
@@ -307,20 +307,20 @@
 .end method
 
 .method public final declared-synchronized mark(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-wide v0, p0, Llibs/cr3;->Y:J
 
     .line 3
     .line 4
     iput-wide v0, p0, Llibs/cr3;->Lambda:J
-    :try_end_5
-    .catchall {:try_start_1 .. :try_end_5} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 5
     .line 6
@@ -330,21 +330,21 @@
     return-void
 
     .line 8
-    :catchall_7
+    :catchall_0
     move-exception p1
 
     .line 9
-    :try_start_8
+    :try_start_1
     monitor-exit p0
-    :try_end_9
-    .catchall {:try_start_8 .. :try_end_9} :catchall_7
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 10
     throw p1
 .end method
 
 .method public final markSupported()Z
-    .registers 6
+    .locals 5
 
     .line 1
     iget-wide v0, p0, Llibs/cr3;->Z:J
@@ -359,7 +359,7 @@
 
     .line 6
     .line 7
-    if-ltz v4, :cond_a
+    if-ltz v4, :cond_0
 
     .line 8
     .line 9
@@ -369,7 +369,7 @@
     return v0
 
     .line 11
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
     .line 12
@@ -377,7 +377,7 @@
 .end method
 
 .method public final read()I
-    .registers 7
+    .locals 6
 
     .line 111
     iget-object v0, p0, Llibs/cr3;->Omicron:Llibs/ar0;
@@ -388,7 +388,7 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_2d
+    if-nez v0, :cond_1
 
     .line 112
     iget-wide v2, p0, Llibs/cr3;->Y:J
@@ -397,14 +397,14 @@
 
     cmp-long v0, v2, v4
 
-    if-ltz v0, :cond_13
+    if-ltz v0, :cond_0
 
     const/4 v0, -0x1
 
     return v0
 
     .line 113
-    :cond_13
+    :cond_0
     iget-object v0, p0, Llibs/cr3;->Mu:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
@@ -435,7 +435,7 @@
     return v0
 
     .line 117
-    :cond_2d
+    :cond_1
     const-string v0, "Busy!"
 
     invoke-static {v0}, Llibs/ic0;->t(Ljava/lang/String;)V
@@ -444,7 +444,7 @@
 .end method
 
 .method public final read([B)I
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -459,7 +459,7 @@
 .end method
 
 .method public final read([BII)I
-    .registers 9
+    .locals 5
 
     .line 1
     iget-object p2, p0, Llibs/cr3;->Omicron:Llibs/ar0;
@@ -474,7 +474,7 @@
     move-result p2
 
     .line 7
-    if-nez p2, :cond_66
+    if-nez p2, :cond_4
 
     .line 8
     .line 9
@@ -490,7 +490,7 @@
 
     .line 14
     .line 15
-    if-nez p2, :cond_12
+    if-nez p2, :cond_0
 
     .line 16
     .line 17
@@ -500,12 +500,12 @@
     return p1
 
     .line 19
-    :cond_12
+    :cond_0
     iget-object p2, p0, Llibs/cr3;->Xi:Ljava/nio/ByteBuffer;
 
     .line 20
     .line 21
-    if-eqz p2, :cond_1c
+    if-eqz p2, :cond_1
 
     .line 22
     .line 23
@@ -517,11 +517,11 @@
     move-result-object p2
 
     .line 27
-    if-eq p2, p1, :cond_22
+    if-eq p2, p1, :cond_2
 
     .line 28
     .line 29
-    :cond_1c
+    :cond_1
     invoke-static {p1}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
 
     .line 30
@@ -534,7 +534,7 @@
 
     .line 34
     .line 35
-    :cond_22
+    :cond_2
     iget-object p2, p0, Llibs/cr3;->Xi:Ljava/nio/ByteBuffer;
 
     .line 36
@@ -566,11 +566,11 @@
 
     .line 49
     .line 50
-    if-lez v3, :cond_4d
+    if-lez v3, :cond_3
 
     .line 51
     .line 52
-    if-le p3, v3, :cond_4d
+    if-le p3, v3, :cond_3
 
     .line 53
     .line 54
@@ -624,7 +624,7 @@
     add-long/2addr v0, p1
 
     .line 78
-    :cond_4d
+    :cond_3
     invoke-virtual {p0}, Llibs/cr3;->available()I
 
     .line 79
@@ -676,7 +676,7 @@
     return p1
 
     .line 103
-    :cond_66
+    :cond_4
     const-string p1, "Busy!"
 
     .line 104
@@ -693,13 +693,13 @@
 .end method
 
 .method public final declared-synchronized reset()V
-    .registers 4
+    .locals 3
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-wide v0, p0, Llibs/cr3;->Lambda:J
 
     .line 3
@@ -708,8 +708,8 @@
 
     .line 5
     invoke-virtual {p0, v2, v0, v1}, Llibs/cr3;->c(IJ)V
-    :try_end_7
-    .catchall {:try_start_1 .. :try_end_7} :catchall_9
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 6
     .line 7
@@ -720,21 +720,21 @@
     return-void
 
     .line 10
-    :catchall_9
+    :catchall_0
     move-exception v0
 
     .line 11
-    :try_start_a
+    :try_start_1
     monitor-exit p0
-    :try_end_b
-    .catchall {:try_start_a .. :try_end_b} :catchall_9
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 12
     throw v0
 .end method
 
 .method public final skip(J)J
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Llibs/cr3;->available()I

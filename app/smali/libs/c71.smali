@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 5
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Llibs/gc2;-><init>()V

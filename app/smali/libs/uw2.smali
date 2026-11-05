@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/bn1;
@@ -45,7 +45,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -72,7 +72,7 @@
 
 # virtual methods
 .method public final a(Llibs/tw2;)V
-    .registers 9
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/uw2;->a:Ljava/util/ArrayList;
@@ -82,7 +82,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Llibs/uw2;->a:Ljava/util/ArrayList;
 
     .line 5
@@ -101,8 +101,8 @@
     const/4 v4, 0x0
 
     .line 12
-    :goto_b
-    if-ge v4, v2, :cond_2d
+    :goto_0
+    if-ge v4, v2, :cond_0
 
     .line 13
     .line 14
@@ -119,15 +119,15 @@
     .line 19
     .line 20
     check-cast v5, Llibs/xl1;
-    :try_end_15
-    .catchall {:try_start_3 .. :try_end_15} :catchall_2b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 21
     .line 22
     const/4 v6, 0x1
 
     .line 23
-    :try_start_16
+    :try_start_1
     new-array v6, v6, [Ljava/lang/Object;
 
     .line 24
@@ -137,20 +137,20 @@
     .line 26
     .line 27
     invoke-interface {v5, v6}, Llibs/xl1;->c([Ljava/lang/Object;)Z
-    :try_end_1d
-    .catchall {:try_start_16 .. :try_end_1d} :catchall_1e
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 28
     .line 29
     .line 30
-    goto :goto_b
+    goto :goto_0
 
     .line 31
-    :catchall_1e
+    :catchall_0
     move-exception v5
 
     .line 32
-    :try_start_1f
+    :try_start_2
     sget-object v6, Llibs/uw2;->b:Llibs/bn1;
 
     .line 33
@@ -172,42 +172,42 @@
     .line 41
     .line 42
     .line 43
-    goto :goto_b
+    goto :goto_0
 
     .line 44
-    :catchall_2b
+    :catchall_1
     move-exception p1
 
     .line 45
-    goto :goto_2f
+    goto :goto_1
 
     .line 46
-    :cond_2d
+    :cond_0
     monitor-exit v0
 
     .line 47
     return-void
 
     .line 48
-    :goto_2f
+    :goto_1
     monitor-exit v0
-    :try_end_30
-    .catchall {:try_start_1f .. :try_end_30} :catchall_2b
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 49
-    goto :goto_32
+    goto :goto_3
 
     .line 50
-    :goto_31
+    :goto_2
     throw p1
 
     .line 51
-    :goto_32
-    goto :goto_31
+    :goto_3
+    goto :goto_2
 .end method
 
 .method public final b(Llibs/xl1;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/uw2;->a:Ljava/util/ArrayList;
@@ -217,7 +217,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Llibs/uw2;->a:Ljava/util/ArrayList;
 
     .line 5
@@ -233,20 +233,20 @@
     return-void
 
     .line 11
-    :catchall_a
+    :catchall_0
     move-exception p1
 
     .line 12
     monitor-exit v0
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 13
     throw p1
 .end method
 
 .method public final c(Llibs/xl1;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/uw2;->a:Ljava/util/ArrayList;
@@ -256,7 +256,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Llibs/uw2;->a:Ljava/util/ArrayList;
 
     .line 5
@@ -272,13 +272,13 @@
     return-void
 
     .line 11
-    :catchall_a
+    :catchall_0
     move-exception p1
 
     .line 12
     monitor-exit v0
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 13
     throw p1

@@ -37,7 +37,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const/16 v0, 0x100
@@ -48,7 +48,7 @@
 
     .line 4
     .line 5
-    fill-array-data v1, :array_20
+    fill-array-data v1, :array_0
 
     .line 6
     .line 7
@@ -61,7 +61,7 @@
 
     .line 11
     .line 12
-    fill-array-data v1, :array_424
+    fill-array-data v1, :array_1
 
     .line 13
     .line 14
@@ -74,7 +74,7 @@
 
     .line 18
     .line 19
-    fill-array-data v1, :array_828
+    fill-array-data v1, :array_2
 
     .line 20
     .line 21
@@ -87,7 +87,7 @@
 
     .line 25
     .line 26
-    fill-array-data v0, :array_c2c
+    fill-array-data v0, :array_3
 
     .line 27
     .line 28
@@ -102,7 +102,7 @@
     nop
 
     .line 33
-    :array_20
+    :array_0
     .array-data 8
         0x2aab17cf7e90c5eL
         -0x53bdb4fc1dbc5714L    # -1.7128407340621646E-95
@@ -442,7 +442,7 @@
     .line 111
     .line 112
     .line 113
-    :array_424
+    :array_1
     .array-data 8
         -0x195941a5fa5edec8L
         -0x4a5edd5a4b078368L    # -2.289936734257356E-50
@@ -702,7 +702,7 @@
         0x22fac097aa8d5c0eL
     .end array-data
 
-    :array_828
+    :array_2
     .array-data 8
         -0xb6033d00e250c65L
         0x487fd5c66ff29281L    # 1.7332654852792466E41
@@ -962,7 +962,7 @@
         0x6d0e60f5c3578a9eL    # 2.094482768059814E217
     .end array-data
 
-    :array_c2c
+    :array_3
     .array-data 8
         0x5b0e608526323c55L    # 4.211273758989403E130
         0x1a46c1a9fa1b59f5L    # 4.284479777505123E-182
@@ -1224,7 +1224,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -1272,7 +1272,7 @@
 .end method
 
 .method public constructor <init>(Llibs/ym3;)V
-    .registers 4
+    .locals 2
 
     .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -1304,7 +1304,7 @@
 .end method
 
 .method public static n(JI[B)V
-    .registers 7
+    .locals 3
 
     .line 1
     add-int/lit8 v0, p2, 0x7
@@ -1477,7 +1477,7 @@
 
 # virtual methods
 .method public final a(B)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget v0, p0, Llibs/ym3;->f:I
@@ -1503,7 +1503,7 @@
     array-length p1, v2
 
     .line 12
-    if-ne v1, p1, :cond_11
+    if-ne v1, p1, :cond_0
 
     .line 13
     .line 14
@@ -1515,7 +1515,7 @@
     .line 16
     .line 17
     .line 18
-    :cond_11
+    :cond_0
     iget-wide v0, p0, Llibs/ym3;->d:J
 
     .line 19
@@ -1535,7 +1535,7 @@
 .end method
 
 .method public final b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "Tiger"
@@ -1546,7 +1546,7 @@
 .end method
 
 .method public final c(I[B)I
-    .registers 7
+    .locals 4
 
     .line 1
     iget-wide v0, p0, Llibs/ym3;->d:J
@@ -1567,12 +1567,12 @@
     .line 7
     .line 8
     .line 9
-    :goto_8
+    :goto_0
     iget v2, p0, Llibs/ym3;->f:I
 
     .line 10
     .line 11
-    if-eqz v2, :cond_11
+    if-eqz v2, :cond_0
 
     .line 12
     .line 13
@@ -1584,10 +1584,10 @@
     .line 15
     .line 16
     .line 17
-    goto :goto_8
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     iget-object v2, p0, Llibs/ym3;->g:[J
 
     .line 19
@@ -1652,7 +1652,7 @@
 .end method
 
 .method public final d()Llibs/ar1;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/ym3;
@@ -1668,7 +1668,7 @@
 .end method
 
 .method public final e()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x18
@@ -1679,7 +1679,7 @@
 .end method
 
 .method public final f(Llibs/ar1;)V
-    .registers 6
+    .locals 4
 
     .line 1
     check-cast p1, Llibs/ym3;
@@ -1773,7 +1773,7 @@
 .end method
 
 .method public final g()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x40
@@ -1784,7 +1784,7 @@
 .end method
 
 .method public final h()V
-    .registers 33
+    .locals 32
 
     .line 1
     move-object/from16 v0, p0
@@ -2059,7 +2059,7 @@
 .end method
 
 .method public final i()V
-    .registers 21
+    .locals 20
 
     .line 1
     move-object/from16 v0, p0
@@ -2391,11 +2391,11 @@
 
     .line 173
     .line 174
-    :goto_ad
+    :goto_0
     array-length v1, v7
 
     .line 175
-    if-eq v8, v1, :cond_b7
+    if-eq v8, v1, :cond_0
 
     .line 176
     .line 177
@@ -2411,15 +2411,15 @@
 
     .line 182
     .line 183
-    goto :goto_ad
+    goto :goto_0
 
     .line 184
-    :cond_b7
+    :cond_0
     return-void
 .end method
 
 .method public final j(I[B)V
-    .registers 10
+    .locals 7
 
     .line 1
     iget v0, p0, Llibs/ym3;->h:I
@@ -2631,7 +2631,7 @@
     array-length p1, v2
 
     .line 94
-    if-ne v1, p1, :cond_62
+    if-ne v1, p1, :cond_0
 
     .line 95
     .line 96
@@ -2640,7 +2640,7 @@
     .line 97
     .line 98
     .line 99
-    :cond_62
+    :cond_0
     const/4 p1, 0x0
 
     .line 100
@@ -2652,7 +2652,7 @@
 .end method
 
 .method public final k(JJ)V
-    .registers 16
+    .locals 11
 
     .line 1
     iget-wide v0, p0, Llibs/ym3;->c:J
@@ -2873,7 +2873,7 @@
 .end method
 
 .method public final l(JJ)V
-    .registers 16
+    .locals 11
 
     .line 1
     iget-wide v0, p0, Llibs/ym3;->a:J
@@ -3094,7 +3094,7 @@
 .end method
 
 .method public final m(JJ)V
-    .registers 16
+    .locals 11
 
     .line 1
     iget-wide v0, p0, Llibs/ym3;->b:J
@@ -3315,7 +3315,7 @@
 .end method
 
 .method public final reset()V
-    .registers 7
+    .locals 6
 
     .line 1
     const-wide v0, 0x123456789abcdefL
@@ -3361,7 +3361,7 @@
     const/4 v1, 0x0
 
     .line 26
-    :goto_19
+    :goto_0
     iget-object v2, p0, Llibs/ym3;->g:[J
 
     .line 27
@@ -3373,7 +3373,7 @@
 
     .line 30
     .line 31
-    if-eq v1, v3, :cond_25
+    if-eq v1, v3, :cond_0
 
     .line 32
     .line 33
@@ -3385,10 +3385,10 @@
 
     .line 36
     .line 37
-    goto :goto_19
+    goto :goto_0
 
     .line 38
-    :cond_25
+    :cond_0
     iput v0, p0, Llibs/ym3;->f:I
 
     .line 39
@@ -3396,7 +3396,7 @@
     const/4 v1, 0x0
 
     .line 41
-    :goto_28
+    :goto_1
     iget-object v2, p0, Llibs/ym3;->e:[B
 
     .line 42
@@ -3404,7 +3404,7 @@
     array-length v3, v2
 
     .line 44
-    if-eq v1, v3, :cond_32
+    if-eq v1, v3, :cond_1
 
     .line 45
     .line 46
@@ -3416,10 +3416,10 @@
 
     .line 49
     .line 50
-    goto :goto_28
+    goto :goto_1
 
     .line 51
-    :cond_32
+    :cond_1
     iput-wide v4, p0, Llibs/ym3;->d:J
 
     .line 52
@@ -3428,7 +3428,7 @@
 .end method
 
 .method public final update([BII)V
-    .registers 8
+    .locals 4
 
     .line 1
     :goto_0
@@ -3436,11 +3436,11 @@
 
     .line 2
     .line 3
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
-    if-lez p3, :cond_10
+    if-lez p3, :cond_0
 
     .line 6
     .line 7
@@ -3464,13 +3464,13 @@
     goto :goto_0
 
     .line 17
-    :cond_10
-    :goto_10
+    :cond_0
+    :goto_1
     const/16 v0, 0x8
 
     .line 18
     .line 19
-    if-le p3, v0, :cond_23
+    if-le p3, v0, :cond_1
 
     .line 20
     .line 21
@@ -3502,12 +3502,12 @@
 
     .line 34
     .line 35
-    goto :goto_10
+    goto :goto_1
 
     .line 36
-    :cond_23
-    :goto_23
-    if-lez p3, :cond_2f
+    :cond_1
+    :goto_2
+    if-lez p3, :cond_2
 
     .line 37
     .line 38
@@ -3528,9 +3528,9 @@
 
     .line 46
     .line 47
-    goto :goto_23
+    goto :goto_2
 
     .line 48
-    :cond_2f
+    :cond_2
     return-void
 .end method

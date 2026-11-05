@@ -18,7 +18,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     const/4 v0, 0x3
@@ -91,7 +91,7 @@
 .end method
 
 .method public constructor <init>(Llibs/pj;Ljava/util/List;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -113,7 +113,7 @@
 
 # virtual methods
 .method public final b(Llibs/Eta;)Ljava/lang/Object;
-    .registers 5
+    .locals 3
 
     .line 1
     iget-byte p1, p1, Llibs/Eta;->X:B
@@ -128,7 +128,7 @@
 
     .line 6
     .line 7
-    packed-switch p1, :pswitch_data_4a
+    packed-switch p1, :pswitch_data_0
 
     .line 8
     .line 9
@@ -150,10 +150,10 @@
     .line 17
     .line 18
     .line 19
-    goto :goto_49
+    goto :goto_1
 
     .line 20
-    :pswitch_13
+    :pswitch_0
     new-instance p1, Llibs/bf0;
 
     .line 21
@@ -182,7 +182,7 @@
     move-result v2
 
     .line 34
-    if-eqz v2, :cond_40
+    if-eqz v2, :cond_1
 
     .line 35
     .line 36
@@ -194,7 +194,7 @@
     move-result v0
 
     .line 40
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_0
 
     .line 41
     .line 42
@@ -233,23 +233,23 @@
     move-result v0
 
     .line 59
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_0
 
     .line 60
     .line 61
-    goto :goto_40
+    goto :goto_0
 
     .line 62
-    :cond_3d
+    :cond_0
     sget-object p1, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     .line 63
     .line 64
-    goto :goto_49
+    goto :goto_1
 
     .line 65
-    :cond_40
-    :goto_40
+    :cond_1
+    :goto_0
     new-instance v0, Llibs/cz0;
 
     .line 66
@@ -267,18 +267,18 @@
     move-result-object p1
 
     .line 74
-    :goto_49
+    :goto_1
     return-object p1
 
     .line 75
-    :pswitch_data_4a
+    :pswitch_data_0
     .packed-switch 0xf
-        :pswitch_13
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final c(Llibs/kz0;)V
-    .registers 10
+    .locals 8
 
     .line 1
     iget-object p1, p1, Llibs/kz0;->b:Ljava/lang/StringBuilder;
@@ -412,7 +412,7 @@
     move-result-object v5
 
     .line 68
-    :goto_43
+    :goto_0
     invoke-virtual {v4}, Llibs/tn1;->hasNext()Z
 
     .line 69
@@ -421,7 +421,7 @@
     move-result v6
 
     .line 72
-    if-eqz v6, :cond_55
+    if-eqz v6, :cond_0
 
     .line 73
     .line 74
@@ -446,10 +446,10 @@
     .line 83
     .line 84
     .line 85
-    goto :goto_43
+    goto :goto_0
 
     .line 86
-    :cond_55
+    :cond_0
     check-cast v5, Ljava/util/List;
 
     .line 87
@@ -462,7 +462,7 @@
     move-result-object v2
 
     .line 92
-    :goto_5b
+    :goto_1
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     .line 93
@@ -475,7 +475,7 @@
 
     .line 97
     .line 98
-    if-eqz v4, :cond_a5
+    if-eqz v4, :cond_1
 
     .line 99
     .line 100
@@ -604,10 +604,10 @@
     .line 163
     .line 164
     .line 165
-    goto :goto_5b
+    goto :goto_1
 
     .line 166
-    :cond_a5
+    :cond_1
     iget-object v0, p0, Llibs/cz0;->b:Ljava/util/List;
 
     .line 167
@@ -620,7 +620,7 @@
     move-result v2
 
     .line 172
-    if-eqz v2, :cond_c5
+    if-eqz v2, :cond_2
 
     .line 173
     .line 174
@@ -656,7 +656,7 @@
     move-result v2
 
     .line 190
-    if-eqz v2, :cond_c5
+    if-eqz v2, :cond_2
 
     .line 191
     .line 192
@@ -672,7 +672,7 @@
     return-void
 
     .line 198
-    :cond_c5
+    :cond_2
     invoke-virtual {p1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 199
@@ -686,7 +686,7 @@
     move-result-object v0
 
     .line 205
-    :goto_cc
+    :goto_2
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 206
@@ -695,7 +695,7 @@
     move-result v2
 
     .line 209
-    if-eqz v2, :cond_dc
+    if-eqz v2, :cond_3
 
     .line 210
     .line 211
@@ -716,10 +716,10 @@
     .line 218
     .line 219
     .line 220
-    goto :goto_cc
+    goto :goto_2
 
     .line 221
-    :cond_dc
+    :cond_3
     const-string v0, "</"
 
     .line 222

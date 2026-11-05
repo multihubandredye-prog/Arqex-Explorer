@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/nio/charset/Charset;ZLjava/lang/String;ZZZJLjava/lang/String;I)V
-    .registers 12
+    .locals 0
 
     .line 1
     invoke-direct/range {p0 .. p11}, Llibs/vd;-><init>(Ljava/lang/String;Ljava/nio/charset/Charset;ZLjava/lang/String;ZZZJLjava/lang/String;I)V
@@ -73,7 +73,7 @@
 
 # virtual methods
 .method public final Add(Llibs/rp0;Ljava/lang/String;Z)Ljava/lang/String;
-    .registers 6
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Llibs/l2;->h()V
@@ -248,7 +248,7 @@
     move-result-object p2
 
     .line 91
-    if-eqz p2, :cond_6d
+    if-eqz p2, :cond_0
 
     .line 92
     .line 93
@@ -260,7 +260,7 @@
     move-result p3
 
     .line 97
-    if-lez p3, :cond_6d
+    if-lez p3, :cond_0
 
     .line 98
     .line 99
@@ -287,7 +287,7 @@
     return-object p1
 
     .line 110
-    :cond_6d
+    :cond_0
     const-string p1, "Failed to get share link!"
 
     .line 111
@@ -304,7 +304,7 @@
 .end method
 
 .method public final Bundle(Ljava/lang/String;)Ljava/util/List;
-    .registers 9
+    .locals 7
 
     .line 1
     invoke-virtual {p0}, Llibs/l2;->h()V
@@ -421,7 +421,7 @@
     move-result-object p1
 
     .line 59
-    if-nez p1, :cond_42
+    if-nez p1, :cond_0
 
     .line 60
     .line 61
@@ -437,7 +437,7 @@
     return-object p1
 
     .line 67
-    :cond_42
+    :cond_0
     new-instance v0, Ljava/util/ArrayList;
 
     .line 68
@@ -463,8 +463,8 @@
     move-result-object v3
 
     .line 80
-    :goto_4f
-    if-ge v2, v1, :cond_68
+    :goto_0
+    if-ge v2, v1, :cond_2
 
     .line 81
     .line 82
@@ -476,14 +476,14 @@
     move-result v4
 
     .line 86
-    if-eqz v4, :cond_58
+    if-eqz v4, :cond_1
 
     .line 87
     .line 88
-    goto :goto_68
+    goto :goto_1
 
     .line 89
-    :cond_58
+    :cond_1
     new-instance v4, Llibs/ac1;
 
     .line 90
@@ -513,11 +513,11 @@
 
     .line 103
     .line 104
-    goto :goto_4f
+    goto :goto_0
 
     .line 105
-    :cond_68
-    :goto_68
+    :cond_2
+    :goto_1
     invoke-virtual {p0}, Llibs/vd;->Wait()V
 
     .line 106
@@ -527,7 +527,7 @@
 .end method
 
 .method public final Context(JLjava/lang/String;)Llibs/d11;
-    .registers 8
+    .locals 4
 
     .line 1
     invoke-virtual {p0}, Llibs/l2;->h()V
@@ -715,7 +715,7 @@
 .end method
 
 .method public final Item(Ljava/lang/String;Ljava/lang/String;Z)Llibs/qd;
-    .registers 6
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Llibs/l2;->h()V
@@ -904,7 +904,7 @@
 .end method
 
 .method public final Map(Ljava/lang/String;II)Llibs/rr0;
-    .registers 4
+    .locals 0
 
     .line 1
     :try_start_0
@@ -943,14 +943,14 @@
     .line 18
     .line 19
     move-result-object p1
-    :try_end_13
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_13} :catch_14
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 20
     return-object p1
 
     .line 21
-    :catch_14
+    :catch_0
     const/4 p1, 0x0
 
     .line 22
@@ -958,7 +958,7 @@
 .end method
 
 .method public final Object()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "arqex://teraboxOauth"
@@ -969,7 +969,7 @@
 .end method
 
 .method public final Put(Ljava/lang/String;Ljava/lang/String;JJLjava/io/InputStream;ZLcom/mixplorer/ProgressListener;)Llibs/qd;
-    .registers 26
+    .locals 16
 
     .line 1
     move-object/from16 v0, p0
@@ -1001,7 +1001,7 @@
     move-result-object v4
 
     .line 16
-    if-eqz p8, :cond_14
+    if-eqz p8, :cond_0
 
     .line 17
     .line 18
@@ -1009,15 +1009,15 @@
 
     .line 19
     .line 20
-    goto :goto_16
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_0
     const-string v5, "newcopy"
 
     .line 22
     .line 23
-    :goto_16
+    :goto_0
     new-instance v6, Ljava/lang/StringBuilder;
 
     .line 24
@@ -1198,7 +1198,7 @@
 
     .line 116
     .line 117
-    if-ne v12, v14, :cond_91
+    if-ne v12, v14, :cond_1
 
     .line 118
     .line 119
@@ -1253,7 +1253,7 @@
     return-object v1
 
     .line 146
-    :cond_91
+    :cond_1
     new-instance v6, Ljava/lang/StringBuilder;
 
     .line 147
@@ -1611,7 +1611,7 @@
 .end method
 
 .method public final Run(Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
-    .registers 8
+    .locals 5
 
     .line 1
     invoke-virtual {p0}, Llibs/l2;->h()V
@@ -1745,14 +1745,14 @@
     move-result-object p1
 
     .line 68
-    if-nez p1, :cond_46
+    if-nez p1, :cond_0
 
     .line 69
     .line 70
     return-object p2
 
     .line 71
-    :cond_46
+    :cond_0
     invoke-virtual {p1}, Lorg/json/JSONArray;->length()I
 
     .line 72
@@ -1770,8 +1770,8 @@
     .line 78
     .line 79
     .line 80
-    :goto_4f
-    if-ge v1, p2, :cond_63
+    :goto_0
+    if-ge v1, p2, :cond_1
 
     .line 81
     .line 82
@@ -1808,15 +1808,15 @@
 
     .line 98
     .line 99
-    goto :goto_4f
+    goto :goto_0
 
     .line 100
-    :cond_63
+    :cond_1
     return-object v0
 .end method
 
 .method public final Set()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "TeraBox"
@@ -1827,7 +1827,7 @@
 .end method
 
 .method public final Task(Ljava/lang/String;Ljava/lang/String;Z)Llibs/qd;
-    .registers 6
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Llibs/l2;->h()V
@@ -2020,7 +2020,7 @@
 .end method
 
 .method public final Top()V
-    .registers 5
+    .locals 4
 
     .line 1
     const-string v0, "https://www.terabox.com/oauth/tokeninfo"
@@ -2164,7 +2164,7 @@
 .end method
 
 .method public final d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 12
+    .locals 7
 
     .line 1
     invoke-static {p2}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
@@ -2175,7 +2175,7 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_3f
+    if-nez v0, :cond_3
 
     .line 6
     .line 7
@@ -2187,7 +2187,7 @@
     move-result v0
 
     .line 11
-    if-nez v0, :cond_3f
+    if-nez v0, :cond_3
 
     .line 12
     .line 13
@@ -2199,14 +2199,14 @@
     move-result v0
 
     .line 17
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 18
     .line 19
-    goto :goto_34
+    goto :goto_1
 
     .line 20
-    :cond_13
+    :cond_0
     new-instance v1, Llibs/in3;
 
     .line 21
@@ -2241,7 +2241,7 @@
     move-result p2
 
     .line 36
-    if-nez p2, :cond_29
+    if-nez p2, :cond_1
 
     .line 37
     .line 38
@@ -2250,16 +2250,16 @@
     .line 39
     .line 40
     .line 41
-    goto :goto_2c
+    goto :goto_0
 
     .line 42
-    :cond_29
+    :cond_1
     invoke-virtual {p0}, Llibs/l2;->Top()V
 
     .line 43
     .line 44
     .line 45
-    :goto_2c
+    :goto_0
     iget-object p2, p0, Llibs/vd;->Object:Llibs/in3;
 
     .line 46
@@ -2272,15 +2272,15 @@
     move-result-object p2
 
     .line 51
-    if-eqz p2, :cond_35
+    if-eqz p2, :cond_2
 
     .line 52
     .line 53
-    :goto_34
+    :goto_1
     return-void
 
     .line 54
-    :cond_35
+    :cond_2
     const-string p2, "UriItem Null > "
 
     .line 55
@@ -2301,7 +2301,7 @@
     return-void
 
     .line 64
-    :cond_3f
+    :cond_3
     invoke-static {}, Llibs/ic0;->d()V
 
     .line 65
@@ -2311,7 +2311,7 @@
 .end method
 
 .method public final h()V
-    .registers 8
+    .locals 7
 
     .line 1
     invoke-super {p0}, Llibs/vd;->h()V
@@ -2327,14 +2327,14 @@
     move-result v0
 
     .line 8
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 9
     .line 10
     return-void
 
     .line 11
-    :cond_a
+    :cond_0
     iget-object v0, p0, Llibs/vd;->Object:Llibs/in3;
 
     .line 12
@@ -2501,7 +2501,7 @@
     move-result v1
 
     .line 97
-    if-nez v1, :cond_8a
+    if-nez v1, :cond_1
 
     .line 98
     .line 99
@@ -2585,7 +2585,7 @@
     return-void
 
     .line 139
-    :cond_8a
+    :cond_1
     new-instance v1, Lexceptions/UnauthorizedException;
 
     .line 140
@@ -2607,7 +2607,7 @@
 .end method
 
 .method public final j(Ljava/lang/String;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-static {p1}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
@@ -2618,7 +2618,7 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -2634,7 +2634,7 @@
     move-result v0
 
     .line 13
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 14
     .line 15
@@ -2650,7 +2650,7 @@
     move-result p1
 
     .line 21
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_0
 
     .line 22
     .line 23
@@ -2660,7 +2660,7 @@
     return p1
 
     .line 25
-    :cond_18
+    :cond_0
     const/4 p1, 0x0
 
     .line 26
@@ -2668,7 +2668,7 @@
 .end method
 
 .method public final k(Ljava/lang/String;Ljava/lang/String;ZZ)Llibs/qd;
-    .registers 6
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/l2;->h()V
@@ -2857,7 +2857,7 @@
 .end method
 
 .method public final l(Ljava/lang/String;Ljava/lang/String;)Llibs/qd;
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Llibs/l2;->h()V
@@ -3036,7 +3036,7 @@
 .end method
 
 .method public final m(Ljava/lang/String;ZZ)V
-    .registers 6
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Llibs/l2;->h()V
@@ -3196,7 +3196,7 @@
 .end method
 
 .method public final w()Llibs/ec;
-    .registers 8
+    .locals 7
 
     .line 1
     invoke-virtual {p0}, Llibs/l2;->h()V
@@ -3346,7 +3346,7 @@
 .end method
 
 .method public final x(Ljava/lang/String;Ljava/lang/String;)Llibs/in3;
-    .registers 9
+    .locals 6
 
     .line 1
     iget-object p2, p0, Llibs/vd;->z:Llibs/in3;
@@ -3601,7 +3601,7 @@
 .end method
 
 .method public final y()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/vd;->z:Llibs/in3;

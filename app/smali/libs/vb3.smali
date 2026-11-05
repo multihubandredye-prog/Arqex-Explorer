@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(J)V
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Llibs/c63;-><init>()V
@@ -63,7 +63,7 @@
 
 # virtual methods
 .method public final a()J
-    .registers 5
+    .locals 4
 
     .line 1
     iget-wide v0, p0, Llibs/vb3;->Charlie:J
@@ -81,7 +81,7 @@
 .end method
 
 .method public final b()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/vb3;->Foxtrot:I
@@ -95,7 +95,7 @@
 .end method
 
 .method public final e(I[B)I
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -105,7 +105,7 @@
 .end method
 
 .method public final getAttributes()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/vb3;->Bravo:I
@@ -116,14 +116,14 @@
 .end method
 
 .method public final j(I[B)I
-    .registers 7
+    .locals 4
 
     .line 1
     iget v0, p0, Llibs/c63;->Phi:I
 
     .line 2
     .line 3
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -133,7 +133,7 @@
     return p1
 
     .line 7
-    :cond_6
+    :cond_0
     invoke-static {p1, p2}, Llibs/c63;->g(I[B)I
 
     .line 8
@@ -197,7 +197,7 @@
 .end method
 
 .method public final q(I[B)I
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -207,7 +207,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Ljava/lang/String;
@@ -330,7 +330,7 @@
 .end method
 
 .method public final v(I[B)I
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0

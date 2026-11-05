@@ -5,7 +5,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 1
     invoke-static {}, Llibs/t43;->Bundle()Z
@@ -16,14 +16,14 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
-    goto :goto_22
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     invoke-static {}, Llibs/t43;->w()I
 
     .line 9
@@ -36,7 +36,7 @@
 
     .line 13
     .line 14
-    if-ne v0, v1, :cond_22
+    if-ne v0, v1, :cond_1
 
     .line 15
     .line 16
@@ -79,13 +79,13 @@
     .line 33
     .line 34
     .line 35
-    :cond_22
-    :goto_22
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public static a(Ljava/io/InputStream;)Z
-    .registers 6
+    .locals 5
 
     .line 1
     const/16 v0, 0x15
@@ -169,14 +169,14 @@
     .line 40
     .line 41
     .line 42
-    if-eq v0, v3, :cond_2c
+    if-eq v0, v3, :cond_0
 
     .line 43
     .line 44
-    goto :goto_73
+    goto :goto_0
 
     .line 45
-    :cond_2c
+    :cond_0
     invoke-virtual {p0}, Llibs/cl;->h()V
 
     .line 46
@@ -216,14 +216,14 @@
     .line 62
     .line 63
     .line 64
-    if-eq v0, v3, :cond_42
+    if-eq v0, v3, :cond_1
 
     .line 65
     .line 66
-    goto :goto_73
+    goto :goto_0
 
     .line 67
-    :cond_42
+    :cond_1
     invoke-virtual {p0}, Llibs/cl;->g()I
 
     .line 68
@@ -258,20 +258,20 @@
     .line 81
     .line 82
     .line 83
-    if-ne v0, v1, :cond_55
+    if-ne v0, v1, :cond_2
 
     .line 84
     .line 85
     return v2
 
     .line 86
-    :cond_55
+    :cond_2
     const v1, 0x5650384c
 
     .line 87
     .line 88
     .line 89
-    if-ne v0, v1, :cond_61
+    if-ne v0, v1, :cond_3
 
     .line 90
     .line 91
@@ -288,13 +288,13 @@
     return v2
 
     .line 98
-    :cond_61
+    :cond_3
     const v1, 0x56503858
 
     .line 99
     .line 100
     .line 101
-    if-ne v0, v1, :cond_73
+    if-ne v0, v1, :cond_4
 
     .line 102
     .line 103
@@ -315,7 +315,7 @@
 
     .line 111
     .line 112
-    if-eqz p0, :cond_73
+    if-eqz p0, :cond_4
 
     .line 113
     .line 114
@@ -325,7 +325,7 @@
     return p0
 
     .line 116
-    :cond_73
-    :goto_73
+    :cond_4
+    :goto_0
     return v2
 .end method

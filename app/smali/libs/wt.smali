@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(B[B)V
-    .registers 10
+    .locals 7
 
     .line 1
     iput-byte p1, p0, Llibs/wt;->a:B
@@ -25,7 +25,7 @@
     const/4 v0, 0x0
 
     .line 4
-    packed-switch p1, :pswitch_data_b2
+    packed-switch p1, :pswitch_data_0
 
     .line 5
     .line 6
@@ -54,7 +54,7 @@
 
     .line 18
     .line 19
-    if-ne v1, v2, :cond_67
+    if-ne v1, v2, :cond_2
 
     .line 20
     .line 21
@@ -81,7 +81,7 @@
 
     .line 31
     .line 32
-    if-eqz v1, :cond_3c
+    if-eqz v1, :cond_0
 
     .line 33
     .line 34
@@ -93,12 +93,12 @@
 
     .line 37
     .line 38
-    :goto_25
+    :goto_0
     add-int/lit8 v0, p1, -0x1
 
     .line 39
     .line 40
-    if-lez p1, :cond_3c
+    if-lez p1, :cond_0
 
     .line 41
     .line 42
@@ -140,10 +140,10 @@
     move p1, v0
 
     .line 60
-    goto :goto_25
+    goto :goto_0
 
     .line 61
-    :cond_3c
+    :cond_0
     iget p1, p0, Llibs/wt;->c:I
 
     .line 62
@@ -158,14 +158,14 @@
     array-length v0, p2
 
     .line 67
-    if-gt p1, v0, :cond_45
+    if-gt p1, v0, :cond_1
 
     .line 68
     .line 69
     return-void
 
     .line 70
-    :cond_45
+    :cond_1
     new-instance p1, Llibs/o70;
 
     .line 71
@@ -232,7 +232,7 @@
     throw p1
 
     .line 104
-    :cond_67
+    :cond_2
     new-instance p1, Llibs/o70;
 
     .line 105
@@ -249,7 +249,7 @@
     throw p1
 
     .line 112
-    :pswitch_6f
+    :pswitch_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 113
@@ -274,12 +274,12 @@
 
     .line 123
     .line 124
-    :goto_7b
+    :goto_1
     iget v2, p0, Llibs/wt;->c:I
 
     .line 125
     .line 126
-    if-ge v2, v1, :cond_89
+    if-ge v2, v1, :cond_3
 
     .line 127
     .line 128
@@ -302,10 +302,10 @@
 
     .line 136
     .line 137
-    goto :goto_7b
+    goto :goto_1
 
     .line 138
-    :cond_89
+    :cond_3
     iput v0, p0, Llibs/wt;->d:I
 
     .line 139
@@ -314,12 +314,12 @@
 
     .line 141
     .line 142
-    :goto_8d
+    :goto_2
     iget v2, p0, Llibs/wt;->c:I
 
     .line 143
     .line 144
-    if-ge v2, v1, :cond_ac
+    if-ge v2, v1, :cond_4
 
     .line 145
     .line 146
@@ -377,10 +377,10 @@
 
     .line 171
     .line 172
-    goto :goto_8d
+    goto :goto_2
 
     .line 173
-    :cond_ac
+    :cond_4
     iput v0, p0, Llibs/wt;->d:I
 
     .line 174
@@ -395,14 +395,14 @@
     nop
 
     .line 179
-    :pswitch_data_b2
+    :pswitch_data_0
     .packed-switch 0x2
-        :pswitch_6f
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public constructor <init>(I)V
-    .registers 7
+    .locals 5
 
     const/4 v0, 0x0
 
@@ -415,25 +415,25 @@
 
     const/high16 v2, 0x1000000
 
-    if-gt p1, v2, :cond_1f
+    if-gt p1, v2, :cond_2
 
-    :cond_b
-    if-ge v1, p1, :cond_12
+    :cond_0
+    if-ge v1, p1, :cond_1
 
     shl-int/lit8 v1, v1, 0x1
 
-    if-gtz v1, :cond_b
+    if-gtz v1, :cond_0
 
-    goto :goto_16
+    goto :goto_0
 
     .line 180
-    :cond_12
+    :cond_1
     invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
 
     move-result v2
 
     .line 181
-    :goto_16
+    :goto_0
     new-array p1, v2, [B
 
     iput-object p1, p0, Llibs/wt;->b:[B
@@ -447,7 +447,7 @@
     return-void
 
     .line 184
-    :cond_1f
+    :cond_2
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     .line 185
@@ -475,19 +475,19 @@
 
     invoke-direct {v3, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    goto :goto_3b
+    goto :goto_2
 
-    :goto_3a
+    :goto_1
     throw v3
 
-    :goto_3b
-    goto :goto_3a
+    :goto_2
+    goto :goto_1
 .end method
 
 
 # virtual methods
 .method public a()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/wt;->d:I
@@ -501,14 +501,14 @@
     sub-int/2addr v0, v1
 
     .line 6
-    if-ltz v0, :cond_8
+    if-ltz v0, :cond_0
 
     .line 7
     .line 8
     return v0
 
     .line 9
-    :cond_8
+    :cond_0
     iget-object v1, p0, Llibs/wt;->b:[B
 
     .line 10
@@ -523,7 +523,7 @@
 .end method
 
 .method public b(II[B)V
-    .registers 10
+    .locals 6
 
     .line 1
     invoke-virtual {p0}, Llibs/wt;->a()I
@@ -547,7 +547,7 @@
     const/4 v3, 0x0
 
     .line 10
-    if-gt v2, p2, :cond_51
+    if-gt v2, p2, :cond_4
 
     .line 11
     .line 12
@@ -561,12 +561,12 @@
     add-int/2addr v1, v2
 
     .line 16
-    :cond_f
+    :cond_0
     const/high16 v4, 0x1000000
 
     .line 17
     .line 18
-    if-ge v2, v1, :cond_18
+    if-ge v2, v1, :cond_1
 
     .line 19
     .line 20
@@ -574,14 +574,14 @@
 
     .line 21
     .line 22
-    if-gtz v2, :cond_f
+    if-gtz v2, :cond_0
 
     .line 23
     .line 24
-    goto :goto_1c
+    goto :goto_0
 
     .line 25
-    :cond_18
+    :cond_1
     invoke-static {v2, v4}, Ljava/lang/Math;->min(II)I
 
     .line 26
@@ -590,8 +590,8 @@
     move-result v4
 
     .line 29
-    :goto_1c
-    if-lt v4, v1, :cond_49
+    :goto_0
+    if-lt v4, v1, :cond_3
 
     .line 30
     .line 31
@@ -611,7 +611,7 @@
 
     .line 38
     .line 39
-    if-lt v2, v4, :cond_33
+    if-lt v2, v4, :cond_2
 
     .line 40
     .line 41
@@ -635,10 +635,10 @@
 
     .line 50
     .line 51
-    goto :goto_44
+    goto :goto_1
 
     .line 52
-    :cond_33
+    :cond_2
     array-length v0, v5
 
     .line 53
@@ -674,7 +674,7 @@
 
     .line 68
     .line 69
-    :goto_44
+    :goto_1
     iput v3, p0, Llibs/wt;->c:I
 
     .line 70
@@ -683,10 +683,10 @@
 
     .line 72
     .line 73
-    goto :goto_51
+    goto :goto_2
 
     .line 74
-    :cond_49
+    :cond_3
     new-instance p1, Llibs/vt;
 
     .line 75
@@ -703,8 +703,8 @@
     throw p1
 
     .line 82
-    :cond_51
-    :goto_51
+    :cond_4
+    :goto_2
     iget v0, p0, Llibs/wt;->d:I
 
     .line 83
@@ -716,7 +716,7 @@
     array-length v4, v1
 
     .line 87
-    if-gt v2, v4, :cond_5c
+    if-gt v2, v4, :cond_5
 
     .line 88
     .line 89
@@ -725,10 +725,10 @@
     .line 90
     .line 91
     .line 92
-    goto :goto_69
+    goto :goto_3
 
     .line 93
-    :cond_5c
+    :cond_5
     array-length v2, v1
 
     .line 94
@@ -758,7 +758,7 @@
     move v2, p2
 
     .line 106
-    :goto_69
+    :goto_3
     iput v2, p0, Llibs/wt;->d:I
 
     .line 107
@@ -767,7 +767,7 @@
 .end method
 
 .method public c()Ljava/math/BigInteger;
-    .registers 7
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/wt;->b:[B
@@ -782,7 +782,7 @@
 
     .line 6
     .line 7
-    if-ge v1, v2, :cond_5b
+    if-ge v1, v2, :cond_2
 
     .line 8
     .line 9
@@ -801,7 +801,7 @@
     const/4 v4, 0x2
 
     .line 16
-    if-ne v3, v4, :cond_45
+    if-ne v3, v4, :cond_1
 
     .line 17
     .line 18
@@ -827,7 +827,7 @@
     const/4 v4, 0x0
 
     .line 28
-    if-eqz v3, :cond_33
+    if-eqz v3, :cond_0
 
     .line 29
     .line 30
@@ -838,12 +838,12 @@
     const/4 v2, 0x0
 
     .line 33
-    :goto_20
+    :goto_0
     add-int/lit8 v3, v1, -0x1
 
     .line 34
     .line 35
-    if-lez v1, :cond_33
+    if-lez v1, :cond_0
 
     .line 36
     .line 37
@@ -877,10 +877,10 @@
     move v1, v3
 
     .line 51
-    goto :goto_20
+    goto :goto_0
 
     .line 52
-    :cond_33
+    :cond_0
     new-array v1, v2, [B
 
     .line 53
@@ -917,7 +917,7 @@
     return-object v0
 
     .line 70
-    :cond_45
+    :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
 
     .line 71
@@ -962,7 +962,7 @@
     return-object v0
 
     .line 92
-    :cond_5b
+    :cond_2
     invoke-static {}, Llibs/ic0;->u()V
 
     .line 93
@@ -975,7 +975,7 @@
 .end method
 
 .method public d([BI[B)V
-    .registers 11
+    .locals 7
 
     .line 1
     const/4 v0, 0x0
@@ -984,8 +984,8 @@
     const/4 v1, 0x0
 
     .line 3
-    :goto_2
-    if-ge v0, p2, :cond_31
+    :goto_0
+    if-ge v0, p2, :cond_0
 
     .line 4
     .line 5
@@ -1083,22 +1083,22 @@
     move v0, v6
 
     .line 49
-    goto :goto_2
+    goto :goto_0
 
     .line 50
-    :cond_31
+    :cond_0
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/wt;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_30
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -1114,7 +1114,7 @@
     return-object v0
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 12
@@ -1189,8 +1189,8 @@
     nop
 
     .line 49
-    :pswitch_data_30
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method

@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     invoke-static {}, Lorg/conscrypt/ct/LogStore$State;->values()[Lorg/conscrypt/ct/LogStore$State;
@@ -31,7 +31,7 @@
 
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     sget-object v1, Lorg/conscrypt/ct/LogStore$State;->UNINITIALIZED:Lorg/conscrypt/ct/LogStore$State;
 
     .line 11
@@ -48,13 +48,13 @@
 
     .line 17
     aput v2, v0, v1
-    :try_end_12
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_12} :catch_12
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 18
     .line 19
-    :catch_12
-    :try_start_12
+    :catch_0
+    :try_start_1
     sget-object v0, Lorg/conscrypt/metrics/StatsLogImpl$1;->$SwitchMap$org$conscrypt$ct$LogStore$State:[I
 
     .line 20
@@ -75,13 +75,13 @@
 
     .line 28
     aput v2, v0, v1
-    :try_end_1d
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_12 .. :try_end_1d} :catch_1d
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 29
     .line 30
-    :catch_1d
-    :try_start_1d
+    :catch_1
+    :try_start_2
     sget-object v0, Lorg/conscrypt/metrics/StatsLogImpl$1;->$SwitchMap$org$conscrypt$ct$LogStore$State:[I
 
     .line 31
@@ -102,13 +102,13 @@
 
     .line 39
     aput v2, v0, v1
-    :try_end_28
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1d .. :try_end_28} :catch_28
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
     .line 40
     .line 41
-    :catch_28
-    :try_start_28
+    :catch_2
+    :try_start_3
     sget-object v0, Lorg/conscrypt/metrics/StatsLogImpl$1;->$SwitchMap$org$conscrypt$ct$LogStore$State:[I
 
     .line 42
@@ -129,13 +129,13 @@
 
     .line 50
     aput v2, v0, v1
-    :try_end_33
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_28 .. :try_end_33} :catch_33
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
     .line 51
     .line 52
-    :catch_33
-    :try_start_33
+    :catch_3
+    :try_start_4
     sget-object v0, Lorg/conscrypt/metrics/StatsLogImpl$1;->$SwitchMap$org$conscrypt$ct$LogStore$State:[I
 
     .line 53
@@ -156,13 +156,13 @@
 
     .line 61
     aput v2, v0, v1
-    :try_end_3e
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_33 .. :try_end_3e} :catch_3e
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
 
     .line 62
     .line 63
-    :catch_3e
-    :try_start_3e
+    :catch_4
+    :try_start_5
     sget-object v0, Lorg/conscrypt/metrics/StatsLogImpl$1;->$SwitchMap$org$conscrypt$ct$LogStore$State:[I
 
     .line 64
@@ -183,11 +183,11 @@
 
     .line 72
     aput v2, v0, v1
-    :try_end_49
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3e .. :try_end_49} :catch_49
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
 
     .line 73
     .line 74
-    :catch_49
+    :catch_5
     return-void
 .end method

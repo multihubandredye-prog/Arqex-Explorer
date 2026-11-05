@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/FontViewerActivity;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/ur0;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 9
+    .locals 3
 
     .line 1
     iget-byte p2, p0, Llibs/ur0;->X:B
@@ -56,7 +56,7 @@
     const/4 v1, 0x1
 
     .line 8
-    packed-switch p2, :pswitch_data_a0
+    packed-switch p2, :pswitch_data_0
 
     .line 9
     .line 10
@@ -93,7 +93,7 @@
 
     .line 26
     .line 27
-    if-ne p1, p2, :cond_42
+    if-ne p1, p2, :cond_0
 
     .line 28
     .line 29
@@ -169,7 +169,7 @@
     .line 65
     .line 66
     .line 67
-    :cond_42
+    :cond_0
     iget-object p1, v0, Lcom/mixplorer/activities/a;->Lambda:Llibs/be2;
 
     .line 68
@@ -182,7 +182,7 @@
     return-void
 
     .line 73
-    :pswitch_48
+    :pswitch_0
     sget p2, Lcom/mixplorer/activities/FontViewerActivity;->lI:I
 
     .line 74
@@ -203,7 +203,7 @@
     move-result p2
 
     .line 83
-    if-lez p2, :cond_5f
+    if-lez p2, :cond_1
 
     .line 84
     .line 85
@@ -227,22 +227,22 @@
 
     .line 94
     .line 95
-    goto :goto_60
+    goto :goto_0
 
     .line 96
-    :cond_5f
+    :cond_1
     move-object p1, p5
 
     .line 97
-    :goto_60
-    if-nez p1, :cond_63
+    :goto_0
+    if-nez p1, :cond_2
 
     .line 98
     .line 99
-    goto :goto_9f
+    goto :goto_1
 
     .line 100
-    :cond_63
+    :cond_2
     new-instance p2, Llibs/ml1;
 
     .line 101
@@ -353,12 +353,12 @@
     .line 158
     .line 159
     .line 160
-    :goto_9f
+    :goto_1
     return-void
 
     .line 161
-    :pswitch_data_a0
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_48
+        :pswitch_0
     .end packed-switch
 .end method

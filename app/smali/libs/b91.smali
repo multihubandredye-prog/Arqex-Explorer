@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/HashMap;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final c(Ljava/lang/String;)Llibs/w52;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/b91;->X:Ljava/util/HashMap;
@@ -61,7 +61,7 @@
     move-result v0
 
     .line 15
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     .line 16
     .line 17
@@ -72,7 +72,7 @@
     return-object p1
 
     .line 20
-    :cond_13
+    :cond_0
     iget-object p1, p1, Llibs/w52;->a:Ljava/lang/Object;
 
     .line 21
@@ -102,7 +102,7 @@
 .end method
 
 .method public final close()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void

@@ -11,7 +11,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/p32;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/ul2;->a:B
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final onProgressFi(Llibs/rp0;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/ul2;->a:B
@@ -44,12 +44,12 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_14
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
     .line 8
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_0
 
     .line 9
     .line 10
@@ -58,12 +58,12 @@
     .line 11
     .line 12
     .line 13
-    :cond_c
+    :cond_0
     return-void
 
     .line 14
-    :pswitch_d
-    if-eqz v1, :cond_12
+    :pswitch_0
+    if-eqz v1, :cond_1
 
     .line 15
     .line 16
@@ -72,15 +72,15 @@
     .line 17
     .line 18
     .line 19
-    :cond_12
+    :cond_1
     return-void
 
     .line 20
     nop
 
     .line 21
-    :pswitch_data_14
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_d
+        :pswitch_0
     .end packed-switch
 .end method

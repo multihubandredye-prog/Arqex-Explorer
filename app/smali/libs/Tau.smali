@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,21 +27,21 @@
 
 # virtual methods
 .method public final t()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-boolean v0, p0, Llibs/Tau;->X:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     new-instance v0, Llibs/ts;
 
     .line 7

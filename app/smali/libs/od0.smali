@@ -19,7 +19,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/od0;
@@ -90,7 +90,7 @@
 .end method
 
 .method public constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/od0;->a:B
@@ -108,7 +108,7 @@
 
 # virtual methods
 .method public final a(IIII)F
-    .registers 7
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/od0;->a:B
@@ -119,7 +119,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_2a
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -127,7 +127,7 @@
     return v1
 
     .line 9
-    :pswitch_8
+    :pswitch_0
     int-to-float p3, p3
 
     .line 10
@@ -157,7 +157,7 @@
     return p1
 
     .line 20
-    :pswitch_13
+    :pswitch_1
     int-to-float p3, p3
 
     .line 21
@@ -187,7 +187,7 @@
     return p1
 
     .line 31
-    :pswitch_1e
+    :pswitch_2
     sget-object v0, Llibs/od0;->b:Llibs/od0;
 
     .line 32
@@ -214,10 +214,10 @@
     nop
 
     .line 43
-    :pswitch_data_2a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1e
-        :pswitch_13
-        :pswitch_8
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

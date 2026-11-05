@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(IIJ)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2, p3, p4}, Llibs/ys;-><init>(IIJ)V

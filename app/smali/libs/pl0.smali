@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(JJ)V
-    .registers 8
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +27,7 @@
 
     .line 7
     .line 8
-    if-nez v2, :cond_10
+    if-nez v2, :cond_0
 
     .line 9
     .line 10
@@ -46,7 +46,7 @@
     return-void
 
     .line 17
-    :cond_10
+    :cond_0
     iput-wide p1, p0, Llibs/pl0;->a:J
 
     .line 18
@@ -61,7 +61,7 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

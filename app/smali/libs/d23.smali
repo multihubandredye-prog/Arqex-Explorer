@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/h23;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/d23;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/d23;->X:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_24
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -60,13 +60,13 @@
     return-void
 
     .line 12
-    :goto_b
-    :pswitch_b
+    :goto_0
+    :pswitch_0
     iget-boolean v0, v1, Llibs/h23;->India:Z
 
     .line 13
     .line 14
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
     .line 15
     .line 16
@@ -74,25 +74,25 @@
 
     .line 17
     .line 18
-    :try_start_11
+    :try_start_0
     invoke-static {v2, v3}, Ljava/lang/Thread;->sleep(J)V
-    :try_end_14
-    .catchall {:try_start_11 .. :try_end_14} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 19
     .line 20
     .line 21
-    goto :goto_b
+    goto :goto_0
 
     .line 22
-    :catchall_15
+    :catchall_0
     nop
 
     .line 23
-    goto :goto_b
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_0
     iget-object v0, v1, Llibs/h23;->Six:Landroid/os/Handler;
 
     .line 25
@@ -120,8 +120,8 @@
     nop
 
     .line 37
-    :pswitch_data_24
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_b
+        :pswitch_0
     .end packed-switch
 .end method

@@ -37,7 +37,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/Object;
@@ -61,7 +61,7 @@
 
     .line 11
     .line 12
-    fill-array-data v0, :array_1c
+    fill-array-data v0, :array_0
 
     .line 13
     .line 14
@@ -96,7 +96,7 @@
     return-void
 
     .line 29
-    :array_1c
+    :array_0
     .array-data 4
         0x3024
         0x8
@@ -115,7 +115,7 @@
 .end method
 
 .method public constructor <init>(III)V
-    .registers 14
+    .locals 10
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -150,11 +150,11 @@
     const/4 v2, 0x0
 
     .line 17
-    if-lez p2, :cond_188
+    if-lez p2, :cond_a
 
     .line 18
     .line 19
-    if-lez p3, :cond_188
+    if-lez p3, :cond_a
 
     .line 20
     .line 21
@@ -205,7 +205,7 @@
 
     .line 43
     .line 44
-    if-eq p1, v0, :cond_182
+    if-eq p1, v0, :cond_9
 
     .line 45
     .line 46
@@ -224,7 +224,7 @@
     move-result p1
 
     .line 53
-    if-eqz p1, :cond_17a
+    if-eqz p1, :cond_8
 
     .line 54
     .line 55
@@ -267,7 +267,7 @@
     move-result v0
 
     .line 74
-    if-eqz v0, :cond_174
+    if-eqz v0, :cond_7
 
     .line 75
     .line 76
@@ -320,7 +320,7 @@
 
     .line 100
     .line 101
-    if-eqz v0, :cond_16e
+    if-eqz v0, :cond_6
 
     .line 102
     .line 103
@@ -377,7 +377,7 @@
 
     .line 129
     .line 130
-    if-eqz p2, :cond_168
+    if-eqz p2, :cond_5
 
     .line 131
     .line 132
@@ -397,7 +397,7 @@
     move-result p2
 
     .line 140
-    if-eqz p2, :cond_162
+    if-eqz p2, :cond_4
 
     .line 141
     .line 142
@@ -440,18 +440,18 @@
     move-result p3
 
     .line 163
-    if-nez p3, :cond_a6
+    if-nez p3, :cond_0
 
     .line 164
     .line 165
-    :goto_a4
+    :goto_0
     const/4 v1, 0x0
 
     .line 166
-    goto :goto_dc
+    goto :goto_1
 
     .line 167
-    :cond_a6
+    :cond_0
     const v0, 0x8b30
 
     .line 168
@@ -469,14 +469,14 @@
     move-result v0
 
     .line 176
-    if-nez v0, :cond_b2
+    if-nez v0, :cond_1
 
     .line 177
     .line 178
-    goto :goto_a4
+    goto :goto_0
 
     .line 179
-    :cond_b2
+    :cond_1
     invoke-static {}, Landroid/opengl/GLES20;->glCreateProgram()I
 
     .line 180
@@ -541,7 +541,7 @@
 
     .line 214
     .line 215
-    if-eq p3, p1, :cond_dc
+    if-eq p3, p1, :cond_2
 
     .line 216
     .line 217
@@ -550,16 +550,16 @@
     .line 218
     .line 219
     .line 220
-    goto :goto_a4
+    goto :goto_0
 
     .line 221
-    :cond_dc
-    :goto_dc
+    :cond_2
+    :goto_1
     iput v1, p2, Llibs/mm0;->d:I
 
     .line 222
     .line 223
-    if-eqz v1, :cond_15c
+    if-eqz v1, :cond_3
 
     .line 224
     .line 225
@@ -795,7 +795,7 @@
     return-void
 
     .line 349
-    :cond_15c
+    :cond_3
     const-string p1, "failed creating program"
 
     .line 350
@@ -808,7 +808,7 @@
     throw v2
 
     .line 355
-    :cond_162
+    :cond_4
     const-string p1, "eglMakeCurrent failed"
 
     .line 356
@@ -821,7 +821,7 @@
     throw v2
 
     .line 361
-    :cond_168
+    :cond_5
     const-string p1, "surface was null"
 
     .line 362
@@ -834,7 +834,7 @@
     throw v2
 
     .line 367
-    :cond_16e
+    :cond_6
     const-string p1, "null context"
 
     .line 368
@@ -847,7 +847,7 @@
     throw v2
 
     .line 373
-    :cond_174
+    :cond_7
     const-string p1, "unable to find RGB888+recordable ES2 EGL config"
 
     .line 374
@@ -860,7 +860,7 @@
     throw v2
 
     .line 379
-    :cond_17a
+    :cond_8
     iput-object v2, p0, Llibs/lm0;->e:Ljavax/microedition/khronos/egl/EGLDisplay;
 
     .line 380
@@ -877,7 +877,7 @@
     throw v2
 
     .line 387
-    :cond_182
+    :cond_9
     const-string p1, "unable to get EGL14 display"
 
     .line 388
@@ -890,27 +890,27 @@
     throw v2
 
     .line 393
-    :cond_188
+    :cond_a
     invoke-static {}, Llibs/ic0;->l()V
 
     .line 394
     .line 395
     .line 396
-    goto :goto_18d
+    goto :goto_3
 
     .line 397
-    :goto_18c
+    :goto_2
     throw v2
 
     .line 398
-    :goto_18d
-    goto :goto_18c
+    :goto_3
+    goto :goto_2
 .end method
 
 
 # virtual methods
 .method public final a(Ljava/lang/String;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/lm0;->d:Ljavax/microedition/khronos/egl/EGL10;
@@ -929,14 +929,14 @@
 
     .line 8
     .line 9
-    if-ne v0, v1, :cond_b
+    if-ne v0, v1, :cond_0
 
     .line 10
     .line 11
     return-void
 
     .line 12
-    :cond_b
+    :cond_0
     new-instance v1, Ljava/lang/Exception;
 
     .line 13
@@ -970,7 +970,7 @@
 .end method
 
 .method public final b()V
-    .registers 7
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/lm0;->e:Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -989,7 +989,7 @@
 
     .line 8
     .line 9
-    if-eq v0, v3, :cond_1d
+    if-eq v0, v3, :cond_0
 
     .line 10
     .line 11
@@ -1028,7 +1028,7 @@
     .line 28
     .line 29
     .line 30
-    :cond_1d
+    :cond_0
     iput-object v3, p0, Llibs/lm0;->e:Ljavax/microedition/khronos/egl/EGLDisplay;
 
     .line 31
@@ -1069,7 +1069,7 @@
 .end method
 
 .method public final c(Ljava/lang/Thread;)Landroid/graphics/Bitmap;
-    .registers 19
+    .locals 17
 
     .line 1
     move-object/from16 v1, p0
@@ -1080,22 +1080,22 @@
 
     .line 4
     .line 5
-    :try_start_4
+    :try_start_0
     invoke-static {v2, v3}, Ljava/lang/Thread;->sleep(J)V
-    :try_end_7
-    .catchall {:try_start_4 .. :try_end_7} :catchall_8
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 6
     .line 7
     .line 8
-    goto :goto_9
+    goto :goto_0
 
     .line 9
-    :catchall_8
+    :catchall_0
     nop
 
     .line 10
-    :goto_9
+    :goto_0
     invoke-static/range {p1 .. p1}, Llibs/hp0;->x(Ljava/lang/Thread;)Z
 
     .line 11
@@ -1107,7 +1107,7 @@
     const/4 v2, 0x0
 
     .line 15
-    if-nez v0, :cond_169
+    if-nez v0, :cond_9
 
     .line 16
     .line 17
@@ -1146,7 +1146,7 @@
     move-result v0
 
     .line 36
-    if-nez v0, :cond_165
+    if-nez v0, :cond_8
 
     .line 37
     .line 38
@@ -1199,15 +1199,15 @@
 
     .line 62
     .line 63
-    if-eqz v4, :cond_42
+    if-eqz v4, :cond_0
 
     .line 64
     .line 65
-    if-ne v4, v3, :cond_55
+    if-ne v4, v3, :cond_1
 
     .line 66
     .line 67
-    :cond_42
+    :cond_0
     aget v4, v7, v8
 
     .line 68
@@ -1247,7 +1247,7 @@
 
     .line 85
     .line 86
-    :cond_55
+    :cond_1
     const/4 v4, 0x0
 
     .line 87
@@ -1491,7 +1491,7 @@
     move-result v4
 
     .line 215
-    if-nez v4, :cond_161
+    if-nez v4, :cond_7
 
     .line 216
     .line 217
@@ -1522,7 +1522,7 @@
     monitor-enter v5
 
     .line 230
-    :try_start_e5
+    :try_start_1
     iget v6, v1, Llibs/lm0;->i:I
 
     .line 231
@@ -1567,7 +1567,7 @@
 
     .line 251
     .line 252
-    if-eqz v0, :cond_106
+    if-eqz v0, :cond_2
 
     .line 253
     .line 254
@@ -1579,22 +1579,22 @@
     move-result v0
 
     .line 258
-    if-ge v0, v6, :cond_10e
+    if-ge v0, v6, :cond_3
 
     .line 259
     .line 260
-    goto :goto_106
+    goto :goto_1
 
     .line 261
-    :catchall_104
+    :catchall_1
     move-exception v0
 
     .line 262
-    goto :goto_15f
+    goto :goto_2
 
     .line 263
-    :cond_106
-    :goto_106
+    :cond_2
+    :goto_1
     sput-object v2, Llibs/lm0;->k:Ljava/nio/ByteBuffer;
 
     .line 264
@@ -1611,7 +1611,7 @@
 
     .line 270
     .line 271
-    :cond_10e
+    :cond_3
     sget-object v0, Llibs/lm0;->k:Ljava/nio/ByteBuffer;
 
     .line 272
@@ -1711,8 +1711,8 @@
     .line 322
     .line 323
     monitor-exit v5
-    :try_end_143
-    .catchall {:try_start_e5 .. :try_end_143} :catchall_104
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 324
     iget v0, v1, Llibs/lm0;->h:I
@@ -1723,7 +1723,7 @@
 
     .line 327
     .line 328
-    if-eq v0, v5, :cond_14d
+    if-eq v0, v5, :cond_4
 
     .line 329
     .line 330
@@ -1731,11 +1731,11 @@
 
     .line 331
     .line 332
-    if-ne v0, v5, :cond_151
+    if-ne v0, v5, :cond_5
 
     .line 333
     .line 334
-    :cond_14d
+    :cond_4
     invoke-static {v4, v3}, Llibs/y81;->Add(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
 
     .line 335
@@ -1744,7 +1744,7 @@
     move-result-object v4
 
     .line 338
-    :cond_151
+    :cond_5
     invoke-static/range {p1 .. p1}, Llibs/hp0;->x(Ljava/lang/Thread;)Z
 
     .line 339
@@ -1753,14 +1753,14 @@
     move-result v0
 
     .line 342
-    if-nez v0, :cond_158
+    if-nez v0, :cond_6
 
     .line 343
     .line 344
     return-object v4
 
     .line 345
-    :cond_158
+    :cond_6
     invoke-static {v4}, Llibs/y81;->Get(Landroid/graphics/Bitmap;)V
 
     .line 346
@@ -1774,17 +1774,17 @@
     return-object v2
 
     .line 352
-    :goto_15f
-    :try_start_15f
+    :goto_2
+    :try_start_2
     monitor-exit v5
-    :try_end_160
-    .catchall {:try_start_15f .. :try_end_160} :catchall_104
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 353
     throw v0
 
     .line 354
-    :cond_161
+    :cond_7
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 355
@@ -1793,7 +1793,7 @@
     return-object v2
 
     .line 358
-    :cond_165
+    :cond_8
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 359
@@ -1802,7 +1802,7 @@
     return-object v2
 
     .line 362
-    :cond_169
+    :cond_9
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 363

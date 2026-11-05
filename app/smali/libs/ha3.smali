@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/nio/charset/Charset;[C[C)V
-    .registers 5
+    .locals 1
 
     .line 1
     const/high16 v0, 0x3f800000    # 1.0f
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final a(C)I
-    .registers 4
+    .locals 2
 
     .line 1
     shr-int/lit8 v0, p1, 0x8
@@ -59,14 +59,14 @@
     .line 8
     .line 9
     .line 10
-    if-ne v0, v1, :cond_c
+    if-ne v0, v1, :cond_0
 
     .line 11
     .line 12
     return v1
 
     .line 13
-    :cond_c
+    :cond_0
     and-int/lit16 p1, p1, 0xff
 
     .line 14
@@ -86,7 +86,7 @@
 .end method
 
 .method public final canEncode(C)Z
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p0, p1}, Llibs/ha3;->a(C)I
@@ -102,7 +102,7 @@
     .line 6
     .line 7
     .line 8
-    if-eq p1, v0, :cond_b
+    if-eq p1, v0, :cond_0
 
     .line 9
     .line 10
@@ -112,7 +112,7 @@
     return p1
 
     .line 12
-    :cond_b
+    :cond_0
     const/4 p1, 0x0
 
     .line 13
@@ -120,7 +120,7 @@
 .end method
 
 .method public final encodeLoop(Ljava/nio/CharBuffer;Ljava/nio/ByteBuffer;)Ljava/nio/charset/CoderResult;
-    .registers 20
+    .locals 17
 
     .line 1
     move-object/from16 v1, p0
@@ -164,7 +164,7 @@
     const/4 v9, 0x1
 
     .line 22
-    if-eqz v3, :cond_e2
+    if-eqz v3, :cond_b
 
     .line 23
     .line 24
@@ -176,7 +176,7 @@
     move-result v3
 
     .line 28
-    if-eqz v3, :cond_e2
+    if-eqz v3, :cond_b
 
     .line 29
     .line 30
@@ -287,12 +287,12 @@
     move-result v13
 
     .line 81
-    :goto_50
+    :goto_0
     add-int/lit8 v15, v13, -0x1
 
     .line 82
     .line 83
-    if-lez v13, :cond_d7
+    if-lez v13, :cond_9
 
     .line 84
     .line 85
@@ -308,15 +308,15 @@
     move-result v4
 
     .line 91
-    if-ne v4, v8, :cond_ca
+    if-ne v4, v8, :cond_8
 
     .line 92
     .line 93
-    if-lt v13, v6, :cond_c2
+    if-lt v13, v6, :cond_7
 
     .line 94
     .line 95
-    if-gt v13, v5, :cond_c2
+    if-gt v13, v5, :cond_7
 
     .line 96
     .line 97
@@ -324,7 +324,7 @@
 
     .line 98
     .line 99
-    if-nez v4, :cond_6b
+    if-nez v4, :cond_0
 
     .line 100
     .line 101
@@ -341,7 +341,7 @@
 
     .line 107
     .line 108
-    :cond_6b
+    :cond_0
     invoke-static {v13}, Ljava/lang/Character;->isHighSurrogate(C)Z
 
     .line 109
@@ -356,14 +356,14 @@
     const/4 v8, 0x0
 
     .line 114
-    if-eqz v5, :cond_96
+    if-eqz v5, :cond_3
 
     .line 115
     .line 116
     sub-int/2addr v12, v11
 
     .line 117
-    if-ge v12, v7, :cond_7c
+    if-ge v12, v7, :cond_1
 
     .line 118
     .line 119
@@ -375,14 +375,14 @@
 
     .line 122
     .line 123
-    :goto_7a
+    :goto_1
     const/4 v13, -0x1
 
     .line 124
-    goto :goto_a8
+    goto :goto_2
 
     .line 125
-    :cond_7c
+    :cond_1
     add-int/lit8 v5, v11, 0x1
 
     .line 126
@@ -399,7 +399,7 @@
     move-result v5
 
     .line 133
-    if-eqz v5, :cond_8f
+    if-eqz v5, :cond_2
 
     .line 134
     .line 135
@@ -419,10 +419,10 @@
 
     .line 142
     .line 143
-    goto :goto_a8
+    goto :goto_2
 
     .line 144
-    :cond_8f
+    :cond_2
     invoke-static {v9}, Ljava/nio/charset/CoderResult;->malformedForLength(I)Ljava/nio/charset/CoderResult;
 
     .line 145
@@ -435,10 +435,10 @@
 
     .line 149
     .line 150
-    goto :goto_7a
+    goto :goto_1
 
     .line 151
-    :cond_96
+    :cond_3
     invoke-static {v13}, Ljava/lang/Character;->isLowSurrogate(C)Z
 
     .line 152
@@ -447,7 +447,7 @@
     move-result v3
 
     .line 155
-    if-eqz v3, :cond_a3
+    if-eqz v3, :cond_4
 
     .line 156
     .line 157
@@ -463,10 +463,10 @@
 
     .line 162
     .line 163
-    goto :goto_7a
+    goto :goto_1
 
     .line 164
-    :cond_a3
+    :cond_4
     const/4 v3, 0x0
 
     .line 165
@@ -478,12 +478,12 @@
 
     .line 168
     .line 169
-    :goto_a8
+    :goto_2
     iget-object v3, v1, Llibs/ha3;->a:Llibs/rk2;
 
     .line 170
     .line 171
-    if-gez v13, :cond_b4
+    if-gez v13, :cond_5
 
     .line 172
     .line 173
@@ -503,23 +503,23 @@
     return-object v3
 
     .line 181
-    :cond_b4
+    :cond_5
     iget-boolean v3, v3, Llibs/rk2;->a:Z
 
     .line 182
     .line 183
-    if-eqz v3, :cond_b9
+    if-eqz v3, :cond_6
 
     .line 184
     .line 185
-    goto :goto_ba
+    goto :goto_3
 
     .line 186
-    :cond_b9
+    :cond_6
     const/4 v7, 0x1
 
     .line 187
-    :goto_ba
+    :goto_3
     invoke-static {v7}, Ljava/nio/charset/CoderResult;->unmappableForLength(I)Ljava/nio/charset/CoderResult;
 
     .line 188
@@ -536,7 +536,7 @@
     return-object v3
 
     .line 195
-    :cond_c2
+    :cond_7
     invoke-static {v9}, Ljava/nio/charset/CoderResult;->unmappableForLength(I)Ljava/nio/charset/CoderResult;
 
     .line 196
@@ -553,7 +553,7 @@
     return-object v3
 
     .line 203
-    :cond_ca
+    :cond_8
     const/16 v16, 0x0
 
     .line 204
@@ -579,12 +579,12 @@
     move v13, v15
 
     .line 214
-    goto/16 :goto_50
+    goto/16 :goto_0
 
     .line 215
     .line 216
-    :cond_d7
-    if-ge v11, v12, :cond_dc
+    :cond_9
+    if-ge v11, v12, :cond_a
 
     .line 217
     .line 218
@@ -592,15 +592,15 @@
 
     .line 219
     .line 220
-    goto :goto_de
+    goto :goto_4
 
     .line 221
-    :cond_dc
+    :cond_a
     sget-object v3, Ljava/nio/charset/CoderResult;->UNDERFLOW:Ljava/nio/charset/CoderResult;
 
     .line 222
     .line 223
-    :goto_de
+    :goto_4
     invoke-static {v3, v2, v11, v0, v14}, Llibs/i81;->View(Ljava/nio/charset/CoderResult;Ljava/nio/Buffer;ILjava/nio/Buffer;I)V
 
     .line 224
@@ -609,7 +609,7 @@
     return-object v3
 
     .line 227
-    :cond_e2
+    :cond_b
     const/16 v16, 0x0
 
     .line 228
@@ -622,8 +622,8 @@
     move-result v3
 
     .line 233
-    :goto_e8
-    :try_start_e8
+    :goto_5
+    :try_start_0
     invoke-virtual {v2}, Ljava/nio/Buffer;->hasRemaining()Z
 
     .line 234
@@ -632,7 +632,7 @@
     move-result v4
 
     .line 237
-    if-eqz v4, :cond_147
+    if-eqz v4, :cond_13
 
     .line 238
     .line 239
@@ -652,15 +652,15 @@
     move-result v10
 
     .line 247
-    if-ne v10, v8, :cond_134
+    if-ne v10, v8, :cond_11
 
     .line 248
     .line 249
-    if-lt v4, v6, :cond_fe
+    if-lt v4, v6, :cond_c
 
     .line 250
     .line 251
-    if-gt v4, v5, :cond_fe
+    if-gt v4, v5, :cond_c
 
     .line 252
     .line 253
@@ -668,8 +668,8 @@
 
     .line 254
     .line 255
-    :cond_fe
-    if-eqz v16, :cond_12c
+    :cond_c
+    if-eqz v16, :cond_10
 
     .line 256
     .line 257
@@ -677,7 +677,7 @@
 
     .line 258
     .line 259
-    if-nez v0, :cond_10e
+    if-nez v0, :cond_d
 
     .line 260
     .line 261
@@ -694,44 +694,44 @@
 
     .line 267
     .line 268
-    goto :goto_10e
+    goto :goto_6
 
     .line 269
-    :catchall_10c
+    :catchall_0
     move-exception v0
 
     .line 270
-    goto :goto_14d
+    goto :goto_8
 
     .line 271
-    :cond_10e
-    :goto_10e
+    :cond_d
+    :goto_6
     invoke-virtual {v0, v4, v2}, Llibs/rk2;->c(CLjava/nio/CharBuffer;)I
 
     .line 272
     .line 273
     .line 274
     move-result v0
-    :try_end_112
-    .catchall {:try_start_e8 .. :try_end_112} :catchall_10c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 275
     iget-object v4, v1, Llibs/ha3;->a:Llibs/rk2;
 
     .line 276
     .line 277
-    if-gez v0, :cond_11e
+    if-gez v0, :cond_e
 
     .line 278
     .line 279
-    :try_start_116
+    :try_start_1
     iget-object v0, v4, Llibs/rk2;->b:Ljava/lang/Object;
 
     .line 280
     .line 281
     check-cast v0, Ljava/nio/charset/CoderResult;
-    :try_end_11a
-    .catchall {:try_start_116 .. :try_end_11a} :catchall_10c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 282
     .line 283
@@ -743,32 +743,32 @@
     return-object v0
 
     .line 287
-    :cond_11e
-    :try_start_11e
+    :cond_e
+    :try_start_2
     iget-boolean v0, v4, Llibs/rk2;->a:Z
 
     .line 288
     .line 289
-    if-eqz v0, :cond_123
+    if-eqz v0, :cond_f
 
     .line 290
     .line 291
-    goto :goto_124
+    goto :goto_7
 
     .line 292
-    :cond_123
+    :cond_f
     const/4 v7, 0x1
 
     .line 293
-    :goto_124
+    :goto_7
     invoke-static {v7}, Ljava/nio/charset/CoderResult;->unmappableForLength(I)Ljava/nio/charset/CoderResult;
 
     .line 294
     .line 295
     .line 296
     move-result-object v0
-    :try_end_128
-    .catchall {:try_start_11e .. :try_end_128} :catchall_10c
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 297
     invoke-virtual {v2, v3}, Ljava/nio/CharBuffer;->position(I)Ljava/nio/Buffer;
@@ -779,16 +779,16 @@
     return-object v0
 
     .line 301
-    :cond_12c
-    :try_start_12c
+    :cond_10
+    :try_start_3
     invoke-static {v9}, Ljava/nio/charset/CoderResult;->unmappableForLength(I)Ljava/nio/charset/CoderResult;
 
     .line 302
     .line 303
     .line 304
     move-result-object v0
-    :try_end_130
-    .catchall {:try_start_12c .. :try_end_130} :catchall_10c
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 305
     invoke-virtual {v2, v3}, Ljava/nio/CharBuffer;->position(I)Ljava/nio/Buffer;
@@ -799,8 +799,8 @@
     return-object v0
 
     .line 309
-    :cond_134
-    :try_start_134
+    :cond_11
+    :try_start_4
     invoke-virtual {v0}, Ljava/nio/Buffer;->hasRemaining()Z
 
     .line 310
@@ -809,13 +809,13 @@
     move-result v4
 
     .line 313
-    if-nez v4, :cond_140
+    if-nez v4, :cond_12
 
     .line 314
     .line 315
     sget-object v0, Ljava/nio/charset/CoderResult;->OVERFLOW:Ljava/nio/charset/CoderResult;
-    :try_end_13c
-    .catchall {:try_start_134 .. :try_end_13c} :catchall_10c
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 316
     .line 317
@@ -827,11 +827,11 @@
     return-object v0
 
     .line 321
-    :cond_140
+    :cond_12
     int-to-byte v4, v10
 
     .line 322
-    :try_start_141
+    :try_start_5
     invoke-virtual {v0, v4}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
     .line 323
@@ -841,13 +841,13 @@
 
     .line 326
     .line 327
-    goto :goto_e8
+    goto :goto_5
 
     .line 328
-    :cond_147
+    :cond_13
     sget-object v0, Ljava/nio/charset/CoderResult;->UNDERFLOW:Ljava/nio/charset/CoderResult;
-    :try_end_149
-    .catchall {:try_start_141 .. :try_end_149} :catchall_10c
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 329
     .line 330
@@ -859,25 +859,25 @@
     return-object v0
 
     .line 334
-    :goto_14d
+    :goto_8
     invoke-virtual {v2, v3}, Ljava/nio/CharBuffer;->position(I)Ljava/nio/Buffer;
 
     .line 335
     .line 336
     .line 337
-    goto :goto_152
+    goto :goto_a
 
     .line 338
-    :goto_151
+    :goto_9
     throw v0
 
     .line 339
-    :goto_152
-    goto :goto_151
+    :goto_a
+    goto :goto_9
 .end method
 
 .method public final implReplaceWith([B)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -891,7 +891,7 @@
 .end method
 
 .method public final isLegalReplacement([B)Z
-    .registers 6
+    .locals 4
 
     .line 1
     array-length v0, p1
@@ -903,7 +903,7 @@
     const/4 v2, 0x1
 
     .line 4
-    if-ne v0, v2, :cond_b
+    if-ne v0, v2, :cond_0
 
     .line 5
     .line 6
@@ -915,11 +915,11 @@
 
     .line 9
     .line 10
-    if-eq v0, v3, :cond_11
+    if-eq v0, v3, :cond_1
 
     .line 11
     .line 12
-    :cond_b
+    :cond_0
     invoke-super {p0, p1}, Ljava/nio/charset/CharsetEncoder;->isLegalReplacement([B)Z
 
     .line 13
@@ -928,14 +928,14 @@
     move-result p1
 
     .line 16
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_2
 
     .line 17
     .line 18
-    :cond_11
+    :cond_1
     return v2
 
     .line 19
-    :cond_12
+    :cond_2
     return v1
 .end method

@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/view/KeyEvent$Callback;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/zw;->a:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onCheckedChanged(Landroid/widget/CompoundButton;Z)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-byte p1, p0, Llibs/zw;->a:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch p1, :pswitch_data_40
+    packed-switch p1, :pswitch_data_0
 
     .line 6
     .line 7
@@ -56,7 +56,7 @@
 
     .line 9
     .line 10
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 11
     .line 12
@@ -74,11 +74,11 @@
     .line 18
     .line 19
     .line 20
-    :cond_13
+    :cond_0
     return-void
 
     .line 21
-    :pswitch_14
+    :pswitch_0
     check-cast v0, Llibs/fc2;
 
     .line 22
@@ -103,7 +103,7 @@
     move-result p2
 
     .line 33
-    if-nez p2, :cond_36
+    if-nez p2, :cond_1
 
     .line 34
     .line 35
@@ -145,11 +145,11 @@
     .line 53
     .line 54
     .line 55
-    :cond_36
+    :cond_1
     return-void
 
     .line 56
-    :pswitch_37
+    :pswitch_1
     check-cast v0, Lcom/mixplorer/activities/ConfigServerActivity;
 
     .line 57
@@ -169,9 +169,9 @@
     nop
 
     .line 65
-    :pswitch_data_40
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_37
-        :pswitch_14
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

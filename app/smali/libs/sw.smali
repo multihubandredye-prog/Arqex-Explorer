@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/util/Comparator;Ljava/util/Comparator;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/sw;->X:Ljava/util/Comparator;
@@ -51,14 +51,14 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
     return v0
 
     .line 10
-    :cond_9
+    :cond_0
     iget-object v0, p0, Llibs/sw;->Y:Ljava/util/Comparator;
 
     .line 11

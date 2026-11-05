@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/r31;Landroid/view/View$OnClickListener;ILjava/util/ArrayList;Llibs/xt1;Llibs/ml1;)V
-    .registers 7
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/n31;->h:Llibs/r31;
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public final Object(Landroid/view/View;I)Z
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -89,7 +89,7 @@
 .end method
 
 .method public final z(Landroid/view/View;I)V
-    .registers 11
+    .locals 8
 
     .line 1
     iget v0, p0, Llibs/n31;->d:I
@@ -100,7 +100,7 @@
 
     .line 4
     .line 5
-    if-ne v0, v1, :cond_2d
+    if-ne v0, v1, :cond_0
 
     .line 6
     .line 7
@@ -168,7 +168,7 @@
     monitor-enter p1
 
     .line 37
-    :try_start_24
+    :try_start_0
     invoke-virtual {p1, v0, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 38
@@ -177,10 +177,10 @@
     monitor-exit p1
 
     .line 41
-    goto :goto_32
+    goto :goto_0
 
     .line 42
-    :catchall_29
+    :catchall_0
     move-exception v0
 
     .line 43
@@ -188,14 +188,14 @@
 
     .line 44
     monitor-exit p1
-    :try_end_2c
-    .catchall {:try_start_24 .. :try_end_2c} :catchall_29
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 45
     throw p2
 
     .line 46
-    :cond_2d
+    :cond_0
     iget-object p1, p0, Llibs/n31;->g:Llibs/ml1;
 
     .line 47
@@ -205,7 +205,7 @@
     .line 49
     .line 50
     .line 51
-    :goto_32
+    :goto_0
     iget-object p1, p0, Llibs/n31;->h:Llibs/r31;
 
     .line 52

@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;ILjava/lang/Object;B)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-byte p4, p0, Llibs/tk;->X:B
@@ -46,7 +46,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Object;IB)V
-    .registers 5
+    .locals 0
 
     .line 13
     iput-byte p4, p0, Llibs/tk;->X:B
@@ -65,7 +65,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 32
+    .locals 31
 
     .line 1
     move-object/from16 v1, p0
@@ -131,7 +131,7 @@
     const/4 v10, 0x1
 
     .line 32
-    packed-switch v0, :pswitch_data_5f2
+    packed-switch v0, :pswitch_data_0
 
     .line 33
     .line 34
@@ -156,7 +156,7 @@
     return-void
 
     .line 45
-    :pswitch_2c
+    :pswitch_0
     check-cast v9, Lcom/mixplorer/activities/TextEditorActivity;
 
     .line 46
@@ -202,7 +202,7 @@
 
     .line 67
     .line 68
-    :try_start_43
+    :try_start_0
     invoke-static {v3}, Lcom/mixplorer/activities/a;->i(Landroid/content/Intent;)Ljava/util/ArrayList;
 
     .line 69
@@ -211,7 +211,7 @@
     move-result-object v0
 
     .line 72
-    if-eqz v0, :cond_b4
+    if-eqz v0, :cond_2
 
     .line 73
     .line 74
@@ -221,11 +221,11 @@
     .line 76
     .line 77
     move-result v22
-    :try_end_4d
-    .catchall {:try_start_43 .. :try_end_4d} :catchall_b9
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
     .line 78
-    if-lez v22, :cond_b4
+    if-lez v22, :cond_2
 
     .line 79
     .line 80
@@ -236,22 +236,22 @@
     const/4 v2, 0x0
 
     .line 83
-    :try_start_52
+    :try_start_1
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     .line 84
     .line 85
     .line 86
     move-result-object v18
-    :try_end_56
-    .catchall {:try_start_52 .. :try_end_56} :catchall_b0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 87
     move-object/from16 v23, v13
 
     .line 88
     .line 89
-    :try_start_58
+    :try_start_2
     move-object/from16 v13, v18
 
     .line 90
@@ -283,7 +283,7 @@
     const/4 v13, 0x1
 
     .line 104
-    if-le v2, v13, :cond_ad
+    if-le v2, v13, :cond_1
 
     .line 105
     .line 106
@@ -298,8 +298,8 @@
     const/4 v13, 0x0
 
     .line 111
-    :goto_6e
-    if-ge v13, v2, :cond_ad
+    :goto_0
+    if-ge v13, v2, :cond_1
 
     .line 112
     .line 113
@@ -335,7 +335,7 @@
     move-result v24
 
     .line 129
-    if-eqz v24, :cond_89
+    if-eqz v24, :cond_0
 
     .line 130
     .line 131
@@ -346,16 +346,16 @@
 
     .line 133
     .line 134
-    :goto_85
+    :goto_1
     const/16 v18, 0x0
 
     .line 135
     .line 136
-    goto/16 :goto_151
+    goto/16 :goto_c
 
     .line 137
     .line 138
-    :cond_89
+    :cond_0
     move/from16 v24, v2
 
     .line 139
@@ -416,44 +416,44 @@
 
     .line 167
     .line 168
-    goto :goto_6e
+    goto :goto_0
 
     .line 169
-    :catchall_a8
+    :catchall_0
     move-exception v0
 
     .line 170
-    :goto_a9
+    :goto_2
     const/16 v16, -0x1
 
     .line 171
     .line 172
-    goto/16 :goto_141
+    goto/16 :goto_b
 
     .line 173
     .line 174
-    :cond_ad
-    :goto_ad
+    :cond_1
+    :goto_3
     move-object/from16 v0, v21
 
     .line 175
     .line 176
-    goto :goto_bd
+    goto :goto_5
 
     .line 177
-    :catchall_b0
+    :catchall_1
     move-exception v0
 
     .line 178
-    :goto_b1
+    :goto_4
     move-object/from16 v23, v13
 
     .line 179
     .line 180
-    goto :goto_a9
+    goto :goto_2
 
     .line 181
-    :cond_b4
+    :cond_2
     move-object/from16 v22, v2
 
     .line 182
@@ -462,10 +462,10 @@
 
     .line 184
     .line 185
-    goto :goto_ad
+    goto :goto_3
 
     .line 186
-    :catchall_b9
+    :catchall_2
     move-exception v0
 
     .line 187
@@ -473,11 +473,11 @@
 
     .line 188
     .line 189
-    goto :goto_b1
+    goto :goto_4
 
     .line 190
-    :goto_bd
-    if-nez v0, :cond_c3
+    :goto_5
+    if-nez v0, :cond_3
 
     .line 191
     .line 192
@@ -488,10 +488,10 @@
 
     .line 194
     .line 195
-    goto :goto_85
+    goto :goto_1
 
     .line 196
-    :cond_c3
+    :cond_3
     invoke-static {v0}, Llibs/tr3;->d(Landroid/net/Uri;)Ljava/lang/String;
 
     .line 197
@@ -568,22 +568,22 @@
     move-result v0
 
     .line 236
-    if-nez v13, :cond_ef
+    if-nez v13, :cond_4
 
     .line 237
     .line 238
-    if-eqz v0, :cond_f1
+    if-eqz v0, :cond_5
 
     .line 239
     .line 240
-    :cond_ef
+    :cond_4
     const/4 v13, 0x0
 
     .line 241
-    goto :goto_f7
+    goto :goto_6
 
     .line 242
-    :cond_f1
+    :cond_5
     invoke-virtual {v12, v2}, Llibs/zl0;->Context(Ljava/lang/String;)Llibs/rp0;
 
     .line 243
@@ -595,10 +595,10 @@
     const/4 v13, 0x0
 
     .line 247
-    goto :goto_fb
+    goto :goto_7
 
     .line 248
-    :goto_f7
+    :goto_6
     invoke-static {v2, v15, v12, v13}, Llibs/rp0;->w(Ljava/lang/String;Ljava/lang/String;Llibs/zl0;Z)Llibs/rp0;
 
     .line 249
@@ -607,8 +607,8 @@
     move-result-object v0
 
     .line 252
-    :goto_fb
-    if-nez v0, :cond_101
+    :goto_7
+    if-nez v0, :cond_6
 
     .line 253
     .line 254
@@ -620,7 +620,7 @@
     move-result-object v0
 
     .line 258
-    :cond_101
+    :cond_6
     invoke-static/range {v21 .. v21}, Llibs/ji0;->Buf(Landroid/net/Uri;)Ljava/lang/String;
 
     .line 259
@@ -635,11 +635,11 @@
     .line 264
     .line 265
     move-result v2
-    :try_end_109
-    .catchall {:try_start_58 .. :try_end_109} :catchall_a8
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 266
-    if-eqz v2, :cond_126
+    if-eqz v2, :cond_8
 
     .line 267
     .line 268
@@ -647,50 +647,50 @@
 
     .line 269
     .line 270
-    :try_start_10d
+    :try_start_3
     invoke-virtual {v0, v11, v12}, Llibs/rp0;->Post(J)Ljava/io/InputStream;
 
     .line 271
     .line 272
     .line 273
     move-result-object v2
-    :try_end_111
-    .catchall {:try_start_10d .. :try_end_111} :catchall_11a
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_3
 
     .line 274
-    if-eqz v2, :cond_115
+    if-eqz v2, :cond_7
 
     .line 275
     .line 276
     const/4 v11, 0x1
 
     .line 277
-    goto :goto_116
+    goto :goto_8
 
     .line 278
-    :cond_115
+    :cond_7
     const/4 v11, 0x0
 
     .line 279
-    :goto_116
-    :try_start_116
+    :goto_8
+    :try_start_4
     invoke-static {v2}, Llibs/ji0;->k(Ljava/io/Closeable;)V
 
     .line 280
     .line 281
     .line 282
-    goto :goto_11c
+    goto :goto_9
 
     .line 283
-    :catchall_11a
+    :catchall_3
     nop
 
     .line 284
     const/4 v11, 0x0
 
     .line 285
-    :goto_11c
-    if-nez v11, :cond_126
+    :goto_9
+    if-nez v11, :cond_8
 
     .line 286
     .line 287
@@ -710,22 +710,22 @@
     move-result-object v0
 
     .line 295
-    :cond_126
+    :cond_8
     invoke-virtual {v10, v0}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
 
     .line 296
     .line 297
     .line 298
     move-result v2
-    :try_end_12a
-    .catchall {:try_start_116 .. :try_end_12a} :catchall_a8
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 299
-    if-gez v2, :cond_13c
+    if-gez v2, :cond_9
 
     .line 300
     .line 301
-    :try_start_12c
+    :try_start_5
     invoke-virtual {v10, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 302
@@ -737,8 +737,8 @@
     .line 306
     .line 307
     move-result v0
-    :try_end_133
-    .catchall {:try_start_12c .. :try_end_133} :catchall_138
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_4
 
     .line 308
     const/16 v20, 0x1
@@ -749,10 +749,10 @@
 
     .line 311
     .line 312
-    goto :goto_13c
+    goto :goto_a
 
     .line 313
-    :catchall_138
+    :catchall_4
     move-exception v0
 
     .line 314
@@ -760,11 +760,11 @@
 
     .line 315
     .line 316
-    goto :goto_141
+    goto :goto_b
 
     .line 317
-    :cond_13c
-    :goto_13c
+    :cond_9
+    :goto_a
     move/from16 v16, v2
 
     .line 318
@@ -772,11 +772,11 @@
     const/4 v13, 0x1
 
     .line 320
-    goto/16 :goto_85
+    goto/16 :goto_1
 
     .line 321
     .line 322
-    :goto_141
+    :goto_b
     invoke-static {v0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 323
@@ -809,7 +809,7 @@
     .line 336
     .line 337
     .line 338
-    :goto_151
+    :goto_c
     invoke-static/range {v16 .. v16}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 339
@@ -839,16 +839,16 @@
     move-result v0
 
     .line 353
-    if-eqz v0, :cond_164
+    if-eqz v0, :cond_a
 
     .line 354
     .line 355
-    goto/16 :goto_267
+    goto/16 :goto_10
 
     .line 356
     .line 357
-    :cond_164
-    :try_start_164
+    :cond_a
+    :try_start_6
     new-instance v0, Llibs/yo0;
 
     .line 358
@@ -863,7 +863,7 @@
     .line 363
     .line 364
     .line 365
-    if-gez v16, :cond_1f1
+    if-gez v16, :cond_d
 
     .line 366
     .line 367
@@ -1019,7 +1019,7 @@
     move-result-object v0
 
     .line 447
-    if-nez v0, :cond_1c8
+    if-nez v0, :cond_b
 
     .line 448
     .line 449
@@ -1028,19 +1028,19 @@
     .line 450
     .line 451
     .line 452
-    goto/16 :goto_267
+    goto/16 :goto_10
 
     .line 453
     .line 454
-    :catchall_1c5
+    :catchall_5
     move-exception v0
 
     .line 455
-    goto/16 :goto_257
+    goto/16 :goto_f
 
     .line 456
     .line 457
-    :cond_1c8
+    :cond_b
     invoke-virtual {v9, v0, v3, v14}, Lcom/mixplorer/activities/TextEditorActivity;->All(Llibs/rp0;Landroid/content/Intent;I)Lcom/mixplorer/widgets/MiEditor;
 
     .line 458
@@ -1049,7 +1049,7 @@
     move-result-object v2
 
     .line 461
-    if-nez v2, :cond_1ed
+    if-nez v2, :cond_c
 
     .line 462
     .line 463
@@ -1106,11 +1106,11 @@
     .line 490
     .line 491
     .line 492
-    goto/16 :goto_267
+    goto/16 :goto_10
 
     .line 493
     .line 494
-    :cond_1ed
+    :cond_c
     const/4 v13, 0x1
 
     .line 495
@@ -1118,10 +1118,10 @@
 
     .line 496
     .line 497
-    goto :goto_22e
+    goto :goto_e
 
     .line 498
-    :cond_1f1
+    :cond_d
     move-object/from16 v13, v23
 
     .line 499
@@ -1137,9 +1137,9 @@
     const/4 v2, 0x0
 
     .line 505
-    :cond_1f8
-    :goto_1f8
-    if-ge v2, v0, :cond_22e
+    :cond_e
+    :goto_d
+    if-ge v2, v0, :cond_11
 
     .line 506
     .line 507
@@ -1167,22 +1167,22 @@
     move-result v5
 
     .line 519
-    if-eqz v5, :cond_209
+    if-eqz v5, :cond_f
 
     .line 520
     .line 521
-    goto :goto_267
+    goto :goto_10
 
     .line 522
-    :cond_209
-    if-nez v4, :cond_20c
+    :cond_f
+    if-nez v4, :cond_10
 
     .line 523
     .line 524
-    goto :goto_1f8
+    goto :goto_d
 
     .line 525
-    :cond_20c
+    :cond_10
     invoke-virtual {v9, v4, v3, v14}, Lcom/mixplorer/activities/TextEditorActivity;->All(Llibs/rp0;Landroid/content/Intent;I)Lcom/mixplorer/widgets/MiEditor;
 
     .line 526
@@ -1191,7 +1191,7 @@
     move-result-object v5
 
     .line 529
-    if-nez v5, :cond_1f8
+    if-nez v5, :cond_e
 
     .line 530
     .line 531
@@ -1240,17 +1240,17 @@
     .line 554
     .line 555
     invoke-virtual {v9, v4}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
-    :try_end_22d
-    .catchall {:try_start_164 .. :try_end_22d} :catchall_1c5
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_5
 
     .line 556
     .line 557
     .line 558
-    goto :goto_1f8
+    goto :goto_d
 
     .line 559
-    :cond_22e
-    :goto_22e
+    :cond_11
+    :goto_e
     invoke-virtual {v9}, Lcom/mixplorer/activities/TextEditorActivity;->Cur()Llibs/ll3;
 
     .line 560
@@ -1271,7 +1271,7 @@
     move-result v0
 
     .line 569
-    if-gtz v0, :cond_244
+    if-gtz v0, :cond_12
 
     .line 570
     .line 571
@@ -1293,7 +1293,7 @@
     .line 579
     .line 580
     .line 581
-    :cond_244
+    :cond_12
     invoke-static/range {v19 .. v19}, Llibs/hp0;->x(Ljava/lang/Thread;)Z
 
     .line 582
@@ -1302,14 +1302,14 @@
     move-result v0
 
     .line 585
-    if-eqz v0, :cond_24b
+    if-eqz v0, :cond_13
 
     .line 586
     .line 587
-    goto :goto_267
+    goto :goto_10
 
     .line 588
-    :cond_24b
+    :cond_13
     iget-object v0, v9, Lcom/mixplorer/activities/TextEditorActivity;->OOO:Llibs/il3;
 
     .line 589
@@ -1331,10 +1331,10 @@
     .line 597
     .line 598
     .line 599
-    goto :goto_267
+    goto :goto_10
 
     .line 600
-    :goto_257
+    :goto_f
     invoke-static {v0}, Llibs/vl3;->Map(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 601
@@ -1367,11 +1367,11 @@
     .line 614
     .line 615
     .line 616
-    :goto_267
+    :goto_10
     return-void
 
     .line 617
-    :pswitch_268
+    :pswitch_1
     check-cast v9, Lcom/mixplorer/activities/SQLiteEditorActivity;
 
     .line 618
@@ -1510,7 +1510,7 @@
     return-void
 
     .line 689
-    :pswitch_2b0
+    :pswitch_2
     check-cast v9, Llibs/v81;
 
     .line 690
@@ -1550,7 +1550,7 @@
 
     .line 707
     .line 708
-    if-eqz v0, :cond_342
+    if-eqz v0, :cond_17
 
     .line 709
     .line 710
@@ -1570,7 +1570,7 @@
 
     .line 717
     .line 718
-    if-ne v0, v2, :cond_2d5
+    if-ne v0, v2, :cond_14
 
     .line 719
     .line 720
@@ -1586,7 +1586,7 @@
     .line 724
     .line 725
     .line 726
-    :cond_2d5
+    :cond_14
     sget v0, Llibs/sa3;->e:I
 
     .line 727
@@ -1672,7 +1672,7 @@
     move-result v4
 
     .line 771
-    if-eqz v4, :cond_307
+    if-eqz v4, :cond_15
 
     .line 772
     .line 773
@@ -1681,7 +1681,7 @@
     .line 774
     .line 775
     .line 776
-    :cond_307
+    :cond_15
     new-instance v4, Llibs/t21;
 
     .line 777
@@ -1746,23 +1746,23 @@
 
     .line 809
     .line 810
-    if-ne v9, v3, :cond_32d
+    if-ne v9, v3, :cond_16
 
     .line 811
     .line 812
     const/4 v14, -0x1
 
     .line 813
-    goto :goto_330
+    goto :goto_11
 
     .line 814
-    :cond_32d
+    :cond_16
     const v14, -0xbbbbbc
 
     .line 815
     .line 816
     .line 817
-    :goto_330
+    :goto_11
     invoke-virtual {v0, v14}, Landroid/view/View;->setBackgroundColor(I)V
 
     .line 818
@@ -1772,7 +1772,7 @@
 
     .line 821
     .line 822
-    if-ne v9, v0, :cond_344
+    if-ne v9, v0, :cond_18
 
     .line 823
     .line 824
@@ -1794,20 +1794,20 @@
     .line 832
     .line 833
     .line 834
-    goto :goto_344
+    goto :goto_12
 
     .line 835
-    :cond_342
+    :cond_17
     move-object/from16 v2, p0
 
     .line 836
     .line 837
-    :cond_344
-    :goto_344
+    :cond_18
+    :goto_12
     return-void
 
     .line 838
-    :pswitch_345
+    :pswitch_3
     move-object v10, v2
 
     .line 839
@@ -1858,7 +1858,7 @@
     const/4 v10, -0x3
 
     .line 862
-    if-ne v14, v10, :cond_46e
+    if-ne v14, v10, :cond_23
 
     .line 863
     .line 864
@@ -1870,7 +1870,7 @@
     move-result-object v0
 
     .line 868
-    :try_start_363
+    :try_start_7
     invoke-static {v3}, Lcom/mixplorer/activities/a;->i(Landroid/content/Intent;)Ljava/util/ArrayList;
 
     .line 869
@@ -1879,7 +1879,7 @@
     move-result-object v10
 
     .line 872
-    if-eqz v10, :cond_3cf
+    if-eqz v10, :cond_1b
 
     .line 873
     .line 874
@@ -1889,11 +1889,11 @@
     .line 876
     .line 877
     move-result v21
-    :try_end_36d
-    .catchall {:try_start_363 .. :try_end_36d} :catchall_3d4
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_8
 
     .line 878
-    if-lez v21, :cond_3cf
+    if-lez v21, :cond_1b
 
     .line 879
     .line 880
@@ -1904,7 +1904,7 @@
     const/4 v13, 0x0
 
     .line 883
-    :try_start_372
+    :try_start_8
     invoke-virtual {v10, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     .line 884
@@ -1931,8 +1931,8 @@
     .line 895
     .line 896
     move-result v13
-    :try_end_380
-    .catchall {:try_start_372 .. :try_end_380} :catchall_3cb
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_7
 
     .line 897
     move-object/from16 v21, v3
@@ -1942,11 +1942,11 @@
     const/4 v3, 0x1
 
     .line 900
-    if-le v13, v3, :cond_3c6
+    if-le v13, v3, :cond_1a
 
     .line 901
     .line 902
-    :try_start_385
+    :try_start_9
     invoke-virtual {v10}, Ljava/util/ArrayList;->size()I
 
     .line 903
@@ -1958,8 +1958,8 @@
     const/4 v13, 0x0
 
     .line 907
-    :goto_38a
-    if-ge v13, v3, :cond_3c6
+    :goto_13
+    if-ge v13, v3, :cond_1a
 
     .line 908
     .line 909
@@ -1995,7 +1995,7 @@
     move-result v24
 
     .line 925
-    if-eqz v24, :cond_3a2
+    if-eqz v24, :cond_19
 
     .line 926
     .line 927
@@ -2003,11 +2003,11 @@
 
     .line 928
     .line 929
-    goto/16 :goto_45f
+    goto/16 :goto_1c
 
     .line 930
     .line 931
-    :cond_3a2
+    :cond_19
     move/from16 v24, v3
 
     .line 932
@@ -2068,23 +2068,23 @@
 
     .line 960
     .line 961
-    goto :goto_38a
+    goto :goto_13
 
     .line 962
-    :catchall_3c1
+    :catchall_6
     move-exception v0
 
     .line 963
-    :goto_3c2
+    :goto_14
     const/16 v16, -0x1
 
     .line 964
     .line 965
-    goto/16 :goto_45a
+    goto/16 :goto_1b
 
     .line 966
     .line 967
-    :cond_3c6
+    :cond_1a
     move-object/from16 v25, v0
 
     .line 968
@@ -2093,10 +2093,10 @@
 
     .line 970
     .line 971
-    goto :goto_3da
+    goto :goto_15
 
     .line 972
-    :catchall_3cb
+    :catchall_7
     move-exception v0
 
     .line 973
@@ -2104,10 +2104,10 @@
 
     .line 974
     .line 975
-    goto :goto_3c2
+    goto :goto_14
 
     .line 976
-    :cond_3cf
+    :cond_1b
     move-object/from16 v21, v3
 
     .line 977
@@ -2116,10 +2116,10 @@
 
     .line 979
     .line 980
-    goto :goto_3da
+    goto :goto_15
 
     .line 981
-    :catchall_3d4
+    :catchall_8
     move-exception v0
 
     .line 982
@@ -2131,11 +2131,11 @@
 
     .line 985
     .line 986
-    goto :goto_3c2
+    goto :goto_14
 
     .line 987
-    :goto_3da
-    if-nez v0, :cond_3e0
+    :goto_15
+    if-nez v0, :cond_1c
 
     .line 988
     .line 989
@@ -2143,11 +2143,11 @@
 
     .line 990
     .line 991
-    goto/16 :goto_45f
+    goto/16 :goto_1c
 
     .line 992
     .line 993
-    :cond_3e0
+    :cond_1c
     invoke-static {v0}, Llibs/tr3;->d(Landroid/net/Uri;)Ljava/lang/String;
 
     .line 994
@@ -2220,22 +2220,22 @@
     move-result v13
 
     .line 1031
-    if-nez v12, :cond_40a
+    if-nez v12, :cond_1d
 
     .line 1032
     .line 1033
-    if-eqz v13, :cond_40c
+    if-eqz v13, :cond_1e
 
     .line 1034
     .line 1035
-    :cond_40a
+    :cond_1d
     const/4 v13, 0x0
 
     .line 1036
-    goto :goto_412
+    goto :goto_16
 
     .line 1037
-    :cond_40c
+    :cond_1e
     invoke-virtual {v10, v3}, Llibs/zl0;->Context(Ljava/lang/String;)Llibs/rp0;
 
     .line 1038
@@ -2247,10 +2247,10 @@
     const/4 v13, 0x0
 
     .line 1042
-    goto :goto_416
+    goto :goto_17
 
     .line 1043
-    :goto_412
+    :goto_16
     invoke-static {v3, v15, v10, v13}, Llibs/rp0;->w(Ljava/lang/String;Ljava/lang/String;Llibs/zl0;Z)Llibs/rp0;
 
     .line 1044
@@ -2259,8 +2259,8 @@
     move-result-object v12
 
     .line 1047
-    :goto_416
-    if-nez v12, :cond_41c
+    :goto_17
+    if-nez v12, :cond_1f
 
     .line 1048
     .line 1049
@@ -2272,7 +2272,7 @@
     move-result-object v12
 
     .line 1053
-    :cond_41c
+    :cond_1f
     invoke-static {v0}, Llibs/ji0;->Buf(Landroid/net/Uri;)Ljava/lang/String;
 
     .line 1054
@@ -2287,11 +2287,11 @@
     .line 1059
     .line 1060
     move-result v3
-    :try_end_424
-    .catchall {:try_start_385 .. :try_end_424} :catchall_3c1
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_6
 
     .line 1061
-    if-eqz v3, :cond_441
+    if-eqz v3, :cond_21
 
     .line 1062
     .line 1063
@@ -2299,50 +2299,50 @@
 
     .line 1064
     .line 1065
-    :try_start_428
+    :try_start_a
     invoke-virtual {v12, v10, v11}, Llibs/rp0;->Post(J)Ljava/io/InputStream;
 
     .line 1066
     .line 1067
     .line 1068
     move-result-object v3
-    :try_end_42c
-    .catchall {:try_start_428 .. :try_end_42c} :catchall_435
+    :try_end_a
+    .catchall {:try_start_a .. :try_end_a} :catchall_9
 
     .line 1069
-    if-eqz v3, :cond_430
+    if-eqz v3, :cond_20
 
     .line 1070
     .line 1071
     const/4 v10, 0x1
 
     .line 1072
-    goto :goto_431
+    goto :goto_18
 
     .line 1073
-    :cond_430
+    :cond_20
     const/4 v10, 0x0
 
     .line 1074
-    :goto_431
-    :try_start_431
+    :goto_18
+    :try_start_b
     invoke-static {v3}, Llibs/ji0;->k(Ljava/io/Closeable;)V
 
     .line 1075
     .line 1076
     .line 1077
-    goto :goto_437
+    goto :goto_19
 
     .line 1078
-    :catchall_435
+    :catchall_9
     nop
 
     .line 1079
     const/4 v10, 0x0
 
     .line 1080
-    :goto_437
-    if-nez v10, :cond_441
+    :goto_19
+    if-nez v10, :cond_21
 
     .line 1081
     .line 1082
@@ -2362,22 +2362,22 @@
     move-result-object v12
 
     .line 1090
-    :cond_441
+    :cond_21
     invoke-virtual {v1, v12}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
 
     .line 1091
     .line 1092
     .line 1093
     move-result v3
-    :try_end_445
-    .catchall {:try_start_431 .. :try_end_445} :catchall_3c1
+    :try_end_b
+    .catchall {:try_start_b .. :try_end_b} :catchall_6
 
     .line 1094
-    if-gez v3, :cond_457
+    if-gez v3, :cond_22
 
     .line 1095
     .line 1096
-    :try_start_447
+    :try_start_c
     invoke-virtual {v1, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 1097
@@ -2389,8 +2389,8 @@
     .line 1101
     .line 1102
     move-result v0
-    :try_end_44e
-    .catchall {:try_start_447 .. :try_end_44e} :catchall_453
+    :try_end_c
+    .catchall {:try_start_c .. :try_end_c} :catchall_a
 
     .line 1103
     const/16 v20, 0x1
@@ -2401,10 +2401,10 @@
 
     .line 1106
     .line 1107
-    goto :goto_457
+    goto :goto_1a
 
     .line 1108
-    :catchall_453
+    :catchall_a
     move-exception v0
 
     .line 1109
@@ -2412,19 +2412,19 @@
 
     .line 1110
     .line 1111
-    goto :goto_45a
+    goto :goto_1b
 
     .line 1112
-    :cond_457
-    :goto_457
+    :cond_22
+    :goto_1a
     move/from16 v16, v3
 
     .line 1113
     .line 1114
-    goto :goto_45f
+    goto :goto_1c
 
     .line 1115
-    :goto_45a
+    :goto_1b
     const-string v3, "1"
 
     .line 1116
@@ -2434,7 +2434,7 @@
     .line 1118
     .line 1119
     .line 1120
-    :goto_45f
+    :goto_1c
     invoke-static/range {v16 .. v16}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 1121
@@ -2463,10 +2463,10 @@
     .line 1132
     .line 1133
     .line 1134
-    goto :goto_496
+    goto :goto_1e
 
     .line 1135
-    :cond_46e
+    :cond_23
     move-object/from16 v21, v3
 
     .line 1136
@@ -2498,8 +2498,8 @@
     const/4 v8, 0x0
 
     .line 1150
-    :cond_47d
-    if-ge v8, v3, :cond_48e
+    :cond_24
+    if-ge v8, v3, :cond_25
 
     .line 1151
     .line 1152
@@ -2527,18 +2527,18 @@
     move-result v11
 
     .line 1164
-    if-ne v11, v14, :cond_47d
+    if-ne v11, v14, :cond_24
 
     .line 1165
     .line 1166
-    goto :goto_48f
+    goto :goto_1d
 
     .line 1167
-    :cond_48e
+    :cond_25
     const/4 v10, 0x0
 
     .line 1168
-    :goto_48f
+    :goto_1d
     iget-object v0, v10, Llibs/cv;->Tau:Llibs/rp0;
 
     .line 1169
@@ -2552,8 +2552,8 @@
 
     .line 1174
     .line 1175
-    :goto_496
-    :try_start_496
+    :goto_1e
+    :try_start_d
     invoke-static/range {v17 .. v17}, Llibs/hp0;->x(Ljava/lang/Thread;)Z
 
     .line 1176
@@ -2562,19 +2562,19 @@
     move-result v0
 
     .line 1179
-    if-eqz v0, :cond_49e
+    if-eqz v0, :cond_26
 
     .line 1180
     .line 1181
-    goto/16 :goto_5b0
+    goto/16 :goto_23
 
     .line 1182
     .line 1183
-    :cond_49e
+    :cond_26
     const/4 v3, -0x3
 
     .line 1184
-    if-ne v14, v3, :cond_4ae
+    if-ne v14, v3, :cond_27
 
     .line 1185
     .line 1186
@@ -2592,30 +2592,30 @@
     .line 1192
     .line 1193
     .line 1194
-    goto :goto_4ae
+    goto :goto_1f
 
     .line 1195
-    :catchall_4aa
+    :catchall_b
     move-exception v0
 
     .line 1196
     const/4 v13, 0x0
 
     .line 1197
-    goto/16 :goto_5a2
+    goto/16 :goto_22
 
     .line 1198
     .line 1199
-    :cond_4ae
-    :goto_4ae
-    if-gez v16, :cond_534
+    :cond_27
+    :goto_1f
+    if-gez v16, :cond_2b
 
     .line 1200
     .line 1201
     const/4 v3, -0x3
 
     .line 1202
-    if-ne v14, v3, :cond_534
+    if-ne v14, v3, :cond_2b
 
     .line 1203
     .line 1204
@@ -2771,7 +2771,7 @@
     move-result-object v0
 
     .line 1284
-    if-nez v0, :cond_50a
+    if-nez v0, :cond_28
 
     .line 1285
     .line 1286
@@ -2780,11 +2780,11 @@
     .line 1287
     .line 1288
     .line 1289
-    goto/16 :goto_5b0
+    goto/16 :goto_23
 
     .line 1290
     .line 1291
-    :cond_50a
+    :cond_28
     move-object/from16 v3, v21
 
     .line 1292
@@ -2805,16 +2805,16 @@
     move-result v3
 
     .line 1301
-    if-eqz v3, :cond_518
+    if-eqz v3, :cond_29
 
     .line 1302
     .line 1303
-    goto/16 :goto_5b0
+    goto/16 :goto_23
 
     .line 1304
     .line 1305
-    :cond_518
-    if-nez v1, :cond_530
+    :cond_29
+    if-nez v1, :cond_2a
 
     .line 1306
     .line 1307
@@ -2854,11 +2854,11 @@
     .line 1325
     .line 1326
     .line 1327
-    goto/16 :goto_5b0
+    goto/16 :goto_23
 
     .line 1328
     .line 1329
-    :cond_530
+    :cond_2a
     const/4 v13, 0x1
 
     .line 1330
@@ -2866,10 +2866,10 @@
 
     .line 1331
     .line 1332
-    goto :goto_57a
+    goto :goto_21
 
     .line 1333
-    :cond_534
+    :cond_2b
     move-object/from16 v3, v21
 
     .line 1334
@@ -2889,9 +2889,9 @@
     const/4 v4, 0x0
 
     .line 1342
-    :cond_53d
-    :goto_53d
-    if-ge v4, v0, :cond_57a
+    :cond_2c
+    :goto_20
+    if-ge v4, v0, :cond_30
 
     .line 1343
     .line 1344
@@ -2919,22 +2919,22 @@
     move-result v6
 
     .line 1356
-    if-eqz v6, :cond_54e
+    if-eqz v6, :cond_2d
 
     .line 1357
     .line 1358
-    goto :goto_5b0
+    goto :goto_23
 
     .line 1359
-    :cond_54e
-    if-nez v5, :cond_551
+    :cond_2d
+    if-nez v5, :cond_2e
 
     .line 1360
     .line 1361
-    goto :goto_53d
+    goto :goto_20
 
     .line 1362
-    :cond_551
+    :cond_2e
     invoke-virtual {v9, v5, v3, v14}, Lcom/mixplorer/activities/CodeEditorActivity;->Put(Llibs/rp0;Landroid/content/Intent;I)Llibs/cv;
 
     .line 1363
@@ -2951,15 +2951,15 @@
     move-result v7
 
     .line 1370
-    if-eqz v7, :cond_55c
+    if-eqz v7, :cond_2f
 
     .line 1371
     .line 1372
-    goto :goto_5b0
+    goto :goto_23
 
     .line 1373
-    :cond_55c
-    if-nez v6, :cond_53d
+    :cond_2f
+    if-nez v6, :cond_2c
 
     .line 1374
     .line 1375
@@ -3008,17 +3008,17 @@
     .line 1398
     .line 1399
     invoke-virtual {v9, v5}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
-    :try_end_579
-    .catchall {:try_start_496 .. :try_end_579} :catchall_4aa
+    :try_end_d
+    .catchall {:try_start_d .. :try_end_d} :catchall_b
 
     .line 1400
     .line 1401
     .line 1402
-    goto :goto_53d
+    goto :goto_20
 
     .line 1403
-    :cond_57a
-    :goto_57a
+    :cond_30
+    :goto_21
     invoke-static/range {v17 .. v17}, Llibs/hp0;->x(Ljava/lang/Thread;)Z
 
     .line 1404
@@ -3027,14 +3027,14 @@
     move-result v0
 
     .line 1407
-    if-eqz v0, :cond_581
+    if-eqz v0, :cond_31
 
     .line 1408
     .line 1409
-    goto :goto_5b0
+    goto :goto_23
 
     .line 1410
-    :cond_581
+    :cond_31
     invoke-virtual {v9}, Lcom/mixplorer/activities/CodeEditorActivity;->Run()Llibs/aw;
 
     .line 1411
@@ -3055,7 +3055,7 @@
     move-result v0
 
     .line 1420
-    if-gtz v0, :cond_596
+    if-gtz v0, :cond_32
 
     .line 1421
     .line 1422
@@ -3076,7 +3076,7 @@
     .line 1429
     .line 1430
     .line 1431
-    :cond_596
+    :cond_32
     iget-object v0, v9, Lcom/mixplorer/activities/CodeEditorActivity;->Il:Landroid/os/Handler;
 
     .line 1432
@@ -3098,10 +3098,10 @@
     .line 1440
     .line 1441
     .line 1442
-    goto :goto_5b0
+    goto :goto_23
 
     .line 1443
-    :goto_5a2
+    :goto_22
     invoke-static {v0}, Llibs/vl3;->Map(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 1444
@@ -3130,11 +3130,11 @@
     .line 1455
     .line 1456
     .line 1457
-    :goto_5b0
+    :goto_23
     return-void
 
     .line 1458
-    :pswitch_5b1
+    :pswitch_4
     const/4 v13, 0x0
 
     .line 1459
@@ -3162,7 +3162,7 @@
 
     .line 1470
     .line 1471
-    if-ne v0, v1, :cond_5c4
+    if-ne v0, v1, :cond_33
 
     .line 1472
     .line 1473
@@ -3171,10 +3171,10 @@
     .line 1474
     .line 1475
     .line 1476
-    goto :goto_5d7
+    goto :goto_25
 
     .line 1477
-    :cond_5c4
+    :cond_33
     invoke-virtual {v3}, Llibs/cv;->getText()Llibs/fd3;
 
     .line 1478
@@ -3183,7 +3183,7 @@
     move-result-object v0
 
     .line 1481
-    if-eqz v0, :cond_5d3
+    if-eqz v0, :cond_34
 
     .line 1482
     .line 1483
@@ -3203,24 +3203,24 @@
     move-result v10
 
     .line 1491
-    goto :goto_5d4
+    goto :goto_24
 
     .line 1492
-    :cond_5d3
+    :cond_34
     const/4 v10, 0x0
 
     .line 1493
-    :goto_5d4
+    :goto_24
     invoke-virtual {v3, v10}, Llibs/cv;->setSelectionAndInvalidate(I)V
 
     .line 1494
     .line 1495
     .line 1496
-    :goto_5d7
+    :goto_25
     return-void
 
     .line 1497
-    :pswitch_5d8
+    :pswitch_5
     check-cast v9, Llibs/al;
 
     .line 1498
@@ -3244,7 +3244,7 @@
 
     .line 1507
     .line 1508
-    if-gez v0, :cond_5ed
+    if-gez v0, :cond_35
 
     .line 1509
     .line 1510
@@ -3261,29 +3261,29 @@
     .line 1515
     .line 1516
     .line 1517
-    goto :goto_5f0
+    goto :goto_26
 
     .line 1518
-    :cond_5ed
+    :cond_35
     invoke-virtual {v1, v0, v3}, Llibs/r31;->Task(ILlibs/xt1;)V
 
     .line 1519
     .line 1520
     .line 1521
-    :goto_5f0
+    :goto_26
     return-void
 
     .line 1522
     nop
 
     .line 1523
-    :pswitch_data_5f2
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_5d8
-        :pswitch_5b1
-        :pswitch_345
-        :pswitch_2b0
-        :pswitch_268
-        :pswitch_2c
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/ImageViewerActivity;Ljava/util/ArrayList;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/z81;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 7
+    .locals 6
 
     .line 1
     iget-byte v0, p0, Llibs/z81;->X:B
@@ -57,7 +57,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_42
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -117,7 +117,7 @@
     move-result v0
 
     .line 37
-    if-ge v0, v5, :cond_2a
+    if-ge v0, v5, :cond_0
 
     .line 38
     .line 39
@@ -126,10 +126,10 @@
     .line 40
     .line 41
     .line 42
-    goto :goto_33
+    goto :goto_0
 
     .line 43
-    :cond_2a
+    :cond_0
     sget v0, Llibs/bi2;->done:I
 
     .line 44
@@ -147,11 +147,11 @@
     .line 50
     .line 51
     .line 52
-    :goto_33
+    :goto_0
     return-void
 
     .line 53
-    :pswitch_34
+    :pswitch_0
     sget v0, Lcom/mixplorer/activities/ImageViewerActivity;->OO:I
 
     .line 54
@@ -180,8 +180,8 @@
     return-void
 
     .line 67
-    :pswitch_data_42
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_34
+        :pswitch_0
     .end packed-switch
 .end method

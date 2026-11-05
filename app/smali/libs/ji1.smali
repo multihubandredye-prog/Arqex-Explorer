@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/oi1;Landroid/os/Handler;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/ji1;->X:Llibs/oi1;
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final onReceiveResult(ILandroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-super {p0, p1, p2}, Landroid/os/ResultReceiver;->onReceiveResult(ILandroid/os/Bundle;)V
@@ -38,7 +38,7 @@
     const/4 p2, 0x2
 
     .line 5
-    if-ne p1, p2, :cond_b
+    if-ne p1, p2, :cond_0
 
     .line 6
     .line 7
@@ -53,6 +53,6 @@
 
     .line 11
     .line 12
-    :cond_b
+    :cond_0
     return-void
 .end method

@@ -12,7 +12,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     .line 1
     invoke-static {}, Ljava/util/Collections;->reverseOrder()Ljava/util/Comparator;
@@ -24,7 +24,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/Comparator;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 .end method
 
 .method public static a(Llibs/gs0;)Llibs/tw;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/tw;
@@ -70,7 +70,7 @@
 
 # virtual methods
 .method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/tw;->X:Ljava/util/Comparator;
@@ -89,7 +89,7 @@
 .end method
 
 .method public final reversed()Ljava/util/Comparator;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/tw;
@@ -117,7 +117,7 @@
 .end method
 
 .method public final thenComparing(Ljava/util/Comparator;)Ljava/util/Comparator;
-    .registers 5
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/tw;

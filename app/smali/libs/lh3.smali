@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
@@ -36,7 +36,7 @@
 .end method
 
 .method public static a(I)I
-    .registers 3
+    .locals 2
 
     .line 1
     const/16 v0, 0x7f
@@ -46,19 +46,19 @@
     const/4 v1, 0x1
 
     .line 4
-    if-le p0, v0, :cond_17
+    if-le p0, v0, :cond_1
 
     .line 5
     .line 6
     const/4 v0, 0x1
 
     .line 7
-    :goto_6
+    :goto_0
     ushr-int/lit8 p0, p0, 0x8
 
     .line 8
     .line 9
-    if-eqz p0, :cond_d
+    if-eqz p0, :cond_0
 
     .line 10
     .line 11
@@ -66,10 +66,10 @@
 
     .line 12
     .line 13
-    goto :goto_6
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     sub-int/2addr v0, v1
 
     .line 15
@@ -77,8 +77,8 @@
 
     .line 16
     .line 17
-    :goto_10
-    if-ltz v0, :cond_17
+    :goto_1
+    if-ltz v0, :cond_1
 
     .line 18
     .line 19
@@ -90,22 +90,22 @@
 
     .line 22
     .line 23
-    goto :goto_10
+    goto :goto_1
 
     .line 24
-    :cond_17
+    :cond_1
     return v1
 .end method
 
 .method public static b(I)I
-    .registers 5
+    .locals 4
 
     .line 1
     const/16 v0, 0x1f
 
     .line 2
     .line 3
-    if-lt p0, v0, :cond_24
+    if-lt p0, v0, :cond_2
 
     .line 4
     .line 5
@@ -113,7 +113,7 @@
 
     .line 6
     .line 7
-    if-ge p0, v0, :cond_a
+    if-ge p0, v0, :cond_0
 
     .line 8
     .line 9
@@ -123,7 +123,7 @@
     return p0
 
     .line 11
-    :cond_a
+    :cond_0
     const/4 v1, 0x5
 
     .line 12
@@ -145,7 +145,7 @@
 
     .line 19
     .line 20
-    :cond_13
+    :cond_1
     shr-int/lit8 p0, p0, 0x7
 
     .line 21
@@ -172,7 +172,7 @@
 
     .line 31
     .line 32
-    if-gt p0, v2, :cond_13
+    if-gt p0, v2, :cond_1
 
     .line 33
     .line 34
@@ -183,7 +183,7 @@
     return p0
 
     .line 37
-    :cond_24
+    :cond_2
     const/4 p0, 0x1
 
     .line 38
@@ -191,14 +191,14 @@
 .end method
 
 .method public static c(Ljava/io/InputStream;)I
-    .registers 6
+    .locals 5
 
     .line 1
     instance-of v0, p0, Llibs/uk1;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -217,12 +217,12 @@
     return p0
 
     .line 12
-    :cond_b
+    :cond_0
     instance-of v0, p0, Llibs/Uri;
 
     .line 13
     .line 14
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_1
 
     .line 15
     .line 16
@@ -237,12 +237,12 @@
     return p0
 
     .line 21
-    :cond_14
+    :cond_1
     instance-of v0, p0, Llibs/dl;
 
     .line 22
     .line 23
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_2
 
     .line 24
     .line 25
@@ -261,7 +261,7 @@
     return p0
 
     .line 32
-    :cond_1f
+    :cond_2
     instance-of v0, p0, Ljava/io/FileInputStream;
 
     .line 33
@@ -271,11 +271,11 @@
     .line 35
     .line 36
     .line 37
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_4
 
     .line 38
     .line 39
-    :try_start_26
+    :try_start_0
     check-cast p0, Ljava/io/FileInputStream;
 
     .line 40
@@ -288,7 +288,7 @@
     move-result-object p0
 
     .line 45
-    if-eqz p0, :cond_35
+    if-eqz p0, :cond_3
 
     .line 46
     .line 47
@@ -298,30 +298,30 @@
     .line 49
     .line 50
     move-result-wide v3
-    :try_end_32
-    .catch Ljava/io/IOException; {:try_start_26 .. :try_end_32} :catch_33
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 51
-    goto :goto_36
+    goto :goto_0
 
     .line 52
-    :catch_33
+    :catch_0
     nop
 
     .line 53
-    goto :goto_3c
+    goto :goto_1
 
     .line 54
-    :cond_35
+    :cond_3
     move-wide v3, v1
 
     .line 55
-    :goto_36
+    :goto_0
     cmp-long p0, v3, v1
 
     .line 56
     .line 57
-    if-gez p0, :cond_3c
+    if-gez p0, :cond_4
 
     .line 58
     .line 59
@@ -331,8 +331,8 @@
     return p0
 
     .line 61
-    :cond_3c
-    :goto_3c
+    :cond_4
+    :goto_1
     sget-wide v3, Llibs/lh3;->a:J
 
     .line 62
@@ -341,7 +341,7 @@
 
     .line 64
     .line 65
-    if-lez p0, :cond_46
+    if-lez p0, :cond_5
 
     .line 66
     .line 67
@@ -353,7 +353,7 @@
     return p0
 
     .line 71
-    :cond_46
+    :cond_5
     long-to-int p0, v3
 
     .line 72

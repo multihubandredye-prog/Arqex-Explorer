@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/d90;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final a(Llibs/c90;)V
-    .registers 6
+    .locals 4
 
     .line 1
     new-instance v0, Llibs/c90;
@@ -91,7 +91,7 @@
 .end method
 
 .method public final b(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "id"
@@ -106,7 +106,7 @@
     move-result p1
 
     .line 7
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 8
     .line 9
@@ -117,7 +117,7 @@
     return-object p1
 
     .line 12
-    :cond_b
+    :cond_0
     const-string p1, "Attribute name not recognized by CertAttrSet: CertificateIssuerUniqueIdentity."
 
     .line 13
@@ -134,14 +134,14 @@
 .end method
 
 .method public final c(Ljava/lang/Object;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 1
     instance-of v0, p1, Llibs/oq3;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
@@ -157,7 +157,7 @@
     move-result p2
 
     .line 11
-    if-eqz p2, :cond_11
+    if-eqz p2, :cond_0
 
     .line 12
     .line 13
@@ -172,7 +172,7 @@
     return-void
 
     .line 18
-    :cond_11
+    :cond_0
     const-string p1, "Attribute name not recognized by CertAttrSet: CertificateIssuerUniqueIdentity."
 
     .line 19
@@ -185,7 +185,7 @@
     return-void
 
     .line 24
-    :cond_17
+    :cond_1
     const-string p1, "Attribute must be of type UniqueIdentity."
 
     .line 25
@@ -199,7 +199,7 @@
 .end method
 
 .method public final getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "issuerID"
@@ -210,7 +210,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/tq;->a:Llibs/oq3;

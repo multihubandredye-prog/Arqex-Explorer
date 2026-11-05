@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Ljava/util/Locale;)V
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -120,7 +120,7 @@
 .end method
 
 .method public constructor <init>(Llibs/za;Ljava/util/LinkedHashSet;Ljava/lang/String;Llibs/c8;)V
-    .registers 5
+    .locals 0
 
     .line 49
     iput-object p1, p0, Llibs/d8;->Lambda:Ljava/lang/Object;
@@ -139,7 +139,7 @@
 
 # virtual methods
 .method public a(II)Ljava/lang/String;
-    .registers 19
+    .locals 16
 
     .line 1
     move-object/from16 v1, p0
@@ -174,7 +174,7 @@
 
     .line 16
     .line 17
-    if-eqz v4, :cond_fc
+    if-eqz v4, :cond_a
 
     .line 18
     .line 19
@@ -201,7 +201,7 @@
     const/4 v5, 0x0
 
     .line 30
-    if-eqz v2, :cond_f8
+    if-eqz v2, :cond_9
 
     .line 31
     .line 32
@@ -219,11 +219,11 @@
     .line 36
     .line 37
     .line 38
-    if-nez v0, :cond_45
+    if-nez v0, :cond_0
 
     .line 39
     .line 40
-    :try_start_27
+    :try_start_0
     invoke-virtual {v4}, Landroid/content/res/Resources;->getAssets()Landroid/content/res/AssetManager;
 
     .line 41
@@ -268,39 +268,39 @@
     move-result-object v5
 
     .line 62
-    goto :goto_45
+    goto :goto_0
 
     .line 63
-    :catch_3e
+    :catch_0
     move-exception v0
 
     .line 64
-    goto :goto_a1
+    goto :goto_2
 
     .line 65
-    :catch_40
+    :catch_1
     move-exception v0
 
     .line 66
-    goto :goto_ab
+    goto :goto_3
 
     .line 67
-    :catch_42
+    :catch_2
     move-exception v0
 
     .line 68
-    goto/16 :goto_b5
+    goto/16 :goto_4
 
     .line 69
     .line 70
-    :cond_45
-    :goto_45
+    :cond_0
+    :goto_0
     const v10, 0x1000004
 
     .line 71
     .line 72
     .line 73
-    if-nez v5, :cond_88
+    if-nez v5, :cond_6
 
     .line 74
     .line 75
@@ -334,18 +334,18 @@
     move-result v12
 
     .line 89
-    if-eq v12, v7, :cond_7a
+    if-eq v12, v7, :cond_5
 
     .line 90
     .line 91
-    if-eq v12, v8, :cond_77
+    if-eq v12, v8, :cond_4
 
     .line 92
     .line 93
     const/4 v9, 0x4
 
     .line 94
-    if-eq v12, v9, :cond_73
+    if-eq v12, v9, :cond_3
 
     .line 95
     .line 96
@@ -353,7 +353,7 @@
 
     .line 97
     .line 98
-    if-eq v12, v9, :cond_6f
+    if-eq v12, v9, :cond_2
 
     .line 99
     .line 100
@@ -361,7 +361,7 @@
 
     .line 101
     .line 102
-    if-eq v12, v9, :cond_6b
+    if-eq v12, v9, :cond_1
 
     .line 103
     .line 104
@@ -370,44 +370,44 @@
     .line 105
     .line 106
     .line 107
-    goto :goto_7a
+    goto :goto_1
 
     .line 108
-    :cond_6b
+    :cond_1
     const v9, 0x1000009
 
     .line 109
     .line 110
     .line 111
-    goto :goto_7a
+    goto :goto_1
 
     .line 112
-    :cond_6f
+    :cond_2
     const v9, 0x1000008
 
     .line 113
     .line 114
     .line 115
-    goto :goto_7a
+    goto :goto_1
 
     .line 116
-    :cond_73
+    :cond_3
     const v9, 0x1000007
 
     .line 117
     .line 118
     .line 119
-    goto :goto_7a
+    goto :goto_1
 
     .line 120
-    :cond_77
+    :cond_4
     const v9, 0x1000006
 
     .line 121
     .line 122
     .line 123
-    :cond_7a
-    :goto_7a
+    :cond_5
+    :goto_1
     invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 124
@@ -436,8 +436,8 @@
     move-result-object v5
 
     .line 137
-    :cond_88
-    if-nez v5, :cond_bf
+    :cond_6
+    if-nez v5, :cond_7
 
     .line 138
     .line 139
@@ -483,16 +483,16 @@
     .line 159
     .line 160
     move-result-object v5
-    :try_end_a0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_27 .. :try_end_a0} :catch_42
-    .catch Ljava/lang/IllegalAccessException; {:try_start_27 .. :try_end_a0} :catch_40
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_27 .. :try_end_a0} :catch_3e
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 161
-    goto :goto_bf
+    goto :goto_5
 
     .line 162
-    :goto_a1
+    :goto_2
     new-instance v2, Landroid/content/res/Resources$NotFoundException;
 
     .line 163
@@ -513,7 +513,7 @@
     throw v2
 
     .line 172
-    :goto_ab
+    :goto_3
     new-instance v2, Landroid/content/res/Resources$NotFoundException;
 
     .line 173
@@ -534,7 +534,7 @@
     throw v2
 
     .line 182
-    :goto_b5
+    :goto_4
     new-instance v2, Landroid/content/res/Resources$NotFoundException;
 
     .line 183
@@ -555,9 +555,9 @@
     throw v2
 
     .line 192
-    :cond_bf
-    :goto_bf
-    if-eqz v5, :cond_c6
+    :cond_7
+    :goto_5
+    if-eqz v5, :cond_8
 
     .line 193
     .line 194
@@ -572,7 +572,7 @@
     return-object v0
 
     .line 199
-    :cond_c6
+    :cond_8
     new-instance v2, Landroid/content/res/Resources$NotFoundException;
 
     .line 200
@@ -669,7 +669,7 @@
     throw v2
 
     .line 249
-    :cond_f8
+    :cond_9
     invoke-static {}, Llibs/ic0;->l()V
 
     .line 250
@@ -678,7 +678,7 @@
     return-object v5
 
     .line 253
-    :cond_fc
+    :cond_a
     new-instance v0, Landroid/content/res/Resources$NotFoundException;
 
     .line 254
@@ -692,13 +692,13 @@
 .end method
 
 .method public varargs b(II[Ljava/lang/Object;)Ljava/lang/String;
-    .registers 5
+    .locals 1
 
     .line 1
     array-length v0, p3
 
     .line 2
-    if-lez v0, :cond_10
+    if-lez v0, :cond_0
 
     .line 3
     .line 4
@@ -729,7 +729,7 @@
     return-object p1
 
     .line 17
-    :cond_10
+    :cond_0
     invoke-virtual {p0, p1, p2}, Llibs/d8;->a(II)Ljava/lang/String;
 
     .line 18
@@ -742,14 +742,14 @@
 .end method
 
 .method public h()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public i()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/d8;->Lambda:Ljava/lang/Object;

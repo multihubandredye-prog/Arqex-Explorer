@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(ILjava/lang/String;Llibs/rp0;)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-object p3, p0, Llibs/wf2;->a:Llibs/rp0;
@@ -39,14 +39,14 @@
 
 # virtual methods
 .method public final onFinish()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final onLayout(Landroid/print/PrintAttributes;Landroid/print/PrintAttributes;Landroid/os/CancellationSignal;Landroid/print/PrintDocumentAdapter$LayoutResultCallback;Landroid/os/Bundle;)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-virtual {p3}, Landroid/os/CancellationSignal;->isCanceled()Z
@@ -57,7 +57,7 @@
     move-result p3
 
     .line 5
-    if-eqz p3, :cond_a
+    if-eqz p3, :cond_0
 
     .line 6
     .line 7
@@ -69,7 +69,7 @@
     return-void
 
     .line 11
-    :cond_a
+    :cond_0
     new-instance p3, Landroid/print/PrintDocumentInfo$Builder;
 
     .line 12
@@ -135,13 +135,13 @@
 .end method
 
 .method public final onWrite([Landroid/print/PageRange;Landroid/os/ParcelFileDescriptor;Landroid/os/CancellationSignal;Landroid/print/PrintDocumentAdapter$WriteResultCallback;)V
-    .registers 9
+    .locals 4
 
     .line 1
     const/4 p1, 0x0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object p3, p0, Llibs/wf2;->a:Llibs/rp0;
 
     .line 3
@@ -156,11 +156,11 @@
     .line 8
     .line 9
     move-result-object p3
-    :try_end_9
-    .catchall {:try_start_1 .. :try_end_9} :catchall_48
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_3
 
     .line 10
-    :try_start_9
+    :try_start_1
     new-instance v0, Llibs/ak;
 
     .line 11
@@ -187,21 +187,21 @@
     .line 22
     .line 23
     invoke-direct {v0, v1, v2}, Llibs/ak;-><init>(Ljava/io/OutputStream;I)V
-    :try_end_19
-    .catchall {:try_start_9 .. :try_end_19} :catchall_3a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
     .line 24
     .line 25
     .line 26
-    :try_start_19
+    :try_start_2
     invoke-static {p3, v0}, Llibs/ji0;->r(Ljava/io/InputStream;Ljava/io/OutputStream;)V
-    :try_end_1c
-    .catchall {:try_start_19 .. :try_end_1c} :catchall_38
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 27
     .line 28
     .line 29
-    :try_start_1c
+    :try_start_3
     invoke-static {v0}, Llibs/ji0;->k(Ljava/io/Closeable;)V
 
     .line 30
@@ -240,8 +240,8 @@
     .line 47
     .line 48
     invoke-static {p4, p1}, Llibs/Echo;->s(Landroid/print/PrintDocumentAdapter$WriteResultCallback;[Landroid/print/PageRange;)V
-    :try_end_32
-    .catchall {:try_start_1c .. :try_end_32} :catchall_36
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 49
     .line 50
@@ -254,21 +254,21 @@
     return-void
 
     .line 55
-    :catchall_36
+    :catchall_0
     move-exception p1
 
     .line 56
-    goto :goto_4b
+    goto :goto_1
 
     .line 57
-    :catchall_38
+    :catchall_1
     move-exception p1
 
     .line 58
-    goto :goto_3e
+    goto :goto_0
 
     .line 59
-    :catchall_3a
+    :catchall_2
     move-exception v0
 
     .line 60
@@ -281,8 +281,8 @@
     move-object p1, v3
 
     .line 63
-    :goto_3e
-    :try_start_3e
+    :goto_0
+    :try_start_4
     invoke-static {v0}, Llibs/ji0;->k(Ljava/io/Closeable;)V
 
     .line 64
@@ -299,11 +299,11 @@
     .line 71
     .line 72
     throw p1
-    :try_end_48
-    .catchall {:try_start_3e .. :try_end_48} :catchall_36
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 73
-    :catchall_48
+    :catchall_3
     move-exception p2
 
     .line 74
@@ -313,8 +313,8 @@
     move-object p1, p2
 
     .line 76
-    :goto_4b
-    :try_start_4b
+    :goto_1
+    :try_start_5
     sget-object p2, Llibs/vw1;->b:Ljava/lang/Object;
 
     .line 77
@@ -342,8 +342,8 @@
     .line 89
     .line 90
     invoke-static {p4}, Llibs/Echo;->r(Landroid/print/PrintDocumentAdapter$WriteResultCallback;)V
-    :try_end_5c
-    .catchall {:try_start_4b .. :try_end_5c} :catchall_60
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_4
 
     .line 91
     .line 92
@@ -356,7 +356,7 @@
     return-void
 
     .line 97
-    :catchall_60
+    :catchall_4
     move-exception p1
 
     .line 98

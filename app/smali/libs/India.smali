@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic a(Landroid/view/DisplayCutout;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/DisplayCutout;->getSafeInsetRight()I
@@ -20,7 +20,7 @@
 .end method
 
 .method public static bridge synthetic b(Landroid/database/sqlite/SQLiteDatabase$OpenParams$Builder;)Landroid/database/sqlite/SQLiteDatabase$OpenParams$Builder;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "DELETE"
@@ -39,7 +39,7 @@
 .end method
 
 .method public static bridge synthetic c(Landroid/text/DynamicLayout$Builder;)Landroid/text/DynamicLayout$Builder;
-    .registers 3
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
@@ -61,7 +61,7 @@
 .end method
 
 .method public static bridge synthetic d(Landroid/text/DynamicLayout$Builder;Landroid/text/Layout$Alignment;)Landroid/text/DynamicLayout$Builder;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/text/DynamicLayout$Builder;->setAlignment(Landroid/text/Layout$Alignment;)Landroid/text/DynamicLayout$Builder;
@@ -76,7 +76,7 @@
 .end method
 
 .method public static bridge synthetic e(Landroid/text/DynamicLayout$Builder;Ljava/lang/CharSequence;)Landroid/text/DynamicLayout$Builder;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/text/DynamicLayout$Builder;->setDisplayText(Ljava/lang/CharSequence;)Landroid/text/DynamicLayout$Builder;
@@ -91,7 +91,7 @@
 .end method
 
 .method public static bridge synthetic f(Ljava/lang/String;Landroid/text/TextPaint;I)Landroid/text/DynamicLayout$Builder;
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-static {p0, p1, p2}, Landroid/text/DynamicLayout$Builder;->obtain(Ljava/lang/CharSequence;Landroid/text/TextPaint;I)Landroid/text/DynamicLayout$Builder;
@@ -106,7 +106,7 @@
 .end method
 
 .method public static bridge synthetic g(Landroid/text/DynamicLayout$Builder;)Landroid/text/DynamicLayout;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/text/DynamicLayout$Builder;->build()Landroid/text/DynamicLayout;
@@ -121,7 +121,7 @@
 .end method
 
 .method public static bridge synthetic h(Landroid/view/WindowInsets;)Landroid/view/DisplayCutout;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/WindowInsets;->getDisplayCutout()Landroid/view/DisplayCutout;
@@ -136,7 +136,7 @@
 .end method
 
 .method public static bridge synthetic i(Ljava/lang/Object;)Landroid/view/DisplayCutout;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Landroid/view/DisplayCutout;
@@ -147,7 +147,7 @@
 .end method
 
 .method public static bridge synthetic j(Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/WindowInsets;->consumeDisplayCutout()Landroid/view/WindowInsets;
@@ -162,7 +162,7 @@
 .end method
 
 .method public static bridge synthetic k()Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_SHOW_TOOLTIP:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
@@ -173,7 +173,7 @@
 .end method
 
 .method public static bridge synthetic l(Landroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/CharSequence;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setPaneTitle(Ljava/lang/CharSequence;)V
@@ -185,7 +185,7 @@
 .end method
 
 .method public static bridge synthetic m(Landroid/view/accessibility/AccessibilityNodeInfo;Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setHeading(Z)V
@@ -197,7 +197,7 @@
 .end method
 
 .method public static bridge synthetic n(Landroid/view/DisplayCutout;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/DisplayCutout;->getSafeInsetLeft()I
@@ -212,7 +212,7 @@
 .end method
 
 .method public static bridge synthetic p(Landroid/database/sqlite/SQLiteDatabase$OpenParams$Builder;)Landroid/database/sqlite/SQLiteDatabase$OpenParams$Builder;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "OFF"
@@ -231,7 +231,7 @@
 .end method
 
 .method public static bridge synthetic q(Landroid/text/DynamicLayout$Builder;)Landroid/text/DynamicLayout$Builder;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -249,7 +249,7 @@
 .end method
 
 .method public static bridge synthetic r()Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_HIDE_TOOLTIP:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
@@ -260,7 +260,7 @@
 .end method
 
 .method public static bridge synthetic s(Landroid/view/accessibility/AccessibilityNodeInfo;Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setScreenReaderFocusable(Z)V
@@ -272,7 +272,7 @@
 .end method
 
 .method public static bridge synthetic t(Landroid/text/DynamicLayout$Builder;)Landroid/text/DynamicLayout$Builder;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -290,7 +290,7 @@
 .end method
 
 .method public static bridge synthetic u(Landroid/text/DynamicLayout$Builder;)Landroid/text/DynamicLayout$Builder;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -308,7 +308,7 @@
 .end method
 
 .method public static bridge synthetic v(Landroid/text/DynamicLayout$Builder;)Landroid/text/DynamicLayout$Builder;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0

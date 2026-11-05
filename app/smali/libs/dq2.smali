@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(ZZZZZILlibs/w52;Ljava/util/List;)V
-    .registers 9
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -73,7 +73,7 @@
 
 # virtual methods
 .method public final a()Ljava/util/List;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/dq2;->h:Ljava/util/List;
@@ -84,7 +84,7 @@
 .end method
 
 .method public final b(Llibs/Init;Ljava/lang/Object;)Ljava/util/List;
-    .registers 7
+    .locals 4
 
     .line 1
     check-cast p2, Llibs/ed0;
@@ -123,7 +123,7 @@
 
     .line 18
     .line 19
-    if-eqz p1, :cond_23
+    if-eqz p1, :cond_1
 
     .line 20
     .line 21
@@ -139,14 +139,14 @@
 
     .line 26
     .line 27
-    if-eqz p1, :cond_1d
+    if-eqz p1, :cond_0
 
     .line 28
     .line 29
     move-object p2, p1
 
     .line 30
-    :cond_1d
+    :cond_0
     check-cast p2, Llibs/gz0;
 
     .line 31
@@ -159,12 +159,12 @@
     move-result-object v2
 
     .line 36
-    :cond_23
+    :cond_1
     iget-boolean p1, p0, Llibs/dq2;->d:Z
 
     .line 37
     .line 38
-    if-eqz p1, :cond_3a
+    if-eqz p1, :cond_3
 
     .line 39
     .line 40
@@ -188,14 +188,14 @@
 
     .line 49
     .line 50
-    if-eqz p1, :cond_34
+    if-eqz p1, :cond_2
 
     .line 51
     .line 52
     move-object p2, p1
 
     .line 53
-    :cond_34
+    :cond_2
     check-cast p2, Llibs/gz0;
 
     .line 54
@@ -208,12 +208,12 @@
     move-result-object v2
 
     .line 59
-    :cond_3a
+    :cond_3
     iget-boolean p1, p0, Llibs/dq2;->c:Z
 
     .line 60
     .line 61
-    if-eqz p1, :cond_4d
+    if-eqz p1, :cond_5
 
     .line 62
     .line 63
@@ -229,14 +229,14 @@
 
     .line 68
     .line 69
-    if-eqz p1, :cond_47
+    if-eqz p1, :cond_4
 
     .line 70
     .line 71
     move-object p2, p1
 
     .line 72
-    :cond_47
+    :cond_4
     check-cast p2, Llibs/gz0;
 
     .line 73
@@ -249,7 +249,7 @@
     move-result-object v2
 
     .line 78
-    :cond_4d
+    :cond_5
     const/4 p1, 0x2
 
     .line 79
@@ -257,7 +257,7 @@
 
     .line 80
     .line 81
-    if-ne p2, p1, :cond_5c
+    if-ne p2, p1, :cond_6
 
     .line 82
     .line 83
@@ -281,8 +281,8 @@
     move-result-object v2
 
     .line 93
-    :cond_5c
-    if-ne p2, v3, :cond_68
+    :cond_6
+    if-ne p2, v3, :cond_7
 
     .line 94
     .line 95
@@ -306,12 +306,12 @@
     move-result-object v2
 
     .line 105
-    :cond_68
+    :cond_7
     iget-boolean p1, p0, Llibs/dq2;->b:Z
 
     .line 106
     .line 107
-    if-eqz p1, :cond_7f
+    if-eqz p1, :cond_9
 
     .line 108
     .line 109
@@ -335,14 +335,14 @@
 
     .line 118
     .line 119
-    if-eqz p1, :cond_79
+    if-eqz p1, :cond_8
 
     .line 120
     .line 121
     move-object p2, p1
 
     .line 122
-    :cond_79
+    :cond_8
     check-cast p2, Llibs/gz0;
 
     .line 123
@@ -355,12 +355,12 @@
     move-result-object v2
 
     .line 128
-    :cond_7f
+    :cond_9
     iget-boolean p1, p0, Llibs/dq2;->a:Z
 
     .line 129
     .line 130
-    if-eqz p1, :cond_96
+    if-eqz p1, :cond_b
 
     .line 131
     .line 132
@@ -384,14 +384,14 @@
 
     .line 141
     .line 142
-    if-eqz p1, :cond_90
+    if-eqz p1, :cond_a
 
     .line 143
     .line 144
     move-object p2, p1
 
     .line 145
-    :cond_90
+    :cond_a
     check-cast p2, Llibs/gz0;
 
     .line 146
@@ -404,7 +404,7 @@
     move-result-object v2
 
     .line 151
-    :cond_96
+    :cond_b
     iget-object p1, v1, Llibs/ei3;->h:Ljava/util/List;
 
     .line 152
@@ -417,7 +417,7 @@
     move-result-object p1
 
     .line 157
-    :cond_9c
+    :cond_c
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 158
@@ -430,7 +430,7 @@
 
     .line 162
     .line 163
-    if-eqz p2, :cond_b9
+    if-eqz p2, :cond_d
 
     .line 164
     .line 165
@@ -461,7 +461,7 @@
     move-result v3
 
     .line 178
-    if-eqz v3, :cond_9c
+    if-eqz v3, :cond_c
 
     .line 179
     .line 180
@@ -474,14 +474,14 @@
     .line 183
     .line 184
     .line 185
-    goto :goto_ba
+    goto :goto_0
 
     .line 186
-    :cond_b9
+    :cond_d
     move-object p1, v1
 
     .line 187
-    :goto_ba
+    :goto_0
     invoke-virtual {p1}, Llibs/w52;->b()Z
 
     .line 188
@@ -490,14 +490,14 @@
     move-result p2
 
     .line 191
-    if-nez p2, :cond_c1
+    if-nez p2, :cond_e
 
     .line 192
     .line 193
-    goto :goto_cb
+    goto :goto_1
 
     .line 194
-    :cond_c1
+    :cond_e
     iget-object p1, p1, Llibs/w52;->a:Ljava/lang/Object;
 
     .line 195
@@ -518,19 +518,19 @@
     move-result-object v1
 
     .line 204
-    :goto_cb
+    :goto_1
     iget-object p1, v1, Llibs/w52;->a:Ljava/lang/Object;
 
     .line 205
     .line 206
-    if-eqz p1, :cond_d0
+    if-eqz p1, :cond_f
 
     .line 207
     .line 208
-    goto :goto_f1
+    goto :goto_2
 
     .line 209
-    :cond_d0
+    :cond_f
     iget-object p1, p0, Llibs/dq2;->g:Llibs/w52;
 
     .line 210
@@ -543,7 +543,7 @@
     move-result p2
 
     .line 215
-    if-eqz p2, :cond_ef
+    if-eqz p2, :cond_10
 
     .line 216
     .line 217
@@ -592,12 +592,12 @@
     .line 238
     .line 239
     .line 240
-    :cond_ef
+    :cond_10
     sget-object p1, Llibs/gz0;->a:Llibs/iz0;
 
     .line 241
     .line 242
-    :goto_f1
+    :goto_2
     check-cast p1, Llibs/gz0;
 
     .line 243

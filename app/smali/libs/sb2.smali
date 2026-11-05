@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/OutputStream;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/io/OutputStream;-><init>()V
@@ -33,18 +33,18 @@
 
 # virtual methods
 .method public final close()V
-    .registers 2
+    .locals 1
 
     .line 1
     :try_start_0
     invoke-virtual {p0}, Llibs/sb2;->flush()V
-    :try_end_3
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_3} :catch_3
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 2
     .line 3
     .line 4
-    :catch_3
+    :catch_0
     iget-object v0, p0, Llibs/sb2;->Y:Ljava/io/OutputStream;
 
     .line 5
@@ -58,7 +58,7 @@
 .end method
 
 .method public final flush()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/sb2;->Y:Ljava/io/OutputStream;
@@ -74,7 +74,7 @@
 .end method
 
 .method public final write(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/sb2;->Y:Ljava/io/OutputStream;
@@ -90,7 +90,7 @@
 .end method
 
 .method public final write([B)V
-    .registers 3
+    .locals 1
 
     .line 7
     iget-object v0, p0, Llibs/sb2;->Y:Ljava/io/OutputStream;
@@ -101,7 +101,7 @@
 .end method
 
 .method public final write([BII)V
-    .registers 5
+    .locals 1
 
     .line 8
     iget-object v0, p0, Llibs/sb2;->Y:Ljava/io/OutputStream;

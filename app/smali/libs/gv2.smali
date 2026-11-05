@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/hv2;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public static a(Llibs/rw2;)Llibs/gv2;
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/rw2;->b:Llibs/oj0;
@@ -70,28 +70,28 @@
     move-result v2
 
     .line 21
-    if-eqz v2, :cond_56
+    if-eqz v2, :cond_3
 
     .line 22
     .line 23
     const/4 v3, 0x1
 
     .line 24
-    if-eq v2, v3, :cond_4d
+    if-eq v2, v3, :cond_2
 
     .line 25
     .line 26
     const/4 v3, 0x2
 
     .line 27
-    if-eq v2, v3, :cond_44
+    if-eq v2, v3, :cond_1
 
     .line 28
     .line 29
     const/4 v3, 0x3
 
     .line 30
-    if-ne v2, v3, :cond_28
+    if-ne v2, v3, :cond_0
 
     .line 31
     .line 32
@@ -112,7 +112,7 @@
     return-object v0
 
     .line 41
-    :cond_28
+    :cond_0
     new-instance p0, Llibs/zw2;
 
     .line 42
@@ -165,7 +165,7 @@
     throw p0
 
     .line 69
-    :cond_44
+    :cond_1
     new-instance v0, Llibs/hu2;
 
     .line 70
@@ -183,7 +183,7 @@
     return-object v0
 
     .line 78
-    :cond_4d
+    :cond_2
     new-instance v0, Llibs/qu2;
 
     .line 79
@@ -201,7 +201,7 @@
     return-object v0
 
     .line 87
-    :cond_56
+    :cond_3
     new-instance v0, Llibs/pv2;
 
     .line 88
@@ -222,7 +222,7 @@
 
 # virtual methods
 .method public final b(Llibs/rw2;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p1, Llibs/rw2;->b:Llibs/oj0;
@@ -254,23 +254,23 @@
 
     .line 15
     .line 16
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     .line 17
     .line 18
     const/4 v0, 0x0
 
     .line 19
-    goto :goto_15
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     rsub-int/lit8 v0, v0, 0x8
 
     .line 21
     .line 22
-    :goto_15
-    if-lez v0, :cond_20
+    :goto_0
+    if-lez v0, :cond_1
 
     .line 23
     .line 24
@@ -282,7 +282,7 @@
     move-result v1
 
     .line 28
-    if-lt v1, v0, :cond_20
+    if-lt v1, v0, :cond_1
 
     .line 29
     .line 30
@@ -291,7 +291,7 @@
     .line 31
     .line 32
     .line 33
-    :cond_20
+    :cond_1
     return-void
 .end method
 

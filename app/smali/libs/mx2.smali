@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/SQLiteEditorActivity;Ljava/lang/String;Llibs/ml1;B)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-byte p4, p0, Llibs/mx2;->X:B
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 9
+    .locals 7
 
     .line 1
     iget-byte p1, p0, Llibs/mx2;->X:B
@@ -70,7 +70,7 @@
 
     .line 9
     .line 10
-    packed-switch p1, :pswitch_data_5c
+    packed-switch p1, :pswitch_data_0
 
     .line 11
     .line 12
@@ -87,7 +87,7 @@
     return-void
 
     .line 19
-    :pswitch_12
+    :pswitch_0
     sget p1, Lcom/mixplorer/activities/SQLiteEditorActivity;->III:I
 
     .line 20
@@ -207,7 +207,7 @@
     return-void
 
     .line 80
-    :pswitch_4f
+    :pswitch_1
     sget p1, Lcom/mixplorer/activities/SQLiteEditorActivity;->III:I
 
     .line 81
@@ -223,7 +223,7 @@
     return-void
 
     .line 87
-    :pswitch_56
+    :pswitch_2
     sget p1, Lcom/mixplorer/activities/SQLiteEditorActivity;->III:I
 
     .line 88
@@ -236,10 +236,10 @@
     return-void
 
     .line 93
-    :pswitch_data_5c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_56
-        :pswitch_4f
-        :pswitch_12
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

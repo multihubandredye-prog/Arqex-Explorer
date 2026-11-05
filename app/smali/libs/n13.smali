@@ -36,7 +36,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/m13;
@@ -56,7 +56,7 @@
 .end method
 
 .method public constructor <init>(Landroid/os/Parcel;)V
-    .registers 7
+    .locals 5
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -90,21 +90,21 @@
     const/4 v2, 0x1
 
     .line 16
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 17
     .line 18
     const/4 v0, 0x1
 
     .line 19
-    goto :goto_14
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     const/4 v0, 0x0
 
     .line 21
-    :goto_14
+    :goto_0
     iput-boolean v0, p0, Llibs/n13;->Y:Z
 
     .line 22
@@ -153,21 +153,21 @@
     move-result v0
 
     .line 45
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_1
 
     .line 46
     .line 47
     const/4 v0, 0x1
 
     .line 48
-    goto :goto_31
+    goto :goto_1
 
     .line 49
-    :cond_30
+    :cond_1
     const/4 v0, 0x0
 
     .line 50
-    :goto_31
+    :goto_1
     iput-boolean v0, p0, Llibs/n13;->Nu:Z
 
     .line 51
@@ -180,14 +180,14 @@
     move-result p1
 
     .line 56
-    if-eqz p1, :cond_3a
+    if-eqz p1, :cond_2
 
     .line 57
     .line 58
     const/4 v1, 0x1
 
     .line 59
-    :cond_3a
+    :cond_2
     iput-boolean v1, p0, Llibs/n13;->Xi:Z
 
     .line 60
@@ -196,7 +196,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;ZJJLjava/lang/String;ZZ)V
-    .registers 10
+    .locals 0
 
     .line 62
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -228,7 +228,7 @@
 
 # virtual methods
 .method public final describeContents()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -238,7 +238,7 @@
 .end method
 
 .method public final writeToParcel(Landroid/os/Parcel;I)V
-    .registers 5
+    .locals 2
 
     .line 1
     iget-object p2, p0, Llibs/n13;->X:Ljava/lang/String;

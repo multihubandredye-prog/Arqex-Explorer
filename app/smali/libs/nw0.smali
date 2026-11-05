@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/cv;Landroid/graphics/drawable/Drawable;)V
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -142,7 +142,7 @@
 
 # virtual methods
 .method public final onDraw(Landroid/graphics/Canvas;)V
-    .registers 8
+    .locals 6
 
     .line 1
     invoke-super {p0, p1}, Landroid/widget/HorizontalScrollView;->onDraw(Landroid/graphics/Canvas;)V
@@ -162,14 +162,14 @@
     move-result-object v1
 
     .line 10
-    if-nez v1, :cond_c
+    if-nez v1, :cond_0
 
     .line 11
     .line 12
     return-void
 
     .line 13
-    :cond_c
+    :cond_0
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     .line 14
@@ -217,7 +217,7 @@
     .line 34
     .line 35
     .line 36
-    :try_start_23
+    :try_start_0
     invoke-virtual {v0}, Llibs/cv;->getLayout()Llibs/rl3;
 
     .line 37
@@ -259,14 +259,14 @@
 
     .line 54
     invoke-virtual {v1, p1, v2, v3, v4}, Llibs/rl3;->String(Landroid/graphics/Canvas;FFF)V
-    :try_end_38
-    .catchall {:try_start_23 .. :try_end_38} :catchall_38
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 55
     .line 56
     .line 57
-    :catchall_38
-    :try_start_38
+    :catchall_0
+    :try_start_1
     invoke-virtual {v0}, Llibs/cv;->getLayout()Llibs/rl3;
 
     .line 58
@@ -290,13 +290,13 @@
 
     .line 67
     invoke-virtual {v0, p1, v1, v2}, Llibs/rl3;->Object(Landroid/graphics/Canvas;FF)V
-    :try_end_45
-    .catchall {:try_start_38 .. :try_end_45} :catchall_45
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 68
     .line 69
     .line 70
-    :catchall_45
+    :catchall_1
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     .line 71
@@ -306,7 +306,7 @@
 .end method
 
 .method public final onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
@@ -320,7 +320,7 @@
     const/4 v1, 0x2
 
     .line 6
-    if-ne v0, v1, :cond_20
+    if-ne v0, v1, :cond_1
 
     .line 7
     .line 8
@@ -336,7 +336,7 @@
 
     .line 13
     .line 14
-    if-nez v1, :cond_1e
+    if-nez v1, :cond_0
 
     .line 15
     .line 16
@@ -355,7 +355,7 @@
 
     .line 22
     .line 23
-    if-eqz v2, :cond_1e
+    if-eqz v2, :cond_0
 
     .line 24
     .line 25
@@ -367,18 +367,18 @@
 
     .line 28
     .line 29
-    if-gez v0, :cond_20
+    if-gez v0, :cond_1
 
     .line 30
     .line 31
-    :cond_1e
+    :cond_0
     const/4 p1, 0x0
 
     .line 32
     return p1
 
     .line 33
-    :cond_20
+    :cond_1
     invoke-super {p0, p1}, Landroid/widget/HorizontalScrollView;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
     .line 34
@@ -391,7 +391,7 @@
 .end method
 
 .method public final onLayout(ZIIII)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-super/range {p0 .. p5}, Landroid/widget/HorizontalScrollView;->onLayout(ZIIII)V
@@ -403,7 +403,7 @@
 .end method
 
 .method public final onScrollChanged(IIII)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/HorizontalScrollView;->onScrollChanged(IIII)V
@@ -438,7 +438,7 @@
     move-result p3
 
     .line 17
-    if-ge p1, p3, :cond_17
+    if-ge p1, p3, :cond_0
 
     .line 18
     .line 19
@@ -451,6 +451,6 @@
     .line 22
     .line 23
     .line 24
-    :cond_17
+    :cond_0
     return-void
 .end method

@@ -11,7 +11,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/security/MessageDigest;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/fd1;->X:B
@@ -33,14 +33,14 @@
 
 # virtual methods
 .method public final write(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/fd1;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_14
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -60,7 +60,7 @@
     return-void
 
     .line 13
-    :pswitch_c
+    :pswitch_0
     iget-object v0, p0, Llibs/fd1;->Y:Ljava/security/MessageDigest;
 
     .line 14
@@ -79,18 +79,18 @@
     nop
 
     .line 21
-    :pswitch_data_14
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_c
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final write([B)V
-    .registers 3
+    .locals 1
 
     iget-byte v0, p0, Llibs/fd1;->X:B
 
-    packed-switch v0, :pswitch_data_12
+    packed-switch v0, :pswitch_data_0
 
     .line 21
     iget-object v0, p0, Llibs/fd1;->Y:Ljava/security/MessageDigest;
@@ -100,7 +100,7 @@
     return-void
 
     .line 22
-    :pswitch_b
+    :pswitch_0
     iget-object v0, p0, Llibs/fd1;->Y:Ljava/security/MessageDigest;
 
     invoke-virtual {v0, p1}, Ljava/security/MessageDigest;->update([B)V
@@ -109,18 +109,18 @@
 
     nop
 
-    :pswitch_data_12
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_b
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final write([BII)V
-    .registers 5
+    .locals 1
 
     iget-byte v0, p0, Llibs/fd1;->X:B
 
-    packed-switch v0, :pswitch_data_12
+    packed-switch v0, :pswitch_data_0
 
     .line 23
     iget-object v0, p0, Llibs/fd1;->Y:Ljava/security/MessageDigest;
@@ -130,7 +130,7 @@
     return-void
 
     .line 24
-    :pswitch_b
+    :pswitch_0
     iget-object v0, p0, Llibs/fd1;->Y:Ljava/security/MessageDigest;
 
     invoke-virtual {v0, p1, p2, p3}, Ljava/security/MessageDigest;->update([BII)V
@@ -139,8 +139,8 @@
 
     nop
 
-    :pswitch_data_12
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_b
+        :pswitch_0
     .end packed-switch
 .end method

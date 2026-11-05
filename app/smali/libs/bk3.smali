@@ -15,14 +15,14 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/bk3;->a:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_18
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -46,7 +46,7 @@
     return-void
 
     .line 15
-    :pswitch_e
+    :pswitch_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 16
@@ -69,16 +69,16 @@
     nop
 
     .line 25
-    :pswitch_data_18
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_e
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public final a([B)V
-    .registers 16
+    .locals 14
 
     .line 1
     iget-byte v0, p0, Llibs/bk3;->a:B
@@ -105,7 +105,7 @@
 
     .line 10
     .line 11
-    packed-switch v0, :pswitch_data_9a
+    packed-switch v0, :pswitch_data_0
 
     .line 12
     .line 13
@@ -126,8 +126,8 @@
 
     .line 21
     .line 22
-    :goto_15
-    if-ltz v1, :cond_5f
+    :goto_0
+    if-ltz v1, :cond_0
 
     .line 23
     .line 24
@@ -282,10 +282,10 @@
 
     .line 94
     .line 95
-    goto :goto_15
+    goto :goto_0
 
     .line 96
-    :cond_5f
+    :cond_0
     invoke-static {p1, v6}, Llibs/ji0;->Link([B[I)V
 
     .line 97
@@ -294,7 +294,7 @@
     return-void
 
     .line 100
-    :pswitch_63
+    :pswitch_0
     aput v5, v6, v5
 
     .line 101
@@ -311,8 +311,8 @@
 
     .line 107
     .line 108
-    :goto_6b
-    if-ltz v1, :cond_96
+    :goto_1
+    if-ltz v1, :cond_1
 
     .line 109
     .line 110
@@ -400,10 +400,10 @@
 
     .line 149
     .line 150
-    goto :goto_6b
+    goto :goto_1
 
     .line 151
-    :cond_96
+    :cond_1
     invoke-static {p1, v6}, Llibs/ji0;->Link([B[I)V
 
     .line 152
@@ -412,8 +412,8 @@
     return-void
 
     .line 155
-    :pswitch_data_9a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_63
+        :pswitch_0
     .end packed-switch
 .end method

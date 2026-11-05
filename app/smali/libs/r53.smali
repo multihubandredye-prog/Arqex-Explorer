@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/r53;->Xi:B
@@ -40,7 +40,7 @@
 .end method
 
 .method private final e(II[B[B)V
-    .registers 8
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/r53;->Y:[I
@@ -3568,7 +3568,7 @@
 .end method
 
 .method public static q(II)I
-    .registers 3
+    .locals 1
 
     .line 1
     shl-int v0, p0, p1
@@ -3588,7 +3588,7 @@
 .end method
 
 .method public static s(II)I
-    .registers 3
+    .locals 1
 
     .line 1
     ushr-int v0, p0, p1
@@ -3610,7 +3610,7 @@
 
 # virtual methods
 .method public final Object(IIII)V
-    .registers 7
+    .locals 2
 
     .line 1
     xor-int v0, p2, p3
@@ -3685,7 +3685,7 @@
 .end method
 
 .method public final a(ZLlibs/et;)V
-    .registers 38
+    .locals 35
 
     .line 1
     move-object/from16 v0, p0
@@ -3700,7 +3700,7 @@
 
     .line 6
     .line 7
-    if-eqz v2, :cond_b75
+    if-eqz v2, :cond_a
 
     .line 8
     .line 9
@@ -3788,7 +3788,7 @@
 
     .line 50
     .line 51
-    packed-switch v2, :pswitch_data_b8a
+    packed-switch v2, :pswitch_data_0
 
     .line 52
     .line 53
@@ -3831,8 +3831,8 @@
 
     .line 71
     .line 72
-    :goto_47
-    if-lez v4, :cond_56
+    :goto_0
+    if-lez v4, :cond_0
 
     .line 73
     .line 74
@@ -3860,11 +3860,11 @@
 
     .line 85
     .line 86
-    goto :goto_47
+    goto :goto_0
 
     .line 87
-    :cond_56
-    if-nez v4, :cond_5cb
+    :cond_0
+    if-nez v4, :cond_4
 
     .line 88
     .line 89
@@ -3892,7 +3892,7 @@
 
     .line 100
     .line 101
-    if-ge v4, v1, :cond_68
+    if-ge v4, v1, :cond_1
 
     .line 102
     .line 103
@@ -3900,7 +3900,7 @@
 
     .line 104
     .line 105
-    :cond_68
+    :cond_1
     const/16 v4, 0x84
 
     .line 106
@@ -3921,7 +3921,7 @@
 
     .line 114
     .line 115
-    :goto_72
+    :goto_1
     const v30, -0x61c88647
 
     .line 116
@@ -3935,7 +3935,7 @@
 
     .line 121
     .line 122
-    if-ge v7, v2, :cond_a2
+    if-ge v7, v2, :cond_2
 
     .line 123
     .line 124
@@ -4015,10 +4015,10 @@
 
     .line 161
     .line 162
-    goto :goto_72
+    goto :goto_1
 
     .line 163
-    :cond_a2
+    :cond_2
     const/16 v33, 0x10
 
     .line 164
@@ -4032,8 +4032,8 @@
 
     .line 169
     .line 170
-    :goto_a9
-    if-ge v2, v4, :cond_ca
+    :goto_2
+    if-ge v2, v4, :cond_3
 
     .line 171
     .line 172
@@ -4101,10 +4101,10 @@
 
     .line 201
     .line 202
-    goto :goto_a9
+    goto :goto_2
 
     .line 203
-    :cond_ca
+    :cond_3
     aget v2, v6, v5
 
     .line 204
@@ -6634,11 +6634,11 @@
 
     .line 1481
     .line 1482
-    goto/16 :goto_b72
+    goto/16 :goto_6
 
     .line 1483
     .line 1484
-    :cond_5cb
+    :cond_4
     const-string v1, "key must be a multiple of 4 bytes"
 
     .line 1485
@@ -6651,11 +6651,11 @@
     const/4 v6, 0x0
 
     .line 1490
-    goto/16 :goto_b72
+    goto/16 :goto_6
 
     .line 1491
     .line 1492
-    :pswitch_5d3
+    :pswitch_0
     const/16 p1, 0x2a
 
     .line 1493
@@ -6697,7 +6697,7 @@
     const/4 v6, 0x0
 
     .line 1511
-    :goto_5e6
+    :goto_3
     add-int/lit8 v7, v5, 0x4
 
     .line 1512
@@ -6705,7 +6705,7 @@
     array-length v8, v1
 
     .line 1514
-    if-ge v7, v8, :cond_5f6
+    if-ge v7, v8, :cond_5
 
     .line 1515
     .line 1516
@@ -6731,15 +6731,15 @@
     move v6, v8
 
     .line 1526
-    goto :goto_5e6
+    goto :goto_3
 
     .line 1527
-    :cond_5f6
+    :cond_5
     rem-int/lit8 v7, v5, 0x4
 
     .line 1528
     .line 1529
-    if-nez v7, :cond_b6b
+    if-nez v7, :cond_9
 
     .line 1530
     .line 1531
@@ -6766,7 +6766,7 @@
     const/4 v5, 0x1
 
     .line 1542
-    if-ge v7, v1, :cond_609
+    if-ge v7, v1, :cond_6
 
     .line 1543
     .line 1544
@@ -6774,7 +6774,7 @@
 
     .line 1545
     .line 1546
-    :cond_609
+    :cond_6
     const/16 v6, 0x84
 
     .line 1547
@@ -6787,7 +6787,7 @@
 
     .line 1551
     .line 1552
-    :goto_60f
+    :goto_4
     const v25, -0x61c88647
 
     .line 1553
@@ -6801,7 +6801,7 @@
 
     .line 1558
     .line 1559
-    if-ge v8, v2, :cond_640
+    if-ge v8, v2, :cond_7
 
     .line 1560
     .line 1561
@@ -6884,10 +6884,10 @@
     const/4 v5, 0x1
 
     .line 1600
-    goto :goto_60f
+    goto :goto_4
 
     .line 1601
-    :cond_640
+    :cond_7
     const/16 v32, 0x10
 
     .line 1602
@@ -6901,8 +6901,8 @@
 
     .line 1607
     .line 1608
-    :goto_647
-    if-ge v2, v6, :cond_668
+    :goto_5
+    if-ge v2, v6, :cond_8
 
     .line 1609
     .line 1610
@@ -6970,10 +6970,10 @@
 
     .line 1639
     .line 1640
-    goto :goto_647
+    goto :goto_5
 
     .line 1641
-    :cond_668
+    :cond_8
     aget v2, v7, v4
 
     .line 1642
@@ -9510,10 +9510,10 @@
     move-object v6, v7
 
     .line 2923
-    goto :goto_b72
+    goto :goto_6
 
     .line 2924
-    :cond_b6b
+    :cond_9
     const-string v1, "key must be a multiple of 4 bytes"
 
     .line 2925
@@ -9529,7 +9529,7 @@
     move-object v6, v1
 
     .line 2931
-    :goto_b72
+    :goto_6
     iput-object v6, v0, Llibs/r53;->Y:[I
 
     .line 2932
@@ -9537,7 +9537,7 @@
     return-void
 
     .line 2934
-    :cond_b75
+    :cond_a
     invoke-virtual {v0}, Llibs/r53;->b()Ljava/lang/String;
 
     .line 2935
@@ -9581,21 +9581,21 @@
     nop
 
     .line 2955
-    :pswitch_data_b8a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_5d3
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/r53;->Xi:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_c
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -9607,7 +9607,7 @@
     return-object v0
 
     .line 9
-    :pswitch_8
+    :pswitch_0
     const-string v0, "Tnepres"
 
     .line 10
@@ -9618,14 +9618,14 @@
     nop
 
     .line 13
-    :pswitch_data_c
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_8
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final c()V
-    .registers 6
+    .locals 5
 
     .line 1
     iget v0, p0, Llibs/r53;->Z:I
@@ -9775,14 +9775,14 @@
 .end method
 
 .method public final d(II[B[B)V
-    .registers 8
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/r53;->Xi:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_6c6
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -13311,7 +13311,7 @@
     return-void
 
     .line 1730
-    :pswitch_6c1
+    :pswitch_0
     invoke-direct {p0, p1, p2, p3, p4}, Llibs/r53;->e(II[B[B)V
 
     .line 1731
@@ -13322,14 +13322,14 @@
     .line 1734
     nop
 
-    :pswitch_data_6c6
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_6c1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final f(IIII)V
-    .registers 8
+    .locals 3
 
     .line 1
     xor-int/lit8 v0, p1, -0x1
@@ -13401,7 +13401,7 @@
 .end method
 
 .method public final g(IIII)V
-    .registers 6
+    .locals 1
 
     .line 1
     xor-int/2addr p4, p2
@@ -13471,7 +13471,7 @@
 .end method
 
 .method public final h(IIII)V
-    .registers 8
+    .locals 3
 
     .line 1
     xor-int v0, p2, p4
@@ -13548,7 +13548,7 @@
 .end method
 
 .method public final i()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x10
@@ -13559,7 +13559,7 @@
 .end method
 
 .method public final j(IIII)V
-    .registers 8
+    .locals 3
 
     .line 1
     or-int v0, p1, p2
@@ -13634,7 +13634,7 @@
 .end method
 
 .method public final k(IIII)V
-    .registers 7
+    .locals 2
 
     .line 1
     or-int v0, p3, p4
@@ -13707,7 +13707,7 @@
 .end method
 
 .method public final l(IIII)V
-    .registers 10
+    .locals 5
 
     .line 1
     xor-int/lit8 v0, p3, -0x1
@@ -13783,7 +13783,7 @@
 .end method
 
 .method public final m(IIII)V
-    .registers 8
+    .locals 3
 
     .line 1
     xor-int/lit8 v0, p1, -0x1
@@ -13857,7 +13857,7 @@
 .end method
 
 .method public final n(IIII)V
-    .registers 9
+    .locals 4
 
     .line 1
     and-int v0, p1, p2
@@ -13938,7 +13938,7 @@
 .end method
 
 .method public final p()V
-    .registers 6
+    .locals 5
 
     .line 1
     iget v0, p0, Llibs/r53;->Mu:I
@@ -14089,7 +14089,7 @@
 .end method
 
 .method public final r(II[B[B)I
-    .registers 34
+    .locals 29
 
     .line 1
     move-object/from16 v0, p0
@@ -14119,7 +14119,7 @@
     const/4 v6, 0x0
 
     .line 14
-    if-eqz v5, :cond_9ab
+    if-eqz v5, :cond_3
 
     .line 15
     .line 16
@@ -14130,7 +14130,7 @@
     array-length v7, v3
 
     .line 19
-    if-gt v5, v7, :cond_9a5
+    if-gt v5, v7, :cond_2
 
     .line 20
     .line 21
@@ -14141,7 +14141,7 @@
     array-length v7, v4
 
     .line 24
-    if-gt v5, v7, :cond_99f
+    if-gt v5, v7, :cond_1
 
     .line 25
     .line 26
@@ -14149,7 +14149,7 @@
 
     .line 27
     .line 28
-    if-eqz v5, :cond_999
+    if-eqz v5, :cond_0
 
     .line 29
     .line 30
@@ -14237,7 +14237,7 @@
 
     .line 71
     .line 72
-    packed-switch v5, :pswitch_data_9ba
+    packed-switch v5, :pswitch_data_0
 
     .line 73
     .line 74
@@ -16685,11 +16685,11 @@
     .line 1262
     .line 1263
     .line 1264
-    goto/16 :goto_998
+    goto/16 :goto_0
 
     .line 1265
     .line 1266
-    :pswitch_4f1
+    :pswitch_0
     const/16 v28, 0x10
 
     .line 1267
@@ -19137,11 +19137,11 @@
     .line 2455
     .line 2456
     .line 2457
-    :goto_998
+    :goto_0
     return v28
 
     .line 2458
-    :cond_999
+    :cond_0
     const/16 v28, 0x10
 
     .line 2459
@@ -19154,7 +19154,7 @@
     return v28
 
     .line 2464
-    :cond_99f
+    :cond_1
     const-string v1, "output buffer too short"
 
     .line 2465
@@ -19167,7 +19167,7 @@
     return v6
 
     .line 2470
-    :cond_9a5
+    :cond_2
     const-string v1, "input buffer too short"
 
     .line 2471
@@ -19180,7 +19180,7 @@
     return v6
 
     .line 2476
-    :cond_9ab
+    :cond_3
     invoke-virtual {v0}, Llibs/r53;->b()Ljava/lang/String;
 
     .line 2477
@@ -19212,21 +19212,21 @@
     nop
 
     .line 2491
-    :pswitch_data_9ba
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_4f1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final reset()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final t(IIII)V
-    .registers 8
+    .locals 3
 
     .line 1
     xor-int v0, p1, p4
@@ -19301,7 +19301,7 @@
 .end method
 
 .method public final u(IIII)V
-    .registers 6
+    .locals 1
 
     .line 1
     xor-int/lit8 v0, p1, -0x1
@@ -19369,7 +19369,7 @@
 .end method
 
 .method public final v(IIII)V
-    .registers 9
+    .locals 4
 
     .line 1
     xor-int/lit8 v0, p1, -0x1
@@ -19447,7 +19447,7 @@
 .end method
 
 .method public final w(IIII)V
-    .registers 8
+    .locals 3
 
     .line 1
     xor-int v0, p1, p2
@@ -19525,7 +19525,7 @@
 .end method
 
 .method public final x(IIII)V
-    .registers 7
+    .locals 2
 
     .line 1
     xor-int v0, p1, p4
@@ -19598,7 +19598,7 @@
 .end method
 
 .method public final y(IIII)V
-    .registers 8
+    .locals 3
 
     .line 1
     xor-int/lit8 v0, p1, -0x1
@@ -19675,7 +19675,7 @@
 .end method
 
 .method public final z(IIII)V
-    .registers 7
+    .locals 2
 
     .line 1
     xor-int/lit8 v0, p1, -0x1

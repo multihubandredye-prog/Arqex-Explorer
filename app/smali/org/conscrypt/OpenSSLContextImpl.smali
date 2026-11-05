@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>([Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 85
     invoke-direct {p0}, Ljavax/net/ssl/SSLContextSpi;-><init>()V
@@ -45,7 +45,7 @@
 .end method
 
 .method public constructor <init>([Ljava/lang/String;Z)V
-    .registers 12
+    .locals 9
 
     .line 1
     invoke-direct {p0}, Ljavax/net/ssl/SSLContextSpi;-><init>()V
@@ -63,7 +63,7 @@
     const/4 v0, 0x0
 
     .line 8
-    :try_start_7
+    :try_start_0
     iput-object v0, p0, Lorg/conscrypt/OpenSSLContextImpl;->protocols:[Ljava/lang/String;
 
     .line 9
@@ -72,7 +72,7 @@
 
     .line 11
     .line 12
-    if-nez v0, :cond_26
+    if-nez v0, :cond_0
 
     .line 13
     .line 14
@@ -113,27 +113,27 @@
 
     .line 32
     .line 33
-    :goto_20
+    :goto_0
     move-object v6, v0
 
     .line 34
     move-object v7, v1
 
     .line 35
-    goto :goto_39
+    goto :goto_1
 
     .line 36
-    :catchall_23
+    :catchall_0
     move-exception v0
 
     .line 37
     move-object p1, v0
 
     .line 38
-    goto :goto_50
+    goto :goto_2
 
     .line 39
-    :cond_26
+    :cond_0
     invoke-virtual {v0}, Lorg/conscrypt/OpenSSLContextImpl;->engineGetClientSessionContext()Ljavax/net/ssl/SSLSessionContext;
 
     .line 40
@@ -170,10 +170,10 @@
 
     .line 56
     .line 57
-    goto :goto_20
+    goto :goto_0
 
     .line 58
-    :goto_39
+    :goto_1
     new-instance v2, Lorg/conscrypt/SSLParametersImpl;
 
     .line 59
@@ -223,25 +223,25 @@
     return-void
 
     .line 81
-    :goto_50
+    :goto_2
     monitor-exit p2
-    :try_end_51
-    .catchall {:try_start_7 .. :try_end_51} :catchall_23
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 82
-    goto :goto_53
+    goto :goto_4
 
     .line 83
-    :goto_52
+    :goto_3
     throw p1
 
     .line 84
-    :goto_53
-    goto :goto_52
+    :goto_4
+    goto :goto_3
 .end method
 
 .method public static getPreferred()Lorg/conscrypt/OpenSSLContextImpl;
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Lorg/conscrypt/OpenSSLContextImpl$TLSv13;
@@ -259,12 +259,12 @@
 
 # virtual methods
 .method public engineCreateSSLEngine()Ljavax/net/ssl/SSLEngine;
-    .registers 3
+    .locals 2
 
     .line 32
     iget-object v0, p0, Lorg/conscrypt/OpenSSLContextImpl;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 33
     invoke-virtual {v0}, Lorg/conscrypt/SSLParametersImpl;->clone()Ljava/lang/Object;
@@ -290,7 +290,7 @@
     return-object v0
 
     .line 36
-    :cond_18
+    :cond_0
     const-string v0, "SSLContext is not initialized."
 
     invoke-static {v0}, Llibs/ic0;->h(Ljava/lang/String;)V
@@ -301,14 +301,14 @@
 .end method
 
 .method public engineCreateSSLEngine(Ljava/lang/String;I)Ljavax/net/ssl/SSLEngine;
-    .registers 5
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLContextImpl;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -352,7 +352,7 @@
     return-object p1
 
     .line 25
-    :cond_18
+    :cond_0
     const-string p1, "SSLContext is not initialized."
 
     .line 26
@@ -369,7 +369,7 @@
 .end method
 
 .method public engineGetClientSessionContext()Ljavax/net/ssl/SSLSessionContext;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLContextImpl;->clientSessionContext:Lorg/conscrypt/ClientSessionContext;
@@ -380,7 +380,7 @@
 .end method
 
 .method public engineGetServerSessionContext()Ljavax/net/ssl/SSLSessionContext;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLContextImpl;->serverSessionContext:Lorg/conscrypt/ServerSessionContext;
@@ -391,14 +391,14 @@
 .end method
 
 .method public engineGetServerSocketFactory()Ljavax/net/ssl/SSLServerSocketFactory;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLContextImpl;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -418,7 +418,7 @@
     return-object v0
 
     .line 13
-    :cond_c
+    :cond_0
     const-string v0, "SSLContext is not initialized."
 
     .line 14
@@ -435,14 +435,14 @@
 .end method
 
 .method public engineGetSocketFactory()Ljavax/net/ssl/SSLSocketFactory;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLContextImpl;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -470,7 +470,7 @@
     return-object v0
 
     .line 17
-    :cond_10
+    :cond_0
     const-string v0, "SSLContext is not initialized."
 
     .line 18
@@ -487,7 +487,7 @@
 .end method
 
 .method public engineInit([Ljavax/net/ssl/KeyManager;[Ljavax/net/ssl/TrustManager;Ljava/security/SecureRandom;)V
-    .registers 11
+    .locals 7
 
     .line 1
     new-instance v0, Lorg/conscrypt/SSLParametersImpl;

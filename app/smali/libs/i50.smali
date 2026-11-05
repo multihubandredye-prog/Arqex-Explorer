@@ -16,7 +16,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-wide/16 v0, 0x1
@@ -39,7 +39,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public final x()Llibs/v1;
-    .registers 7
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/i50;->X:Llibs/h50;
@@ -88,7 +88,7 @@
 
     .line 16
     .line 17
-    :cond_10
+    :cond_0
     sget-object v4, Llibs/i50;->Y:Ljava/math/BigInteger;
 
     .line 18
@@ -117,7 +117,7 @@
     move-result v5
 
     .line 31
-    if-lt v5, v3, :cond_10
+    if-lt v5, v3, :cond_0
 
     .line 32
     .line 33

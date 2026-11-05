@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ra;ZI)V
-    .registers 6
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
@@ -58,7 +58,7 @@
 
 # virtual methods
 .method public final available()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/qa;->X:Llibs/ra;
@@ -81,27 +81,27 @@
 
     .line 10
     .line 11
-    if-le v0, v1, :cond_18
+    if-le v0, v1, :cond_2
 
     .line 12
     .line 13
-    if-gez v1, :cond_f
+    if-gez v1, :cond_0
 
     .line 14
     .line 15
-    goto :goto_18
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_0
     iget-boolean v0, p0, Llibs/qa;->Y:Z
 
     .line 17
     .line 18
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1
 
     .line 19
     .line 20
-    if-nez v1, :cond_17
+    if-nez v1, :cond_1
 
     .line 21
     .line 22
@@ -111,17 +111,17 @@
     return v0
 
     .line 24
-    :cond_17
+    :cond_1
     return v1
 
     .line 25
-    :cond_18
-    :goto_18
+    :cond_2
+    :goto_0
     return v0
 .end method
 
 .method public final c()I
-    .registers 7
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/qa;->X:Llibs/ra;
@@ -136,7 +136,7 @@
     move-result v1
 
     .line 7
-    if-gez v1, :cond_a
+    if-gez v1, :cond_0
 
     .line 8
     .line 9
@@ -146,7 +146,7 @@
     return v0
 
     .line 11
-    :cond_a
+    :cond_0
     const/4 v2, 0x0
 
     .line 12
@@ -158,7 +158,7 @@
 
     .line 15
     .line 16
-    if-ge v1, v2, :cond_14
+    if-ge v1, v2, :cond_1
 
     .line 17
     .line 18
@@ -166,15 +166,15 @@
 
     .line 19
     .line 20
-    goto :goto_4f
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_1
     const/16 v3, 0xdf
 
     .line 22
     .line 23
-    if-gt v1, v3, :cond_26
+    if-gt v1, v3, :cond_2
 
     .line 24
     .line 25
@@ -205,15 +205,15 @@
 
     .line 37
     .line 38
-    goto :goto_4f
+    goto :goto_0
 
     .line 39
-    :cond_26
+    :cond_2
     const/16 v2, 0xff
 
     .line 40
     .line 41
-    if-ne v1, v2, :cond_46
+    if-ne v1, v2, :cond_3
 
     .line 42
     .line 43
@@ -274,10 +274,10 @@
 
     .line 69
     .line 70
-    goto :goto_4f
+    goto :goto_0
 
     .line 71
-    :cond_46
+    :cond_3
     const/4 v0, 0x1
 
     .line 72
@@ -297,7 +297,7 @@
 
     .line 79
     .line 80
-    :goto_4f
+    :goto_0
     iget-wide v2, p0, Llibs/qa;->Z:J
 
     .line 81
@@ -316,13 +316,13 @@
 .end method
 
 .method public final read()I
-    .registers 3
+    .locals 2
 
     .line 45
     :cond_0
     iget v0, p0, Llibs/qa;->Lambda:I
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_2
 
     .line 46
     iget-object v0, p0, Llibs/qa;->X:Llibs/ra;
@@ -331,7 +331,7 @@
 
     move-result v0
 
-    if-ltz v0, :cond_13
+    if-ltz v0, :cond_1
 
     .line 47
     iget v1, p0, Llibs/qa;->Lambda:I
@@ -343,7 +343,7 @@
     return v0
 
     .line 48
-    :cond_13
+    :cond_1
     new-instance v0, Ljava/io/EOFException;
 
     const-string v1, "premature end of stream in PartialInputStream"
@@ -353,10 +353,10 @@
     throw v0
 
     .line 49
-    :cond_1b
+    :cond_2
     iget-boolean v0, p0, Llibs/qa;->Y:Z
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_3
 
     invoke-virtual {p0}, Llibs/qa;->c()I
 
@@ -364,14 +364,14 @@
 
     if-gez v0, :cond_0
 
-    :cond_25
+    :cond_3
     const/4 v0, -0x1
 
     return v0
 .end method
 
 .method public final read([BII)I
-    .registers 5
+    .locals 1
 
     .line 1
     :cond_0
@@ -379,27 +379,27 @@
 
     .line 2
     .line 3
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_4
 
     .line 4
     .line 5
-    if-gt v0, p3, :cond_a
+    if-gt v0, p3, :cond_2
 
     .line 6
     .line 7
-    if-gez v0, :cond_9
+    if-gez v0, :cond_1
 
     .line 8
     .line 9
-    goto :goto_a
+    goto :goto_0
 
     .line 10
-    :cond_9
+    :cond_1
     move p3, v0
 
     .line 11
-    :cond_a
-    :goto_a
+    :cond_2
+    :goto_0
     iget-object v0, p0, Llibs/qa;->X:Llibs/ra;
 
     .line 12
@@ -412,7 +412,7 @@
     move-result p1
 
     .line 17
-    if-ltz p1, :cond_18
+    if-ltz p1, :cond_3
 
     .line 18
     .line 19
@@ -430,7 +430,7 @@
     return p1
 
     .line 25
-    :cond_18
+    :cond_3
     new-instance p1, Ljava/io/EOFException;
 
     .line 26
@@ -447,12 +447,12 @@
     throw p1
 
     .line 33
-    :cond_20
+    :cond_4
     iget-boolean v0, p0, Llibs/qa;->Y:Z
 
     .line 34
     .line 35
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_5
 
     .line 36
     .line 37
@@ -468,7 +468,7 @@
 
     .line 42
     .line 43
-    :cond_2a
+    :cond_5
     const/4 p1, -0x1
 
     .line 44

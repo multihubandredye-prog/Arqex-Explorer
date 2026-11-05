@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;)V
-    .registers 2
+    .locals 0
 
     .line 131
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 3
+    .locals 1
 
     .line 136
     iget-object p1, p0, Llibs/ArqexUpdater$RowClick;->activity:Landroid/app/Activity;

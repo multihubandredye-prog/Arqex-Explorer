@@ -38,7 +38,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -95,7 +95,7 @@
 
 # virtual methods
 .method public add(Lorg/conscrypt/ct/VerifiedSCT;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-virtual {p1}, Lorg/conscrypt/ct/VerifiedSCT;->isValid()Z
@@ -106,7 +106,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -119,10 +119,10 @@
     .line 10
     .line 11
     .line 12
-    goto :goto_11
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     iget-object v0, p0, Lorg/conscrypt/ct/VerificationResult;->invalidSCTs:Ljava/util/List;
 
     .line 14
@@ -132,7 +132,7 @@
     .line 16
     .line 17
     .line 18
-    :goto_11
+    :goto_0
     invoke-virtual {p1}, Lorg/conscrypt/ct/VerifiedSCT;->getSct()Lorg/conscrypt/ct/SignedCertificateTimestamp;
 
     .line 19
@@ -172,7 +172,7 @@
     const/4 v2, 0x1
 
     .line 37
-    if-nez v0, :cond_2e
+    if-nez v0, :cond_1
 
     .line 38
     .line 39
@@ -192,7 +192,7 @@
     return-void
 
     .line 47
-    :cond_2e
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     .line 48
@@ -221,7 +221,7 @@
 .end method
 
 .method public getInvalidSCTs()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -248,7 +248,7 @@
 .end method
 
 .method public getValidSCTs()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -275,7 +275,7 @@
 .end method
 
 .method public numCertSCTs()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ct/VerificationResult;->count:Ljava/util/EnumMap;
@@ -298,7 +298,7 @@
 
     .line 10
     .line 11
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 12
     .line 13
@@ -308,7 +308,7 @@
     return v0
 
     .line 15
-    :cond_e
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     .line 16
@@ -321,7 +321,7 @@
 .end method
 
 .method public numOCSPSCTs()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ct/VerificationResult;->count:Ljava/util/EnumMap;
@@ -344,7 +344,7 @@
 
     .line 10
     .line 11
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 12
     .line 13
@@ -354,7 +354,7 @@
     return v0
 
     .line 15
-    :cond_e
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     .line 16
@@ -367,7 +367,7 @@
 .end method
 
 .method public numTlsSCTs()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ct/VerificationResult;->count:Ljava/util/EnumMap;
@@ -390,7 +390,7 @@
 
     .line 10
     .line 11
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 12
     .line 13
@@ -400,7 +400,7 @@
     return v0
 
     .line 15
-    :cond_e
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     .line 16

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/wc;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final engineGenerateParameters()Ljava/security/AlgorithmParameters;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/ei2;->c:Ljavax/crypto/spec/RC2ParameterSpec;
@@ -44,7 +44,7 @@
 
     .line 5
     .line 6
-    if-nez v0, :cond_2f
+    if-nez v0, :cond_1
 
     .line 7
     .line 8
@@ -60,7 +60,7 @@
 
     .line 13
     .line 14
-    if-nez v3, :cond_16
+    if-nez v3, :cond_0
 
     .line 15
     .line 16
@@ -77,13 +77,13 @@
 
     .line 22
     .line 23
-    :cond_16
+    :cond_0
     invoke-virtual {v3, v0}, Ljava/security/SecureRandom;->nextBytes([B)V
 
     .line 24
     .line 25
     .line 26
-    :try_start_19
+    :try_start_0
     invoke-virtual {p0, v2}, Llibs/wc;->a(Ljava/lang/String;)Ljava/security/AlgorithmParameters;
 
     .line 27
@@ -102,8 +102,8 @@
     .line 34
     .line 35
     invoke-virtual {v2, v3}, Ljava/security/AlgorithmParameters;->init(Ljava/security/spec/AlgorithmParameterSpec;)V
-    :try_end_25
-    .catch Ljava/lang/Exception; {:try_start_19 .. :try_end_25} :catch_26
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 36
     .line 37
@@ -111,7 +111,7 @@
     return-object v2
 
     .line 39
-    :catch_26
+    :catch_0
     move-exception v0
 
     .line 40
@@ -131,8 +131,8 @@
     return-object v1
 
     .line 48
-    :cond_2f
-    :try_start_2f
+    :cond_1
+    :try_start_1
     invoke-virtual {p0, v2}, Llibs/wc;->a(Ljava/lang/String;)Ljava/security/AlgorithmParameters;
 
     .line 49
@@ -146,8 +146,8 @@
     .line 53
     .line 54
     invoke-virtual {v0, v2}, Ljava/security/AlgorithmParameters;->init(Ljava/security/spec/AlgorithmParameterSpec;)V
-    :try_end_38
-    .catch Ljava/lang/Exception; {:try_start_2f .. :try_end_38} :catch_39
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 55
     .line 56
@@ -155,7 +155,7 @@
     return-object v0
 
     .line 58
-    :catch_39
+    :catch_1
     move-exception v0
 
     .line 59
@@ -176,14 +176,14 @@
 .end method
 
 .method public final engineInit(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    .registers 3
+    .locals 0
 
     .line 1
     instance-of p2, p1, Ljavax/crypto/spec/RC2ParameterSpec;
 
     .line 2
     .line 3
-    if-eqz p2, :cond_9
+    if-eqz p2, :cond_0
 
     .line 4
     .line 5
@@ -198,7 +198,7 @@
     return-void
 
     .line 10
-    :cond_9
+    :cond_0
     const-string p1, "No supported AlgorithmParameterSpec for RC2 parameter generation."
 
     .line 11

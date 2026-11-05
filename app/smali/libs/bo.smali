@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/bc0;Ljava/util/concurrent/ConcurrentHashMap;)V
-    .registers 6
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/s73;
@@ -52,7 +52,7 @@
 
 # virtual methods
 .method public final a(Llibs/yp2;Llibs/cp2;)Llibs/do2;
-    .registers 5
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/bo;->b:Llibs/bc0;
@@ -67,7 +67,7 @@
     move-result-object p1
 
     .line 7
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_0
 
     .line 8
     .line 9
@@ -87,7 +87,7 @@
     move-result-object p2
 
     .line 17
-    if-eqz p2, :cond_1b
+    if-eqz p2, :cond_0
 
     .line 18
     .line 19
@@ -108,6 +108,6 @@
     .line 26
     .line 27
     .line 28
-    :cond_1b
+    :cond_0
     return-object p1
 .end method

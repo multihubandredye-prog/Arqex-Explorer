@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public final a()V
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -252,7 +252,7 @@
 .end method
 
 .method public final compareTo(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
 
     .line 1
     check-cast p1, Llibs/gk3;
@@ -282,14 +282,14 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Llibs/gk3;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -309,7 +309,7 @@
     move-result v0
 
     .line 13
-    if-ne p1, v0, :cond_10
+    if-ne p1, v0, :cond_0
 
     .line 14
     .line 15
@@ -319,7 +319,7 @@
     return p1
 
     .line 17
-    :cond_10
+    :cond_0
     const/4 p1, 0x0
 
     .line 18
@@ -327,14 +327,14 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/gk3;->Sigma:I
 
     .line 2
     .line 3
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -343,7 +343,7 @@
     .line 6
     .line 7
     .line 8
-    :cond_7
+    :cond_0
     iget v0, p0, Llibs/gk3;->Sigma:I
 
     .line 9

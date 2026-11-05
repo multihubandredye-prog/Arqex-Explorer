@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/OpenSSLCipher$Mode;->POLY1305:Lorg/conscrypt/OpenSSLCipher$Mode;
@@ -23,21 +23,21 @@
 
 # virtual methods
 .method public checkSupportedKeySize(I)V
-    .registers 5
+    .locals 3
 
     .line 1
     const/16 v0, 0x20
 
     .line 2
     .line 3
-    if-ne p1, v0, :cond_5
+    if-ne p1, v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     new-instance v0, Ljava/security/InvalidKeyException;
 
     .line 7
@@ -67,21 +67,21 @@
 .end method
 
 .method public checkSupportedMode(Lorg/conscrypt/OpenSSLCipher$Mode;)V
-    .registers 3
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/OpenSSLCipher$Mode;->POLY1305:Lorg/conscrypt/OpenSSLCipher$Mode;
 
     .line 2
     .line 3
-    if-ne p1, v0, :cond_5
+    if-ne p1, v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     new-instance p1, Ljava/security/NoSuchAlgorithmException;
 
     .line 7
@@ -99,7 +99,7 @@
 .end method
 
 .method public getBaseCipherName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "ChaCha20"
@@ -110,7 +110,7 @@
 .end method
 
 .method public getCipherBlockSize()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -120,14 +120,14 @@
 .end method
 
 .method public getEVP_AEAD(I)J
-    .registers 4
+    .locals 2
 
     .line 1
     const/16 v0, 0x20
 
     .line 2
     .line 3
-    if-ne p1, v0, :cond_9
+    if-ne p1, v0, :cond_0
 
     .line 4
     .line 5
@@ -142,7 +142,7 @@
     return-wide v0
 
     .line 10
-    :cond_9
+    :cond_0
     const-string v0, "Unexpected key length: "
 
     .line 11
@@ -168,7 +168,7 @@
 .end method
 
 .method public getOutputSizeForFinal(I)I
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLCipher;->isEncrypting()Z
@@ -183,7 +183,7 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -197,7 +197,7 @@
     return v1
 
     .line 13
-    :cond_c
+    :cond_0
     add-int/2addr v1, p1
 
     .line 14

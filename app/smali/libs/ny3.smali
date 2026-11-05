@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Z)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-boolean p2, p0, Llibs/ny3;->X:Z
@@ -36,14 +36,14 @@
 
 # virtual methods
 .method public final b(Llibs/np0;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/ny3;->X:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_13
+    if-nez v0, :cond_1
 
     .line 4
     .line 5
@@ -67,22 +67,22 @@
     move-result p1
 
     .line 15
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_0
 
     .line 16
     .line 17
-    goto :goto_13
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     const/4 p1, 0x0
 
     .line 19
     return p1
 
     .line 20
-    :cond_13
-    :goto_13
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
     .line 21

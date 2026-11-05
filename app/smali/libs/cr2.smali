@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/cr2;->a:B
@@ -28,7 +28,7 @@
 .end method
 
 .method public static synthetic a()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/InterruptedException;
@@ -44,7 +44,7 @@
 .end method
 
 .method public static synthetic b(ILjava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -82,7 +82,7 @@
 .end method
 
 .method public static synthetic c(Ljava/lang/String;)V
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/NullPointerException;
@@ -98,7 +98,7 @@
 .end method
 
 .method public static synthetic d(Ljava/lang/String;)V
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/my3;
@@ -114,20 +114,20 @@
 .end method
 
 .method public static e(II)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x2
 
     .line 2
-    if-eq p0, v0, :cond_4
+    if-eq p0, v0, :cond_0
 
     .line 3
     .line 4
     return-void
 
     .line 5
-    :cond_4
+    :cond_0
     const/4 p0, 0x0
 
     .line 6
@@ -135,7 +135,7 @@
 
     .line 7
     .line 8
-    if-nez p1, :cond_d
+    if-nez p1, :cond_1
 
     .line 9
     .line 10
@@ -147,7 +147,7 @@
     return-void
 
     .line 14
-    :cond_d
+    :cond_1
     sget-object p1, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 15
@@ -163,14 +163,14 @@
 
 # virtual methods
 .method public apply(Ljava/lang/Object;)Ljava/lang/Long;
-    .registers 6
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/cr2;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_2e
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -191,7 +191,7 @@
 
     .line 13
     .line 14
-    :goto_d
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 15
@@ -200,7 +200,7 @@
     move-result v2
 
     .line 18
-    if-eqz v2, :cond_1f
+    if-eqz v2, :cond_0
 
     .line 19
     .line 20
@@ -227,10 +227,10 @@
     add-long/2addr v0, v2
 
     .line 31
-    goto :goto_d
+    goto :goto_0
 
     .line 32
-    :cond_1f
+    :cond_0
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     .line 33
@@ -242,7 +242,7 @@
     return-object p1
 
     .line 37
-    :pswitch_24
+    :pswitch_0
     check-cast p1, Llibs/jw2;
 
     .line 38
@@ -265,8 +265,8 @@
     return-object p1
 
     .line 47
-    :pswitch_data_2e
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_24
+        :pswitch_0
     .end packed-switch
 .end method

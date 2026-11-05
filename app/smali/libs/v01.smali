@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Thread;Llibs/b11;J)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/v01;->a:Ljava/lang/Thread;
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final onProgress(JJ)V
-    .registers 9
+    .locals 4
 
     .line 1
     iget-object p3, p0, Llibs/v01;->a:Ljava/lang/Thread;
@@ -54,7 +54,7 @@
     move-result p3
 
     .line 7
-    if-nez p3, :cond_13
+    if-nez p3, :cond_0
 
     .line 8
     .line 9
@@ -83,7 +83,7 @@
     return-void
 
     .line 20
-    :cond_13
+    :cond_0
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 21

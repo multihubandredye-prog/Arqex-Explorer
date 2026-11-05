@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/os/Handler;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final execute(Ljava/lang/Runnable;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/jf;->X:Landroid/os/Handler;

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/OutputStream;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/v60;-><init>(Ljava/lang/Object;)V
@@ -30,14 +30,14 @@
 
 # virtual methods
 .method public final Node(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/Media;->Lambda:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -51,7 +51,7 @@
     return-void
 
     .line 9
-    :cond_8
+    :cond_0
     invoke-super {p0, p1}, Llibs/v60;->Node(I)V
 
     .line 10

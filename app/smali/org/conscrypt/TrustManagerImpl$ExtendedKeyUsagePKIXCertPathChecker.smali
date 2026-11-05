@@ -35,7 +35,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/util/HashSet;
@@ -75,7 +75,7 @@
 .end method
 
 .method private constructor <init>(ZLjava/security/cert/X509Certificate;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/security/cert/PKIXCertPathChecker;-><init>()V
@@ -95,7 +95,7 @@
 .end method
 
 .method public synthetic constructor <init>(ZLjava/security/cert/X509Certificate;I)V
-    .registers 4
+    .locals 0
 
     .line 9
     invoke-direct {p0, p1, p2}, Lorg/conscrypt/TrustManagerImpl$ExtendedKeyUsagePKIXCertPathChecker;-><init>(ZLjava/security/cert/X509Certificate;)V
@@ -106,7 +106,7 @@
 
 # virtual methods
 .method public check(Ljava/security/cert/Certificate;Ljava/util/Collection;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -122,34 +122,34 @@
 
     .line 2
     .line 3
-    if-eq p1, v0, :cond_5
+    if-eq p1, v0, :cond_0
 
     .line 4
     .line 5
-    goto :goto_b
+    goto :goto_0
 
     .line 6
-    :cond_5
-    :try_start_5
+    :cond_0
+    :try_start_0
     invoke-virtual {v0}, Ljava/security/cert/X509Certificate;->getExtendedKeyUsage()Ljava/util/List;
 
     .line 7
     .line 8
     .line 9
     move-result-object p1
-    :try_end_9
-    .catch Ljava/security/cert/CertificateParsingException; {:try_start_5 .. :try_end_9} :catch_5a
+    :try_end_0
+    .catch Ljava/security/cert/CertificateParsingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 10
-    if-nez p1, :cond_c
+    if-nez p1, :cond_1
 
     .line 11
     .line 12
-    :goto_b
+    :goto_0
     return-void
 
     .line 13
-    :cond_c
+    :cond_1
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     .line 14
@@ -158,7 +158,7 @@
     move-result-object p1
 
     .line 17
-    :cond_10
+    :cond_2
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 18
@@ -167,7 +167,7 @@
     move-result v0
 
     .line 21
-    if-eqz v0, :cond_52
+    if-eqz v0, :cond_7
 
     .line 22
     .line 23
@@ -195,19 +195,19 @@
     move-result v1
 
     .line 35
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_3
 
     .line 36
     .line 37
-    goto :goto_4c
+    goto :goto_1
 
     .line 38
-    :cond_25
+    :cond_3
     iget-boolean v1, p0, Lorg/conscrypt/TrustManagerImpl$ExtendedKeyUsagePKIXCertPathChecker;->clientAuth:Z
 
     .line 39
     .line 40
-    if-eqz v1, :cond_32
+    if-eqz v1, :cond_4
 
     .line 41
     .line 42
@@ -223,14 +223,14 @@
     move-result v0
 
     .line 48
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_2
 
     .line 49
     .line 50
-    goto :goto_4c
+    goto :goto_1
 
     .line 51
-    :cond_32
+    :cond_4
     const-string v1, "1.3.6.1.5.5.7.3.1"
 
     .line 52
@@ -243,14 +243,14 @@
     move-result v1
 
     .line 57
-    if-eqz v1, :cond_3b
+    if-eqz v1, :cond_5
 
     .line 58
     .line 59
-    goto :goto_4c
+    goto :goto_1
 
     .line 60
-    :cond_3b
+    :cond_5
     const-string v1, "2.16.840.1.113730.4.1"
 
     .line 61
@@ -263,14 +263,14 @@
     move-result v1
 
     .line 66
-    if-eqz v1, :cond_44
+    if-eqz v1, :cond_6
 
     .line 67
     .line 68
-    goto :goto_4c
+    goto :goto_1
 
     .line 69
-    :cond_44
+    :cond_6
     const-string v1, "1.3.6.1.4.1.311.10.3.3"
 
     .line 70
@@ -283,11 +283,11 @@
     move-result v0
 
     .line 75
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_2
 
     .line 76
     .line 77
-    :goto_4c
+    :goto_1
     const-string p1, "2.5.29.37"
 
     .line 78
@@ -300,7 +300,7 @@
     return-void
 
     .line 83
-    :cond_52
+    :cond_7
     new-instance p1, Ljava/security/cert/CertPathValidatorException;
 
     .line 84
@@ -317,7 +317,7 @@
     throw p1
 
     .line 91
-    :catch_5a
+    :catch_0
     move-exception p1
 
     .line 92
@@ -330,19 +330,19 @@
     .line 95
     .line 96
     .line 97
-    goto :goto_62
+    goto :goto_3
 
     .line 98
-    :goto_61
+    :goto_2
     throw p2
 
     .line 99
-    :goto_62
-    goto :goto_61
+    :goto_3
+    goto :goto_2
 .end method
 
 .method public getSupportedExtensions()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -361,14 +361,14 @@
 .end method
 
 .method public init(Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public isForwardCheckingSupported()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1

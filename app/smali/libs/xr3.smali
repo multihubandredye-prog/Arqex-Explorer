@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public final a()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/xr3;->b:I
@@ -59,7 +59,7 @@
     const/4 v1, -0x1
 
     .line 4
-    if-eq v0, v1, :cond_b
+    if-eq v0, v1, :cond_0
 
     .line 5
     .line 6
@@ -67,7 +67,7 @@
 
     .line 7
     .line 8
-    if-ge v1, v0, :cond_b
+    if-ge v1, v0, :cond_0
 
     .line 9
     .line 10
@@ -77,7 +77,7 @@
     return v0
 
     .line 12
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
     .line 13
@@ -85,7 +85,7 @@
 .end method
 
 .method public final b()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/xr3;->d:Ljava/lang/String;
@@ -115,7 +115,7 @@
     const/4 v1, -0x1
 
     .line 14
-    if-ne v0, v1, :cond_16
+    if-ne v0, v1, :cond_0
 
     .line 15
     .line 16
@@ -134,12 +134,12 @@
     return-void
 
     .line 23
-    :cond_16
+    :cond_0
     iget v1, p0, Llibs/xr3;->a:I
 
     .line 24
     .line 25
-    if-ne v0, v1, :cond_21
+    if-ne v0, v1, :cond_1
 
     .line 26
     .line 27
@@ -156,12 +156,12 @@
     .line 32
     .line 33
     .line 34
-    :cond_21
+    :cond_1
     return-void
 .end method
 
 .method public final c()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Llibs/xr3;->a()Z
@@ -172,7 +172,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -216,7 +216,7 @@
     return-object v0
 
     .line 27
-    :cond_1a
+    :cond_0
     invoke-static {}, Llibs/t22;->b()V
 
     .line 28

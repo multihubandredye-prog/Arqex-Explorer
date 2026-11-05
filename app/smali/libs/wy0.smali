@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic Object(Landroid/hardware/usb/UsbInterface;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/hardware/usb/UsbInterface;->getInterfaceProtocol()I
@@ -20,7 +20,7 @@
 .end method
 
 .method public static bridge synthetic String(Landroid/hardware/usb/UsbInterface;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/hardware/usb/UsbInterface;->getEndpointCount()I
@@ -35,7 +35,7 @@
 .end method
 
 .method public static bridge synthetic a(Landroid/view/MotionEvent;I)F
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/MotionEvent;->getAxisValue(I)F
@@ -50,7 +50,7 @@
 .end method
 
 .method public static bridge synthetic b(Landroid/hardware/usb/UsbDevice;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/hardware/usb/UsbDevice;->getDeviceSubclass()I
@@ -65,7 +65,7 @@
 .end method
 
 .method public static bridge synthetic c(Landroid/hardware/usb/UsbDeviceConnection;I[B)I
-    .registers 11
+    .locals 8
 
     .line 1
     const/4 v6, 0x1
@@ -107,7 +107,7 @@
 .end method
 
 .method public static bridge synthetic d(Landroid/hardware/usb/UsbDeviceConnection;Landroid/hardware/usb/UsbEndpoint;[BII)I
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/hardware/usb/UsbDeviceConnection;->bulkTransfer(Landroid/hardware/usb/UsbEndpoint;[BII)I
@@ -122,7 +122,7 @@
 .end method
 
 .method public static bridge synthetic e(Landroid/hardware/usb/UsbEndpoint;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/hardware/usb/UsbEndpoint;->getMaxPacketSize()I
@@ -137,7 +137,7 @@
 .end method
 
 .method public static bridge synthetic f(Landroid/hardware/usb/UsbInterface;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/hardware/usb/UsbInterface;->getInterfaceClass()I
@@ -152,7 +152,7 @@
 .end method
 
 .method public static bridge synthetic g(Ljava/lang/Object;)Landroid/hardware/usb/UsbDevice;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Landroid/hardware/usb/UsbDevice;
@@ -163,7 +163,7 @@
 .end method
 
 .method public static bridge synthetic h(Landroid/hardware/usb/UsbDevice;Landroid/hardware/usb/UsbManager;)Landroid/hardware/usb/UsbDeviceConnection;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p1, p0}, Landroid/hardware/usb/UsbManager;->openDevice(Landroid/hardware/usb/UsbDevice;)Landroid/hardware/usb/UsbDeviceConnection;
@@ -178,7 +178,7 @@
 .end method
 
 .method public static bridge synthetic i(Landroid/hardware/usb/UsbInterface;I)Landroid/hardware/usb/UsbEndpoint;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/hardware/usb/UsbInterface;->getEndpoint(I)Landroid/hardware/usb/UsbEndpoint;
@@ -193,7 +193,7 @@
 .end method
 
 .method public static bridge synthetic j(Landroid/hardware/usb/UsbDevice;I)Landroid/hardware/usb/UsbInterface;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/hardware/usb/UsbDevice;->getInterface(I)Landroid/hardware/usb/UsbInterface;
@@ -208,7 +208,7 @@
 .end method
 
 .method public static bridge synthetic k(Landroid/hardware/usb/UsbDevice;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/hardware/usb/UsbDevice;->getDeviceName()Ljava/lang/String;
@@ -223,7 +223,7 @@
 .end method
 
 .method public static bridge synthetic l(Landroid/hardware/usb/UsbDeviceConnection;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/hardware/usb/UsbDeviceConnection;->getSerial()Ljava/lang/String;
@@ -238,7 +238,7 @@
 .end method
 
 .method public static bridge synthetic m(Landroid/hardware/usb/UsbManager;)Ljava/util/HashMap;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/hardware/usb/UsbManager;->getDeviceList()Ljava/util/HashMap;
@@ -253,7 +253,7 @@
 .end method
 
 .method public static bridge synthetic n(Landroid/hardware/usb/UsbDeviceConnection;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/hardware/usb/UsbDeviceConnection;->close()V
@@ -265,7 +265,7 @@
 .end method
 
 .method public static bridge synthetic p(Landroid/hardware/usb/UsbInterface;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/hardware/usb/UsbInterface;->getInterfaceSubclass()I
@@ -277,7 +277,7 @@
 .end method
 
 .method public static bridge synthetic q(Landroid/hardware/usb/UsbDeviceConnection;Landroid/hardware/usb/UsbInterface;)Z
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/hardware/usb/UsbDeviceConnection;->releaseInterface(Landroid/hardware/usb/UsbInterface;)Z
@@ -292,7 +292,7 @@
 .end method
 
 .method public static bridge synthetic r(Landroid/hardware/usb/UsbDevice;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/hardware/usb/UsbDevice;->getDeviceProtocol()I
@@ -307,7 +307,7 @@
 .end method
 
 .method public static bridge synthetic s(Landroid/hardware/usb/UsbDeviceConnection;Landroid/hardware/usb/UsbEndpoint;[BII)I
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/hardware/usb/UsbDeviceConnection;->bulkTransfer(Landroid/hardware/usb/UsbEndpoint;[BII)I
@@ -322,7 +322,7 @@
 .end method
 
 .method public static bridge synthetic t(Landroid/hardware/usb/UsbEndpoint;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/hardware/usb/UsbEndpoint;->getType()I
@@ -337,7 +337,7 @@
 .end method
 
 .method public static bridge synthetic u(Landroid/hardware/usb/UsbInterface;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/hardware/usb/UsbInterface;->getInterfaceSubclass()I
@@ -352,7 +352,7 @@
 .end method
 
 .method public static bridge synthetic v(Landroid/hardware/usb/UsbDeviceConnection;Landroid/hardware/usb/UsbInterface;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -370,7 +370,7 @@
 .end method
 
 .method public static bridge synthetic w(Landroid/hardware/usb/UsbDevice;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/hardware/usb/UsbDevice;->getInterfaceCount()I
@@ -385,7 +385,7 @@
 .end method
 
 .method public static bridge synthetic x(Landroid/hardware/usb/UsbEndpoint;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/hardware/usb/UsbEndpoint;->getDirection()I
@@ -400,7 +400,7 @@
 .end method
 
 .method public static bridge synthetic y(Landroid/hardware/usb/UsbInterface;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/hardware/usb/UsbInterface;->getId()I
@@ -415,7 +415,7 @@
 .end method
 
 .method public static bridge synthetic z(Landroid/hardware/usb/UsbDevice;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/hardware/usb/UsbDevice;->getDeviceClass()I

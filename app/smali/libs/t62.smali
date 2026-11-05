@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>([C[BIILlibs/$f;)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2, p3, p4}, Ljavax/crypto/spec/PBEKeySpec;-><init>([C[BII)V

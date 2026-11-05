@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ka1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final a()Z
-    .registers 9
+    .locals 8
 
     .line 1
     iget-object v0, p0, Llibs/m72;->a:Llibs/ka1;
@@ -44,11 +44,11 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_71
+    if-eqz v0, :cond_4
 
     .line 6
     .line 7
-    :goto_6
+    :goto_0
     iget-object v0, p0, Llibs/m72;->b:Ljava/io/InputStream;
 
     .line 8
@@ -61,14 +61,14 @@
     move-result v0
 
     .line 13
-    if-ltz v0, :cond_f
+    if-ltz v0, :cond_0
 
     .line 14
     .line 15
-    goto :goto_6
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_0
     iget-object v0, p0, Llibs/m72;->c:Llibs/by0;
 
     .line 17
@@ -98,11 +98,11 @@
     const/4 v5, 0x0
 
     .line 29
-    :goto_1c
+    :goto_1
     array-length v6, v1
 
     .line 30
-    if-eq v3, v6, :cond_29
+    if-eq v3, v6, :cond_1
 
     .line 31
     .line 32
@@ -125,19 +125,19 @@
     move v5, v6
 
     .line 41
-    goto :goto_1c
+    goto :goto_1
 
     .line 42
-    :cond_29
+    :cond_1
     const/4 v3, 0x0
 
     .line 43
-    :goto_2a
+    :goto_2
     iget v6, v0, Llibs/by0;->Y:I
 
     .line 44
     .line 45
-    if-eq v3, v6, :cond_38
+    if-eq v3, v6, :cond_2
 
     .line 46
     .line 47
@@ -160,10 +160,10 @@
     move v5, v6
 
     .line 56
-    goto :goto_2a
+    goto :goto_2
 
     .line 57
-    :cond_38
+    :cond_2
     iget-object v0, p0, Llibs/m72;->d:Llibs/kk1;
 
     .line 58
@@ -244,8 +244,8 @@
 
     .line 96
     .line 97
-    :goto_60
-    if-eq v4, v1, :cond_6c
+    :goto_3
+    if-eq v4, v1, :cond_3
 
     .line 98
     .line 99
@@ -268,10 +268,10 @@
 
     .line 107
     .line 108
-    goto :goto_60
+    goto :goto_3
 
     .line 109
-    :cond_6c
+    :cond_3
     invoke-static {v0, v3}, Llibs/t43;->i([B[B)Z
 
     .line 110
@@ -283,7 +283,7 @@
     return v0
 
     .line 114
-    :cond_71
+    :cond_4
     new-instance v0, Llibs/o72;
 
     .line 115
@@ -297,13 +297,13 @@
     .line 119
     .line 120
     .line 121
-    goto :goto_7a
+    goto :goto_5
 
     .line 122
-    :goto_79
+    :goto_4
     throw v0
 
     .line 123
-    :goto_7a
-    goto :goto_79
+    :goto_5
+    goto :goto_4
 .end method

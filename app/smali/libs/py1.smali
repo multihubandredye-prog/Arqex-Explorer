@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/hk0;Llibs/h91;Llibs/oy1;Ljava/lang/String;)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 
 # virtual methods
 .method public final a(Ljava/nio/ByteBuffer;J)V
-    .registers 10
+    .locals 6
 
     .line 1
     sget-object v0, Llibs/cr0;->a:Ljava/lang/Object;
@@ -54,7 +54,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     invoke-virtual {p1}, Ljava/nio/Buffer;->position()I
 
     .line 5
@@ -122,20 +122,20 @@
     return-void
 
     .line 39
-    :catchall_26
+    :catchall_0
     move-exception p1
 
     .line 40
     monitor-exit v0
-    :try_end_28
-    .catchall {:try_start_3 .. :try_end_28} :catchall_26
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 41
     throw p1
 .end method
 
 .method public final b()J
-    .registers 8
+    .locals 7
 
     .line 1
     invoke-virtual {p0}, Llibs/py1;->t()Llibs/vq0;
@@ -200,7 +200,7 @@
 
     .line 32
     .line 33
-    if-gez v6, :cond_2b
+    if-gez v6, :cond_0
 
     .line 34
     .line 35
@@ -227,7 +227,7 @@
     return-wide v2
 
     .line 44
-    :cond_2b
+    :cond_0
     div-long/2addr v0, v4
 
     .line 45
@@ -235,7 +235,7 @@
 .end method
 
 .method public final c()Z
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Llibs/py1;->t()Llibs/vq0;
@@ -268,14 +268,14 @@
     and-int/2addr v0, v1
 
     .line 15
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 16
     .line 17
     return v1
 
     .line 18
-    :cond_11
+    :cond_0
     const/4 v0, 0x0
 
     .line 19
@@ -283,7 +283,7 @@
 .end method
 
 .method public final d(Ljava/lang/String;)Llibs/br3;
-    .registers 2
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -293,7 +293,7 @@
 .end method
 
 .method public final e()Z
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/py1;->t()Llibs/vq0;
@@ -324,7 +324,7 @@
 .end method
 
 .method public final f(Llibs/br3;)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Llibs/ts;
@@ -343,14 +343,14 @@
 .end method
 
 .method public final flush()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final g()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/py1;->Y:Llibs/hk0;
@@ -373,7 +373,7 @@
 .end method
 
 .method public final getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/py1;->t()Llibs/vq0;
@@ -396,7 +396,7 @@
 .end method
 
 .method public final h()Z
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Llibs/py1;->getName()Ljava/lang/String;
@@ -423,7 +423,7 @@
 .end method
 
 .method public final i()Ljava/util/List;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -433,14 +433,14 @@
 .end method
 
 .method public final j(J)V
-    .registers 3
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final k()J
-    .registers 5
+    .locals 4
 
     .line 1
     invoke-virtual {p0}, Llibs/py1;->t()Llibs/vq0;
@@ -471,7 +471,7 @@
     move-result-object v0
 
     .line 15
-    :cond_e
+    :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 16
@@ -480,7 +480,7 @@
     move-result v1
 
     .line 19
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_2
 
     .line 20
     .line 21
@@ -504,7 +504,7 @@
 
     .line 30
     .line 31
-    if-ne v2, v3, :cond_28
+    if-ne v2, v3, :cond_1
 
     .line 32
     .line 33
@@ -516,34 +516,34 @@
     move-result-object v2
 
     .line 37
-    if-nez v2, :cond_28
+    if-nez v2, :cond_1
 
     .line 38
     .line 39
     const/4 v2, 0x1
 
     .line 40
-    goto :goto_29
+    goto :goto_0
 
     .line 41
-    :cond_28
+    :cond_1
     const/4 v2, 0x0
 
     .line 42
-    :goto_29
-    if-eqz v2, :cond_e
+    :goto_0
+    if-eqz v2, :cond_0
 
     .line 43
     .line 44
-    goto :goto_2d
+    goto :goto_1
 
     .line 45
-    :cond_2c
+    :cond_2
     const/4 v1, 0x0
 
     .line 46
-    :goto_2d
-    if-nez v1, :cond_3a
+    :goto_1
+    if-nez v1, :cond_3
 
     .line 47
     .line 48
@@ -551,7 +551,7 @@
 
     .line 49
     .line 50
-    if-eqz v0, :cond_3a
+    if-eqz v0, :cond_3
 
     .line 51
     .line 52
@@ -570,7 +570,7 @@
     return-wide v0
 
     .line 59
-    :cond_3a
+    :cond_3
     invoke-virtual {p0}, Llibs/py1;->t()Llibs/vq0;
 
     .line 60
@@ -591,7 +591,7 @@
 .end method
 
 .method public final l(Ljava/lang/String;)Llibs/br3;
-    .registers 2
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -601,7 +601,7 @@
 .end method
 
 .method public final m(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Llibs/ts;
@@ -620,7 +620,7 @@
 .end method
 
 .method public final n()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -630,7 +630,7 @@
 .end method
 
 .method public final p()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/py1;->Lambda:Ljava/lang/String;
@@ -641,14 +641,14 @@
 .end method
 
 .method public final q(JLjava/nio/ByteBuffer;JI)V
-    .registers 7
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final r()V
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/ts;
@@ -667,14 +667,14 @@
 .end method
 
 .method public final s(J)V
-    .registers 3
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final t()Llibs/vq0;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/py1;->Z:Llibs/h91;
@@ -685,11 +685,11 @@
 
     .line 4
     .line 5
-    if-nez v1, :cond_21
+    if-nez v1, :cond_0
 
     .line 6
     .line 7
-    :try_start_6
+    :try_start_0
     iget-object v1, v0, Llibs/h91;->c:Llibs/vq0;
 
     .line 8
@@ -731,15 +731,15 @@
 
     .line 27
     iput-object v0, p0, Llibs/py1;->X:Llibs/vq0;
-    :try_end_1c
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_1c} :catch_1d
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 28
     .line 29
-    goto :goto_21
+    goto :goto_0
 
     .line 30
-    :catch_1d
+    :catch_0
     move-exception v0
 
     .line 31
@@ -748,8 +748,8 @@
     .line 32
     .line 33
     .line 34
-    :cond_21
-    :goto_21
+    :cond_0
+    :goto_0
     iget-object v0, p0, Llibs/py1;->X:Llibs/vq0;
 
     .line 35

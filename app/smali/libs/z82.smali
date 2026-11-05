@@ -15,7 +15,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const-string v0, "x-scpls"
@@ -46,7 +46,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/mg3;-><init>()V
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public final File(Llibs/td2;Llibs/kn;Ljava/nio/charset/Charset;)V
-    .registers 6
+    .locals 2
 
     .line 1
     sget v0, Llibs/z82;->h:I
@@ -115,7 +115,7 @@
 .end method
 
 .method public final Get(Ljava/io/InputStream;Llibs/kn;Ljava/nio/charset/Charset;)V
-    .registers 12
+    .locals 8
 
     .line 1
     new-instance v0, Llibs/bk;
@@ -152,8 +152,8 @@
 
     .line 18
     .line 19
-    :cond_12
-    :goto_12
+    :cond_0
+    :goto_0
     invoke-virtual {v0}, Llibs/bk;->w()Ljava/lang/String;
 
     .line 20
@@ -162,7 +162,7 @@
     move-result-object v2
 
     .line 23
-    if-eqz v2, :cond_a7
+    if-eqz v2, :cond_7
 
     .line 24
     .line 25
@@ -186,7 +186,7 @@
     move-result v3
 
     .line 35
-    if-eqz v3, :cond_33
+    if-eqz v3, :cond_2
 
     .line 36
     .line 37
@@ -194,7 +194,7 @@
 
     .line 38
     .line 39
-    if-eqz v2, :cond_2b
+    if-eqz v2, :cond_1
 
     .line 40
     .line 41
@@ -203,7 +203,7 @@
     .line 42
     .line 43
     .line 44
-    :cond_2b
+    :cond_1
     new-instance p1, Llibs/td2;
 
     .line 45
@@ -217,10 +217,10 @@
 
     .line 50
     .line 51
-    goto :goto_12
+    goto :goto_0
 
     .line 52
-    :cond_33
+    :cond_2
     const/16 v3, 0x3d
 
     .line 53
@@ -246,7 +246,7 @@
     const/4 v7, 0x1
 
     .line 63
-    if-eq v3, v5, :cond_50
+    if-eq v3, v5, :cond_3
 
     .line 64
     .line 65
@@ -282,11 +282,11 @@
 
     .line 80
     .line 81
-    :cond_50
+    :cond_3
     array-length v2, v4
 
     .line 82
-    if-ne v2, v6, :cond_12
+    if-ne v2, v6, :cond_0
 
     .line 83
     .line 84
@@ -314,7 +314,7 @@
     move-result v2
 
     .line 96
-    if-eqz v2, :cond_6f
+    if-eqz v2, :cond_4
 
     .line 97
     .line 98
@@ -343,10 +343,10 @@
     .line 109
     .line 110
     .line 111
-    goto :goto_12
+    goto :goto_0
 
     .line 112
-    :cond_6f
+    :cond_4
     aget-object v2, v4, v1
 
     .line 113
@@ -371,7 +371,7 @@
     move-result v2
 
     .line 124
-    if-eqz v2, :cond_89
+    if-eqz v2, :cond_5
 
     .line 125
     .line 126
@@ -396,10 +396,10 @@
     .line 135
     .line 136
     .line 137
-    goto :goto_12
+    goto :goto_0
 
     .line 138
-    :cond_89
+    :cond_5
     aget-object v2, v4, v1
 
     .line 139
@@ -424,7 +424,7 @@
     move-result v2
 
     .line 150
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_0
 
     .line 151
     .line 152
@@ -432,7 +432,7 @@
 
     .line 153
     .line 154
-    if-eqz v2, :cond_9e
+    if-eqz v2, :cond_6
 
     .line 155
     .line 156
@@ -441,7 +441,7 @@
     .line 157
     .line 158
     .line 159
-    :cond_9e
+    :cond_6
     new-instance p1, Llibs/td2;
 
     .line 160
@@ -455,16 +455,16 @@
 
     .line 165
     .line 166
-    goto/16 :goto_12
+    goto/16 :goto_0
 
     .line 167
     .line 168
-    :cond_a7
+    :cond_7
     iget-boolean v0, p0, Llibs/z82;->g:Z
 
     .line 169
     .line 170
-    if-eqz v0, :cond_ae
+    if-eqz v0, :cond_8
 
     .line 171
     .line 172
@@ -473,6 +473,6 @@
     .line 173
     .line 174
     .line 175
-    :cond_ae
+    :cond_8
     return-void
 .end method

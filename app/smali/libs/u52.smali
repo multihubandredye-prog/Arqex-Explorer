@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/rz0;)V
-    .registers 11
+    .locals 9
 
     .line 1
     iput-object p1, p0, Llibs/u52;->X:Llibs/rz0;
@@ -72,7 +72,7 @@
 
 # virtual methods
 .method public final afterExecute(Ljava/lang/Runnable;Ljava/lang/Throwable;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-super {p0, p1, p2}, Ljava/util/concurrent/ThreadPoolExecutor;->afterExecute(Ljava/lang/Runnable;Ljava/lang/Throwable;)V
@@ -84,7 +84,7 @@
 .end method
 
 .method public final beforeExecute(Ljava/lang/Thread;Ljava/lang/Runnable;)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-super {p0, p1, p2}, Ljava/util/concurrent/ThreadPoolExecutor;->beforeExecute(Ljava/lang/Thread;Ljava/lang/Runnable;)V
@@ -96,7 +96,7 @@
 
     .line 5
     .line 6
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_0
 
     .line 7
     .line 8
@@ -115,7 +115,7 @@
     monitor-enter p1
 
     .line 15
-    :try_start_e
+    :try_start_0
     iget-object v0, p0, Llibs/u52;->X:Llibs/rz0;
 
     .line 16
@@ -139,19 +139,19 @@
     return-void
 
     .line 26
-    :catchall_19
+    :catchall_0
     move-exception p2
 
     .line 27
     monitor-exit p1
-    :try_end_1b
-    .catchall {:try_start_e .. :try_end_1b} :catchall_19
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 28
     throw p2
 
     .line 29
-    :cond_1c
+    :cond_0
     const-string p1, "QueueHelper"
 
     .line 30

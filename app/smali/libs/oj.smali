@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/qj;Z)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/oj;->b:Llibs/qj;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final e(Llibs/rp0;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/oj;->b:Llibs/qj;
@@ -52,7 +52,7 @@
     move-result v1
 
     .line 9
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_0
 
     .line 10
     .line 11
@@ -62,7 +62,7 @@
     return p1
 
     .line 13
-    :cond_c
+    :cond_0
     iget-boolean v1, p0, Llibs/oj;->a:Z
 
     .line 14

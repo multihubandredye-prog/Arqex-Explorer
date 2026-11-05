@@ -65,6 +65,23 @@ s = re.sub(r"(?m)^\s*versionName:.*$", "  versionName: %s" % name, s, count=1)
 open(path, "w").write(s)
 print("versionName=%s versionCode=%s aplicados em apktool.yml" % (name, code))
 PYEOF
+  # a base do usuario tambem traz apktool.json, que guarda a mesma versao:
+  # deixar os dois iguais evita o APK sair com a versao antiga
+  if [ -f "$SRC/apktool.json" ]; then
+    python3 - "$SRC/apktool.json" "$VERSION_NAME" "$VERSION_CODE" <<'PYEOF'
+import json, sys
+path, name, code = sys.argv[1], sys.argv[2], sys.argv[3]
+try:
+    d = json.load(open(path))
+except Exception:
+    raise SystemExit(0)
+vi = d.setdefault("VersionInfo", {})
+vi["versionName"] = name
+vi["versionCode"] = code
+json.dump(d, open(path, "w"), indent=2)
+print("versionName=%s versionCode=%s aplicados em apktool.json" % (name, code))
+PYEOF
+  fi
 else
   echo "sem VERSION_NAME/VERSION_CODE: mantendo a versao de app/apktool.yml"
 fi

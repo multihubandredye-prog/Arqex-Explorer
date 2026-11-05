@@ -9,14 +9,14 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/ao3;->Xray:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_12
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -37,7 +37,7 @@
     return-void
 
     .line 14
-    :pswitch_d
+    :pswitch_0
     invoke-direct {p0}, Llibs/cc3;-><init>()V
 
     .line 15
@@ -49,23 +49,23 @@
     nop
 
     .line 19
-    :pswitch_data_12
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_d
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/ao3;->Xray:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_34
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -115,7 +115,7 @@
     return-object v0
 
     .line 29
-    :pswitch_1c
+    :pswitch_0
     new-instance v0, Ljava/lang/String;
 
     .line 30
@@ -164,21 +164,21 @@
     nop
 
     .line 53
-    :pswitch_data_34
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1c
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final x(II[B)I
-    .registers 4
+    .locals 0
 
     .line 1
     iget-byte p1, p0, Llibs/ao3;->Xray:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_a
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -189,7 +189,7 @@
     return p1
 
     .line 8
-    :pswitch_7
+    :pswitch_0
     const/4 p1, 0x0
 
     .line 9
@@ -199,21 +199,21 @@
     nop
 
     .line 11
-    :pswitch_data_a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_7
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final y([B)I
-    .registers 2
+    .locals 0
 
     .line 1
     iget-byte p1, p0, Llibs/ao3;->Xray:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_a
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -224,7 +224,7 @@
     return p1
 
     .line 8
-    :pswitch_7
+    :pswitch_0
     const/4 p1, 0x0
 
     .line 9
@@ -234,8 +234,8 @@
     nop
 
     .line 11
-    :pswitch_data_a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_7
+        :pswitch_0
     .end packed-switch
 .end method

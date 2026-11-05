@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const-class v0, Lorg/conscrypt/CryptoUpcalls;
@@ -40,7 +40,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +52,7 @@
 .end method
 
 .method public static ecSignDigestWithPrivateKey(Ljava/security/PrivateKey;[B)[B
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-interface {p0}, Ljava/security/Key;->getAlgorithm()Ljava/lang/String;
@@ -75,7 +75,7 @@
     move-result v0
 
     .line 11
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
@@ -94,7 +94,7 @@
     return-object p0
 
     .line 20
-    :cond_13
+    :cond_0
     const-string p1, "Unexpected key type: "
 
     .line 21
@@ -111,7 +111,7 @@
 .end method
 
 .method private static getExternalProviders(Ljava/lang/String;)Ljava/util/List;
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -150,8 +150,8 @@
     const/4 v3, 0x0
 
     .line 13
-    :goto_c
-    if-ge v3, v2, :cond_1c
+    :goto_0
+    if-ge v3, v2, :cond_1
 
     .line 14
     .line 15
@@ -167,7 +167,7 @@
     move-result v5
 
     .line 21
-    if-nez v5, :cond_19
+    if-nez v5, :cond_0
 
     .line 22
     .line 23
@@ -176,15 +176,15 @@
     .line 24
     .line 25
     .line 26
-    :cond_19
+    :cond_0
     add-int/lit8 v3, v3, 0x1
 
     .line 27
     .line 28
-    goto :goto_c
+    goto :goto_0
 
     .line 29
-    :cond_1c
+    :cond_1
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
     .line 30
@@ -193,7 +193,7 @@
     move-result v1
 
     .line 33
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_2
 
     .line 34
     .line 35
@@ -232,12 +232,12 @@
     .line 52
     .line 53
     .line 54
-    :cond_35
+    :cond_2
     return-object v0
 .end method
 
 .method public static rsaDecryptWithPrivateKey(Ljava/security/PrivateKey;I[B)[B
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x2
@@ -255,7 +255,7 @@
 .end method
 
 .method private static rsaOpWithPrivateKey(Ljava/security/PrivateKey;II[B)[B
-    .registers 9
+    .locals 5
 
     .line 1
     invoke-interface {p0}, Ljava/security/Key;->getAlgorithm()Ljava/lang/String;
@@ -281,7 +281,7 @@
     const/4 v2, 0x0
 
     .line 12
-    if-nez v1, :cond_21
+    if-nez v1, :cond_0
 
     .line 13
     .line 14
@@ -323,25 +323,25 @@
     return-object v2
 
     .line 34
-    :cond_21
+    :cond_0
     const/4 v0, 0x1
 
     .line 35
-    if-eq p1, v0, :cond_44
+    if-eq p1, v0, :cond_3
 
     .line 36
     .line 37
     const/4 v0, 0x3
 
     .line 38
-    if-eq p1, v0, :cond_41
+    if-eq p1, v0, :cond_2
 
     .line 39
     .line 40
     const/4 v0, 0x4
 
     .line 41
-    if-eq p1, v0, :cond_3e
+    if-eq p1, v0, :cond_1
 
     .line 42
     .line 43
@@ -383,28 +383,28 @@
     return-object v2
 
     .line 63
-    :cond_3e
+    :cond_1
     const-string p1, "OAEPPadding"
 
     .line 64
     .line 65
-    goto :goto_46
+    goto :goto_0
 
     .line 66
-    :cond_41
+    :cond_2
     const-string p1, "NoPadding"
 
     .line 67
     .line 68
-    goto :goto_46
+    goto :goto_0
 
     .line 69
-    :cond_44
+    :cond_3
     const-string p1, "PKCS1Padding"
 
     .line 70
     .line 71
-    :goto_46
+    :goto_0
     const-string v0, "RSA/ECB/"
 
     .line 72
@@ -417,7 +417,7 @@
     move-result-object p1
 
     .line 77
-    :try_start_4c
+    :try_start_0
     invoke-static {p1}, Ljavax/crypto/Cipher;->getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;
 
     .line 78
@@ -445,20 +445,20 @@
     .line 90
     .line 91
     move-result v1
-    :try_end_5b
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_4c .. :try_end_5b} :catch_cb
-    .catch Ljavax/crypto/NoSuchPaddingException; {:try_start_4c .. :try_end_5b} :catch_cb
-    .catch Ljava/security/InvalidKeyException; {:try_start_4c .. :try_end_5b} :catch_5e
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljavax/crypto/NoSuchPaddingException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljava/security/InvalidKeyException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 92
-    if-eqz v1, :cond_69
+    if-eqz v1, :cond_4
 
     .line 93
     .line 94
-    goto :goto_68
+    goto :goto_1
 
     .line 95
-    :catch_5e
+    :catch_0
     move-exception v0
 
     .line 96
@@ -479,12 +479,12 @@
     .line 103
     .line 104
     .line 105
-    :goto_68
+    :goto_1
     move-object v0, v2
 
     .line 106
-    :cond_69
-    if-nez v0, :cond_9e
+    :cond_4
+    if-nez v0, :cond_6
 
     .line 107
     .line 108
@@ -516,7 +516,7 @@
     move-result-object v1
 
     .line 122
-    :goto_79
+    :goto_2
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 123
@@ -525,7 +525,7 @@
     move-result v3
 
     .line 126
-    if-eqz v3, :cond_90
+    if-eqz v3, :cond_5
 
     .line 127
     .line 128
@@ -541,7 +541,7 @@
 
     .line 133
     .line 134
-    :try_start_85
+    :try_start_1
     invoke-static {p1, v0}, Ljavax/crypto/Cipher;->getInstance(Ljava/lang/String;Ljava/security/Provider;)Ljavax/crypto/Cipher;
 
     .line 135
@@ -551,30 +551,30 @@
 
     .line 138
     invoke-virtual {v0, p2, p0}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;)V
-    :try_end_8c
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_85 .. :try_end_8c} :catch_8d
-    .catch Ljavax/crypto/NoSuchPaddingException; {:try_start_85 .. :try_end_8c} :catch_8d
-    .catch Ljava/security/InvalidKeyException; {:try_start_85 .. :try_end_8c} :catch_8d
+    :try_end_1
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljavax/crypto/NoSuchPaddingException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/security/InvalidKeyException; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 139
     .line 140
     .line 141
-    goto :goto_90
+    goto :goto_3
 
     .line 142
-    :catch_8d
+    :catch_1
     nop
 
     .line 143
     move-object v0, v2
 
     .line 144
-    goto :goto_79
+    goto :goto_2
 
     .line 145
-    :cond_90
-    :goto_90
-    if-nez v0, :cond_9e
+    :cond_5
+    :goto_3
+    if-nez v0, :cond_6
 
     .line 146
     .line 147
@@ -602,22 +602,22 @@
     return-object v2
 
     .line 159
-    :cond_9e
-    :try_start_9e
+    :cond_6
+    :try_start_2
     invoke-virtual {v0, p3}, Ljavax/crypto/Cipher;->doFinal([B)[B
 
     .line 160
     .line 161
     .line 162
     move-result-object p0
-    :try_end_a2
-    .catch Ljava/lang/Exception; {:try_start_9e .. :try_end_a2} :catch_a3
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
 
     .line 163
     return-object p0
 
     .line 164
-    :catch_a3
+    :catch_2
     move-exception p2
 
     .line 165
@@ -694,7 +694,7 @@
     return-object v2
 
     .line 204
-    :catch_cb
+    :catch_3
     sget-object p0, Lorg/conscrypt/CryptoUpcalls;->logger:Ljava/util/logging/Logger;
 
     .line 205
@@ -720,7 +720,7 @@
 .end method
 
 .method public static rsaSignDigestWithPrivateKey(Ljava/security/PrivateKey;I[B)[B
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -738,13 +738,13 @@
 .end method
 
 .method private static signDigestWithPrivateKey(Ljava/security/PrivateKey;[BLjava/lang/String;)[B
-    .registers 8
+    .locals 5
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :try_start_1
+    :try_start_0
     invoke-static {p2}, Ljava/security/Signature;->getInstance(Ljava/lang/String;)Ljava/security/Signature;
 
     .line 3
@@ -772,19 +772,19 @@
     .line 15
     .line 16
     move-result v2
-    :try_end_10
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_1 .. :try_end_10} :catch_8e
-    .catch Ljava/security/InvalidKeyException; {:try_start_1 .. :try_end_10} :catch_13
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_4
+    .catch Ljava/security/InvalidKeyException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 17
-    if-eqz v2, :cond_1f
+    if-eqz v2, :cond_0
 
     .line 18
     .line 19
-    goto :goto_1e
+    goto :goto_0
 
     .line 20
-    :catch_13
+    :catch_0
     move-exception v1
 
     .line 21
@@ -806,12 +806,12 @@
     .line 29
     .line 30
     .line 31
-    :goto_1e
+    :goto_0
     move-object v1, v0
 
     .line 32
-    :cond_1f
-    if-nez v1, :cond_66
+    :cond_0
+    if-nez v1, :cond_4
 
     .line 33
     .line 34
@@ -846,7 +846,7 @@
     move-object v3, v0
 
     .line 49
-    :goto_30
+    :goto_1
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     .line 50
@@ -855,7 +855,7 @@
     move-result v4
 
     .line 53
-    if-eqz v4, :cond_4d
+    if-eqz v4, :cond_2
 
     .line 54
     .line 55
@@ -871,7 +871,7 @@
 
     .line 60
     .line 61
-    :try_start_3c
+    :try_start_1
     invoke-static {p2, v1}, Ljava/security/Signature;->getInstance(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/Signature;
 
     .line 62
@@ -881,54 +881,54 @@
 
     .line 65
     invoke-virtual {v1, p0}, Ljava/security/Signature;->initSign(Ljava/security/PrivateKey;)V
-    :try_end_43
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_3c .. :try_end_43} :catch_46
-    .catch Ljava/security/InvalidKeyException; {:try_start_3c .. :try_end_43} :catch_46
-    .catch Ljava/lang/RuntimeException; {:try_start_3c .. :try_end_43} :catch_44
+    :try_end_1
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/security/InvalidKeyException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 66
     .line 67
     .line 68
-    goto :goto_4d
+    goto :goto_4
 
     .line 69
-    :catch_44
+    :catch_1
     move-exception v1
 
     .line 70
-    goto :goto_48
+    goto :goto_2
 
     .line 71
-    :catch_46
+    :catch_2
     nop
 
     .line 72
-    goto :goto_4b
+    goto :goto_3
 
     .line 73
-    :goto_48
-    if-nez v3, :cond_4b
+    :goto_2
+    if-nez v3, :cond_1
 
     .line 74
     .line 75
     move-object v3, v1
 
     .line 76
-    :cond_4b
-    :goto_4b
+    :cond_1
+    :goto_3
     move-object v1, v0
 
     .line 77
-    goto :goto_30
+    goto :goto_1
 
     .line 78
-    :cond_4d
-    :goto_4d
-    if-nez v1, :cond_66
+    :cond_2
+    :goto_4
+    if-nez v1, :cond_4
 
     .line 79
     .line 80
-    if-nez v3, :cond_65
+    if-nez v3, :cond_3
 
     .line 81
     .line 82
@@ -970,12 +970,12 @@
     return-object v0
 
     .line 102
-    :cond_65
+    :cond_3
     throw v3
 
     .line 103
-    :cond_66
-    :try_start_66
+    :cond_4
+    :try_start_2
     invoke-virtual {v1, p1}, Ljava/security/Signature;->update([B)V
 
     .line 104
@@ -987,14 +987,14 @@
     .line 108
     .line 109
     move-result-object p0
-    :try_end_6d
-    .catch Ljava/lang/Exception; {:try_start_66 .. :try_end_6d} :catch_6e
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_3
 
     .line 110
     return-object p0
 
     .line 111
-    :catch_6e
+    :catch_3
     move-exception p1
 
     .line 112
@@ -1057,7 +1057,7 @@
     return-object v0
 
     .line 143
-    :catch_8e
+    :catch_4
     sget-object p0, Lorg/conscrypt/CryptoUpcalls;->logger:Ljava/util/logging/Logger;
 
     .line 144

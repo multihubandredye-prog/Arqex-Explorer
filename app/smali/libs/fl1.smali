@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/gl1;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iput-object p1, p0, Llibs/fl1;->Mu:Llibs/gl1;
@@ -45,7 +45,7 @@
     .line 11
     .line 12
     .line 13
-    :try_start_c
+    :try_start_0
     iget-object p1, p1, Llibs/gl1;->X:Llibs/dj;
 
     .line 14
@@ -54,7 +54,7 @@
 
     .line 16
     .line 17
-    if-eqz p1, :cond_19
+    if-eqz p1, :cond_0
 
     .line 18
     .line 19
@@ -63,23 +63,23 @@
     .line 20
     .line 21
     iput-object p1, p0, Llibs/fl1;->Y:Ljava/lang/Object;
-    :try_end_16
-    .catchall {:try_start_c .. :try_end_16} :catchall_17
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 22
     .line 23
-    goto :goto_19
+    goto :goto_0
 
     .line 24
-    :catchall_17
+    :catchall_0
     move-exception p1
 
     .line 25
-    goto :goto_1d
+    goto :goto_1
 
     .line 26
-    :cond_19
-    :goto_19
+    :cond_0
+    :goto_0
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 27
@@ -88,7 +88,7 @@
     return-void
 
     .line 30
-    :goto_1d
+    :goto_1
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 31
@@ -100,14 +100,14 @@
 
 # virtual methods
 .method public final hasNext()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/fl1;->X:Llibs/dj;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -117,7 +117,7 @@
     return v0
 
     .line 7
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
     .line 8
@@ -125,7 +125,7 @@
 .end method
 
 .method public final next()Ljava/lang/Object;
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/fl1;->X:Llibs/dj;
@@ -135,7 +135,7 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_35
+    if-eqz v0, :cond_2
 
     .line 5
     .line 6
@@ -160,7 +160,7 @@
     .line 15
     .line 16
     .line 17
-    :try_start_10
+    :try_start_0
     iget-object v0, v0, Llibs/dj;->d:Ljava/lang/Object;
 
     .line 18
@@ -169,8 +169,8 @@
 
     .line 20
     .line 21
-    :goto_14
-    if-eqz v0, :cond_29
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 22
     .line 23
@@ -178,7 +178,7 @@
 
     .line 24
     .line 25
-    if-nez v1, :cond_29
+    if-nez v1, :cond_1
 
     .line 26
     .line 27
@@ -190,7 +190,7 @@
 
     .line 30
     .line 31
-    if-ne v0, v4, :cond_25
+    if-ne v0, v4, :cond_0
 
     .line 32
     .line 33
@@ -202,31 +202,31 @@
 
     .line 36
     .line 37
-    goto :goto_14
+    goto :goto_0
 
     .line 38
-    :cond_25
+    :cond_0
     move-object v0, v4
 
     .line 39
-    goto :goto_14
+    goto :goto_0
 
     .line 40
-    :catchall_27
+    :catchall_0
     move-exception v0
 
     .line 41
-    goto :goto_31
+    goto :goto_1
 
     .line 42
-    :cond_29
+    :cond_1
     iput-object v0, p0, Llibs/fl1;->X:Llibs/dj;
 
     .line 43
     .line 44
     iput-object v1, p0, Llibs/fl1;->Y:Ljava/lang/Object;
-    :try_end_2d
-    .catchall {:try_start_10 .. :try_end_2d} :catchall_27
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 45
     .line 46
@@ -238,7 +238,7 @@
     return-object v2
 
     .line 50
-    :goto_31
+    :goto_1
     invoke-virtual {v3}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 51
@@ -247,7 +247,7 @@
     throw v0
 
     .line 54
-    :cond_35
+    :cond_2
     invoke-static {}, Llibs/t22;->b()V
 
     .line 55
@@ -257,14 +257,14 @@
 .end method
 
 .method public final remove()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/fl1;->Z:Llibs/dj;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
@@ -288,34 +288,34 @@
     .line 13
     .line 14
     .line 15
-    :try_start_e
+    :try_start_0
     iget-object v3, v0, Llibs/dj;->b:Ljava/lang/Object;
 
     .line 16
     .line 17
-    if-eqz v3, :cond_18
+    if-eqz v3, :cond_0
 
     .line 18
     .line 19
     invoke-virtual {v1, v0}, Llibs/gl1;->c(Llibs/dj;)V
-    :try_end_15
-    .catchall {:try_start_e .. :try_end_15} :catchall_16
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 20
     .line 21
     .line 22
-    goto :goto_18
+    goto :goto_0
 
     .line 23
-    :catchall_16
+    :catchall_0
     move-exception v0
 
     .line 24
-    goto :goto_1c
+    goto :goto_1
 
     .line 25
-    :cond_18
-    :goto_18
+    :cond_0
+    :goto_0
     invoke-virtual {v2}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 26
@@ -324,7 +324,7 @@
     return-void
 
     .line 29
-    :goto_1c
+    :goto_1
     invoke-virtual {v2}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 30
@@ -333,7 +333,7 @@
     throw v0
 
     .line 33
-    :cond_20
+    :cond_1
     invoke-static {}, Llibs/ic0;->r()V
 
     .line 34

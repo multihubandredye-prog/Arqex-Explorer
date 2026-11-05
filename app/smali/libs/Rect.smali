@@ -18,10 +18,10 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Size;Llibs/Sign;Z)V
-    .registers 5
+    .locals 1
 
     .line 1
-    if-eqz p3, :cond_9
+    if-eqz p3, :cond_0
 
     .line 2
     .line 3
@@ -37,10 +37,10 @@
     move-result-object p1
 
     .line 9
-    goto :goto_11
+    goto :goto_0
 
     .line 10
-    :cond_9
+    :cond_0
     iget-object v0, p2, Llibs/Sign;->X:Llibs/Size;
 
     .line 11
@@ -57,7 +57,7 @@
     move-result-object p1
 
     .line 18
-    :goto_11
+    :goto_0
     invoke-direct {p0, p1}, Llibs/Sign;-><init>(Llibs/Size;)V
 
     .line 19
@@ -82,7 +82,7 @@
 .end method
 
 .method public constructor <init>(Llibs/Size;[BLlibs/s73;)V
-    .registers 4
+    .locals 0
 
     .line 29
     invoke-direct {p0, p1}, Llibs/Sign;-><init>(Llibs/Size;)V
@@ -109,7 +109,7 @@
 
 # virtual methods
 .method public final a()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/Rect;->c()Llibs/Sign;
@@ -124,7 +124,7 @@
 .end method
 
 .method public final c()Llibs/Sign;
-    .registers 10
+    .locals 9
 
     .line 1
     const-string v0, "Could not parse the inputstream"
@@ -135,21 +135,21 @@
 
     .line 4
     .line 5
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_0
 
     .line 6
     .line 7
     return-object v1
 
     .line 8
-    :cond_7
+    :cond_0
     const/4 v1, 0x0
 
     .line 9
     const/4 v2, 0x0
 
     .line 10
-    :try_start_9
+    :try_start_0
     new-instance v3, Llibs/Url;
 
     .line 11
@@ -163,29 +163,29 @@
     .line 15
     .line 16
     invoke-direct {v3, v4, v5}, Llibs/Url;-><init>(Llibs/s73;[B)V
-    :try_end_12
-    .catch Llibs/Icon; {:try_start_9 .. :try_end_12} :catch_2c
-    .catchall {:try_start_9 .. :try_end_12} :catchall_27
+    :try_end_0
+    .catch Llibs/Icon; {:try_start_0 .. :try_end_0} :catch_2
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 17
     .line 18
     .line 19
-    :try_start_12
+    :try_start_1
     invoke-virtual {v3}, Llibs/Url;->c()Llibs/Sign;
 
     .line 20
     .line 21
     .line 22
     move-result-object v2
-    :try_end_16
-    .catch Llibs/Icon; {:try_start_12 .. :try_end_16} :catch_25
-    .catchall {:try_start_12 .. :try_end_16} :catchall_23
+    :try_end_1
+    .catch Llibs/Icon; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 23
-    :try_start_16
+    :try_start_2
     invoke-virtual {v3}, Ljava/io/InputStream;->close()V
-    :try_end_19
-    .catch Ljava/io/IOException; {:try_start_16 .. :try_end_19} :catch_1a
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 24
     .line 25
@@ -193,7 +193,7 @@
     return-object v2
 
     .line 27
-    :catch_1a
+    :catch_0
     move-exception v2
 
     .line 28
@@ -213,21 +213,21 @@
     throw v3
 
     .line 36
-    :catchall_23
+    :catchall_0
     move-exception v2
 
     .line 37
-    goto :goto_3f
+    goto :goto_1
 
     .line 38
-    :catch_25
+    :catch_1
     move-exception v2
 
     .line 39
-    goto :goto_30
+    goto :goto_0
 
     .line 40
-    :catchall_27
+    :catchall_1
     move-exception v3
 
     .line 41
@@ -240,10 +240,10 @@
     move-object v2, v8
 
     .line 44
-    goto :goto_3f
+    goto :goto_1
 
     .line 45
-    :catch_2c
+    :catch_2
     move-exception v3
 
     .line 46
@@ -256,8 +256,8 @@
     move-object v2, v8
 
     .line 49
-    :goto_30
-    :try_start_30
+    :goto_0
+    :try_start_3
     new-instance v4, Llibs/Icon;
 
     .line 50
@@ -287,15 +287,15 @@
     .line 62
     .line 63
     throw v4
-    :try_end_3f
-    .catchall {:try_start_30 .. :try_end_3f} :catchall_23
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 64
-    :goto_3f
-    :try_start_3f
+    :goto_1
+    :try_start_4
     invoke-virtual {v3}, Ljava/io/InputStream;->close()V
-    :try_end_42
-    .catch Ljava/io/IOException; {:try_start_3f .. :try_end_42} :catch_43
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_3
 
     .line 65
     .line 66
@@ -303,7 +303,7 @@
     throw v2
 
     .line 68
-    :catch_43
+    :catch_3
     move-exception v2
 
     .line 69
@@ -324,14 +324,14 @@
 .end method
 
 .method public final d(Llibs/Size;)Llibs/Sign;
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/Rect;->Y:Llibs/Sign;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -347,15 +347,15 @@
     move-result v1
 
     .line 11
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
     .line 12
     .line 13
     return-object v0
 
     .line 14
-    :cond_d
-    if-nez v0, :cond_20
+    :cond_0
+    if-nez v0, :cond_1
 
     .line 15
     .line 16
@@ -363,7 +363,7 @@
 
     .line 17
     .line 18
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_1
 
     .line 19
     .line 20
@@ -394,7 +394,7 @@
     return-object p1
 
     .line 33
-    :cond_20
+    :cond_1
     new-instance v0, Llibs/Icon;
 
     .line 34
@@ -426,7 +426,7 @@
 .end method
 
 .method public final iterator()Ljava/util/Iterator;
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/Size;->n:Llibs/Level;
@@ -457,7 +457,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -503,7 +503,7 @@
 
     .line 23
     .line 24
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_0
 
     .line 25
     .line 26
@@ -521,10 +521,10 @@
     .line 32
     .line 33
     .line 34
-    goto :goto_27
+    goto :goto_0
 
     .line 35
-    :cond_22
+    :cond_0
     const-string v1, ",<unknown>"
 
     .line 36
@@ -534,7 +534,7 @@
     .line 38
     .line 39
     .line 40
-    :goto_27
+    :goto_0
     const-string v1, "]"
 
     .line 41

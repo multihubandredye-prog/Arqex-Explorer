@@ -30,7 +30,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -52,7 +52,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;ILjava/net/InetAddress;ILorg/conscrypt/SSLParametersImpl;)V
-    .registers 6
+    .locals 0
 
     .line 52
     invoke-direct {p0, p1, p2, p3, p4}, Lorg/conscrypt/OpenSSLSocketImpl;-><init>(Ljava/lang/String;ILjava/net/InetAddress;I)V
@@ -99,7 +99,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;ILorg/conscrypt/SSLParametersImpl;)V
-    .registers 4
+    .locals 0
 
     .line 38
     invoke-direct {p0, p1, p2}, Lorg/conscrypt/OpenSSLSocketImpl;-><init>(Ljava/lang/String;I)V
@@ -146,7 +146,7 @@
 .end method
 
 .method public constructor <init>(Ljava/net/InetAddress;ILjava/net/InetAddress;ILorg/conscrypt/SSLParametersImpl;)V
-    .registers 6
+    .locals 0
 
     .line 59
     invoke-direct {p0, p1, p2, p3, p4}, Lorg/conscrypt/OpenSSLSocketImpl;-><init>(Ljava/net/InetAddress;ILjava/net/InetAddress;I)V
@@ -193,7 +193,7 @@
 .end method
 
 .method public constructor <init>(Ljava/net/InetAddress;ILorg/conscrypt/SSLParametersImpl;)V
-    .registers 4
+    .locals 0
 
     .line 45
     invoke-direct {p0, p1, p2}, Lorg/conscrypt/OpenSSLSocketImpl;-><init>(Ljava/net/InetAddress;I)V
@@ -240,7 +240,7 @@
 .end method
 
 .method public constructor <init>(Ljava/net/Socket;Ljava/lang/String;IZLorg/conscrypt/SSLParametersImpl;)V
-    .registers 6
+    .locals 0
 
     .line 66
     invoke-direct {p0, p1, p2, p3, p4}, Lorg/conscrypt/OpenSSLSocketImpl;-><init>(Ljava/net/Socket;Ljava/lang/String;IZ)V
@@ -287,7 +287,7 @@
 .end method
 
 .method public constructor <init>(Lorg/conscrypt/SSLParametersImpl;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/OpenSSLSocketImpl;-><init>()V
@@ -364,7 +364,7 @@
 .end method
 
 .method public static bridge synthetic List(Lorg/conscrypt/ConscryptEngineSocket;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/ConscryptEngineSocket;->waitForHandshake()V
@@ -376,7 +376,7 @@
 .end method
 
 .method public static bridge synthetic Object(Lorg/conscrypt/ConscryptEngineSocket;)Ljava/io/OutputStream;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/ConscryptEngineSocket;->getUnderlyingOutputStream()Ljava/io/OutputStream;
@@ -391,7 +391,7 @@
 .end method
 
 .method public static bridge synthetic String(Lorg/conscrypt/ConscryptEngineSocket;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/ConscryptEngineSocket;->onEngineHandshakeFinished()V
@@ -403,7 +403,7 @@
 .end method
 
 .method public static bridge synthetic c(Lorg/conscrypt/ConscryptEngineSocket;)Lorg/conscrypt/BufferAllocator;
-    .registers 1
+    .locals 0
 
     .line 1
     iget-object p0, p0, Lorg/conscrypt/ConscryptEngineSocket;->bufferAllocator:Lorg/conscrypt/BufferAllocator;
@@ -414,7 +414,7 @@
 .end method
 
 .method private createInputStream()Lorg/conscrypt/ConscryptEngineSocket$SSLInputStream;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->stateLock:Ljava/lang/Object;
@@ -424,12 +424,12 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Lorg/conscrypt/ConscryptEngineSocket;->in:Lorg/conscrypt/ConscryptEngineSocket$SSLInputStream;
 
     .line 5
     .line 6
-    if-nez v1, :cond_11
+    if-nez v1, :cond_0
 
     .line 7
     .line 8
@@ -446,35 +446,35 @@
 
     .line 14
     .line 15
-    goto :goto_11
+    goto :goto_0
 
     .line 16
-    :catchall_f
+    :catchall_0
     move-exception v1
 
     .line 17
-    goto :goto_13
+    goto :goto_1
 
     .line 18
-    :cond_11
-    :goto_11
+    :cond_0
+    :goto_0
     monitor-exit v0
 
     .line 19
     return-object v1
 
     .line 20
-    :goto_13
+    :goto_1
     monitor-exit v0
-    :try_end_14
-    .catchall {:try_start_3 .. :try_end_14} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 21
     throw v1
 .end method
 
 .method private createOutputStream()Lorg/conscrypt/ConscryptEngineSocket$SSLOutputStream;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->stateLock:Ljava/lang/Object;
@@ -484,12 +484,12 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Lorg/conscrypt/ConscryptEngineSocket;->out:Lorg/conscrypt/ConscryptEngineSocket$SSLOutputStream;
 
     .line 5
     .line 6
-    if-nez v1, :cond_11
+    if-nez v1, :cond_0
 
     .line 7
     .line 8
@@ -506,41 +506,41 @@
 
     .line 14
     .line 15
-    goto :goto_11
+    goto :goto_0
 
     .line 16
-    :catchall_f
+    :catchall_0
     move-exception v1
 
     .line 17
-    goto :goto_13
+    goto :goto_1
 
     .line 18
-    :cond_11
-    :goto_11
+    :cond_0
+    :goto_0
     monitor-exit v0
 
     .line 19
     return-object v1
 
     .line 20
-    :goto_13
+    :goto_1
     monitor-exit v0
-    :try_end_14
-    .catchall {:try_start_3 .. :try_end_14} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 21
     throw v1
 .end method
 
 .method private doHandshake()V
-    .registers 8
+    .locals 7
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :goto_1
+    :goto_0
     const/4 v1, 0x5
 
     .line 3
@@ -550,11 +550,11 @@
     const/4 v3, 0x3
 
     .line 5
-    if-nez v0, :cond_78
+    if-nez v0, :cond_6
 
     .line 6
     .line 7
-    :try_start_6
+    :try_start_0
     sget-object v4, Lorg/conscrypt/ConscryptEngineSocket$3;->$SwitchMap$javax$net$ssl$SSLEngineResult$HandshakeStatus:[I
 
     .line 8
@@ -586,33 +586,33 @@
     const/4 v5, 0x1
 
     .line 22
-    if-eq v4, v5, :cond_5e
+    if-eq v4, v5, :cond_4
 
     .line 23
     .line 24
     const/4 v6, 0x2
 
     .line 25
-    if-eq v4, v6, :cond_51
+    if-eq v4, v6, :cond_3
 
     .line 26
     .line 27
-    if-eq v4, v3, :cond_46
+    if-eq v4, v3, :cond_2
 
     .line 28
     .line 29
-    if-eq v4, v2, :cond_44
+    if-eq v4, v2, :cond_1
 
     .line 30
     .line 31
-    if-ne v4, v1, :cond_21
+    if-ne v4, v1, :cond_0
 
     .line 32
     .line 33
-    goto :goto_44
+    goto :goto_1
 
     .line 34
-    :cond_21
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     .line 35
@@ -668,36 +668,36 @@
     throw v0
 
     .line 63
-    :catch_3e
+    :catch_0
     move-exception v0
 
     .line 64
-    goto :goto_88
+    goto :goto_2
 
     .line 65
-    :catch_40
+    :catch_1
     move-exception v0
 
     .line 66
-    goto :goto_90
+    goto :goto_3
 
     .line 67
-    :catch_42
+    :catch_2
     move-exception v0
 
     .line 68
-    goto :goto_94
+    goto :goto_4
 
     .line 69
-    :cond_44
-    :goto_44
+    :cond_1
+    :goto_1
     const/4 v0, 0x1
 
     .line 70
-    goto :goto_1
+    goto :goto_0
 
     .line 71
-    :cond_46
+    :cond_2
     invoke-virtual {p0}, Lorg/conscrypt/ConscryptEngineSocket;->close()V
 
     .line 72
@@ -719,7 +719,7 @@
     throw v0
 
     .line 82
-    :cond_51
+    :cond_3
     iget-object v1, p0, Lorg/conscrypt/ConscryptEngineSocket;->out:Lorg/conscrypt/ConscryptEngineSocket$SSLOutputStream;
 
     .line 83
@@ -742,10 +742,10 @@
     .line 92
     .line 93
     .line 94
-    goto :goto_1
+    goto :goto_0
 
     .line 95
-    :cond_5e
+    :cond_4
     iget-object v1, p0, Lorg/conscrypt/ConscryptEngineSocket;->in:Lorg/conscrypt/ConscryptEngineSocket$SSLInputStream;
 
     .line 96
@@ -762,14 +762,14 @@
     move-result v1
 
     .line 103
-    if-ltz v1, :cond_69
+    if-ltz v1, :cond_5
 
     .line 104
     .line 105
-    goto :goto_1
+    goto :goto_0
 
     .line 106
-    :cond_69
+    :cond_5
     invoke-virtual {p0}, Lorg/conscrypt/ConscryptEngineSocket;->close()V
 
     .line 107
@@ -799,7 +799,7 @@
     throw v0
 
     .line 121
-    :cond_78
+    :cond_6
     invoke-direct {p0, v3}, Lorg/conscrypt/ConscryptEngineSocket;->isState(I)Z
 
     .line 122
@@ -808,7 +808,7 @@
     move-result v0
 
     .line 125
-    if-eqz v0, :cond_87
+    if-eqz v0, :cond_7
 
     .line 126
     .line 127
@@ -823,19 +823,19 @@
     .line 132
     .line 133
     invoke-direct {p0, v1}, Lorg/conscrypt/ConscryptEngineSocket;->transitionTo(I)I
-    :try_end_87
-    .catch Ljavax/net/ssl/SSLException; {:try_start_6 .. :try_end_87} :catch_42
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_87} :catch_40
-    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_87} :catch_3e
+    :try_end_0
+    .catch Ljavax/net/ssl/SSLException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 134
     .line 135
     .line 136
-    :cond_87
+    :cond_7
     return-void
 
     .line 137
-    :goto_88
+    :goto_2
     invoke-virtual {p0}, Lorg/conscrypt/ConscryptEngineSocket;->close()V
 
     .line 138
@@ -852,7 +852,7 @@
     throw v0
 
     .line 145
-    :goto_90
+    :goto_3
     invoke-virtual {p0}, Lorg/conscrypt/ConscryptEngineSocket;->close()V
 
     .line 146
@@ -861,7 +861,7 @@
     throw v0
 
     .line 149
-    :goto_94
+    :goto_4
     invoke-direct {p0}, Lorg/conscrypt/ConscryptEngineSocket;->drainOutgoingQueue()V
 
     .line 150
@@ -872,19 +872,19 @@
     .line 153
     .line 154
     .line 155
-    goto :goto_9c
+    goto :goto_6
 
     .line 156
-    :goto_9b
+    :goto_5
     throw v0
 
     .line 157
-    :goto_9c
-    goto :goto_9b
+    :goto_6
+    goto :goto_5
 .end method
 
 .method private drainOutgoingQueue()V
-    .registers 3
+    .locals 2
 
     .line 1
     :goto_0
@@ -901,7 +901,7 @@
     move-result v0
 
     .line 7
-    if-lez v0, :cond_15
+    if-lez v0, :cond_0
 
     .line 8
     .line 9
@@ -923,8 +923,8 @@
     .line 17
     .line 18
     invoke-static {v0}, Lorg/conscrypt/ConscryptEngineSocket$SSLOutputStream;->c(Lorg/conscrypt/ConscryptEngineSocket$SSLOutputStream;)V
-    :try_end_14
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_14} :catch_15
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 19
     .line 20
@@ -932,13 +932,13 @@
     goto :goto_0
 
     .line 22
-    :catch_15
-    :cond_15
+    :catch_0
+    :cond_0
     return-void
 .end method
 
 .method private static getDelegatingTrustManager(Ljavax/net/ssl/X509TrustManager;Lorg/conscrypt/ConscryptEngineSocket;)Ljavax/net/ssl/X509TrustManager;
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-static {p0}, Llibs/Lima;->List(Ljavax/net/ssl/X509TrustManager;)Z
@@ -949,7 +949,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -973,12 +973,12 @@
     return-object v0
 
     .line 17
-    :cond_10
+    :cond_0
     return-object p0
 .end method
 
 .method private getUnderlyingInputStream()Ljava/io/InputStream;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/OpenSSLSocketImpl;->getInputStream()Ljava/io/InputStream;
@@ -993,7 +993,7 @@
 .end method
 
 .method private getUnderlyingOutputStream()Ljava/io/OutputStream;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/OpenSSLSocketImpl;->getOutputStream()Ljava/io/OutputStream;
@@ -1008,7 +1008,7 @@
 .end method
 
 .method public static bridge synthetic i(Lorg/conscrypt/ConscryptEngineSocket;)Lorg/conscrypt/ConscryptEngine;
-    .registers 1
+    .locals 0
 
     .line 1
     iget-object p0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -1019,7 +1019,7 @@
 .end method
 
 .method private isState(I)Z
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->stateLock:Ljava/lang/Object;
@@ -1029,46 +1029,46 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget v1, p0, Lorg/conscrypt/ConscryptEngineSocket;->state:I
 
     .line 5
     .line 6
-    if-ne v1, p1, :cond_9
+    if-ne v1, p1, :cond_0
 
     .line 7
     .line 8
     const/4 p1, 0x1
 
     .line 9
-    goto :goto_a
+    goto :goto_0
 
     .line 10
-    :cond_9
+    :cond_0
     const/4 p1, 0x0
 
     .line 11
-    :goto_a
+    :goto_0
     monitor-exit v0
 
     .line 12
     return p1
 
     .line 13
-    :catchall_c
+    :catchall_0
     move-exception p1
 
     .line 14
     monitor-exit v0
-    :try_end_e
-    .catchall {:try_start_3 .. :try_end_e} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 15
     throw p1
 .end method
 
 .method public static bridge synthetic m(Lorg/conscrypt/ConscryptEngineSocket;)Ljava/lang/Object;
-    .registers 1
+    .locals 0
 
     .line 1
     iget-object p0, p0, Lorg/conscrypt/ConscryptEngineSocket;->handshakeLock:Ljava/lang/Object;
@@ -1079,7 +1079,7 @@
 .end method
 
 .method private static newEngine(Lorg/conscrypt/SSLParametersImpl;Lorg/conscrypt/ConscryptEngineSocket;)Lorg/conscrypt/ConscryptEngine;
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/SSLParametersImpl;->isSpake()Z
@@ -1090,7 +1090,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -1102,10 +1102,10 @@
     move-result-object v0
 
     .line 11
-    goto :goto_1f
+    goto :goto_0
 
     .line 12
-    :cond_b
+    :cond_0
     invoke-static {}, Lorg/conscrypt/Platform;->supportsX509ExtendedTrustManager()Z
 
     .line 13
@@ -1114,7 +1114,7 @@
     move-result v0
 
     .line 16
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_1
 
     .line 17
     .line 18
@@ -1142,14 +1142,14 @@
     move-result-object v0
 
     .line 30
-    goto :goto_1f
+    goto :goto_0
 
     .line 31
-    :cond_1e
+    :cond_1
     move-object v0, p0
 
     .line 32
-    :goto_1f
+    :goto_0
     new-instance v1, Lorg/conscrypt/ConscryptEngine;
 
     .line 33
@@ -1198,7 +1198,7 @@
 .end method
 
 .method private onEngineHandshakeFinished()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x2
@@ -1212,7 +1212,7 @@
     move-result v0
 
     .line 6
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
@@ -1224,12 +1224,12 @@
     .line 10
     .line 11
     .line 12
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method private transitionTo(I)I
-    .registers 16
+    .locals 14
 
     .line 1
     iget-object v1, p0, Lorg/conscrypt/ConscryptEngineSocket;->stateLock:Ljava/lang/Object;
@@ -1239,12 +1239,12 @@
     monitor-enter v1
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->state:I
 
     .line 5
     .line 6
-    if-ne v0, p1, :cond_c
+    if-ne v0, p1, :cond_0
 
     .line 7
     .line 8
@@ -1254,21 +1254,21 @@
     return v0
 
     .line 10
-    :catchall_9
+    :catchall_0
     move-exception v0
 
     .line 11
     move-object p1, v0
 
     .line 12
-    goto :goto_77
+    goto :goto_2
 
     .line 13
-    :cond_c
+    :cond_0
     const/4 v2, 0x2
 
     .line 14
-    if-eq p1, v2, :cond_65
+    if-eq p1, v2, :cond_3
 
     .line 15
     .line 16
@@ -1283,28 +1283,28 @@
 
     .line 20
     .line 21
-    if-eq p1, v2, :cond_49
+    if-eq p1, v2, :cond_2
 
     .line 22
     .line 23
     const/4 v2, 0x4
 
     .line 24
-    if-eq p1, v2, :cond_1d
+    if-eq p1, v2, :cond_1
 
     .line 25
     .line 26
     const/4 v2, 0x5
 
     .line 27
-    if-eq p1, v2, :cond_6c
+    if-eq p1, v2, :cond_4
 
     .line 28
     .line 29
-    goto :goto_6b
+    goto :goto_0
 
     .line 30
-    :cond_1d
+    :cond_1
     iget-wide v6, p0, Lorg/conscrypt/ConscryptEngineSocket;->handshakeStartedMillis:J
 
     .line 31
@@ -1313,7 +1313,7 @@
 
     .line 33
     .line 34
-    if-lez v2, :cond_6c
+    if-lez v2, :cond_4
 
     .line 35
     .line 36
@@ -1392,10 +1392,10 @@
 
     .line 72
     .line 73
-    goto :goto_6c
+    goto :goto_1
 
     .line 74
-    :cond_49
+    :cond_2
     iget-wide v6, p0, Lorg/conscrypt/ConscryptEngineSocket;->handshakeStartedMillis:J
 
     .line 75
@@ -1404,7 +1404,7 @@
 
     .line 77
     .line 78
-    if-lez v2, :cond_6c
+    if-lez v2, :cond_4
 
     .line 79
     .line 80
@@ -1451,10 +1451,10 @@
 
     .line 100
     .line 101
-    goto :goto_6c
+    goto :goto_1
 
     .line 102
-    :cond_65
+    :cond_3
     invoke-static {}, Lorg/conscrypt/Platform;->getMillisSinceBoot()J
 
     .line 103
@@ -1467,17 +1467,17 @@
 
     .line 107
     .line 108
-    :goto_6b
+    :goto_0
     const/4 v3, 0x0
 
     .line 109
-    :cond_6c
-    :goto_6c
+    :cond_4
+    :goto_1
     iput p1, p0, Lorg/conscrypt/ConscryptEngineSocket;->state:I
 
     .line 110
     .line 111
-    if-eqz v3, :cond_75
+    if-eqz v3, :cond_5
 
     .line 112
     .line 113
@@ -1490,24 +1490,24 @@
     .line 116
     .line 117
     .line 118
-    :cond_75
+    :cond_5
     monitor-exit v1
 
     .line 119
     return v0
 
     .line 120
-    :goto_77
+    :goto_2
     monitor-exit v1
-    :try_end_78
-    .catchall {:try_start_3 .. :try_end_78} :catchall_9
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 121
     throw p1
 .end method
 
 .method public static bridge synthetic w(Lorg/conscrypt/ConscryptEngineSocket;)I
-    .registers 1
+    .locals 0
 
     .line 1
     iget p0, p0, Lorg/conscrypt/ConscryptEngineSocket;->state:I
@@ -1518,7 +1518,7 @@
 .end method
 
 .method private waitForHandshake()V
-    .registers 5
+    .locals 4
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/ConscryptEngineSocket;->startHandshake()V
@@ -1533,11 +1533,11 @@
     monitor-enter v0
 
     .line 7
-    :goto_6
-    :try_start_6
+    :goto_0
+    :try_start_0
     iget v1, p0, Lorg/conscrypt/ConscryptEngineSocket;->state:I
-    :try_end_8
-    .catchall {:try_start_6 .. :try_end_8} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 8
     .line 9
@@ -1548,49 +1548,49 @@
 
     .line 11
     .line 12
-    if-eq v1, v2, :cond_2a
+    if-eq v1, v2, :cond_0
 
     .line 13
     .line 14
     const/4 v2, 0x4
 
     .line 15
-    if-eq v1, v2, :cond_2a
+    if-eq v1, v2, :cond_0
 
     .line 16
     .line 17
-    if-eq v1, v3, :cond_2a
+    if-eq v1, v3, :cond_0
 
     .line 18
     .line 19
-    :try_start_12
+    :try_start_1
     iget-object v1, p0, Lorg/conscrypt/ConscryptEngineSocket;->stateLock:Ljava/lang/Object;
 
     .line 20
     .line 21
     invoke-virtual {v1}, Ljava/lang/Object;->wait()V
-    :try_end_17
-    .catch Ljava/lang/InterruptedException; {:try_start_12 .. :try_end_17} :catch_1a
-    .catchall {:try_start_12 .. :try_end_17} :catchall_18
+    :try_end_1
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 22
     .line 23
     .line 24
-    goto :goto_6
+    goto :goto_0
 
     .line 25
-    :catchall_18
+    :catchall_0
     move-exception v1
 
     .line 26
-    goto :goto_36
+    goto :goto_1
 
     .line 27
-    :catch_1a
+    :catch_0
     move-exception v1
 
     .line 28
-    :try_start_1b
+    :try_start_2
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     .line 29
@@ -1620,8 +1620,8 @@
     throw v2
 
     .line 43
-    :cond_2a
-    if-eq v1, v3, :cond_2e
+    :cond_0
+    if-eq v1, v3, :cond_1
 
     .line 44
     .line 45
@@ -1631,7 +1631,7 @@
     return-void
 
     .line 47
-    :cond_2e
+    :cond_1
     new-instance v1, Ljava/net/SocketException;
 
     .line 48
@@ -1648,25 +1648,25 @@
     throw v1
 
     .line 55
-    :goto_36
+    :goto_1
     monitor-exit v0
-    :try_end_37
-    .catchall {:try_start_1b .. :try_end_37} :catchall_18
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 56
-    goto :goto_39
+    goto :goto_3
 
     .line 57
-    :goto_38
+    :goto_2
     throw v1
 
     .line 58
-    :goto_39
-    goto :goto_38
+    :goto_3
+    goto :goto_2
 .end method
 
 .method public static bridge synthetic x(Lorg/conscrypt/ConscryptEngineSocket;)Ljava/lang/Object;
-    .registers 1
+    .locals 0
 
     .line 1
     iget-object p0, p0, Lorg/conscrypt/ConscryptEngineSocket;->stateLock:Ljava/lang/Object;
@@ -1677,7 +1677,7 @@
 .end method
 
 .method public static bridge synthetic y(Lorg/conscrypt/ConscryptEngineSocket;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/ConscryptEngineSocket;->doHandshake()V
@@ -1689,7 +1689,7 @@
 .end method
 
 .method public static bridge synthetic z(Lorg/conscrypt/ConscryptEngineSocket;)Ljava/io/InputStream;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/ConscryptEngineSocket;->getUnderlyingInputStream()Ljava/io/InputStream;
@@ -1706,7 +1706,7 @@
 
 # virtual methods
 .method public final chooseClientAlias(Ljavax/net/ssl/X509KeyManager;[Ljavax/security/auth/x500/X500Principal;[Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-interface {p1, p3, p2, p0}, Ljavax/net/ssl/X509KeyManager;->chooseClientAlias([Ljava/lang/String;[Ljava/security/Principal;Ljava/net/Socket;)Ljava/lang/String;
@@ -1721,7 +1721,7 @@
 .end method
 
 .method public final chooseServerAlias(Ljavax/net/ssl/X509KeyManager;Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -1739,21 +1739,21 @@
 .end method
 
 .method public final close()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->stateLock:Ljava/lang/Object;
 
     .line 2
     .line 3
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
-    goto :goto_30
+    goto :goto_1
 
     .line 6
-    :cond_5
+    :cond_0
     const/16 v0, 0x8
 
     .line 7
@@ -1766,15 +1766,15 @@
     move-result v1
 
     .line 12
-    if-ne v1, v0, :cond_e
+    if-ne v1, v0, :cond_1
 
     .line 13
     .line 14
-    goto :goto_30
+    goto :goto_1
 
     .line 15
-    :cond_e
-    :try_start_e
+    :cond_1
+    :try_start_0
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
 
     .line 16
@@ -1796,7 +1796,7 @@
     const/4 v0, 0x2
 
     .line 26
-    if-lt v1, v0, :cond_26
+    if-lt v1, v0, :cond_2
 
     .line 27
     .line 28
@@ -1810,28 +1810,28 @@
     .line 32
     .line 33
     invoke-virtual {v0}, Lorg/conscrypt/ConscryptEngine;->closeOutbound()V
-    :try_end_23
-    .catchall {:try_start_e .. :try_end_23} :catchall_24
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 34
     .line 35
     .line 36
-    goto :goto_26
+    goto :goto_0
 
     .line 37
-    :catchall_24
+    :catchall_0
     move-exception v0
 
     .line 38
-    goto :goto_3c
+    goto :goto_2
 
     .line 39
-    :cond_26
-    :goto_26
-    :try_start_26
+    :cond_2
+    :goto_0
+    :try_start_1
     invoke-super {p0}, Lorg/conscrypt/OpenSSLSocketImpl;->close()V
-    :try_end_29
-    .catchall {:try_start_26 .. :try_end_29} :catchall_31
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 40
     .line 41
@@ -1840,7 +1840,7 @@
 
     .line 43
     .line 44
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_3
 
     .line 45
     .line 46
@@ -1849,12 +1849,12 @@
     .line 47
     .line 48
     .line 49
-    :cond_30
-    :goto_30
+    :cond_3
+    :goto_1
     return-void
 
     .line 50
-    :catchall_31
+    :catchall_1
     move-exception v0
 
     .line 51
@@ -1862,7 +1862,7 @@
 
     .line 52
     .line 53
-    if-eqz v1, :cond_3b
+    if-eqz v1, :cond_4
 
     .line 54
     .line 55
@@ -1875,15 +1875,15 @@
     .line 58
     .line 59
     .line 60
-    :cond_3b
+    :cond_4
     throw v0
 
     .line 61
-    :goto_3c
-    :try_start_3c
+    :goto_2
+    :try_start_2
     invoke-super {p0}, Lorg/conscrypt/OpenSSLSocketImpl;->close()V
-    :try_end_3f
-    .catchall {:try_start_3c .. :try_end_3f} :catchall_47
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
     .line 62
     .line 63
@@ -1892,7 +1892,7 @@
 
     .line 65
     .line 66
-    if-eqz v1, :cond_46
+    if-eqz v1, :cond_5
 
     .line 67
     .line 68
@@ -1901,11 +1901,11 @@
     .line 69
     .line 70
     .line 71
-    :cond_46
+    :cond_5
     throw v0
 
     .line 72
-    :catchall_47
+    :catchall_2
     move-exception v0
 
     .line 73
@@ -1913,7 +1913,7 @@
 
     .line 74
     .line 75
-    if-eqz v1, :cond_51
+    if-eqz v1, :cond_6
 
     .line 76
     .line 77
@@ -1926,12 +1926,12 @@
     .line 80
     .line 81
     .line 82
-    :cond_51
+    :cond_6
     throw v0
 .end method
 
 .method public exportKeyingMaterial(Ljava/lang/String;[BI)[B
-    .registers 5
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -1950,7 +1950,7 @@
 .end method
 
 .method public final getActiveSession()Ljavax/net/ssl/SSLSession;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -1969,7 +1969,7 @@
 .end method
 
 .method public final getApplicationProtocol()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -1988,7 +1988,7 @@
 .end method
 
 .method public final getApplicationProtocols()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -2007,7 +2007,7 @@
 .end method
 
 .method public final getChannelId()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -2026,7 +2026,7 @@
 .end method
 
 .method public final getCurveNameForTesting()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -2045,7 +2045,7 @@
 .end method
 
 .method public final getEnableSessionCreation()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -2064,7 +2064,7 @@
 .end method
 
 .method public final getEnabledCipherSuites()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -2083,7 +2083,7 @@
 .end method
 
 .method public final getEnabledProtocols()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -2102,7 +2102,7 @@
 .end method
 
 .method public final getHandshakeApplicationProtocol()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -2121,7 +2121,7 @@
 .end method
 
 .method public final getHandshakeSession()Ljavax/net/ssl/SSLSession;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -2140,7 +2140,7 @@
 .end method
 
 .method public final getInputStream()Ljava/io/InputStream;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/AbstractConscryptSocket;->checkOpen()V
@@ -2160,7 +2160,7 @@
 .end method
 
 .method public final getNeedClientAuth()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -2179,7 +2179,7 @@
 .end method
 
 .method public final getOutputStream()Ljava/io/OutputStream;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/AbstractConscryptSocket;->checkOpen()V
@@ -2199,7 +2199,7 @@
 .end method
 
 .method public final getSSLParameters()Ljavax/net/ssl/SSLParameters;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -2218,7 +2218,7 @@
 .end method
 
 .method public final getSession()Ljavax/net/ssl/SSLSession;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLSocketImpl;->isConnected()Z
@@ -2229,20 +2229,20 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
-    :try_start_6
+    :try_start_0
     invoke-direct {p0}, Lorg/conscrypt/ConscryptEngineSocket;->waitForHandshake()V
-    :try_end_9
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_9} :catch_9
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 8
     .line 9
     .line 10
-    :catch_9
-    :cond_9
+    :catch_0
+    :cond_0
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
 
     .line 11
@@ -2259,7 +2259,7 @@
 .end method
 
 .method public final getSupportedCipherSuites()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -2278,7 +2278,7 @@
 .end method
 
 .method public final getSupportedProtocols()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -2297,7 +2297,7 @@
 .end method
 
 .method public getTlsUnique()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -2316,7 +2316,7 @@
 .end method
 
 .method public final getUseClientMode()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -2335,7 +2335,7 @@
 .end method
 
 .method public final getWantClientAuth()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -2354,20 +2354,20 @@
 .end method
 
 .method public final setApplicationProtocolSelector(Lorg/conscrypt/ApplicationProtocolSelector;)V
-    .registers 3
+    .locals 1
 
     .line 1
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     .line 2
     .line 3
     const/4 p1, 0x0
 
     .line 4
-    goto :goto_a
+    goto :goto_0
 
     .line 5
-    :cond_4
+    :cond_0
     new-instance v0, Lorg/conscrypt/ApplicationProtocolSelectorAdapter;
 
     .line 6
@@ -2380,7 +2380,7 @@
     move-object p1, v0
 
     .line 11
-    :goto_a
+    :goto_0
     invoke-virtual {p0, p1}, Lorg/conscrypt/ConscryptEngineSocket;->setApplicationProtocolSelector(Lorg/conscrypt/ApplicationProtocolSelectorAdapter;)V
 
     .line 12
@@ -2390,7 +2390,7 @@
 .end method
 
 .method public final setApplicationProtocolSelector(Lorg/conscrypt/ApplicationProtocolSelectorAdapter;)V
-    .registers 3
+    .locals 1
 
     .line 15
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -2401,7 +2401,7 @@
 .end method
 
 .method public final setApplicationProtocols([Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -2417,7 +2417,7 @@
 .end method
 
 .method public setBufferAllocator(Lorg/conscrypt/BufferAllocator;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -2437,7 +2437,7 @@
 .end method
 
 .method public final setChannelIdEnabled(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -2453,7 +2453,7 @@
 .end method
 
 .method public final setChannelIdPrivateKey(Ljava/security/PrivateKey;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -2469,7 +2469,7 @@
 .end method
 
 .method public final setEnableSessionCreation(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -2485,7 +2485,7 @@
 .end method
 
 .method public final setEnabledCipherSuites([Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -2501,7 +2501,7 @@
 .end method
 
 .method public final setEnabledProtocols([Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -2517,14 +2517,14 @@
 .end method
 
 .method public setHandshakeTimeout(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final setHostname(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -2545,7 +2545,7 @@
 .end method
 
 .method public final setNeedClientAuth(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -2561,7 +2561,7 @@
 .end method
 
 .method public final setSSLParameters(Ljavax/net/ssl/SSLParameters;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -2577,7 +2577,7 @@
 .end method
 
 .method public final setUseClientMode(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -2593,7 +2593,7 @@
 .end method
 
 .method public final setUseSessionTickets(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -2609,7 +2609,7 @@
 .end method
 
 .method public final setWantClientAuth(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->engine:Lorg/conscrypt/ConscryptEngine;
@@ -2625,7 +2625,7 @@
 .end method
 
 .method public final startHandshake()V
-    .registers 4
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/AbstractConscryptSocket;->checkOpen()V
@@ -2633,33 +2633,33 @@
     .line 2
     .line 3
     .line 4
-    :try_start_3
+    :try_start_0
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket;->handshakeLock:Ljava/lang/Object;
 
     .line 5
     .line 6
     monitor-enter v0
-    :try_end_6
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_6} :catch_2f
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_6} :catch_2d
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 7
-    :try_start_6
+    :try_start_1
     iget-object v1, p0, Lorg/conscrypt/ConscryptEngineSocket;->stateLock:Ljava/lang/Object;
 
     .line 8
     .line 9
     monitor-enter v1
-    :try_end_9
-    .catchall {:try_start_6 .. :try_end_9} :catchall_22
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 10
-    :try_start_9
+    :try_start_2
     iget v2, p0, Lorg/conscrypt/ConscryptEngineSocket;->state:I
 
     .line 11
     .line 12
-    if-nez v2, :cond_26
+    if-nez v2, :cond_0
 
     .line 13
     .line 14
@@ -2691,93 +2691,93 @@
     .line 28
     .line 29
     monitor-exit v1
-    :try_end_1d
-    .catchall {:try_start_9 .. :try_end_1d} :catchall_24
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 30
-    :try_start_1d
+    :try_start_3
     invoke-direct {p0}, Lorg/conscrypt/ConscryptEngineSocket;->doHandshake()V
 
     .line 31
     .line 32
     .line 33
     monitor-exit v0
-    :try_end_21
-    .catchall {:try_start_1d .. :try_end_21} :catchall_22
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 34
     return-void
 
     .line 35
-    :catchall_22
+    :catchall_0
     move-exception v1
 
     .line 36
-    goto :goto_2b
+    goto :goto_1
 
     .line 37
-    :catchall_24
+    :catchall_1
     move-exception v2
 
     .line 38
-    goto :goto_29
+    goto :goto_0
 
     .line 39
-    :cond_26
-    :try_start_26
+    :cond_0
+    :try_start_4
     monitor-exit v1
-    :try_end_27
-    .catchall {:try_start_26 .. :try_end_27} :catchall_24
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 40
-    :try_start_27
+    :try_start_5
     monitor-exit v0
-    :try_end_28
-    .catchall {:try_start_27 .. :try_end_28} :catchall_22
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 41
     return-void
 
     .line 42
-    :goto_29
-    :try_start_29
+    :goto_0
+    :try_start_6
     monitor-exit v1
-    :try_end_2a
-    .catchall {:try_start_29 .. :try_end_2a} :catchall_24
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
     .line 43
-    :try_start_2a
+    :try_start_7
     throw v2
 
     .line 44
-    :goto_2b
+    :goto_1
     monitor-exit v0
-    :try_end_2c
-    .catchall {:try_start_2a .. :try_end_2c} :catchall_22
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
     .line 45
-    :try_start_2c
+    :try_start_8
     throw v1
-    :try_end_2d
-    .catch Ljava/io/IOException; {:try_start_2c .. :try_end_2d} :catch_2f
-    .catch Ljava/lang/Exception; {:try_start_2c .. :try_end_2d} :catch_2d
+    :try_end_8
+    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_0
 
     .line 46
-    :catch_2d
+    :catch_0
     move-exception v0
 
     .line 47
-    goto :goto_31
+    goto :goto_2
 
     .line 48
-    :catch_2f
+    :catch_1
     move-exception v0
 
     .line 49
-    goto :goto_39
+    goto :goto_3
 
     .line 50
-    :goto_31
+    :goto_2
     invoke-virtual {p0}, Lorg/conscrypt/ConscryptEngineSocket;->close()V
 
     .line 51
@@ -2794,7 +2794,7 @@
     throw v0
 
     .line 58
-    :goto_39
+    :goto_3
     invoke-virtual {p0}, Lorg/conscrypt/ConscryptEngineSocket;->close()V
 
     .line 59

@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/os/IBinder;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final asBinder()Landroid/os/IBinder;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/d71;->a:Landroid/os/IBinder;
@@ -41,7 +41,7 @@
 .end method
 
 .method public final onProgress(J)Z
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
@@ -60,7 +60,7 @@
     move-result-object v1
 
     .line 9
-    :try_start_8
+    :try_start_0
     const-string v2, "moe.shizuku.api.IProgressListener"
 
     .line 10
@@ -101,18 +101,18 @@
     .line 29
     .line 30
     move-result p1
-    :try_end_1e
-    .catchall {:try_start_8 .. :try_end_1e} :catchall_28
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 31
-    if-eqz p1, :cond_21
+    if-eqz p1, :cond_0
 
     .line 32
     .line 33
     const/4 p2, 0x1
 
     .line 34
-    :cond_21
+    :cond_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
     .line 35
@@ -126,7 +126,7 @@
     return p2
 
     .line 41
-    :catchall_28
+    :catchall_0
     move-exception p1
 
     .line 42

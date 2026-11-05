@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -28,7 +28,7 @@
 
 # virtual methods
 .method public final a(Llibs/r01;Llibs/q01;)Ljava/lang/String;
-    .registers 13
+    .locals 10
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -192,7 +192,7 @@
     const/4 v7, 0x0
 
     .line 84
-    if-eqz v6, :cond_5d
+    if-eqz v6, :cond_0
 
     .line 85
     .line 86
@@ -208,11 +208,11 @@
 
     .line 91
     .line 92
-    if-eq v6, v8, :cond_6d
+    if-eq v6, v8, :cond_1
 
     .line 93
     .line 94
-    :cond_5d
+    :cond_0
     const-string v6, "https"
 
     .line 95
@@ -225,7 +225,7 @@
     move-result v6
 
     .line 100
-    if-eqz v6, :cond_79
+    if-eqz v6, :cond_2
 
     .line 101
     .line 102
@@ -241,11 +241,11 @@
 
     .line 107
     .line 108
-    if-ne v6, v8, :cond_79
+    if-ne v6, v8, :cond_2
 
     .line 109
     .line 110
-    :cond_6d
+    :cond_1
     const-string v6, ":"
 
     .line 111
@@ -258,7 +258,7 @@
     move-result v6
 
     .line 116
-    if-ltz v6, :cond_79
+    if-ltz v6, :cond_2
 
     .line 117
     .line 118
@@ -270,7 +270,7 @@
     move-result-object v5
 
     .line 122
-    :cond_79
+    :cond_2
     invoke-virtual {v3}, Ljava/net/URI;->getRawPath()Ljava/lang/String;
 
     .line 123
@@ -279,7 +279,7 @@
     move-result-object v3
 
     .line 126
-    if-eqz v3, :cond_85
+    if-eqz v3, :cond_3
 
     .line 127
     .line 128
@@ -291,16 +291,16 @@
     move-result v6
 
     .line 132
-    if-gtz v6, :cond_87
+    if-gtz v6, :cond_4
 
     .line 133
     .line 134
-    :cond_85
+    :cond_3
     const-string v3, "/"
 
     .line 135
     .line 136
-    :cond_87
+    :cond_4
     const-string v6, "://"
 
     .line 137
@@ -313,7 +313,7 @@
     move-result-object v3
 
     .line 142
-    if-nez p2, :cond_92
+    if-nez p2, :cond_5
 
     .line 143
     .line 144
@@ -321,10 +321,10 @@
 
     .line 145
     .line 146
-    goto :goto_d4
+    goto :goto_2
 
     .line 147
-    :cond_92
+    :cond_5
     new-instance v4, Ljava/lang/StringBuilder;
 
     .line 148
@@ -357,7 +357,7 @@
     const/4 v6, 0x0
 
     .line 163
-    :goto_a2
+    :goto_0
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
     .line 164
@@ -366,7 +366,7 @@
     move-result v8
 
     .line 167
-    if-eqz v8, :cond_d0
+    if-eqz v8, :cond_9
 
     .line 168
     .line 169
@@ -394,7 +394,7 @@
     move-result v9
 
     .line 181
-    if-nez v9, :cond_cd
+    if-nez v9, :cond_8
 
     .line 182
     .line 183
@@ -410,15 +410,15 @@
     move-result v9
 
     .line 189
-    if-eqz v9, :cond_bf
+    if-eqz v9, :cond_6
 
     .line 190
     .line 191
-    goto :goto_cd
+    goto :goto_1
 
     .line 192
-    :cond_bf
-    if-lez v6, :cond_c6
+    :cond_6
+    if-lez v6, :cond_7
 
     .line 193
     .line 194
@@ -431,7 +431,7 @@
     .line 197
     .line 198
     .line 199
-    :cond_c6
+    :cond_7
     invoke-virtual {p2, v8, v7}, Llibs/q01;->b(Ljava/lang/String;Z)Ljava/lang/String;
 
     .line 200
@@ -445,16 +445,16 @@
     .line 204
     .line 205
     .line 206
-    :cond_cd
-    :goto_cd
+    :cond_8
+    :goto_1
     add-int/lit8 v6, v6, 0x1
 
     .line 207
     .line 208
-    goto :goto_a2
+    goto :goto_0
 
     .line 209
-    :cond_d0
+    :cond_9
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 210
@@ -463,7 +463,7 @@
     move-result-object p2
 
     .line 213
-    :goto_d4
+    :goto_2
     new-instance v4, Ljava/lang/StringBuilder;
 
     .line 214

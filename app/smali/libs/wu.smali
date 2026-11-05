@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Llibs/di2;Llibs/en0;)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-object p2, p0, Llibs/wu;->X:Llibs/di2;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final close()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/wu;->X:Llibs/di2;
@@ -52,7 +52,7 @@
 .end method
 
 .method public final write(I)V
-    .registers 5
+    .locals 3
 
     int-to-byte p1, p1
 
@@ -72,7 +72,7 @@
 .end method
 
 .method public final write([B)V
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -85,7 +85,7 @@
 .end method
 
 .method public final write([BII)V
-    .registers 5
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/wu;->X:Llibs/di2;

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>([B)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/Theme;-><init>()V
@@ -27,14 +27,14 @@
 
 # virtual methods
 .method public final g(Llibs/Theme;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Llibs/Point;
 
     .line 2
     .line 3
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -44,7 +44,7 @@
     return p1
 
     .line 7
-    :cond_6
+    :cond_0
     check-cast p1, Llibs/Point;
 
     .line 8
@@ -69,7 +69,7 @@
 .end method
 
 .method public final h(Llibs/v60;)V
-    .registers 6
+    .locals 4
 
     .line 1
     const/16 v0, 0x17
@@ -96,8 +96,8 @@
     const/4 v2, 0x0
 
     .line 13
-    :goto_c
-    if-eq v2, v1, :cond_16
+    :goto_0
+    if-eq v2, v1, :cond_0
 
     .line 14
     .line 15
@@ -114,15 +114,15 @@
 
     .line 21
     .line 22
-    goto :goto_c
+    goto :goto_0
 
     .line 23
-    :cond_16
+    :cond_0
     return-void
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/Point;->X:[B
@@ -141,7 +141,7 @@
 .end method
 
 .method public final i()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/Point;->X:[B
@@ -170,7 +170,7 @@
 .end method
 
 .method public final k()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -180,7 +180,7 @@
 .end method
 
 .method public final n()Ljava/lang/String;
-    .registers 8
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/Point;->X:[B
@@ -222,7 +222,7 @@
     const/4 v6, 0x0
 
     .line 20
-    if-gez v2, :cond_39
+    if-gez v2, :cond_1
 
     .line 21
     .line 22
@@ -234,7 +234,7 @@
     move-result v2
 
     .line 26
-    if-gez v2, :cond_39
+    if-gez v2, :cond_1
 
     .line 27
     .line 28
@@ -250,7 +250,7 @@
 
     .line 33
     .line 34
-    if-ne v1, v2, :cond_2e
+    if-ne v1, v2, :cond_0
 
     .line 35
     .line 36
@@ -277,7 +277,7 @@
     return-object v0
 
     .line 47
-    :cond_2e
+    :cond_0
     invoke-virtual {v0, v6, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     .line 48
@@ -301,7 +301,7 @@
     return-object v0
 
     .line 58
-    :cond_39
+    :cond_1
     invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(I)I
 
     .line 59
@@ -310,7 +310,7 @@
     move-result v1
 
     .line 62
-    if-gez v1, :cond_43
+    if-gez v1, :cond_2
 
     .line 63
     .line 64
@@ -322,7 +322,7 @@
     move-result v1
 
     .line 68
-    :cond_43
+    :cond_2
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     .line 69
@@ -335,7 +335,7 @@
 
     .line 73
     .line 74
-    if-ne v1, v2, :cond_51
+    if-ne v1, v2, :cond_3
 
     .line 75
     .line 76
@@ -351,7 +351,7 @@
     move-result-object v0
 
     .line 82
-    :cond_51
+    :cond_3
     const-string v2, ":"
 
     .line 83
@@ -360,7 +360,7 @@
 
     .line 85
     .line 86
-    if-ne v1, v5, :cond_7d
+    if-ne v1, v5, :cond_4
 
     .line 87
     .line 88
@@ -436,7 +436,7 @@
     return-object v0
 
     .line 126
-    :cond_7d
+    :cond_4
     new-instance v1, Ljava/lang/StringBuilder;
 
     .line 127
@@ -510,7 +510,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/Point;->X:[B

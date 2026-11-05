@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ln1;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public final a(B)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/r32;->a:Llibs/ln1;
@@ -84,7 +84,7 @@
 .end method
 
 .method public final b()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/r32;->a:Llibs/ln1;
@@ -115,7 +115,7 @@
 .end method
 
 .method public final c(Llibs/et;)V
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/r32;->a:Llibs/ln1;
@@ -149,7 +149,7 @@
     const/4 v4, 0x0
 
     .line 16
-    if-le v1, v2, :cond_22
+    if-le v1, v2, :cond_0
 
     .line 17
     .line 18
@@ -170,11 +170,11 @@
 
     .line 26
     .line 27
-    :goto_1a
+    :goto_0
     array-length v1, v3
 
     .line 28
-    if-ge p1, v1, :cond_2f
+    if-ge p1, v1, :cond_1
 
     .line 29
     .line 30
@@ -186,10 +186,10 @@
 
     .line 33
     .line 34
-    goto :goto_1a
+    goto :goto_0
 
     .line 35
-    :cond_22
+    :cond_0
     array-length v1, p1
 
     .line 36
@@ -201,11 +201,11 @@
     array-length p1, p1
 
     .line 40
-    :goto_27
+    :goto_1
     array-length v1, v3
 
     .line 41
-    if-ge p1, v1, :cond_2f
+    if-ge p1, v1, :cond_1
 
     .line 42
     .line 43
@@ -217,10 +217,10 @@
 
     .line 46
     .line 47
-    goto :goto_27
+    goto :goto_1
 
     .line 48
-    :cond_2f
+    :cond_1
     array-length p1, v3
 
     .line 49
@@ -243,11 +243,11 @@
     const/4 p1, 0x0
 
     .line 58
-    :goto_39
+    :goto_2
     array-length v1, v3
 
     .line 59
-    if-ge p1, v1, :cond_46
+    if-ge p1, v1, :cond_2
 
     .line 60
     .line 61
@@ -270,14 +270,14 @@
 
     .line 69
     .line 70
-    goto :goto_39
+    goto :goto_2
 
     .line 71
-    :cond_46
+    :cond_2
     const/4 p1, 0x0
 
     .line 72
-    :goto_47
+    :goto_3
     iget-object v1, p0, Llibs/r32;->d:[B
 
     .line 73
@@ -285,7 +285,7 @@
     array-length v2, v1
 
     .line 75
-    if-ge p1, v2, :cond_56
+    if-ge p1, v2, :cond_3
 
     .line 76
     .line 77
@@ -308,10 +308,10 @@
 
     .line 85
     .line 86
-    goto :goto_47
+    goto :goto_3
 
     .line 87
-    :cond_56
+    :cond_3
     array-length p1, v3
 
     .line 88
@@ -324,7 +324,7 @@
 .end method
 
 .method public final d([B)I
-    .registers 8
+    .locals 6
 
     .line 1
     iget v0, p0, Llibs/r32;->b:I
@@ -381,7 +381,7 @@
 .end method
 
 .method public final e()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/r32;->b:I
@@ -392,7 +392,7 @@
 .end method
 
 .method public final reset()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/r32;->a:Llibs/ln1;
@@ -423,7 +423,7 @@
 .end method
 
 .method public final update([BII)V
-    .registers 5
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/r32;->a:Llibs/ln1;

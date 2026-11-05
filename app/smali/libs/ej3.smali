@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/hj3;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/ej3;->Y:Llibs/hj3;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final applyTransformation(FLandroid/view/animation/Transformation;)V
-    .registers 5
+    .locals 2
 
     .line 1
     iget-object p2, p0, Llibs/ej3;->Y:Llibs/hj3;

@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/Iterator;Llibs/gs0;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/tn1;-><init>()V
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public final a()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/e32;->Nu:Ljava/util/Iterator;
@@ -47,7 +47,7 @@
     const/4 v1, 0x1
 
     .line 4
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 5
     .line 6
@@ -59,7 +59,7 @@
     move-result v0
 
     .line 10
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 11
     .line 12
@@ -86,7 +86,7 @@
     return-void
 
     .line 23
-    :cond_16
+    :cond_0
     iget-object v0, p0, Llibs/e32;->Lambda:Ljava/util/Iterator;
 
     .line 24
@@ -102,7 +102,7 @@
     const/4 v3, 0x0
 
     .line 30
-    if-eqz v2, :cond_5b
+    if-eqz v2, :cond_4
 
     .line 31
     .line 32
@@ -110,7 +110,7 @@
 
     .line 33
     .line 34
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_1
 
     .line 35
     .line 36
@@ -122,16 +122,16 @@
     move-result v2
 
     .line 40
-    if-nez v2, :cond_46
+    if-nez v2, :cond_3
 
     .line 41
     .line 42
-    :cond_29
+    :cond_1
     iget-object v2, p0, Llibs/e32;->Xi:Llibs/ah3;
 
     .line 43
     .line 44
-    if-eqz v2, :cond_32
+    if-eqz v2, :cond_2
 
     .line 45
     .line 46
@@ -144,7 +144,7 @@
 
     .line 50
     .line 51
-    :cond_32
+    :cond_2
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     .line 52
@@ -169,7 +169,7 @@
 
     .line 62
     .line 63
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_3
 
     .line 64
     .line 65
@@ -185,12 +185,12 @@
 
     .line 70
     .line 71
-    :cond_46
+    :cond_3
     iget-object v0, p0, Llibs/e32;->Nu:Ljava/util/Iterator;
 
     .line 72
     .line 73
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 74
     .line 75
@@ -202,7 +202,7 @@
     move-result v0
 
     .line 79
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 80
     .line 81
@@ -229,7 +229,7 @@
     return-void
 
     .line 92
-    :cond_5b
+    :cond_4
     const/4 v0, 0x0
 
     .line 93
@@ -241,7 +241,7 @@
 
     .line 96
     .line 97
-    if-eqz v0, :cond_67
+    if-eqz v0, :cond_5
 
     .line 98
     .line 99
@@ -254,6 +254,6 @@
 
     .line 103
     .line 104
-    :cond_67
+    :cond_5
     return-void
 .end method

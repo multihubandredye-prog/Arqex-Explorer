@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/math/BigInteger;[Ljava/math/BigInteger;[Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;I)V
-    .registers 8
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -107,7 +107,7 @@
 .end method
 
 .method public static a([Ljava/math/BigInteger;Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 1
     array-length v0, p0
@@ -116,7 +116,7 @@
     const/4 v1, 0x2
 
     .line 3
-    if-ne v0, v1, :cond_f
+    if-ne v0, v1, :cond_0
 
     .line 4
     .line 5
@@ -127,7 +127,7 @@
 
     .line 7
     .line 8
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 9
     .line 10
@@ -138,14 +138,14 @@
 
     .line 12
     .line 13
-    if-eqz p0, :cond_f
+    if-eqz p0, :cond_0
 
     .line 14
     .line 15
     return-void
 
     .line 16
-    :cond_f
+    :cond_0
     const-string p0, "\'"
 
     .line 17

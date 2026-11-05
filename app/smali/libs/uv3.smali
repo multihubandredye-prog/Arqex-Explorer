@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ka;Llibs/uq;)V
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/security/cert/X509CRL;-><init>()V
@@ -44,7 +44,7 @@
 
     .line 10
     .line 11
-    :try_start_a
+    :try_start_0
     iget-object p1, p2, Llibs/uq;->Y:Llibs/$f;
 
     .line 12
@@ -69,7 +69,7 @@
 
     .line 22
     .line 23
-    if-eqz p1, :cond_27
+    if-eqz p1, :cond_0
 
     .line 24
     .line 25
@@ -97,28 +97,28 @@
 
     .line 36
     .line 37
-    goto :goto_2a
+    goto :goto_0
 
     .line 38
-    :catch_25
+    :catch_0
     move-exception p1
 
     .line 39
-    goto :goto_51
+    goto :goto_3
 
     .line 40
-    :cond_27
+    :cond_0
     const/4 p1, 0x0
 
     .line 41
     iput-object p1, p0, Llibs/uv3;->Lambda:[B
-    :try_end_2a
-    .catch Ljava/lang/Exception; {:try_start_a .. :try_end_2a} :catch_25
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 42
     .line 43
-    :goto_2a
-    :try_start_2a
+    :goto_0
+    :try_start_1
     sget-object p1, Llibs/fm0;->Sigma:Llibs/App;
 
     .line 44
@@ -135,7 +135,7 @@
     move-result-object p1
 
     .line 51
-    if-eqz p1, :cond_48
+    if-eqz p1, :cond_1
 
     .line 52
     .line 53
@@ -164,31 +164,31 @@
 
     .line 65
     iget-boolean p1, p1, Llibs/zb1;->Mu:Z
-    :try_end_42
-    .catch Ljava/lang/Exception; {:try_start_2a .. :try_end_42} :catch_46
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 66
     .line 67
-    if-eqz p1, :cond_48
+    if-eqz p1, :cond_1
 
     .line 68
     .line 69
     const/4 v0, 0x1
 
     .line 70
-    goto :goto_48
+    goto :goto_1
 
     .line 71
-    :catch_46
+    :catch_1
     move-exception p1
 
     .line 72
-    goto :goto_4b
+    goto :goto_2
 
     .line 73
-    :cond_48
-    :goto_48
-    :try_start_48
+    :cond_1
+    :goto_1
+    :try_start_2
     iput-boolean v0, p0, Llibs/uv3;->Mu:Z
 
     .line 74
@@ -196,7 +196,7 @@
     return-void
 
     .line 76
-    :goto_4b
+    :goto_2
     new-instance p2, Llibs/bm0;
 
     .line 77
@@ -207,11 +207,11 @@
     .line 80
     .line 81
     throw p2
-    :try_end_51
-    .catch Ljava/lang/Exception; {:try_start_48 .. :try_end_51} :catch_25
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 82
-    :goto_51
+    :goto_3
     new-instance p2, Ljava/security/cert/CRLException;
 
     .line 83
@@ -253,7 +253,7 @@
 
 # virtual methods
 .method public final a(Ljava/security/PublicKey;Ljava/security/Signature;)V
-    .registers 5
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/uv3;->Y:Llibs/uq;
@@ -280,7 +280,7 @@
     move-result v0
 
     .line 13
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_1
 
     .line 14
     .line 15
@@ -318,14 +318,14 @@
     move-result p1
 
     .line 33
-    if-eqz p1, :cond_23
+    if-eqz p1, :cond_0
 
     .line 34
     .line 35
     return-void
 
     .line 36
-    :cond_23
+    :cond_0
     const-string p1, "CRL does not verify with supplied public key."
 
     .line 37
@@ -338,7 +338,7 @@
     return-void
 
     .line 42
-    :cond_29
+    :cond_1
     new-instance p1, Ljava/security/cert/CRLException;
 
     .line 43
@@ -356,7 +356,7 @@
 .end method
 
 .method public final b(Z)Ljava/util/HashSet;
-    .registers 7
+    .locals 5
 
     .line 1
     invoke-virtual {p0}, Llibs/uv3;->getVersion()I
@@ -370,7 +370,7 @@
     const/4 v1, 0x2
 
     .line 6
-    if-ne v0, v1, :cond_35
+    if-ne v0, v1, :cond_2
 
     .line 7
     .line 8
@@ -386,7 +386,7 @@
 
     .line 13
     .line 14
-    if-eqz v0, :cond_35
+    if-eqz v0, :cond_2
 
     .line 15
     .line 16
@@ -411,8 +411,8 @@
     move-result-object v2
 
     .line 27
-    :cond_1a
-    :goto_1a
+    :cond_0
+    :goto_0
     invoke-interface {v2}, Ljava/util/Enumeration;->hasMoreElements()Z
 
     .line 28
@@ -421,7 +421,7 @@
     move-result v3
 
     .line 31
-    if-eqz v3, :cond_34
+    if-eqz v3, :cond_1
 
     .line 32
     .line 33
@@ -449,7 +449,7 @@
 
     .line 44
     .line 45
-    if-ne p1, v4, :cond_1a
+    if-ne p1, v4, :cond_0
 
     .line 46
     .line 47
@@ -462,14 +462,14 @@
     .line 50
     .line 51
     .line 52
-    goto :goto_1a
+    goto :goto_0
 
     .line 53
-    :cond_34
+    :cond_1
     return-object v1
 
     .line 54
-    :cond_35
+    :cond_2
     const/4 p1, 0x0
 
     .line 55
@@ -477,10 +477,10 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     .line 1
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     .line 2
     .line 3
@@ -490,24 +490,24 @@
     return p1
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v0, p1, Ljava/security/cert/X509CRL;
 
     .line 6
     .line 7
-    if-nez v0, :cond_9
+    if-nez v0, :cond_1
 
     .line 8
     .line 9
-    goto :goto_1d
+    goto :goto_0
 
     .line 10
-    :cond_9
+    :cond_1
     instance-of v0, p1, Llibs/uv3;
 
     .line 11
     .line 12
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_3
 
     .line 13
     .line 14
@@ -519,7 +519,7 @@
 
     .line 17
     .line 18
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_2
 
     .line 19
     .line 20
@@ -527,7 +527,7 @@
 
     .line 21
     .line 22
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_2
 
     .line 23
     .line 24
@@ -539,18 +539,18 @@
 
     .line 27
     .line 28
-    if-eq v0, v1, :cond_1f
+    if-eq v0, v1, :cond_2
 
     .line 29
     .line 30
-    :goto_1d
+    :goto_0
     const/4 p1, 0x0
 
     .line 31
     return p1
 
     .line 32
-    :cond_1f
+    :cond_2
     iget-object v0, p0, Llibs/uv3;->Y:Llibs/uq;
 
     .line 33
@@ -570,7 +570,7 @@
     return p1
 
     .line 41
-    :cond_28
+    :cond_3
     invoke-super {p0, p1}, Ljava/security/cert/X509CRL;->equals(Ljava/lang/Object;)Z
 
     .line 42
@@ -583,7 +583,7 @@
 .end method
 
 .method public final getCriticalExtensionOIDs()Ljava/util/Set;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -601,7 +601,7 @@
 .end method
 
 .method public final getEncoded()[B
-    .registers 3
+    .locals 2
 
     .line 1
     :try_start_0
@@ -619,14 +619,14 @@
     .line 7
     .line 8
     move-result-object v0
-    :try_end_8
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_8} :catch_9
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 9
     return-object v0
 
     .line 10
-    :catch_9
+    :catch_0
     move-exception v0
 
     .line 11
@@ -651,7 +651,7 @@
 .end method
 
 .method public final getExtensionValue(Ljava/lang/String;)[B
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/uv3;->Y:Llibs/uq;
@@ -669,7 +669,7 @@
     const/4 v1, 0x0
 
     .line 8
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_0
 
     .line 9
     .line 10
@@ -690,11 +690,11 @@
     move-result-object p1
 
     .line 19
-    if-eqz p1, :cond_2a
+    if-eqz p1, :cond_0
 
     .line 20
     .line 21
-    :try_start_14
+    :try_start_0
     iget-object p1, p1, Llibs/fm0;->Z:Llibs/Part;
 
     .line 22
@@ -705,14 +705,14 @@
     .line 25
     .line 26
     move-result-object p1
-    :try_end_1a
-    .catch Ljava/lang/Exception; {:try_start_14 .. :try_end_1a} :catch_1b
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 27
     return-object p1
 
     .line 28
-    :catch_1b
+    :catch_0
     move-exception p1
 
     .line 29
@@ -742,12 +742,12 @@
     .line 41
     .line 42
     .line 43
-    :cond_2a
+    :cond_0
     return-object v1
 .end method
 
 .method public final getIssuerDN()Ljava/security/Principal;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/gw3;
@@ -791,7 +791,7 @@
 .end method
 
 .method public final getIssuerX500Principal()Ljavax/security/auth/x500/X500Principal;
-    .registers 3
+    .locals 2
 
     .line 1
     :try_start_0
@@ -820,8 +820,8 @@
 
     .line 13
     invoke-direct {v0, v1}, Ljavax/security/auth/x500/X500Principal;-><init>([B)V
-    :try_end_f
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_f} :catch_10
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 14
     .line 15
@@ -829,7 +829,7 @@
     return-object v0
 
     .line 17
-    :catch_10
+    :catch_0
     const-string v0, "can\'t encode issuer DN"
 
     .line 18
@@ -846,7 +846,7 @@
 .end method
 
 .method public final getNextUpdate()Ljava/util/Date;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/uv3;->Y:Llibs/uq;
@@ -861,7 +861,7 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -876,7 +876,7 @@
     return-object v0
 
     .line 14
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
     .line 15
@@ -884,7 +884,7 @@
 .end method
 
 .method public final getNonCriticalExtensionOIDs()Ljava/util/Set;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -902,7 +902,7 @@
 .end method
 
 .method public final getRevokedCertificate(Ljava/math/BigInteger;)Ljava/security/cert/X509CRLEntry;
-    .registers 9
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/uv3;->Y:Llibs/uq;
@@ -923,8 +923,8 @@
     move-object v2, v1
 
     .line 9
-    :cond_8
-    :goto_8
+    :cond_0
+    :goto_0
     invoke-interface {v0}, Ljava/util/Enumeration;->hasMoreElements()Z
 
     .line 10
@@ -933,7 +933,7 @@
     move-result v3
 
     .line 13
-    if-eqz v3, :cond_62
+    if-eqz v3, :cond_2
 
     .line 14
     .line 15
@@ -992,7 +992,7 @@
 
     .line 41
     .line 42
-    if-eqz v4, :cond_31
+    if-eqz v4, :cond_1
 
     .line 43
     .line 44
@@ -1008,8 +1008,8 @@
     return-object p1
 
     .line 50
-    :cond_31
-    if-eqz v6, :cond_8
+    :cond_1
+    if-eqz v6, :cond_0
 
     .line 51
     .line 52
@@ -1028,7 +1028,7 @@
     const/4 v6, 0x3
 
     .line 59
-    if-ne v4, v6, :cond_8
+    if-ne v4, v6, :cond_0
 
     .line 60
     .line 61
@@ -1052,7 +1052,7 @@
     move-result-object v3
 
     .line 71
-    if-eqz v3, :cond_8
+    if-eqz v3, :cond_0
 
     .line 72
     .line 73
@@ -1107,15 +1107,15 @@
     move-result-object v2
 
     .line 98
-    goto :goto_8
+    goto :goto_0
 
     .line 99
-    :cond_62
+    :cond_2
     return-object v1
 .end method
 
 .method public final getRevokedCertificates()Ljava/util/Set;
-    .registers 8
+    .locals 7
 
     .line 1
     new-instance v0, Ljava/util/HashSet;
@@ -1145,8 +1145,8 @@
     move-object v3, v2
 
     .line 14
-    :cond_d
-    :goto_d
+    :cond_0
+    :goto_0
     invoke-interface {v1}, Ljava/util/Enumeration;->hasMoreElements()Z
 
     .line 15
@@ -1155,7 +1155,7 @@
     move-result v4
 
     .line 18
-    if-eqz v4, :cond_55
+    if-eqz v4, :cond_1
 
     .line 19
     .line 20
@@ -1189,7 +1189,7 @@
     .line 34
     .line 35
     .line 36
-    if-eqz v6, :cond_d
+    if-eqz v6, :cond_0
 
     .line 37
     .line 38
@@ -1208,7 +1208,7 @@
     const/4 v6, 0x3
 
     .line 45
-    if-ne v5, v6, :cond_d
+    if-ne v5, v6, :cond_0
 
     .line 46
     .line 47
@@ -1232,7 +1232,7 @@
     move-result-object v4
 
     .line 57
-    if-eqz v4, :cond_d
+    if-eqz v4, :cond_0
 
     .line 58
     .line 59
@@ -1290,10 +1290,10 @@
     move-result-object v3
 
     .line 85
-    goto :goto_d
+    goto :goto_0
 
     .line 86
-    :cond_55
+    :cond_1
     invoke-virtual {v0}, Ljava/util/HashSet;->isEmpty()Z
 
     .line 87
@@ -1302,7 +1302,7 @@
     move-result v1
 
     .line 90
-    if-nez v1, :cond_60
+    if-nez v1, :cond_2
 
     .line 91
     .line 92
@@ -1317,12 +1317,12 @@
     return-object v0
 
     .line 97
-    :cond_60
+    :cond_2
     return-object v2
 .end method
 
 .method public final getSigAlgName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/uv3;->Z:Ljava/lang/String;
@@ -1333,7 +1333,7 @@
 .end method
 
 .method public final getSigAlgOID()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/uv3;->Y:Llibs/uq;
@@ -1356,14 +1356,14 @@
 .end method
 
 .method public final getSigAlgParams()[B
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/uv3;->Lambda:[B
 
     .line 2
     .line 3
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -1385,7 +1385,7 @@
     return-object v2
 
     .line 13
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
     .line 14
@@ -1393,7 +1393,7 @@
 .end method
 
 .method public final getSignature()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/uv3;->Y:Llibs/uq;
@@ -1416,7 +1416,7 @@
 .end method
 
 .method public final getTBSCertList()[B
-    .registers 3
+    .locals 2
 
     .line 1
     :try_start_0
@@ -1438,14 +1438,14 @@
     .line 9
     .line 10
     move-result-object v0
-    :try_end_a
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_a} :catch_b
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 11
     return-object v0
 
     .line 12
-    :catch_b
+    :catch_0
     move-exception v0
 
     .line 13
@@ -1470,7 +1470,7 @@
 .end method
 
 .method public final getThisUpdate()Ljava/util/Date;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/uv3;->Y:Llibs/uq;
@@ -1497,7 +1497,7 @@
 .end method
 
 .method public final getVersion()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/uv3;->Y:Llibs/uq;
@@ -1515,14 +1515,14 @@
     const/4 v1, 0x1
 
     .line 8
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     .line 9
     .line 10
     return v1
 
     .line 11
-    :cond_a
+    :cond_0
     invoke-virtual {v0}, Llibs/Api;->r()Ljava/math/BigInteger;
 
     .line 12
@@ -1546,7 +1546,7 @@
 .end method
 
 .method public final hasUnsupportedCriticalExtension()Z
-    .registers 4
+    .locals 3
 
     .line 1
     const/4 v0, 0x1
@@ -1560,7 +1560,7 @@
     move-result-object v1
 
     .line 6
-    if-nez v1, :cond_9
+    if-nez v1, :cond_0
 
     .line 7
     .line 8
@@ -1570,7 +1570,7 @@
     return v0
 
     .line 10
-    :cond_9
+    :cond_0
     sget-object v2, Llibs/fm0;->Sigma:Llibs/App;
 
     .line 11
@@ -1612,14 +1612,14 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/uv3;->Nu:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -1642,7 +1642,7 @@
 
     .line 13
     .line 14
-    :cond_d
+    :cond_0
     iget v0, p0, Llibs/uv3;->Xi:I
 
     .line 15
@@ -1651,7 +1651,7 @@
 .end method
 
 .method public final isRevoked(Ljava/security/cert/Certificate;)Z
-    .registers 10
+    .locals 8
 
     .line 1
     invoke-virtual {p1}, Ljava/security/cert/Certificate;->getType()Ljava/lang/String;
@@ -1677,7 +1677,7 @@
     const/4 v1, 0x0
 
     .line 12
-    if-eqz v0, :cond_ba
+    if-eqz v0, :cond_7
 
     .line 13
     .line 14
@@ -1709,7 +1709,7 @@
     move-result v3
 
     .line 28
-    if-eqz v3, :cond_b9
+    if-eqz v3, :cond_6
 
     .line 29
     .line 30
@@ -1728,7 +1728,7 @@
     move-result-object v4
 
     .line 37
-    :cond_24
+    :cond_0
     invoke-interface {v2}, Ljava/util/Enumeration;->hasMoreElements()Z
 
     .line 38
@@ -1737,7 +1737,7 @@
     move-result v5
 
     .line 41
-    if-eqz v5, :cond_b9
+    if-eqz v5, :cond_6
 
     .line 42
     .line 43
@@ -1753,7 +1753,7 @@
 
     .line 48
     .line 49
-    if-eqz v6, :cond_35
+    if-eqz v6, :cond_1
 
     .line 50
     .line 51
@@ -1761,11 +1761,11 @@
 
     .line 52
     .line 53
-    goto :goto_43
+    goto :goto_0
 
     .line 54
-    :cond_35
-    if-eqz v5, :cond_42
+    :cond_1
+    if-eqz v5, :cond_2
 
     .line 55
     .line 56
@@ -1789,19 +1789,19 @@
     move-object v5, v6
 
     .line 66
-    goto :goto_43
+    goto :goto_0
 
     .line 67
-    :cond_42
+    :cond_2
     const/4 v5, 0x0
 
     .line 68
-    :goto_43
+    :goto_0
     iget-boolean v6, p0, Llibs/uv3;->Mu:Z
 
     .line 69
     .line 70
-    if-eqz v6, :cond_75
+    if-eqz v6, :cond_3
 
     .line 71
     .line 72
@@ -1820,7 +1820,7 @@
     const/4 v7, 0x3
 
     .line 79
-    if-ne v6, v7, :cond_75
+    if-ne v6, v7, :cond_3
 
     .line 80
     .line 81
@@ -1844,7 +1844,7 @@
     move-result-object v6
 
     .line 91
-    if-eqz v6, :cond_75
+    if-eqz v6, :cond_3
 
     .line 92
     .line 93
@@ -1899,7 +1899,7 @@
     move-result-object v0
 
     .line 118
-    :cond_75
+    :cond_3
     iget-object v5, v5, Llibs/mj3;->X:Llibs/Param;
 
     .line 119
@@ -1936,7 +1936,7 @@
     move-result v5
 
     .line 136
-    if-eqz v5, :cond_24
+    if-eqz v5, :cond_0
 
     .line 137
     .line 138
@@ -1944,7 +1944,7 @@
 
     .line 139
     .line 140
-    if-eqz v2, :cond_9a
+    if-eqz v2, :cond_4
 
     .line 141
     .line 142
@@ -1972,11 +1972,11 @@
     move-result-object p1
 
     .line 154
-    goto :goto_a6
+    goto :goto_1
 
     .line 155
-    :cond_9a
-    :try_start_9a
+    :cond_4
+    :try_start_0
     invoke-virtual {p1}, Ljava/security/cert/Certificate;->getEncoded()[B
 
     .line 156
@@ -1998,12 +1998,12 @@
     .line 164
     .line 165
     iget-object p1, p1, Llibs/qj3;->Mu:Llibs/nv3;
-    :try_end_a6
-    .catch Ljava/security/cert/CertificateEncodingException; {:try_start_9a .. :try_end_a6} :catch_af
+    :try_end_0
+    .catch Ljava/security/cert/CertificateEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 166
     .line 167
-    :goto_a6
+    :goto_1
     invoke-virtual {v0, p1}, Llibs/nv3;->equals(Ljava/lang/Object;)Z
 
     .line 168
@@ -2012,21 +2012,21 @@
     move-result p1
 
     .line 171
-    if-nez p1, :cond_ad
+    if-nez p1, :cond_5
 
     .line 172
     .line 173
-    goto :goto_b9
+    goto :goto_2
 
     .line 174
-    :cond_ad
+    :cond_5
     const/4 p1, 0x1
 
     .line 175
     return p1
 
     .line 176
-    :catch_af
+    :catch_0
     move-exception p1
 
     .line 177
@@ -2047,12 +2047,12 @@
     .line 184
     .line 185
     .line 186
-    :cond_b9
-    :goto_b9
+    :cond_6
+    :goto_2
     return v1
 
     .line 187
-    :cond_ba
+    :cond_7
     const-string p1, "X.509 CRL used with non X.509 Cert"
 
     .line 188
@@ -2066,7 +2066,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 10
+    .locals 9
 
     .line 1
     new-instance v0, Ljava/lang/StringBuffer;
@@ -2263,11 +2263,11 @@
 
     .line 106
     .line 107
-    :goto_6a
+    :goto_0
     array-length v6, v2
 
     .line 108
-    if-ge v3, v6, :cond_9d
+    if-ge v3, v6, :cond_1
 
     .line 109
     .line 110
@@ -2281,7 +2281,7 @@
 
     .line 113
     .line 114
-    if-ge v3, v6, :cond_86
+    if-ge v3, v6, :cond_0
 
     .line 115
     .line 116
@@ -2317,10 +2317,10 @@
     .line 132
     .line 133
     .line 134
-    goto :goto_9a
+    goto :goto_1
 
     .line 135
-    :cond_86
+    :cond_0
     invoke-virtual {v0, v7}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
     .line 136
@@ -2359,15 +2359,15 @@
     .line 153
     .line 154
     .line 155
-    :goto_9a
+    :goto_1
     add-int/lit8 v3, v3, 0x14
 
     .line 156
     .line 157
-    goto :goto_6a
+    goto :goto_0
 
     .line 158
-    :cond_9d
+    :cond_1
     iget-object v2, p0, Llibs/uv3;->Y:Llibs/uq;
 
     .line 159
@@ -2380,7 +2380,7 @@
 
     .line 163
     .line 164
-    if-eqz v2, :cond_1bb
+    if-eqz v2, :cond_b
 
     .line 165
     .line 166
@@ -2404,7 +2404,7 @@
     move-result v5
 
     .line 176
-    if-eqz v5, :cond_b9
+    if-eqz v5, :cond_2
 
     .line 177
     .line 178
@@ -2422,8 +2422,8 @@
     .line 184
     .line 185
     .line 186
-    :cond_b9
-    :goto_b9
+    :cond_2
+    :goto_2
     invoke-interface {v3}, Ljava/util/Enumeration;->hasMoreElements()Z
 
     .line 187
@@ -2432,7 +2432,7 @@
     move-result v5
 
     .line 190
-    if-eqz v5, :cond_1bb
+    if-eqz v5, :cond_b
 
     .line 191
     .line 192
@@ -2460,7 +2460,7 @@
 
     .line 203
     .line 204
-    if-eqz v7, :cond_1b6
+    if-eqz v7, :cond_a
 
     .line 205
     .line 206
@@ -2508,7 +2508,7 @@
     .line 228
     .line 229
     .line 230
-    :try_start_e5
+    :try_start_0
     sget-object v6, Llibs/fm0;->Omicron:Llibs/App;
 
     .line 231
@@ -2521,7 +2521,7 @@
     move-result v6
 
     .line 236
-    if-eqz v6, :cond_105
+    if-eqz v6, :cond_3
 
     .line 237
     .line 238
@@ -2568,10 +2568,10 @@
     .line 259
     .line 260
     .line 261
-    goto :goto_b9
+    goto :goto_2
 
     .line 262
-    :cond_105
+    :cond_3
     sget-object v6, Llibs/fm0;->Rho:Llibs/App;
 
     .line 263
@@ -2584,7 +2584,7 @@
     move-result v6
 
     .line 268
-    if-eqz v6, :cond_136
+    if-eqz v6, :cond_4
 
     .line 269
     .line 270
@@ -2662,10 +2662,10 @@
     .line 308
     .line 309
     .line 310
-    goto :goto_b9
+    goto :goto_2
 
     .line 311
-    :cond_136
+    :cond_4
     sget-object v6, Llibs/fm0;->Sigma:Llibs/App;
 
     .line 312
@@ -2678,7 +2678,7 @@
     move-result v6
 
     .line 317
-    if-eqz v6, :cond_14e
+    if-eqz v6, :cond_5
 
     .line 318
     .line 319
@@ -2708,11 +2708,11 @@
     .line 331
     .line 332
     .line 333
-    goto/16 :goto_b9
+    goto/16 :goto_2
 
     .line 334
     .line 335
-    :cond_14e
+    :cond_5
     sget-object v6, Llibs/fm0;->Phi:Llibs/App;
 
     .line 336
@@ -2728,7 +2728,7 @@
     const/4 v7, 0x0
 
     .line 342
-    if-eqz v6, :cond_16e
+    if-eqz v6, :cond_7
 
     .line 343
     .line 344
@@ -2740,7 +2740,7 @@
     move-result-object v6
 
     .line 348
-    if-eqz v6, :cond_166
+    if-eqz v6, :cond_6
 
     .line 349
     .line 350
@@ -2761,7 +2761,7 @@
     .line 357
     .line 358
     .line 359
-    :cond_166
+    :cond_6
     invoke-virtual {v0, v7}, Ljava/lang/StringBuffer;->append(Ljava/lang/Object;)Ljava/lang/StringBuffer;
 
     .line 360
@@ -2772,11 +2772,11 @@
     .line 363
     .line 364
     .line 365
-    goto/16 :goto_b9
+    goto/16 :goto_2
 
     .line 366
     .line 367
-    :cond_16e
+    :cond_7
     sget-object v6, Llibs/fm0;->Two:Llibs/App;
 
     .line 368
@@ -2789,7 +2789,7 @@
     move-result v6
 
     .line 373
-    if-eqz v6, :cond_18d
+    if-eqz v6, :cond_9
 
     .line 374
     .line 375
@@ -2801,7 +2801,7 @@
     move-result-object v6
 
     .line 379
-    if-eqz v6, :cond_185
+    if-eqz v6, :cond_8
 
     .line 380
     .line 381
@@ -2822,7 +2822,7 @@
     .line 388
     .line 389
     .line 390
-    :cond_185
+    :cond_8
     invoke-virtual {v0, v7}, Ljava/lang/StringBuffer;->append(Ljava/lang/Object;)Ljava/lang/StringBuffer;
 
     .line 391
@@ -2833,11 +2833,11 @@
     .line 394
     .line 395
     .line 396
-    goto/16 :goto_b9
+    goto/16 :goto_2
 
     .line 397
     .line 398
-    :cond_18d
+    :cond_9
     iget-object v6, v5, Llibs/App;->X:Ljava/lang/String;
 
     .line 399
@@ -2878,17 +2878,17 @@
     .line 418
     .line 419
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-    :try_end_1a5
-    .catch Ljava/lang/Exception; {:try_start_e5 .. :try_end_1a5} :catch_1a7
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 420
     .line 421
     .line 422
-    goto/16 :goto_b9
+    goto/16 :goto_2
 
     .line 423
     .line 424
-    :catch_1a7
+    :catch_0
     iget-object v5, v5, Llibs/App;->X:Ljava/lang/String;
 
     .line 425
@@ -2912,21 +2912,21 @@
     .line 435
     .line 436
     .line 437
-    goto/16 :goto_b9
+    goto/16 :goto_2
 
     .line 438
     .line 439
-    :cond_1b6
+    :cond_a
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
     .line 440
     .line 441
     .line 442
-    goto/16 :goto_b9
+    goto/16 :goto_2
 
     .line 443
     .line 444
-    :cond_1bb
+    :cond_b
     invoke-virtual {p0}, Llibs/uv3;->getRevokedCertificates()Ljava/util/Set;
 
     .line 445
@@ -2935,7 +2935,7 @@
     move-result-object v2
 
     .line 448
-    if-eqz v2, :cond_1d6
+    if-eqz v2, :cond_c
 
     .line 449
     .line 450
@@ -2947,7 +2947,7 @@
     move-result-object v2
 
     .line 454
-    :goto_1c5
+    :goto_3
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     .line 455
@@ -2956,7 +2956,7 @@
     move-result v3
 
     .line 458
-    if-eqz v3, :cond_1d6
+    if-eqz v3, :cond_c
 
     .line 459
     .line 460
@@ -2978,10 +2978,10 @@
     .line 468
     .line 469
     .line 470
-    goto :goto_1c5
+    goto :goto_3
 
     .line 471
-    :cond_1d6
+    :cond_c
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     .line 472
@@ -2994,14 +2994,14 @@
 .end method
 
 .method public final verify(Ljava/security/PublicKey;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/uv3;->Z:Ljava/lang/String;
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     iget-object v1, p0, Llibs/uv3;->X:Llibs/dd1;
 
     .line 4
@@ -3012,14 +3012,14 @@
     .line 7
     .line 8
     move-result-object v0
-    :try_end_8
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_8} :catch_9
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 9
-    goto :goto_d
+    goto :goto_0
 
     .line 10
-    :catch_9
+    :catch_0
     invoke-static {v0}, Ljava/security/Signature;->getInstance(Ljava/lang/String;)Ljava/security/Signature;
 
     .line 11
@@ -3028,7 +3028,7 @@
     move-result-object v0
 
     .line 14
-    :goto_d
+    :goto_0
     invoke-virtual {p0, p1, v0}, Llibs/uv3;->a(Ljava/security/PublicKey;Ljava/security/Signature;)V
 
     .line 15
@@ -3038,56 +3038,56 @@
 .end method
 
 .method public final verify(Ljava/security/PublicKey;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 18
     iget-object v0, p0, Llibs/uv3;->Z:Ljava/lang/String;
 
-    if-eqz p2, :cond_9
+    if-eqz p2, :cond_0
 
     .line 19
     invoke-static {v0, p2}, Ljava/security/Signature;->getInstance(Ljava/lang/String;Ljava/lang/String;)Ljava/security/Signature;
 
     move-result-object p2
 
-    goto :goto_d
+    goto :goto_0
 
     .line 20
-    :cond_9
+    :cond_0
     invoke-static {v0}, Ljava/security/Signature;->getInstance(Ljava/lang/String;)Ljava/security/Signature;
 
     move-result-object p2
 
     .line 21
-    :goto_d
+    :goto_0
     invoke-virtual {p0, p1, p2}, Llibs/uv3;->a(Ljava/security/PublicKey;Ljava/security/Signature;)V
 
     return-void
 .end method
 
 .method public final verify(Ljava/security/PublicKey;Ljava/security/Provider;)V
-    .registers 4
+    .locals 1
 
     .line 22
     iget-object v0, p0, Llibs/uv3;->Z:Ljava/lang/String;
 
-    if-eqz p2, :cond_9
+    if-eqz p2, :cond_0
 
     .line 23
     invoke-static {v0, p2}, Ljava/security/Signature;->getInstance(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/Signature;
 
     move-result-object p2
 
-    goto :goto_d
+    goto :goto_0
 
     .line 24
-    :cond_9
+    :cond_0
     invoke-static {v0}, Ljava/security/Signature;->getInstance(Ljava/lang/String;)Ljava/security/Signature;
 
     move-result-object p2
 
     .line 25
-    :goto_d
+    :goto_0
     invoke-virtual {p0, p1, p2}, Llibs/uv3;->a(Ljava/security/PublicKey;Ljava/security/Signature;)V
 
     return-void

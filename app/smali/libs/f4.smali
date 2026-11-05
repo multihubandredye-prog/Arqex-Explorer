@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Thread$UncaughtExceptionHandler;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
-    .registers 8
+    .locals 5
 
     .line 1
     sget-object v0, Lcom/mixplorer/AppImpl;->X:Llibs/k70;
@@ -114,7 +114,7 @@
     const/4 v3, 0x1
 
     .line 42
-    if-eqz v2, :cond_35
+    if-eqz v2, :cond_0
 
     .line 43
     .line 44
@@ -130,21 +130,21 @@
     move-result v2
 
     .line 50
-    if-eqz v2, :cond_35
+    if-eqz v2, :cond_0
 
     .line 51
     .line 52
     const/4 v2, 0x1
 
     .line 53
-    goto :goto_36
+    goto :goto_0
 
     .line 54
-    :cond_35
+    :cond_0
     const/4 v2, 0x0
 
     .line 55
-    :goto_36
+    :goto_0
     const-string v4, "CannotDeliverBroadcastException"
 
     .line 56
@@ -157,7 +157,7 @@
     move-result v4
 
     .line 61
-    if-nez v4, :cond_68
+    if-nez v4, :cond_1
 
     .line 62
     .line 63
@@ -173,7 +173,7 @@
     move-result v4
 
     .line 69
-    if-nez v4, :cond_68
+    if-nez v4, :cond_1
 
     .line 70
     .line 71
@@ -189,11 +189,11 @@
     move-result v0
 
     .line 77
-    if-nez v0, :cond_68
+    if-nez v0, :cond_1
 
     .line 78
     .line 79
-    if-nez v2, :cond_68
+    if-nez v2, :cond_1
 
     .line 80
     .line 81
@@ -209,7 +209,7 @@
     move-result v0
 
     .line 87
-    if-nez v0, :cond_68
+    if-nez v0, :cond_1
 
     .line 88
     .line 89
@@ -225,7 +225,7 @@
     move-result v0
 
     .line 95
-    if-nez v0, :cond_68
+    if-nez v0, :cond_1
 
     .line 96
     .line 97
@@ -241,19 +241,19 @@
     move-result v0
 
     .line 103
-    if-eqz v0, :cond_75
+    if-eqz v0, :cond_3
 
     .line 104
     .line 105
-    :cond_68
-    if-nez v2, :cond_6b
+    :cond_1
+    if-nez v2, :cond_2
 
     .line 106
     .line 107
     return-void
 
     .line 108
-    :cond_6b
+    :cond_2
     sget v0, Lcom/mixplorer/AppImpl;->Five:I
 
     .line 109
@@ -262,7 +262,7 @@
 
     .line 111
     .line 112
-    if-ge v0, v1, :cond_75
+    if-ge v0, v1, :cond_3
 
     .line 113
     .line 114
@@ -276,25 +276,25 @@
     return-void
 
     .line 118
-    :cond_75
+    :cond_3
     iget-object v0, p0, Llibs/f4;->a:Ljava/lang/Thread$UncaughtExceptionHandler;
 
     .line 119
     .line 120
-    if-eqz v0, :cond_7c
+    if-eqz v0, :cond_4
 
     .line 121
     .line 122
-    :try_start_79
+    :try_start_0
     invoke-interface {v0, p1, p2}, Ljava/lang/Thread$UncaughtExceptionHandler;->uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
-    :try_end_7c
-    .catchall {:try_start_79 .. :try_end_7c} :catchall_7c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 123
     .line 124
     .line 125
-    :catchall_7c
-    :cond_7c
+    :catchall_0
+    :cond_4
     invoke-static {}, Landroid/os/Process;->myPid()I
 
     .line 126

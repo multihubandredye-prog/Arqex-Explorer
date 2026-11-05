@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/vq0;Llibs/uy1;I)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0, p2, p3}, Llibs/uy1;-><init>(Llibs/uy1;I)V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final i()Ljava/lang/String;
-    .registers 7
+    .locals 6
 
     .line 1
     :try_start_0
@@ -80,8 +80,8 @@
     .line 24
     .line 25
     invoke-direct {v0, v2, v1}, Ljava/lang/String;-><init>([BLjava/lang/String;)V
-    :try_end_1b
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_1b} :catch_1c
+    :try_end_0
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 26
     .line 27
@@ -89,7 +89,7 @@
     return-object v0
 
     .line 29
-    :catch_1c
+    :catch_0
     move-exception v0
 
     .line 30
@@ -110,7 +110,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

@@ -1,5 +1,5 @@
 {
-  "apkFileName": "Arqex-v1.63.0-beta.56_src.apk",
+  "apkFileName": "Arqex-v1.66.0-beta.162_src.apk",
   "PackageInfo": {
     "forcedPackageId": "127",
     "renameManifestPackage": null
@@ -13,8 +13,8 @@
   "version": "2.4.0-261014",
   "sharedLibrary": false,
   "VersionInfo": {
-    "versionName": "1.63.0-beta.56",
-    "versionCode": "26090468"
+    "versionName": "1.66.0-beta.162",
+    "versionCode": "26090574"
   },
   "UsesFramework": {
     "ids": [1],
@@ -26,7 +26,7 @@
     "META-INF/version-control-info.textproto": "8",
     "META-INF/com/android/build/gradle/app-metadata.properties": "8"
   },
-  "apkFilePath": "/storage/emulated/0/Download/Arqex-v1.63.0-beta.56.apk",
+  "apkFilePath": "/storage/emulated/0/Download/Arqex-v1.66.0-beta.162.apk",
   "compactEntries": false,
   "isFrameworkApk": false,
   "sdkInfo": {

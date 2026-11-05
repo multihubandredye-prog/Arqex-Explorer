@@ -15,7 +15,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/math/BigInteger;
@@ -56,7 +56,7 @@
 .end method
 
 .method public constructor <init>(J)V
-    .registers 3
+    .locals 0
 
     .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -72,7 +72,7 @@
 .end method
 
 .method public constructor <init>([B)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -105,7 +105,7 @@
     move-result p1
 
     .line 17
-    if-ltz p1, :cond_1b
+    if-ltz p1, :cond_0
 
     .line 18
     .line 19
@@ -121,14 +121,14 @@
     move-result p1
 
     .line 25
-    if-gtz p1, :cond_1b
+    if-gtz p1, :cond_0
 
     .line 26
     .line 27
     return-void
 
     .line 28
-    :cond_1b
+    :cond_0
     new-instance p1, Ljava/lang/NumberFormatException;
 
     .line 29
@@ -144,21 +144,21 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
-    :try_start_4
+    :cond_0
+    :try_start_0
     check-cast p1, Llibs/rq3;
 
     .line 6
@@ -177,19 +177,19 @@
     .line 13
     .line 14
     move-result p1
-    :try_end_e
-    .catch Ljava/lang/ClassCastException; {:try_start_4 .. :try_end_e} :catch_f
+    :try_end_0
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 15
     return p1
 
     .line 16
-    :catch_f
+    :catch_0
     return v0
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/rq3;->a:Ljava/math/BigInteger;
@@ -208,7 +208,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/rq3;->a:Ljava/math/BigInteger;

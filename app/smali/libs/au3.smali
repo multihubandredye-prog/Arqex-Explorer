@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -65,7 +65,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Float;ZLjava/lang/Float;Ljava/lang/Double;Ljava/lang/String;)V
-    .registers 9
+    .locals 3
 
     .line 1
     const v0, 0x3d4ccccd    # 0.05f
@@ -109,7 +109,7 @@
 
     .line 21
     .line 22
-    if-lez p1, :cond_1a
+    if-lez p1, :cond_0
 
     .line 23
     .line 24
@@ -117,15 +117,15 @@
 
     .line 25
     .line 26
-    goto :goto_1c
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_0
     iput-object v0, p0, Llibs/au3;->c:Ljava/lang/Float;
 
     .line 28
     .line 29
-    :goto_1c
+    :goto_0
     invoke-virtual {p4}, Ljava/lang/Double;->doubleValue()D
 
     .line 30
@@ -142,7 +142,7 @@
 
     .line 36
     .line 37
-    if-lez p3, :cond_29
+    if-lez p3, :cond_1
 
     .line 38
     .line 39
@@ -150,10 +150,10 @@
 
     .line 40
     .line 41
-    goto :goto_33
+    goto :goto_1
 
     .line 42
-    :cond_29
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/Float;->doubleValue()D
 
     .line 43
@@ -174,7 +174,7 @@
 
     .line 51
     .line 52
-    :goto_33
+    :goto_1
     iput-object p5, p0, Llibs/au3;->e:Ljava/lang/String;
 
     .line 53
@@ -185,37 +185,37 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 7
+    .locals 5
 
     .line 1
-    if-nez p1, :cond_3
+    if-nez p1, :cond_0
 
     .line 2
     .line 3
-    goto :goto_45
+    goto :goto_1
 
     .line 4
-    :cond_3
-    if-ne p1, p0, :cond_6
+    :cond_0
+    if-ne p1, p0, :cond_1
 
     .line 5
     .line 6
-    goto :goto_43
+    goto :goto_0
 
     .line 7
-    :cond_6
+    :cond_1
     instance-of v0, p1, Llibs/au3;
 
     .line 8
     .line 9
-    if-nez v0, :cond_b
+    if-nez v0, :cond_2
 
     .line 10
     .line 11
-    goto :goto_45
+    goto :goto_1
 
     .line 12
-    :cond_b
+    :cond_2
     check-cast p1, Llibs/au3;
 
     .line 13
@@ -252,7 +252,7 @@
 
     .line 29
     .line 30
-    if-eqz v3, :cond_2a
+    if-eqz v3, :cond_3
 
     .line 31
     .line 32
@@ -264,22 +264,22 @@
 
     .line 35
     .line 36
-    if-ne v3, p1, :cond_2a
+    if-ne v3, p1, :cond_3
 
     .line 37
     .line 38
-    if-nez v4, :cond_2a
+    if-nez v4, :cond_3
 
     .line 39
     .line 40
-    if-nez v2, :cond_45
+    if-nez v2, :cond_5
 
     .line 41
     .line 42
-    goto :goto_43
+    goto :goto_0
 
     .line 43
-    :cond_2a
+    :cond_3
     invoke-virtual {v4, v2}, Ljava/lang/Float;->equals(Ljava/lang/Object;)Z
 
     .line 44
@@ -292,22 +292,22 @@
 
     .line 48
     .line 49
-    if-eqz p1, :cond_37
+    if-eqz p1, :cond_4
 
     .line 50
     .line 51
-    if-nez v2, :cond_37
+    if-nez v2, :cond_4
 
     .line 52
     .line 53
-    if-nez v1, :cond_45
+    if-nez v1, :cond_5
 
     .line 54
     .line 55
-    goto :goto_43
+    goto :goto_0
 
     .line 56
-    :cond_37
+    :cond_4
     invoke-virtual {v2, v1}, Ljava/lang/Double;->equals(Ljava/lang/Object;)Z
 
     .line 57
@@ -320,34 +320,34 @@
 
     .line 61
     .line 62
-    if-eqz p1, :cond_47
+    if-eqz p1, :cond_6
 
     .line 63
     .line 64
-    if-nez v1, :cond_47
+    if-nez v1, :cond_6
 
     .line 65
     .line 66
-    if-nez v0, :cond_45
+    if-nez v0, :cond_5
 
     .line 67
     .line 68
-    :goto_43
+    :goto_0
     const/4 p1, 0x1
 
     .line 69
     return p1
 
     .line 70
-    :cond_45
-    :goto_45
+    :cond_5
+    :goto_1
     const/4 p1, 0x0
 
     .line 71
     return p1
 
     .line 72
-    :cond_47
+    :cond_6
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     .line 73
@@ -360,7 +360,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 5
+    .locals 4
 
     .line 1
     iget-boolean v0, p0, Llibs/au3;->b:Z
@@ -445,7 +445,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

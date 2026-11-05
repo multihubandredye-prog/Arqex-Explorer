@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/c;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -104,7 +104,7 @@
     move-result v0
 
     .line 43
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_0
 
     .line 44
     .line 45
@@ -112,10 +112,10 @@
 
     .line 46
     .line 47
-    goto :goto_38
+    goto :goto_0
 
     .line 48
-    :cond_2f
+    :cond_0
     new-instance v0, Ljava/util/LinkedHashMap;
 
     .line 49
@@ -133,7 +133,7 @@
     move-result-object p1
 
     .line 57
-    :goto_38
+    :goto_0
     iput-object p1, p0, Llibs/do2;->e:Ljava/util/Map;
 
     .line 58
@@ -144,7 +144,7 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

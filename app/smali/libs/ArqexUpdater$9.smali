@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Context;JLjava/lang/ref/WeakReference;)V
-    .registers 5
+    .locals 0
 
     .line 751
     iput-object p1, p0, Llibs/ArqexUpdater$9;->val$app:Landroid/content/Context;
@@ -44,14 +44,14 @@
 
 # virtual methods
 .method public run()V
-    .registers 5
+    .locals 4
 
     const/4 v0, 0x0
 
-    :goto_1
+    :goto_0
     const/16 v1, 0x258
 
-    if-ge v0, v1, :cond_51
+    if-ge v0, v1, :cond_2
 
     .line 754
     iget-object v1, p0, Llibs/ArqexUpdater$9;->val$app:Landroid/content/Context;
@@ -64,7 +64,7 @@
 
     const/16 v2, 0x8
 
-    if-ne v1, v2, :cond_2b
+    if-ne v1, v2, :cond_0
 
     .line 756
     iget-object v0, p0, Llibs/ArqexUpdater$9;->val$tela:Ljava/lang/ref/WeakReference;
@@ -92,10 +92,10 @@
 
     return-void
 
-    :cond_2b
+    :cond_0
     const/16 v2, 0x10
 
-    if-ne v1, v2, :cond_49
+    if-ne v1, v2, :cond_1
 
     .line 765
     iget-object v0, p0, Llibs/ArqexUpdater$9;->val$tela:Ljava/lang/ref/WeakReference;
@@ -123,20 +123,20 @@
 
     return-void
 
-    :cond_49
+    :cond_1
     const-wide/16 v1, 0x5dc
 
     .line 778
-    :try_start_4b
+    :try_start_0
     invoke-static {v1, v2}, Ljava/lang/Thread;->sleep(J)V
-    :try_end_4e
-    .catchall {:try_start_4b .. :try_end_4e} :catchall_51
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :catchall_51
-    :cond_51
+    :catchall_0
+    :cond_2
     return-void
 .end method

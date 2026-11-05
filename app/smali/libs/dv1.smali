@@ -22,7 +22,7 @@
 
 # direct methods
 .method public synthetic constructor <init>([BIIII[Ljava/lang/Throwable;)V
-    .registers 7
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 7
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/dv1;->X:[B
@@ -99,10 +99,10 @@
     const/4 v2, 0x1
 
     .line 19
-    :try_start_12
+    :try_start_0
     invoke-static {v1, v3, v4, v2, v0}, Llibs/ah;->List(IIII[B)V
-    :try_end_15
-    .catchall {:try_start_12 .. :try_end_15} :catchall_16
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 20
     .line 21
@@ -110,7 +110,7 @@
     return-void
 
     .line 23
-    :catchall_16
+    :catchall_0
     move-exception v0
 
     .line 24

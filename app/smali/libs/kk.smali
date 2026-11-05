@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/al;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/kk;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onLongClick(Landroid/view/View;)Z
-    .registers 16
+    .locals 14
 
     .line 1
     iget-byte v0, p0, Llibs/kk;->X:B
@@ -53,7 +53,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_fe
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -77,18 +77,18 @@
     move-result p1
 
     .line 19
-    if-ltz p1, :cond_15
+    if-ltz p1, :cond_0
 
     .line 20
     .line 21
     const/4 v1, 0x1
 
     .line 22
-    :cond_15
+    :cond_0
     return v1
 
     .line 23
-    :pswitch_16
+    :pswitch_0
     sget-object v0, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 24
@@ -101,7 +101,7 @@
     move-result v0
 
     .line 29
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_1
 
     .line 30
     .line 31
@@ -110,10 +110,10 @@
     .line 32
     .line 33
     .line 34
-    goto :goto_26
+    goto :goto_0
 
     .line 35
-    :cond_22
+    :cond_1
     invoke-virtual {v3}, Llibs/al;->p()Z
 
     .line 36
@@ -122,11 +122,11 @@
     move-result v2
 
     .line 39
-    :goto_26
+    :goto_0
     return v2
 
     .line 40
-    :pswitch_27
+    :pswitch_1
     iget-object v0, v3, Llibs/al;->a:Llibs/r31;
 
     .line 41
@@ -139,15 +139,15 @@
     move-result v4
 
     .line 46
-    if-eqz v4, :cond_31
+    if-eqz v4, :cond_2
 
     .line 47
     .line 48
-    goto/16 :goto_cf
+    goto/16 :goto_4
 
     .line 49
     .line 50
-    :cond_31
+    :cond_2
     iget-object v4, v0, Llibs/r31;->a:Lcom/mixplorer/activities/BrowseActivity;
 
     .line 51
@@ -232,8 +232,8 @@
     move-result-object v10
 
     .line 92
-    :cond_5b
-    :goto_5b
+    :cond_3
+    :goto_1
     invoke-interface {v10}, Ljava/util/Iterator;->hasNext()Z
 
     .line 93
@@ -242,7 +242,7 @@
     move-result v11
 
     .line 96
-    if-eqz v11, :cond_b5
+    if-eqz v11, :cond_b
 
     .line 97
     .line 98
@@ -266,7 +266,7 @@
 
     .line 107
     .line 108
-    if-eq v12, v13, :cond_a7
+    if-eq v12, v13, :cond_a
 
     .line 109
     .line 110
@@ -274,7 +274,7 @@
 
     .line 111
     .line 112
-    if-eq v12, v13, :cond_a7
+    if-eq v12, v13, :cond_a
 
     .line 113
     .line 114
@@ -282,39 +282,39 @@
 
     .line 115
     .line 116
-    if-ne v12, v13, :cond_76
+    if-ne v12, v13, :cond_4
 
     .line 117
     .line 118
-    goto :goto_a7
+    goto :goto_3
 
     .line 119
-    :cond_76
+    :cond_4
     sget v13, Llibs/wh2;->menu_clear_cache:I
 
     .line 120
     .line 121
-    if-ne v12, v13, :cond_7b
+    if-ne v12, v13, :cond_5
 
     .line 122
     .line 123
-    goto :goto_5b
+    goto :goto_1
 
     .line 124
-    :cond_7b
+    :cond_5
     sget v13, Llibs/wh2;->menu_refresh_media_store:I
 
     .line 125
     .line 126
-    if-ne v12, v13, :cond_87
+    if-ne v12, v13, :cond_6
 
     .line 127
     .line 128
-    if-nez v7, :cond_5b
+    if-nez v7, :cond_3
 
     .line 129
     .line 130
-    if-nez v5, :cond_5b
+    if-nez v5, :cond_3
 
     .line 131
     .line 132
@@ -323,15 +323,15 @@
     .line 133
     .line 134
     .line 135
-    goto :goto_5b
+    goto :goto_1
 
     .line 136
-    :cond_87
+    :cond_6
     sget v13, Llibs/wh2;->show_full_path:I
 
     .line 137
     .line 138
-    if-ne v12, v13, :cond_99
+    if-ne v12, v13, :cond_8
 
     .line 139
     .line 140
@@ -347,34 +347,34 @@
     move-result v12
 
     .line 146
-    if-nez v12, :cond_95
+    if-nez v12, :cond_7
 
     .line 147
     .line 148
     move-object v12, v8
 
     .line 149
-    goto :goto_96
+    goto :goto_2
 
     .line 150
-    :cond_95
+    :cond_7
     move-object v12, v9
 
     .line 151
-    :goto_96
+    :goto_2
     iput-object v12, v11, Llibs/r90;->Lambda:Landroid/graphics/drawable/Drawable;
 
     .line 152
     .line 153
-    goto :goto_5b
+    goto :goto_1
 
     .line 154
-    :cond_99
+    :cond_8
     sget v11, Llibs/wh2;->menu_folder_properties:I
 
     .line 155
     .line 156
-    if-eq v12, v11, :cond_a1
+    if-eq v12, v11, :cond_9
 
     .line 157
     .line 158
@@ -382,12 +382,12 @@
 
     .line 159
     .line 160
-    if-ne v12, v11, :cond_5b
+    if-ne v12, v11, :cond_3
 
     .line 161
     .line 162
-    :cond_a1
-    if-eqz v5, :cond_5b
+    :cond_9
+    if-eqz v5, :cond_3
 
     .line 163
     .line 164
@@ -396,11 +396,11 @@
     .line 165
     .line 166
     .line 167
-    goto :goto_5b
+    goto :goto_1
 
     .line 168
-    :cond_a7
-    :goto_a7
+    :cond_a
+    :goto_3
     new-instance v12, Ljava/lang/StringBuilder;
 
     .line 169
@@ -426,10 +426,10 @@
 
     .line 180
     .line 181
-    goto :goto_5b
+    goto :goto_1
 
     .line 182
-    :cond_b5
+    :cond_b
     iget-object v5, v4, Lcom/mixplorer/activities/a;->Lambda:Llibs/be2;
 
     .line 183
@@ -478,16 +478,16 @@
     const/4 v1, 0x1
 
     .line 208
-    :goto_cf
+    :goto_4
     return v1
 
     .line 209
-    :pswitch_d0
+    :pswitch_2
     iget-object p1, v3, Llibs/al;->l:Lcom/mixplorer/widgets/MiEditText;
 
     .line 210
     .line 211
-    if-eqz p1, :cond_e9
+    if-eqz p1, :cond_c
 
     .line 212
     .line 213
@@ -507,7 +507,7 @@
     move-result p1
 
     .line 221
-    if-nez p1, :cond_e9
+    if-nez p1, :cond_c
 
     .line 222
     .line 223
@@ -531,15 +531,15 @@
     move-result-object p1
 
     .line 233
-    goto :goto_eb
+    goto :goto_5
 
     .line 234
-    :cond_e9
+    :cond_c
     const-string p1, ""
 
     .line 235
     .line 236
-    :goto_eb
+    :goto_5
     iget-object v0, v3, Llibs/al;->a:Llibs/r31;
 
     .line 237
@@ -575,10 +575,10 @@
     return v2
 
     .line 255
-    :pswitch_data_fe
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_d0
-        :pswitch_27
-        :pswitch_16
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

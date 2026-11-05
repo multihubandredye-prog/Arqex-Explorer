@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/App;Llibs/p10;Llibs/q10;)V
-    .registers 4
+    .locals 0
 
     .line 43
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -31,7 +31,7 @@
 .end method
 
 .method public constructor <init>(Llibs/Param;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -96,7 +96,7 @@
     const/4 v1, 0x3
 
     .line 31
-    if-ne v0, v1, :cond_29
+    if-ne v0, v1, :cond_0
 
     .line 32
     .line 33
@@ -119,14 +119,14 @@
 
     .line 41
     .line 42
-    :cond_29
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Llibs/Init;
@@ -175,7 +175,7 @@
 
     .line 24
     .line 25
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_0
 
     .line 26
     .line 27
@@ -184,7 +184,7 @@
     .line 28
     .line 29
     .line 30
-    :cond_1d
+    :cond_0
     new-instance v1, Llibs/a50;
 
     .line 31

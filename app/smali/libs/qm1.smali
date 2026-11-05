@@ -20,7 +20,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/LocalizeActivity;Z[Ljava/lang/Object;ILlibs/$d;)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 8
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/qm1;->X:Lcom/mixplorer/activities/LocalizeActivity;
@@ -81,15 +81,15 @@
 
     .line 12
     .line 13
-    if-nez v1, :cond_19
+    if-nez v1, :cond_0
 
     .line 14
     .line 15
-    :try_start_e
+    :try_start_0
     array-length v1, v2
 
     .line 16
-    if-lez v1, :cond_19
+    if-lez v1, :cond_0
 
     .line 17
     .line 18
@@ -104,22 +104,22 @@
 
     .line 22
     .line 23
-    goto :goto_1b
+    goto :goto_0
 
     .line 24
-    :catchall_17
+    :catchall_0
     move-exception p1
 
     .line 25
-    goto :goto_58
+    goto :goto_2
 
     .line 26
-    :cond_19
+    :cond_0
     const-string v1, ""
 
     .line 27
     .line 28
-    :goto_1b
+    :goto_0
     const/4 v2, 0x1
 
     .line 29
@@ -159,11 +159,11 @@
     .line 45
     .line 46
     monitor-enter v3
-    :try_end_2e
-    .catchall {:try_start_e .. :try_end_2e} :catchall_17
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 47
-    :try_start_2e
+    :try_start_1
     iget-object v5, v0, Lcom/mixplorer/activities/LocalizeActivity;->o:Ljava/util/LinkedHashMap;
 
     .line 48
@@ -184,7 +184,7 @@
     move-result v5
 
     .line 57
-    if-eqz v5, :cond_3e
+    if-eqz v5, :cond_1
 
     .line 58
     .line 59
@@ -194,14 +194,14 @@
     return-void
 
     .line 61
-    :catchall_3c
+    :catchall_1
     move-exception p1
 
     .line 62
-    goto :goto_56
+    goto :goto_1
 
     .line 63
-    :cond_3e
+    :cond_1
     iget-object v5, v0, Lcom/mixplorer/activities/LocalizeActivity;->o:Ljava/util/LinkedHashMap;
 
     .line 64
@@ -212,11 +212,11 @@
     .line 67
     .line 68
     monitor-exit v3
-    :try_end_44
-    .catchall {:try_start_2e .. :try_end_44} :catchall_3c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 69
-    :try_start_44
+    :try_start_2
     iput-boolean v2, v0, Lcom/mixplorer/activities/LocalizeActivity;->Il:Z
 
     .line 70
@@ -244,8 +244,8 @@
 
     .line 83
     invoke-static {p1}, Llibs/gx1;->d(Ljava/lang/Object;)V
-    :try_end_55
-    .catchall {:try_start_44 .. :try_end_55} :catchall_17
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 84
     .line 85
@@ -253,20 +253,20 @@
     return-void
 
     .line 87
-    :goto_56
-    :try_start_56
+    :goto_1
+    :try_start_3
     monitor-exit v3
-    :try_end_57
-    .catchall {:try_start_56 .. :try_end_57} :catchall_3c
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 88
-    :try_start_57
+    :try_start_4
     throw p1
-    :try_end_58
-    .catchall {:try_start_57 .. :try_end_58} :catchall_17
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 89
-    :goto_58
+    :goto_2
     const-string v0, "LocalizeAct"
 
     .line 90

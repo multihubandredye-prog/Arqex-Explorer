@@ -13,14 +13,14 @@
 
 # direct methods
 .method public constructor <init>([B[BB)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/k00;->a:B
 
     .line 2
     .line 3
-    packed-switch p3, :pswitch_data_34
+    packed-switch p3, :pswitch_data_0
 
     .line 4
     .line 5
@@ -30,14 +30,14 @@
     .line 7
     .line 8
     .line 9
-    if-eqz p1, :cond_24
+    if-eqz p1, :cond_1
 
     .line 10
     .line 11
     array-length p3, p1
 
     .line 12
-    if-eqz p3, :cond_24
+    if-eqz p3, :cond_1
 
     .line 13
     .line 14
@@ -56,7 +56,7 @@
 
     .line 20
     .line 21
-    if-nez p2, :cond_1c
+    if-nez p2, :cond_0
 
     .line 22
     .line 23
@@ -71,10 +71,10 @@
 
     .line 27
     .line 28
-    goto :goto_23
+    goto :goto_0
 
     .line 29
-    :cond_1c
+    :cond_0
     array-length p1, p2
 
     .line 30
@@ -90,11 +90,11 @@
 
     .line 35
     .line 36
-    :goto_23
+    :goto_0
     return-void
 
     .line 37
-    :cond_24
+    :cond_1
     const-string p1, "Missing Seed for KDF"
 
     .line 38
@@ -110,7 +110,7 @@
     throw p1
 
     .line 44
-    :pswitch_2b
+    :pswitch_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 45
@@ -130,16 +130,16 @@
     nop
 
     .line 53
-    :pswitch_data_34
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_2b
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public a(Llibs/rw2;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/k00;->b:[B
@@ -170,14 +170,14 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/k00;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_24
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -193,7 +193,7 @@
     return-object v0
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 12
@@ -244,8 +244,8 @@
     return-object v0
 
     .line 37
-    :pswitch_data_24
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method

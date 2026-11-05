@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/x03;-><init>()V
@@ -26,7 +26,7 @@
 
 # virtual methods
 .method public final k()Llibs/t03;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/s03;->s:Llibs/t03;
@@ -37,7 +37,7 @@
 .end method
 
 .method public final p()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "tspan"

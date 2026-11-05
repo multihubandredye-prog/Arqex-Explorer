@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 1
     const/16 v0, 0xb
@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public final c()Llibs/wh1;
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/wh1;->Nu:Llibs/qh1;
@@ -42,7 +42,7 @@
 .end method
 
 .method public final d(Ljava/security/Key;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/wh1;->Nu:Llibs/qh1;
@@ -61,7 +61,7 @@
 .end method
 
 .method public final g(Llibs/tj;)Ljava/security/PublicKey;
-    .registers 3
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/wh1;->Nu:Llibs/qh1;
@@ -80,7 +80,7 @@
 .end method
 
 .method public final h(Ljava/security/PublicKey;Llibs/uj;)V
-    .registers 4
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/wh1;->Nu:Llibs/qh1;

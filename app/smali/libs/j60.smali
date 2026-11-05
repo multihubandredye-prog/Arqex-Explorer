@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/16 v0, 0x40
@@ -28,7 +28,7 @@
 
     .line 4
     .line 5
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     .line 6
     .line 7
@@ -40,7 +40,7 @@
     return-void
 
     .line 11
-    :array_a
+    :array_0
     .array-data 1
         -0x57t
         -0x2at
@@ -110,7 +110,7 @@
 .end method
 
 .method public constructor <init>(Llibs/App;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -134,7 +134,7 @@
 .end method
 
 .method public constructor <init>(Llibs/g60;)V
-    .registers 3
+    .locals 1
 
     .line 11
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -153,7 +153,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/Init;
@@ -172,7 +172,7 @@
 
     .line 8
     .line 9
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     .line 10
     .line 11
@@ -181,10 +181,10 @@
     .line 12
     .line 13
     .line 14
-    goto :goto_13
+    goto :goto_0
 
     .line 15
-    :cond_e
+    :cond_0
     iget-object v1, p0, Llibs/j60;->Y:Llibs/g60;
 
     .line 16
@@ -194,7 +194,7 @@
     .line 18
     .line 19
     .line 20
-    :goto_13
+    :goto_0
     iget-object v1, p0, Llibs/j60;->Z:[B
 
     .line 21
@@ -211,7 +211,7 @@
     move-result v1
 
     .line 28
-    if-nez v1, :cond_27
+    if-nez v1, :cond_1
 
     .line 29
     .line 30
@@ -233,7 +233,7 @@
     .line 38
     .line 39
     .line 40
-    :cond_27
+    :cond_1
     new-instance v1, Llibs/p10;
 
     .line 41

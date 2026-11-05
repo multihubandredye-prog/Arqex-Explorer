@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/by0;Ljava/io/OutputStream;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final close()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/nk3;->X:Ljava/io/InputStream;
@@ -58,7 +58,7 @@
 .end method
 
 .method public final read()I
-    .registers 3
+    .locals 2
 
     .line 16
     iget-object v0, p0, Llibs/nk3;->X:Ljava/io/InputStream;
@@ -67,19 +67,19 @@
 
     move-result v0
 
-    if-ltz v0, :cond_d
+    if-ltz v0, :cond_0
 
     .line 17
     iget-object v1, p0, Llibs/nk3;->Y:Ljava/io/OutputStream;
 
     invoke-virtual {v1, v0}, Ljava/io/OutputStream;->write(I)V
 
-    :cond_d
+    :cond_0
     return v0
 .end method
 
 .method public final read([B)I
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -94,7 +94,7 @@
 .end method
 
 .method public final read([BII)I
-    .registers 5
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/nk3;->X:Ljava/io/InputStream;
@@ -109,7 +109,7 @@
     move-result p3
 
     .line 7
-    if-lez p3, :cond_d
+    if-lez p3, :cond_0
 
     .line 8
     .line 9
@@ -122,6 +122,6 @@
     .line 12
     .line 13
     .line 14
-    :cond_d
+    :cond_0
     return p3
 .end method

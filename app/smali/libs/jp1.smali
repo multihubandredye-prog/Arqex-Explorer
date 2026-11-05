@@ -16,7 +16,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/q0;
@@ -39,7 +39,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -64,7 +64,7 @@
 .end method
 
 .method public static b(Ljava/nio/ByteBuffer;)Llibs/jp1;
-    .registers 19
+    .locals 18
 
     .line 1
     move-object/from16 v0, p0
@@ -95,7 +95,7 @@
     const/4 v4, 0x0
 
     .line 15
-    if-lt v2, v3, :cond_98
+    if-lt v2, v3, :cond_7
 
     .line 16
     .line 17
@@ -119,7 +119,7 @@
 
     .line 26
     .line 27
-    if-ne v2, v3, :cond_92
+    if-ne v2, v3, :cond_6
 
     .line 28
     .line 29
@@ -139,22 +139,22 @@
 
     .line 36
     .line 37
-    if-eq v2, v3, :cond_27
+    if-eq v2, v3, :cond_0
 
     .line 38
     .line 39
-    goto :goto_92
+    goto :goto_3
 
     .line 40
-    :cond_27
+    :cond_0
     const/4 v2, 0x0
 
     .line 41
-    :goto_28
+    :goto_0
     const/4 v3, 0x4
 
     .line 42
-    if-ge v2, v3, :cond_91
+    if-ge v2, v3, :cond_5
 
     .line 43
     .line 44
@@ -174,18 +174,18 @@
     move-result v6
 
     .line 52
-    if-nez v6, :cond_36
+    if-nez v6, :cond_1
 
     .line 53
     .line 54
-    goto :goto_8e
+    goto :goto_2
 
     .line 55
-    :cond_36
+    :cond_1
     const/4 v7, 0x5
 
     .line 56
-    if-eq v6, v7, :cond_89
+    if-eq v6, v7, :cond_4
 
     .line 57
     .line 58
@@ -193,14 +193,14 @@
 
     .line 59
     .line 60
-    if-ne v6, v7, :cond_3e
+    if-ne v6, v7, :cond_2
 
     .line 61
     .line 62
-    goto :goto_89
+    goto :goto_1
 
     .line 63
-    :cond_3e
+    :cond_2
     and-int/lit16 v7, v6, 0xff
 
     .line 64
@@ -229,7 +229,7 @@
 
     .line 76
     .line 77
-    if-eqz v7, :cond_74
+    if-eqz v7, :cond_3
 
     .line 78
     .line 79
@@ -304,10 +304,10 @@
     .line 114
     .line 115
     .line 116
-    goto :goto_8e
+    goto :goto_2
 
     .line 117
-    :cond_74
+    :cond_3
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 118
@@ -347,8 +347,8 @@
     return-object v4
 
     .line 138
-    :cond_89
-    :goto_89
+    :cond_4
+    :goto_1
     const-string v3, "extended partitions are currently unsupported!"
 
     .line 139
@@ -358,20 +358,20 @@
     .line 141
     .line 142
     .line 143
-    :goto_8e
+    :goto_2
     add-int/lit8 v2, v2, 0x1
 
     .line 144
     .line 145
-    goto :goto_28
+    goto :goto_0
 
     .line 146
-    :cond_91
+    :cond_5
     return-object v1
 
     .line 147
-    :cond_92
-    :goto_92
+    :cond_6
+    :goto_3
     const-string v0, "not a valid mbr partition table!"
 
     .line 148
@@ -384,7 +384,7 @@
     return-object v4
 
     .line 153
-    :cond_98
+    :cond_7
     const-string v0, "Size mismatch!"
 
     .line 154
@@ -400,7 +400,7 @@
 
 # virtual methods
 .method public final a()Ljava/util/ArrayList;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/jp1;->a:Ljava/util/ArrayList;

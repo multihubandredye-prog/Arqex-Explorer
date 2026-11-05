@@ -15,10 +15,10 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 4
+    .locals 2
 
     .line 1
-    packed-switch p1, :pswitch_data_16
+    packed-switch p1, :pswitch_data_0
 
     .line 2
     .line 3
@@ -31,7 +31,7 @@
     return-void
 
     .line 8
-    :pswitch_7
+    :pswitch_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 9
@@ -63,8 +63,8 @@
     return-void
 
     .line 23
-    :pswitch_data_16
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_7
+        :pswitch_0
     .end packed-switch
 .end method

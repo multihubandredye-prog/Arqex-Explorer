@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/gy3;-><init>()V
@@ -37,14 +37,14 @@
 
 # virtual methods
 .method public final b()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/gy3;->j:Llibs/t80;
 
     .line 2
     .line 3
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -54,7 +54,7 @@
     return v0
 
     .line 7
-    :cond_6
+    :cond_0
     invoke-virtual {v0}, Llibs/t80;->d()I
 
     .line 8

@@ -5,7 +5,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/util/Hashtable;
@@ -21,7 +21,7 @@
 .end method
 
 .method public constructor <init>(Llibs/xg;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,7 +33,7 @@
 
     .line 5
     .line 6
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
     .line 7
     .line 8
@@ -52,7 +52,7 @@
     throw p1
 
     .line 15
-    :cond_e
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     .line 16

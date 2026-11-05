@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;IB)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/t21;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 8
+    .locals 6
 
     .line 1
     iget-byte v0, p0, Llibs/t21;->X:B
@@ -63,7 +63,7 @@
     const/4 v4, 0x0
 
     .line 9
-    packed-switch v0, :pswitch_data_72
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
@@ -80,14 +80,14 @@
 
     .line 17
     .line 18
-    if-ne v0, v2, :cond_14
+    if-ne v0, v2, :cond_0
 
     .line 19
     .line 20
-    goto :goto_3b
+    goto :goto_2
 
     .line 21
-    :cond_14
+    :cond_0
     iput v2, p1, Llibs/x81;->a:I
 
     .line 22
@@ -101,7 +101,7 @@
     .line 26
     .line 27
     .line 28
-    :goto_1b
+    :goto_0
     iget-object v0, v3, Llibs/fb3;->Xi:Landroid/widget/LinearLayout;
 
     .line 29
@@ -114,7 +114,7 @@
     move-result v0
 
     .line 34
-    if-ge v4, v0, :cond_38
+    if-ge v4, v0, :cond_2
 
     .line 35
     .line 36
@@ -134,23 +134,23 @@
 
     .line 43
     .line 44
-    if-ne v4, v2, :cond_2f
+    if-ne v4, v2, :cond_1
 
     .line 45
     .line 46
     const/4 v2, -0x1
 
     .line 47
-    goto :goto_32
+    goto :goto_1
 
     .line 48
-    :cond_2f
+    :cond_1
     const v2, -0xbbbbbc
 
     .line 49
     .line 50
     .line 51
-    :goto_32
+    :goto_1
     invoke-virtual {v0, v2}, Landroid/view/View;->setBackgroundColor(I)V
 
     .line 52
@@ -160,25 +160,25 @@
 
     .line 55
     .line 56
-    goto :goto_1b
+    goto :goto_0
 
     .line 57
-    :cond_38
+    :cond_2
     invoke-virtual {v3, v1}, Llibs/fb3;->b(Z)V
 
     .line 58
     .line 59
     .line 60
-    :goto_3b
+    :goto_2
     return-void
 
     .line 61
-    :pswitch_3c
+    :pswitch_0
     check-cast v3, Llibs/r31;
 
     .line 62
     .line 63
-    if-ne v2, v1, :cond_6e
+    if-ne v2, v1, :cond_3
 
     .line 64
     .line 65
@@ -265,21 +265,21 @@
     .line 108
     .line 109
     .line 110
-    goto :goto_71
+    goto :goto_3
 
     .line 111
-    :cond_6e
+    :cond_3
     invoke-virtual {v3, p1}, Llibs/r31;->Base(Landroid/view/View;)V
 
     .line 112
     .line 113
     .line 114
-    :goto_71
+    :goto_3
     return-void
 
     .line 115
-    :pswitch_data_72
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_3c
+        :pswitch_0
     .end packed-switch
 .end method

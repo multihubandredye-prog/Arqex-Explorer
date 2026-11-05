@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/conscrypt/NativeSslSession$Impl;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Lorg/conscrypt/NativeSslSession$Impl$1;->this$0:Lorg/conscrypt/NativeSslSession$Impl;
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public getApplicationBufferSize()I
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -46,7 +46,7 @@
 .end method
 
 .method public getCipherSuite()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/NativeSslSession$Impl$1;->this$0:Lorg/conscrypt/NativeSslSession$Impl;
@@ -65,7 +65,7 @@
 .end method
 
 .method public getCreationTime()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/NativeSslSession$Impl$1;->this$0:Lorg/conscrypt/NativeSslSession$Impl;
@@ -84,7 +84,7 @@
 .end method
 
 .method public getId()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/NativeSslSession$Impl$1;->this$0:Lorg/conscrypt/NativeSslSession$Impl;
@@ -103,7 +103,7 @@
 .end method
 
 .method public getLastAccessedTime()J
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -119,7 +119,7 @@
 .end method
 
 .method public getLocalCertificates()[Ljava/security/cert/Certificate;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -135,7 +135,7 @@
 .end method
 
 .method public getLocalPrincipal()Ljava/security/Principal;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -151,7 +151,7 @@
 .end method
 
 .method public getPacketBufferSize()I
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -167,7 +167,7 @@
 .end method
 
 .method public getPeerCertificateChain()[Ljavax/security/cert/X509Certificate;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -183,7 +183,7 @@
 .end method
 
 .method public getPeerCertificates()[Ljava/security/cert/Certificate;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -199,7 +199,7 @@
 .end method
 
 .method public getPeerHost()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/NativeSslSession$Impl$1;->this$0:Lorg/conscrypt/NativeSslSession$Impl;
@@ -218,7 +218,7 @@
 .end method
 
 .method public getPeerPort()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/NativeSslSession$Impl$1;->this$0:Lorg/conscrypt/NativeSslSession$Impl;
@@ -237,7 +237,7 @@
 .end method
 
 .method public getPeerPrincipal()Ljava/security/Principal;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -253,7 +253,7 @@
 .end method
 
 .method public getProtocol()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/NativeSslSession$Impl$1;->this$0:Lorg/conscrypt/NativeSslSession$Impl;
@@ -272,7 +272,7 @@
 .end method
 
 .method public getSessionContext()Ljavax/net/ssl/SSLSessionContext;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -288,7 +288,7 @@
 .end method
 
 .method public getValue(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -304,7 +304,7 @@
 .end method
 
 .method public getValueNames()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -320,7 +320,7 @@
 .end method
 
 .method public invalidate()V
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -336,7 +336,7 @@
 .end method
 
 .method public isValid()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/NativeSslSession$Impl$1;->this$0:Lorg/conscrypt/NativeSslSession$Impl;
@@ -355,7 +355,7 @@
 .end method
 
 .method public putValue(Ljava/lang/String;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 1
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -371,7 +371,7 @@
 .end method
 
 .method public removeValue(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     new-instance p1, Ljava/lang/UnsupportedOperationException;

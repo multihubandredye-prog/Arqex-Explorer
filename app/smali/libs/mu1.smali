@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/media/MediaPlayer;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/mu1;->X:B
@@ -36,14 +36,14 @@
 
 # virtual methods
 .method public final run()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/mu1;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_1c
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -52,19 +52,19 @@
 
     .line 7
     .line 8
-    :try_start_7
+    :try_start_0
     invoke-static {v0}, Llibs/Papa;->c(Landroid/media/MediaPlayer;)V
-    :try_end_a
-    .catchall {:try_start_7 .. :try_end_a} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 9
     .line 10
     .line 11
-    :catchall_a
+    :catchall_0
     return-void
 
     .line 12
-    :pswitch_b
+    :pswitch_0
     iget-object v0, p0, Llibs/mu1;->Y:Landroid/media/MediaPlayer;
 
     .line 13
@@ -72,50 +72,50 @@
     const/4 v1, 0x0
 
     .line 15
-    :try_start_e
+    :try_start_1
     invoke-virtual {v0, v1}, Landroid/media/MediaPlayer;->setDisplay(Landroid/view/SurfaceHolder;)V
-    :try_end_11
-    .catchall {:try_start_e .. :try_end_11} :catchall_11
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 16
     .line 17
     .line 18
-    :catchall_11
+    :catchall_1
     return-void
 
     .line 19
-    :pswitch_12
+    :pswitch_1
     iget-object v0, p0, Llibs/mu1;->Y:Landroid/media/MediaPlayer;
 
     .line 20
     .line 21
-    :try_start_14
+    :try_start_2
     invoke-virtual {v0}, Landroid/media/MediaPlayer;->stop()V
-    :try_end_17
-    .catchall {:try_start_14 .. :try_end_17} :catchall_17
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
     .line 22
     .line 23
     .line 24
-    :catchall_17
-    :try_start_17
+    :catchall_2
+    :try_start_3
     invoke-virtual {v0}, Landroid/media/MediaPlayer;->release()V
-    :try_end_1a
-    .catchall {:try_start_17 .. :try_end_1a} :catchall_1a
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_3
 
     .line 25
     .line 26
     .line 27
-    :catchall_1a
+    :catchall_3
     return-void
 
     .line 28
     nop
 
     .line 29
-    :pswitch_data_1c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_12
-        :pswitch_b
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/rd2;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/rc2;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 8
+    .locals 7
 
     .line 1
     iget-byte v0, p0, Llibs/rc2;->X:B
@@ -54,7 +54,7 @@
 
     .line 7
     .line 8
-    packed-switch v0, :pswitch_data_78
+    packed-switch v0, :pswitch_data_0
 
     .line 9
     .line 10
@@ -67,14 +67,14 @@
 
     .line 14
     .line 15
-    if-nez v5, :cond_11
+    if-nez v5, :cond_0
 
     .line 16
     .line 17
-    goto :goto_25
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     iget v5, v5, Llibs/od2;->b:I
 
     .line 19
@@ -87,7 +87,7 @@
     move-result v6
 
     .line 24
-    if-lt v5, v6, :cond_1f
+    if-lt v5, v6, :cond_1
 
     .line 25
     .line 26
@@ -103,21 +103,21 @@
 
     .line 31
     .line 32
-    :cond_1f
-    if-gez v5, :cond_22
+    :cond_1
+    if-gez v5, :cond_2
 
     .line 33
     .line 34
     const/4 v5, 0x0
 
     .line 35
-    :cond_22
+    :cond_2
     invoke-virtual {v4, v5}, Llibs/rd2;->w(I)V
 
     .line 36
     .line 37
     .line 38
-    :goto_25
+    :goto_0
     invoke-virtual {v4, v1, v2}, Llibs/rd2;->q(J)V
 
     .line 39
@@ -126,19 +126,19 @@
     return-void
 
     .line 42
-    :pswitch_29
+    :pswitch_0
     iget-object v0, v4, Llibs/rd2;->i:Llibs/od2;
 
     .line 43
     .line 44
-    if-nez v0, :cond_2e
+    if-nez v0, :cond_3
 
     .line 45
     .line 46
-    goto :goto_3d
+    goto :goto_1
 
     .line 47
-    :cond_2e
+    :cond_3
     iget v0, v0, Llibs/od2;->b:I
 
     .line 48
@@ -146,7 +146,7 @@
     sub-int/2addr v0, v3
 
     .line 50
-    if-gez v0, :cond_3a
+    if-gez v0, :cond_4
 
     .line 51
     .line 52
@@ -165,13 +165,13 @@
     sub-int/2addr v0, v3
 
     .line 59
-    :cond_3a
+    :cond_4
     invoke-virtual {v4, v0}, Llibs/rd2;->w(I)V
 
     .line 60
     .line 61
     .line 62
-    :goto_3d
+    :goto_1
     invoke-virtual {v4}, Llibs/rd2;->l()Z
 
     .line 63
@@ -180,7 +180,7 @@
     move-result v0
 
     .line 66
-    if-eqz v0, :cond_48
+    if-eqz v0, :cond_5
 
     .line 67
     .line 68
@@ -193,7 +193,7 @@
     .line 71
     .line 72
     .line 73
-    :cond_48
+    :cond_5
     invoke-virtual {v4, v1, v2}, Llibs/rd2;->q(J)V
 
     .line 74
@@ -202,7 +202,7 @@
     return-void
 
     .line 77
-    :pswitch_4c
+    :pswitch_1
     sget-boolean v0, Lcom/mixplorer/activities/PlayerActivity;->e0:Z
 
     .line 78
@@ -215,7 +215,7 @@
     return-void
 
     .line 83
-    :pswitch_52
+    :pswitch_2
     iget-object v0, v4, Llibs/rd2;->Node:Llibs/dx1;
 
     .line 84
@@ -224,7 +224,7 @@
 
     .line 86
     .line 87
-    :try_start_56
+    :try_start_0
     invoke-virtual {v0}, Llibs/dx1;->a()Z
 
     .line 88
@@ -233,7 +233,7 @@
     move-result v1
 
     .line 91
-    if-eqz v1, :cond_76
+    if-eqz v1, :cond_7
 
     .line 92
     .line 93
@@ -245,7 +245,7 @@
     move-result v1
 
     .line 97
-    if-eqz v1, :cond_6b
+    if-eqz v1, :cond_6
 
     .line 98
     .line 99
@@ -253,7 +253,7 @@
 
     .line 100
     .line 101
-    if-eqz v1, :cond_6b
+    if-eqz v1, :cond_6
 
     .line 102
     .line 103
@@ -266,7 +266,7 @@
     .line 106
     .line 107
     .line 108
-    :cond_6b
+    :cond_6
     invoke-virtual {v0}, Llibs/dx1;->a()Z
 
     .line 109
@@ -275,7 +275,7 @@
     move-result v1
 
     .line 112
-    if-eqz v1, :cond_76
+    if-eqz v1, :cond_7
 
     .line 113
     .line 114
@@ -284,24 +284,24 @@
     .line 115
     .line 116
     invoke-virtual {v0, v3}, Landroid/app/Service;->stopForeground(Z)V
-    :try_end_76
-    .catchall {:try_start_56 .. :try_end_76} :catchall_76
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 117
     .line 118
     .line 119
-    :catchall_76
-    :cond_76
+    :catchall_0
+    :cond_7
     return-void
 
     .line 120
     nop
 
     .line 121
-    :pswitch_data_78
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_52
-        :pswitch_4c
-        :pswitch_29
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/ge0;->X:B
@@ -30,14 +30,14 @@
 
 # virtual methods
 .method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 6
+    .locals 0
 
     .line 1
     iget-byte p1, p0, Llibs/ge0;->X:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_26
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -62,7 +62,7 @@
     return-void
 
     .line 16
-    :pswitch_f
+    :pswitch_0
     const-string p1, "CATEGORY"
 
     .line 17
@@ -83,7 +83,7 @@
     return-void
 
     .line 26
-    :pswitch_19
+    :pswitch_1
     sget-object p1, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 27
@@ -111,9 +111,9 @@
     nop
 
     .line 39
-    :pswitch_data_26
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_19
-        :pswitch_f
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

@@ -24,7 +24,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;B)V
-    .registers 8
+    .locals 0
 
     .line 20
     iput-byte p7, p0, Llibs/zk0;->X:B
@@ -47,7 +47,7 @@
 .end method
 
 .method public synthetic constructor <init>(Llibs/v1;Llibs/m52;Landroid/app/Activity;Ljava/util/Properties;Ljava/lang/String;Llibs/zl0;)V
-    .registers 8
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -90,7 +90,7 @@
 .end method
 
 .method public synthetic constructor <init>(Llibs/v1;Llibs/m52;Ljava/lang/String;Llibs/zl0;Ljava/lang/Object;Ljava/util/Properties;B)V
-    .registers 8
+    .locals 0
 
     .line 21
     iput-byte p7, p0, Llibs/zk0;->X:B
@@ -115,7 +115,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 32
+    .locals 31
 
     .line 1
     move-object/from16 v1, p0
@@ -152,7 +152,7 @@
 
     .line 16
     .line 17
-    packed-switch v0, :pswitch_data_144
+    packed-switch v0, :pswitch_data_0
 
     .line 18
     .line 19
@@ -204,7 +204,7 @@
     return-void
 
     .line 41
-    :pswitch_28
+    :pswitch_0
     check-cast v8, Llibs/vd;
 
     .line 42
@@ -233,7 +233,7 @@
 
     .line 54
     .line 55
-    :try_start_36
+    :try_start_0
     const-string v10, "Getting auth token\u2026"
 
     .line 56
@@ -251,7 +251,7 @@
     move-result-object v0
 
     .line 64
-    if-eqz v0, :cond_56
+    if-eqz v0, :cond_0
 
     .line 65
     .line 66
@@ -287,32 +287,32 @@
     .line 82
     .line 83
     .line 84
-    goto :goto_73
+    goto :goto_2
 
     .line 85
-    :catchall_54
+    :catchall_0
     move-exception v0
 
     .line 86
-    goto :goto_5c
+    goto :goto_0
 
     .line 87
-    :cond_56
+    :cond_0
     const-string v0, "Token null!"
 
     .line 88
     .line 89
     invoke-static {v9, v0}, Llibs/vw1;->v(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_5b
-    .catchall {:try_start_36 .. :try_end_5b} :catchall_54
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 90
     .line 91
     .line 92
-    goto :goto_69
+    goto :goto_1
 
     .line 93
-    :goto_5c
+    :goto_0
     invoke-static {v0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 94
@@ -338,7 +338,7 @@
     .line 104
     .line 105
     .line 106
-    :goto_69
+    :goto_1
     new-instance v0, Llibs/z8;
 
     .line 107
@@ -357,11 +357,11 @@
     .line 114
     .line 115
     .line 116
-    :goto_73
+    :goto_2
     return-void
 
     .line 117
-    :pswitch_74
+    :pswitch_1
     check-cast v8, Llibs/v1;
 
     .line 118
@@ -441,7 +441,7 @@
     return-void
 
     .line 156
-    :pswitch_9b
+    :pswitch_2
     move-object/from16 v21, v8
 
     .line 157
@@ -506,7 +506,7 @@
     const/4 v4, 0x0
 
     .line 188
-    if-lez v0, :cond_cc
+    if-lez v0, :cond_1
 
     .line 189
     .line 190
@@ -538,14 +538,14 @@
 
     .line 203
     .line 204
-    goto :goto_cd
+    goto :goto_3
 
     .line 205
-    :cond_cc
+    :cond_1
     move-object v0, v4
 
     .line 206
-    :goto_cd
+    :goto_3
     iget-object v5, v0, Llibs/rp0;->Three:Ljava/lang/String;
 
     .line 207
@@ -566,7 +566,7 @@
     move-result v6
 
     .line 216
-    if-eqz v6, :cond_ee
+    if-eqz v6, :cond_2
 
     .line 217
     .line 218
@@ -598,7 +598,7 @@
     move-result-object v3
 
     .line 232
-    :goto_e7
+    :goto_4
     move/from16 v24, v2
 
     .line 233
@@ -611,10 +611,10 @@
 
     .line 237
     .line 238
-    goto :goto_106
+    goto :goto_5
 
     .line 239
-    :cond_ee
+    :cond_2
     iget v6, v7, Llibs/m52;->Upsilon:I
 
     .line 240
@@ -622,7 +622,7 @@
     const/4 v8, 0x5
 
     .line 242
-    if-ne v6, v8, :cond_100
+    if-ne v6, v8, :cond_3
 
     .line 243
     .line 244
@@ -650,10 +650,10 @@
     move-result-object v3
 
     .line 256
-    goto :goto_e7
+    goto :goto_4
 
     .line 257
-    :cond_100
+    :cond_3
     move-object/from16 v27, v4
 
     .line 258
@@ -666,7 +666,7 @@
 
     .line 262
     .line 263
-    :goto_106
+    :goto_5
     new-instance v20, Llibs/dl0;
 
     .line 264
@@ -708,7 +708,7 @@
     return-void
 
     .line 284
-    :pswitch_11b
+    :pswitch_3
     check-cast v8, Llibs/v1;
 
     .line 285
@@ -792,11 +792,11 @@
     nop
 
     .line 325
-    :pswitch_data_144
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_11b
-        :pswitch_9b
-        :pswitch_74
-        :pswitch_28
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

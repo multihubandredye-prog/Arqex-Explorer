@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/nio/ByteBuffer;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Lorg/conscrypt/AllocatedBuffer$1;->val$buffer:Ljava/nio/ByteBuffer;
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public nioBuffer()Ljava/nio/ByteBuffer;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/AllocatedBuffer$1;->val$buffer:Ljava/nio/ByteBuffer;
@@ -38,7 +38,7 @@
 .end method
 
 .method public release()Lorg/conscrypt/AllocatedBuffer;
-    .registers 1
+    .locals 0
 
     .line 1
     return-object p0

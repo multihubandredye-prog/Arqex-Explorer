@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/net/ProxySelector;-><init>()V
@@ -19,17 +19,17 @@
 
 # virtual methods
 .method public final connectFailed(Ljava/net/URI;Ljava/net/SocketAddress;Ljava/io/IOException;)V
-    .registers 4
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final select(Ljava/net/URI;)Ljava/util/List;
-    .registers 2
+    .locals 0
 
     .line 1
-    if-eqz p1, :cond_9
+    if-eqz p1, :cond_0
 
     .line 2
     .line 3
@@ -48,7 +48,7 @@
     return-object p1
 
     .line 10
-    :cond_9
+    :cond_0
     const-string p1, "uri must not be null"
 
     .line 11

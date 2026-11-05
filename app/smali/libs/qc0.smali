@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic Object(Landroid/database/MatrixCursor$RowBuilder;Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "mime_type"
@@ -21,7 +21,7 @@
 .end method
 
 .method public static bridge synthetic String(Ljavax/crypto/Cipher;[BI)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -36,7 +36,7 @@
 .end method
 
 .method public static bridge synthetic a(Landroid/app/AppOpsManager;ILjava/lang/String;)I
-    .registers 4
+    .locals 1
 
     .line 1
     const-string v0, "android:get_usage_stats"
@@ -55,7 +55,7 @@
 .end method
 
 .method public static bridge synthetic b(Landroid/graphics/Bitmap;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getAllocationByteCount()I
@@ -70,7 +70,7 @@
 .end method
 
 .method public static bridge synthetic c(Llibs/xc0;Landroid/net/Uri;Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/res/AssetFileDescriptor;
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2, p3}, Landroid/provider/DocumentsProvider;->openTypedAssetFile(Landroid/net/Uri;Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/res/AssetFileDescriptor;
@@ -85,7 +85,7 @@
 .end method
 
 .method public static bridge synthetic d(Ljava/lang/String;)Landroid/net/Uri;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-static {p0}, Landroid/provider/DocumentsContract;->buildRootsUri(Ljava/lang/String;)Landroid/net/Uri;
@@ -100,7 +100,7 @@
 .end method
 
 .method public static bridge synthetic e(Llibs/xc0;Landroid/net/Uri;)Landroid/net/Uri;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/provider/DocumentsProvider;->canonicalize(Landroid/net/Uri;)Landroid/net/Uri;
@@ -115,7 +115,7 @@
 .end method
 
 .method public static bridge synthetic f(Llibs/xc0;Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2}, Landroid/provider/DocumentsProvider;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
@@ -130,7 +130,7 @@
 .end method
 
 .method public static bridge synthetic g(Ljava/lang/Object;)Landroid/os/ParcelFileDescriptor$OnCloseListener;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Landroid/os/ParcelFileDescriptor$OnCloseListener;
@@ -141,7 +141,7 @@
 .end method
 
 .method public static bridge synthetic h(Ljava/io/File;ILandroid/os/Handler;Landroid/os/ParcelFileDescriptor$OnCloseListener;)Landroid/os/ParcelFileDescriptor;
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-static {p0, p1, p2, p3}, Landroid/os/ParcelFileDescriptor;->open(Ljava/io/File;ILandroid/os/Handler;Landroid/os/ParcelFileDescriptor$OnCloseListener;)Landroid/os/ParcelFileDescriptor;
@@ -156,7 +156,7 @@
 .end method
 
 .method public static bridge synthetic i(Llibs/xc0;Landroid/net/Uri;Ljava/lang/String;)Landroid/os/ParcelFileDescriptor;
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2}, Landroid/provider/DocumentsProvider;->openFile(Landroid/net/Uri;Ljava/lang/String;)Landroid/os/ParcelFileDescriptor;
@@ -171,7 +171,7 @@
 .end method
 
 .method public static bridge synthetic j(Landroid/net/Uri;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-static {p0}, Landroid/provider/DocumentsContract;->getDocumentId(Landroid/net/Uri;)Ljava/lang/String;
@@ -186,7 +186,7 @@
 .end method
 
 .method public static bridge synthetic k(Lcom/mixplorer/providers/FileProvider;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/content/ContentProvider;->getCallingPackage()Ljava/lang/String;
@@ -201,7 +201,7 @@
 .end method
 
 .method public static bridge synthetic l(Ljava/net/InetSocketAddress;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Ljava/net/InetSocketAddress;->getHostString()Ljava/lang/String;
@@ -216,7 +216,7 @@
 .end method
 
 .method public static bridge synthetic m(Landroid/database/MatrixCursor$RowBuilder;Ljava/lang/Long;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "_size"
@@ -232,7 +232,7 @@
 .end method
 
 .method public static bridge synthetic n(Landroid/database/MatrixCursor$RowBuilder;Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "_display_name"
@@ -248,7 +248,7 @@
 .end method
 
 .method public static bridge synthetic p(Landroid/graphics/Bitmap;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -263,7 +263,7 @@
 .end method
 
 .method public static bridge synthetic q(Landroid/graphics/Bitmap;IILandroid/graphics/Bitmap$Config;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2, p3}, Landroid/graphics/Bitmap;->reconfigure(IILandroid/graphics/Bitmap$Config;)V
@@ -275,7 +275,7 @@
 .end method
 
 .method public static bridge synthetic r(Ljava/lang/AutoCloseable;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-interface {p0}, Ljava/lang/AutoCloseable;->close()V
@@ -287,7 +287,7 @@
 .end method
 
 .method public static bridge synthetic s(Ljavax/crypto/Cipher;[BI)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x4
@@ -302,7 +302,7 @@
 .end method
 
 .method public static bridge synthetic t(Landroid/app/ActivityManager;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/app/ActivityManager;->isLowRamDevice()Z
@@ -317,7 +317,7 @@
 .end method
 
 .method public static bridge synthetic u(Landroid/content/ContentResolver;Landroid/net/Uri;)Z
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p0, p1}, Landroid/provider/DocumentsContract;->deleteDocument(Landroid/content/ContentResolver;Landroid/net/Uri;)Z
@@ -332,7 +332,7 @@
 .end method
 
 .method public static bridge synthetic v(Landroid/content/Context;Landroid/net/Uri;)Z
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p0, p1}, Landroid/provider/DocumentsContract;->isDocumentUri(Landroid/content/Context;Landroid/net/Uri;)Z
@@ -347,7 +347,7 @@
 .end method
 
 .method public static bridge synthetic w(Llibs/xc0;Landroid/net/Uri;Ljava/lang/String;)[Ljava/lang/String;
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2}, Landroid/provider/DocumentsProvider;->getStreamTypes(Landroid/net/Uri;Ljava/lang/String;)[Ljava/lang/String;
@@ -362,7 +362,7 @@
 .end method
 
 .method public static bridge synthetic x(Landroid/graphics/Bitmap;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getAllocationByteCount()I
@@ -377,7 +377,7 @@
 .end method
 
 .method public static bridge synthetic y(Landroid/net/Uri;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-static {p0}, Landroid/provider/DocumentsContract;->getDocumentId(Landroid/net/Uri;)Ljava/lang/String;
@@ -392,7 +392,7 @@
 .end method
 
 .method public static bridge synthetic z(Landroid/database/MatrixCursor$RowBuilder;Ljava/lang/Long;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "last_modified"

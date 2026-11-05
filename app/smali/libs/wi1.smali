@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/bn1;
@@ -41,7 +41,7 @@
 .end method
 
 .method public static a(Ljava/lang/String;)Llibs/vi1;
-    .registers 3
+    .locals 2
 
     .line 1
     const-string v0, ","
@@ -56,7 +56,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -75,7 +75,7 @@
     return-object v0
 
     .line 16
-    :cond_f
+    :cond_0
     const-string v0, "!"
 
     .line 17
@@ -88,7 +88,7 @@
     move-result v0
 
     .line 22
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_1
 
     .line 23
     .line 24
@@ -107,7 +107,7 @@
     return-object v0
 
     .line 31
-    :cond_1e
+    :cond_1
     const-string v0, "|1|"
 
     .line 32
@@ -120,7 +120,7 @@
     move-result v0
 
     .line 37
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_2
 
     .line 38
     .line 39
@@ -136,7 +136,7 @@
     return-object v0
 
     .line 45
-    :cond_2c
+    :cond_2
     const-string v0, "*"
 
     .line 46
@@ -149,7 +149,7 @@
     move-result v0
 
     .line 51
-    if-nez v0, :cond_44
+    if-nez v0, :cond_4
 
     .line 52
     .line 53
@@ -165,14 +165,14 @@
     move-result v0
 
     .line 59
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_3
 
     .line 60
     .line 61
-    goto :goto_44
+    goto :goto_0
 
     .line 62
-    :cond_3d
+    :cond_3
     new-instance v0, Llibs/ti1;
 
     .line 63
@@ -188,8 +188,8 @@
     return-object v0
 
     .line 69
-    :cond_44
-    :goto_44
+    :cond_4
+    :goto_0
     new-instance v0, Llibs/ti1;
 
     .line 70

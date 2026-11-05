@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(II)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -83,14 +83,14 @@
 
 # virtual methods
 .method public final a()V
-    .registers 9
+    .locals 8
 
     .line 1
     iget-boolean v0, p0, Llibs/na2;->f:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_60
+    if-nez v0, :cond_4
 
     .line 4
     .line 5
@@ -128,11 +128,11 @@
     const/4 v6, 0x1
 
     .line 21
-    if-eq v3, v1, :cond_27
+    if-eq v3, v1, :cond_0
 
     .line 22
     .line 23
-    if-eq v5, v1, :cond_27
+    if-eq v5, v1, :cond_0
 
     .line 24
     .line 25
@@ -167,7 +167,7 @@
     return-void
 
     .line 40
-    :cond_27
+    :cond_0
     const/high16 v7, -0x1000000
 
     .line 41
@@ -188,11 +188,11 @@
     move-result v2
 
     .line 50
-    if-eq v0, v1, :cond_44
+    if-eq v0, v1, :cond_1
 
     .line 51
     .line 52
-    if-eq v0, v1, :cond_44
+    if-eq v0, v1, :cond_1
 
     .line 53
     .line 54
@@ -227,8 +227,8 @@
     return-void
 
     .line 69
-    :cond_44
-    if-eq v3, v1, :cond_4b
+    :cond_1
+    if-eq v3, v1, :cond_2
 
     .line 70
     .line 71
@@ -240,10 +240,10 @@
     move-result v0
 
     .line 75
-    goto :goto_4f
+    goto :goto_0
 
     .line 76
-    :cond_4b
+    :cond_2
     invoke-static {v7, v0}, Llibs/ah;->String(II)I
 
     .line 77
@@ -252,12 +252,12 @@
     move-result v0
 
     .line 80
-    :goto_4f
+    :goto_0
     iput v0, p0, Llibs/na2;->h:I
 
     .line 81
     .line 82
-    if-eq v5, v1, :cond_58
+    if-eq v5, v1, :cond_3
 
     .line 83
     .line 84
@@ -269,10 +269,10 @@
     move-result v0
 
     .line 88
-    goto :goto_5c
+    goto :goto_1
 
     .line 89
-    :cond_58
+    :cond_3
     invoke-static {v7, v2}, Llibs/ah;->String(II)I
 
     .line 90
@@ -281,7 +281,7 @@
     move-result v0
 
     .line 93
-    :goto_5c
+    :goto_1
     iput v0, p0, Llibs/na2;->g:I
 
     .line 94
@@ -290,19 +290,19 @@
 
     .line 96
     .line 97
-    :cond_60
+    :cond_4
     return-void
 .end method
 
 .method public final b()[F
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/na2;->i:[F
 
     .line 2
     .line 3
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -317,7 +317,7 @@
 
     .line 9
     .line 10
-    :cond_9
+    :cond_0
     iget v1, p0, Llibs/na2;->b:I
 
     .line 11
@@ -343,24 +343,24 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
     .line 6
-    if-eqz p1, :cond_1f
+    if-eqz p1, :cond_2
 
     .line 7
     .line 8
@@ -376,14 +376,14 @@
     move-result-object v3
 
     .line 14
-    if-eq v2, v3, :cond_10
+    if-eq v2, v3, :cond_1
 
     .line 15
     .line 16
-    goto :goto_1f
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_1
     check-cast p1, Llibs/na2;
 
     .line 18
@@ -396,7 +396,7 @@
 
     .line 22
     .line 23
-    if-ne v2, v3, :cond_1f
+    if-ne v2, v3, :cond_2
 
     .line 24
     .line 25
@@ -408,20 +408,20 @@
 
     .line 28
     .line 29
-    if-ne v2, p1, :cond_1f
+    if-ne v2, p1, :cond_2
 
     .line 30
     .line 31
     return v0
 
     .line 32
-    :cond_1f
-    :goto_1f
+    :cond_2
+    :goto_0
     return v1
 .end method
 
 .method public final hashCode()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/na2;->d:I
@@ -443,7 +443,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

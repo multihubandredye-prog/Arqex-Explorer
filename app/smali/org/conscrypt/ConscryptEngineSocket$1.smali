@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/conscrypt/ConscryptEngineSocket;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Lorg/conscrypt/ConscryptEngineSocket$1;->val$socket:Lorg/conscrypt/ConscryptEngineSocket;
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public onHandshakeFinished()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket$1;->val$socket:Lorg/conscrypt/ConscryptEngineSocket;

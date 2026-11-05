@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/util/Hashtable;
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public final b(Llibs/App;)Llibs/Core;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/c82;->X:Ljava/util/Hashtable;
@@ -77,7 +77,7 @@
 .end method
 
 .method public final c(Llibs/App;Llibs/Core;)V
-    .registers 5
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/c82;->X:Ljava/util/Hashtable;
@@ -92,7 +92,7 @@
     move-result v1
 
     .line 7
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
@@ -104,7 +104,7 @@
     return-void
 
     .line 13
-    :cond_c
+    :cond_0
     invoke-virtual {v0, p1, p2}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 14
@@ -123,7 +123,7 @@
 .end method
 
 .method public final d()Ljava/util/Enumeration;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/c82;->Y:Ljava/util/Vector;

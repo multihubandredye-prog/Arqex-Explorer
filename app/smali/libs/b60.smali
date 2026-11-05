@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/App;Llibs/la0;Llibs/n82;)V
-    .registers 5
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -63,7 +63,7 @@
 .end method
 
 .method public constructor <init>(Llibs/i22;Llibs/n82;)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -87,7 +87,7 @@
 .end method
 
 .method public constructor <init>(Llibs/la0;Llibs/f50;Llibs/e72;)V
-    .registers 5
+    .locals 1
 
     const/4 v0, 0x2
 
@@ -109,7 +109,7 @@
 .end method
 
 .method public constructor <init>(Llibs/la0;Llibs/is;)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -130,14 +130,14 @@
 
 # virtual methods
 .method public final engineGetParameter(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-byte p1, p0, Llibs/b60;->X:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_18
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -158,14 +158,14 @@
     throw p1
 
     .line 14
-    :pswitch_d
+    :pswitch_0
     const/4 p1, 0x0
 
     .line 15
     return-object p1
 
     .line 16
-    :pswitch_f
+    :pswitch_1
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     .line 17
@@ -185,22 +185,22 @@
     nop
 
     .line 25
-    :pswitch_data_18
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_f
-        :pswitch_d
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public engineGetParameters()Ljava/security/AlgorithmParameters;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/b60;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_c
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -216,21 +216,21 @@
     return-object v0
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     const/4 v0, 0x0
 
     .line 12
     return-object v0
 
     .line 13
-    :pswitch_data_c
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final engineInitSign(Ljava/security/PrivateKey;)V
-    .registers 10
+    .locals 8
 
     .line 1
     iget-byte v0, p0, Llibs/b60;->X:B
@@ -248,7 +248,7 @@
     const/4 v3, 0x1
 
     .line 8
-    packed-switch v0, :pswitch_data_a0
+    packed-switch v0, :pswitch_data_0
 
     .line 9
     .line 10
@@ -274,7 +274,7 @@
 
     .line 21
     .line 22
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     .line 23
     .line 24
@@ -292,25 +292,25 @@
     .line 30
     .line 31
     .line 32
-    goto :goto_23
+    goto :goto_0
 
     .line 33
-    :cond_20
+    :cond_0
     invoke-interface {v1, v3, p1}, Llibs/f50;->a(ZLlibs/et;)V
 
     .line 34
     .line 35
     .line 36
-    :goto_23
+    :goto_0
     return-void
 
     .line 37
-    :pswitch_24
+    :pswitch_0
     instance-of v0, p1, Ljava/security/interfaces/RSAPrivateKey;
 
     .line 38
     .line 39
-    if-eqz v0, :cond_37
+    if-eqz v0, :cond_1
 
     .line 40
     .line 41
@@ -343,7 +343,7 @@
     return-void
 
     .line 56
-    :cond_37
+    :cond_1
     new-instance v0, Ljava/security/InvalidKeyException;
 
     .line 57
@@ -361,17 +361,17 @@
     .line 63
     .line 64
     .line 65
-    if-nez p1, :cond_44
+    if-nez p1, :cond_2
 
     .line 66
     .line 67
     const/4 p1, 0x0
 
     .line 68
-    goto :goto_4c
+    goto :goto_1
 
     .line 69
-    :cond_44
+    :cond_2
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 70
@@ -388,7 +388,7 @@
     move-result-object p1
 
     .line 77
-    :goto_4c
+    :goto_1
     const-string v2, ") is not a RSAPrivateKey instance"
 
     .line 78
@@ -409,7 +409,7 @@
     throw v0
 
     .line 87
-    :pswitch_56
+    :pswitch_1
     sget-object v0, Llibs/c60;->a:[Llibs/App;
 
     .line 88
@@ -418,7 +418,7 @@
 
     .line 90
     .line 91
-    if-eqz v0, :cond_99
+    if-eqz v0, :cond_4
 
     .line 92
     .line 93
@@ -508,7 +508,7 @@
 
     .line 136
     .line 137
-    if-eqz p1, :cond_90
+    if-eqz p1, :cond_3
 
     .line 138
     .line 139
@@ -524,7 +524,7 @@
     move-object v0, v4
 
     .line 145
-    :cond_90
+    :cond_3
     invoke-interface {v2}, Llibs/la0;->reset()V
 
     .line 146
@@ -539,10 +539,10 @@
     .line 151
     .line 152
     .line 153
-    goto :goto_9e
+    goto :goto_2
 
     .line 154
-    :cond_99
+    :cond_4
     const-string p1, "can\'t identify DSA private key."
 
     .line 155
@@ -552,33 +552,33 @@
     .line 157
     .line 158
     .line 159
-    :goto_9e
+    :goto_2
     return-void
 
     .line 160
     nop
 
     .line 161
-    :pswitch_data_a0
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_56
-        :pswitch_24
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public engineInitSign(Ljava/security/PrivateKey;Ljava/security/SecureRandom;)V
-    .registers 4
+    .locals 1
 
     iget-byte v0, p0, Llibs/b60;->X:B
 
-    packed-switch v0, :pswitch_data_10
+    packed-switch v0, :pswitch_data_0
 
     invoke-super {p0, p1, p2}, Ljava/security/SignatureSpi;->engineInitSign(Ljava/security/PrivateKey;Ljava/security/SecureRandom;)V
 
     return-void
 
     .line 161
-    :pswitch_9
+    :pswitch_0
     iput-object p2, p0, Llibs/b60;->Lambda:Ljava/lang/Object;
 
     .line 162
@@ -588,14 +588,14 @@
 
     nop
 
-    :pswitch_data_10
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_9
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final engineInitVerify(Ljava/security/PublicKey;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/b60;->X:B
@@ -613,7 +613,7 @@
 
     .line 7
     .line 8
-    packed-switch v0, :pswitch_data_72
+    packed-switch v0, :pswitch_data_0
 
     .line 9
     .line 10
@@ -643,12 +643,12 @@
     return-void
 
     .line 24
-    :pswitch_17
+    :pswitch_0
     instance-of v0, p1, Ljava/security/interfaces/RSAPublicKey;
 
     .line 25
     .line 26
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_0
 
     .line 27
     .line 28
@@ -681,7 +681,7 @@
     return-void
 
     .line 43
-    :cond_2a
+    :cond_0
     new-instance v0, Ljava/security/InvalidKeyException;
 
     .line 44
@@ -699,17 +699,17 @@
     .line 50
     .line 51
     .line 52
-    if-nez p1, :cond_37
+    if-nez p1, :cond_1
 
     .line 53
     .line 54
     const/4 p1, 0x0
 
     .line 55
-    goto :goto_3f
+    goto :goto_0
 
     .line 56
-    :cond_37
+    :cond_1
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 57
@@ -726,7 +726,7 @@
     move-result-object p1
 
     .line 64
-    :goto_3f
+    :goto_0
     const-string v2, ") is not a RSAPublicKey instance"
 
     .line 65
@@ -747,12 +747,12 @@
     throw v0
 
     .line 74
-    :pswitch_49
+    :pswitch_1
     instance-of v0, p1, Ljava/security/interfaces/DSAKey;
 
     .line 75
     .line 76
-    if-eqz v0, :cond_52
+    if-eqz v0, :cond_2
 
     .line 77
     .line 78
@@ -764,11 +764,11 @@
     move-result-object p1
 
     .line 82
-    goto :goto_63
+    goto :goto_1
 
     .line 83
-    :cond_52
-    :try_start_52
+    :cond_2
+    :try_start_0
     invoke-interface {p1}, Ljava/security/Key;->getEncoded()[B
 
     .line 84
@@ -800,11 +800,11 @@
     .line 98
     .line 99
     move-result-object p1
-    :try_end_63
-    .catch Ljava/lang/Exception; {:try_start_52 .. :try_end_63} :catch_6c
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 100
-    :goto_63
+    :goto_1
     invoke-interface {v3}, Llibs/la0;->reset()V
 
     .line 101
@@ -819,10 +819,10 @@
     .line 106
     .line 107
     .line 108
-    goto :goto_71
+    goto :goto_2
 
     .line 109
-    :catch_6c
+    :catch_0
     const-string p1, "can\'t recognise key type in DSA based signer"
 
     .line 110
@@ -832,23 +832,23 @@
     .line 112
     .line 113
     .line 114
-    :goto_71
+    :goto_2
     return-void
 
     .line 115
-    :pswitch_data_72
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_49
-        :pswitch_17
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final engineSetParameter(Ljava/lang/String;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     iget-byte p1, p0, Llibs/b60;->X:B
 
-    packed-switch p1, :pswitch_data_1e
+    packed-switch p1, :pswitch_data_0
 
     .line 31
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -860,7 +860,7 @@
     throw p1
 
     .line 32
-    :pswitch_d
+    :pswitch_0
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     const-string p2, "engineSetParameter unsupported"
@@ -870,7 +870,7 @@
     throw p1
 
     .line 33
-    :pswitch_15
+    :pswitch_1
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     const-string p2, "engineSetParameter unsupported"
@@ -881,22 +881,22 @@
 
     nop
 
-    :pswitch_data_1e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_15
-        :pswitch_d
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final engineSetParameter(Ljava/security/spec/AlgorithmParameterSpec;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-byte p1, p0, Llibs/b60;->X:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_1e
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -917,7 +917,7 @@
     throw p1
 
     .line 14
-    :pswitch_d
+    :pswitch_0
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     .line 15
@@ -934,7 +934,7 @@
     throw p1
 
     .line 22
-    :pswitch_15
+    :pswitch_1
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     .line 23
@@ -954,15 +954,15 @@
     nop
 
     .line 31
-    :pswitch_data_1e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_15
-        :pswitch_d
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final engineSign()[B
-    .registers 8
+    .locals 7
 
     .line 1
     iget-byte v0, p0, Llibs/b60;->X:B
@@ -990,7 +990,7 @@
     const/4 v6, 0x0
 
     .line 12
-    packed-switch v0, :pswitch_data_8e
+    packed-switch v0, :pswitch_data_0
 
     .line 13
     .line 14
@@ -1012,7 +1012,7 @@
     .line 22
     .line 23
     .line 24
-    :try_start_17
+    :try_start_0
     check-cast v3, Llibs/f50;
 
     .line 25
@@ -1047,14 +1047,14 @@
     .line 40
     .line 41
     move-result-object v5
-    :try_end_29
-    .catch Ljava/lang/Exception; {:try_start_17 .. :try_end_29} :catch_2a
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 42
-    goto :goto_2e
+    goto :goto_0
 
     .line 43
-    :catch_2a
+    :catch_0
     move-exception v0
 
     .line 44
@@ -1063,11 +1063,11 @@
     .line 45
     .line 46
     .line 47
-    :goto_2e
+    :goto_0
     return-object v5
 
     .line 48
-    :pswitch_2f
+    :pswitch_0
     invoke-interface {v4}, Llibs/la0;->e()I
 
     .line 49
@@ -1085,7 +1085,7 @@
     .line 55
     .line 56
     .line 57
-    :try_start_38
+    :try_start_1
     iget-object v2, p0, Llibs/b60;->Lambda:Ljava/lang/Object;
 
     .line 58
@@ -1094,14 +1094,14 @@
 
     .line 60
     .line 61
-    if-nez v2, :cond_3f
+    if-nez v2, :cond_0
 
     .line 62
     .line 63
-    goto :goto_48
+    goto :goto_1
 
     .line 64
-    :cond_3f
+    :cond_0
     new-instance v4, Llibs/ra0;
 
     .line 65
@@ -1119,7 +1119,7 @@
     move-result-object v0
 
     .line 73
-    :goto_48
+    :goto_1
     check-cast v3, Llibs/n82;
 
     .line 74
@@ -1133,15 +1133,15 @@
     .line 78
     .line 79
     move-result-object v5
-    :try_end_4f
-    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_38 .. :try_end_4f} :catch_55
-    .catch Ljava/lang/Exception; {:try_start_38 .. :try_end_4f} :catch_50
+    :try_end_1
+    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 80
-    goto :goto_5a
+    goto :goto_2
 
     .line 81
-    :catch_50
+    :catch_1
     move-exception v0
 
     .line 82
@@ -1150,10 +1150,10 @@
     .line 83
     .line 84
     .line 85
-    goto :goto_5a
+    goto :goto_2
 
     .line 86
-    :catch_55
+    :catch_2
     const-string v0, "key too small for signature type"
 
     .line 87
@@ -1163,11 +1163,11 @@
     .line 89
     .line 90
     .line 91
-    :goto_5a
+    :goto_2
     return-object v5
 
     .line 92
-    :pswitch_5b
+    :pswitch_1
     invoke-interface {v4}, Llibs/la0;->e()I
 
     .line 93
@@ -1185,7 +1185,7 @@
     .line 99
     .line 100
     .line 101
-    :try_start_64
+    :try_start_2
     check-cast v3, Llibs/is;
 
     .line 102
@@ -1254,14 +1254,14 @@
     .line 135
     .line 136
     move-result-object v5
-    :try_end_88
-    .catch Ljava/lang/Exception; {:try_start_64 .. :try_end_88} :catch_89
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_3
 
     .line 137
-    goto :goto_8d
+    goto :goto_3
 
     .line 138
-    :catch_89
+    :catch_3
     move-exception v0
 
     .line 139
@@ -1270,19 +1270,19 @@
     .line 140
     .line 141
     .line 142
-    :goto_8d
+    :goto_3
     return-object v5
 
     .line 143
-    :pswitch_data_8e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_5b
-        :pswitch_2f
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final engineUpdate(B)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/b60;->X:B
@@ -1293,7 +1293,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_14
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -1306,7 +1306,7 @@
     return-void
 
     .line 12
-    :pswitch_b
+    :pswitch_0
     invoke-interface {v1, p1}, Llibs/la0;->a(B)V
 
     .line 13
@@ -1315,7 +1315,7 @@
     return-void
 
     .line 16
-    :pswitch_f
+    :pswitch_1
     invoke-interface {v1, p1}, Llibs/la0;->a(B)V
 
     .line 17
@@ -1327,21 +1327,21 @@
     nop
 
     .line 21
-    :pswitch_data_14
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_f
-        :pswitch_b
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final engineUpdate([BII)V
-    .registers 6
+    .locals 2
 
     iget-byte v0, p0, Llibs/b60;->X:B
 
     iget-object v1, p0, Llibs/b60;->Y:Llibs/la0;
 
-    packed-switch v0, :pswitch_data_14
+    packed-switch v0, :pswitch_data_0
 
     .line 21
     invoke-interface {v1, p1, p2, p3}, Llibs/la0;->update([BII)V
@@ -1349,28 +1349,28 @@
     return-void
 
     .line 22
-    :pswitch_b
+    :pswitch_0
     invoke-interface {v1, p1, p2, p3}, Llibs/la0;->update([BII)V
 
     return-void
 
     .line 23
-    :pswitch_f
+    :pswitch_1
     invoke-interface {v1, p1, p2, p3}, Llibs/la0;->update([BII)V
 
     return-void
 
     nop
 
-    :pswitch_data_14
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_f
-        :pswitch_b
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final engineVerify([B)Z
-    .registers 12
+    .locals 10
 
     .line 1
     iget-byte v0, p0, Llibs/b60;->X:B
@@ -1398,7 +1398,7 @@
     const/4 v6, 0x0
 
     .line 12
-    packed-switch v0, :pswitch_data_ce
+    packed-switch v0, :pswitch_data_0
 
     .line 13
     .line 14
@@ -1420,7 +1420,7 @@
     .line 22
     .line 23
     .line 24
-    :try_start_17
+    :try_start_0
     iget-object v1, p0, Llibs/b60;->Lambda:Ljava/lang/Object;
 
     .line 25
@@ -1435,8 +1435,8 @@
     .line 30
     .line 31
     move-result-object p1
-    :try_end_1f
-    .catch Ljava/lang/Exception; {:try_start_17 .. :try_end_1f} :catch_2a
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 32
     check-cast v3, Llibs/f50;
@@ -1459,20 +1459,20 @@
     move-result v6
 
     .line 42
-    goto :goto_2d
+    goto :goto_0
 
     .line 43
-    :catch_2a
+    :catch_0
     invoke-static {v2}, Llibs/t22;->j(Ljava/lang/String;)V
 
     .line 44
     .line 45
     .line 46
-    :goto_2d
+    :goto_0
     return v6
 
     .line 47
-    :pswitch_2e
+    :pswitch_0
     invoke-interface {v4}, Llibs/la0;->e()I
 
     .line 48
@@ -1490,7 +1490,7 @@
     .line 54
     .line 55
     .line 56
-    :try_start_37
+    :try_start_1
     check-cast v3, Llibs/n82;
 
     .line 57
@@ -1514,14 +1514,14 @@
 
     .line 66
     .line 67
-    if-nez v3, :cond_45
+    if-nez v3, :cond_0
 
     .line 68
     .line 69
-    goto :goto_50
+    goto :goto_1
 
     .line 70
-    :cond_45
+    :cond_0
     new-instance v4, Llibs/ra0;
 
     .line 71
@@ -1541,18 +1541,18 @@
     .line 79
     .line 80
     move-result-object v2
-    :try_end_50
-    .catch Ljava/lang/Exception; {:try_start_37 .. :try_end_50} :catch_94
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 81
-    :goto_50
+    :goto_1
     array-length v3, p1
 
     .line 82
     array-length v4, v2
 
     .line 83
-    if-ne v3, v4, :cond_59
+    if-ne v3, v4, :cond_1
 
     .line 84
     .line 85
@@ -1564,10 +1564,10 @@
     move-result v5
 
     .line 89
-    goto :goto_95
+    goto :goto_4
 
     .line 90
-    :cond_59
+    :cond_1
     array-length v3, p1
 
     .line 91
@@ -1577,7 +1577,7 @@
     sub-int/2addr v4, v1
 
     .line 93
-    if-ne v3, v4, :cond_91
+    if-ne v3, v4, :cond_4
 
     .line 94
     .line 95
@@ -1636,8 +1636,8 @@
     const/4 v7, 0x0
 
     .line 116
-    :goto_73
-    if-ge v1, v0, :cond_82
+    :goto_2
+    if-ge v1, v0, :cond_2
 
     .line 117
     .line 118
@@ -1667,15 +1667,15 @@
 
     .line 129
     .line 130
-    goto :goto_73
+    goto :goto_2
 
     .line 131
-    :cond_82
+    :cond_2
     const/4 v0, 0x0
 
     .line 132
-    :goto_83
-    if-ge v0, v3, :cond_8e
+    :goto_3
+    if-ge v0, v3, :cond_3
 
     .line 133
     .line 134
@@ -1697,33 +1697,33 @@
 
     .line 141
     .line 142
-    goto :goto_83
+    goto :goto_3
 
     .line 143
-    :cond_8e
-    if-nez v7, :cond_94
+    :cond_3
+    if-nez v7, :cond_5
 
     .line 144
     .line 145
-    goto :goto_95
+    goto :goto_4
 
     .line 146
-    :cond_91
+    :cond_4
     invoke-static {v2, v2}, Llibs/t43;->i([B[B)Z
 
     .line 147
     .line 148
     .line 149
-    :catch_94
-    :cond_94
+    :catch_1
+    :cond_5
     const/4 v5, 0x0
 
     .line 150
-    :goto_95
+    :goto_4
     return v5
 
     .line 151
-    :pswitch_96
+    :pswitch_1
     invoke-interface {v4}, Llibs/la0;->e()I
 
     .line 152
@@ -1741,7 +1741,7 @@
     .line 158
     .line 159
     .line 160
-    :try_start_9f
+    :try_start_2
     invoke-static {p1}, Llibs/Theme;->j([B)Llibs/Theme;
 
     .line 161
@@ -1803,8 +1803,8 @@
     .line 189
     .line 190
     aput-object p1, v1, v5
-    :try_end_bf
-    .catch Ljava/lang/Exception; {:try_start_9f .. :try_end_bf} :catch_ca
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
 
     .line 191
     .line 192
@@ -1828,22 +1828,22 @@
     move-result v6
 
     .line 202
-    goto :goto_cd
+    goto :goto_5
 
     .line 203
-    :catch_ca
+    :catch_2
     invoke-static {v2}, Llibs/t22;->j(Ljava/lang/String;)V
 
     .line 204
     .line 205
     .line 206
-    :goto_cd
+    :goto_5
     return v6
 
     .line 207
-    :pswitch_data_ce
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_96
-        :pswitch_2e
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

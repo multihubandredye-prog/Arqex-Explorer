@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/tt;II)V
-    .registers 13
+    .locals 9
 
     .line 1
     iput-object p1, p0, Llibs/st;->Z:Llibs/tt;
@@ -112,7 +112,7 @@
 
 # virtual methods
 .method public final draw(Landroid/graphics/Canvas;Landroid/graphics/Paint;)V
-    .registers 8
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/st;->Z:Llibs/tt;

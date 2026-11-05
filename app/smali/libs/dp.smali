@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 1
     const-string v0, "MATRIX_SAVE_FLAG"

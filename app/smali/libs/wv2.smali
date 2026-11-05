@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/pu2;Llibs/k00;JJJI)V
-    .registers 19
+    .locals 9
 
     .line 1
     const/16 v1, 0x31
@@ -61,7 +61,7 @@
 
 # virtual methods
 .method public final i(Llibs/rw2;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget v0, p0, Llibs/lv2;->c:I

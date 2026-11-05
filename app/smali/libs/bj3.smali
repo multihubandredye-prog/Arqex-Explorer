@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/dy2;)V
-    .registers 11
+    .locals 9
 
     .line 1
     iget-object v0, p1, Llibs/dy2;->Y:Ljava/lang/Object;
@@ -58,8 +58,8 @@
     const/4 v3, 0x0
 
     .line 19
-    :goto_12
-    if-ge v3, v0, :cond_56
+    :goto_0
+    if-ge v3, v0, :cond_0
 
     .line 20
     .line 21
@@ -184,24 +184,24 @@
     move v2, v5
 
     .line 86
-    goto :goto_12
+    goto :goto_0
 
     .line 87
-    :cond_56
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/bj3;->Mu:Llibs/ui3;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
@@ -217,7 +217,7 @@
     move-result v0
 
     .line 11
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_1
 
     .line 12
     .line 13
@@ -241,7 +241,7 @@
 
     .line 22
     .line 23
-    if-eqz v1, :cond_2d
+    if-eqz v1, :cond_0
 
     .line 24
     .line 25
@@ -286,12 +286,12 @@
     .line 44
     .line 45
     .line 46
-    :cond_2d
+    :cond_0
     iget-object p1, v0, Llibs/cj3;->Omega:Llibs/aj3;
 
     .line 47
     .line 48
-    if-eqz p1, :cond_34
+    if-eqz p1, :cond_1
 
     .line 49
     .line 50
@@ -300,12 +300,12 @@
     .line 51
     .line 52
     .line 53
-    :cond_34
+    :cond_1
     return-void
 .end method
 
 .method public final onLongClick(Landroid/view/View;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/bj3;->Mu:Llibs/ui3;
@@ -315,7 +315,7 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_2
 
     .line 5
     .line 6
@@ -331,7 +331,7 @@
     move-result v0
 
     .line 12
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_2
 
     .line 13
     .line 14
@@ -355,7 +355,7 @@
 
     .line 23
     .line 24
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_2
 
     .line 25
     .line 26
@@ -366,31 +366,31 @@
     const/4 v2, 0x1
 
     .line 29
-    if-eqz p1, :cond_24
+    if-eqz p1, :cond_1
 
     .line 30
     .line 31
-    if-eq p1, v2, :cond_21
+    if-eq p1, v2, :cond_0
 
     .line 32
     .line 33
     return v2
 
     .line 34
-    :cond_21
+    :cond_0
     sget p1, Llibs/bi2;->modify:I
 
     .line 35
     .line 36
-    goto :goto_26
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_1
     sget p1, Llibs/bi2;->delete:I
 
     .line 38
     .line 39
-    :goto_26
+    :goto_0
     iget-object v0, v0, Llibs/g31;->X:Llibs/r31;
 
     .line 40
@@ -415,6 +415,6 @@
     return v2
 
     .line 51
-    :cond_32
+    :cond_2
     return v1
 .end method

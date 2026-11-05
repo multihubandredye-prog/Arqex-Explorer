@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;Ljava/util/regex/Pattern;)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
     move-result v0
 
     .line 14
-    if-nez v0, :cond_14
+    if-nez v0, :cond_0
 
     .line 15
     .line 16
@@ -54,7 +54,7 @@
     return-void
 
     .line 21
-    :cond_14
+    :cond_0
     const-string p1, "regex cannot contain any groups"
 
     .line 22

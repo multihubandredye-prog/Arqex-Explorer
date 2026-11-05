@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/bf0;->X:B
@@ -34,7 +34,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/Object;B)V
-    .registers 3
+    .locals 0
 
     .line 7
     iput-byte p2, p0, Llibs/bf0;->X:B
@@ -45,7 +45,7 @@
 .end method
 
 .method public static synthetic a(ILjava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -83,7 +83,7 @@
 .end method
 
 .method public static synthetic b(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 5
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/security/spec/InvalidKeySpecException;
@@ -139,7 +139,7 @@
 .end method
 
 .method public static synthetic c(Ljava/lang/Object;Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/security/spec/InvalidParameterSpecException;
@@ -177,7 +177,7 @@
 .end method
 
 .method public static synthetic d(Ljava/lang/String;)V
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/security/spec/InvalidParameterSpecException;
@@ -193,7 +193,7 @@
 .end method
 
 .method public static synthetic e(Ljava/lang/String;ILjava/lang/Object;)V
-    .registers 4
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -236,7 +236,7 @@
 .end method
 
 .method public static synthetic f(Ljava/lang/String;Ljava/lang/Object;I)V
-    .registers 4
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -288,7 +288,7 @@
 .end method
 
 .method public static synthetic i(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;JLjava/lang/Object;J)V
-    .registers 10
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/sy3;
@@ -346,7 +346,7 @@
 .end method
 
 .method public static synthetic j(Ljava/lang/Object;Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/io/IOException;
@@ -384,7 +384,7 @@
 .end method
 
 .method public static synthetic k(Ljava/lang/String;)V
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/security/InvalidKeyException;
@@ -400,7 +400,7 @@
 .end method
 
 .method public static synthetic l(Ljava/lang/String;)V
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/RuntimeException;
@@ -416,7 +416,7 @@
 .end method
 
 .method public static synthetic m(Ljava/lang/String;)V
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/security/InvalidParameterException;
@@ -434,19 +434,19 @@
 
 # virtual methods
 .method public apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 5
 
     .line 1
     iget-byte v0, p0, Llibs/bf0;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_84
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
     .line 6
-    :pswitch_5
+    :pswitch_0
     check-cast p1, Ljava/lang/Iterable;
 
     .line 7
@@ -462,7 +462,7 @@
     return-object p1
 
     .line 13
-    :pswitch_c
+    :pswitch_1
     check-cast p1, Llibs/ob1;
 
     .line 14
@@ -474,7 +474,7 @@
     return-object p1
 
     .line 18
-    :pswitch_11
+    :pswitch_2
     check-cast p1, Llibs/ob1;
 
     .line 19
@@ -486,7 +486,7 @@
     return-object p1
 
     .line 23
-    :pswitch_16
+    :pswitch_3
     check-cast p1, Llibs/zc0;
 
     .line 24
@@ -511,7 +511,7 @@
     move-result v1
 
     .line 35
-    if-nez v1, :cond_27
+    if-nez v1, :cond_0
 
     .line 36
     .line 37
@@ -519,10 +519,10 @@
 
     .line 38
     .line 39
-    goto :goto_31
+    goto :goto_0
 
     .line 40
-    :cond_27
+    :cond_0
     iget-object v0, v0, Llibs/w52;->a:Ljava/lang/Object;
 
     .line 41
@@ -543,7 +543,7 @@
     move-result-object v0
 
     .line 50
-    :goto_31
+    :goto_0
     new-instance v1, Llibs/One;
 
     .line 51
@@ -561,14 +561,14 @@
 
     .line 58
     .line 59
-    if-eqz p1, :cond_3d
+    if-eqz p1, :cond_1
 
     .line 60
     .line 61
-    goto :goto_41
+    goto :goto_1
 
     .line 62
-    :cond_3d
+    :cond_1
     invoke-virtual {v1}, Llibs/One;->get()Ljava/lang/Object;
 
     .line 63
@@ -577,7 +577,7 @@
     move-result-object p1
 
     .line 66
-    :goto_41
+    :goto_1
     check-cast p1, Ljava/lang/String;
 
     .line 67
@@ -585,7 +585,7 @@
     return-object p1
 
     .line 69
-    :pswitch_44
+    :pswitch_4
     check-cast p1, Llibs/b91;
 
     .line 70
@@ -663,7 +663,7 @@
     return-object v0
 
     .line 108
-    :pswitch_6b
+    :pswitch_5
     check-cast p1, Ljava/util/Map$Entry;
 
     .line 109
@@ -683,7 +683,7 @@
     return-object p1
 
     .line 117
-    :pswitch_74
+    :pswitch_6
     check-cast p1, Llibs/ez0;
 
     .line 118
@@ -716,23 +716,23 @@
     return-object p1
 
     .line 133
-    :pswitch_data_84
+    :pswitch_data_0
     .packed-switch 0x7
-        :pswitch_74
-        :pswitch_6b
+        :pswitch_6
         :pswitch_5
-        :pswitch_5
-        :pswitch_5
-        :pswitch_5
-        :pswitch_44
-        :pswitch_16
-        :pswitch_11
-        :pswitch_c
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
     .end packed-switch
 .end method
 
 .method public apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 4
 
     check-cast p1, Llibs/cz0;
 
@@ -744,7 +744,7 @@
     .line 134
     iget-boolean v1, v0, Llibs/pj;->Y:Z
 
-    if-eqz v1, :cond_5e
+    if-eqz v1, :cond_2
 
     .line 135
     iget-object v1, v0, Llibs/pj;->Z:Ljava/lang/Object;
@@ -775,7 +775,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_5e
+    if-eqz v1, :cond_2
 
     .line 140
     iget-object p1, p1, Llibs/cz0;->a:Llibs/pj;
@@ -794,7 +794,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_5e
+    if-eqz p1, :cond_2
 
     .line 143
     iget-object p1, v0, Llibs/pj;->Mu:Ljava/lang/Object;
@@ -806,7 +806,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_45
+    if-nez v0, :cond_0
 
     .line 145
     new-instance v0, Llibs/jz0;
@@ -817,7 +817,7 @@
     invoke-interface {v3, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 147
-    :cond_45
+    :cond_0
     iget-object p1, p2, Llibs/cz0;->b:Ljava/util/List;
 
     .line 148
@@ -825,12 +825,12 @@
 
     move-result-object p1
 
-    :goto_4b
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p2
 
-    if-eqz p2, :cond_5b
+    if-eqz p2, :cond_1
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -841,23 +841,23 @@
     .line 149
     invoke-static {v3, p2}, Llibs/kr0;->g(Ljava/util/List;Llibs/ez0;)V
 
-    goto :goto_4b
+    goto :goto_0
 
     .line 150
-    :cond_5b
+    :cond_1
     sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     return-object p1
 
     .line 151
-    :cond_5e
+    :cond_2
     sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     return-object p1
 .end method
 
 .method public g()V
-    .registers 2
+    .locals 1
 
     .line 1
     sget v0, Lcom/mixplorer/activities/EBookReaderActivity;->_d:I
@@ -868,7 +868,7 @@
 .end method
 
 .method public get()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 10
     sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
@@ -877,7 +877,7 @@
 .end method
 
 .method public get()Llibs/cg;
-    .registers 3
+    .locals 2
 
     .line 1
     sget v0, Llibs/c12;->x:I
@@ -900,7 +900,7 @@
 .end method
 
 .method public h(Ljava/util/regex/Matcher;)Ljava/lang/String;
-    .registers 11
+    .locals 9
 
     .line 1
     iget-byte v0, p0, Llibs/bf0;->X:B
@@ -914,7 +914,7 @@
     const/4 v2, 0x2
 
     .line 6
-    packed-switch v0, :pswitch_data_d0
+    packed-switch v0, :pswitch_data_0
 
     .line 7
     .line 8
@@ -989,7 +989,7 @@
     return-object p1
 
     .line 43
-    :pswitch_2a
+    :pswitch_0
     invoke-virtual {p1}, Ljava/util/regex/Matcher;->group()Ljava/lang/String;
 
     .line 44
@@ -1044,7 +1044,7 @@
     return-object p1
 
     .line 71
-    :pswitch_46
+    :pswitch_1
     invoke-virtual {p1, v2}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     .line 72
@@ -1139,7 +1139,7 @@
     move-result-object v2
 
     .line 117
-    if-eqz p1, :cond_97
+    if-eqz p1, :cond_0
 
     .line 118
     .line 119
@@ -1206,7 +1206,7 @@
     .line 150
     .line 151
     .line 152
-    :cond_97
+    :cond_0
     const-string p1, "</a>"
 
     .line 153
@@ -1222,7 +1222,7 @@
     return-object p1
 
     .line 159
-    :pswitch_9e
+    :pswitch_2
     invoke-virtual {p1, v2}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     .line 160
@@ -1317,16 +1317,16 @@
     return-object p1
 
     .line 209
-    :pswitch_data_d0
+    :pswitch_data_0
     .packed-switch 0x17
-        :pswitch_9e
-        :pswitch_46
-        :pswitch_2a
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public test(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     check-cast p1, Llibs/ux3;
@@ -1365,7 +1365,7 @@
     move-result v0
 
     .line 19
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
     .line 20
     .line 21
@@ -1373,10 +1373,10 @@
 
     .line 22
     .line 23
-    goto :goto_39
+    goto :goto_2
 
     .line 24
-    :cond_17
+    :cond_0
     iget-object p1, p1, Llibs/w52;->a:Ljava/lang/Object;
 
     .line 25
@@ -1400,7 +1400,7 @@
     const/4 v1, 0x1
 
     .line 35
-    if-nez v0, :cond_2f
+    if-nez v0, :cond_2
 
     .line 36
     .line 37
@@ -1416,26 +1416,26 @@
     move-result p1
 
     .line 43
-    if-eqz p1, :cond_2d
+    if-eqz p1, :cond_1
 
     .line 44
     .line 45
-    goto :goto_2f
+    goto :goto_0
 
     .line 46
-    :cond_2d
+    :cond_1
     const/4 p1, 0x0
 
     .line 47
-    goto :goto_30
+    goto :goto_1
 
     .line 48
-    :cond_2f
-    :goto_2f
+    :cond_2
+    :goto_0
     const/4 p1, 0x1
 
     .line 49
-    :goto_30
+    :goto_1
     xor-int/2addr p1, v1
 
     .line 50
@@ -1455,7 +1455,7 @@
     move-result-object p1
 
     .line 58
-    :goto_39
+    :goto_2
     sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     .line 59
@@ -1464,14 +1464,14 @@
 
     .line 61
     .line 62
-    if-eqz p1, :cond_40
+    if-eqz p1, :cond_3
 
     .line 63
     .line 64
     move-object v0, p1
 
     .line 65
-    :cond_40
+    :cond_3
     check-cast v0, Ljava/lang/Boolean;
 
     .line 66

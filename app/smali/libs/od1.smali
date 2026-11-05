@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -24,7 +24,7 @@
 .end method
 
 .method public constructor <init>(ILjava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -32,7 +32,7 @@
     .line 2
     .line 3
     .line 4
-    if-eqz p2, :cond_f
+    if-eqz p2, :cond_0
 
     .line 5
     .line 6
@@ -56,7 +56,7 @@
     return-void
 
     .line 16
-    :cond_f
+    :cond_0
     const-string p1, "argument \'sourceCode\' cannot be null"
 
     .line 17

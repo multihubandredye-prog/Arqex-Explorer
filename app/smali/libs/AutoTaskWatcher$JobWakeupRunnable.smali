@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/app/job/JobService;Landroid/app/job/JobParameters;)V
-    .registers 4
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,7 +32,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Intent;)V
-    .registers 3
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -50,21 +50,21 @@
 
 # virtual methods
 .method public run()V
-    .registers 3
+    .locals 2
 
     iget-object v0, p0, Llibs/AutoTaskWatcher$JobWakeupRunnable;->intent:Landroid/content/Intent;
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
-    :try_start_4
+    :try_start_0
     invoke-static {v0}, Llibs/a92;->Bundle(Landroid/content/Intent;)V
-    :try_end_7
-    .catchall {:try_start_4 .. :try_end_7} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_7
+    :catchall_0
     return-void
 
-    :cond_8
+    :cond_0
     iget-object v0, p0, Llibs/AutoTaskWatcher$JobWakeupRunnable;->service:Landroid/app/job/JobService;
 
     iget-object v1, p0, Llibs/AutoTaskWatcher$JobWakeupRunnable;->params:Landroid/app/job/JobParameters;

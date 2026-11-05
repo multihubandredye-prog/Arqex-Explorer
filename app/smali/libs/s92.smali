@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/pm/ResolveInfo;Landroid/content/Intent;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,7 +34,7 @@
 .end method
 
 .method public static a(Llibs/s92;)I
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -111,7 +111,7 @@
 
 # virtual methods
 .method public final compareTo(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
 
     .line 1
     check-cast p1, Llibs/s92;
@@ -141,14 +141,14 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Llibs/s92;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -172,7 +172,7 @@
     move-result p1
 
     .line 15
-    if-ne v0, p1, :cond_12
+    if-ne v0, p1, :cond_0
 
     .line 16
     .line 17
@@ -182,7 +182,7 @@
     return p1
 
     .line 19
-    :cond_12
+    :cond_0
     const/4 p1, 0x0
 
     .line 20
@@ -190,7 +190,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-static {p0}, Llibs/s92;->a(Llibs/s92;)I

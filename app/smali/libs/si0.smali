@@ -34,7 +34,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/app/Activity;Lcom/mixplorer/widgets/MiCombo;Lcom/mixplorer/widgets/MiCombo;Landroid/widget/CheckBox;Landroid/widget/CheckBox;Landroid/widget/CheckBox;Landroid/widget/CheckBox;Lcom/mixplorer/widgets/MiEditText;ILlibs/xt1;Llibs/h31;Llibs/$d;)V
-    .registers 13
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -96,7 +96,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 15
+    .locals 13
 
     .line 1
     iget-object v10, p0, Llibs/si0;->Sigma:Llibs/h31;

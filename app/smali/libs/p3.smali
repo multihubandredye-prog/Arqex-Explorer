@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -179,7 +179,7 @@
 
 # virtual methods
 .method public final varargs a(I[Ljava/lang/Object;)V
-    .registers 4
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/ap3;
@@ -204,7 +204,7 @@
 .end method
 
 .method public final varargs b(I[Ljava/lang/Object;)V
-    .registers 4
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/ap3;

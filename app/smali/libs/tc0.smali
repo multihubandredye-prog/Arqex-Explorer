@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>([Ljava/lang/String;Landroid/os/Bundle;Z)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-object p2, p0, Llibs/tc0;->X:Landroid/os/Bundle;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final getExtras()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 1
     const-string v0, "loading"

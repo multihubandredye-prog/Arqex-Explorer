@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Size;[B)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/Sign;-><init>(Llibs/Size;)V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final iterator()Ljava/util/Iterator;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/Sign;->X:Llibs/Size;
@@ -45,7 +45,7 @@
 
     .line 6
     .line 7
-    if-ne v0, v1, :cond_27
+    if-ne v0, v1, :cond_0
 
     .line 8
     .line 9
@@ -112,7 +112,7 @@
     return-object v0
 
     .line 40
-    :cond_27
+    :cond_0
     invoke-static {p0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
     .line 41

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
@@ -17,14 +17,14 @@
 .end method
 
 .method private promoteToForeground()V
-    .registers 7
+    .locals 6
 
     :try_start_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1a
 
-    if-lt v0, v1, :cond_37
+    if-lt v0, v1, :cond_1
 
     const-string v1, "notification"
 
@@ -36,7 +36,7 @@
 
     const-string v2, "mix_autotask_watch"
 
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_0
 
     new-instance v3, Landroid/app/NotificationChannel;
 
@@ -66,14 +66,14 @@
 
     invoke-virtual {v1, v3}, Landroid/app/NotificationManager;->createNotificationChannel(Landroid/app/NotificationChannel;)V
 
-    :cond_31
+    :cond_0
     new-instance v1, Landroid/app/Notification$Builder;
 
     invoke-direct {v1, p0, v2}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    goto :goto_40
+    goto :goto_0
 
-    :cond_37
+    :cond_1
     new-instance v1, Landroid/app/Notification$Builder;
 
     invoke-direct {v1, p0}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
@@ -82,7 +82,7 @@
 
     invoke-virtual {v1, v2}, Landroid/app/Notification$Builder;->setPriority(I)Landroid/app/Notification$Builder;
 
-    :goto_40
+    :goto_0
     sget v2, Llibs/vh2;->notification_mix:I
 
     invoke-virtual {v1, v2}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
@@ -119,27 +119,27 @@
 
     const/16 v4, 0x17
 
-    if-lt v0, v4, :cond_6f
+    if-lt v0, v4, :cond_2
 
     const/high16 v4, 0xc000000
 
-    goto :goto_71
+    goto :goto_1
 
-    :cond_6f
+    :cond_2
     const/high16 v4, 0x8000000
 
-    :goto_71
+    :goto_1
     const/16 v5, 0x7761
 
     invoke-static {p0, v5, v3, v4}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v3
 
-    if-eqz v3, :cond_7c
+    if-eqz v3, :cond_3
 
     invoke-virtual {v1, v3}, Landroid/app/Notification$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
 
-    :cond_7c
+    :cond_3
     invoke-virtual {v1}, Landroid/app/Notification$Builder;->build()Landroid/app/Notification;
 
     move-result-object v1
@@ -147,40 +147,40 @@
     const v2, 0x776174
 
     const/16 v3, 0x22
-    :try_end_85
-    .catchall {:try_start_0 .. :try_end_85} :catchall_90
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    if-lt v0, v3, :cond_8d
+    if-lt v0, v3, :cond_4
 
-    :try_start_87
+    :try_start_1
     const/high16 v0, 0x40000000    # 2.0f
 
     invoke-virtual {p0, v2, v1, v0}, Landroid/app/Service;->startForeground(ILandroid/app/Notification;I)V
-    :try_end_8c
-    .catchall {:try_start_87 .. :try_end_8c} :catchall_8d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     return-void
 
-    :catchall_8d
-    :cond_8d
-    :try_start_8d
+    :catchall_0
+    :cond_4
+    :try_start_2
     invoke-virtual {p0, v2, v1}, Landroid/app/Service;->startForeground(ILandroid/app/Notification;)V
-    :try_end_90
-    .catchall {:try_start_8d .. :try_end_90} :catchall_90
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    :catchall_90
+    :catchall_1
     return-void
 .end method
 
 .method private stopForegroundSafe()V
-    .registers 3
+    .locals 2
 
     :try_start_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x18
 
-    if-lt v0, v1, :cond_b
+    if-lt v0, v1, :cond_0
 
     const/4 v0, 0x1
 
@@ -188,21 +188,21 @@
 
     return-void
 
-    :cond_b
+    :cond_0
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Landroid/app/Service;->stopForeground(Z)V
-    :try_end_f
-    .catchall {:try_start_0 .. :try_end_f} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_f
+    :catchall_0
     return-void
 .end method
 
 
 # virtual methods
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -210,7 +210,7 @@
 .end method
 
 .method public onCreate()V
-    .registers 2
+    .locals 1
 
     invoke-super {p0}, Landroid/app/Service;->onCreate()V
 
@@ -226,7 +226,7 @@
 .end method
 
 .method public onDestroy()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -240,18 +240,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     invoke-static {}, Llibs/AutoTaskWatcher;->scheduleServiceRestart()V
 
-    :cond_12
+    :cond_0
     return-void
 .end method
 
 .method public onStartCommand(Landroid/content/Intent;II)I
-    .registers 6
+    .locals 2
 
-    if-eqz p1, :cond_19
+    if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -263,7 +263,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
@@ -277,7 +277,7 @@
 
     return v0
 
-    :cond_19
+    :cond_0
     const/4 v0, 0x1
 
     sput-boolean v0, Llibs/AutoTaskWatcherService;->running:Z
@@ -288,7 +288,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_30
+    if-nez v1, :cond_1
 
     const/4 v0, 0x0
 
@@ -302,14 +302,14 @@
 
     return v0
 
-    :cond_30
+    :cond_1
     invoke-static {}, Llibs/AutoTaskWatcher;->ensureStartedFromService()V
 
     return v0
 .end method
 
 .method public onTaskRemoved(Landroid/content/Intent;)V
-    .registers 3
+    .locals 1
 
     invoke-super {p0, p1}, Landroid/app/Service;->onTaskRemoved(Landroid/content/Intent;)V
 
@@ -317,10 +317,10 @@
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     invoke-static {}, Llibs/AutoTaskWatcher;->scheduleServiceRestart()V
 
-    :cond_c
+    :cond_0
     return-void
 .end method

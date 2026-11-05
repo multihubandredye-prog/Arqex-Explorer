@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/TextEditorActivity;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final onCheckedChanged(Landroid/widget/RadioGroup;I)V
-    .registers 9
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/gl3;->a:Lcom/mixplorer/activities/TextEditorActivity;
@@ -41,7 +41,7 @@
 
     .line 4
     .line 5
-    :try_start_4
+    :try_start_0
     sget v1, Llibs/bi2;->enter_key:I
 
     .line 6
@@ -58,14 +58,14 @@
 
     .line 12
     .line 13
-    if-nez v1, :cond_f
+    if-nez v1, :cond_0
 
     .line 14
     .line 15
-    goto :goto_5b
+    goto :goto_2
 
     .line 16
-    :cond_f
+    :cond_0
     iget v2, v0, Lcom/mixplorer/activities/TextEditorActivity;->_h:I
 
     .line 17
@@ -91,13 +91,13 @@
 
     .line 28
     .line 29
-    if-eqz p1, :cond_5b
+    if-eqz p1, :cond_2
 
     .line 30
     .line 31
     sget v1, Llibs/bi2;->chars:I
-    :try_end_20
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_20} :catch_5b
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 32
     .line 33
@@ -113,14 +113,14 @@
 
     .line 38
     .line 39
-    if-ne p2, v1, :cond_35
+    if-ne p2, v1, :cond_1
 
     .line 40
     .line 41
     int-to-long v1, v2
 
     .line 42
-    :try_start_29
+    :try_start_1
     iget-wide v4, v0, Llibs/kl3;->a:J
 
     .line 43
@@ -143,14 +143,14 @@
     move-result p2
 
     .line 52
-    :goto_33
+    :goto_0
     int-to-float p2, p2
 
     .line 53
-    goto :goto_40
+    goto :goto_1
 
     .line 54
-    :cond_35
+    :cond_1
     iget p2, v0, Llibs/kl3;->b:I
 
     .line 55
@@ -173,10 +173,10 @@
     move-result p2
 
     .line 64
-    goto :goto_33
+    goto :goto_0
 
     .line 65
-    :goto_40
+    :goto_1
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 66
@@ -224,14 +224,14 @@
 
     .line 89
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-    :try_end_5b
-    .catch Ljava/lang/Exception; {:try_start_29 .. :try_end_5b} :catch_5b
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 90
     .line 91
     .line 92
-    :catch_5b
-    :cond_5b
-    :goto_5b
+    :catch_0
+    :cond_2
+    :goto_2
     return-void
 .end method

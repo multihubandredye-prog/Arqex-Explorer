@@ -54,7 +54,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 103
+    .locals 103
 
     .line 1
     new-instance v0, Llibs/v12;
@@ -2856,7 +2856,7 @@
 .end method
 
 .method public constructor <init>(JLjava/lang/String;I)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0, p3, p4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
@@ -2872,7 +2872,7 @@
 .end method
 
 .method public static a(J)Z
-    .registers 5
+    .locals 3
 
     .line 1
     const/16 v0, 0x1e
@@ -2890,7 +2890,7 @@
 
     .line 7
     .line 8
-    if-nez v2, :cond_b
+    if-nez v2, :cond_0
 
     .line 9
     .line 10
@@ -2900,7 +2900,7 @@
     return p0
 
     .line 12
-    :cond_b
+    :cond_0
     const/4 p0, 0x0
 
     .line 13
@@ -2908,7 +2908,7 @@
 .end method
 
 .method public static b(J)Llibs/v12;
-    .registers 4
+    .locals 2
 
     .line 1
     const-class v0, Llibs/v12;
@@ -2935,7 +2935,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Llibs/v12;
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Llibs/v12;
@@ -2958,7 +2958,7 @@
 .end method
 
 .method public static values()[Llibs/v12;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/v12;->Four:[Llibs/v12;
@@ -2983,7 +2983,7 @@
 
 # virtual methods
 .method public final getValue()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Llibs/v12;->X:J

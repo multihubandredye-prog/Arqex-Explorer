@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Llibs/wr2;)V
-    .registers 4
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/lf0;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final b(Llibs/z30;)V
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/security/spec/ECGenParameterSpec;

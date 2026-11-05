@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/c2;Ljava/lang/String;Llibs/zl0;ILlibs/m52;Llibs/l52;Ljava/lang/String;Ljava/util/ArrayList;)V
-    .registers 9
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/i52;->h:Llibs/c2;
@@ -69,7 +69,7 @@
 
 # virtual methods
 .method public final e(Llibs/rp0;)Z
-    .registers 9
+    .locals 7
 
     .line 1
     new-instance v1, Llibs/sg3;
@@ -141,7 +141,7 @@
     move-result p1
 
     .line 36
-    if-nez p1, :cond_2e
+    if-nez p1, :cond_0
 
     .line 37
     .line 38
@@ -162,7 +162,7 @@
     .line 45
     .line 46
     .line 47
-    :cond_2e
+    :cond_0
     const/4 p1, 0x0
 
     .line 48

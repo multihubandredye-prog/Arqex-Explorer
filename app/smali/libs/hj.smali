@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 4
+    .locals 1
 
     .line 1
     check-cast p1, Llibs/r90;
@@ -82,7 +82,7 @@
     const/4 v0, 0x0
 
     .line 6
-    :try_start_5
+    :try_start_0
     invoke-virtual {p1, v0}, Llibs/r90;->d(I)Ljava/lang/Object;
 
     .line 7
@@ -127,11 +127,11 @@
 
     .line 27
     .line 28
-    if-eq v0, p1, :cond_21
+    if-eq v0, p1, :cond_0
 
     .line 29
     .line 30
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_1
 
     .line 31
     .line 32
@@ -141,7 +141,7 @@
     return p1
 
     .line 34
-    :cond_21
+    :cond_0
     iget-object p1, p0, Llibs/hj;->X:Llibs/p0;
 
     .line 35
@@ -172,15 +172,15 @@
     .line 48
     .line 49
     move-result p1
-    :try_end_31
-    .catchall {:try_start_5 .. :try_end_31} :catchall_32
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 50
     return p1
 
     .line 51
-    :catchall_32
-    :cond_32
+    :catchall_0
+    :cond_1
     const/4 p1, 0x1
 
     .line 52

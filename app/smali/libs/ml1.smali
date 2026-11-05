@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/CharSequence;I)V
-    .registers 6
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -161,7 +161,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 5
+    .locals 1
 
     .line 67
     sget v0, Llibs/xh2;->dialog_list:I
@@ -174,7 +174,7 @@
 
 # virtual methods
 .method public final Api(ILandroid/view/View$OnClickListener;)V
-    .registers 8
+    .locals 5
 
     .line 1
     invoke-static {p1}, Llibs/ho2;->Add(I)Ljava/lang/String;
@@ -312,7 +312,7 @@
 .end method
 
 .method public final App()V
-    .registers 3
+    .locals 2
 
     .line 1
     :try_start_0
@@ -324,13 +324,13 @@
     move-result-object v0
 
     .line 5
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
     invoke-virtual {v0}, Landroid/widget/BaseAdapter;->notifyDataSetChanged()V
-    :try_end_9
-    .catchall {:try_start_0 .. :try_end_9} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 8
     .line 9
@@ -338,18 +338,18 @@
     return-void
 
     .line 11
-    :catchall_a
+    :catchall_0
     move-exception v0
 
     .line 12
-    goto :goto_d
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     return-void
 
     .line 14
-    :goto_d
+    :goto_0
     const-string v1, "LD"
 
     .line 15
@@ -371,7 +371,7 @@
 .end method
 
 .method public final Auth()Llibs/ll1;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/ml1;->Zero:Lcom/mixplorer/widgets/MiDraggableListView;
@@ -381,17 +381,17 @@
     const/4 v1, 0x0
 
     .line 4
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     .line 5
     .line 6
     move-object v0, v1
 
     .line 7
-    goto :goto_b
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     invoke-virtual {v0}, Landroid/widget/ListView;->getAdapter()Landroid/widget/ListAdapter;
 
     .line 9
@@ -400,13 +400,13 @@
     move-result-object v0
 
     .line 12
-    :goto_b
-    :try_start_b
+    :goto_0
+    :try_start_0
     instance-of v2, v0, Llibs/ui3;
 
     .line 13
     .line 14
-    if-eqz v2, :cond_1e
+    if-eqz v2, :cond_1
 
     .line 15
     .line 16
@@ -437,19 +437,19 @@
     return-object v0
 
     .line 29
-    :catchall_1c
+    :catchall_0
     move-exception v0
 
     .line 30
-    goto :goto_27
+    goto :goto_1
 
     .line 31
-    :cond_1e
+    :cond_1
     iget-object v0, p0, Llibs/ml1;->Zero:Lcom/mixplorer/widgets/MiDraggableListView;
 
     .line 32
     .line 33
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_2
 
     .line 34
     .line 35
@@ -459,14 +459,14 @@
     .line 37
     .line 38
     move-result-object v0
-    :try_end_26
-    .catchall {:try_start_b .. :try_end_26} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 39
     return-object v0
 
     .line 40
-    :goto_27
+    :goto_1
     const-string v2, "ADP"
 
     .line 41
@@ -484,12 +484,12 @@
     .line 47
     .line 48
     .line 49
-    :cond_30
+    :cond_2
     return-object v1
 .end method
 
 .method public final Color([Ljava/lang/Object;Llibs/a92;)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -512,7 +512,7 @@
 .end method
 
 .method public final Content(Ljava/util/ArrayList;Llibs/a92;IZI)V
-    .registers 16
+    .locals 10
 
     .line 1
     const/4 v6, 0x0
@@ -554,7 +554,7 @@
 .end method
 
 .method public Gms(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/od;->X:Lcom/mixplorer/activities/a;
@@ -569,7 +569,7 @@
 .end method
 
 .method public final Icon(Ljava/util/List;Llibs/a92;Z)V
-    .registers 14
+    .locals 10
 
     .line 1
     const/4 v8, 0x0
@@ -611,7 +611,7 @@
 .end method
 
 .method public final Image(Ljava/util/List;Llibs/a92;ILandroid/view/View$OnClickListener;IIZIZ)V
-    .registers 14
+    .locals 4
 
     .line 1
     sget v0, Llibs/wh2;->list_alert:I
@@ -709,7 +709,7 @@
 
     .line 49
     .line 50
-    if-eqz p4, :cond_41
+    if-eqz p4, :cond_0
 
     .line 51
     .line 52
@@ -741,7 +741,7 @@
 
     .line 65
     .line 66
-    :cond_41
+    :cond_0
     iget-object p1, p0, Llibs/ml1;->Zero:Lcom/mixplorer/widgets/MiDraggableListView;
 
     .line 67
@@ -777,7 +777,7 @@
 
     .line 84
     .line 85
-    if-nez p9, :cond_58
+    if-nez p9, :cond_1
 
     .line 86
     .line 87
@@ -785,7 +785,7 @@
 
     .line 88
     .line 89
-    :cond_58
+    :cond_1
     invoke-static {}, Llibs/sa3;->k()Landroid/graphics/Point;
 
     .line 90
@@ -841,21 +841,21 @@
 .end method
 
 .method public final Key(Landroid/widget/TextView;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/ml1;->Six:Landroid/widget/LinearLayout;
 
     .line 2
     .line 3
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
     .line 7
@@ -864,7 +864,7 @@
     move-result v1
 
     .line 10
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_1
 
     .line 11
     .line 12
@@ -876,7 +876,7 @@
     .line 14
     .line 15
     .line 16
-    :cond_f
+    :cond_1
     invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     .line 17
@@ -886,7 +886,7 @@
 .end method
 
 .method public final Layout()V
-    .registers 3
+    .locals 2
 
     .line 1
     sget v0, Llibs/wh2;->dialog_progress:I
@@ -922,7 +922,7 @@
 .end method
 
 .method public final Media(Ljava/util/ArrayList;Llibs/ze2;Llibs/ne2;II)V
-    .registers 16
+    .locals 10
 
     .line 1
     const/4 v8, 0x0
@@ -964,7 +964,7 @@
 .end method
 
 .method public Ok()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/od;->X:Lcom/mixplorer/activities/a;
@@ -979,7 +979,7 @@
 .end method
 
 .method public final Page()V
-    .registers 4
+    .locals 3
 
     .line 1
     const/4 v0, 0x1
@@ -1020,7 +1020,7 @@
 .end method
 
 .method public final Part(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Llibs/ml1;->Auth()Llibs/ll1;
@@ -1031,7 +1031,7 @@
     move-result-object v0
 
     .line 5
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -1050,12 +1050,12 @@
 
     .line 13
     .line 14
-    :cond_d
+    :cond_0
     return-void
 .end method
 
 .method public final Section(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Llibs/ml1;->Auth()Llibs/ll1;
@@ -1066,7 +1066,7 @@
     move-result-object v0
 
     .line 5
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -1085,12 +1085,12 @@
 
     .line 13
     .line 14
-    :cond_d
+    :cond_0
     return-void
 .end method
 
 .method public final Sign(ZI)Llibs/r90;
-    .registers 6
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/r90;
@@ -1120,7 +1120,7 @@
 
     .line 13
     .line 14
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     .line 15
     .line 16
@@ -1128,15 +1128,15 @@
 
     .line 17
     .line 18
-    goto :goto_14
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     iget-object p2, p0, Llibs/ml1;->Echo:Landroid/graphics/drawable/Drawable;
 
     .line 20
     .line 21
-    :goto_14
+    :goto_0
     iput-object p2, v0, Llibs/r90;->Omicron:Landroid/graphics/drawable/Drawable;
 
     .line 22
@@ -1150,7 +1150,7 @@
 .end method
 
 .method public final Style([Ljava/lang/Object;Llibs/a92;Landroid/view/View$OnClickListener;II)V
-    .registers 16
+    .locals 10
 
     .line 1
     invoke-static {p1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -1197,7 +1197,7 @@
 .end method
 
 .method public final Theme(Ljava/lang/CharSequence;Z)V
-    .registers 8
+    .locals 5
 
     .line 1
     invoke-static {p1}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
@@ -1212,7 +1212,7 @@
 
     .line 6
     .line 7
-    if-nez v0, :cond_7d
+    if-nez v0, :cond_5
 
     .line 8
     .line 9
@@ -1223,7 +1223,7 @@
     const/4 v2, 0x1
 
     .line 12
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_1
 
     .line 13
     .line 14
@@ -1231,28 +1231,28 @@
 
     .line 15
     .line 16
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 17
     .line 18
     const/4 v0, 0x5
 
     .line 19
-    goto :goto_16
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     const/4 v0, 0x3
 
     .line 21
-    goto :goto_16
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_1
     const/4 v0, 0x1
 
     .line 23
-    :goto_16
+    :goto_0
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setGravity(I)V
 
     .line 24
@@ -1266,7 +1266,7 @@
     move-result v0
 
     .line 30
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_2
 
     .line 31
     .line 32
@@ -1278,7 +1278,7 @@
     .line 34
     .line 35
     .line 36
-    :cond_23
+    :cond_2
     invoke-static {}, Landroid/text/method/LinkMovementMethod;->getInstance()Landroid/text/method/MovementMethod;
 
     .line 37
@@ -1292,7 +1292,7 @@
     .line 41
     .line 42
     .line 43
-    if-nez p2, :cond_79
+    if-nez p2, :cond_4
 
     .line 44
     .line 45
@@ -1316,11 +1316,11 @@
     move-result v0
 
     .line 55
-    if-ltz v0, :cond_79
+    if-ltz v0, :cond_4
 
     .line 56
     .line 57
-    if-nez v0, :cond_3e
+    if-nez v0, :cond_3
 
     .line 58
     .line 59
@@ -1332,7 +1332,7 @@
     move-result-object p2
 
     .line 63
-    :cond_3e
+    :cond_3
     const-string p1, "TEXT_POPUP_SECONDARY"
 
     .line 64
@@ -1444,7 +1444,7 @@
     return-void
 
     .line 122
-    :cond_79
+    :cond_4
     invoke-virtual {v1, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 123
@@ -1453,7 +1453,7 @@
     return-void
 
     .line 126
-    :cond_7d
+    :cond_5
     const/16 p1, 0x8
 
     .line 127
@@ -1467,7 +1467,7 @@
 .end method
 
 .method public final Token(Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-boolean p1, p0, Llibs/ml1;->Nine:Z
@@ -1478,7 +1478,7 @@
 .end method
 
 .method public final Uri(ILjava/lang/String;ILjava/lang/String;[Landroid/text/InputFilter;ZI)Lcom/mixplorer/widgets/MiEditText;
-    .registers 23
+    .locals 15
 
     .line 1
     const/4 v13, 0x0
@@ -1550,7 +1550,7 @@
 .end method
 
 .method public final Url(ILjava/lang/String;ILjava/lang/String;[Landroid/text/InputFilter;Z)Lcom/mixplorer/widgets/MiEditText;
-    .registers 22
+    .locals 15
 
     .line 1
     const/4 v12, 0x0
@@ -1616,14 +1616,14 @@
 
     .line 27
     .line 28
-    if-nez v2, :cond_1e
+    if-nez v2, :cond_0
 
     .line 29
     .line 30
     return-object v1
 
     .line 31
-    :cond_1e
+    :cond_0
     invoke-virtual {v2}, Landroid/view/View;->getVisibility()I
 
     .line 32
@@ -1632,7 +1632,7 @@
     move-result v3
 
     .line 35
-    if-eqz v3, :cond_28
+    if-eqz v3, :cond_1
 
     .line 36
     .line 37
@@ -1644,7 +1644,7 @@
     .line 39
     .line 40
     .line 41
-    :cond_28
+    :cond_1
     invoke-virtual {v2, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     .line 42
@@ -1654,7 +1654,7 @@
 .end method
 
 .method public final User()Ljava/util/ArrayList;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/util/ArrayList;
@@ -1681,7 +1681,7 @@
     const/4 v2, 0x0
 
     .line 13
-    :goto_c
+    :goto_0
     invoke-virtual {v1}, Landroid/widget/ArrayAdapter;->getCount()I
 
     .line 14
@@ -1690,7 +1690,7 @@
     move-result v3
 
     .line 17
-    if-ge v2, v3, :cond_1e
+    if-ge v2, v3, :cond_0
 
     .line 18
     .line 19
@@ -1715,15 +1715,15 @@
 
     .line 29
     .line 30
-    goto :goto_c
+    goto :goto_0
 
     .line 31
-    :cond_1e
+    :cond_0
     return-object v0
 .end method
 
 .method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 6
+    .locals 0
 
     .line 1
     iget-object p1, p0, Llibs/ml1;->Zero:Lcom/mixplorer/widgets/MiDraggableListView;
@@ -1750,7 +1750,7 @@
 
     .line 12
     .line 13
-    if-eqz p2, :cond_16
+    if-eqz p2, :cond_0
 
     .line 14
     .line 15
@@ -1765,19 +1765,19 @@
 
     .line 19
     .line 20
-    if-nez p4, :cond_16
+    if-nez p4, :cond_0
 
     .line 21
     .line 22
     return-void
 
     .line 23
-    :cond_16
+    :cond_0
     iget-object p4, p0, Llibs/ml1;->Eight:Llibs/a92;
 
     .line 24
     .line 25
-    if-eqz p4, :cond_1f
+    if-eqz p4, :cond_1
 
     .line 26
     .line 27
@@ -1790,12 +1790,12 @@
     .line 30
     .line 31
     .line 32
-    :cond_1f
+    :cond_1
     iget-boolean p3, p0, Llibs/ml1;->Nine:Z
 
     .line 33
     .line 34
-    if-eqz p3, :cond_27
+    if-eqz p3, :cond_2
 
     .line 35
     .line 36
@@ -1807,8 +1807,8 @@
     return-void
 
     .line 40
-    :cond_27
-    if-eqz p2, :cond_2e
+    :cond_2
+    if-eqz p2, :cond_3
 
     .line 41
     .line 42
@@ -1823,7 +1823,7 @@
 
     .line 46
     .line 47
-    :cond_2e
+    :cond_3
     iget-object p1, p0, Llibs/ml1;->Zero:Lcom/mixplorer/widgets/MiDraggableListView;
 
     .line 48
@@ -1837,14 +1837,14 @@
 .end method
 
 .method public final onItemLongClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)Z
-    .registers 6
+    .locals 0
 
     .line 1
     iget-object p1, p0, Llibs/ml1;->Eight:Llibs/a92;
 
     .line 2
     .line 3
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
     .line 4
     .line 5
@@ -1860,7 +1860,7 @@
     move-result p1
 
     .line 11
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
     .line 12
     .line 13
@@ -1870,7 +1870,7 @@
     return p1
 
     .line 15
-    :cond_e
+    :cond_0
     const/4 p1, 0x0
 
     .line 16

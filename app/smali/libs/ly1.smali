@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/util/Hashtable;
@@ -239,7 +239,7 @@
 .end method
 
 .method public static a(Ljava/lang/String;Llibs/App;)V
-    .registers 4
+    .locals 2
 
     .line 1
     sget-object v0, Llibs/ly1;->a:Ljava/util/Hashtable;
@@ -272,7 +272,7 @@
 .end method
 
 .method public static b(Ljava/lang/String;)Llibs/App;
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/ly1;->a:Ljava/util/Hashtable;

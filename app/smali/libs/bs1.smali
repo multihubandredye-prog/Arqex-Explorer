@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public onCreate(Landroid/os/Bundle;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
@@ -35,7 +35,7 @@
     move-result-object p1
 
     .line 8
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_0
 
     .line 9
     .line 10
@@ -44,12 +44,12 @@
     .line 11
     .line 12
     .line 13
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method public onNewIntent(Landroid/content/Intent;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-super {p0, p1}, Landroid/app/Activity;->onNewIntent(Landroid/content/Intent;)V
@@ -57,7 +57,7 @@
     .line 2
     .line 3
     .line 4
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     .line 5
     .line 6
@@ -66,6 +66,6 @@
     .line 7
     .line 8
     .line 9
-    :cond_8
+    :cond_0
     return-void
 .end method

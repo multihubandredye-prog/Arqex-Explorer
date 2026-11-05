@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(I[B)V
-    .registers 3
+    .locals 0
 
     .line 14
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,7 +26,7 @@
 .end method
 
 .method public constructor <init>(Llibs/uy1;I)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public final b(I)C
-    .registers 5
+    .locals 3
 
     .line 1
     iget v0, p0, Llibs/uy1;->b:I
@@ -111,7 +111,7 @@
 .end method
 
 .method public final c(I)J
-    .registers 4
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/uy1;->b:I
@@ -137,7 +137,7 @@
 .end method
 
 .method public final d(I)I
-    .registers 3
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/uy1;->b:I
@@ -163,7 +163,7 @@
 .end method
 
 .method public final e(I)J
-    .registers 4
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/uy1;->b:I
@@ -189,7 +189,7 @@
 .end method
 
 .method public final f(I)I
-    .registers 4
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/uy1;->b:I
@@ -218,7 +218,7 @@
 .end method
 
 .method public final g(I)J
-    .registers 15
+    .locals 13
 
     .line 1
     iget v0, p0, Llibs/uy1;->b:I
@@ -372,7 +372,7 @@
 .end method
 
 .method public final h(I)I
-    .registers 3
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/uy1;->b:I

@@ -15,7 +15,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/bn1;
@@ -47,7 +47,7 @@
 .end method
 
 .method public static a(Ljava/lang/String;)Ljavax/crypto/Cipher;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-static {}, Llibs/r43;->g()V
@@ -59,41 +59,41 @@
 
     .line 5
     .line 6
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
-    :try_start_7
+    :try_start_0
     invoke-static {p0, v0}, Ljavax/crypto/Cipher;->getInstance(Ljava/lang/String;Ljava/security/Provider;)Ljavax/crypto/Cipher;
 
     .line 9
     .line 10
     .line 11
     move-result-object p0
-    :try_end_b
-    .catchall {:try_start_7 .. :try_end_b} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 12
     return-object p0
 
     .line 13
-    :catchall_c
-    :cond_c
-    :try_start_c
+    :catchall_0
+    :cond_0
+    :try_start_1
     invoke-static {p0}, Ljavax/crypto/Cipher;->getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;
 
     .line 14
     .line 15
     .line 16
     move-result-object p0
-    :try_end_10
-    .catchall {:try_start_c .. :try_end_10} :catchall_11
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 17
     return-object p0
 
     .line 18
-    :catchall_11
+    :catchall_1
     sget-object v0, Llibs/r43;->d:Llibs/hh;
 
     .line 19
@@ -110,7 +110,7 @@
 .end method
 
 .method public static b(Ljava/security/PublicKey;)Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     :try_start_0
@@ -124,8 +124,8 @@
     .line 5
     .line 6
     move-result-object v0
-    :try_end_6
-    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_6} :catch_49
+    :try_end_0
+    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 7
     new-instance v1, Llibs/tj;
@@ -205,7 +205,7 @@
     const/4 v1, 0x2
 
     .line 46
-    :goto_2d
+    :goto_0
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     .line 47
@@ -217,7 +217,7 @@
     sub-int/2addr v3, v2
 
     .line 51
-    if-gt v1, v3, :cond_44
+    if-gt v1, v3, :cond_0
 
     .line 52
     .line 53
@@ -250,10 +250,10 @@
     move v1, v3
 
     .line 68
-    goto :goto_2d
+    goto :goto_0
 
     .line 69
-    :cond_44
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 70
@@ -265,7 +265,7 @@
     return-object p0
 
     .line 74
-    :catch_49
+    :catch_0
     move-exception p0
 
     .line 75
@@ -289,7 +289,7 @@
 .end method
 
 .method public static c(Ljava/lang/String;)Ljava/security/KeyFactory;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-static {}, Llibs/r43;->g()V
@@ -301,27 +301,27 @@
 
     .line 5
     .line 6
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
-    :try_start_7
+    :try_start_0
     invoke-static {p0, v0}, Ljava/security/KeyFactory;->getInstance(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/KeyFactory;
 
     .line 9
     .line 10
     .line 11
     move-result-object p0
-    :try_end_b
-    .catchall {:try_start_7 .. :try_end_b} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 12
     return-object p0
 
     .line 13
-    :catchall_c
-    :cond_c
-    :try_start_c
+    :catchall_0
+    :cond_0
+    :try_start_1
     sget-object v0, Llibs/r43;->d:Llibs/hh;
 
     .line 14
@@ -332,14 +332,14 @@
     .line 17
     .line 18
     move-result-object p0
-    :try_end_12
-    .catchall {:try_start_c .. :try_end_12} :catchall_13
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 19
     return-object p0
 
     .line 20
-    :catchall_13
+    :catchall_1
     invoke-static {p0}, Ljava/security/KeyFactory;->getInstance(Ljava/lang/String;)Ljava/security/KeyFactory;
 
     .line 21
@@ -352,7 +352,7 @@
 .end method
 
 .method public static d(Ljava/lang/String;)Ljava/security/KeyPairGenerator;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-static {}, Llibs/r43;->g()V
@@ -364,27 +364,27 @@
 
     .line 5
     .line 6
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
-    :try_start_7
+    :try_start_0
     invoke-static {p0, v0}, Ljava/security/KeyPairGenerator;->getInstance(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/KeyPairGenerator;
 
     .line 9
     .line 10
     .line 11
     move-result-object p0
-    :try_end_b
-    .catchall {:try_start_7 .. :try_end_b} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 12
     return-object p0
 
     .line 13
-    :catchall_c
-    :cond_c
-    :try_start_c
+    :catchall_0
+    :cond_0
+    :try_start_1
     sget-object v0, Llibs/r43;->d:Llibs/hh;
 
     .line 14
@@ -395,14 +395,14 @@
     .line 17
     .line 18
     move-result-object p0
-    :try_end_12
-    .catchall {:try_start_c .. :try_end_12} :catchall_13
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 19
     return-object p0
 
     .line 20
-    :catchall_13
+    :catchall_1
     invoke-static {p0}, Ljava/security/KeyPairGenerator;->getInstance(Ljava/lang/String;)Ljava/security/KeyPairGenerator;
 
     .line 21
@@ -415,7 +415,7 @@
 .end method
 
 .method public static e(Ljava/lang/String;)Ljavax/crypto/Mac;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-static {}, Llibs/r43;->g()V
@@ -427,41 +427,41 @@
 
     .line 5
     .line 6
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
-    :try_start_7
+    :try_start_0
     invoke-static {p0, v0}, Ljavax/crypto/Mac;->getInstance(Ljava/lang/String;Ljava/security/Provider;)Ljavax/crypto/Mac;
 
     .line 9
     .line 10
     .line 11
     move-result-object p0
-    :try_end_b
-    .catchall {:try_start_7 .. :try_end_b} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 12
     return-object p0
 
     .line 13
-    :catchall_c
-    :cond_c
-    :try_start_c
+    :catchall_0
+    :cond_0
+    :try_start_1
     invoke-static {p0}, Ljavax/crypto/Mac;->getInstance(Ljava/lang/String;)Ljavax/crypto/Mac;
 
     .line 14
     .line 15
     .line 16
     move-result-object p0
-    :try_end_10
-    .catchall {:try_start_c .. :try_end_10} :catchall_11
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 17
     return-object p0
 
     .line 18
-    :catchall_11
+    :catchall_1
     sget-object v0, Llibs/r43;->d:Llibs/hh;
 
     .line 19
@@ -478,7 +478,7 @@
 .end method
 
 .method public static f(Ljava/lang/String;)Ljava/security/MessageDigest;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-static {}, Llibs/r43;->g()V
@@ -490,41 +490,41 @@
 
     .line 5
     .line 6
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
-    :try_start_7
+    :try_start_0
     invoke-static {p0, v0}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/MessageDigest;
 
     .line 9
     .line 10
     .line 11
     move-result-object p0
-    :try_end_b
-    .catchall {:try_start_7 .. :try_end_b} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 12
     return-object p0
 
     .line 13
-    :catchall_c
-    :cond_c
-    :try_start_c
+    :catchall_0
+    :cond_0
+    :try_start_1
     invoke-static {p0}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
 
     .line 14
     .line 15
     .line 16
     move-result-object p0
-    :try_end_10
-    .catchall {:try_start_c .. :try_end_10} :catchall_11
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 17
     return-object p0
 
     .line 18
-    :catchall_11
+    :catchall_1
     sget-object v0, Llibs/r43;->d:Llibs/hh;
 
     .line 19
@@ -541,21 +541,21 @@
 .end method
 
 .method public static g()V
-    .registers 6
+    .locals 6
 
     .line 1
     sget-boolean v0, Llibs/r43;->b:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
-    goto :goto_55
+    goto :goto_1
 
     .line 6
-    :cond_5
+    :cond_0
     const-class v0, Llibs/r43;
 
     .line 7
@@ -563,12 +563,12 @@
     monitor-enter v0
 
     .line 9
-    :try_start_8
+    :try_start_0
     sget-boolean v1, Llibs/r43;->b:Z
 
     .line 10
     .line 11
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_1
 
     .line 12
     .line 13
@@ -578,28 +578,28 @@
     return-void
 
     .line 15
-    :catchall_e
+    :catchall_0
     move-exception v1
 
     .line 16
-    goto :goto_56
+    goto :goto_2
 
     .line 17
-    :cond_10
+    :cond_1
     sget-object v1, Llibs/r43;->c:Lorg/conscrypt/OpenSSLProvider;
-    :try_end_12
-    .catchall {:try_start_8 .. :try_end_12} :catchall_e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 18
     .line 19
     const/4 v2, 0x1
 
     .line 20
-    if-nez v1, :cond_29
+    if-nez v1, :cond_2
 
     .line 21
     .line 22
-    :try_start_15
+    :try_start_1
     new-instance v1, Lorg/conscrypt/OpenSSLProvider;
 
     .line 23
@@ -610,16 +610,16 @@
     .line 26
     .line 27
     sput-object v1, Llibs/r43;->c:Lorg/conscrypt/OpenSSLProvider;
-    :try_end_1c
-    .catchall {:try_start_15 .. :try_end_1c} :catchall_1d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 28
     .line 29
-    goto :goto_29
+    goto :goto_0
 
     .line 30
-    :catchall_1d
-    :try_start_1d
+    :catchall_1
+    :try_start_2
     sget-object v1, Llibs/r43;->a:Llibs/bn1;
 
     .line 31
@@ -644,13 +644,13 @@
     .line 40
     .line 41
     .line 42
-    :cond_29
-    :goto_29
+    :cond_2
+    :goto_0
     sget-object v1, Llibs/r43;->c:Lorg/conscrypt/OpenSSLProvider;
 
     .line 43
     .line 44
-    if-eqz v1, :cond_3c
+    if-eqz v1, :cond_3
 
     .line 45
     .line 46
@@ -670,7 +670,7 @@
     move-result-object v1
 
     .line 54
-    if-nez v1, :cond_3c
+    if-nez v1, :cond_3
 
     .line 55
     .line 56
@@ -683,7 +683,7 @@
     .line 59
     .line 60
     .line 61
-    :cond_3c
+    :cond_3
     new-instance v1, Llibs/hh;
 
     .line 62
@@ -713,7 +713,7 @@
     move-result-object v1
 
     .line 76
-    if-nez v1, :cond_52
+    if-nez v1, :cond_4
 
     .line 77
     .line 78
@@ -726,7 +726,7 @@
     .line 81
     .line 82
     .line 83
-    :cond_52
+    :cond_4
     sput-boolean v2, Llibs/r43;->b:Z
 
     .line 84
@@ -734,14 +734,14 @@
     monitor-exit v0
 
     .line 86
-    :goto_55
+    :goto_1
     return-void
 
     .line 87
-    :goto_56
+    :goto_2
     monitor-exit v0
-    :try_end_57
-    .catchall {:try_start_1d .. :try_end_57} :catchall_e
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 88
     throw v1

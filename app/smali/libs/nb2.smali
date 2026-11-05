@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>([Llibs/lb2;Llibs/wd3;)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -83,7 +83,7 @@
 
 # virtual methods
 .method public final a(Llibs/wd3;)[Llibs/sd1;
-    .registers 5
+    .locals 3
 
     .line 1
     move-object v0, p1
@@ -152,7 +152,7 @@
 .end method
 
 .method public final b(Ljava/util/ArrayList;[Ljava/lang/String;)V
-    .registers 13
+    .locals 10
 
     .line 1
     array-length v0, p2
@@ -162,7 +162,7 @@
 
     .line 3
     .line 4
-    if-eqz v0, :cond_ac
+    if-eqz v0, :cond_7
 
     .line 5
     .line 6
@@ -179,18 +179,18 @@
     const/4 v4, 0x1
 
     .line 11
-    if-eq v0, v4, :cond_15
+    if-eq v0, v4, :cond_1
 
     .line 12
     .line 13
-    if-ne v0, v2, :cond_f
+    if-ne v0, v2, :cond_0
 
     .line 14
     .line 15
-    goto :goto_47
+    goto :goto_3
 
     .line 16
-    :cond_f
+    :cond_0
     const-string p1, "We shouldn\'t be here"
 
     .line 17
@@ -203,7 +203,7 @@
     return-void
 
     .line 22
-    :cond_15
+    :cond_1
     aget-object v0, p2, v3
 
     .line 23
@@ -212,7 +212,7 @@
 
     .line 25
     .line 26
-    :try_start_19
+    :try_start_0
     iget-object v0, p0, Llibs/nb2;->f:[Llibs/lb2;
 
     .line 27
@@ -223,8 +223,8 @@
     const/4 v6, 0x0
 
     .line 30
-    :goto_1d
-    if-ge v6, v5, :cond_35
+    :goto_0
+    if-ge v6, v5, :cond_3
 
     .line 31
     .line 32
@@ -256,40 +256,40 @@
 
     .line 45
     .line 46
-    if-eqz v7, :cond_30
+    if-eqz v7, :cond_2
 
     .line 47
     .line 48
-    goto :goto_35
+    goto :goto_1
 
     .line 49
-    :cond_30
+    :cond_2
     add-int/lit8 v6, v6, 0x1
 
     .line 50
     .line 51
-    goto :goto_1d
+    goto :goto_0
 
     .line 52
-    :catch_33
+    :catch_0
     move-exception v0
 
     .line 53
-    goto :goto_38
+    goto :goto_2
 
     .line 54
-    :cond_35
-    :goto_35
+    :cond_3
+    :goto_1
     iput v2, p0, Llibs/nb2;->g:I
-    :try_end_37
-    .catch Ljava/io/IOException; {:try_start_19 .. :try_end_37} :catch_33
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 55
     .line 56
     return-void
 
     .line 57
-    :goto_38
+    :goto_2
     iget-object v5, p0, Llibs/nb2;->e:Llibs/wd3;
 
     .line 58
@@ -319,11 +319,11 @@
     .line 70
     .line 71
     .line 72
-    :goto_47
+    :goto_3
     array-length v0, p2
 
     .line 73
-    if-lt v0, v2, :cond_a8
+    if-lt v0, v2, :cond_6
 
     .line 74
     .line 75
@@ -331,7 +331,7 @@
 
     .line 76
     .line 77
-    if-gtz v0, :cond_51
+    if-gtz v0, :cond_4
 
     .line 78
     .line 79
@@ -342,7 +342,7 @@
     return-void
 
     .line 82
-    :cond_51
+    :cond_4
     aget-object v0, p2, v3
 
     .line 83
@@ -367,11 +367,11 @@
 
     .line 93
     .line 94
-    if-eqz p2, :cond_88
+    if-eqz p2, :cond_5
 
     .line 95
     .line 96
-    :try_start_5f
+    :try_start_1
     iget-object p2, p0, Llibs/nb2;->i:Llibs/lb2;
 
     .line 97
@@ -382,12 +382,12 @@
     .line 100
     .line 101
     iput-boolean v3, p0, Llibs/nb2;->c:Z
-    :try_end_66
-    .catch Ljava/io/IOException; {:try_start_5f .. :try_end_66} :catch_66
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 102
     .line 103
-    :catch_66
+    :catch_1
     iput v2, p0, Llibs/nb2;->g:I
 
     .line 104
@@ -454,7 +454,7 @@
     return-void
 
     .line 137
-    :cond_88
+    :cond_5
     iget-object p2, p0, Llibs/nb2;->a:Ljava/lang/String;
 
     .line 138
@@ -517,7 +517,7 @@
     return-void
 
     .line 169
-    :cond_a8
+    :cond_6
     invoke-static {v1}, Llibs/bf0;->l(Ljava/lang/String;)V
 
     .line 170
@@ -526,7 +526,7 @@
     return-void
 
     .line 173
-    :cond_ac
+    :cond_7
     invoke-static {v1}, Llibs/bf0;->l(Ljava/lang/String;)V
 
     .line 174

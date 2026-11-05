@@ -22,7 +22,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Object;Landroid/view/KeyEvent$Callback;Ljava/lang/Object;ZB)V
-    .registers 7
+    .locals 0
 
     .line 1
     iput-byte p6, p0, Llibs/p11;->X:B
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 19
+    .locals 17
 
     .line 1
     move-object/from16 v0, p0
@@ -94,7 +94,7 @@
 
     .line 15
     .line 16
-    packed-switch v2, :pswitch_data_c0
+    packed-switch v2, :pswitch_data_0
 
     .line 17
     .line 18
@@ -132,7 +132,7 @@
 
     .line 33
     .line 34
-    :try_start_21
+    :try_start_0
     sget v2, Llibs/bi2;->enter_name:I
 
     .line 35
@@ -161,14 +161,14 @@
     move-result v4
 
     .line 48
-    if-eqz v4, :cond_32
+    if-eqz v4, :cond_0
 
     .line 49
     .line 50
-    goto :goto_80
+    goto :goto_0
 
     .line 51
-    :cond_32
+    :cond_0
     sget v4, Llibs/bi2;->charset:I
 
     .line 52
@@ -217,7 +217,7 @@
     move-result-object v3
 
     .line 75
-    if-nez v3, :cond_4e
+    if-nez v3, :cond_1
 
     .line 76
     .line 77
@@ -225,7 +225,7 @@
 
     .line 78
     .line 79
-    :cond_4e
+    :cond_1
     move-object v12, v3
 
     .line 80
@@ -285,14 +285,14 @@
 
     .line 107
     .line 108
-    if-eqz v1, :cond_6e
+    if-eqz v1, :cond_2
 
     .line 109
     .line 110
-    goto :goto_80
+    goto :goto_0
 
     .line 111
-    :cond_6e
+    :cond_2
     const/4 v1, 0x1
 
     .line 112
@@ -323,18 +323,18 @@
     .line 125
     .line 126
     invoke-virtual {v1}, Llibs/xv1;->start()V
-    :try_end_80
-    .catchall {:try_start_21 .. :try_end_80} :catchall_80
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 127
     .line 128
     .line 129
-    :catchall_80
-    :goto_80
+    :catchall_0
+    :goto_0
     return-void
 
     .line 130
-    :pswitch_81
+    :pswitch_0
     move-object v9, v7
 
     .line 131
@@ -378,18 +378,18 @@
 
     .line 150
     .line 151
-    if-ne v1, v2, :cond_9a
+    if-ne v1, v2, :cond_3
 
     .line 152
     .line 153
     move v3, v2
 
     .line 154
-    goto :goto_a8
+    goto :goto_1
 
     .line 155
-    :cond_9a
-    if-eqz v4, :cond_a3
+    :cond_3
+    if-eqz v4, :cond_4
 
     .line 156
     .line 157
@@ -397,7 +397,7 @@
 
     .line 158
     .line 159
-    if-eqz v1, :cond_a3
+    if-eqz v1, :cond_4
 
     .line 160
     .line 161
@@ -405,39 +405,39 @@
 
     .line 162
     .line 163
-    goto :goto_a8
+    goto :goto_1
 
     .line 164
-    :cond_a3
+    :cond_4
     iget-boolean v1, v0, Llibs/p11;->Y:Z
 
     .line 165
     .line 166
-    if-eqz v1, :cond_a8
+    if-eqz v1, :cond_5
 
     .line 167
     .line 168
     const/4 v3, 0x1
 
     .line 169
-    :cond_a8
-    :goto_a8
+    :cond_5
+    :goto_1
     const/16 v1, 0x3e8
 
     .line 170
     .line 171
-    if-ge v3, v1, :cond_ae
+    if-ge v3, v1, :cond_6
 
     .line 172
     .line 173
-    :goto_ac
+    :goto_2
     move v11, v3
 
     .line 174
-    goto :goto_b7
+    goto :goto_3
 
     .line 175
-    :cond_ae
+    :cond_6
     invoke-static {v3}, Llibs/ho2;->Wait(I)Ljava/lang/String;
 
     .line 176
@@ -454,10 +454,10 @@
     move-result v3
 
     .line 183
-    goto :goto_ac
+    goto :goto_2
 
     .line 184
-    :goto_b7
+    :goto_3
     const/4 v12, 0x1
 
     .line 185
@@ -481,8 +481,8 @@
     nop
 
     .line 193
-    :pswitch_data_c0
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_81
+        :pswitch_0
     .end packed-switch
 .end method

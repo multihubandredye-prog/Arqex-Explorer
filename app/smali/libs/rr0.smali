@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/InputStream;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/ir0;-><init>(Ljava/io/InputStream;)V
@@ -41,21 +41,21 @@
 
 # virtual methods
 .method public final close()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-boolean v0, p0, Llibs/rr0;->Tau:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
-    goto :goto_1d
+    goto :goto_1
 
     .line 6
-    :cond_5
+    :cond_0
     const/4 v0, 0x1
 
     .line 7
@@ -63,22 +63,22 @@
 
     .line 8
     .line 9
-    :try_start_8
+    :try_start_0
     invoke-super {p0}, Llibs/ir0;->close()V
-    :try_end_b
-    .catchall {:try_start_8 .. :try_end_b} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 10
     .line 11
     .line 12
-    goto :goto_d
+    goto :goto_0
 
     .line 13
-    :catchall_c
+    :catchall_0
     nop
 
     .line 14
-    :goto_d
+    :goto_0
     iget-object v0, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;
 
     .line 15
@@ -92,7 +92,7 @@
 
     .line 20
     .line 21
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_1
 
     .line 22
     .line 23
@@ -109,13 +109,13 @@
     .line 28
     .line 29
     .line 30
-    :cond_1d
-    :goto_1d
+    :cond_1
+    :goto_1
     return-void
 .end method
 
 .method public final markSupported()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;
@@ -134,7 +134,7 @@
 .end method
 
 .method public final read()I
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;
@@ -164,7 +164,7 @@
     const/4 v2, -0x1
 
     .line 14
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_0
 
     .line 15
     .line 16
@@ -176,15 +176,15 @@
     return v2
 
     .line 20
-    :cond_13
-    if-ne v0, v2, :cond_16
+    :cond_0
+    if-ne v0, v2, :cond_1
 
     .line 21
     .line 22
     return v2
 
     .line 23
-    :cond_16
+    :cond_1
     iget-wide v1, p0, Llibs/rr0;->Sigma:J
 
     .line 24
@@ -204,7 +204,7 @@
 .end method
 
 .method public final read([BII)I
-    .registers 6
+    .locals 2
 
     .line 31
     iget-object v0, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;
@@ -222,20 +222,20 @@
 
     const/4 p3, -0x1
 
-    if-eqz p2, :cond_13
+    if-eqz p2, :cond_0
 
     .line 33
     invoke-virtual {p0}, Llibs/rr0;->close()V
 
     return p3
 
-    :cond_13
-    if-gtz p1, :cond_16
+    :cond_0
+    if-gtz p1, :cond_1
 
     return p3
 
     .line 34
-    :cond_16
+    :cond_1
     iget-wide p2, p0, Llibs/rr0;->Sigma:J
 
     int-to-long v0, p1
@@ -248,7 +248,7 @@
 .end method
 
 .method public final skip(J)J
-    .registers 10
+    .locals 7
 
     .line 1
     const-wide/16 v0, 0x0
@@ -258,12 +258,12 @@
     move-wide v2, v0
 
     .line 4
-    :goto_3
+    :goto_0
     cmp-long v4, v2, p1
 
     .line 5
     .line 6
-    if-gez v4, :cond_1e
+    if-gez v4, :cond_2
 
     .line 7
     .line 8
@@ -287,7 +287,7 @@
 
     .line 17
     .line 18
-    if-nez v6, :cond_1c
+    if-nez v6, :cond_1
 
     .line 19
     .line 20
@@ -299,26 +299,26 @@
     move-result v4
 
     .line 24
-    if-gez v4, :cond_1a
+    if-gez v4, :cond_0
 
     .line 25
     .line 26
-    goto :goto_1e
+    goto :goto_1
 
     .line 27
-    :cond_1a
+    :cond_0
     const-wide/16 v4, 0x1
 
     .line 28
     .line 29
-    :cond_1c
+    :cond_1
     add-long/2addr v2, v4
 
     .line 30
-    goto :goto_3
+    goto :goto_0
 
     .line 31
-    :cond_1e
-    :goto_1e
+    :cond_2
+    :goto_1
     return-wide v2
 .end method

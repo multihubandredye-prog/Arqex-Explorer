@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/av1;Landroid/widget/RadioButton;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/zu1;->b:Llibs/av1;
@@ -36,10 +36,10 @@
 
 # virtual methods
 .method public final onCheckedChanged(Landroid/widget/CompoundButton;Z)V
-    .registers 4
+    .locals 1
 
     .line 1
-    if-eqz p2, :cond_16
+    if-eqz p2, :cond_0
 
     .line 2
     .line 3
@@ -81,6 +81,6 @@
     .line 21
     .line 22
     .line 23
-    :cond_16
+    :cond_0
     return-void
 .end method

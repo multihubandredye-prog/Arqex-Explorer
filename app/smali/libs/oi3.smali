@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 12
     invoke-direct {p0}, Llibs/sw0;-><init>()V
@@ -19,7 +19,7 @@
 .end method
 
 .method public constructor <init>(Llibs/sw0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/oi3;-><init>()V
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public final Bundle(Llibs/f63;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p1, Llibs/f63;->a:Llibs/t02;
@@ -100,7 +100,7 @@
     move-result-object v1
 
     .line 26
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_0
 
     .line 27
     .line 28
@@ -112,11 +112,11 @@
     move-result v2
 
     .line 32
-    if-gtz v2, :cond_2b
+    if-gtz v2, :cond_1
 
     .line 33
     .line 34
-    :cond_21
+    :cond_0
     invoke-virtual {p1}, Llibs/f63;->h()Llibs/h90;
 
     .line 35
@@ -125,7 +125,7 @@
     move-result-object v2
 
     .line 38
-    if-eqz v2, :cond_2b
+    if-eqz v2, :cond_1
 
     .line 39
     .line 40
@@ -137,8 +137,8 @@
     move-result-object v1
 
     .line 44
-    :cond_2b
-    if-eqz v1, :cond_33
+    :cond_1
+    if-eqz v1, :cond_2
 
     .line 45
     .line 46
@@ -150,11 +150,11 @@
     move-result v2
 
     .line 50
-    if-gtz v2, :cond_3d
+    if-gtz v2, :cond_3
 
     .line 51
     .line 52
-    :cond_33
+    :cond_2
     invoke-virtual {p1}, Llibs/f63;->h()Llibs/h90;
 
     .line 53
@@ -163,7 +163,7 @@
     move-result-object p1
 
     .line 56
-    if-eqz p1, :cond_3d
+    if-eqz p1, :cond_3
 
     .line 57
     .line 58
@@ -175,8 +175,8 @@
     move-result-object v1
 
     .line 62
-    :cond_3d
-    if-eqz v1, :cond_45
+    :cond_3
+    if-eqz v1, :cond_4
 
     .line 63
     .line 64
@@ -188,32 +188,32 @@
     move-result p1
 
     .line 68
-    if-gtz p1, :cond_4b
+    if-gtz p1, :cond_5
 
     .line 69
     .line 70
-    :cond_45
-    :try_start_45
+    :cond_4
+    :try_start_0
     new-instance p1, Ljava/net/URL;
 
     .line 71
     .line 72
     invoke-direct {p1, v0}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
-    :try_end_4a
-    .catch Ljava/lang/Exception; {:try_start_45 .. :try_end_4a} :catch_4b
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 73
     .line 74
     .line 75
-    goto :goto_4c
+    goto :goto_0
 
     .line 76
-    :catch_4b
-    :cond_4b
+    :catch_0
+    :cond_5
     move-object v0, v1
 
     .line 77
-    :goto_4c
+    :goto_0
     invoke-static {v0}, Llibs/a92;->p(Ljava/lang/String;)Ljava/lang/String;
 
     .line 78
@@ -247,7 +247,7 @@
 .end method
 
 .method public final Context()Z
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/oi3;->Map()Ljava/lang/String;
@@ -266,7 +266,7 @@
     move-result v0
 
     .line 9
-    if-lez v0, :cond_c
+    if-lez v0, :cond_0
 
     .line 10
     .line 11
@@ -276,7 +276,7 @@
     return v0
 
     .line 13
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
     .line 14
@@ -284,7 +284,7 @@
 .end method
 
 .method public final Intent()Llibs/iy2;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/sw0;->h:Ljava/lang/String;
@@ -316,7 +316,7 @@
 .end method
 
 .method public final Map()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     const-string v0, "SID"
@@ -331,7 +331,7 @@
     move-result-object v0
 
     .line 7
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 8
     .line 9
@@ -342,7 +342,7 @@
     return-object v0
 
     .line 12
-    :cond_b
+    :cond_0
     const-string v1, "uuid:"
 
     .line 13
@@ -355,14 +355,14 @@
     move-result v1
 
     .line 18
-    if-nez v1, :cond_14
+    if-nez v1, :cond_1
 
     .line 19
     .line 20
     return-object v0
 
     .line 21
-    :cond_14
+    :cond_1
     const/4 v1, 0x5
 
     .line 22
@@ -386,7 +386,7 @@
 .end method
 
 .method public final Result(Llibs/f63;Ljava/lang/String;)V
-    .registers 5
+    .locals 2
 
     .line 1
     const-string v0, "SUBSCRIBE"
@@ -483,7 +483,7 @@
 .end method
 
 .method public final Set()J
-    .registers 4
+    .locals 3
 
     .line 1
     const-string v0, "TIMEOUT"
@@ -514,7 +514,7 @@
 
     .line 14
     .line 15
-    :try_start_e
+    :try_start_0
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     .line 16
@@ -537,14 +537,14 @@
     .line 25
     .line 26
     move-result-wide v0
-    :try_end_1a
-    .catch Ljava/lang/Exception; {:try_start_e .. :try_end_1a} :catch_1b
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 27
     return-wide v0
 
     .line 28
-    :catch_1b
+    :catch_0
     const-wide/16 v0, -0x1
 
     .line 29
@@ -553,7 +553,7 @@
 .end method
 
 .method public final View()Z
-    .registers 4
+    .locals 3
 
     .line 1
     const-string v0, "<"
@@ -584,7 +584,7 @@
     move-result v0
 
     .line 15
-    if-lez v0, :cond_12
+    if-lez v0, :cond_0
 
     .line 16
     .line 17
@@ -594,7 +594,7 @@
     return v0
 
     .line 19
-    :cond_12
+    :cond_0
     const/4 v0, 0x0
 
     .line 20

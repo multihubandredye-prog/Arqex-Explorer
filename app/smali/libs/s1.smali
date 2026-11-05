@@ -45,7 +45,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     sget-object v0, Landroid/os/Build$VERSION;->SDK:Ljava/lang/String;
@@ -64,21 +64,21 @@
 
     .line 8
     .line 9
-    if-ge v0, v1, :cond_c
+    if-ge v0, v1, :cond_0
 
     .line 10
     .line 11
     const/4 v0, 0x1
 
     .line 12
-    goto :goto_d
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
     .line 14
-    :goto_d
+    :goto_0
     sput-boolean v0, Llibs/s1;->Omega:Z
 
     .line 15
@@ -100,7 +100,7 @@
 .end method
 
 .method public constructor <init>(Landroid/view/View;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Landroid/view/animation/Animation;-><init>()V
@@ -215,7 +215,7 @@
 .end method
 
 .method public static e(Landroid/view/View;)Llibs/s1;
-    .registers 4
+    .locals 3
 
     .line 1
     sget-object v0, Llibs/s1;->One:Ljava/util/WeakHashMap;
@@ -234,7 +234,7 @@
 
     .line 8
     .line 9
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_1
 
     .line 10
     .line 11
@@ -246,19 +246,19 @@
     move-result-object v2
 
     .line 15
-    if-eq v1, v2, :cond_11
+    if-eq v1, v2, :cond_0
 
     .line 16
     .line 17
-    goto :goto_12
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     return-object v1
 
     .line 19
-    :cond_12
-    :goto_12
+    :cond_1
+    :goto_0
     new-instance v1, Llibs/s1;
 
     .line 20
@@ -279,7 +279,7 @@
 
 # virtual methods
 .method public final a(Landroid/graphics/RectF;Landroid/view/View;)V
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-virtual {p2}, Landroid/view/View;->getWidth()I
@@ -370,7 +370,7 @@
 
     .line 44
     .line 45
-    if-gez v1, :cond_32
+    if-gez v1, :cond_0
 
     .line 46
     .line 47
@@ -382,7 +382,7 @@
 
     .line 50
     .line 51
-    :cond_32
+    :cond_0
     iget p2, p1, Landroid/graphics/RectF;->bottom:F
 
     .line 52
@@ -395,7 +395,7 @@
 
     .line 56
     .line 57
-    if-gez v1, :cond_3e
+    if-gez v1, :cond_1
 
     .line 58
     .line 59
@@ -407,12 +407,12 @@
 
     .line 62
     .line 63
-    :cond_3e
+    :cond_1
     return-void
 .end method
 
 .method public final applyTransformation(FLandroid/view/animation/Transformation;)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object p1, p0, Llibs/s1;->X:Ljava/lang/ref/WeakReference;
@@ -431,7 +431,7 @@
 
     .line 8
     .line 9
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_0
 
     .line 10
     .line 11
@@ -457,12 +457,12 @@
     .line 21
     .line 22
     .line 23
-    :cond_16
+    :cond_0
     return-void
 .end method
 
 .method public final b()V
-    .registers 8
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/s1;->X:Ljava/lang/ref/WeakReference;
@@ -481,7 +481,7 @@
 
     .line 8
     .line 9
-    if-eqz v0, :cond_44
+    if-eqz v0, :cond_1
 
     .line 10
     .line 11
@@ -493,14 +493,14 @@
     move-result-object v1
 
     .line 15
-    if-nez v1, :cond_11
+    if-nez v1, :cond_0
 
     .line 16
     .line 17
-    goto :goto_44
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     iget-object v1, p0, Llibs/s1;->Chi:Landroid/graphics/RectF;
 
     .line 19
@@ -608,13 +608,13 @@
     .line 67
     .line 68
     .line 69
-    :cond_44
-    :goto_44
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public final c()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/s1;->X:Ljava/lang/ref/WeakReference;
@@ -633,7 +633,7 @@
 
     .line 8
     .line 9
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -646,12 +646,12 @@
     .line 14
     .line 15
     .line 16
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method public final d(Landroid/graphics/Matrix;Landroid/view/View;)V
-    .registers 11
+    .locals 8
 
     .line 1
     invoke-virtual {p2}, Landroid/view/View;->getWidth()I
@@ -684,7 +684,7 @@
 
     .line 14
     .line 15
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_0
 
     .line 16
     .line 17
@@ -692,16 +692,16 @@
 
     .line 18
     .line 19
-    goto :goto_15
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     div-float v3, v0, v2
 
     .line 21
     .line 22
-    :goto_15
-    if-eqz v1, :cond_1a
+    :goto_0
+    if-eqz v1, :cond_1
 
     .line 23
     .line 24
@@ -709,15 +709,15 @@
 
     .line 25
     .line 26
-    goto :goto_1c
+    goto :goto_1
 
     .line 27
-    :cond_1a
+    :cond_1
     div-float v1, p2, v2
 
     .line 28
     .line 29
-    :goto_1c
+    :goto_1
     iget v2, p0, Llibs/s1;->Xi:F
 
     .line 30
@@ -737,7 +737,7 @@
 
     .line 37
     .line 38
-    if-nez v7, :cond_2f
+    if-nez v7, :cond_2
 
     .line 39
     .line 40
@@ -745,7 +745,7 @@
 
     .line 41
     .line 42
-    if-nez v7, :cond_2f
+    if-nez v7, :cond_2
 
     .line 43
     .line 44
@@ -753,11 +753,11 @@
 
     .line 45
     .line 46
-    if-eqz v6, :cond_4c
+    if-eqz v6, :cond_3
 
     .line 47
     .line 48
-    :cond_2f
+    :cond_2
     iget-object v6, p0, Llibs/s1;->Y:Landroid/graphics/Camera;
 
     .line 49
@@ -811,7 +811,7 @@
     .line 75
     .line 76
     .line 77
-    :cond_4c
+    :cond_3
     iget v2, p0, Llibs/s1;->Rho:F
 
     .line 78
@@ -828,7 +828,7 @@
 
     .line 84
     .line 85
-    if-nez v6, :cond_5a
+    if-nez v6, :cond_4
 
     .line 86
     .line 87
@@ -836,11 +836,11 @@
 
     .line 88
     .line 89
-    if-eqz v5, :cond_6e
+    if-eqz v5, :cond_5
 
     .line 90
     .line 91
-    :cond_5a
+    :cond_4
     invoke-virtual {p1, v2, v4}, Landroid/graphics/Matrix;->postScale(FF)Z
 
     .line 92
@@ -885,7 +885,7 @@
     .line 109
     .line 110
     .line 111
-    :cond_6e
+    :cond_5
     iget p2, p0, Llibs/s1;->Tau:F
 
     .line 112

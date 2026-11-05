@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/security/interfaces/DSAPublicKey;)V
-    .registers 3
+    .locals 1
 
     .line 73
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
 .end method
 
 .method public constructor <init>(Ljava/security/spec/DSAPublicKeySpec;)V
-    .registers 5
+    .locals 3
 
     .line 85
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -72,7 +72,7 @@
 .end method
 
 .method public constructor <init>(Llibs/ji3;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -80,7 +80,7 @@
     .line 2
     .line 3
     .line 4
-    :try_start_3
+    :try_start_0
     invoke-virtual {p1}, Llibs/ji3;->i()Llibs/Theme;
 
     .line 5
@@ -94,8 +94,8 @@
     .line 9
     .line 10
     check-cast v0, Llibs/Api;
-    :try_end_b
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_b} :catch_41
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 11
     .line 12
@@ -115,7 +115,7 @@
 
     .line 19
     .line 20
-    if-eqz v0, :cond_40
+    if-eqz v0, :cond_0
 
     .line 21
     .line 22
@@ -139,7 +139,7 @@
     move-result v0
 
     .line 32
-    if-nez v0, :cond_40
+    if-nez v0, :cond_0
 
     .line 33
     .line 34
@@ -204,11 +204,11 @@
 
     .line 64
     .line 65
-    :cond_40
+    :cond_0
     return-void
 
     .line 66
-    :catch_41
+    :catch_0
     const-string p1, "invalid info structure in DSA public key"
 
     .line 67
@@ -225,7 +225,7 @@
 .end method
 
 .method public constructor <init>(Llibs/p50;)V
-    .registers 5
+    .locals 3
 
     .line 76
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -264,7 +264,7 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     instance-of v0, p1, Ljava/security/interfaces/DSAPublicKey;
@@ -274,14 +274,14 @@
     const/4 v1, 0x0
 
     .line 4
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 5
     .line 6
     return v1
 
     .line 7
-    :cond_6
+    :cond_0
     check-cast p1, Ljava/security/interfaces/DSAPublicKey;
 
     .line 8
@@ -306,7 +306,7 @@
     move-result v0
 
     .line 19
-    if-eqz v0, :cond_4e
+    if-eqz v0, :cond_1
 
     .line 20
     .line 21
@@ -346,7 +346,7 @@
     move-result v2
 
     .line 39
-    if-eqz v2, :cond_4e
+    if-eqz v2, :cond_1
 
     .line 40
     .line 41
@@ -382,7 +382,7 @@
     move-result v2
 
     .line 57
-    if-eqz v2, :cond_4e
+    if-eqz v2, :cond_1
 
     .line 58
     .line 59
@@ -418,7 +418,7 @@
     move-result p1
 
     .line 75
-    if-eqz p1, :cond_4e
+    if-eqz p1, :cond_1
 
     .line 76
     .line 77
@@ -428,12 +428,12 @@
     return p1
 
     .line 79
-    :cond_4e
+    :cond_1
     return v1
 .end method
 
 .method public final getAlgorithm()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "DSA"
@@ -444,7 +444,7 @@
 .end method
 
 .method public final getEncoded()[B
-    .registers 9
+    .locals 8
 
     .line 1
     iget-object v0, p0, Llibs/x9;->X:Ljava/math/BigInteger;
@@ -455,7 +455,7 @@
 
     .line 4
     .line 5
-    if-nez v1, :cond_17
+    if-nez v1, :cond_0
 
     .line 6
     .line 7
@@ -492,7 +492,7 @@
     return-object v0
 
     .line 24
-    :cond_17
+    :cond_0
     new-instance v2, Llibs/$f;
 
     .line 25
@@ -614,7 +614,7 @@
 .end method
 
 .method public final getFormat()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "X.509"
@@ -625,7 +625,7 @@
 .end method
 
 .method public final getParams()Ljava/security/interfaces/DSAParams;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/x9;->Y:Ljava/security/interfaces/DSAParams;
@@ -636,7 +636,7 @@
 .end method
 
 .method public final getY()Ljava/math/BigInteger;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/x9;->X:Ljava/math/BigInteger;
@@ -647,7 +647,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/x9;->X:Ljava/math/BigInteger;
@@ -727,7 +727,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/StringBuffer;

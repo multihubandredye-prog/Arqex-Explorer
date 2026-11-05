@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic a(Landroid/hardware/usb/UsbDevice;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/hardware/usb/UsbDevice;->getDeviceId()I
@@ -20,7 +20,7 @@
 .end method
 
 .method public static bridge synthetic b(Landroid/os/Parcelable;)Landroid/hardware/usb/UsbDevice;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Landroid/hardware/usb/UsbDevice;
@@ -31,7 +31,7 @@
 .end method
 
 .method public static bridge synthetic c(Ljava/lang/Object;)Landroid/hardware/usb/UsbManager;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Landroid/hardware/usb/UsbManager;
@@ -42,7 +42,7 @@
 .end method
 
 .method public static bridge synthetic d(Landroid/hardware/usb/UsbDevice;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/hardware/usb/UsbDevice;->toString()Ljava/lang/String;
@@ -57,7 +57,7 @@
 .end method
 
 .method public static bridge synthetic e(Landroid/graphics/Bitmap;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -72,7 +72,7 @@
 .end method
 
 .method public static bridge synthetic f(Landroid/graphics/Bitmap;Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/graphics/Bitmap;->setHasAlpha(Z)V
@@ -84,7 +84,7 @@
 .end method
 
 .method public static bridge synthetic g(Landroid/hardware/usb/UsbManager;Landroid/hardware/usb/UsbDevice;Landroid/app/PendingIntent;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2}, Landroid/hardware/usb/UsbManager;->requestPermission(Landroid/hardware/usb/UsbDevice;Landroid/app/PendingIntent;)V
@@ -96,7 +96,7 @@
 .end method
 
 .method public static bridge synthetic h(Landroid/hardware/usb/UsbDevice;Landroid/hardware/usb/UsbManager;)Z
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p1, p0}, Landroid/hardware/usb/UsbManager;->hasPermission(Landroid/hardware/usb/UsbDevice;)Z
@@ -111,7 +111,7 @@
 .end method
 
 .method public static bridge synthetic i(Landroid/hardware/usb/UsbDevice;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/hardware/usb/UsbDevice;->getDeviceId()I
@@ -126,7 +126,7 @@
 .end method
 
 .method public static bridge synthetic j(Landroid/hardware/usb/UsbDevice;Landroid/hardware/usb/UsbManager;)Z
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p1, p0}, Landroid/hardware/usb/UsbManager;->hasPermission(Landroid/hardware/usb/UsbDevice;)Z

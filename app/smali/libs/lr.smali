@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/util/Map;)V
-    .registers 7
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,7 +22,7 @@
     const/4 v0, 0x0
 
     .line 5
-    if-eqz p2, :cond_46
+    if-eqz p2, :cond_2
 
     .line 6
     .line 7
@@ -55,7 +55,7 @@
     move-result-object p2
 
     .line 22
-    :goto_15
+    :goto_0
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     .line 23
@@ -64,7 +64,7 @@
     move-result v1
 
     .line 26
-    if-eqz v1, :cond_3f
+    if-eqz v1, :cond_1
 
     .line 27
     .line 28
@@ -88,17 +88,17 @@
     move-result-object v2
 
     .line 38
-    if-nez v2, :cond_29
+    if-nez v2, :cond_0
 
     .line 39
     .line 40
     move-object v2, v0
 
     .line 41
-    goto :goto_35
+    goto :goto_1
 
     .line 42
-    :cond_29
+    :cond_0
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     .line 43
@@ -123,7 +123,7 @@
     move-result-object v2
 
     .line 54
-    :goto_35
+    :goto_1
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     .line 55
@@ -141,10 +141,10 @@
     .line 61
     .line 62
     .line 63
-    goto :goto_15
+    goto :goto_0
 
     .line 64
-    :cond_3f
+    :cond_1
     invoke-static {p1}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
 
     .line 65
@@ -160,7 +160,7 @@
     return-void
 
     .line 71
-    :cond_46
+    :cond_2
     const-string p1, "authParams == null"
 
     .line 72
@@ -170,28 +170,28 @@
     .line 74
     .line 75
     .line 76
-    goto :goto_4d
+    goto :goto_3
 
     .line 77
-    :goto_4c
+    :goto_2
     throw v0
 
     .line 78
-    :goto_4d
-    goto :goto_4c
+    :goto_3
+    goto :goto_2
 .end method
 
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     instance-of v0, p1, Llibs/lr;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -215,7 +215,7 @@
     move-result v0
 
     .line 15
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 16
     .line 17
@@ -235,7 +235,7 @@
     move-result p1
 
     .line 25
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_0
 
     .line 26
     .line 27
@@ -245,7 +245,7 @@
     return p1
 
     .line 29
-    :cond_1c
+    :cond_0
     const/4 p1, 0x0
 
     .line 30
@@ -253,7 +253,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/lr;->a:Ljava/lang/String;
@@ -295,7 +295,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

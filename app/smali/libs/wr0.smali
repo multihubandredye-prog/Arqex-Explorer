@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/sf;Landroid/content/Intent;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/wr0;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 6
+    .locals 5
 
     .line 1
     iget-byte v0, p0, Llibs/wr0;->X:B
@@ -57,7 +57,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_3a
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -78,8 +78,8 @@
     return-void
 
     .line 18
-    :pswitch_11
-    :try_start_11
+    :pswitch_0
+    :try_start_0
     sget v0, Llibs/bi2;->share:I
 
     .line 19
@@ -133,16 +133,16 @@
     .line 43
     .line 44
     invoke-virtual {v1, v3}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
-    :try_end_2e
-    .catchall {:try_start_11 .. :try_end_2e} :catchall_2f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 45
     .line 46
     .line 47
-    goto :goto_39
+    goto :goto_0
 
     .line 48
-    :catchall_2f
+    :catchall_0
     move-exception v0
 
     .line 49
@@ -163,12 +163,12 @@
     .line 56
     .line 57
     .line 58
-    :goto_39
+    :goto_0
     return-void
 
     .line 59
-    :pswitch_data_3a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_11
+        :pswitch_0
     .end packed-switch
 .end method

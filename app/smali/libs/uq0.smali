@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/vq0;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iput-object p1, p0, Llibs/uq0;->j:Llibs/vq0;
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public final Data()Llibs/ny1;
-    .registers 6
+    .locals 5
 
     .line 1
     iget v0, p0, Llibs/uq0;->i:I
@@ -67,14 +67,14 @@
     const/4 v3, -0x1
 
     .line 10
-    if-ne v2, v3, :cond_c
+    if-ne v2, v3, :cond_0
 
     .line 11
     .line 12
-    goto :goto_6a
+    goto :goto_2
 
     .line 13
-    :cond_c
+    :cond_0
     add-int/lit8 v2, v0, 0x8
 
     .line 14
@@ -87,21 +87,21 @@
     move-result v2
 
     .line 19
-    if-nez v2, :cond_16
+    if-nez v2, :cond_1
 
     .line 20
     .line 21
     const/4 v2, 0x1
 
     .line 22
-    goto :goto_17
+    goto :goto_0
 
     .line 23
-    :cond_16
+    :cond_1
     const/4 v2, 0x0
 
     .line 24
-    :goto_17
+    :goto_0
     invoke-virtual {v1, v0}, Llibs/uy1;->f(I)I
 
     .line 25
@@ -114,7 +114,7 @@
 
     .line 29
     .line 30
-    if-eq v3, v4, :cond_5d
+    if-eq v3, v4, :cond_8
 
     .line 31
     .line 32
@@ -122,7 +122,7 @@
 
     .line 33
     .line 34
-    if-eq v3, v4, :cond_4f
+    if-eq v3, v4, :cond_6
 
     .line 35
     .line 36
@@ -130,7 +130,7 @@
 
     .line 37
     .line 38
-    if-eq v3, v4, :cond_49
+    if-eq v3, v4, :cond_5
 
     .line 39
     .line 40
@@ -138,7 +138,7 @@
 
     .line 41
     .line 42
-    if-eq v3, v4, :cond_43
+    if-eq v3, v4, :cond_4
 
     .line 43
     .line 44
@@ -146,11 +146,11 @@
 
     .line 45
     .line 46
-    if-eq v3, v4, :cond_3d
+    if-eq v3, v4, :cond_3
 
     .line 47
     .line 48
-    if-eqz v2, :cond_37
+    if-eqz v2, :cond_2
 
     .line 49
     .line 50
@@ -163,10 +163,10 @@
     .line 53
     .line 54
     .line 55
-    goto :goto_62
+    goto :goto_1
 
     .line 56
-    :cond_37
+    :cond_2
     new-instance v2, Llibs/ry1;
 
     .line 57
@@ -176,10 +176,10 @@
     .line 59
     .line 60
     .line 61
-    goto :goto_62
+    goto :goto_1
 
     .line 62
-    :cond_3d
+    :cond_3
     new-instance v2, Llibs/f91;
 
     .line 63
@@ -189,10 +189,10 @@
     .line 65
     .line 66
     .line 67
-    goto :goto_62
+    goto :goto_1
 
     .line 68
-    :cond_43
+    :cond_4
     new-instance v2, Llibs/k91;
 
     .line 69
@@ -202,10 +202,10 @@
     .line 71
     .line 72
     .line 73
-    goto :goto_62
+    goto :goto_1
 
     .line 74
-    :cond_49
+    :cond_5
     new-instance v2, Llibs/iq0;
 
     .line 75
@@ -215,11 +215,11 @@
     .line 77
     .line 78
     .line 79
-    goto :goto_62
+    goto :goto_1
 
     .line 80
-    :cond_4f
-    if-eqz v2, :cond_57
+    :cond_6
+    if-eqz v2, :cond_7
 
     .line 81
     .line 82
@@ -232,10 +232,10 @@
     .line 85
     .line 86
     .line 87
-    goto :goto_62
+    goto :goto_1
 
     .line 88
-    :cond_57
+    :cond_7
     new-instance v2, Llibs/a7;
 
     .line 89
@@ -245,10 +245,10 @@
     .line 91
     .line 92
     .line 93
-    goto :goto_62
+    goto :goto_1
 
     .line 94
-    :cond_5d
+    :cond_8
     new-instance v2, Llibs/we3;
 
     .line 95
@@ -258,7 +258,7 @@
     .line 97
     .line 98
     .line 99
-    :goto_62
+    :goto_1
     add-int/lit8 v0, v0, 0x4
 
     .line 100
@@ -271,18 +271,18 @@
     move-result v0
 
     .line 105
-    if-gtz v0, :cond_6c
+    if-gtz v0, :cond_9
 
     .line 106
     .line 107
-    :goto_6a
+    :goto_2
     const/4 v0, 0x0
 
     .line 108
     return-object v0
 
     .line 109
-    :cond_6c
+    :cond_9
     iget v1, p0, Llibs/uq0;->i:I
 
     .line 110

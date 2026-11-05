@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Height;)V
-    .registers 4
+    .locals 2
 
     .line 101
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -28,9 +28,9 @@
     .line 103
     iget v1, p1, Llibs/Height;->X:I
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_1
 
-    if-ne v1, v0, :cond_17
+    if-ne v1, v0, :cond_0
 
     .line 104
     invoke-static {p1, v0}, Llibs/Param;->p(Llibs/Height;Z)Llibs/Param;
@@ -44,10 +44,10 @@
     .line 105
     iput-object p1, p0, Llibs/vy0;->Y:Llibs/iu0;
 
-    goto :goto_24
+    goto :goto_0
 
     .line 106
-    :cond_17
+    :cond_0
     const-string p1, "unknown tag in Holder"
 
     invoke-static {p1}, Llibs/ic0;->p(Ljava/lang/String;)V
@@ -57,14 +57,14 @@
     throw p1
 
     .line 107
-    :cond_1e
+    :cond_1
     invoke-static {p1, v0}, Llibs/yb1;->g(Llibs/Height;Z)Llibs/yb1;
 
     move-result-object p1
 
     iput-object p1, p0, Llibs/vy0;->X:Llibs/yb1;
 
-    :goto_24
+    :goto_0
     const/4 p1, 0x0
 
     .line 108
@@ -74,7 +74,7 @@
 .end method
 
 .method public constructor <init>(Llibs/Param;)V
-    .registers 9
+    .locals 7
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -103,7 +103,7 @@
     const/4 v3, 0x0
 
     .line 13
-    if-gt v1, v2, :cond_58
+    if-gt v1, v2, :cond_5
 
     .line 14
     .line 15
@@ -113,7 +113,7 @@
     const/4 v2, 0x0
 
     .line 17
-    :goto_10
+    :goto_0
     invoke-virtual {p1}, Llibs/Param;->size()I
 
     .line 18
@@ -122,7 +122,7 @@
     move-result v4
 
     .line 21
-    if-eq v2, v4, :cond_55
+    if-eq v2, v4, :cond_4
 
     .line 22
     .line 23
@@ -146,18 +146,18 @@
 
     .line 32
     .line 33
-    if-eqz v5, :cond_4c
+    if-eqz v5, :cond_3
 
     .line 34
     .line 35
-    if-eq v5, v0, :cond_41
+    if-eq v5, v0, :cond_2
 
     .line 36
     .line 37
     const/4 v6, 0x2
 
     .line 38
-    if-ne v5, v6, :cond_3b
+    if-ne v5, v6, :cond_1
 
     .line 39
     .line 40
@@ -169,7 +169,7 @@
     move-result-object v4
 
     .line 44
-    if-eqz v4, :cond_37
+    if-eqz v4, :cond_0
 
     .line 45
     .line 46
@@ -190,22 +190,22 @@
     .line 53
     .line 54
     .line 55
-    goto :goto_38
+    goto :goto_1
 
     .line 56
-    :cond_37
+    :cond_0
     move-object v5, v3
 
     .line 57
-    :goto_38
+    :goto_1
     iput-object v5, p0, Llibs/vy0;->Z:Llibs/i32;
 
     .line 58
     .line 59
-    goto :goto_52
+    goto :goto_2
 
     .line 60
-    :cond_3b
+    :cond_1
     const-string p1, "unknown tag in Holder"
 
     .line 61
@@ -218,7 +218,7 @@
     throw v3
 
     .line 66
-    :cond_41
+    :cond_2
     invoke-static {v4, v1}, Llibs/Param;->p(Llibs/Height;Z)Llibs/Param;
 
     .line 67
@@ -239,10 +239,10 @@
 
     .line 75
     .line 76
-    goto :goto_52
+    goto :goto_2
 
     .line 77
-    :cond_4c
+    :cond_3
     invoke-static {v4, v1}, Llibs/yb1;->g(Llibs/Height;Z)Llibs/yb1;
 
     .line 78
@@ -255,15 +255,15 @@
 
     .line 82
     .line 83
-    :goto_52
+    :goto_2
     add-int/lit8 v2, v2, 0x1
 
     .line 84
     .line 85
-    goto :goto_10
+    goto :goto_0
 
     .line 86
-    :cond_55
+    :cond_4
     iput v0, p0, Llibs/vy0;->Lambda:I
 
     .line 87
@@ -271,7 +271,7 @@
     return-void
 
     .line 89
-    :cond_58
+    :cond_5
     const-string v0, "Bad sequence size: "
 
     .line 90
@@ -289,21 +289,21 @@
     .line 96
     .line 97
     .line 98
-    goto :goto_63
+    goto :goto_4
 
     .line 99
-    :goto_62
+    :goto_3
     throw v3
 
     .line 100
-    :goto_63
-    goto :goto_62
+    :goto_4
+    goto :goto_3
 .end method
 
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 7
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/vy0;->Y:Llibs/iu0;
@@ -324,7 +324,7 @@
     const/4 v4, 0x1
 
     .line 9
-    if-ne v3, v4, :cond_36
+    if-ne v3, v4, :cond_3
 
     .line 10
     .line 11
@@ -337,7 +337,7 @@
     .line 14
     .line 15
     .line 16
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_0
 
     .line 17
     .line 18
@@ -355,8 +355,8 @@
     .line 24
     .line 25
     .line 26
-    :cond_19
-    if-eqz v0, :cond_23
+    :cond_0
+    if-eqz v0, :cond_1
 
     .line 27
     .line 28
@@ -374,12 +374,12 @@
     .line 34
     .line 35
     .line 36
-    :cond_23
+    :cond_1
     iget-object v0, p0, Llibs/vy0;->Z:Llibs/i32;
 
     .line 37
     .line 38
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_2
 
     .line 39
     .line 40
@@ -400,7 +400,7 @@
     .line 47
     .line 48
     .line 49
-    :cond_30
+    :cond_2
     new-instance v0, Llibs/p10;
 
     .line 50
@@ -413,8 +413,8 @@
     return-object v0
 
     .line 55
-    :cond_36
-    if-eqz v0, :cond_3e
+    :cond_3
+    if-eqz v0, :cond_4
 
     .line 56
     .line 57
@@ -430,7 +430,7 @@
     return-object v1
 
     .line 63
-    :cond_3e
+    :cond_4
     new-instance v0, Llibs/s10;
 
     .line 64

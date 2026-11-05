@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(JLlibs/jk0;)V
-    .registers 8
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -90,7 +90,7 @@
 
     .line 32
     .line 33
-    if-gez p3, :cond_2d
+    if-gez p3, :cond_0
 
     .line 34
     .line 35
@@ -115,14 +115,14 @@
     .line 44
     .line 45
     .line 46
-    :cond_2d
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final a(J)J
-    .registers 14
+    .locals 11
 
     .line 1
     iget-object v0, p0, Llibs/cu;->e:Llibs/jk0;
@@ -174,7 +174,7 @@
 
     .line 23
     .line 24
-    if-eqz v9, :cond_20
+    if-eqz v9, :cond_0
 
     .line 25
     .line 26
@@ -182,7 +182,7 @@
 
     .line 27
     .line 28
-    if-ltz v3, :cond_20
+    if-ltz v3, :cond_0
 
     .line 29
     .line 30
@@ -190,10 +190,10 @@
 
     .line 31
     .line 32
-    goto :goto_23
+    goto :goto_0
 
     .line 33
-    :cond_20
+    :cond_0
     iget-wide v3, p0, Llibs/cu;->f:J
 
     .line 34
@@ -201,12 +201,12 @@
     move-wide v1, v7
 
     .line 36
-    :goto_23
+    :goto_0
     cmp-long v9, v1, v5
 
     .line 37
     .line 38
-    if-gez v9, :cond_3b
+    if-gez v9, :cond_2
 
     .line 39
     .line 40
@@ -226,7 +226,7 @@
     move-result v9
 
     .line 48
-    if-nez v9, :cond_35
+    if-nez v9, :cond_1
 
     .line 49
     .line 50
@@ -237,10 +237,10 @@
     add-long/2addr v1, v9
 
     .line 53
-    goto :goto_23
+    goto :goto_0
 
     .line 54
-    :cond_35
+    :cond_1
     const-string p1, "invalid bitmap cluster"
 
     .line 55
@@ -253,7 +253,7 @@
     return-wide v7
 
     .line 60
-    :cond_3b
+    :cond_2
     iput-wide v3, p0, Llibs/cu;->g:J
 
     .line 61
@@ -277,7 +277,7 @@
 .end method
 
 .method public final b(J)Z
-    .registers 7
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
@@ -291,14 +291,14 @@
 
     .line 5
     .line 6
-    if-gez v3, :cond_8
+    if-gez v3, :cond_0
 
     .line 7
     .line 8
     return v0
 
     .line 9
-    :cond_8
+    :cond_0
     iget-object v3, p0, Llibs/cu;->e:Llibs/jk0;
 
     .line 10
@@ -351,19 +351,19 @@
     and-int/2addr p2, v1
 
     .line 33
-    if-nez p2, :cond_23
+    if-nez p2, :cond_1
 
     .line 34
     .line 35
     return p1
 
     .line 36
-    :cond_23
+    :cond_1
     return v0
 .end method
 
 .method public final c(Llibs/bu;J)V
-    .registers 27
+    .locals 23
 
     .line 1
     move-object/from16 v0, p0
@@ -405,12 +405,12 @@
 
     .line 19
     .line 20
-    :cond_13
+    :cond_0
     cmp-long v13, v11, v7
 
     .line 21
     .line 22
-    if-ltz v13, :cond_24
+    if-ltz v13, :cond_1
 
     .line 23
     .line 24
@@ -433,20 +433,20 @@
     move-result v13
 
     .line 33
-    if-eqz v13, :cond_13
+    if-eqz v13, :cond_0
 
     .line 34
     .line 35
-    goto/16 :goto_c8
+    goto/16 :goto_4
 
     .line 36
     .line 37
-    :cond_24
+    :cond_1
     div-long v7, p2, v5
 
     .line 38
     .line 39
-    :goto_26
+    :goto_0
     invoke-static {v9, v10}, Llibs/k12;->Object(J)Z
 
     .line 40
@@ -455,7 +455,7 @@
     move-result v13
 
     .line 43
-    if-nez v13, :cond_c8
+    if-nez v13, :cond_9
 
     .line 44
     .line 45
@@ -470,7 +470,7 @@
     div-long/2addr v11, v5
 
     .line 50
-    :goto_31
+    :goto_1
     const-wide/16 v15, 0x0
 
     .line 51
@@ -479,7 +479,7 @@
 
     .line 53
     .line 54
-    if-gez v17, :cond_ba
+    if-gez v17, :cond_8
 
     .line 55
     .line 56
@@ -499,7 +499,7 @@
 
     .line 63
     .line 64
-    if-gtz v6, :cond_79
+    if-gtz v6, :cond_4
 
     .line 65
     .line 66
@@ -545,7 +545,7 @@
     move-result v4
 
     .line 86
-    if-gt v2, v4, :cond_6f
+    if-gt v2, v4, :cond_3
 
     .line 87
     .line 88
@@ -569,15 +569,15 @@
     move-result v2
 
     .line 98
-    if-nez v2, :cond_65
+    if-nez v2, :cond_2
 
     .line 99
     .line 100
-    goto/16 :goto_c8
+    goto/16 :goto_4
 
     .line 101
     .line 102
-    :cond_65
+    :cond_2
     add-long v7, v7, v19
 
     .line 103
@@ -597,10 +597,10 @@
 
     .line 110
     .line 111
-    goto :goto_31
+    goto :goto_1
 
     .line 112
-    :cond_6f
+    :cond_3
     const-string v1, "Read spans across cluster boundary: "
 
     .line 113
@@ -621,7 +621,7 @@
     return-void
 
     .line 122
-    :cond_79
+    :cond_4
     move-object v6, v2
 
     .line 123
@@ -639,8 +639,8 @@
     const/4 v3, 0x0
 
     .line 129
-    :goto_80
-    if-ge v3, v2, :cond_99
+    :goto_2
+    if-ge v3, v2, :cond_5
 
     .line 130
     .line 131
@@ -692,22 +692,22 @@
 
     .line 152
     .line 153
-    goto :goto_80
+    goto :goto_2
 
     .line 154
-    :cond_99
+    :cond_5
     move v5, v2
 
     .line 155
     move-wide v3, v15
 
     .line 156
-    :goto_9b
+    :goto_3
     const/16 v11, 0x8
 
     .line 157
     .line 158
-    if-ge v5, v11, :cond_a9
+    if-ge v5, v11, :cond_6
 
     .line 159
     .line 160
@@ -730,10 +730,10 @@
 
     .line 168
     .line 169
-    goto :goto_9b
+    goto :goto_3
 
     .line 170
-    :cond_a9
+    :cond_6
     invoke-virtual {v1, v7, v8, v3, v4}, Llibs/bu;->a(JJ)Z
 
     .line 171
@@ -742,14 +742,14 @@
     move-result v3
 
     .line 174
-    if-nez v3, :cond_b0
+    if-nez v3, :cond_7
 
     .line 175
     .line 176
-    goto :goto_c8
+    goto :goto_4
 
     .line 177
-    :cond_b0
+    :cond_7
     int-to-long v2, v2
 
     .line 178
@@ -770,11 +770,11 @@
     move-wide v11, v3
 
     .line 185
-    goto/16 :goto_31
+    goto/16 :goto_1
 
     .line 186
     .line 187
-    :cond_ba
+    :cond_8
     move-wide/from16 v21, v3
 
     .line 188
@@ -801,17 +801,17 @@
 
     .line 198
     .line 199
-    goto/16 :goto_26
+    goto/16 :goto_0
 
     .line 200
     .line 201
-    :cond_c8
-    :goto_c8
+    :cond_9
+    :goto_4
     return-void
 .end method
 
 .method public final d(JZ)V
-    .registers 10
+    .locals 6
 
     .line 1
     const-wide/16 v0, 0x2
@@ -822,14 +822,14 @@
 
     .line 4
     .line 5
-    if-gez v2, :cond_7
+    if-gez v2, :cond_0
 
     .line 6
     .line 7
     return-void
 
     .line 8
-    :cond_7
+    :cond_0
     iget-object v2, p0, Llibs/cu;->e:Llibs/jk0;
 
     .line 9
@@ -875,7 +875,7 @@
     const/4 p1, 0x1
 
     .line 29
-    if-eqz p3, :cond_24
+    if-eqz p3, :cond_1
 
     .line 30
     .line 31
@@ -893,7 +893,7 @@
     return-void
 
     .line 37
-    :cond_24
+    :cond_1
     shl-int/2addr p1, p2
 
     .line 38
@@ -913,7 +913,7 @@
 .end method
 
 .method public final e(J)J
-    .registers 7
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/cu;->e:Llibs/jk0;

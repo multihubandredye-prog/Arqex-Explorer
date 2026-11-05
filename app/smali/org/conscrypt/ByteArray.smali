@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>([B)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,10 +41,10 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
 
     .line 1
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     .line 2
     .line 3
@@ -54,7 +54,7 @@
     return p1
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v0, p1, Lorg/conscrypt/ByteArray;
 
     .line 6
@@ -62,14 +62,14 @@
     const/4 v1, 0x0
 
     .line 8
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     .line 9
     .line 10
     return v1
 
     .line 11
-    :cond_a
+    :cond_1
     check-cast p1, Lorg/conscrypt/ByteArray;
 
     .line 12
@@ -82,14 +82,14 @@
 
     .line 16
     .line 17
-    if-eq v0, v2, :cond_13
+    if-eq v0, v2, :cond_2
 
     .line 18
     .line 19
     return v1
 
     .line 20
-    :cond_13
+    :cond_2
     iget-object v0, p0, Lorg/conscrypt/ByteArray;->bytes:[B
 
     .line 21
@@ -110,7 +110,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/ByteArray;->hashCode:I

@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Thread;Ljava/lang/String;Llibs/t61;Llibs/ug3;Ljava/util/concurrent/atomic/AtomicReference;)V
-    .registers 6
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/p13;->a:Ljava/lang/Thread;
@@ -61,10 +61,10 @@
 .end method
 
 .method public static z(Landroid/os/IBinder;)Llibs/w61;
-    .registers 3
+    .locals 2
 
     .line 1
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     .line 2
     .line 3
@@ -74,7 +74,7 @@
     return-object p0
 
     .line 5
-    :cond_4
+    :cond_0
     const-string v0, "moe.shizuku.api.IFileFilter"
 
     .line 6
@@ -87,7 +87,7 @@
     move-result-object v0
 
     .line 11
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_1
 
     .line 12
     .line 13
@@ -95,7 +95,7 @@
 
     .line 14
     .line 15
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_1
 
     .line 16
     .line 17
@@ -106,7 +106,7 @@
     return-object v0
 
     .line 20
-    :cond_13
+    :cond_1
     new-instance v0, Llibs/v61;
 
     .line 21
@@ -122,20 +122,20 @@
 
 # virtual methods
 .method public final asBinder()Landroid/os/IBinder;
-    .registers 1
+    .locals 0
 
     .line 1
     return-object p0
 .end method
 
 .method public final declared-synchronized j(Llibs/n13;)Z
-    .registers 7
+    .locals 5
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Llibs/p13;->a:Ljava/lang/Thread;
 
     .line 3
@@ -146,14 +146,14 @@
     .line 6
     .line 7
     move-result v0
-    :try_end_7
-    .catchall {:try_start_1 .. :try_end_7} :catchall_63
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 8
     const/4 v1, 0x1
 
     .line 9
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -163,8 +163,8 @@
     return v1
 
     .line 13
-    :cond_c
-    :try_start_c
+    :cond_0
+    :try_start_1
     iget-object v0, p0, Llibs/p13;->b:Ljava/lang/String;
 
     .line 14
@@ -179,14 +179,14 @@
     .line 19
     .line 20
     move-result-object v0
-    :try_end_14
-    .catchall {:try_start_c .. :try_end_14} :catchall_63
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 21
     const/4 v2, 0x0
 
     .line 22
-    :try_start_15
+    :try_start_2
     iget-object v3, p0, Llibs/p13;->c:Llibs/t61;
 
     .line 23
@@ -199,7 +199,7 @@
     move-result v3
 
     .line 28
-    if-eqz v3, :cond_2b
+    if-eqz v3, :cond_1
 
     .line 29
     .line 30
@@ -217,11 +217,11 @@
     .line 36
     .line 37
     move-result v3
-    :try_end_25
-    .catchall {:try_start_15 .. :try_end_25} :catchall_29
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 38
-    if-nez v3, :cond_2b
+    if-nez v3, :cond_1
 
     .line 39
     .line 40
@@ -231,15 +231,15 @@
     return v2
 
     .line 42
-    :catchall_29
+    :catchall_0
     move-exception p1
 
     .line 43
-    goto :goto_4a
+    goto :goto_1
 
     .line 44
-    :cond_2b
-    :try_start_2b
+    :cond_1
+    :try_start_3
     invoke-static {p1, v0}, Llibs/t13;->g(Llibs/n13;Ljava/lang/String;)Llibs/rp0;
 
     .line 45
@@ -252,7 +252,7 @@
 
     .line 49
     .line 50
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_2
 
     .line 51
     .line 52
@@ -260,14 +260,14 @@
 
     .line 53
     .line 54
-    goto :goto_37
+    goto :goto_0
 
     .line 55
-    :cond_36
+    :cond_2
     const/4 v0, 0x0
 
     .line 56
-    :goto_37
+    :goto_0
     iput-object v0, p1, Llibs/rp0;->Tango:Ljava/lang/String;
 
     .line 57
@@ -284,7 +284,7 @@
     move-result v0
 
     .line 64
-    if-eqz v0, :cond_48
+    if-eqz v0, :cond_3
 
     .line 65
     .line 66
@@ -293,8 +293,8 @@
     .line 67
     .line 68
     invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
-    :try_end_46
-    .catchall {:try_start_2b .. :try_end_46} :catchall_29
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 69
     .line 70
@@ -305,26 +305,26 @@
     return v1
 
     .line 73
-    :cond_48
+    :cond_3
     monitor-exit p0
 
     .line 74
     return v2
 
     .line 75
-    :goto_4a
-    :try_start_4a
+    :goto_1
+    :try_start_4
     invoke-static {p1}, Llibs/hp0;->y(Ljava/lang/Throwable;)Z
 
     .line 76
     .line 77
     .line 78
     move-result v0
-    :try_end_4e
-    .catchall {:try_start_4a .. :try_end_4e} :catchall_63
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 79
-    if-eqz v0, :cond_52
+    if-eqz v0, :cond_4
 
     .line 80
     .line 81
@@ -334,8 +334,8 @@
     return v1
 
     .line 83
-    :cond_52
-    :try_start_52
+    :cond_4
+    :try_start_5
     const-string v0, "SHIZUKU"
 
     .line 84
@@ -361,8 +361,8 @@
     .line 94
     .line 95
     invoke-static {v0, v3, v4}, Llibs/vw1;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_61
-    .catchall {:try_start_52 .. :try_end_61} :catchall_63
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
     .line 96
     .line 97
@@ -373,27 +373,27 @@
     return v1
 
     .line 100
-    :catchall_63
+    :catchall_1
     move-exception p1
 
     .line 101
-    :try_start_64
+    :try_start_6
     monitor-exit p0
-    :try_end_65
-    .catchall {:try_start_64 .. :try_end_65} :catchall_63
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
     .line 102
     throw p1
 .end method
 
 .method public final onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .registers 7
+    .locals 2
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-lt p1, v0, :cond_d
+    if-lt p1, v0, :cond_0
 
     .line 3
     .line 4
@@ -402,7 +402,7 @@
     .line 5
     .line 6
     .line 7
-    if-gt p1, v1, :cond_d
+    if-gt p1, v1, :cond_0
 
     .line 8
     .line 9
@@ -415,8 +415,8 @@
     .line 12
     .line 13
     .line 14
-    :cond_d
-    if-eq p1, v0, :cond_14
+    :cond_0
+    if-eq p1, v0, :cond_1
 
     .line 15
     .line 16
@@ -431,7 +431,7 @@
     return p1
 
     .line 21
-    :cond_14
+    :cond_1
     sget-object p1, Llibs/n13;->CREATOR:Landroid/os/Parcelable$Creator;
 
     .line 22
@@ -444,7 +444,7 @@
     move-result p4
 
     .line 27
-    if-eqz p4, :cond_21
+    if-eqz p4, :cond_2
 
     .line 28
     .line 29
@@ -456,14 +456,14 @@
     move-result-object p1
 
     .line 33
-    goto :goto_22
+    goto :goto_0
 
     .line 34
-    :cond_21
+    :cond_2
     const/4 p1, 0x0
 
     .line 35
-    :goto_22
+    :goto_0
     check-cast p1, Llibs/n13;
 
     .line 36

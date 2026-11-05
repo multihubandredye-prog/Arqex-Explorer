@@ -24,7 +24,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/4 v0, 0x7
@@ -34,7 +34,7 @@
 
     .line 3
     .line 4
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     .line 5
     .line 6
@@ -49,7 +49,7 @@
     nop
 
     .line 11
-    :array_a
+    :array_0
     .array-data 4
         0xe
         0xd
@@ -62,7 +62,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -102,20 +102,20 @@
 .end method
 
 .method public static b(Ljava/text/SimpleDateFormat;)I
-    .registers 8
+    .locals 7
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
+    :cond_0
     invoke-virtual {p0}, Ljava/text/SimpleDateFormat;->toPattern()Ljava/lang/String;
 
     .line 6
@@ -131,7 +131,7 @@
 
     .line 11
     .line 12
-    fill-array-data v2, :array_60
+    fill-array-data v2, :array_0
 
     .line 13
     .line 14
@@ -139,8 +139,8 @@
     const/4 v3, 0x0
 
     .line 16
-    :goto_f
-    if-ge v3, v1, :cond_5e
+    :goto_0
+    if-ge v3, v1, :cond_8
 
     .line 17
     .line 18
@@ -159,7 +159,7 @@
     const/4 v6, -0x1
 
     .line 25
-    if-eq v5, v6, :cond_5b
+    if-eq v5, v6, :cond_7
 
     .line 26
     .line 27
@@ -167,7 +167,7 @@
 
     .line 28
     .line 29
-    if-eq v4, v5, :cond_54
+    if-eq v4, v5, :cond_6
 
     .line 30
     .line 31
@@ -175,7 +175,7 @@
 
     .line 32
     .line 33
-    if-eq v4, v5, :cond_4e
+    if-eq v4, v5, :cond_5
 
     .line 34
     .line 35
@@ -183,7 +183,7 @@
 
     .line 36
     .line 37
-    if-eq v4, v5, :cond_47
+    if-eq v4, v5, :cond_4
 
     .line 38
     .line 39
@@ -191,7 +191,7 @@
 
     .line 40
     .line 41
-    if-eq v4, v5, :cond_41
+    if-eq v4, v5, :cond_3
 
     .line 42
     .line 43
@@ -199,7 +199,7 @@
 
     .line 44
     .line 45
-    if-eq v4, v5, :cond_3a
+    if-eq v4, v5, :cond_2
 
     .line 46
     .line 47
@@ -207,14 +207,14 @@
 
     .line 48
     .line 49
-    if-eq v4, v5, :cond_33
+    if-eq v4, v5, :cond_1
 
     .line 50
     .line 51
-    goto :goto_5b
+    goto :goto_1
 
     .line 52
-    :cond_33
+    :cond_1
     const/16 p0, 0xd
 
     .line 53
@@ -230,7 +230,7 @@
     return p0
 
     .line 59
-    :cond_3a
+    :cond_2
     const/16 p0, 0xc
 
     .line 60
@@ -246,7 +246,7 @@
     return p0
 
     .line 66
-    :cond_41
+    :cond_3
     const/4 p0, 0x5
 
     .line 67
@@ -261,7 +261,7 @@
     return p0
 
     .line 72
-    :cond_47
+    :cond_4
     const/16 p0, 0xe
 
     .line 73
@@ -277,7 +277,7 @@
     return p0
 
     .line 79
-    :cond_4e
+    :cond_5
     const/4 p0, 0x2
 
     .line 80
@@ -292,7 +292,7 @@
     return p0
 
     .line 85
-    :cond_54
+    :cond_6
     const/16 p0, 0xb
 
     .line 86
@@ -308,23 +308,23 @@
     return p0
 
     .line 92
-    :cond_5b
-    :goto_5b
+    :cond_7
+    :goto_1
     add-int/lit8 v3, v3, 0x1
 
     .line 93
     .line 94
-    goto :goto_f
+    goto :goto_0
 
     .line 95
-    :cond_5e
+    :cond_8
     return v0
 
     .line 96
     nop
 
     .line 97
-    :array_60
+    :array_0
     .array-data 2
         0x53s
         0x73s
@@ -336,7 +336,7 @@
 .end method
 
 .method public static c(I)I
-    .registers 4
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
@@ -345,11 +345,11 @@
     const/4 v1, 0x0
 
     .line 3
-    :goto_2
+    :goto_0
     const/4 v2, 0x7
 
     .line 4
-    if-ge v1, v2, :cond_f
+    if-ge v1, v2, :cond_1
 
     .line 5
     .line 6
@@ -361,29 +361,29 @@
 
     .line 9
     .line 10
-    if-ne p0, v2, :cond_c
+    if-ne p0, v2, :cond_0
 
     .line 11
     .line 12
     return v1
 
     .line 13
-    :cond_c
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
     .line 14
     .line 15
-    goto :goto_2
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_1
     return v0
 .end method
 
 
 # virtual methods
 .method public final a(Llibs/um0;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -425,7 +425,7 @@
 
     .line 21
     .line 22
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_1
 
     .line 23
     .line 24
@@ -455,7 +455,7 @@
 
     .line 37
     .line 38
-    if-eqz v1, :cond_2a
+    if-eqz v1, :cond_0
 
     .line 39
     .line 40
@@ -464,7 +464,7 @@
     .line 41
     .line 42
     .line 43
-    :cond_2a
+    :cond_0
     iget-boolean p1, p1, Llibs/um0;->d:Z
 
     .line 44
@@ -476,7 +476,7 @@
     return-void
 
     .line 48
-    :cond_2f
+    :cond_1
     const-string p1, "defaultFormatString cannot be null"
 
     .line 49
@@ -490,7 +490,7 @@
 .end method
 
 .method public final d(Ljava/lang/String;)Ljava/util/Calendar;
-    .registers 12
+    .locals 10
 
     .line 1
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
@@ -544,7 +544,7 @@
     const/4 v5, 0x1
 
     .line 26
-    if-eqz v2, :cond_a3
+    if-eqz v2, :cond_4
 
     .line 27
     .line 28
@@ -581,7 +581,7 @@
 
     .line 44
     .line 45
-    if-eqz v6, :cond_32
+    if-eqz v6, :cond_0
 
     .line 46
     .line 47
@@ -593,7 +593,7 @@
     .line 49
     .line 50
     .line 51
-    :cond_32
+    :cond_0
     invoke-virtual {v2, v5}, Ljava/util/Calendar;->get(I)I
 
     .line 52
@@ -725,7 +725,7 @@
     move-result-object v7
 
     .line 120
-    if-eqz v7, :cond_a3
+    if-eqz v7, :cond_4
 
     .line 121
     .line 122
@@ -745,7 +745,7 @@
     move-result v6
 
     .line 130
-    if-ne v8, v6, :cond_a3
+    if-ne v8, v6, :cond_4
 
     .line 131
     .line 132
@@ -762,7 +762,7 @@
     move-result p1
 
     .line 139
-    if-eqz p1, :cond_90
+    if-eqz p1, :cond_1
 
     .line 140
     .line 141
@@ -774,19 +774,19 @@
     .line 143
     .line 144
     .line 145
-    :cond_90
+    :cond_1
     iget p1, p0, Llibs/dn0;->d:I
 
     .line 146
     .line 147
-    if-gtz p1, :cond_95
+    if-gtz p1, :cond_2
 
     .line 148
     .line 149
-    goto :goto_cb
+    goto :goto_0
 
     .line 150
-    :cond_95
+    :cond_2
     sub-int/2addr p1, v5
 
     .line 151
@@ -802,14 +802,14 @@
     move-result v0
 
     .line 157
-    if-eqz v0, :cond_9f
+    if-eqz v0, :cond_3
 
     .line 158
     .line 159
-    goto :goto_cb
+    goto :goto_0
 
     .line 160
-    :cond_9f
+    :cond_3
     invoke-virtual {v1, p1}, Ljava/util/Calendar;->clear(I)V
 
     .line 161
@@ -818,7 +818,7 @@
     return-object v1
 
     .line 164
-    :cond_a3
+    :cond_4
     new-instance v2, Ljava/text/ParsePosition;
 
     .line 165
@@ -840,7 +840,7 @@
     move-result-object v4
 
     .line 175
-    if-eqz v4, :cond_d0
+    if-eqz v4, :cond_7
 
     .line 176
     .line 177
@@ -860,7 +860,7 @@
     move-result v7
 
     .line 185
-    if-ne v6, v7, :cond_d0
+    if-ne v6, v7, :cond_7
 
     .line 186
     .line 187
@@ -873,14 +873,14 @@
 
     .line 191
     .line 192
-    if-gtz p1, :cond_c2
+    if-gtz p1, :cond_5
 
     .line 193
     .line 194
-    goto :goto_cb
+    goto :goto_0
 
     .line 195
-    :cond_c2
+    :cond_5
     sub-int/2addr p1, v5
 
     .line 196
@@ -896,15 +896,15 @@
     move-result v0
 
     .line 202
-    if-eqz v0, :cond_cc
+    if-eqz v0, :cond_6
 
     .line 203
     .line 204
-    :goto_cb
+    :goto_0
     return-object v1
 
     .line 205
-    :cond_cc
+    :cond_6
     invoke-virtual {v1, p1}, Ljava/util/Calendar;->clear(I)V
 
     .line 206
@@ -913,7 +913,7 @@
     return-object v1
 
     .line 209
-    :cond_d0
+    :cond_7
     new-instance v1, Ljava/text/ParseException;
 
     .line 210
@@ -972,10 +972,10 @@
 .end method
 
 .method public final e(Ljava/lang/String;Ljava/text/DateFormatSymbols;)V
-    .registers 4
+    .locals 1
 
     .line 1
-    if-nez p1, :cond_6
+    if-nez p1, :cond_0
 
     .line 2
     .line 3
@@ -986,11 +986,11 @@
 
     .line 5
     .line 6
-    goto :goto_1d
+    goto :goto_1
 
     .line 7
-    :cond_6
-    if-eqz p2, :cond_10
+    :cond_0
+    if-eqz p2, :cond_1
 
     .line 8
     .line 9
@@ -1007,10 +1007,10 @@
 
     .line 15
     .line 16
-    goto :goto_19
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_1
     new-instance v0, Ljava/text/SimpleDateFormat;
 
     .line 18
@@ -1028,7 +1028,7 @@
 
     .line 25
     .line 26
-    :goto_19
+    :goto_0
     const/4 p1, 0x0
 
     .line 27
@@ -1037,7 +1037,7 @@
     .line 28
     .line 29
     .line 30
-    :goto_1d
+    :goto_1
     iget-object p1, p0, Llibs/dn0;->a:Ljava/text/SimpleDateFormat;
 
     .line 31
@@ -1058,14 +1058,14 @@
 .end method
 
 .method public final f(Ljava/lang/String;Ljava/text/DateFormatSymbols;)V
-    .registers 4
+    .locals 1
 
     .line 1
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_1
 
     .line 2
     .line 3
-    if-eqz p2, :cond_c
+    if-eqz p2, :cond_0
 
     .line 4
     .line 5
@@ -1082,10 +1082,10 @@
 
     .line 11
     .line 12
-    goto :goto_15
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     new-instance v0, Ljava/text/SimpleDateFormat;
 
     .line 14
@@ -1103,7 +1103,7 @@
 
     .line 21
     .line 22
-    :goto_15
+    :goto_0
     const/4 p1, 0x0
 
     .line 23
@@ -1112,10 +1112,10 @@
     .line 24
     .line 25
     .line 26
-    goto :goto_1d
+    goto :goto_1
 
     .line 27
-    :cond_1a
+    :cond_1
     const/4 p1, 0x0
 
     .line 28
@@ -1123,7 +1123,7 @@
 
     .line 29
     .line 30
-    :goto_1d
+    :goto_1
     iget-object p1, p0, Llibs/dn0;->c:Ljava/text/SimpleDateFormat;
 
     .line 31

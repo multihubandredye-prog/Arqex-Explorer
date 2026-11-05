@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r31;Ljava/lang/String;ZB)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-byte p4, p0, Llibs/n21;->X:B
@@ -46,7 +46,7 @@
 .end method
 
 .method public synthetic constructor <init>(Llibs/r31;ZLjava/lang/String;B)V
-    .registers 5
+    .locals 0
 
     .line 13
     iput-byte p4, p0, Llibs/n21;->X:B
@@ -65,7 +65,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 31
+    .locals 30
 
     .line 1
     move-object/from16 v0, p0
@@ -94,7 +94,7 @@
 
     .line 12
     .line 13
-    packed-switch v1, :pswitch_data_11c
+    packed-switch v1, :pswitch_data_0
 
     .line 14
     .line 15
@@ -107,7 +107,7 @@
     return-void
 
     .line 20
-    :pswitch_13
+    :pswitch_0
     xor-int/lit8 v1, v5, 0x1
 
     .line 21
@@ -120,7 +120,7 @@
     return-void
 
     .line 26
-    :pswitch_19
+    :pswitch_1
     xor-int/lit8 v1, v5, 0x1
 
     .line 27
@@ -133,7 +133,7 @@
     return-void
 
     .line 32
-    :pswitch_1f
+    :pswitch_2
     iget-object v8, v0, Llibs/n21;->Y:Llibs/r31;
 
     .line 33
@@ -150,15 +150,15 @@
     move-result-object v9
 
     .line 40
-    if-nez v9, :cond_2b
+    if-nez v9, :cond_0
 
     .line 41
     .line 42
-    goto/16 :goto_11a
+    goto/16 :goto_3
 
     .line 43
     .line 44
-    :cond_2b
+    :cond_0
     invoke-virtual {v9}, Llibs/xt1;->getIAdapter()Llibs/sv0;
 
     .line 45
@@ -167,15 +167,15 @@
     move-result-object v1
 
     .line 48
-    if-nez v1, :cond_33
+    if-nez v1, :cond_1
 
     .line 49
     .line 50
-    goto/16 :goto_11a
+    goto/16 :goto_3
 
     .line 51
     .line 52
-    :cond_33
+    :cond_1
     iget-object v10, v1, Llibs/sv0;->p:Ljava/lang/String;
 
     .line 53
@@ -188,15 +188,15 @@
     move-result v1
 
     .line 58
-    if-eqz v1, :cond_3d
+    if-eqz v1, :cond_2
 
     .line 59
     .line 60
-    goto/16 :goto_11a
+    goto/16 :goto_3
 
     .line 61
     .line 62
-    :cond_3d
+    :cond_2
     invoke-static {v10, v2}, Llibs/ji0;->Bot(Ljava/lang/String;Z)Landroid/net/Uri;
 
     .line 63
@@ -225,33 +225,33 @@
     move-result v4
 
     .line 76
-    if-eqz v4, :cond_4f
+    if-eqz v4, :cond_3
 
     .line 77
     .line 78
-    :goto_4d
+    :goto_0
     move-object v11, v6
 
     .line 79
-    goto :goto_54
+    goto :goto_1
 
     .line 80
-    :cond_4f
-    if-nez v5, :cond_52
+    :cond_3
+    if-nez v5, :cond_4
 
     .line 81
     .line 82
-    goto :goto_4d
+    goto :goto_0
 
     .line 83
-    :cond_52
+    :cond_4
     move-object v6, v3
 
     .line 84
-    goto :goto_4d
+    goto :goto_0
 
     .line 85
-    :goto_54
+    :goto_1
     const-string v3, "before"
 
     .line 86
@@ -368,7 +368,7 @@
     .line 141
     .line 142
     .line 143
-    if-eqz v5, :cond_a7
+    if-eqz v5, :cond_5
 
     .line 144
     .line 145
@@ -413,11 +413,11 @@
     .line 164
     .line 165
     .line 166
-    goto/16 :goto_11a
+    goto/16 :goto_3
 
     .line 167
     .line 168
-    :cond_a7
+    :cond_5
     move-object/from16 v21, v1
 
     .line 169
@@ -478,7 +478,7 @@
     move-result v1
 
     .line 198
-    packed-switch v1, :pswitch_data_126
+    packed-switch v1, :pswitch_data_1
 
     .line 199
     .line 200
@@ -488,77 +488,77 @@
     .line 202
     .line 203
     .line 204
-    goto :goto_e9
+    goto :goto_2
 
     .line 205
-    :pswitch_cc
+    :pswitch_3
     const-wide/32 v1, 0x80000
 
     .line 206
     .line 207
     .line 208
-    goto :goto_e9
+    goto :goto_2
 
     .line 209
-    :pswitch_d0
+    :pswitch_4
     const-wide/32 v1, 0x40000
 
     .line 210
     .line 211
     .line 212
-    goto :goto_e9
+    goto :goto_2
 
     .line 213
-    :pswitch_d4
+    :pswitch_5
     const-wide/32 v1, 0x20000
 
     .line 214
     .line 215
     .line 216
-    goto :goto_e9
+    goto :goto_2
 
     .line 217
-    :pswitch_d8
+    :pswitch_6
     const-wide/32 v1, 0x10000
 
     .line 218
     .line 219
     .line 220
-    goto :goto_e9
+    goto :goto_2
 
     .line 221
-    :pswitch_dc
+    :pswitch_7
     const-wide/32 v1, 0x8000
 
     .line 222
     .line 223
     .line 224
-    goto :goto_e9
+    goto :goto_2
 
     .line 225
-    :pswitch_e0
+    :pswitch_8
     const-wide/16 v1, 0x4000
 
     .line 226
     .line 227
-    goto :goto_e9
+    goto :goto_2
 
     .line 228
-    :pswitch_e3
+    :pswitch_9
     const-wide/16 v1, 0x2000
 
     .line 229
     .line 230
-    goto :goto_e9
+    goto :goto_2
 
     .line 231
-    :pswitch_e6
+    :pswitch_a
     const-wide/32 v1, 0x800000
 
     .line 232
     .line 233
     .line 234
-    :goto_e9
+    :goto_2
     const-string v4, "FILE_CONTENT"
 
     .line 235
@@ -658,18 +658,18 @@
     .line 281
     .line 282
     .line 283
-    :goto_11a
+    :goto_3
     return-void
 
     .line 284
     nop
 
     .line 285
-    :pswitch_data_11c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1f
-        :pswitch_19
-        :pswitch_13
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 
     .line 286
@@ -682,15 +682,15 @@
     .line 293
     .line 294
     .line 295
-    :pswitch_data_126
+    :pswitch_data_1
     .packed-switch 0x1
-        :pswitch_e6
-        :pswitch_e3
-        :pswitch_e0
-        :pswitch_dc
-        :pswitch_d8
-        :pswitch_d4
-        :pswitch_d0
-        :pswitch_cc
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
     .end packed-switch
 .end method

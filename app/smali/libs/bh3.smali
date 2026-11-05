@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/cg;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,7 +34,7 @@
 .end method
 
 .method public final d(III[B[B)I
-    .registers 9
+    .locals 3
 
     .line 1
     add-int v0, p3, p2
@@ -47,7 +47,7 @@
     const/4 v2, 0x0
 
     .line 5
-    if-gt v0, v1, :cond_23
+    if-gt v0, v1, :cond_2
 
     .line 6
     .line 7
@@ -58,12 +58,12 @@
     array-length v1, p4
 
     .line 10
-    if-gt v0, v1, :cond_1d
+    if-gt v0, v1, :cond_1
 
     .line 11
     .line 12
-    :goto_b
-    if-ge p1, v0, :cond_1c
+    :goto_0
+    if-ge p1, v0, :cond_0
 
     .line 13
     .line 14
@@ -97,14 +97,14 @@
     move p1, v2
 
     .line 28
-    goto :goto_b
+    goto :goto_0
 
     .line 29
-    :cond_1c
+    :cond_0
     return p2
 
     .line 30
-    :cond_1d
+    :cond_1
     const-string p1, "input buffer too small"
 
     .line 31
@@ -117,7 +117,7 @@
     return v2
 
     .line 36
-    :cond_23
+    :cond_2
     const-string p1, "output buffer too short"
 
     .line 37

@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/rz0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
-    .registers 5
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/xv1;

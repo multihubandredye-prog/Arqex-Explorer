@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/xt1;Z)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final c([Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
@@ -54,7 +54,7 @@
 
     .line 7
     .line 8
-    if-nez v0, :cond_3e
+    if-nez v0, :cond_1
 
     .line 9
     .line 10
@@ -82,7 +82,7 @@
     move-result v1
 
     .line 22
-    if-nez v1, :cond_33
+    if-nez v1, :cond_0
 
     .line 23
     .line 24
@@ -110,7 +110,7 @@
     move-result v1
 
     .line 36
-    if-nez v1, :cond_33
+    if-nez v1, :cond_0
 
     .line 37
     .line 38
@@ -138,11 +138,11 @@
     move-result v0
 
     .line 50
-    if-eqz v0, :cond_3e
+    if-eqz v0, :cond_1
 
     .line 51
     .line 52
-    :cond_33
+    :cond_0
     sget-object v0, Lcom/mixplorer/AppImpl;->Mu:Llibs/c2;
 
     .line 53
@@ -155,7 +155,7 @@
 
     .line 57
     .line 58
-    if-eqz v0, :cond_3e
+    if-eqz v0, :cond_1
 
     .line 59
     .line 60
@@ -164,7 +164,7 @@
     .line 61
     .line 62
     .line 63
-    :cond_3e
+    :cond_1
     const/4 p1, 0x1
 
     .line 64

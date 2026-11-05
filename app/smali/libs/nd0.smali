@@ -29,7 +29,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 9
+    .locals 9
 
     .line 1
     const/4 v0, 0x0
@@ -161,12 +161,12 @@
     const/4 v5, 0x0
 
     .line 66
-    :goto_41
+    :goto_0
     const-string v6, "duplicate element: "
 
     .line 67
     .line 68
-    if-ge v5, v1, :cond_57
+    if-ge v5, v1, :cond_1
 
     .line 69
     .line 70
@@ -187,7 +187,7 @@
     move-result v8
 
     .line 79
-    if-eqz v8, :cond_53
+    if-eqz v8, :cond_0
 
     .line 80
     .line 81
@@ -195,10 +195,10 @@
 
     .line 82
     .line 83
-    goto :goto_41
+    goto :goto_0
 
     .line 84
-    :cond_53
+    :cond_0
     invoke-static {v7, v6}, Llibs/ic0;->g(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 85
@@ -207,7 +207,7 @@
     return-void
 
     .line 88
-    :cond_57
+    :cond_1
     invoke-static {v3}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
 
     .line 89
@@ -275,8 +275,8 @@
     const/4 v2, 0x0
 
     .line 121
-    :goto_78
-    if-ge v2, v5, :cond_8c
+    :goto_1
+    if-ge v2, v5, :cond_3
 
     .line 122
     .line 123
@@ -297,7 +297,7 @@
     move-result v4
 
     .line 132
-    if-eqz v4, :cond_88
+    if-eqz v4, :cond_2
 
     .line 133
     .line 134
@@ -305,10 +305,10 @@
 
     .line 135
     .line 136
-    goto :goto_78
+    goto :goto_1
 
     .line 137
-    :cond_88
+    :cond_2
     invoke-static {v3, v6}, Llibs/ic0;->g(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 138
@@ -317,7 +317,7 @@
     return-void
 
     .line 141
-    :cond_8c
+    :cond_3
     invoke-static {v1}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
 
     .line 142
@@ -347,7 +347,7 @@
 .end method
 
 .method public constructor <init>(Landroid/util/DisplayMetrics;Llibs/pf;Llibs/pn1;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -376,7 +376,7 @@
 .end method
 
 .method public static c(Llibs/jt1;Llibs/ep1;Landroid/graphics/BitmapFactory$Options;Llibs/za;Ljava/lang/Object;)[Landroid/graphics/Bitmap;
-    .registers 15
+    .locals 10
 
     .line 1
     const-string v0, "Exception decoding bitmap, outWidth: "
@@ -391,7 +391,7 @@
 
     .line 6
     .line 7
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
@@ -399,7 +399,7 @@
 
     .line 10
     .line 11
-    if-nez v1, :cond_1b
+    if-nez v1, :cond_1
 
     .line 12
     .line 13
@@ -408,10 +408,10 @@
     .line 14
     .line 15
     .line 16
-    goto :goto_1b
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     iget-object v1, p3, Llibs/za;->Y:Ljava/lang/Object;
 
     .line 18
@@ -423,7 +423,7 @@
     monitor-enter v1
 
     .line 22
-    :try_start_15
+    :try_start_0
     iget-object v3, v1, Llibs/sl2;->Pi:[B
 
     .line 23
@@ -432,16 +432,16 @@
 
     .line 25
     iput v3, v1, Llibs/sl2;->Sigma:I
-    :try_end_1a
-    .catchall {:try_start_15 .. :try_end_1a} :catchall_104
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
     .line 26
     .line 27
     monitor-exit v1
 
     .line 28
-    :cond_1b
-    :goto_1b
+    :cond_1
+    :goto_0
     iget v1, p2, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
     .line 29
@@ -466,12 +466,12 @@
     const/4 v6, 0x0
 
     .line 40
-    :try_start_27
+    :try_start_1
     iget-boolean v7, p0, Llibs/jt1;->a:Z
 
     .line 41
     .line 42
-    if-eqz v7, :cond_38
+    if-eqz v7, :cond_2
 
     .line 43
     .line 44
@@ -495,22 +495,22 @@
     move-result-object p3
 
     .line 54
-    goto :goto_74
+    goto :goto_2
 
     .line 55
-    :catch_36
+    :catch_0
     move-exception v2
 
     .line 56
-    goto :goto_81
+    goto :goto_3
 
     .line 57
-    :cond_38
+    :cond_2
     iget-boolean v7, p0, Llibs/jt1;->b:Z
 
     .line 58
     .line 59
-    if-eqz v7, :cond_41
+    if-eqz v7, :cond_3
 
     .line 60
     .line 61
@@ -522,10 +522,10 @@
     move-result-object p3
 
     .line 65
-    goto :goto_74
+    goto :goto_2
 
     .line 66
-    :cond_41
+    :cond_3
     iget-boolean v7, p0, Llibs/jt1;->c:Z
 
     .line 67
@@ -533,7 +533,7 @@
     const/4 v8, 0x0
 
     .line 69
-    if-eqz v7, :cond_67
+    if-eqz v7, :cond_5
 
     .line 70
     .line 71
@@ -551,18 +551,18 @@
     .line 77
     .line 78
     move-result-object v7
-    :try_end_4e
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_27 .. :try_end_4e} :catch_36
-    .catch Ljava/io/IOException; {:try_start_27 .. :try_end_4e} :catch_7f
-    .catchall {:try_start_27 .. :try_end_4e} :catchall_79
+    :try_end_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_2
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 79
-    :try_start_4e
+    :try_start_2
     iget-boolean v9, p2, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
     .line 80
     .line 81
-    if-eqz v9, :cond_65
+    if-eqz v9, :cond_4
 
     .line 82
     .line 83
@@ -570,7 +570,7 @@
 
     .line 84
     .line 85
-    if-gtz v9, :cond_65
+    if-gtz v9, :cond_4
 
     .line 86
     .line 87
@@ -589,37 +589,37 @@
     .line 94
     .line 95
     invoke-static {p1, v6, p2}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
-    :try_end_61
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_4e .. :try_end_61} :catch_62
-    .catch Ljava/io/IOException; {:try_start_4e .. :try_end_61} :catch_7f
-    .catchall {:try_start_4e .. :try_end_61} :catchall_79
+    :try_end_2
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_2 .. :try_end_2} :catch_1
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 96
     .line 97
     .line 98
-    goto :goto_65
+    goto :goto_1
 
     .line 99
-    :catch_62
+    :catch_1
     move-exception v2
 
     .line 100
     move-object v6, v7
 
     .line 101
-    goto :goto_81
+    goto :goto_3
 
     .line 102
-    :cond_65
-    :goto_65
+    :cond_4
+    :goto_1
     move-object p3, v7
 
     .line 103
-    goto :goto_74
+    goto :goto_2
 
     .line 104
-    :cond_67
-    :try_start_67
+    :cond_5
+    :try_start_3
     invoke-static {p1, v6, p2}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     .line 105
@@ -628,7 +628,7 @@
     move-result-object v2
 
     .line 108
-    if-eqz v2, :cond_73
+    if-eqz v2, :cond_6
 
     .line 109
     .line 110
@@ -640,35 +640,35 @@
     .line 112
     .line 113
     aput-object v2, v7, v8
-    :try_end_72
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_67 .. :try_end_72} :catch_36
-    .catch Ljava/io/IOException; {:try_start_67 .. :try_end_72} :catch_7f
-    .catchall {:try_start_67 .. :try_end_72} :catchall_79
+    :try_end_3
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_3 .. :try_end_3} :catch_0
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 114
     .line 115
     move-object v6, v7
 
     .line 116
-    :cond_73
+    :cond_6
     move-object p3, v6
 
     .line 117
-    :goto_74
+    :goto_2
     invoke-interface {v5}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
     .line 118
     .line 119
     .line 120
-    goto/16 :goto_f1
+    goto/16 :goto_5
 
     .line 121
     .line 122
-    :catchall_79
+    :catchall_0
     move-exception p0
 
     .line 123
-    :try_start_7a
+    :try_start_4
     invoke-static {p0}, Llibs/sw1;->p(Ljava/lang/Throwable;)Ljava/io/IOException;
 
     .line 124
@@ -680,14 +680,14 @@
     throw p0
 
     .line 128
-    :catch_7f
+    :catch_2
     move-exception p0
 
     .line 129
     throw p0
 
     .line 130
-    :goto_81
+    :goto_3
     invoke-static {}, Llibs/t43;->Set()Z
 
     .line 131
@@ -696,7 +696,7 @@
     move-result v5
 
     .line 134
-    if-eqz v5, :cond_ae
+    if-eqz v5, :cond_8
 
     .line 135
     .line 136
@@ -708,7 +708,7 @@
     move-result-object v5
 
     .line 140
-    if-eqz v5, :cond_ae
+    if-eqz v5, :cond_8
 
     .line 141
     .line 142
@@ -733,7 +733,7 @@
     move-result-object v1
 
     .line 153
-    if-eqz v1, :cond_a1
+    if-eqz v1, :cond_7
 
     .line 154
     .line 155
@@ -750,7 +750,7 @@
     .line 160
     .line 161
     .line 162
-    :cond_a1
+    :cond_7
     invoke-static {p2}, Llibs/sp;->Map(Landroid/graphics/BitmapFactory$Options;)V
 
     .line 163
@@ -762,8 +762,8 @@
     .line 167
     .line 168
     move-result-object p0
-    :try_end_a8
-    .catchall {:try_start_7a .. :try_end_a8} :catchall_fd
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 169
     sget-object p1, Llibs/jo3;->b:Ljava/util/concurrent/locks/Lock;
@@ -778,24 +778,24 @@
     return-object p0
 
     .line 175
-    :cond_ae
-    :try_start_ae
+    :cond_8
+    :try_start_5
     iget-boolean p3, p2, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
     .line 176
     .line 177
-    if-nez p3, :cond_eb
+    if-nez p3, :cond_a
 
     .line 178
     .line 179
-    if-eqz v6, :cond_b5
+    if-eqz v6, :cond_9
 
     .line 180
     .line 181
-    goto :goto_eb
+    goto :goto_4
 
     .line 182
-    :cond_b5
+    :cond_9
     new-instance p0, Ljava/io/IOException;
 
     .line 183
@@ -892,12 +892,12 @@
     .line 234
     .line 235
     throw p0
-    :try_end_eb
-    .catchall {:try_start_ae .. :try_end_eb} :catchall_fd
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
     .line 236
-    :cond_eb
-    :goto_eb
+    :cond_a
+    :goto_4
     sget-object p3, Llibs/jo3;->b:Ljava/util/concurrent/locks/Lock;
 
     .line 237
@@ -910,12 +910,12 @@
     move-object p3, v6
 
     .line 242
-    :goto_f1
+    :goto_5
     iget-boolean p2, p2, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
     .line 243
     .line 244
-    if-eqz p2, :cond_fc
+    if-eqz p2, :cond_b
 
     .line 245
     .line 246
@@ -923,7 +923,7 @@
 
     .line 247
     .line 248
-    if-nez p0, :cond_fc
+    if-nez p0, :cond_b
 
     .line 249
     .line 250
@@ -932,11 +932,11 @@
     .line 251
     .line 252
     .line 253
-    :cond_fc
+    :cond_b
     return-object p3
 
     .line 254
-    :catchall_fd
+    :catchall_1
     move-exception p0
 
     .line 255
@@ -952,21 +952,21 @@
     throw p0
 
     .line 261
-    :catchall_104
+    :catchall_2
     move-exception p0
 
     .line 262
-    :try_start_105
+    :try_start_6
     monitor-exit v1
-    :try_end_106
-    .catchall {:try_start_105 .. :try_end_106} :catchall_104
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
     .line 263
     throw p0
 .end method
 
 .method public static declared-synchronized d()Landroid/graphics/BitmapFactory$Options;
-    .registers 3
+    .locals 3
 
     .line 1
     const-class v0, Llibs/nd0;
@@ -976,17 +976,17 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     sget-object v1, Llibs/nd0;->j:Llibs/h5;
 
     .line 5
     .line 6
     monitor-enter v1
-    :try_end_6
-    .catchall {:try_start_3 .. :try_end_6} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 7
-    :try_start_6
+    :try_start_1
     invoke-virtual {v1}, Llibs/h5;->pollFirst()Ljava/lang/Object;
 
     .line 8
@@ -1000,15 +1000,15 @@
     .line 12
     .line 13
     monitor-exit v1
-    :try_end_d
-    .catchall {:try_start_6 .. :try_end_d} :catchall_1c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 14
-    if-nez v2, :cond_1a
+    if-nez v2, :cond_0
 
     .line 15
     .line 16
-    :try_start_f
+    :try_start_2
     new-instance v2, Landroid/graphics/BitmapFactory$Options;
 
     .line 17
@@ -1019,55 +1019,55 @@
     .line 20
     .line 21
     invoke-static {v2}, Llibs/nd0;->f(Landroid/graphics/BitmapFactory$Options;)V
-    :try_end_17
-    .catchall {:try_start_f .. :try_end_17} :catchall_18
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 22
     .line 23
     .line 24
-    goto :goto_1a
+    goto :goto_0
 
     .line 25
-    :catchall_18
+    :catchall_0
     move-exception v1
 
     .line 26
-    goto :goto_1f
+    goto :goto_1
 
     .line 27
-    :cond_1a
-    :goto_1a
+    :cond_0
+    :goto_0
     monitor-exit v0
 
     .line 28
     return-object v2
 
     .line 29
-    :catchall_1c
+    :catchall_1
     move-exception v2
 
     .line 30
-    :try_start_1d
+    :try_start_3
     monitor-exit v1
-    :try_end_1e
-    .catchall {:try_start_1d .. :try_end_1e} :catchall_1c
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 31
-    :try_start_1e
+    :try_start_4
     throw v2
 
     .line 32
-    :goto_1f
+    :goto_1
     monitor-exit v0
-    :try_end_20
-    .catchall {:try_start_1e .. :try_end_20} :catchall_18
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 33
     throw v1
 .end method
 
 .method public static e(Landroid/graphics/BitmapFactory$Options;)Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     invoke-static {}, Llibs/t43;->Set()Z
@@ -1078,7 +1078,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_62
+    if-eqz v0, :cond_3
 
     .line 6
     .line 7
@@ -1090,14 +1090,14 @@
     move-result-object p0
 
     .line 11
-    if-nez p0, :cond_d
+    if-nez p0, :cond_0
 
     .line 12
     .line 13
-    goto :goto_62
+    goto :goto_1
 
     .line 14
-    :cond_d
+    :cond_0
     invoke-static {}, Llibs/t43;->Data()Z
 
     .line 15
@@ -1110,7 +1110,7 @@
 
     .line 19
     .line 20
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_1
 
     .line 21
     .line 22
@@ -1157,14 +1157,14 @@
     move-result-object v0
 
     .line 45
-    goto :goto_2e
+    goto :goto_0
 
     .line 46
-    :cond_2d
+    :cond_1
     move-object v0, v1
 
     .line 47
-    :goto_2e
+    :goto_0
     new-instance v2, Ljava/lang/StringBuilder;
 
     .line 48
@@ -1230,7 +1230,7 @@
     move-result v3
 
     .line 82
-    if-nez v3, :cond_57
+    if-nez v3, :cond_2
 
     .line 83
     .line 84
@@ -1242,7 +1242,7 @@
     move-result-object v1
 
     .line 88
-    :cond_57
+    :cond_2
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 89
@@ -1264,8 +1264,8 @@
     return-object p0
 
     .line 99
-    :cond_62
-    :goto_62
+    :cond_3
+    :goto_1
     const/4 p0, 0x0
 
     .line 100
@@ -1273,7 +1273,7 @@
 .end method
 
 .method public static f(Landroid/graphics/BitmapFactory$Options;)V
-    .registers 4
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
@@ -1337,7 +1337,7 @@
     move-result v0
 
     .line 30
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_0
 
     .line 31
     .line 32
@@ -1351,14 +1351,14 @@
     .line 36
     .line 37
     .line 38
-    :cond_25
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final a(Llibs/jt1;Llibs/ep1;JLjava/lang/Integer;IILlibs/v70;Llibs/za;Ljava/lang/Object;)Llibs/jo2;
-    .registers 29
+    .locals 18
 
     .line 1
     move-object/from16 v1, p0
@@ -1393,7 +1393,7 @@
 
     .line 16
     .line 17
-    if-eqz v2, :cond_a2
+    if-eqz v2, :cond_2
 
     .line 18
     .line 19
@@ -1547,7 +1547,7 @@
 
     .line 92
     .line 93
-    :try_start_5c
+    :try_start_0
     invoke-virtual/range {v1 .. v15}, Llibs/nd0;->b(Llibs/jt1;Llibs/ep1;JLandroid/graphics/BitmapFactory$Options;Llibs/od0;IIILlibs/za;Ljava/lang/Integer;Llibs/lf2;ZLjava/lang/Object;)[Landroid/graphics/Bitmap;
 
     .line 94
@@ -1560,14 +1560,14 @@
 
     .line 98
     .line 99
-    if-eqz v0, :cond_78
+    if-eqz v0, :cond_1
 
     .line 100
     .line 101
     array-length v3, v0
 
     .line 102
-    if-eqz v3, :cond_78
+    if-eqz v3, :cond_1
 
     .line 103
     .line 104
@@ -1578,21 +1578,21 @@
 
     .line 106
     .line 107
-    if-nez v3, :cond_6d
+    if-nez v3, :cond_0
 
     .line 108
     .line 109
-    goto :goto_78
+    goto :goto_1
 
     .line 110
-    :cond_6d
+    :cond_0
     new-instance v3, Llibs/jo2;
 
     .line 111
     .line 112
     invoke-direct {v3, v0, v2}, Llibs/jo2;-><init>([Landroid/graphics/Bitmap;Llibs/pf;)V
-    :try_end_72
-    .catchall {:try_start_5c .. :try_end_72} :catchall_8d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 113
     .line 114
@@ -1601,19 +1601,19 @@
 
     .line 116
     .line 117
-    goto :goto_78
+    goto :goto_1
 
     .line 118
-    :goto_75
+    :goto_0
     move-object/from16 v3, v17
 
     .line 119
     .line 120
-    goto :goto_8f
+    goto :goto_2
 
     .line 121
-    :cond_78
-    :goto_78
+    :cond_1
+    :goto_1
     invoke-static {v6}, Llibs/nd0;->f(Landroid/graphics/BitmapFactory$Options;)V
 
     .line 122
@@ -1626,15 +1626,15 @@
     monitor-enter v2
 
     .line 127
-    :try_start_7e
+    :try_start_1
     invoke-virtual {v2, v6}, Llibs/h5;->addLast(Ljava/lang/Object;)V
 
     .line 128
     .line 129
     .line 130
     monitor-exit v2
-    :try_end_82
-    .catchall {:try_start_7e .. :try_end_82} :catchall_8a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 131
     iget-object v0, v1, Llibs/nd0;->c:Llibs/pn1;
@@ -1653,27 +1653,27 @@
     return-object v16
 
     .line 139
-    :catchall_8a
+    :catchall_0
     move-exception v0
 
     .line 140
-    :try_start_8b
+    :try_start_2
     monitor-exit v2
-    :try_end_8c
-    .catchall {:try_start_8b .. :try_end_8c} :catchall_8a
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 141
     throw v0
 
     .line 142
-    :catchall_8d
+    :catchall_1
     move-exception v0
 
     .line 143
-    goto :goto_75
+    goto :goto_0
 
     .line 144
-    :goto_8f
+    :goto_2
     invoke-static {v6}, Llibs/nd0;->f(Landroid/graphics/BitmapFactory$Options;)V
 
     .line 145
@@ -1686,15 +1686,15 @@
     monitor-enter v2
 
     .line 150
-    :try_start_95
+    :try_start_3
     invoke-virtual {v2, v6}, Llibs/h5;->addLast(Ljava/lang/Object;)V
 
     .line 151
     .line 152
     .line 153
     monitor-exit v2
-    :try_end_99
-    .catchall {:try_start_95 .. :try_end_99} :catchall_9f
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
     .line 154
     iget-object v2, v1, Llibs/nd0;->c:Llibs/pn1;
@@ -1709,20 +1709,20 @@
     throw v0
 
     .line 160
-    :catchall_9f
+    :catchall_2
     move-exception v0
 
     .line 161
-    :try_start_a0
+    :try_start_4
     monitor-exit v2
-    :try_end_a1
-    .catchall {:try_start_a0 .. :try_end_a1} :catchall_9f
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
     .line 162
     throw v0
 
     .line 163
-    :cond_a2
+    :cond_2
     invoke-static {v4}, Llibs/ic0;->p(Ljava/lang/String;)V
 
     .line 164
@@ -1732,7 +1732,7 @@
 .end method
 
 .method public final b(Llibs/jt1;Llibs/ep1;JLandroid/graphics/BitmapFactory$Options;Llibs/od0;IIILlibs/za;Ljava/lang/Integer;Llibs/lf2;ZLjava/lang/Object;)[Landroid/graphics/Bitmap;
-    .registers 39
+    .locals 24
 
     move-object/from16 v1, p0
 
@@ -1776,71 +1776,71 @@
     .line 6
     aget v9, v9, v6
 
-    if-lez v10, :cond_26
+    if-lez v10, :cond_0
 
-    if-gtz v9, :cond_2a
+    if-gtz v9, :cond_1
 
-    :cond_26
+    :cond_0
     move-object/from16 v16, v7
 
-    goto/16 :goto_37b
+    goto/16 :goto_23
 
-    :cond_2a
-    if-eqz p11, :cond_38
+    :cond_1
+    if-eqz p11, :cond_3
 
     .line 7
     invoke-virtual/range {p11 .. p11}, Ljava/lang/Integer;->intValue()I
 
     move-result v11
 
-    if-gez v11, :cond_33
+    if-gez v11, :cond_2
 
-    goto :goto_38
+    goto :goto_0
 
     .line 8
-    :cond_33
+    :cond_2
     invoke-virtual/range {p11 .. p11}, Ljava/lang/Integer;->intValue()I
 
     move-result v11
 
-    goto :goto_3c
+    goto :goto_1
 
     .line 9
-    :cond_38
-    :goto_38
+    :cond_3
+    :goto_0
     invoke-static/range {p2 .. p4}, Llibs/y81;->Item(Ljava/io/InputStream;J)I
 
     move-result v11
 
-    :goto_3c
+    :goto_1
     const/16 v12, 0x5a
 
-    packed-switch v11, :pswitch_data_37c
+    packed-switch v11, :pswitch_data_0
 
     const/4 v14, 0x0
 
-    goto :goto_4b
+    goto :goto_2
 
-    :pswitch_43
+    :pswitch_0
     const/16 v14, 0x10e
 
-    goto :goto_4b
+    goto :goto_2
 
-    :pswitch_46
+    :pswitch_1
     const/16 v14, 0x5a
 
-    goto :goto_4b
+    goto :goto_2
 
-    :pswitch_49
+    :pswitch_2
     const/16 v14, 0xb4
 
-    :goto_4b
-    if-eqz p13, :cond_79
+    :goto_2
+    if-eqz p13, :cond_7
 
     .line 10
     sget-object v15, Llibs/ix0;->j:Llibs/ix0;
 
-    if-nez v15, :cond_66
+    if-nez v15, :cond_5
 
     .line 11
     const-class v15, Llibs/ix0;
@@ -1848,10 +1848,10 @@
     monitor-enter v15
 
     .line 12
-    :try_start_54
+    :try_start_0
     sget-object v16, Llibs/ix0;->j:Llibs/ix0;
 
-    if-nez v16, :cond_62
+    if-nez v16, :cond_4
 
     .line 13
     new-instance v16, Llibs/ix0;
@@ -1860,30 +1860,30 @@
 
     sput-object v16, Llibs/ix0;->j:Llibs/ix0;
 
-    goto :goto_62
+    goto :goto_3
 
-    :catchall_60
+    :catchall_0
     move-exception v0
 
-    goto :goto_64
+    goto :goto_4
 
     .line 14
-    :cond_62
-    :goto_62
+    :cond_4
+    :goto_3
     monitor-exit v15
 
-    goto :goto_66
+    goto :goto_5
 
-    :goto_64
+    :goto_4
     monitor-exit v15
-    :try_end_65
-    .catchall {:try_start_54 .. :try_end_65} :catchall_60
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 
     .line 15
-    :cond_66
-    :goto_66
+    :cond_5
+    :goto_5
     sget-object v15, Llibs/ix0;->j:Llibs/ix0;
 
     .line 16
@@ -1891,40 +1891,40 @@
 
     iget v8, v3, Landroid/graphics/BitmapFactory$Options;->outHeight:I
 
-    if-lez v11, :cond_70
+    if-lez v11, :cond_6
 
     const/4 v13, 0x1
 
-    goto :goto_71
+    goto :goto_6
 
-    :cond_70
+    :cond_6
     const/4 v13, 0x0
 
-    :goto_71
+    :goto_6
     invoke-virtual {v15, v7, v8, v13}, Llibs/ix0;->a(IIZ)Z
 
     move-result v7
 
-    if-eqz v7, :cond_79
+    if-eqz v7, :cond_7
 
     const/4 v7, 0x1
 
-    goto :goto_7a
+    goto :goto_7
 
-    :cond_79
+    :cond_7
     const/4 v7, 0x0
 
     .line 17
-    :goto_7a
+    :goto_7
     invoke-static {}, Llibs/t43;->Task()Z
 
     move-result v8
 
     const/high16 v13, 0x500000
 
-    if-eqz v8, :cond_8e
+    if-eqz v8, :cond_8
 
-    if-eqz v7, :cond_8e
+    if-eqz v7, :cond_8
 
     .line 18
     invoke-static {}, Llibs/Epsilon;->h()Landroid/graphics/Bitmap$Config;
@@ -1936,10 +1936,10 @@
     .line 19
     invoke-static {v3}, Llibs/sp;->s(Landroid/graphics/BitmapFactory$Options;)V
 
-    goto :goto_e0
+    goto :goto_e
 
-    :cond_8e
-    if-eqz p7, :cond_dc
+    :cond_8
+    if-eqz p7, :cond_10
 
     .line 20
     invoke-static {}, Llibs/t43;->w()I
@@ -1948,49 +1948,49 @@
 
     const/16 v8, 0x10
 
-    if-ne v7, v8, :cond_99
+    if-ne v7, v8, :cond_9
 
-    goto :goto_dc
+    goto :goto_c
 
     .line 21
-    :cond_99
+    :cond_9
     iget-boolean v7, v0, Llibs/jt1;->c:Z
 
-    if-eqz v7, :cond_a0
+    if-eqz v7, :cond_a
 
     .line 22
     sget-object v7, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    goto :goto_de
+    goto :goto_d
 
     .line 23
-    :cond_a0
+    :cond_a
     iget-boolean v7, v0, Llibs/jt1;->a:Z
 
-    if-eqz v7, :cond_a7
+    if-eqz v7, :cond_b
 
     .line 24
     sget-object v7, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
-    goto :goto_de
+    goto :goto_d
 
     .line 25
-    :cond_a7
+    :cond_b
     iget-boolean v7, v0, Llibs/jt1;->b:Z
 
-    if-eqz v7, :cond_ae
+    if-eqz v7, :cond_c
 
     .line 26
     sget-object v7, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
-    goto :goto_de
+    goto :goto_d
 
     .line 27
-    :cond_ae
+    :cond_c
     invoke-virtual {v2, v13}, Llibs/ep1;->mark(I)V
 
     .line 28
-    :try_start_b1
+    :try_start_1
     new-instance v7, Llibs/q81;
 
     iget-object v8, v1, Llibs/nd0;->c:Llibs/pn1;
@@ -2001,155 +2001,155 @@
     invoke-virtual {v7}, Llibs/q81;->a()I
 
     move-result v7
-    :try_end_bc
-    .catchall {:try_start_b1 .. :try_end_bc} :catchall_ce
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
-    if-eqz v7, :cond_c7
+    if-eqz v7, :cond_e
 
     const/4 v8, 0x2
 
-    if-eq v7, v8, :cond_c7
+    if-eq v7, v8, :cond_e
 
     const/4 v8, 0x4
 
-    if-ne v7, v8, :cond_c5
+    if-ne v7, v8, :cond_d
 
-    goto :goto_c7
+    goto :goto_8
 
-    :cond_c5
+    :cond_d
     const/4 v7, 0x0
 
-    goto :goto_c8
+    goto :goto_9
 
-    :cond_c7
-    :goto_c7
+    :cond_e
+    :goto_8
     const/4 v7, 0x1
 
     .line 30
-    :goto_c8
-    :try_start_c8
+    :goto_9
+    :try_start_2
     invoke-virtual {v2}, Llibs/ep1;->reset()V
-    :try_end_cb
-    .catchall {:try_start_c8 .. :try_end_cb} :catchall_cc
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    goto :goto_d4
+    goto :goto_b
 
-    :catchall_cc
+    :catchall_1
     nop
 
-    goto :goto_d4
+    goto :goto_b
 
-    :catchall_ce
-    :try_start_ce
+    :catchall_2
+    :try_start_3
     invoke-virtual {v2}, Llibs/ep1;->reset()V
-    :try_end_d1
-    .catchall {:try_start_ce .. :try_end_d1} :catchall_d2
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_3
 
-    goto :goto_d3
+    goto :goto_a
 
-    :catchall_d2
+    :catchall_3
     nop
 
-    :goto_d3
+    :goto_a
     const/4 v7, 0x0
 
-    :goto_d4
-    if-eqz v7, :cond_d9
+    :goto_b
+    if-eqz v7, :cond_f
 
     .line 31
     sget-object v7, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    goto :goto_de
+    goto :goto_d
 
-    :cond_d9
+    :cond_f
     sget-object v7, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
-    goto :goto_de
+    goto :goto_d
 
     .line 32
-    :cond_dc
-    :goto_dc
+    :cond_10
+    :goto_c
     sget-object v7, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     .line 33
-    :goto_de
+    :goto_d
     iput-object v7, v3, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
 
     .line 34
-    :goto_e0
+    :goto_e
     iget-object v7, v3, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
 
     sget-object v8, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
-    if-ne v7, v8, :cond_e8
+    if-ne v7, v8, :cond_11
 
     .line 35
     iput-boolean v6, v3, Landroid/graphics/BitmapFactory$Options;->inDither:Z
 
-    :cond_e8
+    :cond_11
     const/4 v7, 0x0
 
-    if-lez v10, :cond_1df
+    if-lez v10, :cond_1d
 
-    if-gtz v9, :cond_ef
+    if-gtz v9, :cond_12
 
-    goto/16 :goto_1df
+    goto/16 :goto_16
 
-    :cond_ef
-    if-lez p8, :cond_f9
+    :cond_12
+    if-lez p8, :cond_14
 
-    if-gtz p9, :cond_f4
+    if-gtz p9, :cond_13
 
-    goto :goto_f9
+    goto :goto_f
 
-    :cond_f4
+    :cond_13
     move/from16 v8, p8
 
     move/from16 v15, p9
 
-    goto :goto_fb
+    goto :goto_10
 
-    :cond_f9
-    :goto_f9
+    :cond_14
+    :goto_f
     move v15, v9
 
     move v8, v10
 
-    :goto_fb
-    if-eq v14, v12, :cond_107
+    :goto_10
+    if-eq v14, v12, :cond_16
 
     const/16 v12, 0x10e
 
-    if-ne v14, v12, :cond_102
+    if-ne v14, v12, :cond_15
 
-    goto :goto_107
+    goto :goto_11
 
     .line 36
-    :cond_102
+    :cond_15
     invoke-virtual {v4, v10, v9, v8, v15}, Llibs/od0;->a(IIII)F
 
     move-result v8
 
-    goto :goto_10b
+    goto :goto_12
 
     .line 37
-    :cond_107
-    :goto_107
+    :cond_16
+    :goto_11
     invoke-virtual {v4, v9, v10, v8, v15}, Llibs/od0;->a(IIII)F
 
     move-result v8
 
-    :goto_10b
+    :goto_12
     cmpg-float v12, v8, v7
 
-    if-lez v12, :cond_1c3
+    if-lez v12, :cond_1c
 
     .line 38
     iget-byte v4, v4, Llibs/od0;->a:B
 
-    packed-switch v4, :pswitch_data_38c
+    packed-switch v4, :pswitch_data_1
 
-    :pswitch_114
+    :pswitch_3
     int-to-float v4, v10
 
     mul-float v4, v4, v8
@@ -2184,7 +2184,7 @@
 
     move-result v12
 
-    if-nez v12, :cond_13a
+    if-nez v12, :cond_17
 
     sget-object v12, Llibs/nd0;->h:Ljava/util/Set;
 
@@ -2195,14 +2195,14 @@
 
     move-result v12
 
-    if-eqz v12, :cond_13a
+    if-eqz v12, :cond_17
 
     const/4 v4, 0x1
 
-    goto :goto_142
+    goto :goto_13
 
     .line 44
-    :cond_13a
+    :cond_17
     invoke-static {v4}, Ljava/lang/Integer;->highestOneBit(I)I
 
     move-result v4
@@ -2211,7 +2211,7 @@
 
     move-result v4
 
-    :goto_142
+    :goto_13
     int-to-float v12, v4
 
     mul-float v12, v12, v8
@@ -2224,19 +2224,19 @@
 
     move-result v4
 
-    if-eqz v4, :cond_1b0
+    if-eqz v4, :cond_1a
 
     invoke-static {v3}, Llibs/sp;->j(Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-result-object v4
 
-    if-nez v4, :cond_1b0
+    if-nez v4, :cond_1a
 
     invoke-static {}, Llibs/t43;->Item()Z
 
     move-result v4
 
-    if-nez v4, :cond_1b0
+    if-nez v4, :cond_1a
 
     float-to-double v14, v12
 
@@ -2244,19 +2244,19 @@
 
     cmpg-double v4, v14, v18
 
-    if-gtz v4, :cond_163
+    if-gtz v4, :cond_18
 
     move-wide/from16 v20, v14
 
-    goto :goto_168
+    goto :goto_14
 
     .line 47
-    :cond_163
+    :cond_18
     invoke-static {v14, v15}, Ljava/lang/Double;->isNaN(D)Z
 
     div-double v20, v18, v14
 
-    :goto_168
+    :goto_14
     const-wide v22, 0x41dfffffffc00000L    # 2.147483647E9
 
     mul-double v20, v20, v22
@@ -2316,19 +2316,19 @@
 
     cmpg-double v4, p6, v18
 
-    if-gtz v4, :cond_1a2
+    if-gtz v4, :cond_19
 
     move-wide/from16 v14, p6
 
-    goto :goto_1a7
+    goto :goto_15
 
     .line 53
-    :cond_1a2
+    :cond_19
     invoke-static/range {p6 .. p7}, Ljava/lang/Double;->isNaN(D)Z
 
     div-double v14, v18, p6
 
-    :goto_1a7
+    :goto_15
     mul-double v14, v14, v22
 
     .line 54
@@ -2342,23 +2342,23 @@
     iput v4, v3, Landroid/graphics/BitmapFactory$Options;->inDensity:I
 
     .line 56
-    :cond_1b0
+    :cond_1a
     iget v4, v3, Landroid/graphics/BitmapFactory$Options;->inTargetDensity:I
 
-    if-lez v4, :cond_1bd
+    if-lez v4, :cond_1b
 
     iget v7, v3, Landroid/graphics/BitmapFactory$Options;->inDensity:I
 
-    if-lez v7, :cond_1bd
+    if-lez v7, :cond_1b
 
-    if-eq v4, v7, :cond_1bd
+    if-eq v4, v7, :cond_1b
 
     .line 57
     iput-boolean v6, v3, Landroid/graphics/BitmapFactory$Options;->inScaled:Z
 
-    goto :goto_1df
+    goto :goto_16
 
-    :cond_1bd
+    :cond_1b
     const/4 v4, 0x0
 
     .line 58
@@ -2366,10 +2366,10 @@
 
     iput v4, v3, Landroid/graphics/BitmapFactory$Options;->inDensity:I
 
-    goto :goto_1df
+    goto :goto_16
 
     .line 59
-    :cond_1c3
+    :cond_1c
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2395,8 +2395,8 @@
     throw v0
 
     .line 60
-    :cond_1df
-    :goto_1df
+    :cond_1d
+    :goto_16
     iget-object v4, v1, Llibs/nd0;->a:Llibs/pf;
 
     .line 61
@@ -2404,36 +2404,36 @@
 
     const/high16 v8, 0x3f800000    # 1.0f
 
-    if-eq v7, v6, :cond_1ed
+    if-eq v7, v6, :cond_1e
 
     invoke-static {}, Llibs/t43;->Data()Z
 
     move-result v7
 
-    if-eqz v7, :cond_269
+    if-eqz v7, :cond_23
 
     .line 62
-    :cond_1ed
+    :cond_1e
     invoke-static {}, Llibs/t43;->Data()Z
 
     move-result v7
 
-    if-nez v7, :cond_21e
+    if-nez v7, :cond_20
 
     iget-boolean v7, v0, Llibs/jt1;->a:Z
 
-    if-eqz v7, :cond_1f8
+    if-eqz v7, :cond_1f
 
-    goto :goto_21e
+    goto :goto_18
 
-    :cond_1f8
+    :cond_1f
     const/high16 v7, 0x500000
 
     .line 63
     invoke-virtual {v2, v7}, Llibs/ep1;->mark(I)V
 
     .line 64
-    :try_start_1fd
+    :try_start_4
     new-instance v6, Llibs/q81;
 
     iget-object v7, v1, Llibs/nd0;->c:Llibs/pn1;
@@ -2454,39 +2454,39 @@
     invoke-interface {v7, v6}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result v6
-    :try_end_212
-    .catchall {:try_start_1fd .. :try_end_212} :catchall_218
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_5
 
     .line 66
-    :try_start_212
+    :try_start_5
     invoke-virtual {v2}, Llibs/ep1;->reset()V
-    :try_end_215
-    .catchall {:try_start_212 .. :try_end_215} :catchall_216
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_4
 
-    goto :goto_21e
+    goto :goto_18
 
-    :catchall_216
+    :catchall_4
     nop
 
-    goto :goto_21e
+    goto :goto_18
 
-    :catchall_218
-    :try_start_218
+    :catchall_5
+    :try_start_6
     invoke-virtual {v2}, Llibs/ep1;->reset()V
-    :try_end_21b
-    .catchall {:try_start_218 .. :try_end_21b} :catchall_21c
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_6
 
-    goto :goto_21d
+    goto :goto_17
 
-    :catchall_21c
+    :catchall_6
     nop
 
-    :goto_21d
+    :goto_17
     const/4 v6, 0x0
 
-    :cond_21e
-    :goto_21e
-    if-eqz v6, :cond_269
+    :cond_20
+    :goto_18
+    if-eqz v6, :cond_23
 
     .line 67
     iget v6, v3, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
@@ -2522,21 +2522,21 @@
     .line 70
     iget-boolean v9, v0, Llibs/jt1;->c:Z
 
-    if-eqz v9, :cond_238
+    if-eqz v9, :cond_21
 
-    goto :goto_256
+    goto :goto_1a
 
     .line 71
-    :cond_238
+    :cond_21
     iget v9, v3, Landroid/graphics/BitmapFactory$Options;->inTargetDensity:I
 
-    if-lez v9, :cond_246
+    if-lez v9, :cond_22
 
     iget v10, v3, Landroid/graphics/BitmapFactory$Options;->inDensity:I
 
-    if-lez v10, :cond_246
+    if-lez v10, :cond_22
 
-    if-eq v9, v10, :cond_246
+    if-eq v9, v10, :cond_22
 
     int-to-float v9, v9
 
@@ -2544,12 +2544,12 @@
 
     div-float/2addr v9, v10
 
-    goto :goto_248
+    goto :goto_19
 
-    :cond_246
+    :cond_22
     const/high16 v9, 0x3f800000    # 1.0f
 
-    :goto_248
+    :goto_19
     int-to-float v7, v7
 
     mul-float v7, v7, v9
@@ -2568,17 +2568,17 @@
 
     move-result v6
 
-    :goto_256
-    if-lez v7, :cond_269
+    :goto_1a
+    if-lez v7, :cond_23
 
-    if-lez v6, :cond_269
+    if-lez v6, :cond_23
 
     .line 74
     invoke-static {}, Llibs/t43;->Set()Z
 
     move-result v9
 
-    if-eqz v9, :cond_269
+    if-eqz v9, :cond_23
 
     .line 75
     iget-object v9, v3, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
@@ -2590,25 +2590,25 @@
     invoke-static {v3, v4}, Llibs/sp;->t(Landroid/graphics/BitmapFactory$Options;Landroid/graphics/Bitmap;)V
 
     .line 76
-    :cond_269
+    :cond_23
     invoke-static {}, Llibs/t43;->Work()Z
 
     move-result v4
 
-    if-eqz v4, :cond_298
+    if-eqz v4, :cond_26
 
     .line 77
     sget-object v4, Llibs/lf2;->Y:Llibs/lf2;
 
     move-object/from16 v6, p12
 
-    if-ne v6, v4, :cond_28a
+    if-ne v6, v4, :cond_24
 
     invoke-static {v3}, Llibs/Epsilon;->k(Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/ColorSpace;
 
     move-result-object v4
 
-    if-eqz v4, :cond_28a
+    if-eqz v4, :cond_24
 
     invoke-static {v3}, Llibs/Epsilon;->k(Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/ColorSpace;
 
@@ -2619,40 +2619,40 @@
 
     move-result v4
 
-    if-eqz v4, :cond_28a
+    if-eqz v4, :cond_24
 
     .line 79
     invoke-static {}, Llibs/Epsilon;->i()Landroid/graphics/ColorSpace$Named;
 
     move-result-object v4
 
-    goto :goto_28e
+    goto :goto_1b
 
-    :cond_28a
+    :cond_24
     invoke-static {}, Llibs/Epsilon;->List()Landroid/graphics/ColorSpace$Named;
 
     move-result-object v4
 
-    :goto_28e
+    :goto_1b
     invoke-static {v4}, Llibs/Epsilon;->l(Landroid/graphics/ColorSpace$Named;)Landroid/graphics/ColorSpace;
 
     move-result-object v4
 
     invoke-static {v3, v4}, Llibs/Epsilon;->u(Landroid/graphics/BitmapFactory$Options;Landroid/graphics/ColorSpace;)V
 
-    :cond_295
-    :goto_295
+    :cond_25
+    :goto_1c
     move-object/from16 v4, p14
 
-    goto :goto_2a9
+    goto :goto_1d
 
     .line 80
-    :cond_298
+    :cond_26
     invoke-static {}, Llibs/t43;->Task()Z
 
     move-result v4
 
-    if-eqz v4, :cond_295
+    if-eqz v4, :cond_25
 
     .line 81
     invoke-static {}, Llibs/Epsilon;->List()Landroid/graphics/ColorSpace$Named;
@@ -2663,21 +2663,21 @@
 
     invoke-static {v3, v4}, Llibs/Epsilon;->u(Landroid/graphics/BitmapFactory$Options;Landroid/graphics/ColorSpace;)V
 
-    goto :goto_295
+    goto :goto_1c
 
     .line 82
-    :goto_2a9
+    :goto_1d
     invoke-static {v0, v2, v3, v5, v4}, Llibs/nd0;->c(Llibs/jt1;Llibs/ep1;Landroid/graphics/BitmapFactory$Options;Llibs/za;Ljava/lang/Object;)[Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    if-nez v0, :cond_2b3
+    if-nez v0, :cond_27
 
     const/16 v16, 0x0
 
-    goto/16 :goto_37b
+    goto/16 :goto_23
 
-    :cond_2b3
+    :cond_27
     const/16 v17, 0x0
 
     .line 83
@@ -2694,19 +2694,19 @@
     .line 86
     iget-object v4, v4, Llibs/kk0;->Y:Ljava/lang/Throwable;
 
-    if-eqz v4, :cond_2c7
+    if-eqz v4, :cond_29
 
-    if-eqz v2, :cond_2c6
+    if-eqz v2, :cond_28
 
     .line 87
     invoke-interface {v3, v2}, Llibs/pf;->b(Landroid/graphics/Bitmap;)V
 
     .line 88
-    :cond_2c6
+    :cond_28
     throw v4
 
-    :cond_2c7
-    if-eqz v2, :cond_376
+    :cond_29
+    if-eqz v2, :cond_2d
 
     .line 89
     iget-object v3, v1, Llibs/nd0;->b:Landroid/util/DisplayMetrics;
@@ -2731,73 +2731,73 @@
 
     const/high16 v9, -0x40800000    # -1.0f
 
-    packed-switch v11, :pswitch_data_396
+    packed-switch v11, :pswitch_data_2
 
-    goto :goto_307
+    goto :goto_1e
 
     .line 92
-    :pswitch_2e3
+    :pswitch_4
     invoke-virtual {v4, v7}, Landroid/graphics/Matrix;->setRotate(F)V
 
-    goto :goto_307
+    goto :goto_1e
 
     .line 93
-    :pswitch_2e7
+    :pswitch_5
     invoke-virtual {v4, v7}, Landroid/graphics/Matrix;->setRotate(F)V
 
     .line 94
     invoke-virtual {v4, v9, v8}, Landroid/graphics/Matrix;->postScale(FF)Z
 
-    goto :goto_307
+    goto :goto_1e
 
     .line 95
-    :pswitch_2ee
+    :pswitch_6
     invoke-virtual {v4, v6}, Landroid/graphics/Matrix;->setRotate(F)V
 
-    goto :goto_307
+    goto :goto_1e
 
     .line 96
-    :pswitch_2f2
+    :pswitch_7
     invoke-virtual {v4, v6}, Landroid/graphics/Matrix;->setRotate(F)V
 
     .line 97
     invoke-virtual {v4, v9, v8}, Landroid/graphics/Matrix;->postScale(FF)Z
 
-    goto :goto_307
+    goto :goto_1e
 
     .line 98
-    :pswitch_2f9
+    :pswitch_8
     invoke-virtual {v4, v5}, Landroid/graphics/Matrix;->setRotate(F)V
 
     .line 99
     invoke-virtual {v4, v9, v8}, Landroid/graphics/Matrix;->postScale(FF)Z
 
-    goto :goto_307
+    goto :goto_1e
 
     .line 100
-    :pswitch_300
+    :pswitch_9
     invoke-virtual {v4, v5}, Landroid/graphics/Matrix;->setRotate(F)V
 
-    goto :goto_307
+    goto :goto_1e
 
     .line 101
-    :pswitch_304
+    :pswitch_a
     invoke-virtual {v4, v9, v8}, Landroid/graphics/Matrix;->setScale(FF)V
 
     .line 102
-    :goto_307
+    :goto_1e
     invoke-virtual {v4}, Landroid/graphics/Matrix;->isIdentity()Z
 
     move-result v5
 
-    if-eqz v5, :cond_30f
+    if-eqz v5, :cond_2a
 
     move-object v7, v2
 
-    goto :goto_363
+    goto :goto_20
 
     .line 103
-    :cond_30f
+    :cond_2a
     new-instance v5, Landroid/graphics/RectF;
 
     invoke-virtual {v2}, Landroid/graphics/Bitmap;->getWidth()I
@@ -2842,19 +2842,19 @@
 
     move-result-object v8
 
-    if-eqz v8, :cond_33d
+    if-eqz v8, :cond_2b
 
     invoke-virtual {v2}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
 
     move-result-object v8
 
-    goto :goto_33f
+    goto :goto_1f
 
-    :cond_33d
+    :cond_2b
     sget-object v8, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     .line 108
-    :goto_33f
+    :goto_1f
     invoke-interface {v3, v6, v7, v8}, Llibs/pf;->a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v3
@@ -2876,7 +2876,7 @@
     invoke-interface {v5}, Ljava/util/concurrent/locks/Lock;->lock()V
 
     .line 111
-    :try_start_351
+    :try_start_7
     new-instance v6, Landroid/graphics/Canvas;
 
     invoke-direct {v6, v3}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
@@ -2890,8 +2890,8 @@
 
     .line 113
     invoke-virtual {v6, v4}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
-    :try_end_35f
-    .catchall {:try_start_351 .. :try_end_35f} :catchall_371
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_7
 
     .line 114
     invoke-interface {v5}, Ljava/util/concurrent/locks/Lock;->unlock()V
@@ -2899,25 +2899,25 @@
     move-object v7, v3
 
     .line 115
-    :goto_363
+    :goto_20
     invoke-virtual {v2, v7}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_36e
+    if-nez v3, :cond_2c
 
     .line 116
     iget-object v3, v1, Llibs/nd0;->a:Llibs/pf;
 
     invoke-interface {v3, v2}, Llibs/pf;->b(Landroid/graphics/Bitmap;)V
 
-    :cond_36e
-    :goto_36e
+    :cond_2c
+    :goto_21
     const/16 v17, 0x0
 
-    goto :goto_378
+    goto :goto_22
 
-    :catchall_371
+    :catchall_7
     move-exception v0
 
     .line 117
@@ -2926,45 +2926,45 @@
     .line 118
     throw v0
 
-    :cond_376
+    :cond_2d
     const/4 v7, 0x0
 
-    goto :goto_36e
+    goto :goto_21
 
     .line 119
-    :goto_378
+    :goto_22
     aput-object v7, v0, v17
 
     return-object v0
 
-    :goto_37b
+    :goto_23
     return-object v16
 
-    :pswitch_data_37c
+    :pswitch_data_0
     .packed-switch 0x3
-        :pswitch_49
-        :pswitch_49
-        :pswitch_46
-        :pswitch_46
-        :pswitch_43
-        :pswitch_43
+        :pswitch_2
+        :pswitch_2
+        :pswitch_1
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
     .end packed-switch
 
-    :pswitch_data_38c
+    :pswitch_data_1
     .packed-switch 0x0
-        :pswitch_114
-        :pswitch_114
-        :pswitch_114
+        :pswitch_3
+        :pswitch_3
+        :pswitch_3
     .end packed-switch
 
-    :pswitch_data_396
+    :pswitch_data_2
     .packed-switch 0x2
-        :pswitch_304
-        :pswitch_300
-        :pswitch_2f9
-        :pswitch_2f2
-        :pswitch_2ee
-        :pswitch_2e7
-        :pswitch_2e3
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
     .end packed-switch
 .end method

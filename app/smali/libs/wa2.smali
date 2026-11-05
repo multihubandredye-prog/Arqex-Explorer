@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/os/ParcelFileDescriptor;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p1}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public final close()V
-    .registers 2
+    .locals 1
 
     .line 1
     :try_start_0
@@ -44,8 +44,8 @@
     .line 2
     .line 3
     invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor;->close()V
-    :try_end_5
-    .catchall {:try_start_0 .. :try_end_5} :catchall_9
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 4
     .line 5
@@ -58,7 +58,7 @@
     return-void
 
     .line 10
-    :catchall_9
+    :catchall_0
     move-exception v0
 
     .line 11

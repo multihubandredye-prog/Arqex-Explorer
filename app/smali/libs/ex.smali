@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/ConfigServerActivity;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/ex;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 11
+    .locals 10
 
     .line 1
     iget-byte v0, p0, Llibs/ex;->X:B
@@ -54,7 +54,7 @@
 
     .line 7
     .line 8
-    packed-switch v0, :pswitch_data_a2
+    packed-switch v0, :pswitch_data_0
 
     .line 9
     .line 10
@@ -70,7 +70,7 @@
     const/4 v4, 0x0
 
     .line 16
-    :try_start_f
+    :try_start_0
     iget v0, v3, Lcom/mixplorer/activities/ConfigServerActivity;->Uniform:I
 
     .line 17
@@ -135,7 +135,7 @@
     move-result v0
 
     .line 48
-    if-nez v0, :cond_3d
+    if-nez v0, :cond_0
 
     .line 49
     .line 50
@@ -152,33 +152,33 @@
 
     .line 56
     invoke-static {v0}, Llibs/gx1;->d(Ljava/lang/Object;)V
-    :try_end_3a
-    .catchall {:try_start_f .. :try_end_3a} :catchall_3b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 57
     .line 58
     .line 59
-    goto :goto_3d
+    goto :goto_0
 
     .line 60
-    :catchall_3b
+    :catchall_0
     move-exception v0
 
     .line 61
-    goto :goto_40
+    goto :goto_1
 
     .line 62
-    :cond_3d
-    :goto_3d
+    :cond_0
+    :goto_0
     iput-boolean v4, v3, Lcom/mixplorer/activities/ConfigServerActivity;->I1:Z
 
     .line 63
     .line 64
-    goto :goto_57
+    goto :goto_2
 
     .line 65
-    :goto_40
-    :try_start_40
+    :goto_1
+    :try_start_1
     const-string v5, "SHORTCUT"
 
     .line 66
@@ -217,20 +217,20 @@
 
     .line 84
     invoke-static {v0}, Llibs/gx1;->d(Ljava/lang/Object;)V
-    :try_end_56
-    .catchall {:try_start_40 .. :try_end_56} :catchall_58
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 85
     .line 86
     .line 87
-    goto :goto_3d
+    goto :goto_0
 
     .line 88
-    :goto_57
+    :goto_2
     return-void
 
     .line 89
-    :catchall_58
+    :catchall_1
     move-exception v0
 
     .line 90
@@ -241,7 +241,7 @@
     throw v0
 
     .line 93
-    :pswitch_5c
+    :pswitch_0
     sget-boolean v0, Lcom/mixplorer/activities/ConfigServerActivity;->IlI:Z
 
     .line 94
@@ -259,7 +259,7 @@
     return-void
 
     .line 102
-    :pswitch_65
+    :pswitch_1
     sget-boolean v0, Lcom/mixplorer/activities/ConfigServerActivity;->IlI:Z
 
     .line 103
@@ -277,7 +277,7 @@
     return-void
 
     .line 111
-    :pswitch_6e
+    :pswitch_2
     iget-object v5, p0, Llibs/ex;->Y:Lcom/mixplorer/activities/ConfigServerActivity;
 
     .line 112
@@ -286,7 +286,7 @@
 
     .line 114
     .line 115
-    :try_start_72
+    :try_start_2
     iget-object v0, v5, Lcom/mixplorer/activities/ConfigServerActivity;->Sierra:Ljava/lang/String;
 
     .line 116
@@ -338,16 +338,16 @@
     .line 140
     .line 141
     invoke-virtual {v5, v4}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
-    :try_end_8f
-    .catchall {:try_start_72 .. :try_end_8f} :catchall_90
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
     .line 142
     .line 143
     .line 144
-    goto :goto_a0
+    goto :goto_3
 
     .line 145
-    :catchall_90
+    :catchall_2
     move-exception v0
 
     .line 146
@@ -378,17 +378,17 @@
     .line 159
     .line 160
     .line 161
-    :goto_a0
+    :goto_3
     return-void
 
     .line 162
     nop
 
     .line 163
-    :pswitch_data_a2
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_6e
-        :pswitch_65
-        :pswitch_5c
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/BrowseActivity;Llibs/od;Ljava/util/ArrayList;IZ)V
-    .registers 6
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,11 +40,11 @@
 
 # virtual methods
 .method public run()V
-    .registers 7
+    .locals 6
 
     iget-boolean v0, p0, Llibs/SmartFeaturesV116$DeleteEmptyWorkerRunnable;->uiPhase:Z
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Llibs/SmartFeaturesV116$DeleteEmptyWorkerRunnable;->activity:Lcom/mixplorer/activities/BrowseActivity;
 
@@ -56,7 +56,7 @@
 
     return-void
 
-    :cond_e
+    :cond_0
     iget-object v0, p0, Llibs/SmartFeaturesV116$DeleteEmptyWorkerRunnable;->emptyDirs:Ljava/util/ArrayList;
 
     invoke-static {v0}, Llibs/SmartFeaturesV116;->deleteEmptyFoldersBatch(Ljava/util/ArrayList;)I

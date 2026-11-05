@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -22,7 +22,7 @@
 
 # virtual methods
 .method public final h(II)I
-    .registers 3
+    .locals 0
 
     .line 1
     rem-int/2addr p1, p2

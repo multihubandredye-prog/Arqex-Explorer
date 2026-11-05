@@ -18,7 +18,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/ta1;
@@ -50,7 +50,7 @@
 .end method
 
 .method public constructor <init>(Llibs/kk1;Llibs/un1;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -72,14 +72,14 @@
 
 # virtual methods
 .method public final close()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/ta1;->Y:Llibs/kk1;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -91,7 +91,7 @@
 
     .line 8
     .line 9
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_0
 
     .line 10
     .line 11
@@ -107,6 +107,6 @@
 
     .line 16
     .line 17
-    :cond_10
+    :cond_0
     return-void
 .end method

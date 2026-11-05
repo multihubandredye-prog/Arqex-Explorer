@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(IJ)V
-    .registers 5
+    .locals 1
 
     .line 1
     const/16 v0, 0x200

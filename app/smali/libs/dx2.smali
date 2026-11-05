@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/util/ArrayList;Z)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-boolean p3, p0, Llibs/dx2;->a:Z
@@ -39,14 +39,14 @@
 
 # virtual methods
 .method public final e(Llibs/rp0;)Z
-    .registers 7
+    .locals 5
 
     .line 1
     iget-boolean v0, p0, Llibs/dx2;->a:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_3a
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -154,11 +154,11 @@
     move-result v0
 
     .line 57
-    if-eqz v0, :cond_3f
+    if-eqz v0, :cond_1
 
     .line 58
     .line 59
-    :cond_3a
+    :cond_0
     iget-object v0, p0, Llibs/dx2;->c:Ljava/util/ArrayList;
 
     .line 60
@@ -168,7 +168,7 @@
     .line 62
     .line 63
     .line 64
-    :cond_3f
+    :cond_1
     const/4 p1, 0x0
 
     .line 65

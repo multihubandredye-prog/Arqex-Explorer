@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 23
+    .locals 23
 
     .line 1
     const/16 v0, 0x28

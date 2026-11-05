@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/PreferenceActivity;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/le2;->a:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onDismiss(Landroid/content/DialogInterface;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-byte p1, p0, Llibs/le2;->a:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch p1, :pswitch_data_14
+    packed-switch p1, :pswitch_data_0
 
     .line 6
     .line 7
@@ -64,7 +64,7 @@
     return-void
 
     .line 14
-    :pswitch_d
+    :pswitch_0
     sget-boolean p1, Lcom/mixplorer/activities/PreferenceActivity;->O:Z
 
     .line 15
@@ -82,8 +82,8 @@
     nop
 
     .line 21
-    :pswitch_data_14
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_d
+        :pswitch_0
     .end packed-switch
 .end method

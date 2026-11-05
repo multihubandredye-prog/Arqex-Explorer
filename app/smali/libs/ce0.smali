@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic List(Landroid/webkit/WebSettings;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -20,7 +20,7 @@
 .end method
 
 .method public static bridge synthetic Map(Landroid/app/Notification$Builder;Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setContentInfo(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
@@ -32,7 +32,7 @@
 .end method
 
 .method public static bridge synthetic Object(FLandroid/view/View;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p1, p0}, Landroid/view/View;->setScaleY(F)V
@@ -44,7 +44,7 @@
 .end method
 
 .method public static bridge synthetic Set(Landroid/app/Notification$Builder;Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setTicker(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
@@ -56,7 +56,7 @@
 .end method
 
 .method public static bridge synthetic String(Landroid/app/Notification$Builder;Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
@@ -68,7 +68,7 @@
 .end method
 
 .method public static bridge synthetic a(Landroid/view/DragEvent;)F
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/DragEvent;->getX()F
@@ -83,7 +83,7 @@
 .end method
 
 .method public static bridge synthetic b(Landroid/view/View;)F
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->getY()F
@@ -98,7 +98,7 @@
 .end method
 
 .method public static bridge synthetic c(Llibs/fu3;)F
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->getY()F
@@ -113,7 +113,7 @@
 .end method
 
 .method public static bridge synthetic d(I)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-static {p0}, Landroid/view/KeyEvent;->normalizeMetaState(I)I
@@ -128,7 +128,7 @@
 .end method
 
 .method public static bridge synthetic e(Landroid/view/DragEvent;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/DragEvent;->getAction()I
@@ -143,7 +143,7 @@
 .end method
 
 .method public static bridge synthetic f(Landroid/content/ComponentName;)Landroid/content/Intent;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-static {p0}, Landroid/content/Intent;->makeMainActivity(Landroid/content/ComponentName;)Landroid/content/Intent;
@@ -158,7 +158,7 @@
 .end method
 
 .method public static bridge synthetic g(Landroid/view/View;)Landroid/graphics/Matrix;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->getMatrix()Landroid/graphics/Matrix;
@@ -173,7 +173,7 @@
 .end method
 
 .method public static bridge synthetic h()Landroid/graphics/PorterDuff$Mode;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/PorterDuff$Mode;->ADD:Landroid/graphics/PorterDuff$Mode;
@@ -184,7 +184,7 @@
 .end method
 
 .method public static bridge synthetic i(Landroid/view/DragEvent;)Ljava/lang/Object;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/DragEvent;->getLocalState()Ljava/lang/Object;
@@ -199,7 +199,7 @@
 .end method
 
 .method public static bridge synthetic j(FLandroid/view/View;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p1, p0}, Landroid/view/View;->setScaleX(F)V
@@ -211,7 +211,7 @@
 .end method
 
 .method public static bridge synthetic k(Landroid/app/Notification$Builder;Landroid/graphics/Bitmap;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setLargeIcon(Landroid/graphics/Bitmap;)Landroid/app/Notification$Builder;
@@ -223,7 +223,7 @@
 .end method
 
 .method public static bridge synthetic l(Landroid/app/Notification$Builder;Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
@@ -235,7 +235,7 @@
 .end method
 
 .method public static bridge synthetic m(Landroid/content/ContentProvider$PipeDataWriter;Landroid/os/ParcelFileDescriptor;Landroid/net/Uri;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/Object;)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-interface/range {p0 .. p5}, Landroid/content/ContentProvider$PipeDataWriter;->writeDataToPipe(Landroid/os/ParcelFileDescriptor;Landroid/net/Uri;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/Object;)V
@@ -247,7 +247,7 @@
 .end method
 
 .method public static bridge synthetic n(Landroid/graphics/SurfaceTexture;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/graphics/SurfaceTexture;->updateTexImage()V
@@ -259,7 +259,7 @@
 .end method
 
 .method public static bridge synthetic p(Landroid/graphics/SurfaceTexture;[F)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/graphics/SurfaceTexture;->getTransformMatrix([F)V
@@ -271,7 +271,7 @@
 .end method
 
 .method public static bridge synthetic q(Landroid/graphics/drawable/Drawable;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->jumpToCurrentState()V
@@ -283,7 +283,7 @@
 .end method
 
 .method public static bridge synthetic r(Landroid/view/View;ILandroid/graphics/Paint;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
@@ -295,7 +295,7 @@
 .end method
 
 .method public static bridge synthetic s(Landroid/webkit/WebSettings;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -310,7 +310,7 @@
 .end method
 
 .method public static bridge synthetic t(Landroid/widget/LinearLayout;Llibs/rv1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/widget/LinearLayout;->setOnDragListener(Landroid/view/View$OnDragListener;)V
@@ -322,7 +322,7 @@
 .end method
 
 .method public static bridge synthetic u(Lcom/mixplorer/widgets/MiImageView;I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/widget/ImageView;->setNextFocusForwardId(I)V
@@ -334,7 +334,7 @@
 .end method
 
 .method public static bridge synthetic v(Llibs/fu3;F)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/View;->setY(F)V
@@ -346,7 +346,7 @@
 .end method
 
 .method public static bridge synthetic w(I)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-static {p0}, Landroid/view/KeyEvent;->metaStateHasNoModifiers(I)Z
@@ -361,7 +361,7 @@
 .end method
 
 .method public static bridge synthetic x(II)Z
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p0, p1}, Landroid/view/KeyEvent;->metaStateHasModifiers(II)Z
@@ -376,7 +376,7 @@
 .end method
 
 .method public static bridge synthetic y(Landroid/view/KeyEvent;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/KeyEvent;->isCtrlPressed()Z
@@ -391,7 +391,7 @@
 .end method
 
 .method public static bridge synthetic z(Landroid/view/View;)F
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->getTranslationX()F

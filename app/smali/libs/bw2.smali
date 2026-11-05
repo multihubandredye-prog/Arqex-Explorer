@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/pu2;JJLlibs/k00;I[B)V
-    .registers 17
+    .locals 8
 
     .line 1
     const/16 v1, 0x21
@@ -63,7 +63,7 @@
 
 # virtual methods
 .method public final i(Llibs/rw2;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget v0, p0, Llibs/lv2;->c:I
@@ -87,17 +87,17 @@
 
     .line 11
     .line 12
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     .line 13
     .line 14
     const/4 v0, 0x0
 
     .line 15
-    goto :goto_16
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_0
     invoke-static {v0}, Llibs/sk1;->g(I)I
 
     .line 17
@@ -115,7 +115,7 @@
     int-to-byte v0, v1
 
     .line 23
-    :goto_16
+    :goto_0
     invoke-virtual {p1, v0}, Llibs/rw2;->e(B)V
 
     .line 24

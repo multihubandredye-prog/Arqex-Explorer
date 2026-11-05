@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/qt1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final handleMessage(Landroid/os/Message;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ft1;->a:Llibs/qt1;

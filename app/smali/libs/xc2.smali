@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(BI)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/xc2;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 6
+    .locals 5
 
     .line 1
     iget-byte v0, p0, Llibs/xc2;->X:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_44
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -56,7 +56,7 @@
 
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 11
@@ -76,7 +76,7 @@
     move-result v0
 
     .line 19
-    if-nez v0, :cond_28
+    if-nez v0, :cond_0
 
     .line 20
     .line 21
@@ -93,16 +93,16 @@
 
     .line 27
     invoke-static {v0}, Llibs/gx1;->d(Ljava/lang/Object;)V
-    :try_end_1d
-    .catchall {:try_start_9 .. :try_end_1d} :catchall_1e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 28
     .line 29
     .line 30
-    goto :goto_28
+    goto :goto_0
 
     .line 31
-    :catchall_1e
+    :catchall_0
     move-exception v0
 
     .line 32
@@ -123,17 +123,17 @@
     .line 39
     .line 40
     .line 41
-    :cond_28
-    :goto_28
+    :cond_0
+    :goto_0
     return-void
 
     .line 42
-    :pswitch_29
+    :pswitch_0
     sget-object v0, Lcom/mixplorer/AppImpl;->Pi:Llibs/rd2;
 
     .line 43
     .line 44
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_1
 
     .line 45
     .line 46
@@ -149,7 +149,7 @@
     move-result v2
 
     .line 52
-    if-eqz v2, :cond_43
+    if-eqz v2, :cond_1
 
     .line 53
     .line 54
@@ -179,12 +179,12 @@
     .line 66
     .line 67
     .line 68
-    :cond_43
+    :cond_1
     return-void
 
     .line 69
-    :pswitch_data_44
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_29
+        :pswitch_0
     .end packed-switch
 .end method

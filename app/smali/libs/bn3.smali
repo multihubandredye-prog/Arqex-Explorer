@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Theme;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -24,7 +24,7 @@
 
     .line 5
     .line 6
-    if-nez v0, :cond_13
+    if-nez v0, :cond_1
 
     .line 7
     .line 8
@@ -32,14 +32,14 @@
 
     .line 9
     .line 10
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 11
     .line 12
-    goto :goto_13
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     const-string p1, "unknown object passed to Time"
 
     .line 14
@@ -55,8 +55,8 @@
     throw p1
 
     .line 20
-    :cond_13
-    :goto_13
+    :cond_1
+    :goto_0
     iput-object p1, p0, Llibs/bn3;->X:Llibs/Theme;
 
     .line 21
@@ -65,10 +65,10 @@
 .end method
 
 .method public static h(Llibs/Core;)Llibs/bn3;
-    .registers 2
+    .locals 1
 
     .line 1
-    if-eqz p0, :cond_32
+    if-eqz p0, :cond_3
 
     .line 2
     .line 3
@@ -76,19 +76,19 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
-    goto :goto_32
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     instance-of v0, p0, Llibs/Point;
 
     .line 9
     .line 10
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_1
 
     .line 11
     .line 12
@@ -108,12 +108,12 @@
     return-object v0
 
     .line 20
-    :cond_13
+    :cond_1
     instance-of v0, p0, Llibs/File;
 
     .line 21
     .line 22
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_2
 
     .line 23
     .line 24
@@ -133,7 +133,7 @@
     return-object v0
 
     .line 32
-    :cond_1f
+    :cond_2
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 33
@@ -173,8 +173,8 @@
     return-object p0
 
     .line 51
-    :cond_32
-    :goto_32
+    :cond_3
+    :goto_0
     check-cast p0, Llibs/bn3;
 
     .line 52
@@ -185,7 +185,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bn3;->X:Llibs/Theme;
@@ -196,7 +196,7 @@
 .end method
 
 .method public final g()Ljava/util/Date;
-    .registers 6
+    .locals 5
 
     .line 1
     :try_start_0
@@ -208,7 +208,7 @@
 
     .line 4
     .line 5
-    if-eqz v1, :cond_3c
+    if-eqz v1, :cond_1
 
     .line 6
     .line 7
@@ -274,7 +274,7 @@
 
     .line 38
     .line 39
-    if-ge v2, v3, :cond_2f
+    if-ge v2, v3, :cond_0
 
     .line 40
     .line 41
@@ -290,10 +290,10 @@
     move-result-object v0
 
     .line 47
-    goto :goto_35
+    goto :goto_0
 
     .line 48
-    :cond_2f
+    :cond_0
     const-string v2, "19"
 
     .line 49
@@ -306,7 +306,7 @@
     move-result-object v0
 
     .line 54
-    :goto_35
+    :goto_0
     invoke-virtual {v1, v0}, Ljava/text/DateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
 
     .line 55
@@ -318,14 +318,14 @@
     return-object v0
 
     .line 59
-    :catch_3a
+    :catch_0
     move-exception v0
 
     .line 60
-    goto :goto_43
+    goto :goto_1
 
     .line 61
-    :cond_3c
+    :cond_1
     check-cast v0, Llibs/File;
 
     .line 62
@@ -336,14 +336,14 @@
     .line 65
     .line 66
     move-result-object v0
-    :try_end_42
-    .catch Ljava/text/ParseException; {:try_start_0 .. :try_end_42} :catch_3a
+    :try_end_0
+    .catch Ljava/text/ParseException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 67
     return-object v0
 
     .line 68
-    :goto_43
+    :goto_1
     const-string v1, "invalid date string: "
 
     .line 69
@@ -368,7 +368,7 @@
 .end method
 
 .method public final i()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/bn3;->X:Llibs/Theme;
@@ -379,7 +379,7 @@
 
     .line 4
     .line 5
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_1
 
     .line 6
     .line 7
@@ -410,7 +410,7 @@
 
     .line 19
     .line 20
-    if-ge v1, v2, :cond_1c
+    if-ge v1, v2, :cond_0
 
     .line 21
     .line 22
@@ -429,7 +429,7 @@
     return-object v0
 
     .line 29
-    :cond_1c
+    :cond_0
     const-string v1, "19"
 
     .line 30
@@ -445,7 +445,7 @@
     return-object v0
 
     .line 36
-    :cond_23
+    :cond_1
     check-cast v0, Llibs/File;
 
     .line 37
@@ -462,7 +462,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/bn3;->i()Ljava/lang/String;

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Param;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/um;->X:Llibs/Param;
@@ -38,7 +38,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 10
+    .locals 9
 
     .line 1
     new-instance v0, Ljava/lang/StringBuffer;
@@ -85,7 +85,7 @@
     const/4 v6, 0x0
 
     .line 23
-    :goto_16
+    :goto_0
     invoke-virtual {v2}, Llibs/Param;->size()I
 
     .line 24
@@ -94,7 +94,7 @@
     move-result v7
 
     .line 27
-    if-eq v6, v7, :cond_4e
+    if-eq v6, v7, :cond_3
 
     .line 28
     .line 29
@@ -106,7 +106,7 @@
     move-result-object v7
 
     .line 33
-    if-eqz v7, :cond_46
+    if-eqz v7, :cond_2
 
     .line 34
     .line 35
@@ -114,19 +114,19 @@
 
     .line 36
     .line 37
-    if-eqz v8, :cond_27
+    if-eqz v8, :cond_0
 
     .line 38
     .line 39
-    goto :goto_46
+    goto :goto_1
 
     .line 40
-    :cond_27
+    :cond_0
     instance-of v8, v7, Llibs/Param;
 
     .line 41
     .line 42
-    if-eqz v8, :cond_33
+    if-eqz v8, :cond_1
 
     .line 43
     .line 44
@@ -143,10 +143,10 @@
     .line 49
     .line 50
     .line 51
-    goto :goto_49
+    goto :goto_2
 
     .line 52
-    :cond_33
+    :cond_1
     invoke-virtual {v7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 53
@@ -186,8 +186,8 @@
     return-object v0
 
     .line 71
-    :cond_46
-    :goto_46
+    :cond_2
+    :goto_1
     move-object v8, v7
 
     .line 72
@@ -195,7 +195,7 @@
 
     .line 73
     .line 74
-    :goto_49
+    :goto_2
     aput-object v8, v4, v6
 
     .line 75
@@ -204,12 +204,12 @@
 
     .line 77
     .line 78
-    goto :goto_16
+    goto :goto_0
 
     .line 79
-    :cond_4e
-    :goto_4e
-    if-eq v5, v3, :cond_60
+    :cond_3
+    :goto_3
+    if-eq v5, v3, :cond_4
 
     .line 80
     .line 81
@@ -240,10 +240,10 @@
 
     .line 95
     .line 96
-    goto :goto_4e
+    goto :goto_3
 
     .line 97
-    :cond_60
+    :cond_4
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     .line 98

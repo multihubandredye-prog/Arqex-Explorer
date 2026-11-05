@@ -26,7 +26,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/text/SimpleDateFormat;
@@ -54,7 +54,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Llibs/vd;ZILjava/lang/Thread;)V
-    .registers 7
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -92,7 +92,7 @@
 
 # virtual methods
 .method public final a()Ljava/util/ArrayList;
-    .registers 4
+    .locals 3
 
     .line 1
     :try_start_0
@@ -114,14 +114,14 @@
     .line 9
     .line 10
     move-result-object v0
-    :try_end_a
-    .catchall {:try_start_0 .. :try_end_a} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 11
     return-object v0
 
     .line 12
-    :catchall_b
+    :catchall_0
     move-exception v0
 
     .line 13
@@ -155,7 +155,7 @@
 .end method
 
 .method public final b(Ljava/lang/String;ILjava/lang/String;)Ljava/util/ArrayList;
-    .registers 24
+    .locals 20
 
     .line 1
     move-object/from16 v0, p0
@@ -178,7 +178,7 @@
 
     .line 10
     .line 11
-    if-eqz v3, :cond_f
+    if-eqz v3, :cond_0
 
     .line 12
     .line 13
@@ -186,15 +186,15 @@
 
     .line 14
     .line 15
-    goto :goto_11
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_0
     const-string v3, "song"
 
     .line 17
     .line 18
-    :goto_11
+    :goto_0
     new-instance v4, Ljava/lang/StringBuilder;
 
     .line 19
@@ -325,7 +325,7 @@
     move-result v4
 
     .line 88
-    if-nez v4, :cond_12d
+    if-nez v4, :cond_6
 
     .line 89
     .line 90
@@ -353,7 +353,7 @@
 
     .line 101
     .line 102
-    if-gtz v4, :cond_6e
+    if-gtz v4, :cond_1
 
     .line 103
     .line 104
@@ -366,11 +366,11 @@
     .line 107
     .line 108
     .line 109
-    goto/16 :goto_108
+    goto/16 :goto_4
 
     .line 110
     .line 111
-    :cond_6e
+    :cond_1
     const-string v4, "results"
 
     .line 112
@@ -411,8 +411,8 @@
     const/4 v8, 0x0
 
     .line 131
-    :goto_82
-    if-ge v8, v7, :cond_107
+    :goto_1
+    if-ge v8, v7, :cond_3
 
     .line 132
     .line 133
@@ -424,7 +424,7 @@
     move-result-object v9
 
     .line 137
-    :try_start_88
+    :try_start_0
     sget-object v10, Llibs/ho;->g:Ljava/text/SimpleDateFormat;
 
     .line 138
@@ -471,18 +471,18 @@
     .line 159
     .line 160
     move-result-object v10
-    :try_end_a0
-    .catch Ljava/text/ParseException; {:try_start_88 .. :try_end_a0} :catch_a3
+    :try_end_0
+    .catch Ljava/text/ParseException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 161
     move-object/from16 v16, v10
 
     .line 162
     .line 163
-    goto :goto_a6
+    goto :goto_2
 
     .line 164
-    :catch_a3
+    :catch_0
     nop
 
     .line 165
@@ -490,7 +490,7 @@
 
     .line 166
     .line 167
-    :goto_a6
+    :goto_2
     new-instance v11, Llibs/nc1;
 
     .line 168
@@ -659,14 +659,14 @@
 
     .line 254
     .line 255
-    if-lt v3, v9, :cond_101
+    if-lt v3, v9, :cond_2
 
     .line 256
     .line 257
-    goto :goto_107
+    goto :goto_3
 
     .line 258
-    :cond_101
+    :cond_2
     add-int/lit8 v8, v8, 0x1
 
     .line 259
@@ -675,16 +675,16 @@
 
     .line 261
     .line 262
-    goto/16 :goto_82
+    goto/16 :goto_1
 
     .line 263
     .line 264
-    :cond_107
-    :goto_107
+    :cond_3
+    :goto_3
     move-object v3, v4
 
     .line 265
-    :goto_108
+    :goto_4
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     .line 266
@@ -693,7 +693,7 @@
     move-result v4
 
     .line 269
-    if-nez v4, :cond_12c
+    if-nez v4, :cond_5
 
     .line 270
     .line 271
@@ -705,7 +705,7 @@
     move-result v4
 
     .line 275
-    if-nez v4, :cond_12c
+    if-nez v4, :cond_5
 
     .line 276
     .line 277
@@ -717,7 +717,7 @@
     move-result v4
 
     .line 281
-    if-nez v4, :cond_12c
+    if-nez v4, :cond_5
 
     .line 282
     .line 283
@@ -741,7 +741,7 @@
     move-result v4
 
     .line 293
-    if-nez v4, :cond_12b
+    if-nez v4, :cond_4
 
     .line 294
     .line 295
@@ -753,19 +753,19 @@
     move-result-object v3
 
     .line 299
-    goto :goto_12c
+    goto :goto_5
 
     .line 300
-    :cond_12b
+    :cond_4
     move-object v3, v1
 
     .line 301
-    :cond_12c
-    :goto_12c
+    :cond_5
+    :goto_5
     return-object v3
 
     .line 302
-    :cond_12d
+    :cond_6
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 303
@@ -778,7 +778,7 @@
 .end method
 
 .method public final bridge synthetic call()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/ho;->a()Ljava/util/ArrayList;

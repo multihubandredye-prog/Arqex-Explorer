@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(IS)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/ap2;-><init>(I)V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final b(Llibs/za;Ljava/util/Locale;)Ljava/lang/String;
-    .registers 15
+    .locals 12
 
     .line 1
     iget p1, p0, Llibs/ap2;->a:I
@@ -74,17 +74,17 @@
 
     .line 20
     .line 21
-    packed-switch v11, :pswitch_data_13c
+    packed-switch v11, :pswitch_data_0
 
     .line 22
     .line 23
     .line 24
-    packed-switch v11, :pswitch_data_14e
+    packed-switch v11, :pswitch_data_1
 
     .line 25
     .line 26
     .line 27
-    packed-switch v11, :pswitch_data_158
+    packed-switch v11, :pswitch_data_2
 
     .line 28
     .line 29
@@ -132,7 +132,7 @@
     return-object p1
 
     .line 51
-    :pswitch_32
+    :pswitch_0
     const-wide/16 v2, 0xfff
 
     .line 52
@@ -171,7 +171,7 @@
     return-object p1
 
     .line 69
-    :pswitch_44
+    :pswitch_1
     const-wide/32 v2, 0xffff
 
     .line 70
@@ -211,7 +211,7 @@
     return-object p1
 
     .line 88
-    :pswitch_57
+    :pswitch_2
     const-wide/32 v2, 0xffffff
 
     .line 89
@@ -251,7 +251,7 @@
     return-object p1
 
     .line 107
-    :pswitch_6a
+    :pswitch_3
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     .line 108
@@ -283,7 +283,7 @@
     return-object p1
 
     .line 122
-    :pswitch_79
+    :pswitch_4
     const-wide/16 v0, 0x0
 
     .line 123
@@ -292,7 +292,7 @@
 
     .line 125
     .line 126
-    if-nez v2, :cond_82
+    if-nez v2, :cond_0
 
     .line 127
     .line 128
@@ -303,7 +303,7 @@
     return-object p1
 
     .line 131
-    :cond_82
+    :cond_0
     const-string p1, "true"
 
     .line 132
@@ -311,7 +311,7 @@
     return-object p1
 
     .line 134
-    :pswitch_85
+    :pswitch_5
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     .line 135
@@ -343,7 +343,7 @@
     return-object p1
 
     .line 149
-    :pswitch_94
+    :pswitch_6
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     .line 150
@@ -373,7 +373,7 @@
     return-object p1
 
     .line 164
-    :pswitch_a3
+    :pswitch_7
     const-string p1, "TYPE_DYNAMIC_REFERENCE"
 
     .line 165
@@ -381,7 +381,7 @@
     return-object p1
 
     .line 167
-    :pswitch_a6
+    :pswitch_8
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 168
@@ -413,31 +413,31 @@
     long-to-int p2, p1
 
     .line 182
-    if-eqz p2, :cond_bd
+    if-eqz p2, :cond_2
 
     .line 183
     .line 184
-    if-eq p2, v8, :cond_ba
+    if-eq p2, v8, :cond_1
 
     .line 185
     .line 186
-    goto :goto_bf
+    goto :goto_0
 
     .line 187
-    :cond_ba
+    :cond_1
     const-string v7, "%p"
 
     .line 188
     .line 189
-    goto :goto_bf
+    goto :goto_0
 
     .line 190
-    :cond_bd
+    :cond_2
     const-string v7, "%"
 
     .line 191
     .line 192
-    :goto_bf
+    :goto_0
     invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 193
@@ -454,7 +454,7 @@
     return-object p1
 
     .line 200
-    :pswitch_c7
+    :pswitch_9
     new-instance v1, Ljava/lang/StringBuilder;
 
     .line 201
@@ -486,88 +486,88 @@
     long-to-int p2, p1
 
     .line 215
-    if-eqz p2, :cond_f5
+    if-eqz p2, :cond_8
 
     .line 216
     .line 217
-    if-eq p2, v8, :cond_f2
+    if-eq p2, v8, :cond_7
 
     .line 218
     .line 219
-    if-eq p2, v0, :cond_ef
+    if-eq p2, v0, :cond_6
 
     .line 220
     .line 221
     const/4 p1, 0x3
 
     .line 222
-    if-eq p2, p1, :cond_ec
+    if-eq p2, p1, :cond_5
 
     .line 223
     .line 224
     const/4 p1, 0x4
 
     .line 225
-    if-eq p2, p1, :cond_e9
+    if-eq p2, p1, :cond_4
 
     .line 226
     .line 227
     const/4 p1, 0x5
 
     .line 228
-    if-eq p2, p1, :cond_e6
+    if-eq p2, p1, :cond_3
 
     .line 229
     .line 230
-    goto :goto_f7
+    goto :goto_1
 
     .line 231
-    :cond_e6
+    :cond_3
     const-string v7, "mm"
 
     .line 232
     .line 233
-    goto :goto_f7
+    goto :goto_1
 
     .line 234
-    :cond_e9
+    :cond_4
     const-string v7, "in"
 
     .line 235
     .line 236
-    goto :goto_f7
+    goto :goto_1
 
     .line 237
-    :cond_ec
+    :cond_5
     const-string v7, "pt"
 
     .line 238
     .line 239
-    goto :goto_f7
+    goto :goto_1
 
     .line 240
-    :cond_ef
+    :cond_6
     const-string v7, "sp"
 
     .line 241
     .line 242
-    goto :goto_f7
+    goto :goto_1
 
     .line 243
-    :cond_f2
+    :cond_7
     const-string v7, "dp"
 
     .line 244
     .line 245
-    goto :goto_f7
+    goto :goto_1
 
     .line 246
-    :cond_f5
+    :cond_8
     const-string v7, "px"
 
     .line 247
     .line 248
-    :goto_f7
+    :goto_1
     invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 249
@@ -584,7 +584,7 @@
     return-object p1
 
     .line 256
-    :pswitch_ff
+    :pswitch_a
     long-to-int p2, p1
 
     .line 257
@@ -607,7 +607,7 @@
     return-object p1
 
     .line 266
-    :pswitch_109
+    :pswitch_b
     const-string p1, "xxxxxxxxxxxxx"
 
     .line 267
@@ -615,7 +615,7 @@
     return-object p1
 
     .line 269
-    :pswitch_10c
+    :pswitch_c
     ushr-long v6, p1, v6
 
     .line 270
@@ -624,14 +624,14 @@
 
     .line 272
     .line 273
-    if-nez v9, :cond_113
+    if-nez v9, :cond_9
 
     .line 274
     .line 275
     move-object v2, v3
 
     .line 276
-    :cond_113
+    :cond_9
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     .line 277
@@ -667,7 +667,7 @@
     return-object p1
 
     .line 293
-    :pswitch_124
+    :pswitch_d
     ushr-long v6, p1, v6
 
     .line 294
@@ -676,14 +676,14 @@
 
     .line 296
     .line 297
-    if-nez v9, :cond_12b
+    if-nez v9, :cond_a
 
     .line 298
     .line 299
     move-object v2, v3
 
     .line 300
-    :cond_12b
+    :cond_a
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     .line 301
@@ -719,15 +719,15 @@
     return-object p1
 
     .line 317
-    :pswitch_data_13c
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_124
-        :pswitch_10c
-        :pswitch_109
-        :pswitch_ff
-        :pswitch_c7
-        :pswitch_a6
-        :pswitch_a3
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
     .end packed-switch
 
     .line 318
@@ -748,11 +748,11 @@
     .line 333
     .line 334
     .line 335
-    :pswitch_data_14e
+    :pswitch_data_1
     .packed-switch 0x10
-        :pswitch_94
-        :pswitch_85
-        :pswitch_79
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
     .end packed-switch
 
     .line 336
@@ -765,11 +765,11 @@
     .line 343
     .line 344
     .line 345
-    :pswitch_data_158
+    :pswitch_data_2
     .packed-switch 0x1c
-        :pswitch_6a
-        :pswitch_57
-        :pswitch_44
-        :pswitch_32
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

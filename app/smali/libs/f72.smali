@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/StringReader;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0, p1}, Llibs/bk;-><init>(Ljava/io/Reader;)V
@@ -413,7 +413,7 @@
 
 # virtual methods
 .method public final readObject()Ljava/lang/Object;
-    .registers 10
+    .locals 9
 
     .line 1
     invoke-virtual {p0}, Llibs/bk;->w()Ljava/lang/String;
@@ -424,8 +424,8 @@
     move-result-object v0
 
     .line 5
-    :goto_4
-    if-eqz v0, :cond_13
+    :goto_0
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -441,7 +441,7 @@
     move-result v1
 
     .line 13
-    if-nez v1, :cond_13
+    if-nez v1, :cond_0
 
     .line 14
     .line 15
@@ -453,14 +453,14 @@
     move-result-object v0
 
     .line 19
-    goto :goto_4
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     const/4 v1, 0x0
 
     .line 21
-    if-eqz v0, :cond_8e
+    if-eqz v0, :cond_5
 
     .line 22
     .line 23
@@ -499,7 +499,7 @@
     move-result-object v0
 
     .line 40
-    if-lez v2, :cond_8e
+    if-lez v2, :cond_5
 
     .line 41
     .line 42
@@ -533,7 +533,7 @@
     .line 56
     .line 57
     .line 58
-    :goto_39
+    :goto_1
     invoke-virtual {p0}, Llibs/bk;->w()Ljava/lang/String;
 
     .line 59
@@ -542,7 +542,7 @@
     move-result-object v6
 
     .line 62
-    if-eqz v6, :cond_74
+    if-eqz v6, :cond_3
 
     .line 63
     .line 64
@@ -558,7 +558,7 @@
     move-result v7
 
     .line 70
-    if-ltz v7, :cond_64
+    if-ltz v7, :cond_1
 
     .line 71
     .line 72
@@ -616,10 +616,10 @@
     .line 98
     .line 99
     .line 100
-    goto :goto_39
+    goto :goto_1
 
     .line 101
-    :cond_64
+    :cond_1
     invoke-virtual {v6, v2}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     .line 102
@@ -631,14 +631,14 @@
     const/4 v8, -0x1
 
     .line 106
-    if-eq v7, v8, :cond_6c
+    if-eq v7, v8, :cond_2
 
     .line 107
     .line 108
-    goto :goto_74
+    goto :goto_2
 
     .line 109
-    :cond_6c
+    :cond_2
     invoke-virtual {v6}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     .line 110
@@ -652,12 +652,12 @@
     .line 114
     .line 115
     .line 116
-    goto :goto_39
+    goto :goto_1
 
     .line 117
-    :cond_74
-    :goto_74
-    if-eqz v6, :cond_84
+    :cond_3
+    :goto_2
+    if-eqz v6, :cond_4
 
     .line 118
     .line 119
@@ -686,10 +686,10 @@
     .line 130
     .line 131
     .line 132
-    goto :goto_8f
+    goto :goto_3
 
     .line 133
-    :cond_84
+    :cond_4
     const-string v0, " not found"
 
     .line 134
@@ -710,12 +710,12 @@
     return-object v1
 
     .line 143
-    :cond_8e
+    :cond_5
     move-object v2, v1
 
     .line 144
-    :goto_8f
-    if-eqz v2, :cond_af
+    :goto_3
+    if-eqz v2, :cond_7
 
     .line 145
     .line 146
@@ -735,7 +735,7 @@
     move-result v4
 
     .line 154
-    if-eqz v4, :cond_a6
+    if-eqz v4, :cond_6
 
     .line 155
     .line 156
@@ -762,7 +762,7 @@
     return-object v0
 
     .line 167
-    :cond_a6
+    :cond_6
     const-string v2, "unrecognised object: "
 
     .line 168
@@ -780,6 +780,6 @@
     .line 174
     .line 175
     .line 176
-    :cond_af
+    :cond_7
     return-object v1
 .end method

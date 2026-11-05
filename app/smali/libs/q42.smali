@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/c2;Ljava/util/Set;ILlibs/xl1;)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object p1, p0, Llibs/q42;->X:Llibs/c2;
@@ -78,7 +78,7 @@
 
     .line 13
     .line 14
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 15
     .line 16
@@ -106,6 +106,6 @@
     .line 26
     .line 27
     .line 28
-    :cond_1b
+    :cond_0
     return-void
 .end method

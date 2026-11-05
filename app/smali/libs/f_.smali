@@ -26,7 +26,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IILlibs/za;)V
-    .registers 9
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -72,7 +72,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 9
+    .locals 8
 
     .line 1
     iget v6, p0, Llibs/f_;->Xi:I

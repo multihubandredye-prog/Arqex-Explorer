@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;Ljava/util/ArrayList;Llibs/r21;Llibs/rb2;)V
-    .registers 5
+    .locals 0
 
     .line 1
     const/4 p4, 0x2
@@ -46,7 +46,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;B)V
-    .registers 5
+    .locals 0
 
     .line 14
     iput-byte p4, p0, Llibs/pe0;->c:B
@@ -65,14 +65,14 @@
 
 # virtual methods
 .method public Object(Landroid/view/View;I)Z
-    .registers 13
+    .locals 10
 
     .line 1
     iget-byte v0, p0, Llibs/pe0;->c:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_b0
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -88,7 +88,7 @@
     return p1
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     iget-object p1, p0, Llibs/pe0;->d:Ljava/lang/Object;
 
     .line 12
@@ -162,7 +162,7 @@
     move-result-object v1
 
     .line 48
-    :goto_2f
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 49
@@ -177,7 +177,7 @@
     const/4 v5, 0x1
 
     .line 54
-    if-eqz v3, :cond_95
+    if-eqz v3, :cond_3
 
     .line 55
     .line 56
@@ -217,28 +217,28 @@
 
     .line 73
     .line 74
-    if-eq v8, v5, :cond_71
+    if-eq v8, v5, :cond_2
 
     .line 75
     .line 76
     const/4 v5, 0x2
 
     .line 77
-    if-eq v8, v5, :cond_71
+    if-eq v8, v5, :cond_2
 
     .line 78
     .line 79
     const/4 v5, 0x3
 
     .line 80
-    if-eq v8, v5, :cond_6c
+    if-eq v8, v5, :cond_1
 
     .line 81
     .line 82
     const/4 v5, 0x4
 
     .line 83
-    if-eq v8, v5, :cond_5c
+    if-eq v8, v5, :cond_0
 
     .line 84
     .line 85
@@ -246,7 +246,7 @@
 
     .line 86
     .line 87
-    if-eq v8, v5, :cond_71
+    if-eq v8, v5, :cond_2
 
     .line 88
     .line 89
@@ -257,10 +257,10 @@
     move-object v5, v4
 
     .line 92
-    goto :goto_88
+    goto :goto_1
 
     .line 93
-    :cond_5c
+    :cond_0
     invoke-static {v7, v9}, Llibs/k42;->m(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 94
@@ -290,10 +290,10 @@
     move-result-object v5
 
     .line 108
-    goto :goto_88
+    goto :goto_1
 
     .line 109
-    :cond_6c
+    :cond_1
     invoke-static {v6}, Llibs/vl3;->Bundle(Ljava/lang/String;)Ljava/lang/String;
 
     .line 110
@@ -302,10 +302,10 @@
     move-result-object v5
 
     .line 113
-    goto :goto_88
+    goto :goto_1
 
     .line 114
-    :cond_71
+    :cond_2
     new-instance v5, Ljava/lang/StringBuilder;
 
     .line 115
@@ -349,7 +349,7 @@
     move-result-object v5
 
     .line 137
-    :goto_88
+    :goto_1
     new-instance v6, Llibs/r90;
 
     .line 138
@@ -372,10 +372,10 @@
     .line 147
     .line 148
     .line 149
-    goto :goto_2f
+    goto :goto_0
 
     .line 150
-    :cond_95
+    :cond_3
     new-instance p1, Llibs/wl2;
 
     .line 151
@@ -425,14 +425,14 @@
     return v5
 
     .line 177
-    :pswitch_data_b0
+    :pswitch_data_0
     .packed-switch 0x2
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final z(Landroid/view/View;I)V
-    .registers 8
+    .locals 5
 
     .line 1
     iget-byte p1, p0, Llibs/pe0;->c:B
@@ -457,7 +457,7 @@
     const/4 v4, 0x1
 
     .line 11
-    packed-switch p1, :pswitch_data_88
+    packed-switch p1, :pswitch_data_0
 
     .line 12
     .line 13
@@ -534,8 +534,8 @@
     return-void
 
     .line 52
-    :pswitch_33
-    if-eqz p2, :cond_49
+    :pswitch_0
+    if-eqz p2, :cond_0
 
     .line 53
     .line 54
@@ -576,14 +576,14 @@
     .line 71
     .line 72
     .line 73
-    goto :goto_4a
+    goto :goto_0
 
     .line 74
-    :cond_49
+    :cond_0
     const/4 p1, 0x0
 
     .line 75
-    :goto_4a
+    :goto_0
     check-cast v2, Ljava/util/LinkedHashSet;
 
     .line 76
@@ -610,23 +610,23 @@
     return-void
 
     .line 89
-    :pswitch_58
+    :pswitch_1
     check-cast v2, Llibs/me0;
 
     .line 90
     .line 91
-    if-eqz p2, :cond_7c
+    if-eqz p2, :cond_2
 
     .line 92
     .line 93
-    if-eq p2, v4, :cond_5f
+    if-eq p2, v4, :cond_1
 
     .line 94
     .line 95
-    goto :goto_87
+    goto :goto_1
 
     .line 96
-    :cond_5f
+    :cond_1
     iget-object p1, v2, Llibs/me0;->Lambda:Ljava/lang/String;
 
     .line 97
@@ -681,10 +681,10 @@
     .line 122
     .line 123
     .line 124
-    goto :goto_87
+    goto :goto_1
 
     .line 125
-    :cond_7c
+    :cond_2
     check-cast v3, Llibs/ui;
 
     .line 126
@@ -706,13 +706,13 @@
     .line 134
     .line 135
     .line 136
-    :goto_87
+    :goto_1
     return-void
 
     .line 137
-    :pswitch_data_88
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_58
-        :pswitch_33
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

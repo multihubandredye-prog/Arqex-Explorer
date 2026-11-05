@@ -51,7 +51,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 14
+    .locals 14
 
     .line 1
     sget-object v0, Llibs/yw;->a:Ljava/util/Properties;
@@ -73,25 +73,25 @@
     const/4 v1, 0x0
 
     .line 10
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_0
 
     .line 11
     .line 12
-    :try_start_b
+    :try_start_0
     invoke-static {v0}, Ljava/net/InetAddress;->getByName(Ljava/lang/String;)Ljava/net/InetAddress;
 
     .line 13
     .line 14
     .line 15
     move-result-object v0
-    :try_end_f
-    .catch Ljava/net/UnknownHostException; {:try_start_b .. :try_end_f} :catch_10
+    :try_end_0
+    .catch Ljava/net/UnknownHostException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 16
-    goto :goto_24
+    goto :goto_0
 
     .line 17
-    :catch_10
+    :catch_0
     move-exception v2
 
     .line 18
@@ -99,7 +99,7 @@
 
     .line 19
     .line 20
-    if-lez v3, :cond_23
+    if-lez v3, :cond_0
 
     .line 21
     .line 22
@@ -129,11 +129,11 @@
     .line 34
     .line 35
     .line 36
-    :cond_23
+    :cond_0
     move-object v0, v1
 
     .line 37
-    :goto_24
+    :goto_0
     sput-object v0, Llibs/kc3;->Yes:Ljava/net/InetAddress;
 
     .line 38
@@ -393,7 +393,7 @@
 
     .line 165
     .line 166
-    if-eqz v7, :cond_aa
+    if-eqz v7, :cond_1
 
     .line 167
     .line 168
@@ -401,39 +401,39 @@
 
     .line 169
     .line 170
-    goto :goto_ab
+    goto :goto_1
 
     .line 171
-    :cond_aa
+    :cond_1
     const/4 v3, 0x0
 
     .line 172
-    :goto_ab
+    :goto_1
     or-int/2addr v3, v9
 
     .line 173
     const/4 v7, 0x4
 
     .line 174
-    if-eqz v5, :cond_b1
+    if-eqz v5, :cond_2
 
     .line 175
     .line 176
     const/4 v5, 0x4
 
     .line 177
-    goto :goto_b2
+    goto :goto_2
 
     .line 178
-    :cond_b1
+    :cond_2
     const/4 v5, 0x0
 
     .line 179
-    :goto_b2
+    :goto_2
     or-int/2addr v3, v5
 
     .line 180
-    if-eqz v0, :cond_b8
+    if-eqz v0, :cond_3
 
     .line 181
     .line 182
@@ -441,18 +441,18 @@
 
     .line 183
     .line 184
-    goto :goto_b9
+    goto :goto_3
 
     .line 185
-    :cond_b8
+    :cond_3
     const/4 v5, 0x0
 
     .line 186
-    :goto_b9
+    :goto_3
     or-int/2addr v3, v5
 
     .line 187
-    if-eqz v4, :cond_c0
+    if-eqz v4, :cond_4
 
     .line 188
     .line 189
@@ -461,14 +461,14 @@
     .line 190
     .line 191
     .line 192
-    goto :goto_c1
+    goto :goto_4
 
     .line 193
-    :cond_c0
+    :cond_4
     const/4 v5, 0x0
 
     .line 194
-    :goto_c1
+    :goto_4
     or-int/2addr v3, v5
 
     .line 195
@@ -476,7 +476,7 @@
 
     .line 196
     .line 197
-    if-eqz v6, :cond_c9
+    if-eqz v6, :cond_5
 
     .line 198
     .line 199
@@ -484,15 +484,15 @@
 
     .line 200
     .line 201
-    goto :goto_ca
+    goto :goto_5
 
     .line 202
-    :cond_c9
+    :cond_5
     const/4 v5, 0x0
 
     .line 203
-    :goto_ca
-    if-eqz v0, :cond_cf
+    :goto_5
+    if-eqz v0, :cond_6
 
     .line 204
     .line 205
@@ -500,29 +500,29 @@
 
     .line 206
     .line 207
-    goto :goto_d0
+    goto :goto_6
 
     .line 208
-    :cond_cf
+    :cond_6
     const/4 v0, 0x0
 
     .line 209
-    :goto_d0
+    :goto_6
     or-int/2addr v0, v5
 
     .line 210
-    if-eqz v4, :cond_d4
+    if-eqz v4, :cond_7
 
     .line 211
     .line 212
-    goto :goto_d5
+    goto :goto_7
 
     .line 213
-    :cond_d4
+    :cond_7
     const/4 v7, 0x0
 
     .line 214
-    :goto_d5
+    :goto_7
     or-int/2addr v0, v7
 
     .line 215

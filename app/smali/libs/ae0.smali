@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/zd0;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final y(Llibs/ht3;)I
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p1}, Llibs/Juliet;->b(Llibs/ht3;)I

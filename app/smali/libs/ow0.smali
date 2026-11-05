@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Z)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,14 +33,14 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-boolean v0, p0, Llibs/ow0;->a:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -48,15 +48,15 @@
 
     .line 6
     .line 7
-    goto :goto_9
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     const-string v0, "text"
 
     .line 9
     .line 10
-    :goto_9
+    :goto_0
     const-string v1, ": "
 
     .line 11

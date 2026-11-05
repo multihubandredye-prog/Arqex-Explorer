@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 5
+    .locals 4
 
     .line 1
     sget-object v0, Llibs/my1;->f:Llibs/App;

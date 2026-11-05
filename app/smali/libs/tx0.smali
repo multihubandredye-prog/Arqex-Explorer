@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/bc;
@@ -32,7 +32,7 @@
 .end method
 
 .method public static a(Ljava/lang/String;)[B
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/fl;
@@ -44,14 +44,14 @@
     .line 4
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     sget-object v1, Llibs/tx0;->a:Llibs/bc;
 
     .line 7
     .line 8
     invoke-virtual {v1, p0, v0}, Llibs/bc;->c(Ljava/lang/String;Llibs/fl;)I
-    :try_end_a
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_a} :catch_f
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 9
     .line 10
@@ -67,7 +67,7 @@
     return-object p0
 
     .line 16
-    :catch_f
+    :catch_0
     move-exception p0
 
     .line 17
@@ -108,7 +108,7 @@
 .end method
 
 .method public static b(II[B)[B
-    .registers 8
+    .locals 5
 
     .line 1
     new-instance v0, Llibs/fl;
@@ -120,7 +120,7 @@
     .line 4
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     sget-object v1, Llibs/tx0;->a:Llibs/bc;
 
     .line 7
@@ -132,12 +132,12 @@
     move v2, p0
 
     .line 11
-    :goto_a
+    :goto_0
     add-int v3, p0, p1
 
     .line 12
     .line 13
-    if-ge v2, v3, :cond_23
+    if-ge v2, v3, :cond_0
 
     .line 14
     .line 15
@@ -171,8 +171,8 @@
     .line 29
     .line 30
     invoke-virtual {v0, v3}, Llibs/fl;->write(I)V
-    :try_end_20
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_20} :catch_28
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 31
     .line 32
@@ -181,10 +181,10 @@
 
     .line 34
     .line 35
-    goto :goto_a
+    goto :goto_0
 
     .line 36
-    :cond_23
+    :cond_0
     invoke-virtual {v0}, Llibs/fl;->x()[B
 
     .line 37
@@ -196,7 +196,7 @@
     return-object p0
 
     .line 41
-    :catch_28
+    :catch_0
     move-exception p0
 
     .line 42
@@ -233,13 +233,13 @@
     .line 57
     .line 58
     .line 59
-    goto :goto_3c
+    goto :goto_2
 
     .line 60
-    :goto_3b
+    :goto_1
     throw p1
 
     .line 61
-    :goto_3c
-    goto :goto_3b
+    :goto_2
+    goto :goto_1
 .end method

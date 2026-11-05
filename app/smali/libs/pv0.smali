@@ -22,7 +22,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/c2;ILjava/lang/String;Ljava/lang/String;Landroid/os/Handler;)V
-    .registers 7
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -61,7 +61,7 @@
 .end method
 
 .method public synthetic constructor <init>(Llibs/p32;ILlibs/rp0;Llibs/rp0;Llibs/ri0;)V
-    .registers 7
+    .locals 1
 
     .line 19
     const/4 v0, 0x2
@@ -84,7 +84,7 @@
 .end method
 
 .method public synthetic constructor <init>(Llibs/sv0;Llibs/eu1;Llibs/um2;ILlibs/rp0;)V
-    .registers 7
+    .locals 1
 
     .line 18
     const/4 v0, 0x0
@@ -109,7 +109,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 7
+    .locals 6
 
     .line 1
     iget-byte v0, p0, Llibs/pv0;->X:B
@@ -136,7 +136,7 @@
 
     .line 12
     .line 13
-    packed-switch v0, :pswitch_data_34
+    packed-switch v0, :pswitch_data_0
 
     .line 14
     .line 15
@@ -165,7 +165,7 @@
     return-void
 
     .line 28
-    :pswitch_1b
+    :pswitch_0
     check-cast v5, Llibs/c2;
 
     .line 29
@@ -190,7 +190,7 @@
     return-void
 
     .line 40
-    :pswitch_27
+    :pswitch_1
     check-cast v5, Llibs/sv0;
 
     .line 41
@@ -218,9 +218,9 @@
     nop
 
     .line 53
-    :pswitch_data_34
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_27
-        :pswitch_1b
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

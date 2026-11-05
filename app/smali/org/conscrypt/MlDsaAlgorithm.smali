@@ -29,7 +29,7 @@
 
 # direct methods
 .method private static synthetic $values()[Lorg/conscrypt/MlDsaAlgorithm;
-    .registers 3
+    .locals 3
 
     .line 1
     const/4 v0, 0x2
@@ -65,7 +65,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     .line 1
     new-instance v0, Lorg/conscrypt/MlDsaAlgorithm;
@@ -140,7 +140,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;ILjava/lang/String;I)V
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -167,7 +167,7 @@
 .end method
 
 .method public static parse(Ljava/lang/String;)Lorg/conscrypt/MlDsaAlgorithm;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -187,7 +187,7 @@
     move-result v0
 
     .line 10
-    if-nez v0, :cond_21
+    if-nez v0, :cond_1
 
     .line 11
     .line 12
@@ -203,7 +203,7 @@
     move-result v0
 
     .line 18
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_0
 
     .line 19
     .line 20
@@ -230,7 +230,7 @@
     return-object p0
 
     .line 31
-    :cond_1e
+    :cond_0
     sget-object p0, Lorg/conscrypt/MlDsaAlgorithm;->ML_DSA_87:Lorg/conscrypt/MlDsaAlgorithm;
 
     .line 32
@@ -238,7 +238,7 @@
     return-object p0
 
     .line 34
-    :cond_21
+    :cond_1
     sget-object p0, Lorg/conscrypt/MlDsaAlgorithm;->ML_DSA_65:Lorg/conscrypt/MlDsaAlgorithm;
 
     .line 35
@@ -247,7 +247,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lorg/conscrypt/MlDsaAlgorithm;
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Lorg/conscrypt/MlDsaAlgorithm;
@@ -270,7 +270,7 @@
 .end method
 
 .method public static values()[Lorg/conscrypt/MlDsaAlgorithm;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/MlDsaAlgorithm;->$VALUES:[Lorg/conscrypt/MlDsaAlgorithm;
@@ -295,7 +295,7 @@
 
 # virtual methods
 .method public publicKeySize()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/MlDsaAlgorithm;->publicKeySize:I
@@ -306,7 +306,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/MlDsaAlgorithm;->name:Ljava/lang/String;

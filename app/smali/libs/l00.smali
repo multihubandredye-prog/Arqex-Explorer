@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/InputStream;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/ir0;-><init>(Ljava/io/InputStream;)V
@@ -23,7 +23,7 @@
 
 # virtual methods
 .method public final read()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;
@@ -38,7 +38,7 @@
     move-result v0
 
     .line 7
-    if-ltz v0, :cond_e
+    if-ltz v0, :cond_0
 
     .line 8
     .line 9
@@ -54,12 +54,12 @@
 
     .line 14
     .line 15
-    :cond_e
+    :cond_0
     return v0
 .end method
 
 .method public final read([BII)I
-    .registers 5
+    .locals 1
 
     .line 16
     iget-object v0, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;
@@ -68,7 +68,7 @@
 
     move-result p1
 
-    if-lez p1, :cond_d
+    if-lez p1, :cond_0
 
     .line 17
     iget p2, p0, Llibs/l00;->Pi:I
@@ -77,6 +77,6 @@
 
     iput p2, p0, Llibs/l00;->Pi:I
 
-    :cond_d
+    :cond_0
     return p1
 .end method

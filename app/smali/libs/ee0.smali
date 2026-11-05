@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 1
     const-string v0, "Couldn\'t create SHA-256 hasher"
@@ -27,26 +27,26 @@
 
     .line 4
     .line 5
-    :try_start_4
+    :try_start_0
     invoke-static {v1}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
 
     .line 6
     .line 7
     .line 8
     move-result-object v2
-    :try_end_8
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_4 .. :try_end_8} :catch_1d
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_1
 
     .line 9
-    :try_start_8
+    :try_start_1
     invoke-static {v1}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
 
     .line 10
     .line 11
     .line 12
     move-result-object v0
-    :try_end_c
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_8 .. :try_end_c} :catch_17
+    :try_end_1
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 13
     invoke-direct {p0}, Ljava/security/MessageDigestSpi;-><init>()V
@@ -72,7 +72,7 @@
     return-void
 
     .line 24
-    :catch_17
+    :catch_0
     new-instance v1, Ljava/lang/AssertionError;
 
     .line 25
@@ -85,7 +85,7 @@
     throw v1
 
     .line 30
-    :catch_1d
+    :catch_1
     new-instance v1, Ljava/lang/AssertionError;
 
     .line 31
@@ -101,7 +101,7 @@
 
 # virtual methods
 .method public final clone()Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-super {p0}, Ljava/security/MessageDigestSpi;->clone()Ljava/lang/Object;
@@ -160,14 +160,14 @@
 .end method
 
 .method public final engineDigest([BII)I
-    .registers 6
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/ee0;->Z:I
 
     .line 2
     .line 3
-    if-lez v0, :cond_12
+    if-lez v0, :cond_0
 
     .line 4
     .line 5
@@ -199,7 +199,7 @@
 
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     iget-object v0, p0, Llibs/ee0;->X:Ljava/security/MessageDigest;
 
     .line 20
@@ -216,12 +216,12 @@
 .end method
 
 .method public final engineDigest()[B
-    .registers 3
+    .locals 2
 
     .line 26
     iget v0, p0, Llibs/ee0;->Z:I
 
-    if-lez v0, :cond_12
+    if-lez v0, :cond_0
 
     .line 27
     iget-object v0, p0, Llibs/ee0;->X:Ljava/security/MessageDigest;
@@ -240,7 +240,7 @@
     iput v0, p0, Llibs/ee0;->Z:I
 
     .line 29
-    :cond_12
+    :cond_0
     iget-object v0, p0, Llibs/ee0;->X:Ljava/security/MessageDigest;
 
     invoke-virtual {v0}, Ljava/security/MessageDigest;->digest()[B
@@ -251,7 +251,7 @@
 .end method
 
 .method public final engineGetDigestLength()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ee0;->X:Ljava/security/MessageDigest;
@@ -270,7 +270,7 @@
 .end method
 
 .method public final engineReset()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ee0;->X:Ljava/security/MessageDigest;
@@ -302,14 +302,14 @@
 .end method
 
 .method public final engineUpdate(B)V
-    .registers 4
+    .locals 2
 
     .line 65
     iget v0, p0, Llibs/ee0;->Z:I
 
     const/high16 v1, 0x400000
 
-    if-ne v0, v1, :cond_14
+    if-ne v0, v1, :cond_0
 
     .line 66
     iget-object v0, p0, Llibs/ee0;->X:Ljava/security/MessageDigest;
@@ -328,7 +328,7 @@
     iput v0, p0, Llibs/ee0;->Z:I
 
     .line 68
-    :cond_14
+    :cond_0
     iget-object v0, p0, Llibs/ee0;->Y:Ljava/security/MessageDigest;
 
     invoke-virtual {v0, p1}, Ljava/security/MessageDigest;->update(B)V
@@ -344,7 +344,7 @@
 .end method
 
 .method public final engineUpdate(Ljava/nio/ByteBuffer;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-virtual {p1}, Ljava/nio/Buffer;->limit()I
@@ -355,7 +355,7 @@
     move-result v0
 
     .line 5
-    :goto_4
+    :goto_0
     invoke-virtual {p1}, Ljava/nio/Buffer;->position()I
 
     .line 6
@@ -364,7 +364,7 @@
     move-result v1
 
     .line 9
-    if-ge v1, v0, :cond_3f
+    if-ge v1, v0, :cond_1
 
     .line 10
     .line 11
@@ -376,7 +376,7 @@
 
     .line 14
     .line 15
-    if-ne v1, v2, :cond_1e
+    if-ne v1, v2, :cond_0
 
     .line 16
     .line 17
@@ -408,7 +408,7 @@
 
     .line 30
     .line 31
-    :cond_1e
+    :cond_0
     sub-int/2addr v2, v1
 
     .line 32
@@ -473,27 +473,27 @@
     .line 61
     .line 62
     .line 63
-    goto :goto_4
+    goto :goto_0
 
     .line 64
-    :cond_3f
+    :cond_1
     return-void
 .end method
 
 .method public final engineUpdate([BII)V
-    .registers 7
+    .locals 3
 
     add-int/2addr p3, p2
 
-    :goto_1
-    if-ge p2, p3, :cond_2a
+    :goto_0
+    if-ge p2, p3, :cond_1
 
     .line 70
     iget v0, p0, Llibs/ee0;->Z:I
 
     const/high16 v1, 0x400000
 
-    if-ne v0, v1, :cond_17
+    if-ne v0, v1, :cond_0
 
     .line 71
     iget-object v0, p0, Llibs/ee0;->X:Ljava/security/MessageDigest;
@@ -511,7 +511,7 @@
     .line 72
     iput v0, p0, Llibs/ee0;->Z:I
 
-    :cond_17
+    :cond_0
     sub-int/2addr v1, v0
 
     add-int/2addr v1, p2
@@ -537,8 +537,8 @@
 
     add-int/2addr p2, v0
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_2a
+    :cond_1
     return-void
 .end method

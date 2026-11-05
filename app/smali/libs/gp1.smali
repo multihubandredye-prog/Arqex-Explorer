@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/hp1;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/gp1;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final h(Ljava/util/regex/Matcher;)Ljava/lang/String;
-    .registers 22
+    .locals 20
 
     .line 1
     move-object/from16 v0, p0
@@ -134,7 +134,7 @@
 
     .line 47
     .line 48
-    packed-switch v16, :pswitch_data_31c
+    packed-switch v16, :pswitch_data_0
 
     .line 49
     .line 50
@@ -189,7 +189,7 @@
     move-result v7
 
     .line 75
-    if-eqz v7, :cond_50
+    if-eqz v7, :cond_0
 
     .line 76
     .line 77
@@ -201,7 +201,7 @@
     move-result-object v1
 
     .line 81
-    :cond_50
+    :cond_0
     iget-object v3, v3, Llibs/hp1;->b:Ljava/util/TreeMap;
 
     .line 82
@@ -218,7 +218,7 @@
 
     .line 88
     .line 89
-    if-eqz v1, :cond_96
+    if-eqz v1, :cond_2
 
     .line 90
     .line 91
@@ -274,7 +274,7 @@
     move-result v6
 
     .line 117
-    if-nez v6, :cond_8e
+    if-nez v6, :cond_1
 
     .line 118
     .line 119
@@ -326,7 +326,7 @@
     move-result-object v8
 
     .line 143
-    :cond_8e
+    :cond_1
     const-string v1, "<img src=\""
 
     .line 144
@@ -343,11 +343,11 @@
     move-result-object v4
 
     .line 151
-    :cond_96
+    :cond_2
     return-object v4
 
     .line 152
-    :pswitch_97
+    :pswitch_0
     invoke-virtual {v1, v11}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     .line 153
@@ -375,22 +375,22 @@
     move-result v1
 
     .line 165
-    if-eqz v1, :cond_a8
+    if-eqz v1, :cond_3
 
     .line 166
     .line 167
     move-object v8, v10
 
     .line 168
-    goto :goto_aa
+    goto :goto_0
 
     .line 169
-    :cond_a8
+    :cond_3
     move-object/from16 v8, v17
 
     .line 170
     .line 171
-    :goto_aa
+    :goto_0
     const-string v1, "\n{2,}"
 
     .line 172
@@ -419,7 +419,7 @@
     move-result v2
 
     .line 185
-    if-eqz v2, :cond_c1
+    if-eqz v2, :cond_4
 
     .line 186
     .line 187
@@ -435,10 +435,10 @@
     move-result-object v1
 
     .line 193
-    goto :goto_c7
+    goto :goto_1
 
     .line 194
-    :cond_c1
+    :cond_4
     const-string v2, "<ol>\n"
 
     .line 195
@@ -451,11 +451,11 @@
     move-result-object v1
 
     .line 200
-    :goto_c7
+    :goto_1
     return-object v1
 
     .line 201
-    :pswitch_c8
+    :pswitch_1
     invoke-virtual {v1, v11}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     .line 202
@@ -483,22 +483,22 @@
     move-result v1
 
     .line 214
-    if-eqz v1, :cond_d9
+    if-eqz v1, :cond_5
 
     .line 215
     .line 216
     move-object v1, v10
 
     .line 217
-    goto :goto_db
+    goto :goto_2
 
     .line 218
-    :cond_d9
+    :cond_5
     move-object/from16 v1, v17
 
     .line 219
     .line 220
-    :goto_db
+    :goto_2
     const-string v4, "\\n{2,}"
 
     .line 221
@@ -539,7 +539,7 @@
     move-result v1
 
     .line 240
-    if-eqz v1, :cond_f8
+    if-eqz v1, :cond_6
 
     .line 241
     .line 242
@@ -555,10 +555,10 @@
     move-result-object v1
 
     .line 248
-    goto :goto_fe
+    goto :goto_3
 
     .line 249
-    :cond_f8
+    :cond_6
     const-string v1, "<ol>"
 
     .line 250
@@ -571,11 +571,11 @@
     move-result-object v1
 
     .line 255
-    :goto_fe
+    :goto_3
     return-object v1
 
     .line 256
-    :pswitch_ff
+    :pswitch_2
     new-instance v2, Llibs/kz0;
 
     .line 257
@@ -672,7 +672,7 @@
     const/4 v4, 0x0
 
     .line 306
-    :goto_131
+    :goto_4
     invoke-virtual {v2}, Ljava/util/regex/Matcher;->find()Z
 
     .line 307
@@ -685,7 +685,7 @@
 
     .line 311
     .line 312
-    if-eqz v5, :cond_156
+    if-eqz v5, :cond_7
 
     .line 313
     .line 314
@@ -743,10 +743,10 @@
     move-result v4
 
     .line 342
-    goto :goto_131
+    goto :goto_4
 
     .line 343
-    :cond_156
+    :cond_7
     invoke-virtual {v6}, Ljava/lang/StringBuilder;->length()I
 
     .line 344
@@ -810,7 +810,7 @@
     return-object v1
 
     .line 376
-    :pswitch_177
+    :pswitch_3
     invoke-virtual {v1, v11}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     .line 377
@@ -827,14 +827,14 @@
     move-result v5
 
     .line 384
-    if-eqz v5, :cond_182
+    if-eqz v5, :cond_8
 
     .line 385
     .line 386
-    goto :goto_1be
+    goto :goto_5
 
     .line 387
-    :cond_182
+    :cond_8
     sget-object v5, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
     .line 388
@@ -916,14 +916,14 @@
     move-result-object v1
 
     .line 428
-    if-nez v1, :cond_1ae
+    if-nez v1, :cond_9
 
     .line 429
     .line 430
     move-object v1, v8
 
     .line 431
-    :cond_1ae
+    :cond_9
     const-string v6, "&quot;"
 
     .line 432
@@ -954,11 +954,11 @@
     .line 445
     .line 446
     .line 447
-    :goto_1be
+    :goto_5
     return-object v8
 
     .line 448
-    :pswitch_1bf
+    :pswitch_4
     invoke-virtual {v1, v11}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     .line 449
@@ -1038,7 +1038,7 @@
 
     .line 486
     .line 487
-    if-eqz v1, :cond_224
+    if-eqz v1, :cond_b
 
     .line 488
     .line 489
@@ -1094,7 +1094,7 @@
     move-result v6
 
     .line 515
-    if-nez v6, :cond_218
+    if-nez v6, :cond_a
 
     .line 516
     .line 517
@@ -1138,7 +1138,7 @@
     move-result-object v8
 
     .line 537
-    :cond_218
+    :cond_a
     move-object/from16 v5, v19
 
     .line 538
@@ -1163,11 +1163,11 @@
     move-result-object v5
 
     .line 549
-    :cond_224
+    :cond_b
     return-object v5
 
     .line 550
-    :pswitch_225
+    :pswitch_5
     const/4 v2, 0x4
 
     .line 551
@@ -1200,7 +1200,7 @@
 
     .line 565
     .line 566
-    if-eqz v1, :cond_23d
+    if-eqz v1, :cond_c
 
     .line 567
     .line 568
@@ -1212,11 +1212,11 @@
     move-result v1
 
     .line 572
-    if-eqz v1, :cond_24c
+    if-eqz v1, :cond_d
 
     .line 573
     .line 574
-    :cond_23d
+    :cond_c
     iget-object v1, v4, Llibs/kz0;->b:Ljava/lang/StringBuilder;
 
     .line 575
@@ -1244,11 +1244,11 @@
     const/4 v5, -0x1
 
     .line 587
-    if-eq v1, v5, :cond_254
+    if-eq v1, v5, :cond_e
 
     .line 588
     .line 589
-    :cond_24c
+    :cond_d
     invoke-virtual {v4, v2, v8}, Llibs/kz0;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 590
@@ -1262,10 +1262,10 @@
     move-result-object v1
 
     .line 596
-    goto :goto_25e
+    goto :goto_6
 
     .line 597
-    :cond_254
+    :cond_e
     invoke-virtual {v4, v2, v8}, Llibs/kz0;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 598
@@ -1284,7 +1284,7 @@
     move-result-object v1
 
     .line 607
-    :goto_25e
+    :goto_6
     new-instance v2, Ljava/lang/StringBuilder;
 
     .line 608
@@ -1364,7 +1364,7 @@
     return-object v1
 
     .line 648
-    :pswitch_287
+    :pswitch_6
     move-object/from16 v6, v18
 
     .line 649
@@ -1458,7 +1458,7 @@
     return-object v1
 
     .line 695
-    :pswitch_2b6
+    :pswitch_7
     move-object/from16 v6, v18
 
     .line 696
@@ -1517,7 +1517,7 @@
     move-result v11
 
     .line 723
-    if-eqz v11, :cond_2d8
+    if-eqz v11, :cond_f
 
     .line 724
     .line 725
@@ -1529,7 +1529,7 @@
     move-result-object v1
 
     .line 729
-    :cond_2d8
+    :cond_f
     iget-object v3, v3, Llibs/hp1;->b:Ljava/util/TreeMap;
 
     .line 730
@@ -1546,7 +1546,7 @@
 
     .line 736
     .line 737
-    if-eqz v1, :cond_31a
+    if-eqz v1, :cond_11
 
     .line 738
     .line 739
@@ -1602,7 +1602,7 @@
     move-result v10
 
     .line 765
-    if-nez v10, :cond_312
+    if-nez v10, :cond_10
 
     .line 766
     .line 767
@@ -1646,7 +1646,7 @@
     move-result-object v8
 
     .line 787
-    :cond_312
+    :cond_10
     invoke-static {v12, v3, v2, v8, v5}, Llibs/sk1;->x(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 788
@@ -1663,22 +1663,22 @@
     move-result-object v7
 
     .line 795
-    :cond_31a
+    :cond_11
     return-object v7
 
     .line 796
     nop
 
     .line 797
-    :pswitch_data_31c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2b6
-        :pswitch_287
-        :pswitch_225
-        :pswitch_1bf
-        :pswitch_177
-        :pswitch_ff
-        :pswitch_c8
-        :pswitch_97
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

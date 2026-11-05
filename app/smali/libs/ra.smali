@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/InputStream;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public final available()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ra;->X:Ljava/io/InputStream;
@@ -57,18 +57,18 @@
 .end method
 
 .method public final c()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-boolean v0, p0, Llibs/ra;->Y:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
-    :try_start_4
+    :try_start_0
     iget-object v0, p0, Llibs/ra;->X:Ljava/io/InputStream;
 
     .line 6
@@ -82,15 +82,15 @@
 
     .line 11
     iput v0, p0, Llibs/ra;->Z:I
-    :try_end_c
-    .catch Ljava/io/EOFException; {:try_start_4 .. :try_end_c} :catch_d
+    :try_end_0
+    .catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 12
     .line 13
-    goto :goto_10
+    goto :goto_0
 
     .line 14
-    :catch_d
+    :catch_0
     const/4 v0, -0x1
 
     .line 15
@@ -98,7 +98,7 @@
 
     .line 16
     .line 17
-    :goto_10
+    :goto_0
     const/4 v0, 0x1
 
     .line 18
@@ -106,19 +106,19 @@
 
     .line 19
     .line 20
-    :cond_13
+    :cond_0
     iget v0, p0, Llibs/ra;->Z:I
 
     .line 21
     .line 22
-    if-gez v0, :cond_18
+    if-gez v0, :cond_1
 
     .line 23
     .line 24
     return v0
 
     .line 25
-    :cond_18
+    :cond_1
     and-int/lit8 v1, v0, 0x3f
 
     .line 26
@@ -127,7 +127,7 @@
 
     .line 28
     .line 29
-    if-nez v0, :cond_20
+    if-nez v0, :cond_2
 
     .line 30
     .line 31
@@ -135,12 +135,12 @@
 
     .line 32
     .line 33
-    :cond_20
+    :cond_2
     return v1
 .end method
 
 .method public final close()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ra;->X:Ljava/io/InputStream;
@@ -156,7 +156,7 @@
 .end method
 
 .method public final i([BII)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-static {p0, p1, p2, p3}, Llibs/zj0;->Sync(Ljava/io/InputStream;[BII)I
@@ -167,14 +167,14 @@
     move-result p1
 
     .line 5
-    if-lt p1, p3, :cond_7
+    if-lt p1, p3, :cond_0
 
     .line 6
     .line 7
     return-void
 
     .line 8
-    :cond_7
+    :cond_0
     invoke-static {}, Llibs/ic0;->u()V
 
     .line 9
@@ -184,7 +184,7 @@
 .end method
 
 .method public final m()Llibs/k12;
-    .registers 9
+    .locals 8
 
     .line 1
     invoke-virtual {p0}, Llibs/ra;->read()I
@@ -198,19 +198,19 @@
     const/4 v1, 0x0
 
     .line 6
-    if-gez v0, :cond_8
+    if-gez v0, :cond_0
 
     .line 7
     .line 8
     return-object v1
 
     .line 9
-    :cond_8
+    :cond_0
     and-int/lit16 v2, v0, 0x80
 
     .line 10
     .line 11
-    if-eqz v2, :cond_128
+    if-eqz v2, :cond_a
 
     .line 12
     .line 13
@@ -224,7 +224,7 @@
     const/4 v4, 0x1
 
     .line 17
-    if-eqz v2, :cond_50
+    if-eqz v2, :cond_4
 
     .line 18
     .line 19
@@ -244,14 +244,14 @@
 
     .line 26
     .line 27
-    if-ge v2, v5, :cond_1d
+    if-ge v2, v5, :cond_1
 
     .line 28
     .line 29
-    goto :goto_81
+    goto :goto_2
 
     .line 30
-    :cond_1d
+    :cond_1
     const/16 v6, 0xdf
 
     .line 31
@@ -260,7 +260,7 @@
 
     .line 33
     .line 34
-    if-gt v2, v6, :cond_2e
+    if-gt v2, v6, :cond_2
 
     .line 35
     .line 36
@@ -286,15 +286,15 @@
     add-int/2addr v2, v5
 
     .line 46
-    goto :goto_81
+    goto :goto_2
 
     .line 47
-    :cond_2e
+    :cond_2
     const/16 v5, 0xff
 
     .line 48
     .line 49
-    if-ne v2, v5, :cond_4b
+    if-ne v2, v5, :cond_3
 
     .line 50
     .line 51
@@ -348,10 +348,10 @@
     move-result v5
 
     .line 75
-    goto :goto_80
+    goto :goto_1
 
     .line 76
-    :cond_4b
+    :cond_3
     and-int/lit8 v2, v2, 0x1f
 
     .line 77
@@ -360,10 +360,10 @@
 
     .line 79
     .line 80
-    goto :goto_60
+    goto :goto_0
 
     .line 81
-    :cond_50
+    :cond_4
     and-int/lit8 v2, v0, 0x3
 
     .line 82
@@ -378,36 +378,36 @@
     shr-int/2addr v0, v5
 
     .line 87
-    if-eqz v2, :cond_8e
+    if-eqz v2, :cond_8
 
     .line 88
     .line 89
-    if-eq v2, v4, :cond_83
+    if-eq v2, v4, :cond_7
 
     .line 90
     .line 91
-    if-eq v2, v5, :cond_68
+    if-eq v2, v5, :cond_6
 
     .line 92
     .line 93
     const/4 v5, 0x3
 
     .line 94
-    if-ne v2, v5, :cond_62
+    if-ne v2, v5, :cond_5
 
     .line 95
     .line 96
     const/4 v2, 0x0
 
     .line 97
-    :goto_60
+    :goto_0
     const/4 v5, 0x1
 
     .line 98
-    goto :goto_93
+    goto :goto_3
 
     .line 99
-    :cond_62
+    :cond_5
     const-string v0, "unknown length type encountered"
 
     .line 100
@@ -420,7 +420,7 @@
     return-object v1
 
     .line 105
-    :cond_68
+    :cond_6
     invoke-virtual {p0}, Llibs/ra;->read()I
 
     .line 106
@@ -471,18 +471,18 @@
     move-result v5
 
     .line 129
-    :goto_80
+    :goto_1
     or-int/2addr v2, v5
 
     .line 130
-    :goto_81
+    :goto_2
     const/4 v5, 0x0
 
     .line 131
-    goto :goto_93
+    goto :goto_3
 
     .line 132
-    :cond_83
+    :cond_7
     invoke-virtual {p0}, Llibs/ra;->read()I
 
     .line 133
@@ -503,10 +503,10 @@
     move-result v5
 
     .line 142
-    goto :goto_80
+    goto :goto_1
 
     .line 143
-    :cond_8e
+    :cond_8
     invoke-virtual {p0}, Llibs/ra;->read()I
 
     .line 144
@@ -515,25 +515,25 @@
     move-result v2
 
     .line 147
-    goto :goto_81
+    goto :goto_2
 
     .line 148
-    :goto_93
-    if-nez v2, :cond_99
+    :goto_3
+    if-nez v2, :cond_9
 
     .line 149
     .line 150
-    if-eqz v5, :cond_99
+    if-eqz v5, :cond_9
 
     .line 151
     .line 152
     move-object v6, p0
 
     .line 153
-    goto :goto_a3
+    goto :goto_4
 
     .line 154
-    :cond_99
+    :cond_9
     new-instance v6, Llibs/ra;
 
     .line 155
@@ -552,18 +552,18 @@
     .line 162
     .line 163
     .line 164
-    :goto_a3
-    packed-switch v0, :pswitch_data_12e
+    :goto_4
+    packed-switch v0, :pswitch_data_0
 
     .line 165
     .line 166
     .line 167
-    packed-switch v0, :pswitch_data_150
+    packed-switch v0, :pswitch_data_1
 
     .line 168
     .line 169
     .line 170
-    packed-switch v0, :pswitch_data_15a
+    packed-switch v0, :pswitch_data_2
 
     .line 171
     .line 172
@@ -588,7 +588,7 @@
     return-object v1
 
     .line 183
-    :pswitch_b6
+    :pswitch_0
     new-instance v0, Llibs/rl0;
 
     .line 184
@@ -601,7 +601,7 @@
     return-object v0
 
     .line 189
-    :pswitch_bc
+    :pswitch_1
     new-instance v0, Llibs/rl0;
 
     .line 190
@@ -614,7 +614,7 @@
     return-object v0
 
     .line 195
-    :pswitch_c2
+    :pswitch_2
     new-instance v0, Llibs/jj3;
 
     .line 196
@@ -627,7 +627,7 @@
     return-object v0
 
     .line 201
-    :pswitch_c8
+    :pswitch_3
     new-instance v0, Llibs/lr3;
 
     .line 202
@@ -640,7 +640,7 @@
     return-object v0
 
     .line 207
-    :pswitch_ce
+    :pswitch_4
     new-instance v0, Llibs/jh2;
 
     .line 208
@@ -653,7 +653,7 @@
     return-object v0
 
     .line 213
-    :pswitch_d4
+    :pswitch_5
     new-instance v0, Llibs/pr3;
 
     .line 214
@@ -666,7 +666,7 @@
     return-object v0
 
     .line 219
-    :pswitch_da
+    :pswitch_6
     new-instance v0, Llibs/jp3;
 
     .line 220
@@ -679,7 +679,7 @@
     return-object v0
 
     .line 225
-    :pswitch_e0
+    :pswitch_7
     new-instance v0, Llibs/cm1;
 
     .line 226
@@ -692,7 +692,7 @@
     return-object v0
 
     .line 231
-    :pswitch_e6
+    :pswitch_8
     new-instance v0, Llibs/ip1;
 
     .line 232
@@ -705,7 +705,7 @@
     return-object v0
 
     .line 237
-    :pswitch_ec
+    :pswitch_9
     new-instance v0, Llibs/ij3;
 
     .line 238
@@ -718,7 +718,7 @@
     return-object v0
 
     .line 243
-    :pswitch_f2
+    :pswitch_a
     new-instance v0, Llibs/ww;
 
     .line 244
@@ -731,7 +731,7 @@
     return-object v0
 
     .line 249
-    :pswitch_f8
+    :pswitch_b
     new-instance v0, Llibs/l43;
 
     .line 250
@@ -744,7 +744,7 @@
     return-object v0
 
     .line 255
-    :pswitch_fe
+    :pswitch_c
     new-instance v0, Llibs/hh2;
 
     .line 256
@@ -757,7 +757,7 @@
     return-object v0
 
     .line 261
-    :pswitch_104
+    :pswitch_d
     new-instance v0, Llibs/k43;
 
     .line 262
@@ -770,7 +770,7 @@
     return-object v0
 
     .line 267
-    :pswitch_10a
+    :pswitch_e
     new-instance v0, Llibs/v32;
 
     .line 268
@@ -783,7 +783,7 @@
     return-object v0
 
     .line 273
-    :pswitch_110
+    :pswitch_f
     new-instance v0, Llibs/kj3;
 
     .line 274
@@ -796,7 +796,7 @@
     return-object v0
 
     .line 279
-    :pswitch_116
+    :pswitch_10
     new-instance v0, Llibs/f83;
 
     .line 280
@@ -809,7 +809,7 @@
     return-object v0
 
     .line 285
-    :pswitch_11c
+    :pswitch_11
     new-instance v0, Llibs/gh2;
 
     .line 286
@@ -822,7 +822,7 @@
     return-object v0
 
     .line 291
-    :pswitch_122
+    :pswitch_12
     new-instance v0, Llibs/ka1;
 
     .line 292
@@ -835,7 +835,7 @@
     return-object v0
 
     .line 297
-    :cond_128
+    :cond_a
     const-string v0, "invalid header encountered"
 
     .line 298
@@ -848,23 +848,23 @@
     return-object v1
 
     .line 303
-    :pswitch_data_12e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_122
-        :pswitch_11c
-        :pswitch_116
-        :pswitch_110
-        :pswitch_10a
-        :pswitch_104
-        :pswitch_fe
-        :pswitch_f8
-        :pswitch_f2
-        :pswitch_ec
-        :pswitch_e6
-        :pswitch_e0
-        :pswitch_da
-        :pswitch_d4
-        :pswitch_ce
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
     .end packed-switch
 
     .line 304
@@ -901,11 +901,11 @@
     .line 335
     .line 336
     .line 337
-    :pswitch_data_150
+    :pswitch_data_1
     .packed-switch 0x11
-        :pswitch_c8
-        :pswitch_c2
-        :pswitch_bc
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
     .end packed-switch
 
     .line 338
@@ -918,22 +918,22 @@
     .line 345
     .line 346
     .line 347
-    :pswitch_data_15a
+    :pswitch_data_2
     .packed-switch 0x3c
-        :pswitch_b6
-        :pswitch_b6
-        :pswitch_b6
-        :pswitch_b6
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final read()I
-    .registers 2
+    .locals 1
 
     .line 29
     iget-boolean v0, p0, Llibs/ra;->Y:Z
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
@@ -946,7 +946,7 @@
     return v0
 
     .line 32
-    :cond_a
+    :cond_0
     iget-object v0, p0, Llibs/ra;->X:Ljava/io/InputStream;
 
     invoke-virtual {v0}, Ljava/io/InputStream;->read()I
@@ -957,25 +957,25 @@
 .end method
 
 .method public final read([BII)I
-    .registers 6
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-nez p3, :cond_4
+    if-nez p3, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
+    :cond_0
     iget-boolean v1, p0, Llibs/ra;->Y:Z
 
     .line 6
     .line 7
-    if-nez v1, :cond_f
+    if-nez v1, :cond_1
 
     .line 8
     .line 9
@@ -994,12 +994,12 @@
     return p1
 
     .line 16
-    :cond_f
+    :cond_1
     iget p3, p0, Llibs/ra;->Z:I
 
     .line 17
     .line 18
-    if-gez p3, :cond_15
+    if-gez p3, :cond_2
 
     .line 19
     .line 20
@@ -1009,7 +1009,7 @@
     return p1
 
     .line 22
-    :cond_15
+    :cond_2
     int-to-byte p3, p3
 
     .line 23

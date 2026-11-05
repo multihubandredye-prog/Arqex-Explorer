@@ -28,7 +28,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -54,7 +54,7 @@
 
     .line 11
     .line 12
-    fill-array-data v0, :array_12
+    fill-array-data v0, :array_0
 
     .line 13
     .line 14
@@ -69,7 +69,7 @@
     nop
 
     .line 19
-    :array_12
+    :array_0
     .array-data 4
         0x80
         0x1b
@@ -92,14 +92,14 @@
 .end method
 
 .method public constructor <init>(B)V
-    .registers 3
+    .locals 1
 
     .line 1
     iput-byte p1, p0, Llibs/i12;->X:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_30
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -146,7 +146,7 @@
     return-void
 
     .line 26
-    :pswitch_19
+    :pswitch_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 27
@@ -196,14 +196,14 @@
     nop
 
     .line 49
-    :pswitch_data_30
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_19
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static c(I[B)I
-    .registers 5
+    .locals 3
 
     .line 1
     add-int/lit8 v0, p0, 0x1
@@ -271,7 +271,7 @@
 .end method
 
 .method public static d(I[B)I
-    .registers 5
+    .locals 3
 
     .line 1
     add-int/lit8 v0, p0, 0x1
@@ -339,7 +339,7 @@
 .end method
 
 .method public static e([I)V
-    .registers 10
+    .locals 9
 
     .line 1
     const/4 v0, 0x1
@@ -454,7 +454,7 @@
 .end method
 
 .method public static f(II[B)V
-    .registers 6
+    .locals 3
 
     .line 1
     add-int/lit8 v0, p1, 0x1
@@ -513,7 +513,7 @@
 .end method
 
 .method public static g([I)V
-    .registers 4
+    .locals 3
 
     .line 1
     const/4 v0, 0x1
@@ -589,21 +589,21 @@
 .end method
 
 .method private final h()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final j()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public static k(II)I
-    .registers 3
+    .locals 1
 
     .line 1
     shl-int v0, p0, p1
@@ -624,7 +624,7 @@
 .end method
 
 .method public static l([I[I)V
-    .registers 11
+    .locals 9
 
     .line 1
     const/4 v0, 0x0
@@ -705,11 +705,11 @@
     const/4 v1, 0x0
 
     .line 35
-    :goto_22
+    :goto_0
     const/4 v7, 0x4
 
     .line 36
-    if-ge v1, v7, :cond_2f
+    if-ge v1, v7, :cond_0
 
     .line 37
     .line 38
@@ -732,10 +732,10 @@
 
     .line 46
     .line 47
-    goto :goto_22
+    goto :goto_0
 
     .line 48
-    :cond_2f
+    :cond_0
     aget p1, p0, v4
 
     .line 49
@@ -795,7 +795,7 @@
 .end method
 
 .method public static m(II[B)V
-    .registers 6
+    .locals 3
 
     .line 1
     add-int/lit8 v0, p1, 0x1
@@ -856,7 +856,7 @@
 
 # virtual methods
 .method public final a(ZLlibs/et;)V
-    .registers 10
+    .locals 7
 
     .line 1
     iget-byte v0, p0, Llibs/i12;->X:B
@@ -879,7 +879,7 @@
     const/4 v5, 0x1
 
     .line 9
-    packed-switch v0, :pswitch_data_8e
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
@@ -888,7 +888,7 @@
 
     .line 13
     .line 14
-    if-eqz v0, :cond_4f
+    if-eqz v0, :cond_2
 
     .line 15
     .line 16
@@ -915,7 +915,7 @@
 
     .line 26
     .line 27
-    if-ne p2, v0, :cond_49
+    if-ne p2, v0, :cond_1
 
     .line 28
     .line 29
@@ -925,12 +925,12 @@
     const/4 v0, 0x0
 
     .line 31
-    :goto_1e
+    :goto_0
     iget-object v5, p0, Llibs/i12;->Y:[I
 
     .line 32
     .line 33
-    if-ge p2, v3, :cond_2c
+    if-ge p2, v3, :cond_0
 
     .line 34
     .line 35
@@ -953,19 +953,19 @@
     add-int/2addr v0, v3
 
     .line 44
-    goto :goto_1e
+    goto :goto_0
 
     .line 45
-    :cond_2c
+    :cond_0
     const/4 p1, 0x0
 
     .line 46
-    :goto_2d
+    :goto_1
     const/16 p2, 0x20
 
     .line 47
     .line 48
-    if-ge v2, p2, :cond_58
+    if-ge v2, p2, :cond_3
 
     .line 49
     .line 50
@@ -1018,10 +1018,10 @@
 
     .line 72
     .line 73
-    goto :goto_2d
+    goto :goto_1
 
     .line 74
-    :cond_49
+    :cond_1
     const-string p1, "Key size must be 128 bits."
 
     .line 75
@@ -1031,10 +1031,10 @@
     .line 77
     .line 78
     .line 79
-    goto :goto_58
+    goto :goto_2
 
     .line 80
-    :cond_4f
+    :cond_2
     const-string p1, "invalid parameter passed to TEA init - "
 
     .line 81
@@ -1052,17 +1052,17 @@
     .line 87
     .line 88
     .line 89
-    :cond_58
-    :goto_58
+    :cond_3
+    :goto_2
     return-void
 
     .line 90
-    :pswitch_59
+    :pswitch_0
     instance-of v0, p2, Llibs/hh1;
 
     .line 91
     .line 92
-    if-eqz v0, :cond_83
+    if-eqz v0, :cond_4
 
     .line 93
     .line 94
@@ -1141,10 +1141,10 @@
 
     .line 130
     .line 131
-    goto :goto_8c
+    goto :goto_3
 
     .line 132
-    :cond_83
+    :cond_4
     const-string p1, "invalid parameter passed to Noekeon init - "
 
     .line 133
@@ -1162,28 +1162,28 @@
     .line 139
     .line 140
     .line 141
-    :goto_8c
+    :goto_3
     return-void
 
     .line 142
     nop
 
     .line 143
-    :pswitch_data_8e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_59
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/i12;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_c
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -1195,7 +1195,7 @@
     return-object v0
 
     .line 9
-    :pswitch_8
+    :pswitch_0
     const-string v0, "Noekeon"
 
     .line 10
@@ -1206,21 +1206,21 @@
     nop
 
     .line 13
-    :pswitch_data_c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_8
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final i()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/i12;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_c
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -1232,7 +1232,7 @@
     return v0
 
     .line 9
-    :pswitch_8
+    :pswitch_0
     const/16 v0, 0x10
 
     .line 10
@@ -1243,14 +1243,14 @@
     nop
 
     .line 13
-    :pswitch_data_c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_8
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final r(II[B[B)I
-    .registers 16
+    .locals 11
 
     .line 1
     iget-byte v0, p0, Llibs/i12;->X:B
@@ -1276,7 +1276,7 @@
     const/4 v5, 0x0
 
     .line 12
-    packed-switch v0, :pswitch_data_1a6
+    packed-switch v0, :pswitch_data_0
 
     .line 13
     .line 14
@@ -1285,7 +1285,7 @@
 
     .line 16
     .line 17
-    if-eqz v0, :cond_88
+    if-eqz v0, :cond_5
 
     .line 18
     .line 19
@@ -1296,7 +1296,7 @@
     array-length v6, p3
 
     .line 22
-    if-gt v0, v6, :cond_84
+    if-gt v0, v6, :cond_4
 
     .line 23
     .line 24
@@ -1307,7 +1307,7 @@
     array-length v1, p4
 
     .line 27
-    if-gt v0, v1, :cond_80
+    if-gt v0, v1, :cond_3
 
     .line 28
     .line 29
@@ -1319,7 +1319,7 @@
 
     .line 32
     .line 33
-    if-eqz v0, :cond_52
+    if-eqz v0, :cond_1
 
     .line 34
     .line 35
@@ -1343,12 +1343,12 @@
     move-result p1
 
     .line 45
-    :goto_2c
+    :goto_0
     const/16 p3, 0x20
 
     .line 46
     .line 47
-    if-ge v5, p3, :cond_47
+    if-ge v5, p3, :cond_0
 
     .line 48
     .line 49
@@ -1404,10 +1404,10 @@
 
     .line 70
     .line 71
-    goto :goto_2c
+    goto :goto_0
 
     .line 72
-    :cond_47
+    :cond_0
     invoke-static {v0, p2, p4}, Llibs/i12;->m(II[B)V
 
     .line 73
@@ -1422,15 +1422,15 @@
     .line 78
     .line 79
     .line 80
-    :goto_4f
+    :goto_1
     const/16 v5, 0x8
 
     .line 81
     .line 82
-    goto :goto_8d
+    goto :goto_3
 
     .line 83
-    :cond_52
+    :cond_1
     invoke-static {p1, p3}, Llibs/i12;->c(I[B)I
 
     .line 84
@@ -1455,8 +1455,8 @@
 
     .line 94
     .line 95
-    :goto_5e
-    if-ltz p3, :cond_77
+    :goto_2
+    if-ltz p3, :cond_2
 
     .line 96
     .line 97
@@ -1512,10 +1512,10 @@
 
     .line 118
     .line 119
-    goto :goto_5e
+    goto :goto_2
 
     .line 120
-    :cond_77
+    :cond_2
     invoke-static {v0, p2, p4}, Llibs/i12;->m(II[B)V
 
     .line 121
@@ -1530,28 +1530,28 @@
     .line 126
     .line 127
     .line 128
-    goto :goto_4f
+    goto :goto_1
 
     .line 129
-    :cond_80
+    :cond_3
     invoke-static {v2}, Llibs/t;->f(Ljava/lang/String;)V
 
     .line 130
     .line 131
     .line 132
-    goto :goto_8d
+    goto :goto_3
 
     .line 133
-    :cond_84
+    :cond_4
     invoke-static {v1}, Llibs/fg3;->f(Ljava/lang/String;)V
 
     .line 134
     .line 135
     .line 136
-    goto :goto_8d
+    goto :goto_3
 
     .line 137
-    :cond_88
+    :cond_5
     const-string p1, "XTEA not initialised"
 
     .line 138
@@ -1561,16 +1561,16 @@
     .line 140
     .line 141
     .line 142
-    :goto_8d
+    :goto_3
     return v5
 
     .line 143
-    :pswitch_8e
+    :pswitch_0
     iget-boolean v0, p0, Llibs/i12;->Mu:Z
 
     .line 144
     .line 145
-    if-eqz v0, :cond_19f
+    if-eqz v0, :cond_b
 
     .line 146
     .line 147
@@ -1581,7 +1581,7 @@
     array-length v6, p3
 
     .line 150
-    if-gt v0, v6, :cond_19b
+    if-gt v0, v6, :cond_a
 
     .line 151
     .line 152
@@ -1592,7 +1592,7 @@
     array-length v1, p4
 
     .line 155
-    if-gt v0, v1, :cond_197
+    if-gt v0, v1, :cond_9
 
     .line 156
     .line 157
@@ -1624,7 +1624,7 @@
 
     .line 168
     .line 169
-    if-eqz v0, :cond_11e
+    if-eqz v0, :cond_7
 
     .line 170
     .line 171
@@ -1691,8 +1691,8 @@
     const/4 p1, 0x0
 
     .line 202
-    :goto_c9
-    if-ge p1, v10, :cond_f6
+    :goto_4
+    if-ge p1, v10, :cond_6
 
     .line 203
     .line 204
@@ -1778,10 +1778,10 @@
 
     .line 245
     .line 246
-    goto :goto_c9
+    goto :goto_4
 
     .line 247
-    :cond_f6
+    :cond_6
     aget p3, v8, v5
 
     .line 248
@@ -1850,16 +1850,16 @@
     .line 281
     .line 282
     .line 283
-    :goto_11a
+    :goto_5
     const/16 v5, 0x10
 
     .line 284
     .line 285
-    goto/16 :goto_1a4
+    goto/16 :goto_7
 
     .line 286
     .line 287
-    :cond_11e
+    :cond_7
     invoke-static {p1, p3}, Llibs/i12;->d(I[B)I
 
     .line 288
@@ -1941,8 +1941,8 @@
 
     .line 327
     .line 328
-    :goto_147
-    if-lez p1, :cond_174
+    :goto_6
+    if-lez p1, :cond_8
 
     .line 329
     .line 330
@@ -2028,10 +2028,10 @@
 
     .line 371
     .line 372
-    goto :goto_147
+    goto :goto_6
 
     .line 373
-    :cond_174
+    :cond_8
     invoke-static {v8, v4}, Llibs/i12;->l([I[I)V
 
     .line 374
@@ -2096,28 +2096,28 @@
     .line 405
     .line 406
     .line 407
-    goto :goto_11a
+    goto :goto_5
 
     .line 408
-    :cond_197
+    :cond_9
     invoke-static {v2}, Llibs/t;->f(Ljava/lang/String;)V
 
     .line 409
     .line 410
     .line 411
-    goto :goto_1a4
+    goto :goto_7
 
     .line 412
-    :cond_19b
+    :cond_a
     invoke-static {v1}, Llibs/fg3;->f(Ljava/lang/String;)V
 
     .line 413
     .line 414
     .line 415
-    goto :goto_1a4
+    goto :goto_7
 
     .line 416
-    :cond_19f
+    :cond_b
     const-string p1, "Noekeon not initialised"
 
     .line 417
@@ -2127,21 +2127,21 @@
     .line 419
     .line 420
     .line 421
-    :goto_1a4
+    :goto_7
     return v5
 
     .line 422
     nop
 
     .line 423
-    :pswitch_data_1a6
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_8e
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final reset()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/i12;->X:B

@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/OutputStream;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/jr0;-><init>(Ljava/io/OutputStream;)V
@@ -19,7 +19,7 @@
     .line 2
     .line 3
     .line 4
-    if-lez p2, :cond_a
+    if-lez p2, :cond_0
 
     .line 5
     .line 6
@@ -34,7 +34,7 @@
     return-void
 
     .line 11
-    :cond_a
+    :cond_0
     const-string p1, "Buffer size <= 0"
 
     .line 12
@@ -53,14 +53,14 @@
 
 # virtual methods
 .method public final c()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget v0, p0, Llibs/ak;->Lambda:I
 
     .line 2
     .line 3
-    if-lez v0, :cond_e
+    if-lez v0, :cond_0
 
     .line 4
     .line 5
@@ -84,18 +84,18 @@
 
     .line 14
     .line 15
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method public final declared-synchronized flush()V
-    .registers 2
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     invoke-virtual {p0}, Llibs/ak;->c()V
 
     .line 3
@@ -106,8 +106,8 @@
     .line 6
     .line 7
     invoke-virtual {v0}, Ljava/io/OutputStream;->flush()V
-    :try_end_9
-    .catchall {:try_start_1 .. :try_end_9} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 8
     .line 9
@@ -118,47 +118,47 @@
     return-void
 
     .line 12
-    :catchall_b
+    :catchall_0
     move-exception v0
 
     .line 13
-    :try_start_c
+    :try_start_1
     monitor-exit p0
-    :try_end_d
-    .catchall {:try_start_c .. :try_end_d} :catchall_b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 14
     throw v0
 .end method
 
 .method public final declared-synchronized write(I)V
-    .registers 5
+    .locals 3
 
     monitor-enter p0
 
     .line 44
-    :try_start_1
+    :try_start_0
     iget v0, p0, Llibs/ak;->Lambda:I
 
     iget-object v1, p0, Llibs/ak;->Z:[B
 
     array-length v1, v1
 
-    if-lt v0, v1, :cond_e
+    if-lt v0, v1, :cond_0
 
     .line 45
     invoke-virtual {p0}, Llibs/ak;->c()V
 
-    goto :goto_e
+    goto :goto_0
 
-    :catchall_c
+    :catchall_0
     move-exception p1
 
-    goto :goto_1b
+    goto :goto_1
 
     .line 46
-    :cond_e
-    :goto_e
+    :cond_0
+    :goto_0
     iget-object v0, p0, Llibs/ak;->Z:[B
 
     iget v1, p0, Llibs/ak;->Lambda:I
@@ -170,31 +170,31 @@
     int-to-byte p1, p1
 
     aput-byte p1, v0, v1
-    :try_end_19
-    .catchall {:try_start_1 .. :try_end_19} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 47
     monitor-exit p0
 
     return-void
 
-    :goto_1b
-    :try_start_1b
+    :goto_1
+    :try_start_1
     monitor-exit p0
-    :try_end_1c
-    .catchall {:try_start_1b .. :try_end_1c} :catchall_c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method
 
 .method public final declared-synchronized write([BII)V
-    .registers 6
+    .locals 2
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Llibs/ak;->Z:[B
 
     .line 3
@@ -202,7 +202,7 @@
     array-length v1, v0
 
     .line 5
-    if-lt p3, v1, :cond_12
+    if-lt p3, v1, :cond_0
 
     .line 6
     .line 7
@@ -216,8 +216,8 @@
     .line 11
     .line 12
     invoke-virtual {v0, p1, p2, p3}, Ljava/io/OutputStream;->write([BII)V
-    :try_end_e
-    .catchall {:try_start_1 .. :try_end_e} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 13
     .line 14
@@ -228,15 +228,15 @@
     return-void
 
     .line 17
-    :catchall_10
+    :catchall_0
     move-exception p1
 
     .line 18
-    goto :goto_29
+    goto :goto_0
 
     .line 19
-    :cond_12
-    :try_start_12
+    :cond_0
+    :try_start_1
     array-length v0, v0
 
     .line 20
@@ -247,7 +247,7 @@
     sub-int/2addr v0, v1
 
     .line 23
-    if-le p3, v0, :cond_1b
+    if-le p3, v0, :cond_1
 
     .line 24
     .line 25
@@ -256,7 +256,7 @@
     .line 26
     .line 27
     .line 28
-    :cond_1b
+    :cond_1
     iget-object v0, p0, Llibs/ak;->Z:[B
 
     .line 29
@@ -278,8 +278,8 @@
 
     .line 38
     iput p1, p0, Llibs/ak;->Lambda:I
-    :try_end_27
-    .catchall {:try_start_12 .. :try_end_27} :catchall_10
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 39
     .line 40
@@ -289,11 +289,11 @@
     return-void
 
     .line 42
-    :goto_29
-    :try_start_29
+    :goto_0
+    :try_start_2
     monitor-exit p0
-    :try_end_2a
-    .catchall {:try_start_29 .. :try_end_2a} :catchall_10
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 43
     throw p1

@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/security/SecureRandomSpi;-><init>()V
@@ -26,7 +26,7 @@
 
 # virtual methods
 .method public engineGenerateSeed(I)[B
-    .registers 2
+    .locals 0
 
     .line 1
     new-array p1, p1, [B
@@ -42,7 +42,7 @@
 .end method
 
 .method public engineNextBytes([B)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p1}, Lorg/conscrypt/NativeCrypto;->RAND_bytes([B)V
@@ -54,17 +54,17 @@
 .end method
 
 .method public engineSetSeed([B)V
-    .registers 2
+    .locals 0
 
     .line 1
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_0
 
     .line 2
     .line 3
     return-void
 
     .line 4
-    :cond_3
+    :cond_0
     const-string p1, "seed == null"
 
     .line 5

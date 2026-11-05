@@ -29,7 +29,7 @@
 
 # direct methods
 .method private static synthetic $values()[Lorg/conscrypt/ct/DigitallySigned$SignatureAlgorithm;
-    .registers 3
+    .locals 3
 
     .line 1
     const/4 v0, 0x4
@@ -87,7 +87,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Lorg/conscrypt/ct/DigitallySigned$SignatureAlgorithm;
@@ -198,7 +198,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -215,7 +215,7 @@
 .end method
 
 .method public static valueOf(I)Lorg/conscrypt/ct/DigitallySigned$SignatureAlgorithm;
-    .registers 4
+    .locals 3
 
     .line 1
     :try_start_0
@@ -224,15 +224,15 @@
     .line 2
     .line 3
     aget-object p0, v0, p0
-    :try_end_4
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_4} :catch_5
+    :try_end_0
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 4
     .line 5
     return-object p0
 
     .line 6
-    :catch_5
+    :catch_0
     move-exception v0
 
     .line 7
@@ -261,7 +261,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lorg/conscrypt/ct/DigitallySigned$SignatureAlgorithm;
-    .registers 2
+    .locals 1
 
     .line 19
     const-class v0, Lorg/conscrypt/ct/DigitallySigned$SignatureAlgorithm;
@@ -276,7 +276,7 @@
 .end method
 
 .method public static values()[Lorg/conscrypt/ct/DigitallySigned$SignatureAlgorithm;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/ct/DigitallySigned$SignatureAlgorithm;->$VALUES:[Lorg/conscrypt/ct/DigitallySigned$SignatureAlgorithm;

@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -29,7 +29,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 6
+    .locals 3
 
     .line 1
     sget v0, Llibs/ci2;->WidgetSpinner:I
@@ -200,14 +200,14 @@
 .end method
 
 .method private setItemText(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Llibs/r90;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -223,10 +223,10 @@
     move-result-object p1
 
     .line 11
-    goto :goto_f
+    goto :goto_0
 
     .line 12
-    :cond_b
+    :cond_0
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     .line 13
@@ -235,7 +235,7 @@
     move-result-object p1
 
     .line 16
-    :goto_f
+    :goto_0
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 17
@@ -247,14 +247,14 @@
 
 # virtual methods
 .method public final a(Llibs/ll1;Landroid/widget/AdapterView$OnItemClickListener;Z)V
-    .registers 5
+    .locals 1
 
     .line 1
     iput-object p1, p0, Lcom/mixplorer/widgets/MiCombo;->Nu:Llibs/ll1;
 
     .line 2
     .line 3
-    if-eqz p2, :cond_6
+    if-eqz p2, :cond_0
 
     .line 4
     .line 5
@@ -262,7 +262,7 @@
 
     .line 6
     .line 7
-    :cond_6
+    :cond_0
     iget-object p2, p0, Lcom/mixplorer/widgets/MiCombo;->Mu:Llibs/be2;
 
     .line 8
@@ -283,7 +283,7 @@
     move-result p2
 
     .line 17
-    if-gtz p2, :cond_1f
+    if-gtz p2, :cond_1
 
     .line 18
     .line 19
@@ -314,7 +314,7 @@
     return-void
 
     .line 32
-    :cond_1f
+    :cond_1
     iget-object p2, p0, Lcom/mixplorer/widgets/MiCombo;->Nu:Llibs/ll1;
 
     .line 33
@@ -344,7 +344,7 @@
 .end method
 
 .method public final b(Ljava/util/ArrayList;Landroid/widget/AdapterView$OnItemClickListener;)V
-    .registers 7
+    .locals 4
 
     .line 1
     new-instance v0, Llibs/ll1;
@@ -380,7 +380,7 @@
 .end method
 
 .method public final c([Ljava/lang/Object;Landroid/widget/AdapterView$OnItemClickListener;)V
-    .registers 6
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/ll1;
@@ -416,7 +416,7 @@
 .end method
 
 .method public final d([Ljava/lang/Object;Landroid/widget/AdapterView$OnItemClickListener;Z)V
-    .registers 7
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/ll1;
@@ -449,7 +449,7 @@
 .end method
 
 .method public getAdapter()Llibs/ll1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -466,14 +466,14 @@
 .end method
 
 .method public getItemCount()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiCombo;->Nu:Llibs/ll1;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -488,7 +488,7 @@
     return v0
 
     .line 10
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
     .line 11
@@ -496,7 +496,7 @@
 .end method
 
 .method public getSelectedIndex()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lcom/mixplorer/widgets/MiCombo;->Xi:I
@@ -507,14 +507,14 @@
 .end method
 
 .method public getSelectedItem()Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiCombo;->Nu:Llibs/ll1;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -533,7 +533,7 @@
     return-object v0
 
     .line 12
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
     .line 13
@@ -541,7 +541,7 @@
 .end method
 
 .method public final onDraw(Landroid/graphics/Canvas;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-super {p0, p1}, Landroid/widget/Button;->onDraw(Landroid/graphics/Canvas;)V
@@ -561,7 +561,7 @@
 
     .line 9
     .line 10
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 11
     .line 12
@@ -573,19 +573,19 @@
     move-result v0
 
     .line 16
-    goto :goto_11
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     const/4 v0, -0x1
 
     .line 18
-    :goto_11
+    :goto_0
     iget v1, p0, Lcom/mixplorer/widgets/MiCombo;->Xi:I
 
     .line 19
     .line 20
-    if-eq v0, v1, :cond_39
+    if-eq v0, v1, :cond_1
 
     .line 21
     .line 22
@@ -609,11 +609,11 @@
     move-result p1
 
     .line 32
-    if-eqz p1, :cond_39
+    if-eqz p1, :cond_1
 
     .line 33
     .line 34
-    if-eqz v0, :cond_39
+    if-eqz v0, :cond_1
 
     .line 35
     .line 36
@@ -637,7 +637,7 @@
     move-result p1
 
     .line 46
-    if-eqz p1, :cond_39
+    if-eqz p1, :cond_1
 
     .line 47
     .line 48
@@ -649,7 +649,7 @@
     move-result p1
 
     .line 52
-    if-eqz p1, :cond_39
+    if-eqz p1, :cond_1
 
     .line 53
     .line 54
@@ -661,12 +661,12 @@
     .line 56
     .line 57
     .line 58
-    :cond_39
+    :cond_1
     return-void
 .end method
 
 .method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 12
+    .locals 6
 
     .line 1
     invoke-virtual {p0, p3}, Lcom/mixplorer/widgets/MiCombo;->setSelection(I)V
@@ -678,7 +678,7 @@
 
     .line 5
     .line 6
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
@@ -699,7 +699,7 @@
     .line 13
     .line 14
     .line 15
-    :cond_e
+    :cond_0
     iget-object p1, p0, Lcom/mixplorer/widgets/MiCombo;->Mu:Llibs/be2;
 
     .line 16
@@ -713,7 +713,7 @@
 .end method
 
 .method public setListener(Landroid/widget/AdapterView$OnItemClickListener;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Lcom/mixplorer/widgets/MiCombo;->Lambda:Landroid/widget/AdapterView$OnItemClickListener;
@@ -724,21 +724,21 @@
 .end method
 
 .method public setSelection(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiCombo;->Nu:Llibs/ll1;
 
     .line 2
     .line 3
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
-    goto :goto_25
+    goto :goto_0
 
     .line 6
-    :cond_5
+    :cond_0
     invoke-virtual {v0}, Landroid/widget/ArrayAdapter;->getCount()I
 
     .line 7
@@ -747,7 +747,7 @@
     move-result v0
 
     .line 10
-    if-lt p1, v0, :cond_15
+    if-lt p1, v0, :cond_1
 
     .line 11
     .line 12
@@ -771,8 +771,8 @@
     return-void
 
     .line 22
-    :cond_15
-    if-gez p1, :cond_1b
+    :cond_1
+    if-gez p1, :cond_2
 
     .line 23
     .line 24
@@ -786,7 +786,7 @@
     return-void
 
     .line 28
-    :cond_1b
+    :cond_2
     iput p1, p0, Lcom/mixplorer/widgets/MiCombo;->Xi:I
 
     .line 29
@@ -803,15 +803,15 @@
     move-result-object p1
 
     .line 36
-    if-nez p1, :cond_26
+    if-nez p1, :cond_3
 
     .line 37
     .line 38
-    :goto_25
+    :goto_0
     return-void
 
     .line 39
-    :cond_26
+    :cond_3
     invoke-direct {p0, p1}, Lcom/mixplorer/widgets/MiCombo;->setItemText(Ljava/lang/Object;)V
 
     .line 40

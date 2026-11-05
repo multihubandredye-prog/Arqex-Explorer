@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x6
@@ -22,7 +22,7 @@
 
 # virtual methods
 .method public final s(Landroid/widget/PopupWindow;Landroid/view/View;II)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-static {p1, p2, p3, p4}, Llibs/Echo;->x(Landroid/widget/PopupWindow;Landroid/view/View;II)V

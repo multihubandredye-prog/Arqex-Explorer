@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/util/concurrent/atomic/AtomicBoolean;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/tn2;->a:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onCheckedChanged(Landroid/widget/CompoundButton;Z)V
-    .registers 6
+    .locals 3
 
     .line 1
     iget-byte p2, p0, Llibs/tn2;->a:B
@@ -53,7 +53,7 @@
 
     .line 6
     .line 7
-    packed-switch p2, :pswitch_data_48
+    packed-switch p2, :pswitch_data_0
 
     .line 8
     .line 9
@@ -66,14 +66,14 @@
     move-result p2
 
     .line 14
-    if-eqz p2, :cond_10
+    if-eqz p2, :cond_0
 
     .line 15
     .line 16
-    goto :goto_27
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     invoke-virtual {v2, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
     .line 18
@@ -103,7 +103,7 @@
     move-result p2
 
     .line 32
-    if-eqz p2, :cond_24
+    if-eqz p2, :cond_1
 
     .line 33
     .line 34
@@ -112,17 +112,17 @@
     .line 35
     .line 36
     .line 37
-    :cond_24
+    :cond_1
     invoke-virtual {v2, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
     .line 38
     .line 39
     .line 40
-    :goto_27
+    :goto_0
     return-void
 
     .line 41
-    :pswitch_28
+    :pswitch_0
     invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
     .line 42
@@ -131,14 +131,14 @@
     move-result p2
 
     .line 45
-    if-eqz p2, :cond_2f
+    if-eqz p2, :cond_2
 
     .line 46
     .line 47
-    goto :goto_46
+    goto :goto_1
 
     .line 48
-    :cond_2f
+    :cond_2
     invoke-virtual {v2, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
     .line 49
@@ -168,7 +168,7 @@
     move-result p2
 
     .line 63
-    if-eqz p2, :cond_43
+    if-eqz p2, :cond_3
 
     .line 64
     .line 65
@@ -177,21 +177,21 @@
     .line 66
     .line 67
     .line 68
-    :cond_43
+    :cond_3
     invoke-virtual {v2, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
     .line 69
     .line 70
     .line 71
-    :goto_46
+    :goto_1
     return-void
 
     .line 72
     nop
 
     .line 73
-    :pswitch_data_48
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_28
+        :pswitch_0
     .end packed-switch
 .end method

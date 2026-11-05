@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/wb0;Ljava/lang/String;)V
-    .registers 9
+    .locals 6
 
     .line 1
     iput-object p1, p0, Llibs/vb0;->g:Llibs/wb0;
@@ -98,8 +98,8 @@
     const/4 v2, 0x0
 
     .line 39
-    :goto_26
-    if-ge v2, v0, :cond_50
+    :goto_0
+    if-ge v2, v0, :cond_0
 
     .line 40
     .line 41
@@ -176,17 +176,17 @@
 
     .line 79
     .line 80
-    goto :goto_26
+    goto :goto_0
 
     .line 81
-    :cond_50
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final a()Ljava/lang/String;
-    .registers 8
+    .locals 7
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -208,8 +208,8 @@
     const/4 v3, 0x0
 
     .line 10
-    :goto_9
-    if-ge v3, v2, :cond_18
+    :goto_0
+    if-ge v3, v2, :cond_0
 
     .line 11
     .line 12
@@ -235,10 +235,10 @@
 
     .line 23
     .line 24
-    goto :goto_9
+    goto :goto_0
 
     .line 25
-    :cond_18
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 26

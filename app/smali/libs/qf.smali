@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/b;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/qf;->a:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onDismiss()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/qf;->a:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_30
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -56,7 +56,7 @@
 
     .line 9
     .line 10
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 11
     .line 12
@@ -65,16 +65,16 @@
     .line 13
     .line 14
     .line 15
-    :cond_e
+    :cond_0
     return-void
 
     .line 16
-    :pswitch_f
+    :pswitch_0
     iget-object v0, v1, Lcom/mixplorer/activities/b;->Victor:Llibs/h32;
 
     .line 17
     .line 18
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_2
 
     .line 19
     .line 20
@@ -95,7 +95,7 @@
 
     .line 28
     .line 29
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_1
 
     .line 30
     .line 31
@@ -104,7 +104,7 @@
     .line 32
     .line 33
     .line 34
-    :cond_21
+    :cond_1
     iget-object v0, v1, Lcom/mixplorer/activities/a;->Z:Landroid/view/ViewGroup;
 
     .line 35
@@ -117,7 +117,7 @@
     move-result v0
 
     .line 40
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_2
 
     .line 41
     .line 42
@@ -133,12 +133,12 @@
     .line 46
     .line 47
     .line 48
-    :cond_2f
+    :cond_2
     return-void
 
     .line 49
-    :pswitch_data_30
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_f
+        :pswitch_0
     .end packed-switch
 .end method

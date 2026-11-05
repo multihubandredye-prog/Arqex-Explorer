@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/zz1;IJ)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final a(J)Llibs/fh3;
-    .registers 9
+    .locals 6
 
     .line 1
     iget-object p1, p0, Llibs/xz1;->X:Llibs/zz1;

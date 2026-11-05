@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/qk2;Ljava/security/spec/PSSParameterSpec;Z)V
-    .registers 5
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/security/SignatureSpi;-><init>()V
@@ -58,7 +58,7 @@
 
     .line 14
     .line 15
-    if-nez p2, :cond_15
+    if-nez p2, :cond_0
 
     .line 16
     .line 17
@@ -70,15 +70,15 @@
 
     .line 20
     .line 21
-    goto :goto_17
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     iput-object p2, p0, Llibs/l92;->c:Ljava/security/spec/PSSParameterSpec;
 
     .line 23
     .line 24
-    :goto_17
+    :goto_0
     invoke-virtual {p2}, Ljava/security/spec/PSSParameterSpec;->getDigestAlgorithm()Ljava/lang/String;
 
     .line 25
@@ -130,7 +130,7 @@
     const/4 p2, 0x1
 
     .line 49
-    if-ne p1, p2, :cond_47
+    if-ne p1, p2, :cond_2
 
     .line 50
     .line 51
@@ -150,7 +150,7 @@
 
     .line 58
     .line 59
-    if-eqz p3, :cond_44
+    if-eqz p3, :cond_1
 
     .line 60
     .line 61
@@ -170,7 +170,7 @@
     return-void
 
     .line 69
-    :cond_44
+    :cond_1
     iput-object p1, p0, Llibs/l92;->f:Llibs/la0;
 
     .line 70
@@ -178,7 +178,7 @@
     return-void
 
     .line 72
-    :cond_47
+    :cond_2
     const-string p1, "unknown trailer field"
 
     .line 73
@@ -197,7 +197,7 @@
 
 # virtual methods
 .method public final engineGetParameter(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -217,14 +217,14 @@
 .end method
 
 .method public final engineGetParameters()Ljava/security/AlgorithmParameters;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/l92;->b:Ljava/security/AlgorithmParameters;
 
     .line 2
     .line 3
-    if-nez v0, :cond_22
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -232,11 +232,11 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
-    :try_start_8
+    :try_start_0
     iget-object v0, p0, Llibs/l92;->a:Llibs/ka;
 
     .line 10
@@ -270,16 +270,16 @@
     .line 24
     .line 25
     invoke-virtual {v0, v1}, Ljava/security/AlgorithmParameters;->init(Ljava/security/spec/AlgorithmParameterSpec;)V
-    :try_end_1b
-    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_1b} :catch_1c
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 26
     .line 27
     .line 28
-    goto :goto_22
+    goto :goto_0
 
     .line 29
-    :catch_1c
+    :catch_0
     move-exception v0
 
     .line 30
@@ -294,8 +294,8 @@
     return-object v0
 
     .line 35
-    :cond_22
-    :goto_22
+    :cond_0
+    :goto_0
     iget-object v0, p0, Llibs/l92;->b:Ljava/security/AlgorithmParameters;
 
     .line 36
@@ -304,12 +304,12 @@
 .end method
 
 .method public final engineInitSign(Ljava/security/PrivateKey;)V
-    .registers 9
+    .locals 7
 
     .line 44
     instance-of v0, p1, Ljava/security/interfaces/RSAPrivateKey;
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     .line 45
     new-instance v1, Llibs/m92;
@@ -342,7 +342,7 @@
     return-void
 
     .line 47
-    :cond_20
+    :cond_0
     const-string p1, "Supplied key is not a RSAPrivateKey instance"
 
     invoke-static {p1}, Llibs/bf0;->k(Ljava/lang/String;)V
@@ -351,14 +351,14 @@
 .end method
 
 .method public final engineInitSign(Ljava/security/PrivateKey;Ljava/security/SecureRandom;)V
-    .registers 10
+    .locals 7
 
     .line 1
     instance-of v0, p1, Ljava/security/interfaces/RSAPrivateKey;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -427,7 +427,7 @@
     return-void
 
     .line 38
-    :cond_25
+    :cond_0
     const-string p1, "Supplied key is not a RSAPrivateKey instance"
 
     .line 39
@@ -441,14 +441,14 @@
 .end method
 
 .method public final engineInitVerify(Ljava/security/PublicKey;)V
-    .registers 9
+    .locals 7
 
     .line 1
     instance-of v0, p1, Ljava/security/interfaces/RSAPublicKey;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -508,7 +508,7 @@
     return-void
 
     .line 33
-    :cond_20
+    :cond_0
     const-string p1, "Supplied key is not a RSAPublicKey instance"
 
     .line 34
@@ -522,7 +522,7 @@
 .end method
 
 .method public final engineSetParameter(Ljava/lang/String;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 212
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -535,14 +535,14 @@
 .end method
 
 .method public final engineSetParameter(Ljava/security/spec/AlgorithmParameterSpec;)V
-    .registers 5
+    .locals 3
 
     .line 1
     instance-of v0, p1, Ljava/security/spec/PSSParameterSpec;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_cd
+    if-eqz v0, :cond_9
 
     .line 4
     .line 5
@@ -554,7 +554,7 @@
 
     .line 8
     .line 9
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_1
 
     .line 10
     .line 11
@@ -582,14 +582,14 @@
     move-result v1
 
     .line 23
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_0
 
     .line 24
     .line 25
-    goto :goto_31
+    goto :goto_0
 
     .line 26
-    :cond_19
+    :cond_0
     new-instance p1, Ljava/security/InvalidAlgorithmParameterException;
 
     .line 27
@@ -636,8 +636,8 @@
     throw p1
 
     .line 50
-    :cond_31
-    :goto_31
+    :cond_1
+    :goto_0
     invoke-virtual {p1}, Ljava/security/spec/PSSParameterSpec;->getMGFAlgorithm()Ljava/lang/String;
 
     .line 51
@@ -658,7 +658,7 @@
     move-result v0
 
     .line 60
-    if-nez v0, :cond_52
+    if-nez v0, :cond_3
 
     .line 61
     .line 62
@@ -686,14 +686,14 @@
     move-result v0
 
     .line 74
-    if-eqz v0, :cond_4c
+    if-eqz v0, :cond_2
 
     .line 75
     .line 76
-    goto :goto_52
+    goto :goto_1
 
     .line 77
-    :cond_4c
+    :cond_2
     const-string p1, "unknown mask generation function specified"
 
     .line 78
@@ -706,8 +706,8 @@
     return-void
 
     .line 83
-    :cond_52
-    :goto_52
+    :cond_3
+    :goto_1
     invoke-virtual {p1}, Ljava/security/spec/PSSParameterSpec;->getMGFParameters()Ljava/security/spec/AlgorithmParameterSpec;
 
     .line 84
@@ -720,7 +720,7 @@
 
     .line 88
     .line 89
-    if-eqz v0, :cond_c7
+    if-eqz v0, :cond_8
 
     .line 90
     .line 91
@@ -760,7 +760,7 @@
     move-result v1
 
     .line 109
-    if-eqz v1, :cond_c1
+    if-eqz v1, :cond_7
 
     .line 110
     .line 111
@@ -780,7 +780,7 @@
     move-result-object v1
 
     .line 119
-    if-eqz v1, :cond_a9
+    if-eqz v1, :cond_6
 
     .line 120
     .line 121
@@ -826,7 +826,7 @@
     const/4 v0, 0x1
 
     .line 141
-    if-ne p1, v0, :cond_a3
+    if-ne p1, v0, :cond_5
 
     .line 142
     .line 143
@@ -846,7 +846,7 @@
 
     .line 150
     .line 151
-    if-eqz v0, :cond_a0
+    if-eqz v0, :cond_4
 
     .line 152
     .line 153
@@ -866,7 +866,7 @@
     return-void
 
     .line 161
-    :cond_a0
+    :cond_4
     iput-object p1, p0, Llibs/l92;->f:Llibs/la0;
 
     .line 162
@@ -874,7 +874,7 @@
     return-void
 
     .line 164
-    :cond_a3
+    :cond_5
     const-string p1, "unknown trailer field"
 
     .line 165
@@ -887,7 +887,7 @@
     return-void
 
     .line 170
-    :cond_a9
+    :cond_6
     new-instance p1, Ljava/security/InvalidAlgorithmParameterException;
 
     .line 171
@@ -934,7 +934,7 @@
     throw p1
 
     .line 194
-    :cond_c1
+    :cond_7
     const-string p1, "digest algorithm for MGF should be the same as for PSS parameters."
 
     .line 195
@@ -947,7 +947,7 @@
     return-void
 
     .line 200
-    :cond_c7
+    :cond_8
     const-string p1, "unknown MGF parameters"
 
     .line 201
@@ -960,7 +960,7 @@
     return-void
 
     .line 206
-    :cond_cd
+    :cond_9
     const-string p1, "Only PSSParameterSpec supported"
 
     .line 207
@@ -974,7 +974,7 @@
 .end method
 
 .method public final engineSign()[B
-    .registers 3
+    .locals 2
 
     .line 1
     :try_start_0
@@ -988,14 +988,14 @@
     .line 5
     .line 6
     move-result-object v0
-    :try_end_6
-    .catch Llibs/qb1; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Llibs/qb1; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 7
     return-object v0
 
     .line 8
-    :catch_7
+    :catch_0
     move-exception v0
 
     .line 9
@@ -1020,7 +1020,7 @@
 .end method
 
 .method public final engineUpdate(B)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/l92;->k:Llibs/m92;
@@ -1040,7 +1040,7 @@
 .end method
 
 .method public final engineUpdate([BII)V
-    .registers 5
+    .locals 1
 
     .line 9
     iget-object v0, p0, Llibs/l92;->k:Llibs/m92;
@@ -1055,7 +1055,7 @@
 .end method
 
 .method public final engineVerify([B)Z
-    .registers 13
+    .locals 11
 
     .line 1
     iget-object v0, p0, Llibs/l92;->k:Llibs/m92;
@@ -1095,7 +1095,7 @@
     const/4 v3, 0x0
 
     .line 18
-    :try_start_11
+    :try_start_0
     iget-object v6, v0, Llibs/m92;->c:Llibs/b6;
 
     .line 19
@@ -1128,8 +1128,8 @@
 
     .line 31
     invoke-static {p1, v3, v6, v7, v8}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-    :try_end_21
-    .catch Ljava/lang/Exception; {:try_start_11 .. :try_end_21} :catch_b9
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 32
     .line 33
@@ -1155,7 +1155,7 @@
 
     .line 42
     .line 43
-    if-eq v6, v8, :cond_30
+    if-eq v6, v8, :cond_0
 
     .line 44
     .line 45
@@ -1167,7 +1167,7 @@
     return v3
 
     .line 49
-    :cond_30
+    :cond_0
     array-length v6, p1
 
     .line 50
@@ -1197,7 +1197,7 @@
     const/4 v6, 0x0
 
     .line 60
-    :goto_3b
+    :goto_0
     array-length v8, p1
 
     .line 61
@@ -1205,7 +1205,7 @@
 
     .line 62
     .line 63
-    if-eq v6, v8, :cond_4b
+    if-eq v6, v8, :cond_1
 
     .line 64
     .line 65
@@ -1231,10 +1231,10 @@
 
     .line 74
     .line 75
-    goto :goto_3b
+    goto :goto_0
 
     .line 76
-    :cond_4b
+    :cond_1
     aget-byte p1, v9, v3
 
     .line 77
@@ -1274,7 +1274,7 @@
     const/4 p1, 0x0
 
     .line 93
-    :goto_5c
+    :goto_1
     iget-object v6, v0, Llibs/m92;->k:[B
 
     .line 94
@@ -1292,7 +1292,7 @@
 
     .line 99
     .line 100
-    if-eq p1, v8, :cond_70
+    if-eq p1, v8, :cond_3
 
     .line 101
     .line 102
@@ -1300,7 +1300,7 @@
 
     .line 103
     .line 104
-    if-eqz v8, :cond_6d
+    if-eqz v8, :cond_2
 
     .line 105
     .line 106
@@ -1312,15 +1312,15 @@
     return v3
 
     .line 110
-    :cond_6d
+    :cond_2
     add-int/lit8 p1, p1, 0x1
 
     .line 111
     .line 112
-    goto :goto_5c
+    goto :goto_1
 
     .line 113
-    :cond_70
+    :cond_3
     array-length p1, v6
 
     .line 114
@@ -1338,7 +1338,7 @@
 
     .line 119
     .line 120
-    if-eq p1, v7, :cond_7d
+    if-eq p1, v7, :cond_4
 
     .line 121
     .line 122
@@ -1350,7 +1350,7 @@
     return v3
 
     .line 126
-    :cond_7d
+    :cond_4
     array-length p1, v6
 
     .line 127
@@ -1412,11 +1412,11 @@
     sub-int/2addr v1, v4
 
     .line 151
-    :goto_96
+    :goto_2
     array-length v4, v2
 
     .line 152
-    if-eq v1, v4, :cond_b0
+    if-eq v1, v4, :cond_6
 
     .line 153
     .line 154
@@ -1435,7 +1435,7 @@
     xor-int/2addr v4, v5
 
     .line 161
-    if-eqz v4, :cond_ab
+    if-eqz v4, :cond_5
 
     .line 162
     .line 163
@@ -1456,7 +1456,7 @@
     return v3
 
     .line 172
-    :cond_ab
+    :cond_5
     add-int/lit8 p1, p1, 0x1
 
     .line 173
@@ -1465,10 +1465,10 @@
 
     .line 175
     .line 176
-    goto :goto_96
+    goto :goto_2
 
     .line 177
-    :cond_b0
+    :cond_6
     invoke-static {v2}, Llibs/m92;->b([B)V
 
     .line 178
@@ -1486,6 +1486,6 @@
     return v7
 
     .line 186
-    :catch_b9
+    :catch_0
     return v3
 .end method

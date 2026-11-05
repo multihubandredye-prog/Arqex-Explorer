@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic a(Lcom/mixplorer/widgets/MiEditText;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -20,7 +20,7 @@
 .end method
 
 .method public static bridge synthetic b(Lcom/mixplorer/widgets/MiTextView;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -35,7 +35,7 @@
 .end method
 
 .method public static bridge synthetic c(Lcom/mixplorer/widgets/MiEditText;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -50,7 +50,7 @@
 .end method
 
 .method public static bridge synthetic d(Lcom/mixplorer/widgets/MiTextView;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1

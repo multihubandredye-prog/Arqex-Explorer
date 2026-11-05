@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public final a(Ljava/lang/String;Ljava/util/ArrayList;Z)V
-    .registers 5
+    .locals 1
 
     .line 1
     const-string v0, "kml"
@@ -50,7 +50,7 @@
     move-result v0
 
     .line 7
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 8
     .line 9
@@ -66,16 +66,16 @@
     move-result v0
 
     .line 15
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_1
 
     .line 16
     .line 17
-    :cond_10
+    :cond_0
     iput-boolean p3, p0, Llibs/si1;->a:Z
 
     .line 18
     .line 19
-    :cond_12
+    :cond_1
     const-string v0, "Placemark"
 
     .line 20
@@ -88,7 +88,7 @@
     move-result v0
 
     .line 25
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_3
 
     .line 26
     .line 27
@@ -96,7 +96,7 @@
 
     .line 28
     .line 29
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_3
 
     .line 30
     .line 31
@@ -104,7 +104,7 @@
 
     .line 32
     .line 33
-    if-eqz p3, :cond_2a
+    if-eqz p3, :cond_2
 
     .line 34
     .line 35
@@ -121,10 +121,10 @@
 
     .line 41
     .line 42
-    goto :goto_2f
+    goto :goto_0
 
     .line 43
-    :cond_2a
+    :cond_2
     iget-object v0, p0, Llibs/si1;->g:Llibs/nc2;
 
     .line 44
@@ -134,8 +134,8 @@
     .line 46
     .line 47
     .line 48
-    :cond_2f
-    :goto_2f
+    :cond_3
+    :goto_0
     const-string p2, "name"
 
     .line 49
@@ -148,7 +148,7 @@
     move-result p2
 
     .line 54
-    if-eqz p2, :cond_3d
+    if-eqz p2, :cond_4
 
     .line 55
     .line 56
@@ -156,7 +156,7 @@
 
     .line 57
     .line 58
-    if-eqz p2, :cond_3d
+    if-eqz p2, :cond_4
 
     .line 59
     .line 60
@@ -164,7 +164,7 @@
 
     .line 61
     .line 62
-    :cond_3d
+    :cond_4
     const-string p2, "description"
 
     .line 63
@@ -177,7 +177,7 @@
     move-result p2
 
     .line 68
-    if-eqz p2, :cond_4b
+    if-eqz p2, :cond_5
 
     .line 69
     .line 70
@@ -185,7 +185,7 @@
 
     .line 71
     .line 72
-    if-eqz p2, :cond_4b
+    if-eqz p2, :cond_5
 
     .line 73
     .line 74
@@ -193,7 +193,7 @@
 
     .line 75
     .line 76
-    :cond_4b
+    :cond_5
     const-string p2, "Point"
 
     .line 77
@@ -206,7 +206,7 @@
     move-result p2
 
     .line 82
-    if-eqz p2, :cond_59
+    if-eqz p2, :cond_6
 
     .line 83
     .line 84
@@ -214,7 +214,7 @@
 
     .line 85
     .line 86
-    if-eqz p2, :cond_59
+    if-eqz p2, :cond_6
 
     .line 87
     .line 88
@@ -222,7 +222,7 @@
 
     .line 89
     .line 90
-    :cond_59
+    :cond_6
     const-string p2, "coordinates"
 
     .line 91
@@ -235,7 +235,7 @@
     move-result p1
 
     .line 96
-    if-eqz p1, :cond_67
+    if-eqz p1, :cond_7
 
     .line 97
     .line 98
@@ -243,7 +243,7 @@
 
     .line 99
     .line 100
-    if-eqz p1, :cond_67
+    if-eqz p1, :cond_7
 
     .line 101
     .line 102
@@ -251,6 +251,6 @@
 
     .line 103
     .line 104
-    :cond_67
+    :cond_7
     return-void
 .end method

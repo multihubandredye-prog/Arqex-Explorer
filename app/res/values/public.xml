@@ -71,6 +71,17 @@
     <public type="dimen" name="wheelSelectorHeight" id="0x7f06003a" />
     <public type="drawable" name="app_logo" id="0x7f070001" />
     <public type="drawable" name="company_logo" id="0x7f070051" />
+    <public type="drawable" name="arqex_menu_execute" id="0x7f070103" />
+    <public type="drawable" name="arqex_menu_exit" id="0x7f070104" />
+    <public type="drawable" name="arqex_menu_filter" id="0x7f070105" />
+    <public type="drawable" name="arqex_menu_lock" id="0x7f070106" />
+    <public type="drawable" name="arqex_menu_log" id="0x7f070107" />
+    <public type="drawable" name="arqex_menu_servers" id="0x7f070108" />
+    <public type="drawable" name="arqex_menu_settings" id="0x7f070109" />
+    <public type="drawable" name="arqex_menu_tasks" id="0x7f07010a" />
+    <public type="drawable" name="arqex_menu_terminal" id="0x7f07010b" />
+    <public type="drawable" name="arqex_menu_tools" id="0x7f07010c" />
+    <public type="drawable" name="arqex_menu_undo" id="0x7f07010d" />
     <public type="drawable" name="bg_popup_shadow" id="0x7f070015" />
     <public type="drawable" name="btn_check_off" id="0x7f070016" />
     <public type="drawable" name="btn_check_on" id="0x7f070017" />

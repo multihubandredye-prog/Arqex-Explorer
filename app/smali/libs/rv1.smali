@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/widgets/MiTabBar;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/rv1;->a:Lcom/mixplorer/widgets/MiTabBar;
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final onDrag(Landroid/view/View;Landroid/view/DragEvent;)Z
-    .registers 11
+    .locals 8
 
     .line 1
     invoke-static {p2}, Llibs/ce0;->e(Landroid/view/DragEvent;)I
@@ -56,14 +56,14 @@
     const/4 v3, 0x0
 
     .line 12
-    if-nez v2, :cond_e
+    if-nez v2, :cond_0
 
     .line 13
     .line 14
-    goto :goto_21
+    goto :goto_0
 
     .line 15
-    :cond_e
+    :cond_0
     check-cast v1, Landroid/view/View;
 
     .line 16
@@ -74,7 +74,7 @@
     const/4 v4, 0x1
 
     .line 19
-    if-eq v0, v4, :cond_cc
+    if-eq v0, v4, :cond_a
 
     .line 20
     .line 21
@@ -84,7 +84,7 @@
     const/4 v6, -0x1
 
     .line 23
-    if-eq v0, v5, :cond_76
+    if-eq v0, v5, :cond_5
 
     .line 24
     .line 25
@@ -94,26 +94,26 @@
     const/4 p2, 0x0
 
     .line 27
-    if-eq v0, p1, :cond_66
+    if-eq v0, p1, :cond_4
 
     .line 28
     .line 29
-    if-eq v0, v2, :cond_2e
+    if-eq v0, v2, :cond_2
 
     .line 30
     .line 31
     const/4 p1, 0x6
 
     .line 32
-    if-eq v0, p1, :cond_22
+    if-eq v0, p1, :cond_1
 
     .line 33
     .line 34
-    :goto_21
+    :goto_0
     return v3
 
     .line 35
-    :cond_22
+    :cond_1
     iget-object p1, p0, Llibs/rv1;->a:Lcom/mixplorer/widgets/MiTabBar;
 
     .line 36
@@ -138,7 +138,7 @@
     return v4
 
     .line 47
-    :cond_2e
+    :cond_2
     iget-object p1, p0, Llibs/rv1;->a:Lcom/mixplorer/widgets/MiTabBar;
 
     .line 48
@@ -197,7 +197,7 @@
 
     .line 76
     .line 77
-    if-eqz v0, :cond_5f
+    if-eqz v0, :cond_3
 
     .line 78
     .line 79
@@ -205,15 +205,15 @@
 
     .line 80
     .line 81
-    if-eq v0, v6, :cond_5f
+    if-eq v0, v6, :cond_3
 
     .line 82
     .line 83
-    if-eq p1, v6, :cond_5f
+    if-eq p1, v6, :cond_3
 
     .line 84
     .line 85
-    if-eq v0, p1, :cond_5f
+    if-eq v0, p1, :cond_3
 
     .line 86
     .line 87
@@ -221,7 +221,7 @@
 
     .line 88
     .line 89
-    if-eqz p2, :cond_5f
+    if-eqz p2, :cond_3
 
     .line 90
     .line 91
@@ -234,7 +234,7 @@
     .line 94
     .line 95
     .line 96
-    :cond_5f
+    :cond_3
     iget-object p1, p0, Llibs/rv1;->a:Lcom/mixplorer/widgets/MiTabBar;
 
     .line 97
@@ -250,7 +250,7 @@
     return v4
 
     .line 103
-    :cond_66
+    :cond_4
     iget-object p1, p0, Llibs/rv1;->a:Lcom/mixplorer/widgets/MiTabBar;
 
     .line 104
@@ -283,7 +283,7 @@
     return v4
 
     .line 119
-    :cond_76
+    :cond_5
     iget-object v0, p0, Llibs/rv1;->a:Lcom/mixplorer/widgets/MiTabBar;
 
     .line 120
@@ -292,7 +292,7 @@
 
     .line 122
     .line 123
-    if-ne p1, v0, :cond_cb
+    if-ne p1, v0, :cond_9
 
     .line 124
     .line 125
@@ -363,7 +363,7 @@
 
     .line 157
     .line 158
-    if-gez v5, :cond_a2
+    if-gez v5, :cond_6
 
     .line 159
     .line 160
@@ -371,10 +371,10 @@
 
     .line 161
     .line 162
-    goto :goto_ae
+    goto :goto_1
 
     .line 163
-    :cond_a2
+    :cond_6
     add-int/2addr p2, v0
 
     .line 164
@@ -388,7 +388,7 @@
 
     .line 167
     .line 168
-    if-lez p2, :cond_ac
+    if-lez p2, :cond_7
 
     .line 169
     .line 170
@@ -396,15 +396,15 @@
 
     .line 171
     .line 172
-    goto :goto_ae
+    goto :goto_1
 
     .line 173
-    :cond_ac
+    :cond_7
     iput v3, v7, Lcom/mixplorer/widgets/MiTabBar;->Seven:I
 
     .line 174
     .line 175
-    :goto_ae
+    :goto_1
     iget-object p2, v7, Lcom/mixplorer/widgets/MiTabBar;->Zero:Llibs/uf;
 
     .line 176
@@ -417,7 +417,7 @@
 
     .line 180
     .line 181
-    if-eqz v0, :cond_c3
+    if-eqz v0, :cond_8
 
     .line 182
     .line 183
@@ -443,16 +443,16 @@
     .line 193
     .line 194
     .line 195
-    goto :goto_c6
+    goto :goto_2
 
     .line 196
-    :cond_c3
+    :cond_8
     invoke-virtual {v2, p2}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
     .line 197
     .line 198
     .line 199
-    :goto_c6
+    :goto_2
     iget-object p2, p0, Llibs/rv1;->a:Lcom/mixplorer/widgets/MiTabBar;
 
     .line 200
@@ -462,11 +462,11 @@
     .line 202
     .line 203
     .line 204
-    :cond_cb
+    :cond_9
     return v4
 
     .line 205
-    :cond_cc
+    :cond_a
     iget-object p1, p0, Llibs/rv1;->a:Lcom/mixplorer/widgets/MiTabBar;
 
     .line 206

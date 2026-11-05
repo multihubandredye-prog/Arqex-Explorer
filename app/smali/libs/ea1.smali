@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ga1;Ljava/util/ArrayList;Landroid/widget/CheckBox;Landroid/widget/CheckBox;ZIILlibs/ml1;)V
-    .registers 9
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/ea1;->j:Llibs/ga1;
@@ -69,7 +69,7 @@
 
 # virtual methods
 .method public final z(Landroid/view/View;I)V
-    .registers 12
+    .locals 9
 
     .line 1
     iget-object p1, p0, Llibs/ea1;->c:Ljava/util/ArrayList;
@@ -102,7 +102,7 @@
 
     .line 14
     .line 15
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 16
     .line 17
@@ -114,26 +114,26 @@
     move-result v0
 
     .line 21
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 22
     .line 23
     const/4 v5, 0x1
 
     .line 24
-    goto :goto_19
+    goto :goto_0
 
     .line 25
-    :cond_18
+    :cond_0
     const/4 v5, 0x0
 
     .line 26
-    :goto_19
+    :goto_0
     iget-object v0, p0, Llibs/ea1;->e:Landroid/widget/CheckBox;
 
     .line 27
     .line 28
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     .line 29
     .line 30
@@ -145,21 +145,21 @@
     move-result v0
 
     .line 34
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     .line 35
     .line 36
     const/4 v2, 0x1
 
     .line 37
-    goto :goto_26
+    goto :goto_1
 
     .line 38
-    :cond_25
+    :cond_1
     const/4 v2, 0x0
 
     .line 39
-    :goto_26
+    :goto_1
     invoke-static {}, Llibs/gx1;->a()V
 
     .line 40
@@ -185,14 +185,14 @@
     move-result-object v6
 
     .line 52
-    if-nez v6, :cond_36
+    if-nez v6, :cond_2
 
     .line 53
     .line 54
-    goto :goto_49
+    goto :goto_2
 
     .line 55
-    :cond_36
+    :cond_2
     new-instance p1, Llibs/xv1;
 
     .line 56
@@ -228,7 +228,7 @@
     .line 72
     .line 73
     .line 74
-    :goto_49
+    :goto_2
     iget-object p1, p0, Llibs/ea1;->i:Llibs/ml1;
 
     .line 75

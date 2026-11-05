@@ -18,7 +18,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-wide/16 v0, 0x1
@@ -41,7 +41,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,7 +55,7 @@
 
 # virtual methods
 .method public final a(ILjava/math/BigInteger;Ljava/math/BigInteger;)Ljava/math/BigInteger;
-    .registers 21
+    .locals 17
 
     .line 1
     move-object/from16 v0, p0
@@ -76,7 +76,7 @@
     const/4 v4, 0x0
 
     .line 9
-    :goto_8
+    :goto_0
     mul-int/lit8 v5, v1, 0x5
 
     .line 10
@@ -84,7 +84,7 @@
     const/4 v6, 0x0
 
     .line 12
-    if-eq v4, v5, :cond_22a
+    if-eq v4, v5, :cond_17
 
     .line 13
     .line 14
@@ -128,7 +128,7 @@
     move-result v7
 
     .line 34
-    if-eqz v7, :cond_27
+    if-eqz v7, :cond_0
 
     .line 35
     .line 36
@@ -136,11 +136,11 @@
 
     .line 37
     .line 38
-    goto/16 :goto_221
+    goto/16 :goto_5
 
     .line 39
     .line 40
-    :cond_27
+    :cond_0
     invoke-virtual {v5, v5}, Ljava/math/BigInteger;->multiply(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
     .line 41
@@ -161,15 +161,15 @@
     move-result v7
 
     .line 50
-    if-gez v7, :cond_35
+    if-gez v7, :cond_1
 
     .line 51
     .line 52
-    goto/16 :goto_221
+    goto/16 :goto_5
 
     .line 53
     .line 54
-    :cond_35
+    :cond_1
     invoke-static {v5}, Llibs/tf2;->a(Ljava/math/BigInteger;)V
 
     .line 55
@@ -208,7 +208,7 @@
 
     .line 73
     .line 74
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 75
     .line 76
@@ -216,7 +216,7 @@
 
     .line 77
     .line 78
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 79
     .line 80
@@ -224,7 +224,7 @@
 
     .line 81
     .line 82
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 83
     .line 84
@@ -232,7 +232,7 @@
 
     .line 85
     .line 86
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 87
     .line 88
@@ -240,7 +240,7 @@
 
     .line 89
     .line 90
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 91
     .line 92
@@ -248,7 +248,7 @@
 
     .line 93
     .line 94
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 95
     .line 96
@@ -256,7 +256,7 @@
 
     .line 97
     .line 98
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 99
     .line 100
@@ -264,7 +264,7 @@
 
     .line 101
     .line 102
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 103
     .line 104
@@ -272,15 +272,15 @@
 
     .line 105
     .line 106
-    if-nez v7, :cond_6d
+    if-nez v7, :cond_2
 
     .line 107
     .line 108
-    goto/16 :goto_221
+    goto/16 :goto_5
 
     .line 109
     .line 110
-    :cond_6d
+    :cond_2
     const-wide/32 v11, 0x37ed0ed
 
     .line 111
@@ -314,7 +314,7 @@
 
     .line 126
     .line 127
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 128
     .line 129
@@ -322,7 +322,7 @@
 
     .line 130
     .line 131
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 132
     .line 133
@@ -330,7 +330,7 @@
 
     .line 134
     .line 135
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 136
     .line 137
@@ -338,7 +338,7 @@
 
     .line 138
     .line 139
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 140
     .line 141
@@ -346,15 +346,15 @@
 
     .line 142
     .line 143
-    if-nez v7, :cond_92
+    if-nez v7, :cond_3
 
     .line 144
     .line 145
-    goto/16 :goto_221
+    goto/16 :goto_5
 
     .line 146
     .line 147
-    :cond_92
+    :cond_3
     const-wide/32 v11, 0x23cd611f
 
     .line 148
@@ -388,7 +388,7 @@
 
     .line 163
     .line 164
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 165
     .line 166
@@ -396,7 +396,7 @@
 
     .line 167
     .line 168
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 169
     .line 170
@@ -404,7 +404,7 @@
 
     .line 171
     .line 172
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 173
     .line 174
@@ -412,7 +412,7 @@
 
     .line 175
     .line 176
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 177
     .line 178
@@ -420,15 +420,15 @@
 
     .line 179
     .line 180
-    if-nez v7, :cond_b7
+    if-nez v7, :cond_4
 
     .line 181
     .line 182
-    goto/16 :goto_221
+    goto/16 :goto_5
 
     .line 183
     .line 184
-    :cond_b7
+    :cond_4
     const-wide/32 v11, 0x20691a3
 
     .line 185
@@ -462,7 +462,7 @@
 
     .line 200
     .line 201
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 202
     .line 203
@@ -470,7 +470,7 @@
 
     .line 204
     .line 205
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 206
     .line 207
@@ -478,7 +478,7 @@
 
     .line 208
     .line 209
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 210
     .line 211
@@ -486,15 +486,15 @@
 
     .line 212
     .line 213
-    if-nez v7, :cond_d8
+    if-nez v7, :cond_5
 
     .line 214
     .line 215
-    goto/16 :goto_221
+    goto/16 :goto_5
 
     .line 216
     .line 217
-    :cond_d8
+    :cond_5
     const-wide/32 v11, 0x55a60cb
 
     .line 218
@@ -528,7 +528,7 @@
 
     .line 233
     .line 234
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 235
     .line 236
@@ -536,7 +536,7 @@
 
     .line 237
     .line 238
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 239
     .line 240
@@ -544,7 +544,7 @@
 
     .line 241
     .line 242
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 243
     .line 244
@@ -552,15 +552,15 @@
 
     .line 245
     .line 246
-    if-nez v7, :cond_f9
+    if-nez v7, :cond_6
 
     .line 247
     .line 248
-    goto/16 :goto_221
+    goto/16 :goto_5
 
     .line 249
     .line 250
-    :cond_f9
+    :cond_6
     const-wide/32 v11, 0x9f9f361
 
     .line 251
@@ -594,7 +594,7 @@
 
     .line 266
     .line 267
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 268
     .line 269
@@ -602,7 +602,7 @@
 
     .line 270
     .line 271
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 272
     .line 273
@@ -610,7 +610,7 @@
 
     .line 274
     .line 275
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 276
     .line 277
@@ -618,15 +618,15 @@
 
     .line 278
     .line 279
-    if-nez v7, :cond_11a
+    if-nez v7, :cond_7
 
     .line 280
     .line 281
-    goto/16 :goto_221
+    goto/16 :goto_5
 
     .line 282
     .line 283
-    :cond_11a
+    :cond_7
     const-wide/32 v11, 0x1627b25d
 
     .line 284
@@ -660,7 +660,7 @@
 
     .line 299
     .line 300
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 301
     .line 302
@@ -668,7 +668,7 @@
 
     .line 303
     .line 304
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 305
     .line 306
@@ -676,7 +676,7 @@
 
     .line 307
     .line 308
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 309
     .line 310
@@ -684,15 +684,15 @@
 
     .line 311
     .line 312
-    if-nez v7, :cond_13b
+    if-nez v7, :cond_8
 
     .line 313
     .line 314
-    goto/16 :goto_221
+    goto/16 :goto_5
 
     .line 315
     .line 316
-    :cond_13b
+    :cond_8
     const-wide/32 v11, 0x2676ed77
 
     .line 317
@@ -726,7 +726,7 @@
 
     .line 332
     .line 333
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 334
     .line 335
@@ -734,7 +734,7 @@
 
     .line 336
     .line 337
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 338
     .line 339
@@ -742,7 +742,7 @@
 
     .line 340
     .line 341
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 342
     .line 343
@@ -750,15 +750,15 @@
 
     .line 344
     .line 345
-    if-nez v7, :cond_15c
+    if-nez v7, :cond_9
 
     .line 346
     .line 347
-    goto/16 :goto_221
+    goto/16 :goto_5
 
     .line 348
     .line 349
-    :cond_15c
+    :cond_9
     const-wide/32 v11, 0x3fcf739d
 
     .line 350
@@ -792,7 +792,7 @@
 
     .line 365
     .line 366
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 367
     .line 368
@@ -800,7 +800,7 @@
 
     .line 369
     .line 370
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 371
     .line 372
@@ -808,7 +808,7 @@
 
     .line 373
     .line 374
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 375
     .line 376
@@ -816,15 +816,15 @@
 
     .line 377
     .line 378
-    if-nez v7, :cond_17d
+    if-nez v7, :cond_a
 
     .line 379
     .line 380
-    goto/16 :goto_221
+    goto/16 :goto_5
 
     .line 381
     .line 382
-    :cond_17d
+    :cond_a
     const-wide/32 v11, 0x5f281a99
 
     .line 383
@@ -858,7 +858,7 @@
 
     .line 398
     .line 399
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 400
     .line 401
@@ -866,7 +866,7 @@
 
     .line 402
     .line 403
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 404
     .line 405
@@ -874,7 +874,7 @@
 
     .line 406
     .line 407
-    if-eqz v11, :cond_221
+    if-eqz v11, :cond_16
 
     .line 408
     .line 409
@@ -882,15 +882,15 @@
 
     .line 410
     .line 411
-    if-nez v7, :cond_19e
+    if-nez v7, :cond_b
 
     .line 412
     .line 413
-    goto/16 :goto_221
+    goto/16 :goto_5
 
     .line 414
     .line 415
-    :cond_19e
+    :cond_b
     iget-object v7, v0, Llibs/tk2;->X:Llibs/h50;
 
     .line 416
@@ -916,11 +916,11 @@
     .line 426
     .line 427
     .line 428
-    if-eqz v7, :cond_21b
+    if-eqz v7, :cond_15
 
     .line 429
     .line 430
-    if-lt v11, v8, :cond_215
+    if-lt v11, v8, :cond_14
 
     .line 431
     .line 432
@@ -935,14 +935,14 @@
     const/4 v14, 0x2
 
     .line 437
-    if-ne v6, v14, :cond_1b7
+    if-ne v6, v14, :cond_c
 
     .line 438
     .line 439
-    goto :goto_205
+    goto :goto_4
 
     .line 440
-    :cond_1b7
+    :cond_c
     invoke-virtual {v5, v3}, Ljava/math/BigInteger;->testBit(I)Z
 
     .line 441
@@ -951,14 +951,14 @@
     move-result v6
 
     .line 444
-    if-nez v6, :cond_1be
+    if-nez v6, :cond_d
 
     .line 445
     .line 446
-    goto :goto_221
+    goto :goto_5
 
     .line 447
-    :cond_1be
+    :cond_d
     invoke-virtual {v5, v12}, Ljava/math/BigInteger;->subtract(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
     .line 448
@@ -994,8 +994,8 @@
     const/4 v8, 0x0
 
     .line 464
-    :goto_1cf
-    if-ge v8, v11, :cond_205
+    :goto_1
+    if-ge v8, v11, :cond_12
 
     .line 465
     .line 466
@@ -1023,7 +1023,7 @@
     move-result v16
 
     .line 478
-    if-nez v16, :cond_1fe
+    if-nez v16, :cond_11
 
     .line 479
     .line 480
@@ -1035,19 +1035,19 @@
     move-result v16
 
     .line 484
-    if-eqz v16, :cond_1e6
+    if-eqz v16, :cond_e
 
     .line 485
     .line 486
-    goto :goto_1fe
+    goto :goto_3
 
     .line 487
-    :cond_1e6
+    :cond_e
     const/4 v1, 0x1
 
     .line 488
-    :goto_1e7
-    if-ge v1, v15, :cond_221
+    :goto_2
+    if-ge v1, v15, :cond_16
 
     .line 489
     .line 490
@@ -1067,14 +1067,14 @@
     move-result v16
 
     .line 498
-    if-eqz v16, :cond_1f4
+    if-eqz v16, :cond_f
 
     .line 499
     .line 500
-    goto :goto_1fe
+    goto :goto_3
 
     .line 501
-    :cond_1f4
+    :cond_f
     invoke-virtual {v0, v12}, Ljava/math/BigInteger;->equals(Ljava/lang/Object;)Z
 
     .line 502
@@ -1083,23 +1083,23 @@
     move-result v16
 
     .line 505
-    if-eqz v16, :cond_1fb
+    if-eqz v16, :cond_10
 
     .line 506
     .line 507
-    goto :goto_221
+    goto :goto_5
 
     .line 508
-    :cond_1fb
+    :cond_10
     add-int/lit8 v1, v1, 0x1
 
     .line 509
     .line 510
-    goto :goto_1e7
+    goto :goto_2
 
     .line 511
-    :cond_1fe
-    :goto_1fe
+    :cond_11
+    :goto_3
     add-int/lit8 v8, v8, 0x1
 
     .line 512
@@ -1112,11 +1112,11 @@
 
     .line 516
     .line 517
-    goto :goto_1cf
+    goto :goto_1
 
     .line 518
-    :cond_205
-    :goto_205
+    :cond_12
+    :goto_4
     invoke-virtual {v5, v9}, Ljava/math/BigInteger;->subtract(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
     .line 519
@@ -1141,18 +1141,18 @@
     move-result v0
 
     .line 530
-    if-nez v0, :cond_214
+    if-nez v0, :cond_13
 
     .line 531
     .line 532
-    goto :goto_221
+    goto :goto_5
 
     .line 533
-    :cond_214
+    :cond_13
     return-object v5
 
     .line 534
-    :cond_215
+    :cond_14
     const-string v0, "\'iterations\' must be > 0"
 
     .line 535
@@ -1165,7 +1165,7 @@
     return-object v6
 
     .line 540
-    :cond_21b
+    :cond_15
     const-string v0, "\'random\' cannot be null"
 
     .line 541
@@ -1178,8 +1178,8 @@
     return-object v6
 
     .line 546
-    :cond_221
-    :goto_221
+    :cond_16
+    :goto_5
     add-int/lit8 v4, v4, 0x1
 
     .line 547
@@ -1195,11 +1195,11 @@
     const/4 v3, 0x0
 
     .line 553
-    goto/16 :goto_8
+    goto/16 :goto_0
 
     .line 554
     .line 555
-    :cond_22a
+    :cond_17
     const-string v0, "unable to generate prime number for RSA key"
 
     .line 556
@@ -1213,7 +1213,7 @@
 .end method
 
 .method public final b(Llibs/ct;)V
-    .registers 3
+    .locals 1
 
     .line 1
     check-cast p1, Llibs/h50;
@@ -1232,37 +1232,37 @@
 
     .line 8
     .line 9
-    if-lt p1, v0, :cond_c
+    if-lt p1, v0, :cond_0
 
     .line 10
     .line 11
     const/4 p1, 0x4
 
     .line 12
-    goto :goto_1b
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     const/16 v0, 0x400
 
     .line 14
     .line 15
-    if-lt p1, v0, :cond_12
+    if-lt p1, v0, :cond_1
 
     .line 16
     .line 17
     const/4 p1, 0x5
 
     .line 18
-    goto :goto_1b
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_1
     const/16 v0, 0x200
 
     .line 20
     .line 21
-    if-lt p1, v0, :cond_19
+    if-lt p1, v0, :cond_2
 
     .line 22
     .line 23
@@ -1270,15 +1270,15 @@
 
     .line 24
     .line 25
-    goto :goto_1b
+    goto :goto_0
 
     .line 26
-    :cond_19
+    :cond_2
     const/16 p1, 0x38
 
     .line 27
     .line 28
-    :goto_1b
+    :goto_0
     iput p1, p0, Llibs/tk2;->Y:I
 
     .line 29
@@ -1287,7 +1287,7 @@
 .end method
 
 .method public final x()Llibs/v1;
-    .registers 27
+    .locals 26
 
     .line 1
     move-object/from16 v0, p0
@@ -1326,14 +1326,14 @@
 
     .line 18
     .line 19
-    if-ge v5, v6, :cond_15
+    if-ge v5, v6, :cond_0
 
     .line 20
     .line 21
     move v5, v6
 
     .line 22
-    :cond_15
+    :cond_0
     shr-int/lit8 v6, v1, 0x2
 
     .line 23
@@ -1388,8 +1388,8 @@
     const/4 v12, 0x0
 
     .line 48
-    :goto_2f
-    if-nez v12, :cond_dc
+    :goto_0
+    if-nez v12, :cond_7
 
     .line 49
     .line 50
@@ -1413,7 +1413,7 @@
     move-result-object v14
 
     .line 60
-    :goto_3b
+    :goto_1
     invoke-virtual {v0, v3, v13, v7}, Llibs/tk2;->a(ILjava/math/BigInteger;Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
     .line 61
@@ -1450,7 +1450,7 @@
     move-result v3
 
     .line 78
-    if-lt v3, v5, :cond_55
+    if-lt v3, v5, :cond_1
 
     .line 79
     .line 80
@@ -1462,11 +1462,11 @@
     move-result v3
 
     .line 84
-    if-gtz v3, :cond_5c
+    if-gtz v3, :cond_2
 
     .line 85
     .line 86
-    :cond_55
+    :cond_1
     move/from16 v24, v1
 
     .line 87
@@ -1478,11 +1478,11 @@
     const/4 v11, 0x0
 
     .line 91
-    goto/16 :goto_d2
+    goto/16 :goto_4
 
     .line 92
     .line 93
-    :cond_5c
+    :cond_2
     invoke-virtual {v14, v15}, Ljava/math/BigInteger;->multiply(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
     .line 94
@@ -1499,7 +1499,7 @@
     move-result v11
 
     .line 101
-    if-eq v11, v1, :cond_6d
+    if-eq v11, v1, :cond_3
 
     .line 102
     .line 103
@@ -1511,15 +1511,15 @@
     move-result-object v14
 
     .line 107
-    :goto_6a
+    :goto_2
     move/from16 v3, v23
 
     .line 108
     .line 109
-    goto :goto_3b
+    goto :goto_1
 
     .line 110
-    :cond_6d
+    :cond_3
     invoke-static {v3}, Llibs/zm1;->Object(Ljava/math/BigInteger;)I
 
     .line 111
@@ -1528,7 +1528,7 @@
     move-result v11
 
     .line 114
-    if-ge v11, v6, :cond_78
+    if-ge v11, v6, :cond_4
 
     .line 115
     .line 116
@@ -1540,10 +1540,10 @@
     move-result-object v14
 
     .line 120
-    goto :goto_6a
+    goto :goto_2
 
     .line 121
-    :cond_78
+    :cond_4
     invoke-virtual {v14, v15}, Ljava/math/BigInteger;->compareTo(Ljava/math/BigInteger;)I
 
     .line 122
@@ -1552,7 +1552,7 @@
     move-result v11
 
     .line 125
-    if-gez v11, :cond_83
+    if-gez v11, :cond_5
 
     .line 126
     .line 127
@@ -1567,7 +1567,7 @@
 
     .line 131
     .line 132
-    :cond_83
+    :cond_5
     invoke-virtual {v14, v8}, Ljava/math/BigInteger;->subtract(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
     .line 133
@@ -1628,11 +1628,11 @@
     move-result v16
 
     .line 162
-    if-gtz v16, :cond_aa
+    if-gtz v16, :cond_6
 
     .line 163
     .line 164
-    :goto_a3
+    :goto_3
     move-object/from16 v0, p0
 
     .line 165
@@ -1645,10 +1645,10 @@
 
     .line 169
     .line 170
-    goto :goto_2f
+    goto :goto_0
 
     .line 171
-    :cond_aa
+    :cond_6
     invoke-virtual {v1, v11}, Ljava/math/BigInteger;->remainder(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
     .line 172
@@ -1728,10 +1728,10 @@
     const/4 v12, 0x1
 
     .line 210
-    goto :goto_a3
+    goto :goto_3
 
     .line 211
-    :goto_d2
+    :goto_4
     move-object/from16 v0, p0
 
     .line 212
@@ -1748,10 +1748,10 @@
 
     .line 218
     .line 219
-    goto/16 :goto_3b
+    goto/16 :goto_1
 
     .line 220
     .line 221
-    :cond_dc
+    :cond_7
     return-object v10
 .end method

@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/zp0;->a:B
@@ -30,14 +30,14 @@
 
 # virtual methods
 .method public final a()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/zp0;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_12
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -49,7 +49,7 @@
     return v0
 
     .line 9
-    :pswitch_8
+    :pswitch_0
     const/16 v0, 0xd
 
     .line 10
@@ -57,7 +57,7 @@
     return v0
 
     .line 12
-    :pswitch_b
+    :pswitch_1
     const/16 v0, 0xb
 
     .line 13
@@ -65,7 +65,7 @@
     return v0
 
     .line 15
-    :pswitch_e
+    :pswitch_2
     const/16 v0, 0xa
 
     .line 16
@@ -76,23 +76,23 @@
     nop
 
     .line 19
-    :pswitch_data_12
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_e
-        :pswitch_b
-        :pswitch_8
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final b(Llibs/wp0;Llibs/rw2;)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/zp0;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_1e
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -109,7 +109,7 @@
     throw p1
 
     .line 12
-    :pswitch_b
+    :pswitch_0
     check-cast p1, Llibs/fp0;
 
     .line 13
@@ -125,7 +125,7 @@
     return-void
 
     .line 19
-    :pswitch_12
+    :pswitch_1
     new-instance p1, Ljava/lang/ClassCastException;
 
     .line 20
@@ -138,7 +138,7 @@
     throw p1
 
     .line 25
-    :pswitch_18
+    :pswitch_2
     check-cast p1, Llibs/wq0;
 
     .line 26
@@ -151,10 +151,10 @@
     return-void
 
     .line 31
-    :pswitch_data_1e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_18
-        :pswitch_12
-        :pswitch_b
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

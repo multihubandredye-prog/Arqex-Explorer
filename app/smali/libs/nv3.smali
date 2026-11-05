@@ -22,7 +22,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/xa;->n:Llibs/xa;
@@ -37,7 +37,7 @@
 .end method
 
 .method public constructor <init>(Llibs/Param;)V
-    .registers 3
+    .locals 1
 
     .line 59
     sget-object v0, Llibs/nv3;->Mu:Llibs/xa;
@@ -48,7 +48,7 @@
 .end method
 
 .method public constructor <init>(Llibs/f3;Llibs/Param;)V
-    .registers 7
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -87,7 +87,7 @@
     const/4 p2, 0x0
 
     .line 19
-    :goto_12
+    :goto_0
     invoke-interface {p1}, Ljava/util/Enumeration;->hasMoreElements()Z
 
     .line 20
@@ -96,7 +96,7 @@
     move-result v0
 
     .line 23
-    if-eqz v0, :cond_39
+    if-eqz v0, :cond_2
 
     .line 24
     .line 25
@@ -120,7 +120,7 @@
 
     .line 34
     .line 35
-    if-eqz v3, :cond_27
+    if-eqz v3, :cond_0
 
     .line 36
     .line 37
@@ -128,11 +128,11 @@
 
     .line 38
     .line 39
-    goto :goto_35
+    goto :goto_1
 
     .line 40
-    :cond_27
-    if-eqz v2, :cond_34
+    :cond_0
+    if-eqz v2, :cond_1
 
     .line 41
     .line 42
@@ -156,14 +156,14 @@
     move-object v2, v3
 
     .line 52
-    goto :goto_35
+    goto :goto_1
 
     .line 53
-    :cond_34
+    :cond_1
     const/4 v2, 0x0
 
     .line 54
-    :goto_35
+    :goto_1
     aput-object v2, v0, p2
 
     .line 55
@@ -171,15 +171,15 @@
     move p2, v1
 
     .line 57
-    goto :goto_12
+    goto :goto_0
 
     .line 58
-    :cond_39
+    :cond_2
     return-void
 .end method
 
 .method public constructor <init>(Llibs/f3;Llibs/nv3;)V
-    .registers 3
+    .locals 0
 
     .line 60
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -196,14 +196,14 @@
 .end method
 
 .method public static g(Ljava/lang/Object;)Llibs/nv3;
-    .registers 2
+    .locals 1
 
     .line 1
     instance-of v0, p0, Llibs/nv3;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -214,8 +214,8 @@
     return-object p0
 
     .line 8
-    :cond_7
-    if-eqz p0, :cond_13
+    :cond_0
+    if-eqz p0, :cond_1
 
     .line 9
     .line 10
@@ -239,7 +239,7 @@
     return-object v0
 
     .line 20
-    :cond_13
+    :cond_1
     const/4 p0, 0x0
 
     .line 21
@@ -249,7 +249,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/p10;
@@ -269,22 +269,22 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     .line 1
-    if-ne p1, p0, :cond_3
+    if-ne p1, p0, :cond_0
 
     .line 2
     .line 3
-    goto :goto_1d
+    goto :goto_0
 
     .line 4
-    :cond_3
+    :cond_0
     instance-of v0, p1, Llibs/nv3;
 
     .line 5
     .line 6
-    if-nez v0, :cond_c
+    if-nez v0, :cond_1
 
     .line 7
     .line 8
@@ -292,14 +292,14 @@
 
     .line 9
     .line 10
-    if-nez v0, :cond_c
+    if-nez v0, :cond_1
 
     .line 11
     .line 12
-    goto :goto_38
+    goto :goto_1
 
     .line 13
-    :cond_c
+    :cond_1
     move-object v0, p1
 
     .line 14
@@ -331,19 +331,19 @@
     move-result v0
 
     .line 28
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_2
 
     .line 29
     .line 30
-    :goto_1d
+    :goto_0
     const/4 p1, 0x1
 
     .line 31
     return p1
 
     .line 32
-    :cond_1f
-    :try_start_1f
+    :cond_2
+    :try_start_0
     iget-object v0, p0, Llibs/nv3;->Z:Llibs/f3;
 
     .line 33
@@ -388,15 +388,15 @@
     .line 54
     .line 55
     move-result p1
-    :try_end_37
-    .catch Ljava/lang/Exception; {:try_start_1f .. :try_end_37} :catch_38
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 56
     return p1
 
     .line 57
-    :catch_38
-    :goto_38
+    :catch_0
+    :goto_1
     const/4 p1, 0x0
 
     .line 58
@@ -404,14 +404,14 @@
 .end method
 
 .method public final hashCode()I
-    .registers 9
+    .locals 8
 
     .line 1
     iget-boolean v0, p0, Llibs/nv3;->X:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -422,7 +422,7 @@
     return v0
 
     .line 8
-    :cond_7
+    :cond_0
     const/4 v0, 0x1
 
     .line 9
@@ -464,8 +464,8 @@
     const/4 v4, 0x0
 
     .line 27
-    :goto_1a
-    if-eq v0, v1, :cond_74
+    :goto_0
+    if-eq v0, v1, :cond_3
 
     .line 28
     .line 29
@@ -481,7 +481,7 @@
     move-result v5
 
     .line 35
-    if-eqz v5, :cond_4d
+    if-eqz v5, :cond_1
 
     .line 36
     .line 37
@@ -500,11 +500,11 @@
     const/4 v6, 0x0
 
     .line 44
-    :goto_2b
+    :goto_1
     array-length v7, v5
 
     .line 45
-    if-eq v6, v7, :cond_71
+    if-eq v6, v7, :cond_2
 
     .line 46
     .line 47
@@ -570,10 +570,10 @@
 
     .line 76
     .line 77
-    goto :goto_2b
+    goto :goto_1
 
     .line 78
-    :cond_4d
+    :cond_1
     aget-object v5, v2, v0
 
     .line 79
@@ -648,15 +648,15 @@
     xor-int/2addr v4, v5
 
     .line 114
-    :cond_71
+    :cond_2
     add-int/lit8 v0, v0, 0x1
 
     .line 115
     .line 116
-    goto :goto_1a
+    goto :goto_0
 
     .line 117
-    :cond_74
+    :cond_3
     iput v4, p0, Llibs/nv3;->Y:I
 
     .line 118
@@ -665,7 +665,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/nv3;->Z:Llibs/f3;

@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/conscrypt/OpenSSLX509CertificateFactory;)V
-    .registers 2
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -32,7 +32,7 @@
 
 # virtual methods
 .method public fromPkcs7DerInputStream(Ljava/io/InputStream;)Ljava/util/List;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -58,7 +58,7 @@
 .end method
 
 .method public fromPkcs7PemInputStream(Ljava/io/InputStream;)Ljava/util/List;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -84,7 +84,7 @@
 .end method
 
 .method public bridge synthetic fromX509DerInputStream(Ljava/io/InputStream;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Lorg/conscrypt/OpenSSLX509CertificateFactory$1;->fromX509DerInputStream(Ljava/io/InputStream;)Lorg/conscrypt/OpenSSLX509Certificate;
@@ -99,7 +99,7 @@
 .end method
 
 .method public fromX509DerInputStream(Ljava/io/InputStream;)Lorg/conscrypt/OpenSSLX509Certificate;
-    .registers 2
+    .locals 0
 
     .line 6
     invoke-static {p1}, Lorg/conscrypt/OpenSSLX509Certificate;->fromX509DerInputStream(Ljava/io/InputStream;)Lorg/conscrypt/OpenSSLX509Certificate;
@@ -110,7 +110,7 @@
 .end method
 
 .method public bridge synthetic fromX509PemInputStream(Ljava/io/InputStream;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Lorg/conscrypt/OpenSSLX509CertificateFactory$1;->fromX509PemInputStream(Ljava/io/InputStream;)Lorg/conscrypt/OpenSSLX509Certificate;
@@ -125,7 +125,7 @@
 .end method
 
 .method public fromX509PemInputStream(Ljava/io/InputStream;)Lorg/conscrypt/OpenSSLX509Certificate;
-    .registers 2
+    .locals 0
 
     .line 6
     invoke-static {p1}, Lorg/conscrypt/OpenSSLX509Certificate;->fromX509PemInputStream(Ljava/io/InputStream;)Lorg/conscrypt/OpenSSLX509Certificate;

@@ -37,7 +37,7 @@
 
 # direct methods
 .method private static synthetic $values()[Lorg/conscrypt/metrics/Protocol;
-    .registers 3
+    .locals 3
 
     .line 1
     const/4 v0, 0x7
@@ -128,7 +128,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 1
     new-instance v0, Lorg/conscrypt/metrics/Protocol;
@@ -292,7 +292,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;II)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
@@ -313,7 +313,7 @@
 .end method
 
 .method public static forName(Ljava/lang/String;)Lorg/conscrypt/metrics/Protocol;
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -332,15 +332,15 @@
     const/4 v1, -0x1
 
     .line 9
-    sparse-switch v0, :sswitch_data_66
+    sparse-switch v0, :sswitch_data_0
 
     .line 10
     .line 11
     .line 12
-    goto :goto_4d
+    goto :goto_0
 
     .line 13
-    :sswitch_c
+    :sswitch_0
     const-string v0, "TLSv1"
 
     .line 14
@@ -353,21 +353,21 @@
     move-result p0
 
     .line 19
-    if-nez p0, :cond_15
+    if-nez p0, :cond_0
 
     .line 20
     .line 21
-    goto :goto_4d
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     const/4 v1, 0x5
 
     .line 23
-    goto :goto_4d
+    goto :goto_0
 
     .line 24
-    :sswitch_17
+    :sswitch_1
     const-string v0, "SSLv3"
 
     .line 25
@@ -380,21 +380,21 @@
     move-result p0
 
     .line 30
-    if-nez p0, :cond_20
+    if-nez p0, :cond_1
 
     .line 31
     .line 32
-    goto :goto_4d
+    goto :goto_0
 
     .line 33
-    :cond_20
+    :cond_1
     const/4 v1, 0x4
 
     .line 34
-    goto :goto_4d
+    goto :goto_0
 
     .line 35
-    :sswitch_22
+    :sswitch_2
     const-string v0, "TLSv1.3"
 
     .line 36
@@ -407,21 +407,21 @@
     move-result p0
 
     .line 41
-    if-nez p0, :cond_2b
+    if-nez p0, :cond_2
 
     .line 42
     .line 43
-    goto :goto_4d
+    goto :goto_0
 
     .line 44
-    :cond_2b
+    :cond_2
     const/4 v1, 0x3
 
     .line 45
-    goto :goto_4d
+    goto :goto_0
 
     .line 46
-    :sswitch_2d
+    :sswitch_3
     const-string v0, "TLSv1.2"
 
     .line 47
@@ -434,21 +434,21 @@
     move-result p0
 
     .line 52
-    if-nez p0, :cond_36
+    if-nez p0, :cond_3
 
     .line 53
     .line 54
-    goto :goto_4d
+    goto :goto_0
 
     .line 55
-    :cond_36
+    :cond_3
     const/4 v1, 0x2
 
     .line 56
-    goto :goto_4d
+    goto :goto_0
 
     .line 57
-    :sswitch_38
+    :sswitch_4
     const-string v0, "TLSv1.1"
 
     .line 58
@@ -461,21 +461,21 @@
     move-result p0
 
     .line 63
-    if-nez p0, :cond_41
+    if-nez p0, :cond_4
 
     .line 64
     .line 65
-    goto :goto_4d
+    goto :goto_0
 
     .line 66
-    :cond_41
+    :cond_4
     const/4 v1, 0x1
 
     .line 67
-    goto :goto_4d
+    goto :goto_0
 
     .line 68
-    :sswitch_43
+    :sswitch_5
     const-string v0, "TLS_PROTO_FAILED"
 
     .line 69
@@ -488,19 +488,19 @@
     move-result p0
 
     .line 74
-    if-nez p0, :cond_4c
+    if-nez p0, :cond_5
 
     .line 75
     .line 76
-    goto :goto_4d
+    goto :goto_0
 
     .line 77
-    :cond_4c
+    :cond_5
     const/4 v1, 0x0
 
     .line 78
-    :goto_4d
-    packed-switch v1, :pswitch_data_80
+    :goto_0
+    packed-switch v1, :pswitch_data_0
 
     .line 79
     .line 80
@@ -512,7 +512,7 @@
     return-object p0
 
     .line 84
-    :pswitch_53
+    :pswitch_0
     sget-object p0, Lorg/conscrypt/metrics/Protocol;->TLSv1:Lorg/conscrypt/metrics/Protocol;
 
     .line 85
@@ -520,7 +520,7 @@
     return-object p0
 
     .line 87
-    :pswitch_56
+    :pswitch_1
     sget-object p0, Lorg/conscrypt/metrics/Protocol;->SSLv3:Lorg/conscrypt/metrics/Protocol;
 
     .line 88
@@ -528,7 +528,7 @@
     return-object p0
 
     .line 90
-    :pswitch_59
+    :pswitch_2
     sget-object p0, Lorg/conscrypt/metrics/Protocol;->TLSv1_3:Lorg/conscrypt/metrics/Protocol;
 
     .line 91
@@ -536,7 +536,7 @@
     return-object p0
 
     .line 93
-    :pswitch_5c
+    :pswitch_3
     sget-object p0, Lorg/conscrypt/metrics/Protocol;->TLSv1_2:Lorg/conscrypt/metrics/Protocol;
 
     .line 94
@@ -544,7 +544,7 @@
     return-object p0
 
     .line 96
-    :pswitch_5f
+    :pswitch_4
     sget-object p0, Lorg/conscrypt/metrics/Protocol;->TLSv1_1:Lorg/conscrypt/metrics/Protocol;
 
     .line 97
@@ -552,7 +552,7 @@
     return-object p0
 
     .line 99
-    :pswitch_62
+    :pswitch_5
     sget-object p0, Lorg/conscrypt/metrics/Protocol;->TLS_PROTO_FAILED:Lorg/conscrypt/metrics/Protocol;
 
     .line 100
@@ -563,14 +563,14 @@
     nop
 
     .line 103
-    :sswitch_data_66
+    :sswitch_data_0
     .sparse-switch
-        -0x447e3c88 -> :sswitch_43
-        -0x1dfc3f27 -> :sswitch_38
-        -0x1dfc3f26 -> :sswitch_2d
-        -0x1dfc3f25 -> :sswitch_22
-        0x4b88569 -> :sswitch_17
-        0x4c38896 -> :sswitch_c
+        -0x447e3c88 -> :sswitch_5
+        -0x1dfc3f27 -> :sswitch_4
+        -0x1dfc3f26 -> :sswitch_3
+        -0x1dfc3f25 -> :sswitch_2
+        0x4b88569 -> :sswitch_1
+        0x4c38896 -> :sswitch_0
     .end sparse-switch
 
     .line 104
@@ -588,19 +588,19 @@
     .line 116
     .line 117
     .line 118
-    :pswitch_data_80
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_62
-        :pswitch_5f
-        :pswitch_5c
-        :pswitch_59
-        :pswitch_56
-        :pswitch_53
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lorg/conscrypt/metrics/Protocol;
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Lorg/conscrypt/metrics/Protocol;
@@ -623,7 +623,7 @@
 .end method
 
 .method public static values()[Lorg/conscrypt/metrics/Protocol;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/metrics/Protocol;->$VALUES:[Lorg/conscrypt/metrics/Protocol;
@@ -648,7 +648,7 @@
 
 # virtual methods
 .method public getId()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/metrics/Protocol;->id:I

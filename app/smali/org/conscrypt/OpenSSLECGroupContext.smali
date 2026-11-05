@@ -22,7 +22,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/util/HashMap;
@@ -103,7 +103,7 @@
 .end method
 
 .method public constructor <init>(Lorg/conscrypt/NativeRef$EC_GROUP;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -119,7 +119,7 @@
 .end method
 
 .method public static getCurveByName(Ljava/lang/String;)Lorg/conscrypt/OpenSSLECGroupContext;
-    .registers 5
+    .locals 4
 
     .line 1
     sget-object v0, Lorg/conscrypt/OpenSSLECGroupContext;->ALIASES:Ljava/util/Map;
@@ -134,7 +134,7 @@
     move-result v1
 
     .line 7
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
@@ -150,7 +150,7 @@
 
     .line 14
     .line 15
-    :cond_e
+    :cond_0
     invoke-static {p0}, Lorg/conscrypt/NativeCrypto;->EC_GROUP_new_by_curve_name(Ljava/lang/String;)J
 
     .line 16
@@ -167,7 +167,7 @@
 
     .line 22
     .line 23
-    if-nez p0, :cond_1a
+    if-nez p0, :cond_1
 
     .line 24
     .line 25
@@ -177,7 +177,7 @@
     return-object p0
 
     .line 27
-    :cond_1a
+    :cond_1
     new-instance p0, Lorg/conscrypt/NativeRef$EC_GROUP;
 
     .line 28
@@ -200,7 +200,7 @@
 .end method
 
 .method public static getInstance(Ljava/security/spec/ECParameterSpec;)Lorg/conscrypt/OpenSSLECGroupContext;
-    .registers 14
+    .locals 13
 
     .line 1
     invoke-static {p0}, Lorg/conscrypt/Platform;->getCurveName(Ljava/security/spec/ECParameterSpec;)Ljava/lang/String;
@@ -211,7 +211,7 @@
     move-result-object v0
 
     .line 5
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -226,7 +226,7 @@
     return-object p0
 
     .line 12
-    :cond_b
+    :cond_0
     invoke-virtual {p0}, Ljava/security/spec/ECParameterSpec;->getCurve()Ljava/security/spec/EllipticCurve;
 
     .line 13
@@ -247,7 +247,7 @@
 
     .line 21
     .line 22
-    if-eqz v3, :cond_162
+    if-eqz v3, :cond_8
 
     .line 23
     .line 24
@@ -311,7 +311,7 @@
 
     .line 53
     .line 54
-    if-eq v6, v7, :cond_df
+    if-eq v6, v7, :cond_4
 
     .line 55
     .line 56
@@ -319,7 +319,7 @@
 
     .line 57
     .line 58
-    if-eq v6, v7, :cond_ac
+    if-eq v6, v7, :cond_3
 
     .line 59
     .line 60
@@ -327,7 +327,7 @@
 
     .line 61
     .line 62
-    if-eq v6, v7, :cond_79
+    if-eq v6, v7, :cond_2
 
     .line 63
     .line 64
@@ -335,15 +335,15 @@
 
     .line 65
     .line 66
-    if-eq v6, v7, :cond_45
+    if-eq v6, v7, :cond_1
 
     .line 67
     .line 68
-    goto/16 :goto_111
+    goto/16 :goto_0
 
     .line 69
     .line 70
-    :cond_45
+    :cond_1
     invoke-virtual {v2, v8}, Ljava/math/BigInteger;->toString(I)Ljava/lang/String;
 
     .line 71
@@ -364,7 +364,7 @@
     move-result v6
 
     .line 80
-    if-eqz v6, :cond_111
+    if-eqz v6, :cond_5
 
     .line 81
     .line 82
@@ -388,7 +388,7 @@
     move-result v6
 
     .line 92
-    if-eqz v6, :cond_111
+    if-eqz v6, :cond_5
 
     .line 93
     .line 94
@@ -412,7 +412,7 @@
     move-result v6
 
     .line 104
-    if-eqz v6, :cond_111
+    if-eqz v6, :cond_5
 
     .line 105
     .line 106
@@ -436,7 +436,7 @@
     move-result v6
 
     .line 116
-    if-eqz v6, :cond_111
+    if-eqz v6, :cond_5
 
     .line 117
     .line 118
@@ -444,11 +444,11 @@
 
     .line 119
     .line 120
-    goto/16 :goto_111
+    goto/16 :goto_0
 
     .line 121
     .line 122
-    :cond_79
+    :cond_2
     invoke-virtual {v2, v8}, Ljava/math/BigInteger;->toString(I)Ljava/lang/String;
 
     .line 123
@@ -469,7 +469,7 @@
     move-result v6
 
     .line 132
-    if-eqz v6, :cond_111
+    if-eqz v6, :cond_5
 
     .line 133
     .line 134
@@ -493,7 +493,7 @@
     move-result v6
 
     .line 144
-    if-eqz v6, :cond_111
+    if-eqz v6, :cond_5
 
     .line 145
     .line 146
@@ -517,7 +517,7 @@
     move-result v6
 
     .line 156
-    if-eqz v6, :cond_111
+    if-eqz v6, :cond_5
 
     .line 157
     .line 158
@@ -541,7 +541,7 @@
     move-result v6
 
     .line 168
-    if-eqz v6, :cond_111
+    if-eqz v6, :cond_5
 
     .line 169
     .line 170
@@ -549,10 +549,10 @@
 
     .line 171
     .line 172
-    goto :goto_111
+    goto :goto_0
 
     .line 173
-    :cond_ac
+    :cond_3
     invoke-virtual {v2, v8}, Ljava/math/BigInteger;->toString(I)Ljava/lang/String;
 
     .line 174
@@ -573,7 +573,7 @@
     move-result v6
 
     .line 183
-    if-eqz v6, :cond_111
+    if-eqz v6, :cond_5
 
     .line 184
     .line 185
@@ -597,7 +597,7 @@
     move-result v6
 
     .line 195
-    if-eqz v6, :cond_111
+    if-eqz v6, :cond_5
 
     .line 196
     .line 197
@@ -621,7 +621,7 @@
     move-result v6
 
     .line 207
-    if-eqz v6, :cond_111
+    if-eqz v6, :cond_5
 
     .line 208
     .line 209
@@ -645,7 +645,7 @@
     move-result v6
 
     .line 219
-    if-eqz v6, :cond_111
+    if-eqz v6, :cond_5
 
     .line 220
     .line 221
@@ -653,10 +653,10 @@
 
     .line 222
     .line 223
-    goto :goto_111
+    goto :goto_0
 
     .line 224
-    :cond_df
+    :cond_4
     invoke-virtual {v2, v8}, Ljava/math/BigInteger;->toString(I)Ljava/lang/String;
 
     .line 225
@@ -677,7 +677,7 @@
     move-result v6
 
     .line 234
-    if-eqz v6, :cond_111
+    if-eqz v6, :cond_5
 
     .line 235
     .line 236
@@ -701,7 +701,7 @@
     move-result v6
 
     .line 246
-    if-eqz v6, :cond_111
+    if-eqz v6, :cond_5
 
     .line 247
     .line 248
@@ -725,7 +725,7 @@
     move-result v6
 
     .line 258
-    if-eqz v6, :cond_111
+    if-eqz v6, :cond_5
 
     .line 259
     .line 260
@@ -749,7 +749,7 @@
     move-result v6
 
     .line 270
-    if-eqz v6, :cond_111
+    if-eqz v6, :cond_5
 
     .line 271
     .line 272
@@ -757,9 +757,9 @@
 
     .line 273
     .line 274
-    :cond_111
-    :goto_111
-    if-eqz v0, :cond_118
+    :cond_5
+    :goto_0
+    if-eqz v0, :cond_6
 
     .line 275
     .line 276
@@ -774,7 +774,7 @@
     return-object p0
 
     .line 281
-    :cond_118
+    :cond_6
     invoke-virtual {v1}, Ljava/security/spec/EllipticCurve;->getA()Ljava/math/BigInteger;
 
     .line 282
@@ -799,7 +799,7 @@
     move-result v12
 
     .line 293
-    :try_start_124
+    :try_start_0
     invoke-virtual {v2}, Ljava/math/BigInteger;->toByteArray()[B
 
     .line 294
@@ -854,8 +854,8 @@
     .line 319
     .line 320
     move-result-wide v0
-    :try_end_140
-    .catchall {:try_start_124 .. :try_end_140} :catchall_158
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 321
     const-wide/16 v2, 0x0
@@ -866,7 +866,7 @@
 
     .line 324
     .line 325
-    if-eqz p0, :cond_151
+    if-eqz p0, :cond_7
 
     .line 326
     .line 327
@@ -891,7 +891,7 @@
     return-object v0
 
     .line 338
-    :cond_151
+    :cond_7
     const-string p0, "EC_GROUP_new_arbitrary returned NULL"
 
     .line 339
@@ -907,7 +907,7 @@
     return-object p0
 
     .line 345
-    :catchall_158
+    :catchall_0
     move-exception v0
 
     .line 346
@@ -930,7 +930,7 @@
     throw v0
 
     .line 355
-    :cond_162
+    :cond_8
     new-instance p0, Ljava/security/InvalidParameterException;
 
     .line 356
@@ -974,7 +974,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Ljava/lang/IllegalArgumentException;
@@ -994,7 +994,7 @@
 .end method
 
 .method public getCurveName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLECGroupContext;->groupCtx:Lorg/conscrypt/NativeRef$EC_GROUP;
@@ -1013,7 +1013,7 @@
 .end method
 
 .method public getECParameterSpec()Ljava/security/spec/ECParameterSpec;
-    .registers 7
+    .locals 6
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLECGroupContext;->groupCtx:Lorg/conscrypt/NativeRef$EC_GROUP;
@@ -1212,7 +1212,7 @@
 .end method
 
 .method public getNativeRef()Lorg/conscrypt/NativeRef$EC_GROUP;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLECGroupContext;->groupCtx:Lorg/conscrypt/NativeRef$EC_GROUP;
@@ -1223,7 +1223,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Ljava/lang/Object;->hashCode()I

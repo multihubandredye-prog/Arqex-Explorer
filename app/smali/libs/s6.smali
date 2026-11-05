@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/zf3;)V
-    .registers 3
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/zs;->Z:Llibs/zs;
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public final c()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/s6;->i:Llibs/zs3;
@@ -84,7 +84,7 @@
 .end method
 
 .method public final g(Llibs/f1;)V
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/s6;->g:Ljava/lang/String;
@@ -143,7 +143,7 @@
     const/4 v4, 0x3
 
     .line 29
-    if-ne v3, v4, :cond_28
+    if-ne v3, v4, :cond_0
 
     .line 30
     .line 31
@@ -164,10 +164,10 @@
     .line 38
     .line 39
     .line 40
-    goto :goto_2c
+    goto :goto_0
 
     .line 41
-    :cond_28
+    :cond_0
     const/4 v1, -0x1
 
     .line 42
@@ -176,7 +176,7 @@
     .line 43
     .line 44
     .line 45
-    :goto_2c
+    :goto_0
     invoke-virtual {v0, p1}, Llibs/xs;->f(Llibs/f1;)V
 
     .line 46

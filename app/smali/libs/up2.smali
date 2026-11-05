@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/up2;->a:Ljava/lang/String;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final e(Llibs/rp0;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p1, Llibs/rp0;->Three:Ljava/lang/String;
@@ -68,7 +68,7 @@
 
     .line 16
     .line 17
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_0
 
     .line 18
     .line 19
@@ -77,10 +77,10 @@
     .line 20
     .line 21
     .line 22
-    goto :goto_1a
+    goto :goto_0
 
     .line 23
-    :cond_16
+    :cond_0
     const/4 v1, 0x1
 
     .line 24
@@ -89,7 +89,7 @@
     .line 25
     .line 26
     .line 27
-    :goto_1a
+    :goto_0
     const/4 p1, 0x0
 
     .line 28

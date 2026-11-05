@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/a90;)V
-    .registers 3
+    .locals 1
 
     .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,7 +29,7 @@
 .end method
 
 .method public constructor <init>([B)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,14 +46,14 @@
     array-length v2, p1
 
     .line 7
-    if-gt v1, v2, :cond_38
+    if-gt v1, v2, :cond_1
 
     .line 8
     .line 9
     array-length v1, p1
 
     .line 10
-    if-gt v0, v1, :cond_38
+    if-gt v0, v1, :cond_1
 
     .line 11
     .line 12
@@ -72,7 +72,7 @@
     move-result v1
 
     .line 19
-    if-eqz v1, :cond_2b
+    if-eqz v1, :cond_0
 
     .line 20
     .line 21
@@ -118,10 +118,10 @@
 
     .line 42
     .line 43
-    goto :goto_33
+    goto :goto_0
 
     .line 44
-    :cond_2b
+    :cond_0
     new-instance v1, Llibs/a90;
 
     .line 45
@@ -138,7 +138,7 @@
     move-object v0, v1
 
     .line 52
-    :goto_33
+    :goto_0
     iget p1, v0, Llibs/dl;->Y:I
 
     .line 53
@@ -150,7 +150,7 @@
     return-void
 
     .line 57
-    :cond_38
+    :cond_1
     const-string p1, "Encoding bytes too short"
 
     .line 58
@@ -167,7 +167,7 @@
 .end method
 
 .method public static c(Ljava/io/InputStream;)I
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Ljava/io/InputStream;->read()I
@@ -190,26 +190,26 @@
 .end method
 
 .method public static d(Ljava/io/InputStream;I)I
-    .registers 4
+    .locals 2
 
     .line 1
     and-int/lit16 v0, p1, 0x80
 
     .line 2
     .line 3
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
     return p1
 
     .line 6
-    :cond_5
+    :cond_0
     and-int/lit8 p1, p1, 0x7f
 
     .line 7
     .line 8
-    if-nez p1, :cond_b
+    if-nez p1, :cond_1
 
     .line 9
     .line 10
@@ -219,27 +219,27 @@
     return p0
 
     .line 12
-    :cond_b
-    if-ltz p1, :cond_21
+    :cond_1
+    if-ltz p1, :cond_4
 
     .line 13
     .line 14
     const/4 v0, 0x4
 
     .line 15
-    if-le p1, v0, :cond_11
+    if-le p1, v0, :cond_2
 
     .line 16
     .line 17
-    goto :goto_21
+    goto :goto_1
 
     .line 18
-    :cond_11
+    :cond_2
     const/4 v0, 0x0
 
     .line 19
-    :goto_12
-    if-lez p1, :cond_20
+    :goto_0
+    if-lez p1, :cond_3
 
     .line 20
     .line 21
@@ -266,15 +266,15 @@
 
     .line 31
     .line 32
-    goto :goto_12
+    goto :goto_0
 
     .line 33
-    :cond_20
+    :cond_3
     return v0
 
     .line 34
-    :cond_21
-    :goto_21
+    :cond_4
+    :goto_1
     new-instance p0, Ljava/io/IOException;
 
     .line 35
@@ -295,7 +295,7 @@
     move-result-object v0
 
     .line 44
-    if-gez p1, :cond_30
+    if-gez p1, :cond_5
 
     .line 45
     .line 46
@@ -303,15 +303,15 @@
 
     .line 47
     .line 48
-    goto :goto_32
+    goto :goto_2
 
     .line 49
-    :cond_30
+    :cond_5
     const-string p1, "too big."
 
     .line 50
     .line 51
-    :goto_32
+    :goto_2
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 52
@@ -330,21 +330,21 @@
     .line 59
     .line 60
     .line 61
-    goto :goto_3e
+    goto :goto_4
 
     .line 62
-    :goto_3d
+    :goto_3
     throw p0
 
     .line 63
-    :goto_3e
-    goto :goto_3d
+    :goto_4
+    goto :goto_3
 .end method
 
 
 # virtual methods
 .method public final a()Llibs/d90;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/d90;
@@ -364,7 +364,7 @@
 .end method
 
 .method public final b()Ljava/util/Date;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/b90;->a:Llibs/a90;
@@ -386,7 +386,7 @@
     const/4 v2, 0x0
 
     .line 10
-    if-ne v0, v1, :cond_31
+    if-ne v0, v1, :cond_2
 
     .line 11
     .line 12
@@ -410,7 +410,7 @@
     move-result v3
 
     .line 22
-    if-gt v1, v3, :cond_2b
+    if-gt v1, v3, :cond_1
 
     .line 23
     .line 24
@@ -418,7 +418,7 @@
 
     .line 25
     .line 26
-    if-lt v1, v3, :cond_25
+    if-lt v1, v3, :cond_0
 
     .line 27
     .line 28
@@ -426,7 +426,7 @@
 
     .line 29
     .line 30
-    if-gt v1, v3, :cond_25
+    if-gt v1, v3, :cond_0
 
     .line 31
     .line 32
@@ -444,7 +444,7 @@
     return-object v0
 
     .line 38
-    :cond_25
+    :cond_0
     const-string v0, "DER Generalized Time length error"
 
     .line 39
@@ -457,7 +457,7 @@
     return-object v2
 
     .line 44
-    :cond_2b
+    :cond_1
     const-string v0, "short read of DER Generalized Time"
 
     .line 45
@@ -470,7 +470,7 @@
     return-object v2
 
     .line 50
-    :cond_31
+    :cond_2
     const-string v0, "DER input, GeneralizedTime tag invalid "
 
     .line 51
@@ -484,7 +484,7 @@
 .end method
 
 .method public final e(I)[Llibs/d90;
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/b90;->a:Llibs/a90;
@@ -510,7 +510,7 @@
 
     .line 11
     .line 12
-    if-ne v0, v1, :cond_12
+    if-ne v0, v1, :cond_0
 
     .line 13
     .line 14
@@ -525,7 +525,7 @@
     return-object p1
 
     .line 19
-    :cond_12
+    :cond_0
     const-string p1, "Sequence tag error"
 
     .line 20
@@ -542,7 +542,7 @@
 .end method
 
 .method public final f()Ljava/util/Date;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/b90;->a:Llibs/a90;
@@ -564,7 +564,7 @@
     const/4 v2, 0x0
 
     .line 10
-    if-ne v0, v1, :cond_31
+    if-ne v0, v1, :cond_2
 
     .line 11
     .line 12
@@ -588,7 +588,7 @@
     move-result v3
 
     .line 22
-    if-gt v1, v3, :cond_2b
+    if-gt v1, v3, :cond_1
 
     .line 23
     .line 24
@@ -596,7 +596,7 @@
 
     .line 25
     .line 26
-    if-lt v1, v3, :cond_25
+    if-lt v1, v3, :cond_0
 
     .line 27
     .line 28
@@ -604,7 +604,7 @@
 
     .line 29
     .line 30
-    if-gt v1, v3, :cond_25
+    if-gt v1, v3, :cond_0
 
     .line 31
     .line 32
@@ -622,7 +622,7 @@
     return-object v0
 
     .line 38
-    :cond_25
+    :cond_0
     const-string v0, "DER UTC Time length error"
 
     .line 39
@@ -635,7 +635,7 @@
     return-object v2
 
     .line 44
-    :cond_2b
+    :cond_1
     const-string v0, "short read of DER UTC Time"
 
     .line 45
@@ -648,7 +648,7 @@
     return-object v2
 
     .line 50
-    :cond_31
+    :cond_2
     const-string v0, "DER input, UTCtime tag invalid "
 
     .line 51
@@ -662,7 +662,7 @@
 .end method
 
 .method public final g()Llibs/nf;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/b90;->a:Llibs/a90;
@@ -680,7 +680,7 @@
     const/4 v1, 0x3
 
     .line 8
-    if-ne v0, v1, :cond_34
+    if-ne v0, v1, :cond_2
 
     .line 9
     .line 10
@@ -723,7 +723,7 @@
 
     .line 28
     .line 29
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_1
 
     .line 30
     .line 31
@@ -739,14 +739,14 @@
     move-result v3
 
     .line 37
-    if-ne v3, v0, :cond_27
+    if-ne v3, v0, :cond_0
 
     .line 38
     .line 39
-    goto :goto_2e
+    goto :goto_0
 
     .line 40
-    :cond_27
+    :cond_0
     const-string v0, "short read of DER bit string"
 
     .line 41
@@ -762,8 +762,8 @@
     return-object v0
 
     .line 47
-    :cond_2e
-    :goto_2e
+    :cond_1
+    :goto_0
     new-instance v0, Llibs/nf;
 
     .line 48
@@ -776,7 +776,7 @@
     return-object v0
 
     .line 53
-    :cond_34
+    :cond_2
     const-string v0, "DER input not a bit string"
 
     .line 54
@@ -793,7 +793,7 @@
 .end method
 
 .method public final h(I)[Llibs/d90;
-    .registers 9
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/b90;->a:Llibs/a90;
@@ -836,7 +836,7 @@
     const/4 v4, 0x0
 
     .line 19
-    if-ne v1, v2, :cond_58
+    if-ne v1, v2, :cond_1
 
     .line 20
     .line 21
@@ -943,7 +943,7 @@
     move-result v1
 
     .line 74
-    if-ne v0, v1, :cond_52
+    if-ne v0, v1, :cond_0
 
     .line 75
     .line 76
@@ -959,10 +959,10 @@
     move-result v1
 
     .line 82
-    goto :goto_58
+    goto :goto_0
 
     .line 83
-    :cond_52
+    :cond_0
     const-string p1, "Indefinite length encoding not supported"
 
     .line 84
@@ -975,9 +975,9 @@
     return-object v3
 
     .line 89
-    :cond_58
-    :goto_58
-    if-nez v1, :cond_5d
+    :cond_1
+    :goto_0
+    if-nez v1, :cond_2
 
     .line 90
     .line 91
@@ -988,7 +988,7 @@
     return-object p1
 
     .line 94
-    :cond_5d
+    :cond_2
     iget-object v0, p0, Llibs/b90;->a:Llibs/a90;
 
     .line 95
@@ -1001,17 +1001,17 @@
     move-result v0
 
     .line 100
-    if-ne v0, v1, :cond_67
+    if-ne v0, v1, :cond_3
 
     .line 101
     .line 102
     move-object v1, p0
 
     .line 103
-    goto :goto_7b
+    goto :goto_1
 
     .line 104
-    :cond_67
+    :cond_3
     iget-object v0, p0, Llibs/b90;->a:Llibs/a90;
 
     .line 105
@@ -1050,7 +1050,7 @@
     .line 122
     .line 123
     .line 124
-    :goto_7b
+    :goto_1
     new-instance v0, Ljava/util/Vector;
 
     .line 125
@@ -1060,7 +1060,7 @@
     .line 127
     .line 128
     .line 129
-    :cond_80
+    :cond_4
     new-instance p1, Llibs/d90;
 
     .line 130
@@ -1091,7 +1091,7 @@
     move-result p1
 
     .line 145
-    if-gtz p1, :cond_80
+    if-gtz p1, :cond_4
 
     .line 146
     .line 147
@@ -1107,7 +1107,7 @@
     move-result p1
 
     .line 153
-    if-nez p1, :cond_ae
+    if-nez p1, :cond_6
 
     .line 154
     .line 155
@@ -1123,8 +1123,8 @@
 
     .line 160
     .line 161
-    :goto_a0
-    if-ge v4, p1, :cond_ad
+    :goto_2
+    if-ge v4, p1, :cond_5
 
     .line 162
     .line 163
@@ -1148,14 +1148,14 @@
 
     .line 172
     .line 173
-    goto :goto_a0
+    goto :goto_2
 
     .line 174
-    :cond_ad
+    :cond_5
     return-object v1
 
     .line 175
-    :cond_ae
+    :cond_6
     const-string p1, "extra data at end of vector"
 
     .line 176

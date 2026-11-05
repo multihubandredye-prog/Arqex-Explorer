@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/rz0;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iput-object p1, p0, Llibs/pz0;->Z:Llibs/rz0;
@@ -63,7 +63,7 @@
 
 # virtual methods
 .method public final b()Llibs/en3;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/pz0;->X:Llibs/es0;
@@ -74,21 +74,21 @@
 .end method
 
 .method public final close()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-boolean v0, p0, Llibs/pz0;->Y:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     const/4 v0, 0x1
 
     .line 7
@@ -137,21 +137,21 @@
 .end method
 
 .method public final flush()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/pz0;->Y:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     iget-object v0, p0, Llibs/pz0;->Z:Llibs/rz0;
 
     .line 7
@@ -173,14 +173,14 @@
 .end method
 
 .method public final j(JLlibs/vj;)V
-    .registers 9
+    .locals 5
 
     .line 1
     iget-boolean v0, p0, Llibs/pz0;->Y:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_26
+    if-nez v0, :cond_1
 
     .line 4
     .line 5
@@ -200,7 +200,7 @@
 
     .line 12
     .line 13
-    if-ltz v4, :cond_20
+    if-ltz v4, :cond_0
 
     .line 14
     .line 15
@@ -208,7 +208,7 @@
 
     .line 16
     .line 17
-    if-gtz v4, :cond_20
+    if-gtz v4, :cond_0
 
     .line 18
     .line 19
@@ -216,7 +216,7 @@
 
     .line 20
     .line 21
-    if-ltz v2, :cond_20
+    if-ltz v2, :cond_0
 
     .line 22
     .line 23
@@ -240,7 +240,7 @@
     return-void
 
     .line 33
-    :cond_20
+    :cond_0
     new-instance p1, Ljava/lang/ArrayIndexOutOfBoundsException;
 
     .line 34
@@ -253,7 +253,7 @@
     throw p1
 
     .line 39
-    :cond_26
+    :cond_1
     const-string p1, "closed"
 
     .line 40

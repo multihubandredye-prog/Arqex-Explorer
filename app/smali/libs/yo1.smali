@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/rp0;Ljava/util/Map;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/yo1;->d:Llibs/rp0;
@@ -39,14 +39,14 @@
 
 # virtual methods
 .method public final e(Llibs/rp0;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     iget-boolean v0, p1, Llibs/rp0;->One:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_3a
+    if-nez v0, :cond_1
 
     .line 4
     .line 5
@@ -130,7 +130,7 @@
     move-result v0
 
     .line 45
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_0
 
     .line 46
     .line 47
@@ -142,7 +142,7 @@
 
     .line 50
     .line 51
-    :cond_32
+    :cond_0
     iget-object v0, p0, Llibs/yo1;->e:Ljava/util/Map;
 
     .line 52
@@ -156,15 +156,15 @@
     .line 56
     .line 57
     .line 58
-    goto :goto_4c
+    goto :goto_0
 
     .line 59
-    :cond_3a
+    :cond_1
     iget-object v0, p0, Llibs/yo1;->b:Ljava/lang/String;
 
     .line 60
     .line 61
-    if-nez v0, :cond_4c
+    if-nez v0, :cond_2
 
     .line 62
     .line 63
@@ -196,8 +196,8 @@
 
     .line 76
     .line 77
-    :cond_4c
-    :goto_4c
+    :cond_2
+    :goto_0
     const/4 p1, 0x0
 
     .line 78

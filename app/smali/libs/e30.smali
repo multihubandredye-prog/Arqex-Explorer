@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/n30;
@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public final engineGenerateKey()Ljavax/crypto/SecretKey;
-    .registers 6
+    .locals 5
 
     .line 1
     iget-boolean v0, p0, Llibs/be;->d:Z
@@ -61,7 +61,7 @@
 
     .line 5
     .line 6
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
@@ -96,7 +96,7 @@
 
     .line 24
     .line 25
-    :cond_18
+    :cond_0
     iget-boolean v0, p0, Llibs/e30;->e:Z
 
     .line 26
@@ -105,7 +105,7 @@
 
     .line 28
     .line 29
-    if-nez v0, :cond_2f
+    if-nez v0, :cond_1
 
     .line 30
     .line 31
@@ -142,7 +142,7 @@
     return-object v1
 
     .line 48
-    :cond_2f
+    :cond_1
     new-instance v0, Ljavax/crypto/spec/SecretKeySpec;
 
     .line 49
@@ -164,7 +164,7 @@
 .end method
 
 .method public final engineInit(ILjava/security/SecureRandom;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-super {p0, p1, p2}, Llibs/be;->engineInit(ILjava/security/SecureRandom;)V

@@ -22,7 +22,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/TextEditorActivity;Landroid/content/Intent;Llibs/rp0;ILjava/util/concurrent/atomic/AtomicReference;)V
-    .registers 7
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -61,7 +61,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/util/ArrayList;I[Ljava/lang/String;Ljava/util/ArrayList;Llibs/ml1;)V
-    .registers 7
+    .locals 1
 
     .line 18
     const/4 v0, 0x0
@@ -86,7 +86,7 @@
 
 # virtual methods
 .method public final c([Ljava/lang/Object;)Z
-    .registers 24
+    .locals 22
 
     .line 1
     move-object/from16 v1, p0
@@ -103,7 +103,7 @@
     const/4 v3, 0x1
 
     .line 7
-    packed-switch v0, :pswitch_data_208
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -258,21 +258,21 @@
     move-result v0
 
     .line 84
-    if-nez v0, :cond_57
+    if-nez v0, :cond_0
 
     .line 85
     .line 86
     const/4 v0, 0x1
 
     .line 87
-    goto :goto_58
+    goto :goto_0
 
     .line 88
-    :cond_57
+    :cond_0
     const/4 v0, 0x0
 
     .line 89
-    :goto_58
+    :goto_0
     invoke-virtual {v10, v0}, Lcom/mixplorer/widgets/MiEditor;->setEditable(Z)V
 
     .line 90
@@ -330,7 +330,7 @@
 
     .line 117
     .line 118
-    if-eqz v0, :cond_7b
+    if-eqz v0, :cond_1
 
     .line 119
     .line 120
@@ -339,15 +339,15 @@
     .line 121
     .line 122
     .line 123
-    goto :goto_a3
+    goto :goto_1
 
     .line 124
-    :cond_7b
+    :cond_1
     iget-boolean v0, v4, Lcom/mixplorer/activities/TextEditorActivity;->Il:Z
 
     .line 125
     .line 126
-    if-eqz v0, :cond_a2
+    if-eqz v0, :cond_2
 
     .line 127
     .line 128
@@ -375,7 +375,7 @@
     move-result v0
 
     .line 140
-    if-eqz v0, :cond_a2
+    if-eqz v0, :cond_2
 
     .line 141
     .line 142
@@ -403,7 +403,7 @@
     move-result-object v0
 
     .line 154
-    if-eqz v0, :cond_a2
+    if-eqz v0, :cond_2
 
     .line 155
     .line 156
@@ -419,14 +419,14 @@
     move-result v0
 
     .line 162
-    goto :goto_a3
+    goto :goto_1
 
     .line 163
-    :cond_a2
+    :cond_2
     const/4 v0, 0x0
 
     .line 164
-    :goto_a3
+    :goto_1
     iput v0, v10, Lcom/mixplorer/widgets/MiEditor;->Nine:I
 
     .line 165
@@ -632,7 +632,7 @@
 
     .line 270
     .line 271
-    if-eqz v0, :cond_195
+    if-eqz v0, :cond_6
 
     .line 272
     .line 273
@@ -689,7 +689,7 @@
 
     .line 299
     .line 300
-    if-eqz v13, :cond_133
+    if-eqz v13, :cond_3
 
     .line 301
     .line 302
@@ -701,11 +701,11 @@
     move-result v16
 
     .line 306
-    if-eqz v16, :cond_139
+    if-eqz v16, :cond_4
 
     .line 307
     .line 308
-    :cond_133
+    :cond_3
     move-object v2, v14
 
     .line 309
@@ -717,10 +717,10 @@
 
     .line 312
     .line 313
-    goto :goto_189
+    goto :goto_5
 
     .line 314
-    :cond_139
+    :cond_4
     const/4 v11, 0x0
 
     .line 315
@@ -728,15 +728,15 @@
 
     .line 316
     .line 317
-    :goto_13c
+    :goto_2
     const/4 v2, 0x3
 
     .line 318
-    if-ge v11, v2, :cond_186
+    if-ge v11, v2, :cond_5
 
     .line 319
     .line 320
-    :try_start_13f
+    :try_start_0
     invoke-virtual {v13}, Landroid/graphics/Bitmap;->getWidth()I
 
     .line 321
@@ -751,9 +751,9 @@
     .line 326
     .line 327
     move-result v17
-    :try_end_147
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_13f .. :try_end_147} :catch_160
-    .catchall {:try_start_13f .. :try_end_147} :catchall_15b
+    :try_end_0
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 328
     const/16 v19, 0x1
@@ -781,33 +781,33 @@
 
     .line 338
     .line 339
-    :try_start_152
+    :try_start_1
     invoke-static/range {v13 .. v19}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;IIIILandroid/graphics/Matrix;Z)Landroid/graphics/Bitmap;
 
     .line 340
     .line 341
     .line 342
     move-result-object v11
-    :try_end_156
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_152 .. :try_end_156} :catch_176
-    .catchall {:try_start_152 .. :try_end_156} :catchall_159
+    :try_end_1
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 343
     move-object/from16 v3, v21
 
     .line 344
     .line 345
-    goto :goto_18c
+    goto :goto_6
 
     .line 346
-    :catchall_159
+    :catchall_0
     move-exception v0
 
     .line 347
-    goto :goto_166
+    goto :goto_3
 
     .line 348
-    :catchall_15b
+    :catchall_1
     move-exception v0
 
     .line 349
@@ -818,10 +818,10 @@
 
     .line 351
     .line 352
-    goto :goto_166
+    goto :goto_3
 
     .line 353
-    :catch_160
+    :catch_0
     move-object/from16 v18, v0
 
     .line 354
@@ -833,10 +833,10 @@
 
     .line 357
     .line 358
-    goto :goto_176
+    goto :goto_4
 
     .line 359
-    :goto_166
+    :goto_3
     const-string v11, "ImageUtils"
 
     .line 360
@@ -866,11 +866,11 @@
     .line 372
     .line 373
     .line 374
-    goto :goto_189
+    goto :goto_5
 
     .line 375
-    :catch_176
-    :goto_176
+    :catch_1
+    :goto_4
     invoke-static {}, Lcom/mixplorer/AppImpl;->b()V
 
     .line 376
@@ -880,15 +880,15 @@
 
     .line 379
     .line 380
-    :try_start_17b
+    :try_start_2
     invoke-static {v14, v15}, Ljava/lang/Thread;->sleep(J)V
-    :try_end_17e
-    .catchall {:try_start_17b .. :try_end_17e} :catchall_17e
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
     .line 381
     .line 382
     .line 383
-    :catchall_17e
+    :catchall_2
     add-int/lit8 v11, v11, 0x1
 
     .line 384
@@ -904,10 +904,10 @@
 
     .line 389
     .line 390
-    goto :goto_13c
+    goto :goto_2
 
     .line 391
-    :cond_186
+    :cond_5
     move-object v2, v14
 
     .line 392
@@ -915,7 +915,7 @@
 
     .line 393
     .line 394
-    :goto_189
+    :goto_5
     move-object/from16 v3, v21
 
     .line 395
@@ -923,7 +923,7 @@
     const/4 v11, 0x0
 
     .line 397
-    :goto_18c
+    :goto_6
     invoke-direct {v2, v3, v11}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
 
     .line 398
@@ -940,22 +940,22 @@
     move-result-object v11
 
     .line 405
-    goto :goto_197
+    goto :goto_7
 
     .line 406
-    :cond_195
+    :cond_6
     const/4 v3, 0x0
 
     .line 407
     const/4 v11, 0x0
 
     .line 408
-    :goto_197
+    :goto_7
     iget-object v0, v9, Lcom/mixplorer/widgets/MiScrollView;->Lambda:Llibs/gv1;
 
     .line 409
     .line 410
-    if-eqz v0, :cond_19e
+    if-eqz v0, :cond_7
 
     .line 411
     .line 412
@@ -964,7 +964,7 @@
     .line 413
     .line 414
     .line 415
-    :cond_19e
+    :cond_7
     invoke-virtual {v9, v3, v3, v3, v3}, Landroid/view/View;->setPadding(IIII)V
 
     .line 416
@@ -1051,7 +1051,7 @@
     return v20
 
     .line 461
-    :pswitch_1cc
+    :pswitch_0
     const/16 v20, 0x0
 
     .line 462
@@ -1106,7 +1106,7 @@
     monitor-enter v2
 
     .line 487
-    :try_start_1e6
+    :try_start_3
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     .line 488
@@ -1115,7 +1115,7 @@
     move-result v8
 
     .line 491
-    if-lt v0, v8, :cond_1f2
+    if-lt v0, v8, :cond_8
 
     .line 492
     .line 493
@@ -1124,26 +1124,26 @@
     .line 494
     .line 495
     .line 496
-    goto :goto_1f5
+    goto :goto_8
 
     .line 497
-    :catchall_1f0
+    :catchall_3
     move-exception v0
 
     .line 498
-    goto :goto_204
+    goto :goto_9
 
     .line 499
-    :cond_1f2
+    :cond_8
     invoke-virtual {v2, v0, v7}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     .line 500
     .line 501
     .line 502
-    :goto_1f5
+    :goto_8
     monitor-exit v2
-    :try_end_1f6
-    .catchall {:try_start_1e6 .. :try_end_1f6} :catchall_1f0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_3
 
     .line 503
     invoke-static {v2}, Llibs/e9;->p(Ljava/util/ArrayList;)V
@@ -1172,26 +1172,26 @@
     return v3
 
     .line 517
-    :goto_204
-    :try_start_204
+    :goto_9
+    :try_start_4
     monitor-exit v2
-    :try_end_205
-    .catchall {:try_start_204 .. :try_end_205} :catchall_1f0
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_3
 
     .line 518
-    goto :goto_207
+    goto :goto_b
 
     .line 519
-    :goto_206
+    :goto_a
     throw v0
 
     .line 520
-    :goto_207
-    goto :goto_206
+    :goto_b
+    goto :goto_a
 
     .line 521
-    :pswitch_data_208
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1cc
+        :pswitch_0
     .end packed-switch
 .end method

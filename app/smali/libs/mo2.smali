@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ko2;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/ko2;-><init>()V
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public final a(Llibs/za;Ljava/util/Locale;)Ljava/lang/String;
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object p1, p0, Llibs/mo2;->g:[Llibs/so2;
@@ -64,7 +64,7 @@
     const/4 v0, 0x0
 
     .line 5
-    if-lez p2, :cond_c
+    if-lez p2, :cond_0
 
     .line 6
     .line 7
@@ -80,12 +80,12 @@
     .line 11
     .line 12
     .line 13
-    :cond_c
+    :cond_0
     return-object v0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/File;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final write(I)V
-    .registers 5
+    .locals 3
 
     .line 31
     iget v0, p0, Llibs/qi1;->Y:I
@@ -73,14 +73,14 @@
 .end method
 
 .method public final write([BII)V
-    .registers 10
+    .locals 6
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :goto_1
-    if-ge v0, p3, :cond_1a
+    :goto_0
+    if-ge v0, p3, :cond_0
 
     .line 3
     .line 4
@@ -132,10 +132,10 @@
 
     .line 25
     .line 26
-    goto :goto_1
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_0
     invoke-super {p0, p1, p2, p3}, Ljava/io/FileOutputStream;->write([BII)V
 
     .line 28

@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 
 # virtual methods
 .method public final a(Llibs/k00;)V
-    .registers 5
+    .locals 3
 
     .line 1
     new-instance v0, Ljavax/crypto/spec/SecretKeySpec;
@@ -64,14 +64,14 @@
     .line 8
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     iget-object v1, p0, Llibs/ud1;->a:Ljavax/crypto/Mac;
 
     .line 11
     .line 12
     invoke-virtual {v1, v0}, Ljavax/crypto/Mac;->init(Ljava/security/Key;)V
-    :try_end_e
-    .catch Ljava/security/InvalidKeyException; {:try_start_9 .. :try_end_e} :catch_13
+    :try_end_0
+    .catch Ljava/security/InvalidKeyException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 13
     .line 14
@@ -87,7 +87,7 @@
     return-void
 
     .line 20
-    :catch_13
+    :catch_0
     move-exception p1
 
     .line 21
@@ -104,7 +104,7 @@
 .end method
 
 .method public final b([B)I
-    .registers 13
+    .locals 11
 
     .line 1
     const/4 v0, 0x0
@@ -119,7 +119,7 @@
     const/4 v3, 0x0
 
     .line 5
-    :goto_4
+    :goto_0
     const/16 v4, 0x10
 
     .line 6
@@ -127,7 +127,7 @@
     const/4 v5, 0x1
 
     .line 8
-    if-ge v1, v5, :cond_3d
+    if-ge v1, v5, :cond_1
 
     .line 9
     .line 10
@@ -223,7 +223,7 @@
     add-int/2addr v7, v2
 
     .line 52
-    if-le v7, v4, :cond_37
+    if-le v7, v4, :cond_0
 
     .line 53
     .line 54
@@ -231,7 +231,7 @@
 
     .line 55
     .line 56
-    :cond_37
+    :cond_0
     invoke-static {v5, v0, p1, v3, v6}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 57
@@ -243,9 +243,9 @@
     add-int/2addr v3, v6
 
     .line 61
-    goto :goto_4
+    goto :goto_0
 
     .line 62
-    :cond_3d
+    :cond_1
     return v4
 .end method

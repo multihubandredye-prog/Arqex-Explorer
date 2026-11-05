@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/wk;->a:B
@@ -34,35 +34,35 @@
 .end method
 
 .method private final a(Landroid/view/animation/Animation;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final b(Landroid/view/animation/Animation;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final c(Landroid/view/animation/Animation;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final d(Landroid/view/animation/Animation;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final e(Landroid/view/animation/Animation;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
@@ -71,7 +71,7 @@
 
 # virtual methods
 .method public final onAnimationEnd(Landroid/view/animation/Animation;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-byte p1, p0, Llibs/wk;->a:B
@@ -82,7 +82,7 @@
 
     .line 4
     .line 5
-    packed-switch p1, :pswitch_data_52
+    packed-switch p1, :pswitch_data_0
 
     .line 6
     .line 7
@@ -148,7 +148,7 @@
     return-void
 
     .line 39
-    :pswitch_26
+    :pswitch_0
     check-cast v0, Llibs/x00;
 
     .line 40
@@ -157,7 +157,7 @@
 
     .line 42
     .line 43
-    if-eqz p1, :cond_40
+    if-eqz p1, :cond_0
 
     .line 44
     .line 45
@@ -198,20 +198,20 @@
 
     .line 63
     .line 64
-    goto :goto_43
+    goto :goto_0
 
     .line 65
-    :cond_40
+    :cond_0
     invoke-virtual {v0}, Llibs/hj3;->f()V
 
     .line 66
     .line 67
     .line 68
-    :goto_43
+    :goto_0
     return-void
 
     .line 69
-    :pswitch_44
+    :pswitch_1
     check-cast v0, Llibs/al;
 
     .line 70
@@ -240,15 +240,15 @@
     return-void
 
     .line 83
-    :pswitch_data_52
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_44
-        :pswitch_26
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final onAnimationRepeat(Landroid/view/animation/Animation;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iget-byte p1, p0, Llibs/wk;->a:B
@@ -259,14 +259,14 @@
 .end method
 
 .method public final onAnimationStart(Landroid/view/animation/Animation;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-byte p1, p0, Llibs/wk;->a:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_16
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -274,7 +274,7 @@
     return-void
 
     .line 7
-    :pswitch_6
+    :pswitch_0
     iget-object p1, p0, Llibs/wk;->b:Ljava/lang/Object;
 
     .line 8
@@ -287,7 +287,7 @@
 
     .line 12
     .line 13
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 14
     .line 15
@@ -295,7 +295,7 @@
 
     .line 16
     .line 17
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_0
 
     .line 18
     .line 19
@@ -304,14 +304,14 @@
     .line 20
     .line 21
     .line 22
-    :cond_15
-    :pswitch_15
+    :cond_0
+    :pswitch_1
     return-void
 
     .line 23
-    :pswitch_data_16
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_15
-        :pswitch_6
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

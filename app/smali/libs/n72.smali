@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ra;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
 
     .line 10
     .line 11
-    :goto_a
+    :goto_0
     invoke-virtual {p1}, Llibs/ra;->c()I
 
     .line 12
@@ -47,7 +47,7 @@
     const/4 v1, 0x1
 
     .line 16
-    if-eq v0, v1, :cond_5b
+    if-eq v0, v1, :cond_3
 
     .line 17
     .line 18
@@ -62,14 +62,14 @@
     const/4 v1, 0x3
 
     .line 23
-    if-ne v0, v1, :cond_19
+    if-ne v0, v1, :cond_0
 
     .line 24
     .line 25
-    goto :goto_5b
+    goto :goto_3
 
     .line 26
-    :cond_19
+    :cond_0
     invoke-virtual {p1}, Llibs/ra;->m()Llibs/k12;
 
     .line 27
@@ -89,7 +89,7 @@
     const/4 p1, 0x0
 
     .line 35
-    :goto_22
+    :goto_1
     iget-object v0, p0, Llibs/n72;->X:Ljava/util/ArrayList;
 
     .line 36
@@ -102,7 +102,7 @@
     move-result v0
 
     .line 41
-    if-eq p1, v0, :cond_5a
+    if-eq p1, v0, :cond_2
 
     .line 42
     .line 43
@@ -126,7 +126,7 @@
 
     .line 52
     .line 53
-    if-eqz v0, :cond_47
+    if-eqz v0, :cond_1
 
     .line 54
     .line 55
@@ -160,10 +160,10 @@
     .line 69
     .line 70
     .line 71
-    goto :goto_57
+    goto :goto_2
 
     .line 72
-    :cond_47
+    :cond_1
     new-instance v0, Llibs/s72;
 
     .line 73
@@ -194,20 +194,20 @@
     .line 86
     .line 87
     .line 88
-    :goto_57
+    :goto_2
     add-int/lit8 p1, p1, 0x1
 
     .line 89
     .line 90
-    goto :goto_22
+    goto :goto_1
 
     .line 91
-    :cond_5a
+    :cond_2
     return-void
 
     .line 92
-    :cond_5b
-    :goto_5b
+    :cond_3
+    :goto_3
     iget-object v0, p0, Llibs/n72;->X:Ljava/util/ArrayList;
 
     .line 93
@@ -225,13 +225,13 @@
     .line 99
     .line 100
     .line 101
-    goto :goto_a
+    goto :goto_0
 .end method
 
 
 # virtual methods
 .method public final iterator()Ljava/util/Iterator;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/n72;->X:Ljava/util/ArrayList;

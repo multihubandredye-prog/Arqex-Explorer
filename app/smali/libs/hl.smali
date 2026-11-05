@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ig;JJ)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -50,7 +50,7 @@
 
 # virtual methods
 .method public final a(Ljava/nio/ByteBuffer;J)V
-    .registers 11
+    .locals 7
 
     .line 1
     iget v0, p0, Llibs/hl;->c:I
@@ -86,7 +86,7 @@
 
     .line 15
     .line 16
-    if-eqz v6, :cond_39
+    if-eqz v6, :cond_0
 
     .line 17
     .line 18
@@ -168,7 +168,7 @@
     add-long/2addr v3, p2
 
     .line 58
-    :cond_39
+    :cond_0
     invoke-virtual {p1}, Ljava/nio/Buffer;->remaining()I
 
     .line 59
@@ -177,7 +177,7 @@
     move-result p2
 
     .line 62
-    if-lez p2, :cond_80
+    if-lez p2, :cond_3
 
     .line 63
     .line 64
@@ -192,7 +192,7 @@
     rem-int/2addr p2, v0
 
     .line 69
-    if-eqz p2, :cond_5a
+    if-eqz p2, :cond_1
 
     .line 70
     .line 71
@@ -235,14 +235,14 @@
     .line 88
     .line 89
     .line 90
-    goto :goto_5b
+    goto :goto_0
 
     .line 91
-    :cond_5a
+    :cond_1
     move-object p2, p1
 
     .line 92
-    :goto_5b
+    :goto_0
     invoke-interface {v5, p2, v3, v4}, Llibs/ig;->a(Ljava/nio/ByteBuffer;J)V
 
     .line 93
@@ -259,7 +259,7 @@
     rem-int/2addr p3, v0
 
     .line 100
-    if-eqz p3, :cond_79
+    if-eqz p3, :cond_2
 
     .line 101
     .line 102
@@ -303,7 +303,7 @@
     .line 120
     .line 121
     .line 122
-    :cond_79
+    :cond_2
     invoke-virtual {p1}, Ljava/nio/Buffer;->limit()I
 
     .line 123
@@ -317,12 +317,12 @@
     .line 127
     .line 128
     .line 129
-    :cond_80
+    :cond_3
     return-void
 .end method
 
 .method public final b(Ljava/nio/ByteBuffer;J)V
-    .registers 11
+    .locals 7
 
     .line 1
     iget v0, p0, Llibs/hl;->c:I
@@ -358,7 +358,7 @@
 
     .line 15
     .line 16
-    if-eqz v6, :cond_47
+    if-eqz v6, :cond_0
 
     .line 17
     .line 18
@@ -466,7 +466,7 @@
     add-long/2addr v3, p2
 
     .line 72
-    :cond_47
+    :cond_0
     invoke-virtual {p1}, Ljava/nio/Buffer;->remaining()I
 
     .line 73
@@ -475,7 +475,7 @@
     move-result p2
 
     .line 76
-    if-lez p2, :cond_85
+    if-lez p2, :cond_2
 
     .line 77
     .line 78
@@ -490,7 +490,7 @@
     rem-int/2addr p2, v0
 
     .line 83
-    if-eqz p2, :cond_82
+    if-eqz p2, :cond_1
 
     .line 84
     .line 85
@@ -588,18 +588,18 @@
     move-object p1, p3
 
     .line 131
-    :cond_82
+    :cond_1
     invoke-interface {v5, p1, v3, v4}, Llibs/ig;->b(Ljava/nio/ByteBuffer;J)V
 
     .line 132
     .line 133
     .line 134
-    :cond_85
+    :cond_2
     return-void
 .end method
 
 .method public final c()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/hl;->a:Llibs/ig;

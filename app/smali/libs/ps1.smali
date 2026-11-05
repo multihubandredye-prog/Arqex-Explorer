@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/qs1;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iput-object p1, p0, Llibs/ps1;->f:Llibs/qs1;
@@ -85,17 +85,17 @@
 
 # virtual methods
 .method public final a(Lcom/mixplorer/widgets/MiViewPager;ILjava/lang/Object;)V
-    .registers 5
+    .locals 1
 
     .line 1
-    if-nez p3, :cond_3
+    if-nez p3, :cond_0
 
     .line 2
     .line 3
     return-void
 
     .line 4
-    :cond_3
+    :cond_0
     iget-object p2, p0, Llibs/ps1;->f:Llibs/qs1;
 
     .line 5
@@ -104,7 +104,7 @@
 
     .line 7
     .line 8
-    if-nez v0, :cond_d
+    if-nez v0, :cond_1
 
     .line 9
     .line 10
@@ -112,11 +112,11 @@
 
     .line 11
     .line 12
-    if-eqz p2, :cond_21
+    if-eqz p2, :cond_2
 
     .line 13
     .line 14
-    :cond_d
+    :cond_1
     move-object p2, p3
 
     .line 15
@@ -128,7 +128,7 @@
 
     .line 18
     .line 19
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_2
 
     .line 20
     .line 21
@@ -155,7 +155,7 @@
     .line 32
     .line 33
     .line 34
-    :cond_21
+    :cond_2
     check-cast p3, Landroid/view/View;
 
     .line 35
@@ -169,7 +169,7 @@
 .end method
 
 .method public final c()I
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/ps1;->f:Llibs/qs1;
@@ -183,7 +183,7 @@
     const/4 v2, 0x0
 
     .line 6
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_0
 
     .line 7
     .line 8
@@ -191,7 +191,7 @@
 
     .line 9
     .line 10
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_3
 
     .line 11
     .line 12
@@ -210,12 +210,12 @@
     return v0
 
     .line 19
-    :cond_12
+    :cond_0
     iget-boolean v1, v0, Llibs/qs1;->lll:Z
 
     .line 20
     .line 21
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_2
 
     .line 22
     .line 23
@@ -223,7 +223,7 @@
 
     .line 24
     .line 25
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_3
 
     .line 26
     .line 27
@@ -231,7 +231,7 @@
 
     .line 28
     .line 29
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     .line 30
     .line 31
@@ -250,16 +250,16 @@
     return v0
 
     .line 38
-    :cond_25
+    :cond_1
     return v2
 
     .line 39
-    :cond_26
+    :cond_2
     iget-object v0, v0, Llibs/qs1;->IlI:Llibs/mo0;
 
     .line 40
     .line 41
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_3
 
     .line 42
     .line 43
@@ -270,12 +270,12 @@
     return v0
 
     .line 46
-    :cond_2d
+    :cond_3
     return v2
 .end method
 
 .method public final f(Lcom/mixplorer/widgets/MiViewPager;I)Ljava/lang/Object;
-    .registers 11
+    .locals 8
 
     .line 1
     iget-object v1, p0, Llibs/ps1;->f:Llibs/qs1;
@@ -294,7 +294,7 @@
 
     .line 8
     .line 9
-    if-eqz v0, :cond_5e
+    if-eqz v0, :cond_1
 
     .line 10
     .line 11
@@ -374,14 +374,14 @@
 
     .line 50
     .line 51
-    if-eqz v4, :cond_35
+    if-eqz v4, :cond_0
 
     .line 52
     .line 53
-    goto :goto_53
+    goto :goto_0
 
     .line 54
-    :cond_35
+    :cond_0
     iget-object v4, v2, Llibs/ug0;->b:Llibs/rp0;
 
     .line 55
@@ -438,7 +438,7 @@
     move-result-object v3
 
     .line 84
-    :goto_53
+    :goto_0
     iget-object v4, p2, Llibs/vg0;->b:Llibs/rp0;
 
     .line 85
@@ -456,11 +456,11 @@
     .line 91
     .line 92
     .line 93
-    goto/16 :goto_e7
+    goto/16 :goto_1
 
     .line 94
     .line 95
-    :cond_5e
+    :cond_1
     iget-boolean v0, v1, Llibs/qs1;->lll:Z
 
     .line 96
@@ -468,7 +468,7 @@
     const/4 v3, 0x0
 
     .line 98
-    if-eqz v0, :cond_96
+    if-eqz v0, :cond_2
 
     .line 99
     .line 100
@@ -568,10 +568,10 @@
     .line 148
     .line 149
     .line 150
-    goto :goto_e7
+    goto :goto_1
 
     .line 151
-    :cond_96
+    :cond_2
     const/4 v5, 0x0
 
     .line 152
@@ -723,7 +723,7 @@
     .line 230
     .line 231
     .line 232
-    :goto_e7
+    :goto_1
     invoke-virtual {p1, v0, v7}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 233
@@ -733,10 +733,10 @@
 .end method
 
 .method public final g(Landroid/view/View;Ljava/lang/Object;)Z
-    .registers 3
+    .locals 0
 
     .line 1
-    if-ne p1, p2, :cond_4
+    if-ne p1, p2, :cond_0
 
     .line 2
     .line 3
@@ -746,7 +746,7 @@
     return p1
 
     .line 5
-    :cond_4
+    :cond_0
     const/4 p1, 0x0
 
     .line 6

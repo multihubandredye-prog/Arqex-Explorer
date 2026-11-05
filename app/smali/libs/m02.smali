@@ -18,7 +18,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     sget-object v0, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
@@ -50,7 +50,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public final compareTo(Ljava/lang/Object;)I
-    .registers 4
+    .locals 2
 
     .line 1
     check-cast p1, Llibs/m02;
@@ -95,14 +95,14 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     instance-of v0, p1, Llibs/m02;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -118,7 +118,7 @@
     move-result v0
 
     .line 11
-    if-nez v0, :cond_2c
+    if-nez v0, :cond_0
 
     .line 12
     .line 13
@@ -142,7 +142,7 @@
     move-result v0
 
     .line 23
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_0
 
     .line 24
     .line 25
@@ -158,7 +158,7 @@
     move-result v0
 
     .line 31
-    if-nez v0, :cond_2c
+    if-nez v0, :cond_0
 
     .line 32
     .line 33
@@ -178,7 +178,7 @@
     move-result p1
 
     .line 41
-    if-eqz p1, :cond_2c
+    if-eqz p1, :cond_0
 
     .line 42
     .line 43
@@ -188,7 +188,7 @@
     return p1
 
     .line 45
-    :cond_2c
+    :cond_0
     const/4 p1, 0x0
 
     .line 46

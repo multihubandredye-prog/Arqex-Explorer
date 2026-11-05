@@ -11,7 +11,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/TextEditorActivity;Landroid/os/Looper;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/il3;->a:B
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final handleMessage(Landroid/os/Message;)V
-    .registers 19
+    .locals 17
 
     .line 1
     move-object/from16 v0, p0
@@ -51,7 +51,7 @@
     const/4 v3, 0x0
 
     .line 8
-    packed-switch v2, :pswitch_data_208
+    packed-switch v2, :pswitch_data_0
 
     .line 9
     .line 10
@@ -106,7 +106,7 @@
     return-void
 
     .line 37
-    :pswitch_24
+    :pswitch_0
     iget-object v2, v1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     .line 38
@@ -130,7 +130,7 @@
 
     .line 47
     .line 48
-    if-eq v1, v2, :cond_70
+    if-eq v1, v2, :cond_3
 
     .line 49
     .line 50
@@ -138,7 +138,7 @@
 
     .line 51
     .line 52
-    if-eq v1, v2, :cond_5a
+    if-eq v1, v2, :cond_2
 
     .line 53
     .line 54
@@ -146,7 +146,7 @@
 
     .line 55
     .line 56
-    if-eq v1, v2, :cond_4e
+    if-eq v1, v2, :cond_1
 
     .line 57
     .line 58
@@ -154,15 +154,15 @@
 
     .line 59
     .line 60
-    if-eq v1, v2, :cond_3f
+    if-eq v1, v2, :cond_0
 
     .line 61
     .line 62
-    goto/16 :goto_207
+    goto/16 :goto_4
 
     .line 63
     .line 64
-    :cond_3f
+    :cond_0
     sget v1, Lcom/mixplorer/activities/TextEditorActivity;->$c:I
 
     .line 65
@@ -188,16 +188,16 @@
     .line 75
     .line 76
     .line 77
-    goto/16 :goto_207
+    goto/16 :goto_4
 
     .line 78
     .line 79
-    :cond_4e
+    :cond_1
     sget v1, Lcom/mixplorer/activities/TextEditorActivity;->$c:I
 
     .line 80
     .line 81
-    if-eqz v7, :cond_207
+    if-eqz v7, :cond_b
 
     .line 82
     .line 83
@@ -213,11 +213,11 @@
     .line 87
     .line 88
     .line 89
-    goto/16 :goto_207
+    goto/16 :goto_4
 
     .line 90
     .line 91
-    :cond_5a
+    :cond_2
     sget v1, Lcom/mixplorer/activities/TextEditorActivity;->$c:I
 
     .line 92
@@ -226,7 +226,7 @@
 
     .line 94
     .line 95
-    if-eqz v1, :cond_207
+    if-eqz v1, :cond_b
 
     .line 96
     .line 97
@@ -256,11 +256,11 @@
     .line 109
     .line 110
     .line 111
-    goto/16 :goto_207
+    goto/16 :goto_4
 
     .line 112
     .line 113
-    :cond_70
+    :cond_3
     sget v1, Lcom/mixplorer/activities/TextEditorActivity;->$c:I
 
     .line 114
@@ -269,14 +269,14 @@
 
     .line 116
     .line 117
-    if-eqz v1, :cond_207
+    if-eqz v1, :cond_b
 
     .line 118
     .line 119
     const/4 v2, 0x1
 
     .line 120
-    if-ne v1, v2, :cond_191
+    if-ne v1, v2, :cond_7
 
     .line 121
     .line 122
@@ -299,12 +299,12 @@
     const/4 v6, 0x0
 
     .line 131
-    :goto_82
+    :goto_0
     const/16 v8, 0xd
 
     .line 132
     .line 133
-    if-ge v6, v8, :cond_190
+    if-ge v6, v8, :cond_6
 
     .line 134
     .line 135
@@ -312,7 +312,7 @@
 
     .line 136
     .line 137
-    if-eqz v8, :cond_179
+    if-eqz v8, :cond_4
 
     .line 138
     .line 139
@@ -334,7 +334,7 @@
     const/4 v14, 0x2
 
     .line 145
-    packed-switch v8, :pswitch_data_20e
+    packed-switch v8, :pswitch_data_1
 
     .line 146
     .line 147
@@ -348,11 +348,11 @@
     .line 151
     .line 152
     .line 153
-    goto/16 :goto_17e
+    goto/16 :goto_1
 
     .line 154
     .line 155
-    :pswitch_9a
+    :pswitch_1
     new-array v9, v12, [Ljava/lang/String;
 
     .line 156
@@ -397,11 +397,11 @@
     move-result-object v9
 
     .line 177
-    goto/16 :goto_17e
+    goto/16 :goto_1
 
     .line 178
     .line 179
-    :pswitch_b2
+    :pswitch_2
     new-array v10, v10, [Ljava/lang/String;
 
     .line 180
@@ -470,11 +470,11 @@
     move-result-object v9
 
     .line 213
-    goto/16 :goto_17e
+    goto/16 :goto_1
 
     .line 214
     .line 215
-    :pswitch_d6
+    :pswitch_3
     const-string v9, "py"
 
     .line 216
@@ -487,11 +487,11 @@
     move-result-object v9
 
     .line 221
-    goto/16 :goto_17e
+    goto/16 :goto_1
 
     .line 222
     .line 223
-    :pswitch_de
+    :pswitch_4
     const-string v9, "prop"
 
     .line 224
@@ -504,11 +504,11 @@
     move-result-object v9
 
     .line 229
-    goto/16 :goto_17e
+    goto/16 :goto_1
 
     .line 230
     .line 231
-    :pswitch_e6
+    :pswitch_5
     const-string v9, "php"
 
     .line 232
@@ -521,11 +521,11 @@
     move-result-object v9
 
     .line 237
-    goto/16 :goto_17e
+    goto/16 :goto_1
 
     .line 238
     .line 239
-    :pswitch_ee
+    :pswitch_6
     new-array v9, v13, [Ljava/lang/String;
 
     .line 240
@@ -562,11 +562,11 @@
     move-result-object v9
 
     .line 257
-    goto/16 :goto_17e
+    goto/16 :goto_1
 
     .line 258
     .line 259
-    :pswitch_102
+    :pswitch_7
     new-array v9, v11, [Ljava/lang/String;
 
     .line 260
@@ -619,10 +619,10 @@
     move-result-object v9
 
     .line 285
-    goto :goto_17e
+    goto :goto_1
 
     .line 286
-    :pswitch_11d
+    :pswitch_8
     new-array v9, v13, [Ljava/lang/String;
 
     .line 287
@@ -659,10 +659,10 @@
     move-result-object v9
 
     .line 304
-    goto :goto_17e
+    goto :goto_1
 
     .line 305
-    :pswitch_130
+    :pswitch_9
     new-array v9, v13, [Ljava/lang/String;
 
     .line 306
@@ -699,10 +699,10 @@
     move-result-object v9
 
     .line 323
-    goto :goto_17e
+    goto :goto_1
 
     .line 324
-    :pswitch_143
+    :pswitch_a
     const-string v9, "css"
 
     .line 325
@@ -715,10 +715,10 @@
     move-result-object v9
 
     .line 330
-    goto :goto_17e
+    goto :goto_1
 
     .line 331
-    :pswitch_14a
+    :pswitch_b
     const/16 v15, 0x9
 
     .line 332
@@ -811,10 +811,10 @@
     move-result-object v9
 
     .line 377
-    goto :goto_17e
+    goto :goto_1
 
     .line 378
-    :cond_179
+    :cond_4
     new-instance v9, Ljava/util/ArrayList;
 
     .line 379
@@ -824,7 +824,7 @@
     .line 381
     .line 382
     .line 383
-    :goto_17e
+    :goto_1
     sget-object v10, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
     .line 384
@@ -845,31 +845,31 @@
     move-result v9
 
     .line 393
-    if-eqz v9, :cond_18c
+    if-eqz v9, :cond_5
 
     .line 394
     .line 395
     move v1, v8
 
     .line 396
-    goto :goto_191
+    goto :goto_2
 
     .line 397
-    :cond_18c
+    :cond_5
     add-int/lit8 v6, v6, 0x1
 
     .line 398
     .line 399
-    goto/16 :goto_82
+    goto/16 :goto_0
 
     .line 400
     .line 401
-    :cond_190
+    :cond_6
     const/4 v1, 0x1
 
     .line 402
-    :cond_191
-    :goto_191
+    :cond_7
+    :goto_2
     move v6, v1
 
     .line 403
@@ -911,18 +911,18 @@
     move-result v4
 
     .line 423
-    if-eqz v4, :cond_205
+    if-eqz v4, :cond_a
 
     .line 424
     .line 425
-    if-nez v1, :cond_1ab
+    if-nez v1, :cond_8
 
     .line 426
     .line 427
-    goto :goto_205
+    goto :goto_3
 
     .line 428
-    :cond_1ab
+    :cond_8
     invoke-virtual {v7}, Lcom/mixplorer/widgets/MiEditor;->getScrollView()Lcom/mixplorer/widgets/MiScrollView;
 
     .line 429
@@ -1066,7 +1066,7 @@
     move-result v9
 
     .line 497
-    if-gt v10, v9, :cond_1f5
+    if-gt v10, v9, :cond_9
 
     .line 498
     .line 499
@@ -1074,10 +1074,10 @@
 
     .line 500
     .line 501
-    goto :goto_207
+    goto :goto_4
 
     .line 502
-    :cond_1f5
+    :cond_9
     new-instance v1, Llibs/xv1;
 
     .line 503
@@ -1105,23 +1105,23 @@
     .line 515
     .line 516
     .line 517
-    goto :goto_207
+    goto :goto_4
 
     .line 518
-    :cond_205
-    :goto_205
+    :cond_a
+    :goto_3
     iput-boolean v3, v7, Lcom/mixplorer/widgets/MiEditText;->Nu:Z
 
     .line 519
     .line 520
-    :cond_207
-    :goto_207
+    :cond_b
+    :goto_4
     return-void
 
     .line 521
-    :pswitch_data_208
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_24
+        :pswitch_0
     .end packed-switch
 
     .line 522
@@ -1130,18 +1130,18 @@
     .line 525
     .line 526
     .line 527
-    :pswitch_data_20e
+    :pswitch_data_1
     .packed-switch 0x2
-        :pswitch_14a
-        :pswitch_143
-        :pswitch_130
-        :pswitch_11d
-        :pswitch_102
-        :pswitch_ee
-        :pswitch_e6
-        :pswitch_de
-        :pswitch_d6
-        :pswitch_b2
-        :pswitch_9a
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
     .end packed-switch
 .end method

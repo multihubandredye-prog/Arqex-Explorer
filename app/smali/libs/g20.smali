@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Llibs/App;ZIIII)V
-    .registers 8
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Llibs/ee;-><init>(Ljava/lang/String;Llibs/App;)V
@@ -51,14 +51,14 @@
 
 # virtual methods
 .method public final engineGenerateSecret(Ljava/security/spec/KeySpec;)Ljavax/crypto/SecretKey;
-    .registers 12
+    .locals 10
 
     .line 1
     instance-of v0, p1, Ljavax/crypto/spec/PBEKeySpec;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5d
+    if-eqz v0, :cond_3
 
     .line 4
     .line 5
@@ -77,7 +77,7 @@
     move-result-object p1
 
     .line 12
-    if-nez p1, :cond_20
+    if-nez p1, :cond_0
 
     .line 13
     .line 14
@@ -120,7 +120,7 @@
     return-object v1
 
     .line 33
-    :cond_20
+    :cond_0
     iget p1, p0, Llibs/g20;->f:I
 
     .line 34
@@ -137,7 +137,7 @@
 
     .line 40
     .line 41
-    if-eqz v1, :cond_32
+    if-eqz v1, :cond_1
 
     .line 42
     .line 43
@@ -153,14 +153,14 @@
     move-result-object p1
 
     .line 49
-    :goto_30
+    :goto_0
     move-object v9, p1
 
     .line 50
-    goto :goto_37
+    goto :goto_1
 
     .line 51
-    :cond_32
+    :cond_1
     invoke-static {v8, v2, v0, p1}, Llibs/i62;->c(Ljavax/crypto/spec/PBEKeySpec;III)Llibs/et;
 
     .line 52
@@ -169,15 +169,15 @@
     move-result-object p1
 
     .line 55
-    goto :goto_30
+    goto :goto_0
 
     .line 56
-    :goto_37
+    :goto_1
     instance-of p1, v9, Llibs/ta2;
 
     .line 57
     .line 58
-    if-eqz p1, :cond_43
+    if-eqz p1, :cond_2
 
     .line 59
     .line 60
@@ -196,10 +196,10 @@
 
     .line 66
     .line 67
-    goto :goto_46
+    goto :goto_2
 
     .line 68
-    :cond_43
+    :cond_2
     move-object p1, v9
 
     .line 69
@@ -207,7 +207,7 @@
 
     .line 70
     .line 71
-    :goto_46
+    :goto_2
     iget-object p1, p1, Llibs/hh1;->a:[B
 
     .line 72
@@ -253,7 +253,7 @@
     return-object v1
 
     .line 94
-    :cond_5d
+    :cond_3
     const-string p1, "Invalid KeySpec"
 
     .line 95

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/math/BigInteger;Llibs/l50;)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x1

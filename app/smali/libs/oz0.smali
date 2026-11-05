@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/rz0;J)V
-    .registers 6
+    .locals 2
 
     .line 1
     iput-object p1, p0, Llibs/oz0;->Mu:Llibs/rz0;
@@ -35,7 +35,7 @@
 
     .line 11
     .line 12
-    if-nez p1, :cond_10
+    if-nez p1, :cond_0
 
     .line 13
     .line 14
@@ -44,28 +44,28 @@
     .line 15
     .line 16
     .line 17
-    :cond_10
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final close()V
-    .registers 6
+    .locals 5
 
     .line 1
     iget-boolean v0, p0, Llibs/lz0;->Y:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     iget-wide v0, p0, Llibs/oz0;->Lambda:J
 
     .line 7
@@ -78,7 +78,7 @@
 
     .line 11
     .line 12
-    if-eqz v4, :cond_23
+    if-eqz v4, :cond_1
 
     .line 13
     .line 14
@@ -86,26 +86,26 @@
 
     .line 15
     .line 16
-    :try_start_f
+    :try_start_0
     invoke-static {p0, v0}, Llibs/ur3;->q(Llibs/ed3;I)Z
 
     .line 17
     .line 18
     .line 19
     move-result v0
-    :try_end_13
-    .catch Ljava/io/IOException; {:try_start_f .. :try_end_13} :catch_14
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 20
-    goto :goto_15
+    goto :goto_0
 
     .line 21
-    :catch_14
+    :catch_0
     const/4 v0, 0x0
 
     .line 22
-    :goto_15
-    if-nez v0, :cond_23
+    :goto_0
+    if-nez v0, :cond_1
 
     .line 23
     .line 24
@@ -131,7 +131,7 @@
     .line 34
     .line 35
     .line 36
-    :cond_23
+    :cond_1
     const/4 v0, 0x1
 
     .line 37
@@ -143,7 +143,7 @@
 .end method
 
 .method public final e(JLlibs/vj;)J
-    .registers 10
+    .locals 6
 
     .line 1
     iget-boolean p1, p0, Llibs/lz0;->Y:Z
@@ -154,7 +154,7 @@
 
     .line 4
     .line 5
-    if-nez p1, :cond_3e
+    if-nez p1, :cond_3
 
     .line 6
     .line 7
@@ -170,14 +170,14 @@
 
     .line 12
     .line 13
-    if-nez v4, :cond_f
+    if-nez v4, :cond_0
 
     .line 14
     .line 15
     return-wide v2
 
     .line 16
-    :cond_f
+    :cond_0
     const-wide/16 v4, 0x2000
 
     .line 17
@@ -202,7 +202,7 @@
 
     .line 27
     .line 28
-    if-eqz p3, :cond_2a
+    if-eqz p3, :cond_2
 
     .line 29
     .line 30
@@ -221,7 +221,7 @@
 
     .line 36
     .line 37
-    if-nez p3, :cond_29
+    if-nez p3, :cond_1
 
     .line 38
     .line 39
@@ -230,11 +230,11 @@
     .line 40
     .line 41
     .line 42
-    :cond_29
+    :cond_1
     return-wide p1
 
     .line 43
-    :cond_2a
+    :cond_2
     iget-object p1, p0, Llibs/oz0;->Mu:Llibs/rz0;
 
     .line 44
@@ -273,7 +273,7 @@
     throw p1
 
     .line 63
-    :cond_3e
+    :cond_3
     const-string p1, "closed"
 
     .line 64

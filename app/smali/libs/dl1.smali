@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Z)V
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Llibs/b02;-><init>()V
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public final All(Llibs/rp0;Ljava/lang/String;)Llibs/rp0;
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-static {}, Llibs/zl0;->Cur()Lexceptions/NotSupportedException;
@@ -55,7 +55,7 @@
 .end method
 
 .method public final Base(Llibs/rp0;)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     .line 1
     iget-object p1, p1, Llibs/rp0;->Three:Ljava/lang/String;
@@ -66,7 +66,7 @@
 .end method
 
 .method public final Err(Z)Z
-    .registers 2
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -76,7 +76,7 @@
 .end method
 
 .method public final Firebase(Llibs/hh3;JLjava/lang/String;Lcom/mixplorer/ProgressListener;Ljava/util/Properties;Z)Llibs/rp0;
-    .registers 8
+    .locals 0
 
     .line 1
     invoke-static {}, Llibs/zl0;->Cur()Lexceptions/NotSupportedException;
@@ -91,7 +91,7 @@
 .end method
 
 .method public final Main(IILjava/lang/String;)Ljava/io/InputStream;
-    .registers 4
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -101,7 +101,7 @@
 .end method
 
 .method public final Map(Ljava/lang/String;)Llibs/rp0;
-    .registers 8
+    .locals 6
 
     .line 1
     invoke-static {}, Llibs/ji0;->Work()Z
@@ -115,7 +115,7 @@
     const/4 v1, 0x0
 
     .line 6
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
@@ -178,7 +178,7 @@
     return-object p1
 
     .line 37
-    :cond_24
+    :cond_0
     const-string v0, ""
 
     .line 38
@@ -198,27 +198,27 @@
 
     .line 45
     .line 46
-    :try_start_2d
+    :try_start_0
     invoke-virtual {p1, v1, v2}, Llibs/rp0;->Post(J)Ljava/io/InputStream;
 
     .line 47
     .line 48
     .line 49
     move-result-object v3
-    :try_end_31
-    .catchall {:try_start_2d .. :try_end_31} :catchall_77
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 50
-    if-eqz v3, :cond_73
+    if-eqz v3, :cond_4
 
     .line 51
     .line 52
-    :try_start_33
+    :try_start_1
     instance-of v0, v3, Llibs/ir0;
 
     .line 53
     .line 54
-    if-eqz v0, :cond_6f
+    if-eqz v0, :cond_3
 
     .line 55
     .line 56
@@ -237,7 +237,7 @@
 
     .line 62
     .line 63
-    if-lez v0, :cond_4c
+    if-lez v0, :cond_1
 
     .line 64
     .line 65
@@ -257,21 +257,21 @@
     .line 71
     .line 72
     .line 73
-    goto :goto_4c
+    goto :goto_0
 
     .line 74
-    :catchall_49
+    :catchall_0
     move-exception p1
 
     .line 75
     move-object v0, v3
 
     .line 76
-    goto :goto_78
+    goto :goto_1
 
     .line 77
-    :cond_4c
-    :goto_4c
+    :cond_1
+    :goto_0
     move-object v0, v3
 
     .line 78
@@ -291,7 +291,7 @@
     move-result v0
 
     .line 86
-    if-nez v0, :cond_5f
+    if-nez v0, :cond_2
 
     .line 87
     .line 88
@@ -311,7 +311,7 @@
     .line 94
     .line 95
     .line 96
-    :cond_5f
+    :cond_2
     move-object v0, v3
 
     .line 97
@@ -327,7 +327,7 @@
 
     .line 102
     .line 103
-    if-lez v0, :cond_6f
+    if-lez v0, :cond_3
 
     .line 104
     .line 105
@@ -343,12 +343,12 @@
     .line 109
     .line 110
     iput-wide v0, p1, Llibs/rp0;->Four:J
-    :try_end_6f
-    .catchall {:try_start_33 .. :try_end_6f} :catchall_49
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 111
     .line 112
-    :cond_6f
+    :cond_3
     invoke-static {v3}, Llibs/ji0;->k(Ljava/io/Closeable;)V
 
     .line 113
@@ -357,7 +357,7 @@
     return-object p1
 
     .line 116
-    :cond_73
+    :cond_4
     invoke-static {v3}, Llibs/ji0;->k(Ljava/io/Closeable;)V
 
     .line 117
@@ -366,11 +366,11 @@
     return-object v0
 
     .line 120
-    :catchall_77
+    :catchall_1
     move-exception p1
 
     .line 121
-    :goto_78
+    :goto_1
     invoke-static {v0}, Llibs/ji0;->k(Ljava/io/Closeable;)V
 
     .line 122
@@ -380,7 +380,7 @@
 .end method
 
 .method public final Msg(Z)Z
-    .registers 2
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -390,7 +390,7 @@
 .end method
 
 .method public final Old(Llibs/rp0;Ljava/lang/String;Lcom/mixplorer/ProgressListener;)Llibs/rp0;
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-static {}, Llibs/zl0;->Cur()Lexceptions/NotSupportedException;
@@ -405,7 +405,7 @@
 .end method
 
 .method public final Post(Ljava/lang/String;Llibs/t61;)Llibs/rp0;
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -415,14 +415,14 @@
 .end method
 
 .method public final Result(Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     .line 1
     return-object p1
 .end method
 
 .method public final Task(IJLlibs/rp0;)Ljava/io/InputStream;
-    .registers 10
+    .locals 5
 
     .line 1
     const/4 v0, 0x1
@@ -431,7 +431,7 @@
     const/4 v1, 0x0
 
     .line 3
-    :try_start_2
+    :try_start_0
     invoke-static {}, Llibs/ji0;->Work()Z
 
     .line 4
@@ -440,7 +440,7 @@
     move-result v2
 
     .line 7
-    if-eqz v2, :cond_3b
+    if-eqz v2, :cond_0
 
     .line 8
     .line 9
@@ -545,28 +545,28 @@
     return-object p1
 
     .line 58
-    :catchall_39
+    :catchall_0
     move-exception p1
 
     .line 59
-    goto :goto_40
+    goto :goto_0
 
     .line 60
-    :cond_3b
+    :cond_0
     invoke-super {p0, p1, p2, p3, p4}, Llibs/b02;->Task(IJLlibs/rp0;)Ljava/io/InputStream;
 
     .line 61
     .line 62
     .line 63
     move-result-object p1
-    :try_end_3f
-    .catchall {:try_start_2 .. :try_end_3f} :catchall_39
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 64
     return-object p1
 
     .line 65
-    :goto_40
+    :goto_0
     invoke-static {p1}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 66
@@ -603,7 +603,7 @@
 .end method
 
 .method public final u(Ljava/lang/String;)Llibs/rp0;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {}, Llibs/zl0;->Cur()Lexceptions/NotSupportedException;
@@ -618,7 +618,7 @@
 .end method
 
 .method public final x(Llibs/rp0;ILcom/mixplorer/ProgressListener;Z)Z
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-static {}, Llibs/zl0;->Cur()Lexceptions/NotSupportedException;

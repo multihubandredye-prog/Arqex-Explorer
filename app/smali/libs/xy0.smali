@@ -15,7 +15,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/hardware/usb/UsbDeviceConnection;Landroid/hardware/usb/UsbEndpoint;Landroid/hardware/usb/UsbEndpoint;B)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-byte p4, p0, Llibs/xy0;->a:B
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public final a(Ljava/nio/ByteBuffer;II)I
-    .registers 14
+    .locals 10
 
     .line 1
     iget-byte v0, p0, Llibs/xy0;->a:B
@@ -62,7 +62,7 @@
     const/4 v3, 0x0
 
     .line 7
-    packed-switch v0, :pswitch_data_7c
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -105,7 +105,7 @@
     move-result p2
 
     .line 28
-    if-eq p2, v2, :cond_27
+    if-eq p2, v2, :cond_0
 
     .line 29
     .line 30
@@ -128,10 +128,10 @@
     move v3, p2
 
     .line 39
-    goto :goto_2e
+    goto :goto_0
 
     .line 40
-    :cond_27
+    :cond_0
     invoke-static {}, Lcom/mixplorer/libs/Util;->a()Ljava/lang/String;
 
     .line 41
@@ -145,11 +145,11 @@
     .line 45
     .line 46
     .line 47
-    :goto_2e
+    :goto_0
     return v3
 
     .line 48
-    :pswitch_2f
+    :pswitch_0
     move v8, p2
 
     .line 49
@@ -164,7 +164,7 @@
     move-result p2
 
     .line 54
-    if-nez p2, :cond_57
+    if-nez p2, :cond_2
 
     .line 55
     .line 56
@@ -192,7 +192,7 @@
     move-result p2
 
     .line 68
-    if-eq p2, v2, :cond_4f
+    if-eq p2, v2, :cond_1
 
     .line 69
     .line 70
@@ -215,10 +215,10 @@
     move v3, p2
 
     .line 79
-    goto :goto_7b
+    goto :goto_1
 
     .line 80
-    :cond_4f
+    :cond_1
     invoke-static {}, Lcom/mixplorer/libs/Util;->a()Ljava/lang/String;
 
     .line 81
@@ -232,10 +232,10 @@
     .line 85
     .line 86
     .line 87
-    goto :goto_7b
+    goto :goto_1
 
     .line 88
-    :cond_57
+    :cond_2
     new-array p3, v8, [B
 
     .line 89
@@ -256,7 +256,7 @@
     move-result v0
 
     .line 98
-    if-eq v0, v2, :cond_74
+    if-eq v0, v2, :cond_3
 
     .line 99
     .line 100
@@ -292,10 +292,10 @@
     move v3, v0
 
     .line 116
-    goto :goto_7b
+    goto :goto_1
 
     .line 117
-    :cond_74
+    :cond_3
     invoke-static {}, Lcom/mixplorer/libs/Util;->a()Ljava/lang/String;
 
     .line 118
@@ -309,18 +309,18 @@
     .line 122
     .line 123
     .line 124
-    :goto_7b
+    :goto_1
     return v3
 
     .line 125
-    :pswitch_data_7c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2f
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final b(Ljava/nio/ByteBuffer;II)I
-    .registers 14
+    .locals 10
 
     .line 1
     iget-byte v0, p0, Llibs/xy0;->a:B
@@ -337,7 +337,7 @@
     const/4 v3, -0x1
 
     .line 7
-    packed-switch v0, :pswitch_data_86
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -380,7 +380,7 @@
     move-result p2
 
     .line 28
-    if-eq p2, v3, :cond_27
+    if-eq p2, v3, :cond_0
 
     .line 29
     .line 30
@@ -403,10 +403,10 @@
     move v1, p2
 
     .line 39
-    goto :goto_2e
+    goto :goto_0
 
     .line 40
-    :cond_27
+    :cond_0
     invoke-static {}, Lcom/mixplorer/libs/Util;->a()Ljava/lang/String;
 
     .line 41
@@ -420,11 +420,11 @@
     .line 45
     .line 46
     .line 47
-    :goto_2e
+    :goto_0
     return v1
 
     .line 48
-    :pswitch_2f
+    :pswitch_0
     move v8, p2
 
     .line 49
@@ -439,7 +439,7 @@
     move-result p2
 
     .line 54
-    if-nez p2, :cond_5c
+    if-nez p2, :cond_2
 
     .line 55
     .line 56
@@ -467,7 +467,7 @@
     move-result p2
 
     .line 68
-    if-eq p2, v3, :cond_4e
+    if-eq p2, v3, :cond_1
 
     .line 69
     .line 70
@@ -487,10 +487,10 @@
     .line 76
     .line 77
     .line 78
-    goto :goto_77
+    goto :goto_1
 
     .line 79
-    :cond_4e
+    :cond_1
     new-instance p1, Ljava/io/InterruptedIOException;
 
     .line 80
@@ -519,7 +519,7 @@
     throw p1
 
     .line 93
-    :cond_5c
+    :cond_2
     new-array p3, v8, [B
 
     .line 94
@@ -553,7 +553,7 @@
     move-result p2
 
     .line 110
-    if-eq p2, v3, :cond_78
+    if-eq p2, v3, :cond_3
 
     .line 111
     .line 112
@@ -573,11 +573,11 @@
     .line 118
     .line 119
     .line 120
-    :goto_77
+    :goto_1
     return p2
 
     .line 121
-    :cond_78
+    :cond_3
     new-instance p1, Ljava/io/InterruptedIOException;
 
     .line 122
@@ -606,8 +606,8 @@
     throw p1
 
     .line 135
-    :pswitch_data_86
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2f
+        :pswitch_0
     .end packed-switch
 .end method

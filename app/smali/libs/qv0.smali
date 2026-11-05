@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/sv0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/qv0;->b:Llibs/sv0;
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final i(I)I
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/qv0;->b:Llibs/sv0;
@@ -52,7 +52,7 @@
     const/4 v2, 0x1
 
     .line 10
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_3
 
     .line 11
     .line 12
@@ -67,14 +67,14 @@
     const/4 v4, 0x0
 
     .line 17
-    if-nez v1, :cond_13
+    if-nez v1, :cond_0
 
     .line 18
     .line 19
-    goto :goto_33
+    goto :goto_1
 
     .line 20
-    :cond_13
+    :cond_0
     iget-object v0, v0, Llibs/sv0;->Bundle:Landroid/util/SparseArray;
 
     .line 21
@@ -90,7 +90,7 @@
     move-result v1
 
     .line 27
-    if-lt v1, v2, :cond_22
+    if-lt v1, v2, :cond_1
 
     .line 28
     .line 29
@@ -105,15 +105,15 @@
     move-result v0
 
     .line 34
-    goto :goto_23
+    goto :goto_0
 
     .line 35
-    :cond_22
+    :cond_1
     const/4 v0, -0x1
 
     .line 36
-    :goto_23
-    if-ltz v0, :cond_33
+    :goto_0
+    if-ltz v0, :cond_2
 
     .line 37
     .line 38
@@ -131,7 +131,7 @@
     rem-int/2addr p1, v0
 
     .line 44
-    if-lez p1, :cond_33
+    if-lez p1, :cond_2
 
     .line 45
     .line 46
@@ -147,14 +147,14 @@
 
     .line 51
     .line 52
-    :cond_33
-    :goto_33
+    :cond_2
+    :goto_1
     add-int/2addr v4, v2
 
     .line 53
     return v4
 
     .line 54
-    :cond_35
+    :cond_3
     return v2
 .end method

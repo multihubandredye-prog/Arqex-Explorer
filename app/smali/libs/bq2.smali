@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "SHA-256"
@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public final a()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, ""
@@ -42,7 +42,7 @@
 .end method
 
 .method public final b(Llibs/zo3;Ljava/lang/String;Ljava/lang/String;[B[BLlibs/je3;Llibs/le3;ZZ)V
-    .registers 10
+    .locals 0
 
     .line 1
     iput-object p2, p0, Llibs/ge3;->e:Ljava/lang/String;
@@ -81,7 +81,7 @@
 
     .line 18
     .line 19
-    :try_start_12
+    :try_start_0
     invoke-static {}, Llibs/zc1;->e()Llibs/zc1;
 
     .line 20
@@ -119,8 +119,8 @@
 
     .line 37
     iput-object p2, p0, Llibs/bq2;->r:Ljavax/crypto/Cipher;
-    :try_end_26
-    .catch Ljava/lang/Exception; {:try_start_12 .. :try_end_26} :catch_31
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 38
     .line 39
@@ -147,7 +147,7 @@
     return-void
 
     .line 50
-    :catch_31
+    :catch_0
     const-string p1, "JCE does not support rsa2048-sha256 key exchange"
 
     .line 51
@@ -161,7 +161,7 @@
 .end method
 
 .method public final c([B)Z
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
@@ -175,14 +175,14 @@
 
     .line 5
     .line 6
-    if-eq v1, v2, :cond_8
+    if-eq v1, v2, :cond_0
 
     .line 7
     .line 8
     return v0
 
     .line 9
-    :cond_8
+    :cond_0
     const/4 v1, 0x5
 
     .line 10
@@ -194,7 +194,7 @@
     move-result v1
 
     .line 14
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_1
 
     .line 15
     .line 16
@@ -211,7 +211,7 @@
     .line 21
     .line 22
     .line 23
-    :cond_16
+    :cond_1
     new-instance v1, Llibs/gl;
 
     .line 24
@@ -242,7 +242,7 @@
 
     .line 38
     .line 39
-    :try_start_26
+    :try_start_0
     iget-object p1, p0, Llibs/bq2;->r:Ljavax/crypto/Cipher;
 
     .line 40
@@ -292,13 +292,13 @@
     .line 62
     .line 63
     invoke-direct {v1, p1}, Llibs/gl;-><init>([B)V
-    :try_end_41
-    .catchall {:try_start_26 .. :try_end_41} :catchall_e0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 64
     .line 65
     .line 66
-    :try_start_41
+    :try_start_1
     invoke-virtual {v1}, Llibs/gl;->m()[B
 
     .line 67
@@ -317,15 +317,15 @@
     .line 74
     .line 75
     iput-object v2, p0, Llibs/ge3;->a:Ljava/math/BigInteger;
-    :try_end_4c
-    .catchall {:try_start_41 .. :try_end_4c} :catchall_e2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 76
     .line 77
-    :try_start_4c
+    :try_start_2
     invoke-virtual {v1}, Llibs/gl;->close()V
-    :try_end_4f
-    .catchall {:try_start_4c .. :try_end_4f} :catchall_e0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 78
     .line 79
@@ -611,29 +611,29 @@
     return v1
 
     .line 225
-    :catchall_e0
+    :catchall_0
     move-exception p1
 
     .line 226
-    goto :goto_e7
+    goto :goto_0
 
     .line 227
-    :catchall_e2
+    :catchall_1
     move-exception p1
 
     .line 228
-    :try_start_e3
+    :try_start_3
     invoke-virtual {v1}, Llibs/gl;->close()V
 
     .line 229
     .line 230
     .line 231
     throw p1
-    :try_end_e7
-    .catchall {:try_start_e3 .. :try_end_e7} :catchall_e0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 232
-    :goto_e7
+    :goto_0
     iget-object v0, p0, Llibs/ge3;->p:Llibs/zo3;
 
     .line 233
@@ -671,7 +671,7 @@
 .end method
 
 .method public final d()V
-    .registers 4
+    .locals 3
 
     .line 1
     :try_start_0
@@ -733,15 +733,15 @@
 
     .line 30
     iput-object v0, p0, Llibs/bq2;->r:Ljavax/crypto/Cipher;
-    :try_end_1f
-    .catchall {:try_start_0 .. :try_end_1f} :catchall_20
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 31
     .line 32
     return-void
 
     .line 33
-    :catchall_20
+    :catchall_0
     move-exception v0
 
     .line 34

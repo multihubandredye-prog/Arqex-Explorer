@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/kr0;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public All(ILjava/io/StringWriter;)Z
-    .registers 3
+    .locals 0
 
     .line 1
     const p2, 0xd800
@@ -27,7 +27,7 @@
     .line 2
     .line 3
     .line 4
-    if-lt p1, p2, :cond_c
+    if-lt p1, p2, :cond_0
 
     .line 5
     .line 6
@@ -36,7 +36,7 @@
     .line 7
     .line 8
     .line 9
-    if-gt p1, p2, :cond_c
+    if-gt p1, p2, :cond_0
 
     .line 10
     .line 11
@@ -46,7 +46,7 @@
     return p1
 
     .line 13
-    :cond_c
+    :cond_0
     const/4 p1, 0x0
 
     .line 14
@@ -54,7 +54,7 @@
 .end method
 
 .method public final Nxt(Ljava/lang/String;ILjava/io/StringWriter;)I
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-static {p1, p2}, Ljava/lang/Character;->codePointAt(Ljava/lang/CharSequence;I)I

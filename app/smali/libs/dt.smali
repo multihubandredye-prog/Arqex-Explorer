@@ -33,7 +33,7 @@
 
 # direct methods
 .method public constructor <init>([BLjava/io/OutputStream;Ljavax/crypto/Cipher;Ljavax/crypto/spec/SecretKeySpec;Ljava/io/FileOutputStream;)V
-    .registers 8
+    .locals 2
 
     .line 1
     invoke-direct {p0, p2}, Llibs/jr0;-><init>(Ljava/io/OutputStream;)V
@@ -111,13 +111,13 @@
 
 # virtual methods
 .method public final c()V
-    .registers 3
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v1, p0, Llibs/dt;->Z:Ljavax/crypto/Cipher;
 
     .line 3
@@ -131,38 +131,38 @@
 
     .line 8
     iput-object v1, p0, Llibs/dt;->Nu:[B
-    :try_end_9
-    .catch Ljavax/crypto/IllegalBlockSizeException; {:try_start_1 .. :try_end_9} :catch_d
-    .catch Ljavax/crypto/BadPaddingException; {:try_start_1 .. :try_end_9} :catch_a
+    :try_end_0
+    .catch Ljavax/crypto/IllegalBlockSizeException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljavax/crypto/BadPaddingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 9
     .line 10
-    goto :goto_f
+    goto :goto_0
 
     .line 11
-    :catch_a
+    :catch_0
     iput-object v0, p0, Llibs/dt;->Nu:[B
 
     .line 12
     .line 13
-    goto :goto_f
+    goto :goto_0
 
     .line 14
-    :catch_d
+    :catch_1
     iput-object v0, p0, Llibs/dt;->Nu:[B
 
     .line 15
     .line 16
-    :goto_f
-    :try_start_f
+    :goto_0
+    :try_start_1
     invoke-virtual {p0}, Llibs/dt;->flush()V
-    :try_end_12
-    .catch Ljava/io/IOException; {:try_start_f .. :try_end_12} :catch_12
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_2
 
     .line 17
     .line 18
     .line 19
-    :catch_12
+    :catch_2
     iget-object v0, p0, Llibs/jr0;->Y:Ljava/io/OutputStream;
 
     .line 20
@@ -176,7 +176,7 @@
 .end method
 
 .method public final close()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget v0, p0, Llibs/dt;->Tau:I
@@ -217,7 +217,7 @@
 .end method
 
 .method public final flush()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/dt;->Nu:[B
@@ -228,7 +228,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -244,7 +244,7 @@
 
     .line 12
     .line 13
-    :cond_c
+    :cond_0
     invoke-virtual {v1}, Ljava/io/OutputStream;->flush()V
 
     .line 14
@@ -254,18 +254,18 @@
 .end method
 
 .method public final i(II[B)V
-    .registers 13
+    .locals 9
 
     .line 1
-    if-gtz p2, :cond_3
+    if-gtz p2, :cond_0
 
     .line 2
     .line 3
-    goto :goto_5b
+    goto :goto_3
 
     .line 4
-    :cond_3
-    :goto_3
+    :cond_0
+    :goto_0
     iget-wide v0, p0, Llibs/dt;->Sigma:J
 
     .line 5
@@ -284,7 +284,7 @@
 
     .line 11
     .line 12
-    if-lez v6, :cond_56
+    if-lez v6, :cond_4
 
     .line 13
     .line 14
@@ -294,7 +294,7 @@
     long-to-int v0, v4
 
     .line 16
-    if-lez v0, :cond_16
+    if-lez v0, :cond_1
 
     .line 17
     .line 18
@@ -309,7 +309,7 @@
     sub-int/2addr p2, v0
 
     .line 23
-    :cond_16
+    :cond_1
     sget-object v0, Llibs/yq1;->a:Ljavax/crypto/spec/IvParameterSpec;
 
     .line 24
@@ -367,8 +367,8 @@
     const/4 v5, 0x1
 
     .line 52
-    :goto_33
-    if-gt v5, v4, :cond_48
+    :goto_1
+    if-gt v5, v4, :cond_3
 
     .line 53
     .line 54
@@ -390,7 +390,7 @@
 
     .line 61
     .line 62
-    if-ltz v8, :cond_44
+    if-ltz v8, :cond_2
 
     .line 63
     .line 64
@@ -398,14 +398,14 @@
 
     .line 65
     .line 66
-    if-gez v2, :cond_44
+    if-gez v2, :cond_2
 
     .line 67
     .line 68
-    goto :goto_53
+    goto :goto_2
 
     .line 69
-    :cond_44
+    :cond_2
     add-int/lit8 v5, v5, 0x1
 
     .line 70
@@ -413,10 +413,10 @@
     move-wide v2, v6
 
     .line 72
-    goto :goto_33
+    goto :goto_1
 
     .line 73
-    :cond_48
+    :cond_3
     sub-long/2addr v0, v2
 
     .line 74
@@ -440,16 +440,16 @@
 
     .line 83
     .line 84
-    :goto_53
+    :goto_2
     iput-wide v6, p0, Llibs/dt;->Chi:J
 
     .line 85
     .line 86
-    goto :goto_3
+    goto :goto_0
 
     .line 87
-    :cond_56
-    if-lez p2, :cond_5b
+    :cond_4
+    if-lez p2, :cond_5
 
     .line 88
     .line 89
@@ -458,13 +458,13 @@
     .line 90
     .line 91
     .line 92
-    :cond_5b
-    :goto_5b
+    :cond_5
+    :goto_3
     return-void
 .end method
 
 .method public final m(II[B)V
-    .registers 12
+    .locals 8
 
     .line 1
     and-int/lit8 v0, p2, 0xf
@@ -478,7 +478,7 @@
 
     .line 5
     .line 6
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
@@ -487,7 +487,7 @@
     .line 9
     .line 10
     .line 11
-    :cond_a
+    :cond_0
     iget-object v0, p0, Llibs/dt;->Phi:[B
 
     .line 12
@@ -503,16 +503,16 @@
     const/4 v4, 0x0
 
     .line 18
-    :goto_11
-    if-ge v4, p2, :cond_2f
+    :goto_0
+    if-ge v4, p2, :cond_2
 
     .line 19
     .line 20
     const/4 v5, 0x0
 
     .line 21
-    :goto_14
-    if-ge v5, v2, :cond_24
+    :goto_1
+    if-ge v5, v2, :cond_1
 
     .line 22
     .line 23
@@ -545,22 +545,22 @@
 
     .line 35
     .line 36
-    goto :goto_14
+    goto :goto_1
 
     .line 37
-    :cond_24
-    :try_start_24
+    :cond_1
+    :try_start_0
     invoke-virtual {v3, v0, v1, v2, v0}, Ljavax/crypto/Cipher;->doFinal([BII[B)I
-    :try_end_27
-    .catch Ljava/lang/Exception; {:try_start_24 .. :try_end_27} :catch_28
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 38
     .line 39
     .line 40
-    goto :goto_2c
+    goto :goto_2
 
     .line 41
-    :catch_28
+    :catch_0
     move-exception v5
 
     .line 42
@@ -569,15 +569,15 @@
     .line 43
     .line 44
     .line 45
-    :goto_2c
+    :goto_2
     add-int/lit8 v4, v4, 0x10
 
     .line 46
     .line 47
-    goto :goto_11
+    goto :goto_0
 
     .line 48
-    :cond_2f
+    :cond_2
     iput-object v0, p0, Llibs/dt;->Phi:[B
 
     .line 49
@@ -605,7 +605,7 @@
 .end method
 
 .method public final w([BII)V
-    .registers 5
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/dt;->Z:Ljavax/crypto/Cipher;
@@ -624,7 +624,7 @@
 
     .line 8
     .line 9
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     .line 10
     .line 11
@@ -644,12 +644,12 @@
 
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     return-void
 .end method
 
 .method public final write(I)V
-    .registers 5
+    .locals 3
 
     int-to-byte p1, p1
 
@@ -671,7 +671,7 @@
 
     iput-object p1, p0, Llibs/dt;->Nu:[B
 
-    if-eqz p1, :cond_19
+    if-eqz p1, :cond_0
 
     .line 62
     iget-object v0, p0, Llibs/dt;->Lambda:Ljava/io/OutputStream;
@@ -683,12 +683,12 @@
     .line 63
     iput-object p1, p0, Llibs/dt;->Nu:[B
 
-    :cond_19
+    :cond_0
     return-void
 .end method
 
 .method public final write([B)V
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -701,14 +701,14 @@
 .end method
 
 .method public final write([BII)V
-    .registers 8
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/dt;->Pi:Ljava/io/FileOutputStream;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -717,8 +717,8 @@
     .line 6
     .line 7
     .line 8
-    :cond_7
-    :goto_7
+    :cond_0
+    :goto_0
     iget v0, p0, Llibs/dt;->Tau:I
 
     .line 9
@@ -731,15 +731,15 @@
 
     .line 13
     .line 14
-    if-ge v0, v1, :cond_20
+    if-ge v0, v1, :cond_1
 
     .line 15
     .line 16
-    if-lez v0, :cond_20
+    if-lez v0, :cond_1
 
     .line 17
     .line 18
-    if-lez p3, :cond_20
+    if-lez p3, :cond_1
 
     .line 19
     .line 20
@@ -767,14 +767,14 @@
 
     .line 31
     .line 32
-    goto :goto_7
+    goto :goto_0
 
     .line 33
-    :cond_20
+    :cond_1
     const/4 v3, 0x0
 
     .line 34
-    if-ne v0, v1, :cond_28
+    if-ne v0, v1, :cond_2
 
     .line 35
     .line 36
@@ -787,12 +787,12 @@
 
     .line 40
     .line 41
-    :cond_28
+    :cond_2
     and-int/lit8 v0, p3, 0xf
 
     .line 42
     .line 43
-    if-eqz v0, :cond_37
+    if-eqz v0, :cond_3
 
     .line 44
     .line 45
@@ -819,7 +819,7 @@
     move p3, v0
 
     .line 56
-    :cond_37
+    :cond_3
     invoke-virtual {p0, p2, p3, p1}, Llibs/dt;->i(II[B)V
 
     .line 57

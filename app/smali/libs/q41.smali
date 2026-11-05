@@ -5,7 +5,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const-class v0, Llibs/q41;
@@ -29,7 +29,7 @@
 .end method
 
 .method public static a(Ljava/io/InputStream;)Ljava/util/ArrayList;
-    .registers 15
+    .locals 14
 
     .line 1
     new-instance v0, Llibs/dm1;
@@ -78,8 +78,8 @@
     const/4 v3, 0x0
 
     .line 25
-    :goto_18
-    if-ge v3, p0, :cond_25
+    :goto_0
+    if-ge v3, p0, :cond_0
 
     .line 26
     .line 27
@@ -103,10 +103,10 @@
     int-to-short v3, v3
 
     .line 37
-    goto :goto_18
+    goto :goto_0
 
     .line 38
-    :cond_25
+    :cond_0
     new-instance v3, Ljava/util/ArrayList;
 
     .line 39
@@ -119,12 +119,12 @@
     const/4 v4, 0x0
 
     .line 44
-    :goto_2b
-    if-ge v4, p0, :cond_1c2
+    :goto_1
+    if-ge v4, p0, :cond_e
 
     .line 45
     .line 46
-    :try_start_2d
+    :try_start_0
     invoke-virtual {v0}, Llibs/dm1;->getCount()I
 
     .line 47
@@ -141,7 +141,7 @@
 
     .line 53
     .line 54
-    if-ne v5, v6, :cond_18a
+    if-ne v5, v6, :cond_d
 
     .line 55
     .line 56
@@ -161,7 +161,7 @@
 
     .line 63
     .line 64
-    if-ne v5, v6, :cond_10d
+    if-ne v5, v6, :cond_a
 
     .line 65
     .line 66
@@ -229,7 +229,7 @@
 
     .line 97
     .line 98
-    if-gt v12, v7, :cond_76
+    if-gt v12, v7, :cond_1
 
     .line 99
     .line 100
@@ -244,12 +244,12 @@
     const/4 v12, 0x0
 
     .line 105
-    :goto_68
+    :goto_2
     iget v13, v10, Llibs/ha1;->f:I
 
     .line 106
     .line 107
-    if-ge v12, v13, :cond_77
+    if-ge v12, v13, :cond_2
 
     .line 108
     .line 109
@@ -270,14 +270,14 @@
 
     .line 117
     .line 118
-    goto :goto_68
+    goto :goto_2
 
     .line 119
-    :cond_76
+    :cond_1
     const/4 v7, 0x0
 
     .line 120
-    :cond_77
+    :cond_2
     invoke-static {v10, v0, v7}, Llibs/k12;->Link(Llibs/ha1;Llibs/dm1;[Llibs/jw;)Landroid/graphics/Bitmap;
 
     .line 121
@@ -328,7 +328,7 @@
 
     .line 145
     .line 146
-    if-ne v12, v13, :cond_c4
+    if-ne v12, v13, :cond_6
 
     .line 147
     .line 148
@@ -370,8 +370,8 @@
     const/4 v6, 0x0
 
     .line 166
-    :goto_a5
-    if-ge v6, v5, :cond_b5
+    :goto_3
+    if-ge v6, v5, :cond_4
 
     .line 167
     .line 168
@@ -386,32 +386,32 @@
     const/4 v9, -0x1
 
     .line 173
-    if-ne v8, v9, :cond_af
+    if-ne v8, v9, :cond_3
 
     .line 174
     .line 175
-    goto :goto_b5
+    goto :goto_4
 
     .line 176
-    :cond_af
+    :cond_3
     add-int/lit8 v6, v6, 0x1
 
     .line 177
     .line 178
-    goto :goto_a5
+    goto :goto_3
 
     .line 179
-    :catch_b2
+    :catch_0
     move-exception p0
 
     .line 180
-    goto/16 :goto_1a6
+    goto/16 :goto_a
 
     .line 181
     .line 182
-    :cond_b5
-    :goto_b5
-    if-ge v6, v5, :cond_102
+    :cond_4
+    :goto_4
+    if-ge v6, v5, :cond_9
 
     .line 183
     .line 184
@@ -419,14 +419,14 @@
 
     .line 185
     .line 186
-    if-lt v4, v5, :cond_bc
+    if-lt v4, v5, :cond_5
 
     .line 187
     .line 188
-    goto :goto_102
+    goto :goto_8
 
     .line 189
-    :cond_bc
+    :cond_5
     new-instance p0, Ljava/io/EOFException;
 
     .line 190
@@ -443,12 +443,12 @@
     throw p0
 
     .line 197
-    :cond_c4
+    :cond_6
     const/16 v6, 0x18
 
     .line 198
     .line 199
-    if-gt v12, v6, :cond_102
+    if-gt v12, v6, :cond_9
 
     .line 200
     .line 201
@@ -467,16 +467,16 @@
     sub-int/2addr v6, v8
 
     .line 208
-    :goto_cf
-    if-ltz v6, :cond_102
+    :goto_5
+    if-ltz v6, :cond_9
 
     .line 209
     .line 210
     const/4 v8, 0x0
 
     .line 211
-    :goto_d2
-    if-ge v8, v11, :cond_ff
+    :goto_6
+    if-ge v8, v11, :cond_8
 
     .line 212
     .line 213
@@ -488,7 +488,7 @@
     move-result v9
 
     .line 217
-    if-nez v9, :cond_ff
+    if-nez v9, :cond_8
 
     .line 218
     .line 219
@@ -500,14 +500,14 @@
     move-result v9
 
     .line 223
-    if-eqz v9, :cond_e1
+    if-eqz v9, :cond_7
 
     .line 224
     .line 225
-    goto :goto_ff
+    goto :goto_7
 
     .line 226
-    :cond_e1
+    :cond_7
     invoke-virtual {v7, v8, v6}, Landroid/graphics/Bitmap;->getPixel(II)I
 
     .line 227
@@ -565,20 +565,20 @@
 
     .line 254
     .line 255
-    goto :goto_d2
+    goto :goto_6
 
     .line 256
-    :cond_ff
-    :goto_ff
+    :cond_8
+    :goto_7
     add-int/lit8 v6, v6, -0x1
 
     .line 257
     .line 258
-    goto :goto_cf
+    goto :goto_5
 
     .line 259
-    :cond_102
-    :goto_102
+    :cond_9
+    :goto_8
     aget-object v5, v1, v4
 
     .line 260
@@ -593,16 +593,16 @@
     .line 265
     .line 266
     invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_10c
-    .catch Ljava/io/IOException; {:try_start_2d .. :try_end_10c} :catch_b2
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 267
     .line 268
     .line 269
-    goto :goto_15c
+    goto :goto_9
 
     .line 270
-    :cond_10d
+    :cond_a
     const v6, 0x474e5089
 
     .line 271
@@ -612,11 +612,11 @@
 
     .line 274
     .line 275
-    if-ne v5, v6, :cond_175
+    if-ne v5, v6, :cond_c
 
     .line 276
     .line 277
-    :try_start_114
+    :try_start_1
     invoke-virtual {v0}, Llibs/dm1;->c()I
 
     .line 278
@@ -630,7 +630,7 @@
     .line 282
     .line 283
     .line 284
-    if-ne v5, v6, :cond_160
+    if-ne v5, v6, :cond_b
 
     .line 285
     .line 286
@@ -749,16 +749,16 @@
     .line 347
     .line 348
     .line 349
-    :goto_15c
+    :goto_9
     add-int/lit8 v4, v4, 0x1
 
     .line 350
     .line 351
-    goto/16 :goto_2b
+    goto/16 :goto_1
 
     .line 352
     .line 353
-    :cond_160
+    :cond_b
     new-instance p0, Ljava/io/IOException;
 
     .line 354
@@ -798,7 +798,7 @@
     throw p0
 
     .line 374
-    :cond_175
+    :cond_c
     new-instance p0, Ljava/io/IOException;
 
     .line 375
@@ -838,7 +838,7 @@
     throw p0
 
     .line 395
-    :cond_18a
+    :cond_d
     new-instance p0, Ljava/io/IOException;
 
     .line 396
@@ -889,11 +889,11 @@
     .line 421
     .line 422
     throw p0
-    :try_end_1a6
-    .catch Ljava/io/IOException; {:try_start_114 .. :try_end_1a6} :catch_b2
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 423
-    :goto_1a6
+    :goto_a
     new-instance v0, Ljava/io/IOException;
 
     .line 424
@@ -946,7 +946,7 @@
     throw v0
 
     .line 451
-    :cond_1c2
+    :cond_e
     new-instance p0, Ljava/util/ArrayList;
 
     .line 452
@@ -964,7 +964,7 @@
     .line 458
     .line 459
     .line 460
-    :goto_1cb
+    :goto_b
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     .line 461
@@ -973,7 +973,7 @@
     move-result v0
 
     .line 464
-    if-ge v2, v0, :cond_1df
+    if-ge v2, v0, :cond_f
 
     .line 465
     .line 466
@@ -1002,9 +1002,9 @@
 
     .line 478
     .line 479
-    goto :goto_1cb
+    goto :goto_b
 
     .line 480
-    :cond_1df
+    :cond_f
     return-object p0
 .end method

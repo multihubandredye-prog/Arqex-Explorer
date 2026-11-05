@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     :try_start_0
@@ -29,7 +29,7 @@
     move-result-object v0
 
     .line 7
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     .line 8
     .line 9
@@ -44,14 +44,14 @@
     const/4 v2, 0x3
 
     .line 14
-    if-ge v1, v2, :cond_10
+    if-ge v1, v2, :cond_0
 
     .line 15
     .line 16
-    goto :goto_18
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     const/4 v1, 0x2
 
     .line 18
@@ -64,19 +64,19 @@
 
     .line 22
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-    :try_end_18
-    .catchall {:try_start_0 .. :try_end_18} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 23
     .line 24
     .line 25
-    :catchall_18
-    :cond_18
-    :goto_18
+    :catchall_0
+    :cond_1
+    :goto_0
     const/4 v0, 0x0
 
     .line 26
-    :try_start_19
+    :try_start_1
     const-string v1, "com.ibm.oti.configuration"
 
     .line 27
@@ -87,11 +87,11 @@
     .line 30
     .line 31
     move-result-object v1
-    :try_end_1f
-    .catch Ljava/lang/SecurityException; {:try_start_19 .. :try_end_1f} :catch_2c
+    :try_end_1
+    .catch Ljava/lang/SecurityException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 32
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_2
 
     .line 33
     .line 34
@@ -110,22 +110,22 @@
     const/4 v2, -0x1
 
     .line 41
-    if-eq v1, v2, :cond_2c
+    if-eq v1, v2, :cond_2
 
     .line 42
     .line 43
     const/4 v1, 0x1
 
     .line 44
-    goto :goto_2d
+    goto :goto_1
 
     .line 45
-    :catch_2c
-    :cond_2c
+    :catch_0
+    :cond_2
     const/4 v1, 0x0
 
     .line 46
-    :goto_2d
+    :goto_1
     sput-boolean v1, Llibs/wr3;->a:Z
 
     .line 47
@@ -142,7 +142,7 @@
 .end method
 
 .method public static a(Ljava/util/Vector;)Llibs/ro3;
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Ljava/lang/Throwable;
@@ -165,7 +165,7 @@
     const/4 v1, 0x0
 
     .line 11
-    :goto_a
+    :goto_0
     array-length v2, v0
 
     .line 12
@@ -173,7 +173,7 @@
 
     .line 13
     .line 14
-    if-ge v1, v2, :cond_5d
+    if-ge v1, v2, :cond_2
 
     .line 15
     .line 16
@@ -197,7 +197,7 @@
     move-result v2
 
     .line 26
-    if-eqz v2, :cond_5a
+    if-eqz v2, :cond_1
 
     .line 27
     .line 28
@@ -229,7 +229,7 @@
     move-result v4
 
     .line 42
-    if-nez v4, :cond_5a
+    if-nez v4, :cond_1
 
     .line 43
     .line 44
@@ -245,14 +245,14 @@
     move-result v4
 
     .line 50
-    if-eqz v4, :cond_34
+    if-eqz v4, :cond_0
 
     .line 51
     .line 52
-    goto :goto_5a
+    goto :goto_1
 
     .line 53
-    :cond_34
+    :cond_0
     invoke-virtual {p0, v3}, Ljava/util/Vector;->contains(Ljava/lang/Object;)Z
 
     .line 54
@@ -261,7 +261,7 @@
     move-result v3
 
     .line 57
-    if-nez v3, :cond_5a
+    if-nez v3, :cond_1
 
     .line 58
     .line 59
@@ -329,16 +329,16 @@
     return-object v0
 
     .line 91
-    :cond_5a
-    :goto_5a
+    :cond_1
+    :goto_1
     add-int/lit8 v1, v1, 0x1
 
     .line 92
     .line 93
-    goto :goto_a
+    goto :goto_0
 
     .line 94
-    :cond_5d
+    :cond_2
     const/4 p0, 0x0
 
     .line 95
@@ -346,7 +346,7 @@
 .end method
 
 .method public static b(Ljava/lang/String;)V
-    .registers 3
+    .locals 2
 
     .line 1
     const-string v0, "1.1.1"
@@ -357,15 +357,15 @@
 
     .line 4
     .line 5
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_0
 
     .line 6
     .line 7
-    goto :goto_1d
+    goto :goto_1
 
     .line 8
-    :cond_7
-    :try_start_7
+    :cond_0
+    :try_start_0
     invoke-static {}, Ljava/lang/System;->getProperties()Ljava/util/Properties;
 
     .line 9
@@ -393,45 +393,45 @@
     .line 21
     .line 22
     move-result v1
-    :try_end_16
-    .catch Ljava/lang/SecurityException; {:try_start_7 .. :try_end_16} :catch_17
+    :try_end_0
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 23
-    goto :goto_18
+    goto :goto_0
 
     .line 24
-    :catch_17
+    :catch_0
     const/4 v1, 0x0
 
     .line 25
-    :goto_18
-    if-nez v1, :cond_1d
+    :goto_0
+    if-nez v1, :cond_1
 
     .line 26
     .line 27
-    :try_start_1a
+    :try_start_1
     invoke-static {p0, v0}, Ljava/lang/System;->setProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    :try_end_1d
-    .catchall {:try_start_1a .. :try_end_1d} :catchall_1d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 28
     .line 29
     .line 30
-    :catchall_1d
-    :cond_1d
-    :goto_1d
+    :catchall_0
+    :cond_1
+    :goto_1
     return-void
 .end method
 
 .method public static c()Ljava/lang/String;
-    .registers 3
+    .locals 3
 
     .line 1
     const-string v0, "; "
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     .line 4
@@ -508,14 +508,14 @@
     .line 43
     .line 44
     move-result-object v0
-    :try_end_2c
-    .catch Ljava/lang/SecurityException; {:try_start_2 .. :try_end_2c} :catch_2d
+    :try_end_0
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 45
     return-object v0
 
     .line 46
-    :catch_2d
+    :catch_0
     const-string v0, ""
 
     .line 47

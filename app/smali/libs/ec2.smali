@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/fc2;Llibs/rp0;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/ec2;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 7
+    .locals 6
 
     .line 1
     iget-byte v0, p0, Llibs/ec2;->X:B
@@ -64,7 +64,7 @@
 
     .line 9
     .line 10
-    packed-switch v0, :pswitch_data_a6
+    packed-switch v0, :pswitch_data_0
 
     .line 11
     .line 12
@@ -190,12 +190,12 @@
     return-void
 
     .line 76
-    :pswitch_4b
+    :pswitch_0
     const-string v0, "PermissionDialog"
 
     .line 77
     .line 78
-    if-eqz v3, :cond_79
+    if-eqz v3, :cond_1
 
     .line 79
     .line 80
@@ -215,7 +215,7 @@
     move-result v5
 
     .line 88
-    if-nez v5, :cond_79
+    if-nez v5, :cond_1
 
     .line 89
     .line 90
@@ -235,14 +235,14 @@
     move-result v5
 
     .line 98
-    if-ge v5, v1, :cond_64
+    if-ge v5, v1, :cond_0
 
     .line 99
     .line 100
-    goto :goto_79
+    goto :goto_0
 
     .line 101
-    :cond_64
+    :cond_0
     invoke-virtual {v3}, Llibs/rp0;->List()Ljava/lang/String;
 
     .line 102
@@ -281,11 +281,11 @@
     .line 119
     .line 120
     .line 121
-    goto :goto_8d
+    goto :goto_1
 
     .line 122
-    :cond_79
-    :goto_79
+    :cond_1
+    :goto_0
     const-string v1, "No file!"
 
     .line 123
@@ -322,7 +322,7 @@
     .line 140
     .line 141
     .line 142
-    :goto_8d
+    :goto_1
     iget-object v0, v4, Llibs/fc2;->Kilo:Lcom/mixplorer/widgets/MiEditText;
 
     .line 143
@@ -339,7 +339,7 @@
     return-void
 
     .line 150
-    :pswitch_95
+    :pswitch_1
     invoke-static {v3}, Llibs/ga1;->Api(Llibs/rp0;)Llibs/rp0;
 
     .line 151
@@ -373,9 +373,9 @@
     return-void
 
     .line 167
-    :pswitch_data_a6
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_95
-        :pswitch_4b
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

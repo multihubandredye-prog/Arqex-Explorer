@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,7 +26,7 @@
 
 # virtual methods
 .method public final resolveEntity(Ljava/lang/String;Ljava/lang/String;)Lorg/xml/sax/InputSource;
-    .registers 7
+    .locals 4
 
     .line 1
     new-instance p1, Lorg/xml/sax/InputSource;
@@ -61,7 +61,7 @@
 
     .line 16
     .line 17
-    if-eqz v1, :cond_40
+    if-eqz v1, :cond_0
 
     .line 18
     .line 19
@@ -152,10 +152,10 @@
 
     .line 63
     .line 64
-    goto :goto_59
+    goto :goto_0
 
     .line 65
-    :cond_40
+    :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     .line 66
@@ -203,7 +203,7 @@
     move-result-object p2
 
     .line 90
-    :goto_59
+    :goto_0
     invoke-virtual {v0, p2}, Ljava/lang/ClassLoader;->getResourceAsStream(Ljava/lang/String;)Ljava/io/InputStream;
 
     .line 91

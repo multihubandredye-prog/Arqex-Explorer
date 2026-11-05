@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
@@ -31,20 +31,20 @@
 
 # virtual methods
 .method public final asBinder()Landroid/os/IBinder;
-    .registers 1
+    .locals 0
 
     .line 1
     return-object p0
 .end method
 
 .method public final onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .registers 11
+    .locals 6
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-lt p1, v0, :cond_d
+    if-lt p1, v0, :cond_0
 
     .line 3
     .line 4
@@ -53,7 +53,7 @@
     .line 5
     .line 6
     .line 7
-    if-gt p1, v1, :cond_d
+    if-gt p1, v1, :cond_0
 
     .line 8
     .line 9
@@ -66,7 +66,7 @@
     .line 12
     .line 13
     .line 14
-    :cond_d
+    :cond_0
     const/4 v1, 0x2
 
     .line 15
@@ -79,14 +79,14 @@
     const/4 v4, 0x0
 
     .line 18
-    if-eq p1, v1, :cond_7f
+    if-eq p1, v1, :cond_7
 
     .line 19
     .line 20
     const/4 v1, 0x3
 
     .line 21
-    if-eq p1, v1, :cond_2f
+    if-eq p1, v1, :cond_2
 
     .line 22
     .line 23
@@ -94,7 +94,7 @@
 
     .line 24
     .line 25
-    if-eq p1, v1, :cond_1f
+    if-eq p1, v1, :cond_1
 
     .line 26
     .line 27
@@ -109,7 +109,7 @@
     return p1
 
     .line 32
-    :cond_1f
+    :cond_1
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     .line 33
@@ -138,7 +138,7 @@
     return v0
 
     .line 48
-    :cond_2f
+    :cond_2
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     .line 49
@@ -159,7 +159,7 @@
     move-result p4
 
     .line 58
-    if-eqz p4, :cond_3f
+    if-eqz p4, :cond_3
 
     .line 59
     .line 60
@@ -171,7 +171,7 @@
     move-result-object v2
 
     .line 64
-    :cond_3f
+    :cond_3
     check-cast v2, Landroid/os/Bundle;
 
     .line 65
@@ -188,14 +188,14 @@
     move-result p2
 
     .line 72
-    if-eqz p2, :cond_4a
+    if-eqz p2, :cond_4
 
     .line 73
     .line 74
     const/4 v3, 0x0
 
     .line 75
-    :cond_4a
+    :cond_4
     sget-object p3, Llibs/k73;->g:Ljava/util/ArrayList;
 
     .line 76
@@ -203,7 +203,7 @@
     monitor-enter p3
 
     .line 78
-    :try_start_4d
+    :try_start_0
     sget-object p2, Llibs/k73;->i:Ljava/util/ArrayList;
 
     .line 79
@@ -216,8 +216,8 @@
     move-result p4
 
     .line 84
-    :goto_53
-    if-ge v4, p4, :cond_7b
+    :goto_0
+    if-ge v4, p4, :cond_6
 
     .line 85
     .line 86
@@ -258,7 +258,7 @@
     move-result-object v5
 
     .line 105
-    if-ne v2, v5, :cond_70
+    if-ne v2, v5, :cond_5
 
     .line 106
     .line 107
@@ -267,17 +267,17 @@
     .line 108
     .line 109
     .line 110
-    goto :goto_53
+    goto :goto_0
 
     .line 111
-    :catchall_6e
+    :catchall_0
     move-exception p1
 
     .line 112
-    goto :goto_7d
+    goto :goto_1
 
     .line 113
-    :cond_70
+    :cond_5
     sget-object v2, Llibs/k73;->j:Landroid/os/Handler;
 
     .line 114
@@ -296,26 +296,26 @@
     .line 121
     .line 122
     .line 123
-    goto :goto_53
+    goto :goto_0
 
     .line 124
-    :cond_7b
+    :cond_6
     monitor-exit p3
 
     .line 125
     return v0
 
     .line 126
-    :goto_7d
+    :goto_1
     monitor-exit p3
-    :try_end_7e
-    .catchall {:try_start_4d .. :try_end_7e} :catchall_6e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 127
     throw p1
 
     .line 128
-    :cond_7f
+    :cond_7
     sget-object p1, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
 
     .line 129
@@ -328,7 +328,7 @@
     move-result p3
 
     .line 134
-    if-eqz p3, :cond_8b
+    if-eqz p3, :cond_8
 
     .line 135
     .line 136
@@ -340,7 +340,7 @@
     move-result-object v2
 
     .line 140
-    :cond_8b
+    :cond_8
     check-cast v2, Landroid/os/Bundle;
 
     .line 141

@@ -34,7 +34,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/kq;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -144,7 +144,7 @@
 
 # virtual methods
 .method public final getAlgorithm()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/lq;->X:Ljava/security/PublicKey;
@@ -163,7 +163,7 @@
 .end method
 
 .method public final getEncoded()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/lq;->X:Ljava/security/PublicKey;
@@ -182,7 +182,7 @@
 .end method
 
 .method public final getFormat()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/lq;->X:Ljava/security/PublicKey;

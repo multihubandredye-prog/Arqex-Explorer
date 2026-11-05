@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic List()Landroid/graphics/ColorSpace$Named;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/ColorSpace$Named;->SRGB:Landroid/graphics/ColorSpace$Named;
@@ -16,7 +16,7 @@
 .end method
 
 .method public static bridge synthetic Map(Landroid/content/pm/VersionedPackage;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/content/pm/VersionedPackage;->getPackageName()Ljava/lang/String;
@@ -31,7 +31,7 @@
 .end method
 
 .method public static bridge synthetic Object(Landroid/content/pm/ApplicationInfo;)[Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
     iget-object p0, p0, Landroid/content/pm/ApplicationInfo;->splitNames:[Ljava/lang/String;
@@ -42,7 +42,7 @@
 .end method
 
 .method public static bridge synthetic Set(Landroid/app/usage/StorageStats;)J
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Landroid/app/usage/StorageStats;->getDataBytes()J
@@ -57,7 +57,7 @@
 .end method
 
 .method public static bridge synthetic String(Landroid/app/usage/StorageStats;)J
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Landroid/app/usage/StorageStats;->getCacheBytes()J
@@ -72,7 +72,7 @@
 .end method
 
 .method public static bridge synthetic a(Landroid/app/usage/StorageStats;)J
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Landroid/app/usage/StorageStats;->getAppBytes()J
@@ -87,7 +87,7 @@
 .end method
 
 .method public static bridge synthetic b(Landroid/content/Context;Landroid/content/Intent;)Landroid/content/ComponentName;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/content/Context;->startForegroundService(Landroid/content/Intent;)Landroid/content/ComponentName;
@@ -102,7 +102,7 @@
 .end method
 
 .method public static bridge synthetic c(Ljava/lang/Object;)Landroid/content/pm/SharedLibraryInfo;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Landroid/content/pm/SharedLibraryInfo;
@@ -113,7 +113,7 @@
 .end method
 
 .method public static bridge synthetic d(Landroid/content/pm/SharedLibraryInfo;)Landroid/content/pm/VersionedPackage;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/content/pm/SharedLibraryInfo;->getDeclaringPackage()Landroid/content/pm/VersionedPackage;
@@ -128,7 +128,7 @@
 .end method
 
 .method public static bridge synthetic e(Ljava/lang/Object;)Landroid/content/pm/VersionedPackage;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Landroid/content/pm/VersionedPackage;
@@ -139,7 +139,7 @@
 .end method
 
 .method public static bridge synthetic f(Landroid/content/ContentResolver;Landroid/net/Uri;[Ljava/lang/String;Landroid/os/Bundle;Landroid/os/CancellationSignal;)Landroid/database/Cursor;
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Landroid/os/Bundle;Landroid/os/CancellationSignal;)Landroid/database/Cursor;
@@ -154,7 +154,7 @@
 .end method
 
 .method public static bridge synthetic g(Llibs/xc0;Landroid/net/Uri;[Ljava/lang/String;Landroid/os/Bundle;Landroid/os/CancellationSignal;)Landroid/database/Cursor;
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/provider/DocumentsProvider;->query(Landroid/net/Uri;[Ljava/lang/String;Landroid/os/Bundle;Landroid/os/CancellationSignal;)Landroid/database/Cursor;
@@ -169,7 +169,7 @@
 .end method
 
 .method public static bridge synthetic h()Landroid/graphics/Bitmap$Config;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/Bitmap$Config;->HARDWARE:Landroid/graphics/Bitmap$Config;
@@ -180,7 +180,7 @@
 .end method
 
 .method public static bridge synthetic i()Landroid/graphics/ColorSpace$Named;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/ColorSpace$Named;->DISPLAY_P3:Landroid/graphics/ColorSpace$Named;
@@ -191,7 +191,7 @@
 .end method
 
 .method public static bridge synthetic j()Landroid/graphics/ColorSpace;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/ColorSpace$Named;->SRGB:Landroid/graphics/ColorSpace$Named;
@@ -210,7 +210,7 @@
 .end method
 
 .method public static bridge synthetic k(Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/ColorSpace;
-    .registers 1
+    .locals 0
 
     .line 1
     iget-object p0, p0, Landroid/graphics/BitmapFactory$Options;->outColorSpace:Landroid/graphics/ColorSpace;
@@ -221,7 +221,7 @@
 .end method
 
 .method public static bridge synthetic l(Landroid/graphics/ColorSpace$Named;)Landroid/graphics/ColorSpace;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-static {p0}, Landroid/graphics/ColorSpace;->get(Landroid/graphics/ColorSpace$Named;)Landroid/graphics/ColorSpace;
@@ -236,7 +236,7 @@
 .end method
 
 .method public static bridge synthetic m(Landroid/os/storage/StorageManager;ILlibs/rg2;Landroid/os/Handler;)Landroid/os/ParcelFileDescriptor;
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2, p3}, Landroid/os/storage/StorageManager;->openProxyFileDescriptor(ILandroid/os/ProxyFileDescriptorCallback;Landroid/os/Handler;)Landroid/os/ParcelFileDescriptor;
@@ -251,7 +251,7 @@
 .end method
 
 .method public static bridge synthetic n(J)Landroid/os/VibrationEffect;
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, -0x1
@@ -269,7 +269,7 @@
 .end method
 
 .method public static bridge synthetic p(Landroid/content/pm/VersionedPackage;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/content/pm/VersionedPackage;->getPackageName()Ljava/lang/String;
@@ -284,7 +284,7 @@
 .end method
 
 .method public static bridge synthetic q(Ljava/util/Base64$Encoder;[B)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Ljava/util/Base64$Encoder;->encodeToString([B)Ljava/lang/String;
@@ -299,7 +299,7 @@
 .end method
 
 .method public static bridge synthetic r()Ljava/util/Base64$Encoder;
-    .registers 1
+    .locals 1
 
     .line 1
     invoke-static {}, Ljava/util/Base64;->getEncoder()Ljava/util/Base64$Encoder;
@@ -314,7 +314,7 @@
 .end method
 
 .method public static bridge synthetic s(Landroid/content/pm/PackageManager;)Ljava/util/List;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -332,7 +332,7 @@
 .end method
 
 .method public static bridge synthetic t(Landroid/content/pm/SharedLibraryInfo;)Ljava/util/List;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/content/pm/SharedLibraryInfo;->getDependentPackages()Ljava/util/List;
@@ -347,7 +347,7 @@
 .end method
 
 .method public static bridge synthetic u(Landroid/graphics/BitmapFactory$Options;Landroid/graphics/ColorSpace;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Landroid/graphics/BitmapFactory$Options;->inPreferredColorSpace:Landroid/graphics/ColorSpace;
@@ -358,7 +358,7 @@
 .end method
 
 .method public static bridge synthetic v(Landroid/os/Vibrator;Landroid/os/VibrationEffect;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/os/Vibrator;->vibrate(Landroid/os/VibrationEffect;)V
@@ -370,7 +370,7 @@
 .end method
 
 .method public static bridge synthetic w(Ljava/security/PrivateKey;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-interface {p0}, Ljava/security/PrivateKey;->destroy()V
@@ -382,7 +382,7 @@
 .end method
 
 .method public static bridge synthetic x(Llibs/xt1;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -397,7 +397,7 @@
 .end method
 
 .method public static bridge synthetic y(Landroid/content/pm/PackageManager;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/content/pm/PackageManager;->canRequestPackageInstalls()Z
@@ -412,7 +412,7 @@
 .end method
 
 .method public static bridge synthetic z(Landroid/graphics/ColorSpace;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/graphics/ColorSpace;->isWideGamut()Z

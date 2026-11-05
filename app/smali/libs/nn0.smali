@@ -9,14 +9,14 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/nn0;->b:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_24
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -33,7 +33,7 @@
     return-void
 
     .line 12
-    :pswitch_b
+    :pswitch_0
     const-string p1, "progress"
 
     .line 13
@@ -46,7 +46,7 @@
     return-void
 
     .line 18
-    :pswitch_11
+    :pswitch_1
     const-string p1, "pressedProgress"
 
     .line 19
@@ -59,7 +59,7 @@
     return-void
 
     .line 24
-    :pswitch_17
+    :pswitch_2
     const-string p1, "transformation"
 
     .line 25
@@ -72,7 +72,7 @@
     return-void
 
     .line 30
-    :pswitch_1d
+    :pswitch_3
     const-string p1, "offsetX"
 
     .line 31
@@ -88,26 +88,26 @@
     nop
 
     .line 37
-    :pswitch_data_24
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_1d
-        :pswitch_17
-        :pswitch_11
-        :pswitch_b
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public final a(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/nn0;->b:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_34
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -131,7 +131,7 @@
     return-object p1
 
     .line 15
-    :pswitch_e
+    :pswitch_0
     check-cast p1, Llibs/sp1;
 
     .line 16
@@ -151,7 +151,7 @@
     return-object p1
 
     .line 24
-    :pswitch_17
+    :pswitch_1
     check-cast p1, Llibs/sp1;
 
     .line 25
@@ -171,7 +171,7 @@
     return-object p1
 
     .line 33
-    :pswitch_20
+    :pswitch_2
     check-cast p1, Llibs/un0;
 
     .line 34
@@ -195,7 +195,7 @@
     return-object p1
 
     .line 44
-    :pswitch_2b
+    :pswitch_3
     check-cast p1, Llibs/on0;
 
     .line 45
@@ -215,24 +215,24 @@
     return-object p1
 
     .line 53
-    :pswitch_data_34
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2b
-        :pswitch_20
-        :pswitch_17
-        :pswitch_e
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final b(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 6
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/nn0;->b:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_7c
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -265,7 +265,7 @@
     return-void
 
     .line 20
-    :pswitch_13
+    :pswitch_0
     check-cast p1, Llibs/sp1;
 
     .line 21
@@ -350,7 +350,7 @@
     return-void
 
     .line 62
-    :pswitch_3d
+    :pswitch_1
     check-cast p1, Llibs/sp1;
 
     .line 63
@@ -384,7 +384,7 @@
     return-void
 
     .line 79
-    :pswitch_4e
+    :pswitch_2
     check-cast p1, Llibs/un0;
 
     .line 80
@@ -413,24 +413,24 @@
 
     .line 92
     .line 93
-    if-ne v1, p2, :cond_5f
+    if-ne v1, p2, :cond_0
 
     .line 94
     .line 95
-    goto :goto_62
+    goto :goto_0
 
     .line 96
-    :cond_5f
+    :cond_0
     invoke-virtual {p1, p2, v0}, Landroid/graphics/Point;->set(II)V
 
     .line 97
     .line 98
     .line 99
-    :goto_62
+    :goto_0
     return-void
 
     .line 100
-    :pswitch_63
+    :pswitch_3
     check-cast p1, Llibs/on0;
 
     .line 101
@@ -482,11 +482,11 @@
     nop
 
     .line 125
-    :pswitch_data_7c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_63
-        :pswitch_4e
-        :pswitch_3d
-        :pswitch_13
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

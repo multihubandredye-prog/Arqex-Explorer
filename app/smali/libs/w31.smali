@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/app/Activity;Ljava/lang/String;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/w31;->X:B
@@ -42,14 +42,14 @@
 
 # virtual methods
 .method public final run()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/w31;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_20
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -73,7 +73,7 @@
     return-void
 
     .line 15
-    :pswitch_e
+    :pswitch_0
     iget-object v0, p0, Llibs/w31;->Z:Ljava/lang/String;
 
     .line 16
@@ -93,7 +93,7 @@
     return-void
 
     .line 24
-    :pswitch_17
+    :pswitch_1
     iget-object v0, p0, Llibs/w31;->Z:Ljava/lang/String;
 
     .line 25
@@ -113,9 +113,9 @@
     return-void
 
     .line 33
-    :pswitch_data_20
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_17
-        :pswitch_e
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

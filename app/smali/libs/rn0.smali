@@ -33,7 +33,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ia2;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/vm2;-><init>(Llibs/ia2;)V
@@ -91,7 +91,7 @@
     move-result p1
 
     .line 30
-    if-eqz p1, :cond_22
+    if-eqz p1, :cond_0
 
     .line 31
     .line 32
@@ -100,14 +100,14 @@
     .line 33
     .line 34
     .line 35
-    :cond_22
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final Get(II)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/rn0;->OoO:Llibs/un0;
@@ -131,7 +131,7 @@
 .end method
 
 .method public final synthetic Post()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -154,7 +154,7 @@
 .end method
 
 .method public final Sync(Landroid/view/MotionEvent;)Z
-    .registers 13
+    .locals 11
 
     .line 1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
@@ -187,42 +187,42 @@
     float-to-int v5, v1
 
     .line 15
-    if-eqz v0, :cond_3a
+    if-eqz v0, :cond_2
 
     .line 16
     .line 17
     const/4 v1, 0x1
 
     .line 18
-    if-eq v0, v1, :cond_1a
+    if-eq v0, v1, :cond_0
 
     .line 19
     .line 20
     const/4 v1, 0x2
 
     .line 21
-    if-eq v0, v1, :cond_1c
+    if-eq v0, v1, :cond_1
 
     .line 22
     .line 23
     const/4 v1, 0x3
 
     .line 24
-    if-eq v0, v1, :cond_1a
+    if-eq v0, v1, :cond_0
 
     .line 25
     .line 26
-    goto :goto_4b
+    goto :goto_1
 
     .line 27
-    :cond_1a
+    :cond_0
     move-object v1, p1
 
     .line 28
-    goto :goto_2c
+    goto :goto_0
 
     .line 29
-    :cond_1c
+    :cond_1
     iput v5, p0, Llibs/rn0;->_b:I
 
     .line 30
@@ -254,10 +254,10 @@
     .line 42
     .line 43
     .line 44
-    goto :goto_4b
+    goto :goto_1
 
     .line 45
-    :goto_2c
+    :goto_0
     iget v2, p0, Llibs/rn0;->ooo:I
 
     .line 46
@@ -283,10 +283,10 @@
     .line 56
     .line 57
     .line 58
-    goto :goto_4b
+    goto :goto_1
 
     .line 59
-    :cond_3a
+    :cond_2
     move-object v1, p1
 
     .line 60
@@ -324,7 +324,7 @@
     .line 74
     .line 75
     .line 76
-    :goto_4b
+    :goto_1
     iget-object p1, p0, Llibs/rn0;->OoO:Llibs/un0;
 
     .line 77
@@ -341,7 +341,7 @@
 .end method
 
 .method public final Wait()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/rn0;->OoO:Llibs/un0;
@@ -360,7 +360,7 @@
 .end method
 
 .method public draw(Landroid/graphics/Canvas;)V
-    .registers 10
+    .locals 8
 
     .line 1
     invoke-super {p0, p1}, Llibs/vm2;->draw(Landroid/graphics/Canvas;)V
@@ -384,15 +384,15 @@
 
     .line 11
     .line 12
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     .line 13
     .line 14
-    goto/16 :goto_97
+    goto/16 :goto_2
 
     .line 15
     .line 16
-    :cond_f
+    :cond_0
     invoke-virtual {p0}, Llibs/vm2;->getAdapter()Llibs/dm2;
 
     .line 17
@@ -421,7 +421,7 @@
 
     .line 29
     .line 30
-    if-eqz v3, :cond_37
+    if-eqz v3, :cond_1
 
     .line 31
     .line 32
@@ -475,8 +475,8 @@
     double-to-int v0, v3
 
     .line 56
-    :cond_37
-    if-nez v0, :cond_3f
+    :cond_1
+    if-nez v0, :cond_2
 
     .line 57
     .line 58
@@ -491,10 +491,10 @@
 
     .line 62
     .line 63
-    goto :goto_97
+    goto :goto_2
 
     .line 64
-    :cond_3f
+    :cond_2
     invoke-virtual {v2}, Llibs/un0;->g()Z
 
     .line 65
@@ -507,7 +507,7 @@
 
     .line 69
     .line 70
-    if-eqz v0, :cond_4b
+    if-eqz v0, :cond_3
 
     .line 71
     .line 72
@@ -515,22 +515,22 @@
 
     .line 73
     .line 74
-    :goto_49
+    :goto_0
     float-to-int v0, v0
 
     .line 75
-    goto :goto_4e
+    goto :goto_1
 
     .line 76
-    :cond_4b
+    :cond_3
     sget v0, Llibs/un0;->q:F
 
     .line 77
     .line 78
-    goto :goto_49
+    goto :goto_0
 
     .line 79
-    :goto_4e
+    :goto_1
     invoke-virtual {p0}, Landroid/view/View;->getScrollX()I
 
     .line 80
@@ -682,7 +682,7 @@
     .line 150
     .line 151
     .line 152
-    :goto_97
+    :goto_2
     invoke-virtual {v2, p1}, Llibs/un0;->b(Landroid/graphics/Canvas;)V
 
     .line 153
@@ -692,7 +692,7 @@
 
     .line 156
     .line 157
-    if-nez p1, :cond_b8
+    if-nez p1, :cond_5
 
     .line 158
     .line 159
@@ -704,7 +704,7 @@
 
     .line 162
     .line 163
-    if-ne p1, v0, :cond_b8
+    if-ne p1, v0, :cond_5
 
     .line 164
     .line 165
@@ -716,7 +716,7 @@
 
     .line 168
     .line 169
-    if-ne p1, v0, :cond_b8
+    if-ne p1, v0, :cond_5
 
     .line 170
     .line 171
@@ -728,7 +728,7 @@
 
     .line 174
     .line 175
-    if-ne p1, v0, :cond_b8
+    if-ne p1, v0, :cond_5
 
     .line 176
     .line 177
@@ -740,19 +740,19 @@
 
     .line 180
     .line 181
-    if-eq p1, v0, :cond_b7
+    if-eq p1, v0, :cond_4
 
     .line 182
     .line 183
-    goto :goto_b8
+    goto :goto_3
 
     .line 184
-    :cond_b7
+    :cond_4
     return-void
 
     .line 185
-    :cond_b8
-    :goto_b8
+    :cond_5
+    :goto_3
     iget p1, v1, Landroid/graphics/Rect;->left:I
 
     .line 186
@@ -794,7 +794,7 @@
 .end method
 
 .method public getScrollBarWidth()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/rn0;->OoO:Llibs/un0;
@@ -818,14 +818,14 @@
 .end method
 
 .method public getVisibleCount()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/rn0;->_h:I
 
     .line 2
     .line 3
-    if-gtz v0, :cond_24
+    if-gtz v0, :cond_0
 
     .line 4
     .line 5
@@ -837,7 +837,7 @@
     move-result-object v0
 
     .line 9
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -857,7 +857,7 @@
     move-result v0
 
     .line 19
-    if-lez v0, :cond_24
+    if-lez v0, :cond_0
 
     .line 20
     .line 21
@@ -895,7 +895,7 @@
 
     .line 36
     .line 37
-    :cond_24
+    :cond_0
     iget v0, p0, Llibs/rn0;->_h:I
 
     .line 38
@@ -904,14 +904,14 @@
 .end method
 
 .method public getXPos()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/rn0;->OOO:Landroid/widget/HorizontalScrollView;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -945,7 +945,7 @@
     return v1
 
     .line 19
-    :cond_12
+    :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     .line 20
@@ -958,7 +958,7 @@
 .end method
 
 .method public setAdapter(Llibs/dm2;)V
-    .registers 4
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
@@ -1003,7 +1003,7 @@
 .end method
 
 .method public setPopUpTypeface(Landroid/graphics/Typeface;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/rn0;->OoO:Llibs/un0;
@@ -1019,7 +1019,7 @@
 .end method
 
 .method public setPopupBgColor(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/rn0;->OoO:Llibs/un0;
@@ -1035,7 +1035,7 @@
 .end method
 
 .method public setPopupTextColor(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/rn0;->OoO:Llibs/un0;
@@ -1051,7 +1051,7 @@
 .end method
 
 .method public setPopupTextSize(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/rn0;->OoO:Llibs/un0;
@@ -1067,7 +1067,7 @@
 .end method
 
 .method public setStateChangeListener(Llibs/qn0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/rn0;->a_:Llibs/qn0;
@@ -1078,7 +1078,7 @@
 .end method
 
 .method public setThumbColor(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/rn0;->OoO:Llibs/un0;
@@ -1094,7 +1094,7 @@
 .end method
 
 .method public setTrackColor(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/rn0;->OoO:Llibs/un0;

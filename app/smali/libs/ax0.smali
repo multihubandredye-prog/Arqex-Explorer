@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/OutputStream;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/jr0;-><init>(Ljava/io/OutputStream;)V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final write(I)V
-    .registers 5
+    .locals 3
 
     .line 1
     int-to-byte p1, p1
@@ -48,7 +48,7 @@
 .end method
 
 .method public final write([B)V
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 

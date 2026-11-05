@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ap3;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 5
+    .locals 4
 
     .line 1
     const-string v0, "unable to get DER object"
@@ -41,22 +41,22 @@
     const/4 v1, 0x0
 
     .line 4
-    :try_start_3
+    :try_start_0
     invoke-virtual {p0}, Llibs/f10;->d()Llibs/Theme;
 
     .line 5
     .line 6
     .line 7
     move-result-object v0
-    :try_end_7
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_7} :catch_f
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_3 .. :try_end_7} :catch_8
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 8
     return-object v0
 
     .line 9
-    :catch_8
+    :catch_0
     move-exception v2
 
     .line 10
@@ -72,7 +72,7 @@
     throw v3
 
     .line 16
-    :catch_f
+    :catch_1
     move-exception v2
 
     .line 17
@@ -89,7 +89,7 @@
 .end method
 
 .method public final d()Llibs/Theme;
-    .registers 5
+    .locals 4
 
     .line 1
     :try_start_0
@@ -110,8 +110,8 @@
 
     .line 9
     invoke-direct {v0, v1}, Llibs/e10;-><init>(Llibs/Init;)V
-    :try_end_b
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_b} :catch_c
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 10
     .line 11
@@ -119,7 +119,7 @@
     return-object v0
 
     .line 13
-    :catch_c
+    :catch_0
     move-exception v0
 
     .line 14

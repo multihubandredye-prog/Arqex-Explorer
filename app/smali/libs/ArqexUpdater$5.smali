@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 4
+    .locals 0
 
     .line 580
     iput-object p1, p0, Llibs/ArqexUpdater$5;->val$ctx:Landroid/content/Context;
@@ -44,7 +44,7 @@
 
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .registers 5
+    .locals 2
 
     .line 582
     iget-object p2, p0, Llibs/ArqexUpdater$5;->val$ctx:Landroid/content/Context;
@@ -53,7 +53,6 @@
 
     iget-object v1, p0, Llibs/ArqexUpdater$5;->val$apk:Ljava/lang/String;
 
-    # invokes: Llibs/ArqexUpdater;->download(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
     invoke-static {p2, v0, v1}, Llibs/ArqexUpdater;->access$000(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 583

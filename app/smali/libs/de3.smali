@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/qi3;[B)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -52,7 +52,7 @@
 .end method
 
 .method public constructor <init>(Llibs/qx;Ljava/nio/channels/SelectionKey;Llibs/bd3;)V
-    .registers 5
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -73,7 +73,7 @@
 
 # virtual methods
 .method public final b()V
-    .registers 8
+    .locals 7
 
     .line 1
     iget-byte v0, p0, Llibs/de3;->Mu:B
@@ -91,7 +91,7 @@
 
     .line 7
     .line 8
-    packed-switch v0, :pswitch_data_88
+    packed-switch v0, :pswitch_data_0
 
     .line 9
     .line 10
@@ -100,22 +100,22 @@
 
     .line 12
     .line 13
-    :try_start_c
+    :try_start_0
     check-cast v2, [B
 
     .line 14
     .line 15
     invoke-virtual {v3, v2}, Llibs/qi3;->h([B)V
-    :try_end_11
-    .catch Ljava/io/IOException; {:try_start_c .. :try_end_11} :catch_12
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 16
     .line 17
     .line 18
-    goto :goto_1e
+    goto :goto_0
 
     .line 19
-    :catch_12
+    :catch_0
     move-exception v0
 
     .line 20
@@ -140,11 +140,11 @@
     .line 29
     .line 30
     .line 31
-    :goto_1e
+    :goto_0
     return-void
 
     .line 32
-    :pswitch_1f
+    :pswitch_0
     check-cast v2, Llibs/bd3;
 
     .line 33
@@ -168,7 +168,7 @@
     const/4 v5, 0x6
 
     .line 43
-    if-eqz v0, :cond_4c
+    if-eqz v0, :cond_1
 
     .line 44
     .line 45
@@ -180,7 +180,7 @@
     move-result v0
 
     .line 49
-    if-eqz v0, :cond_4c
+    if-eqz v0, :cond_1
 
     .line 50
     .line 51
@@ -192,7 +192,7 @@
     move-result v0
 
     .line 55
-    if-eqz v0, :cond_47
+    if-eqz v0, :cond_0
 
     .line 56
     .line 57
@@ -225,7 +225,7 @@
     .line 70
     .line 71
     .line 72
-    :cond_47
+    :cond_0
     invoke-interface {v2}, Llibs/bd3;->j()Z
 
     .line 73
@@ -234,14 +234,14 @@
     move-result v0
 
     .line 76
-    goto :goto_4d
+    goto :goto_1
 
     .line 77
-    :cond_4c
+    :cond_1
     const/4 v0, 0x0
 
     .line 78
-    :goto_4d
+    :goto_1
     invoke-virtual {v3}, Ljava/nio/channels/SelectionKey;->isValid()Z
 
     .line 79
@@ -250,7 +250,7 @@
     move-result v6
 
     .line 82
-    if-eqz v6, :cond_73
+    if-eqz v6, :cond_3
 
     .line 83
     .line 84
@@ -262,7 +262,7 @@
     move-result v6
 
     .line 88
-    if-eqz v6, :cond_73
+    if-eqz v6, :cond_3
 
     .line 89
     .line 90
@@ -274,7 +274,7 @@
     move-result v5
 
     .line 94
-    if-eqz v5, :cond_6e
+    if-eqz v5, :cond_2
 
     .line 95
     .line 96
@@ -307,7 +307,7 @@
     .line 109
     .line 110
     .line 111
-    :cond_6e
+    :cond_2
     invoke-interface {v2}, Llibs/bd3;->f()Z
 
     .line 112
@@ -319,8 +319,8 @@
     or-int/2addr v0, v1
 
     .line 116
-    :cond_73
-    if-eqz v0, :cond_79
+    :cond_3
+    if-eqz v0, :cond_4
 
     .line 117
     .line 118
@@ -329,10 +329,10 @@
     .line 119
     .line 120
     .line 121
-    goto :goto_87
+    goto :goto_2
 
     .line 122
-    :cond_79
+    :cond_4
     invoke-interface {v2}, Llibs/bd3;->c()Llibs/x43;
 
     .line 123
@@ -359,12 +359,12 @@
     .line 134
     .line 135
     .line 136
-    :goto_87
+    :goto_2
     return-void
 
     .line 137
-    :pswitch_data_88
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1f
+        :pswitch_0
     .end packed-switch
 .end method

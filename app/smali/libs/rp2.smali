@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;IZ)V
-    .registers 8
+    .locals 4
 
     .line 1
     const-string v0, "Failed to start stream-in for "
@@ -108,7 +108,7 @@
 
     .line 46
     .line 47
-    :try_start_2e
+    :try_start_0
     invoke-static {}, Llibs/je;->t()Llibs/je;
 
     .line 48
@@ -125,7 +125,7 @@
     move-result p3
 
     .line 55
-    if-eqz p3, :cond_4c
+    if-eqz p3, :cond_0
 
     .line 56
     .line 57
@@ -165,14 +165,14 @@
     return-void
 
     .line 75
-    :catchall_4a
+    :catchall_0
     move-exception p1
 
     .line 76
-    goto :goto_5e
+    goto :goto_0
 
     .line 77
-    :cond_4c
+    :cond_0
     new-instance p2, Ljava/io/IOException;
 
     .line 78
@@ -205,11 +205,11 @@
     .line 93
     .line 94
     throw p2
-    :try_end_5e
-    .catchall {:try_start_2e .. :try_end_5e} :catchall_4a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 95
-    :goto_5e
+    :goto_0
     invoke-virtual {p0}, Llibs/rp2;->close()V
 
     .line 96
@@ -219,7 +219,7 @@
 
     .line 99
     .line 100
-    if-eqz p2, :cond_68
+    if-eqz p2, :cond_1
 
     .line 101
     .line 102
@@ -230,7 +230,7 @@
     throw p1
 
     .line 105
-    :cond_68
+    :cond_1
     invoke-static {p1}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 106
@@ -253,7 +253,7 @@
 
 # virtual methods
 .method public final close()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/rp2;->Z:Ljava/io/OutputStream;
@@ -276,27 +276,27 @@
 
     .line 10
     .line 11
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     .line 12
     .line 13
-    :try_start_c
+    :try_start_0
     invoke-virtual {v1}, Landroid/net/LocalSocket;->close()V
-    :try_end_f
-    .catchall {:try_start_c .. :try_end_f} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 14
     .line 15
     .line 16
-    goto :goto_11
+    goto :goto_0
 
     .line 17
-    :catchall_10
+    :catchall_0
     nop
 
     .line 18
-    :cond_11
-    :goto_11
+    :cond_0
+    :goto_0
     iput-object v0, p0, Llibs/rp2;->Y:Landroid/net/LocalSocket;
 
     .line 19
@@ -305,20 +305,20 @@
 
     .line 21
     .line 22
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
     .line 23
     .line 24
-    :try_start_17
+    :try_start_1
     invoke-virtual {v0}, Landroid/net/LocalServerSocket;->close()V
-    :try_end_1a
-    .catchall {:try_start_17 .. :try_end_1a} :catchall_1a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 25
     .line 26
     .line 27
-    :catchall_1a
-    :cond_1a
+    :catchall_1
+    :cond_1
     iget-object v0, p0, Llibs/rp2;->Lambda:Ljava/io/File;
 
     .line 28
@@ -335,14 +335,14 @@
 .end method
 
 .method public final flush()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/rp2;->Z:Ljava/io/OutputStream;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -354,7 +354,7 @@
     return-void
 
     .line 9
-    :cond_8
+    :cond_0
     const-string v0, "Stream closed"
 
     .line 10
@@ -368,14 +368,14 @@
 .end method
 
 .method public final write(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/rp2;->Z:Ljava/io/OutputStream;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -387,7 +387,7 @@
     return-void
 
     .line 9
-    :cond_8
+    :cond_0
     const-string p1, "Stream closed"
 
     .line 10
@@ -401,7 +401,7 @@
 .end method
 
 .method public final write([B)V
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -414,12 +414,12 @@
 .end method
 
 .method public final write([BII)V
-    .registers 5
+    .locals 1
 
     .line 16
     iget-object v0, p0, Llibs/rp2;->Z:Ljava/io/OutputStream;
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 17
     invoke-virtual {v0, p1, p2, p3}, Ljava/io/OutputStream;->write([BII)V
@@ -427,7 +427,7 @@
     return-void
 
     .line 18
-    :cond_8
+    :cond_0
     const-string p1, "Stream closed"
 
     invoke-static {p1}, Llibs/ic0;->t(Ljava/lang/String;)V

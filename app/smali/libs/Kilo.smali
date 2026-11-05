@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic List(Landroid/graphics/Paint;)V
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/BlendMode;->SATURATION:Landroid/graphics/BlendMode;
@@ -21,7 +21,7 @@
 .end method
 
 .method public static bridge synthetic Map()Landroid/graphics/BlendMode;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/BlendMode;->SCREEN:Landroid/graphics/BlendMode;
@@ -32,7 +32,7 @@
 .end method
 
 .method public static bridge synthetic Object(Landroid/graphics/Paint;)V
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/BlendMode;->HUE:Landroid/graphics/BlendMode;
@@ -48,7 +48,7 @@
 .end method
 
 .method public static bridge synthetic Set(Landroid/graphics/Paint;)V
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/BlendMode;->COLOR:Landroid/graphics/BlendMode;
@@ -64,7 +64,7 @@
 .end method
 
 .method public static bridge synthetic String()Landroid/graphics/BlendMode;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/BlendMode;->LUMINOSITY:Landroid/graphics/BlendMode;
@@ -75,7 +75,7 @@
 .end method
 
 .method public static bridge synthetic a()Landroid/graphics/BlendMode;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/BlendMode;->COLOR_BURN:Landroid/graphics/BlendMode;
@@ -86,7 +86,7 @@
 .end method
 
 .method public static bridge synthetic b(Ljava/lang/Object;)Landroid/hardware/biometrics/BiometricManager;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Landroid/hardware/biometrics/BiometricManager;
@@ -97,7 +97,7 @@
 .end method
 
 .method public static bridge synthetic c()Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_PAGE_UP:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
@@ -108,7 +108,7 @@
 .end method
 
 .method public static bridge synthetic d()Ljava/lang/Class;
-    .registers 1
+    .locals 1
 
     .line 1
     const-class v0, Landroid/hardware/biometrics/BiometricManager;
@@ -119,7 +119,7 @@
 .end method
 
 .method public static bridge synthetic e(Landroid/graphics/Paint;)V
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/BlendMode;->COLOR_DODGE:Landroid/graphics/BlendMode;
@@ -135,7 +135,7 @@
 .end method
 
 .method public static bridge synthetic f(Lcom/mixplorer/widgets/MiDrawer;Ljava/util/List;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setSystemGestureExclusionRects(Ljava/util/List;)V
@@ -147,7 +147,7 @@
 .end method
 
 .method public static bridge synthetic g(Llibs/oi1;Ljava/util/ArrayList;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/View;->setSystemGestureExclusionRects(Ljava/util/List;)V
@@ -159,7 +159,7 @@
 .end method
 
 .method public static bridge synthetic h()Landroid/graphics/BlendMode;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/BlendMode;->HARD_LIGHT:Landroid/graphics/BlendMode;
@@ -170,7 +170,7 @@
 .end method
 
 .method public static bridge synthetic i()Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_PAGE_DOWN:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
@@ -181,7 +181,7 @@
 .end method
 
 .method public static bridge synthetic j(Landroid/graphics/Paint;)V
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/BlendMode;->COLOR_BURN:Landroid/graphics/BlendMode;
@@ -197,7 +197,7 @@
 .end method
 
 .method public static bridge synthetic k(Landroid/graphics/Paint;)V
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/BlendMode;->LUMINOSITY:Landroid/graphics/BlendMode;
@@ -213,7 +213,7 @@
 .end method
 
 .method public static bridge synthetic l(Landroid/graphics/Paint;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -228,7 +228,7 @@
 .end method
 
 .method public static bridge synthetic m()Landroid/graphics/BlendMode;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/BlendMode;->SOFT_LIGHT:Landroid/graphics/BlendMode;
@@ -239,7 +239,7 @@
 .end method
 
 .method public static bridge synthetic n()Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_PAGE_LEFT:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
@@ -250,7 +250,7 @@
 .end method
 
 .method public static bridge synthetic p(Landroid/graphics/Paint;)V
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/BlendMode;->HARD_LIGHT:Landroid/graphics/BlendMode;
@@ -266,7 +266,7 @@
 .end method
 
 .method public static bridge synthetic q()Landroid/graphics/BlendMode;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/BlendMode;->DIFFERENCE:Landroid/graphics/BlendMode;
@@ -277,7 +277,7 @@
 .end method
 
 .method public static bridge synthetic r()Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_PAGE_RIGHT:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
@@ -288,7 +288,7 @@
 .end method
 
 .method public static bridge synthetic s(Landroid/graphics/Paint;)V
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/BlendMode;->SOFT_LIGHT:Landroid/graphics/BlendMode;
@@ -304,7 +304,7 @@
 .end method
 
 .method public static bridge synthetic t()Landroid/graphics/BlendMode;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/BlendMode;->EXCLUSION:Landroid/graphics/BlendMode;
@@ -315,7 +315,7 @@
 .end method
 
 .method public static bridge synthetic u(Landroid/graphics/Paint;)V
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/BlendMode;->DIFFERENCE:Landroid/graphics/BlendMode;
@@ -331,7 +331,7 @@
 .end method
 
 .method public static bridge synthetic v()Landroid/graphics/BlendMode;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/BlendMode;->HUE:Landroid/graphics/BlendMode;
@@ -342,7 +342,7 @@
 .end method
 
 .method public static bridge synthetic w(Landroid/graphics/Paint;)V
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/BlendMode;->MULTIPLY:Landroid/graphics/BlendMode;
@@ -358,7 +358,7 @@
 .end method
 
 .method public static bridge synthetic x()Landroid/graphics/BlendMode;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/BlendMode;->SATURATION:Landroid/graphics/BlendMode;
@@ -369,7 +369,7 @@
 .end method
 
 .method public static bridge synthetic y(Landroid/graphics/Paint;)V
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/BlendMode;->EXCLUSION:Landroid/graphics/BlendMode;
@@ -385,7 +385,7 @@
 .end method
 
 .method public static bridge synthetic z()Landroid/graphics/BlendMode;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/BlendMode;->COLOR:Landroid/graphics/BlendMode;

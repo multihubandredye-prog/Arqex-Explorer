@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/math/BigInteger;Ljava/math/BigInteger;Z)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0, p3}, Llibs/d6;-><init>(Z)V

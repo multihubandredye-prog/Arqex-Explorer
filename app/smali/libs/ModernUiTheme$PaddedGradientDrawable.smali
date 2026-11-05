@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(IIII)V
-    .registers 5
+    .locals 0
 
     invoke-direct {p0}, Landroid/graphics/drawable/GradientDrawable;-><init>()V
 
@@ -33,15 +33,15 @@
 
 # virtual methods
 .method public final getPadding(Landroid/graphics/Rect;)Z
-    .registers 6
+    .locals 4
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     const/4 v0, 0x0
 
     return v0
 
-    :cond_4
+    :cond_0
     iget v0, p0, Llibs/ModernUiTheme$PaddedGradientDrawable;->padLeft:I
 
     iget v1, p0, Llibs/ModernUiTheme$PaddedGradientDrawable;->padTop:I
@@ -58,13 +58,13 @@
 
     or-int/2addr v0, v3
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     const/4 v0, 0x1
 
     return v0
 
-    :cond_16
+    :cond_1
     const/4 v0, 0x0
 
     return v0

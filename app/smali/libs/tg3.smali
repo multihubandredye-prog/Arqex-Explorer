@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(JJ)V
-    .registers 12
+    .locals 7
 
     const-wide/16 v5, 0x0
 
@@ -32,7 +32,7 @@
 .end method
 
 .method public constructor <init>(JJJ)V
-    .registers 7
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

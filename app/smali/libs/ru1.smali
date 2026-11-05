@@ -35,7 +35,7 @@
 
 # direct methods
 .method public constructor <init>(ZLjava/nio/charset/Charset;IIF)V
-    .registers 34
+    .locals 28
 
     .line 1
     move-object/from16 v1, p0
@@ -71,7 +71,7 @@
 
     .line 17
     .line 18
-    if-nez p1, :cond_10b
+    if-nez p1, :cond_3
 
     .line 19
     .line 20
@@ -90,7 +90,7 @@
     move-result v0
 
     .line 27
-    if-eqz v0, :cond_10b
+    if-eqz v0, :cond_3
 
     .line 28
     .line 29
@@ -168,7 +168,7 @@
     move-result v7
 
     .line 65
-    if-eqz v7, :cond_45
+    if-eqz v7, :cond_0
 
     .line 66
     .line 67
@@ -176,19 +176,19 @@
 
     .line 68
     .line 69
-    goto :goto_47
+    goto :goto_0
 
     .line 70
-    :cond_45
+    :cond_0
     const-string v7, "RV16"
 
     .line 71
     .line 72
-    :goto_47
+    :goto_0
     const/4 v8, 0x1
 
     .line 73
-    :try_start_48
+    :try_start_0
     new-instance v9, Ljava/lang/StringBuilder;
 
     .line 74
@@ -344,8 +344,8 @@
     .line 150
     .line 151
     aput-object v16, v12, v14
-    :try_end_98
-    .catchall {:try_start_48 .. :try_end_98} :catchall_e6
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 152
     .line 153
@@ -353,7 +353,7 @@
 
     .line 154
     .line 155
-    :try_start_9a
+    :try_start_1
     iget-object v2, v3, Llibs/uc;->a:Ljava/lang/Object;
 
     .line 156
@@ -362,20 +362,20 @@
 
     .line 158
     .line 159
-    if-eqz v2, :cond_a1
+    if-eqz v2, :cond_1
 
     .line 160
     .line 161
-    goto :goto_a3
+    goto :goto_1
 
     .line 162
-    :cond_a1
+    :cond_1
     sget-object v2, Llibs/zt0;->g:Landroid/content/Context;
 
     .line 163
     .line 164
-    :goto_a3
-    if-eqz p2, :cond_ac
+    :goto_1
+    if-eqz p2, :cond_2
 
     .line 165
     .line 166
@@ -387,18 +387,18 @@
     move-result-object v5
 
     .line 170
-    goto :goto_ac
+    goto :goto_2
 
     .line 171
-    :catchall_aa
+    :catchall_0
     move-exception v0
 
     .line 172
-    goto :goto_e9
+    goto :goto_3
 
     .line 173
-    :cond_ac
-    :goto_ac
+    :cond_2
+    :goto_2
     const/16 v25, 0x4e20
 
     .line 174
@@ -508,16 +508,16 @@
     .line 226
     .line 227
     invoke-virtual {v3, v10, v12, v11}, Llibs/uc;->d(Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_e5
-    .catchall {:try_start_9a .. :try_end_e5} :catchall_aa
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 228
     .line 229
     .line 230
-    goto :goto_f2
+    goto :goto_4
 
     .line 231
-    :catchall_e6
+    :catchall_1
     move-exception v0
 
     .line 232
@@ -525,7 +525,7 @@
 
     .line 233
     .line 234
-    :goto_e9
+    :goto_3
     const-string v2, "CODECS"
 
     .line 235
@@ -543,7 +543,7 @@
     .line 241
     .line 242
     .line 243
-    :goto_f2
+    :goto_4
     iget-object v0, v1, Llibs/ru1;->b:Llibs/ew;
 
     .line 244
@@ -553,7 +553,7 @@
     .line 246
     .line 247
     .line 248
-    :try_start_f7
+    :try_start_2
     const-string v2, "setRate"
 
     .line 249
@@ -587,17 +587,17 @@
     .line 263
     .line 264
     invoke-virtual {v0, v2, v3, v5}, Llibs/uc;->d(Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_10a
-    .catchall {:try_start_f7 .. :try_end_10a} :catchall_10a
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
     .line 265
     .line 266
     .line 267
-    :catchall_10a
+    :catchall_2
     return-void
 
     .line 268
-    :cond_10b
+    :cond_3
     invoke-virtual {v1}, Llibs/ru1;->a()V
 
     .line 269
@@ -609,7 +609,7 @@
 
 # virtual methods
 .method public final a()V
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Landroid/media/MediaPlayer;
@@ -727,14 +727,14 @@
 .end method
 
 .method public final b()J
-    .registers 6
+    .locals 5
 
     .line 1
     const-wide/16 v0, 0x0
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     invoke-virtual {p0}, Llibs/ru1;->c()Z
 
     .line 4
@@ -743,21 +743,21 @@
     move-result v2
 
     .line 7
-    if-eqz v2, :cond_23
+    if-eqz v2, :cond_1
 
     .line 8
     .line 9
     iget-object v2, p0, Llibs/ru1;->b:Llibs/ew;
-    :try_end_a
-    .catchall {:try_start_2 .. :try_end_a} :catchall_23
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 10
     .line 11
-    if-eqz v2, :cond_1a
+    if-eqz v2, :cond_0
 
     .line 12
     .line 13
-    :try_start_c
+    :try_start_1
     const-string v3, "getCurrentPosition"
 
     .line 14
@@ -783,21 +783,21 @@
     .line 24
     .line 25
     move-result-wide v0
-    :try_end_19
-    .catchall {:try_start_c .. :try_end_19} :catchall_19
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 26
-    :catchall_19
+    :catchall_0
     return-wide v0
 
     .line 27
-    :cond_1a
-    :try_start_1a
+    :cond_0
+    :try_start_2
     iget-object v2, p0, Llibs/ru1;->d:Landroid/media/MediaPlayer;
 
     .line 28
     .line 29
-    if-eqz v2, :cond_23
+    if-eqz v2, :cond_1
 
     .line 30
     .line 31
@@ -807,27 +807,27 @@
     .line 33
     .line 34
     move-result v0
-    :try_end_22
-    .catchall {:try_start_1a .. :try_end_22} :catchall_23
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 35
     int-to-long v0, v0
 
     .line 36
-    :catchall_23
-    :cond_23
+    :catchall_1
+    :cond_1
     return-wide v0
 .end method
 
 .method public final c()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/ru1;->d:Landroid/media/MediaPlayer;
 
     .line 2
     .line 3
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -835,11 +835,11 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_1
 
     .line 8
     .line 9
-    :cond_8
+    :cond_0
     iget v0, p0, Llibs/ru1;->g:I
 
     .line 10
@@ -847,25 +847,25 @@
     const/4 v1, -0x1
 
     .line 12
-    if-eq v0, v1, :cond_13
+    if-eq v0, v1, :cond_1
 
     .line 13
     .line 14
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_1
 
     .line 15
     .line 16
     const/4 v1, 0x1
 
     .line 17
-    if-eq v0, v1, :cond_13
+    if-eq v0, v1, :cond_1
 
     .line 18
     .line 19
     return v1
 
     .line 20
-    :cond_13
+    :cond_1
     const/4 v0, 0x0
 
     .line 21
@@ -873,7 +873,7 @@
 .end method
 
 .method public final d()Z
-    .registers 5
+    .locals 4
 
     .line 1
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
@@ -892,7 +892,7 @@
     move-result-object v1
 
     .line 9
-    if-ne v0, v1, :cond_d
+    if-ne v0, v1, :cond_0
 
     .line 10
     .line 11
@@ -903,7 +903,7 @@
     return v0
 
     .line 14
-    :cond_d
+    :cond_0
     invoke-virtual {p0}, Llibs/ru1;->c()Z
 
     .line 15
@@ -915,7 +915,7 @@
     const/4 v1, 0x0
 
     .line 19
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_2
 
     .line 20
     .line 21
@@ -923,11 +923,11 @@
 
     .line 22
     .line 23
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_1
 
     .line 24
     .line 25
-    :try_start_18
+    :try_start_0
     const-string v2, "isPlaying"
 
     .line 26
@@ -953,36 +953,36 @@
     .line 36
     .line 37
     move-result v1
-    :try_end_25
-    .catchall {:try_start_18 .. :try_end_25} :catchall_2e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 38
-    goto :goto_2e
+    goto :goto_0
 
     .line 39
-    :cond_26
+    :cond_1
     iget-object v0, p0, Llibs/ru1;->d:Landroid/media/MediaPlayer;
 
     .line 40
     .line 41
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_2
 
     .line 42
     .line 43
-    :try_start_2a
+    :try_start_1
     invoke-virtual {v0}, Landroid/media/MediaPlayer;->isPlaying()Z
 
     .line 44
     .line 45
     .line 46
     move-result v1
-    :try_end_2e
-    .catchall {:try_start_2a .. :try_end_2e} :catchall_2e
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 47
-    :catchall_2e
-    :cond_2e
-    :goto_2e
+    :catchall_0
+    :cond_2
+    :goto_0
     iput-boolean v1, p0, Llibs/ru1;->i:Z
 
     .line 48
@@ -995,7 +995,7 @@
 .end method
 
 .method public final e(Z)V
-    .registers 8
+    .locals 6
 
     .line 1
     const/4 v0, 0x0
@@ -1011,7 +1011,7 @@
     const/4 v2, 0x0
 
     .line 6
-    if-eqz p1, :cond_22
+    if-eqz p1, :cond_1
 
     .line 7
     .line 8
@@ -1019,7 +1019,7 @@
 
     .line 9
     .line 10
-    if-eqz v3, :cond_22
+    if-eqz v3, :cond_1
 
     .line 11
     .line 12
@@ -1031,7 +1031,7 @@
     move-result v3
 
     .line 16
-    if-eqz v3, :cond_20
+    if-eqz v3, :cond_0
 
     .line 17
     .line 18
@@ -1062,21 +1062,21 @@
     .line 31
     .line 32
     .line 33
-    :cond_20
+    :cond_0
     iput-object v2, p0, Llibs/ru1;->f:Landroid/view/Surface;
 
     .line 34
     .line 35
-    :cond_22
+    :cond_1
     iget-object v3, p0, Llibs/ru1;->b:Llibs/ew;
 
     .line 36
     .line 37
-    if-eqz v3, :cond_39
+    if-eqz v3, :cond_3
 
     .line 38
     .line 39
-    if-eqz p1, :cond_2a
+    if-eqz p1, :cond_2
 
     .line 40
     .line 41
@@ -1084,7 +1084,7 @@
 
     .line 42
     .line 43
-    :cond_2a
+    :cond_2
     new-instance v1, Llibs/xv1;
 
     .line 44
@@ -1111,19 +1111,19 @@
     .line 55
     .line 56
     .line 57
-    goto :goto_4e
+    goto :goto_0
 
     .line 58
-    :cond_39
+    :cond_3
     iget-object v3, p0, Llibs/ru1;->d:Landroid/media/MediaPlayer;
 
     .line 59
     .line 60
-    if-eqz v3, :cond_4e
+    if-eqz v3, :cond_5
 
     .line 61
     .line 62
-    if-eqz p1, :cond_41
+    if-eqz p1, :cond_4
 
     .line 63
     .line 64
@@ -1131,7 +1131,7 @@
 
     .line 65
     .line 66
-    :cond_41
+    :cond_4
     new-instance v2, Llibs/xv1;
 
     .line 67
@@ -1155,8 +1155,8 @@
     .line 77
     .line 78
     .line 79
-    :cond_4e
-    :goto_4e
+    :cond_5
+    :goto_0
     iput v0, p0, Llibs/ru1;->g:I
 
     .line 80
@@ -1165,7 +1165,7 @@
 .end method
 
 .method public final f()V
-    .registers 6
+    .locals 5
 
     .line 1
     invoke-virtual {p0}, Llibs/ru1;->c()Z
@@ -1182,7 +1182,7 @@
     const/4 v2, 0x3
 
     .line 7
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_2
 
     .line 8
     .line 9
@@ -1190,11 +1190,11 @@
 
     .line 10
     .line 11
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
-    :try_start_c
+    :try_start_0
     const-string v3, "resume"
 
     .line 14
@@ -1203,21 +1203,21 @@
 
     .line 16
     invoke-virtual {v0, v3, v4, v4}, Llibs/uc;->d(Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_12
-    .catchall {:try_start_c .. :try_end_12} :catchall_1a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 17
     .line 18
     .line 19
-    goto :goto_1a
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     iget-object v0, p0, Llibs/ru1;->d:Landroid/media/MediaPlayer;
 
     .line 21
     .line 22
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
     .line 23
     .line 24
@@ -1226,9 +1226,9 @@
     .line 25
     .line 26
     .line 27
-    :catchall_1a
-    :cond_1a
-    :goto_1a
+    :catchall_0
+    :cond_1
+    :goto_0
     iput v2, p0, Llibs/ru1;->g:I
 
     .line 28
@@ -1237,7 +1237,7 @@
 
     .line 30
     .line 31
-    :cond_1e
+    :cond_2
     iput v2, p0, Llibs/ru1;->h:I
 
     .line 32
@@ -1259,7 +1259,7 @@
 .end method
 
 .method public final g(J)V
-    .registers 10
+    .locals 7
 
     .line 1
     invoke-virtual {p0}, Llibs/ru1;->c()Z
@@ -1270,7 +1270,7 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -1281,7 +1281,7 @@
     return-void
 
     .line 10
-    :cond_9
+    :cond_0
     invoke-virtual {p0}, Llibs/ru1;->b()J
 
     .line 11
@@ -1302,7 +1302,7 @@
 
     .line 19
     .line 20
-    if-gez v6, :cond_22
+    if-gez v6, :cond_1
 
     .line 21
     .line 22
@@ -1333,16 +1333,16 @@
     move-result-wide p1
 
     .line 35
-    :cond_22
+    :cond_1
     iget-object v0, p0, Llibs/ru1;->b:Llibs/ew;
 
     .line 36
     .line 37
-    if-eqz v0, :cond_5d
+    if-eqz v0, :cond_2
 
     .line 38
     .line 39
-    :try_start_26
+    :try_start_0
     const-string v1, "getCurrentPosition"
 
     .line 40
@@ -1368,23 +1368,23 @@
     .line 50
     .line 51
     move-result-wide v4
-    :try_end_33
-    .catchall {:try_start_26 .. :try_end_33} :catchall_34
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 52
-    goto :goto_35
+    goto :goto_0
 
     .line 53
-    :catchall_34
+    :catchall_0
     nop
 
     .line 54
-    :goto_35
+    :goto_0
     cmp-long v0, v4, p1
 
     .line 55
     .line 56
-    if-eqz v0, :cond_97
+    if-eqz v0, :cond_4
 
     .line 57
     .line 58
@@ -1401,7 +1401,7 @@
 
     .line 64
     .line 65
-    if-eqz v0, :cond_97
+    if-eqz v0, :cond_4
 
     .line 66
     .line 67
@@ -1414,7 +1414,7 @@
     .line 70
     .line 71
     .line 72
-    :try_start_47
+    :try_start_1
     const-string v1, "seekTo"
 
     .line 73
@@ -1454,21 +1454,21 @@
     .line 89
     .line 90
     invoke-virtual {v0, v1, v3, p2}, Llibs/uc;->d(Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_5c
-    .catchall {:try_start_47 .. :try_end_5c} :catchall_97
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 91
     .line 92
     .line 93
-    goto :goto_97
+    goto :goto_1
 
     .line 94
-    :cond_5d
+    :cond_2
     iget-object v0, p0, Llibs/ru1;->d:Landroid/media/MediaPlayer;
 
     .line 95
     .line 96
-    if-eqz v0, :cond_97
+    if-eqz v0, :cond_4
 
     .line 97
     .line 98
@@ -1487,7 +1487,7 @@
 
     .line 104
     .line 105
-    if-eqz v3, :cond_97
+    if-eqz v3, :cond_4
 
     .line 106
     .line 107
@@ -1516,7 +1516,7 @@
 
     .line 119
     .line 120
-    if-eqz v1, :cond_97
+    if-eqz v1, :cond_4
 
     .line 121
     .line 122
@@ -1528,7 +1528,7 @@
     move-result v1
 
     .line 126
-    if-eqz v1, :cond_8c
+    if-eqz v1, :cond_3
 
     .line 127
     .line 128
@@ -1555,7 +1555,7 @@
     return-void
 
     .line 141
-    :cond_8c
+    :cond_3
     const-wide/32 v1, 0x7ffffffe
 
     .line 142
@@ -1577,14 +1577,14 @@
     .line 150
     .line 151
     .line 152
-    :catchall_97
-    :cond_97
-    :goto_97
+    :catchall_1
+    :cond_4
+    :goto_1
     return-void
 .end method
 
 .method public final h()V
-    .registers 6
+    .locals 5
 
     .line 1
     :try_start_0
@@ -1596,13 +1596,13 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_2
 
     .line 6
     .line 7
     iget-object v0, p0, Llibs/ru1;->b:Llibs/ew;
-    :try_end_8
-    .catchall {:try_start_0 .. :try_end_8} :catchall_33
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 8
     .line 9
@@ -1610,11 +1610,11 @@
 
     .line 10
     .line 11
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
-    :try_start_c
+    :try_start_1
     const-string v3, "getDuration"
 
     .line 14
@@ -1640,32 +1640,32 @@
     .line 24
     .line 25
     move-result-wide v3
-    :try_end_19
-    .catchall {:try_start_c .. :try_end_19} :catchall_1a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 26
-    goto :goto_1b
+    goto :goto_0
 
     .line 27
-    :catchall_1a
+    :catchall_0
     move-wide v3, v1
 
     .line 28
-    :goto_1b
-    :try_start_1b
+    :goto_0
+    :try_start_2
     iput-wide v3, p0, Llibs/ru1;->k:J
 
     .line 29
     .line 30
-    goto :goto_29
+    goto :goto_1
 
     .line 31
-    :cond_1e
+    :cond_0
     iget-object v0, p0, Llibs/ru1;->d:Landroid/media/MediaPlayer;
 
     .line 32
     .line 33
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_1
 
     .line 34
     .line 35
@@ -1684,8 +1684,8 @@
 
     .line 41
     .line 42
-    :cond_29
-    :goto_29
+    :cond_1
+    :goto_1
     iget-wide v3, p0, Llibs/ru1;->k:J
 
     .line 43
@@ -1694,7 +1694,7 @@
 
     .line 45
     .line 46
-    if-nez v0, :cond_33
+    if-nez v0, :cond_2
 
     .line 47
     .line 48
@@ -1703,18 +1703,18 @@
     .line 49
     .line 50
     iput-wide v0, p0, Llibs/ru1;->k:J
-    :try_end_33
-    .catchall {:try_start_1b .. :try_end_33} :catchall_33
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 51
     .line 52
-    :catchall_33
-    :cond_33
+    :catchall_1
+    :cond_2
     return-void
 .end method
 
 .method public final i()V
-    .registers 6
+    .locals 5
 
     .line 1
     const/4 v0, 0x0
@@ -1732,7 +1732,7 @@
     move-result v1
 
     .line 8
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     .line 9
     .line 10
@@ -1744,7 +1744,7 @@
 
     .line 13
     .line 14
-    if-eqz v2, :cond_14
+    if-eqz v2, :cond_0
 
     .line 15
     .line 16
@@ -1757,7 +1757,7 @@
     .line 19
     .line 20
     .line 21
-    :cond_14
+    :cond_0
     iget-object v1, p0, Llibs/ru1;->f:Landroid/view/Surface;
 
     .line 22
@@ -1765,7 +1765,7 @@
     const/4 v2, 0x0
 
     .line 24
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_2
 
     .line 25
     .line 26
@@ -1777,7 +1777,7 @@
     move-result v1
 
     .line 30
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_1
 
     .line 31
     .line 32
@@ -1808,17 +1808,17 @@
     .line 45
     .line 46
     .line 47
-    :cond_2e
+    :cond_1
     iput-object v2, p0, Llibs/ru1;->f:Landroid/view/Surface;
 
     .line 48
     .line 49
-    :cond_30
+    :cond_2
     iget-object v1, p0, Llibs/ru1;->b:Llibs/ew;
 
     .line 50
     .line 51
-    if-eqz v1, :cond_44
+    if-eqz v1, :cond_3
 
     .line 52
     .line 53
@@ -1849,15 +1849,15 @@
     .line 66
     .line 67
     .line 68
-    goto :goto_57
+    goto :goto_0
 
     .line 69
-    :cond_44
+    :cond_3
     iget-object v1, p0, Llibs/ru1;->d:Landroid/media/MediaPlayer;
 
     .line 70
     .line 71
-    if-eqz v1, :cond_57
+    if-eqz v1, :cond_4
 
     .line 72
     .line 73
@@ -1888,8 +1888,8 @@
     .line 86
     .line 87
     .line 88
-    :cond_57
-    :goto_57
+    :cond_4
+    :goto_0
     iput v0, p0, Llibs/ru1;->g:I
 
     .line 89
@@ -1910,7 +1910,7 @@
 .end method
 
 .method public final j(Landroid/media/MediaPlayer;Landroid/view/View;Z)V
-    .registers 10
+    .locals 6
 
     .line 1
     :try_start_0
@@ -1921,7 +1921,7 @@
     const/4 v1, 0x1
 
     .line 4
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 5
     .line 6
@@ -1929,7 +1929,7 @@
 
     .line 7
     .line 8
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 9
     .line 10
@@ -1937,7 +1937,7 @@
 
     .line 11
     .line 12
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 13
     .line 14
@@ -1954,59 +1954,59 @@
 
     .line 20
     .line 21
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_0
 
     .line 22
     .line 23
     const/4 v0, 0x1
 
     .line 24
-    goto :goto_1c
+    goto :goto_0
 
     .line 25
-    :catchall_18
+    :catchall_0
     move-exception p1
 
     .line 26
-    goto/16 :goto_a7
+    goto/16 :goto_2
 
     .line 27
     .line 28
-    :cond_1b
+    :cond_0
     const/4 v0, 0x0
 
     .line 29
-    :goto_1c
+    :goto_0
     sget-boolean v2, Lcom/mixplorer/activities/PlayerActivity;->f0:Z
 
     .line 30
     .line 31
-    if-nez v2, :cond_24
+    if-nez v2, :cond_1
 
     .line 32
     .line 33
-    if-nez v0, :cond_24
+    if-nez v0, :cond_1
 
     .line 34
     .line 35
-    goto/16 :goto_a6
+    goto/16 :goto_1
 
     .line 36
     .line 37
-    :cond_24
-    if-eqz p3, :cond_50
+    :cond_1
+    if-eqz p3, :cond_3
 
     .line 38
     .line 39
-    if-eqz p1, :cond_a6
+    if-eqz p1, :cond_6
 
     .line 40
     .line 41
-    if-nez v2, :cond_a6
+    if-nez v2, :cond_6
 
     .line 42
     .line 43
-    if-eqz p2, :cond_42
+    if-eqz p2, :cond_2
 
     .line 44
     .line 45
@@ -2052,7 +2052,7 @@
     return-void
 
     .line 67
-    :cond_42
+    :cond_2
     new-instance p2, Llibs/xv1;
 
     .line 68
@@ -2079,16 +2079,16 @@
     return-void
 
     .line 81
-    :cond_50
-    if-eqz p1, :cond_a6
+    :cond_3
+    if-eqz p1, :cond_6
 
     .line 82
     .line 83
-    if-eqz v2, :cond_a6
+    if-eqz v2, :cond_6
 
     .line 84
     .line 85
-    if-eqz p2, :cond_84
+    if-eqz p2, :cond_5
 
     .line 86
     .line 87
@@ -2144,7 +2144,7 @@
 
     .line 114
     .line 115
-    if-eqz p1, :cond_81
+    if-eqz p1, :cond_4
 
     .line 116
     .line 117
@@ -2171,7 +2171,7 @@
     .line 128
     .line 129
     .line 130
-    :cond_81
+    :cond_4
     iput-object p3, p0, Llibs/ru1;->f:Landroid/view/Surface;
 
     .line 131
@@ -2179,7 +2179,7 @@
     return-void
 
     .line 133
-    :cond_84
+    :cond_5
     new-instance p2, Llibs/xv1;
 
     .line 134
@@ -2210,7 +2210,7 @@
 
     .line 148
     .line 149
-    if-eqz p1, :cond_a6
+    if-eqz p1, :cond_6
 
     .line 150
     .line 151
@@ -2241,17 +2241,17 @@
 
     .line 165
     iput-object p1, p0, Llibs/ru1;->f:Landroid/view/Surface;
-    :try_end_a6
-    .catchall {:try_start_0 .. :try_end_a6} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 166
     .line 167
-    :cond_a6
-    :goto_a6
+    :cond_6
+    :goto_1
     return-void
 
     .line 168
-    :goto_a7
+    :goto_2
     const-string p2, "setVideoView"
 
     .line 169

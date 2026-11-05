@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/to3;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "null-service"

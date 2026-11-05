@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/$f;Llibs/Auth;)V
-    .registers 4
+    .locals 1
 
     .line 50
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -30,7 +30,7 @@
 .end method
 
 .method public constructor <init>(Llibs/$f;[B)V
-    .registers 4
+    .locals 1
 
     .line 47
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -49,7 +49,7 @@
 .end method
 
 .method public constructor <init>(Llibs/Param;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -68,7 +68,7 @@
     const/4 v1, 0x2
 
     .line 9
-    if-ne v0, v1, :cond_23
+    if-ne v0, v1, :cond_0
 
     .line 10
     .line 11
@@ -123,7 +123,7 @@
     return-void
 
     .line 36
-    :cond_23
+    :cond_0
     const-string v0, "Bad sequence size: "
 
     .line 37
@@ -148,14 +148,14 @@
 .end method
 
 .method public static h(Ljava/lang/Object;)Llibs/ji3;
-    .registers 2
+    .locals 1
 
     .line 1
     instance-of v0, p0, Llibs/ji3;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -166,8 +166,8 @@
     return-object p0
 
     .line 8
-    :cond_7
-    if-eqz p0, :cond_13
+    :cond_0
+    if-eqz p0, :cond_1
 
     .line 9
     .line 10
@@ -191,7 +191,7 @@
     return-object v0
 
     .line 20
-    :cond_13
+    :cond_1
     const/4 p0, 0x0
 
     .line 21
@@ -201,7 +201,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/Init;
@@ -247,7 +247,7 @@
 .end method
 
 .method public final g()Llibs/$f;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ji3;->X:Llibs/$f;
@@ -258,7 +258,7 @@
 .end method
 
 .method public final i()Llibs/Theme;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/Uri;

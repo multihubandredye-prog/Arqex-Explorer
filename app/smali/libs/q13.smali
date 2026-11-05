@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/FileDescriptor;Landroid/os/ParcelFileDescriptor;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p2, p0, Llibs/q13;->X:Landroid/os/ParcelFileDescriptor;
@@ -27,17 +27,17 @@
 
 # virtual methods
 .method public final close()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/q13;->X:Landroid/os/ParcelFileDescriptor;
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     invoke-super {p0}, Ljava/io/FileInputStream;->close()V
-    :try_end_5
-    .catchall {:try_start_2 .. :try_end_5} :catchall_9
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 4
     .line 5
@@ -50,7 +50,7 @@
     return-void
 
     .line 10
-    :catchall_9
+    :catchall_0
     move-exception v1
 
     .line 11

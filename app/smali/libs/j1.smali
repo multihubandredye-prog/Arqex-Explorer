@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;Ljava/lang/reflect/Method;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/t43;-><init>()V
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
 
     .line 1
     instance-of p1, p1, Llibs/j1;
@@ -44,13 +44,13 @@
 .end method
 
 .method public final f(Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
-    .registers 7
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :try_start_1
+    :try_start_0
     new-array v1, v0, [Ljava/security/cert/X509Certificate;
 
     .line 3
@@ -113,30 +113,30 @@
 
     .line 31
     check-cast p1, Ljava/util/List;
-    :try_end_20
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_1 .. :try_end_20} :catch_23
-    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_20} :catch_21
+    :try_end_0
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 32
     .line 33
     return-object p1
 
     .line 34
-    :catch_21
+    :catch_0
     move-exception p1
 
     .line 35
-    goto :goto_25
+    goto :goto_0
 
     .line 36
-    :catch_23
+    :catch_1
     move-exception p1
 
     .line 37
-    goto :goto_2b
+    goto :goto_1
 
     .line 38
-    :goto_25
+    :goto_0
     new-instance p2, Ljava/lang/AssertionError;
 
     .line 39
@@ -149,7 +149,7 @@
     throw p2
 
     .line 44
-    :goto_2b
+    :goto_1
     new-instance p2, Ljavax/net/ssl/SSLPeerUnverifiedException;
 
     .line 45
@@ -176,7 +176,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0

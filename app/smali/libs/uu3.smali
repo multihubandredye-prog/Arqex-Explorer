@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 24
     invoke-direct {p0}, Llibs/wq3;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public constructor <init>(Llibs/ev3;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0, p1}, Llibs/wq3;-><init>(Ljava/lang/Object;)V
@@ -41,7 +41,7 @@
     move-result-object p1
 
     .line 8
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
     .line 9
     .line 10
@@ -54,10 +54,10 @@
     .line 13
     .line 14
     .line 15
-    goto :goto_14
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_0
     new-instance v0, Landroid/view/WindowInsets$Builder;
 
     .line 17
@@ -67,7 +67,7 @@
     .line 19
     .line 20
     .line 21
-    :goto_14
+    :goto_0
     iput-object v0, p0, Llibs/uu3;->b:Landroid/view/WindowInsets$Builder;
 
     .line 22
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method public final a()Llibs/ev3;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/uu3;->b:Landroid/view/WindowInsets$Builder;
@@ -117,7 +117,7 @@
 .end method
 
 .method public final b(Llibs/na1;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/uu3;->b:Landroid/view/WindowInsets$Builder;
@@ -141,7 +141,7 @@
 .end method
 
 .method public final c(Llibs/na1;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/uu3;->b:Landroid/view/WindowInsets$Builder;

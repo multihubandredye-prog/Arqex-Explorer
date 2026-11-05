@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ig0;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -58,7 +58,7 @@
 .end method
 
 .method public constructor <init>(Llibs/kf0;[B)V
-    .registers 3
+    .locals 0
 
     .line 22
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -83,7 +83,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bx3;->X:Llibs/m10;
@@ -94,14 +94,14 @@
 .end method
 
 .method public final g()Llibs/ig0;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/bx3;->Z:Llibs/ig0;
 
     .line 2
     .line 3
-    if-nez v0, :cond_14
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -137,6 +137,6 @@
 
     .line 20
     .line 21
-    :cond_14
+    :cond_0
     return-object v0
 .end method

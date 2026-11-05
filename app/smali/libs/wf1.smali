@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/security/PrivateKey;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/f3;-><init>()V

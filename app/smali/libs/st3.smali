@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static a(Landroid/view/View;)Ljava/lang/CharSequence;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->getAccessibilityPaneTitle()Ljava/lang/CharSequence;
@@ -20,7 +20,7 @@
 .end method
 
 .method public static b(Landroid/view/View;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->isAccessibilityHeading()Z
@@ -35,7 +35,7 @@
 .end method
 
 .method public static c(Landroid/view/View;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->isScreenReaderFocusable()Z

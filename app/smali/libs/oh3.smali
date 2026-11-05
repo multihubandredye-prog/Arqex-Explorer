@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 5
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -69,21 +69,21 @@
 
 # virtual methods
 .method public final a(Landroid/content/Context;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/oh3;->a:Ljava/lang/String;
 
     .line 2
     .line 3
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
-    goto :goto_28
+    goto :goto_1
 
     .line 6
-    :cond_5
+    :cond_0
     const-string v1, "http://schemas.android.com/apk/res-auto"
 
     .line 7
@@ -96,7 +96,7 @@
     move-result v0
 
     .line 12
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_1
 
     .line 13
     .line 14
@@ -108,10 +108,10 @@
     move-result-object v0
 
     .line 18
-    goto :goto_26
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_1
     iget-object v0, p0, Llibs/oh3;->a:Ljava/lang/String;
 
     .line 20
@@ -128,7 +128,7 @@
     move-result v0
 
     .line 27
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_2
 
     .line 28
     .line 29
@@ -148,23 +148,23 @@
     move-result-object v0
 
     .line 37
-    goto :goto_26
+    goto :goto_0
 
     .line 38
-    :cond_25
+    :cond_2
     const/4 v0, 0x0
 
     .line 39
-    :goto_26
-    if-nez v0, :cond_29
+    :goto_0
+    if-nez v0, :cond_3
 
     .line 40
     .line 41
-    :goto_28
+    :goto_1
     return-void
 
     .line 42
-    :cond_29
+    :cond_3
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     .line 43

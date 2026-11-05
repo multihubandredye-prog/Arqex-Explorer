@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/yc1;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final engineToString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "RC6 IV"

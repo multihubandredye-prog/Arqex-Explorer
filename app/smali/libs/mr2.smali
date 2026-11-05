@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 11
     invoke-direct {p0}, Llibs/uj;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method public constructor <init>(Llibs/ea2;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/uj;-><init>()V
@@ -35,7 +35,7 @@
 .end method
 
 .method public constructor <init>(Llibs/uj;)V
-    .registers 2
+    .locals 0
 
     .line 10
     invoke-direct {p0, p1}, Llibs/uj;-><init>(Llibs/uj;)V
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public final Map(Llibs/to0;)V
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object v0, p1, Llibs/to0;->h:Ljava/util/HashMap;
@@ -85,7 +85,7 @@
     move-result v3
 
     .line 19
-    if-eqz v3, :cond_19
+    if-eqz v3, :cond_0
 
     .line 20
     .line 21
@@ -98,7 +98,7 @@
     .line 24
     .line 25
     .line 26
-    :cond_19
+    :cond_0
     const/4 v3, 0x2
 
     .line 27
@@ -110,7 +110,7 @@
     move-result v3
 
     .line 31
-    if-eqz v3, :cond_2c
+    if-eqz v3, :cond_1
 
     .line 32
     .line 33
@@ -138,7 +138,7 @@
     .line 43
     .line 44
     .line 45
-    :cond_2c
+    :cond_1
     const/4 v3, 0x3
 
     .line 46
@@ -150,7 +150,7 @@
     move-result v3
 
     .line 50
-    if-eqz v3, :cond_3b
+    if-eqz v3, :cond_2
 
     .line 51
     .line 52
@@ -170,7 +170,7 @@
     .line 58
     .line 59
     .line 60
-    :cond_3b
+    :cond_2
     const/4 v3, 0x4
 
     .line 61
@@ -182,7 +182,7 @@
     move-result v3
 
     .line 65
-    if-eqz v3, :cond_4c
+    if-eqz v3, :cond_3
 
     .line 66
     .line 67
@@ -204,7 +204,7 @@
     .line 75
     .line 76
     .line 77
-    :cond_4c
+    :cond_3
     const/4 p1, 0x5
 
     .line 78
@@ -216,7 +216,7 @@
     move-result p1
 
     .line 82
-    if-eqz p1, :cond_82
+    if-eqz p1, :cond_4
 
     .line 83
     .line 84
@@ -252,7 +252,7 @@
     move-result-object p1
 
     .line 100
-    :goto_63
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 101
@@ -261,7 +261,7 @@
     move-result v0
 
     .line 104
-    if-eqz v0, :cond_82
+    if-eqz v0, :cond_4
 
     .line 105
     .line 106
@@ -311,10 +311,10 @@
     .line 128
     .line 129
     .line 130
-    goto :goto_63
+    goto :goto_0
 
     .line 131
-    :cond_82
+    :cond_4
     invoke-virtual {v1}, Llibs/uj;->d()[B
 
     .line 132
@@ -338,7 +338,7 @@
 .end method
 
 .method public final Set()Llibs/to0;
-    .registers 20
+    .locals 19
 
     .line 1
     move-object/from16 v1, p0
@@ -369,7 +369,7 @@
     .line 13
     .line 14
     .line 15
-    :try_start_e
+    :try_start_0
     invoke-virtual {v1}, Llibs/uj;->String()J
 
     .line 16
@@ -393,7 +393,7 @@
 
     .line 25
     .line 26
-    if-eqz v4, :cond_3b
+    if-eqz v4, :cond_1
 
     .line 27
     .line 28
@@ -437,17 +437,17 @@
 
     .line 47
     .line 48
-    if-ltz v4, :cond_33
+    if-ltz v4, :cond_0
 
     .line 49
     .line 50
     const/4 v4, 0x1
 
     .line 51
-    goto :goto_3d
+    goto :goto_0
 
     .line 52
-    :cond_33
+    :cond_0
     new-instance v0, Llibs/rj;
 
     .line 53
@@ -464,14 +464,14 @@
     throw v0
 
     .line 60
-    :cond_3b
+    :cond_1
     move-wide v8, v6
 
     .line 61
     const/4 v4, 0x0
 
     .line 62
-    :goto_3d
+    :goto_0
     const/4 v10, 0x2
 
     .line 63
@@ -483,7 +483,7 @@
     move-result v10
 
     .line 67
-    if-eqz v10, :cond_54
+    if-eqz v10, :cond_2
 
     .line 68
     .line 69
@@ -513,25 +513,25 @@
 
     .line 80
     .line 81
-    goto :goto_56
+    goto :goto_1
 
     .line 82
-    :catch_51
+    :catch_0
     move-exception v0
 
     .line 83
-    goto/16 :goto_b5
+    goto/16 :goto_4
 
     .line 84
     .line 85
-    :cond_54
+    :cond_2
     const/4 v10, 0x0
 
     .line 86
     const/4 v11, 0x0
 
     .line 87
-    :goto_56
+    :goto_1
     const/4 v12, 0x3
 
     .line 88
@@ -543,7 +543,7 @@
     move-result v12
 
     .line 92
-    if-eqz v12, :cond_6a
+    if-eqz v12, :cond_3
 
     .line 93
     .line 94
@@ -574,7 +574,7 @@
     move-object v0, v12
 
     .line 107
-    :cond_6a
+    :cond_3
     const/4 v2, 0x4
 
     .line 108
@@ -586,7 +586,7 @@
     move-result v2
 
     .line 112
-    if-eqz v2, :cond_81
+    if-eqz v2, :cond_4
 
     .line 113
     .line 114
@@ -625,14 +625,14 @@
     move-wide v13, v12
 
     .line 129
-    goto :goto_82
+    goto :goto_2
 
     .line 130
-    :cond_81
+    :cond_4
     move-wide v13, v6
 
     .line 131
-    :goto_82
+    :goto_2
     const/4 v2, 0x5
 
     .line 132
@@ -644,7 +644,7 @@
     move-result v2
 
     .line 136
-    if-eqz v2, :cond_a6
+    if-eqz v2, :cond_5
 
     .line 137
     .line 138
@@ -665,8 +665,8 @@
     const/4 v3, 0x0
 
     .line 145
-    :goto_90
-    if-ge v3, v4, :cond_a7
+    :goto_3
+    if-ge v3, v4, :cond_6
 
     .line 146
     .line 147
@@ -699,8 +699,8 @@
     .line 160
     .line 161
     invoke-interface {v15, v12, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_a3
-    .catch Llibs/rj; {:try_start_e .. :try_end_a3} :catch_51
+    :try_end_0
+    .catch Llibs/rj; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 162
     .line 163
@@ -709,14 +709,14 @@
 
     .line 165
     .line 166
-    goto :goto_90
+    goto :goto_3
 
     .line 167
-    :cond_a6
+    :cond_5
     move v5, v4
 
     .line 168
-    :cond_a7
+    :cond_6
     new-instance v4, Llibs/to0;
 
     .line 169
@@ -749,7 +749,7 @@
     return-object v4
 
     .line 182
-    :goto_b5
+    :goto_4
     new-instance v2, Llibs/fr2;
 
     .line 183
@@ -759,19 +759,19 @@
     .line 185
     .line 186
     .line 187
-    goto :goto_bc
+    goto :goto_6
 
     .line 188
-    :goto_bb
+    :goto_5
     throw v2
 
     .line 189
-    :goto_bc
-    goto :goto_bb
+    :goto_6
+    goto :goto_5
 .end method
 
 .method public final View()Llibs/ea2;
-    .registers 3
+    .locals 2
 
     .line 1
     :try_start_0
@@ -792,15 +792,15 @@
     .line 8
     .line 9
     aget-object v0, v1, v0
-    :try_end_a
-    .catch Llibs/rj; {:try_start_0 .. :try_end_a} :catch_b
+    :try_end_0
+    .catch Llibs/rj; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 10
     .line 11
     return-object v0
 
     .line 12
-    :catch_b
+    :catch_0
     move-exception v0
 
     .line 13

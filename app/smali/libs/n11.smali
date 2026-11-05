@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/n11;->X:B
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final onLongClick(Landroid/view/View;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/n11;->X:B
@@ -43,7 +43,7 @@
     const/4 v2, 0x1
 
     .line 5
-    packed-switch v0, :pswitch_data_28
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -51,7 +51,7 @@
     return v1
 
     .line 9
-    :pswitch_8
+    :pswitch_0
     sget v0, Lcom/mixplorer/widgets/MiTabBar;->November:I
 
     .line 10
@@ -72,7 +72,7 @@
     return v2
 
     .line 19
-    :pswitch_12
+    :pswitch_1
     sget v0, Lcom/mixplorer/widgets/MiTabBar;->November:I
 
     .line 20
@@ -93,7 +93,7 @@
     return v2
 
     .line 29
-    :pswitch_1c
+    :pswitch_2
     sget v0, Lcom/mixplorer/widgets/MiTabBar;->November:I
 
     .line 30
@@ -114,18 +114,18 @@
     return v2
 
     .line 39
-    :pswitch_26
+    :pswitch_3
     return v1
 
     .line 40
     nop
 
     .line 41
-    :pswitch_data_28
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_26
-        :pswitch_1c
-        :pswitch_12
-        :pswitch_8
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

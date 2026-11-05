@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/l80;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/k80;->a:Llibs/l80;
@@ -30,14 +30,14 @@
 
 # virtual methods
 .method public final onEvent(ILjava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 1
     and-int/lit8 p1, p1, 0x2
 
     .line 2
     .line 3
-    if-eqz p1, :cond_17
+    if-eqz p1, :cond_0
 
     .line 4
     .line 5
@@ -65,7 +65,7 @@
     move-result p2
 
     .line 17
-    if-eqz p2, :cond_17
+    if-eqz p2, :cond_0
 
     .line 18
     .line 19
@@ -78,6 +78,6 @@
     .line 22
     .line 23
     .line 24
-    :cond_17
+    :cond_0
     return-void
 .end method

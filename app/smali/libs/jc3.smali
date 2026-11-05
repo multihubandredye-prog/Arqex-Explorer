@@ -57,7 +57,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     invoke-static {}, Llibs/t43;->w()I
@@ -72,7 +72,7 @@
 
     .line 6
     .line 7
-    if-ge v0, v1, :cond_21
+    if-ge v0, v1, :cond_2
 
     .line 8
     .line 9
@@ -96,14 +96,14 @@
     move-result v0
 
     .line 19
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 20
     .line 21
-    goto :goto_21
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     invoke-static {}, Llibs/t43;->Item()Z
 
     .line 23
@@ -112,7 +112,7 @@
     move-result v0
 
     .line 26
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_1
 
     .line 27
     .line 28
@@ -120,24 +120,24 @@
 
     .line 29
     .line 30
-    goto :goto_23
+    goto :goto_1
 
     .line 31
-    :cond_1e
+    :cond_1
     const/high16 v0, 0x80000
 
     .line 32
     .line 33
-    goto :goto_23
+    goto :goto_1
 
     .line 34
-    :cond_21
-    :goto_21
+    :cond_2
+    :goto_0
     const/high16 v0, 0x200000
 
     .line 35
     .line 36
-    :goto_23
+    :goto_1
     sput v0, Llibs/jc3;->v:I
 
     .line 37
@@ -178,7 +178,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -242,7 +242,7 @@
 .end method
 
 .method public static a()Llibs/za;
-    .registers 8
+    .locals 8
 
     .line 1
     new-instance v0, Llibs/za;
@@ -269,7 +269,7 @@
     const/4 v2, 0x0
 
     .line 13
-    if-eqz v1, :cond_cc
+    if-eqz v1, :cond_3
 
     .line 14
     .line 15
@@ -369,7 +369,7 @@
 
     .line 62
     .line 63
-    if-eqz v6, :cond_c6
+    if-eqz v6, :cond_2
 
     .line 64
     .line 65
@@ -528,8 +528,8 @@
     const/4 v6, 0x0
 
     .line 144
-    :goto_8f
-    if-ge v6, v4, :cond_a5
+    :goto_0
+    if-ge v6, v4, :cond_1
 
     .line 145
     .line 146
@@ -549,7 +549,7 @@
 
     .line 153
     .line 154
-    if-eqz v7, :cond_9f
+    if-eqz v7, :cond_0
 
     .line 155
     .line 156
@@ -558,10 +558,10 @@
     .line 157
     .line 158
     .line 159
-    goto :goto_8f
+    goto :goto_0
 
     .line 160
-    :cond_9f
+    :cond_0
     const-string v0, "Authenticator may not be null"
 
     .line 161
@@ -574,7 +574,7 @@
     return-object v2
 
     .line 166
-    :cond_a5
+    :cond_1
     iget-object v1, v0, Llibs/za;->Y:Ljava/lang/Object;
 
     .line 167
@@ -642,7 +642,7 @@
     return-object v0
 
     .line 199
-    :cond_c6
+    :cond_2
     const-string v0, "Transport layer factory may not be null"
 
     .line 200
@@ -655,7 +655,7 @@
     return-object v2
 
     .line 205
-    :cond_cc
+    :cond_3
     const-string v0, "Client GUID may not be null"
 
     .line 206
@@ -671,7 +671,7 @@
 
 # virtual methods
 .method public final b()Ljava/util/EnumSet;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/jc3;->a:Ljava/util/LinkedHashSet;
@@ -686,7 +686,7 @@
     move-result v0
 
     .line 7
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     .line 8
     .line 9
@@ -705,7 +705,7 @@
     return-object v0
 
     .line 16
-    :cond_f
+    :cond_0
     sget-object v0, Llibs/wu2;->Z:Llibs/wu2;
 
     .line 17
@@ -722,7 +722,7 @@
 
     .line 23
     .line 24
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_1
 
     .line 25
     .line 26
@@ -735,12 +735,12 @@
     .line 29
     .line 30
     .line 31
-    :cond_1e
+    :cond_1
     iget-boolean v1, p0, Llibs/jc3;->s:Z
 
     .line 32
     .line 33
-    if-eqz v1, :cond_27
+    if-eqz v1, :cond_2
 
     .line 34
     .line 35
@@ -753,6 +753,6 @@
     .line 38
     .line 39
     .line 40
-    :cond_27
+    :cond_2
     return-object v0
 .end method

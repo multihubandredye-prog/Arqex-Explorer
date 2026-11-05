@@ -85,7 +85,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Ljava/util/HashMap;
 
@@ -243,7 +243,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -251,16 +251,16 @@
 .end method
 
 .method public static declared-synchronized acquireTaskWakeLock(J)V
-    .registers 6
+    .locals 4
 
     :try_start_0
     sget-object v0, Llibs/AutoTaskWatcher;->wakeLock:Landroid/os/PowerManager$WakeLock;
 
-    if-nez v0, :cond_21
+    if-nez v0, :cond_0
 
     sget-object v1, Llibs/zt0;->g:Landroid/content/Context;
 
-    if-eqz v1, :cond_24
+    if-eqz v1, :cond_1
 
     const-string v2, "power"
 
@@ -270,7 +270,7 @@
 
     check-cast v1, Landroid/os/PowerManager;
 
-    if-eqz v1, :cond_24
+    if-eqz v1, :cond_1
 
     const/4 v2, 0x1
 
@@ -280,7 +280,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
     const/4 v1, 0x0
 
@@ -288,42 +288,42 @@
 
     sput-object v0, Llibs/AutoTaskWatcher;->wakeLock:Landroid/os/PowerManager$WakeLock;
 
-    :cond_21
+    :cond_0
     invoke-virtual {v0, p0, p1}, Landroid/os/PowerManager$WakeLock;->acquire(J)V
-    :try_end_24
-    .catchall {:try_start_0 .. :try_end_24} :catchall_24
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_24
-    :cond_24
+    :catchall_0
+    :cond_1
     return-void
 .end method
 
 .method public static declared-synchronized addExtFilterControls(Llibs/od;Llibs/d9;)V
-    .registers 18
+    .locals 16
 
     move-object/from16 v0, p0
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
-    :cond_5
+    :cond_0
     move-object/from16 v1, p1
 
-    :try_start_7
+    :try_start_0
     const-string v5, ""
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_1
 
     invoke-static {v1}, Llibs/AutoTaskWatcher;->getTaskExtFilter(Llibs/d9;)Ljava/lang/String;
 
     move-result-object v5
 
-    if-nez v5, :cond_13
+    if-nez v5, :cond_1
 
     const-string v5, ""
 
-    :cond_13
+    :cond_1
     invoke-virtual {v5}, Ljava/lang/String;->isEmpty()Z
 
     move-result v2
@@ -378,67 +378,67 @@
 
     move-object/from16 v1, p1
 
-    if-eqz v2, :cond_4b
+    if-eqz v2, :cond_3
 
-    if-nez v15, :cond_46
+    if-nez v15, :cond_2
 
     const/16 v3, 0x8
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_46
+    :cond_2
     sget-object v3, Llibs/AutoTaskWatcher;->dialogExtEdits:Ljava/util/WeakHashMap;
 
     invoke-virtual {v3, v0, v2}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_4b
-    if-eqz v1, :cond_5c
+    :cond_3
+    if-eqz v1, :cond_4
 
     sget-object v3, Llibs/AutoTaskWatcher;->dialogExtCheckBoxes:Ljava/util/WeakHashMap;
 
     invoke-virtual {v3, v0, v1}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v2, :cond_5c
+    if-eqz v2, :cond_4
 
     new-instance v3, Llibs/AutoTaskWatcher$PrefixCheckListener;
 
     invoke-direct {v3, v2}, Llibs/AutoTaskWatcher$PrefixCheckListener;-><init>(Lcom/mixplorer/widgets/MiEditText;)V
 
     invoke-virtual {v1, v3}, Landroid/widget/CompoundButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
-    :try_end_5c
-    .catchall {:try_start_7 .. :try_end_5c} :catchall_5c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_5c
-    :cond_5c
+    :catchall_0
+    :cond_4
     return-void
 .end method
 
 .method public static declared-synchronized addNameFilterControls(Llibs/od;Llibs/d9;)V
-    .registers 18
+    .locals 16
 
     move-object/from16 v0, p0
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
-    :cond_5
+    :cond_0
     move-object/from16 v1, p1
 
-    :try_start_7
+    :try_start_0
     const-string v5, ""
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_1
 
     invoke-static {v1}, Llibs/AutoTaskWatcher;->getTaskNameFilter(Llibs/d9;)Ljava/lang/String;
 
     move-result-object v5
 
-    if-nez v5, :cond_13
+    if-nez v5, :cond_1
 
     const-string v5, ""
 
-    :cond_13
+    :cond_1
     invoke-virtual {v5}, Ljava/lang/String;->isEmpty()Z
 
     move-result v2
@@ -495,23 +495,23 @@
 
     move-object/from16 v1, p1
 
-    if-eqz v2, :cond_51
+    if-eqz v2, :cond_3
 
-    if-nez v15, :cond_4a
+    if-nez v15, :cond_2
 
     const/16 v3, 0x8
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_4a
+    :cond_2
     sget-object v3, Llibs/AutoTaskWatcher;->dialogNameEdits:Ljava/util/WeakHashMap;
 
     invoke-virtual {v3, v0, v2}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sput-object v2, Llibs/AutoTaskWatcher;->nameUiEdit:Lcom/mixplorer/widgets/MiEditText;
 
-    :cond_51
-    if-eqz v1, :cond_64
+    :cond_3
+    if-eqz v1, :cond_4
 
     sget-object v3, Llibs/AutoTaskWatcher;->dialogNameCheckBoxes:Ljava/util/WeakHashMap;
 
@@ -519,39 +519,39 @@
 
     sput-object v1, Llibs/AutoTaskWatcher;->nameUiCheck:Landroid/widget/CheckBox;
 
-    if-eqz v2, :cond_64
+    if-eqz v2, :cond_4
 
     new-instance v3, Llibs/AutoTaskWatcher$PrefixCheckListener;
 
     invoke-direct {v3, v2}, Llibs/AutoTaskWatcher$PrefixCheckListener;-><init>(Lcom/mixplorer/widgets/MiEditText;)V
 
     invoke-virtual {v1, v3}, Landroid/widget/CompoundButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
-    :try_end_64
-    .catchall {:try_start_7 .. :try_end_64} :catchall_64
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_64
-    :cond_64
+    :catchall_0
+    :cond_4
     return-void
 .end method
 
 .method public static declared-synchronized addNotificationCheckBox(Llibs/od;Llibs/d9;)V
-    .registers 6
+    .locals 4
 
-    if-nez p0, :cond_3
+    if-nez p0, :cond_0
 
     return-void
 
-    :cond_3
-    :try_start_3
+    :cond_0
+    :try_start_0
     const/4 v0, 0x1
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_1
 
     invoke-static {p1}, Llibs/AutoTaskWatcher;->isNotificationEnabledForTask(Llibs/d9;)Z
 
     move-result v0
 
-    :cond_a
+    :cond_1
     invoke-static {}, Llibs/AutoTaskWatcher;->getNotifyLabel()Ljava/lang/String;
 
     move-result-object v1
@@ -564,37 +564,37 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_2
 
     sget-object v1, Llibs/AutoTaskWatcher;->dialogNotifyCheckBoxes:Ljava/util/WeakHashMap;
 
     invoke-virtual {v1, p0, v0}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_1c
-    .catchall {:try_start_3 .. :try_end_1c} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_1c
-    :cond_1c
+    :catchall_0
+    :cond_2
     return-void
 .end method
 
 .method public static declared-synchronized addOnlyFilesCheckBox(Llibs/od;Llibs/d9;)V
-    .registers 6
+    .locals 4
 
-    if-nez p0, :cond_3
+    if-nez p0, :cond_0
 
     return-void
 
-    :cond_3
-    :try_start_3
+    :cond_0
+    :try_start_0
     const/4 v0, 0x1
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_1
 
     invoke-static {p1}, Llibs/AutoTaskWatcher;->isOnlyFolderFiles(Llibs/d9;)Z
 
     move-result v0
 
-    :cond_a
+    :cond_1
     invoke-static {}, Llibs/AutoTaskWatcher;->getOnlyFilesLabel()Ljava/lang/String;
 
     move-result-object v1
@@ -607,7 +607,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_2
 
     sget-object v1, Llibs/AutoTaskWatcher;->dialogCheckBoxes:Ljava/util/WeakHashMap;
 
@@ -618,40 +618,40 @@
     invoke-direct {v1, v0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     sput-object v1, Llibs/AutoTaskWatcher;->lastCheckBoxRef:Ljava/lang/ref/WeakReference;
-    :try_end_23
-    .catchall {:try_start_3 .. :try_end_23} :catchall_23
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_23
-    :cond_23
+    :catchall_0
+    :cond_2
     return-void
 .end method
 
 .method public static declared-synchronized addPrefixControls(Llibs/od;Llibs/d9;)V
-    .registers 18
+    .locals 16
 
     move-object/from16 v0, p0
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
-    :cond_5
+    :cond_0
     move-object/from16 v1, p1
 
-    :try_start_7
+    :try_start_0
     const-string v5, ""
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_1
 
     invoke-static {v1}, Llibs/AutoTaskWatcher;->getTaskFilePrefix(Llibs/d9;)Ljava/lang/String;
 
     move-result-object v5
 
-    if-nez v5, :cond_13
+    if-nez v5, :cond_1
 
     const-string v5, ""
 
-    :cond_13
+    :cond_1
     invoke-virtual {v5}, Ljava/lang/String;->isEmpty()Z
 
     move-result v2
@@ -706,53 +706,53 @@
 
     move-object/from16 v1, p1
 
-    if-eqz v2, :cond_4b
+    if-eqz v2, :cond_3
 
-    if-nez v15, :cond_46
+    if-nez v15, :cond_2
 
     const/16 v3, 0x8
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_46
+    :cond_2
     sget-object v3, Llibs/AutoTaskWatcher;->dialogPrefixEdits:Ljava/util/WeakHashMap;
 
     invoke-virtual {v3, v0, v2}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_4b
-    if-eqz v1, :cond_5c
+    :cond_3
+    if-eqz v1, :cond_4
 
     sget-object v3, Llibs/AutoTaskWatcher;->dialogPrefixCheckBoxes:Ljava/util/WeakHashMap;
 
     invoke-virtual {v3, v0, v1}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v2, :cond_5c
+    if-eqz v2, :cond_4
 
     new-instance v3, Llibs/AutoTaskWatcher$PrefixCheckListener;
 
     invoke-direct {v3, v2}, Llibs/AutoTaskWatcher$PrefixCheckListener;-><init>(Lcom/mixplorer/widgets/MiEditText;)V
 
     invoke-virtual {v1, v3}, Landroid/widget/CompoundButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
-    :try_end_5c
-    .catchall {:try_start_7 .. :try_end_5c} :catchall_5c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_5c
-    :cond_5c
+    :catchall_0
+    :cond_4
     return-void
 .end method
 
 .method public static addUnzipCheckBox(Llibs/od;Llibs/d9;)V
-    .registers 6
+    .locals 4
 
-    if-nez p0, :cond_3
+    if-nez p0, :cond_0
 
     return-void
 
-    :cond_3
-    :try_start_3
+    :cond_0
+    :try_start_0
     const/4 v2, 0x1
 
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_1
 
     iget-object v0, p1, Llibs/d9;->Psi:Ljava/lang/String;
 
@@ -760,7 +760,7 @@
 
     move-result v2
 
-    :cond_c
+    :cond_1
     const-string v0, "Descompactar arquivos ZIP no destino (copiar/mover)"
 
     const/16 v1, 0x5d
@@ -771,23 +771,23 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_2
 
     sget-object v1, Llibs/ArqexUnzip;->boxes:Ljava/util/WeakHashMap;
 
     invoke-virtual {v1, p0, v0}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sput-object v0, Llibs/ArqexUnzip;->lastBox:Landroid/widget/CheckBox;
-    :try_end_1e
-    .catchall {:try_start_3 .. :try_end_1e} :catchall_1e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_1e
-    :cond_1e
+    :catchall_0
+    :cond_2
     return-void
 .end method
 
 .method public static applyFilters(Llibs/d9;Ljava/util/Collection;)V
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x0
 
@@ -797,7 +797,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     invoke-interface {p1}, Ljava/util/Collection;->clear()V
 
@@ -805,14 +805,14 @@
 
     return-void
 
-    :cond_10
+    :cond_0
     invoke-static {p0, p1}, Llibs/AutoTaskWatcher;->filterTaskItems(Llibs/d9;Ljava/util/Collection;)V
 
     return-void
 .end method
 
 .method public static declared-synchronized applyPrefixToRenamePattern(ILjava/lang/String;)Ljava/lang/String;
-    .registers 6
+    .locals 4
 
     :try_start_0
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -823,11 +823,11 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_b
+    if-nez v1, :cond_0
 
     return-object p1
 
-    :cond_b
+    :cond_0
     invoke-static {v1}, Llibs/AutoTaskWatcher;->isNotificationEnabledForTask(Llibs/d9;)Z
 
     move-result v2
@@ -852,12 +852,12 @@
 
     move-result v1
 
-    if-eqz v1, :cond_27
+    if-eqz v1, :cond_1
 
     return-object p1
 
-    :cond_27
-    if-eqz p1, :cond_33
+    :cond_1
+    if-eqz p1, :cond_2
 
     invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -867,21 +867,21 @@
 
     move-result v1
 
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_3
 
-    :cond_33
+    :cond_2
     const-string p1, "%F"
 
-    :cond_35
+    :cond_3
     invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_3c
+    if-eqz v1, :cond_4
 
     return-object p1
 
-    :cond_3c
+    :cond_4
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -893,30 +893,30 @@
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
-    :try_end_4b
-    .catchall {:try_start_0 .. :try_end_4b} :catchall_4b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_4b
+    :catchall_0
     return-object p1
 .end method
 
 .method public static arqexScan(Ljava/io/File;Ljava/lang/String;Ljava/util/LinkedHashSet;I)V
-    .registers 11
+    .locals 7
 
-    if-ltz p3, :cond_34
+    if-ltz p3, :cond_2
 
     invoke-virtual {p0}, Ljava/io/File;->listFiles()[Ljava/io/File;
 
     move-result-object v0
 
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_2
 
     array-length v1, v0
 
     const/4 v2, 0x0
 
-    :goto_a
-    if-ge v2, v1, :cond_34
+    :goto_0
+    if-ge v2, v1, :cond_2
 
     aget-object v3, v0, v2
 
@@ -928,7 +928,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_26
+    if-eqz v5, :cond_0
 
     invoke-virtual {v3}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
@@ -938,48 +938,48 @@
 
     move-result-object v5
 
-    if-eqz v5, :cond_31
+    if-eqz v5, :cond_1
 
     invoke-virtual {p2, v5}, Ljava/util/LinkedHashSet;->add(Ljava/lang/Object;)Z
 
-    goto :goto_31
+    goto :goto_1
 
-    :cond_26
+    :cond_0
     invoke-virtual {v3}, Ljava/io/File;->isDirectory()Z
 
     move-result v5
 
-    if-eqz v5, :cond_31
+    if-eqz v5, :cond_1
 
     add-int/lit8 v5, p3, -0x1
 
     invoke-static {v3, p1, p2, v5}, Llibs/AutoTaskWatcher;->arqexScan(Ljava/io/File;Ljava/lang/String;Ljava/util/LinkedHashSet;I)V
 
-    :cond_31
-    :goto_31
+    :cond_1
+    :goto_1
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_34
+    :cond_2
     return-void
 .end method
 
 .method public static declared-synchronized bindIntervalCombo(Lcom/mixplorer/widgets/MiCombo;Landroid/view/View;Llibs/d9;)V
-    .registers 7
+    .locals 4
 
-    if-eqz p0, :cond_11
+    if-eqz p0, :cond_1
 
-    if-nez p2, :cond_6
+    if-nez p2, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     new-instance v1, Llibs/AutoTaskWatcher$IntervalListener;
 
     sget-object v2, Llibs/AutoTaskWatcher;->lastCheckBoxRef:Ljava/lang/ref/WeakReference;
@@ -988,14 +988,14 @@
 
     invoke-virtual {p0, v1}, Lcom/mixplorer/widgets/MiCombo;->setListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    :cond_11
+    :cond_1
     const/4 v0, 0x0
 
     sput-object v0, Llibs/AutoTaskWatcher;->lastCheckBoxRef:Ljava/lang/ref/WeakReference;
 
-    if-eqz p1, :cond_25
+    if-eqz p1, :cond_2
 
-    if-eqz p2, :cond_25
+    if-eqz p2, :cond_2
 
     iget-wide v0, p2, Llibs/d9;->Mu:J
 
@@ -1003,25 +1003,25 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_25
+    if-nez v0, :cond_2
 
     const/16 v0, 0x8
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_25
+    :cond_2
     return-void
 .end method
 
 .method public static declared-synchronized bindOperationToCurrentAutoTask(Llibs/m52;)V
-    .registers 4
+    .locals 3
 
-    if-nez p0, :cond_3
+    if-nez p0, :cond_0
 
     return-void
 
-    :cond_3
-    :try_start_3
+    :cond_0
+    :try_start_0
     sget-object v0, Llibs/AutoTaskWatcher;->activeDispatchTaskId:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
@@ -1030,13 +1030,13 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    if-eqz v0, :cond_41
+    if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
-    if-lez v1, :cond_41
+    if-lez v1, :cond_1
 
     sget-object v1, Llibs/AutoTaskWatcher;->opToTaskIdMap:Ljava/util/WeakHashMap;
 
@@ -1044,7 +1044,7 @@
 
     iget p0, p0, Llibs/m52;->One:I
 
-    if-lez p0, :cond_41
+    if-lez p0, :cond_1
 
     sget-object v1, Llibs/AutoTaskWatcher;->opNumToTaskIdMap:Ljava/util/LinkedHashMap;
 
@@ -1060,7 +1060,7 @@
 
     const/16 v0, 0x100
 
-    if-le p0, v0, :cond_41
+    if-le p0, v0, :cond_1
 
     invoke-virtual {v1}, Ljava/util/LinkedHashMap;->keySet()Ljava/util/Set;
 
@@ -1074,21 +1074,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_41
+    if-eqz v0, :cond_1
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     invoke-interface {p0}, Ljava/util/Iterator;->remove()V
-    :try_end_41
-    .catchall {:try_start_3 .. :try_end_41} :catchall_41
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_41
-    :cond_41
+    :catchall_0
+    :cond_1
     return-void
 .end method
 
 .method public static buildIntervalArray([Ljava/lang/String;)[Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     const/16 v0, 0x9
 
@@ -1110,29 +1110,29 @@
 .end method
 
 .method private static checkAndFire(Llibs/d9;)V
-    .registers 11
+    .locals 10
 
-    if-nez p0, :cond_3
+    if-nez p0, :cond_0
 
     return-void
 
-    :cond_3
-    :try_start_3
+    :cond_0
+    :try_start_0
     iget-wide v4, p0, Llibs/d9;->Mu:J
 
     const-wide/16 v6, -0x2
 
     cmp-long v0, v4, v6
 
-    if-nez v0, :cond_ce
+    if-nez v0, :cond_e
 
     iget v0, p0, Llibs/d9;->One:I
 
-    if-lez v0, :cond_10
+    if-lez v0, :cond_1
 
     return-void
 
-    :cond_10
+    :cond_1
     invoke-static {p0}, Llibs/AutoTaskWatcher;->ensureObserversForTask(Llibs/d9;)V
 
     iget v0, p0, Llibs/d9;->Y:I
@@ -1141,11 +1141,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_2
 
     return-void
 
-    :cond_1c
+    :cond_2
     iget-object v1, p0, Llibs/d9;->Omicron:Ljava/util/ArrayList;
 
     iget-boolean v2, p0, Llibs/d9;->Sigma:Z
@@ -1174,16 +1174,16 @@
 
     move-result v8
 
-    if-eqz v8, :cond_3c
+    if-eqz v8, :cond_3
 
     return-void
 
-    :cond_3c
+    :cond_3
     invoke-static {v3}, Llibs/AutoTaskWatcher;->hasFreshZeroByteFile(Ljava/util/Collection;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_48
+    if-eqz v3, :cond_4
 
     const-wide/16 v4, 0x5dc
 
@@ -1191,7 +1191,7 @@
 
     return-void
 
-    :cond_48
+    :cond_4
     invoke-static {v1}, Llibs/AutoTaskWatcher;->snapshotStamps(Ljava/util/Collection;)Ljava/util/HashMap;
 
     move-result-object v1
@@ -1208,21 +1208,21 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_ce
+    if-eqz v3, :cond_e
 
     iget-wide v4, v3, Llibs/d9;->Mu:J
 
     cmp-long v8, v4, v6
 
-    if-nez v8, :cond_ce
+    if-nez v8, :cond_e
 
     iget v8, v3, Llibs/d9;->One:I
 
-    if-lez v8, :cond_66
+    if-lez v8, :cond_5
 
     return-void
 
-    :cond_66
+    :cond_5
     iget-object v8, v3, Llibs/d9;->Omicron:Ljava/util/ArrayList;
 
     iget-boolean v9, v3, Llibs/d9;->Sigma:Z
@@ -1239,17 +1239,17 @@
 
     move-result-object v8
 
-    if-eqz v7, :cond_7e
+    if-eqz v7, :cond_6
 
     invoke-static {v3, v8, v9, v4, v5}, Llibs/AutoTaskWatcher;->expandFilteredFolders(Llibs/d9;Ljava/util/Collection;ZJ)Ljava/util/LinkedHashSet;
 
     move-result-object v5
 
-    if-eqz v5, :cond_7e
+    if-eqz v5, :cond_6
 
     move-object v8, v5
 
-    :cond_7e
+    :cond_6
     invoke-static {v3, v8}, Llibs/AutoTaskWatcher;->filterRenamePrefixed(Llibs/d9;Ljava/util/LinkedHashSet;)V
 
     invoke-static {v3, v8}, Llibs/AutoTaskWatcher;->filterTaskItems(Llibs/d9;Ljava/util/Collection;)V
@@ -1262,16 +1262,16 @@
 
     move-result v9
 
-    if-eqz v9, :cond_8f
+    if-eqz v9, :cond_7
 
     return-void
 
-    :cond_8f
+    :cond_7
     invoke-static {v2}, Llibs/AutoTaskWatcher;->hasFreshZeroByteFile(Ljava/util/Collection;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_9b
+    if-eqz v2, :cond_8
 
     const-wide/16 v4, 0x4b0
 
@@ -1279,7 +1279,7 @@
 
     return-void
 
-    :cond_9b
+    :cond_8
     invoke-static {v8}, Llibs/AutoTaskWatcher;->snapshotStamps(Ljava/util/Collection;)Ljava/util/HashMap;
 
     move-result-object v2
@@ -1288,7 +1288,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_ab
+    if-nez v1, :cond_9
 
     const-wide/16 v4, 0x4b0
 
@@ -1296,28 +1296,28 @@
 
     return-void
 
-    :cond_ab
+    :cond_9
     invoke-static {v0}, Llibs/AutoTaskWatcher;->markTaskFiring(I)Z
 
     move-result v1
 
-    if-nez v1, :cond_b2
+    if-nez v1, :cond_a
 
     return-void
 
-    :cond_b2
+    :cond_a
     invoke-static {v3}, Llibs/AutoTaskWatcher;->isOnlyFolderFiles(Llibs/d9;)Z
 
     move-result v1
 
-    if-nez v1, :cond_bc
+    if-nez v1, :cond_b
 
     invoke-static {v3}, Llibs/AutoTaskWatcher;->hasTaskExtFilter(Llibs/d9;)Z
 
     move-result v1
 
-    :cond_bc
-    if-eqz v1, :cond_c8
+    :cond_b
+    if-eqz v1, :cond_c
 
     const-string v1, "SYNC"
 
@@ -1327,30 +1327,30 @@
 
     move-result v1
 
-    if-eqz v1, :cond_cb
+    if-eqz v1, :cond_d
 
-    :cond_c8
+    :cond_c
     invoke-static {v0, v8, v6}, Llibs/AutoTaskWatcher;->syncSeenPrefs(ILjava/util/Collection;Z)Ljava/util/LinkedHashSet;
 
-    :cond_cb
+    :cond_d
     invoke-static {v3}, Llibs/e9;->f(Llibs/d9;)V
-    :try_end_ce
-    .catchall {:try_start_3 .. :try_end_ce} :catchall_ce
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_ce
-    :cond_ce
+    :catchall_0
+    :cond_e
     return-void
 .end method
 
 .method private static clearSeenPrefs(I)V
-    .registers 2
+    .locals 1
 
     :try_start_0
     invoke-static {p0}, Llibs/AutoTaskWatcher;->getSeenPrefs(I)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
@@ -1361,34 +1361,34 @@
     move-result-object v0
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
-    :try_end_11
-    .catchall {:try_start_0 .. :try_end_11} :catchall_11
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_11
-    :cond_11
+    :catchall_0
+    :cond_0
     return-void
 .end method
 
 .method private static collectItemsFromList(Ljava/util/List;ZJZ)Ljava/util/LinkedHashSet;
-    .registers 13
+    .locals 8
 
     new-instance v0, Ljava/util/LinkedHashSet;
 
     invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V
 
-    if-nez p0, :cond_8
+    if-nez p0, :cond_0
 
     return-object v0
 
-    :cond_8
+    :cond_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v1
 
     const/4 v2, 0x0
 
-    :goto_d
-    if-ge v2, v1, :cond_ad
+    :goto_0
+    if-ge v2, v1, :cond_9
 
     invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -1400,20 +1400,20 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_ab
+    if-eqz v3, :cond_8
 
     invoke-virtual {v3}, Ljava/lang/String;->isEmpty()Z
 
     move-result v4
 
-    if-eqz v4, :cond_22
+    if-eqz v4, :cond_1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_22
+    :cond_1
     const/4 v4, 0x0
 
-    if-eqz p1, :cond_53
+    if-eqz p1, :cond_4
 
     const/4 v5, 0x1
 
@@ -1421,19 +1421,19 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_ab
+    if-eqz v3, :cond_8
 
     invoke-virtual {v3}, Ljava/util/AbstractCollection;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
 
-    :cond_30
-    :goto_30
+    :cond_2
+    :goto_1
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_ab
+    if-eqz v4, :cond_8
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1441,17 +1441,17 @@
 
     check-cast v4, Llibs/rp0;
 
-    if-eqz v4, :cond_30
+    if-eqz v4, :cond_2
 
-    if-eqz p4, :cond_45
+    if-eqz p4, :cond_3
 
     iget-boolean v5, v4, Llibs/rp0;->One:Z
 
-    if-eqz v5, :cond_45
+    if-eqz v5, :cond_3
 
-    goto :goto_30
+    goto :goto_1
 
-    :cond_45
+    :cond_3
     invoke-virtual {v4}, Llibs/rp0;->m()Ljava/lang/String;
 
     move-result-object v5
@@ -1460,20 +1460,20 @@
 
     move-result v5
 
-    if-nez v5, :cond_30
+    if-nez v5, :cond_2
 
     invoke-virtual {v0, v4}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
-    goto :goto_30
+    goto :goto_1
 
-    :cond_53
+    :cond_4
     const-string v5, "/*"
 
     invoke-virtual {v3, v5}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_79
+    if-eqz v5, :cond_5
 
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
@@ -1491,11 +1491,11 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_ab
+    if-eqz v3, :cond_8
 
     iget-boolean v5, v3, Llibs/rp0;->One:Z
 
-    if-eqz v5, :cond_ab
+    if-eqz v5, :cond_8
 
     new-instance v5, Llibs/AutoTaskWatcher$ChildCollector;
 
@@ -1503,20 +1503,20 @@
 
     invoke-virtual {v3, v5}, Llibs/rp0;->Bundle(Llibs/t61;)Llibs/rp0;
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_79
+    :cond_5
     invoke-static {v3}, Llibs/u73;->Intent(Ljava/lang/String;)Llibs/rp0;
 
     move-result-object v3
 
-    if-eqz v3, :cond_ab
+    if-eqz v3, :cond_8
 
     iget-boolean v5, v3, Llibs/rp0;->One:Z
 
-    if-eqz v5, :cond_8e
+    if-eqz v5, :cond_6
 
-    if-eqz p4, :cond_8e
+    if-eqz p4, :cond_6
 
     new-instance v5, Llibs/AutoTaskWatcher$ChildCollector;
 
@@ -1524,9 +1524,9 @@
 
     invoke-virtual {v3, v5}, Llibs/rp0;->Bundle(Llibs/t61;)Llibs/rp0;
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_8e
+    :cond_6
     invoke-virtual {v3}, Llibs/rp0;->m()Ljava/lang/String;
 
     move-result-object v4
@@ -1535,36 +1535,36 @@
 
     move-result v4
 
-    if-nez v4, :cond_ab
+    if-nez v4, :cond_8
 
     iget-boolean v4, v3, Llibs/rp0;->One:Z
 
-    if-nez v4, :cond_a8
+    if-nez v4, :cond_7
 
     const-wide/16 v4, 0x0
 
     cmp-long v4, p2, v4
 
-    if-lez v4, :cond_a8
+    if-lez v4, :cond_7
 
     iget-wide v4, v3, Llibs/rp0;->Five:J
 
     cmp-long v4, v4, p2
 
-    if-gtz v4, :cond_ab
+    if-gtz v4, :cond_8
 
-    :cond_a8
+    :cond_7
     invoke-virtual {v0, v3}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
-    :cond_ab
-    goto/16 :goto_d
+    :cond_8
+    goto/16 :goto_0
 
-    :cond_ad
+    :cond_9
     return-object v0
 .end method
 
 .method private static declared-synchronized consumeAutoTriggered(I)Z
-    .registers 3
+    .locals 2
 
     sget-object v0, Llibs/AutoTaskWatcher;->autoTriggered:Ljava/util/HashSet;
 
@@ -1580,7 +1580,7 @@
 .end method
 
 .method private static declared-synchronized consumeManualPlay(I)Z
-    .registers 3
+    .locals 2
 
     sget-object v0, Llibs/AutoTaskWatcher;->manualPlayIds:Ljava/util/HashSet;
 
@@ -1596,7 +1596,7 @@
 .end method
 
 .method public static debugLine(Llibs/d9;)Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1642,13 +1642,13 @@
 .end method
 
 .method public static dispatchTaskIntent(Landroid/content/Intent;)V
-    .registers 3
+    .locals 2
 
-    if-nez p0, :cond_3
+    if-nez p0, :cond_0
 
     return-void
 
-    :cond_3
+    :cond_0
     const-wide/32 v0, 0xea60
 
     invoke-static {v0, v1}, Llibs/AutoTaskWatcher;->acquireTaskWakeLock(J)V
@@ -1661,17 +1661,17 @@
 
     move-result-object v1
 
-    if-eq v0, v1, :cond_17
+    if-eq v0, v1, :cond_1
 
-    :try_start_13
+    :try_start_0
     invoke-static {p0}, Llibs/a92;->Bundle(Landroid/content/Intent;)V
-    :try_end_16
-    .catchall {:try_start_13 .. :try_end_16} :catchall_16
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_16
+    :catchall_0
     return-void
 
-    :cond_17
+    :cond_1
     new-instance v0, Llibs/xv1;
 
     new-instance v1, Llibs/AutoTaskWatcher$JobWakeupRunnable;
@@ -1686,11 +1686,11 @@
 .end method
 
 .method private static declared-synchronized ensureHandler()Landroid/os/Handler;
-    .registers 3
+    .locals 3
 
     sget-object v0, Llibs/AutoTaskWatcher;->handler:Landroid/os/Handler;
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_0
 
     new-instance v0, Landroid/os/HandlerThread;
 
@@ -1718,19 +1718,19 @@
 
     move-object v0, v1
 
-    :cond_20
+    :cond_0
     return-object v0
 .end method
 
 .method private static declared-synchronized ensureObserversForTask(Llibs/d9;)V
-    .registers 8
+    .locals 7
 
-    if-nez p0, :cond_3
+    if-nez p0, :cond_0
 
     return-void
 
-    :cond_3
-    :try_start_3
+    :cond_0
+    :try_start_0
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
@@ -1739,7 +1739,7 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_39
+    if-eqz v1, :cond_2
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -1747,8 +1747,8 @@
 
     move v4, v2
 
-    :goto_12
-    if-ge v4, v3, :cond_39
+    :goto_0
+    if-ge v4, v3, :cond_2
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1762,7 +1762,7 @@
 
     move-result-object v5
 
-    if-eqz v5, :cond_38
+    if-eqz v5, :cond_1
 
     const-string v6, "/"
 
@@ -1770,7 +1770,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_38
+    if-eqz v6, :cond_1
 
     new-instance v6, Ljava/io/File;
 
@@ -1780,14 +1780,14 @@
 
     move-result v6
 
-    if-eqz v6, :cond_38
+    if-eqz v6, :cond_1
 
     invoke-virtual {v0, v5}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    :cond_38
-    goto :goto_12
+    :cond_1
+    goto :goto_0
 
-    :cond_39
+    :cond_2
     sget-object v1, Llibs/AutoTaskWatcher;->observers:Ljava/util/HashMap;
 
     iget v3, p0, Llibs/d9;->Y:I
@@ -1802,13 +1802,13 @@
 
     check-cast v1, Ljava/util/ArrayList;
 
-    if-nez v1, :cond_4d
+    if-nez v1, :cond_3
 
     invoke-static {p0}, Llibs/AutoTaskWatcher;->registerObserversLocked(Llibs/d9;)V
 
     return-void
 
-    :cond_4d
+    :cond_3
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v3
@@ -1817,15 +1817,15 @@
 
     move-result v4
 
-    if-eq v3, v4, :cond_5b
+    if-eq v3, v4, :cond_4
 
     invoke-static {p0}, Llibs/AutoTaskWatcher;->registerObserversLocked(Llibs/d9;)V
 
     return-void
 
-    :cond_5b
-    :goto_5b
-    if-ge v2, v3, :cond_78
+    :cond_4
+    :goto_1
+    if-ge v2, v3, :cond_7
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1835,11 +1835,11 @@
 
     check-cast v4, Llibs/AutoTaskWatcher$DirObserver;
 
-    if-eqz v4, :cond_73
+    if-eqz v4, :cond_5
 
     iget-boolean v5, v4, Llibs/AutoTaskWatcher$DirObserver;->dead:Z
 
-    if-nez v5, :cond_73
+    if-nez v5, :cond_5
 
     iget-object v4, v4, Llibs/AutoTaskWatcher$DirObserver;->dirPath:Ljava/lang/String;
 
@@ -1847,25 +1847,25 @@
 
     move-result v4
 
-    if-nez v4, :cond_77
+    if-nez v4, :cond_6
 
-    :cond_73
+    :cond_5
     invoke-static {p0}, Llibs/AutoTaskWatcher;->registerObserversLocked(Llibs/d9;)V
-    :try_end_76
-    .catchall {:try_start_3 .. :try_end_76} :catchall_78
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
-    :cond_77
-    goto :goto_5b
+    :cond_6
+    goto :goto_1
 
-    :catchall_78
-    :cond_78
+    :catchall_0
+    :cond_7
     return-void
 .end method
 
 .method public static declared-synchronized ensureStartedFromService()V
-    .registers 1
+    .locals 1
 
     :try_start_0
     sget-object v0, Llibs/AutoTaskWatcher;->observers:Ljava/util/HashMap;
@@ -1874,30 +1874,30 @@
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     invoke-static {}, Llibs/AutoTaskWatcher;->syncAll()V
 
     return-void
 
-    :cond_c
+    :cond_0
     invoke-static {}, Llibs/AutoTaskWatcher;->startPollTimerLocked()V
-    :try_end_f
-    .catchall {:try_start_0 .. :try_end_f} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_f
+    :catchall_0
     return-void
 .end method
 
 .method public static executeJobWakeup(Landroid/app/job/JobService;Landroid/app/job/JobParameters;)V
-    .registers 4
+    .locals 2
 
     :try_start_0
     const-wide/16 v0, 0x7530
 
     invoke-static {v0, v1}, Llibs/AutoTaskWatcher;->acquireTaskWakeLock(J)V
 
-    if-eqz p1, :cond_35
+    if-eqz p1, :cond_2
 
     invoke-virtual {p1}, Landroid/app/job/JobParameters;->getJobId()I
 
@@ -1905,7 +1905,7 @@
 
     const v1, 0x77617463
 
-    if-ne v0, v1, :cond_1f
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x0
 
@@ -1919,9 +1919,9 @@
 
     invoke-static {v0}, Llibs/AutoTaskWatcher;->updateContentJob(Z)V
 
-    goto :goto_30
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     const/4 v1, 0x0
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1934,54 +1934,54 @@
 
     move-result v0
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_1
 
     invoke-static {}, Llibs/AutoTaskWatcher;->ensureStartedFromService()V
 
-    :cond_30
-    :goto_30
+    :cond_1
+    :goto_0
     const-wide/16 v0, 0x258
 
     invoke-static {v0, v1}, Ljava/lang/Thread;->sleep(J)V
-    :try_end_35
-    .catchall {:try_start_0 .. :try_end_35} :catchall_35
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_35
-    :cond_35
-    if-eqz p0, :cond_3d
+    :catchall_0
+    :cond_2
+    if-eqz p0, :cond_3
 
-    if-eqz p1, :cond_3d
+    if-eqz p1, :cond_3
 
-    :try_start_39
+    :try_start_1
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Landroid/app/job/JobService;->jobFinished(Landroid/app/job/JobParameters;Z)V
-    :try_end_3d
-    .catchall {:try_start_39 .. :try_end_3d} :catchall_3d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    :catchall_3d
-    :cond_3d
+    :catchall_1
+    :cond_3
     return-void
 .end method
 
 .method public static expandFilteredFolders(Llibs/d9;Ljava/util/Collection;ZJ)Ljava/util/LinkedHashSet;
-    .registers 13
+    .locals 8
 
-    if-eqz p0, :cond_57
+    if-eqz p0, :cond_3
 
-    if-eqz p1, :cond_57
+    if-eqz p1, :cond_3
 
     invoke-static {p0}, Llibs/AutoTaskWatcher;->getTaskNameFilter(Llibs/d9;)Ljava/lang/String;
 
     move-result-object v1
 
-    if-eqz v1, :cond_57
+    if-eqz v1, :cond_3
 
     invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
 
     move-result v2
 
-    if-nez v2, :cond_57
+    if-nez v2, :cond_3
 
     new-instance v0, Ljava/util/LinkedHashSet;
 
@@ -1991,13 +1991,13 @@
 
     move-result-object v2
 
-    :cond_19
-    :goto_19
+    :cond_0
+    :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_53
+    if-eqz v3, :cond_2
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2005,13 +2005,13 @@
 
     instance-of v4, v3, Llibs/rp0;
 
-    if-eqz v4, :cond_19
+    if-eqz v4, :cond_0
 
     check-cast v3, Llibs/rp0;
 
     iget-object v4, v3, Llibs/rp0;->Three:Ljava/lang/String;
 
-    if-eqz v4, :cond_4f
+    if-eqz v4, :cond_1
 
     const-string v5, "/"
 
@@ -2019,7 +2019,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_4f
+    if-eqz v5, :cond_1
 
     new-instance v5, Ljava/io/File;
 
@@ -2029,7 +2029,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_4f
+    if-eqz v6, :cond_1
 
     invoke-virtual {v3}, Llibs/rp0;->m()Ljava/lang/String;
 
@@ -2039,82 +2039,82 @@
 
     move-result v7
 
-    if-nez v7, :cond_4f
+    if-nez v7, :cond_1
 
     const/4 v7, 0x4
 
     invoke-static {v5, v1, v0, v7}, Llibs/AutoTaskWatcher;->arqexScan(Ljava/io/File;Ljava/lang/String;Ljava/util/LinkedHashSet;I)V
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_4f
+    :cond_1
     invoke-virtual {v0, v3}, Ljava/util/LinkedHashSet;->add(Ljava/lang/Object;)Z
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_53
+    :cond_2
     invoke-static {p0, v0}, Llibs/AutoTaskWatcher;->filterTaskItems(Llibs/d9;Ljava/util/Collection;)V
 
     return-object v0
 
-    :cond_57
+    :cond_3
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
 .method private static extractIntentSources(Landroid/content/Intent;Llibs/d9;)Ljava/util/List;
-    .registers 5
+    .locals 3
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
     iget-object v1, p1, Llibs/d9;->Omicron:Ljava/util/ArrayList;
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v2
 
-    if-nez v2, :cond_e
+    if-nez v2, :cond_0
 
     return-object v1
 
-    :cond_e
+    :cond_0
     invoke-virtual {p0}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object v1
 
-    if-nez v1, :cond_15
+    if-nez v1, :cond_1
 
     return-object v0
 
-    :cond_15
+    :cond_1
     const-string v2, "src"
 
     invoke-virtual {v1, v2}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v1
 
-    if-nez v1, :cond_1e
+    if-nez v1, :cond_2
 
     return-object v0
 
-    :cond_1e
+    :cond_2
     instance-of v0, v1, Ljava/util/List;
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_3
 
     check-cast v1, Ljava/util/List;
 
     return-object v1
 
-    :cond_25
+    :cond_3
     instance-of v0, v1, [Ljava/lang/String;
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_4
 
     check-cast v1, [Ljava/lang/String;
 
@@ -2124,7 +2124,7 @@
 
     return-object v0
 
-    :cond_30
+    :cond_4
     invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -2137,7 +2137,7 @@
 .end method
 
 .method private static extractWatchDir(Ljava/lang/Object;Z)Ljava/lang/String;
-    .registers 5
+    .locals 3
 
     invoke-static {p0}, Llibs/AutoTaskWatcher;->normalizeSourcePath(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -2145,18 +2145,18 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_49
+    if-eqz v0, :cond_5
 
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
     move-result v2
 
-    if-eqz v2, :cond_e
+    if-eqz v2, :cond_0
 
     return-object v1
 
-    :cond_e
-    if-eqz p1, :cond_15
+    :cond_0
+    if-eqz p1, :cond_1
 
     invoke-static {v0}, Llibs/vl3;->Bundle(Ljava/lang/String;)Ljava/lang/String;
 
@@ -2164,14 +2164,14 @@
 
     return-object v0
 
-    :cond_15
+    :cond_1
     const-string v2, "/*"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_2
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
@@ -2187,26 +2187,26 @@
 
     return-object v0
 
-    :cond_29
-    :try_start_29
+    :cond_2
+    :try_start_0
     invoke-static {v0}, Llibs/u73;->Intent(Ljava/lang/String;)Llibs/rp0;
 
     move-result-object v1
 
-    if-eqz v1, :cond_48
+    if-eqz v1, :cond_4
 
     iget-boolean v2, v1, Llibs/rp0;->One:Z
 
-    if-eqz v2, :cond_36
+    if-eqz v2, :cond_3
 
     iget-object v0, v1, Llibs/rp0;->Three:Ljava/lang/String;
 
     return-object v0
 
-    :cond_36
+    :cond_3
     iget-object v1, v1, Llibs/rp0;->Three:Ljava/lang/String;
 
-    if-eqz v1, :cond_48
+    if-eqz v1, :cond_4
 
     const/16 v2, 0x2f
 
@@ -2214,68 +2214,68 @@
 
     move-result v2
 
-    if-lez v2, :cond_48
+    if-lez v2, :cond_4
 
     const/4 v0, 0x0
 
     invoke-virtual {v1, v0, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v0
-    :try_end_47
-    .catchall {:try_start_29 .. :try_end_47} :catchall_48
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object v0
 
-    :catchall_48
-    :cond_48
+    :catchall_0
+    :cond_4
     return-object v0
 
-    :cond_49
+    :cond_5
     return-object v1
 .end method
 
 .method public static filterByExtFilter(Llibs/d9;Ljava/util/Collection;)V
-    .registers 6
+    .locals 4
 
-    if-eqz p0, :cond_3d
+    if-eqz p0, :cond_5
 
-    if-eqz p1, :cond_3d
+    if-eqz p1, :cond_5
 
     invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     return-void
 
-    :cond_b
+    :cond_0
     invoke-static {p0}, Llibs/AutoTaskWatcher;->getTaskExtFilter(Llibs/d9;)Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_5
 
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_1
 
     return-void
 
-    :cond_18
+    :cond_1
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    :cond_1c
-    :goto_1c
+    :cond_2
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_3d
+    if-eqz v2, :cond_5
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2283,15 +2283,15 @@
 
     check-cast v2, Llibs/rp0;
 
-    if-eqz v2, :cond_39
+    if-eqz v2, :cond_4
 
     iget-boolean v3, v2, Llibs/rp0;->One:Z
 
-    if-eqz v3, :cond_2f
+    if-eqz v3, :cond_3
 
-    goto :goto_39
+    goto :goto_1
 
-    :cond_2f
+    :cond_3
     invoke-virtual {v2}, Llibs/rp0;->m()Ljava/lang/String;
 
     move-result-object v2
@@ -2300,60 +2300,60 @@
 
     move-result v2
 
-    if-nez v2, :cond_1c
+    if-nez v2, :cond_2
 
-    :cond_39
-    :goto_39
+    :cond_4
+    :goto_1
     invoke-interface {v1}, Ljava/util/Iterator;->remove()V
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_3d
+    :cond_5
     return-void
 .end method
 
 .method public static filterByNameFilter(Llibs/d9;Ljava/util/Collection;)V
-    .registers 6
+    .locals 4
 
-    if-eqz p0, :cond_42
+    if-eqz p0, :cond_4
 
-    if-eqz p1, :cond_42
+    if-eqz p1, :cond_4
 
     invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     return-void
 
-    :cond_b
+    :cond_0
     invoke-static {p0}, Llibs/AutoTaskWatcher;->getTaskNameFilter(Llibs/d9;)Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_42
+    if-eqz v0, :cond_4
 
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_1
 
     return-void
 
-    :cond_18
+    :cond_1
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    :cond_1c
-    :goto_1c
+    :cond_2
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_42
+    if-eqz v2, :cond_4
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2361,11 +2361,11 @@
 
     check-cast v2, Llibs/rp0;
 
-    if-eqz v2, :cond_3e
+    if-eqz v2, :cond_3
 
-    goto :goto_2b
+    goto :goto_1
 
-    :goto_2b
+    :goto_1
     move-object v3, v2
 
     invoke-virtual {v2}, Llibs/rp0;->m()Ljava/lang/String;
@@ -2376,7 +2376,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_1c
+    if-nez v2, :cond_2
 
     iget-object v3, v3, Llibs/rp0;->Three:Ljava/lang/String;
 
@@ -2384,31 +2384,31 @@
 
     move-result v2
 
-    if-nez v2, :cond_1c
+    if-nez v2, :cond_2
 
-    :cond_3e
+    :cond_3
     invoke-interface {v1}, Ljava/util/Iterator;->remove()V
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_42
+    :cond_4
     return-void
 .end method
 
 .method private static filterRenamePrefixed(Llibs/d9;Ljava/util/LinkedHashSet;)V
-    .registers 5
+    .locals 3
 
-    if-eqz p0, :cond_4f
+    if-eqz p0, :cond_4
 
-    if-nez p1, :cond_5
+    if-nez p1, :cond_0
 
     return-void
 
-    :cond_5
-    :try_start_5
+    :cond_0
+    :try_start_0
     iget-object v0, p0, Llibs/d9;->Nu:Ljava/lang/String;
 
-    if-eqz v0, :cond_4f
+    if-eqz v0, :cond_4
 
     const-string v1, "RENAME"
 
@@ -2420,11 +2420,11 @@
 
     move-result v0
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_1
 
     return-void
 
-    :cond_16
+    :cond_1
     invoke-static {p0}, Llibs/AutoTaskWatcher;->getTaskFilePrefix(Llibs/d9;)Ljava/lang/String;
 
     move-result-object v0
@@ -2437,7 +2437,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_4f
+    if-nez v1, :cond_4
 
     const-string v1, "%C"
 
@@ -2445,22 +2445,22 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2d
+    if-eqz v1, :cond_2
 
     return-void
 
-    :cond_2d
+    :cond_2
     invoke-virtual {p1}, Ljava/util/AbstractCollection;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    :cond_31
-    :goto_31
+    :cond_3
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_4f
+    if-eqz v2, :cond_4
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2468,33 +2468,33 @@
 
     check-cast v2, Llibs/rp0;
 
-    if-eqz v2, :cond_31
+    if-eqz v2, :cond_3
 
     invoke-virtual {v2}, Llibs/rp0;->m()Ljava/lang/String;
 
     move-result-object v2
 
-    if-eqz v2, :cond_31
+    if-eqz v2, :cond_3
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_31
+    if-eqz v2, :cond_3
 
     invoke-interface {v1}, Ljava/util/Iterator;->remove()V
-    :try_end_4e
-    .catchall {:try_start_5 .. :try_end_4e} :catchall_4f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_31
+    goto :goto_0
 
-    :catchall_4f
-    :cond_4f
+    :catchall_0
+    :cond_4
     return-void
 .end method
 
 .method public static filterTaskItems(Llibs/d9;Ljava/util/Collection;)V
-    .registers 2
+    .locals 0
 
     invoke-static {p0, p1}, Llibs/AutoTaskWatcher;->filterByExtFilter(Llibs/d9;Ljava/util/Collection;)V
 
@@ -2504,16 +2504,16 @@
 .end method
 
 .method private static findDialogCheckBox(Llibs/od;Ljava/util/WeakHashMap;I)Landroid/widget/CheckBox;
-    .registers 5
+    .locals 2
 
     const/4 v0, 0x0
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     return-object v0
 
-    :cond_4
-    if-eqz p1, :cond_f
+    :cond_0
+    if-eqz p1, :cond_1
 
     invoke-virtual {p1, p0}, Ljava/util/WeakHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -2521,14 +2521,14 @@
 
     check-cast v0, Landroid/widget/CheckBox;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_1
 
     return-object v0
 
-    :cond_f
+    :cond_1
     iget-object v1, p0, Llibs/od;->Omicron:Landroid/view/ViewGroup;
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_2
 
     invoke-virtual {v1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2536,27 +2536,27 @@
 
     instance-of p2, v1, Landroid/widget/CheckBox;
 
-    if-eqz p2, :cond_1e
+    if-eqz p2, :cond_2
 
     move-object v0, v1
 
     check-cast v0, Landroid/widget/CheckBox;
 
-    :cond_1e
+    :cond_2
     return-object v0
 .end method
 
 .method private static findDialogEditText(Llibs/od;Ljava/util/WeakHashMap;I)Lcom/mixplorer/widgets/MiEditText;
-    .registers 5
+    .locals 2
 
     const/4 v0, 0x0
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     return-object v0
 
-    :cond_4
-    if-eqz p1, :cond_f
+    :cond_0
+    if-eqz p1, :cond_1
 
     invoke-virtual {p1, p0}, Ljava/util/WeakHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -2564,14 +2564,14 @@
 
     check-cast v0, Lcom/mixplorer/widgets/MiEditText;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_1
 
     return-object v0
 
-    :cond_f
+    :cond_1
     iget-object v1, p0, Llibs/od;->Omicron:Landroid/view/ViewGroup;
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_2
 
     invoke-virtual {v1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2579,24 +2579,24 @@
 
     instance-of p2, v1, Lcom/mixplorer/widgets/MiEditText;
 
-    if-eqz p2, :cond_1e
+    if-eqz p2, :cond_2
 
     move-object v0, v1
 
     check-cast v0, Lcom/mixplorer/widgets/MiEditText;
 
-    :cond_1e
+    :cond_2
     return-object v0
 .end method
 
 .method private static findNameCheck(Llibs/od;)Landroid/widget/CheckBox;
-    .registers 4
+    .locals 3
 
-    if-eqz p0, :cond_22
+    if-eqz p0, :cond_1
 
     iget-object v1, p0, Llibs/od;->Omicron:Landroid/view/ViewGroup;
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     const/16 v2, 0x55
 
@@ -2604,20 +2604,20 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     instance-of v2, v1, Landroid/widget/CheckBox;
 
-    if-eqz v2, :cond_15
+    if-eqz v2, :cond_0
 
     check-cast v1, Landroid/widget/CheckBox;
 
     return-object v1
 
-    :cond_15
+    :cond_0
     sget-object v1, Llibs/AutoTaskWatcher;->dialogNameCheckBoxes:Ljava/util/WeakHashMap;
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_1
 
     invoke-virtual {v1, p0}, Ljava/util/WeakHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -2625,24 +2625,24 @@
 
     check-cast v1, Landroid/widget/CheckBox;
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_1
 
     return-object v1
 
-    :cond_22
+    :cond_1
     sget-object v1, Llibs/AutoTaskWatcher;->nameUiCheck:Landroid/widget/CheckBox;
 
     return-object v1
 .end method
 
 .method private static findNameEdit(Llibs/od;)Lcom/mixplorer/widgets/MiEditText;
-    .registers 4
+    .locals 3
 
-    if-eqz p0, :cond_22
+    if-eqz p0, :cond_1
 
     iget-object v1, p0, Llibs/od;->Omicron:Landroid/view/ViewGroup;
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     const/16 v2, 0x56
 
@@ -2650,20 +2650,20 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     instance-of v2, v1, Lcom/mixplorer/widgets/MiEditText;
 
-    if-eqz v2, :cond_15
+    if-eqz v2, :cond_0
 
     check-cast v1, Lcom/mixplorer/widgets/MiEditText;
 
     return-object v1
 
-    :cond_15
+    :cond_0
     sget-object v1, Llibs/AutoTaskWatcher;->dialogNameEdits:Ljava/util/WeakHashMap;
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_1
 
     invoke-virtual {v1, p0}, Ljava/util/WeakHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -2671,22 +2671,22 @@
 
     check-cast v1, Lcom/mixplorer/widgets/MiEditText;
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_1
 
     return-object v1
 
-    :cond_22
+    :cond_1
     sget-object v1, Llibs/AutoTaskWatcher;->nameUiEdit:Lcom/mixplorer/widgets/MiEditText;
 
     return-object v1
 .end method
 
 .method public static formatSubtitle(Llibs/d9;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 8
+    .locals 5
 
     move-object v0, p2
 
-    if-eqz p0, :cond_42
+    if-eqz p0, :cond_2
 
     iget-wide v1, p0, Llibs/d9;->Mu:J
 
@@ -2694,7 +2694,7 @@
 
     cmp-long v1, v1, v3
 
-    if-nez v1, :cond_19
+    if-nez v1, :cond_0
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -2708,24 +2708,24 @@
 
     move-result-object v0
 
-    :cond_19
+    :cond_0
     invoke-static {p0}, Llibs/AutoTaskWatcher;->getTaskExtFilter(Llibs/d9;)Ljava/lang/String;
 
     move-result-object v1
 
-    if-eqz v1, :cond_42
+    if-eqz v1, :cond_2
 
     invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
 
     move-result v2
 
-    if-nez v2, :cond_42
+    if-nez v2, :cond_2
 
-    if-nez v0, :cond_29
+    if-nez v0, :cond_1
 
     const-string v0, ""
 
-    :cond_29
+    :cond_1
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -2746,22 +2746,22 @@
 
     move-result-object v0
 
-    :cond_42
+    :cond_2
     return-object v0
 .end method
 
 .method private static getConfigPrefs()Landroid/content/SharedPreferences;
-    .registers 3
+    .locals 3
 
     sget-object v0, Llibs/zt0;->g:Landroid/content/Context;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
     return-object v0
 
-    :cond_6
+    :cond_0
     const-string v1, "auto_watch_config"
 
     const/4 v2, 0x0
@@ -2774,7 +2774,7 @@
 .end method
 
 .method public static getExtFilterCheckLabel()Ljava/lang/String;
-    .registers 2
+    .locals 2
 
     invoke-static {}, Llibs/AutoTaskWatcher;->getLangCode()Ljava/lang/String;
 
@@ -2786,33 +2786,33 @@
 
     move-result v1
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     const-string v0, "Filtrar por extens\u00e3o (Download inteligente)"
 
     return-object v0
 
-    :cond_f
+    :cond_0
     const-string v1, "es"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
     const-string v0, "Filtrar por extensi\u00f3n (Descarga inteligente)"
 
     return-object v0
 
-    :cond_1a
+    :cond_1
     const-string v0, "Filter by extension (Smart Download)"
 
     return-object v0
 .end method
 
 .method public static getExtFilterHintLabel()Ljava/lang/String;
-    .registers 2
+    .locals 2
 
     invoke-static {}, Llibs/AutoTaskWatcher;->getLangCode()Ljava/lang/String;
 
@@ -2824,50 +2824,50 @@
 
     move-result v1
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     const-string v0, "Extens\u00f5es (ex: pdf, apk, zip)"
 
     return-object v0
 
-    :cond_f
+    :cond_0
     const-string v1, "es"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
     const-string v0, "Extensiones (ej: pdf, apk, zip)"
 
     return-object v0
 
-    :cond_1a
+    :cond_1
     const-string v0, "Extensions (e.g. pdf, apk, zip)"
 
     return-object v0
 .end method
 
 .method private static getLangCode()Ljava/lang/String;
-    .registers 2
+    .locals 2
 
     sget-object v0, Llibs/ho2;->c:Ljava/util/Locale;
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v0
 
-    :cond_8
-    if-eqz v0, :cond_17
+    :cond_0
+    if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1
 
     sget-object v1, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
@@ -2877,22 +2877,22 @@
 
     return-object v0
 
-    :cond_17
+    :cond_1
     const-string v0, "en"
 
     return-object v0
 .end method
 
 .method private static getNameFilterById(Llibs/d9;)Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     const-string v0, ""
 
-    if-nez p0, :cond_5
+    if-nez p0, :cond_0
 
     return-object v0
 
-    :cond_5
+    :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "name_id_"
@@ -2911,34 +2911,34 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_1c
+    if-nez v2, :cond_1
 
     return-object v0
 
-    :cond_1c
+    :cond_1
     invoke-interface {v2, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
     move-result v3
 
-    if-nez v3, :cond_23
+    if-nez v3, :cond_2
 
     return-object v0
 
-    :cond_23
+    :cond_2
     invoke-interface {v2, v1, v0}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    if-nez v1, :cond_2a
+    if-nez v1, :cond_3
 
     return-object v0
 
-    :cond_2a
+    :cond_3
     return-object v1
 .end method
 
 .method private static getNameFilterByTitle(Llibs/d9;)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const-string v0, ""
 
@@ -2946,7 +2946,7 @@
 .end method
 
 .method public static getNameFilterCheckLabel()Ljava/lang/String;
-    .registers 2
+    .locals 2
 
     invoke-static {}, Llibs/AutoTaskWatcher;->getLangCode()Ljava/lang/String;
 
@@ -2958,33 +2958,33 @@
 
     move-result v1
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     const-string v0, "Filtrar por nome (parte do nome ou pasta)"
 
     return-object v0
 
-    :cond_f
+    :cond_0
     const-string v1, "es"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
     const-string v0, "Filtrar por nombre (parte del nombre o carpeta)"
 
     return-object v0
 
-    :cond_1a
+    :cond_1
     const-string v0, "Filter by name (part of the name or folder)"
 
     return-object v0
 .end method
 
 .method public static getNameFilterHintLabel()Ljava/lang/String;
-    .registers 2
+    .locals 2
 
     invoke-static {}, Llibs/AutoTaskWatcher;->getLangCode()Ljava/lang/String;
 
@@ -2996,42 +2996,42 @@
 
     move-result v1
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     const-string v0, "Nome (ex: projetoteste_v1.7, use * como coringa, v\u00edrgula separa)"
 
     return-object v0
 
-    :cond_f
+    :cond_0
     const-string v1, "es"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
     const-string v0, "Nombre (ej: proyectotest_v1.7, * es comod\u00edn, coma separa)"
 
     return-object v0
 
-    :cond_1a
+    :cond_1
     const-string v0, "Name (e.g. project_v1.7, * is a wildcard, comma separates)"
 
     return-object v0
 .end method
 
 .method private static getNameLive(Llibs/od;)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     const-string v0, ""
 
-    if-eqz p0, :cond_11
+    if-eqz p0, :cond_0
 
-    :try_start_4
+    :try_start_0
     sget-object v1, Llibs/AutoTaskWatcher;->nameLiveText:Ljava/util/WeakHashMap;
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     invoke-virtual {v1, p0}, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -3039,19 +3039,19 @@
 
     check-cast v1, Ljava/lang/String;
 
-    if-eqz v1, :cond_11
-    :try_end_10
-    .catchall {:try_start_4 .. :try_end_10} :catchall_11
+    if-eqz v1, :cond_0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object v1
 
-    :catchall_11
-    :cond_11
+    :catchall_0
+    :cond_0
     return-object v0
 .end method
 
 .method public static getNotifyLabel()Ljava/lang/String;
-    .registers 2
+    .locals 2
 
     invoke-static {}, Llibs/AutoTaskWatcher;->getLangCode()Ljava/lang/String;
 
@@ -3063,72 +3063,72 @@
 
     move-result v1
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     const-string v0, "Mostrar notifica\u00e7\u00e3o ao concluir"
 
     return-object v0
 
-    :cond_f
+    :cond_0
     const-string v1, "es"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_1
 
     const-string v0, "Mostrar notificaci\u00f3n al finalizar"
 
     return-object v0
 
-    :cond_1a
+    :cond_1
     const-string v1, "fr"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_2
 
     const-string v0, "Afficher la notification \u00e0 la fin"
 
     return-object v0
 
-    :cond_25
+    :cond_2
     const-string v1, "it"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_3
 
     const-string v0, "Mostra notifica al termine"
 
     return-object v0
 
-    :cond_30
+    :cond_3
     const-string v1, "de"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_4
 
     const-string v0, "Benachrichtigung nach Abschluss anzeigen"
 
     return-object v0
 
-    :cond_3b
+    :cond_4
     const-string v0, "Show notification when finished"
 
     return-object v0
 .end method
 
 .method public static getOnlyFilesLabel()Ljava/lang/String;
-    .registers 2
+    .locals 2
 
     invoke-static {}, Llibs/AutoTaskWatcher;->getLangCode()Ljava/lang/String;
 
@@ -3140,72 +3140,72 @@
 
     move-result v1
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     const-string v0, "Apenas arquivos da pasta (n\u00e3o a pasta inteira)"
 
     return-object v0
 
-    :cond_f
+    :cond_0
     const-string v1, "es"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_1
 
     const-string v0, "Solo archivos de la carpeta (no la carpeta entera)"
 
     return-object v0
 
-    :cond_1a
+    :cond_1
     const-string v1, "fr"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_2
 
     const-string v0, "Fichiers du dossier uniquement (pas le dossier)"
 
     return-object v0
 
-    :cond_25
+    :cond_2
     const-string v1, "it"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_3
 
     const-string v0, "Solo file della cartella (non l\'intera cartella)"
 
     return-object v0
 
-    :cond_30
+    :cond_3
     const-string v1, "de"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_4
 
     const-string v0, "Nur Dateien im Ordner (nicht den ganzen Ordner)"
 
     return-object v0
 
-    :cond_3b
+    :cond_4
     const-string v0, "Only files in folder (not whole folder)"
 
     return-object v0
 .end method
 
 .method public static getPrefixCheckLabel()Ljava/lang/String;
-    .registers 2
+    .locals 2
 
     invoke-static {}, Llibs/AutoTaskWatcher;->getLangCode()Ljava/lang/String;
 
@@ -3217,72 +3217,72 @@
 
     move-result v1
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     const-string v0, "Renomear arquivo(s) com prefixo"
 
     return-object v0
 
-    :cond_f
+    :cond_0
     const-string v1, "es"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_1
 
     const-string v0, "Renombrar archivo(s) con prefijo"
 
     return-object v0
 
-    :cond_1a
+    :cond_1
     const-string v1, "fr"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_2
 
     const-string v0, "Renommer fichier(s) avec pr\u00e9fixe"
 
     return-object v0
 
-    :cond_25
+    :cond_2
     const-string v1, "it"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_3
 
     const-string v0, "Rinomina file con prefisso"
 
     return-object v0
 
-    :cond_30
+    :cond_3
     const-string v1, "de"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_4
 
     const-string v0, "Datei(en) mit Pr\u00e4fix umbenennen"
 
     return-object v0
 
-    :cond_3b
+    :cond_4
     const-string v0, "Rename file(s) with prefix"
 
     return-object v0
 .end method
 
 .method public static getPrefixHintLabel()Ljava/lang/String;
-    .registers 2
+    .locals 2
 
     invoke-static {}, Llibs/AutoTaskWatcher;->getLangCode()Ljava/lang/String;
 
@@ -3294,82 +3294,82 @@
 
     move-result v1
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     const-string v0, "Prefixo do nome (ex: Doc_)"
 
     return-object v0
 
-    :cond_f
+    :cond_0
     const-string v1, "es"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_1
 
     const-string v0, "Prefijo del nombre (ej: Doc_)"
 
     return-object v0
 
-    :cond_1a
+    :cond_1
     const-string v1, "fr"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_2
 
     const-string v0, "Pr\u00e9fixe du nom (ex: Doc_)"
 
     return-object v0
 
-    :cond_25
+    :cond_2
     const-string v1, "it"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_3
 
     const-string v0, "Prefisso del nome (es: Doc_)"
 
     return-object v0
 
-    :cond_30
+    :cond_3
     const-string v1, "de"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_4
 
     const-string v0, "Namenspr\u00e4fix (z. B. Dok_)"
 
     return-object v0
 
-    :cond_3b
+    :cond_4
     const-string v0, "Name prefix (e.g. Doc_)"
 
     return-object v0
 .end method
 
 .method private static getSeenPrefs(I)Landroid/content/SharedPreferences;
-    .registers 4
+    .locals 3
 
     sget-object v0, Llibs/zt0;->g:Landroid/content/Context;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
     return-object v0
 
-    :cond_6
+    :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "auto_watch_seen_"
@@ -3392,16 +3392,16 @@
 .end method
 
 .method public static declared-synchronized getTaskExtFilter(Llibs/d9;)Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     const-string v0, ""
 
-    if-nez p0, :cond_5
+    if-nez p0, :cond_0
 
     return-object v0
 
-    :cond_5
-    :try_start_5
+    :cond_0
+    :try_start_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "ext_"
@@ -3426,54 +3426,54 @@
 
     check-cast v3, Ljava/lang/String;
 
-    if-eqz v3, :cond_22
+    if-eqz v3, :cond_1
 
     return-object v3
 
-    :cond_22
+    :cond_1
     invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
 
     move-result-object v3
 
-    if-eqz v3, :cond_39
+    if-eqz v3, :cond_3
 
     invoke-interface {v3, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_39
+    if-eqz v4, :cond_3
 
     invoke-interface {v3, v1, v0}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    if-nez v3, :cond_35
+    if-nez v3, :cond_2
 
     move-object v3, v0
 
-    :cond_35
+    :cond_2
     invoke-virtual {v2, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_38
-    .catchall {:try_start_5 .. :try_end_38} :catchall_39
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object v3
 
-    :catchall_39
-    :cond_39
+    :catchall_0
+    :cond_3
     return-object v0
 .end method
 
 .method public static declared-synchronized getTaskFilePrefix(Llibs/d9;)Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     const-string v0, ""
 
-    if-nez p0, :cond_5
+    if-nez p0, :cond_0
 
     return-object v0
 
-    :cond_5
-    :try_start_5
+    :cond_0
+    :try_start_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "prefix_"
@@ -3498,84 +3498,84 @@
 
     check-cast v3, Ljava/lang/String;
 
-    if-eqz v3, :cond_22
+    if-eqz v3, :cond_1
 
     return-object v3
 
-    :cond_22
+    :cond_1
     invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
 
     move-result-object v3
 
-    if-eqz v3, :cond_39
+    if-eqz v3, :cond_3
 
     invoke-interface {v3, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_39
+    if-eqz v4, :cond_3
 
     invoke-interface {v3, v1, v0}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    if-nez v3, :cond_35
+    if-nez v3, :cond_2
 
     move-object v3, v0
 
-    :cond_35
+    :cond_2
     invoke-virtual {v2, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_38
-    .catchall {:try_start_5 .. :try_end_38} :catchall_39
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object v3
 
-    :catchall_39
-    :cond_39
+    :catchall_0
+    :cond_3
     return-object v0
 .end method
 
 .method public static declared-synchronized getTaskNameFilter(Llibs/d9;)Ljava/lang/String;
-    .registers 8
+    .locals 7
 
     const-string v0, ""
 
-    if-nez p0, :cond_5
+    if-nez p0, :cond_0
 
     return-object v0
 
-    :cond_5
-    :try_start_5
+    :cond_0
+    :try_start_0
     invoke-static {p0}, Llibs/AutoTaskWatcher;->getNameFilterById(Llibs/d9;)Ljava/lang/String;
 
     move-result-object v4
 
-    if-eqz v4, :cond_12
+    if-eqz v4, :cond_1
 
     invoke-virtual {v4}, Ljava/lang/String;->isEmpty()Z
 
     move-result v5
 
-    if-nez v5, :cond_12
+    if-nez v5, :cond_1
 
     return-object v4
 
-    :cond_12
+    :cond_1
     invoke-static {p0}, Llibs/AutoTaskWatcher;->getNameFilterByTitle(Llibs/d9;)Ljava/lang/String;
 
     move-result-object v4
 
-    if-eqz v4, :cond_1f
+    if-eqz v4, :cond_2
 
     invoke-virtual {v4}, Ljava/lang/String;->isEmpty()Z
 
     move-result v5
 
-    if-nez v5, :cond_1f
+    if-nez v5, :cond_2
 
     return-object v4
 
-    :cond_1f
+    :cond_2
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "name_"
@@ -3600,45 +3600,45 @@
 
     check-cast v3, Ljava/lang/String;
 
-    if-eqz v3, :cond_3c
+    if-eqz v3, :cond_3
 
     return-object v3
 
-    :cond_3c
+    :cond_3
     invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
 
     move-result-object v3
 
-    if-eqz v3, :cond_53
+    if-eqz v3, :cond_5
 
     invoke-interface {v3, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_53
+    if-eqz v4, :cond_5
 
     invoke-interface {v3, v1, v0}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    if-nez v3, :cond_4f
+    if-nez v3, :cond_4
 
     move-object v3, v0
 
-    :cond_4f
+    :cond_4
     invoke-virtual {v2, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_52
-    .catchall {:try_start_5 .. :try_end_52} :catchall_53
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object v3
 
-    :catchall_53
-    :cond_53
+    :catchall_0
+    :cond_5
     return-object v0
 .end method
 
 .method private static getTaskRuleKey(Llibs/d9;)Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -3696,7 +3696,7 @@
 .end method
 
 .method public static getWatchLabel()Ljava/lang/String;
-    .registers 2
+    .locals 2
 
     invoke-static {}, Llibs/AutoTaskWatcher;->getLangCode()Ljava/lang/String;
 
@@ -3708,72 +3708,72 @@
 
     move-result v1
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     const-string v0, "AO DETECTAR ARQUIVO"
 
     return-object v0
 
-    :cond_f
+    :cond_0
     const-string v1, "es"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_1
 
     const-string v0, "AL DETECTAR ARCHIVO"
 
     return-object v0
 
-    :cond_1a
+    :cond_1
     const-string v1, "fr"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_2
 
     const-string v0, "FICHIER D\u00c9TECT\u00c9"
 
     return-object v0
 
-    :cond_25
+    :cond_2
     const-string v1, "it"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_3
 
     const-string v0, "FILE RILEVATO"
 
     return-object v0
 
-    :cond_30
+    :cond_3
     const-string v1, "de"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_4
 
     const-string v0, "BEI NEUER DATEI"
 
     return-object v0
 
-    :cond_3b
+    :cond_4
     const-string v0, "ON FILE DETECTED"
 
     return-object v0
 .end method
 
 .method public static getWatcherChannelName()Ljava/lang/String;
-    .registers 2
+    .locals 2
 
     invoke-static {}, Llibs/AutoTaskWatcher;->getLangCode()Ljava/lang/String;
 
@@ -3785,72 +3785,72 @@
 
     move-result v1
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     const-string v0, "Monitoramento de Tarefas"
 
     return-object v0
 
-    :cond_f
+    :cond_0
     const-string v1, "es"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_1
 
     const-string v0, "Monitoreo de tareas"
 
     return-object v0
 
-    :cond_1a
+    :cond_1
     const-string v1, "fr"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_2
 
     const-string v0, "Surveillance des t\u00e2ches"
 
     return-object v0
 
-    :cond_25
+    :cond_2
     const-string v1, "it"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_3
 
     const-string v0, "Monitoraggio attivit\u00e0"
 
     return-object v0
 
-    :cond_30
+    :cond_3
     const-string v1, "de"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_4
 
     const-string v0, "Aufgaben\u00fcberwachung"
 
     return-object v0
 
-    :cond_3b
+    :cond_4
     const-string v0, "Auto Task Monitoring"
 
     return-object v0
 .end method
 
 .method public static getWatcherStatusText()Ljava/lang/String;
-    .registers 2
+    .locals 2
 
     invoke-static {}, Llibs/AutoTaskWatcher;->getLangCode()Ljava/lang/String;
 
@@ -3862,76 +3862,76 @@
 
     move-result v1
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     const-string v0, "Monitoramento autom\u00e1tico de pastas ativo"
 
     return-object v0
 
-    :cond_f
+    :cond_0
     const-string v1, "es"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_1
 
     const-string v0, "Monitoreo autom\u00e1tico de carpetas activo"
 
     return-object v0
 
-    :cond_1a
+    :cond_1
     const-string v1, "fr"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_2
 
     const-string v0, "Surveillance automatique des dossiers active"
 
     return-object v0
 
-    :cond_25
+    :cond_2
     const-string v1, "it"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_3
 
     const-string v0, "Monitoraggio automatico cartelle attivo"
 
     return-object v0
 
-    :cond_30
+    :cond_3
     const-string v1, "de"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_4
 
     const-string v0, "Automatische Ordner\u00fcberwachung aktiv"
 
     return-object v0
 
-    :cond_3b
+    :cond_4
     const-string v0, "Automatic folder monitoring active"
 
     return-object v0
 .end method
 
 .method public static handleJobWakeup(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 2
 
     instance-of v0, p0, Ljava/lang/Integer;
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     check-cast p0, Ljava/lang/Integer;
 
@@ -3941,7 +3941,7 @@
 
     const v1, 0x77617463
 
-    if-ne v0, v1, :cond_18
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x0
 
@@ -3953,23 +3953,23 @@
 
     return v0
 
-    :cond_18
+    :cond_0
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method public static declared-synchronized handleSchedule(Llibs/d9;ZLandroid/content/Intent;)Z
-    .registers 9
+    .locals 6
 
     const/4 v0, 0x0
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     return v0
 
-    :cond_4
-    :try_start_4
+    :cond_0
+    :try_start_0
     iget v1, p0, Llibs/d9;->Y:I
 
     invoke-static {v1}, Llibs/AutoTaskWatcher;->stopObserversForTaskLocked(I)V
@@ -3988,22 +3988,22 @@
 
     cmp-long v2, v2, v4
 
-    if-nez v2, :cond_3a
+    if-nez v2, :cond_3
 
     invoke-static {p2, v1}, Llibs/e9;->c(Landroid/content/Intent;I)V
 
-    if-eqz p1, :cond_26
+    if-eqz p1, :cond_1
 
     invoke-static {v1}, Llibs/AutoTaskWatcher;->clearSeenPrefs(I)V
 
     invoke-static {}, Llibs/AutoTaskWatcher;->updatePollAndJobLocked()V
 
-    goto :goto_38
+    goto :goto_0
 
-    :cond_26
+    :cond_1
     iget v2, p0, Llibs/d9;->One:I
 
-    if-gtz v2, :cond_35
+    if-gtz v2, :cond_2
 
     invoke-static {p0}, Llibs/AutoTaskWatcher;->registerObserversLocked(Llibs/d9;)V
 
@@ -4013,33 +4013,33 @@
 
     invoke-static {}, Llibs/AutoTaskWatcher;->startPollTimerLocked()V
 
-    :cond_35
+    :cond_2
     invoke-static {}, Llibs/AutoTaskWatcher;->updatePollAndJobLocked()V
-    :try_end_38
-    .catchall {:try_start_4 .. :try_end_38} :catchall_38
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_38
-    :goto_38
+    :catchall_0
+    :goto_0
     const/4 v0, 0x1
 
     return v0
 
-    :cond_3a
-    :try_start_3a
+    :cond_3
+    :try_start_1
     invoke-static {}, Llibs/AutoTaskWatcher;->updatePollAndJobLocked()V
-    :try_end_3d
-    .catchall {:try_start_3a .. :try_end_3d} :catchall_3d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    :catchall_3d
+    :catchall_1
     return v0
 .end method
 
 .method private static hasEnabledWatchTasks()Z
-    .registers 9
+    .locals 9
 
     const/4 v0, 0x0
 
-    :try_start_1
+    :try_start_0
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-static {}, Llibs/e9;->n()Ljava/util/ArrayList;
@@ -4054,8 +4054,8 @@
 
     move v3, v0
 
-    :goto_f
-    if-ge v3, v2, :cond_2a
+    :goto_0
+    if-ge v3, v2, :cond_1
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -4065,7 +4065,7 @@
 
     check-cast v4, Llibs/d9;
 
-    if-eqz v4, :cond_29
+    if-eqz v4, :cond_0
 
     iget-wide v5, v4, Llibs/d9;->Mu:J
 
@@ -4073,28 +4073,28 @@
 
     cmp-long v5, v5, v7
 
-    if-nez v5, :cond_29
+    if-nez v5, :cond_0
 
     iget v4, v4, Llibs/d9;->One:I
-    :try_end_25
-    .catchall {:try_start_1 .. :try_end_25} :catchall_2a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-gtz v4, :cond_29
+    if-gtz v4, :cond_0
 
     const/4 v0, 0x1
 
     return v0
 
-    :cond_29
-    goto :goto_f
+    :cond_0
+    goto :goto_0
 
-    :catchall_2a
-    :cond_2a
+    :catchall_0
+    :cond_1
     return v0
 .end method
 
 .method public static hasEnabledWatchTasksPublic()Z
-    .registers 1
+    .locals 1
 
     invoke-static {}, Llibs/AutoTaskWatcher;->hasEnabledWatchTasks()Z
 
@@ -4104,15 +4104,15 @@
 .end method
 
 .method private static hasFreshZeroByteFile(Ljava/util/Collection;)Z
-    .registers 11
+    .locals 10
 
     const/4 v2, 0x0
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     return v2
 
-    :cond_4
+    :cond_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -4121,13 +4121,13 @@
 
     move-result-object v3
 
-    :cond_c
-    :goto_c
+    :cond_1
+    :goto_0
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_52
+    if-eqz v4, :cond_2
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -4135,15 +4135,15 @@
 
     check-cast v4, Llibs/rp0;
 
-    if-eqz v4, :cond_c
+    if-eqz v4, :cond_1
 
     iget-boolean v5, v4, Llibs/rp0;->One:Z
 
-    if-nez v5, :cond_c
+    if-nez v5, :cond_1
 
     iget-object v4, v4, Llibs/rp0;->Three:Ljava/lang/String;
 
-    if-eqz v4, :cond_c
+    if-eqz v4, :cond_1
 
     const-string v5, "/"
 
@@ -4151,9 +4151,9 @@
 
     move-result v5
 
-    if-eqz v5, :cond_c
+    if-eqz v5, :cond_1
 
-    :try_start_2a
+    :try_start_0
     new-instance v5, Ljava/io/File;
 
     invoke-direct {v5, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
@@ -4162,7 +4162,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_c
+    if-eqz v4, :cond_1
 
     invoke-virtual {v5}, Ljava/io/File;->length()J
 
@@ -4172,64 +4172,64 @@
 
     cmp-long v4, v6, v8
 
-    if-nez v4, :cond_c
+    if-nez v4, :cond_1
 
     invoke-virtual {v5}, Ljava/io/File;->lastModified()J
 
     move-result-wide v6
-    :try_end_43
-    .catchall {:try_start_2a .. :try_end_43} :catchall_51
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     sub-long v6, v0, v6
 
     cmp-long v4, v6, v8
 
-    if-ltz v4, :cond_c
+    if-ltz v4, :cond_1
 
     const-wide/16 v8, 0x1194
 
     cmp-long v4, v6, v8
 
-    if-gez v4, :cond_c
+    if-gez v4, :cond_1
 
     const/4 v2, 0x1
 
     return v2
 
-    :catchall_51
-    goto :goto_c
+    :catchall_0
+    goto :goto_0
 
-    :cond_52
+    :cond_2
     return v2
 .end method
 
 .method public static hasTaskExtFilter(Llibs/d9;)Z
-    .registers 2
+    .locals 1
 
     invoke-static {p0}, Llibs/AutoTaskWatcher;->getTaskExtFilter(Llibs/d9;)Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
     return v0
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method public static initStartup()V
-    .registers 3
+    .locals 3
 
     :try_start_0
     const/4 v0, -0x1
@@ -4237,23 +4237,23 @@
     const-wide/16 v1, 0x9c4
 
     invoke-static {v0, v1, v2}, Llibs/AutoTaskWatcher;->scheduleTrigger(IJ)V
-    :try_end_6
-    .catchall {:try_start_0 .. :try_end_6} :catchall_6
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_6
+    :catchall_0
     return-void
 .end method
 
 .method private static isMoveOrDeleteTask(Ljava/lang/String;)Z
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v1
@@ -4264,7 +4264,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_1
 
     const-string v0, "DELETE"
 
@@ -4272,30 +4272,30 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_2
 
-    :cond_18
+    :cond_1
     const/4 v0, 0x1
 
     return v0
 
-    :cond_1a
+    :cond_2
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method public static declared-synchronized isNotificationEnabledForTask(Llibs/d9;)Z
-    .registers 6
+    .locals 5
 
     const/4 v0, 0x1
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     return v0
 
-    :cond_4
-    :try_start_4
+    :cond_0
+    :try_start_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "notify_"
@@ -4320,7 +4320,7 @@
 
     check-cast v3, Ljava/lang/Boolean;
 
-    if-eqz v3, :cond_25
+    if-eqz v3, :cond_1
 
     invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -4328,18 +4328,18 @@
 
     return v0
 
-    :cond_25
+    :cond_1
     invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
 
     move-result-object v3
 
-    if-eqz v3, :cond_3d
+    if-eqz v3, :cond_2
 
     invoke-interface {v3, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_3d
+    if-eqz v4, :cond_2
 
     invoke-interface {v3, v1, v0}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
@@ -4353,10 +4353,10 @@
 
     return v3
 
-    :cond_3d
+    :cond_2
     iget v1, p0, Llibs/d9;->Y:I
 
-    if-lez v1, :cond_7a
+    if-lez v1, :cond_4
 
     sget-object v2, Llibs/AutoTaskWatcher;->notifyByIdCache:Ljava/util/HashMap;
 
@@ -4370,7 +4370,7 @@
 
     check-cast v4, Ljava/lang/Boolean;
 
-    if-eqz v4, :cond_54
+    if-eqz v4, :cond_3
 
     invoke-virtual {v4}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -4378,8 +4378,8 @@
 
     return v0
 
-    :cond_54
-    if-eqz v3, :cond_7a
+    :cond_3
+    if-eqz v3, :cond_4
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -4397,7 +4397,7 @@
 
     move-result p0
 
-    if-eqz p0, :cond_7a
+    if-eqz p0, :cond_4
 
     invoke-interface {v3, v4, v0}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
@@ -4412,27 +4412,27 @@
     move-result-object v4
 
     invoke-virtual {v2, v1, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_79
-    .catchall {:try_start_4 .. :try_end_79} :catchall_7a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return v3
 
-    :catchall_7a
-    :cond_7a
+    :catchall_0
+    :cond_4
     return v0
 .end method
 
 .method public static declared-synchronized isOnlyFolderFiles(Llibs/d9;)Z
-    .registers 7
+    .locals 6
 
     const/4 v0, 0x0
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     return v0
 
-    :cond_4
-    :try_start_4
+    :cond_0
+    :try_start_0
     invoke-static {p0}, Llibs/AutoTaskWatcher;->getTaskRuleKey(Llibs/d9;)Ljava/lang/String;
 
     move-result-object v1
@@ -4445,7 +4445,7 @@
 
     check-cast v3, Ljava/lang/Boolean;
 
-    if-eqz v3, :cond_17
+    if-eqz v3, :cond_1
 
     invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -4453,18 +4453,18 @@
 
     return v0
 
-    :cond_17
+    :cond_1
     invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
 
     move-result-object v3
 
-    if-eqz v3, :cond_2f
+    if-eqz v3, :cond_2
 
     invoke-interface {v3, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_2f
+    if-eqz v4, :cond_2
 
     invoke-interface {v3, v1, v0}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
@@ -4475,78 +4475,78 @@
     move-result-object v4
 
     invoke-virtual {v2, v1, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_2e
-    .catchall {:try_start_4 .. :try_end_2e} :catchall_2f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return v3
 
-    :catchall_2f
-    :cond_2f
+    :catchall_0
+    :cond_2
     iget-wide v2, p0, Llibs/d9;->Mu:J
 
     const-wide/16 v4, -0x2
 
     cmp-long v1, v2, v4
 
-    if-nez v1, :cond_38
+    if-nez v1, :cond_3
 
     const/4 v0, 0x1
 
-    :cond_38
+    :cond_3
     return v0
 .end method
 
 .method public static isSameTask(Llibs/d9;Llibs/d9;)Z
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
-    if-eqz p0, :cond_1e
+    if-eqz p0, :cond_2
 
-    if-eqz p1, :cond_1e
+    if-eqz p1, :cond_2
 
     iget v0, p0, Llibs/d9;->Y:I
 
     iget v1, p1, Llibs/d9;->Y:I
 
-    if-ne v0, v1, :cond_1d
+    if-ne v0, v1, :cond_1
 
-    :try_start_b
+    :try_start_0
     iget-object v0, p0, Llibs/d9;->Phi:Ljava/lang/String;
 
     iget-object v1, p1, Llibs/d9;->Phi:Ljava/lang/String;
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_0
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1d
-    :try_end_19
-    .catchall {:try_start_b .. :try_end_19} :catchall_1b
+    if-eqz v0, :cond_1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :cond_19
+    :cond_0
     const/4 v0, 0x0
 
     return v0
 
-    :catchall_1b
+    :catchall_0
     const/4 v0, 0x0
 
     return v0
 
-    :cond_1d
+    :cond_1
     const/4 v0, 0x1
 
-    :cond_1e
+    :cond_2
     return v0
 .end method
 
 .method private static declared-synchronized isTaskBusyOrDebounced(I)Z
-    .registers 9
+    .locals 8
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -4566,7 +4566,7 @@
 
     const/4 v5, 0x1
 
-    if-eqz v4, :cond_28
+    if-eqz v4, :cond_1
 
     invoke-virtual {v4}, Ljava/lang/Long;->longValue()J
 
@@ -4578,18 +4578,18 @@
 
     cmp-long v0, v6, v0
 
-    if-gez v0, :cond_21
+    if-gez v0, :cond_0
 
     return v5
 
-    :cond_21
+    :cond_0
     invoke-virtual {v3, v2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    :cond_28
+    :cond_1
     sget-object v3, Llibs/AutoTaskWatcher;->lastFireTime:Ljava/util/HashMap;
 
     invoke-virtual {v3, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -4598,7 +4598,7 @@
 
     check-cast v2, Ljava/lang/Long;
 
-    if-eqz v2, :cond_45
+    if-eqz v2, :cond_2
 
     invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
 
@@ -4610,7 +4610,7 @@
 
     cmp-long v4, v0, v2
 
-    if-gez v4, :cond_45
+    if-gez v4, :cond_2
 
     sub-long/2addr v2, v0
 
@@ -4622,29 +4622,29 @@
 
     return v5
 
-    :cond_45
+    :cond_2
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method public static isTempFileName(Ljava/lang/String;)Z
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x1
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/16 v1, 0x2f
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->lastIndexOf(I)I
 
     move-result v1
 
-    if-ltz v1, :cond_12
+    if-ltz v1, :cond_1
 
     add-int/lit8 v1, v1, 0x1
 
@@ -4652,14 +4652,14 @@
 
     move-result-object p0
 
-    :cond_12
+    :cond_1
     const/16 v1, 0x5c
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->lastIndexOf(I)I
 
     move-result v1
 
-    if-ltz v1, :cond_20
+    if-ltz v1, :cond_2
 
     add-int/lit8 v1, v1, 0x1
 
@@ -4667,16 +4667,16 @@
 
     move-result-object p0
 
-    :cond_20
+    :cond_2
     invoke-virtual {p0}, Ljava/lang/String;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_27
+    if-eqz v1, :cond_3
 
     return v0
 
-    :cond_27
+    :cond_3
     sget-object v1, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
@@ -4689,7 +4689,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_a5
+    if-nez v2, :cond_4
 
     const-string v2, ".."
 
@@ -4697,7 +4697,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_a5
+    if-nez v2, :cond_4
 
     const-string v2, ".nomedia"
 
@@ -4705,7 +4705,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_a5
+    if-nez v2, :cond_4
 
     const-string v2, ".ds_store"
 
@@ -4713,7 +4713,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_a5
+    if-nez v2, :cond_4
 
     const-string v2, "thumbs.db"
 
@@ -4721,7 +4721,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_a5
+    if-nez v2, :cond_4
 
     const-string v2, "desktop.ini"
 
@@ -4729,7 +4729,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_a5
+    if-nez v2, :cond_4
 
     const-string v2, ".pending-"
 
@@ -4737,7 +4737,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_a5
+    if-nez v2, :cond_4
 
     const-string v2, ".trashed-"
 
@@ -4745,7 +4745,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_a5
+    if-nez v2, :cond_4
 
     const-string v2, ".crdownload"
 
@@ -4753,7 +4753,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_a5
+    if-nez v2, :cond_4
 
     const-string v2, ".part"
 
@@ -4761,7 +4761,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_a5
+    if-nez v2, :cond_4
 
     const-string v2, ".partial"
 
@@ -4769,7 +4769,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_a5
+    if-nez v2, :cond_4
 
     const-string v2, ".tmp"
 
@@ -4777,7 +4777,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_a5
+    if-nez v2, :cond_4
 
     const-string v2, ".temp"
 
@@ -4785,7 +4785,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_a5
+    if-nez v2, :cond_4
 
     const-string v2, ".download"
 
@@ -4793,7 +4793,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_a5
+    if-nez v2, :cond_4
 
     const-string v2, ".!qb"
 
@@ -4801,27 +4801,27 @@
 
     move-result v1
 
-    if-eqz v1, :cond_a6
+    if-eqz v1, :cond_5
 
-    :cond_a5
+    :cond_4
     return v0
 
-    :cond_a6
+    :cond_5
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method public static isUnzipEnabled(Llibs/d9;)Z
-    .registers 2
+    .locals 1
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     const/4 v0, 0x0
 
     return v0
 
-    :cond_4
+    :cond_0
     iget-object v0, p0, Llibs/d9;->Psi:Ljava/lang/String;
 
     invoke-static {v0}, Llibs/ArqexUnzip;->hasMarker(Ljava/lang/String;)Z
@@ -4832,15 +4832,15 @@
 .end method
 
 .method private static makeItemStamp(Llibs/rp0;)Ljava/lang/String;
-    .registers 7
+    .locals 6
 
     iget-object v0, p0, Llibs/rp0;->Three:Ljava/lang/String;
 
     iget-boolean v1, p0, Llibs/rp0;->One:Z
 
-    if-nez v1, :cond_24
+    if-nez v1, :cond_0
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_0
 
     const-string v1, "/"
 
@@ -4848,9 +4848,9 @@
 
     move-result v1
 
-    if-eqz v1, :cond_24
+    if-eqz v1, :cond_0
 
-    :try_start_10
+    :try_start_0
     new-instance v1, Ljava/io/File;
 
     invoke-direct {v1, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
@@ -4859,7 +4859,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_0
 
     invoke-virtual {v1}, Ljava/io/File;->length()J
 
@@ -4868,20 +4868,20 @@
     invoke-virtual {v1}, Ljava/io/File;->lastModified()J
 
     move-result-wide v4
-    :try_end_23
-    .catchall {:try_start_10 .. :try_end_23} :catchall_24
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_2a
+    goto :goto_0
 
-    :catchall_24
-    :cond_24
+    :catchall_0
+    :cond_0
     invoke-virtual {p0}, Llibs/rp0;->q()J
 
     move-result-wide v2
 
     iget-wide v4, p0, Llibs/rp0;->Five:J
 
-    :goto_2a
+    :goto_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -4902,7 +4902,7 @@
 .end method
 
 .method private static declared-synchronized markManualPlay(I)V
-    .registers 3
+    .locals 2
 
     sget-object v0, Llibs/AutoTaskWatcher;->manualPlayIds:Ljava/util/HashSet;
 
@@ -4916,7 +4916,7 @@
 .end method
 
 .method private static declared-synchronized markTaskFiring(I)Z
-    .registers 5
+    .locals 4
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -4928,13 +4928,13 @@
 
     move-result v2
 
-    if-eqz v2, :cond_e
+    if-eqz v2, :cond_0
 
     const/4 v0, 0x0
 
     return v0
 
-    :cond_e
+    :cond_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
@@ -4959,13 +4959,13 @@
 .end method
 
 .method public static matchesAnySegment(Ljava/lang/String;Ljava/lang/String;)Z
-    .registers 8
+    .locals 6
 
     const/4 v0, 0x0
 
-    if-eqz p0, :cond_22
+    if-eqz p0, :cond_1
 
-    if-eqz p1, :cond_22
+    if-eqz p1, :cond_1
 
     const-string v1, "/"
 
@@ -4975,10 +4975,10 @@
 
     const/4 v2, 0x0
 
-    :goto_c
+    :goto_0
     array-length v3, v1
 
-    if-ge v2, v3, :cond_22
+    if-ge v2, v3, :cond_1
 
     aget-object v3, v1, v2
 
@@ -4986,56 +4986,56 @@
 
     move-result v4
 
-    if-nez v4, :cond_1f
+    if-nez v4, :cond_0
 
     invoke-static {v3, p1}, Llibs/AutoTaskWatcher;->matchesNameFilter(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_1f
+    if-eqz v4, :cond_0
 
     const/4 v0, 0x1
 
     return v0
 
-    :cond_1f
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_22
+    :cond_1
     return v0
 .end method
 
 .method public static matchesExtFilter(Ljava/lang/String;Ljava/lang/String;)Z
-    .registers 10
+    .locals 8
 
     const/4 v0, 0x1
 
-    if-eqz p1, :cond_53
+    if-eqz p1, :cond_4
 
     invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_0
 
     return v0
 
-    :cond_a
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p0, :cond_52
+    if-eqz p0, :cond_3
 
     invoke-virtual {p0}, Ljava/lang/String;->isEmpty()Z
 
     move-result v2
 
-    if-eqz v2, :cond_14
+    if-eqz v2, :cond_1
 
     return v1
 
-    :cond_14
+    :cond_1
     sget-object v2, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
     invoke-virtual {p0, v2}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
@@ -5052,8 +5052,8 @@
 
     const/4 v5, 0x0
 
-    :goto_22
-    if-ge v5, v4, :cond_52
+    :goto_0
+    if-ge v5, v4, :cond_3
 
     aget-object v6, v3, v5
 
@@ -5065,7 +5065,7 @@
 
     move-result v7
 
-    if-nez v7, :cond_4f
+    if-nez v7, :cond_2
 
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -5087,38 +5087,38 @@
 
     move-result p0
 
-    if-le v7, p0, :cond_4f
+    if-le v7, p0, :cond_2
 
     invoke-virtual {v2, v6}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
     move-result v6
 
-    if-eqz v6, :cond_4f
+    if-eqz v6, :cond_2
 
     return v0
 
-    :cond_4f
+    :cond_2
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_22
+    goto :goto_0
 
-    :cond_52
+    :cond_3
     return v1
 
-    :cond_53
+    :cond_4
     return v0
 .end method
 
 .method public static matchesNameFilter(Ljava/lang/String;Ljava/lang/String;)Z
-    .registers 16
+    .locals 14
 
     const/4 v0, 0x1
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v1
@@ -5127,18 +5127,18 @@
 
     move-result v1
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_1
 
     return v0
 
-    :cond_f
+    :cond_1
     const/4 v0, 0x0
 
-    if-nez p0, :cond_13
+    if-nez p0, :cond_2
 
     return v0
 
-    :cond_13
+    :cond_2
     sget-object v1, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
@@ -5155,8 +5155,8 @@
 
     const/4 v4, 0x0
 
-    :goto_21
-    if-ge v4, v3, :cond_60
+    :goto_0
+    if-ge v4, v3, :cond_7
 
     aget-object v5, v2, v4
 
@@ -5168,7 +5168,7 @@
 
     move-result v6
 
-    if-nez v6, :cond_5d
+    if-nez v6, :cond_6
 
     sget-object v6, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
@@ -5190,8 +5190,8 @@
 
     const/4 v10, 0x1
 
-    :goto_3f
-    if-ge v8, v7, :cond_59
+    :goto_1
+    if-ge v8, v7, :cond_5
 
     aget-object v11, v6, v8
 
@@ -5199,7 +5199,7 @@
 
     move-result v12
 
-    if-nez v12, :cond_55
+    if-nez v12, :cond_3
 
     invoke-virtual {v11}, Ljava/lang/String;->length()I
 
@@ -5209,48 +5209,48 @@
 
     move-result v12
 
-    if-ltz v12, :cond_58
+    if-ltz v12, :cond_4
 
     add-int v9, v12, v13
 
-    :cond_55
+    :cond_3
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_3f
+    goto :goto_1
 
-    :cond_58
+    :cond_4
     const/4 v10, 0x0
 
-    :cond_59
-    if-eqz v10, :cond_5d
+    :cond_5
+    if-eqz v10, :cond_6
 
     const/4 v0, 0x1
 
     return v0
 
-    :cond_5d
+    :cond_6
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_60
+    :cond_7
     return v0
 .end method
 
 .method private static normalizeSourcePath(Ljava/lang/Object;)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     const/4 v0, 0x0
 
     return-object v0
 
-    :cond_4
-    :try_start_4
+    :cond_0
+    :try_start_0
     instance-of v0, p0, Landroid/net/Uri;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_1
 
     check-cast p0, Landroid/net/Uri;
 
@@ -5260,10 +5260,10 @@
 
     return-object v0
 
-    :cond_f
+    :cond_1
     instance-of v0, p0, Ljava/lang/String;
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_2
 
     check-cast p0, Ljava/lang/String;
 
@@ -5276,33 +5276,33 @@
     invoke-static {v0}, Llibs/tr3;->d(Landroid/net/Uri;)Ljava/lang/String;
 
     move-result-object v0
-    :try_end_1e
-    .catchall {:try_start_4 .. :try_end_1e} :catchall_1f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object v0
 
-    :catchall_1f
-    :cond_1f
+    :catchall_0
+    :cond_2
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
 .method public static declared-synchronized notifyTaskFinished(Llibs/m52;)V
-    .registers 30
+    .locals 29
 
     move-object/from16 v8, p0
 
-    if-eqz v8, :cond_b1
+    if-eqz v8, :cond_4
 
-    :try_start_4
+    :try_start_0
     invoke-static {v8}, Llibs/AutoTaskWatcher;->resolveAutoTaskIdForOperation(Llibs/m52;)I
 
     move-result v0
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "FIM op="
+    const-string v2, "END op="
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -5310,7 +5310,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v2, " tarefa_id="
+    const-string v2, " task_id="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -5322,20 +5322,20 @@
 
     invoke-static {v1}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
 
-    if-lez v0, :cond_29
+    if-lez v0, :cond_0
 
     iget v0, v8, Llibs/m52;->Upsilon:I
 
-    if-lez v0, :cond_b1
+    if-lez v0, :cond_4
 
-    :cond_29
+    :cond_0
     invoke-static {v8}, Llibs/AutoTaskWatcher;->shouldSuppressNotification(Llibs/m52;)Z
 
     move-result v1
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v3, "NOTIF suprimida="
+    const-string v3, "NOTIF suppressed="
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -5347,11 +5347,11 @@
 
     invoke-static {v2}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
 
-    if-eqz v1, :cond_b1
+    if-eqz v1, :cond_4
 
     sget-object v2, Llibs/zt0;->g:Landroid/content/Context;
 
-    if-nez v2, :cond_b1
+    if-nez v2, :cond_4
 
     invoke-static {}, Llibs/AutoTaskWatcher;->getLangCode()Ljava/lang/String;
 
@@ -5363,7 +5363,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_5d
+    if-eqz v4, :cond_1
 
     const-string v4, "es"
 
@@ -5371,27 +5371,27 @@
 
     move-result v4
 
-    if-eqz v4, :cond_62
+    if-eqz v4, :cond_2
 
     const-string v3, "Tarefa conclu\u00edda"
 
     const-string v4, "Opera\u00e7\u00e3o conclu\u00edda"
 
-    goto :goto_66
+    goto :goto_0
 
-    :cond_5d
+    :cond_1
     const-string v3, "Task finished"
 
     const-string v4, "Operation completed"
 
-    goto :goto_66
+    goto :goto_0
 
-    :cond_62
+    :cond_2
     const-string v3, "Tarea finalizada"
 
     const-string v4, "Operaci\u00f3n completada"
 
-    :goto_66
+    :goto_0
     new-instance v5, Landroid/content/Intent;
 
     const-class v6, Lcom/mixplorer/activities/BrowseActivity;
@@ -5450,31 +5450,31 @@
 
     move-result-object v9
 
-    if-nez v9, :cond_ac
+    if-nez v9, :cond_3
 
     invoke-static {v0, v9}, Llibs/uu1;->j(ILjava/lang/Object;)V
 
-    const-string v1, "NOTIF postada"
+    const-string v1, "NOTIF posted"
 
     invoke-static {v1}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
 
-    goto :goto_b1
+    goto :goto_1
 
-    :cond_ac
-    const-string v1, "NOTIF nao postada (uu1 devolveu null)"
+    :cond_3
+    const-string v1, "NOTIF not posted (uu1 returned null)"
 
     invoke-static {v1}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
-    :try_end_b1
-    .catchall {:try_start_4 .. :try_end_b1} :catchall_b1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_b1
-    :cond_b1
-    :goto_b1
+    :catchall_0
+    :cond_4
+    :goto_1
     return-void
 .end method
 
 .method public static declared-synchronized onBeforeAutoTaskExecute(IILjava/util/Set;)V
-    .registers 10
+    .locals 7
 
     :try_start_0
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -5489,11 +5489,11 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_10
+    if-nez v1, :cond_0
 
     return-void
 
-    :cond_10
+    :cond_0
     invoke-static {v1}, Llibs/AutoTaskWatcher;->isNotificationEnabledForTask(Llibs/d9;)Z
 
     move-result v2
@@ -5506,7 +5506,7 @@
 
     invoke-virtual {v3, v0, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz p2, :cond_98
+    if-eqz p2, :cond_7
 
     invoke-static {v1, p2}, Llibs/AutoTaskWatcher;->applyFilters(Llibs/d9;Ljava/util/Collection;)V
 
@@ -5514,19 +5514,19 @@
 
     const/4 v0, 0x3
 
-    if-eq p1, v0, :cond_98
+    if-eq p1, v0, :cond_7
 
     const/4 v0, 0x4
 
-    if-eq p1, v0, :cond_98
+    if-eq p1, v0, :cond_7
 
     const/4 v0, 0x5
 
-    if-ne p1, v0, :cond_2f
+    if-ne p1, v0, :cond_1
 
     return-void
 
-    :cond_2f
+    :cond_1
     invoke-static {v1}, Llibs/AutoTaskWatcher;->getTaskFilePrefix(Llibs/d9;)Ljava/lang/String;
 
     move-result-object v0
@@ -5539,11 +5539,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3e
+    if-eqz v1, :cond_2
 
     return-void
 
-    :cond_3e
+    :cond_2
     const-string v1, "%C"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
@@ -5556,13 +5556,13 @@
 
     const/4 v4, 0x1
 
-    :cond_49
-    :goto_49
+    :cond_3
+    :goto_0
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_98
+    if-eqz v5, :cond_7
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -5570,37 +5570,37 @@
 
     check-cast v5, Llibs/rp0;
 
-    if-eqz v5, :cond_49
+    if-eqz v5, :cond_3
 
     iget-boolean v6, v5, Llibs/rp0;->One:Z
 
-    if-nez v6, :cond_49
+    if-nez v6, :cond_3
 
     iget-object v6, v5, Llibs/rp0;->Two:Ljava/lang/String;
 
-    if-eqz v6, :cond_65
+    if-eqz v6, :cond_4
 
     invoke-virtual {v6}, Ljava/lang/String;->isEmpty()Z
 
     move-result p0
 
-    if-eqz p0, :cond_69
+    if-eqz p0, :cond_5
 
-    :cond_65
+    :cond_4
     invoke-virtual {v5}, Llibs/rp0;->m()Ljava/lang/String;
 
     move-result-object v6
 
-    :cond_69
-    if-eqz v6, :cond_49
+    :cond_5
+    if-eqz v6, :cond_3
 
     invoke-virtual {v6}, Ljava/lang/String;->isEmpty()Z
 
     move-result p0
 
-    if-nez p0, :cond_49
+    if-nez p0, :cond_3
 
-    if-eqz v2, :cond_7c
+    if-eqz v2, :cond_6
 
     invoke-static {v4}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
@@ -5610,19 +5610,19 @@
 
     move-result-object p0
 
-    goto :goto_7d
+    goto :goto_1
 
-    :cond_7c
+    :cond_6
     move-object p0, v0
 
-    :goto_7d
+    :goto_1
     add-int/lit8 v4, v4, 0x1
 
     invoke-virtual {v6, p0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result p1
 
-    if-nez p1, :cond_49
+    if-nez p1, :cond_3
 
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -5637,18 +5637,18 @@
     move-result-object p0
 
     invoke-virtual {v5, p0}, Llibs/rp0;->y(Ljava/lang/String;)V
-    :try_end_97
-    .catchall {:try_start_0 .. :try_end_97} :catchall_98
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_49
+    goto :goto_0
 
-    :catchall_98
-    :cond_98
+    :catchall_0
+    :cond_7
     return-void
 .end method
 
 .method public static onBootCompleted()V
-    .registers 2
+    .locals 2
 
     const-wide/16 v0, 0x3a98
 
@@ -5660,7 +5660,7 @@
 .end method
 
 .method public static declared-synchronized onMediaStoreChanged()V
-    .registers 8
+    .locals 8
 
     :try_start_0
     new-instance v0, Ljava/util/ArrayList;
@@ -5679,8 +5679,8 @@
 
     const/4 v3, 0x0
 
-    :goto_f
-    if-ge v2, v1, :cond_38
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -5690,7 +5690,7 @@
 
     check-cast v4, Llibs/d9;
 
-    if-eqz v4, :cond_37
+    if-eqz v4, :cond_0
 
     iget-wide v6, v4, Llibs/d9;->Mu:J
 
@@ -5698,7 +5698,7 @@
 
     cmp-long v4, v6, v4
 
-    if-nez v4, :cond_37
+    if-nez v4, :cond_0
 
     add-int/lit8 v4, v2, -0x1
 
@@ -5710,7 +5710,7 @@
 
     iget v5, v4, Llibs/d9;->One:I
 
-    if-gtz v5, :cond_37
+    if-gtz v5, :cond_0
 
     const/4 v3, 0x1
 
@@ -5720,23 +5720,23 @@
 
     invoke-static {v4, v6, v7}, Llibs/AutoTaskWatcher;->scheduleTrigger(IJ)V
 
-    :cond_37
-    goto :goto_f
+    :cond_0
+    goto :goto_0
 
-    :cond_38
-    if-eqz v3, :cond_3d
+    :cond_1
+    if-eqz v3, :cond_2
 
     invoke-static {}, Llibs/AutoTaskWatcher;->startPollTimerLocked()V
-    :try_end_3d
-    .catchall {:try_start_0 .. :try_end_3d} :catchall_3d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_3d
-    :cond_3d
+    :catchall_0
+    :cond_2
     return-void
 .end method
 
 .method public static declared-synchronized onTaskFinished(I)V
-    .registers 5
+    .locals 4
 
     :try_start_0
     sget-object v0, Llibs/AutoTaskWatcher;->activeDispatchTaskId:Ljava/lang/ThreadLocal;
@@ -5759,7 +5759,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_37
+    if-eqz v0, :cond_0
 
     invoke-static {v0}, Llibs/AutoTaskWatcher;->isNotificationEnabledForTask(Llibs/d9;)Z
 
@@ -5783,16 +5783,16 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_37
+    if-nez v0, :cond_0
 
     const-wide/16 v0, 0x5dc
 
     invoke-static {p0, v0, v1}, Llibs/AutoTaskWatcher;->scheduleTrigger(IJ)V
-    :try_end_37
-    .catchall {:try_start_0 .. :try_end_37} :catchall_37
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_37
-    :cond_37
+    :catchall_0
+    :cond_0
     const-wide/16 v0, 0xdc
 
     invoke-static {v0, v1}, Llibs/SmartFeaturesV116;->scheduleAutoRefreshOpenTabs(J)V
@@ -5801,21 +5801,21 @@
 .end method
 
 .method public static declared-synchronized onTaskSaved(Llibs/d9;Llibs/d9;Llibs/od;)V
-    .registers 12
+    .locals 9
 
-    if-nez p1, :cond_3
+    if-nez p1, :cond_0
 
     return-void
 
-    :cond_3
-    :try_start_3
+    :cond_0
+    :try_start_0
     invoke-static {p1}, Llibs/AutoTaskWatcher;->getTaskRuleKey(Llibs/d9;)Ljava/lang/String;
 
     move-result-object v0
 
     const/4 v1, 0x0
 
-    if-eqz p0, :cond_15
+    if-eqz p0, :cond_1
 
     invoke-static {p0}, Llibs/AutoTaskWatcher;->getTaskRuleKey(Llibs/d9;)Ljava/lang/String;
 
@@ -5825,24 +5825,24 @@
 
     move-result v2
 
-    if-eqz v2, :cond_15
+    if-eqz v2, :cond_1
 
     const/4 v1, 0x0
 
-    :cond_15
+    :cond_1
     invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
 
     move-result-object v2
 
     const/4 v3, 0x0
 
-    if-eqz v2, :cond_20
+    if-eqz v2, :cond_2
 
     invoke-interface {v2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v3
 
-    :cond_20
+    :cond_2
     sget-object v2, Llibs/AutoTaskWatcher;->dialogCheckBoxes:Ljava/util/WeakHashMap;
 
     const/16 v4, 0x4f
@@ -5851,7 +5851,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_46
+    if-eqz v2, :cond_4
 
     invoke-virtual {v2}, Landroid/widget/CompoundButton;->isChecked()Z
 
@@ -5859,26 +5859,26 @@
 
     sget-object v4, Llibs/AutoTaskWatcher;->onlyFilesCache:Ljava/util/HashMap;
 
-    if-eqz v1, :cond_3a
+    if-eqz v1, :cond_3
 
     invoke-virtual {v4, v1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v3, :cond_3a
+    if-eqz v3, :cond_3
 
     invoke-interface {v3, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    :cond_3a
+    :cond_3
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v5
 
     invoke-virtual {v4, v0, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v3, :cond_46
+    if-eqz v3, :cond_4
 
     invoke-interface {v3, v0, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    :cond_46
+    :cond_4
     sget-object v2, Llibs/AutoTaskWatcher;->dialogNotifyCheckBoxes:Ljava/util/WeakHashMap;
 
     const/16 v4, 0x50
@@ -5887,7 +5887,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_c4
+    if-eqz v2, :cond_7
 
     invoke-virtual {v2}, Landroid/widget/CompoundButton;->isChecked()Z
 
@@ -5907,7 +5907,7 @@
 
     sget-object v6, Llibs/AutoTaskWatcher;->notifyCache:Ljava/util/HashMap;
 
-    if-eqz v1, :cond_7a
+    if-eqz v1, :cond_5
 
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -5921,11 +5921,11 @@
 
     invoke-virtual {v6, v5}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v3, :cond_7a
+    if-eqz v3, :cond_5
 
     invoke-interface {v3, v5}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    :cond_7a
+    :cond_5
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v5
@@ -5942,17 +5942,17 @@
 
     invoke-virtual {v6, v7, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v3, :cond_c4
+    if-eqz v3, :cond_7
 
     invoke-interface {v3, v4, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    if-eqz p0, :cond_b1
+    if-eqz p0, :cond_6
 
     iget v5, p0, Llibs/d9;->Y:I
 
     iget v7, p1, Llibs/d9;->Y:I
 
-    if-eq v5, v7, :cond_b1
+    if-eq v5, v7, :cond_6
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -5974,7 +5974,7 @@
 
     invoke-interface {v3, v5}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    :cond_b1
+    :cond_6
     new-instance v5, Ljava/lang/StringBuilder;
 
     const-string v7, "notify_id_"
@@ -5991,7 +5991,7 @@
 
     invoke-interface {v3, v5, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    :cond_c4
+    :cond_7
     sget-object v2, Llibs/AutoTaskWatcher;->dialogPrefixCheckBoxes:Ljava/util/WeakHashMap;
 
     const/16 v4, 0x51
@@ -6008,7 +6008,7 @@
 
     move-result-object v4
 
-    if-eqz v2, :cond_11c
+    if-eqz v2, :cond_a
 
     const-string v5, ""
 
@@ -6016,15 +6016,15 @@
 
     move-result v2
 
-    if-eqz v2, :cond_ee
+    if-eqz v2, :cond_8
 
-    if-eqz v4, :cond_ee
+    if-eqz v4, :cond_8
 
     invoke-virtual {v4}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v2
 
-    if-eqz v2, :cond_ee
+    if-eqz v2, :cond_8
 
     invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -6034,7 +6034,7 @@
 
     move-result-object v5
 
-    :cond_ee
+    :cond_8
     new-instance v2, Ljava/lang/StringBuilder;
 
     const-string v4, "prefix_"
@@ -6049,7 +6049,7 @@
 
     sget-object v6, Llibs/AutoTaskWatcher;->prefixCache:Ljava/util/HashMap;
 
-    if-eqz v1, :cond_114
+    if-eqz v1, :cond_9
 
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -6063,18 +6063,18 @@
 
     invoke-virtual {v6, v4}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v3, :cond_114
+    if-eqz v3, :cond_9
 
     invoke-interface {v3, v4}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    :cond_114
+    :cond_9
     invoke-virtual {v6, v2, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v3, :cond_11c
+    if-eqz v3, :cond_a
 
     invoke-interface {v3, v2, v5}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    :cond_11c
+    :cond_a
     sget-object v2, Llibs/AutoTaskWatcher;->dialogExtCheckBoxes:Ljava/util/WeakHashMap;
 
     const/16 v4, 0x53
@@ -6091,7 +6091,7 @@
 
     move-result-object v4
 
-    if-eqz v2, :cond_174
+    if-eqz v2, :cond_d
 
     const-string v5, ""
 
@@ -6099,15 +6099,15 @@
 
     move-result v2
 
-    if-eqz v2, :cond_146
+    if-eqz v2, :cond_b
 
-    if-eqz v4, :cond_146
+    if-eqz v4, :cond_b
 
     invoke-virtual {v4}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v2
 
-    if-eqz v2, :cond_146
+    if-eqz v2, :cond_b
 
     invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -6117,7 +6117,7 @@
 
     move-result-object v5
 
-    :cond_146
+    :cond_b
     new-instance v2, Ljava/lang/StringBuilder;
 
     const-string v4, "ext_"
@@ -6132,7 +6132,7 @@
 
     sget-object v6, Llibs/AutoTaskWatcher;->extFilterCache:Ljava/util/HashMap;
 
-    if-eqz v1, :cond_16c
+    if-eqz v1, :cond_c
 
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -6146,18 +6146,18 @@
 
     invoke-virtual {v6, v4}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v3, :cond_16c
+    if-eqz v3, :cond_c
 
     invoke-interface {v3, v4}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    :cond_16c
+    :cond_c
     invoke-virtual {v6, v2, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v3, :cond_174
+    if-eqz v3, :cond_d
 
     invoke-interface {v3, v2, v5}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    :cond_174
+    :cond_d
     invoke-static {p2}, Llibs/AutoTaskWatcher;->findNameCheck(Llibs/od;)Landroid/widget/CheckBox;
 
     move-result-object v2
@@ -6168,24 +6168,24 @@
 
     const/4 v8, 0x1
 
-    if-eqz v2, :cond_183
+    if-eqz v2, :cond_e
 
     invoke-virtual {v2}, Landroid/widget/CompoundButton;->isChecked()Z
 
     move-result v8
 
-    :cond_183
+    :cond_e
     const-string v5, ""
 
-    if-eqz v8, :cond_1a5
+    if-eqz v8, :cond_10
 
-    if-eqz v4, :cond_197
+    if-eqz v4, :cond_f
 
     invoke-virtual {v4}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v2
 
-    if-eqz v2, :cond_197
+    if-eqz v2, :cond_f
 
     invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -6195,12 +6195,12 @@
 
     move-result-object v5
 
-    :cond_197
+    :cond_f
     invoke-virtual {v5}, Ljava/lang/String;->isEmpty()Z
 
     move-result v2
 
-    if-eqz v2, :cond_1a5
+    if-eqz v2, :cond_10
 
     invoke-static {p2}, Llibs/AutoTaskWatcher;->getNameLive(Llibs/od;)Ljava/lang/String;
 
@@ -6210,7 +6210,7 @@
 
     move-result-object v5
 
-    :cond_1a5
+    :cond_10
     new-instance v2, Ljava/lang/StringBuilder;
 
     const-string v4, "name_"
@@ -6225,7 +6225,7 @@
 
     sget-object v6, Llibs/AutoTaskWatcher;->nameFilterCache:Ljava/util/HashMap;
 
-    if-eqz v1, :cond_1cb
+    if-eqz v1, :cond_11
 
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -6239,20 +6239,20 @@
 
     invoke-virtual {v6, v4}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v3, :cond_1cb
+    if-eqz v3, :cond_11
 
     invoke-interface {v3, v4}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    :cond_1cb
+    :cond_11
     invoke-virtual {v6, v2, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v3, :cond_1fb
+    if-eqz v3, :cond_13
 
     invoke-interface {v3, v2, v5}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     iget-object v6, p1, Llibs/d9;->Nu:Ljava/lang/String;
 
-    if-eqz v6, :cond_1e8
+    if-eqz v6, :cond_12
 
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -6268,7 +6268,7 @@
 
     invoke-interface {v3, v7, v5}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    :cond_1e8
+    :cond_12
     new-instance v6, Ljava/lang/StringBuilder;
 
     const-string v7, "name_id_"
@@ -6285,53 +6285,52 @@
 
     invoke-interface {v3, v6, v5}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    :cond_1fb
+    :cond_13
     const/4 v2, 0x0
 
     sput-object v2, Llibs/AutoTaskWatcher;->nameUiCheck:Landroid/widget/CheckBox;
 
     sput-object v2, Llibs/AutoTaskWatcher;->nameUiEdit:Lcom/mixplorer/widgets/MiEditText;
 
-    if-eqz v3, :cond_205
+    if-eqz v3, :cond_14
 
     invoke-interface {v3}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    :cond_205
-    if-eqz p0, :cond_210
+    :cond_14
+    if-eqz p0, :cond_15
 
     iget v0, p0, Llibs/d9;->Y:I
 
     iget v1, p1, Llibs/d9;->Y:I
 
-    if-eq v0, v1, :cond_210
+    if-eq v0, v1, :cond_15
 
     invoke-static {v0}, Llibs/AutoTaskWatcher;->clearSeenPrefs(I)V
-    :try_end_210
-    .catchall {:try_start_3 .. :try_end_210} :catchall_210
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_210
-    :cond_210
-    # Arqex: as opcoes marcadas (nome/extensao/prefixo/notificacao) tambem vao para o backup
+    :catchall_0
+    :cond_15
     invoke-static {}, Llibs/ArqexBackup;->savePrefs()V
 
     return-void
 .end method
 
 .method public static onTick(I)V
-    .registers 9
+    .locals 8
 
     const/4 v0, -0x1
 
-    if-ne p0, v0, :cond_7
+    if-ne p0, v0, :cond_0
 
     invoke-static {}, Llibs/AutoTaskWatcher;->syncAll()V
 
     return-void
 
-    :cond_7
-    if-nez p0, :cond_52
+    :cond_0
+    if-nez p0, :cond_4
 
-    :try_start_9
+    :try_start_0
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-static {}, Llibs/e9;->n()Ljava/util/ArrayList;
@@ -6348,8 +6347,8 @@
 
     const/4 v3, 0x0
 
-    :goto_18
-    if-ge v2, v1, :cond_3d
+    :goto_0
+    if-ge v2, v1, :cond_2
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -6359,7 +6358,7 @@
 
     check-cast v4, Llibs/d9;
 
-    if-eqz v4, :cond_3c
+    if-eqz v4, :cond_1
 
     iget-wide v6, v4, Llibs/d9;->Mu:J
 
@@ -6367,7 +6366,7 @@
 
     cmp-long v4, v6, v4
 
-    if-nez v4, :cond_3c
+    if-nez v4, :cond_1
 
     add-int/lit8 v4, v2, -0x1
 
@@ -6379,17 +6378,17 @@
 
     iget v5, v4, Llibs/d9;->One:I
 
-    if-gtz v5, :cond_3c
+    if-gtz v5, :cond_1
 
     const/4 v3, 0x1
 
     invoke-static {v4}, Llibs/AutoTaskWatcher;->checkAndFire(Llibs/d9;)V
 
-    :cond_3c
-    goto :goto_18
+    :cond_1
+    goto :goto_0
 
-    :cond_3d
-    if-eqz v3, :cond_4e
+    :cond_2
+    if-eqz v3, :cond_3
 
     invoke-static {}, Llibs/AutoTaskWatcher;->ensureHandler()Landroid/os/Handler;
 
@@ -6403,18 +6402,18 @@
 
     invoke-virtual {v0, v1, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    goto :goto_51
+    goto :goto_1
 
-    :cond_4e
+    :cond_3
     invoke-static {}, Llibs/AutoTaskWatcher;->updatePollAndJobLocked()V
-    :try_end_51
-    .catchall {:try_start_9 .. :try_end_51} :catchall_5f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :goto_51
+    :goto_1
     return-void
 
-    :cond_52
-    :try_start_52
+    :cond_4
+    :try_start_1
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -6423,32 +6422,32 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_5f
+    if-eqz v0, :cond_5
 
     invoke-static {v0}, Llibs/AutoTaskWatcher;->checkAndFire(Llibs/d9;)V
-    :try_end_5f
-    .catchall {:try_start_52 .. :try_end_5f} :catchall_5f
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :catchall_5f
-    :cond_5f
+    :catchall_0
+    :cond_5
     return-void
 .end method
 
 .method public static onTriggerAfterChanged(Landroid/view/View;Landroid/view/View;I)V
-    .registers 6
+    .locals 3
 
-    if-nez p2, :cond_34
+    if-nez p2, :cond_3
 
     const/4 v0, 0x0
 
-    if-eqz p0, :cond_8
+    if-eqz p0, :cond_0
 
     invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_8
+    :cond_0
     instance-of v1, p0, Landroid/view/ViewGroup;
 
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_2
 
     move-object v1, p0
 
@@ -6460,7 +6459,7 @@
 
     const/4 v0, 0x1
 
-    if-le v2, v0, :cond_2e
+    if-le v2, v0, :cond_1
 
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
@@ -6468,7 +6467,7 @@
 
     instance-of v1, v0, Lcom/mixplorer/widgets/MiCombo;
 
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_1
 
     check-cast v0, Lcom/mixplorer/widgets/MiCombo;
 
@@ -6478,50 +6477,50 @@
 
     const/16 v1, 0x8
 
-    if-ne v0, v1, :cond_2e
+    if-ne v0, v1, :cond_1
 
-    if-eqz p1, :cond_34
+    if-eqz p1, :cond_3
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 
-    :cond_2e
+    :cond_1
     const/4 v0, 0x0
 
-    :cond_2f
-    if-eqz p1, :cond_34
+    :cond_2
+    if-eqz p1, :cond_3
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_34
+    :cond_3
     return-void
 .end method
 
 .method public static prepareDstBeforeValidate(Llibs/od;Lcom/mixplorer/widgets/MiCombo;Lcom/mixplorer/widgets/MiEditText;)V
-    .registers 5
+    .locals 2
 
-    if-eqz p0, :cond_57
+    if-eqz p0, :cond_3
 
-    if-eqz p1, :cond_57
+    if-eqz p1, :cond_3
 
-    if-nez p2, :cond_7
+    if-nez p2, :cond_0
 
     return-void
 
-    :cond_7
-    :try_start_7
+    :cond_0
+    :try_start_0
     invoke-virtual {p1}, Lcom/mixplorer/widgets/MiCombo;->getSelectedIndex()I
 
     move-result v0
 
     const/4 v1, 0x5
 
-    if-eq v0, v1, :cond_f
+    if-eq v0, v1, :cond_1
 
     return-void
 
-    :cond_f
+    :cond_1
     invoke-virtual {p2}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v0
@@ -6530,14 +6529,14 @@
 
     move-result v0
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_2
 
     return-void
 
-    :cond_1a
+    :cond_2
     iget-object v0, p0, Llibs/od;->Omicron:Landroid/view/ViewGroup;
 
-    if-eqz v0, :cond_57
+    if-eqz v0, :cond_3
 
     const/16 v1, 0x51
 
@@ -6547,7 +6546,7 @@
 
     instance-of v1, v0, Landroid/widget/CheckBox;
 
-    if-eqz v1, :cond_57
+    if-eqz v1, :cond_3
 
     check-cast v0, Landroid/widget/CheckBox;
 
@@ -6555,7 +6554,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_57
+    if-eqz v0, :cond_3
 
     iget-object v0, p0, Llibs/od;->Omicron:Landroid/view/ViewGroup;
 
@@ -6567,7 +6566,7 @@
 
     instance-of v1, v0, Landroid/widget/EditText;
 
-    if-eqz v1, :cond_57
+    if-eqz v1, :cond_3
 
     check-cast v0, Landroid/widget/EditText;
 
@@ -6575,7 +6574,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_57
+    if-eqz v0, :cond_3
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -6589,21 +6588,21 @@
 
     move-result v0
 
-    if-nez v0, :cond_57
+    if-nez v0, :cond_3
 
     const-string v0, "%F"
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-    :try_end_57
-    .catchall {:try_start_7 .. :try_end_57} :catchall_57
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_57
-    :cond_57
+    :catchall_0
+    :cond_3
     return-void
 .end method
 
 .method private static registerObserversLocked(Llibs/d9;)V
-    .registers 8
+    .locals 7
 
     iget v0, p0, Llibs/d9;->Y:I
 
@@ -6615,7 +6614,7 @@
 
     iget-object v2, p0, Llibs/d9;->Omicron:Ljava/util/ArrayList;
 
-    if-eqz v2, :cond_42
+    if-eqz v2, :cond_1
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
@@ -6623,8 +6622,8 @@
 
     const/4 v4, 0x0
 
-    :goto_13
-    if-ge v4, v3, :cond_42
+    :goto_0
+    if-ge v4, v3, :cond_1
 
     invoke-virtual {v2, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -6638,7 +6637,7 @@
 
     move-result-object v5
 
-    if-eqz v5, :cond_41
+    if-eqz v5, :cond_0
 
     const-string v6, "/"
 
@@ -6646,9 +6645,9 @@
 
     move-result v6
 
-    if-eqz v6, :cond_41
+    if-eqz v6, :cond_0
 
-    :try_start_2b
+    :try_start_0
     new-instance v6, Ljava/io/File;
 
     invoke-direct {v6, v5}, Ljava/io/File;-><init>(Ljava/lang/String;)V
@@ -6657,7 +6656,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_41
+    if-eqz v6, :cond_0
 
     new-instance v6, Llibs/AutoTaskWatcher$DirObserver;
 
@@ -6666,14 +6665,14 @@
     invoke-virtual {v6}, Landroid/os/FileObserver;->startWatching()V
 
     invoke-virtual {v1, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_41
-    .catchall {:try_start_2b .. :try_end_41} :catchall_41
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_41
-    :cond_41
-    goto :goto_13
+    :catchall_0
+    :cond_0
+    goto :goto_0
 
-    :cond_42
+    :cond_1
     sget-object v2, Llibs/AutoTaskWatcher;->observers:Ljava/util/HashMap;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -6686,16 +6685,16 @@
 .end method
 
 .method private static declared-synchronized resolveAutoTaskIdForOperation(Llibs/m52;)I
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     return v0
 
-    :cond_4
-    :try_start_4
+    :cond_0
+    :try_start_0
     sget-object v1, Llibs/AutoTaskWatcher;->opToTaskIdMap:Ljava/util/WeakHashMap;
 
     invoke-virtual {v1, p0}, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -6704,20 +6703,20 @@
 
     check-cast v1, Ljava/lang/Integer;
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_1
 
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
-    if-lez v1, :cond_15
+    if-lez v1, :cond_1
 
     return v1
 
-    :cond_15
+    :cond_1
     iget v1, p0, Llibs/m52;->One:I
 
-    if-lez v1, :cond_2e
+    if-lez v1, :cond_2
 
     sget-object v2, Llibs/AutoTaskWatcher;->opNumToTaskIdMap:Ljava/util/LinkedHashMap;
 
@@ -6731,20 +6730,20 @@
 
     check-cast v1, Ljava/lang/Integer;
 
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_2
 
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
-    if-lez v1, :cond_2e
+    if-lez v1, :cond_2
 
     return v1
 
-    :cond_2e
+    :cond_2
     iget p0, p0, Llibs/m52;->Z:I
 
-    if-lez p0, :cond_47
+    if-lez p0, :cond_3
 
     sget-object v1, Llibs/AutoTaskWatcher;->opNumToTaskIdMap:Ljava/util/LinkedHashMap;
 
@@ -6758,41 +6757,41 @@
 
     check-cast p0, Ljava/lang/Integer;
 
-    if-eqz p0, :cond_47
+    if-eqz p0, :cond_3
 
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
     move-result p0
-    :try_end_44
-    .catchall {:try_start_4 .. :try_end_44} :catchall_47
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-lez p0, :cond_47
+    if-lez p0, :cond_3
 
     return p0
 
-    :catchall_47
-    :cond_47
+    :catchall_0
+    :cond_3
     return v0
 .end method
 
 .method public static resolveTaskItems(Landroid/content/Intent;ZJ)Ljava/util/LinkedHashSet;
-    .registers 14
+    .locals 10
 
     const/4 v0, 0x0
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     return-object v0
 
-    :cond_4
-    :try_start_4
+    :cond_0
+    :try_start_0
     const-string v1, "mode"
 
     invoke-virtual {p0, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_1
 
     invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -6804,11 +6803,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_1
 
     return-object v0
 
-    :cond_19
+    :cond_1
     const-string v1, "thread_id"
 
     const/4 v2, -0x1
@@ -6817,7 +6816,7 @@
 
     move-result v1
 
-    if-ne v1, v2, :cond_28
+    if-ne v1, v2, :cond_2
 
     const-string v1, "id"
 
@@ -6825,10 +6824,10 @@
 
     move-result v1
 
-    :cond_28
+    :cond_2
     const/4 v4, 0x0
 
-    if-eq v1, v2, :cond_38
+    if-eq v1, v2, :cond_3
 
     invoke-static {v1}, Llibs/AutoTaskWatcher;->consumeAutoTriggered(I)Z
 
@@ -6842,15 +6841,15 @@
 
     move-result-object v3
 
-    goto :goto_3a
+    goto :goto_0
 
-    :cond_38
+    :cond_3
     const/4 v2, 0x0
 
     move-object v3, v0
 
-    :goto_3a
-    if-eqz v3, :cond_45
+    :goto_0
+    if-eqz v3, :cond_4
 
     iget-wide v6, v3, Llibs/d9;->Mu:J
 
@@ -6858,41 +6857,41 @@
 
     cmp-long v5, v6, v8
 
-    if-nez v5, :cond_45
+    if-nez v5, :cond_4
 
     const/4 v4, 0x1
 
-    :cond_45
+    :cond_4
     move-object v7, v3
 
-    if-eqz v3, :cond_53
+    if-eqz v3, :cond_6
 
     invoke-static {v3}, Llibs/AutoTaskWatcher;->isOnlyFolderFiles(Llibs/d9;)Z
 
     move-result v5
 
-    if-nez v5, :cond_52
+    if-nez v5, :cond_5
 
     invoke-static {v3}, Llibs/AutoTaskWatcher;->hasTaskExtFilter(Llibs/d9;)Z
 
     move-result v5
 
-    :cond_52
-    goto :goto_54
+    :cond_5
+    goto :goto_1
 
-    :cond_53
+    :cond_6
     const/4 v5, 0x0
 
-    :goto_54
+    :goto_1
     const/4 v6, 0x1
 
-    if-nez v5, :cond_79
+    if-nez v5, :cond_8
 
-    if-eqz v4, :cond_c6
+    if-eqz v4, :cond_12
 
-    if-nez v2, :cond_c6
+    if-nez v2, :cond_12
 
-    if-eqz v3, :cond_c6
+    if-eqz v3, :cond_12
 
     iget-object v2, v3, Llibs/d9;->Omicron:Ljava/util/ArrayList;
 
@@ -6908,32 +6907,32 @@
 
     move-result-object v9
 
-    if-eqz v9, :cond_6f
+    if-eqz v9, :cond_7
 
     move-object v2, v9
 
-    goto :goto_72
+    goto :goto_2
 
-    :cond_6f
+    :cond_7
     invoke-static {v3, v2}, Llibs/AutoTaskWatcher;->filterTaskItems(Llibs/d9;Ljava/util/Collection;)V
 
-    :goto_72
+    :goto_2
     invoke-static {v1}, Llibs/AutoTaskWatcher;->consumeManualPlay(I)Z
 
     invoke-static {v1, v2, v6}, Llibs/AutoTaskWatcher;->syncSeenPrefs(ILjava/util/Collection;Z)Ljava/util/LinkedHashSet;
 
     return-object v0
 
-    :cond_79
+    :cond_8
     invoke-static {p0, v3}, Llibs/AutoTaskWatcher;->extractIntentSources(Landroid/content/Intent;Llibs/d9;)Ljava/util/List;
 
     move-result-object v3
 
-    if-nez v3, :cond_80
+    if-nez v3, :cond_9
 
     return-object v0
 
-    :cond_80
+    :cond_9
     invoke-static {v7}, Llibs/AutoTaskWatcher;->isOnlyFolderFiles(Llibs/d9;)Z
 
     move-result v8
@@ -6942,41 +6941,41 @@
 
     move-result-object v3
 
-    if-eqz v8, :cond_92
+    if-eqz v8, :cond_a
 
     invoke-static {v7, v3, p1, p2, p3}, Llibs/AutoTaskWatcher;->expandFilteredFolders(Llibs/d9;Ljava/util/Collection;ZJ)Ljava/util/LinkedHashSet;
 
     move-result-object v9
 
-    if-eqz v9, :cond_9d
+    if-eqz v9, :cond_c
 
     move-object v3, v9
 
-    goto :goto_9d
+    goto :goto_3
 
-    :cond_92
+    :cond_a
     invoke-static {v7, v3, p1, p2, p3}, Llibs/AutoTaskWatcher;->expandFilteredFolders(Llibs/d9;Ljava/util/Collection;ZJ)Ljava/util/LinkedHashSet;
 
     move-result-object v9
 
-    if-eqz v9, :cond_9a
+    if-eqz v9, :cond_b
 
     move-object v3, v9
 
-    goto :goto_9d
+    goto :goto_3
 
-    :cond_9a
+    :cond_b
     invoke-static {v7, v3}, Llibs/AutoTaskWatcher;->filterTaskItems(Llibs/d9;Ljava/util/Collection;)V
 
-    :cond_9d
-    :goto_9d
-    if-nez v4, :cond_a3
+    :cond_c
+    :goto_3
+    if-nez v4, :cond_d
 
     invoke-static {v1}, Llibs/AutoTaskWatcher;->consumeManualPlay(I)Z
 
     return-object v3
 
-    :cond_a3
+    :cond_d
     invoke-static {v1}, Llibs/AutoTaskWatcher;->consumeManualPlay(I)Z
 
     move-result v5
@@ -6985,11 +6984,11 @@
 
     move-result-object v1
 
-    if-eqz v5, :cond_ae
+    if-eqz v5, :cond_e
 
     return-object v3
 
-    :cond_ae
+    :cond_e
     const-string v4, "task"
 
     invoke-virtual {p0, v4}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
@@ -7000,44 +6999,44 @@
 
     move-result v4
 
-    if-eqz v4, :cond_bb
+    if-eqz v4, :cond_f
 
     return-object v3
 
-    :cond_bb
-    if-eqz v2, :cond_be
+    :cond_f
+    if-eqz v2, :cond_10
 
     return-object v1
 
-    :cond_be
+    :cond_10
     invoke-virtual {v1}, Ljava/util/AbstractCollection;->isEmpty()Z
 
     move-result v2
-    :try_end_c2
-    .catchall {:try_start_4 .. :try_end_c2} :catchall_c6
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v2, :cond_c5
+    if-eqz v2, :cond_11
 
     return-object v3
 
-    :cond_c5
+    :cond_11
     return-object v1
 
-    :catchall_c6
-    :cond_c6
+    :catchall_0
+    :cond_12
     return-object v0
 .end method
 
 .method public static sanitizeExtFilter(Ljava/lang/String;)Ljava/lang/String;
-    .registers 9
+    .locals 8
 
     const-string v0, ""
 
-    if-nez p0, :cond_5
+    if-nez p0, :cond_0
 
     return-object v0
 
-    :cond_5
+    :cond_0
     sget-object v1, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
@@ -7102,8 +7101,8 @@
 
     const/4 v4, 0x0
 
-    :goto_44
-    if-ge v4, v3, :cond_66
+    :goto_0
+    if-ge v4, v3, :cond_3
 
     aget-object v5, v1, v4
 
@@ -7111,14 +7110,14 @@
 
     move-result-object v5
 
-    :goto_4c
+    :goto_1
     const-string v6, "."
 
     invoke-virtual {v5, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v6
 
-    if-eqz v6, :cond_5a
+    if-eqz v6, :cond_1
 
     const/4 v6, 0x1
 
@@ -7126,32 +7125,32 @@
 
     move-result-object v5
 
-    goto :goto_4c
+    goto :goto_1
 
-    :cond_5a
+    :cond_1
     invoke-virtual {v5}, Ljava/lang/String;->isEmpty()Z
 
     move-result v6
 
-    if-nez v6, :cond_63
+    if-nez v6, :cond_2
 
     invoke-virtual {v2, v5}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
-    :cond_63
+    :cond_2
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_44
+    goto :goto_0
 
-    :cond_66
+    :cond_3
     invoke-virtual {v2}, Ljava/util/AbstractCollection;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_6d
+    if-eqz v1, :cond_4
 
     return-object v0
 
-    :cond_6d
+    :cond_4
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -7162,12 +7161,12 @@
 
     const/4 v2, 0x1
 
-    :goto_77
+    :goto_2
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_8f
+    if-eqz v3, :cond_6
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -7175,20 +7174,20 @@
 
     check-cast v3, Ljava/lang/String;
 
-    if-nez v2, :cond_8a
+    if-nez v2, :cond_5
 
     const-string v4, ", "
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_8a
+    :cond_5
     const/4 v2, 0x0
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_77
+    goto :goto_2
 
-    :cond_8f
+    :cond_6
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -7197,15 +7196,15 @@
 .end method
 
 .method public static sanitizeNameFilter(Ljava/lang/String;)Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     const-string v0, ""
 
-    if-nez p0, :cond_5
+    if-nez p0, :cond_0
 
     return-object v0
 
-    :cond_5
+    :cond_0
     invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v1
@@ -7214,18 +7213,18 @@
 
     move-result v2
 
-    if-eqz v2, :cond_10
+    if-eqz v2, :cond_1
 
     return-object v0
 
-    :cond_10
+    :cond_1
     const/16 v2, 0x78
 
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v3
 
-    if-le v3, v2, :cond_1d
+    if-le v3, v2, :cond_2
 
     const/4 v3, 0x0
 
@@ -7233,20 +7232,20 @@
 
     move-result-object v1
 
-    :cond_1d
+    :cond_2
     return-object v1
 .end method
 
 .method private static sanitizePrefix(Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     const-string v0, ""
 
-    if-nez p0, :cond_5
+    if-nez p0, :cond_0
 
     return-object v0
 
-    :cond_5
+    :cond_0
     const-string v1, "\r"
 
     invoke-virtual {p0, v1, v0}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
@@ -7281,16 +7280,16 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2a
+    if-eqz v1, :cond_1
 
     return-object v0
 
-    :cond_2a
+    :cond_1
     return-object p0
 .end method
 
 .method public static scanAllWatchTasksNow()V
-    .registers 8
+    .locals 8
 
     :try_start_0
     new-instance v0, Ljava/util/ArrayList;
@@ -7307,8 +7306,8 @@
 
     const/4 v2, 0x0
 
-    :goto_e
-    if-ge v2, v1, :cond_2a
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -7318,7 +7317,7 @@
 
     check-cast v3, Llibs/d9;
 
-    if-eqz v3, :cond_29
+    if-eqz v3, :cond_0
 
     iget-wide v4, v3, Llibs/d9;->Mu:J
 
@@ -7326,26 +7325,26 @@
 
     cmp-long v4, v4, v6
 
-    if-nez v4, :cond_29
+    if-nez v4, :cond_0
 
     iget v4, v3, Llibs/d9;->One:I
 
-    if-gtz v4, :cond_29
+    if-gtz v4, :cond_0
 
     invoke-static {v3}, Llibs/AutoTaskWatcher;->checkAndFire(Llibs/d9;)V
-    :try_end_29
-    .catchall {:try_start_0 .. :try_end_29} :catchall_2a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :cond_29
-    goto :goto_e
+    :cond_0
+    goto :goto_0
 
-    :catchall_2a
-    :cond_2a
+    :catchall_0
+    :cond_1
     return-void
 .end method
 
 .method public static scanChildFolders(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/LinkedHashSet;)V
-    .registers 12
+    .locals 8
 
     new-instance v0, Ljava/io/File;
 
@@ -7355,18 +7354,18 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_74
+    if-nez v0, :cond_5
 
     const/4 v1, 0x0
 
-    :goto_c
+    :goto_0
     array-length v6, v0
 
-    if-ge v1, v6, :cond_74
+    if-ge v1, v6, :cond_5
 
     aget-object v2, v0, v1
 
-    if-nez v2, :cond_71
+    if-nez v2, :cond_4
 
     invoke-virtual {v2}, Ljava/io/File;->getName()Ljava/lang/String;
 
@@ -7376,13 +7375,13 @@
 
     move-result v6
 
-    if-nez v6, :cond_71
+    if-nez v6, :cond_4
 
     invoke-virtual {v2}, Ljava/io/File;->isDirectory()Z
 
     move-result v6
 
-    if-nez v6, :cond_45
+    if-nez v6, :cond_1
 
     invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
@@ -7394,14 +7393,14 @@
 
     move-result-object v5
 
-    if-eqz v5, :cond_33
+    if-eqz v5, :cond_0
 
     invoke-virtual {p3, v5}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
-    :cond_33
+    :cond_0
     new-instance v6, Ljava/lang/StringBuilder;
 
-    const-string v7, "PASTA-OK "
+    const-string v7, "FOLDER-OK "
 
     invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -7413,24 +7412,24 @@
 
     invoke-static {v6}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
 
-    goto :goto_71
+    goto :goto_1
 
-    :cond_45
-    if-nez p2, :cond_53
+    :cond_1
+    if-nez p2, :cond_2
 
     invoke-virtual {p2}, Ljava/lang/String;->isEmpty()Z
 
     move-result v6
 
-    if-eqz v6, :cond_53
+    if-eqz v6, :cond_2
 
     invoke-static {v3, p2}, Llibs/AutoTaskWatcher;->matchesExtFilter(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v6
 
-    if-eqz v6, :cond_71
+    if-eqz v6, :cond_4
 
-    :cond_53
+    :cond_2
     invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v4
@@ -7439,14 +7438,14 @@
 
     move-result-object v5
 
-    if-eqz v5, :cond_60
+    if-eqz v5, :cond_3
 
     invoke-virtual {p3, v5}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
-    :cond_60
+    :cond_3
     new-instance v6, Ljava/lang/StringBuilder;
 
-    const-string v7, "ARQUIVO-OK "
+    const-string v7, "FILE-OK "
 
     invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -7458,18 +7457,18 @@
 
     invoke-static {v6}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
 
-    :cond_71
-    :goto_71
+    :cond_4
+    :goto_1
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_74
+    :cond_5
     return-void
 .end method
 
 .method public static scheduleServiceRestart()V
-    .registers 7
+    .locals 7
 
     :try_start_0
     const/4 v0, 0x1
@@ -7478,7 +7477,7 @@
 
     sget-object v0, Llibs/zt0;->g:Landroid/content/Context;
 
-    if-eqz v0, :cond_4a
+    if-eqz v0, :cond_3
 
     const-string v1, "alarm"
 
@@ -7488,7 +7487,7 @@
 
     check-cast v1, Landroid/app/AlarmManager;
 
-    if-eqz v1, :cond_4a
+    if-eqz v1, :cond_3
 
     new-instance v2, Landroid/content/Intent;
 
@@ -7500,35 +7499,35 @@
 
     const/16 v4, 0x17
 
-    if-lt v3, v4, :cond_22
+    if-lt v3, v4, :cond_0
 
     const/high16 v4, 0xc000000
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_22
+    :cond_0
     const/high16 v4, 0x8000000
 
-    :goto_24
+    :goto_0
     const/16 v5, 0x7762
 
     const/16 v6, 0x1a
 
-    if-lt v3, v6, :cond_2f
+    if-lt v3, v6, :cond_1
 
     invoke-static {v0, v5, v2, v4}, Landroid/app/PendingIntent;->getForegroundService(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v0
 
-    goto :goto_33
+    goto :goto_1
 
-    :cond_2f
+    :cond_1
     invoke-static {v0, v5, v2, v4}, Landroid/app/PendingIntent;->getService(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v0
 
-    :goto_33
-    if-eqz v0, :cond_4a
+    :goto_1
+    if-eqz v0, :cond_3
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -7544,24 +7543,24 @@
 
     const/16 v3, 0x17
 
-    if-lt v6, v3, :cond_47
+    if-lt v6, v3, :cond_2
 
     invoke-virtual {v1, v2, v4, v5, v0}, Landroid/app/AlarmManager;->setAndAllowWhileIdle(IJLandroid/app/PendingIntent;)V
 
     return-void
 
-    :cond_47
+    :cond_2
     invoke-virtual {v1, v2, v4, v5, v0}, Landroid/app/AlarmManager;->set(IJLandroid/app/PendingIntent;)V
-    :try_end_4a
-    .catchall {:try_start_0 .. :try_end_4a} :catchall_4a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_4a
-    :cond_4a
+    :catchall_0
+    :cond_3
     return-void
 .end method
 
 .method public static declared-synchronized scheduleTrigger(IJ)V
-    .registers 7
+    .locals 4
 
     invoke-static {}, Llibs/AutoTaskWatcher;->ensureHandler()Landroid/os/Handler;
 
@@ -7579,48 +7578,48 @@
 
     check-cast v3, Llibs/AutoTaskWatcher$TickRunnable;
 
-    if-eqz v3, :cond_16
+    if-eqz v3, :cond_0
 
     invoke-virtual {v0, v3}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     new-instance v3, Llibs/AutoTaskWatcher$TickRunnable;
 
     invoke-direct {v3, p0}, Llibs/AutoTaskWatcher$TickRunnable;-><init>(I)V
 
     invoke-virtual {v2, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :goto_1e
+    :goto_0
     invoke-virtual {v0, v3, p1, p2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     return-void
 .end method
 
 .method public static setNameLive(Llibs/od;Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
-    if-eqz p0, :cond_b
+    if-eqz p0, :cond_0
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     sget-object v0, Llibs/AutoTaskWatcher;->nameLiveText:Ljava/util/WeakHashMap;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
-    :try_start_8
+    :try_start_0
     invoke-virtual {v0, p0, p1}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_b
-    .catchall {:try_start_8 .. :try_end_b} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_b
-    :cond_b
+    :catchall_0
+    :cond_0
     return-void
 .end method
 
 .method public static declared-synchronized shouldSuppressNotification(Llibs/m52;)Z
-    .registers 5
+    .locals 4
 
     const-wide/16 v0, 0xdc
 
@@ -7628,21 +7627,21 @@
 
     const/4 v0, 0x0
 
-    if-nez p0, :cond_9
+    if-nez p0, :cond_0
 
     return v0
 
-    :cond_9
-    :try_start_9
+    :cond_0
+    :try_start_0
     invoke-static {p0}, Llibs/AutoTaskWatcher;->resolveAutoTaskIdForOperation(Llibs/m52;)I
 
     move-result p0
 
-    if-gtz p0, :cond_10
+    if-gtz p0, :cond_1
 
     return v0
 
-    :cond_10
+    :cond_1
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -7651,7 +7650,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_2
 
     invoke-static {v2}, Llibs/AutoTaskWatcher;->isNotificationEnabledForTask(Llibs/d9;)Z
 
@@ -7661,7 +7660,7 @@
 
     return v0
 
-    :cond_21
+    :cond_2
     sget-object v2, Llibs/AutoTaskWatcher;->notifyByIdCache:Ljava/util/HashMap;
 
     invoke-virtual {v2, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -7670,7 +7669,7 @@
 
     check-cast v1, Ljava/lang/Boolean;
 
-    if-eqz v1, :cond_32
+    if-eqz v1, :cond_3
 
     invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -7680,12 +7679,12 @@
 
     return v0
 
-    :cond_32
+    :cond_3
     invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
 
     move-result-object v1
 
-    if-eqz v1, :cond_54
+    if-eqz v1, :cond_4
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -7703,48 +7702,48 @@
 
     move-result v2
 
-    if-eqz v2, :cond_54
+    if-eqz v2, :cond_4
 
     const/4 v2, 0x1
 
     invoke-interface {v1, p0, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result p0
-    :try_end_51
-    .catchall {:try_start_9 .. :try_end_51} :catchall_54
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     xor-int/lit8 v0, p0, 0x1
 
     return v0
 
-    :catchall_54
-    :cond_54
+    :catchall_0
+    :cond_4
     return v0
 .end method
 
 .method private static snapshotStamps(Ljava/util/Collection;)Ljava/util/HashMap;
-    .registers 5
+    .locals 4
 
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    if-nez p0, :cond_8
+    if-nez p0, :cond_0
 
     return-object v0
 
-    :cond_8
+    :cond_0
     invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    :cond_c
-    :goto_c
+    :cond_1
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_26
+    if-eqz v2, :cond_2
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -7752,11 +7751,11 @@
 
     check-cast v2, Llibs/rp0;
 
-    if-eqz v2, :cond_c
+    if-eqz v2, :cond_1
 
     iget-object v3, v2, Llibs/rp0;->Three:Ljava/lang/String;
 
-    if-eqz v3, :cond_c
+    if-eqz v3, :cond_1
 
     invoke-static {v2}, Llibs/AutoTaskWatcher;->makeItemStamp(Llibs/rp0;)Ljava/lang/String;
 
@@ -7764,14 +7763,14 @@
 
     invoke-virtual {v0, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_26
+    :cond_2
     return-object v0
 .end method
 
 .method private static startPollTimerLocked()V
-    .registers 4
+    .locals 4
 
     invoke-static {}, Llibs/AutoTaskWatcher;->ensureHandler()Landroid/os/Handler;
 
@@ -7797,7 +7796,7 @@
 .end method
 
 .method private static stopObserversForTaskLocked(I)V
-    .registers 5
+    .locals 4
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -7811,18 +7810,18 @@
 
     check-cast v1, Ljava/util/ArrayList;
 
-    if-eqz v1, :cond_27
+    if-eqz v1, :cond_1
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    :goto_12
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_27
+    if-eqz v2, :cond_1
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -7830,22 +7829,22 @@
 
     check-cast v2, Llibs/AutoTaskWatcher$DirObserver;
 
-    if-eqz v2, :cond_26
+    if-eqz v2, :cond_0
 
     const/4 v3, 0x1
 
     iput-boolean v3, v2, Llibs/AutoTaskWatcher$DirObserver;->dead:Z
 
-    :try_start_23
+    :try_start_0
     invoke-virtual {v2}, Landroid/os/FileObserver;->stopWatching()V
-    :try_end_26
-    .catchall {:try_start_23 .. :try_end_26} :catchall_26
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_26
-    :cond_26
-    goto :goto_12
+    :catchall_0
+    :cond_0
+    goto :goto_0
 
-    :cond_27
+    :cond_1
     sget-object v1, Llibs/AutoTaskWatcher;->pendingRunnables:Ljava/util/HashMap;
 
     invoke-virtual {v1, v0}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -7854,20 +7853,20 @@
 
     check-cast v0, Llibs/AutoTaskWatcher$TickRunnable;
 
-    if-eqz v0, :cond_38
+    if-eqz v0, :cond_2
 
     sget-object v1, Llibs/AutoTaskWatcher;->handler:Landroid/os/Handler;
 
-    if-eqz v1, :cond_38
+    if-eqz v1, :cond_2
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    :cond_38
+    :cond_2
     return-void
 .end method
 
 .method public static declared-synchronized syncAll()V
-    .registers 8
+    .locals 8
 
     :try_start_0
     new-instance v0, Ljava/util/ArrayList;
@@ -7884,12 +7883,12 @@
 
     move-result-object v0
 
-    :goto_f
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -7903,9 +7902,9 @@
 
     invoke-static {v1}, Llibs/AutoTaskWatcher;->stopObserversForTaskLocked(I)V
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_23
+    :cond_0
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-static {}, Llibs/e9;->n()Ljava/util/ArrayList;
@@ -7920,8 +7919,8 @@
 
     const/4 v2, 0x0
 
-    :goto_31
-    if-ge v2, v1, :cond_54
+    :goto_1
+    if-ge v2, v1, :cond_2
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -7931,7 +7930,7 @@
 
     check-cast v3, Llibs/d9;
 
-    if-eqz v3, :cond_53
+    if-eqz v3, :cond_1
 
     iget-wide v4, v3, Llibs/d9;->Mu:J
 
@@ -7939,11 +7938,11 @@
 
     cmp-long v4, v4, v6
 
-    if-nez v4, :cond_53
+    if-nez v4, :cond_1
 
     iget v4, v3, Llibs/d9;->One:I
 
-    if-gtz v4, :cond_53
+    if-gtz v4, :cond_1
 
     invoke-static {v3}, Llibs/AutoTaskWatcher;->registerObserversLocked(Llibs/d9;)V
 
@@ -7953,41 +7952,41 @@
 
     invoke-static {v3, v4, v5}, Llibs/AutoTaskWatcher;->scheduleTrigger(IJ)V
 
-    :cond_53
-    goto :goto_31
+    :cond_1
+    goto :goto_1
 
-    :cond_54
+    :cond_2
     invoke-static {}, Llibs/AutoTaskWatcher;->updatePollAndJobLocked()V
-    :try_end_57
-    .catchall {:try_start_0 .. :try_end_57} :catchall_57
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_57
+    :catchall_0
     return-void
 .end method
 
 .method private static syncSeenPrefs(ILjava/util/Collection;Z)Ljava/util/LinkedHashSet;
-    .registers 13
+    .locals 10
 
     new-instance v0, Ljava/util/LinkedHashSet;
 
     invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V
 
-    if-nez p1, :cond_8
+    if-nez p1, :cond_0
 
     return-object v0
 
-    :cond_8
+    :cond_0
     invoke-static {p0}, Llibs/AutoTaskWatcher;->getSeenPrefs(I)Landroid/content/SharedPreferences;
 
     move-result-object v1
 
-    if-nez v1, :cond_12
+    if-nez v1, :cond_1
 
     invoke-virtual {v0, p1}, Ljava/util/AbstractCollection;->addAll(Ljava/util/Collection;)Z
 
     return-object v0
 
-    :cond_12
+    :cond_1
     new-instance v2, Ljava/util/HashSet;
 
     invoke-direct {v2}, Ljava/util/HashSet;-><init>()V
@@ -8002,13 +8001,13 @@
 
     move-result-object v5
 
-    :cond_20
-    :goto_20
+    :cond_2
+    :goto_0
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v6
 
-    if-eqz v6, :cond_4e
+    if-eqz v6, :cond_3
 
     invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -8016,11 +8015,11 @@
 
     check-cast v6, Llibs/rp0;
 
-    if-eqz v6, :cond_20
+    if-eqz v6, :cond_2
 
     iget-object v7, v6, Llibs/rp0;->Three:Ljava/lang/String;
 
-    if-eqz v7, :cond_20
+    if-eqz v7, :cond_2
 
     invoke-virtual {v2, v7}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
@@ -8038,24 +8037,24 @@
 
     move-result v9
 
-    if-nez v9, :cond_20
+    if-nez v9, :cond_2
 
     invoke-virtual {v0, v6}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
-    if-eqz p2, :cond_20
+    if-eqz p2, :cond_2
 
     invoke-interface {v3, v7, v8}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     const/4 v4, 0x1
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_4e
+    :cond_3
     invoke-interface {v1}, Landroid/content/SharedPreferences;->getAll()Ljava/util/Map;
 
     move-result-object v1
 
-    if-eqz v1, :cond_73
+    if-eqz v1, :cond_5
 
     invoke-interface {v1}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
@@ -8065,13 +8064,13 @@
 
     move-result-object v1
 
-    :cond_5c
-    :goto_5c
+    :cond_4
+    :goto_1
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_73
+    if-eqz v5, :cond_5
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -8083,45 +8082,45 @@
 
     move-result v6
 
-    if-nez v6, :cond_5c
+    if-nez v6, :cond_4
 
     invoke-interface {v3, v5}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     const/4 v4, 0x1
 
-    goto :goto_5c
+    goto :goto_1
 
-    :cond_73
-    if-eqz v4, :cond_78
+    :cond_5
+    if-eqz v4, :cond_6
 
     invoke-interface {v3}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    :cond_78
+    :cond_6
     return-object v0
 .end method
 
 .method public static triggerTaskManualNow(Llibs/d9;)V
-    .registers 7
+    .locals 6
 
-    if-nez p0, :cond_3
+    if-nez p0, :cond_0
 
     return-void
 
-    :cond_3
-    :try_start_3
+    :cond_0
+    :try_start_0
     invoke-static {p0}, Llibs/AutoTaskWatcher;->isOnlyFolderFiles(Llibs/d9;)Z
 
     move-result v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_1
 
     invoke-static {p0}, Llibs/AutoTaskWatcher;->hasTaskExtFilter(Llibs/d9;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_5
 
-    :cond_f
+    :cond_1
     iget-object v0, p0, Llibs/d9;->Omicron:Ljava/util/ArrayList;
 
     iget-boolean v1, p0, Llibs/d9;->Sigma:Z
@@ -8136,37 +8135,37 @@
 
     move-result-object v0
 
-    if-eqz v4, :cond_27
+    if-eqz v4, :cond_2
 
     invoke-static {p0, v0, v1, v2, v3}, Llibs/AutoTaskWatcher;->expandFilteredFolders(Llibs/d9;Ljava/util/Collection;ZJ)Ljava/util/LinkedHashSet;
 
     move-result-object v5
 
-    if-eqz v5, :cond_2a
+    if-eqz v5, :cond_3
 
     move-object v0, v5
 
-    goto :goto_2a
+    goto :goto_0
 
-    :cond_27
+    :cond_2
     invoke-static {p0, v0}, Llibs/AutoTaskWatcher;->filterTaskItems(Llibs/d9;Ljava/util/Collection;)V
 
-    :cond_2a
-    :goto_2a
-    if-eqz v0, :cond_32
+    :cond_3
+    :goto_0
+    if-eqz v0, :cond_4
 
     invoke-virtual {v0}, Ljava/util/AbstractCollection;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_5
 
-    :cond_32
+    :cond_4
     invoke-static {}, Llibs/SmartFeaturesV116;->showNoMatchingTaskFilesToast()V
 
     return-void
 
-    :cond_36
+    :cond_5
     iget v0, p0, Llibs/d9;->Y:I
 
     invoke-static {v0}, Llibs/AutoTaskWatcher;->markManualPlay(I)V
@@ -8176,33 +8175,33 @@
     const-wide/16 v0, 0x15e
 
     invoke-static {v0, v1}, Llibs/SmartFeaturesV116;->scheduleAutoRefreshOpenTabs(J)V
-    :try_end_43
-    .catchall {:try_start_3 .. :try_end_43} :catchall_43
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_43
+    :catchall_0
     return-void
 .end method
 
 .method private static updateContentJob(Z)V
-    .registers 7
+    .locals 6
 
     :try_start_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x18
 
-    if-ge v0, v1, :cond_7
+    if-ge v0, v1, :cond_0
 
     return-void
 
-    :cond_7
+    :cond_0
     sget-object v0, Llibs/zt0;->g:Landroid/content/Context;
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_1
 
     return-void
 
-    :cond_c
+    :cond_1
     const-string v1, "jobscheduler"
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -8211,29 +8210,29 @@
 
     check-cast v1, Landroid/app/job/JobScheduler;
 
-    if-nez v1, :cond_17
+    if-nez v1, :cond_2
 
     return-void
 
-    :cond_17
+    :cond_2
     const v2, 0x77617463
 
-    if-nez p0, :cond_20
+    if-nez p0, :cond_3
 
     invoke-virtual {v1, v2}, Landroid/app/job/JobScheduler;->cancel(I)V
 
     return-void
 
-    :cond_20
+    :cond_3
     invoke-virtual {v1, v2}, Landroid/app/job/JobScheduler;->getPendingJob(I)Landroid/app/job/JobInfo;
 
     move-result-object v3
 
-    if-eqz v3, :cond_27
+    if-eqz v3, :cond_4
 
     return-void
 
-    :cond_27
+    :cond_4
     new-instance v3, Landroid/content/ComponentName;
 
     const-class v4, Lcom/mixplorer/services/WorkService;
@@ -8259,14 +8258,14 @@
     invoke-virtual {v0, v3}, Landroid/app/job/JobInfo$Builder;->addTriggerContentUri(Landroid/app/job/JobInfo$TriggerContentUri;)Landroid/app/job/JobInfo$Builder;
 
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
-    :try_end_44
-    .catchall {:try_start_0 .. :try_end_44} :catchall_67
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     const/16 v3, 0x1d
 
-    if-lt v2, v3, :cond_56
+    if-lt v2, v3, :cond_5
 
-    :try_start_48
+    :try_start_1
     const-string v2, "content://media/external/downloads"
 
     invoke-static {v2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -8278,12 +8277,12 @@
     invoke-direct {v3, v2, v4}, Landroid/app/job/JobInfo$TriggerContentUri;-><init>(Landroid/net/Uri;I)V
 
     invoke-virtual {v0, v3}, Landroid/app/job/JobInfo$Builder;->addTriggerContentUri(Landroid/app/job/JobInfo$TriggerContentUri;)Landroid/app/job/JobInfo$Builder;
-    :try_end_56
-    .catchall {:try_start_48 .. :try_end_56} :catchall_56
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :catchall_56
-    :cond_56
-    :try_start_56
+    :catchall_0
+    :cond_5
+    :try_start_2
     const-wide/16 v2, 0x1f4
 
     invoke-virtual {v0, v2, v3}, Landroid/app/job/JobInfo$Builder;->setTriggerContentUpdateDelay(J)Landroid/app/job/JobInfo$Builder;
@@ -8297,32 +8296,32 @@
     move-result-object v0
 
     invoke-virtual {v1, v0}, Landroid/app/job/JobScheduler;->schedule(Landroid/app/job/JobInfo;)I
-    :try_end_67
-    .catchall {:try_start_56 .. :try_end_67} :catchall_67
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    :catchall_67
+    :catchall_1
     return-void
 .end method
 
 .method private static declared-synchronized updateMediaObserverLocked(Z)V
-    .registers 5
+    .locals 4
 
     :try_start_0
     sget-object v0, Llibs/zt0;->g:Landroid/content/Context;
 
-    if-eqz v0, :cond_4e
+    if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    if-eqz v0, :cond_4e
+    if-eqz v0, :cond_1
 
-    if-nez p0, :cond_17
+    if-nez p0, :cond_0
 
     sget-object v1, Llibs/AutoTaskWatcher;->mediaObserver:Llibs/AutoTaskWatcher$MediaObserver;
 
-    if-eqz v1, :cond_4e
+    if-eqz v1, :cond_1
 
     const/4 v2, 0x0
 
@@ -8332,10 +8331,10 @@
 
     return-void
 
-    :cond_17
+    :cond_0
     sget-object v1, Llibs/AutoTaskWatcher;->mediaObserver:Llibs/AutoTaskWatcher$MediaObserver;
 
-    if-nez v1, :cond_4e
+    if-nez v1, :cond_1
 
     invoke-static {}, Llibs/AutoTaskWatcher;->ensureHandler()Landroid/os/Handler;
 
@@ -8373,7 +8372,7 @@
 
     const/16 p0, 0x1d
 
-    if-lt v3, p0, :cond_4e
+    if-lt v3, p0, :cond_1
 
     const-string v3, "content://media/external/downloads"
 
@@ -8382,32 +8381,32 @@
     move-result-object v3
 
     invoke-virtual {v0, v3, v1, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
-    :try_end_4e
-    .catchall {:try_start_0 .. :try_end_4e} :catchall_4e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_4e
-    :cond_4e
+    :catchall_0
+    :cond_1
     return-void
 .end method
 
 .method private static updatePollAndJobLocked()V
-    .registers 2
+    .locals 2
 
     invoke-static {}, Llibs/AutoTaskWatcher;->hasEnabledWatchTasks()Z
 
     move-result v0
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_1
 
     sget-object v0, Llibs/AutoTaskWatcher;->handler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     sget-object v1, Llibs/AutoTaskWatcher;->pollRunnable:Llibs/AutoTaskWatcher$TickRunnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    :cond_f
+    :cond_0
     const/4 v0, 0x0
 
     invoke-static {v0}, Llibs/AutoTaskWatcher;->updateMediaObserverLocked(Z)V
@@ -8418,25 +8417,25 @@
 
     return-void
 
-    :cond_1a
+    :cond_1
     invoke-static {}, Llibs/AutoTaskWatcher;->startPollTimerLocked()V
 
     return-void
 .end method
 
 .method public static updateWatcherService(Z)V
-    .registers 4
+    .locals 3
 
     :try_start_0
     sget-object v0, Llibs/zt0;->g:Landroid/content/Context;
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_2
 
-    if-nez p0, :cond_15
+    if-nez p0, :cond_0
 
     sget-boolean v1, Llibs/AutoTaskWatcherService;->running:Z
 
-    if-eqz v1, :cond_2d
+    if-eqz v1, :cond_2
 
     new-instance v1, Landroid/content/Intent;
 
@@ -8448,10 +8447,10 @@
 
     return-void
 
-    :cond_15
+    :cond_0
     sget-boolean v1, Llibs/AutoTaskWatcherService;->running:Z
 
-    if-nez v1, :cond_2d
+    if-nez v1, :cond_2
 
     new-instance v1, Landroid/content/Intent;
 
@@ -8463,24 +8462,24 @@
 
     const/16 p0, 0x1a
 
-    if-lt v2, p0, :cond_2a
+    if-lt v2, p0, :cond_1
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->startForegroundService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
     return-void
 
-    :cond_2a
+    :cond_1
     invoke-virtual {v0, v1}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
-    :try_end_2d
-    .catchall {:try_start_0 .. :try_end_2d} :catchall_2d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_2d
-    :cond_2d
+    :catchall_0
+    :cond_2
     return-void
 .end method
 
 .method public static walkFilteredFolder(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/LinkedHashSet;)V
-    .registers 15
+    .locals 11
 
     new-instance v0, Ljava/io/File;
 
@@ -8490,18 +8489,18 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_62
+    if-nez v0, :cond_5
 
     const/4 v1, 0x0
 
-    :goto_c
+    :goto_0
     array-length v6, v0
 
-    if-ge v1, v6, :cond_62
+    if-ge v1, v6, :cond_5
 
     aget-object v2, v0, v1
 
-    if-nez v2, :cond_5f
+    if-nez v2, :cond_4
 
     invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
@@ -8515,7 +8514,7 @@
 
     move-result v7
 
-    if-lt v6, v7, :cond_33
+    if-lt v6, v7, :cond_1
 
     invoke-virtual {v3, v7}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
@@ -8527,7 +8526,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_32
+    if-eqz v6, :cond_0
 
     const/4 v6, 0x1
 
@@ -8535,41 +8534,41 @@
 
     move-result-object v4
 
-    :cond_32
-    goto :goto_37
+    :cond_0
+    goto :goto_1
 
-    :cond_33
+    :cond_1
     invoke-virtual {v2}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v4
 
-    :goto_37
+    :goto_1
     invoke-static {v3}, Llibs/u73;->Intent(Ljava/lang/String;)Llibs/rp0;
 
     move-result-object v5
 
-    if-eqz v5, :cond_5f
+    if-eqz v5, :cond_4
 
     invoke-virtual {v2}, Ljava/io/File;->isDirectory()Z
 
     move-result v6
 
-    if-nez v6, :cond_4a
+    if-nez v6, :cond_2
 
     invoke-virtual {p3, v5}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
     invoke-static {v3, p1, p2, p3}, Llibs/AutoTaskWatcher;->walkFilteredFolder(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/LinkedHashSet;)V
 
-    goto :goto_5f
+    goto :goto_2
 
-    :cond_4a
-    if-nez p2, :cond_5c
+    :cond_2
+    if-nez p2, :cond_3
 
     invoke-virtual {p2}, Ljava/lang/String;->isEmpty()Z
 
     move-result v6
 
-    if-eqz v6, :cond_5c
+    if-eqz v6, :cond_3
 
     invoke-virtual {v5}, Llibs/rp0;->m()Ljava/lang/String;
 
@@ -8579,17 +8578,17 @@
 
     move-result v6
 
-    if-eqz v6, :cond_5f
+    if-eqz v6, :cond_4
 
-    :cond_5c
+    :cond_3
     invoke-virtual {p3, v5}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
-    :cond_5f
-    :goto_5f
+    :cond_4
+    :goto_2
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_62
+    :cond_5
     return-void
 .end method

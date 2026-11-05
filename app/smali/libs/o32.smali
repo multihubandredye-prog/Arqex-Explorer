@@ -64,7 +64,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     .line 1
     const/4 v0, 0x2
@@ -161,7 +161,7 @@
 .end method
 
 .method public constructor <init>(Llibs/n32;)V
-    .registers 10
+    .locals 8
 
     .line 1
     const-string v0, "No System TLS"
@@ -280,11 +280,11 @@
     const/4 v2, 0x0
 
     .line 59
-    :cond_3a
+    :cond_0
     const/4 v3, 0x0
 
     .line 60
-    :goto_3b
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 61
@@ -296,7 +296,7 @@
     const/4 v5, 0x1
 
     .line 65
-    if-eqz v4, :cond_50
+    if-eqz v4, :cond_2
 
     .line 66
     .line 67
@@ -312,7 +312,7 @@
 
     .line 72
     .line 73
-    if-nez v3, :cond_4e
+    if-nez v3, :cond_1
 
     .line 74
     .line 75
@@ -320,18 +320,18 @@
 
     .line 76
     .line 77
-    if-eqz v3, :cond_3a
+    if-eqz v3, :cond_0
 
     .line 78
     .line 79
-    :cond_4e
+    :cond_1
     const/4 v3, 0x1
 
     .line 80
-    goto :goto_3b
+    goto :goto_0
 
     .line 81
-    :cond_50
+    :cond_2
     iget-object v1, p1, Llibs/n32;->k:Ljavax/net/ssl/SSLSocketFactory;
 
     .line 82
@@ -339,23 +339,23 @@
     const/4 v4, 0x0
 
     .line 84
-    if-nez v1, :cond_b2
+    if-nez v1, :cond_5
 
     .line 85
     .line 86
-    if-nez v3, :cond_58
+    if-nez v3, :cond_3
 
     .line 87
     .line 88
-    goto :goto_b2
+    goto :goto_2
 
     .line 89
-    :cond_58
+    :cond_3
     const-string v1, "Unexpected default trust managers:"
 
     .line 90
     .line 91
-    :try_start_5a
+    :try_start_0
     invoke-static {}, Ljavax/net/ssl/TrustManagerFactory;->getDefaultAlgorithm()Ljava/lang/String;
 
     .line 92
@@ -388,7 +388,7 @@
     array-length v6, v3
 
     .line 107
-    if-ne v6, v5, :cond_98
+    if-ne v6, v5, :cond_4
 
     .line 108
     .line 109
@@ -400,17 +400,17 @@
 
     .line 112
     .line 113
-    if-eqz v7, :cond_98
+    if-eqz v7, :cond_4
 
     .line 114
     .line 115
     check-cast v6, Ljavax/net/ssl/X509TrustManager;
-    :try_end_74
-    .catch Ljava/security/GeneralSecurityException; {:try_start_5a .. :try_end_74} :catch_96
+    :try_end_0
+    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_1
 
     .line 116
     .line 117
-    :try_start_74
+    :try_start_1
     sget-object v1, Llibs/m1;->f:Llibs/m1;
 
     .line 118
@@ -447,8 +447,8 @@
     .line 135
     .line 136
     move-result-object v1
-    :try_end_88
-    .catch Ljava/security/GeneralSecurityException; {:try_start_74 .. :try_end_88} :catch_91
+    :try_end_1
+    .catch Ljava/security/GeneralSecurityException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 137
     iput-object v1, p0, Llibs/o32;->Sigma:Ljavax/net/ssl/SSLSocketFactory;
@@ -467,10 +467,10 @@
 
     .line 144
     .line 145
-    goto :goto_b8
+    goto :goto_3
 
     .line 146
-    :catch_91
+    :catch_0
     move-exception p1
 
     .line 147
@@ -482,15 +482,15 @@
     throw v4
 
     .line 151
-    :catch_96
+    :catch_1
     move-exception p1
 
     .line 152
-    goto :goto_ae
+    goto :goto_1
 
     .line 153
-    :cond_98
-    :try_start_98
+    :cond_4
+    :try_start_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
     .line 154
@@ -531,11 +531,11 @@
     .line 173
     .line 174
     throw p1
-    :try_end_ae
-    .catch Ljava/security/GeneralSecurityException; {:try_start_98 .. :try_end_ae} :catch_96
+    :try_end_2
+    .catch Ljava/security/GeneralSecurityException; {:try_start_2 .. :try_end_2} :catch_1
 
     .line 175
-    :goto_ae
+    :goto_1
     invoke-static {p1, v0}, Llibs/ic0;->v(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 176
@@ -544,8 +544,8 @@
     throw v4
 
     .line 179
-    :cond_b2
-    :goto_b2
+    :cond_5
+    :goto_2
     iput-object v1, p0, Llibs/o32;->Sigma:Ljavax/net/ssl/SSLSocketFactory;
 
     .line 180
@@ -558,8 +558,8 @@
 
     .line 184
     .line 185
-    :goto_b8
-    if-eqz v1, :cond_bf
+    :goto_3
+    if-eqz v1, :cond_6
 
     .line 186
     .line 187
@@ -572,7 +572,7 @@
     .line 190
     .line 191
     .line 192
-    :cond_bf
+    :cond_6
     iget-object v1, p1, Llibs/n32;->m:Ljavax/net/ssl/HostnameVerifier;
 
     .line 193
@@ -597,14 +597,14 @@
     move-result v2
 
     .line 204
-    if-eqz v2, :cond_ce
+    if-eqz v2, :cond_7
 
     .line 205
     .line 206
-    goto :goto_d6
+    goto :goto_4
 
     .line 207
-    :cond_ce
+    :cond_7
     new-instance v2, Llibs/vq;
 
     .line 208
@@ -621,7 +621,7 @@
     move-object v1, v2
 
     .line 215
-    :goto_d6
+    :goto_4
     iput-object v1, p0, Llibs/o32;->Phi:Llibs/vq;
 
     .line 216
@@ -718,7 +718,7 @@
     move-result p1
 
     .line 263
-    if-nez p1, :cond_119
+    if-nez p1, :cond_9
 
     .line 264
     .line 265
@@ -734,14 +734,14 @@
     move-result p1
 
     .line 271
-    if-nez p1, :cond_111
+    if-nez p1, :cond_8
 
     .line 272
     .line 273
     return-void
 
     .line 274
-    :cond_111
+    :cond_8
     const-string p1, "Null network interceptor: "
 
     .line 275
@@ -758,7 +758,7 @@
     throw v4
 
     .line 282
-    :cond_119
+    :cond_9
     const-string p1, "Null interceptor: "
 
     .line 283
@@ -772,13 +772,13 @@
     .line 287
     .line 288
     .line 289
-    goto :goto_122
+    goto :goto_6
 
     .line 290
-    :goto_121
+    :goto_5
     throw v4
 
     .line 291
-    :goto_122
-    goto :goto_121
+    :goto_6
+    goto :goto_5
 .end method

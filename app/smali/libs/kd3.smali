@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;)V
-    .registers 8
+    .locals 2
 
     .line 65
     const-string v0, "DSA"
@@ -22,25 +22,25 @@
     invoke-direct {p0, v1}, Llibs/jd3;-><init>(Ljava/security/PrivateKey;)V
 
     .line 67
-    :try_start_6
+    :try_start_0
     invoke-static {v0}, Llibs/ad1;->c(Ljava/lang/String;)Ljava/security/Provider;
 
     move-result-object v1
 
-    if-nez v1, :cond_13
+    if-nez v1, :cond_0
 
     invoke-static {v0}, Ljava/security/KeyFactory;->getInstance(Ljava/lang/String;)Ljava/security/KeyFactory;
 
     move-result-object v0
 
-    goto :goto_1b
+    goto :goto_0
 
-    :catchall_11
+    :catchall_0
     move-exception p1
 
-    goto :goto_32
+    goto :goto_1
 
-    :cond_13
+    :cond_0
     invoke-static {v0}, Llibs/ad1;->c(Ljava/lang/String;)Ljava/security/Provider;
 
     move-result-object v1
@@ -50,7 +50,7 @@
     move-result-object v0
 
     .line 68
-    :goto_1b
+    :goto_0
     new-instance v1, Ljava/security/spec/DSAPrivateKeySpec;
 
     invoke-direct {v1, p4, p1, p2, p3}, Ljava/security/spec/DSAPrivateKeySpec;-><init>(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;)V
@@ -72,13 +72,13 @@
     invoke-direct {p4, p1, p2, p3, p5}, Llibs/ld3;-><init>(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;)V
 
     iput-object p4, p0, Llibs/kd3;->c:Llibs/ld3;
-    :try_end_31
-    .catchall {:try_start_6 .. :try_end_31} :catchall_11
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
     .line 71
-    :goto_32
+    :goto_1
     new-instance p2, Llibs/fe3;
 
     .line 72
@@ -94,7 +94,7 @@
 .end method
 
 .method public constructor <init>(Ljava/security/interfaces/DSAPrivateKey;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-direct {p0, p1}, Llibs/jd3;-><init>(Ljava/security/PrivateKey;)V
@@ -219,7 +219,7 @@
 .end method
 
 .method public constructor <init>(Ljava/security/interfaces/DSAPrivateKey;Ljava/security/interfaces/DSAPublicKey;)V
-    .registers 3
+    .locals 0
 
     .line 62
     invoke-direct {p0, p1}, Llibs/jd3;-><init>(Ljava/security/PrivateKey;)V
@@ -240,7 +240,7 @@
 
 # virtual methods
 .method public final a()Ljava/security/PrivateKey;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/kd3;->b:Ljava/security/interfaces/DSAPrivateKey;
@@ -251,7 +251,7 @@
 .end method
 
 .method public final b(Ljava/lang/String;[B)[B
-    .registers 8
+    .locals 5
 
     .line 1
     :try_start_0
@@ -406,7 +406,7 @@
     const/4 v3, 0x0
 
     .line 78
-    if-lt v2, v1, :cond_57
+    if-lt v2, v1, :cond_0
 
     .line 79
     .line 80
@@ -421,17 +421,17 @@
     .line 83
     .line 84
     .line 85
-    goto :goto_5e
+    goto :goto_0
 
     .line 86
-    :catch_55
+    :catch_0
     move-exception p1
 
     .line 87
-    goto :goto_70
+    goto :goto_1
 
     .line 88
-    :cond_57
+    :cond_0
     array-length v2, p1
 
     .line 89
@@ -447,11 +447,11 @@
     .line 93
     .line 94
     .line 95
-    :goto_5e
+    :goto_0
     array-length p1, p2
 
     .line 96
-    if-lt p1, v1, :cond_67
+    if-lt p1, v1, :cond_1
 
     .line 97
     .line 98
@@ -469,7 +469,7 @@
     return-object v0
 
     .line 104
-    :cond_67
+    :cond_1
     array-length p1, p2
 
     .line 105
@@ -484,8 +484,8 @@
 
     .line 109
     invoke-static {p2, v3, v0, p1, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-    :try_end_6f
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_6f} :catch_55
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 110
     .line 111
@@ -493,7 +493,7 @@
     return-object v0
 
     .line 113
-    :goto_70
+    :goto_1
     new-instance p2, Ljava/lang/StringBuilder;
 
     .line 114
@@ -527,7 +527,7 @@
 .end method
 
 .method public final c([B)[B
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "ssh-dss"
@@ -546,10 +546,10 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     .line 2
     .line 3
@@ -559,12 +559,12 @@
     return p1
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v0, p1, Llibs/kd3;
 
     .line 6
     .line 7
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_1
 
     .line 8
     .line 9
@@ -576,7 +576,7 @@
 
     .line 12
     .line 13
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_1
 
     .line 14
     .line 15
@@ -595,7 +595,7 @@
     return p1
 
     .line 22
-    :cond_15
+    :cond_1
     const/4 p1, 0x0
 
     .line 23
@@ -603,7 +603,7 @@
 .end method
 
 .method public final getAlgorithm()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "ssh-dss"
@@ -614,7 +614,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/jd3;->a:Ljava/security/PrivateKey;

@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 1
     sget-object v0, Llibs/s82;->Bit:Llibs/App;

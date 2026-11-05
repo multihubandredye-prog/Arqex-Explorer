@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/security/spec/RSAPrivateCrtKeySpec;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p1}, Lorg/conscrypt/OpenSSLRSAPrivateCrtKey;->init(Ljava/security/spec/RSAPrivateCrtKeySpec;)Lorg/conscrypt/OpenSSLKey;
@@ -46,7 +46,7 @@
 .end method
 
 .method public constructor <init>(Lorg/conscrypt/OpenSSLKey;)V
-    .registers 2
+    .locals 0
 
     .line 10
     invoke-direct {p0, p1}, Lorg/conscrypt/OpenSSLRSAPrivateKey;-><init>(Lorg/conscrypt/OpenSSLKey;)V
@@ -55,7 +55,7 @@
 .end method
 
 .method public constructor <init>(Lorg/conscrypt/OpenSSLKey;[[B)V
-    .registers 3
+    .locals 0
 
     .line 9
     invoke-direct {p0, p1, p2}, Lorg/conscrypt/OpenSSLRSAPrivateKey;-><init>(Lorg/conscrypt/OpenSSLKey;[[B)V
@@ -64,7 +64,7 @@
 .end method
 
 .method public static getInstance(Ljava/security/interfaces/RSAPrivateCrtKey;)Lorg/conscrypt/OpenSSLKey;
-    .registers 19
+    .locals 18
 
     .line 1
     invoke-interface/range {p0 .. p0}, Ljava/security/Key;->getFormat()Ljava/lang/String;
@@ -75,7 +75,7 @@
     move-result-object v0
 
     .line 5
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -90,7 +90,7 @@
     return-object v0
 
     .line 12
-    :cond_b
+    :cond_0
     invoke-interface/range {p0 .. p0}, Ljava/security/interfaces/RSAKey;->getModulus()Ljava/math/BigInteger;
 
     .line 13
@@ -110,15 +110,15 @@
     const/4 v2, 0x0
 
     .line 21
-    if-eqz v0, :cond_88
+    if-eqz v0, :cond_8
 
     .line 22
     .line 23
-    if-eqz v1, :cond_82
+    if-eqz v1, :cond_7
 
     .line 24
     .line 25
-    :try_start_18
+    :try_start_0
     invoke-interface/range {p0 .. p0}, Ljava/security/interfaces/RSAPrivateCrtKey;->getPublicExponent()Ljava/math/BigInteger;
 
     .line 26
@@ -179,17 +179,17 @@
     move-result-object v10
 
     .line 55
-    if-nez v3, :cond_3a
+    if-nez v3, :cond_1
 
     .line 56
     .line 57
     move-object v11, v2
 
     .line 58
-    goto :goto_3f
+    goto :goto_0
 
     .line 59
-    :cond_3a
+    :cond_1
     invoke-virtual {v3}, Ljava/math/BigInteger;->toByteArray()[B
 
     .line 60
@@ -201,7 +201,7 @@
     move-object v11, v0
 
     .line 64
-    :goto_3f
+    :goto_0
     invoke-virtual {v1}, Ljava/math/BigInteger;->toByteArray()[B
 
     .line 65
@@ -210,17 +210,17 @@
     move-result-object v12
 
     .line 68
-    if-nez v4, :cond_47
+    if-nez v4, :cond_2
 
     .line 69
     .line 70
     move-object v13, v2
 
     .line 71
-    goto :goto_4c
+    goto :goto_1
 
     .line 72
-    :cond_47
+    :cond_2
     invoke-virtual {v4}, Ljava/math/BigInteger;->toByteArray()[B
 
     .line 73
@@ -232,18 +232,18 @@
     move-object v13, v0
 
     .line 77
-    :goto_4c
-    if-nez v5, :cond_50
+    :goto_1
+    if-nez v5, :cond_3
 
     .line 78
     .line 79
     move-object v14, v2
 
     .line 80
-    goto :goto_55
+    goto :goto_2
 
     .line 81
-    :cond_50
+    :cond_3
     invoke-virtual {v5}, Ljava/math/BigInteger;->toByteArray()[B
 
     .line 82
@@ -255,18 +255,18 @@
     move-object v14, v0
 
     .line 86
-    :goto_55
-    if-nez v6, :cond_59
+    :goto_2
+    if-nez v6, :cond_4
 
     .line 87
     .line 88
     move-object v15, v2
 
     .line 89
-    goto :goto_5e
+    goto :goto_3
 
     .line 90
-    :cond_59
+    :cond_4
     invoke-virtual {v6}, Ljava/math/BigInteger;->toByteArray()[B
 
     .line 91
@@ -278,8 +278,8 @@
     move-object v15, v0
 
     .line 95
-    :goto_5e
-    if-nez v7, :cond_63
+    :goto_3
+    if-nez v7, :cond_5
 
     .line 96
     .line 97
@@ -287,10 +287,10 @@
 
     .line 98
     .line 99
-    goto :goto_69
+    goto :goto_4
 
     .line 100
-    :cond_63
+    :cond_5
     invoke-virtual {v7}, Ljava/math/BigInteger;->toByteArray()[B
 
     .line 101
@@ -303,20 +303,20 @@
 
     .line 105
     .line 106
-    :goto_69
-    if-nez v8, :cond_6e
+    :goto_4
+    if-nez v8, :cond_6
 
     .line 107
     .line 108
-    :goto_6b
+    :goto_5
     move-object/from16 v17, v2
 
     .line 109
     .line 110
-    goto :goto_73
+    goto :goto_6
 
     .line 111
-    :cond_6e
+    :cond_6
     invoke-virtual {v8}, Ljava/math/BigInteger;->toByteArray()[B
 
     .line 112
@@ -325,10 +325,10 @@
     move-result-object v2
 
     .line 115
-    goto :goto_6b
+    goto :goto_5
 
     .line 116
-    :goto_73
+    :goto_6
     invoke-static/range {v10 .. v17}, Lorg/conscrypt/NativeCrypto;->EVP_PKEY_new_RSA([B[B[B[B[B[B[B[B)J
 
     .line 117
@@ -338,8 +338,8 @@
 
     .line 120
     invoke-direct {v9, v0, v1}, Lorg/conscrypt/OpenSSLKey;-><init>(J)V
-    :try_end_7a
-    .catch Ljava/lang/Exception; {:try_start_18 .. :try_end_7a} :catch_7b
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 121
     .line 122
@@ -347,7 +347,7 @@
     return-object v9
 
     .line 124
-    :catch_7b
+    :catch_0
     move-exception v0
 
     .line 125
@@ -363,7 +363,7 @@
     throw v1
 
     .line 131
-    :cond_82
+    :cond_7
     const-string v0, "privateExponent == null"
 
     .line 132
@@ -376,7 +376,7 @@
     return-object v2
 
     .line 137
-    :cond_88
+    :cond_8
     const-string v0, "modulus == null"
 
     .line 138
@@ -390,7 +390,7 @@
 .end method
 
 .method private static init(Ljava/security/spec/RSAPrivateCrtKeySpec;)Lorg/conscrypt/OpenSSLKey;
-    .registers 19
+    .locals 18
 
     .line 1
     invoke-virtual/range {p0 .. p0}, Ljava/security/spec/RSAPrivateKeySpec;->getModulus()Ljava/math/BigInteger;
@@ -412,15 +412,15 @@
     const/4 v2, 0x0
 
     .line 10
-    if-eqz v0, :cond_7d
+    if-eqz v0, :cond_7
 
     .line 11
     .line 12
-    if-eqz v1, :cond_77
+    if-eqz v1, :cond_6
 
     .line 13
     .line 14
-    :try_start_d
+    :try_start_0
     invoke-virtual/range {p0 .. p0}, Ljava/security/spec/RSAPrivateCrtKeySpec;->getPublicExponent()Ljava/math/BigInteger;
 
     .line 15
@@ -481,17 +481,17 @@
     move-result-object v10
 
     .line 44
-    if-nez v3, :cond_2f
+    if-nez v3, :cond_0
 
     .line 45
     .line 46
     move-object v11, v2
 
     .line 47
-    goto :goto_34
+    goto :goto_0
 
     .line 48
-    :cond_2f
+    :cond_0
     invoke-virtual {v3}, Ljava/math/BigInteger;->toByteArray()[B
 
     .line 49
@@ -503,7 +503,7 @@
     move-object v11, v0
 
     .line 53
-    :goto_34
+    :goto_0
     invoke-virtual {v1}, Ljava/math/BigInteger;->toByteArray()[B
 
     .line 54
@@ -512,17 +512,17 @@
     move-result-object v12
 
     .line 57
-    if-nez v4, :cond_3c
+    if-nez v4, :cond_1
 
     .line 58
     .line 59
     move-object v13, v2
 
     .line 60
-    goto :goto_41
+    goto :goto_1
 
     .line 61
-    :cond_3c
+    :cond_1
     invoke-virtual {v4}, Ljava/math/BigInteger;->toByteArray()[B
 
     .line 62
@@ -534,18 +534,18 @@
     move-object v13, v0
 
     .line 66
-    :goto_41
-    if-nez v5, :cond_45
+    :goto_1
+    if-nez v5, :cond_2
 
     .line 67
     .line 68
     move-object v14, v2
 
     .line 69
-    goto :goto_4a
+    goto :goto_2
 
     .line 70
-    :cond_45
+    :cond_2
     invoke-virtual {v5}, Ljava/math/BigInteger;->toByteArray()[B
 
     .line 71
@@ -557,18 +557,18 @@
     move-object v14, v0
 
     .line 75
-    :goto_4a
-    if-nez v6, :cond_4e
+    :goto_2
+    if-nez v6, :cond_3
 
     .line 76
     .line 77
     move-object v15, v2
 
     .line 78
-    goto :goto_53
+    goto :goto_3
 
     .line 79
-    :cond_4e
+    :cond_3
     invoke-virtual {v6}, Ljava/math/BigInteger;->toByteArray()[B
 
     .line 80
@@ -580,8 +580,8 @@
     move-object v15, v0
 
     .line 84
-    :goto_53
-    if-nez v7, :cond_58
+    :goto_3
+    if-nez v7, :cond_4
 
     .line 85
     .line 86
@@ -589,10 +589,10 @@
 
     .line 87
     .line 88
-    goto :goto_5e
+    goto :goto_4
 
     .line 89
-    :cond_58
+    :cond_4
     invoke-virtual {v7}, Ljava/math/BigInteger;->toByteArray()[B
 
     .line 90
@@ -605,20 +605,20 @@
 
     .line 94
     .line 95
-    :goto_5e
-    if-nez v8, :cond_63
+    :goto_4
+    if-nez v8, :cond_5
 
     .line 96
     .line 97
-    :goto_60
+    :goto_5
     move-object/from16 v17, v2
 
     .line 98
     .line 99
-    goto :goto_68
+    goto :goto_6
 
     .line 100
-    :cond_63
+    :cond_5
     invoke-virtual {v8}, Ljava/math/BigInteger;->toByteArray()[B
 
     .line 101
@@ -627,10 +627,10 @@
     move-result-object v2
 
     .line 104
-    goto :goto_60
+    goto :goto_5
 
     .line 105
-    :goto_68
+    :goto_6
     invoke-static/range {v10 .. v17}, Lorg/conscrypt/NativeCrypto;->EVP_PKEY_new_RSA([B[B[B[B[B[B[B[B)J
 
     .line 106
@@ -640,8 +640,8 @@
 
     .line 109
     invoke-direct {v9, v0, v1}, Lorg/conscrypt/OpenSSLKey;-><init>(J)V
-    :try_end_6f
-    .catch Ljava/lang/Exception; {:try_start_d .. :try_end_6f} :catch_70
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 110
     .line 111
@@ -649,7 +649,7 @@
     return-object v9
 
     .line 113
-    :catch_70
+    :catch_0
     move-exception v0
 
     .line 114
@@ -665,7 +665,7 @@
     throw v1
 
     .line 120
-    :cond_77
+    :cond_6
     const-string v0, "privateExponent == null"
 
     .line 121
@@ -678,7 +678,7 @@
     return-object v2
 
     .line 126
-    :cond_7d
+    :cond_7
     const-string v0, "modulus == null"
 
     .line 127
@@ -692,7 +692,7 @@
 .end method
 
 .method private readObject(Ljava/io/ObjectInputStream;)V
-    .registers 11
+    .locals 9
 
     .line 1
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
@@ -723,17 +723,17 @@
     const/4 v2, 0x0
 
     .line 15
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     .line 16
     .line 17
     move-object v0, v2
 
     .line 18
-    goto :goto_16
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     invoke-virtual {v0}, Ljava/math/BigInteger;->toByteArray()[B
 
     .line 20
@@ -742,7 +742,7 @@
     move-result-object v0
 
     .line 23
-    :goto_16
+    :goto_0
     iget-object v3, p0, Lorg/conscrypt/OpenSSLRSAPrivateKey;->privateExponent:Ljava/math/BigInteger;
 
     .line 24
@@ -759,17 +759,17 @@
 
     .line 30
     .line 31
-    if-nez v4, :cond_22
+    if-nez v4, :cond_1
 
     .line 32
     .line 33
     move-object v4, v2
 
     .line 34
-    goto :goto_26
+    goto :goto_1
 
     .line 35
-    :cond_22
+    :cond_1
     invoke-virtual {v4}, Ljava/math/BigInteger;->toByteArray()[B
 
     .line 36
@@ -778,22 +778,22 @@
     move-result-object v4
 
     .line 39
-    :goto_26
+    :goto_1
     iget-object v5, p0, Lorg/conscrypt/OpenSSLRSAPrivateCrtKey;->primeQ:Ljava/math/BigInteger;
 
     .line 40
     .line 41
-    if-nez v5, :cond_2c
+    if-nez v5, :cond_2
 
     .line 42
     .line 43
     move-object v5, v2
 
     .line 44
-    goto :goto_30
+    goto :goto_2
 
     .line 45
-    :cond_2c
+    :cond_2
     invoke-virtual {v5}, Ljava/math/BigInteger;->toByteArray()[B
 
     .line 46
@@ -802,22 +802,22 @@
     move-result-object v5
 
     .line 49
-    :goto_30
+    :goto_2
     iget-object v6, p0, Lorg/conscrypt/OpenSSLRSAPrivateCrtKey;->primeExponentP:Ljava/math/BigInteger;
 
     .line 50
     .line 51
-    if-nez v6, :cond_36
+    if-nez v6, :cond_3
 
     .line 52
     .line 53
     move-object v6, v2
 
     .line 54
-    goto :goto_3a
+    goto :goto_3
 
     .line 55
-    :cond_36
+    :cond_3
     invoke-virtual {v6}, Ljava/math/BigInteger;->toByteArray()[B
 
     .line 56
@@ -826,22 +826,22 @@
     move-result-object v6
 
     .line 59
-    :goto_3a
+    :goto_3
     iget-object v7, p0, Lorg/conscrypt/OpenSSLRSAPrivateCrtKey;->primeExponentQ:Ljava/math/BigInteger;
 
     .line 60
     .line 61
-    if-nez v7, :cond_40
+    if-nez v7, :cond_4
 
     .line 62
     .line 63
     move-object v7, v2
 
     .line 64
-    goto :goto_44
+    goto :goto_4
 
     .line 65
-    :cond_40
+    :cond_4
     invoke-virtual {v7}, Ljava/math/BigInteger;->toByteArray()[B
 
     .line 66
@@ -850,26 +850,26 @@
     move-result-object v7
 
     .line 69
-    :goto_44
+    :goto_4
     iget-object v8, p0, Lorg/conscrypt/OpenSSLRSAPrivateCrtKey;->crtCoefficient:Ljava/math/BigInteger;
 
     .line 70
     .line 71
-    if-nez v8, :cond_4b
+    if-nez v8, :cond_5
 
     .line 72
     .line 73
-    :goto_48
+    :goto_5
     move-object v8, v2
 
     .line 74
     move-object v2, v0
 
     .line 75
-    goto :goto_50
+    goto :goto_6
 
     .line 76
-    :cond_4b
+    :cond_5
     invoke-virtual {v8}, Ljava/math/BigInteger;->toByteArray()[B
 
     .line 77
@@ -878,10 +878,10 @@
     move-result-object v2
 
     .line 80
-    goto :goto_48
+    goto :goto_5
 
     .line 81
-    :goto_50
+    :goto_6
     invoke-static/range {v1 .. v8}, Lorg/conscrypt/NativeCrypto;->EVP_PKEY_new_RSA([B[B[B[B[B[B[B[B)J
 
     .line 82
@@ -910,7 +910,7 @@
 .end method
 
 .method private writeObject(Ljava/io/ObjectOutputStream;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLRSAPrivateKey;->getOpenSSLKey()Lorg/conscrypt/OpenSSLKey;
@@ -929,7 +929,7 @@
     move-result v0
 
     .line 9
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
     .line 10
     .line 11
@@ -946,7 +946,7 @@
     return-void
 
     .line 18
-    :cond_11
+    :cond_0
     new-instance p1, Ljava/io/NotSerializableException;
 
     .line 19
@@ -966,25 +966,25 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v1, p1, Lorg/conscrypt/OpenSSLRSAPrivateKey;
 
     .line 6
     .line 7
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_1
 
     .line 8
     .line 9
@@ -1019,7 +1019,7 @@
     return p1
 
     .line 24
-    :cond_17
+    :cond_1
     instance-of v1, p1, Ljava/security/interfaces/RSAPrivateCrtKey;
 
     .line 25
@@ -1027,7 +1027,7 @@
     const/4 v2, 0x0
 
     .line 27
-    if-eqz v1, :cond_ad
+    if-eqz v1, :cond_5
 
     .line 28
     .line 29
@@ -1056,7 +1056,7 @@
     move-result v1
 
     .line 42
-    if-eqz v1, :cond_47
+    if-eqz v1, :cond_3
 
     .line 43
     .line 44
@@ -1084,7 +1084,7 @@
     move-result v1
 
     .line 56
-    if-eqz v1, :cond_46
+    if-eqz v1, :cond_2
 
     .line 57
     .line 58
@@ -1108,18 +1108,18 @@
     move-result p1
 
     .line 68
-    if-eqz p1, :cond_46
+    if-eqz p1, :cond_2
 
     .line 69
     .line 70
     return v0
 
     .line 71
-    :cond_46
+    :cond_2
     return v2
 
     .line 72
-    :cond_47
+    :cond_3
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLRSAPrivateKey;->getModulus()Ljava/math/BigInteger;
 
     .line 73
@@ -1144,7 +1144,7 @@
     move-result v1
 
     .line 84
-    if-eqz v1, :cond_ac
+    if-eqz v1, :cond_4
 
     .line 85
     .line 86
@@ -1168,7 +1168,7 @@
     move-result v1
 
     .line 96
-    if-eqz v1, :cond_ac
+    if-eqz v1, :cond_4
 
     .line 97
     .line 98
@@ -1196,7 +1196,7 @@
     move-result v1
 
     .line 110
-    if-eqz v1, :cond_ac
+    if-eqz v1, :cond_4
 
     .line 111
     .line 112
@@ -1220,7 +1220,7 @@
     move-result v1
 
     .line 122
-    if-eqz v1, :cond_ac
+    if-eqz v1, :cond_4
 
     .line 123
     .line 124
@@ -1244,7 +1244,7 @@
     move-result v1
 
     .line 134
-    if-eqz v1, :cond_ac
+    if-eqz v1, :cond_4
 
     .line 135
     .line 136
@@ -1268,7 +1268,7 @@
     move-result v1
 
     .line 146
-    if-eqz v1, :cond_ac
+    if-eqz v1, :cond_4
 
     .line 147
     .line 148
@@ -1292,7 +1292,7 @@
     move-result v1
 
     .line 158
-    if-eqz v1, :cond_ac
+    if-eqz v1, :cond_4
 
     .line 159
     .line 160
@@ -1316,23 +1316,23 @@
     move-result p1
 
     .line 170
-    if-eqz p1, :cond_ac
+    if-eqz p1, :cond_4
 
     .line 171
     .line 172
     return v0
 
     .line 173
-    :cond_ac
+    :cond_4
     return v2
 
     .line 174
-    :cond_ad
+    :cond_5
     instance-of v1, p1, Ljava/security/interfaces/RSAPrivateKey;
 
     .line 175
     .line 176
-    if-eqz v1, :cond_ea
+    if-eqz v1, :cond_7
 
     .line 177
     .line 178
@@ -1361,7 +1361,7 @@
     move-result v1
 
     .line 191
-    if-eqz v1, :cond_cd
+    if-eqz v1, :cond_6
 
     .line 192
     .line 193
@@ -1392,7 +1392,7 @@
     return p1
 
     .line 206
-    :cond_cd
+    :cond_6
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLRSAPrivateKey;->getModulus()Ljava/math/BigInteger;
 
     .line 207
@@ -1417,7 +1417,7 @@
     move-result v1
 
     .line 218
-    if-eqz v1, :cond_ea
+    if-eqz v1, :cond_7
 
     .line 219
     .line 220
@@ -1445,19 +1445,19 @@
     move-result p1
 
     .line 232
-    if-eqz p1, :cond_ea
+    if-eqz p1, :cond_7
 
     .line 233
     .line 234
     return v0
 
     .line 235
-    :cond_ea
+    :cond_7
     return v2
 .end method
 
 .method public getCrtCoefficient()Ljava/math/BigInteger;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLRSAPrivateKey;->ensureReadParams()V
@@ -1473,7 +1473,7 @@
 .end method
 
 .method public getPrimeExponentP()Ljava/math/BigInteger;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLRSAPrivateKey;->ensureReadParams()V
@@ -1489,7 +1489,7 @@
 .end method
 
 .method public getPrimeExponentQ()Ljava/math/BigInteger;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLRSAPrivateKey;->ensureReadParams()V
@@ -1505,7 +1505,7 @@
 .end method
 
 .method public getPrimeP()Ljava/math/BigInteger;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLRSAPrivateKey;->ensureReadParams()V
@@ -1521,7 +1521,7 @@
 .end method
 
 .method public getPrimeQ()Ljava/math/BigInteger;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLRSAPrivateKey;->ensureReadParams()V
@@ -1537,7 +1537,7 @@
 .end method
 
 .method public getPublicExponent()Ljava/math/BigInteger;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLRSAPrivateKey;->ensureReadParams()V
@@ -1553,7 +1553,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/OpenSSLRSAPrivateKey;->hashCode()I
@@ -1568,7 +1568,7 @@
 
     .line 6
     .line 7
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
@@ -1583,18 +1583,18 @@
     xor-int/2addr v0, v1
 
     .line 14
-    :cond_d
+    :cond_0
     return v0
 .end method
 
 .method public declared-synchronized readParams([[B)V
-    .registers 4
+    .locals 2
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     invoke-super {p0, p1}, Lorg/conscrypt/OpenSSLRSAPrivateKey;->readParams([[B)V
 
     .line 3
@@ -1607,7 +1607,7 @@
 
     .line 7
     .line 8
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     .line 9
     .line 10
@@ -1628,18 +1628,18 @@
 
     .line 18
     .line 19
-    goto :goto_15
+    goto :goto_0
 
     .line 20
-    :catchall_13
+    :catchall_0
     move-exception p1
 
     .line 21
-    goto :goto_5d
+    goto :goto_1
 
     .line 22
-    :cond_15
-    :goto_15
+    :cond_0
+    :goto_0
     const/4 v0, 0x3
 
     .line 23
@@ -1647,7 +1647,7 @@
 
     .line 24
     .line 25
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_1
 
     .line 26
     .line 27
@@ -1668,7 +1668,7 @@
 
     .line 35
     .line 36
-    :cond_23
+    :cond_1
     const/4 v0, 0x4
 
     .line 37
@@ -1676,7 +1676,7 @@
 
     .line 38
     .line 39
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_2
 
     .line 40
     .line 41
@@ -1697,7 +1697,7 @@
 
     .line 49
     .line 50
-    :cond_31
+    :cond_2
     const/4 v0, 0x5
 
     .line 51
@@ -1705,7 +1705,7 @@
 
     .line 52
     .line 53
-    if-eqz v1, :cond_3f
+    if-eqz v1, :cond_3
 
     .line 54
     .line 55
@@ -1726,7 +1726,7 @@
 
     .line 63
     .line 64
-    :cond_3f
+    :cond_3
     const/4 v0, 0x6
 
     .line 65
@@ -1734,7 +1734,7 @@
 
     .line 66
     .line 67
-    if-eqz v1, :cond_4d
+    if-eqz v1, :cond_4
 
     .line 68
     .line 69
@@ -1755,7 +1755,7 @@
 
     .line 77
     .line 78
-    :cond_4d
+    :cond_4
     const/4 v0, 0x7
 
     .line 79
@@ -1763,7 +1763,7 @@
 
     .line 80
     .line 81
-    if-eqz v1, :cond_5b
+    if-eqz v1, :cond_5
 
     .line 82
     .line 83
@@ -1781,30 +1781,30 @@
     .line 89
     .line 90
     iput-object v1, p0, Lorg/conscrypt/OpenSSLRSAPrivateCrtKey;->crtCoefficient:Ljava/math/BigInteger;
-    :try_end_5b
-    .catchall {:try_start_1 .. :try_end_5b} :catchall_13
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 91
     .line 92
-    :cond_5b
+    :cond_5
     monitor-exit p0
 
     .line 93
     return-void
 
     .line 94
-    :goto_5d
-    :try_start_5d
+    :goto_1
+    :try_start_1
     monitor-exit p0
-    :try_end_5e
-    .catchall {:try_start_5d .. :try_end_5e} :catchall_13
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 95
     throw p1
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1854,7 +1854,7 @@
 
     .line 25
     .line 26
-    if-eqz v1, :cond_29
+    if-eqz v1, :cond_0
 
     .line 27
     .line 28
@@ -1884,7 +1884,7 @@
     .line 40
     .line 41
     .line 42
-    :cond_29
+    :cond_0
     const/16 v1, 0x7d
 
     .line 43

@@ -5,10 +5,10 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 3
+    .locals 1
 
     .line 1
-    packed-switch p1, :pswitch_data_20
+    packed-switch p1, :pswitch_data_0
 
     .line 2
     .line 3
@@ -30,7 +30,7 @@
     return-void
 
     .line 13
-    :pswitch_c
+    :pswitch_0
     new-instance p1, Llibs/br2;
 
     .line 14
@@ -51,7 +51,7 @@
     return-void
 
     .line 23
-    :pswitch_16
+    :pswitch_1
     new-instance p1, Llibs/zo;
 
     .line 24
@@ -72,9 +72,9 @@
     nop
 
     .line 33
-    :pswitch_data_20
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_16
-        :pswitch_c
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

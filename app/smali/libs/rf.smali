@@ -13,7 +13,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/view/KeyEvent$Callback;ZB)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/rf;->a:B
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final c(Llibs/q1;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-byte p1, p0, Llibs/rf;->a:B
@@ -61,7 +61,7 @@
 
     .line 9
     .line 10
-    packed-switch p1, :pswitch_data_68
+    packed-switch p1, :pswitch_data_0
 
     .line 11
     .line 12
@@ -97,7 +97,7 @@
     .line 28
     .line 29
     .line 30
-    if-nez v2, :cond_2d
+    if-nez v2, :cond_0
 
     .line 31
     .line 32
@@ -113,7 +113,7 @@
     move-result p1
 
     .line 38
-    if-nez p1, :cond_2d
+    if-nez p1, :cond_0
 
     .line 39
     .line 40
@@ -126,11 +126,11 @@
     .line 43
     .line 44
     .line 45
-    goto :goto_34
+    goto :goto_0
 
     .line 46
-    :cond_2d
-    if-eqz v2, :cond_34
+    :cond_0
+    if-eqz v2, :cond_1
 
     .line 47
     .line 48
@@ -143,12 +143,12 @@
     .line 51
     .line 52
     .line 53
-    :cond_34
-    :goto_34
+    :cond_1
+    :goto_0
     return-void
 
     .line 54
-    :pswitch_35
+    :pswitch_0
     check-cast v3, Landroid/view/View;
 
     .line 55
@@ -168,7 +168,7 @@
     .line 63
     .line 64
     .line 65
-    if-nez v2, :cond_4b
+    if-nez v2, :cond_2
 
     .line 66
     .line 67
@@ -180,7 +180,7 @@
     move-result p1
 
     .line 71
-    if-nez p1, :cond_4b
+    if-nez p1, :cond_2
 
     .line 72
     .line 73
@@ -189,11 +189,11 @@
     .line 74
     .line 75
     .line 76
-    :cond_4b
+    :cond_2
     return-void
 
     .line 77
-    :pswitch_4c
+    :pswitch_1
     check-cast v3, Lcom/mixplorer/activities/ImageViewerActivity;
 
     .line 78
@@ -207,7 +207,7 @@
     .line 82
     .line 83
     .line 84
-    if-nez v2, :cond_62
+    if-nez v2, :cond_3
 
     .line 85
     .line 86
@@ -223,7 +223,7 @@
     move-result p1
 
     .line 92
-    if-eq p1, v1, :cond_62
+    if-eq p1, v1, :cond_3
 
     .line 93
     .line 94
@@ -236,8 +236,8 @@
     .line 97
     .line 98
     .line 99
-    :cond_62
-    if-nez v2, :cond_67
+    :cond_3
+    if-nez v2, :cond_4
 
     .line 100
     .line 101
@@ -246,13 +246,13 @@
     .line 102
     .line 103
     .line 104
-    :cond_67
+    :cond_4
     return-void
 
     .line 105
-    :pswitch_data_68
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_4c
-        :pswitch_35
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

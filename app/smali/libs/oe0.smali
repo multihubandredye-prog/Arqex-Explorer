@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/ArrayList;Lcom/mixplorer/widgets/MiEditText;Lcom/mixplorer/activities/a;Ljava/lang/String;Llibs/ml1;)V
-    .registers 7
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -42,7 +42,7 @@
 .end method
 
 .method public constructor <init>(Llibs/qe0;Ljava/util/ArrayList;Llibs/me0;Llibs/ml1;Llibs/vi;)V
-    .registers 7
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -83,7 +83,7 @@
 
 # virtual methods
 .method public final z(Landroid/view/View;I)V
-    .registers 8
+    .locals 5
 
     .line 1
     iget-byte v0, p0, Llibs/oe0;->c:B
@@ -93,7 +93,7 @@
     const/4 v1, 0x0
 
     .line 4
-    packed-switch v0, :pswitch_data_a0
+    packed-switch v0, :pswitch_data_0
 
     .line 5
     .line 6
@@ -155,7 +155,7 @@
     move-result-object v0
 
     .line 36
-    :try_start_23
+    :try_start_0
     iget-object v1, p0, Llibs/oe0;->g:Ljava/lang/Object;
 
     .line 37
@@ -180,7 +180,7 @@
     move-result v1
 
     .line 48
-    if-eqz v1, :cond_4d
+    if-eqz v1, :cond_0
 
     .line 49
     .line 50
@@ -221,7 +221,7 @@
     move-result p1
 
     .line 69
-    if-eqz p1, :cond_4d
+    if-eqz p1, :cond_0
 
     .line 70
     .line 71
@@ -238,23 +238,23 @@
     .line 76
     .line 77
     .line 78
-    :cond_4d
+    :cond_0
     iget-object p1, p0, Llibs/oe0;->e:Llibs/ml1;
 
     .line 79
     .line 80
     invoke-virtual {p1}, Llibs/od;->dismiss()V
-    :try_end_52
-    .catch Lexceptions/PermissionDeniedException; {:try_start_23 .. :try_end_52} :catch_52
+    :try_end_0
+    .catch Lexceptions/PermissionDeniedException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 81
     .line 82
     .line 83
-    :catch_52
+    :catch_0
     return-void
 
     .line 84
-    :pswitch_53
+    :pswitch_0
     iget-object p1, p0, Llibs/oe0;->d:Ljava/util/ArrayList;
 
     .line 85
@@ -291,7 +291,7 @@
 
     .line 101
     .line 102
-    if-eq p1, p2, :cond_88
+    if-eq p1, p2, :cond_1
 
     .line 103
     .line 104
@@ -310,7 +310,7 @@
     monitor-enter v2
 
     .line 111
-    :try_start_6e
+    :try_start_1
     iget-object v3, v0, Llibs/qe0;->Mike:Ljava/util/HashMap;
 
     .line 112
@@ -333,8 +333,8 @@
     .line 121
     .line 122
     monitor-exit v2
-    :try_end_7a
-    .catchall {:try_start_6e .. :try_end_7a} :catchall_85
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 123
     invoke-virtual {v0, p1}, Llibs/qe0;->m(Llibs/me0;)Ljava/lang/String;
@@ -357,24 +357,24 @@
 
     .line 132
     .line 133
-    goto :goto_88
+    goto :goto_0
 
     .line 134
-    :catchall_85
+    :catchall_0
     move-exception p1
 
     .line 135
-    :try_start_86
+    :try_start_2
     monitor-exit v2
-    :try_end_87
-    .catchall {:try_start_86 .. :try_end_87} :catchall_85
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 136
     throw p1
 
     .line 137
-    :cond_88
-    :goto_88
+    :cond_1
+    :goto_0
     iget-object p1, p0, Llibs/oe0;->e:Llibs/ml1;
 
     .line 138
@@ -423,8 +423,8 @@
     return-void
 
     .line 161
-    :pswitch_data_a0
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_53
+        :pswitch_0
     .end packed-switch
 .end method

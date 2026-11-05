@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Z[B)V
-    .registers 4
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/Size;->f:Llibs/Level;
@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public final a()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/Dao;->Z:Z

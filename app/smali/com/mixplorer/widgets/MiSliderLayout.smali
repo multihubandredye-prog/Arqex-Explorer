@@ -44,7 +44,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -55,7 +55,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
@@ -174,7 +174,7 @@
     move-result p1
 
     .line 63
-    if-eqz p1, :cond_43
+    if-eqz p1, :cond_0
 
     .line 64
     .line 65
@@ -183,46 +183,46 @@
     .line 66
     .line 67
     .line 68
-    :cond_43
+    :cond_0
     return-void
 .end method
 
 .method public static f(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-eq p0, v0, :cond_1e
+    if-eq p0, v0, :cond_4
 
     .line 3
     .line 4
     const/4 v0, 0x2
 
     .line 5
-    if-eq p0, v0, :cond_1b
+    if-eq p0, v0, :cond_3
 
     .line 6
     .line 7
     const/4 v0, 0x3
 
     .line 8
-    if-eq p0, v0, :cond_18
+    if-eq p0, v0, :cond_2
 
     .line 9
     .line 10
     const/4 v0, 0x4
 
     .line 11
-    if-eq p0, v0, :cond_15
+    if-eq p0, v0, :cond_1
 
     .line 12
     .line 13
     const/4 v0, 0x5
 
     .line 14
-    if-eq p0, v0, :cond_12
+    if-eq p0, v0, :cond_0
 
     .line 15
     .line 16
@@ -233,7 +233,7 @@
     return-object p0
 
     .line 19
-    :cond_12
+    :cond_0
     const-string p0, "ZOOM_IN"
 
     .line 20
@@ -241,7 +241,7 @@
     return-object p0
 
     .line 22
-    :cond_15
+    :cond_1
     const-string p0, "STACK"
 
     .line 23
@@ -249,7 +249,7 @@
     return-object p0
 
     .line 25
-    :cond_18
+    :cond_2
     const-string p0, "FLIP"
 
     .line 26
@@ -257,7 +257,7 @@
     return-object p0
 
     .line 28
-    :cond_1b
+    :cond_3
     const-string p0, "DEPTH_PAGE"
 
     .line 29
@@ -265,7 +265,7 @@
     return-object p0
 
     .line 31
-    :cond_1e
+    :cond_4
     const-string p0, "ACCORDION"
 
     .line 32
@@ -274,7 +274,7 @@
 .end method
 
 .method private setDur(J)V
-    .registers 5
+    .locals 2
 
     .line 1
     const-wide/16 v0, 0x1f4
@@ -299,14 +299,14 @@
 
 # virtual methods
 .method public final a()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiSliderLayout;->Lambda:Llibs/fb3;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -314,7 +314,7 @@
 
     .line 6
     .line 7
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
@@ -322,7 +322,7 @@
 
     .line 10
     .line 11
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
@@ -335,12 +335,12 @@
     .line 16
     .line 17
     .line 18
-    :cond_11
+    :cond_0
     return-void
 .end method
 
 .method public final b(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiSliderLayout;->Lambda:Llibs/fb3;
@@ -350,7 +350,7 @@
     const/4 v1, 0x0
 
     .line 4
-    if-nez p1, :cond_d
+    if-nez p1, :cond_0
 
     .line 5
     .line 6
@@ -358,7 +358,7 @@
 
     .line 7
     .line 8
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_1
 
     .line 9
     .line 10
@@ -370,12 +370,12 @@
     return-void
 
     .line 14
-    :cond_d
+    :cond_0
     iget-object p1, v0, Llibs/fb3;->Lambda:Llibs/qt1;
 
     .line 15
     .line 16
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_1
 
     .line 17
     .line 18
@@ -383,12 +383,12 @@
 
     .line 19
     .line 20
-    :cond_13
+    :cond_1
     return-void
 .end method
 
 .method public final c(I)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-virtual {p0}, Lcom/mixplorer/widgets/MiSliderLayout;->getAdapter()Llibs/mv1;
@@ -419,7 +419,7 @@
 
     .line 14
     .line 15
-    if-eqz v1, :cond_3b
+    if-eqz v1, :cond_1
 
     .line 16
     .line 17
@@ -459,14 +459,14 @@
 
     .line 34
     .line 35
-    if-nez v0, :cond_25
+    if-nez v0, :cond_0
 
     .line 36
     .line 37
-    goto :goto_3b
+    goto :goto_0
 
     .line 38
-    :cond_25
+    :cond_0
     iget-object v0, v0, Llibs/fb3;->X:Llibs/rp0;
 
     .line 39
@@ -509,13 +509,13 @@
     .line 58
     .line 59
     .line 60
-    :cond_3b
-    :goto_3b
+    :cond_1
+    :goto_0
     iget-object p1, p0, Lcom/mixplorer/widgets/MiSliderLayout;->Lambda:Llibs/fb3;
 
     .line 61
     .line 62
-    if-eqz p1, :cond_48
+    if-eqz p1, :cond_2
 
     .line 63
     .line 64
@@ -536,12 +536,12 @@
     .line 71
     .line 72
     .line 73
-    :cond_48
+    :cond_2
     return-void
 .end method
 
 .method public final d(I)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Lcom/mixplorer/widgets/MiSliderLayout;->getAdapter()Llibs/mv1;
@@ -560,7 +560,7 @@
     move-result-object p1
 
     .line 9
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_0
 
     .line 10
     .line 11
@@ -595,12 +595,12 @@
     .line 26
     .line 27
     .line 28
-    :cond_1b
+    :cond_0
     return-void
 .end method
 
 .method public final dispatchKeyEvent(Landroid/view/KeyEvent;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiSliderLayout;->Mu:Lcom/mixplorer/widgets/MiViewPager;
@@ -615,7 +615,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -625,7 +625,7 @@
     return p1
 
     .line 11
-    :cond_a
+    :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
     .line 12
@@ -638,7 +638,7 @@
 .end method
 
 .method public final e()V
-    .registers 9
+    .locals 8
 
     .line 1
     invoke-virtual {p0}, Lcom/mixplorer/widgets/MiSliderLayout;->getSliderCount()I
@@ -652,7 +652,7 @@
     const/4 v1, 0x1
 
     .line 6
-    if-le v0, v1, :cond_28
+    if-le v0, v1, :cond_3
 
     .line 7
     .line 8
@@ -663,7 +663,7 @@
     const/4 v2, 0x0
 
     .line 11
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
@@ -671,7 +671,7 @@
 
     .line 14
     .line 15
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 16
     .line 17
@@ -679,7 +679,7 @@
 
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     invoke-virtual {p0}, Lcom/mixplorer/widgets/MiSliderLayout;->getCurrentPosition()I
 
     .line 20
@@ -695,7 +695,7 @@
 
     .line 25
     .line 26
-    if-eqz v3, :cond_25
+    if-eqz v3, :cond_2
 
     .line 27
     .line 28
@@ -711,33 +711,33 @@
 
     .line 33
     .line 34
-    if-lez v7, :cond_24
+    if-lez v7, :cond_1
 
     .line 35
     .line 36
-    goto :goto_25
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_1
     const/4 v1, 0x0
 
     .line 38
-    :cond_25
-    :goto_25
+    :cond_2
+    :goto_0
     invoke-virtual {p0, v1, v0}, Lcom/mixplorer/widgets/MiSliderLayout;->g(ZI)V
 
     .line 39
     .line 40
     .line 41
-    :cond_28
+    :cond_3
     return-void
 .end method
 
 .method public final g(ZI)V
-    .registers 5
+    .locals 2
 
     .line 1
-    if-gez p2, :cond_e
+    if-gez p2, :cond_0
 
     .line 2
     .line 3
@@ -765,7 +765,7 @@
 
     .line 14
     .line 15
-    :cond_e
+    :cond_0
     invoke-virtual {p0}, Lcom/mixplorer/widgets/MiSliderLayout;->getAdapter()Llibs/mv1;
 
     .line 16
@@ -786,14 +786,14 @@
     move-result v0
 
     .line 25
-    if-lt p2, v0, :cond_1b
+    if-lt p2, v0, :cond_1
 
     .line 26
     .line 27
     const/4 p2, 0x0
 
     .line 28
-    :cond_1b
+    :cond_1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiSliderLayout;->Mu:Lcom/mixplorer/widgets/MiViewPager;
 
     .line 29
@@ -806,7 +806,7 @@
     move-result v1
 
     .line 34
-    if-eq v1, p2, :cond_27
+    if-eq v1, p2, :cond_2
 
     .line 35
     .line 36
@@ -818,7 +818,7 @@
     return-void
 
     .line 40
-    :cond_27
+    :cond_2
     invoke-virtual {p0, p2}, Lcom/mixplorer/widgets/MiSliderLayout;->c(I)V
 
     .line 41
@@ -828,7 +828,7 @@
 .end method
 
 .method public getAdapter()Llibs/mv1;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiSliderLayout;->Mu:Lcom/mixplorer/widgets/MiViewPager;
@@ -851,14 +851,14 @@
 .end method
 
 .method public getCurrentPosition()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiSliderLayout;->Mu:Lcom/mixplorer/widgets/MiViewPager;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -873,7 +873,7 @@
     return v0
 
     .line 10
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
     .line 11
@@ -881,7 +881,7 @@
 .end method
 
 .method public getCurrentSlider()Llibs/fb3;
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Lcom/mixplorer/widgets/MiSliderLayout;->getAdapter()Llibs/mv1;
@@ -892,7 +892,7 @@
     move-result-object v0
 
     .line 5
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -923,7 +923,7 @@
     return-object v0
 
     .line 20
-    :cond_13
+    :cond_0
     const/4 v0, 0x0
 
     .line 21
@@ -931,7 +931,7 @@
 .end method
 
 .method public getSliderCount()I
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Lcom/mixplorer/widgets/MiSliderLayout;->getAdapter()Llibs/mv1;
@@ -942,7 +942,7 @@
     move-result-object v0
 
     .line 5
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -969,7 +969,7 @@
     return v0
 
     .line 18
-    :cond_11
+    :cond_0
     const/4 v0, 0x0
 
     .line 19
@@ -977,7 +977,7 @@
 .end method
 
 .method public final h(ILjava/util/ArrayList;)V
-    .registers 5
+    .locals 2
 
     .line 1
     :try_start_0
@@ -1013,8 +1013,8 @@
     .line 17
     .line 18
     invoke-virtual {p2, v0}, Lcom/mixplorer/widgets/MiViewPager;->setAdapter(Llibs/ja2;)V
-    :try_end_14
-    .catchall {:try_start_0 .. :try_end_14} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 19
     .line 20
@@ -1022,7 +1022,7 @@
     return-void
 
     .line 22
-    :catchall_15
+    :catchall_0
     move-exception p1
 
     .line 23
@@ -1047,7 +1047,7 @@
 .end method
 
 .method public final i(IILandroid/view/animation/Interpolator;)V
-    .registers 7
+    .locals 3
 
     .line 1
     iput p1, p0, Lcom/mixplorer/widgets/MiSliderLayout;->Tau:I
@@ -1063,7 +1063,7 @@
 
     .line 7
     .line 8
-    :try_start_7
+    :try_start_0
     const-class v0, Lcom/mixplorer/widgets/MiViewPager;
 
     .line 9
@@ -1100,14 +1100,14 @@
     move-result v1
 
     .line 26
-    if-nez v1, :cond_1c
+    if-nez v1, :cond_0
 
     .line 27
     .line 28
     const/4 p2, 0x0
 
     .line 29
-    :cond_1c
+    :cond_0
     new-instance v1, Llibs/kv1;
 
     .line 30
@@ -1126,18 +1126,18 @@
     .line 37
     .line 38
     invoke-virtual {v0, p1, v1}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
-    :try_end_28
-    .catchall {:try_start_7 .. :try_end_28} :catchall_28
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 39
     .line 40
     .line 41
-    :catchall_28
+    :catchall_0
     return-void
 .end method
 
 .method public final j()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Lcom/mixplorer/widgets/MiSliderLayout;->getAdapter()Llibs/mv1;
@@ -1148,7 +1148,7 @@
     move-result-object v0
 
     .line 5
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -1159,7 +1159,7 @@
     monitor-enter v1
 
     .line 10
-    :try_start_9
+    :try_start_0
     iget-object v0, v0, Llibs/mv1;->c:Ljava/util/ArrayList;
 
     .line 11
@@ -1175,24 +1175,24 @@
     return-void
 
     .line 17
-    :catchall_10
+    :catchall_0
     move-exception v0
 
     .line 18
     monitor-exit v1
-    :try_end_12
-    .catchall {:try_start_9 .. :try_end_12} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 19
     throw v0
 
     .line 20
-    :cond_13
+    :cond_0
     return-void
 .end method
 
 .method public final k()V
-    .registers 10
+    .locals 9
 
     .line 1
     iget v0, p0, Lcom/mixplorer/widgets/MiSliderLayout;->Tau:I
@@ -1234,7 +1234,7 @@
     const/4 v2, 0x1
 
     .line 20
-    :try_start_13
+    :try_start_0
     invoke-virtual {p0}, Lcom/mixplorer/widgets/MiSliderLayout;->getCurrentSlider()Llibs/fb3;
 
     .line 21
@@ -1243,7 +1243,7 @@
     move-result-object v3
 
     .line 24
-    if-eqz v3, :cond_30
+    if-eqz v3, :cond_0
 
     .line 25
     .line 26
@@ -1279,31 +1279,31 @@
     move-result-object v3
 
     .line 42
-    if-eqz v3, :cond_30
+    if-eqz v3, :cond_0
 
     .line 43
     .line 44
     invoke-virtual {v3}, Llibs/fb3;->c()V
-    :try_end_2e
-    .catchall {:try_start_13 .. :try_end_2e} :catchall_2f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 45
     .line 46
     .line 47
-    goto :goto_30
+    goto :goto_0
 
     .line 48
-    :catchall_2f
+    :catchall_0
     nop
 
     .line 49
-    :cond_30
-    :goto_30
+    :cond_0
+    :goto_0
     iget-object v3, p0, Lcom/mixplorer/widgets/MiSliderLayout;->Nu:Ljava/util/Timer;
 
     .line 50
     .line 51
-    if-eqz v3, :cond_37
+    if-eqz v3, :cond_1
 
     .line 52
     .line 53
@@ -1312,12 +1312,12 @@
     .line 54
     .line 55
     .line 56
-    :cond_37
+    :cond_1
     iget-object v3, p0, Lcom/mixplorer/widgets/MiSliderLayout;->Xi:Llibs/mr;
 
     .line 57
     .line 58
-    if-eqz v3, :cond_3e
+    if-eqz v3, :cond_2
 
     .line 59
     .line 60
@@ -1326,7 +1326,7 @@
     .line 61
     .line 62
     .line 63
-    :cond_3e
+    :cond_2
     invoke-direct {p0, v0, v1}, Lcom/mixplorer/widgets/MiSliderLayout;->setDur(J)V
 
     .line 64
@@ -1387,7 +1387,7 @@
 .end method
 
 .method public setDuration(J)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Lcom/mixplorer/widgets/MiSliderLayout;->setDur(J)V
@@ -1399,7 +1399,7 @@
 
     .line 5
     .line 6
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
     .line 7
     .line 8
@@ -1407,7 +1407,7 @@
 
     .line 9
     .line 10
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
     .line 11
     .line 12
@@ -1416,12 +1416,12 @@
     .line 13
     .line 14
     .line 15
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method public setOnSlide(Llibs/lv1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Lcom/mixplorer/widgets/MiSliderLayout;->One:Llibs/lv1;
@@ -1432,7 +1432,7 @@
 .end method
 
 .method public setPresetTransformer(I)V
-    .registers 7
+    .locals 5
 
     .line 1
     const/4 v0, 0x0
@@ -1444,32 +1444,32 @@
     const/4 v2, 0x1
 
     .line 4
-    if-eq p1, v2, :cond_2e
+    if-eq p1, v2, :cond_4
 
     .line 5
     .line 6
-    if-eq p1, v1, :cond_28
+    if-eq p1, v1, :cond_3
 
     .line 7
     .line 8
     const/4 v3, 0x3
 
     .line 9
-    if-eq p1, v3, :cond_22
+    if-eq p1, v3, :cond_2
 
     .line 10
     .line 11
     const/4 v4, 0x4
 
     .line 12
-    if-eq p1, v4, :cond_1c
+    if-eq p1, v4, :cond_1
 
     .line 13
     .line 14
     const/4 v3, 0x5
 
     .line 15
-    if-eq p1, v3, :cond_16
+    if-eq p1, v3, :cond_0
 
     .line 16
     .line 17
@@ -1482,10 +1482,10 @@
     .line 20
     .line 21
     .line 22
-    goto :goto_33
+    goto :goto_0
 
     .line 23
-    :cond_16
+    :cond_0
     new-instance p1, Llibs/Xray;
 
     .line 24
@@ -1495,10 +1495,10 @@
     .line 26
     .line 27
     .line 28
-    goto :goto_33
+    goto :goto_0
 
     .line 29
-    :cond_1c
+    :cond_1
     new-instance p1, Llibs/Xray;
 
     .line 30
@@ -1508,10 +1508,10 @@
     .line 32
     .line 33
     .line 34
-    goto :goto_33
+    goto :goto_0
 
     .line 35
-    :cond_22
+    :cond_2
     new-instance p1, Llibs/Xray;
 
     .line 36
@@ -1521,10 +1521,10 @@
     .line 38
     .line 39
     .line 40
-    goto :goto_33
+    goto :goto_0
 
     .line 41
-    :cond_28
+    :cond_3
     new-instance p1, Llibs/Xray;
 
     .line 42
@@ -1534,10 +1534,10 @@
     .line 44
     .line 45
     .line 46
-    goto :goto_33
+    goto :goto_0
 
     .line 47
-    :cond_2e
+    :cond_4
     new-instance p1, Llibs/Xray;
 
     .line 48
@@ -1547,7 +1547,7 @@
     .line 50
     .line 51
     .line 52
-    :goto_33
+    :goto_0
     iget-object v3, p0, Lcom/mixplorer/widgets/MiSliderLayout;->Mu:Lcom/mixplorer/widgets/MiViewPager;
 
     .line 53
@@ -1565,7 +1565,7 @@
     move-result v4
 
     .line 61
-    if-eqz v4, :cond_4f
+    if-eqz v4, :cond_6
 
     .line 62
     .line 63
@@ -1573,14 +1573,14 @@
 
     .line 64
     .line 65
-    if-nez v4, :cond_43
+    if-nez v4, :cond_5
 
     .line 66
     .line 67
     const/4 v0, 0x1
 
     .line 68
-    :cond_43
+    :cond_5
     iput-object p1, v3, Lcom/mixplorer/widgets/MiViewPager;->Victor:Llibs/zd2;
 
     .line 69
@@ -1594,7 +1594,7 @@
 
     .line 74
     .line 75
-    if-eqz v0, :cond_4f
+    if-eqz v0, :cond_6
 
     .line 76
     .line 77
@@ -1603,6 +1603,6 @@
     .line 78
     .line 79
     .line 80
-    :cond_4f
+    :cond_6
     return-void
 .end method

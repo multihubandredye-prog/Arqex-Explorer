@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ra;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Llibs/jz;-><init>()V
@@ -20,7 +20,7 @@
 
     .line 6
     .line 7
-    fill-array-data v1, :array_e
+    fill-array-data v1, :array_0
 
     .line 8
     .line 9
@@ -36,7 +36,7 @@
     return-void
 
     .line 15
-    :array_e
+    :array_0
     .array-data 1
         0x50t
         0x47t

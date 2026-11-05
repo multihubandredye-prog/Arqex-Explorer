@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/kz1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/dz1;-><init>()V
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public final a(I[B)I
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2}, Llibs/dz1;->e(I[B)I
@@ -72,7 +72,7 @@
 .end method
 
 .method public final d(I[B)I
-    .registers 19
+    .locals 16
 
     .line 1
     move-object/from16 v0, p0
@@ -167,13 +167,13 @@
     const/4 v11, 0x0
 
     .line 43
-    :goto_2a
-    :try_start_2a
+    :goto_0
+    :try_start_0
     iget v12, v0, Llibs/z02;->String:I
 
     .line 44
     .line 45
-    if-ge v9, v12, :cond_8b
+    if-ge v9, v12, :cond_4
 
     .line 46
     .line 47
@@ -181,7 +181,7 @@
 
     .line 48
     .line 49
-    :goto_30
+    :goto_1
     aget-byte v13, v1, v12
 
     .line 50
@@ -190,7 +190,7 @@
 
     .line 52
     .line 53
-    if-ne v13, v14, :cond_39
+    if-ne v13, v14, :cond_0
 
     .line 54
     .line 55
@@ -198,10 +198,10 @@
 
     .line 56
     .line 57
-    goto :goto_30
+    goto :goto_1
 
     .line 58
-    :cond_39
+    :cond_0
     new-instance v13, Ljava/lang/String;
 
     .line 59
@@ -241,7 +241,7 @@
 
     .line 76
     .line 77
-    if-nez v11, :cond_75
+    if-nez v11, :cond_3
 
     .line 78
     .line 79
@@ -253,7 +253,7 @@
 
     .line 82
     .line 83
-    if-ne v15, v12, :cond_75
+    if-ne v15, v12, :cond_3
 
     .line 84
     .line 85
@@ -261,7 +261,7 @@
 
     .line 86
     .line 87
-    if-eq v14, v15, :cond_60
+    if-eq v14, v15, :cond_1
 
     .line 88
     .line 89
@@ -277,16 +277,16 @@
     move-result v14
 
     .line 95
-    if-eqz v14, :cond_75
+    if-eqz v14, :cond_3
 
     .line 96
     .line 97
-    :cond_60
+    :cond_1
     iget-object v11, v2, Llibs/kz1;->a:Llibs/zy1;
 
     .line 98
     .line 99
-    if-ne v11, v15, :cond_6b
+    if-ne v11, v15, :cond_2
 
     .line 100
     .line 101
@@ -303,7 +303,7 @@
 
     .line 107
     .line 108
-    :cond_6b
+    :cond_2
     iput-object v7, v2, Llibs/kz1;->d:[B
 
     .line 109
@@ -323,10 +323,10 @@
     const/4 v11, 0x1
 
     .line 117
-    goto :goto_85
+    goto :goto_2
 
     .line 118
-    :cond_75
+    :cond_3
     iget-object v14, v0, Llibs/z02;->Map:[Llibs/kz1;
 
     .line 119
@@ -354,12 +354,12 @@
     .line 131
     .line 132
     aput-object v15, v14, v9
-    :try_end_85
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_2a .. :try_end_85} :catch_8b
+    :try_end_0
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 133
     .line 134
-    :goto_85
+    :goto_2
     add-int/lit8 v10, v10, 0x12
 
     .line 135
@@ -371,11 +371,11 @@
     const/4 v5, 0x1
 
     .line 139
-    goto :goto_2a
+    goto :goto_0
 
     .line 140
-    :catch_8b
-    :cond_8b
+    :catch_0
+    :cond_4
     sub-int/2addr v10, v6
 
     .line 141
@@ -402,7 +402,7 @@
 .end method
 
 .method public final g(I[B)I
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -412,7 +412,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/String;

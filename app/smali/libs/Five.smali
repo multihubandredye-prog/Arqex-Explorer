@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -19,15 +19,15 @@
     .line 2
     .line 3
     .line 4
-    :try_start_3
+    :try_start_0
     invoke-static {}, Llibs/r43;->g()V
-    :try_end_6
-    .catch Ljava/security/GeneralSecurityException; {:try_start_3 .. :try_end_6} :catch_16
+    :try_end_0
+    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 5
     .line 6
     .line 7
-    :try_start_6
+    :try_start_1
     sget-object v0, Llibs/r43;->d:Llibs/hh;
 
     .line 8
@@ -38,15 +38,15 @@
     .line 11
     .line 12
     move-result-object p1
-    :try_end_c
-    .catchall {:try_start_6 .. :try_end_c} :catchall_d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 13
-    goto :goto_11
+    goto :goto_0
 
     .line 14
-    :catchall_d
-    :try_start_d
+    :catchall_0
+    :try_start_2
     invoke-static {p1}, Ljava/security/Signature;->getInstance(Ljava/lang/String;)Ljava/security/Signature;
 
     .line 15
@@ -55,21 +55,21 @@
     move-result-object p1
 
     .line 18
-    :goto_11
+    :goto_0
     iput-object p1, p0, Llibs/Five;->a:Ljava/security/Signature;
 
     .line 19
     .line 20
     iput-object p2, p0, Llibs/Five;->b:Ljava/lang/String;
-    :try_end_15
-    .catch Ljava/security/GeneralSecurityException; {:try_start_d .. :try_end_15} :catch_16
+    :try_end_2
+    .catch Ljava/security/GeneralSecurityException; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 21
     .line 22
     return-void
 
     .line 23
-    :catch_16
+    :catch_0
     move-exception p1
 
     .line 24
@@ -93,7 +93,7 @@
 .end method
 
 .method public constructor <init>(Ljava/security/Signature;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -108,7 +108,7 @@
 .end method
 
 .method public static b(Ljava/lang/String;[B)[B
-    .registers 5
+    .locals 3
 
     .line 1
     const-string v0, "Expected \'"
@@ -124,7 +124,7 @@
     .line 6
     .line 7
     .line 8
-    :try_start_7
+    :try_start_0
     sget-object p1, Llibs/ue3;->c:Ljava/nio/charset/Charset;
 
     .line 9
@@ -145,7 +145,7 @@
     move-result v2
 
     .line 18
-    if-eqz v2, :cond_18
+    if-eqz v2, :cond_0
 
     .line 19
     .line 20
@@ -160,7 +160,7 @@
     return-object p0
 
     .line 25
-    :cond_18
+    :cond_0
     new-instance v1, Llibs/qy2;
 
     .line 26
@@ -207,11 +207,11 @@
     .line 49
     .line 50
     throw v1
-    :try_end_32
-    .catch Llibs/rj; {:try_start_7 .. :try_end_32} :catch_32
+    :try_end_0
+    .catch Llibs/rj; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 51
-    :catch_32
+    :catch_0
     move-exception p0
 
     .line 52
@@ -237,7 +237,7 @@
 
 # virtual methods
 .method public a([B)[B
-    .registers 9
+    .locals 7
 
     .line 1
     const/4 v0, 0x3
@@ -347,7 +347,7 @@
 .end method
 
 .method public c(Ljava/security/PublicKey;)V
-    .registers 3
+    .locals 1
 
     .line 1
     :try_start_0
@@ -356,8 +356,8 @@
     .line 2
     .line 3
     invoke-virtual {v0, p1}, Ljava/security/Signature;->initVerify(Ljava/security/PublicKey;)V
-    :try_end_5
-    .catch Ljava/security/InvalidKeyException; {:try_start_0 .. :try_end_5} :catch_6
+    :try_end_0
+    .catch Ljava/security/InvalidKeyException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 4
     .line 5
@@ -365,7 +365,7 @@
     return-void
 
     .line 7
-    :catch_6
+    :catch_0
     move-exception p1
 
     .line 8
@@ -386,7 +386,7 @@
 .end method
 
 .method public final d(I[B)V
-    .registers 5
+    .locals 2
 
     .line 1
     :try_start_0
@@ -398,8 +398,8 @@
 
     .line 4
     invoke-virtual {v0, p2, v1, p1}, Ljava/security/Signature;->update([BII)V
-    :try_end_6
-    .catch Ljava/security/SignatureException; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Ljava/security/SignatureException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 5
     .line 6
@@ -407,7 +407,7 @@
     return-void
 
     .line 8
-    :catch_7
+    :catch_0
     move-exception p1
 
     .line 9

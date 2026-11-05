@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/App;Llibs/Auth;)V
-    .registers 4
+    .locals 1
 
     .line 42
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -36,7 +36,7 @@
 .end method
 
 .method public constructor <init>(Llibs/Param;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -83,7 +83,7 @@
     move-result v1
 
     .line 23
-    if-eqz v1, :cond_24
+    if-eqz v1, :cond_0
 
     .line 24
     .line 25
@@ -111,7 +111,7 @@
 
     .line 36
     .line 37
-    :cond_24
+    :cond_0
     instance-of p1, p1, Llibs/hb;
 
     .line 38
@@ -124,14 +124,14 @@
 .end method
 
 .method public static g(Ljava/lang/Object;)Llibs/rz;
-    .registers 2
+    .locals 1
 
     .line 1
     instance-of v0, p0, Llibs/rz;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -142,8 +142,8 @@
     return-object p0
 
     .line 8
-    :cond_7
-    if-eqz p0, :cond_13
+    :cond_0
+    if-eqz p0, :cond_1
 
     .line 9
     .line 10
@@ -167,7 +167,7 @@
     return-object v0
 
     .line 20
-    :cond_13
+    :cond_1
     const/4 p0, 0x0
 
     .line 21
@@ -177,7 +177,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Llibs/Init;
@@ -205,7 +205,7 @@
 
     .line 13
     .line 14
-    if-eqz v2, :cond_18
+    if-eqz v2, :cond_0
 
     .line 15
     .line 16
@@ -226,12 +226,12 @@
     .line 23
     .line 24
     .line 25
-    :cond_18
+    :cond_0
     iget-boolean v1, p0, Llibs/rz;->Z:Z
 
     .line 26
     .line 27
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_1
 
     .line 28
     .line 29
@@ -247,7 +247,7 @@
     return-object v1
 
     .line 35
-    :cond_22
+    :cond_1
     new-instance v1, Llibs/a50;
 
     .line 36

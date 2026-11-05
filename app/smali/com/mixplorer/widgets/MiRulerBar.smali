@@ -47,7 +47,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -58,7 +58,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 5
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
@@ -238,7 +238,7 @@
 
 # virtual methods
 .method public final a(FFF)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput p1, p0, Lcom/mixplorer/widgets/MiRulerBar;->Lambda:F
@@ -262,7 +262,7 @@
 .end method
 
 .method public getValue()F
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lcom/mixplorer/widgets/MiRulerBar;->Xi:F
@@ -273,7 +273,7 @@
 .end method
 
 .method public final onDraw(Landroid/graphics/Canvas;)V
-    .registers 11
+    .locals 9
 
     .line 1
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
@@ -337,7 +337,7 @@
     const/4 v8, 0x0
 
     .line 28
-    :goto_1b
+    :goto_0
     iget-object v1, p0, Lcom/mixplorer/widgets/MiRulerBar;->Sigma:[F
 
     .line 29
@@ -345,7 +345,7 @@
     array-length v2, v1
 
     .line 31
-    if-ge v8, v2, :cond_bf
+    if-ge v8, v2, :cond_8
 
     .line 32
     .line 33
@@ -382,7 +382,7 @@
 
     .line 49
     .line 50
-    if-eqz v2, :cond_4b
+    if-eqz v2, :cond_1
 
     .line 51
     .line 52
@@ -394,7 +394,7 @@
 
     .line 55
     .line 56
-    if-eqz v2, :cond_4b
+    if-eqz v2, :cond_1
 
     .line 57
     .line 58
@@ -425,26 +425,26 @@
 
     .line 70
     .line 71
-    if-gez v1, :cond_49
+    if-gez v1, :cond_0
 
     .line 72
     .line 73
-    goto :goto_4b
+    goto :goto_1
 
     .line 74
-    :cond_49
+    :cond_0
     const/4 v1, 0x0
 
     .line 75
-    goto :goto_4c
+    goto :goto_2
 
     .line 76
-    :cond_4b
-    :goto_4b
+    :cond_1
+    :goto_1
     const/4 v1, 0x1
 
     .line 77
-    :goto_4c
+    :goto_2
     iput-boolean v1, p0, Lcom/mixplorer/widgets/MiRulerBar;->Omega:Z
 
     .line 78
@@ -460,7 +460,7 @@
     sub-float/2addr v2, v4
 
     .line 84
-    if-eqz v1, :cond_5b
+    if-eqz v1, :cond_2
 
     .line 85
     .line 86
@@ -469,24 +469,24 @@
     .line 87
     .line 88
     .line 89
-    :goto_58
+    :goto_3
     mul-float v2, v2, v1
 
     .line 90
     .line 91
-    goto :goto_5f
+    goto :goto_4
 
     .line 92
-    :cond_5b
+    :cond_2
     const v1, 0x3e99999a    # 0.3f
 
     .line 93
     .line 94
     .line 95
-    goto :goto_58
+    goto :goto_3
 
     .line 96
-    :goto_5f
+    :goto_4
     iput v2, p0, Lcom/mixplorer/widgets/MiRulerBar;->Two:F
 
     .line 97
@@ -514,26 +514,26 @@
 
     .line 108
     .line 109
-    if-gez v1, :cond_70
+    if-gez v1, :cond_3
 
     .line 110
     .line 111
     const/4 v1, 0x1
 
     .line 112
-    goto :goto_71
+    goto :goto_5
 
     .line 113
-    :cond_70
+    :cond_3
     const/4 v1, 0x0
 
     .line 114
-    :goto_71
+    :goto_5
     iput-boolean v1, p0, Lcom/mixplorer/widgets/MiRulerBar;->One:Z
 
     .line 115
     .line 116
-    if-eqz v1, :cond_79
+    if-eqz v1, :cond_4
 
     .line 117
     .line 118
@@ -544,14 +544,14 @@
     move-object v5, v1
 
     .line 121
-    goto :goto_7a
+    goto :goto_6
 
     .line 122
-    :cond_79
+    :cond_4
     move-object v5, v6
 
     .line 123
-    :goto_7a
+    :goto_6
     iget v1, p0, Lcom/mixplorer/widgets/MiRulerBar;->Four:F
 
     .line 124
@@ -580,7 +580,7 @@
 
     .line 136
     .line 137
-    if-nez v1, :cond_8e
+    if-nez v1, :cond_5
 
     .line 138
     .line 139
@@ -588,12 +588,12 @@
 
     .line 140
     .line 141
-    if-eqz v2, :cond_bb
+    if-eqz v2, :cond_7
 
     .line 142
     .line 143
-    :cond_8e
-    if-eqz v1, :cond_94
+    :cond_5
+    if-eqz v1, :cond_6
 
     .line 144
     .line 145
@@ -601,22 +601,22 @@
 
     .line 146
     .line 147
-    :goto_92
+    :goto_7
     int-to-float v1, v1
 
     .line 148
-    goto :goto_97
+    goto :goto_8
 
     .line 149
-    :cond_94
+    :cond_6
     sget v1, Llibs/sa3;->g:I
 
     .line 150
     .line 151
-    goto :goto_92
+    goto :goto_7
 
     .line 152
-    :goto_97
+    :goto_8
     iget-object v2, p0, Lcom/mixplorer/widgets/MiRulerBar;->Chi:Landroid/graphics/Paint;
 
     .line 153
@@ -689,21 +689,21 @@
     .line 186
     .line 187
     .line 188
-    :cond_bb
+    :cond_7
     add-int/lit8 v8, v8, 0x1
 
     .line 189
     .line 190
-    goto/16 :goto_1b
+    goto/16 :goto_0
 
     .line 191
     .line 192
-    :cond_bf
+    :cond_8
     return-void
 .end method
 
 .method public final onKeyDown(ILandroid/view/KeyEvent;)Z
-    .registers 5
+    .locals 2
 
     .line 1
     const/16 v0, 0x15
@@ -713,7 +713,7 @@
     const/4 v1, 0x1
 
     .line 4
-    if-eq p1, v0, :cond_26
+    if-eq p1, v0, :cond_1
 
     .line 5
     .line 6
@@ -721,7 +721,7 @@
 
     .line 7
     .line 8
-    if-eq p1, v0, :cond_e
+    if-eq p1, v0, :cond_0
 
     .line 9
     .line 10
@@ -736,7 +736,7 @@
     return p1
 
     .line 15
-    :cond_e
+    :cond_0
     iget p1, p0, Lcom/mixplorer/widgets/MiRulerBar;->Mu:F
 
     .line 16
@@ -769,7 +769,7 @@
 
     .line 30
     .line 31
-    if-eqz p1, :cond_3d
+    if-eqz p1, :cond_2
 
     .line 32
     .line 33
@@ -785,7 +785,7 @@
     return v1
 
     .line 39
-    :cond_26
+    :cond_1
     iget p1, p0, Lcom/mixplorer/widgets/MiRulerBar;->Lambda:F
 
     .line 40
@@ -818,7 +818,7 @@
 
     .line 54
     .line 55
-    if-eqz p1, :cond_3d
+    if-eqz p1, :cond_2
 
     .line 56
     .line 57
@@ -831,12 +831,12 @@
     .line 60
     .line 61
     .line 62
-    :cond_3d
+    :cond_2
     return v1
 .end method
 
 .method public final onMeasure(II)V
-    .registers 7
+    .locals 4
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiRulerBar;->Chi:Landroid/graphics/Paint;
@@ -918,22 +918,22 @@
 
     .line 37
     .line 38
-    if-ne v1, v2, :cond_29
+    if-ne v1, v2, :cond_0
 
     .line 39
     .line 40
     move v0, p2
 
     .line 41
-    goto :goto_31
+    goto :goto_0
 
     .line 42
-    :cond_29
+    :cond_0
     const/high16 v2, -0x80000000
 
     .line 43
     .line 44
-    if-ne v1, v2, :cond_31
+    if-ne v1, v2, :cond_1
 
     .line 45
     .line 46
@@ -945,8 +945,8 @@
     move-result v0
 
     .line 50
-    :cond_31
-    :goto_31
+    :cond_1
+    :goto_0
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     .line 51
@@ -964,7 +964,7 @@
 .end method
 
 .method public final onSizeChanged(IIII)V
-    .registers 7
+    .locals 2
 
     .line 1
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->onSizeChanged(IIII)V
@@ -1083,17 +1083,17 @@
 
     .line 56
     .line 57
-    if-gtz p2, :cond_3c
+    if-gtz p2, :cond_0
 
     .line 58
     .line 59
     const/4 p1, 0x0
 
     .line 60
-    goto :goto_4b
+    goto :goto_0
 
     .line 61
-    :cond_3c
+    :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
 
     .line 62
@@ -1129,7 +1129,7 @@
     div-float/2addr p1, p3
 
     .line 76
-    :goto_4b
+    :goto_0
     iput p1, p0, Lcom/mixplorer/widgets/MiRulerBar;->Rho:F
 
     .line 77
@@ -1157,12 +1157,12 @@
 
     .line 88
     .line 89
-    :goto_58
+    :goto_1
     iget p1, p0, Lcom/mixplorer/widgets/MiRulerBar;->Pi:I
 
     .line 90
     .line 91
-    if-gt v1, p1, :cond_79
+    if-gt v1, p1, :cond_1
 
     .line 92
     .line 93
@@ -1226,10 +1226,10 @@
 
     .line 120
     .line 121
-    goto :goto_58
+    goto :goto_1
 
     .line 122
-    :cond_79
+    :cond_1
     invoke-virtual {p0}, Landroid/view/View;->getPaddingTop()I
 
     .line 123
@@ -1275,7 +1275,7 @@
 .end method
 
 .method public final onTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 8
+    .locals 6
 
     .line 1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
@@ -1289,21 +1289,21 @@
     const/4 v1, 0x1
 
     .line 6
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
     const/4 v2, 0x2
 
     .line 9
-    if-eq v0, v2, :cond_b
+    if-eq v0, v2, :cond_0
 
     .line 10
     .line 11
-    goto :goto_45
+    goto :goto_1
 
     .line 12
-    :cond_b
+    :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     .line 13
@@ -1326,7 +1326,7 @@
     const/4 v3, 0x0
 
     .line 22
-    :goto_15
+    :goto_0
     iget-object v4, p0, Lcom/mixplorer/widgets/MiRulerBar;->Sigma:[F
 
     .line 23
@@ -1334,7 +1334,7 @@
     array-length v5, v4
 
     .line 25
-    if-ge v2, v5, :cond_33
+    if-ge v2, v5, :cond_2
 
     .line 26
     .line 27
@@ -1369,7 +1369,7 @@
 
     .line 41
     .line 42
-    if-gez v4, :cond_30
+    if-gez v4, :cond_1
 
     .line 43
     .line 44
@@ -1384,15 +1384,15 @@
     move v3, v2
 
     .line 49
-    :cond_30
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
     .line 50
     .line 51
-    goto :goto_15
+    goto :goto_0
 
     .line 52
-    :cond_33
+    :cond_2
     iget-object p1, p0, Lcom/mixplorer/widgets/MiRulerBar;->Tau:[F
 
     .line 53
@@ -1414,7 +1414,7 @@
 
     .line 62
     .line 63
-    if-eqz p1, :cond_45
+    if-eqz p1, :cond_3
 
     .line 64
     .line 65
@@ -1427,13 +1427,13 @@
     .line 68
     .line 69
     .line 70
-    :cond_45
-    :goto_45
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public setFormat(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Lcom/mixplorer/widgets/MiRulerBar;->Omicron:Ljava/lang/String;
@@ -1444,7 +1444,7 @@
 .end method
 
 .method public setLineColor(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiRulerBar;->Upsilon:Landroid/graphics/Paint;
@@ -1460,7 +1460,7 @@
 .end method
 
 .method public setOnRulerChangeListener(Llibs/cv1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Lcom/mixplorer/widgets/MiRulerBar;->Psi:Llibs/cv1;
@@ -1471,7 +1471,7 @@
 .end method
 
 .method public setSelectColor(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiRulerBar;->Phi:Landroid/graphics/Paint;
@@ -1487,7 +1487,7 @@
 .end method
 
 .method public setTextColor(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiRulerBar;->Chi:Landroid/graphics/Paint;
@@ -1503,7 +1503,7 @@
 .end method
 
 .method public setValue(F)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget v0, p0, Lcom/mixplorer/widgets/MiRulerBar;->Xi:F
@@ -1514,14 +1514,14 @@
 
     .line 4
     .line 5
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
     return-void
 
     .line 8
-    :cond_7
+    :cond_0
     iget v0, p0, Lcom/mixplorer/widgets/MiRulerBar;->Mu:F
 
     .line 9

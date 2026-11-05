@@ -35,7 +35,7 @@
 
 # direct methods
 .method public constructor <init>([BJJ)V
-    .registers 13
+    .locals 7
 
     .line 1
     const/4 v1, 0x2
@@ -354,7 +354,7 @@
     .line 157
     .line 158
     .line 159
-    if-lez p5, :cond_d6
+    if-lez p5, :cond_1
 
     .line 160
     .line 161
@@ -391,8 +391,8 @@
     move-result v0
 
     .line 178
-    :goto_b1
-    if-ge p2, v0, :cond_be
+    :goto_0
+    if-ge p2, v0, :cond_0
 
     .line 179
     .line 180
@@ -416,10 +416,10 @@
 
     .line 189
     .line 190
-    goto :goto_b1
+    goto :goto_0
 
     .line 191
-    :cond_be
+    :cond_0
     new-instance v0, Llibs/px1;
 
     .line 192
@@ -470,7 +470,7 @@
     return-void
 
     .line 215
-    :cond_d6
+    :cond_1
     iget p2, p0, Llibs/qx1;->d:I
 
     .line 216
@@ -486,7 +486,7 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

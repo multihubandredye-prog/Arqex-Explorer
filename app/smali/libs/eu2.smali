@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -27,7 +27,7 @@
 .end method
 
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 17
     iput-byte p1, p0, Llibs/eu2;->e:B
@@ -38,7 +38,7 @@
 .end method
 
 .method public constructor <init>(Llibs/pu2;JJ)V
-    .registers 15
+    .locals 9
 
     .line 1
     const/4 v0, 0x4
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method public final g(Llibs/rw2;)V
-    .registers 13
+    .locals 11
 
     .line 1
     iget-byte v0, p0, Llibs/eu2;->e:B
@@ -91,7 +91,7 @@
     const/4 v2, 0x2
 
     .line 5
-    packed-switch v0, :pswitch_data_7c
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -109,7 +109,7 @@
     return-void
 
     .line 15
-    :pswitch_e
+    :pswitch_0
     invoke-virtual {p1, v2}, Llibs/rw2;->x(I)V
 
     .line 16
@@ -118,7 +118,7 @@
     return-void
 
     .line 19
-    :pswitch_12
+    :pswitch_1
     invoke-virtual {p1, v1}, Llibs/rw2;->x(I)V
 
     .line 20
@@ -127,7 +127,7 @@
     return-void
 
     .line 23
-    :pswitch_16
+    :pswitch_2
     invoke-virtual {p1, v1}, Llibs/rw2;->x(I)V
 
     .line 24
@@ -136,7 +136,7 @@
     return-void
 
     .line 27
-    :pswitch_1a
+    :pswitch_3
     invoke-virtual {p1, v2}, Llibs/rw2;->x(I)V
 
     .line 28
@@ -162,11 +162,11 @@
     move-result v3
 
     .line 40
-    if-lez v1, :cond_70
+    if-lez v1, :cond_1
 
     .line 41
     .line 42
-    if-lez v3, :cond_70
+    if-lez v3, :cond_1
 
     .line 43
     .line 44
@@ -198,7 +198,7 @@
 
     .line 57
     .line 58
-    :goto_39
+    :goto_0
     iget v5, p1, Llibs/rw2;->c:I
 
     .line 59
@@ -297,14 +297,14 @@
 
     .line 105
     .line 106
-    if-nez v6, :cond_6c
+    if-nez v6, :cond_0
 
     .line 107
     .line 108
-    goto :goto_70
+    goto :goto_1
 
     .line 109
-    :cond_6c
+    :cond_0
     add-int/2addr v5, v6
 
     .line 110
@@ -312,11 +312,11 @@
 
     .line 111
     .line 112
-    goto :goto_39
+    goto :goto_0
 
     .line 113
-    :cond_70
-    :goto_70
+    :cond_1
+    :goto_1
     iget-object v0, p0, Llibs/lv2;->a:Llibs/xw2;
 
     .line 114
@@ -345,17 +345,17 @@
     nop
 
     .line 125
-    :pswitch_data_7c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1a
-        :pswitch_16
-        :pswitch_12
-        :pswitch_e
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public i(Llibs/rw2;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/eu2;->e:B
@@ -366,7 +366,7 @@
 
     .line 4
     .line 5
-    sparse-switch v0, :sswitch_data_1c
+    sparse-switch v0, :sswitch_data_0
 
     .line 6
     .line 7
@@ -379,7 +379,7 @@
     return-void
 
     .line 12
-    :sswitch_b
+    :sswitch_0
     invoke-virtual {p1, v1}, Llibs/rw2;->m(I)V
 
     .line 13
@@ -396,7 +396,7 @@
     return-void
 
     .line 20
-    :sswitch_13
+    :sswitch_1
     invoke-virtual {p1, v1}, Llibs/rw2;->m(I)V
 
     .line 21
@@ -416,9 +416,9 @@
     nop
 
     .line 29
-    :sswitch_data_1c
+    :sswitch_data_0
     .sparse-switch
-        0x1 -> :sswitch_13
-        0x4 -> :sswitch_b
+        0x1 -> :sswitch_1
+        0x4 -> :sswitch_0
     .end sparse-switch
 .end method

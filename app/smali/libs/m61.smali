@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/n61;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljavax/crypto/CipherSpi;-><init>()V
@@ -87,7 +87,7 @@
 .end method
 
 .method public constructor <init>(Llibs/s32;)V
-    .registers 3
+    .locals 1
 
     .line 29
     invoke-direct {p0}, Ljavax/crypto/CipherSpi;-><init>()V
@@ -128,7 +128,7 @@
 
 # virtual methods
 .method public final engineDoFinal([BII[BI)I
-    .registers 6
+    .locals 0
 
     .line 161
     invoke-virtual {p0, p1, p2, p3}, Llibs/m61;->engineDoFinal([BII)[B
@@ -149,14 +149,14 @@
 .end method
 
 .method public final engineDoFinal([BII)[B
-    .registers 10
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/m61;->d:Llibs/fl;
 
     .line 2
     .line 3
-    if-eqz p3, :cond_7
+    if-eqz p3, :cond_0
 
     .line 4
     .line 5
@@ -165,7 +165,7 @@
     .line 6
     .line 7
     .line 8
-    :cond_7
+    :cond_0
     invoke-virtual {v0}, Llibs/fl;->x()[B
 
     .line 9
@@ -254,39 +254,39 @@
 
     .line 51
     .line 52
-    if-eq v1, v3, :cond_68
+    if-eq v1, v3, :cond_4
 
     .line 53
     .line 54
     const/4 v5, 0x3
 
     .line 55
-    if-ne v1, v5, :cond_39
+    if-ne v1, v5, :cond_1
 
     .line 56
     .line 57
-    goto :goto_68
+    goto :goto_1
 
     .line 58
-    :cond_39
+    :cond_1
     const/4 v3, 0x2
 
     .line 59
-    if-eq v1, v3, :cond_47
+    if-eq v1, v3, :cond_3
 
     .line 60
     .line 61
     const/4 v3, 0x4
 
     .line 62
-    if-ne v1, v3, :cond_40
+    if-ne v1, v3, :cond_2
 
     .line 63
     .line 64
-    goto :goto_47
+    goto :goto_0
 
     .line 65
-    :cond_40
+    :cond_2
     const-string p1, "IESCipher not initialised"
 
     .line 66
@@ -302,9 +302,9 @@
     return-object p1
 
     .line 72
-    :cond_47
-    :goto_47
-    :try_start_47
+    :cond_3
+    :goto_0
+    :try_start_0
     new-instance v1, Llibs/Init;
 
     .line 73
@@ -344,14 +344,14 @@
     .line 91
     .line 92
     move-result-object p1
-    :try_end_5c
-    .catch Llibs/qb1; {:try_start_47 .. :try_end_5c} :catch_5d
+    :try_end_0
+    .catch Llibs/qb1; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 93
     return-object p1
 
     .line 94
-    :catch_5d
+    :catch_0
     move-exception p1
 
     .line 95
@@ -375,8 +375,8 @@
     throw p2
 
     .line 105
-    :cond_68
-    :goto_68
+    :cond_4
+    :goto_1
     new-instance p3, Llibs/a40;
 
     .line 106
@@ -429,7 +429,7 @@
     .line 131
     .line 132
     .line 133
-    :try_start_84
+    :try_start_1
     iget-object p3, p0, Llibs/m61;->g:Llibs/j40;
 
     .line 134
@@ -460,14 +460,14 @@
     .line 147
     .line 148
     move-result-object p1
-    :try_end_94
-    .catch Ljava/lang/Exception; {:try_start_84 .. :try_end_94} :catch_95
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 149
     return-object p1
 
     .line 150
-    :catch_95
+    :catch_1
     move-exception p1
 
     .line 151
@@ -492,7 +492,7 @@
 .end method
 
 .method public final engineGetBlockSize()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/m61;->b:Llibs/n61;
@@ -503,7 +503,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -522,7 +522,7 @@
     return v0
 
     .line 14
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
     .line 15
@@ -530,7 +530,7 @@
 .end method
 
 .method public final engineGetIV()[B
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -540,14 +540,14 @@
 .end method
 
 .method public final engineGetKeySize(Ljava/security/Key;)I
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Ljavax/crypto/interfaces/DHKey;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -582,7 +582,7 @@
     return p1
 
     .line 20
-    :cond_13
+    :cond_0
     const-string p1, "not a DH key"
 
     .line 21
@@ -599,7 +599,7 @@
 .end method
 
 .method public final engineGetOutputSize(I)I
-    .registers 12
+    .locals 10
 
     .line 1
     iget-object v0, p0, Llibs/m61;->g:Llibs/j40;
@@ -613,7 +613,7 @@
 
     .line 5
     .line 6
-    if-eqz v0, :cond_64
+    if-eqz v0, :cond_9
 
     .line 7
     .line 8
@@ -676,42 +676,42 @@
     const/4 v8, 0x3
 
     .line 35
-    if-nez v3, :cond_25
+    if-nez v3, :cond_0
 
     .line 36
     .line 37
-    goto :goto_40
+    goto :goto_2
 
     .line 38
-    :cond_25
+    :cond_0
     iget v9, p0, Llibs/m61;->c:I
 
     .line 39
     .line 40
-    if-eq v9, v6, :cond_3c
+    if-eq v9, v6, :cond_4
 
     .line 41
     .line 42
-    if-ne v9, v8, :cond_2c
+    if-ne v9, v8, :cond_1
 
     .line 43
     .line 44
-    goto :goto_3c
+    goto :goto_1
 
     .line 45
-    :cond_2c
-    if-eq v9, v5, :cond_35
+    :cond_1
+    if-eq v9, v5, :cond_3
 
     .line 46
     .line 47
-    if-ne v9, v7, :cond_31
+    if-ne v9, v7, :cond_2
 
     .line 48
     .line 49
-    goto :goto_35
+    goto :goto_0
 
     .line 50
-    :cond_31
+    :cond_2
     invoke-static {v2}, Llibs/ic0;->h(Ljava/lang/String;)V
 
     .line 51
@@ -720,8 +720,8 @@
     return v1
 
     .line 54
-    :cond_35
-    :goto_35
+    :cond_3
+    :goto_0
     sub-int/2addr p1, v4
 
     .line 55
@@ -736,11 +736,11 @@
     move-result p1
 
     .line 60
-    goto :goto_40
+    goto :goto_2
 
     .line 61
-    :cond_3c
-    :goto_3c
+    :cond_4
+    :goto_1
     invoke-virtual {v3, p1}, Llibs/fa2;->b(I)I
 
     .line 62
@@ -749,7 +749,7 @@
     move-result p1
 
     .line 65
-    :goto_40
+    :goto_2
     iget v2, p0, Llibs/m61;->c:I
 
     .line 66
@@ -758,30 +758,30 @@
 
     .line 68
     .line 69
-    if-eq v2, v6, :cond_5c
+    if-eq v2, v6, :cond_8
 
     .line 70
     .line 71
-    if-ne v2, v8, :cond_49
+    if-ne v2, v8, :cond_5
 
     .line 72
     .line 73
-    goto :goto_5c
+    goto :goto_4
 
     .line 74
-    :cond_49
-    if-eq v2, v5, :cond_54
+    :cond_5
+    if-eq v2, v5, :cond_7
 
     .line 75
     .line 76
-    if-ne v2, v7, :cond_4e
+    if-ne v2, v7, :cond_6
 
     .line 77
     .line 78
-    goto :goto_54
+    goto :goto_3
 
     .line 79
-    :cond_4e
+    :cond_6
     const-string p1, "IESCipher not initialised"
 
     .line 80
@@ -794,8 +794,8 @@
     return v1
 
     .line 85
-    :cond_54
-    :goto_54
+    :cond_7
+    :goto_3
     invoke-virtual {v3}, Llibs/fl;->w()I
 
     .line 86
@@ -816,8 +816,8 @@
     return v1
 
     .line 93
-    :cond_5c
-    :goto_5c
+    :cond_8
+    :goto_4
     invoke-virtual {v3}, Llibs/fl;->w()I
 
     .line 94
@@ -838,7 +838,7 @@
     return v1
 
     .line 101
-    :cond_64
+    :cond_9
     invoke-static {v2}, Llibs/ic0;->h(Ljava/lang/String;)V
 
     .line 102
@@ -848,14 +848,14 @@
 .end method
 
 .method public final engineGetParameters()Ljava/security/AlgorithmParameters;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/m61;->e:Ljava/security/AlgorithmParameters;
 
     .line 2
     .line 3
-    if-nez v0, :cond_22
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -863,11 +863,11 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
-    :try_start_8
+    :try_start_0
     iget-object v0, p0, Llibs/m61;->a:Llibs/ka;
 
     .line 10
@@ -901,16 +901,16 @@
     .line 24
     .line 25
     invoke-virtual {v0, v1}, Ljava/security/AlgorithmParameters;->init(Ljava/security/spec/AlgorithmParameterSpec;)V
-    :try_end_1b
-    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_1b} :catch_1c
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 26
     .line 27
     .line 28
-    goto :goto_22
+    goto :goto_0
 
     .line 29
-    :catch_1c
+    :catch_0
     move-exception v0
 
     .line 30
@@ -925,8 +925,8 @@
     return-object v0
 
     .line 35
-    :cond_22
-    :goto_22
+    :cond_0
+    :goto_0
     iget-object v0, p0, Llibs/m61;->e:Ljava/security/AlgorithmParameters;
 
     .line 36
@@ -935,23 +935,23 @@
 .end method
 
 .method public final engineInit(ILjava/security/Key;Ljava/security/AlgorithmParameters;Ljava/security/SecureRandom;)V
-    .registers 6
+    .locals 1
 
-    if-eqz p3, :cond_1b
+    if-eqz p3, :cond_0
 
     .line 187
-    :try_start_2
+    :try_start_0
     const-class v0, Llibs/o61;
 
     invoke-virtual {p3, v0}, Ljava/security/AlgorithmParameters;->getParameterSpec(Ljava/lang/Class;)Ljava/security/spec/AlgorithmParameterSpec;
 
     move-result-object v0
-    :try_end_8
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_8} :catch_9
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_1c
+    goto :goto_0
 
-    :catch_9
+    :catch_0
     move-exception p1
 
     .line 188
@@ -973,11 +973,11 @@
 
     throw p2
 
-    :cond_1b
+    :cond_0
     const/4 v0, 0x0
 
     .line 191
-    :goto_1c
+    :goto_0
     iput-object p3, p0, Llibs/m61;->e:Ljava/security/AlgorithmParameters;
 
     .line 192
@@ -987,20 +987,20 @@
 .end method
 
 .method public final engineInit(ILjava/security/Key;Ljava/security/SecureRandom;)V
-    .registers 5
+    .locals 1
 
     const/4 v0, 0x0
 
     .line 193
-    :try_start_1
+    :try_start_0
     invoke-virtual {p0, p1, p2, v0, p3}, Llibs/m61;->engineInit(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    :try_end_4
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_1 .. :try_end_4} :catch_5
+    :try_end_0
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
     .line 194
-    :catch_5
+    :catch_0
     const-string p1, "can\'t handle supplied parameter spec"
 
     invoke-static {p1}, Llibs/ic0;->p(Ljava/lang/String;)V
@@ -1009,10 +1009,10 @@
 .end method
 
 .method public final engineInit(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    .registers 9
+    .locals 4
 
     .line 1
-    if-nez p3, :cond_d
+    if-nez p3, :cond_0
 
     .line 2
     .line 3
@@ -1036,15 +1036,15 @@
 
     .line 12
     .line 13
-    goto :goto_15
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     instance-of v0, p3, Llibs/o61;
 
     .line 15
     .line 16
-    if-eqz v0, :cond_b4
+    if-eqz v0, :cond_9
 
     .line 17
     .line 18
@@ -1056,43 +1056,43 @@
 
     .line 21
     .line 22
-    :goto_15
+    :goto_0
     const/4 p3, 0x1
 
     .line 23
-    if-eq p1, p3, :cond_6a
+    if-eq p1, p3, :cond_6
 
     .line 24
     .line 25
     const/4 p3, 0x3
 
     .line 26
-    if-ne p1, p3, :cond_1c
+    if-ne p1, p3, :cond_1
 
     .line 27
     .line 28
-    goto :goto_6a
+    goto :goto_2
 
     .line 29
-    :cond_1c
+    :cond_1
     const/4 p3, 0x2
 
     .line 30
-    if-eq p1, p3, :cond_29
+    if-eq p1, p3, :cond_3
 
     .line 31
     .line 32
     const/4 p3, 0x4
 
     .line 33
-    if-ne p1, p3, :cond_23
+    if-ne p1, p3, :cond_2
 
     .line 34
     .line 35
-    goto :goto_29
+    goto :goto_1
 
     .line 36
-    :cond_23
+    :cond_2
     const-string p1, "must be passed EC key"
 
     .line 37
@@ -1105,13 +1105,13 @@
     return-void
 
     .line 42
-    :cond_29
-    :goto_29
+    :cond_3
+    :goto_1
     instance-of p3, p2, Ljavax/crypto/interfaces/DHPrivateKey;
 
     .line 43
     .line 44
-    if-eqz p3, :cond_64
+    if-eqz p3, :cond_5
 
     .line 45
     .line 46
@@ -1123,7 +1123,7 @@
 
     .line 49
     .line 50
-    if-eqz p3, :cond_5e
+    if-eqz p3, :cond_4
 
     .line 51
     .line 52
@@ -1209,10 +1209,10 @@
 
     .line 93
     .line 94
-    goto :goto_9e
+    goto :goto_3
 
     .line 95
-    :cond_5e
+    :cond_4
     const-string p1, "can\'t identify DH private key."
 
     .line 96
@@ -1225,7 +1225,7 @@
     return-void
 
     .line 101
-    :cond_64
+    :cond_5
     const-string p1, "must be passed recipient\'s private DH key for decryption"
 
     .line 102
@@ -1238,13 +1238,13 @@
     return-void
 
     .line 107
-    :cond_6a
-    :goto_6a
+    :cond_6
+    :goto_2
     instance-of p3, p2, Ljavax/crypto/interfaces/DHPublicKey;
 
     .line 108
     .line 109
-    if-eqz p3, :cond_ae
+    if-eqz p3, :cond_8
 
     .line 110
     .line 111
@@ -1256,7 +1256,7 @@
 
     .line 114
     .line 115
-    if-eqz p3, :cond_a8
+    if-eqz p3, :cond_7
 
     .line 116
     .line 117
@@ -1342,7 +1342,7 @@
 
     .line 158
     .line 159
-    :goto_9e
+    :goto_3
     iput-object p4, p0, Llibs/m61;->h:Ljava/security/SecureRandom;
 
     .line 160
@@ -1363,7 +1363,7 @@
     return-void
 
     .line 169
-    :cond_a8
+    :cond_7
     const-string p1, "can\'t identify DH public key."
 
     .line 170
@@ -1376,7 +1376,7 @@
     return-void
 
     .line 175
-    :cond_ae
+    :cond_8
     const-string p1, "must be passed recipient\'s public DH key for encryption"
 
     .line 176
@@ -1389,7 +1389,7 @@
     return-void
 
     .line 181
-    :cond_b4
+    :cond_9
     const-string p1, "must be passed IES parameters"
 
     .line 182
@@ -1403,7 +1403,7 @@
 .end method
 
 .method public final engineSetMode(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-static {p1}, Llibs/yh3;->e(Ljava/lang/String;)Ljava/lang/String;
@@ -1426,14 +1426,14 @@
     move-result v1
 
     .line 11
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
     .line 12
     .line 13
-    goto :goto_15
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     const-string v1, "DHAES"
 
     .line 15
@@ -1446,15 +1446,15 @@
     move-result v0
 
     .line 20
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     .line 21
     .line 22
-    :goto_15
+    :goto_0
     return-void
 
     .line 23
-    :cond_16
+    :cond_1
     const-string v0, "can\'t support mode "
 
     .line 24
@@ -1476,7 +1476,7 @@
 .end method
 
 .method public final engineSetPadding(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-static {p1}, Llibs/yh3;->e(Ljava/lang/String;)Ljava/lang/String;
@@ -1499,14 +1499,14 @@
     move-result v0
 
     .line 11
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
-    goto :goto_26
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     const-string v0, "PKCS5PADDING"
 
     .line 15
@@ -1519,7 +1519,7 @@
     move-result v0
 
     .line 20
-    if-nez v0, :cond_26
+    if-nez v0, :cond_2
 
     .line 21
     .line 22
@@ -1535,14 +1535,14 @@
     move-result p1
 
     .line 28
-    if-eqz p1, :cond_1e
+    if-eqz p1, :cond_1
 
     .line 29
     .line 30
-    goto :goto_26
+    goto :goto_0
 
     .line 31
-    :cond_1e
+    :cond_1
     new-instance p1, Ljavax/crypto/NoSuchPaddingException;
 
     .line 32
@@ -1559,13 +1559,13 @@
     throw p1
 
     .line 39
-    :cond_26
-    :goto_26
+    :cond_2
+    :goto_0
     return-void
 .end method
 
 .method public final engineUpdate([BII[BI)I
-    .registers 6
+    .locals 0
 
     .line 8
     iget-object p4, p0, Llibs/m61;->d:Llibs/fl;
@@ -1578,7 +1578,7 @@
 .end method
 
 .method public final engineUpdate([BII)[B
-    .registers 5
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/m61;->d:Llibs/fl;

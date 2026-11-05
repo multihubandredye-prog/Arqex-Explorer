@@ -13,7 +13,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/c2;Ljava/io/File;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/d52;->a:B
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final e(Llibs/rp0;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/d52;->a:B
@@ -57,7 +57,7 @@
 
     .line 7
     .line 8
-    packed-switch v0, :pswitch_data_40
+    packed-switch v0, :pswitch_data_0
 
     .line 9
     .line 10
@@ -66,7 +66,7 @@
 
     .line 12
     .line 13
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 14
     .line 15
@@ -94,10 +94,10 @@
     move-result-object p1
 
     .line 27
-    goto :goto_27
+    goto :goto_0
 
     .line 28
-    :cond_1b
+    :cond_0
     invoke-static {}, Llibs/je;->t()Llibs/je;
 
     .line 29
@@ -122,8 +122,8 @@
     move-result-object p1
 
     .line 40
-    :goto_27
-    if-eqz p1, :cond_2c
+    :goto_0
+    if-eqz p1, :cond_1
 
     .line 41
     .line 42
@@ -132,11 +132,11 @@
     .line 43
     .line 44
     .line 45
-    :cond_2c
+    :cond_1
     return v1
 
     .line 46
-    :pswitch_2d
+    :pswitch_0
     invoke-static {}, Llibs/je;->t()Llibs/je;
 
     .line 47
@@ -161,7 +161,7 @@
     move-result-object p1
 
     .line 58
-    if-eqz p1, :cond_3e
+    if-eqz p1, :cond_2
 
     .line 59
     .line 60
@@ -170,15 +170,15 @@
     .line 61
     .line 62
     .line 63
-    :cond_3e
+    :cond_2
     return v1
 
     .line 64
     nop
 
     .line 65
-    :pswitch_data_40
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2d
+        :pswitch_0
     .end packed-switch
 .end method

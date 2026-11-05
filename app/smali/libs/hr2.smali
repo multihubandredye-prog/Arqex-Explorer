@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/kr2;ZLlibs/dr2;)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/hr2;->c:Llibs/kr2;
@@ -39,14 +39,14 @@
 
 # virtual methods
 .method public final onFinished(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-boolean p1, p0, Llibs/hr2;->a:Z
 
     .line 2
     .line 3
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 4
     .line 5
@@ -63,6 +63,6 @@
     .line 10
     .line 11
     .line 12
-    :cond_b
+    :cond_0
     return-void
 .end method

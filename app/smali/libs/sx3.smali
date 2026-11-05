@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 4
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public final c()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/xs;->c:Llibs/qx0;
@@ -134,14 +134,14 @@
 .end method
 
 .method public final d()Llibs/sx3;
-    .registers 1
+    .locals 0
 
     .line 1
     return-object p0
 .end method
 
 .method public final g(Llibs/f1;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/sx3;->e:Llibs/rh3;

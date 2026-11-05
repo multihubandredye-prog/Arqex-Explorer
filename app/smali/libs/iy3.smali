@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/hy3;)V
-    .registers 8
+    .locals 6
 
     .line 1
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
@@ -66,7 +66,7 @@
 
     .line 24
     .line 25
-    if-ltz v5, :cond_1e
+    if-ltz v5, :cond_0
 
     .line 26
     .line 27
@@ -78,7 +78,7 @@
     return-void
 
     .line 31
-    :cond_1e
+    :cond_0
     invoke-virtual {p1}, Llibs/hy3;->c()V
 
     .line 32
@@ -90,7 +90,7 @@
 
 # virtual methods
 .method public final available()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/iy3;->Y:I
@@ -104,7 +104,7 @@
     sub-int/2addr v0, v1
 
     .line 6
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 7
     .line 8
@@ -112,19 +112,19 @@
 
     .line 9
     .line 10
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_0
 
     .line 11
     .line 12
     const/4 v0, 0x1
 
     .line 13
-    :cond_c
+    :cond_0
     return v0
 .end method
 
 .method public final c(II[B)I
-    .registers 6
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/iy3;->Y:I
@@ -138,7 +138,7 @@
     sub-int/2addr v0, v1
 
     .line 6
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     .line 7
     .line 8
@@ -146,7 +146,7 @@
 
     .line 9
     .line 10
-    if-eqz p2, :cond_12
+    if-eqz p2, :cond_0
 
     .line 11
     .line 12
@@ -167,14 +167,14 @@
     return p1
 
     .line 19
-    :cond_12
+    :cond_0
     const/4 p1, -0x1
 
     .line 20
     return p1
 
     .line 21
-    :cond_14
+    :cond_1
     invoke-virtual {p0}, Llibs/iy3;->available()I
 
     .line 22
@@ -203,7 +203,7 @@
     move-result p1
 
     .line 35
-    if-lez p1, :cond_29
+    if-lez p1, :cond_2
 
     .line 36
     .line 37
@@ -218,19 +218,19 @@
 
     .line 41
     .line 42
-    :cond_29
+    :cond_2
     return p1
 .end method
 
 .method public final close()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final markSupported()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -240,7 +240,7 @@
 .end method
 
 .method public final read()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/iy3;->Y:I
@@ -254,7 +254,7 @@
     sub-int/2addr v0, v1
 
     .line 6
-    if-nez v0, :cond_11
+    if-nez v0, :cond_1
 
     .line 7
     .line 8
@@ -262,7 +262,7 @@
 
     .line 9
     .line 10
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 11
     .line 12
@@ -276,14 +276,14 @@
     return v0
 
     .line 16
-    :cond_f
+    :cond_0
     const/4 v0, -0x1
 
     .line 17
     return v0
 
     .line 18
-    :cond_11
+    :cond_1
     iget-object v0, p0, Llibs/iy3;->X:Llibs/di2;
 
     .line 19
@@ -296,7 +296,7 @@
     move-result v0
 
     .line 24
-    if-ltz v0, :cond_1f
+    if-ltz v0, :cond_2
 
     .line 25
     .line 26
@@ -312,12 +312,12 @@
 
     .line 31
     .line 32
-    :cond_1f
+    :cond_2
     return v0
 .end method
 
 .method public final read([B)I
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -332,7 +332,7 @@
 .end method
 
 .method public final read([BII)I
-    .registers 4
+    .locals 0
 
     .line 33
     invoke-virtual {p0, p2, p3, p1}, Llibs/iy3;->c(II[B)I
@@ -343,7 +343,7 @@
 .end method
 
 .method public final skip(J)J
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Llibs/iy3;->available()I

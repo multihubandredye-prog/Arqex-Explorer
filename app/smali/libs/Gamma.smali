@@ -12,7 +12,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/Gamma;
@@ -32,7 +32,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 7
+    .locals 4
 
     .line 1
     check-cast p1, Llibs/Beta;
@@ -80,22 +80,22 @@
     const/4 v2, 0x0
 
     .line 16
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     .line 17
     .line 18
     const/4 v0, 0x0
 
     .line 19
-    goto :goto_15
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     iget-boolean v0, v0, Llibs/Delta;->d:Z
 
     .line 21
     .line 22
-    :goto_15
+    :goto_0
     iget-object v3, p2, Llibs/Beta;->X:Llibs/j32;
 
     .line 23
@@ -112,20 +112,20 @@
 
     .line 29
     .line 30
-    if-nez v1, :cond_20
+    if-nez v1, :cond_1
 
     .line 31
     .line 32
-    goto :goto_22
+    goto :goto_1
 
     .line 33
-    :cond_20
+    :cond_1
     iget-boolean v2, v1, Llibs/Delta;->d:Z
 
     .line 34
     .line 35
-    :goto_22
-    if-ne v0, v2, :cond_31
+    :goto_1
+    if-ne v0, v2, :cond_2
 
     .line 36
     .line 37
@@ -156,8 +156,8 @@
     return p1
 
     .line 50
-    :cond_31
-    if-eqz v0, :cond_35
+    :cond_2
+    if-eqz v0, :cond_3
 
     .line 51
     .line 52
@@ -167,7 +167,7 @@
     return p1
 
     .line 54
-    :cond_35
+    :cond_3
     const/4 p1, 0x1
 
     .line 55

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/rp0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/InterruptedException;-><init>()V

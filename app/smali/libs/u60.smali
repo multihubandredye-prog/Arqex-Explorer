@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "No socket!"
@@ -21,7 +21,7 @@
 .end method
 
 .method public constructor <init>(Ljava/io/IOException;)V
-    .registers 2
+    .locals 0
 
     .line 8
     invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/Throwable;)V
@@ -30,7 +30,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 3
+    .locals 0
 
     .line 7
     invoke-direct {p0, p1, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V

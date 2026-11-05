@@ -37,7 +37,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/ArrayList;JILlibs/sq1;Ljava/lang/Integer;DLjava/util/LinkedHashMap;Ljava/lang/Integer;Ljava/util/ArrayList;Ljava/lang/Integer;ILlibs/au3;Llibs/cq1;Llibs/tq1;Llibs/rq1;)V
-    .registers 18
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -109,7 +109,7 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 10
+    .locals 9
 
     .line 1
     const-string v0, "<null>"
@@ -120,17 +120,17 @@
 
     .line 4
     .line 5
-    if-nez v1, :cond_8
+    if-nez v1, :cond_0
 
     .line 6
     .line 7
     move-object v1, v0
 
     .line 8
-    goto :goto_10
+    goto :goto_0
 
     .line 9
-    :cond_8
+    :cond_0
     invoke-interface {v1}, Ljava/util/List;->toArray()[Ljava/lang/Object;
 
     .line 10
@@ -147,22 +147,22 @@
     move-result-object v1
 
     .line 17
-    :goto_10
+    :goto_0
     iget-object v2, p0, Llibs/uq1;->i:Ljava/util/List;
 
     .line 18
     .line 19
-    if-nez v2, :cond_16
+    if-nez v2, :cond_1
 
     .line 20
     .line 21
     move-object v2, v0
 
     .line 22
-    goto :goto_1e
+    goto :goto_1
 
     .line 23
-    :cond_16
+    :cond_1
     invoke-interface {v2}, Ljava/util/List;->toArray()[Ljava/lang/Object;
 
     .line 24
@@ -179,19 +179,19 @@
     move-result-object v2
 
     .line 31
-    :goto_1e
+    :goto_1
     iget-object v3, p0, Llibs/uq1;->g:Ljava/util/Map;
 
     .line 32
     .line 33
-    if-nez v3, :cond_23
+    if-nez v3, :cond_2
 
     .line 34
     .line 35
-    goto :goto_2f
+    goto :goto_2
 
     .line 36
-    :cond_23
+    :cond_2
     invoke-interface {v3}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     .line 37
@@ -216,7 +216,7 @@
     move-result-object v0
 
     .line 48
-    :goto_2f
+    :goto_2
     iget-wide v3, p0, Llibs/uq1;->b:J
 
     .line 49

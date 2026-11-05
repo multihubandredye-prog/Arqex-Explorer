@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/bm1;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iput-object p1, p0, Llibs/am1;->Z:Llibs/bm1;
@@ -52,7 +52,7 @@
 
 # virtual methods
 .method public final a()B
-    .registers 4
+    .locals 3
 
     .line 1
     :try_start_0
@@ -77,15 +77,15 @@
     .line 10
     .line 11
     aget-byte v0, v0, v1
-    :try_end_c
-    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_c} :catch_d
+    :try_end_0
+    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 12
     .line 13
     return v0
 
     .line 14
-    :catch_d
+    :catch_0
     move-exception v0
 
     .line 15
@@ -110,7 +110,7 @@
 .end method
 
 .method public final hasNext()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/am1;->X:I
@@ -121,7 +121,7 @@
 
     .line 4
     .line 5
-    if-ge v0, v1, :cond_8
+    if-ge v0, v1, :cond_0
 
     .line 6
     .line 7
@@ -131,7 +131,7 @@
     return v0
 
     .line 9
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 10
@@ -139,7 +139,7 @@
 .end method
 
 .method public final next()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/am1;->a()B
@@ -162,7 +162,7 @@
 .end method
 
 .method public final remove()V
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/UnsupportedOperationException;

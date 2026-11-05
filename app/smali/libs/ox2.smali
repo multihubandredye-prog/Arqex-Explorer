@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/SQLiteEditorActivity;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/ox2;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 15
+    .locals 9
 
     .line 1
     iget-byte p1, p0, Llibs/ox2;->X:B
@@ -50,7 +50,7 @@
 
     .line 5
     .line 6
-    packed-switch p1, :pswitch_data_62
+    packed-switch p1, :pswitch_data_0
 
     .line 7
     .line 8
@@ -74,7 +74,7 @@
     const/4 p5, 0x0
 
     .line 18
-    if-ne p3, p1, :cond_45
+    if-ne p3, p1, :cond_0
 
     .line 19
     .line 20
@@ -177,16 +177,16 @@
     .line 67
     .line 68
     .line 69
-    goto :goto_48
+    goto :goto_0
 
     .line 70
-    :cond_45
+    :cond_0
     invoke-virtual {p4, p5, p3, p5}, Lcom/mixplorer/activities/SQLiteEditorActivity;->Top(Ljava/lang/String;ILjava/lang/String;)V
 
     .line 71
     .line 72
     .line 73
-    :goto_48
+    :goto_0
     iget-object p1, p4, Lcom/mixplorer/activities/a;->Lambda:Llibs/be2;
 
     .line 74
@@ -199,7 +199,7 @@
     return-void
 
     .line 79
-    :pswitch_4e
+    :pswitch_0
     sget p1, Lcom/mixplorer/activities/SQLiteEditorActivity;->III:I
 
     .line 80
@@ -208,11 +208,11 @@
 
     .line 82
     .line 83
-    if-eqz p1, :cond_60
+    if-eqz p1, :cond_2
 
     .line 84
     .line 85
-    if-ne p3, p2, :cond_58
+    if-ne p3, p2, :cond_1
 
     .line 86
     .line 87
@@ -220,7 +220,7 @@
 
     .line 88
     .line 89
-    :cond_58
+    :cond_1
     invoke-virtual {p1, p2}, Lcom/mixplorer/widgets/MiEditText;->setInputType(I)V
 
     .line 90
@@ -235,15 +235,15 @@
     .line 95
     .line 96
     .line 97
-    :cond_60
+    :cond_2
     return-void
 
     .line 98
     nop
 
     .line 99
-    :pswitch_data_62
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_4e
+        :pswitch_0
     .end packed-switch
 .end method

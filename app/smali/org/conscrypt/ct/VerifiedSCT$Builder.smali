@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/conscrypt/ct/SignedCertificateTimestamp;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,7 +29,7 @@
 .end method
 
 .method public static bridge synthetic a(Lorg/conscrypt/ct/VerifiedSCT$Builder;)Lorg/conscrypt/ct/LogInfo;
-    .registers 1
+    .locals 0
 
     .line 1
     iget-object p0, p0, Lorg/conscrypt/ct/VerifiedSCT$Builder;->logInfo:Lorg/conscrypt/ct/LogInfo;
@@ -40,7 +40,7 @@
 .end method
 
 .method public static bridge synthetic b(Lorg/conscrypt/ct/VerifiedSCT$Builder;)Lorg/conscrypt/ct/SignedCertificateTimestamp;
-    .registers 1
+    .locals 0
 
     .line 1
     iget-object p0, p0, Lorg/conscrypt/ct/VerifiedSCT$Builder;->sct:Lorg/conscrypt/ct/SignedCertificateTimestamp;
@@ -51,7 +51,7 @@
 .end method
 
 .method public static bridge synthetic c(Lorg/conscrypt/ct/VerifiedSCT$Builder;)Lorg/conscrypt/ct/VerifiedSCT$Status;
-    .registers 1
+    .locals 0
 
     .line 1
     iget-object p0, p0, Lorg/conscrypt/ct/VerifiedSCT$Builder;->status:Lorg/conscrypt/ct/VerifiedSCT$Status;
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public build()Lorg/conscrypt/ct/VerifiedSCT;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Lorg/conscrypt/ct/VerifiedSCT;
@@ -83,7 +83,7 @@
 .end method
 
 .method public setLogInfo(Lorg/conscrypt/ct/LogInfo;)Lorg/conscrypt/ct/VerifiedSCT$Builder;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -99,7 +99,7 @@
 .end method
 
 .method public setStatus(Lorg/conscrypt/ct/VerifiedSCT$Status;)Lorg/conscrypt/ct/VerifiedSCT$Builder;
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Lorg/conscrypt/ct/VerifiedSCT$Builder;->status:Lorg/conscrypt/ct/VerifiedSCT$Status;

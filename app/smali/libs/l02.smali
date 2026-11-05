@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/Thread;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p2, p0, Llibs/l02;->k:Ljava/lang/Thread;
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final varargs a([Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 13
+    .locals 11
 
     .line 1
     const/4 p1, 0x0
@@ -57,7 +57,7 @@
     const/4 v0, 0x1
 
     .line 3
-    :try_start_2
+    :try_start_0
     new-array v1, v0, [Ljava/lang/String;
 
     .line 4
@@ -78,7 +78,7 @@
     move-result-object v1
 
     .line 13
-    if-eqz v1, :cond_9f
+    if-eqz v1, :cond_4
 
     .line 14
     .line 15
@@ -174,8 +174,8 @@
     const/4 v6, 0x0
 
     .line 61
-    :goto_3c
-    if-ge v5, v3, :cond_88
+    :goto_0
+    if-ge v5, v3, :cond_2
 
     .line 62
     .line 63
@@ -189,15 +189,15 @@
     .line 67
     .line 68
     move-result v7
-    :try_end_44
-    .catchall {:try_start_2 .. :try_end_44} :catchall_86
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 69
-    if-nez v7, :cond_80
+    if-nez v7, :cond_1
 
     .line 70
     .line 71
-    :try_start_46
+    :try_start_1
     new-instance v7, Ljava/lang/StringBuilder;
 
     .line 72
@@ -275,21 +275,21 @@
     .line 112
     .line 113
     invoke-virtual {v8}, Llibs/xv1;->start()V
-    :try_end_73
-    .catchall {:try_start_46 .. :try_end_73} :catchall_74
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 114
     .line 115
     .line 116
-    goto :goto_75
+    goto :goto_1
 
     .line 117
-    :catchall_74
+    :catchall_0
     nop
 
     .line 118
-    :goto_75
-    if-nez v6, :cond_7e
+    :goto_1
+    if-nez v6, :cond_0
 
     .line 119
     .line 120
@@ -297,7 +297,7 @@
 
     .line 121
     .line 122
-    if-ne v5, v7, :cond_7e
+    if-ne v5, v7, :cond_0
 
     .line 123
     .line 124
@@ -310,15 +310,15 @@
     const/4 v6, 0x1
 
     .line 127
-    :cond_7e
+    :cond_0
     add-int/2addr v5, v0
 
     .line 128
-    goto :goto_3c
+    goto :goto_0
 
     .line 129
-    :cond_80
-    :try_start_80
+    :cond_1
+    :try_start_2
     new-instance v1, Ljava/lang/InterruptedException;
 
     .line 130
@@ -331,34 +331,34 @@
     throw v1
 
     .line 135
-    :catchall_86
+    :catchall_1
     move-exception v1
 
     .line 136
-    goto :goto_a7
+    goto :goto_3
 
     .line 137
-    :cond_88
-    :goto_88
+    :cond_2
+    :goto_2
     invoke-virtual {v2}, Ljava/lang/ThreadGroup;->activeCount()I
 
     .line 138
     .line 139
     .line 140
     move-result v1
-    :try_end_8c
-    .catchall {:try_start_80 .. :try_end_8c} :catchall_86
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 141
     iget-object v3, p0, Llibs/l02;->j:Ljava/util/concurrent/atomic/AtomicReference;
 
     .line 142
     .line 143
-    if-lez v1, :cond_97
+    if-lez v1, :cond_3
 
     .line 144
     .line 145
-    :try_start_90
+    :try_start_3
     invoke-virtual {v3}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
     .line 146
@@ -367,14 +367,14 @@
     move-result-object v1
 
     .line 149
-    if-nez v1, :cond_97
+    if-nez v1, :cond_3
 
     .line 150
     .line 151
-    goto :goto_88
+    goto :goto_2
 
     .line 152
-    :cond_97
+    :cond_3
     invoke-virtual {v2, v0}, Ljava/lang/ThreadGroup;->setDaemon(Z)V
 
     .line 153
@@ -391,7 +391,7 @@
     return-object p1
 
     .line 160
-    :cond_9f
+    :cond_4
     new-instance v1, Ljava/lang/Exception;
 
     .line 161
@@ -406,11 +406,11 @@
     .line 166
     .line 167
     throw v1
-    :try_end_a7
-    .catchall {:try_start_90 .. :try_end_a7} :catchall_86
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 168
-    :goto_a7
+    :goto_3
     invoke-static {v1}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 169

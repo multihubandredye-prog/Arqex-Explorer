@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/al;Ljava/util/ArrayList;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onItemLongClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)Z
-    .registers 6
+    .locals 0
 
     .line 1
     const/16 p1, 0x1e

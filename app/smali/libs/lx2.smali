@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/SQLiteEditorActivity;Ljava/util/concurrent/atomic/AtomicBoolean;ZB)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-byte p4, p0, Llibs/lx2;->X:B
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/lx2;->X:B
@@ -67,12 +67,12 @@
 
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_12
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
     .line 12
-    :pswitch_b
+    :pswitch_0
     sget v0, Lcom/mixplorer/activities/SQLiteEditorActivity;->III:I
 
     .line 13
@@ -88,8 +88,8 @@
     nop
 
     .line 19
-    :pswitch_data_12
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_b
+        :pswitch_0
     .end packed-switch
 .end method

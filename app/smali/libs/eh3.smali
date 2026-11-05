@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/ThreadLocal;
@@ -29,7 +29,7 @@
 .end method
 
 .method public static a(Llibs/oi0;Ljava/lang/String;)[B
-    .registers 7
+    .locals 5
 
     .line 1
     const/16 v0, 0x8
@@ -53,8 +53,8 @@
     .line 10
     .line 11
     .line 12
-    :cond_b
-    :goto_b
+    :cond_0
+    :goto_0
     invoke-virtual {v1}, Ljava/util/StringTokenizer;->hasMoreTokens()Z
 
     .line 13
@@ -63,7 +63,7 @@
     move-result p1
 
     .line 16
-    if-eqz p1, :cond_3e
+    if-eqz p1, :cond_3
 
     .line 17
     .line 18
@@ -83,7 +83,7 @@
     move-result v3
 
     .line 26
-    if-lez v3, :cond_b
+    if-lez v3, :cond_0
 
     .line 27
     .line 28
@@ -95,7 +95,7 @@
     move-result v3
 
     .line 32
-    if-nez v3, :cond_b
+    if-nez v3, :cond_0
 
     .line 33
     .line 34
@@ -107,7 +107,7 @@
 
     .line 37
     .line 38
-    if-nez v3, :cond_2c
+    if-nez v3, :cond_1
 
     .line 39
     .line 40
@@ -119,14 +119,14 @@
     move-result-object p1
 
     .line 44
-    goto :goto_38
+    goto :goto_1
 
     .line 45
-    :cond_2c
+    :cond_1
     const/4 v4, 0x1
 
     .line 46
-    if-ne v3, v4, :cond_34
+    if-ne v3, v4, :cond_2
 
     .line 47
     .line 48
@@ -138,10 +138,10 @@
     move-result-object p1
 
     .line 52
-    goto :goto_38
+    goto :goto_1
 
     .line 53
-    :cond_34
+    :cond_2
     invoke-virtual {p1}, Ljava/lang/String;->getBytes()[B
 
     .line 54
@@ -150,7 +150,7 @@
     move-result-object p1
 
     .line 57
-    :goto_38
+    :goto_1
     iget-object v3, p0, Llibs/oi0;->e:Ljavax/crypto/Mac;
 
     .line 58
@@ -160,15 +160,15 @@
     .line 60
     .line 61
     .line 62
-    goto :goto_b
+    goto :goto_0
 
     .line 63
-    :cond_3e
+    :cond_3
     return-object v0
 .end method
 
 .method public static b()Ljavax/crypto/Cipher;
-    .registers 2
+    .locals 2
 
     .line 1
     sget-object v0, Llibs/eh3;->a:Ljava/lang/ThreadLocal;
@@ -187,7 +187,7 @@
 
     .line 8
     .line 9
-    if-nez v1, :cond_22
+    if-nez v1, :cond_0
 
     .line 10
     .line 11
@@ -195,16 +195,16 @@
 
     .line 12
     .line 13
-    :try_start_c
+    :try_start_0
     invoke-static {v1}, Ljavax/crypto/Cipher;->getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;
 
     .line 14
     .line 15
     .line 16
     move-result-object v1
-    :try_end_10
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_c .. :try_end_10} :catch_1b
-    .catch Ljavax/crypto/NoSuchPaddingException; {:try_start_c .. :try_end_10} :catch_14
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljavax/crypto/NoSuchPaddingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 17
     invoke-virtual {v0, v1}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
@@ -215,7 +215,7 @@
     return-object v1
 
     .line 21
-    :catch_14
+    :catch_0
     move-exception v0
 
     .line 22
@@ -231,7 +231,7 @@
     throw v1
 
     .line 28
-    :catch_1b
+    :catch_1
     move-exception v0
 
     .line 29
@@ -247,12 +247,12 @@
     throw v1
 
     .line 35
-    :cond_22
+    :cond_0
     return-object v1
 .end method
 
 .method public static c(Ljavax/crypto/Cipher;Ljavax/crypto/Mac;Ljavax/crypto/spec/SecretKeySpec;[B[B[BI)[B
-    .registers 13
+    .locals 6
 
     .line 1
     invoke-static {p4}, Llibs/ji0;->Data([B)[B
@@ -344,7 +344,7 @@
 .end method
 
 .method public static d(Llibs/oi0;[B[B)[B
-    .registers 10
+    .locals 7
 
     .line 1
     invoke-static {}, Llibs/eh3;->b()Ljavax/crypto/Cipher;
@@ -388,7 +388,7 @@
 .end method
 
 .method public static e(Llibs/oi0;[B[BI)[B
-    .registers 11
+    .locals 7
 
     .line 1
     invoke-static {}, Llibs/eh3;->b()Ljavax/crypto/Cipher;
@@ -432,7 +432,7 @@
 .end method
 
 .method public static f(Ljavax/crypto/Cipher;Ljavax/crypto/Mac;Ljavax/crypto/spec/SecretKeySpec;[B[B[BI)[B
-    .registers 13
+    .locals 6
 
     .line 1
     move-object v0, p5
@@ -535,7 +535,7 @@
 .end method
 
 .method public static g(Llibs/oi0;[B[B)[B
-    .registers 10
+    .locals 7
 
     .line 1
     invoke-static {}, Llibs/eh3;->b()Ljavax/crypto/Cipher;

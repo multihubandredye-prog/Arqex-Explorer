@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 819
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .registers 10
+    .locals 7
 
     .line 822
     :try_start_0
@@ -58,28 +58,28 @@
 
     cmp-long p2, v3, v5
 
-    if-lez p2, :cond_24
+    if-lez p2, :cond_0
 
     cmp-long v2, v0, v5
 
-    if-lez v2, :cond_24
+    if-lez v2, :cond_0
 
     cmp-long v2, v3, v0
 
-    if-eqz v2, :cond_24
+    if-eqz v2, :cond_0
 
     return-void
 
-    :cond_24
-    if-lez p2, :cond_27
+    :cond_0
+    if-lez p2, :cond_1
 
-    goto :goto_28
+    goto :goto_0
 
-    :cond_27
+    :cond_1
     move-wide v3, v0
 
     .line 828
-    :goto_28
+    :goto_0
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object p1
@@ -87,9 +87,9 @@
     const/4 p2, 0x0
 
     invoke-static {p1, p2, v3, v4}, Llibs/ArqexUpdater;->concluirDownload(Landroid/content/Context;Landroid/content/Context;J)V
-    :try_end_30
-    .catchall {:try_start_0 .. :try_end_30} :catchall_30
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_30
+    :catchall_0
     return-void
 .end method

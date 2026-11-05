@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -26,11 +26,11 @@
 .end method
 
 .method public constructor <init>(BI)V
-    .registers 9
+    .locals 6
 
     iput-byte p1, p0, Llibs/m90;->a:B
 
-    packed-switch p1, :pswitch_data_62
+    packed-switch p1, :pswitch_data_0
 
     .line 137
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,8 +53,8 @@
 
     const/4 v2, 0x0
 
-    :goto_15
-    if-ge v2, v0, :cond_23
+    :goto_0
+    if-ge v2, v0, :cond_1
 
     aget v3, p2, v2
 
@@ -63,20 +63,20 @@
 
     move-result v4
 
-    if-ne v4, p1, :cond_20
+    if-ne v4, p1, :cond_0
 
-    goto :goto_25
+    goto :goto_1
 
-    :cond_20
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_23
+    :cond_1
     const/16 v3, 0x8
 
     .line 141
-    :goto_25
+    :goto_1
     iput v3, p0, Llibs/m90;->c:I
 
     .line 142
@@ -99,8 +99,8 @@
 
     array-length v2, v0
 
-    :goto_37
-    if-ge v1, v2, :cond_47
+    :goto_2
+    if-ge v1, v2, :cond_3
 
     aget-object v3, v0, v1
 
@@ -109,18 +109,18 @@
 
     and-int v5, p1, v4
 
-    if-ne v5, v4, :cond_44
+    if-ne v5, v4, :cond_2
 
     .line 147
     invoke-interface {p2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_44
+    :cond_2
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_37
+    goto :goto_2
 
     .line 148
-    :cond_47
+    :cond_3
     new-instance p1, Ljava/util/HashSet;
 
     invoke-direct {p1, p2}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
@@ -128,12 +128,12 @@
     return-void
 
     .line 149
-    :pswitch_4d
+    :pswitch_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 p1, 0x7
 
-    if-gt p1, p2, :cond_58
+    if-gt p1, p2, :cond_4
 
     .line 150
     iput p2, p0, Llibs/m90;->b:I
@@ -144,31 +144,31 @@
     return-void
 
     .line 152
-    :cond_58
+    :cond_4
     const-string p1, "Lower bound cannot be greater then upper bound"
 
     invoke-static {p1}, Llibs/t;->k(Ljava/lang/String;)V
 
     const/4 p1, 0x0
 
-    goto :goto_60
+    goto :goto_4
 
-    :goto_5f
+    :goto_3
     throw p1
 
-    :goto_60
-    goto :goto_5f
+    :goto_4
+    goto :goto_3
 
     nop
 
-    :pswitch_data_62
+    :pswitch_data_0
     .packed-switch 0x3
-        :pswitch_4d
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public constructor <init>(Landroid/app/ActivityManager;Llibs/s20;)V
-    .registers 9
+    .locals 6
 
     .line 1
     const/4 v0, 0x2
@@ -201,7 +201,7 @@
 
     .line 14
     .line 15
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 16
     .line 17
@@ -213,10 +213,10 @@
     move-result v0
 
     .line 21
-    goto :goto_1e
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     invoke-static {}, Llibs/t43;->w()I
 
     .line 23
@@ -225,22 +225,22 @@
     move-result v0
 
     .line 26
-    if-ge v0, v3, :cond_1d
+    if-ge v0, v3, :cond_1
 
     .line 27
     .line 28
     const/4 v0, 0x1
 
     .line 29
-    goto :goto_1e
+    goto :goto_0
 
     .line 30
-    :cond_1d
+    :cond_1
     const/4 v0, 0x0
 
     .line 31
-    :goto_1e
-    if-eqz v0, :cond_23
+    :goto_0
+    if-eqz v0, :cond_2
 
     .line 32
     .line 33
@@ -248,15 +248,15 @@
 
     .line 34
     .line 35
-    goto :goto_25
+    goto :goto_1
 
     .line 36
-    :cond_23
+    :cond_2
     const/high16 v0, 0x400000
 
     .line 37
     .line 38
-    :goto_25
+    :goto_1
     iput v0, p0, Llibs/m90;->c:I
 
     .line 39
@@ -285,7 +285,7 @@
     move-result v5
 
     .line 52
-    if-eqz v5, :cond_3a
+    if-eqz v5, :cond_3
 
     .line 53
     .line 54
@@ -297,10 +297,10 @@
     move-result v1
 
     .line 58
-    goto :goto_41
+    goto :goto_2
 
     .line 59
-    :cond_3a
+    :cond_3
     invoke-static {}, Llibs/t43;->w()I
 
     .line 60
@@ -309,19 +309,19 @@
     move-result p1
 
     .line 63
-    if-ge p1, v3, :cond_41
+    if-ge p1, v3, :cond_4
 
     .line 64
     .line 65
     const/4 v1, 0x1
 
     .line 66
-    :cond_41
-    :goto_41
+    :cond_4
+    :goto_2
     int-to-float p1, v4
 
     .line 67
-    if-eqz v1, :cond_48
+    if-eqz v1, :cond_5
 
     .line 68
     .line 69
@@ -330,16 +330,16 @@
     .line 70
     .line 71
     .line 72
-    goto :goto_4b
+    goto :goto_3
 
     .line 73
-    :cond_48
+    :cond_5
     const v1, 0x3ecccccd    # 0.4f
 
     .line 74
     .line 75
     .line 76
-    :goto_4b
+    :goto_3
     mul-float p1, p1, v1
 
     .line 77
@@ -417,7 +417,7 @@
     add-int/2addr p2, v2
 
     .line 113
-    if-gt p2, p1, :cond_75
+    if-gt p2, p1, :cond_6
 
     .line 114
     .line 115
@@ -425,10 +425,10 @@
 
     .line 116
     .line 117
-    goto :goto_86
+    goto :goto_4
 
     .line 118
-    :cond_75
+    :cond_6
     int-to-float p1, p1
 
     .line 119
@@ -464,20 +464,20 @@
 
     .line 134
     .line 135
-    :goto_86
+    :goto_4
     return-void
 .end method
 
 
 # virtual methods
 .method public a(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x7
 
     .line 2
-    if-lt p1, v0, :cond_10
+    if-lt p1, v0, :cond_1
 
     .line 3
     .line 4
@@ -485,7 +485,7 @@
 
     .line 5
     .line 6
-    if-gt p1, v0, :cond_a
+    if-gt p1, v0, :cond_0
 
     .line 7
     .line 8
@@ -496,7 +496,7 @@
     return-void
 
     .line 11
-    :cond_a
+    :cond_0
     new-instance p1, Ljava/lang/IndexOutOfBoundsException;
 
     .line 12
@@ -509,7 +509,7 @@
     throw p1
 
     .line 17
-    :cond_10
+    :cond_1
     new-instance p1, Ljava/lang/IndexOutOfBoundsException;
 
     .line 18
@@ -523,19 +523,19 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/m90;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_5c
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
     .line 6
-    :pswitch_5
+    :pswitch_0
     invoke-super {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     .line 7
@@ -547,7 +547,7 @@
     return-object v0
 
     .line 11
-    :pswitch_a
+    :pswitch_1
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 12
@@ -654,7 +654,7 @@
     return-object v0
 
     .line 67
-    :pswitch_42
+    :pswitch_2
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 68
@@ -705,10 +705,10 @@
     return-object v0
 
     .line 93
-    :pswitch_data_5c
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_42
-        :pswitch_5
-        :pswitch_a
+        :pswitch_2
+        :pswitch_0
+        :pswitch_1
     .end packed-switch
 .end method

@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(JLjava/lang/String;I)V
-    .registers 7
+    .locals 2
 
     .line 1
     sget-object v0, Lorg/conscrypt/OpenSSLSignature$EngineType;->RSA:Lorg/conscrypt/OpenSSLSignature$EngineType;
@@ -56,7 +56,7 @@
 
 # virtual methods
 .method public final configureEVP_PKEY_CTX(J)V
-    .registers 5
+    .locals 2
 
     .line 1
     const/4 v0, 0x6
@@ -89,7 +89,7 @@
 .end method
 
 .method public final engineGetParameters()Ljava/security/AlgorithmParameters;
-    .registers 8
+    .locals 7
 
     .line 1
     :try_start_0
@@ -143,9 +143,9 @@
     .line 25
     .line 26
     invoke-virtual {v0, v1}, Ljava/security/AlgorithmParameters;->init(Ljava/security/spec/AlgorithmParameterSpec;)V
-    :try_end_1c
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_1c} :catch_1f
-    .catch Ljava/security/spec/InvalidParameterSpecException; {:try_start_0 .. :try_end_1c} :catch_1d
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/security/spec/InvalidParameterSpecException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 27
     .line 28
@@ -153,18 +153,18 @@
     return-object v0
 
     .line 30
-    :catch_1d
+    :catch_0
     move-exception v0
 
     .line 31
-    goto :goto_20
+    goto :goto_0
 
     .line 32
-    :catch_1f
+    :catch_1
     move-exception v0
 
     .line 33
-    :goto_20
+    :goto_0
     new-instance v1, Ljava/security/ProviderException;
 
     .line 34
@@ -182,7 +182,7 @@
 .end method
 
 .method public final engineSetParameter(Ljava/security/spec/AlgorithmParameterSpec;)V
-    .registers 7
+    .locals 5
 
     .line 1
     instance-of v0, p1, Ljava/security/spec/PSSParameterSpec;
@@ -197,7 +197,7 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_fc
+    if-eqz v0, :cond_9
 
     .line 8
     .line 9
@@ -221,7 +221,7 @@
     move-result-object v0
 
     .line 19
-    if-eqz v0, :cond_e4
+    if-eqz v0, :cond_8
 
     .line 20
     .line 21
@@ -237,7 +237,7 @@
     move-result v0
 
     .line 27
-    if-eqz v0, :cond_de
+    if-eqz v0, :cond_7
 
     .line 28
     .line 29
@@ -261,7 +261,7 @@
     move-result v3
 
     .line 39
-    if-nez v3, :cond_3f
+    if-nez v3, :cond_1
 
     .line 40
     .line 41
@@ -277,14 +277,14 @@
     move-result v3
 
     .line 47
-    if-eqz v3, :cond_31
+    if-eqz v3, :cond_0
 
     .line 48
     .line 49
-    goto :goto_3f
+    goto :goto_0
 
     .line 50
-    :cond_31
+    :cond_0
     new-instance p1, Ljava/security/InvalidAlgorithmParameterException;
 
     .line 51
@@ -313,8 +313,8 @@
     throw p1
 
     .line 64
-    :cond_3f
-    :goto_3f
+    :cond_1
+    :goto_0
     invoke-virtual {p1}, Ljava/security/spec/PSSParameterSpec;->getMGFParameters()Ljava/security/spec/AlgorithmParameterSpec;
 
     .line 65
@@ -327,7 +327,7 @@
 
     .line 69
     .line 70
-    if-eqz v3, :cond_bb
+    if-eqz v3, :cond_6
 
     .line 71
     .line 72
@@ -359,19 +359,19 @@
     move-result-object v1
 
     .line 86
-    if-eqz v1, :cond_a3
+    if-eqz v1, :cond_5
 
     .line 87
     .line 88
-    :try_start_57
+    :try_start_0
     invoke-static {v1}, Lorg/conscrypt/EvpMdRef;->getEVP_MDByJcaDigestAlgorithmStandardName(Ljava/lang/String;)J
 
     .line 89
     .line 90
     .line 91
     move-result-wide v2
-    :try_end_5b
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_57 .. :try_end_5b} :catch_96
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 92
     invoke-virtual {p1}, Ljava/security/spec/PSSParameterSpec;->getSaltLength()I
@@ -382,7 +382,7 @@
     move-result v0
 
     .line 96
-    if-ltz v0, :cond_8a
+    if-ltz v0, :cond_4
 
     .line 97
     .line 98
@@ -397,7 +397,7 @@
     const/4 v4, 0x1
 
     .line 103
-    if-ne p1, v4, :cond_7c
+    if-ne p1, v4, :cond_3
 
     .line 104
     .line 105
@@ -429,7 +429,7 @@
 
     .line 118
     .line 119
-    if-eqz p1, :cond_7b
+    if-eqz p1, :cond_2
 
     .line 120
     .line 121
@@ -438,11 +438,11 @@
     .line 122
     .line 123
     .line 124
-    :cond_7b
+    :cond_2
     return-void
 
     .line 125
-    :cond_7c
+    :cond_3
     new-instance v0, Ljava/security/InvalidAlgorithmParameterException;
 
     .line 126
@@ -471,7 +471,7 @@
     throw v0
 
     .line 139
-    :cond_8a
+    :cond_4
     new-instance p1, Ljava/security/InvalidAlgorithmParameterException;
 
     .line 140
@@ -496,7 +496,7 @@
     throw p1
 
     .line 151
-    :catch_96
+    :catch_0
     move-exception p1
 
     .line 152
@@ -524,7 +524,7 @@
     throw v0
 
     .line 164
-    :cond_a3
+    :cond_5
     new-instance p1, Ljava/security/InvalidAlgorithmParameterException;
 
     .line 165
@@ -571,7 +571,7 @@
     throw p1
 
     .line 188
-    :cond_bb
+    :cond_6
     new-instance p1, Ljava/security/InvalidAlgorithmParameterException;
 
     .line 189
@@ -637,7 +637,7 @@
     throw p1
 
     .line 223
-    :cond_de
+    :cond_7
     const-string p1, "Changing content digest algorithm not supported"
 
     .line 224
@@ -650,7 +650,7 @@
     return-void
 
     .line 229
-    :cond_e4
+    :cond_8
     new-instance v0, Ljava/security/InvalidAlgorithmParameterException;
 
     .line 230
@@ -697,7 +697,7 @@
     throw v0
 
     .line 253
-    :cond_fc
+    :cond_9
     new-instance v0, Ljava/security/InvalidAlgorithmParameterException;
 
     .line 254

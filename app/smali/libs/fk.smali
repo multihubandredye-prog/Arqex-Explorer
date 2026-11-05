@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 8
+    .locals 8
 
     .line 1
     const-string v0, "chromium"
@@ -87,7 +87,7 @@
     move-result v4
 
     .line 40
-    if-eqz v4, :cond_2f
+    if-eqz v4, :cond_0
 
     .line 41
     .line 42
@@ -103,7 +103,7 @@
     move-result v4
 
     .line 48
-    :cond_2f
+    :cond_0
     const-string v4, "aries"
 
     .line 49
@@ -140,7 +140,7 @@
     move-result v5
 
     .line 66
-    if-nez v5, :cond_4e
+    if-nez v5, :cond_2
 
     .line 67
     .line 68
@@ -156,26 +156,26 @@
     move-result v5
 
     .line 74
-    if-eqz v5, :cond_4c
+    if-eqz v5, :cond_1
 
     .line 75
     .line 76
-    goto :goto_4e
+    goto :goto_0
 
     .line 77
-    :cond_4c
+    :cond_1
     const/4 v5, 0x0
 
     .line 78
-    goto :goto_4f
+    goto :goto_1
 
     .line 79
-    :cond_4e
-    :goto_4e
+    :cond_2
+    :goto_0
     const/4 v5, 0x1
 
     .line 80
-    :goto_4f
+    :goto_1
     const-string v6, "passion"
 
     .line 81
@@ -222,7 +222,7 @@
 .end method
 
 .method public static a(Ljava/lang/String;)Ljava/lang/String;
-    .registers 9
+    .locals 8
 
     .line 1
     invoke-static {p0}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
@@ -233,14 +233,14 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
     return-object p0
 
     .line 8
-    :cond_7
+    :cond_0
     invoke-virtual {p0}, Ljava/lang/String;->toCharArray()[C
 
     .line 9
@@ -268,8 +268,8 @@
     const/4 v5, 0x1
 
     .line 19
-    :goto_12
-    if-ge v4, v0, :cond_46
+    :goto_0
+    if-ge v4, v0, :cond_3
 
     .line 20
     .line 21
@@ -277,7 +277,7 @@
 
     .line 22
     .line 23
-    if-eqz v5, :cond_30
+    if-eqz v5, :cond_1
 
     .line 24
     .line 25
@@ -289,7 +289,7 @@
     move-result v7
 
     .line 29
-    if-eqz v7, :cond_30
+    if-eqz v7, :cond_1
 
     .line 30
     .line 31
@@ -326,10 +326,10 @@
     const/4 v5, 0x0
 
     .line 48
-    goto :goto_43
+    goto :goto_1
 
     .line 49
-    :cond_30
+    :cond_1
     invoke-static {v6}, Ljava/lang/Character;->isWhitespace(C)Z
 
     .line 50
@@ -338,14 +338,14 @@
     move-result v7
 
     .line 53
-    if-eqz v7, :cond_37
+    if-eqz v7, :cond_2
 
     .line 54
     .line 55
     const/4 v5, 0x1
 
     .line 56
-    :cond_37
+    :cond_2
     new-instance v7, Ljava/lang/StringBuilder;
 
     .line 57
@@ -368,20 +368,20 @@
     move-result-object v3
 
     .line 68
-    :goto_43
+    :goto_1
     add-int/lit8 v4, v4, 0x1
 
     .line 69
     .line 70
-    goto :goto_12
+    goto :goto_0
 
     .line 71
-    :cond_46
+    :cond_3
     return-object v3
 .end method
 
 .method public static b()Ljava/lang/String;
-    .registers 4
+    .locals 4
 
     .line 1
     const-string v0, "unknown"
@@ -400,7 +400,7 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -408,7 +408,7 @@
 
     .line 12
     .line 13
-    :cond_c
+    :cond_0
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
     .line 14
@@ -421,7 +421,7 @@
     move-result v2
 
     .line 19
-    if-eqz v2, :cond_19
+    if-eqz v2, :cond_1
 
     .line 20
     .line 21
@@ -436,7 +436,7 @@
     return-object v0
 
     .line 26
-    :cond_19
+    :cond_1
     const-string v2, "HTC"
 
     .line 27
@@ -449,14 +449,14 @@
     move-result v3
 
     .line 32
-    if-eqz v3, :cond_22
+    if-eqz v3, :cond_2
 
     .line 33
     .line 34
-    goto :goto_26
+    goto :goto_0
 
     .line 35
-    :cond_22
+    :cond_2
     invoke-static {v1}, Llibs/fk;->a(Ljava/lang/String;)Ljava/lang/String;
 
     .line 36
@@ -465,7 +465,7 @@
     move-result-object v2
 
     .line 39
-    :goto_26
+    :goto_0
     sget-object v1, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
     .line 40
@@ -494,14 +494,14 @@
     move-result v1
 
     .line 53
-    if-eqz v1, :cond_37
+    if-eqz v1, :cond_3
 
     .line 54
     .line 55
     return-object v0
 
     .line 56
-    :cond_37
+    :cond_3
     const-string v1, " "
 
     .line 57
@@ -518,7 +518,7 @@
 .end method
 
 .method public static c()[Ljava/lang/String;
-    .registers 3
+    .locals 3
 
     .line 1
     invoke-static {}, Llibs/t43;->Item()Z
@@ -529,7 +529,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -544,7 +544,7 @@
     return-object v0
 
     .line 12
-    :cond_b
+    :cond_0
     const/4 v0, 0x1
 
     .line 13

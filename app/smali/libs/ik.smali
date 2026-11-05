@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;Ljava/util/ArrayList;Landroid/view/View;B)V
-    .registers 5
+    .locals 0
 
     .line 14
     iput-byte p4, p0, Llibs/ik;->X:B
@@ -35,7 +35,7 @@
 .end method
 
 .method public synthetic constructor <init>(Llibs/al;Landroid/view/View;Ljava/util/ArrayList;)V
-    .registers 5
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 8
+    .locals 2
 
     .line 1
     iget-byte p1, p0, Llibs/ik;->X:B
@@ -90,7 +90,7 @@
 
     .line 9
     .line 10
-    packed-switch p1, :pswitch_data_5e
+    packed-switch p1, :pswitch_data_0
 
     .line 11
     .line 12
@@ -119,7 +119,7 @@
 
     .line 24
     .line 25
-    if-nez p3, :cond_2b
+    if-nez p3, :cond_0
 
     .line 26
     .line 27
@@ -134,7 +134,7 @@
     const/4 p3, 0x1
 
     .line 32
-    if-le p2, p3, :cond_2b
+    if-le p2, p3, :cond_0
 
     .line 33
     .line 34
@@ -158,7 +158,7 @@
     move-result-object p1
 
     .line 44
-    :cond_2b
+    :cond_0
     invoke-virtual {p4, p1}, Lcom/mixplorer/widgets/MiEditText;->b(Ljava/lang/String;)Z
 
     .line 45
@@ -167,7 +167,7 @@
     return-void
 
     .line 48
-    :pswitch_2f
+    :pswitch_0
     check-cast v0, Llibs/al;
 
     .line 49
@@ -233,7 +233,7 @@
     return-void
 
     .line 81
-    :pswitch_50
+    :pswitch_1
     check-cast v0, Llibs/al;
 
     .line 82
@@ -262,9 +262,9 @@
     return-void
 
     .line 95
-    :pswitch_data_5e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_50
-        :pswitch_2f
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

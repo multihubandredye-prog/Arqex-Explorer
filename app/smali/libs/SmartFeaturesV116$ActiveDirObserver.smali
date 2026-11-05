@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     const/16 v0, 0xfc8
 
@@ -23,27 +23,27 @@
 
 # virtual methods
 .method public onEvent(ILjava/lang/String;)V
-    .registers 4
+    .locals 1
 
     and-int/lit16 v0, p1, 0xfc8
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_1
 
-    if-eqz p2, :cond_d
+    if-eqz p2, :cond_0
 
     invoke-static {p2}, Llibs/AutoTaskWatcher;->isTempFileName(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     return-void
 
-    :cond_d
+    :cond_0
     iget-object v0, p0, Llibs/SmartFeaturesV116$ActiveDirObserver;->watchedPath:Ljava/lang/String;
 
     invoke-static {v0, p1}, Llibs/SmartFeaturesV116;->onActiveDirFsEvent(Ljava/lang/String;I)V
 
-    :cond_12
+    :cond_1
     return-void
 .end method

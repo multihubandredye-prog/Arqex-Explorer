@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ar3;Ljava/lang/String;ZLcom/mixplorer/ProgressListener;)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/zq3;->d:Llibs/ar3;
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public final e(Llibs/rp0;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/zq3;->a:Ljava/lang/String;

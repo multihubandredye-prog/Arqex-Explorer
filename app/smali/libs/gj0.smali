@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const-string v0, "^DEK-Info: ([A-Z0-9\\-]+),([A-F0-9]{16,32})$"
@@ -36,7 +36,7 @@
 .end method
 
 .method public constructor <init>(Llibs/ye;Llibs/lI;)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/16 v0, 0xe
@@ -51,7 +51,7 @@
     const/4 v0, 0x0
 
     .line 7
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_1
 
     .line 8
     .line 9
@@ -59,14 +59,14 @@
 
     .line 10
     .line 11
-    if-eqz p2, :cond_d
+    if-eqz p2, :cond_0
 
     .line 12
     .line 13
     return-void
 
     .line 14
-    :cond_d
+    :cond_0
     const-string p1, "Resource required"
 
     .line 15
@@ -79,7 +79,7 @@
     throw v0
 
     .line 20
-    :cond_13
+    :cond_1
     const-string p1, "Password Finder required"
 
     .line 21
@@ -95,7 +95,7 @@
 
 # virtual methods
 .method public final r(Ljava/io/BufferedReader;)Llibs/vo1;
-    .registers 12
+    .locals 10
 
     .line 1
     invoke-super {p0, p1}, Llibs/rb2;->r(Ljava/io/BufferedReader;)Llibs/vo1;
@@ -126,7 +126,7 @@
     move-result v1
 
     .line 15
-    if-eqz v1, :cond_a0
+    if-eqz v1, :cond_3
 
     .line 16
     .line 17
@@ -150,12 +150,12 @@
     const/4 v5, 0x0
 
     .line 25
-    :cond_18
-    :goto_18
+    :cond_0
+    :goto_0
     const/4 v6, 0x2
 
     .line 26
-    if-ge v5, v1, :cond_45
+    if-ge v5, v1, :cond_1
 
     .line 27
     .line 28
@@ -195,7 +195,7 @@
     move-result v8
 
     .line 46
-    if-eqz v8, :cond_18
+    if-eqz v8, :cond_0
 
     .line 47
     .line 48
@@ -242,11 +242,11 @@
     move-object v4, v7
 
     .line 69
-    goto :goto_18
+    goto :goto_0
 
     .line 70
-    :cond_45
-    if-eqz v4, :cond_9a
+    :cond_1
+    if-eqz v4, :cond_2
 
     .line 71
     .line 72
@@ -298,7 +298,7 @@
 
     .line 95
     .line 96
-    :try_start_5f
+    :try_start_0
     new-instance v9, Llibs/ye;
 
     .line 97
@@ -331,9 +331,9 @@
     .line 112
     .line 113
     move-result-object v1
-    :try_end_71
-    .catch Llibs/z62; {:try_start_5f .. :try_end_71} :catch_7e
-    .catchall {:try_start_5f .. :try_end_71} :catchall_7c
+    :try_end_0
+    .catch Llibs/z62; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 114
     invoke-static {v2, v8}, Ljava/util/Arrays;->fill([CC)V
@@ -357,18 +357,18 @@
     return-object v2
 
     .line 125
-    :catchall_7c
+    :catchall_0
     move-exception p1
 
     .line 126
-    goto :goto_96
+    goto :goto_1
 
     .line 127
-    :catch_7e
+    :catch_0
     move-exception p1
 
     .line 128
-    :try_start_7f
+    :try_start_1
     new-instance v0, Llibs/yf1;
 
     .line 129
@@ -410,11 +410,11 @@
     .line 149
     .line 150
     throw v0
-    :try_end_96
-    .catchall {:try_start_7f .. :try_end_96} :catchall_7c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 151
-    :goto_96
+    :goto_1
     invoke-static {v2, v8}, Ljava/util/Arrays;->fill([CC)V
 
     .line 152
@@ -423,7 +423,7 @@
     throw p1
 
     .line 155
-    :cond_9a
+    :cond_2
     const-string p1, "Data Encryption Key Information header [DEK-Info] not found"
 
     .line 156
@@ -436,6 +436,6 @@
     return-object v2
 
     .line 161
-    :cond_a0
+    :cond_3
     return-object p1
 .end method

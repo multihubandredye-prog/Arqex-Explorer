@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 1
     const-string v0, "239.255.255.250"
@@ -36,7 +36,7 @@
 
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     invoke-static {p1}, Ljava/net/InetAddress;->getByName(Ljava/lang/String;)Ljava/net/InetAddress;
 
     .line 11
@@ -46,16 +46,16 @@
 
     .line 14
     invoke-virtual {p0, v0, p1}, Llibs/qw0;->p(Ljava/lang/String;Ljava/net/InetAddress;)Z
-    :try_end_10
-    .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_10} :catch_11
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 15
     .line 16
     .line 17
-    goto :goto_15
+    goto :goto_0
 
     .line 18
-    :catch_11
+    :catch_0
     move-exception p1
 
     .line 19
@@ -64,7 +64,7 @@
     .line 20
     .line 21
     .line 22
-    :goto_15
+    :goto_0
     iput-object v1, p0, Llibs/ky2;->Lambda:Llibs/h90;
 
     .line 23
@@ -75,7 +75,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 5
+    .locals 4
 
     .line 1
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
@@ -86,13 +86,13 @@
     move-result-object v0
 
     .line 5
-    :cond_4
-    :goto_4
+    :cond_0
+    :goto_0
     iget-object v1, p0, Llibs/ky2;->Mu:Ljava/lang/Thread;
 
     .line 6
     .line 7
-    if-ne v1, v0, :cond_35
+    if-ne v1, v0, :cond_3
 
     .line 8
     .line 9
@@ -101,15 +101,15 @@
     .line 10
     .line 11
     .line 12
-    :try_start_b
+    :try_start_0
     invoke-virtual {p0}, Llibs/qw0;->q()Llibs/dj;
 
     .line 13
     .line 14
     .line 15
     move-result-object v1
-    :try_end_f
-    .catch Ljava/io/IOException; {:try_start_b .. :try_end_f} :catch_35
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 16
     invoke-virtual {v1}, Llibs/dj;->g()[B
@@ -132,17 +132,17 @@
     move-result-object v2
 
     .line 26
-    if-nez v2, :cond_1d
+    if-nez v2, :cond_1
 
     .line 27
     .line 28
     const/4 v2, 0x0
 
     .line 29
-    goto :goto_2d
+    goto :goto_1
 
     .line 30
-    :cond_1d
+    :cond_1
     const-string v3, "ssdp:discover"
 
     .line 31
@@ -155,17 +155,17 @@
     move-result v3
 
     .line 36
-    if-eqz v3, :cond_27
+    if-eqz v3, :cond_2
 
     .line 37
     .line 38
     const/4 v2, 0x1
 
     .line 39
-    goto :goto_2d
+    goto :goto_1
 
     .line 40
-    :cond_27
+    :cond_2
     const-string v3, "\"ssdp:discover\""
 
     .line 41
@@ -178,8 +178,8 @@
     move-result v2
 
     .line 46
-    :goto_2d
-    if-eqz v2, :cond_4
+    :goto_1
+    if-eqz v2, :cond_0
 
     .line 47
     .line 48
@@ -192,10 +192,10 @@
     .line 51
     .line 52
     .line 53
-    goto :goto_4
+    goto :goto_0
 
     .line 54
-    :catch_35
-    :cond_35
+    :catch_0
+    :cond_3
     return-void
 .end method

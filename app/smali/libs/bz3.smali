@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final a(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-static {p1}, Llibs/sk1;->List(I)I
@@ -50,21 +50,21 @@
     move-result p1
 
     .line 5
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_1
 
     .line 6
     .line 7
     const/4 v0, 0x1
 
     .line 8
-    if-eq p1, v0, :cond_a
+    if-eq p1, v0, :cond_0
 
     .line 9
     .line 10
     return-void
 
     .line 11
-    :cond_a
+    :cond_0
     new-instance p1, Llibs/u80;
 
     .line 12
@@ -81,7 +81,7 @@
     return-void
 
     .line 19
-    :cond_12
+    :cond_1
     new-instance p1, Llibs/q91;
 
     .line 20
@@ -99,7 +99,7 @@
 .end method
 
 .method public final b(Llibs/uj;Llibs/uj;)V
-    .registers 7
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/bz3;->c:Llibs/q91;
@@ -134,7 +134,7 @@
 
     .line 16
     .line 17
-    :goto_10
+    :goto_0
     iget-object p1, p0, Llibs/bz3;->c:Llibs/q91;
 
     .line 18
@@ -173,11 +173,11 @@
     const/4 v3, -0x5
 
     .line 35
-    if-eq p1, v3, :cond_3d
+    if-eq p1, v3, :cond_1
 
     .line 36
     .line 37
-    if-nez p1, :cond_2f
+    if-nez p1, :cond_0
 
     .line 38
     .line 39
@@ -197,10 +197,10 @@
     .line 45
     .line 46
     .line 47
-    goto :goto_10
+    goto :goto_0
 
     .line 48
-    :cond_2f
+    :cond_0
     new-instance p2, Llibs/po3;
 
     .line 49
@@ -229,6 +229,6 @@
     throw p2
 
     .line 62
-    :cond_3d
+    :cond_1
     return-void
 .end method

@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/er2;Ljava/lang/String;[B)V
-    .registers 5
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public final c(Llibs/ea2;)Llibs/co2;
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/kn2;->Y:Llibs/er2;
@@ -102,7 +102,7 @@
 .end method
 
 .method public final close()V
-    .registers 4
+    .locals 3
 
     .line 1
     const/4 v0, 0x2
@@ -193,7 +193,7 @@
 .end method
 
 .method public i()Ljava/util/LinkedList;
-    .registers 10
+    .locals 9
 
     .line 1
     new-instance v0, Ljava/util/LinkedList;
@@ -205,7 +205,7 @@
     .line 4
     .line 5
     .line 6
-    :cond_5
+    :cond_0
     sget-object v1, Llibs/ea2;->Sigma:Llibs/ea2;
 
     .line 7
@@ -270,7 +270,7 @@
     const/4 v6, 0x0
 
     .line 38
-    if-eq v4, v5, :cond_70
+    if-eq v4, v5, :cond_4
 
     .line 39
     .line 40
@@ -278,7 +278,7 @@
 
     .line 41
     .line 42
-    if-ne v4, v5, :cond_6a
+    if-ne v4, v5, :cond_3
 
     .line 43
     .line 44
@@ -296,8 +296,8 @@
     const/4 v3, 0x0
 
     .line 50
-    :goto_31
-    if-ge v3, v4, :cond_5
+    :goto_0
+    if-ge v3, v4, :cond_0
 
     .line 51
     .line 52
@@ -373,7 +373,7 @@
     move-result v6
 
     .line 90
-    if-nez v6, :cond_67
+    if-nez v6, :cond_2
 
     .line 91
     .line 92
@@ -389,29 +389,29 @@
     move-result v5
 
     .line 98
-    if-eqz v5, :cond_64
+    if-eqz v5, :cond_1
 
     .line 99
     .line 100
-    goto :goto_67
+    goto :goto_1
 
     .line 101
-    :cond_64
+    :cond_1
     invoke-interface {v0, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 102
     .line 103
     .line 104
-    :cond_67
-    :goto_67
+    :cond_2
+    :goto_1
     add-int/lit8 v3, v3, 0x1
 
     .line 105
     .line 106
-    goto :goto_31
+    goto :goto_0
 
     .line 107
-    :cond_6a
+    :cond_3
     const-string v0, "Unexpected packet: "
 
     .line 108
@@ -424,7 +424,7 @@
     return-object v6
 
     .line 113
-    :cond_70
+    :cond_4
     invoke-virtual {v1}, Llibs/dp2;->Result()I
 
     .line 114
@@ -436,32 +436,32 @@
     const/4 v3, 0x3
 
     .line 118
-    if-ne v2, v3, :cond_78
+    if-ne v2, v3, :cond_5
 
     .line 119
     .line 120
     return-object v0
 
     .line 121
-    :cond_78
+    :cond_5
     invoke-virtual {v1, v2}, Llibs/dp2;->Bundle(I)V
 
     .line 122
     .line 123
     .line 124
-    goto :goto_7d
+    goto :goto_3
 
     .line 125
-    :goto_7c
+    :goto_2
     throw v6
 
     .line 126
-    :goto_7d
-    goto :goto_7c
+    :goto_3
+    goto :goto_2
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

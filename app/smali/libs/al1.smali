@@ -28,7 +28,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/hf;
@@ -51,7 +51,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 .end method
 
 .method public constructor <init>(Landroid/os/Parcel;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -103,18 +103,18 @@
     const/4 v0, 0x1
 
     .line 21
-    if-ne p1, v0, :cond_17
+    if-ne p1, v0, :cond_0
 
     .line 22
     .line 23
-    goto :goto_18
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_0
     const/4 v0, 0x0
 
     .line 25
-    :goto_18
+    :goto_0
     iput-boolean v0, p0, Llibs/al1;->Z:Z
 
     .line 26
@@ -123,7 +123,7 @@
 .end method
 
 .method public constructor <init>(Llibs/al1;)V
-    .registers 3
+    .locals 1
 
     .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -149,7 +149,7 @@
 
 # virtual methods
 .method public final describeContents()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -159,7 +159,7 @@
 .end method
 
 .method public final writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     iget p2, p0, Llibs/al1;->X:I

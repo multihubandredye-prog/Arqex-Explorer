@@ -31,7 +31,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -83,10 +83,10 @@
 
 # virtual methods
 .method public final a(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-    .registers 5
+    .locals 2
 
     .line 1
-    if-eqz p2, :cond_12
+    if-eqz p2, :cond_0
 
     .line 2
     .line 3
@@ -107,7 +107,7 @@
 
     .line 11
     .line 12
-    if-ge v1, v0, :cond_12
+    if-ge v1, v0, :cond_0
 
     .line 13
     .line 14
@@ -120,7 +120,7 @@
     .line 17
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     iput-object p1, p0, Lcom/mixplorer/widgets/MiProgressBar;->Pi:Landroid/graphics/drawable/Drawable;
 
     .line 20
@@ -138,16 +138,16 @@
 .end method
 
 .method public declared-synchronized getProgress()I
-    .registers 2
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget v0, p0, Lcom/mixplorer/widgets/MiProgressBar;->Omicron:I
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 3
     .line 4
@@ -157,27 +157,27 @@
     return v0
 
     .line 6
-    :catchall_5
+    :catchall_0
     move-exception v0
 
     .line 7
-    :try_start_6
+    :try_start_1
     monitor-exit p0
-    :try_end_7
-    .catchall {:try_start_6 .. :try_end_7} :catchall_5
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 8
     throw v0
 .end method
 
 .method public final declared-synchronized onDraw(Landroid/graphics/Canvas;)V
-    .registers 7
+    .locals 5
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
     .line 3
@@ -189,11 +189,11 @@
     .line 7
     .line 8
     move-result v0
-    :try_end_8
-    .catchall {:try_start_1 .. :try_end_8} :catchall_14
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 9
-    if-gtz v0, :cond_c
+    if-gtz v0, :cond_0
 
     .line 10
     .line 11
@@ -203,13 +203,13 @@
     return-void
 
     .line 13
-    :cond_c
-    :try_start_c
+    :cond_0
+    :try_start_1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiProgressBar;->Pi:Landroid/graphics/drawable/Drawable;
 
     .line 14
     .line 15
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     .line 16
     .line 17
@@ -218,18 +218,18 @@
     .line 18
     .line 19
     .line 20
-    goto :goto_16
+    goto :goto_0
 
     .line 21
-    :catchall_14
+    :catchall_0
     move-exception p1
 
     .line 22
-    goto :goto_81
+    goto :goto_2
 
     .line 23
-    :cond_16
-    :goto_16
+    :cond_1
+    :goto_0
     iget-boolean v0, p0, Lcom/mixplorer/widgets/MiProgressBar;->Sigma:Z
 
     .line 24
@@ -237,7 +237,7 @@
     const/4 v1, 0x0
 
     .line 26
-    if-eqz v0, :cond_50
+    if-eqz v0, :cond_4
 
     .line 27
     .line 28
@@ -245,7 +245,7 @@
 
     .line 29
     .line 30
-    if-nez v0, :cond_73
+    if-nez v0, :cond_5
 
     .line 31
     .line 32
@@ -253,7 +253,7 @@
 
     .line 33
     .line 34
-    if-gtz v0, :cond_2f
+    if-gtz v0, :cond_2
 
     .line 35
     .line 36
@@ -281,7 +281,7 @@
 
     .line 47
     .line 48
-    :cond_2f
+    :cond_2
     iget v0, p0, Lcom/mixplorer/widgets/MiProgressBar;->Upsilon:I
 
     .line 49
@@ -294,7 +294,7 @@
     move-result v2
 
     .line 54
-    if-le v0, v2, :cond_3c
+    if-le v0, v2, :cond_3
 
     .line 55
     .line 56
@@ -309,7 +309,7 @@
 
     .line 60
     .line 61
-    :cond_3c
+    :cond_3
     iget-object v0, p0, Lcom/mixplorer/widgets/MiProgressBar;->Rho:Landroid/graphics/drawable/Drawable;
 
     .line 62
@@ -349,10 +349,10 @@
     .line 78
     .line 79
     .line 80
-    goto :goto_73
+    goto :goto_1
 
     .line 81
-    :cond_50
+    :cond_4
     iget-object v0, p0, Lcom/mixplorer/widgets/MiProgressBar;->Rho:Landroid/graphics/drawable/Drawable;
 
     .line 82
@@ -428,8 +428,8 @@
     .line 114
     .line 115
     .line 116
-    :cond_73
-    :goto_73
+    :cond_5
+    :goto_1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiProgressBar;->Rho:Landroid/graphics/drawable/Drawable;
 
     .line 117
@@ -443,47 +443,47 @@
 
     .line 122
     .line 123
-    if-eqz p1, :cond_7f
+    if-eqz p1, :cond_6
 
     .line 124
     .line 125
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
-    :try_end_7f
-    .catchall {:try_start_c .. :try_end_7f} :catchall_14
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 126
     .line 127
     .line 128
-    :cond_7f
+    :cond_6
     monitor-exit p0
 
     .line 129
     return-void
 
     .line 130
-    :goto_81
-    :try_start_81
+    :goto_2
+    :try_start_2
     monitor-exit p0
-    :try_end_82
-    .catchall {:try_start_81 .. :try_end_82} :catchall_14
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 131
     throw p1
 .end method
 
 .method public final declared-synchronized onMeasure(II)V
-    .registers 7
+    .locals 4
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Lcom/mixplorer/widgets/MiProgressBar;->Rho:Landroid/graphics/drawable/Drawable;
 
     .line 3
     .line 4
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_0
 
     .line 5
     .line 6
@@ -551,24 +551,24 @@
     move-result v0
 
     .line 38
-    goto :goto_2a
+    goto :goto_0
 
     .line 39
-    :catchall_26
+    :catchall_0
     move-exception p1
 
     .line 40
-    goto :goto_4b
+    goto :goto_1
 
     .line 41
-    :cond_28
+    :cond_0
     const/4 v1, 0x0
 
     .line 42
     const/4 v0, 0x0
 
     .line 43
-    :goto_2a
+    :goto_0
     invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
 
     .line 44
@@ -630,8 +630,8 @@
 
     .line 71
     invoke-virtual {p0, p1, p2}, Landroid/view/View;->setMeasuredDimension(II)V
-    :try_end_49
-    .catchall {:try_start_1 .. :try_end_49} :catchall_26
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 72
     .line 73
@@ -642,18 +642,18 @@
     return-void
 
     .line 76
-    :goto_4b
-    :try_start_4b
+    :goto_1
+    :try_start_1
     monitor-exit p0
-    :try_end_4c
-    .catchall {:try_start_4b .. :try_end_4c} :catchall_26
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 77
     throw p1
 .end method
 
 .method public final onSizeChanged(IIII)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->getPaddingRight()I
@@ -704,7 +704,7 @@
 
     .line 22
     .line 23
-    if-eqz p3, :cond_1c
+    if-eqz p3, :cond_0
 
     .line 24
     .line 25
@@ -716,12 +716,12 @@
     .line 27
     .line 28
     .line 29
-    :cond_1c
+    :cond_0
     return-void
 .end method
 
 .method public declared-synchronized setProgress(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     monitor-enter p0
@@ -730,19 +730,19 @@
     const/4 v0, 0x0
 
     .line 3
-    if-gez p1, :cond_5
+    if-gez p1, :cond_0
 
     .line 4
     .line 5
     const/4 p1, 0x0
 
     .line 6
-    :cond_5
+    :cond_0
     const/16 v1, 0x64
 
     .line 7
     .line 8
-    if-le p1, v1, :cond_b
+    if-le p1, v1, :cond_1
 
     .line 9
     .line 10
@@ -750,13 +750,13 @@
 
     .line 11
     .line 12
-    :cond_b
-    :try_start_b
+    :cond_1
+    :try_start_0
     iget v1, p0, Lcom/mixplorer/widgets/MiProgressBar;->Omicron:I
 
     .line 13
     .line 14
-    if-eq p1, v1, :cond_19
+    if-eq p1, v1, :cond_2
 
     .line 15
     .line 16
@@ -769,35 +769,35 @@
     .line 19
     .line 20
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
-    :try_end_16
-    .catchall {:try_start_b .. :try_end_16} :catchall_17
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 21
     .line 22
     .line 23
-    goto :goto_19
+    goto :goto_0
 
     .line 24
-    :catchall_17
+    :catchall_0
     move-exception p1
 
     .line 25
-    goto :goto_1b
+    goto :goto_1
 
     .line 26
-    :cond_19
-    :goto_19
+    :cond_2
+    :goto_0
     monitor-exit p0
 
     .line 27
     return-void
 
     .line 28
-    :goto_1b
-    :try_start_1b
+    :goto_1
+    :try_start_1
     monitor-exit p0
-    :try_end_1c
-    .catchall {:try_start_1b .. :try_end_1c} :catchall_17
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 29
     throw p1

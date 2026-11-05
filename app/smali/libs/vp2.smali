@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/yd;-><init>()V
@@ -42,21 +42,21 @@
 .end method
 
 .method public static h()Llibs/vp2;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/vp2;->h:Llibs/vp2;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     return-object v0
 
     .line 6
-    :cond_5
+    :cond_0
     new-instance v0, Llibs/vp2;
 
     .line 7
@@ -70,7 +70,7 @@
 .end method
 
 .method public static i(Ljava/lang/String;ILjava/lang/String;)V
-    .registers 6
+    .locals 3
 
     .line 1
     :try_start_0
@@ -113,7 +113,7 @@
     .line 20
     .line 21
     .line 22
-    if-eqz p2, :cond_1c
+    if-eqz p2, :cond_0
 
     .line 23
     .line 24
@@ -126,7 +126,7 @@
     .line 27
     .line 28
     .line 29
-    :cond_1c
+    :cond_0
     const-string p2, "com.arqex.explorer.extra.INSTALL_ERROR"
 
     .line 30
@@ -162,18 +162,18 @@
     .line 46
     .line 47
     invoke-virtual {p0, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
-    :try_end_31
-    .catchall {:try_start_0 .. :try_end_31} :catchall_31
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 48
     .line 49
     .line 50
-    :catchall_31
+    :catchall_0
     return-void
 .end method
 
 .method public static j(Lcom/mixplorer/services/InstallerService;Landroid/content/Intent;II)V
-    .registers 9
+    .locals 5
 
     .line 1
     const-string v0, "android.content.pm.extra.PACKAGE_NAME"
@@ -227,7 +227,7 @@
     .line 26
     .line 27
     .line 28
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_0
 
     .line 29
     .line 30
@@ -240,7 +240,7 @@
     .line 33
     .line 34
     .line 35
-    :cond_22
+    :cond_0
     const-string v0, "com.arqex.explorer.extra.INSTALL_SESSION_ID"
 
     .line 36
@@ -253,21 +253,21 @@
     const/4 v2, -0x1
 
     .line 41
-    if-ne p2, v2, :cond_2c
+    if-ne p2, v2, :cond_1
 
     .line 42
     .line 43
     const/4 v3, 0x1
 
     .line 44
-    goto :goto_2d
+    goto :goto_0
 
     .line 45
-    :cond_2c
+    :cond_1
     const/4 v3, 0x0
 
     .line 46
-    :goto_2d
+    :goto_0
     const-string v4, "com.arqex.explorer.extra.INSTALL_STATUS"
 
     .line 47
@@ -286,7 +286,7 @@
     .line 54
     .line 55
     .line 56
-    if-ne p2, v2, :cond_61
+    if-ne p2, v2, :cond_2
 
     .line 57
     .line 58
@@ -364,14 +364,14 @@
     .line 96
     .line 97
     .line 98
-    :cond_61
+    :cond_2
     return-void
 .end method
 
 
 # virtual methods
 .method public final a(JLjava/util/List;Llibs/rp0;)Z
-    .registers 24
+    .locals 19
 
     .line 1
     move-object/from16 v1, p0
@@ -392,7 +392,7 @@
     const/4 v8, 0x0
 
     .line 9
-    :try_start_8
+    :try_start_0
     sget-object v0, Llibs/zt0;->g:Landroid/content/Context;
 
     .line 10
@@ -429,8 +429,8 @@
     move-result-object v5
 
     .line 27
-    :catchall_1a
-    :goto_1a
+    :catchall_0
+    :goto_0
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
     .line 28
@@ -439,7 +439,7 @@
     move-result v6
 
     .line 31
-    if-eqz v6, :cond_32
+    if-eqz v6, :cond_0
 
     .line 32
     .line 33
@@ -452,12 +452,12 @@
 
     .line 37
     check-cast v6, Landroid/content/pm/PackageInstaller$SessionInfo;
-    :try_end_26
-    .catchall {:try_start_8 .. :try_end_26} :catchall_2e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 38
     .line 39
-    :try_start_26
+    :try_start_1
     invoke-virtual {v6}, Landroid/content/pm/PackageInstaller$SessionInfo;->getSessionId()I
 
     .line 40
@@ -467,28 +467,28 @@
 
     .line 43
     invoke-virtual {v0, v6}, Landroid/content/pm/PackageInstaller;->abandonSession(I)V
-    :try_end_2d
-    .catchall {:try_start_26 .. :try_end_2d} :catchall_1a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 44
     .line 45
     .line 46
-    goto :goto_1a
+    goto :goto_0
 
     .line 47
-    :catchall_2e
+    :catchall_1
     move-exception v0
 
     .line 48
     move-object v13, v8
 
     .line 49
-    goto/16 :goto_137
+    goto/16 :goto_8
 
     .line 50
     .line 51
-    :cond_32
-    :try_start_32
+    :cond_0
+    :try_start_2
     new-instance v5, Landroid/content/pm/PackageInstaller$SessionParams;
 
     .line 52
@@ -522,7 +522,7 @@
     move-result v9
 
     .line 68
-    if-eqz v9, :cond_59
+    if-eqz v9, :cond_1
 
     .line 69
     .line 70
@@ -531,18 +531,18 @@
     .line 71
     .line 72
     invoke-virtual {v5, v9, v10}, Landroid/content/pm/PackageInstaller$SessionParams;->setSize(J)V
-    :try_end_4a
-    .catchall {:try_start_32 .. :try_end_4a} :catchall_2e
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 73
     .line 74
     .line 75
-    :try_start_4a
+    :try_start_3
     iget-object v9, v2, Llibs/rp0;->Uniform:Llibs/zp;
 
     .line 76
     .line 77
-    if-eqz v9, :cond_59
+    if-eqz v9, :cond_1
 
     .line 78
     .line 79
@@ -558,20 +558,20 @@
     move-result v10
 
     .line 85
-    if-nez v10, :cond_59
+    if-nez v10, :cond_1
 
     .line 86
     .line 87
     invoke-virtual {v5, v9}, Landroid/content/pm/PackageInstaller$SessionParams;->setAppPackageName(Ljava/lang/String;)V
-    :try_end_59
-    .catchall {:try_start_4a .. :try_end_59} :catchall_59
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
     .line 88
     .line 89
     .line 90
-    :catchall_59
-    :cond_59
-    :try_start_59
+    :catchall_2
+    :cond_1
+    :try_start_4
     invoke-virtual {v0, v5}, Landroid/content/pm/PackageInstaller;->createSession(Landroid/content/pm/PackageInstaller$SessionParams;)I
 
     .line 91
@@ -591,7 +591,7 @@
 
     .line 98
     .line 99
-    if-eqz v12, :cond_67
+    if-eqz v12, :cond_2
 
     .line 100
     .line 101
@@ -599,14 +599,14 @@
 
     .line 102
     .line 103
-    goto :goto_68
+    goto :goto_1
 
     .line 104
-    :cond_67
+    :cond_2
     move-wide v12, v3
 
     .line 105
-    :goto_68
+    :goto_1
     invoke-static {v12, v13}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     .line 106
@@ -626,11 +626,11 @@
     .line 114
     .line 115
     move-result-object v13
-    :try_end_73
-    .catchall {:try_start_59 .. :try_end_73} :catchall_2e
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 116
-    :try_start_73
+    :try_start_5
     invoke-interface/range {p3 .. p3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     .line 117
@@ -639,7 +639,7 @@
     move-result-object v0
 
     .line 120
-    :goto_77
+    :goto_2
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 121
@@ -648,7 +648,7 @@
     move-result v5
 
     .line 124
-    if-eqz v5, :cond_cc
+    if-eqz v5, :cond_4
 
     .line 125
     .line 126
@@ -661,12 +661,12 @@
 
     .line 130
     check-cast v5, Llibs/rp0;
-    :try_end_83
-    .catchall {:try_start_73 .. :try_end_83} :catchall_bc
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_4
 
     .line 131
     .line 132
-    :try_start_83
+    :try_start_6
     new-instance v9, Llibs/tk1;
 
     .line 133
@@ -688,13 +688,13 @@
     .line 141
     .line 142
     invoke-direct {v9, v10, v11, v12}, Llibs/tk1;-><init>(Ljava/io/InputStream;J)V
-    :try_end_90
-    .catchall {:try_start_83 .. :try_end_90} :catchall_c2
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_6
 
     .line 143
     .line 144
     .line 145
-    :try_start_90
+    :try_start_7
     invoke-virtual {v5}, Llibs/rp0;->m()Ljava/lang/String;
 
     .line 146
@@ -728,20 +728,20 @@
     .line 160
     .line 161
     move-result-object v5
-    :try_end_a1
-    .catchall {:try_start_90 .. :try_end_a1} :catchall_bf
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_5
 
     .line 162
     const/16 v10, 0x4000
 
     .line 163
     .line 164
-    :try_start_a3
+    :try_start_8
     new-array v11, v10, [B
 
     .line 165
     .line 166
-    :goto_a5
+    :goto_3
     invoke-virtual {v9, v11, v7, v10}, Llibs/tk1;->read([BII)I
 
     .line 167
@@ -753,7 +753,7 @@
     const/4 v14, -0x1
 
     .line 171
-    if-eq v12, v14, :cond_b2
+    if-eq v12, v14, :cond_3
 
     .line 172
     .line 173
@@ -762,25 +762,25 @@
     .line 174
     .line 175
     .line 176
-    goto :goto_a5
+    goto :goto_3
 
     .line 177
-    :catchall_b0
+    :catchall_3
     move-exception v0
 
     .line 178
-    goto :goto_c5
+    goto :goto_4
 
     .line 179
-    :cond_b2
+    :cond_3
     invoke-virtual {v13, v5}, Landroid/content/pm/PackageInstaller$Session;->fsync(Ljava/io/OutputStream;)V
-    :try_end_b5
-    .catchall {:try_start_a3 .. :try_end_b5} :catchall_b0
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_3
 
     .line 180
     .line 181
     .line 182
-    :try_start_b5
+    :try_start_9
     invoke-static {v5}, Llibs/ji0;->k(Ljava/io/Closeable;)V
 
     .line 183
@@ -791,28 +791,28 @@
     .line 186
     .line 187
     .line 188
-    goto :goto_77
+    goto :goto_2
 
     .line 189
-    :catchall_bc
+    :catchall_4
     move-exception v0
 
     .line 190
-    goto/16 :goto_137
+    goto/16 :goto_8
 
     .line 191
     .line 192
-    :catchall_bf
+    :catchall_5
     move-exception v0
 
     .line 193
     move-object v5, v8
 
     .line 194
-    goto :goto_c5
+    goto :goto_4
 
     .line 195
-    :catchall_c2
+    :catchall_6
     move-exception v0
 
     .line 196
@@ -822,7 +822,7 @@
     move-object v9, v5
 
     .line 198
-    :goto_c5
+    :goto_4
     invoke-static {v5}, Llibs/ji0;->k(Ljava/io/Closeable;)V
 
     .line 199
@@ -834,12 +834,12 @@
     .line 203
     .line 204
     throw v0
-    :try_end_cc
-    .catchall {:try_start_b5 .. :try_end_cc} :catchall_bc
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_4
 
     .line 205
-    :cond_cc
-    :try_start_cc
+    :cond_4
+    :try_start_a
     iget-object v0, v2, Llibs/rp0;->Three:Ljava/lang/String;
 
     .line 206
@@ -886,14 +886,14 @@
     .line 227
     .line 228
     invoke-static {v9, v10}, Llibs/u73;->New(Ljava/lang/String;Llibs/t61;)Llibs/rp0;
-    :try_end_e6
-    .catchall {:try_start_cc .. :try_end_e6} :catchall_e6
+    :try_end_a
+    .catchall {:try_start_a .. :try_end_a} :catchall_7
 
     .line 229
     .line 230
     .line 231
-    :catchall_e6
-    :try_start_e6
+    :catchall_7
+    :try_start_b
     new-instance v0, Landroid/content/Intent;
 
     .line 232
@@ -923,7 +923,7 @@
     move-result v9
 
     .line 246
-    if-eqz v9, :cond_fa
+    if-eqz v9, :cond_5
 
     .line 247
     .line 248
@@ -931,14 +931,14 @@
 
     .line 249
     .line 250
-    goto :goto_fb
+    goto :goto_5
 
     .line 251
-    :cond_fa
+    :cond_5
     const/4 v9, 0x0
 
     .line 252
-    :goto_fb
+    :goto_5
     invoke-static {v5, v7, v0, v9}, Landroid/app/PendingIntent;->getService(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     .line 253
@@ -956,37 +956,37 @@
 
     .line 260
     invoke-virtual {v13, v0}, Landroid/content/pm/PackageInstaller$Session;->commit(Landroid/content/IntentSender;)V
-    :try_end_106
-    .catchall {:try_start_e6 .. :try_end_106} :catchall_bc
+    :try_end_b
+    .catchall {:try_start_b .. :try_end_b} :catchall_4
 
     .line 261
     .line 262
     .line 263
-    :goto_106
+    :goto_6
     const-wide/16 v9, 0x3e8
 
     .line 264
     .line 265
-    :try_start_108
+    :try_start_c
     invoke-static {v9, v10}, Ljava/lang/Thread;->sleep(J)V
-    :try_end_10b
-    .catchall {:try_start_108 .. :try_end_10b} :catchall_10b
+    :try_end_c
+    .catchall {:try_start_c .. :try_end_c} :catchall_8
 
     .line 266
     .line 267
     .line 268
-    :catchall_10b
-    :try_start_10b
+    :catchall_8
+    :try_start_d
     sget-object v5, Llibs/yd;->f:Ljava/util/HashMap;
 
     .line 269
     .line 270
     monitor-enter v5
-    :try_end_10e
-    .catchall {:try_start_10b .. :try_end_10e} :catchall_bc
+    :try_end_d
+    .catchall {:try_start_d .. :try_end_d} :catchall_4
 
     .line 271
-    :try_start_10e
+    :try_start_e
     invoke-static/range {p1 .. p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     .line 272
@@ -1007,30 +1007,30 @@
 
     .line 280
     .line 281
-    if-eqz v0, :cond_133
+    if-eqz v0, :cond_7
 
     .line 282
     .line 283
     monitor-exit v5
-    :try_end_11b
-    .catchall {:try_start_10e .. :try_end_11b} :catchall_131
+    :try_end_e
+    .catchall {:try_start_e .. :try_end_e} :catchall_9
 
     .line 284
-    :try_start_11b
+    :try_start_f
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     .line 285
     .line 286
     .line 287
     move-result v0
-    :try_end_11f
-    .catchall {:try_start_11b .. :try_end_11f} :catchall_bc
+    :try_end_f
+    .catchall {:try_start_f .. :try_end_f} :catchall_4
 
     .line 288
     const/4 v5, 0x2
 
     .line 289
-    if-eq v0, v5, :cond_12b
+    if-eq v0, v5, :cond_6
 
     .line 290
     .line 291
@@ -1051,8 +1051,8 @@
     return v6
 
     .line 300
-    :cond_12b
-    :try_start_12b
+    :cond_6
+    :try_start_10
     new-instance v0, Ljava/lang/Exception;
 
     .line 301
@@ -1063,39 +1063,39 @@
     .line 304
     .line 305
     throw v0
-    :try_end_131
-    .catchall {:try_start_12b .. :try_end_131} :catchall_bc
+    :try_end_10
+    .catchall {:try_start_10 .. :try_end_10} :catchall_4
 
     .line 306
-    :catchall_131
+    :catchall_9
     move-exception v0
 
     .line 307
-    goto :goto_135
+    goto :goto_7
 
     .line 308
-    :cond_133
-    :try_start_133
+    :cond_7
+    :try_start_11
     monitor-exit v5
 
     .line 309
-    goto :goto_106
+    goto :goto_6
 
     .line 310
-    :goto_135
+    :goto_7
     monitor-exit v5
-    :try_end_136
-    .catchall {:try_start_133 .. :try_end_136} :catchall_131
+    :try_end_11
+    .catchall {:try_start_11 .. :try_end_11} :catchall_9
 
     .line 311
-    :try_start_136
+    :try_start_12
     throw v0
-    :try_end_137
-    .catchall {:try_start_136 .. :try_end_137} :catchall_bc
+    :try_end_12
+    .catchall {:try_start_12 .. :try_end_12} :catchall_4
 
     .line 312
-    :goto_137
-    :try_start_137
+    :goto_8
+    :try_start_13
     invoke-static {v0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 313
@@ -1117,7 +1117,7 @@
 
     .line 322
     .line 323
-    if-eqz v0, :cond_146
+    if-eqz v0, :cond_8
 
     .line 324
     .line 325
@@ -1125,7 +1125,7 @@
 
     .line 326
     .line 327
-    :cond_146
+    :cond_8
     move-wide v4, v3
 
     .line 328
@@ -1138,8 +1138,8 @@
     .line 331
     .line 332
     invoke-virtual/range {p0 .. p0}, Llibs/yd;->c()V
-    :try_end_14e
-    .catchall {:try_start_137 .. :try_end_14e} :catchall_157
+    :try_end_13
+    .catchall {:try_start_13 .. :try_end_13} :catchall_a
 
     .line 333
     .line 334
@@ -1161,7 +1161,7 @@
     return v7
 
     .line 344
-    :catchall_157
+    :catchall_a
     move-exception v0
 
     .line 345
@@ -1179,19 +1179,19 @@
     .line 351
     .line 352
     .line 353
-    goto :goto_162
+    goto :goto_a
 
     .line 354
-    :goto_161
+    :goto_9
     throw v0
 
     .line 355
-    :goto_162
-    goto :goto_161
+    :goto_a
+    goto :goto_9
 .end method
 
 .method public final g(Landroid/content/Intent;)V
-    .registers 14
+    .locals 12
 
     .line 1
     const-string v0, "com.arqex.explorer.extra.INSTALL_SESSION_ID"
@@ -1244,7 +1244,7 @@
     move-result v2
 
     .line 25
-    if-ltz v2, :cond_24
+    if-ltz v2, :cond_1
 
     .line 26
     .line 27
@@ -1260,19 +1260,19 @@
 
     .line 32
     .line 33
-    if-ne v2, v3, :cond_23
+    if-ne v2, v3, :cond_0
 
     .line 34
     .line 35
-    goto :goto_24
+    goto :goto_0
 
     .line 36
-    :cond_23
+    :cond_0
     move-object v0, v2
 
     .line 37
-    :cond_24
-    :goto_24
+    :cond_1
+    :goto_0
     check-cast v0, Ljava/lang/Long;
 
     .line 38
@@ -1289,14 +1289,14 @@
 
     .line 44
     .line 45
-    if-nez v0, :cond_2f
+    if-nez v0, :cond_2
 
     .line 46
     .line 47
-    goto :goto_3c
+    goto :goto_1
 
     .line 48
-    :cond_2f
+    :cond_2
     const-string v0, "com.arqex.explorer.extra.INSTALL_STATUS"
 
     .line 49
@@ -1315,22 +1315,22 @@
     const/4 v2, 0x0
 
     .line 56
-    if-eqz v0, :cond_63
+    if-eqz v0, :cond_6
 
     .line 57
     .line 58
     const/4 v3, 0x2
 
     .line 59
-    if-eq v0, v3, :cond_3d
+    if-eq v0, v3, :cond_3
 
     .line 60
     .line 61
-    :goto_3c
+    :goto_1
     return-void
 
     .line 62
-    :cond_3d
+    :cond_3
     const-string v0, "com.arqex.explorer.extra.INSTALL_ERROR"
 
     .line 63
@@ -1347,7 +1347,7 @@
 
     .line 69
     .line 70
-    if-eqz p1, :cond_4b
+    if-eqz p1, :cond_4
 
     .line 71
     .line 72
@@ -1358,14 +1358,14 @@
     move-object v7, p1
 
     .line 75
-    goto :goto_4c
+    goto :goto_2
 
     .line 76
-    :cond_4b
+    :cond_4
     move-object v7, v2
 
     .line 77
-    :goto_4c
+    :goto_2
     const/4 v8, 0x2
 
     .line 78
@@ -1381,7 +1381,7 @@
 
     .line 83
     .line 84
-    if-eqz p1, :cond_62
+    if-eqz p1, :cond_5
 
     .line 85
     .line 86
@@ -1393,7 +1393,7 @@
 
     .line 89
     .line 90
-    if-nez p1, :cond_62
+    if-nez p1, :cond_5
 
     .line 91
     .line 92
@@ -1410,16 +1410,16 @@
     .line 97
     .line 98
     .line 99
-    :cond_62
+    :cond_5
     return-void
 
     .line 100
-    :cond_63
+    :cond_6
     iget-object v0, p0, Llibs/yd;->c:Llibs/wd;
 
     .line 101
     .line 102
-    if-eqz v0, :cond_6b
+    if-eqz v0, :cond_7
 
     .line 103
     .line 104
@@ -1430,14 +1430,14 @@
     move-object v7, v0
 
     .line 107
-    goto :goto_6c
+    goto :goto_3
 
     .line 108
-    :cond_6b
+    :cond_7
     move-object v7, v2
 
     .line 109
-    :goto_6c
+    :goto_3
     const-string v0, "com.arqex.explorer.extra.PACKAGE_NAME"
 
     .line 110
@@ -1465,7 +1465,7 @@
 
     .line 121
     .line 122
-    if-eqz p1, :cond_88
+    if-eqz p1, :cond_8
 
     .line 123
     .line 124
@@ -1477,7 +1477,7 @@
 
     .line 127
     .line 128
-    if-nez p1, :cond_88
+    if-nez p1, :cond_8
 
     .line 129
     .line 130
@@ -1494,6 +1494,6 @@
     .line 135
     .line 136
     .line 137
-    :cond_88
+    :cond_8
     return-void
 .end method

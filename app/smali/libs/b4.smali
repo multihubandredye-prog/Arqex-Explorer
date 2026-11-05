@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 5
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
@@ -31,11 +31,11 @@
 
     .line 11
     .line 12
-    if-ge p1, v0, :cond_30
+    if-ge p1, v0, :cond_0
 
     .line 13
     .line 14
-    :try_start_d
+    :try_start_0
     const-class p1, Landroid/widget/PopupWindow;
 
     .line 15
@@ -99,21 +99,21 @@
     .line 45
     .line 46
     invoke-virtual {p1, p0, v2}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
-    :try_end_30
-    .catch Ljava/lang/Exception; {:try_start_d .. :try_end_30} :catch_30
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 47
     .line 48
     .line 49
-    :catch_30
-    :cond_30
+    :catch_0
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final showAsDropDown(Landroid/view/View;II)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-static {}, Llibs/t43;->Item()Z
@@ -130,7 +130,7 @@
 .end method
 
 .method public final showAsDropDown(Landroid/view/View;III)V
-    .registers 5
+    .locals 0
 
     .line 8
     invoke-static {}, Llibs/t43;->Item()Z
@@ -142,7 +142,7 @@
 .end method
 
 .method public final update(Landroid/view/View;IIII)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-static {}, Llibs/t43;->Item()Z

@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const-string v0, "UTF-8"
@@ -32,7 +32,7 @@
 .end method
 
 .method public static a(JJJ)V
-    .registers 11
+    .locals 5
 
     .line 1
     or-long v0, p2, p4
@@ -47,7 +47,7 @@
 
     .line 6
     .line 7
-    if-ltz v4, :cond_13
+    if-ltz v4, :cond_0
 
     .line 8
     .line 9
@@ -55,7 +55,7 @@
 
     .line 10
     .line 11
-    if-gtz v0, :cond_13
+    if-gtz v0, :cond_0
 
     .line 12
     .line 13
@@ -67,14 +67,14 @@
 
     .line 16
     .line 17
-    if-ltz v2, :cond_13
+    if-ltz v2, :cond_0
 
     .line 18
     .line 19
     return-void
 
     .line 20
-    :cond_13
+    :cond_0
     new-instance v0, Ljava/lang/ArrayIndexOutOfBoundsException;
 
     .line 21

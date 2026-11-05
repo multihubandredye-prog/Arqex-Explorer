@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p2, 0x0
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public final Object(I)Landroid/view/View;
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Llibs/qs1;->getPageCount()I
@@ -78,7 +78,7 @@
     move-result v0
 
     .line 5
-    if-ge p1, v0, :cond_19
+    if-ge p1, v0, :cond_0
 
     .line 6
     .line 7
@@ -119,7 +119,7 @@
     return-object p1
 
     .line 26
-    :cond_19
+    :cond_0
     const/4 p1, 0x0
 
     .line 27
@@ -127,7 +127,7 @@
 .end method
 
 .method public final String(ILjava/lang/String;)V
-    .registers 10
+    .locals 7
 
     .line 1
     invoke-virtual {p0}, Llibs/qs1;->getPageCount()I
@@ -144,7 +144,7 @@
     const/4 v2, 0x1
 
     .line 7
-    if-lt p1, v0, :cond_b
+    if-lt p1, v0, :cond_0
 
     .line 8
     .line 9
@@ -152,19 +152,19 @@
 
     .line 10
     .line 11
-    goto :goto_e
+    goto :goto_0
 
     .line 12
-    :cond_b
-    if-gez p1, :cond_e
+    :cond_0
+    if-gez p1, :cond_1
 
     .line 13
     .line 14
     const/4 p1, 0x0
 
     .line 15
-    :cond_e
-    :goto_e
+    :cond_1
+    :goto_0
     invoke-virtual {p0, v1, p1}, Lcom/mixplorer/widgets/MiViewPager;->x(ZI)V
 
     .line 16
@@ -178,19 +178,19 @@
     move-result-object p1
 
     .line 22
-    if-nez p1, :cond_18
+    if-nez p1, :cond_2
 
     .line 23
     .line 24
-    goto :goto_6e
+    goto :goto_4
 
     .line 25
-    :cond_18
+    :cond_2
     instance-of v0, p1, Llibs/ks1;
 
     .line 26
     .line 27
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_4
 
     .line 28
     .line 29
@@ -205,26 +205,26 @@
 
     .line 33
     .line 34
-    if-eqz v3, :cond_24
+    if-eqz v3, :cond_3
 
     .line 35
     .line 36
-    goto :goto_26
+    goto :goto_1
 
     .line 37
-    :cond_24
+    :cond_3
     const/4 v3, 0x0
 
     .line 38
-    goto :goto_27
+    goto :goto_2
 
     .line 39
-    :cond_26
-    :goto_26
+    :cond_4
+    :goto_1
     const/4 v3, 0x1
 
     .line 40
-    :goto_27
+    :goto_2
     iget-boolean v4, p0, Llibs/qs1;->III:Z
 
     .line 41
@@ -232,11 +232,11 @@
     const/4 v5, 0x0
 
     .line 43
-    if-eqz v4, :cond_65
+    if-eqz v4, :cond_6
 
     .line 44
     .line 45
-    :try_start_2c
+    :try_start_0
     iget-object v4, p0, Llibs/qs1;->l1:Llibs/ug0;
 
     .line 46
@@ -257,7 +257,7 @@
     move-result-object v4
 
     .line 55
-    if-eqz v3, :cond_43
+    if-eqz v3, :cond_5
 
     .line 56
     .line 57
@@ -275,19 +275,19 @@
     .line 63
     .line 64
     move-result v3
-    :try_end_40
-    .catchall {:try_start_2c .. :try_end_40} :catchall_52
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 65
-    if-ne v6, v3, :cond_43
+    if-ne v6, v3, :cond_5
 
     .line 66
     .line 67
     const/4 v1, 0x1
 
     .line 68
-    :cond_43
-    :try_start_43
+    :cond_5
+    :try_start_1
     iget-object v2, p0, Llibs/qs1;->l1:Llibs/ug0;
 
     .line 69
@@ -309,22 +309,22 @@
     .line 77
     .line 78
     iget-object v5, v2, Llibs/vg0;->b:Llibs/rp0;
-    :try_end_4f
-    .catchall {:try_start_43 .. :try_end_4f} :catchall_51
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 79
     .line 80
     move v3, v1
 
     .line 81
-    goto :goto_65
+    goto :goto_3
 
     .line 82
-    :catchall_51
+    :catchall_0
     move v3, v1
 
     .line 83
-    :catchall_52
+    :catchall_1
     new-instance v1, Ljava/lang/StringBuilder;
 
     .line 84
@@ -360,13 +360,13 @@
     .line 100
     .line 101
     .line 102
-    :cond_65
-    :goto_65
-    if-nez v3, :cond_6e
+    :cond_6
+    :goto_3
+    if-nez v3, :cond_7
 
     .line 103
     .line 104
-    if-eqz v0, :cond_6e
+    if-eqz v0, :cond_7
 
     .line 105
     .line 106
@@ -379,13 +379,13 @@
     .line 109
     .line 110
     .line 111
-    :cond_6e
-    :goto_6e
+    :cond_7
+    :goto_4
     return-void
 .end method
 
 .method public getChapterList()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -404,7 +404,7 @@
 .end method
 
 .method public getPageCount()I
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Lcom/mixplorer/widgets/MiViewPager;->getAdapter()Llibs/ja2;
@@ -415,7 +415,7 @@
     move-result-object v0
 
     .line 5
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -438,7 +438,7 @@
     return v0
 
     .line 16
-    :cond_f
+    :cond_0
     const/4 v0, 0x0
 
     .line 17
@@ -446,7 +446,7 @@
 .end method
 
 .method public getScrollPos()I
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Lcom/mixplorer/widgets/MiViewPager;->getCurrentItem()I
@@ -465,7 +465,7 @@
     move-result-object v0
 
     .line 9
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 10
     .line 11
@@ -475,12 +475,12 @@
     return v0
 
     .line 13
-    :cond_c
+    :cond_0
     instance-of v1, v0, Llibs/ks1;
 
     .line 14
     .line 15
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_1
 
     .line 16
     .line 17
@@ -507,7 +507,7 @@
     return v0
 
     .line 28
-    :cond_1b
+    :cond_1
     invoke-virtual {v0}, Landroid/view/View;->getScrollY()I
 
     .line 29
@@ -520,7 +520,7 @@
 .end method
 
 .method public getWebView()Llibs/ow1;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Lcom/mixplorer/widgets/MiViewPager;->getCurrentItem()I
@@ -539,7 +539,7 @@
     move-result-object v0
 
     .line 9
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -558,7 +558,7 @@
     return-object v0
 
     .line 18
-    :cond_11
+    :cond_0
     const/4 v0, 0x0
 
     .line 19
@@ -566,7 +566,7 @@
 .end method
 
 .method public final onConfigurationChanged(Landroid/content/res/Configuration;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->onConfigurationChanged(Landroid/content/res/Configuration;)V
@@ -574,7 +574,7 @@
     .line 2
     .line 3
     .line 4
-    :try_start_3
+    :try_start_0
     invoke-static {}, Llibs/sa3;->h()Landroid/graphics/Point;
 
     .line 5
@@ -632,7 +632,7 @@
     move-result-object p1
 
     .line 33
-    if-eqz p1, :cond_32
+    if-eqz p1, :cond_0
 
     .line 34
     .line 35
@@ -662,19 +662,19 @@
 
     .line 48
     invoke-virtual {p0, v0, p1}, Lcom/mixplorer/widgets/MiViewPager;->x(ZI)V
-    :try_end_32
-    .catchall {:try_start_3 .. :try_end_32} :catchall_32
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 49
     .line 50
     .line 51
-    :catchall_32
-    :cond_32
+    :catchall_0
+    :cond_0
     return-void
 .end method
 
 .method public setOnTouchedListener(Llibs/kw1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/qs1;->oOo:Llibs/kw1;
@@ -685,7 +685,7 @@
 .end method
 
 .method public setPageChangedListener(Llibs/os1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/qs1;->ooo:Llibs/os1;
@@ -696,7 +696,7 @@
 .end method
 
 .method public setScrollPos(I)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Lcom/mixplorer/widgets/MiViewPager;->getCurrentItem()I
@@ -715,14 +715,14 @@
     move-result-object v0
 
     .line 9
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 10
     .line 11
     return-void
 
     .line 12
-    :cond_b
+    :cond_0
     instance-of v1, v0, Llibs/ks1;
 
     .line 13
@@ -730,7 +730,7 @@
     const/4 v2, 0x0
 
     .line 15
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_1
 
     .line 16
     .line 17
@@ -754,7 +754,7 @@
     return-void
 
     .line 27
-    :cond_1a
+    :cond_1
     invoke-virtual {v0, v2, p1}, Landroid/view/View;->scrollTo(II)V
 
     .line 28

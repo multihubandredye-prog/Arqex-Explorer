@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/kk1;Ljava/util/Iterator;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,7 +34,7 @@
 .end method
 
 .method public static i(Llibs/ah3;Llibs/ah3;)Llibs/ah3;
-    .registers 5
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/c32;
@@ -99,7 +99,7 @@
 .end method
 
 .method public static w(Ljava/lang/Iterable;)Llibs/ah3;
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -134,7 +134,7 @@
 
 # virtual methods
 .method public final c(Llibs/v1;)Ljava/lang/Object;
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p1, Llibs/v1;->Y:Ljava/lang/Object;
@@ -153,7 +153,7 @@
     move-result-object v0
 
     .line 9
-    :goto_8
+    :goto_0
     iget-object v1, p0, Llibs/ah3;->X:Ljava/util/Iterator;
 
     .line 10
@@ -166,7 +166,7 @@
     move-result v2
 
     .line 15
-    if-eqz v2, :cond_1c
+    if-eqz v2, :cond_0
 
     .line 16
     .line 17
@@ -191,22 +191,22 @@
     .line 26
     .line 27
     .line 28
-    goto :goto_8
+    goto :goto_0
 
     .line 29
-    :cond_1c
+    :cond_0
     return-object v0
 .end method
 
 .method public final close()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/ah3;->Y:Llibs/kk1;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -218,7 +218,7 @@
 
     .line 8
     .line 9
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_0
 
     .line 10
     .line 11
@@ -234,12 +234,12 @@
 
     .line 16
     .line 17
-    :cond_10
+    :cond_0
     return-void
 .end method
 
 .method public final m(Llibs/je2;)Llibs/ah3;
-    .registers 5
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/ah3;

@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/security/KeyFactorySpi;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final engineGeneratePrivate(Ljava/security/spec/KeySpec;)Ljava/security/PrivateKey;
-    .registers 5
+    .locals 3
 
     .line 1
     const-string v0, "no factory found for OID: "
@@ -30,11 +30,11 @@
 
     .line 4
     .line 5
-    if-eqz v1, :cond_38
+    if-eqz v1, :cond_1
 
     .line 6
     .line 7
-    :try_start_6
+    :try_start_0
     check-cast p1, Ljava/security/spec/PKCS8EncodedKeySpec;
 
     .line 8
@@ -63,14 +63,14 @@
     move-result-object v1
 
     .line 21
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_0
 
     .line 22
     .line 23
     return-object v1
 
     .line 24
-    :cond_17
+    :cond_0
     new-instance v1, Ljava/security/spec/InvalidKeySpecException;
 
     .line 25
@@ -111,11 +111,11 @@
     .line 44
     .line 45
     throw v1
-    :try_end_2d
-    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_2d} :catch_2d
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 46
-    :catch_2d
+    :catch_0
     move-exception p1
 
     .line 47
@@ -139,7 +139,7 @@
     throw v0
 
     .line 57
-    :cond_38
+    :cond_1
     new-instance v0, Ljava/security/spec/InvalidKeySpecException;
 
     .line 58
@@ -181,7 +181,7 @@
 .end method
 
 .method public final engineGeneratePublic(Ljava/security/spec/KeySpec;)Ljava/security/PublicKey;
-    .registers 5
+    .locals 3
 
     .line 1
     const-string v0, "no factory found for OID: "
@@ -192,11 +192,11 @@
 
     .line 4
     .line 5
-    if-eqz v1, :cond_38
+    if-eqz v1, :cond_1
 
     .line 6
     .line 7
-    :try_start_6
+    :try_start_0
     check-cast p1, Ljava/security/spec/X509EncodedKeySpec;
 
     .line 8
@@ -225,14 +225,14 @@
     move-result-object v1
 
     .line 21
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_0
 
     .line 22
     .line 23
     return-object v1
 
     .line 24
-    :cond_17
+    :cond_0
     new-instance v1, Ljava/security/spec/InvalidKeySpecException;
 
     .line 25
@@ -273,11 +273,11 @@
     .line 44
     .line 45
     throw v1
-    :try_end_2d
-    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_2d} :catch_2d
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 46
-    :catch_2d
+    :catch_0
     move-exception p1
 
     .line 47
@@ -301,7 +301,7 @@
     throw v0
 
     .line 57
-    :cond_38
+    :cond_1
     new-instance v0, Ljava/security/spec/InvalidKeySpecException;
 
     .line 58
@@ -343,7 +343,7 @@
 .end method
 
 .method public final engineGetKeySpec(Ljava/security/Key;Ljava/lang/Class;)Ljava/security/spec/KeySpec;
-    .registers 5
+    .locals 2
 
     .line 1
     const-class v0, Ljava/security/spec/PKCS8EncodedKeySpec;
@@ -358,7 +358,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -382,7 +382,7 @@
     move-result v0
 
     .line 19
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_0
 
     .line 20
     .line 21
@@ -406,7 +406,7 @@
     return-object p2
 
     .line 31
-    :cond_1e
+    :cond_0
     const-class v0, Ljava/security/spec/X509EncodedKeySpec;
 
     .line 32
@@ -419,7 +419,7 @@
     move-result v0
 
     .line 37
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_1
 
     .line 38
     .line 39
@@ -443,7 +443,7 @@
     move-result v0
 
     .line 49
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_1
 
     .line 50
     .line 51
@@ -467,7 +467,7 @@
     return-object p2
 
     .line 61
-    :cond_3c
+    :cond_1
     invoke-static {p1, p2}, Llibs/bf0;->b(Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 62
@@ -480,7 +480,7 @@
 .end method
 
 .method public final engineTranslateKey(Ljava/security/Key;)Ljava/security/Key;
-    .registers 5
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/security/InvalidKeyException;

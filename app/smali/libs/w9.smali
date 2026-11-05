@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/security/interfaces/DSAPrivateKey;)V
-    .registers 3
+    .locals 1
 
     .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .end method
 
 .method public constructor <init>(Ljava/security/spec/DSAPrivateKeySpec;)V
-    .registers 5
+    .locals 3
 
     .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -89,7 +89,7 @@
 .end method
 
 .method public constructor <init>(Llibs/bg2;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -203,7 +203,7 @@
 .end method
 
 .method public constructor <init>(Llibs/n50;)V
-    .registers 5
+    .locals 3
 
     .line 65
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -249,7 +249,7 @@
 
 # virtual methods
 .method public final b(Llibs/App;)Llibs/Core;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/w9;->Z:Llibs/c82;
@@ -268,7 +268,7 @@
 .end method
 
 .method public final c(Llibs/App;Llibs/Core;)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/w9;->Z:Llibs/c82;
@@ -284,7 +284,7 @@
 .end method
 
 .method public final d()Ljava/util/Enumeration;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/w9;->Z:Llibs/c82;
@@ -307,7 +307,7 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     instance-of v0, p1, Ljava/security/interfaces/DSAPrivateKey;
@@ -317,14 +317,14 @@
     const/4 v1, 0x0
 
     .line 4
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 5
     .line 6
     return v1
 
     .line 7
-    :cond_6
+    :cond_0
     check-cast p1, Ljava/security/interfaces/DSAPrivateKey;
 
     .line 8
@@ -349,7 +349,7 @@
     move-result v0
 
     .line 19
-    if-eqz v0, :cond_4e
+    if-eqz v0, :cond_1
 
     .line 20
     .line 21
@@ -389,7 +389,7 @@
     move-result v2
 
     .line 39
-    if-eqz v2, :cond_4e
+    if-eqz v2, :cond_1
 
     .line 40
     .line 41
@@ -425,7 +425,7 @@
     move-result v2
 
     .line 57
-    if-eqz v2, :cond_4e
+    if-eqz v2, :cond_1
 
     .line 58
     .line 59
@@ -461,7 +461,7 @@
     move-result p1
 
     .line 75
-    if-eqz p1, :cond_4e
+    if-eqz p1, :cond_1
 
     .line 76
     .line 77
@@ -471,12 +471,12 @@
     return p1
 
     .line 79
-    :cond_4e
+    :cond_1
     return v1
 .end method
 
 .method public final getAlgorithm()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "DSA"
@@ -487,7 +487,7 @@
 .end method
 
 .method public final getEncoded()[B
-    .registers 8
+    .locals 7
 
     .line 1
     new-instance v0, Llibs/$f;
@@ -619,7 +619,7 @@
 .end method
 
 .method public final getFormat()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "PKCS#8"
@@ -630,7 +630,7 @@
 .end method
 
 .method public final getParams()Ljava/security/interfaces/DSAParams;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/w9;->Y:Ljava/security/interfaces/DSAParams;
@@ -641,7 +641,7 @@
 .end method
 
 .method public final getX()Ljava/math/BigInteger;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/w9;->X:Ljava/math/BigInteger;
@@ -652,7 +652,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/w9;->X:Ljava/math/BigInteger;

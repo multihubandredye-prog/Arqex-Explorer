@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/eb;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/db;->Y:Llibs/eb;
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final hasMoreElements()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/db;->X:I
@@ -57,7 +57,7 @@
     array-length v1, v1
 
     .line 8
-    if-ge v0, v1, :cond_b
+    if-ge v0, v1, :cond_0
 
     .line 9
     .line 10
@@ -67,7 +67,7 @@
     return v0
 
     .line 12
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
     .line 13
@@ -75,7 +75,7 @@
 .end method
 
 .method public final nextElement()Ljava/lang/Object;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/db;->Y:Llibs/eb;

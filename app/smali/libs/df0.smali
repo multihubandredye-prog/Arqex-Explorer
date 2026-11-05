@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     .line 1
     new-instance v0, Ljava/util/HashMap;
@@ -37,8 +37,8 @@
     move-result-object v0
 
     .line 14
-    :cond_d
-    :goto_d
+    :cond_0
+    :goto_0
     invoke-interface {v0}, Ljava/util/Enumeration;->hasMoreElements()Z
 
     .line 15
@@ -47,7 +47,7 @@
     move-result v1
 
     .line 18
-    if-eqz v1, :cond_3d
+    if-eqz v1, :cond_2
 
     .line 19
     .line 20
@@ -71,7 +71,7 @@
     move-result-object v2
 
     .line 30
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_0
 
     .line 31
     .line 32
@@ -107,17 +107,17 @@
 
     .line 47
     .line 48
-    if-nez v1, :cond_33
+    if-nez v1, :cond_1
 
     .line 49
     .line 50
     const/4 v1, 0x0
 
     .line 51
-    goto :goto_37
+    goto :goto_1
 
     .line 52
-    :cond_33
+    :cond_1
     invoke-virtual {v1}, Llibs/ax3;->b()Llibs/zw3;
 
     .line 53
@@ -126,7 +126,7 @@
     move-result-object v1
 
     .line 56
-    :goto_37
+    :goto_1
     iget-object v1, v1, Llibs/zw3;->Y:Llibs/kf0;
 
     .line 57
@@ -136,15 +136,15 @@
     .line 59
     .line 60
     .line 61
-    goto :goto_d
+    goto :goto_0
 
     .line 62
-    :cond_3d
+    :cond_2
     return-void
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -156,7 +156,7 @@
 .end method
 
 .method public static a(Llibs/kf0;)Ljava/security/spec/EllipticCurve;
-    .registers 7
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/kf0;->a:Llibs/lr0;
@@ -171,7 +171,7 @@
     move-result v1
 
     .line 7
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
@@ -192,10 +192,10 @@
     .line 16
     .line 17
     .line 18
-    goto :goto_3e
+    goto :goto_1
 
     .line 19
-    :cond_12
+    :cond_0
     check-cast v0, Llibs/lu0;
 
     .line 20
@@ -244,12 +244,12 @@
     const/4 v4, 0x0
 
     .line 41
-    :goto_28
+    :goto_0
     add-int/lit8 v2, v2, -0x1
 
     .line 42
     .line 43
-    if-ltz v2, :cond_34
+    if-ltz v2, :cond_1
 
     .line 44
     .line 45
@@ -268,10 +268,10 @@
     move v4, v5
 
     .line 52
-    goto :goto_28
+    goto :goto_0
 
     .line 53
-    :cond_34
+    :cond_1
     new-instance v1, Ljava/security/spec/ECFieldF2m;
 
     .line 54
@@ -292,7 +292,7 @@
     .line 61
     .line 62
     .line 63
-    :goto_3e
+    :goto_1
     iget-object v0, p0, Llibs/kf0;->b:Llibs/xf3;
 
     .line 64
@@ -333,7 +333,7 @@
 .end method
 
 .method public static b(Ljava/security/spec/EllipticCurve;)Llibs/kf0;
-    .registers 11
+    .locals 10
 
     .line 1
     invoke-virtual {p0}, Ljava/security/spec/EllipticCurve;->getField()Ljava/security/spec/ECField;
@@ -364,7 +364,7 @@
 
     .line 14
     .line 15
-    if-eqz p0, :cond_2a
+    if-eqz p0, :cond_1
 
     .line 16
     .line 17
@@ -401,7 +401,7 @@
     move-result v1
 
     .line 34
-    if-eqz v1, :cond_29
+    if-eqz v1, :cond_0
 
     .line 35
     .line 36
@@ -417,11 +417,11 @@
 
     .line 41
     .line 42
-    :cond_29
+    :cond_0
     return-object p0
 
     .line 43
-    :cond_2a
+    :cond_1
     check-cast v0, Ljava/security/spec/ECFieldF2m;
 
     .line 44
@@ -461,7 +461,7 @@
     const/4 v8, 0x2
 
     .line 60
-    if-ne v3, v4, :cond_43
+    if-ne v3, v4, :cond_2
 
     .line 61
     .line 62
@@ -473,18 +473,18 @@
 
     .line 65
     .line 66
-    :goto_41
+    :goto_0
     move-object p0, v1
 
     .line 67
-    goto :goto_86
+    goto :goto_1
 
     .line 68
-    :cond_43
+    :cond_2
     array-length v3, p0
 
     .line 69
-    if-ne v3, v0, :cond_92
+    if-ne v3, v0, :cond_8
 
     .line 70
     .line 71
@@ -496,7 +496,7 @@
 
     .line 74
     .line 75
-    if-ge v0, v3, :cond_60
+    if-ge v0, v3, :cond_4
 
     .line 76
     .line 77
@@ -504,7 +504,7 @@
 
     .line 78
     .line 79
-    if-ge v0, v9, :cond_60
+    if-ge v0, v9, :cond_4
 
     .line 80
     .line 81
@@ -512,7 +512,7 @@
 
     .line 82
     .line 83
-    if-ge v3, v9, :cond_59
+    if-ge v3, v9, :cond_3
 
     .line 84
     .line 85
@@ -524,10 +524,10 @@
 
     .line 88
     .line 89
-    goto :goto_41
+    goto :goto_0
 
     .line 90
-    :cond_59
+    :cond_3
     aput v9, v1, v4
 
     .line 91
@@ -540,15 +540,15 @@
 
     .line 95
     .line 96
-    goto :goto_41
+    goto :goto_0
 
     .line 97
-    :cond_60
+    :cond_4
     aget v0, p0, v8
 
     .line 98
     .line 99
-    if-ge v3, v0, :cond_74
+    if-ge v3, v0, :cond_6
 
     .line 100
     .line 101
@@ -560,7 +560,7 @@
 
     .line 104
     .line 105
-    if-ge p0, v0, :cond_6f
+    if-ge p0, v0, :cond_5
 
     .line 106
     .line 107
@@ -572,10 +572,10 @@
 
     .line 110
     .line 111
-    goto :goto_41
+    goto :goto_0
 
     .line 112
-    :cond_6f
+    :cond_5
     aput v0, v1, v4
 
     .line 113
@@ -584,10 +584,10 @@
 
     .line 115
     .line 116
-    goto :goto_41
+    goto :goto_0
 
     .line 117
-    :cond_74
+    :cond_6
     aput v0, v1, v5
 
     .line 118
@@ -596,7 +596,7 @@
 
     .line 120
     .line 121
-    if-ge v0, v3, :cond_81
+    if-ge v0, v3, :cond_7
 
     .line 122
     .line 123
@@ -612,10 +612,10 @@
 
     .line 128
     .line 129
-    goto :goto_41
+    goto :goto_0
 
     .line 130
-    :cond_81
+    :cond_7
     aput v3, v1, v4
 
     .line 131
@@ -624,10 +624,10 @@
 
     .line 133
     .line 134
-    goto :goto_41
+    goto :goto_0
 
     .line 135
-    :goto_86
+    :goto_1
     new-instance v1, Llibs/if0;
 
     .line 136
@@ -652,7 +652,7 @@
     return-object v1
 
     .line 147
-    :cond_92
+    :cond_8
     const-string p0, "Only Trinomials and pentanomials supported"
 
     .line 148
@@ -669,7 +669,7 @@
 .end method
 
 .method public static c(Ljava/security/spec/ECParameterSpec;Ljava/security/spec/ECPoint;)Llibs/ig0;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Ljava/security/spec/ECParameterSpec;->getCurve()Ljava/security/spec/EllipticCurve;
@@ -700,7 +700,7 @@
 .end method
 
 .method public static d(Llibs/kf0;Ljava/security/spec/ECPoint;)Llibs/ig0;
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-virtual {p1}, Ljava/security/spec/ECPoint;->getAffineX()Ljava/math/BigInteger;
@@ -734,14 +734,14 @@
 .end method
 
 .method public static e(Ljava/security/spec/EllipticCurve;Llibs/gg0;)Ljava/security/spec/ECParameterSpec;
-    .registers 9
+    .locals 7
 
     .line 1
     instance-of v0, p1, Llibs/eg0;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -825,7 +825,7 @@
     return-object v1
 
     .line 45
-    :cond_2c
+    :cond_0
     move-object v3, p0
 
     .line 46
@@ -908,7 +908,7 @@
 .end method
 
 .method public static f(Ljava/security/spec/ECParameterSpec;)Llibs/gg0;
-    .registers 8
+    .locals 7
 
     .line 1
     invoke-virtual {p0}, Ljava/security/spec/ECParameterSpec;->getCurve()Ljava/security/spec/EllipticCurve;
@@ -999,7 +999,7 @@
 .end method
 
 .method public static g(Llibs/xw3;Llibs/kf0;)Ljava/security/spec/ECParameterSpec;
-    .registers 10
+    .locals 8
 
     .line 1
     iget-object p0, p0, Llibs/xw3;->X:Llibs/Theme;
@@ -1010,7 +1010,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_40
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -1128,12 +1128,12 @@
     return-object v2
 
     .line 65
-    :cond_40
+    :cond_0
     instance-of v0, p0, Llibs/k10;
 
     .line 66
     .line 67
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_1
 
     .line 68
     .line 69
@@ -1143,7 +1143,7 @@
     return-object p0
 
     .line 71
-    :cond_46
+    :cond_1
     invoke-static {p0}, Llibs/zw3;->g(Ljava/lang/Object;)Llibs/zw3;
 
     .line 72
@@ -1176,7 +1176,7 @@
     move-result-object p1
 
     .line 87
-    if-eqz v1, :cond_80
+    if-eqz v1, :cond_2
 
     .line 88
     .line 89
@@ -1258,7 +1258,7 @@
     return-object v2
 
     .line 129
-    :cond_80
+    :cond_2
     new-instance v1, Ljava/security/spec/ECParameterSpec;
 
     .line 130
@@ -1333,7 +1333,7 @@
 .end method
 
 .method public static h(Llibs/pg2;Llibs/xw3;)Llibs/kf0;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object p1, p1, Llibs/xw3;->X:Llibs/Theme;
@@ -1344,7 +1344,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -1371,12 +1371,12 @@
     return-object p0
 
     .line 18
-    :cond_11
+    :cond_0
     instance-of v0, p1, Llibs/k10;
 
     .line 19
     .line 20
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_1
 
     .line 21
     .line 22
@@ -1399,7 +1399,7 @@
     return-object p0
 
     .line 31
-    :cond_1e
+    :cond_1
     invoke-static {p1}, Llibs/zw3;->g(Ljava/lang/Object;)Llibs/zw3;
 
     .line 32

@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/pu2;JJLlibs/k00;III)V
-    .registers 18
+    .locals 8
 
     .line 1
     const/16 v1, 0x29
@@ -73,7 +73,7 @@
 
 # virtual methods
 .method public final i(Llibs/rw2;)V
-    .registers 15
+    .locals 13
 
     .line 1
     iget v0, p0, Llibs/lv2;->c:I
@@ -104,51 +104,51 @@
     const/4 v5, 0x1
 
     .line 13
-    if-eq v1, v5, :cond_1b
+    if-eq v1, v5, :cond_3
 
     .line 14
     .line 15
-    if-eq v1, v4, :cond_19
+    if-eq v1, v4, :cond_2
 
     .line 16
     .line 17
-    if-eq v1, v3, :cond_17
+    if-eq v1, v3, :cond_1
 
     .line 18
     .line 19
-    if-ne v1, v2, :cond_16
+    if-ne v1, v2, :cond_0
 
     .line 20
     .line 21
     const/4 v6, 0x4
 
     .line 22
-    goto :goto_1c
+    goto :goto_0
 
     .line 23
-    :cond_16
+    :cond_0
     throw v0
 
     .line 24
-    :cond_17
+    :cond_1
     const/4 v6, 0x3
 
     .line 25
-    goto :goto_1c
+    goto :goto_0
 
     .line 26
-    :cond_19
+    :cond_2
     const/4 v6, 0x2
 
     .line 27
-    goto :goto_1c
+    goto :goto_0
 
     .line 28
-    :cond_1b
+    :cond_3
     const/4 v6, 0x1
 
     .line 29
-    :goto_1c
+    :goto_0
     int-to-long v6, v6
 
     .line 30
@@ -187,35 +187,35 @@
     const/4 v12, 0x0
 
     .line 47
-    if-eqz v6, :cond_af
+    if-eqz v6, :cond_b
 
     .line 48
     .line 49
-    if-eq v6, v5, :cond_76
+    if-eq v6, v5, :cond_a
 
     .line 50
     .line 51
-    if-eq v6, v4, :cond_63
+    if-eq v6, v4, :cond_9
 
     .line 52
     .line 53
-    if-eq v6, v3, :cond_56
+    if-eq v6, v3, :cond_8
 
     .line 54
     .line 55
-    if-eq v1, v5, :cond_4a
+    if-eq v1, v5, :cond_7
 
     .line 56
     .line 57
-    if-eq v1, v4, :cond_47
+    if-eq v1, v4, :cond_6
 
     .line 58
     .line 59
-    if-eq v1, v3, :cond_44
+    if-eq v1, v3, :cond_5
 
     .line 60
     .line 61
-    if-eq v1, v2, :cond_41
+    if-eq v1, v2, :cond_4
 
     .line 62
     .line 63
@@ -223,39 +223,39 @@
 
     .line 64
     .line 65
-    goto :goto_4c
+    goto :goto_1
 
     .line 66
-    :cond_41
+    :cond_4
     const-string p1, "SMB2_0_INFO_QUOTA"
 
     .line 67
     .line 68
-    goto :goto_4c
+    goto :goto_1
 
     .line 69
-    :cond_44
+    :cond_5
     const-string p1, "SMB2_0_INFO_SECURITY"
 
     .line 70
     .line 71
-    goto :goto_4c
+    goto :goto_1
 
     .line 72
-    :cond_47
+    :cond_6
     const-string p1, "SMB2_0_INFO_FILESYSTEM"
 
     .line 73
     .line 74
-    goto :goto_4c
+    goto :goto_1
 
     .line 75
-    :cond_4a
+    :cond_7
     const-string p1, "SMB2_0_INFO_FILE"
 
     .line 76
     .line 77
-    :goto_4c
+    :goto_1
     const-string v0, "Unknown SMB2QueryInfoType: "
 
     .line 78
@@ -276,7 +276,7 @@
     return-void
 
     .line 87
-    :cond_56
+    :cond_8
     invoke-virtual {p1, v12}, Llibs/rw2;->e(B)V
 
     .line 88
@@ -300,7 +300,7 @@
     throw v0
 
     .line 100
-    :cond_63
+    :cond_9
     invoke-virtual {p1, v12}, Llibs/rw2;->e(B)V
 
     .line 101
@@ -334,12 +334,12 @@
     throw v0
 
     .line 119
-    :cond_76
+    :cond_a
     iget v1, p0, Llibs/uv2;->h:I
 
     .line 120
     .line 121
-    packed-switch v1, :pswitch_data_dc
+    packed-switch v1, :pswitch_data_0
 
     .line 122
     .line 123
@@ -347,79 +347,79 @@
     throw v0
 
     .line 125
-    :pswitch_7c
+    :pswitch_0
     const/16 v2, 0xb
 
     .line 126
     .line 127
-    goto :goto_93
+    goto :goto_2
 
     .line 128
-    :pswitch_7f
+    :pswitch_1
     const/16 v2, 0xa
 
     .line 129
     .line 130
-    goto :goto_93
+    goto :goto_2
 
     .line 131
-    :pswitch_82
+    :pswitch_2
     const/16 v2, 0x9
 
     .line 132
     .line 133
-    goto :goto_93
+    goto :goto_2
 
     .line 134
-    :pswitch_85
+    :pswitch_3
     const/16 v2, 0x8
 
     .line 135
     .line 136
-    goto :goto_93
+    goto :goto_2
 
     .line 137
-    :pswitch_88
+    :pswitch_4
     const/4 v2, 0x7
 
     .line 138
-    goto :goto_93
+    goto :goto_2
 
     .line 139
-    :pswitch_8a
+    :pswitch_5
     const/4 v2, 0x6
 
     .line 140
-    goto :goto_93
+    goto :goto_2
 
     .line 141
-    :pswitch_8c
+    :pswitch_6
     const/4 v2, 0x5
 
     .line 142
-    goto :goto_93
+    goto :goto_2
 
     .line 143
-    :pswitch_8e
+    :pswitch_7
     const/4 v2, 0x3
 
     .line 144
-    goto :goto_93
+    goto :goto_2
 
     .line 145
-    :pswitch_90
+    :pswitch_8
     const/4 v2, 0x2
 
     .line 146
-    goto :goto_93
+    goto :goto_2
 
     .line 147
-    :pswitch_92
+    :pswitch_9
     const/4 v2, 0x1
 
     .line 148
-    :goto_93
-    :pswitch_93
+    :goto_2
+    :pswitch_a
     int-to-long v0, v2
 
     .line 149
@@ -472,7 +472,7 @@
     return-void
 
     .line 176
-    :cond_af
+    :cond_b
     iget v1, p0, Llibs/uv2;->g:I
 
     .line 177
@@ -508,7 +508,7 @@
 
     .line 192
     .line 193
-    if-eq v1, v2, :cond_d5
+    if-eq v1, v2, :cond_c
 
     .line 194
     .line 195
@@ -545,7 +545,7 @@
     return-void
 
     .line 214
-    :cond_d5
+    :cond_c
     invoke-virtual {p1, v12}, Llibs/rw2;->m(I)V
 
     .line 215
@@ -559,18 +559,18 @@
     throw v0
 
     .line 221
-    :pswitch_data_dc
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_92
-        :pswitch_90
-        :pswitch_8e
-        :pswitch_93
-        :pswitch_8c
-        :pswitch_8a
-        :pswitch_88
-        :pswitch_85
-        :pswitch_82
-        :pswitch_7f
-        :pswitch_7c
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_a
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

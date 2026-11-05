@@ -5,7 +5,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/au;
@@ -21,7 +21,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public final read()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, -0x1

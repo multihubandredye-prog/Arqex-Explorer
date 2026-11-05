@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/PlayerActivity;J)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/gd2;->b:Lcom/mixplorer/activities/PlayerActivity;
@@ -36,14 +36,14 @@
 
 # virtual methods
 .method public final surfaceChanged(Landroid/view/SurfaceHolder;III)V
-    .registers 5
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final surfaceCreated(Landroid/view/SurfaceHolder;)V
-    .registers 4
+    .locals 2
 
     .line 1
     sget-boolean p1, Lcom/mixplorer/activities/PlayerActivity;->e0:Z
@@ -67,7 +67,7 @@
 .end method
 
 .method public final surfaceDestroyed(Landroid/view/SurfaceHolder;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void

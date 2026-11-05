@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/n0;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 10
+    .locals 7
 
     .line 1
     iget-byte v0, p0, Llibs/n0;->X:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_8a
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -95,7 +95,7 @@
     return p1
 
     .line 29
-    :pswitch_1c
+    :pswitch_0
     check-cast v1, Ljava/text/Collator;
 
     .line 30
@@ -116,7 +116,7 @@
     move-result v0
 
     .line 39
-    if-eqz v0, :cond_7f
+    if-eqz v0, :cond_7
 
     .line 40
     .line 41
@@ -128,14 +128,14 @@
     move-result v0
 
     .line 45
-    if-nez v0, :cond_2f
+    if-nez v0, :cond_0
 
     .line 46
     .line 47
-    goto :goto_7f
+    goto :goto_4
 
     .line 48
-    :cond_2f
+    :cond_0
     const/4 v0, 0x0
 
     .line 49
@@ -154,21 +154,21 @@
     const/4 v4, 0x1
 
     .line 56
-    if-ne v2, v3, :cond_3b
+    if-ne v2, v3, :cond_1
 
     .line 57
     .line 58
     const/4 v2, 0x1
 
     .line 59
-    goto :goto_3c
+    goto :goto_0
 
     .line 60
-    :cond_3b
+    :cond_1
     const/4 v2, 0x0
 
     .line 61
-    :goto_3c
+    :goto_0
     invoke-interface {p1, v0}, Ljava/lang/CharSequence;->charAt(I)C
 
     .line 62
@@ -177,33 +177,33 @@
     move-result v5
 
     .line 65
-    if-ne v5, v3, :cond_44
+    if-ne v5, v3, :cond_2
 
     .line 66
     .line 67
     const/4 v5, 0x1
 
     .line 68
-    goto :goto_45
+    goto :goto_1
 
     .line 69
-    :cond_44
+    :cond_2
     const/4 v5, 0x0
 
     .line 70
-    :goto_45
-    if-eq v5, v2, :cond_4a
+    :goto_1
+    if-eq v5, v2, :cond_3
 
     .line 71
     .line 72
-    if-eqz v2, :cond_89
+    if-eqz v2, :cond_8
 
     .line 73
     .line 74
-    goto :goto_68
+    goto :goto_3
 
     .line 75
-    :cond_4a
+    :cond_3
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     .line 76
@@ -228,8 +228,8 @@
     move-result v2
 
     .line 87
-    :goto_56
-    if-ge v0, v2, :cond_72
+    :goto_2
+    if-ge v0, v2, :cond_6
 
     .line 88
     .line 89
@@ -249,7 +249,7 @@
     move-result v6
 
     .line 97
-    if-eq v5, v6, :cond_6f
+    if-eq v5, v6, :cond_5
 
     .line 98
     .line 99
@@ -257,42 +257,42 @@
 
     .line 100
     .line 101
-    if-ne v5, v3, :cond_6a
+    if-ne v5, v3, :cond_4
 
     .line 102
     .line 103
-    if-ne v6, v0, :cond_6a
+    if-ne v6, v0, :cond_4
 
     .line 104
     .line 105
-    :goto_68
+    :goto_3
     const/4 v4, -0x1
 
     .line 106
-    goto :goto_89
+    goto :goto_5
 
     .line 107
-    :cond_6a
-    if-ne v5, v0, :cond_72
+    :cond_4
+    if-ne v5, v0, :cond_6
 
     .line 108
     .line 109
-    if-ne v6, v3, :cond_72
+    if-ne v6, v3, :cond_6
 
     .line 110
     .line 111
-    goto :goto_89
+    goto :goto_5
 
     .line 112
-    :cond_6f
+    :cond_5
     add-int/lit8 v0, v0, 0x1
 
     .line 113
     .line 114
-    goto :goto_56
+    goto :goto_2
 
     .line 115
-    :cond_72
+    :cond_6
     invoke-interface {p1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     .line 116
@@ -317,11 +317,11 @@
     move-result v4
 
     .line 127
-    goto :goto_89
+    goto :goto_5
 
     .line 128
-    :cond_7f
-    :goto_7f
+    :cond_7
+    :goto_4
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     .line 129
@@ -342,13 +342,13 @@
 
     .line 137
     .line 138
-    :cond_89
-    :goto_89
+    :cond_8
+    :goto_5
     return v4
 
     .line 139
-    :pswitch_data_8a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1c
+        :pswitch_0
     .end packed-switch
 .end method

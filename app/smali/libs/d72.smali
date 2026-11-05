@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/b72;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final a(Llibs/zb2;)Ljava/lang/Object;
-    .registers 9
+    .locals 7
 
     .line 1
     iget-object v0, p1, Llibs/zb2;->b:Ljava/util/List;
@@ -51,8 +51,8 @@
     const/4 v2, 0x0
 
     .line 9
-    :cond_8
-    :goto_8
+    :cond_0
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 10
@@ -61,7 +61,7 @@
     move-result v3
 
     .line 13
-    if-eqz v3, :cond_36
+    if-eqz v3, :cond_2
 
     .line 14
     .line 15
@@ -97,7 +97,7 @@
     move-result v4
 
     .line 31
-    if-eqz v4, :cond_2a
+    if-eqz v4, :cond_1
 
     .line 32
     .line 33
@@ -113,17 +113,17 @@
     move-result v4
 
     .line 39
-    if-eqz v4, :cond_2a
+    if-eqz v4, :cond_1
 
     .line 40
     .line 41
     const/4 v1, 0x1
 
     .line 42
-    goto :goto_8
+    goto :goto_0
 
     .line 43
-    :cond_2a
+    :cond_1
     iget-object v3, v3, Llibs/yb2;->a:Ljava/lang/String;
 
     .line 44
@@ -140,17 +140,17 @@
     move-result v3
 
     .line 51
-    if-eqz v3, :cond_8
+    if-eqz v3, :cond_0
 
     .line 52
     .line 53
     move-object v2, v5
 
     .line 54
-    goto :goto_8
+    goto :goto_0
 
     .line 55
-    :cond_36
+    :cond_2
     iget-object p1, p1, Llibs/zb2;->c:[B
 
     .line 56
@@ -163,11 +163,11 @@
 
     .line 60
     .line 61
-    if-eqz v1, :cond_5b
+    if-eqz v1, :cond_3
 
     .line 62
     .line 63
-    :try_start_3e
+    :try_start_0
     new-instance v4, Ljava/util/StringTokenizer;
 
     .line 64
@@ -217,37 +217,37 @@
     return-object v5
 
     .line 88
-    :catch_57
+    :catch_0
     move-exception p1
 
     .line 89
-    goto :goto_60
+    goto :goto_1
 
     .line 90
-    :catch_59
+    :catch_1
     move-exception p1
 
     .line 91
-    goto :goto_72
+    goto :goto_2
 
     .line 92
-    :cond_5b
+    :cond_3
     invoke-interface {v3, p1}, Llibs/b72;->e([B)Llibs/a72;
 
     .line 93
     .line 94
     .line 95
     move-result-object p1
-    :try_end_5f
-    .catch Ljava/io/IOException; {:try_start_3e .. :try_end_5f} :catch_59
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_3e .. :try_end_5f} :catch_57
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 96
     return-object p1
 
     .line 97
-    :goto_60
-    if-eqz v1, :cond_68
+    :goto_1
+    if-eqz v1, :cond_4
 
     .line 98
     .line 99
@@ -263,7 +263,7 @@
     throw v1
 
     .line 105
-    :cond_68
+    :cond_4
     new-instance v0, Llibs/z62;
 
     .line 106
@@ -284,8 +284,8 @@
     throw v0
 
     .line 115
-    :goto_72
-    if-eqz v1, :cond_7a
+    :goto_2
+    if-eqz v1, :cond_5
 
     .line 116
     .line 117
@@ -301,7 +301,7 @@
     throw v1
 
     .line 123
-    :cond_7a
+    :cond_5
     new-instance v0, Llibs/z62;
 
     .line 124
@@ -319,13 +319,13 @@
     .line 130
     .line 131
     .line 132
-    goto :goto_85
+    goto :goto_4
 
     .line 133
-    :goto_84
+    :goto_3
     throw v0
 
     .line 134
-    :goto_85
-    goto :goto_84
+    :goto_4
+    goto :goto_3
 .end method

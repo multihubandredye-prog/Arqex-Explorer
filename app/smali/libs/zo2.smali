@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(ILlibs/qh3;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/ap2;-><init>(I)V
@@ -27,14 +27,14 @@
 
 # virtual methods
 .method public final b(Llibs/za;Ljava/util/Locale;)Ljava/lang/String;
-    .registers 3
+    .locals 0
 
     .line 1
     iget p1, p0, Llibs/ap2;->a:I
 
     .line 2
     .line 3
-    if-ltz p1, :cond_b
+    if-ltz p1, :cond_0
 
     .line 4
     .line 5
@@ -53,7 +53,7 @@
     return-object p1
 
     .line 12
-    :cond_b
+    :cond_0
     const-string p1, ""
 
     .line 13
@@ -62,7 +62,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

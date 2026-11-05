@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/math/BigInteger;Ljava/security/SecureRandom;I)V
-    .registers 5
+    .locals 1
 
     .line 1
     invoke-direct {p0, p3, p2}, Llibs/ct;-><init>(ILjava/security/SecureRandom;)V
@@ -24,7 +24,7 @@
     const/4 v0, 0x0
 
     .line 7
-    if-lt p3, p2, :cond_18
+    if-lt p3, p2, :cond_1
 
     .line 8
     .line 9
@@ -39,7 +39,7 @@
     move-result p2
 
     .line 14
-    if-eqz p2, :cond_12
+    if-eqz p2, :cond_0
 
     .line 15
     .line 16
@@ -50,7 +50,7 @@
     return-void
 
     .line 19
-    :cond_12
+    :cond_0
     const-string p1, "public exponent cannot be even"
 
     .line 20
@@ -63,7 +63,7 @@
     throw v0
 
     .line 25
-    :cond_18
+    :cond_1
     const-string p1, "key strength too small"
 
     .line 26
@@ -77,7 +77,7 @@
 .end method
 
 .method public constructor <init>(Ljava/security/SecureRandom;Llibs/it0;)V
-    .registers 4
+    .locals 1
 
     .line 34
     iget-object v0, p2, Llibs/it0;->a:Ljava/math/BigInteger;
@@ -98,7 +98,7 @@
 .end method
 
 .method public constructor <init>(Ljava/security/SecureRandom;Llibs/l50;)V
-    .registers 4
+    .locals 1
 
     .line 31
     iget-object v0, p2, Llibs/l50;->c:Ljava/math/BigInteger;
@@ -119,17 +119,17 @@
 .end method
 
 .method public constructor <init>(Ljava/security/SecureRandom;Llibs/yh0;)V
-    .registers 4
+    .locals 1
 
     .line 37
     iget v0, p2, Llibs/yh0;->c:I
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
-    goto :goto_b
+    goto :goto_0
 
     .line 38
-    :cond_5
+    :cond_0
     iget-object v0, p2, Llibs/yh0;->b:Ljava/math/BigInteger;
 
     .line 39
@@ -138,7 +138,7 @@
     move-result v0
 
     .line 40
-    :goto_b
+    :goto_0
     invoke-direct {p0, v0, p1}, Llibs/ct;-><init>(ILjava/security/SecureRandom;)V
 
     .line 41

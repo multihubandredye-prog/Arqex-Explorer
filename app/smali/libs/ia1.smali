@@ -31,7 +31,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/oi0;Ljava/io/InputStream;Ljava/lang/String;[BJ)V
-    .registers 10
+    .locals 3
 
     .line 1
     const-string v0, "Corrupt Data > "
@@ -108,7 +108,7 @@
 
     .line 36
     .line 37
-    if-eqz p5, :cond_50
+    if-eqz p5, :cond_1
 
     .line 38
     .line 39
@@ -116,7 +116,7 @@
 
     .line 40
     .line 41
-    if-eqz p2, :cond_2f
+    if-eqz p2, :cond_0
 
     .line 42
     .line 43
@@ -128,16 +128,16 @@
     move-result-object p2
 
     .line 47
-    goto :goto_31
+    goto :goto_0
 
     .line 48
-    :cond_2f
+    :cond_0
     new-array p2, p6, [B
 
     .line 49
     .line 50
-    :goto_31
-    :try_start_31
+    :goto_0
+    :try_start_0
     invoke-static {p1, p2, p4}, Llibs/eh3;->d(Llibs/oi0;[B[B)[B
 
     .line 51
@@ -147,38 +147,38 @@
 
     .line 54
     iput-object p1, p0, Llibs/ia1;->Sigma:[B
-    :try_end_37
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_31 .. :try_end_37} :catch_3c
-    .catch Ljavax/crypto/IllegalBlockSizeException; {:try_start_31 .. :try_end_37} :catch_3a
-    .catch Ljavax/crypto/BadPaddingException; {:try_start_31 .. :try_end_37} :catch_38
+    :try_end_0
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljavax/crypto/IllegalBlockSizeException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljavax/crypto/BadPaddingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 55
     .line 56
     return-void
 
     .line 57
-    :catch_38
+    :catch_0
     move-exception p1
 
     .line 58
-    goto :goto_3e
+    goto :goto_1
 
     .line 59
-    :catch_3a
+    :catch_1
     move-exception p1
 
     .line 60
-    goto :goto_42
+    goto :goto_2
 
     .line 61
-    :catch_3c
+    :catch_2
     move-exception p1
 
     .line 62
-    goto :goto_46
+    goto :goto_3
 
     .line 63
-    :goto_3e
+    :goto_1
     invoke-static {p1, v0}, Llibs/t22;->h(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 64
@@ -187,7 +187,7 @@
     throw v1
 
     .line 67
-    :goto_42
+    :goto_2
     invoke-static {p1, v0}, Llibs/t22;->h(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 68
@@ -196,7 +196,7 @@
     throw v1
 
     .line 71
-    :goto_46
+    :goto_3
     const-string p2, "InDecrypt"
 
     .line 72
@@ -217,7 +217,7 @@
     return-void
 
     .line 81
-    :cond_50
+    :cond_1
     new-array p1, p6, [B
 
     .line 82
@@ -232,7 +232,7 @@
 
 # virtual methods
 .method public final mark(I)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;
@@ -247,14 +247,14 @@
     move-result v0
 
     .line 7
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     .line 8
     .line 9
     return-void
 
     .line 10
-    :cond_9
+    :cond_0
     iget v0, p0, Llibs/ia1;->Tau:I
 
     .line 11
@@ -273,17 +273,17 @@
     const/4 v2, 0x0
 
     .line 18
-    if-nez v1, :cond_15
+    if-nez v1, :cond_1
 
     .line 19
     .line 20
     const/4 v1, 0x0
 
     .line 21
-    goto :goto_19
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_1
     array-length v1, v1
 
     .line 23
@@ -294,7 +294,7 @@
     sub-int/2addr v1, v3
 
     .line 26
-    :goto_19
+    :goto_0
     sub-int/2addr p1, v1
 
     .line 27
@@ -361,7 +361,7 @@
 
     .line 57
     .line 58
-    if-eqz p1, :cond_45
+    if-eqz p1, :cond_2
 
     .line 59
     .line 60
@@ -387,7 +387,7 @@
     return-void
 
     .line 70
-    :cond_45
+    :cond_2
     const/4 p1, 0x0
 
     .line 71
@@ -399,7 +399,7 @@
 .end method
 
 .method public final markSupported()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;
@@ -418,7 +418,7 @@
 .end method
 
 .method public final read()I
-    .registers 5
+    .locals 4
 
     const/4 v0, 0x1
 
@@ -432,7 +432,7 @@
 
     move-result v3
 
-    if-ne v3, v0, :cond_f
+    if-ne v3, v0, :cond_0
 
     .line 334
     aget-byte v0, v1, v2
@@ -441,14 +441,14 @@
 
     return v0
 
-    :cond_f
+    :cond_0
     const/4 v0, -0x1
 
     return v0
 .end method
 
 .method public final read([B)I
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -463,7 +463,7 @@
 .end method
 
 .method public final read([BII)I
-    .registers 20
+    .locals 16
 
     .line 1
     move-object/from16 v1, p0
@@ -484,8 +484,8 @@
     const/4 v5, 0x0
 
     .line 9
-    :goto_8
-    if-ge v5, v2, :cond_149
+    :goto_0
+    if-ge v5, v2, :cond_e
 
     .line 10
     .line 11
@@ -493,7 +493,7 @@
 
     .line 12
     .line 13
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 14
     .line 15
@@ -504,11 +504,11 @@
     array-length v0, v0
 
     .line 18
-    if-ne v6, v0, :cond_12b
+    if-ne v6, v0, :cond_d
 
     .line 19
     .line 20
-    :cond_13
+    :cond_0
     iget v0, v1, Llibs/ia1;->Tau:I
 
     .line 21
@@ -520,13 +520,13 @@
     const/4 v7, 0x0
 
     .line 25
-    :cond_18
-    :goto_18
+    :cond_1
+    :goto_1
     iget v8, v1, Llibs/ia1;->Tau:I
 
     .line 26
     .line 27
-    if-ge v7, v8, :cond_2c
+    if-ge v7, v8, :cond_3
 
     .line 28
     .line 29
@@ -545,29 +545,29 @@
     move-result v8
 
     .line 36
-    if-lez v8, :cond_27
+    if-lez v8, :cond_2
 
     .line 37
     .line 38
     add-int/2addr v7, v8
 
     .line 39
-    goto :goto_18
+    goto :goto_1
 
     .line 40
-    :cond_27
-    if-gez v8, :cond_18
+    :cond_2
+    if-gez v8, :cond_1
 
     .line 41
     .line 42
-    if-nez v7, :cond_2c
+    if-nez v7, :cond_3
 
     .line 43
     .line 44
     const/4 v7, -0x1
 
     .line 45
-    :cond_2c
+    :cond_3
     iget v8, v1, Llibs/ia1;->Tau:I
 
     .line 46
@@ -576,7 +576,7 @@
 
     .line 48
     .line 49
-    if-ne v7, v8, :cond_9d
+    if-ne v7, v8, :cond_8
 
     .line 50
     .line 51
@@ -588,15 +588,15 @@
 
     .line 54
     .line 55
-    if-eqz v8, :cond_3f
+    if-eqz v8, :cond_4
 
     .line 56
     .line 57
     const/4 v8, 0x0
 
     .line 58
-    :goto_39
-    if-ge v8, v0, :cond_44
+    :goto_2
+    if-ge v8, v0, :cond_6
 
     .line 59
     .line 60
@@ -604,74 +604,74 @@
 
     .line 61
     .line 62
-    if-eqz v13, :cond_41
+    if-eqz v13, :cond_5
 
     .line 63
     .line 64
-    :cond_3f
+    :cond_4
     const/4 v8, 0x0
 
     .line 65
-    goto :goto_46
+    goto :goto_3
 
     .line 66
-    :cond_41
+    :cond_5
     add-int/lit8 v8, v8, 0x1
 
     .line 67
     .line 68
-    goto :goto_39
+    goto :goto_2
 
     .line 69
-    :cond_44
+    :cond_6
     const/4 v0, 0x1
 
     .line 70
     const/4 v8, 0x1
 
     .line 71
-    :goto_46
-    if-eqz v8, :cond_53
+    :goto_3
+    if-eqz v8, :cond_7
 
     .line 72
     .line 73
-    :try_start_48
+    :try_start_0
     iput-object v6, v1, Llibs/ia1;->Psi:[B
 
     .line 74
     .line 75
-    goto :goto_93
+    goto :goto_8
 
     .line 76
-    :catch_4b
+    :catch_0
     move-exception v0
 
     .line 77
-    goto :goto_74
+    goto :goto_4
 
     .line 78
-    :catch_4d
+    :catch_1
     move-exception v0
 
     .line 79
-    goto :goto_7a
+    goto :goto_5
 
     .line 80
-    :catch_4f
+    :catch_2
     move-exception v0
 
     .line 81
-    goto :goto_80
+    goto :goto_6
 
     .line 82
-    :catch_51
+    :catch_3
     move-exception v0
 
     .line 83
-    goto :goto_8a
+    goto :goto_7
 
     .line 84
-    :cond_53
+    :cond_7
     iget-object v0, v1, Llibs/ia1;->Pi:Llibs/oi0;
 
     .line 85
@@ -735,18 +735,18 @@
 
     .line 114
     iput-object v0, v1, Llibs/ia1;->Psi:[B
-    :try_end_73
-    .catch Llibs/ni0; {:try_start_48 .. :try_end_73} :catch_51
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_48 .. :try_end_73} :catch_4f
-    .catch Ljavax/crypto/IllegalBlockSizeException; {:try_start_48 .. :try_end_73} :catch_4d
-    .catch Ljavax/crypto/BadPaddingException; {:try_start_48 .. :try_end_73} :catch_4b
+    :try_end_0
+    .catch Llibs/ni0; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljavax/crypto/IllegalBlockSizeException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljavax/crypto/BadPaddingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 115
     .line 116
-    goto :goto_93
+    goto :goto_8
 
     .line 117
-    :goto_74
+    :goto_4
     const-string v2, "Corrupt Data > "
 
     .line 118
@@ -759,7 +759,7 @@
     return v3
 
     .line 123
-    :goto_7a
+    :goto_5
     const-string v2, "Corrupt Data > "
 
     .line 124
@@ -772,7 +772,7 @@
     return v3
 
     .line 129
-    :goto_80
+    :goto_6
     const-string v6, "InDecrypt"
 
     .line 130
@@ -790,10 +790,10 @@
     .line 136
     .line 137
     .line 138
-    goto :goto_93
+    goto :goto_8
 
     .line 139
-    :goto_8a
+    :goto_7
     const-string v6, "InDecrypt"
 
     .line 140
@@ -811,7 +811,7 @@
     .line 146
     .line 147
     .line 148
-    :goto_93
+    :goto_8
     iget v0, v1, Llibs/ia1;->Phi:I
 
     .line 149
@@ -831,19 +831,19 @@
 
     .line 156
     .line 157
-    goto :goto_f0
+    goto :goto_e
 
     .line 158
-    :cond_9d
+    :cond_8
     const/16 v15, 0x8
 
     .line 159
     .line 160
-    if-lez v7, :cond_ef
+    if-lez v7, :cond_9
 
     .line 161
     .line 162
-    :try_start_a1
+    :try_start_1
     iget-object v0, v1, Llibs/ia1;->Pi:Llibs/oi0;
 
     .line 163
@@ -900,46 +900,46 @@
 
     .line 189
     iput-object v0, v1, Llibs/ia1;->Psi:[B
-    :try_end_be
-    .catch Llibs/ni0; {:try_start_a1 .. :try_end_be} :catch_c5
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_a1 .. :try_end_be} :catch_c3
-    .catch Ljavax/crypto/IllegalBlockSizeException; {:try_start_a1 .. :try_end_be} :catch_c1
-    .catch Ljavax/crypto/BadPaddingException; {:try_start_a1 .. :try_end_be} :catch_bf
+    :try_end_1
+    .catch Llibs/ni0; {:try_start_1 .. :try_end_1} :catch_7
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_1 .. :try_end_1} :catch_6
+    .catch Ljavax/crypto/IllegalBlockSizeException; {:try_start_1 .. :try_end_1} :catch_5
+    .catch Ljavax/crypto/BadPaddingException; {:try_start_1 .. :try_end_1} :catch_4
 
     .line 190
     .line 191
-    goto :goto_e6
+    goto :goto_d
 
     .line 192
-    :catch_bf
+    :catch_4
     move-exception v0
 
     .line 193
-    goto :goto_c7
+    goto :goto_9
 
     .line 194
-    :catch_c1
+    :catch_5
     move-exception v0
 
     .line 195
-    goto :goto_cd
+    goto :goto_a
 
     .line 196
-    :catch_c3
+    :catch_6
     move-exception v0
 
     .line 197
-    goto :goto_d3
+    goto :goto_b
 
     .line 198
-    :catch_c5
+    :catch_7
     move-exception v0
 
     .line 199
-    goto :goto_dd
+    goto :goto_c
 
     .line 200
-    :goto_c7
+    :goto_9
     const-string v2, "Corrupt Data > "
 
     .line 201
@@ -952,7 +952,7 @@
     return v3
 
     .line 206
-    :goto_cd
+    :goto_a
     const-string v2, "Corrupt Data > "
 
     .line 207
@@ -965,7 +965,7 @@
     return v3
 
     .line 212
-    :goto_d3
+    :goto_b
     const-string v6, "InDecrypt"
 
     .line 213
@@ -983,10 +983,10 @@
     .line 219
     .line 220
     .line 221
-    goto :goto_e6
+    goto :goto_d
 
     .line 222
-    :goto_dd
+    :goto_c
     const-string v6, "InDecrypt"
 
     .line 223
@@ -1004,7 +1004,7 @@
     .line 229
     .line 230
     .line 231
-    :goto_e6
+    :goto_d
     iget v0, v1, Llibs/ia1;->Phi:I
 
     .line 232
@@ -1024,12 +1024,12 @@
 
     .line 239
     .line 240
-    :cond_ef
+    :cond_9
     const/4 v8, 0x0
 
     .line 241
-    :goto_f0
-    if-lez v7, :cond_125
+    :goto_e
+    if-lez v7, :cond_b
 
     .line 242
     .line 243
@@ -1037,11 +1037,11 @@
 
     .line 244
     .line 245
-    if-lez v0, :cond_125
+    if-lez v0, :cond_b
 
     .line 246
     .line 247
-    if-nez v8, :cond_125
+    if-nez v8, :cond_b
 
     .line 248
     .line 249
@@ -1068,7 +1068,7 @@
     monitor-enter v9
 
     .line 260
-    :try_start_103
+    :try_start_2
     array-length v10, v6
 
     .line 261
@@ -1081,8 +1081,8 @@
     .line 264
     .line 265
     move-result-object v0
-    :try_end_109
-    .catchall {:try_start_103 .. :try_end_109} :catchall_122
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 266
     monitor-exit v9
@@ -1091,12 +1091,12 @@
     const/4 v6, 0x0
 
     .line 268
-    :goto_10b
+    :goto_f
     iget v8, v1, Llibs/ia1;->Upsilon:I
 
     .line 269
     .line 270
-    if-ge v6, v8, :cond_125
+    if-ge v6, v8, :cond_b
 
     .line 271
     .line 272
@@ -1116,7 +1116,7 @@
 
     .line 279
     .line 280
-    if-ne v8, v9, :cond_11c
+    if-ne v8, v9, :cond_a
 
     .line 281
     .line 282
@@ -1124,10 +1124,10 @@
 
     .line 283
     .line 284
-    goto :goto_10b
+    goto :goto_f
 
     .line 285
-    :cond_11c
+    :cond_a
     const-string v0, "Block MAC mismatch"
 
     .line 286
@@ -1140,36 +1140,36 @@
     return v3
 
     .line 291
-    :catchall_122
+    :catchall_0
     move-exception v0
 
     .line 292
-    :try_start_123
+    :try_start_3
     monitor-exit v9
-    :try_end_124
-    .catchall {:try_start_123 .. :try_end_124} :catchall_122
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 293
     throw v0
 
     .line 294
-    :cond_125
-    if-gez v7, :cond_12b
+    :cond_b
+    if-gez v7, :cond_d
 
     .line 295
     .line 296
-    if-nez v5, :cond_12a
+    if-nez v5, :cond_c
 
     .line 297
     .line 298
     const/4 v5, -0x1
 
     .line 299
-    :cond_12a
+    :cond_c
     return v5
 
     .line 300
-    :cond_12b
+    :cond_d
     iget-object v0, v1, Llibs/ia1;->Psi:[B
 
     .line 301
@@ -1230,16 +1230,16 @@
     add-int/2addr v4, v0
 
     .line 328
-    goto/16 :goto_8
+    goto/16 :goto_0
 
     .line 329
     .line 330
-    :cond_149
+    :cond_e
     return v5
 .end method
 
 .method public final reset()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;
@@ -1254,7 +1254,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_1
 
     .line 8
     .line 9
@@ -1287,7 +1287,7 @@
 
     .line 23
     .line 24
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_0
 
     .line 25
     .line 26
@@ -1316,7 +1316,7 @@
     return-void
 
     .line 37
-    :cond_24
+    :cond_0
     const/4 v0, 0x0
 
     .line 38
@@ -1327,7 +1327,7 @@
     return-void
 
     .line 41
-    :cond_28
+    :cond_1
     const-string v0, "Mark not supported"
 
     .line 42
@@ -1341,7 +1341,7 @@
 .end method
 
 .method public final skip(J)J
-    .registers 11
+    .locals 8
 
     .line 1
     const-wide/16 v0, 0x0
@@ -1352,7 +1352,7 @@
 
     .line 4
     .line 5
-    if-ltz v2, :cond_26
+    if-ltz v2, :cond_3
 
     .line 6
     .line 7
@@ -1364,12 +1364,12 @@
 
     .line 10
     .line 11
-    :cond_a
+    :cond_0
     cmp-long v4, v0, p1
 
     .line 12
     .line 13
-    if-gez v4, :cond_25
+    if-gez v4, :cond_2
 
     .line 14
     .line 15
@@ -1411,7 +1411,7 @@
     const/4 v6, -0x1
 
     .line 31
-    if-ne v4, v6, :cond_23
+    if-ne v4, v6, :cond_1
 
     .line 32
     .line 33
@@ -1422,16 +1422,16 @@
     return-wide p1
 
     .line 36
-    :cond_23
-    if-ge v4, v5, :cond_a
+    :cond_1
+    if-ge v4, v5, :cond_0
 
     .line 37
     .line 38
-    :cond_25
+    :cond_2
     return-wide v0
 
     .line 39
-    :cond_26
+    :cond_3
     const-string p1, "Negative skip count"
 
     .line 40

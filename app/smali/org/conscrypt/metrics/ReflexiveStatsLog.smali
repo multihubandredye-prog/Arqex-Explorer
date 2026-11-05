@@ -27,7 +27,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     .line 1
     invoke-static {}, Lorg/conscrypt/metrics/ReflexiveStatsLog;->initStatsLogClass()Ljava/lang/Class;
@@ -89,7 +89,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -101,7 +101,7 @@
 .end method
 
 .method private static initStatsEventClass()Ljava/lang/Class;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -113,15 +113,15 @@
     .line 1
     :try_start_0
     const-class v0, Llibs/mp;
-    :try_end_2
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_2} :catch_3
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 2
     .line 3
     return-object v0
 
     .line 4
-    :catch_3
+    :catch_0
     const/4 v0, 0x0
 
     .line 5
@@ -129,7 +129,7 @@
 .end method
 
 .method private static initStatsLogClass()Ljava/lang/Class;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -150,14 +150,14 @@
     .line 5
     .line 6
     move-result-object v0
-    :try_end_6
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 7
     return-object v0
 
     .line 8
-    :catch_7
+    :catch_0
     const/4 v0, 0x0
 
     .line 9
@@ -165,7 +165,7 @@
 .end method
 
 .method public static write(Lorg/conscrypt/metrics/ReflexiveStatsEvent;)V
-    .registers 4
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/metrics/ReflexiveStatsEvent;->getStatsEvent()Ljava/lang/Object;
@@ -176,7 +176,7 @@
     move-result-object p0
 
     .line 5
-    if-eqz p0, :cond_11
+    if-eqz p0, :cond_0
 
     .line 6
     .line 7
@@ -203,6 +203,6 @@
     .line 16
     .line 17
     .line 18
-    :cond_11
+    :cond_0
     return-void
 .end method

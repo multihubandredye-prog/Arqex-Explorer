@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -47,14 +47,14 @@
 
 # virtual methods
 .method public final a(ZLlibs/et;)V
-    .registers 9
+    .locals 6
 
     .line 1
     instance-of v0, p2, Llibs/hh1;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_4a
+    if-eqz v0, :cond_3
 
     .line 4
     .line 5
@@ -77,21 +77,21 @@
 
     .line 13
     .line 14
-    if-eq v0, v2, :cond_19
+    if-eq v0, v2, :cond_1
 
     .line 15
     .line 16
     array-length v0, p2
 
     .line 17
-    if-ne v0, v1, :cond_13
+    if-ne v0, v1, :cond_0
 
     .line 18
     .line 19
-    goto :goto_19
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     const-string p1, "key size must be 16 or 24 bytes."
 
     .line 21
@@ -104,8 +104,8 @@
     return-void
 
     .line 26
-    :cond_19
-    :goto_19
+    :cond_1
+    :goto_0
     iput-boolean p1, p0, Llibs/m30;->Three:Z
 
     .line 27
@@ -166,7 +166,7 @@
     array-length v3, p2
 
     .line 56
-    if-ne v3, v2, :cond_45
+    if-ne v3, v2, :cond_2
 
     .line 57
     .line 58
@@ -194,7 +194,7 @@
     return-void
 
     .line 70
-    :cond_45
+    :cond_2
     iget-object p1, p0, Llibs/m30;->Omega:[I
 
     .line 71
@@ -206,7 +206,7 @@
     return-void
 
     .line 75
-    :cond_4a
+    :cond_3
     const-string p1, "invalid parameter passed to DESede init - "
 
     .line 76
@@ -228,7 +228,7 @@
 .end method
 
 .method public final b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "DESede"
@@ -239,7 +239,7 @@
 .end method
 
 .method public final i()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x8
@@ -250,7 +250,7 @@
 .end method
 
 .method public final r(II[B[B)I
-    .registers 10
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/m30;->Omega:[I
@@ -260,7 +260,7 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_41
+    if-eqz v0, :cond_3
 
     .line 5
     .line 6
@@ -271,7 +271,7 @@
     array-length v3, p3
 
     .line 9
-    if-gt v2, v3, :cond_3b
+    if-gt v2, v3, :cond_2
 
     .line 10
     .line 11
@@ -282,7 +282,7 @@
     array-length v3, p4
 
     .line 14
-    if-gt v2, v3, :cond_35
+    if-gt v2, v3, :cond_1
 
     .line 15
     .line 16
@@ -298,7 +298,7 @@
 
     .line 21
     .line 22
-    if-eqz v4, :cond_25
+    if-eqz v4, :cond_0
 
     .line 23
     .line 24
@@ -328,7 +328,7 @@
     return v2
 
     .line 38
-    :cond_25
+    :cond_0
     iget-object v0, p0, Llibs/m30;->Two:[I
 
     .line 39
@@ -359,7 +359,7 @@
     return v2
 
     .line 54
-    :cond_35
+    :cond_1
     const-string p1, "output buffer too short"
 
     .line 55
@@ -372,7 +372,7 @@
     return v1
 
     .line 60
-    :cond_3b
+    :cond_2
     const-string p1, "input buffer too short"
 
     .line 61
@@ -385,7 +385,7 @@
     return v1
 
     .line 66
-    :cond_41
+    :cond_3
     const-string p1, "DESede engine not initialised"
 
     .line 67
@@ -399,7 +399,7 @@
 .end method
 
 .method public final reset()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void

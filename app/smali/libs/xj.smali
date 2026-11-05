@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-string v0, "jcifs.smb.maxBuffers"
@@ -55,7 +55,7 @@
 .end method
 
 .method public static a()[B
-    .registers 5
+    .locals 5
 
     .line 1
     sget-object v0, Llibs/xj;->b:[Ljava/lang/Object;
@@ -65,24 +65,24 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     sget v1, Llibs/xj;->c:I
 
     .line 5
     .line 6
-    if-lez v1, :cond_24
+    if-lez v1, :cond_1
 
     .line 7
     .line 8
     const/4 v1, 0x0
 
     .line 9
-    :goto_8
+    :goto_0
     sget v2, Llibs/xj;->a:I
 
     .line 10
     .line 11
-    if-ge v1, v2, :cond_24
+    if-ge v1, v2, :cond_1
 
     .line 12
     .line 13
@@ -94,7 +94,7 @@
 
     .line 16
     .line 17
-    if-eqz v3, :cond_21
+    if-eqz v3, :cond_0
 
     .line 18
     .line 19
@@ -127,22 +127,22 @@
     return-object v3
 
     .line 32
-    :catchall_1f
+    :catchall_0
     move-exception v1
 
     .line 33
-    goto :goto_2b
+    goto :goto_1
 
     .line 34
-    :cond_21
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
     .line 35
     .line 36
-    goto :goto_8
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_1
     const v1, 0xffff
 
     .line 38
@@ -158,25 +158,25 @@
     return-object v1
 
     .line 44
-    :goto_2b
+    :goto_1
     monitor-exit v0
-    :try_end_2c
-    .catchall {:try_start_3 .. :try_end_2c} :catchall_1f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 45
-    goto :goto_2e
+    goto :goto_3
 
     .line 46
-    :goto_2d
+    :goto_2
     throw v1
 
     .line 47
-    :goto_2e
-    goto :goto_2d
+    :goto_3
+    goto :goto_2
 .end method
 
 .method public static b(Llibs/bc3;Llibs/cc3;)V
-    .registers 4
+    .locals 2
 
     .line 1
     sget-object v0, Llibs/xj;->b:[Ljava/lang/Object;
@@ -186,7 +186,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     invoke-static {}, Llibs/xj;->a()[B
 
     .line 5
@@ -217,20 +217,20 @@
     return-void
 
     .line 18
-    :catchall_11
+    :catchall_0
     move-exception p0
 
     .line 19
     monitor-exit v0
-    :try_end_13
-    .catchall {:try_start_3 .. :try_end_13} :catchall_11
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 20
     throw p0
 .end method
 
 .method public static c([B)V
-    .registers 5
+    .locals 4
 
     .line 1
     sget-object v0, Llibs/xj;->b:[Ljava/lang/Object;
@@ -240,7 +240,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     sget v1, Llibs/xj;->c:I
 
     .line 5
@@ -249,19 +249,19 @@
 
     .line 7
     .line 8
-    if-ge v1, v2, :cond_23
+    if-ge v1, v2, :cond_1
 
     .line 9
     .line 10
     const/4 v1, 0x0
 
     .line 11
-    :goto_a
+    :goto_0
     sget v2, Llibs/xj;->a:I
 
     .line 12
     .line 13
-    if-ge v1, v2, :cond_23
+    if-ge v1, v2, :cond_1
 
     .line 14
     .line 15
@@ -273,7 +273,7 @@
 
     .line 18
     .line 19
-    if-nez v3, :cond_20
+    if-nez v3, :cond_0
 
     .line 20
     .line 21
@@ -299,41 +299,41 @@
     return-void
 
     .line 31
-    :catchall_1e
+    :catchall_0
     move-exception p0
 
     .line 32
-    goto :goto_25
+    goto :goto_1
 
     .line 33
-    :cond_20
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
     .line 34
     .line 35
-    goto :goto_a
+    goto :goto_0
 
     .line 36
-    :cond_23
+    :cond_1
     monitor-exit v0
 
     .line 37
     return-void
 
     .line 38
-    :goto_25
+    :goto_1
     monitor-exit v0
-    :try_end_26
-    .catchall {:try_start_3 .. :try_end_26} :catchall_1e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 39
-    goto :goto_28
+    goto :goto_3
 
     .line 40
-    :goto_27
+    :goto_2
     throw p0
 
     .line 41
-    :goto_28
-    goto :goto_27
+    :goto_3
+    goto :goto_2
 .end method

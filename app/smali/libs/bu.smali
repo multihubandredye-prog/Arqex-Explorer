@@ -11,7 +11,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/cu;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/bu;->a:B
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final a(JJ)Z
-    .registers 25
+    .locals 20
 
     .line 1
     move-object/from16 v0, p0
@@ -73,7 +73,7 @@
     const/4 v11, 0x0
 
     .line 18
-    packed-switch v1, :pswitch_data_88
+    packed-switch v1, :pswitch_data_0
 
     .line 19
     .line 20
@@ -91,15 +91,15 @@
     move-result v1
 
     .line 28
-    if-ge v1, v8, :cond_48
+    if-ge v1, v8, :cond_3
 
     .line 29
     .line 30
     const/4 v1, 0x0
 
     .line 31
-    :goto_1e
-    if-ge v1, v8, :cond_2d
+    :goto_0
+    if-ge v1, v8, :cond_1
 
     .line 32
     .line 33
@@ -115,26 +115,26 @@
 
     .line 38
     .line 39
-    if-nez v10, :cond_2a
+    if-nez v10, :cond_0
 
     .line 40
     .line 41
     move v3, v1
 
     .line 42
-    goto :goto_2d
+    goto :goto_1
 
     .line 43
-    :cond_2a
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
     .line 44
     .line 45
-    goto :goto_1e
+    goto :goto_0
 
     .line 46
-    :cond_2d
-    :goto_2d
+    :cond_1
+    :goto_1
     int-to-long v3, v3
 
     .line 47
@@ -174,32 +174,32 @@
     move-result v1
 
     .line 65
-    if-eqz v1, :cond_44
+    if-eqz v1, :cond_2
 
     .line 66
     .line 67
-    :goto_42
+    :goto_2
     const/4 v10, 0x0
 
     .line 68
-    goto :goto_48
+    goto :goto_3
 
     .line 69
-    :cond_44
+    :cond_2
     invoke-static {v2}, Llibs/ic0;->t(Ljava/lang/String;)V
 
     .line 70
     .line 71
     .line 72
-    goto :goto_42
+    goto :goto_2
 
     .line 73
-    :cond_48
-    :goto_48
+    :cond_3
+    :goto_3
     return v10
 
     .line 74
-    :pswitch_49
+    :pswitch_0
     invoke-static/range {p3 .. p4}, Ljava/lang/Long;->bitCount(J)I
 
     .line 75
@@ -208,7 +208,7 @@
     move-result v1
 
     .line 78
-    if-ge v1, v8, :cond_80
+    if-ge v1, v8, :cond_7
 
     .line 79
     .line 80
@@ -220,15 +220,15 @@
 
     .line 83
     .line 84
-    if-gez v14, :cond_80
+    if-gez v14, :cond_7
 
     .line 85
     .line 86
     const/4 v12, 0x0
 
     .line 87
-    :goto_56
-    if-ge v12, v8, :cond_65
+    :goto_4
+    if-ge v12, v8, :cond_5
 
     .line 88
     .line 89
@@ -244,26 +244,26 @@
 
     .line 94
     .line 95
-    if-nez v15, :cond_62
+    if-nez v15, :cond_4
 
     .line 96
     .line 97
     move v3, v12
 
     .line 98
-    goto :goto_65
+    goto :goto_5
 
     .line 99
-    :cond_62
+    :cond_4
     add-int/lit8 v12, v12, 0x1
 
     .line 100
     .line 101
-    goto :goto_56
+    goto :goto_4
 
     .line 102
-    :cond_65
-    :goto_65
+    :cond_5
+    :goto_5
     int-to-long v3, v3
 
     .line 103
@@ -303,14 +303,14 @@
     move-result v3
 
     .line 121
-    if-eqz v3, :cond_7b
+    if-eqz v3, :cond_6
 
     .line 122
     .line 123
-    goto :goto_80
+    goto :goto_6
 
     .line 124
-    :cond_7b
+    :cond_6
     invoke-static {v2}, Llibs/ic0;->t(Ljava/lang/String;)V
 
     .line 125
@@ -319,11 +319,11 @@
     const/4 v10, 0x0
 
     .line 128
-    goto :goto_86
+    goto :goto_7
 
     .line 129
-    :cond_80
-    :goto_80
+    :cond_7
+    :goto_6
     iget-wide v2, v9, Llibs/cu;->a:J
 
     .line 130
@@ -338,15 +338,15 @@
 
     .line 134
     .line 135
-    :goto_86
+    :goto_7
     return v10
 
     .line 136
     nop
 
     .line 137
-    :pswitch_data_88
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_49
+        :pswitch_0
     .end packed-switch
 .end method

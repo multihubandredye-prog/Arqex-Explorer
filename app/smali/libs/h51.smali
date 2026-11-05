@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/yc;-><init>()V
@@ -23,14 +23,14 @@
 
 # virtual methods
 .method public final b(Ljava/lang/Class;)Ljava/security/spec/AlgorithmParameterSpec;
-    .registers 3
+    .locals 1
 
     .line 1
     const-class v0, Ljavax/crypto/spec/IvParameterSpec;
 
     .line 2
     .line 3
-    if-ne p1, v0, :cond_c
+    if-ne p1, v0, :cond_0
 
     .line 4
     .line 5
@@ -50,7 +50,7 @@
     return-object p1
 
     .line 13
-    :cond_c
+    :cond_0
     const-string p1, "unknown parameter spec passed to IV parameters object."
 
     .line 14
@@ -67,7 +67,7 @@
 .end method
 
 .method public final engineGetEncoded()[B
-    .registers 2
+    .locals 1
 
     .line 42
     const-string v0, "ASN.1"
@@ -80,7 +80,7 @@
 .end method
 
 .method public final engineGetEncoded(Ljava/lang/String;)[B
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-static {p1}, Llibs/yc;->a(Ljava/lang/String;)Z
@@ -95,7 +95,7 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -127,7 +127,7 @@
     return-object p1
 
     .line 23
-    :cond_16
+    :cond_0
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     .line 24
@@ -136,7 +136,7 @@
     move-result p1
 
     .line 27
-    if-eqz p1, :cond_27
+    if-eqz p1, :cond_1
 
     .line 28
     .line 29
@@ -165,7 +165,7 @@
     return-object v0
 
     .line 40
-    :cond_27
+    :cond_1
     const/4 p1, 0x0
 
     .line 41
@@ -173,12 +173,12 @@
 .end method
 
 .method public final engineInit(Ljava/security/spec/AlgorithmParameterSpec;)V
-    .registers 3
+    .locals 1
 
     .line 67
     instance-of v0, p1, Ljavax/crypto/spec/IvParameterSpec;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 68
     check-cast p1, Ljavax/crypto/spec/IvParameterSpec;
@@ -192,7 +192,7 @@
     return-void
 
     .line 69
-    :cond_d
+    :cond_0
     const-string p1, "IvParameterSpec required to initialise a IV parameters algorithm parameters object"
 
     invoke-static {p1}, Llibs/bf0;->d(Ljava/lang/String;)V
@@ -201,7 +201,7 @@
 .end method
 
 .method public final engineInit([B)V
-    .registers 5
+    .locals 3
 
     .line 65
     array-length v0, p1
@@ -221,7 +221,7 @@
 .end method
 
 .method public final engineInit([BLjava/lang/String;)V
-    .registers 5
+    .locals 2
 
     .line 1
     const-string v0, "RAW"
@@ -236,7 +236,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -248,7 +248,7 @@
     return-void
 
     .line 13
-    :cond_c
+    :cond_0
     const-string v0, "ASN.1"
 
     .line 14
@@ -261,7 +261,7 @@
     move-result p2
 
     .line 19
-    if-eqz p2, :cond_3a
+    if-eqz p2, :cond_3
 
     .line 20
     .line 21
@@ -300,7 +300,7 @@
     const/4 v1, 0x0
 
     .line 38
-    if-ne p2, v0, :cond_2f
+    if-ne p2, v0, :cond_1
 
     .line 39
     .line 40
@@ -319,15 +319,15 @@
 
     .line 46
     .line 47
-    goto :goto_30
+    goto :goto_0
 
     .line 48
-    :cond_2f
+    :cond_1
     move-object p1, v1
 
     .line 49
-    :goto_30
-    if-eqz p1, :cond_36
+    :goto_0
+    if-eqz p1, :cond_2
 
     .line 50
     .line 51
@@ -339,7 +339,7 @@
     move-result-object v1
 
     .line 55
-    :cond_36
+    :cond_2
     invoke-virtual {p0, v1}, Llibs/h51;->engineInit([B)V
 
     .line 56
@@ -348,7 +348,7 @@
     return-void
 
     .line 59
-    :cond_3a
+    :cond_3
     const-string p1, "Unknown parameters format in IV parameters object"
 
     .line 60
@@ -362,7 +362,7 @@
 .end method
 
 .method public final engineToString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "IDEA Parameters"

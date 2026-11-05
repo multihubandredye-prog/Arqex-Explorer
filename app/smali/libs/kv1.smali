@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/view/animation/Interpolator;I)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Landroid/widget/Scroller;-><init>(Landroid/content/Context;Landroid/view/animation/Interpolator;)V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final startScroll(IIII)V
-    .registers 11
+    .locals 6
 
     .line 12
     iget v5, p0, Llibs/kv1;->a:I
@@ -48,7 +48,7 @@
 .end method
 
 .method public final startScroll(IIIII)V
-    .registers 12
+    .locals 6
 
     .line 1
     iget v5, p0, Llibs/kv1;->a:I

@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/w52;Llibs/w52;Llibs/w52;Ljava/util/List;)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public final a()Ljava/util/List;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/m41;->d:Ljava/util/List;
@@ -60,7 +60,7 @@
 .end method
 
 .method public final b(Llibs/Init;Ljava/lang/Object;)Ljava/util/List;
-    .registers 6
+    .locals 3
 
     .line 1
     check-cast p2, Llibs/ed0;
@@ -87,7 +87,7 @@
     move-result v1
 
     .line 13
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     .line 14
     .line 15
@@ -103,10 +103,10 @@
 
     .line 20
     .line 21
-    goto :goto_30
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     iget-object v0, p0, Llibs/m41;->b:Llibs/w52;
 
     .line 23
@@ -119,7 +119,7 @@
     move-result v1
 
     .line 28
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_1
 
     .line 29
     .line 30
@@ -155,15 +155,15 @@
     move-result-object v0
 
     .line 46
-    goto :goto_30
+    goto :goto_0
 
     .line 47
-    :cond_2e
+    :cond_1
     const-string v0, ""
 
     .line 48
     .line 49
-    :goto_30
+    :goto_0
     new-instance v1, Ljava/util/HashMap;
 
     .line 50
@@ -190,7 +190,7 @@
 
     .line 62
     .line 63
-    if-eqz v0, :cond_47
+    if-eqz v0, :cond_2
 
     .line 64
     .line 65
@@ -207,7 +207,7 @@
     .line 70
     .line 71
     .line 72
-    :cond_47
+    :cond_2
     iget-object v0, p0, Llibs/m41;->d:Ljava/util/List;
 
     .line 73

@@ -36,7 +36,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const/16 v0, 0x12
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    fill-array-data v0, :array_28
+    fill-array-data v0, :array_0
 
     .line 6
     .line 7
@@ -64,7 +64,7 @@
 
     .line 13
     .line 14
-    fill-array-data v1, :array_50
+    fill-array-data v1, :array_1
 
     .line 15
     .line 16
@@ -77,7 +77,7 @@
 
     .line 20
     .line 21
-    fill-array-data v1, :array_254
+    fill-array-data v1, :array_2
 
     .line 22
     .line 23
@@ -90,7 +90,7 @@
 
     .line 27
     .line 28
-    fill-array-data v1, :array_458
+    fill-array-data v1, :array_3
 
     .line 29
     .line 30
@@ -103,7 +103,7 @@
 
     .line 34
     .line 35
-    fill-array-data v0, :array_65c
+    fill-array-data v0, :array_4
 
     .line 36
     .line 37
@@ -115,7 +115,7 @@
     return-void
 
     .line 41
-    :array_28
+    :array_0
     .array-data 4
         0x243f6a88
         -0x7a5cf72d
@@ -177,7 +177,7 @@
     .line 79
     .line 80
     .line 81
-    :array_50
+    :array_1
     .array-data 4
         -0x2ecef45a
         -0x67204a54
@@ -305,7 +305,7 @@
         0x3b52ec6f
         0x6dfc511f
         -0x64cf6ad4
-        -0x337ebabc    # -6.7775008E7f
+        -0x337ebabc    # -6.777501E7f
         -0x50a142f7
         -0x411c2ffc
         -0x21ccb503
@@ -469,7 +469,7 @@
     .line 111
     .line 112
     .line 113
-    :array_254
+    :array_2
     .array-data 4
         0x4b7a70e9    # 1.6412905E7f
         -0x4a4cd6bc
@@ -493,9 +493,9 @@
         -0x6608c02a
         -0x5e2d63f9
         -0x1017cf0b
-        0x4d2d38e6    # 1.81636704E8f
+        0x4d2d38e6    # 1.816367E8f
         -0xfdaa23f
-        0x4cdd2086    # 1.15934256E8f
+        0x4cdd2086    # 1.1593426E8f
         -0x7b8f14da
         0x6382e9c6
         0x21ecc5e
@@ -535,7 +535,7 @@
         0x3bea0e2f
         0x3280bba1
         0x183eb331
-        0x4e548b38    # 8.9147341E8f
+        0x4e548b38    # 8.914734E8f
         0x4f6db908    # 3.9883264E9f
         0x6f420d03
         -0x9f5fb41
@@ -588,7 +588,7 @@
         0x2965dcb9
         -0x6618e2f1
         -0x7fc1762a
-        0x5266c825    # 2.47800087E11f
+        0x5266c825    # 2.4780009E11f
         0x2e4cc978
         -0x63ef4c96
         -0x39eaf146
@@ -729,7 +729,7 @@
         -0x247c5209
     .end array-data
 
-    :array_458
+    :array_3
     .array-data 4
         -0x16c2a598
         -0x6b7ebf09
@@ -742,7 +742,7 @@
         -0x2bf7db8f
         0x3320f46a
         0x43b7d4b7
-        0x500061af    # 8.6155418E9f
+        0x500061af    # 8.615542E9f
         0x1e39f62e
         -0x68dbbaba
         0x14214f74
@@ -797,7 +797,7 @@
         -0x2f696ab5
         0x55a867bc
         -0x5eea65a8
-        -0x3356d69d    # -8.8689432E7f
+        -0x3356d69d    # -8.868943E7f
         -0x661e24cd
         -0x59d5b5aa
         0x3f3125f9
@@ -907,7 +907,7 @@
         -0x421751dc
         0x55464299
         -0x40a7d19f
-        0x4e58f48f    # 9.0997651E8f
+        0x4e58f48f    # 9.099765E8f
         -0xd22025e
         -0xb8b10c8
         -0x7876423e
@@ -943,7 +943,7 @@
         0x573906fe
         -0x5e1d3165
         0x4fcd7f52
-        0x50115e01    # 9.7554278E9f
+        0x50115e01    # 9.755428E9f
         -0x58f97c06
         -0x5ffd4a3c
         0xde6d027
@@ -974,7 +974,7 @@
         -0x12abaa88
         0x8fca5b5
         -0x27c2832d
-        0x4dad0fc4    # 3.62936448E8f
+        0x4dad0fc4    # 3.6293645E8f
         0x1e50ef5e
         -0x4e9e1908
         -0x5d7aeb27
@@ -989,7 +989,7 @@
         0x406000e0    # 3.5000534f
     .end array-data
 
-    :array_65c
+    :array_4
     .array-data 4
         0x3a39ce37
         -0x2c050a31
@@ -999,7 +999,7 @@
         0x4fa33742
         -0x2c7dd8c0
         -0x66436442
-        -0x2aee7163    # -1.00026066E13f
+        -0x2aee7163    # -1.0002607E13f
         -0x40f08ceb
         -0x29d2e382
         -0x38ff3b85
@@ -1014,7 +1014,7 @@
         0x530ff8ee
         0x468dde7d
         -0x2a8cf5e3
-        0x4cd04dc6    # 1.09211184E8f
+        0x4cd04dc6    # 1.0921118E8f
         0x2939bbdb
         -0x5645b9b0
         -0x536ad918
@@ -1086,8 +1086,8 @@
         0x28517711
         -0x3df52608
         -0x5433ae99
-        -0x33526da1    # -9.1001592E7f
-        0x4de81751    # 4.86730272E8f
+        -0x33526da1    # -9.100159E7f
+        0x4de81751    # 4.8673027E8f
         0x3830dc8e
         0x379d5862
         -0x6cdf066f
@@ -1128,7 +1128,7 @@
         -0x78de98f
         -0x50ac82a3
         0x4040cb08
-        0x4eb4e2cc    # 1.51738112E9f
+        0x4eb4e2cc    # 1.5173811E9f
         0x34d2466a
         0x115af84
         -0x1e4ffbd8
@@ -1177,7 +1177,7 @@
         -0x34fc5bbe    # -8627266.0f
         -0x1f1391f2
         0x1698db3b
-        0x4c98a0be    # 8.0020976E7f
+        0x4c98a0be    # 8.002098E7f
         0x3278e964
         -0x60e06ace
         -0x1f2c6d21
@@ -1251,7 +1251,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -1325,7 +1325,7 @@
 .end method
 
 .method public static c(II[B)V
-    .registers 5
+    .locals 2
 
     .line 1
     add-int/lit8 v0, p1, 0x3
@@ -1384,7 +1384,7 @@
 .end method
 
 .method public static d(I[B)I
-    .registers 4
+    .locals 2
 
     .line 1
     aget-byte v0, p1, p0
@@ -1458,14 +1458,14 @@
 
 # virtual methods
 .method public final a(ZLlibs/et;)V
-    .registers 16
+    .locals 13
 
     .line 1
     instance-of v0, p2, Llibs/hh1;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7e
+    if-eqz v0, :cond_3
 
     .line 4
     .line 5
@@ -1570,12 +1570,12 @@
     const/4 v8, 0x0
 
     .line 56
-    :goto_37
+    :goto_0
     const/16 v9, 0xff
 
     .line 57
     .line 58
-    if-ge v7, v6, :cond_58
+    if-ge v7, v6, :cond_2
 
     .line 59
     .line 60
@@ -1585,11 +1585,11 @@
     const/4 v11, 0x0
 
     .line 62
-    :goto_3d
+    :goto_1
     const/4 v12, 0x4
 
     .line 63
-    if-ge v10, v12, :cond_50
+    if-ge v10, v12, :cond_1
 
     .line 64
     .line 65
@@ -1611,29 +1611,29 @@
     or-int/2addr v11, v8
 
     .line 73
-    if-lt v12, p2, :cond_4c
+    if-lt v12, p2, :cond_0
 
     .line 74
     .line 75
     const/4 v8, 0x0
 
     .line 76
-    goto :goto_4d
+    goto :goto_2
 
     .line 77
-    :cond_4c
+    :cond_0
     move v8, v12
 
     .line 78
-    :goto_4d
+    :goto_2
     add-int/lit8 v10, v10, 0x1
 
     .line 79
     .line 80
-    goto :goto_3d
+    goto :goto_1
 
     .line 81
-    :cond_50
+    :cond_1
     aget v9, v2, v7
 
     .line 82
@@ -1649,10 +1649,10 @@
 
     .line 87
     .line 88
-    goto :goto_37
+    goto :goto_0
 
     .line 89
-    :cond_58
+    :cond_2
     invoke-virtual {p0, v0, v0, v2}, Llibs/rg;->f(II[I)V
 
     .line 90
@@ -1725,7 +1725,7 @@
     return-void
 
     .line 127
-    :cond_7e
+    :cond_3
     const-string p1, "invalid parameter passed to Blowfish init - "
 
     .line 128
@@ -1747,7 +1747,7 @@
 .end method
 
 .method public final b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "Blowfish"
@@ -1758,7 +1758,7 @@
 .end method
 
 .method public final e(I)I
-    .registers 5
+    .locals 3
 
     .line 1
     ushr-int/lit8 v0, p1, 0x18
@@ -1830,7 +1830,7 @@
 .end method
 
 .method public final f(II[I)V
-    .registers 12
+    .locals 8
 
     .line 1
     array-length v0, p3
@@ -1842,8 +1842,8 @@
     const/4 v2, 0x0
 
     .line 4
-    :goto_3
-    if-ge v2, v0, :cond_37
+    :goto_0
+    if-ge v2, v0, :cond_1
 
     .line 5
     .line 6
@@ -1861,12 +1861,12 @@
     const/4 v4, 0x1
 
     .line 12
-    :goto_b
+    :goto_1
     const/16 v5, 0x10
 
     .line 13
     .line 14
-    if-ge v4, v5, :cond_24
+    if-ge v4, v5, :cond_0
 
     .line 15
     .line 16
@@ -1914,10 +1914,10 @@
 
     .line 35
     .line 36
-    goto :goto_b
+    goto :goto_1
 
     .line 37
-    :cond_24
+    :cond_0
     const/16 v4, 0x11
 
     .line 38
@@ -1958,15 +1958,15 @@
     move p1, v7
 
     .line 55
-    goto :goto_3
+    goto :goto_0
 
     .line 56
-    :cond_37
+    :cond_1
     return-void
 .end method
 
 .method public final i()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x8
@@ -1977,7 +1977,7 @@
 .end method
 
 .method public final r(II[B[B)I
-    .registers 12
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/rg;->Xi:[B
@@ -1987,7 +1987,7 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_88
+    if-eqz v0, :cond_5
 
     .line 5
     .line 6
@@ -1998,7 +1998,7 @@
     array-length v2, p3
 
     .line 9
-    if-gt v0, v2, :cond_82
+    if-gt v0, v2, :cond_4
 
     .line 10
     .line 11
@@ -2009,7 +2009,7 @@
     array-length v2, p4
 
     .line 14
-    if-gt v0, v2, :cond_7c
+    if-gt v0, v2, :cond_3
 
     .line 15
     .line 16
@@ -2033,7 +2033,7 @@
 
     .line 25
     .line 26
-    if-eqz v0, :cond_4c
+    if-eqz v0, :cond_1
 
     .line 27
     .line 28
@@ -2067,8 +2067,8 @@
     const/4 v0, 0x1
 
     .line 42
-    :goto_29
-    if-ge v0, v3, :cond_40
+    :goto_0
+    if-ge v0, v3, :cond_0
 
     .line 43
     .line 44
@@ -2116,10 +2116,10 @@
 
     .line 63
     .line 64
-    goto :goto_29
+    goto :goto_0
 
     .line 65
-    :cond_40
+    :cond_0
     aget v0, v4, v2
 
     .line 66
@@ -2144,7 +2144,7 @@
     return v5
 
     .line 77
-    :cond_4c
+    :cond_1
     invoke-static {p1, p3}, Llibs/rg;->d(I[B)I
 
     .line 78
@@ -2172,8 +2172,8 @@
     xor-int/2addr p3, v0
 
     .line 90
-    :goto_59
-    if-lez v3, :cond_70
+    :goto_1
+    if-lez v3, :cond_2
 
     .line 91
     .line 92
@@ -2221,10 +2221,10 @@
 
     .line 111
     .line 112
-    goto :goto_59
+    goto :goto_1
 
     .line 113
-    :cond_70
+    :cond_2
     aget v0, v4, v1
 
     .line 114
@@ -2249,7 +2249,7 @@
     return v5
 
     .line 125
-    :cond_7c
+    :cond_3
     const-string p1, "output buffer too short"
 
     .line 126
@@ -2262,7 +2262,7 @@
     return v1
 
     .line 131
-    :cond_82
+    :cond_4
     const-string p1, "input buffer too short"
 
     .line 132
@@ -2275,7 +2275,7 @@
     return v1
 
     .line 137
-    :cond_88
+    :cond_5
     const-string p1, "Blowfish not initialised"
 
     .line 138
@@ -2289,7 +2289,7 @@
 .end method
 
 .method public final reset()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void

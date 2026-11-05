@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
 .end method
 
 .method public static b(Ljava/nio/charset/Charset;Z)Ljava/util/ArrayList;
-    .registers 14
+    .locals 12
 
     .line 1
     new-instance v0, Ljava/util/ArrayList;
@@ -59,7 +59,7 @@
     const/4 v2, 0x0
 
     .line 8
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_0
 
     .line 9
     .line 10
@@ -75,15 +75,15 @@
     move-result-object v3
 
     .line 16
-    goto :goto_11
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     move-object v3, v1
 
     .line 18
-    :goto_11
-    if-eqz p1, :cond_19
+    :goto_0
+    if-eqz p1, :cond_1
 
     .line 19
     .line 20
@@ -99,22 +99,22 @@
     move-result-object v1
 
     .line 26
-    :cond_19
-    if-nez p0, :cond_1d
+    :cond_1
+    if-nez p0, :cond_2
 
     .line 27
     .line 28
     const/4 p1, 0x0
 
     .line 29
-    goto :goto_1e
+    goto :goto_1
 
     .line 30
-    :cond_1d
+    :cond_2
     const/4 p1, -0x1
 
     .line 31
-    :goto_1e
+    :goto_1
     sput p1, Llibs/cj0;->Lambda:I
 
     .line 32
@@ -137,11 +137,11 @@
     const/4 v6, 0x0
 
     .line 41
-    :goto_28
+    :goto_2
     const/4 v7, 0x1
 
     .line 42
-    if-ge v6, v4, :cond_5f
+    if-ge v6, v4, :cond_5
 
     .line 43
     .line 44
@@ -165,11 +165,11 @@
 
     .line 53
     .line 54
-    if-gez v9, :cond_47
+    if-gez v9, :cond_3
 
     .line 55
     .line 56
-    if-eqz p0, :cond_47
+    if-eqz p0, :cond_3
 
     .line 57
     .line 58
@@ -193,7 +193,7 @@
     move-result v9
 
     .line 68
-    if-eqz v9, :cond_47
+    if-eqz v9, :cond_3
 
     .line 69
     .line 70
@@ -201,7 +201,7 @@
 
     .line 71
     .line 72
-    :cond_47
+    :cond_3
     new-instance v9, Llibs/r90;
 
     .line 73
@@ -210,21 +210,21 @@
 
     .line 75
     .line 76
-    if-ne v10, v5, :cond_4f
+    if-ne v10, v5, :cond_4
 
     .line 77
     .line 78
     move-object v10, v3
 
     .line 79
-    goto :goto_50
+    goto :goto_3
 
     .line 80
-    :cond_4f
+    :cond_4
     move-object v10, v1
 
     .line 81
-    :goto_50
+    :goto_3
     iget-object v11, v8, Llibs/cj0;->X:Ljava/lang/String;
 
     .line 82
@@ -251,15 +251,15 @@
 
     .line 94
     .line 95
-    goto :goto_28
+    goto :goto_2
 
     .line 96
-    :cond_5f
+    :cond_5
     sget p0, Llibs/cj0;->Lambda:I
 
     .line 97
     .line 98
-    if-gez p0, :cond_76
+    if-gez p0, :cond_6
 
     .line 99
     .line 100
@@ -300,21 +300,21 @@
     .line 117
     .line 118
     .line 119
-    :cond_76
+    :cond_6
     return-object v0
 .end method
 
 
 # virtual methods
 .method public final a()Ljava/nio/charset/Charset;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/cj0;->Z:Ljava/nio/charset/Charset;
 
     .line 2
     .line 3
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     .line 4
     .line 5
@@ -333,14 +333,14 @@
     const/4 v2, 0x0
 
     .line 12
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     .line 13
     .line 14
     return-object v2
 
     .line 15
-    :cond_e
+    :cond_0
     invoke-static {v0, v2}, Llibs/js;->f(Ljava/lang/String;Ljava/nio/charset/Charset;)Ljava/nio/charset/Charset;
 
     .line 16
@@ -353,12 +353,12 @@
 
     .line 20
     .line 21
-    :cond_14
+    :cond_1
     return-object v0
 .end method
 
 .method public final clone()Ljava/lang/Object;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/cj0;
@@ -382,7 +382,7 @@
 .end method
 
 .method public final compareTo(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
 
     .line 1
     check-cast p1, Llibs/cj0;
@@ -420,14 +420,14 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Llibs/cj0;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -459,7 +459,7 @@
     move-result v0
 
     .line 19
-    if-ne p1, v0, :cond_16
+    if-ne p1, v0, :cond_0
 
     .line 20
     .line 21
@@ -469,7 +469,7 @@
     return p1
 
     .line 23
-    :cond_16
+    :cond_0
     const/4 p1, 0x0
 
     .line 24
@@ -477,7 +477,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/cj0;->Y:Ljava/lang/String;
@@ -496,7 +496,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/cj0;->X:Ljava/lang/String;

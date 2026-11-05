@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,14 +41,14 @@
     move-result v1
 
     .line 14
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_0
 
     .line 15
     .line 16
-    goto :goto_26
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     invoke-virtual {p1, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
     .line 18
@@ -57,7 +57,7 @@
     move-result v1
 
     .line 21
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_1
 
     .line 22
     .line 23
@@ -69,10 +69,10 @@
     move-result-object p2
 
     .line 27
-    goto :goto_26
+    goto :goto_0
 
     .line 28
-    :cond_1b
+    :cond_1
     invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z
 
     .line 29
@@ -81,14 +81,14 @@
     move-result v1
 
     .line 32
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_2
 
     .line 33
     .line 34
-    goto :goto_26
+    goto :goto_0
 
     .line 35
-    :cond_22
+    :cond_2
     invoke-static {p1, v0, p2}, Llibs/sk1;->q(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 36
@@ -97,7 +97,7 @@
     move-result-object p2
 
     .line 39
-    :goto_26
+    :goto_0
     invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     .line 40
@@ -106,7 +106,7 @@
     move-result p1
 
     .line 43
-    if-nez p1, :cond_38
+    if-nez p1, :cond_3
 
     .line 44
     .line 45
@@ -118,7 +118,7 @@
     move-result p1
 
     .line 49
-    if-eqz p1, :cond_38
+    if-eqz p1, :cond_3
 
     .line 50
     .line 51
@@ -136,7 +136,7 @@
     move-result-object p2
 
     .line 57
-    :cond_38
+    :cond_3
     iput-object p2, p0, Llibs/qb2;->c:Ljava/lang/String;
 
     .line 58
@@ -147,10 +147,10 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
-    if-eq p0, p1, :cond_15
+    if-eq p0, p1, :cond_1
 
     .line 2
     .line 3
@@ -158,7 +158,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -182,22 +182,22 @@
     move-result p1
 
     .line 17
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_0
 
     .line 18
     .line 19
-    goto :goto_15
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     const/4 p1, 0x0
 
     .line 21
     return p1
 
     .line 22
-    :cond_15
-    :goto_15
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
     .line 23
@@ -205,7 +205,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/qb2;->c:Ljava/lang/String;
@@ -224,7 +224,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

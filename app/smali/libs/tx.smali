@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,10 +36,10 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
 
     .line 1
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     .line 2
     .line 3
@@ -49,11 +49,11 @@
     return p1
 
     .line 5
-    :cond_4
+    :cond_0
     const/4 v0, 0x0
 
     .line 6
-    if-eqz p1, :cond_22
+    if-eqz p1, :cond_3
 
     .line 7
     .line 8
@@ -69,14 +69,14 @@
     move-result-object v2
 
     .line 14
-    if-eq v1, v2, :cond_10
+    if-eq v1, v2, :cond_1
 
     .line 15
     .line 16
-    goto :goto_22
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_1
     check-cast p1, Llibs/tx;
 
     .line 18
@@ -89,14 +89,14 @@
 
     .line 22
     .line 23
-    if-eq v1, v2, :cond_19
+    if-eq v1, v2, :cond_2
 
     .line 24
     .line 25
     return v0
 
     .line 26
-    :cond_19
+    :cond_2
     iget-object v0, p0, Llibs/tx;->a:Ljava/lang/String;
 
     .line 27
@@ -116,13 +116,13 @@
     return p1
 
     .line 35
-    :cond_22
-    :goto_22
+    :cond_3
+    :goto_0
     return v0
 .end method
 
 .method public final hashCode()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/tx;->a:Ljava/lang/String;

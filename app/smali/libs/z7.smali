@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/z7;->X:B
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final a(Ljava/lang/String;Llibs/r01;Llibs/q01;)Ljava/lang/String;
-    .registers 11
+    .locals 7
 
     .line 1
     iget-byte v0, p0, Llibs/z7;->X:B
@@ -44,7 +44,7 @@
 
     .line 5
     .line 6
-    packed-switch v0, :pswitch_data_b4
+    packed-switch v0, :pswitch_data_0
 
     .line 7
     .line 8
@@ -134,14 +134,14 @@
 
     .line 51
     .line 52
-    if-eqz v5, :cond_36
+    if-eqz v5, :cond_0
 
     .line 53
     .line 54
     move-object v4, v6
 
     .line 55
-    :cond_36
+    :cond_0
     invoke-static {v3, v4, v0}, Llibs/sk1;->q(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 56
@@ -155,7 +155,7 @@
     .line 60
     .line 61
     .line 62
-    :goto_3d
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 63
@@ -164,7 +164,7 @@
     move-result v0
 
     .line 66
-    if-eqz v0, :cond_54
+    if-eqz v0, :cond_1
 
     .line 67
     .line 68
@@ -198,10 +198,10 @@
     .line 82
     .line 83
     .line 84
-    goto :goto_3d
+    goto :goto_0
 
     .line 85
-    :cond_54
+    :cond_1
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 86
@@ -218,7 +218,7 @@
     return-object p1
 
     .line 93
-    :pswitch_5c
+    :pswitch_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 94
@@ -252,7 +252,7 @@
 
     .line 109
     .line 110
-    if-eqz v3, :cond_79
+    if-eqz v3, :cond_2
 
     .line 111
     .line 112
@@ -274,7 +274,7 @@
     .line 120
     .line 121
     .line 122
-    :cond_79
+    :cond_2
     invoke-virtual {p3}, Llibs/q01;->d()Llibs/q01;
 
     .line 123
@@ -308,8 +308,8 @@
     move-result-object p1
 
     .line 139
-    :cond_8a
-    :goto_8a
+    :cond_3
+    :goto_1
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 140
@@ -318,7 +318,7 @@
     move-result v1
 
     .line 143
-    if-eqz v1, :cond_a7
+    if-eqz v1, :cond_4
 
     .line 144
     .line 145
@@ -355,7 +355,7 @@
     move-result v1
 
     .line 162
-    if-eqz v1, :cond_8a
+    if-eqz v1, :cond_3
 
     .line 163
     .line 164
@@ -364,10 +364,10 @@
     .line 165
     .line 166
     .line 167
-    goto :goto_8a
+    goto :goto_1
 
     .line 168
-    :cond_a7
+    :cond_4
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 169
@@ -393,8 +393,8 @@
     return-object p1
 
     .line 181
-    :pswitch_data_b4
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_5c
+        :pswitch_0
     .end packed-switch
 .end method

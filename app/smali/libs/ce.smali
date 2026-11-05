@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;ZII)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,17 +57,17 @@
 
 # virtual methods
 .method public final a(I[B)V
-    .registers 7
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/ce;->d:[B
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     iget v1, p0, Llibs/ce;->b:I
-    :try_end_4
-    .catch Ljavax/crypto/ShortBufferException; {:try_start_2 .. :try_end_4} :catch_12
+    :try_end_0
+    .catch Ljavax/crypto/ShortBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 4
     .line 5
@@ -79,14 +79,14 @@
 
     .line 8
     .line 9
-    if-eq v3, v1, :cond_14
+    if-eq v3, v1, :cond_0
 
     .line 10
     .line 11
     const/4 v1, 0x0
 
     .line 12
-    :try_start_b
+    :try_start_1
     invoke-virtual {v2, v0, v1}, Ljavax/crypto/Mac;->doFinal([BI)V
 
     .line 13
@@ -100,17 +100,17 @@
     return-void
 
     .line 19
-    :catch_12
+    :catch_0
     move-exception p1
 
     .line 20
-    goto :goto_18
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_0
     invoke-virtual {v2, p2, p1}, Ljavax/crypto/Mac;->doFinal([BI)V
-    :try_end_17
-    .catch Ljavax/crypto/ShortBufferException; {:try_start_b .. :try_end_17} :catch_12
+    :try_end_1
+    .catch Ljavax/crypto/ShortBufferException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 22
     .line 23
@@ -118,7 +118,7 @@
     return-void
 
     .line 25
-    :goto_18
+    :goto_0
     invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     .line 26
@@ -136,7 +136,7 @@
 .end method
 
 .method public final b([B)V
-    .registers 5
+    .locals 3
 
     .line 1
     array-length v0, p1
@@ -146,7 +146,7 @@
 
     .line 3
     .line 4
-    if-le v0, v1, :cond_c
+    if-le v0, v1, :cond_0
 
     .line 5
     .line 6
@@ -165,7 +165,7 @@
     move-object p1, v0
 
     .line 13
-    :cond_c
+    :cond_0
     new-instance v0, Ljavax/crypto/spec/SecretKeySpec;
 
     .line 14
@@ -179,7 +179,7 @@
     .line 18
     .line 19
     .line 20
-    :try_start_13
+    :try_start_0
     invoke-static {v1}, Llibs/r43;->e(Ljava/lang/String;)Ljavax/crypto/Mac;
 
     .line 21
@@ -193,8 +193,8 @@
     .line 25
     .line 26
     invoke-virtual {p1, v0}, Ljavax/crypto/Mac;->init(Ljava/security/Key;)V
-    :try_end_1c
-    .catch Ljava/security/GeneralSecurityException; {:try_start_13 .. :try_end_1c} :catch_1d
+    :try_end_0
+    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 27
     .line 28
@@ -202,7 +202,7 @@
     return-void
 
     .line 30
-    :catch_1d
+    :catch_0
     move-exception p1
 
     .line 31
@@ -223,7 +223,7 @@
 .end method
 
 .method public final c(J)V
-    .registers 8
+    .locals 5
 
     .line 1
     const/16 v0, 0x18

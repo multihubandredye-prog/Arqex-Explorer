@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/a40;->X:B
@@ -32,7 +32,7 @@
 
 # virtual methods
 .method public final x()Llibs/v1;
-    .registers 8
+    .locals 7
 
     .line 1
     iget-byte v0, p0, Llibs/a40;->X:B
@@ -45,7 +45,7 @@
     const/4 v2, 0x3
 
     .line 5
-    packed-switch v0, :pswitch_data_50
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -120,7 +120,7 @@
     return-object v5
 
     .line 44
-    :pswitch_2b
+    :pswitch_0
     sget-object v0, Llibs/i40;->a:Ljava/math/BigInteger;
 
     .line 45
@@ -194,8 +194,8 @@
     nop
 
     .line 81
-    :pswitch_data_50
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2b
+        :pswitch_0
     .end packed-switch
 .end method

@@ -5,7 +5,7 @@
 
 # direct methods
 .method public synthetic constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/m0;-><init>()V
@@ -17,7 +17,7 @@
 .end method
 
 .method public static b(Llibs/mx;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 7
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -154,7 +154,7 @@
 .end method
 
 .method public static c(Llibs/mx;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 7
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -291,7 +291,7 @@
 .end method
 
 .method public static d(Llibs/mx;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 6
+    .locals 2
 
     .line 1
     const-string v0, "HMAC"
@@ -412,7 +412,7 @@
 .end method
 
 .method public static e(Ljava/lang/String;Llibs/App;Llibs/mx;)V
-    .registers 5
+    .locals 2
 
     .line 1
     const-string v0, "HMAC"
@@ -493,7 +493,7 @@
 .end method
 
 .method public static f(Llibs/mx;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 6
+    .locals 2
 
     .line 1
     const-string v0, "Mac.POLY1305-"

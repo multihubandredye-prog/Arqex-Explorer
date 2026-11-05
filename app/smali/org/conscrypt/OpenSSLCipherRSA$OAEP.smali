@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(JI)V
-    .registers 5
+    .locals 1
 
     .line 1
     const/4 v0, 0x4
@@ -44,7 +44,7 @@
 .end method
 
 .method private readOAEPParameters(Ljavax/crypto/spec/OAEPParameterSpec;)V
-    .registers 7
+    .locals 5
 
     .line 1
     invoke-virtual {p1}, Ljavax/crypto/spec/OAEPParameterSpec;->getMGFAlgorithm()Ljava/lang/String;
@@ -87,7 +87,7 @@
     move-result v3
 
     .line 21
-    if-nez v3, :cond_1e
+    if-nez v3, :cond_0
 
     .line 22
     .line 23
@@ -103,16 +103,16 @@
     move-result v0
 
     .line 29
-    if-eqz v0, :cond_6c
+    if-eqz v0, :cond_2
 
     .line 30
     .line 31
-    :cond_1e
+    :cond_0
     instance-of v0, v2, Ljava/security/spec/MGF1ParameterSpec;
 
     .line 32
     .line 33
-    if-eqz v0, :cond_6c
+    if-eqz v0, :cond_2
 
     .line 34
     .line 35
@@ -136,7 +136,7 @@
     move-result-object v0
 
     .line 45
-    :try_start_2c
+    :try_start_0
     invoke-static {v0}, Lorg/conscrypt/EvpMdRef;->getEVP_MDByJcaDigestAlgorithmStandardName(Ljava/lang/String;)J
 
     .line 46
@@ -178,8 +178,8 @@
 
     .line 65
     iput-wide v0, p0, Lorg/conscrypt/OpenSSLCipherRSA$OAEP;->mgf1Md:J
-    :try_end_42
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_2c .. :try_end_42} :catch_65
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 66
     .line 67
@@ -211,7 +211,7 @@
     move-result v0
 
     .line 81
-    if-eqz v0, :cond_5f
+    if-eqz v0, :cond_1
 
     .line 82
     .line 83
@@ -219,7 +219,7 @@
 
     .line 84
     .line 85
-    if-eqz v0, :cond_5f
+    if-eqz v0, :cond_1
 
     .line 86
     .line 87
@@ -242,7 +242,7 @@
     return-void
 
     .line 96
-    :cond_5f
+    :cond_1
     const-string p1, "Only PSpecified accepted for PSource"
 
     .line 97
@@ -255,7 +255,7 @@
     return-void
 
     .line 102
-    :catch_65
+    :catch_0
     move-exception p1
 
     .line 103
@@ -271,7 +271,7 @@
     throw v0
 
     .line 109
-    :cond_6c
+    :cond_2
     const-string p1, "Only MGF1 supported as mask generation function"
 
     .line 110
@@ -287,7 +287,7 @@
 
 # virtual methods
 .method public doCryptoInit(Ljava/security/spec/AlgorithmParameterSpec;)V
-    .registers 6
+    .locals 4
 
     .line 1
     new-instance v0, Lorg/conscrypt/NativeRef$EVP_PKEY_CTX;
@@ -302,7 +302,7 @@
 
     .line 6
     .line 7
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
@@ -322,10 +322,10 @@
     move-result-wide v1
 
     .line 17
-    goto :goto_19
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     invoke-virtual {v2}, Lorg/conscrypt/OpenSSLKey;->getNativeRef()Lorg/conscrypt/NativeRef$EVP_PKEY;
 
     .line 19
@@ -342,7 +342,7 @@
     move-result-wide v1
 
     .line 26
-    :goto_19
+    :goto_0
     invoke-direct {v0, v1, v2}, Lorg/conscrypt/NativeRef$EVP_PKEY_CTX;-><init>(J)V
 
     .line 27
@@ -356,7 +356,7 @@
 
     .line 32
     .line 33
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_1
 
     .line 34
     .line 35
@@ -369,7 +369,7 @@
     .line 38
     .line 39
     .line 40
-    :cond_27
+    :cond_1
     iget-object p1, p0, Lorg/conscrypt/OpenSSLCipherRSA$OAEP;->pkeyCtx:Lorg/conscrypt/NativeRef$EVP_PKEY_CTX;
 
     .line 41
@@ -424,14 +424,14 @@
 
     .line 67
     .line 68
-    if-eqz p1, :cond_4f
+    if-eqz p1, :cond_2
 
     .line 69
     .line 70
     array-length v0, p1
 
     .line 71
-    if-lez v0, :cond_4f
+    if-lez v0, :cond_2
 
     .line 72
     .line 73
@@ -448,12 +448,12 @@
     .line 78
     .line 79
     .line 80
-    :cond_4f
+    :cond_2
     return-void
 .end method
 
 .method public doCryptoOperation([B[B)I
-    .registers 10
+    .locals 7
 
     .line 1
     iget-boolean v0, p0, Lorg/conscrypt/OpenSSLCipherRSA;->encrypting:Z
@@ -464,7 +464,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -494,7 +494,7 @@
     return p1
 
     .line 17
-    :cond_10
+    :cond_0
     move-object v4, p1
 
     .line 18
@@ -522,7 +522,7 @@
 .end method
 
 .method public engineGetParameters()Ljava/security/AlgorithmParameters;
-    .registers 10
+    .locals 9
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLCipherRSA;->isInitialized()Z
@@ -536,15 +536,15 @@
     const/4 v1, 0x0
 
     .line 6
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     .line 7
     .line 8
     return-object v1
 
     .line 9
-    :cond_8
-    :try_start_8
+    :cond_0
+    :try_start_0
     const-string v0, "OAEP"
 
     .line 10
@@ -561,7 +561,7 @@
 
     .line 16
     .line 17
-    if-nez v2, :cond_17
+    if-nez v2, :cond_1
 
     .line 18
     .line 19
@@ -569,17 +569,17 @@
 
     .line 20
     .line 21
-    goto :goto_1e
+    goto :goto_0
 
     .line 22
-    :catch_15
+    :catch_0
     move-exception v0
 
     .line 23
-    goto :goto_40
+    goto :goto_1
 
     .line 24
-    :cond_17
+    :cond_1
     new-instance v2, Ljavax/crypto/spec/PSource$PSpecified;
 
     .line 25
@@ -593,7 +593,7 @@
     .line 29
     .line 30
     .line 31
-    :goto_1e
+    :goto_0
     new-instance v3, Ljavax/crypto/spec/OAEPParameterSpec;
 
     .line 32
@@ -641,9 +641,9 @@
     .line 54
     .line 55
     invoke-virtual {v0, v3}, Ljava/security/AlgorithmParameters;->init(Ljava/security/spec/AlgorithmParameterSpec;)V
-    :try_end_39
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_8 .. :try_end_39} :catch_15
-    .catch Ljava/security/spec/InvalidParameterSpecException; {:try_start_8 .. :try_end_39} :catch_3a
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/security/spec/InvalidParameterSpecException; {:try_start_0 .. :try_end_0} :catch_1
 
     .line 56
     .line 57
@@ -651,7 +651,7 @@
     return-object v0
 
     .line 59
-    :catch_3a
+    :catch_1
     const-string v0, "No providers of AlgorithmParameters.OAEP available"
 
     .line 60
@@ -664,7 +664,7 @@
     return-object v1
 
     .line 65
-    :goto_40
+    :goto_1
     new-instance v1, Ljava/lang/AssertionError;
 
     .line 66
@@ -694,14 +694,14 @@
 .end method
 
 .method public engineInit(ILjava/security/Key;Ljava/security/AlgorithmParameters;Ljava/security/SecureRandom;)V
-    .registers 5
+    .locals 0
 
     .line 1
-    if-eqz p3, :cond_14
+    if-eqz p3, :cond_0
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     const-class p4, Ljavax/crypto/spec/OAEPParameterSpec;
 
     .line 4
@@ -715,15 +715,15 @@
 
     .line 9
     check-cast p3, Ljavax/crypto/spec/OAEPParameterSpec;
-    :try_end_a
-    .catch Ljava/security/spec/InvalidParameterSpecException; {:try_start_2 .. :try_end_a} :catch_b
+    :try_end_0
+    .catch Ljava/security/spec/InvalidParameterSpecException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 10
     .line 11
-    goto :goto_15
+    goto :goto_0
 
     .line 12
-    :catch_b
+    :catch_0
     move-exception p1
 
     .line 13
@@ -743,11 +743,11 @@
     throw p2
 
     .line 21
-    :cond_14
+    :cond_0
     const/4 p3, 0x0
 
     .line 22
-    :goto_15
+    :goto_0
     invoke-virtual {p0, p1, p2, p3}, Lorg/conscrypt/OpenSSLCipherRSA$OAEP;->engineInitInternal(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
 
     .line 23
@@ -757,19 +757,19 @@
 .end method
 
 .method public engineInit(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    .registers 5
+    .locals 0
 
-    if-eqz p3, :cond_d
+    if-eqz p3, :cond_1
 
     .line 26
     instance-of p4, p3, Ljavax/crypto/spec/OAEPParameterSpec;
 
-    if-eqz p4, :cond_7
+    if-eqz p4, :cond_0
 
-    goto :goto_d
+    goto :goto_0
 
     .line 27
-    :cond_7
+    :cond_0
     const-string p1, "Only OAEPParameterSpec accepted in OAEP mode"
 
     invoke-static {p1}, Llibs/t22;->i(Ljava/lang/String;)V
@@ -777,62 +777,62 @@
     return-void
 
     .line 28
-    :cond_d
-    :goto_d
+    :cond_1
+    :goto_0
     invoke-virtual {p0, p1, p2, p3}, Lorg/conscrypt/OpenSSLCipherRSA$OAEP;->engineInitInternal(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
 
     return-void
 .end method
 
 .method public engineInitInternal(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
-    .registers 5
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-eq p1, v0, :cond_18
+    if-eq p1, v0, :cond_3
 
     .line 3
     .line 4
     const/4 v0, 0x3
 
     .line 5
-    if-ne p1, v0, :cond_7
+    if-ne p1, v0, :cond_0
 
     .line 6
     .line 7
-    goto :goto_18
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     const/4 v0, 0x2
 
     .line 9
-    if-eq p1, v0, :cond_d
+    if-eq p1, v0, :cond_1
 
     .line 10
     .line 11
     const/4 v0, 0x4
 
     .line 12
-    if-ne p1, v0, :cond_1c
+    if-ne p1, v0, :cond_4
 
     .line 13
     .line 14
-    :cond_d
+    :cond_1
     instance-of v0, p2, Ljava/security/PrivateKey;
 
     .line 15
     .line 16
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_2
 
     .line 17
     .line 18
-    goto :goto_1c
+    goto :goto_1
 
     .line 19
-    :cond_12
+    :cond_2
     const-string p1, "Only private keys may be used to decrypt"
 
     .line 20
@@ -845,18 +845,18 @@
     return-void
 
     .line 25
-    :cond_18
-    :goto_18
+    :cond_3
+    :goto_0
     instance-of v0, p2, Ljava/security/PublicKey;
 
     .line 26
     .line 27
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_5
 
     .line 28
     .line 29
-    :cond_1c
-    :goto_1c
+    :cond_4
+    :goto_1
     invoke-super {p0, p1, p2, p3}, Lorg/conscrypt/OpenSSLCipherRSA;->engineInitInternal(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
 
     .line 30
@@ -865,7 +865,7 @@
     return-void
 
     .line 33
-    :cond_20
+    :cond_5
     const-string p1, "Only public keys may be used to encrypt"
 
     .line 34
@@ -879,7 +879,7 @@
 .end method
 
 .method public engineSetPadding(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -906,7 +906,7 @@
     move-result p1
 
     .line 13
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     .line 14
     .line 15
@@ -920,7 +920,7 @@
     return-void
 
     .line 19
-    :cond_12
+    :cond_0
     new-instance p1, Ljavax/crypto/NoSuchPaddingException;
 
     .line 20
@@ -938,7 +938,7 @@
 .end method
 
 .method public paddedBlockSizeBytes()I
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLCipherRSA;->keySizeBytes()I

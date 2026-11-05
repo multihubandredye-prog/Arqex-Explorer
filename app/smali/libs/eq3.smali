@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/util/BitSet;
@@ -33,12 +33,12 @@
 
     .line 11
     .line 12
-    :goto_b
+    :goto_0
     const/16 v1, 0x7a
 
     .line 13
     .line 14
-    if-gt v0, v1, :cond_17
+    if-gt v0, v1, :cond_0
 
     .line 15
     .line 16
@@ -55,20 +55,20 @@
 
     .line 22
     .line 23
-    goto :goto_b
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_0
     const/16 v0, 0x41
 
     .line 25
     .line 26
-    :goto_19
+    :goto_1
     const/16 v1, 0x5a
 
     .line 27
     .line 28
-    if-gt v0, v1, :cond_25
+    if-gt v0, v1, :cond_1
 
     .line 29
     .line 30
@@ -85,20 +85,20 @@
 
     .line 36
     .line 37
-    goto :goto_19
+    goto :goto_1
 
     .line 38
-    :cond_25
+    :cond_1
     const/16 v0, 0x30
 
     .line 39
     .line 40
-    :goto_27
+    :goto_2
     const/16 v1, 0x39
 
     .line 41
     .line 42
-    if-gt v0, v1, :cond_33
+    if-gt v0, v1, :cond_2
 
     .line 43
     .line 44
@@ -115,10 +115,10 @@
 
     .line 50
     .line 51
-    goto :goto_27
+    goto :goto_2
 
     .line 52
-    :cond_33
+    :cond_2
     sget-object v0, Llibs/eq3;->a:Ljava/util/BitSet;
 
     .line 53
@@ -181,7 +181,7 @@
 .end method
 
 .method public static a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 1
     :try_start_0
@@ -199,15 +199,15 @@
     .line 7
     .line 8
     move-result-object p0
-    :try_end_8
-    .catch Ljava/nio/charset/IllegalCharsetNameException; {:try_start_0 .. :try_end_8} :catch_9
-    .catch Ljava/nio/charset/UnsupportedCharsetException; {:try_start_0 .. :try_end_8} :catch_9
+    :try_end_0
+    .catch Ljava/nio/charset/IllegalCharsetNameException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/nio/charset/UnsupportedCharsetException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 9
     return-object p0
 
     .line 10
-    :catch_9
+    :catch_0
     new-instance p0, Ljava/io/UnsupportedEncodingException;
 
     .line 11
@@ -221,10 +221,10 @@
 .end method
 
 .method public static b(Ljava/lang/String;Ljava/nio/charset/Charset;)Ljava/lang/String;
-    .registers 14
+    .locals 12
 
     .line 1
-    if-eqz p1, :cond_bf
+    if-eqz p1, :cond_9
 
     .line 2
     .line 3
@@ -263,7 +263,7 @@
     const/4 v4, 0x0
 
     .line 20
-    :goto_13
+    :goto_0
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     .line 21
@@ -272,7 +272,7 @@
     move-result v5
 
     .line 24
-    if-ge v3, v5, :cond_b8
+    if-ge v3, v5, :cond_7
 
     .line 25
     .line 26
@@ -299,7 +299,7 @@
     const/4 v8, 0x1
 
     .line 37
-    if-eqz v7, :cond_34
+    if-eqz v7, :cond_1
 
     .line 38
     .line 39
@@ -307,7 +307,7 @@
 
     .line 40
     .line 41
-    if-ne v5, v6, :cond_2d
+    if-ne v5, v6, :cond_0
 
     .line 42
     .line 43
@@ -318,7 +318,7 @@
     const/4 v4, 0x1
 
     .line 46
-    :cond_2d
+    :cond_0
     int-to-char v5, v5
 
     .line 47
@@ -331,10 +331,10 @@
 
     .line 51
     .line 52
-    goto :goto_13
+    goto :goto_0
 
     .line 53
-    :cond_34
+    :cond_1
     invoke-virtual {v1, v5}, Ljava/io/CharArrayWriter;->write(I)V
 
     .line 54
@@ -345,7 +345,7 @@
     .line 57
     .line 58
     .line 59
-    if-lt v5, v4, :cond_5b
+    if-lt v5, v4, :cond_2
 
     .line 60
     .line 61
@@ -354,7 +354,7 @@
     .line 62
     .line 63
     .line 64
-    if-gt v5, v4, :cond_5b
+    if-gt v5, v4, :cond_2
 
     .line 65
     .line 66
@@ -370,7 +370,7 @@
     move-result v5
 
     .line 72
-    if-ge v4, v5, :cond_5b
+    if-ge v4, v5, :cond_2
 
     .line 73
     .line 74
@@ -387,7 +387,7 @@
     .line 79
     .line 80
     .line 81
-    if-lt v5, v7, :cond_5b
+    if-lt v5, v7, :cond_2
 
     .line 82
     .line 83
@@ -396,7 +396,7 @@
     .line 84
     .line 85
     .line 86
-    if-gt v5, v7, :cond_5b
+    if-gt v5, v7, :cond_2
 
     .line 87
     .line 88
@@ -408,7 +408,7 @@
     move v3, v4
 
     .line 92
-    :cond_5b
+    :cond_2
     add-int/2addr v3, v8
 
     .line 93
@@ -420,7 +420,7 @@
     move-result v4
 
     .line 97
-    if-ge v3, v4, :cond_6c
+    if-ge v3, v4, :cond_3
 
     .line 98
     .line 99
@@ -440,11 +440,11 @@
     move-result v4
 
     .line 107
-    if-eqz v4, :cond_34
+    if-eqz v4, :cond_1
 
     .line 108
     .line 109
-    :cond_6c
+    :cond_3
     invoke-virtual {v1}, Ljava/io/CharArrayWriter;->flush()V
 
     .line 110
@@ -481,8 +481,8 @@
     const/4 v6, 0x0
 
     .line 127
-    :goto_7e
-    if-ge v6, v5, :cond_b2
+    :goto_1
+    if-ge v6, v5, :cond_6
 
     .line 128
     .line 129
@@ -527,7 +527,7 @@
     move-result v11
 
     .line 150
-    if-eqz v11, :cond_9a
+    if-eqz v11, :cond_4
 
     .line 151
     .line 152
@@ -538,7 +538,7 @@
     int-to-char v9, v9
 
     .line 155
-    :cond_9a
+    :cond_4
     invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 156
@@ -564,7 +564,7 @@
     move-result v9
 
     .line 168
-    if-eqz v9, :cond_ac
+    if-eqz v9, :cond_5
 
     .line 169
     .line 170
@@ -575,7 +575,7 @@
     int-to-char v7, v7
 
     .line 173
-    :cond_ac
+    :cond_5
     invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 174
@@ -585,10 +585,10 @@
 
     .line 177
     .line 178
-    goto :goto_7e
+    goto :goto_1
 
     .line 179
-    :cond_b2
+    :cond_6
     invoke-virtual {v1}, Ljava/io/CharArrayWriter;->reset()V
 
     .line 180
@@ -597,12 +597,12 @@
     const/4 v4, 0x1
 
     .line 183
-    goto/16 :goto_13
+    goto/16 :goto_0
 
     .line 184
     .line 185
-    :cond_b8
-    if-eqz v4, :cond_be
+    :cond_7
+    if-eqz v4, :cond_8
 
     .line 186
     .line 187
@@ -614,11 +614,11 @@
     move-result-object p0
 
     .line 191
-    :cond_be
+    :cond_8
     return-object p0
 
     .line 192
-    :cond_bf
+    :cond_9
     const-string p0, "charset"
 
     .line 193

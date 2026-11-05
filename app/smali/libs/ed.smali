@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljavax/crypto/CipherSpi;-><init>()V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final engineGetIV()[B
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -46,7 +46,7 @@
 .end method
 
 .method public final engineUnwrap([BLjava/lang/String;I)Ljava/security/Key;
-    .registers 8
+    .locals 4
 
     .line 1
     const-string v0, "Unknown key type "
@@ -57,7 +57,7 @@
 
     .line 4
     .line 5
-    :try_start_4
+    :try_start_0
     array-length v2, p1
 
     .line 6
@@ -70,16 +70,16 @@
     .line 9
     .line 10
     move-result-object p1
-    :try_end_a
-    .catch Llibs/qb1; {:try_start_4 .. :try_end_a} :catch_c4
-    .catch Ljavax/crypto/BadPaddingException; {:try_start_4 .. :try_end_a} :catch_c2
-    .catch Ljavax/crypto/IllegalBlockSizeException; {:try_start_4 .. :try_end_a} :catch_c0
+    :try_end_0
+    .catch Llibs/qb1; {:try_start_0 .. :try_end_0} :catch_6
+    .catch Ljavax/crypto/BadPaddingException; {:try_start_0 .. :try_end_0} :catch_5
+    .catch Ljavax/crypto/IllegalBlockSizeException; {:try_start_0 .. :try_end_0} :catch_4
 
     .line 11
     const/4 v2, 0x3
 
     .line 12
-    if-ne p3, v2, :cond_13
+    if-ne p3, v2, :cond_0
 
     .line 13
     .line 14
@@ -95,7 +95,7 @@
     return-object p3
 
     .line 20
-    :cond_13
+    :cond_0
     const-string v2, ""
 
     .line 21
@@ -111,15 +111,15 @@
     const/4 v3, 0x2
 
     .line 27
-    if-eqz v2, :cond_4b
+    if-eqz v2, :cond_2
 
     .line 28
     .line 29
-    if-ne p3, v3, :cond_4b
+    if-ne p3, v3, :cond_2
 
     .line 30
     .line 31
-    :try_start_1e
+    :try_start_1
     invoke-static {p1}, Llibs/bg2;->g(Ljava/lang/Object;)Llibs/bg2;
 
     .line 32
@@ -136,14 +136,14 @@
     move-result-object p2
 
     .line 39
-    if-eqz p2, :cond_29
+    if-eqz p2, :cond_1
 
     .line 40
     .line 41
     return-object p2
 
     .line 42
-    :cond_29
+    :cond_1
     new-instance p2, Ljava/security/InvalidKeyException;
 
     .line 43
@@ -193,11 +193,11 @@
     .line 67
     .line 68
     throw p2
-    :try_end_44
-    .catch Ljava/lang/Exception; {:try_start_1e .. :try_end_44} :catch_44
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 69
-    :catch_44
+    :catch_0
     const-string p1, "Invalid key encoding."
 
     .line 70
@@ -213,8 +213,8 @@
     return-object p1
 
     .line 76
-    :cond_4b
-    :try_start_4b
+    :cond_2
+    :try_start_2
     iget-object v1, p0, Llibs/ed;->a:Llibs/ka;
 
     .line 77
@@ -238,7 +238,7 @@
     const/4 v1, 0x1
 
     .line 87
-    if-ne p3, v1, :cond_68
+    if-ne p3, v1, :cond_3
 
     .line 88
     .line 89
@@ -262,29 +262,29 @@
     return-object p1
 
     .line 99
-    :catch_62
+    :catch_1
     move-exception p1
 
     .line 100
-    goto :goto_7e
+    goto :goto_0
 
     .line 101
-    :catch_64
+    :catch_2
     move-exception p1
 
     .line 102
-    goto :goto_94
+    goto :goto_1
 
     .line 103
-    :catch_66
+    :catch_3
     move-exception p1
 
     .line 104
-    goto :goto_aa
+    goto :goto_2
 
     .line 105
-    :cond_68
-    if-ne p3, v3, :cond_74
+    :cond_3
+    if-ne p3, v3, :cond_4
 
     .line 106
     .line 107
@@ -303,16 +303,16 @@
     .line 114
     .line 115
     move-result-object p1
-    :try_end_73
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_4b .. :try_end_73} :catch_66
-    .catch Ljava/security/spec/InvalidKeySpecException; {:try_start_4b .. :try_end_73} :catch_64
-    .catch Ljava/security/NoSuchProviderException; {:try_start_4b .. :try_end_73} :catch_62
+    :try_end_2
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_2 .. :try_end_2} :catch_3
+    .catch Ljava/security/spec/InvalidKeySpecException; {:try_start_2 .. :try_end_2} :catch_2
+    .catch Ljava/security/NoSuchProviderException; {:try_start_2 .. :try_end_2} :catch_1
 
     .line 116
     return-object p1
 
     .line 117
-    :cond_74
+    :cond_4
     new-instance p1, Ljava/security/InvalidKeyException;
 
     .line 118
@@ -333,7 +333,7 @@
     throw p1
 
     .line 127
-    :goto_7e
+    :goto_0
     new-instance p2, Ljava/security/InvalidKeyException;
 
     .line 128
@@ -376,7 +376,7 @@
     throw p2
 
     .line 149
-    :goto_94
+    :goto_1
     new-instance p2, Ljava/security/InvalidKeyException;
 
     .line 150
@@ -419,7 +419,7 @@
     throw p2
 
     .line 171
-    :goto_aa
+    :goto_2
     new-instance p2, Ljava/security/InvalidKeyException;
 
     .line 172
@@ -462,28 +462,28 @@
     throw p2
 
     .line 193
-    :catch_c0
+    :catch_4
     move-exception p1
 
     .line 194
-    goto :goto_c6
+    goto :goto_3
 
     .line 195
-    :catch_c2
+    :catch_5
     move-exception p1
 
     .line 196
-    goto :goto_d0
+    goto :goto_4
 
     .line 197
-    :catch_c4
+    :catch_6
     move-exception p1
 
     .line 198
-    goto :goto_da
+    goto :goto_5
 
     .line 199
-    :goto_c6
+    :goto_3
     new-instance p2, Ljava/security/InvalidKeyException;
 
     .line 200
@@ -504,7 +504,7 @@
     throw p2
 
     .line 209
-    :goto_d0
+    :goto_4
     new-instance p2, Ljava/security/InvalidKeyException;
 
     .line 210
@@ -525,7 +525,7 @@
     throw p2
 
     .line 219
-    :goto_da
+    :goto_5
     new-instance p2, Ljava/security/InvalidKeyException;
 
     .line 220
@@ -547,7 +547,7 @@
 .end method
 
 .method public final engineWrap(Ljava/security/Key;)[B
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-interface {p1}, Ljava/security/Key;->getEncoded()[B
@@ -558,11 +558,11 @@
     move-result-object p1
 
     .line 5
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_0
 
     .line 6
     .line 7
-    :try_start_6
+    :try_start_0
     array-length v0, p1
 
     .line 8
@@ -575,14 +575,14 @@
     .line 11
     .line 12
     move-result-object p1
-    :try_end_c
-    .catch Ljavax/crypto/BadPaddingException; {:try_start_6 .. :try_end_c} :catch_d
+    :try_end_0
+    .catch Ljavax/crypto/BadPaddingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 13
     return-object p1
 
     .line 14
-    :catch_d
+    :catch_0
     move-exception p1
 
     .line 15
@@ -606,7 +606,7 @@
     throw v0
 
     .line 25
-    :cond_18
+    :cond_0
     const-string p1, "Cannot wrap key, null encoding."
 
     .line 26

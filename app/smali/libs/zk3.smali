@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/TextEditorActivity;Ljava/lang/String;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/zk3;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/zk3;->X:B
@@ -60,7 +60,7 @@
 
     .line 7
     .line 8
-    packed-switch v0, :pswitch_data_1c
+    packed-switch v0, :pswitch_data_0
 
     .line 9
     .line 10
@@ -77,7 +77,7 @@
     return-void
 
     .line 17
-    :pswitch_10
+    :pswitch_0
     sget v0, Lcom/mixplorer/activities/TextEditorActivity;->$c:I
 
     .line 18
@@ -90,7 +90,7 @@
     return-void
 
     .line 23
-    :pswitch_16
+    :pswitch_1
     sget v0, Lcom/mixplorer/activities/TextEditorActivity;->$c:I
 
     .line 24
@@ -103,9 +103,9 @@
     return-void
 
     .line 29
-    :pswitch_data_1c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_16
-        :pswitch_10
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

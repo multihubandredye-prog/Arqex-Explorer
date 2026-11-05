@@ -27,7 +27,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/i73;
@@ -120,7 +120,7 @@
 .end method
 
 .method public static a(Landroid/os/IBinder;Ljava/lang/String;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
@@ -139,7 +139,7 @@
     move-result-object v1
 
     .line 9
-    :try_start_8
+    :try_start_0
     const-string v2, "moe.shizuku.server.IShizukuService"
 
     .line 10
@@ -184,8 +184,8 @@
 
     .line 32
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-    :try_end_22
-    .catchall {:try_start_8 .. :try_end_22} :catchall_29
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 33
     .line 34
@@ -203,7 +203,7 @@
     return p0
 
     .line 42
-    :catchall_29
+    :catchall_0
     move-exception p0
 
     .line 43
@@ -221,7 +221,7 @@
 .end method
 
 .method public static b(Landroid/os/IBinder;Ljava/lang/String;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
@@ -240,7 +240,7 @@
     move-result-object v1
 
     .line 9
-    :try_start_8
+    :try_start_0
     const-string v2, "moe.shizuku.server.IShizukuService"
 
     .line 10
@@ -285,8 +285,8 @@
 
     .line 32
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-    :try_end_22
-    .catchall {:try_start_8 .. :try_end_22} :catchall_29
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 33
     .line 34
@@ -304,7 +304,7 @@
     return p0
 
     .line 42
-    :catchall_29
+    :catchall_0
     move-exception p0
 
     .line 43
@@ -322,7 +322,7 @@
 .end method
 
 .method public static c(Landroid/os/IBinder;Ljava/lang/String;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     new-instance v0, Landroid/os/Bundle;
@@ -372,7 +372,7 @@
     move-result-object v1
 
     .line 26
-    :try_start_19
+    :try_start_0
     const-string v2, "moe.shizuku.server.IShizukuService"
 
     .line 27
@@ -425,8 +425,8 @@
 
     .line 53
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-    :try_end_37
-    .catchall {:try_start_19 .. :try_end_37} :catchall_3e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 54
     .line 55
@@ -444,7 +444,7 @@
     return p0
 
     .line 63
-    :catchall_3e
+    :catchall_0
     move-exception p0
 
     .line 64
@@ -462,23 +462,23 @@
 .end method
 
 .method public static d(Landroid/os/IBinder;Ljava/lang/String;)V
-    .registers 5
+    .locals 3
 
     .line 1
     sget-object v0, Llibs/k73;->a:Landroid/os/IBinder;
 
     .line 2
     .line 3
-    if-ne v0, p0, :cond_6
+    if-ne v0, p0, :cond_0
 
     .line 4
     .line 5
-    goto/16 :goto_94
+    goto/16 :goto_3
 
     .line 6
     .line 7
-    :cond_6
-    if-nez p0, :cond_41
+    :cond_0
+    if-nez p0, :cond_3
 
     .line 8
     .line 9
@@ -500,7 +500,7 @@
     monitor-enter v1
 
     .line 17
-    :try_start_10
+    :try_start_0
     sget-object p0, Llibs/k73;->h:Ljava/util/ArrayList;
 
     .line 18
@@ -521,7 +521,7 @@
     move-result p1
 
     .line 27
-    if-eqz p1, :cond_3d
+    if-eqz p1, :cond_2
 
     .line 28
     .line 29
@@ -558,7 +558,7 @@
     move-result-object p1
 
     .line 46
-    if-ne p0, p1, :cond_35
+    if-ne p0, p1, :cond_1
 
     .line 47
     .line 48
@@ -574,7 +574,7 @@
     throw p0
 
     .line 54
-    :cond_35
+    :cond_1
     new-instance p0, Ljava/lang/ClassCastException;
 
     .line 55
@@ -587,34 +587,34 @@
     throw p0
 
     .line 60
-    :catchall_3b
+    :catchall_0
     move-exception p0
 
     .line 61
-    goto :goto_3f
+    goto :goto_0
 
     .line 62
-    :cond_3d
+    :cond_2
     monitor-exit v1
 
     .line 63
     return-void
 
     .line 64
-    :goto_3f
+    :goto_0
     monitor-exit v1
-    :try_end_40
-    .catchall {:try_start_10 .. :try_end_40} :catchall_3b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 65
     throw p0
 
     .line 66
-    :cond_41
+    :cond_3
     const/4 v1, 0x0
 
     .line 67
-    if-eqz v0, :cond_49
+    if-eqz v0, :cond_4
 
     .line 68
     .line 69
@@ -627,7 +627,7 @@
     .line 72
     .line 73
     .line 74
-    :cond_49
+    :cond_4
     sput-object p0, Llibs/k73;->a:Landroid/os/IBinder;
 
     .line 75
@@ -644,7 +644,7 @@
 
     .line 81
     .line 82
-    :try_start_51
+    :try_start_1
     sget-object p0, Llibs/k73;->a:Landroid/os/IBinder;
 
     .line 83
@@ -654,16 +654,16 @@
     .line 85
     .line 86
     invoke-interface {p0, v0, v1}, Landroid/os/IBinder;->linkToDeath(Landroid/os/IBinder$DeathRecipient;I)V
-    :try_end_58
-    .catchall {:try_start_51 .. :try_end_58} :catchall_59
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 87
     .line 88
     .line 89
-    goto :goto_60
+    goto :goto_1
 
     .line 90
-    :catchall_59
+    :catchall_1
     const-string p0, "ShizukuApplication"
 
     .line 91
@@ -677,8 +677,8 @@
     .line 95
     .line 96
     .line 97
-    :goto_60
-    :try_start_60
+    :goto_1
+    :try_start_2
     sget-object p0, Llibs/k73;->a:Landroid/os/IBinder;
 
     .line 98
@@ -691,7 +691,7 @@
     move-result p0
 
     .line 103
-    if-nez p0, :cond_7b
+    if-nez p0, :cond_5
 
     .line 104
     .line 105
@@ -707,7 +707,7 @@
     move-result p0
 
     .line 111
-    if-nez p0, :cond_7b
+    if-nez p0, :cond_5
 
     .line 112
     .line 113
@@ -723,7 +723,7 @@
     move-result p0
 
     .line 119
-    if-nez p0, :cond_7b
+    if-nez p0, :cond_5
 
     .line 120
     .line 121
@@ -734,7 +734,7 @@
 
     .line 123
     .line 124
-    :cond_7b
+    :cond_5
     const-string p0, "ShizukuApplication"
 
     .line 125
@@ -744,16 +744,16 @@
     .line 127
     .line 128
     invoke-static {p0, p1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_82
-    .catchall {:try_start_60 .. :try_end_82} :catchall_83
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
     .line 129
     .line 130
     .line 131
-    goto :goto_8d
+    goto :goto_2
 
     .line 132
-    :catchall_83
+    :catchall_2
     move-exception p0
 
     .line 133
@@ -774,12 +774,12 @@
     .line 140
     .line 141
     .line 142
-    :goto_8d
+    :goto_2
     sget-boolean p0, Llibs/k73;->d:Z
 
     .line 143
     .line 144
-    if-eqz p0, :cond_94
+    if-eqz p0, :cond_6
 
     .line 145
     .line 146
@@ -788,27 +788,27 @@
     .line 147
     .line 148
     .line 149
-    :cond_94
-    :goto_94
+    :cond_6
+    :goto_3
     return-void
 .end method
 
 .method public static e()Llibs/a81;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/k73;->b:Llibs/a81;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     return-object v0
 
     .line 6
-    :cond_5
+    :cond_0
     const-string v0, "binder haven\'t been received"
 
     .line 7
@@ -825,7 +825,7 @@
 .end method
 
 .method public static f()V
-    .registers 3
+    .locals 3
 
     .line 1
     sget-object v0, Llibs/k73;->g:Ljava/util/ArrayList;
@@ -835,7 +835,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     .line 5
@@ -852,7 +852,7 @@
     move-result v2
 
     .line 12
-    if-eqz v2, :cond_2e
+    if-eqz v2, :cond_1
 
     .line 13
     .line 14
@@ -889,7 +889,7 @@
     move-result-object v2
 
     .line 31
-    if-ne v1, v2, :cond_26
+    if-ne v1, v2, :cond_0
 
     .line 32
     .line 33
@@ -905,7 +905,7 @@
     throw v1
 
     .line 39
-    :cond_26
+    :cond_0
     new-instance v1, Ljava/lang/ClassCastException;
 
     .line 40
@@ -918,24 +918,24 @@
     throw v1
 
     .line 45
-    :catchall_2c
+    :catchall_0
     move-exception v1
 
     .line 46
-    goto :goto_30
+    goto :goto_0
 
     .line 47
-    :cond_2e
+    :cond_1
     monitor-exit v0
 
     .line 48
     return-void
 
     .line 49
-    :goto_30
+    :goto_0
     monitor-exit v0
-    :try_end_31
-    .catchall {:try_start_3 .. :try_end_31} :catchall_2c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 50
     throw v1

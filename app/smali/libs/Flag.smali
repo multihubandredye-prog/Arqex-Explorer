@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Size;Llibs/Width;ILlibs/Exec;Ljava/util/Set;)V
-    .registers 6
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/Flag;->p:Llibs/Size;
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final c(Llibs/s73;)Llibs/Color;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/Flag;->p:Llibs/Size;
@@ -46,7 +46,7 @@
 .end method
 
 .method public final d(Llibs/s73;)Llibs/Color;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/Flag;->p:Llibs/Size;

@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static a(Lcom/mixplorer/widgets/MiViewPager;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x8

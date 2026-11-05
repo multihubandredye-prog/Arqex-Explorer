@@ -26,7 +26,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(ILandroid/widget/CheckBox;Llibs/bv1;Ljava/util/ArrayList;Ljava/util/HashSet;Ljava/util/HashSet;Llibs/$d;Llibs/i21;)V
-    .registers 9
+    .locals 0
 
     .line 1
     const/4 p4, 0x0
@@ -73,7 +73,7 @@
 .end method
 
 .method public synthetic constructor <init>(Llibs/vn2;ILandroid/widget/CheckBox;Ljava/util/LinkedHashSet;Ljava/util/LinkedHashSet;Lcom/mixplorer/activities/BrowseActivity;Llibs/g31;)V
-    .registers 9
+    .locals 1
 
     .line 22
     const/4 v0, 0x1
@@ -102,7 +102,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 19
+    .locals 17
 
     .line 1
     move-object/from16 v0, p0
@@ -147,7 +147,7 @@
 
     .line 20
     .line 21
-    packed-switch v1, :pswitch_data_ce
+    packed-switch v1, :pswitch_data_0
 
     .line 22
     .line 23
@@ -175,7 +175,7 @@
 
     .line 34
     .line 35
-    if-le v9, v3, :cond_2c
+    if-le v9, v3, :cond_0
 
     .line 36
     .line 37
@@ -187,33 +187,33 @@
     move-result v1
 
     .line 41
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_0
 
     .line 42
     .line 43
     const/4 v14, 0x1
 
     .line 44
-    goto :goto_2d
+    goto :goto_0
 
     .line 45
-    :cond_2c
+    :cond_0
     const/4 v14, 0x0
 
     .line 46
-    :goto_2d
-    if-eqz v14, :cond_30
+    :goto_0
+    if-eqz v14, :cond_1
 
     .line 47
     .line 48
-    goto :goto_31
+    goto :goto_1
 
     .line 49
-    :cond_30
+    :cond_1
     move-object v7, v6
 
     .line 50
-    :goto_31
+    :goto_1
     iget-object v1, v10, Llibs/vn2;->b:Llibs/bv1;
 
     .line 51
@@ -238,14 +238,14 @@
     move-result-object v15
 
     .line 62
-    if-nez v15, :cond_40
+    if-nez v15, :cond_2
 
     .line 63
     .line 64
-    goto :goto_60
+    goto :goto_2
 
     .line 65
-    :cond_40
+    :cond_2
     new-instance v13, Ljava/util/LinkedHashSet;
 
     .line 66
@@ -306,11 +306,11 @@
     .line 95
     .line 96
     .line 97
-    :goto_60
+    :goto_2
     return-void
 
     .line 98
-    :pswitch_61
+    :pswitch_0
     check-cast v10, Llibs/bv1;
 
     .line 99
@@ -323,7 +323,7 @@
 
     .line 103
     .line 104
-    if-le v9, v3, :cond_71
+    if-le v9, v3, :cond_3
 
     .line 105
     .line 106
@@ -335,21 +335,21 @@
     move-result v1
 
     .line 110
-    if-eqz v1, :cond_71
+    if-eqz v1, :cond_3
 
     .line 111
     .line 112
     const/4 v1, 0x1
 
     .line 113
-    goto :goto_72
+    goto :goto_3
 
     .line 114
-    :cond_71
+    :cond_3
     const/4 v1, 0x0
 
     .line 115
-    :goto_72
+    :goto_3
     invoke-virtual {v10}, Landroid/widget/RadioGroup;->getCheckedRadioButtonId()I
 
     .line 116
@@ -365,59 +365,59 @@
     const/4 v10, 0x4
 
     .line 122
-    if-ne v8, v9, :cond_7d
+    if-ne v8, v9, :cond_4
 
     .line 123
     .line 124
     const/4 v8, 0x1
 
     .line 125
-    goto :goto_8a
+    goto :goto_4
 
     .line 126
-    :cond_7d
+    :cond_4
     sget v9, Llibs/bi2;->shred:I
 
     .line 127
     .line 128
-    if-ne v8, v9, :cond_83
+    if-ne v8, v9, :cond_5
 
     .line 129
     .line 130
     const/4 v8, 0x2
 
     .line 131
-    goto :goto_8a
+    goto :goto_4
 
     .line 132
-    :cond_83
+    :cond_5
     sget v9, Llibs/bi2;->fast:I
 
     .line 133
     .line 134
-    if-ne v8, v9, :cond_89
+    if-ne v8, v9, :cond_6
 
     .line 135
     .line 136
     const/4 v8, 0x4
 
     .line 137
-    goto :goto_8a
+    goto :goto_4
 
     .line 138
-    :cond_89
+    :cond_6
     const/4 v8, 0x0
 
     .line 139
-    :goto_8a
-    if-eqz v1, :cond_8d
+    :goto_4
+    if-eqz v1, :cond_7
 
     .line 140
     .line 141
     move-object v6, v7
 
     .line 142
-    :cond_8d
+    :cond_7
     invoke-interface {v6}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     .line 143
@@ -454,18 +454,18 @@
     move-result v2
 
     .line 160
-    if-eqz v2, :cond_a2
+    if-eqz v2, :cond_8
 
     .line 161
     .line 162
-    goto :goto_a3
+    goto :goto_5
 
     .line 163
-    :cond_a2
+    :cond_8
     move v10, v8
 
     .line 164
-    :goto_a3
+    :goto_5
     new-instance v2, Ljava/util/Properties;
 
     .line 165
@@ -549,8 +549,8 @@
     nop
 
     .line 207
-    :pswitch_data_ce
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_61
+        :pswitch_0
     .end packed-switch
 .end method

@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(ILjava/math/BigInteger;Ljava/math/BigInteger;)V
-    .registers 6
+    .locals 2
 
     .line 47
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -32,7 +32,7 @@
 
     iput-object p2, p0, Llibs/k40;->Y:Llibs/Api;
 
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_0
 
     .line 50
     new-instance p2, Llibs/Api;
@@ -45,7 +45,7 @@
 
     return-void
 
-    :cond_1c
+    :cond_0
     const/4 p1, 0x0
 
     .line 51
@@ -55,7 +55,7 @@
 .end method
 
 .method public constructor <init>(Llibs/Param;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -119,7 +119,7 @@
     move-result v0
 
     .line 32
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_0
 
     .line 33
     .line 34
@@ -142,7 +142,7 @@
     return-void
 
     .line 43
-    :cond_2a
+    :cond_0
     const/4 p1, 0x0
 
     .line 44
@@ -154,14 +154,14 @@
 .end method
 
 .method public static g(Ljava/lang/Object;)Llibs/k40;
-    .registers 2
+    .locals 1
 
     .line 1
     instance-of v0, p0, Llibs/k40;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -172,8 +172,8 @@
     return-object p0
 
     .line 8
-    :cond_7
-    if-eqz p0, :cond_13
+    :cond_0
+    if-eqz p0, :cond_1
 
     .line 9
     .line 10
@@ -197,7 +197,7 @@
     return-object v0
 
     .line 20
-    :cond_13
+    :cond_1
     const/4 p0, 0x0
 
     .line 21
@@ -207,7 +207,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/Init;
@@ -248,7 +248,7 @@
     move-result-object v1
 
     .line 21
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_0
 
     .line 22
     .line 23
@@ -261,7 +261,7 @@
     .line 26
     .line 27
     .line 28
-    :cond_1b
+    :cond_0
     new-instance v1, Llibs/p10;
 
     .line 29
@@ -275,14 +275,14 @@
 .end method
 
 .method public final h()Ljava/math/BigInteger;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/k40;->Z:Llibs/Api;
 
     .line 2
     .line 3
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -292,7 +292,7 @@
     return-object v0
 
     .line 7
-    :cond_6
+    :cond_0
     invoke-virtual {v0}, Llibs/Api;->q()Ljava/math/BigInteger;
 
     .line 8

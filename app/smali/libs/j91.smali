@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/g91;)V
-    .registers 3
+    .locals 1
 
     const/16 v0, 0x18
 
@@ -16,14 +16,14 @@
 .end method
 
 .method public constructor <init>(Llibs/k91;B)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/16 v0, 0x14
 
     .line 2
     .line 3
-    packed-switch p2, :pswitch_data_18
+    packed-switch p2, :pswitch_data_0
 
     .line 4
     .line 5
@@ -48,7 +48,7 @@
     return-void
 
     .line 16
-    :pswitch_f
+    :pswitch_0
     invoke-virtual {p1, v0}, Llibs/uy1;->d(I)I
 
     .line 17
@@ -68,8 +68,8 @@
     nop
 
     .line 25
-    :pswitch_data_18
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_f
+        :pswitch_0
     .end packed-switch
 .end method

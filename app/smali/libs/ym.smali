@@ -11,14 +11,14 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/ym;->a:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_1c
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -44,7 +44,7 @@
     return-void
 
     .line 17
-    :pswitch_10
+    :pswitch_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 18
@@ -69,14 +69,14 @@
     nop
 
     .line 29
-    :pswitch_data_1c
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_10
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public constructor <init>(Llibs/ym;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -100,7 +100,7 @@
 
 # virtual methods
 .method public a(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 5
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/hz1;
@@ -134,14 +134,14 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     iget-byte v0, p0, Llibs/ym;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_5c
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -157,7 +157,7 @@
     return-object v0
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 12
@@ -187,7 +187,7 @@
     move-result-object v1
 
     .line 26
-    :goto_19
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 27
@@ -196,7 +196,7 @@
     move-result v2
 
     .line 30
-    if-eqz v2, :cond_56
+    if-eqz v2, :cond_1
 
     .line 31
     .line 32
@@ -220,7 +220,7 @@
     move-result v3
 
     .line 42
-    if-lez v3, :cond_30
+    if-lez v3, :cond_0
 
     .line 43
     .line 44
@@ -233,7 +233,7 @@
     .line 47
     .line 48
     .line 49
-    :cond_30
+    :cond_0
     const-string v3, "\'"
 
     .line 50
@@ -303,10 +303,10 @@
     .line 84
     .line 85
     .line 86
-    goto :goto_19
+    goto :goto_0
 
     .line 87
-    :cond_56
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 88
@@ -321,8 +321,8 @@
     nop
 
     .line 93
-    :pswitch_data_5c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method

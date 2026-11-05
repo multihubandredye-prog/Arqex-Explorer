@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     sget-wide v0, Lorg/conscrypt/EvpMdRef$SHA224;->EVP_MD:J

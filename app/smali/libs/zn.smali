@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 6
+    .locals 5
 
     .line 1
     invoke-direct {p0}, Ljava/util/LinkedHashMap;-><init>()V
@@ -53,21 +53,21 @@
     move-result v0
 
     .line 20
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     .line 21
     .line 22
     const/4 v0, 0x4
 
     .line 23
-    goto :goto_18
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_0
     const/4 v0, 0x5
 
     .line 25
-    :goto_18
+    :goto_0
     div-int/2addr v1, v0
 
     .line 26
@@ -182,17 +182,17 @@
 
 # virtual methods
 .method public final a(Llibs/yn;)V
-    .registers 4
+    .locals 2
 
     .line 1
-    if-nez p1, :cond_3
+    if-nez p1, :cond_0
 
     .line 2
     .line 3
-    goto :goto_15
+    goto :goto_0
 
     .line 4
-    :cond_3
+    :cond_0
     iget v0, p0, Llibs/zn;->X:I
 
     .line 5
@@ -220,7 +220,7 @@
     move-result v0
 
     .line 17
-    if-nez v0, :cond_15
+    if-nez v0, :cond_1
 
     .line 18
     .line 19
@@ -229,13 +229,13 @@
     .line 20
     .line 21
     .line 22
-    :cond_15
-    :goto_15
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public final b(Llibs/yn;Z)V
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Ljava/util/AbstractMap;->entrySet()Ljava/util/Set;
@@ -254,8 +254,8 @@
     move-result-object v0
 
     .line 9
-    :cond_8
-    :goto_8
+    :cond_0
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 10
@@ -264,7 +264,7 @@
     move-result v1
 
     .line 13
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_2
 
     .line 14
     .line 15
@@ -276,7 +276,7 @@
 
     .line 18
     .line 19
-    if-lt v1, v2, :cond_31
+    if-lt v1, v2, :cond_2
 
     .line 20
     .line 21
@@ -304,11 +304,11 @@
 
     .line 32
     .line 33
-    if-eq p1, v1, :cond_8
+    if-eq p1, v1, :cond_0
 
     .line 34
     .line 35
-    if-nez p2, :cond_2a
+    if-nez p2, :cond_1
 
     .line 36
     .line 37
@@ -320,11 +320,11 @@
     move-result v2
 
     .line 41
-    if-nez v2, :cond_8
+    if-nez v2, :cond_0
 
     .line 42
     .line 43
-    :cond_2a
+    :cond_1
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
     .line 44
@@ -335,15 +335,15 @@
     .line 47
     .line 48
     .line 49
-    goto :goto_8
+    goto :goto_0
 
     .line 50
-    :cond_31
+    :cond_2
     return-void
 .end method
 
 .method public final clear()V
-    .registers 3
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
@@ -373,7 +373,7 @@
 .end method
 
 .method public final get(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-super {p0, p1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -392,7 +392,7 @@
 .end method
 
 .method public final put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
 
     .line 1
     check-cast p1, Ljava/lang/Long;
@@ -415,7 +415,7 @@
 
     .line 10
     .line 11
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_0
 
     .line 12
     .line 13
@@ -438,7 +438,7 @@
 
     .line 21
     .line 22
-    :cond_15
+    :cond_0
     iget v0, p0, Llibs/zn;->X:I
 
     .line 23
@@ -462,7 +462,7 @@
 .end method
 
 .method public final remove(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-super {p0, p1}, Ljava/util/LinkedHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -486,7 +486,7 @@
 .end method
 
 .method public final remove(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .registers 3
+    .locals 0
 
     .line 11
     new-instance p1, Ljava/lang/RuntimeException;
@@ -497,7 +497,7 @@
 .end method
 
 .method public final removeEldestEntry(Ljava/util/Map$Entry;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     iget v0, p0, Llibs/zn;->X:I
@@ -511,14 +511,14 @@
 
     .line 5
     .line 6
-    if-ge v0, v2, :cond_8
+    if-ge v0, v2, :cond_0
 
     .line 7
     .line 8
     return v1
 
     .line 9
-    :cond_8
+    :cond_0
     invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     .line 10
@@ -543,7 +543,7 @@
 
     .line 20
     .line 21
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_1
 
     .line 22
     .line 23
@@ -556,7 +556,7 @@
 
     .line 27
     .line 28
-    if-ge v0, v2, :cond_1f
+    if-ge v0, v2, :cond_1
 
     .line 29
     .line 30
@@ -566,7 +566,7 @@
     return p1
 
     .line 32
-    :cond_1f
+    :cond_1
     invoke-virtual {p0, p1, v1}, Llibs/zn;->b(Llibs/yn;Z)V
 
     .line 33

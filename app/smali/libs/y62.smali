@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;[B[BLlibs/b72;)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public final a(Llibs/h3;)Llibs/a72;
-    .registers 6
+    .locals 4
 
     .line 1
     :try_start_0
@@ -107,29 +107,29 @@
     .line 29
     .line 30
     move-result-object p1
-    :try_end_1e
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_1e} :catch_21
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_1e} :catch_1f
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 31
     return-object p1
 
     .line 32
-    :catch_1f
+    :catch_0
     move-exception p1
 
     .line 33
-    goto :goto_23
+    goto :goto_0
 
     .line 34
-    :catch_21
+    :catch_1
     move-exception p1
 
     .line 35
-    goto :goto_34
+    goto :goto_1
 
     .line 36
-    :goto_23
+    :goto_0
     new-instance v0, Llibs/z62;
 
     .line 37
@@ -163,6 +163,6 @@
     throw v0
 
     .line 53
-    :goto_34
+    :goto_1
     throw p1
 .end method

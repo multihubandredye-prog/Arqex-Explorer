@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/conscrypt/OpenSSLCipher$Mode;Lorg/conscrypt/OpenSSLCipher$Padding;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Lorg/conscrypt/OpenSSLEvpCipherAES;-><init>(Lorg/conscrypt/OpenSSLCipher$Mode;Lorg/conscrypt/OpenSSLCipher$Padding;)V
@@ -19,14 +19,14 @@
 
 # virtual methods
 .method public checkSupportedKeySize(I)V
-    .registers 5
+    .locals 3
 
     .line 1
     const/16 v0, 0x10
 
     .line 2
     .line 3
-    if-eq p1, v0, :cond_1b
+    if-eq p1, v0, :cond_1
 
     .line 4
     .line 5
@@ -34,7 +34,7 @@
 
     .line 6
     .line 7
-    if-eq p1, v0, :cond_1b
+    if-eq p1, v0, :cond_1
 
     .line 8
     .line 9
@@ -42,14 +42,14 @@
 
     .line 10
     .line 11
-    if-ne p1, v0, :cond_d
+    if-ne p1, v0, :cond_0
 
     .line 12
     .line 13
-    goto :goto_1b
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     new-instance v0, Ljava/security/InvalidKeyException;
 
     .line 15
@@ -78,7 +78,7 @@
     throw v0
 
     .line 28
-    :cond_1b
-    :goto_1b
+    :cond_1
+    :goto_0
     return-void
 .end method

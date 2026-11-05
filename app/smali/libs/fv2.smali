@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(ILlibs/pu2;Llibs/cv2;JJI)V
-    .registers 9
+    .locals 0
 
     .line 1
     invoke-direct/range {p0 .. p7}, Llibs/lv2;-><init>(ILlibs/pu2;Llibs/cv2;JJ)V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final c()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/fv2;->e:I

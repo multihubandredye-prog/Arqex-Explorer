@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     const/16 v0, 0x9
@@ -22,7 +22,7 @@
 
     .line 4
     .line 5
-    fill-array-data v1, :array_3c
+    fill-array-data v1, :array_0
 
     .line 6
     .line 7
@@ -142,7 +142,7 @@
     return-void
 
     .line 61
-    :array_3c
+    :array_0
     .array-data 4
         0x0
         0x5

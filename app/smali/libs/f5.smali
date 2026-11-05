@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(J[BII)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/ml;-><init>()V
@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public final c()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/f5;->Mu:I
@@ -54,7 +54,7 @@
 .end method
 
 .method public final i([B)I
-    .registers 6
+    .locals 4
 
     .line 1
     array-length v0, p1
@@ -114,14 +114,14 @@
 .end method
 
 .method public final m()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/f5;->Mu:I
 
     .line 2
     .line 3
-    if-lez v0, :cond_6
+    if-lez v0, :cond_0
 
     .line 4
     .line 5
@@ -131,7 +131,7 @@
     return v0
 
     .line 7
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
     .line 8

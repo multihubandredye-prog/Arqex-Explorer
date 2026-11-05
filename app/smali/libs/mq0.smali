@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 32
+    .locals 32
 
     .line 1
     new-instance v0, Llibs/mq0;
@@ -489,7 +489,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;II)V
-    .registers 4
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
@@ -501,7 +501,7 @@
 .end method
 
 .method public varargs constructor <init>(Ljava/lang/String;I[Llibs/mq0;)V
-    .registers 6
+    .locals 2
 
     .line 1
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
@@ -518,8 +518,8 @@
     const/4 v0, 0x0
 
     .line 7
-    :goto_6
-    if-ge p2, p1, :cond_10
+    :goto_0
+    if-ge p2, p1, :cond_0
 
     .line 8
     .line 9
@@ -538,10 +538,10 @@
 
     .line 15
     .line 16
-    goto :goto_6
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     iput v0, p0, Llibs/mq0;->X:I
 
     .line 18
@@ -550,7 +550,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Llibs/mq0;
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Llibs/mq0;
@@ -573,7 +573,7 @@
 .end method
 
 .method public static values()[Llibs/mq0;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/mq0;->Y:[Llibs/mq0;

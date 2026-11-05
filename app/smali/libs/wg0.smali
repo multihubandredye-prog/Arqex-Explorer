@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;I)V
-    .registers 8
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     move-result v0
 
     .line 12
-    if-nez v0, :cond_14
+    if-nez v0, :cond_0
 
     .line 13
     .line 14
@@ -57,15 +57,15 @@
     move-result-object p5
 
     .line 20
-    goto :goto_16
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_0
     const-string p5, ""
 
     .line 22
     .line 23
-    :goto_16
+    :goto_0
     invoke-virtual {p1, p5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 24

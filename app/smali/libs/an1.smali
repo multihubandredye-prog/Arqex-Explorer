@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/PrintStream;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Ljava/io/PrintStream;-><init>(Ljava/io/OutputStream;)V
@@ -23,14 +23,14 @@
 .end method
 
 .method public static c()Llibs/an1;
-    .registers 2
+    .locals 2
 
     .line 1
     sget-object v0, Llibs/an1;->X:Llibs/an1;
 
     .line 2
     .line 3
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -54,6 +54,6 @@
     return-object v1
 
     .line 15
-    :cond_e
+    :cond_0
     return-object v0
 .end method

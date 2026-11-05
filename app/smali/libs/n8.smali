@@ -48,7 +48,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/app/Activity;Lcom/mixplorer/widgets/MiEditText;Lcom/mixplorer/widgets/MiEditText;Lcom/mixplorer/widgets/MiCombo;Ljava/util/concurrent/atomic/AtomicLong;Ljava/util/concurrent/atomic/AtomicLong;Lcom/mixplorer/widgets/MiCombo;Lcom/mixplorer/widgets/MiCombo;Lcom/mixplorer/widgets/MiCombo;Lcom/mixplorer/widgets/MiEditText;Llibs/d9;Ljava/util/ArrayList;Lcom/mixplorer/widgets/MiCombo;Landroid/widget/CheckBox;Landroid/widget/CheckBox;Landroid/widget/CheckBox;Landroid/widget/CheckBox;Llibs/$d;Llibs/xl1;)V
-    .registers 20
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -105,7 +105,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 44
+    .locals 42
 
     .line 1
     move-object/from16 v1, p0
@@ -192,7 +192,7 @@
 
     .line 42
     .line 43
-    :try_start_2a
+    :try_start_0
     sget v4, Llibs/bi2;->meta_title:I
 
     .line 44
@@ -229,14 +229,14 @@
     move-result v5
 
     .line 61
-    if-eqz v5, :cond_3f
+    if-eqz v5, :cond_0
 
     .line 62
     .line 63
     return-void
 
     .line 64
-    :cond_3f
+    :cond_0
     new-instance v5, Ljava/lang/StringBuilder;
 
     .line 65
@@ -284,7 +284,7 @@
 
     .line 88
     .line 89
-    :goto_58
+    :goto_0
     invoke-static/range {v40 .. v40}, Llibs/e9;->h(Ljava/lang/Object;)Llibs/d9;
 
     .line 90
@@ -293,14 +293,9 @@
     move-result-object v23
 
     .line 93
-    # Arqex: nao acrescenta mais numero ao nome (Teste -> Teste2).
-    # O titulo que o usuario digitou e o que fica salvo, mesmo que outro
-    # cartao da lista tenha o mesmo texto: quem identifica a tarefa e o id,
-    # nunca o nome. Para nao renomear nao basta sair do laco quando "e a
-    # mesma tarefa" (isso ja existia e mesmo assim renomeava quando o
-    # dialogo abria sem a tarefa de origem) - o laco inteiro sai de cena.
-    if-eqz v23, :cond_8e
-    goto :cond_8e
+    if-eqz v23, :cond_1
+
+    goto :goto_1
 
     move-object/from16 v6, v23
 
@@ -314,7 +309,7 @@
 
     move-object/from16 v7, v23
 
-    if-nez v6, :cond_8e
+    if-nez v6, :cond_1
 
     .line 94
     .line 95
@@ -374,18 +369,19 @@
 
     .line 124
     .line 125
-    goto :goto_58
+    goto :goto_0
 
     .line 126
-    :catchall_8b
+    :catchall_0
     move-exception v0
 
     .line 127
-    goto/16 :goto_223
+    goto/16 :goto_9
 
     .line 128
     .line 129
-    :cond_8e
+    :cond_1
+    :goto_1
     const/16 p1, 0x1
 
     .line 130
@@ -406,7 +402,7 @@
     move-result v5
 
     .line 139
-    if-eqz v5, :cond_9e
+    if-eqz v5, :cond_2
 
     .line 140
     .line 141
@@ -418,7 +414,7 @@
     return-void
 
     .line 145
-    :cond_9e
+    :cond_2
     iget-object v6, v1, Llibs/n8;->Lambda:Lcom/mixplorer/widgets/MiCombo;
 
     move-object/from16 v5, v17
@@ -439,8 +435,8 @@
     .line 151
     .line 152
     move-result v5
-    :try_end_ad
-    .catchall {:try_start_2a .. :try_end_ad} :catchall_8b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 153
     iget-object v6, v1, Llibs/n8;->Lambda:Lcom/mixplorer/widgets/MiCombo;
@@ -454,11 +450,11 @@
     const/4 v4, 0x2
 
     .line 158
-    if-eqz v5, :cond_c7
+    if-eqz v5, :cond_3
 
     .line 159
     .line 160
-    :try_start_b4
+    :try_start_1
     invoke-virtual {v6}, Lcom/mixplorer/widgets/MiCombo;->getSelectedIndex()I
 
     .line 161
@@ -467,7 +463,7 @@
     move-result v5
 
     .line 164
-    if-eq v5, v4, :cond_c7
+    if-eq v5, v4, :cond_3
 
     .line 165
     .line 166
@@ -486,7 +482,7 @@
 
     .line 172
     .line 173
-    if-eq v5, v4, :cond_c9
+    if-eq v5, v4, :cond_4
 
     .line 174
     .line 175
@@ -498,12 +494,12 @@
     return-void
 
     .line 179
-    :cond_c7
+    :cond_3
     const/16 v23, 0x2
 
     .line 180
     .line 181
-    :cond_c9
+    :cond_4
     invoke-virtual/range {v18 .. v18}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
 
     .line 182
@@ -528,11 +524,11 @@
     move-result v18
 
     .line 193
-    if-eqz v18, :cond_fd
+    if-eqz v18, :cond_5
 
     .line 194
     .line 195
-    packed-switch v18, :pswitch_data_238
+    packed-switch v18, :pswitch_data_0
 
     .line 196
     .line 197
@@ -542,23 +538,23 @@
     .line 199
     .line 200
     .line 201
-    :goto_dd
+    :goto_2
     move-wide/from16 v27, v20
 
     .line 202
     .line 203
-    goto :goto_100
+    goto :goto_3
 
     .line 204
-    :pswitch_e0
+    :pswitch_0
     const-wide/16 v20, -0x2
 
     .line 205
     .line 206
-    goto :goto_dd
+    goto :goto_2
 
     .line 207
-    :pswitch_e3
+    :pswitch_1
     const-wide v20, 0x9a7ec800L
 
     .line 208
@@ -566,63 +562,63 @@
     .line 210
     .line 211
     .line 212
-    goto :goto_dd
+    goto :goto_2
 
     .line 213
-    :pswitch_e9
+    :pswitch_2
     const-wide/32 v20, 0x240c8400
 
     .line 214
     .line 215
     .line 216
-    goto :goto_dd
+    goto :goto_2
 
     .line 217
-    :pswitch_ed
+    :pswitch_3
     const-wide/32 v20, 0xdbba0
 
     .line 218
     .line 219
     .line 220
-    goto :goto_dd
+    goto :goto_2
 
     .line 221
-    :pswitch_f1
+    :pswitch_4
     const-wide/32 v20, 0x1b7740
 
     .line 222
     .line 223
     .line 224
-    goto :goto_dd
+    goto :goto_2
 
     .line 225
-    :pswitch_f5
+    :pswitch_5
     const-wide/32 v20, 0x36ee80
 
     .line 226
     .line 227
     .line 228
-    goto :goto_dd
+    goto :goto_2
 
     .line 229
-    :pswitch_f9
+    :pswitch_6
     const-wide/32 v20, 0x2932e00
 
     .line 230
     .line 231
     .line 232
-    goto :goto_dd
+    goto :goto_2
 
     .line 233
-    :cond_fd
+    :cond_5
     const-wide/16 v20, 0x0
 
     .line 234
     .line 235
-    goto :goto_dd
+    goto :goto_2
 
     .line 236
-    :goto_100
+    :goto_3
     invoke-virtual {v6}, Lcom/mixplorer/widgets/MiCombo;->getSelectedIndex()I
 
     .line 237
@@ -638,7 +634,7 @@
     const/4 v4, 0x3
 
     .line 243
-    packed-switch v6, :pswitch_data_24a
+    packed-switch v6, :pswitch_data_1
 
     .line 244
     .line 245
@@ -651,23 +647,23 @@
     move-result-object v5
 
     .line 250
-    :goto_10e
+    :goto_4
     move-object/from16 v29, v5
 
     .line 251
     .line 252
-    goto :goto_12e
+    goto :goto_5
 
     .line 253
-    :pswitch_111
+    :pswitch_7
     const-string v5, "NOTIFY"
 
     .line 254
     .line 255
-    goto :goto_10e
+    goto :goto_4
 
     .line 256
-    :pswitch_114
+    :pswitch_8
     const/16 v22, 0x4
 
     .line 257
@@ -680,18 +676,18 @@
     move-result-object v5
 
     .line 262
-    goto :goto_10e
+    goto :goto_4
 
     .line 263
-    :pswitch_11b
+    :pswitch_9
     const-string v5, "EXECUTE"
 
     .line 264
     .line 265
-    goto :goto_10e
+    goto :goto_4
 
     .line 266
-    :pswitch_11e
+    :pswitch_a
     const/4 v5, 0x6
 
     .line 267
@@ -703,10 +699,10 @@
     move-result-object v5
 
     .line 271
-    goto :goto_10e
+    goto :goto_4
 
     .line 272
-    :pswitch_124
+    :pswitch_b
     invoke-static {v4}, Llibs/c2;->Put(I)Ljava/lang/String;
 
     .line 273
@@ -715,10 +711,10 @@
     move-result-object v5
 
     .line 276
-    goto :goto_10e
+    goto :goto_4
 
     .line 277
-    :pswitch_129
+    :pswitch_c
     invoke-static/range {v23 .. v23}, Llibs/c2;->Put(I)Ljava/lang/String;
 
     .line 278
@@ -727,10 +723,10 @@
     move-result-object v5
 
     .line 281
-    goto :goto_10e
+    goto :goto_4
 
     .line 282
-    :goto_12e
+    :goto_5
     invoke-static/range {v16 .. v16}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     .line 283
@@ -800,28 +796,28 @@
     const/4 v6, 0x1
 
     .line 317
-    if-eq v4, v6, :cond_16a
+    if-eq v4, v6, :cond_9
 
     .line 318
     .line 319
     const/4 v6, 0x2
 
     .line 320
-    if-eq v4, v6, :cond_167
+    if-eq v4, v6, :cond_8
 
     .line 321
     .line 322
     const/4 v6, 0x3
 
     .line 323
-    if-eq v4, v6, :cond_164
+    if-eq v4, v6, :cond_7
 
     .line 324
     .line 325
     const/4 v6, 0x4
 
     .line 326
-    if-eq v4, v6, :cond_161
+    if-eq v4, v6, :cond_6
 
     .line 327
     .line 328
@@ -829,47 +825,47 @@
 
     .line 329
     .line 330
-    :goto_15e
+    :goto_6
     move-object/from16 v33, v4
 
     .line 331
     .line 332
-    goto :goto_16d
+    goto :goto_7
 
     .line 333
-    :cond_161
+    :cond_6
     const-string v4, "SYNC"
 
     .line 334
     .line 335
-    goto :goto_15e
+    goto :goto_6
 
     .line 336
-    :cond_164
+    :cond_7
     const-string v4, "SKIP"
 
     .line 337
     .line 338
-    goto :goto_15e
+    goto :goto_6
 
     .line 339
-    :cond_167
+    :cond_8
     const-string v4, "KEEP_BOTH"
 
     .line 340
     .line 341
-    goto :goto_15e
+    goto :goto_6
 
     .line 342
-    :cond_16a
+    :cond_9
     const-string v4, "OVERWRITE_MODIFIED"
 
     .line 343
     .line 344
-    goto :goto_15e
+    goto :goto_6
 
     .line 345
-    :goto_16d
+    :goto_7
     invoke-virtual {v8}, Lcom/mixplorer/widgets/MiCombo;->getSelectedItem()Ljava/lang/Object;
 
     .line 346
@@ -934,8 +930,8 @@
 
     .line 376
     const-string v39, ""
-    :try_end_192
-    .catchall {:try_start_b4 .. :try_end_192} :catchall_8b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 377
     .line 378
@@ -947,14 +943,14 @@
 
     .line 381
     .line 382
-    if-eqz v3, :cond_19f
+    if-eqz v3, :cond_a
 
     .line 383
     .line 384
     const/4 v6, 0x1
 
     .line 385
-    :try_start_199
+    :try_start_2
     invoke-static {v3, v6}, Llibs/e9;->s(Llibs/d9;Z)V
 
     .line 386
@@ -965,7 +961,7 @@
     .line 389
     .line 390
     .line 391
-    :cond_19f
+    :cond_a
     invoke-virtual {v10}, Lcom/mixplorer/widgets/MiCombo;->getSelectedIndex()I
 
     .line 392
@@ -974,7 +970,7 @@
     move-result v3
 
     .line 395
-    if-lez v3, :cond_1b6
+    if-lez v3, :cond_b
 
     .line 396
     .line 397
@@ -1012,15 +1008,15 @@
 
     .line 412
     .line 413
-    goto :goto_1b8
+    goto :goto_8
 
     .line 414
-    :cond_1b6
+    :cond_b
     const/16 v41, 0x0
 
     .line 415
     .line 416
-    :goto_1b8
+    :goto_8
     new-instance v22, Llibs/d9;
 
     .line 417
@@ -1082,8 +1078,6 @@
     .line 443
     .line 444
     .line 445
-    # Arqex: criacao de atalho na tela inicial REMOVIDA a pedido (nao gera mais atalho).
-    :cond_215
     invoke-virtual {v15}, Llibs/od;->dismiss()V
 
     .line 505
@@ -1105,8 +1099,8 @@
     .line 513
     .line 514
     invoke-interface {v0, v4}, Llibs/xl1;->c([Ljava/lang/Object;)Z
-    :try_end_222
-    .catchall {:try_start_199 .. :try_end_222} :catchall_8b
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 515
     .line 516
@@ -1114,7 +1108,7 @@
     return-void
 
     .line 518
-    :goto_223
+    :goto_9
     const-string v3, "TASKER"
 
     .line 519
@@ -1158,15 +1152,15 @@
     nop
 
     .line 539
-    :pswitch_data_238
+    :pswitch_data_0
     .packed-switch 0x2
-        :pswitch_f9
-        :pswitch_f5
-        :pswitch_f1
-        :pswitch_ed
-        :pswitch_e9
-        :pswitch_e3
-        :pswitch_e0
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 
     .line 540
@@ -1187,13 +1181,13 @@
     .line 555
     .line 556
     .line 557
-    :pswitch_data_24a
+    :pswitch_data_1
     .packed-switch 0x1
-        :pswitch_129
-        :pswitch_124
-        :pswitch_11e
-        :pswitch_11b
-        :pswitch_114
-        :pswitch_111
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
     .end packed-switch
 .end method

@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/b02;-><init>()V
@@ -29,7 +29,7 @@
 
 # virtual methods
 .method public final All(Llibs/rp0;Ljava/lang/String;)Llibs/rp0;
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p1, Llibs/rp0;->Three:Ljava/lang/String;
@@ -77,7 +77,7 @@
 .end method
 
 .method public final Base(Llibs/rp0;)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     .line 1
     iget-object p1, p1, Llibs/rp0;->Three:Ljava/lang/String;
@@ -96,7 +96,7 @@
 .end method
 
 .method public final Err(Z)Z
-    .registers 2
+    .locals 0
 
     .line 1
     const/4 p1, 0x1
@@ -106,7 +106,7 @@
 .end method
 
 .method public final Firebase(Llibs/hh3;JLjava/lang/String;Lcom/mixplorer/ProgressListener;Ljava/util/Properties;Z)Llibs/rp0;
-    .registers 8
+    .locals 0
 
     .line 1
     invoke-static {p4}, Llibs/ji0;->Any(Ljava/lang/String;)Ljava/lang/String;
@@ -134,18 +134,18 @@
 .end method
 
 .method public final declared-synchronized Init(Ljava/lang/String;)Llibs/wg;
-    .registers 5
+    .locals 3
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object p1, p0, Llibs/rb;->e:Llibs/wg;
 
     .line 3
     .line 4
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 5
     .line 6
@@ -154,18 +154,18 @@
     .line 7
     .line 8
     .line 9
-    goto :goto_b
+    goto :goto_0
 
     .line 10
-    :catchall_9
+    :catchall_0
     move-exception p1
 
     .line 11
-    goto :goto_58
+    goto :goto_1
 
     .line 12
-    :cond_b
-    :goto_b
+    :cond_0
+    :goto_0
     sget-object p1, Lcom/mixplorer/AppImpl;->X:Llibs/k70;
 
     .line 13
@@ -184,15 +184,15 @@
     .line 20
     .line 21
     move-result-object p1
-    :try_end_15
-    .catchall {:try_start_1 .. :try_end_15} :catchall_9
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 22
-    if-eqz p1, :cond_52
+    if-eqz p1, :cond_1
 
     .line 23
     .line 24
-    :try_start_17
+    :try_start_1
     new-instance v0, Llibs/wg;
 
     .line 25
@@ -241,15 +241,15 @@
 
     .line 49
     throw v0
-    :try_end_31
-    .catchall {:try_start_17 .. :try_end_31} :catchall_31
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 50
-    :catchall_31
+    :catchall_1
     move-exception v0
 
     .line 51
-    :try_start_32
+    :try_start_2
     invoke-static {v0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 52
@@ -310,7 +310,7 @@
     throw p1
 
     .line 83
-    :cond_52
+    :cond_1
     new-instance p1, Lexceptions/NotExistsException;
 
     .line 84
@@ -323,17 +323,17 @@
     throw p1
 
     .line 89
-    :goto_58
+    :goto_1
     monitor-exit p0
-    :try_end_59
-    .catchall {:try_start_32 .. :try_end_59} :catchall_9
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 90
     throw p1
 .end method
 
 .method public final Main(IILjava/lang/String;)Ljava/io/InputStream;
-    .registers 4
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -343,7 +343,7 @@
 .end method
 
 .method public final Msg(Z)Z
-    .registers 2
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -353,7 +353,7 @@
 .end method
 
 .method public final Old(Llibs/rp0;Ljava/lang/String;Lcom/mixplorer/ProgressListener;)Llibs/rp0;
-    .registers 4
+    .locals 0
 
     .line 1
     iget-object p3, p1, Llibs/rp0;->Three:Ljava/lang/String;
@@ -390,7 +390,7 @@
 .end method
 
 .method public final Post(Ljava/lang/String;Llibs/t61;)Llibs/rp0;
-    .registers 8
+    .locals 5
 
     .line 1
     invoke-static {}, Llibs/ji0;->Work()Z
@@ -401,7 +401,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -474,7 +474,7 @@
     return-object p1
 
     .line 40
-    :cond_27
+    :cond_0
     invoke-static {}, Landroid/bluetooth/BluetoothAdapter;->getDefaultAdapter()Landroid/bluetooth/BluetoothAdapter;
 
     .line 41
@@ -494,7 +494,7 @@
     const/4 v0, 0x0
 
     .line 49
-    if-nez p2, :cond_3c
+    if-nez p2, :cond_1
 
     .line 50
     .line 51
@@ -518,7 +518,7 @@
     return-object v0
 
     .line 61
-    :cond_3c
+    :cond_1
     invoke-static {p1}, Llibs/vl3;->Bundle(Ljava/lang/String;)Ljava/lang/String;
 
     .line 62
@@ -536,14 +536,14 @@
 .end method
 
 .method public final Put(Z)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object p1, p0, Llibs/rb;->e:Llibs/wg;
 
     .line 2
     .line 3
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     .line 4
     .line 5
@@ -573,7 +573,7 @@
     .line 17
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     const/4 p1, 0x0
 
     .line 20
@@ -585,7 +585,7 @@
 .end method
 
 .method public final Result(Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p1}, Llibs/ji0;->Any(Ljava/lang/String;)Ljava/lang/String;
@@ -600,7 +600,7 @@
 .end method
 
 .method public final Task(IJLlibs/rp0;)Ljava/io/InputStream;
-    .registers 11
+    .locals 6
 
     .line 1
     iget-wide v0, p4, Llibs/rp0;->Four:J
@@ -618,14 +618,14 @@
 
     .line 7
     .line 8
-    if-gtz v5, :cond_a
+    if-gtz v5, :cond_0
 
     .line 9
     .line 10
     return-object v4
 
     .line 11
-    :cond_a
+    :cond_0
     iget-object v0, p4, Llibs/rp0;->Three:Ljava/lang/String;
 
     .line 12
@@ -635,7 +635,7 @@
     .line 14
     .line 15
     .line 16
-    :try_start_f
+    :try_start_0
     invoke-static {}, Llibs/ji0;->Work()Z
 
     .line 17
@@ -644,7 +644,7 @@
     move-result v0
 
     .line 20
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_1
 
     .line 21
     .line 22
@@ -740,14 +740,14 @@
     return-object p1
 
     .line 66
-    :catch_41
+    :catch_0
     move-exception p1
 
     .line 67
-    goto :goto_4b
+    goto :goto_0
 
     .line 68
-    :cond_43
+    :cond_1
     invoke-virtual {p4}, Llibs/rp0;->Link()Ljava/lang/String;
 
     .line 69
@@ -762,17 +762,17 @@
     .line 74
     .line 75
     throw v4
-    :try_end_4b
-    .catch Ljava/lang/Exception; {:try_start_f .. :try_end_4b} :catch_41
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 76
-    :goto_4b
-    :try_start_4b
+    :goto_0
+    :try_start_1
     iget-object p2, p0, Llibs/rb;->e:Llibs/wg;
 
     .line 77
     .line 78
-    if-eqz p2, :cond_58
+    if-eqz p2, :cond_3
 
     .line 79
     .line 80
@@ -780,27 +780,27 @@
 
     .line 81
     .line 82
-    if-eqz p3, :cond_54
+    if-eqz p3, :cond_2
 
     .line 83
     .line 84
-    goto :goto_58
+    goto :goto_1
 
     .line 85
-    :cond_54
+    :cond_2
     invoke-virtual {p2}, Llibs/wg;->b()V
 
     .line 86
     .line 87
     .line 88
     throw v4
-    :try_end_58
-    .catch Ljava/lang/Exception; {:try_start_4b .. :try_end_58} :catch_58
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 89
-    :catch_58
-    :cond_58
-    :goto_58
+    :catch_1
+    :cond_3
+    :goto_1
     const-string p2, "BTExplorer"
 
     .line 90
@@ -822,7 +822,7 @@
 .end method
 
 .method public final a()Ljava/util/LinkedHashMap;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/util/LinkedHashMap;
@@ -851,7 +851,7 @@
 .end method
 
 .method public final g()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/high16 v0, 0x40000
@@ -862,7 +862,7 @@
 .end method
 
 .method public final t(Ljava/lang/String;Lcom/mixplorer/ProgressListener;I)Llibs/rp0;
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-static {p1}, Llibs/ji0;->Any(Ljava/lang/String;)Ljava/lang/String;
@@ -890,7 +890,7 @@
 .end method
 
 .method public final x(Llibs/rp0;ILcom/mixplorer/ProgressListener;Z)Z
-    .registers 5
+    .locals 0
 
     .line 1
     iget-object p2, p1, Llibs/rp0;->Three:Ljava/lang/String;

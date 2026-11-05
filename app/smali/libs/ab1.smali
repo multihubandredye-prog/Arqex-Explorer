@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/app/Activity;ZB)V
-    .registers 5
+    .locals 0
 
     .line 14
     iput-byte p4, p0, Llibs/ab1;->a:B
@@ -35,7 +35,7 @@
 .end method
 
 .method public synthetic constructor <init>(Llibs/r31;Ljava/util/concurrent/atomic/AtomicBoolean;Z)V
-    .registers 5
+    .locals 1
 
     .line 1
     const/4 v0, 0x2
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public final onDismiss(Landroid/content/DialogInterface;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-byte p1, p0, Llibs/ab1;->a:B
@@ -87,7 +87,7 @@
 
     .line 8
     .line 9
-    packed-switch p1, :pswitch_data_48
+    packed-switch p1, :pswitch_data_0
 
     .line 10
     .line 11
@@ -108,7 +108,7 @@
     move-result v1
 
     .line 20
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_1
 
     .line 21
     .line 22
@@ -132,7 +132,7 @@
     move-result v3
 
     .line 32
-    if-eq v3, v0, :cond_2b
+    if-eq v3, v0, :cond_0
 
     .line 33
     .line 34
@@ -153,21 +153,21 @@
     .line 41
     .line 42
     .line 43
-    goto :goto_2e
+    goto :goto_0
 
     .line 44
-    :cond_2b
+    :cond_0
     invoke-virtual {v2, v1}, Llibs/r31;->True(Llibs/xt1;)V
 
     .line 45
     .line 46
     .line 47
-    :cond_2e
-    :goto_2e
+    :cond_1
+    :goto_0
     return-void
 
     .line 48
-    :pswitch_2f
+    :pswitch_0
     check-cast v2, Landroid/app/Activity;
 
     .line 49
@@ -180,7 +180,7 @@
     move-result p1
 
     .line 54
-    if-eqz p1, :cond_3a
+    if-eqz p1, :cond_2
 
     .line 55
     .line 56
@@ -189,11 +189,11 @@
     .line 57
     .line 58
     .line 59
-    :cond_3a
+    :cond_2
     return-void
 
     .line 60
-    :pswitch_3b
+    :pswitch_1
     check-cast v2, Landroid/app/Activity;
 
     .line 61
@@ -206,7 +206,7 @@
     move-result p1
 
     .line 66
-    if-eqz p1, :cond_46
+    if-eqz p1, :cond_3
 
     .line 67
     .line 68
@@ -215,16 +215,16 @@
     .line 69
     .line 70
     .line 71
-    :cond_46
+    :cond_3
     return-void
 
     .line 72
     nop
 
     .line 73
-    :pswitch_data_48
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_3b
-        :pswitch_2f
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

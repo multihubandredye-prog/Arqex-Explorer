@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/Iterator;Llibs/gs0;)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final a()Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/f32;->Y:Ljava/util/Iterator;
@@ -67,7 +67,7 @@
 .end method
 
 .method public final hasNext()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/f32;->Y:Ljava/util/Iterator;

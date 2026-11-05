@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>([BJJ)V
-    .registers 12
+    .locals 6
 
     .line 1
     const/4 v1, 0x4
@@ -101,7 +101,7 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

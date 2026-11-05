@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/do0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/co0;->X:Llibs/do0;
@@ -30,14 +30,14 @@
 
 # virtual methods
 .method public final a(Ljava/nio/ByteBuffer;J)V
-    .registers 4
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final b()J
-    .registers 3
+    .locals 2
 
     .line 1
     const-wide/16 v0, 0x0
@@ -48,7 +48,7 @@
 .end method
 
 .method public final c()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -58,7 +58,7 @@
 .end method
 
 .method public final d(Ljava/lang/String;)Llibs/br3;
-    .registers 5
+    .locals 3
 
     .line 1
     sget-object v0, Llibs/cr0;->a:Ljava/lang/Object;
@@ -68,7 +68,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Llibs/co0;->X:Llibs/do0;
 
     .line 5
@@ -115,20 +115,20 @@
     return-object v1
 
     .line 26
-    :catchall_19
+    :catchall_0
     move-exception p1
 
     .line 27
     monitor-exit v0
-    :try_end_1b
-    .catchall {:try_start_3 .. :try_end_1b} :catchall_19
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 28
     throw p1
 .end method
 
 .method public final e()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -138,21 +138,21 @@
 .end method
 
 .method public final f(Llibs/br3;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final flush()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final g()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/co0;->X:Llibs/do0;
@@ -175,7 +175,7 @@
 .end method
 
 .method public final getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/co0;->X:Llibs/do0;
@@ -194,7 +194,7 @@
 .end method
 
 .method public final h()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -204,7 +204,7 @@
 .end method
 
 .method public final i()Ljava/util/List;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/co0;->X:Llibs/do0;
@@ -231,14 +231,14 @@
 .end method
 
 .method public final j(J)V
-    .registers 3
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final k()J
-    .registers 3
+    .locals 2
 
     .line 1
     const-wide/16 v0, 0x0
@@ -249,7 +249,7 @@
 .end method
 
 .method public final l(Ljava/lang/String;)Llibs/br3;
-    .registers 5
+    .locals 3
 
     .line 1
     sget-object v0, Llibs/cr0;->a:Ljava/lang/Object;
@@ -259,7 +259,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Llibs/co0;->X:Llibs/do0;
 
     .line 5
@@ -306,27 +306,27 @@
     return-object v1
 
     .line 26
-    :catchall_19
+    :catchall_0
     move-exception p1
 
     .line 27
     monitor-exit v0
-    :try_end_1b
-    .catchall {:try_start_3 .. :try_end_1b} :catchall_19
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 28
     throw p1
 .end method
 
 .method public final m(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final n()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -336,7 +336,7 @@
 .end method
 
 .method public final p()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, ""
@@ -347,21 +347,21 @@
 .end method
 
 .method public final q(JLjava/nio/ByteBuffer;JI)V
-    .registers 7
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final r()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final s(J)V
-    .registers 3
+    .locals 0
 
     .line 1
     return-void

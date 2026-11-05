@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/i81;-><init>()V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final f(Llibs/mz1;)V
-    .registers 4
+    .locals 2
 
     .line 1
     const/4 v0, 0x4
@@ -66,7 +66,7 @@
     move-result v1
 
     .line 19
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 20
     .line 21
@@ -86,8 +86,8 @@
 
     .line 28
     .line 29
-    :cond_1c
-    if-eqz v1, :cond_26
+    :cond_0
+    if-eqz v1, :cond_1
 
     .line 30
     .line 31
@@ -107,12 +107,12 @@
 
     .line 38
     .line 39
-    :cond_26
+    :cond_1
     return-void
 .end method
 
 .method public final h(Llibs/mz1;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x4
@@ -154,7 +154,7 @@
 
     .line 21
     .line 22
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 23
     .line 24
@@ -167,12 +167,12 @@
     .line 27
     .line 28
     .line 29
-    :cond_1c
+    :cond_0
     iget-object v0, p0, Llibs/fz3;->Nu:Ljava/lang/String;
 
     .line 30
     .line 31
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     .line 32
     .line 33
@@ -185,6 +185,6 @@
     .line 36
     .line 37
     .line 38
-    :cond_25
+    :cond_1
     return-void
 .end method

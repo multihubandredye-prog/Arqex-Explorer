@@ -38,7 +38,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Landroid/view/animation/LinearInterpolator;
@@ -99,7 +99,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Llibs/x00;)V
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
@@ -244,7 +244,7 @@
 
 # virtual methods
 .method public final a(DDDDFF)V
-    .registers 14
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/yp1;->Lambda:Landroid/content/res/Resources;
@@ -404,7 +404,7 @@
 
     .line 77
     .line 78
-    if-lez p8, :cond_5d
+    if-lez p8, :cond_1
 
     .line 79
     .line 80
@@ -415,14 +415,14 @@
 
     .line 82
     .line 83
-    if-gez p5, :cond_55
+    if-gez p5, :cond_0
 
     .line 84
     .line 85
-    goto :goto_5d
+    goto :goto_0
 
     .line 86
-    :cond_55
+    :cond_0
     div-float/2addr p1, p7
 
     .line 87
@@ -440,11 +440,11 @@
     double-to-float p1, p5
 
     .line 93
-    goto :goto_66
+    goto :goto_1
 
     .line 94
-    :cond_5d
-    :goto_5d
+    :cond_1
+    :goto_0
     iget p1, p2, Llibs/xp1;->h:F
 
     .line 95
@@ -466,7 +466,7 @@
     double-to-float p1, p3
 
     .line 103
-    :goto_66
+    :goto_1
     iput p1, p2, Llibs/xp1;->i:F
 
     .line 104
@@ -475,10 +475,10 @@
 .end method
 
 .method public final b(I)V
-    .registers 24
+    .locals 22
 
     .line 1
-    if-nez p1, :cond_14
+    if-nez p1, :cond_0
 
     .line 2
     .line 3
@@ -518,7 +518,7 @@
     return-void
 
     .line 21
-    :cond_14
+    :cond_0
     const/high16 v20, 0x41200000    # 10.0f
 
     .line 22
@@ -559,7 +559,7 @@
 .end method
 
 .method public final draw(Landroid/graphics/Canvas;)V
-    .registers 16
+    .locals 14
 
     .line 1
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
@@ -706,7 +706,7 @@
 
     .line 72
     .line 73
-    if-eqz v5, :cond_dd
+    if-eqz v5, :cond_1
 
     .line 74
     .line 75
@@ -714,7 +714,7 @@
 
     .line 76
     .line 77
-    if-nez v5, :cond_5b
+    if-nez v5, :cond_0
 
     .line 78
     .line 79
@@ -740,16 +740,16 @@
     .line 89
     .line 90
     .line 91
-    goto :goto_5e
+    goto :goto_0
 
     .line 92
-    :cond_5b
+    :cond_0
     invoke-virtual {v5}, Landroid/graphics/Path;->reset()V
 
     .line 93
     .line 94
     .line 95
-    :goto_5e
+    :goto_0
     iget v5, v2, Llibs/xp1;->i:F
 
     .line 96
@@ -1009,7 +1009,7 @@
     .line 220
     .line 221
     .line 222
-    :cond_dd
+    :cond_1
     iget p1, v2, Llibs/xp1;->v:I
 
     .line 223
@@ -1018,7 +1018,7 @@
 
     .line 225
     .line 226
-    if-ge p1, v5, :cond_100
+    if-ge p1, v5, :cond_2
 
     .line 227
     .line 228
@@ -1079,7 +1079,7 @@
     .line 255
     .line 256
     .line 257
-    :cond_100
+    :cond_2
     invoke-virtual {v4, v1}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
     .line 258
@@ -1089,7 +1089,7 @@
 .end method
 
 .method public final getAlpha()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/yp1;->Y:Llibs/xp1;
@@ -1104,7 +1104,7 @@
 .end method
 
 .method public final getIntrinsicHeight()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Llibs/yp1;->Pi:D
@@ -1118,7 +1118,7 @@
 .end method
 
 .method public final getIntrinsicWidth()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Llibs/yp1;->Omicron:D
@@ -1132,7 +1132,7 @@
 .end method
 
 .method public final getOpacity()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, -0x3
@@ -1142,7 +1142,7 @@
 .end method
 
 .method public final isRunning()Z
-    .registers 7
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/yp1;->X:Ljava/util/ArrayList;
@@ -1163,8 +1163,8 @@
     const/4 v3, 0x0
 
     .line 9
-    :goto_8
-    if-ge v3, v1, :cond_21
+    :goto_0
+    if-ge v3, v1, :cond_1
 
     .line 10
     .line 11
@@ -1188,7 +1188,7 @@
     move-result v5
 
     .line 21
-    if-eqz v5, :cond_1e
+    if-eqz v5, :cond_0
 
     .line 22
     .line 23
@@ -1200,7 +1200,7 @@
     move-result v4
 
     .line 27
-    if-nez v4, :cond_1e
+    if-nez v4, :cond_0
 
     .line 28
     .line 29
@@ -1210,20 +1210,20 @@
     return v0
 
     .line 31
-    :cond_1e
+    :cond_0
     add-int/lit8 v3, v3, 0x1
 
     .line 32
     .line 33
-    goto :goto_8
+    goto :goto_0
 
     .line 34
-    :cond_21
+    :cond_1
     return v2
 .end method
 
 .method public final setAlpha(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/yp1;->Y:Llibs/xp1;
@@ -1238,7 +1238,7 @@
 .end method
 
 .method public final setColorFilter(Landroid/graphics/ColorFilter;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/yp1;->Y:Llibs/xp1;
@@ -1263,7 +1263,7 @@
 .end method
 
 .method public final start()V
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/yp1;->Nu:Llibs/tp1;
@@ -1311,7 +1311,7 @@
 
     .line 23
     .line 24
-    if-eqz v2, :cond_25
+    if-eqz v2, :cond_0
 
     .line 25
     .line 26
@@ -1339,7 +1339,7 @@
     return-void
 
     .line 38
-    :cond_25
+    :cond_0
     const/4 v2, 0x0
 
     .line 39
@@ -1407,7 +1407,7 @@
 .end method
 
 .method public final stop()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/yp1;->Mu:Llibs/x00;
@@ -1442,7 +1442,7 @@
     const/4 v3, 0x0
 
     .line 17
-    if-eqz v2, :cond_17
+    if-eqz v2, :cond_0
 
     .line 18
     .line 19
@@ -1455,7 +1455,7 @@
     .line 22
     .line 23
     .line 24
-    :cond_17
+    :cond_0
     iput v3, v1, Llibs/xp1;->k:I
 
     .line 25

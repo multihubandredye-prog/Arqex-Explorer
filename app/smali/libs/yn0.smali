@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/hl;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/fh;-><init>(Llibs/hl;)V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final i()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -29,7 +29,7 @@
 .end method
 
 .method public final j()J
-    .registers 3
+    .locals 2
 
     .line 1
     const/16 v0, 0x20
@@ -48,7 +48,7 @@
 .end method
 
 .method public final k()J
-    .registers 3
+    .locals 2
 
     .line 1
     const/16 v0, 0x24

@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -40,7 +40,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -51,7 +51,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .registers 6
+    .locals 2
 
     .line 1
     const/4 p3, 0x0
@@ -156,14 +156,14 @@
 
 # virtual methods
 .method public final a(Z)V
-    .registers 6
+    .locals 4
 
     .line 1
     iput-boolean p1, p0, Lcom/mixplorer/widgets/MiImageView;->Rho:Z
 
     .line 2
     .line 3
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_0
 
     .line 4
     .line 5
@@ -244,7 +244,7 @@
     .line 42
     .line 43
     .line 44
-    :cond_2b
+    :cond_0
     iget-object v0, p0, Lcom/mixplorer/widgets/MiImageView;->Omicron:Llibs/ut;
 
     .line 45
@@ -263,7 +263,7 @@
 .end method
 
 .method public draw(Landroid/graphics/Canvas;)V
-    .registers 8
+    .locals 6
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiImageView;->Mu:Landroid/graphics/Paint;
@@ -276,7 +276,7 @@
     const/4 v2, 0x0
 
     .line 5
-    :try_start_4
+    :try_start_0
     iput-boolean v1, p0, Lcom/mixplorer/widgets/MiImageView;->Tau:Z
 
     .line 6
@@ -285,7 +285,7 @@
 
     .line 8
     .line 9
-    if-eqz v3, :cond_44
+    if-eqz v3, :cond_2
 
     .line 10
     .line 11
@@ -297,7 +297,7 @@
     move-result v1
 
     .line 15
-    if-nez v1, :cond_1c
+    if-nez v1, :cond_1
 
     .line 16
     .line 17
@@ -309,35 +309,35 @@
     move-result v1
 
     .line 21
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_0
 
     .line 22
     .line 23
-    goto :goto_1c
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_0
     iget v1, p0, Lcom/mixplorer/widgets/MiImageView;->Nu:I
 
     .line 25
     .line 26
-    goto :goto_1e
+    goto :goto_1
 
     .line 27
-    :catchall_1a
+    :catchall_0
     move-exception p1
 
     .line 28
-    goto :goto_63
+    goto :goto_4
 
     .line 29
-    :cond_1c
-    :goto_1c
+    :cond_1
+    :goto_0
     iget v1, p0, Lcom/mixplorer/widgets/MiImageView;->Xi:I
 
     .line 30
     .line 31
-    :goto_1e
+    :goto_1
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 32
@@ -415,10 +415,10 @@
     .line 66
     .line 67
     .line 68
-    goto :goto_5a
+    goto :goto_2
 
     .line 69
-    :cond_44
+    :cond_2
     invoke-super {p0, p1}, Landroid/widget/ImageView;->draw(Landroid/graphics/Canvas;)V
 
     .line 70
@@ -428,7 +428,7 @@
 
     .line 73
     .line 74
-    if-eqz v0, :cond_5a
+    if-eqz v0, :cond_3
 
     .line 75
     .line 76
@@ -454,28 +454,28 @@
     .line 86
     .line 87
     move-result p1
-    :try_end_57
-    .catchall {:try_start_4 .. :try_end_57} :catchall_1a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 88
-    if-eqz p1, :cond_5a
+    if-eqz p1, :cond_3
 
     .line 89
     .line 90
-    goto :goto_5b
+    goto :goto_3
 
     .line 91
-    :cond_5a
-    :goto_5a
+    :cond_3
+    :goto_2
     const/4 v1, 0x0
 
     .line 92
-    :goto_5b
+    :goto_3
     iput-boolean v2, p0, Lcom/mixplorer/widgets/MiImageView;->Tau:Z
 
     .line 93
     .line 94
-    if-eqz v1, :cond_62
+    if-eqz v1, :cond_4
 
     .line 95
     .line 96
@@ -484,11 +484,11 @@
     .line 97
     .line 98
     .line 99
-    :cond_62
+    :cond_4
     return-void
 
     .line 100
-    :goto_63
+    :goto_4
     iput-boolean v2, p0, Lcom/mixplorer/widgets/MiImageView;->Tau:Z
 
     .line 101
@@ -497,14 +497,14 @@
 .end method
 
 .method public final invalidate()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Lcom/mixplorer/widgets/MiImageView;->Tau:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -513,12 +513,12 @@
     .line 6
     .line 7
     .line 8
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method public final onDraw(Landroid/graphics/Canvas;)V
-    .registers 5
+    .locals 3
 
     .line 1
     const/4 v0, 0x1
@@ -527,7 +527,7 @@
     const/4 v1, 0x0
 
     .line 3
-    :try_start_2
+    :try_start_0
     iput-boolean v0, p0, Lcom/mixplorer/widgets/MiImageView;->Tau:Z
 
     .line 4
@@ -541,7 +541,7 @@
 
     .line 9
     .line 10
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_0
 
     .line 11
     .line 12
@@ -590,25 +590,25 @@
 
     .line 34
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
-    :try_end_24
-    .catchall {:try_start_2 .. :try_end_24} :catchall_2e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 35
     .line 36
     .line 37
-    goto :goto_26
+    goto :goto_0
 
     .line 38
-    :cond_25
+    :cond_0
     const/4 v0, 0x0
 
     .line 39
-    :goto_26
+    :goto_0
     iput-boolean v1, p0, Lcom/mixplorer/widgets/MiImageView;->Tau:Z
 
     .line 40
     .line 41
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_1
 
     .line 42
     .line 43
@@ -617,11 +617,11 @@
     .line 44
     .line 45
     .line 46
-    :cond_2d
+    :cond_1
     return-void
 
     .line 47
-    :catchall_2e
+    :catchall_0
     iput-boolean v1, p0, Lcom/mixplorer/widgets/MiImageView;->Tau:Z
 
     .line 48
@@ -630,7 +630,7 @@
 .end method
 
 .method public final onFocusChanged(ZILandroid/graphics/Rect;)V
-    .registers 12
+    .locals 8
 
     .line 1
     invoke-super {p0, p1, p2, p3}, Landroid/widget/ImageView;->onFocusChanged(ZILandroid/graphics/Rect;)V
@@ -638,7 +638,7 @@
     .line 2
     .line 3
     .line 4
-    if-eqz p1, :cond_24
+    if-eqz p1, :cond_0
 
     .line 5
     .line 6
@@ -646,7 +646,7 @@
 
     .line 7
     .line 8
-    if-eqz p1, :cond_24
+    if-eqz p1, :cond_0
 
     .line 9
     .line 10
@@ -707,12 +707,12 @@
     .line 35
     .line 36
     .line 37
-    :cond_24
+    :cond_0
     return-void
 .end method
 
 .method public final onLayout(ZIIII)V
-    .registers 7
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -738,14 +738,14 @@
 .end method
 
 .method public final onTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiImageView;->Lambda:Llibs/op2;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -754,7 +754,7 @@
     .line 6
     .line 7
     .line 8
-    :cond_7
+    :cond_0
     invoke-virtual {p0}, Lcom/mixplorer/widgets/MiImageView;->postInvalidate()V
 
     .line 9
@@ -772,14 +772,14 @@
 .end method
 
 .method public final postInvalidate()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Lcom/mixplorer/widgets/MiImageView;->Tau:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -788,19 +788,19 @@
     .line 6
     .line 7
     .line 8
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method public final requestLayout()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Lcom/mixplorer/widgets/MiImageView;->Sigma:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -809,12 +809,12 @@
     .line 6
     .line 7
     .line 8
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method public setChartValue(I)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiImageView;->Omicron:Llibs/ut;
@@ -854,7 +854,7 @@
 
     .line 17
     .line 18
-    if-eqz v2, :cond_19
+    if-eqz v2, :cond_0
 
     .line 19
     .line 20
@@ -872,7 +872,7 @@
 
     .line 25
     .line 26
-    :cond_19
+    :cond_0
     iput v1, v0, Llibs/ut;->j:F
 
     .line 27
@@ -934,14 +934,14 @@
 .end method
 
 .method public setRippleColor(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiImageView;->Lambda:Llibs/op2;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -954,12 +954,12 @@
     .line 8
     .line 9
     .line 10
-    :cond_9
+    :cond_0
     return-void
 .end method
 
 .method public setTagDescription(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V

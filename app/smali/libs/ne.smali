@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/kp3;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/t43;-><init>()V
@@ -27,22 +27,22 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
-    if-ne p1, p0, :cond_3
+    if-ne p1, p0, :cond_0
 
     .line 2
     .line 3
-    goto :goto_13
+    goto :goto_0
 
     .line 4
-    :cond_3
+    :cond_0
     instance-of v0, p1, Llibs/ne;
 
     .line 5
     .line 6
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_1
 
     .line 7
     .line 8
@@ -66,18 +66,18 @@
     move-result p1
 
     .line 18
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_1
 
     .line 19
     .line 20
-    :goto_13
+    :goto_0
     const/4 p1, 0x1
 
     .line 21
     return p1
 
     .line 22
-    :cond_15
+    :cond_1
     const/4 p1, 0x0
 
     .line 23
@@ -85,7 +85,7 @@
 .end method
 
 .method public final f(Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
-    .registers 15
+    .locals 12
 
     .line 1
     new-instance p1, Llibs/h5;
@@ -117,7 +117,7 @@
     const/4 v1, 0x0
 
     .line 16
-    if-eqz v0, :cond_db
+    if-eqz v0, :cond_d
 
     .line 17
     .line 18
@@ -139,12 +139,12 @@
     const/4 v3, 0x0
 
     .line 26
-    :goto_19
+    :goto_0
     const/16 v4, 0x9
 
     .line 27
     .line 28
-    if-ge v2, v4, :cond_c7
+    if-ge v2, v4, :cond_c
 
     .line 29
     .line 30
@@ -186,7 +186,7 @@
     move-result-object v6
 
     .line 48
-    if-eqz v6, :cond_59
+    if-eqz v6, :cond_3
 
     .line 49
     .line 50
@@ -198,7 +198,7 @@
     move-result v3
 
     .line 54
-    if-gt v3, v5, :cond_3d
+    if-gt v3, v5, :cond_0
 
     .line 55
     .line 56
@@ -210,17 +210,17 @@
     move-result v3
 
     .line 60
-    if-nez v3, :cond_40
+    if-nez v3, :cond_1
 
     .line 61
     .line 62
-    :cond_3d
+    :cond_0
     invoke-interface {p2, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 63
     .line 64
     .line 65
-    :cond_40
+    :cond_1
     invoke-virtual {v6}, Ljava/security/cert/X509Certificate;->getIssuerDN()Ljava/security/Principal;
 
     .line 66
@@ -245,15 +245,15 @@
     move-result v3
 
     .line 77
-    if-nez v3, :cond_4f
+    if-nez v3, :cond_2
 
     .line 78
     .line 79
-    goto :goto_57
+    goto :goto_1
 
     .line 80
-    :cond_4f
-    :try_start_4f
+    :cond_2
+    :try_start_0
     invoke-virtual {v6}, Ljava/security/cert/Certificate;->getPublicKey()Ljava/security/PublicKey;
 
     .line 81
@@ -263,24 +263,24 @@
 
     .line 84
     invoke-virtual {v6, v3}, Ljava/security/cert/Certificate;->verify(Ljava/security/PublicKey;)V
-    :try_end_56
-    .catch Ljava/security/GeneralSecurityException; {:try_start_4f .. :try_end_56} :catch_57
+    :try_end_0
+    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 85
     .line 86
     .line 87
-    goto :goto_b2
+    goto :goto_6
 
     .line 88
-    :catch_57
-    :goto_57
+    :catch_0
+    :goto_1
     const/4 v3, 0x1
 
     .line 89
-    goto :goto_9b
+    goto :goto_4
 
     .line 90
-    :cond_59
+    :cond_3
     iget v6, p1, Llibs/h5;->Y:I
 
     .line 91
@@ -289,27 +289,27 @@
 
     .line 93
     .line 94
-    :goto_5d
-    if-eq v6, v7, :cond_61
+    :goto_2
+    if-eq v6, v7, :cond_4
 
     .line 95
     .line 96
     const/4 v8, 0x1
 
     .line 97
-    goto :goto_62
+    goto :goto_3
 
     .line 98
-    :cond_61
+    :cond_4
     const/4 v8, 0x0
 
     .line 99
-    :goto_62
-    if-eqz v8, :cond_b0
+    :goto_3
+    if-eqz v8, :cond_a
 
     .line 100
     .line 101
-    if-eq v6, v7, :cond_ac
+    if-eq v6, v7, :cond_9
 
     .line 102
     .line 103
@@ -325,11 +325,11 @@
 
     .line 108
     .line 109
-    if-ne v10, v7, :cond_a6
+    if-ne v10, v7, :cond_8
 
     .line 110
     .line 111
-    if-eqz v9, :cond_a6
+    if-eqz v9, :cond_8
 
     .line 112
     .line 113
@@ -374,15 +374,15 @@
     move-result v10
 
     .line 132
-    if-nez v10, :cond_86
+    if-nez v10, :cond_5
 
     .line 133
     .line 134
-    goto :goto_a4
+    goto :goto_5
 
     .line 135
-    :cond_86
-    :try_start_86
+    :cond_5
+    :try_start_1
     invoke-virtual {v9}, Ljava/security/cert/Certificate;->getPublicKey()Ljava/security/PublicKey;
 
     .line 136
@@ -392,13 +392,13 @@
 
     .line 139
     invoke-virtual {v4, v10}, Ljava/security/cert/Certificate;->verify(Ljava/security/PublicKey;)V
-    :try_end_8d
-    .catch Ljava/security/GeneralSecurityException; {:try_start_86 .. :try_end_8d} :catch_a3
+    :try_end_1
+    .catch Ljava/security/GeneralSecurityException; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 140
     .line 141
     .line 142
-    if-ltz v6, :cond_9f
+    if-ltz v6, :cond_7
 
     .line 143
     .line 144
@@ -410,7 +410,7 @@
     move-result v4
 
     .line 148
-    if-eqz v4, :cond_98
+    if-eqz v4, :cond_6
 
     .line 149
     .line 150
@@ -421,22 +421,22 @@
     array-length v4, v4
 
     .line 153
-    :cond_98
+    :cond_6
     invoke-interface {p2, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 154
     .line 155
     .line 156
-    :goto_9b
+    :goto_4
     add-int/lit8 v2, v2, 0x1
 
     .line 157
     .line 158
-    goto/16 :goto_19
+    goto/16 :goto_0
 
     .line 159
     .line 160
-    :cond_9f
+    :cond_7
     invoke-static {}, Llibs/ic0;->r()V
 
     .line 161
@@ -445,18 +445,18 @@
     return-object v1
 
     .line 164
-    :catch_a3
+    :catch_1
     nop
 
     .line 165
-    :goto_a4
+    :goto_5
     move v6, v8
 
     .line 166
-    goto :goto_5d
+    goto :goto_2
 
     .line 167
-    :cond_a6
+    :cond_8
     new-instance p1, Ljava/util/ConcurrentModificationException;
 
     .line 168
@@ -469,7 +469,7 @@
     throw p1
 
     .line 173
-    :cond_ac
+    :cond_9
     invoke-static {}, Llibs/t22;->b()V
 
     .line 174
@@ -478,16 +478,16 @@
     return-object v1
 
     .line 177
-    :cond_b0
-    if-eqz v3, :cond_b3
+    :cond_a
+    if-eqz v3, :cond_b
 
     .line 178
     .line 179
-    :goto_b2
+    :goto_6
     return-object p2
 
     .line 180
-    :cond_b3
+    :cond_b
     new-instance p1, Ljavax/net/ssl/SSLPeerUnverifiedException;
 
     .line 181
@@ -526,7 +526,7 @@
     throw p1
 
     .line 200
-    :cond_c7
+    :cond_c
     new-instance p1, Ljavax/net/ssl/SSLPeerUnverifiedException;
 
     .line 201
@@ -565,7 +565,7 @@
     throw p1
 
     .line 220
-    :cond_db
+    :cond_d
     invoke-static {}, Llibs/t22;->b()V
 
     .line 221
@@ -575,7 +575,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ne;->j:Llibs/kp3;

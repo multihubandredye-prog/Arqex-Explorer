@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(ZJJLjava/lang/String;Ljava/lang/String;JLjava/lang/String;)V
-    .registers 11
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -63,7 +63,7 @@
 
 # virtual methods
 .method public final a()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -96,7 +96,7 @@
     move-result v2
 
     .line 17
-    if-eqz v2, :cond_19
+    if-eqz v2, :cond_0
 
     .line 18
     .line 19
@@ -114,15 +114,15 @@
     move-result-object v1
 
     .line 25
-    goto :goto_1b
+    goto :goto_0
 
     .line 26
-    :cond_19
+    :cond_0
     const-string v1, ""
 
     .line 27
     .line 28
-    :goto_1b
+    :goto_0
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 29

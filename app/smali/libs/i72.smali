@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/cg;Z)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -94,7 +94,7 @@
 
 # virtual methods
 .method public final a(ZLlibs/et;)V
-    .registers 10
+    .locals 7
 
     .line 1
     iput-boolean p1, p0, Llibs/i72;->Omicron:Z
@@ -112,7 +112,7 @@
     const/4 v1, 0x1
 
     .line 8
-    if-eqz p1, :cond_33
+    if-eqz p1, :cond_2
 
     .line 9
     .line 10
@@ -137,7 +137,7 @@
     const/4 v5, 0x0
 
     .line 19
-    if-ge v2, v4, :cond_26
+    if-ge v2, v4, :cond_0
 
     .line 20
     .line 21
@@ -161,7 +161,7 @@
     const/4 v2, 0x0
 
     .line 29
-    :goto_1c
+    :goto_0
     array-length v4, v3
 
     .line 30
@@ -171,7 +171,7 @@
     sub-int/2addr v4, v6
 
     .line 32
-    if-ge v2, v4, :cond_2a
+    if-ge v2, v4, :cond_1
 
     .line 33
     .line 34
@@ -183,10 +183,10 @@
 
     .line 37
     .line 38
-    goto :goto_1c
+    goto :goto_0
 
     .line 39
-    :cond_26
+    :cond_0
     array-length v2, v3
 
     .line 40
@@ -195,7 +195,7 @@
     .line 41
     .line 42
     .line 43
-    :cond_2a
+    :cond_1
     invoke-virtual {p0}, Llibs/i72;->reset()V
 
     .line 44
@@ -213,7 +213,7 @@
     return-void
 
     .line 52
-    :cond_33
+    :cond_2
     invoke-virtual {p0}, Llibs/i72;->reset()V
 
     .line 53
@@ -228,7 +228,7 @@
 .end method
 
 .method public final b()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-boolean v0, p0, Llibs/i72;->Pi:Z
@@ -239,7 +239,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -266,7 +266,7 @@
     return-object v0
 
     .line 18
-    :cond_11
+    :cond_0
     invoke-interface {v1}, Llibs/cg;->b()Ljava/lang/String;
 
     .line 19
@@ -291,7 +291,7 @@
 .end method
 
 .method public final c(BI)B
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/i72;->Z:[B
@@ -312,7 +312,7 @@
 .end method
 
 .method public final i()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/i72;->Mu:Llibs/cg;
@@ -331,7 +331,7 @@
 .end method
 
 .method public final r(II[B[B)I
-    .registers 22
+    .locals 17
 
     .line 1
     move-object/from16 v0, p0
@@ -389,7 +389,7 @@
 
     .line 27
     .line 28
-    if-eqz v13, :cond_150
+    if-eqz v13, :cond_f
 
     .line 29
     .line 30
@@ -399,7 +399,7 @@
     const/4 v14, 0x1
 
     .line 32
-    if-eqz v5, :cond_b8
+    if-eqz v5, :cond_7
 
     .line 33
     .line 34
@@ -410,7 +410,7 @@
     array-length v15, v3
 
     .line 37
-    if-gt v5, v15, :cond_b4
+    if-gt v5, v15, :cond_6
 
     .line 38
     .line 39
@@ -418,7 +418,7 @@
 
     .line 40
     .line 41
-    if-nez v5, :cond_8e
+    if-nez v5, :cond_3
 
     .line 42
     .line 43
@@ -436,7 +436,7 @@
     array-length v15, v4
 
     .line 49
-    if-gt v7, v15, :cond_8a
+    if-gt v7, v15, :cond_2
 
     .line 50
     .line 51
@@ -448,12 +448,12 @@
     const/4 v7, 0x0
 
     .line 55
-    :goto_36
+    :goto_0
     iget-object v12, v0, Llibs/i72;->X:[B
 
     .line 56
     .line 57
-    if-ge v7, v8, :cond_47
+    if-ge v7, v8, :cond_0
 
     .line 58
     .line 59
@@ -481,10 +481,10 @@
 
     .line 70
     .line 71
-    goto :goto_36
+    goto :goto_0
 
     .line 72
-    :cond_47
+    :cond_0
     invoke-static {v4, v2, v6, v9, v8}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 73
@@ -559,8 +559,8 @@
     const/4 v2, 0x0
 
     .line 110
-    :goto_6d
-    if-ge v2, v8, :cond_7f
+    :goto_1
+    if-ge v2, v8, :cond_1
 
     .line 111
     .line 112
@@ -595,10 +595,10 @@
 
     .line 126
     .line 127
-    goto :goto_6d
+    goto :goto_1
 
     .line 128
-    :cond_7f
+    :cond_1
     add-int/2addr v7, v13
 
     .line 129
@@ -624,7 +624,7 @@
     return v5
 
     .line 139
-    :cond_8a
+    :cond_2
     invoke-static {v12}, Llibs/fg3;->f(Ljava/lang/String;)V
 
     .line 140
@@ -633,12 +633,12 @@
     return v9
 
     .line 143
-    :cond_8e
+    :cond_3
     add-int/lit8 v7, v8, 0x2
 
     .line 144
     .line 145
-    if-lt v5, v7, :cond_1ae
+    if-lt v5, v7, :cond_15
 
     .line 146
     .line 147
@@ -649,7 +649,7 @@
     array-length v7, v4
 
     .line 150
-    if-gt v5, v7, :cond_b0
+    if-gt v5, v7, :cond_5
 
     .line 151
     .line 152
@@ -661,8 +661,8 @@
     const/4 v5, 0x0
 
     .line 156
-    :goto_9b
-    if-ge v5, v8, :cond_ac
+    :goto_2
+    if-ge v5, v8, :cond_4
 
     .line 157
     .line 158
@@ -694,10 +694,10 @@
 
     .line 171
     .line 172
-    goto :goto_9b
+    goto :goto_2
 
     .line 173
-    :cond_ac
+    :cond_4
     invoke-static {v4, v2, v6, v9, v8}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 174
@@ -706,7 +706,7 @@
     return v8
 
     .line 177
-    :cond_b0
+    :cond_5
     invoke-static {v12}, Llibs/fg3;->f(Ljava/lang/String;)V
 
     .line 178
@@ -715,7 +715,7 @@
     return v9
 
     .line 181
-    :cond_b4
+    :cond_6
     invoke-static {v7}, Llibs/fg3;->f(Ljava/lang/String;)V
 
     .line 182
@@ -724,7 +724,7 @@
     return v9
 
     .line 185
-    :cond_b8
+    :cond_7
     add-int v5, v1, v8
 
     .line 186
@@ -732,7 +732,7 @@
     array-length v15, v3
 
     .line 188
-    if-gt v5, v15, :cond_14c
+    if-gt v5, v15, :cond_e
 
     .line 189
     .line 190
@@ -743,7 +743,7 @@
     array-length v7, v4
 
     .line 193
-    if-gt v5, v7, :cond_148
+    if-gt v5, v7, :cond_d
 
     .line 194
     .line 195
@@ -751,15 +751,15 @@
 
     .line 196
     .line 197
-    if-nez v5, :cond_db
+    if-nez v5, :cond_9
 
     .line 198
     .line 199
     const/4 v2, 0x0
 
     .line 200
-    :goto_c7
-    if-ge v2, v8, :cond_d2
+    :goto_3
+    if-ge v2, v8, :cond_8
 
     .line 201
     .line 202
@@ -779,10 +779,10 @@
 
     .line 209
     .line 210
-    goto :goto_c7
+    goto :goto_3
 
     .line 211
-    :cond_d2
+    :cond_8
     invoke-interface {v10, v9, v9, v6, v11}, Llibs/cg;->r(II[B[B)I
 
     .line 212
@@ -802,12 +802,12 @@
     return v9
 
     .line 220
-    :cond_db
+    :cond_9
     iget-object v7, v0, Llibs/i72;->Lambda:[B
 
     .line 221
     .line 222
-    if-ne v5, v8, :cond_10e
+    if-ne v5, v8, :cond_b
 
     .line 223
     .line 224
@@ -852,8 +852,8 @@
     const/4 v3, 0x0
 
     .line 245
-    :goto_f4
-    if-ge v3, v1, :cond_105
+    :goto_4
+    if-ge v3, v1, :cond_a
 
     .line 246
     .line 247
@@ -885,10 +885,10 @@
 
     .line 260
     .line 261
-    goto :goto_f4
+    goto :goto_4
 
     .line 262
-    :cond_105
+    :cond_a
     invoke-static {v7, v13, v6, v9, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 263
@@ -908,12 +908,12 @@
     return v1
 
     .line 271
-    :cond_10e
+    :cond_b
     add-int/lit8 v12, v8, 0x2
 
     .line 272
     .line 273
-    if-lt v5, v12, :cond_1ae
+    if-lt v5, v12, :cond_15
 
     .line 274
     .line 275
@@ -979,8 +979,8 @@
     const/4 v1, 0x0
 
     .line 307
-    :goto_132
-    if-ge v1, v3, :cond_144
+    :goto_5
+    if-ge v1, v3, :cond_c
 
     .line 308
     .line 309
@@ -1015,10 +1015,10 @@
 
     .line 323
     .line 324
-    goto :goto_132
+    goto :goto_5
 
     .line 325
-    :cond_144
+    :cond_c
     invoke-static {v7, v13, v6, v9, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 326
@@ -1027,7 +1027,7 @@
     return v8
 
     .line 329
-    :cond_148
+    :cond_d
     invoke-static {v12}, Llibs/fg3;->f(Ljava/lang/String;)V
 
     .line 330
@@ -1036,7 +1036,7 @@
     return v9
 
     .line 333
-    :cond_14c
+    :cond_e
     invoke-static {v7}, Llibs/fg3;->f(Ljava/lang/String;)V
 
     .line 334
@@ -1045,8 +1045,8 @@
     return v9
 
     .line 337
-    :cond_150
-    if-eqz v5, :cond_184
+    :cond_f
+    if-eqz v5, :cond_13
 
     .line 338
     .line 339
@@ -1057,7 +1057,7 @@
     array-length v13, v3
 
     .line 342
-    if-gt v5, v13, :cond_180
+    if-gt v5, v13, :cond_12
 
     .line 343
     .line 344
@@ -1068,7 +1068,7 @@
     array-length v7, v4
 
     .line 347
-    if-gt v5, v7, :cond_17c
+    if-gt v5, v7, :cond_11
 
     .line 348
     .line 349
@@ -1080,8 +1080,8 @@
     const/4 v5, 0x0
 
     .line 353
-    :goto_160
-    if-ge v5, v8, :cond_171
+    :goto_6
+    if-ge v5, v8, :cond_10
 
     .line 354
     .line 355
@@ -1113,12 +1113,12 @@
 
     .line 368
     .line 369
-    goto :goto_160
+    goto :goto_6
 
     .line 370
-    :cond_171
-    :goto_171
-    if-ge v9, v8, :cond_1ae
+    :cond_10
+    :goto_7
+    if-ge v9, v8, :cond_15
 
     .line 371
     .line 372
@@ -1138,10 +1138,10 @@
 
     .line 379
     .line 380
-    goto :goto_171
+    goto :goto_7
 
     .line 381
-    :cond_17c
+    :cond_11
     invoke-static {v12}, Llibs/fg3;->f(Ljava/lang/String;)V
 
     .line 382
@@ -1150,7 +1150,7 @@
     return v9
 
     .line 385
-    :cond_180
+    :cond_12
     invoke-static {v7}, Llibs/fg3;->f(Ljava/lang/String;)V
 
     .line 386
@@ -1159,7 +1159,7 @@
     return v9
 
     .line 389
-    :cond_184
+    :cond_13
     add-int v5, v1, v8
 
     .line 390
@@ -1167,7 +1167,7 @@
     array-length v13, v3
 
     .line 392
-    if-gt v5, v13, :cond_1b3
+    if-gt v5, v13, :cond_17
 
     .line 393
     .line 394
@@ -1178,7 +1178,7 @@
     array-length v7, v4
 
     .line 397
-    if-gt v5, v7, :cond_1af
+    if-gt v5, v7, :cond_16
 
     .line 398
     .line 399
@@ -1190,8 +1190,8 @@
     const/4 v5, 0x0
 
     .line 403
-    :goto_192
-    if-ge v5, v8, :cond_1a3
+    :goto_8
+    if-ge v5, v8, :cond_14
 
     .line 404
     .line 405
@@ -1223,12 +1223,12 @@
 
     .line 418
     .line 419
-    goto :goto_192
+    goto :goto_8
 
     .line 420
-    :cond_1a3
-    :goto_1a3
-    if-ge v9, v8, :cond_1ae
+    :cond_14
+    :goto_9
+    if-ge v9, v8, :cond_15
 
     .line 421
     .line 422
@@ -1248,14 +1248,14 @@
 
     .line 429
     .line 430
-    goto :goto_1a3
+    goto :goto_9
 
     .line 431
-    :cond_1ae
+    :cond_15
     return v8
 
     .line 432
-    :cond_1af
+    :cond_16
     invoke-static {v12}, Llibs/fg3;->f(Ljava/lang/String;)V
 
     .line 433
@@ -1264,7 +1264,7 @@
     return v9
 
     .line 436
-    :cond_1b3
+    :cond_17
     invoke-static {v7}, Llibs/fg3;->f(Ljava/lang/String;)V
 
     .line 437
@@ -1274,7 +1274,7 @@
 .end method
 
 .method public final reset()V
-    .registers 5
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
@@ -1287,7 +1287,7 @@
     const/4 v1, 0x0
 
     .line 5
-    :goto_4
+    :goto_0
     iget-object v2, p0, Llibs/i72;->Y:[B
 
     .line 6
@@ -1295,7 +1295,7 @@
     array-length v3, v2
 
     .line 8
-    if-eq v1, v3, :cond_19
+    if-eq v1, v3, :cond_1
 
     .line 9
     .line 10
@@ -1303,7 +1303,7 @@
 
     .line 11
     .line 12
-    if-eqz v3, :cond_10
+    if-eqz v3, :cond_0
 
     .line 13
     .line 14
@@ -1311,10 +1311,10 @@
 
     .line 15
     .line 16
-    goto :goto_16
+    goto :goto_1
 
     .line 17
-    :cond_10
+    :cond_0
     iget-object v3, p0, Llibs/i72;->X:[B
 
     .line 18
@@ -1327,15 +1327,15 @@
 
     .line 22
     .line 23
-    :goto_16
+    :goto_1
     add-int/lit8 v1, v1, 0x1
 
     .line 24
     .line 25
-    goto :goto_4
+    goto :goto_0
 
     .line 26
-    :cond_19
+    :cond_1
     iget-object v0, p0, Llibs/i72;->Mu:Llibs/cg;
 
     .line 27

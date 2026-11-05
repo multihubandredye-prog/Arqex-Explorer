@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZLjava/lang/String;Ljava/util/ArrayList;)V
-    .registers 11
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -81,14 +81,14 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 8
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/j4;->j:Ljava/util/List;
 
     .line 2
     .line 3
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -96,10 +96,10 @@
 
     .line 6
     .line 7
-    goto :goto_f
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     invoke-interface {v0}, Ljava/util/List;->toArray()[Ljava/lang/Object;
 
     .line 9
@@ -116,7 +116,7 @@
     move-result-object v0
 
     .line 16
-    :goto_f
+    :goto_0
     iget-boolean v1, p0, Llibs/j4;->g:Z
 
     .line 17

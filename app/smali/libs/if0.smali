@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(IIIILjava/math/BigInteger;Ljava/math/BigInteger;)V
-    .registers 16
+    .locals 9
 
     const/4 v7, 0x0
 
@@ -44,7 +44,7 @@
 .end method
 
 .method public constructor <init>(IIIILjava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;)V
-    .registers 15
+    .locals 6
 
     .line 1
     invoke-direct {p0, p1, p2, p3, p4}, Llibs/gf0;-><init>(IIII)V
@@ -139,7 +139,7 @@
 .end method
 
 .method public constructor <init>(IIIILlibs/xf3;Llibs/xf3;Ljava/math/BigInteger;Ljava/math/BigInteger;)V
-    .registers 15
+    .locals 6
 
     .line 46
     invoke-direct {p0, p1, p2, p3, p4}, Llibs/gf0;-><init>(IIII)V
@@ -196,7 +196,7 @@
 .end method
 
 .method public constructor <init>(IILjava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;)V
-    .registers 16
+    .locals 9
 
     const/4 v3, 0x0
 
@@ -225,7 +225,7 @@
 
 # virtual methods
 .method public final a()Llibs/kf0;
-    .registers 10
+    .locals 9
 
     .line 1
     new-instance v0, Llibs/if0;
@@ -273,7 +273,7 @@
 .end method
 
 .method public final b()Llibs/zd2;
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Llibs/gf0;->s()Z
@@ -284,7 +284,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -303,7 +303,7 @@
     return-object v0
 
     .line 14
-    :cond_d
+    :cond_0
     invoke-super {p0}, Llibs/kf0;->b()Llibs/zd2;
 
     .line 15
@@ -316,7 +316,7 @@
 .end method
 
 .method public final i(Ljava/math/BigInteger;)Llibs/xf3;
-    .registers 8
+    .locals 6
 
     .line 1
     new-instance v0, Llibs/tf0;
@@ -351,7 +351,7 @@
 .end method
 
 .method public final j()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/if0;->j:I
@@ -362,7 +362,7 @@
 .end method
 
 .method public final k()Llibs/ig0;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/if0;->n:Llibs/hg0;

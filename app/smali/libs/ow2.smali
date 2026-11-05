@@ -24,7 +24,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 8
+    .locals 8
 
     .line 1
     new-instance v0, Llibs/ow2;
@@ -120,7 +120,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;IJLjava/lang/String;I)V
-    .registers 7
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
@@ -147,7 +147,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Llibs/ow2;
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Llibs/ow2;
@@ -170,7 +170,7 @@
 .end method
 
 .method public static values()[Llibs/ow2;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/ow2;->Nu:[Llibs/ow2;
@@ -195,7 +195,7 @@
 
 # virtual methods
 .method public final getValue()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/ow2;->X:I

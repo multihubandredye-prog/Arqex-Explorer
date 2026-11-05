@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/mk1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/lk1;->X:Llibs/mk1;
@@ -30,21 +30,21 @@
 
 # virtual methods
 .method public final afterTextChanged(Landroid/text/Editable;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final beforeTextChanged(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final onTextChanged(Ljava/lang/CharSequence;III)V
-    .registers 7
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/lk1;->X:Llibs/mk1;
@@ -55,7 +55,7 @@
 
     .line 4
     .line 5
-    if-ne p1, v1, :cond_b
+    if-ne p1, v1, :cond_0
 
     .line 6
     .line 7
@@ -70,7 +70,7 @@
     return-void
 
     .line 12
-    :cond_b
+    :cond_0
     check-cast p1, Landroid/text/Spannable;
 
     .line 13

@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/to3;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/e00;-><init>()V
@@ -104,7 +104,7 @@
 
 # virtual methods
 .method public final b(Llibs/at;Llibs/ce;Llibs/bz3;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-super {p0, p1, p2, p3}, Llibs/e00;->b(Llibs/at;Llibs/ce;Llibs/bz3;)V
@@ -112,7 +112,7 @@
     .line 2
     .line 3
     .line 4
-    if-eqz p2, :cond_b
+    if-eqz p2, :cond_0
 
     .line 5
     .line 6
@@ -128,26 +128,26 @@
 
     .line 11
     .line 12
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public final c([B)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/e00;->b:Llibs/ce;
 
     .line 2
     .line 3
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
-    goto :goto_2d
+    goto :goto_0
 
     .line 6
-    :cond_5
+    :cond_0
     iget-wide v1, p0, Llibs/e00;->e:J
 
     .line 7
@@ -222,15 +222,15 @@
     move-result p1
 
     .line 44
-    if-eqz p1, :cond_2e
+    if-eqz p1, :cond_1
 
     .line 45
     .line 46
-    :goto_2d
+    :goto_0
     return-void
 
     .line 47
-    :cond_2e
+    :cond_1
     new-instance p1, Llibs/po3;
 
     .line 48
@@ -252,13 +252,13 @@
 .end method
 
 .method public final d(I)V
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x5
 
     .line 2
-    if-lt p1, v0, :cond_8
+    if-lt p1, v0, :cond_0
 
     .line 3
     .line 4
@@ -266,14 +266,14 @@
 
     .line 5
     .line 6
-    if-gt p1, v0, :cond_8
+    if-gt p1, v0, :cond_0
 
     .line 7
     .line 8
     return-void
 
     .line 9
-    :cond_8
+    :cond_0
     iget-object v0, p0, Llibs/y70;->k:Llibs/oy2;
 
     .line 10
@@ -365,7 +365,7 @@
 .end method
 
 .method public final e(I[B)I
-    .registers 11
+    .locals 8
 
     .line 1
     iget-object v0, p0, Llibs/y70;->k:Llibs/oy2;
@@ -384,11 +384,11 @@
 
     .line 8
     .line 9
-    if-gt p2, p1, :cond_127
+    if-gt p2, p1, :cond_c
 
     .line 10
     .line 11
-    :goto_a
+    :goto_0
     iget p1, p0, Llibs/y70;->n:I
 
     .line 12
@@ -407,7 +407,7 @@
     const/4 p2, -0x1
 
     .line 21
-    if-ne p1, p2, :cond_6f
+    if-ne p1, p2, :cond_2
 
     .line 22
     .line 23
@@ -426,7 +426,7 @@
     sub-int/2addr p1, p2
 
     .line 30
-    if-gtz p1, :cond_124
+    if-gtz p1, :cond_b
 
     .line 31
     .line 32
@@ -434,7 +434,7 @@
 
     .line 33
     .line 34
-    if-eqz p1, :cond_45
+    if-eqz p1, :cond_0
 
     .line 35
     .line 36
@@ -470,15 +470,15 @@
     .line 50
     .line 51
     .line 52
-    :try_start_33
+    :try_start_0
     invoke-virtual {v0}, Llibs/uj;->String()J
 
     .line 53
     .line 54
     .line 55
     move-result-wide p1
-    :try_end_37
-    .catch Llibs/rj; {:try_start_33 .. :try_end_37} :catch_3e
+    :try_end_0
+    .catch Llibs/rj; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 56
     long-to-int p2, p1
@@ -493,10 +493,10 @@
 
     .line 61
     .line 62
-    goto :goto_a
+    goto :goto_0
 
     .line 63
-    :catch_3e
+    :catch_0
     move-exception p1
 
     .line 64
@@ -512,12 +512,12 @@
     throw p2
 
     .line 70
-    :cond_45
+    :cond_0
     iget-boolean p1, p0, Llibs/e00;->g:Z
 
     .line 71
     .line 72
-    if-eqz p1, :cond_54
+    if-eqz p1, :cond_1
 
     .line 73
     .line 74
@@ -541,10 +541,10 @@
     .line 82
     .line 83
     .line 84
-    goto :goto_a
+    goto :goto_0
 
     .line 85
-    :cond_54
+    :cond_1
     iget p1, p0, Llibs/e00;->d:I
 
     .line 86
@@ -562,15 +562,15 @@
     .line 92
     .line 93
     .line 94
-    :try_start_5d
+    :try_start_1
     invoke-virtual {v0}, Llibs/uj;->String()J
 
     .line 95
     .line 96
     .line 97
     move-result-wide p1
-    :try_end_61
-    .catch Llibs/rj; {:try_start_5d .. :try_end_61} :catch_68
+    :try_end_1
+    .catch Llibs/rj; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 98
     long-to-int p2, p1
@@ -585,10 +585,10 @@
 
     .line 103
     .line 104
-    goto :goto_a
+    goto :goto_0
 
     .line 105
-    :catch_68
+    :catch_1
     move-exception p1
 
     .line 106
@@ -604,12 +604,12 @@
     throw p2
 
     .line 112
-    :cond_6f
+    :cond_2
     iget-boolean v6, p0, Llibs/e00;->h:Z
 
     .line 113
     .line 114
-    if-eqz v6, :cond_7c
+    if-eqz v6, :cond_3
 
     .line 115
     .line 116
@@ -617,7 +617,7 @@
 
     .line 117
     .line 118
-    :goto_75
+    :goto_1
     add-int/2addr p1, v6
 
     .line 119
@@ -632,15 +632,15 @@
     sub-int/2addr p1, v6
 
     .line 124
-    goto :goto_85
+    goto :goto_2
 
     .line 125
-    :cond_7c
+    :cond_3
     iget-object v6, p0, Llibs/e00;->b:Llibs/ce;
 
     .line 126
     .line 127
-    if-eqz v6, :cond_83
+    if-eqz v6, :cond_4
 
     .line 128
     .line 129
@@ -648,18 +648,18 @@
 
     .line 130
     .line 131
-    goto :goto_75
+    goto :goto_1
 
     .line 132
-    :cond_83
+    :cond_4
     const/4 v6, 0x0
 
     .line 133
-    goto :goto_75
+    goto :goto_1
 
     .line 134
-    :goto_85
-    if-gtz p1, :cond_124
+    :goto_2
+    if-gtz p1, :cond_b
 
     .line 135
     .line 136
@@ -684,7 +684,7 @@
     const/4 v2, 0x4
 
     .line 145
-    if-eqz p1, :cond_9c
+    if-eqz p1, :cond_5
 
     .line 146
     .line 147
@@ -705,15 +705,15 @@
     .line 154
     .line 155
     .line 156
-    goto :goto_c5
+    goto :goto_3
 
     .line 157
-    :cond_9c
+    :cond_5
     iget-boolean p1, p0, Llibs/e00;->g:Z
 
     .line 158
     .line 159
-    if-eqz p1, :cond_af
+    if-eqz p1, :cond_6
 
     .line 160
     .line 161
@@ -743,10 +743,10 @@
     .line 173
     .line 174
     .line 175
-    goto :goto_c5
+    goto :goto_3
 
     .line 176
-    :cond_af
+    :cond_6
     iget p1, p0, Llibs/e00;->d:I
 
     .line 177
@@ -778,7 +778,7 @@
 
     .line 190
     .line 191
-    if-eqz p1, :cond_c5
+    if-eqz p1, :cond_7
 
     .line 192
     .line 193
@@ -791,8 +791,8 @@
     .line 196
     .line 197
     .line 198
-    :cond_c5
-    :goto_c5
+    :cond_7
+    :goto_3
     iget p1, p0, Llibs/y70;->n:I
 
     .line 199
@@ -820,7 +820,7 @@
 
     .line 210
     .line 211
-    if-eqz p1, :cond_e6
+    if-eqz p1, :cond_9
 
     .line 212
     .line 213
@@ -828,7 +828,7 @@
 
     .line 214
     .line 215
-    if-nez v2, :cond_dc
+    if-nez v2, :cond_8
 
     .line 216
     .line 217
@@ -836,11 +836,11 @@
 
     .line 218
     .line 219
-    if-nez v2, :cond_e6
+    if-nez v2, :cond_9
 
     .line 220
     .line 221
-    :cond_dc
+    :cond_8
     iget-object v2, p0, Llibs/y70;->l:Llibs/oy2;
 
     .line 222
@@ -858,14 +858,14 @@
     .line 228
     .line 229
     .line 230
-    goto :goto_e7
+    goto :goto_4
 
     .line 231
-    :cond_e6
+    :cond_9
     move-object v2, v0
 
     .line 232
-    :goto_e7
+    :goto_4
     iget-object p1, p0, Llibs/y70;->i:Llibs/bn1;
 
     .line 233
@@ -874,7 +874,7 @@
 
     .line 235
     .line 236
-    if-eqz v3, :cond_10f
+    if-eqz v3, :cond_a
 
     .line 237
     .line 238
@@ -948,7 +948,7 @@
     .line 270
     .line 271
     .line 272
-    :cond_10f
+    :cond_a
     invoke-virtual {v2}, Llibs/uj;->u()B
 
     .line 273
@@ -986,11 +986,11 @@
 
     .line 290
     .line 291
-    goto/16 :goto_a
+    goto/16 :goto_0
 
     .line 292
     .line 293
-    :cond_124
+    :cond_b
     iput p1, p0, Llibs/y70;->p:I
 
     .line 294
@@ -998,7 +998,7 @@
     return p1
 
     .line 296
-    :cond_127
+    :cond_c
     sub-int/2addr p2, p1
 
     .line 297

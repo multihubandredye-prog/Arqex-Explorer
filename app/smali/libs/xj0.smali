@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/s73;
@@ -40,7 +40,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Llibs/lk0;Ljava/util/concurrent/locks/ReentrantLock;Llibs/dn1;)V
-    .registers 6
+    .locals 1
 
     .line 13
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -56,7 +56,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Llibs/lk0;Llibs/dn1;)V
-    .registers 6
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -86,7 +86,7 @@
 
 # virtual methods
 .method public final a(J)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/xj0;->a:Llibs/eg2;
@@ -102,7 +102,7 @@
 .end method
 
 .method public final b()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/xj0;->a:Llibs/eg2;
@@ -122,7 +122,7 @@
 .end method
 
 .method public final c()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/xj0;->a:Llibs/eg2;
@@ -142,7 +142,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/xj0;->a:Llibs/eg2;

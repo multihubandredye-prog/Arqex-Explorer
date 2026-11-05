@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,7 +22,7 @@
 
 # virtual methods
 .method public final getFieldSize()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -32,7 +32,7 @@
 .end method
 
 .method public final k(Llibs/d6;)Ljava/math/BigInteger;
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-static {}, Llibs/ig2;->b()Z
@@ -43,7 +43,7 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -58,7 +58,7 @@
     throw p1
 
     .line 12
-    :cond_b
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     .line 13
@@ -76,7 +76,7 @@
 .end method
 
 .method public final q(Llibs/d6;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p1}, Llibs/b3;->t(Ljava/lang/Object;)V

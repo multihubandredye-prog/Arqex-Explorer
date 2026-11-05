@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/ArrayList;Ljava/util/ArrayList;)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -32,7 +32,7 @@
 .end method
 
 .method public constructor <init>(Llibs/c2;Ljava/lang/String;Llibs/m52;)V
-    .registers 5
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -65,7 +65,7 @@
 
 # virtual methods
 .method public final e(Llibs/rp0;)Z
-    .registers 10
+    .locals 8
 
     .line 1
     iget-byte v0, p0, Llibs/y42;->a:B
@@ -83,7 +83,7 @@
 
     .line 7
     .line 8
-    packed-switch v0, :pswitch_data_52
+    packed-switch v0, :pswitch_data_0
 
     .line 9
     .line 10
@@ -92,7 +92,7 @@
 
     .line 12
     .line 13
-    if-nez v0, :cond_44
+    if-nez v0, :cond_3
 
     .line 14
     .line 15
@@ -108,7 +108,7 @@
 
     .line 20
     .line 21
-    if-nez v0, :cond_33
+    if-nez v0, :cond_2
 
     .line 22
     .line 23
@@ -125,7 +125,7 @@
 
     .line 29
     .line 30
-    if-lez v0, :cond_33
+    if-lez v0, :cond_2
 
     .line 31
     .line 32
@@ -137,7 +137,7 @@
 
     .line 35
     .line 36
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_0
 
     .line 37
     .line 38
@@ -149,11 +149,11 @@
 
     .line 41
     .line 42
-    if-lez v0, :cond_30
+    if-lez v0, :cond_1
 
     .line 43
     .line 44
-    :cond_2b
+    :cond_0
     check-cast v3, Ljava/util/ArrayList;
 
     .line 45
@@ -163,15 +163,15 @@
     .line 47
     .line 48
     .line 49
-    :cond_30
+    :cond_1
     iput-object p1, p0, Llibs/y42;->b:Ljava/lang/Comparable;
 
     .line 50
     .line 51
-    goto :goto_44
+    goto :goto_0
 
     .line 52
-    :cond_33
+    :cond_2
     invoke-virtual {p1}, Llibs/rp0;->m()Ljava/lang/String;
 
     .line 53
@@ -192,7 +192,7 @@
     move-result v0
 
     .line 62
-    if-eqz v0, :cond_44
+    if-eqz v0, :cond_3
 
     .line 63
     .line 64
@@ -205,12 +205,12 @@
     .line 67
     .line 68
     .line 69
-    :cond_44
-    :goto_44
+    :cond_3
+    :goto_0
     return v1
 
     .line 70
-    :pswitch_45
+    :pswitch_0
     check-cast v2, Llibs/c2;
 
     .line 71
@@ -238,8 +238,8 @@
     nop
 
     .line 83
-    :pswitch_data_52
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_45
+        :pswitch_0
     .end packed-switch
 .end method

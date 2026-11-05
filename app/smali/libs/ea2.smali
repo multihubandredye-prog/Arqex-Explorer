@@ -61,7 +61,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 53
+    .locals 53
 
     .line 1
     new-instance v0, Llibs/ea2;
@@ -974,8 +974,8 @@
     const/4 v2, 0x0
 
     .line 465
-    :goto_1d0
-    if-ge v2, v1, :cond_1df
+    :goto_0
+    if-ge v2, v1, :cond_0
 
     .line 466
     .line 467
@@ -1003,15 +1003,15 @@
 
     .line 478
     .line 479
-    goto :goto_1d0
+    goto :goto_0
 
     .line 480
-    :cond_1df
+    :cond_0
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;II)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
@@ -1030,7 +1030,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Llibs/ea2;
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Llibs/ea2;
@@ -1053,7 +1053,7 @@
 .end method
 
 .method public static values()[Llibs/ea2;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/ea2;->Nine:[Llibs/ea2;

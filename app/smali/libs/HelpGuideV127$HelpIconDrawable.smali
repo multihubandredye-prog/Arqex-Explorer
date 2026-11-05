@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(IIZ)V
-    .registers 6
+    .locals 2
 
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
@@ -89,7 +89,7 @@
 
 # virtual methods
 .method public draw(Landroid/graphics/Canvas;)V
-    .registers 13
+    .locals 11
 
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
@@ -103,13 +103,13 @@
 
     move-result v2
 
-    if-lez v1, :cond_91
+    if-lez v1, :cond_4
 
-    if-gtz v2, :cond_12
+    if-gtz v2, :cond_0
 
-    goto/16 :goto_91
+    goto/16 :goto_1
 
-    :cond_12
+    :cond_0
     invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
 
     move-result v1
@@ -126,7 +126,7 @@
 
     iget-boolean v2, p0, Llibs/HelpGuideV127$HelpIconDrawable;->badgeMode:Z
 
-    if-eqz v2, :cond_2c
+    if-eqz v2, :cond_1
 
     const v2, 0x3ef5c28f    # 0.48f
 
@@ -136,7 +136,7 @@
 
     invoke-virtual {p1, v3, v0, v2, v4}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    :cond_2c
+    :cond_1
     const v2, 0x3daeb852
 
     mul-float/2addr v2, v1
@@ -145,27 +145,27 @@
 
     cmpg-float v5, v2, v4
 
-    if-gez v5, :cond_37
+    if-gez v5, :cond_2
 
     move v2, v4
 
-    :cond_37
+    :cond_2
     iget-object v4, p0, Llibs/HelpGuideV127$HelpIconDrawable;->strokePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v4, v2}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
     iget-boolean v4, p0, Llibs/HelpGuideV127$HelpIconDrawable;->badgeMode:Z
 
-    if-eqz v4, :cond_44
+    if-eqz v4, :cond_3
 
     const v4, 0x3eb851ec    # 0.36f
 
-    goto :goto_47
+    goto :goto_0
 
-    :cond_44
+    :cond_3
     const v4, 0x3ed1eb85    # 0.41f
 
-    :goto_47
+    :goto_0
     mul-float/2addr v4, v1
 
     iget-object v5, p0, Llibs/HelpGuideV127$HelpIconDrawable;->strokePaint:Landroid/graphics/Paint;
@@ -242,13 +242,13 @@
 
     invoke-virtual {p1, v3, v0, v2, v1}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    :cond_91
-    :goto_91
+    :cond_4
+    :goto_1
     return-void
 .end method
 
 .method public getIntrinsicHeight()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Llibs/HelpGuideV127$HelpIconDrawable;->sizePx:I
 
@@ -256,7 +256,7 @@
 .end method
 
 .method public getIntrinsicWidth()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Llibs/HelpGuideV127$HelpIconDrawable;->sizePx:I
 
@@ -264,7 +264,7 @@
 .end method
 
 .method public getOpacity()I
-    .registers 2
+    .locals 1
 
     const/4 v0, -0x3
 
@@ -272,7 +272,7 @@
 .end method
 
 .method public setAlpha(I)V
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Llibs/HelpGuideV127$HelpIconDrawable;->strokePaint:Landroid/graphics/Paint;
 
@@ -286,7 +286,7 @@
 .end method
 
 .method public setColorFilter(Landroid/graphics/ColorFilter;)V
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Llibs/HelpGuideV127$HelpIconDrawable;->strokePaint:Landroid/graphics/Paint;
 

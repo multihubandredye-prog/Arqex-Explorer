@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/conscrypt/ConscryptEngine;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/AbstractConscryptEngine;-><init>()V
@@ -55,14 +55,14 @@
 .end method
 
 .method public static getDelegate(Ljavax/net/ssl/SSLEngine;)Ljavax/net/ssl/SSLEngine;
-    .registers 2
+    .locals 1
 
     .line 1
     instance-of v0, p0, Lorg/conscrypt/Java8EngineWrapper;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -74,12 +74,12 @@
 
     .line 8
     .line 9
-    :cond_8
+    :cond_0
     return-object p0
 .end method
 
 .method private static toApplicationProtocolSelector(Ljava/util/function/BiFunction;)Lorg/conscrypt/ApplicationProtocolSelector;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -95,7 +95,7 @@
     .end annotation
 
     .line 1
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     .line 2
     .line 3
@@ -105,7 +105,7 @@
     return-object p0
 
     .line 5
-    :cond_4
+    :cond_0
     new-instance v0, Lorg/conscrypt/Java8EngineWrapper$1;
 
     .line 6
@@ -121,7 +121,7 @@
 
 # virtual methods
 .method public beginHandshake()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -137,7 +137,7 @@
 .end method
 
 .method public closeInbound()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -153,7 +153,7 @@
 .end method
 
 .method public closeOutbound()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -169,7 +169,7 @@
 .end method
 
 .method public exportKeyingMaterial(Ljava/lang/String;[BI)[B
-    .registers 5
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -188,7 +188,7 @@
 .end method
 
 .method public getApplicationProtocol()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -207,7 +207,7 @@
 .end method
 
 .method public getApplicationProtocols()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -226,7 +226,7 @@
 .end method
 
 .method public getChannelId()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -245,7 +245,7 @@
 .end method
 
 .method public getDelegatedTask()Ljava/lang/Runnable;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -264,7 +264,7 @@
 .end method
 
 .method public getEnableSessionCreation()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -283,7 +283,7 @@
 .end method
 
 .method public getEnabledCipherSuites()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -302,7 +302,7 @@
 .end method
 
 .method public getEnabledProtocols()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -321,7 +321,7 @@
 .end method
 
 .method public getHandshakeApplicationProtocol()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -340,7 +340,7 @@
 .end method
 
 .method public getHandshakeApplicationProtocolSelector()Ljava/util/function/BiFunction;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -363,7 +363,7 @@
 .end method
 
 .method public getHandshakeStatus()Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -382,7 +382,7 @@
 .end method
 
 .method public getHostname()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -401,7 +401,7 @@
 .end method
 
 .method public getNeedClientAuth()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -420,7 +420,7 @@
 .end method
 
 .method public getPeerHost()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -439,7 +439,7 @@
 .end method
 
 .method public getPeerPort()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -458,7 +458,7 @@
 .end method
 
 .method public getSSLParameters()Ljavax/net/ssl/SSLParameters;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -477,7 +477,7 @@
 .end method
 
 .method public getSession()Ljavax/net/ssl/SSLSession;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -496,7 +496,7 @@
 .end method
 
 .method public getSupportedCipherSuites()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -515,7 +515,7 @@
 .end method
 
 .method public getSupportedProtocols()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -534,7 +534,7 @@
 .end method
 
 .method public getTlsUnique()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -553,7 +553,7 @@
 .end method
 
 .method public getUseClientMode()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -572,7 +572,7 @@
 .end method
 
 .method public getWantClientAuth()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -591,7 +591,7 @@
 .end method
 
 .method public handshakeSession()Ljavax/net/ssl/SSLSession;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -610,7 +610,7 @@
 .end method
 
 .method public isInboundDone()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -629,7 +629,7 @@
 .end method
 
 .method public isOutboundDone()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -648,7 +648,7 @@
 .end method
 
 .method public maxSealOverhead()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -667,24 +667,24 @@
 .end method
 
 .method public setApplicationProtocolSelector(Lorg/conscrypt/ApplicationProtocolSelector;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
 
     .line 2
     .line 3
-    if-nez p1, :cond_6
+    if-nez p1, :cond_0
 
     .line 4
     .line 5
     const/4 p1, 0x0
 
     .line 6
-    goto :goto_c
+    goto :goto_0
 
     .line 7
-    :cond_6
+    :cond_0
     new-instance v1, Lorg/conscrypt/ApplicationProtocolSelectorAdapter;
 
     .line 8
@@ -697,7 +697,7 @@
     move-object p1, v1
 
     .line 13
-    :goto_c
+    :goto_0
     invoke-virtual {v0, p1}, Lorg/conscrypt/ConscryptEngine;->setApplicationProtocolSelector(Lorg/conscrypt/ApplicationProtocolSelectorAdapter;)V
 
     .line 14
@@ -707,7 +707,7 @@
 .end method
 
 .method public setApplicationProtocols([Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -723,7 +723,7 @@
 .end method
 
 .method public setBufferAllocator(Lorg/conscrypt/BufferAllocator;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -739,7 +739,7 @@
 .end method
 
 .method public setChannelIdEnabled(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -755,7 +755,7 @@
 .end method
 
 .method public setChannelIdPrivateKey(Ljava/security/PrivateKey;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -771,7 +771,7 @@
 .end method
 
 .method public setEnableSessionCreation(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -787,7 +787,7 @@
 .end method
 
 .method public setEnabledCipherSuites([Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -803,7 +803,7 @@
 .end method
 
 .method public setEnabledProtocols([Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -819,7 +819,7 @@
 .end method
 
 .method public setHandshakeApplicationProtocolSelector(Ljava/util/function/BiFunction;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -855,7 +855,7 @@
 .end method
 
 .method public setHandshakeListener(Lorg/conscrypt/HandshakeListener;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -871,7 +871,7 @@
 .end method
 
 .method public setHostname(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -887,7 +887,7 @@
 .end method
 
 .method public setNeedClientAuth(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -903,7 +903,7 @@
 .end method
 
 .method public setSSLParameters(Ljavax/net/ssl/SSLParameters;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -919,7 +919,7 @@
 .end method
 
 .method public setUseClientMode(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -935,7 +935,7 @@
 .end method
 
 .method public setUseSessionTickets(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -951,7 +951,7 @@
 .end method
 
 .method public setWantClientAuth(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -967,7 +967,7 @@
 .end method
 
 .method public unwrap(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)Ljavax/net/ssl/SSLEngineResult;
-    .registers 4
+    .locals 1
 
     .line 17
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -980,7 +980,7 @@
 .end method
 
 .method public unwrap(Ljava/nio/ByteBuffer;[Ljava/nio/ByteBuffer;)Ljavax/net/ssl/SSLEngineResult;
-    .registers 4
+    .locals 1
 
     .line 14
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -993,7 +993,7 @@
 .end method
 
 .method public unwrap(Ljava/nio/ByteBuffer;[Ljava/nio/ByteBuffer;II)Ljavax/net/ssl/SSLEngineResult;
-    .registers 6
+    .locals 1
 
     .line 15
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -1006,7 +1006,7 @@
 .end method
 
 .method public unwrap([Ljava/nio/ByteBuffer;II[Ljava/nio/ByteBuffer;II)Ljavax/net/ssl/SSLEngineResult;
-    .registers 14
+    .locals 7
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -1043,7 +1043,7 @@
 .end method
 
 .method public unwrap([Ljava/nio/ByteBuffer;[Ljava/nio/ByteBuffer;)Ljavax/net/ssl/SSLEngineResult;
-    .registers 4
+    .locals 1
 
     .line 16
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -1056,7 +1056,7 @@
 .end method
 
 .method public wrap(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)Ljavax/net/ssl/SSLEngineResult;
-    .registers 4
+    .locals 1
 
     .line 8
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -1069,7 +1069,7 @@
 .end method
 
 .method public wrap([Ljava/nio/ByteBuffer;IILjava/nio/ByteBuffer;)Ljavax/net/ssl/SSLEngineResult;
-    .registers 6
+    .locals 1
 
     .line 9
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;
@@ -1082,7 +1082,7 @@
 .end method
 
 .method public wrap([Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)Ljavax/net/ssl/SSLEngineResult;
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Java8EngineWrapper;->delegate:Lorg/conscrypt/ConscryptEngine;

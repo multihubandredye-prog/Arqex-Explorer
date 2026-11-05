@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/dk;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public final b()Llibs/en3;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/g01;->X:Llibs/dk;
@@ -59,14 +59,14 @@
 .end method
 
 .method public final close()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final e(JLlibs/vj;)J
-    .registers 11
+    .locals 7
 
     .line 1
     :goto_0
@@ -82,7 +82,7 @@
 
     .line 6
     .line 7
-    if-nez p1, :cond_72
+    if-nez p1, :cond_4
 
     .line 8
     .line 9
@@ -113,14 +113,14 @@
 
     .line 21
     .line 22
-    if-eqz v2, :cond_18
+    if-eqz v2, :cond_0
 
     .line 23
     .line 24
-    goto :goto_81
+    goto :goto_1
 
     .line 25
-    :cond_18
+    :cond_0
     iget v0, p0, Llibs/g01;->Lambda:I
 
     .line 26
@@ -194,7 +194,7 @@
     const/4 v4, 0x1
 
     .line 60
-    if-eqz v3, :cond_4a
+    if-eqz v3, :cond_1
 
     .line 61
     .line 62
@@ -223,7 +223,7 @@
     .line 73
     .line 74
     .line 75
-    :cond_4a
+    :cond_1
     invoke-interface {p2}, Llibs/dk;->readInt()I
 
     .line 76
@@ -251,18 +251,18 @@
     const/4 v3, 0x0
 
     .line 88
-    if-ne v1, v2, :cond_64
+    if-ne v1, v2, :cond_3
 
     .line 89
     .line 90
-    if-ne p2, v0, :cond_5c
+    if-ne p2, v0, :cond_2
 
     .line 91
     .line 92
     goto :goto_0
 
     .line 93
-    :cond_5c
+    :cond_2
     const-string p2, "TYPE_CONTINUATION streamId changed"
 
     .line 94
@@ -279,7 +279,7 @@
     throw v3
 
     .line 101
-    :cond_64
+    :cond_3
     invoke-static {v1}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
 
     .line 102
@@ -308,7 +308,7 @@
     throw v3
 
     .line 115
-    :cond_72
+    :cond_4
     int-to-long v2, p1
 
     .line 116
@@ -336,15 +336,15 @@
 
     .line 127
     .line 128
-    if-nez p3, :cond_82
+    if-nez p3, :cond_5
 
     .line 129
     .line 130
-    :goto_81
+    :goto_1
     return-wide v0
 
     .line 131
-    :cond_82
+    :cond_5
     iget p3, p0, Llibs/g01;->Mu:I
 
     .line 132

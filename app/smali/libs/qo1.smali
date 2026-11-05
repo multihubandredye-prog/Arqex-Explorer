@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ra;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Llibs/zj0;-><init>()V
@@ -89,7 +89,7 @@
 
 # virtual methods
 .method public final l(Llibs/ta;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/qo1;->Omicron:Ljava/math/BigInteger;
@@ -133,7 +133,7 @@
 
     .line 21
     .line 22
-    if-nez v2, :cond_1e
+    if-nez v2, :cond_0
 
     .line 23
     .line 24
@@ -154,7 +154,7 @@
     return-void
 
     .line 31
-    :cond_1e
+    :cond_0
     array-length v2, v0
 
     .line 32

@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/gm1;[B[B[C)V
-    .registers 12
+    .locals 7
 
     .line 1
     const-string v0, "HmacSHA1"
@@ -74,7 +74,7 @@
 
     .line 23
     .line 24
-    if-eqz p1, :cond_92
+    if-eqz p1, :cond_5
 
     .line 25
     .line 26
@@ -85,18 +85,18 @@
     const/4 v4, 0x2
 
     .line 29
-    if-eq p1, v1, :cond_39
+    if-eq p1, v1, :cond_2
 
     .line 30
     .line 31
-    if-eq p1, v4, :cond_30
+    if-eq p1, v4, :cond_1
 
     .line 32
     .line 33
     const/4 v1, 0x3
 
     .line 34
-    if-ne p1, v1, :cond_2a
+    if-ne p1, v1, :cond_0
 
     .line 35
     .line 36
@@ -112,10 +112,10 @@
 
     .line 41
     .line 42
-    goto :goto_3f
+    goto :goto_0
 
     .line 43
-    :cond_2a
+    :cond_0
     const-string p1, "invalid aes key strength for file: "
 
     .line 44
@@ -128,7 +128,7 @@
     throw v2
 
     .line 49
-    :cond_30
+    :cond_1
     const/16 p1, 0xc
 
     .line 50
@@ -145,10 +145,10 @@
 
     .line 56
     .line 57
-    goto :goto_3f
+    goto :goto_0
 
     .line 58
-    :cond_39
+    :cond_2
     const/16 p1, 0x8
 
     .line 59
@@ -161,8 +161,8 @@
 
     .line 63
     .line 64
-    :goto_3f
-    :try_start_3f
+    :goto_0
+    :try_start_0
     new-instance v1, Llibs/vo1;
 
     .line 65
@@ -199,14 +199,14 @@
     .line 82
     .line 83
     move-result-object p2
-    :try_end_53
-    .catch Ljava/lang/Exception; {:try_start_3f .. :try_end_53} :catch_8d
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 84
     array-length p4, p2
 
     .line 85
-    if-ne p4, v5, :cond_87
+    if-ne p4, v5, :cond_4
 
     .line 86
     .line 87
@@ -248,7 +248,7 @@
     move-result p1
 
     .line 107
-    if-eqz p1, :cond_7e
+    if-eqz p1, :cond_3
 
     .line 108
     .line 109
@@ -286,7 +286,7 @@
     return-void
 
     .line 127
-    :cond_7e
+    :cond_3
     new-instance p1, Llibs/my3;
 
     .line 128
@@ -306,7 +306,7 @@
     throw p1
 
     .line 136
-    :cond_87
+    :cond_4
     const-string p1, "invalid derived key"
 
     .line 137
@@ -319,7 +319,7 @@
     throw v2
 
     .line 142
-    :catch_8d
+    :catch_0
     move-exception p1
 
     .line 143
@@ -331,7 +331,7 @@
     throw v2
 
     .line 147
-    :cond_92
+    :cond_5
     const-string p1, "invalid aes extra data record - in init method of AESDecryptor"
 
     .line 148
@@ -347,7 +347,7 @@
 
 # virtual methods
 .method public final s(II[B)I
-    .registers 14
+    .locals 10
 
     .line 1
     iget-object v0, p0, Llibs/Any;->Xi:[B
@@ -361,12 +361,12 @@
     move v2, p1
 
     .line 6
-    :goto_5
+    :goto_0
     add-int v3, p1, p2
 
     .line 7
     .line 8
-    if-ge v2, v3, :cond_50
+    if-ge v2, v3, :cond_2
 
     .line 9
     .line 10
@@ -374,7 +374,7 @@
 
     .line 11
     .line 12
-    if-gt v4, v3, :cond_10
+    if-gt v4, v3, :cond_0
 
     .line 13
     .line 14
@@ -382,31 +382,31 @@
 
     .line 15
     .line 16
-    goto :goto_11
+    goto :goto_1
 
     .line 17
-    :cond_10
+    :cond_0
     sub-int/2addr v3, v2
 
     .line 18
-    :goto_11
+    :goto_1
     const/4 v5, 0x0
 
     .line 19
-    :try_start_12
+    :try_start_0
     iget-object v6, p0, Llibs/Any;->Y:Llibs/vo1;
 
     .line 20
     .line 21
     invoke-virtual {v6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-    :try_end_17
-    .catch Llibs/my3; {:try_start_12 .. :try_end_17} :catch_3a
-    .catch Ljava/lang/Exception; {:try_start_12 .. :try_end_17} :catch_38
+    :try_end_0
+    .catch Llibs/my3; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 22
     .line 23
     .line 24
-    :try_start_17
+    :try_start_1
     iget-object v6, v6, Llibs/vo1;->d:Ljava/lang/Object;
 
     .line 25
@@ -416,15 +416,15 @@
     .line 27
     .line 28
     invoke-virtual {v6, p3, v2, v3}, Ljavax/crypto/Mac;->update([BII)V
-    :try_end_1e
-    .catch Ljava/lang/IllegalStateException; {:try_start_17 .. :try_end_1e} :catch_44
-    .catch Llibs/my3; {:try_start_17 .. :try_end_1e} :catch_3a
-    .catch Ljava/lang/Exception; {:try_start_17 .. :try_end_1e} :catch_38
+    :try_end_1
+    .catch Ljava/lang/IllegalStateException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Llibs/my3; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 29
     .line 30
     .line 31
-    :try_start_1e
+    :try_start_2
     iget v6, p0, Llibs/Any;->Mu:I
 
     .line 32
@@ -446,8 +446,8 @@
     const/4 v6, 0x0
 
     .line 42
-    :goto_29
-    if-ge v6, v3, :cond_3c
+    :goto_2
+    if-ge v6, v3, :cond_1
 
     .line 43
     .line 44
@@ -477,24 +477,24 @@
 
     .line 55
     .line 56
-    goto :goto_29
+    goto :goto_2
 
     .line 57
-    :catch_38
+    :catch_0
     move-exception p1
 
     .line 58
-    goto :goto_4b
+    goto :goto_3
 
     .line 59
-    :catch_3a
+    :catch_1
     move-exception p1
 
     .line 60
-    goto :goto_4f
+    goto :goto_4
 
     .line 61
-    :cond_3c
+    :cond_1
     iget v2, p0, Llibs/Any;->Mu:I
 
     .line 62
@@ -510,10 +510,10 @@
     move v2, v4
 
     .line 68
-    goto :goto_5
+    goto :goto_0
 
     .line 69
-    :catch_44
+    :catch_2
     move-exception p1
 
     .line 70
@@ -527,12 +527,12 @@
     .line 74
     .line 75
     throw p2
-    :try_end_4b
-    .catch Llibs/my3; {:try_start_1e .. :try_end_4b} :catch_3a
-    .catch Ljava/lang/Exception; {:try_start_1e .. :try_end_4b} :catch_38
+    :try_end_2
+    .catch Llibs/my3; {:try_start_2 .. :try_end_2} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 76
-    :goto_4b
+    :goto_3
     invoke-static {p1}, Llibs/ic0;->q(Ljava/lang/Throwable;)V
 
     .line 77
@@ -541,10 +541,10 @@
     return v5
 
     .line 80
-    :goto_4f
+    :goto_4
     throw p1
 
     .line 81
-    :cond_50
+    :cond_2
     return p2
 .end method

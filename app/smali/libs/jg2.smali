@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 .end method
 
 .method public bridge synthetic b(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 1
     check-cast p2, Ljava/lang/Integer;

@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,28 +22,28 @@
 
 # virtual methods
 .method public final a(I[B)V
-    .registers 3
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final b([BI[B)V
-    .registers 4
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final c(II[B)V
-    .registers 4
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final d()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -53,14 +53,14 @@
 .end method
 
 .method public final e(J)V
-    .registers 3
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final f()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x8
@@ -71,7 +71,7 @@
 .end method
 
 .method public final i()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x8
@@ -82,7 +82,7 @@
 .end method
 
 .method public final update([BII)V
-    .registers 4
+    .locals 0
 
     .line 1
     return-void

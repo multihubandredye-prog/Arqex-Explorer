@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/gg2;Llibs/px;)V
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Llibs/Msg;-><init>()V
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public final cancel(Z)Z
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object p1, p0, Llibs/ap;->Z:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -93,7 +93,7 @@
     const/4 v1, 0x0
 
     .line 13
-    :try_start_c
+    :try_start_0
     invoke-virtual {p0}, Llibs/ap;->isDone()Z
 
     .line 14
@@ -102,7 +102,7 @@
     move-result v2
 
     .line 17
-    if-nez v2, :cond_29
+    if-nez v2, :cond_1
 
     .line 18
     .line 19
@@ -117,21 +117,21 @@
     move-result v3
 
     .line 24
-    if-eqz v3, :cond_1a
+    if-eqz v3, :cond_0
 
     .line 25
     .line 26
-    goto :goto_29
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_0
     iget-object v3, p0, Llibs/ap;->Y:Llibs/px;
 
     .line 28
     .line 29
     invoke-virtual {v3}, Llibs/px;->a()V
-    :try_end_1f
-    .catchall {:try_start_c .. :try_end_1f} :catchall_27
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 30
     .line 31
@@ -152,15 +152,15 @@
     return v2
 
     .line 40
-    :catchall_27
+    :catchall_0
     move-exception v2
 
     .line 41
-    goto :goto_31
+    goto :goto_1
 
     .line 42
-    :cond_29
-    :goto_29
+    :cond_1
+    :goto_0
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;->writeLock()Ljava/util/concurrent/locks/ReentrantReadWriteLock$WriteLock;
 
     .line 43
@@ -177,8 +177,8 @@
     return v1
 
     .line 50
-    :goto_31
-    :try_start_31
+    :goto_1
+    :try_start_1
     invoke-virtual {p1, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
     .line 51
@@ -188,7 +188,7 @@
 
     .line 54
     .line 55
-    if-eqz p1, :cond_3b
+    if-eqz p1, :cond_2
 
     .line 56
     .line 57
@@ -196,10 +196,10 @@
 
     .line 58
     .line 59
-    goto :goto_41
+    goto :goto_2
 
     .line 60
-    :cond_3b
+    :cond_2
     new-instance p1, Llibs/zw2;
 
     .line 61
@@ -212,13 +212,13 @@
     move-object v2, p1
 
     .line 66
-    :goto_41
+    :goto_2
     throw v2
-    :try_end_42
-    .catchall {:try_start_31 .. :try_end_42} :catchall_42
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 67
-    :catchall_42
+    :catchall_1
     move-exception p1
 
     .line 68
@@ -239,7 +239,7 @@
 .end method
 
 .method public final get()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ap;->X:Llibs/gg2;
@@ -258,7 +258,7 @@
 .end method
 
 .method public final get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
-    .registers 5
+    .locals 1
 
     .line 8
     iget-object v0, p0, Llibs/ap;->X:Llibs/gg2;
@@ -271,7 +271,7 @@
 .end method
 
 .method public final isCancelled()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/ap;->Lambda:Ljava/util/concurrent/locks/ReentrantReadWriteLock;
@@ -291,7 +291,7 @@
     .line 8
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     iget-object v1, p0, Llibs/ap;->Z:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     .line 11
@@ -302,8 +302,8 @@
     .line 14
     .line 15
     move-result v1
-    :try_end_f
-    .catchall {:try_start_9 .. :try_end_f} :catchall_17
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 16
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;->readLock()Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;
@@ -322,7 +322,7 @@
     return v1
 
     .line 24
-    :catchall_17
+    :catchall_0
     move-exception v1
 
     .line 25
@@ -343,7 +343,7 @@
 .end method
 
 .method public final isDone()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/ap;->Lambda:Ljava/util/concurrent/locks/ReentrantReadWriteLock;
@@ -363,7 +363,7 @@
     .line 8
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     iget-object v1, p0, Llibs/ap;->Z:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     .line 11
@@ -376,7 +376,7 @@
     move-result v1
 
     .line 16
-    if-nez v1, :cond_1e
+    if-nez v1, :cond_1
 
     .line 17
     .line 18
@@ -390,37 +390,37 @@
     .line 22
     .line 23
     move-result v1
-    :try_end_17
-    .catchall {:try_start_9 .. :try_end_17} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 24
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_0
 
     .line 25
     .line 26
-    goto :goto_1e
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_0
     const/4 v1, 0x0
 
     .line 28
-    goto :goto_1f
+    goto :goto_1
 
     .line 29
-    :catchall_1c
+    :catchall_0
     move-exception v1
 
     .line 30
-    goto :goto_27
+    goto :goto_2
 
     .line 31
-    :cond_1e
-    :goto_1e
+    :cond_1
+    :goto_0
     const/4 v1, 0x1
 
     .line 32
-    :goto_1f
+    :goto_1
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;->readLock()Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;
 
     .line 33
@@ -437,7 +437,7 @@
     return v1
 
     .line 40
-    :goto_27
+    :goto_2
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;->readLock()Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;
 
     .line 41

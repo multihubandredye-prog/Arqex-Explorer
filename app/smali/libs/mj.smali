@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/qj;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/mj;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 9
+    .locals 8
 
     .line 1
     iget-byte v0, p0, Llibs/mj;->X:B
@@ -53,7 +53,7 @@
     const/4 v3, 0x1
 
     .line 7
-    packed-switch v0, :pswitch_data_9a
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -74,7 +74,7 @@
     return-void
 
     .line 18
-    :pswitch_11
+    :pswitch_0
     iget-object v0, v2, Llibs/qj;->Sigma:Llibs/sv0;
 
     .line 19
@@ -87,7 +87,7 @@
 
     .line 23
     .line 24
-    :try_start_17
+    :try_start_0
     iget-object v6, v2, Llibs/qj;->Mu:Llibs/xv1;
 
     .line 25
@@ -100,19 +100,19 @@
     move-result v6
 
     .line 30
-    if-eqz v6, :cond_20
+    if-eqz v6, :cond_0
 
     .line 31
     .line 32
-    goto :goto_76
+    goto :goto_3
 
     .line 33
-    :cond_20
+    :cond_0
     iget-boolean v6, v2, Llibs/qj;->Tau:Z
 
     .line 34
     .line 35
-    if-nez v6, :cond_2b
+    if-nez v6, :cond_1
 
     .line 36
     .line 37
@@ -124,18 +124,18 @@
     .line 39
     .line 40
     .line 41
-    goto :goto_2b
+    goto :goto_0
 
     .line 42
-    :catchall_29
+    :catchall_0
     move-exception v0
 
     .line 43
-    goto :goto_67
+    goto :goto_2
 
     .line 44
-    :cond_2b
-    :goto_2b
+    :cond_1
+    :goto_0
     invoke-virtual {v5, v1}, Llibs/xt1;->Raw(Z)V
 
     .line 45
@@ -149,21 +149,21 @@
     move-result v6
 
     .line 51
-    if-nez v6, :cond_36
+    if-nez v6, :cond_2
 
     .line 52
     .line 53
     const/4 v6, 0x1
 
     .line 54
-    goto :goto_37
+    goto :goto_1
 
     .line 55
-    :cond_36
+    :cond_2
     const/4 v6, 0x0
 
     .line 56
-    :goto_37
+    :goto_1
     invoke-virtual {v5, v6}, Llibs/xt1;->Old(Z)V
 
     .line 57
@@ -231,7 +231,7 @@
 
     .line 92
     .line 93
-    if-eqz v6, :cond_61
+    if-eqz v6, :cond_3
 
     .line 94
     .line 95
@@ -240,22 +240,22 @@
     .line 96
     .line 97
     .line 98
-    :cond_61
+    :cond_3
     iget-object v0, v2, Llibs/qj;->Xi:Lcom/mixplorer/activities/BrowseActivity;
 
     .line 99
     .line 100
     invoke-virtual {v0, v5, v1}, Lcom/mixplorer/activities/BrowseActivity;->False(Llibs/xt1;Z)V
-    :try_end_66
-    .catchall {:try_start_17 .. :try_end_66} :catchall_29
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 101
     .line 102
     .line 103
-    goto :goto_76
+    goto :goto_3
 
     .line 104
-    :goto_67
+    :goto_2
     invoke-static {v0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 105
@@ -285,11 +285,11 @@
     .line 117
     .line 118
     .line 119
-    :goto_76
+    :goto_3
     return-void
 
     .line 120
-    :pswitch_77
+    :pswitch_1
     iget-object v0, v2, Llibs/qj;->Z:Llibs/xt1;
 
     .line 121
@@ -307,18 +307,18 @@
     move-result v4
 
     .line 129
-    if-nez v4, :cond_83
+    if-nez v4, :cond_4
 
     .line 130
     .line 131
-    goto :goto_84
+    goto :goto_4
 
     .line 132
-    :cond_83
+    :cond_4
     const/4 v3, 0x0
 
     .line 133
-    :goto_84
+    :goto_4
     invoke-virtual {v0, v3}, Llibs/xt1;->Old(Z)V
 
     .line 134
@@ -336,7 +336,7 @@
     return-void
 
     .line 142
-    :pswitch_8d
+    :pswitch_2
     iget-object v0, v2, Llibs/qj;->Xi:Lcom/mixplorer/activities/BrowseActivity;
 
     .line 143
@@ -364,10 +364,10 @@
     nop
 
     .line 155
-    :pswitch_data_9a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_8d
-        :pswitch_77
-        :pswitch_11
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

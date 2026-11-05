@@ -20,7 +20,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/$d;Landroid/widget/CheckBox;Llibs/ik3;Llibs/rp0;B)V
-    .registers 6
+    .locals 0
 
     .line 1
     iput-byte p5, p0, Llibs/jl0;->X:B
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 15
+    .locals 13
 
     .line 1
     iget-byte p1, p0, Llibs/jl0;->X:B
@@ -87,7 +87,7 @@
 
     .line 14
     .line 15
-    packed-switch p1, :pswitch_data_fa
+    packed-switch p1, :pswitch_data_0
 
     .line 16
     .line 17
@@ -104,7 +104,7 @@
     move-result-object p1
 
     .line 24
-    if-eqz v5, :cond_20
+    if-eqz v5, :cond_0
 
     .line 25
     .line 26
@@ -116,19 +116,19 @@
     move-result v5
 
     .line 30
-    if-eqz v5, :cond_20
+    if-eqz v5, :cond_0
 
     .line 31
     .line 32
-    goto :goto_21
+    goto :goto_0
 
     .line 33
-    :cond_20
+    :cond_0
     const/4 v2, 0x0
 
     .line 34
-    :goto_21
-    :try_start_21
+    :goto_0
+    :try_start_0
     new-instance v5, Ljava/util/HashMap;
 
     .line 35
@@ -149,8 +149,8 @@
     const/4 v8, 0x0
 
     .line 44
-    :goto_2b
-    if-ge v8, v7, :cond_5e
+    :goto_1
+    if-ge v8, v7, :cond_2
 
     .line 45
     .line 46
@@ -230,44 +230,44 @@
     move-result v11
 
     .line 86
-    if-eqz v11, :cond_58
+    if-eqz v11, :cond_1
 
     .line 87
     .line 88
-    goto :goto_2b
+    goto :goto_1
 
     .line 89
-    :cond_58
+    :cond_1
     invoke-virtual {v5, v10, v9}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 90
     .line 91
     .line 92
-    goto :goto_2b
+    goto :goto_1
 
     .line 93
-    :catchall_5c
+    :catchall_0
     move-exception p1
 
     .line 94
-    goto :goto_63
+    goto :goto_2
 
     .line 95
-    :cond_5e
+    :cond_2
     invoke-static {v3, v4, v5, v2}, Llibs/kr0;->Run(Llibs/rp0;Llibs/ik3;Ljava/util/HashMap;Z)Z
 
     .line 96
     .line 97
     .line 98
     move-result v1
-    :try_end_62
-    .catchall {:try_start_21 .. :try_end_62} :catchall_5c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 99
-    goto :goto_6c
+    goto :goto_3
 
     .line 100
-    :goto_63
+    :goto_2
     const-string v0, "XMP"
 
     .line 101
@@ -285,8 +285,8 @@
     .line 107
     .line 108
     .line 109
-    :goto_6c
-    if-eqz v1, :cond_7a
+    :goto_3
+    if-eqz v1, :cond_3
 
     .line 110
     .line 111
@@ -312,11 +312,11 @@
     .line 121
     .line 122
     .line 123
-    :cond_7a
+    :cond_3
     return-void
 
     .line 124
-    :pswitch_7b
+    :pswitch_0
     new-array p1, v1, [Landroid/view/ViewGroup;
 
     .line 125
@@ -329,7 +329,7 @@
     move-result-object p1
 
     .line 130
-    if-eqz v5, :cond_8a
+    if-eqz v5, :cond_4
 
     .line 131
     .line 132
@@ -341,19 +341,19 @@
     move-result v5
 
     .line 136
-    if-eqz v5, :cond_8a
+    if-eqz v5, :cond_4
 
     .line 137
     .line 138
-    goto :goto_8b
+    goto :goto_4
 
     .line 139
-    :cond_8a
+    :cond_4
     const/4 v2, 0x0
 
     .line 140
-    :goto_8b
-    :try_start_8b
+    :goto_4
+    :try_start_1
     new-instance v5, Ljava/util/LinkedHashMap;
 
     .line 141
@@ -374,8 +374,8 @@
     const/4 v8, 0x0
 
     .line 150
-    :goto_95
-    if-ge v8, v7, :cond_dc
+    :goto_5
+    if-ge v8, v7, :cond_6
 
     .line 151
     .line 152
@@ -479,7 +479,7 @@
 
     .line 203
     .line 204
-    if-nez v12, :cond_d8
+    if-nez v12, :cond_5
 
     .line 205
     .line 206
@@ -497,41 +497,41 @@
     .line 212
     .line 213
     .line 214
-    goto :goto_d8
+    goto :goto_6
 
     .line 215
-    :catchall_d6
+    :catchall_1
     move-exception p1
 
     .line 216
-    goto :goto_e1
+    goto :goto_7
 
     .line 217
-    :cond_d8
-    :goto_d8
+    :cond_5
+    :goto_6
     invoke-interface {v12, v11, v9}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 218
     .line 219
     .line 220
-    goto :goto_95
+    goto :goto_5
 
     .line 221
-    :cond_dc
+    :cond_6
     invoke-static {v3, v4, v5, v2}, Llibs/kl0;->a(Llibs/rp0;Llibs/ik3;Ljava/util/LinkedHashMap;Z)Z
 
     .line 222
     .line 223
     .line 224
     move-result v1
-    :try_end_e0
-    .catchall {:try_start_8b .. :try_end_e0} :catchall_d6
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 225
-    goto :goto_ea
+    goto :goto_8
 
     .line 226
-    :goto_e1
+    :goto_7
     const-string v0, "EXIF"
 
     .line 227
@@ -549,8 +549,8 @@
     .line 233
     .line 234
     .line 235
-    :goto_ea
-    if-eqz v1, :cond_f8
+    :goto_8
+    if-eqz v1, :cond_7
 
     .line 236
     .line 237
@@ -576,15 +576,15 @@
     .line 247
     .line 248
     .line 249
-    :cond_f8
+    :cond_7
     return-void
 
     .line 250
     nop
 
     .line 251
-    :pswitch_data_fa
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_7b
+        :pswitch_0
     .end packed-switch
 .end method

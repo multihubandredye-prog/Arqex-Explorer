@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>([B)V
-    .registers 2
+    .locals 0
 
     .line 78
     invoke-direct {p0, p1}, Llibs/Part;-><init>([B)V
@@ -18,7 +18,7 @@
 .end method
 
 .method public constructor <init>([Llibs/Part;)V
-    .registers 5
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/fl;
@@ -33,15 +33,15 @@
     const/4 v1, 0x0
 
     .line 7
-    :goto_6
+    :goto_0
     array-length v2, p1
 
     .line 8
-    if-eq v1, v2, :cond_43
+    if-eq v1, v2, :cond_0
 
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     aget-object v2, p1, v1
 
     .line 11
@@ -55,9 +55,9 @@
     .line 15
     .line 16
     invoke-virtual {v0, v2}, Ljava/io/OutputStream;->write([B)V
-    :try_end_12
-    .catch Ljava/lang/ClassCastException; {:try_start_9 .. :try_end_12} :catch_2e
-    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_12} :catch_15
+    :try_end_0
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 17
     .line 18
@@ -66,10 +66,10 @@
 
     .line 20
     .line 21
-    goto :goto_6
+    goto :goto_0
 
     .line 22
-    :catch_15
+    :catch_0
     move-exception p1
 
     .line 23
@@ -119,7 +119,7 @@
     throw v0
 
     .line 47
-    :catch_2e
+    :catch_1
     aget-object p1, p1, v1
 
     .line 48
@@ -163,7 +163,7 @@
     throw p1
 
     .line 68
-    :cond_43
+    :cond_0
     invoke-virtual {v0}, Llibs/fl;->x()[B
 
     .line 69
@@ -187,7 +187,7 @@
 
 # virtual methods
 .method public final h(Llibs/v60;)V
-    .registers 4
+    .locals 2
 
     .line 1
     const/16 v0, 0x24
@@ -216,7 +216,7 @@
     move-result-object v0
 
     .line 15
-    :goto_e
+    :goto_0
     invoke-interface {v0}, Ljava/util/Enumeration;->hasMoreElements()Z
 
     .line 16
@@ -225,7 +225,7 @@
     move-result v1
 
     .line 19
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_0
 
     .line 20
     .line 21
@@ -246,10 +246,10 @@
     .line 28
     .line 29
     .line 30
-    goto :goto_e
+    goto :goto_0
 
     .line 31
-    :cond_1e
+    :cond_0
     const/4 v0, 0x0
 
     .line 32
@@ -267,7 +267,7 @@
 .end method
 
 .method public final i()I
-    .registers 4
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Llibs/eb;->r()Ljava/util/Enumeration;
@@ -281,7 +281,7 @@
     const/4 v1, 0x0
 
     .line 6
-    :goto_5
+    :goto_0
     invoke-interface {v0}, Ljava/util/Enumeration;->hasMoreElements()Z
 
     .line 7
@@ -290,7 +290,7 @@
     move-result v2
 
     .line 10
-    if-eqz v2, :cond_1b
+    if-eqz v2, :cond_0
 
     .line 11
     .line 12
@@ -325,10 +325,10 @@
     add-int/2addr v1, v2
 
     .line 27
-    goto :goto_5
+    goto :goto_0
 
     .line 28
-    :cond_1b
+    :cond_0
     add-int/lit8 v1, v1, 0x4
 
     .line 29
@@ -337,7 +337,7 @@
 .end method
 
 .method public final k()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -347,7 +347,7 @@
 .end method
 
 .method public final q()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/Part;->X:[B
@@ -358,14 +358,14 @@
 .end method
 
 .method public final r()Ljava/util/Enumeration;
-    .registers 8
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/eb;->Y:[Llibs/Part;
 
     .line 2
     .line 3
-    if-nez v0, :cond_2d
+    if-nez v0, :cond_2
 
     .line 4
     .line 5
@@ -384,7 +384,7 @@
     const/4 v2, 0x0
 
     .line 12
-    :goto_b
+    :goto_0
     iget-object v3, p0, Llibs/Part;->X:[B
 
     .line 13
@@ -392,7 +392,7 @@
     array-length v4, v3
 
     .line 15
-    if-ge v2, v4, :cond_28
+    if-ge v2, v4, :cond_1
 
     .line 16
     .line 17
@@ -403,21 +403,21 @@
     array-length v5, v3
 
     .line 20
-    if-le v4, v5, :cond_17
+    if-le v4, v5, :cond_0
 
     .line 21
     .line 22
     array-length v5, v3
 
     .line 23
-    goto :goto_18
+    goto :goto_1
 
     .line 24
-    :cond_17
+    :cond_0
     move v5, v4
 
     .line 25
-    :goto_18
+    :goto_1
     sub-int/2addr v5, v2
 
     .line 26
@@ -447,10 +447,10 @@
     move v2, v4
 
     .line 40
-    goto :goto_b
+    goto :goto_0
 
     .line 41
-    :cond_28
+    :cond_1
     invoke-virtual {v0}, Ljava/util/Vector;->elements()Ljava/util/Enumeration;
 
     .line 42
@@ -462,7 +462,7 @@
     return-object v0
 
     .line 46
-    :cond_2d
+    :cond_2
     new-instance v0, Llibs/db;
 
     .line 47

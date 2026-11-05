@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>([B)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/Theme;-><init>()V
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public final c()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/i10;->X:[B
@@ -57,14 +57,14 @@
 .end method
 
 .method public final g(Llibs/Theme;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Llibs/i10;
 
     .line 2
     .line 3
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -74,7 +74,7 @@
     return p1
 
     .line 7
-    :cond_6
+    :cond_0
     check-cast p1, Llibs/i10;
 
     .line 8
@@ -99,7 +99,7 @@
 .end method
 
 .method public final h(Llibs/v60;)V
-    .registers 4
+    .locals 2
 
     .line 1
     const/16 v0, 0x19
@@ -119,7 +119,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/i10;->X:[B
@@ -138,7 +138,7 @@
 .end method
 
 .method public final i()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/i10;->X:[B
@@ -170,7 +170,7 @@
 .end method
 
 .method public final k()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0

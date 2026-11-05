@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/di2;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -58,7 +58,7 @@
 
 # virtual methods
 .method public final a()I
-    .registers 5
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
@@ -67,11 +67,11 @@
     const/4 v1, 0x0
 
     .line 3
-    :goto_2
+    :goto_0
     const/4 v2, 0x4
 
     .line 4
-    if-ge v0, v2, :cond_12
+    if-ge v0, v2, :cond_0
 
     .line 5
     .line 6
@@ -101,15 +101,15 @@
 
     .line 17
     .line 18
-    goto :goto_2
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     return v1
 .end method
 
 .method public final b()S
-    .registers 5
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
@@ -118,11 +118,11 @@
     const/4 v1, 0x0
 
     .line 3
-    :goto_2
+    :goto_0
     const/4 v2, 0x2
 
     .line 4
-    if-ge v0, v2, :cond_13
+    if-ge v0, v2, :cond_0
 
     .line 5
     .line 6
@@ -155,15 +155,15 @@
 
     .line 18
     .line 19
-    goto :goto_2
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     return v1
 .end method
 
 .method public final c(I)Ljava/lang/String;
-    .registers 5
+    .locals 3
 
     .line 1
     new-array v0, p1, [B
@@ -173,8 +173,8 @@
     const/4 v1, 0x0
 
     .line 4
-    :goto_3
-    if-ge v1, p1, :cond_10
+    :goto_0
+    if-ge v1, p1, :cond_0
 
     .line 5
     .line 6
@@ -198,10 +198,10 @@
 
     .line 15
     .line 16
-    goto :goto_3
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     new-instance p1, Ljava/lang/String;
 
     .line 18
@@ -215,7 +215,7 @@
 .end method
 
 .method public final d(I)J
-    .registers 8
+    .locals 6
 
     .line 1
     int-to-long v0, p1
@@ -229,7 +229,7 @@
 
     .line 5
     .line 6
-    if-gtz v4, :cond_49
+    if-gtz v4, :cond_2
 
     .line 7
     .line 8
@@ -237,7 +237,7 @@
 
     .line 9
     .line 10
-    if-gt p1, v4, :cond_49
+    if-gt p1, v4, :cond_2
 
     .line 11
     .line 12
@@ -280,8 +280,8 @@
 
     .line 30
     .line 31
-    :goto_1e
-    if-ltz v1, :cond_42
+    :goto_0
+    if-ltz v1, :cond_1
 
     .line 32
     .line 33
@@ -293,7 +293,7 @@
 
     .line 36
     .line 37
-    if-ne v4, v5, :cond_3f
+    if-ne v4, v5, :cond_0
 
     .line 38
     .line 39
@@ -309,7 +309,7 @@
 
     .line 44
     .line 45
-    if-ne v4, v5, :cond_3f
+    if-ne v4, v5, :cond_0
 
     .line 46
     .line 47
@@ -324,7 +324,7 @@
     const/4 v5, 0x5
 
     .line 52
-    if-ne v4, v5, :cond_3f
+    if-ne v4, v5, :cond_0
 
     .line 53
     .line 54
@@ -339,7 +339,7 @@
     const/4 v5, 0x6
 
     .line 59
-    if-ne v4, v5, :cond_3f
+    if-ne v4, v5, :cond_0
 
     .line 60
     .line 61
@@ -352,15 +352,15 @@
     return-wide v2
 
     .line 64
-    :cond_3f
+    :cond_0
     add-int/lit8 v1, v1, -0x1
 
     .line 65
     .line 66
-    goto :goto_1e
+    goto :goto_0
 
     .line 67
-    :cond_42
+    :cond_1
     mul-int/lit8 p1, p1, 0x2
 
     .line 68
@@ -376,7 +376,7 @@
     return-wide v0
 
     .line 74
-    :cond_49
+    :cond_2
     const-string p1, "End of central directory not found!"
 
     .line 75

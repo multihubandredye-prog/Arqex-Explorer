@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     const/16 v0, 0x100
@@ -24,7 +24,7 @@
 
     .line 4
     .line 5
-    fill-array-data v1, :array_18
+    fill-array-data v1, :array_0
 
     .line 6
     .line 7
@@ -64,7 +64,7 @@
     nop
 
     .line 25
-    :array_18
+    :array_0
     .array-data 2
         0xc7s
         0xfcs
@@ -326,7 +326,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 1
     const/4 v0, 0x5
@@ -406,7 +406,7 @@
 
 # virtual methods
 .method public final contains(Ljava/nio/charset/Charset;)Z
-    .registers 2
+    .locals 0
 
     .line 1
     instance-of p1, p1, Llibs/o41;
@@ -417,7 +417,7 @@
 .end method
 
 .method public final newDecoder()Ljava/nio/charset/CharsetDecoder;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/ga3;
@@ -437,7 +437,7 @@
 .end method
 
 .method public final newEncoder()Ljava/nio/charset/CharsetEncoder;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/ha3;

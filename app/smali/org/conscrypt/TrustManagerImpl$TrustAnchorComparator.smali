@@ -23,7 +23,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Lorg/conscrypt/CertificatePriorityComparator;
@@ -43,7 +43,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 5
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +52,7 @@
 .end method
 
 .method public synthetic constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/TrustManagerImpl$TrustAnchorComparator;-><init>()V
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 3
+    .locals 0
 
     .line 16
     check-cast p1, Ljava/security/cert/TrustAnchor;
@@ -81,7 +81,7 @@
 .end method
 
 .method public compare(Ljava/security/cert/TrustAnchor;Ljava/security/cert/TrustAnchor;)I
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-virtual {p1}, Ljava/security/cert/TrustAnchor;->getTrustedCert()Ljava/security/cert/X509Certificate;

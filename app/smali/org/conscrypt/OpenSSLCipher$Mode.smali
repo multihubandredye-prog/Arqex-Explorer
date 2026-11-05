@@ -33,7 +33,7 @@
 
 # direct methods
 .method private static synthetic $values()[Lorg/conscrypt/OpenSSLCipher$Mode;
-    .registers 3
+    .locals 3
 
     .line 1
     const/4 v0, 0x7
@@ -124,7 +124,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Lorg/conscrypt/OpenSSLCipher$Mode;
@@ -283,7 +283,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -300,7 +300,7 @@
 .end method
 
 .method public static getNormalized(Ljava/lang/String;)Lorg/conscrypt/OpenSSLCipher$Mode;
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -327,7 +327,7 @@
     move-result v0
 
     .line 13
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 14
     .line 15
@@ -338,7 +338,7 @@
     return-object p0
 
     .line 18
-    :cond_11
+    :cond_0
     const-string v0, "GCM_SIV"
 
     .line 19
@@ -351,7 +351,7 @@
     move-result v0
 
     .line 24
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_1
 
     .line 25
     .line 26
@@ -366,7 +366,7 @@
     return-object p0
 
     .line 31
-    :cond_1e
+    :cond_1
     const-string p0, "Invalid mode"
 
     .line 32
@@ -383,7 +383,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lorg/conscrypt/OpenSSLCipher$Mode;
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Lorg/conscrypt/OpenSSLCipher$Mode;
@@ -406,7 +406,7 @@
 .end method
 
 .method public static values()[Lorg/conscrypt/OpenSSLCipher$Mode;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/OpenSSLCipher$Mode;->$VALUES:[Lorg/conscrypt/OpenSSLCipher$Mode;

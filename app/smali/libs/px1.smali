@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>([BJJI)V
-    .registers 13
+    .locals 6
 
     .line 1
     const/4 v1, 0x5
@@ -61,7 +61,7 @@
 
     .line 21
     .line 22
-    :goto_15
+    :goto_0
     iget-object p4, p0, Llibs/px1;->d:[I
 
     .line 23
@@ -69,7 +69,7 @@
     const/4 p5, 0x2
 
     .line 25
-    if-ge p2, p6, :cond_26
+    if-ge p2, p6, :cond_0
 
     .line 26
     .line 27
@@ -96,10 +96,10 @@
 
     .line 37
     .line 38
-    goto :goto_15
+    goto :goto_0
 
     .line 39
-    :cond_26
+    :cond_0
     array-length p2, p4
 
     .line 40
@@ -128,7 +128,7 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

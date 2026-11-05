@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Exception;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "Exception reading IssuingDistributionPoint"
@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public final getCause()Ljava/lang/Throwable;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bm0;->X:Ljava/lang/Exception;

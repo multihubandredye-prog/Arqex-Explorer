@@ -5,10 +5,10 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
-    packed-switch p1, :pswitch_data_1a
+    packed-switch p1, :pswitch_data_0
 
     .line 2
     .line 3
@@ -25,7 +25,7 @@
     return-void
 
     .line 10
-    :pswitch_9
+    :pswitch_0
     const-string p1, "Parser key cannot be null"
 
     .line 11
@@ -38,7 +38,7 @@
     return-void
 
     .line 16
-    :pswitch_f
+    :pswitch_1
     invoke-direct {p0}, Ljava/lang/RuntimeException;-><init>()V
 
     .line 17
@@ -47,7 +47,7 @@
     return-void
 
     .line 20
-    :pswitch_13
+    :pswitch_2
     const-string p1, "The operation has been canceled."
 
     .line 21
@@ -63,16 +63,16 @@
     nop
 
     .line 27
-    :pswitch_data_1a
+    :pswitch_data_0
     .packed-switch 0x2
-        :pswitch_13
-        :pswitch_f
-        :pswitch_9
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public constructor <init>(Ljava/lang/Exception;)V
-    .registers 2
+    .locals 0
 
     .line 29
     invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
@@ -81,7 +81,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 28
     invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
@@ -90,7 +90,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 3
+    .locals 0
 
     .line 27
     invoke-direct {p0, p1, p2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V

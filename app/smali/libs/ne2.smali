@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/PreferenceActivity;Ljava/util/ArrayList;Llibs/ml1;B)V
-    .registers 5
+    .locals 0
 
     .line 14
     iput-byte p4, p0, Llibs/ne2;->X:B
@@ -35,7 +35,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/PreferenceActivity;Llibs/ml1;Ljava/util/ArrayList;)V
-    .registers 5
+    .locals 1
 
     .line 1
     const/4 v0, 0x2
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/ne2;->X:B
@@ -87,7 +87,7 @@
 
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_20
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
@@ -100,7 +100,7 @@
     return-void
 
     .line 16
-    :pswitch_f
+    :pswitch_0
     invoke-static {p1, v3, v2, v1}, Lcom/mixplorer/activities/PreferenceActivity;->Work(Landroid/view/View;Lcom/mixplorer/activities/PreferenceActivity;Ljava/util/ArrayList;Llibs/ml1;)V
 
     .line 17
@@ -109,7 +109,7 @@
     return-void
 
     .line 20
-    :pswitch_13
+    :pswitch_1
     invoke-static {p1, v3, v2, v1}, Lcom/mixplorer/activities/PreferenceActivity;->Link(Landroid/view/View;Lcom/mixplorer/activities/PreferenceActivity;Ljava/util/ArrayList;Llibs/ml1;)V
 
     .line 21
@@ -118,7 +118,7 @@
     return-void
 
     .line 24
-    :pswitch_17
+    :pswitch_2
     invoke-static {v3, v2, v1}, Lcom/mixplorer/activities/PreferenceActivity;->Sync(Lcom/mixplorer/activities/PreferenceActivity;Ljava/util/ArrayList;Llibs/ml1;)V
 
     .line 25
@@ -127,7 +127,7 @@
     return-void
 
     .line 28
-    :pswitch_1b
+    :pswitch_3
     invoke-static {p1, v3, v2, v1}, Lcom/mixplorer/activities/PreferenceActivity;->Old(Landroid/view/View;Lcom/mixplorer/activities/PreferenceActivity;Ljava/util/ArrayList;Llibs/ml1;)V
 
     .line 29
@@ -139,11 +139,11 @@
     nop
 
     .line 33
-    :pswitch_data_20
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1b
-        :pswitch_17
-        :pswitch_13
-        :pswitch_f
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

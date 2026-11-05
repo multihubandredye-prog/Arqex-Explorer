@@ -22,7 +22,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/yr1;Llibs/$d;Llibs/rp0;Landroid/app/Activity;Llibs/ek3;B)V
-    .registers 7
+    .locals 0
 
     .line 1
     iput-byte p6, p0, Llibs/tr1;->X:B
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 19
+    .locals 17
 
     .line 1
     move-object/from16 v0, p0
@@ -78,7 +78,7 @@
 
     .line 7
     .line 8
-    packed-switch v1, :pswitch_data_68
+    packed-switch v1, :pswitch_data_0
 
     .line 9
     .line 10
@@ -138,7 +138,7 @@
     return-void
 
     .line 40
-    :pswitch_27
+    :pswitch_0
     iget-object v11, v0, Llibs/tr1;->Y:Llibs/yr1;
 
     .line 41
@@ -200,7 +200,7 @@
     return-void
 
     .line 73
-    :pswitch_48
+    :pswitch_1
     iget-object v4, v0, Llibs/tr1;->Y:Llibs/yr1;
 
     .line 74
@@ -261,9 +261,9 @@
     return-void
 
     .line 105
-    :pswitch_data_68
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_48
-        :pswitch_27
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

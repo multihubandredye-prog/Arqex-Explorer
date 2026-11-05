@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic a(Ljava/security/cert/CertPathValidator;)Ljava/security/cert/CertPathChecker;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Ljava/security/cert/CertPathValidator;->getRevocationChecker()Ljava/security/cert/CertPathChecker;
@@ -20,7 +20,7 @@
 .end method
 
 .method public static bridge synthetic b(Ljava/lang/Object;)Ljava/security/cert/PKIXRevocationChecker;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Ljava/security/cert/PKIXRevocationChecker;
@@ -31,7 +31,7 @@
 .end method
 
 .method public static bridge synthetic c(Lcom/mixplorer/widgets/MiPager;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->cancelDragAndDrop()V
@@ -43,7 +43,7 @@
 .end method
 
 .method public static bridge synthetic d(Ljava/security/cert/PKIXRevocationChecker;Ljava/util/Set;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Ljava/security/cert/PKIXRevocationChecker;->setOptions(Ljava/util/Set;)V

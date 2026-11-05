@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/gs0;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/rw;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 5
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/rw;->X:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_2c
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -91,7 +91,7 @@
     return p1
 
     .line 27
-    :pswitch_1a
+    :pswitch_0
     invoke-interface {v1, p1}, Llibs/gs0;->apply(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 28
@@ -130,8 +130,8 @@
     nop
 
     .line 45
-    :pswitch_data_2c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1a
+        :pswitch_0
     .end packed-switch
 .end method

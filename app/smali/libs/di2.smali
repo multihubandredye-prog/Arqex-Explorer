@@ -30,7 +30,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/File;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 162
     invoke-virtual {p1}, Ljava/io/File;->getPath()Ljava/lang/String;
@@ -47,7 +47,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -58,7 +58,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;Llibs/rp0;Ljava/lang/String;)V
-    .registers 10
+    .locals 6
 
     .line 1
     const-string v0, "channel-"
@@ -82,11 +82,11 @@
     move-result v1
 
     .line 12
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_0
 
     .line 13
     .line 14
-    :try_start_d
+    :try_start_0
     new-instance v2, Ljava/io/RandomAccessFile;
 
     .line 15
@@ -109,20 +109,20 @@
 
     .line 25
     iput-wide v2, p0, Llibs/di2;->totalSize:J
-    :try_end_1a
-    .catchall {:try_start_d .. :try_end_1a} :catchall_1b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 26
     .line 27
     return-void
 
     .line 28
-    :catchall_1b
+    :catchall_0
     nop
 
     .line 29
-    :cond_1c
-    if-nez p2, :cond_41
+    :cond_0
+    if-nez p2, :cond_3
 
     .line 30
     .line 31
@@ -134,7 +134,7 @@
     move-result-object p2
 
     .line 35
-    if-eqz p2, :cond_28
+    if-eqz p2, :cond_1
 
     .line 36
     .line 37
@@ -146,8 +146,8 @@
 
     .line 40
     .line 41
-    :cond_28
-    if-nez p2, :cond_41
+    :cond_1
+    if-nez p2, :cond_3
 
     .line 42
     .line 43
@@ -163,32 +163,32 @@
     move-result v2
 
     .line 49
-    if-eqz v2, :cond_39
+    if-eqz v2, :cond_2
 
     .line 50
     .line 51
-    :try_start_32
+    :try_start_1
     invoke-static {p1}, Llibs/u73;->l(Ljava/lang/String;)Llibs/rp0;
 
     .line 52
     .line 53
     .line 54
     move-result-object p2
-    :try_end_36
-    .catchall {:try_start_32 .. :try_end_36} :catchall_37
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 55
-    goto :goto_41
+    goto :goto_0
 
     .line 56
-    :catchall_37
+    :catchall_1
     nop
 
     .line 57
-    goto :goto_41
+    goto :goto_0
 
     .line 58
-    :cond_39
+    :cond_2
     new-instance p1, Ljava/io/FileNotFoundException;
 
     .line 59
@@ -205,8 +205,8 @@
     throw p1
 
     .line 66
-    :cond_41
-    :goto_41
+    :cond_3
+    :goto_0
     invoke-static {}, Llibs/t43;->Task()Z
 
     .line 67
@@ -218,11 +218,11 @@
     const/4 v2, 0x0
 
     .line 71
-    if-nez p1, :cond_99
+    if-nez p1, :cond_5
 
     .line 72
     .line 73
-    if-eqz v1, :cond_51
+    if-eqz v1, :cond_4
 
     .line 74
     .line 75
@@ -234,19 +234,19 @@
     move-result p1
 
     .line 79
-    if-eqz p1, :cond_51
+    if-eqz p1, :cond_4
 
     .line 80
     .line 81
-    goto :goto_99
+    goto :goto_1
 
     .line 82
-    :cond_51
-    if-eqz v1, :cond_9f
+    :cond_4
+    if-eqz v1, :cond_6
 
     .line 83
     .line 84
-    :try_start_53
+    :try_start_2
     new-instance p1, Ljava/io/File;
 
     .line 85
@@ -357,16 +357,16 @@
     .line 140
     .line 141
     invoke-static {p1, p3, p2}, Llibs/en1;->w(Ljava/lang/reflect/Field;Ljava/lang/Object;Ljava/io/FileDescriptor;)V
-    :try_end_8f
-    .catchall {:try_start_53 .. :try_end_8f} :catchall_90
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
     .line 142
     .line 143
     .line 144
-    goto :goto_9f
+    goto :goto_2
 
     .line 145
-    :catchall_90
+    :catchall_2
     move-exception p1
 
     .line 146
@@ -386,8 +386,8 @@
     throw v2
 
     .line 154
-    :cond_99
-    :goto_99
+    :cond_5
+    :goto_1
     invoke-static {p2, p3, v2, v2}, Lcom/mixplorer/providers/FileProvider;->b(Llibs/rp0;Ljava/lang/String;Llibs/lc0;Ljava/lang/Object;)Llibs/bt1;
 
     .line 155
@@ -400,13 +400,13 @@
 
     .line 159
     .line 160
-    :cond_9f
-    :goto_9f
+    :cond_6
+    :goto_2
     return-void
 .end method
 
 .method public constructor <init>(Llibs/rp0;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 163
     iget-object v0, p1, Llibs/rp0;->Three:Ljava/lang/String;
@@ -420,7 +420,7 @@
 
 # virtual methods
 .method public close()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/di2;->pfd2:Landroid/os/ParcelFileDescriptor;
@@ -445,7 +445,7 @@
 
     .line 12
     .line 13
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     .line 14
     .line 15
@@ -457,20 +457,20 @@
     move-result v1
 
     .line 19
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_0
 
     .line 20
     .line 21
-    :try_start_14
+    :try_start_0
     invoke-virtual {v0}, Ljava/nio/channels/spi/AbstractInterruptibleChannel;->close()V
-    :try_end_17
-    .catchall {:try_start_14 .. :try_end_17} :catchall_17
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 22
     .line 23
     .line 24
-    :catchall_17
-    :cond_17
+    :catchall_0
+    :cond_0
     iget-object v0, p0, Llibs/di2;->pfd:Landroid/os/ParcelFileDescriptor;
 
     .line 25
@@ -484,18 +484,18 @@
 .end method
 
 .method public declared-synchronized getChannel()Ljava/nio/channels/FileChannel;
-    .registers 6
+    .locals 5
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Llibs/di2;->pfd:Landroid/os/ParcelFileDescriptor;
 
     .line 3
     .line 4
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_2
 
     .line 5
     .line 6
@@ -505,20 +505,20 @@
     .line 8
     .line 9
     move-result v0
-    :try_end_9
-    .catchall {:try_start_1 .. :try_end_9} :catchall_41
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 10
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_2
 
     .line 11
     .line 12
-    :try_start_b
+    :try_start_1
     iget-object v0, p0, Llibs/di2;->channel:Ljava/nio/channels/FileChannel;
 
     .line 13
     .line 14
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 15
     .line 16
@@ -530,22 +530,22 @@
     move-result v0
 
     .line 20
-    if-nez v0, :cond_29
+    if-nez v0, :cond_1
 
     .line 21
     .line 22
-    goto :goto_18
+    goto :goto_0
 
     .line 23
-    :catchall_16
+    :catchall_0
     move-exception v0
 
     .line 24
-    goto :goto_2d
+    goto :goto_1
 
     .line 25
-    :cond_18
-    :goto_18
+    :cond_0
+    :goto_0
     new-instance v0, Llibs/ys1;
 
     .line 26
@@ -579,10 +579,10 @@
 
     .line 41
     .line 42
-    :cond_29
+    :cond_1
     iget-object v0, p0, Llibs/di2;->channel:Ljava/nio/channels/FileChannel;
-    :try_end_2b
-    .catchall {:try_start_b .. :try_end_2b} :catchall_16
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 43
     .line 44
@@ -592,8 +592,8 @@
     return-object v0
 
     .line 46
-    :goto_2d
-    :try_start_2d
+    :goto_1
+    :try_start_2
     const-string v1, "MiRAF"
 
     .line 47
@@ -625,8 +625,8 @@
     .line 59
     .line 60
     invoke-static {v1, v2, v3}, Llibs/vw1;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_3e
-    .catchall {:try_start_2d .. :try_end_3e} :catchall_41
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 61
     .line 62
@@ -640,15 +640,15 @@
     return-object v0
 
     .line 66
-    :catchall_41
+    :catchall_1
     move-exception v0
 
     .line 67
-    goto :goto_4b
+    goto :goto_2
 
     .line 68
-    :cond_43
-    :try_start_43
+    :cond_2
+    :try_start_3
     iget-object v0, p0, Llibs/di2;->raf:Ljava/io/RandomAccessFile;
 
     .line 69
@@ -659,8 +659,8 @@
     .line 72
     .line 73
     move-result-object v0
-    :try_end_49
-    .catchall {:try_start_43 .. :try_end_49} :catchall_41
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 74
     monitor-exit p0
@@ -669,25 +669,25 @@
     return-object v0
 
     .line 76
-    :goto_4b
-    :try_start_4b
+    :goto_2
+    :try_start_4
     monitor-exit p0
-    :try_end_4c
-    .catchall {:try_start_4b .. :try_end_4c} :catchall_41
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 77
     throw v0
 .end method
 
 .method public getFD()Ljava/io/FileDescriptor;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/di2;->pfd:Landroid/os/ParcelFileDescriptor;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -699,7 +699,7 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -718,7 +718,7 @@
     return-object v0
 
     .line 18
-    :cond_11
+    :cond_0
     iget-object v0, p0, Llibs/di2;->raf:Ljava/io/RandomAccessFile;
 
     .line 19
@@ -735,14 +735,14 @@
 .end method
 
 .method public getFilePointer()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/di2;->pfd:Landroid/os/ParcelFileDescriptor;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -754,7 +754,7 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -773,7 +773,7 @@
     return-wide v0
 
     .line 18
-    :cond_11
+    :cond_0
     iget-object v0, p0, Llibs/di2;->raf:Ljava/io/RandomAccessFile;
 
     .line 19
@@ -790,14 +790,14 @@
 .end method
 
 .method public length()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/di2;->pfd:Landroid/os/ParcelFileDescriptor;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -809,7 +809,7 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -828,7 +828,7 @@
     return-wide v0
 
     .line 18
-    :cond_11
+    :cond_0
     iget-object v0, p0, Llibs/di2;->raf:Ljava/io/RandomAccessFile;
 
     .line 19
@@ -845,14 +845,14 @@
 .end method
 
 .method public read()I
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/di2;->pfd:Landroid/os/ParcelFileDescriptor;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
@@ -864,7 +864,7 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_1
 
     .line 10
     .line 11
@@ -893,7 +893,7 @@
     const/4 v2, -0x1
 
     .line 22
-    if-eq v0, v2, :cond_1c
+    if-eq v0, v2, :cond_0
 
     .line 23
     .line 24
@@ -908,11 +908,11 @@
     return v0
 
     .line 29
-    :cond_1c
+    :cond_0
     return v2
 
     .line 30
-    :cond_1d
+    :cond_1
     iget-object v0, p0, Llibs/di2;->raf:Ljava/io/RandomAccessFile;
 
     .line 31
@@ -929,7 +929,7 @@
 .end method
 
 .method public read([B)I
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -944,18 +944,18 @@
 .end method
 
 .method public read([BII)I
-    .registers 5
+    .locals 1
 
     .line 38
     iget-object v0, p0, Llibs/di2;->pfd:Landroid/os/ParcelFileDescriptor;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     invoke-static {}, Llibs/t43;->Item()Z
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 39
     iget-object v0, p0, Llibs/di2;->pfd:Landroid/os/ParcelFileDescriptor;
@@ -967,7 +967,7 @@
     return p1
 
     .line 40
-    :cond_11
+    :cond_0
     iget-object v0, p0, Llibs/di2;->raf:Ljava/io/RandomAccessFile;
 
     invoke-virtual {v0, p1, p2, p3}, Ljava/io/RandomAccessFile;->read([BII)I
@@ -978,7 +978,7 @@
 .end method
 
 .method public readBoolean()Z
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/di2;->read()I
@@ -989,11 +989,11 @@
     move-result v0
 
     .line 5
-    if-ltz v0, :cond_c
+    if-ltz v0, :cond_1
 
     .line 6
     .line 7
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -1003,14 +1003,14 @@
     return v0
 
     .line 11
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
     .line 12
     return v0
 
     .line 13
-    :cond_c
+    :cond_1
     invoke-static {}, Llibs/ic0;->u()V
 
     .line 14
@@ -1023,14 +1023,14 @@
 .end method
 
 .method public readByte()B
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/di2;->pfd:Landroid/os/ParcelFileDescriptor;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_2
 
     .line 4
     .line 5
@@ -1042,7 +1042,7 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_2
 
     .line 10
     .line 11
@@ -1071,7 +1071,7 @@
     const/4 v2, -0x1
 
     .line 22
-    if-eq v0, v2, :cond_1b
+    if-eq v0, v2, :cond_0
 
     .line 23
     .line 24
@@ -1083,8 +1083,8 @@
 
     .line 27
     .line 28
-    :cond_1b
-    if-ltz v2, :cond_1f
+    :cond_0
+    if-ltz v2, :cond_1
 
     .line 29
     .line 30
@@ -1094,7 +1094,7 @@
     return v0
 
     .line 32
-    :cond_1f
+    :cond_1
     invoke-static {}, Llibs/ic0;->u()V
 
     .line 33
@@ -1103,7 +1103,7 @@
     return v3
 
     .line 36
-    :cond_23
+    :cond_2
     iget-object v0, p0, Llibs/di2;->raf:Ljava/io/RandomAccessFile;
 
     .line 37
@@ -1120,7 +1120,7 @@
 .end method
 
 .method public readChar()C
-    .registers 4
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Llibs/di2;->read()I
@@ -1143,7 +1143,7 @@
 
     .line 10
     .line 11
-    if-ltz v2, :cond_11
+    if-ltz v2, :cond_0
 
     .line 12
     .line 13
@@ -1160,7 +1160,7 @@
     return v0
 
     .line 18
-    :cond_11
+    :cond_0
     invoke-static {}, Llibs/ic0;->u()V
 
     .line 19
@@ -1173,7 +1173,7 @@
 .end method
 
 .method public readDouble()D
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Llibs/di2;->readLong()J
@@ -1196,7 +1196,7 @@
 .end method
 
 .method public readFloat()F
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/di2;->readInt()I
@@ -1219,7 +1219,7 @@
 .end method
 
 .method public final readFully([B)V
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -1232,14 +1232,14 @@
 .end method
 
 .method public readFully([BII)V
-    .registers 6
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/di2;->pfd:Landroid/os/ParcelFileDescriptor;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_2
 
     .line 4
     .line 5
@@ -1251,7 +1251,7 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_2
 
     .line 10
     .line 11
@@ -1259,8 +1259,8 @@
 
     .line 12
     .line 13
-    :goto_c
-    if-lez p3, :cond_1a
+    :goto_0
+    if-lez p3, :cond_1
 
     .line 14
     .line 15
@@ -1272,7 +1272,7 @@
     move-result v1
 
     .line 19
-    if-ltz v1, :cond_17
+    if-ltz v1, :cond_0
 
     .line 20
     .line 21
@@ -1282,20 +1282,20 @@
     sub-int/2addr p3, v1
 
     .line 23
-    goto :goto_c
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_0
     invoke-static {}, Llibs/ic0;->u()V
 
     .line 25
     .line 26
     .line 27
-    :cond_1a
+    :cond_1
     return-void
 
     .line 28
-    :cond_1b
+    :cond_2
     iget-object v0, p0, Llibs/di2;->raf:Ljava/io/RandomAccessFile;
 
     .line 29
@@ -1309,7 +1309,7 @@
 .end method
 
 .method public readInt()I
-    .registers 6
+    .locals 5
 
     .line 1
     invoke-virtual {p0}, Llibs/di2;->read()I
@@ -1354,7 +1354,7 @@
     or-int/2addr v4, v3
 
     .line 21
-    if-ltz v4, :cond_20
+    if-ltz v4, :cond_0
 
     .line 22
     .line 23
@@ -1382,7 +1382,7 @@
     return v0
 
     .line 33
-    :cond_20
+    :cond_0
     invoke-static {}, Llibs/ic0;->u()V
 
     .line 34
@@ -1395,7 +1395,7 @@
 .end method
 
 .method public readLine()Ljava/lang/String;
-    .registers 9
+    .locals 8
 
     .line 1
     new-instance v0, Ljava/lang/StringBuffer;
@@ -1416,8 +1416,8 @@
     const/4 v3, -0x1
 
     .line 9
-    :goto_8
-    if-nez v2, :cond_2d
+    :goto_0
+    if-nez v2, :cond_2
 
     .line 10
     .line 11
@@ -1432,7 +1432,7 @@
     const/4 v4, 0x1
 
     .line 16
-    if-eq v3, v1, :cond_2b
+    if-eq v3, v1, :cond_1
 
     .line 17
     .line 18
@@ -1440,7 +1440,7 @@
 
     .line 19
     .line 20
-    if-eq v3, v5, :cond_2b
+    if-eq v3, v5, :cond_1
 
     .line 21
     .line 22
@@ -1448,7 +1448,7 @@
 
     .line 23
     .line 24
-    if-eq v3, v6, :cond_1e
+    if-eq v3, v6, :cond_0
 
     .line 25
     .line 26
@@ -1460,10 +1460,10 @@
     .line 28
     .line 29
     .line 30
-    goto :goto_8
+    goto :goto_0
 
     .line 31
-    :cond_1e
+    :cond_0
     invoke-virtual {p0}, Llibs/di2;->getFilePointer()J
 
     .line 32
@@ -1480,7 +1480,7 @@
     move-result v2
 
     .line 39
-    if-eq v2, v5, :cond_2b
+    if-eq v2, v5, :cond_1
 
     .line 40
     .line 41
@@ -1489,15 +1489,15 @@
     .line 42
     .line 43
     .line 44
-    :cond_2b
+    :cond_1
     const/4 v2, 0x1
 
     .line 45
-    goto :goto_8
+    goto :goto_0
 
     .line 46
-    :cond_2d
-    if-ne v3, v1, :cond_37
+    :cond_2
+    if-ne v3, v1, :cond_3
 
     .line 47
     .line 48
@@ -1509,7 +1509,7 @@
     move-result v1
 
     .line 52
-    if-nez v1, :cond_37
+    if-nez v1, :cond_3
 
     .line 53
     .line 54
@@ -1519,7 +1519,7 @@
     return-object v0
 
     .line 56
-    :cond_37
+    :cond_3
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     .line 57
@@ -1532,7 +1532,7 @@
 .end method
 
 .method public readLong()J
-    .registers 7
+    .locals 6
 
     .line 1
     invoke-virtual {p0}, Llibs/di2;->readInt()I
@@ -1581,7 +1581,7 @@
 .end method
 
 .method public readShort()S
-    .registers 4
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Llibs/di2;->read()I
@@ -1604,7 +1604,7 @@
 
     .line 10
     .line 11
-    if-ltz v2, :cond_11
+    if-ltz v2, :cond_0
 
     .line 12
     .line 13
@@ -1621,7 +1621,7 @@
     return v0
 
     .line 18
-    :cond_11
+    :cond_0
     invoke-static {}, Llibs/ic0;->u()V
 
     .line 19
@@ -1634,7 +1634,7 @@
 .end method
 
 .method public readUTF()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-static {p0}, Ljava/io/DataInputStream;->readUTF(Ljava/io/DataInput;)Ljava/lang/String;
@@ -1649,7 +1649,7 @@
 .end method
 
 .method public readUnsignedByte()I
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/di2;->read()I
@@ -1660,14 +1660,14 @@
     move-result v0
 
     .line 5
-    if-ltz v0, :cond_7
+    if-ltz v0, :cond_0
 
     .line 6
     .line 7
     return v0
 
     .line 8
-    :cond_7
+    :cond_0
     invoke-static {}, Llibs/ic0;->u()V
 
     .line 9
@@ -1680,7 +1680,7 @@
 .end method
 
 .method public readUnsignedShort()I
-    .registers 4
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Llibs/di2;->read()I
@@ -1703,7 +1703,7 @@
 
     .line 10
     .line 11
-    if-ltz v2, :cond_10
+    if-ltz v2, :cond_0
 
     .line 12
     .line 13
@@ -1717,7 +1717,7 @@
     return v0
 
     .line 17
-    :cond_10
+    :cond_0
     invoke-static {}, Llibs/ic0;->u()V
 
     .line 18
@@ -1730,14 +1730,14 @@
 .end method
 
 .method public seek(J)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/di2;->pfd:Landroid/os/ParcelFileDescriptor;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -1749,7 +1749,7 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -1765,7 +1765,7 @@
     return-void
 
     .line 17
-    :cond_10
+    :cond_0
     iget-object v0, p0, Llibs/di2;->raf:Ljava/io/RandomAccessFile;
 
     .line 18
@@ -1779,7 +1779,7 @@
 .end method
 
 .method public setLength(J)V
-    .registers 5
+    .locals 2
 
     .line 1
     :try_start_0
@@ -1787,7 +1787,7 @@
 
     .line 2
     .line 3
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -1799,7 +1799,7 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -1819,21 +1819,21 @@
     return-void
 
     .line 19
-    :catchall_12
+    :catchall_0
     move-exception p1
 
     .line 20
-    goto :goto_1a
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_0
     iget-object v0, p0, Llibs/di2;->raf:Ljava/io/RandomAccessFile;
 
     .line 22
     .line 23
     invoke-virtual {v0, p1, p2}, Ljava/io/RandomAccessFile;->setLength(J)V
-    :try_end_19
-    .catchall {:try_start_0 .. :try_end_19} :catchall_12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 24
     .line 25
@@ -1841,7 +1841,7 @@
     return-void
 
     .line 27
-    :goto_1a
+    :goto_0
     invoke-static {p1}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 28
@@ -1881,7 +1881,7 @@
 .end method
 
 .method public skip(J)J
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Llibs/di2;->getFilePointer()J
@@ -1912,14 +1912,14 @@
 .end method
 
 .method public final skipBytes(I)I
-    .registers 11
+    .locals 9
 
     .line 1
     iget-object v0, p0, Llibs/di2;->pfd:Landroid/os/ParcelFileDescriptor;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_2
 
     .line 4
     .line 5
@@ -1931,7 +1931,7 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_2
 
     .line 10
     .line 11
@@ -1939,7 +1939,7 @@
 
     .line 12
     .line 13
-    if-lez p1, :cond_26
+    if-lez p1, :cond_1
 
     .line 14
     .line 15
@@ -1970,7 +1970,7 @@
 
     .line 27
     .line 28
-    if-lez p1, :cond_1f
+    if-lez p1, :cond_0
 
     .line 29
     .line 30
@@ -1978,7 +1978,7 @@
 
     .line 31
     .line 32
-    :cond_1f
+    :cond_0
     long-to-int p1, v5
 
     .line 33
@@ -1996,14 +1996,14 @@
     return p1
 
     .line 39
-    :cond_26
+    :cond_1
     const/4 p1, 0x0
 
     .line 40
     return p1
 
     .line 41
-    :cond_28
+    :cond_2
     iget-object v0, p0, Llibs/di2;->raf:Ljava/io/RandomAccessFile;
 
     .line 42
@@ -2020,7 +2020,7 @@
 .end method
 
 .method public write(I)V
-    .registers 4
+    .locals 2
 
     int-to-byte p1, p1
 
@@ -2039,7 +2039,7 @@
 .end method
 
 .method public write([B)V
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -2052,14 +2052,14 @@
 .end method
 
 .method public write([BII)V
-    .registers 5
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/di2;->pfd:Landroid/os/ParcelFileDescriptor;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -2071,7 +2071,7 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -2079,7 +2079,7 @@
 
     .line 12
     .line 13
-    :try_start_c
+    :try_start_0
     invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
 
     .line 14
@@ -2089,8 +2089,8 @@
 
     .line 17
     invoke-static {v0, p1, p2, p3}, Llibs/ek;->v(Ljava/io/FileDescriptor;[BII)I
-    :try_end_13
-    .catchall {:try_start_c .. :try_end_13} :catchall_14
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 18
     .line 19
@@ -2098,7 +2098,7 @@
     return-void
 
     .line 21
-    :catchall_14
+    :catchall_0
     move-exception p1
 
     .line 22
@@ -2135,7 +2135,7 @@
     return-void
 
     .line 39
-    :cond_26
+    :cond_0
     iget-object v0, p0, Llibs/di2;->raf:Ljava/io/RandomAccessFile;
 
     .line 40
@@ -2149,7 +2149,7 @@
 .end method
 
 .method public writeBoolean(Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Llibs/di2;->write(I)V
@@ -2161,7 +2161,7 @@
 .end method
 
 .method public writeByte(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     and-int/lit16 p1, p1, 0xff
@@ -2177,7 +2177,7 @@
 .end method
 
 .method public writeBytes(Ljava/lang/String;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -2195,7 +2195,7 @@
     const/4 v1, 0x0
 
     .line 8
-    :goto_7
+    :goto_0
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     .line 9
@@ -2204,7 +2204,7 @@
     move-result v2
 
     .line 12
-    if-ge v1, v2, :cond_19
+    if-ge v1, v2, :cond_0
 
     .line 13
     .line 14
@@ -2231,10 +2231,10 @@
 
     .line 24
     .line 25
-    goto :goto_7
+    goto :goto_0
 
     .line 26
-    :cond_19
+    :cond_0
     invoke-virtual {p0, v0}, Llibs/di2;->write([B)V
 
     .line 27
@@ -2244,7 +2244,7 @@
 .end method
 
 .method public writeChar(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Llibs/di2;->writeShort(I)V
@@ -2256,7 +2256,7 @@
 .end method
 
 .method public writeChars(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "UTF-16BE"
@@ -2280,7 +2280,7 @@
 .end method
 
 .method public writeDouble(D)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-static {p1, p2}, Ljava/lang/Double;->doubleToLongBits(D)J
@@ -2300,7 +2300,7 @@
 .end method
 
 .method public writeFloat(F)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p1}, Ljava/lang/Float;->floatToIntBits(F)I
@@ -2320,14 +2320,14 @@
 .end method
 
 .method public writeInt(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/di2;->pfd:Landroid/os/ParcelFileDescriptor;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -2339,14 +2339,14 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
     return-void
 
     .line 12
-    :cond_b
+    :cond_0
     iget-object v0, p0, Llibs/di2;->raf:Ljava/io/RandomAccessFile;
 
     .line 13
@@ -2360,14 +2360,14 @@
 .end method
 
 .method public writeLong(J)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/di2;->pfd:Landroid/os/ParcelFileDescriptor;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -2379,14 +2379,14 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
     return-void
 
     .line 12
-    :cond_b
+    :cond_0
     iget-object v0, p0, Llibs/di2;->raf:Ljava/io/RandomAccessFile;
 
     .line 13
@@ -2400,14 +2400,14 @@
 .end method
 
 .method public writeShort(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/di2;->pfd:Landroid/os/ParcelFileDescriptor;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -2419,14 +2419,14 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
     return-void
 
     .line 12
-    :cond_b
+    :cond_0
     iget-object v0, p0, Llibs/di2;->raf:Ljava/io/RandomAccessFile;
 
     .line 13
@@ -2440,14 +2440,14 @@
 .end method
 
 .method public writeUTF(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/di2;->pfd:Landroid/os/ParcelFileDescriptor;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -2459,14 +2459,14 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
     return-void
 
     .line 12
-    :cond_b
+    :cond_0
     iget-object v0, p0, Llibs/di2;->raf:Ljava/io/RandomAccessFile;
 
     .line 13

@@ -25,7 +25,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 8
+    .locals 8
 
     .line 1
     new-instance v0, Llibs/hd0;
@@ -78,7 +78,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;ZLlibs/ei3;Llibs/ei3;ZZLlibs/p81;)V
-    .registers 8
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

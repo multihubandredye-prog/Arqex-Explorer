@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/concurrent/Future;Llibs/Val;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/Msg;-><init>()V
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final cancel(Z)Z
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ko3;->X:Ljava/util/concurrent/Future;
@@ -52,7 +52,7 @@
 .end method
 
 .method public final get()Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/ko3;->X:Ljava/util/concurrent/Future;
@@ -83,7 +83,7 @@
 .end method
 
 .method public final get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
-    .registers 5
+    .locals 1
 
     .line 14
     iget-object v0, p0, Llibs/ko3;->X:Ljava/util/concurrent/Future;
@@ -102,7 +102,7 @@
 .end method
 
 .method public final isCancelled()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ko3;->X:Ljava/util/concurrent/Future;
@@ -121,7 +121,7 @@
 .end method
 
 .method public final isDone()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ko3;->X:Ljava/util/concurrent/Future;

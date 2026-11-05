@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/sp1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/rp1;->b:Llibs/sp1;
@@ -29,7 +29,7 @@
 
 # virtual methods
 .method public final getChangingConfigurations()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/rp1;->a:I
@@ -40,7 +40,7 @@
 .end method
 
 .method public final newDrawable()Landroid/graphics/drawable/Drawable;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Llibs/sp1;
@@ -84,19 +84,19 @@
     const/4 v3, 0x4
 
     .line 22
-    if-eq v2, v3, :cond_18
+    if-eq v2, v3, :cond_0
 
     .line 23
     .line 24
-    goto :goto_1a
+    goto :goto_0
 
     .line 25
-    :cond_18
+    :cond_0
     iget v2, v1, Llibs/sp1;->Three:I
 
     .line 26
     .line 27
-    :goto_1a
+    :goto_0
     invoke-virtual {v0, v2}, Llibs/sp1;->d(I)V
 
     .line 28

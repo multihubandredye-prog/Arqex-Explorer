@@ -8,10 +8,10 @@
 
 # direct methods
 .method public static z(Landroid/os/IBinder;)Llibs/h71;
-    .registers 3
+    .locals 2
 
     .line 1
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     .line 2
     .line 3
@@ -21,7 +21,7 @@
     return-object p0
 
     .line 5
-    :cond_4
+    :cond_0
     const-string v0, "moe.shizuku.server.IRemoteProcess"
 
     .line 6
@@ -34,7 +34,7 @@
     move-result-object v0
 
     .line 11
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_1
 
     .line 12
     .line 13
@@ -42,7 +42,7 @@
 
     .line 14
     .line 15
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_1
 
     .line 16
     .line 17
@@ -53,7 +53,7 @@
     return-object v0
 
     .line 20
-    :cond_13
+    :cond_1
     new-instance v0, Llibs/f71;
 
     .line 21

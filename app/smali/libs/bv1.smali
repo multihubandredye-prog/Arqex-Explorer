@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -45,7 +45,7 @@
 .end method
 
 .method public static a(Landroid/view/ViewGroup;Ljava/util/ArrayList;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
@@ -59,8 +59,8 @@
     const/4 v1, 0x0
 
     .line 6
-    :goto_5
-    if-ge v1, v0, :cond_21
+    :goto_0
+    if-ge v1, v0, :cond_2
 
     .line 7
     .line 8
@@ -76,7 +76,7 @@
 
     .line 13
     .line 14
-    if-eqz v3, :cond_15
+    if-eqz v3, :cond_0
 
     .line 15
     .line 16
@@ -89,15 +89,15 @@
     .line 19
     .line 20
     .line 21
-    goto :goto_1e
+    goto :goto_1
 
     .line 22
-    :cond_15
+    :cond_0
     instance-of v3, v2, Landroid/view/ViewGroup;
 
     .line 23
     .line 24
-    if-eqz v3, :cond_1e
+    if-eqz v3, :cond_1
 
     .line 25
     .line 26
@@ -110,37 +110,37 @@
     .line 29
     .line 30
     .line 31
-    :cond_1e
-    :goto_1e
+    :cond_1
+    :goto_1
     add-int/lit8 v1, v1, 0x1
 
     .line 32
     .line 33
-    goto :goto_5
+    goto :goto_0
 
     .line 34
-    :cond_21
+    :cond_2
     return-void
 .end method
 
 
 # virtual methods
 .method public final check(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/bv1;->Lambda:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     const/4 v0, 0x1
 
     .line 7

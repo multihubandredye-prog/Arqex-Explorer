@@ -47,7 +47,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 390
     invoke-direct {p0}, Llibs/qd;-><init>()V
@@ -77,7 +77,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Lorg/json/JSONObject;)V
-    .registers 10
+    .locals 7
 
     .line 1
     invoke-direct {p0}, Llibs/qd;-><init>()V
@@ -118,7 +118,7 @@
 
     .line 20
     .line 21
-    :try_start_14
+    :try_start_0
     const-string v1, "id"
 
     .line 22
@@ -308,7 +308,7 @@
     const/4 v4, 0x0
 
     .line 116
-    if-nez v3, :cond_83
+    if-nez v3, :cond_1
 
     .line 117
     .line 118
@@ -324,39 +324,39 @@
     move-result v2
 
     .line 124
-    if-eqz v2, :cond_7e
+    if-eqz v2, :cond_0
 
     .line 125
     .line 126
-    goto :goto_83
+    goto :goto_0
 
     .line 127
-    :cond_7e
+    :cond_0
     const/4 v2, 0x0
 
     .line 128
-    goto :goto_84
+    goto :goto_1
 
     .line 129
-    :catchall_80
+    :catchall_0
     move-exception p1
 
     .line 130
-    goto/16 :goto_15f
+    goto/16 :goto_3
 
     .line 131
     .line 132
-    :cond_83
-    :goto_83
+    :cond_1
+    :goto_0
     const/4 v2, 0x1
 
     .line 133
-    :goto_84
+    :goto_1
     iput-boolean v2, p0, Llibs/jc1;->Phi:Z
 
     .line 134
     .line 135
-    if-nez v2, :cond_b2
+    if-nez v2, :cond_2
 
     .line 136
     .line 137
@@ -444,7 +444,7 @@
 
     .line 178
     .line 179
-    :cond_b2
+    :cond_2
     const-string v2, "application/vnd.google-apps.shortcut"
 
     .line 180
@@ -457,7 +457,7 @@
     move-result v1
 
     .line 185
-    if-eqz v1, :cond_e2
+    if-eqz v1, :cond_3
 
     .line 186
     .line 187
@@ -473,7 +473,7 @@
     move-result-object v1
 
     .line 193
-    if-eqz v1, :cond_e2
+    if-eqz v1, :cond_3
 
     .line 194
     .line 195
@@ -521,7 +521,7 @@
     move-result v1
 
     .line 217
-    if-eqz v1, :cond_e2
+    if-eqz v1, :cond_3
 
     .line 218
     .line 219
@@ -541,7 +541,7 @@
 
     .line 226
     .line 227
-    :cond_e2
+    :cond_3
     const-string v1, "imageMediaMetadata"
 
     .line 228
@@ -552,8 +552,8 @@
     .line 231
     .line 232
     move-result-object v1
-    :try_end_e8
-    .catchall {:try_start_14 .. :try_end_e8} :catchall_80
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 233
     const-string v2, "height"
@@ -564,11 +564,11 @@
 
     .line 236
     .line 237
-    if-eqz v1, :cond_fa
+    if-eqz v1, :cond_4
 
     .line 238
     .line 239
-    :try_start_ee
+    :try_start_1
     invoke-virtual {v1, v3, v4}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I
 
     .line 240
@@ -593,7 +593,7 @@
 
     .line 250
     .line 251
-    :cond_fa
+    :cond_4
     const-string v1, "videoMediaMetadata"
 
     .line 252
@@ -606,7 +606,7 @@
     move-result-object v1
 
     .line 257
-    if-eqz v1, :cond_11e
+    if-eqz v1, :cond_5
 
     .line 258
     .line 259
@@ -666,7 +666,7 @@
 
     .line 286
     .line 287
-    :cond_11e
+    :cond_5
     new-instance v1, Ljava/util/ArrayList;
 
     .line 288
@@ -688,14 +688,14 @@
     move-result-object p2
 
     .line 298
-    if-eqz p2, :cond_13c
+    if-eqz p2, :cond_6
 
     .line 299
     .line 300
     const/4 v2, 0x0
 
     .line 301
-    :goto_12c
+    :goto_2
     invoke-virtual {p2}, Lorg/json/JSONArray;->length()I
 
     .line 302
@@ -704,7 +704,7 @@
     move-result v3
 
     .line 305
-    if-ge v2, v3, :cond_13c
+    if-ge v2, v3, :cond_6
 
     .line 306
     .line 307
@@ -725,10 +725,10 @@
 
     .line 315
     .line 316
-    goto :goto_12c
+    goto :goto_2
 
     .line 317
-    :cond_13c
+    :cond_6
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     .line 318
@@ -737,7 +737,7 @@
     move-result p2
 
     .line 321
-    if-lez p2, :cond_154
+    if-lez p2, :cond_7
 
     .line 322
     .line 323
@@ -758,7 +758,7 @@
     move-result-object p2
 
     .line 332
-    if-eqz p2, :cond_154
+    if-eqz p2, :cond_7
 
     .line 333
     .line 334
@@ -777,7 +777,7 @@
 
     .line 340
     .line 341
-    :cond_154
+    :cond_7
     iput-object v0, p0, Llibs/jc1;->Y:Ljava/lang/String;
 
     .line 342
@@ -790,21 +790,21 @@
     move-result p2
 
     .line 347
-    if-nez p2, :cond_15e
+    if-nez p2, :cond_8
 
     .line 348
     .line 349
     iput-object p1, p0, Llibs/jc1;->Y:Ljava/lang/String;
-    :try_end_15e
-    .catchall {:try_start_ee .. :try_end_15e} :catchall_80
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 350
     .line 351
-    :cond_15e
+    :cond_8
     return-void
 
     .line 352
-    :goto_15f
+    :goto_3
     new-instance p2, Ljava/lang/StringBuilder;
 
     .line 353
@@ -870,21 +870,21 @@
     move-result-object p1
 
     .line 387
-    goto :goto_184
+    goto :goto_5
 
     .line 388
-    :goto_183
+    :goto_4
     throw p1
 
     .line 389
-    :goto_184
-    goto :goto_183
+    :goto_5
+    goto :goto_4
 .end method
 
 
 # virtual methods
 .method public final a()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/jc1;->Nu:Ljava/lang/String;
@@ -895,7 +895,7 @@
 .end method
 
 .method public final b()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/jc1;->Phi:Z
@@ -906,7 +906,7 @@
 .end method
 
 .method public final c()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, ""
@@ -917,7 +917,7 @@
 .end method
 
 .method public final d()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, ""
@@ -928,7 +928,7 @@
 .end method
 
 .method public final e()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/jc1;->Pi:Ljava/lang/String;
@@ -939,7 +939,7 @@
 .end method
 
 .method public final f()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/jc1;->Rho:Ljava/lang/String;
@@ -950,7 +950,7 @@
 .end method
 
 .method public final g()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/jc1;->Sigma:Ljava/lang/String;
@@ -961,7 +961,7 @@
 .end method
 
 .method public final h()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/jc1;->X:Ljava/lang/String;
@@ -980,14 +980,14 @@
 
     .line 8
     .line 9
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_0
 
     .line 10
     .line 11
     return-object v2
 
     .line 12
-    :cond_b
+    :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     .line 13
@@ -1065,18 +1065,18 @@
     move-result v3
 
     .line 55
-    if-eqz v3, :cond_39
+    if-eqz v3, :cond_1
 
     .line 56
     .line 57
-    goto :goto_3a
+    goto :goto_0
 
     .line 58
-    :cond_39
+    :cond_1
     move-object v2, v0
 
     .line 59
-    :goto_3a
+    :goto_0
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 60
@@ -1094,7 +1094,7 @@
 .end method
 
 .method public final i()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Llibs/jc1;->Xi:J
@@ -1105,7 +1105,7 @@
 .end method
 
 .method public final j()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -1115,7 +1115,7 @@
 .end method
 
 .method public final k()[Ljava/lang/Object;
-    .registers 6
+    .locals 5
 
     .line 1
     iget v0, p0, Llibs/jc1;->Psi:I
@@ -1186,7 +1186,7 @@
 .end method
 
 .method public final l()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/jc1;->Tau:Ljava/lang/String;
@@ -1209,15 +1209,15 @@
     const/4 v2, -0x1
 
     .line 11
-    sparse-switch v1, :sswitch_data_6a
+    sparse-switch v1, :sswitch_data_0
 
     .line 12
     .line 13
     .line 14
-    goto :goto_5a
+    goto :goto_0
 
     .line 15
-    :sswitch_e
+    :sswitch_0
     const-string v1, "application/vnd.google-apps.site"
 
     .line 16
@@ -1230,21 +1230,21 @@
     move-result v1
 
     .line 21
-    if-nez v1, :cond_17
+    if-nez v1, :cond_0
 
     .line 22
     .line 23
-    goto :goto_5a
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_0
     const/4 v2, 0x6
 
     .line 25
-    goto :goto_5a
+    goto :goto_0
 
     .line 26
-    :sswitch_19
+    :sswitch_1
     const-string v1, "application/vnd.google-apps.form"
 
     .line 27
@@ -1257,21 +1257,21 @@
     move-result v1
 
     .line 32
-    if-nez v1, :cond_22
+    if-nez v1, :cond_1
 
     .line 33
     .line 34
-    goto :goto_5a
+    goto :goto_0
 
     .line 35
-    :cond_22
+    :cond_1
     const/4 v2, 0x5
 
     .line 36
-    goto :goto_5a
+    goto :goto_0
 
     .line 37
-    :sswitch_24
+    :sswitch_2
     const-string v1, "application/vnd.google-apps.document"
 
     .line 38
@@ -1284,21 +1284,21 @@
     move-result v1
 
     .line 43
-    if-nez v1, :cond_2d
+    if-nez v1, :cond_2
 
     .line 44
     .line 45
-    goto :goto_5a
+    goto :goto_0
 
     .line 46
-    :cond_2d
+    :cond_2
     const/4 v2, 0x4
 
     .line 47
-    goto :goto_5a
+    goto :goto_0
 
     .line 48
-    :sswitch_2f
+    :sswitch_3
     const-string v1, "application/vnd.google-apps.drawing"
 
     .line 49
@@ -1311,21 +1311,21 @@
     move-result v1
 
     .line 54
-    if-nez v1, :cond_38
+    if-nez v1, :cond_3
 
     .line 55
     .line 56
-    goto :goto_5a
+    goto :goto_0
 
     .line 57
-    :cond_38
+    :cond_3
     const/4 v2, 0x3
 
     .line 58
-    goto :goto_5a
+    goto :goto_0
 
     .line 59
-    :sswitch_3a
+    :sswitch_4
     const-string v1, "application/vnd.google-apps.presentation"
 
     .line 60
@@ -1338,21 +1338,21 @@
     move-result v1
 
     .line 65
-    if-nez v1, :cond_43
+    if-nez v1, :cond_4
 
     .line 66
     .line 67
-    goto :goto_5a
+    goto :goto_0
 
     .line 68
-    :cond_43
+    :cond_4
     const/4 v2, 0x2
 
     .line 69
-    goto :goto_5a
+    goto :goto_0
 
     .line 70
-    :sswitch_45
+    :sswitch_5
     const-string v1, "application/vnd.google-apps.spreadsheet"
 
     .line 71
@@ -1365,21 +1365,21 @@
     move-result v1
 
     .line 76
-    if-nez v1, :cond_4e
+    if-nez v1, :cond_5
 
     .line 77
     .line 78
-    goto :goto_5a
+    goto :goto_0
 
     .line 79
-    :cond_4e
+    :cond_5
     const/4 v2, 0x1
 
     .line 80
-    goto :goto_5a
+    goto :goto_0
 
     .line 81
-    :sswitch_50
+    :sswitch_6
     const-string v1, "application/vnd.google-apps.map"
 
     .line 82
@@ -1392,19 +1392,19 @@
     move-result v1
 
     .line 87
-    if-nez v1, :cond_59
+    if-nez v1, :cond_6
 
     .line 88
     .line 89
-    goto :goto_5a
+    goto :goto_0
 
     .line 90
-    :cond_59
+    :cond_6
     const/4 v2, 0x0
 
     .line 91
-    :goto_5a
-    packed-switch v2, :pswitch_data_88
+    :goto_0
+    packed-switch v2, :pswitch_data_0
 
     .line 92
     .line 93
@@ -1412,7 +1412,7 @@
     return-object v0
 
     .line 95
-    :pswitch_5e
+    :pswitch_0
     const-string v0, "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
 
     .line 96
@@ -1420,7 +1420,7 @@
     return-object v0
 
     .line 98
-    :pswitch_61
+    :pswitch_1
     const-string v0, "application/vnd.openxmlformats-officedocument.presentationml.presentation"
 
     .line 99
@@ -1428,7 +1428,7 @@
     return-object v0
 
     .line 101
-    :pswitch_64
+    :pswitch_2
     const-string v0, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
 
     .line 102
@@ -1436,7 +1436,7 @@
     return-object v0
 
     .line 104
-    :pswitch_67
+    :pswitch_3
     const-string v0, "image/jpeg"
 
     .line 105
@@ -1444,15 +1444,15 @@
     return-object v0
 
     .line 107
-    :sswitch_data_6a
+    :sswitch_data_0
     .sparse-switch
-        -0x7a76b38d -> :sswitch_50
-        -0x7955041d -> :sswitch_45
-        -0x38b79e1d -> :sswitch_3a
-        0xea677b5 -> :sswitch_2f
-        0x2ac50064 -> :sswitch_24
-        0x2b9d488d -> :sswitch_19
-        0x2ba31b10 -> :sswitch_e
+        -0x7a76b38d -> :sswitch_6
+        -0x7955041d -> :sswitch_5
+        -0x38b79e1d -> :sswitch_4
+        0xea677b5 -> :sswitch_3
+        0x2ac50064 -> :sswitch_2
+        0x2b9d488d -> :sswitch_1
+        0x2ba31b10 -> :sswitch_0
     .end sparse-switch
 
     .line 108
@@ -1461,20 +1461,20 @@
     .line 111
     .line 112
     .line 113
-    :pswitch_data_88
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_67
-        :pswitch_64
-        :pswitch_61
-        :pswitch_67
-        :pswitch_5e
-        :pswitch_67
-        :pswitch_67
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_3
+        :pswitch_0
+        :pswitch_3
+        :pswitch_3
     .end packed-switch
 .end method
 
 .method public final m()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/jc1;->Mu:Ljava/lang/String;
@@ -1485,7 +1485,7 @@
 .end method
 
 .method public final n()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/jc1;->Three:Ljava/lang/String;
@@ -1496,7 +1496,7 @@
 .end method
 
 .method public final p()Ljava/util/concurrent/atomic/AtomicBoolean;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/jc1;->Two:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -1507,14 +1507,14 @@
 .end method
 
 .method public final q()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-boolean v0, p0, Llibs/jc1;->Phi:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -1525,7 +1525,7 @@
     return-wide v0
 
     .line 8
-    :cond_7
+    :cond_0
     iget-wide v0, p0, Llibs/jc1;->Omicron:J
 
     .line 9
@@ -1534,7 +1534,7 @@
 .end method
 
 .method public final r()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/jc1;->Lambda:Ljava/lang/String;

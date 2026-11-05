@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;)V
-    .registers 10
+    .locals 6
 
     const/4 v4, 0x0
 
@@ -34,7 +34,7 @@
 .end method
 
 .method public constructor <init>(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;)V
-    .registers 8
+    .locals 2
 
     .line 1
     invoke-direct {p0, p1}, Llibs/hf0;-><init>(Ljava/math/BigInteger;)V
@@ -120,7 +120,7 @@
 .end method
 
 .method public constructor <init>(Ljava/math/BigInteger;Ljava/math/BigInteger;Llibs/xf3;Llibs/xf3;Ljava/math/BigInteger;Ljava/math/BigInteger;)V
-    .registers 8
+    .locals 1
 
     .line 42
     invoke-direct {p0, p1}, Llibs/hf0;-><init>(Ljava/math/BigInteger;)V
@@ -167,7 +167,7 @@
 
 # virtual methods
 .method public final a()Llibs/kf0;
-    .registers 8
+    .locals 7
 
     .line 1
     new-instance v0, Llibs/jf0;
@@ -207,7 +207,7 @@
 .end method
 
 .method public final d(Llibs/xf3;Llibs/xf3;Z)Llibs/ig0;
-    .registers 5
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/r00;
@@ -223,7 +223,7 @@
 .end method
 
 .method public final e(Llibs/xf3;Llibs/xf3;[Llibs/xf3;Z)Llibs/ig0;
-    .registers 12
+    .locals 7
 
     .line 1
     new-instance v0, Llibs/r00;
@@ -257,7 +257,7 @@
 .end method
 
 .method public final i(Ljava/math/BigInteger;)Llibs/xf3;
-    .registers 5
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/uf0;
@@ -281,7 +281,7 @@
 .end method
 
 .method public final j()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/jf0;->i:Ljava/math/BigInteger;
@@ -300,7 +300,7 @@
 .end method
 
 .method public final k()Llibs/ig0;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/jf0;->k:Llibs/r00;
@@ -311,14 +311,14 @@
 .end method
 
 .method public final m(Llibs/ig0;)Llibs/ig0;
-    .registers 11
+    .locals 9
 
     .line 1
     iget-object v0, p1, Llibs/ig0;->a:Llibs/kf0;
 
     .line 2
     .line 3
-    if-eq p0, v0, :cond_4c
+    if-eq p0, v0, :cond_1
 
     .line 4
     .line 5
@@ -329,7 +329,7 @@
     const/4 v1, 0x2
 
     .line 8
-    if-ne v0, v1, :cond_4c
+    if-ne v0, v1, :cond_1
 
     .line 9
     .line 10
@@ -341,7 +341,7 @@
     move-result v0
 
     .line 14
-    if-nez v0, :cond_4c
+    if-nez v0, :cond_1
 
     .line 15
     .line 16
@@ -353,28 +353,28 @@
 
     .line 19
     .line 20
-    if-eq v0, v1, :cond_1c
+    if-eq v0, v1, :cond_0
 
     .line 21
     .line 22
     const/4 v1, 0x3
 
     .line 23
-    if-eq v0, v1, :cond_1c
+    if-eq v0, v1, :cond_0
 
     .line 24
     .line 25
     const/4 v1, 0x4
 
     .line 26
-    if-eq v0, v1, :cond_1c
+    if-eq v0, v1, :cond_0
 
     .line 27
     .line 28
-    goto :goto_4c
+    goto :goto_0
 
     .line 29
-    :cond_1c
+    :cond_0
     new-instance v2, Llibs/r00;
 
     .line 30
@@ -475,8 +475,8 @@
     return-object v2
 
     .line 77
-    :cond_4c
-    :goto_4c
+    :cond_1
+    :goto_0
     invoke-super {p0, p1}, Llibs/kf0;->m(Llibs/ig0;)Llibs/ig0;
 
     .line 78
@@ -489,31 +489,31 @@
 .end method
 
 .method public final r(I)Z
-    .registers 4
+    .locals 2
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_0
 
     .line 3
     .line 4
-    if-eq p1, v0, :cond_d
+    if-eq p1, v0, :cond_0
 
     .line 5
     .line 6
     const/4 v1, 0x2
 
     .line 7
-    if-eq p1, v1, :cond_d
+    if-eq p1, v1, :cond_0
 
     .line 8
     .line 9
     const/4 v1, 0x4
 
     .line 10
-    if-eq p1, v1, :cond_d
+    if-eq p1, v1, :cond_0
 
     .line 11
     .line 12
@@ -523,6 +523,6 @@
     return p1
 
     .line 14
-    :cond_d
+    :cond_0
     return v0
 .end method

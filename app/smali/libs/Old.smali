@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 5
+    .locals 4
 
     .line 1
     const/16 v0, 0x18
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public final e([BI[B)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-super {p0, p1, p2, p3}, Llibs/Chi;->e([BI[B)V
@@ -93,11 +93,11 @@
 
     .line 23
     .line 24
-    if-eqz p1, :cond_1f
+    if-eqz p1, :cond_0
 
     .line 25
     .line 26
-    :try_start_19
+    :try_start_0
     invoke-static {}, Llibs/py;->e()Ljava/lang/Object;
 
     .line 27
@@ -107,21 +107,21 @@
 
     .line 30
     iput-object p1, p0, Llibs/Old;->h:Ljava/lang/Object;
-    :try_end_1f
-    .catch Ljava/lang/Exception; {:try_start_19 .. :try_end_1f} :catch_1f
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 31
     .line 32
-    :catch_1f
-    :cond_1f
+    :catch_0
+    :cond_0
     return-void
 .end method
 
 .method public final g(III[B[B)V
-    .registers 18
+    .locals 12
 
     .line 1
-    if-lez p3, :cond_35
+    if-lez p3, :cond_1
 
     .line 2
     .line 3
@@ -129,7 +129,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_35
+    if-eqz v0, :cond_1
 
     .line 6
     .line 7
@@ -137,11 +137,11 @@
 
     .line 8
     .line 9
-    if-eqz v0, :cond_35
+    if-eqz v0, :cond_1
 
     .line 10
     .line 11
-    :try_start_a
+    :try_start_0
     const-string v0, "aes-192-ctr"
 
     .line 12
@@ -162,7 +162,7 @@
 
     .line 20
     .line 21
-    if-eqz v4, :cond_35
+    if-eqz v4, :cond_1
 
     .line 22
     .line 23
@@ -182,7 +182,7 @@
 
     .line 30
     .line 31
-    if-nez v0, :cond_23
+    if-nez v0, :cond_0
 
     .line 32
     .line 33
@@ -192,17 +192,17 @@
     const/4 v6, 0x1
 
     .line 35
-    goto :goto_25
+    goto :goto_0
 
     .line 36
-    :cond_23
+    :cond_0
     const/4 v0, 0x0
 
     .line 37
     const/4 v6, 0x0
 
     .line 38
-    :goto_25
+    :goto_0
     invoke-static/range {v1 .. v6}, Llibs/py;->a(Ljava/lang/Object;J[B[BZ)V
 
     .line 39
@@ -230,8 +230,8 @@
     .line 49
     .line 50
     invoke-static/range {v6 .. v11}, Llibs/py;->b(Ljava/lang/Object;[BI[BII)V
-    :try_end_34
-    .catchall {:try_start_a .. :try_end_34} :catchall_35
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 51
     .line 52
@@ -239,8 +239,8 @@
     return-void
 
     .line 54
-    :catchall_35
-    :cond_35
+    :catchall_0
+    :cond_1
     invoke-super/range {p0 .. p5}, Llibs/Chi;->g(III[B[B)V
 
     .line 55

@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/ae;-><init>()V
@@ -19,14 +19,14 @@
 
 # virtual methods
 .method public final engineGeneratePrivate(Ljava/security/spec/KeySpec;)Ljava/security/PrivateKey;
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Ljava/security/spec/DSAPrivateKeySpec;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -46,7 +46,7 @@
     return-object v0
 
     .line 13
-    :cond_c
+    :cond_0
     invoke-super {p0, p1}, Llibs/ae;->engineGeneratePrivate(Ljava/security/spec/KeySpec;)Ljava/security/PrivateKey;
 
     .line 14
@@ -59,14 +59,14 @@
 .end method
 
 .method public final engineGeneratePublic(Ljava/security/spec/KeySpec;)Ljava/security/PublicKey;
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Ljava/security/spec/DSAPublicKeySpec;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -86,7 +86,7 @@
     return-object v0
 
     .line 13
-    :cond_c
+    :cond_0
     invoke-super {p0, p1}, Llibs/ae;->engineGeneratePublic(Ljava/security/spec/KeySpec;)Ljava/security/PublicKey;
 
     .line 14
@@ -99,7 +99,7 @@
 .end method
 
 .method public final engineGetKeySpec(Ljava/security/Key;Ljava/lang/Class;)Ljava/security/spec/KeySpec;
-    .registers 6
+    .locals 3
 
     .line 1
     const-class v0, Ljava/security/spec/DSAPublicKeySpec;
@@ -114,7 +114,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -122,7 +122,7 @@
 
     .line 10
     .line 11
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
@@ -198,7 +198,7 @@
     return-object p2
 
     .line 49
-    :cond_30
+    :cond_0
     const-class v0, Ljava/security/spec/DSAPrivateKeySpec;
 
     .line 50
@@ -211,7 +211,7 @@
     move-result v0
 
     .line 55
-    if-eqz v0, :cond_60
+    if-eqz v0, :cond_1
 
     .line 56
     .line 57
@@ -219,7 +219,7 @@
 
     .line 58
     .line 59
-    if-eqz v0, :cond_60
+    if-eqz v0, :cond_1
 
     .line 60
     .line 61
@@ -295,7 +295,7 @@
     return-object p2
 
     .line 97
-    :cond_60
+    :cond_1
     invoke-super {p0, p1, p2}, Llibs/ae;->engineGetKeySpec(Ljava/security/Key;Ljava/lang/Class;)Ljava/security/spec/KeySpec;
 
     .line 98
@@ -308,14 +308,14 @@
 .end method
 
 .method public final engineTranslateKey(Ljava/security/Key;)Ljava/security/Key;
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Ljava/security/interfaces/DSAPublicKey;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -335,12 +335,12 @@
     return-object v0
 
     .line 13
-    :cond_c
+    :cond_0
     instance-of v0, p1, Ljava/security/interfaces/DSAPrivateKey;
 
     .line 14
     .line 15
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     .line 16
     .line 17
@@ -360,7 +360,7 @@
     return-object v0
 
     .line 25
-    :cond_18
+    :cond_1
     const-string p1, "key type unknown"
 
     .line 26

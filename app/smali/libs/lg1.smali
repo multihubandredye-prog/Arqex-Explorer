@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/ae;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final a(Llibs/bg2;)Ljava/security/PrivateKey;
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p1, Llibs/bg2;->Y:Llibs/$f;
@@ -42,7 +42,7 @@
     move-result v1
 
     .line 11
-    if-nez v1, :cond_1e
+    if-nez v1, :cond_1
 
     .line 12
     .line 13
@@ -58,14 +58,14 @@
     move-result v1
 
     .line 19
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     .line 20
     .line 21
-    goto :goto_1e
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     const-string p1, "algorithm identifier "
 
     .line 23
@@ -85,8 +85,8 @@
     return-object p1
 
     .line 31
-    :cond_1e
-    :goto_1e
+    :cond_1
+    :goto_0
     new-instance v0, Llibs/y9;
 
     .line 32
@@ -100,7 +100,7 @@
 .end method
 
 .method public final b(Llibs/ji3;)Ljava/security/PublicKey;
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p1, Llibs/ji3;->X:Llibs/$f;
@@ -123,7 +123,7 @@
     move-result v1
 
     .line 11
-    if-nez v1, :cond_1e
+    if-nez v1, :cond_1
 
     .line 12
     .line 13
@@ -139,14 +139,14 @@
     move-result v1
 
     .line 19
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     .line 20
     .line 21
-    goto :goto_1e
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     const-string p1, "algorithm identifier "
 
     .line 23
@@ -166,8 +166,8 @@
     return-object p1
 
     .line 31
-    :cond_1e
-    :goto_1e
+    :cond_1
+    :goto_0
     new-instance v0, Llibs/z9;
 
     .line 32
@@ -181,14 +181,14 @@
 .end method
 
 .method public final engineGeneratePrivate(Ljava/security/spec/KeySpec;)Ljava/security/PrivateKey;
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Llibs/mg0;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -208,12 +208,12 @@
     return-object v0
 
     .line 13
-    :cond_c
+    :cond_0
     instance-of v0, p1, Ljava/security/spec/ECPrivateKeySpec;
 
     .line 14
     .line 15
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     .line 16
     .line 17
@@ -233,7 +233,7 @@
     return-object v0
 
     .line 25
-    :cond_18
+    :cond_1
     invoke-super {p0, p1}, Llibs/ae;->engineGeneratePrivate(Ljava/security/spec/KeySpec;)Ljava/security/PrivateKey;
 
     .line 26
@@ -246,14 +246,14 @@
 .end method
 
 .method public final engineGeneratePublic(Ljava/security/spec/KeySpec;)Ljava/security/PublicKey;
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Llibs/qg0;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -273,12 +273,12 @@
     return-object v0
 
     .line 13
-    :cond_c
+    :cond_0
     instance-of v0, p1, Ljava/security/spec/ECPublicKeySpec;
 
     .line 14
     .line 15
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     .line 16
     .line 17
@@ -298,7 +298,7 @@
     return-object v0
 
     .line 25
-    :cond_18
+    :cond_1
     invoke-super {p0, p1}, Llibs/ae;->engineGeneratePublic(Ljava/security/spec/KeySpec;)Ljava/security/PublicKey;
 
     .line 26
@@ -311,7 +311,7 @@
 .end method
 
 .method public final engineGetKeySpec(Ljava/security/Key;Ljava/lang/Class;)Ljava/security/spec/KeySpec;
-    .registers 5
+    .locals 2
 
     .line 1
     const-class v0, Ljava/security/spec/ECPublicKeySpec;
@@ -326,7 +326,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_1
 
     .line 8
     .line 9
@@ -334,7 +334,7 @@
 
     .line 10
     .line 11
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_1
 
     .line 12
     .line 13
@@ -350,7 +350,7 @@
     move-result-object p2
 
     .line 19
-    if-eqz p2, :cond_22
+    if-eqz p2, :cond_0
 
     .line 20
     .line 21
@@ -382,7 +382,7 @@
     return-object p2
 
     .line 35
-    :cond_22
+    :cond_0
     sget-object p2, Llibs/hh;->X:Llibs/ih;
 
     .line 36
@@ -435,7 +435,7 @@
     return-object v0
 
     .line 61
-    :cond_3c
+    :cond_1
     const-class v0, Ljava/security/spec/ECPrivateKeySpec;
 
     .line 62
@@ -448,7 +448,7 @@
     move-result v0
 
     .line 67
-    if-eqz v0, :cond_78
+    if-eqz v0, :cond_3
 
     .line 68
     .line 69
@@ -456,7 +456,7 @@
 
     .line 70
     .line 71
-    if-eqz v0, :cond_78
+    if-eqz v0, :cond_3
 
     .line 72
     .line 73
@@ -472,7 +472,7 @@
     move-result-object p2
 
     .line 79
-    if-eqz p2, :cond_5e
+    if-eqz p2, :cond_2
 
     .line 80
     .line 81
@@ -504,7 +504,7 @@
     return-object p2
 
     .line 95
-    :cond_5e
+    :cond_2
     sget-object p2, Llibs/hh;->X:Llibs/ih;
 
     .line 96
@@ -557,7 +557,7 @@
     return-object v0
 
     .line 121
-    :cond_78
+    :cond_3
     const-class v0, Llibs/qg0;
 
     .line 122
@@ -570,7 +570,7 @@
     move-result v0
 
     .line 127
-    if-eqz v0, :cond_be
+    if-eqz v0, :cond_5
 
     .line 128
     .line 129
@@ -578,7 +578,7 @@
 
     .line 130
     .line 131
-    if-eqz v0, :cond_be
+    if-eqz v0, :cond_5
 
     .line 132
     .line 133
@@ -594,7 +594,7 @@
     move-result-object p2
 
     .line 139
-    if-eqz p2, :cond_a6
+    if-eqz p2, :cond_4
 
     .line 140
     .line 141
@@ -650,7 +650,7 @@
     return-object p2
 
     .line 167
-    :cond_a6
+    :cond_4
     sget-object p2, Llibs/hh;->X:Llibs/ih;
 
     .line 168
@@ -699,7 +699,7 @@
     return-object v0
 
     .line 191
-    :cond_be
+    :cond_5
     const-class v0, Llibs/mg0;
 
     .line 192
@@ -712,7 +712,7 @@
     move-result v0
 
     .line 197
-    if-eqz v0, :cond_f4
+    if-eqz v0, :cond_7
 
     .line 198
     .line 199
@@ -720,7 +720,7 @@
 
     .line 200
     .line 201
-    if-eqz v0, :cond_f4
+    if-eqz v0, :cond_7
 
     .line 202
     .line 203
@@ -736,7 +736,7 @@
     move-result-object p2
 
     .line 209
-    if-eqz p2, :cond_e4
+    if-eqz p2, :cond_6
 
     .line 210
     .line 211
@@ -776,7 +776,7 @@
     return-object p2
 
     .line 229
-    :cond_e4
+    :cond_6
     sget-object p2, Llibs/hh;->X:Llibs/ih;
 
     .line 230
@@ -809,7 +809,7 @@
     return-object v0
 
     .line 245
-    :cond_f4
+    :cond_7
     invoke-super {p0, p1, p2}, Llibs/ae;->engineGetKeySpec(Ljava/security/Key;Ljava/lang/Class;)Ljava/security/spec/KeySpec;
 
     .line 246
@@ -822,7 +822,7 @@
 .end method
 
 .method public final engineTranslateKey(Ljava/security/Key;)Ljava/security/Key;
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Ljava/security/InvalidKeyException;

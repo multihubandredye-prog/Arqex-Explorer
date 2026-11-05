@@ -43,7 +43,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/16 v0, 0x11
@@ -54,7 +54,7 @@
 
     .line 4
     .line 5
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     .line 6
     .line 7
@@ -66,7 +66,7 @@
     return-void
 
     .line 11
-    :array_a
+    :array_0
     .array-data 4
         0x0
         0x1
@@ -89,7 +89,7 @@
 .end method
 
 .method public constructor <init>(Llibs/q91;Llibs/l91;)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -118,7 +118,7 @@
 
 # virtual methods
 .method public final a(I)I
-    .registers 34
+    .locals 32
 
     .line 1
     move-object/from16 v0, p0
@@ -164,7 +164,7 @@
     const/4 v10, 0x1
 
     .line 22
-    if-ge v8, v9, :cond_1a
+    if-ge v8, v9, :cond_0
 
     .line 23
     .line 24
@@ -174,15 +174,15 @@
     sub-int/2addr v9, v10
 
     .line 26
-    goto :goto_1c
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_0
     sub-int v9, v5, v8
 
     .line 28
     .line 29
-    :goto_1c
+    :goto_0
     move v11, v9
 
     .line 30
@@ -205,7 +205,7 @@
 
     .line 36
     .line 37
-    :goto_24
+    :goto_1
     iget v12, v0, Llibs/m91;->a:I
 
     .line 38
@@ -228,7 +228,7 @@
     const/4 v15, 0x0
 
     .line 47
-    packed-switch v12, :pswitch_data_5d6
+    packed-switch v12, :pswitch_data_0
 
     .line 48
     .line 49
@@ -289,7 +289,7 @@
     return v1
 
     .line 76
-    :pswitch_4b
+    :pswitch_0
     iput v7, v4, Llibs/l91;->r:I
 
     .line 77
@@ -343,11 +343,11 @@
     return v1
 
     .line 101
-    :pswitch_64
+    :pswitch_1
     const/4 v5, 0x7
 
     .line 102
-    if-le v8, v5, :cond_6d
+    if-le v8, v5, :cond_1
 
     .line 103
     .line 104
@@ -363,7 +363,7 @@
 
     .line 109
     .line 110
-    :cond_6d
+    :cond_1
     iput v9, v4, Llibs/l91;->w:I
 
     .line 111
@@ -384,7 +384,7 @@
 
     .line 119
     .line 120
-    if-eq v5, v9, :cond_92
+    if-eq v5, v9, :cond_2
 
     .line 121
     .line 122
@@ -441,7 +441,7 @@
     return v1
 
     .line 147
-    :cond_92
+    :cond_2
     const/16 v2, 0x8
 
     .line 148
@@ -450,7 +450,7 @@
 
     .line 150
     .line 151
-    :pswitch_96
+    :pswitch_2
     iput v7, v4, Llibs/l91;->r:I
 
     .line 152
@@ -507,12 +507,12 @@
     return v1
 
     .line 177
-    :pswitch_b0
-    if-nez v11, :cond_fe
+    :pswitch_3
+    if-nez v11, :cond_8
 
     .line 178
     .line 179
-    if-ne v9, v5, :cond_c0
+    if-ne v9, v5, :cond_4
 
     .line 180
     .line 181
@@ -520,11 +520,11 @@
 
     .line 182
     .line 183
-    if-eqz v10, :cond_c0
+    if-eqz v10, :cond_4
 
     .line 184
     .line 185
-    if-lez v10, :cond_be
+    if-lez v10, :cond_3
 
     .line 186
     .line 187
@@ -535,19 +535,19 @@
     move v11, v10
 
     .line 190
-    goto :goto_bf
+    goto :goto_2
 
     .line 191
-    :cond_be
+    :cond_3
     move v11, v5
 
     .line 192
-    :goto_bf
+    :goto_2
     const/4 v9, 0x0
 
     .line 193
-    :cond_c0
-    if-nez v11, :cond_fe
+    :cond_4
+    if-nez v11, :cond_8
 
     .line 194
     .line 195
@@ -571,7 +571,7 @@
 
     .line 204
     .line 205
-    if-ge v9, v10, :cond_d5
+    if-ge v9, v10, :cond_5
 
     .line 206
     .line 207
@@ -587,24 +587,24 @@
 
     .line 212
     .line 213
-    goto :goto_d7
+    goto :goto_3
 
     .line 214
-    :cond_d5
+    :cond_5
     sub-int v11, v5, v9
 
     .line 215
     .line 216
-    :goto_d7
-    if-ne v9, v5, :cond_e3
+    :goto_3
+    if-ne v9, v5, :cond_7
 
     .line 217
     .line 218
-    if-eqz v10, :cond_e3
+    if-eqz v10, :cond_7
 
     .line 219
     .line 220
-    if-lez v10, :cond_e0
+    if-lez v10, :cond_6
 
     .line 221
     .line 222
@@ -612,22 +612,22 @@
 
     .line 223
     .line 224
-    goto :goto_e1
+    goto :goto_4
 
     .line 225
-    :cond_e0
+    :cond_6
     move v10, v5
 
     .line 226
-    :goto_e1
+    :goto_4
     move v11, v10
 
     .line 227
     const/4 v9, 0x0
 
     .line 228
-    :cond_e3
-    if-nez v11, :cond_fe
+    :cond_7
+    if-nez v11, :cond_8
 
     .line 229
     .line 230
@@ -684,7 +684,7 @@
     return v1
 
     .line 255
-    :cond_fe
+    :cond_8
     iget-object v2, v4, Llibs/l91;->t:[B
 
     .line 256
@@ -718,25 +718,25 @@
     const/4 v2, 0x0
 
     .line 270
-    :goto_10d
+    :goto_5
     const/4 v10, 0x1
 
     .line 271
-    goto/16 :goto_24
+    goto/16 :goto_1
 
     .line 272
     .line 273
-    :pswitch_110
+    :pswitch_4
     iget v10, v0, Llibs/m91;->g:I
 
     .line 274
     .line 275
-    :goto_112
-    if-ge v8, v10, :cond_140
+    :goto_6
+    if-ge v8, v10, :cond_a
 
     .line 276
     .line 277
-    if-eqz v6, :cond_127
+    if-eqz v6, :cond_9
 
     .line 278
     .line 279
@@ -776,10 +776,10 @@
     const/4 v2, 0x0
 
     .line 295
-    goto :goto_112
+    goto :goto_6
 
     .line 296
-    :cond_127
+    :cond_9
     iput v7, v4, Llibs/l91;->r:I
 
     .line 297
@@ -833,7 +833,7 @@
     return v1
 
     .line 321
-    :cond_140
+    :cond_a
     iget v12, v0, Llibs/m91;->h:I
 
     .line 322
@@ -865,7 +865,7 @@
 
     .line 333
     .line 334
-    :pswitch_14d
+    :pswitch_5
     iget v10, v0, Llibs/m91;->h:I
 
     .line 335
@@ -874,32 +874,32 @@
 
     .line 337
     .line 338
-    :goto_151
-    if-gez v10, :cond_155
+    :goto_7
+    if-gez v10, :cond_b
 
     .line 339
     .line 340
     add-int/2addr v10, v5
 
     .line 341
-    goto :goto_151
+    goto :goto_7
 
     .line 342
-    :cond_155
-    :goto_155
+    :cond_b
+    :goto_8
     iget v12, v0, Llibs/m91;->b:I
 
     .line 343
     .line 344
-    if-eqz v12, :cond_1c3
+    if-eqz v12, :cond_13
 
     .line 345
     .line 346
-    if-nez v11, :cond_1a8
+    if-nez v11, :cond_11
 
     .line 347
     .line 348
-    if-ne v9, v5, :cond_169
+    if-ne v9, v5, :cond_d
 
     .line 349
     .line 350
@@ -907,11 +907,11 @@
 
     .line 351
     .line 352
-    if-eqz v12, :cond_169
+    if-eqz v12, :cond_d
 
     .line 353
     .line 354
-    if-lez v12, :cond_167
+    if-lez v12, :cond_c
 
     .line 355
     .line 356
@@ -922,19 +922,19 @@
     move v11, v12
 
     .line 359
-    goto :goto_168
+    goto :goto_9
 
     .line 360
-    :cond_167
+    :cond_c
     move v11, v5
 
     .line 361
-    :goto_168
+    :goto_9
     const/4 v9, 0x0
 
     .line 362
-    :cond_169
-    if-nez v11, :cond_1a8
+    :cond_d
+    if-nez v11, :cond_11
 
     .line 363
     .line 364
@@ -958,7 +958,7 @@
 
     .line 373
     .line 374
-    if-ge v9, v11, :cond_17e
+    if-ge v9, v11, :cond_e
 
     .line 375
     .line 376
@@ -974,24 +974,24 @@
 
     .line 381
     .line 382
-    goto :goto_180
+    goto :goto_a
 
     .line 383
-    :cond_17e
+    :cond_e
     sub-int v12, v5, v9
 
     .line 384
     .line 385
-    :goto_180
-    if-ne v9, v5, :cond_18c
+    :goto_a
+    if-ne v9, v5, :cond_10
 
     .line 386
     .line 387
-    if-eqz v11, :cond_18c
+    if-eqz v11, :cond_10
 
     .line 388
     .line 389
-    if-lez v11, :cond_189
+    if-lez v11, :cond_f
 
     .line 390
     .line 391
@@ -999,26 +999,26 @@
 
     .line 392
     .line 393
-    goto :goto_18a
+    goto :goto_b
 
     .line 394
-    :cond_189
+    :cond_f
     move v11, v5
 
     .line 395
-    :goto_18a
+    :goto_b
     const/4 v9, 0x0
 
     .line 396
-    goto :goto_18d
+    goto :goto_c
 
     .line 397
-    :cond_18c
+    :cond_10
     move v11, v12
 
     .line 398
-    :goto_18d
-    if-nez v11, :cond_1a8
+    :goto_c
+    if-nez v11, :cond_11
 
     .line 399
     .line 400
@@ -1075,7 +1075,7 @@
     return v1
 
     .line 425
-    :cond_1a8
+    :cond_11
     iget-object v12, v4, Llibs/l91;->t:[B
 
     .line 426
@@ -1100,21 +1100,21 @@
 
     .line 436
     .line 437
-    if-ne v14, v5, :cond_1b8
+    if-ne v14, v5, :cond_12
 
     .line 438
     .line 439
     const/4 v10, 0x0
 
     .line 440
-    goto :goto_1b9
+    goto :goto_d
 
     .line 441
-    :cond_1b8
+    :cond_12
     move v10, v14
 
     .line 442
-    :goto_1b9
+    :goto_d
     iget v9, v0, Llibs/m91;->b:I
 
     .line 443
@@ -1134,29 +1134,29 @@
     move v9, v13
 
     .line 451
-    goto :goto_155
+    goto :goto_8
 
     .line 452
-    :cond_1c3
+    :cond_13
     iput v15, v0, Llibs/m91;->a:I
 
     .line 453
     .line 454
-    goto/16 :goto_10d
+    goto/16 :goto_5
 
     .line 455
     .line 456
-    :pswitch_1c7
+    :pswitch_6
     iget v12, v0, Llibs/m91;->g:I
 
     .line 457
     .line 458
-    :goto_1c9
-    if-ge v8, v12, :cond_1f7
+    :goto_e
+    if-ge v8, v12, :cond_15
 
     .line 459
     .line 460
-    if-eqz v6, :cond_1de
+    if-eqz v6, :cond_14
 
     .line 461
     .line 462
@@ -1196,10 +1196,10 @@
     const/4 v2, 0x0
 
     .line 478
-    goto :goto_1c9
+    goto :goto_e
 
     .line 479
-    :cond_1de
+    :cond_14
     iput v7, v4, Llibs/l91;->r:I
 
     .line 480
@@ -1253,7 +1253,7 @@
     return v1
 
     .line 504
-    :cond_1f7
+    :cond_15
     iget v13, v0, Llibs/m91;->b:I
 
     .line 505
@@ -1311,17 +1311,17 @@
 
     .line 530
     .line 531
-    :pswitch_212
+    :pswitch_7
     iget v12, v0, Llibs/m91;->e:I
 
     .line 532
     .line 533
-    :goto_214
-    if-ge v8, v12, :cond_242
+    :goto_f
+    if-ge v8, v12, :cond_17
 
     .line 534
     .line 535
-    if-eqz v6, :cond_229
+    if-eqz v6, :cond_16
 
     .line 536
     .line 537
@@ -1361,10 +1361,10 @@
     const/4 v2, 0x0
 
     .line 553
-    goto :goto_214
+    goto :goto_f
 
     .line 554
-    :cond_229
+    :cond_16
     iput v7, v4, Llibs/l91;->r:I
 
     .line 555
@@ -1418,7 +1418,7 @@
     return v1
 
     .line 579
-    :cond_242
+    :cond_17
     iget v13, v0, Llibs/m91;->d:I
 
     .line 580
@@ -1467,7 +1467,7 @@
 
     .line 600
     .line 601
-    if-eqz v17, :cond_269
+    if-eqz v17, :cond_18
 
     .line 602
     .line 603
@@ -1498,16 +1498,16 @@
 
     .line 615
     .line 616
-    goto/16 :goto_10d
+    goto/16 :goto_5
 
     .line 617
     .line 618
-    :cond_269
+    :cond_18
     and-int/lit8 v17, v15, 0x40
 
     .line 619
     .line 620
-    if-nez v17, :cond_27a
+    if-nez v17, :cond_19
 
     .line 621
     .line 622
@@ -1534,11 +1534,11 @@
 
     .line 632
     .line 633
-    goto/16 :goto_10d
+    goto/16 :goto_5
 
     .line 634
     .line 635
-    :cond_27a
+    :cond_19
     const/16 v2, 0x9
 
     .line 636
@@ -1604,23 +1604,23 @@
     return v1
 
     .line 666
-    :pswitch_299
+    :pswitch_8
     move-object v10, v13
 
     .line 667
     const/4 v12, 0x1
 
     .line 668
-    goto/16 :goto_538
+    goto/16 :goto_24
 
     .line 669
     .line 670
-    :pswitch_29d
+    :pswitch_9
     const/16 v12, 0x102
 
     .line 671
     .line 672
-    if-lt v11, v12, :cond_528
+    if-lt v11, v12, :cond_35
 
     .line 673
     .line 674
@@ -1628,7 +1628,7 @@
 
     .line 675
     .line 676
-    if-lt v6, v15, :cond_528
+    if-lt v6, v15, :cond_35
 
     .line 677
     .line 678
@@ -1710,7 +1710,7 @@
 
     .line 715
     .line 716
-    if-ge v9, v2, :cond_2d3
+    if-ge v9, v2, :cond_1a
 
     .line 717
     .line 718
@@ -1725,15 +1725,15 @@
 
     .line 722
     .line 723
-    goto :goto_2d5
+    goto :goto_10
 
     .line 724
-    :cond_2d3
+    :cond_1a
     sub-int v2, v5, v9
 
     .line 725
     .line 726
-    :goto_2d5
+    :goto_10
     aget v22, v17, v22
 
     .line 727
@@ -1746,12 +1746,12 @@
 
     .line 731
     .line 732
-    :goto_2db
+    :goto_11
     const/16 v2, 0x14
 
     .line 733
     .line 734
-    if-ge v8, v2, :cond_2f0
+    if-ge v8, v2, :cond_1b
 
     .line 735
     .line 736
@@ -1789,10 +1789,10 @@
 
     .line 751
     .line 752
-    goto :goto_2db
+    goto :goto_11
 
     .line 753
-    :cond_2f0
+    :cond_1b
     and-int v2, v7, v22
 
     .line 754
@@ -1813,7 +1813,7 @@
 
     .line 762
     .line 763
-    if-nez v25, :cond_31b
+    if-nez v25, :cond_1c
 
     .line 764
     .line 765
@@ -1858,7 +1858,7 @@
 
     .line 783
     .line 784
-    :goto_30f
+    :goto_12
     add-int/lit8 v23, v23, -0x1
 
     .line 785
@@ -1875,17 +1875,17 @@
 
     .line 791
     .line 792
-    :goto_317
+    :goto_13
     const/16 v3, 0x102
 
     .line 793
     .line 794
-    goto/16 :goto_480
+    goto/16 :goto_1f
 
     .line 795
     .line 796
-    :cond_31b
-    :goto_31b
+    :cond_1c
+    :goto_14
     add-int/lit8 v26, v24, 0x1
 
     .line 797
@@ -1906,7 +1906,7 @@
 
     .line 805
     .line 806
-    if-eqz v26, :cond_451
+    if-eqz v26, :cond_2a
 
     .line 807
     .line 808
@@ -1950,12 +1950,12 @@
 
     .line 827
     .line 828
-    :goto_33b
+    :goto_15
     const/16 v3, 0xf
 
     .line 829
     .line 830
-    if-ge v8, v3, :cond_350
+    if-ge v8, v3, :cond_1d
 
     .line 831
     .line 832
@@ -1993,10 +1993,10 @@
 
     .line 847
     .line 848
-    goto :goto_33b
+    goto :goto_15
 
     .line 849
-    :cond_350
+    :cond_1d
     and-int v3, v7, v10
 
     .line 850
@@ -2017,7 +2017,7 @@
 
     .line 858
     .line 859
-    :goto_35a
+    :goto_16
     add-int/lit8 v27, v25, 0x1
 
     .line 860
@@ -2038,7 +2038,7 @@
 
     .line 868
     .line 869
-    if-eqz v27, :cond_40c
+    if-eqz v27, :cond_27
 
     .line 870
     .line 871
@@ -2050,12 +2050,12 @@
 
     .line 874
     .line 875
-    :goto_36a
+    :goto_17
     move/from16 v28, v24
 
     .line 876
     .line 877
-    if-ge v8, v3, :cond_37d
+    if-ge v8, v3, :cond_1e
 
     .line 878
     .line 879
@@ -2089,10 +2089,10 @@
 
     .line 892
     .line 893
-    goto :goto_36a
+    goto :goto_17
 
     .line 894
-    :cond_37d
+    :cond_1e
     add-int/lit8 v25, v25, 0x2
 
     .line 895
@@ -2125,7 +2125,7 @@
 
     .line 909
     .line 910
-    if-lt v9, v6, :cond_3b8
+    if-lt v9, v6, :cond_20
 
     .line 911
     .line 912
@@ -2137,14 +2137,14 @@
 
     .line 915
     .line 916
-    if-lez v6, :cond_3ad
+    if-lez v6, :cond_1f
 
     .line 917
     .line 918
     const/4 v7, 0x2
 
     .line 919
-    if-le v7, v6, :cond_3ad
+    if-le v7, v6, :cond_1f
 
     .line 920
     .line 921
@@ -2184,15 +2184,15 @@
 
     .line 938
     .line 939
-    :goto_3aa
+    :goto_18
     add-int/lit8 v2, v2, -0x2
 
     .line 940
     .line 941
-    goto :goto_3e2
+    goto :goto_1b
 
     .line 942
-    :cond_3ad
+    :cond_1f
     iget-object v6, v4, Llibs/l91;->t:[B
 
     .line 943
@@ -2213,19 +2213,19 @@
 
     .line 951
     .line 952
-    goto :goto_3aa
+    goto :goto_18
 
     .line 953
-    :cond_3b8
+    :cond_20
     sub-int v3, v9, v6
 
     .line 954
     .line 955
-    :cond_3ba
+    :cond_21
     add-int/2addr v3, v5
 
     .line 956
-    if-ltz v3, :cond_3ba
+    if-ltz v3, :cond_21
 
     .line 957
     .line 958
@@ -2233,7 +2233,7 @@
 
     .line 959
     .line 960
-    if-le v2, v6, :cond_3e2
+    if-le v2, v6, :cond_24
 
     .line 961
     .line 962
@@ -2244,15 +2244,15 @@
 
     .line 964
     .line 965
-    if-lez v7, :cond_3db
+    if-lez v7, :cond_23
 
     .line 966
     .line 967
-    if-le v6, v7, :cond_3db
+    if-le v6, v7, :cond_23
 
     .line 968
     .line 969
-    :goto_3c8
+    :goto_19
     iget-object v7, v4, Llibs/l91;->t:[B
 
     .line 970
@@ -2280,22 +2280,22 @@
     move v9, v8
 
     .line 982
-    if-nez v6, :cond_3d8
+    if-nez v6, :cond_22
 
     .line 983
     .line 984
-    goto :goto_3e1
+    goto :goto_1a
 
     .line 985
-    :cond_3d8
+    :cond_22
     move/from16 v3, v23
 
     .line 986
     .line 987
-    goto :goto_3c8
+    goto :goto_19
 
     .line 988
-    :cond_3db
+    :cond_23
     iget-object v7, v4, Llibs/l91;->t:[B
 
     .line 989
@@ -2308,25 +2308,25 @@
     add-int/2addr v9, v6
 
     .line 994
-    :goto_3e1
+    :goto_1a
     const/4 v3, 0x0
 
     .line 995
-    :cond_3e2
-    :goto_3e2
+    :cond_24
+    :goto_1b
     sub-int v6, v9, v3
 
     .line 996
     .line 997
-    if-lez v6, :cond_405
+    if-lez v6, :cond_26
 
     .line 998
     .line 999
-    if-le v2, v6, :cond_405
+    if-le v2, v6, :cond_26
 
     .line 1000
     .line 1001
-    :goto_3e8
+    :goto_1c
     iget-object v6, v4, Llibs/l91;->t:[B
 
     .line 1002
@@ -2354,11 +2354,11 @@
     move v9, v7
 
     .line 1014
-    if-nez v2, :cond_403
+    if-nez v2, :cond_25
 
     .line 1015
     .line 1016
-    :goto_3f7
+    :goto_1d
     move/from16 v6, v27
 
     .line 1017
@@ -2379,18 +2379,18 @@
 
     .line 1025
     .line 1026
-    goto/16 :goto_317
+    goto/16 :goto_13
 
     .line 1027
     .line 1028
-    :cond_403
+    :cond_25
     move v3, v8
 
     .line 1029
-    goto :goto_3e8
+    goto :goto_1c
 
     .line 1030
-    :cond_405
+    :cond_26
     iget-object v6, v4, Llibs/l91;->t:[B
 
     .line 1031
@@ -2403,15 +2403,15 @@
     add-int/2addr v9, v2
 
     .line 1036
-    goto :goto_3f7
+    goto :goto_1d
 
     .line 1037
-    :cond_40c
+    :cond_27
     and-int/lit8 v27, v26, 0x40
 
     .line 1038
     .line 1039
-    if-nez v27, :cond_426
+    if-nez v27, :cond_28
 
     .line 1040
     .line 1041
@@ -2455,11 +2455,11 @@
 
     .line 1060
     .line 1061
-    goto/16 :goto_35a
+    goto/16 :goto_16
 
     .line 1062
     .line 1063
-    :cond_426
+    :cond_28
     iput-object v14, v1, Llibs/gy3;->i:Ljava/lang/String;
 
     .line 1064
@@ -2475,14 +2475,14 @@
 
     .line 1069
     .line 1070
-    if-ge v3, v2, :cond_430
+    if-ge v3, v2, :cond_29
 
     .line 1071
     .line 1072
     move v2, v3
 
     .line 1073
-    :cond_430
+    :cond_29
     add-int/2addr v6, v2
 
     .line 1074
@@ -2547,20 +2547,20 @@
 
     .line 1102
     .line 1103
-    :goto_44e
+    :goto_1e
     const/4 v2, -0x3
 
     .line 1104
-    goto/16 :goto_511
+    goto/16 :goto_21
 
     .line 1105
     .line 1106
-    :cond_451
+    :cond_2a
     and-int/lit8 v26, v25, 0x40
 
     .line 1107
     .line 1108
-    if-nez v26, :cond_4b9
+    if-nez v26, :cond_2f
 
     .line 1109
     .line 1110
@@ -2604,7 +2604,7 @@
 
     .line 1129
     .line 1130
-    if-nez v25, :cond_4b5
+    if-nez v25, :cond_2e
 
     .line 1131
     .line 1132
@@ -2649,12 +2649,12 @@
 
     .line 1150
     .line 1151
-    goto/16 :goto_30f
+    goto/16 :goto_12
 
     .line 1152
     .line 1153
-    :goto_480
-    if-lt v2, v3, :cond_48d
+    :goto_1f
+    if-lt v2, v3, :cond_2c
 
     .line 1154
     .line 1155
@@ -2662,14 +2662,14 @@
 
     .line 1156
     .line 1157
-    if-ge v6, v3, :cond_487
+    if-ge v6, v3, :cond_2b
 
     .line 1158
     .line 1159
-    goto :goto_48d
+    goto :goto_20
 
     .line 1160
-    :cond_487
+    :cond_2b
     move/from16 v23, v2
 
     .line 1161
@@ -2678,12 +2678,12 @@
 
     .line 1163
     .line 1164
-    goto/16 :goto_2db
+    goto/16 :goto_11
 
     .line 1165
     .line 1166
-    :cond_48d
-    :goto_48d
+    :cond_2c
+    :goto_20
     iget v2, v1, Llibs/gy3;->c:I
 
     .line 1167
@@ -2695,14 +2695,14 @@
 
     .line 1170
     .line 1171
-    if-ge v3, v2, :cond_495
+    if-ge v3, v2, :cond_2d
 
     .line 1172
     .line 1173
     move v2, v3
 
     .line 1174
-    :cond_495
+    :cond_2d
     add-int/2addr v6, v2
 
     .line 1175
@@ -2770,19 +2770,19 @@
     const/4 v2, 0x0
 
     .line 1205
-    goto :goto_511
+    goto :goto_21
 
     .line 1206
-    :cond_4b5
+    :cond_2e
     move/from16 v21, v3
 
     .line 1207
     .line 1208
-    goto/16 :goto_31b
+    goto/16 :goto_14
 
     .line 1209
     .line 1210
-    :cond_4b9
+    :cond_2f
     move/from16 v21, v3
 
     .line 1211
@@ -2791,7 +2791,7 @@
 
     .line 1213
     .line 1214
-    if-eqz v2, :cond_4e7
+    if-eqz v2, :cond_31
 
     .line 1215
     .line 1216
@@ -2806,14 +2806,14 @@
 
     .line 1220
     .line 1221
-    if-ge v3, v2, :cond_4c7
+    if-ge v3, v2, :cond_30
 
     .line 1222
     .line 1223
     move v2, v3
 
     .line 1224
-    :cond_4c7
+    :cond_30
     add-int/2addr v6, v2
 
     .line 1225
@@ -2881,10 +2881,10 @@
     const/4 v2, 0x1
 
     .line 1255
-    goto :goto_511
+    goto :goto_21
 
     .line 1256
-    :cond_4e7
+    :cond_31
     move-object/from16 v10, v20
 
     .line 1257
@@ -2904,14 +2904,14 @@
 
     .line 1264
     .line 1265
-    if-ge v3, v2, :cond_4f3
+    if-ge v3, v2, :cond_32
 
     .line 1266
     .line 1267
     move v2, v3
 
     .line 1268
-    :cond_4f3
+    :cond_32
     add-int/2addr v6, v2
 
     .line 1269
@@ -2972,16 +2972,16 @@
 
     .line 1295
     .line 1296
-    goto/16 :goto_44e
+    goto/16 :goto_1e
 
     .line 1297
     .line 1298
-    :goto_511
+    :goto_21
     iget v11, v4, Llibs/l91;->v:I
 
     .line 1299
     .line 1300
-    if-ge v9, v11, :cond_519
+    if-ge v9, v11, :cond_33
 
     .line 1301
     .line 1302
@@ -2994,10 +2994,10 @@
     sub-int/2addr v11, v12
 
     .line 1305
-    goto :goto_51c
+    goto :goto_22
 
     .line 1306
-    :cond_519
+    :cond_33
     const/4 v12, 0x1
 
     .line 1307
@@ -3005,40 +3005,40 @@
 
     .line 1308
     .line 1309
-    :goto_51c
-    if-eqz v2, :cond_529
+    :goto_22
+    if-eqz v2, :cond_36
 
     .line 1310
     .line 1311
-    if-ne v2, v12, :cond_522
+    if-ne v2, v12, :cond_34
 
     .line 1312
     .line 1313
     const/4 v15, 0x7
 
     .line 1314
-    goto :goto_524
+    goto :goto_23
 
     .line 1315
-    :cond_522
+    :cond_34
     const/16 v15, 0x9
 
     .line 1316
     .line 1317
-    :goto_524
+    :goto_23
     iput v15, v0, Llibs/m91;->a:I
 
     .line 1318
     .line 1319
-    goto/16 :goto_10d
+    goto/16 :goto_5
 
     .line 1320
     .line 1321
-    :cond_528
+    :cond_35
     move-object v10, v13
 
     .line 1322
-    :cond_529
+    :cond_36
     iget-byte v12, v0, Llibs/m91;->i:B
 
     .line 1323
@@ -3070,17 +3070,17 @@
 
     .line 1336
     .line 1337
-    :goto_538
+    :goto_24
     iget v13, v0, Llibs/m91;->e:I
 
     .line 1338
     .line 1339
-    :goto_53a
-    if-ge v8, v13, :cond_568
+    :goto_25
+    if-ge v8, v13, :cond_38
 
     .line 1340
     .line 1341
-    if-eqz v6, :cond_54f
+    if-eqz v6, :cond_37
 
     .line 1342
     .line 1343
@@ -3120,10 +3120,10 @@
     const/4 v2, 0x0
 
     .line 1359
-    goto :goto_53a
+    goto :goto_25
 
     .line 1360
-    :cond_54f
+    :cond_37
     iput v7, v4, Llibs/l91;->r:I
 
     .line 1361
@@ -3177,7 +3177,7 @@
     return v1
 
     .line 1385
-    :cond_568
+    :cond_38
     iget v14, v0, Llibs/m91;->d:I
 
     .line 1386
@@ -3222,7 +3222,7 @@
 
     .line 1404
     .line 1405
-    if-nez v15, :cond_589
+    if-nez v15, :cond_39
 
     .line 1406
     .line 1407
@@ -3245,16 +3245,16 @@
 
     .line 1415
     .line 1416
-    goto/16 :goto_10d
+    goto/16 :goto_5
 
     .line 1417
     .line 1418
-    :cond_589
+    :cond_39
     and-int/lit8 v16, v15, 0x10
 
     .line 1419
     .line 1420
-    if-eqz v16, :cond_59c
+    if-eqz v16, :cond_3a
 
     .line 1421
     .line 1422
@@ -3285,16 +3285,16 @@
 
     .line 1434
     .line 1435
-    goto/16 :goto_10d
+    goto/16 :goto_5
 
     .line 1436
     .line 1437
-    :cond_59c
+    :cond_3a
     and-int/lit8 v16, v15, 0x40
 
     .line 1438
     .line 1439
-    if-nez v16, :cond_5ad
+    if-nez v16, :cond_3b
 
     .line 1440
     .line 1441
@@ -3321,16 +3321,16 @@
 
     .line 1451
     .line 1452
-    goto/16 :goto_10d
+    goto/16 :goto_5
 
     .line 1453
     .line 1454
-    :cond_5ad
+    :cond_3b
     and-int/lit8 v13, v15, 0x20
 
     .line 1455
     .line 1456
-    if-eqz v13, :cond_5b6
+    if-eqz v13, :cond_3c
 
     .line 1457
     .line 1458
@@ -3341,11 +3341,11 @@
 
     .line 1460
     .line 1461
-    goto/16 :goto_10d
+    goto/16 :goto_5
 
     .line 1462
     .line 1463
-    :cond_5b6
+    :cond_3c
     const/16 v2, 0x9
 
     .line 1464
@@ -3414,17 +3414,17 @@
     return v1
 
     .line 1495
-    :pswitch_data_5d6
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_29d
-        :pswitch_299
-        :pswitch_1c7
-        :pswitch_212
-        :pswitch_110
-        :pswitch_14d
-        :pswitch_b0
-        :pswitch_64
-        :pswitch_96
-        :pswitch_4b
+        :pswitch_9
+        :pswitch_8
+        :pswitch_6
+        :pswitch_7
+        :pswitch_4
+        :pswitch_5
+        :pswitch_3
+        :pswitch_1
+        :pswitch_2
+        :pswitch_0
     .end packed-switch
 .end method

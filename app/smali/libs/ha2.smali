@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ia2;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/ha2;->a:Llibs/ia2;
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final onActionItemClicked(Landroid/view/ActionMode;Landroid/view/MenuItem;)Z
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -40,7 +40,7 @@
 .end method
 
 .method public final onCreateActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x1
@@ -50,7 +50,7 @@
 .end method
 
 .method public final onDestroyActionMode(Landroid/view/ActionMode;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object p1, p0, Llibs/ha2;->a:Llibs/ia2;
@@ -69,7 +69,7 @@
     move-result p1
 
     .line 9
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     .line 10
     .line 11
@@ -89,12 +89,12 @@
     .line 17
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     return-void
 .end method
 
 .method public final onPrepareActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
-    .registers 3
+    .locals 0
 
     .line 1
     iget-object p1, p0, Llibs/ha2;->a:Llibs/ia2;
@@ -117,7 +117,7 @@
 
     .line 10
     .line 11
-    if-eq p1, p2, :cond_13
+    if-eq p1, p2, :cond_0
 
     .line 12
     .line 13
@@ -134,7 +134,7 @@
     .line 18
     .line 19
     .line 20
-    :cond_13
+    :cond_0
     const/4 p1, 0x1
 
     .line 21

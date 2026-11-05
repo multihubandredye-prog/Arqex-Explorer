@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/security/PrivateKey;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -24,7 +24,7 @@
 
     .line 5
     .line 6
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
@@ -39,7 +39,7 @@
     return-void
 
     .line 13
-    :cond_c
+    :cond_0
     const-string p1, "Invalid PrivateKey type passed to SshEd25519PrivateKey"
 
     .line 14
@@ -58,7 +58,7 @@
 
 # virtual methods
 .method public final a()Ljava/security/PrivateKey;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/yd3;->a:Llibs/gh0;
@@ -69,7 +69,7 @@
 .end method
 
 .method public final b(Ljava/lang/String;[B)[B
-    .registers 4
+    .locals 1
 
     .line 1
     :try_start_0
@@ -102,26 +102,26 @@
     .line 16
     .line 17
     move-result-object p1
-    :try_end_11
-    .catch Ljava/security/InvalidKeyException; {:try_start_0 .. :try_end_11} :catch_14
-    .catch Ljava/security/SignatureException; {:try_start_0 .. :try_end_11} :catch_12
+    :try_end_0
+    .catch Ljava/security/InvalidKeyException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/security/SignatureException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 18
     return-object p1
 
     .line 19
-    :catch_12
+    :catch_0
     move-exception p1
 
     .line 20
-    goto :goto_15
+    goto :goto_0
 
     .line 21
-    :catch_14
+    :catch_1
     move-exception p1
 
     .line 22
-    :goto_15
+    :goto_0
     invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     .line 23
@@ -142,7 +142,7 @@
 .end method
 
 .method public final c([B)[B
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "ssh-ed25519"
@@ -161,14 +161,14 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Llibs/yd3;
 
     .line 2
     .line 3
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -178,7 +178,7 @@
     return p1
 
     .line 7
-    :cond_6
+    :cond_0
     check-cast p1, Llibs/yd3;
 
     .line 8
@@ -203,7 +203,7 @@
 .end method
 
 .method public final getAlgorithm()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "ssh-ed25519"
@@ -214,7 +214,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/String;

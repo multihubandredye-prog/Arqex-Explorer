@@ -32,7 +32,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r31;Llibs/xt1;Llibs/dd3;Ljava/util/concurrent/atomic/AtomicBoolean;Ljava/util/concurrent/atomic/AtomicBoolean;Ljava/util/concurrent/atomic/AtomicBoolean;Ljava/util/concurrent/atomic/AtomicBoolean;Ljava/util/concurrent/atomic/AtomicBoolean;Ljava/util/concurrent/atomic/AtomicBoolean;Ljava/util/concurrent/atomic/AtomicBoolean;Ljava/util/concurrent/atomic/AtomicBoolean;)V
-    .registers 12
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -90,7 +90,7 @@
 
 # virtual methods
 .method public final onDismiss(Landroid/content/DialogInterface;)V
-    .registers 13
+    .locals 11
 
     .line 1
     iget-object p1, p0, Llibs/a21;->d:Ljava/util/concurrent/atomic/AtomicBoolean;

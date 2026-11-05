@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     sget-object v0, Ljava/math/BigInteger;->ONE:Ljava/math/BigInteger;
@@ -52,7 +52,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/16 v0, 0x100
 
@@ -63,7 +63,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 3
+    .locals 1
 
     .line 23
     invoke-static {p1}, Llibs/uj;->e(I)I
@@ -80,7 +80,7 @@
 .end method
 
 .method public constructor <init>(Llibs/uj;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -127,7 +127,7 @@
 .end method
 
 .method public constructor <init>(Z[B)V
-    .registers 4
+    .locals 1
 
     .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -140,26 +140,26 @@
     .line 26
     iput v0, p0, Llibs/uj;->b:I
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 27
     array-length v0, p2
 
-    :cond_b
+    :cond_0
     iput v0, p0, Llibs/uj;->c:I
 
     return-void
 .end method
 
 .method public static e(I)I
-    .registers 3
+    .locals 2
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    :goto_1
-    if-ge v0, p0, :cond_15
+    :goto_0
+    if-ge v0, p0, :cond_1
 
     .line 3
     .line 4
@@ -167,14 +167,14 @@
 
     .line 5
     .line 6
-    if-lez v0, :cond_8
+    if-lez v0, :cond_0
 
     .line 7
     .line 8
-    goto :goto_1
+    goto :goto_0
 
     .line 9
-    :cond_8
+    :cond_0
     const-string v0, "Cannot get next power of 2; "
 
     .line 10
@@ -202,14 +202,14 @@
     return p0
 
     .line 22
-    :cond_15
+    :cond_1
     return v0
 .end method
 
 
 # virtual methods
 .method public final List(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/uj;->c:I
@@ -233,7 +233,7 @@
 .end method
 
 .method public final Object()V
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/ue3;->c:Ljava/nio/charset/Charset;
@@ -249,7 +249,7 @@
 .end method
 
 .method public final String()J
-    .registers 12
+    .locals 11
 
     .line 1
     const/4 v0, 0x4
@@ -385,7 +385,7 @@
 .end method
 
 .method public final a()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/uj;->c:I
@@ -403,7 +403,7 @@
 .end method
 
 .method public final b(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/uj;->a()I
@@ -414,14 +414,14 @@
     move-result v0
 
     .line 5
-    if-lt v0, p1, :cond_7
+    if-lt v0, p1, :cond_0
 
     .line 6
     .line 7
     return-void
 
     .line 8
-    :cond_7
+    :cond_0
     new-instance p1, Llibs/rj;
 
     .line 9
@@ -439,7 +439,7 @@
 .end method
 
 .method public final c(I)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/uj;->a:[B
@@ -456,7 +456,7 @@
     sub-int/2addr v0, v1
 
     .line 7
-    if-ge v0, p1, :cond_18
+    if-ge v0, p1, :cond_0
 
     .line 8
     .line 9
@@ -494,12 +494,12 @@
 
     .line 24
     .line 25
-    :cond_18
+    :cond_0
     return-void
 .end method
 
 .method public final d()[B
-    .registers 6
+    .locals 5
 
     .line 1
     invoke-virtual {p0}, Llibs/uj;->a()I
@@ -513,7 +513,7 @@
     const/4 v1, 0x0
 
     .line 6
-    if-lez v0, :cond_11
+    if-lez v0, :cond_0
 
     .line 7
     .line 8
@@ -537,7 +537,7 @@
     return-object v2
 
     .line 18
-    :cond_11
+    :cond_0
     new-array v0, v1, [B
 
     .line 19
@@ -546,10 +546,10 @@
 .end method
 
 .method public final f(Llibs/uj;)V
-    .registers 6
+    .locals 4
 
     .line 1
-    if-eqz p1, :cond_19
+    if-eqz p1, :cond_0
 
     .line 2
     .line 3
@@ -598,12 +598,12 @@
 
     .line 25
     .line 26
-    :cond_19
+    :cond_0
     return-void
 .end method
 
 .method public final g(B)V
-    .registers 5
+    .locals 3
 
     .line 1
     const/4 v0, 0x1
@@ -638,7 +638,7 @@
 .end method
 
 .method public final h(II[B)V
-    .registers 6
+    .locals 2
 
     .line 1
     int-to-long v0, p2
@@ -658,7 +658,7 @@
 .end method
 
 .method public final i(Ljava/math/BigInteger;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-virtual {p1}, Ljava/math/BigInteger;->toByteArray()[B
@@ -695,7 +695,7 @@
 .end method
 
 .method public final j(II[B)V
-    .registers 6
+    .locals 2
 
     .line 1
     invoke-virtual {p0, p2}, Llibs/uj;->c(I)V
@@ -731,13 +731,13 @@
 .end method
 
 .method public final k([C)V
-    .registers 9
+    .locals 7
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-nez p1, :cond_10
+    if-nez p1, :cond_0
 
     .line 3
     .line 4
@@ -768,7 +768,7 @@
     return-void
 
     .line 17
-    :cond_10
+    :cond_0
     sget-object v1, Llibs/ue3;->c:Ljava/nio/charset/Charset;
 
     .line 18
@@ -889,8 +889,8 @@
     const/4 v2, 0x0
 
     .line 77
-    :goto_4c
-    if-ge v2, p1, :cond_5d
+    :goto_0
+    if-ge v2, p1, :cond_1
 
     .line 78
     .line 79
@@ -922,10 +922,10 @@
 
     .line 92
     .line 93
-    goto :goto_4c
+    goto :goto_0
 
     .line 94
-    :cond_5d
+    :cond_1
     invoke-static {v1, v0}, Ljava/util/Arrays;->fill([BB)V
 
     .line 95
@@ -935,7 +935,7 @@
 .end method
 
 .method public final l(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/ue3;->c:Ljava/nio/charset/Charset;
@@ -951,7 +951,7 @@
 .end method
 
 .method public final m(Ljava/lang/String;Ljava/nio/charset/Charset;)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-virtual {p1, p2}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
@@ -977,7 +977,7 @@
 .end method
 
 .method public final n(J)V
-    .registers 10
+    .locals 7
 
     .line 1
     const/4 v0, 0x4
@@ -996,7 +996,7 @@
 
     .line 8
     .line 9
-    if-ltz v3, :cond_43
+    if-ltz v3, :cond_0
 
     .line 10
     .line 11
@@ -1011,7 +1011,7 @@
 
     .line 17
     .line 18
-    if-gtz v3, :cond_43
+    if-gtz v3, :cond_0
 
     .line 19
     .line 20
@@ -1121,7 +1121,7 @@
     return-void
 
     .line 68
-    :cond_43
+    :cond_0
     const-string v0, "Invalid value: "
 
     .line 69
@@ -1143,7 +1143,7 @@
 .end method
 
 .method public final p(I)V
-    .registers 8
+    .locals 6
 
     .line 1
     const/4 v0, 0x4
@@ -1237,7 +1237,7 @@
 .end method
 
 .method public final q(J)V
-    .registers 6
+    .locals 3
 
     .line 1
     const-wide/16 v0, 0x0
@@ -1248,7 +1248,7 @@
 
     .line 4
     .line 5
-    if-ltz v2, :cond_a
+    if-ltz v2, :cond_0
 
     .line 6
     .line 7
@@ -1260,7 +1260,7 @@
     return-void
 
     .line 11
-    :cond_a
+    :cond_0
     const-string v0, "Invalid value: "
 
     .line 12
@@ -1282,7 +1282,7 @@
 .end method
 
 .method public final r(Ljava/math/BigInteger;)V
-    .registers 4
+    .locals 2
 
     .line 1
     sget-object v0, Llibs/uj;->d:Ljava/math/BigInteger;
@@ -1297,7 +1297,7 @@
     move-result v0
 
     .line 7
-    if-gtz v0, :cond_18
+    if-gtz v0, :cond_0
 
     .line 8
     .line 9
@@ -1313,7 +1313,7 @@
     move-result v0
 
     .line 15
-    if-ltz v0, :cond_18
+    if-ltz v0, :cond_0
 
     .line 16
     .line 17
@@ -1333,7 +1333,7 @@
     return-void
 
     .line 25
-    :cond_18
+    :cond_0
     const-string v0, "Invalid value: "
 
     .line 26
@@ -1347,7 +1347,7 @@
 .end method
 
 .method public final s(J)V
-    .registers 10
+    .locals 7
 
     .line 1
     const/16 v0, 0x8
@@ -1566,7 +1566,7 @@
 .end method
 
 .method public final t()Z
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/uj;->u()B
@@ -1577,7 +1577,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -1587,7 +1587,7 @@
     return v0
 
     .line 9
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 10
@@ -1595,7 +1595,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1670,7 +1670,7 @@
 .end method
 
 .method public final u()B
-    .registers 4
+    .locals 3
 
     .line 1
     const/4 v0, 0x1
@@ -1705,7 +1705,7 @@
 .end method
 
 .method public final v()[B
-    .registers 4
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Llibs/uj;->String()J
@@ -1719,7 +1719,7 @@
     long-to-int v1, v0
 
     .line 6
-    if-ltz v1, :cond_12
+    if-ltz v1, :cond_0
 
     .line 7
     .line 8
@@ -1728,7 +1728,7 @@
     .line 9
     .line 10
     .line 11
-    if-gt v1, v0, :cond_12
+    if-gt v1, v0, :cond_0
 
     .line 12
     .line 13
@@ -1744,7 +1744,7 @@
     return-object v0
 
     .line 19
-    :cond_12
+    :cond_0
     new-instance v0, Llibs/rj;
 
     .line 20
@@ -1770,7 +1770,7 @@
 .end method
 
 .method public final w()Ljava/math/BigInteger;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/math/BigInteger;
@@ -1794,7 +1794,7 @@
 .end method
 
 .method public final x()Ljava/security/PublicKey;
-    .registers 5
+    .locals 4
 
     .line 1
     sget-object v0, Llibs/ue3;->c:Ljava/nio/charset/Charset;
@@ -1817,7 +1817,7 @@
     move-result-object v0
 
     .line 11
-    :try_start_a
+    :try_start_0
     move-object v1, p0
 
     .line 12
@@ -1831,22 +1831,22 @@
     .line 16
     .line 17
     move-result-object v0
-    :try_end_11
-    .catch Ljava/security/GeneralSecurityException; {:try_start_a .. :try_end_11} :catch_12
-    .catch Ljava/lang/UnsupportedOperationException; {:try_start_a .. :try_end_11} :catch_14
+    :try_end_0
+    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/UnsupportedOperationException; {:try_start_0 .. :try_end_0} :catch_1
 
     .line 18
     return-object v0
 
     .line 19
-    :catch_12
+    :catch_0
     move-exception v0
 
     .line 20
-    goto :goto_28
+    goto :goto_0
 
     .line 21
-    :catch_14
+    :catch_1
     new-instance v1, Llibs/rj;
 
     .line 22
@@ -1885,7 +1885,7 @@
     throw v1
 
     .line 41
-    :goto_28
+    :goto_0
     invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     .line 42
@@ -1906,7 +1906,7 @@
 .end method
 
 .method public final y([B)V
-    .registers 6
+    .locals 4
 
     .line 1
     array-length v0, p1
@@ -1948,7 +1948,7 @@
 .end method
 
 .method public final z(Ljava/nio/charset/Charset;)Ljava/lang/String;
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-virtual {p0}, Llibs/uj;->String()J
@@ -1962,7 +1962,7 @@
     long-to-int v1, v0
 
     .line 6
-    if-ltz v1, :cond_1e
+    if-ltz v1, :cond_0
 
     .line 7
     .line 8
@@ -1971,7 +1971,7 @@
     .line 9
     .line 10
     .line 11
-    if-gt v1, v0, :cond_1e
+    if-gt v1, v0, :cond_0
 
     .line 12
     .line 13
@@ -2011,7 +2011,7 @@
     return-object v0
 
     .line 31
-    :cond_1e
+    :cond_0
     new-instance p1, Llibs/rj;
 
     .line 32

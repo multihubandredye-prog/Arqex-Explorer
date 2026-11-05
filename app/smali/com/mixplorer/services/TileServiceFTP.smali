@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/zm3;-><init>()V
@@ -23,7 +23,7 @@
 
 # virtual methods
 .method public final f()Landroid/service/quicksettings/Tile;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-static {p0}, Llibs/Lima;->b(Lcom/mixplorer/services/TileServiceFTP;)Landroid/service/quicksettings/Tile;
@@ -42,7 +42,7 @@
 .end method
 
 .method public final onClick()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Landroid/service/quicksettings/TileService;->onClick()V

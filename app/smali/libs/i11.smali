@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r31;Llibs/lj;ILjava/util/LinkedHashSet;)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object p1, p0, Llibs/i11;->Y:Llibs/lj;

@@ -25,7 +25,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/$f;
@@ -104,7 +104,7 @@
 .end method
 
 .method public constructor <init>(Llibs/$f;Llibs/$f;Llibs/Api;Llibs/Api;)V
-    .registers 5
+    .locals 0
 
     .line 92
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -125,7 +125,7 @@
 .end method
 
 .method public constructor <init>(Llibs/Param;)V
-    .registers 7
+    .locals 5
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -168,7 +168,7 @@
     const/4 v0, 0x0
 
     .line 21
-    :goto_14
+    :goto_0
     invoke-virtual {p1}, Llibs/Param;->size()I
 
     .line 22
@@ -177,7 +177,7 @@
     move-result v1
 
     .line 25
-    if-eq v0, v1, :cond_5a
+    if-eq v0, v1, :cond_4
 
     .line 26
     .line 27
@@ -200,25 +200,25 @@
     const/4 v3, 0x1
 
     .line 36
-    if-eqz v2, :cond_4d
+    if-eqz v2, :cond_3
 
     .line 37
     .line 38
-    if-eq v2, v3, :cond_42
+    if-eq v2, v3, :cond_2
 
     .line 39
     .line 40
     const/4 v4, 0x2
 
     .line 41
-    if-eq v2, v4, :cond_3b
+    if-eq v2, v4, :cond_1
 
     .line 42
     .line 43
     const/4 v4, 0x3
 
     .line 44
-    if-ne v2, v4, :cond_34
+    if-ne v2, v4, :cond_0
 
     .line 45
     .line 46
@@ -234,10 +234,10 @@
 
     .line 51
     .line 52
-    goto :goto_57
+    goto :goto_1
 
     .line 53
-    :cond_34
+    :cond_0
     const-string p1, "unknown tag"
 
     .line 54
@@ -253,7 +253,7 @@
     throw p1
 
     .line 60
-    :cond_3b
+    :cond_1
     invoke-static {v1, v3}, Llibs/Api;->p(Llibs/Height;Z)Llibs/Api;
 
     .line 61
@@ -266,10 +266,10 @@
 
     .line 65
     .line 66
-    goto :goto_57
+    goto :goto_1
 
     .line 67
-    :cond_42
+    :cond_2
     invoke-static {v1, v3}, Llibs/Param;->p(Llibs/Height;Z)Llibs/Param;
 
     .line 68
@@ -290,10 +290,10 @@
 
     .line 76
     .line 77
-    goto :goto_57
+    goto :goto_1
 
     .line 78
-    :cond_4d
+    :cond_3
     invoke-static {v1, v3}, Llibs/Param;->p(Llibs/Height;Z)Llibs/Param;
 
     .line 79
@@ -314,22 +314,22 @@
 
     .line 87
     .line 88
-    :goto_57
+    :goto_1
     add-int/lit8 v0, v0, 0x1
 
     .line 89
     .line 90
-    goto :goto_14
+    goto :goto_0
 
     .line 91
-    :cond_5a
+    :cond_4
     return-void
 .end method
 
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Llibs/Init;
@@ -363,7 +363,7 @@
     const/4 v4, 0x1
 
     .line 16
-    if-nez v2, :cond_19
+    if-nez v2, :cond_0
 
     .line 17
     .line 18
@@ -381,7 +381,7 @@
     .line 24
     .line 25
     .line 26
-    :cond_19
+    :cond_0
     sget-object v1, Llibs/al2;->Nu:Llibs/$f;
 
     .line 27
@@ -398,7 +398,7 @@
     move-result v1
 
     .line 34
-    if-nez v1, :cond_2b
+    if-nez v1, :cond_1
 
     .line 35
     .line 36
@@ -416,7 +416,7 @@
     .line 42
     .line 43
     .line 44
-    :cond_2b
+    :cond_1
     sget-object v1, Llibs/al2;->Xi:Llibs/Api;
 
     .line 45
@@ -433,7 +433,7 @@
     move-result v1
 
     .line 52
-    if-nez v1, :cond_3e
+    if-nez v1, :cond_2
 
     .line 53
     .line 54
@@ -454,7 +454,7 @@
     .line 61
     .line 62
     .line 63
-    :cond_3e
+    :cond_2
     sget-object v1, Llibs/al2;->Omicron:Llibs/Api;
 
     .line 64
@@ -471,7 +471,7 @@
     move-result v1
 
     .line 71
-    if-nez v1, :cond_51
+    if-nez v1, :cond_3
 
     .line 72
     .line 73
@@ -492,7 +492,7 @@
     .line 80
     .line 81
     .line 82
-    :cond_51
+    :cond_3
     new-instance v1, Llibs/p10;
 
     .line 83

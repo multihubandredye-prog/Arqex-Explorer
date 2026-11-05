@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ra;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-direct {p0, p1}, Llibs/ng0;-><init>(Llibs/ra;)V
@@ -39,7 +39,7 @@
     const/4 v3, 0x0
 
     .line 12
-    if-ne v0, v2, :cond_3b
+    if-ne v0, v2, :cond_2
 
     .line 13
     .line 14
@@ -81,7 +81,7 @@
 
     .line 31
     .line 32
-    packed-switch p1, :pswitch_data_42
+    packed-switch p1, :pswitch_data_0
 
     .line 33
     .line 34
@@ -98,11 +98,11 @@
     throw v3
 
     .line 41
-    :pswitch_28
+    :pswitch_0
     const/4 p1, 0x7
 
     .line 42
-    if-eq v0, p1, :cond_3a
+    if-eq v0, p1, :cond_1
 
     .line 43
     .line 44
@@ -110,7 +110,7 @@
 
     .line 45
     .line 46
-    if-eq v0, p1, :cond_3a
+    if-eq v0, p1, :cond_1
 
     .line 47
     .line 48
@@ -118,14 +118,14 @@
 
     .line 49
     .line 50
-    if-ne v0, p1, :cond_34
+    if-ne v0, p1, :cond_0
 
     .line 51
     .line 52
-    goto :goto_3a
+    goto :goto_0
 
     .line 53
-    :cond_34
+    :cond_0
     const-string p1, "Symmetric key algorithm must be AES-128 or stronger."
 
     .line 54
@@ -138,12 +138,12 @@
     throw v3
 
     .line 59
-    :cond_3a
-    :goto_3a
+    :cond_1
+    :goto_0
     return-void
 
     .line 60
-    :cond_3b
+    :cond_2
     const-string p1, "kdf parameters size of 3 expected."
 
     .line 61
@@ -159,18 +159,18 @@
     nop
 
     .line 67
-    :pswitch_data_42
+    :pswitch_data_0
     .packed-switch 0x8
-        :pswitch_28
-        :pswitch_28
-        :pswitch_28
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public final l(Llibs/ta;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-super {p0, p1}, Llibs/ng0;->l(Llibs/ta;)V

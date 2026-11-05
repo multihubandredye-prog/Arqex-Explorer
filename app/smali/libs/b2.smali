@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 17
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 .end method
 
 .method public constructor <init>(Llibs/hc1;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -86,7 +86,7 @@
 
 # virtual methods
 .method public final a(Ljava/lang/String;Z)Ljava/lang/String;
-    .registers 7
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -141,7 +141,7 @@
     .line 25
     .line 26
     .line 27
-    if-eqz p2, :cond_1f
+    if-eqz p2, :cond_0
 
     .line 28
     .line 29
@@ -149,15 +149,15 @@
 
     .line 30
     .line 31
-    goto :goto_21
+    goto :goto_0
 
     .line 32
-    :cond_1f
+    :cond_0
     const-string p1, ""
 
     .line 33
     .line 34
-    :goto_21
+    :goto_0
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 35

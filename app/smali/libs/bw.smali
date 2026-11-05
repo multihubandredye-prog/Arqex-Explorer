@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/CodeEditorActivity;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/bw;->Omicron:Lcom/mixplorer/activities/CodeEditorActivity;
@@ -44,7 +44,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 8
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/bw;->Omicron:Lcom/mixplorer/activities/CodeEditorActivity;
@@ -197,21 +197,21 @@
     const/4 v5, 0x1
 
     .line 83
-    if-eq v4, v5, :cond_63
+    if-eq v4, v5, :cond_2
 
     .line 84
     .line 85
     const/4 v5, 0x2
 
     .line 86
-    if-eq v4, v5, :cond_60
+    if-eq v4, v5, :cond_1
 
     .line 87
     .line 88
     const/4 v5, 0x3
 
     .line 89
-    if-eq v4, v5, :cond_5d
+    if-eq v4, v5, :cond_0
 
     .line 90
     .line 91
@@ -219,31 +219,31 @@
 
     .line 92
     .line 93
-    goto :goto_65
+    goto :goto_0
 
     .line 94
-    :cond_5d
+    :cond_0
     sget v4, Llibs/bi2;->line_break_cr:I
 
     .line 95
     .line 96
-    goto :goto_65
+    goto :goto_0
 
     .line 97
-    :cond_60
+    :cond_1
     sget v4, Llibs/bi2;->line_break_crlf:I
 
     .line 98
     .line 99
-    goto :goto_65
+    goto :goto_0
 
     .line 100
-    :cond_63
+    :cond_2
     sget v4, Llibs/bi2;->line_break_lf:I
 
     .line 101
     .line 102
-    :goto_65
+    :goto_0
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 103
@@ -274,7 +274,7 @@
 
     .line 117
     .line 118
-    if-eqz v2, :cond_7a
+    if-eqz v2, :cond_3
 
     .line 119
     .line 120
@@ -282,15 +282,15 @@
 
     .line 121
     .line 122
-    goto :goto_7c
+    goto :goto_1
 
     .line 123
-    :cond_7a
+    :cond_3
     const-string v2, "\u25b2OVR"
 
     .line 124
     .line 125
-    :goto_7c
+    :goto_1
     iget-object v3, v0, Lcom/mixplorer/activities/CodeEditorActivity;->l1:Landroid/widget/TextView;
 
     .line 126
@@ -311,7 +311,7 @@
     move-result v3
 
     .line 135
-    if-nez v3, :cond_8d
+    if-nez v3, :cond_4
 
     .line 136
     .line 137
@@ -324,7 +324,7 @@
     .line 140
     .line 141
     .line 142
-    :cond_8d
+    :cond_4
     new-instance v2, Ljava/lang/StringBuilder;
 
     .line 143
@@ -342,11 +342,11 @@
 
     .line 150
     .line 151
-    if-eqz v3, :cond_9d
+    if-eqz v3, :cond_5
 
     .line 152
     .line 153
-    :goto_98
+    :goto_2
     invoke-virtual {v3}, Ljava/nio/charset/Charset;->name()Ljava/lang/String;
 
     .line 154
@@ -355,18 +355,18 @@
     move-result-object v3
 
     .line 157
-    goto :goto_a0
+    goto :goto_3
 
     .line 158
-    :cond_9d
+    :cond_5
     sget-object v3, Llibs/js;->e:Ljava/nio/charset/Charset;
 
     .line 159
     .line 160
-    goto :goto_98
+    goto :goto_2
 
     .line 161
-    :goto_a0
+    :goto_3
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 162
@@ -400,7 +400,7 @@
     move-result v3
 
     .line 178
-    if-nez v3, :cond_b8
+    if-nez v3, :cond_6
 
     .line 179
     .line 180
@@ -413,7 +413,7 @@
     .line 183
     .line 184
     .line 185
-    :cond_b8
+    :cond_6
     invoke-virtual {v0, v1}, Lcom/mixplorer/activities/CodeEditorActivity;->Yes(Llibs/cv;)V
 
     .line 186
@@ -423,7 +423,7 @@
 
     .line 189
     .line 190
-    if-eqz v0, :cond_ce
+    if-eqz v0, :cond_7
 
     .line 191
     .line 192
@@ -456,6 +456,6 @@
     .line 205
     .line 206
     .line 207
-    :cond_ce
+    :cond_7
     return-void
 .end method

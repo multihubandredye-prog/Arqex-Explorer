@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/security/spec/RSAPrivateKeySpec;)V
-    .registers 2
+    .locals 0
 
     .line 13
     invoke-static {p1}, Lorg/conscrypt/OpenSSLRSAPrivateKey;->init(Ljava/security/spec/RSAPrivateKeySpec;)Lorg/conscrypt/OpenSSLKey;
@@ -36,7 +36,7 @@
 .end method
 
 .method public constructor <init>(Lorg/conscrypt/OpenSSLKey;)V
-    .registers 2
+    .locals 0
 
     .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 .end method
 
 .method public constructor <init>(Lorg/conscrypt/OpenSSLKey;[[B)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Lorg/conscrypt/OpenSSLRSAPrivateKey;-><init>(Lorg/conscrypt/OpenSSLKey;)V
@@ -72,7 +72,7 @@
 .end method
 
 .method public static getInstance(Ljava/security/interfaces/RSAPrivateKey;)Lorg/conscrypt/OpenSSLKey;
-    .registers 11
+    .locals 10
 
     .line 1
     invoke-interface {p0}, Ljava/security/Key;->getFormat()Ljava/lang/String;
@@ -83,7 +83,7 @@
     move-result-object v0
 
     .line 5
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -98,7 +98,7 @@
     return-object p0
 
     .line 12
-    :cond_b
+    :cond_0
     invoke-interface {p0}, Ljava/security/interfaces/RSAKey;->getModulus()Ljava/math/BigInteger;
 
     .line 13
@@ -118,15 +118,15 @@
     const/4 v1, 0x0
 
     .line 21
-    if-eqz v0, :cond_3e
+    if-eqz v0, :cond_2
 
     .line 22
     .line 23
-    if-eqz p0, :cond_38
+    if-eqz p0, :cond_1
 
     .line 24
     .line 25
-    :try_start_18
+    :try_start_0
     new-instance v1, Lorg/conscrypt/OpenSSLKey;
 
     .line 26
@@ -174,8 +174,8 @@
 
     .line 45
     invoke-direct {v1, v2, v3}, Lorg/conscrypt/OpenSSLKey;-><init>(J)V
-    :try_end_2f
-    .catch Ljava/lang/Exception; {:try_start_18 .. :try_end_2f} :catch_30
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 46
     .line 47
@@ -183,7 +183,7 @@
     return-object v1
 
     .line 49
-    :catch_30
+    :catch_0
     move-exception v0
 
     .line 50
@@ -202,7 +202,7 @@
     throw v0
 
     .line 57
-    :cond_38
+    :cond_1
     const-string p0, "privateExponent == null"
 
     .line 58
@@ -215,7 +215,7 @@
     return-object v1
 
     .line 63
-    :cond_3e
+    :cond_2
     const-string p0, "modulus == null"
 
     .line 64
@@ -229,7 +229,7 @@
 .end method
 
 .method public static getInstance(Lorg/conscrypt/OpenSSLKey;)Lorg/conscrypt/OpenSSLRSAPrivateKey;
-    .registers 3
+    .locals 2
 
     .line 69
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLKey;->getNativeRef()Lorg/conscrypt/NativeRef$EVP_PKEY;
@@ -245,7 +245,7 @@
     .line 70
     aget-object v1, v0, v1
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_0
 
     .line 71
     new-instance v1, Lorg/conscrypt/OpenSSLRSAPrivateCrtKey;
@@ -255,7 +255,7 @@
     return-object v1
 
     .line 72
-    :cond_13
+    :cond_0
     new-instance v1, Lorg/conscrypt/OpenSSLRSAPrivateKey;
 
     invoke-direct {v1, p0, v0}, Lorg/conscrypt/OpenSSLRSAPrivateKey;-><init>(Lorg/conscrypt/OpenSSLKey;[[B)V
@@ -264,7 +264,7 @@
 .end method
 
 .method private static init(Ljava/security/spec/RSAPrivateKeySpec;)Lorg/conscrypt/OpenSSLKey;
-    .registers 11
+    .locals 10
 
     .line 1
     invoke-virtual {p0}, Ljava/security/spec/RSAPrivateKeySpec;->getModulus()Ljava/math/BigInteger;
@@ -286,15 +286,15 @@
     const/4 v1, 0x0
 
     .line 10
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_1
 
     .line 11
     .line 12
-    if-eqz p0, :cond_2d
+    if-eqz p0, :cond_0
 
     .line 13
     .line 14
-    :try_start_d
+    :try_start_0
     new-instance v1, Lorg/conscrypt/OpenSSLKey;
 
     .line 15
@@ -342,8 +342,8 @@
 
     .line 34
     invoke-direct {v1, v2, v3}, Lorg/conscrypt/OpenSSLKey;-><init>(J)V
-    :try_end_24
-    .catch Ljava/lang/Exception; {:try_start_d .. :try_end_24} :catch_25
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 35
     .line 36
@@ -351,7 +351,7 @@
     return-object v1
 
     .line 38
-    :catch_25
+    :catch_0
     move-exception v0
 
     .line 39
@@ -370,7 +370,7 @@
     throw v0
 
     .line 46
-    :cond_2d
+    :cond_0
     const-string p0, "privateExponent == null"
 
     .line 47
@@ -383,7 +383,7 @@
     return-object v1
 
     .line 52
-    :cond_33
+    :cond_1
     const-string p0, "modulus == null"
 
     .line 53
@@ -397,7 +397,7 @@
 .end method
 
 .method private readObject(Ljava/io/ObjectInputStream;)V
-    .registers 11
+    .locals 9
 
     .line 1
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
@@ -479,14 +479,14 @@
 .end method
 
 .method public static wrapJCAPrivateKeyForTLSStackOnly(Ljava/security/PrivateKey;Ljava/security/PublicKey;)Lorg/conscrypt/OpenSSLKey;
-    .registers 5
+    .locals 3
 
     .line 1
     instance-of v0, p0, Ljava/security/interfaces/RSAKey;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -505,15 +505,15 @@
     move-result-object v0
 
     .line 12
-    goto :goto_19
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     instance-of v0, p1, Ljava/security/interfaces/RSAKey;
 
     .line 14
     .line 15
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     .line 16
     .line 17
@@ -532,15 +532,15 @@
     move-result-object v0
 
     .line 24
-    goto :goto_19
+    goto :goto_0
 
     .line 25
-    :cond_18
+    :cond_1
     const/4 v0, 0x0
 
     .line 26
-    :goto_19
-    if-eqz v0, :cond_2a
+    :goto_0
+    if-eqz v0, :cond_2
 
     .line 27
     .line 28
@@ -575,7 +575,7 @@
     return-object p1
 
     .line 43
-    :cond_2a
+    :cond_2
     new-instance v0, Ljava/security/InvalidKeyException;
 
     .line 44
@@ -629,7 +629,7 @@
 .end method
 
 .method public static wrapPlatformKey(Ljava/security/interfaces/RSAPrivateKey;)Lorg/conscrypt/OpenSSLKey;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Lorg/conscrypt/OpenSSLKey;
@@ -672,7 +672,7 @@
 .end method
 
 .method private writeObject(Ljava/io/ObjectOutputStream;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLRSAPrivateKey;->key:Lorg/conscrypt/OpenSSLKey;
@@ -687,7 +687,7 @@
     move-result v0
 
     .line 7
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     .line 8
     .line 9
@@ -704,7 +704,7 @@
     return-void
 
     .line 16
-    :cond_f
+    :cond_0
     new-instance p1, Ljava/io/NotSerializableException;
 
     .line 17
@@ -724,20 +724,20 @@
 
 # virtual methods
 .method public final declared-synchronized ensureReadParams()V
-    .registers 2
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Lorg/conscrypt/OpenSSLRSAPrivateKey;->fetchedParams:Z
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_19
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 3
     .line 4
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 5
     .line 6
@@ -747,8 +747,8 @@
     return-void
 
     .line 8
-    :cond_7
-    :try_start_7
+    :cond_0
+    :try_start_1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLRSAPrivateKey;->key:Lorg/conscrypt/OpenSSLKey;
 
     .line 9
@@ -778,8 +778,8 @@
 
     .line 22
     iput-boolean v0, p0, Lorg/conscrypt/OpenSSLRSAPrivateKey;->fetchedParams:Z
-    :try_end_17
-    .catchall {:try_start_7 .. :try_end_17} :catchall_19
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 23
     .line 24
@@ -789,39 +789,39 @@
     return-void
 
     .line 26
-    :catchall_19
+    :catchall_0
     move-exception v0
 
     .line 27
-    :try_start_1a
+    :try_start_2
     monitor-exit p0
-    :try_end_1b
-    .catchall {:try_start_1a .. :try_end_1b} :catchall_19
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 28
     throw v0
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v1, p1, Lorg/conscrypt/OpenSSLRSAPrivateKey;
 
     .line 6
     .line 7
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_1
 
     .line 8
     .line 9
@@ -852,7 +852,7 @@
     return p1
 
     .line 22
-    :cond_15
+    :cond_1
     instance-of v1, p1, Ljava/security/interfaces/RSAPrivateKey;
 
     .line 23
@@ -860,7 +860,7 @@
     const/4 v2, 0x0
 
     .line 25
-    if-eqz v1, :cond_38
+    if-eqz v1, :cond_2
 
     .line 26
     .line 27
@@ -893,7 +893,7 @@
     move-result v1
 
     .line 42
-    if-eqz v1, :cond_38
+    if-eqz v1, :cond_2
 
     .line 43
     .line 44
@@ -917,19 +917,19 @@
     move-result p1
 
     .line 54
-    if-eqz p1, :cond_38
+    if-eqz p1, :cond_2
 
     .line 55
     .line 56
     return v0
 
     .line 57
-    :cond_38
+    :cond_2
     return v2
 .end method
 
 .method public final getAlgorithm()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "RSA"
@@ -940,7 +940,7 @@
 .end method
 
 .method public final getEncoded()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLRSAPrivateKey;->key:Lorg/conscrypt/OpenSSLKey;
@@ -955,7 +955,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -965,7 +965,7 @@
     return-object v0
 
     .line 11
-    :cond_a
+    :cond_0
     iget-object v0, p0, Lorg/conscrypt/OpenSSLRSAPrivateKey;->key:Lorg/conscrypt/OpenSSLKey;
 
     .line 12
@@ -990,7 +990,7 @@
 .end method
 
 .method public final getFormat()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLRSAPrivateKey;->key:Lorg/conscrypt/OpenSSLKey;
@@ -1005,7 +1005,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -1015,7 +1015,7 @@
     return-object v0
 
     .line 11
-    :cond_a
+    :cond_0
     const-string v0, "PKCS#8"
 
     .line 12
@@ -1024,7 +1024,7 @@
 .end method
 
 .method public final getModulus()Ljava/math/BigInteger;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLRSAPrivateKey;->ensureReadParams()V
@@ -1040,7 +1040,7 @@
 .end method
 
 .method public getOpenSSLKey()Lorg/conscrypt/OpenSSLKey;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLRSAPrivateKey;->key:Lorg/conscrypt/OpenSSLKey;
@@ -1051,7 +1051,7 @@
 .end method
 
 .method public final getPrivateExponent()Ljava/math/BigInteger;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLRSAPrivateKey;->key:Lorg/conscrypt/OpenSSLKey;
@@ -1066,7 +1066,7 @@
     move-result v0
 
     .line 7
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 8
     .line 9
@@ -1082,7 +1082,7 @@
     return-object v0
 
     .line 15
-    :cond_e
+    :cond_0
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     .line 16
@@ -1100,7 +1100,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLRSAPrivateKey;->ensureReadParams()V
@@ -1128,7 +1128,7 @@
 
     .line 13
     .line 14
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_0
 
     .line 15
     .line 16
@@ -1150,12 +1150,12 @@
     return v1
 
     .line 24
-    :cond_17
+    :cond_0
     return v0
 .end method
 
 .method public readParams([[B)V
-    .registers 5
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
@@ -1165,7 +1165,7 @@
 
     .line 3
     .line 4
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_3
 
     .line 5
     .line 6
@@ -1176,7 +1176,7 @@
 
     .line 8
     .line 9
-    if-nez v2, :cond_19
+    if-nez v2, :cond_1
 
     .line 10
     .line 11
@@ -1192,14 +1192,14 @@
     move-result v2
 
     .line 17
-    if-eqz v2, :cond_13
+    if-eqz v2, :cond_0
 
     .line 18
     .line 19
-    goto :goto_19
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     const-string p1, "privateExponent == null"
 
     .line 21
@@ -1212,8 +1212,8 @@
     return-void
 
     .line 26
-    :cond_19
-    :goto_19
+    :cond_1
+    :goto_0
     new-instance v2, Ljava/math/BigInteger;
 
     .line 27
@@ -1235,7 +1235,7 @@
 
     .line 36
     .line 37
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_2
 
     .line 38
     .line 39
@@ -1256,11 +1256,11 @@
 
     .line 47
     .line 48
-    :cond_2f
+    :cond_2
     return-void
 
     .line 49
-    :cond_30
+    :cond_3
     const-string p1, "modulus == null"
 
     .line 50
@@ -1274,7 +1274,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

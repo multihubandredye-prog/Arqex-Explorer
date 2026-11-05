@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(J)V
-    .registers 5
+    .locals 2
 
     .line 1
     sget-object v0, Lorg/conscrypt/OpenSSLSignature$EngineType;->RSA:Lorg/conscrypt/OpenSSLSignature$EngineType;
@@ -26,7 +26,7 @@
 
 # virtual methods
 .method public final configureEVP_PKEY_CTX(J)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x1

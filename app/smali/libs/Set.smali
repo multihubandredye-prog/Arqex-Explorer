@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 9
+    .locals 8
 
     .line 1
     const/16 v6, 0xc0

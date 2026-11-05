@@ -17,7 +17,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,7 +33,7 @@
 .end method
 
 .method public static getInstance(Ljava/lang/Object;)Lorg/conscrypt/DuckTypedPSKKeyManager;
-    .registers 9
+    .locals 8
 
     .line 1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -62,8 +62,8 @@
     const/4 v3, 0x0
 
     .line 13
-    :goto_c
-    if-ge v3, v2, :cond_5b
+    :goto_0
+    if-ge v3, v2, :cond_2
 
     .line 14
     .line 15
@@ -79,14 +79,14 @@
     move-result v5
 
     .line 21
-    if-eqz v5, :cond_17
+    if-eqz v5, :cond_0
 
     .line 22
     .line 23
-    goto :goto_31
+    goto :goto_1
 
     .line 24
-    :cond_17
+    :cond_0
     invoke-virtual {v4}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
     .line 25
@@ -135,19 +135,19 @@
     move-result v7
 
     .line 48
-    if-eqz v7, :cond_34
+    if-eqz v7, :cond_1
 
     .line 49
     .line 50
-    :goto_31
+    :goto_1
     add-int/lit8 v3, v3, 0x1
 
     .line 51
     .line 52
-    goto :goto_c
+    goto :goto_0
 
     .line 53
-    :cond_34
+    :cond_1
     new-instance p0, Ljava/lang/NoSuchMethodException;
 
     .line 54
@@ -219,7 +219,7 @@
     throw p0
 
     .line 92
-    :cond_5b
+    :cond_2
     new-instance v0, Lorg/conscrypt/DuckTypedPSKKeyManager;
 
     .line 93
@@ -235,7 +235,7 @@
 
 # virtual methods
 .method public chooseClientKeyIdentity(Ljava/lang/String;Ljava/net/Socket;)Ljava/lang/String;
-    .registers 10
+    .locals 7
 
     .line 1
     :try_start_0
@@ -317,15 +317,15 @@
 
     .line 38
     check-cast p1, Ljava/lang/String;
-    :try_end_27
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_27} :catch_28
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 39
     .line 40
     return-object p1
 
     .line 41
-    :catch_28
+    :catch_0
     move-exception p1
 
     .line 42
@@ -345,7 +345,7 @@
 .end method
 
 .method public chooseClientKeyIdentity(Ljava/lang/String;Ljavax/net/ssl/SSLEngine;)Ljava/lang/String;
-    .registers 10
+    .locals 7
 
     .line 49
     :try_start_0
@@ -392,12 +392,12 @@
     move-result-object p1
 
     check-cast p1, Ljava/lang/String;
-    :try_end_27
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_27} :catch_28
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
 
-    :catch_28
+    :catch_0
     move-exception p1
 
     .line 52
@@ -411,7 +411,7 @@
 .end method
 
 .method public chooseServerKeyIdentityHint(Ljava/net/Socket;)Ljava/lang/String;
-    .registers 8
+    .locals 6
 
     .line 1
     :try_start_0
@@ -478,15 +478,15 @@
 
     .line 31
     check-cast p1, Ljava/lang/String;
-    :try_end_20
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_20} :catch_21
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 32
     .line 33
     return-object p1
 
     .line 34
-    :catch_21
+    :catch_0
     move-exception p1
 
     .line 35
@@ -506,7 +506,7 @@
 .end method
 
 .method public chooseServerKeyIdentityHint(Ljavax/net/ssl/SSLEngine;)Ljava/lang/String;
-    .registers 8
+    .locals 6
 
     .line 42
     :try_start_0
@@ -545,12 +545,12 @@
     move-result-object p1
 
     check-cast p1, Ljava/lang/String;
-    :try_end_20
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_20} :catch_21
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
 
-    :catch_21
+    :catch_0
     move-exception p1
 
     .line 45
@@ -564,7 +564,7 @@
 .end method
 
 .method public getKey(Ljava/lang/String;Ljava/lang/String;Ljava/net/Socket;)Ljavax/crypto/SecretKey;
-    .registers 12
+    .locals 8
 
     .line 1
     :try_start_0
@@ -657,15 +657,15 @@
 
     .line 43
     check-cast p1, Ljavax/crypto/SecretKey;
-    :try_end_2c
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_2c} :catch_2d
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 44
     .line 45
     return-object p1
 
     .line 46
-    :catch_2d
+    :catch_0
     move-exception p1
 
     .line 47
@@ -685,7 +685,7 @@
 .end method
 
 .method public getKey(Ljava/lang/String;Ljava/lang/String;Ljavax/net/ssl/SSLEngine;)Ljavax/crypto/SecretKey;
-    .registers 12
+    .locals 8
 
     .line 54
     :try_start_0
@@ -738,12 +738,12 @@
     move-result-object p1
 
     check-cast p1, Ljavax/crypto/SecretKey;
-    :try_end_2c
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_2c} :catch_2d
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
 
-    :catch_2d
+    :catch_0
     move-exception p1
 
     .line 57

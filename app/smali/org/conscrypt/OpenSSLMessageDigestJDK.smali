@@ -20,7 +20,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(IIJ)V
-    .registers 5
+    .locals 0
 
     .line 25
     invoke-direct {p0, p3, p4, p1}, Lorg/conscrypt/OpenSSLMessageDigestJDK;-><init>(JI)V
@@ -29,7 +29,7 @@
 .end method
 
 .method private constructor <init>(JI)V
-    .registers 5
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/security/MessageDigestSpi;-><init>()V
@@ -81,7 +81,7 @@
 .end method
 
 .method private constructor <init>(JILorg/conscrypt/NativeRef$EVP_MD_CTX;Z)V
-    .registers 7
+    .locals 1
 
     .line 26
     invoke-direct {p0}, Ljava/security/MessageDigestSpi;-><init>()V
@@ -109,18 +109,18 @@
 .end method
 
 .method private declared-synchronized ensureDigestInitializedInContext()V
-    .registers 4
+    .locals 3
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Lorg/conscrypt/OpenSSLMessageDigestJDK;->digestInitializedInContext:Z
 
     .line 3
     .line 4
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     .line 5
     .line 6
@@ -141,34 +141,34 @@
 
     .line 14
     iput-boolean v0, p0, Lorg/conscrypt/OpenSSLMessageDigestJDK;->digestInitializedInContext:Z
-    :try_end_f
-    .catchall {:try_start_1 .. :try_end_f} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 15
     .line 16
-    goto :goto_12
+    goto :goto_0
 
     .line 17
-    :catchall_10
+    :catchall_0
     move-exception v0
 
     .line 18
-    goto :goto_14
+    goto :goto_1
 
     .line 19
-    :cond_12
-    :goto_12
+    :cond_0
+    :goto_0
     monitor-exit p0
 
     .line 20
     return-void
 
     .line 21
-    :goto_14
-    :try_start_14
+    :goto_1
+    :try_start_1
     monitor-exit p0
-    :try_end_15
-    .catchall {:try_start_14 .. :try_end_15} :catchall_10
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 22
     throw v0
@@ -177,7 +177,7 @@
 
 # virtual methods
 .method public clone()Ljava/lang/Object;
-    .registers 7
+    .locals 6
 
     .line 1
     new-instance v4, Lorg/conscrypt/NativeRef$EVP_MD_CTX;
@@ -201,7 +201,7 @@
 
     .line 11
     .line 12
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 13
     .line 14
@@ -214,7 +214,7 @@
     .line 17
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     new-instance v0, Lorg/conscrypt/OpenSSLMessageDigestJDK;
 
     .line 20
@@ -240,13 +240,13 @@
 .end method
 
 .method public declared-synchronized engineDigest()[B
-    .registers 4
+    .locals 3
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     invoke-direct {p0}, Lorg/conscrypt/OpenSSLMessageDigestJDK;->ensureDigestInitializedInContext()V
 
     .line 3
@@ -273,8 +273,8 @@
     .line 14
     .line 15
     iput-boolean v2, p0, Lorg/conscrypt/OpenSSLMessageDigestJDK;->digestInitializedInContext:Z
-    :try_end_10
-    .catchall {:try_start_1 .. :try_end_10} :catchall_12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 16
     .line 17
@@ -284,21 +284,21 @@
     return-object v0
 
     .line 19
-    :catchall_12
+    :catchall_0
     move-exception v0
 
     .line 20
-    :try_start_13
+    :try_start_1
     monitor-exit p0
-    :try_end_14
-    .catchall {:try_start_13 .. :try_end_14} :catchall_12
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 21
     throw v0
 .end method
 
 .method public engineGetDigestLength()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/OpenSSLMessageDigestJDK;->size:I
@@ -309,13 +309,13 @@
 .end method
 
 .method public declared-synchronized engineReset()V
-    .registers 2
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Lorg/conscrypt/OpenSSLMessageDigestJDK;->ctx:Lorg/conscrypt/NativeRef$EVP_MD_CTX;
 
     .line 3
@@ -329,8 +329,8 @@
 
     .line 8
     iput-boolean v0, p0, Lorg/conscrypt/OpenSSLMessageDigestJDK;->digestInitializedInContext:Z
-    :try_end_9
-    .catchall {:try_start_1 .. :try_end_9} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 9
     .line 10
@@ -340,26 +340,26 @@
     return-void
 
     .line 12
-    :catchall_b
+    :catchall_0
     move-exception v0
 
     .line 13
-    :try_start_c
+    :try_start_1
     monitor-exit p0
-    :try_end_d
-    .catchall {:try_start_c .. :try_end_d} :catchall_b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 14
     throw v0
 .end method
 
 .method public declared-synchronized engineUpdate(B)V
-    .registers 4
+    .locals 2
 
     monitor-enter p0
 
     .line 87
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Lorg/conscrypt/OpenSSLMessageDigestJDK;->singleByte:[B
 
     const/4 v1, 0x0
@@ -370,44 +370,44 @@
 
     .line 88
     invoke-virtual {p0, v0, v1, p1}, Lorg/conscrypt/OpenSSLMessageDigestJDK;->engineUpdate([BII)V
-    :try_end_a
-    .catchall {:try_start_1 .. :try_end_a} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 89
     monitor-exit p0
 
     return-void
 
-    :catchall_c
+    :catchall_0
     move-exception p1
 
-    :try_start_d
+    :try_start_1
     monitor-exit p0
-    :try_end_e
-    .catchall {:try_start_d .. :try_end_e} :catchall_c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method
 
 .method public declared-synchronized engineUpdate(Ljava/nio/ByteBuffer;)V
-    .registers 7
+    .locals 5
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     invoke-virtual {p1}, Ljava/nio/Buffer;->hasRemaining()Z
 
     .line 3
     .line 4
     .line 5
     move-result v0
-    :try_end_5
-    .catchall {:try_start_1 .. :try_end_5} :catchall_14
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 6
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     .line 7
     .line 8
@@ -417,8 +417,8 @@
     return-void
 
     .line 10
-    :cond_9
-    :try_start_9
+    :cond_0
+    :try_start_1
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->isDirect()Z
 
     .line 11
@@ -427,13 +427,13 @@
     move-result v0
 
     .line 14
-    if-nez v0, :cond_16
+    if-nez v0, :cond_1
 
     .line 15
     .line 16
     invoke-super {p0, p1}, Ljava/security/MessageDigestSpi;->engineUpdate(Ljava/nio/ByteBuffer;)V
-    :try_end_12
-    .catchall {:try_start_9 .. :try_end_12} :catchall_14
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 17
     .line 18
@@ -444,15 +444,15 @@
     return-void
 
     .line 21
-    :catchall_14
+    :catchall_0
     move-exception p1
 
     .line 22
-    goto :goto_51
+    goto :goto_0
 
     .line 23
-    :cond_16
-    :try_start_16
+    :cond_1
+    :try_start_2
     invoke-static {p1}, Lorg/conscrypt/NativeCrypto;->getDirectBufferAddress(Ljava/nio/Buffer;)J
 
     .line 24
@@ -469,13 +469,13 @@
 
     .line 30
     .line 31
-    if-nez v4, :cond_25
+    if-nez v4, :cond_2
 
     .line 32
     .line 33
     invoke-super {p0, p1}, Ljava/security/MessageDigestSpi;->engineUpdate(Ljava/nio/ByteBuffer;)V
-    :try_end_23
-    .catchall {:try_start_16 .. :try_end_23} :catchall_14
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 34
     .line 35
@@ -486,8 +486,8 @@
     return-void
 
     .line 38
-    :cond_25
-    :try_start_25
+    :cond_2
+    :try_start_3
     invoke-virtual {p1}, Ljava/nio/Buffer;->position()I
 
     .line 39
@@ -496,7 +496,7 @@
     move-result v2
 
     .line 42
-    if-ltz v2, :cond_49
+    if-ltz v2, :cond_4
 
     .line 43
     .line 44
@@ -514,7 +514,7 @@
     move-result v3
 
     .line 50
-    if-ltz v3, :cond_41
+    if-ltz v3, :cond_3
 
     .line 51
     .line 52
@@ -536,8 +536,8 @@
 
     .line 61
     invoke-virtual {p1, v2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
-    :try_end_3f
-    .catchall {:try_start_25 .. :try_end_3f} :catchall_14
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 62
     .line 63
@@ -548,8 +548,8 @@
     return-void
 
     .line 66
-    :cond_41
-    :try_start_41
+    :cond_3
+    :try_start_4
     new-instance p1, Ljava/lang/RuntimeException;
 
     .line 67
@@ -566,7 +566,7 @@
     throw p1
 
     .line 74
-    :cond_49
+    :cond_4
     new-instance p1, Ljava/lang/RuntimeException;
 
     .line 75
@@ -583,43 +583,43 @@
     throw p1
 
     .line 82
-    :goto_51
+    :goto_0
     monitor-exit p0
-    :try_end_52
-    .catchall {:try_start_41 .. :try_end_52} :catchall_14
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 83
     throw p1
 .end method
 
 .method public declared-synchronized engineUpdate([BII)V
-    .registers 5
+    .locals 1
 
     monitor-enter p0
 
     .line 84
-    :try_start_1
+    :try_start_0
     invoke-direct {p0}, Lorg/conscrypt/OpenSSLMessageDigestJDK;->ensureDigestInitializedInContext()V
 
     .line 85
     iget-object v0, p0, Lorg/conscrypt/OpenSSLMessageDigestJDK;->ctx:Lorg/conscrypt/NativeRef$EVP_MD_CTX;
 
     invoke-static {v0, p1, p2, p3}, Lorg/conscrypt/NativeCrypto;->EVP_DigestUpdate(Lorg/conscrypt/NativeRef$EVP_MD_CTX;[BII)V
-    :try_end_9
-    .catchall {:try_start_1 .. :try_end_9} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 86
     monitor-exit p0
 
     return-void
 
-    :catchall_b
+    :catchall_0
     move-exception p1
 
-    :try_start_c
+    :try_start_1
     monitor-exit p0
-    :try_end_d
-    .catchall {:try_start_c .. :try_end_d} :catchall_b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method

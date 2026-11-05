@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(I[Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/k42;-><init>()V
@@ -33,14 +33,14 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     instance-of v0, p1, Llibs/yn2;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
@@ -56,7 +56,7 @@
 
     .line 10
     .line 11
-    if-ne v0, v1, :cond_1c
+    if-ne v0, v1, :cond_1
 
     .line 12
     .line 13
@@ -68,11 +68,11 @@
 
     .line 16
     .line 17
-    if-eq v0, p1, :cond_1a
+    if-eq v0, p1, :cond_0
 
     .line 18
     .line 19
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_1
 
     .line 20
     .line 21
@@ -84,18 +84,18 @@
     move-result p1
 
     .line 25
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_1
 
     .line 26
     .line 27
-    :cond_1a
+    :cond_0
     const/4 p1, 0x1
 
     .line 28
     return p1
 
     .line 29
-    :cond_1c
+    :cond_1
     const/4 p1, 0x0
 
     .line 30
@@ -103,7 +103,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/yn2;->a:I
@@ -118,17 +118,17 @@
 
     .line 6
     .line 7
-    if-nez v1, :cond_a
+    if-nez v1, :cond_0
 
     .line 8
     .line 9
     const/4 v1, 0x0
 
     .line 10
-    goto :goto_e
+    goto :goto_0
 
     .line 11
-    :cond_a
+    :cond_0
     invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
     .line 12
@@ -137,7 +137,7 @@
     move-result v1
 
     .line 15
-    :goto_e
+    :goto_0
     add-int/2addr v0, v1
 
     .line 16
@@ -145,7 +145,7 @@
 .end method
 
 .method public final s()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -160,7 +160,7 @@
     const/4 v1, 0x0
 
     .line 7
-    :goto_6
+    :goto_0
     iget-object v2, p0, Llibs/yn2;->b:[Ljava/lang/String;
 
     .line 8
@@ -168,7 +168,7 @@
     array-length v3, v2
 
     .line 10
-    if-ge v1, v3, :cond_1d
+    if-ge v1, v3, :cond_1
 
     .line 11
     .line 12
@@ -188,7 +188,7 @@
 
     .line 19
     .line 20
-    if-eq v1, v2, :cond_1a
+    if-eq v1, v2, :cond_0
 
     .line 21
     .line 22
@@ -201,15 +201,15 @@
     .line 25
     .line 26
     .line 27
-    :cond_1a
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
     .line 28
     .line 29
-    goto :goto_6
+    goto :goto_0
 
     .line 30
-    :cond_1d
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 31
@@ -222,7 +222,7 @@
 .end method
 
 .method public final t()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/yn2;->a:I
@@ -233,7 +233,7 @@
 
     .line 4
     .line 5
-    if-ltz v0, :cond_c
+    if-ltz v0, :cond_0
 
     .line 6
     .line 7
@@ -241,7 +241,7 @@
 
     .line 8
     .line 9
-    if-ge v0, v1, :cond_c
+    if-ge v0, v1, :cond_0
 
     .line 10
     .line 11
@@ -251,7 +251,7 @@
     return v0
 
     .line 13
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
     .line 14
@@ -259,7 +259,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 7
+    .locals 6
 
     .line 1
     iget v0, p0, Llibs/yn2;->a:I
@@ -311,7 +311,7 @@
     move-result v4
 
     .line 24
-    if-nez v4, :cond_1c
+    if-nez v4, :cond_0
 
     .line 25
     .line 26
@@ -319,10 +319,10 @@
 
     .line 27
     .line 28
-    goto :goto_22
+    goto :goto_0
 
     .line 29
-    :cond_1c
+    :cond_0
     const-string v4, ";"
 
     .line 30
@@ -335,7 +335,7 @@
     move-result-object v3
 
     .line 35
-    :goto_22
+    :goto_0
     new-instance v4, Ljava/lang/StringBuilder;
 
     .line 36
@@ -366,11 +366,11 @@
     .line 49
     .line 50
     .line 51
-    :goto_32
+    :goto_1
     array-length v5, v3
 
     .line 52
-    if-ge v2, v5, :cond_50
+    if-ge v2, v5, :cond_2
 
     .line 53
     .line 54
@@ -407,7 +407,7 @@
     sub-int/2addr v5, v0
 
     .line 71
-    if-eq v2, v5, :cond_4d
+    if-eq v2, v5, :cond_1
 
     .line 72
     .line 73
@@ -420,15 +420,15 @@
     .line 76
     .line 77
     .line 78
-    :cond_4d
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
     .line 79
     .line 80
-    goto :goto_32
+    goto :goto_1
 
     .line 81
-    :cond_50
+    :cond_2
     const-string v0, "]"
 
     .line 82
@@ -450,7 +450,7 @@
 .end method
 
 .method public final u()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -500,7 +500,7 @@
     array-length v3, v2
 
     .line 26
-    if-lez v3, :cond_32
+    if-lez v3, :cond_0
 
     .line 27
     .line 28
@@ -519,11 +519,11 @@
     const/4 v3, 0x1
 
     .line 35
-    :goto_22
+    :goto_0
     array-length v4, v2
 
     .line 36
-    if-ge v3, v4, :cond_32
+    if-ge v3, v4, :cond_0
 
     .line 37
     .line 38
@@ -549,10 +549,10 @@
 
     .line 49
     .line 50
-    goto :goto_22
+    goto :goto_0
 
     .line 51
-    :cond_32
+    :cond_0
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 52

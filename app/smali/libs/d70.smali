@@ -20,7 +20,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/k70;Landroid/app/Activity;ZLjava/util/concurrent/atomic/AtomicBoolean;Z)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public final f(Llibs/t4;)V
-    .registers 8
+    .locals 6
 
     .line 1
     const/4 v4, 0x0

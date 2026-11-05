@@ -21,7 +21,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/4 v0, 0x2
@@ -31,7 +31,7 @@
 
     .line 3
     .line 4
-    fill-array-data v0, :array_12
+    fill-array-data v0, :array_0
 
     .line 5
     .line 6
@@ -47,7 +47,7 @@
 
     .line 11
     .line 12
-    fill-array-data v0, :array_18
+    fill-array-data v0, :array_1
 
     .line 13
     .line 14
@@ -62,7 +62,7 @@
     nop
 
     .line 19
-    :array_12
+    :array_0
     .array-data 1
         0x0t
         0x0t
@@ -76,7 +76,7 @@
     nop
 
     .line 25
-    :array_18
+    :array_1
     .array-data 1
         0x0t
         0x0t
@@ -86,7 +86,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     const/16 v0, 0x100
 
@@ -105,7 +105,7 @@
 .end method
 
 .method public constructor <init>(Z[B)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -132,14 +132,14 @@
 
     .line 12
     .line 13
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
     .line 14
     .line 15
     array-length v0, p2
 
     .line 16
-    :cond_f
+    :cond_0
     iput v0, p0, Llibs/rw2;->d:I
 
     .line 17
@@ -148,7 +148,7 @@
 .end method
 
 .method public synthetic constructor <init>([B)V
-    .registers 3
+    .locals 1
 
     .line 20
     const/4 v0, 0x1
@@ -159,14 +159,14 @@
 .end method
 
 .method public static d(I)I
-    .registers 3
+    .locals 2
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    :goto_1
-    if-ge v0, p0, :cond_15
+    :goto_0
+    if-ge v0, p0, :cond_1
 
     .line 3
     .line 4
@@ -174,14 +174,14 @@
 
     .line 5
     .line 6
-    if-lez v0, :cond_8
+    if-lez v0, :cond_0
 
     .line 7
     .line 8
-    goto :goto_1
+    goto :goto_0
 
     .line 9
-    :cond_8
+    :cond_0
     const-string v0, "Cannot get next power of 2; "
 
     .line 10
@@ -209,14 +209,14 @@
     return p0
 
     .line 22
-    :cond_15
+    :cond_1
     return v0
 .end method
 
 
 # virtual methods
 .method public final a()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/rw2;->d:I
@@ -234,7 +234,7 @@
 .end method
 
 .method public final b(I)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/rw2;->a:[B
@@ -251,7 +251,7 @@
     sub-int/2addr v0, v1
 
     .line 7
-    if-ge v0, p1, :cond_18
+    if-ge v0, p1, :cond_0
 
     .line 8
     .line 9
@@ -289,12 +289,12 @@
 
     .line 24
     .line 25
-    :cond_18
+    :cond_0
     return-void
 .end method
 
 .method public final c()[B
-    .registers 6
+    .locals 5
 
     .line 1
     invoke-virtual {p0}, Llibs/rw2;->a()I
@@ -308,7 +308,7 @@
     const/4 v1, 0x0
 
     .line 6
-    if-lez v0, :cond_11
+    if-lez v0, :cond_0
 
     .line 7
     .line 8
@@ -332,7 +332,7 @@
     return-object v2
 
     .line 18
-    :cond_11
+    :cond_0
     new-array v0, v1, [B
 
     .line 19
@@ -341,7 +341,7 @@
 .end method
 
 .method public final e(B)V
-    .registers 5
+    .locals 3
 
     .line 1
     const/4 v0, 0x1
@@ -376,7 +376,7 @@
 .end method
 
 .method public final f(J)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/rw2;->b:Llibs/oj0;
@@ -392,7 +392,7 @@
 .end method
 
 .method public final g(Ljava/lang/String;Ljava/nio/charset/Charset;)V
-    .registers 8
+    .locals 5
 
     .line 1
     invoke-virtual {p2}, Ljava/nio/charset/Charset;->name()Ljava/lang/String;
@@ -425,15 +425,15 @@
     const/4 v4, -0x1
 
     .line 15
-    sparse-switch v1, :sswitch_data_74
+    sparse-switch v1, :sswitch_data_0
 
     .line 16
     .line 17
     .line 18
-    goto :goto_3d
+    goto :goto_0
 
     .line 19
-    :sswitch_12
+    :sswitch_0
     const-string v1, "UTF-16LE"
 
     .line 20
@@ -446,21 +446,21 @@
     move-result v0
 
     .line 25
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_0
 
     .line 26
     .line 27
-    goto :goto_3d
+    goto :goto_0
 
     .line 28
-    :cond_1b
+    :cond_0
     const/4 v4, 0x3
 
     .line 29
-    goto :goto_3d
+    goto :goto_0
 
     .line 30
-    :sswitch_1d
+    :sswitch_1
     const-string v1, "UTF-16BE"
 
     .line 31
@@ -473,21 +473,21 @@
     move-result v0
 
     .line 36
-    if-nez v0, :cond_26
+    if-nez v0, :cond_1
 
     .line 37
     .line 38
-    goto :goto_3d
+    goto :goto_0
 
     .line 39
-    :cond_26
+    :cond_1
     const/4 v4, 0x2
 
     .line 40
-    goto :goto_3d
+    goto :goto_0
 
     .line 41
-    :sswitch_28
+    :sswitch_2
     const-string v1, "UTF-8"
 
     .line 42
@@ -500,21 +500,21 @@
     move-result v0
 
     .line 47
-    if-nez v0, :cond_31
+    if-nez v0, :cond_2
 
     .line 48
     .line 49
-    goto :goto_3d
+    goto :goto_0
 
     .line 50
-    :cond_31
+    :cond_2
     const/4 v4, 0x1
 
     .line 51
-    goto :goto_3d
+    goto :goto_0
 
     .line 52
-    :sswitch_33
+    :sswitch_3
     const-string v1, "UTF-16"
 
     .line 53
@@ -527,23 +527,23 @@
     move-result v0
 
     .line 58
-    if-nez v0, :cond_3c
+    if-nez v0, :cond_3
 
     .line 59
     .line 60
-    goto :goto_3d
+    goto :goto_0
 
     .line 61
-    :cond_3c
+    :cond_3
     const/4 v4, 0x0
 
     .line 62
-    :goto_3d
+    :goto_0
     sget-object v0, Llibs/oj0;->b:[B
 
     .line 63
     .line 64
-    packed-switch v4, :pswitch_data_86
+    packed-switch v4, :pswitch_data_0
 
     .line 65
     .line 66
@@ -568,7 +568,7 @@
     throw p1
 
     .line 77
-    :pswitch_4c
+    :pswitch_0
     sget-object p2, Llibs/oj0;->c:Llibs/oj0;
 
     .line 78
@@ -586,7 +586,7 @@
     return-void
 
     .line 86
-    :pswitch_55
+    :pswitch_1
     sget-object p2, Llibs/oj0;->d:Llibs/oj0;
 
     .line 87
@@ -604,7 +604,7 @@
     return-void
 
     .line 95
-    :pswitch_5e
+    :pswitch_2
     invoke-virtual {p1, p2}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
     .line 96
@@ -629,7 +629,7 @@
     return-void
 
     .line 107
-    :pswitch_6a
+    :pswitch_3
     iget-object p2, p0, Llibs/rw2;->b:Llibs/oj0;
 
     .line 108
@@ -650,12 +650,12 @@
     nop
 
     .line 117
-    :sswitch_data_74
+    :sswitch_data_0
     .sparse-switch
-        -0x6a33dbd5 -> :sswitch_33
-        0x4d50972 -> :sswitch_28
-        0x5353cdae -> :sswitch_1d
-        0x5353cee4 -> :sswitch_12
+        -0x6a33dbd5 -> :sswitch_3
+        0x4d50972 -> :sswitch_2
+        0x5353cdae -> :sswitch_1
+        0x5353cee4 -> :sswitch_0
     .end sparse-switch
 
     .line 118
@@ -676,17 +676,17 @@
     .line 133
     .line 134
     .line 135
-    :pswitch_data_86
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_6a
-        :pswitch_5e
-        :pswitch_55
-        :pswitch_4c
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final h(I[B)V
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-virtual {p0, p1}, Llibs/rw2;->b(I)V
@@ -725,7 +725,7 @@
 .end method
 
 .method public i(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     new-array v0, p1, [B
@@ -749,7 +749,7 @@
 .end method
 
 .method public j()V
-    .registers 3
+    .locals 2
 
     .line 1
     sget-object v0, Llibs/rw2;->e:[B
@@ -768,7 +768,7 @@
 .end method
 
 .method public k()V
-    .registers 3
+    .locals 2
 
     .line 1
     sget-object v0, Llibs/rw2;->f:[B
@@ -787,7 +787,7 @@
 .end method
 
 .method public final l(Ljava/lang/String;Ljava/nio/charset/Charset;)V
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-virtual {p2}, Ljava/nio/charset/Charset;->name()Ljava/lang/String;
@@ -814,15 +814,15 @@
     const/4 v2, -0x1
 
     .line 13
-    sparse-switch v1, :sswitch_data_64
+    sparse-switch v1, :sswitch_data_0
 
     .line 14
     .line 15
     .line 16
-    goto :goto_3b
+    goto :goto_0
 
     .line 17
-    :sswitch_10
+    :sswitch_0
     const-string v1, "UTF-16LE"
 
     .line 18
@@ -835,21 +835,21 @@
     move-result v0
 
     .line 23
-    if-nez v0, :cond_19
+    if-nez v0, :cond_0
 
     .line 24
     .line 25
-    goto :goto_3b
+    goto :goto_0
 
     .line 26
-    :cond_19
+    :cond_0
     const/4 v2, 0x3
 
     .line 27
-    goto :goto_3b
+    goto :goto_0
 
     .line 28
-    :sswitch_1b
+    :sswitch_1
     const-string v1, "UTF-16BE"
 
     .line 29
@@ -862,21 +862,21 @@
     move-result v0
 
     .line 34
-    if-nez v0, :cond_24
+    if-nez v0, :cond_1
 
     .line 35
     .line 36
-    goto :goto_3b
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_1
     const/4 v2, 0x2
 
     .line 38
-    goto :goto_3b
+    goto :goto_0
 
     .line 39
-    :sswitch_26
+    :sswitch_2
     const-string v1, "UTF-8"
 
     .line 40
@@ -889,21 +889,21 @@
     move-result v0
 
     .line 45
-    if-nez v0, :cond_2f
+    if-nez v0, :cond_2
 
     .line 46
     .line 47
-    goto :goto_3b
+    goto :goto_0
 
     .line 48
-    :cond_2f
+    :cond_2
     const/4 v2, 0x1
 
     .line 49
-    goto :goto_3b
+    goto :goto_0
 
     .line 50
-    :sswitch_31
+    :sswitch_3
     const-string v1, "UTF-16"
 
     .line 51
@@ -916,19 +916,19 @@
     move-result v0
 
     .line 56
-    if-nez v0, :cond_3a
+    if-nez v0, :cond_3
 
     .line 57
     .line 58
-    goto :goto_3b
+    goto :goto_0
 
     .line 59
-    :cond_3a
+    :cond_3
     const/4 v2, 0x0
 
     .line 60
-    :goto_3b
-    packed-switch v2, :pswitch_data_76
+    :goto_0
+    packed-switch v2, :pswitch_data_0
 
     .line 61
     .line 62
@@ -953,7 +953,7 @@
     throw p1
 
     .line 73
-    :pswitch_48
+    :pswitch_0
     sget-object p2, Llibs/oj0;->c:Llibs/oj0;
 
     .line 74
@@ -966,7 +966,7 @@
     return-void
 
     .line 79
-    :pswitch_4e
+    :pswitch_1
     sget-object p2, Llibs/oj0;->d:Llibs/oj0;
 
     .line 80
@@ -979,7 +979,7 @@
     return-void
 
     .line 85
-    :pswitch_54
+    :pswitch_2
     invoke-virtual {p1, p2}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
     .line 86
@@ -999,7 +999,7 @@
     return-void
 
     .line 94
-    :pswitch_5d
+    :pswitch_3
     iget-object p2, p0, Llibs/rw2;->b:Llibs/oj0;
 
     .line 95
@@ -1015,12 +1015,12 @@
     nop
 
     .line 101
-    :sswitch_data_64
+    :sswitch_data_0
     .sparse-switch
-        -0x6a33dbd5 -> :sswitch_31
-        0x4d50972 -> :sswitch_26
-        0x5353cdae -> :sswitch_1b
-        0x5353cee4 -> :sswitch_10
+        -0x6a33dbd5 -> :sswitch_3
+        0x4d50972 -> :sswitch_2
+        0x5353cdae -> :sswitch_1
+        0x5353cee4 -> :sswitch_0
     .end sparse-switch
 
     .line 102
@@ -1041,17 +1041,17 @@
     .line 117
     .line 118
     .line 119
-    :pswitch_data_76
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_5d
-        :pswitch_54
-        :pswitch_4e
-        :pswitch_48
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final m(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/rw2;->b:Llibs/oj0;
@@ -1067,7 +1067,7 @@
 .end method
 
 .method public final n(J)V
-    .registers 8
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/rw2;->b:Llibs/oj0;
@@ -1087,7 +1087,7 @@
 
     .line 9
     .line 10
-    if-ltz v2, :cond_3a
+    if-ltz v2, :cond_0
 
     .line 11
     .line 12
@@ -1102,7 +1102,7 @@
 
     .line 18
     .line 19
-    if-gtz v2, :cond_3a
+    if-gtz v2, :cond_0
 
     .line 20
     .line 21
@@ -1196,7 +1196,7 @@
     return-void
 
     .line 59
-    :cond_3a
+    :cond_0
     const-string v0, "Invalid uint32 value: "
 
     .line 60
@@ -1218,7 +1218,7 @@
 .end method
 
 .method public final p(J)V
-    .registers 7
+    .locals 4
 
     .line 1
     const-wide/16 v0, 0x0
@@ -1233,7 +1233,7 @@
 
     .line 6
     .line 7
-    if-ltz v3, :cond_c
+    if-ltz v3, :cond_0
 
     .line 8
     .line 9
@@ -1245,7 +1245,7 @@
     return-void
 
     .line 13
-    :cond_c
+    :cond_0
     invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 14
@@ -1272,7 +1272,7 @@
 .end method
 
 .method public final q()B
-    .registers 4
+    .locals 3
 
     .line 1
     const/4 v0, 0x1
@@ -1286,7 +1286,7 @@
     move-result v1
 
     .line 6
-    if-lt v1, v0, :cond_12
+    if-lt v1, v0, :cond_0
 
     .line 7
     .line 8
@@ -1313,7 +1313,7 @@
     return v0
 
     .line 19
-    :cond_12
+    :cond_0
     new-instance v0, Llibs/sj;
 
     .line 20
@@ -1331,7 +1331,7 @@
 .end method
 
 .method public final r(Ljava/nio/charset/Charset;)Ljava/lang/String;
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-virtual {p1}, Ljava/nio/charset/Charset;->name()Ljava/lang/String;
@@ -1358,15 +1358,15 @@
     const/4 v2, -0x1
 
     .line 13
-    sparse-switch v1, :sswitch_data_80
+    sparse-switch v1, :sswitch_data_0
 
     .line 14
     .line 15
     .line 16
-    goto :goto_3b
+    goto :goto_0
 
     .line 17
-    :sswitch_10
+    :sswitch_0
     const-string v1, "UTF-16LE"
 
     .line 18
@@ -1379,21 +1379,21 @@
     move-result v0
 
     .line 23
-    if-nez v0, :cond_19
+    if-nez v0, :cond_0
 
     .line 24
     .line 25
-    goto :goto_3b
+    goto :goto_0
 
     .line 26
-    :cond_19
+    :cond_0
     const/4 v2, 0x3
 
     .line 27
-    goto :goto_3b
+    goto :goto_0
 
     .line 28
-    :sswitch_1b
+    :sswitch_1
     const-string v1, "UTF-16BE"
 
     .line 29
@@ -1406,21 +1406,21 @@
     move-result v0
 
     .line 34
-    if-nez v0, :cond_24
+    if-nez v0, :cond_1
 
     .line 35
     .line 36
-    goto :goto_3b
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_1
     const/4 v2, 0x2
 
     .line 38
-    goto :goto_3b
+    goto :goto_0
 
     .line 39
-    :sswitch_26
+    :sswitch_2
     const-string v1, "UTF-8"
 
     .line 40
@@ -1433,21 +1433,21 @@
     move-result v0
 
     .line 45
-    if-nez v0, :cond_2f
+    if-nez v0, :cond_2
 
     .line 46
     .line 47
-    goto :goto_3b
+    goto :goto_0
 
     .line 48
-    :cond_2f
+    :cond_2
     const/4 v2, 0x1
 
     .line 49
-    goto :goto_3b
+    goto :goto_0
 
     .line 50
-    :sswitch_31
+    :sswitch_3
     const-string v1, "UTF-16"
 
     .line 51
@@ -1460,19 +1460,19 @@
     move-result v0
 
     .line 56
-    if-nez v0, :cond_3a
+    if-nez v0, :cond_3
 
     .line 57
     .line 58
-    goto :goto_3b
+    goto :goto_0
 
     .line 59
-    :cond_3a
+    :cond_3
     const/4 v2, 0x0
 
     .line 60
-    :goto_3b
-    packed-switch v2, :pswitch_data_92
+    :goto_0
+    packed-switch v2, :pswitch_data_0
 
     .line 61
     .line 62
@@ -1497,7 +1497,7 @@
     throw v0
 
     .line 73
-    :pswitch_48
+    :pswitch_0
     sget-object p1, Llibs/ks;->d:Ljava/nio/charset/Charset;
 
     .line 74
@@ -1513,7 +1513,7 @@
     return-object p1
 
     .line 80
-    :pswitch_4f
+    :pswitch_1
     sget-object p1, Llibs/ks;->c:Ljava/nio/charset/Charset;
 
     .line 81
@@ -1529,7 +1529,7 @@
     return-object p1
 
     .line 87
-    :pswitch_56
+    :pswitch_2
     new-instance v0, Ljava/io/ByteArrayOutputStream;
 
     .line 88
@@ -1547,8 +1547,8 @@
     move-result v1
 
     .line 96
-    :goto_5f
-    if-eqz v1, :cond_69
+    :goto_1
+    if-eqz v1, :cond_4
 
     .line 97
     .line 98
@@ -1565,10 +1565,10 @@
     move-result v1
 
     .line 105
-    goto :goto_5f
+    goto :goto_1
 
     .line 106
-    :cond_69
+    :cond_4
     new-instance v1, Ljava/lang/String;
 
     .line 107
@@ -1589,7 +1589,7 @@
     return-object v1
 
     .line 116
-    :pswitch_73
+    :pswitch_3
     iget-object p1, p0, Llibs/rw2;->b:Llibs/oj0;
 
     .line 117
@@ -1617,12 +1617,12 @@
     nop
 
     .line 129
-    :sswitch_data_80
+    :sswitch_data_0
     .sparse-switch
-        -0x6a33dbd5 -> :sswitch_31
-        0x4d50972 -> :sswitch_26
-        0x5353cdae -> :sswitch_1b
-        0x5353cee4 -> :sswitch_10
+        -0x6a33dbd5 -> :sswitch_3
+        0x4d50972 -> :sswitch_2
+        0x5353cdae -> :sswitch_1
+        0x5353cee4 -> :sswitch_0
     .end sparse-switch
 
     .line 130
@@ -1643,17 +1643,17 @@
     .line 145
     .line 146
     .line 147
-    :pswitch_data_92
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_73
-        :pswitch_56
-        :pswitch_4f
-        :pswitch_48
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final s(I[B)V
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Llibs/rw2;->a()I
@@ -1664,7 +1664,7 @@
     move-result v0
 
     .line 5
-    if-lt v0, p1, :cond_14
+    if-lt v0, p1, :cond_0
 
     .line 6
     .line 7
@@ -1698,7 +1698,7 @@
     return-void
 
     .line 21
-    :cond_14
+    :cond_0
     new-instance p1, Llibs/sj;
 
     .line 22
@@ -1716,7 +1716,7 @@
 .end method
 
 .method public final t(I)[B
-    .registers 3
+    .locals 1
 
     .line 1
     new-array v0, p1, [B
@@ -1732,7 +1732,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1807,7 +1807,7 @@
 .end method
 
 .method public final u(ILjava/nio/charset/Charset;)Ljava/lang/String;
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-virtual {p2}, Ljava/nio/charset/Charset;->name()Ljava/lang/String;
@@ -1834,15 +1834,15 @@
     const/4 v2, -0x1
 
     .line 13
-    sparse-switch v1, :sswitch_data_6e
+    sparse-switch v1, :sswitch_data_0
 
     .line 14
     .line 15
     .line 16
-    goto :goto_3b
+    goto :goto_0
 
     .line 17
-    :sswitch_10
+    :sswitch_0
     const-string v1, "UTF-16LE"
 
     .line 18
@@ -1855,21 +1855,21 @@
     move-result v0
 
     .line 23
-    if-nez v0, :cond_19
+    if-nez v0, :cond_0
 
     .line 24
     .line 25
-    goto :goto_3b
+    goto :goto_0
 
     .line 26
-    :cond_19
+    :cond_0
     const/4 v2, 0x3
 
     .line 27
-    goto :goto_3b
+    goto :goto_0
 
     .line 28
-    :sswitch_1b
+    :sswitch_1
     const-string v1, "UTF-16BE"
 
     .line 29
@@ -1882,21 +1882,21 @@
     move-result v0
 
     .line 34
-    if-nez v0, :cond_24
+    if-nez v0, :cond_1
 
     .line 35
     .line 36
-    goto :goto_3b
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_1
     const/4 v2, 0x2
 
     .line 38
-    goto :goto_3b
+    goto :goto_0
 
     .line 39
-    :sswitch_26
+    :sswitch_2
     const-string v1, "UTF-8"
 
     .line 40
@@ -1909,21 +1909,21 @@
     move-result v0
 
     .line 45
-    if-nez v0, :cond_2f
+    if-nez v0, :cond_2
 
     .line 46
     .line 47
-    goto :goto_3b
+    goto :goto_0
 
     .line 48
-    :cond_2f
+    :cond_2
     const/4 v2, 0x1
 
     .line 49
-    goto :goto_3b
+    goto :goto_0
 
     .line 50
-    :sswitch_31
+    :sswitch_3
     const-string v1, "UTF-16"
 
     .line 51
@@ -1936,19 +1936,19 @@
     move-result v0
 
     .line 56
-    if-nez v0, :cond_3a
+    if-nez v0, :cond_3
 
     .line 57
     .line 58
-    goto :goto_3b
+    goto :goto_0
 
     .line 59
-    :cond_3a
+    :cond_3
     const/4 v2, 0x0
 
     .line 60
-    :goto_3b
-    packed-switch v2, :pswitch_data_80
+    :goto_0
+    packed-switch v2, :pswitch_data_0
 
     .line 61
     .line 62
@@ -1973,7 +1973,7 @@
     throw p1
 
     .line 73
-    :pswitch_48
+    :pswitch_0
     sget-object p2, Llibs/ks;->d:Ljava/nio/charset/Charset;
 
     .line 74
@@ -1989,7 +1989,7 @@
     return-object p1
 
     .line 80
-    :pswitch_4f
+    :pswitch_1
     sget-object p2, Llibs/ks;->c:Ljava/nio/charset/Charset;
 
     .line 81
@@ -2005,7 +2005,7 @@
     return-object p1
 
     .line 87
-    :pswitch_56
+    :pswitch_2
     new-instance v0, Ljava/lang/String;
 
     .line 88
@@ -2027,7 +2027,7 @@
     return-object v0
 
     .line 98
-    :pswitch_61
+    :pswitch_3
     iget-object p2, p0, Llibs/rw2;->b:Llibs/oj0;
 
     .line 99
@@ -2055,12 +2055,12 @@
     nop
 
     .line 111
-    :sswitch_data_6e
+    :sswitch_data_0
     .sparse-switch
-        -0x6a33dbd5 -> :sswitch_31
-        0x4d50972 -> :sswitch_26
-        0x5353cdae -> :sswitch_1b
-        0x5353cee4 -> :sswitch_10
+        -0x6a33dbd5 -> :sswitch_3
+        0x4d50972 -> :sswitch_2
+        0x5353cdae -> :sswitch_1
+        0x5353cee4 -> :sswitch_0
     .end sparse-switch
 
     .line 112
@@ -2081,17 +2081,17 @@
     .line 127
     .line 128
     .line 129
-    :pswitch_data_80
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_61
-        :pswitch_56
-        :pswitch_4f
-        :pswitch_48
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final v()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/rw2;->b:Llibs/oj0;
@@ -2107,7 +2107,7 @@
 .end method
 
 .method public final w()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/rw2;->b:Llibs/oj0;
@@ -2129,7 +2129,7 @@
 .end method
 
 .method public final x(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/rw2;->a()I
@@ -2140,7 +2140,7 @@
     move-result v0
 
     .line 5
-    if-lt v0, p1, :cond_c
+    if-lt v0, p1, :cond_0
 
     .line 6
     .line 7
@@ -2158,7 +2158,7 @@
     return-void
 
     .line 13
-    :cond_c
+    :cond_0
     new-instance p1, Llibs/sj;
 
     .line 14

@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(IJLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/nio/charset/Charset;ZZZZZ)V
-    .registers 32
+    .locals 16
 
     .line 1
     invoke-direct/range {p0 .. p0}, Llibs/b02;-><init>()V
@@ -25,7 +25,7 @@
     move-result v1
 
     .line 10
-    if-nez v1, :cond_e
+    if-nez v1, :cond_0
 
     .line 11
     .line 12
@@ -33,10 +33,10 @@
 
     .line 13
     .line 14
-    goto :goto_11
+    goto :goto_0
 
     .line 15
-    :cond_e
+    :cond_0
     const-string v1, "846768031443-r39hv9el18u0h9h3g3j1r5jntsv0q105.apps.googleusercontent.com"
 
     .line 16
@@ -44,7 +44,7 @@
     move-object v5, v1
 
     .line 18
-    :goto_11
+    :goto_0
     invoke-static/range {p8 .. p8}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
 
     .line 19
@@ -53,7 +53,7 @@
     move-result v1
 
     .line 22
-    if-nez v1, :cond_1a
+    if-nez v1, :cond_1
 
     .line 23
     .line 24
@@ -61,10 +61,10 @@
 
     .line 25
     .line 26
-    goto :goto_1d
+    goto :goto_1
 
     .line 27
-    :cond_1a
+    :cond_1
     const-string v1, ""
 
     .line 28
@@ -72,7 +72,7 @@
     move-object v6, v1
 
     .line 30
-    :goto_1d
+    :goto_1
     invoke-static/range {p9 .. p9}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
 
     .line 31
@@ -81,7 +81,7 @@
     move-result v1
 
     .line 34
-    if-nez v1, :cond_3c
+    if-nez v1, :cond_2
 
     .line 35
     .line 36
@@ -133,10 +133,10 @@
 
     .line 59
     .line 60
-    goto :goto_55
+    goto :goto_2
 
     .line 61
-    :cond_3c
+    :cond_2
     const-string v1, "com.arqex.explorer:/oauth2redirect"
 
     .line 62
@@ -188,7 +188,7 @@
 
     .line 85
     .line 86
-    :goto_55
+    :goto_2
     invoke-direct/range {v0 .. v15}, Llibs/o2;-><init>(IJLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/nio/charset/Charset;ZZZZZ)V
 
     .line 87
@@ -211,7 +211,7 @@
 
 # virtual methods
 .method public final Err(Z)Z
-    .registers 2
+    .locals 0
 
     .line 1
     xor-int/lit8 p1, p1, 0x1
@@ -222,7 +222,7 @@
 .end method
 
 .method public final Link()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -232,7 +232,7 @@
 .end method
 
 .method public final Msg(Z)Z
-    .registers 2
+    .locals 0
 
     .line 1
     xor-int/lit8 p1, p1, 0x1
@@ -243,7 +243,7 @@
 .end method
 
 .method public final True()[Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     const/4 v0, 0x3
@@ -290,7 +290,7 @@
 .end method
 
 .method public final a()Ljava/util/LinkedHashMap;
-    .registers 4
+    .locals 3
 
     .line 1
     invoke-super {p0}, Llibs/b02;->a()Ljava/util/LinkedHashMap;
@@ -349,7 +349,7 @@
 .end method
 
 .method public final z()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1

@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-wide/16 v0, 0x1
@@ -50,14 +50,14 @@
 .end method
 
 .method public static a(Ljava/security/SecureRandom;Llibs/l40;)Ljava/math/BigInteger;
-    .registers 6
+    .locals 4
 
     .line 1
     iget v0, p1, Llibs/l40;->e:I
 
     .line 2
     .line 3
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
@@ -65,7 +65,7 @@
 
     .line 6
     .line 7
-    :cond_6
+    :cond_0
     new-instance p1, Ljava/math/BigInteger;
 
     .line 8
@@ -95,14 +95,14 @@
     move-result v2
 
     .line 22
-    if-lt v2, v1, :cond_6
+    if-lt v2, v1, :cond_0
 
     .line 23
     .line 24
     return-object p1
 
     .line 25
-    :cond_18
+    :cond_1
     iget v0, p1, Llibs/l40;->d:I
 
     .line 26
@@ -111,7 +111,7 @@
 
     .line 28
     .line 29
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_2
 
     .line 30
     .line 31
@@ -131,19 +131,19 @@
     move-result-object v0
 
     .line 39
-    goto :goto_28
+    goto :goto_0
 
     .line 40
-    :cond_27
+    :cond_2
     move-object v0, v1
 
     .line 41
-    :goto_28
+    :goto_0
     iget-object v2, p1, Llibs/l40;->c:Ljava/math/BigInteger;
 
     .line 42
     .line 43
-    if-nez v2, :cond_2e
+    if-nez v2, :cond_3
 
     .line 44
     .line 45
@@ -151,7 +151,7 @@
 
     .line 46
     .line 47
-    :cond_2e
+    :cond_3
     invoke-virtual {v2, v1}, Ljava/math/BigInteger;->subtract(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
     .line 48
@@ -172,7 +172,7 @@
 
     .line 56
     .line 57
-    :cond_38
+    :cond_4
     invoke-static {v0, p1, p0}, Llibs/ef;->c(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/security/SecureRandom;)Ljava/math/BigInteger;
 
     .line 58
@@ -189,7 +189,7 @@
     move-result v3
 
     .line 65
-    if-lt v3, v1, :cond_38
+    if-lt v3, v1, :cond_4
 
     .line 66
     .line 67

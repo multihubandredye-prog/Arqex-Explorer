@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/SQLiteEditorActivity;Landroid/content/Context;I)V
-    .registers 11
+    .locals 7
 
     .line 1
     iput-object p1, p0, Llibs/cy2;->Rho:Lcom/mixplorer/activities/SQLiteEditorActivity;
@@ -237,7 +237,7 @@
 
     .line 111
     .line 112
-    if-eqz v0, :cond_7f
+    if-eqz v0, :cond_0
 
     .line 113
     .line 114
@@ -245,7 +245,7 @@
 
     .line 115
     .line 116
-    if-eqz v0, :cond_7f
+    if-eqz v0, :cond_0
 
     .line 117
     .line 118
@@ -264,26 +264,26 @@
     array-length v1, p2
 
     .line 125
-    if-ne v0, v1, :cond_7f
+    if-ne v0, v1, :cond_0
 
     .line 126
     .line 127
-    goto :goto_80
+    goto :goto_0
 
     .line 128
-    :cond_7f
+    :cond_0
     const/4 p2, 0x0
 
     .line 129
-    :goto_80
+    :goto_0
     const/4 v0, 0x0
 
     .line 130
     const/4 v1, 0x0
 
     .line 131
-    :goto_82
-    if-ge v1, p3, :cond_ca
+    :goto_1
+    if-ge v1, p3, :cond_2
 
     .line 132
     .line 133
@@ -317,7 +317,7 @@
     .line 147
     .line 148
     .line 149
-    if-ne v2, v4, :cond_99
+    if-ne v2, v4, :cond_1
 
     .line 150
     .line 151
@@ -325,15 +325,15 @@
 
     .line 152
     .line 153
-    goto :goto_9b
+    goto :goto_2
 
     .line 154
-    :cond_99
+    :cond_1
     iget-object v2, p1, Lcom/mixplorer/activities/SQLiteEditorActivity;->lIl:Landroid/widget/LinearLayout$LayoutParams;
 
     .line 155
     .line 156
-    :goto_9b
+    :goto_2
     invoke-virtual {v3, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 157
@@ -422,9 +422,9 @@
 
     .line 201
     .line 202
-    goto :goto_82
+    goto :goto_1
 
     .line 203
-    :cond_ca
+    :cond_2
     return-void
 .end method

@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Param;)V
-    .registers 8
+    .locals 6
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -123,7 +123,7 @@
     const/4 v5, 0x3
 
     .line 52
-    if-le v4, v5, :cond_41
+    if-le v4, v5, :cond_0
 
     .line 53
     .line 54
@@ -151,23 +151,23 @@
 
     .line 65
     .line 66
-    :cond_41
-    if-eqz v2, :cond_48
+    :cond_0
+    if-eqz v2, :cond_1
 
     .line 67
     .line 68
-    if-eqz v1, :cond_48
+    if-eqz v1, :cond_1
 
     .line 69
     .line 70
-    if-eqz v3, :cond_48
+    if-eqz v3, :cond_1
 
     .line 71
     .line 72
     return-void
 
     .line 73
-    :cond_48
+    :cond_1
     const-string p1, "Not all mandatory fields set in CertificationRequestInfo generator."
 
     .line 74
@@ -183,7 +183,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Llibs/Init;
@@ -229,7 +229,7 @@
 
     .line 23
     .line 24
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_0
 
     .line 25
     .line 26
@@ -247,7 +247,7 @@
     .line 32
     .line 33
     .line 34
-    :cond_21
+    :cond_0
     new-instance v1, Llibs/p10;
 
     .line 35

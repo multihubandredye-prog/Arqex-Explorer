@@ -24,7 +24,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r31;Llibs/xt1;Landroid/graphics/Rect;Llibs/yt3;ZLlibs/xv1;)V
-    .registers 8
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -67,7 +67,7 @@
 .end method
 
 .method public synthetic constructor <init>(ZLandroid/app/Activity;Llibs/h23;Llibs/r90;Ljava/util/Iterator;Llibs/rp0;)V
-    .registers 8
+    .locals 1
 
     .line 20
     const/4 v0, 0x1
@@ -94,7 +94,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 14
+    .locals 13
 
     .line 1
     iget-byte v0, p0, Llibs/m11;->X:B
@@ -121,7 +121,7 @@
 
     .line 12
     .line 13
-    packed-switch v0, :pswitch_data_ae
+    packed-switch v0, :pswitch_data_0
 
     .line 14
     .line 15
@@ -154,7 +154,7 @@
 
     .line 29
     .line 30
-    if-nez v0, :cond_26
+    if-nez v0, :cond_0
 
     .line 31
     .line 32
@@ -168,14 +168,14 @@
     .line 36
     .line 37
     .line 38
-    goto :goto_62
+    goto :goto_4
 
     .line 39
-    :cond_26
+    :cond_0
     const/4 v5, 0x0
 
     .line 40
-    :try_start_27
+    :try_start_0
     iget-object v0, v4, Llibs/h23;->Hotel:Ljava/util/ArrayList;
 
     .line 41
@@ -191,8 +191,8 @@
     const/4 v7, 0x0
 
     .line 47
-    :goto_2e
-    if-ge v7, v4, :cond_3e
+    :goto_0
+    if-ge v7, v4, :cond_1
 
     .line 48
     .line 49
@@ -221,11 +221,11 @@
     .line 60
     .line 61
     .line 62
-    goto :goto_2e
+    goto :goto_0
 
     .line 63
-    :cond_3e
-    if-nez v2, :cond_46
+    :cond_1
+    if-nez v2, :cond_2
 
     .line 64
     .line 65
@@ -234,18 +234,18 @@
     .line 66
     .line 67
     .line 68
-    goto :goto_46
+    goto :goto_1
 
     .line 69
-    :catchall_44
+    :catchall_0
     move-exception v0
 
     .line 70
-    goto :goto_51
+    goto :goto_3
 
     .line 71
-    :cond_46
-    :goto_46
+    :cond_2
+    :goto_1
     invoke-virtual {v1}, Llibs/rp0;->Run()Z
 
     .line 72
@@ -255,23 +255,23 @@
 
     .line 75
     invoke-static {v1, v0}, Llibs/t43;->Bit(Llibs/rp0;Z)V
-    :try_end_4d
-    .catchall {:try_start_27 .. :try_end_4d} :catchall_44
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 76
     .line 77
     .line 78
-    :goto_4d
+    :goto_2
     invoke-virtual {v6}, Landroid/widget/BaseAdapter;->notifyDataSetChanged()V
 
     .line 79
     .line 80
     .line 81
-    goto :goto_62
+    goto :goto_4
 
     .line 82
-    :goto_51
-    :try_start_51
+    :goto_3
+    :try_start_1
     const-string v1, "Remnants"
 
     .line 83
@@ -300,20 +300,20 @@
     .line 94
     .line 95
     invoke-static {v1, v2, v3}, Llibs/vw1;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_61
-    .catchall {:try_start_51 .. :try_end_61} :catchall_63
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 96
     .line 97
     .line 98
-    goto :goto_4d
+    goto :goto_2
 
     .line 99
-    :goto_62
+    :goto_4
     return-void
 
     .line 100
-    :catchall_63
+    :catchall_1
     move-exception v0
 
     .line 101
@@ -325,7 +325,7 @@
     throw v0
 
     .line 105
-    :pswitch_68
+    :pswitch_0
     move-object v7, v5
 
     .line 106
@@ -378,14 +378,14 @@
     move-result v0
 
     .line 129
-    if-eqz v0, :cond_83
+    if-eqz v0, :cond_3
 
     .line 130
     .line 131
-    goto :goto_ad
+    goto :goto_5
 
     .line 132
-    :cond_83
+    :cond_3
     iget-object v0, v7, Llibs/r31;->d:Llibs/al;
 
     .line 133
@@ -418,7 +418,7 @@
     move-result v2
 
     .line 148
-    if-ne v1, v2, :cond_ad
+    if-ne v1, v2, :cond_4
 
     .line 149
     .line 150
@@ -468,13 +468,13 @@
     .line 172
     .line 173
     .line 174
-    :cond_ad
-    :goto_ad
+    :cond_4
+    :goto_5
     return-void
 
     .line 175
-    :pswitch_data_ae
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_68
+        :pswitch_0
     .end packed-switch
 .end method

@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/FileInputStream;Ljava/io/FileOutputStream;I)V
-    .registers 5
+    .locals 1
 
     .line 1
     const-string v0, "PFD_TRANSFER_THREAD"
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 8
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/ya2;->Z:[B
@@ -79,12 +79,12 @@
 
     .line 6
     .line 7
-    :cond_6
-    :goto_6
+    :cond_0
+    :goto_0
     const/4 v3, 0x0
 
     .line 8
-    :try_start_7
+    :try_start_0
     invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 9
@@ -104,33 +104,33 @@
     const/4 v5, -0x1
 
     .line 17
-    if-eq v4, v5, :cond_1a
+    if-eq v4, v5, :cond_1
 
     .line 18
     .line 19
-    if-lez v4, :cond_6
+    if-lez v4, :cond_0
 
     .line 20
     .line 21
     invoke-virtual {v1, v0, v3, v4}, Ljava/io/OutputStream;->write([BII)V
-    :try_end_17
-    .catchall {:try_start_7 .. :try_end_17} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 22
     .line 23
     .line 24
-    goto :goto_6
+    goto :goto_0
 
     .line 25
-    :catchall_18
+    :catchall_0
     move-exception v0
 
     .line 26
-    goto :goto_21
+    goto :goto_2
 
     .line 27
-    :cond_1a
-    :goto_1a
+    :cond_1
+    :goto_1
     invoke-static {v1}, Llibs/ji0;->k(Ljava/io/Closeable;)V
 
     .line 28
@@ -144,8 +144,8 @@
     return-void
 
     .line 34
-    :goto_21
-    :try_start_21
+    :goto_2
+    :try_start_1
     const-string v4, "PIPE"
 
     .line 35
@@ -174,16 +174,16 @@
     .line 46
     .line 47
     invoke-static {v4, v5, v6}, Llibs/vw1;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_31
-    .catchall {:try_start_21 .. :try_end_31} :catchall_32
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 48
     .line 49
     .line 50
-    goto :goto_1a
+    goto :goto_1
 
     .line 51
-    :catchall_32
+    :catchall_1
     move-exception v0
 
     .line 52
@@ -197,13 +197,13 @@
     .line 56
     .line 57
     .line 58
-    goto :goto_3b
+    goto :goto_4
 
     .line 59
-    :goto_3a
+    :goto_3
     throw v0
 
     .line 60
-    :goto_3b
-    goto :goto_3a
+    :goto_4
+    goto :goto_3
 .end method

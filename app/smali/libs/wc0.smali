@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(ZLjava/util/concurrent/atomic/AtomicReference;Llibs/zl0;Ljava/lang/String;)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final c([Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     iget-boolean p1, p0, Llibs/wc0;->X:Z
@@ -67,14 +67,14 @@
 
     .line 8
     .line 9
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_0
 
     .line 10
     .line 11
     const/4 p1, 0x0
 
     .line 12
-    :try_start_b
+    :try_start_0
     invoke-virtual {v1, v2, p1}, Llibs/zl0;->s(Ljava/lang/String;Lcom/mixplorer/ProgressListener;)Llibs/rp0;
 
     .line 13
@@ -88,10 +88,10 @@
     .line 17
     .line 18
     .line 19
-    goto :goto_1a
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     invoke-virtual {v1, v2}, Llibs/zl0;->u(Ljava/lang/String;)Llibs/rp0;
 
     .line 21
@@ -101,14 +101,14 @@
 
     .line 24
     invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
-    :try_end_1a
-    .catchall {:try_start_b .. :try_end_1a} :catchall_1a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 25
     .line 26
     .line 27
-    :catchall_1a
-    :goto_1a
+    :catchall_0
+    :goto_0
     const/4 p1, 0x0
 
     .line 28

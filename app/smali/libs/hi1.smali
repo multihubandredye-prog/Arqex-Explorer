@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -34,14 +34,14 @@
 
 # virtual methods
 .method public final onInit(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     .line 2
     .line 3
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_0
 
     .line 4
     .line 5
@@ -72,7 +72,7 @@
     return-void
 
     .line 18
-    :cond_11
+    :cond_0
     iget-object p1, p0, Llibs/hi1;->a:Ljava/lang/String;
 
     .line 19

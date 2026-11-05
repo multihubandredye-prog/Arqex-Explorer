@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/math/BigInteger;)V
-    .registers 2
+    .locals 0
 
     .line 7
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -21,7 +21,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/ArrayList;)V
-    .registers 2
+    .locals 0
 
     .line 9
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,7 +33,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/HashMap;)V
-    .registers 2
+    .locals 0
 
     .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
 .end method
 
 .method public constructor <init>([B)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -63,7 +63,7 @@
 
 # virtual methods
 .method public final a()Ljava/util/ArrayList;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/nb;->a:Ljava/lang/Object;
@@ -74,7 +74,7 @@
 
     .line 4
     .line 5
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_0
 
     .line 6
     .line 7
@@ -85,7 +85,7 @@
     return-object v0
 
     .line 10
-    :cond_9
+    :cond_0
     new-instance v0, Llibs/pb1;
 
     .line 11
@@ -103,7 +103,7 @@
 .end method
 
 .method public final b()Ljava/util/Map;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/nb;->a:Ljava/lang/Object;
@@ -114,7 +114,7 @@
 
     .line 4
     .line 5
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_0
 
     .line 6
     .line 7
@@ -125,7 +125,7 @@
     return-object v0
 
     .line 10
-    :cond_9
+    :cond_0
     new-instance v0, Llibs/pb1;
 
     .line 11
@@ -143,34 +143,34 @@
 .end method
 
 .method public final c()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     const-string v0, "UTF-8"
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     new-instance v1, Ljava/lang/String;
-    :try_end_4
-    .catch Ljava/lang/ClassCastException; {:try_start_2 .. :try_end_4} :catch_e
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_2 .. :try_end_4} :catch_c
+    :try_end_0
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 4
     .line 5
-    :try_start_4
+    :try_start_1
     iget-object v2, p0, Llibs/nb;->a:Ljava/lang/Object;
 
     .line 6
     .line 7
     check-cast v2, [B
-    :try_end_8
-    .catch Ljava/lang/ClassCastException; {:try_start_4 .. :try_end_8} :catch_10
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_4 .. :try_end_8} :catch_c
+    :try_end_1
+    .catch Ljava/lang/ClassCastException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 8
     .line 9
-    :try_start_8
+    :try_start_2
     invoke-direct {v1, v2, v0}, Ljava/lang/String;-><init>([BLjava/lang/String;)V
 
     .line 10
@@ -179,21 +179,21 @@
     return-object v1
 
     .line 13
-    :catch_c
+    :catch_0
     move-exception v0
 
     .line 14
-    goto :goto_1b
+    goto :goto_0
 
     .line 15
-    :catch_e
+    :catch_1
     move-exception v0
 
     .line 16
-    goto :goto_25
+    goto :goto_1
 
     .line 17
-    :catch_10
+    :catch_2
     move-exception v0
 
     .line 18
@@ -215,12 +215,12 @@
     .line 26
     .line 27
     throw v1
-    :try_end_1b
-    .catch Ljava/lang/ClassCastException; {:try_start_8 .. :try_end_1b} :catch_e
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_8 .. :try_end_1b} :catch_c
+    :try_end_2
+    .catch Ljava/lang/ClassCastException; {:try_start_2 .. :try_end_2} :catch_1
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 28
-    :goto_1b
+    :goto_0
     new-instance v1, Ljava/lang/InternalError;
 
     .line 29
@@ -241,7 +241,7 @@
     throw v1
 
     .line 38
-    :goto_25
+    :goto_1
     new-instance v1, Llibs/pb1;
 
     .line 39

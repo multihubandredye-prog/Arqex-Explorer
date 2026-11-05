@@ -29,7 +29,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/bn1;
@@ -61,7 +61,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/en1;-><init>()V
@@ -75,7 +75,7 @@
 
 # virtual methods
 .method public final Object(Llibs/rw2;)V
-    .registers 16
+    .locals 14
 
     .line 1
     sget-object v0, Llibs/ks;->b:Ljava/nio/charset/Charset;
@@ -190,7 +190,7 @@
     move-result v3
 
     .line 59
-    if-eqz v3, :cond_4c
+    if-eqz v3, :cond_0
 
     .line 60
     .line 61
@@ -223,16 +223,16 @@
 
     .line 75
     .line 76
-    goto :goto_4f
+    goto :goto_0
 
     .line 77
-    :cond_4c
+    :cond_0
     invoke-virtual {p1, v1}, Llibs/rw2;->x(I)V
 
     .line 78
     .line 79
     .line 80
-    :goto_4f
+    :goto_0
     iget-object v3, p0, Llibs/z12;->f:Ljava/util/EnumSet;
 
     .line 81
@@ -261,7 +261,7 @@
     const/4 v7, 0x0
 
     .line 92
-    if-eqz v3, :cond_a8
+    if-eqz v3, :cond_1
 
     .line 93
     .line 94
@@ -413,21 +413,21 @@
     .line 166
     .line 167
     .line 168
-    goto :goto_ab
+    goto :goto_1
 
     .line 169
-    :cond_a8
+    :cond_1
     invoke-virtual {p1, v1}, Llibs/rw2;->x(I)V
 
     .line 170
     .line 171
     .line 172
-    :goto_ab
+    :goto_1
     iget v3, p0, Llibs/z12;->d:I
 
     .line 173
     .line 174
-    if-lez v3, :cond_bc
+    if-lez v3, :cond_2
 
     .line 175
     .line 176
@@ -458,12 +458,12 @@
 
     .line 188
     .line 189
-    :cond_bc
+    :cond_2
     iget v3, p0, Llibs/z12;->i:I
 
     .line 190
     .line 191
-    if-lez v3, :cond_17d
+    if-lez v3, :cond_5
 
     .line 192
     .line 193
@@ -484,7 +484,7 @@
     .line 200
     .line 201
     .line 202
-    :goto_c9
+    :goto_2
     invoke-virtual {v0, p1}, Llibs/oj0;->c(Llibs/rw2;)I
 
     .line 203
@@ -512,7 +512,7 @@
 
     .line 214
     .line 215
-    if-eqz v9, :cond_174
+    if-eqz v9, :cond_4
 
     .line 216
     .line 217
@@ -524,7 +524,7 @@
     move-result v8
 
     .line 221
-    packed-switch v8, :pswitch_data_17e
+    packed-switch v8, :pswitch_data_0
 
     .line 222
     .line 223
@@ -541,7 +541,7 @@
     return-void
 
     .line 230
-    :pswitch_e5
+    :pswitch_0
     new-instance v8, Llibs/h9;
 
     .line 231
@@ -572,10 +572,10 @@
 
     .line 245
     .line 246
-    goto :goto_153
+    goto :goto_3
 
     .line 247
-    :pswitch_f6
+    :pswitch_1
     new-instance v8, Llibs/j9;
 
     .line 248
@@ -633,10 +633,10 @@
 
     .line 277
     .line 278
-    goto :goto_153
+    goto :goto_3
 
     .line 279
-    :pswitch_116
+    :pswitch_2
     new-instance v8, Llibs/l9;
 
     .line 280
@@ -663,10 +663,10 @@
 
     .line 292
     .line 293
-    goto :goto_153
+    goto :goto_3
 
     .line 294
-    :pswitch_125
+    :pswitch_3
     new-instance v8, Llibs/i9;
 
     .line 295
@@ -701,10 +701,10 @@
 
     .line 311
     .line 312
-    goto :goto_153
+    goto :goto_3
 
     .line 313
-    :pswitch_138
+    :pswitch_4
     new-instance v8, Llibs/k9;
 
     .line 314
@@ -741,10 +741,10 @@
 
     .line 330
     .line 331
-    goto :goto_153
+    goto :goto_3
 
     .line 332
-    :pswitch_14b
+    :pswitch_5
     new-instance v8, Llibs/h9;
 
     .line 333
@@ -759,7 +759,7 @@
     .line 338
     .line 339
     .line 340
-    :goto_153
+    :goto_3
     sget-object v9, Llibs/f9;->Y:Llibs/f9;
 
     .line 341
@@ -768,7 +768,7 @@
 
     .line 343
     .line 344
-    if-ne v10, v9, :cond_15c
+    if-ne v10, v9, :cond_3
 
     .line 345
     .line 346
@@ -779,7 +779,7 @@
     return-void
 
     .line 349
-    :cond_15c
+    :cond_3
     sget-object v9, Llibs/kk3;->b:Llibs/bn1;
 
     .line 350
@@ -822,11 +822,11 @@
     .line 369
     .line 370
     .line 371
-    goto/16 :goto_c9
+    goto/16 :goto_2
 
     .line 372
     .line 373
-    :cond_174
+    :cond_4
     const-string p1, "Encountered unknown AvId: "
 
     .line 374
@@ -844,28 +844,28 @@
     .line 380
     .line 381
     .line 382
-    :cond_17d
+    :cond_5
     return-void
 
     .line 383
-    :pswitch_data_17e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_14b
-        :pswitch_138
-        :pswitch_138
-        :pswitch_138
-        :pswitch_138
-        :pswitch_138
-        :pswitch_125
-        :pswitch_116
-        :pswitch_f6
-        :pswitch_138
-        :pswitch_e5
+        :pswitch_5
+        :pswitch_4
+        :pswitch_4
+        :pswitch_4
+        :pswitch_4
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_4
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

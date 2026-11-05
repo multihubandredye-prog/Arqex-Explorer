@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static varargs a(Ljava/lang/Object;[Llibs/tu1;)V
-    .registers 12
+    .locals 10
 
     .line 1
     const-class v0, Llibs/uu1;
@@ -15,7 +15,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     const-string v1, "mActions"
 
     .line 5
@@ -32,19 +32,19 @@
 
     .line 11
     .line 12
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_0
 
     .line 13
     .line 14
     invoke-interface {v1}, Ljava/util/List;->clear()V
-    :try_end_10
-    .catchall {:try_start_3 .. :try_end_10} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 15
     .line 16
     .line 17
-    :catchall_10
-    :cond_10
+    :catchall_0
+    :cond_0
     monitor-exit v0
 
     .line 18
@@ -57,8 +57,8 @@
     const/4 v2, 0x0
 
     .line 21
-    :goto_14
-    if-ge v2, v0, :cond_a8
+    :goto_0
+    if-ge v2, v0, :cond_5
 
     .line 22
     .line 23
@@ -73,22 +73,22 @@
     const/4 v5, 0x1
 
     .line 28
-    :try_start_1b
+    :try_start_1
     invoke-static {}, Llibs/t43;->Node()Z
 
     .line 29
     .line 30
     .line 31
     move-result v6
-    :try_end_1f
-    .catchall {:try_start_1b .. :try_end_1f} :catchall_63
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
     .line 32
-    if-eqz v6, :cond_65
+    if-eqz v6, :cond_1
 
     .line 33
     .line 34
-    :try_start_21
+    :try_start_2
     sget-object v6, Llibs/zt0;->g:Landroid/content/Context;
 
     .line 35
@@ -131,20 +131,20 @@
 
     .line 55
     invoke-virtual {v6, v7}, Landroid/graphics/drawable/Icon;->setTint(I)Landroid/graphics/drawable/Icon;
-    :try_end_39
-    .catchall {:try_start_21 .. :try_end_39} :catchall_3a
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 56
     .line 57
     .line 58
-    goto :goto_4f
+    goto :goto_1
 
     .line 59
-    :catchall_3a
+    :catchall_1
     move-exception v6
 
     .line 60
-    :try_start_3b
+    :try_start_3
     invoke-static {v6}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 61
@@ -185,7 +185,7 @@
 
     .line 79
     .line 80
-    :goto_4f
+    :goto_1
     move-object v7, p0
 
     .line 81
@@ -223,17 +223,17 @@
     .line 97
     .line 98
     .line 99
-    goto :goto_a4
+    goto :goto_4
 
     .line 100
-    :catchall_63
+    :catchall_2
     move-exception v3
 
     .line 101
-    goto :goto_97
+    goto :goto_3
 
     .line 102
-    :cond_65
+    :cond_1
     invoke-static {}, Llibs/t43;->w()I
 
     .line 103
@@ -246,22 +246,22 @@
 
     .line 107
     .line 108
-    if-lt v6, v7, :cond_6f
+    if-lt v6, v7, :cond_2
 
     .line 109
     .line 110
     const/4 v6, 0x1
 
     .line 111
-    goto :goto_70
+    goto :goto_2
 
     .line 112
-    :cond_6f
+    :cond_2
     const/4 v6, 0x0
 
     .line 113
-    :goto_70
-    if-eqz v6, :cond_84
+    :goto_2
+    if-eqz v6, :cond_3
 
     .line 114
     .line 115
@@ -298,10 +298,10 @@
     .line 130
     .line 131
     .line 132
-    goto :goto_a4
+    goto :goto_4
 
     .line 133
-    :cond_84
+    :cond_3
     invoke-static {}, Llibs/t43;->Intent()Z
 
     .line 134
@@ -310,7 +310,7 @@
     move-result v6
 
     .line 137
-    if-eqz v6, :cond_a4
+    if-eqz v6, :cond_4
 
     .line 138
     .line 139
@@ -334,16 +334,16 @@
     .line 147
     .line 148
     invoke-virtual {v6, v7, v8, v3}, Landroid/app/Notification$Builder;->addAction(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
-    :try_end_96
-    .catchall {:try_start_3b .. :try_end_96} :catchall_63
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
     .line 149
     .line 150
     .line 151
-    goto :goto_a4
+    goto :goto_4
 
     .line 152
-    :goto_97
+    :goto_3
     const-string v6, "ACTION"
 
     .line 153
@@ -369,29 +369,29 @@
     .line 163
     .line 164
     .line 165
-    :cond_a4
-    :goto_a4
+    :cond_4
+    :goto_4
     add-int/lit8 v2, v2, 0x1
 
     .line 166
     .line 167
-    goto/16 :goto_14
+    goto/16 :goto_0
 
     .line 168
     .line 169
-    :cond_a8
+    :cond_5
     return-void
 .end method
 
 .method public static b(Landroid/content/Context;Landroid/content/Intent;Ljava/lang/String;Ljava/lang/String;ZZIIZ)V
-    .registers 24
+    .locals 15
 
     .line 1
     move/from16 v14, p7
 
     .line 2
     .line 3
-    if-nez p1, :cond_15
+    if-nez p1, :cond_0
 
     .line 4
     .line 5
@@ -425,15 +425,15 @@
     .line 19
     .line 20
     .line 21
-    goto :goto_17
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     move-object/from16 v1, p1
 
     .line 23
     .line 24
-    :goto_17
+    :goto_0
     invoke-virtual {v1}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
     .line 25
@@ -446,7 +446,7 @@
 
     .line 29
     .line 30
-    if-eqz v2, :cond_3f
+    if-eqz v2, :cond_1
 
     .line 31
     .line 32
@@ -490,7 +490,7 @@
     move-result v2
 
     .line 52
-    if-eqz v2, :cond_3f
+    if-eqz v2, :cond_1
 
     .line 53
     .line 54
@@ -510,14 +510,14 @@
     move-result-object v1
 
     .line 62
-    :goto_3d
+    :goto_1
     move-object v9, v1
 
     .line 63
-    goto :goto_6b
+    goto :goto_2
 
     .line 64
-    :cond_3f
+    :cond_1
     invoke-virtual {v1}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
     .line 65
@@ -526,7 +526,7 @@
     move-result-object v2
 
     .line 68
-    if-eqz v2, :cond_62
+    if-eqz v2, :cond_2
 
     .line 69
     .line 70
@@ -566,7 +566,7 @@
     move-result v2
 
     .line 88
-    if-eqz v2, :cond_62
+    if-eqz v2, :cond_2
 
     .line 89
     .line 90
@@ -586,10 +586,10 @@
     move-result-object v1
 
     .line 98
-    goto :goto_3d
+    goto :goto_1
 
     .line 99
-    :cond_62
+    :cond_2
     invoke-static {v3}, Llibs/sw1;->a(I)I
 
     .line 100
@@ -606,10 +606,10 @@
     move-result-object v1
 
     .line 107
-    goto :goto_3d
+    goto :goto_1
 
     .line 108
-    :goto_6b
+    :goto_2
     const/4 v11, 0x1
 
     .line 109
@@ -674,7 +674,7 @@
 .end method
 
 .method public static c(Landroid/content/Context;ILjava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/String;ZZZLandroid/app/PendingIntent;IZZLjava/lang/String;)Ljava/lang/Object;
-    .registers 32
+    .locals 18
 
     .line 1
     move-object/from16 v0, p0
@@ -741,7 +741,7 @@
     const/4 v11, 0x0
 
     .line 31
-    if-eqz v10, :cond_b7
+    if-eqz v10, :cond_a
 
     .line 32
     .line 33
@@ -802,7 +802,7 @@
     move-result-object v0
 
     .line 62
-    if-eqz v6, :cond_42
+    if-eqz v6, :cond_0
 
     .line 63
     .line 64
@@ -811,8 +811,8 @@
     .line 65
     .line 66
     .line 67
-    :cond_42
-    if-eqz p6, :cond_47
+    :cond_0
+    if-eqz p6, :cond_1
 
     .line 68
     .line 69
@@ -821,8 +821,8 @@
     .line 70
     .line 71
     .line 72
-    :cond_47
-    if-eqz p7, :cond_4c
+    :cond_1
+    if-eqz p7, :cond_2
 
     .line 73
     .line 74
@@ -831,7 +831,7 @@
     .line 75
     .line 76
     .line 77
-    :cond_4c
+    :cond_2
     invoke-static {v4}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
 
     .line 78
@@ -840,7 +840,7 @@
     move-result v1
 
     .line 81
-    if-nez v1, :cond_55
+    if-nez v1, :cond_3
 
     .line 82
     .line 83
@@ -849,7 +849,7 @@
     .line 84
     .line 85
     .line 86
-    :cond_55
+    :cond_3
     invoke-static/range {p5 .. p5}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
 
     .line 87
@@ -858,7 +858,7 @@
     move-result v1
 
     .line 90
-    if-nez v1, :cond_60
+    if-nez v1, :cond_4
 
     .line 91
     .line 92
@@ -871,7 +871,7 @@
     .line 95
     .line 96
     .line 97
-    :cond_60
+    :cond_4
     invoke-static {}, Llibs/t43;->Task()Z
 
     .line 98
@@ -880,7 +880,7 @@
     move-result v1
 
     .line 101
-    if-eqz v1, :cond_a6
+    if-eqz v1, :cond_8
 
     .line 102
     .line 103
@@ -900,21 +900,21 @@
     move-result-object v2
 
     .line 111
-    if-eqz p12, :cond_72
+    if-eqz p12, :cond_5
 
     .line 112
     .line 113
     const/4 v12, 0x4
 
     .line 114
-    goto :goto_73
+    goto :goto_0
 
     .line 115
-    :cond_72
+    :cond_5
     const/4 v12, 0x3
 
     .line 116
-    :goto_73
+    :goto_0
     invoke-direct {v1, v9, v2, v12}, Landroid/app/NotificationChannel;-><init>(Ljava/lang/String;Ljava/lang/CharSequence;I)V
 
     .line 117
@@ -952,7 +952,7 @@
     .line 135
     .line 136
     .line 137
-    if-eqz v5, :cond_92
+    if-eqz v5, :cond_6
 
     .line 138
     .line 139
@@ -960,7 +960,7 @@
 
     .line 140
     .line 141
-    fill-array-data v2, :array_13e
+    fill-array-data v2, :array_0
 
     .line 142
     .line 143
@@ -970,7 +970,7 @@
     .line 145
     .line 146
     .line 147
-    :cond_92
+    :cond_6
     invoke-static {}, Llibs/uu1;->e()Landroid/app/NotificationManager;
 
     .line 148
@@ -992,7 +992,7 @@
     move-result v1
 
     .line 158
-    if-eqz v1, :cond_a2
+    if-eqz v1, :cond_7
 
     .line 159
     .line 160
@@ -1001,7 +1001,7 @@
     .line 161
     .line 162
     .line 163
-    :cond_a2
+    :cond_7
     invoke-virtual {v0, v9}, Landroid/app/Notification$Builder;->setChannelId(Ljava/lang/String;)Landroid/app/Notification$Builder;
 
     .line 164
@@ -1010,7 +1010,7 @@
     return-object v0
 
     .line 167
-    :cond_a6
+    :cond_8
     invoke-virtual {v0, v13}, Landroid/app/Notification$Builder;->setPriority(I)Landroid/app/Notification$Builder;
 
     .line 168
@@ -1021,7 +1021,7 @@
     .line 171
     .line 172
     .line 173
-    if-eqz v5, :cond_b6
+    if-eqz v5, :cond_9
 
     .line 174
     .line 175
@@ -1029,7 +1029,7 @@
 
     .line 176
     .line 177
-    fill-array-data v1, :array_14a
+    fill-array-data v1, :array_1
 
     .line 178
     .line 179
@@ -1039,11 +1039,11 @@
     .line 181
     .line 182
     .line 183
-    :cond_b6
+    :cond_9
     return-object v0
 
     .line 184
-    :cond_b7
+    :cond_a
     new-instance v9, Landroid/app/Notification;
 
     .line 185
@@ -1077,7 +1077,7 @@
 
     .line 200
     .line 201
-    if-eqz p6, :cond_d0
+    if-eqz p6, :cond_b
 
     .line 202
     .line 203
@@ -1093,8 +1093,8 @@
 
     .line 208
     .line 209
-    :cond_d0
-    if-eqz p7, :cond_d8
+    :cond_b
+    if-eqz p7, :cond_c
 
     .line 210
     .line 211
@@ -1110,8 +1110,8 @@
 
     .line 216
     .line 217
-    :cond_d8
-    if-eqz v8, :cond_e0
+    :cond_c
+    if-eqz v8, :cond_d
 
     .line 218
     .line 219
@@ -1127,8 +1127,8 @@
 
     .line 224
     .line 225
-    :cond_e0
-    if-eqz v5, :cond_e5
+    :cond_d
+    if-eqz v5, :cond_e
 
     .line 226
     .line 227
@@ -1139,8 +1139,8 @@
 
     .line 229
     .line 230
-    :cond_e5
-    if-lez v7, :cond_fc
+    :cond_e
+    if-lez v7, :cond_10
 
     .line 231
     .line 232
@@ -1174,7 +1174,7 @@
     .line 246
     .line 247
     .line 248
-    if-eqz v6, :cond_fb
+    if-eqz v6, :cond_f
 
     .line 249
     .line 250
@@ -1182,12 +1182,12 @@
 
     .line 251
     .line 252
-    :cond_fb
+    :cond_f
     return-object v9
 
     .line 253
-    :cond_fc
-    :try_start_fc
+    :cond_10
+    :try_start_0
     const-string v1, "setLatestEventInfo"
 
     .line 254
@@ -1280,8 +1280,8 @@
     .line 297
     .line 298
     invoke-virtual {v0, v9, v5}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_12c
-    .catchall {:try_start_fc .. :try_end_12c} :catchall_12d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 299
     .line 300
@@ -1289,7 +1289,7 @@
     return-object v9
 
     .line 302
-    :catchall_12d
+    :catchall_0
     move-exception v0
 
     .line 303
@@ -1324,13 +1324,13 @@
     .line 318
     return-object v9
 
-    :array_13e
+    :array_0
     .array-data 8
         0x1f4
         0x1f4
     .end array-data
 
-    :array_14a
+    :array_1
     .array-data 8
         0x1f4
         0x1f4
@@ -1338,7 +1338,7 @@
 .end method
 
 .method public static d(Landroid/app/Service;ILjava/lang/Object;I)V
-    .registers 5
+    .locals 1
 
     .line 1
     :try_start_0
@@ -1350,7 +1350,7 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_13
+    if-nez v0, :cond_1
 
     .line 6
     .line 7
@@ -1362,14 +1362,14 @@
     move-result v0
 
     .line 11
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
-    goto :goto_13
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     check-cast p2, Landroid/app/Notification;
 
     .line 15
@@ -1382,8 +1382,8 @@
     return-void
 
     .line 20
-    :cond_13
-    :goto_13
+    :cond_1
+    :goto_0
     invoke-static {p2}, Llibs/sp;->d(Ljava/lang/Object;)Landroid/app/Notification$Builder;
 
     .line 21
@@ -1401,8 +1401,8 @@
 
     .line 28
     invoke-static {p0, p1, p2, p3}, Llibs/xg0;->Str(Landroid/app/Service;ILandroid/app/Notification;I)V
-    :try_end_1e
-    .catchall {:try_start_0 .. :try_end_1e} :catchall_1f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 29
     .line 30
@@ -1410,7 +1410,7 @@
     return-void
 
     .line 32
-    :catchall_1f
+    :catchall_0
     move-exception p0
 
     .line 33
@@ -1453,7 +1453,7 @@
 .end method
 
 .method public static e()Landroid/app/NotificationManager;
-    .registers 2
+    .locals 2
 
     .line 1
     sget-object v0, Llibs/zt0;->g:Landroid/content/Context;
@@ -1480,7 +1480,7 @@
 .end method
 
 .method public static f(Ljava/lang/Object;)Z
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-static {}, Llibs/t43;->Intent()Z
@@ -1491,7 +1491,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -1503,7 +1503,7 @@
     move-result p0
 
     .line 11
-    if-eqz p0, :cond_e
+    if-eqz p0, :cond_0
 
     .line 12
     .line 13
@@ -1513,7 +1513,7 @@
     return p0
 
     .line 15
-    :cond_e
+    :cond_0
     const/4 p0, 0x0
 
     .line 16
@@ -1521,14 +1521,14 @@
 .end method
 
 .method public static g(Ljava/lang/String;ILandroid/app/Notification;)V
-    .registers 4
+    .locals 1
 
     .line 1
-    if-nez p0, :cond_a
+    if-nez p0, :cond_0
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     invoke-static {}, Llibs/uu1;->e()Landroid/app/NotificationManager;
 
     .line 4
@@ -1545,7 +1545,7 @@
     return-void
 
     .line 11
-    :cond_a
+    :cond_0
     invoke-static {}, Llibs/uu1;->e()Landroid/app/NotificationManager;
 
     .line 12
@@ -1555,8 +1555,8 @@
 
     .line 15
     invoke-virtual {v0, p0, p1, p2}, Landroid/app/NotificationManager;->notify(Ljava/lang/String;ILandroid/app/Notification;)V
-    :try_end_11
-    .catchall {:try_start_2 .. :try_end_11} :catchall_12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 16
     .line 17
@@ -1564,7 +1564,7 @@
     return-void
 
     .line 19
-    :catchall_12
+    :catchall_0
     move-exception p0
 
     .line 20
@@ -1607,14 +1607,14 @@
 .end method
 
 .method public static h(I)V
-    .registers 4
+    .locals 3
 
     .line 1
     const-string v0, ""
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     invoke-static {}, Llibs/uu1;->e()Landroid/app/NotificationManager;
 
     .line 4
@@ -1646,18 +1646,18 @@
 
     .line 19
     invoke-virtual {v1, v0, p0}, Landroid/app/NotificationManager;->cancel(Ljava/lang/String;I)V
-    :try_end_15
-    .catchall {:try_start_2 .. :try_end_15} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 20
     .line 21
     .line 22
-    :catchall_15
+    :catchall_0
     return-void
 .end method
 
 .method public static i(ILjava/lang/Object;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-static {p1}, Llibs/uu1;->f(Ljava/lang/Object;)Z
@@ -1671,11 +1671,11 @@
     const/4 v1, 0x0
 
     .line 6
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
-    :try_start_7
+    :try_start_0
     invoke-static {p1}, Llibs/sp;->d(Ljava/lang/Object;)Landroid/app/Notification$Builder;
 
     .line 9
@@ -1693,8 +1693,8 @@
 
     .line 16
     invoke-static {v1, p0, p1}, Llibs/uu1;->g(Ljava/lang/String;ILandroid/app/Notification;)V
-    :try_end_12
-    .catchall {:try_start_7 .. :try_end_12} :catchall_13
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 17
     .line 18
@@ -1702,7 +1702,7 @@
     return-void
 
     .line 20
-    :catchall_13
+    :catchall_0
     move-exception p0
 
     .line 21
@@ -1744,7 +1744,7 @@
     return-void
 
     .line 39
-    :cond_26
+    :cond_0
     check-cast p1, Landroid/app/Notification;
 
     .line 40
@@ -1758,7 +1758,7 @@
 .end method
 
 .method public static j(ILjava/lang/Object;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-static {p1}, Llibs/uu1;->f(Ljava/lang/Object;)Z
@@ -1773,11 +1773,11 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
-    :try_start_8
+    :try_start_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 10
@@ -1817,8 +1817,8 @@
 
     .line 29
     invoke-static {v0, p0, p1}, Llibs/uu1;->g(Ljava/lang/String;ILandroid/app/Notification;)V
-    :try_end_1f
-    .catchall {:try_start_8 .. :try_end_1f} :catchall_20
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 30
     .line 31
@@ -1826,7 +1826,7 @@
     return-void
 
     .line 33
-    :catchall_20
+    :catchall_0
     move-exception p0
 
     .line 34
@@ -1868,7 +1868,7 @@
     return-void
 
     .line 52
-    :cond_33
+    :cond_0
     invoke-static {p0, v1}, Llibs/sk1;->k(ILjava/lang/String;)Ljava/lang/String;
 
     .line 53
@@ -1890,7 +1890,7 @@
 .end method
 
 .method public static k(Landroid/content/Context;Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;I)Landroid/content/Intent;
-    .registers 10
+    .locals 6
 
     .line 1
     and-int/lit8 p3, p3, 0x4
@@ -1900,7 +1900,7 @@
     const/4 v4, 0x0
 
     .line 4
-    if-eqz p3, :cond_e
+    if-eqz p3, :cond_0
 
     .line 5
     .line 6
@@ -1923,7 +1923,7 @@
     return-object p0
 
     .line 15
-    :cond_e
+    :cond_0
     const/4 v5, 0x0
 
     .line 16
@@ -1951,7 +1951,7 @@
 .end method
 
 .method public static l(Landroid/content/Context;Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;I)Landroid/content/Intent;
-    .registers 10
+    .locals 6
 
     .line 1
     const/4 v3, 0x0
@@ -1984,7 +1984,7 @@
 .end method
 
 .method public static m(Ljava/lang/Object;Ljava/lang/CharSequence;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-static {}, Llibs/t43;->Set()Z
@@ -1995,11 +1995,11 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
-    :try_start_6
+    :try_start_0
     invoke-static {p0}, Llibs/sp;->d(Ljava/lang/Object;)Landroid/app/Notification$Builder;
 
     .line 8
@@ -2009,8 +2009,8 @@
 
     .line 11
     invoke-static {p0, p1}, Llibs/sp;->q(Landroid/app/Notification$Builder;Ljava/lang/CharSequence;)V
-    :try_end_d
-    .catchall {:try_start_6 .. :try_end_d} :catchall_e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 12
     .line 13
@@ -2018,7 +2018,7 @@
     return-void
 
     .line 15
-    :catchall_e
+    :catchall_0
     move-exception p0
 
     .line 16
@@ -2057,6 +2057,6 @@
     .line 31
     .line 32
     .line 33
-    :cond_20
+    :cond_0
     return-void
 .end method

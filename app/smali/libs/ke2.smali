@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/PreferenceActivity;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/ke2;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 15
+    .locals 13
 
     .line 1
     iget-byte v0, p0, Llibs/ke2;->X:B
@@ -60,7 +60,7 @@
 
     .line 9
     .line 10
-    packed-switch v0, :pswitch_data_134
+    packed-switch v0, :pswitch_data_0
 
     .line 11
     .line 12
@@ -73,7 +73,7 @@
 
     .line 16
     .line 17
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_0
 
     .line 18
     .line 19
@@ -82,11 +82,11 @@
     .line 20
     .line 21
     .line 22
-    :cond_15
+    :cond_0
     return-void
 
     .line 23
-    :pswitch_16
+    :pswitch_0
     sget-boolean v0, Lcom/mixplorer/activities/PreferenceActivity;->O:Z
 
     .line 24
@@ -122,7 +122,7 @@
     move-result v2
 
     .line 40
-    if-lez v2, :cond_2d
+    if-lez v2, :cond_1
 
     .line 41
     .line 42
@@ -134,7 +134,7 @@
     move-result-object v0
 
     .line 46
-    :cond_2d
+    :cond_1
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     .line 47
@@ -159,7 +159,7 @@
 
     .line 57
     .line 58
-    if-ne v2, v5, :cond_42
+    if-ne v2, v5, :cond_2
 
     .line 59
     .line 60
@@ -173,14 +173,14 @@
     .line 64
     .line 65
     .line 66
-    goto :goto_43
+    goto :goto_0
 
     .line 67
-    :cond_42
+    :cond_2
     move v7, v2
 
     .line 68
-    :goto_43
+    :goto_0
     check-cast p1, Landroid/widget/TextView;
 
     .line 69
@@ -196,12 +196,12 @@
     const/4 v5, 0x0
 
     .line 75
-    :goto_4a
+    :goto_1
     const/16 v6, 0x63
 
     .line 76
     .line 77
-    if-ge v5, v6, :cond_5a
+    if-ge v5, v6, :cond_4
 
     .line 78
     .line 79
@@ -217,26 +217,26 @@
     move-result v8
 
     .line 85
-    if-eqz v8, :cond_57
+    if-eqz v8, :cond_3
 
     .line 86
     .line 87
-    goto :goto_5b
+    goto :goto_2
 
     .line 88
-    :cond_57
+    :cond_3
     add-int/lit8 v5, v5, 0x1
 
     .line 89
     .line 90
-    goto :goto_4a
+    goto :goto_1
 
     .line 91
-    :cond_5a
+    :cond_4
     move-object v6, v1
 
     .line 92
-    :goto_5b
+    :goto_2
     sget v8, Llibs/bi2;->save:I
 
     .line 93
@@ -278,7 +278,7 @@
     return-void
 
     .line 113
-    :pswitch_70
+    :pswitch_1
     sget-boolean p1, Lcom/mixplorer/activities/PreferenceActivity;->O:Z
 
     .line 114
@@ -319,9 +319,9 @@
     const/4 v6, 0x0
 
     .line 133
-    :cond_84
-    :goto_84
-    if-ge v6, v1, :cond_100
+    :cond_5
+    :goto_3
+    if-ge v6, v1, :cond_9
 
     .line 134
     .line 135
@@ -349,7 +349,7 @@
 
     .line 146
     .line 147
-    if-eqz v8, :cond_b4
+    if-eqz v8, :cond_6
 
     .line 148
     .line 149
@@ -414,15 +414,15 @@
     move-object v9, v8
 
     .line 180
-    goto :goto_d9
+    goto :goto_4
 
     .line 181
-    :cond_b4
+    :cond_6
     instance-of v8, v7, Landroid/widget/TextView;
 
     .line 182
     .line 183
-    if-eqz v8, :cond_d8
+    if-eqz v8, :cond_7
 
     .line 184
     .line 185
@@ -434,7 +434,7 @@
     move-result-object v8
 
     .line 189
-    if-eqz v8, :cond_d8
+    if-eqz v8, :cond_7
 
     .line 190
     .line 191
@@ -489,14 +489,14 @@
     move-result-object v7
 
     .line 216
-    goto :goto_d9
+    goto :goto_4
 
     .line 217
-    :cond_d8
+    :cond_7
     move-object v7, v9
 
     .line 218
-    :goto_d9
+    :goto_4
     invoke-static {v9}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
 
     .line 219
@@ -505,7 +505,7 @@
     move-result v8
 
     .line 222
-    if-nez v8, :cond_84
+    if-nez v8, :cond_5
 
     .line 223
     .line 224
@@ -517,7 +517,7 @@
     move-result v8
 
     .line 228
-    if-lez v8, :cond_e9
+    if-lez v8, :cond_8
 
     .line 229
     .line 230
@@ -529,7 +529,7 @@
     move-result-object v9
 
     .line 234
-    :cond_e9
+    :cond_8
     sget-object v8, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
     .line 235
@@ -572,10 +572,10 @@
     .line 254
     .line 255
     .line 256
-    goto :goto_84
+    goto :goto_3
 
     .line 257
-    :cond_100
+    :cond_9
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->trimToSize()V
 
     .line 258
@@ -597,7 +597,7 @@
     return-void
 
     .line 268
-    :pswitch_10b
+    :pswitch_2
     sget-boolean v0, Lcom/mixplorer/activities/PreferenceActivity;->O:Z
 
     .line 269
@@ -614,7 +614,7 @@
 
     .line 275
     .line 276
-    if-ne p1, v0, :cond_118
+    if-ne p1, v0, :cond_a
 
     .line 277
     .line 278
@@ -623,11 +623,11 @@
     .line 279
     .line 280
     .line 281
-    :cond_118
+    :cond_a
     return-void
 
     .line 282
-    :pswitch_119
+    :pswitch_3
     const-string p1, "/skins"
 
     .line 283
@@ -640,7 +640,7 @@
     move-result p1
 
     .line 288
-    if-nez p1, :cond_12d
+    if-nez p1, :cond_b
 
     .line 289
     .line 290
@@ -666,11 +666,11 @@
     .line 300
     .line 301
     .line 302
-    :cond_12d
+    :cond_b
     return-void
 
     .line 303
-    :pswitch_12e
+    :pswitch_4
     const/4 p1, 0x2
 
     .line 304
@@ -684,12 +684,12 @@
     .line 308
     nop
 
-    :pswitch_data_134
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_12e
-        :pswitch_119
-        :pswitch_10b
-        :pswitch_70
-        :pswitch_16
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

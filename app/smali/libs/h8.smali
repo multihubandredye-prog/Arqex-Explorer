@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Object;B)V
-    .registers 4
+    .locals 0
 
     .line 14
     iput-byte p3, p0, Llibs/h8;->X:B
@@ -31,7 +31,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/Object;Llibs/lj;B)V
-    .registers 4
+    .locals 0
 
     .line 13
     iput-byte p3, p0, Llibs/h8;->X:B
@@ -46,7 +46,7 @@
 .end method
 
 .method public synthetic constructor <init>(Llibs/m42;Landroid/view/View;Landroid/widget/TextView;)V
-    .registers 4
+    .locals 0
 
     .line 1
     const/16 p1, 0xf
@@ -76,7 +76,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 27
+    .locals 25
 
     .line 1
     move-object/from16 v1, p0
@@ -125,7 +125,7 @@
 
     .line 20
     .line 21
-    packed-switch v2, :pswitch_data_506
+    packed-switch v2, :pswitch_data_0
 
     .line 22
     .line 23
@@ -146,7 +146,7 @@
 
     .line 31
     .line 32
-    if-nez v0, :cond_2b
+    if-nez v0, :cond_0
 
     .line 33
     .line 34
@@ -167,10 +167,10 @@
     .line 41
     .line 42
     .line 43
-    goto :goto_34
+    goto :goto_0
 
     .line 44
-    :cond_2b
+    :cond_0
     sget v0, Llibs/bi2;->not_supported:I
 
     .line 45
@@ -188,11 +188,11 @@
     .line 51
     .line 52
     .line 53
-    :goto_34
+    :goto_0
     return-void
 
     .line 54
-    :pswitch_35
+    :pswitch_0
     move-object v2, v13
 
     .line 55
@@ -213,7 +213,7 @@
     .line 62
     .line 63
     .line 64
-    :try_start_3f
+    :try_start_0
     invoke-virtual {v0}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     .line 65
@@ -250,7 +250,7 @@
 
     .line 81
     .line 82
-    if-eqz v0, :cond_7a
+    if-eqz v0, :cond_2
 
     .line 83
     .line 84
@@ -285,7 +285,7 @@
     move-result v0
 
     .line 99
-    if-eqz v0, :cond_6e
+    if-eqz v0, :cond_1
 
     .line 100
     .line 101
@@ -308,10 +308,10 @@
     .line 108
     .line 109
     .line 110
-    goto :goto_75
+    goto :goto_1
 
     .line 111
-    :cond_6e
+    :cond_1
     invoke-virtual {v3}, Lcom/mixplorer/widgets/MiEditor;->getScrollView()Lcom/mixplorer/widgets/MiScrollView;
 
     .line 112
@@ -325,24 +325,24 @@
     .line 116
     .line 117
     .line 118
-    :goto_75
+    :goto_1
     iget-object v0, v2, Lcom/mixplorer/activities/a;->Lambda:Llibs/be2;
 
     .line 119
     .line 120
     invoke-virtual {v0}, Llibs/be2;->a()V
-    :try_end_7a
-    .catchall {:try_start_3f .. :try_end_7a} :catchall_7a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 121
     .line 122
     .line 123
-    :catchall_7a
-    :cond_7a
+    :catchall_0
+    :cond_2
     return-void
 
     .line 124
-    :pswitch_7b
+    :pswitch_1
     check-cast v13, Llibs/rz1;
 
     .line 125
@@ -374,8 +374,8 @@
     const/4 v3, 0x0
 
     .line 139
-    :goto_8a
-    if-ge v3, v2, :cond_98
+    :goto_2
+    if-ge v3, v2, :cond_3
 
     .line 140
     .line 141
@@ -400,10 +400,10 @@
     .line 150
     .line 151
     .line 152
-    goto :goto_8a
+    goto :goto_2
 
     .line 153
-    :cond_98
+    :cond_3
     iget-object v0, v13, Llibs/rz1;->h:Ljava/lang/Object;
 
     .line 154
@@ -412,7 +412,7 @@
 
     .line 156
     .line 157
-    if-eqz v0, :cond_a1
+    if-eqz v0, :cond_4
 
     .line 158
     .line 159
@@ -421,11 +421,11 @@
     .line 160
     .line 161
     .line 162
-    :cond_a1
+    :cond_4
     return-void
 
     .line 163
-    :pswitch_a2
+    :pswitch_2
     check-cast v13, Llibs/fb3;
 
     .line 164
@@ -434,7 +434,7 @@
 
     .line 166
     .line 167
-    if-eqz v12, :cond_b0
+    if-eqz v12, :cond_5
 
     .line 168
     .line 169
@@ -452,11 +452,11 @@
     .line 175
     .line 176
     .line 177
-    :cond_b0
+    :cond_5
     return-void
 
     .line 178
-    :pswitch_b1
+    :pswitch_3
     check-cast v13, Landroid/app/Activity;
 
     .line 179
@@ -497,9 +497,9 @@
     const/4 v4, 0x0
 
     .line 198
-    :cond_c5
-    :goto_c5
-    if-ge v4, v3, :cond_e4
+    :cond_6
+    :goto_3
+    if-ge v4, v3, :cond_7
 
     .line 199
     .line 200
@@ -531,7 +531,7 @@
 
     .line 213
     .line 214
-    if-eq v6, v7, :cond_c5
+    if-eq v6, v7, :cond_6
 
     .line 215
     .line 216
@@ -557,10 +557,10 @@
     .line 226
     .line 227
     .line 228
-    goto :goto_c5
+    goto :goto_3
 
     .line 229
-    :cond_e4
+    :cond_7
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 230
@@ -598,7 +598,7 @@
     return-void
 
     .line 248
-    :pswitch_f7
+    :pswitch_4
     check-cast v13, Lcom/mixplorer/activities/BrowseActivity;
 
     .line 249
@@ -628,7 +628,7 @@
     return-void
 
     .line 263
-    :pswitch_106
+    :pswitch_5
     check-cast v13, Lcom/mixplorer/activities/SQLiteEditorActivity;
 
     .line 264
@@ -700,7 +700,7 @@
     return-void
 
     .line 300
-    :pswitch_12b
+    :pswitch_6
     check-cast v13, Lcom/mixplorer/activities/SQLiteEditorActivity;
 
     .line 301
@@ -798,7 +798,7 @@
     return-void
 
     .line 351
-    :pswitch_15e
+    :pswitch_7
     check-cast v13, Lcom/mixplorer/activities/SQLiteEditorActivity;
 
     .line 352
@@ -839,14 +839,14 @@
     move-result v2
 
     .line 371
-    if-eqz v2, :cond_175
+    if-eqz v2, :cond_8
 
     .line 372
     .line 373
-    goto :goto_184
+    goto :goto_4
 
     .line 374
-    :cond_175
+    :cond_8
     invoke-virtual {v12}, Llibs/od;->dismiss()V
 
     .line 375
@@ -874,11 +874,11 @@
     .line 387
     .line 388
     .line 389
-    :goto_184
+    :goto_4
     return-void
 
     .line 390
-    :pswitch_185
+    :pswitch_8
     check-cast v13, Lcom/mixplorer/activities/SQLiteEditorActivity;
 
     .line 391
@@ -957,7 +957,7 @@
     move-result v4
 
     .line 430
-    if-nez v4, :cond_206
+    if-nez v4, :cond_b
 
     .line 431
     .line 432
@@ -990,7 +990,7 @@
 
     .line 446
     .line 447
-    if-lez v4, :cond_1e4
+    if-lez v4, :cond_9
 
     .line 448
     .line 449
@@ -1057,18 +1057,18 @@
     .line 482
     .line 483
     .line 484
-    goto :goto_206
+    goto :goto_6
 
     .line 485
-    :cond_1e4
+    :cond_9
     const/4 v2, 0x1
 
     .line 486
-    :goto_1e5
+    :goto_5
     array-length v4, v12
 
     .line 487
-    if-ge v2, v4, :cond_206
+    if-ge v2, v4, :cond_b
 
     .line 488
     .line 489
@@ -1110,7 +1110,7 @@
     sub-int/2addr v4, v10
 
     .line 509
-    if-eq v2, v4, :cond_203
+    if-eq v2, v4, :cond_a
 
     .line 510
     .line 511
@@ -1123,16 +1123,16 @@
     .line 514
     .line 515
     .line 516
-    :cond_203
+    :cond_a
     add-int/lit8 v2, v2, 0x1
 
     .line 517
     .line 518
-    goto :goto_1e5
+    goto :goto_5
 
     .line 519
-    :cond_206
-    :goto_206
+    :cond_b
+    :goto_6
     iget-object v0, v13, Lcom/mixplorer/activities/SQLiteEditorActivity;->Victor:Llibs/by2;
 
     .line 520
@@ -1157,7 +1157,7 @@
     return-void
 
     .line 531
-    :pswitch_212
+    :pswitch_9
     check-cast v13, Lcom/mixplorer/activities/PlayerActivity;
 
     .line 532
@@ -1204,7 +1204,7 @@
     return-void
 
     .line 555
-    :pswitch_22a
+    :pswitch_a
     check-cast v13, Lcom/mixplorer/activities/PlayerActivity;
 
     .line 556
@@ -1217,7 +1217,7 @@
 
     .line 560
     .line 561
-    :try_start_230
+    :try_start_1
     invoke-virtual {v12}, Llibs/ml1;->User()Ljava/util/ArrayList;
 
     .line 562
@@ -1268,16 +1268,16 @@
 
     .line 584
     invoke-static/range {v12 .. v18}, Llibs/e9;->b(Landroid/app/Activity;Llibs/xl1;ZZIZLjava/lang/String;)V
-    :try_end_24a
-    .catchall {:try_start_230 .. :try_end_24a} :catchall_24b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 585
     .line 586
     .line 587
-    goto :goto_25b
+    goto :goto_7
 
     .line 588
-    :catchall_24b
+    :catchall_1
     move-exception v0
 
     .line 589
@@ -1310,11 +1310,11 @@
     .line 602
     .line 603
     .line 604
-    :goto_25b
+    :goto_7
     return-void
 
     .line 605
-    :pswitch_25c
+    :pswitch_b
     check-cast v13, Landroid/view/View;
 
     .line 606
@@ -1335,18 +1335,18 @@
 
     .line 614
     .line 615
-    if-eq v0, v2, :cond_269
+    if-eq v0, v2, :cond_c
 
     .line 616
     .line 617
-    goto :goto_26a
+    goto :goto_8
 
     .line 618
-    :cond_269
+    :cond_c
     const/4 v10, 0x0
 
     .line 619
-    :goto_26a
+    :goto_8
     sget-object v0, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 620
@@ -1395,7 +1395,7 @@
     return-void
 
     .line 645
-    :pswitch_284
+    :pswitch_c
     check-cast v12, Lcom/mixplorer/activities/ImageViewerActivity;
 
     .line 646
@@ -1413,7 +1413,7 @@
     .line 652
     .line 653
     .line 654
-    :try_start_28d
+    :try_start_2
     new-instance v15, Ljava/util/HashSet;
 
     .line 655
@@ -1435,7 +1435,7 @@
     move-result v0
 
     .line 665
-    if-nez v0, :cond_2a8
+    if-nez v0, :cond_d
 
     .line 666
     .line 667
@@ -1460,18 +1460,18 @@
     .line 676
     .line 677
     .line 678
-    goto :goto_2a8
+    goto :goto_9
 
     .line 679
-    :catchall_2a6
+    :catchall_2
     move-exception v0
 
     .line 680
-    goto :goto_2e9
+    goto :goto_a
 
     .line 681
-    :cond_2a8
-    :goto_2a8
+    :cond_d
+    :goto_9
     sget-object v14, Lcom/mixplorer/AppImpl;->Mu:Llibs/c2;
 
     .line 682
@@ -1532,7 +1532,7 @@
     move-result v3
 
     .line 711
-    if-nez v3, :cond_2cc
+    if-nez v3, :cond_e
 
     .line 712
     .line 713
@@ -1544,7 +1544,7 @@
     move-result-object v9
 
     .line 717
-    :cond_2cc
+    :cond_e
     move-object/from16 v19, v9
 
     .line 718
@@ -1595,16 +1595,16 @@
     .line 741
     .line 742
     invoke-virtual {v2, v0}, Llibs/c2;->Msg(Llibs/m52;)V
-    :try_end_2e8
-    .catchall {:try_start_28d .. :try_end_2e8} :catchall_2a6
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
     .line 743
     .line 744
     .line 745
-    goto :goto_2fa
+    goto :goto_b
 
     .line 746
-    :goto_2e9
+    :goto_a
     const-string v2, "ImageViewerAct"
 
     .line 747
@@ -1636,11 +1636,11 @@
     .line 761
     .line 762
     .line 763
-    :goto_2fa
+    :goto_b
     return-void
 
     .line 764
-    :pswitch_2fb
+    :pswitch_d
     check-cast v13, Lcom/mixplorer/activities/ImageViewerActivity;
 
     .line 765
@@ -1674,7 +1674,7 @@
     return-void
 
     .line 781
-    :pswitch_30c
+    :pswitch_e
     check-cast v13, Lcom/mixplorer/activities/ImageViewerActivity;
 
     .line 782
@@ -1715,14 +1715,14 @@
     move-result v2
 
     .line 801
-    if-eqz v2, :cond_323
+    if-eqz v2, :cond_f
 
     .line 802
     .line 803
-    goto :goto_334
+    goto :goto_c
 
     .line 804
-    :cond_323
+    :cond_f
     new-instance v2, Ljava/lang/StringBuilder;
 
     .line 805
@@ -1754,11 +1754,11 @@
     .line 819
     .line 820
     .line 821
-    :goto_334
+    :goto_c
     return-void
 
     .line 822
-    :pswitch_335
+    :pswitch_f
     check-cast v13, Llibs/r31;
 
     .line 823
@@ -1811,7 +1811,7 @@
 
     .line 847
     .line 848
-    if-ne v0, v3, :cond_356
+    if-ne v0, v3, :cond_10
 
     .line 849
     .line 850
@@ -1823,15 +1823,15 @@
     move-result-object v0
 
     .line 854
-    goto :goto_379
+    goto :goto_d
 
     .line 855
-    :cond_356
+    :cond_10
     sget v3, Llibs/wh2;->server_ftp:I
 
     .line 856
     .line 857
-    if-ne v0, v3, :cond_35f
+    if-ne v0, v3, :cond_11
 
     .line 858
     .line 859
@@ -1843,15 +1843,15 @@
     move-result-object v0
 
     .line 863
-    goto :goto_379
+    goto :goto_d
 
     .line 864
-    :cond_35f
+    :cond_11
     sget v3, Llibs/wh2;->server_sftp:I
 
     .line 865
     .line 866
-    if-ne v0, v3, :cond_368
+    if-ne v0, v3, :cond_12
 
     .line 867
     .line 868
@@ -1863,15 +1863,15 @@
     move-result-object v0
 
     .line 872
-    goto :goto_379
+    goto :goto_d
 
     .line 873
-    :cond_368
+    :cond_12
     sget v3, Llibs/wh2;->server_http:I
 
     .line 874
     .line 875
-    if-ne v0, v3, :cond_371
+    if-ne v0, v3, :cond_13
 
     .line 876
     .line 877
@@ -1883,15 +1883,15 @@
     move-result-object v0
 
     .line 881
-    goto :goto_379
+    goto :goto_d
 
     .line 882
-    :cond_371
+    :cond_13
     sget v3, Llibs/wh2;->server_smb:I
 
     .line 883
     .line 884
-    if-ne v0, v3, :cond_384
+    if-ne v0, v3, :cond_14
 
     .line 885
     .line 886
@@ -1903,7 +1903,7 @@
     move-result-object v0
 
     .line 890
-    :goto_379
+    :goto_d
     new-instance v3, Llibs/gj;
 
     .line 891
@@ -1925,7 +1925,7 @@
     return-void
 
     .line 901
-    :cond_384
+    :cond_14
     new-instance v0, Ljava/lang/RuntimeException;
 
     .line 902
@@ -1938,7 +1938,7 @@
     throw v0
 
     .line 907
-    :pswitch_38a
+    :pswitch_10
     check-cast v13, Llibs/r31;
 
     .line 908
@@ -1985,7 +1985,7 @@
     return-void
 
     .line 929
-    :pswitch_3a0
+    :pswitch_11
     check-cast v13, Llibs/r31;
 
     .line 930
@@ -2016,7 +2016,7 @@
     return-void
 
     .line 945
-    :pswitch_3b0
+    :pswitch_12
     check-cast v12, Llibs/r31;
 
     .line 946
@@ -2058,7 +2058,7 @@
     return-void
 
     .line 966
-    :pswitch_3c5
+    :pswitch_13
     check-cast v13, Llibs/nx0;
 
     check-cast v12, Ljava/lang/String;
@@ -2100,7 +2100,7 @@
     return-void
 
     .line 987
-    :pswitch_3dd
+    :pswitch_14
     check-cast v13, Lcom/mixplorer/activities/FontViewerActivity;
 
     .line 988
@@ -2162,7 +2162,7 @@
     return-void
 
     .line 1018
-    :pswitch_3fc
+    :pswitch_15
     check-cast v13, Lcom/mixplorer/activities/EBookReaderActivity;
 
     .line 1019
@@ -2218,7 +2218,7 @@
     return-void
 
     .line 1047
-    :pswitch_419
+    :pswitch_16
     check-cast v13, Lcom/mixplorer/activities/EBookReaderActivity;
 
     .line 1048
@@ -2259,14 +2259,14 @@
     move-result v2
 
     .line 1067
-    if-eqz v2, :cond_430
+    if-eqz v2, :cond_15
 
     .line 1068
     .line 1069
-    goto :goto_44c
+    goto :goto_f
 
     .line 1070
-    :cond_430
+    :cond_15
     invoke-virtual {v0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     .line 1071
@@ -2295,14 +2295,14 @@
     move-result v0
 
     .line 1084
-    if-eqz v0, :cond_441
+    if-eqz v0, :cond_16
 
     .line 1085
     .line 1086
-    goto :goto_449
+    goto :goto_e
 
     .line 1087
-    :cond_441
+    :cond_16
     new-instance v0, Llibs/ye0;
 
     .line 1088
@@ -2317,17 +2317,17 @@
     .line 1093
     .line 1094
     .line 1095
-    :goto_449
+    :goto_e
     invoke-virtual {v12}, Llibs/od;->dismiss()V
 
     .line 1096
     .line 1097
     .line 1098
-    :goto_44c
+    :goto_f
     return-void
 
     .line 1099
-    :pswitch_44d
+    :pswitch_17
     check-cast v13, Lcom/mixplorer/widgets/MiRulerBar;
 
     .line 1100
@@ -2378,7 +2378,7 @@
     return-void
 
     .line 1125
-    :pswitch_467
+    :pswitch_18
     check-cast v13, Lcom/mixplorer/activities/CodeEditorActivity;
 
     .line 1126
@@ -2396,7 +2396,7 @@
     .line 1132
     .line 1133
     .line 1134
-    :try_start_470
+    :try_start_3
     invoke-virtual {v0}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     .line 1135
@@ -2433,7 +2433,7 @@
 
     .line 1151
     .line 1152
-    if-eqz v0, :cond_49e
+    if-eqz v0, :cond_18
 
     .line 1153
     .line 1154
@@ -2457,7 +2457,7 @@
     move-result v2
 
     .line 1164
-    if-eqz v2, :cond_496
+    if-eqz v2, :cond_17
 
     .line 1165
     .line 1166
@@ -2470,33 +2470,33 @@
     .line 1169
     .line 1170
     .line 1171
-    goto :goto_499
+    goto :goto_10
 
     .line 1172
-    :cond_496
+    :cond_17
     invoke-virtual {v13, v0}, Lcom/mixplorer/activities/CodeEditorActivity;->Link(Llibs/cv;)V
 
     .line 1173
     .line 1174
     .line 1175
-    :goto_499
+    :goto_10
     iget-object v0, v13, Lcom/mixplorer/activities/a;->Lambda:Llibs/be2;
 
     .line 1176
     .line 1177
     invoke-virtual {v0}, Llibs/be2;->a()V
-    :try_end_49e
-    .catchall {:try_start_470 .. :try_end_49e} :catchall_49e
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_3
 
     .line 1178
     .line 1179
     .line 1180
-    :catchall_49e
-    :cond_49e
+    :catchall_3
+    :cond_18
     return-void
 
     .line 1181
-    :pswitch_49f
+    :pswitch_19
     check-cast v13, Llibs/al;
 
     .line 1182
@@ -2548,7 +2548,7 @@
 
     .line 1205
     .line 1206
-    if-eqz v0, :cond_4f3
+    if-eqz v0, :cond_1c
 
     .line 1207
     .line 1208
@@ -2581,7 +2581,7 @@
     move-result-object v0
 
     .line 1223
-    if-eqz v0, :cond_4ec
+    if-eqz v0, :cond_1b
 
     .line 1224
     .line 1225
@@ -2602,7 +2602,7 @@
 
     .line 1233
     .line 1234
-    if-ne v5, v3, :cond_4e2
+    if-ne v5, v3, :cond_19
 
     .line 1235
     .line 1236
@@ -2628,12 +2628,12 @@
     .line 1246
     .line 1247
     .line 1248
-    :cond_4e2
+    :cond_19
     sget-object v3, Lcom/mixplorer/AppImpl;->Mu:Llibs/c2;
 
     .line 1249
     .line 1250
-    if-eqz v3, :cond_4e9
+    if-eqz v3, :cond_1a
 
     .line 1251
     .line 1252
@@ -2642,13 +2642,13 @@
     .line 1253
     .line 1254
     .line 1255
-    :cond_4e9
+    :cond_1a
     invoke-virtual {v2, v4}, Llibs/r31;->Url(I)V
 
     .line 1256
     .line 1257
     .line 1258
-    :cond_4ec
+    :cond_1b
     iget-object v0, v2, Llibs/r31;->a:Lcom/mixplorer/activities/BrowseActivity;
 
     .line 1259
@@ -2662,11 +2662,11 @@
     .line 1263
     .line 1264
     .line 1265
-    :cond_4f3
+    :cond_1c
     return-void
 
     .line 1266
-    :pswitch_4f4
+    :pswitch_1a
     check-cast v13, Llibs/lj;
 
     .line 1267
@@ -2702,34 +2702,34 @@
     nop
 
     .line 1283
-    :pswitch_data_506
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_4f4
-        :pswitch_49f
-        :pswitch_467
-        :pswitch_44d
-        :pswitch_419
-        :pswitch_3fc
-        :pswitch_3dd
-        :pswitch_3c5
-        :pswitch_3b0
-        :pswitch_3a0
-        :pswitch_38a
-        :pswitch_335
-        :pswitch_30c
-        :pswitch_2fb
-        :pswitch_284
-        :pswitch_25c
-        :pswitch_22a
-        :pswitch_212
-        :pswitch_185
-        :pswitch_15e
-        :pswitch_12b
-        :pswitch_106
-        :pswitch_f7
-        :pswitch_b1
-        :pswitch_a2
-        :pswitch_7b
-        :pswitch_35
+        :pswitch_1a
+        :pswitch_19
+        :pswitch_18
+        :pswitch_17
+        :pswitch_16
+        :pswitch_15
+        :pswitch_14
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

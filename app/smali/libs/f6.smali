@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/l6;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/f6;->b:Llibs/l6;
@@ -32,7 +32,7 @@
 
 # virtual methods
 .method public final call()Ljava/lang/Object;
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/f6;->b:Llibs/l6;
@@ -58,7 +58,7 @@
     const/4 v3, 0x0
 
     .line 12
-    :try_start_b
+    :try_start_0
     invoke-static {v1}, Landroid/os/Process;->setThreadPriority(I)V
 
     .line 13
@@ -77,8 +77,8 @@
 
     .line 21
     invoke-static {}, Landroid/os/Binder;->flushPendingCommands()V
-    :try_end_17
-    .catchall {:try_start_b .. :try_end_17} :catchall_1b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 22
     .line 23
@@ -91,11 +91,11 @@
     return-object v3
 
     .line 28
-    :catchall_1b
+    :catchall_0
     move-exception v1
 
     .line 29
-    :try_start_1c
+    :try_start_1
     iget-object v4, v0, Llibs/l6;->d:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     .line 30
@@ -123,11 +123,11 @@
     .line 42
     .line 43
     throw v2
-    :try_end_2b
-    .catchall {:try_start_1c .. :try_end_2b} :catchall_2b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 44
-    :catchall_2b
+    :catchall_1
     move-exception v1
 
     .line 45

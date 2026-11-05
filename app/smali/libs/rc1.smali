@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/tc1;Llibs/z1;Llibs/eu1;)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-object p2, p0, Llibs/rc1;->a:Llibs/z1;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final a(Llibs/q1;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object p1, p0, Llibs/rc1;->b:Llibs/eu1;
@@ -65,7 +65,7 @@
 .end method
 
 .method public final c(Llibs/q1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iget-object p1, p0, Llibs/rc1;->a:Llibs/z1;

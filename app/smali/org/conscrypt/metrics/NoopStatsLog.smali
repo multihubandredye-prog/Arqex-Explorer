@@ -12,7 +12,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Lorg/conscrypt/metrics/NoopStatsLog;
@@ -32,7 +32,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 .end method
 
 .method public static getInstance()Lorg/conscrypt/metrics/StatsLog;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/metrics/NoopStatsLog;->INSTANCE:Lorg/conscrypt/metrics/StatsLog;
@@ -57,21 +57,21 @@
 
 # virtual methods
 .method public countTlsHandshake(ZLjava/lang/String;Ljava/lang/String;J)V
-    .registers 6
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public reportCTVerificationResult(Lorg/conscrypt/ct/LogStore;Lorg/conscrypt/ct/VerificationResult;Lorg/conscrypt/ct/PolicyCompliance;Lorg/conscrypt/metrics/CertificateTransparencyVerificationReason;)V
-    .registers 5
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public updateCTLogListStatusChanged(Lorg/conscrypt/ct/LogStore;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void

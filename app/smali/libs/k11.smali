@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r31;Llibs/xt1;Ljava/lang/String;B)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-byte p4, p0, Llibs/k11;->X:B
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 11
+    .locals 10
 
     .line 1
     iget-byte v0, p0, Llibs/k11;->X:B
@@ -67,7 +67,7 @@
 
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_6c
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
@@ -80,7 +80,7 @@
     return-void
 
     .line 16
-    :pswitch_f
+    :pswitch_0
     iget-object v4, p0, Llibs/k11;->Y:Llibs/r31;
 
     .line 17
@@ -111,8 +111,8 @@
     const/4 v2, 0x0
 
     .line 30
-    :goto_1d
-    if-ge v2, v1, :cond_66
+    :goto_0
+    if-ge v2, v1, :cond_3
 
     .line 31
     .line 32
@@ -143,7 +143,7 @@
 
     .line 44
     .line 45
-    if-ne v8, v7, :cond_3b
+    if-ne v8, v7, :cond_0
 
     .line 46
     .line 47
@@ -171,10 +171,10 @@
     .line 57
     .line 58
     .line 59
-    goto :goto_63
+    goto :goto_2
 
     .line 60
-    :cond_3b
+    :cond_0
     invoke-virtual {v5}, Llibs/xt1;->getIAdapter()Llibs/sv0;
 
     .line 61
@@ -183,7 +183,7 @@
     move-result-object v7
 
     .line 64
-    if-eqz v7, :cond_63
+    if-eqz v7, :cond_2
 
     .line 65
     .line 66
@@ -195,7 +195,7 @@
     move-result-object v7
 
     .line 70
-    if-eqz v7, :cond_4e
+    if-eqz v7, :cond_1
 
     .line 71
     .line 72
@@ -211,15 +211,15 @@
 
     .line 77
     .line 78
-    goto :goto_50
+    goto :goto_1
 
     .line 79
-    :cond_4e
+    :cond_1
     const-string v7, ""
 
     .line 80
     .line 81
-    :goto_50
+    :goto_1
     invoke-static {v7, v6}, Llibs/vg3;->Post(Ljava/lang/String;Ljava/lang/String;)Z
 
     .line 82
@@ -228,7 +228,7 @@
     move-result v6
 
     .line 85
-    if-eqz v6, :cond_63
+    if-eqz v6, :cond_2
 
     .line 86
     .line 87
@@ -257,20 +257,20 @@
 
     .line 99
     .line 100
-    :cond_63
-    :goto_63
+    :cond_2
+    :goto_2
     add-int/lit8 v2, v2, 0x1
 
     .line 101
     .line 102
-    goto :goto_1d
+    goto :goto_0
 
     .line 103
-    :cond_66
+    :cond_3
     return-void
 
     .line 104
-    :pswitch_67
+    :pswitch_1
     invoke-virtual {v2, v3, v1}, Llibs/r31;->Add(Llibs/xt1;Ljava/lang/String;)V
 
     .line 105
@@ -282,9 +282,9 @@
     nop
 
     .line 109
-    :pswitch_data_6c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_67
-        :pswitch_f
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

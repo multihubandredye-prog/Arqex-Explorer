@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 15
     invoke-direct {p0}, Llibs/lv2;-><init>()V
@@ -18,7 +18,7 @@
 .end method
 
 .method public constructor <init>(JJLlibs/k00;Llibs/pu2;)V
-    .registers 15
+    .locals 8
 
     .line 1
     const/16 v1, 0x18
@@ -56,7 +56,7 @@
 
 # virtual methods
 .method public final g(Llibs/rw2;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p1}, Llibs/rw2;->v()V
@@ -76,7 +76,7 @@
 .end method
 
 .method public final i(Llibs/rw2;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/lv2;->c:I

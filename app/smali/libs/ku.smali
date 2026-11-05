@@ -13,7 +13,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;Ljava/io/Serializable;B)V
-    .registers 4
+    .locals 0
 
     .line 12
     iput-byte p3, p0, Llibs/ku;->a:B
@@ -28,7 +28,7 @@
 .end method
 
 .method public constructor <init>(Llibs/lq2;Llibs/t61;)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x2
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public a()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/ku;->a:B
@@ -68,7 +68,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_1a
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -84,7 +84,7 @@
     return v0
 
     .line 13
-    :pswitch_c
+    :pswitch_0
     check-cast v1, Llibs/t61;
 
     .line 14
@@ -100,7 +100,7 @@
     return v0
 
     .line 20
-    :pswitch_13
+    :pswitch_1
     check-cast v1, Llibs/t61;
 
     .line 21
@@ -116,22 +116,22 @@
     return v0
 
     .line 27
-    :pswitch_data_1a
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_13
-        :pswitch_c
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public b()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/ku;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_14
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -147,7 +147,7 @@
     return v0
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     iget-object v0, p0, Llibs/ku;->b:Ljava/lang/Object;
 
     .line 12
@@ -170,21 +170,21 @@
     nop
 
     .line 21
-    :pswitch_data_14
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public c()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/ku;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_14
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -200,7 +200,7 @@
     return v0
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     iget-object v0, p0, Llibs/ku;->b:Ljava/lang/Object;
 
     .line 12
@@ -223,14 +223,14 @@
     nop
 
     .line 21
-    :pswitch_data_14
+    :pswitch_data_0
     .packed-switch 0x2
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public d(Ljava/lang/String;Z)Z
-    .registers 6
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/ku;->a:B
@@ -241,7 +241,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_22
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -257,7 +257,7 @@
     return p1
 
     .line 13
-    :pswitch_c
+    :pswitch_0
     check-cast v1, Llibs/t61;
 
     .line 14
@@ -273,7 +273,7 @@
     return p1
 
     .line 20
-    :pswitch_13
+    :pswitch_1
     iget-object v0, p0, Llibs/ku;->c:Ljava/lang/Object;
 
     .line 21
@@ -305,15 +305,15 @@
     return p1
 
     .line 35
-    :pswitch_data_22
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_13
-        :pswitch_c
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final e(Llibs/rp0;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/ku;->a:B
@@ -328,7 +328,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_2c
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -360,7 +360,7 @@
     return p1
 
     .line 23
-    :pswitch_16
+    :pswitch_0
     check-cast v1, Ljava/util/concurrent/atomic/AtomicInteger;
 
     .line 24
@@ -388,7 +388,7 @@
     return p1
 
     .line 36
-    :pswitch_23
+    :pswitch_1
     check-cast v2, Llibs/zl0;
 
     .line 37
@@ -408,15 +408,15 @@
     return p1
 
     .line 45
-    :pswitch_data_2c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_23
-        :pswitch_16
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public f()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/ku;->a:B
@@ -427,7 +427,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_1a
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -443,7 +443,7 @@
     return v0
 
     .line 13
-    :pswitch_c
+    :pswitch_0
     check-cast v1, Llibs/t61;
 
     .line 14
@@ -459,7 +459,7 @@
     return v0
 
     .line 20
-    :pswitch_13
+    :pswitch_1
     check-cast v1, Llibs/t61;
 
     .line 21
@@ -475,9 +475,9 @@
     return v0
 
     .line 27
-    :pswitch_data_1a
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_13
-        :pswitch_c
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/BrowseActivity;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/ge;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 10
+    .locals 9
 
     .line 1
     iget-byte v0, p0, Llibs/ge;->X:B
@@ -59,7 +59,7 @@
     const/4 v5, 0x0
 
     .line 9
-    packed-switch v0, :pswitch_data_10a
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
@@ -76,14 +76,14 @@
     move-result v0
 
     .line 18
-    if-nez v0, :cond_14
+    if-nez v0, :cond_0
 
     .line 19
     .line 20
-    goto :goto_19
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_0
     const/16 v0, 0x78
 
     .line 22
@@ -93,11 +93,11 @@
     .line 24
     .line 25
     .line 26
-    :goto_19
+    :goto_0
     return-void
 
     .line 27
-    :pswitch_1a
+    :pswitch_0
     sget-object v0, Lcom/mixplorer/activities/BrowseActivity;->Il:Ljava/lang/ThreadGroup;
 
     .line 28
@@ -122,7 +122,7 @@
     return-void
 
     .line 39
-    :pswitch_26
+    :pswitch_1
     sget-object v0, Lcom/mixplorer/activities/BrowseActivity;->Il:Ljava/lang/ThreadGroup;
 
     .line 40
@@ -394,7 +394,7 @@
     return-void
 
     .line 182
-    :pswitch_b5
+    :pswitch_2
     sget-object v0, Lcom/mixplorer/activities/BrowseActivity;->Il:Ljava/lang/ThreadGroup;
 
     .line 183
@@ -415,7 +415,7 @@
     move-result v0
 
     .line 192
-    if-nez v0, :cond_d6
+    if-nez v0, :cond_2
 
     .line 193
     .line 194
@@ -439,14 +439,14 @@
     move-result v0
 
     .line 204
-    if-nez v0, :cond_ce
+    if-nez v0, :cond_1
 
     .line 205
     .line 206
-    goto :goto_d6
+    goto :goto_1
 
     .line 207
-    :cond_ce
+    :cond_1
     new-instance v0, Llibs/ge;
 
     .line 208
@@ -461,12 +461,12 @@
     .line 213
     .line 214
     .line 215
-    :cond_d6
-    :goto_d6
+    :cond_2
+    :goto_1
     return-void
 
     .line 216
-    :pswitch_d7
+    :pswitch_3
     sget-object v0, Lcom/mixplorer/activities/BrowseActivity;->Il:Ljava/lang/ThreadGroup;
 
     .line 217
@@ -491,7 +491,7 @@
     return-void
 
     .line 228
-    :pswitch_e3
+    :pswitch_4
     new-instance v0, Llibs/$d;
 
     .line 229
@@ -567,12 +567,12 @@
     return-void
 
     .line 267
-    :pswitch_data_10a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_e3
-        :pswitch_d7
-        :pswitch_b5
-        :pswitch_26
-        :pswitch_1a
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

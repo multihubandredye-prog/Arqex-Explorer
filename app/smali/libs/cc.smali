@@ -21,7 +21,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -39,7 +39,7 @@
 .end method
 
 .method public constructor <init>(Ljava/io/InputStream;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0, p1}, Llibs/ir0;-><init>(Ljava/io/InputStream;)V
@@ -108,7 +108,7 @@
 
 # virtual methods
 .method public final available()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/cc;->Upsilon:I
@@ -126,21 +126,21 @@
 .end method
 
 .method public final c()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-boolean v0, p0, Llibs/cc;->Rho:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     iget-object v0, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;
 
     .line 7
@@ -163,7 +163,7 @@
     const/4 v2, 0x0
 
     .line 16
-    if-ne v0, v1, :cond_1d
+    if-ne v0, v1, :cond_1
 
     .line 17
     .line 18
@@ -190,10 +190,10 @@
     move-result v0
 
     .line 29
-    goto :goto_25
+    goto :goto_0
 
     .line 30
-    :cond_1d
+    :cond_1
     iget-object v1, p0, Llibs/cc;->Pi:Llibs/ub;
 
     .line 31
@@ -210,8 +210,8 @@
     move-result v0
 
     .line 38
-    :goto_25
-    if-eqz v0, :cond_30
+    :goto_0
+    if-eqz v0, :cond_2
 
     .line 39
     .line 40
@@ -234,7 +234,7 @@
     return-void
 
     .line 49
-    :cond_30
+    :cond_2
     new-instance v0, Llibs/yb;
 
     .line 50
@@ -248,7 +248,7 @@
 .end method
 
 .method public final close()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;
@@ -271,7 +271,7 @@
 .end method
 
 .method public final mark(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -287,7 +287,7 @@
 .end method
 
 .method public final markSupported()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -297,32 +297,32 @@
 .end method
 
 .method public final read()I
-    .registers 4
+    .locals 3
 
     .line 40
     iget v0, p0, Llibs/cc;->Tau:I
 
     iget v1, p0, Llibs/cc;->Upsilon:I
 
-    if-lt v0, v1, :cond_9
+    if-lt v0, v1, :cond_0
 
     .line 41
     invoke-virtual {p0}, Llibs/cc;->c()V
 
     .line 42
-    :cond_9
+    :cond_0
     iget v0, p0, Llibs/cc;->Tau:I
 
     iget v1, p0, Llibs/cc;->Upsilon:I
 
-    if-lt v0, v1, :cond_11
+    if-lt v0, v1, :cond_1
 
     const/4 v0, -0x1
 
     return v0
 
     .line 43
-    :cond_11
+    :cond_1
     iget-object v1, p0, Llibs/cc;->Pi:Llibs/ub;
 
     iget-object v1, v1, Llibs/ub;->b:Ljava/io/Serializable;
@@ -341,7 +341,7 @@
 .end method
 
 .method public final read([BII)I
-    .registers 6
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/cc;->Tau:I
@@ -352,7 +352,7 @@
 
     .line 4
     .line 5
-    if-lt v0, v1, :cond_9
+    if-lt v0, v1, :cond_0
 
     .line 6
     .line 7
@@ -361,7 +361,7 @@
     .line 8
     .line 9
     .line 10
-    :cond_9
+    :cond_0
     iget v0, p0, Llibs/cc;->Tau:I
 
     .line 11
@@ -370,7 +370,7 @@
 
     .line 13
     .line 14
-    if-lt v0, v1, :cond_11
+    if-lt v0, v1, :cond_1
 
     .line 15
     .line 16
@@ -380,7 +380,7 @@
     return p1
 
     .line 18
-    :cond_11
+    :cond_1
     sub-int/2addr v1, v0
 
     .line 19
@@ -428,7 +428,7 @@
 .end method
 
 .method public final reset()V
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -444,7 +444,7 @@
 .end method
 
 .method public final skip(J)J
-    .registers 5
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/cc;->Tau:I
@@ -455,7 +455,7 @@
 
     .line 4
     .line 5
-    if-lt v0, v1, :cond_9
+    if-lt v0, v1, :cond_0
 
     .line 6
     .line 7
@@ -464,7 +464,7 @@
     .line 8
     .line 9
     .line 10
-    :cond_9
+    :cond_0
     iget v0, p0, Llibs/cc;->Tau:I
 
     .line 11
@@ -473,7 +473,7 @@
 
     .line 13
     .line 14
-    if-lt v0, v1, :cond_12
+    if-lt v0, v1, :cond_1
 
     .line 15
     .line 16
@@ -484,7 +484,7 @@
     return-wide p1
 
     .line 19
-    :cond_12
+    :cond_1
     sub-int/2addr v1, v0
 
     .line 20

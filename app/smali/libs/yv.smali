@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/CodeEditorActivity;Llibs/bv1;Llibs/cv;)V
-    .registers 4
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -45,7 +45,7 @@
 .end method
 
 .method public constructor <init>(Llibs/bv1;Lcom/mixplorer/widgets/MiEditor;)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -62,28 +62,28 @@
 .end method
 
 .method private final a(Landroid/widget/SeekBar;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final b(Landroid/widget/SeekBar;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final c(Landroid/widget/SeekBar;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final d(Landroid/widget/SeekBar;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
@@ -92,7 +92,7 @@
 
 # virtual methods
 .method public final onProgressChanged(Landroid/widget/SeekBar;IZ)V
-    .registers 9
+    .locals 5
 
     .line 1
     iget-byte p3, p0, Llibs/yv;->a:B
@@ -114,7 +114,7 @@
 
     .line 9
     .line 10
-    packed-switch p3, :pswitch_data_72
+    packed-switch p3, :pswitch_data_0
 
     .line 11
     .line 12
@@ -123,7 +123,7 @@
 
     .line 14
     .line 15
-    if-nez p3, :cond_18
+    if-nez p3, :cond_0
 
     .line 16
     .line 17
@@ -143,7 +143,7 @@
 
     .line 24
     .line 25
-    :cond_18
+    :cond_0
     invoke-virtual {v2}, Landroid/widget/RadioGroup;->getCheckedRadioButtonId()I
 
     .line 26
@@ -164,7 +164,7 @@
 
     .line 34
     .line 35
-    if-ne p1, p3, :cond_33
+    if-ne p1, p3, :cond_1
 
     .line 36
     .line 37
@@ -200,10 +200,10 @@
     move-result p1
 
     .line 51
-    goto :goto_41
+    goto :goto_0
 
     .line 52
-    :cond_33
+    :cond_1
     int-to-long p1, p2
 
     .line 53
@@ -236,7 +236,7 @@
     move-result p1
 
     .line 66
-    :goto_41
+    :goto_0
     iget-object p2, p0, Llibs/yv;->b:Landroid/widget/TextView;
 
     .line 67
@@ -265,12 +265,12 @@
     return-void
 
     .line 80
-    :pswitch_4f
+    :pswitch_0
     iget-object p3, p0, Llibs/yv;->b:Landroid/widget/TextView;
 
     .line 81
     .line 82
-    if-nez p3, :cond_5b
+    if-nez p3, :cond_2
 
     .line 83
     .line 84
@@ -290,7 +290,7 @@
 
     .line 91
     .line 92
-    :cond_5b
+    :cond_2
     invoke-virtual {v2}, Landroid/widget/RadioGroup;->getCheckedRadioButtonId()I
 
     .line 93
@@ -311,18 +311,18 @@
 
     .line 101
     .line 102
-    if-ne p1, v2, :cond_68
+    if-ne p1, v2, :cond_3
 
     .line 103
     .line 104
-    goto :goto_69
+    goto :goto_1
 
     .line 105
-    :cond_68
+    :cond_3
     const/4 v0, 0x0
 
     .line 106
-    :goto_69
+    :goto_1
     invoke-static {v1, v0, p2}, Lcom/mixplorer/activities/CodeEditorActivity;->Post(Llibs/cv;ZI)Ljava/lang/String;
 
     .line 107
@@ -342,14 +342,14 @@
     nop
 
     .line 115
-    :pswitch_data_72
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_4f
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final onStartTrackingTouch(Landroid/widget/SeekBar;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iget-byte p1, p0, Llibs/yv;->a:B
@@ -360,7 +360,7 @@
 .end method
 
 .method public final onStopTrackingTouch(Landroid/widget/SeekBar;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iget-byte p1, p0, Llibs/yv;->a:B

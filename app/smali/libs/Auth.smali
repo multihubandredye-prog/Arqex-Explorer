@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,7 +22,7 @@
 
 # virtual methods
 .method public e()[B
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/fl;
@@ -60,10 +60,10 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     .line 2
     .line 3
@@ -73,12 +73,12 @@
     return p1
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v0, p1, Llibs/Core;
 
     .line 6
     .line 7
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     .line 8
     .line 9
@@ -88,7 +88,7 @@
     return p1
 
     .line 11
-    :cond_a
+    :cond_1
     check-cast p1, Llibs/Core;
 
     .line 12
@@ -121,7 +121,7 @@
 .end method
 
 .method public final f(Ljava/lang/String;)[B
-    .registers 4
+    .locals 2
 
     .line 1
     const-string v0, "DER"
@@ -136,7 +136,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -177,7 +177,7 @@
     return-object p1
 
     .line 28
-    :cond_1b
+    :cond_0
     const-string v0, "DL"
 
     .line 29
@@ -190,7 +190,7 @@
     move-result p1
 
     .line 34
-    if-eqz p1, :cond_36
+    if-eqz p1, :cond_1
 
     .line 35
     .line 36
@@ -231,7 +231,7 @@
     return-object p1
 
     .line 55
-    :cond_36
+    :cond_1
     invoke-virtual {p0}, Llibs/Auth;->e()[B
 
     .line 56
@@ -244,7 +244,7 @@
 .end method
 
 .method public getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/Auth;->toString()Ljava/lang/String;
@@ -259,7 +259,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-interface {p0}, Llibs/Core;->b()Llibs/Theme;

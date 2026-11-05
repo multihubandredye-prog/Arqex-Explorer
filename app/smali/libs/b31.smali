@@ -22,7 +22,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r31;Llibs/rp0;Landroid/widget/EditText;ZZI)V
-    .registers 7
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 9
+    .locals 8
 
     .line 1
     iget-object v3, p0, Llibs/b31;->Y:Llibs/rp0;

@@ -35,7 +35,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/mp;
@@ -114,7 +114,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 272
     invoke-direct {p0}, Llibs/ku0;-><init>()V
@@ -136,7 +136,7 @@
 .end method
 
 .method public constructor <init>(Llibs/fw;)V
-    .registers 11
+    .locals 9
 
     .line 1
     invoke-direct {p0}, Llibs/ku0;-><init>()V
@@ -225,13 +225,13 @@
     const/4 v5, 0x0
 
     .line 43
-    :cond_2a
-    :goto_2a
-    if-nez v5, :cond_fb
+    :cond_0
+    :goto_0
+    if-nez v5, :cond_e
 
     .line 44
     .line 45
-    :try_start_2c
+    :try_start_0
     invoke-virtual {p1}, Llibs/fw;->g()I
 
     .line 46
@@ -240,7 +240,7 @@
     move-result v6
 
     .line 49
-    if-eqz v6, :cond_54
+    if-eqz v6, :cond_1
 
     .line 50
     .line 51
@@ -248,7 +248,7 @@
 
     .line 52
     .line 53
-    if-eq v6, v7, :cond_c1
+    if-eq v6, v7, :cond_b
 
     .line 54
     .line 55
@@ -256,7 +256,7 @@
 
     .line 56
     .line 57
-    if-eq v6, v8, :cond_b3
+    if-eq v6, v8, :cond_a
 
     .line 58
     .line 59
@@ -264,7 +264,7 @@
 
     .line 60
     .line 61
-    if-eq v6, v8, :cond_a5
+    if-eq v6, v8, :cond_9
 
     .line 62
     .line 63
@@ -272,7 +272,7 @@
 
     .line 64
     .line 65
-    if-eq v6, v8, :cond_99
+    if-eq v6, v8, :cond_8
 
     .line 66
     .line 67
@@ -280,7 +280,7 @@
 
     .line 68
     .line 69
-    if-eq v6, v7, :cond_79
+    if-eq v6, v7, :cond_4
 
     .line 70
     .line 71
@@ -288,7 +288,7 @@
 
     .line 72
     .line 73
-    if-eq v6, v7, :cond_6c
+    if-eq v6, v7, :cond_3
 
     .line 74
     .line 75
@@ -296,7 +296,7 @@
 
     .line 76
     .line 77
-    if-eq v6, v7, :cond_5f
+    if-eq v6, v7, :cond_2
 
     .line 78
     .line 79
@@ -308,42 +308,42 @@
     move-result v6
 
     .line 83
-    if-nez v6, :cond_2a
+    if-nez v6, :cond_0
 
     .line 84
     .line 85
-    :cond_54
+    :cond_1
     const/4 v5, 0x1
 
     .line 86
-    goto :goto_2a
+    goto :goto_0
 
     .line 87
-    :catchall_56
+    :catchall_0
     move-exception p1
 
     .line 88
-    goto/16 :goto_e8
+    goto/16 :goto_5
 
     .line 89
     .line 90
-    :catch_59
+    :catch_0
     move-exception p1
 
     .line 91
-    goto/16 :goto_dd
+    goto/16 :goto_3
 
     .line 92
     .line 93
-    :catch_5c
+    :catch_1
     move-exception p1
 
     .line 94
-    goto/16 :goto_e7
+    goto/16 :goto_4
 
     .line 95
     .line 96
-    :cond_5f
+    :cond_2
     iget v6, p0, Lcast/chromecast/CastChannel$CastMessage;->Psi:I
 
     .line 97
@@ -368,10 +368,10 @@
 
     .line 107
     .line 108
-    goto :goto_2a
+    goto :goto_0
 
     .line 109
-    :cond_6c
+    :cond_3
     invoke-virtual {p1}, Llibs/fw;->c()Llibs/bm1;
 
     .line 110
@@ -396,10 +396,10 @@
 
     .line 120
     .line 121
-    goto :goto_2a
+    goto :goto_0
 
     .line 122
-    :cond_79
+    :cond_4
     invoke-virtual {p1}, Llibs/fw;->e()I
 
     .line 123
@@ -408,34 +408,34 @@
     move-result v7
 
     .line 126
-    if-eqz v7, :cond_86
+    if-eqz v7, :cond_6
 
     .line 127
     .line 128
-    if-eq v7, v0, :cond_83
+    if-eq v7, v0, :cond_5
 
     .line 129
     .line 130
     const/4 v8, 0x0
 
     .line 131
-    goto :goto_87
+    goto :goto_1
 
     .line 132
-    :cond_83
+    :cond_5
     sget-object v8, Llibs/qp;->Z:Llibs/qp;
 
     .line 133
     .line 134
-    goto :goto_87
+    goto :goto_1
 
     .line 135
-    :cond_86
+    :cond_6
     move-object v8, v2
 
     .line 136
-    :goto_87
-    if-nez v8, :cond_90
+    :goto_1
+    if-nez v8, :cond_7
 
     .line 137
     .line 138
@@ -449,10 +449,10 @@
     .line 142
     .line 143
     .line 144
-    goto :goto_2a
+    goto :goto_0
 
     .line 145
-    :cond_90
+    :cond_7
     iget v6, p0, Lcast/chromecast/CastChannel$CastMessage;->Psi:I
 
     .line 146
@@ -469,10 +469,10 @@
 
     .line 152
     .line 153
-    goto :goto_2a
+    goto :goto_0
 
     .line 154
-    :cond_99
+    :cond_8
     invoke-virtual {p1}, Llibs/fw;->c()Llibs/bm1;
 
     .line 155
@@ -496,10 +496,10 @@
 
     .line 164
     .line 165
-    goto :goto_2a
+    goto :goto_0
 
     .line 166
-    :cond_a5
+    :cond_9
     invoke-virtual {p1}, Llibs/fw;->c()Llibs/bm1;
 
     .line 167
@@ -524,11 +524,11 @@
 
     .line 177
     .line 178
-    goto/16 :goto_2a
+    goto/16 :goto_0
 
     .line 179
     .line 180
-    :cond_b3
+    :cond_a
     invoke-virtual {p1}, Llibs/fw;->c()Llibs/bm1;
 
     .line 181
@@ -553,11 +553,11 @@
 
     .line 191
     .line 192
-    goto/16 :goto_2a
+    goto/16 :goto_0
 
     .line 193
     .line 194
-    :cond_c1
+    :cond_b
     invoke-virtual {p1}, Llibs/fw;->e()I
 
     .line 195
@@ -566,22 +566,22 @@
     move-result v7
 
     .line 198
-    if-eqz v7, :cond_c9
+    if-eqz v7, :cond_c
 
     .line 199
     .line 200
     const/4 v8, 0x0
 
     .line 201
-    goto :goto_ca
+    goto :goto_2
 
     .line 202
-    :cond_c9
+    :cond_c
     const/4 v8, 0x1
 
     .line 203
-    :goto_ca
-    if-nez v8, :cond_d4
+    :goto_2
+    if-nez v8, :cond_d
 
     .line 204
     .line 205
@@ -595,11 +595,11 @@
     .line 209
     .line 210
     .line 211
-    goto/16 :goto_2a
+    goto/16 :goto_0
 
     .line 212
     .line 213
-    :cond_d4
+    :cond_d
     iget v6, p0, Lcast/chromecast/CastChannel$CastMessage;->Psi:I
 
     .line 214
@@ -612,19 +612,19 @@
     .line 217
     .line 218
     iput v8, p0, Lcast/chromecast/CastChannel$CastMessage;->Omega:I
-    :try_end_db
-    .catch Llibs/vb1; {:try_start_2c .. :try_end_db} :catch_5c
-    .catch Ljava/io/IOException; {:try_start_2c .. :try_end_db} :catch_59
-    .catchall {:try_start_2c .. :try_end_db} :catchall_56
+    :try_end_0
+    .catch Llibs/vb1; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 219
     .line 220
-    goto/16 :goto_2a
+    goto/16 :goto_0
 
     .line 221
     .line 222
-    :goto_dd
-    :try_start_dd
+    :goto_3
+    :try_start_1
     new-instance v0, Llibs/vb1;
 
     .line 223
@@ -645,23 +645,23 @@
     throw v0
 
     .line 232
-    :goto_e7
+    :goto_4
     throw p1
-    :try_end_e8
-    .catchall {:try_start_dd .. :try_end_e8} :catchall_56
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 233
-    :goto_e8
-    :try_start_e8
+    :goto_5
+    :try_start_2
     invoke-virtual {v3}, Llibs/af;->s()V
-    :try_end_eb
-    .catch Ljava/io/IOException; {:try_start_e8 .. :try_end_eb} :catch_eb
-    .catchall {:try_start_e8 .. :try_end_eb} :catchall_f2
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 234
     .line 235
     .line 236
-    :catch_eb
+    :catch_2
     invoke-virtual {v1}, Llibs/pl;->m()Llibs/rl;
 
     .line 237
@@ -674,10 +674,10 @@
 
     .line 241
     .line 242
-    goto :goto_fa
+    goto :goto_6
 
     .line 243
-    :catchall_f2
+    :catchall_1
     move-exception p1
 
     .line 244
@@ -696,21 +696,21 @@
     throw p1
 
     .line 251
-    :goto_fa
+    :goto_6
     throw p1
 
     .line 252
-    :cond_fb
-    :try_start_fb
+    :cond_e
+    :try_start_3
     invoke-virtual {v3}, Llibs/af;->s()V
-    :try_end_fe
-    .catch Ljava/io/IOException; {:try_start_fb .. :try_end_fe} :catch_fe
-    .catchall {:try_start_fb .. :try_end_fe} :catchall_105
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
     .line 253
     .line 254
     .line 255
-    :catch_fe
+    :catch_3
     invoke-virtual {v1}, Llibs/pl;->m()Llibs/rl;
 
     .line 256
@@ -726,7 +726,7 @@
     return-void
 
     .line 262
-    :catchall_105
+    :catchall_2
     move-exception p1
 
     .line 263
@@ -742,19 +742,19 @@
 
     .line 268
     .line 269
-    goto :goto_10e
+    goto :goto_8
 
     .line 270
-    :goto_10d
+    :goto_7
     throw p1
 
     .line 271
-    :goto_10e
-    goto :goto_10d
+    :goto_8
+    goto :goto_7
 .end method
 
 .method public constructor <init>(Llibs/pp;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -781,7 +781,7 @@
 
 # virtual methods
 .method public final Dao()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lcast/chromecast/CastChannel$CastMessage;->Five:Ljava/lang/Object;
@@ -792,7 +792,7 @@
 
     .line 4
     .line 5
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_0
 
     .line 6
     .line 7
@@ -803,7 +803,7 @@
     return-object v0
 
     .line 10
-    :cond_9
+    :cond_0
     check-cast v0, Llibs/rl;
 
     .line 11
@@ -813,15 +813,15 @@
     .line 13
     .line 14
     .line 15
-    :try_start_e
+    :try_start_0
     invoke-virtual {v0}, Llibs/rl;->l()Ljava/lang/String;
 
     .line 16
     .line 17
     .line 18
     move-result-object v1
-    :try_end_12
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_e .. :try_end_12} :catch_1b
+    :try_end_0
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 19
     invoke-virtual {v0}, Llibs/rl;->g()Z
@@ -832,7 +832,7 @@
     move-result v0
 
     .line 23
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
     .line 24
     .line 25
@@ -840,11 +840,11 @@
 
     .line 26
     .line 27
-    :cond_1a
+    :cond_1
     return-object v1
 
     .line 28
-    :catch_1b
+    :catch_0
     move-exception v0
 
     .line 29
@@ -864,7 +864,7 @@
 .end method
 
 .method public final Room(Llibs/af;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-virtual {p0}, Lcast/chromecast/CastChannel$CastMessage;->y()I
@@ -882,7 +882,7 @@
     and-int/2addr v0, v1
 
     .line 8
-    if-ne v0, v1, :cond_14
+    if-ne v0, v1, :cond_1
 
     .line 9
     .line 10
@@ -890,7 +890,7 @@
 
     .line 11
     .line 12
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 13
     .line 14
@@ -902,18 +902,18 @@
     .line 16
     .line 17
     .line 18
-    goto :goto_14
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     const/4 p1, 0x0
 
     .line 20
     throw p1
 
     .line 21
-    :cond_14
-    :goto_14
+    :cond_1
+    :goto_0
     iget v0, p0, Lcast/chromecast/CastChannel$CastMessage;->Psi:I
 
     .line 22
@@ -928,7 +928,7 @@
 
     .line 26
     .line 27
-    if-ne v0, v1, :cond_36
+    if-ne v0, v1, :cond_3
 
     .line 28
     .line 29
@@ -940,7 +940,7 @@
 
     .line 32
     .line 33
-    if-eqz v3, :cond_30
+    if-eqz v3, :cond_2
 
     .line 34
     .line 35
@@ -969,10 +969,10 @@
 
     .line 47
     .line 48
-    goto :goto_33
+    goto :goto_1
 
     .line 49
-    :cond_30
+    :cond_2
     move-object v3, v0
 
     .line 50
@@ -980,13 +980,13 @@
 
     .line 51
     .line 52
-    :goto_33
+    :goto_1
     invoke-virtual {p1, v1, v3}, Llibs/af;->Bundle(ILlibs/rl;)V
 
     .line 53
     .line 54
     .line 55
-    :cond_36
+    :cond_3
     iget v0, p0, Lcast/chromecast/CastChannel$CastMessage;->Psi:I
 
     .line 56
@@ -997,7 +997,7 @@
     and-int/2addr v0, v1
 
     .line 59
-    if-ne v0, v1, :cond_57
+    if-ne v0, v1, :cond_5
 
     .line 60
     .line 61
@@ -1009,7 +1009,7 @@
 
     .line 64
     .line 65
-    if-eqz v3, :cond_50
+    if-eqz v3, :cond_4
 
     .line 66
     .line 67
@@ -1038,10 +1038,10 @@
 
     .line 79
     .line 80
-    goto :goto_53
+    goto :goto_2
 
     .line 81
-    :cond_50
+    :cond_4
     move-object v3, v0
 
     .line 82
@@ -1049,7 +1049,7 @@
 
     .line 83
     .line 84
-    :goto_53
+    :goto_2
     const/4 v0, 0x3
 
     .line 85
@@ -1058,7 +1058,7 @@
     .line 86
     .line 87
     .line 88
-    :cond_57
+    :cond_5
     iget v0, p0, Lcast/chromecast/CastChannel$CastMessage;->Psi:I
 
     .line 89
@@ -1070,7 +1070,7 @@
     and-int/2addr v0, v3
 
     .line 93
-    if-ne v0, v3, :cond_78
+    if-ne v0, v3, :cond_7
 
     .line 94
     .line 95
@@ -1082,7 +1082,7 @@
 
     .line 98
     .line 99
-    if-eqz v3, :cond_72
+    if-eqz v3, :cond_6
 
     .line 100
     .line 101
@@ -1111,10 +1111,10 @@
 
     .line 113
     .line 114
-    goto :goto_75
+    goto :goto_3
 
     .line 115
-    :cond_72
+    :cond_6
     move-object v3, v0
 
     .line 116
@@ -1122,13 +1122,13 @@
 
     .line 117
     .line 118
-    :goto_75
+    :goto_3
     invoke-virtual {p1, v1, v3}, Llibs/af;->Bundle(ILlibs/rl;)V
 
     .line 119
     .line 120
     .line 121
-    :cond_78
+    :cond_7
     iget v0, p0, Lcast/chromecast/CastChannel$CastMessage;->Psi:I
 
     .line 122
@@ -1140,7 +1140,7 @@
     and-int/2addr v0, v1
 
     .line 126
-    if-ne v0, v1, :cond_87
+    if-ne v0, v1, :cond_8
 
     .line 127
     .line 128
@@ -1160,7 +1160,7 @@
     .line 134
     .line 135
     .line 136
-    :cond_87
+    :cond_8
     iget v0, p0, Lcast/chromecast/CastChannel$CastMessage;->Psi:I
 
     .line 137
@@ -1172,7 +1172,7 @@
     and-int/2addr v0, v1
 
     .line 141
-    if-ne v0, v1, :cond_a9
+    if-ne v0, v1, :cond_a
 
     .line 142
     .line 143
@@ -1184,7 +1184,7 @@
 
     .line 146
     .line 147
-    if-eqz v1, :cond_a2
+    if-eqz v1, :cond_9
 
     .line 148
     .line 149
@@ -1213,10 +1213,10 @@
 
     .line 161
     .line 162
-    goto :goto_a5
+    goto :goto_4
 
     .line 163
-    :cond_a2
+    :cond_9
     move-object v1, v0
 
     .line 164
@@ -1224,7 +1224,7 @@
 
     .line 165
     .line 166
-    :goto_a5
+    :goto_4
     const/4 v0, 0x6
 
     .line 167
@@ -1233,7 +1233,7 @@
     .line 168
     .line 169
     .line 170
-    :cond_a9
+    :cond_a
     iget v0, p0, Lcast/chromecast/CastChannel$CastMessage;->Psi:I
 
     .line 171
@@ -1245,7 +1245,7 @@
     and-int/2addr v0, v1
 
     .line 175
-    if-ne v0, v1, :cond_b6
+    if-ne v0, v1, :cond_b
 
     .line 176
     .line 177
@@ -1261,7 +1261,7 @@
     .line 181
     .line 182
     .line 183
-    :cond_b6
+    :cond_b
     iget-object v0, p0, Lcast/chromecast/CastChannel$CastMessage;->Chi:Llibs/rl;
 
     .line 184
@@ -1275,7 +1275,7 @@
 .end method
 
 .method public final a()Z
-    .registers 6
+    .locals 5
 
     .line 1
     iget-byte v0, p0, Lcast/chromecast/CastChannel$CastMessage;->Seven:B
@@ -1285,25 +1285,25 @@
     const/4 v1, 0x1
 
     .line 4
-    if-ne v0, v1, :cond_6
+    if-ne v0, v1, :cond_0
 
     .line 5
     .line 6
     return v1
 
     .line 7
-    :cond_6
+    :cond_0
     const/4 v2, 0x0
 
     .line 8
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     .line 9
     .line 10
     return v2
 
     .line 11
-    :cond_a
+    :cond_1
     iget v0, p0, Lcast/chromecast/CastChannel$CastMessage;->Psi:I
 
     .line 12
@@ -1312,7 +1312,7 @@
 
     .line 14
     .line 15
-    if-ne v3, v1, :cond_34
+    if-ne v3, v1, :cond_6
 
     .line 16
     .line 17
@@ -1323,7 +1323,7 @@
     const/4 v4, 0x2
 
     .line 20
-    if-ne v3, v4, :cond_31
+    if-ne v3, v4, :cond_5
 
     .line 21
     .line 22
@@ -1334,7 +1334,7 @@
     const/4 v4, 0x4
 
     .line 25
-    if-ne v3, v4, :cond_2e
+    if-ne v3, v4, :cond_4
 
     .line 26
     .line 27
@@ -1346,7 +1346,7 @@
 
     .line 30
     .line 31
-    if-ne v3, v4, :cond_2b
+    if-ne v3, v4, :cond_3
 
     .line 32
     .line 33
@@ -1357,7 +1357,7 @@
     and-int/2addr v0, v3
 
     .line 36
-    if-ne v0, v3, :cond_28
+    if-ne v0, v3, :cond_2
 
     .line 37
     .line 38
@@ -1368,7 +1368,7 @@
     return v1
 
     .line 41
-    :cond_28
+    :cond_2
     iput-byte v2, p0, Lcast/chromecast/CastChannel$CastMessage;->Seven:B
 
     .line 42
@@ -1376,7 +1376,7 @@
     return v2
 
     .line 44
-    :cond_2b
+    :cond_3
     iput-byte v2, p0, Lcast/chromecast/CastChannel$CastMessage;->Seven:B
 
     .line 45
@@ -1384,7 +1384,7 @@
     return v2
 
     .line 47
-    :cond_2e
+    :cond_4
     iput-byte v2, p0, Lcast/chromecast/CastChannel$CastMessage;->Seven:B
 
     .line 48
@@ -1392,7 +1392,7 @@
     return v2
 
     .line 50
-    :cond_31
+    :cond_5
     iput-byte v2, p0, Lcast/chromecast/CastChannel$CastMessage;->Seven:B
 
     .line 51
@@ -1400,7 +1400,7 @@
     return v2
 
     .line 53
-    :cond_34
+    :cond_6
     iput-byte v2, p0, Lcast/chromecast/CastChannel$CastMessage;->Seven:B
 
     .line 54
@@ -1409,7 +1409,7 @@
 .end method
 
 .method public final y()I
-    .registers 6
+    .locals 5
 
     .line 1
     iget v0, p0, Lcast/chromecast/CastChannel$CastMessage;->Eight:I
@@ -1419,14 +1419,14 @@
     const/4 v1, -0x1
 
     .line 4
-    if-eq v0, v1, :cond_6
+    if-eq v0, v1, :cond_0
 
     .line 5
     .line 6
     return v0
 
     .line 7
-    :cond_6
+    :cond_0
     iget v0, p0, Lcast/chromecast/CastChannel$CastMessage;->Psi:I
 
     .line 8
@@ -1440,7 +1440,7 @@
     const/4 v2, 0x0
 
     .line 12
-    if-ne v0, v1, :cond_18
+    if-ne v0, v1, :cond_2
 
     .line 13
     .line 14
@@ -1448,7 +1448,7 @@
 
     .line 15
     .line 16
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     .line 17
     .line 18
@@ -1460,18 +1460,18 @@
     move-result v2
 
     .line 22
-    goto :goto_18
+    goto :goto_0
 
     .line 23
-    :cond_16
+    :cond_1
     const/4 v0, 0x0
 
     .line 24
     throw v0
 
     .line 25
-    :cond_18
-    :goto_18
+    :cond_2
+    :goto_0
     iget v0, p0, Lcast/chromecast/CastChannel$CastMessage;->Psi:I
 
     .line 26
@@ -1486,7 +1486,7 @@
 
     .line 30
     .line 31
-    if-ne v0, v1, :cond_3c
+    if-ne v0, v1, :cond_4
 
     .line 32
     .line 33
@@ -1498,7 +1498,7 @@
 
     .line 36
     .line 37
-    if-eqz v4, :cond_34
+    if-eqz v4, :cond_3
 
     .line 38
     .line 39
@@ -1527,10 +1527,10 @@
 
     .line 51
     .line 52
-    goto :goto_37
+    goto :goto_1
 
     .line 53
-    :cond_34
+    :cond_3
     move-object v4, v0
 
     .line 54
@@ -1538,7 +1538,7 @@
 
     .line 55
     .line 56
-    :goto_37
+    :goto_1
     invoke-static {v1, v4}, Llibs/af;->j(ILlibs/rl;)I
 
     .line 57
@@ -1550,7 +1550,7 @@
     add-int/2addr v2, v0
 
     .line 61
-    :cond_3c
+    :cond_4
     iget v0, p0, Lcast/chromecast/CastChannel$CastMessage;->Psi:I
 
     .line 62
@@ -1561,7 +1561,7 @@
     and-int/2addr v0, v1
 
     .line 65
-    if-ne v0, v1, :cond_5f
+    if-ne v0, v1, :cond_6
 
     .line 66
     .line 67
@@ -1573,7 +1573,7 @@
 
     .line 70
     .line 71
-    if-eqz v4, :cond_56
+    if-eqz v4, :cond_5
 
     .line 72
     .line 73
@@ -1602,10 +1602,10 @@
 
     .line 85
     .line 86
-    goto :goto_59
+    goto :goto_2
 
     .line 87
-    :cond_56
+    :cond_5
     move-object v4, v0
 
     .line 88
@@ -1613,7 +1613,7 @@
 
     .line 89
     .line 90
-    :goto_59
+    :goto_2
     const/4 v0, 0x3
 
     .line 91
@@ -1628,7 +1628,7 @@
     add-int/2addr v2, v0
 
     .line 96
-    :cond_5f
+    :cond_6
     iget v0, p0, Lcast/chromecast/CastChannel$CastMessage;->Psi:I
 
     .line 97
@@ -1640,7 +1640,7 @@
     and-int/2addr v0, v4
 
     .line 101
-    if-ne v0, v4, :cond_82
+    if-ne v0, v4, :cond_8
 
     .line 102
     .line 103
@@ -1652,7 +1652,7 @@
 
     .line 106
     .line 107
-    if-eqz v4, :cond_7a
+    if-eqz v4, :cond_7
 
     .line 108
     .line 109
@@ -1681,10 +1681,10 @@
 
     .line 121
     .line 122
-    goto :goto_7d
+    goto :goto_3
 
     .line 123
-    :cond_7a
+    :cond_7
     move-object v4, v0
 
     .line 124
@@ -1692,7 +1692,7 @@
 
     .line 125
     .line 126
-    :goto_7d
+    :goto_3
     invoke-static {v1, v4}, Llibs/af;->j(ILlibs/rl;)I
 
     .line 127
@@ -1704,7 +1704,7 @@
     add-int/2addr v2, v0
 
     .line 131
-    :cond_82
+    :cond_8
     iget v0, p0, Lcast/chromecast/CastChannel$CastMessage;->Psi:I
 
     .line 132
@@ -1716,7 +1716,7 @@
     and-int/2addr v0, v1
 
     .line 136
-    if-ne v0, v1, :cond_93
+    if-ne v0, v1, :cond_9
 
     .line 137
     .line 138
@@ -1742,7 +1742,7 @@
     add-int/2addr v2, v0
 
     .line 148
-    :cond_93
+    :cond_9
     iget v0, p0, Lcast/chromecast/CastChannel$CastMessage;->Psi:I
 
     .line 149
@@ -1754,7 +1754,7 @@
     and-int/2addr v0, v1
 
     .line 153
-    if-ne v0, v1, :cond_b7
+    if-ne v0, v1, :cond_b
 
     .line 154
     .line 155
@@ -1766,7 +1766,7 @@
 
     .line 158
     .line 159
-    if-eqz v1, :cond_ae
+    if-eqz v1, :cond_a
 
     .line 160
     .line 161
@@ -1795,10 +1795,10 @@
 
     .line 173
     .line 174
-    goto :goto_b1
+    goto :goto_4
 
     .line 175
-    :cond_ae
+    :cond_a
     move-object v1, v0
 
     .line 176
@@ -1806,7 +1806,7 @@
 
     .line 177
     .line 178
-    :goto_b1
+    :goto_4
     const/4 v0, 0x6
 
     .line 179
@@ -1821,7 +1821,7 @@
     add-int/2addr v2, v0
 
     .line 184
-    :cond_b7
+    :cond_b
     iget v0, p0, Lcast/chromecast/CastChannel$CastMessage;->Psi:I
 
     .line 185
@@ -1833,7 +1833,7 @@
     and-int/2addr v0, v1
 
     .line 189
-    if-ne v0, v1, :cond_c6
+    if-ne v0, v1, :cond_c
 
     .line 190
     .line 191
@@ -1855,7 +1855,7 @@
     add-int/2addr v2, v0
 
     .line 199
-    :cond_c6
+    :cond_c
     iget-object v0, p0, Lcast/chromecast/CastChannel$CastMessage;->Chi:Llibs/rl;
 
     .line 200

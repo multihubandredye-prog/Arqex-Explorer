@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/dx1;
@@ -33,7 +33,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/ex1;-><init>()V
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public final e(Landroid/content/Intent;)I
-    .registers 14
+    .locals 12
 
     .line 1
     new-instance v0, Llibs/Init;
@@ -92,14 +92,14 @@
     const/4 v3, -0x1
 
     .line 16
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_0
 
     .line 17
     .line 18
-    goto :goto_1e
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     const-string v2, "appWidgetId"
 
     .line 20
@@ -120,15 +120,15 @@
     .line 27
     .line 28
     .line 29
-    if-eq v2, v5, :cond_1f
+    if-eq v2, v5, :cond_1
 
     .line 30
     .line 31
-    :goto_1e
+    :goto_0
     return v3
 
     .line 32
-    :cond_1f
+    :cond_1
     invoke-static {}, Llibs/t53;->g()Z
 
     .line 33
@@ -137,7 +137,7 @@
     move-result v2
 
     .line 36
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_2
 
     .line 37
     .line 38
@@ -149,7 +149,7 @@
     return v3
 
     .line 42
-    :cond_29
+    :cond_2
     const/4 v2, 0x1
 
     .line 43
@@ -174,7 +174,7 @@
 
     .line 53
     .line 54
-    if-eqz v6, :cond_41
+    if-eqz v6, :cond_4
 
     .line 55
     .line 56
@@ -182,7 +182,7 @@
 
     .line 57
     .line 58
-    if-eqz v6, :cond_3e
+    if-eqz v6, :cond_3
 
     .line 59
     .line 60
@@ -190,23 +190,23 @@
 
     .line 61
     .line 62
-    goto :goto_43
+    goto :goto_1
 
     .line 63
-    :cond_3e
+    :cond_3
     const-string v6, "ftps"
 
     .line 64
     .line 65
-    goto :goto_43
+    goto :goto_1
 
     .line 66
-    :cond_41
+    :cond_4
     const-string v6, "ftp"
 
     .line 67
     .line 68
-    :goto_43
+    :goto_1
     invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     .line 69
@@ -311,7 +311,7 @@
     move-result-object v5
 
     .line 122
-    if-eqz v5, :cond_9e
+    if-eqz v5, :cond_6
 
     .line 123
     .line 124
@@ -347,8 +347,8 @@
     array-length v8, v6
 
     .line 140
-    :goto_8b
-    if-ge v4, v8, :cond_9e
+    :goto_2
+    if-ge v4, v8, :cond_6
 
     .line 141
     .line 142
@@ -364,7 +364,7 @@
     move-result v10
 
     .line 148
-    if-eqz v10, :cond_98
+    if-eqz v10, :cond_5
 
     .line 149
     .line 150
@@ -373,7 +373,7 @@
     .line 151
     .line 152
     .line 153
-    :cond_98
+    :cond_5
     invoke-static {v7, v5, v9, v2}, Llibs/t53;->l(Landroid/content/Context;Landroid/appwidget/AppWidgetManager;IZ)V
 
     .line 154
@@ -383,10 +383,10 @@
 
     .line 157
     .line 158
-    goto :goto_8b
+    goto :goto_2
 
     .line 159
-    :cond_9e
+    :cond_6
     invoke-virtual {v3, v2}, Llibs/s53;->h(Z)V
 
     .line 160
@@ -422,7 +422,7 @@
 .end method
 
 .method public final g()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -446,7 +446,7 @@
 .end method
 
 .method public final onCreate()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/services/FTPServerService;->Z:Llibs/t53;
@@ -474,7 +474,7 @@
 .end method
 
 .method public final onDestroy()V
-    .registers 10
+    .locals 9
 
     .line 1
     invoke-super {p0}, Llibs/ex1;->onDestroy()V
@@ -511,7 +511,7 @@
 
     .line 18
     .line 19
-    if-eqz v2, :cond_2c
+    if-eqz v2, :cond_0
 
     .line 20
     .line 21
@@ -542,31 +542,31 @@
     .line 34
     .line 35
     .line 36
-    :try_start_23
+    :try_start_0
     iget-object v2, v2, Llibs/in0;->d:Llibs/hn0;
 
     .line 37
     .line 38
-    if-eqz v2, :cond_2c
+    if-eqz v2, :cond_0
 
     .line 39
     .line 40
     invoke-virtual {v2}, Ljava/lang/Thread;->join()V
-    :try_end_2a
-    .catchall {:try_start_23 .. :try_end_2a} :catchall_2b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 41
     .line 42
     .line 43
-    goto :goto_2c
+    goto :goto_0
 
     .line 44
-    :catchall_2b
+    :catchall_0
     nop
 
     .line 45
-    :cond_2c
-    :goto_2c
+    :cond_0
+    :goto_0
     sget v2, Lcom/mixplorer/providers/WidgetFTPProvider;->a:I
 
     .line 46
@@ -583,7 +583,7 @@
     move-result-object v2
 
     .line 53
-    if-eqz v2, :cond_5a
+    if-eqz v2, :cond_2
 
     .line 54
     .line 55
@@ -622,8 +622,8 @@
     const/4 v6, 0x0
 
     .line 72
-    :goto_47
-    if-ge v6, v5, :cond_5a
+    :goto_1
+    if-ge v6, v5, :cond_2
 
     .line 73
     .line 74
@@ -639,7 +639,7 @@
     move-result v8
 
     .line 80
-    if-eqz v8, :cond_54
+    if-eqz v8, :cond_1
 
     .line 81
     .line 82
@@ -648,7 +648,7 @@
     .line 83
     .line 84
     .line 85
-    :cond_54
+    :cond_1
     invoke-static {v4, v2, v7, v0}, Llibs/t53;->l(Landroid/content/Context;Landroid/appwidget/AppWidgetManager;IZ)V
 
     .line 86
@@ -658,10 +658,10 @@
 
     .line 89
     .line 90
-    goto :goto_47
+    goto :goto_1
 
     .line 91
-    :cond_5a
+    :cond_2
     const v2, 0x20571
 
     .line 92

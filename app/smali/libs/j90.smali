@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(ILlibs/hl;)V
-    .registers 8
+    .locals 5
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -79,8 +79,8 @@
     const/4 p2, 0x0
 
     .line 26
-    :goto_19
-    if-ge p2, v0, :cond_32
+    :goto_0
+    if-ge p2, v0, :cond_0
 
     .line 27
     .line 28
@@ -128,10 +128,10 @@
 
     .line 49
     .line 50
-    goto :goto_19
+    goto :goto_0
 
     .line 51
-    :cond_32
+    :cond_0
     iget-object p1, p0, Llibs/j90;->a:[Ljava/nio/ByteBuffer;
 
     .line 52
@@ -172,7 +172,7 @@
 .end method
 
 .method public static d(Ljava/nio/ByteBuffer;)J
-    .registers 5
+    .locals 4
 
     .line 1
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getLong()J
@@ -191,14 +191,14 @@
 
     .line 8
     .line 9
-    if-ltz p0, :cond_b
+    if-ltz p0, :cond_0
 
     .line 10
     .line 11
     return-wide v0
 
     .line 12
-    :cond_b
+    :cond_0
     const-string p0, "value too big"
 
     .line 13
@@ -218,7 +218,7 @@
 
 # virtual methods
 .method public final a(J)V
-    .registers 11
+    .locals 8
 
     .line 1
     iget-object v0, p0, Llibs/j90;->a:[Ljava/nio/ByteBuffer;
@@ -258,14 +258,14 @@
 
     .line 17
     .line 18
-    if-nez v4, :cond_14
+    if-nez v4, :cond_0
 
     .line 19
     .line 20
     return-void
 
     .line 21
-    :cond_14
+    :cond_0
     iget v2, p0, Llibs/j90;->h:I
 
     .line 22
@@ -285,7 +285,7 @@
     const/4 v2, 0x0
 
     .line 30
-    :goto_1d
+    :goto_0
     const/16 v3, 0x8
 
     .line 31
@@ -294,7 +294,7 @@
 
     .line 33
     .line 34
-    if-ge v2, v3, :cond_39
+    if-ge v2, v3, :cond_2
 
     .line 35
     .line 36
@@ -306,7 +306,7 @@
 
     .line 39
     .line 40
-    if-nez v3, :cond_36
+    if-nez v3, :cond_1
 
     .line 41
     .line 42
@@ -337,15 +337,15 @@
     return-void
 
     .line 55
-    :cond_36
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
     .line 56
     .line 57
-    goto :goto_1d
+    goto :goto_0
 
     .line 58
-    :cond_39
+    :cond_2
     iget v2, p0, Llibs/j90;->i:I
 
     .line 59
@@ -365,7 +365,7 @@
 
     .line 66
     .line 67
-    if-eqz v3, :cond_4d
+    if-eqz v3, :cond_3
 
     .line 68
     .line 69
@@ -386,7 +386,7 @@
 
     .line 77
     .line 78
-    :cond_4d
+    :cond_3
     aget-object v1, v0, v2
 
     .line 79
@@ -455,7 +455,7 @@
 .end method
 
 .method public final b()V
-    .registers 8
+    .locals 7
 
     .line 1
     iget v0, p0, Llibs/j90;->h:I
@@ -480,12 +480,12 @@
     const/4 v1, 0x0
 
     .line 11
-    :goto_a
+    :goto_0
     const/16 v3, 0x8
 
     .line 12
     .line 13
-    if-ge v1, v3, :cond_22
+    if-ge v1, v3, :cond_1
 
     .line 14
     .line 15
@@ -493,7 +493,7 @@
 
     .line 16
     .line 17
-    if-eqz v3, :cond_1f
+    if-eqz v3, :cond_0
 
     .line 18
     .line 19
@@ -522,15 +522,15 @@
 
     .line 31
     .line 32
-    :cond_1f
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
     .line 33
     .line 34
-    goto :goto_a
+    goto :goto_0
 
     .line 35
-    :cond_22
+    :cond_1
     iput-boolean v0, p0, Llibs/j90;->g:Z
 
     .line 36
@@ -539,7 +539,7 @@
 .end method
 
 .method public final c(J)J
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-virtual {p0, p1, p2}, Llibs/j90;->a(J)V
@@ -574,7 +574,7 @@
     move-result v2
 
     .line 17
-    if-gt v0, v2, :cond_20
+    if-gt v0, v2, :cond_0
 
     .line 18
     .line 19
@@ -606,7 +606,7 @@
     return-wide p1
 
     .line 33
-    :cond_20
+    :cond_0
     const-string v0, "Read spans across cluster boundary: "
 
     .line 34
@@ -632,7 +632,7 @@
 .end method
 
 .method public final e(J)I
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-virtual {p0, p1, p2}, Llibs/j90;->a(J)V
@@ -670,7 +670,7 @@
 .end method
 
 .method public final f(JJ)V
-    .registers 8
+    .locals 3
 
     .line 1
     invoke-virtual {p0, p1, p2}, Llibs/j90;->a(J)V
@@ -705,7 +705,7 @@
     move-result v2
 
     .line 17
-    if-gt v0, v2, :cond_1c
+    if-gt v0, v2, :cond_0
 
     .line 18
     .line 19
@@ -731,7 +731,7 @@
     return-void
 
     .line 29
-    :cond_1c
+    :cond_0
     const-string p3, "Write spans across cluster boundary: "
 
     .line 30
@@ -753,7 +753,7 @@
 .end method
 
 .method public final g(IJ)V
-    .registers 7
+    .locals 3
 
     .line 1
     invoke-virtual {p0, p2, p3}, Llibs/j90;->a(J)V
@@ -794,7 +794,7 @@
 .end method
 
 .method public final h(Ljava/nio/ByteBuffer;J)V
-    .registers 12
+    .locals 8
 
     .line 1
     iget-object v0, p0, Llibs/j90;->a:[Ljava/nio/ByteBuffer;
@@ -830,12 +830,12 @@
     const/4 v0, 0x0
 
     .line 16
-    :goto_f
+    :goto_0
     const/16 v4, 0x8
 
     .line 17
     .line 18
-    if-ge v0, v4, :cond_2e
+    if-ge v0, v4, :cond_1
 
     .line 19
     .line 20
@@ -851,7 +851,7 @@
 
     .line 25
     .line 26
-    if-nez v7, :cond_2b
+    if-nez v7, :cond_0
 
     .line 27
     .line 28
@@ -875,7 +875,7 @@
 
     .line 37
     .line 38
-    if-ne v4, v0, :cond_2b
+    if-ne v4, v0, :cond_0
 
     .line 39
     .line 40
@@ -887,15 +887,15 @@
 
     .line 43
     .line 44
-    :cond_2b
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
     .line 45
     .line 46
-    goto :goto_f
+    goto :goto_0
 
     .line 47
-    :cond_2e
+    :cond_1
     iget-object v0, p0, Llibs/j90;->f:Llibs/hl;
 
     .line 48

@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/v30;->j:B
@@ -43,7 +43,7 @@
 .end method
 
 .method public static b(Llibs/rw2;II)Ljava/lang/String;
-    .registers 4
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/rw2;->c:I
@@ -79,7 +79,7 @@
 
 # virtual methods
 .method public final a(Llibs/rw2;)V
-    .registers 9
+    .locals 7
 
     .line 1
     iget v0, p1, Llibs/rw2;->c:I
@@ -167,7 +167,7 @@
 
     .line 41
     .line 42
-    packed-switch v1, :pswitch_data_ce
+    packed-switch v1, :pswitch_data_0
 
     .line 43
     .line 44
@@ -204,7 +204,7 @@
 
     .line 60
     .line 61
-    if-nez v1, :cond_62
+    if-nez v1, :cond_0
 
     .line 62
     .line 63
@@ -277,10 +277,10 @@
     .line 96
     .line 97
     .line 98
-    goto :goto_ca
+    goto :goto_1
 
     .line 99
-    :cond_62
+    :cond_0
     invoke-virtual {v3, p1}, Llibs/oj0;->c(Llibs/rw2;)I
 
     .line 100
@@ -344,8 +344,8 @@
     const/4 v3, 0x0
 
     .line 130
-    :goto_81
-    if-ge v3, v1, :cond_91
+    :goto_0
+    if-ge v3, v1, :cond_1
 
     .line 131
     .line 132
@@ -374,18 +374,18 @@
 
     .line 144
     .line 145
-    goto :goto_81
+    goto :goto_0
 
     .line 146
-    :cond_91
+    :cond_1
     iput v4, p1, Llibs/rw2;->c:I
 
     .line 147
     .line 148
-    goto :goto_ca
+    goto :goto_1
 
     .line 149
-    :pswitch_94
+    :pswitch_0
     iput-wide v3, p0, Llibs/v30;->d:J
 
     .line 150
@@ -471,10 +471,10 @@
 
     .line 191
     .line 192
-    goto :goto_ca
+    goto :goto_1
 
     .line 193
-    :pswitch_c0
+    :pswitch_1
     iput-wide v3, p0, Llibs/v30;->d:J
 
     .line 194
@@ -495,7 +495,7 @@
 
     .line 202
     .line 203
-    :goto_ca
+    :goto_1
     add-int/2addr v0, v2
 
     .line 204
@@ -506,15 +506,15 @@
     return-void
 
     .line 207
-    :pswitch_data_ce
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_c0
-        :pswitch_94
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

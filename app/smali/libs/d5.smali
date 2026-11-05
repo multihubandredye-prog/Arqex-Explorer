@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/a92;-><init>()V
@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public final Link(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/d5;->c:Ljava/lang/String;
@@ -42,7 +42,7 @@
 .end method
 
 .method public final Node()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/d5;->c:Ljava/lang/String;

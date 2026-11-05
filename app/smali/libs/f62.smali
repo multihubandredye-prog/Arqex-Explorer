@@ -13,10 +13,10 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
-    packed-switch p1, :pswitch_data_36
+    packed-switch p1, :pswitch_data_0
 
     .line 2
     .line 3
@@ -68,7 +68,7 @@
     return-void
 
     .line 29
-    :pswitch_1c
+    :pswitch_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 30
@@ -119,16 +119,16 @@
     nop
 
     .line 55
-    :pswitch_data_36
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_1c
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public a(Ljava/lang/Long;)Llibs/eo2;
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/f62;->a:Ljava/util/concurrent/locks/ReentrantReadWriteLock;
@@ -148,7 +148,7 @@
     .line 8
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     iget-object v1, p0, Llibs/f62;->b:Ljava/util/HashMap;
 
     .line 11
@@ -162,8 +162,8 @@
 
     .line 16
     check-cast p1, Llibs/eo2;
-    :try_end_11
-    .catchall {:try_start_9 .. :try_end_11} :catchall_19
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 17
     .line 18
@@ -183,7 +183,7 @@
     return-object p1
 
     .line 26
-    :catchall_19
+    :catchall_0
     move-exception p1
 
     .line 27
@@ -204,7 +204,7 @@
 .end method
 
 .method public b(Llibs/d73;)V
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object v0, p1, Llibs/d73;->Y:Llibs/bp3;
@@ -228,7 +228,7 @@
     .line 10
     .line 11
     .line 12
-    :try_start_b
+    :try_start_0
     iget-object v2, p0, Llibs/f62;->b:Ljava/util/HashMap;
 
     .line 13
@@ -263,8 +263,8 @@
     .line 28
     .line 29
     invoke-interface {v2, v0, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_1f
-    .catchall {:try_start_b .. :try_end_1f} :catchall_27
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 30
     .line 31
@@ -285,7 +285,7 @@
     return-void
 
     .line 40
-    :catchall_27
+    :catchall_0
     move-exception p1
 
     .line 41

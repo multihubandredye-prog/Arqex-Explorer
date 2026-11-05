@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     const-string v0, "EC"
@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public final a([B)V
-    .registers 10
+    .locals 8
 
     .line 1
     const-string v0, "EC"
@@ -99,7 +99,7 @@
     add-int/2addr v5, v6
 
     .line 32
-    if-ne v4, v5, :cond_5c
+    if-ne v4, v5, :cond_0
 
     .line 33
     .line 34
@@ -113,7 +113,7 @@
     const/4 v7, 0x4
 
     .line 38
-    if-ne v5, v7, :cond_5c
+    if-ne v5, v7, :cond_0
 
     .line 39
     .line 40
@@ -216,7 +216,7 @@
     return-void
 
     .line 93
-    :cond_5c
+    :cond_0
     new-instance p1, Llibs/qy2;
 
     .line 94
@@ -264,7 +264,7 @@
 .end method
 
 .method public final b(Ljava/security/spec/AlgorithmParameterSpec;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/z30;->a:Ljava/security/KeyPairGenerator;

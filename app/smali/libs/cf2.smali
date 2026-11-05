@@ -20,7 +20,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/PreferenceActivity;IB)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/cf2;->a:B
@@ -44,14 +44,14 @@
 .end method
 
 .method private final a(Landroid/widget/SeekBar;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final b(Landroid/widget/SeekBar;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public final onProgressChanged(Landroid/widget/SeekBar;IZ)V
-    .registers 6
+    .locals 2
 
     .line 1
     iget-byte p3, p0, Llibs/cf2;->a:B
@@ -75,7 +75,7 @@
 
     .line 6
     .line 7
-    packed-switch p3, :pswitch_data_5a
+    packed-switch p3, :pswitch_data_0
 
     .line 8
     .line 9
@@ -88,7 +88,7 @@
 
     .line 13
     .line 14
-    if-nez p3, :cond_18
+    if-nez p3, :cond_0
 
     .line 15
     .line 16
@@ -111,7 +111,7 @@
 
     .line 24
     .line 25
-    :cond_18
+    :cond_0
     new-instance p1, Ljava/lang/StringBuilder;
 
     .line 26
@@ -159,7 +159,7 @@
     return-void
 
     .line 50
-    :pswitch_31
+    :pswitch_0
     iput p2, p0, Llibs/cf2;->b:I
 
     .line 51
@@ -168,7 +168,7 @@
 
     .line 53
     .line 54
-    if-nez p3, :cond_40
+    if-nez p3, :cond_1
 
     .line 55
     .line 56
@@ -191,7 +191,7 @@
 
     .line 64
     .line 65
-    :cond_40
+    :cond_1
     new-instance p1, Ljava/lang/StringBuilder;
 
     .line 66
@@ -242,14 +242,14 @@
     nop
 
     .line 91
-    :pswitch_data_5a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_31
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final onStartTrackingTouch(Landroid/widget/SeekBar;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iget-byte p1, p0, Llibs/cf2;->a:B
@@ -260,7 +260,7 @@
 .end method
 
 .method public final onStopTrackingTouch(Landroid/widget/SeekBar;)V
-    .registers 7
+    .locals 5
 
     .line 1
     iget-byte p1, p0, Llibs/cf2;->a:B
@@ -275,7 +275,7 @@
 
     .line 6
     .line 7
-    packed-switch p1, :pswitch_data_78
+    packed-switch p1, :pswitch_data_0
 
     .line 8
     .line 9
@@ -347,7 +347,7 @@
     const/4 v2, 0x2
 
     .line 45
-    if-ne p1, v0, :cond_41
+    if-ne p1, v0, :cond_0
 
     .line 46
     .line 47
@@ -387,10 +387,10 @@
     .line 63
     .line 64
     .line 65
-    goto :goto_58
+    goto :goto_0
 
     .line 66
-    :cond_41
+    :cond_0
     invoke-virtual {v1}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
     .line 67
@@ -438,11 +438,11 @@
     .line 87
     .line 88
     .line 89
-    :goto_58
+    :goto_0
     return-void
 
     .line 90
-    :pswitch_59
+    :pswitch_0
     iget-object p1, v1, Lcom/mixplorer/activities/PreferenceActivity;->Whiskey:Ljava/util/List;
 
     .line 91
@@ -502,8 +502,8 @@
     return-void
 
     .line 121
-    :pswitch_data_78
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_59
+        :pswitch_0
     .end packed-switch
 .end method

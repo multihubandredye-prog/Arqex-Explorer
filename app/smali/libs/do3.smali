@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(III[B)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/bc3;-><init>()V
@@ -92,7 +92,7 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/String;
@@ -159,7 +159,7 @@
 .end method
 
 .method public final x(I[B)I
-    .registers 6
+    .locals 3
 
     .line 1
     array-length v0, p2
@@ -172,7 +172,7 @@
 
     .line 4
     .line 5
-    if-ge v0, v1, :cond_14
+    if-ge v0, v1, :cond_1
 
     .line 6
     .line 7
@@ -183,7 +183,7 @@
     const/4 p2, 0x3
 
     .line 10
-    if-lt p1, p2, :cond_12
+    if-lt p1, p2, :cond_0
 
     .line 11
     .line 12
@@ -200,14 +200,14 @@
     .line 17
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     const/4 p1, 0x0
 
     .line 20
     return p1
 
     .line 21
-    :cond_14
+    :cond_1
     iget-object v0, p0, Llibs/do3;->Yankee:[B
 
     .line 22
@@ -225,7 +225,7 @@
 .end method
 
 .method public final y([B)I
-    .registers 2
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -235,7 +235,7 @@
 .end method
 
 .method public final z(I[B)I
-    .registers 5
+    .locals 2
 
     .line 1
     add-int/lit8 v0, p1, 0x1

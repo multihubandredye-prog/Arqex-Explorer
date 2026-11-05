@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/jn1;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/hn1;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 6
+    .locals 5
 
     .line 1
     iget-byte v0, p0, Llibs/hn1;->X:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_3a
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -77,12 +77,12 @@
     return-void
 
     .line 21
-    :pswitch_14
+    :pswitch_0
     iget-object v0, v1, Llibs/jn1;->X:Landroid/os/Handler;
 
     .line 22
     .line 23
-    :try_start_16
+    :try_start_0
     iget-object v2, v1, Llibs/jn1;->Nu:Llibs/vd;
 
     .line 24
@@ -108,16 +108,16 @@
     .line 34
     .line 35
     invoke-virtual {v0, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-    :try_end_25
-    .catchall {:try_start_16 .. :try_end_25} :catchall_26
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 36
     .line 37
     .line 38
-    goto :goto_39
+    goto :goto_0
 
     .line 39
-    :catchall_26
+    :catchall_0
     move-exception v2
 
     .line 40
@@ -155,12 +155,12 @@
     .line 56
     .line 57
     .line 58
-    :goto_39
+    :goto_0
     return-void
 
     .line 59
-    :pswitch_data_3a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_14
+        :pswitch_0
     .end packed-switch
 .end method

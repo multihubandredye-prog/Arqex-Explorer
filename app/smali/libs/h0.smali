@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/yc;-><init>()V
@@ -23,14 +23,14 @@
 
 # virtual methods
 .method public final b(Ljava/lang/Class;)Ljava/security/spec/AlgorithmParameterSpec;
-    .registers 4
+    .locals 2
 
     .line 1
     const-class v0, Llibs/xh0;
 
     .line 2
     .line 3
-    if-eq p1, v0, :cond_20
+    if-eq p1, v0, :cond_2
 
     .line 4
     .line 5
@@ -38,19 +38,19 @@
 
     .line 6
     .line 7
-    if-ne p1, v0, :cond_9
+    if-ne p1, v0, :cond_0
 
     .line 8
     .line 9
-    goto :goto_20
+    goto :goto_0
 
     .line 10
-    :cond_9
+    :cond_0
     const-class v0, Ljavax/crypto/spec/DHParameterSpec;
 
     .line 11
     .line 12
-    if-ne p1, v0, :cond_19
+    if-ne p1, v0, :cond_1
 
     .line 13
     .line 14
@@ -78,7 +78,7 @@
     return-object p1
 
     .line 26
-    :cond_19
+    :cond_1
     const-string p1, "unknown parameter spec passed to ElGamal parameters object."
 
     .line 27
@@ -94,8 +94,8 @@
     return-object p1
 
     .line 33
-    :cond_20
-    :goto_20
+    :cond_2
+    :goto_0
     iget-object p1, p0, Llibs/h0;->a:Llibs/xh0;
 
     .line 34
@@ -104,7 +104,7 @@
 .end method
 
 .method public final engineGetEncoded()[B
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/wh0;
@@ -128,7 +128,7 @@
     .line 10
     .line 11
     .line 12
-    :try_start_b
+    :try_start_0
     const-string v1, "DER"
 
     .line 13
@@ -139,14 +139,14 @@
     .line 16
     .line 17
     move-result-object v0
-    :try_end_11
-    .catch Ljava/io/IOException; {:try_start_b .. :try_end_11} :catch_12
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 18
     return-object v0
 
     .line 19
-    :catch_12
+    :catch_0
     const-string v0, "Error encoding ElGamalParameters"
 
     .line 20
@@ -163,14 +163,14 @@
 .end method
 
 .method public final engineGetEncoded(Ljava/lang/String;)[B
-    .registers 3
+    .locals 1
 
     .line 26
     invoke-static {p1}, Llibs/yc;->a(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_1
 
     const-string v0, "X.509"
 
@@ -178,18 +178,18 @@
 
     move-result p1
 
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 p1, 0x0
 
     return-object p1
 
     .line 27
-    :cond_11
-    :goto_11
+    :cond_1
+    :goto_0
     invoke-virtual {p0}, Llibs/h0;->engineGetEncoded()[B
 
     move-result-object p1
@@ -198,14 +198,14 @@
 .end method
 
 .method public final engineInit(Ljava/security/spec/AlgorithmParameterSpec;)V
-    .registers 4
+    .locals 2
 
     .line 1
     instance-of v0, p1, Llibs/xh0;
 
     .line 2
     .line 3
-    if-nez v0, :cond_f
+    if-nez v0, :cond_1
 
     .line 4
     .line 5
@@ -213,14 +213,14 @@
 
     .line 6
     .line 7
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
-    goto :goto_f
+    goto :goto_0
 
     .line 10
-    :cond_9
+    :cond_0
     const-string p1, "DHParameterSpec required to initialise a ElGamal algorithm parameters object"
 
     .line 11
@@ -233,9 +233,9 @@
     return-void
 
     .line 16
-    :cond_f
-    :goto_f
-    if-eqz v0, :cond_16
+    :cond_1
+    :goto_0
+    if-eqz v0, :cond_2
 
     .line 17
     .line 18
@@ -250,7 +250,7 @@
     return-void
 
     .line 23
-    :cond_16
+    :cond_2
     check-cast p1, Ljavax/crypto/spec/DHParameterSpec;
 
     .line 24
@@ -288,12 +288,12 @@
 .end method
 
 .method public final engineInit([B)V
-    .registers 5
+    .locals 3
 
     .line 41
     const-string v0, "Not a valid ElGamal Parameter encoding."
 
-    :try_start_2
+    :try_start_0
     invoke-static {p1}, Llibs/Theme;->j([B)Llibs/Theme;
 
     move-result-object p1
@@ -324,34 +324,34 @@
     invoke-direct {v1, v2, p1}, Llibs/xh0;-><init>(Ljava/math/BigInteger;Ljava/math/BigInteger;)V
 
     iput-object v1, p0, Llibs/h0;->a:Llibs/xh0;
-    :try_end_1d
-    .catch Ljava/lang/ClassCastException; {:try_start_2 .. :try_end_1d} :catch_22
-    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_2 .. :try_end_1d} :catch_1e
+    :try_end_0
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
     .line 47
-    :catch_1e
+    :catch_0
     invoke-static {v0}, Llibs/ic0;->t(Ljava/lang/String;)V
 
     return-void
 
     .line 48
-    :catch_22
+    :catch_1
     invoke-static {v0}, Llibs/ic0;->t(Ljava/lang/String;)V
 
     return-void
 .end method
 
 .method public final engineInit([BLjava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 49
     invoke-static {p2}, Llibs/yc;->a(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_1
 
     const-string v0, "X.509"
 
@@ -359,12 +359,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
-    goto :goto_19
+    goto :goto_0
 
     .line 50
-    :cond_f
+    :cond_0
     const-string p1, "Unknown parameter format "
 
     invoke-virtual {p1, p2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
@@ -376,15 +376,15 @@
     return-void
 
     .line 51
-    :cond_19
-    :goto_19
+    :cond_1
+    :goto_0
     invoke-virtual {p0, p1}, Llibs/h0;->engineInit([B)V
 
     return-void
 .end method
 
 .method public final engineToString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "ElGamal Parameters"

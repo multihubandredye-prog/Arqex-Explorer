@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -24,12 +24,12 @@
 
 # virtual methods
 .method public run()V
-    .registers 3
+    .locals 2
 
     :try_start_0
     iget-object v0, p0, Llibs/ModernUiTheme$ShortcutRefreshRunnable;->ctx:Landroid/content/Context;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     const/4 v1, 0x1
 
@@ -38,10 +38,10 @@
     move-result-object v1
 
     invoke-static {v0, v1}, Llibs/ModernUiTheme$ShortcutApi26;->refreshPinnedFolders(Landroid/content/Context;Landroid/graphics/Bitmap;)V
-    :try_end_c
-    .catchall {:try_start_0 .. :try_end_c} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_c
-    :cond_c
+    :catchall_0
+    :cond_0
     return-void
 .end method

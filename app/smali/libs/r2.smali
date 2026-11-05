@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 7
     invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
@@ -14,7 +14,7 @@
 .end method
 
 .method public constructor <init>(Llibs/ry3;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "Malformed APK: not a ZIP archive"

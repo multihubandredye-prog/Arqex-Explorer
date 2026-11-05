@@ -9,14 +9,14 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 4
+    .locals 2
 
     .line 1
     iput-byte p1, p0, Llibs/t23;->e:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_1e
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -40,7 +40,7 @@
     return-void
 
     .line 15
-    :pswitch_e
+    :pswitch_0
     const/4 p1, 0x2
 
     .line 16
@@ -58,7 +58,7 @@
     return-void
 
     .line 22
-    :pswitch_15
+    :pswitch_1
     const/4 p1, 0x0
 
     .line 23
@@ -78,17 +78,17 @@
     return-void
 
     .line 31
-    :pswitch_data_1e
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_15
-        :pswitch_e
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public final a(Ljava/nio/ByteBuffer;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/t23;->e:B
@@ -98,7 +98,7 @@
     const/4 v1, 0x0
 
     .line 4
-    packed-switch v0, :pswitch_data_3a
+    packed-switch v0, :pswitch_data_0
 
     .line 5
     .line 6
@@ -116,7 +116,7 @@
     return-void
 
     .line 14
-    :pswitch_d
+    :pswitch_0
     invoke-super {p0, p1}, Llibs/ow;->a(Ljava/nio/ByteBuffer;)V
 
     .line 15
@@ -134,7 +134,7 @@
     return-void
 
     .line 23
-    :pswitch_16
+    :pswitch_1
     invoke-super {p0, p1}, Llibs/ow;->a(Ljava/nio/ByteBuffer;)V
 
     .line 24
@@ -161,12 +161,12 @@
     const/4 v0, 0x0
 
     .line 37
-    :goto_24
+    :goto_0
     const/16 v2, 0x8
 
     .line 38
     .line 39
-    if-ge v0, v2, :cond_2e
+    if-ge v0, v2, :cond_0
 
     .line 40
     .line 41
@@ -179,10 +179,10 @@
 
     .line 45
     .line 46
-    goto :goto_24
+    goto :goto_0
 
     .line 47
-    :cond_2e
+    :cond_0
     const/16 v0, 0x20
 
     .line 48
@@ -205,9 +205,9 @@
     return-void
 
     .line 59
-    :pswitch_data_3a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_16
-        :pswitch_d
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

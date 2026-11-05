@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/c2;Ljava/util/ArrayList;Ljava/util/Set;Llibs/xl1;I)V
-    .registers 6
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/f52;->g:Llibs/c2;
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public final z(Landroid/view/View;I)V
-    .registers 5
+    .locals 2
 
     .line 1
     iget-object p1, p0, Llibs/f52;->c:Ljava/util/ArrayList;
@@ -70,7 +70,7 @@
 
     .line 8
     .line 9
-    if-eqz p1, :cond_4a
+    if-eqz p1, :cond_2
 
     .line 10
     .line 11
@@ -107,7 +107,7 @@
     move-result-object v1
 
     .line 28
-    if-nez v1, :cond_24
+    if-nez v1, :cond_0
 
     .line 29
     .line 30
@@ -124,12 +124,12 @@
     .line 35
     .line 36
     .line 37
-    :cond_24
+    :cond_0
     iget-object p1, p0, Llibs/f52;->e:Llibs/xl1;
 
     .line 38
     .line 39
-    if-eqz p1, :cond_35
+    if-eqz p1, :cond_1
 
     .line 40
     .line 41
@@ -160,7 +160,7 @@
     .line 52
     .line 53
     .line 54
-    :cond_35
+    :cond_1
     const/4 p1, 0x4
 
     .line 55
@@ -168,14 +168,14 @@
 
     .line 56
     .line 57
-    if-eq p2, p1, :cond_4a
+    if-eq p2, p1, :cond_2
 
     .line 58
     .line 59
     const/4 p1, 0x3
 
     .line 60
-    if-eq p2, p1, :cond_4a
+    if-eq p2, p1, :cond_2
 
     .line 61
     .line 62
@@ -183,7 +183,7 @@
 
     .line 63
     .line 64
-    if-eq p2, p1, :cond_4a
+    if-eq p2, p1, :cond_2
 
     .line 65
     .line 66
@@ -204,6 +204,6 @@
     .line 73
     .line 74
     .line 75
-    :cond_4a
+    :cond_2
     return-void
 .end method

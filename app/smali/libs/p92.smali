@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/app/Activity;Ljava/lang/String;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/p92;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final c([Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     iget-byte p1, p0, Llibs/p92;->X:B
@@ -60,7 +60,7 @@
 
     .line 7
     .line 8
-    packed-switch p1, :pswitch_data_1e
+    packed-switch p1, :pswitch_data_0
 
     .line 9
     .line 10
@@ -73,19 +73,19 @@
     return v0
 
     .line 15
-    :pswitch_e
-    :try_start_e
+    :pswitch_0
+    :try_start_0
     invoke-static {v2, v1}, Llibs/u92;->Map(Landroid/content/Context;Ljava/lang/String;)V
-    :try_end_11
-    .catchall {:try_start_e .. :try_end_11} :catchall_12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 16
     .line 17
     .line 18
-    goto :goto_1c
+    goto :goto_0
 
     .line 19
-    :catchall_12
+    :catchall_0
     sget p1, Llibs/bi2;->failed:I
 
     .line 20
@@ -106,15 +106,15 @@
     .line 27
     .line 28
     .line 29
-    :goto_1c
+    :goto_0
     return v0
 
     .line 30
     nop
 
     .line 31
-    :pswitch_data_1e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_e
+        :pswitch_0
     .end packed-switch
 .end method

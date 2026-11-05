@@ -9,24 +9,24 @@
 
 # direct methods
 .method public constructor <init>(IIII)V
-    .registers 7
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-eqz p2, :cond_35
+    if-eqz p2, :cond_4
 
     .line 3
     .line 4
     const/4 v1, 0x0
 
     .line 5
-    if-nez p3, :cond_17
+    if-nez p3, :cond_1
 
     .line 6
     .line 7
-    if-nez p4, :cond_11
+    if-nez p4, :cond_0
 
     .line 8
     .line 9
@@ -46,10 +46,10 @@
     move-result-object p1
 
     .line 17
-    goto :goto_23
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     const-string p1, "k3 must be 0 if k2 == 0"
 
     .line 19
@@ -62,12 +62,12 @@
     throw v0
 
     .line 24
-    :cond_17
-    if-le p3, p2, :cond_2f
+    :cond_1
+    if-le p3, p2, :cond_3
 
     .line 25
     .line 26
-    if-le p4, p3, :cond_29
+    if-le p4, p3, :cond_2
 
     .line 27
     .line 28
@@ -87,7 +87,7 @@
     move-result-object p1
 
     .line 36
-    :goto_23
+    :goto_0
     invoke-direct {p0, p1}, Llibs/kf0;-><init>(Llibs/lr0;)V
 
     .line 37
@@ -100,7 +100,7 @@
     return-void
 
     .line 42
-    :cond_29
+    :cond_2
     const-string p1, "k3 must be > k2"
 
     .line 43
@@ -113,7 +113,7 @@
     throw v0
 
     .line 48
-    :cond_2f
+    :cond_3
     const-string p1, "k2 must be > k1"
 
     .line 49
@@ -126,7 +126,7 @@
     throw v0
 
     .line 54
-    :cond_35
+    :cond_4
     const-string p1, "k1 must be > 0"
 
     .line 55
@@ -142,7 +142,7 @@
 
 # virtual methods
 .method public final c(Ljava/math/BigInteger;Ljava/math/BigInteger;Z)Llibs/ig0;
-    .registers 6
+    .locals 2
 
     .line 1
     invoke-virtual {p0, p1}, Llibs/kf0;->i(Ljava/math/BigInteger;)Llibs/xf3;
@@ -168,21 +168,21 @@
     const/4 v1, 0x5
 
     .line 12
-    if-eq v0, v1, :cond_11
+    if-eq v0, v1, :cond_0
 
     .line 13
     .line 14
     const/4 v1, 0x6
 
     .line 15
-    if-eq v0, v1, :cond_11
+    if-eq v0, v1, :cond_0
 
     .line 16
     .line 17
-    goto :goto_31
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     invoke-virtual {p1}, Llibs/xf3;->Item()Z
 
     .line 19
@@ -191,7 +191,7 @@
     move-result v0
 
     .line 22
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_2
 
     .line 23
     .line 24
@@ -215,14 +215,14 @@
     move-result v0
 
     .line 34
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
     .line 35
     .line 36
-    goto :goto_31
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_1
     invoke-static {}, Llibs/ic0;->l()V
 
     .line 38
@@ -234,7 +234,7 @@
     return-object p1
 
     .line 42
-    :cond_29
+    :cond_2
     invoke-virtual {p2, p1}, Llibs/xf3;->p(Llibs/xf3;)Llibs/xf3;
 
     .line 43
@@ -251,7 +251,7 @@
     move-result-object p2
 
     .line 50
-    :goto_31
+    :goto_0
     invoke-virtual {p0, p1, p2, p3}, Llibs/kf0;->d(Llibs/xf3;Llibs/xf3;Z)Llibs/ig0;
 
     .line 51
@@ -264,7 +264,7 @@
 .end method
 
 .method public final g(ILjava/math/BigInteger;)Llibs/ig0;
-    .registers 14
+    .locals 11
 
     .line 1
     invoke-virtual {p0, p2}, Llibs/kf0;->i(Ljava/math/BigInteger;)Llibs/xf3;
@@ -289,7 +289,7 @@
     const/4 v2, 0x0
 
     .line 11
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
@@ -305,11 +305,11 @@
     move-result-object p1
 
     .line 19
-    goto/16 :goto_a2
+    goto/16 :goto_3
 
     .line 20
     .line 21
-    :cond_14
+    :cond_0
     invoke-virtual {p2}, Llibs/xf3;->Bit()Llibs/xf3;
 
     .line 22
@@ -366,14 +366,14 @@
     move-result v3
 
     .line 49
-    if-eqz v3, :cond_33
+    if-eqz v3, :cond_1
 
     .line 50
     .line 51
-    goto :goto_7e
+    goto :goto_1
 
     .line 52
-    :cond_33
+    :cond_1
     sget-object v3, Llibs/ff0;->f:Ljava/math/BigInteger;
 
     .line 53
@@ -403,7 +403,7 @@
     .line 65
     .line 66
     .line 67
-    :cond_42
+    :cond_2
     new-instance v6, Ljava/math/BigInteger;
 
     .line 68
@@ -430,8 +430,8 @@
     const/4 v7, 0x1
 
     .line 79
-    :goto_4e
-    if-ge v7, v4, :cond_67
+    :goto_0
+    if-ge v7, v4, :cond_3
 
     .line 80
     .line 81
@@ -479,10 +479,10 @@
 
     .line 102
     .line 103
-    goto :goto_4e
+    goto :goto_0
 
     .line 104
-    :cond_67
+    :cond_3
     invoke-virtual {v8}, Llibs/xf3;->Item()Z
 
     .line 105
@@ -491,17 +491,17 @@
     move-result v6
 
     .line 108
-    if-nez v6, :cond_6f
+    if-nez v6, :cond_4
 
     .line 109
     .line 110
     move-object v0, v2
 
     .line 111
-    goto :goto_7e
+    goto :goto_1
 
     .line 112
-    :cond_6f
+    :cond_4
     invoke-virtual {v9}, Llibs/xf3;->Bit()Llibs/xf3;
 
     .line 113
@@ -526,15 +526,15 @@
     move-result v6
 
     .line 124
-    if-nez v6, :cond_42
+    if-nez v6, :cond_2
 
     .line 125
     .line 126
     move-object v0, v9
 
     .line 127
-    :goto_7e
-    if-eqz v0, :cond_a1
+    :goto_1
+    if-eqz v0, :cond_8
 
     .line 128
     .line 129
@@ -546,22 +546,22 @@
     move-result v3
 
     .line 133
-    if-ne p1, v1, :cond_88
+    if-ne p1, v1, :cond_5
 
     .line 134
     .line 135
     const/4 p1, 0x1
 
     .line 136
-    goto :goto_89
+    goto :goto_2
 
     .line 137
-    :cond_88
+    :cond_5
     const/4 p1, 0x0
 
     .line 138
-    :goto_89
-    if-eq v3, p1, :cond_8f
+    :goto_2
+    if-eq v3, p1, :cond_6
 
     .line 139
     .line 140
@@ -573,7 +573,7 @@
     move-result-object v0
 
     .line 144
-    :cond_8f
+    :cond_6
     iget p1, p0, Llibs/kf0;->f:I
 
     .line 145
@@ -581,14 +581,14 @@
     const/4 v3, 0x5
 
     .line 147
-    if-eq p1, v3, :cond_9c
+    if-eq p1, v3, :cond_7
 
     .line 148
     .line 149
     const/4 v3, 0x6
 
     .line 150
-    if-eq p1, v3, :cond_9c
+    if-eq p1, v3, :cond_7
 
     .line 151
     .line 152
@@ -600,10 +600,10 @@
     move-result-object p1
 
     .line 156
-    goto :goto_a2
+    goto :goto_3
 
     .line 157
-    :cond_9c
+    :cond_7
     invoke-virtual {v0, p2}, Llibs/xf3;->b(Llibs/xf3;)Llibs/xf3;
 
     .line 158
@@ -612,15 +612,15 @@
     move-result-object p1
 
     .line 161
-    goto :goto_a2
+    goto :goto_3
 
     .line 162
-    :cond_a1
+    :cond_8
     move-object p1, v2
 
     .line 163
-    :goto_a2
-    if-eqz p1, :cond_a9
+    :goto_3
+    if-eqz p1, :cond_9
 
     .line 164
     .line 165
@@ -635,7 +635,7 @@
     return-object p1
 
     .line 170
-    :cond_a9
+    :cond_9
     const-string p1, "Invalid point compression"
 
     .line 171
@@ -649,14 +649,14 @@
 .end method
 
 .method public s()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/kf0;->d:Ljava/math/BigInteger;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
@@ -664,7 +664,7 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_1
 
     .line 8
     .line 9
@@ -680,7 +680,7 @@
     move-result v0
 
     .line 15
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_1
 
     .line 16
     .line 17
@@ -696,7 +696,7 @@
     move-result v0
 
     .line 23
-    if-nez v0, :cond_20
+    if-nez v0, :cond_0
 
     .line 24
     .line 25
@@ -712,18 +712,18 @@
     move-result v0
 
     .line 31
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_1
 
     .line 32
     .line 33
-    :cond_20
+    :cond_0
     const/4 v0, 0x1
 
     .line 34
     return v0
 
     .line 35
-    :cond_22
+    :cond_1
     const/4 v0, 0x0
 
     .line 36

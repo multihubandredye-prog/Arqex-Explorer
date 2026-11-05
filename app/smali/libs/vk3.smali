@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/TextEditorActivity;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/vk3;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 7
+    .locals 6
 
     .line 1
     iget-byte v0, p0, Llibs/vk3;->X:B
@@ -53,7 +53,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_92
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -82,7 +82,7 @@
     return-void
 
     .line 22
-    :pswitch_15
+    :pswitch_0
     sget v0, Lcom/mixplorer/activities/TextEditorActivity;->$c:I
 
     .line 23
@@ -99,12 +99,12 @@
     return-void
 
     .line 30
-    :pswitch_1d
+    :pswitch_1
     sget v0, Lcom/mixplorer/activities/TextEditorActivity;->$c:I
 
     .line 31
     .line 32
-    :try_start_1f
+    :try_start_0
     invoke-virtual {v3}, Lcom/mixplorer/activities/TextEditorActivity;->Cur()Llibs/ll3;
 
     .line 33
@@ -121,7 +121,7 @@
 
     .line 39
     .line 40
-    if-eqz v4, :cond_33
+    if-eqz v4, :cond_0
 
     .line 41
     .line 42
@@ -137,26 +137,26 @@
     move-result v4
 
     .line 48
-    if-le v4, v1, :cond_33
+    if-le v4, v1, :cond_0
 
     .line 49
     .line 50
     const/4 v4, 0x2
 
     .line 51
-    goto :goto_34
+    goto :goto_0
 
     .line 52
-    :cond_33
+    :cond_0
     const/4 v4, 0x1
 
     .line 53
-    :goto_34
+    :goto_0
     iget v5, v0, Llibs/ll3;->e:I
 
     .line 54
     .line 55
-    if-eq v4, v5, :cond_3d
+    if-eq v4, v5, :cond_1
 
     .line 56
     .line 57
@@ -169,7 +169,7 @@
     .line 60
     .line 61
     .line 62
-    :cond_3d
+    :cond_1
     invoke-virtual {v3}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
     .line 63
@@ -183,16 +183,16 @@
     .line 67
     .line 68
     invoke-virtual {v0, v4}, Landroid/view/Window;->clearFlags(I)V
-    :try_end_46
-    .catchall {:try_start_1f .. :try_end_46} :catchall_47
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 69
     .line 70
     .line 71
-    goto :goto_57
+    goto :goto_1
 
     .line 72
-    :catchall_47
+    :catchall_0
     move-exception v0
 
     .line 73
@@ -225,12 +225,12 @@
     .line 86
     .line 87
     .line 88
-    :goto_57
+    :goto_1
     iget-object v0, v3, Lcom/mixplorer/activities/TextEditorActivity;->oO:Lcom/mixplorer/widgets/MiEditor;
 
     .line 89
     .line 90
-    if-eqz v0, :cond_68
+    if-eqz v0, :cond_2
 
     .line 91
     .line 92
@@ -238,7 +238,7 @@
 
     .line 93
     .line 94
-    if-eqz v1, :cond_68
+    if-eqz v1, :cond_2
 
     .line 95
     .line 96
@@ -259,11 +259,11 @@
     .line 103
     .line 104
     .line 105
-    :cond_68
+    :cond_2
     return-void
 
     .line 106
-    :pswitch_69
+    :pswitch_2
     sget v0, Lcom/mixplorer/activities/TextEditorActivity;->$c:I
 
     .line 107
@@ -293,7 +293,7 @@
     return-void
 
     .line 121
-    :pswitch_78
+    :pswitch_3
     sget v0, Lcom/mixplorer/activities/TextEditorActivity;->$c:I
 
     .line 122
@@ -323,7 +323,7 @@
     return-void
 
     .line 136
-    :pswitch_87
+    :pswitch_4
     sget v0, Lcom/mixplorer/activities/TextEditorActivity;->$c:I
 
     .line 137
@@ -347,12 +347,12 @@
     nop
 
     .line 147
-    :pswitch_data_92
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_87
-        :pswitch_78
-        :pswitch_69
-        :pswitch_1d
-        :pswitch_15
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

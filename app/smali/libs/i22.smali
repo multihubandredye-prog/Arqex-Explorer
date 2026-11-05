@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final a(B)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/i22;->a:Llibs/fl;
@@ -55,7 +55,7 @@
 .end method
 
 .method public final b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "NULL"
@@ -66,7 +66,7 @@
 .end method
 
 .method public final c(I[B)I
-    .registers 6
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/i22;->a:Llibs/fl;
@@ -104,7 +104,7 @@
 .end method
 
 .method public final e()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/i22;->a:Llibs/fl;
@@ -123,7 +123,7 @@
 .end method
 
 .method public final reset()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/i22;->a:Llibs/fl;
@@ -139,7 +139,7 @@
 .end method
 
 .method public final update([BII)V
-    .registers 5
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/i22;->a:Llibs/fl;

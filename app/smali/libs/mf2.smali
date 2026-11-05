@@ -29,7 +29,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 21
+    .locals 21
 
     .line 1
     new-instance v0, Llibs/mf2;
@@ -310,7 +310,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
@@ -322,7 +322,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Llibs/mf2;
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Llibs/mf2;
@@ -345,7 +345,7 @@
 .end method
 
 .method public static values()[Llibs/mf2;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/mf2;->Sigma:[Llibs/mf2;

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -17,7 +17,7 @@
 .end method
 
 .method private static addAllChapters(Landroid/widget/LinearLayout;Llibs/HelpGuideV127$DialogState;)V
-    .registers 10
+    .locals 8
 
     move-object v0, p0
 
@@ -201,7 +201,7 @@
 .end method
 
 .method private static addChapterCard(Landroid/widget/LinearLayout;Llibs/HelpGuideV127$DialogState;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 22
+    .locals 14
 
     move-object v0, p1
 
@@ -609,7 +609,7 @@
 
     const/4 v4, 0x1
 
-    if-ne v1, v4, :cond_1d1
+    if-ne v1, v4, :cond_0
 
     invoke-static {v2, v3, v0}, Llibs/HelpGuideV127;->createEffectsQuickButton(Landroid/content/Context;ILlibs/HelpGuideV127$DialogState;)Landroid/view/View;
 
@@ -617,20 +617,20 @@
 
     invoke-virtual {v10, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    :cond_1d1
+    :cond_0
     const/4 v3, 0x2
 
-    if-ge v1, v3, :cond_1d6
+    if-ge v1, v3, :cond_1
 
     const/4 v4, 0x1
 
-    goto :goto_1d7
+    goto :goto_0
 
-    :cond_1d6
+    :cond_1
     const/4 v4, 0x0
 
-    :goto_1d7
-    if-eqz v4, :cond_1e0
+    :goto_0
+    if-eqz v4, :cond_2
 
     const/4 v5, 0x0
 
@@ -638,16 +638,16 @@
 
     const-string v5, "\u25b4"
 
-    goto :goto_1e7
+    goto :goto_1
 
-    :cond_1e0
+    :cond_2
     const/16 v5, 0x8
 
     invoke-virtual {v10, v5}, Landroid/view/View;->setVisibility(I)V
 
     const-string v5, "\u25be"
 
-    :goto_1e7
+    :goto_1
     invoke-virtual {v9, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     new-instance v5, Llibs/HelpGuideV127$UiListener;
@@ -718,15 +718,15 @@
 .end method
 
 .method private static addDeveloperCredit(Landroid/widget/LinearLayout;Llibs/HelpGuideV127$DialogState;)V
-    .registers 11
+    .locals 9
 
-    if-eqz p0, :cond_8e
+    if-eqz p0, :cond_0
 
-    if-eqz p1, :cond_8e
+    if-eqz p1, :cond_0
 
     iget-object v0, p1, Llibs/HelpGuideV127$DialogState;->ctx:Landroid/content/Context;
 
-    if-eqz v0, :cond_8e
+    if-eqz v0, :cond_0
 
     new-instance v1, Landroid/widget/LinearLayout;
 
@@ -846,21 +846,21 @@
 
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    :cond_8e
+    :cond_0
     return-void
 .end method
 
 .method public static appendSettingsHelpRow(Lcom/mixplorer/activities/PreferenceActivity;Landroid/view/ViewGroup;Landroid/graphics/drawable/Drawable;)V
-    .registers 11
+    .locals 8
 
-    if-eqz p0, :cond_e1
+    if-eqz p0, :cond_3
 
-    if-nez p1, :cond_6
+    if-nez p1, :cond_0
 
-    goto/16 :goto_e1
+    goto/16 :goto_0
 
-    :cond_6
-    :try_start_6
+    :cond_0
+    :try_start_0
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -1033,18 +1033,18 @@
 
     invoke-virtual {v1, v3}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    if-eqz p2, :cond_cb
+    if-eqz p2, :cond_1
 
     invoke-static {v1, p2}, Llibs/sw1;->z(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
 
-    :cond_cb
+    :cond_1
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v2
 
     const/4 v3, 0x6
 
-    if-lt v2, v3, :cond_da
+    if-lt v2, v3, :cond_2
 
     invoke-virtual {p1, v0, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;I)V
 
@@ -1054,23 +1054,117 @@
 
     return-void
 
-    :cond_da
+    :cond_2
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
-    :try_end_e0
-    .catchall {:try_start_6 .. :try_end_e0} :catchall_e1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
-    :catchall_e1
-    :cond_e1
-    :goto_e1
+    :catchall_0
+    :cond_3
+    :goto_0
+    return-void
+.end method
+
+.method public static applyMenuIcons(Ljava/util/ArrayList;)V
+    .locals 12
+
+    if-eqz p0, :cond_2
+
+    :try_start_0
+    const-string v0, "TEXT_POPUP_PRIMARY"
+
+    const-string v1, "#FFEFF3F8"
+
+    invoke-static {v0, v1}, Llibs/va3;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v0
+
+    const/high16 v1, 0x41b00000    # 22.0f
+
+    invoke-static {v1}, Llibs/ModernUiTheme;->dp(F)I
+
+    move-result v1
+
+    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
+
+    move-result v2
+
+    const/4 v3, 0x0
+
+    const/4 v8, 0x0
+
+    :cond_0
+    :goto_0
+    if-ge v3, v2, :cond_1
+
+    invoke-virtual {p0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    add-int/lit8 v3, v3, 0x1
+
+    instance-of v5, v4, Llibs/r90;
+
+    if-eqz v5, :cond_0
+
+    check-cast v4, Llibs/r90;
+
+    iget v5, v4, Llibs/r90;->Z:I
+
+    invoke-static {v5}, Llibs/HelpGuideV127;->menuIconType(I)I
+
+    move-result v5
+
+    if-lez v5, :cond_0
+
+    new-instance v6, Llibs/ArqexMenuIcon;
+
+    invoke-direct {v6, v0, v1, v5}, Llibs/ArqexMenuIcon;-><init>(III)V
+
+    const/4 v7, 0x0
+
+    invoke-virtual {v6, v7, v7, v1, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+
+    iput-object v6, v4, Llibs/r90;->Lambda:Landroid/graphics/drawable/Drawable;
+
+    add-int/lit8 v8, v8, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    const-string v6, "MENU-ICON applied="
+
+    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v6, " of "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v5}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :catchall_0
+    :cond_2
     return-void
 .end method
 
 .method private static createEffectsQuickButton(Landroid/content/Context;ILlibs/HelpGuideV127$DialogState;)Landroid/view/View;
-    .registers 8
+    .locals 5
 
     new-instance v0, Landroid/widget/TextView;
 
@@ -1180,27 +1274,27 @@
 .end method
 
 .method public static ensureTopBarHelpIcon(Landroid/app/Activity;Landroid/view/ViewGroup;)V
-    .registers 8
+    .locals 6
 
-    if-eqz p0, :cond_90
+    if-eqz p0, :cond_3
 
-    if-nez p1, :cond_6
+    if-nez p1, :cond_0
 
-    goto/16 :goto_90
+    goto/16 :goto_0
 
-    :cond_6
-    :try_start_6
+    :cond_0
+    :try_start_0
     const v0, 0x7f0803f8
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_1
 
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    :cond_12
+    :cond_1
     new-instance v1, Landroid/widget/ImageView;
 
     invoke-direct {v1, p0}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
@@ -1299,31 +1393,31 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_8d
+    if-eqz v2, :cond_2
 
     invoke-virtual {p1, v2}, Landroid/view/ViewGroup;->indexOfChild(Landroid/view/View;)I
 
     move-result v2
 
-    if-ltz v2, :cond_8d
+    if-ltz v2, :cond_2
 
     invoke-virtual {p1, v1, v2, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
     return-void
 
-    :cond_8d
+    :cond_2
     invoke-virtual {p1, v1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-    :try_end_90
-    .catchall {:try_start_6 .. :try_end_90} :catchall_90
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_90
-    :cond_90
-    :goto_90
+    :catchall_0
+    :cond_3
+    :goto_0
     return-void
 .end method
 
 .method private static formatChapterRichText(Ljava/lang/String;III)Ljava/lang/CharSequence;
-    .registers 15
+    .locals 11
 
     new-instance v0, Landroid/text/SpannableStringBuilder;
 
@@ -1341,18 +1435,18 @@
 
     move v3, v2
 
-    :goto_e
-    if-ge v3, v1, :cond_cc
+    :goto_0
+    if-ge v3, v1, :cond_7
 
     aget-object v4, p0, v3
 
-    if-lez v3, :cond_19
+    if-lez v3, :cond_0
 
     const-string v5, "\n"
 
     invoke-virtual {v0, v5}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    :cond_19
+    :cond_0
     invoke-virtual {v0}, Landroid/text/SpannableStringBuilder;->length()I
 
     move-result v5
@@ -1367,7 +1461,7 @@
 
     const/16 v8, 0x21
 
-    if-eqz v6, :cond_51
+    if-eqz v6, :cond_1
 
     const/4 v6, 0x2
 
@@ -1401,16 +1495,16 @@
 
     invoke-virtual {v0, v6, v5, v4, v8}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    goto/16 :goto_c8
+    goto/16 :goto_1
 
-    :cond_51
+    :cond_1
     const-string v6, "DICA:"
 
     invoke-virtual {v4, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v6
 
-    if-nez v6, :cond_61
+    if-nez v6, :cond_2
 
     const-string v6, "TIP:"
 
@@ -1418,9 +1512,9 @@
 
     move-result v6
 
-    if-eqz v6, :cond_7e
+    if-eqz v6, :cond_3
 
-    :cond_61
+    :cond_2
     const-string v6, "\ud83d\udca1 "
 
     invoke-virtual {v0, v6}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
@@ -1443,9 +1537,9 @@
 
     invoke-virtual {v0, v6, v5, v4, v8}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    goto :goto_c8
+    goto :goto_1
 
-    :cond_7e
+    :cond_3
     invoke-virtual {v0, v4}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     invoke-virtual {v0}, Landroid/text/SpannableStringBuilder;->length()I
@@ -1458,7 +1552,7 @@
 
     move-result v9
 
-    if-eqz v9, :cond_97
+    if-eqz v9, :cond_4
 
     new-instance v9, Landroid/text/style/ForegroundColorSpan;
 
@@ -1468,18 +1562,18 @@
 
     invoke-virtual {v0, v9, v5, v10, v8}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    :cond_97
+    :cond_4
     const-string v9, ":"
 
     invoke-virtual {v4, v9}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v4
 
-    if-lez v4, :cond_c0
+    if-lez v4, :cond_5
 
     const/16 v9, 0x30
 
-    if-ge v4, v9, :cond_c0
+    if-ge v4, v9, :cond_5
 
     add-int/2addr v4, v5
 
@@ -1497,7 +1591,7 @@
 
     invoke-virtual {v0, v7, v5, v4, v8}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    if-ge v4, v6, :cond_c8
+    if-ge v4, v6, :cond_6
 
     new-instance v5, Landroid/text/style/ForegroundColorSpan;
 
@@ -1505,234 +1599,34 @@
 
     invoke-virtual {v0, v5, v4, v6, v8}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    goto :goto_c8
+    goto :goto_1
 
-    :cond_c0
+    :cond_5
     new-instance v4, Landroid/text/style/ForegroundColorSpan;
 
     invoke-direct {v4, p3}, Landroid/text/style/ForegroundColorSpan;-><init>(I)V
 
     invoke-virtual {v0, v4, v5, v6, v8}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    :cond_c8
-    :goto_c8
+    :cond_6
+    :goto_1
     add-int/lit8 v3, v3, 0x1
 
-    goto/16 :goto_e
+    goto/16 :goto_0
 
-    :cond_cc
+    :cond_7
     return-object v0
 .end method
 
-# Arqex: dá icone a todos os itens do menu (antes so o item Ajuda tinha icone).
-.method public static applyMenuIcons(Ljava/util/ArrayList;)V
-    .registers 13
-
-    if-nez p0, :arqex_am_fim
-
-    :try_start_0
-    const-string v0, "TEXT_POPUP_PRIMARY"
-
-    const-string v1, "#FFEFF3F8"
-
-    invoke-static {v0, v1}, Llibs/va3;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v0
-
-    const/high16 v1, 0x41b00000    # 22.0f
-
-    invoke-static {v1}, Llibs/ModernUiTheme;->dp(F)I
-
-    move-result v1
-
-    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
-
-    move-result v2
-
-    const/4 v3, 0x0
-
-    const/4 v8, 0x0
-
-    :arqex_am_loop
-    if-ge v3, v2, :arqex_am_log
-
-    invoke-virtual {p0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    add-int/lit8 v3, v3, 0x1
-
-    instance-of v5, v4, Llibs/r90;
-
-    if-eqz v5, :arqex_am_loop
-
-    check-cast v4, Llibs/r90;
-
-    iget v5, v4, Llibs/r90;->Z:I
-
-    invoke-static {v5}, Llibs/HelpGuideV127;->menuIconType(I)I
-
-    move-result v5
-
-    if-gtz v5, :arqex_am_loop
-
-    new-instance v6, Llibs/ArqexMenuIcon;
-
-    invoke-direct {v6, v0, v1, v5}, Llibs/ArqexMenuIcon;-><init>(III)V
-
-    const/4 v7, 0x0
-
-    invoke-virtual {v6, v7, v7, v1, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
-
-    iput-object v6, v4, Llibs/r90;->Lambda:Landroid/graphics/drawable/Drawable;
-
-    add-int/lit8 v8, v8, 0x1
-
-    goto :arqex_am_loop
-
-    :arqex_am_log
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    const-string v6, "MENU-ICONE aplicados="
-
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v6, " de "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v5}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :catchall_0
-    :arqex_am_fim
-    return-void
-.end method
-.method public static menuIconType(I)I
-    .registers 3
-
-    sget v0, Llibs/wh2;->menu_undo_recycle:I
-
-    if-ne p0, v0, :arqex_mit_2
-
-    const/4 v0, 0x1
-
-    return v0
-
-    :arqex_mit_2
-    sget v0, Llibs/wh2;->menu_lock:I
-
-    if-ne p0, v0, :arqex_mit_3
-
-    const/4 v0, 0x2
-
-    return v0
-
-    :arqex_mit_3
-    sget v0, Llibs/wh2;->menu_tools:I
-
-    if-ne p0, v0, :arqex_mit_4
-
-    const/4 v0, 0x3
-
-    return v0
-
-    :arqex_mit_4
-    sget v0, Llibs/wh2;->menu_filter:I
-
-    if-ne p0, v0, :arqex_mit_5
-
-    const/4 v0, 0x4
-
-    return v0
-
-    :arqex_mit_5
-    sget v0, Llibs/wh2;->menu_servers:I
-
-    if-ne p0, v0, :arqex_mit_6
-
-    const/4 v0, 0x5
-
-    return v0
-
-    :arqex_mit_6
-    sget v0, Llibs/wh2;->menu_execute:I
-
-    if-ne p0, v0, :arqex_mit_7
-
-    const/4 v0, 0x6
-
-    return v0
-
-    :arqex_mit_7
-    sget v0, Llibs/wh2;->menu_auto_tasks:I
-
-    if-ne p0, v0, :arqex_mit_8
-
-    const/4 v0, 0x7
-
-    return v0
-
-    :arqex_mit_8
-    sget v0, Llibs/wh2;->menu_send_log:I
-
-    if-ne p0, v0, :arqex_mit_9
-
-    const/16 v0, 0x8
-
-    return v0
-
-    :arqex_mit_9
-    sget v0, Llibs/wh2;->menu_open_in_terminal:I
-
-    if-ne p0, v0, :arqex_mit_10
-
-    const/16 v0, 0x9
-
-    return v0
-
-    :arqex_mit_10
-    sget v0, Llibs/wh2;->menu_settings:I
-
-    if-ne p0, v0, :arqex_mit_11
-
-    const/16 v0, 0xa
-
-    return v0
-
-    :arqex_mit_11
-    sget v0, Llibs/wh2;->menu_exit:I
-
-    if-ne p0, v0, :arqex_mit_0
-
-    const/16 v0, 0xb
-
-    return v0
-
-    :arqex_mit_0
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
 .method public static insertHelpAfterExit(Ljava/util/ArrayList;)V
-    .registers 9
+    .locals 8
 
-    if-nez p0, :cond_3
+    if-nez p0, :cond_0
 
     return-void
 
-    :cond_3
-    :try_start_3
+    :cond_0
+    :try_start_0
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
@@ -1745,10 +1639,10 @@
 
     move v4, v2
 
-    :goto_b
+    :goto_0
     const v5, 0x7f0803f8
 
-    if-ge v4, v0, :cond_28
+    if-ge v4, v0, :cond_3
 
     invoke-virtual {p0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1756,31 +1650,31 @@
 
     instance-of v7, v6, Llibs/r90;
 
-    if-eqz v7, :cond_25
+    if-eqz v7, :cond_2
 
     check-cast v6, Llibs/r90;
 
     iget v7, v6, Llibs/r90;->Z:I
 
-    if-ne v7, v5, :cond_1f
+    if-ne v7, v5, :cond_1
 
     return-void
 
-    :cond_1f
+    :cond_1
     sget v5, Llibs/wh2;->menu_exit:I
 
-    if-ne v7, v5, :cond_25
+    if-ne v7, v5, :cond_2
 
     move v1, v4
 
     move-object v3, v6
 
-    :cond_25
+    :cond_2
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_28
+    :cond_3
     const-string v0, "TEXT_POPUP_PRIMARY"
 
     const-string v4, "#FFEFF3F8"
@@ -1795,11 +1689,11 @@
 
     move-result v4
 
-    if-eqz v3, :cond_45
+    if-eqz v3, :cond_4
 
     iget-object v6, v3, Llibs/r90;->Lambda:Landroid/graphics/drawable/Drawable;
 
-    if-eqz v6, :cond_45
+    if-eqz v6, :cond_4
 
     invoke-virtual {v6}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
@@ -1807,11 +1701,11 @@
 
     const/16 v7, 0xc
 
-    if-le v6, v7, :cond_45
+    if-le v6, v7, :cond_4
 
     move v4, v6
 
-    :cond_45
+    :cond_4
     new-instance v6, Llibs/HelpGuideV127$HelpIconDrawable;
 
     invoke-direct {v6, v0, v4, v2}, Llibs/HelpGuideV127$HelpIconDrawable;-><init>(IIZ)V
@@ -1828,7 +1722,7 @@
 
     invoke-direct {v0, v5, v6, v4}, Llibs/r90;-><init>(ILandroid/graphics/drawable/Drawable;Ljava/lang/CharSequence;)V
 
-    if-eqz v3, :cond_65
+    if-eqz v3, :cond_5
 
     iget-boolean v2, v3, Llibs/r90;->Xi:Z
 
@@ -1838,17 +1732,17 @@
 
     iput-boolean v2, v0, Llibs/r90;->Pi:Z
 
-    goto :goto_6a
+    goto :goto_1
 
-    :cond_65
+    :cond_5
     const/4 v3, 0x1
 
     iput-boolean v3, v0, Llibs/r90;->Xi:Z
 
     iput-boolean v2, v0, Llibs/r90;->Pi:Z
 
-    :goto_6a
-    if-ltz v1, :cond_78
+    :goto_1
+    if-ltz v1, :cond_6
 
     add-int/lit8 v1, v1, 0x1
 
@@ -1856,32 +1750,139 @@
 
     move-result v2
 
-    if-gt v1, v2, :cond_78
+    if-gt v1, v2, :cond_6
 
     invoke-virtual {p0, v1, v0}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     return-void
 
-    :cond_78
+    :cond_6
     invoke-virtual {p0, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_7b
-    .catchall {:try_start_3 .. :try_end_7b} :catchall_7b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_7b
+    :catchall_0
     return-void
 .end method
 
-.method private static normalizeSearch(Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+.method public static menuIconType(I)I
+    .locals 2
 
-    if-nez p0, :cond_5
+    sget v0, Llibs/wh2;->menu_undo_recycle:I
+
+    if-ne p0, v0, :cond_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    sget v0, Llibs/wh2;->menu_lock:I
+
+    if-ne p0, v0, :cond_1
+
+    const/4 v0, 0x2
+
+    return v0
+
+    :cond_1
+    sget v0, Llibs/wh2;->menu_tools:I
+
+    if-ne p0, v0, :cond_2
+
+    const/4 v0, 0x3
+
+    return v0
+
+    :cond_2
+    sget v0, Llibs/wh2;->menu_filter:I
+
+    if-ne p0, v0, :cond_3
+
+    const/4 v0, 0x4
+
+    return v0
+
+    :cond_3
+    sget v0, Llibs/wh2;->menu_servers:I
+
+    if-ne p0, v0, :cond_4
+
+    const/4 v0, 0x5
+
+    return v0
+
+    :cond_4
+    sget v0, Llibs/wh2;->menu_execute:I
+
+    if-ne p0, v0, :cond_5
+
+    const/4 v0, 0x6
+
+    return v0
+
+    :cond_5
+    sget v0, Llibs/wh2;->menu_auto_tasks:I
+
+    if-ne p0, v0, :cond_6
+
+    const/4 v0, 0x7
+
+    return v0
+
+    :cond_6
+    sget v0, Llibs/wh2;->menu_send_log:I
+
+    if-ne p0, v0, :cond_7
+
+    const/16 v0, 0x8
+
+    return v0
+
+    :cond_7
+    sget v0, Llibs/wh2;->menu_open_in_terminal:I
+
+    if-ne p0, v0, :cond_8
+
+    const/16 v0, 0x9
+
+    return v0
+
+    :cond_8
+    sget v0, Llibs/wh2;->menu_settings:I
+
+    if-ne p0, v0, :cond_9
+
+    const/16 v0, 0xa
+
+    return v0
+
+    :cond_9
+    sget v0, Llibs/wh2;->menu_exit:I
+
+    if-ne p0, v0, :cond_a
+
+    const/16 v0, 0xb
+
+    return v0
+
+    :cond_a
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method private static normalizeSearch(Ljava/lang/String;)Ljava/lang/String;
+    .locals 3
+
+    if-nez p0, :cond_0
 
     const-string p0, ""
 
     return-object p0
 
-    :cond_5
-    :try_start_5
+    :cond_0
+    :try_start_0
     sget-object v0, Ljava/text/Normalizer$Form;->NFD:Ljava/text/Normalizer$Form;
 
     invoke-static {p0, v0}, Ljava/text/Normalizer;->normalize(Ljava/lang/CharSequence;Ljava/text/Normalizer$Form;)Ljava/lang/String;
@@ -1905,12 +1906,12 @@
     invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v0
-    :try_end_1d
-    .catchall {:try_start_5 .. :try_end_1d} :catchall_1e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object v0
 
-    :catchall_1e
+    :catchall_0
     invoke-virtual {p0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object p0
@@ -1919,7 +1920,7 @@
 .end method
 
 .method public static refreshChipsVisualState(Llibs/HelpGuideV127$DialogState;)V
-    .registers 9
+    .locals 8
 
     iget-object v0, p0, Llibs/HelpGuideV127$DialogState;->chips:[Landroid/widget/TextView;
 
@@ -1931,18 +1932,18 @@
 
     const/4 v3, 0x0
 
-    :goto_9
+    :goto_0
     array-length v4, v0
 
-    if-ge v3, v4, :cond_62
+    if-ge v3, v4, :cond_2
 
     aget-object v4, v0, v3
 
-    if-nez v4, :cond_11
+    if-nez v4, :cond_0
 
-    goto :goto_5f
+    goto :goto_2
 
-    :cond_11
+    :cond_0
     new-instance v5, Landroid/graphics/drawable/GradientDrawable;
 
     invoke-direct {v5}, Landroid/graphics/drawable/GradientDrawable;-><init>()V
@@ -1961,7 +1962,7 @@
 
     move-result v6
 
-    if-ne v3, v1, :cond_42
+    if-ne v3, v1, :cond_1
 
     const/16 v7, 0x42
 
@@ -1985,9 +1986,9 @@
 
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    goto :goto_5c
+    goto :goto_1
 
-    :cond_42
+    :cond_1
     const/16 v7, 0x14
 
     invoke-static {v2, v7}, Llibs/ModernUiTheme;->withAlpha(II)I
@@ -2010,35 +2011,35 @@
 
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    :goto_5c
+    :goto_1
     invoke-static {v4, v5}, Llibs/sw1;->z(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
 
-    :goto_5f
+    :goto_2
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_62
+    :cond_2
     return-void
 .end method
 
 .method public static refreshFilterAndUi(Llibs/HelpGuideV127$DialogState;)V
-    .registers 11
+    .locals 10
 
-    if-nez p0, :cond_3
+    if-nez p0, :cond_0
 
     return-void
 
-    :cond_3
+    :cond_0
     iget-object v0, p0, Llibs/HelpGuideV127$DialogState;->searchEdit:Landroid/widget/EditText;
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -2048,47 +2049,47 @@
 
     move-result-object v0
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_16
+    :cond_1
     const-string v0, ""
 
-    :goto_18
+    :goto_0
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v1
 
     const/4 v2, 0x0
 
-    if-lez v1, :cond_21
+    if-lez v1, :cond_2
 
     const/4 v1, 0x1
 
-    goto :goto_22
+    goto :goto_1
 
-    :cond_21
+    :cond_2
     move v1, v2
 
-    :goto_22
+    :goto_1
     iget-object v3, p0, Llibs/HelpGuideV127$DialogState;->clearBtn:Landroid/view/View;
 
     const/16 v4, 0x8
 
-    if-eqz v3, :cond_30
+    if-eqz v3, :cond_4
 
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_3
 
     move v5, v2
 
-    goto :goto_2d
+    goto :goto_2
 
-    :cond_2c
+    :cond_3
     move v5, v4
 
-    :goto_2d
+    :goto_2
     invoke-virtual {v3, v5}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_30
+    :cond_4
     iget-object v3, p0, Llibs/HelpGuideV127$DialogState;->cards:[Landroid/widget/LinearLayout;
 
     array-length v5, v3
@@ -2097,19 +2098,19 @@
 
     move v7, v6
 
-    :goto_35
-    if-ge v6, v5, :cond_87
+    :goto_3
+    if-ge v6, v5, :cond_b
 
     aget-object v8, v3, v6
 
-    if-nez v8, :cond_3c
+    if-nez v8, :cond_5
 
-    goto :goto_84
+    goto :goto_7
 
-    :cond_3c
+    :cond_5
     iget v9, p0, Llibs/HelpGuideV127$DialogState;->activeCat:I
 
-    if-eqz v9, :cond_48
+    if-eqz v9, :cond_6
 
     iget-object v9, p0, Llibs/HelpGuideV127$DialogState;->cats:[I
 
@@ -2117,102 +2118,102 @@
 
     iget v8, p0, Llibs/HelpGuideV127$DialogState;->activeCat:I
 
-    if-ne v9, v8, :cond_7f
+    if-ne v9, v8, :cond_a
 
-    :cond_48
-    if-eqz v1, :cond_57
+    :cond_6
+    if-eqz v1, :cond_7
 
     iget-object v8, p0, Llibs/HelpGuideV127$DialogState;->searchBlobs:[Ljava/lang/String;
 
     aget-object v8, v8, v6
 
-    if-eqz v8, :cond_7f
+    if-eqz v8, :cond_a
 
     invoke-virtual {v8, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v8
 
-    if-nez v8, :cond_57
+    if-nez v8, :cond_7
 
-    goto :goto_7f
+    goto :goto_6
 
-    :cond_57
+    :cond_7
     aget-object v8, v3, v6
 
     invoke-virtual {v8, v2}, Landroid/view/View;->setVisibility(I)V
 
     add-int/lit8 v7, v7, 0x1
 
-    if-eqz v1, :cond_62
+    if-eqz v1, :cond_8
 
     const/4 v8, 0x1
 
-    goto :goto_66
+    goto :goto_4
 
-    :cond_62
+    :cond_8
     iget-object v8, p0, Llibs/HelpGuideV127$DialogState;->expanded:[Z
 
     aget-boolean v8, v8, v6
 
-    :goto_66
+    :goto_4
     iget-object v9, p0, Llibs/HelpGuideV127$DialogState;->bodies:[Landroid/widget/LinearLayout;
 
     aget-object v9, v9, v6
 
-    if-eqz v8, :cond_72
+    if-eqz v8, :cond_9
 
     invoke-virtual {v9, v2}, Landroid/view/View;->setVisibility(I)V
 
     const-string v8, "\u25b4"
 
-    goto :goto_77
+    goto :goto_5
 
-    :cond_72
+    :cond_9
     invoke-virtual {v9, v4}, Landroid/view/View;->setVisibility(I)V
 
     const-string v8, "\u25be"
 
-    :goto_77
+    :goto_5
     iget-object v9, p0, Llibs/HelpGuideV127$DialogState;->chevrons:[Landroid/widget/TextView;
 
     aget-object v9, v9, v6
 
     invoke-virtual {v9, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto :goto_84
+    goto :goto_7
 
-    :cond_7f
-    :goto_7f
+    :cond_a
+    :goto_6
     aget-object v8, v3, v6
 
     invoke-virtual {v8, v4}, Landroid/view/View;->setVisibility(I)V
 
-    :goto_84
+    :goto_7
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_35
+    goto :goto_3
 
-    :cond_87
+    :cond_b
     iget-object v0, p0, Llibs/HelpGuideV127$DialogState;->emptyHint:Landroid/widget/TextView;
 
-    if-eqz v0, :cond_92
+    if-eqz v0, :cond_d
 
-    if-nez v7, :cond_8e
+    if-nez v7, :cond_c
 
-    goto :goto_8f
+    goto :goto_8
 
-    :cond_8e
+    :cond_c
     move v2, v4
 
-    :goto_8f
+    :goto_8
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_92
+    :cond_d
     move-object v6, p0
 
     iget-object p0, p0, Llibs/HelpGuideV127$DialogState;->countLabel:Landroid/widget/TextView;
 
-    if-eqz p0, :cond_c9
+    if-eqz p0, :cond_e
 
     iget-object v2, v6, Llibs/HelpGuideV127$DialogState;->ctx:Landroid/content/Context;
 
@@ -2258,12 +2259,12 @@
 
     invoke-virtual {p0, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    :cond_c9
+    :cond_e
     return-void
 .end method
 
 .method private static resolveSkinAccent()I
-    .registers 4
+    .locals 4
 
     const-string v0, "TINT_POPUP_BG"
 
@@ -2293,22 +2294,22 @@
 
     and-int/2addr v1, v3
 
-    if-ne v1, v3, :cond_34
+    if-ne v1, v3, :cond_2
 
     invoke-static {v0}, Llibs/ModernUiTheme;->isLightColor(I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_0
 
     const v0, -0xd9a86c
 
     return v0
 
-    :cond_28
+    :cond_0
     and-int v0, v2, v3
 
-    if-eq v0, v3, :cond_30
+    if-eq v0, v3, :cond_1
 
     const/high16 v0, -0x1000000
 
@@ -2316,12 +2317,12 @@
 
     return v0
 
-    :cond_30
+    :cond_1
     const v0, -0xc74036
 
     return v0
 
-    :cond_34
+    :cond_2
     const/high16 v0, -0x1000000
 
     or-int/2addr v0, v1
@@ -2330,7 +2331,7 @@
 .end method
 
 .method public static selectCategory(Llibs/HelpGuideV127$DialogState;I)V
-    .registers 2
+    .locals 0
 
     iput p1, p0, Llibs/HelpGuideV127$DialogState;->activeCat:I
 
@@ -2342,16 +2343,16 @@
 .end method
 
 .method public static showHelpDialog(Landroid/content/Context;)V
-    .registers 19
+    .locals 18
 
     move-object/from16 v0, p0
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
-    :cond_5
-    :try_start_5
+    :cond_0
+    :try_start_0
     new-instance v1, Llibs/HelpGuideV127$DialogState;
 
     const/16 v2, 0xd
@@ -2966,10 +2967,10 @@
 
     move v11, v10
 
-    :goto_2bb
+    :goto_0
     array-length v13, v9
 
-    if-ge v11, v13, :cond_307
+    if-ge v11, v13, :cond_1
 
     new-instance v13, Landroid/widget/TextView;
 
@@ -3035,9 +3036,9 @@
 
     const/4 v14, -0x2
 
-    goto :goto_2bb
+    goto :goto_0
 
-    :cond_307
+    :cond_1
     invoke-virtual {v3, v7}, Landroid/widget/HorizontalScrollView;->addView(Landroid/view/View;)V
 
     invoke-virtual {v8, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
@@ -3298,7 +3299,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_464
+    if-eqz v0, :cond_2
 
     new-instance v1, Landroid/graphics/drawable/ColorDrawable;
 
@@ -3332,14 +3333,14 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/view/Window;->setLayout(II)V
 
-    :cond_464
+    :cond_2
     invoke-virtual {v6}, Landroid/app/Dialog;->show()V
-    :try_end_467
-    .catchall {:try_start_5 .. :try_end_467} :catchall_468
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
-    :catchall_468
+    :catchall_0
     move-exception v1
 
     move-object/from16 v4, p0
@@ -3364,7 +3365,7 @@
 .end method
 
 .method public static toggleCard(Llibs/HelpGuideV127$DialogState;I)V
-    .registers 4
+    .locals 2
 
     iget-object v0, p0, Llibs/HelpGuideV127$DialogState;->expanded:[Z
 
@@ -3382,7 +3383,7 @@
 
     aget-object p0, p0, p1
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_0
 
     const/4 p1, 0x0
 
@@ -3390,23 +3391,23 @@
 
     const-string p1, "\u25b4"
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     const/16 p1, 0x8
 
     invoke-virtual {v0, p1}, Landroid/view/View;->setVisibility(I)V
 
     const-string p1, "\u25be"
 
-    :goto_20
+    :goto_0
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     return-void
 .end method
 
 .method public static toggleExpandAll(Llibs/HelpGuideV127$DialogState;)V
-    .registers 5
+    .locals 4
 
     iget-boolean v0, p0, Llibs/HelpGuideV127$DialogState;->allExpanded:Z
 
@@ -3418,25 +3419,25 @@
 
     const/4 v2, 0x0
 
-    :goto_9
+    :goto_0
     array-length v3, v1
 
-    if-ge v2, v3, :cond_11
+    if-ge v2, v3, :cond_0
 
     aput-boolean v0, v1, v2
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     iget-object v1, p0, Llibs/HelpGuideV127$DialogState;->expandAllBtn:Landroid/widget/TextView;
 
-    if-eqz v1, :cond_2d
+    if-eqz v1, :cond_2
 
     iget-object v2, p0, Llibs/HelpGuideV127$DialogState;->ctx:Landroid/content/Context;
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_1
 
     const-string v0, "arqex_help_collapse_all"
 
@@ -3446,9 +3447,9 @@
 
     move-result-object v0
 
-    goto :goto_2a
+    goto :goto_1
 
-    :cond_22
+    :cond_1
     const-string v0, "arqex_help_expand_all"
 
     const-string v3, "Expand all"
@@ -3457,10 +3458,10 @@
 
     move-result-object v0
 
-    :goto_2a
+    :goto_1
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    :cond_2d
+    :cond_2
     invoke-static {p0}, Llibs/HelpGuideV127;->refreshFilterAndUi(Llibs/HelpGuideV127$DialogState;)V
 
     return-void

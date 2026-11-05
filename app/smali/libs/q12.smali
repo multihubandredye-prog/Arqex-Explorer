@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/r12;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final b(Llibs/Init;Ljava/lang/Object;)Ljava/util/List;
-    .registers 9
+    .locals 6
 
     .line 1
     check-cast p2, Llibs/ed0;
@@ -87,21 +87,21 @@
     const/4 v4, 0x1
 
     .line 25
-    if-eqz v1, :cond_24
+    if-eqz v1, :cond_1
 
     .line 26
     .line 27
-    if-ne v1, v4, :cond_1e
+    if-ne v1, v4, :cond_0
 
     .line 28
     .line 29
     move-object v1, v3
 
     .line 30
-    goto :goto_25
+    goto :goto_0
 
     .line 31
-    :cond_1e
+    :cond_0
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     .line 32
@@ -114,11 +114,11 @@
     throw p1
 
     .line 37
-    :cond_24
+    :cond_1
     move-object v1, v2
 
     .line 38
-    :goto_25
+    :goto_0
     iget-object v5, p0, Llibs/q12;->b:Ljava/lang/String;
 
     .line 39
@@ -139,21 +139,21 @@
     move-result v0
 
     .line 48
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_3
 
     .line 49
     .line 50
-    if-ne v0, v4, :cond_35
+    if-ne v0, v4, :cond_2
 
     .line 51
     .line 52
     move-object v2, v3
 
     .line 53
-    goto :goto_3b
+    goto :goto_1
 
     .line 54
-    :cond_35
+    :cond_2
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     .line 55
@@ -166,8 +166,8 @@
     throw p1
 
     .line 60
-    :cond_3b
-    :goto_3b
+    :cond_3
+    :goto_1
     invoke-virtual {p1, v2, v5}, Llibs/gd0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 61

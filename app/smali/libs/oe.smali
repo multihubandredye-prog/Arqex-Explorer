@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Param;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -42,7 +42,7 @@
     move-result v1
 
     .line 15
-    if-nez v1, :cond_15
+    if-nez v1, :cond_0
 
     .line 16
     .line 17
@@ -57,7 +57,7 @@
     return-void
 
     .line 22
-    :cond_15
+    :cond_0
     const/4 v1, 0x0
 
     .line 23
@@ -73,7 +73,7 @@
 
     .line 28
     .line 29
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_1
 
     .line 30
     .line 31
@@ -97,10 +97,10 @@
 
     .line 40
     .line 41
-    goto :goto_36
+    goto :goto_0
 
     .line 42
-    :cond_29
+    :cond_1
     iput-object v0, p0, Llibs/oe;->X:Llibs/Room;
 
     .line 43
@@ -128,7 +128,7 @@
     move-object v1, v0
 
     .line 55
-    :goto_36
+    :goto_0
     invoke-virtual {p1}, Llibs/Param;->size()I
 
     .line 56
@@ -140,11 +140,11 @@
     const/4 v3, 0x1
 
     .line 60
-    if-le v2, v3, :cond_50
+    if-le v2, v3, :cond_3
 
     .line 61
     .line 62
-    if-eqz v1, :cond_4a
+    if-eqz v1, :cond_2
 
     .line 63
     .line 64
@@ -171,7 +171,7 @@
     return-void
 
     .line 75
-    :cond_4a
+    :cond_2
     const-string p1, "wrong sequence in constructor"
 
     .line 76
@@ -184,14 +184,14 @@
     throw v0
 
     .line 81
-    :cond_50
+    :cond_3
     return-void
 .end method
 
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/Init;
@@ -210,7 +210,7 @@
 
     .line 8
     .line 9
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
     .line 10
     .line 11
@@ -219,12 +219,12 @@
     .line 12
     .line 13
     .line 14
-    :cond_d
+    :cond_0
     iget-object v1, p0, Llibs/oe;->Y:Llibs/Api;
 
     .line 15
     .line 16
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_1
 
     .line 17
     .line 18
@@ -233,7 +233,7 @@
     .line 19
     .line 20
     .line 21
-    :cond_14
+    :cond_1
     new-instance v1, Llibs/p10;
 
     .line 22
@@ -247,7 +247,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 7
+    .locals 6
 
     .line 1
     const/4 v0, 0x0
@@ -268,11 +268,11 @@
 
     .line 8
     .line 9
-    if-nez v3, :cond_2a
+    if-nez v3, :cond_2
 
     .line 10
     .line 11
-    if-nez v4, :cond_f
+    if-nez v4, :cond_0
 
     .line 12
     .line 13
@@ -283,7 +283,7 @@
     return-object v0
 
     .line 16
-    :cond_f
+    :cond_0
     new-instance v3, Ljava/lang/StringBuilder;
 
     .line 17
@@ -293,7 +293,7 @@
     .line 19
     .line 20
     .line 21
-    if-eqz v4, :cond_1d
+    if-eqz v4, :cond_1
 
     .line 22
     .line 23
@@ -305,14 +305,14 @@
     move-result v2
 
     .line 27
-    if-eqz v2, :cond_1d
+    if-eqz v2, :cond_1
 
     .line 28
     .line 29
     const/4 v0, 0x1
 
     .line 30
-    :cond_1d
+    :cond_1
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     .line 31
@@ -338,7 +338,7 @@
     return-object v0
 
     .line 43
-    :cond_2a
+    :cond_2
     new-instance v5, Ljava/lang/StringBuilder;
 
     .line 44
@@ -348,7 +348,7 @@
     .line 46
     .line 47
     .line 48
-    if-eqz v4, :cond_38
+    if-eqz v4, :cond_3
 
     .line 49
     .line 50
@@ -360,14 +360,14 @@
     move-result v2
 
     .line 54
-    if-eqz v2, :cond_38
+    if-eqz v2, :cond_3
 
     .line 55
     .line 56
     const/4 v0, 0x1
 
     .line 57
-    :cond_38
+    :cond_3
     invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     .line 58

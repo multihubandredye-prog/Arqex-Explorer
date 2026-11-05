@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(IILjava/lang/String;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final a(Ljava/nio/ByteBuffer;)V
-    .registers 4
+    .locals 2
 
     .line 1
     const/16 v0, 0x5c
@@ -114,7 +114,7 @@
 .end method
 
 .method public final b(Ljava/lang/Long;)V
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 p1, 0x5
@@ -128,7 +128,7 @@
     move-result p1
 
     .line 6
-    if-eqz p1, :cond_26
+    if-eqz p1, :cond_0
 
     .line 7
     .line 8
@@ -197,6 +197,6 @@
     .line 37
     .line 38
     .line 39
-    :cond_26
+    :cond_0
     return-void
 .end method

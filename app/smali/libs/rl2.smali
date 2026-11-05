@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;JLlibs/ml2;)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/fp2;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final c()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Llibs/rl2;->Y:J
@@ -50,7 +50,7 @@
 .end method
 
 .method public final i()Llibs/wq1;
-    .registers 3
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
@@ -60,28 +60,28 @@
 
     .line 3
     .line 4
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_0
 
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     invoke-static {v1}, Llibs/wq1;->a(Ljava/lang/String;)Llibs/wq1;
 
     .line 7
     .line 8
     .line 9
     move-result-object v0
-    :try_end_9
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_5 .. :try_end_9} :catch_9
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 10
-    :catch_9
-    :cond_9
+    :catch_0
+    :cond_0
     return-object v0
 .end method
 
 .method public final m()Llibs/dk;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/rl2;->Z:Llibs/ml2;

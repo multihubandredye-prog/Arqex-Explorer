@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/PlayerActivity;JB)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-byte p4, p0, Llibs/pc2;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 7
+    .locals 6
 
     .line 1
     iget-byte v0, p0, Llibs/pc2;->X:B
@@ -57,7 +57,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_1c
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -74,7 +74,7 @@
     return-void
 
     .line 16
-    :pswitch_f
+    :pswitch_0
     sget-boolean v0, Lcom/mixplorer/activities/PlayerActivity;->e0:Z
 
     .line 17
@@ -102,8 +102,8 @@
     nop
 
     .line 29
-    :pswitch_data_1c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_f
+        :pswitch_0
     .end packed-switch
 .end method

@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(JJLjava/lang/String;Ljava/lang/String;Z)V
-    .registers 8
+    .locals 0
 
     .line 1
     iput-object p5, p0, Llibs/td;->X:Ljava/lang/String;
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public final b()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/td;->Z:Z
@@ -62,7 +62,7 @@
 .end method
 
 .method public final i()J
-    .registers 6
+    .locals 5
 
     .line 1
     const-wide/16 v0, 0x3e8
@@ -77,14 +77,14 @@
 
     .line 6
     .line 7
-    if-lez v4, :cond_9
+    if-lez v4, :cond_0
 
     .line 8
     .line 9
     return-wide v2
 
     .line 10
-    :cond_9
+    :cond_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     .line 11
@@ -97,7 +97,7 @@
 .end method
 
 .method public final m()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/td;->X:Ljava/lang/String;
@@ -108,7 +108,7 @@
 .end method
 
 .method public final n()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/td;->Y:Ljava/lang/String;
@@ -131,7 +131,7 @@
 .end method
 
 .method public final q()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Llibs/td;->Mu:J

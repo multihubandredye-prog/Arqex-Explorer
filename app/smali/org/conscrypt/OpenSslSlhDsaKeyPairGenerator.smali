@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "SLH-DSA-SHA2-128S"
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public generateKeyPair()Ljava/security/KeyPair;
-    .registers 5
+    .locals 4
 
     .line 1
     const/16 v0, 0x40
@@ -82,20 +82,20 @@
 .end method
 
 .method public initialize(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, -0x1
 
     .line 2
-    if-ne p1, v0, :cond_4
+    if-ne p1, v0, :cond_0
 
     .line 3
     .line 4
     return-void
 
     .line 5
-    :cond_4
+    :cond_0
     const-string p1, "SLH-DSA only supports -1 for bits"
 
     .line 6

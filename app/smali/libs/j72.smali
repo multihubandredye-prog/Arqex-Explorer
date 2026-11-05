@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/InputStream;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -37,7 +37,7 @@
 .end method
 
 .method public constructor <init>(Ljava/io/InputStream;Ljava/util/zip/Inflater;)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -55,7 +55,7 @@
 
 # virtual methods
 .method public final fill()V
-    .registers 7
+    .locals 6
 
     .line 1
     iget-byte v0, p0, Llibs/j72;->X:B
@@ -75,7 +75,7 @@
     const/4 v4, 0x1
 
     .line 8
-    packed-switch v0, :pswitch_data_5c
+    packed-switch v0, :pswitch_data_0
 
     .line 9
     .line 10
@@ -84,7 +84,7 @@
 
     .line 12
     .line 13
-    if-nez v0, :cond_2d
+    if-nez v0, :cond_1
 
     .line 14
     .line 15
@@ -111,7 +111,7 @@
 
     .line 25
     .line 26
-    if-ne v0, v2, :cond_24
+    if-ne v0, v2, :cond_0
 
     .line 27
     .line 28
@@ -131,14 +131,14 @@
 
     .line 35
     .line 36
-    goto :goto_25
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_0
     move v4, v0
 
     .line 38
-    :goto_25
+    :goto_0
     iget-object v0, p0, Ljava/util/zip/InflaterInputStream;->inf:Ljava/util/zip/Inflater;
 
     .line 39
@@ -155,7 +155,7 @@
     return-void
 
     .line 46
-    :cond_2d
+    :cond_1
     new-instance v0, Ljava/io/EOFException;
 
     .line 47
@@ -168,12 +168,12 @@
     throw v0
 
     .line 52
-    :pswitch_33
+    :pswitch_0
     iget-boolean v0, p0, Llibs/j72;->Y:Z
 
     .line 53
     .line 54
-    if-nez v0, :cond_56
+    if-nez v0, :cond_3
 
     .line 55
     .line 56
@@ -200,7 +200,7 @@
 
     .line 66
     .line 67
-    if-ne v0, v2, :cond_4d
+    if-ne v0, v2, :cond_2
 
     .line 68
     .line 69
@@ -220,14 +220,14 @@
 
     .line 76
     .line 77
-    goto :goto_4e
+    goto :goto_1
 
     .line 78
-    :cond_4d
+    :cond_2
     move v4, v0
 
     .line 79
-    :goto_4e
+    :goto_1
     iget-object v0, p0, Ljava/util/zip/InflaterInputStream;->inf:Ljava/util/zip/Inflater;
 
     .line 80
@@ -244,7 +244,7 @@
     return-void
 
     .line 87
-    :cond_56
+    :cond_3
     new-instance v0, Ljava/io/EOFException;
 
     .line 88
@@ -257,8 +257,8 @@
     throw v0
 
     .line 93
-    :pswitch_data_5c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_33
+        :pswitch_0
     .end packed-switch
 .end method

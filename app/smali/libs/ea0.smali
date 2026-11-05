@@ -23,7 +23,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-wide/16 v0, 0x1
@@ -55,7 +55,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/math/BigInteger;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/ge3;-><init>(Ljava/lang/String;)V
@@ -84,14 +84,14 @@
 
 # virtual methods
 .method public final a()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ea0;->v:Ljavax/crypto/KeyAgreement;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -114,7 +114,7 @@
     return-object v0
 
     .line 14
-    :cond_d
+    :cond_0
     const-string v0, ""
 
     .line 15
@@ -123,7 +123,7 @@
 .end method
 
 .method public final b(Llibs/zo3;Ljava/lang/String;Ljava/lang/String;[B[BLlibs/je3;Llibs/le3;ZZ)V
-    .registers 10
+    .locals 0
 
     .line 1
     iput-object p2, p0, Llibs/ge3;->e:Ljava/lang/String;
@@ -162,7 +162,7 @@
 
     .line 18
     .line 19
-    :try_start_12
+    :try_start_0
     invoke-virtual {p0}, Llibs/ea0;->e()V
 
     .line 20
@@ -252,15 +252,15 @@
 
     .line 65
     iput-object p1, p0, Llibs/ea0;->t:Ljava/math/BigInteger;
-    :try_end_42
-    .catch Ljava/lang/Exception; {:try_start_12 .. :try_end_42} :catch_43
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 66
     .line 67
     return-void
 
     .line 68
-    :catch_43
+    :catch_0
     move-exception p1
 
     .line 69
@@ -294,7 +294,7 @@
 .end method
 
 .method public final c([B)Z
-    .registers 8
+    .locals 6
 
     .line 1
     const/4 v0, 0x0
@@ -308,14 +308,14 @@
 
     .line 5
     .line 6
-    if-eq v1, v2, :cond_8
+    if-eq v1, v2, :cond_0
 
     .line 7
     .line 8
     return v0
 
     .line 9
-    :cond_8
+    :cond_0
     iget-boolean v1, p0, Llibs/ge3;->k:Z
 
     .line 10
@@ -326,7 +326,7 @@
     const/4 v3, 0x1
 
     .line 13
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_2
 
     .line 14
     .line 15
@@ -334,7 +334,7 @@
 
     .line 16
     .line 17
-    if-nez v1, :cond_22
+    if-nez v1, :cond_2
 
     .line 18
     .line 19
@@ -346,7 +346,7 @@
     move-result p1
 
     .line 23
-    if-eqz p1, :cond_1f
+    if-eqz p1, :cond_1
 
     .line 24
     .line 25
@@ -363,7 +363,7 @@
     .line 30
     .line 31
     .line 32
-    :cond_1f
+    :cond_1
     iput-boolean v0, p0, Llibs/ge3;->k:Z
 
     .line 33
@@ -371,7 +371,7 @@
     return v3
 
     .line 35
-    :cond_22
+    :cond_2
     new-instance v1, Llibs/gl;
 
     .line 36
@@ -410,7 +410,7 @@
     move-result p1
 
     .line 55
-    if-eqz p1, :cond_49
+    if-eqz p1, :cond_3
 
     .line 56
     .line 57
@@ -447,7 +447,7 @@
     .line 72
     .line 73
     .line 74
-    :cond_49
+    :cond_3
     new-instance p1, Ljavax/crypto/spec/DHPublicKeySpec;
 
     .line 75
@@ -469,7 +469,7 @@
     .line 83
     .line 84
     .line 85
-    :try_start_54
+    :try_start_0
     iget-object v1, p0, Llibs/ea0;->w:Ljava/security/KeyFactory;
 
     .line 86
@@ -518,7 +518,7 @@
     and-int/2addr v1, v2
 
     .line 109
-    if-ne v1, v2, :cond_7b
+    if-ne v1, v2, :cond_4
 
     .line 110
     .line 111
@@ -543,19 +543,19 @@
     move-object p1, v1
 
     .line 120
-    goto :goto_7b
+    goto :goto_0
 
     .line 121
-    :catch_78
+    :catch_0
     move-exception p1
 
     .line 122
-    goto/16 :goto_fb
+    goto/16 :goto_1
 
     .line 123
     .line 124
-    :cond_7b
-    :goto_7b
+    :cond_4
+    :goto_0
     new-instance v0, Ljava/math/BigInteger;
 
     .line 125
@@ -566,8 +566,8 @@
     .line 128
     .line 129
     iput-object v0, p0, Llibs/ge3;->a:Ljava/math/BigInteger;
-    :try_end_82
-    .catch Ljava/lang/Exception; {:try_start_54 .. :try_end_82} :catch_78
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 130
     .line 131
@@ -802,7 +802,7 @@
     return v3
 
     .line 252
-    :goto_fb
+    :goto_1
     new-instance v0, Llibs/fe3;
 
     .line 253
@@ -824,13 +824,13 @@
 .end method
 
 .method public final d()V
-    .registers 3
+    .locals 2
 
     .line 1
     :try_start_0
     invoke-virtual {p0}, Llibs/ea0;->e()V
-    :try_end_3
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_3} :catch_4
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 2
     .line 3
@@ -838,7 +838,7 @@
     return-void
 
     .line 5
-    :catch_4
+    :catch_0
     move-exception v0
 
     .line 6
@@ -862,7 +862,7 @@
 .end method
 
 .method public final e()V
-    .registers 3
+    .locals 2
 
     .line 1
     sget-object v0, Llibs/ad1;->a:Llibs/hh;
@@ -873,21 +873,21 @@
 
     .line 4
     .line 5
-    :try_start_4
+    :try_start_0
     invoke-static {v0}, Llibs/r43;->c(Ljava/lang/String;)Ljava/security/KeyFactory;
 
     .line 6
     .line 7
     .line 8
     move-result-object v1
-    :try_end_8
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_8} :catch_9
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 9
-    goto :goto_d
+    goto :goto_0
 
     .line 10
-    :catch_9
+    :catch_0
     invoke-static {v0}, Ljava/security/KeyFactory;->getInstance(Ljava/lang/String;)Ljava/security/KeyFactory;
 
     .line 11
@@ -896,26 +896,26 @@
     move-result-object v1
 
     .line 14
-    :goto_d
+    :goto_0
     iput-object v1, p0, Llibs/ea0;->w:Ljava/security/KeyFactory;
 
     .line 15
     .line 16
-    :try_start_f
+    :try_start_1
     invoke-static {v0}, Llibs/r43;->d(Ljava/lang/String;)Ljava/security/KeyPairGenerator;
 
     .line 17
     .line 18
     .line 19
     move-result-object v1
-    :try_end_13
-    .catch Ljava/lang/Exception; {:try_start_f .. :try_end_13} :catch_14
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 20
-    goto :goto_18
+    goto :goto_1
 
     .line 21
-    :catch_14
+    :catch_1
     invoke-static {v0}, Ljava/security/KeyPairGenerator;->getInstance(Ljava/lang/String;)Ljava/security/KeyPairGenerator;
 
     .line 22
@@ -924,44 +924,44 @@
     move-result-object v1
 
     .line 25
-    :goto_18
+    :goto_1
     iput-object v1, p0, Llibs/ea0;->u:Ljava/security/KeyPairGenerator;
 
     .line 26
     .line 27
-    :try_start_1a
+    :try_start_2
     invoke-static {}, Llibs/r43;->g()V
 
     .line 28
     .line 29
     .line 30
     sget-object v1, Llibs/r43;->c:Lorg/conscrypt/OpenSSLProvider;
-    :try_end_1f
-    .catch Ljava/lang/Exception; {:try_start_1a .. :try_end_1f} :catch_32
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
 
     .line 31
     .line 32
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_0
 
     .line 33
     .line 34
-    :try_start_21
+    :try_start_3
     invoke-static {v0, v1}, Ljavax/crypto/KeyAgreement;->getInstance(Ljava/lang/String;Ljava/security/Provider;)Ljavax/crypto/KeyAgreement;
 
     .line 35
     .line 36
     .line 37
     move-result-object v0
-    :try_end_25
-    .catchall {:try_start_21 .. :try_end_25} :catchall_26
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 38
-    goto :goto_36
+    goto :goto_2
 
     .line 39
-    :catchall_26
-    :cond_26
-    :try_start_26
+    :catchall_0
+    :cond_0
+    :try_start_4
     sget-object v1, Llibs/r43;->d:Llibs/hh;
 
     .line 40
@@ -972,29 +972,29 @@
     .line 43
     .line 44
     move-result-object v0
-    :try_end_2c
-    .catchall {:try_start_26 .. :try_end_2c} :catchall_2d
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 45
-    goto :goto_36
+    goto :goto_2
 
     .line 46
-    :catchall_2d
-    :try_start_2d
+    :catchall_1
+    :try_start_5
     invoke-static {v0}, Ljavax/crypto/KeyAgreement;->getInstance(Ljava/lang/String;)Ljavax/crypto/KeyAgreement;
 
     .line 47
     .line 48
     .line 49
     move-result-object v0
-    :try_end_31
-    .catch Ljava/lang/Exception; {:try_start_2d .. :try_end_31} :catch_32
+    :try_end_5
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_2
 
     .line 50
-    goto :goto_36
+    goto :goto_2
 
     .line 51
-    :catch_32
+    :catch_2
     invoke-static {v0}, Ljavax/crypto/KeyAgreement;->getInstance(Ljava/lang/String;)Ljavax/crypto/KeyAgreement;
 
     .line 52
@@ -1003,7 +1003,7 @@
     move-result-object v0
 
     .line 55
-    :goto_36
+    :goto_2
     iput-object v0, p0, Llibs/ea0;->v:Ljavax/crypto/KeyAgreement;
 
     .line 56

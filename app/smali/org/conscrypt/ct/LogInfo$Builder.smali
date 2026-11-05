@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,7 +33,7 @@
 .end method
 
 .method public static bridge synthetic a(Lorg/conscrypt/ct/LogInfo$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
     iget-object p0, p0, Lorg/conscrypt/ct/LogInfo$Builder;->description:Ljava/lang/String;
@@ -44,7 +44,7 @@
 .end method
 
 .method public static bridge synthetic b(Lorg/conscrypt/ct/LogInfo$Builder;)[B
-    .registers 1
+    .locals 0
 
     .line 1
     iget-object p0, p0, Lorg/conscrypt/ct/LogInfo$Builder;->logId:[B
@@ -55,7 +55,7 @@
 .end method
 
 .method public static bridge synthetic c(Lorg/conscrypt/ct/LogInfo$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
     iget-object p0, p0, Lorg/conscrypt/ct/LogInfo$Builder;->operator:Ljava/lang/String;
@@ -66,7 +66,7 @@
 .end method
 
 .method public static bridge synthetic d(Lorg/conscrypt/ct/LogInfo$Builder;)Ljava/security/PublicKey;
-    .registers 1
+    .locals 0
 
     .line 1
     iget-object p0, p0, Lorg/conscrypt/ct/LogInfo$Builder;->publicKey:Ljava/security/PublicKey;
@@ -77,7 +77,7 @@
 .end method
 
 .method public static bridge synthetic e(Lorg/conscrypt/ct/LogInfo$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 1
     iget p0, p0, Lorg/conscrypt/ct/LogInfo$Builder;->state:I
@@ -88,7 +88,7 @@
 .end method
 
 .method public static bridge synthetic f(Lorg/conscrypt/ct/LogInfo$Builder;)J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/ct/LogInfo$Builder;->stateTimestamp:J
@@ -99,7 +99,7 @@
 .end method
 
 .method public static bridge synthetic g(Lorg/conscrypt/ct/LogInfo$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
     iget-object p0, p0, Lorg/conscrypt/ct/LogInfo$Builder;->url:Ljava/lang/String;
@@ -112,7 +112,7 @@
 
 # virtual methods
 .method public build()Lorg/conscrypt/ct/LogInfo;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Lorg/conscrypt/ct/LogInfo;
@@ -131,7 +131,7 @@
 .end method
 
 .method public setDescription(Ljava/lang/String;)Lorg/conscrypt/ct/LogInfo$Builder;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -147,7 +147,7 @@
 .end method
 
 .method public setOperator(Ljava/lang/String;)Lorg/conscrypt/ct/LogInfo$Builder;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -163,7 +163,7 @@
 .end method
 
 .method public setPublicKey(Ljava/security/PublicKey;)Lorg/conscrypt/ct/LogInfo$Builder;
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -175,7 +175,7 @@
 
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     const-string v0, "SHA-256"
 
     .line 7
@@ -205,15 +205,15 @@
 
     .line 20
     iput-object p1, p0, Lorg/conscrypt/ct/LogInfo$Builder;->logId:[B
-    :try_end_15
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_5 .. :try_end_15} :catch_16
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 21
     .line 22
     return-object p0
 
     .line 23
-    :catch_16
+    :catch_0
     move-exception p1
 
     .line 24
@@ -229,17 +229,17 @@
 .end method
 
 .method public setState(IJ)Lorg/conscrypt/ct/LogInfo$Builder;
-    .registers 5
+    .locals 1
 
     .line 1
-    if-ltz p1, :cond_a
+    if-ltz p1, :cond_0
 
     .line 2
     .line 3
     const/4 v0, 0x6
 
     .line 4
-    if-gt p1, v0, :cond_a
+    if-gt p1, v0, :cond_0
 
     .line 5
     .line 6
@@ -254,7 +254,7 @@
     return-object p0
 
     .line 11
-    :cond_a
+    :cond_0
     const-string p1, "invalid state value"
 
     .line 12
@@ -271,7 +271,7 @@
 .end method
 
 .method public setUrl(Ljava/lang/String;)Lorg/conscrypt/ct/LogInfo$Builder;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;

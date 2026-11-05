@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-wide/16 v0, 0x0
@@ -32,7 +32,7 @@
 .end method
 
 .method public static a(ILjava/math/BigInteger;)[B
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-virtual {p1}, Ljava/math/BigInteger;->toByteArray()[B
@@ -46,14 +46,14 @@
     array-length v0, p1
 
     .line 6
-    if-ne v0, p0, :cond_8
+    if-ne v0, p0, :cond_0
 
     .line 7
     .line 8
     return-object p1
 
     .line 9
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 10
@@ -61,21 +61,21 @@
 
     .line 11
     .line 12
-    if-nez v1, :cond_e
+    if-nez v1, :cond_1
 
     .line 13
     .line 14
     const/4 v0, 0x1
 
     .line 15
-    :cond_e
+    :cond_1
     array-length v1, p1
 
     .line 16
     sub-int/2addr v1, v0
 
     .line 17
-    if-gt v1, p0, :cond_19
+    if-gt v1, p0, :cond_2
 
     .line 18
     .line 19
@@ -94,7 +94,7 @@
     return-object v2
 
     .line 26
-    :cond_19
+    :cond_2
     const-string p0, "standard length exceeded for value"
 
     .line 27
@@ -111,7 +111,7 @@
 .end method
 
 .method public static b(Ljava/math/BigInteger;)[B
-    .registers 5
+    .locals 4
 
     .line 1
     invoke-virtual {p0}, Ljava/math/BigInteger;->toByteArray()[B
@@ -129,7 +129,7 @@
 
     .line 7
     .line 8
-    if-nez v1, :cond_12
+    if-nez v1, :cond_0
 
     .line 9
     .line 10
@@ -154,12 +154,12 @@
     return-object v3
 
     .line 19
-    :cond_12
+    :cond_0
     return-object p0
 .end method
 
 .method public static c(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/security/SecureRandom;)Ljava/math/BigInteger;
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-virtual {p0, p1}, Ljava/math/BigInteger;->compareTo(Ljava/math/BigInteger;)I
@@ -170,18 +170,18 @@
     move-result v0
 
     .line 5
-    if-ltz v0, :cond_10
+    if-ltz v0, :cond_1
 
     .line 6
     .line 7
-    if-gtz v0, :cond_9
+    if-gtz v0, :cond_0
 
     .line 8
     .line 9
     return-object p0
 
     .line 10
-    :cond_9
+    :cond_0
     const-string p0, "\'min\' may not be greater than \'max\'"
 
     .line 11
@@ -197,7 +197,7 @@
     return-object p0
 
     .line 17
-    :cond_10
+    :cond_1
     invoke-virtual {p0}, Ljava/math/BigInteger;->bitLength()I
 
     .line 18
@@ -218,7 +218,7 @@
 
     .line 26
     .line 27
-    if-le v0, v1, :cond_2b
+    if-le v0, v1, :cond_2
 
     .line 28
     .line 29
@@ -253,16 +253,16 @@
     return-object p0
 
     .line 44
-    :cond_2b
+    :cond_2
     const/4 v0, 0x0
 
     .line 45
-    :goto_2c
+    :goto_0
     const/16 v1, 0x3e8
 
     .line 46
     .line 47
-    if-ge v0, v1, :cond_49
+    if-ge v0, v1, :cond_4
 
     .line 48
     .line 49
@@ -291,7 +291,7 @@
     move-result v2
 
     .line 62
-    if-ltz v2, :cond_46
+    if-ltz v2, :cond_3
 
     .line 63
     .line 64
@@ -303,22 +303,22 @@
     move-result v2
 
     .line 68
-    if-gtz v2, :cond_46
+    if-gtz v2, :cond_3
 
     .line 69
     .line 70
     return-object v1
 
     .line 71
-    :cond_46
+    :cond_3
     add-int/lit8 v0, v0, 0x1
 
     .line 72
     .line 73
-    goto :goto_2c
+    goto :goto_0
 
     .line 74
-    :cond_49
+    :cond_4
     new-instance v0, Ljava/math/BigInteger;
 
     .line 75
@@ -360,21 +360,21 @@
 .end method
 
 .method public static d(II[B)Ljava/math/BigInteger;
-    .registers 5
+    .locals 2
 
     .line 1
-    if-nez p0, :cond_5
+    if-nez p0, :cond_0
 
     .line 2
     .line 3
     array-length v0, p2
 
     .line 4
-    if-eq p1, v0, :cond_c
+    if-eq p1, v0, :cond_1
 
     .line 5
     .line 6
-    :cond_5
+    :cond_0
     new-array v0, p1, [B
 
     .line 7
@@ -390,7 +390,7 @@
     move-object p2, v0
 
     .line 13
-    :cond_c
+    :cond_1
     new-instance p0, Ljava/math/BigInteger;
 
     .line 14

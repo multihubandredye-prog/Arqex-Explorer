@@ -19,7 +19,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 133
+    .locals 133
 
     .line 1
     new-instance v0, Llibs/h13;
@@ -3174,8 +3174,8 @@
     const/4 v2, 0x0
 
     .line 1627
-    :goto_65a
-    if-ge v2, v1, :cond_686
+    :goto_0
+    if-ge v2, v1, :cond_2
 
     .line 1628
     .line 1629
@@ -3187,7 +3187,7 @@
 
     .line 1632
     .line 1633
-    if-ne v3, v4, :cond_66e
+    if-ne v3, v4, :cond_1
 
     .line 1634
     .line 1635
@@ -3204,7 +3204,7 @@
     .line 1640
     .line 1641
     .line 1642
-    :cond_669
+    :cond_0
     const/16 v5, 0x2d
 
     .line 1643
@@ -3213,15 +3213,15 @@
 
     .line 1645
     .line 1646
-    goto :goto_683
+    goto :goto_1
 
     .line 1647
-    :cond_66e
+    :cond_1
     sget-object v4, Llibs/h13;->Lambda:Llibs/h13;
 
     .line 1648
     .line 1649
-    if-eq v3, v4, :cond_669
+    if-eq v3, v4, :cond_0
 
     .line 1650
     .line 1651
@@ -3258,20 +3258,20 @@
     .line 1666
     .line 1667
     .line 1668
-    :goto_683
+    :goto_1
     add-int/lit8 v2, v2, 0x1
 
     .line 1669
     .line 1670
-    goto :goto_65a
+    goto :goto_0
 
     .line 1671
-    :cond_686
+    :cond_2
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
@@ -3283,7 +3283,7 @@
 .end method
 
 .method public static a(Ljava/lang/String;)Llibs/h13;
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/h13;->Mu:Ljava/util/HashMap;
@@ -3302,14 +3302,14 @@
 
     .line 8
     .line 9
-    if-eqz p0, :cond_b
+    if-eqz p0, :cond_0
 
     .line 10
     .line 11
     return-object p0
 
     .line 12
-    :cond_b
+    :cond_0
     sget-object p0, Llibs/h13;->Lambda:Llibs/h13;
 
     .line 13
@@ -3318,7 +3318,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Llibs/h13;
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Llibs/h13;
@@ -3341,7 +3341,7 @@
 .end method
 
 .method public static values()[Llibs/h13;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/h13;->Nu:[Llibs/h13;

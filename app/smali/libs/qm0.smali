@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/tm0;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iput-object p1, p0, Llibs/qm0;->Mu:Llibs/tm0;
@@ -33,7 +33,7 @@
     .line 4
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     invoke-static {}, Llibs/sw1;->Bundle()V
 
     .line 7
@@ -65,8 +65,8 @@
     .line 21
     .line 22
     invoke-virtual {p1, v0}, Ljava/net/ServerSocket;->bind(Ljava/net/SocketAddress;)V
-    :try_end_18
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_18} :catch_23
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 23
     .line 24
@@ -92,7 +92,7 @@
     return-void
 
     .line 36
-    :catch_23
+    :catch_0
     move-exception p1
 
     .line 37
@@ -115,7 +115,7 @@
 
 # virtual methods
 .method public final g()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/qm0;->Z:Ljava/net/ServerSocket;
@@ -131,14 +131,14 @@
 .end method
 
 .method public final p()Ljava/net/Socket;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/qm0;->Y:Ljava/net/Socket;
 
     .line 2
     .line 3
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -146,36 +146,36 @@
 
     .line 6
     .line 7
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     .line 8
     .line 9
-    :try_start_8
+    :try_start_0
     iget-object v0, p0, Llibs/qm0;->X:Ljava/lang/Thread;
 
     .line 10
     .line 11
     invoke-virtual {v0}, Ljava/lang/Thread;->join()V
-    :try_end_d
-    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_d} :catch_e
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 12
     .line 13
     .line 14
-    goto :goto_f
+    goto :goto_0
 
     .line 15
-    :catch_e
+    :catch_0
     nop
 
     .line 16
-    :cond_f
-    :goto_f
+    :cond_0
+    :goto_0
     iget-object v0, p0, Llibs/qm0;->Lambda:Ljava/io/IOException;
 
     .line 17
     .line 18
-    if-nez v0, :cond_3f
+    if-nez v0, :cond_3
 
     .line 19
     .line 20
@@ -183,7 +183,7 @@
 
     .line 21
     .line 22
-    if-eqz v0, :cond_39
+    if-eqz v0, :cond_2
 
     .line 23
     .line 24
@@ -195,11 +195,11 @@
 
     .line 27
     .line 28
-    if-eqz v2, :cond_38
+    if-eqz v2, :cond_1
 
     .line 29
     .line 30
-    :try_start_1d
+    :try_start_1
     invoke-virtual {v0}, Ljava/net/Socket;->getInetAddress()Ljava/net/InetAddress;
 
     .line 31
@@ -230,14 +230,14 @@
     .line 44
     .line 45
     move-result-object v0
-    :try_end_2d
-    .catch Ljava/io/IOException; {:try_start_1d .. :try_end_2d} :catch_2e
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 46
-    goto :goto_38
+    goto :goto_1
 
     .line 47
-    :catch_2e
+    :catch_1
     move-exception v1
 
     .line 48
@@ -258,12 +258,12 @@
     throw v0
 
     .line 57
-    :cond_38
-    :goto_38
+    :cond_1
+    :goto_1
     return-object v0
 
     .line 58
-    :cond_39
+    :cond_2
     new-instance v0, Llibs/u60;
 
     .line 59
@@ -276,7 +276,7 @@
     throw v0
 
     .line 64
-    :cond_3f
+    :cond_3
     new-instance v0, Llibs/u60;
 
     .line 65
@@ -298,7 +298,7 @@
 .end method
 
 .method public final run()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/qm0;->Z:Ljava/net/ServerSocket;
@@ -309,7 +309,7 @@
 
     .line 4
     .line 5
-    :try_start_4
+    :try_start_0
     invoke-virtual {v0, v1}, Ljava/net/ServerSocket;->setSoTimeout(I)V
 
     .line 6
@@ -328,9 +328,9 @@
     .line 13
     .line 14
     invoke-static {v1}, Llibs/sw1;->View(Ljava/net/Socket;)V
-    :try_end_10
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_10} :catch_16
-    .catchall {:try_start_4 .. :try_end_10} :catchall_14
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 15
     .line 16
@@ -343,21 +343,21 @@
     return-void
 
     .line 21
-    :catchall_14
+    :catchall_0
     move-exception v1
 
     .line 22
-    goto :goto_1d
+    goto :goto_0
 
     .line 23
-    :catch_16
+    :catch_0
     move-exception v1
 
     .line 24
-    :try_start_17
+    :try_start_1
     iput-object v1, p0, Llibs/qm0;->Lambda:Ljava/io/IOException;
-    :try_end_19
-    .catchall {:try_start_17 .. :try_end_19} :catchall_14
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 25
     .line 26
@@ -369,7 +369,7 @@
     return-void
 
     .line 30
-    :goto_1d
+    :goto_0
     invoke-static {v0}, Llibs/ji0;->n(Ljava/net/ServerSocket;)V
 
     .line 31

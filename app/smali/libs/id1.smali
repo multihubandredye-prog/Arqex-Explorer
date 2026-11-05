@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/security/PrivateKey;Ljava/lang/String;Ljava/security/spec/AlgorithmParameterSpec;)V
-    .registers 5
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -24,11 +24,11 @@
     const/4 v0, 0x0
 
     .line 5
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_1
 
     .line 6
     .line 7
-    if-eqz p2, :cond_f
+    if-eqz p2, :cond_0
 
     .line 8
     .line 9
@@ -47,7 +47,7 @@
     return-void
 
     .line 16
-    :cond_f
+    :cond_0
     const-string p1, "signatureAlgorithm cannot be null"
 
     .line 17
@@ -60,7 +60,7 @@
     throw v0
 
     .line 22
-    :cond_15
+    :cond_1
     const-string p1, "privateKey cannot be null"
 
     .line 23

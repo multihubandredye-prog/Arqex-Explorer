@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     sget-object v0, Lorg/conscrypt/MlDsaAlgorithm;->ML_DSA_65:Lorg/conscrypt/MlDsaAlgorithm;
@@ -26,7 +26,7 @@
 
 # virtual methods
 .method public supportsAlgorithm(Lorg/conscrypt/MlDsaAlgorithm;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/MlDsaAlgorithm;->ML_DSA_65:Lorg/conscrypt/MlDsaAlgorithm;

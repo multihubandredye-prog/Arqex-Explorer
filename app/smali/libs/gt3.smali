@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/graphics/drawable/Drawable$ConstantState;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final canApplyTheme()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/gt3;->a:Landroid/graphics/drawable/Drawable$ConstantState;
@@ -46,7 +46,7 @@
 .end method
 
 .method public final getChangingConfigurations()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/gt3;->a:Landroid/graphics/drawable/Drawable$ConstantState;
@@ -65,7 +65,7 @@
 .end method
 
 .method public final newDrawable()Landroid/graphics/drawable/Drawable;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/ht3;
@@ -105,7 +105,7 @@
 .end method
 
 .method public final newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
-    .registers 4
+    .locals 2
 
     .line 19
     new-instance v0, Llibs/ht3;
@@ -129,7 +129,7 @@
 .end method
 
 .method public final newDrawable(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
-    .registers 5
+    .locals 2
 
     .line 21
     new-instance v0, Llibs/ht3;

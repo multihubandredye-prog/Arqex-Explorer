@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 24
     invoke-direct {p0}, Llibs/zm0;-><init>()V
@@ -50,7 +50,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/zm0;-><init>()V
@@ -101,14 +101,14 @@
 
 # virtual methods
 .method public final a(Llibs/um0;)V
-    .registers 10
+    .locals 8
 
     .line 1
     iget-object v0, p0, Llibs/lx;->d:Llibs/dn0;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_35
+    if-eqz v0, :cond_7
 
     .line 4
     .line 5
@@ -120,7 +120,7 @@
     move-result-object v1
 
     .line 9
-    if-eqz p1, :cond_32
+    if-eqz p1, :cond_6
 
     .line 10
     .line 11
@@ -138,38 +138,38 @@
     const/4 v5, 0x1
 
     .line 17
-    if-nez v3, :cond_14
+    if-nez v3, :cond_0
 
     .line 18
     .line 19
     const/4 v6, 0x1
 
     .line 20
-    goto :goto_15
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_0
     const/4 v6, 0x0
 
     .line 22
-    :goto_15
-    if-nez v2, :cond_18
+    :goto_0
+    if-nez v2, :cond_1
 
     .line 23
     .line 24
     const/4 v4, 0x1
 
     .line 25
-    :cond_18
-    if-nez v6, :cond_1c
+    :cond_1
+    if-nez v6, :cond_2
 
     .line 26
     .line 27
-    if-eqz v4, :cond_2e
+    if-eqz v4, :cond_5
 
     .line 28
     .line 29
-    :cond_1c
+    :cond_2
     new-instance v5, Llibs/um0;
 
     .line 30
@@ -178,7 +178,7 @@
 
     .line 32
     .line 33
-    if-eqz v6, :cond_24
+    if-eqz v6, :cond_3
 
     .line 34
     .line 35
@@ -186,8 +186,8 @@
 
     .line 36
     .line 37
-    :cond_24
-    if-eqz v4, :cond_28
+    :cond_3
+    if-eqz v4, :cond_4
 
     .line 38
     .line 39
@@ -195,7 +195,7 @@
 
     .line 40
     .line 41
-    :cond_28
+    :cond_4
     iget-boolean p1, p1, Llibs/um0;->d:Z
 
     .line 42
@@ -208,7 +208,7 @@
     move-object p1, v5
 
     .line 47
-    :cond_2e
+    :cond_5
     invoke-virtual {v0, p1}, Llibs/dn0;->a(Llibs/um0;)V
 
     .line 48
@@ -217,18 +217,18 @@
     return-void
 
     .line 51
-    :cond_32
+    :cond_6
     invoke-virtual {v0, v1}, Llibs/dn0;->a(Llibs/um0;)V
 
     .line 52
     .line 53
     .line 54
-    :cond_35
+    :cond_7
     return-void
 .end method
 
 .method public final e(ILjava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 1
     :try_start_0
@@ -241,15 +241,15 @@
 
     .line 5
     iput-object p1, p0, Llibs/lx;->b:Ljava/util/regex/Pattern;
-    :try_end_6
-    .catch Ljava/util/regex/PatternSyntaxException; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Ljava/util/regex/PatternSyntaxException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 6
     .line 7
     return-void
 
     .line 8
-    :catch_7
+    :catch_0
     const-string p1, "Unparseable regex supplied: "
 
     .line 9
@@ -271,7 +271,7 @@
 .end method
 
 .method public f()Llibs/um0;
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Llibs/um0;
@@ -301,14 +301,14 @@
 .end method
 
 .method public final g(I)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/lx;->c:Ljava/util/regex/MatchResult;
 
     .line 2
     .line 3
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -318,7 +318,7 @@
     return-object p1
 
     .line 7
-    :cond_6
+    :cond_0
     invoke-interface {v0, p1}, Ljava/util/regex/MatchResult;->group(I)Ljava/lang/String;
 
     .line 8
@@ -331,7 +331,7 @@
 .end method
 
 .method public final h(Ljava/lang/String;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -365,7 +365,7 @@
     move-result p1
 
     .line 16
-    if-eqz p1, :cond_19
+    if-eqz p1, :cond_0
 
     .line 17
     .line 18
@@ -385,12 +385,12 @@
 
     .line 25
     .line 26
-    :cond_19
+    :cond_0
     iget-object p1, p0, Llibs/lx;->c:Ljava/util/regex/MatchResult;
 
     .line 27
     .line 28
-    if-eqz p1, :cond_1f
+    if-eqz p1, :cond_1
 
     .line 29
     .line 30
@@ -400,7 +400,7 @@
     return p1
 
     .line 32
-    :cond_1f
+    :cond_1
     const/4 p1, 0x0
 
     .line 33

@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/InputStream;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Llibs/zj0;-><init>()V
@@ -73,11 +73,11 @@
 
     .line 27
     .line 28
-    if-eq p1, v1, :cond_33
+    if-eq p1, v1, :cond_1
 
     .line 29
     .line 30
-    if-eqz p1, :cond_32
+    if-eqz p1, :cond_0
 
     .line 31
     .line 32
@@ -104,7 +104,7 @@
     const/4 v1, 0x3
 
     .line 43
-    if-ne p1, v1, :cond_32
+    if-ne p1, v1, :cond_0
 
     .line 44
     .line 45
@@ -120,11 +120,11 @@
 
     .line 50
     .line 51
-    :cond_32
+    :cond_0
     return-void
 
     .line 52
-    :cond_33
+    :cond_1
     invoke-virtual {v0}, Ljava/io/InputStream;->read()I
 
     .line 53
@@ -158,7 +158,7 @@
 
 # virtual methods
 .method public final l(Llibs/ta;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/jq2;->Omicron:I
@@ -183,11 +183,11 @@
 
     .line 12
     .line 13
-    if-eq v0, v1, :cond_1e
+    if-eq v0, v1, :cond_2
 
     .line 14
     .line 15
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 16
     .line 17
@@ -200,11 +200,11 @@
     .line 20
     .line 21
     .line 22
-    :cond_15
+    :cond_0
     const/4 v1, 0x3
 
     .line 23
-    if-ne v0, v1, :cond_1d
+    if-ne v0, v1, :cond_1
 
     .line 24
     .line 25
@@ -217,11 +217,11 @@
     .line 28
     .line 29
     .line 30
-    :cond_1d
+    :cond_1
     return-void
 
     .line 31
-    :cond_1e
+    :cond_2
     const/16 v0, 0x47
 
     .line 32

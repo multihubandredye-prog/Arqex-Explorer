@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Llibs/Five;-><init>(Ljava/lang/String;Ljava/lang/String;)V
@@ -17,7 +17,7 @@
 .end method
 
 .method public static f(Ljava/math/BigInteger;Ljava/math/BigInteger;)[B
-    .registers 6
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/util/ArrayList;
@@ -94,7 +94,7 @@
     const/4 v1, 0x1
 
     .line 41
-    :try_start_28
+    :try_start_0
     new-instance v2, Llibs/Attr;
 
     .line 42
@@ -110,8 +110,8 @@
     .line 48
     .line 49
     invoke-virtual {p1}, Ljava/io/OutputStream;->flush()V
-    :try_end_33
-    .catchall {:try_start_28 .. :try_end_33} :catchall_3f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 50
     .line 51
@@ -140,7 +140,7 @@
     return-object p0
 
     .line 64
-    :catchall_3f
+    :catchall_0
     move-exception p0
 
     .line 65

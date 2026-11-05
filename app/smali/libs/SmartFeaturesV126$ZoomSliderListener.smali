@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,13 +37,13 @@
 .end method
 
 .method private applyPct(IZ)V
-    .registers 6
+    .locals 3
 
     invoke-static {p1}, Llibs/SmartFeaturesV126;->setClickZoomPercent(I)V
 
     iget-object v0, p0, Llibs/SmartFeaturesV126$ZoomSliderListener;->labelView:Landroid/widget/TextView;
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
 
@@ -55,25 +55,25 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    :cond_12
+    :cond_0
     iget-object v0, p0, Llibs/SmartFeaturesV126$ZoomSliderListener;->settingsRowText:Landroid/widget/TextView;
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1
 
     invoke-static {v0}, Llibs/SmartFeaturesV126;->refreshSettingsRowText(Landroid/widget/TextView;)V
 
-    :cond_19
+    :cond_1
     iget-object v0, p0, Llibs/SmartFeaturesV126$ZoomSliderListener;->previewBox:Landroid/view/View;
 
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_3
 
-    if-eqz p2, :cond_23
+    if-eqz p2, :cond_2
 
     invoke-static {v0, p1}, Llibs/SmartFeaturesV126;->pulsePreviewView(Landroid/view/View;I)V
 
     return-void
 
-    :cond_23
+    :cond_2
     int-to-float p1, p1
 
     const p2, 0x3c23d70a    # 0.01f
@@ -88,40 +88,40 @@
 
     invoke-virtual {v0, p1}, Landroid/view/View;->setScaleY(F)V
 
-    :cond_31
+    :cond_3
     return-void
 .end method
 
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 6
+    .locals 4
 
     iget-object v0, p0, Llibs/SmartFeaturesV126$ZoomSliderListener;->seekBar:Landroid/widget/SeekBar;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
-    :cond_5
+    :cond_0
     iget-object v1, p0, Llibs/SmartFeaturesV126$ZoomSliderListener;->btnTest:Landroid/view/View;
 
     const/4 v2, 0x1
 
-    if-eq p1, v1, :cond_4c
+    if-eq p1, v1, :cond_6
 
     iget-object v1, p0, Llibs/SmartFeaturesV126$ZoomSliderListener;->previewBox:Landroid/view/View;
 
-    if-ne p1, v1, :cond_f
+    if-ne p1, v1, :cond_1
 
-    goto :goto_4c
+    goto :goto_1
 
-    :cond_f
+    :cond_1
     iget-object v1, p0, Llibs/SmartFeaturesV126$ZoomSliderListener;->btnReset:Landroid/view/View;
 
     const/4 v3, 0x0
 
-    if-ne p1, v1, :cond_23
+    if-ne p1, v1, :cond_2
 
     iput-boolean v2, p0, Llibs/SmartFeaturesV126$ZoomSliderListener;->suppress:Z
 
@@ -137,27 +137,27 @@
 
     return-void
 
-    :cond_23
+    :cond_2
     invoke-virtual {v0}, Landroid/widget/ProgressBar;->getProgress()I
 
     move-result v1
 
     iget-object v3, p0, Llibs/SmartFeaturesV126$ZoomSliderListener;->btnMinus:Landroid/view/View;
 
-    if-ne p1, v3, :cond_31
+    if-ne p1, v3, :cond_3
 
     add-int/lit8 v1, v1, -0x1
 
-    if-gez v1, :cond_3e
+    if-gez v1, :cond_4
 
     const/4 v1, 0x0
 
-    goto :goto_3e
+    goto :goto_0
 
-    :cond_31
+    :cond_3
     iget-object v3, p0, Llibs/SmartFeaturesV126$ZoomSliderListener;->btnPlus:Landroid/view/View;
 
-    if-ne p1, v3, :cond_4b
+    if-ne p1, v3, :cond_5
 
     add-int/lit8 v1, v1, 0x1
 
@@ -165,12 +165,12 @@
 
     move-result p1
 
-    if-le v1, p1, :cond_3e
+    if-le v1, p1, :cond_4
 
     move v1, p1
 
-    :cond_3e
-    :goto_3e
+    :cond_4
+    :goto_0
     iput-boolean v2, p0, Llibs/SmartFeaturesV126$ZoomSliderListener;->suppress:Z
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setProgress(I)V
@@ -183,11 +183,11 @@
 
     invoke-direct {p0, v1, v2}, Llibs/SmartFeaturesV126$ZoomSliderListener;->applyPct(IZ)V
 
-    :cond_4b
+    :cond_5
     return-void
 
-    :cond_4c
-    :goto_4c
+    :cond_6
+    :goto_1
     iget-object p1, p0, Llibs/SmartFeaturesV126$ZoomSliderListener;->previewBox:Landroid/view/View;
 
     invoke-static {}, Llibs/SmartFeaturesV126;->getClickZoomPercent()I
@@ -200,15 +200,15 @@
 .end method
 
 .method public onProgressChanged(Landroid/widget/SeekBar;IZ)V
-    .registers 4
+    .locals 0
 
     iget-boolean p1, p0, Llibs/SmartFeaturesV126$ZoomSliderListener;->suppress:Z
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     return-void
 
-    :cond_5
+    :cond_0
     add-int/lit8 p2, p2, 0x2
 
     const/4 p1, 0x0
@@ -219,17 +219,17 @@
 .end method
 
 .method public onStartTrackingTouch(Landroid/widget/SeekBar;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onStopTrackingTouch(Landroid/widget/SeekBar;)V
-    .registers 3
+    .locals 1
 
     iget-object p1, p0, Llibs/SmartFeaturesV126$ZoomSliderListener;->previewBox:Landroid/view/View;
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     invoke-static {}, Llibs/SmartFeaturesV126;->getClickZoomPercent()I
 
@@ -237,6 +237,6 @@
 
     invoke-static {p1, v0}, Llibs/SmartFeaturesV126;->pulsePreviewView(Landroid/view/View;I)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method

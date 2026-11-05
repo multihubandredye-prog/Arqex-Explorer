@@ -5,7 +5,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/gz0;->a:Llibs/iz0;
@@ -16,7 +16,7 @@
 .end method
 
 .method public static a(Ljava/lang/String;)Llibs/iz0;
-    .registers 5
+    .locals 4
 
     .line 1
     sget-object v0, Ljava/util/Collections;->EMPTY_MAP:Ljava/util/Map;
@@ -77,7 +77,7 @@
 .end method
 
 .method public static b(Ljava/lang/String;)Llibs/iz0;
-    .registers 5
+    .locals 4
 
     .line 1
     sget-object v0, Ljava/util/Collections;->EMPTY_MAP:Ljava/util/Map;

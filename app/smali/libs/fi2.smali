@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/16 v0, 0x100
@@ -28,7 +28,7 @@
 
     .line 4
     .line 5
-    fill-array-data v0, :array_14
+    fill-array-data v0, :array_0
 
     .line 6
     .line 7
@@ -45,7 +45,7 @@
 
     .line 13
     .line 14
-    fill-array-data v0, :array_118
+    fill-array-data v0, :array_1
 
     .line 15
     .line 16
@@ -60,7 +60,7 @@
     nop
 
     .line 21
-    :array_14
+    :array_0
     .array-data 2
         0xbds
         0x56s
@@ -330,7 +330,7 @@
     .line 29
     .line 30
     .line 31
-    :array_118
+    :array_1
     .array-data 2
         0x5ds
         0xbes
@@ -592,7 +592,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/yc;-><init>()V
@@ -614,14 +614,14 @@
 
 # virtual methods
 .method public final b(Ljava/lang/Class;)Ljava/security/spec/AlgorithmParameterSpec;
-    .registers 4
+    .locals 2
 
     .line 1
     const-class v0, Ljavax/crypto/spec/RC2ParameterSpec;
 
     .line 2
     .line 3
-    if-ne p1, v0, :cond_25
+    if-ne p1, v0, :cond_1
 
     .line 4
     .line 5
@@ -632,7 +632,7 @@
     const/4 v1, -0x1
 
     .line 8
-    if-eq v0, v1, :cond_25
+    if-eq v0, v1, :cond_1
 
     .line 9
     .line 10
@@ -640,7 +640,7 @@
 
     .line 11
     .line 12
-    if-ge v0, p1, :cond_1b
+    if-ge v0, p1, :cond_0
 
     .line 13
     .line 14
@@ -672,7 +672,7 @@
     return-object p1
 
     .line 28
-    :cond_1b
+    :cond_0
     new-instance p1, Ljavax/crypto/spec/RC2ParameterSpec;
 
     .line 29
@@ -693,12 +693,12 @@
     return-object p1
 
     .line 38
-    :cond_25
+    :cond_1
     const-class v0, Ljavax/crypto/spec/IvParameterSpec;
 
     .line 39
     .line 40
-    if-ne p1, v0, :cond_31
+    if-ne p1, v0, :cond_2
 
     .line 41
     .line 42
@@ -718,7 +718,7 @@
     return-object p1
 
     .line 50
-    :cond_31
+    :cond_2
     const-string p1, "unknown parameter spec passed to RC2 parameters object."
 
     .line 51
@@ -735,7 +735,7 @@
 .end method
 
 .method public final engineGetEncoded()[B
-    .registers 2
+    .locals 1
 
     .line 59
     iget-object v0, p0, Llibs/fi2;->a:[B
@@ -748,7 +748,7 @@
 .end method
 
 .method public final engineGetEncoded(Ljava/lang/String;)[B
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-static {p1}, Llibs/yc;->a(Ljava/lang/String;)Z
@@ -759,7 +759,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_1
 
     .line 6
     .line 7
@@ -774,7 +774,7 @@
     const/4 v1, -0x1
 
     .line 12
-    if-ne p1, v1, :cond_1b
+    if-ne p1, v1, :cond_0
 
     .line 13
     .line 14
@@ -806,7 +806,7 @@
     return-object p1
 
     .line 28
-    :cond_1b
+    :cond_0
     new-instance v1, Llibs/wi2;
 
     .line 29
@@ -835,7 +835,7 @@
     return-object p1
 
     .line 42
-    :cond_29
+    :cond_1
     const-string v0, "RAW"
 
     .line 43
@@ -848,7 +848,7 @@
     move-result p1
 
     .line 48
-    if-eqz p1, :cond_38
+    if-eqz p1, :cond_2
 
     .line 49
     .line 50
@@ -867,7 +867,7 @@
     return-object p1
 
     .line 57
-    :cond_38
+    :cond_2
     const/4 p1, 0x0
 
     .line 58
@@ -875,12 +875,12 @@
 .end method
 
 .method public final engineInit(Ljava/security/spec/AlgorithmParameterSpec;)V
-    .registers 4
+    .locals 2
 
     .line 80
     instance-of v0, p1, Ljavax/crypto/spec/IvParameterSpec;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 81
     check-cast p1, Ljavax/crypto/spec/IvParameterSpec;
@@ -894,10 +894,10 @@
     return-void
 
     .line 82
-    :cond_d
+    :cond_0
     instance-of v0, p1, Ljavax/crypto/spec/RC2ParameterSpec;
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_3
 
     .line 83
     check-cast p1, Ljavax/crypto/spec/RC2ParameterSpec;
@@ -908,11 +908,11 @@
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_27
+    if-eq v0, v1, :cond_2
 
     const/16 v1, 0x100
 
-    if-ge v0, v1, :cond_25
+    if-ge v0, v1, :cond_1
 
     .line 84
     sget-object v1, Llibs/fi2;->c:[S
@@ -921,15 +921,15 @@
 
     iput v0, p0, Llibs/fi2;->b:I
 
-    goto :goto_27
+    goto :goto_0
 
     .line 85
-    :cond_25
+    :cond_1
     iput v0, p0, Llibs/fi2;->b:I
 
     .line 86
-    :cond_27
-    :goto_27
+    :cond_2
+    :goto_0
     invoke-virtual {p1}, Ljavax/crypto/spec/RC2ParameterSpec;->getIV()[B
 
     move-result-object p1
@@ -939,7 +939,7 @@
     return-void
 
     .line 87
-    :cond_2e
+    :cond_3
     const-string p1, "IvParameterSpec or RC2ParameterSpec required to initialise a RC2 parameters algorithm parameters object"
 
     invoke-static {p1}, Llibs/bf0;->d(Ljava/lang/String;)V
@@ -948,7 +948,7 @@
 .end method
 
 .method public final engineInit([B)V
-    .registers 2
+    .locals 0
 
     .line 79
     invoke-static {p1}, Llibs/t43;->g([B)[B
@@ -961,7 +961,7 @@
 .end method
 
 .method public final engineInit([BLjava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-static {p2}, Llibs/yc;->a(Ljava/lang/String;)Z
@@ -972,7 +972,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_4
 
     .line 6
     .line 7
@@ -987,7 +987,7 @@
     const/4 p2, 0x0
 
     .line 12
-    if-eqz p1, :cond_17
+    if-eqz p1, :cond_0
 
     .line 13
     .line 14
@@ -1008,29 +1008,29 @@
     .line 21
     .line 22
     .line 23
-    goto :goto_18
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_0
     move-object v0, p2
 
     .line 25
-    :goto_18
+    :goto_0
     iget-object p1, v0, Llibs/wi2;->X:Llibs/Api;
 
     .line 26
     .line 27
-    if-nez p1, :cond_1e
+    if-nez p1, :cond_1
 
     .line 28
     .line 29
     move-object p1, p2
 
     .line 30
-    goto :goto_22
+    goto :goto_1
 
     .line 31
-    :cond_1e
+    :cond_1
     invoke-virtual {p1}, Llibs/Api;->r()Ljava/math/BigInteger;
 
     .line 32
@@ -1039,8 +1039,8 @@
     move-result-object p1
 
     .line 35
-    :goto_22
-    if-eqz p1, :cond_33
+    :goto_1
+    if-eqz p1, :cond_3
 
     .line 36
     .line 37
@@ -1048,14 +1048,14 @@
 
     .line 38
     .line 39
-    if-nez p1, :cond_29
+    if-nez p1, :cond_2
 
     .line 40
     .line 41
-    goto :goto_2d
+    goto :goto_2
 
     .line 42
-    :cond_29
+    :cond_2
     invoke-virtual {p1}, Llibs/Api;->r()Ljava/math/BigInteger;
 
     .line 43
@@ -1064,7 +1064,7 @@
     move-result-object p2
 
     .line 46
-    :goto_2d
+    :goto_2
     invoke-virtual {p2}, Ljava/math/BigInteger;->intValue()I
 
     .line 47
@@ -1077,7 +1077,7 @@
 
     .line 51
     .line 52
-    :cond_33
+    :cond_3
     iget-object p1, v0, Llibs/wi2;->Y:Llibs/Part;
 
     .line 53
@@ -1097,7 +1097,7 @@
     return-void
 
     .line 61
-    :cond_3c
+    :cond_4
     const-string v0, "RAW"
 
     .line 62
@@ -1110,7 +1110,7 @@
     move-result p2
 
     .line 67
-    if-eqz p2, :cond_48
+    if-eqz p2, :cond_5
 
     .line 68
     .line 69
@@ -1122,7 +1122,7 @@
     return-void
 
     .line 73
-    :cond_48
+    :cond_5
     const-string p1, "Unknown parameters format in IV parameters object"
 
     .line 74
@@ -1136,7 +1136,7 @@
 .end method
 
 .method public final engineToString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "RC2 Parameters"

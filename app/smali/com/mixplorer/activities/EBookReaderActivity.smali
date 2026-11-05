@@ -65,7 +65,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 5
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Lcom/mixplorer/activities/b;-><init>()V
@@ -189,7 +189,7 @@
 .end method
 
 .method public static Post(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 2
 
     .line 1
     sget-object v0, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
@@ -200,7 +200,7 @@
 
     .line 4
     .line 5
-    if-nez v1, :cond_e
+    if-nez v1, :cond_0
 
     .line 6
     .line 7
@@ -220,7 +220,7 @@
 
     .line 14
     .line 15
-    :cond_e
+    :cond_0
     invoke-virtual {v1, p0, p1}, Ljava/util/Properties;->getProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 16
@@ -235,14 +235,14 @@
 
 # virtual methods
 .method public final Add()V
-    .registers 8
+    .locals 7
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/activities/EBookReaderActivity;->o:Llibs/kl2;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_3
 
     .line 4
     .line 5
@@ -264,7 +264,7 @@
     const/4 v4, 0x0
 
     .line 13
-    if-eqz v2, :cond_27
+    if-eqz v2, :cond_2
 
     .line 14
     .line 15
@@ -295,18 +295,18 @@
     move-result v2
 
     .line 28
-    if-lt v1, v2, :cond_1f
+    if-lt v1, v2, :cond_0
 
     .line 29
     .line 30
     const/4 v1, 0x0
 
     .line 31
-    goto :goto_23
+    goto :goto_0
 
     .line 32
-    :cond_1f
-    if-gtz v1, :cond_23
+    :cond_0
+    if-gtz v1, :cond_1
 
     .line 33
     .line 34
@@ -314,8 +314,8 @@
 
     .line 35
     .line 36
-    :cond_23
-    :goto_23
+    :cond_1
+    :goto_0
     invoke-virtual {v0, v4, v1}, Lcom/mixplorer/widgets/MiViewPager;->x(ZI)V
 
     .line 37
@@ -324,8 +324,8 @@
     return-void
 
     .line 40
-    :cond_27
-    :try_start_27
+    :cond_2
+    :try_start_0
     const-string v2, "goNext"
 
     .line 41
@@ -351,26 +351,26 @@
     .line 51
     .line 52
     invoke-virtual {v0, v2, v5, v3}, Llibs/uc;->d(Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_36
-    .catchall {:try_start_27 .. :try_end_36} :catchall_36
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 53
     .line 54
     .line 55
-    :catchall_36
-    :cond_36
+    :catchall_0
+    :cond_3
     return-void
 .end method
 
 .method public final Call()V
-    .registers 8
+    .locals 7
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/activities/EBookReaderActivity;->lIl:Landroid/view/ViewGroup;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_3
 
     .line 4
     .line 5
@@ -378,7 +378,7 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_3e
+    if-eqz v0, :cond_2
 
     .line 8
     .line 9
@@ -394,7 +394,7 @@
 
     .line 14
     .line 15
-    if-eqz v2, :cond_2d
+    if-eqz v2, :cond_1
 
     .line 16
     .line 17
@@ -422,19 +422,19 @@
     move-result-object v0
 
     .line 29
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_0
 
     .line 30
     .line 31
-    goto :goto_3e
+    goto :goto_0
 
     .line 32
-    :cond_1f
+    :cond_0
     instance-of v1, v0, Llibs/ks1;
 
     .line 33
     .line 34
-    if-eqz v1, :cond_3e
+    if-eqz v1, :cond_2
 
     .line 35
     .line 36
@@ -455,11 +455,11 @@
     .line 43
     .line 44
     .line 45
-    goto :goto_3e
+    goto :goto_0
 
     .line 46
-    :cond_2d
-    :try_start_2d
+    :cond_1
+    :try_start_0
     const-string v2, "clearMatches"
 
     .line 47
@@ -491,15 +491,15 @@
     .line 59
     .line 60
     invoke-virtual {v0, v2, v4, v3}, Llibs/uc;->d(Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_3e
-    .catchall {:try_start_2d .. :try_end_3e} :catchall_3e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 61
     .line 62
     .line 63
-    :catchall_3e
-    :cond_3e
-    :goto_3e
+    :catchall_0
+    :cond_2
+    :goto_0
     iget-object v0, p0, Lcom/mixplorer/activities/EBookReaderActivity;->lIl:Landroid/view/ViewGroup;
 
     .line 64
@@ -513,19 +513,19 @@
     .line 68
     .line 69
     .line 70
-    :cond_45
+    :cond_3
     return-void
 .end method
 
 .method public final Cur()V
-    .registers 7
+    .locals 6
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/activities/EBookReaderActivity;->o:Llibs/kl2;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5f
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
@@ -533,7 +533,7 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_5f
+    if-eqz v0, :cond_1
 
     .line 8
     .line 9
@@ -541,7 +541,7 @@
 
     .line 10
     .line 11
-    if-eqz v0, :cond_5f
+    if-eqz v0, :cond_1
 
     .line 12
     .line 13
@@ -561,7 +561,7 @@
     const/4 v2, 0x0
 
     .line 21
-    :try_start_14
+    :try_start_0
     invoke-virtual {p0, v2}, Landroid/app/Activity;->getPreferences(I)Landroid/content/SharedPreferences;
 
     .line 22
@@ -671,7 +671,7 @@
 
     .line 77
     .line 78
-    if-eqz v1, :cond_59
+    if-eqz v1, :cond_0
 
     .line 79
     .line 80
@@ -683,7 +683,7 @@
 
     .line 83
     .line 84
-    if-eqz v1, :cond_59
+    if-eqz v1, :cond_0
 
     .line 85
     .line 86
@@ -695,33 +695,33 @@
     move-result v2
 
     .line 90
-    :cond_59
+    :cond_0
     invoke-interface {v3, v0, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     .line 91
     .line 92
     .line 93
     invoke-static {v3}, Llibs/sw1;->c(Landroid/content/SharedPreferences$Editor;)V
-    :try_end_5f
-    .catchall {:try_start_14 .. :try_end_5f} :catchall_5f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 94
     .line 95
     .line 96
-    :catchall_5f
-    :cond_5f
+    :catchall_0
+    :cond_1
     return-void
 .end method
 
 .method public final Get()Ljava/lang/Comparable;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/activities/EBookReaderActivity;->o:Llibs/kl2;
 
     .line 2
     .line 3
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -731,7 +731,7 @@
     return-object v0
 
     .line 7
-    :cond_6
+    :cond_0
     iget-object v0, p0, Lcom/mixplorer/activities/EBookReaderActivity;->o:Llibs/kl2;
 
     .line 8
@@ -744,19 +744,19 @@
 
     .line 12
     .line 13
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_1
 
     .line 14
     .line 15
     return-object v1
 
     .line 16
-    :cond_f
+    :cond_1
     iget-boolean v0, v1, Llibs/rp0;->Mu:Z
 
     .line 17
     .line 18
-    if-nez v0, :cond_20
+    if-nez v0, :cond_3
 
     .line 19
     .line 20
@@ -764,14 +764,14 @@
 
     .line 21
     .line 22
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_2
 
     .line 23
     .line 24
-    goto :goto_20
+    goto :goto_0
 
     .line 25
-    :cond_18
+    :cond_2
     iget-object v0, v1, Llibs/rp0;->Three:Ljava/lang/String;
 
     .line 26
@@ -790,8 +790,8 @@
     return-object v0
 
     .line 33
-    :cond_20
-    :goto_20
+    :cond_3
+    :goto_0
     invoke-static {v1}, Lcom/mixplorer/providers/FileProvider;->k(Llibs/rp0;)Landroid/net/Uri;
 
     .line 34
@@ -804,7 +804,7 @@
 .end method
 
 .method public final New(Landroid/content/Intent;)V
-    .registers 9
+    .locals 7
 
     .line 1
     invoke-static {p1}, Llibs/sw1;->i(Landroid/content/Intent;)Landroid/net/Uri;
@@ -815,14 +815,14 @@
     move-result-object v2
 
     .line 5
-    if-nez v2, :cond_7
+    if-nez v2, :cond_0
 
     .line 6
     .line 7
     return-void
 
     .line 8
-    :cond_7
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 9
@@ -870,7 +870,7 @@
 
     .line 32
     .line 33
-    if-nez v0, :cond_2e
+    if-nez v0, :cond_1
 
     .line 34
     .line 35
@@ -898,12 +898,12 @@
 
     .line 46
     .line 47
-    :cond_2e
+    :cond_1
     iget-object v0, p0, Lcom/mixplorer/activities/EBookReaderActivity;->I:Llibs/xv1;
 
     .line 48
     .line 49
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_2
 
     .line 50
     .line 51
@@ -915,7 +915,7 @@
     move-result v0
 
     .line 55
-    if-nez v0, :cond_3d
+    if-nez v0, :cond_2
 
     .line 56
     .line 57
@@ -928,7 +928,7 @@
     .line 60
     .line 61
     .line 62
-    :cond_3d
+    :cond_2
     new-instance v6, Llibs/xv1;
 
     .line 63
@@ -969,7 +969,7 @@
 .end method
 
 .method public final Nxt()V
-    .registers 8
+    .locals 7
 
     .line 1
     sget-object v0, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
@@ -1133,7 +1133,7 @@
 .end method
 
 .method public final Old()V
-    .registers 6
+    .locals 5
 
     .line 1
     const-string v0, "POS"
@@ -1147,7 +1147,7 @@
     const/4 v2, 0x0
 
     .line 6
-    :try_start_5
+    :try_start_0
     invoke-virtual {p0, v2}, Landroid/app/Activity;->getPreferences(I)Landroid/content/SharedPreferences;
 
     .line 7
@@ -1260,7 +1260,7 @@
 
     .line 63
     .line 64
-    if-le v0, v1, :cond_4b
+    if-le v0, v1, :cond_0
 
     .line 65
     .line 66
@@ -1278,26 +1278,26 @@
     .line 72
     .line 73
     invoke-static {v0}, Llibs/sw1;->c(Landroid/content/SharedPreferences$Editor;)V
-    :try_end_4b
-    .catchall {:try_start_5 .. :try_end_4b} :catchall_4b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 74
     .line 75
     .line 76
-    :catchall_4b
-    :cond_4b
+    :catchall_0
+    :cond_0
     return-void
 .end method
 
 .method public final Put()V
-    .registers 8
+    .locals 7
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/activities/EBookReaderActivity;->o:Llibs/kl2;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_3
 
     .line 4
     .line 5
@@ -1319,7 +1319,7 @@
     const/4 v4, 0x0
 
     .line 13
-    if-eqz v2, :cond_27
+    if-eqz v2, :cond_2
 
     .line 14
     .line 15
@@ -1350,18 +1350,18 @@
     move-result v2
 
     .line 28
-    if-lt v1, v2, :cond_1f
+    if-lt v1, v2, :cond_0
 
     .line 29
     .line 30
     const/4 v1, 0x0
 
     .line 31
-    goto :goto_23
+    goto :goto_0
 
     .line 32
-    :cond_1f
-    if-gtz v1, :cond_23
+    :cond_0
+    if-gtz v1, :cond_1
 
     .line 33
     .line 34
@@ -1369,8 +1369,8 @@
 
     .line 35
     .line 36
-    :cond_23
-    :goto_23
+    :cond_1
+    :goto_0
     invoke-virtual {v0, v4, v1}, Lcom/mixplorer/widgets/MiViewPager;->x(ZI)V
 
     .line 37
@@ -1379,8 +1379,8 @@
     return-void
 
     .line 40
-    :cond_27
-    :try_start_27
+    :cond_2
+    :try_start_0
     const-string v2, "goPrev"
 
     .line 41
@@ -1406,19 +1406,19 @@
     .line 51
     .line 52
     invoke-virtual {v0, v2, v5, v3}, Llibs/uc;->d(Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_36
-    .catchall {:try_start_27 .. :try_end_36} :catchall_36
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 53
     .line 54
     .line 55
-    :catchall_36
-    :cond_36
+    :catchall_0
+    :cond_3
     return-void
 .end method
 
 .method public final Run(Ljava/lang/String;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-static {p1}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
@@ -1429,14 +1429,14 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
     return-void
 
     .line 8
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
     .line 9
@@ -1446,7 +1446,7 @@
     const/4 v2, 0x0
 
     .line 11
-    :try_start_a
+    :try_start_0
     invoke-static {p1, v0}, Llibs/sw1;->Result(Ljava/lang/CharSequence;Ljava/lang/String;)V
 
     .line 12
@@ -1504,8 +1504,8 @@
 
     .line 39
     invoke-static {p0, p1, v2, v2}, Llibs/gx1;->c(Landroid/content/Context;Ljava/lang/Object;IZ)V
-    :try_end_29
-    .catchall {:try_start_a .. :try_end_29} :catchall_2a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 40
     .line 41
@@ -1513,7 +1513,7 @@
     return-void
 
     .line 43
-    :catchall_2a
+    :catchall_0
     move-exception p1
 
     .line 44
@@ -1567,7 +1567,7 @@
 .end method
 
 .method public final Sync(Ljava/lang/String;Ljava/lang/String;)Llibs/rp0;
-    .registers 22
+    .locals 19
 
     .line 1
     move-object/from16 v1, p0
@@ -1582,7 +1582,7 @@
 
     .line 6
     .line 7
-    if-nez v2, :cond_a
+    if-nez v2, :cond_0
 
     .line 8
     .line 9
@@ -1592,7 +1592,7 @@
     return-object v0
 
     .line 11
-    :cond_a
+    :cond_0
     iget-object v2, v1, Lcom/mixplorer/activities/EBookReaderActivity;->o:Llibs/kl2;
 
     .line 12
@@ -1716,7 +1716,7 @@
     const/4 v11, 0x1
 
     .line 74
-    if-eqz v6, :cond_50
+    if-eqz v6, :cond_1
 
     .line 75
     .line 76
@@ -1728,11 +1728,11 @@
 
     .line 79
     .line 80
-    goto :goto_6e
+    goto :goto_0
 
     .line 81
-    :cond_50
-    :try_start_50
+    :cond_1
+    :try_start_0
     const-string v6, "getPageSizeZoomed"
 
     .line 82
@@ -1778,15 +1778,15 @@
 
     .line 103
     check-cast v4, Landroid/graphics/PointF;
-    :try_end_68
-    .catchall {:try_start_50 .. :try_end_68} :catchall_69
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 104
     .line 105
-    goto :goto_6e
+    goto :goto_0
 
     .line 106
-    :catchall_69
+    :catchall_0
     new-instance v4, Landroid/graphics/PointF;
 
     .line 107
@@ -1796,7 +1796,7 @@
     .line 109
     .line 110
     .line 111
-    :goto_6e
+    :goto_0
     invoke-static {v3}, Llibs/zo1;->g(Ljava/lang/String;)Llibs/zl0;
 
     .line 112
@@ -1817,7 +1817,7 @@
     move-result-object v6
 
     .line 121
-    :try_start_78
+    :try_start_1
     iget-object v12, v1, Lcom/mixplorer/activities/EBookReaderActivity;->o:Llibs/kl2;
 
     .line 122
@@ -1856,7 +1856,7 @@
 
     .line 138
     .line 139
-    if-eqz v15, :cond_92
+    if-eqz v15, :cond_2
 
     .line 140
     .line 141
@@ -1869,10 +1869,10 @@
     .line 144
     .line 145
     .line 146
-    goto :goto_cd
+    goto :goto_1
 
     .line 147
-    :cond_92
+    :cond_2
     const-string v15, "exportPage"
 
     .line 148
@@ -1988,13 +1988,13 @@
     .line 202
     .line 203
     invoke-virtual {v12, v15, v10, v9}, Llibs/uc;->d(Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_cd
-    .catchall {:try_start_78 .. :try_end_cd} :catchall_d5
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 204
     .line 205
     .line 206
-    :goto_cd
+    :goto_1
     invoke-static {v6}, Llibs/ji0;->k(Ljava/io/Closeable;)V
 
     .line 207
@@ -2011,7 +2011,7 @@
     return-object v0
 
     .line 214
-    :catchall_d5
+    :catchall_1
     move-exception v0
 
     .line 215
@@ -2024,7 +2024,7 @@
 .end method
 
 .method public final Top()V
-    .registers 21
+    .locals 20
 
     .line 1
     move-object/from16 v0, p0
@@ -2073,7 +2073,7 @@
     const/4 v7, 0x1
 
     .line 23
-    if-eqz v6, :cond_1f
+    if-eqz v6, :cond_0
 
     .line 24
     .line 25
@@ -2089,11 +2089,11 @@
     move-result v2
 
     .line 31
-    goto :goto_37
+    goto :goto_0
 
     .line 32
-    :cond_1f
-    :try_start_1f
+    :cond_0
+    :try_start_0
     const-string v6, "getPageCount"
 
     .line 33
@@ -2136,18 +2136,18 @@
     .line 52
     .line 53
     move-result v2
-    :try_end_35
-    .catchall {:try_start_1f .. :try_end_35} :catchall_36
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 54
-    goto :goto_37
+    goto :goto_0
 
     .line 55
-    :catchall_36
+    :catchall_0
     const/4 v2, 0x0
 
     .line 56
-    :goto_37
+    :goto_0
     iget-object v5, v0, Lcom/mixplorer/activities/EBookReaderActivity;->o:Llibs/kl2;
 
     .line 57
@@ -2412,14 +2412,14 @@
 .end method
 
 .method public final Wait(Z)V
-    .registers 12
+    .locals 10
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/activities/EBookReaderActivity;->o:Llibs/kl2;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_66
+    if-eqz v0, :cond_2
 
     .line 4
     .line 5
@@ -2460,7 +2460,7 @@
 
     .line 23
     .line 24
-    if-eqz v3, :cond_36
+    if-eqz v3, :cond_1
 
     .line 25
     .line 26
@@ -2488,19 +2488,19 @@
     move-result-object v0
 
     .line 38
-    if-nez v0, :cond_28
+    if-nez v0, :cond_0
 
     .line 39
     .line 40
-    goto :goto_66
+    goto :goto_0
 
     .line 41
-    :cond_28
+    :cond_0
     instance-of v1, v0, Llibs/ks1;
 
     .line 42
     .line 43
-    if-eqz v1, :cond_66
+    if-eqz v1, :cond_2
 
     .line 44
     .line 45
@@ -2524,8 +2524,8 @@
     return-void
 
     .line 55
-    :cond_36
-    :try_start_36
+    :cond_1
+    :try_start_0
     const-string v3, "findNext"
 
     .line 56
@@ -2595,8 +2595,8 @@
     .line 86
     .line 87
     invoke-virtual {v0, v3, v5, v4}, Llibs/uc;->d(Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_59
-    .catchall {:try_start_36 .. :try_end_59} :catchall_5a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 88
     .line 89
@@ -2604,7 +2604,7 @@
     return-void
 
     .line 91
-    :catchall_5a
+    :catchall_0
     move-exception p1
 
     .line 92
@@ -2629,13 +2629,13 @@
     .line 101
     .line 102
     .line 103
-    :cond_66
-    :goto_66
+    :cond_2
+    :goto_0
     return-void
 .end method
 
 .method public final onActivityResult(IILandroid/content/Intent;)V
-    .registers 15
+    .locals 11
 
     .line 1
     invoke-static {}, Llibs/sw1;->v()V
@@ -2647,7 +2647,7 @@
 
     .line 5
     .line 6
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_1
 
     .line 7
     .line 8
@@ -2663,15 +2663,15 @@
 
     .line 13
     .line 14
-    if-eqz v2, :cond_10
+    if-eqz v2, :cond_0
 
     .line 15
     .line 16
-    goto :goto_3c
+    goto :goto_0
 
     .line 17
-    :cond_10
-    :try_start_10
+    :cond_0
+    :try_start_0
     const-string v2, "onActivityResult"
 
     .line 18
@@ -2760,15 +2760,15 @@
     .line 57
     .line 58
     invoke-virtual {v0, v2, v4, v3}, Llibs/uc;->d(Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_3c
-    .catchall {:try_start_10 .. :try_end_3c} :catchall_3c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 59
     .line 60
     .line 61
-    :catchall_3c
-    :cond_3c
-    :goto_3c
+    :catchall_0
+    :cond_1
+    :goto_0
     invoke-virtual {p0, p1, p2, p3}, Lcom/mixplorer/activities/a;->s(IILandroid/content/Intent;)Z
 
     .line 62
@@ -2778,7 +2778,7 @@
 .end method
 
 .method public onClick(Landroid/view/View;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-virtual {p1}, Landroid/view/View;->getId()I
@@ -2793,7 +2793,7 @@
 
     .line 6
     .line 7
-    if-ne v0, v1, :cond_c
+    if-ne v0, v1, :cond_0
 
     .line 8
     .line 9
@@ -2805,12 +2805,12 @@
     return-void
 
     .line 13
-    :cond_c
+    :cond_0
     sget p1, Llibs/wh2;->toggle:I
 
     .line 14
     .line 15
-    if-ne v0, p1, :cond_14
+    if-ne v0, p1, :cond_1
 
     .line 16
     .line 17
@@ -2822,12 +2822,12 @@
     return-void
 
     .line 21
-    :cond_14
+    :cond_1
     sget p1, Llibs/wh2;->find_next:I
 
     .line 22
     .line 23
-    if-ne v0, p1, :cond_1d
+    if-ne v0, p1, :cond_2
 
     .line 24
     .line 25
@@ -2842,12 +2842,12 @@
     return-void
 
     .line 30
-    :cond_1d
+    :cond_2
     sget p1, Llibs/wh2;->find_prev:I
 
     .line 31
     .line 32
-    if-ne v0, p1, :cond_26
+    if-ne v0, p1, :cond_3
 
     .line 33
     .line 34
@@ -2862,12 +2862,12 @@
     return-void
 
     .line 39
-    :cond_26
+    :cond_3
     sget p1, Llibs/wh2;->find_close:I
 
     .line 40
     .line 41
-    if-ne v0, p1, :cond_2e
+    if-ne v0, p1, :cond_4
 
     .line 42
     .line 43
@@ -2879,12 +2879,12 @@
     return-void
 
     .line 47
-    :cond_2e
+    :cond_4
     sget p1, Llibs/wh2;->btn_left:I
 
     .line 48
     .line 49
-    if-ne v0, p1, :cond_36
+    if-ne v0, p1, :cond_5
 
     .line 50
     .line 51
@@ -2896,12 +2896,12 @@
     return-void
 
     .line 55
-    :cond_36
+    :cond_5
     sget p1, Llibs/wh2;->btn_right:I
 
     .line 56
     .line 57
-    if-ne v0, p1, :cond_3d
+    if-ne v0, p1, :cond_6
 
     .line 58
     .line 59
@@ -2910,12 +2910,12 @@
     .line 60
     .line 61
     .line 62
-    :cond_3d
+    :cond_6
     return-void
 .end method
 
 .method public final onCreate(Landroid/os/Bundle;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-super {p0, p1}, Lcom/mixplorer/activities/b;->onCreate(Landroid/os/Bundle;)V
@@ -3195,14 +3195,14 @@
 .end method
 
 .method public final onDestroy()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/activities/EBookReaderActivity;->o:Llibs/kl2;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -3219,7 +3219,7 @@
     .line 10
     .line 11
     .line 12
-    :cond_b
+    :cond_0
     invoke-super {p0}, Lcom/mixplorer/activities/b;->onDestroy()V
 
     .line 13
@@ -3229,7 +3229,7 @@
 
     .line 16
     .line 17
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_1
 
     .line 18
     .line 19
@@ -3241,7 +3241,7 @@
     move-result v0
 
     .line 23
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_1
 
     .line 24
     .line 25
@@ -3254,12 +3254,12 @@
     .line 28
     .line 29
     .line 30
-    :cond_1d
+    :cond_1
     return-void
 .end method
 
 .method public final onKeyDown(ILandroid/view/KeyEvent;)Z
-    .registers 12
+    .locals 9
 
     .line 1
     iget-boolean v0, p0, Lcom/mixplorer/activities/EBookReaderActivity;->l1:Z
@@ -3272,7 +3272,7 @@
     const/4 v2, 0x0
 
     .line 5
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_1
 
     .line 6
     .line 7
@@ -3280,7 +3280,7 @@
 
     .line 8
     .line 9
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_1
 
     .line 10
     .line 11
@@ -3296,15 +3296,15 @@
 
     .line 16
     .line 17
-    if-eqz v4, :cond_13
+    if-eqz v4, :cond_0
 
     .line 18
     .line 19
-    goto :goto_3d
+    goto :goto_0
 
     .line 20
-    :cond_13
-    :try_start_13
+    :cond_0
+    :try_start_0
     const-string v4, "onEvent"
 
     .line 21
@@ -3385,32 +3385,32 @@
     .line 58
     .line 59
     move-result v2
-    :try_end_3b
-    .catchall {:try_start_13 .. :try_end_3b} :catchall_3c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 60
-    goto :goto_3d
+    goto :goto_0
 
     .line 61
-    :catchall_3c
+    :catchall_0
     nop
 
     .line 62
-    :cond_3d
-    :goto_3d
-    if-eqz v2, :cond_40
+    :cond_1
+    :goto_0
+    if-eqz v2, :cond_2
 
     .line 63
     .line 64
     return v1
 
     .line 65
-    :cond_40
+    :cond_2
     const/16 v0, 0x15
 
     .line 66
     .line 67
-    if-eq p1, v0, :cond_69
+    if-eq p1, v0, :cond_6
 
     .line 68
     .line 69
@@ -3418,7 +3418,7 @@
 
     .line 70
     .line 71
-    if-eq p1, v0, :cond_65
+    if-eq p1, v0, :cond_5
 
     .line 72
     .line 73
@@ -3426,7 +3426,7 @@
 
     .line 74
     .line 75
-    if-eq p1, v0, :cond_55
+    if-eq p1, v0, :cond_3
 
     .line 76
     .line 77
@@ -3434,7 +3434,7 @@
 
     .line 78
     .line 79
-    if-eq p1, v0, :cond_69
+    if-eq p1, v0, :cond_6
 
     .line 80
     .line 81
@@ -3442,14 +3442,14 @@
 
     .line 82
     .line 83
-    if-eq p1, v0, :cond_65
+    if-eq p1, v0, :cond_5
 
     .line 84
     .line 85
-    goto :goto_60
+    goto :goto_1
 
     .line 86
-    :cond_55
+    :cond_3
     iget-object v0, p0, Lcom/mixplorer/activities/a;->Z:Landroid/view/ViewGroup;
 
     .line 87
@@ -3462,7 +3462,7 @@
     move-result v0
 
     .line 92
-    if-eqz v0, :cond_60
+    if-eqz v0, :cond_4
 
     .line 93
     .line 94
@@ -3471,8 +3471,8 @@
     .line 95
     .line 96
     .line 97
-    :cond_60
-    :goto_60
+    :cond_4
+    :goto_1
     invoke-super {p0, p1, p2}, Lcom/mixplorer/activities/b;->onKeyDown(ILandroid/view/KeyEvent;)Z
 
     .line 98
@@ -3484,7 +3484,7 @@
     return p1
 
     .line 102
-    :cond_65
+    :cond_5
     invoke-virtual {p0}, Lcom/mixplorer/activities/EBookReaderActivity;->Add()V
 
     .line 103
@@ -3493,7 +3493,7 @@
     return v1
 
     .line 106
-    :cond_69
+    :cond_6
     invoke-virtual {p0}, Lcom/mixplorer/activities/EBookReaderActivity;->Put()V
 
     .line 107
@@ -3503,7 +3503,7 @@
 .end method
 
 .method public final onKeyUp(ILandroid/view/KeyEvent;)Z
-    .registers 8
+    .locals 5
 
     .line 1
     const/4 p2, 0x4
@@ -3515,7 +3515,7 @@
     const/4 v1, 0x1
 
     .line 4
-    if-eq p1, p2, :cond_36
+    if-eq p1, p2, :cond_3
 
     .line 5
     .line 6
@@ -3523,7 +3523,7 @@
 
     .line 7
     .line 8
-    if-eq p1, p2, :cond_12
+    if-eq p1, p2, :cond_1
 
     .line 9
     .line 10
@@ -3531,14 +3531,14 @@
 
     .line 11
     .line 12
-    if-eq p1, p2, :cond_e
+    if-eq p1, p2, :cond_0
 
     .line 13
     .line 14
-    goto :goto_1e
+    goto :goto_0
 
     .line 15
-    :cond_e
+    :cond_0
     invoke-virtual {p0}, Lcom/mixplorer/activities/EBookReaderActivity;->Top()V
 
     .line 16
@@ -3547,7 +3547,7 @@
     return v1
 
     .line 19
-    :cond_12
+    :cond_1
     iget-object p1, p0, Lcom/mixplorer/activities/EBookReaderActivity;->III:Landroid/widget/EditText;
 
     .line 20
@@ -3568,15 +3568,15 @@
     move-result p1
 
     .line 29
-    if-eqz p1, :cond_1f
+    if-eqz p1, :cond_2
 
     .line 30
     .line 31
-    :goto_1e
+    :goto_0
     return v0
 
     .line 32
-    :cond_1f
+    :cond_2
     invoke-virtual {p0}, Lcom/mixplorer/activities/a;->l()V
 
     .line 33
@@ -3604,7 +3604,7 @@
     move-result p1
 
     .line 47
-    if-eqz p1, :cond_ca
+    if-eqz p1, :cond_c
 
     .line 48
     .line 49
@@ -3620,12 +3620,12 @@
     return v1
 
     .line 55
-    :cond_36
+    :cond_3
     iget-object p1, p0, Lcom/mixplorer/activities/EBookReaderActivity;->o:Llibs/kl2;
 
     .line 56
     .line 57
-    if-eqz p1, :cond_cb
+    if-eqz p1, :cond_d
 
     .line 58
     .line 59
@@ -3633,7 +3633,7 @@
 
     .line 60
     .line 61
-    if-eqz p1, :cond_48
+    if-eqz p1, :cond_4
 
     .line 62
     .line 63
@@ -3645,7 +3645,7 @@
     move-result p1
 
     .line 67
-    if-nez p1, :cond_48
+    if-nez p1, :cond_4
 
     .line 68
     .line 69
@@ -3657,7 +3657,7 @@
     return v1
 
     .line 73
-    :cond_48
+    :cond_4
     iget-object p1, p0, Lcom/mixplorer/activities/EBookReaderActivity;->o:Llibs/kl2;
 
     .line 74
@@ -3670,7 +3670,7 @@
 
     .line 78
     .line 79
-    if-eqz v2, :cond_b0
+    if-eqz v2, :cond_a
 
     .line 80
     .line 81
@@ -3690,7 +3690,7 @@
 
     .line 88
     .line 89
-    if-nez v2, :cond_5e
+    if-nez v2, :cond_5
 
     .line 90
     .line 91
@@ -3698,11 +3698,11 @@
 
     .line 92
     .line 93
-    if-eqz v2, :cond_c8
+    if-eqz v2, :cond_b
 
     .line 94
     .line 95
-    :cond_5e
+    :cond_5
     invoke-virtual {p1}, Lcom/mixplorer/widgets/MiViewPager;->getCurrentItem()I
 
     .line 96
@@ -3723,7 +3723,7 @@
 
     .line 104
     .line 105
-    if-eqz v3, :cond_7f
+    if-eqz v3, :cond_7
 
     .line 106
     .line 107
@@ -3735,7 +3735,7 @@
 
     .line 110
     .line 111
-    if-eqz v3, :cond_7f
+    if-eqz v3, :cond_7
 
     .line 112
     .line 113
@@ -3747,7 +3747,7 @@
     move-result v3
 
     .line 117
-    if-eqz v3, :cond_7f
+    if-eqz v3, :cond_7
 
     .line 118
     .line 119
@@ -3764,15 +3764,15 @@
     .line 124
     .line 125
     .line 126
-    :cond_7d
-    :goto_7d
+    :cond_6
+    :goto_1
     const/4 v0, 0x1
 
     .line 127
-    goto :goto_c8
+    goto :goto_2
 
     .line 128
-    :cond_7f
+    :cond_7
     invoke-virtual {p2}, Ljava/util/AbstractCollection;->size()I
 
     .line 129
@@ -3781,7 +3781,7 @@
     move-result v2
 
     .line 132
-    if-le v2, v1, :cond_a6
+    if-le v2, v1, :cond_9
 
     .line 133
     .line 134
@@ -3793,7 +3793,7 @@
     move-result v2
 
     .line 138
-    if-le v2, v1, :cond_9c
+    if-le v2, v1, :cond_8
 
     .line 139
     .line 140
@@ -3827,10 +3827,10 @@
     .line 154
     .line 155
     .line 156
-    goto :goto_7d
+    goto :goto_1
 
     .line 157
-    :cond_9c
+    :cond_8
     invoke-virtual {p1}, Lcom/mixplorer/widgets/MiViewPager;->getCurrentItem()I
 
     .line 158
@@ -3839,7 +3839,7 @@
     move-result p2
 
     .line 161
-    if-lez p2, :cond_7d
+    if-lez p2, :cond_6
 
     .line 162
     .line 163
@@ -3848,10 +3848,10 @@
     .line 164
     .line 165
     .line 166
-    goto :goto_7d
+    goto :goto_1
 
     .line 167
-    :cond_a6
+    :cond_9
     invoke-virtual {p1}, Lcom/mixplorer/widgets/MiViewPager;->getCurrentItem()I
 
     .line 168
@@ -3860,7 +3860,7 @@
     move-result p2
 
     .line 171
-    if-lez p2, :cond_c8
+    if-lez p2, :cond_b
 
     .line 172
     .line 173
@@ -3869,11 +3869,11 @@
     .line 174
     .line 175
     .line 176
-    goto :goto_7d
+    goto :goto_1
 
     .line 177
-    :cond_b0
-    :try_start_b0
+    :cond_a
+    :try_start_0
     const-string v2, "onBackPressed"
 
     .line 178
@@ -3916,28 +3916,28 @@
     .line 197
     .line 198
     move-result v0
-    :try_end_c6
-    .catchall {:try_start_b0 .. :try_end_c6} :catchall_c7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 199
-    goto :goto_c8
+    goto :goto_2
 
     .line 200
-    :catchall_c7
+    :catchall_0
     nop
 
     .line 201
-    :cond_c8
-    :goto_c8
-    if-eqz v0, :cond_cb
+    :cond_b
+    :goto_2
+    if-eqz v0, :cond_d
 
     .line 202
     .line 203
-    :cond_ca
+    :cond_c
     return v1
 
     .line 204
-    :cond_cb
+    :cond_d
     invoke-virtual {p0}, Lcom/mixplorer/activities/a;->onBackPressed()V
 
     .line 205
@@ -3947,7 +3947,7 @@
 .end method
 
 .method public onMoreMenuClick(Landroid/view/View;)V
-    .registers 10
+    .locals 8
 
     .line 1
     sget v0, Llibs/yh2;->reader_menu:I
@@ -3997,8 +3997,8 @@
     move-result-object v4
 
     .line 24
-    :cond_17
-    :goto_17
+    :cond_0
+    :goto_0
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     .line 25
@@ -4007,7 +4007,7 @@
     move-result v5
 
     .line 28
-    if-eqz v5, :cond_9f
+    if-eqz v5, :cond_b
 
     .line 29
     .line 30
@@ -4031,7 +4031,7 @@
 
     .line 39
     .line 40
-    if-eq v6, v7, :cond_90
+    if-eq v6, v7, :cond_a
 
     .line 41
     .line 42
@@ -4039,20 +4039,20 @@
 
     .line 43
     .line 44
-    if-ne v6, v7, :cond_2f
+    if-ne v6, v7, :cond_1
 
     .line 45
     .line 46
-    goto/16 :goto_90
+    goto/16 :goto_3
 
     .line 47
     .line 48
-    :cond_2f
+    :cond_1
     sget v7, Llibs/wh2;->menu_metadata:I
 
     .line 49
     .line 50
-    if-eq v6, v7, :cond_17
+    if-eq v6, v7, :cond_0
 
     .line 51
     .line 52
@@ -4060,7 +4060,7 @@
 
     .line 53
     .line 54
-    if-eq v6, v7, :cond_17
+    if-eq v6, v7, :cond_0
 
     .line 55
     .line 56
@@ -4068,19 +4068,19 @@
 
     .line 57
     .line 58
-    if-ne v6, v7, :cond_3c
+    if-ne v6, v7, :cond_2
 
     .line 59
     .line 60
-    goto :goto_17
+    goto :goto_0
 
     .line 61
-    :cond_3c
+    :cond_2
     sget v7, Llibs/wh2;->menu_fullscreen:I
 
     .line 62
     .line 63
-    if-ne v6, v7, :cond_4d
+    if-ne v6, v7, :cond_4
 
     .line 64
     .line 65
@@ -4088,21 +4088,21 @@
 
     .line 66
     .line 67
-    if-eqz v6, :cond_46
+    if-eqz v6, :cond_3
 
     .line 68
     .line 69
     move-object v7, v1
 
     .line 70
-    goto :goto_47
+    goto :goto_1
 
     .line 71
-    :cond_46
+    :cond_3
     move-object v7, v3
 
     .line 72
-    :goto_47
+    :goto_1
     iput-object v7, v5, Llibs/r90;->Lambda:Landroid/graphics/drawable/Drawable;
 
     .line 73
@@ -4112,15 +4112,15 @@
     .line 75
     .line 76
     .line 77
-    goto :goto_17
+    goto :goto_0
 
     .line 78
-    :cond_4d
+    :cond_4
     sget v7, Llibs/wh2;->night_mode:I
 
     .line 79
     .line 80
-    if-ne v6, v7, :cond_5e
+    if-ne v6, v7, :cond_6
 
     .line 81
     .line 82
@@ -4128,21 +4128,21 @@
 
     .line 83
     .line 84
-    if-eqz v6, :cond_57
+    if-eqz v6, :cond_5
 
     .line 85
     .line 86
     move-object v7, v1
 
     .line 87
-    goto :goto_58
+    goto :goto_2
 
     .line 88
-    :cond_57
+    :cond_5
     move-object v7, v3
 
     .line 89
-    :goto_58
+    :goto_2
     iput-object v7, v5, Llibs/r90;->Lambda:Landroid/graphics/drawable/Drawable;
 
     .line 90
@@ -4152,15 +4152,15 @@
     .line 92
     .line 93
     .line 94
-    goto :goto_17
+    goto :goto_0
 
     .line 95
-    :cond_5e
+    :cond_6
     sget v7, Llibs/wh2;->menu_export:I
 
     .line 96
     .line 97
-    if-ne v6, v7, :cond_6a
+    if-ne v6, v7, :cond_7
 
     .line 98
     .line 99
@@ -4168,7 +4168,7 @@
 
     .line 100
     .line 101
-    if-nez v5, :cond_17
+    if-nez v5, :cond_0
 
     .line 102
     .line 103
@@ -4177,27 +4177,27 @@
     .line 104
     .line 105
     .line 106
-    goto :goto_17
+    goto :goto_0
 
     .line 107
-    :cond_6a
+    :cond_7
     sget v7, Llibs/wh2;->menu_share:I
 
     .line 108
     .line 109
-    if-ne v6, v7, :cond_6f
+    if-ne v6, v7, :cond_8
 
     .line 110
     .line 111
-    goto :goto_17
+    goto :goto_0
 
     .line 112
-    :cond_6f
+    :cond_8
     sget v7, Llibs/wh2;->menu_print:I
 
     .line 113
     .line 114
-    if-ne v6, v7, :cond_7d
+    if-ne v6, v7, :cond_9
 
     .line 115
     .line 116
@@ -4209,7 +4209,7 @@
     move-result v6
 
     .line 120
-    if-nez v6, :cond_90
+    if-nez v6, :cond_a
 
     .line 121
     .line 122
@@ -4218,15 +4218,15 @@
     .line 123
     .line 124
     .line 125
-    goto :goto_17
+    goto :goto_0
 
     .line 126
-    :cond_7d
+    :cond_9
     sget v7, Llibs/wh2;->menu_find:I
 
     .line 127
     .line 128
-    if-ne v6, v7, :cond_90
+    if-ne v6, v7, :cond_a
 
     .line 129
     .line 130
@@ -4234,7 +4234,7 @@
 
     .line 131
     .line 132
-    if-nez v6, :cond_90
+    if-nez v6, :cond_a
 
     .line 133
     .line 134
@@ -4242,7 +4242,7 @@
 
     .line 135
     .line 136
-    if-nez v6, :cond_90
+    if-nez v6, :cond_a
 
     .line 137
     .line 138
@@ -4250,7 +4250,7 @@
 
     .line 139
     .line 140
-    if-nez v6, :cond_90
+    if-nez v6, :cond_a
 
     .line 141
     .line 142
@@ -4259,8 +4259,8 @@
     .line 143
     .line 144
     .line 145
-    :cond_90
-    :goto_90
+    :cond_a
+    :goto_3
     new-instance v6, Ljava/lang/StringBuilder;
 
     .line 146
@@ -4286,11 +4286,11 @@
 
     .line 157
     .line 158
-    goto/16 :goto_17
+    goto/16 :goto_0
 
     .line 159
     .line 160
-    :cond_9f
+    :cond_b
     new-instance v1, Llibs/ll1;
 
     .line 161
@@ -4339,7 +4339,7 @@
 .end method
 
 .method public final onNewIntent(Landroid/content/Intent;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-super {p0, p1}, Llibs/bs1;->onNewIntent(Landroid/content/Intent;)V
@@ -4356,7 +4356,7 @@
 .end method
 
 .method public final onPause()V
-    .registers 8
+    .locals 7
 
     .line 1
     invoke-virtual {p0}, Lcom/mixplorer/activities/EBookReaderActivity;->Cur()V
@@ -4368,7 +4368,7 @@
 
     .line 5
     .line 6
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_1
 
     .line 7
     .line 8
@@ -4384,15 +4384,15 @@
 
     .line 13
     .line 14
-    if-eqz v2, :cond_10
+    if-eqz v2, :cond_0
 
     .line 15
     .line 16
-    goto :goto_21
+    goto :goto_0
 
     .line 17
-    :cond_10
-    :try_start_10
+    :cond_0
+    :try_start_0
     const-string v2, "onPause"
 
     .line 18
@@ -4424,15 +4424,15 @@
     .line 30
     .line 31
     invoke-virtual {v0, v2, v4, v3}, Llibs/uc;->d(Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_21
-    .catchall {:try_start_10 .. :try_end_21} :catchall_21
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 32
     .line 33
     .line 34
-    :catchall_21
-    :cond_21
-    :goto_21
+    :catchall_0
+    :cond_1
+    :goto_0
     invoke-super {p0}, Lcom/mixplorer/activities/b;->onPause()V
 
     .line 35
@@ -4442,7 +4442,7 @@
 .end method
 
 .method public final onResume()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Lcom/mixplorer/activities/b;->onResume()V
@@ -4462,7 +4462,7 @@
 .end method
 
 .method public final onSaveInstanceState(Landroid/os/Bundle;Landroid/os/PersistableBundle;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Lcom/mixplorer/activities/EBookReaderActivity;->Cur()V
@@ -4479,14 +4479,14 @@
 .end method
 
 .method public final onStart()V
-    .registers 8
+    .locals 7
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/activities/EBookReaderActivity;->o:Llibs/kl2;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
@@ -4502,15 +4502,15 @@
 
     .line 10
     .line 11
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_0
 
     .line 12
     .line 13
-    goto :goto_1e
+    goto :goto_0
 
     .line 14
-    :cond_d
-    :try_start_d
+    :cond_0
+    :try_start_0
     const-string v2, "onStart"
 
     .line 15
@@ -4542,15 +4542,15 @@
     .line 27
     .line 28
     invoke-virtual {v0, v2, v4, v3}, Llibs/uc;->d(Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_1e
-    .catchall {:try_start_d .. :try_end_1e} :catchall_1e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 29
     .line 30
     .line 31
-    :catchall_1e
-    :cond_1e
-    :goto_1e
+    :catchall_0
+    :cond_1
+    :goto_0
     invoke-super {p0}, Landroid/app/Activity;->onStart()V
 
     .line 32
@@ -4560,14 +4560,14 @@
 .end method
 
 .method public final onStop()V
-    .registers 8
+    .locals 7
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/activities/EBookReaderActivity;->o:Llibs/kl2;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
@@ -4583,15 +4583,15 @@
 
     .line 10
     .line 11
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_0
 
     .line 12
     .line 13
-    goto :goto_1e
+    goto :goto_0
 
     .line 14
-    :cond_d
-    :try_start_d
+    :cond_0
+    :try_start_0
     const-string v2, "onStop"
 
     .line 15
@@ -4623,15 +4623,15 @@
     .line 27
     .line 28
     invoke-virtual {v0, v2, v4, v3}, Llibs/uc;->d(Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_1e
-    .catchall {:try_start_d .. :try_end_1e} :catchall_1e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 29
     .line 30
     .line 31
-    :catchall_1e
-    :cond_1e
-    :goto_1e
+    :catchall_0
+    :cond_1
+    :goto_0
     invoke-super {p0}, Lcom/mixplorer/activities/a;->onStop()V
 
     .line 32

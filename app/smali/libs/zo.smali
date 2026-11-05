@@ -34,7 +34,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const/16 v0, 0xc
@@ -45,7 +45,7 @@
 
     .line 4
     .line 5
-    fill-array-data v0, :array_28
+    fill-array-data v0, :array_0
 
     .line 6
     .line 7
@@ -62,7 +62,7 @@
 
     .line 13
     .line 14
-    fill-array-data v1, :array_44
+    fill-array-data v1, :array_1
 
     .line 15
     .line 16
@@ -75,7 +75,7 @@
 
     .line 20
     .line 21
-    fill-array-data v1, :array_248
+    fill-array-data v1, :array_2
 
     .line 22
     .line 23
@@ -88,7 +88,7 @@
 
     .line 27
     .line 28
-    fill-array-data v1, :array_44c
+    fill-array-data v1, :array_3
 
     .line 29
     .line 30
@@ -101,7 +101,7 @@
 
     .line 34
     .line 35
-    fill-array-data v0, :array_650
+    fill-array-data v0, :array_4
 
     .line 36
     .line 37
@@ -113,12 +113,12 @@
     return-void
 
     .line 41
-    :array_28
+    :array_0
     .array-data 4
         -0x5f619981
         0x3bcc908b
         -0x498517a8
-        0x4caa73b2    # 8.9365904E7f
+        0x4caa73b2    # 8.93659E7f
         -0x3910c8d1
         -0x16b07d42
         0x54ff53a5
@@ -157,7 +157,7 @@
     .line 67
     .line 68
     .line 69
-    :array_44
+    :array_1
     .array-data 4
         0x70707000
         -0x7d7d7e00
@@ -186,7 +186,7 @@
         -0x12121300
         0xe0e0e00
         0x4f4f4f00
-        0x4e4e4e00    # 8.6530458E8f
+        0x4e4e4e00    # 8.653046E8f
         0x1d1d1d00
         0x65656500
         -0x6d6d6e00
@@ -222,7 +222,7 @@
         0x51515100
         0x56565600
         0x6c6c6c00
-        0x4d4d4d00    # 2.15273472E8f
+        0x4d4d4d00    # 2.1527347E8f
         -0x74747500    # -5.3749996E-32f
         0xd0d0d00
         -0x65656600
@@ -461,7 +461,7 @@
     .line 111
     .line 112
     .line 113
-    :array_248
+    :array_2
     .array-data 4
         0x70700070
         0x2c2c002c
@@ -485,7 +485,7 @@
         0x1f1f001f
         0x3e3e003e
         -0x2323ff24
-        0x5e5e005e    # 3.99922231E18f
+        0x5e5e005e    # 3.9992223E18f
         0xb0b000b
         -0x5959ff5a
         0x39390039
@@ -552,7 +552,7 @@
         -0x6262ff63
         -0x4040ff41
         0x52520052
-        -0x2727ff28    # -1.89998508E15f
+        -0x2727ff28    # -1.8999851E15f
         -0x3737ff38    # -409606.25f
         -0x3939ff3a
         -0x7e7eff7f
@@ -604,7 +604,7 @@
         0x19190019
         0x21210021
         0xe0e000e
-        0x4e4e004e    # 8.6403162E8f
+        0x4e4e004e    # 8.640316E8f
         0x65650065
         -0x4242ff43
         -0x4747ff48
@@ -622,7 +622,7 @@
         0x1010001
         -0x2929ff2a
         0x56560056
-        0x4d4d004d    # 2.14959312E8f
+        0x4d4d004d    # 2.1495931E8f
         0xd0d000d
         0x66660066
         -0x3333ff34
@@ -721,7 +721,7 @@
         -0x6161ff62
     .end array-data
 
-    :array_44c
+    :array_3
     .array-data 4
         0xe0e0e0
         0x50505
@@ -981,7 +981,7 @@
         0x3d3d3d
     .end array-data
 
-    :array_650
+    :array_4
     .array-data 4
         0x38003838
         0x41004141
@@ -1049,7 +1049,7 @@
         -0x59ff595a
         -0x3aff3a3b
         -0x79ff797a
-        0x4d004d4d    # 1.34534352E8f
+        0x4d004d4d    # 1.3453435E8f
         0x33003333
         -0x2ff0203
         0x66006666
@@ -1111,7 +1111,7 @@
         0x7e007e7e
         -0x4bff4b4c
         0x28002828
-        0x55005555    # 8.8189992E12f
+        0x55005555    # 8.818999E12f
         0x68006868
         0x50005050
         -0x41ff4142
@@ -1243,7 +1243,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -1309,7 +1309,7 @@
 .end method
 
 .method public static c(I[B)I
-    .registers 5
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
@@ -1318,11 +1318,11 @@
     const/4 v1, 0x0
 
     .line 3
-    :goto_2
+    :goto_0
     const/4 v2, 0x4
 
     .line 4
-    if-ge v0, v2, :cond_11
+    if-ge v0, v2, :cond_0
 
     .line 5
     .line 6
@@ -1349,15 +1349,15 @@
 
     .line 16
     .line 17
-    goto :goto_2
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     return v1
 .end method
 
 .method public static d(I[I[I)V
-    .registers 17
+    .locals 14
 
     .line 1
     const/4 v0, 0x0
@@ -1722,7 +1722,7 @@
 .end method
 
 .method public static e(I[I[I)V
-    .registers 9
+    .locals 6
 
     .line 1
     const/4 v0, 0x1
@@ -1847,7 +1847,7 @@
 .end method
 
 .method public static f(III[I[I)V
-    .registers 13
+    .locals 8
 
     .line 1
     add-int/lit8 v0, p2, 0x2
@@ -2000,7 +2000,7 @@
 .end method
 
 .method public static g(III[I[I)V
-    .registers 13
+    .locals 8
 
     .line 1
     add-int/lit8 v0, p2, 0x2
@@ -2157,17 +2157,17 @@
 .end method
 
 .method public static h(II[B)V
-    .registers 6
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :goto_1
+    :goto_0
     const/4 v1, 0x4
 
     .line 3
-    if-ge v0, v1, :cond_f
+    if-ge v0, v1, :cond_0
 
     .line 4
     .line 5
@@ -2193,15 +2193,15 @@
 
     .line 14
     .line 15
-    goto :goto_1
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method public static j(III[I[I)V
-    .registers 13
+    .locals 8
 
     .line 1
     aget v0, p3, p1
@@ -2354,7 +2354,7 @@
 .end method
 
 .method public static k(III[I[I)V
-    .registers 13
+    .locals 8
 
     .line 1
     add-int/lit8 v0, p1, 0x1
@@ -2513,7 +2513,7 @@
 
 # virtual methods
 .method public final a(ZLlibs/et;)V
-    .registers 29
+    .locals 26
 
     .line 1
     move-object/from16 v0, p0
@@ -2528,7 +2528,7 @@
 
     .line 6
     .line 7
-    if-eqz v2, :cond_2e9
+    if-eqz v2, :cond_9
 
     .line 8
     .line 9
@@ -2617,15 +2617,15 @@
 
     .line 49
     .line 50
-    if-eq v8, v9, :cond_a1
+    if-eq v8, v9, :cond_2
 
     .line 51
     .line 52
-    if-eq v8, v11, :cond_70
+    if-eq v8, v11, :cond_1
 
     .line 53
     .line 54
-    if-ne v8, v14, :cond_6a
+    if-ne v8, v14, :cond_0
 
     .line 55
     .line 56
@@ -2729,10 +2729,10 @@
 
     .line 105
     .line 106
-    goto :goto_c4
+    goto :goto_0
 
     .line 107
-    :cond_6a
+    :cond_0
     const-string v1, "key sizes are only 16/24/32 bytes."
 
     .line 108
@@ -2745,7 +2745,7 @@
     return-void
 
     .line 113
-    :cond_70
+    :cond_1
     invoke-static {v13, v1}, Llibs/zo;->c(I[B)I
 
     .line 114
@@ -2842,10 +2842,10 @@
 
     .line 160
     .line 161
-    goto :goto_c4
+    goto :goto_0
 
     .line 162
-    :cond_a1
+    :cond_2
     const/4 v8, 0x1
 
     .line 163
@@ -2917,12 +2917,12 @@
 
     .line 196
     .line 197
-    :goto_c4
+    :goto_0
     const/4 v1, 0x0
 
     .line 198
-    :goto_c5
-    if-ge v1, v4, :cond_d4
+    :goto_1
+    if-ge v1, v4, :cond_3
 
     .line 199
     .line 200
@@ -2950,10 +2950,10 @@
 
     .line 211
     .line 212
-    goto :goto_c5
+    goto :goto_1
 
     .line 213
-    :cond_d4
+    :cond_3
     sget-object v1, Llibs/zo;->Xi:[I
 
     .line 214
@@ -2966,8 +2966,8 @@
     const/4 v8, 0x0
 
     .line 219
-    :goto_da
-    if-ge v8, v4, :cond_e7
+    :goto_2
+    if-ge v8, v4, :cond_4
 
     .line 220
     .line 221
@@ -2991,10 +2991,10 @@
 
     .line 230
     .line 231
-    goto :goto_da
+    goto :goto_2
 
     .line 232
-    :cond_e7
+    :cond_4
     invoke-static {v4, v5, v1}, Llibs/zo;->d(I[I[I)V
 
     .line 233
@@ -3032,7 +3032,7 @@
 
     .line 250
     .line 251
-    if-eqz v8, :cond_1d2
+    if-eqz v8, :cond_6
 
     .line 252
     .line 253
@@ -3044,7 +3044,7 @@
 
     .line 256
     .line 257
-    if-eqz p1, :cond_169
+    if-eqz p1, :cond_5
 
     .line 258
     .line 259
@@ -3236,15 +3236,15 @@
     .line 357
     .line 358
     .line 359
-    :goto_166
+    :goto_3
     const/4 v8, 0x1
 
     .line 360
-    goto/16 :goto_2e6
+    goto/16 :goto_5
 
     .line 361
     .line 362
-    :cond_169
+    :cond_5
     const/16 v8, 0x1c
 
     .line 363
@@ -3441,15 +3441,15 @@
     .line 464
     .line 465
     .line 466
-    goto :goto_166
+    goto :goto_3
 
     .line 467
-    :cond_1d2
+    :cond_6
     const/4 v7, 0x0
 
     .line 468
-    :goto_1d3
-    if-ge v7, v4, :cond_1e2
+    :goto_4
+    if-ge v7, v4, :cond_7
 
     .line 469
     .line 470
@@ -3477,10 +3477,10 @@
 
     .line 481
     .line 482
-    goto :goto_1d3
+    goto :goto_4
 
     .line 483
-    :cond_1e2
+    :cond_7
     const/16 v8, 0x8
 
     .line 484
@@ -3502,7 +3502,7 @@
 
     .line 493
     .line 494
-    if-eqz p1, :cond_26d
+    if-eqz p1, :cond_8
 
     .line 495
     .line 496
@@ -3740,11 +3740,11 @@
     .line 618
     .line 619
     .line 620
-    goto/16 :goto_166
+    goto/16 :goto_3
 
     .line 621
     .line 622
-    :cond_26d
+    :cond_8
     const/16 v8, 0x1c
 
     .line 623
@@ -3974,7 +3974,7 @@
     .line 741
     .line 742
     .line 743
-    :goto_2e6
+    :goto_5
     iput-boolean v8, v0, Llibs/zo;->X:Z
 
     .line 744
@@ -3982,7 +3982,7 @@
     return-void
 
     .line 746
-    :cond_2e9
+    :cond_9
     const-string v1, "only simple KeyParameter expected."
 
     .line 747
@@ -3996,7 +3996,7 @@
 .end method
 
 .method public final b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "Camellia"
@@ -4007,7 +4007,7 @@
 .end method
 
 .method public final i()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x10
@@ -4018,7 +4018,7 @@
 .end method
 
 .method public final r(II[B[B)I
-    .registers 28
+    .locals 23
 
     .line 1
     move-object/from16 v0, p0
@@ -4044,7 +4044,7 @@
     const/4 v5, 0x0
 
     .line 12
-    if-eqz v4, :cond_138
+    if-eqz v4, :cond_5
 
     .line 13
     .line 14
@@ -4055,7 +4055,7 @@
     array-length v6, v2
 
     .line 17
-    if-gt v4, v6, :cond_132
+    if-gt v4, v6, :cond_4
 
     .line 18
     .line 19
@@ -4066,7 +4066,7 @@
     array-length v6, v3
 
     .line 22
-    if-gt v4, v6, :cond_12c
+    if-gt v4, v6, :cond_3
 
     .line 23
     .line 24
@@ -4133,15 +4133,15 @@
 
     .line 54
     .line 55
-    if-eqz v4, :cond_a9
+    if-eqz v4, :cond_1
 
     .line 56
     .line 57
     const/4 v4, 0x0
 
     .line 58
-    :goto_39
-    if-ge v4, v6, :cond_4e
+    :goto_0
+    if-ge v4, v6, :cond_0
 
     .line 59
     .line 60
@@ -4181,10 +4181,10 @@
 
     .line 77
     .line 78
-    goto :goto_39
+    goto :goto_0
 
     .line 79
-    :cond_4e
+    :cond_0
     invoke-static {v5, v14, v15}, Llibs/zo;->d(I[I[I)V
 
     .line 80
@@ -4358,12 +4358,12 @@
     return v11
 
     .line 170
-    :cond_a9
+    :cond_1
     const/4 v4, 0x0
 
     .line 171
-    :goto_aa
-    if-ge v4, v6, :cond_bf
+    :goto_1
+    if-ge v4, v6, :cond_2
 
     .line 172
     .line 173
@@ -4403,10 +4403,10 @@
 
     .line 190
     .line 191
-    goto :goto_aa
+    goto :goto_1
 
     .line 192
-    :cond_bf
+    :cond_2
     invoke-static {v5, v14, v15}, Llibs/zo;->d(I[I[I)V
 
     .line 193
@@ -4612,7 +4612,7 @@
     return v11
 
     .line 301
-    :cond_12c
+    :cond_3
     const-string v1, "output buffer too short"
 
     .line 302
@@ -4625,7 +4625,7 @@
     return v5
 
     .line 307
-    :cond_132
+    :cond_4
     const-string v1, "input buffer too short"
 
     .line 308
@@ -4638,7 +4638,7 @@
     return v5
 
     .line 313
-    :cond_138
+    :cond_5
     const-string v1, "Camellia engine not initialised"
 
     .line 314
@@ -4652,7 +4652,7 @@
 .end method
 
 .method public final reset()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void

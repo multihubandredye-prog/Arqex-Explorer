@@ -11,7 +11,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/sp1;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/qp1;->a:B
@@ -33,14 +33,14 @@
 
 # virtual methods
 .method public a(Llibs/q1;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-byte p1, p0, Llibs/qp1;->a:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_c
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -48,7 +48,7 @@
     return-void
 
     .line 7
-    :pswitch_6
+    :pswitch_0
     iget-object p1, p0, Llibs/qp1;->b:Llibs/sp1;
 
     .line 8
@@ -63,14 +63,14 @@
     return-void
 
     .line 13
-    :pswitch_data_c
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_6
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final c(Llibs/q1;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-byte p1, p0, Llibs/qp1;->a:B
@@ -81,7 +81,7 @@
 
     .line 4
     .line 5
-    packed-switch p1, :pswitch_data_14
+    packed-switch p1, :pswitch_data_0
 
     .line 6
     .line 7
@@ -96,7 +96,7 @@
     return-void
 
     .line 12
-    :pswitch_b
+    :pswitch_0
     const/4 p1, 0x0
 
     .line 13
@@ -116,8 +116,8 @@
     return-void
 
     .line 21
-    :pswitch_data_14
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_b
+        :pswitch_0
     .end packed-switch
 .end method

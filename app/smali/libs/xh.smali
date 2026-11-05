@@ -22,7 +22,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/BrowseActivity;ZLjava/util/HashSet;Ljava/lang/String;Landroid/content/Intent;)V
-    .registers 7
+    .locals 1
 
     .line 18
     const/4 v0, 0x0
@@ -45,7 +45,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/a;Ljava/lang/String;ZLjava/util/LinkedHashSet;Landroid/text/Editable;)V
-    .registers 7
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -86,7 +86,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 9
+    .locals 8
 
     .line 1
     iget-byte v0, p0, Llibs/xh;->X:B
@@ -113,7 +113,7 @@
 
     .line 12
     .line 13
-    packed-switch v0, :pswitch_data_68
+    packed-switch v0, :pswitch_data_0
 
     .line 14
     .line 15
@@ -169,7 +169,7 @@
     const/4 v4, 0x1
 
     .line 41
-    if-nez v3, :cond_39
+    if-nez v3, :cond_0
 
     .line 42
     .line 43
@@ -181,7 +181,7 @@
     move-result v5
 
     .line 47
-    if-lez v5, :cond_39
+    if-lez v5, :cond_0
 
     .line 48
     .line 49
@@ -199,16 +199,16 @@
     .line 55
     .line 56
     .line 57
-    goto :goto_3c
+    goto :goto_0
 
     .line 58
-    :cond_39
+    :cond_0
     invoke-virtual {v0, v7}, Llibs/od;->Init(Z)V
 
     .line 59
     .line 60
     .line 61
-    :goto_3c
+    :goto_0
     sget v5, Llibs/bi2;->data:I
 
     .line 62
@@ -218,7 +218,7 @@
     .line 64
     .line 65
     .line 66
-    if-nez v3, :cond_4a
+    if-nez v3, :cond_1
 
     .line 67
     .line 68
@@ -235,7 +235,7 @@
 
     .line 74
     .line 75
-    :cond_4a
+    :cond_1
     new-instance v1, Llibs/oc0;
 
     .line 76
@@ -261,7 +261,7 @@
     return-void
 
     .line 88
-    :pswitch_57
+    :pswitch_0
     check-cast v5, Lcom/mixplorer/activities/BrowseActivity;
 
     .line 89
@@ -274,7 +274,7 @@
 
     .line 93
     .line 94
-    if-nez v3, :cond_63
+    if-nez v3, :cond_2
 
     .line 95
     .line 96
@@ -283,24 +283,24 @@
     .line 97
     .line 98
     .line 99
-    goto :goto_66
+    goto :goto_1
 
     .line 100
-    :cond_63
+    :cond_2
     invoke-virtual {v5, v2, v4, v1}, Lcom/mixplorer/activities/BrowseActivity;->Err(Ljava/util/HashSet;Ljava/lang/String;Landroid/content/Intent;)V
 
     .line 101
     .line 102
     .line 103
-    :goto_66
+    :goto_1
     return-void
 
     .line 104
     nop
 
     .line 105
-    :pswitch_data_68
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_57
+        :pswitch_0
     .end packed-switch
 .end method

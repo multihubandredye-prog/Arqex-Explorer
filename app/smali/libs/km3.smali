@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>([J[JB)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/km3;->c:B
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final a([J[J)V
-    .registers 98
+    .locals 95
 
     .line 1
     move-object/from16 v0, p0
@@ -92,7 +92,7 @@
 
     .line 24
     .line 25
-    packed-switch v1, :pswitch_data_808
+    packed-switch v1, :pswitch_data_0
 
     .line 26
     .line 27
@@ -112,14 +112,14 @@
     array-length v6, v3
 
     .line 35
-    if-ne v6, v15, :cond_215
+    if-ne v6, v15, :cond_2
 
     .line 36
     .line 37
     array-length v6, v2
 
     .line 38
-    if-ne v6, v14, :cond_211
+    if-ne v6, v14, :cond_1
 
     .line 39
     .line 40
@@ -159,8 +159,8 @@
 
     .line 57
     .line 58
-    :goto_39
-    if-lt v6, v13, :cond_1d2
+    :goto_0
+    if-lt v6, v13, :cond_0
 
     .line 59
     .line 60
@@ -1005,11 +1005,11 @@
 
     .line 464
     .line 465
-    goto/16 :goto_39
+    goto/16 :goto_0
 
     .line 466
     .line 467
-    :cond_1d2
+    :cond_0
     move-object/from16 v51, v2
 
     .line 468
@@ -1136,29 +1136,29 @@
 
     .line 528
     .line 529
-    goto :goto_218
+    goto :goto_1
 
     .line 530
-    :cond_211
+    :cond_1
     invoke-static {}, Llibs/ic0;->l()V
 
     .line 531
     .line 532
     .line 533
-    goto :goto_218
+    goto :goto_1
 
     .line 534
-    :cond_215
+    :cond_2
     invoke-static {}, Llibs/ic0;->l()V
 
     .line 535
     .line 536
     .line 537
-    :goto_218
+    :goto_1
     return-void
 
     .line 538
-    :pswitch_219
+    :pswitch_0
     move-object/from16 v51, v2
 
     .line 539
@@ -1194,7 +1194,7 @@
 
     .line 554
     .line 555
-    if-ne v3, v15, :cond_31d
+    if-ne v3, v15, :cond_5
 
     .line 556
     .line 557
@@ -1208,7 +1208,7 @@
     const/4 v5, 0x5
 
     .line 561
-    if-ne v4, v5, :cond_319
+    if-ne v4, v5, :cond_4
 
     .line 562
     .line 563
@@ -1232,11 +1232,11 @@
 
     .line 572
     .line 573
-    :goto_23c
+    :goto_2
     const/4 v12, 0x1
 
     .line 574
-    if-lt v15, v12, :cond_2fc
+    if-lt v15, v12, :cond_3
 
     .line 575
     .line 576
@@ -1639,11 +1639,11 @@
 
     .line 762
     .line 763
-    goto/16 :goto_23c
+    goto/16 :goto_2
 
     .line 764
     .line 765
-    :cond_2fc
+    :cond_3
     aget-wide v0, v2, v21
 
     .line 766
@@ -1706,29 +1706,29 @@
 
     .line 792
     .line 793
-    goto :goto_320
+    goto :goto_3
 
     .line 794
-    :cond_319
+    :cond_4
     invoke-static {}, Llibs/ic0;->l()V
 
     .line 795
     .line 796
     .line 797
-    goto :goto_320
+    goto :goto_3
 
     .line 798
-    :cond_31d
+    :cond_5
     invoke-static {}, Llibs/ic0;->l()V
 
     .line 799
     .line 800
     .line 801
-    :goto_320
+    :goto_3
     return-void
 
     .line 802
-    :pswitch_321
+    :pswitch_1
     move-object/from16 v24, v3
 
     .line 803
@@ -1759,7 +1759,7 @@
 
     .line 815
     .line 816
-    if-ne v4, v15, :cond_803
+    if-ne v4, v15, :cond_8
 
     .line 817
     .line 818
@@ -1769,7 +1769,7 @@
     const/4 v5, 0x5
 
     .line 820
-    if-ne v4, v5, :cond_7ff
+    if-ne v4, v5, :cond_7
 
     .line 821
     .line 822
@@ -1885,11 +1885,11 @@
 
     .line 877
     .line 878
-    :goto_36d
+    :goto_4
     const/4 v1, 0x1
 
     .line 879
-    if-lt v0, v1, :cond_776
+    if-lt v0, v1, :cond_6
 
     .line 880
     .line 881
@@ -4021,11 +4021,11 @@
 
     .line 1908
     .line 1909
-    goto/16 :goto_36d
+    goto/16 :goto_4
 
     .line 1910
     .line 1911
-    :cond_776
+    :cond_6
     move-object/from16 v66, v2
 
     .line 1912
@@ -4306,34 +4306,34 @@
 
     .line 2046
     .line 2047
-    goto :goto_806
+    goto :goto_5
 
     .line 2048
-    :cond_7ff
+    :cond_7
     invoke-static {}, Llibs/ic0;->l()V
 
     .line 2049
     .line 2050
     .line 2051
-    goto :goto_806
+    goto :goto_5
 
     .line 2052
-    :cond_803
+    :cond_8
     invoke-static {}, Llibs/ic0;->l()V
 
     .line 2053
     .line 2054
     .line 2055
-    :goto_806
+    :goto_5
     return-void
 
     .line 2056
     nop
 
     .line 2057
-    :pswitch_data_808
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_321
-        :pswitch_219
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

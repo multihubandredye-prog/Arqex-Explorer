@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Object;B)V
-    .registers 4
+    .locals 0
 
     .line 12
     iput-byte p3, p0, Llibs/he;->X:B
@@ -31,7 +31,7 @@
 .end method
 
 .method public synthetic constructor <init>(Llibs/y23;Landroid/view/View;Landroid/widget/TextView;)V
-    .registers 4
+    .locals 0
 
     .line 1
     const/4 p1, 0x5
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 9
+    .locals 7
 
     .line 1
     iget-byte v0, p0, Llibs/he;->X:B
@@ -85,7 +85,7 @@
 
     .line 10
     .line 11
-    packed-switch v0, :pswitch_data_110
+    packed-switch v0, :pswitch_data_0
 
     .line 12
     .line 13
@@ -110,18 +110,18 @@
 
     .line 23
     .line 24
-    if-eq p1, v0, :cond_1a
+    if-eq p1, v0, :cond_0
 
     .line 25
     .line 26
-    goto :goto_1b
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_0
     const/4 v2, 0x0
 
     .line 28
-    :goto_1b
+    :goto_0
     sget-object p1, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 29
@@ -170,7 +170,7 @@
     return-void
 
     .line 54
-    :pswitch_35
+    :pswitch_0
     check-cast v5, Llibs/rb2;
 
     .line 55
@@ -187,7 +187,7 @@
     return-void
 
     .line 62
-    :pswitch_3d
+    :pswitch_1
     check-cast v5, Llibs/_f;
 
     .line 63
@@ -212,7 +212,7 @@
     move-result p1
 
     .line 74
-    if-eqz p1, :cond_50
+    if-eqz p1, :cond_1
 
     .line 75
     .line 76
@@ -225,8 +225,8 @@
     .line 79
     .line 80
     .line 81
-    :cond_50
-    if-eqz p1, :cond_55
+    :cond_1
+    if-eqz p1, :cond_2
 
     .line 82
     .line 83
@@ -235,11 +235,11 @@
     .line 84
     .line 85
     .line 86
-    :cond_55
+    :cond_2
     return-void
 
     .line 87
-    :pswitch_56
+    :pswitch_2
     check-cast v5, Llibs/p32;
 
     .line 88
@@ -289,14 +289,14 @@
     move-result v0
 
     .line 112
-    if-eqz v0, :cond_72
+    if-eqz v0, :cond_3
 
     .line 113
     .line 114
-    goto :goto_89
+    goto :goto_1
 
     .line 115
-    :cond_72
+    :cond_3
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 116
@@ -340,11 +340,11 @@
     .line 136
     .line 137
     .line 138
-    :goto_89
+    :goto_1
     return-void
 
     .line 139
-    :pswitch_8a
+    :pswitch_3
     check-cast v5, Ljava/lang/String;
 
     .line 140
@@ -360,7 +360,7 @@
     const/4 v0, 0x0
 
     .line 146
-    :try_start_91
+    :try_start_0
     invoke-static {v5, v0, v2, v2}, Llibs/zo1;->h(Ljava/lang/String;Ljava/lang/String;ZZ)Llibs/zl0;
 
     .line 147
@@ -377,22 +377,22 @@
     move-result-object v5
 
     .line 154
-    if-eqz v5, :cond_9d
+    if-eqz v5, :cond_4
 
     .line 155
     .line 156
     const/4 v5, 0x1
 
     .line 157
-    goto :goto_9e
+    goto :goto_2
 
     .line 158
-    :cond_9d
+    :cond_4
     const/4 v5, 0x0
 
     .line 159
-    :goto_9e
-    if-eqz v5, :cond_bb
+    :goto_2
+    if-eqz v5, :cond_5
 
     .line 160
     .line 161
@@ -440,18 +440,18 @@
 
     .line 184
     .line 185
-    goto :goto_bb
+    goto :goto_3
 
     .line 186
-    :catchall_b9
+    :catchall_0
     move-exception p1
 
     .line 187
-    goto :goto_d6
+    goto :goto_4
 
     .line 188
-    :cond_bb
-    :goto_bb
+    :cond_5
+    :goto_3
     sget v0, Llibs/bi2;->remember:I
 
     .line 189
@@ -476,7 +476,7 @@
     move-result p1
 
     .line 200
-    if-eqz p1, :cond_e5
+    if-eqz p1, :cond_6
 
     .line 201
     .line 202
@@ -498,16 +498,16 @@
     .line 210
     .line 211
     invoke-virtual {p1, v4}, Llibs/k70;->Run(Llibs/yq3;)V
-    :try_end_d5
-    .catchall {:try_start_91 .. :try_end_d5} :catchall_b9
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 212
     .line 213
     .line 214
-    goto :goto_e5
+    goto :goto_5
 
     .line 215
-    :goto_d6
+    :goto_4
     invoke-static {p1}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 216
@@ -537,8 +537,8 @@
     .line 228
     .line 229
     .line 230
-    :cond_e5
-    :goto_e5
+    :cond_6
+    :goto_5
     sget p1, Llibs/bi2;->try_again:I
 
     .line 231
@@ -559,7 +559,7 @@
     return-void
 
     .line 240
-    :pswitch_ef
+    :pswitch_4
     check-cast v5, Landroid/widget/CheckBox;
 
     .line 241
@@ -602,7 +602,7 @@
     .line 260
     .line 261
     .line 262
-    if-eqz p1, :cond_10e
+    if-eqz p1, :cond_7
 
     .line 263
     .line 264
@@ -619,19 +619,19 @@
     .line 269
     .line 270
     .line 271
-    :cond_10e
+    :cond_7
     return-void
 
     .line 272
     nop
 
     .line 273
-    :pswitch_data_110
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_ef
-        :pswitch_8a
-        :pswitch_56
-        :pswitch_3d
-        :pswitch_35
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

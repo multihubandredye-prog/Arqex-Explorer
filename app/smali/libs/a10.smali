@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(IZ[B)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2, p3}, Llibs/Android;-><init>(IZ[B)V
@@ -19,14 +19,14 @@
 
 # virtual methods
 .method public final h(Llibs/v60;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-boolean v0, p0, Llibs/Android;->X:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -34,15 +34,15 @@
 
     .line 6
     .line 7
-    goto :goto_9
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     const/16 v0, 0x40
 
     .line 9
     .line 10
-    :goto_9
+    :goto_0
     iget v1, p0, Llibs/Android;->Y:I
 
     .line 11

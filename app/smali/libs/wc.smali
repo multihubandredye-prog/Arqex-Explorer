@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/security/AlgorithmParameterGeneratorSpi;-><init>()V
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public final a(Ljava/lang/String;)Ljava/security/AlgorithmParameters;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/wc;->a:Llibs/ka;
@@ -65,7 +65,7 @@
 .end method
 
 .method public final engineInit(ILjava/security/SecureRandom;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p2, p0, Llibs/wc;->b:Ljava/security/SecureRandom;

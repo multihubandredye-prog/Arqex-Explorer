@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/InputStream;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/io/Reader;-><init>()V
@@ -42,13 +42,13 @@
 
 # virtual methods
 .method public final close()V
-    .registers 2
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Llibs/xy1;->Y:Ljava/io/InputStreamReader;
 
     .line 3
@@ -64,26 +64,26 @@
     return-void
 
     .line 9
-    :catchall_8
+    :catchall_0
     move-exception v0
 
     .line 10
     monitor-exit p0
-    :try_end_a
-    .catchall {:try_start_1 .. :try_end_a} :catchall_8
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 11
     throw v0
 .end method
 
 .method public final read([CII)I
-    .registers 5
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Llibs/xy1;->Y:Ljava/io/InputStreamReader;
 
     .line 3
@@ -102,13 +102,13 @@
     return p1
 
     .line 10
-    :catchall_9
+    :catchall_0
     move-exception p1
 
     .line 11
     monitor-exit p0
-    :try_end_b
-    .catchall {:try_start_1 .. :try_end_b} :catchall_9
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 12
     throw p1

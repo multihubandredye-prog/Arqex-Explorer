@@ -1131,4 +1131,10 @@ Active theme:"</string>
     <string name="arqex_zoom_label_suffix">x)</string>
     <string name="arqex_zoom_preview">📁 Live zoom preview — drag the slider</string>
     <string name="arqex_zoom_test">Test</string>
+    <string name="arqex_effect_bars_title">Animated bars (top, tabs and bottom)</string>
+    <string name="arqex_effect_bars_desc">Moving animation on the top bar, tab bar and bottom bar of the main screen.</string>
+    <string name="arqex_effect_menu_title">Animated menus</string>
+    <string name="arqex_effect_menu_desc">Moving animation on the bars and dividers of popup menus, dialog lists and the side panel.</string>
+    <string name="arqex_effect_settings_title">Animated Settings</string>
+    <string name="arqex_effect_settings_desc">Moving animation on the bar and dividers of the Settings screen.</string>
 </resources>

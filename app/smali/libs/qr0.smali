@@ -15,7 +15,7 @@
 
 # direct methods
 .method public varargs constructor <init>([Llibs/bi1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/fi1;-><init>([Llibs/ei1;)V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final bridge synthetic a()Llibs/fi1;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/qr0;->p()Llibs/qr0;
@@ -51,7 +51,7 @@
 .end method
 
 .method public final bridge synthetic clone()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/qr0;->p()Llibs/qr0;
@@ -66,7 +66,7 @@
 .end method
 
 .method public final g(F)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Llibs/qr0;->q(F)F
@@ -89,7 +89,7 @@
 .end method
 
 .method public final p()Llibs/qr0;
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/fi1;->e:Ljava/lang/Object;
@@ -115,8 +115,8 @@
     const/4 v3, 0x0
 
     .line 12
-    :goto_b
-    if-ge v3, v1, :cond_1e
+    :goto_0
+    if-ge v3, v1, :cond_0
 
     .line 13
     .line 14
@@ -152,10 +152,10 @@
 
     .line 29
     .line 30
-    goto :goto_b
+    goto :goto_0
 
     .line 31
-    :cond_1e
+    :cond_0
     new-instance v0, Llibs/qr0;
 
     .line 32
@@ -169,7 +169,7 @@
 .end method
 
 .method public final q(F)F
-    .registers 10
+    .locals 8
 
     .line 1
     iget-object v0, p0, Llibs/fi1;->e:Ljava/lang/Object;
@@ -193,7 +193,7 @@
     const/4 v4, 0x1
 
     .line 10
-    if-ne v1, v2, :cond_4d
+    if-ne v1, v2, :cond_2
 
     .line 11
     .line 12
@@ -201,7 +201,7 @@
 
     .line 13
     .line 14
-    if-eqz v1, :cond_2a
+    if-eqz v1, :cond_0
 
     .line 15
     .line 16
@@ -260,7 +260,7 @@
 
     .line 42
     .line 43
-    :cond_2a
+    :cond_0
     iget-object v0, p0, Llibs/fi1;->f:Ljava/lang/Object;
 
     .line 44
@@ -273,7 +273,7 @@
 
     .line 48
     .line 49
-    if-nez v0, :cond_38
+    if-nez v0, :cond_1
 
     .line 50
     .line 51
@@ -291,7 +291,7 @@
     return p1
 
     .line 57
-    :cond_38
+    :cond_1
     invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     .line 58
@@ -335,7 +335,7 @@
     return p1
 
     .line 78
-    :cond_4d
+    :cond_2
     const/4 v2, 0x0
 
     .line 79
@@ -343,7 +343,7 @@
 
     .line 80
     .line 81
-    if-gtz v2, :cond_87
+    if-gtz v2, :cond_4
 
     .line 82
     .line 83
@@ -404,7 +404,7 @@
 
     .line 109
     .line 110
-    if-nez v0, :cond_74
+    if-nez v0, :cond_3
 
     .line 111
     .line 112
@@ -421,7 +421,7 @@
     return v3
 
     .line 117
-    :cond_74
+    :cond_3
     invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     .line 118
@@ -461,7 +461,7 @@
     return p1
 
     .line 136
-    :cond_87
+    :cond_4
     const/high16 v2, 0x3f800000    # 1.0f
 
     .line 137
@@ -470,7 +470,7 @@
 
     .line 139
     .line 140
-    if-ltz v2, :cond_c5
+    if-ltz v2, :cond_6
 
     .line 141
     .line 142
@@ -538,7 +538,7 @@
 
     .line 171
     .line 172
-    if-nez v0, :cond_b2
+    if-nez v0, :cond_5
 
     .line 173
     .line 174
@@ -555,7 +555,7 @@
     return v3
 
     .line 179
-    :cond_b2
+    :cond_5
     invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     .line 180
@@ -595,7 +595,7 @@
     return p1
 
     .line 198
-    :cond_c5
+    :cond_6
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     .line 199
@@ -611,8 +611,8 @@
     const/4 v3, 0x1
 
     .line 205
-    :goto_cc
-    if-ge v3, v1, :cond_105
+    :goto_0
+    if-ge v3, v1, :cond_9
 
     .line 206
     .line 207
@@ -636,7 +636,7 @@
 
     .line 216
     .line 217
-    if-gez v7, :cond_101
+    if-gez v7, :cond_8
 
     .line 218
     .line 219
@@ -669,7 +669,7 @@
 
     .line 231
     .line 232
-    if-nez v2, :cond_ee
+    if-nez v2, :cond_7
 
     .line 233
     .line 234
@@ -686,7 +686,7 @@
     return v1
 
     .line 239
-    :cond_ee
+    :cond_7
     invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     .line 240
@@ -726,7 +726,7 @@
     return p1
 
     .line 258
-    :cond_101
+    :cond_8
     add-int/lit8 v3, v3, 0x1
 
     .line 259
@@ -734,10 +734,10 @@
     move-object v2, v5
 
     .line 261
-    goto :goto_cc
+    goto :goto_0
 
     .line 262
-    :cond_105
+    :cond_9
     sub-int/2addr v1, v4
 
     .line 263

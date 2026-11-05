@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/ha0;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/ga0;->a:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final a(Ljava/nio/ByteBuffer;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/ga0;->a:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_7a
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -65,7 +65,7 @@
 
     .line 14
     .line 15
-    :try_start_e
+    :try_start_0
     invoke-virtual {p1, v2}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
     .line 16
@@ -164,34 +164,34 @@
     .line 65
     .line 66
     invoke-virtual {p1, v2}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
-    :try_end_44
-    .catch Ljava/io/IOException; {:try_start_e .. :try_end_44} :catch_4a
-    .catchall {:try_start_e .. :try_end_44} :catchall_48
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 67
     .line 68
     .line 69
-    :goto_44
-    :try_start_44
+    :goto_0
+    :try_start_1
     invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
-    :try_end_47
-    .catch Ljava/io/IOException; {:try_start_44 .. :try_end_47} :catch_55
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 70
     .line 71
     .line 72
-    goto :goto_55
+    goto :goto_1
 
     .line 73
-    :catchall_48
+    :catchall_0
     move-exception p1
 
     .line 74
-    goto :goto_56
+    goto :goto_2
 
     .line 75
-    :catch_4a
-    :try_start_4a
+    :catch_0
+    :try_start_2
     sget-object p1, Llibs/ha0;->String:Ljava/math/BigInteger;
 
     .line 76
@@ -208,34 +208,34 @@
 
     .line 82
     invoke-virtual {p1, v2, v1}, Llibs/zo3;->n(ILjava/lang/String;)V
-    :try_end_54
-    .catchall {:try_start_4a .. :try_end_54} :catchall_48
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 83
     .line 84
     .line 85
-    goto :goto_44
+    goto :goto_0
 
     .line 86
-    :catch_55
-    :goto_55
+    :catch_1
+    :goto_1
     return-void
 
     .line 87
-    :goto_56
-    :try_start_56
+    :goto_2
+    :try_start_3
     invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
-    :try_end_59
-    .catch Ljava/io/IOException; {:try_start_56 .. :try_end_59} :catch_59
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
 
     .line 88
     .line 89
     .line 90
-    :catch_59
+    :catch_2
     throw p1
 
     .line 91
-    :pswitch_5a
+    :pswitch_0
     const/16 v0, 0x1f
 
     .line 92
@@ -298,14 +298,14 @@
     return-void
 
     .line 123
-    :pswitch_data_7a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_5a
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final b(Ljava/lang/Long;)V
-    .registers 7
+    .locals 5
 
     .line 1
     iget-byte p1, p0, Llibs/ga0;->a:B
@@ -329,7 +329,7 @@
     const/4 v4, 0x5
 
     .line 10
-    packed-switch p1, :pswitch_data_42
+    packed-switch p1, :pswitch_data_0
 
     .line 11
     .line 12
@@ -342,7 +342,7 @@
     move-result p1
 
     .line 17
-    if-eqz p1, :cond_21
+    if-eqz p1, :cond_0
 
     .line 18
     .line 19
@@ -375,11 +375,11 @@
     .line 32
     .line 33
     .line 34
-    :cond_21
+    :cond_0
     return-void
 
     .line 35
-    :pswitch_22
+    :pswitch_0
     invoke-static {v4}, Llibs/zm1;->Context(I)Z
 
     .line 36
@@ -388,7 +388,7 @@
     move-result p1
 
     .line 39
-    if-eqz p1, :cond_40
+    if-eqz p1, :cond_1
 
     .line 40
     .line 41
@@ -440,15 +440,15 @@
     .line 63
     .line 64
     .line 65
-    :cond_40
+    :cond_1
     return-void
 
     .line 66
     nop
 
     .line 67
-    :pswitch_data_42
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_22
+        :pswitch_0
     .end packed-switch
 .end method

@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/FontViewerActivity;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .registers 11
+    .locals 8
 
     .line 1
     sget p1, Lcom/mixplorer/activities/FontViewerActivity;->lI:I
@@ -40,15 +40,15 @@
     const/4 p1, 0x1
 
     .line 4
-    :try_start_3
+    :try_start_0
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getPointerCount()I
 
     .line 5
     .line 6
     .line 7
     move-result v0
-    :try_end_7
-    .catchall {:try_start_3 .. :try_end_7} :catchall_25
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 8
     iget-object v1, p0, Llibs/vr0;->a:Lcom/mixplorer/activities/FontViewerActivity;
@@ -58,11 +58,11 @@
     const/4 v2, 0x2
 
     .line 11
-    if-ne v0, v2, :cond_64
+    if-ne v0, v2, :cond_3
 
     .line 12
     .line 13
-    :try_start_c
+    :try_start_1
     sget-object v0, Llibs/wx1;->a:Llibs/Eta;
 
     .line 14
@@ -79,21 +79,21 @@
 
     .line 20
     .line 21
-    if-eq v0, v2, :cond_27
+    if-eq v0, v2, :cond_1
 
     .line 22
     .line 23
     const/4 v2, 0x5
 
     .line 24
-    if-eq v0, v2, :cond_1a
+    if-eq v0, v2, :cond_0
 
     .line 25
     .line 26
-    goto :goto_64
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_0
     iget v0, v1, Lcom/mixplorer/activities/FontViewerActivity;->Zulu:I
 
     .line 28
@@ -114,17 +114,17 @@
 
     .line 36
     .line 37
-    goto :goto_64
+    goto :goto_0
 
     .line 38
-    :catchall_25
+    :catchall_0
     move-exception p2
 
     .line 39
-    goto :goto_69
+    goto :goto_1
 
     .line 40
-    :cond_27
+    :cond_1
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getPointerCount()I
 
     .line 41
@@ -133,7 +133,7 @@
     move-result v0
 
     .line 44
-    if-le v0, p1, :cond_64
+    if-le v0, p1, :cond_3
 
     .line 45
     .line 46
@@ -152,7 +152,7 @@
     sub-int/2addr v0, v2
 
     .line 53
-    if-eqz v0, :cond_64
+    if-eqz v0, :cond_3
 
     .line 54
     .line 55
@@ -186,8 +186,8 @@
     .line 67
     .line 68
     move-result-wide v4
-    :try_end_44
-    .catchall {:try_start_c .. :try_end_44} :catchall_25
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 69
     invoke-static {v2, v3}, Ljava/lang/Double;->isNaN(D)Z
@@ -206,7 +206,7 @@
 
     .line 76
     .line 77
-    if-gt p2, v0, :cond_63
+    if-gt p2, v0, :cond_2
 
     .line 78
     .line 79
@@ -214,16 +214,16 @@
 
     .line 80
     .line 81
-    if-lt p2, v0, :cond_63
+    if-lt p2, v0, :cond_2
 
     .line 82
     .line 83
-    :try_start_52
+    :try_start_2
     iget v0, v1, Lcom/mixplorer/activities/FontViewerActivity;->Zulu:I
 
     .line 84
     .line 85
-    if-eq p2, v0, :cond_63
+    if-eq p2, v0, :cond_2
 
     .line 86
     .line 87
@@ -252,26 +252,26 @@
     .line 98
     .line 99
     .line 100
-    :cond_63
+    :cond_2
     return p1
 
     .line 101
-    :cond_64
-    :goto_64
+    :cond_3
+    :goto_0
     invoke-virtual {v1, p2}, Landroid/app/Activity;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     .line 102
     .line 103
     .line 104
     move-result p1
-    :try_end_68
-    .catchall {:try_start_52 .. :try_end_68} :catchall_25
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 105
     return p1
 
     .line 106
-    :goto_69
+    :goto_1
     invoke-static {p2}, Llibs/vl3;->Map(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 107

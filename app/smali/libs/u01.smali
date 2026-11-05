@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/json/JSONArray;Z)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-boolean p2, p0, Llibs/u01;->b:Z
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public final e(Llibs/rp0;)Z
-    .registers 8
+    .locals 6
 
     .line 1
     iget-boolean v0, p0, Llibs/u01;->b:Z
@@ -59,15 +59,15 @@
     const/4 v2, 0x0
 
     .line 10
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 11
     .line 12
-    goto/16 :goto_ca
+    goto/16 :goto_3
 
     .line 13
     .line 14
-    :cond_d
+    :cond_0
     new-instance v0, Lorg/json/JSONObject;
 
     .line 15
@@ -173,21 +173,21 @@
     move-result-object v3
 
     .line 69
-    if-eqz v3, :cond_48
+    if-eqz v3, :cond_1
 
     .line 70
     .line 71
     const/4 v3, 0x1
 
     .line 72
-    goto :goto_49
+    goto :goto_0
 
     .line 73
-    :cond_48
+    :cond_1
     const/4 v3, 0x0
 
     .line 74
-    :goto_49
+    :goto_0
     invoke-virtual {p1, v3, v1, v2}, Llibs/rp0;->Map(ZZZ)Ljava/lang/String;
 
     .line 75
@@ -264,7 +264,7 @@
 
     .line 113
     .line 114
-    if-nez v0, :cond_8b
+    if-nez v0, :cond_2
 
     .line 115
     .line 116
@@ -314,7 +314,7 @@
     .line 138
     .line 139
     .line 140
-    :cond_8b
+    :cond_2
     iget-object v0, p0, Llibs/u01;->a:Lorg/json/JSONObject;
 
     .line 141
@@ -323,7 +323,7 @@
 
     .line 143
     .line 144
-    if-eqz v3, :cond_96
+    if-eqz v3, :cond_3
 
     .line 145
     .line 146
@@ -335,10 +335,10 @@
     move-result-object v3
 
     .line 150
-    goto :goto_9e
+    goto :goto_1
 
     .line 151
-    :cond_96
+    :cond_3
     iget-wide v3, p1, Llibs/rp0;->Four:J
 
     .line 152
@@ -357,7 +357,7 @@
     move-result-object v3
 
     .line 159
-    :goto_9e
+    :goto_1
     const-string v4, "size_str"
 
     .line 160
@@ -375,7 +375,7 @@
 
     .line 167
     .line 168
-    if-eqz v3, :cond_ac
+    if-eqz v3, :cond_4
 
     .line 169
     .line 170
@@ -383,15 +383,15 @@
 
     .line 171
     .line 172
-    goto :goto_b5
+    goto :goto_2
 
     .line 173
-    :cond_ac
+    :cond_4
     iget-boolean p1, p1, Llibs/rp0;->One:Z
 
     .line 174
     .line 175
-    if-eqz p1, :cond_b3
+    if-eqz p1, :cond_5
 
     .line 176
     .line 177
@@ -399,15 +399,15 @@
 
     .line 178
     .line 179
-    goto :goto_b5
+    goto :goto_2
 
     .line 180
-    :cond_b3
+    :cond_5
     const-string p1, "rw-rw----"
 
     .line 181
     .line 182
-    :goto_b5
+    :goto_2
     const-string v3, "rights"
 
     .line 183
@@ -442,14 +442,14 @@
 
     .line 199
     .line 200
-    if-le p1, v0, :cond_ca
+    if-le p1, v0, :cond_6
 
     .line 201
     .line 202
     return v1
 
     .line 203
-    :cond_ca
-    :goto_ca
+    :cond_6
+    :goto_3
     return v2
 .end method

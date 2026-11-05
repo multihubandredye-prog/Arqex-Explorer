@@ -15,7 +15,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 1
     const/16 v0, 0xc
@@ -225,7 +225,7 @@
 .end method
 
 .method public static a(J)Ljava/lang/String;
-    .registers 5
+    .locals 3
 
     .line 1
     sget-object v0, Llibs/b70;->c:Ljava/util/GregorianCalendar;
@@ -288,7 +288,7 @@
 
     .line 30
     .line 31
-    if-ge v1, v2, :cond_23
+    if-ge v1, v2, :cond_0
 
     .line 32
     .line 33
@@ -297,7 +297,7 @@
     .line 34
     .line 35
     .line 36
-    :cond_23
+    :cond_0
     invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 37
@@ -314,7 +314,7 @@
     move-result v1
 
     .line 44
-    if-ge v1, v2, :cond_30
+    if-ge v1, v2, :cond_1
 
     .line 45
     .line 46
@@ -323,7 +323,7 @@
     .line 47
     .line 48
     .line 49
-    :cond_30
+    :cond_1
     invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 50
@@ -341,7 +341,7 @@
     move-result v1
 
     .line 58
-    if-ge v1, v2, :cond_3e
+    if-ge v1, v2, :cond_2
 
     .line 59
     .line 60
@@ -350,7 +350,7 @@
     .line 61
     .line 62
     .line 63
-    :cond_3e
+    :cond_2
     invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 64
@@ -368,7 +368,7 @@
     move-result v1
 
     .line 72
-    if-ge v1, v2, :cond_4c
+    if-ge v1, v2, :cond_3
 
     .line 73
     .line 74
@@ -377,7 +377,7 @@
     .line 75
     .line 76
     .line 77
-    :cond_4c
+    :cond_3
     invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 78
@@ -395,7 +395,7 @@
     move-result v1
 
     .line 86
-    if-ge v1, v2, :cond_5a
+    if-ge v1, v2, :cond_4
 
     .line 87
     .line 88
@@ -404,7 +404,7 @@
     .line 89
     .line 90
     .line 91
-    :cond_5a
+    :cond_4
     invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 92
@@ -435,7 +435,7 @@
 
     .line 106
     .line 107
-    if-ge v0, v1, :cond_6f
+    if-ge v0, v1, :cond_5
 
     .line 108
     .line 109
@@ -444,8 +444,8 @@
     .line 110
     .line 111
     .line 112
-    :cond_6f
-    if-ge v0, v2, :cond_74
+    :cond_5
+    if-ge v0, v2, :cond_6
 
     .line 113
     .line 114
@@ -454,7 +454,7 @@
     .line 115
     .line 116
     .line 117
-    :cond_74
+    :cond_6
     invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 118

@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Landroid/text/method/LinkMovementMethod;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public static a(Landroid/widget/TextView;Landroid/text/Spannable;Landroid/view/MotionEvent;)Llibs/jl3;
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
@@ -140,7 +140,7 @@
     array-length p1, p0
 
     .line 53
-    if-lez p1, :cond_3a
+    if-lez p1, :cond_0
 
     .line 54
     .line 55
@@ -154,7 +154,7 @@
     return-object p0
 
     .line 59
-    :cond_3a
+    :cond_0
     const/4 p0, 0x0
 
     .line 60
@@ -164,7 +164,7 @@
 
 # virtual methods
 .method public final onTouchEvent(Landroid/widget/TextView;Landroid/text/Spannable;Landroid/view/MotionEvent;)Z
-    .registers 9
+    .locals 5
 
     .line 1
     invoke-virtual {p3}, Landroid/view/MotionEvent;->getAction()I
@@ -178,7 +178,7 @@
     const/4 v1, 0x1
 
     .line 6
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_0
 
     .line 7
     .line 8
@@ -194,7 +194,7 @@
 
     .line 13
     .line 14
-    if-eqz p1, :cond_44
+    if-eqz p1, :cond_3
 
     .line 15
     .line 16
@@ -202,7 +202,7 @@
 
     .line 17
     .line 18
-    :try_start_11
+    :try_start_0
     invoke-interface {p2, p1}, Landroid/text/Spanned;->getSpanStart(Ljava/lang/Object;)I
 
     .line 19
@@ -224,16 +224,16 @@
 
     .line 28
     invoke-static {p2, p1, p3}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;II)V
-    :try_end_1e
-    .catchall {:try_start_11 .. :try_end_1e} :catchall_44
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 29
     .line 30
     .line 31
-    goto :goto_44
+    goto :goto_0
 
     .line 32
-    :cond_1f
+    :cond_0
     const/4 v2, 0x2
 
     .line 33
@@ -243,7 +243,7 @@
     const/4 v4, 0x0
 
     .line 35
-    if-ne v0, v2, :cond_36
+    if-ne v0, v2, :cond_1
 
     .line 36
     .line 37
@@ -259,11 +259,11 @@
 
     .line 42
     .line 43
-    if-eqz p3, :cond_44
+    if-eqz p3, :cond_3
 
     .line 44
     .line 45
-    if-eq p1, p3, :cond_44
+    if-eq p1, p3, :cond_3
 
     .line 46
     .line 47
@@ -280,15 +280,15 @@
     .line 52
     .line 53
     .line 54
-    goto :goto_44
+    goto :goto_0
 
     .line 55
-    :cond_36
+    :cond_1
     iget-object v0, p0, Llibs/di3;->a:Llibs/jl3;
 
     .line 56
     .line 57
-    if-eqz v0, :cond_3f
+    if-eqz v0, :cond_2
 
     .line 58
     .line 59
@@ -301,7 +301,7 @@
     .line 62
     .line 63
     .line 64
-    :cond_3f
+    :cond_2
     iput-object v3, p0, Llibs/di3;->a:Llibs/jl3;
 
     .line 65
@@ -311,8 +311,8 @@
     .line 67
     .line 68
     .line 69
-    :catchall_44
-    :cond_44
-    :goto_44
+    :catchall_0
+    :cond_3
+    :goto_0
     return v1
 .end method

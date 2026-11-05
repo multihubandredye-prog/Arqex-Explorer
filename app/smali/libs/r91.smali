@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/nr0;JLlibs/jb0;)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2, p3, p4}, Llibs/eb2;-><init>(Ljava/io/InputStream;JLlibs/jb0;)V
@@ -97,7 +97,7 @@
 
 # virtual methods
 .method public final available()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/r91;->Rho:Ljava/util/zip/Inflater;
@@ -120,7 +120,7 @@
 .end method
 
 .method public final close()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/r91;->Rho:Ljava/util/zip/Inflater;
@@ -141,7 +141,7 @@
 .end method
 
 .method public final i()Llibs/jb0;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/eb2;->Lambda:Llibs/jb0;
@@ -152,7 +152,7 @@
 .end method
 
 .method public final read()I
-    .registers 5
+    .locals 4
 
     const/4 v0, 0x1
 
@@ -167,11 +167,11 @@
 
     const/4 v3, -0x1
 
-    if-ne v0, v3, :cond_c
+    if-ne v0, v3, :cond_0
 
     return v3
 
-    :cond_c
+    :cond_0
     aget-byte v0, v1, v2
 
     and-int/lit16 v0, v0, 0xff
@@ -180,11 +180,11 @@
 .end method
 
 .method public final read([B)I
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_9
+    if-eqz p1, :cond_0
 
     .line 162
     array-length v1, p1
@@ -196,7 +196,7 @@
     return p1
 
     .line 163
-    :cond_9
+    :cond_0
     const-string p1, "input buffer is null"
 
     invoke-static {p1}, Llibs/cr2;->c(Ljava/lang/String;)V
@@ -205,7 +205,7 @@
 .end method
 
 .method public final read([BII)I
-    .registers 12
+    .locals 8
 
     .line 1
     iget-object v0, p0, Llibs/r91;->Rho:Ljava/util/zip/Inflater;
@@ -215,15 +215,15 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz p1, :cond_9b
+    if-eqz p1, :cond_b
 
     .line 5
     .line 6
-    if-ltz p2, :cond_95
+    if-ltz p2, :cond_a
 
     .line 7
     .line 8
-    if-ltz p3, :cond_95
+    if-ltz p3, :cond_a
 
     .line 9
     .line 10
@@ -233,19 +233,19 @@
     sub-int/2addr v2, p2
 
     .line 12
-    if-gt p3, v2, :cond_95
+    if-gt p3, v2, :cond_a
 
     .line 13
     .line 14
-    if-nez p3, :cond_10
+    if-nez p3, :cond_0
 
     .line 15
     .line 16
     return v1
 
     .line 17
-    :cond_10
-    :try_start_10
+    :cond_0
+    :try_start_0
     iget-wide v2, p0, Llibs/r91;->Phi:J
 
     .line 18
@@ -261,7 +261,7 @@
 
     .line 23
     .line 24
-    if-ltz v7, :cond_28
+    if-ltz v7, :cond_2
 
     .line 25
     .line 26
@@ -273,7 +273,7 @@
 
     .line 29
     .line 30
-    :goto_1d
+    :goto_0
     invoke-super {p0, p2, v1, p1}, Llibs/eb2;->read([BII)I
 
     .line 31
@@ -282,14 +282,14 @@
     move-result p3
 
     .line 34
-    if-eq p3, v6, :cond_24
+    if-eq p3, v6, :cond_1
 
     .line 35
     .line 36
-    goto :goto_1d
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_1
     invoke-virtual {p0}, Llibs/eb2;->c()V
 
     .line 38
@@ -298,8 +298,8 @@
     return v6
 
     .line 41
-    :cond_28
-    :goto_28
+    :cond_2
+    :goto_1
     invoke-virtual {v0, p1, p2, p3}, Ljava/util/zip/Inflater;->inflate([BII)I
 
     .line 42
@@ -308,7 +308,7 @@
     move-result v2
 
     .line 45
-    if-nez v2, :cond_67
+    if-nez v2, :cond_7
 
     .line 46
     .line 47
@@ -320,7 +320,7 @@
     move-result v2
 
     .line 51
-    if-nez v2, :cond_58
+    if-nez v2, :cond_5
 
     .line 52
     .line 53
@@ -332,14 +332,14 @@
     move-result v2
 
     .line 57
-    if-eqz v2, :cond_3b
+    if-eqz v2, :cond_3
 
     .line 58
     .line 59
-    goto :goto_58
+    goto :goto_2
 
     .line 60
-    :cond_3b
+    :cond_3
     invoke-virtual {v0}, Ljava/util/zip/Inflater;->needsInput()Z
 
     .line 61
@@ -348,7 +348,7 @@
     move-result v2
 
     .line 64
-    if-eqz v2, :cond_28
+    if-eqz v2, :cond_2
 
     .line 65
     .line 66
@@ -367,7 +367,7 @@
     move-result v3
 
     .line 73
-    if-eq v3, v6, :cond_4e
+    if-eq v3, v6, :cond_4
 
     .line 74
     .line 75
@@ -376,10 +376,10 @@
     .line 76
     .line 77
     .line 78
-    goto :goto_28
+    goto :goto_1
 
     .line 79
-    :cond_4e
+    :cond_4
     new-instance p1, Ljava/io/EOFException;
 
     .line 80
@@ -396,15 +396,15 @@
     throw p1
 
     .line 87
-    :catch_56
+    :catch_0
     move-exception p1
 
     .line 88
-    goto :goto_6e
+    goto :goto_4
 
     .line 89
-    :cond_58
-    :goto_58
+    :cond_5
+    :goto_2
     sget p1, Llibs/ry;->a:I
 
     .line 90
@@ -413,7 +413,7 @@
 
     .line 92
     .line 93
-    :goto_5c
+    :goto_3
     invoke-super {p0, p2, v1, p1}, Llibs/eb2;->read([BII)I
 
     .line 94
@@ -422,14 +422,14 @@
     move-result p3
 
     .line 97
-    if-eq p3, v6, :cond_63
+    if-eq p3, v6, :cond_6
 
     .line 98
     .line 99
-    goto :goto_5c
+    goto :goto_3
 
     .line 100
-    :cond_63
+    :cond_6
     invoke-virtual {p0}, Llibs/eb2;->c()V
 
     .line 101
@@ -438,7 +438,7 @@
     return v6
 
     .line 104
-    :cond_67
+    :cond_7
     iget-wide p1, p0, Llibs/r91;->Phi:J
 
     .line 105
@@ -450,15 +450,15 @@
 
     .line 108
     iput-wide p1, p0, Llibs/r91;->Phi:J
-    :try_end_6d
-    .catch Ljava/util/zip/DataFormatException; {:try_start_10 .. :try_end_6d} :catch_56
+    :try_end_0
+    .catch Ljava/util/zip/DataFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 109
     .line 110
     return v2
 
     .line 111
-    :goto_6e
+    :goto_4
     invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     .line 112
@@ -467,7 +467,7 @@
     move-result-object p2
 
     .line 115
-    if-eqz p2, :cond_79
+    if-eqz p2, :cond_8
 
     .line 116
     .line 117
@@ -479,20 +479,20 @@
     move-result-object p1
 
     .line 121
-    goto :goto_7b
+    goto :goto_5
 
     .line 122
-    :cond_79
+    :cond_8
     const-string p1, "Invalid ZLIB data format"
 
     .line 123
     .line 124
-    :goto_7b
+    :goto_5
     iget-object p2, p0, Llibs/r91;->Upsilon:Llibs/jb0;
 
     .line 125
     .line 126
-    if-eqz p2, :cond_91
+    if-eqz p2, :cond_9
 
     .line 127
     .line 128
@@ -508,7 +508,7 @@
 
     .line 133
     .line 134
-    if-eqz p3, :cond_91
+    if-eqz p3, :cond_9
 
     .line 135
     .line 136
@@ -516,7 +516,7 @@
 
     .line 137
     .line 138
-    if-nez p2, :cond_91
+    if-nez p2, :cond_9
 
     .line 139
     .line 140
@@ -532,7 +532,7 @@
     move-result-object p1
 
     .line 146
-    :cond_91
+    :cond_9
     invoke-static {p1}, Llibs/ic0;->t(Ljava/lang/String;)V
 
     .line 147
@@ -541,7 +541,7 @@
     return v1
 
     .line 150
-    :cond_95
+    :cond_a
     new-instance p1, Ljava/lang/IndexOutOfBoundsException;
 
     .line 151
@@ -554,7 +554,7 @@
     throw p1
 
     .line 156
-    :cond_9b
+    :cond_b
     const-string p1, "input buffer is null"
 
     .line 157
@@ -568,7 +568,7 @@
 .end method
 
 .method public final skip(J)J
-    .registers 8
+    .locals 5
 
     .line 1
     const-wide/16 v0, 0x0
@@ -579,7 +579,7 @@
 
     .line 4
     .line 5
-    if-ltz v2, :cond_27
+    if-ltz v2, :cond_3
 
     .line 6
     .line 7
@@ -613,8 +613,8 @@
     const/4 v2, 0x0
 
     .line 21
-    :goto_14
-    if-ge v2, p2, :cond_25
+    :goto_0
+    if-ge v2, p2, :cond_2
 
     .line 22
     .line 23
@@ -622,14 +622,14 @@
 
     .line 24
     .line 25
-    if-le v3, p1, :cond_1b
+    if-le v3, p1, :cond_0
 
     .line 26
     .line 27
     move v3, p1
 
     .line 28
-    :cond_1b
+    :cond_0
     invoke-virtual {p0, v0, v1, v3}, Llibs/r91;->read([BII)I
 
     .line 29
@@ -641,29 +641,29 @@
     const/4 v4, -0x1
 
     .line 33
-    if-ne v3, v4, :cond_23
+    if-ne v3, v4, :cond_1
 
     .line 34
     .line 35
-    goto :goto_25
+    goto :goto_1
 
     .line 36
-    :cond_23
+    :cond_1
     add-int/2addr v2, v3
 
     .line 37
-    goto :goto_14
+    goto :goto_0
 
     .line 38
-    :cond_25
-    :goto_25
+    :cond_2
+    :goto_1
     int-to-long p1, v2
 
     .line 39
     return-wide p1
 
     .line 40
-    :cond_27
+    :cond_3
     const-string p1, "Negative skip length"
 
     .line 41

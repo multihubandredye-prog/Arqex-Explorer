@@ -23,7 +23,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/16 v0, 0x20
@@ -42,7 +42,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 5
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
@@ -71,7 +71,7 @@
 
 # virtual methods
 .method public final a(I[B)V
-    .registers 9
+    .locals 6
 
     .line 1
     const/4 v0, 0x0
@@ -83,7 +83,7 @@
     const/4 v2, 0x4
 
     .line 4
-    if-nez p1, :cond_22
+    if-nez p1, :cond_1
 
     .line 5
     .line 6
@@ -91,7 +91,7 @@
 
     .line 7
     .line 8
-    if-ne p1, v1, :cond_f
+    if-ne p1, v1, :cond_0
 
     .line 9
     .line 10
@@ -107,8 +107,8 @@
 
     .line 15
     .line 16
-    :cond_f
-    :try_start_f
+    :cond_0
+    :try_start_0
     iget-object v0, p0, Llibs/ir;->h:Ljavax/crypto/Cipher;
 
     .line 17
@@ -129,8 +129,8 @@
 
     .line 23
     invoke-virtual/range {v0 .. v5}, Ljavax/crypto/Cipher;->update([BII[BI)I
-    :try_end_19
-    .catch Ljava/security/GeneralSecurityException; {:try_start_f .. :try_end_19} :catch_1a
+    :try_end_0
+    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 24
     .line 25
@@ -138,7 +138,7 @@
     return-void
 
     .line 27
-    :catch_1a
+    :catch_0
     move-exception v0
 
     .line 28
@@ -157,7 +157,7 @@
     return-void
 
     .line 35
-    :cond_22
+    :cond_1
     new-instance p2, Ljava/lang/IllegalArgumentException;
 
     .line 36
@@ -214,7 +214,7 @@
 .end method
 
 .method public final d()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x10
@@ -225,7 +225,7 @@
 .end method
 
 .method public final e(J)V
-    .registers 12
+    .locals 9
 
     .line 1
     const/16 v0, 0x38
@@ -401,7 +401,7 @@
     .line 74
     .line 75
     .line 76
-    :try_start_4b
+    :try_start_0
     iget-object p2, p0, Llibs/dd;->e:Ljavax/crypto/Cipher;
 
     .line 77
@@ -410,21 +410,21 @@
 
     .line 79
     .line 80
-    if-ne v2, v0, :cond_53
+    if-ne v2, v0, :cond_0
 
     .line 81
     .line 82
     const/4 v2, 0x1
 
     .line 83
-    goto :goto_54
+    goto :goto_0
 
     .line 84
-    :cond_53
+    :cond_0
     const/4 v2, 0x2
 
     .line 85
-    :goto_54
+    :goto_0
     iget-object v3, p0, Llibs/ir;->j:Ljavax/crypto/spec/SecretKeySpec;
 
     .line 86
@@ -442,25 +442,25 @@
 
     .line 93
     .line 94
-    if-ne v2, v0, :cond_60
+    if-ne v2, v0, :cond_1
 
     .line 95
     .line 96
-    goto :goto_61
+    goto :goto_1
 
     .line 97
-    :cond_60
+    :cond_1
     const/4 v0, 0x2
 
     .line 98
-    :goto_61
+    :goto_1
     iget-object v1, p0, Llibs/ir;->k:Ljavax/crypto/spec/SecretKeySpec;
 
     .line 99
     .line 100
     invoke-virtual {p2, v0, v1, p1}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
-    :try_end_66
-    .catch Ljava/security/GeneralSecurityException; {:try_start_4b .. :try_end_66} :catch_89
+    :try_end_0
+    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_1
 
     .line 101
     .line 102
@@ -490,7 +490,7 @@
     .line 114
     .line 115
     .line 116
-    :try_start_73
+    :try_start_1
     iget-object p2, p0, Llibs/ir;->i:Ljavax/crypto/Mac;
 
     .line 117
@@ -504,8 +504,8 @@
 
     .line 122
     invoke-virtual {p2, p1}, Ljavax/crypto/Mac;->init(Ljava/security/Key;)V
-    :try_end_7c
-    .catch Ljava/security/GeneralSecurityException; {:try_start_73 .. :try_end_7c} :catch_80
+    :try_end_1
+    .catch Ljava/security/GeneralSecurityException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 123
     .line 124
@@ -520,7 +520,7 @@
     return-void
 
     .line 129
-    :catch_80
+    :catch_0
     move-exception p1
 
     .line 130
@@ -540,7 +540,7 @@
     return-void
 
     .line 138
-    :catch_89
+    :catch_1
     move-exception p1
 
     .line 139
@@ -561,7 +561,7 @@
 .end method
 
 .method public final h(Ljavax/crypto/Cipher;I[B[B)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput p2, p0, Llibs/ir;->g:I
@@ -619,7 +619,7 @@
 
     .line 27
     .line 28
-    :try_start_1b
+    :try_start_0
     const-string p1, "CHACHA"
 
     .line 29
@@ -649,8 +649,8 @@
 
     .line 42
     iput-object p1, p0, Llibs/ir;->i:Ljavax/crypto/Mac;
-    :try_end_2b
-    .catch Ljava/security/GeneralSecurityException; {:try_start_1b .. :try_end_2b} :catch_31
+    :try_end_0
+    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 43
     .line 44
@@ -666,7 +666,7 @@
     return-void
 
     .line 50
-    :catch_31
+    :catch_0
     move-exception p1
 
     .line 51
@@ -698,24 +698,24 @@
 .end method
 
 .method public final update([BII)V
-    .registers 15
+    .locals 11
 
     .line 1
     const/4 v0, 0x4
 
     .line 2
-    if-eqz p2, :cond_10
+    if-eqz p2, :cond_1
 
     .line 3
     .line 4
-    if-ne p2, v0, :cond_6
+    if-ne p2, v0, :cond_0
 
     .line 5
     .line 6
-    goto :goto_10
+    goto :goto_0
 
     .line 7
-    :cond_6
+    :cond_0
     const-string p1, "updateAAD called with inputOffset "
 
     .line 8
@@ -736,8 +736,8 @@
     return-void
 
     .line 17
-    :cond_10
-    :goto_10
+    :cond_1
+    :goto_0
     add-int v1, p2, p3
 
     .line 18
@@ -752,7 +752,7 @@
     const/4 v4, 0x0
 
     .line 23
-    if-ne v2, v3, :cond_43
+    if-ne v2, v3, :cond_4
 
     .line 24
     .line 25
@@ -760,7 +760,7 @@
 
     .line 26
     .line 27
-    if-nez p2, :cond_20
+    if-nez p2, :cond_2
 
     .line 28
     .line 29
@@ -769,10 +769,10 @@
     .line 30
     .line 31
     .line 32
-    goto :goto_28
+    goto :goto_1
 
     .line 33
-    :cond_20
+    :cond_2
     iget-object v3, p0, Llibs/ir;->f:[B
 
     .line 34
@@ -787,7 +787,7 @@
     .line 39
     .line 40
     .line 41
-    :goto_28
+    :goto_1
     iget-object v0, p0, Llibs/ir;->i:Ljavax/crypto/Mac;
 
     .line 42
@@ -820,14 +820,14 @@
     move-result v0
 
     .line 57
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_3
 
     .line 58
     .line 59
-    goto :goto_43
+    goto :goto_2
 
     .line 60
-    :cond_3b
+    :cond_3
     new-instance p1, Llibs/qy2;
 
     .line 61
@@ -844,9 +844,9 @@
     throw p1
 
     .line 68
-    :cond_43
-    :goto_43
-    :try_start_43
+    :cond_4
+    :goto_2
+    :try_start_0
     iget-object v5, p0, Llibs/dd;->e:Ljavax/crypto/Cipher;
 
     .line 69
@@ -867,8 +867,8 @@
 
     .line 75
     invoke-virtual/range {v5 .. v10}, Ljavax/crypto/Cipher;->update([BII[BI)I
-    :try_end_4d
-    .catch Ljava/security/GeneralSecurityException; {:try_start_43 .. :try_end_4d} :catch_62
+    :try_end_0
+    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 76
     .line 77
@@ -880,7 +880,7 @@
     const/4 p2, 0x1
 
     .line 81
-    if-ne p1, p2, :cond_61
+    if-ne p1, p2, :cond_5
 
     .line 82
     .line 83
@@ -913,11 +913,11 @@
     .line 96
     .line 97
     .line 98
-    :cond_61
+    :cond_5
     return-void
 
     .line 99
-    :catch_62
+    :catch_0
     move-exception v0
 
     .line 100

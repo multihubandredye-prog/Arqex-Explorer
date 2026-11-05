@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/f9;->Omicron:Llibs/f9;
@@ -21,7 +21,7 @@
 .end method
 
 .method public constructor <init>(Llibs/f9;)V
-    .registers 2
+    .locals 0
 
     .line 7
     invoke-direct {p0, p1}, Llibs/g9;-><init>(Llibs/f9;)V
@@ -32,7 +32,7 @@
 
 # virtual methods
 .method public final a(Llibs/rw2;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/g9;->a:Llibs/f9;

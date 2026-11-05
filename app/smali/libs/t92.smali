@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final updateDrawState(Landroid/text/TextPaint;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-super {p0, p1}, Landroid/text/style/ClickableSpan;->updateDrawState(Landroid/text/TextPaint;)V
@@ -43,7 +43,7 @@
 
     .line 7
     .line 8
-    if-eq v1, v0, :cond_c
+    if-eq v1, v0, :cond_0
 
     .line 9
     .line 10
@@ -52,6 +52,6 @@
     .line 11
     .line 12
     .line 13
-    :cond_c
+    :cond_0
     return-void
 .end method

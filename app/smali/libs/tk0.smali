@@ -22,7 +22,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/v1;Llibs/m52;Ljava/lang/String;Llibs/zl0;Ljava/util/Properties;B)V
-    .registers 7
+    .locals 0
 
     .line 1
     iput-byte p6, p0, Llibs/tk0;->X:B
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 12
+    .locals 11
 
     .line 1
     iget-byte v0, p0, Llibs/tk0;->X:B
@@ -87,7 +87,7 @@
 
     .line 12
     .line 13
-    packed-switch v0, :pswitch_data_84
+    packed-switch v0, :pswitch_data_0
 
     .line 14
     .line 15
@@ -104,7 +104,7 @@
     return-void
 
     .line 22
-    :pswitch_15
+    :pswitch_0
     iget v0, v5, Llibs/m52;->One:I
 
     .line 23
@@ -117,7 +117,7 @@
     return-void
 
     .line 28
-    :pswitch_1b
+    :pswitch_1
     sget-object v0, Lcom/mixplorer/AppImpl;->Mu:Llibs/c2;
 
     .line 29
@@ -176,21 +176,21 @@
     const/4 v3, 0x1
 
     .line 56
-    if-le v1, v3, :cond_3b
+    if-le v1, v3, :cond_0
 
     .line 57
     .line 58
     const/4 v7, 0x1
 
     .line 59
-    goto :goto_3c
+    goto :goto_0
 
     .line 60
-    :cond_3b
+    :cond_0
     const/4 v7, 0x0
 
     .line 61
-    :goto_3c
+    :goto_0
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     .line 62
@@ -199,7 +199,7 @@
     move-result-object v0
 
     .line 65
-    :cond_40
+    :cond_1
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 66
@@ -208,7 +208,7 @@
     move-result v1
 
     .line 69
-    if-eqz v1, :cond_52
+    if-eqz v1, :cond_2
 
     .line 70
     .line 71
@@ -228,26 +228,26 @@
 
     .line 78
     .line 79
-    if-eqz v1, :cond_40
+    if-eqz v1, :cond_1
 
     .line 80
     .line 81
     const/4 v5, 0x0
 
     .line 82
-    goto :goto_53
+    goto :goto_1
 
     .line 83
-    :cond_52
+    :cond_2
     const/4 v5, 0x1
 
     .line 84
-    :goto_53
+    :goto_1
     iget-object v6, p0, Llibs/tk0;->Lambda:Ljava/lang/String;
 
     .line 85
     .line 86
-    if-eqz v7, :cond_5d
+    if-eqz v7, :cond_3
 
     .line 87
     .line 88
@@ -259,14 +259,14 @@
     move-result-object v0
 
     .line 92
-    :goto_5b
+    :goto_2
     move-object v3, v0
 
     .line 93
-    goto :goto_62
+    goto :goto_3
 
     .line 94
-    :cond_5d
+    :cond_3
     invoke-virtual {v4}, Llibs/rp0;->m()Ljava/lang/String;
 
     .line 95
@@ -275,10 +275,10 @@
     move-result-object v0
 
     .line 98
-    goto :goto_5b
+    goto :goto_2
 
     .line 99
-    :goto_62
+    :goto_3
     iget-object v2, p0, Llibs/tk0;->Y:Llibs/v1;
 
     .line 100
@@ -316,7 +316,7 @@
     return-void
 
     .line 118
-    :pswitch_75
+    :pswitch_2
     iget-object v7, p0, Llibs/tk0;->Nu:Ljava/util/Properties;
 
     .line 119
@@ -348,10 +348,10 @@
     return-void
 
     .line 133
-    :pswitch_data_84
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_75
-        :pswitch_1b
-        :pswitch_15
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

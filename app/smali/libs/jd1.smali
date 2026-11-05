@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -20,7 +20,7 @@
     .line 2
     .line 3
     .line 4
-    :try_start_3
+    :try_start_0
     invoke-static {p1}, Ljavax/crypto/Cipher;->getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;
 
     .line 5
@@ -30,35 +30,35 @@
 
     .line 8
     iput-object p1, p0, Llibs/jd1;->a:Ljavax/crypto/Cipher;
-    :try_end_9
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_3 .. :try_end_9} :catch_e
-    .catch Ljavax/crypto/NoSuchPaddingException; {:try_start_3 .. :try_end_9} :catch_c
-    .catch Ljava/security/NoSuchProviderException; {:try_start_3 .. :try_end_9} :catch_a
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljavax/crypto/NoSuchPaddingException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/security/NoSuchProviderException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 9
     .line 10
     return-void
 
     .line 11
-    :catch_a
+    :catch_0
     move-exception p1
 
     .line 12
-    goto :goto_f
+    goto :goto_0
 
     .line 13
-    :catch_c
+    :catch_1
     move-exception p1
 
     .line 14
-    goto :goto_f
+    goto :goto_0
 
     .line 15
-    :catch_e
+    :catch_2
     move-exception p1
 
     .line 16
-    :goto_f
+    :goto_0
     new-instance v0, Llibs/q43;
 
     .line 17
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public final a(I[B)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/jd1;->a:Ljavax/crypto/Cipher;
@@ -90,7 +90,7 @@
 .end method
 
 .method public final b(I[B)[B
-    .registers 5
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
@@ -112,7 +112,7 @@
 .end method
 
 .method public final c(I[B)[B
-    .registers 5
+    .locals 2
 
     .line 1
     :try_start_0
@@ -129,26 +129,26 @@
     .line 6
     .line 7
     move-result-object p1
-    :try_end_7
-    .catch Ljavax/crypto/IllegalBlockSizeException; {:try_start_0 .. :try_end_7} :catch_a
-    .catch Ljavax/crypto/BadPaddingException; {:try_start_0 .. :try_end_7} :catch_8
+    :try_end_0
+    .catch Ljavax/crypto/IllegalBlockSizeException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljavax/crypto/BadPaddingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 8
     return-object p1
 
     .line 9
-    :catch_8
+    :catch_0
     move-exception p1
 
     .line 10
-    goto :goto_b
+    goto :goto_0
 
     .line 11
-    :catch_a
+    :catch_1
     move-exception p1
 
     .line 12
-    :goto_b
+    :goto_0
     new-instance p2, Llibs/q43;
 
     .line 13
@@ -162,7 +162,7 @@
 .end method
 
 .method public final d(I[BLlibs/js0;)V
-    .registers 9
+    .locals 5
 
     .line 1
     const/4 v0, 0x0
@@ -179,11 +179,11 @@
     const/4 v3, 0x2
 
     .line 7
-    if-ne v3, p1, :cond_1f
+    if-ne v3, p1, :cond_0
 
     .line 8
     .line 9
-    :try_start_8
+    :try_start_0
     new-instance p1, Ljavax/crypto/spec/SecretKeySpec;
 
     .line 10
@@ -221,21 +221,21 @@
     return-void
 
     .line 28
-    :catch_1b
+    :catch_0
     move-exception p1
 
     .line 29
-    goto :goto_33
+    goto :goto_0
 
     .line 30
-    :catch_1d
+    :catch_1
     move-exception p1
 
     .line 31
-    goto :goto_33
+    goto :goto_0
 
     .line 32
-    :cond_1f
+    :cond_0
     new-instance p1, Ljavax/crypto/spec/SecretKeySpec;
 
     .line 33
@@ -269,9 +269,9 @@
 
     .line 48
     invoke-virtual {v2, p2, p1, p3}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
-    :try_end_32
-    .catch Ljava/security/InvalidKeyException; {:try_start_8 .. :try_end_32} :catch_1d
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_8 .. :try_end_32} :catch_1b
+    :try_end_0
+    .catch Ljava/security/InvalidKeyException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 49
     .line 50
@@ -279,7 +279,7 @@
     return-void
 
     .line 52
-    :goto_33
+    :goto_0
     new-instance p2, Llibs/q43;
 
     .line 53
@@ -293,7 +293,7 @@
 .end method
 
 .method public final reset()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void

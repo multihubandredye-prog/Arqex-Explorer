@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ra;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Llibs/jz;-><init>()V
@@ -22,7 +22,7 @@
     .line 7
     .line 8
     .line 9
-    :goto_8
+    :goto_0
     invoke-virtual {p1}, Llibs/ra;->read()I
 
     .line 10
@@ -31,7 +31,7 @@
     move-result v1
 
     .line 13
-    if-ltz v1, :cond_12
+    if-ltz v1, :cond_0
 
     .line 14
     .line 15
@@ -40,10 +40,10 @@
     .line 16
     .line 17
     .line 18
-    goto :goto_8
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     invoke-virtual {v0}, Llibs/fl;->x()[B
 
     .line 20

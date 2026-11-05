@@ -27,7 +27,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const/16 v0, 0x100
@@ -38,7 +38,7 @@
 
     .line 4
     .line 5
-    fill-array-data v1, :array_1a
+    fill-array-data v1, :array_0
 
     .line 6
     .line 7
@@ -55,7 +55,7 @@
 
     .line 13
     .line 14
-    fill-array-data v1, :array_9e
+    fill-array-data v1, :array_1
 
     .line 15
     .line 16
@@ -68,7 +68,7 @@
 
     .line 20
     .line 21
-    fill-array-data v0, :array_de
+    fill-array-data v0, :array_2
 
     .line 22
     .line 23
@@ -80,7 +80,7 @@
     return-void
 
     .line 27
-    :array_1a
+    :array_0
     .array-data 1
         0x63t
         0x7ct
@@ -344,7 +344,7 @@
     .line 29
     .line 30
     .line 31
-    :array_9e
+    :array_1
     .array-data 4
         0x1
         0x2
@@ -378,7 +378,7 @@
         0x91
     .end array-data
 
-    :array_de
+    :array_2
     .array-data 4
         -0x5a9c9c3a
         -0x7b838308
@@ -453,7 +453,7 @@
         -0x11a5a54c
         -0x45f5fa5
         -0x9adad5c
-        0x4d3b3b76    # 1.96327264E8f
+        0x4d3b3b76    # 1.9632726E8f
         0x61d6d6b7
         -0x314c4c83
         0x7b292952
@@ -508,7 +508,7 @@
         0x1affffe5
         0xef3f3fd
         0x6dd2d2bf
-        0x4ccdcd81    # 1.07899912E8f
+        0x4ccdcd81    # 1.0789991E8f
         0x140c0c18
         0x35131326
         0x2fececc3
@@ -640,7 +640,7 @@
 .end method
 
 .method public constructor <init>([B)V
-    .registers 15
+    .locals 13
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -671,19 +671,19 @@
     const/4 v4, 0x6
 
     .line 13
-    if-eq v1, v2, :cond_12
+    if-eq v1, v2, :cond_0
 
     .line 14
     .line 15
-    if-eq v1, v4, :cond_12
+    if-eq v1, v4, :cond_0
 
     .line 16
     .line 17
-    if-ne v1, v3, :cond_a1
+    if-ne v1, v3, :cond_5
 
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     mul-int/lit8 v5, v1, 0x4
 
     .line 20
@@ -691,7 +691,7 @@
     array-length v6, p1
 
     .line 22
-    if-ne v5, v6, :cond_a1
+    if-ne v5, v6, :cond_5
 
     .line 23
     .line 24
@@ -747,11 +747,11 @@
     const/4 v6, 0x0
 
     .line 48
-    :goto_2f
+    :goto_0
     array-length v9, p1
 
     .line 49
-    if-ge v8, v9, :cond_5a
+    if-ge v8, v9, :cond_1
 
     .line 50
     .line 51
@@ -838,10 +838,10 @@
     add-int/2addr v6, v7
 
     .line 90
-    goto :goto_2f
+    goto :goto_0
 
     .line 91
-    :cond_5a
+    :cond_1
     iget p1, p0, Llibs/Bit;->a:I
 
     .line 92
@@ -855,8 +855,8 @@
     move v5, v1
 
     .line 96
-    :goto_5f
-    if-ge v5, p1, :cond_9e
+    :goto_1
+    if-ge v5, p1, :cond_4
 
     .line 97
     .line 98
@@ -884,7 +884,7 @@
 
     .line 109
     .line 110
-    if-nez v8, :cond_80
+    if-nez v8, :cond_2
 
     .line 111
     .line 112
@@ -922,15 +922,15 @@
     xor-int/2addr v6, v8
 
     .line 128
-    goto :goto_88
+    goto :goto_2
 
     .line 129
-    :cond_80
-    if-le v1, v4, :cond_88
+    :cond_2
+    if-le v1, v4, :cond_3
 
     .line 130
     .line 131
-    if-ne v8, v2, :cond_88
+    if-ne v8, v2, :cond_3
 
     .line 132
     .line 133
@@ -942,8 +942,8 @@
     move-result v6
 
     .line 137
-    :cond_88
-    :goto_88
+    :cond_3
+    :goto_2
     shr-int/lit8 v8, v5, 0x2
 
     .line 138
@@ -987,10 +987,10 @@
 
     .line 157
     .line 158
-    goto :goto_5f
+    goto :goto_1
 
     .line 159
-    :cond_9e
+    :cond_4
     iput-object v0, p0, Llibs/Bit;->b:[[I
 
     .line 160
@@ -998,7 +998,7 @@
     return-void
 
     .line 162
-    :cond_a1
+    :cond_5
     const-string p1, "invalid key length (not 128/192/256)"
 
     .line 163
@@ -1008,19 +1008,19 @@
     .line 165
     .line 166
     .line 167
-    goto :goto_a8
+    goto :goto_4
 
     .line 168
-    :goto_a7
+    :goto_3
     throw v0
 
     .line 169
-    :goto_a8
-    goto :goto_a7
+    :goto_4
+    goto :goto_3
 .end method
 
 .method public static b(II)I
-    .registers 3
+    .locals 1
 
     .line 1
     ushr-int v0, p0, p1
@@ -1040,7 +1040,7 @@
 .end method
 
 .method public static c(I)I
-    .registers 4
+    .locals 3
 
     .line 1
     and-int/lit16 v0, p0, 0xff
@@ -1130,7 +1130,7 @@
 
 # virtual methods
 .method public final a([B[B)V
-    .registers 33
+    .locals 30
 
     .line 1
     move-object/from16 v0, p0
@@ -1149,7 +1149,7 @@
 
     .line 8
     .line 9
-    if-eqz v3, :cond_3ff
+    if-eqz v3, :cond_3
 
     .line 10
     .line 11
@@ -1160,14 +1160,14 @@
 
     .line 13
     .line 14
-    if-gt v5, v4, :cond_3f9
+    if-gt v5, v4, :cond_2
 
     .line 15
     .line 16
     array-length v4, v2
 
     .line 17
-    if-gt v5, v4, :cond_3f3
+    if-gt v5, v4, :cond_1
 
     .line 18
     .line 19
@@ -1555,7 +1555,7 @@
     const/4 v1, 0x1
 
     .line 195
-    :goto_c2
+    :goto_0
     iget v4, v0, Llibs/Bit;->a:I
 
     .line 196
@@ -1572,7 +1572,7 @@
 
     .line 202
     .line 203
-    if-ge v1, v4, :cond_248
+    if-ge v1, v4, :cond_0
 
     .line 204
     .line 205
@@ -2380,11 +2380,11 @@
     const/4 v14, 0x5
 
     .line 583
-    goto/16 :goto_c2
+    goto/16 :goto_0
 
     .line 584
     .line 585
-    :cond_248
+    :cond_0
     const/16 v26, 0xf
 
     .line 586
@@ -3314,7 +3314,7 @@
     return-void
 
     .line 1012
-    :cond_3f3
+    :cond_1
     const-string v1, "output buffer too short"
 
     .line 1013
@@ -3327,7 +3327,7 @@
     return-void
 
     .line 1018
-    :cond_3f9
+    :cond_2
     const-string v1, "input buffer too short"
 
     .line 1019
@@ -3340,7 +3340,7 @@
     return-void
 
     .line 1024
-    :cond_3ff
+    :cond_3
     const-string v1, "AES engine not initialised"
 
     .line 1025

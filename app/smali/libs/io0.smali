@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 7
+    .locals 6
 
     .line 1
     const-wide/32 v3, 0xffff
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public final a(I[B)J
-    .registers 4
+    .locals 1
 
     .line 1
     shl-int/lit8 p1, p1, 0x1

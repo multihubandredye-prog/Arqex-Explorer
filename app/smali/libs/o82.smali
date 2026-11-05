@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/rd;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final c()Ljava/security/KeyPair;
-    .registers 15
+    .locals 14
 
     .line 1
     new-instance v0, Llibs/bk;
@@ -47,7 +47,7 @@
     .line 12
     .line 13
     .line 14
-    :try_start_d
+    :try_start_0
     new-instance v1, Llibs/j12;
 
     .line 15
@@ -73,19 +73,19 @@
 
     .line 26
     .line 27
-    :cond_1a
-    :goto_1a
+    :cond_0
+    :goto_0
     invoke-virtual {v0}, Llibs/bk;->w()Ljava/lang/String;
 
     .line 28
     .line 29
     .line 30
     move-result-object v5
-    :try_end_1e
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_d .. :try_end_1e} :catch_5e
-    .catch Ljava/security/NoSuchProviderException; {:try_start_d .. :try_end_1e} :catch_5b
-    .catch Ljava/security/spec/InvalidKeySpecException; {:try_start_d .. :try_end_1e} :catch_58
-    .catchall {:try_start_d .. :try_end_1e} :catchall_55
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/security/NoSuchProviderException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/security/spec/InvalidKeySpecException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 31
     const-string v6, "Unrecognized PKCS5 key type: "
@@ -100,11 +100,11 @@
 
     .line 36
     .line 37
-    if-eqz v5, :cond_1d9
+    if-eqz v5, :cond_f
 
     .line 38
     .line 39
-    :try_start_26
+    :try_start_1
     const-string v9, "-----BEGIN "
 
     .line 40
@@ -121,7 +121,7 @@
 
     .line 46
     .line 47
-    if-eqz v9, :cond_96
+    if-eqz v9, :cond_5
 
     .line 48
     .line 49
@@ -137,7 +137,7 @@
     move-result v9
 
     .line 55
-    if-eqz v9, :cond_96
+    if-eqz v9, :cond_5
 
     .line 56
     .line 57
@@ -153,7 +153,7 @@
 
     .line 62
     .line 63
-    if-le v9, v10, :cond_8e
+    if-le v9, v10, :cond_4
 
     .line 64
     .line 65
@@ -185,7 +185,7 @@
     move-result v8
 
     .line 79
-    if-eqz v8, :cond_61
+    if-eqz v8, :cond_1
 
     .line 80
     .line 81
@@ -197,42 +197,42 @@
 
     .line 84
     .line 85
-    goto :goto_1a
+    goto :goto_0
 
     .line 86
-    :catchall_55
+    :catchall_0
     move-exception v1
 
     .line 87
-    goto/16 :goto_286
+    goto/16 :goto_5
 
     .line 88
     .line 89
-    :catch_58
+    :catch_0
     move-exception v1
 
     .line 90
-    goto/16 :goto_27c
+    goto/16 :goto_3
 
     .line 91
     .line 92
-    :catch_5b
+    :catch_1
     move-exception v1
 
     .line 93
-    goto/16 :goto_281
+    goto/16 :goto_4
 
     .line 94
     .line 95
-    :catch_5e
+    :catch_2
     move-exception v1
 
     .line 96
-    goto/16 :goto_281
+    goto/16 :goto_4
 
     .line 97
     .line 98
-    :cond_61
+    :cond_1
     invoke-virtual {v7, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     .line 99
@@ -241,7 +241,7 @@
     move-result v7
 
     .line 102
-    if-eqz v7, :cond_6c
+    if-eqz v7, :cond_2
 
     .line 103
     .line 104
@@ -253,10 +253,10 @@
 
     .line 107
     .line 108
-    goto :goto_1a
+    goto :goto_0
 
     .line 109
-    :cond_6c
+    :cond_2
     const-string v7, "DSS"
 
     .line 110
@@ -269,7 +269,7 @@
     move-result v7
 
     .line 115
-    if-eqz v7, :cond_79
+    if-eqz v7, :cond_3
 
     .line 116
     .line 117
@@ -281,10 +281,10 @@
 
     .line 120
     .line 121
-    goto :goto_1a
+    goto :goto_0
 
     .line 122
-    :cond_79
+    :cond_3
     new-instance v1, Llibs/o70;
 
     .line 123
@@ -324,7 +324,7 @@
     throw v1
 
     .line 143
-    :cond_8e
+    :cond_4
     new-instance v1, Llibs/o70;
 
     .line 144
@@ -341,7 +341,7 @@
     throw v1
 
     .line 151
-    :cond_96
+    :cond_5
     const-string v9, "-----END"
 
     .line 152
@@ -354,20 +354,20 @@
     move-result v9
 
     .line 157
-    if-eqz v9, :cond_a0
+    if-eqz v9, :cond_6
 
     .line 158
     .line 159
-    goto/16 :goto_1d9
+    goto/16 :goto_2
 
     .line 160
     .line 161
-    :cond_a0
+    :cond_6
     iget-object v6, p0, Llibs/rd;->d:Llibs/wh1;
 
     .line 162
     .line 163
-    if-eqz v6, :cond_1a
+    if-eqz v6, :cond_0
 
     .line 164
     .line 165
@@ -383,7 +383,7 @@
     move-result v6
 
     .line 171
-    if-eqz v6, :cond_d5
+    if-eqz v6, :cond_8
 
     .line 172
     .line 173
@@ -407,15 +407,15 @@
     move-result v6
 
     .line 183
-    if-eqz v6, :cond_ba
+    if-eqz v6, :cond_7
 
     .line 184
     .line 185
-    goto/16 :goto_1a
+    goto/16 :goto_0
 
     .line 186
     .line 187
-    :cond_ba
+    :cond_7
     new-instance v1, Llibs/o70;
 
     .line 188
@@ -467,7 +467,7 @@
     throw v1
 
     .line 214
-    :cond_d5
+    :cond_8
     const-string v6, "DEK-Info: "
 
     .line 215
@@ -480,7 +480,7 @@
     move-result v6
 
     .line 220
-    if-eqz v6, :cond_1ce
+    if-eqz v6, :cond_e
 
     .line 221
     .line 222
@@ -503,7 +503,7 @@
 
     .line 230
     .line 231
-    if-eq v1, v4, :cond_1b3
+    if-eq v1, v4, :cond_d
 
     .line 232
     .line 233
@@ -525,11 +525,11 @@
     .line 241
     .line 242
     move-result v6
-    :try_end_f2
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_26 .. :try_end_f2} :catch_5e
-    .catch Ljava/security/NoSuchProviderException; {:try_start_26 .. :try_end_f2} :catch_5b
-    .catch Ljava/security/spec/InvalidKeySpecException; {:try_start_26 .. :try_end_f2} :catch_58
-    .catchall {:try_start_26 .. :try_end_f2} :catchall_55
+    :try_end_1
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/security/NoSuchProviderException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/security/spec/InvalidKeySpecException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 243
     const-string v7, "/NoPadding"
@@ -548,11 +548,11 @@
 
     .line 250
     .line 251
-    if-eqz v6, :cond_11a
+    if-eqz v6, :cond_9
 
     .line 252
     .line 253
-    :try_start_fc
+    :try_start_2
     const-string v4, "DESede"
 
     .line 254
@@ -608,10 +608,10 @@
     move-object v4, v6
 
     .line 282
-    goto :goto_186
+    goto :goto_1
 
     .line 283
-    :cond_11a
+    :cond_9
     const-string v6, "AES-128-CBC"
 
     .line 284
@@ -622,11 +622,11 @@
     .line 287
     .line 288
     move-result v6
-    :try_end_120
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_fc .. :try_end_120} :catch_5e
-    .catch Ljava/security/NoSuchProviderException; {:try_start_fc .. :try_end_120} :catch_5b
-    .catch Ljava/security/spec/InvalidKeySpecException; {:try_start_fc .. :try_end_120} :catch_58
-    .catchall {:try_start_fc .. :try_end_120} :catchall_55
+    :try_end_2
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_2 .. :try_end_2} :catch_2
+    .catch Ljava/security/NoSuchProviderException; {:try_start_2 .. :try_end_2} :catch_1
+    .catch Ljava/security/spec/InvalidKeySpecException; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 289
     const-string v11, "AES"
@@ -637,11 +637,11 @@
 
     .line 292
     .line 293
-    if-eqz v6, :cond_141
+    if-eqz v6, :cond_a
 
     .line 294
     .line 295
-    :try_start_126
+    :try_start_3
     new-instance v4, Llibs/dg;
 
     .line 296
@@ -690,10 +690,10 @@
     .line 319
     .line 320
     .line 321
-    goto :goto_186
+    goto :goto_1
 
     .line 322
-    :cond_141
+    :cond_a
     const-string v6, "AES-192-CBC"
 
     .line 323
@@ -706,7 +706,7 @@
     move-result v6
 
     .line 328
-    if-eqz v6, :cond_164
+    if-eqz v6, :cond_b
 
     .line 329
     .line 330
@@ -758,10 +758,10 @@
     .line 354
     .line 355
     .line 356
-    goto :goto_186
+    goto :goto_1
 
     .line 357
-    :cond_164
+    :cond_b
     const-string v6, "AES-256-CBC"
 
     .line 358
@@ -774,7 +774,7 @@
     move-result v6
 
     .line 363
-    if-eqz v6, :cond_19c
+    if-eqz v6, :cond_c
 
     .line 364
     .line 365
@@ -826,7 +826,7 @@
     .line 389
     .line 390
     .line 391
-    :goto_186
+    :goto_1
     add-int/lit8 v1, v1, 0x1
 
     .line 392
@@ -871,11 +871,11 @@
     move-object v1, v13
 
     .line 411
-    goto/16 :goto_1a
+    goto/16 :goto_0
 
     .line 412
     .line 413
-    :cond_19c
+    :cond_c
     new-instance v1, Llibs/o70;
 
     .line 414
@@ -919,7 +919,7 @@
     throw v1
 
     .line 436
-    :cond_1b3
+    :cond_d
     new-instance v1, Llibs/o70;
 
     .line 437
@@ -971,7 +971,7 @@
     throw v1
 
     .line 463
-    :cond_1ce
+    :cond_e
     invoke-virtual {v5}, Ljava/lang/String;->length()I
 
     .line 464
@@ -980,7 +980,7 @@
     move-result v6
 
     .line 467
-    if-lez v6, :cond_1a
+    if-lez v6, :cond_0
 
     .line 468
     .line 469
@@ -989,17 +989,17 @@
     .line 470
     .line 471
     .line 472
-    goto/16 :goto_1a
+    goto/16 :goto_0
 
     .line 473
     .line 474
-    :cond_1d9
-    :goto_1d9
+    :cond_f
+    :goto_2
     iget-object v3, p0, Llibs/rd;->d:Llibs/wh1;
 
     .line 475
     .line 476
-    if-eqz v3, :cond_274
+    if-eqz v3, :cond_12
 
     .line 477
     .line 478
@@ -1051,11 +1051,11 @@
     move-result v1
 
     .line 502
-    if-eqz v1, :cond_246
+    if-eqz v1, :cond_11
 
     .line 503
     .line 504
-    if-ne v1, v2, :cond_22f
+    if-ne v1, v2, :cond_10
 
     .line 505
     .line 506
@@ -1151,11 +1151,11 @@
     .line 552
     .line 553
     invoke-direct {v2, v6, v1}, Ljava/security/KeyPair;-><init>(Ljava/security/PublicKey;Ljava/security/PrivateKey;)V
-    :try_end_22b
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_126 .. :try_end_22b} :catch_5e
-    .catch Ljava/security/NoSuchProviderException; {:try_start_126 .. :try_end_22b} :catch_5b
-    .catch Ljava/security/spec/InvalidKeySpecException; {:try_start_126 .. :try_end_22b} :catch_58
-    .catchall {:try_start_126 .. :try_end_22b} :catchall_55
+    :try_end_3
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_3 .. :try_end_3} :catch_2
+    .catch Ljava/security/NoSuchProviderException; {:try_start_3 .. :try_end_3} :catch_1
+    .catch Ljava/security/spec/InvalidKeySpecException; {:try_start_3 .. :try_end_3} :catch_0
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 554
     .line 555
@@ -1168,8 +1168,8 @@
     return-object v2
 
     .line 560
-    :cond_22f
-    :try_start_22f
+    :cond_10
+    :try_start_4
     new-instance v1, Ljava/io/IOException;
 
     .line 561
@@ -1213,7 +1213,7 @@
     throw v1
 
     .line 583
-    :cond_246
+    :cond_11
     invoke-static {v8}, Llibs/r43;->c(Ljava/lang/String;)Ljava/security/KeyFactory;
 
     .line 584
@@ -1290,11 +1290,11 @@
     .line 621
     .line 622
     invoke-direct {v2, v4, v1}, Ljava/security/KeyPair;-><init>(Ljava/security/PublicKey;Ljava/security/PrivateKey;)V
-    :try_end_270
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_22f .. :try_end_270} :catch_5e
-    .catch Ljava/security/NoSuchProviderException; {:try_start_22f .. :try_end_270} :catch_5b
-    .catch Ljava/security/spec/InvalidKeySpecException; {:try_start_22f .. :try_end_270} :catch_58
-    .catchall {:try_start_22f .. :try_end_270} :catchall_55
+    :try_end_4
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_4 .. :try_end_4} :catch_2
+    .catch Ljava/security/NoSuchProviderException; {:try_start_4 .. :try_end_4} :catch_1
+    .catch Ljava/security/spec/InvalidKeySpecException; {:try_start_4 .. :try_end_4} :catch_0
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 623
     .line 624
@@ -1307,8 +1307,8 @@
     return-object v2
 
     .line 629
-    :cond_274
-    :try_start_274
+    :cond_12
+    :try_start_5
     new-instance v1, Llibs/o70;
 
     .line 630
@@ -1323,15 +1323,15 @@
     .line 635
     .line 636
     throw v1
-    :try_end_27c
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_274 .. :try_end_27c} :catch_5e
-    .catch Ljava/security/NoSuchProviderException; {:try_start_274 .. :try_end_27c} :catch_5b
-    .catch Ljava/security/spec/InvalidKeySpecException; {:try_start_274 .. :try_end_27c} :catch_58
-    .catchall {:try_start_274 .. :try_end_27c} :catchall_55
+    :try_end_5
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_5 .. :try_end_5} :catch_2
+    .catch Ljava/security/NoSuchProviderException; {:try_start_5 .. :try_end_5} :catch_1
+    .catch Ljava/security/spec/InvalidKeySpecException; {:try_start_5 .. :try_end_5} :catch_0
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 637
-    :goto_27c
-    :try_start_27c
+    :goto_3
+    :try_start_6
     invoke-static {v1}, Llibs/sw1;->p(Ljava/lang/Throwable;)Ljava/io/IOException;
 
     .line 638
@@ -1343,7 +1343,7 @@
     throw v1
 
     .line 642
-    :goto_281
+    :goto_4
     invoke-static {v1}, Llibs/sw1;->p(Ljava/lang/Throwable;)Ljava/io/IOException;
 
     .line 643
@@ -1353,43 +1353,43 @@
 
     .line 646
     throw v1
-    :try_end_286
-    .catchall {:try_start_27c .. :try_end_286} :catchall_55
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
     .line 647
-    :goto_286
+    :goto_5
     invoke-virtual {v0}, Llibs/bk;->close()V
 
     .line 648
     .line 649
     .line 650
-    goto :goto_28b
+    goto :goto_7
 
     .line 651
-    :goto_28a
+    :goto_6
     throw v1
 
     .line 652
-    :goto_28b
-    goto :goto_28a
+    :goto_7
+    goto :goto_6
 .end method
 
 .method public final d([BLlibs/at;[B)[B
-    .registers 16
+    .locals 12
 
     .line 1
     iget-object v0, p0, Llibs/rd;->b:Llibs/ye;
 
     .line 2
     .line 3
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
     return-object p1
 
     .line 6
-    :cond_5
+    :cond_0
     const-string v0, "MD5"
 
     .line 7
@@ -1421,29 +1421,29 @@
     const/4 v5, 0x0
 
     .line 21
-    if-nez v4, :cond_17
+    if-nez v4, :cond_1
 
     .line 22
     .line 23
     const/4 v3, 0x0
 
     .line 24
-    :cond_17
+    :cond_1
     add-int/2addr v2, v3
 
     .line 25
     const/4 v3, 0x0
 
     .line 26
-    :try_start_19
+    :try_start_0
     invoke-static {v0}, Llibs/r43;->f(Ljava/lang/String;)Ljava/security/MessageDigest;
 
     .line 27
     .line 28
     .line 29
     move-result-object v0
-    :try_end_1d
-    .catch Ljava/security/GeneralSecurityException; {:try_start_19 .. :try_end_1d} :catch_9c
+    :try_end_0
+    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 30
     new-array v4, v2, [B
@@ -1546,16 +1546,16 @@
     const/4 v6, 0x0
 
     .line 80
-    :goto_4f
+    :goto_0
     add-int/lit8 v7, v6, 0x10
 
     .line 81
     .line 82
-    if-gt v7, v2, :cond_72
+    if-gt v7, v2, :cond_4
 
     .line 83
     .line 84
-    if-eqz v3, :cond_59
+    if-eqz v3, :cond_2
 
     .line 85
     .line 86
@@ -1567,7 +1567,7 @@
     .line 88
     .line 89
     .line 90
-    :cond_59
+    :cond_2
     array-length v3, v8
 
     .line 91
@@ -1583,18 +1583,18 @@
 
     .line 96
     .line 97
-    if-le v3, v7, :cond_63
+    if-le v3, v7, :cond_3
 
     .line 98
     .line 99
-    goto :goto_64
+    goto :goto_1
 
     .line 100
-    :cond_63
+    :cond_3
     array-length v7, p3
 
     .line 101
-    :goto_64
+    :goto_1
     invoke-virtual {v0, p3, v5, v7}, Ljava/security/MessageDigest;->update([BII)V
 
     .line 102
@@ -1622,10 +1622,10 @@
     add-int/2addr v6, v7
 
     .line 114
-    goto :goto_4f
+    goto :goto_0
 
     .line 115
-    :cond_72
+    :cond_4
     invoke-static {v8, v5}, Ljava/util/Arrays;->fill([BB)V
 
     .line 116
@@ -1682,14 +1682,14 @@
 
     .line 142
     .line 143
-    if-ne p2, p3, :cond_91
+    if-ne p2, p3, :cond_5
 
     .line 144
     .line 145
     return-object p1
 
     .line 146
-    :cond_91
+    :cond_5
     iget-object p1, p0, Llibs/rd;->b:Llibs/ye;
 
     .line 147
@@ -1711,7 +1711,7 @@
     throw p1
 
     .line 157
-    :catch_9c
+    :catch_0
     move-exception p1
 
     .line 158
@@ -1732,7 +1732,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

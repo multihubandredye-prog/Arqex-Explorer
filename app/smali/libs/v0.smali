@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final a()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/v0;->b:Ljava/lang/String;
@@ -44,7 +44,7 @@
 
     .line 4
     .line 5
-    if-eq v0, v1, :cond_9
+    if-eq v0, v1, :cond_0
 
     .line 6
     .line 7
@@ -55,22 +55,22 @@
     return-object v0
 
     .line 10
-    :cond_9
+    :cond_0
     iget-object v0, p0, Llibs/v0;->a:Ljava/lang/String;
 
     .line 11
     .line 12
-    if-nez v0, :cond_f
+    if-nez v0, :cond_1
 
     .line 13
     .line 14
     const/4 v0, 0x0
 
     .line 15
-    goto :goto_16
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_1
     sget-object v1, Llibs/ue3;->c:Ljava/nio/charset/Charset;
 
     .line 17
@@ -86,7 +86,7 @@
     move-result-object v0
 
     .line 23
-    :goto_16
+    :goto_0
     iput-object v0, p0, Llibs/v0;->b:Ljava/lang/String;
 
     .line 24
@@ -95,7 +95,7 @@
 .end method
 
 .method public final b(Landroid/os/Parcel;)V
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/v0;->a:Ljava/lang/String;
@@ -112,45 +112,45 @@
     const/4 v3, 0x1
 
     .line 7
-    if-eq v0, v1, :cond_a
+    if-eq v0, v1, :cond_0
 
     .line 8
     .line 9
     const/4 v0, 0x1
 
     .line 10
-    goto :goto_b
+    goto :goto_0
 
     .line 11
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
     .line 12
-    :goto_b
+    :goto_0
     iget-object v4, p0, Llibs/v0;->b:Ljava/lang/String;
 
     .line 13
     .line 14
-    if-eq v4, v1, :cond_11
+    if-eq v4, v1, :cond_1
 
     .line 15
     .line 16
     const/4 v1, 0x1
 
     .line 17
-    goto :goto_12
+    goto :goto_1
 
     .line 18
-    :cond_11
+    :cond_1
     const/4 v1, 0x0
 
     .line 19
-    :goto_12
-    if-eqz v0, :cond_24
+    :goto_1
+    if-eqz v0, :cond_2
 
     .line 20
     .line 21
-    if-eqz v1, :cond_24
+    if-eqz v1, :cond_2
 
     .line 22
     .line 23
@@ -180,8 +180,8 @@
     return-void
 
     .line 37
-    :cond_24
-    if-eqz v0, :cond_2f
+    :cond_2
+    if-eqz v0, :cond_3
 
     .line 38
     .line 39
@@ -202,8 +202,8 @@
     return-void
 
     .line 48
-    :cond_2f
-    if-eqz v1, :cond_3b
+    :cond_3
+    if-eqz v1, :cond_4
 
     .line 49
     .line 50
@@ -227,7 +227,7 @@
     return-void
 
     .line 60
-    :cond_3b
+    :cond_4
     const-string p1, "Neither encoded nor decoded"
 
     .line 61

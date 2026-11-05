@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/lv2;-><init>()V
@@ -55,7 +55,7 @@
 
 # virtual methods
 .method public final g(Llibs/rw2;)V
-    .registers 12
+    .locals 10
 
     .line 1
     const/4 v0, 0x2
@@ -109,7 +109,7 @@
 
     .line 25
     .line 26
-    if-ne v2, v4, :cond_20
+    if-ne v2, v4, :cond_0
 
     .line 27
     .line 28
@@ -121,10 +121,10 @@
     move-result v2
 
     .line 32
-    goto :goto_24
+    goto :goto_0
 
     .line 33
-    :cond_20
+    :cond_0
     invoke-virtual {p1, v0}, Llibs/rw2;->x(I)V
 
     .line 34
@@ -133,7 +133,7 @@
     const/4 v2, 0x0
 
     .line 37
-    :goto_24
+    :goto_0
     invoke-virtual {v1, p1}, Llibs/oj0;->d(Llibs/rw2;)J
 
     .line 38
@@ -302,7 +302,7 @@
 
     .line 118
     .line 119
-    if-ne v7, v4, :cond_7d
+    if-ne v7, v4, :cond_1
 
     .line 120
     .line 121
@@ -314,10 +314,10 @@
     move-result v0
 
     .line 125
-    goto :goto_81
+    goto :goto_1
 
     .line 126
-    :cond_7d
+    :cond_1
     invoke-virtual {p1, v0}, Llibs/rw2;->x(I)V
 
     .line 127
@@ -326,8 +326,8 @@
     const/4 v0, 0x0
 
     .line 130
-    :goto_81
-    if-lez v6, :cond_88
+    :goto_1
+    if-lez v6, :cond_2
 
     .line 131
     .line 132
@@ -340,12 +340,12 @@
     .line 135
     .line 136
     .line 137
-    :cond_88
+    :cond_2
     iget-object v1, p0, Llibs/jv2;->f:Llibs/pu2;
 
     .line 138
     .line 139
-    if-ne v1, v4, :cond_a8
+    if-ne v1, v4, :cond_3
 
     .line 140
     .line 141
@@ -353,7 +353,7 @@
 
     .line 142
     .line 143
-    :try_start_8e
+    :try_start_0
     new-instance v0, Ljava/util/ArrayList;
 
     .line 144
@@ -363,8 +363,8 @@
     .line 146
     .line 147
     .line 148
-    :goto_93
-    if-ge v3, v2, :cond_aa
+    :goto_2
+    if-ge v3, v2, :cond_4
 
     .line 149
     .line 150
@@ -377,8 +377,8 @@
 
     .line 154
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-    :try_end_9c
-    .catch Llibs/sj; {:try_start_8e .. :try_end_9c} :catch_9f
+    :try_end_0
+    .catch Llibs/sj; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 155
     .line 156
@@ -387,10 +387,10 @@
 
     .line 158
     .line 159
-    goto :goto_93
+    goto :goto_2
 
     .line 160
-    :catch_9f
+    :catch_0
     move-exception p1
 
     .line 161
@@ -410,12 +410,12 @@
     throw v0
 
     .line 169
-    :cond_a8
+    :cond_3
     sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     .line 170
     .line 171
-    :cond_aa
+    :cond_4
     iput-object v0, p0, Llibs/jv2;->m:Ljava/util/List;
 
     .line 172

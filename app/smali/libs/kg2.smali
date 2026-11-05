@@ -13,7 +13,7 @@
 
 # direct methods
 .method public varargs constructor <init>(Ljava/lang/String;[F)V
-    .registers 3
+    .locals 0
 
     .line 18
     invoke-direct {p0, p1}, Llibs/mg2;-><init>(Ljava/lang/String;)V
@@ -25,7 +25,7 @@
 .end method
 
 .method public varargs constructor <init>(Llibs/jg2;[F)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/mg2;-><init>(Llibs/jg2;)V
@@ -42,7 +42,7 @@
 
     .line 8
     .line 9
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_0
 
     .line 10
     .line 11
@@ -58,14 +58,14 @@
 
     .line 16
     .line 17
-    :cond_10
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final a(F)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/kg2;->Two:Llibs/qr0;
@@ -88,7 +88,7 @@
 .end method
 
 .method public final b()Llibs/mg2;
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-super {p0}, Llibs/mg2;->b()Llibs/mg2;
@@ -119,7 +119,7 @@
 .end method
 
 .method public final c()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/kg2;->Three:F
@@ -138,7 +138,7 @@
 .end method
 
 .method public final clone()Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-super {p0}, Llibs/mg2;->b()Llibs/mg2;
@@ -169,7 +169,7 @@
 .end method
 
 .method public final e(Ljava/lang/Object;)V
-    .registers 6
+    .locals 4
 
     .line 1
     const-string v0, "PropertyValuesHolder"
@@ -184,7 +184,7 @@
 
     .line 6
     .line 7
-    if-eqz v2, :cond_e
+    if-eqz v2, :cond_0
 
     .line 8
     .line 9
@@ -200,12 +200,12 @@
     return-void
 
     .line 15
-    :cond_e
+    :cond_0
     iget-object v2, p0, Llibs/mg2;->Y:Llibs/jg2;
 
     .line 16
     .line 17
-    if-eqz v2, :cond_1c
+    if-eqz v2, :cond_1
 
     .line 18
     .line 19
@@ -229,16 +229,16 @@
     return-void
 
     .line 29
-    :cond_1c
+    :cond_1
     iget-object v2, p0, Llibs/mg2;->Z:Ljava/lang/reflect/Method;
 
     .line 30
     .line 31
-    if-eqz v2, :cond_42
+    if-eqz v2, :cond_2
 
     .line 32
     .line 33
-    :try_start_20
+    :try_start_0
     iget v2, p0, Llibs/kg2;->Three:F
 
     .line 34
@@ -263,9 +263,9 @@
     .line 43
     .line 44
     invoke-virtual {v2, p1, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_2e
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_20 .. :try_end_2e} :catch_31
-    .catch Ljava/lang/IllegalAccessException; {:try_start_20 .. :try_end_2e} :catch_2f
+    :try_end_0
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 45
     .line 46
@@ -273,21 +273,21 @@
     return-void
 
     .line 48
-    :catch_2f
+    :catch_0
     move-exception p1
 
     .line 49
-    goto :goto_33
+    goto :goto_0
 
     .line 50
-    :catch_31
+    :catch_1
     move-exception p1
 
     .line 51
-    goto :goto_3b
+    goto :goto_1
 
     .line 52
-    :goto_33
+    :goto_0
     invoke-virtual {p1}, Ljava/lang/IllegalAccessException;->toString()Ljava/lang/String;
 
     .line 53
@@ -301,10 +301,10 @@
     .line 57
     .line 58
     .line 59
-    goto :goto_42
+    goto :goto_2
 
     .line 60
-    :goto_3b
+    :goto_1
     invoke-virtual {p1}, Ljava/lang/reflect/InvocationTargetException;->toString()Ljava/lang/String;
 
     .line 61
@@ -318,13 +318,13 @@
     .line 65
     .line 66
     .line 67
-    :cond_42
-    :goto_42
+    :cond_2
+    :goto_2
     return-void
 .end method
 
 .method public final varargs f([F)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-super {p0, p1}, Llibs/mg2;->f([F)V
@@ -348,21 +348,21 @@
 .end method
 
 .method public final i(Ljava/lang/Class;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/mg2;->Y:Llibs/jg2;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     invoke-super {p0, p1}, Llibs/mg2;->i(Ljava/lang/Class;)V
 
     .line 7

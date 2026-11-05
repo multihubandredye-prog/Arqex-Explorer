@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>([B)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/Theme;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final c()Ljava/lang/String;
-    .registers 11
+    .locals 10
 
     .line 1
     sget-object v0, Llibs/yh3;->a:Ljava/lang/String;
@@ -46,7 +46,7 @@
     const/4 v2, 0x0
 
     .line 6
-    :goto_5
+    :goto_0
     iget-object v3, p0, Llibs/t10;->X:[B
 
     .line 7
@@ -66,7 +66,7 @@
 
     .line 14
     .line 15
-    if-ge v1, v4, :cond_2f
+    if-ge v1, v4, :cond_3
 
     .line 16
     .line 17
@@ -82,7 +82,7 @@
 
     .line 22
     .line 23
-    if-ne v8, v7, :cond_1d
+    if-ne v8, v7, :cond_0
 
     .line 24
     .line 25
@@ -94,15 +94,15 @@
 
     .line 28
     .line 29
-    goto :goto_5
+    goto :goto_0
 
     .line 30
-    :cond_1d
+    :cond_0
     and-int/lit16 v2, v3, 0xe0
 
     .line 31
     .line 32
-    if-ne v2, v6, :cond_25
+    if-ne v2, v6, :cond_1
 
     .line 33
     .line 34
@@ -110,19 +110,19 @@
 
     .line 35
     .line 36
-    :goto_23
+    :goto_1
     move v2, v4
 
     .line 37
-    goto :goto_5
+    goto :goto_0
 
     .line 38
-    :cond_25
+    :cond_1
     and-int/lit16 v2, v3, 0xc0
 
     .line 39
     .line 40
-    if-ne v2, v5, :cond_2c
+    if-ne v2, v5, :cond_2
 
     .line 41
     .line 42
@@ -130,18 +130,18 @@
 
     .line 43
     .line 44
-    goto :goto_23
+    goto :goto_1
 
     .line 45
-    :cond_2c
+    :cond_2
     add-int/lit8 v1, v1, 0x1
 
     .line 46
     .line 47
-    goto :goto_23
+    goto :goto_1
 
     .line 48
-    :cond_2f
+    :cond_3
     new-array v1, v2, [C
 
     .line 49
@@ -149,11 +149,11 @@
     const/4 v2, 0x0
 
     .line 51
-    :goto_32
+    :goto_2
     array-length v4, v3
 
     .line 52
-    if-ge v0, v4, :cond_bb
+    if-ge v0, v4, :cond_8
 
     .line 53
     .line 54
@@ -165,7 +165,7 @@
 
     .line 57
     .line 58
-    if-ne v8, v7, :cond_71
+    if-ne v8, v7, :cond_4
 
     .line 59
     .line 60
@@ -282,15 +282,15 @@
     move v2, v9
 
     .line 113
-    goto :goto_b4
+    goto :goto_4
 
     .line 114
-    :cond_71
+    :cond_4
     and-int/lit16 v8, v4, 0xe0
 
     .line 115
     .line 116
-    if-ne v8, v6, :cond_8d
+    if-ne v8, v6, :cond_5
 
     .line 117
     .line 118
@@ -343,10 +343,10 @@
 
     .line 140
     .line 141
-    goto :goto_b4
+    goto :goto_4
 
     .line 142
-    :cond_8d
+    :cond_5
     and-int/lit16 v8, v4, 0xd0
 
     .line 143
@@ -355,7 +355,7 @@
 
     .line 145
     .line 146
-    if-ne v8, v9, :cond_a2
+    if-ne v8, v9, :cond_6
 
     .line 147
     .line 148
@@ -375,7 +375,7 @@
 
     .line 155
     .line 156
-    :goto_9b
+    :goto_3
     and-int/lit8 v8, v8, 0x3f
 
     .line 157
@@ -390,15 +390,15 @@
 
     .line 161
     .line 162
-    goto :goto_b4
+    goto :goto_4
 
     .line 163
-    :cond_a2
+    :cond_6
     and-int/lit16 v8, v4, 0xc0
 
     .line 164
     .line 165
-    if-ne v8, v5, :cond_af
+    if-ne v8, v5, :cond_7
 
     .line 166
     .line 167
@@ -418,10 +418,10 @@
 
     .line 174
     .line 175
-    goto :goto_9b
+    goto :goto_3
 
     .line 176
-    :cond_af
+    :cond_7
     and-int/lit16 v4, v4, 0xff
 
     .line 177
@@ -433,7 +433,7 @@
 
     .line 180
     .line 181
-    :goto_b4
+    :goto_4
     add-int/lit8 v8, v2, 0x1
 
     .line 182
@@ -445,11 +445,11 @@
     move v2, v8
 
     .line 186
-    goto/16 :goto_32
+    goto/16 :goto_2
 
     .line 187
     .line 188
-    :cond_bb
+    :cond_8
     new-instance v0, Ljava/lang/String;
 
     .line 189
@@ -463,14 +463,14 @@
 .end method
 
 .method public final g(Llibs/Theme;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Llibs/t10;
 
     .line 2
     .line 3
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -480,7 +480,7 @@
     return p1
 
     .line 7
-    :cond_6
+    :cond_0
     check-cast p1, Llibs/t10;
 
     .line 8
@@ -505,7 +505,7 @@
 .end method
 
 .method public final h(Llibs/v60;)V
-    .registers 4
+    .locals 2
 
     .line 1
     const/16 v0, 0xc
@@ -525,7 +525,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/t10;->X:[B
@@ -544,7 +544,7 @@
 .end method
 
 .method public final i()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/t10;->X:[B
@@ -576,7 +576,7 @@
 .end method
 
 .method public final k()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -586,7 +586,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/t10;->c()Ljava/lang/String;

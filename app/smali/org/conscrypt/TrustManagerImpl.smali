@@ -49,7 +49,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-class v0, Lorg/conscrypt/TrustManagerImpl;
@@ -108,7 +108,7 @@
 .end method
 
 .method public constructor <init>(Ljava/security/KeyStore;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -119,7 +119,7 @@
 .end method
 
 .method public constructor <init>(Ljava/security/KeyStore;Lorg/conscrypt/CertPinManager;)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -130,7 +130,7 @@
 .end method
 
 .method public constructor <init>(Ljava/security/KeyStore;Lorg/conscrypt/CertPinManager;Lorg/conscrypt/ConscryptCertStore;)V
-    .registers 10
+    .locals 6
 
     const/4 v4, 0x0
 
@@ -151,7 +151,7 @@
 .end method
 
 .method private constructor <init>(Ljava/security/KeyStore;Lorg/conscrypt/CertPinManager;Lorg/conscrypt/ConscryptCertStore;Lorg/conscrypt/CertBlocklist;Lorg/conscrypt/ct/CertificateTransparency;)V
-    .registers 12
+    .locals 6
 
     .line 1
     invoke-direct {p0}, Ljavax/net/ssl/X509ExtendedTrustManager;-><init>()V
@@ -162,7 +162,7 @@
     const/4 v0, 0x0
 
     .line 5
-    :try_start_4
+    :try_start_0
     const-string v1, "PKIX"
 
     .line 6
@@ -173,11 +173,11 @@
     .line 9
     .line 10
     move-result-object v1
-    :try_end_a
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_a} :catch_73
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_6
 
     .line 11
-    :try_start_a
+    :try_start_1
     const-string v2, "X509"
 
     .line 12
@@ -188,11 +188,11 @@
     .line 15
     .line 16
     move-result-object v2
-    :try_end_10
-    .catch Ljava/lang/Exception; {:try_start_a .. :try_end_10} :catch_6b
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_5
 
     .line 17
-    :try_start_10
+    :try_start_2
     const-string v3, "AndroidCAStore"
 
     .line 18
@@ -213,7 +213,7 @@
     move-result v3
 
     .line 27
-    if-eqz v3, :cond_46
+    if-eqz v3, :cond_1
 
     .line 28
     .line 29
@@ -223,42 +223,42 @@
     .line 31
     .line 32
     move-result v3
-    :try_end_20
-    .catch Ljava/lang/Exception; {:try_start_10 .. :try_end_20} :catch_42
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
 
     .line 33
-    if-eqz v3, :cond_46
+    if-eqz v3, :cond_1
 
     .line 34
     .line 35
-    if-eqz p3, :cond_25
+    if-eqz p3, :cond_0
 
     .line 36
     .line 37
-    goto :goto_29
+    goto :goto_0
 
     .line 38
-    :cond_25
-    :try_start_25
+    :cond_0
+    :try_start_3
     invoke-static {}, Lorg/conscrypt/Platform;->newDefaultCertStore()Lorg/conscrypt/ConscryptCertStore;
 
     .line 39
     .line 40
     .line 41
     move-result-object p3
-    :try_end_29
-    .catch Ljava/lang/Exception; {:try_start_25 .. :try_end_29} :catch_3a
+    :try_end_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
 
     .line 42
-    :goto_29
-    :try_start_29
+    :goto_0
+    :try_start_4
     new-instance v3, Lorg/conscrypt/TrustedCertificateIndex;
 
     .line 43
     .line 44
     invoke-direct {v3}, Lorg/conscrypt/TrustedCertificateIndex;-><init>()V
-    :try_end_2e
-    .catch Ljava/lang/Exception; {:try_start_29 .. :try_end_2e} :catch_32
+    :try_end_4
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
 
     .line 45
     .line 46
@@ -272,10 +272,10 @@
     move-object p3, v0
 
     .line 50
-    goto :goto_57
+    goto :goto_2
 
     .line 51
-    :catch_32
+    :catch_0
     move-exception v3
 
     .line 52
@@ -294,18 +294,18 @@
     move-object p3, v0
 
     .line 57
-    goto/16 :goto_7a
+    goto/16 :goto_3
 
     .line 58
     .line 59
-    :catch_3a
+    :catch_1
     move-exception v3
 
     .line 60
     move-object p3, v0
 
     .line 61
-    :goto_3c
+    :goto_1
     move-object v4, v3
 
     .line 62
@@ -318,11 +318,11 @@
     move-object v1, p3
 
     .line 65
-    goto/16 :goto_7a
+    goto/16 :goto_3
 
     .line 66
     .line 67
-    :catch_42
+    :catch_2
     move-exception v3
 
     .line 68
@@ -332,22 +332,22 @@
     move-object p3, p1
 
     .line 70
-    goto :goto_3c
+    goto :goto_1
 
     .line 71
-    :cond_46
-    :try_start_46
+    :cond_1
+    :try_start_5
     invoke-static {p1}, Lorg/conscrypt/TrustManagerImpl;->acceptedIssuers(Ljava/security/KeyStore;)[Ljava/security/cert/X509Certificate;
 
     .line 72
     .line 73
     .line 74
     move-result-object p1
-    :try_end_4a
-    .catch Ljava/lang/Exception; {:try_start_46 .. :try_end_4a} :catch_63
+    :try_end_5
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_4
 
     .line 75
-    :try_start_4a
+    :try_start_6
     new-instance v3, Lorg/conscrypt/TrustedCertificateIndex;
 
     .line 76
@@ -361,8 +361,8 @@
 
     .line 81
     invoke-direct {v3, v4}, Lorg/conscrypt/TrustedCertificateIndex;-><init>(Ljava/util/Set;)V
-    :try_end_53
-    .catch Ljava/lang/Exception; {:try_start_4a .. :try_end_53} :catch_5b
+    :try_end_6
+    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_3
 
     .line 82
     .line 83
@@ -379,7 +379,7 @@
     move-object p1, v0
 
     .line 88
-    :goto_57
+    :goto_2
     move-object v5, v4
 
     .line 89
@@ -389,10 +389,10 @@
     move-object v0, v5
 
     .line 91
-    goto :goto_7e
+    goto :goto_4
 
     .line 92
-    :catch_5b
+    :catch_3
     move-exception v3
 
     .line 93
@@ -414,10 +414,10 @@
     move-object p1, v0
 
     .line 99
-    goto :goto_7a
+    goto :goto_3
 
     .line 100
-    :catch_63
+    :catch_4
     move-exception v3
 
     .line 101
@@ -439,10 +439,10 @@
     move-object p3, p1
 
     .line 107
-    goto :goto_7a
+    goto :goto_3
 
     .line 108
-    :catch_6b
+    :catch_5
     move-exception v3
 
     .line 109
@@ -464,10 +464,10 @@
     move-object v3, v1
 
     .line 115
-    goto :goto_7a
+    goto :goto_3
 
     .line 116
-    :catch_73
+    :catch_6
     move-exception v3
 
     .line 117
@@ -489,7 +489,7 @@
     move-object v3, v2
 
     .line 123
-    :goto_7a
+    :goto_3
     move-object v5, v3
 
     .line 124
@@ -502,8 +502,8 @@
     move-object v2, v5
 
     .line 127
-    :goto_7e
-    if-nez p5, :cond_84
+    :goto_4
+    if-nez p5, :cond_2
 
     .line 128
     .line 129
@@ -515,8 +515,8 @@
     move-result-object p5
 
     .line 133
-    :cond_84
-    if-nez p4, :cond_8a
+    :cond_2
+    if-nez p4, :cond_3
 
     .line 134
     .line 135
@@ -528,7 +528,7 @@
     move-result-object p4
 
     .line 139
-    :cond_8a
+    :cond_3
     iput-object p2, p0, Lorg/conscrypt/TrustManagerImpl;->pinManager:Lorg/conscrypt/CertPinManager;
 
     .line 140
@@ -586,13 +586,13 @@
 .end method
 
 .method private static acceptedIssuers(Ljava/security/KeyStore;)[Ljava/security/cert/X509Certificate;
-    .registers 5
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :try_start_1
+    :try_start_0
     new-instance v1, Ljava/util/ArrayList;
 
     .line 3
@@ -610,8 +610,8 @@
     move-result-object v2
 
     .line 11
-    :cond_a
-    :goto_a
+    :cond_0
+    :goto_0
     invoke-interface {v2}, Ljava/util/Enumeration;->hasMoreElements()Z
 
     .line 12
@@ -620,7 +620,7 @@
     move-result v3
 
     .line 15
-    if-eqz v3, :cond_22
+    if-eqz v3, :cond_1
 
     .line 16
     .line 17
@@ -648,7 +648,7 @@
 
     .line 28
     .line 29
-    if-eqz v3, :cond_a
+    if-eqz v3, :cond_0
 
     .line 30
     .line 31
@@ -657,10 +657,10 @@
     .line 32
     .line 33
     .line 34
-    goto :goto_a
+    goto :goto_0
 
     .line 35
-    :cond_22
+    :cond_1
     new-array p0, v0, [Ljava/security/cert/X509Certificate;
 
     .line 36
@@ -674,15 +674,15 @@
 
     .line 41
     check-cast p0, [Ljava/security/cert/X509Certificate;
-    :try_end_2a
-    .catch Ljava/security/KeyStoreException; {:try_start_1 .. :try_end_2a} :catch_2b
+    :try_end_0
+    .catch Ljava/security/KeyStoreException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 42
     .line 43
     return-object p0
 
     .line 44
-    :catch_2b
+    :catch_0
     new-array p0, v0, [Ljava/security/cert/X509Certificate;
 
     .line 45
@@ -691,14 +691,14 @@
 .end method
 
 .method private checkBlocklist(Ljava/security/cert/X509Certificate;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/TrustManagerImpl;->blocklist:Lorg/conscrypt/CertBlocklist;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
@@ -718,14 +718,14 @@
     move-result v0
 
     .line 13
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     .line 14
     .line 15
-    goto :goto_23
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_0
     new-instance v0, Ljava/security/cert/CertificateException;
 
     .line 17
@@ -764,13 +764,13 @@
     throw v0
 
     .line 36
-    :cond_23
-    :goto_23
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method private checkTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljavax/net/ssl/SSLSession;Ljavax/net/ssl/SSLParameters;Z)Ljava/util/List;
-    .registers 17
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
@@ -787,7 +787,7 @@
 
     const/4 v0, 0x0
 
-    if-eqz p3, :cond_13
+    if-eqz p3, :cond_0
 
     .line 85
     invoke-interface {p3}, Ljavax/net/ssl/SSLSession;->getPeerHost()Ljava/lang/String;
@@ -810,19 +810,19 @@
 
     move-object v7, v3
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     move-object v6, v0
 
     move-object v7, v6
 
     move-object v9, v7
 
-    :goto_16
-    if-eqz p3, :cond_30
+    :goto_0
+    if-eqz p3, :cond_1
 
-    if-eqz p4, :cond_30
+    if-eqz p4, :cond_1
 
     .line 88
     invoke-static {p4}, Llibs/Lima;->i(Ljavax/net/ssl/SSLParameters;)Ljava/lang/String;
@@ -836,7 +836,7 @@
 
     move-result p4
 
-    if-eqz p4, :cond_30
+    if-eqz p4, :cond_1
 
     .line 90
     invoke-direct {p0}, Lorg/conscrypt/TrustManagerImpl;->getHttpsVerifier()Lorg/conscrypt/ConscryptHostnameVerifier;
@@ -848,9 +848,9 @@
 
     move-result p3
 
-    if-eqz p3, :cond_36
+    if-eqz p3, :cond_2
 
-    :cond_30
+    :cond_1
     move-object v4, p0
 
     move-object v5, p1
@@ -859,10 +859,10 @@
 
     move/from16 v10, p5
 
-    goto :goto_3c
+    goto :goto_1
 
     .line 92
-    :cond_36
+    :cond_2
     const-string p1, "No subjectAltNames on the certificate match"
 
     invoke-static {p1}, Llibs/fg3;->e(Ljava/lang/String;)V
@@ -870,7 +870,7 @@
     return-object v0
 
     .line 93
-    :goto_3c
+    :goto_1
     invoke-direct/range {v4 .. v10}, Lorg/conscrypt/TrustManagerImpl;->checkTrusted([Ljava/security/cert/X509Certificate;[B[BLjava/lang/String;Ljava/lang/String;Z)Ljava/util/List;
 
     move-result-object p1
@@ -879,7 +879,7 @@
 .end method
 
 .method private checkTrusted([Ljava/security/cert/X509Certificate;[B[BLjava/lang/String;Ljava/lang/String;Z)Ljava/util/List;
-    .registers 16
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
@@ -895,18 +895,18 @@
     .end annotation
 
     .line 1
-    if-eqz p1, :cond_4d
+    if-eqz p1, :cond_2
 
     .line 2
     .line 3
     array-length v0, p1
 
     .line 4
-    if-eqz v0, :cond_4d
+    if-eqz v0, :cond_2
 
     .line 5
     .line 6
-    if-eqz p4, :cond_4d
+    if-eqz p4, :cond_2
 
     .line 7
     .line 8
@@ -918,7 +918,7 @@
     move-result p4
 
     .line 12
-    if-nez p4, :cond_4d
+    if-nez p4, :cond_2
 
     .line 13
     .line 14
@@ -926,7 +926,7 @@
 
     .line 15
     .line 16
-    if-nez p4, :cond_45
+    if-nez p4, :cond_1
 
     .line 17
     .line 18
@@ -972,7 +972,7 @@
     move-result-object v0
 
     .line 40
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_0
 
     .line 41
     .line 42
@@ -994,16 +994,16 @@
     .line 50
     .line 51
     .line 52
-    goto :goto_37
+    goto :goto_0
 
     .line 53
-    :cond_34
+    :cond_0
     invoke-virtual {v6, p4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 54
     .line 55
     .line 56
-    :goto_37
+    :goto_0
     invoke-virtual {v8, p4}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 57
@@ -1038,7 +1038,7 @@
     return-object p1
 
     .line 70
-    :cond_45
+    :cond_1
     new-instance p1, Ljava/security/cert/CertificateException;
 
     .line 71
@@ -1055,7 +1055,7 @@
     throw p1
 
     .line 78
-    :cond_4d
+    :cond_2
     const-string p1, "null or zero-length parameter"
 
     .line 79
@@ -1072,7 +1072,7 @@
 .end method
 
 .method private checkTrustedRecursive([Ljava/security/cert/X509Certificate;[B[BLjava/lang/String;ZLjava/util/List;Ljava/util/List;Ljava/util/Set;)Ljava/util/List;
-    .registers 21
+    .locals 12
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
@@ -1119,7 +1119,7 @@
     const/4 v9, 0x1
 
     .line 12
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 13
     .line 14
@@ -1146,14 +1146,14 @@
 
     .line 24
     .line 25
-    :goto_18
+    :goto_0
     move-object v10, v0
 
     .line 26
-    goto :goto_2a
+    goto :goto_1
 
     .line 27
-    :cond_1a
+    :cond_0
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     .line 28
@@ -1185,10 +1185,10 @@
     move-result-object v0
 
     .line 42
-    goto :goto_18
+    goto :goto_0
 
     .line 43
-    :goto_2a
+    :goto_1
     invoke-direct {p0, v10}, Lorg/conscrypt/TrustManagerImpl;->checkBlocklist(Ljava/security/cert/X509Certificate;)V
 
     .line 44
@@ -1218,7 +1218,7 @@
     move-result v0
 
     .line 58
-    if-eqz v0, :cond_47
+    if-eqz v0, :cond_1
 
     .line 59
     .line 60
@@ -1250,7 +1250,7 @@
     return-object p1
 
     .line 72
-    :cond_47
+    :cond_1
     invoke-direct {p0, v10}, Lorg/conscrypt/TrustManagerImpl;->findAllTrustAnchorsByIssuerAndSignature(Ljava/security/cert/X509Certificate;)Ljava/util/Set;
 
     .line 73
@@ -1284,7 +1284,7 @@
     move-object v11, v4
 
     .line 87
-    :goto_56
+    :goto_2
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     .line 88
@@ -1293,7 +1293,7 @@
     move-result v5
 
     .line 91
-    if-eqz v5, :cond_87
+    if-eqz v5, :cond_3
 
     .line 92
     .line 93
@@ -1325,14 +1325,14 @@
     move-result v7
 
     .line 107
-    if-eqz v7, :cond_6d
+    if-eqz v7, :cond_2
 
     .line 108
     .line 109
-    goto :goto_56
+    goto :goto_2
 
     .line 110
-    :cond_6d
+    :cond_2
     invoke-interface {v8, v6}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     .line 111
@@ -1343,21 +1343,21 @@
     .line 114
     .line 115
     .line 116
-    :try_start_73
+    :try_start_0
     invoke-direct/range {p0 .. p8}, Lorg/conscrypt/TrustManagerImpl;->checkTrustedRecursive([Ljava/security/cert/X509Certificate;[B[BLjava/lang/String;ZLjava/util/List;Ljava/util/List;Ljava/util/Set;)Ljava/util/List;
 
     .line 117
     .line 118
     .line 119
     move-result-object p1
-    :try_end_77
-    .catch Ljava/security/cert/CertificateException; {:try_start_73 .. :try_end_77} :catch_78
+    :try_end_0
+    .catch Ljava/security/cert/CertificateException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 120
     return-object p1
 
     .line 121
-    :catch_78
+    :catch_0
     move-exception v0
 
     .line 122
@@ -1388,10 +1388,10 @@
     const/4 v0, 0x1
 
     .line 135
-    goto :goto_56
+    goto :goto_2
 
     .line 136
-    :cond_87
+    :cond_3
     invoke-interface {v3}, Ljava/util/List;->isEmpty()Z
 
     .line 137
@@ -1400,11 +1400,11 @@
     move-result v2
 
     .line 140
-    if-nez v2, :cond_9e
+    if-nez v2, :cond_5
 
     .line 141
     .line 142
-    if-nez v0, :cond_9d
+    if-nez v0, :cond_4
 
     .line 143
     .line 144
@@ -1440,11 +1440,11 @@
     return-object p1
 
     .line 158
-    :cond_9d
+    :cond_4
     throw v11
 
     .line 159
-    :cond_9e
+    :cond_5
     move-object/from16 v2, p6
 
     .line 160
@@ -1452,11 +1452,11 @@
     const/4 v3, 0x1
 
     .line 162
-    :goto_a1
+    :goto_3
     array-length v0, p1
 
     .line 163
-    if-ge v3, v0, :cond_f6
+    if-ge v3, v0, :cond_8
 
     .line 164
     .line 165
@@ -1472,14 +1472,14 @@
     move-result v0
 
     .line 171
-    if-eqz v0, :cond_ad
+    if-eqz v0, :cond_6
 
     .line 172
     .line 173
-    goto :goto_f3
+    goto :goto_4
 
     .line 174
-    :cond_ad
+    :cond_6
     invoke-virtual {v10}, Ljava/security/cert/X509Certificate;->getIssuerDN()Ljava/security/Principal;
 
     .line 175
@@ -1504,19 +1504,19 @@
     move-result v0
 
     .line 186
-    if-eqz v0, :cond_f3
+    if-eqz v0, :cond_7
 
     .line 187
     .line 188
-    :try_start_bb
+    :try_start_1
     invoke-virtual {v5}, Ljava/security/cert/X509Certificate;->checkValidity()V
 
     .line 189
     .line 190
     .line 191
     invoke-static {v5}, Lorg/conscrypt/ChainStrengthAnalyzer;->checkCert(Ljava/security/cert/X509Certificate;)V
-    :try_end_c1
-    .catch Ljava/security/cert/CertificateException; {:try_start_bb .. :try_end_c1} :catch_da
+    :try_end_1
+    .catch Ljava/security/cert/CertificateException; {:try_start_1 .. :try_end_1} :catch_2
 
     .line 192
     .line 193
@@ -1531,21 +1531,21 @@
     .line 198
     .line 199
     .line 200
-    :try_start_c7
+    :try_start_2
     invoke-direct/range {p0 .. p8}, Lorg/conscrypt/TrustManagerImpl;->checkTrustedRecursive([Ljava/security/cert/X509Certificate;[B[BLjava/lang/String;ZLjava/util/List;Ljava/util/List;Ljava/util/Set;)Ljava/util/List;
 
     .line 201
     .line 202
     .line 203
     move-result-object p1
-    :try_end_cb
-    .catch Ljava/security/cert/CertificateException; {:try_start_c7 .. :try_end_cb} :catch_cc
+    :try_end_2
+    .catch Ljava/security/cert/CertificateException; {:try_start_2 .. :try_end_2} :catch_1
 
     .line 204
     return-object p1
 
     .line 205
-    :catch_cc
+    :catch_1
     move-exception v0
 
     .line 206
@@ -1573,10 +1573,10 @@
     move-object v11, v0
 
     .line 218
-    goto :goto_f3
+    goto :goto_4
 
     .line 219
-    :catch_da
+    :catch_2
     move-exception v0
 
     .line 220
@@ -1626,16 +1626,16 @@
     move-object v11, v6
 
     .line 244
-    :cond_f3
-    :goto_f3
+    :cond_7
+    :goto_4
     add-int/lit8 v3, v3, 0x1
 
     .line 245
     .line 246
-    goto :goto_a1
+    goto :goto_3
 
     .line 247
-    :cond_f6
+    :cond_8
     iget-object v0, p0, Lorg/conscrypt/TrustManagerImpl;->intermediateIndex:Lorg/conscrypt/TrustedCertificateIndex;
 
     .line 248
@@ -1664,7 +1664,7 @@
     move-result-object v3
 
     .line 261
-    :goto_104
+    :goto_5
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     .line 262
@@ -1673,7 +1673,7 @@
     move-result v0
 
     .line 265
-    if-eqz v0, :cond_134
+    if-eqz v0, :cond_a
 
     .line 266
     .line 267
@@ -1705,14 +1705,14 @@
     move-result v0
 
     .line 281
-    if-eqz v0, :cond_11b
+    if-eqz v0, :cond_9
 
     .line 282
     .line 283
-    goto :goto_104
+    goto :goto_5
 
     .line 284
-    :cond_11b
+    :cond_9
     invoke-interface {v8, v5}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     .line 285
@@ -1723,21 +1723,21 @@
     .line 288
     .line 289
     .line 290
-    :try_start_121
+    :try_start_3
     invoke-direct/range {p0 .. p8}, Lorg/conscrypt/TrustManagerImpl;->checkTrustedRecursive([Ljava/security/cert/X509Certificate;[B[BLjava/lang/String;ZLjava/util/List;Ljava/util/List;Ljava/util/Set;)Ljava/util/List;
 
     .line 291
     .line 292
     .line 293
     move-result-object p1
-    :try_end_125
-    .catch Ljava/security/cert/CertificateException; {:try_start_121 .. :try_end_125} :catch_126
+    :try_end_3
+    .catch Ljava/security/cert/CertificateException; {:try_start_3 .. :try_end_3} :catch_3
 
     .line 294
     return-object p1
 
     .line 295
-    :catch_126
+    :catch_3
     move-exception v0
 
     .line 296
@@ -1765,18 +1765,18 @@
     .line 306
     .line 307
     .line 308
-    goto :goto_104
+    goto :goto_5
 
     .line 309
-    :cond_134
-    if-eqz v11, :cond_137
+    :cond_a
+    if-eqz v11, :cond_b
 
     .line 310
     .line 311
     throw v11
 
     .line 312
-    :cond_137
+    :cond_b
     iget-object p1, p0, Lorg/conscrypt/TrustManagerImpl;->factory:Ljava/security/cert/CertificateFactory;
 
     .line 313
@@ -1814,19 +1814,19 @@
     .line 329
     .line 330
     .line 331
-    goto :goto_14c
+    goto :goto_7
 
     .line 332
-    :goto_14b
+    :goto_6
     throw p2
 
     .line 333
-    :goto_14c
-    goto :goto_14b
+    :goto_7
+    goto :goto_6
 .end method
 
 .method private findAllTrustAnchorsByIssuerAndSignature(Ljava/security/cert/X509Certificate;)Ljava/util/Set;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1859,7 +1859,7 @@
     move-result v1
 
     .line 11
-    if-eqz v1, :cond_3f
+    if-eqz v1, :cond_2
 
     .line 12
     .line 13
@@ -1867,14 +1867,14 @@
 
     .line 14
     .line 15
-    if-nez v1, :cond_11
+    if-nez v1, :cond_0
 
     .line 16
     .line 17
-    goto :goto_3f
+    goto :goto_1
 
     .line 18
-    :cond_11
+    :cond_0
     invoke-interface {v1, p1}, Lorg/conscrypt/ConscryptCertStore;->findAllIssuers(Ljava/security/cert/X509Certificate;)Ljava/util/Set;
 
     .line 19
@@ -1891,14 +1891,14 @@
     move-result v1
 
     .line 26
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_1
 
     .line 27
     .line 28
-    goto :goto_3f
+    goto :goto_1
 
     .line 29
-    :cond_1c
+    :cond_1
     new-instance v0, Ljava/util/HashSet;
 
     .line 30
@@ -1924,7 +1924,7 @@
     move-result-object p1
 
     .line 42
-    :goto_29
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 43
@@ -1933,7 +1933,7 @@
     move-result v1
 
     .line 46
-    if-eqz v1, :cond_3f
+    if-eqz v1, :cond_2
 
     .line 47
     .line 48
@@ -1966,16 +1966,16 @@
     .line 61
     .line 62
     .line 63
-    goto :goto_29
+    goto :goto_0
 
     .line 64
-    :cond_3f
-    :goto_3f
+    :cond_2
+    :goto_1
     return-object v0
 .end method
 
 .method private findTrustAnchorBySubjectAndPublicKey(Ljava/security/cert/X509Certificate;)Ljava/security/cert/TrustAnchor;
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/TrustManagerImpl;->trustedCertificateIndex:Lorg/conscrypt/TrustedCertificateIndex;
@@ -1990,14 +1990,14 @@
     move-result-object v0
 
     .line 7
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
     return-object v0
 
     .line 10
-    :cond_9
+    :cond_0
     iget-object v0, p0, Lorg/conscrypt/TrustManagerImpl;->trustedCertificateStore:Lorg/conscrypt/ConscryptCertStore;
 
     .line 11
@@ -2005,14 +2005,14 @@
     const/4 v1, 0x0
 
     .line 13
-    if-nez v0, :cond_f
+    if-nez v0, :cond_1
 
     .line 14
     .line 15
     return-object v1
 
     .line 16
-    :cond_f
+    :cond_1
     invoke-interface {v0, p1}, Lorg/conscrypt/ConscryptCertStore;->getTrustAnchor(Ljava/security/cert/X509Certificate;)Ljava/security/cert/X509Certificate;
 
     .line 17
@@ -2021,7 +2021,7 @@
     move-result-object p1
 
     .line 20
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_2
 
     .line 21
     .line 22
@@ -2037,12 +2037,12 @@
     return-object v0
 
     .line 28
-    :cond_1b
+    :cond_2
     return-object v1
 .end method
 
 .method public static declared-synchronized getDefaultHostnameVerifier()Lorg/conscrypt/ConscryptHostnameVerifier;
-    .registers 2
+    .locals 2
 
     .line 1
     const-class v0, Lorg/conscrypt/TrustManagerImpl;
@@ -2052,10 +2052,10 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     sget-object v1, Lorg/conscrypt/TrustManagerImpl;->defaultHostnameVerifier:Lorg/conscrypt/ConscryptHostnameVerifier;
-    :try_end_5
-    .catchall {:try_start_3 .. :try_end_5} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 5
     .line 6
@@ -2065,21 +2065,21 @@
     return-object v1
 
     .line 8
-    :catchall_7
+    :catchall_0
     move-exception v1
 
     .line 9
-    :try_start_8
+    :try_start_1
     monitor-exit v0
-    :try_end_9
-    .catchall {:try_start_8 .. :try_end_9} :catchall_7
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 10
     throw v1
 .end method
 
 .method private static getHandshakeSessionOrThrow(Ljavax/net/ssl/SSLSocket;)Ljavax/net/ssl/SSLSession;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-static {p0}, Llibs/Lima;->n(Ljavax/net/ssl/SSLSocket;)Ljavax/net/ssl/SSLSession;
@@ -2090,14 +2090,14 @@
     move-result-object p0
 
     .line 5
-    if-eqz p0, :cond_7
+    if-eqz p0, :cond_0
 
     .line 6
     .line 7
     return-object p0
 
     .line 8
-    :cond_7
+    :cond_0
     const-string p0, "Not in handshake; no session available"
 
     .line 9
@@ -2114,33 +2114,33 @@
 .end method
 
 .method private getHttpsVerifier()Lorg/conscrypt/ConscryptHostnameVerifier;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/TrustManagerImpl;->hostnameVerifier:Lorg/conscrypt/ConscryptHostnameVerifier;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     return-object v0
 
     .line 6
-    :cond_5
+    :cond_0
     sget-object v0, Lorg/conscrypt/TrustManagerImpl;->defaultHostnameVerifier:Lorg/conscrypt/ConscryptHostnameVerifier;
 
     .line 7
     .line 8
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_1
 
     .line 9
     .line 10
     return-object v0
 
     .line 11
-    :cond_a
+    :cond_1
     invoke-static {}, Lorg/conscrypt/Platform;->getDefaultHostnameVerifier()Lorg/conscrypt/ConscryptHostnameVerifier;
 
     .line 12
@@ -2153,7 +2153,7 @@
 .end method
 
 .method private static getOcspDataFromSession(Ljavax/net/ssl/SSLSession;)[B
-    .registers 4
+    .locals 3
 
     .line 1
     instance-of v0, p0, Lorg/conscrypt/ConscryptSession;
@@ -2163,7 +2163,7 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 5
     .line 6
@@ -2179,11 +2179,11 @@
     move-result-object p0
 
     .line 12
-    goto :goto_32
+    goto :goto_2
 
     .line 13
-    :cond_c
-    :try_start_c
+    :cond_0
+    :try_start_0
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 14
@@ -2224,38 +2224,38 @@
 
     .line 32
     .line 33
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_1
 
     .line 34
     .line 35
     check-cast p0, Ljava/util/List;
-    :try_end_24
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_c .. :try_end_24} :catch_27
-    .catch Ljava/lang/SecurityException; {:try_start_c .. :try_end_24} :catch_27
-    .catch Ljava/lang/IllegalAccessException; {:try_start_c .. :try_end_24} :catch_27
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_c .. :try_end_24} :catch_27
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_c .. :try_end_24} :catch_25
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 36
     .line 37
-    goto :goto_32
+    goto :goto_2
 
     .line 38
-    :catch_25
+    :catch_0
     move-exception p0
 
     .line 39
-    goto :goto_29
+    goto :goto_0
 
     .line 40
-    :catch_27
+    :catch_1
     nop
 
     .line 41
-    goto :goto_31
+    goto :goto_1
 
     .line 42
-    :goto_29
+    :goto_0
     invoke-virtual {p0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
 
     .line 43
@@ -2272,13 +2272,13 @@
     return-object v1
 
     .line 50
-    :cond_31
-    :goto_31
+    :cond_1
+    :goto_1
     move-object p0, v1
 
     .line 51
-    :goto_32
-    if-eqz p0, :cond_43
+    :goto_2
+    if-eqz p0, :cond_3
 
     .line 52
     .line 53
@@ -2290,14 +2290,14 @@
     move-result v0
 
     .line 57
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_2
 
     .line 58
     .line 59
-    goto :goto_43
+    goto :goto_3
 
     .line 60
-    :cond_3b
+    :cond_2
     const/4 v0, 0x0
 
     .line 61
@@ -2316,20 +2316,20 @@
     return-object p0
 
     .line 68
-    :cond_43
-    :goto_43
+    :cond_3
+    :goto_3
     return-object v1
 .end method
 
 .method private getTlsSctDataFromSession(Ljavax/net/ssl/SSLSession;)[B
-    .registers 5
+    .locals 3
 
     .line 1
     instance-of v0, p1, Lorg/conscrypt/ConscryptSession;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -2348,11 +2348,11 @@
     return-object p1
 
     .line 12
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
     .line 13
-    :try_start_c
+    :try_start_0
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 14
@@ -2393,24 +2393,24 @@
 
     .line 32
     .line 33
-    if-eqz v1, :cond_2d
+    if-eqz v1, :cond_1
 
     .line 34
     .line 35
     check-cast p1, [B
-    :try_end_24
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_c .. :try_end_24} :catch_2d
-    .catch Ljava/lang/SecurityException; {:try_start_c .. :try_end_24} :catch_2d
-    .catch Ljava/lang/IllegalAccessException; {:try_start_c .. :try_end_24} :catch_2d
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_c .. :try_end_24} :catch_2d
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_c .. :try_end_24} :catch_25
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 36
     .line 37
     return-object p1
 
     .line 38
-    :catch_25
+    :catch_0
     move-exception p1
 
     .line 39
@@ -2427,13 +2427,13 @@
     .line 44
     .line 45
     .line 46
-    :catch_2d
-    :cond_2d
+    :catch_1
+    :cond_1
     return-object v0
 .end method
 
 .method private static revocationOptions()Ljava/util/Set;
-    .registers 2
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -2491,7 +2491,7 @@
 .end method
 
 .method public static declared-synchronized setDefaultHostnameVerifier(Lorg/conscrypt/ConscryptHostnameVerifier;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Lorg/conscrypt/TrustManagerImpl;
@@ -2501,10 +2501,10 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     sput-object p0, Lorg/conscrypt/TrustManagerImpl;->defaultHostnameVerifier:Lorg/conscrypt/ConscryptHostnameVerifier;
-    :try_end_5
-    .catchall {:try_start_3 .. :try_end_5} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 5
     .line 6
@@ -2514,31 +2514,31 @@
     return-void
 
     .line 8
-    :catchall_7
+    :catchall_0
     move-exception p0
 
     .line 9
-    :try_start_8
+    :try_start_1
     monitor-exit v0
-    :try_end_9
-    .catchall {:try_start_8 .. :try_end_9} :catchall_7
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 10
     throw p0
 .end method
 
 .method private setOcspResponses(Ljava/security/cert/PKIXParameters;Ljava/security/cert/X509Certificate;[B)V
-    .registers 9
+    .locals 5
 
     .line 1
-    if-nez p3, :cond_3
+    if-nez p3, :cond_0
 
     .line 2
     .line 3
-    goto :goto_3c
+    goto :goto_1
 
     .line 4
-    :cond_3
+    :cond_0
     new-instance v0, Ljava/util/ArrayList;
 
     .line 5
@@ -2567,8 +2567,8 @@
     const/4 v2, 0x0
 
     .line 18
-    :cond_11
-    if-ge v2, v1, :cond_26
+    :cond_1
+    if-ge v2, v1, :cond_2
 
     .line 19
     .line 20
@@ -2596,7 +2596,7 @@
     move-result v4
 
     .line 32
-    if-eqz v4, :cond_11
+    if-eqz v4, :cond_1
 
     .line 33
     .line 34
@@ -2608,19 +2608,19 @@
     move-result-object v1
 
     .line 38
-    goto :goto_27
+    goto :goto_0
 
     .line 39
-    :cond_26
+    :cond_2
     const/4 v1, 0x0
 
     .line 40
-    :goto_27
-    if-nez v1, :cond_3d
+    :goto_0
+    if-nez v1, :cond_3
 
     .line 41
     .line 42
-    :try_start_29
+    :try_start_0
     iget-object v1, p0, Lorg/conscrypt/TrustManagerImpl;->validator:Ljava/security/cert/CertPathValidator;
 
     .line 43
@@ -2639,8 +2639,8 @@
     .line 50
     .line 51
     move-result-object v1
-    :try_end_33
-    .catch Ljava/lang/UnsupportedOperationException; {:try_start_29 .. :try_end_33} :catch_3c
+    :try_end_0
+    .catch Ljava/lang/UnsupportedOperationException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 52
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -2657,16 +2657,16 @@
     .line 58
     .line 59
     .line 60
-    goto :goto_3d
+    goto :goto_2
 
     .line 61
-    :catch_3c
-    :goto_3c
+    :catch_0
+    :goto_1
     return-void
 
     .line 62
-    :cond_3d
-    :goto_3d
+    :cond_3
+    :goto_2
     invoke-static {p2, p3}, Ljava/util/Collections;->singletonMap(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map;
 
     .line 63
@@ -2689,7 +2689,7 @@
 .end method
 
 .method private static sortPotentialAnchors(Ljava/util/Set;)Ljava/util/Collection;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2714,14 +2714,14 @@
     const/4 v1, 0x1
 
     .line 6
-    if-gt v0, v1, :cond_8
+    if-gt v0, v1, :cond_0
 
     .line 7
     .line 8
     return-object p0
 
     .line 9
-    :cond_8
+    :cond_0
     new-instance v0, Ljava/util/ArrayList;
 
     .line 10
@@ -2744,7 +2744,7 @@
 .end method
 
 .method private static trustAnchors([Ljava/security/cert/X509Certificate;)Ljava/util/Set;
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
@@ -2775,8 +2775,8 @@
     const/4 v2, 0x0
 
     .line 9
-    :goto_8
-    if-ge v2, v1, :cond_18
+    :goto_0
+    if-ge v2, v1, :cond_0
 
     .line 10
     .line 11
@@ -2805,15 +2805,15 @@
 
     .line 23
     .line 24
-    goto :goto_8
+    goto :goto_0
 
     .line 25
-    :cond_18
+    :cond_0
     return-object v0
 .end method
 
 .method private verifyChain(Ljava/util/List;Ljava/util/List;Ljava/lang/String;Z[B[B)Ljava/util/List;
-    .registers 14
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2836,7 +2836,7 @@
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     iget-object v1, p0, Lorg/conscrypt/TrustManagerImpl;->factory:Ljava/security/cert/CertificateFactory;
 
     .line 4
@@ -2857,7 +2857,7 @@
     move-result v2
 
     .line 13
-    if-nez v2, :cond_b8
+    if-nez v2, :cond_6
 
     .line 14
     .line 15
@@ -2878,7 +2878,7 @@
     move-result-object v3
 
     .line 24
-    :goto_17
+    :goto_0
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     .line 25
@@ -2887,7 +2887,7 @@
     move-result v4
 
     .line 28
-    if-eqz v4, :cond_2e
+    if-eqz v4, :cond_0
 
     .line 29
     .line 30
@@ -2916,23 +2916,23 @@
     .line 41
     .line 42
     .line 43
-    goto :goto_17
+    goto :goto_0
 
     .line 44
-    :catch_2b
+    :catch_0
     move-exception p1
 
     .line 45
-    goto/16 :goto_c7
+    goto/16 :goto_6
 
     .line 46
     .line 47
-    :cond_2e
+    :cond_0
     iget-object v3, p0, Lorg/conscrypt/TrustManagerImpl;->pinManager:Lorg/conscrypt/CertPinManager;
 
     .line 48
     .line 49
-    if-eqz v3, :cond_35
+    if-eqz v3, :cond_1
 
     .line 50
     .line 51
@@ -2941,7 +2941,7 @@
     .line 52
     .line 53
     .line 54
-    :cond_35
+    :cond_1
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     .line 55
@@ -2956,8 +2956,8 @@
     const/4 v5, 0x0
 
     .line 60
-    :goto_3b
-    if-ge v5, v3, :cond_49
+    :goto_1
+    if-ge v5, v3, :cond_2
 
     .line 61
     .line 62
@@ -2982,15 +2982,15 @@
     .line 71
     .line 72
     .line 73
-    goto :goto_3b
+    goto :goto_1
 
     .line 74
-    :cond_49
-    if-nez p4, :cond_5c
+    :cond_2
+    if-nez p4, :cond_3
 
     .line 75
     .line 76
-    if-eqz p3, :cond_5c
+    if-eqz p3, :cond_3
 
     .line 77
     .line 78
@@ -2998,7 +2998,7 @@
 
     .line 79
     .line 80
-    if-eqz v3, :cond_5c
+    if-eqz v3, :cond_3
 
     .line 81
     .line 82
@@ -3010,7 +3010,7 @@
     move-result v3
 
     .line 86
-    if-eqz v3, :cond_5c
+    if-eqz v3, :cond_3
 
     .line 87
     .line 88
@@ -3023,7 +3023,7 @@
     .line 91
     .line 92
     .line 93
-    :cond_5c
+    :cond_3
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     .line 94
@@ -3032,22 +3032,22 @@
     move-result p3
 
     .line 97
-    if-eqz p3, :cond_63
+    if-eqz p3, :cond_4
 
     .line 98
     .line 99
-    goto :goto_a7
+    goto :goto_3
 
     .line 100
-    :cond_63
+    :cond_4
     invoke-static {p1}, Lorg/conscrypt/ChainStrengthAnalyzer;->check(Ljava/util/List;)V
-    :try_end_66
-    .catch Ljava/security/cert/CertificateException; {:try_start_2 .. :try_end_66} :catch_2b
+    :try_end_0
+    .catch Ljava/security/cert/CertificateException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 101
     .line 102
     .line 103
-    :try_start_66
+    :try_start_1
     new-instance p3, Ljava/util/HashSet;
 
     .line 104
@@ -3124,10 +3124,10 @@
     .line 143
     .line 144
     invoke-virtual {p3, v1, p2}, Ljava/security/cert/CertPathValidator;->validate(Ljava/security/cert/CertPath;Ljava/security/cert/CertPathParameters;)Ljava/security/cert/CertPathValidatorResult;
-    :try_end_92
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_66 .. :try_end_92} :catch_aa
-    .catch Ljava/security/cert/CertPathValidatorException; {:try_start_66 .. :try_end_92} :catch_a8
-    .catch Ljava/security/cert/CertificateException; {:try_start_66 .. :try_end_92} :catch_2b
+    :try_end_1
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/security/cert/CertPathValidatorException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/security/cert/CertificateException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 145
     .line 146
@@ -3135,8 +3135,8 @@
     const/4 p2, 0x1
 
     .line 148
-    :goto_93
-    :try_start_93
+    :goto_2
+    :try_start_2
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     .line 149
@@ -3145,7 +3145,7 @@
     move-result p3
 
     .line 152
-    if-ge p2, p3, :cond_a7
+    if-ge p2, p3, :cond_5
 
     .line 153
     .line 154
@@ -3174,29 +3174,29 @@
 
     .line 166
     .line 167
-    goto :goto_93
+    goto :goto_2
 
     .line 168
-    :cond_a7
-    :goto_a7
+    :cond_5
+    :goto_3
     return-object v2
 
     .line 169
-    :catch_a8
+    :catch_1
     move-exception p1
 
     .line 170
-    goto :goto_ac
+    goto :goto_4
 
     .line 171
-    :catch_aa
+    :catch_2
     move-exception p1
 
     .line 172
-    goto :goto_b2
+    goto :goto_5
 
     .line 173
-    :goto_ac
+    :goto_4
     new-instance p2, Ljava/security/cert/CertificateException;
 
     .line 174
@@ -3209,7 +3209,7 @@
     throw p2
 
     .line 179
-    :goto_b2
+    :goto_5
     new-instance p2, Ljava/security/cert/CertificateException;
 
     .line 180
@@ -3222,7 +3222,7 @@
     throw p2
 
     .line 185
-    :cond_b8
+    :cond_6
     new-instance p1, Ljava/security/cert/CertificateException;
 
     .line 186
@@ -3252,11 +3252,11 @@
     .line 198
     .line 199
     throw p1
-    :try_end_c7
-    .catch Ljava/security/cert/CertificateException; {:try_start_93 .. :try_end_c7} :catch_2b
+    :try_end_2
+    .catch Ljava/security/cert/CertificateException; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 200
-    :goto_c7
+    :goto_6
     sget-object p2, Lorg/conscrypt/TrustManagerImpl;->logger:Ljava/util/logging/Logger;
 
     .line 201
@@ -3300,21 +3300,21 @@
     .line 221
     .line 222
     .line 223
-    goto :goto_e0
+    goto :goto_8
 
     .line 224
-    :goto_df
+    :goto_7
     throw p1
 
     .line 225
-    :goto_e0
-    goto :goto_df
+    :goto_8
+    goto :goto_7
 .end method
 
 
 # virtual methods
 .method public checkClientTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
-    .registers 11
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
@@ -3351,7 +3351,7 @@
 .end method
 
 .method public checkClientTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
-    .registers 9
+    .locals 6
 
     const/4 v4, 0x0
 
@@ -3372,14 +3372,14 @@
 .end method
 
 .method public checkClientTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/net/Socket;)V
-    .registers 11
+    .locals 7
 
     .line 1
     instance-of v0, p3, Ljavax/net/ssl/SSLSocket;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -3409,10 +3409,10 @@
     move-object v4, v0
 
     .line 17
-    goto :goto_14
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     const/4 v0, 0x0
 
     .line 19
@@ -3422,7 +3422,7 @@
     move-object v5, v4
 
     .line 21
-    :goto_14
+    :goto_0
     const/4 v6, 0x1
 
     .line 22
@@ -3444,14 +3444,14 @@
 .end method
 
 .method public checkClientTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljavax/net/ssl/SSLEngine;)V
-    .registers 10
+    .locals 6
 
     .line 31
     invoke-static {p3}, Llibs/Lima;->m(Ljavax/net/ssl/SSLEngine;)Ljavax/net/ssl/SSLSession;
 
     move-result-object v3
 
-    if-eqz v3, :cond_12
+    if-eqz v3, :cond_0
 
     .line 32
     invoke-virtual {p3}, Ljavax/net/ssl/SSLEngine;->getSSLParameters()Ljavax/net/ssl/SSLParameters;
@@ -3471,7 +3471,7 @@
     return-void
 
     .line 33
-    :cond_12
+    :cond_0
     const-string p1, "Not in handshake; no session available"
 
     invoke-static {p1}, Llibs/fg3;->e(Ljava/lang/String;)V
@@ -3480,7 +3480,7 @@
 .end method
 
 .method public checkServerTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
-    .registers 11
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
@@ -3528,7 +3528,7 @@
 .end method
 
 .method public checkServerTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljavax/net/ssl/SSLSession;)Ljava/util/List;
-    .registers 10
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
@@ -3563,7 +3563,7 @@
 .end method
 
 .method public checkServerTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
-    .registers 9
+    .locals 6
 
     const/4 v4, 0x0
 
@@ -3584,7 +3584,7 @@
 .end method
 
 .method public checkServerTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/net/Socket;)V
-    .registers 4
+    .locals 0
 
     .line 14
     invoke-virtual {p0, p1, p2, p3}, Lorg/conscrypt/TrustManagerImpl;->getTrustedChainForServer([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/net/Socket;)Ljava/util/List;
@@ -3593,7 +3593,7 @@
 .end method
 
 .method public checkServerTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljavax/net/ssl/SSLEngine;)V
-    .registers 4
+    .locals 0
 
     .line 15
     invoke-virtual {p0, p1, p2, p3}, Lorg/conscrypt/TrustManagerImpl;->getTrustedChainForServer([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljavax/net/ssl/SSLEngine;)Ljava/util/List;
@@ -3602,14 +3602,14 @@
 .end method
 
 .method public getAcceptedIssuers()[Ljava/security/cert/X509Certificate;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/TrustManagerImpl;->acceptedIssuers:[Ljava/security/cert/X509Certificate;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -3628,7 +3628,7 @@
     return-object v0
 
     .line 12
-    :cond_b
+    :cond_0
     iget-object v0, p0, Lorg/conscrypt/TrustManagerImpl;->rootKeyStore:Ljava/security/KeyStore;
 
     .line 13
@@ -3645,7 +3645,7 @@
 .end method
 
 .method public getHostnameVerifier()Lorg/conscrypt/ConscryptHostnameVerifier;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/TrustManagerImpl;->hostnameVerifier:Lorg/conscrypt/ConscryptHostnameVerifier;
@@ -3656,7 +3656,7 @@
 .end method
 
 .method public getTrustedChainForServer([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/net/Socket;)Ljava/util/List;
-    .registers 11
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
@@ -3675,7 +3675,7 @@
 
     .line 2
     .line 3
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -3705,10 +3705,10 @@
     move-object v4, v0
 
     .line 17
-    goto :goto_14
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     const/4 v0, 0x0
 
     .line 19
@@ -3718,7 +3718,7 @@
     move-object v5, v4
 
     .line 21
-    :goto_14
+    :goto_0
     const/4 v6, 0x0
 
     .line 22
@@ -3743,7 +3743,7 @@
 .end method
 
 .method public getTrustedChainForServer([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljavax/net/ssl/SSLEngine;)Ljava/util/List;
-    .registers 10
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
@@ -3762,7 +3762,7 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_13
+    if-eqz v3, :cond_0
 
     .line 31
     invoke-virtual {p3}, Ljavax/net/ssl/SSLEngine;->getSSLParameters()Ljavax/net/ssl/SSLParameters;
@@ -3784,7 +3784,7 @@
     return-object p1
 
     .line 32
-    :cond_13
+    :cond_0
     const-string p1, "Not in handshake; no session available"
 
     invoke-static {p1}, Llibs/fg3;->e(Ljava/lang/String;)V
@@ -3795,7 +3795,7 @@
 .end method
 
 .method public handleTrustStorageUpdate()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/TrustManagerImpl;->acceptedIssuers:[Ljava/security/cert/X509Certificate;
@@ -3806,7 +3806,7 @@
 
     .line 4
     .line 5
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -3818,7 +3818,7 @@
     return-void
 
     .line 11
-    :cond_a
+    :cond_0
     invoke-static {v0}, Lorg/conscrypt/TrustManagerImpl;->trustAnchors([Ljava/security/cert/X509Certificate;)Ljava/util/Set;
 
     .line 12
@@ -3836,7 +3836,7 @@
 .end method
 
 .method public setHostnameVerifier(Lorg/conscrypt/ConscryptHostnameVerifier;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Lorg/conscrypt/TrustManagerImpl;->hostnameVerifier:Lorg/conscrypt/ConscryptHostnameVerifier;

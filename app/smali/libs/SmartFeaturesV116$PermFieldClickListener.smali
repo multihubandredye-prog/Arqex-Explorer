@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/widgets/MiEditText;ZZ)V
-    .registers 4
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,7 +32,7 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 5
+    .locals 3
 
     iget-object v0, p0, Llibs/SmartFeaturesV116$PermFieldClickListener;->permField:Lcom/mixplorer/widgets/MiEditText;
 
@@ -40,13 +40,13 @@
 
     iget-boolean v2, p0, Llibs/SmartFeaturesV116$PermFieldClickListener;->isFolder:Z
 
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_0
 
     invoke-static {v0, v2}, Llibs/SmartFeaturesV116;->openPermPickerDialog(Lcom/mixplorer/widgets/MiEditText;Z)V
 
     return-void
 
-    :cond_c
+    :cond_0
     invoke-static {v0, v2}, Llibs/SmartFeaturesV116;->showFixedPermNotice(Lcom/mixplorer/widgets/MiEditText;Z)V
 
     return-void

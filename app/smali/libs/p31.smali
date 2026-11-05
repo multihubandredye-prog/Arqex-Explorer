@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/r31;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/p31;->a:Llibs/r31;
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final a(ILjava/lang/String;)V
-    .registers 6
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/p31;->a:Llibs/r31;
@@ -62,7 +62,7 @@
 .end method
 
 .method public final b(ILjava/lang/String;)V
-    .registers 6
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/p31;->a:Llibs/r31;
@@ -94,14 +94,14 @@
 .end method
 
 .method public final c(II)V
-    .registers 6
+    .locals 3
 
     .line 1
     const/16 v0, 0xe
 
     .line 2
     .line 3
-    if-ne p1, v0, :cond_11
+    if-ne p1, v0, :cond_0
 
     .line 4
     .line 5
@@ -130,6 +130,6 @@
     .line 16
     .line 17
     .line 18
-    :cond_11
+    :cond_0
     return-void
 .end method

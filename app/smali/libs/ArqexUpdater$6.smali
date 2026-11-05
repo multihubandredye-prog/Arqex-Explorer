@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Context;)V
-    .registers 2
+    .locals 0
 
     .line 586
     iput-object p1, p0, Llibs/ArqexUpdater$6;->val$ctx:Landroid/content/Context;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .registers 4
+    .locals 1
 
     .line 588
     iget-object p2, p0, Llibs/ArqexUpdater$6;->val$ctx:Landroid/content/Context;
@@ -47,7 +47,6 @@
 
     const-string v0, "https://github.com/multihubandredye-prog/Arqex-Explorer/releases/latest"
 
-    # invokes: Llibs/ArqexUpdater;->openBrowser(Landroid/content/Context;Ljava/lang/String;)V
     invoke-static {p2, v0}, Llibs/ArqexUpdater;->access$100(Landroid/content/Context;Ljava/lang/String;)V
 
     .line 589

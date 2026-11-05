@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/TextEditorActivity;Lcom/mixplorer/widgets/MiEditor;ZI)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final f(Llibs/t4;)V
-    .registers 22
+    .locals 20
 
     .line 1
     move-object/from16 v1, p0
@@ -98,12 +98,12 @@
     const/4 v11, 0x0
 
     .line 24
-    :try_start_17
+    :try_start_0
     iget-boolean v5, v3, Lcom/mixplorer/widgets/MiEditor;->Tango:Z
 
     .line 25
     .line 26
-    if-eqz v5, :cond_117
+    if-eqz v5, :cond_9
 
     .line 27
     .line 28
@@ -137,14 +137,14 @@
     move-result v5
 
     .line 42
-    if-eqz v5, :cond_2c
+    if-eqz v5, :cond_0
 
     .line 43
     .line 44
     return-void
 
     .line 45
-    :cond_2c
+    :cond_0
     iget-boolean v5, v3, Lcom/mixplorer/widgets/MiEditor;->Whiskey:Z
 
     .line 46
@@ -152,7 +152,7 @@
     const/4 v7, 0x0
 
     .line 48
-    if-eqz v5, :cond_3c
+    if-eqz v5, :cond_2
 
     .line 49
     .line 50
@@ -165,28 +165,28 @@
     .line 53
     .line 54
     .line 55
-    :cond_36
+    :cond_1
     move-object v5, v7
 
     .line 56
-    goto/16 :goto_ac
+    goto/16 :goto_0
 
     .line 57
     .line 58
-    :catchall_39
+    :catchall_0
     move-exception v0
 
     .line 59
-    goto/16 :goto_123
+    goto/16 :goto_5
 
     .line 60
     .line 61
-    :cond_3c
+    :cond_2
     iget-boolean v5, v3, Lcom/mixplorer/widgets/MiEditor;->Sierra:Z
 
     .line 62
     .line 63
-    if-eqz v5, :cond_36
+    if-eqz v5, :cond_1
 
     .line 64
     .line 65
@@ -198,7 +198,7 @@
 
     .line 68
     .line 69
-    if-eqz v5, :cond_36
+    if-eqz v5, :cond_1
 
     .line 70
     .line 71
@@ -267,7 +267,7 @@
     move-result-object v5
 
     .line 104
-    if-eqz v5, :cond_98
+    if-eqz v5, :cond_3
 
     .line 105
     .line 106
@@ -279,7 +279,7 @@
     move-result v0
 
     .line 110
-    if-eqz v0, :cond_ac
+    if-eqz v0, :cond_4
 
     .line 111
     .line 112
@@ -340,7 +340,7 @@
 
     .line 140
     .line 141
-    if-eq v8, v12, :cond_ac
+    if-eq v8, v12, :cond_4
 
     .line 142
     .line 143
@@ -352,7 +352,7 @@
     move-result v8
 
     .line 147
-    if-eqz v8, :cond_ac
+    if-eqz v8, :cond_4
 
     .line 148
     .line 149
@@ -361,10 +361,10 @@
     .line 150
     .line 151
     .line 152
-    goto :goto_ac
+    goto :goto_0
 
     .line 153
-    :cond_98
+    :cond_3
     new-instance v4, Ljava/lang/Exception;
 
     .line 154
@@ -401,21 +401,21 @@
     .line 171
     .line 172
     throw v4
-    :try_end_ac
-    .catchall {:try_start_17 .. :try_end_ac} :catchall_39
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 173
-    :cond_ac
-    :goto_ac
+    :cond_4
+    :goto_0
     iget-boolean v0, v1, Llibs/hl3;->Z:Z
 
     .line 174
     .line 175
-    if-nez v0, :cond_cc
+    if-nez v0, :cond_6
 
     .line 176
     .line 177
-    :try_start_b0
+    :try_start_1
     iput-object v7, v2, Lcom/mixplorer/activities/TextEditorActivity;->I1:Llibs/kl3;
 
     .line 178
@@ -424,7 +424,7 @@
 
     .line 180
     .line 181
-    if-eqz v7, :cond_ba
+    if-eqz v7, :cond_5
 
     .line 182
     .line 183
@@ -436,12 +436,12 @@
 
     .line 186
     .line 187
-    :cond_ba
+    :cond_5
     iget-boolean v7, v3, Lcom/mixplorer/widgets/MiEditor;->O:Z
 
     .line 188
     .line 189
-    if-eqz v7, :cond_cf
+    if-eqz v7, :cond_7
 
     .line 190
     .line 191
@@ -469,24 +469,24 @@
     .line 201
     .line 202
     invoke-virtual {v2, v3, v7, v8, v10}, Lcom/mixplorer/activities/TextEditorActivity;->Exec(Lcom/mixplorer/widgets/MiEditor;JZ)V
-    :try_end_cc
-    .catchall {:try_start_b0 .. :try_end_cc} :catchall_39
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 203
     .line 204
     .line 205
-    :cond_cc
-    :goto_cc
+    :cond_6
+    :goto_1
     move-object v4, v3
 
     .line 206
     move-object v3, v2
 
     .line 207
-    goto :goto_107
+    goto :goto_4
 
     .line 208
-    :cond_cf
+    :cond_7
     const/4 v7, 0x2
 
     .line 209
@@ -494,11 +494,11 @@
 
     .line 210
     .line 211
-    if-ne v8, v7, :cond_db
+    if-ne v8, v7, :cond_8
 
     .line 212
     .line 213
-    :try_start_d4
+    :try_start_2
     invoke-virtual {v4}, Ljava/lang/String;->length()I
 
     .line 214
@@ -510,14 +510,14 @@
     sub-int/2addr v4, v10
 
     .line 218
-    :goto_d9
+    :goto_2
     int-to-long v7, v4
 
     .line 219
-    goto :goto_e0
+    goto :goto_3
 
     .line 220
-    :cond_db
+    :cond_8
     invoke-virtual {v3}, Landroid/widget/TextView;->getSelectionStart()I
 
     .line 221
@@ -526,10 +526,10 @@
     move-result v4
 
     .line 224
-    goto :goto_d9
+    goto :goto_2
 
     .line 225
-    :goto_e0
+    :goto_3
     iget-wide v12, v3, Lcom/mixplorer/widgets/MiEditor;->Kilo:J
 
     .line 226
@@ -568,8 +568,8 @@
     .line 241
     .line 242
     array-length v4, v4
-    :try_end_f2
-    .catchall {:try_start_d4 .. :try_end_f2} :catchall_39
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 243
     int-to-double v14, v4
@@ -600,7 +600,7 @@
     sub-long/2addr v12, v14
 
     .line 257
-    :try_start_100
+    :try_start_3
     invoke-static {v12, v13, v7, v8}, Ljava/lang/Math;->max(JJ)J
 
     .line 258
@@ -610,16 +610,16 @@
 
     .line 261
     iput-wide v7, v3, Lcom/mixplorer/widgets/MiEditor;->Kilo:J
-    :try_end_106
-    .catchall {:try_start_100 .. :try_end_106} :catchall_39
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 262
     .line 263
-    goto :goto_cc
+    goto :goto_1
 
     .line 264
-    :goto_107
-    :try_start_107
+    :goto_4
+    :try_start_4
     new-instance v2, Llibs/t8;
 
     .line 265
@@ -631,8 +631,8 @@
 
     .line 268
     invoke-direct/range {v2 .. v8}, Llibs/t8;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Comparable;Ljava/lang/Comparable;ZB)V
-    :try_end_10e
-    .catchall {:try_start_107 .. :try_end_10e} :catchall_114
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 269
     .line 270
@@ -643,7 +643,7 @@
     move-object v2, v3
 
     .line 273
-    :try_start_110
+    :try_start_5
     invoke-virtual {v2, v0}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 
     .line 274
@@ -652,17 +652,17 @@
     return-void
 
     .line 277
-    :catchall_114
+    :catchall_1
     move-exception v0
 
     .line 278
     move-object v2, v3
 
     .line 279
-    goto :goto_123
+    goto :goto_5
 
     .line 280
-    :cond_117
+    :cond_9
     new-instance v0, Lexceptions/NotSupportedException;
 
     .line 281
@@ -685,11 +685,11 @@
     .line 290
     .line 291
     throw v0
-    :try_end_123
-    .catchall {:try_start_110 .. :try_end_123} :catchall_39
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 292
-    :goto_123
+    :goto_5
     iput-boolean v11, v2, Lcom/mixplorer/activities/TextEditorActivity;->Romeo:Z
 
     .line 293

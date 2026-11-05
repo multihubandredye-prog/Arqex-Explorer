@@ -30,7 +30,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/v1;Llibs/zl0;Ljava/lang/String;Llibs/rp0;Llibs/m52;Ljava/lang/String;Llibs/zl0;Ljava/util/Properties;Llibs/$d;Landroid/app/Activity;)V
-    .registers 11
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -84,7 +84,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 13
+    .locals 12
 
     .line 1
     iget-object v1, p0, Llibs/xk0;->Y:Llibs/zl0;
@@ -134,7 +134,7 @@
 
     .line 23
     .line 24
-    :try_start_17
+    :try_start_0
     invoke-virtual {v1, v7}, Llibs/zl0;->Num(Ljava/lang/String;)V
 
     .line 25
@@ -192,8 +192,8 @@
     .line 53
     .line 54
     invoke-virtual {v11, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-    :try_end_38
-    .catchall {:try_start_17 .. :try_end_38} :catchall_39
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 55
     .line 56
@@ -201,7 +201,7 @@
     return-void
 
     .line 58
-    :catchall_39
+    :catchall_0
     move-exception v0
 
     .line 59

@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/za;Ljava/util/Locale;)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -83,14 +83,14 @@
 
 # virtual methods
 .method public final a(Llibs/c4;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final b()Llibs/u2;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/u2;
@@ -110,7 +110,7 @@
 .end method
 
 .method public final d(Llibs/is;)V
-    .registers 16
+    .locals 14
 
     .line 1
     iget-object v0, p1, Llibs/is;->Lambda:Ljava/lang/Object;
@@ -160,15 +160,15 @@
     const/4 v8, -0x1
 
     .line 22
-    sparse-switch v2, :sswitch_data_244
+    sparse-switch v2, :sswitch_data_0
 
     .line 23
     .line 24
     .line 25
-    goto :goto_65
+    goto :goto_0
 
     .line 26
-    :sswitch_19
+    :sswitch_0
     const-string v2, "uses-feature"
 
     .line 27
@@ -181,21 +181,21 @@
     move-result v1
 
     .line 32
-    if-nez v1, :cond_22
+    if-nez v1, :cond_0
 
     .line 33
     .line 34
-    goto :goto_65
+    goto :goto_0
 
     .line 35
-    :cond_22
+    :cond_0
     const/4 v8, 0x6
 
     .line 36
-    goto :goto_65
+    goto :goto_0
 
     .line 37
-    :sswitch_24
+    :sswitch_1
     const-string v2, "application"
 
     .line 38
@@ -208,21 +208,21 @@
     move-result v1
 
     .line 43
-    if-nez v1, :cond_2d
+    if-nez v1, :cond_1
 
     .line 44
     .line 45
-    goto :goto_65
+    goto :goto_0
 
     .line 46
-    :cond_2d
+    :cond_1
     const/4 v8, 0x5
 
     .line 47
-    goto :goto_65
+    goto :goto_0
 
     .line 48
-    :sswitch_2f
+    :sswitch_2
     const-string v2, "supports-screens"
 
     .line 49
@@ -235,21 +235,21 @@
     move-result v1
 
     .line 54
-    if-nez v1, :cond_38
+    if-nez v1, :cond_2
 
     .line 55
     .line 56
-    goto :goto_65
+    goto :goto_0
 
     .line 57
-    :cond_38
+    :cond_2
     const/4 v8, 0x4
 
     .line 58
-    goto :goto_65
+    goto :goto_0
 
     .line 59
-    :sswitch_3a
+    :sswitch_3
     const-string v2, "uses-permission"
 
     .line 60
@@ -262,21 +262,21 @@
     move-result v1
 
     .line 65
-    if-nez v1, :cond_43
+    if-nez v1, :cond_3
 
     .line 66
     .line 67
-    goto :goto_65
+    goto :goto_0
 
     .line 68
-    :cond_43
+    :cond_3
     const/4 v8, 0x3
 
     .line 69
-    goto :goto_65
+    goto :goto_0
 
     .line 70
-    :sswitch_45
+    :sswitch_4
     const-string v2, "manifest"
 
     .line 71
@@ -289,21 +289,21 @@
     move-result v1
 
     .line 76
-    if-nez v1, :cond_4e
+    if-nez v1, :cond_4
 
     .line 77
     .line 78
-    goto :goto_65
+    goto :goto_0
 
     .line 79
-    :cond_4e
+    :cond_4
     const/4 v8, 0x2
 
     .line 80
-    goto :goto_65
+    goto :goto_0
 
     .line 81
-    :sswitch_50
+    :sswitch_5
     const-string v2, "uses-sdk"
 
     .line 82
@@ -316,21 +316,21 @@
     move-result v1
 
     .line 87
-    if-nez v1, :cond_59
+    if-nez v1, :cond_5
 
     .line 88
     .line 89
-    goto :goto_65
+    goto :goto_0
 
     .line 90
-    :cond_59
+    :cond_5
     const/4 v8, 0x1
 
     .line 91
-    goto :goto_65
+    goto :goto_0
 
     .line 92
-    :sswitch_5b
+    :sswitch_6
     const-string v2, "permission"
 
     .line 93
@@ -343,18 +343,18 @@
     move-result v1
 
     .line 98
-    if-nez v1, :cond_64
+    if-nez v1, :cond_6
 
     .line 99
     .line 100
-    goto :goto_65
+    goto :goto_0
 
     .line 101
-    :cond_64
+    :cond_6
     const/4 v8, 0x0
 
     .line 102
-    :goto_65
+    :goto_0
     const-wide v1, 0xffffffffL
 
     .line 103
@@ -381,16 +381,16 @@
 
     .line 115
     .line 116
-    packed-switch v8, :pswitch_data_262
+    packed-switch v8, :pswitch_data_0
 
     .line 117
     .line 118
     .line 119
-    goto/16 :goto_234
+    goto/16 :goto_5
 
     .line 120
     .line 121
-    :pswitch_78
+    :pswitch_0
     invoke-virtual {v0, v12}, Llibs/Init;->Data(Ljava/lang/String;)Ljava/lang/String;
 
     .line 122
@@ -408,7 +408,7 @@
     .line 128
     .line 129
     .line 130
-    if-eqz v1, :cond_8f
+    if-eqz v1, :cond_7
 
     .line 131
     .line 132
@@ -430,11 +430,11 @@
     .line 140
     .line 141
     .line 142
-    goto/16 :goto_234
+    goto/16 :goto_5
 
     .line 143
     .line 144
-    :cond_8f
+    :cond_7
     const-string v1, "glEsVersion"
 
     .line 145
@@ -447,14 +447,14 @@
     move-result-object v0
 
     .line 150
-    if-nez v0, :cond_98
+    if-nez v0, :cond_8
 
     .line 151
     .line 152
-    goto :goto_b7
+    goto :goto_1
 
     .line 153
-    :cond_98
+    :cond_8
     const-string v1, "0x"
 
     .line 154
@@ -467,7 +467,7 @@
     move-result v1
 
     .line 159
-    if-eqz v1, :cond_af
+    if-eqz v1, :cond_9
 
     .line 160
     .line 161
@@ -499,10 +499,10 @@
     move-result-object v9
 
     .line 175
-    goto :goto_b7
+    goto :goto_1
 
     .line 176
-    :cond_af
+    :cond_9
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     .line 177
@@ -519,8 +519,8 @@
     move-result-object v9
 
     .line 184
-    :goto_b7
-    if-eqz v9, :cond_234
+    :goto_1
+    if-eqz v9, :cond_14
 
     .line 185
     .line 186
@@ -553,11 +553,11 @@
     .line 199
     .line 200
     .line 201
-    goto/16 :goto_234
+    goto/16 :goto_5
 
     .line 202
     .line 203
-    :pswitch_ca
+    :pswitch_1
     invoke-virtual {v0, v11}, Llibs/Init;->Data(Ljava/lang/String;)Ljava/lang/String;
 
     .line 204
@@ -566,7 +566,7 @@
     move-result-object v3
 
     .line 207
-    if-eqz v3, :cond_d2
+    if-eqz v3, :cond_a
 
     .line 208
     .line 209
@@ -574,7 +574,7 @@
 
     .line 210
     .line 211
-    :cond_d2
+    :cond_a
     iget-object v0, v0, Llibs/Init;->Y:Ljava/lang/Object;
 
     .line 212
@@ -589,8 +589,8 @@
     const/4 v4, 0x0
 
     .line 217
-    :goto_d8
-    if-ge v4, v3, :cond_eb
+    :goto_2
+    if-ge v4, v3, :cond_c
 
     .line 218
     .line 219
@@ -614,27 +614,27 @@
     move-result v8
 
     .line 229
-    if-eqz v8, :cond_e8
+    if-eqz v8, :cond_b
 
     .line 230
     .line 231
     move-object v9, v5
 
     .line 232
-    goto :goto_eb
+    goto :goto_3
 
     .line 233
-    :cond_e8
+    :cond_b
     add-int/lit8 v4, v4, 0x1
 
     .line 234
     .line 235
-    goto :goto_d8
+    goto :goto_2
 
     .line 236
-    :cond_eb
-    :goto_eb
-    if-eqz v9, :cond_234
+    :cond_c
+    :goto_3
+    if-eqz v9, :cond_14
 
     .line 237
     .line 238
@@ -650,7 +650,7 @@
 
     .line 243
     .line 244
-    if-eqz v3, :cond_145
+    if-eqz v3, :cond_f
 
     .line 245
     .line 246
@@ -688,7 +688,7 @@
     move-result v2
 
     .line 262
-    if-nez v2, :cond_234
+    if-nez v2, :cond_14
 
     .line 263
     .line 264
@@ -712,7 +712,7 @@
     const/4 v3, 0x0
 
     .line 274
-    :goto_111
+    :goto_4
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 275
@@ -721,7 +721,7 @@
     move-result v4
 
     .line 278
-    if-eqz v4, :cond_137
+    if-eqz v4, :cond_e
 
     .line 279
     .line 280
@@ -761,7 +761,7 @@
 
     .line 297
     .line 298
-    if-nez v5, :cond_12e
+    if-nez v5, :cond_d
 
     .line 299
     .line 300
@@ -772,7 +772,7 @@
     const/4 v3, 0x1
 
     .line 303
-    :cond_12e
+    :cond_d
     new-instance v8, Llibs/g81;
 
     .line 304
@@ -787,11 +787,11 @@
     .line 309
     .line 310
     .line 311
-    goto :goto_111
+    goto :goto_4
 
     .line 312
-    :cond_137
-    if-nez v3, :cond_234
+    :cond_e
+    if-nez v3, :cond_14
 
     .line 313
     .line 314
@@ -815,11 +815,11 @@
 
     .line 323
     .line 324
-    goto/16 :goto_234
+    goto/16 :goto_5
 
     .line 325
     .line 326
-    :cond_145
+    :cond_f
     iget-object v0, v9, Llibs/iw;->Nu:Ljava/lang/Object;
 
     .line 327
@@ -828,7 +828,7 @@
 
     .line 329
     .line 330
-    if-eqz v0, :cond_234
+    if-eqz v0, :cond_14
 
     .line 331
     .line 332
@@ -850,11 +850,11 @@
     .line 340
     .line 341
     .line 342
-    goto/16 :goto_234
+    goto/16 :goto_5
 
     .line 343
     .line 344
-    :pswitch_157
+    :pswitch_2
     const-string v1, "anyDensity"
 
     .line 345
@@ -891,11 +891,11 @@
     .line 362
     .line 363
     .line 364
-    goto/16 :goto_234
+    goto/16 :goto_5
 
     .line 365
     .line 366
-    :pswitch_16d
+    :pswitch_3
     invoke-virtual {v0, v12}, Llibs/Init;->Data(Ljava/lang/String;)Ljava/lang/String;
 
     .line 367
@@ -913,11 +913,11 @@
     .line 373
     .line 374
     .line 375
-    goto/16 :goto_234
+    goto/16 :goto_5
 
     .line 376
     .line 377
-    :pswitch_178
+    :pswitch_4
     const-string v3, "package"
 
     .line 378
@@ -1046,11 +1046,11 @@
     move-result-object v4
 
     .line 445
-    if-eqz v3, :cond_1d7
+    if-eqz v3, :cond_11
 
     .line 446
     .line 447
-    if-nez v4, :cond_1c6
+    if-nez v4, :cond_10
 
     .line 448
     .line 449
@@ -1066,7 +1066,7 @@
     move-result-object v4
 
     .line 455
-    :cond_1c6
+    :cond_10
     invoke-virtual {v3}, Ljava/lang/Long;->longValue()J
 
     .line 456
@@ -1104,7 +1104,7 @@
     move-result-object v4
 
     .line 472
-    :cond_1d7
+    :cond_11
     iput-object v4, v13, Llibs/t2;->e:Ljava/lang/Long;
 
     .line 473
@@ -1154,10 +1154,10 @@
     .line 497
     .line 498
     .line 499
-    goto :goto_234
+    goto :goto_5
 
     .line 500
-    :pswitch_1f3
+    :pswitch_5
     const-string v1, "minSdkVersion"
 
     .line 501
@@ -1170,7 +1170,7 @@
     move-result-object v1
 
     .line 506
-    if-eqz v1, :cond_1fd
+    if-eqz v1, :cond_12
 
     .line 507
     .line 508
@@ -1178,7 +1178,7 @@
 
     .line 509
     .line 510
-    :cond_1fd
+    :cond_12
     const-string v1, "targetSdkVersion"
 
     .line 511
@@ -1191,7 +1191,7 @@
     move-result-object v1
 
     .line 516
-    if-eqz v1, :cond_207
+    if-eqz v1, :cond_13
 
     .line 517
     .line 518
@@ -1199,7 +1199,7 @@
 
     .line 519
     .line 520
-    :cond_207
+    :cond_13
     const-string v1, "maxSdkVersion"
 
     .line 521
@@ -1212,7 +1212,7 @@
     move-result-object v0
 
     .line 526
-    if-eqz v0, :cond_234
+    if-eqz v0, :cond_14
 
     .line 527
     .line 528
@@ -1220,10 +1220,10 @@
 
     .line 529
     .line 530
-    goto :goto_234
+    goto :goto_5
 
     .line 531
-    :pswitch_212
+    :pswitch_6
     new-instance v1, Llibs/e72;
 
     .line 532
@@ -1284,8 +1284,8 @@
     .line 563
     .line 564
     .line 565
-    :cond_234
-    :goto_234
+    :cond_14
+    :goto_5
     iget v0, p0, Llibs/v2;->Y:I
 
     .line 566
@@ -1320,15 +1320,15 @@
     nop
 
     .line 581
-    :sswitch_data_244
+    :sswitch_data_0
     .sparse-switch
-        -0x1eda3a31 -> :sswitch_5b
-        -0xfe5a947 -> :sswitch_50
-        0x7c92e2f -> :sswitch_45
-        0x23c12e70 -> :sswitch_3a
-        0x3573e73e -> :sswitch_2f
-        0x5ca40550 -> :sswitch_24
-        0x6adbbdf5 -> :sswitch_19
+        -0x1eda3a31 -> :sswitch_6
+        -0xfe5a947 -> :sswitch_5
+        0x7c92e2f -> :sswitch_4
+        0x23c12e70 -> :sswitch_3
+        0x3573e73e -> :sswitch_2
+        0x5ca40550 -> :sswitch_1
+        0x6adbbdf5 -> :sswitch_0
     .end sparse-switch
 
     .line 582
@@ -1361,34 +1361,34 @@
     .line 609
     .line 610
     .line 611
-    :pswitch_data_262
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_212
-        :pswitch_1f3
-        :pswitch_178
-        :pswitch_16d
-        :pswitch_157
-        :pswitch_ca
-        :pswitch_78
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final e(Llibs/c4;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final g(Llibs/dy2;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final h(Llibs/c4;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iget p1, p0, Llibs/v2;->Y:I

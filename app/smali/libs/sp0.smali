@@ -55,7 +55,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/ArrayList;Llibs/rp0;Ljava/util/concurrent/LinkedBlockingQueue;Ljava/lang/String;Ljava/lang/String;ZZIJJJJJZZZLlibs/v1;Ljava/util/regex/Matcher;Ljava/lang/Thread;ZLjava/util/HashSet;Ljava/util/HashSet;Ljava/util/List;Llibs/dj;)V
-    .registers 30
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/sp0;->a:Ljava/util/ArrayList;
@@ -216,7 +216,7 @@
 
 # virtual methods
 .method public final a()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -226,7 +226,7 @@
 .end method
 
 .method public final e(Llibs/rp0;)Z
-    .registers 36
+    .locals 34
 
     .line 1
     move-object/from16 v1, p0
@@ -245,12 +245,12 @@
 
     .line 8
     .line 9
-    :try_start_8
+    :try_start_0
     iget-boolean v3, v2, Llibs/rp0;->One:Z
 
     .line 10
     .line 11
-    if-eqz v3, :cond_3e
+    if-eqz v3, :cond_1
 
     .line 12
     .line 13
@@ -270,7 +270,7 @@
     move-result v3
 
     .line 21
-    if-nez v3, :cond_38
+    if-nez v3, :cond_0
 
     .line 22
     .line 23
@@ -290,7 +290,7 @@
     move-result v3
 
     .line 31
-    if-nez v3, :cond_38
+    if-nez v3, :cond_0
 
     .line 32
     .line 33
@@ -310,7 +310,7 @@
     move-result v3
 
     .line 41
-    if-nez v3, :cond_38
+    if-nez v3, :cond_0
 
     .line 42
     .line 43
@@ -330,23 +330,23 @@
     move-result v3
 
     .line 51
-    if-eqz v3, :cond_3e
+    if-eqz v3, :cond_1
 
     .line 52
     .line 53
-    goto :goto_38
+    goto :goto_0
 
     .line 54
-    :catchall_35
+    :catchall_0
     move-exception v0
 
     .line 55
-    goto/16 :goto_a3
+    goto/16 :goto_1
 
     .line 56
     .line 57
-    :cond_38
-    :goto_38
+    :cond_0
+    :goto_0
     iget-object v0, v1, Llibs/sp0;->a:Ljava/util/ArrayList;
 
     .line 58
@@ -359,7 +359,7 @@
     return v31
 
     .line 63
-    :cond_3e
+    :cond_1
     iget-object v3, v1, Llibs/sp0;->c:Ljava/util/concurrent/LinkedBlockingQueue;
 
     .line 64
@@ -393,15 +393,15 @@
     .line 78
     .line 79
     iget-wide v13, v1, Llibs/sp0;->k:J
-    :try_end_50
-    .catchall {:try_start_8 .. :try_end_50} :catchall_35
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 80
     .line 81
     move-object v15, v3
 
     .line 82
-    :try_start_51
+    :try_start_1
     iget-wide v2, v1, Llibs/sp0;->l:J
 
     .line 83
@@ -491,8 +491,8 @@
     .line 125
     .line 126
     iget-object v0, v1, Llibs/sp0;->x:Ljava/util/List;
-    :try_end_7f
-    .catchall {:try_start_51 .. :try_end_7f} :catchall_a0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
     .line 127
     .line 128
@@ -527,10 +527,10 @@
 
     .line 142
     .line 143
-    :try_start_8e
+    :try_start_2
     invoke-static/range {v2 .. v30}, Llibs/a92;->g(Llibs/rp0;Ljava/util/concurrent/LinkedBlockingQueue;Ljava/lang/String;Ljava/lang/String;ZZIJJJJJZZZLlibs/u61;Llibs/rp0;Ljava/util/regex/Matcher;Ljava/lang/Thread;ZZLjava/util/HashSet;Ljava/util/HashSet;Ljava/util/List;)V
-    :try_end_91
-    .catchall {:try_start_8e .. :try_end_91} :catchall_9c
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 144
     .line 145
@@ -542,7 +542,7 @@
 
     .line 148
     .line 149
-    :try_start_94
+    :try_start_3
     iget-object v3, v1, Llibs/sp0;->y:Llibs/dj;
 
     .line 150
@@ -552,8 +552,8 @@
     .line 152
     .line 153
     invoke-static {v3, v2, v0}, Llibs/qj;->f(Llibs/dj;Llibs/rp0;Ljava/lang/String;)V
-    :try_end_9b
-    .catchall {:try_start_94 .. :try_end_9b} :catchall_35
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 154
     .line 155
@@ -561,7 +561,7 @@
     return v31
 
     .line 157
-    :catchall_9c
+    :catchall_1
     move-exception v0
 
     .line 158
@@ -569,10 +569,10 @@
 
     .line 159
     .line 160
-    goto :goto_a3
+    goto :goto_1
 
     .line 161
-    :catchall_a0
+    :catchall_2
     move-exception v0
 
     .line 162
@@ -580,7 +580,7 @@
 
     .line 163
     .line 164
-    :goto_a3
+    :goto_1
     invoke-static {v0}, Llibs/hp0;->y(Ljava/lang/Throwable;)Z
 
     .line 165
@@ -589,7 +589,7 @@
     move-result v3
 
     .line 168
-    if-nez v3, :cond_c6
+    if-nez v3, :cond_2
 
     .line 169
     .line 170
@@ -650,7 +650,7 @@
     return v31
 
     .line 199
-    :cond_c6
+    :cond_2
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 200

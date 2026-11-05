@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Llibs/rw0;-><init>()V
@@ -143,7 +143,7 @@
 .end method
 
 .method public constructor <init>(Llibs/tw0;)V
-    .registers 3
+    .locals 1
 
     .line 69
     invoke-direct {p0}, Llibs/rw0;-><init>()V
@@ -162,7 +162,7 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -237,7 +237,7 @@
 .end method
 
 .method public v()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Llibs/tw0;->x()Ljava/lang/String;
@@ -268,21 +268,21 @@
 .end method
 
 .method public final w()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/tw0;->f:I
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     return v0
 
     .line 6
-    :cond_5
+    :cond_0
     new-instance v0, Llibs/sr0;
 
     .line 7
@@ -304,7 +304,7 @@
 .end method
 
 .method public final x()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -394,7 +394,7 @@
 .end method
 
 .method public final y()Z
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Llibs/tw0;->w()I
@@ -409,7 +409,7 @@
 
     .line 6
     .line 7
-    if-gt v1, v0, :cond_e
+    if-gt v1, v0, :cond_0
 
     .line 8
     .line 9
@@ -417,7 +417,7 @@
 
     .line 10
     .line 11
-    if-ge v0, v1, :cond_e
+    if-ge v0, v1, :cond_0
 
     .line 12
     .line 13
@@ -427,7 +427,7 @@
     return v0
 
     .line 15
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
     .line 16
@@ -435,7 +435,7 @@
 .end method
 
 .method public final z(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput p1, p0, Llibs/tw0;->f:I

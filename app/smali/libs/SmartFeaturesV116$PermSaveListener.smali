@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/SmartFeaturesV116$PermPickerDialog;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -24,14 +24,14 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Llibs/SmartFeaturesV116$PermSaveListener;->dialog:Llibs/SmartFeaturesV116$PermPickerDialog;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Llibs/SmartFeaturesV116$PermPickerDialog;->commitSelection()V
 
-    :cond_7
+    :cond_0
     return-void
 .end method

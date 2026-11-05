@@ -28,7 +28,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/4 v0, 0x4
@@ -38,7 +38,7 @@
 
     .line 3
     .line 4
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     .line 5
     .line 6
@@ -53,7 +53,7 @@
     nop
 
     .line 11
-    :array_a
+    :array_0
     .array-data 1
         -0x3t
         0x53t
@@ -63,7 +63,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 17
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -72,7 +72,7 @@
 .end method
 
 .method public constructor <init>(JI[B)V
-    .registers 6
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -110,7 +110,7 @@
 
 # virtual methods
 .method public final a(Llibs/rw2;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget v0, p1, Llibs/rw2;->c:I
@@ -145,7 +145,7 @@
     move-result v0
 
     .line 17
-    if-eqz v0, :cond_3f
+    if-eqz v0, :cond_0
 
     .line 18
     .line 19
@@ -238,7 +238,7 @@
     return-void
 
     .line 64
-    :cond_3f
+    :cond_0
     const-string p1, "Could not find SMB2 Packet header"
 
     .line 65
@@ -252,7 +252,7 @@
 .end method
 
 .method public final b()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/gw2;->a:I
@@ -263,7 +263,7 @@
 .end method
 
 .method public final c()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/gw2;->g:I
@@ -274,7 +274,7 @@
 .end method
 
 .method public final d(Llibs/rw2;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget v0, p1, Llibs/rw2;->c:I

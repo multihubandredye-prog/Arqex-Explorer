@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r31;Llibs/xt1;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/l11;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final c([Ljava/lang/Object;)Z
-    .registers 13
+    .locals 11
 
     .line 1
     iget-byte v0, p0, Llibs/l11;->X:B
@@ -63,7 +63,7 @@
     const/4 v4, 0x1
 
     .line 9
-    packed-switch v0, :pswitch_data_80
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
@@ -97,7 +97,7 @@
     return v4
 
     .line 27
-    :pswitch_1a
+    :pswitch_0
     invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 28
@@ -115,7 +115,7 @@
 
     .line 35
     .line 36
-    if-eqz p1, :cond_59
+    if-eqz p1, :cond_1
 
     .line 37
     .line 38
@@ -156,7 +156,7 @@
 
     .line 56
     .line 57
-    if-eqz p1, :cond_4f
+    if-eqz p1, :cond_0
 
     .line 58
     .line 59
@@ -169,7 +169,7 @@
 
     .line 63
     .line 64
-    if-eqz p1, :cond_4f
+    if-eqz p1, :cond_0
 
     .line 65
     .line 66
@@ -182,7 +182,7 @@
 
     .line 70
     .line 71
-    if-eqz p1, :cond_4f
+    if-eqz p1, :cond_0
 
     .line 72
     .line 73
@@ -195,11 +195,11 @@
 
     .line 77
     .line 78
-    if-nez p1, :cond_59
+    if-nez p1, :cond_1
 
     .line 79
     .line 80
-    :cond_4f
+    :cond_0
     iget-object p1, v1, Llibs/xt1;->T:Landroid/os/Handler;
 
     .line 81
@@ -218,11 +218,11 @@
     .line 88
     .line 89
     .line 90
-    :cond_59
+    :cond_1
     return v4
 
     .line 91
-    :pswitch_5a
+    :pswitch_1
     iget-object v5, p0, Llibs/l11;->Y:Llibs/r31;
 
     .line 92
@@ -240,7 +240,7 @@
 
     .line 99
     .line 100
-    if-eqz p1, :cond_73
+    if-eqz p1, :cond_2
 
     .line 101
     .line 102
@@ -248,7 +248,7 @@
 
     .line 103
     .line 104
-    if-eqz v0, :cond_73
+    if-eqz v0, :cond_2
 
     .line 105
     .line 106
@@ -274,11 +274,11 @@
     .line 114
     .line 115
     .line 116
-    :cond_73
+    :cond_2
     return v4
 
     .line 117
-    :pswitch_74
+    :pswitch_2
     invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 118
@@ -301,10 +301,10 @@
     return v3
 
     .line 129
-    :pswitch_data_80
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_74
-        :pswitch_5a
-        :pswitch_1a
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

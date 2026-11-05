@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -77,7 +77,7 @@
 
 # virtual methods
 .method public a()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -87,7 +87,7 @@
 .end method
 
 .method public b(Llibs/at;Llibs/ce;Llibs/bz3;)V
-    .registers 5
+    .locals 1
 
     .line 1
     iput-object p1, p0, Llibs/e00;->a:Llibs/at;
@@ -102,7 +102,7 @@
 
     .line 6
     .line 7
-    if-eqz p3, :cond_f
+    if-eqz p3, :cond_0
 
     .line 8
     .line 9
@@ -119,7 +119,7 @@
     .line 14
     .line 15
     .line 16
-    :cond_f
+    :cond_0
     invoke-interface {p1}, Llibs/at;->f()I
 
     .line 17
@@ -139,7 +139,7 @@
     const/4 v0, 0x1
 
     .line 25
-    if-eqz p3, :cond_20
+    if-eqz p3, :cond_1
 
     .line 26
     .line 27
@@ -147,21 +147,21 @@
 
     .line 28
     .line 29
-    if-eqz p2, :cond_20
+    if-eqz p2, :cond_1
 
     .line 30
     .line 31
     const/4 p2, 0x1
 
     .line 32
-    goto :goto_21
+    goto :goto_0
 
     .line 33
-    :cond_20
+    :cond_1
     const/4 p2, 0x0
 
     .line 34
-    :goto_21
+    :goto_0
     iput-boolean p2, p0, Llibs/e00;->g:Z
 
     .line 35
@@ -174,7 +174,7 @@
     move-result p2
 
     .line 40
-    if-lez p2, :cond_31
+    if-lez p2, :cond_2
 
     .line 41
     .line 42
@@ -194,6 +194,6 @@
 
     .line 49
     .line 50
-    :cond_31
+    :cond_2
     return-void
 .end method

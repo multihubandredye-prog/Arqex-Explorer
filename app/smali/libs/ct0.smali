@@ -18,7 +18,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/util/HashMap;
@@ -90,7 +90,7 @@
 .end method
 
 .method public constructor <init>(Llibs/App;[B)V
-    .registers 5
+    .locals 2
 
     .line 1
     sget-object v0, Llibs/ct0;->Z:Ljava/util/HashMap;
@@ -112,7 +112,7 @@
     const/4 v1, 0x0
 
     .line 10
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_1
 
     .line 11
     .line 12
@@ -153,7 +153,7 @@
 
     .line 30
     .line 31
-    if-eqz p1, :cond_2d
+    if-eqz p1, :cond_0
 
     .line 32
     .line 33
@@ -184,7 +184,7 @@
     return-void
 
     .line 46
-    :cond_2d
+    :cond_0
     const-string p1, "Unknown S-Box - possible types: \"Default\", \"E-Test\", \"E-A\", \"E-B\", \"E-C\", \"E-D\", \"D-Test\", \"D-A\"."
 
     .line 47
@@ -197,7 +197,7 @@
     throw v1
 
     .line 52
-    :cond_33
+    :cond_1
     const-string p2, "unknown OID: "
 
     .line 53

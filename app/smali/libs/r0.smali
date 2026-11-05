@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/f23;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-direct {p0, p1}, Llibs/c23;-><init>(Llibs/f23;)V
@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public final a()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "Analyze_Scanner"
@@ -58,7 +58,7 @@
 .end method
 
 .method public final run()V
-    .registers 26
+    .locals 25
 
     .line 1
     move-object/from16 v1, p0
@@ -77,7 +77,7 @@
 
     .line 8
     .line 9
-    :try_start_8
+    :try_start_0
     invoke-virtual {v3}, Ljava/util/HashMap;->clear()V
 
     .line 10
@@ -196,13 +196,13 @@
     .line 65
     .line 66
     invoke-static/range {v4 .. v24}, Llibs/a92;->Intent(Ljava/util/ArrayList;Ljava/lang/String;Ljava/lang/String;ZZIJJJJJZZZLlibs/u61;Z)V
-    :try_end_44
-    .catchall {:try_start_8 .. :try_end_44} :catchall_4b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 67
     .line 68
     .line 69
-    :goto_44
+    :goto_0
     invoke-virtual {v2, v1}, Llibs/f23;->a(Llibs/c23;)V
 
     .line 70
@@ -216,26 +216,26 @@
     return-void
 
     .line 76
-    :catchall_4b
+    :catchall_0
     move-exception v0
 
     .line 77
-    :try_start_4c
+    :try_start_1
     const-string v4, "Analyze_Scanner"
 
     .line 78
     .line 79
     invoke-static {v4, v0}, Llibs/vw1;->l(Ljava/lang/String;Ljava/lang/Throwable;)V
-    :try_end_51
-    .catchall {:try_start_4c .. :try_end_51} :catchall_52
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 80
     .line 81
     .line 82
-    goto :goto_44
+    goto :goto_0
 
     .line 83
-    :catchall_52
+    :catchall_1
     move-exception v0
 
     .line 84
@@ -249,13 +249,13 @@
     .line 88
     .line 89
     .line 90
-    goto :goto_5b
+    goto :goto_2
 
     .line 91
-    :goto_5a
+    :goto_1
     throw v0
 
     .line 92
-    :goto_5b
-    goto :goto_5a
+    :goto_2
+    goto :goto_1
 .end method

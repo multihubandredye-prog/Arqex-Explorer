@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/util/HashMap;Ljava/util/List;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public final a()Ljava/util/List;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ux3;->c:Ljava/util/List;
@@ -54,7 +54,7 @@
 .end method
 
 .method public final b(Llibs/Eta;)Ljava/util/List;
-    .registers 5
+    .locals 3
 
     .line 1
     const-string p1, "mc:AlternateContent"
@@ -73,7 +73,7 @@
     move-result p1
 
     .line 9
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_0
 
     .line 10
     .line 11
@@ -100,7 +100,7 @@
     return-object p1
 
     .line 22
-    :cond_15
+    :cond_0
     new-instance p1, Llibs/ux3;
 
     .line 23
@@ -150,7 +150,7 @@
 .end method
 
 .method public final c()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "w:tblHeader"
@@ -185,7 +185,7 @@
 .end method
 
 .method public final d()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Llibs/fg3;
@@ -233,7 +233,7 @@
 .end method
 
 .method public final e(Ljava/lang/String;)Llibs/w52;
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p0, p1}, Llibs/ux3;->i(Ljava/lang/String;)Llibs/uc1;
@@ -260,7 +260,7 @@
     move-result v0
 
     .line 13
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 14
     .line 15
@@ -284,7 +284,7 @@
     return-object v0
 
     .line 25
-    :cond_18
+    :cond_0
     sget-object p1, Llibs/w52;->b:Llibs/w52;
 
     .line 26
@@ -293,7 +293,7 @@
 .end method
 
 .method public final f(Ljava/lang/String;)Llibs/w52;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ux3;->b:Ljava/util/HashMap;
@@ -320,7 +320,7 @@
 .end method
 
 .method public final g(Ljava/lang/String;)Llibs/wx3;
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p0, p1}, Llibs/ux3;->i(Ljava/lang/String;)Llibs/uc1;
@@ -347,7 +347,7 @@
     move-result v0
 
     .line 13
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 14
     .line 15
@@ -359,15 +359,15 @@
     move-result-object p1
 
     .line 19
-    goto :goto_15
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     sget-object p1, Llibs/m22;->a:Llibs/m22;
 
     .line 21
     .line 22
-    :goto_15
+    :goto_0
     check-cast p1, Llibs/wx3;
 
     .line 23
@@ -376,7 +376,7 @@
 .end method
 
 .method public final h(Ljava/lang/String;)Llibs/iz1;
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/iz1;
@@ -431,7 +431,7 @@
 .end method
 
 .method public final i(Ljava/lang/String;)Llibs/uc1;
-    .registers 5
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/vc1;
@@ -478,7 +478,7 @@
 .end method
 
 .method public final j(Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/ux3;->b:Ljava/util/HashMap;
@@ -505,7 +505,7 @@
 
     .line 12
     .line 13
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 14
     .line 15
@@ -516,7 +516,7 @@
     return-object v0
 
     .line 18
-    :cond_11
+    :cond_0
     const-string v0, "Element has no \'"
 
     .line 19
@@ -545,7 +545,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

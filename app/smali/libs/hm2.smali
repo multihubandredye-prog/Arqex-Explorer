@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
 .end method
 
 .method public static b(Llibs/um2;)I
-    .registers 5
+    .locals 4
 
     .line 1
     iget v0, p0, Llibs/um2;->Omicron:I
@@ -59,18 +59,18 @@
     const/4 v3, 0x4
 
     .line 10
-    if-eqz v2, :cond_c
+    if-eqz v2, :cond_0
 
     .line 11
     .line 12
     return v3
 
     .line 13
-    :cond_c
+    :cond_0
     and-int/2addr v0, v3
 
     .line 14
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_1
 
     .line 15
     .line 16
@@ -89,15 +89,15 @@
     const/4 v2, -0x1
 
     .line 23
-    if-eq v0, v2, :cond_1f
+    if-eq v0, v2, :cond_1
 
     .line 24
     .line 25
-    if-eq p0, v2, :cond_1f
+    if-eq p0, v2, :cond_1
 
     .line 26
     .line 27
-    if-eq v0, p0, :cond_1f
+    if-eq v0, p0, :cond_1
 
     .line 28
     .line 29
@@ -108,12 +108,12 @@
     return p0
 
     .line 32
-    :cond_1f
+    :cond_1
     return v1
 .end method
 
 .method public static c(Llibs/um2;)Llibs/iu2;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/iu2;
@@ -134,7 +134,7 @@
 .end method
 
 .method public static d(Llibs/um2;)Llibs/iu2;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/iu2;
@@ -157,7 +157,7 @@
 
 # virtual methods
 .method public a(Llibs/um2;Llibs/iu2;Llibs/iu2;)V
-    .registers 4
+    .locals 0
 
     .line 1
     iget p2, p2, Llibs/iu2;->a:I
@@ -172,24 +172,24 @@
     move-result p1
 
     .line 7
-    if-eqz p1, :cond_9
+    if-eqz p1, :cond_0
 
     .line 8
     .line 9
-    goto :goto_b
+    goto :goto_0
 
     .line 10
-    :cond_9
+    :cond_0
     iget p1, p3, Llibs/iu2;->a:I
 
     .line 11
     .line 12
-    :goto_b
+    :goto_0
     return-void
 .end method
 
 .method public final e(Llibs/cm2;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/hm2;->a:Llibs/cm2;

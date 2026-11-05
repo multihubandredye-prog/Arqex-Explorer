@@ -25,7 +25,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/util/Hashtable;
@@ -83,7 +83,7 @@
 .end method
 
 .method public static a(Z)V
-    .registers 8
+    .locals 7
 
     .line 1
     :try_start_0
@@ -91,7 +91,7 @@
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b9
+    if-eqz v0, :cond_7
 
     .line 4
     .line 5
@@ -105,8 +105,8 @@
     .line 9
     .line 10
     sput-object v0, Llibs/ad1;->b:Llibs/hh;
-    :try_end_b
-    .catchall {:try_start_0 .. :try_end_b} :catchall_b9
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 11
     .line 12
@@ -135,11 +135,11 @@
     const/4 v3, 0x0
 
     .line 23
-    :goto_16
+    :goto_0
     const/4 v4, 0x4
 
     .line 24
-    if-ge v3, v1, :cond_2f
+    if-ge v3, v1, :cond_1
 
     .line 25
     .line 26
@@ -175,22 +175,22 @@
     move-result v5
 
     .line 42
-    if-eqz v5, :cond_2c
+    if-eqz v5, :cond_0
 
     .line 43
     .line 44
-    goto :goto_4e
+    goto :goto_1
 
     .line 45
-    :cond_2c
+    :cond_0
     add-int/lit8 v3, v3, 0x1
 
     .line 46
     .line 47
-    goto :goto_16
+    goto :goto_0
 
     .line 48
-    :cond_2f
+    :cond_1
     invoke-static {v4}, Llibs/zm1;->Context(I)Z
 
     .line 49
@@ -199,7 +199,7 @@
     move-result v0
 
     .line 52
-    if-eqz v0, :cond_48
+    if-eqz v0, :cond_2
 
     .line 53
     .line 54
@@ -240,7 +240,7 @@
     .line 71
     .line 72
     .line 73
-    :cond_48
+    :cond_2
     sget-object v0, Llibs/ad1;->b:Llibs/hh;
 
     .line 74
@@ -253,7 +253,7 @@
     .line 77
     .line 78
     .line 79
-    :goto_4e
+    :goto_1
     const/4 v0, 0x3
 
     .line 80
@@ -265,7 +265,7 @@
     move-result v0
 
     .line 84
-    if-nez v0, :cond_59
+    if-nez v0, :cond_3
 
     .line 85
     .line 86
@@ -277,7 +277,7 @@
 
     .line 89
     .line 90
-    :cond_59
+    :cond_3
     const-string v0, "RSA/None/OAEPWithSHA256AndMGF1Padding"
 
     .line 91
@@ -294,7 +294,7 @@
 
     .line 97
     .line 98
-    if-eqz p0, :cond_81
+    if-eqz p0, :cond_5
 
     .line 99
     .line 100
@@ -306,7 +306,7 @@
     move-result p0
 
     .line 104
-    if-eqz p0, :cond_7c
+    if-eqz p0, :cond_4
 
     .line 105
     .line 106
@@ -347,7 +347,7 @@
     .line 123
     .line 124
     .line 125
-    :cond_7c
+    :cond_4
     sget-object p0, Llibs/ad1;->b:Llibs/hh;
 
     .line 126
@@ -359,7 +359,7 @@
     return-void
 
     .line 130
-    :cond_81
+    :cond_5
     invoke-static {v4}, Llibs/zm1;->Context(I)Z
 
     .line 131
@@ -368,7 +368,7 @@
     move-result p0
 
     .line 134
-    if-eqz p0, :cond_9a
+    if-eqz p0, :cond_6
 
     .line 135
     .line 136
@@ -409,7 +409,7 @@
     .line 153
     .line 154
     .line 155
-    :cond_9a
+    :cond_6
     sget-object p0, Llibs/ad1;->b:Llibs/hh;
 
     .line 156
@@ -469,8 +469,8 @@
     return-void
 
     .line 186
-    :catchall_b9
-    :cond_b9
+    :catchall_0
+    :cond_7
     const-string p0, "Bouncycastle, BCFIPS or Spongy Castle is not installed"
 
     .line 187
@@ -484,23 +484,23 @@
 .end method
 
 .method public static b()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/ad1;->b:Llibs/hh;
 
     .line 2
     .line 3
-    if-nez v0, :cond_17
+    if-nez v0, :cond_1
 
     .line 4
     .line 5
-    :try_start_4
+    :try_start_0
     sget-boolean v0, Llibs/ad1;->h:Z
 
     .line 6
     .line 7
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -514,16 +514,16 @@
     .line 13
     .line 14
     sput-object v0, Llibs/ad1;->b:Llibs/hh;
-    :try_end_f
-    .catchall {:try_start_4 .. :try_end_f} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 15
     .line 16
-    goto :goto_17
+    goto :goto_0
 
     .line 17
-    :catchall_10
-    :cond_10
+    :catchall_0
+    :cond_0
     const-string v0, "Bouncycastle, BCFIPS or Spongy Castle is not installed"
 
     .line 18
@@ -539,8 +539,8 @@
     return-object v0
 
     .line 24
-    :cond_17
-    :goto_17
+    :cond_1
+    :goto_0
     invoke-virtual {v0}, Ljava/security/Provider;->getName()Ljava/lang/String;
 
     .line 25
@@ -553,7 +553,7 @@
 .end method
 
 .method public static c(Ljava/lang/String;)Ljava/security/Provider;
-    .registers 3
+    .locals 2
 
     .line 1
     sget-object v0, Llibs/ad1;->c:Ljava/util/Hashtable;
@@ -568,7 +568,7 @@
     move-result v1
 
     .line 7
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
@@ -587,7 +587,7 @@
     return-object p0
 
     .line 16
-    :cond_f
+    :cond_0
     sget-object p0, Llibs/ad1;->a:Llibs/hh;
 
     .line 17
@@ -596,18 +596,18 @@
 .end method
 
 .method public static d()Ljava/security/SecureRandom;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/ad1;->i:Ljava/security/SecureRandom;
 
     .line 2
     .line 3
-    if-nez v0, :cond_16
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
-    :try_start_4
+    :try_start_0
     invoke-static {}, Llibs/r43;->g()V
 
     .line 6
@@ -623,15 +623,15 @@
     .line 12
     .line 13
     sput-object v0, Llibs/ad1;->i:Ljava/security/SecureRandom;
-    :try_end_e
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_e} :catch_f
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 14
     .line 15
     return-object v0
 
     .line 16
-    :catch_f
+    :catch_0
     new-instance v0, Ljava/security/SecureRandom;
 
     .line 17
@@ -645,31 +645,31 @@
 
     .line 22
     .line 23
-    :cond_16
+    :cond_0
     return-object v0
 .end method
 
 .method public static e()Z
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/ad1;->b:Llibs/hh;
 
     .line 2
     .line 3
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
-    goto :goto_11
+    goto :goto_0
 
     .line 6
-    :cond_5
+    :cond_0
     sget-object v0, Llibs/ad1;->d:Ljava/lang/Boolean;
 
     .line 7
     .line 8
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_1
 
     .line 9
     .line 10
@@ -681,7 +681,7 @@
     move-result v0
 
     .line 14
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_1
 
     .line 15
     .line 16
@@ -691,8 +691,8 @@
     return v0
 
     .line 18
-    :cond_11
-    :goto_11
+    :cond_1
+    :goto_0
     const/4 v0, 0x0
 
     .line 19

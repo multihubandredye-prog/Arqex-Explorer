@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/hf;->a:B
@@ -30,14 +30,14 @@
 
 # virtual methods
 .method public final createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/hf;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_2a
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -54,7 +54,7 @@
     return-object v0
 
     .line 12
-    :pswitch_b
+    :pswitch_0
     new-instance v0, Llibs/al1;
 
     .line 13
@@ -67,7 +67,7 @@
     return-object v0
 
     .line 18
-    :pswitch_11
+    :pswitch_1
     new-instance v0, Llibs/oc1;
 
     .line 19
@@ -80,7 +80,7 @@
     return-object v0
 
     .line 24
-    :pswitch_17
+    :pswitch_2
     new-instance v0, Llibs/pc1;
 
     .line 25
@@ -93,7 +93,7 @@
     return-object v0
 
     .line 30
-    :pswitch_1d
+    :pswitch_3
     new-instance v0, Llibs/nc1;
 
     .line 31
@@ -106,7 +106,7 @@
     return-object v0
 
     .line 36
-    :pswitch_23
+    :pswitch_4
     new-instance v0, Lmoe/shizuku/api/BinderContainer;
 
     .line 37
@@ -122,25 +122,25 @@
     nop
 
     .line 43
-    :pswitch_data_2a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_23
-        :pswitch_1d
-        :pswitch_17
-        :pswitch_11
-        :pswitch_b
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final newArray(I)[Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/hf;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_18
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -152,7 +152,7 @@
     return-object p1
 
     .line 9
-    :pswitch_8
+    :pswitch_0
     new-array p1, p1, [Llibs/al1;
 
     .line 10
@@ -160,7 +160,7 @@
     return-object p1
 
     .line 12
-    :pswitch_b
+    :pswitch_1
     new-array p1, p1, [Llibs/oc1;
 
     .line 13
@@ -168,7 +168,7 @@
     return-object p1
 
     .line 15
-    :pswitch_e
+    :pswitch_2
     new-array p1, p1, [Llibs/pc1;
 
     .line 16
@@ -176,7 +176,7 @@
     return-object p1
 
     .line 18
-    :pswitch_11
+    :pswitch_3
     new-array p1, p1, [Llibs/nc1;
 
     .line 19
@@ -184,7 +184,7 @@
     return-object p1
 
     .line 21
-    :pswitch_14
+    :pswitch_4
     new-array p1, p1, [Lmoe/shizuku/api/BinderContainer;
 
     .line 22
@@ -195,12 +195,12 @@
     nop
 
     .line 25
-    :pswitch_data_18
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_14
-        :pswitch_11
-        :pswitch_e
-        :pswitch_b
-        :pswitch_8
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

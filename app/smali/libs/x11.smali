@@ -24,7 +24,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r31;Lcom/mixplorer/widgets/MiEditText;ZLlibs/$d;Ljava/lang/String;Llibs/xt1;Llibs/xl1;)V
-    .registers 8
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 13
+    .locals 11
 
     .line 1
     sget v0, Llibs/bi2;->enter_name:I
@@ -105,14 +105,14 @@
     move-result v1
 
     .line 19
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     .line 20
     .line 21
     return-void
 
     .line 22
-    :cond_15
+    :cond_0
     invoke-virtual {v0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     .line 23
@@ -192,7 +192,7 @@
 
     .line 60
     .line 61
-    if-eqz v0, :cond_54
+    if-eqz v0, :cond_1
 
     .line 62
     .line 63
@@ -239,15 +239,15 @@
     move v6, v1
 
     .line 84
-    goto :goto_56
+    goto :goto_0
 
     .line 85
-    :cond_54
+    :cond_1
     const/16 v6, 0x2f3
 
     .line 86
     .line 87
-    :goto_56
+    :goto_0
     const/4 v0, 0x0
 
     .line 88

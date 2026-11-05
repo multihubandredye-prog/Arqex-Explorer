@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 4
+    .locals 2
 
     .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +27,7 @@
 .end method
 
 .method public constructor <init>(Llibs/d90;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,7 +49,7 @@
     const/4 v3, 0x0
 
     .line 10
-    if-ne v0, v2, :cond_28
+    if-ne v0, v2, :cond_1
 
     .line 11
     .line 12
@@ -93,14 +93,14 @@
     move-result p1
 
     .line 32
-    if-nez p1, :cond_22
+    if-nez p1, :cond_0
 
     .line 33
     .line 34
     return-void
 
     .line 35
-    :cond_22
+    :cond_0
     const-string p1, "Excess SerialNumber data"
 
     .line 36
@@ -113,7 +113,7 @@
     throw v3
 
     .line 41
-    :cond_28
+    :cond_1
     const-string v0, "DerValue.getBigInteger, not an int "
 
     .line 42
@@ -133,7 +133,7 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

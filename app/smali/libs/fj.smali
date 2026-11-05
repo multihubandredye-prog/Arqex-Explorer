@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/lj;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/fj;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 10
+    .locals 9
 
     .line 1
     iget-byte v0, p0, Llibs/fj;->X:B
@@ -53,7 +53,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_72
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -75,7 +75,7 @@
     return-void
 
     .line 19
-    :pswitch_12
+    :pswitch_0
     iget-object v0, v3, Llibs/lj;->Sierra:Lcom/mixplorer/widgets/MiCircleView;
 
     .line 20
@@ -93,7 +93,7 @@
     return-void
 
     .line 28
-    :pswitch_1b
+    :pswitch_1
     iget-object v0, v3, Llibs/lj;->Golf:Landroid/os/Handler;
 
     .line 29
@@ -106,7 +106,7 @@
     move-result-object v4
 
     .line 34
-    :try_start_21
+    :try_start_0
     new-instance v5, Llibs/fj;
 
     .line 35
@@ -160,14 +160,14 @@
     move-result v4
 
     .line 63
-    if-eqz v4, :cond_41
+    if-eqz v4, :cond_0
 
     .line 64
     .line 65
-    goto :goto_71
+    goto :goto_0
 
     .line 66
-    :cond_41
+    :cond_0
     iget-object v4, v3, Llibs/lj;->Uniform:Llibs/hj;
 
     .line 67
@@ -204,16 +204,16 @@
     .line 84
     .line 85
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-    :try_end_57
-    .catchall {:try_start_21 .. :try_end_57} :catchall_58
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 86
     .line 87
     .line 88
-    goto :goto_71
+    goto :goto_0
 
     .line 89
-    :catchall_58
+    :catchall_0
     move-exception v1
 
     .line 90
@@ -225,14 +225,14 @@
     move-result v4
 
     .line 94
-    if-eqz v4, :cond_60
+    if-eqz v4, :cond_1
 
     .line 95
     .line 96
-    goto :goto_71
+    goto :goto_0
 
     .line 97
-    :cond_60
+    :cond_1
     invoke-static {v1}, Llibs/qj;->e(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 98
@@ -264,13 +264,13 @@
     .line 112
     .line 113
     .line 114
-    :goto_71
+    :goto_0
     return-void
 
     .line 115
-    :pswitch_data_72
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1b
-        :pswitch_12
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

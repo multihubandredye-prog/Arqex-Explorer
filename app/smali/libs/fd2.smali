@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/PlayerActivity;J)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/fd2;->b:Lcom/mixplorer/activities/PlayerActivity;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onSurfaceTextureAvailable(Landroid/graphics/SurfaceTexture;II)V
-    .registers 5
+    .locals 1
 
     .line 1
     iget-object p1, p0, Llibs/fd2;->b:Lcom/mixplorer/activities/PlayerActivity;
@@ -60,7 +60,7 @@
 .end method
 
 .method public final onSurfaceTextureDestroyed(Landroid/graphics/SurfaceTexture;)Z
-    .registers 11
+    .locals 9
 
     .line 1
     const/4 v0, 0x1
@@ -69,12 +69,12 @@
     const/4 v1, 0x0
 
     .line 3
-    :try_start_2
+    :try_start_0
     sget-object v2, Lcom/mixplorer/AppImpl;->Pi:Llibs/rd2;
 
     .line 4
     .line 5
-    if-eqz v2, :cond_40
+    if-eqz v2, :cond_2
 
     .line 6
     .line 7
@@ -90,7 +90,7 @@
     move-result v3
 
     .line 13
-    if-eqz v3, :cond_40
+    if-eqz v3, :cond_2
 
     .line 14
     .line 15
@@ -106,24 +106,24 @@
 
     .line 20
     .line 21
-    if-eqz v2, :cond_40
+    if-eqz v2, :cond_2
 
     .line 22
     .line 23
     iget-object v3, v2, Llibs/ru1;->b:Llibs/ew;
-    :try_end_18
-    .catchall {:try_start_2 .. :try_end_18} :catchall_40
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 24
     .line 25
     const/4 v4, 0x0
 
     .line 26
-    if-eqz v3, :cond_32
+    if-eqz v3, :cond_0
 
     .line 27
     .line 28
-    :try_start_1b
+    :try_start_1
     const-string v5, "setVideoView"
 
     .line 29
@@ -164,22 +164,22 @@
     .line 46
     .line 47
     invoke-virtual {v3, v5, v7, v6}, Llibs/uc;->d(Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_31
-    .catchall {:try_start_1b .. :try_end_31} :catchall_3e
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 48
     .line 49
     .line 50
-    goto :goto_3e
+    goto :goto_0
 
     .line 51
-    :cond_32
-    :try_start_32
+    :cond_0
+    :try_start_2
     iget-object v3, v2, Llibs/ru1;->d:Landroid/media/MediaPlayer;
 
     .line 52
     .line 53
-    if-eqz v3, :cond_3e
+    if-eqz v3, :cond_1
 
     .line 54
     .line 55
@@ -197,21 +197,21 @@
     .line 61
     .line 62
     .line 63
-    :catchall_3e
-    :cond_3e
-    :goto_3e
+    :catchall_0
+    :cond_1
+    :goto_0
     iput-object v4, v2, Llibs/ru1;->e:Landroid/view/View;
-    :try_end_40
-    .catchall {:try_start_32 .. :try_end_40} :catchall_40
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 64
     .line 65
-    :catchall_40
-    :cond_40
-    :try_start_40
+    :catchall_1
+    :cond_2
+    :try_start_3
     invoke-static {p1}, Llibs/oc2;->f(Landroid/graphics/SurfaceTexture;)V
-    :try_end_43
-    .catchall {:try_start_40 .. :try_end_43} :catchall_44
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
     .line 66
     .line 67
@@ -219,19 +219,19 @@
     return v0
 
     .line 69
-    :catchall_44
+    :catchall_2
     return v1
 .end method
 
 .method public final onSurfaceTextureSizeChanged(Landroid/graphics/SurfaceTexture;II)V
-    .registers 4
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final onSurfaceTextureUpdated(Landroid/graphics/SurfaceTexture;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void

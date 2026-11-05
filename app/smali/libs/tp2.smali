@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Llibs/lz;-><init>()V
@@ -49,14 +49,14 @@
     move-result v1
 
     .line 22
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_0
 
     .line 23
     .line 24
     return-void
 
     .line 25
-    :cond_18
+    :cond_0
     const-string v1, "dc:title"
 
     .line 26

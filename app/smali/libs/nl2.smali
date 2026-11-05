@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/o32;Llibs/do2;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,18 +40,18 @@
 
 # virtual methods
 .method public final a()Llibs/cp2;
-    .registers 8
+    .locals 7
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Llibs/nl2;->Lambda:Z
 
     .line 3
     .line 4
-    if-nez v0, :cond_58
+    if-nez v0, :cond_1
 
     .line 5
     .line 6
@@ -63,8 +63,8 @@
     .line 8
     .line 9
     monitor-exit p0
-    :try_end_9
-    .catchall {:try_start_1 .. :try_end_9} :catchall_56
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 10
     iget-object v1, p0, Llibs/nl2;->Y:Llibs/mo3;
@@ -108,11 +108,11 @@
     const/4 v4, 0x0
 
     .line 31
-    if-eqz v3, :cond_33
+    if-eqz v3, :cond_0
 
     .line 32
     .line 33
-    :try_start_20
+    :try_start_1
     invoke-virtual {v3, v4, v4}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 34
@@ -145,8 +145,8 @@
     .line 47
     .line 48
     invoke-virtual {v2, v3, v0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_32
-    .catch Ljava/lang/Exception; {:try_start_20 .. :try_end_32} :catch_33
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 49
     .line 50
@@ -154,8 +154,8 @@
     move-object v4, v3
 
     .line 52
-    :catch_33
-    :cond_33
+    :catch_0
+    :cond_0
     iput-object v4, v1, Llibs/mo3;->f:Ljava/lang/Object;
 
     .line 53
@@ -169,7 +169,7 @@
     .line 57
     .line 58
     .line 59
-    :try_start_3a
+    :try_start_2
     iget-object v0, p0, Llibs/nl2;->X:Llibs/o32;
 
     .line 60
@@ -189,8 +189,8 @@
     .line 68
     .line 69
     move-result-object v0
-    :try_end_45
-    .catchall {:try_start_3a .. :try_end_45} :catchall_4d
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 70
     iget-object v1, p0, Llibs/nl2;->X:Llibs/o32;
@@ -209,7 +209,7 @@
     return-object v0
 
     .line 78
-    :catchall_4d
+    :catchall_0
     move-exception v0
 
     .line 79
@@ -229,15 +229,15 @@
     throw v0
 
     .line 87
-    :catchall_56
+    :catchall_1
     move-exception v0
 
     .line 88
-    goto :goto_60
+    goto :goto_0
 
     .line 89
-    :cond_58
-    :try_start_58
+    :cond_1
+    :try_start_3
     new-instance v0, Ljava/lang/IllegalStateException;
 
     .line 90
@@ -254,17 +254,17 @@
     throw v0
 
     .line 97
-    :goto_60
+    :goto_0
     monitor-exit p0
-    :try_end_61
-    .catchall {:try_start_58 .. :try_end_61} :catchall_56
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 98
     throw v0
 .end method
 
 .method public final b()Llibs/cp2;
-    .registers 13
+    .locals 12
 
     .line 1
     new-instance v1, Ljava/util/ArrayList;
@@ -428,7 +428,7 @@
     const/4 v1, 0x0
 
     .line 84
-    :try_start_53
+    :try_start_0
     invoke-virtual {v0, v5}, Llibs/ql2;->a(Llibs/do2;)Llibs/cp2;
 
     .line 85
@@ -447,12 +447,12 @@
     .line 92
     .line 93
     move-result v2
-    :try_end_5d
-    .catch Ljava/io/IOException; {:try_start_53 .. :try_end_5d} :catch_73
-    .catchall {:try_start_53 .. :try_end_5d} :catchall_70
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 94
-    if-nez v2, :cond_65
+    if-nez v2, :cond_0
 
     .line 95
     .line 96
@@ -468,8 +468,8 @@
     return-object v0
 
     .line 102
-    :cond_65
-    :try_start_65
+    :cond_0
+    :try_start_1
     invoke-static {v0}, Llibs/ur3;->c(Ljava/io/Closeable;)V
 
     .line 103
@@ -489,26 +489,26 @@
     .line 111
     .line 112
     throw v0
-    :try_end_70
-    .catch Ljava/io/IOException; {:try_start_65 .. :try_end_70} :catch_73
-    .catchall {:try_start_65 .. :try_end_70} :catchall_70
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 113
-    :catchall_70
+    :catchall_0
     move-exception v0
 
     .line 114
     const/4 v10, 0x0
 
     .line 115
-    goto :goto_7c
+    goto :goto_0
 
     .line 116
-    :catch_73
+    :catch_0
     move-exception v0
 
     .line 117
-    :try_start_74
+    :try_start_2
     iget-object v2, p0, Llibs/nl2;->Y:Llibs/mo3;
 
     .line 118
@@ -522,16 +522,16 @@
 
     .line 123
     throw v0
-    :try_end_7b
-    .catchall {:try_start_74 .. :try_end_7b} :catchall_7b
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 124
-    :catchall_7b
+    :catchall_1
     move-exception v0
 
     .line 125
-    :goto_7c
-    if-nez v10, :cond_83
+    :goto_0
+    if-nez v10, :cond_1
 
     .line 126
     .line 127
@@ -544,12 +544,12 @@
     .line 130
     .line 131
     .line 132
-    :cond_83
+    :cond_1
     throw v0
 .end method
 
 .method public final clone()Ljava/lang/Object;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/nl2;

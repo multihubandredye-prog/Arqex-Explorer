@@ -16,7 +16,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
@@ -36,7 +36,7 @@
 .end method
 
 .method public constructor <init>(Llibs/n0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,14 +52,14 @@
 .end method
 
 .method public static a(C)Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x30
 
     .line 2
     .line 3
-    if-lt p0, v0, :cond_a
+    if-lt p0, v0, :cond_0
 
     .line 4
     .line 5
@@ -67,7 +67,7 @@
 
     .line 6
     .line 7
-    if-gt p0, v0, :cond_a
+    if-gt p0, v0, :cond_0
 
     .line 8
     .line 9
@@ -77,7 +77,7 @@
     return p0
 
     .line 11
-    :cond_a
+    :cond_0
     const/4 p0, 0x0
 
     .line 12
@@ -85,7 +85,7 @@
 .end method
 
 .method public static b(Ljava/nio/CharBuffer;)V
-    .registers 7
+    .locals 6
 
     .line 1
     invoke-virtual {p0}, Ljava/nio/Buffer;->position()I
@@ -120,8 +120,8 @@
     move-result v2
 
     .line 17
-    :cond_10
-    :goto_10
+    :cond_0
+    :goto_0
     invoke-virtual {p0}, Ljava/nio/Buffer;->limit()I
 
     .line 18
@@ -130,7 +130,7 @@
     move-result v3
 
     .line 21
-    if-ge v1, v3, :cond_40
+    if-ge v1, v3, :cond_1
 
     .line 22
     .line 23
@@ -150,7 +150,7 @@
     move-result v3
 
     .line 31
-    if-ne v2, v3, :cond_40
+    if-ne v2, v3, :cond_1
 
     .line 32
     .line 33
@@ -158,7 +158,7 @@
 
     .line 34
     .line 35
-    if-eqz v2, :cond_10
+    if-eqz v2, :cond_0
 
     .line 36
     .line 37
@@ -174,7 +174,7 @@
     move-result v4
 
     .line 43
-    if-ge v3, v4, :cond_10
+    if-ge v3, v4, :cond_0
 
     .line 44
     .line 45
@@ -190,7 +190,7 @@
 
     .line 50
     .line 51
-    if-ne v4, v5, :cond_10
+    if-ne v4, v5, :cond_0
 
     .line 52
     .line 53
@@ -210,17 +210,17 @@
     move-result v4
 
     .line 61
-    if-eqz v4, :cond_10
+    if-eqz v4, :cond_0
 
     .line 62
     .line 63
     move v0, v3
 
     .line 64
-    goto :goto_10
+    goto :goto_0
 
     .line 65
-    :cond_40
+    :cond_1
     invoke-virtual {p0, v0}, Ljava/nio/CharBuffer;->position(I)Ljava/nio/Buffer;
 
     .line 66
@@ -238,14 +238,14 @@
 .end method
 
 .method public static c()Llibs/n0;
-    .registers 3
+    .locals 3
 
     .line 1
     sget-object v0, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
     .line 2
     .line 3
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -257,7 +257,7 @@
     move-result-object v0
 
     .line 9
-    :cond_8
+    :cond_0
     sget-object v1, Llibs/p0;->Y:Ljava/util/concurrent/ConcurrentHashMap;
 
     .line 10
@@ -274,7 +274,7 @@
 
     .line 16
     .line 17
-    if-nez v2, :cond_19
+    if-nez v2, :cond_1
 
     .line 18
     .line 19
@@ -291,7 +291,7 @@
     .line 24
     .line 25
     .line 26
-    :cond_19
+    :cond_1
     invoke-virtual {v2}, Ljava/text/Collator;->clone()Ljava/lang/Object;
 
     .line 27
@@ -322,7 +322,7 @@
 
 # virtual methods
 .method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 12
+    .locals 9
 
     .line 1
     check-cast p1, Ljava/lang/CharSequence;
@@ -349,7 +349,7 @@
     move-result-object v1
 
     .line 13
-    :goto_c
+    :goto_0
     invoke-virtual {v0}, Ljava/nio/Buffer;->hasRemaining()Z
 
     .line 14
@@ -364,7 +364,7 @@
     const/4 v4, 0x1
 
     .line 19
-    if-eqz v2, :cond_de
+    if-eqz v2, :cond_8
 
     .line 20
     .line 21
@@ -376,7 +376,7 @@
     move-result v2
 
     .line 25
-    if-eqz v2, :cond_de
+    if-eqz v2, :cond_8
 
     .line 26
     .line 27
@@ -413,7 +413,7 @@
 
     .line 43
     .line 44
-    if-eqz v5, :cond_84
+    if-eqz v5, :cond_2
 
     .line 45
     .line 46
@@ -433,7 +433,7 @@
     move-result v5
 
     .line 54
-    if-eqz v5, :cond_84
+    if-eqz v5, :cond_2
 
     .line 55
     .line 56
@@ -456,19 +456,19 @@
     sub-int/2addr v3, v4
 
     .line 65
-    if-eqz v3, :cond_44
+    if-eqz v3, :cond_0
 
     .line 66
     .line 67
-    goto/16 :goto_ba
+    goto/16 :goto_3
 
     .line 68
     .line 69
-    :cond_44
+    :cond_0
     const/4 v3, 0x0
 
     .line 70
-    :goto_45
+    :goto_1
     invoke-virtual {v0}, Ljava/nio/Buffer;->remaining()I
 
     .line 71
@@ -477,7 +477,7 @@
     move-result v4
 
     .line 74
-    if-ge v3, v4, :cond_bb
+    if-ge v3, v4, :cond_6
 
     .line 75
     .line 76
@@ -489,7 +489,7 @@
     move-result v4
 
     .line 80
-    if-ge v3, v4, :cond_bb
+    if-ge v3, v4, :cond_6
 
     .line 81
     .line 82
@@ -575,25 +575,25 @@
     move-result v4
 
     .line 126
-    if-eqz v4, :cond_81
+    if-eqz v4, :cond_1
 
     .line 127
     .line 128
     move v2, v4
 
     .line 129
-    goto :goto_bb
+    goto :goto_4
 
     .line 130
-    :cond_81
+    :cond_1
     add-int/lit8 v3, v3, 0x1
 
     .line 131
     .line 132
-    goto :goto_45
+    goto :goto_1
 
     .line 133
-    :cond_84
+    :cond_2
     invoke-virtual {v0}, Ljava/nio/CharBuffer;->length()I
 
     .line 134
@@ -618,8 +618,8 @@
     move-result v5
 
     .line 145
-    :goto_90
-    if-ge v2, v5, :cond_ae
+    :goto_2
+    if-ge v2, v5, :cond_5
 
     .line 146
     .line 147
@@ -639,7 +639,7 @@
     move-result v8
 
     .line 155
-    if-eq v7, v8, :cond_ab
+    if-eq v7, v8, :cond_4
 
     .line 156
     .line 157
@@ -651,41 +651,41 @@
 
     .line 160
     .line 161
-    if-ne v7, v5, :cond_a5
+    if-ne v7, v5, :cond_3
 
     .line 162
     .line 163
-    if-ne v8, v2, :cond_a5
+    if-ne v8, v2, :cond_3
 
     .line 164
     .line 165
-    goto :goto_ba
+    goto :goto_3
 
     .line 166
-    :cond_a5
-    if-ne v7, v2, :cond_ae
+    :cond_3
+    if-ne v7, v2, :cond_5
 
     .line 167
     .line 168
-    if-ne v8, v5, :cond_ae
+    if-ne v8, v5, :cond_5
 
     .line 169
     .line 170
     const/4 v3, 0x1
 
     .line 171
-    goto :goto_ba
+    goto :goto_3
 
     .line 172
-    :cond_ab
+    :cond_4
     add-int/lit8 v2, v2, 0x1
 
     .line 173
     .line 174
-    goto :goto_90
+    goto :goto_2
 
     .line 175
-    :cond_ae
+    :cond_5
     invoke-virtual {v0}, Ljava/nio/CharBuffer;->toString()Ljava/lang/String;
 
     .line 176
@@ -710,20 +710,20 @@
     move-result v3
 
     .line 187
-    :goto_ba
+    :goto_3
     move v2, v3
 
     .line 188
-    :cond_bb
-    :goto_bb
-    if-eqz v2, :cond_be
+    :cond_6
+    :goto_4
+    if-eqz v2, :cond_7
 
     .line 189
     .line 190
     return v2
 
     .line 191
-    :cond_be
+    :cond_7
     invoke-virtual {v0}, Ljava/nio/Buffer;->limit()I
 
     .line 192
@@ -782,11 +782,11 @@
     .line 219
     .line 220
     .line 221
-    goto/16 :goto_c
+    goto/16 :goto_0
 
     .line 222
     .line 223
-    :cond_de
+    :cond_8
     invoke-virtual {v0}, Ljava/nio/Buffer;->hasRemaining()Z
 
     .line 224
@@ -795,14 +795,14 @@
     move-result v0
 
     .line 227
-    if-eqz v0, :cond_e5
+    if-eqz v0, :cond_9
 
     .line 228
     .line 229
     return v4
 
     .line 230
-    :cond_e5
+    :cond_9
     invoke-virtual {v1}, Ljava/nio/Buffer;->hasRemaining()Z
 
     .line 231
@@ -811,14 +811,14 @@
     move-result v0
 
     .line 234
-    if-eqz v0, :cond_ec
+    if-eqz v0, :cond_a
 
     .line 235
     .line 236
     return v3
 
     .line 237
-    :cond_ec
+    :cond_a
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     .line 238

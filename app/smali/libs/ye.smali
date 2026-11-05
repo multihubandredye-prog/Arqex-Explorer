@@ -11,7 +11,7 @@
 
 # direct methods
 .method public synthetic constructor <init>([CB)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/ye;->a:B
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public a()[C
-    .registers 4
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/ye;->a:B
@@ -44,7 +44,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_1a
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -64,7 +64,7 @@
     return-object v0
 
     .line 15
-    :pswitch_e
+    :pswitch_0
     invoke-virtual {v1}, [C->clone()Ljava/lang/Object;
 
     .line 16
@@ -89,8 +89,8 @@
     return-object v0
 
     .line 27
-    :pswitch_data_1a
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_e
+        :pswitch_0
     .end packed-switch
 .end method

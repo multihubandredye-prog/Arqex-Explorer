@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/e01;[Ljava/lang/Object;II)V
-    .registers 5
+    .locals 0
 
     const/4 p4, 0x2
 
@@ -32,7 +32,7 @@
 .end method
 
 .method public constructor <init>(Llibs/e01;[Ljava/lang/Object;ILjava/util/ArrayList;)V
-    .registers 5
+    .locals 0
 
     .line 1
     const/4 p4, 0x0
@@ -63,7 +63,7 @@
 .end method
 
 .method public constructor <init>(Llibs/e01;[Ljava/lang/Object;ILjava/util/ArrayList;Z)V
-    .registers 6
+    .locals 0
 
     const/4 p4, 0x1
 
@@ -82,7 +82,7 @@
 .end method
 
 .method private final b()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/wz0;->Lambda:Llibs/e01;
@@ -98,7 +98,7 @@
     .line 6
     .line 7
     .line 8
-    :try_start_7
+    :try_start_0
     iget-object v0, p0, Llibs/wz0;->Lambda:Llibs/e01;
 
     .line 9
@@ -124,11 +124,11 @@
     .line 19
     .line 20
     monitor-enter v0
-    :try_end_14
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_14} :catch_26
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 21
-    :try_start_14
+    :try_start_1
     iget-object v1, p0, Llibs/wz0;->Lambda:Llibs/e01;
 
     .line 22
@@ -160,27 +160,27 @@
     return-void
 
     .line 36
-    :catchall_23
+    :catchall_0
     move-exception v1
 
     .line 37
     monitor-exit v0
-    :try_end_25
-    .catchall {:try_start_14 .. :try_end_25} :catchall_23
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 38
-    :try_start_25
+    :try_start_2
     throw v1
-    :try_end_26
-    .catch Ljava/io/IOException; {:try_start_25 .. :try_end_26} :catch_26
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 39
-    :catch_26
+    :catch_0
     return-void
 .end method
 
 .method private final c()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/wz0;->Lambda:Llibs/e01;
@@ -196,7 +196,7 @@
     .line 6
     .line 7
     .line 8
-    :try_start_7
+    :try_start_0
     iget-object v0, p0, Llibs/wz0;->Lambda:Llibs/e01;
 
     .line 9
@@ -222,11 +222,11 @@
     .line 19
     .line 20
     monitor-enter v0
-    :try_end_14
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_14} :catch_26
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 21
-    :try_start_14
+    :try_start_1
     iget-object v1, p0, Llibs/wz0;->Lambda:Llibs/e01;
 
     .line 22
@@ -258,36 +258,36 @@
     return-void
 
     .line 36
-    :catchall_23
+    :catchall_0
     move-exception v1
 
     .line 37
     monitor-exit v0
-    :try_end_25
-    .catchall {:try_start_14 .. :try_end_25} :catchall_23
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 38
-    :try_start_25
+    :try_start_2
     throw v1
-    :try_end_26
-    .catch Ljava/io/IOException; {:try_start_25 .. :try_end_26} :catch_26
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 39
-    :catch_26
+    :catch_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final a()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/wz0;->Y:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_2a
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -312,7 +312,7 @@
     monitor-enter v0
 
     .line 16
-    :try_start_f
+    :try_start_0
     iget-object v1, p0, Llibs/wz0;->Lambda:Llibs/e01;
 
     .line 17
@@ -344,19 +344,19 @@
     return-void
 
     .line 31
-    :catchall_1e
+    :catchall_0
     move-exception v1
 
     .line 32
     monitor-exit v0
-    :try_end_20
-    .catchall {:try_start_f .. :try_end_20} :catchall_1e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 33
     throw v1
 
     .line 34
-    :pswitch_21
+    :pswitch_0
     invoke-direct {p0}, Llibs/wz0;->c()V
 
     .line 35
@@ -365,7 +365,7 @@
     return-void
 
     .line 38
-    :pswitch_25
+    :pswitch_1
     invoke-direct {p0}, Llibs/wz0;->b()V
 
     .line 39
@@ -377,9 +377,9 @@
     nop
 
     .line 43
-    :pswitch_data_2a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_25
-        :pswitch_21
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -76,7 +76,7 @@
 
 # virtual methods
 .method public final a(IIZ)V
-    .registers 5
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -90,7 +90,7 @@
 
     .line 5
     .line 6
-    if-eqz p3, :cond_d
+    if-eqz p3, :cond_0
 
     .line 7
     .line 8
@@ -108,7 +108,7 @@
     return-void
 
     .line 14
-    :cond_d
+    :cond_0
     aget p3, v0, p1
 
     .line 15

@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/security/KeyFactorySpi;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final engineGeneratePrivate(Ljava/security/spec/KeySpec;)Ljava/security/PrivateKey;
-    .registers 19
+    .locals 17
 
     .line 1
     move-object/from16 v0, p1
@@ -30,7 +30,7 @@
 
     .line 4
     .line 5
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     .line 6
     .line 7
@@ -50,12 +50,12 @@
     return-object v1
 
     .line 15
-    :cond_e
+    :cond_0
     instance-of v1, v0, Ljava/security/spec/PKCS8EncodedKeySpec;
 
     .line 16
     .line 17
-    if-eqz v1, :cond_103
+    if-eqz v1, :cond_c
 
     .line 18
     .line 19
@@ -83,10 +83,10 @@
 
     .line 30
     .line 31
-    :try_start_1e
+    :try_start_0
     aget-byte v3, v0, v3
-    :try_end_20
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_1e .. :try_end_20} :catch_97
+    :try_end_0
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 32
     .line 33
@@ -111,7 +111,7 @@
 
     .line 41
     .line 42
-    if-ne v3, v5, :cond_30
+    if-ne v3, v5, :cond_1
 
     .line 43
     .line 44
@@ -123,24 +123,24 @@
 
     .line 47
     .line 48
-    goto :goto_3f
+    goto :goto_0
 
     .line 49
-    :cond_30
+    :cond_1
     const/16 v11, 0x70
 
     .line 50
     .line 51
-    if-ne v3, v11, :cond_f7
+    if-ne v3, v11, :cond_b
 
     .line 52
     .line 53
-    :try_start_34
+    :try_start_1
     aget-byte v11, v0, v6
 
     .line 54
     .line 55
-    if-ne v11, v9, :cond_3c
+    if-ne v11, v9, :cond_2
 
     .line 56
     .line 57
@@ -151,10 +151,10 @@
     const/4 v12, 0x7
 
     .line 60
-    goto :goto_3f
+    goto :goto_0
 
     .line 61
-    :cond_3c
+    :cond_2
     const/16 v11, 0x30
 
     .line 62
@@ -162,11 +162,11 @@
     const/4 v12, 0x5
 
     .line 64
-    :goto_3f
+    :goto_0
     array-length v13, v0
 
     .line 65
-    if-ne v13, v11, :cond_ef
+    if-ne v13, v11, :cond_a
 
     .line 66
     .line 67
@@ -177,7 +177,7 @@
 
     .line 69
     .line 70
-    if-ne v14, v8, :cond_e9
+    if-ne v14, v8, :cond_9
 
     .line 71
     .line 72
@@ -198,7 +198,7 @@
     sub-int/2addr v11, v4
 
     .line 79
-    if-ne v15, v11, :cond_e9
+    if-ne v15, v11, :cond_9
 
     .line 80
     .line 81
@@ -206,7 +206,7 @@
 
     .line 82
     .line 83
-    if-ne v11, v4, :cond_e9
+    if-ne v11, v4, :cond_9
 
     .line 84
     .line 85
@@ -217,7 +217,7 @@
 
     .line 87
     .line 88
-    if-ne v15, v14, :cond_e9
+    if-ne v15, v14, :cond_9
 
     .line 89
     .line 90
@@ -228,7 +228,7 @@
 
     .line 92
     .line 93
-    if-nez v16, :cond_e9
+    if-nez v16, :cond_9
 
     .line 94
     .line 95
@@ -240,7 +240,7 @@
 
     .line 98
     .line 99
-    if-ne v4, v8, :cond_e9
+    if-ne v4, v8, :cond_9
 
     .line 100
     .line 101
@@ -248,7 +248,7 @@
 
     .line 102
     .line 103
-    if-ne v4, v12, :cond_e9
+    if-ne v4, v12, :cond_9
 
     .line 104
     .line 105
@@ -256,7 +256,7 @@
 
     .line 106
     .line 107
-    if-ne v4, v6, :cond_e9
+    if-ne v4, v6, :cond_9
 
     .line 108
     .line 109
@@ -264,7 +264,7 @@
 
     .line 110
     .line 111
-    if-ne v4, v11, :cond_e9
+    if-ne v4, v11, :cond_9
 
     .line 112
     .line 113
@@ -280,7 +280,7 @@
 
     .line 118
     .line 119
-    if-ne v4, v6, :cond_e9
+    if-ne v4, v6, :cond_9
 
     .line 120
     .line 121
@@ -296,7 +296,7 @@
 
     .line 126
     .line 127
-    if-ne v6, v8, :cond_e9
+    if-ne v6, v8, :cond_9
 
     .line 128
     .line 129
@@ -312,7 +312,7 @@
 
     .line 134
     .line 135
-    if-ne v3, v5, :cond_9f
+    if-ne v3, v5, :cond_4
 
     .line 136
     .line 137
@@ -320,7 +320,7 @@
 
     .line 138
     .line 139
-    if-ne v3, v4, :cond_99
+    if-ne v3, v4, :cond_3
 
     .line 140
     .line 141
@@ -328,7 +328,7 @@
 
     .line 142
     .line 143
-    if-ne v3, v14, :cond_99
+    if-ne v3, v14, :cond_3
 
     .line 144
     .line 145
@@ -336,7 +336,7 @@
 
     .line 146
     .line 147
-    if-ne v3, v14, :cond_99
+    if-ne v3, v14, :cond_3
 
     .line 148
     .line 149
@@ -344,17 +344,17 @@
 
     .line 150
     .line 151
-    goto :goto_c1
+    goto :goto_2
 
     .line 152
-    :catch_97
+    :catch_0
     move-exception v0
 
     .line 153
-    goto :goto_fd
+    goto :goto_3
 
     .line 154
-    :cond_99
+    :cond_3
     new-instance v0, Ljava/security/spec/InvalidKeySpecException;
 
     .line 155
@@ -367,8 +367,8 @@
     throw v0
 
     .line 160
-    :cond_9f
-    if-ne v12, v9, :cond_b0
+    :cond_4
+    if-ne v12, v9, :cond_6
 
     .line 161
     .line 162
@@ -376,7 +376,7 @@
 
     .line 163
     .line 164
-    if-ne v3, v7, :cond_aa
+    if-ne v3, v7, :cond_5
 
     .line 165
     .line 166
@@ -384,14 +384,14 @@
 
     .line 167
     .line 168
-    if-nez v3, :cond_aa
+    if-nez v3, :cond_5
 
     .line 169
     .line 170
-    goto :goto_b2
+    goto :goto_1
 
     .line 171
-    :cond_aa
+    :cond_5
     new-instance v0, Ljava/security/spec/InvalidKeySpecException;
 
     .line 172
@@ -404,12 +404,12 @@
     throw v0
 
     .line 177
-    :cond_b0
+    :cond_6
     const/16 v6, 0xc
 
     .line 178
     .line 179
-    :goto_b2
+    :goto_1
     add-int/lit8 v3, v6, 0x1
 
     .line 180
@@ -418,7 +418,7 @@
 
     .line 182
     .line 183
-    if-ne v4, v15, :cond_e3
+    if-ne v4, v15, :cond_8
 
     .line 184
     .line 185
@@ -434,14 +434,14 @@
 
     .line 190
     .line 191
-    if-ne v3, v5, :cond_e3
+    if-ne v3, v5, :cond_8
 
     .line 192
     .line 193
     move v3, v4
 
     .line 194
-    :goto_c1
+    :goto_2
     add-int/lit8 v4, v3, 0x1
 
     .line 195
@@ -450,7 +450,7 @@
 
     .line 197
     .line 198
-    if-ne v5, v15, :cond_dd
+    if-ne v5, v15, :cond_7
 
     .line 199
     .line 200
@@ -466,7 +466,7 @@
 
     .line 205
     .line 206
-    if-ne v4, v5, :cond_dd
+    if-ne v4, v5, :cond_7
 
     .line 207
     .line 208
@@ -475,8 +475,8 @@
     .line 209
     .line 210
     invoke-static {v0, v3, v4, v13, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-    :try_end_d4
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_34 .. :try_end_d4} :catch_97
+    :try_end_1
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 211
     .line 212
@@ -498,8 +498,8 @@
     return-object v1
 
     .line 222
-    :cond_dd
-    :try_start_dd
+    :cond_7
+    :try_start_2
     new-instance v0, Ljava/security/spec/InvalidKeySpecException;
 
     .line 223
@@ -512,7 +512,7 @@
     throw v0
 
     .line 228
-    :cond_e3
+    :cond_8
     new-instance v0, Ljava/security/spec/InvalidKeySpecException;
 
     .line 229
@@ -525,7 +525,7 @@
     throw v0
 
     .line 234
-    :cond_e9
+    :cond_9
     new-instance v0, Ljava/security/spec/InvalidKeySpecException;
 
     .line 235
@@ -538,7 +538,7 @@
     throw v0
 
     .line 240
-    :cond_ef
+    :cond_a
     new-instance v0, Ljava/security/spec/InvalidKeySpecException;
 
     .line 241
@@ -555,7 +555,7 @@
     throw v0
 
     .line 248
-    :cond_f7
+    :cond_b
     new-instance v0, Ljava/security/spec/InvalidKeySpecException;
 
     .line 249
@@ -566,11 +566,11 @@
     .line 252
     .line 253
     throw v0
-    :try_end_fd
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_dd .. :try_end_fd} :catch_97
+    :try_end_2
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 254
-    :goto_fd
+    :goto_3
     new-instance v1, Ljava/security/spec/InvalidKeySpecException;
 
     .line 255
@@ -583,7 +583,7 @@
     throw v1
 
     .line 260
-    :cond_103
+    :cond_c
     new-instance v1, Ljava/security/spec/InvalidKeySpecException;
 
     .line 261
@@ -631,14 +631,14 @@
 .end method
 
 .method public final engineGeneratePublic(Ljava/security/spec/KeySpec;)Ljava/security/PublicKey;
-    .registers 5
+    .locals 3
 
     .line 1
     instance-of v0, p1, Llibs/jh0;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -658,12 +658,12 @@
     return-object v0
 
     .line 13
-    :cond_c
+    :cond_0
     instance-of v0, p1, Ljava/security/spec/X509EncodedKeySpec;
 
     .line 14
     .line 15
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     .line 16
     .line 17
@@ -683,7 +683,7 @@
     return-object v0
 
     .line 25
-    :cond_18
+    :cond_1
     new-instance v0, Ljava/security/spec/InvalidKeySpecException;
 
     .line 26
@@ -731,7 +731,7 @@
 .end method
 
 .method public final engineGetKeySpec(Ljava/security/Key;Ljava/lang/Class;)Ljava/security/spec/KeySpec;
-    .registers 10
+    .locals 7
 
     .line 1
     const-class v0, Llibs/jh0;
@@ -746,7 +746,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -754,7 +754,7 @@
 
     .line 10
     .line 11
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
@@ -769,7 +769,7 @@
 
     .line 17
     .line 18
-    if-eqz v1, :cond_3c
+    if-eqz v1, :cond_1
 
     .line 19
     .line 20
@@ -789,7 +789,7 @@
     return-object p1
 
     .line 28
-    :cond_1b
+    :cond_0
     const-class v0, Llibs/hh0;
 
     .line 29
@@ -802,7 +802,7 @@
     move-result v0
 
     .line 34
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_1
 
     .line 35
     .line 36
@@ -810,7 +810,7 @@
 
     .line 37
     .line 38
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_1
 
     .line 39
     .line 40
@@ -825,7 +825,7 @@
 
     .line 44
     .line 45
-    if-eqz v6, :cond_3c
+    if-eqz v6, :cond_1
 
     .line 46
     .line 47
@@ -857,7 +857,7 @@
     return-object v1
 
     .line 61
-    :cond_3c
+    :cond_1
     invoke-static {p1, p2}, Llibs/bf0;->b(Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 62
@@ -870,7 +870,7 @@
 .end method
 
 .method public final engineTranslateKey(Ljava/security/Key;)Ljava/security/Key;
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Ljava/security/InvalidKeyException;

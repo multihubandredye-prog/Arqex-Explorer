@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/conscrypt/OpenSSLCipher$Mode;Lorg/conscrypt/OpenSSLCipher$Padding;)V
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-direct {p0, p1, p2}, Lorg/conscrypt/OpenSSLCipher;-><init>(Lorg/conscrypt/OpenSSLCipher$Mode;Lorg/conscrypt/OpenSSLCipher$Padding;)V
@@ -46,7 +46,7 @@
 .end method
 
 .method private reset()V
-    .registers 7
+    .locals 6
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLEvpCipher;->cipherCtx:Lorg/conscrypt/NativeRef$EVP_CIPHER_CTX;
@@ -91,7 +91,7 @@
 
 # virtual methods
 .method public doFinalInternal([BII)I
-    .registers 7
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLCipher;->isEncrypting()Z
@@ -105,7 +105,7 @@
     const/4 v1, 0x0
 
     .line 6
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 7
     .line 8
@@ -113,21 +113,21 @@
 
     .line 9
     .line 10
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 11
     .line 12
     return v1
 
     .line 13
-    :cond_c
+    :cond_0
     array-length v0, p1
 
     .line 14
     sub-int/2addr v0, p2
 
     .line 15
-    if-lt v0, p3, :cond_17
+    if-lt v0, p3, :cond_1
 
     .line 16
     .line 17
@@ -143,10 +143,10 @@
     move-result p1
 
     .line 23
-    goto :goto_27
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_1
     new-array p3, p3, [B
 
     .line 25
@@ -163,11 +163,11 @@
     move-result v2
 
     .line 32
-    if-gt v2, v0, :cond_2d
+    if-gt v2, v0, :cond_3
 
     .line 33
     .line 34
-    if-lez v2, :cond_26
+    if-lez v2, :cond_2
 
     .line 35
     .line 36
@@ -176,11 +176,11 @@
     .line 37
     .line 38
     .line 39
-    :cond_26
+    :cond_2
     move p1, v2
 
     .line 40
-    :goto_27
+    :goto_0
     add-int/2addr p1, p2
 
     .line 41
@@ -195,7 +195,7 @@
     return p1
 
     .line 46
-    :cond_2d
+    :cond_3
     new-instance p1, Lorg/conscrypt/ShortBufferWithoutStackTraceException;
 
     .line 47
@@ -249,18 +249,18 @@
 .end method
 
 .method public engineDoFinal([BII[BI)I
-    .registers 14
+    .locals 8
 
     const/4 v0, 0x0
 
-    if-eqz p4, :cond_1f
+    if-eqz p4, :cond_1
 
     .line 56
     invoke-virtual {p0, p3}, Lorg/conscrypt/OpenSSLEvpCipher;->getOutputSizeForFinal(I)I
 
     move-result v7
 
-    if-lez p3, :cond_17
+    if-lez p3, :cond_0
 
     move-object v1, p0
 
@@ -283,15 +283,15 @@
 
     sub-int/2addr v7, v0
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     move-object v5, p4
 
     move v6, p5
 
     .line 58
-    :goto_19
+    :goto_0
     invoke-virtual {p0, v5, p5, v7}, Lorg/conscrypt/OpenSSLEvpCipher;->doFinalInternal([BII)I
 
     move-result p1
@@ -301,7 +301,7 @@
     return p1
 
     .line 59
-    :cond_1f
+    :cond_1
     const-string p1, "output == null"
 
     invoke-static {p1}, Llibs/cr2;->c(Ljava/lang/String;)V
@@ -310,7 +310,7 @@
 .end method
 
 .method public engineDoFinal([BII)[B
-    .registers 13
+    .locals 9
 
     .line 1
     invoke-virtual {p0, p3}, Lorg/conscrypt/OpenSSLEvpCipher;->getOutputSizeForFinal(I)I
@@ -332,7 +332,7 @@
 
     .line 9
     .line 10
-    if-lez p3, :cond_1c
+    if-lez p3, :cond_0
 
     .line 11
     .line 12
@@ -351,21 +351,21 @@
     move v4, p3
 
     .line 17
-    :try_start_10
+    :try_start_0
     invoke-virtual/range {v1 .. v7}, Lorg/conscrypt/OpenSSLEvpCipher;->updateInternal([BII[BII)I
 
     .line 18
     .line 19
     .line 20
     move-result p1
-    :try_end_14
-    .catch Ljavax/crypto/ShortBufferException; {:try_start_10 .. :try_end_14} :catch_15
+    :try_end_0
+    .catch Ljavax/crypto/ShortBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 21
-    goto :goto_1d
+    goto :goto_1
 
     .line 22
-    :catch_15
+    :catch_0
     move-exception v0
 
     .line 23
@@ -377,45 +377,45 @@
     .line 25
     .line 26
     .line 27
-    :goto_1a
+    :goto_0
     const/4 p1, 0x0
 
     .line 28
     return-object p1
 
     .line 29
-    :cond_1c
+    :cond_0
     const/4 p1, 0x0
 
     .line 30
-    :goto_1d
+    :goto_1
     sub-int p2, v7, p1
 
     .line 31
     .line 32
-    :try_start_1f
+    :try_start_1
     invoke-virtual {p0, v5, p1, p2}, Lorg/conscrypt/OpenSSLEvpCipher;->doFinalInternal([BII)I
 
     .line 33
     .line 34
     .line 35
     move-result p2
-    :try_end_23
-    .catch Ljavax/crypto/ShortBufferException; {:try_start_1f .. :try_end_23} :catch_31
+    :try_end_1
+    .catch Ljavax/crypto/ShortBufferException; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 36
     add-int/2addr p1, p2
 
     .line 37
-    if-ne p1, v7, :cond_27
+    if-ne p1, v7, :cond_1
 
     .line 38
     .line 39
     return-object v5
 
     .line 40
-    :cond_27
-    if-nez p1, :cond_2c
+    :cond_1
+    if-nez p1, :cond_2
 
     .line 41
     .line 42
@@ -426,7 +426,7 @@
     return-object p1
 
     .line 45
-    :cond_2c
+    :cond_2
     invoke-static {v5, v0, p1}, Ljava/util/Arrays;->copyOfRange([BII)[B
 
     .line 46
@@ -438,7 +438,7 @@
     return-object p1
 
     .line 50
-    :catch_31
+    :catch_1
     move-exception v0
 
     .line 51
@@ -450,18 +450,18 @@
     .line 53
     .line 54
     .line 55
-    goto :goto_1a
+    goto :goto_0
 .end method
 
 .method public engineInitInternal([BLjava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    .registers 11
+    .locals 7
 
     .line 1
     instance-of v0, p2, Ljavax/crypto/spec/IvParameterSpec;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -477,14 +477,14 @@
     move-result-object p2
 
     .line 11
-    goto :goto_c
+    goto :goto_0
 
     .line 12
-    :cond_b
+    :cond_0
     const/4 p2, 0x0
 
     .line 13
-    :goto_c
+    :goto_0
     array-length v0, p1
 
     .line 14
@@ -516,7 +516,7 @@
 
     .line 27
     .line 28
-    if-eqz v4, :cond_d0
+    if-eqz v4, :cond_a
 
     .line 29
     .line 30
@@ -540,15 +540,15 @@
 
     .line 39
     .line 40
-    if-nez p2, :cond_52
+    if-nez p2, :cond_3
 
     .line 41
     .line 42
-    if-eqz v0, :cond_52
+    if-eqz v0, :cond_3
 
     .line 43
     .line 44
-    if-eqz v6, :cond_39
+    if-eqz v6, :cond_2
 
     .line 45
     .line 46
@@ -556,7 +556,7 @@
 
     .line 47
     .line 48
-    if-eqz p3, :cond_35
+    if-eqz p3, :cond_1
 
     .line 49
     .line 50
@@ -565,19 +565,19 @@
     .line 51
     .line 52
     .line 53
-    goto :goto_8c
+    goto :goto_2
 
     .line 54
-    :cond_35
+    :cond_1
     invoke-static {p2}, Lorg/conscrypt/NativeCrypto;->RAND_bytes([B)V
 
     .line 55
     .line 56
     .line 57
-    goto :goto_8c
+    goto :goto_2
 
     .line 58
-    :cond_39
+    :cond_2
     new-instance p1, Ljava/security/InvalidAlgorithmParameterException;
 
     .line 59
@@ -625,19 +625,19 @@
     throw p1
 
     .line 83
-    :cond_52
-    if-nez v0, :cond_70
+    :cond_3
+    if-nez v0, :cond_5
 
     .line 84
     .line 85
-    if-nez p2, :cond_57
+    if-nez p2, :cond_4
 
     .line 86
     .line 87
-    goto :goto_70
+    goto :goto_1
 
     .line 88
-    :cond_57
+    :cond_4
     new-instance p1, Ljava/security/InvalidAlgorithmParameterException;
 
     .line 89
@@ -685,23 +685,23 @@
     throw p1
 
     .line 113
-    :cond_70
-    :goto_70
-    if-eqz p2, :cond_8c
+    :cond_5
+    :goto_1
+    if-eqz p2, :cond_7
 
     .line 114
     .line 115
     array-length p3, p2
 
     .line 116
-    if-ne p3, v0, :cond_76
+    if-ne p3, v0, :cond_6
 
     .line 117
     .line 118
-    goto :goto_8c
+    goto :goto_2
 
     .line 119
-    :cond_76
+    :cond_6
     new-instance p1, Ljava/security/InvalidAlgorithmParameterException;
 
     .line 120
@@ -746,8 +746,8 @@
     throw p1
 
     .line 141
-    :cond_8c
-    :goto_8c
+    :cond_7
+    :goto_2
     iput-object p2, p0, Lorg/conscrypt/OpenSSLCipher;->iv:[B
 
     .line 142
@@ -764,7 +764,7 @@
 
     .line 148
     .line 149
-    if-eqz p3, :cond_af
+    if-eqz p3, :cond_8
 
     .line 150
     .line 151
@@ -818,10 +818,10 @@
     .line 173
     .line 174
     .line 175
-    goto :goto_b4
+    goto :goto_3
 
     .line 176
-    :cond_af
+    :cond_8
     move-object v4, p1
 
     .line 177
@@ -833,7 +833,7 @@
     .line 179
     .line 180
     .line 181
-    :goto_b4
+    :goto_3
     iget-object p1, p0, Lorg/conscrypt/OpenSSLEvpCipher;->cipherCtx:Lorg/conscrypt/NativeRef$EVP_CIPHER_CTX;
 
     .line 182
@@ -853,21 +853,21 @@
     const/4 v0, 0x0
 
     .line 190
-    if-ne p2, p3, :cond_c1
+    if-ne p2, p3, :cond_9
 
     .line 191
     .line 192
     const/4 p2, 0x1
 
     .line 193
-    goto :goto_c2
+    goto :goto_4
 
     .line 194
-    :cond_c1
+    :cond_9
     const/4 p2, 0x0
 
     .line 195
-    :goto_c2
+    :goto_4
     invoke-static {p1, p2}, Lorg/conscrypt/NativeCrypto;->EVP_CIPHER_CTX_set_padding(Lorg/conscrypt/NativeRef$EVP_CIPHER_CTX;Z)V
 
     .line 196
@@ -896,7 +896,7 @@
     return-void
 
     .line 209
-    :cond_d0
+    :cond_a
     move-object v3, p1
 
     .line 210
@@ -967,7 +967,7 @@
 .end method
 
 .method public getOutputSizeForFinal(I)I
-    .registers 5
+    .locals 3
 
     .line 1
     iget v0, p0, Lorg/conscrypt/OpenSSLEvpCipher;->modeBlockSize:I
@@ -977,14 +977,14 @@
     const/4 v1, 0x1
 
     .line 4
-    if-ne v0, v1, :cond_6
+    if-ne v0, v1, :cond_0
 
     .line 5
     .line 6
     return p1
 
     .line 7
-    :cond_6
+    :cond_0
     iget-object v0, p0, Lorg/conscrypt/OpenSSLEvpCipher;->cipherCtx:Lorg/conscrypt/NativeRef$EVP_CIPHER_CTX;
 
     .line 8
@@ -1009,7 +1009,7 @@
 
     .line 18
     .line 19
-    if-ne v1, v2, :cond_16
+    if-ne v1, v2, :cond_1
 
     .line 20
     .line 21
@@ -1019,7 +1019,7 @@
     return v0
 
     .line 23
-    :cond_16
+    :cond_1
     iget-object v1, p0, Lorg/conscrypt/OpenSSLEvpCipher;->cipherCtx:Lorg/conscrypt/NativeRef$EVP_CIPHER_CTX;
 
     .line 24
@@ -1038,7 +1038,7 @@
     const/4 v0, 0x0
 
     .line 31
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_2
 
     .line 32
     .line 33
@@ -1046,14 +1046,14 @@
 
     .line 34
     .line 35
-    goto :goto_24
+    goto :goto_0
 
     .line 36
-    :cond_23
+    :cond_2
     const/4 v1, 0x0
 
     .line 37
-    :goto_24
+    :goto_0
     add-int/2addr p1, v1
 
     .line 38
@@ -1065,7 +1065,7 @@
 
     .line 41
     .line 42
-    if-nez v1, :cond_31
+    if-nez v1, :cond_3
 
     .line 43
     .line 44
@@ -1077,16 +1077,16 @@
     move-result v1
 
     .line 48
-    if-eqz v1, :cond_33
+    if-eqz v1, :cond_4
 
     .line 49
     .line 50
-    :cond_31
+    :cond_3
     iget v0, p0, Lorg/conscrypt/OpenSSLEvpCipher;->modeBlockSize:I
 
     .line 51
     .line 52
-    :cond_33
+    :cond_4
     add-int/2addr p1, v0
 
     .line 53
@@ -1105,7 +1105,7 @@
 .end method
 
 .method public getOutputSizeForUpdate(I)I
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Lorg/conscrypt/OpenSSLEvpCipher;->getOutputSizeForFinal(I)I
@@ -1120,7 +1120,7 @@
 .end method
 
 .method public updateInternal([BII[BII)I
-    .registers 8
+    .locals 1
 
     .line 1
     array-length v0, p4
@@ -1129,7 +1129,7 @@
     sub-int/2addr v0, p5
 
     .line 3
-    if-lt v0, p6, :cond_16
+    if-lt v0, p6, :cond_0
 
     .line 4
     .line 5
@@ -1177,7 +1177,7 @@
     return p5
 
     .line 23
-    :cond_16
+    :cond_0
     move p1, p6
 
     .line 24

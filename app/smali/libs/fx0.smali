@@ -39,7 +39,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-    .registers 6
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -136,33 +136,33 @@
 
     .line 50
     .line 51
-    if-eqz p1, :cond_36
+    if-eqz p1, :cond_0
 
     .line 52
     .line 53
     move-object v0, p1
 
     .line 54
-    goto :goto_3b
+    goto :goto_0
 
     .line 55
-    :cond_36
-    if-eqz p2, :cond_3a
+    :cond_0
+    if-eqz p2, :cond_1
 
     .line 56
     .line 57
     move-object v0, p2
 
     .line 58
-    goto :goto_3b
+    goto :goto_0
 
     .line 59
-    :cond_3a
+    :cond_1
     move-object v0, p3
 
     .line 60
-    :goto_3b
-    if-eqz v0, :cond_43
+    :goto_0
+    if-eqz v0, :cond_2
 
     .line 61
     .line 62
@@ -177,14 +177,14 @@
     int-to-float v0, v0
 
     .line 67
-    goto :goto_44
+    goto :goto_1
 
     .line 68
-    :cond_43
+    :cond_2
     const/4 v0, 0x0
 
     .line 69
-    :goto_44
+    :goto_1
     iput v0, p0, Llibs/fx0;->a:F
 
     .line 70
@@ -230,7 +230,7 @@
 .end method
 
 .method public static a(Landroid/graphics/Rect;III)Z
-    .registers 5
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Landroid/graphics/Rect;->isEmpty()Z
@@ -241,7 +241,7 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -252,7 +252,7 @@
     sub-int/2addr v0, p3
 
     .line 10
-    if-lt p1, v0, :cond_1c
+    if-lt p1, v0, :cond_0
 
     .line 11
     .line 12
@@ -263,7 +263,7 @@
     add-int/2addr v0, p3
 
     .line 15
-    if-ge p1, v0, :cond_1c
+    if-ge p1, v0, :cond_0
 
     .line 16
     .line 17
@@ -274,7 +274,7 @@
     sub-int/2addr p1, p3
 
     .line 20
-    if-lt p2, p1, :cond_1c
+    if-lt p2, p1, :cond_0
 
     .line 21
     .line 22
@@ -285,7 +285,7 @@
     add-int/2addr p0, p3
 
     .line 25
-    if-ge p2, p0, :cond_1c
+    if-ge p2, p0, :cond_0
 
     .line 26
     .line 27
@@ -295,7 +295,7 @@
     return p0
 
     .line 29
-    :cond_1c
+    :cond_0
     const/4 p0, 0x0
 
     .line 30
@@ -305,7 +305,7 @@
 
 # virtual methods
 .method public final b(Landroid/graphics/Canvas;IF)V
-    .registers 15
+    .locals 11
 
     .line 1
     iget-object v0, p0, Llibs/fx0;->g:Landroid/graphics/PointF;
@@ -331,21 +331,21 @@
 
     .line 11
     .line 12
-    if-lez v5, :cond_f
+    if-lez v5, :cond_0
 
     .line 13
     .line 14
     const/4 v5, 0x1
 
     .line 15
-    goto :goto_10
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_0
     const/4 v5, 0x0
 
     .line 17
-    :goto_10
+    :goto_0
     iget-object v6, p0, Llibs/fx0;->f:Landroid/graphics/drawable/Drawable;
 
     .line 18
@@ -365,44 +365,44 @@
     const/4 v10, 0x3
 
     .line 26
-    if-eq p2, v4, :cond_68
+    if-eq p2, v4, :cond_6
 
     .line 27
     .line 28
     const/4 v0, 0x2
 
     .line 29
-    if-eq p2, v0, :cond_4a
+    if-eq p2, v0, :cond_5
 
     .line 30
     .line 31
-    if-eq p2, v10, :cond_22
+    if-eq p2, v10, :cond_1
 
     .line 32
     .line 33
-    goto/16 :goto_8f
+    goto/16 :goto_5
 
     .line 34
     .line 35
-    :cond_22
+    :cond_1
     float-to-int p2, v3
 
     .line 36
-    if-eqz v5, :cond_27
+    if-eqz v5, :cond_2
 
     .line 37
     .line 38
     const/4 v0, 0x3
 
     .line 39
-    goto :goto_28
+    goto :goto_1
 
     .line 40
-    :cond_27
+    :cond_2
     const/4 v0, 0x1
 
     .line 41
-    :goto_28
+    :goto_1
     mul-int v0, v0, v8
 
     .line 42
@@ -421,18 +421,18 @@
     float-to-int p3, v1
 
     .line 49
-    if-eqz v5, :cond_33
+    if-eqz v5, :cond_3
 
     .line 50
     .line 51
-    goto :goto_34
+    goto :goto_2
 
     .line 52
-    :cond_33
+    :cond_3
     const/4 v4, 0x3
 
     .line 53
-    :goto_34
+    :goto_2
     mul-int v8, v8, v4
 
     .line 54
@@ -455,20 +455,20 @@
     .line 61
     .line 62
     .line 63
-    if-eqz v5, :cond_41
+    if-eqz v5, :cond_4
 
     .line 64
     .line 65
     move-object v6, v7
 
     .line 66
-    :cond_41
+    :cond_4
     invoke-virtual {v6, v1}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
     .line 67
     .line 68
     .line 69
-    if-eqz p1, :cond_8f
+    if-eqz p1, :cond_a
 
     .line 70
     .line 71
@@ -480,12 +480,12 @@
     return-void
 
     .line 75
-    :cond_4a
+    :cond_5
     iget-object p2, p0, Llibs/fx0;->e:Landroid/graphics/drawable/Drawable;
 
     .line 76
     .line 77
-    if-eqz p2, :cond_8f
+    if-eqz p2, :cond_a
 
     .line 78
     .line 79
@@ -533,7 +533,7 @@
     .line 97
     .line 98
     .line 99
-    if-eqz p1, :cond_8f
+    if-eqz p1, :cond_a
 
     .line 100
     .line 101
@@ -545,25 +545,25 @@
     return-void
 
     .line 105
-    :cond_68
+    :cond_6
     float-to-int p2, v1
 
     .line 106
-    if-eqz v5, :cond_6d
+    if-eqz v5, :cond_7
 
     .line 107
     .line 108
     const/4 v1, 0x1
 
     .line 109
-    goto :goto_6e
+    goto :goto_3
 
     .line 110
-    :cond_6d
+    :cond_7
     const/4 v1, 0x3
 
     .line 111
-    :goto_6e
+    :goto_3
     mul-int v1, v1, v8
 
     .line 112
@@ -582,14 +582,14 @@
     float-to-int p3, v0
 
     .line 119
-    if-eqz v5, :cond_79
+    if-eqz v5, :cond_8
 
     .line 120
     .line 121
     const/4 v4, 0x3
 
     .line 122
-    :cond_79
+    :cond_8
     mul-int v8, v8, v4
 
     .line 123
@@ -612,24 +612,24 @@
     .line 130
     .line 131
     .line 132
-    if-eqz v5, :cond_86
+    if-eqz v5, :cond_9
 
     .line 133
     .line 134
-    goto :goto_87
+    goto :goto_4
 
     .line 135
-    :cond_86
+    :cond_9
     move-object v6, v7
 
     .line 136
-    :goto_87
+    :goto_4
     invoke-virtual {v6, v0}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
     .line 137
     .line 138
     .line 139
-    if-eqz p1, :cond_8f
+    if-eqz p1, :cond_a
 
     .line 140
     .line 141
@@ -638,13 +638,13 @@
     .line 142
     .line 143
     .line 144
-    :cond_8f
-    :goto_8f
+    :cond_a
+    :goto_5
     return-void
 .end method
 
 .method public final c(FF)V
-    .registers 10
+    .locals 7
 
     .line 1
     float-to-int v0, p1
@@ -690,17 +690,17 @@
     const/4 v6, 0x2
 
     .line 20
-    if-eqz v3, :cond_17
+    if-eqz v3, :cond_0
 
     .line 21
     .line 22
     const/4 v0, 0x2
 
     .line 23
-    goto :goto_2c
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_0
     iget-object v3, p0, Llibs/fx0;->k:Landroid/graphics/Rect;
 
     .line 25
@@ -713,17 +713,17 @@
     move-result v3
 
     .line 30
-    if-eqz v3, :cond_21
+    if-eqz v3, :cond_1
 
     .line 31
     .line 32
     const/4 v0, 0x1
 
     .line 33
-    goto :goto_2c
+    goto :goto_0
 
     .line 34
-    :cond_21
+    :cond_1
     iget-object v3, p0, Llibs/fx0;->l:Landroid/graphics/Rect;
 
     .line 35
@@ -736,30 +736,30 @@
     move-result v0
 
     .line 40
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_2
 
     .line 41
     .line 42
     const/4 v0, 0x3
 
     .line 43
-    goto :goto_2c
+    goto :goto_0
 
     .line 44
-    :cond_2b
+    :cond_2
     const/4 v0, 0x0
 
     .line 45
-    :goto_2c
+    :goto_0
     iput v0, p0, Llibs/fx0;->m:I
 
     .line 46
     .line 47
-    if-eqz v0, :cond_5c
+    if-eqz v0, :cond_5
 
     .line 48
     .line 49
-    if-ne v0, v5, :cond_3f
+    if-ne v0, v5, :cond_3
 
     .line 50
     .line 51
@@ -792,8 +792,8 @@
     return-void
 
     .line 64
-    :cond_3f
-    if-ne v0, v4, :cond_4e
+    :cond_3
+    if-ne v0, v4, :cond_4
 
     .line 65
     .line 66
@@ -826,8 +826,8 @@
     return-void
 
     .line 79
-    :cond_4e
-    if-ne v0, v6, :cond_5c
+    :cond_4
+    if-ne v0, v6, :cond_5
 
     .line 80
     .line 81
@@ -857,39 +857,39 @@
 
     .line 92
     .line 93
-    :cond_5c
+    :cond_5
     return-void
 .end method
 
 .method public final d(FFI)V
-    .registers 5
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-eq p3, v0, :cond_21
+    if-eq p3, v0, :cond_3
 
     .line 3
     .line 4
     const/4 v0, 0x2
 
     .line 5
-    if-eq p3, v0, :cond_10
+    if-eq p3, v0, :cond_1
 
     .line 6
     .line 7
     const/4 v0, 0x3
 
     .line 8
-    if-eq p3, v0, :cond_a
+    if-eq p3, v0, :cond_0
 
     .line 9
     .line 10
     return-void
 
     .line 11
-    :cond_a
+    :cond_0
     iget-object p3, p0, Llibs/fx0;->h:Landroid/graphics/PointF;
 
     .line 12
@@ -902,7 +902,7 @@
     return-void
 
     .line 17
-    :cond_10
+    :cond_1
     const/4 p3, 0x0
 
     .line 18
@@ -910,7 +910,7 @@
 
     .line 19
     .line 20
-    if-ltz p3, :cond_18
+    if-ltz p3, :cond_2
 
     .line 21
     .line 22
@@ -918,14 +918,14 @@
 
     .line 23
     .line 24
-    goto :goto_19
+    goto :goto_0
 
     .line 25
-    :cond_18
+    :cond_2
     const/4 p3, 0x0
 
     .line 26
-    :goto_19
+    :goto_0
     int-to-float p3, p3
 
     .line 27
@@ -944,7 +944,7 @@
     return-void
 
     .line 34
-    :cond_21
+    :cond_3
     iget-object p3, p0, Llibs/fx0;->g:Landroid/graphics/PointF;
 
     .line 35

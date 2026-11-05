@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/ad3;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/xc3;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 10
+    .locals 9
 
     .line 1
     iget-byte v0, p0, Llibs/xc3;->X:B
@@ -50,7 +50,7 @@
 
     .line 5
     .line 6
-    packed-switch v0, :pswitch_data_7c
+    packed-switch v0, :pswitch_data_0
 
     .line 7
     .line 8
@@ -64,7 +64,7 @@
 
     .line 13
     .line 14
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_1
 
     .line 15
     .line 16
@@ -76,7 +76,7 @@
     move-result v0
 
     .line 20
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_1
 
     .line 21
     .line 22
@@ -88,7 +88,7 @@
     move-result v0
 
     .line 26
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     .line 27
     .line 28
@@ -101,7 +101,7 @@
     .line 31
     .line 32
     .line 33
-    :cond_20
+    :cond_0
     iget-object v0, v2, Llibs/ad3;->w:Ljava/nio/channels/SelectionKey;
 
     .line 34
@@ -118,11 +118,11 @@
 
     .line 40
     .line 41
-    :cond_28
+    :cond_1
     return-void
 
     .line 42
-    :pswitch_29
+    :pswitch_0
     iget-object v0, v2, Llibs/ad3;->w:Ljava/nio/channels/SelectionKey;
 
     .line 43
@@ -135,7 +135,7 @@
     move-result v0
 
     .line 48
-    if-eqz v0, :cond_7a
+    if-eqz v0, :cond_6
 
     .line 49
     .line 50
@@ -157,21 +157,21 @@
     const/4 v4, 0x0
 
     .line 58
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_2
 
     .line 59
     .line 60
     const/4 v5, 0x4
 
     .line 61
-    goto :goto_3e
+    goto :goto_0
 
     .line 62
-    :cond_3d
+    :cond_2
     const/4 v5, 0x0
 
     .line 63
-    :goto_3e
+    :goto_0
     const/4 v6, 0x1
 
     .line 64
@@ -186,7 +186,7 @@
     move-result v1
 
     .line 69
-    if-eqz v1, :cond_75
+    if-eqz v1, :cond_5
 
     .line 70
     .line 71
@@ -214,7 +214,7 @@
     move-result-object v8
 
     .line 83
-    if-eqz v0, :cond_57
+    if-eqz v0, :cond_3
 
     .line 84
     .line 85
@@ -222,11 +222,11 @@
 
     .line 86
     .line 87
-    goto :goto_5e
+    goto :goto_1
 
     .line 88
-    :cond_57
-    if-eqz v0, :cond_5c
+    :cond_3
+    if-eqz v0, :cond_4
 
     .line 89
     .line 90
@@ -234,15 +234,15 @@
 
     .line 91
     .line 92
-    goto :goto_5e
+    goto :goto_1
 
     .line 93
-    :cond_5c
+    :cond_4
     const-string v0, "READ"
 
     .line 94
     .line 95
-    :goto_5e
+    :goto_1
     new-array v3, v3, [Ljava/lang/Object;
 
     .line 96
@@ -290,7 +290,7 @@
     .line 116
     .line 117
     .line 118
-    :cond_75
+    :cond_5
     iget-object v0, v2, Llibs/ad3;->w:Ljava/nio/channels/SelectionKey;
 
     .line 119
@@ -300,15 +300,15 @@
     .line 121
     .line 122
     .line 123
-    :cond_7a
+    :cond_6
     return-void
 
     .line 124
     nop
 
     .line 125
-    :pswitch_data_7c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_29
+        :pswitch_0
     .end packed-switch
 .end method

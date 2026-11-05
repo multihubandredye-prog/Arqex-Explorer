@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Llibs/gc2;-><init>()V
@@ -83,7 +83,7 @@
 
 # virtual methods
 .method public final b(Ljava/lang/String;)Llibs/q63;
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/er0;->c:Ljava/util/ArrayList;
@@ -101,8 +101,8 @@
     const/4 v2, 0x0
 
     .line 8
-    :cond_7
-    if-ge v2, v1, :cond_2a
+    :cond_0
+    if-ge v2, v1, :cond_1
 
     .line 9
     .line 10
@@ -150,7 +150,7 @@
     move-result v4
 
     .line 32
-    if-eqz v4, :cond_7
+    if-eqz v4, :cond_0
 
     .line 33
     .line 34
@@ -173,7 +173,7 @@
     return-object p1
 
     .line 43
-    :cond_2a
+    :cond_1
     const/4 p1, 0x0
 
     .line 44

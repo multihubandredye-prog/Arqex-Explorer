@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/security/AlgorithmParametersSpi;-><init>()V
@@ -23,7 +23,7 @@
 
 # virtual methods
 .method public engineGetEncoded()[B
-    .registers 2
+    .locals 1
 
     .line 28
     iget-object v0, p0, Lorg/conscrypt/ECParameters;->curve:Lorg/conscrypt/OpenSSLECGroupContext;
@@ -40,10 +40,10 @@
 .end method
 
 .method public engineGetEncoded(Ljava/lang/String;)[B
-    .registers 3
+    .locals 1
 
     .line 1
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_1
 
     .line 2
     .line 3
@@ -59,14 +59,14 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
-    goto :goto_16
+    goto :goto_0
 
     .line 12
-    :cond_b
+    :cond_0
     const-string v0, "Unsupported format: "
 
     .line 13
@@ -90,8 +90,8 @@
     return-object p1
 
     .line 23
-    :cond_16
-    :goto_16
+    :cond_1
+    :goto_0
     invoke-virtual {p0}, Lorg/conscrypt/ECParameters;->engineGetEncoded()[B
 
     .line 24
@@ -104,7 +104,7 @@
 .end method
 
 .method public engineGetParameterSpec(Ljava/lang/Class;)Ljava/security/spec/AlgorithmParameterSpec;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -120,7 +120,7 @@
 
     .line 2
     .line 3
-    if-ne p1, v0, :cond_b
+    if-ne p1, v0, :cond_0
 
     .line 4
     .line 5
@@ -139,12 +139,12 @@
     return-object p1
 
     .line 12
-    :cond_b
+    :cond_0
     const-class v0, Ljava/security/spec/ECGenParameterSpec;
 
     .line 13
     .line 14
-    if-ne p1, v0, :cond_1b
+    if-ne p1, v0, :cond_1
 
     .line 15
     .line 16
@@ -172,7 +172,7 @@
     return-object p1
 
     .line 28
-    :cond_1b
+    :cond_1
     const-string v0, "Unsupported class: "
 
     .line 29
@@ -189,7 +189,7 @@
 .end method
 
 .method public engineInit(Ljava/security/spec/AlgorithmParameterSpec;)V
-    .registers 5
+    .locals 3
 
     .line 1
     const-string v0, "Unknown EC curve: "
@@ -200,7 +200,7 @@
 
     .line 4
     .line 5
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_1
 
     .line 6
     .line 7
@@ -224,7 +224,7 @@
     move-result-object v0
 
     .line 17
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 18
     .line 19
@@ -235,7 +235,7 @@
     return-void
 
     .line 22
-    :cond_15
+    :cond_0
     new-instance v0, Ljava/security/spec/InvalidParameterSpecException;
 
     .line 23
@@ -260,12 +260,12 @@
     throw v0
 
     .line 34
-    :cond_21
+    :cond_1
     instance-of v1, p1, Ljava/security/spec/ECParameterSpec;
 
     .line 35
     .line 36
-    if-eqz v1, :cond_4e
+    if-eqz v1, :cond_3
 
     .line 37
     .line 38
@@ -273,7 +273,7 @@
 
     .line 39
     .line 40
-    :try_start_27
+    :try_start_0
     invoke-static {p1}, Lorg/conscrypt/OpenSSLECGroupContext;->getInstance(Ljava/security/spec/ECParameterSpec;)Lorg/conscrypt/OpenSSLECGroupContext;
 
     .line 41
@@ -282,7 +282,7 @@
     move-result-object v1
 
     .line 44
-    if-eqz v1, :cond_32
+    if-eqz v1, :cond_2
 
     .line 45
     .line 46
@@ -293,14 +293,14 @@
     return-void
 
     .line 49
-    :catch_30
+    :catch_0
     move-exception p1
 
     .line 50
-    goto :goto_44
+    goto :goto_0
 
     .line 51
-    :cond_32
+    :cond_2
     new-instance v1, Ljava/security/spec/InvalidParameterSpecException;
 
     .line 52
@@ -333,11 +333,11 @@
     .line 67
     .line 68
     throw v1
-    :try_end_44
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_27 .. :try_end_44} :catch_30
+    :try_end_0
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 69
-    :goto_44
+    :goto_0
     new-instance v0, Ljava/security/spec/InvalidParameterSpecException;
 
     .line 70
@@ -358,7 +358,7 @@
     throw v0
 
     .line 79
-    :cond_4e
+    :cond_3
     const-string p1, "Only ECParameterSpec and ECGenParameterSpec are supported"
 
     .line 80
@@ -372,7 +372,7 @@
 .end method
 
 .method public engineInit([B)V
-    .registers 6
+    .locals 4
 
     .line 85
     invoke-static {p1}, Lorg/conscrypt/NativeCrypto;->EC_KEY_parse_curve_name([B)J
@@ -383,7 +383,7 @@
 
     cmp-long p1, v0, v2
 
-    if-eqz p1, :cond_17
+    if-eqz p1, :cond_0
 
     .line 86
     new-instance p1, Lorg/conscrypt/OpenSSLECGroupContext;
@@ -399,7 +399,7 @@
     return-void
 
     .line 87
-    :cond_17
+    :cond_0
     const-string p1, "Error reading ASN.1 encoding"
 
     invoke-static {p1}, Llibs/ic0;->t(Ljava/lang/String;)V
@@ -408,9 +408,9 @@
 .end method
 
 .method public engineInit([BLjava/lang/String;)V
-    .registers 4
+    .locals 1
 
-    if-eqz p2, :cond_15
+    if-eqz p2, :cond_1
 
     .line 88
     const-string v0, "ASN.1"
@@ -419,12 +419,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
-    goto :goto_15
+    goto :goto_0
 
     .line 89
-    :cond_b
+    :cond_0
     const-string p1, "Unsupported format: "
 
     invoke-virtual {p1, p2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
@@ -436,15 +436,15 @@
     return-void
 
     .line 90
-    :cond_15
-    :goto_15
+    :cond_1
+    :goto_0
     invoke-virtual {p0, p1}, Lorg/conscrypt/ECParameters;->engineInit([B)V
 
     return-void
 .end method
 
 .method public engineToString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "Conscrypt EC AlgorithmParameters"

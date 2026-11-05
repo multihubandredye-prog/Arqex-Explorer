@@ -9,13 +9,13 @@
 
 # direct methods
 .method public constructor <init>([B)V
-    .registers 4
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :try_start_1
+    :try_start_0
     invoke-static {p1}, Llibs/Theme;->j([B)Llibs/Theme;
 
     .line 3
@@ -24,7 +24,7 @@
     move-result-object p1
 
     .line 6
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_0
 
     .line 7
     .line 8
@@ -41,9 +41,9 @@
 
     .line 14
     invoke-direct {v1, p1}, Llibs/w6;-><init>(Llibs/Param;)V
-    :try_end_10
-    .catch Ljava/lang/ClassCastException; {:try_start_1 .. :try_end_10} :catch_24
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_10} :catch_1b
+    :try_end_0
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 15
     .line 16
@@ -51,7 +51,7 @@
     move-object v0, v1
 
     .line 18
-    :cond_11
+    :cond_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 19
@@ -72,7 +72,7 @@
     return-void
 
     .line 28
-    :catch_1b
+    :catch_0
     move-exception p1
 
     .line 29
@@ -92,7 +92,7 @@
     throw v0
 
     .line 37
-    :catch_24
+    :catch_1
     move-exception p1
 
     .line 38
@@ -115,10 +115,10 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     .line 2
     .line 3
@@ -128,12 +128,12 @@
     return p1
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v0, p1, Llibs/rv3;
 
     .line 6
     .line 7
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     .line 8
     .line 9
@@ -143,7 +143,7 @@
     return p1
 
     .line 11
-    :cond_a
+    :cond_1
     check-cast p1, Llibs/rv3;
 
     .line 12
@@ -168,7 +168,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/rv3;->a:Llibs/w6;

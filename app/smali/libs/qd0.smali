@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/rn0;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/qd0;->a:B
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public a()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/qd0;->b:Llibs/rn0;
@@ -44,7 +44,7 @@
 
     .line 4
     .line 5
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     .line 6
     .line 7
@@ -52,7 +52,7 @@
 
     .line 8
     .line 9
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     .line 10
     .line 11
@@ -60,7 +60,7 @@
 
     .line 12
     .line 13
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     .line 14
     .line 15
@@ -76,7 +76,7 @@
     return-void
 
     .line 21
-    :cond_14
+    :cond_0
     const/4 v1, 0x1
 
     .line 22

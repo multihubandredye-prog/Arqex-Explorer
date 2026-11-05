@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/util/ArrayList;[Ljava/lang/String;Ljava/util/ArrayList;Llibs/ml1;)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final c([Ljava/lang/Object;)Z
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/x8;->X:Ljava/util/ArrayList;
@@ -81,7 +81,7 @@
     monitor-enter v0
 
     .line 15
-    :try_start_e
+    :try_start_0
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     .line 16
@@ -93,8 +93,8 @@
     .line 20
     .line 21
     monitor-exit v0
-    :try_end_15
-    .catchall {:try_start_e .. :try_end_15} :catchall_24
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 22
     invoke-static {v0}, Llibs/e9;->p(Ljava/util/ArrayList;)V
@@ -126,14 +126,14 @@
     return p1
 
     .line 37
-    :catchall_24
+    :catchall_0
     move-exception p1
 
     .line 38
-    :try_start_25
+    :try_start_1
     monitor-exit v0
-    :try_end_26
-    .catchall {:try_start_25 .. :try_end_26} :catchall_24
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 39
     throw p1

@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 1
     const/16 v0, 0x80
@@ -30,14 +30,14 @@
 
 # virtual methods
 .method public checkKeySize(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/16 v0, 0x28
 
     .line 2
     .line 3
-    if-lt p1, v0, :cond_9
+    if-lt p1, v0, :cond_0
 
     .line 4
     .line 5
@@ -45,14 +45,14 @@
 
     .line 6
     .line 7
-    if-lt v0, p1, :cond_9
+    if-lt v0, p1, :cond_0
 
     .line 8
     .line 9
     return-void
 
     .line 10
-    :cond_9
+    :cond_0
     const-string p1, "Key size must be between 40 and 2048 bits"
 
     .line 11

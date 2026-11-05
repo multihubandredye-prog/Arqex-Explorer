@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/is;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/gx3;->d:Llibs/is;
@@ -53,14 +53,14 @@
 
 # virtual methods
 .method public final characters([CII)V
-    .registers 5
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/gx3;->b:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -73,12 +73,12 @@
     .line 8
     .line 9
     .line 10
-    :cond_9
+    :cond_0
     return-void
 .end method
 
 .method public final endElement(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 7
+    .locals 3
 
     .line 1
     const-string p1, "si"
@@ -93,7 +93,7 @@
     move-result p1
 
     .line 7
-    if-eqz p1, :cond_52
+    if-eqz p1, :cond_2
 
     .line 8
     .line 9
@@ -113,8 +113,8 @@
 
     .line 16
     .line 17
-    :goto_10
-    if-ltz p2, :cond_38
+    :goto_0
+    if-ltz p2, :cond_1
 
     .line 18
     .line 19
@@ -130,7 +130,7 @@
 
     .line 24
     .line 25
-    if-ne p3, v0, :cond_35
+    if-ne p3, v0, :cond_0
 
     .line 26
     .line 27
@@ -138,7 +138,7 @@
 
     .line 28
     .line 29
-    if-ltz p3, :cond_35
+    if-ltz p3, :cond_0
 
     .line 30
     .line 31
@@ -158,7 +158,7 @@
 
     .line 38
     .line 39
-    if-ne v1, v2, :cond_35
+    if-ne v1, v2, :cond_0
 
     .line 40
     .line 41
@@ -170,7 +170,7 @@
     move-result v1
 
     .line 45
-    if-ne v1, v0, :cond_35
+    if-ne v1, v0, :cond_0
 
     .line 46
     .line 47
@@ -187,15 +187,15 @@
 
     .line 53
     .line 54
-    :cond_35
+    :cond_0
     add-int/lit8 p2, p2, -0x1
 
     .line 55
     .line 56
-    goto :goto_10
+    goto :goto_0
 
     .line 57
-    :cond_38
+    :cond_1
     iget-object p2, p0, Llibs/gx3;->d:Llibs/is;
 
     .line 58
@@ -248,12 +248,12 @@
 
     .line 82
     .line 83
-    :cond_52
+    :cond_2
     return-void
 .end method
 
 .method public final startElement(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/xml/sax/Attributes;)V
-    .registers 5
+    .locals 0
 
     .line 1
     const-string p1, "si"
@@ -268,7 +268,7 @@
     move-result p1
 
     .line 7
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_0
 
     .line 8
     .line 9
@@ -291,6 +291,6 @@
 
     .line 17
     .line 18
-    :cond_11
+    :cond_0
     return-void
 .end method

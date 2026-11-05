@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/security/AlgorithmParametersSpi;-><init>()V
@@ -25,7 +25,7 @@
 
 # virtual methods
 .method public final engineGetEncoded()[B
-    .registers 2
+    .locals 1
 
     .line 76
     const-string v0, "ASN.1"
@@ -38,10 +38,10 @@
 .end method
 
 .method public final engineGetEncoded(Ljava/lang/String;)[B
-    .registers 8
+    .locals 6
 
     .line 1
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_1
 
     .line 2
     .line 3
@@ -57,14 +57,14 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
-    goto :goto_16
+    goto :goto_0
 
     .line 12
-    :cond_b
+    :cond_0
     const-string v0, "Unknown parameters format in AlgorithmParameters object: "
 
     .line 13
@@ -88,13 +88,13 @@
     return-object p1
 
     .line 23
-    :cond_16
-    :goto_16
+    :cond_1
+    :goto_0
     iget-object p1, p0, Llibs/g0;->a:Ljava/security/spec/ECParameterSpec;
 
     .line 24
     .line 25
-    if-nez p1, :cond_20
+    if-nez p1, :cond_2
 
     .line 26
     .line 27
@@ -107,15 +107,15 @@
     .line 30
     .line 31
     .line 32
-    goto :goto_46
+    goto :goto_1
 
     .line 33
-    :cond_20
+    :cond_2
     iget-object v0, p0, Llibs/g0;->b:Ljava/lang/String;
 
     .line 34
     .line 35
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_3
 
     .line 36
     .line 37
@@ -136,10 +136,10 @@
     .line 44
     .line 45
     .line 46
-    goto :goto_46
+    goto :goto_1
 
     .line 47
-    :cond_2e
+    :cond_3
     invoke-static {p1}, Llibs/df0;->f(Ljava/security/spec/ECParameterSpec;)Llibs/gg0;
 
     .line 48
@@ -186,7 +186,7 @@
     .line 69
     .line 70
     .line 71
-    :goto_46
+    :goto_1
     invoke-virtual {p1}, Llibs/Auth;->e()[B
 
     .line 72
@@ -199,7 +199,7 @@
 .end method
 
 .method public final engineGetParameterSpec(Ljava/lang/Class;)Ljava/security/spec/AlgorithmParameterSpec;
-    .registers 8
+    .locals 6
 
     .line 1
     const-class v0, Ljava/security/spec/ECParameterSpec;
@@ -214,7 +214,7 @@
     move-result v0
 
     .line 7
-    if-nez v0, :cond_f0
+    if-nez v0, :cond_a
 
     .line 8
     .line 9
@@ -222,15 +222,15 @@
 
     .line 10
     .line 11
-    if-ne p1, v0, :cond_e
+    if-ne p1, v0, :cond_0
 
     .line 12
     .line 13
-    goto/16 :goto_f0
+    goto/16 :goto_1
 
     .line 14
     .line 15
-    :cond_e
+    :cond_0
     const-class v0, Ljava/security/spec/ECGenParameterSpec;
 
     .line 16
@@ -243,7 +243,7 @@
     move-result v0
 
     .line 21
-    if-eqz v0, :cond_e0
+    if-eqz v0, :cond_9
 
     .line 22
     .line 23
@@ -251,7 +251,7 @@
 
     .line 24
     .line 25
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_2
 
     .line 26
     .line 27
@@ -263,7 +263,7 @@
     move-result-object p1
 
     .line 31
-    if-eqz p1, :cond_28
+    if-eqz p1, :cond_1
 
     .line 32
     .line 33
@@ -283,7 +283,7 @@
     return-object v0
 
     .line 41
-    :cond_28
+    :cond_1
     new-instance p1, Ljava/security/spec/ECGenParameterSpec;
 
     .line 42
@@ -300,7 +300,7 @@
     return-object p1
 
     .line 49
-    :cond_30
+    :cond_2
     iget-object v0, p0, Llibs/g0;->a:Ljava/security/spec/ECParameterSpec;
 
     .line 50
@@ -415,7 +415,7 @@
     move-result-object v1
 
     .line 109
-    :cond_6c
+    :cond_3
     invoke-interface {v1}, Ljava/util/Enumeration;->hasMoreElements()Z
 
     .line 110
@@ -424,7 +424,7 @@
     move-result v2
 
     .line 113
-    if-eqz v2, :cond_d5
+    if-eqz v2, :cond_7
 
     .line 114
     .line 115
@@ -464,7 +464,7 @@
     move-result v4
 
     .line 133
-    if-eqz v4, :cond_6c
+    if-eqz v4, :cond_3
 
     .line 134
     .line 135
@@ -484,7 +484,7 @@
     move-result v4
 
     .line 143
-    if-eqz v4, :cond_6c
+    if-eqz v4, :cond_3
 
     .line 144
     .line 145
@@ -504,7 +504,7 @@
     move-result v4
 
     .line 153
-    if-eqz v4, :cond_6c
+    if-eqz v4, :cond_3
 
     .line 154
     .line 155
@@ -532,7 +532,7 @@
     move-result v3
 
     .line 167
-    if-eqz v3, :cond_6c
+    if-eqz v3, :cond_3
 
     .line 168
     .line 169
@@ -560,7 +560,7 @@
 
     .line 180
     .line 181
-    if-nez v0, :cond_ba
+    if-nez v0, :cond_4
 
     .line 182
     .line 183
@@ -572,8 +572,8 @@
     move-result-object v0
 
     .line 187
-    :cond_ba
-    if-nez v0, :cond_c0
+    :cond_4
+    if-nez v0, :cond_5
 
     .line 188
     .line 189
@@ -585,8 +585,8 @@
     move-result-object v0
 
     .line 193
-    :cond_c0
-    if-nez v0, :cond_c6
+    :cond_5
+    if-nez v0, :cond_6
 
     .line 194
     .line 195
@@ -598,8 +598,8 @@
     move-result-object v0
 
     .line 199
-    :cond_c6
-    if-nez v0, :cond_d6
+    :cond_6
+    if-nez v0, :cond_8
 
     .line 200
     .line 201
@@ -627,16 +627,16 @@
 
     .line 212
     .line 213
-    goto :goto_d6
+    goto :goto_0
 
     .line 214
-    :cond_d5
+    :cond_7
     const/4 v0, 0x0
 
     .line 215
-    :cond_d6
-    :goto_d6
-    if-eqz v0, :cond_e0
+    :cond_8
+    :goto_0
+    if-eqz v0, :cond_9
 
     .line 216
     .line 217
@@ -656,7 +656,7 @@
     return-object p1
 
     .line 225
-    :cond_e0
+    :cond_9
     new-instance v0, Ljava/security/spec/InvalidParameterSpecException;
 
     .line 226
@@ -689,8 +689,8 @@
     throw v0
 
     .line 241
-    :cond_f0
-    :goto_f0
+    :cond_a
+    :goto_1
     iget-object p1, p0, Llibs/g0;->a:Ljava/security/spec/ECParameterSpec;
 
     .line 242
@@ -699,14 +699,14 @@
 .end method
 
 .method public final engineInit(Ljava/security/spec/AlgorithmParameterSpec;)V
-    .registers 7
+    .locals 5
 
     .line 1
     instance-of v0, p1, Ljava/security/spec/ECGenParameterSpec;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_66
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
@@ -730,7 +730,7 @@
     move-result-object v0
 
     .line 15
-    if-eqz v0, :cond_4e
+    if-eqz v0, :cond_0
 
     .line 16
     .line 17
@@ -856,7 +856,7 @@
     return-void
 
     .line 79
-    :cond_4e
+    :cond_0
     new-instance v0, Ljava/security/spec/InvalidParameterSpecException;
 
     .line 80
@@ -903,12 +903,12 @@
     throw v0
 
     .line 103
-    :cond_66
+    :cond_1
     instance-of v0, p1, Ljava/security/spec/ECParameterSpec;
 
     .line 104
     .line 105
-    if-eqz v0, :cond_72
+    if-eqz v0, :cond_2
 
     .line 106
     .line 107
@@ -930,7 +930,7 @@
     return-void
 
     .line 115
-    :cond_72
+    :cond_2
     new-instance v0, Ljava/security/spec/InvalidParameterSpecException;
 
     .line 116
@@ -972,7 +972,7 @@
 .end method
 
 .method public final engineInit([B)V
-    .registers 3
+    .locals 1
 
     .line 150
     const-string v0, "ASN.1"
@@ -983,9 +983,9 @@
 .end method
 
 .method public final engineInit([BLjava/lang/String;)V
-    .registers 5
+    .locals 2
 
-    if-eqz p2, :cond_15
+    if-eqz p2, :cond_1
 
     .line 135
     const-string v0, "ASN.1"
@@ -994,12 +994,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
-    goto :goto_15
+    goto :goto_0
 
     .line 136
-    :cond_b
+    :cond_0
     const-string p1, "Unknown encoded parameters format in AlgorithmParameters object: "
 
     .line 137
@@ -1013,8 +1013,8 @@
     return-void
 
     .line 139
-    :cond_15
-    :goto_15
+    :cond_1
+    :goto_0
     invoke-static {p1}, Llibs/xw3;->g(Ljava/lang/Object;)Llibs/xw3;
 
     move-result-object p1
@@ -1031,7 +1031,7 @@
 
     instance-of v1, v0, Llibs/App;
 
-    if-eqz v1, :cond_57
+    if-eqz v1, :cond_6
 
     .line 142
     invoke-static {v0}, Llibs/App;->r(Ljava/lang/Object;)Llibs/App;
@@ -1047,7 +1047,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    if-nez v1, :cond_3b
+    if-nez v1, :cond_2
 
     .line 144
     sget-object v1, Llibs/nq2;->c:Ljava/util/Hashtable;
@@ -1058,8 +1058,8 @@
 
     check-cast v1, Ljava/lang/String;
 
-    :cond_3b
-    if-nez v1, :cond_45
+    :cond_2
+    if-nez v1, :cond_3
 
     .line 145
     sget-object v1, Llibs/pk3;->c:Ljava/util/Hashtable;
@@ -1070,8 +1070,8 @@
 
     check-cast v1, Ljava/lang/String;
 
-    :cond_45
-    if-nez v1, :cond_4f
+    :cond_3
+    if-nez v1, :cond_4
 
     .line 146
     sget-object v1, Llibs/ww3;->c:Ljava/util/Hashtable;
@@ -1082,8 +1082,8 @@
 
     check-cast v1, Ljava/lang/String;
 
-    :cond_4f
-    if-nez v1, :cond_55
+    :cond_4
+    if-nez v1, :cond_5
 
     .line 147
     invoke-static {v0}, Llibs/wf0;->a(Llibs/App;)Ljava/lang/String;
@@ -1091,11 +1091,11 @@
     move-result-object v1
 
     .line 148
-    :cond_55
+    :cond_5
     iput-object v1, p0, Llibs/g0;->b:Ljava/lang/String;
 
     .line 149
-    :cond_57
+    :cond_6
     invoke-static {p1, p2}, Llibs/df0;->g(Llibs/xw3;Llibs/kf0;)Ljava/security/spec/ECParameterSpec;
 
     move-result-object p1
@@ -1106,7 +1106,7 @@
 .end method
 
 .method public final engineToString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "EC AlgorithmParameters "

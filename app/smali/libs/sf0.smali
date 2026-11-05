@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/kf0;Llibs/ig0;Ljava/math/BigInteger;)V
-    .registers 10
+    .locals 6
 
     .line 19
     sget-object v4, Llibs/ff0;->g:Ljava/math/BigInteger;
@@ -41,7 +41,7 @@
 .end method
 
 .method public constructor <init>(Llibs/kf0;Llibs/ig0;Ljava/math/BigInteger;Ljava/math/BigInteger;[B)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

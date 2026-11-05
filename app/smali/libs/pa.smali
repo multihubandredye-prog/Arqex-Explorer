@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Llibs/App;IIIILjavax/crypto/spec/PBEKeySpec;Llibs/et;)V
-    .registers 9
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -72,7 +72,7 @@
 
 # virtual methods
 .method public final getAlgorithm()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/pa;->X:Ljava/lang/String;
@@ -83,14 +83,14 @@
 .end method
 
 .method public final getEncoded()[B
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/pa;->Xi:Llibs/et;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
@@ -98,7 +98,7 @@
 
     .line 6
     .line 7
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
@@ -114,15 +114,15 @@
 
     .line 14
     .line 15
-    goto :goto_11
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_0
     check-cast v0, Llibs/hh1;
 
     .line 17
     .line 18
-    :goto_11
+    :goto_0
     iget-object v0, v0, Llibs/hh1;->a:[B
 
     .line 19
@@ -130,7 +130,7 @@
     return-object v0
 
     .line 21
-    :cond_14
+    :cond_1
     const/4 v0, 0x2
 
     .line 22
@@ -142,7 +142,7 @@
 
     .line 25
     .line 26
-    if-ne v2, v0, :cond_24
+    if-ne v2, v0, :cond_2
 
     .line 27
     .line 28
@@ -165,11 +165,11 @@
     return-object v0
 
     .line 37
-    :cond_24
+    :cond_2
     const/4 v0, 0x5
 
     .line 38
-    if-ne v2, v0, :cond_47
+    if-ne v2, v0, :cond_4
 
     .line 39
     .line 40
@@ -181,7 +181,7 @@
     move-result-object v0
 
     .line 44
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_3
 
     .line 45
     .line 46
@@ -198,10 +198,10 @@
     .line 51
     .line 52
     .line 53
-    :try_start_34
+    :try_start_0
     invoke-static {v0, v1}, Llibs/yh3;->d([CLlibs/fl;)V
-    :try_end_37
-    .catch Ljava/io/IOException; {:try_start_34 .. :try_end_37} :catch_3c
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 54
     .line 55
@@ -217,7 +217,7 @@
     return-object v0
 
     .line 61
-    :catch_3c
+    :catch_0
     const-string v0, "cannot encode string to byte array!"
 
     .line 62
@@ -233,7 +233,7 @@
     return-object v0
 
     .line 68
-    :cond_43
+    :cond_3
     const/4 v0, 0x0
 
     .line 69
@@ -244,7 +244,7 @@
     return-object v0
 
     .line 72
-    :cond_47
+    :cond_4
     invoke-virtual {v1}, Ljavax/crypto/spec/PBEKeySpec;->getPassword()[C
 
     .line 73
@@ -265,7 +265,7 @@
 .end method
 
 .method public final getFormat()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "RAW"
@@ -276,7 +276,7 @@
 .end method
 
 .method public final getIterationCount()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/pa;->Omicron:Ljavax/crypto/spec/PBEKeySpec;
@@ -295,7 +295,7 @@
 .end method
 
 .method public final getPassword()[C
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/pa;->Omicron:Ljavax/crypto/spec/PBEKeySpec;
@@ -314,7 +314,7 @@
 .end method
 
 .method public final getSalt()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/pa;->Omicron:Ljavax/crypto/spec/PBEKeySpec;

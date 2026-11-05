@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/rb2;
@@ -29,7 +29,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 12
     sget-object v0, Llibs/pb0;->X:Llibs/pb0;
@@ -42,7 +42,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 2
 
     .line 13
     sget-object v0, Llibs/pb0;->X:Llibs/pb0;
@@ -55,7 +55,7 @@
 .end method
 
 .method public constructor <init>(Llibs/pb0;Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
@@ -67,7 +67,7 @@
 
     .line 5
     .line 6
-    if-eqz p3, :cond_a
+    if-eqz p3, :cond_0
 
     .line 7
     .line 8
@@ -76,14 +76,14 @@
     .line 9
     .line 10
     .line 11
-    :cond_a
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public getMessage()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
@@ -94,7 +94,7 @@
     move-result-object v0
 
     .line 5
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -109,7 +109,7 @@
     return-object v0
 
     .line 12
-    :cond_b
+    :cond_0
     invoke-virtual {p0}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
 
     .line 13
@@ -118,7 +118,7 @@
     move-result-object v0
 
     .line 16
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
     .line 17
     .line 18
@@ -138,7 +138,7 @@
     move-result-object v0
 
     .line 26
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
     .line 27
     .line 28
@@ -161,7 +161,7 @@
     return-object v0
 
     .line 37
-    :cond_24
+    :cond_1
     const/4 v0, 0x0
 
     .line 38
@@ -169,7 +169,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -200,7 +200,7 @@
 
     .line 14
     .line 15
-    if-eq v3, v1, :cond_24
+    if-eq v3, v1, :cond_0
 
     .line 16
     .line 17
@@ -239,14 +239,14 @@
     move-result-object v1
 
     .line 36
-    goto :goto_25
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_0
     move-object v1, v2
 
     .line 38
-    :goto_25
+    :goto_0
     invoke-virtual {p0}, Llibs/ny2;->getMessage()Ljava/lang/String;
 
     .line 39
@@ -255,7 +255,7 @@
     move-result-object v3
 
     .line 42
-    if-eqz v3, :cond_30
+    if-eqz v3, :cond_1
 
     .line 43
     .line 44
@@ -267,14 +267,14 @@
     move-result-object v3
 
     .line 48
-    goto :goto_31
+    goto :goto_1
 
     .line 49
-    :cond_30
+    :cond_1
     move-object v3, v2
 
     .line 50
-    :goto_31
+    :goto_1
     new-instance v4, Ljava/lang/StringBuilder;
 
     .line 51
@@ -292,7 +292,7 @@
     move-result v0
 
     .line 59
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_2
 
     .line 60
     .line 61
@@ -304,19 +304,19 @@
     move-result v0
 
     .line 65
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_2
 
     .line 66
     .line 67
-    goto :goto_45
+    goto :goto_2
 
     .line 68
-    :cond_43
+    :cond_2
     const-string v2, ": "
 
     .line 69
     .line 70
-    :goto_45
+    :goto_2
     invoke-static {v4, v2, v1, v3}, Llibs/k42;->j(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 71

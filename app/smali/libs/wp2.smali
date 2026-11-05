@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/xp2;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iput-object p1, p0, Llibs/wp2;->Xi:Llibs/xp2;
@@ -86,13 +86,13 @@
 
 # virtual methods
 .method public final declared-synchronized available()I
-    .registers 3
+    .locals 2
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget v0, p0, Llibs/wp2;->Mu:I
 
     .line 3
@@ -109,8 +109,8 @@
     .line 8
     .line 9
     iget v1, v1, Llibs/xp2;->Y:I
-    :try_end_a
-    .catchall {:try_start_1 .. :try_end_a} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 10
     .line 11
@@ -123,28 +123,28 @@
     return v1
 
     .line 14
-    :catchall_d
+    :catchall_0
     move-exception v0
 
     .line 15
-    :try_start_e
+    :try_start_1
     monitor-exit p0
-    :try_end_f
-    .catchall {:try_start_e .. :try_end_f} :catchall_d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 16
     throw v0
 .end method
 
 .method public final c()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/wp2;->Y:Llibs/bm1;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
@@ -156,7 +156,7 @@
 
     .line 8
     .line 9
-    if-ne v0, v1, :cond_2d
+    if-ne v0, v1, :cond_1
 
     .line 10
     .line 11
@@ -190,7 +190,7 @@
     move-result v1
 
     .line 25
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_0
 
     .line 26
     .line 27
@@ -224,7 +224,7 @@
     return-void
 
     .line 41
-    :cond_28
+    :cond_0
     const/4 v1, 0x0
 
     .line 42
@@ -236,19 +236,19 @@
 
     .line 45
     .line 46
-    :cond_2d
+    :cond_1
     return-void
 .end method
 
 .method public final i(II[B)I
-    .registers 8
+    .locals 4
 
     .line 1
     move v0, p2
 
     .line 2
-    :goto_1
-    if-lez v0, :cond_28
+    :goto_0
+    if-lez v0, :cond_2
 
     .line 3
     .line 4
@@ -261,11 +261,11 @@
 
     .line 8
     .line 9
-    if-nez v1, :cond_e
+    if-nez v1, :cond_0
 
     .line 10
     .line 11
-    if-ne v0, p2, :cond_28
+    if-ne v0, p2, :cond_2
 
     .line 12
     .line 13
@@ -275,7 +275,7 @@
     return p1
 
     .line 15
-    :cond_e
+    :cond_0
     iget v1, p0, Llibs/wp2;->Z:I
 
     .line 16
@@ -295,7 +295,7 @@
     move-result v1
 
     .line 24
-    if-eqz p3, :cond_21
+    if-eqz p3, :cond_1
 
     .line 25
     .line 26
@@ -315,7 +315,7 @@
     add-int/2addr p1, v1
 
     .line 34
-    :cond_21
+    :cond_1
     iget v2, p0, Llibs/wp2;->Lambda:I
 
     .line 35
@@ -330,10 +330,10 @@
     sub-int/2addr v0, v1
 
     .line 40
-    goto :goto_1
+    goto :goto_0
 
     .line 41
-    :cond_28
+    :cond_2
     sub-int/2addr p2, v0
 
     .line 42
@@ -341,13 +341,13 @@
 .end method
 
 .method public final declared-synchronized mark(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget p1, p0, Llibs/wp2;->Mu:I
 
     .line 3
@@ -360,8 +360,8 @@
 
     .line 7
     iput p1, p0, Llibs/wp2;->Nu:I
-    :try_end_8
-    .catchall {:try_start_1 .. :try_end_8} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 8
     .line 9
@@ -371,21 +371,21 @@
     return-void
 
     .line 11
-    :catchall_a
+    :catchall_0
     move-exception p1
 
     .line 12
-    :try_start_b
+    :try_start_1
     monitor-exit p0
-    :try_end_c
-    .catchall {:try_start_b .. :try_end_c} :catchall_a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 13
     throw p1
 .end method
 
 .method public final markSupported()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -395,20 +395,20 @@
 .end method
 
 .method public final declared-synchronized read()I
-    .registers 4
+    .locals 3
 
     monitor-enter p0
 
     .line 34
-    :try_start_1
+    :try_start_0
     invoke-virtual {p0}, Llibs/wp2;->c()V
 
     .line 35
     iget-object v0, p0, Llibs/wp2;->Y:Llibs/bm1;
-    :try_end_6
-    .catchall {:try_start_1 .. :try_end_6} :catchall_19
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 36
     monitor-exit p0
@@ -418,8 +418,8 @@
     return v0
 
     .line 37
-    :cond_b
-    :try_start_b
+    :cond_0
+    :try_start_1
     iget v1, p0, Llibs/wp2;->Lambda:I
 
     add-int/lit8 v2, v1, 0x1
@@ -431,8 +431,8 @@
 
     .line 39
     aget-byte v0, v0, v1
-    :try_end_15
-    .catchall {:try_start_b .. :try_end_15} :catchall_19
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     and-int/lit16 v0, v0, 0xff
 
@@ -441,44 +441,44 @@
 
     return v0
 
-    :catchall_19
+    :catchall_0
     move-exception v0
 
-    :try_start_1a
+    :try_start_2
     monitor-exit p0
-    :try_end_1b
-    .catchall {:try_start_1a .. :try_end_1b} :catchall_19
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     throw v0
 .end method
 
 .method public final declared-synchronized read([BII)I
-    .registers 5
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    if-eqz p1, :cond_19
+    if-eqz p1, :cond_1
 
     .line 3
     .line 4
-    if-ltz p2, :cond_13
+    if-ltz p2, :cond_0
 
     .line 5
     .line 6
-    if-ltz p3, :cond_13
+    if-ltz p3, :cond_0
 
     .line 7
     .line 8
-    :try_start_7
+    :try_start_0
     array-length v0, p1
 
     .line 9
     sub-int/2addr v0, p2
 
     .line 10
-    if-gt p3, v0, :cond_13
+    if-gt p3, v0, :cond_0
 
     .line 11
     .line 12
@@ -488,8 +488,8 @@
     .line 14
     .line 15
     move-result p1
-    :try_end_f
-    .catchall {:try_start_7 .. :try_end_f} :catchall_11
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 16
     monitor-exit p0
@@ -498,15 +498,15 @@
     return p1
 
     .line 18
-    :catchall_11
+    :catchall_0
     move-exception p1
 
     .line 19
-    goto :goto_1f
+    goto :goto_0
 
     .line 20
-    :cond_13
-    :try_start_13
+    :cond_0
+    :try_start_1
     new-instance p1, Ljava/lang/IndexOutOfBoundsException;
 
     .line 21
@@ -519,7 +519,7 @@
     throw p1
 
     .line 26
-    :cond_19
+    :cond_1
     new-instance p1, Ljava/lang/NullPointerException;
 
     .line 27
@@ -532,23 +532,23 @@
     throw p1
 
     .line 32
-    :goto_1f
+    :goto_0
     monitor-exit p0
-    :try_end_20
-    .catchall {:try_start_13 .. :try_end_20} :catchall_11
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 33
     throw p1
 .end method
 
 .method public final declared-synchronized reset()V
-    .registers 4
+    .locals 3
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     new-instance v0, Llibs/rn;
 
     .line 3
@@ -608,8 +608,8 @@
 
     .line 30
     invoke-virtual {p0, v0, v1, v2}, Llibs/wp2;->i(II[B)I
-    :try_end_20
-    .catchall {:try_start_1 .. :try_end_20} :catchall_22
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 31
     .line 32
@@ -620,21 +620,21 @@
     return-void
 
     .line 35
-    :catchall_22
+    :catchall_0
     move-exception v0
 
     .line 36
-    :try_start_23
+    :try_start_1
     monitor-exit p0
-    :try_end_24
-    .catchall {:try_start_23 .. :try_end_24} :catchall_22
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 37
     throw v0
 .end method
 
 .method public final declared-synchronized skip(J)J
-    .registers 6
+    .locals 3
 
     .line 1
     monitor-enter p0
@@ -648,7 +648,7 @@
 
     .line 5
     .line 6
-    if-ltz v2, :cond_1b
+    if-ltz v2, :cond_1
 
     .line 7
     .line 8
@@ -661,14 +661,14 @@
 
     .line 12
     .line 13
-    if-lez v2, :cond_f
+    if-lez v2, :cond_0
 
     .line 14
     .line 15
     move-wide p1, v0
 
     .line 16
-    :cond_f
+    :cond_0
     const/4 v0, 0x0
 
     .line 17
@@ -678,15 +678,15 @@
     const/4 p1, 0x0
 
     .line 19
-    :try_start_12
+    :try_start_0
     invoke-virtual {p0, v0, p2, p1}, Llibs/wp2;->i(II[B)I
 
     .line 20
     .line 21
     .line 22
     move-result p1
-    :try_end_16
-    .catchall {:try_start_12 .. :try_end_16} :catchall_19
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 23
     int-to-long p1, p1
@@ -698,15 +698,15 @@
     return-wide p1
 
     .line 26
-    :catchall_19
+    :catchall_0
     move-exception p1
 
     .line 27
-    goto :goto_21
+    goto :goto_0
 
     .line 28
-    :cond_1b
-    :try_start_1b
+    :cond_1
+    :try_start_1
     new-instance p1, Ljava/lang/IndexOutOfBoundsException;
 
     .line 29
@@ -719,10 +719,10 @@
     throw p1
 
     .line 34
-    :goto_21
+    :goto_0
     monitor-exit p0
-    :try_end_22
-    .catchall {:try_start_1b .. :try_end_22} :catchall_19
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 35
     throw p1

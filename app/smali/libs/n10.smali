@@ -9,7 +9,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/io/OutputStream;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/n10;->Lambda:B
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final Call(Llibs/Core;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/n10;->Lambda:B
@@ -38,12 +38,12 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_2c
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
     .line 8
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_0
 
     .line 9
     .line 10
@@ -68,21 +68,21 @@
     .line 19
     .line 20
     .line 21
-    goto :goto_18
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     invoke-static {v1}, Llibs/ic0;->t(Ljava/lang/String;)V
 
     .line 23
     .line 24
     .line 25
-    :goto_18
+    :goto_0
     return-void
 
     .line 26
-    :pswitch_19
-    if-eqz p1, :cond_27
+    :pswitch_0
+    if-eqz p1, :cond_1
 
     .line 27
     .line 28
@@ -107,37 +107,37 @@
     .line 37
     .line 38
     .line 39
-    goto :goto_2a
+    goto :goto_1
 
     .line 40
-    :cond_27
+    :cond_1
     invoke-static {v1}, Llibs/ic0;->t(Ljava/lang/String;)V
 
     .line 41
     .line 42
     .line 43
-    :goto_2a
+    :goto_1
     return-void
 
     .line 44
     nop
 
     .line 45
-    :pswitch_data_2c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_19
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public p()Llibs/n10;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/n10;->Lambda:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_c
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -153,28 +153,28 @@
     return-object v0
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     return-object p0
 
     .line 12
     nop
 
     .line 13
-    :pswitch_data_c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public r()Llibs/v60;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/n10;->Lambda:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_c
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -190,15 +190,15 @@
     return-object v0
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     return-object p0
 
     .line 12
     nop
 
     .line 13
-    :pswitch_data_c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method

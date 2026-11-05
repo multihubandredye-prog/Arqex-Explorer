@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/cg;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-interface {p1}, Llibs/cg;->i()I
@@ -55,7 +55,7 @@
     const/4 v2, 0x0
 
     .line 13
-    if-nez v1, :cond_88
+    if-nez v1, :cond_1
 
     .line 14
     .line 15
@@ -71,7 +71,7 @@
 
     .line 20
     .line 21
-    if-gt v0, v1, :cond_7c
+    if-gt v0, v1, :cond_0
 
     .line 22
     .line 23
@@ -116,7 +116,7 @@
 
     .line 43
     .line 44
-    sparse-switch v0, :sswitch_data_8e
+    sparse-switch v0, :sswitch_data_0
 
     .line 45
     .line 46
@@ -141,88 +141,88 @@
     throw v2
 
     .line 57
-    :sswitch_38
+    :sswitch_0
     const v1, 0x86001
 
     .line 58
     .line 59
     .line 60
-    goto :goto_58
+    goto :goto_0
 
     .line 61
-    :sswitch_3c
+    :sswitch_1
     const v1, 0x80043
 
     .line 62
     .line 63
     .line 64
-    goto :goto_58
+    goto :goto_0
 
     .line 65
-    :sswitch_40
+    :sswitch_2
     const v1, 0xa0011
 
     .line 66
     .line 67
     .line 68
-    goto :goto_58
+    goto :goto_0
 
     .line 69
-    :sswitch_44
+    :sswitch_3
     const/16 v1, 0x125
 
     .line 70
     .line 71
-    goto :goto_58
+    goto :goto_0
 
     .line 72
-    :sswitch_47
+    :sswitch_4
     const/16 v1, 0x851
 
     .line 73
     .line 74
-    goto :goto_58
+    goto :goto_0
 
     .line 75
-    :sswitch_4a
+    :sswitch_5
     const/16 v1, 0x100d
 
     .line 76
     .line 77
-    goto :goto_58
+    goto :goto_0
 
     .line 78
-    :sswitch_4d
+    :sswitch_6
     const/16 v1, 0x1b
 
     .line 79
     .line 80
-    goto :goto_58
+    goto :goto_0
 
     .line 81
-    :sswitch_50
+    :sswitch_7
     const/16 v1, 0x425
 
     .line 82
     .line 83
-    goto :goto_58
+    goto :goto_0
 
     .line 84
-    :sswitch_53
+    :sswitch_8
     const/16 v1, 0x309
 
     .line 85
     .line 86
-    goto :goto_58
+    goto :goto_0
 
     .line 87
-    :sswitch_56
+    :sswitch_9
     const/16 v1, 0x2d
 
     .line 88
     .line 89
-    :goto_58
-    :sswitch_58
+    :goto_0
+    :sswitch_a
     const/4 v0, 0x4
 
     .line 90
@@ -297,7 +297,7 @@
     return-void
 
     .line 125
-    :cond_7c
+    :cond_0
     invoke-interface {p1}, Llibs/cg;->i()I
 
     .line 126
@@ -322,7 +322,7 @@
     throw v2
 
     .line 137
-    :cond_88
+    :cond_1
     const-string p1, "MAC size must be multiple of 8"
 
     .line 138
@@ -335,28 +335,28 @@
     throw v2
 
     .line 143
-    :sswitch_data_8e
+    :sswitch_data_0
     .sparse-switch
-        0x40 -> :sswitch_4d
-        0x80 -> :sswitch_58
-        0xa0 -> :sswitch_56
-        0xc0 -> :sswitch_58
-        0xe0 -> :sswitch_53
-        0x100 -> :sswitch_50
-        0x140 -> :sswitch_4d
-        0x180 -> :sswitch_4a
-        0x1c0 -> :sswitch_47
-        0x200 -> :sswitch_44
-        0x300 -> :sswitch_40
-        0x400 -> :sswitch_3c
-        0x800 -> :sswitch_38
+        0x40 -> :sswitch_6
+        0x80 -> :sswitch_a
+        0xa0 -> :sswitch_9
+        0xc0 -> :sswitch_a
+        0xe0 -> :sswitch_8
+        0x100 -> :sswitch_7
+        0x140 -> :sswitch_6
+        0x180 -> :sswitch_5
+        0x1c0 -> :sswitch_4
+        0x200 -> :sswitch_3
+        0x300 -> :sswitch_2
+        0x400 -> :sswitch_1
+        0x800 -> :sswitch_0
     .end sparse-switch
 .end method
 
 
 # virtual methods
 .method public final a(B)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget v0, p0, Llibs/pm;->e:I
@@ -370,7 +370,7 @@
     array-length v2, v1
 
     .line 6
-    if-ne v0, v2, :cond_12
+    if-ne v0, v2, :cond_0
 
     .line 7
     .line 8
@@ -397,7 +397,7 @@
     const/4 v0, 0x0
 
     .line 19
-    :cond_12
+    :cond_0
     add-int/lit8 v2, v0, 0x1
 
     .line 20
@@ -414,7 +414,7 @@
 .end method
 
 .method public final b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/pm;->f:Llibs/hm;
@@ -433,10 +433,10 @@
 .end method
 
 .method public final c(Llibs/et;)V
-    .registers 5
+    .locals 3
 
     .line 1
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_1
 
     .line 2
     .line 3
@@ -444,14 +444,14 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
-    goto :goto_d
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     const-string p1, "CMac mode only permits key to be set."
 
     .line 9
@@ -464,8 +464,8 @@
     return-void
 
     .line 14
-    :cond_d
-    :goto_d
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
     .line 15
@@ -530,7 +530,7 @@
 .end method
 
 .method public final d([B)I
-    .registers 9
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/pm;->f:Llibs/hm;
@@ -560,7 +560,7 @@
 
     .line 13
     .line 14
-    if-ne v2, v1, :cond_12
+    if-ne v2, v1, :cond_0
 
     .line 15
     .line 16
@@ -568,10 +568,10 @@
 
     .line 17
     .line 18
-    goto :goto_20
+    goto :goto_1
 
     .line 19
-    :cond_12
+    :cond_0
     const/16 v1, -0x80
 
     .line 20
@@ -580,7 +580,7 @@
 
     .line 22
     .line 23
-    :goto_16
+    :goto_0
     add-int/lit8 v2, v2, 0x1
 
     .line 24
@@ -588,7 +588,7 @@
     array-length v1, v4
 
     .line 26
-    if-ge v2, v1, :cond_1e
+    if-ge v2, v1, :cond_1
 
     .line 27
     .line 28
@@ -596,19 +596,19 @@
 
     .line 29
     .line 30
-    goto :goto_16
+    goto :goto_0
 
     .line 31
-    :cond_1e
+    :cond_1
     iget-object v1, p0, Llibs/pm;->i:[B
 
     .line 32
     .line 33
-    :goto_20
+    :goto_1
     const/4 v2, 0x0
 
     .line 34
-    :goto_21
+    :goto_2
     iget-object v5, p0, Llibs/pm;->c:[B
 
     .line 35
@@ -616,7 +616,7 @@
     array-length v6, v5
 
     .line 37
-    if-ge v2, v6, :cond_31
+    if-ge v2, v6, :cond_2
 
     .line 38
     .line 39
@@ -642,10 +642,10 @@
 
     .line 48
     .line 49
-    goto :goto_21
+    goto :goto_2
 
     .line 50
-    :cond_31
+    :cond_2
     invoke-virtual {v0, v3, v3, v4, v5}, Llibs/hm;->r(II[B[B)I
 
     .line 51
@@ -669,7 +669,7 @@
 .end method
 
 .method public final e()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/pm;->g:I
@@ -680,7 +680,7 @@
 .end method
 
 .method public final f([B)[B
-    .registers 10
+    .locals 8
 
     .line 1
     array-length v0, p1
@@ -696,7 +696,7 @@
     const/4 v2, 0x0
 
     .line 6
-    :goto_5
+    :goto_0
     add-int/lit8 v1, v1, -0x1
 
     .line 7
@@ -704,7 +704,7 @@
     const/4 v3, 0x1
 
     .line 9
-    if-ltz v1, :cond_18
+    if-ltz v1, :cond_0
 
     .line 10
     .line 11
@@ -737,10 +737,10 @@
     and-int/2addr v2, v3
 
     .line 24
-    goto :goto_5
+    goto :goto_0
 
     .line 25
-    :cond_18
+    :cond_0
     neg-int v1, v2
 
     .line 26
@@ -843,7 +843,7 @@
 .end method
 
 .method public final reset()V
-    .registers 5
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
@@ -852,7 +852,7 @@
     const/4 v1, 0x0
 
     .line 3
-    :goto_2
+    :goto_0
     iget-object v2, p0, Llibs/pm;->d:[B
 
     .line 4
@@ -860,7 +860,7 @@
     array-length v3, v2
 
     .line 6
-    if-ge v1, v3, :cond_c
+    if-ge v1, v3, :cond_0
 
     .line 7
     .line 8
@@ -872,10 +872,10 @@
 
     .line 11
     .line 12
-    goto :goto_2
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     iput v0, p0, Llibs/pm;->e:I
 
     .line 14
@@ -893,10 +893,10 @@
 .end method
 
 .method public final update([BII)V
-    .registers 10
+    .locals 6
 
     .line 1
-    if-ltz p3, :cond_32
+    if-ltz p3, :cond_1
 
     .line 2
     .line 3
@@ -928,7 +928,7 @@
 
     .line 16
     .line 17
-    if-le p3, v3, :cond_27
+    if-le p3, v3, :cond_0
 
     .line 18
     .line 19
@@ -959,8 +959,8 @@
     add-int/2addr p2, v3
 
     .line 32
-    :goto_1f
-    if-le p3, v1, :cond_27
+    :goto_0
+    if-le p3, v1, :cond_0
 
     .line 33
     .line 34
@@ -975,10 +975,10 @@
     add-int/2addr p2, v1
 
     .line 39
-    goto :goto_1f
+    goto :goto_0
 
     .line 40
-    :cond_27
+    :cond_0
     iget v0, p0, Llibs/pm;->e:I
 
     .line 41
@@ -1002,7 +1002,7 @@
     return-void
 
     .line 51
-    :cond_32
+    :cond_1
     const-string p1, "Can\'t have a negative input length!"
 
     .line 52

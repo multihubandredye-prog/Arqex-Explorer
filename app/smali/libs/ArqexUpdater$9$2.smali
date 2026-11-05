@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Llibs/ArqexUpdater$9;Landroid/content/Context;)V
-    .registers 3
+    .locals 0
 
     .line 766
     iput-object p1, p0, Llibs/ArqexUpdater$9$2;->this$0:Llibs/ArqexUpdater$9;
@@ -40,21 +40,20 @@
 
 # virtual methods
 .method public run()V
-    .registers 4
+    .locals 3
 
     .line 768
     iget-object v0, p0, Llibs/ArqexUpdater$9$2;->val$ui:Landroid/content/Context;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 769
     const-string v1, "Download n\u00e3o conclu\u00eddo"
 
     const-string v2, "O download falhou. Tente de novo pelo aviso de atualiza\u00e7\u00e3o ou use \"Abrir no navegador\"."
 
-    # invokes: Llibs/ArqexUpdater;->infoDialog(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
     invoke-static {v0, v1, v2}, Llibs/ArqexUpdater;->access$500(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method

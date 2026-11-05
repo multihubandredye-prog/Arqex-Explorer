@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/h03;-><init>()V
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public final b()Ljava/util/Set;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/lz2;->i:Ljava/util/HashSet;
@@ -71,7 +71,7 @@
 .end method
 
 .method public final c(Ljava/util/HashSet;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/lz2;->m:Ljava/util/HashSet;
@@ -82,7 +82,7 @@
 .end method
 
 .method public final d(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/lz2;->j:Ljava/lang/String;
@@ -93,7 +93,7 @@
 .end method
 
 .method public final e(Ljava/util/HashSet;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/lz2;->l:Ljava/util/HashSet;
@@ -104,7 +104,7 @@
 .end method
 
 .method public final f(Ljava/util/HashSet;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/lz2;->k:Ljava/util/HashSet;
@@ -115,7 +115,7 @@
 .end method
 
 .method public final g(Landroid/graphics/Matrix;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/lz2;->n:Landroid/graphics/Matrix;
@@ -126,7 +126,7 @@
 .end method
 
 .method public final i()Ljava/util/Set;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/lz2;->k:Ljava/util/HashSet;
@@ -137,7 +137,7 @@
 .end method
 
 .method public final j()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/lz2;->j:Ljava/lang/String;
@@ -148,7 +148,7 @@
 .end method
 
 .method public final l(Ljava/util/HashSet;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/lz2;->i:Ljava/util/HashSet;
@@ -159,7 +159,7 @@
 .end method
 
 .method public final m()Ljava/util/Set;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/lz2;->l:Ljava/util/HashSet;
@@ -170,7 +170,7 @@
 .end method
 
 .method public final n()Ljava/util/Set;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/lz2;->m:Ljava/util/HashSet;

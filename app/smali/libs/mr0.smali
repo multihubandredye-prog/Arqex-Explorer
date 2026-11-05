@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/sf2;
@@ -68,7 +68,7 @@
 .end method
 
 .method public static a([I)Llibs/lu0;
-    .registers 5
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
@@ -81,18 +81,18 @@
     const/4 v1, 0x0
 
     .line 5
-    if-nez v0, :cond_28
+    if-nez v0, :cond_2
 
     .line 6
     .line 7
     const/4 v0, 0x1
 
     .line 8
-    :goto_7
+    :goto_0
     array-length v2, p0
 
     .line 9
-    if-ge v0, v2, :cond_1b
+    if-ge v0, v2, :cond_1
 
     .line 10
     .line 11
@@ -108,7 +108,7 @@
 
     .line 16
     .line 17
-    if-le v2, v3, :cond_15
+    if-le v2, v3, :cond_0
 
     .line 18
     .line 19
@@ -116,10 +116,10 @@
 
     .line 20
     .line 21
-    goto :goto_7
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     const-string p0, "Polynomial exponents must be montonically increasing"
 
     .line 23
@@ -132,7 +132,7 @@
     return-object v1
 
     .line 28
-    :cond_1b
+    :cond_1
     new-instance v0, Llibs/lu0;
 
     .line 29
@@ -158,7 +158,7 @@
     return-object v0
 
     .line 41
-    :cond_28
+    :cond_2
     const-string p0, "Irreducible polynomials in GF(2) must have constant term"
 
     .line 42

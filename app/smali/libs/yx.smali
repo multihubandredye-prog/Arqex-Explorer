@@ -9,7 +9,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/yx;->X:B
@@ -27,14 +27,14 @@
 
 # virtual methods
 .method public add(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/yx;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_18
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -50,7 +50,7 @@
     return p1
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     invoke-virtual {p0, p1}, Ljava/util/AbstractList;->indexOf(Ljava/lang/Object;)I
 
     .line 12
@@ -59,17 +59,17 @@
     move-result v0
 
     .line 15
-    if-ltz v0, :cond_12
+    if-ltz v0, :cond_0
 
     .line 16
     .line 17
     const/4 p1, 0x0
 
     .line 18
-    goto :goto_16
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     invoke-super {p0, p1}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
     .line 20
@@ -78,15 +78,15 @@
     move-result p1
 
     .line 23
-    :goto_16
+    :goto_0
     return p1
 
     .line 24
     nop
 
     .line 25
-    :pswitch_data_18
+    :pswitch_data_0
     .packed-switch 0x4
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method

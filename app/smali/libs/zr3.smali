@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/util/jar/Attributes$Name;
@@ -52,7 +52,7 @@
 .end method
 
 .method public static a(Llibs/ma0;Ljava/util/Map;[B)Llibs/dy2;
-    .registers 16
+    .locals 13
 
     .line 1
     const-string v0, "Failed to write in-memory MANIFEST.MF"
@@ -62,11 +62,11 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz p2, :cond_19
+    if-eqz p2, :cond_0
 
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     new-instance v2, Ljava/util/jar/Manifest;
 
     .line 7
@@ -81,16 +81,16 @@
     .line 12
     .line 13
     invoke-direct {v2, v3}, Ljava/util/jar/Manifest;-><init>(Ljava/io/InputStream;)V
-    :try_end_f
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_f} :catch_10
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 14
     .line 15
     .line 16
-    goto :goto_1a
+    goto :goto_0
 
     .line 17
-    :catch_10
+    :catch_0
     move-exception p0
 
     .line 18
@@ -110,11 +110,11 @@
     throw p1
 
     .line 26
-    :cond_19
+    :cond_0
     move-object v2, v1
 
     .line 27
-    :goto_1a
+    :goto_0
     new-instance p2, Ljava/io/ByteArrayOutputStream;
 
     .line 28
@@ -133,7 +133,7 @@
     .line 35
     .line 36
     .line 37
-    if-eqz v2, :cond_2e
+    if-eqz v2, :cond_1
 
     .line 38
     .line 39
@@ -150,10 +150,10 @@
     .line 44
     .line 45
     .line 46
-    goto :goto_35
+    goto :goto_1
 
     .line 47
-    :cond_2e
+    :cond_1
     sget-object v2, Ljava/util/jar/Attributes$Name;->MANIFEST_VERSION:Ljava/util/jar/Attributes$Name;
 
     .line 48
@@ -167,11 +167,11 @@
     .line 52
     .line 53
     .line 54
-    :goto_35
-    :try_start_35
+    :goto_1
+    :try_start_1
     invoke-static {p2, v3}, Llibs/kr0;->Any(Ljava/io/ByteArrayOutputStream;Ljava/util/jar/Attributes;)V
-    :try_end_38
-    .catch Ljava/io/IOException; {:try_start_35 .. :try_end_38} :catch_d9
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_2
 
     .line 55
     .line 56
@@ -229,8 +229,8 @@
     const/4 v6, 0x0
 
     .line 84
-    :goto_53
-    if-ge v6, v4, :cond_ca
+    :goto_2
+    if-ge v6, v4, :cond_5
 
     .line 85
     .line 86
@@ -264,8 +264,8 @@
     const/4 v10, 0x0
 
     .line 100
-    :goto_63
-    if-ge v10, v9, :cond_8c
+    :goto_3
+    if-ge v10, v9, :cond_3
 
     .line 101
     .line 102
@@ -277,7 +277,7 @@
 
     .line 105
     .line 106
-    if-eq v11, v12, :cond_74
+    if-eq v11, v12, :cond_2
 
     .line 107
     .line 108
@@ -285,11 +285,11 @@
 
     .line 109
     .line 110
-    if-eq v11, v12, :cond_74
+    if-eq v11, v12, :cond_2
 
     .line 111
     .line 112
-    if-eqz v11, :cond_74
+    if-eqz v11, :cond_2
 
     .line 113
     .line 114
@@ -297,10 +297,10 @@
 
     .line 115
     .line 116
-    goto :goto_63
+    goto :goto_3
 
     .line 117
-    :cond_74
+    :cond_2
     new-instance p0, Llibs/s2;
 
     .line 118
@@ -351,7 +351,7 @@
     throw p0
 
     .line 141
-    :cond_8c
+    :cond_3
     invoke-interface {p1, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 142
@@ -395,7 +395,7 @@
     .line 162
     .line 163
     .line 164
-    :try_start_a3
+    :try_start_2
     const-string v10, "Name"
 
     .line 165
@@ -413,7 +413,7 @@
     move-result v10
 
     .line 173
-    if-nez v10, :cond_b5
+    if-nez v10, :cond_4
 
     .line 174
     .line 175
@@ -430,7 +430,7 @@
     .line 180
     .line 181
     .line 182
-    :cond_b5
+    :cond_4
     sget-object v9, Llibs/kr0;->b:[B
 
     .line 183
@@ -449,8 +449,8 @@
 
     .line 191
     invoke-virtual {p2, v8}, Ljava/io/OutputStream;->write([B)V
-    :try_end_c1
-    .catch Ljava/io/IOException; {:try_start_a3 .. :try_end_c1} :catch_c5
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
 
     .line 192
     .line 193
@@ -460,10 +460,10 @@
     .line 195
     .line 196
     .line 197
-    goto :goto_53
+    goto :goto_2
 
     .line 198
-    :catch_c5
+    :catch_1
     move-exception p0
 
     .line 199
@@ -475,7 +475,7 @@
     return-object v1
 
     .line 203
-    :cond_ca
+    :cond_5
     new-instance p0, Llibs/dy2;
 
     .line 204
@@ -507,7 +507,7 @@
     return-object p0
 
     .line 218
-    :catch_d9
+    :catch_2
     move-exception p0
 
     .line 219
@@ -520,7 +520,7 @@
 .end method
 
 .method public static b(Llibs/yr3;[B)[B
-    .registers 16
+    .locals 14
 
     .line 1
     const-string v0, "Failed to sign using "
@@ -596,11 +596,11 @@
     const/4 v11, 0x1
 
     .line 36
-    if-eqz v8, :cond_2e
+    if-eqz v8, :cond_1
 
     .line 37
     .line 38
-    if-ne v8, v11, :cond_2a
+    if-ne v8, v11, :cond_0
 
     .line 39
     .line 40
@@ -608,10 +608,10 @@
 
     .line 41
     .line 42
-    goto :goto_30
+    goto :goto_0
 
     .line 43
-    :cond_2a
+    :cond_0
     invoke-static {v5, v10}, Llibs/ic0;->g(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 44
@@ -620,12 +620,12 @@
     return-object v9
 
     .line 47
-    :cond_2e
+    :cond_1
     const-string v8, "SHA1"
 
     .line 48
     .line 49
-    :goto_30
+    :goto_0
     const-string v12, "RSA"
 
     .line 50
@@ -642,7 +642,7 @@
 
     .line 56
     .line 57
-    if-nez v12, :cond_a2
+    if-nez v12, :cond_8
 
     .line 58
     .line 59
@@ -654,14 +654,14 @@
     move-result v12
 
     .line 63
-    if-eqz v12, :cond_41
+    if-eqz v12, :cond_2
 
     .line 64
     .line 65
-    goto :goto_a2
+    goto :goto_3
 
     .line 66
-    :cond_41
+    :cond_2
     const-string v12, "DSA"
 
     .line 67
@@ -674,7 +674,7 @@
     move-result v12
 
     .line 72
-    if-eqz v12, :cond_79
+    if-eqz v12, :cond_6
 
     .line 73
     .line 74
@@ -686,11 +686,11 @@
     move-result v7
 
     .line 78
-    if-eqz v7, :cond_5f
+    if-eqz v7, :cond_4
 
     .line 79
     .line 80
-    if-ne v7, v11, :cond_5b
+    if-ne v7, v11, :cond_3
 
     .line 81
     .line 82
@@ -711,10 +711,10 @@
     .line 89
     .line 90
     .line 91
-    goto :goto_68
+    goto :goto_1
 
     .line 92
-    :cond_5b
+    :cond_3
     invoke-static {v5, v10}, Llibs/ic0;->g(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 93
@@ -723,7 +723,7 @@
     return-object v9
 
     .line 96
-    :cond_5f
+    :cond_4
     new-instance v7, Llibs/$g;
 
     .line 97
@@ -741,8 +741,8 @@
     .line 103
     .line 104
     .line 105
-    :goto_68
-    if-eqz v6, :cond_6d
+    :goto_1
+    if-eqz v6, :cond_5
 
     .line 106
     .line 107
@@ -750,15 +750,15 @@
 
     .line 108
     .line 109
-    goto :goto_6f
+    goto :goto_2
 
     .line 110
-    :cond_6d
+    :cond_5
     const-string v6, "withDSA"
 
     .line 111
     .line 112
-    :goto_6f
+    :goto_2
     invoke-virtual {v8, v6}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     .line 113
@@ -776,10 +776,10 @@
     .line 119
     .line 120
     .line 121
-    goto :goto_b4
+    goto :goto_4
 
     .line 122
-    :cond_79
+    :cond_6
     const-string v6, "EC"
 
     .line 123
@@ -792,7 +792,7 @@
     move-result v6
 
     .line 128
-    if-eqz v6, :cond_96
+    if-eqz v6, :cond_7
 
     .line 129
     .line 130
@@ -834,10 +834,10 @@
     .line 148
     .line 149
     .line 150
-    goto :goto_b4
+    goto :goto_4
 
     .line 151
-    :cond_96
+    :cond_7
     new-instance p0, Ljava/security/InvalidKeyException;
 
     .line 152
@@ -862,8 +862,8 @@
     throw p0
 
     .line 163
-    :cond_a2
-    :goto_a2
+    :cond_8
+    :goto_3
     const-string v6, "withRSA"
 
     .line 164
@@ -898,7 +898,7 @@
     .line 179
     .line 180
     .line 181
-    :goto_b4
+    :goto_4
     iget-object v6, v8, Llibs/la2;->a:Ljava/lang/Object;
 
     .line 182
@@ -907,7 +907,7 @@
 
     .line 184
     .line 185
-    :try_start_b8
+    :try_start_0
     iget-object p0, p0, Llibs/yr3;->b:Llibs/f3;
 
     .line 186
@@ -975,7 +975,7 @@
 
     .line 219
     .line 220
-    if-eqz p0, :cond_e0
+    if-eqz p0, :cond_9
 
     .line 221
     .line 222
@@ -984,7 +984,7 @@
     .line 223
     .line 224
     .line 225
-    :cond_e0
+    :cond_9
     invoke-virtual {v7, p1}, Ljava/security/Signature;->update([B)V
 
     .line 226
@@ -996,13 +996,13 @@
     .line 230
     .line 231
     move-result-object p0
-    :try_end_e7
-    .catch Ljava/security/InvalidKeyException; {:try_start_b8 .. :try_end_e7} :catch_150
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_b8 .. :try_end_e7} :catch_145
-    .catch Ljava/security/SignatureException; {:try_start_b8 .. :try_end_e7} :catch_143
+    :try_end_0
+    .catch Ljava/security/InvalidKeyException; {:try_start_0 .. :try_end_0} :catch_5
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_0 .. :try_end_0} :catch_4
+    .catch Ljava/security/SignatureException; {:try_start_0 .. :try_end_0} :catch_3
 
     .line 232
-    :try_start_e7
+    :try_start_1
     invoke-static {v6}, Ljava/security/Signature;->getInstance(Ljava/lang/String;)Ljava/security/Signature;
 
     .line 233
@@ -1027,12 +1027,12 @@
     .line 244
     .line 245
     move-result p1
-    :try_end_f5
-    .catch Ljava/security/InvalidKeyException; {:try_start_e7 .. :try_end_f5} :catch_12d
-    .catch Ljava/security/SignatureException; {:try_start_e7 .. :try_end_f5} :catch_12b
+    :try_end_1
+    .catch Ljava/security/InvalidKeyException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/security/SignatureException; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 246
-    if-eqz p1, :cond_123
+    if-eqz p1, :cond_c
 
     .line 247
     .line 248
@@ -1044,11 +1044,11 @@
     move-result p1
 
     .line 252
-    if-eqz p1, :cond_10d
+    if-eqz p1, :cond_b
 
     .line 253
     .line 254
-    if-ne p1, v11, :cond_107
+    if-ne p1, v11, :cond_a
 
     .line 255
     .line 256
@@ -1065,10 +1065,10 @@
     .line 261
     .line 262
     .line 263
-    goto :goto_114
+    goto :goto_5
 
     .line 264
-    :cond_107
+    :cond_a
     const-string p0, "Unsupported digest algorithm: "
 
     .line 265
@@ -1081,7 +1081,7 @@
     return-object v9
 
     .line 270
-    :cond_10d
+    :cond_b
     new-instance p1, Llibs/$g;
 
     .line 271
@@ -1095,7 +1095,7 @@
     .line 275
     .line 276
     .line 277
-    :goto_114
+    :goto_5
     iget-object v0, v8, Llibs/la2;->b:Ljava/lang/Object;
 
     .line 278
@@ -1104,22 +1104,22 @@
 
     .line 280
     .line 281
-    :try_start_118
+    :try_start_2
     invoke-static {p0, v3, p1, v0}, Llibs/zj0;->y([BLjava/util/List;Llibs/$g;Llibs/$g;)[B
 
     .line 282
     .line 283
     .line 284
     move-result-object p0
-    :try_end_11c
-    .catch Llibs/v5; {:try_start_118 .. :try_end_11c} :catch_11d
-    .catch Ljava/security/cert/CertificateEncodingException; {:try_start_118 .. :try_end_11c} :catch_11d
+    :try_end_2
+    .catch Llibs/v5; {:try_start_2 .. :try_end_2} :catch_0
+    .catch Ljava/security/cert/CertificateEncodingException; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 285
     return-object p0
 
     .line 286
-    :catch_11d
+    :catch_0
     const-string p0, "Failed to encode signature block"
 
     .line 287
@@ -1132,8 +1132,8 @@
     return-object v9
 
     .line 292
-    :cond_123
-    :try_start_123
+    :cond_c
+    :try_start_3
     new-instance p0, Ljava/security/SignatureException;
 
     .line 293
@@ -1148,26 +1148,26 @@
     .line 298
     .line 299
     throw p0
-    :try_end_12b
-    .catch Ljava/security/InvalidKeyException; {:try_start_123 .. :try_end_12b} :catch_12d
-    .catch Ljava/security/SignatureException; {:try_start_123 .. :try_end_12b} :catch_12b
+    :try_end_3
+    .catch Ljava/security/InvalidKeyException; {:try_start_3 .. :try_end_3} :catch_2
+    .catch Ljava/security/SignatureException; {:try_start_3 .. :try_end_3} :catch_1
 
     .line 300
-    :catch_12b
+    :catch_1
     move-exception p0
 
     .line 301
-    goto :goto_12f
+    goto :goto_6
 
     .line 302
-    :catch_12d
+    :catch_2
     move-exception p0
 
     .line 303
-    goto :goto_139
+    goto :goto_7
 
     .line 304
-    :goto_12f
+    :goto_6
     new-instance p1, Ljava/security/SignatureException;
 
     .line 305
@@ -1188,7 +1188,7 @@
     throw p1
 
     .line 314
-    :goto_139
+    :goto_7
     new-instance p1, Ljava/security/InvalidKeyException;
 
     .line 315
@@ -1209,18 +1209,18 @@
     throw p1
 
     .line 324
-    :catch_143
+    :catch_3
     move-exception p0
 
     .line 325
-    goto :goto_146
+    goto :goto_8
 
     .line 326
-    :catch_145
+    :catch_4
     move-exception p0
 
     .line 327
-    :goto_146
+    :goto_8
     new-instance p1, Ljava/security/SignatureException;
 
     .line 328
@@ -1241,7 +1241,7 @@
     throw p1
 
     .line 337
-    :catch_150
+    :catch_5
     move-exception p0
 
     .line 338
@@ -1266,7 +1266,7 @@
 .end method
 
 .method public static c(Llibs/ma0;)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
@@ -1277,14 +1277,14 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_1
 
     .line 6
     .line 7
     const/4 v1, 0x1
 
     .line 8
-    if-ne v0, v1, :cond_c
+    if-ne v0, v1, :cond_0
 
     .line 9
     .line 10
@@ -1295,7 +1295,7 @@
     return-object p0
 
     .line 13
-    :cond_c
+    :cond_0
     const-string v0, "Unexpected content digest algorithm: "
 
     .line 14
@@ -1311,7 +1311,7 @@
     return-object p0
 
     .line 20
-    :cond_13
+    :cond_1
     const-string p0, "SHA1-Digest"
 
     .line 21
@@ -1320,7 +1320,7 @@
 .end method
 
 .method public static d(Ljava/lang/String;)Z
-    .registers 6
+    .locals 5
 
     .line 1
     const-string v0, "/"
@@ -1338,14 +1338,14 @@
     const/4 v1, 0x0
 
     .line 8
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 9
     .line 10
     return v1
 
     .line 11
-    :cond_a
+    :cond_0
     const-string v0, "META-INF/"
 
     .line 12
@@ -1361,14 +1361,14 @@
     const/4 v2, 0x1
 
     .line 18
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     .line 19
     .line 20
     return v2
 
     .line 21
-    :cond_14
+    :cond_1
     const/16 v0, 0x2f
 
     .line 22
@@ -1388,14 +1388,14 @@
     const/4 v4, -0x1
 
     .line 30
-    if-eq v0, v4, :cond_20
+    if-eq v0, v4, :cond_2
 
     .line 31
     .line 32
     return v2
 
     .line 33
-    :cond_20
+    :cond_2
     invoke-virtual {p0, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     .line 34
@@ -1428,7 +1428,7 @@
     move-result v0
 
     .line 49
-    if-nez v0, :cond_5c
+    if-nez v0, :cond_4
 
     .line 50
     .line 51
@@ -1444,7 +1444,7 @@
     move-result v0
 
     .line 57
-    if-nez v0, :cond_5c
+    if-nez v0, :cond_4
 
     .line 58
     .line 59
@@ -1460,7 +1460,7 @@
     move-result v0
 
     .line 65
-    if-nez v0, :cond_5c
+    if-nez v0, :cond_4
 
     .line 66
     .line 67
@@ -1476,7 +1476,7 @@
     move-result v0
 
     .line 73
-    if-nez v0, :cond_5c
+    if-nez v0, :cond_4
 
     .line 74
     .line 75
@@ -1492,7 +1492,7 @@
     move-result v0
 
     .line 81
-    if-nez v0, :cond_5c
+    if-nez v0, :cond_4
 
     .line 82
     .line 83
@@ -1508,24 +1508,24 @@
     move-result p0
 
     .line 89
-    if-eqz p0, :cond_5b
+    if-eqz p0, :cond_3
 
     .line 90
     .line 91
-    goto :goto_5c
+    goto :goto_0
 
     .line 92
-    :cond_5b
+    :cond_3
     return v2
 
     .line 93
-    :cond_5c
-    :goto_5c
+    :cond_4
+    :goto_0
     return v1
 .end method
 
 .method public static e(Ljava/util/List;Llibs/ma0;Ljava/util/HashMap;Ljava/util/ArrayList;[BLjava/lang/String;)Ljava/util/ArrayList;
-    .registers 9
+    .locals 3
 
     .line 1
     invoke-interface {p0}, Ljava/util/List;->isEmpty()Z
@@ -1539,7 +1539,7 @@
     const/4 v1, 0x0
 
     .line 6
-    if-nez v0, :cond_24
+    if-nez v0, :cond_1
 
     .line 7
     .line 8
@@ -1555,7 +1555,7 @@
 
     .line 13
     .line 14
-    if-gt v0, v2, :cond_18
+    if-gt v0, v2, :cond_0
 
     .line 15
     .line 16
@@ -1578,7 +1578,7 @@
     return-object p0
 
     .line 25
-    :cond_18
+    :cond_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     .line 26
@@ -1603,7 +1603,7 @@
     return-object v1
 
     .line 37
-    :cond_24
+    :cond_1
     const-string p0, "At least one signer config must be provided"
 
     .line 38
@@ -1617,7 +1617,7 @@
 .end method
 
 .method public static f(Ljava/util/List;Llibs/ma0;Ljava/util/ArrayList;Ljava/lang/String;Llibs/dy2;)Ljava/util/ArrayList;
-    .registers 22
+    .locals 17
 
     .line 1
     move-object/from16 v0, p1
@@ -1648,7 +1648,7 @@
     move-result v5
 
     .line 15
-    if-nez v5, :cond_1a4
+    if-nez v5, :cond_9
 
     .line 16
     .line 17
@@ -1737,7 +1737,7 @@
     const/4 v11, 0x0
 
     .line 60
-    if-nez v10, :cond_7b
+    if-nez v10, :cond_2
 
     .line 61
     .line 62
@@ -1761,8 +1761,8 @@
     const/4 v13, 0x0
 
     .line 72
-    :goto_47
-    if-ge v13, v12, :cond_6f
+    :goto_0
+    if-ge v13, v12, :cond_1
 
     .line 73
     .line 74
@@ -1802,7 +1802,7 @@
     move-result v16
 
     .line 92
-    if-lez v16, :cond_65
+    if-lez v16, :cond_0
 
     .line 93
     .line 94
@@ -1819,15 +1819,15 @@
     .line 99
     .line 100
     .line 101
-    goto :goto_67
+    goto :goto_1
 
     .line 102
-    :cond_65
+    :cond_0
     const/16 v16, 0x0
 
     .line 103
     .line 104
-    :goto_67
+    :goto_1
     invoke-static {v15}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     .line 105
@@ -1841,10 +1841,10 @@
     .line 109
     .line 110
     .line 111
-    goto :goto_47
+    goto :goto_0
 
     .line 112
-    :cond_6f
+    :cond_1
     const/16 v16, 0x0
 
     .line 113
@@ -1866,15 +1866,15 @@
     .line 121
     .line 122
     .line 123
-    goto :goto_7d
+    goto :goto_2
 
     .line 124
-    :cond_7b
+    :cond_2
     const/16 v16, 0x0
 
     .line 125
     .line 126
-    :goto_7d
+    :goto_2
     iget-object v6, v0, Llibs/ma0;->X:Ljava/lang/String;
 
     .line 127
@@ -1895,11 +1895,11 @@
     move-result v10
 
     .line 136
-    if-eqz v10, :cond_94
+    if-eqz v10, :cond_4
 
     .line 137
     .line 138
-    if-ne v10, v8, :cond_8e
+    if-ne v10, v8, :cond_3
 
     .line 139
     .line 140
@@ -1907,10 +1907,10 @@
 
     .line 141
     .line 142
-    goto :goto_96
+    goto :goto_3
 
     .line 143
-    :cond_8e
+    :cond_3
     const-string v1, "Unexpected content digest algorithm: "
 
     .line 144
@@ -1923,12 +1923,12 @@
     return-object v16
 
     .line 149
-    :cond_94
+    :cond_4
     const-string v8, "SHA1-Digest-Manifest"
 
     .line 150
     .line 151
-    :goto_96
+    :goto_3
     iget-object v10, v1, Llibs/dy2;->Y:Ljava/lang/Object;
 
     .line 152
@@ -1967,10 +1967,10 @@
     .line 169
     .line 170
     .line 171
-    :try_start_aa
+    :try_start_0
     invoke-static {v8, v9}, Llibs/zd2;->AdMob(Ljava/io/ByteArrayOutputStream;Ljava/util/jar/Attributes;)V
-    :try_end_ad
-    .catch Ljava/io/IOException; {:try_start_aa .. :try_end_ad} :catch_19f
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_5
 
     .line 172
     .line 173
@@ -2007,7 +2007,7 @@
     move-result-object v9
 
     .line 190
-    :goto_bd
+    :goto_4
     invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
 
     .line 191
@@ -2016,7 +2016,7 @@
     move-result v10
 
     .line 194
-    if-eqz v10, :cond_100
+    if-eqz v10, :cond_6
 
     .line 195
     .line 196
@@ -2086,7 +2086,7 @@
     .line 228
     .line 229
     .line 230
-    :try_start_e5
+    :try_start_1
     const-string v10, "Name"
 
     .line 231
@@ -2104,7 +2104,7 @@
     move-result v10
 
     .line 239
-    if-nez v10, :cond_f7
+    if-nez v10, :cond_5
 
     .line 240
     .line 241
@@ -2121,18 +2121,18 @@
     .line 246
     .line 247
     .line 248
-    :cond_f7
+    :cond_5
     invoke-virtual {v8, v2}, Ljava/io/OutputStream;->write([B)V
-    :try_end_fa
-    .catch Ljava/io/IOException; {:try_start_e5 .. :try_end_fa} :catch_fb
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 249
     .line 250
     .line 251
-    goto :goto_bd
+    goto :goto_4
 
     .line 252
-    :catch_fb
+    :catch_0
     move-exception v0
 
     .line 253
@@ -2144,7 +2144,7 @@
     return-object v16
 
     .line 257
-    :cond_100
+    :cond_6
     invoke-virtual {v8}, Ljava/io/ByteArrayOutputStream;->size()I
 
     .line 258
@@ -2153,7 +2153,7 @@
     move-result v0
 
     .line 261
-    if-lez v0, :cond_119
+    if-lez v0, :cond_7
 
     .line 262
     .line 263
@@ -2169,22 +2169,22 @@
 
     .line 268
     .line 269
-    if-nez v0, :cond_119
+    if-nez v0, :cond_7
 
     .line 270
     .line 271
-    :try_start_10e
+    :try_start_2
     invoke-virtual {v8, v2}, Ljava/io/OutputStream;->write([B)V
-    :try_end_111
-    .catch Ljava/io/IOException; {:try_start_10e .. :try_end_111} :catch_112
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
 
     .line 272
     .line 273
     .line 274
-    goto :goto_119
+    goto :goto_5
 
     .line 275
-    :catch_112
+    :catch_1
     move-exception v0
 
     .line 276
@@ -2200,8 +2200,8 @@
     return-object v16
 
     .line 282
-    :cond_119
-    :goto_119
+    :cond_7
+    :goto_5
     invoke-virtual {v8}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     .line 283
@@ -2218,7 +2218,7 @@
     move-result-object v2
 
     .line 290
-    :goto_121
+    :goto_6
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     .line 291
@@ -2227,7 +2227,7 @@
     move-result v6
 
     .line 294
-    if-eqz v6, :cond_190
+    if-eqz v6, :cond_8
 
     .line 295
     .line 296
@@ -2247,17 +2247,17 @@
 
     .line 303
     .line 304
-    :try_start_12f
+    :try_start_3
     invoke-static {v6, v0}, Llibs/zr3;->b(Llibs/yr3;[B)[B
 
     .line 305
     .line 306
     .line 307
     move-result-object v8
-    :try_end_133
-    .catch Ljava/security/InvalidKeyException; {:try_start_12f .. :try_end_133} :catch_185
-    .catch Ljava/security/cert/CertificateException; {:try_start_12f .. :try_end_133} :catch_17a
-    .catch Ljava/security/SignatureException; {:try_start_12f .. :try_end_133} :catch_16f
+    :try_end_3
+    .catch Ljava/security/InvalidKeyException; {:try_start_3 .. :try_end_3} :catch_4
+    .catch Ljava/security/cert/CertificateException; {:try_start_3 .. :try_end_3} :catch_3
+    .catch Ljava/security/SignatureException; {:try_start_3 .. :try_end_3} :catch_2
 
     .line 308
     const-string v9, ".SF"
@@ -2373,10 +2373,10 @@
     .line 365
     .line 366
     .line 367
-    goto :goto_121
+    goto :goto_6
 
     .line 368
-    :catch_16f
+    :catch_2
     move-exception v0
 
     .line 369
@@ -2400,7 +2400,7 @@
     throw v1
 
     .line 379
-    :catch_17a
+    :catch_3
     move-exception v0
 
     .line 380
@@ -2424,7 +2424,7 @@
     throw v1
 
     .line 390
-    :catch_185
+    :catch_4
     move-exception v0
 
     .line 391
@@ -2448,7 +2448,7 @@
     throw v1
 
     .line 401
-    :cond_190
+    :cond_8
     iget-object v0, v1, Llibs/dy2;->Y:Ljava/lang/Object;
 
     .line 402
@@ -2478,7 +2478,7 @@
     return-object v5
 
     .line 416
-    :catch_19f
+    :catch_5
     move-exception v0
 
     .line 417
@@ -2490,7 +2490,7 @@
     return-object v16
 
     .line 421
-    :cond_1a4
+    :cond_9
     const/16 v16, 0x0
 
     .line 422

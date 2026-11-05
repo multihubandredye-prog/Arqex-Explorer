@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     .line 1
     invoke-static {}, Ljavax/net/ssl/SSLEngineResult$Status;->values()[Ljavax/net/ssl/SSLEngineResult$Status;
@@ -36,7 +36,7 @@
     const/4 v1, 0x1
 
     .line 11
-    :try_start_a
+    :try_start_0
     sget-object v2, Ljavax/net/ssl/SSLEngineResult$Status;->BUFFER_UNDERFLOW:Ljavax/net/ssl/SSLEngineResult$Status;
 
     .line 12
@@ -50,16 +50,16 @@
 
     .line 17
     aput v1, v0, v2
-    :try_end_12
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_a .. :try_end_12} :catch_12
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 18
     .line 19
-    :catch_12
+    :catch_0
     const/4 v0, 0x2
 
     .line 20
-    :try_start_13
+    :try_start_1
     sget-object v2, Lorg/conscrypt/ConscryptEngineSocket$3;->$SwitchMap$javax$net$ssl$SSLEngineResult$Status:[I
 
     .line 21
@@ -77,16 +77,16 @@
 
     .line 28
     aput v0, v2, v3
-    :try_end_1d
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_13 .. :try_end_1d} :catch_1d
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 29
     .line 30
-    :catch_1d
+    :catch_1
     const/4 v2, 0x3
 
     .line 31
-    :try_start_1e
+    :try_start_2
     sget-object v3, Lorg/conscrypt/ConscryptEngineSocket$3;->$SwitchMap$javax$net$ssl$SSLEngineResult$Status:[I
 
     .line 32
@@ -104,12 +104,12 @@
 
     .line 39
     aput v2, v3, v4
-    :try_end_28
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1e .. :try_end_28} :catch_28
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
     .line 40
     .line 41
-    :catch_28
+    :catch_2
     invoke-static {}, Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;->values()[Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;
 
     .line 42
@@ -129,7 +129,7 @@
 
     .line 49
     .line 50
-    :try_start_31
+    :try_start_3
     sget-object v4, Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;->NEED_UNWRAP:Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;
 
     .line 51
@@ -143,13 +143,13 @@
 
     .line 56
     aput v1, v3, v4
-    :try_end_39
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_31 .. :try_end_39} :catch_39
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
     .line 57
     .line 58
-    :catch_39
-    :try_start_39
+    :catch_3
+    :try_start_4
     sget-object v1, Lorg/conscrypt/ConscryptEngineSocket$3;->$SwitchMap$javax$net$ssl$SSLEngineResult$HandshakeStatus:[I
 
     .line 59
@@ -167,13 +167,13 @@
 
     .line 66
     aput v0, v1, v3
-    :try_end_43
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_39 .. :try_end_43} :catch_43
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
 
     .line 67
     .line 68
-    :catch_43
-    :try_start_43
+    :catch_4
+    :try_start_5
     sget-object v0, Lorg/conscrypt/ConscryptEngineSocket$3;->$SwitchMap$javax$net$ssl$SSLEngineResult$HandshakeStatus:[I
 
     .line 69
@@ -191,13 +191,13 @@
 
     .line 76
     aput v2, v0, v1
-    :try_end_4d
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_43 .. :try_end_4d} :catch_4d
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
 
     .line 77
     .line 78
-    :catch_4d
-    :try_start_4d
+    :catch_5
+    :try_start_6
     sget-object v0, Lorg/conscrypt/ConscryptEngineSocket$3;->$SwitchMap$javax$net$ssl$SSLEngineResult$HandshakeStatus:[I
 
     .line 79
@@ -218,13 +218,13 @@
 
     .line 87
     aput v2, v0, v1
-    :try_end_58
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4d .. :try_end_58} :catch_58
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
 
     .line 88
     .line 89
-    :catch_58
-    :try_start_58
+    :catch_6
+    :try_start_7
     sget-object v0, Lorg/conscrypt/ConscryptEngineSocket$3;->$SwitchMap$javax$net$ssl$SSLEngineResult$HandshakeStatus:[I
 
     .line 90
@@ -245,11 +245,11 @@
 
     .line 98
     aput v2, v0, v1
-    :try_end_63
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_58 .. :try_end_63} :catch_63
+    :try_end_7
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_7
 
     .line 99
     .line 100
-    :catch_63
+    :catch_7
     return-void
 .end method

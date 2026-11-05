@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const-string v0, "video/x-ms-asf"
@@ -42,7 +42,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/mg3;-><init>()V
@@ -54,7 +54,7 @@
 .end method
 
 .method public static File(Ljava/lang/String;)Ljava/lang/String;
-    .registers 8
+    .locals 7
 
     .line 1
     invoke-static {}, Ljavax/xml/parsers/SAXParserFactory;->newInstance()Ljavax/xml/parsers/SAXParserFactory;
@@ -100,15 +100,15 @@
     const/4 v1, 0x0
 
     .line 22
-    :goto_15
+    :goto_0
     const/4 v2, 0x5
 
     .line 23
-    if-ge v1, v2, :cond_6b
+    if-ge v1, v2, :cond_0
 
     .line 24
     .line 25
-    :try_start_18
+    :try_start_0
     new-instance v2, Lorg/xml/sax/InputSource;
 
     .line 26
@@ -136,16 +136,16 @@
     .line 38
     .line 39
     invoke-interface {v0, v2}, Lorg/xml/sax/XMLReader;->parse(Lorg/xml/sax/InputSource;)V
-    :try_end_29
-    .catch Ljava/lang/Exception; {:try_start_18 .. :try_end_29} :catch_2a
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 40
     .line 41
     .line 42
-    goto :goto_6b
+    goto :goto_1
 
     .line 43
-    :catch_2a
+    :catch_0
     move-exception v2
 
     .line 44
@@ -169,7 +169,7 @@
     move-result v3
 
     .line 54
-    if-eqz v3, :cond_6b
+    if-eqz v3, :cond_0
 
     .line 55
     .line 56
@@ -272,18 +272,18 @@
 
     .line 106
     .line 107
-    goto :goto_15
+    goto :goto_0
 
     .line 108
-    :cond_6b
-    :goto_6b
+    :cond_0
+    :goto_1
     return-object p0
 .end method
 
 
 # virtual methods
 .method public final Get(Ljava/io/InputStream;Llibs/kn;Ljava/nio/charset/Charset;)V
-    .registers 16
+    .locals 12
 
     .line 1
     new-instance v0, Llibs/bk;
@@ -308,7 +308,7 @@
 
     .line 12
     .line 13
-    :goto_c
+    :goto_0
     invoke-virtual {v0}, Llibs/bk;->w()Ljava/lang/String;
 
     .line 14
@@ -317,7 +317,7 @@
     move-result-object v1
 
     .line 17
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_0
 
     .line 18
     .line 19
@@ -329,10 +329,10 @@
     move-result-object p1
 
     .line 23
-    goto :goto_c
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_0
     const-string v0, "TITLE"
 
     .line 25
@@ -341,7 +341,7 @@
 
     .line 27
     .line 28
-    :try_start_1b
+    :try_start_0
     invoke-static {p1}, Llibs/Alpha;->File(Ljava/lang/String;)Ljava/lang/String;
 
     .line 29
@@ -410,7 +410,7 @@
     move-object v4, v3
 
     .line 62
-    :cond_3d
+    :cond_1
     invoke-interface {v2}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     .line 63
@@ -433,8 +433,8 @@
     .line 72
     .line 73
     move-result-object v7
-    :try_end_49
-    .catchall {:try_start_1b .. :try_end_49} :catchall_5c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 74
     const/4 v8, 0x2
@@ -447,11 +447,11 @@
 
     .line 77
     .line 78
-    if-ne v6, v8, :cond_18f
+    if-ne v6, v8, :cond_1a
 
     .line 79
     .line 80
-    :try_start_4f
+    :try_start_1
     invoke-virtual {v10, v7}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     .line 81
@@ -460,7 +460,7 @@
     move-result v6
 
     .line 84
-    if-eqz v6, :cond_5f
+    if-eqz v6, :cond_2
 
     .line 85
     .line 86
@@ -469,25 +469,25 @@
     .line 87
     .line 88
     invoke-direct {v4}, Llibs/td2;-><init>()V
-    :try_end_5a
-    .catchall {:try_start_4f .. :try_end_5a} :catchall_5c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 89
     .line 90
     .line 91
-    goto/16 :goto_1ad
+    goto/16 :goto_5
 
     .line 92
     .line 93
-    :catchall_5c
+    :catchall_0
     move-exception p1
 
     .line 94
-    goto/16 :goto_1b6
+    goto/16 :goto_6
 
     .line 95
     .line 96
-    :cond_5f
+    :cond_2
     const-string v6, "ENTRYREF"
 
     .line 97
@@ -496,11 +496,11 @@
 
     .line 99
     .line 100
-    if-eqz v4, :cond_132
+    if-eqz v4, :cond_16
 
     .line 101
     .line 102
-    :try_start_65
+    :try_start_2
     const-string v11, "ABSTRACT"
 
     .line 103
@@ -513,15 +513,15 @@
     move-result v11
 
     .line 108
-    if-eqz v11, :cond_6f
+    if-eqz v11, :cond_3
 
     .line 109
     .line 110
-    goto/16 :goto_1ad
+    goto/16 :goto_5
 
     .line 111
     .line 112
-    :cond_6f
+    :cond_3
     invoke-virtual {v7, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     .line 113
@@ -530,15 +530,15 @@
     move-result v11
 
     .line 116
-    if-eqz v11, :cond_77
+    if-eqz v11, :cond_4
 
     .line 117
     .line 118
-    goto/16 :goto_1ad
+    goto/16 :goto_5
 
     .line 119
     .line 120
-    :cond_77
+    :cond_4
     const-string v11, "AUTHOR"
 
     .line 121
@@ -551,15 +551,15 @@
     move-result v11
 
     .line 126
-    if-eqz v11, :cond_81
+    if-eqz v11, :cond_5
 
     .line 127
     .line 128
-    goto/16 :goto_1ad
+    goto/16 :goto_5
 
     .line 129
     .line 130
-    :cond_81
+    :cond_5
     const-string v11, "BASE"
 
     .line 131
@@ -572,15 +572,15 @@
     move-result v11
 
     .line 136
-    if-eqz v11, :cond_8b
+    if-eqz v11, :cond_6
 
     .line 137
     .line 138
-    goto/16 :goto_1ad
+    goto/16 :goto_5
 
     .line 139
     .line 140
-    :cond_8b
+    :cond_6
     const-string v11, "COPYRIGHT"
 
     .line 141
@@ -593,15 +593,15 @@
     move-result v11
 
     .line 146
-    if-eqz v11, :cond_95
+    if-eqz v11, :cond_7
 
     .line 147
     .line 148
-    goto/16 :goto_1ad
+    goto/16 :goto_5
 
     .line 149
     .line 150
-    :cond_95
+    :cond_7
     const-string v11, "DURATION"
 
     .line 151
@@ -614,15 +614,15 @@
     move-result v11
 
     .line 156
-    if-eqz v11, :cond_9f
+    if-eqz v11, :cond_8
 
     .line 157
     .line 158
-    goto/16 :goto_1ad
+    goto/16 :goto_5
 
     .line 159
     .line 160
-    :cond_9f
+    :cond_8
     const-string v11, "ENDMARKER"
 
     .line 161
@@ -635,15 +635,15 @@
     move-result v11
 
     .line 166
-    if-eqz v11, :cond_a9
+    if-eqz v11, :cond_9
 
     .line 167
     .line 168
-    goto/16 :goto_1ad
+    goto/16 :goto_5
 
     .line 169
     .line 170
-    :cond_a9
+    :cond_9
     invoke-virtual {v7, v10}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     .line 171
@@ -652,15 +652,15 @@
     move-result v10
 
     .line 174
-    if-eqz v10, :cond_b1
+    if-eqz v10, :cond_a
 
     .line 175
     .line 176
-    goto/16 :goto_1ad
+    goto/16 :goto_5
 
     .line 177
     .line 178
-    :cond_b1
+    :cond_a
     invoke-virtual {v7, v6}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     .line 179
@@ -669,15 +669,15 @@
     move-result v6
 
     .line 182
-    if-eqz v6, :cond_b9
+    if-eqz v6, :cond_b
 
     .line 183
     .line 184
-    goto/16 :goto_1ad
+    goto/16 :goto_5
 
     .line 185
     .line 186
-    :cond_b9
+    :cond_b
     const-string v6, "EVENT"
 
     .line 187
@@ -690,15 +690,15 @@
     move-result v6
 
     .line 192
-    if-eqz v6, :cond_c3
+    if-eqz v6, :cond_c
 
     .line 193
     .line 194
-    goto/16 :goto_1ad
+    goto/16 :goto_5
 
     .line 195
     .line 196
-    :cond_c3
+    :cond_c
     const-string v6, "MOREINFO"
 
     .line 197
@@ -711,15 +711,15 @@
     move-result v6
 
     .line 202
-    if-eqz v6, :cond_cd
+    if-eqz v6, :cond_d
 
     .line 203
     .line 204
-    goto/16 :goto_1ad
+    goto/16 :goto_5
 
     .line 205
     .line 206
-    :cond_cd
+    :cond_d
     const-string v6, "PARAM"
 
     .line 207
@@ -732,15 +732,15 @@
     move-result v6
 
     .line 212
-    if-eqz v6, :cond_d7
+    if-eqz v6, :cond_e
 
     .line 213
     .line 214
-    goto/16 :goto_1ad
+    goto/16 :goto_5
 
     .line 215
     .line 216
-    :cond_d7
+    :cond_e
     const-string v6, "REF"
 
     .line 217
@@ -753,7 +753,7 @@
     move-result v6
 
     .line 222
-    if-eqz v6, :cond_101
+    if-eqz v6, :cond_12
 
     .line 223
     .line 224
@@ -765,7 +765,7 @@
     move-result-object v6
 
     .line 228
-    if-nez v6, :cond_ef
+    if-nez v6, :cond_f
 
     .line 229
     .line 230
@@ -789,8 +789,8 @@
     move-result-object v6
 
     .line 240
-    :cond_ef
-    if-nez v6, :cond_f5
+    :cond_f
+    if-nez v6, :cond_10
 
     .line 241
     .line 242
@@ -802,20 +802,20 @@
     move-result-object v6
 
     .line 246
-    :cond_f5
-    if-nez v6, :cond_fa
+    :cond_10
+    if-nez v6, :cond_11
 
     .line 247
     .line 248
-    :goto_f7
+    :goto_1
     move-object v4, v3
 
     .line 249
-    goto/16 :goto_1ad
+    goto/16 :goto_5
 
     .line 250
     .line 251
-    :cond_fa
+    :cond_11
     const-string v7, "uri"
 
     .line 252
@@ -825,11 +825,11 @@
     .line 254
     .line 255
     .line 256
-    goto/16 :goto_1ad
+    goto/16 :goto_5
 
     .line 257
     .line 258
-    :cond_101
+    :cond_12
     const-string v6, "REPEAT"
 
     .line 259
@@ -842,15 +842,15 @@
     move-result v6
 
     .line 264
-    if-eqz v6, :cond_10b
+    if-eqz v6, :cond_13
 
     .line 265
     .line 266
-    goto/16 :goto_1ad
+    goto/16 :goto_5
 
     .line 267
     .line 268
-    :cond_10b
+    :cond_13
     const-string v6, "STARTMARKER"
 
     .line 269
@@ -863,15 +863,15 @@
     move-result v6
 
     .line 274
-    if-eqz v6, :cond_115
+    if-eqz v6, :cond_14
 
     .line 275
     .line 276
-    goto/16 :goto_1ad
+    goto/16 :goto_5
 
     .line 277
     .line 278
-    :cond_115
+    :cond_14
     const-string v6, "STARTTIME"
 
     .line 279
@@ -884,15 +884,15 @@
     move-result v6
 
     .line 284
-    if-eqz v6, :cond_11f
+    if-eqz v6, :cond_15
 
     .line 285
     .line 286
-    goto/16 :goto_1ad
+    goto/16 :goto_5
 
     .line 287
     .line 288
-    :cond_11f
+    :cond_15
     invoke-virtual {v7, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     .line 289
@@ -901,7 +901,7 @@
     move-result v6
 
     .line 292
-    if-eqz v6, :cond_1ad
+    if-eqz v6, :cond_1b
 
     .line 293
     .line 294
@@ -913,7 +913,7 @@
     move-result-object v6
 
     .line 298
-    if-eqz v6, :cond_1ad
+    if-eqz v6, :cond_1b
 
     .line 299
     .line 300
@@ -926,26 +926,26 @@
     .line 303
     .line 304
     .line 305
-    goto/16 :goto_1ad
+    goto/16 :goto_5
 
     .line 306
     .line 307
-    :cond_132
+    :cond_16
     invoke-virtual {v7, v6}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     .line 308
     .line 309
     .line 310
     move-result v6
-    :try_end_136
-    .catchall {:try_start_65 .. :try_end_136} :catchall_5c
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 311
-    if-eqz v6, :cond_1ad
+    if-eqz v6, :cond_1b
 
     .line 312
     .line 313
-    :try_start_138
+    :try_start_3
     invoke-interface {v2, v3, v8}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 314
@@ -954,7 +954,7 @@
     move-result-object v6
 
     .line 317
-    if-nez v6, :cond_14d
+    if-nez v6, :cond_17
 
     .line 318
     .line 319
@@ -978,10 +978,10 @@
     move-result-object v6
 
     .line 329
-    goto :goto_14d
+    goto :goto_2
 
     .line 330
-    :catchall_149
+    :catchall_1
     nop
 
     .line 331
@@ -991,12 +991,12 @@
     move-object v10, v6
 
     .line 333
-    goto :goto_184
+    goto :goto_3
 
     .line 334
-    :cond_14d
-    :goto_14d
-    if-nez v6, :cond_153
+    :cond_17
+    :goto_2
+    if-nez v6, :cond_18
 
     .line 335
     .line 336
@@ -1008,7 +1008,7 @@
     move-result-object v6
 
     .line 340
-    :cond_153
+    :cond_18
     new-instance v7, Ljava/net/URL;
 
     .line 341
@@ -1027,8 +1027,8 @@
 
     .line 349
     check-cast v6, Ljava/net/HttpURLConnection;
-    :try_end_15e
-    .catchall {:try_start_138 .. :try_end_15e} :catchall_149
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 350
     .line 351
@@ -1036,7 +1036,7 @@
 
     .line 352
     .line 353
-    :try_start_160
+    :try_start_4
     invoke-virtual {v6, v8}, Ljava/net/URLConnection;->setConnectTimeout(I)V
 
     .line 354
@@ -1070,11 +1070,11 @@
     .line 370
     .line 371
     move-result-object v10
-    :try_end_173
-    .catchall {:try_start_160 .. :try_end_173} :catchall_182
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_3
 
     .line 372
-    :try_start_173
+    :try_start_5
     invoke-virtual {v7}, Ljava/net/URL;->toString()Ljava/lang/String;
 
     .line 373
@@ -1084,81 +1084,81 @@
 
     .line 376
     invoke-static {v7, v8, v10, p2, p3}, Llibs/mp;->Map(Ljava/lang/String;Ljava/lang/String;Ljava/io/InputStream;Llibs/kn;Ljava/nio/charset/Charset;)Z
-    :try_end_17a
-    .catchall {:try_start_173 .. :try_end_17a} :catchall_180
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_2
 
     .line 377
     .line 378
     .line 379
-    :try_start_17a
+    :try_start_6
     invoke-virtual {v6}, Ljava/net/HttpURLConnection;->disconnect()V
 
     .line 380
     .line 381
     .line 382
-    goto :goto_18b
+    goto :goto_4
 
     .line 383
-    :catch_17e
+    :catch_0
     nop
 
     .line 384
-    goto :goto_1ad
+    goto :goto_5
 
     .line 385
-    :catchall_180
+    :catchall_2
     nop
 
     .line 386
-    goto :goto_184
+    goto :goto_3
 
     .line 387
-    :catchall_182
+    :catchall_3
     nop
 
     .line 388
     move-object v10, v3
 
     .line 389
-    :goto_184
-    if-eqz v6, :cond_189
+    :goto_3
+    if-eqz v6, :cond_19
 
     .line 390
     .line 391
     invoke-virtual {v6}, Ljava/net/HttpURLConnection;->disconnect()V
-    :try_end_189
-    .catchall {:try_start_17a .. :try_end_189} :catchall_5c
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
     .line 392
     .line 393
     .line 394
-    :cond_189
-    if-eqz v10, :cond_1ad
+    :cond_19
+    if-eqz v10, :cond_1b
 
     .line 395
     .line 396
-    :goto_18b
-    :try_start_18b
+    :goto_4
+    :try_start_7
     invoke-virtual {v10}, Ljava/io/InputStream;->close()V
-    :try_end_18e
-    .catch Ljava/io/IOException; {:try_start_18b .. :try_end_18e} :catch_17e
-    .catchall {:try_start_18b .. :try_end_18e} :catchall_5c
+    :try_end_7
+    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_0
+    .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
     .line 397
     .line 398
     .line 399
-    goto :goto_1ad
+    goto :goto_5
 
     .line 400
-    :cond_18f
+    :cond_1a
     const/4 v8, 0x3
 
     .line 401
-    if-ne v6, v8, :cond_1ad
+    if-ne v6, v8, :cond_1b
 
     .line 402
     .line 403
-    :try_start_192
+    :try_start_8
     invoke-virtual {v10, v7}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     .line 404
@@ -1167,11 +1167,11 @@
     move-result v6
 
     .line 407
-    if-eqz v6, :cond_1ad
+    if-eqz v6, :cond_1b
 
     .line 408
     .line 409
-    if-eqz v4, :cond_1ad
+    if-eqz v4, :cond_1b
 
     .line 410
     .line 411
@@ -1208,13 +1208,13 @@
     .line 426
     .line 427
     .line 428
-    goto/16 :goto_f7
+    goto/16 :goto_1
 
     .line 429
     .line 430
-    :cond_1ad
-    :goto_1ad
-    if-eq v5, v9, :cond_1bd
+    :cond_1b
+    :goto_5
+    if-eq v5, v9, :cond_1c
 
     .line 431
     .line 432
@@ -1224,18 +1224,18 @@
     .line 434
     .line 435
     move-result v5
-    :try_end_1b3
-    .catchall {:try_start_192 .. :try_end_1b3} :catchall_5c
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_0
 
     .line 436
-    if-eqz v5, :cond_3d
+    if-eqz v5, :cond_1
 
     .line 437
     .line 438
-    goto :goto_1bd
+    goto :goto_7
 
     .line 439
-    :goto_1b6
+    :goto_6
     invoke-static {p1}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 440
@@ -1249,7 +1249,7 @@
     .line 444
     .line 445
     .line 446
-    :cond_1bd
-    :goto_1bd
+    :cond_1c
+    :goto_7
     return-void
 .end method

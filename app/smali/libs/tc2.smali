@@ -26,7 +26,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/PlayerActivity;Lcom/mixplorer/widgets/MiCombo;ZLjava/util/ArrayList;Lcom/mixplorer/widgets/MiCombo;Ljava/util/ArrayList;Lcom/mixplorer/widgets/MiEditText;Lcom/mixplorer/widgets/MiCombo;)V
-    .registers 9
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -72,7 +72,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 13
+    .locals 11
 
     .line 1
     iget-object p1, p0, Llibs/tc2;->Mu:Lcom/mixplorer/widgets/MiCombo;
@@ -101,22 +101,22 @@
     const/4 v4, 0x0
 
     .line 13
-    :try_start_c
+    :try_start_0
     sget-object v5, Lcom/mixplorer/AppImpl;->Pi:Llibs/rd2;
-    :try_end_e
-    .catchall {:try_start_c .. :try_end_e} :catchall_31
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 14
     .line 15
-    if-nez v5, :cond_12
+    if-nez v5, :cond_0
 
     .line 16
     .line 17
-    goto/16 :goto_ca
+    goto/16 :goto_3
 
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     iget-object v6, p0, Llibs/tc2;->X:Lcom/mixplorer/activities/PlayerActivity;
 
     .line 20
@@ -129,7 +129,7 @@
 
     .line 24
     .line 25
-    if-eqz v7, :cond_42
+    if-eqz v7, :cond_2
 
     .line 26
     .line 27
@@ -137,11 +137,11 @@
 
     .line 28
     .line 29
-    if-eqz v8, :cond_34
+    if-eqz v8, :cond_1
 
     .line 30
     .line 31
-    :try_start_1e
+    :try_start_1
     invoke-virtual {v7}, Lcom/mixplorer/widgets/MiCombo;->getSelectedIndex()I
 
     .line 32
@@ -178,18 +178,18 @@
 
     .line 48
     .line 49
-    goto :goto_42
+    goto :goto_0
 
     .line 50
-    :catchall_31
+    :catchall_0
     move-exception p1
 
     .line 51
-    goto/16 :goto_bb
+    goto/16 :goto_2
 
     .line 52
     .line 53
-    :cond_34
+    :cond_1
     invoke-virtual {v7}, Lcom/mixplorer/widgets/MiCombo;->getSelectedIndex()I
 
     .line 54
@@ -218,8 +218,8 @@
 
     .line 66
     .line 67
-    :cond_42
-    :goto_42
+    :cond_2
+    :goto_0
     invoke-virtual {p1}, Lcom/mixplorer/widgets/MiCombo;->getSelectedIndex()I
 
     .line 68
@@ -228,7 +228,7 @@
     move-result v9
 
     .line 71
-    if-lez v9, :cond_5f
+    if-lez v9, :cond_3
 
     .line 72
     .line 73
@@ -276,10 +276,10 @@
 
     .line 94
     .line 95
-    goto :goto_62
+    goto :goto_1
 
     .line 96
-    :cond_5f
+    :cond_3
     const/4 p1, 0x0
 
     .line 97
@@ -287,7 +287,7 @@
 
     .line 98
     .line 99
-    :goto_62
+    :goto_1
     new-instance p1, Ljava/lang/StringBuilder;
 
     .line 100
@@ -419,17 +419,17 @@
     .line 164
     .line 165
     .line 166
-    if-eqz v7, :cond_ca
+    if-eqz v7, :cond_5
 
     .line 167
     .line 168
-    if-eqz v8, :cond_b5
+    if-eqz v8, :cond_4
 
     .line 169
     .line 170
     invoke-virtual {v6}, Lcom/mixplorer/activities/PlayerActivity;->Sync()V
-    :try_end_ac
-    .catchall {:try_start_1e .. :try_end_ac} :catchall_31
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 171
     .line 172
@@ -438,40 +438,40 @@
 
     .line 174
     .line 175
-    :try_start_ae
+    :try_start_2
     invoke-static {v0, v1}, Ljava/lang/Thread;->sleep(J)V
-    :try_end_b1
-    .catchall {:try_start_ae .. :try_end_b1} :catchall_b1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 176
     .line 177
     .line 178
-    :catchall_b1
-    :try_start_b1
+    :catchall_1
+    :try_start_3
     invoke-virtual {v6}, Lcom/mixplorer/activities/PlayerActivity;->System()V
 
     .line 179
     .line 180
     .line 181
-    goto :goto_ca
+    goto :goto_3
 
     .line 182
-    :cond_b5
+    :cond_4
     iget p1, v5, Llibs/rd2;->q:I
 
     .line 183
     .line 184
     invoke-virtual {v5, p1}, Llibs/rd2;->z(I)V
-    :try_end_ba
-    .catchall {:try_start_b1 .. :try_end_ba} :catchall_31
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 185
     .line 186
     .line 187
-    goto :goto_ca
+    goto :goto_3
 
     .line 188
-    :goto_bb
+    :goto_2
     invoke-static {p1}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 189
@@ -501,7 +501,7 @@
     .line 201
     .line 202
     .line 203
-    :cond_ca
-    :goto_ca
+    :cond_5
+    :goto_3
     return-void
 .end method

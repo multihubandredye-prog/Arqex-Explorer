@@ -15,7 +15,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -38,7 +38,7 @@
 .end method
 
 .method public static a(ILandroid/app/Activity;Llibs/ru0;ZZ)V
-    .registers 12
+    .locals 7
 
     .line 1
     sget-object v0, Llibs/su0;->d:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -53,7 +53,7 @@
     move-result v1
 
     .line 7
-    if-nez v1, :cond_10
+    if-nez v1, :cond_0
 
     .line 8
     .line 9
@@ -73,7 +73,7 @@
     return-void
 
     .line 17
-    :cond_10
+    :cond_0
     const/4 v1, 0x0
 
     .line 18
@@ -131,7 +131,7 @@
 .end method
 
 .method public static b(Landroid/app/Activity;ZZLlibs/ru0;)V
-    .registers 5
+    .locals 1
 
     .line 1
     sget v0, Llibs/bi2;->waiting:I
@@ -147,14 +147,14 @@
 .end method
 
 .method public static c()Z
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/su0;->c:Llibs/xv1;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
@@ -166,7 +166,7 @@
     move-result v0
 
     .line 9
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 10
     .line 11
@@ -174,18 +174,18 @@
 
     .line 12
     .line 13
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_1
 
     .line 14
     .line 15
-    :cond_e
+    :cond_0
     const/4 v0, 0x1
 
     .line 16
     return v0
 
     .line 17
-    :cond_10
+    :cond_1
     const/4 v0, 0x0
 
     .line 18
@@ -193,14 +193,14 @@
 .end method
 
 .method public static d(Landroid/app/Activity;IZ)V
-    .registers 4
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/su0;->a:Llibs/m42;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -212,11 +212,11 @@
     move-result v0
 
     .line 9
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_1
 
     .line 10
     .line 11
-    :cond_a
+    :cond_0
     new-instance v0, Llibs/m42;
 
     .line 12
@@ -253,7 +253,7 @@
     .line 29
     .line 30
     .line 31
-    :cond_1e
+    :cond_1
     sget-object p0, Llibs/su0;->a:Llibs/m42;
 
     .line 32
@@ -278,14 +278,14 @@
 .end method
 
 .method public static synthetic e()V
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/su0;->a:Llibs/m42;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -301,12 +301,12 @@
 
     .line 10
     .line 11
-    :cond_a
+    :cond_0
     return-void
 .end method
 
 .method public static f(ILandroid/app/Activity;Llibs/ru0;ZZ)V
-    .registers 6
+    .locals 1
 
     .line 1
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
@@ -332,7 +332,7 @@
 
     .line 11
     .line 12
-    if-eqz p3, :cond_15
+    if-eqz p3, :cond_0
 
     .line 13
     .line 14
@@ -350,8 +350,8 @@
     .line 20
     .line 21
     .line 22
-    :cond_15
-    :try_start_15
+    :cond_0
+    :try_start_0
     new-instance p0, Llibs/t4;
 
     .line 23
@@ -362,16 +362,16 @@
     .line 26
     .line 27
     invoke-interface {p2, p0}, Llibs/ru0;->f(Llibs/t4;)V
-    :try_end_1d
-    .catchall {:try_start_15 .. :try_end_1d} :catchall_1e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 28
     .line 29
     .line 30
-    goto :goto_31
+    goto :goto_0
 
     .line 31
-    :catchall_1e
+    :catchall_0
     move-exception p0
 
     .line 32
@@ -409,7 +409,7 @@
     .line 48
     .line 49
     .line 50
-    :goto_31
+    :goto_0
     const/4 p0, 0x0
 
     .line 51
@@ -450,14 +450,14 @@
 .end method
 
 .method public static synthetic g(JJ)V
-    .registers 5
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/su0;->a:Llibs/m42;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -466,19 +466,19 @@
     .line 6
     .line 7
     .line 8
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method public static h(I)V
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/su0;->a:Llibs/m42;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -487,12 +487,12 @@
     .line 6
     .line 7
     .line 8
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method public static i(Landroid/app/Activity;JJ)V
-    .registers 6
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/pu0;

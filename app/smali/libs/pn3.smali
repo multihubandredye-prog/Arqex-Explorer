@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(IILjava/lang/String;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/bc3;-><init>()V
@@ -70,7 +70,7 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Ljava/lang/String;
@@ -233,7 +233,7 @@
 .end method
 
 .method public final x(I[B)I
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -243,7 +243,7 @@
 .end method
 
 .method public final y([B)I
-    .registers 5
+    .locals 3
 
     .line 1
     iget v0, p0, Llibs/pn3;->Yankee:I
@@ -343,7 +343,7 @@
 .end method
 
 .method public final z(I[B)I
-    .registers 5
+    .locals 2
 
     .line 1
     add-int/lit8 v0, p1, 0x1

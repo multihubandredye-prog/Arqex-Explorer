@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/od;ILandroid/text/style/URLSpan;)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/ld;->Z:Llibs/od;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object p1, p0, Llibs/ld;->Z:Llibs/od;
@@ -44,7 +44,7 @@
 
     .line 4
     .line 5
-    :try_start_4
+    :try_start_0
     iget-object v0, p0, Llibs/ld;->Y:Landroid/text/style/URLSpan;
 
     .line 6
@@ -65,17 +65,17 @@
     move-result v1
 
     .line 15
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     .line 16
     .line 17
     return-void
 
     .line 18
-    :cond_11
+    :cond_0
     invoke-static {p1, v0}, Lcom/mixplorer/activities/PreferenceActivity;->Android(Landroid/app/Activity;Ljava/lang/String;)Z
-    :try_end_14
-    .catchall {:try_start_4 .. :try_end_14} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 19
     .line 20
@@ -83,7 +83,7 @@
     return-void
 
     .line 22
-    :catchall_15
+    :catchall_0
     sget v0, Llibs/bi2;->failed:I
 
     .line 23

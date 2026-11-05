@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .registers 4
+    .locals 1
 
     .line 1
     const-string v0, "moe.shizuku.privileged.api.intent.extra.BINDER"
@@ -38,7 +38,7 @@
 
     .line 8
     .line 9
-    if-eqz p2, :cond_15
+    if-eqz p2, :cond_0
 
     .line 10
     .line 11
@@ -46,7 +46,7 @@
 
     .line 12
     .line 13
-    if-eqz p2, :cond_15
+    if-eqz p2, :cond_0
 
     .line 14
     .line 15
@@ -63,6 +63,6 @@
     .line 20
     .line 21
     .line 22
-    :cond_15
+    :cond_0
     return-void
 .end method

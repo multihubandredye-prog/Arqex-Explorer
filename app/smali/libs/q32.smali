@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const-class v0, Llibs/q32;
@@ -40,13 +40,13 @@
 .end method
 
 .method public static a(Ljava/net/Socket;)Llibs/m6;
-    .registers 4
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-eqz p0, :cond_2d
+    if-eqz p0, :cond_2
 
     .line 3
     .line 4
@@ -58,7 +58,7 @@
     move-result-object v1
 
     .line 8
-    if-eqz v1, :cond_27
+    if-eqz v1, :cond_1
 
     .line 9
     .line 10
@@ -82,7 +82,7 @@
     move-result-object p0
 
     .line 20
-    if-eqz p0, :cond_21
+    if-eqz p0, :cond_0
 
     .line 21
     .line 22
@@ -110,7 +110,7 @@
     return-object p0
 
     .line 34
-    :cond_21
+    :cond_0
     const-string p0, "out == null"
 
     .line 35
@@ -123,7 +123,7 @@
     return-object v0
 
     .line 40
-    :cond_27
+    :cond_1
     const-string p0, "socket\'s output stream == null"
 
     .line 41
@@ -136,7 +136,7 @@
     return-object v0
 
     .line 46
-    :cond_2d
+    :cond_2
     const-string p0, "socket == null"
 
     .line 47
@@ -150,13 +150,13 @@
 .end method
 
 .method public static b(Ljava/net/Socket;)Llibs/n6;
-    .registers 4
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-eqz p0, :cond_2c
+    if-eqz p0, :cond_2
 
     .line 3
     .line 4
@@ -168,7 +168,7 @@
     move-result-object v1
 
     .line 8
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_1
 
     .line 9
     .line 10
@@ -192,7 +192,7 @@
     move-result-object p0
 
     .line 20
-    if-eqz p0, :cond_20
+    if-eqz p0, :cond_0
 
     .line 21
     .line 22
@@ -217,7 +217,7 @@
     return-object p0
 
     .line 33
-    :cond_20
+    :cond_0
     const-string p0, "in == null"
 
     .line 34
@@ -230,7 +230,7 @@
     return-object v0
 
     .line 39
-    :cond_26
+    :cond_1
     const-string p0, "socket\'s input stream == null"
 
     .line 40
@@ -243,7 +243,7 @@
     return-object v0
 
     .line 45
-    :cond_2c
+    :cond_2
     const-string p0, "socket == null"
 
     .line 46

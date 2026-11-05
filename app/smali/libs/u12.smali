@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/hx2;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final View(Llibs/ni3;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 10
+    .locals 6
 
     .line 1
     iget-object v0, p1, Llibs/ni3;->a:Ljava/lang/String;

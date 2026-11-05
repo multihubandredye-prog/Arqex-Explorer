@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/az2;FF)V
-    .registers 5
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -61,7 +61,7 @@
 .end method
 
 .method public constructor <init>(Llibs/az2;FFLandroid/graphics/Path;)V
-    .registers 6
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -87,7 +87,7 @@
 
 # virtual methods
 .method public final Old(Ljava/lang/String;)V
-    .registers 12
+    .locals 10
 
     .line 1
     iget-byte v0, p0, Llibs/xy2;->z:B
@@ -102,7 +102,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_70
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -115,7 +115,7 @@
     move-result v0
 
     .line 14
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_0
 
     .line 15
     .line 16
@@ -183,7 +183,7 @@
     .line 48
     .line 49
     .line 50
-    :cond_31
+    :cond_0
     iget v0, p0, Llibs/xy2;->Object:F
 
     .line 51
@@ -214,7 +214,7 @@
     return-void
 
     .line 64
-    :pswitch_3f
+    :pswitch_0
     invoke-virtual {v2}, Llibs/az2;->Old()Z
 
     .line 65
@@ -223,7 +223,7 @@
     move-result v0
 
     .line 68
-    if-eqz v0, :cond_61
+    if-eqz v0, :cond_1
 
     .line 69
     .line 70
@@ -280,14 +280,14 @@
     .line 95
     .line 96
     .line 97
-    goto :goto_62
+    goto :goto_0
 
     .line 98
-    :cond_61
+    :cond_1
     move-object v4, p1
 
     .line 99
-    :goto_62
+    :goto_0
     iget p1, p0, Llibs/xy2;->Object:F
 
     .line 100
@@ -318,14 +318,14 @@
     return-void
 
     .line 113
-    :pswitch_data_70
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_3f
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final l(Llibs/v03;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/xy2;->z:B
@@ -338,7 +338,7 @@
     const/4 v2, 0x1
 
     .line 5
-    packed-switch v0, :pswitch_data_56
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -347,7 +347,7 @@
 
     .line 9
     .line 10
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_2
 
     .line 11
     .line 12
@@ -374,7 +374,7 @@
     move-result-object p1
 
     .line 23
-    if-nez p1, :cond_24
+    if-nez p1, :cond_0
 
     .line 24
     .line 25
@@ -399,10 +399,10 @@
     .line 34
     .line 35
     .line 36
-    goto :goto_47
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_0
     check-cast p1, Llibs/vz2;
 
     .line 38
@@ -428,7 +428,7 @@
 
     .line 49
     .line 50
-    if-eqz p1, :cond_36
+    if-eqz p1, :cond_1
 
     .line 51
     .line 52
@@ -437,7 +437,7 @@
     .line 53
     .line 54
     .line 55
-    :cond_36
+    :cond_1
     new-instance p1, Landroid/graphics/RectF;
 
     .line 56
@@ -465,23 +465,23 @@
     .line 68
     .line 69
     .line 70
-    goto :goto_47
+    goto :goto_0
 
     .line 71
-    :cond_46
+    :cond_2
     const/4 v1, 0x1
 
     .line 72
-    :goto_47
+    :goto_0
     return v1
 
     .line 73
-    :pswitch_48
+    :pswitch_0
     instance-of p1, p1, Llibs/w03;
 
     .line 74
     .line 75
-    if-eqz p1, :cond_54
+    if-eqz p1, :cond_3
 
     .line 76
     .line 77
@@ -498,19 +498,19 @@
     .line 82
     .line 83
     .line 84
-    goto :goto_55
+    goto :goto_1
 
     .line 85
-    :cond_54
+    :cond_3
     const/4 v1, 0x1
 
     .line 86
-    :goto_55
+    :goto_1
     return v1
 
     .line 87
-    :pswitch_data_56
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_48
+        :pswitch_0
     .end packed-switch
 .end method

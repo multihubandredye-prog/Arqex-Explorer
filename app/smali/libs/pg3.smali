@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic a(Landroid/os/storage/StorageVolume;Landroid/content/Context;)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/os/storage/StorageVolume;->getDescription(Landroid/content/Context;)Ljava/lang/String;
@@ -20,7 +20,7 @@
 .end method
 
 .method public static bridge synthetic b(Landroid/os/storage/StorageVolume;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/os/storage/StorageVolume;->isEmulated()Z

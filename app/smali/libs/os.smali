@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/qs;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final a(Llibs/pd1;)V
-    .registers 11
+    .locals 9
 
     .line 1
     iget-object p1, p1, Llibs/pd1;->b:Ljava/lang/Object;
@@ -48,10 +48,10 @@
     move-result-object v0
 
     .line 8
-    :try_start_7
+    :try_start_0
     instance-of v1, p1, Llibs/uq1;
-    :try_end_9
-    .catchall {:try_start_7 .. :try_end_9} :catchall_32
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 9
     .line 10
@@ -68,11 +68,11 @@
     const/4 v5, 0x0
 
     .line 15
-    if-eqz v1, :cond_9d
+    if-eqz v1, :cond_7
 
     .line 16
     .line 17
-    :try_start_10
+    :try_start_1
     check-cast p1, Llibs/uq1;
 
     .line 18
@@ -85,7 +85,7 @@
 
     .line 22
     .line 23
-    if-eqz v6, :cond_35
+    if-eqz v6, :cond_1
 
     .line 24
     .line 25
@@ -97,15 +97,15 @@
     move-result p1
 
     .line 29
-    if-eq p1, v4, :cond_20
+    if-eq p1, v4, :cond_0
 
     .line 30
     .line 31
-    goto/16 :goto_cf
+    goto/16 :goto_0
 
     .line 32
     .line 33
-    :cond_20
+    :cond_0
     iput-boolean v5, v2, Llibs/qs;->Nu:Z
 
     .line 34
@@ -114,7 +114,7 @@
 
     .line 36
     .line 37
-    if-eqz p1, :cond_cf
+    if-eqz p1, :cond_a
 
     .line 38
     .line 39
@@ -142,15 +142,15 @@
     return-void
 
     .line 51
-    :catchall_32
+    :catchall_0
     move-exception p1
 
     .line 52
-    goto/16 :goto_d0
+    goto/16 :goto_1
 
     .line 53
     .line 54
-    :cond_35
+    :cond_1
     const-wide/16 v6, 0x0
 
     .line 55
@@ -159,7 +159,7 @@
 
     .line 57
     .line 58
-    if-lez v8, :cond_cf
+    if-lez v8, :cond_a
 
     .line 59
     .line 60
@@ -167,7 +167,7 @@
 
     .line 61
     .line 62
-    if-eqz p1, :cond_cf
+    if-eqz p1, :cond_a
 
     .line 63
     .line 64
@@ -179,31 +179,31 @@
     move-result p1
 
     .line 68
-    if-eqz p1, :cond_9a
+    if-eqz p1, :cond_6
 
     .line 69
     .line 70
     const/4 v6, 0x3
 
     .line 71
-    if-eq p1, v4, :cond_5e
+    if-eq p1, v4, :cond_4
 
     .line 72
     .line 73
-    if-eq p1, v6, :cond_4c
+    if-eq p1, v6, :cond_2
 
     .line 74
     .line 75
-    goto/16 :goto_cf
+    goto/16 :goto_0
 
     .line 76
     .line 77
-    :cond_4c
+    :cond_2
     iget-object p1, v2, Llibs/qs;->Omicron:Llibs/d_;
 
     .line 78
     .line 79
-    if-eqz p1, :cond_5b
+    if-eqz p1, :cond_3
 
     .line 80
     .line 81
@@ -228,7 +228,7 @@
     .line 90
     .line 91
     .line 92
-    :cond_5b
+    :cond_3
     iput-boolean v5, v2, Llibs/qs;->Nu:Z
 
     .line 93
@@ -236,12 +236,12 @@
     return-void
 
     .line 95
-    :cond_5e
+    :cond_4
     iget-boolean p1, v2, Llibs/qs;->Nu:Z
 
     .line 96
     .line 97
-    if-nez p1, :cond_73
+    if-nez p1, :cond_5
 
     .line 98
     .line 99
@@ -253,7 +253,7 @@
 
     .line 102
     .line 103
-    if-eqz p1, :cond_73
+    if-eqz p1, :cond_5
 
     .line 104
     .line 105
@@ -278,7 +278,7 @@
     .line 114
     .line 115
     .line 116
-    :cond_73
+    :cond_5
     iget-wide v7, v2, Llibs/qs;->Xi:D
 
     .line 117
@@ -287,7 +287,7 @@
 
     .line 119
     .line 120
-    if-eqz p1, :cond_cf
+    if-eqz p1, :cond_a
 
     .line 121
     .line 122
@@ -299,7 +299,7 @@
 
     .line 125
     .line 126
-    if-eqz p1, :cond_cf
+    if-eqz p1, :cond_a
 
     .line 127
     .line 128
@@ -354,7 +354,7 @@
     return-void
 
     .line 155
-    :cond_9a
+    :cond_6
     iput-boolean v5, v2, Llibs/qs;->Nu:Z
 
     .line 156
@@ -362,24 +362,24 @@
     return-void
 
     .line 158
-    :cond_9d
+    :cond_7
     instance-of v1, p1, Llibs/cq1;
 
     .line 159
     .line 160
-    if-eqz v1, :cond_a2
+    if-eqz v1, :cond_8
 
     .line 161
     .line 162
     return-void
 
     .line 163
-    :cond_a2
+    :cond_8
     instance-of v1, p1, Llibs/au3;
 
     .line 164
     .line 165
-    if-eqz v1, :cond_b8
+    if-eqz v1, :cond_9
 
     .line 166
     .line 167
@@ -391,7 +391,7 @@
 
     .line 170
     .line 171
-    if-eqz v1, :cond_cf
+    if-eqz v1, :cond_a
 
     .line 172
     .line 173
@@ -419,12 +419,12 @@
     return-void
 
     .line 185
-    :cond_b8
+    :cond_9
     instance-of v1, p1, Llibs/ng3;
 
     .line 186
     .line 187
-    if-eqz v1, :cond_cf
+    if-eqz v1, :cond_a
 
     .line 188
     .line 189
@@ -440,7 +440,7 @@
 
     .line 194
     .line 195
-    if-eqz v1, :cond_cf
+    if-eqz v1, :cond_a
 
     .line 196
     .line 197
@@ -461,18 +461,18 @@
     .line 204
     .line 205
     invoke-virtual {v1, v2}, Llibs/d_;->c([Ljava/lang/Object;)Z
-    :try_end_cf
-    .catchall {:try_start_10 .. :try_end_cf} :catchall_32
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 206
     .line 207
     .line 208
-    :cond_cf
-    :goto_cf
+    :cond_a
+    :goto_0
     return-void
 
     .line 209
-    :goto_d0
+    :goto_1
     const-string v0, "CHROME"
 
     .line 210

@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/al;Landroid/os/Looper;)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -26,7 +26,7 @@
 .end method
 
 .method public constructor <init>(Llibs/nu0;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public final handleMessage(Landroid/os/Message;)V
-    .registers 9
+    .locals 7
 
     .line 1
     iget-byte v0, p0, Llibs/xk;->a:B
@@ -65,7 +65,7 @@
 
     .line 5
     .line 6
-    packed-switch v0, :pswitch_data_ac
+    packed-switch v0, :pswitch_data_0
 
     .line 7
     .line 8
@@ -85,7 +85,7 @@
     const/4 v4, 0x1
 
     .line 16
-    if-eq v3, v4, :cond_3d
+    if-eq v3, v4, :cond_3
 
     .line 17
     .line 18
@@ -95,11 +95,11 @@
     const/4 v6, 0x3
 
     .line 20
-    if-eq v3, v5, :cond_2e
+    if-eq v3, v5, :cond_2
 
     .line 21
     .line 22
-    if-ne v3, v6, :cond_28
+    if-ne v3, v6, :cond_1
 
     .line 23
     .line 24
@@ -107,7 +107,7 @@
 
     .line 25
     .line 26
-    if-eqz p1, :cond_42
+    if-eqz p1, :cond_4
 
     .line 27
     .line 28
@@ -115,7 +115,7 @@
 
     .line 29
     .line 30
-    if-nez v0, :cond_25
+    if-nez v0, :cond_0
 
     .line 31
     .line 32
@@ -128,18 +128,18 @@
     .line 35
     .line 36
     .line 37
-    goto :goto_42
+    goto :goto_0
 
     .line 38
-    :cond_25
+    :cond_0
     iput-boolean v4, v2, Llibs/nu0;->Tau:Z
 
     .line 39
     .line 40
-    goto :goto_42
+    goto :goto_0
 
     .line 41
-    :cond_28
+    :cond_1
     const-string v0, "Unknown message "
 
     .line 42
@@ -149,10 +149,10 @@
     .line 44
     .line 45
     .line 46
-    goto :goto_42
+    goto :goto_0
 
     .line 47
-    :cond_2e
+    :cond_2
     iget-object p1, v2, Llibs/nu0;->Omicron:Llibs/xk;
 
     .line 48
@@ -179,10 +179,10 @@
     .line 59
     .line 60
     .line 61
-    goto :goto_42
+    goto :goto_0
 
     .line 62
-    :cond_3d
+    :cond_3
     iget-object p1, v2, Llibs/nu0;->Psi:Landroid/view/MotionEvent;
 
     .line 63
@@ -192,12 +192,12 @@
     .line 65
     .line 66
     .line 67
-    :cond_42
-    :goto_42
+    :cond_4
+    :goto_0
     return-void
 
     .line 68
-    :pswitch_43
+    :pswitch_0
     check-cast v2, Llibs/al;
 
     .line 69
@@ -239,7 +239,7 @@
     move-result-object p1
 
     .line 89
-    if-eqz p1, :cond_5f
+    if-eqz p1, :cond_5
 
     .line 90
     .line 91
@@ -247,15 +247,15 @@
 
     .line 92
     .line 93
-    if-lez v4, :cond_5f
+    if-lez v4, :cond_5
 
     .line 94
     .line 95
-    goto :goto_ab
+    goto :goto_1
 
     .line 96
-    :cond_5f
-    if-eqz p1, :cond_7e
+    :cond_5
+    if-eqz p1, :cond_7
 
     .line 97
     .line 98
@@ -267,7 +267,7 @@
     move-result v4
 
     .line 102
-    if-nez v4, :cond_7e
+    if-nez v4, :cond_7
 
     .line 103
     .line 104
@@ -280,7 +280,7 @@
 
     .line 108
     .line 109
-    if-eqz v4, :cond_71
+    if-eqz v4, :cond_6
 
     .line 110
     .line 111
@@ -289,7 +289,7 @@
     .line 112
     .line 113
     .line 114
-    :cond_71
+    :cond_6
     iget-object p1, v3, Llibs/r31;->a:Lcom/mixplorer/activities/BrowseActivity;
 
     .line 115
@@ -306,7 +306,7 @@
 
     .line 121
     .line 122
-    if-ne v4, v0, :cond_7e
+    if-ne v4, v0, :cond_7
 
     .line 123
     .line 124
@@ -315,7 +315,7 @@
     .line 125
     .line 126
     .line 127
-    :cond_7e
+    :cond_7
     invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 128
@@ -325,7 +325,7 @@
 
     .line 131
     .line 132
-    if-eqz p1, :cond_91
+    if-eqz p1, :cond_8
 
     .line 133
     .line 134
@@ -353,8 +353,8 @@
     move-result v1
 
     .line 146
-    :cond_91
-    if-nez v1, :cond_ab
+    :cond_8
+    if-nez v1, :cond_a
 
     .line 147
     .line 148
@@ -370,7 +370,7 @@
 
     .line 153
     .line 154
-    if-eqz v1, :cond_9e
+    if-eqz v1, :cond_9
 
     .line 155
     .line 156
@@ -379,7 +379,7 @@
     .line 157
     .line 158
     .line 159
-    :cond_9e
+    :cond_9
     iget-object p1, v3, Llibs/r31;->a:Lcom/mixplorer/activities/BrowseActivity;
 
     .line 160
@@ -396,7 +396,7 @@
 
     .line 166
     .line 167
-    if-ne v1, v0, :cond_ab
+    if-ne v1, v0, :cond_a
 
     .line 168
     .line 169
@@ -405,13 +405,13 @@
     .line 170
     .line 171
     .line 172
-    :cond_ab
-    :goto_ab
+    :cond_a
+    :goto_1
     return-void
 
     .line 173
-    :pswitch_data_ac
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_43
+        :pswitch_0
     .end packed-switch
 .end method

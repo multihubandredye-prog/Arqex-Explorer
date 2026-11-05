@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Object;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/n42;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final c([Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/n42;->X:B
@@ -60,7 +60,7 @@
 
     .line 7
     .line 8
-    packed-switch v0, :pswitch_data_3e
+    packed-switch v0, :pswitch_data_0
 
     .line 9
     .line 10
@@ -81,7 +81,7 @@
     return v1
 
     .line 19
-    :pswitch_12
+    :pswitch_0
     check-cast v3, Landroid/app/Activity;
 
     .line 20
@@ -111,7 +111,7 @@
     return v1
 
     .line 34
-    :pswitch_21
+    :pswitch_1
     check-cast v3, Landroid/app/Activity;
 
     .line 35
@@ -126,18 +126,18 @@
     const/4 v0, 0x0
 
     .line 40
-    :try_start_27
+    :try_start_0
     invoke-static {v3, v2, p1}, Llibs/sw1;->Node(Landroid/content/Context;Landroid/content/Intent;Landroid/os/Bundle;)V
-    :try_end_2a
-    .catchall {:try_start_27 .. :try_end_2a} :catchall_2b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 41
     .line 42
     .line 43
-    goto :goto_34
+    goto :goto_0
 
     .line 44
-    :catchall_2b
+    :catchall_0
     sget p1, Llibs/bi2;->failed:I
 
     .line 45
@@ -155,11 +155,11 @@
     .line 51
     .line 52
     .line 53
-    :goto_34
+    :goto_0
     return v0
 
     .line 54
-    :pswitch_35
+    :pswitch_2
     check-cast v3, Llibs/c2;
 
     .line 55
@@ -179,10 +179,10 @@
     nop
 
     .line 63
-    :pswitch_data_3e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_35
-        :pswitch_21
-        :pswitch_12
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

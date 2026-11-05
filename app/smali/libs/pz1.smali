@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public b(Llibs/Rect;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-virtual {p1}, Llibs/Rect;->c()Llibs/Sign;
@@ -80,47 +80,47 @@
     move-result v0
 
     .line 17
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 18
     .line 19
-    goto :goto_3d
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     iget v0, v1, Llibs/Size;->b:I
 
     .line 21
     .line 22
-    if-eqz v0, :cond_3e
+    if-eqz v0, :cond_4
 
     .line 23
     .line 24
     const/4 v2, 0x1
 
     .line 25
-    if-eq v0, v2, :cond_3d
+    if-eq v0, v2, :cond_3
 
     .line 26
     .line 27
     const/4 v2, 0x2
 
     .line 28
-    if-eq v0, v2, :cond_36
+    if-eq v0, v2, :cond_2
 
     .line 29
     .line 30
     const/4 p1, 0x3
 
     .line 31
-    if-ne v0, p1, :cond_21
+    if-ne v0, p1, :cond_1
 
     .line 32
     .line 33
-    goto :goto_3d
+    goto :goto_0
 
     .line 34
-    :cond_21
+    :cond_1
     new-instance p1, Llibs/id3;
 
     .line 35
@@ -162,7 +162,7 @@
     throw p1
 
     .line 55
-    :cond_36
+    :cond_2
     invoke-virtual {p1}, Llibs/Rect;->c()Llibs/Sign;
 
     .line 56
@@ -176,12 +176,12 @@
     .line 60
     .line 61
     .line 62
-    :cond_3d
-    :goto_3d
+    :cond_3
+    :goto_0
     return-void
 
     .line 63
-    :cond_3e
+    :cond_4
     invoke-virtual {p1}, Llibs/Rect;->c()Llibs/Sign;
 
     .line 64
@@ -199,7 +199,7 @@
 .end method
 
 .method public final d(Llibs/rw2;)V
-    .registers 10
+    .locals 8
 
     .line 1
     :try_start_0
@@ -222,8 +222,8 @@
     .line 10
     .line 11
     move-result v2
-    :try_end_b
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_b} :catch_55
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 12
     const/4 v3, 0x1
@@ -237,11 +237,11 @@
 
     .line 16
     .line 17
-    if-lez v2, :cond_2d
+    if-lez v2, :cond_0
 
     .line 18
     .line 19
-    :try_start_12
+    :try_start_1
     new-instance v2, Ljava/util/ArrayList;
 
     .line 20
@@ -293,19 +293,19 @@
     .line 44
     .line 45
     .line 46
-    :cond_2d
+    :cond_0
     iget-object v1, p0, Llibs/pz1;->d:[B
 
     .line 47
     .line 48
-    if-eqz v1, :cond_4c
+    if-eqz v1, :cond_1
 
     .line 49
     .line 50
     array-length v1, v1
 
     .line 51
-    if-lez v1, :cond_4c
+    if-lez v1, :cond_1
 
     .line 52
     .line 53
@@ -355,7 +355,7 @@
     .line 75
     .line 76
     .line 77
-    :cond_4c
+    :cond_1
     new-instance v1, Llibs/Attr;
 
     .line 78
@@ -366,8 +366,8 @@
     .line 81
     .line 82
     invoke-virtual {p0, p1, v1}, Llibs/ub;->e(Llibs/rw2;Llibs/Attr;)V
-    :try_end_54
-    .catch Ljava/io/IOException; {:try_start_12 .. :try_end_54} :catch_55
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 83
     .line 84
@@ -375,7 +375,7 @@
     return-void
 
     .line 86
-    :catch_55
+    :catch_0
     move-exception p1
 
     .line 87
@@ -396,7 +396,7 @@
 .end method
 
 .method public final f([B)V
-    .registers 9
+    .locals 7
 
     .line 1
     new-instance v0, Llibs/rw2;
@@ -416,7 +416,7 @@
 
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     new-instance v2, Llibs/Url;
 
     .line 11
@@ -443,8 +443,8 @@
     .line 22
     .line 23
     invoke-direct {v2, v3, v4}, Llibs/Url;-><init>(Llibs/d10;Ljava/io/InputStream;)V
-    :try_end_19
-    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_19} :catch_43
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 24
     .line 25
@@ -452,7 +452,7 @@
     const/4 v0, 0x0
 
     .line 27
-    :try_start_1a
+    :try_start_1
     invoke-virtual {v2}, Llibs/Url;->c()Llibs/Sign;
 
     .line 28
@@ -477,7 +477,7 @@
 
     .line 38
     .line 39
-    if-ne v4, v6, :cond_63
+    if-ne v4, v6, :cond_1
 
     .line 40
     .line 41
@@ -509,7 +509,7 @@
 
     .line 54
     .line 55
-    if-eqz v4, :cond_47
+    if-eqz v4, :cond_0
 
     .line 56
     .line 57
@@ -522,16 +522,16 @@
 
     .line 61
     invoke-virtual {p0, p1}, Llibs/ub;->a(Llibs/Sign;)V
-    :try_end_3f
-    .catchall {:try_start_1a .. :try_end_3f} :catchall_45
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 62
     .line 63
     .line 64
-    :try_start_3f
+    :try_start_2
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
-    :try_end_42
-    .catch Ljava/io/IOException; {:try_start_3f .. :try_end_42} :catch_43
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 65
     .line 66
@@ -539,22 +539,22 @@
     return-void
 
     .line 68
-    :catch_43
+    :catch_0
     move-exception p1
 
     .line 69
-    goto :goto_8e
+    goto :goto_2
 
     .line 70
-    :catchall_45
+    :catchall_0
     move-exception p1
 
     .line 71
-    goto :goto_75
+    goto :goto_0
 
     .line 72
-    :cond_47
-    :try_start_47
+    :cond_0
+    :try_start_3
     new-instance v1, Llibs/id3;
 
     .line 73
@@ -607,7 +607,7 @@
     throw v1
 
     .line 100
-    :cond_63
+    :cond_1
     new-instance p1, Llibs/id3;
 
     .line 101
@@ -640,27 +640,27 @@
     .line 116
     .line 117
     throw p1
-    :try_end_75
-    .catchall {:try_start_47 .. :try_end_75} :catchall_45
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 118
-    :goto_75
-    :try_start_75
+    :goto_0
+    :try_start_4
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
-    :try_end_78
-    .catchall {:try_start_75 .. :try_end_78} :catchall_79
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 119
     .line 120
     .line 121
-    goto :goto_8d
+    goto :goto_1
 
     .line 122
-    :catchall_79
+    :catchall_1
     move-exception v1
 
     .line 123
-    :try_start_7a
+    :try_start_5
     const-class v2, Ljava/lang/Throwable;
 
     .line 124
@@ -694,21 +694,21 @@
     .line 138
     .line 139
     invoke-virtual {v2, p1, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_8d
-    .catch Ljava/lang/Exception; {:try_start_7a .. :try_end_8d} :catch_8d
+    :try_end_5
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_1
 
     .line 140
     .line 141
     .line 142
-    :catch_8d
-    :goto_8d
-    :try_start_8d
+    :catch_1
+    :goto_1
+    :try_start_6
     throw p1
-    :try_end_8e
-    .catch Ljava/io/IOException; {:try_start_8d .. :try_end_8e} :catch_43
+    :try_end_6
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_0
 
     .line 143
-    :goto_8e
+    :goto_2
     new-instance v0, Llibs/id3;
 
     .line 144
@@ -726,14 +726,14 @@
 .end method
 
 .method public final g(Llibs/Sign;)V
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Llibs/Section;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -756,7 +756,7 @@
     return-void
 
     .line 14
-    :cond_d
+    :cond_0
     const-string v0, "Expected the MechToken (OCTET_STRING) contents, not: "
 
     .line 15
@@ -770,14 +770,14 @@
 .end method
 
 .method public final h(Llibs/Sign;)V
-    .registers 4
+    .locals 2
 
     .line 1
     instance-of v0, p1, Llibs/Attr;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_2
 
     .line 4
     .line 5
@@ -793,7 +793,7 @@
     move-result-object p1
 
     .line 11
-    :goto_a
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 12
@@ -802,7 +802,7 @@
     move-result v0
 
     .line 15
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_1
 
     .line 16
     .line 17
@@ -822,7 +822,7 @@
 
     .line 24
     .line 25
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_0
 
     .line 26
     .line 27
@@ -839,10 +839,10 @@
     .line 32
     .line 33
     .line 34
-    goto :goto_a
+    goto :goto_0
 
     .line 35
-    :cond_22
+    :cond_0
     const-string p1, "Expected a MechType (OBJECT IDENTIFIER) as contents of the MechTypeList, not: "
 
     .line 36
@@ -852,11 +852,11 @@
     .line 38
     .line 39
     .line 40
-    :cond_27
+    :cond_1
     return-void
 
     .line 41
-    :cond_28
+    :cond_2
     const-string v0, "Expected the MechTypeList (SEQUENCE) contents, not: "
 
     .line 42

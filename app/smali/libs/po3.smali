@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/rb2;
@@ -33,7 +33,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     sget-object v0, Llibs/pb0;->Y:Llibs/pb0;
 
@@ -46,7 +46,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Exception;)V
-    .registers 4
+    .locals 2
 
     .line 1
     sget-object v0, Llibs/pb0;->Z:Llibs/pb0;
@@ -66,7 +66,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 11
     invoke-direct {p0, p1}, Llibs/ny2;-><init>(Ljava/lang/String;)V
@@ -75,7 +75,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Throwable;)V
-    .registers 2
+    .locals 0
 
     .line 13
     invoke-direct {p0, p1}, Llibs/ny2;-><init>(Ljava/lang/Throwable;)V
@@ -84,7 +84,7 @@
 .end method
 
 .method public constructor <init>(Ljava/security/GeneralSecurityException;)V
-    .registers 4
+    .locals 2
 
     sget-object v0, Llibs/pb0;->Z:Llibs/pb0;
 
@@ -97,7 +97,7 @@
 .end method
 
 .method public constructor <init>(Llibs/pb0;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 

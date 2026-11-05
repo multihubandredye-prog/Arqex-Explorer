@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ml0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/ll0;->Y:Llibs/ml0;
@@ -29,14 +29,14 @@
 
 # virtual methods
 .method public final close()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final getSize()J
-    .registers 3
+    .locals 2
 
     .line 1
     const-wide/16 v0, -0x1
@@ -47,10 +47,10 @@
 .end method
 
 .method public final readAt(J[BII)I
-    .registers 12
+    .locals 6
 
     .line 1
-    if-nez p5, :cond_4
+    if-nez p5, :cond_0
 
     .line 2
     .line 3
@@ -60,7 +60,7 @@
     return p1
 
     .line 5
-    :cond_4
+    :cond_0
     const-wide/16 v0, 0x0
 
     .line 6
@@ -72,15 +72,15 @@
 
     .line 9
     .line 10
-    if-gez v3, :cond_c
+    if-gez v3, :cond_1
 
     .line 11
     .line 12
-    goto :goto_22
+    goto :goto_0
 
     .line 13
-    :cond_c
-    :try_start_c
+    :cond_1
+    :try_start_0
     iget-wide v3, p0, Llibs/ll0;->X:J
 
     .line 14
@@ -89,7 +89,7 @@
 
     .line 16
     .line 17
-    if-eqz v5, :cond_2a
+    if-eqz v5, :cond_3
 
     .line 18
     .line 19
@@ -97,7 +97,7 @@
 
     .line 20
     .line 21
-    if-ltz v5, :cond_23
+    if-ltz v5, :cond_2
 
     .line 22
     .line 23
@@ -123,15 +123,15 @@
 
     .line 32
     .line 33
-    if-ltz v0, :cond_23
+    if-ltz v0, :cond_2
 
     .line 34
     .line 35
-    :goto_22
+    :goto_0
     return v2
 
     .line 36
-    :cond_23
+    :cond_2
     iget-object v0, p0, Llibs/ll0;->Y:Llibs/ml0;
 
     .line 37
@@ -145,7 +145,7 @@
 
     .line 42
     .line 43
-    :cond_2a
+    :cond_3
     iget-object p1, p0, Llibs/ll0;->Y:Llibs/ml0;
 
     .line 44
@@ -158,7 +158,7 @@
     move-result p1
 
     .line 49
-    if-le p5, p1, :cond_38
+    if-le p5, p1, :cond_4
 
     .line 50
     .line 51
@@ -174,7 +174,7 @@
     move-result p5
 
     .line 57
-    :cond_38
+    :cond_4
     iget-object p1, p0, Llibs/ll0;->Y:Llibs/ml0;
 
     .line 58
@@ -187,7 +187,7 @@
     move-result p1
 
     .line 63
-    if-ltz p1, :cond_47
+    if-ltz p1, :cond_5
 
     .line 64
     .line 65
@@ -202,16 +202,16 @@
 
     .line 69
     iput-wide p2, p0, Llibs/ll0;->X:J
-    :try_end_46
-    .catch Ljava/io/IOException; {:try_start_c .. :try_end_46} :catch_47
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 70
     .line 71
     return p1
 
     .line 72
-    :catch_47
-    :cond_47
+    :catch_0
+    :cond_5
     const-wide/16 p1, -0x1
 
     .line 73

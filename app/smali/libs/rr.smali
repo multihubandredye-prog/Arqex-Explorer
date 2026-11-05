@@ -15,7 +15,7 @@
 
 # direct methods
 .method public synthetic constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 13
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -24,7 +24,7 @@
 .end method
 
 .method public constructor <init>(IIII)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,13 +54,13 @@
 
 # virtual methods
 .method public declared-synchronized a(J)V
-    .registers 5
+    .locals 2
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget v0, p0, Llibs/rr;->d:I
 
     .line 3
@@ -79,8 +79,8 @@
     .line 8
     .line 9
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
-    :try_end_b
-    .catchall {:try_start_1 .. :try_end_b} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 10
     .line 11
@@ -91,27 +91,27 @@
     return-void
 
     .line 14
-    :catchall_d
+    :catchall_0
     move-exception p1
 
     .line 15
-    :try_start_e
+    :try_start_1
     monitor-exit p0
-    :try_end_f
-    .catchall {:try_start_e .. :try_end_f} :catchall_d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 16
     throw p1
 .end method
 
 .method public declared-synchronized b(J)V
-    .registers 5
+    .locals 2
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget v0, p0, Llibs/rr;->d:I
 
     .line 3
@@ -126,8 +126,8 @@
 
     .line 7
     iput p1, p0, Llibs/rr;->d:I
-    :try_end_8
-    .catchall {:try_start_1 .. :try_end_8} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 8
     .line 9
@@ -137,34 +137,34 @@
     return-void
 
     .line 11
-    :catchall_a
+    :catchall_0
     move-exception p1
 
     .line 12
-    :try_start_b
+    :try_start_1
     monitor-exit p0
-    :try_end_c
-    .catchall {:try_start_b .. :try_end_c} :catchall_a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 13
     throw p1
 .end method
 
 .method public declared-synchronized c()I
-    .registers 3
+    .locals 2
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget v0, p0, Llibs/rr;->a:I
 
     .line 3
     .line 4
     iget v1, p0, Llibs/rr;->d:I
-    :try_end_5
-    .catchall {:try_start_1 .. :try_end_5} :catchall_8
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 5
     .line 6
@@ -177,30 +177,30 @@
     return v0
 
     .line 9
-    :catchall_8
+    :catchall_0
     move-exception v0
 
     .line 10
-    :try_start_9
+    :try_start_1
     monitor-exit p0
-    :try_end_a
-    .catchall {:try_start_9 .. :try_end_a} :catchall_8
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 11
     throw v0
 .end method
 
 .method public declared-synchronized d()I
-    .registers 2
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget v0, p0, Llibs/rr;->b:I
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 3
     .line 4
@@ -210,30 +210,30 @@
     return v0
 
     .line 6
-    :catchall_5
+    :catchall_0
     move-exception v0
 
     .line 7
-    :try_start_6
+    :try_start_1
     monitor-exit p0
-    :try_end_7
-    .catchall {:try_start_6 .. :try_end_7} :catchall_5
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 8
     throw v0
 .end method
 
 .method public declared-synchronized e()I
-    .registers 2
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget v0, p0, Llibs/rr;->d:I
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 3
     .line 4
@@ -243,30 +243,30 @@
     return v0
 
     .line 6
-    :catchall_5
+    :catchall_0
     move-exception v0
 
     .line 7
-    :try_start_6
+    :try_start_1
     monitor-exit p0
-    :try_end_7
-    .catchall {:try_start_6 .. :try_end_7} :catchall_5
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 8
     throw v0
 .end method
 
 .method public declared-synchronized f(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iput p1, p0, Llibs/rr;->b:I
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 3
     .line 4
@@ -276,14 +276,14 @@
     return-void
 
     .line 6
-    :catchall_5
+    :catchall_0
     move-exception p1
 
     .line 7
-    :try_start_6
+    :try_start_1
     monitor-exit p0
-    :try_end_7
-    .catchall {:try_start_6 .. :try_end_7} :catchall_5
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 8
     throw p1

@@ -31,7 +31,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     invoke-static {}, Llibs/t43;->Call()Z
@@ -90,7 +90,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 23
+    .locals 22
 
     .line 1
     move-object/from16 v0, p0
@@ -203,7 +203,7 @@
 
     .line 54
     .line 55
-    if-ne v2, v4, :cond_a1
+    if-ne v2, v4, :cond_1
 
     .line 56
     .line 57
@@ -363,7 +363,7 @@
     move-result-object v2
 
     .line 135
-    :goto_86
+    :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     .line 136
@@ -372,7 +372,7 @@
     move-result v4
 
     .line 139
-    if-eqz v4, :cond_a1
+    if-eqz v4, :cond_1
 
     .line 140
     .line 141
@@ -404,23 +404,23 @@
     move-result v1
 
     .line 155
-    if-eqz v1, :cond_9e
+    if-eqz v1, :cond_0
 
     .line 156
     .line 157
-    goto/16 :goto_119
+    goto/16 :goto_2
 
     .line 158
     .line 159
-    :cond_9e
+    :cond_0
     const/16 v1, 0x11
 
     .line 160
     .line 161
-    goto :goto_86
+    goto :goto_0
 
     .line 162
-    :cond_a1
+    :cond_1
     const/16 v21, 0x11
 
     .line 163
@@ -437,7 +437,7 @@
 
     .line 169
     .line 170
-    if-ne v1, v2, :cond_114
+    if-ne v1, v2, :cond_2
 
     .line 171
     .line 172
@@ -649,30 +649,30 @@
     move-result v1
 
     .line 276
-    goto :goto_115
+    goto :goto_1
 
     .line 277
-    :cond_114
+    :cond_2
     const/4 v1, 0x0
 
     .line 278
-    :goto_115
-    if-nez v1, :cond_119
+    :goto_1
+    if-nez v1, :cond_3
 
     .line 279
     .line 280
     const/4 v1, 0x1
 
     .line 281
-    goto :goto_11a
+    goto :goto_3
 
     .line 282
-    :cond_119
-    :goto_119
+    :cond_3
+    :goto_2
     const/4 v1, 0x0
 
     .line 283
-    :goto_11a
+    :goto_3
     iput-boolean v1, v0, Llibs/ix0;->a:Z
 
     .line 284
@@ -685,7 +685,7 @@
     move-result v1
 
     .line 289
-    if-eqz v1, :cond_129
+    if-eqz v1, :cond_4
 
     .line 290
     .line 291
@@ -704,7 +704,7 @@
     return-void
 
     .line 298
-    :cond_129
+    :cond_4
     const/16 v1, 0x2bc
 
     .line 299
@@ -727,7 +727,7 @@
 
 # virtual methods
 .method public final a(IIZ)Z
-    .registers 10
+    .locals 6
 
     .line 1
     iget-boolean v0, p0, Llibs/ix0;->a:Z
@@ -737,31 +737,31 @@
     const/4 v1, 0x0
 
     .line 4
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 5
     .line 6
-    goto :goto_54
+    goto :goto_3
 
     .line 7
-    :cond_6
+    :cond_0
     sget-boolean v0, Llibs/ix0;->h:Z
 
     .line 8
     .line 9
-    if-nez v0, :cond_b
+    if-nez v0, :cond_1
 
     .line 10
     .line 11
-    goto :goto_54
+    goto :goto_3
 
     .line 12
-    :cond_b
+    :cond_1
     sget-boolean v0, Llibs/ix0;->g:Z
 
     .line 13
     .line 14
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_2
 
     .line 15
     .line 16
@@ -777,46 +777,46 @@
     move-result v0
 
     .line 22
-    if-nez v0, :cond_18
+    if-nez v0, :cond_2
 
     .line 23
     .line 24
-    goto :goto_54
+    goto :goto_3
 
     .line 25
-    :cond_18
-    if-eqz p3, :cond_1b
+    :cond_2
+    if-eqz p3, :cond_3
 
     .line 26
     .line 27
-    goto :goto_54
+    goto :goto_3
 
     .line 28
-    :cond_1b
+    :cond_3
     iget p3, p0, Llibs/ix0;->c:I
 
     .line 29
     .line 30
-    if-ge p1, p3, :cond_20
+    if-ge p1, p3, :cond_4
 
     .line 31
     .line 32
-    goto :goto_54
+    goto :goto_3
 
     .line 33
-    :cond_20
-    if-ge p2, p3, :cond_23
+    :cond_4
+    if-ge p2, p3, :cond_5
 
     .line 34
     .line 35
-    goto :goto_54
+    goto :goto_3
 
     .line 36
-    :cond_23
+    :cond_5
     monitor-enter p0
 
     .line 37
-    :try_start_24
+    :try_start_0
     iget p1, p0, Llibs/ix0;->d:I
 
     .line 38
@@ -835,7 +835,7 @@
 
     .line 44
     .line 45
-    if-lt p1, p3, :cond_4f
+    if-lt p1, p3, :cond_8
 
     .line 46
     .line 47
@@ -865,7 +865,7 @@
     const/4 v0, -0x1
 
     .line 59
-    if-eq p3, v0, :cond_3f
+    if-eq p3, v0, :cond_6
 
     .line 60
     .line 61
@@ -873,15 +873,15 @@
 
     .line 62
     .line 63
-    goto :goto_41
+    goto :goto_0
 
     .line 64
-    :cond_3f
+    :cond_6
     iget p3, p0, Llibs/ix0;->b:I
 
     .line 65
     .line 66
-    :goto_41
+    :goto_0
     int-to-long v2, p3
 
     .line 67
@@ -892,63 +892,63 @@
 
     .line 69
     .line 70
-    if-gez p1, :cond_49
+    if-gez p1, :cond_7
 
     .line 71
     .line 72
     const/4 p1, 0x1
 
     .line 73
-    goto :goto_4a
+    goto :goto_1
 
     .line 74
-    :cond_49
+    :cond_7
     const/4 p1, 0x0
 
     .line 75
-    :goto_4a
+    :goto_1
     iput-boolean p1, p0, Llibs/ix0;->e:Z
 
     .line 76
     .line 77
-    goto :goto_4f
+    goto :goto_2
 
     .line 78
-    :catchall_4d
+    :catchall_0
     move-exception p1
 
     .line 79
-    goto :goto_56
+    goto :goto_4
 
     .line 80
-    :cond_4f
-    :goto_4f
+    :cond_8
+    :goto_2
     iget-boolean p1, p0, Llibs/ix0;->e:Z
-    :try_end_51
-    .catchall {:try_start_24 .. :try_end_51} :catchall_4d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 81
     .line 82
     monitor-exit p0
 
     .line 83
-    if-nez p1, :cond_55
+    if-nez p1, :cond_9
 
     .line 84
     .line 85
-    :goto_54
+    :goto_3
     return v1
 
     .line 86
-    :cond_55
+    :cond_9
     return p2
 
     .line 87
-    :goto_56
-    :try_start_56
+    :goto_4
+    :try_start_1
     monitor-exit p0
-    :try_end_57
-    .catchall {:try_start_56 .. :try_end_57} :catchall_4d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 88
     throw p1

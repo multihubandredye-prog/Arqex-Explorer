@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Width;ILjava/util/EnumSet;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2, p3}, Llibs/Size;-><init>(Llibs/Width;ILjava/util/Set;)V

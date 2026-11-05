@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,7 +22,7 @@
 
 # virtual methods
 .method public final contains(Ljava/lang/String;)Z
-    .registers 2
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -32,7 +32,7 @@
 .end method
 
 .method public final edit()Landroid/content/SharedPreferences$Editor;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/n63;
@@ -48,7 +48,7 @@
 .end method
 
 .method public final getAll()Ljava/util/Map;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/util/LinkedHashMap;
@@ -64,56 +64,56 @@
 .end method
 
 .method public final getBoolean(Ljava/lang/String;Z)Z
-    .registers 3
+    .locals 0
 
     .line 1
     return p2
 .end method
 
 .method public final getFloat(Ljava/lang/String;F)F
-    .registers 3
+    .locals 0
 
     .line 1
     return p2
 .end method
 
 .method public final getInt(Ljava/lang/String;I)I
-    .registers 3
+    .locals 0
 
     .line 1
     return p2
 .end method
 
 .method public final getLong(Ljava/lang/String;J)J
-    .registers 4
+    .locals 0
 
     .line 1
     return-wide p2
 .end method
 
 .method public final getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 0
 
     .line 1
     return-object p2
 .end method
 
 .method public final getStringSet(Ljava/lang/String;Ljava/util/Set;)Ljava/util/Set;
-    .registers 3
+    .locals 0
 
     .line 1
     return-object p2
 .end method
 
 .method public final registerOnSharedPreferenceChangeListener(Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final unregisterOnSharedPreferenceChangeListener(Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void

@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/l00;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Ljava/io/DataInputStream;-><init>(Ljava/io/InputStream;)V
@@ -22,7 +22,7 @@
 
 # virtual methods
 .method public final c()I
-    .registers 6
+    .locals 5
 
     .line 1
     invoke-virtual {p0}, Ljava/io/InputStream;->read()I
@@ -60,19 +60,19 @@
     const/4 v4, -0x1
 
     .line 18
-    if-lt v0, v4, :cond_23
+    if-lt v0, v4, :cond_0
 
     .line 19
     .line 20
-    if-lt v1, v4, :cond_23
+    if-lt v1, v4, :cond_0
 
     .line 21
     .line 22
-    if-lt v2, v4, :cond_23
+    if-lt v2, v4, :cond_0
 
     .line 23
     .line 24
-    if-lt v3, v4, :cond_23
+    if-lt v3, v4, :cond_0
 
     .line 25
     .line 26
@@ -100,7 +100,7 @@
     return v3
 
     .line 36
-    :cond_23
+    :cond_0
     invoke-static {}, Llibs/ic0;->u()V
 
     .line 37
@@ -113,7 +113,7 @@
 .end method
 
 .method public final getCount()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Ljava/io/DataInputStream;->in:Ljava/io/InputStream;
@@ -127,10 +127,10 @@
     monitor-enter v0
 
     .line 6
-    :try_start_5
+    :try_start_0
     iget v1, v0, Llibs/l00;->Pi:I
-    :try_end_7
-    .catchall {:try_start_5 .. :try_end_7} :catchall_9
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 7
     .line 8
@@ -140,21 +140,21 @@
     return v1
 
     .line 10
-    :catchall_9
+    :catchall_0
     move-exception v1
 
     .line 11
-    :try_start_a
+    :try_start_1
     monitor-exit v0
-    :try_end_b
-    .catchall {:try_start_a .. :try_end_b} :catchall_9
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 12
     throw v1
 .end method
 
 .method public final i()S
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Ljava/io/InputStream;->read()I
@@ -173,11 +173,11 @@
     move-result v1
 
     .line 9
-    if-ltz v0, :cond_11
+    if-ltz v0, :cond_0
 
     .line 10
     .line 11
-    if-ltz v1, :cond_11
+    if-ltz v1, :cond_0
 
     .line 12
     .line 13
@@ -194,7 +194,7 @@
     return v0
 
     .line 18
-    :cond_11
+    :cond_0
     invoke-static {}, Llibs/ic0;->u()V
 
     .line 19

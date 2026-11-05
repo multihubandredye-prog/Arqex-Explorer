@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/util/Calendar;Ljava/text/SimpleDateFormat;Lcom/mixplorer/widgets/MiEditText;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final onDateSet(Landroid/widget/DatePicker;III)V
-    .registers 8
+    .locals 3
 
     .line 1
     iget-object p1, p0, Llibs/w60;->a:Ljava/util/Calendar;
@@ -60,7 +60,7 @@
     const/4 v2, 0x1
 
     .line 8
-    :try_start_7
+    :try_start_0
     invoke-virtual {p1, v2, p2}, Ljava/util/Calendar;->set(II)V
 
     .line 9
@@ -86,7 +86,7 @@
 
     .line 20
     .line 21
-    if-eqz p2, :cond_26
+    if-eqz p2, :cond_0
 
     .line 22
     .line 23
@@ -115,17 +115,17 @@
     move-result-object p1
 
     .line 36
-    goto :goto_32
+    goto :goto_0
 
     .line 37
-    :catchall_24
+    :catchall_0
     move-exception p1
 
     .line 38
-    goto :goto_36
+    goto :goto_1
 
     .line 39
-    :cond_26
+    :cond_0
     invoke-virtual {p1}, Ljava/util/Calendar;->getTimeInMillis()J
 
     .line 40
@@ -150,10 +150,10 @@
     move-result-object p1
 
     .line 51
-    :goto_32
+    :goto_0
     invoke-virtual {v1, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-    :try_end_35
-    .catchall {:try_start_7 .. :try_end_35} :catchall_24
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 52
     .line 53
@@ -161,7 +161,7 @@
     return-void
 
     .line 55
-    :goto_36
+    :goto_1
     invoke-static {p1}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 56

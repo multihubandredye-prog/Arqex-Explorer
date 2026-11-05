@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;Ljava/lang/Iterable;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final a()Llibs/Init;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/ob1;->b:Ljava/lang/Iterable;
@@ -61,7 +61,7 @@
     .line 12
     .line 13
     .line 14
-    :goto_d
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 15
@@ -70,7 +70,7 @@
     move-result v2
 
     .line 18
-    if-eqz v2, :cond_1b
+    if-eqz v2, :cond_0
 
     .line 19
     .line 20
@@ -87,10 +87,10 @@
     .line 25
     .line 26
     .line 27
-    goto :goto_d
+    goto :goto_0
 
     .line 28
-    :cond_1b
+    :cond_0
     new-instance v0, Llibs/Init;
 
     .line 29

@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/wb0;Llibs/vb0;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/ub0;->d:Llibs/wb0;
@@ -35,17 +35,17 @@
 
     .line 9
     .line 10
-    if-eqz p2, :cond_d
+    if-eqz p2, :cond_0
 
     .line 11
     .line 12
     const/4 p1, 0x0
 
     .line 13
-    goto :goto_11
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     iget p1, p1, Llibs/wb0;->Xi:I
 
     .line 15
@@ -54,7 +54,7 @@
 
     .line 17
     .line 18
-    :goto_11
+    :goto_0
     iput-object p1, p0, Llibs/ub0;->b:[Z
 
     .line 19
@@ -65,7 +65,7 @@
 
 # virtual methods
 .method public final a()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/ub0;->d:Llibs/wb0;
@@ -84,7 +84,7 @@
 .end method
 
 .method public final b()Ljava/io/File;
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/ub0;->d:Llibs/wb0;
@@ -94,7 +94,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Llibs/ub0;->a:Llibs/vb0;
 
     .line 5
@@ -103,7 +103,7 @@
 
     .line 7
     .line 8
-    if-ne v2, p0, :cond_2d
+    if-ne v2, p0, :cond_2
 
     .line 9
     .line 10
@@ -114,7 +114,7 @@
     const/4 v3, 0x0
 
     .line 13
-    if-nez v2, :cond_16
+    if-nez v2, :cond_0
 
     .line 14
     .line 15
@@ -129,18 +129,18 @@
 
     .line 19
     .line 20
-    goto :goto_16
+    goto :goto_0
 
     .line 21
-    :catchall_14
+    :catchall_0
     move-exception v1
 
     .line 22
-    goto :goto_33
+    goto :goto_1
 
     .line 23
-    :cond_16
-    :goto_16
+    :cond_0
+    :goto_0
     iget-object v1, v1, Llibs/vb0;->d:[Ljava/io/File;
 
     .line 24
@@ -165,7 +165,7 @@
     move-result v2
 
     .line 35
-    if-nez v2, :cond_2b
+    if-nez v2, :cond_1
 
     .line 36
     .line 37
@@ -182,14 +182,14 @@
     .line 42
     .line 43
     .line 44
-    :cond_2b
+    :cond_1
     monitor-exit v0
 
     .line 45
     return-object v1
 
     .line 46
-    :cond_2d
+    :cond_2
     new-instance v1, Ljava/lang/IllegalStateException;
 
     .line 47
@@ -202,10 +202,10 @@
     throw v1
 
     .line 52
-    :goto_33
+    :goto_1
     monitor-exit v0
-    :try_end_34
-    .catchall {:try_start_3 .. :try_end_34} :catchall_14
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 53
     throw v1

@@ -29,7 +29,7 @@
 
 # direct methods
 .method private static synthetic $values()[Lorg/conscrypt/SSLUtils$SessionType;
-    .registers 3
+    .locals 3
 
     .line 1
     const/4 v0, 0x3
@@ -76,7 +76,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 1
     new-instance v0, Lorg/conscrypt/SSLUtils$SessionType;
@@ -158,7 +158,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;II)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
@@ -179,7 +179,7 @@
 .end method
 
 .method public static isSupportedType(I)Z
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/SSLUtils$SessionType;->OPEN_SSL:Lorg/conscrypt/SSLUtils$SessionType;
@@ -190,7 +190,7 @@
 
     .line 4
     .line 5
-    if-eq p0, v0, :cond_15
+    if-eq p0, v0, :cond_1
 
     .line 6
     .line 7
@@ -202,7 +202,7 @@
 
     .line 10
     .line 11
-    if-eq p0, v0, :cond_15
+    if-eq p0, v0, :cond_1
 
     .line 12
     .line 13
@@ -214,22 +214,22 @@
 
     .line 16
     .line 17
-    if-ne p0, v0, :cond_13
+    if-ne p0, v0, :cond_0
 
     .line 18
     .line 19
-    goto :goto_15
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     const/4 p0, 0x0
 
     .line 21
     return p0
 
     .line 22
-    :cond_15
-    :goto_15
+    :cond_1
+    :goto_0
     const/4 p0, 0x1
 
     .line 23
@@ -237,7 +237,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lorg/conscrypt/SSLUtils$SessionType;
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Lorg/conscrypt/SSLUtils$SessionType;
@@ -260,7 +260,7 @@
 .end method
 
 .method public static values()[Lorg/conscrypt/SSLUtils$SessionType;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/SSLUtils$SessionType;->$VALUES:[Lorg/conscrypt/SSLUtils$SessionType;

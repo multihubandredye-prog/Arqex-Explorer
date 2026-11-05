@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/CodeEditorActivity;Llibs/cv;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/hv;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 13
+    .locals 11
 
     .line 1
     iget-byte v0, p0, Llibs/hv;->X:B
@@ -71,7 +71,7 @@
 
     .line 12
     .line 13
-    packed-switch v0, :pswitch_data_14c
+    packed-switch v0, :pswitch_data_0
 
     .line 14
     .line 15
@@ -80,19 +80,19 @@
 
     .line 17
     .line 18
-    :try_start_11
+    :try_start_0
     invoke-virtual {v6, v5}, Lcom/mixplorer/activities/CodeEditorActivity;->Node(Llibs/cv;)V
-    :try_end_14
-    .catchall {:try_start_11 .. :try_end_14} :catchall_14
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 19
     .line 20
     .line 21
-    :catchall_14
+    :catchall_0
     return-void
 
     .line 22
-    :pswitch_15
+    :pswitch_0
     iget-object v0, p0, Llibs/hv;->Y:Lcom/mixplorer/activities/CodeEditorActivity;
 
     .line 23
@@ -105,7 +105,7 @@
 
     .line 27
     .line 28
-    :try_start_1b
+    :try_start_1
     sget v6, Llibs/bi2;->enter_text:I
 
     .line 29
@@ -134,15 +134,15 @@
     move-result v7
 
     .line 42
-    if-eqz v7, :cond_2d
+    if-eqz v7, :cond_0
 
     .line 43
     .line 44
-    goto/16 :goto_c1
+    goto/16 :goto_2
 
     .line 45
     .line 46
-    :cond_2d
+    :cond_0
     new-instance v7, Ljava/lang/StringBuilder;
 
     .line 47
@@ -349,7 +349,7 @@
     move-result v10
 
     .line 152
-    if-eqz v10, :cond_aa
+    if-eqz v10, :cond_1
 
     .line 153
     .line 154
@@ -380,21 +380,21 @@
     move-result-object v6
 
     .line 169
-    :goto_a8
+    :goto_0
     move-object v2, v6
 
     .line 170
-    goto :goto_ac
+    goto :goto_1
 
     .line 171
-    :cond_aa
+    :cond_1
     move v4, v9
 
     .line 172
-    goto :goto_a8
+    goto :goto_0
 
     .line 173
-    :goto_ac
+    :goto_1
     sget v6, Llibs/bi2;->replace_all:I
 
     .line 174
@@ -434,35 +434,35 @@
 
     .line 191
     invoke-virtual/range {v0 .. v8}, Lcom/mixplorer/activities/CodeEditorActivity;->Task(Llibs/cv;Ljava/lang/String;ZZZZLjava/lang/String;Landroid/view/View;)V
-    :try_end_c1
-    .catchall {:try_start_1b .. :try_end_c1} :catchall_c1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 192
     .line 193
     .line 194
-    :catchall_c1
-    :goto_c1
+    :catchall_1
+    :goto_2
     return-void
 
     .line 195
-    :pswitch_c2
+    :pswitch_1
     sget v0, Lcom/mixplorer/activities/CodeEditorActivity;->_d:I
 
     .line 196
     .line 197
-    :try_start_c4
+    :try_start_2
     invoke-virtual {v6, v5}, Lcom/mixplorer/activities/CodeEditorActivity;->Node(Llibs/cv;)V
-    :try_end_c7
-    .catchall {:try_start_c4 .. :try_end_c7} :catchall_c7
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
     .line 198
     .line 199
     .line 200
-    :catchall_c7
+    :catchall_2
     return-void
 
     .line 201
-    :pswitch_c8
+    :pswitch_2
     iget-object v0, p0, Llibs/hv;->Y:Lcom/mixplorer/activities/CodeEditorActivity;
 
     .line 202
@@ -475,7 +475,7 @@
 
     .line 206
     .line 207
-    :try_start_ce
+    :try_start_3
     sget v6, Llibs/bi2;->enter_text:I
 
     .line 208
@@ -504,14 +504,14 @@
     move-result v7
 
     .line 221
-    if-eqz v7, :cond_df
+    if-eqz v7, :cond_2
 
     .line 222
     .line 223
-    goto :goto_137
+    goto :goto_5
 
     .line 224
-    :cond_df
+    :cond_2
     new-instance v7, Ljava/lang/StringBuilder;
 
     .line 225
@@ -619,7 +619,7 @@
     move-result v9
 
     .line 279
-    if-eqz v9, :cond_129
+    if-eqz v9, :cond_3
 
     .line 280
     .line 281
@@ -650,21 +650,21 @@
     move-result-object v3
 
     .line 296
-    :goto_127
+    :goto_3
     move-object v2, v3
 
     .line 297
-    goto :goto_12b
+    goto :goto_4
 
     .line 298
-    :cond_129
+    :cond_3
     move v4, v7
 
     .line 299
-    goto :goto_127
+    goto :goto_3
 
     .line 300
-    :goto_12b
+    :goto_4
     invoke-virtual {p1, v1}, Landroid/view/View;->setEnabled(Z)V
 
     .line 301
@@ -689,45 +689,45 @@
 
     .line 309
     invoke-virtual/range {v0 .. v8}, Lcom/mixplorer/activities/CodeEditorActivity;->Task(Llibs/cv;Ljava/lang/String;ZZZZLjava/lang/String;Landroid/view/View;)V
-    :try_end_137
-    .catchall {:try_start_ce .. :try_end_137} :catchall_137
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_3
 
     .line 310
     .line 311
     .line 312
-    :catchall_137
-    :goto_137
+    :catchall_3
+    :goto_5
     return-void
 
     .line 313
-    :pswitch_138
+    :pswitch_3
     sget v0, Lcom/mixplorer/activities/CodeEditorActivity;->_d:I
 
     .line 314
     .line 315
-    :try_start_13a
+    :try_start_4
     invoke-virtual {v6, v5}, Lcom/mixplorer/activities/CodeEditorActivity;->Link(Llibs/cv;)V
-    :try_end_13d
-    .catchall {:try_start_13a .. :try_end_13d} :catchall_13d
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_4
 
     .line 316
     .line 317
     .line 318
-    :catchall_13d
+    :catchall_4
     return-void
 
     .line 319
-    :pswitch_13e
+    :pswitch_4
     sget v0, Lcom/mixplorer/activities/CodeEditorActivity;->_d:I
 
     .line 320
     .line 321
-    :try_start_140
+    :try_start_5
     iget-boolean v0, v5, Llibs/cv;->Omicron:Z
 
     .line 322
     .line 323
-    if-eqz v0, :cond_148
+    if-eqz v0, :cond_4
 
     .line 324
     .line 325
@@ -736,28 +736,28 @@
     .line 326
     .line 327
     .line 328
-    goto :goto_14b
+    goto :goto_6
 
     .line 329
-    :cond_148
+    :cond_4
     invoke-virtual {v6, v5, v4}, Lcom/mixplorer/activities/CodeEditorActivity;->Mid(Llibs/cv;Z)V
-    :try_end_14b
-    .catchall {:try_start_140 .. :try_end_14b} :catchall_14b
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_5
 
     .line 330
     .line 331
     .line 332
-    :catchall_14b
-    :goto_14b
+    :catchall_5
+    :goto_6
     return-void
 
     .line 333
-    :pswitch_data_14c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_13e
-        :pswitch_138
-        :pswitch_c8
-        :pswitch_c2
-        :pswitch_15
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

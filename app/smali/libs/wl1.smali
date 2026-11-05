@@ -30,7 +30,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/view/View;ZIZ)V
-    .registers 7
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -95,7 +95,7 @@
 
 # virtual methods
 .method public final a()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Llibs/wl1;->Rho:J
@@ -106,10 +106,10 @@
 .end method
 
 .method public final b(Z)V
-    .registers 2
+    .locals 0
 
     .line 1
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     .line 2
     .line 3
@@ -129,7 +129,7 @@
     return-void
 
     .line 11
-    :cond_a
+    :cond_0
     invoke-virtual {p0}, Llibs/wl1;->g()Lcom/mixplorer/widgets/MiCircleImageView;
 
     .line 12
@@ -147,14 +147,14 @@
 .end method
 
 .method public final c(Landroid/graphics/drawable/Drawable;Z)V
-    .registers 3
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final d(ZLandroid/graphics/Bitmap;ZZZ)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Llibs/wl1;->g()Lcom/mixplorer/widgets/MiCircleImageView;
@@ -186,21 +186,21 @@
 .end method
 
 .method public final e(J)V
-    .registers 3
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final f()Lcom/mixplorer/widgets/MiImageView;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/wl1;->Mu:Lcom/mixplorer/widgets/MiImageView;
 
     .line 2
     .line 3
-    if-nez v0, :cond_48
+    if-nez v0, :cond_1
 
     .line 4
     .line 5
@@ -257,7 +257,7 @@
 
     .line 31
     .line 32
-    if-lez v0, :cond_48
+    if-lez v0, :cond_1
 
     .line 33
     .line 34
@@ -281,7 +281,7 @@
 
     .line 43
     .line 44
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_0
 
     .line 45
     .line 46
@@ -299,10 +299,10 @@
     .line 52
     .line 53
     .line 54
-    goto :goto_48
+    goto :goto_0
 
     .line 55
-    :cond_36
+    :cond_0
     invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     .line 56
@@ -315,7 +315,7 @@
 
     .line 60
     .line 61
-    if-eqz v1, :cond_48
+    if-eqz v1, :cond_1
 
     .line 62
     .line 63
@@ -337,8 +337,8 @@
     .line 71
     .line 72
     .line 73
-    :cond_48
-    :goto_48
+    :cond_1
+    :goto_0
     iget-object v0, p0, Llibs/wl1;->Mu:Lcom/mixplorer/widgets/MiImageView;
 
     .line 74
@@ -347,14 +347,14 @@
 .end method
 
 .method public final g()Lcom/mixplorer/widgets/MiCircleImageView;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/wl1;->Y:Lcom/mixplorer/widgets/MiCircleImageView;
 
     .line 2
     .line 3
-    if-nez v0, :cond_39
+    if-nez v0, :cond_1
 
     .line 4
     .line 5
@@ -386,7 +386,7 @@
 
     .line 18
     .line 19
-    if-lez v1, :cond_39
+    if-lez v1, :cond_1
 
     .line 20
     .line 21
@@ -406,7 +406,7 @@
 
     .line 28
     .line 29
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_0
 
     .line 30
     .line 31
@@ -424,10 +424,10 @@
     .line 37
     .line 38
     .line 39
-    goto :goto_39
+    goto :goto_0
 
     .line 40
-    :cond_27
+    :cond_0
     invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     .line 41
@@ -440,7 +440,7 @@
 
     .line 45
     .line 46
-    if-eqz v0, :cond_39
+    if-eqz v0, :cond_1
 
     .line 47
     .line 48
@@ -462,8 +462,8 @@
     .line 56
     .line 57
     .line 58
-    :cond_39
-    :goto_39
+    :cond_1
+    :goto_0
     iget-object v0, p0, Llibs/wl1;->Y:Lcom/mixplorer/widgets/MiCircleImageView;
 
     .line 59
@@ -472,7 +472,7 @@
 .end method
 
 .method public final getThumbM()F
-    .registers 2
+    .locals 1
 
     .line 1
     const/high16 v0, 0x3f800000    # 1.0f
@@ -483,7 +483,7 @@
 .end method
 
 .method public final getView()Landroid/view/View;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/wl1;->X:Landroid/view/View;
@@ -494,14 +494,14 @@
 .end method
 
 .method public final h()Lcom/mixplorer/widgets/MiTextView;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/wl1;->Lambda:Lcom/mixplorer/widgets/MiTextView;
 
     .line 2
     .line 3
-    if-nez v0, :cond_4d
+    if-nez v0, :cond_2
 
     .line 4
     .line 5
@@ -533,7 +533,7 @@
 
     .line 18
     .line 19
-    if-nez v1, :cond_28
+    if-nez v1, :cond_0
 
     .line 20
     .line 21
@@ -577,7 +577,7 @@
 
     .line 40
     .line 41
-    :cond_28
+    :cond_0
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
 
     .line 42
@@ -610,22 +610,22 @@
 
     .line 56
     .line 57
-    if-eqz v1, :cond_3c
+    if-eqz v1, :cond_1
 
     .line 58
     .line 59
     const/4 v1, 0x1
 
     .line 60
-    goto :goto_3e
+    goto :goto_0
 
     .line 61
-    :cond_3c
+    :cond_1
     const/16 v1, 0x32
 
     .line 62
     .line 63
-    :goto_3e
+    :goto_0
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMaxLines(I)V
 
     .line 64
@@ -653,7 +653,7 @@
     .line 76
     .line 77
     .line 78
-    :cond_4d
+    :cond_2
     iget-object v0, p0, Llibs/wl1;->Lambda:Lcom/mixplorer/widgets/MiTextView;
 
     .line 79
@@ -662,14 +662,14 @@
 .end method
 
 .method public final i()Lcom/mixplorer/widgets/MiTextView;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/wl1;->Z:Lcom/mixplorer/widgets/MiTextView;
 
     .line 2
     .line 3
-    if-nez v0, :cond_66
+    if-nez v0, :cond_2
 
     .line 4
     .line 5
@@ -714,7 +714,7 @@
 
     .line 25
     .line 26
-    if-nez v1, :cond_2f
+    if-nez v1, :cond_0
 
     .line 27
     .line 28
@@ -758,7 +758,7 @@
 
     .line 47
     .line 48
-    :cond_2f
+    :cond_0
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
 
     .line 49
@@ -821,7 +821,7 @@
 
     .line 79
     .line 80
-    if-eqz v0, :cond_5f
+    if-eqz v0, :cond_1
 
     .line 81
     .line 82
@@ -833,7 +833,7 @@
 
     .line 85
     .line 86
-    if-ne v0, v1, :cond_5f
+    if-ne v0, v1, :cond_1
 
     .line 87
     .line 88
@@ -850,10 +850,10 @@
     .line 93
     .line 94
     .line 95
-    goto :goto_66
+    goto :goto_0
 
     .line 96
-    :cond_5f
+    :cond_1
     iget-object v0, p0, Llibs/wl1;->Z:Lcom/mixplorer/widgets/MiTextView;
 
     .line 97
@@ -867,8 +867,8 @@
     .line 101
     .line 102
     .line 103
-    :cond_66
-    :goto_66
+    :cond_2
+    :goto_0
     iget-object v0, p0, Llibs/wl1;->Z:Lcom/mixplorer/widgets/MiTextView;
 
     .line 104
@@ -877,14 +877,14 @@
 .end method
 
 .method public final setLoading(Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final setStream(Ljava/io/InputStream;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void

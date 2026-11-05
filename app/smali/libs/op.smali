@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/ju0;-><init>()V
@@ -58,7 +58,7 @@
 
 # virtual methods
 .method public final b()Lcast/chromecast/CastChannel$AuthResponse;
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Lcast/chromecast/CastChannel$AuthResponse;
@@ -81,18 +81,18 @@
     const/4 v3, 0x1
 
     .line 11
-    if-ne v2, v3, :cond_d
+    if-ne v2, v3, :cond_0
 
     .line 12
     .line 13
-    goto :goto_e
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     const/4 v3, 0x0
 
     .line 15
-    :goto_e
+    :goto_0
     iget-object v2, p0, Llibs/op;->Z:Llibs/bm1;
 
     .line 16
@@ -108,7 +108,7 @@
     const/4 v4, 0x2
 
     .line 22
-    if-ne v2, v4, :cond_19
+    if-ne v2, v4, :cond_1
 
     .line 23
     .line 24
@@ -116,7 +116,7 @@
 
     .line 25
     .line 26
-    :cond_19
+    :cond_1
     iget-object v2, p0, Llibs/op;->Lambda:Llibs/bm1;
 
     .line 27
@@ -132,7 +132,7 @@
     const/4 v4, 0x4
 
     .line 33
-    if-ne v2, v4, :cond_30
+    if-ne v2, v4, :cond_2
 
     .line 34
     .line 35
@@ -164,7 +164,7 @@
 
     .line 48
     .line 49
-    :cond_30
+    :cond_2
     iget-object v2, p0, Llibs/op;->Mu:Ljava/util/List;
 
     .line 50
@@ -180,7 +180,7 @@
     and-int/2addr v1, v2
 
     .line 56
-    if-ne v1, v2, :cond_3b
+    if-ne v1, v2, :cond_3
 
     .line 57
     .line 58
@@ -188,7 +188,7 @@
 
     .line 59
     .line 60
-    :cond_3b
+    :cond_3
     iget v1, p0, Llibs/op;->Nu:I
 
     .line 61
@@ -205,21 +205,21 @@
 .end method
 
 .method public final c(Lcast/chromecast/CastChannel$AuthResponse;)V
-    .registers 5
+    .locals 3
 
     .line 1
     sget-object v0, Lcast/chromecast/CastChannel$AuthResponse;->Six:Lcast/chromecast/CastChannel$AuthResponse;
 
     .line 2
     .line 3
-    if-ne p1, v0, :cond_5
+    if-ne p1, v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     iget v0, p1, Lcast/chromecast/CastChannel$AuthResponse;->Psi:I
 
     .line 7
@@ -230,7 +230,7 @@
     and-int/2addr v0, v1
 
     .line 10
-    if-ne v0, v1, :cond_17
+    if-ne v0, v1, :cond_1
 
     .line 11
     .line 12
@@ -258,7 +258,7 @@
 
     .line 23
     .line 24
-    :cond_17
+    :cond_1
     iget v0, p1, Lcast/chromecast/CastChannel$AuthResponse;->Psi:I
 
     .line 25
@@ -269,7 +269,7 @@
     and-int/2addr v0, v1
 
     .line 28
-    if-ne v0, v1, :cond_29
+    if-ne v0, v1, :cond_2
 
     .line 29
     .line 30
@@ -297,7 +297,7 @@
 
     .line 41
     .line 42
-    :cond_29
+    :cond_2
     iget-object v0, p1, Lcast/chromecast/CastChannel$AuthResponse;->Two:Ljava/util/List;
 
     .line 43
@@ -313,7 +313,7 @@
     const/4 v1, 0x4
 
     .line 49
-    if-nez v0, :cond_5f
+    if-nez v0, :cond_5
 
     .line 50
     .line 51
@@ -329,7 +329,7 @@
     move-result v0
 
     .line 57
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_3
 
     .line 58
     .line 59
@@ -353,10 +353,10 @@
 
     .line 68
     .line 69
-    goto :goto_5f
+    goto :goto_0
 
     .line 70
-    :cond_45
+    :cond_3
     iget v0, p0, Llibs/op;->Y:I
 
     .line 71
@@ -364,7 +364,7 @@
     and-int/2addr v0, v1
 
     .line 73
-    if-eq v0, v1, :cond_58
+    if-eq v0, v1, :cond_4
 
     .line 74
     .line 75
@@ -396,7 +396,7 @@
 
     .line 88
     .line 89
-    :cond_58
+    :cond_4
     iget-object v0, p0, Llibs/op;->Mu:Ljava/util/List;
 
     .line 90
@@ -410,8 +410,8 @@
     .line 94
     .line 95
     .line 96
-    :cond_5f
-    :goto_5f
+    :cond_5
+    :goto_0
     iget v0, p1, Lcast/chromecast/CastChannel$AuthResponse;->Psi:I
 
     .line 97
@@ -419,7 +419,7 @@
     and-int/2addr v0, v1
 
     .line 99
-    if-ne v0, v1, :cond_73
+    if-ne v0, v1, :cond_7
 
     .line 100
     .line 101
@@ -427,7 +427,7 @@
 
     .line 102
     .line 103
-    if-eqz v0, :cond_71
+    if-eqz v0, :cond_6
 
     .line 104
     .line 105
@@ -447,18 +447,18 @@
 
     .line 112
     .line 113
-    goto :goto_73
+    goto :goto_1
 
     .line 114
-    :cond_71
+    :cond_6
     const/4 p1, 0x0
 
     .line 115
     throw p1
 
     .line 116
-    :cond_73
-    :goto_73
+    :cond_7
+    :goto_1
     iget-object v0, p0, Llibs/ju0;->X:Llibs/rl;
 
     .line 117
@@ -483,7 +483,7 @@
 .end method
 
 .method public final clone()Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/op;

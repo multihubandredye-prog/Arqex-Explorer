@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public final a([B)V
-    .registers 7
+    .locals 5
 
     .line 1
     array-length v0, p1
@@ -45,7 +45,7 @@
 
     .line 3
     .line 4
-    if-lt v0, v1, :cond_18
+    if-lt v0, v1, :cond_1
 
     .line 5
     .line 6
@@ -55,7 +55,7 @@
     const/4 v1, 0x0
 
     .line 8
-    :goto_7
+    :goto_0
     iget-object v2, p0, Llibs/a5;->a:[J
 
     .line 9
@@ -63,7 +63,7 @@
     array-length v3, v2
 
     .line 11
-    if-ge v0, v3, :cond_17
+    if-ge v0, v3, :cond_0
 
     .line 12
     .line 13
@@ -87,14 +87,14 @@
 
     .line 22
     .line 23
-    goto :goto_7
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_0
     return-void
 
     .line 25
-    :cond_18
+    :cond_1
     const-string p1, "input shorter than blocksize"
 
     .line 26
@@ -108,7 +108,7 @@
 .end method
 
 .method public final b(Llibs/a5;Llibs/a5;)V
-    .registers 8
+    .locals 5
 
     .line 1
     iget-object p1, p1, Llibs/a5;->a:[J
@@ -122,12 +122,12 @@
     const/4 v0, 0x0
 
     .line 6
-    :goto_5
+    :goto_0
     const/16 v1, 0x80
 
     .line 7
     .line 8
-    if-ge v0, v1, :cond_15
+    if-ge v0, v1, :cond_0
 
     .line 9
     .line 10
@@ -154,9 +154,9 @@
 
     .line 20
     .line 21
-    goto :goto_5
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     return-void
 .end method

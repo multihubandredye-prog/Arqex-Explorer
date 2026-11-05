@@ -22,7 +22,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/BrowseActivity;Landroid/widget/CheckBox;Llibs/$d;Llibs/zl0;Llibs/xt1;)V
-    .registers 7
+    .locals 1
 
     .line 1
     const/4 v0, 0x2
@@ -61,7 +61,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/Object;Landroid/view/KeyEvent$Callback;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Comparable;B)V
-    .registers 7
+    .locals 0
 
     .line 18
     iput-byte p6, p0, Llibs/$c;->X:B
@@ -84,7 +84,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 18
+    .locals 16
 
     .line 1
     move-object/from16 v0, p0
@@ -123,7 +123,7 @@
 
     .line 18
     .line 19
-    packed-switch v1, :pswitch_data_ce
+    packed-switch v1, :pswitch_data_0
 
     .line 20
     .line 21
@@ -176,14 +176,14 @@
     move-result v9
 
     .line 46
-    if-eqz v9, :cond_30
+    if-eqz v9, :cond_0
 
     .line 47
     .line 48
-    goto :goto_4f
+    goto :goto_0
 
     .line 49
-    :cond_30
+    :cond_0
     new-instance v9, Ljava/lang/StringBuilder;
 
     .line 50
@@ -247,11 +247,11 @@
     .line 78
     .line 79
     .line 80
-    :goto_4f
+    :goto_0
     return-void
 
     .line 81
-    :pswitch_50
+    :pswitch_0
     move-object v10, v8
 
     .line 82
@@ -313,14 +313,14 @@
     move-result v3
 
     .line 110
-    if-eqz v3, :cond_70
+    if-eqz v3, :cond_1
 
     .line 111
     .line 112
-    goto :goto_89
+    goto :goto_1
 
     .line 113
-    :cond_70
+    :cond_1
     new-instance v3, Ljava/lang/StringBuilder;
 
     .line 114
@@ -368,11 +368,11 @@
     .line 136
     .line 137
     .line 138
-    :goto_89
+    :goto_1
     return-void
 
     .line 139
-    :pswitch_8a
+    :pswitch_1
     check-cast v8, Lcom/mixplorer/activities/BrowseActivity;
 
     .line 140
@@ -401,7 +401,7 @@
     return-void
 
     .line 153
-    :pswitch_98
+    :pswitch_2
     check-cast v8, Ljava/util/concurrent/atomic/AtomicReference;
 
     .line 154
@@ -453,7 +453,7 @@
     .line 178
     .line 179
     .line 180
-    if-eqz v4, :cond_cd
+    if-eqz v4, :cond_2
 
     .line 181
     .line 182
@@ -501,14 +501,14 @@
     .line 204
     .line 205
     .line 206
-    :cond_cd
+    :cond_2
     return-void
 
     .line 207
-    :pswitch_data_ce
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_98
-        :pswitch_8a
-        :pswitch_50
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

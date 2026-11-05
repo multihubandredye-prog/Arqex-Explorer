@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/b23;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "XSalsa20"
@@ -30,7 +30,7 @@
 .end method
 
 .method public final f()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x18
@@ -41,10 +41,10 @@
 .end method
 
 .method public final j([B[B)V
-    .registers 12
+    .locals 9
 
     .line 1
-    if-eqz p1, :cond_85
+    if-eqz p1, :cond_1
 
     .line 2
     .line 3
@@ -55,7 +55,7 @@
 
     .line 5
     .line 6
-    if-ne v0, v1, :cond_7f
+    if-ne v0, v1, :cond_0
 
     .line 7
     .line 8
@@ -315,7 +315,7 @@
     return-void
 
     .line 128
-    :cond_7f
+    :cond_0
     const-string p1, "XSalsa20 requires a 256 bit key"
 
     .line 129
@@ -328,7 +328,7 @@
     return-void
 
     .line 134
-    :cond_85
+    :cond_1
     const-string p1, "XSalsa20 doesn\'t support re-init with null key"
 
     .line 135

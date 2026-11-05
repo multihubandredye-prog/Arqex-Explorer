@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/cc3;-><init>()V
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/String;
@@ -140,7 +140,7 @@
 .end method
 
 .method public final x(II[B)I
-    .registers 8
+    .locals 4
 
     .line 1
     invoke-static {p1, p3}, Llibs/c63;->g(I[B)I
@@ -171,7 +171,7 @@
     and-int/2addr v2, v3
 
     .line 15
-    if-eqz v2, :cond_14
+    if-eqz v2, :cond_0
 
     .line 16
     .line 17
@@ -183,7 +183,7 @@
 
     .line 20
     .line 21
-    :cond_14
+    :cond_0
     invoke-static {v1, p3}, Llibs/c63;->g(I[B)I
 
     .line 22
@@ -231,12 +231,12 @@
     const/4 v1, 0x0
 
     .line 44
-    :goto_2b
+    :goto_0
     iget v2, p0, Llibs/sn3;->Yankee:I
 
     .line 45
     .line 46
-    if-ge v1, v2, :cond_40
+    if-ge v1, v2, :cond_1
 
     .line 47
     .line 48
@@ -272,10 +272,10 @@
 
     .line 63
     .line 64
-    goto :goto_2b
+    goto :goto_0
 
     .line 65
-    :cond_40
+    :cond_1
     sub-int/2addr v0, p1
 
     .line 66

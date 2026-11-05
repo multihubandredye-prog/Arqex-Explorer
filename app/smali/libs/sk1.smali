@@ -9,7 +9,7 @@
 
 # direct methods
 .method static synthetic constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/16 v0, 0x8c
@@ -20,7 +20,7 @@
 
     .line 4
     .line 5
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     .line 6
     .line 7
@@ -32,7 +32,7 @@
     return-void
 
     .line 11
-    :array_a
+    :array_0
     .array-data 4
         0x1
         0x2
@@ -178,10 +178,10 @@
 .end method
 
 .method public static synthetic List(I)I
-    .registers 1
+    .locals 0
 
     .line 1
-    if-eqz p0, :cond_5
+    if-eqz p0, :cond_0
 
     .line 2
     .line 3
@@ -192,7 +192,7 @@
     return p0
 
     .line 6
-    :cond_5
+    :cond_0
     const/4 p0, 0x0
 
     .line 7
@@ -200,10 +200,10 @@
 .end method
 
 .method public static synthetic Map(I)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
-    packed-switch p0, :pswitch_data_24
+    packed-switch p0, :pswitch_data_0
 
     .line 2
     .line 3
@@ -215,7 +215,7 @@
     return-object p0
 
     .line 7
-    :pswitch_6
+    :pswitch_0
     const-string p0, "END_DOCUMENT"
 
     .line 8
@@ -223,7 +223,7 @@
     return-object p0
 
     .line 10
-    :pswitch_9
+    :pswitch_1
     const-string p0, "NULL"
 
     .line 11
@@ -231,7 +231,7 @@
     return-object p0
 
     .line 13
-    :pswitch_c
+    :pswitch_2
     const-string p0, "BOOLEAN"
 
     .line 14
@@ -239,7 +239,7 @@
     return-object p0
 
     .line 16
-    :pswitch_f
+    :pswitch_3
     const-string p0, "NUMBER"
 
     .line 17
@@ -247,7 +247,7 @@
     return-object p0
 
     .line 19
-    :pswitch_12
+    :pswitch_4
     const-string p0, "STRING"
 
     .line 20
@@ -255,7 +255,7 @@
     return-object p0
 
     .line 22
-    :pswitch_15
+    :pswitch_5
     const-string p0, "NAME"
 
     .line 23
@@ -263,7 +263,7 @@
     return-object p0
 
     .line 25
-    :pswitch_18
+    :pswitch_6
     const-string p0, "END_OBJECT"
 
     .line 26
@@ -271,7 +271,7 @@
     return-object p0
 
     .line 28
-    :pswitch_1b
+    :pswitch_7
     const-string p0, "BEGIN_OBJECT"
 
     .line 29
@@ -279,7 +279,7 @@
     return-object p0
 
     .line 31
-    :pswitch_1e
+    :pswitch_8
     const-string p0, "END_ARRAY"
 
     .line 32
@@ -287,7 +287,7 @@
     return-object p0
 
     .line 34
-    :pswitch_21
+    :pswitch_9
     const-string p0, "BEGIN_ARRAY"
 
     .line 35
@@ -295,26 +295,26 @@
     return-object p0
 
     .line 37
-    :pswitch_data_24
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_21
-        :pswitch_1e
-        :pswitch_1b
-        :pswitch_18
-        :pswitch_15
-        :pswitch_12
-        :pswitch_f
-        :pswitch_c
         :pswitch_9
+        :pswitch_8
+        :pswitch_7
         :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static synthetic Object(Ljava/lang/Object;)Z
-    .registers 1
+    .locals 0
 
     .line 1
-    if-eqz p0, :cond_4
+    if-eqz p0, :cond_0
 
     .line 2
     .line 3
@@ -324,7 +324,7 @@
     return p0
 
     .line 5
-    :cond_4
+    :cond_0
     const/4 p0, 0x0
 
     .line 6
@@ -332,7 +332,7 @@
 .end method
 
 .method public static synthetic Set(I)[I
-    .registers 4
+    .locals 3
 
     .line 1
     new-array v0, p0, [I
@@ -355,7 +355,7 @@
 .end method
 
 .method public static String(Ljava/lang/String;Ljava/util/Locale;Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Z
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
@@ -396,7 +396,7 @@
 .end method
 
 .method public static _values()[I
-    .registers 1
+    .locals 1
 
     .line 1
     const/16 v0, 0x8
@@ -415,7 +415,7 @@
 .end method
 
 .method public static a(I)I
-    .registers 7
+    .locals 6
 
     .line 1
     const/16 v0, 0xb
@@ -439,8 +439,8 @@
     const/4 v3, 0x0
 
     .line 10
-    :goto_9
-    if-ge v3, v1, :cond_17
+    :goto_0
+    if-ge v3, v1, :cond_1
 
     .line 11
     .line 12
@@ -456,40 +456,40 @@
     move-result v5
 
     .line 18
-    if-ne v5, p0, :cond_14
+    if-ne v5, p0, :cond_0
 
     .line 19
     .line 20
     return v4
 
     .line 21
-    :cond_14
+    :cond_0
     add-int/lit8 v3, v3, 0x1
 
     .line 22
     .line 23
-    goto :goto_9
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_1
     return v2
 .end method
 
 .method public static final b(II)Z
-    .registers 4
+    .locals 2
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-eq p0, v0, :cond_18
+    if-eq p0, v0, :cond_3
 
     .line 3
     .line 4
     const/4 v0, 0x2
 
     .line 5
-    if-eq p0, v0, :cond_18
+    if-eq p0, v0, :cond_3
 
     .line 6
     .line 7
@@ -499,18 +499,18 @@
     const/4 v1, 0x4
 
     .line 9
-    if-eq p0, v0, :cond_17
+    if-eq p0, v0, :cond_2
 
     .line 10
     .line 11
-    if-eq p0, v1, :cond_14
+    if-eq p0, v1, :cond_1
 
     .line 12
     .line 13
     const/4 v0, 0x5
 
     .line 14
-    if-ne p0, v0, :cond_12
+    if-ne p0, v0, :cond_0
 
     .line 15
     .line 16
@@ -518,35 +518,35 @@
 
     .line 17
     .line 18
-    goto :goto_18
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     const/4 p0, 0x0
 
     .line 20
     throw p0
 
     .line 21
-    :cond_14
+    :cond_1
     const/16 v0, 0x8
 
     .line 22
     .line 23
-    goto :goto_18
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_2
     const/4 v0, 0x4
 
     .line 25
-    :cond_18
-    :goto_18
+    :cond_3
+    :goto_0
     and-int p0, p1, v0
 
     .line 26
     .line 27
-    if-ne p0, v0, :cond_1e
+    if-ne p0, v0, :cond_4
 
     .line 28
     .line 29
@@ -556,7 +556,7 @@
     return p0
 
     .line 31
-    :cond_1e
+    :cond_4
     const/4 p0, 0x0
 
     .line 32
@@ -564,14 +564,14 @@
 .end method
 
 .method public static synthetic c(II)Z
-    .registers 2
+    .locals 0
 
     .line 1
-    if-eqz p0, :cond_8
+    if-eqz p0, :cond_1
 
     .line 2
     .line 3
-    if-ne p0, p1, :cond_6
+    if-ne p0, p1, :cond_0
 
     .line 4
     .line 5
@@ -581,14 +581,14 @@
     return p0
 
     .line 7
-    :cond_6
+    :cond_0
     const/4 p0, 0x0
 
     .line 8
     return p0
 
     .line 9
-    :cond_8
+    :cond_1
     const/4 p0, 0x0
 
     .line 10
@@ -596,10 +596,10 @@
 .end method
 
 .method public static synthetic d(I)I
-    .registers 1
+    .locals 0
 
     .line 1
-    packed-switch p0, :pswitch_data_22
+    packed-switch p0, :pswitch_data_0
 
     .line 2
     .line 3
@@ -610,7 +610,7 @@
     throw p0
 
     .line 6
-    :pswitch_5
+    :pswitch_0
     const/16 p0, 0xd
 
     .line 7
@@ -618,7 +618,7 @@
     return p0
 
     .line 9
-    :pswitch_8
+    :pswitch_1
     const/16 p0, 0xc
 
     .line 10
@@ -626,7 +626,7 @@
     return p0
 
     .line 12
-    :pswitch_b
+    :pswitch_2
     const/16 p0, 0xb
 
     .line 13
@@ -634,7 +634,7 @@
     return p0
 
     .line 15
-    :pswitch_e
+    :pswitch_3
     const/16 p0, 0xa
 
     .line 16
@@ -642,7 +642,7 @@
     return p0
 
     .line 18
-    :pswitch_11
+    :pswitch_4
     const/16 p0, 0x9
 
     .line 19
@@ -650,7 +650,7 @@
     return p0
 
     .line 21
-    :pswitch_14
+    :pswitch_5
     const/16 p0, 0x8
 
     .line 22
@@ -658,35 +658,35 @@
     return p0
 
     .line 24
-    :pswitch_17
+    :pswitch_6
     const/4 p0, 0x7
 
     .line 25
     return p0
 
     .line 26
-    :pswitch_19
+    :pswitch_7
     const/4 p0, 0x3
 
     .line 27
     return p0
 
     .line 28
-    :pswitch_1b
+    :pswitch_8
     const/4 p0, 0x2
 
     .line 29
     return p0
 
     .line 30
-    :pswitch_1d
+    :pswitch_9
     const/4 p0, 0x1
 
     .line 31
     return p0
 
     .line 32
-    :pswitch_1f
+    :pswitch_a
     const/4 p0, 0x0
 
     .line 33
@@ -696,37 +696,37 @@
     nop
 
     .line 35
-    :pswitch_data_22
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_1f
-        :pswitch_1d
-        :pswitch_1b
-        :pswitch_19
-        :pswitch_17
-        :pswitch_14
-        :pswitch_11
-        :pswitch_e
-        :pswitch_b
+        :pswitch_a
+        :pswitch_9
         :pswitch_8
+        :pswitch_7
+        :pswitch_6
         :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static synthetic e(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-eq p0, v0, :cond_b
+    if-eq p0, v0, :cond_1
 
     .line 3
     .line 4
     const/4 v0, 0x2
 
     .line 5
-    if-ne p0, v0, :cond_9
+    if-ne p0, v0, :cond_0
 
     .line 6
     .line 7
@@ -737,14 +737,14 @@
     return-object p0
 
     .line 10
-    :cond_9
+    :cond_0
     const/4 p0, 0x0
 
     .line 11
     throw p0
 
     .line 12
-    :cond_b
+    :cond_1
     const-string p0, "@cert-authority"
 
     .line 13
@@ -753,10 +753,10 @@
 .end method
 
 .method public static synthetic f(I)I
-    .registers 1
+    .locals 0
 
     .line 1
-    packed-switch p0, :pswitch_data_20
+    packed-switch p0, :pswitch_data_0
 
     .line 2
     .line 3
@@ -767,14 +767,14 @@
     throw p0
 
     .line 6
-    :pswitch_5
+    :pswitch_0
     const/4 p0, 0x0
 
     .line 7
     return p0
 
     .line 8
-    :pswitch_7
+    :pswitch_1
     const p0, 0xa000
 
     .line 9
@@ -783,7 +783,7 @@
     return p0
 
     .line 12
-    :pswitch_b
+    :pswitch_2
     const/16 p0, 0x4000
 
     .line 13
@@ -791,7 +791,7 @@
     return p0
 
     .line 15
-    :pswitch_e
+    :pswitch_3
     const p0, 0x8000
 
     .line 16
@@ -800,7 +800,7 @@
     return p0
 
     .line 19
-    :pswitch_12
+    :pswitch_4
     const p0, 0xc000
 
     .line 20
@@ -809,7 +809,7 @@
     return p0
 
     .line 23
-    :pswitch_16
+    :pswitch_5
     const/16 p0, 0x1000
 
     .line 24
@@ -817,7 +817,7 @@
     return p0
 
     .line 26
-    :pswitch_19
+    :pswitch_6
     const/16 p0, 0x2000
 
     .line 27
@@ -825,7 +825,7 @@
     return p0
 
     .line 29
-    :pswitch_1c
+    :pswitch_7
     const/16 p0, 0x6000
 
     .line 30
@@ -836,24 +836,24 @@
     nop
 
     .line 33
-    :pswitch_data_20
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_1c
-        :pswitch_19
-        :pswitch_16
-        :pswitch_12
-        :pswitch_e
-        :pswitch_b
         :pswitch_7
+        :pswitch_6
         :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static synthetic g(I)I
-    .registers 1
+    .locals 0
 
     .line 1
-    packed-switch p0, :pswitch_data_be
+    packed-switch p0, :pswitch_data_0
 
     .line 2
     .line 3
@@ -864,7 +864,7 @@
     throw p0
 
     .line 6
-    :pswitch_5
+    :pswitch_0
     const/16 p0, 0x40
 
     .line 7
@@ -872,7 +872,7 @@
     return p0
 
     .line 9
-    :pswitch_8
+    :pswitch_1
     const/16 p0, 0x3f
 
     .line 10
@@ -880,7 +880,7 @@
     return p0
 
     .line 12
-    :pswitch_b
+    :pswitch_2
     const/16 p0, 0x3e
 
     .line 13
@@ -888,7 +888,7 @@
     return p0
 
     .line 15
-    :pswitch_e
+    :pswitch_3
     const/16 p0, 0x3d
 
     .line 16
@@ -896,7 +896,7 @@
     return p0
 
     .line 18
-    :pswitch_11
+    :pswitch_4
     const/16 p0, 0x3c
 
     .line 19
@@ -904,7 +904,7 @@
     return p0
 
     .line 21
-    :pswitch_14
+    :pswitch_5
     const/16 p0, 0x3b
 
     .line 22
@@ -912,7 +912,7 @@
     return p0
 
     .line 24
-    :pswitch_17
+    :pswitch_6
     const/16 p0, 0x3a
 
     .line 25
@@ -920,7 +920,7 @@
     return p0
 
     .line 27
-    :pswitch_1a
+    :pswitch_7
     const/16 p0, 0x39
 
     .line 28
@@ -928,7 +928,7 @@
     return p0
 
     .line 30
-    :pswitch_1d
+    :pswitch_8
     const/16 p0, 0x38
 
     .line 31
@@ -936,7 +936,7 @@
     return p0
 
     .line 33
-    :pswitch_20
+    :pswitch_9
     const/16 p0, 0x37
 
     .line 34
@@ -944,7 +944,7 @@
     return p0
 
     .line 36
-    :pswitch_23
+    :pswitch_a
     const/16 p0, 0x36
 
     .line 37
@@ -952,7 +952,7 @@
     return p0
 
     .line 39
-    :pswitch_26
+    :pswitch_b
     const/16 p0, 0x35
 
     .line 40
@@ -960,7 +960,7 @@
     return p0
 
     .line 42
-    :pswitch_29
+    :pswitch_c
     const/16 p0, 0x34
 
     .line 43
@@ -968,7 +968,7 @@
     return p0
 
     .line 45
-    :pswitch_2c
+    :pswitch_d
     const/16 p0, 0x33
 
     .line 46
@@ -976,7 +976,7 @@
     return p0
 
     .line 48
-    :pswitch_2f
+    :pswitch_e
     const/16 p0, 0x32
 
     .line 49
@@ -984,7 +984,7 @@
     return p0
 
     .line 51
-    :pswitch_32
+    :pswitch_f
     const/16 p0, 0x31
 
     .line 52
@@ -992,7 +992,7 @@
     return p0
 
     .line 54
-    :pswitch_35
+    :pswitch_10
     const/16 p0, 0x30
 
     .line 55
@@ -1000,7 +1000,7 @@
     return p0
 
     .line 57
-    :pswitch_38
+    :pswitch_11
     const/16 p0, 0x2f
 
     .line 58
@@ -1008,7 +1008,7 @@
     return p0
 
     .line 60
-    :pswitch_3b
+    :pswitch_12
     const/16 p0, 0x2e
 
     .line 61
@@ -1016,7 +1016,7 @@
     return p0
 
     .line 63
-    :pswitch_3e
+    :pswitch_13
     const/16 p0, 0x2d
 
     .line 64
@@ -1024,7 +1024,7 @@
     return p0
 
     .line 66
-    :pswitch_41
+    :pswitch_14
     const/16 p0, 0x2c
 
     .line 67
@@ -1032,7 +1032,7 @@
     return p0
 
     .line 69
-    :pswitch_44
+    :pswitch_15
     const/16 p0, 0x2b
 
     .line 70
@@ -1040,7 +1040,7 @@
     return p0
 
     .line 72
-    :pswitch_47
+    :pswitch_16
     const/16 p0, 0x2a
 
     .line 73
@@ -1048,7 +1048,7 @@
     return p0
 
     .line 75
-    :pswitch_4a
+    :pswitch_17
     const/16 p0, 0x29
 
     .line 76
@@ -1056,7 +1056,7 @@
     return p0
 
     .line 78
-    :pswitch_4d
+    :pswitch_18
     const/16 p0, 0x28
 
     .line 79
@@ -1064,7 +1064,7 @@
     return p0
 
     .line 81
-    :pswitch_50
+    :pswitch_19
     const/16 p0, 0x27
 
     .line 82
@@ -1072,7 +1072,7 @@
     return p0
 
     .line 84
-    :pswitch_53
+    :pswitch_1a
     const/16 p0, 0x26
 
     .line 85
@@ -1080,7 +1080,7 @@
     return p0
 
     .line 87
-    :pswitch_56
+    :pswitch_1b
     const/16 p0, 0x25
 
     .line 88
@@ -1088,7 +1088,7 @@
     return p0
 
     .line 90
-    :pswitch_59
+    :pswitch_1c
     const/16 p0, 0x24
 
     .line 91
@@ -1096,7 +1096,7 @@
     return p0
 
     .line 93
-    :pswitch_5c
+    :pswitch_1d
     const/16 p0, 0x23
 
     .line 94
@@ -1104,7 +1104,7 @@
     return p0
 
     .line 96
-    :pswitch_5f
+    :pswitch_1e
     const/16 p0, 0x22
 
     .line 97
@@ -1112,7 +1112,7 @@
     return p0
 
     .line 99
-    :pswitch_62
+    :pswitch_1f
     const/16 p0, 0x21
 
     .line 100
@@ -1120,7 +1120,7 @@
     return p0
 
     .line 102
-    :pswitch_65
+    :pswitch_20
     const/16 p0, 0x20
 
     .line 103
@@ -1128,7 +1128,7 @@
     return p0
 
     .line 105
-    :pswitch_68
+    :pswitch_21
     const/16 p0, 0x1f
 
     .line 106
@@ -1136,7 +1136,7 @@
     return p0
 
     .line 108
-    :pswitch_6b
+    :pswitch_22
     const/16 p0, 0x1e
 
     .line 109
@@ -1144,7 +1144,7 @@
     return p0
 
     .line 111
-    :pswitch_6e
+    :pswitch_23
     const/16 p0, 0x1d
 
     .line 112
@@ -1152,7 +1152,7 @@
     return p0
 
     .line 114
-    :pswitch_71
+    :pswitch_24
     const/16 p0, 0x1c
 
     .line 115
@@ -1160,7 +1160,7 @@
     return p0
 
     .line 117
-    :pswitch_74
+    :pswitch_25
     const/16 p0, 0x1b
 
     .line 118
@@ -1168,7 +1168,7 @@
     return p0
 
     .line 120
-    :pswitch_77
+    :pswitch_26
     const/16 p0, 0x1a
 
     .line 121
@@ -1176,7 +1176,7 @@
     return p0
 
     .line 123
-    :pswitch_7a
+    :pswitch_27
     const/16 p0, 0x19
 
     .line 124
@@ -1184,7 +1184,7 @@
     return p0
 
     .line 126
-    :pswitch_7d
+    :pswitch_28
     const/16 p0, 0x18
 
     .line 127
@@ -1192,7 +1192,7 @@
     return p0
 
     .line 129
-    :pswitch_80
+    :pswitch_29
     const/16 p0, 0x17
 
     .line 130
@@ -1200,7 +1200,7 @@
     return p0
 
     .line 132
-    :pswitch_83
+    :pswitch_2a
     const/16 p0, 0x16
 
     .line 133
@@ -1208,7 +1208,7 @@
     return p0
 
     .line 135
-    :pswitch_86
+    :pswitch_2b
     const/16 p0, 0x15
 
     .line 136
@@ -1216,7 +1216,7 @@
     return p0
 
     .line 138
-    :pswitch_89
+    :pswitch_2c
     const/16 p0, 0x14
 
     .line 139
@@ -1224,7 +1224,7 @@
     return p0
 
     .line 141
-    :pswitch_8c
+    :pswitch_2d
     const/16 p0, 0x13
 
     .line 142
@@ -1232,7 +1232,7 @@
     return p0
 
     .line 144
-    :pswitch_8f
+    :pswitch_2e
     const/16 p0, 0x12
 
     .line 145
@@ -1240,7 +1240,7 @@
     return p0
 
     .line 147
-    :pswitch_92
+    :pswitch_2f
     const/16 p0, 0x11
 
     .line 148
@@ -1248,7 +1248,7 @@
     return p0
 
     .line 150
-    :pswitch_95
+    :pswitch_30
     const/16 p0, 0x10
 
     .line 151
@@ -1256,7 +1256,7 @@
     return p0
 
     .line 153
-    :pswitch_98
+    :pswitch_31
     const/16 p0, 0xf
 
     .line 154
@@ -1264,7 +1264,7 @@
     return p0
 
     .line 156
-    :pswitch_9b
+    :pswitch_32
     const/16 p0, 0xe
 
     .line 157
@@ -1272,7 +1272,7 @@
     return p0
 
     .line 159
-    :pswitch_9e
+    :pswitch_33
     const/16 p0, 0xd
 
     .line 160
@@ -1280,7 +1280,7 @@
     return p0
 
     .line 162
-    :pswitch_a1
+    :pswitch_34
     const/16 p0, 0xc
 
     .line 163
@@ -1288,7 +1288,7 @@
     return p0
 
     .line 165
-    :pswitch_a4
+    :pswitch_35
     const/16 p0, 0xb
 
     .line 166
@@ -1296,7 +1296,7 @@
     return p0
 
     .line 168
-    :pswitch_a7
+    :pswitch_36
     const/16 p0, 0xa
 
     .line 169
@@ -1304,7 +1304,7 @@
     return p0
 
     .line 171
-    :pswitch_aa
+    :pswitch_37
     const/16 p0, 0x9
 
     .line 172
@@ -1312,7 +1312,7 @@
     return p0
 
     .line 174
-    :pswitch_ad
+    :pswitch_38
     const/16 p0, 0x8
 
     .line 175
@@ -1320,126 +1320,126 @@
     return p0
 
     .line 177
-    :pswitch_b0
+    :pswitch_39
     const/4 p0, 0x7
 
     .line 178
     return p0
 
     .line 179
-    :pswitch_b2
+    :pswitch_3a
     const/4 p0, 0x6
 
     .line 180
     return p0
 
     .line 181
-    :pswitch_b4
+    :pswitch_3b
     const/4 p0, 0x5
 
     .line 182
     return p0
 
     .line 183
-    :pswitch_b6
+    :pswitch_3c
     const/4 p0, 0x4
 
     .line 184
     return p0
 
     .line 185
-    :pswitch_b8
+    :pswitch_3d
     const/4 p0, 0x3
 
     .line 186
     return p0
 
     .line 187
-    :pswitch_ba
+    :pswitch_3e
     const/4 p0, 0x2
 
     .line 188
     return p0
 
     .line 189
-    :pswitch_bc
+    :pswitch_3f
     const/4 p0, 0x1
 
     .line 190
     return p0
 
     .line 191
-    :pswitch_data_be
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_bc
-        :pswitch_ba
-        :pswitch_b8
-        :pswitch_b6
-        :pswitch_b4
-        :pswitch_b2
-        :pswitch_b0
-        :pswitch_ad
-        :pswitch_aa
-        :pswitch_a7
-        :pswitch_a4
-        :pswitch_a1
-        :pswitch_9e
-        :pswitch_9b
-        :pswitch_98
-        :pswitch_95
-        :pswitch_92
-        :pswitch_8f
-        :pswitch_8c
-        :pswitch_89
-        :pswitch_86
-        :pswitch_83
-        :pswitch_80
-        :pswitch_7d
-        :pswitch_7a
-        :pswitch_77
-        :pswitch_74
-        :pswitch_71
-        :pswitch_6e
-        :pswitch_6b
-        :pswitch_68
-        :pswitch_65
-        :pswitch_62
-        :pswitch_5f
-        :pswitch_5c
-        :pswitch_59
-        :pswitch_56
-        :pswitch_53
-        :pswitch_50
-        :pswitch_4d
-        :pswitch_4a
-        :pswitch_47
-        :pswitch_44
-        :pswitch_41
+        :pswitch_3f
         :pswitch_3e
+        :pswitch_3d
+        :pswitch_3c
         :pswitch_3b
+        :pswitch_3a
+        :pswitch_39
         :pswitch_38
+        :pswitch_37
+        :pswitch_36
         :pswitch_35
+        :pswitch_34
+        :pswitch_33
         :pswitch_32
+        :pswitch_31
+        :pswitch_30
         :pswitch_2f
+        :pswitch_2e
+        :pswitch_2d
         :pswitch_2c
+        :pswitch_2b
+        :pswitch_2a
         :pswitch_29
+        :pswitch_28
+        :pswitch_27
         :pswitch_26
+        :pswitch_25
+        :pswitch_24
         :pswitch_23
+        :pswitch_22
+        :pswitch_21
         :pswitch_20
+        :pswitch_1f
+        :pswitch_1e
         :pswitch_1d
+        :pswitch_1c
+        :pswitch_1b
         :pswitch_1a
+        :pswitch_19
+        :pswitch_18
         :pswitch_17
+        :pswitch_16
+        :pswitch_15
         :pswitch_14
+        :pswitch_13
+        :pswitch_12
         :pswitch_11
+        :pswitch_10
+        :pswitch_f
         :pswitch_e
+        :pswitch_d
+        :pswitch_c
         :pswitch_b
+        :pswitch_a
+        :pswitch_9
         :pswitch_8
+        :pswitch_7
+        :pswitch_6
         :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static h(IIII)I
-    .registers 4
+    .locals 0
 
     .line 1
     add-int/2addr p0, p1
@@ -1460,7 +1460,7 @@
 .end method
 
 .method public static i(IIIII)I
-    .registers 5
+    .locals 0
 
     .line 1
     add-int/2addr p0, p1
@@ -1490,7 +1490,7 @@
 .end method
 
 .method public static j(JJJJ)J
-    .registers 8
+    .locals 0
 
     .line 1
     mul-long p0, p0, p2
@@ -1507,7 +1507,7 @@
 .end method
 
 .method public static k(ILjava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1536,7 +1536,7 @@
 .end method
 
 .method public static l(ILjava/lang/String;Ljava/lang/StringBuilder;)Ljava/lang/String;
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p2, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
@@ -1561,7 +1561,7 @@
 .end method
 
 .method public static m(ILjava/lang/StringBuilder;)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
@@ -1589,7 +1589,7 @@
 .end method
 
 .method public static n(Ljava/io/IOException;Ljava/lang/StringBuilder;)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
@@ -1617,7 +1617,7 @@
 .end method
 
 .method public static p(Ljava/lang/Exception;Ljava/lang/StringBuilder;)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -1645,7 +1645,7 @@
 .end method
 
 .method public static q(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1679,7 +1679,7 @@
 .end method
 
 .method public static r(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
@@ -1704,7 +1704,7 @@
 .end method
 
 .method public static s(Llibs/et;Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -1735,7 +1735,7 @@
 .end method
 
 .method public static t(Llibs/r90;Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Llibs/r90;->g()Ljava/lang/CharSequence;
@@ -1768,7 +1768,7 @@
 .end method
 
 .method public static u(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-    .registers 5
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1794,7 +1794,7 @@
 .end method
 
 .method public static v(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1815,7 +1815,7 @@
 .end method
 
 .method public static w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-    .registers 4
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1841,7 +1841,7 @@
 .end method
 
 .method public static x(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-    .registers 6
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1877,7 +1877,7 @@
 .end method
 
 .method public static y(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Llibs/c;
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1910,7 +1910,7 @@
 .end method
 
 .method public static z(ILjava/lang/String;Ljava/lang/StringBuilder;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-static {p0}, Llibs/ho2;->Add(I)Ljava/lang/String;

@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/security/KeyPairGeneratorSpi;-><init>()V
@@ -26,7 +26,7 @@
 
     .line 6
     .line 7
-    fill-array-data v0, :array_10
+    fill-array-data v0, :array_0
 
     .line 8
     .line 9
@@ -46,7 +46,7 @@
     return-void
 
     .line 17
-    :array_10
+    :array_0
     .array-data 1
         0x1t
         0x0t
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public generateKeyPair()Ljava/security/KeyPair;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Lorg/conscrypt/OpenSSLKey;
@@ -115,7 +115,7 @@
 .end method
 
 .method public initialize(ILjava/security/SecureRandom;)V
-    .registers 3
+    .locals 0
 
     .line 32
     iput p1, p0, Lorg/conscrypt/OpenSSLRSAKeyPairGenerator;->modulusBits:I
@@ -124,14 +124,14 @@
 .end method
 
 .method public initialize(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    .registers 3
+    .locals 0
 
     .line 1
     instance-of p2, p1, Ljava/security/spec/RSAKeyGenParameterSpec;
 
     .line 2
     .line 3
-    if-eqz p2, :cond_19
+    if-eqz p2, :cond_1
 
     .line 4
     .line 5
@@ -147,7 +147,7 @@
     move-result-object p2
 
     .line 11
-    if-eqz p2, :cond_12
+    if-eqz p2, :cond_0
 
     .line 12
     .line 13
@@ -163,7 +163,7 @@
 
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     invoke-virtual {p1}, Ljava/security/spec/RSAKeyGenParameterSpec;->getKeysize()I
 
     .line 20
@@ -179,7 +179,7 @@
     return-void
 
     .line 26
-    :cond_19
+    :cond_1
     const-string p1, "Only RSAKeyGenParameterSpec supported"
 
     .line 27

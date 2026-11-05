@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/yc;-><init>()V
@@ -33,14 +33,14 @@
 
 # virtual methods
 .method public final b(Ljava/lang/Class;)Ljava/security/spec/AlgorithmParameterSpec;
-    .registers 3
+    .locals 1
 
     .line 1
     const-class v0, Ljavax/crypto/spec/IvParameterSpec;
 
     .line 2
     .line 3
-    if-ne p1, v0, :cond_c
+    if-ne p1, v0, :cond_0
 
     .line 4
     .line 5
@@ -60,7 +60,7 @@
     return-object p1
 
     .line 13
-    :cond_c
+    :cond_0
     const-string p1, "unknown parameter spec passed to CAST5 parameters object."
 
     .line 14
@@ -77,7 +77,7 @@
 .end method
 
 .method public final engineGetEncoded()[B
-    .registers 5
+    .locals 4
 
     .line 38
     iget-object v0, p0, Llibs/tl;->a:[B
@@ -97,7 +97,7 @@
 .end method
 
 .method public final engineGetEncoded(Ljava/lang/String;)[B
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-static {p1}, Llibs/yc;->a(Ljava/lang/String;)Z
@@ -108,7 +108,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -144,7 +144,7 @@
     return-object p1
 
     .line 23
-    :cond_16
+    :cond_0
     const-string v0, "RAW"
 
     .line 24
@@ -157,7 +157,7 @@
     move-result p1
 
     .line 29
-    if-eqz p1, :cond_23
+    if-eqz p1, :cond_1
 
     .line 30
     .line 31
@@ -172,7 +172,7 @@
     return-object p1
 
     .line 36
-    :cond_23
+    :cond_1
     const/4 p1, 0x0
 
     .line 37
@@ -180,12 +180,12 @@
 .end method
 
 .method public final engineInit(Ljava/security/spec/AlgorithmParameterSpec;)V
-    .registers 3
+    .locals 1
 
     .line 70
     instance-of v0, p1, Ljavax/crypto/spec/IvParameterSpec;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 71
     check-cast p1, Ljavax/crypto/spec/IvParameterSpec;
@@ -199,7 +199,7 @@
     return-void
 
     .line 72
-    :cond_d
+    :cond_0
     const-string p1, "IvParameterSpec required to initialise a CAST5 parameters algorithm parameters object"
 
     invoke-static {p1}, Llibs/bf0;->d(Ljava/lang/String;)V
@@ -208,7 +208,7 @@
 .end method
 
 .method public final engineInit([B)V
-    .registers 5
+    .locals 3
 
     .line 68
     array-length v0, p1
@@ -228,7 +228,7 @@
 .end method
 
 .method public final engineInit([BLjava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-static {p2}, Llibs/yc;->a(Ljava/lang/String;)Z
@@ -239,7 +239,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_1
 
     .line 6
     .line 7
@@ -260,7 +260,7 @@
     move-result-object p1
 
     .line 16
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_0
 
     .line 17
     .line 18
@@ -281,14 +281,14 @@
     .line 25
     .line 26
     .line 27
-    goto :goto_1c
+    goto :goto_0
 
     .line 28
-    :cond_1b
+    :cond_0
     const/4 p2, 0x0
 
     .line 29
-    :goto_1c
+    :goto_0
     iget-object p1, p2, Llibs/yl;->X:Llibs/Api;
 
     .line 30
@@ -332,7 +332,7 @@
     return-void
 
     .line 50
-    :cond_31
+    :cond_1
     const-string v0, "RAW"
 
     .line 51
@@ -345,7 +345,7 @@
     move-result p2
 
     .line 56
-    if-eqz p2, :cond_3d
+    if-eqz p2, :cond_2
 
     .line 57
     .line 58
@@ -357,7 +357,7 @@
     return-void
 
     .line 62
-    :cond_3d
+    :cond_2
     const-string p1, "Unknown parameters format in IV parameters object"
 
     .line 63
@@ -371,7 +371,7 @@
 .end method
 
 .method public final engineToString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "CAST5 Parameters"

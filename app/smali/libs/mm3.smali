@@ -22,7 +22,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/qm3;Ljava/lang/String;Llibs/rp0;IJLlibs/x61;)V
-    .registers 8
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 8
+    .locals 7
 
     .line 1
     iget-wide v4, p0, Llibs/mm3;->Mu:J

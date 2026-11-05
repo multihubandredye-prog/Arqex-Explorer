@@ -12,7 +12,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/ih;
@@ -41,7 +41,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 5
+    .locals 4
 
     .line 1
     const-wide v0, 0x3ff8a3d70a3d70a4L    # 1.54
@@ -87,7 +87,7 @@
 
 # virtual methods
 .method public final a(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-virtual {p0, p1}, Ljava/util/Hashtable;->containsKey(Ljava/lang/Object;)Z
@@ -98,7 +98,7 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -110,7 +110,7 @@
     return-void
 
     .line 11
-    :cond_a
+    :cond_0
     const-string p2, "duplicate provider key ("
 
     .line 12
@@ -136,7 +136,7 @@
 .end method
 
 .method public final b(Llibs/App;Llibs/ae;)V
-    .registers 4
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/xt0;->X:Ljava/util/HashMap;
@@ -152,7 +152,7 @@
 .end method
 
 .method public final c(Ljava/lang/String;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "MessageDigest."
@@ -175,7 +175,7 @@
     move-result v0
 
     .line 11
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_1
 
     .line 12
     .line 13
@@ -199,22 +199,22 @@
     move-result p1
 
     .line 23
-    if-eqz p1, :cond_19
+    if-eqz p1, :cond_0
 
     .line 24
     .line 25
-    goto :goto_1b
+    goto :goto_0
 
     .line 26
-    :cond_19
+    :cond_0
     const/4 p1, 0x0
 
     .line 27
     return p1
 
     .line 28
-    :cond_1b
-    :goto_1b
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
     .line 29
@@ -222,7 +222,7 @@
 .end method
 
 .method public final d(Ljava/lang/String;Llibs/App;Ljava/lang/String;)V
-    .registers 6
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -301,7 +301,7 @@
 .end method
 
 .method public final f(Ljava/lang/String;)V
-    .registers 6
+    .locals 4
 
     .line 1
     :try_start_0
@@ -317,7 +317,7 @@
     move-result-object v0
 
     .line 7
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -329,33 +329,33 @@
     move-result-object v0
 
     .line 13
-    goto :goto_13
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     invoke-static {p1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     .line 15
     .line 16
     .line 17
     move-result-object v0
-    :try_end_11
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_11} :catch_12
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 18
-    goto :goto_13
+    goto :goto_0
 
     .line 19
-    :catch_12
+    :catch_0
     const/4 v0, 0x0
 
     .line 20
-    :goto_13
-    if-eqz v0, :cond_3c
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 21
     .line 22
-    :try_start_15
+    :try_start_1
     invoke-virtual {v0}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
 
     .line 23
@@ -369,16 +369,16 @@
     .line 27
     .line 28
     invoke-virtual {v0, p0}, Llibs/m0;->a(Llibs/mx;)V
-    :try_end_1e
-    .catch Ljava/lang/Exception; {:try_start_15 .. :try_end_1e} :catch_1f
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 29
     .line 30
     .line 31
-    goto :goto_3c
+    goto :goto_1
 
     .line 32
-    :catch_1f
+    :catch_1
     move-exception v0
 
     .line 33
@@ -434,7 +434,7 @@
     throw v1
 
     .line 61
-    :cond_3c
-    :goto_3c
+    :cond_1
+    :goto_1
     return-void
 .end method

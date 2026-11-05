@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/ji;->X:B
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/ji;->X:B
@@ -40,7 +40,7 @@
     const/4 v1, 0x0
 
     .line 4
-    packed-switch v0, :pswitch_data_1e
+    packed-switch v0, :pswitch_data_0
 
     .line 5
     .line 6
@@ -54,7 +54,7 @@
 
     .line 11
     .line 12
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_0
 
     .line 13
     .line 14
@@ -63,7 +63,7 @@
     .line 15
     .line 16
     .line 17
-    :cond_10
+    :cond_0
     const/4 p1, 0x1
 
     .line 18
@@ -74,7 +74,7 @@
     return-void
 
     .line 21
-    :pswitch_14
+    :pswitch_0
     invoke-virtual {p1, v1}, Landroid/view/View;->setEnabled(Z)V
 
     .line 22
@@ -83,7 +83,7 @@
     return-void
 
     .line 25
-    :pswitch_18
+    :pswitch_1
     sget-object v0, Lcom/mixplorer/activities/BrowseActivity;->Il:Ljava/lang/ThreadGroup;
 
     .line 26
@@ -96,9 +96,9 @@
     return-void
 
     .line 31
-    :pswitch_data_1e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_18
-        :pswitch_14
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

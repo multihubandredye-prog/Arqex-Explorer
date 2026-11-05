@@ -13,7 +13,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/PreferenceActivity;Ljava/lang/Object;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/ze2;->c:B
@@ -39,14 +39,14 @@
 
 # virtual methods
 .method public Object(Landroid/view/View;I)Z
-    .registers 4
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/ze2;->c:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_22
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -62,7 +62,7 @@
     return p1
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     iget-object p1, p0, Llibs/ze2;->d:Ljava/lang/Object;
 
     .line 12
@@ -113,14 +113,14 @@
     nop
 
     .line 35
-    :pswitch_data_22
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final z(Landroid/view/View;I)V
-    .registers 6
+    .locals 3
 
     .line 1
     iget-byte p1, p0, Llibs/ze2;->c:B
@@ -138,7 +138,7 @@
 
     .line 7
     .line 8
-    packed-switch p1, :pswitch_data_46
+    packed-switch p1, :pswitch_data_0
 
     .line 9
     .line 10
@@ -179,7 +179,7 @@
     return-void
 
     .line 29
-    :pswitch_1c
+    :pswitch_0
     check-cast v2, Ljava/util/ArrayList;
 
     .line 30
@@ -221,7 +221,7 @@
     return-void
 
     .line 50
-    :pswitch_31
+    :pswitch_1
     check-cast v2, Ljava/util/ArrayList;
 
     .line 51
@@ -263,9 +263,9 @@
     return-void
 
     .line 71
-    :pswitch_data_46
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_31
-        :pswitch_1c
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

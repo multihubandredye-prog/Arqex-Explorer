@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const-string v0, "\\\\(.)"
@@ -32,7 +32,7 @@
 .end method
 
 .method public static a(Ljava/lang/String;)Ljava/lang/String;
-    .registers 8
+    .locals 7
 
     .line 1
     sget-object v0, Llibs/wj0;->a:Ljava/util/regex/Pattern;
@@ -62,7 +62,7 @@
     const/4 v3, 0x0
 
     .line 14
-    :goto_d
+    :goto_0
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->find()Z
 
     .line 15
@@ -71,7 +71,7 @@
     move-result v4
 
     .line 18
-    if-eqz v4, :cond_66
+    if-eqz v4, :cond_3
 
     .line 19
     .line 20
@@ -123,19 +123,19 @@
     const/4 v6, -0x1
 
     .line 44
-    sparse-switch v5, :sswitch_data_76
+    sparse-switch v5, :sswitch_data_0
 
     .line 45
     .line 46
     .line 47
-    :goto_2e
+    :goto_1
     const/4 v3, -0x1
 
     .line 48
-    goto :goto_4e
+    goto :goto_2
 
     .line 49
-    :sswitch_30
+    :sswitch_0
     const-string v3, "t"
 
     .line 50
@@ -148,21 +148,21 @@
     move-result v3
 
     .line 55
-    if-nez v3, :cond_39
+    if-nez v3, :cond_0
 
     .line 56
     .line 57
-    goto :goto_2e
+    goto :goto_1
 
     .line 58
-    :cond_39
+    :cond_0
     const/4 v3, 0x2
 
     .line 59
-    goto :goto_4e
+    goto :goto_2
 
     .line 60
-    :sswitch_3b
+    :sswitch_1
     const-string v5, "r"
 
     .line 61
@@ -175,14 +175,14 @@
     move-result v5
 
     .line 66
-    if-nez v5, :cond_4e
+    if-nez v5, :cond_2
 
     .line 67
     .line 68
-    goto :goto_2e
+    goto :goto_1
 
     .line 69
-    :sswitch_44
+    :sswitch_2
     const-string v3, "n"
 
     .line 70
@@ -195,20 +195,20 @@
     move-result v3
 
     .line 75
-    if-nez v3, :cond_4d
+    if-nez v3, :cond_1
 
     .line 76
     .line 77
-    goto :goto_2e
+    goto :goto_1
 
     .line 78
-    :cond_4d
+    :cond_1
     const/4 v3, 0x0
 
     .line 79
-    :cond_4e
-    :goto_4e
-    packed-switch v3, :pswitch_data_84
+    :cond_2
+    :goto_2
+    packed-switch v3, :pswitch_data_0
 
     .line 80
     .line 81
@@ -221,31 +221,31 @@
     move-result v3
 
     .line 86
-    goto :goto_5e
+    goto :goto_3
 
     .line 87
-    :pswitch_56
+    :pswitch_0
     const/16 v3, 0x9
 
     .line 88
     .line 89
-    goto :goto_5e
+    goto :goto_3
 
     .line 90
-    :pswitch_59
+    :pswitch_1
     const/16 v3, 0xd
 
     .line 91
     .line 92
-    goto :goto_5e
+    goto :goto_3
 
     .line 93
-    :pswitch_5c
+    :pswitch_2
     const/16 v3, 0xa
 
     .line 94
     .line 95
-    :goto_5e
+    :goto_3
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 96
@@ -259,10 +259,10 @@
     move-result v3
 
     .line 102
-    goto :goto_d
+    goto :goto_0
 
     .line 103
-    :cond_66
+    :cond_3
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     .line 104
@@ -294,17 +294,17 @@
     .line 118
     return-object p0
 
-    :sswitch_data_76
+    :sswitch_data_0
     .sparse-switch
-        0x6e -> :sswitch_44
-        0x72 -> :sswitch_3b
-        0x74 -> :sswitch_30
+        0x6e -> :sswitch_2
+        0x72 -> :sswitch_1
+        0x74 -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_84
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_5c
-        :pswitch_59
-        :pswitch_56
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

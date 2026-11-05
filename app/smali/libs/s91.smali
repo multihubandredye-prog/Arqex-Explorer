@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ml2;Ljava/util/zip/Inflater;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public final b()Llibs/en3;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/s91;->X:Llibs/ml2;
@@ -63,21 +63,21 @@
 .end method
 
 .method public final close()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/s91;->Lambda:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     iget-object v0, p0, Llibs/s91;->Y:Ljava/util/zip/Inflater;
 
     .line 7
@@ -107,7 +107,7 @@
 .end method
 
 .method public final e(JLlibs/vj;)J
-    .registers 13
+    .locals 9
 
     .line 1
     iget-boolean p1, p0, Llibs/s91;->Lambda:Z
@@ -118,11 +118,11 @@
 
     .line 4
     .line 5
-    if-nez p1, :cond_b4
+    if-nez p1, :cond_a
 
     .line 6
     .line 7
-    :goto_6
+    :goto_0
     iget-object p1, p0, Llibs/s91;->Y:Ljava/util/zip/Inflater;
 
     .line 8
@@ -145,26 +145,26 @@
     const/4 v4, 0x0
 
     .line 17
-    if-nez p2, :cond_13
+    if-nez p2, :cond_0
 
     .line 18
     .line 19
-    goto :goto_44
+    goto :goto_2
 
     .line 20
-    :cond_13
+    :cond_0
     iget p2, p0, Llibs/s91;->Z:I
 
     .line 21
     .line 22
-    if-nez p2, :cond_18
+    if-nez p2, :cond_1
 
     .line 23
     .line 24
-    goto :goto_26
+    goto :goto_1
 
     .line 25
-    :cond_18
+    :cond_1
     invoke-virtual {p1}, Ljava/util/zip/Inflater;->getRemaining()I
 
     .line 26
@@ -195,7 +195,7 @@
     .line 37
     .line 38
     .line 39
-    :goto_26
+    :goto_1
     invoke-virtual {p1}, Ljava/util/zip/Inflater;->getRemaining()I
 
     .line 40
@@ -204,7 +204,7 @@
     move-result p2
 
     .line 43
-    if-nez p2, :cond_ae
+    if-nez p2, :cond_9
 
     .line 44
     .line 45
@@ -216,17 +216,17 @@
     move-result p2
 
     .line 49
-    if-eqz p2, :cond_34
+    if-eqz p2, :cond_2
 
     .line 50
     .line 51
     const/4 v4, 0x1
 
     .line 52
-    goto :goto_44
+    goto :goto_2
 
     .line 53
-    :cond_34
+    :cond_2
     iget-object p2, v2, Llibs/ml2;->X:Llibs/vj;
 
     .line 54
@@ -259,8 +259,8 @@
     .line 67
     .line 68
     .line 69
-    :goto_44
-    :try_start_44
+    :goto_2
+    :try_start_0
     invoke-virtual {p3, v3}, Llibs/vj;->View(I)Llibs/s43;
 
     .line 70
@@ -311,7 +311,7 @@
     move-result v3
 
     .line 93
-    if-lez v3, :cond_6c
+    if-lez v3, :cond_3
 
     .line 94
     .line 95
@@ -343,14 +343,14 @@
     return-wide v0
 
     .line 107
-    :catch_6a
+    :catch_0
     move-exception p1
 
     .line 108
-    goto :goto_a9
+    goto :goto_5
 
     .line 109
-    :cond_6c
+    :cond_3
     invoke-virtual {p1}, Ljava/util/zip/Inflater;->finished()Z
 
     .line 110
@@ -359,7 +359,7 @@
     move-result v3
 
     .line 113
-    if-nez v3, :cond_84
+    if-nez v3, :cond_6
 
     .line 114
     .line 115
@@ -371,22 +371,22 @@
     move-result v3
 
     .line 119
-    if-eqz v3, :cond_79
+    if-eqz v3, :cond_4
 
     .line 120
     .line 121
-    goto :goto_84
+    goto :goto_3
 
     .line 122
-    :cond_79
-    if-nez v4, :cond_7c
+    :cond_4
+    if-nez v4, :cond_5
 
     .line 123
     .line 124
-    goto :goto_6
+    goto :goto_0
 
     .line 125
-    :cond_7c
+    :cond_5
     new-instance p1, Ljava/io/EOFException;
 
     .line 126
@@ -403,20 +403,20 @@
     throw p1
 
     .line 133
-    :cond_84
-    :goto_84
+    :cond_6
+    :goto_3
     iget v0, p0, Llibs/s91;->Z:I
 
     .line 134
     .line 135
-    if-nez v0, :cond_89
+    if-nez v0, :cond_7
 
     .line 136
     .line 137
-    goto :goto_97
+    goto :goto_4
 
     .line 138
-    :cond_89
+    :cond_7
     invoke-virtual {p1}, Ljava/util/zip/Inflater;->getRemaining()I
 
     .line 139
@@ -447,7 +447,7 @@
     .line 150
     .line 151
     .line 152
-    :goto_97
+    :goto_4
     iget p1, p2, Llibs/s43;->b:I
 
     .line 153
@@ -456,7 +456,7 @@
 
     .line 155
     .line 156
-    if-ne p1, v0, :cond_a6
+    if-ne p1, v0, :cond_8
 
     .line 157
     .line 158
@@ -473,13 +473,13 @@
     .line 163
     .line 164
     invoke-static {p2}, Llibs/t43;->Str(Llibs/s43;)V
-    :try_end_a6
-    .catch Ljava/util/zip/DataFormatException; {:try_start_44 .. :try_end_a6} :catch_6a
+    :try_end_0
+    .catch Ljava/util/zip/DataFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 165
     .line 166
     .line 167
-    :cond_a6
+    :cond_8
     const-wide/16 p1, -0x1
 
     .line 168
@@ -487,7 +487,7 @@
     return-wide p1
 
     .line 170
-    :goto_a9
+    :goto_5
     invoke-static {p1}, Llibs/sw1;->p(Ljava/lang/Throwable;)Ljava/io/IOException;
 
     .line 171
@@ -499,7 +499,7 @@
     throw p1
 
     .line 175
-    :cond_ae
+    :cond_9
     const-string p1, "?"
 
     .line 176
@@ -512,7 +512,7 @@
     return-wide v0
 
     .line 181
-    :cond_b4
+    :cond_a
     const-string p1, "closed"
 
     .line 182

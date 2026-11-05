@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>([B)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Ljava/security/spec/EncodedKeySpec;-><init>([B)V
@@ -19,20 +19,20 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v1, p1, Ljava/security/spec/EncodedKeySpec;
 
     .line 6
@@ -40,14 +40,14 @@
     const/4 v2, 0x0
 
     .line 8
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     .line 9
     .line 10
     return v2
 
     .line 11
-    :cond_a
+    :cond_1
     check-cast p1, Ljava/security/spec/EncodedKeySpec;
 
     .line 12
@@ -76,7 +76,7 @@
     move-result v1
 
     .line 25
-    if-eqz v1, :cond_29
+    if-eqz v1, :cond_2
 
     .line 26
     .line 27
@@ -104,19 +104,19 @@
     move-result p1
 
     .line 39
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_2
 
     .line 40
     .line 41
     return v0
 
     .line 42
-    :cond_29
+    :cond_2
     return v2
 .end method
 
 .method public getFormat()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "raw"
@@ -127,7 +127,7 @@
 .end method
 
 .method public getKey()[B
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Ljava/security/spec/EncodedKeySpec;->getEncoded()[B
@@ -142,7 +142,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 5
+    .locals 4
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/XdhKeySpec;->getFormat()Ljava/lang/String;

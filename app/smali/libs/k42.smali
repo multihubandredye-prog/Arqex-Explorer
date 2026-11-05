@@ -5,7 +5,7 @@
 
 # direct methods
 .method public synthetic constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,7 +17,7 @@
 .end method
 
 .method public static a(IILjava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-virtual {p2}, Ljava/lang/String;->length()I
@@ -43,7 +43,7 @@
 .end method
 
 .method public static b(ILjava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -77,7 +77,7 @@
 .end method
 
 .method public static c(JLjava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -106,7 +106,7 @@
 .end method
 
 .method public static d(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -140,7 +140,7 @@
 .end method
 
 .method public static e(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -169,7 +169,7 @@
 .end method
 
 .method public static f(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -208,7 +208,7 @@
 .end method
 
 .method public static g(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 5
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -247,7 +247,7 @@
 .end method
 
 .method public static h(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 6
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -291,7 +291,7 @@
 .end method
 
 .method public static i(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -316,7 +316,7 @@
 .end method
 
 .method public static j(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -346,7 +346,7 @@
 .end method
 
 .method public static k(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -367,7 +367,7 @@
 .end method
 
 .method public static l(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
-    .registers 4
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -393,7 +393,7 @@
 .end method
 
 .method public static m(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -419,7 +419,7 @@
 .end method
 
 .method public static n(Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2}, Ljava/util/Dictionary;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -445,7 +445,7 @@
 .end method
 
 .method public static p(Ljava/lang/String;)Llibs/App;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/App;
@@ -469,7 +469,7 @@
 .end method
 
 .method public static q(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Lorg/conscrypt/OpenSSLProvider;Ljava/lang/String;)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -499,7 +499,7 @@
 .end method
 
 .method public static r(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

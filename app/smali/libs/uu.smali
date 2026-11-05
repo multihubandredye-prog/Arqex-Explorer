@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const-string v0, "\\S+"
@@ -32,7 +32,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/nw;-><init>()V
@@ -44,10 +44,10 @@
 .end method
 
 .method public static q(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
-    .registers 3
+    .locals 0
 
     .line 1
-    if-eqz p2, :cond_18
+    if-eqz p2, :cond_0
 
     .line 2
     .line 3
@@ -84,7 +84,7 @@
 
     .line 19
     .line 20
-    :goto_13
+    :goto_0
     invoke-static {p1, p0, p2}, Llibs/sk1;->q(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 21
@@ -96,7 +96,7 @@
     return-object p0
 
     .line 25
-    :cond_18
+    :cond_0
     sget-object p1, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
     .line 26
@@ -117,13 +117,13 @@
 
     .line 34
     .line 35
-    goto :goto_13
+    goto :goto_0
 .end method
 
 
 # virtual methods
 .method public final e(Llibs/en0;)V
-    .registers 13
+    .locals 11
 
     .line 1
     const-string p1, "200 TIMEZONE "
@@ -138,7 +138,7 @@
 
     .line 6
     .line 7
-    :try_start_6
+    :try_start_0
     invoke-virtual {p0}, Llibs/nw;->l()Ljava/lang/String;
 
     .line 8
@@ -179,11 +179,11 @@
     .line 25
     .line 26
     move-result-object v5
-    :try_end_1a
-    .catchall {:try_start_6 .. :try_end_1a} :catchall_143
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 27
-    :try_start_1a
+    :try_start_1
     invoke-virtual {v5}, Ljava/lang/String;->hashCode()I
 
     .line 28
@@ -201,16 +201,16 @@
     const/4 v10, 0x1
 
     .line 34
-    sparse-switch v7, :sswitch_data_168
+    sparse-switch v7, :sswitch_data_0
 
     .line 35
     .line 36
     .line 37
-    goto/16 :goto_12d
+    goto/16 :goto_2
 
     .line 38
     .line 39
-    :sswitch_26
+    :sswitch_0
     const-string p1, "descuser"
 
     .line 40
@@ -223,7 +223,7 @@
     move-result p1
 
     .line 45
-    if-eqz p1, :cond_12d
+    if-eqz p1, :cond_4
 
     .line 46
     .line 47
@@ -231,19 +231,19 @@
 
     .line 48
     .line 49
-    goto/16 :goto_15f
+    goto/16 :goto_4
 
     .line 50
     .line 51
-    :catchall_32
+    :catchall_0
     move-exception p1
 
     .line 52
-    goto/16 :goto_145
+    goto/16 :goto_3
 
     .line 53
     .line 54
-    :sswitch_35
+    :sswitch_1
     const-string p1, "chown"
 
     .line 55
@@ -256,7 +256,7 @@
     move-result p1
 
     .line 60
-    if-eqz p1, :cond_12d
+    if-eqz p1, :cond_4
 
     .line 61
     .line 62
@@ -316,11 +316,11 @@
     move-result-object p1
 
     .line 90
-    goto/16 :goto_15f
+    goto/16 :goto_4
 
     .line 91
     .line 92
-    :sswitch_5b
+    :sswitch_2
     const-string p1, "chmod"
 
     .line 93
@@ -333,7 +333,7 @@
     move-result p1
 
     .line 98
-    if-eqz p1, :cond_12d
+    if-eqz p1, :cond_4
 
     .line 99
     .line 100
@@ -393,11 +393,11 @@
     move-result-object p1
 
     .line 128
-    goto/16 :goto_15f
+    goto/16 :goto_4
 
     .line 129
     .line 130
-    :sswitch_81
+    :sswitch_3
     const-string p1, "chgrp"
 
     .line 131
@@ -410,7 +410,7 @@
     move-result p1
 
     .line 136
-    if-eqz p1, :cond_12d
+    if-eqz p1, :cond_4
 
     .line 137
     .line 138
@@ -470,11 +470,11 @@
     move-result-object p1
 
     .line 166
-    goto/16 :goto_15f
+    goto/16 :goto_4
 
     .line 167
     .line 168
-    :sswitch_a7
+    :sswitch_4
     const-string v2, "zone"
 
     .line 169
@@ -487,7 +487,7 @@
     move-result v2
 
     .line 174
-    if-eqz v2, :cond_12d
+    if-eqz v2, :cond_4
 
     .line 175
     .line 176
@@ -547,11 +547,11 @@
     move-result-object p1
 
     .line 206
-    goto/16 :goto_15f
+    goto/16 :goto_4
 
     .line 207
     .line 208
-    :sswitch_cf
+    :sswitch_5
     const-string p1, "stat"
 
     .line 209
@@ -564,7 +564,7 @@
     move-result p1
 
     .line 214
-    if-eqz p1, :cond_12d
+    if-eqz p1, :cond_4
 
     .line 215
     .line 216
@@ -572,11 +572,11 @@
 
     .line 217
     .line 218
-    goto/16 :goto_15f
+    goto/16 :goto_4
 
     .line 219
     .line 220
-    :sswitch_db
+    :sswitch_6
     const-string p1, "help"
 
     .line 221
@@ -589,14 +589,14 @@
     move-result p1
 
     .line 226
-    if-eqz p1, :cond_12d
+    if-eqz p1, :cond_4
 
     .line 227
     .line 228
     array-length p1, v2
 
     .line 229
-    if-le p1, v10, :cond_e8
+    if-le p1, v10, :cond_0
 
     .line 230
     .line 231
@@ -604,7 +604,7 @@
 
     .line 232
     .line 233
-    :cond_e8
+    :cond_0
     invoke-static {v8}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
 
     .line 234
@@ -614,11 +614,11 @@
 
     .line 237
     .line 238
-    goto/16 :goto_15f
+    goto/16 :goto_4
 
     .line 239
     .line 240
-    :sswitch_ef
+    :sswitch_7
     const-string p1, "who"
 
     .line 241
@@ -631,7 +631,7 @@
     move-result p1
 
     .line 246
-    if-eqz p1, :cond_12d
+    if-eqz p1, :cond_4
 
     .line 247
     .line 248
@@ -639,10 +639,10 @@
 
     .line 249
     .line 250
-    goto :goto_15f
+    goto :goto_4
 
     .line 251
-    :sswitch_fa
+    :sswitch_8
     const-string p1, "symlink"
 
     .line 252
@@ -655,7 +655,7 @@
     move-result p1
 
     .line 257
-    if-eqz p1, :cond_12d
+    if-eqz p1, :cond_4
 
     .line 258
     .line 259
@@ -670,7 +670,7 @@
     array-length v6, v2
 
     .line 264
-    if-le v6, v4, :cond_114
+    if-le v6, v4, :cond_2
 
     .line 265
     .line 266
@@ -686,26 +686,26 @@
     move-result v2
 
     .line 272
-    if-eqz v2, :cond_112
+    if-eqz v2, :cond_1
 
     .line 273
     .line 274
-    goto :goto_114
+    goto :goto_0
 
     .line 275
-    :cond_112
+    :cond_1
     const/4 v2, 0x0
 
     .line 276
-    goto :goto_115
+    goto :goto_1
 
     .line 277
-    :cond_114
-    :goto_114
+    :cond_2
+    :goto_0
     const/4 v2, 0x1
 
     .line 278
-    :goto_115
+    :goto_1
     iget-object v4, p0, Llibs/nw;->b:Llibs/cn0;
 
     .line 279
@@ -738,14 +738,14 @@
     move-result-object v0
 
     .line 294
-    if-eqz v0, :cond_128
+    if-eqz v0, :cond_3
 
     .line 295
     .line 296
     const/4 v3, 0x1
 
     .line 297
-    :cond_128
+    :cond_3
     invoke-static {v5, p1, v3}, Llibs/uu;->q(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
 
     .line 298
@@ -754,11 +754,11 @@
     move-result-object p1
 
     .line 301
-    goto :goto_15f
+    goto :goto_4
 
     .line 302
-    :cond_12d
-    :goto_12d
+    :cond_4
+    :goto_2
     invoke-virtual {v5, v6}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
     .line 303
@@ -796,21 +796,21 @@
     .line 321
     .line 322
     move-result-object p1
-    :try_end_142
-    .catchall {:try_start_1a .. :try_end_142} :catchall_32
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 323
-    goto :goto_15f
+    goto :goto_4
 
     .line 324
-    :catchall_143
+    :catchall_1
     move-exception p1
 
     .line 325
     move-object v5, v1
 
     .line 326
-    :goto_145
+    :goto_3
     invoke-virtual {p1}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     .line 327
@@ -859,7 +859,7 @@
     move-result-object p1
 
     .line 352
-    :goto_15f
+    :goto_4
     invoke-virtual {p1, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     .line 353
@@ -879,16 +879,16 @@
     nop
 
     .line 361
-    :sswitch_data_168
+    :sswitch_data_0
     .sparse-switch
-        -0x67e64cbf -> :sswitch_fa
-        0x1cbbe -> :sswitch_ef
-        0x30cf41 -> :sswitch_db
-        0x360654 -> :sswitch_cf
-        0x3923ac -> :sswitch_a7
-        0x5a3ee60 -> :sswitch_81
-        0x5a4047d -> :sswitch_5b
-        0x5a40d01 -> :sswitch_35
-        0x3cb239dc -> :sswitch_26
+        -0x67e64cbf -> :sswitch_8
+        0x1cbbe -> :sswitch_7
+        0x30cf41 -> :sswitch_6
+        0x360654 -> :sswitch_5
+        0x3923ac -> :sswitch_4
+        0x5a3ee60 -> :sswitch_3
+        0x5a4047d -> :sswitch_2
+        0x5a40d01 -> :sswitch_1
+        0x3cb239dc -> :sswitch_0
     .end sparse-switch
 .end method

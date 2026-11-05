@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     const/4 v0, 0x7
@@ -27,7 +27,7 @@
 
     .line 3
     .line 4
-    fill-array-data v1, :array_1a
+    fill-array-data v1, :array_0
 
     .line 5
     .line 6
@@ -36,7 +36,7 @@
 
     .line 8
     .line 9
-    fill-array-data v0, :array_2c
+    fill-array-data v0, :array_1
 
     .line 10
     .line 11
@@ -70,7 +70,7 @@
     return-void
 
     .line 27
-    :array_1a
+    :array_0
     .array-data 4
         0x1
         0x2
@@ -85,7 +85,7 @@
     .line 29
     .line 30
     .line 31
-    :array_2c
+    :array_1
     .array-data 4
         0x1
         0x2
@@ -98,7 +98,7 @@
 .end method
 
 .method public constructor <init>(Llibs/j32;Llibs/d90;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -120,7 +120,7 @@
 
 # virtual methods
 .method public final a(Llibs/c90;)V
-    .registers 7
+    .locals 5
 
     .line 1
     new-instance v0, Llibs/c90;
@@ -145,7 +145,7 @@
 
     .line 12
     .line 13
-    if-eqz v1, :cond_58
+    if-eqz v1, :cond_1
 
     .line 14
     .line 15
@@ -230,7 +230,7 @@
     .line 56
     .line 57
     .line 58
-    if-lez v1, :cond_58
+    if-lez v1, :cond_1
 
     .line 59
     .line 60
@@ -241,7 +241,7 @@
     monitor-enter v3
 
     .line 63
-    :try_start_3e
+    :try_start_0
     invoke-virtual {v2}, Llibs/dl;->reset()V
 
     .line 64
@@ -255,7 +255,7 @@
     move-result v2
 
     .line 70
-    if-ne v2, v1, :cond_4e
+    if-ne v2, v1, :cond_0
 
     .line 71
     .line 72
@@ -267,17 +267,17 @@
     monitor-exit v3
 
     .line 76
-    goto :goto_58
+    goto :goto_1
 
     .line 77
-    :catchall_4c
+    :catchall_0
     move-exception p1
 
     .line 78
-    goto :goto_56
+    goto :goto_0
 
     .line 79
-    :cond_4e
+    :cond_0
     new-instance p1, Ljava/io/IOException;
 
     .line 80
@@ -294,17 +294,17 @@
     throw p1
 
     .line 87
-    :goto_56
+    :goto_0
     monitor-exit v3
-    :try_end_57
-    .catchall {:try_start_3e .. :try_end_57} :catchall_4c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 88
     throw p1
 
     .line 89
-    :cond_58
-    :goto_58
+    :cond_1
+    :goto_1
     const/16 v1, 0x30
 
     .line 90
@@ -318,7 +318,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

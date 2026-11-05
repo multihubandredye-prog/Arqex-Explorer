@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Z)V
-    .registers 10
+    .locals 7
 
     .line 1
     const-string v0, "Failed to prepare append via root: "
@@ -111,7 +111,7 @@
     move-result-object v1
 
     .line 48
-    if-eqz p2, :cond_7a
+    if-eqz p2, :cond_1
 
     .line 49
     .line 50
@@ -123,7 +123,7 @@
     move-result v3
 
     .line 54
-    if-eqz v3, :cond_7a
+    if-eqz v3, :cond_1
 
     .line 55
     .line 56
@@ -204,7 +204,7 @@
     move-result-object v3
 
     .line 97
-    :try_start_60
+    :try_start_0
     invoke-virtual {v1, v3}, Llibs/je;->n(Ljava/lang/String;)Z
 
     .line 98
@@ -213,14 +213,14 @@
     move-result v1
 
     .line 101
-    if-eqz v1, :cond_67
+    if-eqz v1, :cond_0
 
     .line 102
     .line 103
-    goto :goto_7a
+    goto :goto_0
 
     .line 104
-    :cond_67
+    :cond_0
     new-instance p2, Ljava/io/IOException;
 
     .line 105
@@ -239,11 +239,11 @@
     .line 112
     .line 113
     throw p2
-    :try_end_71
-    .catch Ljava/lang/Exception; {:try_start_60 .. :try_end_71} :catch_71
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 114
-    :catch_71
+    :catch_0
     move-exception p1
 
     .line 115
@@ -263,8 +263,8 @@
     throw p2
 
     .line 123
-    :cond_7a
-    :goto_7a
+    :cond_1
+    :goto_0
     new-instance p1, Ljava/io/FileOutputStream;
 
     .line 124
@@ -284,7 +284,7 @@
 
 # virtual methods
 .method public final close()V
-    .registers 9
+    .locals 8
 
     .line 1
     const-string v0, "Failed to move file to root destination: "
@@ -295,14 +295,14 @@
 
     .line 4
     .line 5
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_0
 
     .line 6
     .line 7
-    goto :goto_76
+    goto :goto_1
 
     .line 8
-    :cond_7
+    :cond_0
     const/4 v1, 0x1
 
     .line 9
@@ -310,7 +310,7 @@
 
     .line 10
     .line 11
-    :try_start_a
+    :try_start_0
     iget-object v1, p0, Llibs/sp2;->Lambda:Ljava/io/FileOutputStream;
 
     .line 12
@@ -324,26 +324,26 @@
 
     .line 17
     invoke-virtual {v1}, Ljava/io/FileDescriptor;->sync()V
-    :try_end_13
-    .catch Ljava/io/IOException; {:try_start_a .. :try_end_13} :catch_13
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 18
     .line 19
     .line 20
-    :catch_13
-    :try_start_13
+    :catch_0
+    :try_start_1
     iget-object v1, p0, Llibs/sp2;->Lambda:Ljava/io/FileOutputStream;
 
     .line 21
     .line 22
     invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
-    :try_end_18
-    .catch Ljava/io/IOException; {:try_start_13 .. :try_end_18} :catch_18
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 23
     .line 24
     .line 25
-    :catch_18
+    :catch_1
     invoke-static {}, Llibs/je;->t()Llibs/je;
 
     .line 26
@@ -444,7 +444,7 @@
     move-result-object v2
 
     .line 77
-    :try_start_4c
+    :try_start_2
     invoke-virtual {v1, v2}, Llibs/je;->n(Ljava/lang/String;)Z
 
     .line 78
@@ -453,7 +453,7 @@
     move-result v1
 
     .line 81
-    if-nez v1, :cond_76
+    if-nez v1, :cond_2
 
     .line 82
     .line 83
@@ -469,7 +469,7 @@
     move-result v1
 
     .line 89
-    if-eqz v1, :cond_62
+    if-eqz v1, :cond_1
 
     .line 90
     .line 91
@@ -482,18 +482,18 @@
     .line 94
     .line 95
     .line 96
-    goto :goto_62
+    goto :goto_0
 
     .line 97
-    :catch_60
+    :catch_2
     move-exception v0
 
     .line 98
-    goto :goto_77
+    goto :goto_2
 
     .line 99
-    :cond_62
-    :goto_62
+    :cond_1
+    :goto_0
     new-instance v1, Ljava/io/IOException;
 
     .line 100
@@ -530,16 +530,16 @@
     .line 117
     .line 118
     throw v1
-    :try_end_76
-    .catch Ljava/lang/Exception; {:try_start_4c .. :try_end_76} :catch_60
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
 
     .line 119
-    :cond_76
-    :goto_76
+    :cond_2
+    :goto_1
     return-void
 
     .line 120
-    :goto_77
+    :goto_2
     iget-object v1, p0, Llibs/sp2;->Z:Ljava/io/File;
 
     .line 121
@@ -552,7 +552,7 @@
     move-result v1
 
     .line 126
-    if-eqz v1, :cond_84
+    if-eqz v1, :cond_3
 
     .line 127
     .line 128
@@ -565,7 +565,7 @@
     .line 131
     .line 132
     .line 133
-    :cond_84
+    :cond_3
     new-instance v1, Ljava/io/IOException;
 
     .line 134
@@ -583,7 +583,7 @@
 .end method
 
 .method public final flush()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/sp2;->Lambda:Ljava/io/FileOutputStream;
@@ -599,7 +599,7 @@
 .end method
 
 .method public final write(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/sp2;->Lambda:Ljava/io/FileOutputStream;
@@ -615,7 +615,7 @@
 .end method
 
 .method public final write([B)V
-    .registers 3
+    .locals 1
 
     .line 7
     iget-object v0, p0, Llibs/sp2;->Lambda:Ljava/io/FileOutputStream;
@@ -626,7 +626,7 @@
 .end method
 
 .method public final write([BII)V
-    .registers 5
+    .locals 1
 
     .line 8
     iget-object v0, p0, Llibs/sp2;->Lambda:Ljava/io/FileOutputStream;

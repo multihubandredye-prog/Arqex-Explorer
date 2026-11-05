@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/widgets/MiSliderLayout;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final onGlobalFocusChanged(Landroid/view/View;Landroid/view/View;)V
-    .registers 3
+    .locals 0
 
     .line 1
     sget p1, Lcom/mixplorer/widgets/MiSliderLayout;->Two:I
@@ -45,7 +45,7 @@
 
     .line 6
     .line 7
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
     .line 8
     .line 9
@@ -53,7 +53,7 @@
 
     .line 10
     .line 11
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
     .line 12
     .line 13
@@ -62,6 +62,6 @@
     .line 14
     .line 15
     .line 16
-    :cond_f
+    :cond_0
     return-void
 .end method

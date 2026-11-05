@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public final a(Ljavax/net/ssl/SSLSocket;)Llibs/ky;
-    .registers 14
+    .locals 12
 
     .line 1
     iget v0, p0, Llibs/ly;->b:I
@@ -59,11 +59,11 @@
     move-result v2
 
     .line 9
-    :goto_8
+    :goto_0
     const/4 v3, 0x1
 
     .line 10
-    if-ge v0, v2, :cond_1e
+    if-ge v0, v2, :cond_1
 
     .line 11
     .line 12
@@ -87,7 +87,7 @@
     move-result v5
 
     .line 22
-    if-eqz v5, :cond_1b
+    if-eqz v5, :cond_0
 
     .line 23
     .line 24
@@ -98,23 +98,23 @@
 
     .line 26
     .line 27
-    goto :goto_1f
+    goto :goto_1
 
     .line 28
-    :cond_1b
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
     .line 29
     .line 30
-    goto :goto_8
+    goto :goto_0
 
     .line 31
-    :cond_1e
+    :cond_1
     const/4 v4, 0x0
 
     .line 32
-    :goto_1f
-    if-eqz v4, :cond_b7
+    :goto_1
+    if-eqz v4, :cond_b
 
     .line 33
     .line 34
@@ -122,7 +122,7 @@
 
     .line 35
     .line 36
-    :goto_23
+    :goto_2
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     .line 37
@@ -134,7 +134,7 @@
     const/4 v5, 0x0
 
     .line 41
-    if-ge v0, v2, :cond_3a
+    if-ge v0, v2, :cond_3
 
     .line 42
     .line 43
@@ -158,26 +158,26 @@
     move-result v2
 
     .line 53
-    if-eqz v2, :cond_37
+    if-eqz v2, :cond_2
 
     .line 54
     .line 55
-    goto :goto_3b
+    goto :goto_3
 
     .line 56
-    :cond_37
+    :cond_2
     add-int/lit8 v0, v0, 0x1
 
     .line 57
     .line 58
-    goto :goto_23
+    goto :goto_2
 
     .line 59
-    :cond_3a
+    :cond_3
     const/4 v3, 0x0
 
     .line 60
-    :goto_3b
+    :goto_3
     iput-boolean v3, p0, Llibs/ly;->c:Z
 
     .line 61
@@ -203,7 +203,7 @@
 
     .line 72
     .line 73
-    if-eqz v2, :cond_55
+    if-eqz v2, :cond_4
 
     .line 74
     .line 75
@@ -227,10 +227,10 @@
     move-result-object v2
 
     .line 85
-    goto :goto_59
+    goto :goto_4
 
     .line 86
-    :cond_55
+    :cond_4
     invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->getEnabledCipherSuites()[Ljava/lang/String;
 
     .line 87
@@ -239,8 +239,8 @@
     move-result-object v2
 
     .line 90
-    :goto_59
-    if-eqz v0, :cond_66
+    :goto_4
+    if-eqz v0, :cond_5
 
     .line 91
     .line 92
@@ -264,10 +264,10 @@
     move-result-object v0
 
     .line 102
-    goto :goto_6a
+    goto :goto_5
 
     .line 103
-    :cond_66
+    :cond_5
     invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->getEnabledProtocols()[Ljava/lang/String;
 
     .line 104
@@ -276,7 +276,7 @@
     move-result-object v0
 
     .line 107
-    :goto_6a
+    :goto_5
     invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->getSupportedCipherSuites()[Ljava/lang/String;
 
     .line 108
@@ -299,11 +299,11 @@
     const/4 v8, 0x0
 
     .line 117
-    :goto_74
+    :goto_6
     const/4 v9, -0x1
 
     .line 118
-    if-ge v8, v7, :cond_85
+    if-ge v8, v7, :cond_7
 
     .line 119
     .line 120
@@ -323,31 +323,31 @@
     move-result v10
 
     .line 128
-    if-nez v10, :cond_82
+    if-nez v10, :cond_6
 
     .line 129
     .line 130
-    goto :goto_86
+    goto :goto_7
 
     .line 131
-    :cond_82
+    :cond_6
     add-int/lit8 v8, v8, 0x1
 
     .line 132
     .line 133
-    goto :goto_74
+    goto :goto_6
 
     .line 134
-    :cond_85
+    :cond_7
     const/4 v8, -0x1
 
     .line 135
-    :goto_86
-    if-eqz v1, :cond_98
+    :goto_7
+    if-eqz v1, :cond_8
 
     .line 136
     .line 137
-    if-eq v8, v9, :cond_98
+    if-eq v8, v9, :cond_8
 
     .line 138
     .line 139
@@ -381,7 +381,7 @@
     move-object v2, v6
 
     .line 153
-    :cond_98
+    :cond_8
     new-instance v1, Llibs/jy;
 
     .line 154
@@ -414,7 +414,7 @@
 
     .line 170
     .line 171
-    if-eqz v1, :cond_af
+    if-eqz v1, :cond_9
 
     .line 172
     .line 173
@@ -423,12 +423,12 @@
     .line 174
     .line 175
     .line 176
-    :cond_af
+    :cond_9
     iget-object v0, v0, Llibs/ky;->c:[Ljava/lang/String;
 
     .line 177
     .line 178
-    if-eqz v0, :cond_b6
+    if-eqz v0, :cond_a
 
     .line 179
     .line 180
@@ -437,11 +437,11 @@
     .line 181
     .line 182
     .line 183
-    :cond_b6
+    :cond_a
     return-object v4
 
     .line 184
-    :cond_b7
+    :cond_b
     new-instance v0, Ljava/net/UnknownServiceException;
 
     .line 185
@@ -525,13 +525,13 @@
     .line 227
     .line 228
     .line 229
-    goto :goto_e6
+    goto :goto_9
 
     .line 230
-    :goto_e5
+    :goto_8
     throw v0
 
     .line 231
-    :goto_e6
-    goto :goto_e5
+    :goto_9
+    goto :goto_8
 .end method

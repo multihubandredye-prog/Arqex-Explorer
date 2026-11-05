@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/dx1;
@@ -31,7 +31,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/ex1;-><init>()V
@@ -43,7 +43,7 @@
 .end method
 
 .method public static i()V
-    .registers 2
+    .locals 2
 
     .line 1
     sget-object v0, Lcom/mixplorer/services/LocalServerService;->Lambda:Llibs/dx1;
@@ -58,7 +58,7 @@
     move-result v1
 
     .line 7
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
@@ -71,14 +71,14 @@
     .line 12
     .line 13
     .line 14
-    :cond_d
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final e(Landroid/content/Intent;)I
-    .registers 22
+    .locals 20
 
     .line 1
     move-object/from16 v1, p0
@@ -105,7 +105,7 @@
     move-result v0
 
     .line 13
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 14
     .line 15
@@ -120,7 +120,7 @@
     return v0
 
     .line 20
-    :cond_13
+    :cond_0
     invoke-virtual/range {p1 .. p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     .line 21
@@ -148,11 +148,11 @@
 
     .line 32
     .line 33
-    if-eqz v0, :cond_47
+    if-eqz v0, :cond_1
 
     .line 34
     .line 35
-    :try_start_22
+    :try_start_0
     new-instance v0, Landroid/content/Intent;
 
     .line 36
@@ -215,8 +215,8 @@
     .line 67
     .line 68
     invoke-static {v2, v0, v3}, Llibs/sw1;->Node(Landroid/content/Context;Landroid/content/Intent;Landroid/os/Bundle;)V
-    :try_end_46
-    .catchall {:try_start_22 .. :try_end_46} :catchall_fb
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 69
     .line 70
@@ -224,12 +224,12 @@
     return v16
 
     .line 72
-    :cond_47
+    :cond_1
     sget-boolean v0, Lcom/mixplorer/services/LocalServerService;->Z:Z
 
     .line 73
     .line 74
-    if-nez v0, :cond_fb
+    if-nez v0, :cond_5
 
     .line 75
     .line 76
@@ -256,7 +256,7 @@
     move-result-object v6
 
     .line 87
-    :try_start_56
+    :try_start_1
     sget v4, Llibs/bi2;->streaming:I
 
     .line 88
@@ -275,8 +275,8 @@
     .line 95
     .line 96
     move-result v4
-    :try_end_60
-    .catchall {:try_start_56 .. :try_end_60} :catchall_80
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 97
     const/4 v7, 0x0
@@ -290,11 +290,11 @@
 
     .line 101
     .line 102
-    if-eqz v4, :cond_7e
+    if-eqz v4, :cond_2
 
     .line 103
     .line 104
-    :try_start_67
+    :try_start_2
     new-instance v3, Landroid/content/Intent;
 
     .line 105
@@ -338,21 +338,21 @@
     move-result-object v3
 
     .line 127
-    :cond_7e
+    :cond_2
     move-object v10, v3
 
     .line 128
-    goto :goto_82
+    goto :goto_0
 
     .line 129
-    :catchall_80
+    :catchall_0
     move-exception v0
 
     .line 130
-    goto :goto_ed
+    goto :goto_3
 
     .line 131
-    :goto_82
+    :goto_0
     sget v2, Llibs/vh2;->notification_mix:I
 
     .line 132
@@ -425,7 +425,7 @@
     move-result v3
 
     .line 161
-    if-eqz v3, :cond_dc
+    if-eqz v3, :cond_3
 
     .line 162
     .line 163
@@ -540,14 +540,14 @@
     .line 218
     .line 219
     .line 220
-    goto :goto_dd
+    goto :goto_1
 
     .line 221
-    :cond_dc
+    :cond_3
     const/4 v9, 0x0
 
     .line 222
-    :goto_dd
+    :goto_1
     invoke-static {}, Llibs/t43;->Call()Z
 
     .line 223
@@ -556,37 +556,37 @@
     move-result v0
 
     .line 226
-    if-eqz v0, :cond_e5
+    if-eqz v0, :cond_4
 
     .line 227
     .line 228
     const/4 v7, 0x2
 
     .line 229
-    goto :goto_e6
+    goto :goto_2
 
     .line 230
-    :cond_e5
+    :cond_4
     const/4 v7, 0x0
 
     .line 231
-    :goto_e6
+    :goto_2
     const v0, 0x20577
 
     .line 232
     .line 233
     .line 234
     invoke-static {v1, v0, v2, v7}, Llibs/uu1;->d(Landroid/app/Service;ILjava/lang/Object;I)V
-    :try_end_ec
-    .catchall {:try_start_67 .. :try_end_ec} :catchall_80
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 235
     .line 236
     .line 237
-    goto :goto_f6
+    goto :goto_4
 
     .line 238
-    :goto_ed
+    :goto_3
     const-string v2, "SERVERS"
 
     .line 239
@@ -604,7 +604,7 @@
     .line 245
     .line 246
     .line 247
-    :goto_f6
+    :goto_4
     const-string v0, "LocalServerService"
 
     .line 248
@@ -614,20 +614,20 @@
     .line 250
     .line 251
     .line 252
-    :catchall_fb
-    :cond_fb
+    :catchall_1
+    :cond_5
     return v16
 .end method
 
 .method public final g()V
-    .registers 3
+    .locals 2
 
     .line 1
     sget-boolean v0, Lcom/mixplorer/services/LocalServerService;->Z:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -647,7 +647,7 @@
     return-void
 
     .line 13
-    :cond_c
+    :cond_0
     invoke-super {p0}, Llibs/ex1;->g()V
 
     .line 14
@@ -657,7 +657,7 @@
 .end method
 
 .method public final onCreate()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -676,7 +676,7 @@
 .end method
 
 .method public final onDestroy()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Llibs/ex1;->onDestroy()V

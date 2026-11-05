@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/providers/DocProvider;Llibs/tc0;Ljava/lang/String;Ljava/util/concurrent/atomic/AtomicInteger;)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final c([Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     sget-object p1, Lcom/mixplorer/providers/DocProvider;->Lambda:Ljava/lang/String;

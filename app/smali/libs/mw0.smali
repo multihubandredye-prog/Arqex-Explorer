@@ -22,7 +22,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-wide/16 v0, 0x0
@@ -45,7 +45,7 @@
 .end method
 
 .method public constructor <init>(Llibs/la0;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -96,7 +96,7 @@
 
 # virtual methods
 .method public final a()Ljava/math/BigInteger;
-    .registers 9
+    .locals 8
 
     .line 1
     iget-object v0, p0, Llibs/mw0;->d:Ljava/math/BigInteger;
@@ -123,14 +123,14 @@
 
     .line 12
     .line 13
-    :goto_c
+    :goto_0
     const/4 v2, 0x0
 
     .line 14
     const/4 v3, 0x0
 
     .line 15
-    :goto_e
+    :goto_1
     iget-object v4, p0, Llibs/mw0;->c:[B
 
     .line 16
@@ -139,7 +139,7 @@
 
     .line 18
     .line 19
-    if-ge v3, v0, :cond_27
+    if-ge v3, v0, :cond_0
 
     .line 20
     .line 21
@@ -179,10 +179,10 @@
     add-int/2addr v3, v5
 
     .line 39
-    goto :goto_e
+    goto :goto_1
 
     .line 40
-    :cond_27
+    :cond_0
     invoke-virtual {p0, v1}, Llibs/mw0;->e([B)Ljava/math/BigInteger;
 
     .line 41
@@ -203,7 +203,7 @@
     move-result v6
 
     .line 50
-    if-lez v6, :cond_3c
+    if-lez v6, :cond_1
 
     .line 51
     .line 52
@@ -219,14 +219,14 @@
     move-result v6
 
     .line 58
-    if-gez v6, :cond_3c
+    if-gez v6, :cond_1
 
     .line 59
     .line 60
     return-object v3
 
     .line 61
-    :cond_3c
+    :cond_1
     array-length v3, v4
 
     .line 62
@@ -279,11 +279,11 @@
     .line 87
     .line 88
     .line 89
-    goto :goto_c
+    goto :goto_0
 .end method
 
 .method public final b()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -293,7 +293,7 @@
 .end method
 
 .method public final c(Ljava/math/BigInteger;Ljava/security/SecureRandom;)V
-    .registers 3
+    .locals 0
 
     .line 1
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -313,7 +313,7 @@
 .end method
 
 .method public final d(Ljava/math/BigInteger;Ljava/math/BigInteger;[B)V
-    .registers 12
+    .locals 8
 
     .line 1
     iput-object p1, p0, Llibs/mw0;->d:Ljava/math/BigInteger;
@@ -423,7 +423,7 @@
     move-result v7
 
     .line 54
-    if-ltz v7, :cond_3b
+    if-ltz v7, :cond_0
 
     .line 55
     .line 56
@@ -435,7 +435,7 @@
     move-result-object p3
 
     .line 60
-    :cond_3b
+    :cond_0
     invoke-static {p3}, Llibs/ef;->b(Ljava/math/BigInteger;)[B
 
     .line 61
@@ -600,7 +600,7 @@
 .end method
 
 .method public final e([B)Ljava/math/BigInteger;
-    .registers 5
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/math/BigInteger;
@@ -634,7 +634,7 @@
     move-result v2
 
     .line 16
-    if-le v1, v2, :cond_20
+    if-le v1, v2, :cond_0
 
     .line 17
     .line 18
@@ -671,6 +671,6 @@
     return-object p1
 
     .line 33
-    :cond_20
+    :cond_0
     return-object v0
 .end method

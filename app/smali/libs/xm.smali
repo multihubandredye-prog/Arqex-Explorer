@@ -29,7 +29,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 7
+    .locals 7
 
     .line 1
     new-instance v0, Llibs/xm;
@@ -534,7 +534,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 16
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -550,7 +550,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 14
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -564,7 +564,7 @@
 .end method
 
 .method public constructor <init>(Llibs/xm;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -593,7 +593,7 @@
 .end method
 
 .method public static varargs c(Ljava/util/ArrayList;[Ljava/lang/String;)Ljava/lang/String;
-    .registers 7
+    .locals 5
 
     .line 1
     array-length v0, p1
@@ -605,8 +605,8 @@
     const/4 v2, 0x0
 
     .line 4
-    :goto_3
-    if-ge v2, v0, :cond_1c
+    :goto_0
+    if-ge v2, v0, :cond_2
 
     .line 5
     .line 6
@@ -614,7 +614,7 @@
 
     .line 7
     .line 8
-    if-nez v1, :cond_10
+    if-nez v1, :cond_0
 
     .line 9
     .line 10
@@ -626,14 +626,14 @@
     move-result v4
 
     .line 14
-    if-eqz v4, :cond_10
+    if-eqz v4, :cond_0
 
     .line 15
     .line 16
     move-object v1, v3
 
     .line 17
-    :cond_10
+    :cond_0
     invoke-virtual {p0, v3}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
     .line 18
@@ -642,7 +642,7 @@
     move-result v3
 
     .line 21
-    if-eqz v3, :cond_19
+    if-eqz v3, :cond_1
 
     .line 22
     .line 23
@@ -653,20 +653,20 @@
     return-object p0
 
     .line 26
-    :cond_19
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
     .line 27
     .line 28
-    goto :goto_3
+    goto :goto_0
 
     .line 29
-    :cond_1c
+    :cond_2
     return-object v1
 .end method
 
 .method public static d(Ljava/util/ArrayList;Ljava/lang/String;Ljava/lang/String;)I
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
@@ -677,7 +677,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_1
 
     .line 6
     .line 7
@@ -689,7 +689,7 @@
     move-result p1
 
     .line 11
-    if-nez p1, :cond_21
+    if-nez p1, :cond_2
 
     .line 12
     .line 13
@@ -701,21 +701,21 @@
     move-result p0
 
     .line 17
-    if-eqz p0, :cond_13
+    if-eqz p0, :cond_0
 
     .line 18
     .line 19
-    goto :goto_21
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     const/4 p0, 0x1
 
     .line 21
     return p0
 
     .line 22
-    :cond_15
+    :cond_1
     invoke-virtual {p0, p2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     .line 23
@@ -724,7 +724,7 @@
     move-result p1
 
     .line 26
-    if-eqz p1, :cond_25
+    if-eqz p1, :cond_4
 
     .line 27
     .line 28
@@ -736,26 +736,26 @@
     move-result p0
 
     .line 32
-    if-eqz p0, :cond_23
+    if-eqz p0, :cond_3
 
     .line 33
     .line 34
-    :cond_21
-    :goto_21
+    :cond_2
+    :goto_0
     const/4 p0, 0x3
 
     .line 35
     return p0
 
     .line 36
-    :cond_23
+    :cond_3
     const/4 p0, 0x2
 
     .line 37
     return p0
 
     .line 38
-    :cond_25
+    :cond_4
     const/4 p0, 0x0
 
     .line 39
@@ -763,7 +763,7 @@
 .end method
 
 .method public static e()V
-    .registers 4
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
@@ -781,14 +781,14 @@
 
     .line 7
     .line 8
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_0
 
     .line 9
     .line 10
     return-void
 
     .line 11
-    :cond_a
+    :cond_0
     new-instance v1, Llibs/xm;
 
     .line 12
@@ -855,7 +855,7 @@
 .end method
 
 .method public static f(Ljava/lang/String;)Ljava/util/ArrayList;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/af;
@@ -880,7 +880,7 @@
     move-result p0
 
     .line 13
-    if-eqz p0, :cond_10
+    if-eqz p0, :cond_0
 
     .line 14
     .line 15
@@ -890,7 +890,7 @@
     return-object p0
 
     .line 17
-    :cond_10
+    :cond_0
     new-instance p0, Ljava/util/ArrayList;
 
     .line 18
@@ -900,7 +900,7 @@
     .line 20
     .line 21
     .line 22
-    :goto_15
+    :goto_0
     invoke-virtual {v0}, Llibs/af;->q()Z
 
     .line 23
@@ -909,7 +909,7 @@
     move-result v1
 
     .line 26
-    if-nez v1, :cond_26
+    if-nez v1, :cond_1
 
     .line 27
     .line 28
@@ -931,15 +931,15 @@
     .line 36
     .line 37
     .line 38
-    goto :goto_15
+    goto :goto_0
 
     .line 39
-    :cond_26
+    :cond_1
     return-object p0
 .end method
 
 .method public static g(Ljava/util/ArrayList;)Llibs/xm;
-    .registers 19
+    .locals 18
 
     .line 1
     move-object/from16 v0, p0
@@ -1052,7 +1052,7 @@
 
     .line 52
     .line 53
-    if-eqz v5, :cond_aa
+    if-eqz v5, :cond_7
 
     .line 54
     .line 55
@@ -1068,19 +1068,19 @@
 
     .line 60
     .line 61
-    sparse-switch v16, :sswitch_data_ec
+    sparse-switch v16, :sswitch_data_0
 
     .line 62
     .line 63
     .line 64
-    :goto_3f
+    :goto_0
     const/4 v4, -0x1
 
     .line 65
-    goto :goto_81
+    goto :goto_1
 
     .line 66
-    :sswitch_41
+    :sswitch_0
     invoke-virtual {v5, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     .line 67
@@ -1089,21 +1089,21 @@
     move-result v4
 
     .line 70
-    if-nez v4, :cond_48
+    if-nez v4, :cond_0
 
     .line 71
     .line 72
-    goto :goto_3f
+    goto :goto_0
 
     .line 73
-    :cond_48
+    :cond_0
     const/4 v4, 0x6
 
     .line 74
-    goto :goto_81
+    goto :goto_1
 
     .line 75
-    :sswitch_4a
+    :sswitch_1
     invoke-virtual {v5, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     .line 76
@@ -1112,21 +1112,21 @@
     move-result v4
 
     .line 79
-    if-nez v4, :cond_51
+    if-nez v4, :cond_1
 
     .line 80
     .line 81
-    goto :goto_3f
+    goto :goto_0
 
     .line 82
-    :cond_51
+    :cond_1
     const/4 v4, 0x5
 
     .line 83
-    goto :goto_81
+    goto :goto_1
 
     .line 84
-    :sswitch_53
+    :sswitch_2
     invoke-virtual {v5, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     .line 85
@@ -1135,21 +1135,21 @@
     move-result v4
 
     .line 88
-    if-nez v4, :cond_5a
+    if-nez v4, :cond_2
 
     .line 89
     .line 90
-    goto :goto_3f
+    goto :goto_0
 
     .line 91
-    :cond_5a
+    :cond_2
     const/4 v4, 0x4
 
     .line 92
-    goto :goto_81
+    goto :goto_1
 
     .line 93
-    :sswitch_5c
+    :sswitch_3
     invoke-virtual {v5, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     .line 94
@@ -1158,21 +1158,21 @@
     move-result v4
 
     .line 97
-    if-nez v4, :cond_63
+    if-nez v4, :cond_3
 
     .line 98
     .line 99
-    goto :goto_3f
+    goto :goto_0
 
     .line 100
-    :cond_63
+    :cond_3
     const/4 v4, 0x3
 
     .line 101
-    goto :goto_81
+    goto :goto_1
 
     .line 102
-    :sswitch_65
+    :sswitch_4
     const-string v4, "ERR"
 
     .line 103
@@ -1185,21 +1185,21 @@
     move-result v4
 
     .line 108
-    if-nez v4, :cond_6e
+    if-nez v4, :cond_4
 
     .line 109
     .line 110
-    goto :goto_3f
+    goto :goto_0
 
     .line 111
-    :cond_6e
+    :cond_4
     const/4 v4, 0x2
 
     .line 112
-    goto :goto_81
+    goto :goto_1
 
     .line 113
-    :sswitch_70
+    :sswitch_5
     invoke-virtual {v5, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     .line 114
@@ -1208,21 +1208,21 @@
     move-result v4
 
     .line 117
-    if-nez v4, :cond_77
+    if-nez v4, :cond_5
 
     .line 118
     .line 119
-    goto :goto_3f
+    goto :goto_0
 
     .line 120
-    :cond_77
+    :cond_5
     const/4 v4, 0x1
 
     .line 121
-    goto :goto_81
+    goto :goto_1
 
     .line 122
-    :sswitch_79
+    :sswitch_6
     invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     .line 123
@@ -1231,27 +1231,27 @@
     move-result v4
 
     .line 126
-    if-nez v4, :cond_80
+    if-nez v4, :cond_6
 
     .line 127
     .line 128
-    goto :goto_3f
+    goto :goto_0
 
     .line 129
-    :cond_80
+    :cond_6
     const/4 v4, 0x0
 
     .line 130
-    :goto_81
-    packed-switch v4, :pswitch_data_10a
+    :goto_1
+    packed-switch v4, :pswitch_data_0
 
     .line 131
     .line 132
     .line 133
-    goto :goto_a8
+    goto :goto_2
 
     .line 134
-    :pswitch_85
+    :pswitch_0
     const-string v4, "jp90"
 
     .line 135
@@ -1261,10 +1261,10 @@
     .line 137
     .line 138
     .line 139
-    goto :goto_a8
+    goto :goto_2
 
     .line 140
-    :pswitch_8b
+    :pswitch_1
     const-string v4, "jp83"
 
     .line 141
@@ -1274,10 +1274,10 @@
     .line 143
     .line 144
     .line 145
-    goto :goto_a8
+    goto :goto_2
 
     .line 146
-    :pswitch_91
+    :pswitch_2
     const-string v4, "jp78"
 
     .line 147
@@ -1287,10 +1287,10 @@
     .line 149
     .line 150
     .line 151
-    goto :goto_a8
+    goto :goto_2
 
     .line 152
-    :pswitch_97
+    :pswitch_3
     const-string v4, "jp04"
 
     .line 153
@@ -1300,10 +1300,10 @@
     .line 155
     .line 156
     .line 157
-    goto :goto_a8
+    goto :goto_2
 
     .line 158
-    :pswitch_9d
+    :pswitch_4
     const-string v4, "smpl"
 
     .line 159
@@ -1313,10 +1313,10 @@
     .line 161
     .line 162
     .line 163
-    goto :goto_a8
+    goto :goto_2
 
     .line 164
-    :pswitch_a3
+    :pswitch_5
     const-string v4, "trad"
 
     .line 165
@@ -1326,18 +1326,18 @@
     .line 167
     .line 168
     .line 169
-    :goto_a8
+    :goto_2
     const/4 v4, 0x1
 
     .line 170
-    goto :goto_ab
+    goto :goto_3
 
     .line 171
-    :cond_aa
+    :cond_7
     const/4 v4, 0x0
 
     .line 172
-    :goto_ab
+    :goto_3
     const-string v5, "full-width"
 
     .line 173
@@ -1354,22 +1354,22 @@
     move-result v5
 
     .line 180
-    if-eq v5, v1, :cond_c1
+    if-eq v5, v1, :cond_9
 
     .line 181
     .line 182
-    if-eq v5, v9, :cond_ba
+    if-eq v5, v9, :cond_8
 
     .line 183
     .line 184
-    if-eq v5, v11, :cond_e0
+    if-eq v5, v11, :cond_c
 
     .line 185
     .line 186
-    goto :goto_c7
+    goto :goto_5
 
     .line 187
-    :cond_ba
+    :cond_8
     const-string v4, "pwid"
 
     .line 188
@@ -1379,14 +1379,14 @@
     .line 190
     .line 191
     .line 192
-    :goto_bf
+    :goto_4
     const/4 v4, 0x1
 
     .line 193
-    goto :goto_c7
+    goto :goto_5
 
     .line 194
-    :cond_c1
+    :cond_9
     const-string v4, "fwid"
 
     .line 195
@@ -1396,10 +1396,10 @@
     .line 197
     .line 198
     .line 199
-    goto :goto_bf
+    goto :goto_4
 
     .line 200
-    :goto_c7
+    :goto_5
     const-string v5, "ruby"
 
     .line 201
@@ -1412,7 +1412,7 @@
     move-result v7
 
     .line 206
-    if-eqz v7, :cond_d9
+    if-eqz v7, :cond_b
 
     .line 207
     .line 208
@@ -1424,44 +1424,44 @@
     move-result v0
 
     .line 212
-    if-eqz v0, :cond_d7
+    if-eqz v0, :cond_a
 
     .line 213
     .line 214
     const/4 v0, 0x2
 
     .line 215
-    goto :goto_da
+    goto :goto_6
 
     .line 216
-    :cond_d7
+    :cond_a
     const/4 v0, 0x1
 
     .line 217
-    goto :goto_da
+    goto :goto_6
 
     .line 218
-    :cond_d9
+    :cond_b
     const/4 v0, 0x0
 
     .line 219
-    :goto_da
-    if-eq v0, v1, :cond_e3
+    :goto_6
+    if-eq v0, v1, :cond_d
 
     .line 220
     .line 221
-    if-eq v0, v9, :cond_e0
+    if-eq v0, v9, :cond_c
 
     .line 222
     .line 223
     move v1, v4
 
     .line 224
-    goto :goto_e6
+    goto :goto_7
 
     .line 225
-    :cond_e0
-    :pswitch_e0
+    :cond_c
+    :pswitch_6
     sget-object v0, Llibs/xm;->c:Llibs/xm;
 
     .line 226
@@ -1469,21 +1469,21 @@
     return-object v0
 
     .line 228
-    :cond_e3
+    :cond_d
     invoke-virtual {v6, v5, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 229
     .line 230
     .line 231
-    :goto_e6
-    if-eqz v1, :cond_e9
+    :goto_7
+    if-eqz v1, :cond_e
 
     .line 232
     .line 233
     return-object v3
 
     .line 234
-    :cond_e9
+    :cond_e
     const/4 v0, 0x0
 
     .line 235
@@ -1493,15 +1493,15 @@
     nop
 
     .line 237
-    :sswitch_data_ec
+    :sswitch_data_0
     .sparse-switch
-        -0x7f6ad259 -> :sswitch_79
-        -0x5513a4a8 -> :sswitch_70
-        0x10d45 -> :sswitch_65
-        0x6072c18 -> :sswitch_5c
-        0x6072cf5 -> :sswitch_53
-        0x6072d0f -> :sswitch_4a
-        0x6072d2b -> :sswitch_41
+        -0x7f6ad259 -> :sswitch_6
+        -0x5513a4a8 -> :sswitch_5
+        0x10d45 -> :sswitch_4
+        0x6072c18 -> :sswitch_3
+        0x6072cf5 -> :sswitch_2
+        0x6072d0f -> :sswitch_1
+        0x6072d2b -> :sswitch_0
     .end sparse-switch
 
     .line 238
@@ -1534,20 +1534,20 @@
     .line 265
     .line 266
     .line 267
-    :pswitch_data_10a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a3
-        :pswitch_9d
-        :pswitch_e0
-        :pswitch_97
-        :pswitch_91
-        :pswitch_8b
-        :pswitch_85
+        :pswitch_5
+        :pswitch_4
+        :pswitch_6
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static h(Ljava/util/ArrayList;)Llibs/xm;
-    .registers 11
+    .locals 10
 
     .line 1
     invoke-static {}, Llibs/xm;->e()V
@@ -1620,44 +1620,44 @@
     const/4 v9, 0x2
 
     .line 35
-    if-eq v3, v4, :cond_2e
+    if-eq v3, v4, :cond_1
 
     .line 36
     .line 37
-    if-eq v3, v9, :cond_29
+    if-eq v3, v9, :cond_0
 
     .line 38
     .line 39
-    if-eq v3, v8, :cond_7a
+    if-eq v3, v8, :cond_6
 
     .line 40
     .line 41
-    goto :goto_32
+    goto :goto_1
 
     .line 42
-    :cond_29
+    :cond_0
     invoke-virtual {v0, v7, v1, v6}, Llibs/xm;->a(Ljava/lang/String;ILjava/lang/String;)V
 
     .line 43
     .line 44
     .line 45
-    :goto_2c
+    :goto_0
     const/4 v1, 0x1
 
     .line 46
-    goto :goto_32
+    goto :goto_1
 
     .line 47
-    :cond_2e
+    :cond_1
     invoke-virtual {v0, v7, v4, v6}, Llibs/xm;->a(Ljava/lang/String;ILjava/lang/String;)V
 
     .line 48
     .line 49
     .line 50
-    goto :goto_2c
+    goto :goto_0
 
     .line 51
-    :goto_32
+    :goto_1
     const-string v3, "discretionary-ligatures"
 
     .line 52
@@ -1682,44 +1682,44 @@
 
     .line 62
     .line 63
-    if-eq v3, v4, :cond_4a
+    if-eq v3, v4, :cond_3
 
     .line 64
     .line 65
-    if-eq v3, v9, :cond_45
+    if-eq v3, v9, :cond_2
 
     .line 66
     .line 67
-    if-eq v3, v8, :cond_7a
+    if-eq v3, v8, :cond_6
 
     .line 68
     .line 69
-    goto :goto_4e
+    goto :goto_3
 
     .line 70
-    :cond_45
+    :cond_2
     invoke-virtual {v7, v6, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 71
     .line 72
     .line 73
-    :goto_48
+    :goto_2
     const/4 v1, 0x1
 
     .line 74
-    goto :goto_4e
+    goto :goto_3
 
     .line 75
-    :cond_4a
+    :cond_3
     invoke-virtual {v7, v6, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 76
     .line 77
     .line 78
-    goto :goto_48
+    goto :goto_2
 
     .line 79
-    :goto_4e
+    :goto_3
     const-string v3, "historical-ligatures"
 
     .line 80
@@ -1740,44 +1740,44 @@
 
     .line 88
     .line 89
-    if-eq v3, v4, :cond_64
+    if-eq v3, v4, :cond_5
 
     .line 90
     .line 91
-    if-eq v3, v9, :cond_5f
+    if-eq v3, v9, :cond_4
 
     .line 92
     .line 93
-    if-eq v3, v8, :cond_7a
+    if-eq v3, v8, :cond_6
 
     .line 94
     .line 95
-    goto :goto_68
+    goto :goto_5
 
     .line 96
-    :cond_5f
+    :cond_4
     invoke-virtual {v7, v6, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 97
     .line 98
     .line 99
-    :goto_62
+    :goto_4
     const/4 v1, 0x1
 
     .line 100
-    goto :goto_68
+    goto :goto_5
 
     .line 101
-    :cond_64
+    :cond_5
     invoke-virtual {v7, v6, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 102
     .line 103
     .line 104
-    goto :goto_62
+    goto :goto_4
 
     .line 105
-    :goto_68
+    :goto_5
     const-string v3, "contextual"
 
     .line 106
@@ -1798,25 +1798,25 @@
 
     .line 114
     .line 115
-    if-eq p0, v4, :cond_81
+    if-eq p0, v4, :cond_8
 
     .line 116
     .line 117
-    if-eq p0, v9, :cond_7d
+    if-eq p0, v9, :cond_7
 
     .line 118
     .line 119
-    if-eq p0, v8, :cond_7a
+    if-eq p0, v8, :cond_6
 
     .line 120
     .line 121
     move v4, v1
 
     .line 122
-    goto :goto_84
+    goto :goto_6
 
     .line 123
-    :cond_7a
+    :cond_6
     sget-object p0, Llibs/xm;->c:Llibs/xm;
 
     .line 124
@@ -1824,30 +1824,30 @@
     return-object p0
 
     .line 126
-    :cond_7d
+    :cond_7
     invoke-virtual {v7, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 127
     .line 128
     .line 129
-    goto :goto_84
+    goto :goto_6
 
     .line 130
-    :cond_81
+    :cond_8
     invoke-virtual {v7, v3, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 131
     .line 132
     .line 133
-    :goto_84
-    if-eqz v4, :cond_87
+    :goto_6
+    if-eqz v4, :cond_9
 
     .line 134
     .line 135
     return-object v0
 
     .line 136
-    :cond_87
+    :cond_9
     const/4 p0, 0x0
 
     .line 137
@@ -1855,7 +1855,7 @@
 .end method
 
 .method public static i(Ljava/util/ArrayList;)Llibs/xm;
-    .registers 11
+    .locals 10
 
     .line 1
     new-instance v0, Llibs/xm;
@@ -1911,25 +1911,25 @@
     const/4 v7, 0x0
 
     .line 26
-    if-eq v1, v2, :cond_28
+    if-eq v1, v2, :cond_1
 
     .line 27
     .line 28
-    if-eq v1, v5, :cond_21
+    if-eq v1, v5, :cond_0
 
     .line 29
     .line 30
-    if-eq v1, v4, :cond_9b
+    if-eq v1, v4, :cond_b
 
     .line 31
     .line 32
     const/4 v1, 0x0
 
     .line 33
-    goto :goto_2e
+    goto :goto_1
 
     .line 34
-    :cond_21
+    :cond_0
     const-string v1, "onum"
 
     .line 35
@@ -1939,14 +1939,14 @@
     .line 37
     .line 38
     .line 39
-    :goto_26
+    :goto_0
     const/4 v1, 0x1
 
     .line 40
-    goto :goto_2e
+    goto :goto_1
 
     .line 41
-    :cond_28
+    :cond_1
     const-string v1, "lnum"
 
     .line 42
@@ -1956,10 +1956,10 @@
     .line 44
     .line 45
     .line 46
-    goto :goto_26
+    goto :goto_0
 
     .line 47
-    :goto_2e
+    :goto_1
     const-string v8, "proportional-nums"
 
     .line 48
@@ -1976,22 +1976,22 @@
     move-result v8
 
     .line 55
-    if-eq v8, v2, :cond_44
+    if-eq v8, v2, :cond_3
 
     .line 56
     .line 57
-    if-eq v8, v5, :cond_3d
+    if-eq v8, v5, :cond_2
 
     .line 58
     .line 59
-    if-eq v8, v4, :cond_9b
+    if-eq v8, v4, :cond_b
 
     .line 60
     .line 61
-    goto :goto_4a
+    goto :goto_3
 
     .line 62
-    :cond_3d
+    :cond_2
     const-string v1, "tnum"
 
     .line 63
@@ -2001,14 +2001,14 @@
     .line 65
     .line 66
     .line 67
-    :goto_42
+    :goto_2
     const/4 v1, 0x1
 
     .line 68
-    goto :goto_4a
+    goto :goto_3
 
     .line 69
-    :cond_44
+    :cond_3
     const-string v1, "pnum"
 
     .line 70
@@ -2018,10 +2018,10 @@
     .line 72
     .line 73
     .line 74
-    goto :goto_42
+    goto :goto_2
 
     .line 75
-    :goto_4a
+    :goto_3
     const-string v8, "diagonal-fractions"
 
     .line 76
@@ -2038,22 +2038,22 @@
     move-result v8
 
     .line 83
-    if-eq v8, v2, :cond_60
+    if-eq v8, v2, :cond_5
 
     .line 84
     .line 85
-    if-eq v8, v5, :cond_59
+    if-eq v8, v5, :cond_4
 
     .line 86
     .line 87
-    if-eq v8, v4, :cond_9b
+    if-eq v8, v4, :cond_b
 
     .line 88
     .line 89
-    goto :goto_66
+    goto :goto_5
 
     .line 90
-    :cond_59
+    :cond_4
     const-string v1, "afrc"
 
     .line 91
@@ -2063,14 +2063,14 @@
     .line 93
     .line 94
     .line 95
-    :goto_5e
+    :goto_4
     const/4 v1, 0x1
 
     .line 96
-    goto :goto_66
+    goto :goto_5
 
     .line 97
-    :cond_60
+    :cond_5
     const-string v1, "frac"
 
     .line 98
@@ -2080,10 +2080,10 @@
     .line 100
     .line 101
     .line 102
-    goto :goto_5e
+    goto :goto_4
 
     .line 103
-    :goto_66
+    :goto_5
     const-string v4, "ordinal"
 
     .line 104
@@ -2096,7 +2096,7 @@
     move-result v8
 
     .line 109
-    if-eqz v8, :cond_78
+    if-eqz v8, :cond_7
 
     .line 110
     .line 111
@@ -2108,40 +2108,40 @@
     move-result v4
 
     .line 115
-    if-eqz v4, :cond_76
+    if-eqz v4, :cond_6
 
     .line 116
     .line 117
     const/4 v4, 0x2
 
     .line 118
-    goto :goto_79
+    goto :goto_6
 
     .line 119
-    :cond_76
+    :cond_6
     const/4 v4, 0x1
 
     .line 120
-    goto :goto_79
+    goto :goto_6
 
     .line 121
-    :cond_78
+    :cond_7
     const/4 v4, 0x0
 
     .line 122
-    :goto_79
-    if-eq v4, v2, :cond_7e
+    :goto_6
+    if-eq v4, v2, :cond_8
 
     .line 123
     .line 124
-    if-eq v4, v5, :cond_9b
+    if-eq v4, v5, :cond_b
 
     .line 125
     .line 126
-    goto :goto_84
+    goto :goto_7
 
     .line 127
-    :cond_7e
+    :cond_8
     const-string v1, "ordn"
 
     .line 128
@@ -2154,7 +2154,7 @@
     const/4 v1, 0x1
 
     .line 133
-    :goto_84
+    :goto_7
     const-string v4, "slashed-zero"
 
     .line 134
@@ -2167,7 +2167,7 @@
     move-result v8
 
     .line 139
-    if-eqz v8, :cond_95
+    if-eqz v8, :cond_a
 
     .line 140
     .line 141
@@ -2179,37 +2179,37 @@
     move-result p0
 
     .line 145
-    if-eqz p0, :cond_94
+    if-eqz p0, :cond_9
 
     .line 146
     .line 147
     const/4 v7, 0x2
 
     .line 148
-    goto :goto_95
+    goto :goto_8
 
     .line 149
-    :cond_94
+    :cond_9
     const/4 v7, 0x1
 
     .line 150
-    :cond_95
-    :goto_95
-    if-eq v7, v2, :cond_9e
+    :cond_a
+    :goto_8
+    if-eq v7, v2, :cond_c
 
     .line 151
     .line 152
-    if-eq v7, v5, :cond_9b
+    if-eq v7, v5, :cond_b
 
     .line 153
     .line 154
     move v2, v1
 
     .line 155
-    goto :goto_a3
+    goto :goto_9
 
     .line 156
-    :cond_9b
+    :cond_b
     sget-object p0, Llibs/xm;->c:Llibs/xm;
 
     .line 157
@@ -2217,7 +2217,7 @@
     return-object p0
 
     .line 159
-    :cond_9e
+    :cond_c
     const-string p0, "zero"
 
     .line 160
@@ -2227,15 +2227,15 @@
     .line 162
     .line 163
     .line 164
-    :goto_a3
-    if-eqz v2, :cond_a6
+    :goto_9
+    if-eqz v2, :cond_d
 
     .line 165
     .line 166
     return-object v0
 
     .line 167
-    :cond_a6
+    :cond_d
     const/4 p0, 0x0
 
     .line 168
@@ -2243,7 +2243,7 @@
 .end method
 
 .method public static j(Llibs/xm;Ljava/lang/String;)Z
-    .registers 8
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/xm;->a:Ljava/util/HashMap;
@@ -2280,15 +2280,15 @@
     const/4 v5, -0x1
 
     .line 17
-    sparse-switch v3, :sswitch_data_7e
+    sparse-switch v3, :sswitch_data_0
 
     .line 18
     .line 19
     .line 20
-    goto :goto_55
+    goto :goto_0
 
     .line 21
-    :sswitch_14
+    :sswitch_0
     const-string v3, "small-caps"
 
     .line 22
@@ -2301,21 +2301,21 @@
     move-result p1
 
     .line 27
-    if-nez p1, :cond_1d
+    if-nez p1, :cond_0
 
     .line 28
     .line 29
-    goto :goto_55
+    goto :goto_0
 
     .line 30
-    :cond_1d
+    :cond_0
     const/4 v5, 0x5
 
     .line 31
-    goto :goto_55
+    goto :goto_0
 
     .line 32
-    :sswitch_1f
+    :sswitch_1
     const-string v3, "all-petite-caps"
 
     .line 33
@@ -2328,21 +2328,21 @@
     move-result p1
 
     .line 38
-    if-nez p1, :cond_28
+    if-nez p1, :cond_1
 
     .line 39
     .line 40
-    goto :goto_55
+    goto :goto_0
 
     .line 41
-    :cond_28
+    :cond_1
     const/4 v5, 0x4
 
     .line 42
-    goto :goto_55
+    goto :goto_0
 
     .line 43
-    :sswitch_2a
+    :sswitch_2
     const-string v3, "petite-caps"
 
     .line 44
@@ -2355,21 +2355,21 @@
     move-result p1
 
     .line 49
-    if-nez p1, :cond_33
+    if-nez p1, :cond_2
 
     .line 50
     .line 51
-    goto :goto_55
+    goto :goto_0
 
     .line 52
-    :cond_33
+    :cond_2
     const/4 v5, 0x3
 
     .line 53
-    goto :goto_55
+    goto :goto_0
 
     .line 54
-    :sswitch_35
+    :sswitch_3
     const-string v3, "unicase"
 
     .line 55
@@ -2382,21 +2382,21 @@
     move-result p1
 
     .line 60
-    if-nez p1, :cond_3e
+    if-nez p1, :cond_3
 
     .line 61
     .line 62
-    goto :goto_55
+    goto :goto_0
 
     .line 63
-    :cond_3e
+    :cond_3
     const/4 v5, 0x2
 
     .line 64
-    goto :goto_55
+    goto :goto_0
 
     .line 65
-    :sswitch_40
+    :sswitch_4
     const-string v3, "all-small-caps"
 
     .line 66
@@ -2409,21 +2409,21 @@
     move-result p1
 
     .line 71
-    if-nez p1, :cond_49
+    if-nez p1, :cond_4
 
     .line 72
     .line 73
-    goto :goto_55
+    goto :goto_0
 
     .line 74
-    :cond_49
+    :cond_4
     const/4 v5, 0x1
 
     .line 75
-    goto :goto_55
+    goto :goto_0
 
     .line 76
-    :sswitch_4b
+    :sswitch_5
     const-string v3, "titling-caps"
 
     .line 77
@@ -2436,18 +2436,18 @@
     move-result p1
 
     .line 82
-    if-nez p1, :cond_54
+    if-nez p1, :cond_5
 
     .line 83
     .line 84
-    goto :goto_55
+    goto :goto_0
 
     .line 85
-    :cond_54
+    :cond_5
     const/4 v5, 0x0
 
     .line 86
-    :goto_55
+    :goto_0
     const-string p1, "pcap"
 
     .line 87
@@ -2456,7 +2456,7 @@
 
     .line 89
     .line 90
-    packed-switch v5, :pswitch_data_98
+    packed-switch v5, :pswitch_data_0
 
     .line 91
     .line 92
@@ -2464,7 +2464,7 @@
     return v4
 
     .line 94
-    :pswitch_5d
+    :pswitch_0
     invoke-virtual {v0, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 95
@@ -2473,7 +2473,7 @@
     return v1
 
     .line 98
-    :pswitch_61
+    :pswitch_1
     const-string v0, "c2pc"
 
     .line 99
@@ -2486,7 +2486,7 @@
     return v1
 
     .line 104
-    :pswitch_67
+    :pswitch_2
     invoke-virtual {v0, p1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 105
@@ -2495,7 +2495,7 @@
     return v1
 
     .line 108
-    :pswitch_6b
+    :pswitch_3
     const-string p0, "unic"
 
     .line 109
@@ -2508,7 +2508,7 @@
     return v1
 
     .line 114
-    :pswitch_71
+    :pswitch_4
     const-string p1, "c2sc"
 
     .line 115
@@ -2521,7 +2521,7 @@
     return v1
 
     .line 120
-    :pswitch_77
+    :pswitch_5
     const-string p0, "titl"
 
     .line 121
@@ -2537,14 +2537,14 @@
     nop
 
     .line 127
-    :sswitch_data_7e
+    :sswitch_data_0
     .sparse-switch
-        -0x2ad90767 -> :sswitch_4b
-        -0x1a02986d -> :sswitch_40
-        -0x111bb7e0 -> :sswitch_35
-        -0x94589ad -> :sswitch_2a
-        0x45ef9827 -> :sswitch_1f
-        0x468813e7 -> :sswitch_14
+        -0x2ad90767 -> :sswitch_5
+        -0x1a02986d -> :sswitch_4
+        -0x111bb7e0 -> :sswitch_3
+        -0x94589ad -> :sswitch_2
+        0x45ef9827 -> :sswitch_1
+        0x468813e7 -> :sswitch_0
     .end sparse-switch
 
     .line 128
@@ -2573,21 +2573,21 @@
     .line 151
     .line 152
     .line 153
-    :pswitch_data_98
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_77
-        :pswitch_71
-        :pswitch_6b
-        :pswitch_67
-        :pswitch_61
-        :pswitch_5d
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public final a(Ljava/lang/String;ILjava/lang/String;)V
-    .registers 5
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/xm;->a:Ljava/util/HashMap;
@@ -2603,17 +2603,17 @@
 .end method
 
 .method public final b(Llibs/xm;)V
-    .registers 3
+    .locals 1
 
     .line 1
-    if-nez p1, :cond_3
+    if-nez p1, :cond_0
 
     .line 2
     .line 3
     return-void
 
     .line 4
-    :cond_3
+    :cond_0
     iget-object v0, p0, Llibs/xm;->a:Ljava/util/HashMap;
 
     .line 5
@@ -2631,7 +2631,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2663,7 +2663,7 @@
     move-result-object v1
 
     .line 16
-    :goto_f
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 17
@@ -2672,7 +2672,7 @@
     move-result v2
 
     .line 20
-    if-eqz v2, :cond_41
+    if-eqz v2, :cond_1
 
     .line 21
     .line 22
@@ -2696,7 +2696,7 @@
     move-result v3
 
     .line 32
-    if-lez v3, :cond_26
+    if-lez v3, :cond_0
 
     .line 33
     .line 34
@@ -2709,7 +2709,7 @@
     .line 37
     .line 38
     .line 39
-    :cond_26
+    :cond_0
     const-string v3, "\'"
 
     .line 40
@@ -2758,10 +2758,10 @@
     .line 63
     .line 64
     .line 65
-    goto :goto_f
+    goto :goto_0
 
     .line 66
-    :cond_41
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 67

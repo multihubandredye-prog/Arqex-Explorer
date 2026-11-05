@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/CharSequence;II)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,10 +52,10 @@
 
 # virtual methods
 .method public final charAt(I)C
-    .registers 3
+    .locals 1
 
     .line 1
-    if-ltz p1, :cond_10
+    if-ltz p1, :cond_0
 
     .line 2
     .line 3
@@ -63,7 +63,7 @@
 
     .line 4
     .line 5
-    if-ge p1, v0, :cond_10
+    if-ge p1, v0, :cond_0
 
     .line 6
     .line 7
@@ -89,7 +89,7 @@
     return p1
 
     .line 17
-    :cond_10
+    :cond_0
     new-instance p1, Ljava/lang/IndexOutOfBoundsException;
 
     .line 18
@@ -103,7 +103,7 @@
 .end method
 
 .method public final getSpanEnd(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/md;->X:Ljava/lang/CharSequence;
@@ -133,7 +133,7 @@
 .end method
 
 .method public final getSpanFlags(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/md;->X:Ljava/lang/CharSequence;
@@ -156,7 +156,7 @@
 .end method
 
 .method public final getSpanStart(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/md;->X:Ljava/lang/CharSequence;
@@ -186,7 +186,7 @@
 .end method
 
 .method public final getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
-    .registers 6
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/md;->X:Ljava/lang/CharSequence;
@@ -219,7 +219,7 @@
 .end method
 
 .method public final length()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/md;->Lambda:I
@@ -230,7 +230,7 @@
 .end method
 
 .method public final nextSpanTransition(IILjava/lang/Class;)I
-    .registers 6
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/md;->X:Ljava/lang/CharSequence;
@@ -266,14 +266,14 @@
 .end method
 
 .method public final subSequence(II)Ljava/lang/CharSequence;
-    .registers 5
+    .locals 2
 
     .line 1
-    if-ltz p1, :cond_16
+    if-ltz p1, :cond_0
 
     .line 2
     .line 3
-    if-ltz p2, :cond_16
+    if-ltz p2, :cond_0
 
     .line 4
     .line 5
@@ -281,11 +281,11 @@
 
     .line 6
     .line 7
-    if-gt p2, v0, :cond_16
+    if-gt p2, v0, :cond_0
 
     .line 8
     .line 9
-    if-gt p1, p2, :cond_16
+    if-gt p1, p2, :cond_0
 
     .line 10
     .line 11
@@ -315,7 +315,7 @@
     return-object v0
 
     .line 23
-    :cond_16
+    :cond_0
     new-instance p1, Ljava/lang/IndexOutOfBoundsException;
 
     .line 24
@@ -329,7 +329,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     iget v0, p0, Llibs/md;->Y:I

@@ -73,7 +73,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -84,7 +84,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
@@ -258,7 +258,7 @@
     move-result p1
 
     .line 88
-    if-eqz p1, :cond_5c
+    if-eqz p1, :cond_0
 
     .line 89
     .line 90
@@ -267,12 +267,12 @@
     .line 91
     .line 92
     .line 93
-    :cond_5c
+    :cond_0
     return-void
 .end method
 
 .method private getLeftMargin()I
-    .registers 3
+    .locals 2
 
     .line 1
     sget-object v0, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
@@ -287,7 +287,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -307,7 +307,7 @@
 
     .line 16
     .line 17
-    if-eq v0, v1, :cond_15
+    if-eq v0, v1, :cond_0
 
     .line 18
     .line 19
@@ -318,7 +318,7 @@
     return v0
 
     .line 22
-    :cond_15
+    :cond_0
     const/4 v0, 0x0
 
     .line 23
@@ -326,7 +326,7 @@
 .end method
 
 .method private setDrawerViewOffset(F)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget v0, p0, Lcom/mixplorer/widgets/MiDrawer;->Eight:F
@@ -337,7 +337,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -349,7 +349,7 @@
 
     .line 10
     .line 11
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
     .line 12
     .line 13
@@ -358,12 +358,12 @@
     .line 14
     .line 15
     .line 16
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method private setScrollLeft(F)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -380,14 +380,14 @@
 
 # virtual methods
 .method public final a()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Lcom/mixplorer/widgets/MiDrawer;->One:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -395,7 +395,7 @@
 
     .line 6
     .line 7
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     .line 8
     .line 9
@@ -405,7 +405,7 @@
     return v0
 
     .line 11
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
     .line 12
@@ -413,14 +413,14 @@
 .end method
 
 .method public final b()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Lcom/mixplorer/widgets/MiDrawer;->One:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -428,7 +428,7 @@
 
     .line 6
     .line 7
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     .line 8
     .line 9
@@ -438,7 +438,7 @@
     return v0
 
     .line 11
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
     .line 12
@@ -446,7 +446,7 @@
 .end method
 
 .method public final c()V
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
@@ -468,21 +468,21 @@
     const/4 v2, -0x1
 
     .line 10
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
     .line 11
     .line 12
     const/4 v1, -0x2
 
     .line 13
-    goto :goto_e
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     const/4 v1, -0x1
 
     .line 15
-    :goto_e
+    :goto_0
     invoke-direct {v0, v1, v2}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
 
     .line 16
@@ -543,21 +543,21 @@
     const/4 v3, 0x0
 
     .line 45
-    if-eqz v2, :cond_30
+    if-eqz v2, :cond_1
 
     .line 46
     .line 47
     const/4 v2, 0x0
 
     .line 48
-    goto :goto_31
+    goto :goto_1
 
     .line 49
-    :cond_30
+    :cond_1
     move v2, v0
 
     .line 50
-    :goto_31
+    :goto_1
     const/4 v4, 0x1
 
     .line 51
@@ -591,18 +591,18 @@
     move-result v1
 
     .line 65
-    if-eqz v1, :cond_43
+    if-eqz v1, :cond_2
 
     .line 66
     .line 67
-    goto :goto_44
+    goto :goto_2
 
     .line 68
-    :cond_43
+    :cond_2
     const/4 v0, 0x0
 
     .line 69
-    :goto_44
+    :goto_2
     sget v1, Llibs/sa3;->v:I
 
     .line 70
@@ -618,14 +618,14 @@
 .end method
 
 .method public final computeScroll()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-boolean v0, p0, Lcom/mixplorer/widgets/MiDrawer;->Nu:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_4c
+    if-eqz v0, :cond_4
 
     .line 4
     .line 5
@@ -633,14 +633,14 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
-    goto :goto_4c
+    goto :goto_1
 
     .line 10
-    :cond_9
+    :cond_0
     iget-object v0, p0, Lcom/mixplorer/widgets/MiDrawer;->Xi:Landroid/widget/Scroller;
 
     .line 11
@@ -657,7 +657,7 @@
 
     .line 17
     .line 18
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_1
 
     .line 19
     .line 20
@@ -680,7 +680,7 @@
     return-void
 
     .line 29
-    :cond_1c
+    :cond_1
     iget-boolean v0, p0, Lcom/mixplorer/widgets/MiDrawer;->Nine:Z
 
     .line 30
@@ -689,17 +689,17 @@
 
     .line 32
     .line 33
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_2
 
     .line 34
     .line 35
     const/4 v0, 0x0
 
     .line 36
-    goto :goto_28
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_2
     iget v0, p0, Lcom/mixplorer/widgets/MiDrawer;->Psi:I
 
     .line 38
@@ -710,7 +710,7 @@
     int-to-float v0, v0
 
     .line 41
-    :goto_28
+    :goto_0
     invoke-direct {p0, v0}, Lcom/mixplorer/widgets/MiDrawer;->setScrollLeft(F)V
 
     .line 42
@@ -724,7 +724,7 @@
 
     .line 47
     .line 48
-    if-eqz v0, :cond_40
+    if-eqz v0, :cond_3
 
     .line 49
     .line 50
@@ -741,7 +741,7 @@
 
     .line 56
     .line 57
-    if-eqz v0, :cond_4c
+    if-eqz v0, :cond_4
 
     .line 58
     .line 59
@@ -757,7 +757,7 @@
     return-void
 
     .line 65
-    :cond_40
+    :cond_3
     invoke-virtual {p0, v1}, Landroid/view/View;->sendAccessibilityEvent(I)V
 
     .line 66
@@ -767,7 +767,7 @@
 
     .line 69
     .line 70
-    if-eqz v0, :cond_4c
+    if-eqz v0, :cond_4
 
     .line 71
     .line 72
@@ -780,20 +780,20 @@
     .line 75
     .line 76
     .line 77
-    :cond_4c
-    :goto_4c
+    :cond_4
+    :goto_1
     return-void
 .end method
 
 .method public final d(FZ)V
-    .registers 5
+    .locals 2
 
     .line 1
     iput p1, p0, Lcom/mixplorer/widgets/MiDrawer;->Seven:F
 
     .line 2
     .line 3
-    if-nez p2, :cond_f
+    if-nez p2, :cond_0
 
     .line 4
     .line 5
@@ -816,11 +816,11 @@
 
     .line 13
     .line 14
-    if-eqz p2, :cond_39
+    if-eqz p2, :cond_2
 
     .line 15
     .line 16
-    :cond_f
+    :cond_0
     iget-object p2, p0, Lcom/mixplorer/widgets/MiDrawer;->Two:Landroid/widget/LinearLayout;
 
     .line 17
@@ -873,21 +873,21 @@
 
     .line 39
     .line 40
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_1
 
     .line 41
     .line 42
     const/4 p1, 0x0
 
     .line 43
-    goto :goto_2c
+    goto :goto_0
 
     .line 44
-    :cond_2b
+    :cond_1
     const/4 p1, 0x4
 
     .line 45
-    :goto_2c
+    :goto_0
     iget-object p2, p0, Lcom/mixplorer/widgets/MiDrawer;->Two:Landroid/widget/LinearLayout;
 
     .line 46
@@ -900,7 +900,7 @@
     move-result p2
 
     .line 51
-    if-eq p2, p1, :cond_39
+    if-eq p2, p1, :cond_2
 
     .line 52
     .line 53
@@ -913,7 +913,7 @@
     .line 56
     .line 57
     .line 58
-    :cond_39
+    :cond_2
     invoke-static {}, Llibs/t43;->Intent()Z
 
     .line 59
@@ -922,7 +922,7 @@
     move-result p1
 
     .line 62
-    if-eqz p1, :cond_43
+    if-eqz p1, :cond_3
 
     .line 63
     .line 64
@@ -934,7 +934,7 @@
     return-void
 
     .line 68
-    :cond_43
+    :cond_3
     invoke-virtual {p0}, Landroid/view/View;->postInvalidate()V
 
     .line 69
@@ -944,7 +944,7 @@
 .end method
 
 .method public final dispatchDraw(Landroid/graphics/Canvas;)V
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiDrawer;->Lambda:Landroid/graphics/Paint;
@@ -955,18 +955,18 @@
 
     .line 4
     .line 5
-    :try_start_4
+    :try_start_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
-    :try_end_7
-    .catchall {:try_start_4 .. :try_end_7} :catchall_8
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 6
     .line 7
     .line 8
-    goto :goto_10
+    goto :goto_0
 
     .line 9
-    :catchall_8
+    :catchall_0
     move-exception v2
 
     .line 10
@@ -983,13 +983,13 @@
     .line 15
     .line 16
     .line 17
-    :goto_10
-    :try_start_10
+    :goto_0
+    :try_start_1
     iget-object v2, p0, Lcom/mixplorer/widgets/MiDrawer;->India:Lcom/mixplorer/widgets/MiPager;
 
     .line 18
     .line 19
-    if-eqz v2, :cond_62
+    if-eqz v2, :cond_1
 
     .line 20
     .line 21
@@ -1005,7 +1005,7 @@
     move-result v2
 
     .line 27
-    if-nez v2, :cond_62
+    if-nez v2, :cond_1
 
     .line 28
     .line 29
@@ -1013,7 +1013,7 @@
 
     .line 30
     .line 31
-    if-eqz v2, :cond_62
+    if-eqz v2, :cond_1
 
     .line 32
     .line 33
@@ -1021,7 +1021,7 @@
 
     .line 34
     .line 35
-    if-eqz v3, :cond_3d
+    if-eqz v3, :cond_0
 
     .line 36
     .line 37
@@ -1037,7 +1037,7 @@
     move-result-object v2
 
     .line 43
-    if-eqz v2, :cond_62
+    if-eqz v2, :cond_1
 
     .line 44
     .line 45
@@ -1065,22 +1065,22 @@
     move-result v2
 
     .line 57
-    if-nez v2, :cond_62
+    if-nez v2, :cond_1
 
     .line 58
     .line 59
-    goto :goto_3d
+    goto :goto_1
 
     .line 60
-    :catchall_3b
+    :catchall_1
     move-exception p1
 
     .line 61
-    goto :goto_53
+    goto :goto_2
 
     .line 62
-    :cond_3d
-    :goto_3d
+    :cond_0
+    :goto_1
     iget-object v2, p0, Lcom/mixplorer/widgets/MiDrawer;->Zero:Landroid/graphics/drawable/Drawable;
 
     .line 63
@@ -1116,16 +1116,16 @@
     .line 79
     .line 80
     invoke-virtual {p1, v2, v4, v3, v0}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
-    :try_end_52
-    .catchall {:try_start_10 .. :try_end_52} :catchall_3b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 81
     .line 82
     .line 83
-    goto :goto_62
+    goto :goto_3
 
     .line 84
-    :goto_53
+    :goto_2
     invoke-static {p1}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 85
@@ -1157,13 +1157,13 @@
     .line 97
     .line 98
     .line 99
-    :cond_62
-    :goto_62
+    :cond_1
+    :goto_3
     return-void
 .end method
 
 .method public final drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
-    .registers 13
+    .locals 8
 
     .line 1
     iget-object v5, p0, Lcom/mixplorer/widgets/MiDrawer;->Lambda:Landroid/graphics/Paint;
@@ -1173,7 +1173,7 @@
     const/4 v6, 0x0
 
     .line 4
-    :try_start_3
+    :try_start_0
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     .line 5
@@ -1189,21 +1189,21 @@
     const/4 v7, 0x1
 
     .line 11
-    if-ne p2, v1, :cond_e
+    if-ne p2, v1, :cond_0
 
     .line 12
     .line 13
     const/4 v1, 0x1
 
     .line 14
-    goto :goto_f
+    goto :goto_0
 
     .line 15
-    :cond_e
+    :cond_0
     const/4 v1, 0x0
 
     .line 16
-    :goto_f
+    :goto_0
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     .line 17
@@ -1212,7 +1212,7 @@
     move-result v2
 
     .line 20
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_1
 
     .line 21
     .line 22
@@ -1229,22 +1229,22 @@
     .line 27
     .line 28
     .line 29
-    goto :goto_21
+    goto :goto_1
 
     .line 30
-    :catchall_1d
+    :catchall_0
     move-exception v0
 
     .line 31
     move-object p1, v0
 
     .line 32
-    goto/16 :goto_9e
+    goto/16 :goto_3
 
     .line 33
     .line 34
-    :cond_21
-    :goto_21
+    :cond_1
+    :goto_1
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
     .line 35
@@ -1270,7 +1270,7 @@
     move-result p3
 
     .line 47
-    if-nez p3, :cond_50
+    if-nez p3, :cond_2
 
     .line 48
     .line 49
@@ -1285,11 +1285,11 @@
 
     .line 53
     .line 54
-    if-lez p4, :cond_50
+    if-lez p4, :cond_2
 
     .line 55
     .line 56
-    if-eqz v1, :cond_50
+    if-eqz v1, :cond_2
 
     .line 57
     .line 58
@@ -1341,14 +1341,14 @@
     .line 78
     .line 79
     .line 80
-    goto :goto_51
+    goto :goto_2
 
     .line 81
-    :cond_50
+    :cond_2
     move-object v0, p1
 
     .line 82
-    :goto_51
+    :goto_2
     sget-object p1, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 83
@@ -1361,7 +1361,7 @@
     move-result p1
 
     .line 88
-    if-eqz p1, :cond_9d
+    if-eqz p1, :cond_6
 
     .line 89
     .line 90
@@ -1377,7 +1377,7 @@
     move-result p1
 
     .line 96
-    if-nez p1, :cond_9d
+    if-nez p1, :cond_6
 
     .line 97
     .line 98
@@ -1385,7 +1385,7 @@
 
     .line 99
     .line 100
-    if-eqz p1, :cond_9d
+    if-eqz p1, :cond_6
 
     .line 101
     .line 102
@@ -1405,7 +1405,7 @@
 
     .line 109
     .line 110
-    if-nez p3, :cond_77
+    if-nez p3, :cond_3
 
     .line 111
     .line 112
@@ -1425,11 +1425,11 @@
 
     .line 119
     .line 120
-    :cond_77
+    :cond_3
     move-object p4, p3
 
     .line 121
-    if-nez p4, :cond_82
+    if-nez p4, :cond_4
 
     .line 122
     .line 123
@@ -1449,7 +1449,7 @@
 
     .line 130
     .line 131
-    :cond_82
+    :cond_4
     invoke-virtual {p4}, Landroid/graphics/drawable/Drawable;->getMinimumWidth()I
 
     .line 132
@@ -1478,7 +1478,7 @@
 
     .line 144
     .line 145
-    if-nez p1, :cond_9a
+    if-nez p1, :cond_5
 
     .line 146
     .line 147
@@ -1498,19 +1498,19 @@
 
     .line 154
     .line 155
-    :cond_9a
+    :cond_5
     invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
-    :try_end_9d
-    .catchall {:try_start_3 .. :try_end_9d} :catchall_1d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 156
     .line 157
     .line 158
-    :cond_9d
+    :cond_6
     return p2
 
     .line 159
-    :goto_9e
+    :goto_3
     const-string p2, "DRAWER"
 
     .line 160
@@ -1532,14 +1532,14 @@
 .end method
 
 .method public final e(ZZ)V
-    .registers 10
+    .locals 7
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiDrawer;->India:Lcom/mixplorer/widgets/MiPager;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -1551,14 +1551,14 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
-    goto :goto_53
+    goto :goto_2
 
     .line 12
-    :cond_b
+    :cond_0
     sget-object v0, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 13
@@ -1574,23 +1574,23 @@
     const/4 v1, 0x0
 
     .line 19
-    if-eqz v0, :cond_3f
+    if-eqz v0, :cond_5
 
     .line 20
     .line 21
-    if-eqz p2, :cond_17
+    if-eqz p2, :cond_1
 
     .line 22
     .line 23
-    goto :goto_19
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_1
     const/16 v1, 0x8
 
     .line 25
     .line 26
-    :goto_19
+    :goto_0
     iget-object p1, p0, Lcom/mixplorer/widgets/MiDrawer;->Two:Landroid/widget/LinearLayout;
 
     .line 27
@@ -1603,7 +1603,7 @@
     move-result p1
 
     .line 32
-    if-eq p1, v1, :cond_28
+    if-eq p1, v1, :cond_2
 
     .line 33
     .line 34
@@ -1620,16 +1620,16 @@
 
     .line 40
     .line 41
-    :cond_28
+    :cond_2
     iget-object p1, p0, Lcom/mixplorer/widgets/MiDrawer;->Six:Llibs/js1;
 
     .line 42
     .line 43
-    if-eqz p2, :cond_34
+    if-eqz p2, :cond_3
 
     .line 44
     .line 45
-    if-eqz p1, :cond_3b
+    if-eqz p1, :cond_4
 
     .line 46
     .line 47
@@ -1642,11 +1642,11 @@
     .line 50
     .line 51
     .line 52
-    goto :goto_3b
+    goto :goto_1
 
     .line 53
-    :cond_34
-    if-eqz p1, :cond_3b
+    :cond_3
+    if-eqz p1, :cond_4
 
     .line 54
     .line 55
@@ -1659,8 +1659,8 @@
     .line 58
     .line 59
     .line 60
-    :cond_3b
-    :goto_3b
+    :cond_4
+    :goto_1
     invoke-virtual {p0}, Lcom/mixplorer/widgets/MiDrawer;->g()V
 
     .line 61
@@ -1669,7 +1669,7 @@
     return-void
 
     .line 64
-    :cond_3f
+    :cond_5
     iget-object v0, p0, Lcom/mixplorer/widgets/MiDrawer;->Xi:Landroid/widget/Scroller;
 
     .line 65
@@ -1685,7 +1685,7 @@
     const/4 v3, 0x1
 
     .line 71
-    if-nez v2, :cond_4b
+    if-nez v2, :cond_6
 
     .line 72
     .line 73
@@ -1694,7 +1694,7 @@
     .line 74
     .line 75
     .line 76
-    :cond_4b
+    :cond_6
     iput-boolean p2, p0, Lcom/mixplorer/widgets/MiDrawer;->Nine:Z
 
     .line 77
@@ -1707,15 +1707,15 @@
 
     .line 81
     .line 82
-    if-eqz p2, :cond_54
+    if-eqz p2, :cond_7
 
     .line 83
     .line 84
-    :goto_53
+    :goto_2
     return-void
 
     .line 85
-    :cond_54
+    :cond_7
     iput-boolean v3, p0, Lcom/mixplorer/widgets/MiDrawer;->Nu:Z
 
     .line 86
@@ -1724,7 +1724,7 @@
 
     .line 88
     .line 89
-    if-eqz p2, :cond_ac
+    if-eqz p2, :cond_b
 
     .line 90
     .line 91
@@ -1756,19 +1756,19 @@
     move-result v4
 
     .line 105
-    if-eqz v4, :cond_6b
+    if-eqz v4, :cond_8
 
     .line 106
     .line 107
-    goto :goto_ac
+    goto :goto_3
 
     .line 108
-    :cond_6b
+    :cond_8
     iget-object p2, p2, Llibs/r31;->h:Lcom/mixplorer/widgets/MiDraggableListView;
 
     .line 109
     .line 110
-    if-eqz p2, :cond_a2
+    if-eqz p2, :cond_a
 
     .line 111
     .line 112
@@ -1776,7 +1776,7 @@
 
     .line 113
     .line 114
-    if-eqz v4, :cond_a2
+    if-eqz v4, :cond_a
 
     .line 115
     .line 116
@@ -1788,7 +1788,7 @@
     move-result v4
 
     .line 120
-    if-eqz v4, :cond_a2
+    if-eqz v4, :cond_a
 
     .line 121
     .line 122
@@ -1808,7 +1808,7 @@
     move-result v4
 
     .line 130
-    if-eqz v4, :cond_99
+    if-eqz v4, :cond_9
 
     .line 131
     .line 132
@@ -1856,12 +1856,12 @@
 
     .line 153
     .line 154
-    :cond_99
+    :cond_9
     iget v4, p2, Llibs/aj3;->Omicron:I
 
     .line 155
     .line 156
-    if-ne v4, v3, :cond_a2
+    if-ne v4, v3, :cond_a
 
     .line 157
     .line 158
@@ -1874,7 +1874,7 @@
     .line 161
     .line 162
     .line 163
-    :cond_a2
+    :cond_a
     invoke-virtual {v2}, Lcom/mixplorer/activities/BrowseActivity;->Get()Llibs/xt1;
 
     .line 164
@@ -1895,13 +1895,13 @@
 
     .line 172
     .line 173
-    :cond_ac
-    :goto_ac
+    :cond_b
+    :goto_3
     iget p2, p0, Lcom/mixplorer/widgets/MiDrawer;->Psi:I
 
     .line 174
     .line 175
-    if-eqz p1, :cond_d0
+    if-eqz p1, :cond_e
 
     .line 176
     .line 177
@@ -1917,7 +1917,7 @@
     move-result p1
 
     .line 183
-    if-eqz p1, :cond_d0
+    if-eqz p1, :cond_e
 
     .line 184
     .line 185
@@ -1925,7 +1925,7 @@
 
     .line 186
     .line 187
-    if-eqz p1, :cond_c3
+    if-eqz p1, :cond_c
 
     .line 188
     .line 189
@@ -1940,12 +1940,12 @@
 
     .line 193
     .line 194
-    if-ltz v2, :cond_cd
+    if-ltz v2, :cond_d
 
     .line 195
     .line 196
-    :cond_c3
-    if-nez p1, :cond_d0
+    :cond_c
+    if-nez p1, :cond_e
 
     .line 197
     .line 198
@@ -1963,42 +1963,42 @@
 
     .line 203
     .line 204
-    if-lez p1, :cond_d0
+    if-lez p1, :cond_e
 
     .line 205
     .line 206
-    :cond_cd
+    :cond_d
     const/16 p1, 0x96
 
     .line 207
     .line 208
-    goto :goto_d1
+    goto :goto_4
 
     .line 209
-    :cond_d0
+    :cond_e
     const/4 p1, 0x0
 
     .line 210
-    :goto_d1
+    :goto_4
     const/16 v2, 0x64
 
     .line 211
     .line 212
-    if-ge p1, v2, :cond_d7
+    if-ge p1, v2, :cond_f
 
     .line 213
     .line 214
     const/4 v5, 0x0
 
     .line 215
-    goto :goto_d8
+    goto :goto_5
 
     .line 216
-    :cond_d7
+    :cond_f
     move v5, p1
 
     .line 217
-    :goto_d8
+    :goto_5
     iget p1, p0, Lcom/mixplorer/widgets/MiDrawer;->Seven:F
 
     .line 218
@@ -2010,39 +2010,39 @@
 
     .line 221
     .line 222
-    if-eqz v2, :cond_e1
+    if-eqz v2, :cond_10
 
     .line 223
     .line 224
     neg-int p2, p1
 
     .line 225
-    goto :goto_e3
+    goto :goto_6
 
     .line 226
-    :cond_e1
+    :cond_10
     neg-int p2, p2
 
     .line 227
     sub-int/2addr p2, p1
 
     .line 228
-    :goto_e3
-    if-nez v5, :cond_e7
+    :goto_6
+    if-nez v5, :cond_11
 
     .line 229
     .line 230
     const/4 v3, 0x0
 
     .line 231
-    goto :goto_e8
+    goto :goto_7
 
     .line 232
-    :cond_e7
+    :cond_11
     move v3, p2
 
     .line 233
-    :goto_e8
+    :goto_7
     const/4 v4, 0x0
 
     .line 234
@@ -2065,7 +2065,7 @@
     move-result p1
 
     .line 243
-    if-eqz p1, :cond_f8
+    if-eqz p1, :cond_12
 
     .line 244
     .line 245
@@ -2077,7 +2077,7 @@
     return-void
 
     .line 249
-    :cond_f8
+    :cond_12
     invoke-virtual {p0}, Landroid/view/View;->postInvalidate()V
 
     .line 250
@@ -2087,7 +2087,7 @@
 .end method
 
 .method public final f()V
-    .registers 8
+    .locals 7
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiDrawer;->Two:Landroid/widget/LinearLayout;
@@ -2126,7 +2126,7 @@
     const/4 v3, 0x0
 
     .line 19
-    if-eqz v2, :cond_1b
+    if-eqz v2, :cond_0
 
     .line 20
     .line 21
@@ -2142,14 +2142,14 @@
     move-result v2
 
     .line 27
-    goto :goto_1c
+    goto :goto_0
 
     .line 28
-    :cond_1b
+    :cond_0
     const/4 v2, 0x0
 
     .line 29
-    :goto_1c
+    :goto_0
     new-instance v4, Landroid/view/ViewGroup$LayoutParams;
 
     .line 30
@@ -2217,7 +2217,7 @@
 .end method
 
 .method public final fitSystemWindows(Landroid/graphics/Rect;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-static {}, Llibs/t43;->Data()Z
@@ -2228,7 +2228,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -2240,7 +2240,7 @@
 
     .line 10
     .line 11
-    :cond_a
+    :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->fitSystemWindows(Landroid/graphics/Rect;)Z
 
     .line 12
@@ -2253,21 +2253,21 @@
 .end method
 
 .method public final g()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiDrawer;->Three:Landroid/view/ViewGroup;
 
     .line 2
     .line 3
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     .line 7
@@ -2337,7 +2337,7 @@
 .end method
 
 .method public final onConfigurationChanged(Landroid/content/res/Configuration;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Lcom/mixplorer/widgets/MiDrawer;->c()V
@@ -2349,7 +2349,7 @@
 .end method
 
 .method public final onFinishInflate()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
@@ -2385,21 +2385,21 @@
     move-result v0
 
     .line 18
-    if-nez v0, :cond_15
+    if-nez v0, :cond_0
 
     .line 19
     .line 20
     const/4 v0, 0x1
 
     .line 21
-    goto :goto_16
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     const/4 v0, 0x0
 
     .line 23
-    :goto_16
+    :goto_0
     sput-boolean v0, Lcom/mixplorer/widgets/MiDrawer;->Juliet:Z
 
     .line 24
@@ -2457,7 +2457,7 @@
 .end method
 
 .method public final onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 12
+    .locals 10
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiDrawer;->India:Lcom/mixplorer/widgets/MiPager;
@@ -2467,7 +2467,7 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 5
     .line 6
@@ -2479,15 +2479,15 @@
     move-result v0
 
     .line 10
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 11
     .line 12
-    goto/16 :goto_118
+    goto/16 :goto_2
 
     .line 13
     .line 14
-    :cond_d
+    :cond_0
     sget-object v0, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 15
@@ -2500,15 +2500,15 @@
     move-result v0
 
     .line 20
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1
 
     .line 21
     .line 22
-    goto/16 :goto_118
+    goto/16 :goto_2
 
     .line 23
     .line 24
-    :cond_17
+    :cond_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     .line 25
@@ -2536,38 +2536,38 @@
     const/4 v3, 0x1
 
     .line 37
-    if-eqz v0, :cond_b7
+    if-eqz v0, :cond_5
 
     .line 38
     .line 39
-    if-eq v0, v3, :cond_97
+    if-eq v0, v3, :cond_4
 
     .line 40
     .line 41
     const/4 v4, 0x2
 
     .line 42
-    if-eq v0, v4, :cond_30
+    if-eq v0, v4, :cond_2
 
     .line 43
     .line 44
     const/4 p1, 0x3
 
     .line 45
-    if-eq v0, p1, :cond_97
+    if-eq v0, p1, :cond_4
 
     .line 46
     .line 47
-    goto/16 :goto_118
+    goto/16 :goto_2
 
     .line 48
     .line 49
-    :cond_30
+    :cond_2
     iget-boolean v0, p0, Lcom/mixplorer/widgets/MiDrawer;->Omega:Z
 
     .line 50
     .line 51
-    if-eqz v0, :cond_118
+    if-eqz v0, :cond_c
 
     .line 52
     .line 53
@@ -2575,7 +2575,7 @@
 
     .line 54
     .line 55
-    if-nez v0, :cond_118
+    if-nez v0, :cond_c
 
     .line 56
     .line 57
@@ -2591,7 +2591,7 @@
 
     .line 62
     .line 63
-    if-nez v0, :cond_60
+    if-nez v0, :cond_3
 
     .line 64
     .line 65
@@ -2599,7 +2599,7 @@
 
     .line 66
     .line 67
-    if-eqz v0, :cond_60
+    if-eqz v0, :cond_3
 
     .line 68
     .line 69
@@ -2615,7 +2615,7 @@
 
     .line 74
     .line 75
-    if-lez v7, :cond_60
+    if-lez v7, :cond_3
 
     .line 76
     .line 77
@@ -2627,7 +2627,7 @@
 
     .line 80
     .line 81
-    if-lez v7, :cond_60
+    if-lez v7, :cond_3
 
     .line 82
     .line 83
@@ -2652,7 +2652,7 @@
 
     .line 91
     .line 92
-    if-lez v0, :cond_60
+    if-lez v0, :cond_3
 
     .line 93
     .line 94
@@ -2663,7 +2663,7 @@
     return v1
 
     .line 97
-    :cond_60
+    :cond_3
     sget-object v0, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 98
@@ -2676,7 +2676,7 @@
     move-result v0
 
     .line 103
-    if-nez v0, :cond_118
+    if-nez v0, :cond_c
 
     .line 104
     .line 105
@@ -2739,7 +2739,7 @@
 
     .line 133
     .line 134
-    if-lez p1, :cond_118
+    if-lez p1, :cond_c
 
     .line 135
     .line 136
@@ -2772,14 +2772,14 @@
 
     .line 148
     .line 149
-    if-lez p1, :cond_118
+    if-lez p1, :cond_c
 
     .line 150
     .line 151
     return v3
 
     .line 152
-    :cond_97
+    :cond_4
     iput-boolean v1, p0, Lcom/mixplorer/widgets/MiDrawer;->Mu:Z
 
     .line 153
@@ -2788,7 +2788,7 @@
 
     .line 155
     .line 156
-    if-nez p1, :cond_118
+    if-nez p1, :cond_c
 
     .line 157
     .line 158
@@ -2816,7 +2816,7 @@
 
     .line 169
     .line 170
-    if-eqz v0, :cond_118
+    if-eqz v0, :cond_c
 
     .line 171
     .line 172
@@ -2834,7 +2834,7 @@
 
     .line 177
     .line 178
-    if-lez p1, :cond_118
+    if-lez p1, :cond_c
 
     .line 179
     .line 180
@@ -2846,7 +2846,7 @@
     return v3
 
     .line 184
-    :cond_b7
+    :cond_5
     iget v0, p0, Lcom/mixplorer/widgets/MiDrawer;->Upsilon:F
 
     .line 185
@@ -2883,22 +2883,22 @@
 
     .line 201
     .line 202
-    if-eqz v4, :cond_cd
+    if-eqz v4, :cond_6
 
     .line 203
     .line 204
     const/4 v5, 0x0
 
     .line 205
-    goto :goto_cf
+    goto :goto_0
 
     .line 206
-    :cond_cd
+    :cond_6
     iget v5, p0, Lcom/mixplorer/widgets/MiDrawer;->Pi:I
 
     .line 207
     .line 208
-    :goto_cf
+    :goto_0
     int-to-float v5, v5
 
     .line 209
@@ -2906,7 +2906,7 @@
 
     .line 210
     .line 211
-    if-lez v0, :cond_f4
+    if-lez v0, :cond_8
 
     .line 212
     .line 213
@@ -2930,22 +2930,22 @@
 
     .line 222
     .line 223
-    if-eqz v4, :cond_e2
+    if-eqz v4, :cond_7
 
     .line 224
     .line 225
     const/4 v5, 0x0
 
     .line 226
-    goto :goto_e4
+    goto :goto_1
 
     .line 227
-    :cond_e2
+    :cond_7
     iget v5, p0, Lcom/mixplorer/widgets/MiDrawer;->Rho:I
 
     .line 228
     .line 229
-    :goto_e4
+    :goto_1
     sub-int/2addr v0, v5
 
     .line 230
@@ -2956,7 +2956,7 @@
 
     .line 232
     .line 233
-    if-gez p1, :cond_f4
+    if-gez p1, :cond_8
 
     .line 234
     .line 235
@@ -2972,20 +2972,20 @@
 
     .line 240
     .line 241
-    if-gez p1, :cond_f4
+    if-gez p1, :cond_8
 
     .line 242
     .line 243
-    if-eqz v4, :cond_10b
+    if-eqz v4, :cond_a
 
     .line 244
     .line 245
-    :cond_f4
+    :cond_8
     iget-boolean p1, p0, Lcom/mixplorer/widgets/MiDrawer;->Nu:Z
 
     .line 246
     .line 247
-    if-nez p1, :cond_101
+    if-nez p1, :cond_9
 
     .line 248
     .line 249
@@ -3000,15 +3000,15 @@
 
     .line 253
     .line 254
-    if-lez p1, :cond_101
+    if-lez p1, :cond_9
 
     .line 255
     .line 256
-    if-nez v4, :cond_10b
+    if-nez v4, :cond_a
 
     .line 257
     .line 258
-    :cond_101
+    :cond_9
     iget p1, p0, Lcom/mixplorer/widgets/MiDrawer;->Upsilon:F
 
     .line 259
@@ -3027,11 +3027,11 @@
 
     .line 265
     .line 266
-    if-gtz p1, :cond_118
+    if-gtz p1, :cond_c
 
     .line 267
     .line 268
-    :cond_10b
+    :cond_a
     iget-object p1, p0, Lcom/mixplorer/widgets/MiDrawer;->Xi:Landroid/widget/Scroller;
 
     .line 269
@@ -3044,7 +3044,7 @@
     move-result v0
 
     .line 274
-    if-nez v0, :cond_116
+    if-nez v0, :cond_b
 
     .line 275
     .line 276
@@ -3053,18 +3053,18 @@
     .line 277
     .line 278
     .line 279
-    :cond_116
+    :cond_b
     iput-boolean v3, p0, Lcom/mixplorer/widgets/MiDrawer;->Omega:Z
 
     .line 280
     .line 281
-    :cond_118
-    :goto_118
+    :cond_c
+    :goto_2
     return v1
 .end method
 
 .method public final onLayout(ZIIII)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
@@ -3080,18 +3080,18 @@
     move-result p4
 
     .line 8
-    if-eqz p4, :cond_27
+    if-eqz p4, :cond_1
 
     .line 9
     .line 10
-    if-nez p1, :cond_c
+    if-nez p1, :cond_0
 
     .line 11
     .line 12
-    goto :goto_27
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     sub-int p1, p5, p3
 
     .line 14
@@ -3147,13 +3147,13 @@
     .line 38
     .line 39
     .line 40
-    :cond_27
-    :goto_27
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public final onMeasure(II)V
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-static {}, Llibs/t43;->Data()Z
@@ -3164,7 +3164,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -3199,7 +3199,7 @@
     move-result p2
 
     .line 22
-    :cond_15
+    :cond_0
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     .line 23
@@ -3209,7 +3209,7 @@
 .end method
 
 .method public final onTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 8
+    .locals 6
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiDrawer;->India:Lcom/mixplorer/widgets/MiPager;
@@ -3219,7 +3219,7 @@
     const/4 v1, 0x1
 
     .line 4
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 5
     .line 6
@@ -3231,15 +3231,15 @@
     move-result v0
 
     .line 10
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 11
     .line 12
-    goto/16 :goto_b5
+    goto/16 :goto_3
 
     .line 13
     .line 14
-    :cond_d
+    :cond_0
     sget-object v0, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 15
@@ -3252,15 +3252,15 @@
     move-result v0
 
     .line 20
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1
 
     .line 21
     .line 22
-    goto/16 :goto_b5
+    goto/16 :goto_3
 
     .line 23
     .line 24
-    :cond_17
+    :cond_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     .line 25
@@ -3292,7 +3292,7 @@
 
     .line 38
     .line 39
-    if-nez v2, :cond_2e
+    if-nez v2, :cond_2
 
     .line 40
     .line 41
@@ -3308,7 +3308,7 @@
 
     .line 46
     .line 47
-    :cond_2e
+    :cond_2
     invoke-virtual {v2, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
     .line 48
@@ -3332,33 +3332,33 @@
     const/4 v4, 0x0
 
     .line 58
-    if-eq p1, v1, :cond_74
+    if-eq p1, v1, :cond_8
 
     .line 59
     .line 60
     const/4 v5, 0x2
 
     .line 61
-    if-eq p1, v5, :cond_42
+    if-eq p1, v5, :cond_3
 
     .line 62
     .line 63
     const/4 v0, 0x3
 
     .line 64
-    if-eq p1, v0, :cond_74
+    if-eq p1, v0, :cond_8
 
     .line 65
     .line 66
-    goto :goto_6f
+    goto :goto_0
 
     .line 67
-    :cond_42
+    :cond_3
     iget-boolean p1, p0, Lcom/mixplorer/widgets/MiDrawer;->Omega:Z
 
     .line 68
     .line 69
-    if-eqz p1, :cond_4e
+    if-eqz p1, :cond_4
 
     .line 70
     .line 71
@@ -3366,7 +3366,7 @@
 
     .line 72
     .line 73
-    if-nez p1, :cond_4e
+    if-nez p1, :cond_4
 
     .line 74
     .line 75
@@ -3378,7 +3378,7 @@
 
     .line 78
     .line 79
-    :cond_4e
+    :cond_4
     iget p1, p0, Lcom/mixplorer/widgets/MiDrawer;->Seven:F
 
     .line 80
@@ -3390,7 +3390,7 @@
 
     .line 83
     .line 84
-    if-lez v5, :cond_5f
+    if-lez v5, :cond_5
 
     .line 85
     .line 86
@@ -3398,7 +3398,7 @@
 
     .line 87
     .line 88
-    if-eqz p1, :cond_6f
+    if-eqz p1, :cond_6
 
     .line 89
     .line 90
@@ -3414,7 +3414,7 @@
     return v1
 
     .line 96
-    :cond_5f
+    :cond_5
     neg-int v2, v2
 
     .line 97
@@ -3425,7 +3425,7 @@
 
     .line 99
     .line 100
-    if-gez v3, :cond_70
+    if-gez v3, :cond_7
 
     .line 101
     .line 102
@@ -3433,7 +3433,7 @@
 
     .line 103
     .line 104
-    if-eqz p1, :cond_6f
+    if-eqz p1, :cond_6
 
     .line 105
     .line 106
@@ -3449,12 +3449,12 @@
     return v1
 
     .line 112
-    :cond_6f
-    :goto_6f
+    :cond_6
+    :goto_0
     return v4
 
     .line 113
-    :cond_70
+    :cond_7
     invoke-direct {p0, v0}, Lcom/mixplorer/widgets/MiDrawer;->setScrollLeft(F)V
 
     .line 114
@@ -3463,7 +3463,7 @@
     return v1
 
     .line 117
-    :cond_74
+    :cond_8
     iput-boolean v4, p0, Lcom/mixplorer/widgets/MiDrawer;->Omega:Z
 
     .line 118
@@ -3516,7 +3516,7 @@
 
     .line 142
     .line 143
-    if-lez v0, :cond_9a
+    if-lez v0, :cond_9
 
     .line 144
     .line 145
@@ -3532,18 +3532,18 @@
 
     .line 150
     .line 151
-    if-lez p1, :cond_a6
+    if-lez p1, :cond_a
 
     .line 152
     .line 153
-    :goto_98
+    :goto_1
     const/4 v4, 0x1
 
     .line 154
-    goto :goto_a6
+    goto :goto_2
 
     .line 155
-    :cond_9a
+    :cond_9
     iget p1, p0, Lcom/mixplorer/widgets/MiDrawer;->Seven:F
 
     .line 156
@@ -3565,15 +3565,15 @@
 
     .line 163
     .line 164
-    if-lez p1, :cond_a6
+    if-lez p1, :cond_a
 
     .line 165
     .line 166
-    goto :goto_98
+    goto :goto_1
 
     .line 167
-    :cond_a6
-    :goto_a6
+    :cond_a
+    :goto_2
     xor-int/lit8 p1, v4, 0x1
 
     .line 168
@@ -3594,7 +3594,7 @@
     move-result p1
 
     .line 177
-    if-nez p1, :cond_b5
+    if-nez p1, :cond_b
 
     .line 178
     .line 179
@@ -3603,20 +3603,20 @@
     .line 180
     .line 181
     .line 182
-    :cond_b5
-    :goto_b5
+    :cond_b
+    :goto_3
     return v1
 .end method
 
 .method public setBarHeight(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiDrawer;->Four:Landroid/view/ViewGroup;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -3628,7 +3628,7 @@
     move-result-object v0
 
     .line 9
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -3648,12 +3648,12 @@
 
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     return-void
 .end method
 
 .method public setDrawerListener(Llibs/js1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Lcom/mixplorer/widgets/MiDrawer;->Six:Llibs/js1;
@@ -3664,7 +3664,7 @@
 .end method
 
 .method public setPager(Lcom/mixplorer/widgets/MiPager;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Lcom/mixplorer/widgets/MiDrawer;->India:Lcom/mixplorer/widgets/MiPager;

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Exception;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "exception using cipher - please check password and data."
@@ -29,7 +29,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 9
     invoke-direct {p0, p1}, Llibs/z62;-><init>(Ljava/lang/String;)V
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public final getCause()Ljava/lang/Throwable;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ij0;->Y:Ljava/lang/Exception;

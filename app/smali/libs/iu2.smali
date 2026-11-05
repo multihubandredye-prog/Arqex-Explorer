@@ -18,7 +18,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/4 v0, 0x4
@@ -28,7 +28,7 @@
 
     .line 3
     .line 4
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     .line 5
     .line 6
@@ -43,7 +43,7 @@
     nop
 
     .line 11
-    :array_a
+    :array_0
     .array-data 1
         -0x4t
         0x53t
@@ -53,7 +53,7 @@
 .end method
 
 .method public synthetic constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -65,7 +65,7 @@
 .end method
 
 .method public static d([B)Z
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/iu2;->c:[B
@@ -86,7 +86,7 @@
 
 # virtual methods
 .method public a(Llibs/rw2;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget v0, p1, Llibs/rw2;->c:I
@@ -121,7 +121,7 @@
     move-result v0
 
     .line 17
-    if-eqz v0, :cond_42
+    if-eqz v0, :cond_2
 
     .line 18
     .line 19
@@ -164,7 +164,7 @@
 
     .line 37
     .line 38
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_0
 
     .line 39
     .line 40
@@ -172,22 +172,22 @@
 
     .line 41
     .line 42
-    if-eq v0, v1, :cond_2d
+    if-eq v0, v1, :cond_0
 
     .line 43
     .line 44
     const/4 v0, 0x1
 
     .line 45
-    goto :goto_2e
+    goto :goto_0
 
     .line 46
-    :cond_2d
+    :cond_0
     const/4 v0, 0x0
 
     .line 47
-    :goto_2e
-    if-eqz v0, :cond_3c
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 48
     .line 49
@@ -215,7 +215,7 @@
     return-void
 
     .line 61
-    :cond_3c
+    :cond_1
     const-string p1, "The CompressionAlgorithm field of the SMB2_COMPRESSION_TRANSFORM_HEADER should contain a valid value."
 
     .line 62
@@ -228,7 +228,7 @@
     return-void
 
     .line 67
-    :cond_42
+    :cond_2
     const-string p1, "Could not find SMB2 Packet header"
 
     .line 68
@@ -242,7 +242,7 @@
 .end method
 
 .method public b()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/iu2;->a:I
@@ -253,7 +253,7 @@
 .end method
 
 .method public c()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/iu2;->b:I
@@ -264,7 +264,7 @@
 .end method
 
 .method public e(Llibs/um2;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object p1, p1, Llibs/um2;->X:Landroid/view/View;

@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;Llibs/h23;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p2, p0, Llibs/gn2;->Y:Llibs/h23;
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 6
+    .locals 4
 
     .line 1
     :try_start_0
@@ -76,7 +76,7 @@
 
     .line 16
     .line 17
-    if-ltz p1, :cond_2f
+    if-ltz p1, :cond_0
 
     .line 18
     .line 19
@@ -93,11 +93,11 @@
     .line 24
     .line 25
     monitor-enter v0
-    :try_end_19
-    .catchall {:try_start_0 .. :try_end_19} :catchall_2d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 26
-    :try_start_19
+    :try_start_1
     iget-object v1, p0, Llibs/gn2;->Y:Llibs/h23;
 
     .line 27
@@ -132,39 +132,39 @@
     move-object v0, p1
 
     .line 42
-    goto :goto_2f
+    goto :goto_0
 
     .line 43
-    :catchall_2a
+    :catchall_0
     move-exception p1
 
     .line 44
     monitor-exit v0
-    :try_end_2c
-    .catchall {:try_start_19 .. :try_end_2c} :catchall_2a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 45
-    :try_start_2c
+    :try_start_2
     throw p1
 
     .line 46
-    :catchall_2d
+    :catchall_1
     move-exception p1
 
     .line 47
-    goto :goto_46
+    goto :goto_1
 
     .line 48
-    :cond_2f
-    :goto_2f
-    if-nez v0, :cond_32
+    :cond_0
+    :goto_0
+    if-nez v0, :cond_1
 
     .line 49
     .line 50
     return-void
 
     .line 51
-    :cond_32
+    :cond_1
     new-instance p1, Llibs/xv1;
 
     .line 52
@@ -196,8 +196,8 @@
     .line 66
     .line 67
     invoke-virtual {p1}, Llibs/xv1;->start()V
-    :try_end_45
-    .catchall {:try_start_2c .. :try_end_45} :catchall_2d
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 68
     .line 69
@@ -205,7 +205,7 @@
     return-void
 
     .line 71
-    :goto_46
+    :goto_1
     const-string v0, "Remnants"
 
     .line 72

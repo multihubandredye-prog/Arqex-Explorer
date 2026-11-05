@@ -46,7 +46,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 8
+    .locals 8
 
     .line 1
     const/4 v0, 0x6
@@ -270,7 +270,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -282,7 +282,7 @@
 .end method
 
 .method private compareKeyAlgorithm(Ljava/security/PublicKey;Ljava/security/PublicKey;)I
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-interface {p1}, Ljava/security/Key;->getAlgorithm()Ljava/lang/String;
@@ -309,7 +309,7 @@
     move-result p2
 
     .line 13
-    if-eqz p2, :cond_10
+    if-eqz p2, :cond_0
 
     .line 14
     .line 15
@@ -319,7 +319,7 @@
     return p1
 
     .line 17
-    :cond_10
+    :cond_0
     const-string p2, "EC"
 
     .line 18
@@ -332,7 +332,7 @@
     move-result p1
 
     .line 23
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_1
 
     .line 24
     .line 25
@@ -342,7 +342,7 @@
     return p1
 
     .line 27
-    :cond_1a
+    :cond_1
     const/4 p1, -0x1
 
     .line 28
@@ -350,7 +350,7 @@
 .end method
 
 .method private compareKeySize(Ljava/security/PublicKey;Ljava/security/PublicKey;)I
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-interface {p1}, Ljava/security/Key;->getAlgorithm()Ljava/lang/String;
@@ -377,7 +377,7 @@
     move-result v0
 
     .line 13
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 14
     .line 15
@@ -403,7 +403,7 @@
     return p1
 
     .line 25
-    :cond_18
+    :cond_0
     const-string p1, "Keys are not of the same type"
 
     .line 26
@@ -420,7 +420,7 @@
 .end method
 
 .method private compareSignatureAlgorithm(Ljava/security/cert/X509Certificate;Ljava/security/cert/X509Certificate;)I
-    .registers 4
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/CertificatePriorityComparator;->ALGORITHM_OID_PRIORITY_MAP:Ljava/util/Map;
@@ -467,7 +467,7 @@
 
     .line 22
     .line 23
-    if-nez p1, :cond_1a
+    if-nez p1, :cond_0
 
     .line 24
     .line 25
@@ -475,8 +475,8 @@
 
     .line 26
     .line 27
-    :cond_1a
-    if-nez p2, :cond_1e
+    :cond_0
+    if-nez p2, :cond_1
 
     .line 28
     .line 29
@@ -484,7 +484,7 @@
 
     .line 30
     .line 31
-    :cond_1e
+    :cond_1
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     .line 32
@@ -508,7 +508,7 @@
 .end method
 
 .method private compareStrength(Ljava/security/cert/X509Certificate;Ljava/security/cert/X509Certificate;)I
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-virtual {p1}, Ljava/security/cert/Certificate;->getPublicKey()Ljava/security/PublicKey;
@@ -535,14 +535,14 @@
     move-result v2
 
     .line 13
-    if-eqz v2, :cond_f
+    if-eqz v2, :cond_0
 
     .line 14
     .line 15
     return v2
 
     .line 16
-    :cond_f
+    :cond_0
     invoke-direct {p0, v0, v1}, Lorg/conscrypt/CertificatePriorityComparator;->compareKeySize(Ljava/security/PublicKey;Ljava/security/PublicKey;)I
 
     .line 17
@@ -551,14 +551,14 @@
     move-result v0
 
     .line 20
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     .line 21
     .line 22
     return v0
 
     .line 23
-    :cond_16
+    :cond_1
     invoke-direct {p0, p1, p2}, Lorg/conscrypt/CertificatePriorityComparator;->compareSignatureAlgorithm(Ljava/security/cert/X509Certificate;Ljava/security/cert/X509Certificate;)I
 
     .line 24
@@ -571,14 +571,14 @@
 .end method
 
 .method private getKeySize(Ljava/security/PublicKey;)I
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Ljava/security/interfaces/ECPublicKey;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -621,12 +621,12 @@
     return p1
 
     .line 24
-    :cond_17
+    :cond_0
     instance-of v0, p1, Ljava/security/interfaces/RSAPublicKey;
 
     .line 25
     .line 26
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_1
 
     .line 27
     .line 28
@@ -653,7 +653,7 @@
     return p1
 
     .line 39
-    :cond_26
+    :cond_1
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 40
@@ -696,7 +696,7 @@
 
 # virtual methods
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 3
+    .locals 0
 
     .line 68
     check-cast p1, Ljava/security/cert/X509Certificate;
@@ -711,7 +711,7 @@
 .end method
 
 .method public compare(Ljava/security/cert/X509Certificate;Ljava/security/cert/X509Certificate;)I
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-virtual {p1}, Ljava/security/cert/X509Certificate;->getSubjectDN()Ljava/security/Principal;
@@ -762,11 +762,11 @@
     move-result v1
 
     .line 25
-    if-eq v0, v1, :cond_20
+    if-eq v0, v1, :cond_1
 
     .line 26
     .line 27
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_0
 
     .line 28
     .line 29
@@ -776,14 +776,14 @@
     return p1
 
     .line 31
-    :cond_1e
+    :cond_0
     const/4 p1, -0x1
 
     .line 32
     return p1
 
     .line 33
-    :cond_20
+    :cond_1
     invoke-direct {p0, p2, p1}, Lorg/conscrypt/CertificatePriorityComparator;->compareStrength(Ljava/security/cert/X509Certificate;Ljava/security/cert/X509Certificate;)I
 
     .line 34
@@ -792,14 +792,14 @@
     move-result v0
 
     .line 37
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_2
 
     .line 38
     .line 39
     return v0
 
     .line 40
-    :cond_27
+    :cond_2
     invoke-virtual {p1}, Ljava/security/cert/X509Certificate;->getNotAfter()Ljava/util/Date;
 
     .line 41
@@ -824,14 +824,14 @@
     move-result v0
 
     .line 52
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_3
 
     .line 53
     .line 54
     return v0
 
     .line 55
-    :cond_36
+    :cond_3
     invoke-virtual {p1}, Ljava/security/cert/X509Certificate;->getNotBefore()Ljava/util/Date;
 
     .line 56

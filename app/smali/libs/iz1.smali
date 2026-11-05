@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;B)V
-    .registers 3
+    .locals 0
 
     .line 18
     iput-byte p2, p0, Llibs/iz1;->X:B
@@ -27,7 +27,7 @@
 .end method
 
 .method public constructor <init>([Llibs/q72;)V
-    .registers 5
+    .locals 3
 
     .line 1
     const/4 v0, 0x1
@@ -68,7 +68,7 @@
 .end method
 
 .method public constructor <init>([Llibs/w72;)V
-    .registers 5
+    .locals 3
 
     const/4 v0, 0x2
 
@@ -97,7 +97,7 @@
 
 # virtual methods
 .method public a(Ljava/lang/String;)Llibs/iz1;
-    .registers 6
+    .locals 4
 
     .line 1
     new-instance v0, Llibs/iz1;
@@ -144,7 +144,7 @@
 .end method
 
 .method public final iterator()Ljava/util/Iterator;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/iz1;->X:B
@@ -155,7 +155,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_2a
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -175,7 +175,7 @@
     return-object v0
 
     .line 15
-    :pswitch_e
+    :pswitch_0
     new-instance v0, Llibs/m5;
 
     .line 16
@@ -192,7 +192,7 @@
     return-object v0
 
     .line 23
-    :pswitch_16
+    :pswitch_1
     new-instance v0, Llibs/m5;
 
     .line 24
@@ -209,7 +209,7 @@
     return-object v0
 
     .line 31
-    :pswitch_1e
+    :pswitch_2
     check-cast v1, Ljava/util/HashMap;
 
     .line 32
@@ -236,10 +236,10 @@
     nop
 
     .line 43
-    :pswitch_data_2a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1e
-        :pswitch_16
-        :pswitch_e
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

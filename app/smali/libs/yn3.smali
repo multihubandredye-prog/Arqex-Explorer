@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,7 +34,7 @@
 
 # virtual methods
 .method public final a()J
-    .registers 3
+    .locals 2
 
     .line 1
     const-wide/16 v0, 0x0
@@ -45,7 +45,7 @@
 .end method
 
 .method public final b()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Llibs/yn3;->Y:J
@@ -56,7 +56,7 @@
 .end method
 
 .method public final getAttributes()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -66,7 +66,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/String;

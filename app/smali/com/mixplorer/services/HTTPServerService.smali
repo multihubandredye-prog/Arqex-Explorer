@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/dx1;
@@ -33,7 +33,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/ex1;-><init>()V
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public final e(Landroid/content/Intent;)I
-    .registers 14
+    .locals 12
 
     .line 1
     new-instance v0, Llibs/Init;
@@ -92,14 +92,14 @@
     const/4 v3, -0x1
 
     .line 16
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_0
 
     .line 17
     .line 18
-    goto :goto_1e
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     const-string v2, "appWidgetId"
 
     .line 20
@@ -120,15 +120,15 @@
     .line 27
     .line 28
     .line 29
-    if-eq v2, v5, :cond_1f
+    if-eq v2, v5, :cond_1
 
     .line 30
     .line 31
-    :goto_1e
+    :goto_0
     return v3
 
     .line 32
-    :cond_1f
+    :cond_1
     invoke-static {}, Llibs/u53;->d()Z
 
     .line 33
@@ -137,7 +137,7 @@
     move-result v2
 
     .line 36
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_2
 
     .line 37
     .line 38
@@ -149,7 +149,7 @@
     return v3
 
     .line 42
-    :cond_29
+    :cond_2
     const/4 v2, 0x1
 
     .line 43
@@ -174,7 +174,7 @@
 
     .line 53
     .line 54
-    if-eqz v6, :cond_3a
+    if-eqz v6, :cond_3
 
     .line 55
     .line 56
@@ -182,15 +182,15 @@
 
     .line 57
     .line 58
-    goto :goto_3c
+    goto :goto_1
 
     .line 59
-    :cond_3a
+    :cond_3
     const-string v6, "http"
 
     .line 60
     .line 61
-    :goto_3c
+    :goto_1
     invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     .line 62
@@ -222,7 +222,7 @@
 
     .line 77
     .line 78
-    if-ne v6, v7, :cond_52
+    if-ne v6, v7, :cond_4
 
     .line 79
     .line 80
@@ -230,10 +230,10 @@
 
     .line 81
     .line 82
-    goto :goto_62
+    goto :goto_2
 
     .line 83
-    :cond_52
+    :cond_4
     new-instance v6, Ljava/lang/StringBuilder;
 
     .line 84
@@ -264,7 +264,7 @@
     move-result-object v6
 
     .line 99
-    :goto_62
+    :goto_2
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 100
@@ -310,7 +310,7 @@
     move-result v5
 
     .line 122
-    if-lez v5, :cond_7e
+    if-lez v5, :cond_5
 
     .line 123
     .line 124
@@ -319,7 +319,7 @@
     .line 125
     .line 126
     .line 127
-    :cond_7e
+    :cond_5
     iget-object v5, v3, Llibs/s53;->h:Ljava/util/ArrayList;
 
     .line 128
@@ -332,7 +332,7 @@
     move-result v5
 
     .line 133
-    if-ne v5, v2, :cond_9b
+    if-ne v5, v2, :cond_6
 
     .line 134
     .line 135
@@ -364,7 +364,7 @@
     move-result v6
 
     .line 149
-    if-nez v6, :cond_9b
+    if-nez v6, :cond_6
 
     .line 150
     .line 151
@@ -377,7 +377,7 @@
     .line 154
     .line 155
     .line 156
-    :cond_9b
+    :cond_6
     sget-object v7, Llibs/u53;->a:Ljava/lang/String;
 
     .line 157
@@ -417,7 +417,7 @@
     move-result-object v5
 
     .line 175
-    if-eqz v5, :cond_d3
+    if-eqz v5, :cond_8
 
     .line 176
     .line 177
@@ -453,8 +453,8 @@
     array-length v8, v6
 
     .line 193
-    :goto_c0
-    if-ge v4, v8, :cond_d3
+    :goto_3
+    if-ge v4, v8, :cond_8
 
     .line 194
     .line 195
@@ -470,7 +470,7 @@
     move-result v10
 
     .line 201
-    if-eqz v10, :cond_cd
+    if-eqz v10, :cond_7
 
     .line 202
     .line 203
@@ -479,7 +479,7 @@
     .line 204
     .line 205
     .line 206
-    :cond_cd
+    :cond_7
     invoke-static {v7, v5, v9, v2}, Llibs/u53;->f(Landroid/content/Context;Landroid/appwidget/AppWidgetManager;IZ)V
 
     .line 207
@@ -489,10 +489,10 @@
 
     .line 210
     .line 211
-    goto :goto_c0
+    goto :goto_3
 
     .line 212
-    :cond_d3
+    :cond_8
     invoke-virtual {v3, v2}, Llibs/s53;->h(Z)V
 
     .line 213
@@ -528,7 +528,7 @@
 .end method
 
 .method public final g()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -552,7 +552,7 @@
 .end method
 
 .method public final onCreate()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/services/HTTPServerService;->Z:Llibs/u53;
@@ -580,7 +580,7 @@
 .end method
 
 .method public final onDestroy()V
-    .registers 10
+    .locals 9
 
     .line 1
     invoke-super {p0}, Llibs/ex1;->onDestroy()V
@@ -617,7 +617,7 @@
 
     .line 18
     .line 19
-    if-eqz v2, :cond_17
+    if-eqz v2, :cond_0
 
     .line 20
     .line 21
@@ -626,7 +626,7 @@
     .line 22
     .line 23
     .line 24
-    :cond_17
+    :cond_0
     sget-object v2, Llibs/lp;->l:Ljava/util/Map;
 
     .line 25
@@ -661,15 +661,15 @@
     monitor-enter v2
 
     .line 42
-    :try_start_29
+    :try_start_0
     invoke-interface {v2}, Ljava/util/Map;->clear()V
 
     .line 43
     .line 44
     .line 45
     monitor-exit v2
-    :try_end_2d
-    .catchall {:try_start_29 .. :try_end_2d} :catchall_70
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 46
     sget v2, Lcom/mixplorer/providers/WidgetHTTPProvider;->a:I
@@ -688,7 +688,7 @@
     move-result-object v2
 
     .line 54
-    if-eqz v2, :cond_5b
+    if-eqz v2, :cond_2
 
     .line 55
     .line 56
@@ -727,8 +727,8 @@
     const/4 v6, 0x0
 
     .line 73
-    :goto_48
-    if-ge v6, v5, :cond_5b
+    :goto_0
+    if-ge v6, v5, :cond_2
 
     .line 74
     .line 75
@@ -744,7 +744,7 @@
     move-result v8
 
     .line 81
-    if-eqz v8, :cond_55
+    if-eqz v8, :cond_1
 
     .line 82
     .line 83
@@ -753,7 +753,7 @@
     .line 84
     .line 85
     .line 86
-    :cond_55
+    :cond_1
     invoke-static {v4, v2, v7, v0}, Llibs/u53;->f(Landroid/content/Context;Landroid/appwidget/AppWidgetManager;IZ)V
 
     .line 87
@@ -763,10 +763,10 @@
 
     .line 90
     .line 91
-    goto :goto_48
+    goto :goto_0
 
     .line 92
-    :cond_5b
+    :cond_2
     const v2, 0x20572
 
     .line 93
@@ -806,23 +806,23 @@
     return-void
 
     .line 113
-    :catchall_70
+    :catchall_0
     move-exception v0
 
     .line 114
-    :try_start_71
+    :try_start_1
     monitor-exit v2
-    :try_end_72
-    .catchall {:try_start_71 .. :try_end_72} :catchall_70
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 115
-    goto :goto_74
+    goto :goto_2
 
     .line 116
-    :goto_73
+    :goto_1
     throw v0
 
     .line 117
-    :goto_74
-    goto :goto_73
+    :goto_2
+    goto :goto_1
 .end method

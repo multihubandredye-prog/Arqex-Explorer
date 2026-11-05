@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/hf0;Llibs/qs0;)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -56,7 +56,7 @@
 .end method
 
 .method public static a(ILjava/math/BigInteger;Ljava/math/BigInteger;)Ljava/math/BigInteger;
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-virtual {p2}, Ljava/math/BigInteger;->signum()I
@@ -67,21 +67,21 @@
     move-result v0
 
     .line 5
-    if-gez v0, :cond_8
+    if-gez v0, :cond_0
 
     .line 6
     .line 7
     const/4 v0, 0x1
 
     .line 8
-    goto :goto_9
+    goto :goto_0
 
     .line 9
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 10
-    :goto_9
+    :goto_0
     invoke-virtual {p2}, Ljava/math/BigInteger;->abs()Ljava/math/BigInteger;
 
     .line 11
@@ -118,7 +118,7 @@
     move-result-object p0
 
     .line 28
-    if-eqz p2, :cond_23
+    if-eqz p2, :cond_1
 
     .line 29
     .line 30
@@ -134,8 +134,8 @@
     move-result-object p0
 
     .line 36
-    :cond_23
-    if-eqz v0, :cond_29
+    :cond_1
+    if-eqz v0, :cond_2
 
     .line 37
     .line 38
@@ -147,14 +147,14 @@
     move-result-object p0
 
     .line 42
-    :cond_29
+    :cond_2
     return-object p0
 .end method
 
 
 # virtual methods
 .method public final b(Ljava/math/BigInteger;)[Ljava/math/BigInteger;
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/ps0;->a:Llibs/qs0;

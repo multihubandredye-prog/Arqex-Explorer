@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "MD4"
@@ -74,7 +74,7 @@
 .end method
 
 .method public static a(IIIIII)I
-    .registers 6
+    .locals 0
 
     .line 1
     and-int/2addr p2, p1
@@ -114,7 +114,7 @@
 .end method
 
 .method public static b(IIIIII)I
-    .registers 7
+    .locals 1
 
     .line 1
     or-int v0, p2, p3
@@ -161,7 +161,7 @@
 .end method
 
 .method public static c(IIIIII)I
-    .registers 6
+    .locals 0
 
     .line 1
     xor-int/2addr p1, p2
@@ -203,7 +203,7 @@
 
 # virtual methods
 .method public final clone()Ljava/lang/Object;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/fo1;
@@ -267,7 +267,7 @@
 .end method
 
 .method public final d(I[B)V
-    .registers 46
+    .locals 43
 
     .line 1
     move-object/from16 v0, p0
@@ -288,7 +288,7 @@
     const/4 v4, 0x0
 
     .line 9
-    :goto_8
+    :goto_0
     const/16 v5, 0x10
 
     .line 10
@@ -304,7 +304,7 @@
 
     .line 15
     .line 16
-    if-ge v4, v5, :cond_36
+    if-ge v4, v5, :cond_0
 
     .line 17
     .line 18
@@ -384,10 +384,10 @@
 
     .line 53
     .line 54
-    goto :goto_8
+    goto :goto_0
 
     .line 55
-    :cond_36
+    :cond_0
     aget v9, v1, v2
 
     .line 56
@@ -2045,7 +2045,7 @@
 .end method
 
 .method public final engineDigest()[B
-    .registers 11
+    .locals 10
 
     .line 1
     iget-wide v0, p0, Llibs/fo1;->Y:J
@@ -2066,22 +2066,22 @@
 
     .line 8
     .line 9
-    if-ge v1, v0, :cond_c
+    if-ge v1, v0, :cond_0
 
     .line 10
     .line 11
     sub-int/2addr v0, v1
 
     .line 12
-    goto :goto_e
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     rsub-int/lit8 v0, v1, 0x78
 
     .line 14
     .line 15
-    :goto_e
+    :goto_0
     add-int/lit8 v1, v0, 0x8
 
     .line 16
@@ -2104,12 +2104,12 @@
     const/4 v3, 0x0
 
     .line 25
-    :goto_18
+    :goto_1
     const/16 v5, 0x8
 
     .line 26
     .line 27
-    if-ge v3, v5, :cond_2e
+    if-ge v3, v5, :cond_1
 
     .line 28
     .line 29
@@ -2150,10 +2150,10 @@
 
     .line 45
     .line 46
-    goto :goto_18
+    goto :goto_1
 
     .line 47
-    :cond_2e
+    :cond_1
     invoke-virtual {p0, v2, v4, v1}, Llibs/fo1;->engineUpdate([BII)V
 
     .line 48
@@ -2170,19 +2170,19 @@
     const/4 v1, 0x0
 
     .line 55
-    :goto_36
+    :goto_2
     const/4 v2, 0x4
 
     .line 56
-    if-ge v1, v2, :cond_4f
+    if-ge v1, v2, :cond_3
 
     .line 57
     .line 58
     const/4 v3, 0x0
 
     .line 59
-    :goto_3a
-    if-ge v3, v2, :cond_4c
+    :goto_3
+    if-ge v3, v2, :cond_2
 
     .line 60
     .line 61
@@ -2219,18 +2219,18 @@
 
     .line 75
     .line 76
-    goto :goto_3a
+    goto :goto_3
 
     .line 77
-    :cond_4c
+    :cond_2
     add-int/lit8 v1, v1, 0x1
 
     .line 78
     .line 79
-    goto :goto_36
+    goto :goto_2
 
     .line 80
-    :cond_4f
+    :cond_3
     invoke-virtual {p0}, Llibs/fo1;->engineReset()V
 
     .line 81
@@ -2240,7 +2240,7 @@
 .end method
 
 .method public final engineReset()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/fo1;->X:[I
@@ -2306,12 +2306,12 @@
     const/4 v0, 0x0
 
     .line 32
-    :goto_1f
+    :goto_0
     const/16 v1, 0x40
 
     .line 33
     .line 34
-    if-ge v0, v1, :cond_2a
+    if-ge v0, v1, :cond_0
 
     .line 35
     .line 36
@@ -2327,15 +2327,15 @@
 
     .line 41
     .line 42
-    goto :goto_1f
+    goto :goto_0
 
     .line 43
-    :cond_2a
+    :cond_0
     return-void
 .end method
 
 .method public final engineUpdate(B)V
-    .registers 8
+    .locals 6
 
     .line 67
     iget-wide v0, p0, Llibs/fo1;->Y:J
@@ -2360,30 +2360,30 @@
 
     const/16 p1, 0x3f
 
-    if-ne v3, p1, :cond_18
+    if-ne v3, p1, :cond_0
 
     const/4 p1, 0x0
 
     .line 70
     invoke-virtual {p0, p1, v0}, Llibs/fo1;->d(I[B)V
 
-    :cond_18
+    :cond_0
     return-void
 .end method
 
 .method public final engineUpdate([BII)V
-    .registers 12
+    .locals 8
 
     .line 1
     iget-object v0, p0, Llibs/fo1;->Z:[B
 
     .line 2
     .line 3
-    if-ltz p2, :cond_3a
+    if-ltz p2, :cond_3
 
     .line 4
     .line 5
-    if-ltz p3, :cond_3a
+    if-ltz p3, :cond_3
 
     .line 6
     .line 7
@@ -2406,7 +2406,7 @@
 
     .line 13
     .line 14
-    if-gtz v7, :cond_3a
+    if-gtz v7, :cond_3
 
     .line 15
     .line 16
@@ -2439,7 +2439,7 @@
     const/4 v2, 0x0
 
     .line 29
-    if-lt p3, v1, :cond_32
+    if-lt p3, v1, :cond_1
 
     .line 30
     .line 31
@@ -2453,7 +2453,7 @@
     .line 35
     .line 36
     .line 37
-    :goto_24
+    :goto_0
     add-int/lit8 v3, v1, 0x40
 
     .line 38
@@ -2462,7 +2462,7 @@
 
     .line 40
     .line 41
-    if-ge v4, p3, :cond_30
+    if-ge v4, p3, :cond_0
 
     .line 42
     .line 43
@@ -2477,18 +2477,18 @@
     move v1, v3
 
     .line 48
-    goto :goto_24
+    goto :goto_0
 
     .line 49
-    :cond_30
+    :cond_0
     move v2, v1
 
     .line 50
     const/4 v6, 0x0
 
     .line 51
-    :cond_32
-    if-ge v2, p3, :cond_39
+    :cond_1
+    if-ge v2, p3, :cond_2
 
     .line 52
     .line 53
@@ -2503,11 +2503,11 @@
     .line 56
     .line 57
     .line 58
-    :cond_39
+    :cond_2
     return-void
 
     .line 59
-    :cond_3a
+    :cond_3
     new-instance p1, Ljava/lang/ArrayIndexOutOfBoundsException;
 
     .line 60
@@ -2517,13 +2517,13 @@
     .line 62
     .line 63
     .line 64
-    goto :goto_41
+    goto :goto_2
 
     .line 65
-    :goto_40
+    :goto_1
     throw p1
 
     .line 66
-    :goto_41
-    goto :goto_40
+    :goto_2
+    goto :goto_1
 .end method

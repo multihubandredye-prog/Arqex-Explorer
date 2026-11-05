@@ -11,7 +11,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/view/View;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/mi1;->a:B
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public onDoubleTap(Landroid/view/MotionEvent;)Z
-    .registers 19
+    .locals 17
 
     .line 1
     move-object/from16 v0, p0
@@ -54,12 +54,12 @@
 
     .line 8
     .line 9
-    packed-switch v1, :pswitch_data_112
+    packed-switch v1, :pswitch_data_0
 
     .line 10
     .line 11
     .line 12
-    :pswitch_b
+    :pswitch_0
     invoke-super/range {p0 .. p1}, Landroid/view/GestureDetector$SimpleOnGestureListener;->onDoubleTap(Landroid/view/MotionEvent;)Z
 
     .line 13
@@ -71,7 +71,7 @@
     return v1
 
     .line 17
-    :pswitch_10
+    :pswitch_1
     invoke-virtual/range {p0 .. p1}, Landroid/view/GestureDetector$SimpleOnGestureListener;->onDoubleTapEvent(Landroid/view/MotionEvent;)Z
 
     .line 18
@@ -83,7 +83,7 @@
     return v1
 
     .line 22
-    :pswitch_15
+    :pswitch_2
     check-cast v4, Llibs/qt1;
 
     .line 23
@@ -108,7 +108,7 @@
 
     .line 33
     .line 34
-    if-eqz v6, :cond_e9
+    if-eqz v6, :cond_a
 
     .line 35
     .line 36
@@ -116,7 +116,7 @@
 
     .line 37
     .line 38
-    if-eqz v6, :cond_e9
+    if-eqz v6, :cond_a
 
     .line 39
     .line 40
@@ -124,7 +124,7 @@
 
     .line 41
     .line 42
-    if-eqz v6, :cond_e9
+    if-eqz v6, :cond_a
 
     .line 43
     .line 44
@@ -212,17 +212,17 @@
     const/4 v10, 0x0
 
     .line 88
-    if-nez v8, :cond_5b
+    if-nez v8, :cond_0
 
     .line 89
     .line 90
     move-object v6, v10
 
     .line 91
-    goto :goto_68
+    goto :goto_0
 
     .line 92
-    :cond_5b
+    :cond_0
     iget v11, v8, Landroid/graphics/PointF;->x:F
 
     .line 93
@@ -252,7 +252,7 @@
     .line 103
     .line 104
     .line 105
-    :goto_68
+    :goto_0
     iget v1, v4, Llibs/qt1;->Three:F
 
     .line 106
@@ -269,7 +269,7 @@
 
     .line 112
     .line 113
-    if-nez v11, :cond_75
+    if-nez v11, :cond_1
 
     .line 114
     .line 115
@@ -277,15 +277,15 @@
 
     .line 116
     .line 117
-    goto :goto_98
+    goto :goto_2
 
     .line 118
-    :cond_75
+    :cond_1
     cmpl-float v8, v1, v8
 
     .line 119
     .line 120
-    if-nez v8, :cond_81
+    if-nez v8, :cond_2
 
     .line 121
     .line 122
@@ -297,23 +297,23 @@
 
     .line 125
     .line 126
-    if-eqz v11, :cond_81
+    if-eqz v11, :cond_2
 
     .line 127
     .line 128
-    :goto_7f
+    :goto_1
     move v5, v8
 
     .line 129
-    goto :goto_98
+    goto :goto_2
 
     .line 130
-    :cond_81
+    :cond_2
     cmpl-float v8, v1, v5
 
     .line 131
     .line 132
-    if-lez v8, :cond_8c
+    if-lez v8, :cond_3
 
     .line 133
     .line 134
@@ -325,14 +325,14 @@
 
     .line 137
     .line 138
-    if-eqz v11, :cond_8c
+    if-eqz v11, :cond_3
 
     .line 139
     .line 140
-    goto :goto_7f
+    goto :goto_1
 
     .line 141
-    :cond_8c
+    :cond_3
     iget v8, v4, Llibs/qt1;->One:F
 
     .line 142
@@ -341,27 +341,27 @@
 
     .line 144
     .line 145
-    if-ltz v11, :cond_93
+    if-ltz v11, :cond_4
 
     .line 146
     .line 147
-    goto :goto_98
+    goto :goto_2
 
     .line 148
-    :cond_93
+    :cond_4
     cmpl-float v11, v1, v8
 
     .line 149
     .line 150
-    if-eqz v11, :cond_98
+    if-eqz v11, :cond_5
 
     .line 151
     .line 152
-    goto :goto_7f
+    goto :goto_1
 
     .line 153
-    :cond_98
-    :goto_98
+    :cond_5
+    :goto_2
     float-to-double v11, v1
 
     .line 154
@@ -388,26 +388,26 @@
 
     .line 166
     .line 167
-    if-gtz v1, :cond_aa
+    if-gtz v1, :cond_6
 
     .line 168
     .line 169
     const/4 v1, 0x1
 
     .line 170
-    goto :goto_ab
+    goto :goto_3
 
     .line 171
-    :cond_aa
+    :cond_6
     const/4 v1, 0x0
 
     .line 172
-    :goto_ab
+    :goto_3
     iget v8, v4, Llibs/qt1;->Lambda:I
 
     .line 173
     .line 174
-    if-ne v8, v9, :cond_bd
+    if-ne v8, v9, :cond_7
 
     .line 175
     .line 176
@@ -436,26 +436,26 @@
     .line 187
     .line 188
     .line 189
-    goto :goto_ed
+    goto :goto_5
 
     .line 190
-    :cond_bd
+    :cond_7
     const/4 v9, 0x4
 
     .line 191
-    if-eq v8, v2, :cond_d7
+    if-eq v8, v2, :cond_9
 
     .line 192
     .line 193
-    if-nez v1, :cond_c3
+    if-nez v1, :cond_8
 
     .line 194
     .line 195
-    goto :goto_d7
+    goto :goto_4
 
     .line 196
-    :cond_c3
-    if-nez v8, :cond_ed
+    :cond_8
+    if-nez v8, :cond_b
 
     .line 197
     .line 198
@@ -492,11 +492,11 @@
     .line 213
     .line 214
     .line 215
-    goto :goto_ed
+    goto :goto_5
 
     .line 216
-    :cond_d7
-    :goto_d7
+    :cond_9
+    :goto_4
     new-instance v1, Llibs/it1;
 
     .line 217
@@ -530,10 +530,10 @@
     .line 231
     .line 232
     .line 233
-    goto :goto_ed
+    goto :goto_5
 
     .line 234
-    :cond_e9
+    :cond_a
     invoke-virtual/range {p0 .. p1}, Landroid/view/GestureDetector$SimpleOnGestureListener;->onDoubleTapEvent(Landroid/view/MotionEvent;)Z
 
     .line 235
@@ -542,12 +542,12 @@
     move-result v2
 
     .line 238
-    :cond_ed
-    :goto_ed
+    :cond_b
+    :goto_5
     return v2
 
     .line 239
-    :pswitch_ee
+    :pswitch_3
     check-cast v4, Llibs/oi1;
 
     .line 240
@@ -606,7 +606,7 @@
     move-result v4
 
     .line 267
-    if-eqz v4, :cond_110
+    if-eqz v4, :cond_c
 
     .line 268
     .line 269
@@ -615,28 +615,28 @@
     .line 270
     .line 271
     .line 272
-    goto :goto_111
+    goto :goto_6
 
     .line 273
-    :cond_110
+    :cond_c
     const/4 v2, 0x0
 
     .line 274
-    :goto_111
+    :goto_6
     return v2
 
     .line 275
-    :pswitch_data_112
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_ee
-        :pswitch_b
-        :pswitch_15
-        :pswitch_10
+        :pswitch_3
+        :pswitch_0
+        :pswitch_2
+        :pswitch_1
     .end packed-switch
 .end method
 
 .method public onDown(Landroid/view/MotionEvent;)Z
-    .registers 7
+    .locals 5
 
     .line 1
     iget-byte v0, p0, Llibs/mi1;->a:B
@@ -653,7 +653,7 @@
 
     .line 6
     .line 7
-    sparse-switch v0, :sswitch_data_32
+    sparse-switch v0, :sswitch_data_0
 
     .line 8
     .line 9
@@ -669,7 +669,7 @@
     return p1
 
     .line 15
-    :sswitch_e
+    :sswitch_0
     check-cast v3, Llibs/aj3;
 
     .line 16
@@ -681,7 +681,7 @@
     return v1
 
     .line 20
-    :sswitch_13
+    :sswitch_1
     check-cast v3, Llibs/oi1;
 
     .line 21
@@ -727,14 +727,14 @@
 
     .line 40
     .line 41
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_0
 
     .line 42
     .line 43
     const/4 v2, 0x1
 
     .line 44
-    :cond_2b
+    :cond_0
     iput-boolean v2, v0, Llibs/fx0;->q:Z
 
     .line 45
@@ -752,15 +752,15 @@
     nop
 
     .line 51
-    :sswitch_data_32
+    :sswitch_data_0
     .sparse-switch
-        0x0 -> :sswitch_13
-        0x4 -> :sswitch_e
+        0x0 -> :sswitch_1
+        0x4 -> :sswitch_0
     .end sparse-switch
 .end method
 
 .method public onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
-    .registers 11
+    .locals 6
 
     .line 1
     iget-byte v0, p0, Llibs/mi1;->a:B
@@ -777,12 +777,12 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_e6
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
     .line 10
-    :pswitch_9
+    :pswitch_0
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/GestureDetector$SimpleOnGestureListener;->onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
 
     .line 11
@@ -794,7 +794,7 @@
     return p1
 
     .line 15
-    :pswitch_e
+    :pswitch_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     .line 16
@@ -837,7 +837,7 @@
 
     .line 34
     .line 35
-    if-lez v0, :cond_2d
+    if-lez v0, :cond_0
 
     .line 36
     .line 37
@@ -852,7 +852,7 @@
 
     .line 41
     .line 42
-    if-gez v0, :cond_2d
+    if-gez v0, :cond_0
 
     .line 43
     .line 44
@@ -860,7 +860,7 @@
 
     .line 45
     .line 46
-    :cond_2d
+    :cond_0
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/GestureDetector$SimpleOnGestureListener;->onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
 
     .line 47
@@ -872,7 +872,7 @@
     return p1
 
     .line 51
-    :pswitch_32
+    :pswitch_2
     check-cast v3, Llibs/qt1;
 
     .line 52
@@ -881,7 +881,7 @@
 
     .line 54
     .line 55
-    if-eqz v0, :cond_ba
+    if-eqz v0, :cond_3
 
     .line 56
     .line 57
@@ -889,11 +889,11 @@
 
     .line 58
     .line 59
-    if-eqz v0, :cond_ba
+    if-eqz v0, :cond_3
 
     .line 60
     .line 61
-    if-eqz p1, :cond_ba
+    if-eqz p1, :cond_3
 
     .line 62
     .line 63
@@ -932,7 +932,7 @@
 
     .line 79
     .line 80
-    if-gtz v0, :cond_62
+    if-gtz v0, :cond_1
 
     .line 81
     .line 82
@@ -967,11 +967,11 @@
 
     .line 96
     .line 97
-    if-lez v0, :cond_ba
+    if-lez v0, :cond_3
 
     .line 98
     .line 99
-    :cond_62
+    :cond_1
     invoke-static {p3}, Ljava/lang/Math;->abs(F)F
 
     .line 100
@@ -988,7 +988,7 @@
 
     .line 106
     .line 107
-    if-gtz v0, :cond_74
+    if-gtz v0, :cond_2
 
     .line 108
     .line 109
@@ -1004,16 +1004,16 @@
 
     .line 114
     .line 115
-    if-lez v0, :cond_ba
+    if-lez v0, :cond_3
 
     .line 116
     .line 117
-    :cond_74
+    :cond_2
     iget-boolean v0, v3, Llibs/qt1;->Echo:Z
 
     .line 118
     .line 119
-    if-nez v0, :cond_ba
+    if-nez v0, :cond_3
 
     .line 120
     .line 121
@@ -1154,10 +1154,10 @@
     .line 184
     .line 185
     .line 186
-    goto :goto_be
+    goto :goto_0
 
     .line 187
-    :cond_ba
+    :cond_3
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/GestureDetector$SimpleOnGestureListener;->onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
 
     .line 188
@@ -1166,11 +1166,11 @@
     move-result v2
 
     .line 191
-    :goto_be
+    :goto_0
     return v2
 
     .line 192
-    :pswitch_bf
+    :pswitch_3
     check-cast v3, Lcom/mixplorer/widgets/MiDraggableListView;
 
     .line 193
@@ -1179,7 +1179,7 @@
 
     .line 195
     .line 196
-    if-eqz p1, :cond_e4
+    if-eqz p1, :cond_5
 
     .line 197
     .line 198
@@ -1191,7 +1191,7 @@
 
     .line 201
     .line 202
-    if-lez p3, :cond_e3
+    if-lez p3, :cond_4
 
     .line 203
     .line 204
@@ -1234,7 +1234,7 @@
 
     .line 222
     .line 223
-    if-lez p1, :cond_e3
+    if-lez p1, :cond_4
 
     .line 224
     .line 225
@@ -1243,35 +1243,35 @@
     .line 226
     .line 227
     .line 228
-    :cond_e3
+    :cond_4
     const/4 v1, 0x1
 
     .line 229
-    :cond_e4
+    :cond_5
     return v1
 
     .line 230
     nop
 
     .line 231
-    :pswitch_data_e6
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_bf
-        :pswitch_32
-        :pswitch_9
-        :pswitch_e
+        :pswitch_3
+        :pswitch_2
+        :pswitch_0
+        :pswitch_1
     .end packed-switch
 .end method
 
 .method public onLongPress(Landroid/view/MotionEvent;)V
-    .registers 12
+    .locals 10
 
     .line 1
     iget-byte v0, p0, Llibs/mi1;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_c0
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -1284,7 +1284,7 @@
     return-void
 
     .line 10
-    :pswitch_9
+    :pswitch_0
     iget-object v0, p0, Llibs/mi1;->b:Landroid/view/View;
 
     .line 11
@@ -1343,7 +1343,7 @@
     const/4 v7, 0x1
 
     .line 38
-    if-eqz v5, :cond_6a
+    if-eqz v5, :cond_1
 
     .line 39
     .line 40
@@ -1440,7 +1440,7 @@
 
     .line 82
     .line 83
-    if-ltz v8, :cond_6a
+    if-ltz v8, :cond_1
 
     .line 84
     .line 85
@@ -1448,7 +1448,7 @@
 
     .line 86
     .line 87
-    if-eqz v8, :cond_5c
+    if-eqz v8, :cond_0
 
     .line 88
     .line 89
@@ -1459,10 +1459,10 @@
     int-to-float v5, v5
 
     .line 92
-    goto :goto_64
+    goto :goto_0
 
     .line 93
-    :cond_5c
+    :cond_0
     invoke-virtual {v5}, Llibs/rl3;->f()F
 
     .line 94
@@ -1481,27 +1481,27 @@
     add-float/2addr v5, v8
 
     .line 101
-    :goto_64
+    :goto_0
     cmpg-float v5, v1, v5
 
     .line 102
     .line 103
-    if-gtz v5, :cond_6a
+    if-gtz v5, :cond_1
 
     .line 104
     .line 105
     const/4 v5, 0x1
 
     .line 106
-    goto :goto_6b
+    goto :goto_1
 
     .line 107
-    :cond_6a
+    :cond_1
     const/4 v5, 0x0
 
     .line 108
-    :goto_6b
-    if-eqz v5, :cond_81
+    :goto_1
+    if-eqz v5, :cond_2
 
     .line 109
     .line 110
@@ -1540,14 +1540,14 @@
     move-result v5
 
     .line 127
-    if-eqz v5, :cond_81
+    if-eqz v5, :cond_2
 
     .line 128
     .line 129
-    goto :goto_bc
+    goto :goto_2
 
     .line 130
-    :cond_81
+    :cond_2
     invoke-virtual {v4}, Llibs/cv;->getLayout()Llibs/rl3;
 
     .line 131
@@ -1609,7 +1609,7 @@
 
     .line 158
     .line 159
-    if-eqz v1, :cond_ad
+    if-eqz v1, :cond_3
 
     .line 160
     .line 161
@@ -1638,7 +1638,7 @@
     .line 172
     .line 173
     .line 174
-    :cond_ad
+    :cond_3
     invoke-virtual {v4}, Llibs/cv;->getLayout()Llibs/rl3;
 
     .line 175
@@ -1668,7 +1668,7 @@
     .line 187
     .line 188
     .line 189
-    :goto_bc
+    :goto_2
     invoke-virtual {v4}, Llibs/cv;->b()V
 
     .line 190
@@ -1677,21 +1677,21 @@
     return-void
 
     .line 193
-    :pswitch_data_c0
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_9
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
-    .registers 13
+    .locals 8
 
     .line 1
     iget-byte v0, p0, Llibs/mi1;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_112
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -1707,7 +1707,7 @@
     return p1
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     iget-object p1, p0, Llibs/mi1;->b:Landroid/view/View;
 
     .line 12
@@ -1755,7 +1755,7 @@
     const/4 v3, 0x0
 
     .line 34
-    if-eqz v2, :cond_110
+    if-eqz v2, :cond_a
 
     .line 35
     .line 36
@@ -1763,15 +1763,15 @@
 
     .line 37
     .line 38
-    if-nez v2, :cond_29
+    if-nez v2, :cond_0
 
     .line 39
     .line 40
-    goto/16 :goto_110
+    goto/16 :goto_1
 
     .line 41
     .line 42
-    :cond_29
+    :cond_0
     iget v2, v0, Llibs/fx0;->n:F
 
     .line 43
@@ -1855,7 +1855,7 @@
     const/4 v7, 0x1
 
     .line 79
-    if-eq v4, v6, :cond_6d
+    if-eq v4, v6, :cond_1
 
     .line 80
     .line 81
@@ -1871,7 +1871,7 @@
     move-result v4
 
     .line 87
-    if-ne v4, v7, :cond_6d
+    if-ne v4, v7, :cond_1
 
     .line 88
     .line 89
@@ -1899,7 +1899,7 @@
 
     .line 100
     .line 101
-    if-lez v6, :cond_6d
+    if-lez v6, :cond_1
 
     .line 102
     .line 103
@@ -1910,7 +1910,7 @@
 
     .line 105
     .line 106
-    if-gez v2, :cond_6d
+    if-gez v2, :cond_1
 
     .line 107
     .line 108
@@ -1918,7 +1918,7 @@
 
     .line 109
     .line 110
-    :cond_6d
+    :cond_1
     iput p2, p1, Llibs/oi1;->Omega:I
 
     .line 111
@@ -1930,7 +1930,7 @@
     const/4 v4, 0x2
 
     .line 115
-    if-ne v2, v4, :cond_96
+    if-ne v2, v4, :cond_2
 
     .line 116
     .line 117
@@ -1950,7 +1950,7 @@
     move-result p2
 
     .line 125
-    if-ltz p2, :cond_110
+    if-ltz p2, :cond_a
 
     .line 126
     .line 127
@@ -1962,7 +1962,7 @@
     move-result p3
 
     .line 131
-    if-gt p2, p3, :cond_110
+    if-gt p2, p3, :cond_a
 
     .line 132
     .line 133
@@ -1974,7 +1974,7 @@
 
     .line 136
     .line 137
-    if-eq p2, p3, :cond_110
+    if-eq p2, p3, :cond_a
 
     .line 138
     .line 139
@@ -1996,15 +1996,15 @@
     .line 147
     .line 148
     .line 149
-    goto/16 :goto_10c
+    goto/16 :goto_0
 
     .line 150
     .line 151
-    :cond_96
+    :cond_2
     const/4 v4, 0x3
 
     .line 152
-    if-ne v2, v7, :cond_d2
+    if-ne v2, v7, :cond_6
 
     .line 153
     .line 154
@@ -2024,7 +2024,7 @@
     move-result p2
 
     .line 162
-    if-ltz p2, :cond_110
+    if-ltz p2, :cond_a
 
     .line 163
     .line 164
@@ -2044,14 +2044,14 @@
     move-result p3
 
     .line 172
-    if-le p2, p3, :cond_ae
+    if-le p2, p3, :cond_3
 
     .line 173
     .line 174
-    goto :goto_110
+    goto :goto_1
 
     .line 175
-    :cond_ae
+    :cond_3
     iget-object p3, p4, Llibs/rh0;->f:Llibs/on;
 
     .line 176
@@ -2060,19 +2060,19 @@
 
     .line 178
     .line 179
-    if-ne p2, p4, :cond_b5
+    if-ne p2, p4, :cond_4
 
     .line 180
     .line 181
-    goto :goto_10c
+    goto :goto_0
 
     .line 182
-    :cond_b5
+    :cond_4
     iget p4, p3, Llibs/on;->c:I
 
     .line 183
     .line 184
-    if-lt p2, p4, :cond_c5
+    if-lt p2, p4, :cond_5
 
     .line 185
     .line 186
@@ -2097,10 +2097,10 @@
     .line 195
     .line 196
     .line 197
-    goto :goto_10c
+    goto :goto_0
 
     .line 198
-    :cond_c5
+    :cond_5
     invoke-virtual {v1}, Llibs/cv;->getText()Llibs/fd3;
 
     .line 199
@@ -2123,11 +2123,11 @@
     .line 208
     .line 209
     .line 210
-    goto :goto_10c
+    goto :goto_0
 
     .line 211
-    :cond_d2
-    if-ne v2, v4, :cond_110
+    :cond_6
+    if-ne v2, v4, :cond_a
 
     .line 212
     .line 213
@@ -2147,7 +2147,7 @@
     move-result p2
 
     .line 221
-    if-ltz p2, :cond_110
+    if-ltz p2, :cond_a
 
     .line 222
     .line 223
@@ -2167,14 +2167,14 @@
     move-result p3
 
     .line 231
-    if-le p2, p3, :cond_e9
+    if-le p2, p3, :cond_7
 
     .line 232
     .line 233
-    goto :goto_110
+    goto :goto_1
 
     .line 234
-    :cond_e9
+    :cond_7
     iget-object p3, p4, Llibs/rh0;->f:Llibs/on;
 
     .line 235
@@ -2183,19 +2183,19 @@
 
     .line 237
     .line 238
-    if-ne p2, p4, :cond_f0
+    if-ne p2, p4, :cond_8
 
     .line 239
     .line 240
-    goto :goto_10c
+    goto :goto_0
 
     .line 241
-    :cond_f0
+    :cond_8
     iget p4, p3, Llibs/on;->b:I
 
     .line 242
     .line 243
-    if-gt p2, p4, :cond_100
+    if-gt p2, p4, :cond_9
 
     .line 244
     .line 245
@@ -2220,10 +2220,10 @@
     .line 254
     .line 255
     .line 256
-    goto :goto_10c
+    goto :goto_0
 
     .line 257
-    :cond_100
+    :cond_9
     invoke-virtual {v1}, Llibs/cv;->getText()Llibs/fd3;
 
     .line 258
@@ -2246,7 +2246,7 @@
     .line 267
     .line 268
     .line 269
-    :goto_10c
+    :goto_0
     invoke-virtual {v1}, Llibs/cv;->b()V
 
     .line 270
@@ -2255,22 +2255,22 @@
     const/4 v3, 0x1
 
     .line 273
-    :cond_110
-    :goto_110
+    :cond_a
+    :goto_1
     return v3
 
     .line 274
     nop
 
     .line 275
-    :pswitch_data_112
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public onSingleTapConfirmed(Landroid/view/MotionEvent;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/mi1;->a:B
@@ -2281,7 +2281,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_32
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -2297,7 +2297,7 @@
     return p1
 
     .line 13
-    :pswitch_c
+    :pswitch_0
     check-cast v1, Llibs/ow1;
 
     .line 14
@@ -2306,7 +2306,7 @@
 
     .line 16
     .line 17
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     .line 18
     .line 19
@@ -2318,10 +2318,10 @@
     const/4 p1, 0x0
 
     .line 23
-    goto :goto_1b
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_0
     invoke-super {p0, p1}, Landroid/view/GestureDetector$SimpleOnGestureListener;->onSingleTapConfirmed(Landroid/view/MotionEvent;)Z
 
     .line 25
@@ -2330,11 +2330,11 @@
     move-result p1
 
     .line 28
-    :goto_1b
+    :goto_0
     return p1
 
     .line 29
-    :pswitch_1c
+    :pswitch_1
     check-cast v1, Llibs/qt1;
 
     .line 30
@@ -2346,7 +2346,7 @@
     const/4 v0, 0x1
 
     .line 34
-    if-eqz p1, :cond_2e
+    if-eqz p1, :cond_1
 
     .line 35
     .line 36
@@ -2371,7 +2371,7 @@
     .line 45
     .line 46
     .line 47
-    :cond_2e
+    :cond_1
     invoke-virtual {v1}, Landroid/view/View;->performClick()Z
 
     .line 48
@@ -2380,22 +2380,22 @@
     return v0
 
     .line 51
-    :pswitch_data_32
+    :pswitch_data_0
     .packed-switch 0x2
-        :pswitch_1c
-        :pswitch_c
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public onSingleTapUp(Landroid/view/MotionEvent;)Z
-    .registers 10
+    .locals 8
 
     .line 1
     iget-byte v0, p0, Llibs/mi1;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_5c
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -2411,7 +2411,7 @@
     return p1
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     iget-object v0, p0, Llibs/mi1;->b:Landroid/view/View;
 
     .line 12
@@ -2448,7 +2448,7 @@
 
     .line 28
     .line 29
-    if-nez v4, :cond_56
+    if-nez v4, :cond_1
 
     .line 30
     .line 31
@@ -2468,7 +2468,7 @@
 
     .line 38
     .line 39
-    if-eqz v4, :cond_56
+    if-eqz v4, :cond_1
 
     .line 40
     .line 41
@@ -2532,7 +2532,7 @@
 
     .line 68
     .line 69
-    if-eqz v4, :cond_51
+    if-eqz v4, :cond_0
 
     .line 70
     .line 71
@@ -2557,7 +2557,7 @@
     .line 80
     .line 81
     .line 82
-    :cond_51
+    :cond_0
     iget-object p1, v0, Llibs/oi1;->Six:Llibs/rh0;
 
     .line 83
@@ -2567,7 +2567,7 @@
     .line 85
     .line 86
     .line 87
-    :cond_56
+    :cond_1
     invoke-virtual {v1}, Llibs/cv;->b()V
 
     .line 88
@@ -2582,8 +2582,8 @@
     nop
 
     .line 93
-    :pswitch_data_5c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method

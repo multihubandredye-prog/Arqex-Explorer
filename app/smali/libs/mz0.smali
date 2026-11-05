@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/rz0;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iput-object p1, p0, Llibs/mz0;->Z:Llibs/rz0;
@@ -63,7 +63,7 @@
 
 # virtual methods
 .method public final b()Llibs/en3;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/mz0;->X:Llibs/es0;
@@ -74,20 +74,20 @@
 .end method
 
 .method public final declared-synchronized close()V
-    .registers 4
+    .locals 3
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Llibs/mz0;->Y:Z
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_2a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 3
     .line 4
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 5
     .line 6
@@ -97,11 +97,11 @@
     return-void
 
     .line 8
-    :cond_7
+    :cond_0
     const/4 v0, 0x1
 
     .line 9
-    :try_start_8
+    :try_start_1
     iput-boolean v0, p0, Llibs/mz0;->Y:Z
 
     .line 10
@@ -161,8 +161,8 @@
 
     .line 39
     iput v1, v0, Llibs/rz0;->a:I
-    :try_end_28
-    .catchall {:try_start_8 .. :try_end_28} :catchall_2a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 40
     .line 41
@@ -172,34 +172,34 @@
     return-void
 
     .line 43
-    :catchall_2a
+    :catchall_0
     move-exception v0
 
     .line 44
-    :try_start_2b
+    :try_start_2
     monitor-exit p0
-    :try_end_2c
-    .catchall {:try_start_2b .. :try_end_2c} :catchall_2a
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 45
     throw v0
 .end method
 
 .method public final declared-synchronized flush()V
-    .registers 2
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Llibs/mz0;->Y:Z
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 3
     .line 4
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 5
     .line 6
@@ -209,8 +209,8 @@
     return-void
 
     .line 8
-    :cond_7
-    :try_start_7
+    :cond_0
+    :try_start_1
     iget-object v0, p0, Llibs/mz0;->Z:Llibs/rz0;
 
     .line 9
@@ -224,8 +224,8 @@
     .line 13
     .line 14
     invoke-interface {v0}, Llibs/ck;->flush()V
-    :try_end_10
-    .catchall {:try_start_7 .. :try_end_10} :catchall_12
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 15
     .line 16
@@ -236,21 +236,21 @@
     return-void
 
     .line 19
-    :catchall_12
+    :catchall_0
     move-exception v0
 
     .line 20
-    :try_start_13
+    :try_start_2
     monitor-exit p0
-    :try_end_14
-    .catchall {:try_start_13 .. :try_end_14} :catchall_12
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 21
     throw v0
 .end method
 
 .method public final j(JLlibs/vj;)V
-    .registers 8
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/mz0;->Z:Llibs/rz0;
@@ -269,7 +269,7 @@
 
     .line 8
     .line 9
-    if-nez v1, :cond_20
+    if-nez v1, :cond_1
 
     .line 10
     .line 11
@@ -281,14 +281,14 @@
 
     .line 14
     .line 15
-    if-nez v3, :cond_11
+    if-nez v3, :cond_0
 
     .line 16
     .line 17
     return-void
 
     .line 18
-    :cond_11
+    :cond_0
     invoke-interface {v0, p1, p2}, Llibs/ck;->d(J)Llibs/ck;
 
     .line 19
@@ -316,7 +316,7 @@
     return-void
 
     .line 33
-    :cond_20
+    :cond_1
     const-string p1, "closed"
 
     .line 34

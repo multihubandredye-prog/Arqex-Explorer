@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic List(Ljava/nio/file/WatchService;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-interface {p0}, Ljava/nio/file/WatchService;->close()V
@@ -17,7 +17,7 @@
 .end method
 
 .method public static bridge synthetic Map(Ljava/nio/file/WatchKey;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-interface {p0}, Ljava/nio/file/WatchKey;->reset()Z
@@ -32,7 +32,7 @@
 .end method
 
 .method public static bridge synthetic Object(Ljava/lang/Process;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Ljava/lang/Process;->destroyForcibly()Ljava/lang/Process;
@@ -44,7 +44,7 @@
 .end method
 
 .method public static bridge synthetic Set()Ljava/nio/file/WatchEvent$Kind;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Ljava/nio/file/StandardWatchEventKinds;->ENTRY_MODIFY:Ljava/nio/file/WatchEvent$Kind;
@@ -55,7 +55,7 @@
 .end method
 
 .method public static bridge synthetic String(Ljava/nio/file/Path;Ljava/nio/file/WatchService;[Ljava/nio/file/WatchEvent$Kind;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-interface {p0, p1, p2}, Ljava/nio/file/Path;->register(Ljava/nio/file/WatchService;[Ljava/nio/file/WatchEvent$Kind;)Ljava/nio/file/WatchKey;
@@ -67,7 +67,7 @@
 .end method
 
 .method public static bridge synthetic a(Landroid/content/pm/ShortcutManager;Landroid/content/pm/ShortcutInfo;)Landroid/content/Intent;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/content/pm/ShortcutManager;->createShortcutResultIntent(Landroid/content/pm/ShortcutInfo;)Landroid/content/Intent;
@@ -82,7 +82,7 @@
 .end method
 
 .method public static bridge synthetic b()Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_MOVE_WINDOW:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
@@ -93,7 +93,7 @@
 .end method
 
 .method public static bridge synthetic c(Ljava/nio/file/WatchEvent;)Ljava/lang/Object;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-interface {p0}, Ljava/nio/file/WatchEvent;->context()Ljava/lang/Object;
@@ -108,7 +108,7 @@
 .end method
 
 .method public static bridge synthetic d(Ljava/nio/file/Path;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-interface {p0}, Ljava/nio/file/Path;->toString()Ljava/lang/String;
@@ -123,7 +123,7 @@
 .end method
 
 .method public static bridge synthetic e()Ljava/nio/file/FileSystem;
-    .registers 1
+    .locals 1
 
     .line 1
     invoke-static {}, Ljava/nio/file/FileSystems;->getDefault()Ljava/nio/file/FileSystem;
@@ -138,7 +138,7 @@
 .end method
 
 .method public static bridge synthetic f(Ljava/io/File;)Ljava/nio/file/Path;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Ljava/io/File;->toPath()Ljava/nio/file/Path;
@@ -153,7 +153,7 @@
 .end method
 
 .method public static bridge synthetic g(Ljava/lang/Object;)Ljava/nio/file/Path;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Ljava/nio/file/Path;
@@ -164,7 +164,7 @@
 .end method
 
 .method public static bridge synthetic h(Ljava/nio/file/Path;)Ljava/nio/file/Path;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-interface {p0}, Ljava/nio/file/Path;->getParent()Ljava/nio/file/Path;
@@ -179,7 +179,7 @@
 .end method
 
 .method public static bridge synthetic i()Ljava/nio/file/WatchEvent$Kind;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Ljava/nio/file/StandardWatchEventKinds;->OVERFLOW:Ljava/nio/file/WatchEvent$Kind;
@@ -190,7 +190,7 @@
 .end method
 
 .method public static bridge synthetic j(Ljava/nio/file/WatchEvent;)Ljava/nio/file/WatchEvent$Kind;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-interface {p0}, Ljava/nio/file/WatchEvent;->kind()Ljava/nio/file/WatchEvent$Kind;
@@ -205,7 +205,7 @@
 .end method
 
 .method public static bridge synthetic k(Ljava/lang/Object;)Ljava/nio/file/WatchEvent;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Ljava/nio/file/WatchEvent;
@@ -216,7 +216,7 @@
 .end method
 
 .method public static bridge synthetic l(Ljava/nio/file/WatchService;)Ljava/nio/file/WatchKey;
-    .registers 4
+    .locals 3
 
     .line 1
     const-wide/16 v0, 0x3e8
@@ -239,7 +239,7 @@
 .end method
 
 .method public static bridge synthetic m(Ljava/nio/file/FileSystem;)Ljava/nio/file/WatchService;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Ljava/nio/file/FileSystem;->newWatchService()Ljava/nio/file/WatchService;
@@ -254,7 +254,7 @@
 .end method
 
 .method public static bridge synthetic n(Ljava/nio/file/WatchKey;)Ljava/util/List;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-interface {p0}, Ljava/nio/file/WatchKey;->pollEvents()Ljava/util/List;
@@ -269,7 +269,7 @@
 .end method
 
 .method public static bridge synthetic p(Landroid/content/pm/ShortcutManager;Landroid/content/pm/ShortcutInfo;Landroid/content/IntentSender;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2}, Landroid/content/pm/ShortcutManager;->requestPinShortcut(Landroid/content/pm/ShortcutInfo;Landroid/content/IntentSender;)Z
@@ -281,7 +281,7 @@
 .end method
 
 .method public static bridge synthetic q(Landroid/graphics/Paint;Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/graphics/Paint;->setFontVariationSettings(Ljava/lang/String;)Z
@@ -293,7 +293,7 @@
 .end method
 
 .method public static bridge synthetic r(Landroid/media/AudioManager;Landroid/media/AudioFocusRequest;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/media/AudioManager;->abandonAudioFocusRequest(Landroid/media/AudioFocusRequest;)I
@@ -305,7 +305,7 @@
 .end method
 
 .method public static bridge synthetic s(Landroid/media/MediaPlayer;J)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x2
@@ -320,7 +320,7 @@
 .end method
 
 .method public static bridge synthetic t(Landroid/webkit/WebSettings;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -335,7 +335,7 @@
 .end method
 
 .method public static bridge synthetic u(Landroid/widget/FrameLayout;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -350,7 +350,7 @@
 .end method
 
 .method public static bridge synthetic v(Lcom/mixplorer/widgets/MiDraggableListView;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -365,7 +365,7 @@
 .end method
 
 .method public static bridge synthetic w(Lcom/mixplorer/widgets/MiListView;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -380,7 +380,7 @@
 .end method
 
 .method public static bridge synthetic x(Lcom/mixplorer/widgets/MiScrollView;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -395,7 +395,7 @@
 .end method
 
 .method public static bridge synthetic y(Lcom/mixplorer/widgets/MiSliderLayout;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -410,7 +410,7 @@
 .end method
 
 .method public static bridge synthetic z(Lcom/mixplorer/widgets/MiViewPager;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0

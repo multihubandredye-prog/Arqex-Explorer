@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ra;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p1}, Llibs/ra;->m()Llibs/k12;

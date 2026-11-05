@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/cg;)V
-    .registers 7
+    .locals 5
 
     .line 1
     new-instance v0, Llibs/n61;
@@ -86,7 +86,7 @@
 .end method
 
 .method public constructor <init>(Llibs/cg;I)V
-    .registers 8
+    .locals 5
 
     .line 42
     new-instance v0, Llibs/n61;

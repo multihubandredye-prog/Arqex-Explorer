@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Lcom/mixplorer/widgets/MiTextView;Lcom/mixplorer/widgets/MiEditText;Ljava/text/SimpleDateFormat;Ljava/util/Calendar;)V
-    .registers 6
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/z60;->Z:Ljava/lang/String;
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public final afterTextChanged(Landroid/text/Editable;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
@@ -105,7 +105,7 @@
 
     .line 14
     .line 15
-    if-lt v0, v1, :cond_22
+    if-lt v0, v1, :cond_0
 
     .line 16
     .line 17
@@ -140,10 +140,10 @@
 
     .line 33
     .line 34
-    goto :goto_30
+    goto :goto_0
 
     .line 35
-    :cond_22
+    :cond_0
     iget-object p1, p0, Llibs/z60;->Lambda:Lcom/mixplorer/widgets/MiTextView;
 
     .line 36
@@ -164,7 +164,7 @@
     move-result p1
 
     .line 45
-    if-nez p1, :cond_30
+    if-nez p1, :cond_1
 
     .line 46
     .line 47
@@ -172,8 +172,8 @@
 
     .line 48
     .line 49
-    :cond_30
-    :goto_30
+    :cond_1
+    :goto_0
     iget-object p1, p0, Llibs/z60;->Mu:Lcom/mixplorer/widgets/MiEditText;
 
     .line 50
@@ -200,14 +200,14 @@
 .end method
 
 .method public final beforeTextChanged(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final onTextChanged(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     .line 1
     return-void

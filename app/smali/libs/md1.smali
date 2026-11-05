@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .end method
 
 .method public constructor <init>(Llibs/dd1;)V
-    .registers 2
+    .locals 0
 
     .line 14
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +52,7 @@
 
 # virtual methods
 .method public a(Ljava/lang/String;)Ljavax/crypto/Cipher;
-    .registers 6
+    .locals 4
 
     .line 1
     :try_start_0
@@ -66,14 +66,14 @@
     .line 5
     .line 6
     move-result-object p1
-    :try_end_6
-    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 7
     return-object p1
 
     .line 8
-    :catch_7
+    :catch_0
     move-exception p1
 
     .line 9
@@ -124,19 +124,19 @@
 .end method
 
 .method public b(I)Ljava/security/MessageDigest;
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/md1;->a:Llibs/dd1;
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_30
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
     .line 6
-    :pswitch_5
+    :pswitch_0
     new-instance v0, Llibs/o72;
 
     .line 7
@@ -161,76 +161,76 @@
     throw v0
 
     .line 18
-    :pswitch_11
+    :pswitch_1
     const-string p1, "SHA224"
 
     .line 19
     .line 20
-    goto :goto_2b
+    goto :goto_0
 
     .line 21
-    :pswitch_14
+    :pswitch_2
     const-string p1, "SHA512"
 
     .line 22
     .line 23
-    goto :goto_2b
+    goto :goto_0
 
     .line 24
-    :pswitch_17
+    :pswitch_3
     const-string p1, "SHA384"
 
     .line 25
     .line 26
-    goto :goto_2b
+    goto :goto_0
 
     .line 27
-    :pswitch_1a
+    :pswitch_4
     const-string p1, "SHA256"
 
     .line 28
     .line 29
-    goto :goto_2b
+    goto :goto_0
 
     .line 30
-    :pswitch_1d
+    :pswitch_5
     const-string p1, "TIGER"
 
     .line 31
     .line 32
-    goto :goto_2b
+    goto :goto_0
 
     .line 33
-    :pswitch_20
+    :pswitch_6
     const-string p1, "MD2"
 
     .line 34
     .line 35
-    goto :goto_2b
+    goto :goto_0
 
     .line 36
-    :pswitch_23
+    :pswitch_7
     const-string p1, "RIPEMD160"
 
     .line 37
     .line 38
-    goto :goto_2b
+    goto :goto_0
 
     .line 39
-    :pswitch_26
+    :pswitch_8
     const-string p1, "SHA1"
 
     .line 40
     .line 41
-    goto :goto_2b
+    goto :goto_0
 
     .line 42
-    :pswitch_29
+    :pswitch_9
     const-string p1, "MD5"
 
     .line 43
     .line 44
-    :goto_2b
+    :goto_0
     invoke-interface {v0, p1}, Llibs/dd1;->n(Ljava/lang/String;)Ljava/security/MessageDigest;
 
     .line 45
@@ -242,27 +242,27 @@
     return-object p1
 
     .line 49
-    :pswitch_data_30
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_29
-        :pswitch_26
-        :pswitch_23
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_0
+        :pswitch_6
         :pswitch_5
-        :pswitch_20
-        :pswitch_1d
-        :pswitch_5
-        :pswitch_1a
-        :pswitch_17
-        :pswitch_14
-        :pswitch_11
+        :pswitch_0
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
     .end packed-switch
 .end method
 
 .method public c(ZI)Ljavax/crypto/Cipher;
-    .registers 4
+    .locals 1
 
     .line 1
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 2
     .line 3
@@ -270,15 +270,15 @@
 
     .line 4
     .line 5
-    goto :goto_7
+    goto :goto_0
 
     .line 6
-    :cond_5
+    :cond_0
     const-string p1, "OpenPGPCFB"
 
     .line 7
     .line 8
-    :goto_7
+    :goto_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 9

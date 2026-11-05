@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(J)V
-    .registers 8
+    .locals 5
 
     .line 1
     invoke-static {p1, p2}, Llibs/b71;->t(J)Ljava/lang/String;
@@ -28,7 +28,7 @@
     const/4 v1, 0x0
 
     .line 9
-    if-eqz v0, :cond_4c
+    if-eqz v0, :cond_2
 
     .line 10
     .line 11
@@ -43,7 +43,7 @@
     const/4 v3, 0x1
 
     .line 16
-    if-lt v2, v3, :cond_48
+    if-lt v2, v3, :cond_1
 
     .line 17
     .line 18
@@ -51,7 +51,7 @@
 
     .line 19
     .line 20
-    if-gt v2, v3, :cond_48
+    if-gt v2, v3, :cond_1
 
     .line 21
     .line 22
@@ -118,7 +118,7 @@
 
     .line 54
     .line 55
-    if-ltz v0, :cond_42
+    if-ltz v0, :cond_0
 
     .line 56
     .line 57
@@ -133,14 +133,14 @@
 
     .line 63
     .line 64
-    if-gtz v0, :cond_42
+    if-gtz v0, :cond_0
 
     .line 65
     .line 66
     return-void
 
     .line 67
-    :cond_42
+    :cond_0
     const-string p1, "uuidValue is not in the range [0, 2^32 -1]"
 
     .line 68
@@ -153,7 +153,7 @@
     throw v1
 
     .line 73
-    :cond_48
+    :cond_1
     invoke-static {}, Llibs/ic0;->l()V
 
     .line 74
@@ -162,7 +162,7 @@
     throw v1
 
     .line 77
-    :cond_4c
+    :cond_2
     const-string p1, "uuidValue is null"
 
     .line 78
@@ -178,13 +178,13 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-eqz p1, :cond_20
+    if-eqz p1, :cond_3
 
     .line 3
     .line 4
@@ -192,23 +192,23 @@
 
     .line 5
     .line 6
-    if-nez v1, :cond_8
+    if-nez v1, :cond_0
 
     .line 7
     .line 8
-    goto :goto_20
+    goto :goto_1
 
     .line 9
-    :cond_8
+    :cond_0
     const/4 v1, 0x0
 
     .line 10
-    :goto_9
+    :goto_0
     const/16 v2, 0x10
 
     .line 11
     .line 12
-    if-ge v1, v2, :cond_1e
+    if-ge v1, v2, :cond_2
 
     .line 13
     .line 14
@@ -235,35 +235,35 @@
 
     .line 24
     .line 25
-    if-eq v2, v3, :cond_1b
+    if-eq v2, v3, :cond_1
 
     .line 26
     .line 27
     return v0
 
     .line 28
-    :cond_1b
+    :cond_1
     add-int/lit8 v1, v1, 0x1
 
     .line 29
     .line 30
-    goto :goto_9
+    goto :goto_0
 
     .line 31
-    :cond_1e
+    :cond_2
     const/4 p1, 0x1
 
     .line 32
     return p1
 
     .line 33
-    :cond_20
-    :goto_20
+    :cond_3
+    :goto_1
     return v0
 .end method
 
 .method public final hashCode()I
-    .registers 5
+    .locals 4
 
     .line 1
     const/16 v0, 0xc
@@ -353,7 +353,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/StringBuffer;
@@ -368,7 +368,7 @@
     const/4 v1, 0x0
 
     .line 7
-    :goto_6
+    :goto_0
     iget-object v2, p0, Llibs/gq3;->a:[B
 
     .line 8
@@ -376,7 +376,7 @@
     array-length v3, v2
 
     .line 10
-    if-ge v1, v3, :cond_26
+    if-ge v1, v3, :cond_0
 
     .line 11
     .line 12
@@ -430,10 +430,10 @@
 
     .line 37
     .line 38
-    goto :goto_6
+    goto :goto_0
 
     .line 39
-    :cond_26
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     .line 40

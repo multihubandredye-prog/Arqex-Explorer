@@ -31,7 +31,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -87,7 +87,7 @@
 
 # virtual methods
 .method public final a(I)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget v0, p0, Llibs/rm2;->a:I
@@ -97,14 +97,14 @@
     and-int/2addr v0, p1
 
     .line 4
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     .line 5
     .line 6
     return-void
 
     .line 7
-    :cond_6
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     .line 8
@@ -178,14 +178,14 @@
 .end method
 
 .method public final b()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-boolean v0, p0, Llibs/rm2;->f:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -203,7 +203,7 @@
     return v0
 
     .line 11
-    :cond_a
+    :cond_0
     iget v0, p0, Llibs/rm2;->b:I
 
     .line 12
@@ -212,7 +212,7 @@
 .end method
 
 .method public final c()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/rm2;->f:Z
@@ -223,7 +223,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

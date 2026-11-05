@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/k00;Llibs/ac0;Llibs/qc3;)V
-    .registers 5
+    .locals 1
 
     .line 1
     invoke-direct {p0, p1, p2, p3}, Llibs/sb0;-><init>(Llibs/k00;Llibs/ac0;Llibs/qc3;)V
@@ -44,7 +44,7 @@
 
 # virtual methods
 .method public final m([B)V
-    .registers 22
+    .locals 20
 
     .line 1
     move-object/from16 v0, p0
@@ -170,14 +170,14 @@
 
     .line 63
     .line 64
-    if-nez v8, :cond_42
+    if-nez v8, :cond_0
 
     .line 65
     .line 66
     return-void
 
     .line 67
-    :cond_42
+    :cond_0
     iget v4, v3, Llibs/xv2;->e:I
 
     .line 68
@@ -222,7 +222,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

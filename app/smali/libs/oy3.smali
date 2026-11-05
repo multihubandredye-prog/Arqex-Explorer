@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;Llibs/zy3;Ljava/lang/String;Llibs/zl0;Llibs/xy3;Lcom/mixplorer/ProgressListener;)V
-    .registers 7
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/oy3;->a:Ljava/util/List;
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public final e(Llibs/rp0;)Z
-    .registers 11
+    .locals 9
 
     .line 1
     invoke-virtual {p1}, Llibs/rp0;->Context()Z
@@ -71,19 +71,19 @@
     const/4 v1, 0x0
 
     .line 6
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
-    goto :goto_12
+    goto :goto_0
 
     .line 9
-    :cond_8
+    :cond_0
     iget-object v0, p0, Llibs/oy3;->a:Ljava/util/List;
 
     .line 10
     .line 11
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_1
 
     .line 12
     .line 13
@@ -95,15 +95,15 @@
     move-result v0
 
     .line 17
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_1
 
     .line 18
     .line 19
-    :goto_12
+    :goto_0
     return v1
 
     .line 20
-    :cond_13
+    :cond_1
     iget-object v0, p0, Llibs/oy3;->b:Llibs/zy3;
 
     .line 21
@@ -171,18 +171,18 @@
     move-result v4
 
     .line 55
-    if-nez v4, :cond_39
+    if-nez v4, :cond_2
 
     .line 56
     .line 57
-    goto :goto_3a
+    goto :goto_1
 
     .line 58
-    :cond_39
+    :cond_2
     const/4 v0, 0x0
 
     .line 59
-    :goto_3a
+    :goto_1
     iput-object v0, v7, Llibs/zy3;->Omicron:Ljava/lang/String;
 
     .line 60
@@ -195,7 +195,7 @@
 
     .line 64
     .line 65
-    if-eqz v0, :cond_5c
+    if-eqz v0, :cond_3
 
     .line 66
     .line 67
@@ -251,7 +251,7 @@
     return v1
 
     .line 93
-    :cond_5c
+    :cond_3
     move-object v2, p1
 
     .line 94

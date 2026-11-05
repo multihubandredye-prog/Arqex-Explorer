@@ -31,7 +31,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 75
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
@@ -57,7 +57,7 @@
 .end method
 
 .method public constructor <init>(Llibs/ft3;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
@@ -80,7 +80,7 @@
 
     .line 10
     .line 11
-    if-eqz p1, :cond_49
+    if-eqz p1, :cond_2
 
     .line 12
     .line 13
@@ -117,7 +117,7 @@
 
     .line 29
     .line 30
-    if-eqz v1, :cond_2a
+    if-eqz v1, :cond_0
 
     .line 31
     .line 32
@@ -142,7 +142,7 @@
 
     .line 42
     .line 43
-    :cond_2a
+    :cond_0
     iget-object v0, p1, Llibs/ft3;->b:Llibs/et3;
 
     .line 44
@@ -151,7 +151,7 @@
 
     .line 46
     .line 47
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_1
 
     .line 48
     .line 49
@@ -180,7 +180,7 @@
 
     .line 61
     .line 62
-    :cond_3d
+    :cond_1
     iget-object v0, p1, Llibs/ft3;->c:Landroid/content/res/ColorStateList;
 
     .line 63
@@ -205,14 +205,14 @@
 
     .line 73
     .line 74
-    :cond_49
+    :cond_2
     return-void
 .end method
 
 
 # virtual methods
 .method public final getChangingConfigurations()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/ft3;->a:I
@@ -223,7 +223,7 @@
 .end method
 
 .method public final newDrawable()Landroid/graphics/drawable/Drawable;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/ht3;
@@ -239,7 +239,7 @@
 .end method
 
 .method public final newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
-    .registers 2
+    .locals 0
 
     .line 7
     new-instance p1, Llibs/ht3;

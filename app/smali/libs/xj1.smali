@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 11
+    .locals 10
 
     .line 1
     invoke-direct {p0}, Llibs/xi1;-><init>()V
@@ -362,7 +362,7 @@
 
 # virtual methods
 .method public final a()Ljava/util/List;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "smali"

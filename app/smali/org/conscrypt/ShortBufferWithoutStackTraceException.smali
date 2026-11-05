@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljavax/crypto/ShortBufferException;-><init>()V
@@ -21,7 +21,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 5
     invoke-direct {p0, p1}, Ljavax/crypto/ShortBufferException;-><init>(Ljava/lang/String;)V
@@ -32,7 +32,7 @@
 
 # virtual methods
 .method public declared-synchronized fillInStackTrace()Ljava/lang/Throwable;
-    .registers 1
+    .locals 0
 
     .line 1
     monitor-enter p0

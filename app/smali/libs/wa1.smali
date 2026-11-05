@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/wa1;->X:B
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final c([Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/wa1;->X:B
@@ -43,7 +43,7 @@
     const/4 v2, 0x1
 
     .line 5
-    packed-switch v0, :pswitch_data_28
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -71,7 +71,7 @@
     monitor-enter v3
 
     .line 19
-    :try_start_12
+    :try_start_0
     invoke-virtual {v3, v0, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 20
@@ -83,19 +83,19 @@
     return v2
 
     .line 24
-    :catchall_17
+    :catchall_0
     move-exception p1
 
     .line 25
     monitor-exit v3
-    :try_end_19
-    .catchall {:try_start_12 .. :try_end_19} :catchall_17
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 26
     throw p1
 
     .line 27
-    :pswitch_1a
+    :pswitch_0
     aget-object p1, p1, v1
 
     .line 28
@@ -112,27 +112,27 @@
     move-result p1
 
     .line 35
-    if-gt p1, v2, :cond_25
+    if-gt p1, v2, :cond_0
 
     .line 36
     .line 37
     const/4 v1, 0x1
 
     .line 38
-    :cond_25
+    :cond_0
     return v1
 
     .line 39
-    :pswitch_26
+    :pswitch_1
     return v2
 
     .line 40
     nop
 
     .line 41
-    :pswitch_data_28
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_26
-        :pswitch_1a
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

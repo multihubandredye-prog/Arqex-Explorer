@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/da1;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -47,7 +47,7 @@
 .end method
 
 .method public constructor <init>(Llibs/oi1;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 8
+    .locals 7
 
     .line 1
     iget-byte v0, p0, Llibs/ca1;->X:B
@@ -75,7 +75,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_7e
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -92,14 +92,14 @@
 
     .line 13
     .line 14
-    if-eqz v2, :cond_10
+    if-eqz v2, :cond_0
 
     .line 15
     .line 16
-    goto :goto_21
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     invoke-virtual {v0, p0}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
     .line 18
@@ -113,7 +113,7 @@
     move-result v2
 
     .line 24
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_1
 
     .line 25
     .line 26
@@ -131,12 +131,12 @@
     .line 32
     .line 33
     .line 34
-    :cond_21
-    :goto_21
+    :cond_1
+    :goto_0
     return-void
 
     .line 35
-    :pswitch_22
+    :pswitch_0
     check-cast v1, Llibs/da1;
 
     .line 36
@@ -149,7 +149,7 @@
 
     .line 40
     .line 41
-    :try_start_28
+    :try_start_0
     new-instance v3, Ljava/lang/StringBuilder;
 
     .line 42
@@ -204,7 +204,7 @@
     const/4 v4, 0x1
 
     .line 69
-    if-eqz v3, :cond_53
+    if-eqz v3, :cond_2
 
     .line 70
     .line 71
@@ -232,13 +232,13 @@
 
     .line 82
     .line 83
-    goto :goto_77
+    goto :goto_1
 
     .line 84
-    :cond_53
+    :cond_2
     iget-boolean v3, p0, Llibs/ca1;->Y:Z
-    :try_end_55
-    .catchall {:try_start_28 .. :try_end_55} :catchall_7c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 85
     .line 86
@@ -249,11 +249,11 @@
 
     .line 88
     .line 89
-    if-eqz v3, :cond_68
+    if-eqz v3, :cond_3
 
     .line 90
     .line 91
-    :try_start_5a
+    :try_start_1
     invoke-virtual {v6, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     .line 92
@@ -279,10 +279,10 @@
     .line 102
     .line 103
     .line 104
-    goto :goto_77
+    goto :goto_1
 
     .line 105
-    :cond_68
+    :cond_3
     invoke-virtual {v6, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     .line 106
@@ -312,27 +312,27 @@
 
     .line 119
     .line 120
-    :goto_77
+    :goto_1
     iput-boolean v4, v0, Llibs/rp0;->Lambda:Z
 
     .line 121
     .line 122
     invoke-static {v0}, Llibs/t43;->All(Llibs/rp0;)V
-    :try_end_7c
-    .catchall {:try_start_5a .. :try_end_7c} :catchall_7c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 123
     .line 124
     .line 125
-    :catchall_7c
+    :catchall_0
     return-void
 
     .line 126
     nop
 
     .line 127
-    :pswitch_data_7e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_22
+        :pswitch_0
     .end packed-switch
 .end method

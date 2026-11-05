@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public constructor <init>(Llibs/dt3;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,14 +52,14 @@
 
     .line 12
     .line 13
-    if-nez p1, :cond_f
+    if-nez p1, :cond_0
 
     .line 14
     .line 15
-    goto :goto_22
+    goto :goto_1
 
     .line 16
-    :cond_f
+    :cond_0
     array-length v0, p1
 
     .line 17
@@ -70,11 +70,11 @@
     const/4 v1, 0x0
 
     .line 20
-    :goto_13
+    :goto_0
     array-length v2, p1
 
     .line 21
-    if-ge v1, v2, :cond_22
+    if-ge v1, v2, :cond_1
 
     .line 22
     .line 23
@@ -99,11 +99,11 @@
 
     .line 33
     .line 34
-    goto :goto_13
+    goto :goto_0
 
     .line 35
-    :cond_22
-    :goto_22
+    :cond_1
+    :goto_1
     iput-object v0, p0, Llibs/dt3;->a:[Llibs/tb2;
 
     .line 36

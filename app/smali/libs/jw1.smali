@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ow1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/jw1;->a:Llibs/ow1;
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final getDefaultVideoPoster()Landroid/graphics/Bitmap;
-    .registers 4
+    .locals 3
 
     .line 1
     invoke-super {p0}, Landroid/webkit/WebChromeClient;->getDefaultVideoPoster()Landroid/graphics/Bitmap;
@@ -38,14 +38,14 @@
     move-result-object v0
 
     .line 5
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
     return-object v0
 
     .line 8
-    :cond_7
+    :cond_0
     sget v0, Llibs/vh2;->file_icon_video:I
 
     .line 9
@@ -68,7 +68,7 @@
 .end method
 
 .method public final onProgressChanged(Landroid/webkit/WebView;I)V
-    .registers 7
+    .locals 4
 
     .line 1
     iget-object p1, p0, Llibs/jw1;->a:Llibs/ow1;
@@ -79,7 +79,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_3f
+    if-eqz v0, :cond_1
 
     .line 6
     .line 7
@@ -120,7 +120,7 @@
 
     .line 23
     .line 24
-    if-eqz v3, :cond_1f
+    if-eqz v3, :cond_0
 
     .line 25
     .line 26
@@ -138,7 +138,7 @@
 
     .line 31
     .line 32
-    :cond_1f
+    :cond_0
     iput v1, v2, Llibs/ut;->j:F
 
     .line 33
@@ -197,6 +197,6 @@
     .line 62
     .line 63
     .line 64
-    :cond_3f
+    :cond_1
     return-void
 .end method

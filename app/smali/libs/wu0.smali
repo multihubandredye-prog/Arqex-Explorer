@@ -28,7 +28,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/xt1;Landroid/widget/EditText;Llibs/zu0;Landroid/widget/EditText;ZLlibs/h31;Landroid/view/View;Llibs/$d;Landroid/app/Activity;)V
-    .registers 10
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method public final f(Llibs/t4;)V
-    .registers 11
+    .locals 9
 
     .line 1
     iget-object v7, p0, Llibs/wu0;->Omicron:Llibs/$d;

@@ -31,7 +31,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/qk2;Llibs/la0;Llibs/la0;IB)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -110,7 +110,7 @@
 .end method
 
 .method public static a(I[B)V
-    .registers 4
+    .locals 2
 
     .line 1
     ushr-int/lit8 v0, p0, 0x18
@@ -169,7 +169,7 @@
 .end method
 
 .method public static b([B)V
-    .registers 4
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
@@ -178,11 +178,11 @@
     const/4 v1, 0x0
 
     .line 3
-    :goto_2
+    :goto_0
     array-length v2, p0
 
     .line 4
-    if-eq v1, v2, :cond_a
+    if-eq v1, v2, :cond_0
 
     .line 5
     .line 6
@@ -194,17 +194,17 @@
 
     .line 9
     .line 10
-    goto :goto_2
+    goto :goto_0
 
     .line 11
-    :cond_a
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final c()[B
-    .registers 10
+    .locals 9
 
     .line 1
     iget-object v0, p0, Llibs/m92;->j:[B
@@ -244,7 +244,7 @@
     const/4 v5, 0x0
 
     .line 18
-    if-eqz v3, :cond_1d
+    if-eqz v3, :cond_0
 
     .line 19
     .line 20
@@ -268,7 +268,7 @@
     .line 28
     .line 29
     .line 30
-    :cond_1d
+    :cond_0
     new-array v6, v2, [B
 
     .line 31
@@ -353,7 +353,7 @@
     const/4 v1, 0x0
 
     .line 66
-    :goto_41
+    :goto_0
     array-length v3, v0
 
     .line 67
@@ -361,7 +361,7 @@
 
     .line 68
     .line 69
-    if-eq v1, v3, :cond_51
+    if-eq v1, v3, :cond_1
 
     .line 70
     .line 71
@@ -387,10 +387,10 @@
 
     .line 80
     .line 81
-    goto :goto_41
+    goto :goto_0
 
     .line 82
-    :cond_51
+    :cond_1
     aget-byte v0, v4, v5
 
     .line 83
@@ -487,14 +487,14 @@
 .end method
 
 .method public final d(ZLlibs/et;)V
-    .registers 5
+    .locals 2
 
     .line 1
     instance-of v0, p2, Llibs/ua2;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -517,11 +517,11 @@
     move-object p2, v0
 
     .line 14
-    goto :goto_17
+    goto :goto_0
 
     .line 15
-    :cond_e
-    if-eqz p1, :cond_17
+    :cond_0
+    if-eqz p1, :cond_1
 
     .line 16
     .line 17
@@ -538,8 +538,8 @@
 
     .line 23
     .line 24
-    :cond_17
-    :goto_17
+    :cond_1
+    :goto_0
     move-object v0, p2
 
     .line 25
@@ -599,7 +599,7 @@
 
     .line 52
     .line 53
-    if-lt p2, v1, :cond_44
+    if-lt p2, v1, :cond_2
 
     .line 54
     .line 55
@@ -631,7 +631,7 @@
     return-void
 
     .line 69
-    :cond_44
+    :cond_2
     const-string p1, "key too small for specified hash and salt lengths"
 
     .line 70
@@ -645,7 +645,7 @@
 .end method
 
 .method public final e(III[B)[B
-    .registers 14
+    .locals 9
 
     .line 1
     new-array v0, p3, [B
@@ -682,12 +682,12 @@
     const/4 v7, 0x0
 
     .line 17
-    :goto_10
+    :goto_0
     div-int v8, p3, v1
 
     .line 18
     .line 19
-    if-ge v7, v8, :cond_28
+    if-ge v7, v8, :cond_0
 
     .line 20
     .line 21
@@ -724,15 +724,15 @@
 
     .line 39
     .line 40
-    goto :goto_10
+    goto :goto_0
 
     .line 41
-    :cond_28
+    :cond_0
     mul-int v1, v1, v7
 
     .line 42
     .line 43
-    if-ge v1, p3, :cond_3c
+    if-ge v1, p3, :cond_1
 
     .line 44
     .line 45
@@ -764,6 +764,6 @@
     .line 59
     .line 60
     .line 61
-    :cond_3c
+    :cond_1
     return-object v0
 .end method

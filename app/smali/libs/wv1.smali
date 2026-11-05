@@ -35,7 +35,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/PlayerActivity;)V
-    .registers 5
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
@@ -160,7 +160,7 @@
 .end method
 
 .method public static bridge synthetic a(Llibs/wv1;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/wv1;->getMatrixVal()V
@@ -172,7 +172,7 @@
 .end method
 
 .method private getMatrixVal()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/wv1;->Omicron:Landroid/graphics/Matrix;
@@ -224,7 +224,7 @@
 
 # virtual methods
 .method public final b(Landroid/view/MotionEvent;)Z
-    .registers 9
+    .locals 7
 
     .line 1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
@@ -238,7 +238,7 @@
     const/4 v1, 0x2
 
     .line 6
-    if-ne v0, v1, :cond_c
+    if-ne v0, v1, :cond_0
 
     .line 7
     .line 8
@@ -251,7 +251,7 @@
     .line 11
     .line 12
     .line 13
-    :cond_c
+    :cond_0
     sget-object v0, Llibs/wx1;->a:Llibs/Eta;
 
     .line 14
@@ -274,44 +274,44 @@
     const/4 v3, 0x1
 
     .line 23
-    if-eqz v0, :cond_b5
+    if-eqz v0, :cond_c
 
     .line 24
     .line 25
-    if-eq v0, v3, :cond_b0
+    if-eq v0, v3, :cond_b
 
     .line 26
     .line 27
-    if-eq v0, v1, :cond_27
+    if-eq v0, v1, :cond_1
 
     .line 28
     .line 29
     const/4 v1, 0x3
 
     .line 30
-    if-eq v0, v1, :cond_b0
+    if-eq v0, v1, :cond_b
 
     .line 31
     .line 32
     const/4 v1, 0x5
 
     .line 33
-    if-eq v0, v1, :cond_b5
+    if-eq v0, v1, :cond_c
 
     .line 34
     .line 35
     const/4 p1, 0x6
 
     .line 36
-    if-eq v0, p1, :cond_b0
+    if-eq v0, p1, :cond_b
 
     .line 37
     .line 38
-    goto/16 :goto_af
+    goto/16 :goto_4
 
     .line 39
     .line 40
-    :cond_27
+    :cond_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
 
     .line 41
@@ -320,7 +320,7 @@
     move-result v0
 
     .line 44
-    if-ne v0, v1, :cond_af
+    if-ne v0, v1, :cond_a
 
     .line 45
     .line 46
@@ -328,7 +328,7 @@
 
     .line 47
     .line 48
-    if-nez v0, :cond_35
+    if-nez v0, :cond_2
 
     .line 49
     .line 50
@@ -336,11 +336,11 @@
 
     .line 51
     .line 52
-    if-eqz v0, :cond_af
+    if-eqz v0, :cond_a
 
     .line 53
     .line 54
-    :cond_35
+    :cond_2
     invoke-direct {p0}, Llibs/wv1;->getMatrixVal()V
 
     .line 55
@@ -384,18 +384,18 @@
 
     .line 74
     .line 75
-    if-lez v5, :cond_4e
+    if-lez v5, :cond_3
 
     .line 76
     .line 77
-    :goto_4c
+    :goto_0
     neg-float v0, v1
 
     .line 78
-    goto :goto_57
+    goto :goto_1
 
     .line 79
-    :cond_4e
+    :cond_3
     iget v5, p0, Llibs/wv1;->Tau:F
 
     .line 80
@@ -407,18 +407,18 @@
 
     .line 83
     .line 84
-    if-gez v2, :cond_57
+    if-gez v2, :cond_4
 
     .line 85
     .line 86
     add-float/2addr v1, v5
 
     .line 87
-    goto :goto_4c
+    goto :goto_0
 
     .line 88
-    :cond_57
-    :goto_57
+    :cond_4
+    :goto_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     .line 89
@@ -454,18 +454,18 @@
 
     .line 104
     .line 105
-    if-lez v4, :cond_6c
+    if-lez v4, :cond_5
 
     .line 106
     .line 107
-    :goto_6a
+    :goto_2
     neg-float v1, v2
 
     .line 108
-    goto :goto_75
+    goto :goto_3
 
     .line 109
-    :cond_6c
+    :cond_5
     iget v4, p0, Llibs/wv1;->Upsilon:F
 
     .line 110
@@ -477,18 +477,18 @@
 
     .line 113
     .line 114
-    if-gez v5, :cond_75
+    if-gez v5, :cond_6
 
     .line 115
     .line 116
     add-float/2addr v2, v4
 
     .line 117
-    goto :goto_6a
+    goto :goto_2
 
     .line 118
-    :cond_75
-    :goto_75
+    :cond_6
+    :goto_3
     invoke-virtual {p0, v0, v1}, Llibs/wv1;->c(FF)V
 
     .line 119
@@ -523,7 +523,7 @@
 
     .line 135
     .line 136
-    if-eqz p1, :cond_9f
+    if-eqz p1, :cond_7
 
     .line 137
     .line 138
@@ -575,12 +575,12 @@
 
     .line 159
     .line 160
-    :cond_9f
+    :cond_7
     iget-object v0, p0, Llibs/wv1;->Omicron:Landroid/graphics/Matrix;
 
     .line 161
     .line 162
-    if-eqz p1, :cond_a6
+    if-eqz p1, :cond_8
 
     .line 163
     .line 164
@@ -589,8 +589,8 @@
     .line 165
     .line 166
     .line 167
-    :cond_a6
-    if-eqz v0, :cond_ab
+    :cond_8
+    if-eqz v0, :cond_9
 
     .line 168
     .line 169
@@ -599,7 +599,7 @@
     .line 170
     .line 171
     .line 172
-    :cond_ab
+    :cond_9
     invoke-virtual {p0}, Landroid/view/TextureView;->invalidate()V
 
     .line 173
@@ -608,12 +608,12 @@
     return v3
 
     .line 176
-    :cond_af
-    :goto_af
+    :cond_a
+    :goto_4
     return v2
 
     .line 177
-    :cond_b0
+    :cond_b
     iput-boolean v2, p0, Llibs/wv1;->Mu:Z
 
     .line 178
@@ -625,7 +625,7 @@
     return v2
 
     .line 182
-    :cond_b5
+    :cond_c
     iget-object v0, p0, Llibs/wv1;->Rho:Landroid/graphics/PointF;
 
     .line 183
@@ -688,7 +688,7 @@
 .end method
 
 .method public final c(FF)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/wv1;->Omicron:Landroid/graphics/Matrix;
@@ -704,7 +704,7 @@
 .end method
 
 .method public final d(II)V
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Landroid/view/TextureView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -719,7 +719,7 @@
 
     .line 6
     .line 7
-    if-ne v1, p1, :cond_1e
+    if-ne v1, p1, :cond_1
 
     .line 8
     .line 9
@@ -727,7 +727,7 @@
 
     .line 10
     .line 11
-    if-ne v1, p2, :cond_1e
+    if-ne v1, p2, :cond_1
 
     .line 12
     .line 13
@@ -743,7 +743,7 @@
 
     .line 18
     .line 19
-    if-ne v1, v2, :cond_1e
+    if-ne v1, v2, :cond_1
 
     .line 20
     .line 21
@@ -759,19 +759,19 @@
 
     .line 26
     .line 27
-    if-eq v1, v2, :cond_1d
+    if-eq v1, v2, :cond_0
 
     .line 28
     .line 29
-    goto :goto_1e
+    goto :goto_0
 
     .line 30
-    :cond_1d
+    :cond_0
     return-void
 
     .line 31
-    :cond_1e
-    :goto_1e
+    :cond_1
+    :goto_0
     invoke-virtual {p0}, Landroid/view/TextureView;->getLeft()I
 
     .line 32
@@ -818,7 +818,7 @@
 .end method
 
 .method public final dispatchDraw(Landroid/graphics/Canvas;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-super {p0, p1}, Landroid/view/TextureView;->dispatchDraw(Landroid/graphics/Canvas;)V

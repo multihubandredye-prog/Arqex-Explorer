@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
@@ -23,14 +23,14 @@
 
 # virtual methods
 .method public final a()Llibs/ex1;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ax1;->a:Ljava/lang/ref/WeakReference;
 
     .line 2
     .line 3
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -40,7 +40,7 @@
     return-object v0
 
     .line 7
-    :cond_6
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
     .line 8
@@ -57,7 +57,7 @@
 .end method
 
 .method public final b(Llibs/ex1;)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/ref/WeakReference;

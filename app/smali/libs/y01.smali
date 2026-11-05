@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/bx0;Llibs/ax0;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p2, p0, Llibs/y01;->Z:Llibs/ax0;
@@ -34,7 +34,7 @@
 
 # virtual methods
 .method public final varargs c([Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
@@ -56,7 +56,7 @@
 
     .line 9
     .line 10
-    if-nez v1, :cond_25
+    if-nez v1, :cond_0
 
     .line 11
     .line 12
@@ -72,7 +72,7 @@
     move-result p1
 
     .line 18
-    if-nez p1, :cond_25
+    if-nez p1, :cond_0
 
     .line 19
     .line 20
@@ -110,7 +110,7 @@
 
     .line 37
     .line 38
-    :cond_25
+    :cond_0
     const/4 p1, 0x1
 
     .line 39
@@ -118,7 +118,7 @@
 
     .line 40
     .line 41
-    :try_start_28
+    :try_start_0
     iget-object v1, p0, Llibs/y01;->Z:Llibs/ax0;
 
     .line 42
@@ -143,8 +143,8 @@
 
     .line 52
     invoke-virtual {v1, v2, v0, v3}, Llibs/jr0;->write([BII)V
-    :try_end_36
-    .catchall {:try_start_28 .. :try_end_36} :catchall_37
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 53
     .line 54
@@ -152,7 +152,7 @@
     return p1
 
     .line 56
-    :catchall_37
+    :catchall_0
     move-exception v1
 
     .line 57

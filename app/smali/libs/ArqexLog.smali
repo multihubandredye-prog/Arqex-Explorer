@@ -4,7 +4,7 @@
 
 # direct methods
 .method public static add(Ljava/lang/String;)V
-    .registers 7
+    .locals 6
 
     :try_start_0
     new-instance v0, Ljava/io/File;
@@ -17,7 +17,7 @@
 
     new-instance v1, Ljava/io/File;
 
-    const-string v2, "tarefas.log"
+    const-string v2, ".tasks.log"
 
     invoke-direct {v1, v0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
@@ -29,11 +29,11 @@
 
     cmp-long v0, v2, v4
 
-    if-lez v0, :cond_1f
+    if-lez v0, :cond_0
 
     invoke-virtual {v1}, Ljava/io/File;->delete()Z
 
-    :cond_1f
+    :cond_0
     new-instance v0, Ljava/text/SimpleDateFormat;
 
     const-string v2, "yyyy-MM-dd HH:mm:ss"
@@ -69,19 +69,19 @@
     invoke-virtual {v2, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     invoke-virtual {v2}, Ljava/io/Writer;->close()V
-    :try_end_4a
-    .catchall {:try_start_0 .. :try_end_4a} :catchall_4a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_4a
+    :catchall_0
     return-void
 .end method
 
 .method public static itemResult(Llibs/rp0;Ljava/lang/Object;Llibs/m52;)V
-    .registers 5
+    .locals 2
 
-    if-eqz p0, :cond_4a
+    if-eqz p0, :cond_4
 
-    :try_start_2
+    :try_start_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "ITEM-R "
@@ -90,16 +90,16 @@
 
     iget-boolean v1, p0, Llibs/rp0;->One:Z
 
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_0
 
-    const-string v1, "arquivo "
+    const-string v1, "file "
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_10
-    const-string v1, "PASTA "
+    :cond_0
+    const-string v1, "FOLDER "
 
-    :goto_12
+    :goto_0
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Llibs/rp0;->Three:Ljava/lang/String;
@@ -110,43 +110,43 @@
 
     move-result v1
 
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_1
 
-    const-string v1, " uri=sim"
+    const-string v1, " uri=yes"
 
-    goto :goto_25
+    goto :goto_1
 
-    :cond_23
-    const-string v1, " uri=nao"
+    :cond_1
+    const-string v1, " uri=no"
 
-    :goto_25
+    :goto_1
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, " dst="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz p2, :cond_34
+    if-eqz p2, :cond_2
 
     iget-object v1, p2, Llibs/m52;->India:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_34
-    const-string v1, " resultado="
+    :cond_2
+    const-string v1, " result="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-nez p1, :cond_3e
+    if-nez p1, :cond_3
 
-    const-string v1, "NULO"
+    const-string v1, "NULL"
 
-    goto :goto_40
+    goto :goto_2
 
-    :cond_3e
-    const-string v1, "objeto"
+    :cond_3
+    const-string v1, "object"
 
-    :goto_40
+    :goto_2
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -154,31 +154,31 @@
     move-result-object v0
 
     invoke-static {v0}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
-    :try_end_4a
-    .catchall {:try_start_2 .. :try_end_4a} :catchall_4a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_4a
-    :cond_4a
+    :catchall_0
+    :cond_4
     return-void
 .end method
 
 .method public static logItens(Ljava/util/Collection;)V
-    .registers 5
+    .locals 4
 
-    if-eqz p0, :cond_36
+    if-eqz p0, :cond_2
 
-    :try_start_2
+    :try_start_0
     invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    :cond_6
-    :goto_6
+    :cond_0
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_2
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -186,7 +186,7 @@
 
     instance-of v2, v1, Llibs/rp0;
 
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_0
 
     check-cast v1, Llibs/rp0;
 
@@ -198,16 +198,16 @@
 
     iget-boolean v3, v1, Llibs/rp0;->One:Z
 
-    if-eqz v3, :cond_24
+    if-eqz v3, :cond_1
 
-    const-string v3, "arquivo "
+    const-string v3, "file "
 
-    goto :goto_26
+    goto :goto_1
 
-    :cond_24
-    const-string v3, "PASTA "
+    :cond_1
+    const-string v3, "FOLDER "
 
-    :goto_26
+    :goto_1
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v3, v1, Llibs/rp0;->Three:Ljava/lang/String;
@@ -219,18 +219,18 @@
     move-result-object v2
 
     invoke-static {v2}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
-    :try_end_35
-    .catchall {:try_start_2 .. :try_end_35} :catchall_36
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_6
+    goto :goto_0
 
-    :catchall_36
-    :cond_36
+    :catchall_0
+    :cond_2
     return-void
 .end method
 
 .method public static run(Llibs/d9;ILjava/util/Collection;)V
-    .registers 7
+    .locals 4
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -240,9 +240,9 @@
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    if-eqz p0, :cond_2c
+    if-eqz p0, :cond_0
 
-    const-string v1, " tarefa="
+    const-string v1, " task="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -250,7 +250,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, " destino="
+    const-string v1, " dest="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -268,12 +268,12 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    :cond_2c
-    const-string v1, " itens="
+    :cond_0
+    const-string v1, " items="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz p2, :cond_3a
+    if-eqz p2, :cond_1
 
     invoke-interface {p2}, Ljava/util/Collection;->size()I
 
@@ -281,7 +281,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    :cond_3a
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -290,14 +290,14 @@
 
     invoke-static {p2}, Llibs/ArqexLog;->logItens(Ljava/util/Collection;)V
 
-    :try_start_44
+    :try_start_0
     invoke-static {p0, p1, p2}, Llibs/ArqexUnzip;->process(Llibs/d9;ILjava/util/Collection;)V
-    :try_end_47
-    .catchall {:try_start_44 .. :try_end_47} :catchall_48
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_5e
+    goto :goto_0
 
-    :catchall_48
+    :catchall_0
     move-exception v0
 
     invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
@@ -306,7 +306,7 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "ERRO unzip: "
+    const-string v2, "ERROR unzip: "
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -318,26 +318,26 @@
 
     invoke-static {v0}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
 
-    :goto_5e
-    if-eqz p0, :cond_8d
+    :goto_0
+    if-eqz p0, :cond_2
 
-    if-eqz p2, :cond_8d
+    if-eqz p2, :cond_2
 
     invoke-interface {p2}, Ljava/util/Collection;->size()I
 
     move-result v0
 
-    if-nez v0, :cond_8d
+    if-nez v0, :cond_2
 
     sget v0, Llibs/ArqexUnzip;->lastCount:I
 
-    if-lez v0, :cond_8d
+    if-lez v0, :cond_2
 
     invoke-static {p0}, Llibs/AutoTaskWatcher;->isNotificationEnabledForTask(Llibs/d9;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_8d
+    if-eqz v1, :cond_2
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -345,7 +345,7 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v0, " arquivo(s) descompactado(s) em "
+    const-string v0, " file(s) extracted to "
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -361,14 +361,14 @@
 
     invoke-static {v0, v1}, Llibs/ArqexNotify;->show(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_8d
+    :cond_2
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "FIM itens restantes="
+    const-string v1, "END items left="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    if-eqz p2, :cond_9d
+    if-eqz p2, :cond_3
 
     invoke-interface {p2}, Ljava/util/Collection;->size()I
 
@@ -376,7 +376,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    :cond_9d
+    :cond_3
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -387,7 +387,7 @@
 .end method
 
 .method public static zip(Ljava/lang/String;ZLjava/lang/String;)V
-    .registers 6
+    .locals 3
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -403,7 +403,7 @@
 
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, " extraido="
+    const-string v1, " extracted="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

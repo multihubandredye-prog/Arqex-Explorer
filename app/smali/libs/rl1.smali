@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/rl1;->X:B
@@ -34,7 +34,7 @@
 .end method
 
 .method private final a(Landroid/widget/AbsListView;III)V
-    .registers 5
+    .locals 0
 
     .line 1
     return-void
@@ -43,14 +43,14 @@
 
 # virtual methods
 .method public final onScroll(Landroid/widget/AbsListView;III)V
-    .registers 5
+    .locals 0
 
     .line 1
     iget-byte p1, p0, Llibs/rl1;->X:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_12
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -67,7 +67,7 @@
 
     .line 11
     .line 12
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_0
 
     .line 13
     .line 14
@@ -76,22 +76,22 @@
     .line 15
     .line 16
     .line 17
-    :cond_10
-    :pswitch_10
+    :cond_0
+    :pswitch_0
     return-void
 
     .line 18
     nop
 
     .line 19
-    :pswitch_data_12
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_10
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final onScrollStateChanged(Landroid/widget/AbsListView;I)V
-    .registers 7
+    .locals 4
 
     .line 1
     iget-byte p1, p0, Llibs/rl1;->X:B
@@ -105,7 +105,7 @@
 
     .line 5
     .line 6
-    packed-switch p1, :pswitch_data_32
+    packed-switch p1, :pswitch_data_0
 
     .line 7
     .line 8
@@ -118,24 +118,24 @@
 
     .line 12
     .line 13
-    if-nez p1, :cond_10
+    if-nez p1, :cond_0
 
     .line 14
     .line 15
-    if-eq p2, v0, :cond_12
+    if-eq p2, v0, :cond_1
 
     .line 16
     .line 17
-    :cond_10
+    :cond_0
     iput p2, v1, Lcom/mixplorer/widgets/MiListView;->Mu:I
 
     .line 18
     .line 19
-    :cond_12
+    :cond_1
     return-void
 
     .line 20
-    :pswitch_13
+    :pswitch_0
     check-cast v1, Llibs/tl1;
 
     .line 21
@@ -151,7 +151,7 @@
     const/4 v3, 0x1
 
     .line 27
-    if-ne p2, v3, :cond_31
+    if-ne p2, v3, :cond_3
 
     .line 28
     .line 29
@@ -163,14 +163,14 @@
     move-result p2
 
     .line 33
-    if-ne p2, v0, :cond_23
+    if-ne p2, v0, :cond_2
 
     .line 34
     .line 35
-    goto :goto_31
+    goto :goto_0
 
     .line 36
-    :cond_23
+    :cond_2
     invoke-virtual {v2}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
 
     .line 37
@@ -179,7 +179,7 @@
     move-result-object p2
 
     .line 40
-    if-eqz p2, :cond_31
+    if-eqz p2, :cond_3
 
     .line 41
     .line 42
@@ -197,13 +197,13 @@
     .line 48
     .line 49
     .line 50
-    :cond_31
-    :goto_31
+    :cond_3
+    :goto_0
     return-void
 
     .line 51
-    :pswitch_data_32
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_13
+        :pswitch_0
     .end packed-switch
 .end method

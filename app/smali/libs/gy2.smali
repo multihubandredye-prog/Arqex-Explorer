@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/sw0;-><init>()V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final Map(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "NT"
@@ -43,7 +43,7 @@
 .end method
 
 .method public final Set(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "USN"

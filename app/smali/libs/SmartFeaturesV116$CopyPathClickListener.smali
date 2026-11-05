@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,7 +25,7 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Llibs/SmartFeaturesV116$CopyPathClickListener;->activity:Landroid/app/Activity;
 
@@ -35,11 +35,11 @@
 .end method
 
 .method public onLongClick(Landroid/view/View;)Z
-    .registers 5
+    .locals 3
 
     iget-object v0, p0, Llibs/SmartFeaturesV116$CopyPathClickListener;->activity:Landroid/app/Activity;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     const-string v1, "Copiar caminho completo"
 
@@ -51,7 +51,7 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x1
 
     return v0

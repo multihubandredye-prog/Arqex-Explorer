@@ -20,7 +20,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/ga1;ZLlibs/rp0;II)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 9
+    .locals 8
 
     .line 1
     new-instance v4, Ljava/util/ArrayList;

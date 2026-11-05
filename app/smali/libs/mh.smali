@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/content/Intent;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/mh;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/mh;->X:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_1a
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -72,7 +72,7 @@
     return-void
 
     .line 18
-    :pswitch_11
+    :pswitch_0
     sget v0, Lcom/mixplorer/BroadcastReceiver;->b:I
 
     .line 19
@@ -84,20 +84,20 @@
     const/4 v2, 0x0
 
     .line 23
-    :try_start_16
+    :try_start_0
     invoke-static {v0, v1, v2}, Llibs/sw1;->Node(Landroid/content/Context;Landroid/content/Intent;Landroid/os/Bundle;)V
-    :try_end_19
-    .catchall {:try_start_16 .. :try_end_19} :catchall_19
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 24
     .line 25
     .line 26
-    :catchall_19
+    :catchall_0
     return-void
 
     .line 27
-    :pswitch_data_1a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_11
+        :pswitch_0
     .end packed-switch
 .end method

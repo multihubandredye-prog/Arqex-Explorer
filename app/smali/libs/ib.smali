@@ -15,7 +15,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/ap3;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/ib;->X:B
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/ib;->X:B
@@ -47,26 +47,26 @@
     const/4 v1, 0x0
 
     .line 4
-    packed-switch v0, :pswitch_data_22
+    packed-switch v0, :pswitch_data_0
 
     .line 5
     .line 6
     .line 7
-    :try_start_6
+    :try_start_0
     invoke-virtual {p0}, Llibs/ib;->d()Llibs/Theme;
 
     .line 8
     .line 9
     .line 10
     move-result-object v1
-    :try_end_a
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_a} :catch_b
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 11
-    goto :goto_13
+    goto :goto_0
 
     .line 12
-    :catch_b
+    :catch_0
     move-exception v0
 
     .line 13
@@ -83,26 +83,26 @@
     .line 18
     .line 19
     .line 20
-    :goto_13
+    :goto_0
     return-object v1
 
     .line 21
-    :pswitch_14
-    :try_start_14
+    :pswitch_0
+    :try_start_1
     invoke-virtual {p0}, Llibs/ib;->d()Llibs/Theme;
 
     .line 22
     .line 23
     .line 24
     move-result-object v1
-    :try_end_18
-    .catch Ljava/io/IOException; {:try_start_14 .. :try_end_18} :catch_19
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 25
-    goto :goto_21
+    goto :goto_1
 
     .line 26
-    :catch_19
+    :catch_1
     move-exception v0
 
     .line 27
@@ -119,18 +119,18 @@
     .line 32
     .line 33
     .line 34
-    :goto_21
+    :goto_1
     return-object v1
 
     .line 35
-    :pswitch_data_22
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_14
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final d()Llibs/Theme;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/ib;->X:B
@@ -141,7 +141,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_1c
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -166,7 +166,7 @@
     return-object v0
 
     .line 18
-    :pswitch_11
+    :pswitch_0
     new-instance v0, Llibs/hb;
 
     .line 19
@@ -190,8 +190,8 @@
     nop
 
     .line 29
-    :pswitch_data_1c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_11
+        :pswitch_0
     .end packed-switch
 .end method

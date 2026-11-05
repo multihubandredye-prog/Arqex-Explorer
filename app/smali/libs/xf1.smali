@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/f3;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final Set(Llibs/h3;Llibs/t22;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0

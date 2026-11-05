@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/app/Activity;Llibs/h23;)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x2
@@ -43,7 +43,7 @@
 .end method
 
 .method public synthetic constructor <init>(Llibs/h23;Landroid/app/Activity;B)V
-    .registers 4
+    .locals 0
 
     .line 12
     iput-byte p3, p0, Llibs/fn2;->X:B
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 23
+    .locals 21
 
     .line 1
     move-object/from16 v0, p0
@@ -85,7 +85,7 @@
 
     .line 10
     .line 11
-    packed-switch v1, :pswitch_data_a2
+    packed-switch v1, :pswitch_data_0
 
     .line 12
     .line 13
@@ -257,7 +257,7 @@
     return-void
 
     .line 97
-    :pswitch_60
+    :pswitch_0
     new-instance v1, Llibs/xv1;
 
     .line 98
@@ -288,7 +288,7 @@
     return-void
 
     .line 113
-    :pswitch_70
+    :pswitch_1
     iget-object v1, v4, Llibs/h23;->Seven:Llibs/ll1;
 
     .line 114
@@ -301,14 +301,14 @@
     move-result v1
 
     .line 119
-    if-gtz v1, :cond_79
+    if-gtz v1, :cond_0
 
     .line 120
     .line 121
-    goto :goto_a1
+    goto :goto_0
 
     .line 122
-    :cond_79
+    :cond_0
     new-instance v1, Llibs/$d;
 
     .line 123
@@ -383,13 +383,13 @@
     .line 160
     .line 161
     .line 162
-    :goto_a1
+    :goto_0
     return-void
 
     .line 163
-    :pswitch_data_a2
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_70
-        :pswitch_60
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

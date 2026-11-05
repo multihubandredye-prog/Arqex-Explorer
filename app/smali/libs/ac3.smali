@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/c63;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/d1;-><init>(Llibs/c63;)V
@@ -54,14 +54,14 @@
 
 # virtual methods
 .method public final e(I[B)I
-    .registers 6
+    .locals 3
 
     .line 1
     iget-boolean v0, p0, Llibs/c63;->One:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -90,14 +90,14 @@
     add-int/2addr v0, p1
 
     .line 16
-    goto :goto_11
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     move v0, p1
 
     .line 18
-    :goto_11
+    :goto_0
     const/16 v1, 0x100
 
     .line 19
@@ -167,7 +167,7 @@
 
     .line 50
     .line 51
-    if-nez v1, :cond_44
+    if-nez v1, :cond_1
 
     .line 52
     .line 53
@@ -205,7 +205,7 @@
     add-int/2addr v0, p2
 
     .line 69
-    :cond_44
+    :cond_1
     sub-int/2addr v0, p1
 
     .line 70
@@ -213,7 +213,7 @@
 .end method
 
 .method public final j(I[B)I
-    .registers 5
+    .locals 2
 
     .line 1
     aget-byte v0, p2, p1
@@ -226,18 +226,18 @@
     and-int/2addr v0, v1
 
     .line 5
-    if-ne v0, v1, :cond_7
+    if-ne v0, v1, :cond_0
 
     .line 6
     .line 7
-    goto :goto_8
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     const/4 v1, 0x0
 
     .line 9
-    :goto_8
+    :goto_0
     iput-boolean v1, p0, Llibs/ac3;->India:Z
 
     .line 10
@@ -250,7 +250,7 @@
 
     .line 14
     .line 15
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_1
 
     .line 16
     .line 17
@@ -274,7 +274,7 @@
 
     .line 26
     .line 27
-    :cond_1a
+    :cond_1
     sub-int/2addr v0, p1
 
     .line 28
@@ -282,7 +282,7 @@
 .end method
 
 .method public final q(I[B)I
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -292,7 +292,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/String;
@@ -413,7 +413,7 @@
 .end method
 
 .method public final v(I[B)I
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0

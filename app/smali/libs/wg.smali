@@ -15,7 +15,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 6
+    .locals 6
 
     .line 1
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
@@ -55,8 +55,8 @@
 
     .line 19
     .line 20
-    :goto_13
-    if-ge v1, v0, :cond_29
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     .line 21
     .line 22
@@ -99,15 +99,15 @@
 
     .line 40
     .line 41
-    goto :goto_13
+    goto :goto_0
 
     .line 42
-    :cond_29
+    :cond_0
     return-void
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -136,18 +136,18 @@
 
     .line 14
     .line 15
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 16
     .line 17
-    goto :goto_12
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     const/4 v0, 0x0
 
     .line 19
-    :goto_12
+    :goto_0
     const-string v1, "bluecove.android.context"
 
     .line 20
@@ -205,7 +205,7 @@
 
 # virtual methods
 .method public final a(Ljava/lang/String;)V
-    .registers 7
+    .locals 5
 
     .line 1
     const-string v0, "btgoep://"
@@ -223,12 +223,12 @@
     monitor-enter v2
 
     .line 8
-    :try_start_7
+    :try_start_0
     iget-boolean v3, p0, Llibs/wg;->b:Z
 
     .line 9
     .line 10
-    if-nez v3, :cond_4a
+    if-nez v3, :cond_0
 
     .line 11
     .line 12
@@ -349,14 +349,14 @@
     throw p1
 
     .line 73
-    :catchall_48
+    :catchall_0
     move-exception p1
 
     .line 74
-    goto :goto_5c
+    goto :goto_0
 
     .line 75
-    :cond_4a
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     .line 76
@@ -391,17 +391,17 @@
     throw v0
 
     .line 93
-    :goto_5c
+    :goto_0
     monitor-exit v2
-    :try_end_5d
-    .catchall {:try_start_7 .. :try_end_5d} :catchall_48
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 94
     throw p1
 .end method
 
 .method public final b()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/wg;->a:Ljava/lang/Object;
@@ -411,31 +411,31 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget-boolean v1, p0, Llibs/wg;->b:Z
-    :try_end_5
-    .catchall {:try_start_3 .. :try_end_5} :catchall_19
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
     .line 5
     .line 6
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_0
 
     .line 7
     .line 8
     const/4 v1, 0x0
 
     .line 9
-    :try_start_8
+    :try_start_1
     throw v1
-    :try_end_9
-    .catchall {:try_start_8 .. :try_end_9} :catchall_9
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 10
-    :catchall_9
+    :catchall_0
     move-exception v2
 
     .line 11
-    :try_start_a
+    :try_start_2
     const-string v3, "BluetoothClient"
 
     .line 12
@@ -449,26 +449,26 @@
 
     .line 17
     invoke-static {v3, v2}, Llibs/vw1;->i(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_13
-    .catchall {:try_start_a .. :try_end_13} :catchall_19
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
     .line 18
     .line 19
     .line 20
-    :try_start_13
+    :try_start_3
     throw v1
-    :try_end_14
-    .catchall {:try_start_13 .. :try_end_14} :catchall_14
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 21
-    :catchall_14
+    :catchall_1
     move-exception v1
 
     .line 22
     const/4 v2, 0x0
 
     .line 23
-    :try_start_16
+    :try_start_4
     iput-boolean v2, p0, Llibs/wg;->b:Z
 
     .line 24
@@ -476,14 +476,14 @@
     throw v1
 
     .line 26
-    :catchall_19
+    :catchall_2
     move-exception v1
 
     .line 27
-    goto :goto_23
+    goto :goto_0
 
     .line 28
-    :cond_1b
+    :cond_0
     new-instance v1, Ljava/lang/IllegalStateException;
 
     .line 29
@@ -500,17 +500,17 @@
     throw v1
 
     .line 36
-    :goto_23
+    :goto_0
     monitor-exit v0
-    :try_end_24
-    .catchall {:try_start_16 .. :try_end_24} :catchall_19
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
     .line 37
     throw v1
 .end method
 
 .method public final c()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/wg;->a:Ljava/lang/Object;
@@ -520,12 +520,12 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget-boolean v1, p0, Llibs/wg;->b:Z
 
     .line 5
     .line 6
-    if-nez v1, :cond_c
+    if-nez v1, :cond_0
 
     .line 7
     .line 8
@@ -538,31 +538,31 @@
     return v1
 
     .line 11
-    :catchall_a
+    :catchall_0
     move-exception v1
 
     .line 12
-    goto :goto_e
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     const/4 v1, 0x0
 
     .line 14
     throw v1
 
     .line 15
-    :goto_e
+    :goto_0
     monitor-exit v0
-    :try_end_f
-    .catchall {:try_start_3 .. :try_end_f} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 16
     throw v1
 .end method
 
 .method public final d()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/wg;->a:Ljava/lang/Object;
@@ -572,20 +572,20 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     monitor-exit v0
 
     .line 5
     return-void
 
     .line 6
-    :catchall_5
+    :catchall_0
     move-exception v1
 
     .line 7
     monitor-exit v0
-    :try_end_7
-    .catchall {:try_start_3 .. :try_end_7} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 8
     throw v1

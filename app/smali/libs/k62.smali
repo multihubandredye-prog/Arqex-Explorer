@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/yc;-><init>()V
@@ -23,14 +23,14 @@
 
 # virtual methods
 .method public final b(Ljava/lang/Class;)Ljava/security/spec/AlgorithmParameterSpec;
-    .registers 4
+    .locals 2
 
     .line 1
     const-class v0, Ljavax/crypto/spec/PBEParameterSpec;
 
     .line 2
     .line 3
-    if-ne p1, v0, :cond_1e
+    if-ne p1, v0, :cond_0
 
     .line 4
     .line 5
@@ -86,7 +86,7 @@
     return-object p1
 
     .line 31
-    :cond_1e
+    :cond_0
     const-string p1, "unknown parameter spec passed to PBKDF2 PBE parameters object."
 
     .line 32
@@ -103,7 +103,7 @@
 .end method
 
 .method public final engineGetEncoded()[B
-    .registers 5
+    .locals 4
 
     .line 1
     :try_start_0
@@ -121,14 +121,14 @@
     .line 7
     .line 8
     move-result-object v0
-    :try_end_8
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_8} :catch_9
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 9
     return-object v0
 
     .line 10
-    :catch_9
+    :catch_0
     move-exception v0
 
     .line 11
@@ -179,14 +179,14 @@
 .end method
 
 .method public final engineGetEncoded(Ljava/lang/String;)[B
-    .registers 2
+    .locals 0
 
     .line 35
     invoke-static {p1}, Llibs/yc;->a(Ljava/lang/String;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 36
     invoke-virtual {p0}, Llibs/k62;->engineGetEncoded()[B
@@ -195,21 +195,21 @@
 
     return-object p1
 
-    :cond_b
+    :cond_0
     const/4 p1, 0x0
 
     return-object p1
 .end method
 
 .method public final engineInit(Ljava/security/spec/AlgorithmParameterSpec;)V
-    .registers 4
+    .locals 2
 
     .line 1
     instance-of v0, p1, Ljavax/crypto/spec/PBEParameterSpec;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -249,7 +249,7 @@
     return-void
 
     .line 23
-    :cond_16
+    :cond_0
     const-string p1, "PBEParameterSpec required to initialise a PBKDF2 PBE parameters algorithm parameters object"
 
     .line 24
@@ -263,7 +263,7 @@
 .end method
 
 .method public final engineInit([B)V
-    .registers 2
+    .locals 0
 
     .line 29
     invoke-static {p1}, Llibs/Theme;->j([B)Llibs/Theme;
@@ -280,14 +280,14 @@
 .end method
 
 .method public final engineInit([BLjava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 30
     invoke-static {p2}, Llibs/yc;->a(Ljava/lang/String;)Z
 
     move-result p2
 
-    if-eqz p2, :cond_a
+    if-eqz p2, :cond_0
 
     .line 31
     invoke-virtual {p0, p1}, Llibs/k62;->engineInit([B)V
@@ -295,7 +295,7 @@
     return-void
 
     .line 32
-    :cond_a
+    :cond_0
     const-string p1, "Unknown parameters format in PBKDF2 parameters object"
 
     invoke-static {p1}, Llibs/ic0;->t(Ljava/lang/String;)V
@@ -304,7 +304,7 @@
 .end method
 
 .method public final engineToString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "PBKDF2 Parameters"

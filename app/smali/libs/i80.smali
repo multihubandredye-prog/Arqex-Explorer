@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 69
+    .locals 68
 
     .line 1
     move-object/from16 v1, p0
@@ -2585,7 +2585,7 @@
     move-result-object v3
 
     .line 1328
-    :goto_52f
+    :goto_0
     invoke-interface {v3}, Ljava/util/ListIterator;->hasNext()Z
 
     .line 1329
@@ -2594,7 +2594,7 @@
     move-result v0
 
     .line 1332
-    if-eqz v0, :cond_57e
+    if-eqz v0, :cond_0
 
     .line 1333
     .line 1334
@@ -2613,7 +2613,7 @@
 
     .line 1340
     .line 1341
-    :try_start_53c
+    :try_start_0
     invoke-interface {v4}, Llibs/kn0;->c()Ljava/lang/Object;
 
     .line 1342
@@ -2654,8 +2654,8 @@
 
     .line 1360
     invoke-interface {v0, v5, v7, v6}, Llibs/at;->b([BI[B)V
-    :try_end_552
-    .catch Ljava/lang/Exception; {:try_start_53c .. :try_end_552} :catch_556
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 1361
     .line 1362
@@ -2667,10 +2667,10 @@
 
     .line 1365
     .line 1366
-    goto :goto_579
+    goto :goto_1
 
     .line 1367
-    :catch_556
+    :catch_0
     move-exception v0
 
     .line 1368
@@ -2742,7 +2742,7 @@
     .line 1400
     .line 1401
     .line 1402
-    :goto_579
+    :goto_1
     const/16 v20, 0x3
 
     .line 1403
@@ -2751,10 +2751,10 @@
 
     .line 1405
     .line 1406
-    goto :goto_52f
+    goto :goto_0
 
     .line 1407
-    :cond_57e
+    :cond_0
     const/4 v6, 0x1
 
     .line 1408

@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,14 +39,14 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     instance-of v0, p1, Llibs/nt0;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -70,7 +70,7 @@
     move-result v0
 
     .line 15
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_0
 
     .line 16
     .line 17
@@ -90,7 +90,7 @@
     move-result v0
 
     .line 25
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_0
 
     .line 26
     .line 27
@@ -110,7 +110,7 @@
     move-result p1
 
     .line 35
-    if-eqz p1, :cond_26
+    if-eqz p1, :cond_0
 
     .line 36
     .line 37
@@ -120,7 +120,7 @@
     return p1
 
     .line 39
-    :cond_26
+    :cond_0
     const/4 p1, 0x0
 
     .line 40
@@ -128,7 +128,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/nt0;->c:Ljava/math/BigInteger;

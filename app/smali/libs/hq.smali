@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Param;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -71,7 +71,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/Init;

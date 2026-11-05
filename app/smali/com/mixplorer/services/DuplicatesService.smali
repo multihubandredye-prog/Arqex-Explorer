@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/util/HashMap;
@@ -29,7 +29,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/ex1;-><init>()V
@@ -41,7 +41,7 @@
 .end method
 
 .method public static i(II)I
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-static {p0}, Lcom/mixplorer/services/DuplicatesService;->j(I)Llibs/qe0;
@@ -55,7 +55,7 @@
     const/4 v0, -0x1
 
     .line 6
-    if-eqz p0, :cond_2e
+    if-eqz p0, :cond_2
 
     .line 7
     .line 8
@@ -66,7 +66,7 @@
     monitor-enter v1
 
     .line 11
-    :try_start_a
+    :try_start_0
     iget-object p0, p0, Llibs/qe0;->Mike:Ljava/util/HashMap;
 
     .line 12
@@ -87,7 +87,7 @@
     move-result-object p0
 
     .line 21
-    :cond_14
+    :cond_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 22
@@ -96,7 +96,7 @@
     move-result v2
 
     .line 25
-    if-eqz v2, :cond_2a
+    if-eqz v2, :cond_1
 
     .line 26
     .line 27
@@ -116,7 +116,7 @@
 
     .line 34
     .line 35
-    if-ne v3, p1, :cond_14
+    if-ne v3, p1, :cond_0
 
     .line 36
     .line 37
@@ -130,35 +130,35 @@
     return p0
 
     .line 41
-    :catchall_28
+    :catchall_0
     move-exception p0
 
     .line 42
-    goto :goto_2c
+    goto :goto_0
 
     .line 43
-    :cond_2a
+    :cond_1
     monitor-exit v1
 
     .line 44
     return v0
 
     .line 45
-    :goto_2c
+    :goto_0
     monitor-exit v1
-    :try_end_2d
-    .catchall {:try_start_a .. :try_end_2d} :catchall_28
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 46
     throw p0
 
     .line 47
-    :cond_2e
+    :cond_2
     return v0
 .end method
 
 .method public static j(I)Llibs/qe0;
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Lcom/mixplorer/services/DuplicatesService;->Z:Ljava/util/HashMap;
@@ -168,7 +168,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 5
@@ -195,13 +195,13 @@
     return-object p0
 
     .line 16
-    :catchall_f
+    :catchall_0
     move-exception p0
 
     .line 17
     monitor-exit v0
-    :try_end_11
-    .catchall {:try_start_3 .. :try_end_11} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 18
     throw p0
@@ -210,7 +210,7 @@
 
 # virtual methods
 .method public final e(Landroid/content/Intent;)I
-    .registers 8
+    .locals 6
 
     .line 1
     const-string v0, "action_thread_stop"
@@ -236,7 +236,7 @@
     const/4 v1, 0x1
 
     .line 12
-    if-eqz v0, :cond_64
+    if-eqz v0, :cond_4
 
     .line 13
     .line 14
@@ -255,15 +255,15 @@
     move-result p1
 
     .line 21
-    if-nez p1, :cond_17
+    if-nez p1, :cond_0
 
     .line 22
     .line 23
-    goto :goto_64
+    goto :goto_3
 
     .line 24
-    :cond_17
-    :try_start_17
+    :cond_0
+    :try_start_0
     invoke-static {}, Llibs/uu1;->e()Landroid/app/NotificationManager;
 
     .line 25
@@ -273,13 +273,13 @@
 
     .line 28
     invoke-virtual {v0, p1}, Landroid/app/NotificationManager;->cancel(I)V
-    :try_end_1e
-    .catchall {:try_start_17 .. :try_end_1e} :catchall_1e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 29
     .line 30
     .line 31
-    :catchall_1e
+    :catchall_0
     sget-object v0, Lcom/mixplorer/services/DuplicatesService;->Z:Ljava/util/HashMap;
 
     .line 32
@@ -287,7 +287,7 @@
     monitor-enter v0
 
     .line 34
-    :try_start_21
+    :try_start_1
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 35
@@ -308,25 +308,25 @@
 
     .line 43
     .line 44
-    if-eqz p1, :cond_41
+    if-eqz p1, :cond_1
 
     .line 45
     .line 46
     invoke-virtual {p1}, Llibs/xv1;->interrupt()V
-    :try_end_30
-    .catchall {:try_start_21 .. :try_end_30} :catchall_31
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 47
     .line 48
     .line 49
-    goto :goto_41
+    goto :goto_0
 
     .line 50
-    :catchall_31
+    :catchall_1
     move-exception p1
 
     .line 51
-    :try_start_32
+    :try_start_2
     const-string v3, "MiXService"
 
     .line 52
@@ -356,8 +356,8 @@
     .line 64
     .line 65
     .line 66
-    :cond_41
-    :goto_41
+    :cond_1
+    :goto_0
     sget-object p1, Lcom/mixplorer/services/DuplicatesService;->Z:Ljava/util/HashMap;
 
     .line 67
@@ -370,7 +370,7 @@
     move-result p1
 
     .line 72
-    if-nez p1, :cond_60
+    if-nez p1, :cond_3
 
     .line 73
     .line 74
@@ -386,14 +386,14 @@
     move-result v1
 
     .line 80
-    if-eqz v1, :cond_52
+    if-eqz v1, :cond_2
 
     .line 81
     .line 82
-    goto :goto_5b
+    goto :goto_1
 
     .line 83
-    :cond_52
+    :cond_2
     const-class v1, Lcom/mixplorer/services/DuplicatesService;
 
     .line 84
@@ -411,7 +411,7 @@
     .line 90
     .line 91
     .line 92
-    :goto_5b
+    :goto_1
     monitor-exit v0
 
     .line 93
@@ -421,36 +421,36 @@
     return p1
 
     .line 95
-    :catchall_5e
+    :catchall_2
     move-exception p1
 
     .line 96
-    goto :goto_62
+    goto :goto_2
 
     .line 97
-    :cond_60
+    :cond_3
     monitor-exit v0
 
     .line 98
-    goto :goto_64
+    goto :goto_3
 
     .line 99
-    :goto_62
+    :goto_2
     monitor-exit v0
-    :try_end_63
-    .catchall {:try_start_32 .. :try_end_63} :catchall_5e
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
     .line 100
     throw p1
 
     .line 101
-    :cond_64
-    :goto_64
+    :cond_4
+    :goto_3
     return v1
 .end method
 
 .method public final onDestroy()V
-    .registers 9
+    .locals 8
 
     .line 1
     sget-object v0, Lcom/mixplorer/services/DuplicatesService;->Z:Ljava/util/HashMap;
@@ -466,7 +466,7 @@
     const/4 v2, 0x1
 
     .line 6
-    :try_start_5
+    :try_start_0
     invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     .line 7
@@ -483,7 +483,7 @@
     move-result-object v3
 
     .line 14
-    :goto_d
+    :goto_0
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     .line 15
@@ -492,7 +492,7 @@
     move-result v4
 
     .line 18
-    if-eqz v4, :cond_56
+    if-eqz v4, :cond_1
 
     .line 19
     .line 20
@@ -514,15 +514,15 @@
     .line 28
     .line 29
     move-result v4
-    :try_end_1d
-    .catchall {:try_start_5 .. :try_end_1d} :catchall_30
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 30
-    if-eqz v4, :cond_32
+    if-eqz v4, :cond_0
 
     .line 31
     .line 32
-    :try_start_1f
+    :try_start_1
     invoke-static {}, Llibs/uu1;->e()Landroid/app/NotificationManager;
 
     .line 33
@@ -532,14 +532,14 @@
 
     .line 36
     invoke-virtual {v5, v4}, Landroid/app/NotificationManager;->cancel(I)V
-    :try_end_26
-    .catchall {:try_start_1f .. :try_end_26} :catchall_26
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 37
     .line 38
     .line 39
-    :catchall_26
-    :try_start_26
+    :catchall_0
+    :try_start_2
     invoke-static {v4}, Lcom/mixplorer/services/DuplicatesService;->j(I)Llibs/qe0;
 
     .line 40
@@ -548,45 +548,45 @@
     move-result-object v4
 
     .line 43
-    if-eqz v4, :cond_32
+    if-eqz v4, :cond_0
 
     .line 44
     .line 45
     invoke-virtual {v4}, Llibs/xv1;->interrupt()V
-    :try_end_2f
-    .catchall {:try_start_26 .. :try_end_2f} :catchall_30
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 46
     .line 47
     .line 48
-    goto :goto_32
+    goto :goto_1
 
     .line 49
-    :catchall_30
+    :catchall_1
     move-exception v3
 
     .line 50
-    goto :goto_47
+    goto :goto_2
 
     .line 51
-    :cond_32
-    :goto_32
-    :try_start_32
+    :cond_0
+    :goto_1
+    :try_start_3
     invoke-interface {v3}, Ljava/util/Iterator;->remove()V
-    :try_end_35
-    .catchall {:try_start_32 .. :try_end_35} :catchall_36
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
     .line 52
     .line 53
     .line 54
-    goto :goto_d
+    goto :goto_0
 
     .line 55
-    :catchall_36
+    :catchall_2
     move-exception v4
 
     .line 56
-    :try_start_37
+    :try_start_4
     const-string v5, "MiXService"
 
     .line 57
@@ -612,17 +612,17 @@
     .line 67
     .line 68
     invoke-static {v5, v6, v7}, Llibs/vw1;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_46
-    .catchall {:try_start_37 .. :try_end_46} :catchall_30
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 69
     .line 70
     .line 71
-    goto :goto_d
+    goto :goto_0
 
     .line 72
-    :goto_47
-    :try_start_47
+    :goto_2
+    :try_start_5
     const-string v4, "MiXService"
 
     .line 73
@@ -652,10 +652,10 @@
     .line 85
     .line 86
     .line 87
-    :cond_56
+    :cond_1
     monitor-exit v0
-    :try_end_57
-    .catchall {:try_start_47 .. :try_end_57} :catchall_5b
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_3
 
     .line 88
     invoke-super {p0}, Llibs/ex1;->onDestroy()V
@@ -666,23 +666,23 @@
     return-void
 
     .line 92
-    :catchall_5b
+    :catchall_3
     move-exception v1
 
     .line 93
-    :try_start_5c
+    :try_start_6
     monitor-exit v0
-    :try_end_5d
-    .catchall {:try_start_5c .. :try_end_5d} :catchall_5b
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_3
 
     .line 94
-    goto :goto_5f
+    goto :goto_4
 
     .line 95
-    :goto_5e
+    :goto_3
     throw v1
 
     .line 96
-    :goto_5f
-    goto :goto_5e
+    :goto_4
+    goto :goto_3
 .end method

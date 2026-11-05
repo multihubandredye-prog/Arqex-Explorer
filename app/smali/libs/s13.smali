@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/xw1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/s13;->a:Llibs/xw1;
@@ -37,10 +37,10 @@
 .end method
 
 .method public static z(Landroid/os/IBinder;)Llibs/e71;
-    .registers 3
+    .locals 2
 
     .line 1
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     .line 2
     .line 3
@@ -50,7 +50,7 @@
     return-object p0
 
     .line 5
-    :cond_4
+    :cond_0
     const-string v0, "moe.shizuku.api.IProgressListener"
 
     .line 6
@@ -63,7 +63,7 @@
     move-result-object v0
 
     .line 11
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_1
 
     .line 12
     .line 13
@@ -71,7 +71,7 @@
 
     .line 14
     .line 15
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_1
 
     .line 16
     .line 17
@@ -82,7 +82,7 @@
     return-object v0
 
     .line 20
-    :cond_13
+    :cond_1
     new-instance v0, Llibs/d71;
 
     .line 21
@@ -98,14 +98,14 @@
 
 # virtual methods
 .method public final asBinder()Landroid/os/IBinder;
-    .registers 1
+    .locals 0
 
     .line 1
     return-object p0
 .end method
 
 .method public final onProgress(J)Z
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/s13;->a:Llibs/xw1;
@@ -124,13 +124,13 @@
 .end method
 
 .method public final onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .registers 7
+    .locals 2
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-lt p1, v0, :cond_d
+    if-lt p1, v0, :cond_0
 
     .line 3
     .line 4
@@ -139,7 +139,7 @@
     .line 5
     .line 6
     .line 7
-    if-gt p1, v1, :cond_d
+    if-gt p1, v1, :cond_0
 
     .line 8
     .line 9
@@ -152,8 +152,8 @@
     .line 12
     .line 13
     .line 14
-    :cond_d
-    if-eq p1, v0, :cond_14
+    :cond_0
+    if-eq p1, v0, :cond_1
 
     .line 15
     .line 16
@@ -168,7 +168,7 @@
     return p1
 
     .line 21
-    :cond_14
+    :cond_1
     invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
 
     .line 22

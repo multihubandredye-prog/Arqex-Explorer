@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,7 +23,7 @@
 .end method
 
 .method public static a(Llibs/ty3;)Llibs/fq;
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/ty3;->a:Llibs/di2;
@@ -43,7 +43,7 @@
     .line 8
     .line 9
     .line 10
-    if-eq v1, v2, :cond_17
+    if-eq v1, v2, :cond_0
 
     .line 11
     .line 12
@@ -73,7 +73,7 @@
     return-object p0
 
     .line 24
-    :cond_17
+    :cond_0
     new-instance v0, Llibs/fq;
 
     .line 25

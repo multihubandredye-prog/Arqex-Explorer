@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r31;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onLongClick(Landroid/view/View;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object p1, p0, Llibs/u21;->X:Llibs/r31;
@@ -54,7 +54,7 @@
     const/4 v1, 0x1
 
     .line 8
-    if-ne v0, v1, :cond_c
+    if-ne v0, v1, :cond_0
 
     .line 9
     .line 10
@@ -62,15 +62,15 @@
 
     .line 11
     .line 12
-    goto :goto_e
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     sget v0, Llibs/bi2;->menu:I
 
     .line 14
     .line 15
-    :goto_e
+    :goto_0
     invoke-static {v0}, Llibs/ho2;->Add(I)Ljava/lang/String;
 
     .line 16

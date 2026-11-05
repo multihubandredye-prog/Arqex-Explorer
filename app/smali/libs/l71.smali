@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/s20;ILlibs/s73;)V
-    .registers 5
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 
     .line 5
     .line 6
-    if-nez v0, :cond_21
+    if-nez v0, :cond_0
 
     .line 7
     .line 8
@@ -96,7 +96,7 @@
     return-void
 
     .line 34
-    :cond_21
+    :cond_0
     const-string p1, "MAC size must be multiple of 8"
 
     .line 35
@@ -115,7 +115,7 @@
 
 # virtual methods
 .method public final a(B)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget v0, p0, Llibs/l71;->c:I
@@ -129,7 +129,7 @@
     array-length v2, v1
 
     .line 6
-    if-ne v0, v2, :cond_12
+    if-ne v0, v2, :cond_0
 
     .line 7
     .line 8
@@ -156,7 +156,7 @@
     const/4 v0, 0x0
 
     .line 19
-    :cond_12
+    :cond_0
     add-int/lit8 v2, v0, 0x1
 
     .line 20
@@ -173,7 +173,7 @@
 .end method
 
 .method public final b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "ISO9797Alg3"
@@ -184,7 +184,7 @@
 .end method
 
 .method public final c(Llibs/et;)V
-    .registers 8
+    .locals 6
 
     .line 1
     invoke-virtual {p0}, Llibs/l71;->reset()V
@@ -196,7 +196,7 @@
 
     .line 5
     .line 6
-    if-nez v0, :cond_12
+    if-nez v0, :cond_1
 
     .line 7
     .line 8
@@ -204,14 +204,14 @@
 
     .line 9
     .line 10
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_0
 
     .line 11
     .line 12
-    goto :goto_12
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     const-string p1, "params must be an instance of KeyParameter or ParametersWithIV"
 
     .line 14
@@ -224,9 +224,9 @@
     return-void
 
     .line 19
-    :cond_12
-    :goto_12
-    if-eqz v0, :cond_18
+    :cond_1
+    :goto_0
+    if-eqz v0, :cond_2
 
     .line 20
     .line 21
@@ -237,10 +237,10 @@
 
     .line 23
     .line 24
-    goto :goto_1f
+    goto :goto_1
 
     .line 25
-    :cond_18
+    :cond_2
     move-object v0, p1
 
     .line 26
@@ -256,7 +256,7 @@
 
     .line 31
     .line 32
-    :goto_1f
+    :goto_1
     iget-object v0, v0, Llibs/hh1;->a:[B
 
     .line 33
@@ -275,7 +275,7 @@
 
     .line 39
     .line 40
-    if-ne v1, v3, :cond_38
+    if-ne v1, v3, :cond_3
 
     .line 41
     .line 42
@@ -305,10 +305,10 @@
 
     .line 55
     .line 56
-    goto :goto_50
+    goto :goto_2
 
     .line 57
-    :cond_38
+    :cond_3
     array-length v1, v0
 
     .line 58
@@ -316,7 +316,7 @@
 
     .line 59
     .line 60
-    if-ne v1, v5, :cond_68
+    if-ne v1, v5, :cond_5
 
     .line 61
     .line 62
@@ -355,7 +355,7 @@
 
     .line 80
     .line 81
-    :goto_50
+    :goto_2
     instance-of v0, p1, Llibs/ta2;
 
     .line 82
@@ -367,7 +367,7 @@
 
     .line 85
     .line 86
-    if-eqz v0, :cond_64
+    if-eqz v0, :cond_4
 
     .line 87
     .line 88
@@ -396,7 +396,7 @@
     return-void
 
     .line 101
-    :cond_64
+    :cond_4
     invoke-virtual {v3, v2, v1}, Llibs/hm;->a(ZLlibs/et;)V
 
     .line 102
@@ -405,7 +405,7 @@
     return-void
 
     .line 105
-    :cond_68
+    :cond_5
     const-string p1, "Key must be either 112 or 168 bit long"
 
     .line 106
@@ -419,7 +419,7 @@
 .end method
 
 .method public final d([B)I
-    .registers 9
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/l71;->d:Llibs/hm;
@@ -453,16 +453,16 @@
 
     .line 15
     .line 16
-    if-nez v5, :cond_1c
+    if-nez v5, :cond_0
 
     .line 17
     .line 18
-    :goto_11
+    :goto_0
     iget v5, p0, Llibs/l71;->c:I
 
     .line 19
     .line 20
-    if-ge v5, v1, :cond_29
+    if-ge v5, v1, :cond_2
 
     .line 21
     .line 22
@@ -478,15 +478,15 @@
 
     .line 27
     .line 28
-    goto :goto_11
+    goto :goto_0
 
     .line 29
-    :cond_1c
+    :cond_0
     iget v6, p0, Llibs/l71;->c:I
 
     .line 30
     .line 31
-    if-ne v6, v1, :cond_26
+    if-ne v6, v1, :cond_1
 
     .line 32
     .line 33
@@ -502,13 +502,13 @@
     const/4 v6, 0x0
 
     .line 39
-    :cond_26
+    :cond_1
     invoke-interface {v5, v6, v3}, Llibs/eg;->t(I[B)I
 
     .line 40
     .line 41
     .line 42
-    :cond_29
+    :cond_2
     invoke-virtual {v0, v2, v2, v3, v4}, Llibs/hm;->r(II[B[B)I
 
     .line 43
@@ -572,7 +572,7 @@
 .end method
 
 .method public final e()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/l71;->f:I
@@ -583,7 +583,7 @@
 .end method
 
 .method public final reset()V
-    .registers 5
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
@@ -592,7 +592,7 @@
     const/4 v1, 0x0
 
     .line 3
-    :goto_2
+    :goto_0
     iget-object v2, p0, Llibs/l71;->b:[B
 
     .line 4
@@ -600,7 +600,7 @@
     array-length v3, v2
 
     .line 6
-    if-ge v1, v3, :cond_c
+    if-ge v1, v3, :cond_0
 
     .line 7
     .line 8
@@ -612,10 +612,10 @@
 
     .line 11
     .line 12
-    goto :goto_2
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     iput v0, p0, Llibs/l71;->c:I
 
     .line 14
@@ -633,10 +633,10 @@
 .end method
 
 .method public final update([BII)V
-    .registers 10
+    .locals 6
 
     .line 1
-    if-ltz p3, :cond_32
+    if-ltz p3, :cond_1
 
     .line 2
     .line 3
@@ -668,7 +668,7 @@
 
     .line 16
     .line 17
-    if-le p3, v3, :cond_27
+    if-le p3, v3, :cond_0
 
     .line 18
     .line 19
@@ -699,8 +699,8 @@
     add-int/2addr p2, v3
 
     .line 32
-    :goto_1f
-    if-le p3, v1, :cond_27
+    :goto_0
+    if-le p3, v1, :cond_0
 
     .line 33
     .line 34
@@ -715,10 +715,10 @@
     add-int/2addr p2, v1
 
     .line 39
-    goto :goto_1f
+    goto :goto_0
 
     .line 40
-    :cond_27
+    :cond_0
     iget v0, p0, Llibs/l71;->c:I
 
     .line 41
@@ -742,7 +742,7 @@
     return-void
 
     .line 51
-    :cond_32
+    :cond_1
     const-string p1, "Can\'t have a negative input length!"
 
     .line 52

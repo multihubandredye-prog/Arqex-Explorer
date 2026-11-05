@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/al;Ljava/util/ArrayList;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/qk;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 7
+    .locals 1
 
     .line 1
     iget-byte p1, p0, Llibs/qk;->X:B
@@ -63,7 +63,7 @@
 
     .line 8
     .line 9
-    packed-switch p1, :pswitch_data_3c
+    packed-switch p1, :pswitch_data_0
 
     .line 10
     .line 11
@@ -92,7 +92,7 @@
     return-void
 
     .line 24
-    :pswitch_17
+    :pswitch_0
     invoke-virtual {p5, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     .line 25
@@ -117,7 +117,7 @@
     return-void
 
     .line 36
-    :pswitch_23
+    :pswitch_1
     invoke-virtual {p5, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     .line 37
@@ -142,7 +142,7 @@
     return-void
 
     .line 48
-    :pswitch_2f
+    :pswitch_2
     invoke-virtual {p5, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     .line 49
@@ -170,10 +170,10 @@
     nop
 
     .line 61
-    :pswitch_data_3c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2f
-        :pswitch_23
-        :pswitch_17
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

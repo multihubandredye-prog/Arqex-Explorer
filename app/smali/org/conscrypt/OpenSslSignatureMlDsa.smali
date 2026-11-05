@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Lorg/conscrypt/OpenSslMlDsaKeyFactory$MlDsa;
@@ -37,7 +37,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/security/SignatureSpi;-><init>()V
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public engineGetParameter(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -74,7 +74,7 @@
 .end method
 
 .method public engineInitSign(Ljava/security/PrivateKey;)V
-    .registers 5
+    .locals 3
 
     .line 1
     sget-object v0, Lorg/conscrypt/OpenSslSignatureMlDsa;->keyFactory:Lorg/conscrypt/OpenSslMlDsaKeyFactory;
@@ -121,7 +121,7 @@
     move-result v0
 
     .line 23
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_0
 
     .line 24
     .line 25
@@ -179,7 +179,7 @@
     return-void
 
     .line 53
-    :cond_34
+    :cond_0
     const-string v0, "Key version mismatch: "
 
     .line 54
@@ -193,7 +193,7 @@
 .end method
 
 .method public engineInitVerify(Ljava/security/PublicKey;)V
-    .registers 5
+    .locals 3
 
     .line 1
     sget-object v0, Lorg/conscrypt/OpenSslSignatureMlDsa;->keyFactory:Lorg/conscrypt/OpenSslMlDsaKeyFactory;
@@ -240,7 +240,7 @@
     move-result v0
 
     .line 23
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_0
 
     .line 24
     .line 25
@@ -298,7 +298,7 @@
     return-void
 
     .line 53
-    :cond_34
+    :cond_0
     const-string v0, "Key version mismatch: "
 
     .line 54
@@ -312,14 +312,14 @@
 .end method
 
 .method public engineSetParameter(Ljava/lang/String;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public engineSign()[B
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSslSignatureMlDsa;->ctx:Lorg/conscrypt/NativeRef$EVP_MD_CTX;
@@ -330,7 +330,7 @@
 
     .line 4
     .line 5
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_0
 
     .line 6
     .line 7
@@ -381,7 +381,7 @@
     return-object v0
 
     .line 30
-    :cond_1d
+    :cond_0
     const-string v0, "No key provided"
 
     .line 31
@@ -398,7 +398,7 @@
 .end method
 
 .method public engineUpdate(B)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSslSignatureMlDsa;->buffer:Lorg/conscrypt/ExposedByteArrayOutputStream;
@@ -414,7 +414,7 @@
 .end method
 
 .method public engineUpdate([BII)V
-    .registers 5
+    .locals 1
 
     .line 7
     iget-object v0, p0, Lorg/conscrypt/OpenSslSignatureMlDsa;->buffer:Lorg/conscrypt/ExposedByteArrayOutputStream;
@@ -425,7 +425,7 @@
 .end method
 
 .method public engineVerify([B)Z
-    .registers 9
+    .locals 7
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSslSignatureMlDsa;->ctx:Lorg/conscrypt/NativeRef$EVP_MD_CTX;
@@ -436,7 +436,7 @@
 
     .line 4
     .line 5
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_0
 
     .line 6
     .line 7
@@ -496,7 +496,7 @@
     return p1
 
     .line 33
-    :cond_20
+    :cond_0
     const-string p1, "No key provided"
 
     .line 34

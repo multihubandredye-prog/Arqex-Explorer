@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(IIJ)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public final a()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/ys;->c:I

@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/ru1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final onPrepared(Landroid/media/MediaPlayer;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iget-object p1, p0, Llibs/pu1;->a:Llibs/ru1;

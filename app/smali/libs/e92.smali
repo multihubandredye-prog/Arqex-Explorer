@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 8
+    .locals 7
 
     .line 1
     new-instance v0, Llibs/qk2;

@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/AppImpl;Llibs/zn2;)V
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public final b(Llibs/cp;Llibs/kk1;)V
-    .registers 7
+    .locals 4
 
     .line 1
     new-instance v0, Landroid/hardware/biometrics/BiometricPrompt$Builder;
@@ -128,17 +128,17 @@
     move-result-object v0
 
     .line 31
-    if-nez p1, :cond_22
+    if-nez p1, :cond_0
 
     .line 32
     .line 33
     const/4 p1, 0x0
 
     .line 34
-    goto :goto_28
+    goto :goto_0
 
     .line 35
-    :cond_22
+    :cond_0
     invoke-virtual {p1}, Llibs/cp;->b()Ljava/lang/Object;
 
     .line 36
@@ -151,8 +151,8 @@
 
     .line 40
     .line 41
-    :goto_28
-    :try_start_28
+    :goto_0
+    :try_start_0
     new-instance v1, Llibs/lf;
 
     .line 42
@@ -163,8 +163,8 @@
     .line 45
     .line 46
     invoke-virtual {v0, p1, v3, v1}, Landroid/hardware/biometrics/BiometricPrompt;->authenticate(Landroid/os/CancellationSignal;Ljava/util/concurrent/Executor;Landroid/hardware/biometrics/BiometricPrompt$AuthenticationCallback;)V
-    :try_end_30
-    .catch Ljava/lang/Exception; {:try_start_28 .. :try_end_30} :catch_31
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 47
     .line 48
@@ -172,7 +172,7 @@
     return-void
 
     .line 50
-    :catch_31
+    :catch_0
     move-exception p1
 
     .line 51
@@ -205,7 +205,7 @@
 .end method
 
 .method public final d()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x2
@@ -215,13 +215,13 @@
 .end method
 
 .method public final l()Z
-    .registers 5
+    .locals 4
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v1, p0, Llibs/mf;->X:Landroid/content/Context;
 
     .line 3
@@ -250,40 +250,40 @@
     move-result-object v1
 
     .line 16
-    if-nez v1, :cond_12
+    if-nez v1, :cond_0
 
     .line 17
     .line 18
-    goto :goto_19
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     invoke-static {v1}, Llibs/Foxtrot;->a(Landroid/hardware/biometrics/BiometricManager;)I
 
     .line 20
     .line 21
     .line 22
     move-result v1
-    :try_end_16
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_16} :catch_1b
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 23
-    if-nez v1, :cond_19
+    if-nez v1, :cond_1
 
     .line 24
     .line 25
     return v0
 
     .line 26
-    :cond_19
-    :goto_19
+    :cond_1
+    :goto_0
     const/4 v0, 0x0
 
     .line 27
     return v0
 
     .line 28
-    :catch_1b
+    :catch_0
     move-exception v1
 
     .line 29
@@ -304,13 +304,13 @@
 .end method
 
 .method public final p()Z
-    .registers 5
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v1, p0, Llibs/mf;->X:Landroid/content/Context;
 
     .line 3
@@ -339,41 +339,41 @@
     move-result-object v1
 
     .line 16
-    if-nez v1, :cond_12
+    if-nez v1, :cond_0
 
     .line 17
     .line 18
-    goto :goto_1b
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     invoke-static {v1}, Llibs/Foxtrot;->a(Landroid/hardware/biometrics/BiometricManager;)I
 
     .line 20
     .line 21
     .line 22
     move-result v1
-    :try_end_16
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_16} :catch_1c
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 23
     const/16 v2, 0xc
 
     .line 24
     .line 25
-    if-eq v1, v2, :cond_1b
+    if-eq v1, v2, :cond_1
 
     .line 26
     .line 27
     const/4 v0, 0x1
 
     .line 28
-    :cond_1b
-    :goto_1b
+    :cond_1
+    :goto_0
     return v0
 
     .line 29
-    :catch_1c
+    :catch_0
     move-exception v1
 
     .line 30

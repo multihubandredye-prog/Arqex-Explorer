@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/view/KeyEvent$Callback;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/tc;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/tc;->X:B
@@ -50,7 +50,7 @@
 
     .line 5
     .line 6
-    packed-switch v0, :pswitch_data_56
+    packed-switch v0, :pswitch_data_0
 
     .line 7
     .line 8
@@ -63,7 +63,7 @@
 
     .line 12
     .line 13
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_3
 
     .line 14
     .line 15
@@ -75,19 +75,19 @@
     move-result v0
 
     .line 19
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 20
     .line 21
-    goto :goto_27
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     iget-boolean v0, v2, Llibs/vm2;->Three:Z
 
     .line 23
     .line 24
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_1
 
     .line 25
     .line 26
@@ -96,15 +96,15 @@
     .line 27
     .line 28
     .line 29
-    goto :goto_27
+    goto :goto_0
 
     .line 30
-    :cond_1d
+    :cond_1
     iget-boolean v0, v2, Llibs/vm2;->Eight:Z
 
     .line 31
     .line 32
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_2
 
     .line 33
     .line 34
@@ -112,21 +112,21 @@
 
     .line 35
     .line 36
-    goto :goto_27
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_2
     invoke-virtual {v2}, Llibs/vm2;->j()V
 
     .line 38
     .line 39
     .line 40
-    :cond_27
-    :goto_27
+    :cond_3
+    :goto_0
     return-void
 
     .line 41
-    :pswitch_28
+    :pswitch_0
     check-cast v2, Lcom/mixplorer/activities/a;
 
     .line 42
@@ -135,11 +135,11 @@
 
     .line 44
     .line 45
-    if-eqz v0, :cond_55
+    if-eqz v0, :cond_4
 
     .line 46
     .line 47
-    :try_start_2e
+    :try_start_0
     new-instance v0, Landroid/content/Intent;
 
     .line 48
@@ -175,16 +175,16 @@
     .line 64
     .line 65
     invoke-virtual {v2, v0, v3}, Lcom/mixplorer/activities/a;->u(Landroid/content/Intent;Ljava/lang/String;)V
-    :try_end_43
-    .catchall {:try_start_2e .. :try_end_43} :catchall_44
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 66
     .line 67
     .line 68
-    goto :goto_55
+    goto :goto_1
 
     .line 69
-    :catchall_44
+    :catchall_0
     move-exception v0
 
     .line 70
@@ -220,13 +220,13 @@
     .line 84
     .line 85
     .line 86
-    :cond_55
-    :goto_55
+    :cond_4
+    :goto_1
     return-void
 
     .line 87
-    :pswitch_data_56
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_28
+        :pswitch_0
     .end packed-switch
 .end method

@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/h5;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/util/AbstractQueue;-><init>()V
@@ -31,10 +31,10 @@
 
 # virtual methods
 .method public final add(Ljava/lang/Object;)Z
-    .registers 7
+    .locals 5
 
     .line 1
-    if-eqz p1, :cond_19
+    if-eqz p1, :cond_1
 
     .line 2
     .line 3
@@ -77,7 +77,7 @@
 
     .line 19
     .line 20
-    if-ne v2, p1, :cond_18
+    if-ne v2, p1, :cond_0
 
     .line 21
     .line 22
@@ -86,11 +86,11 @@
     .line 23
     .line 24
     .line 25
-    :cond_18
+    :cond_0
     return v3
 
     .line 26
-    :cond_19
+    :cond_1
     const-string p1, "e == null"
 
     .line 27
@@ -107,7 +107,7 @@
 .end method
 
 .method public final clear()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/nh2;->X:Llibs/h5;
@@ -123,7 +123,7 @@
 .end method
 
 .method public final contains(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/nh2;->X:Llibs/h5;
@@ -142,7 +142,7 @@
 .end method
 
 .method public final containsAll(Ljava/util/Collection;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/nh2;->X:Llibs/h5;
@@ -161,7 +161,7 @@
 .end method
 
 .method public final element()Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/nh2;->X:Llibs/h5;
@@ -180,14 +180,14 @@
 
     .line 8
     .line 9
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
     return-object v0
 
     .line 12
-    :cond_b
+    :cond_0
     invoke-static {}, Llibs/t22;->b()V
 
     .line 13
@@ -200,7 +200,7 @@
 .end method
 
 .method public final forEach(Ljava/util/function/Consumer;)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Lexceptions/NotSupportedException;
@@ -220,7 +220,7 @@
 .end method
 
 .method public final isEmpty()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/nh2;->X:Llibs/h5;
@@ -239,7 +239,7 @@
 .end method
 
 .method public final iterator()Ljava/util/Iterator;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/nh2;->X:Llibs/h5;
@@ -258,10 +258,10 @@
 .end method
 
 .method public final offer(Ljava/lang/Object;)Z
-    .registers 7
+    .locals 5
 
     .line 1
-    if-eqz p1, :cond_19
+    if-eqz p1, :cond_1
 
     .line 2
     .line 3
@@ -304,7 +304,7 @@
 
     .line 19
     .line 20
-    if-ne v2, p1, :cond_18
+    if-ne v2, p1, :cond_0
 
     .line 21
     .line 22
@@ -313,11 +313,11 @@
     .line 23
     .line 24
     .line 25
-    :cond_18
+    :cond_0
     return v3
 
     .line 26
-    :cond_19
+    :cond_1
     const-string p1, "e == null"
 
     .line 27
@@ -334,7 +334,7 @@
 .end method
 
 .method public final parallelStream()Ljava/util/stream/Stream;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Lexceptions/NotSupportedException;
@@ -354,7 +354,7 @@
 .end method
 
 .method public final peek()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/nh2;->X:Llibs/h5;
@@ -373,7 +373,7 @@
 .end method
 
 .method public final poll()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/nh2;->X:Llibs/h5;
@@ -392,7 +392,7 @@
 .end method
 
 .method public final remove()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/nh2;->X:Llibs/h5;
@@ -407,14 +407,14 @@
     move-result-object v0
 
     .line 7
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
     return-object v0
 
     .line 10
-    :cond_9
+    :cond_0
     invoke-static {}, Llibs/t22;->b()V
 
     .line 11
@@ -427,7 +427,7 @@
 .end method
 
 .method public final remove(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 15
     iget-object v0, p0, Llibs/nh2;->X:Llibs/h5;
@@ -440,7 +440,7 @@
 .end method
 
 .method public final removeAll(Ljava/util/Collection;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/nh2;->X:Llibs/h5;
@@ -459,7 +459,7 @@
 .end method
 
 .method public final removeIf(Ljava/util/function/Predicate;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Lexceptions/NotSupportedException;
@@ -479,7 +479,7 @@
 .end method
 
 .method public final retainAll(Ljava/util/Collection;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/nh2;->X:Llibs/h5;
@@ -498,7 +498,7 @@
 .end method
 
 .method public final size()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/nh2;->X:Llibs/h5;
@@ -517,7 +517,7 @@
 .end method
 
 .method public final spliterator()Ljava/util/Spliterator;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Lexceptions/NotSupportedException;
@@ -537,7 +537,7 @@
 .end method
 
 .method public final stream()Ljava/util/stream/Stream;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Lexceptions/NotSupportedException;
@@ -557,7 +557,7 @@
 .end method
 
 .method public final toArray()[Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/nh2;->X:Llibs/h5;
@@ -576,7 +576,7 @@
 .end method
 
 .method public final toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 8
     iget-object v0, p0, Llibs/nh2;->X:Llibs/h5;
@@ -589,7 +589,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/nh2;->X:Llibs/h5;

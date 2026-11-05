@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/kk1;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/pq1;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 12
+    .locals 11
 
     .line 1
     iget-byte v0, p0, Llibs/pq1;->X:B
@@ -83,12 +83,12 @@
 
     .line 22
     .line 23
-    packed-switch v0, :pswitch_data_b2
+    packed-switch v0, :pswitch_data_0
 
     .line 24
     .line 25
     .line 26
-    :try_start_19
+    :try_start_0
     iget-object v0, v10, Llibs/kk1;->Y:Ljava/lang/Object;
 
     .line 27
@@ -109,14 +109,14 @@
     move-result-object v0
 
     .line 36
-    if-nez v0, :cond_26
+    if-nez v0, :cond_0
 
     .line 37
     .line 38
-    goto :goto_64
+    goto :goto_0
 
     .line 39
-    :cond_26
+    :cond_0
     new-instance v8, Llibs/t02;
 
     .line 40
@@ -225,19 +225,19 @@
 
     .line 98
     invoke-virtual {v0, v1}, Llibs/bg3;->Run(Ljava/lang/String;)V
-    :try_end_64
-    .catchall {:try_start_19 .. :try_end_64} :catchall_64
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 99
     .line 100
     .line 101
-    :catchall_64
-    :goto_64
+    :catchall_0
+    :goto_0
     return-void
 
     .line 102
-    :pswitch_65
-    :try_start_65
+    :pswitch_0
+    :try_start_1
     iget-object v0, v10, Llibs/kk1;->Y:Ljava/lang/Object;
 
     .line 103
@@ -258,14 +258,14 @@
     move-result-object v0
 
     .line 112
-    if-nez v0, :cond_72
+    if-nez v0, :cond_1
 
     .line 113
     .line 114
-    goto :goto_b0
+    goto :goto_1
 
     .line 115
-    :cond_72
+    :cond_1
     new-instance v8, Llibs/t02;
 
     .line 116
@@ -374,22 +374,22 @@
 
     .line 174
     invoke-virtual {v0, v1}, Llibs/bg3;->Run(Ljava/lang/String;)V
-    :try_end_b0
-    .catchall {:try_start_65 .. :try_end_b0} :catchall_b0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 175
     .line 176
     .line 177
-    :catchall_b0
-    :goto_b0
+    :catchall_1
+    :goto_1
     return-void
 
     .line 178
     nop
 
     .line 179
-    :pswitch_data_b2
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_65
+        :pswitch_0
     .end packed-switch
 .end method

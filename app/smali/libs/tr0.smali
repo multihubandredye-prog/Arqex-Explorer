@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 139
     invoke-direct {p0}, Llibs/qd;-><init>()V
@@ -28,7 +28,7 @@
 .end method
 
 .method public constructor <init>(Lorg/json/JSONObject;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Llibs/qd;-><init>()V
@@ -64,7 +64,7 @@
     move-result v0
 
     .line 18
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 19
     .line 20
@@ -84,7 +84,7 @@
 
     .line 27
     .line 28
-    :cond_1b
+    :cond_0
     const-string v0, "name"
 
     .line 29
@@ -104,7 +104,7 @@
     const/4 v0, 0x0
 
     .line 37
-    :try_start_24
+    :try_start_0
     const-string v1, "folder_count"
 
     .line 38
@@ -126,21 +126,21 @@
 
     .line 47
     iput v1, p0, Llibs/tr0;->Y:I
-    :try_end_30
-    .catch Ljava/lang/Exception; {:try_start_24 .. :try_end_30} :catch_31
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 48
     .line 49
-    goto :goto_33
+    goto :goto_0
 
     .line 50
-    :catch_31
+    :catch_0
     iput v0, p0, Llibs/tr0;->Y:I
 
     .line 51
     .line 52
-    :goto_33
-    :try_start_33
+    :goto_0
+    :try_start_1
     const-string v1, "file_count"
 
     .line 53
@@ -162,20 +162,20 @@
 
     .line 62
     iput v1, p0, Llibs/tr0;->Z:I
-    :try_end_3f
-    .catch Ljava/lang/Exception; {:try_start_33 .. :try_end_3f} :catch_40
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 63
     .line 64
-    goto :goto_42
+    goto :goto_1
 
     .line 65
-    :catch_40
+    :catch_1
     iput v0, p0, Llibs/tr0;->Z:I
 
     .line 66
     .line 67
-    :goto_42
+    :goto_1
     const-string v0, "tags"
 
     .line 68
@@ -317,7 +317,7 @@
 
 # virtual methods
 .method public final a()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -327,7 +327,7 @@
 .end method
 
 .method public final c()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, ""
@@ -338,7 +338,7 @@
 .end method
 
 .method public final d()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, ""
@@ -349,7 +349,7 @@
 .end method
 
 .method public final e()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, ""
@@ -360,7 +360,7 @@
 .end method
 
 .method public final f()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, ""
@@ -371,7 +371,7 @@
 .end method
 
 .method public final g()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, ""
@@ -382,7 +382,7 @@
 .end method
 
 .method public final h()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/tr0;->Lambda:Ljava/lang/String;
@@ -393,7 +393,7 @@
 .end method
 
 .method public final i()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Llibs/tr0;->Mu:J
@@ -404,7 +404,7 @@
 .end method
 
 .method public final j()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -414,7 +414,7 @@
 .end method
 
 .method public final k()[Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -424,7 +424,7 @@
 .end method
 
 .method public final l()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -434,7 +434,7 @@
 .end method
 
 .method public final m()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/tr0;->Nu:Ljava/lang/String;
@@ -445,7 +445,7 @@
 .end method
 
 .method public final p()Ljava/util/concurrent/atomic/AtomicBoolean;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/tr0;->X:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -456,7 +456,7 @@
 .end method
 
 .method public final q()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/tr0;->Z:I
@@ -477,7 +477,7 @@
 .end method
 
 .method public final r()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, ""

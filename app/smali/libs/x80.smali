@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/x80;->a:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onDismiss(Landroid/content/DialogInterface;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte p1, p0, Llibs/x80;->a:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch p1, :pswitch_data_78
+    packed-switch p1, :pswitch_data_0
 
     .line 6
     .line 7
@@ -64,12 +64,12 @@
     return-void
 
     .line 14
-    :pswitch_d
+    :pswitch_0
     check-cast v0, Llibs/jn1;
 
     .line 15
     .line 16
-    :try_start_f
+    :try_start_0
     invoke-static {}, Llibs/t43;->Item()Z
 
     .line 17
@@ -78,33 +78,33 @@
     move-result p1
 
     .line 20
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_0
 
     .line 21
     .line 22
-    goto :goto_28
+    goto :goto_0
 
     .line 23
-    :cond_16
+    :cond_0
     iget-object p1, v0, Llibs/jn1;->Xi:Landroid/webkit/CookieSyncManager;
 
     .line 24
     .line 25
-    if-eqz p1, :cond_28
+    if-eqz p1, :cond_1
 
     .line 26
     .line 27
     invoke-static {p1}, Llibs/Papa;->i(Landroid/webkit/CookieSyncManager;)V
-    :try_end_1d
-    .catchall {:try_start_f .. :try_end_1d} :catchall_1e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 28
     .line 29
     .line 30
-    goto :goto_28
+    goto :goto_0
 
     .line 31
-    :catchall_1e
+    :catchall_0
     move-exception p1
 
     .line 32
@@ -125,13 +125,13 @@
     .line 39
     .line 40
     .line 41
-    :cond_28
-    :goto_28
+    :cond_1
+    :goto_0
     iget-object p1, v0, Llibs/jn1;->Mu:Llibs/ow1;
 
     .line 42
     .line 43
-    if-eqz p1, :cond_31
+    if-eqz p1, :cond_2
 
     .line 44
     .line 45
@@ -144,11 +144,11 @@
     .line 48
     .line 49
     .line 50
-    :cond_31
+    :cond_2
     return-void
 
     .line 51
-    :pswitch_32
+    :pswitch_1
     check-cast v0, Llibs/ga1;
 
     .line 52
@@ -157,7 +157,7 @@
 
     .line 54
     .line 55
-    if-eqz p1, :cond_43
+    if-eqz p1, :cond_3
 
     .line 56
     .line 57
@@ -169,7 +169,7 @@
     move-result p1
 
     .line 61
-    if-nez p1, :cond_43
+    if-nez p1, :cond_3
 
     .line 62
     .line 63
@@ -182,12 +182,12 @@
     .line 66
     .line 67
     .line 68
-    :cond_43
+    :cond_3
     iget-object p1, v0, Llibs/ga1;->Oo:Llibs/xv1;
 
     .line 69
     .line 70
-    if-eqz p1, :cond_52
+    if-eqz p1, :cond_4
 
     .line 71
     .line 72
@@ -199,7 +199,7 @@
     move-result p1
 
     .line 76
-    if-nez p1, :cond_52
+    if-nez p1, :cond_4
 
     .line 77
     .line 78
@@ -212,12 +212,12 @@
     .line 81
     .line 82
     .line 83
-    :cond_52
+    :cond_4
     iget-object p1, v0, Llibs/ga1;->oo:Llibs/xv1;
 
     .line 84
     .line 85
-    if-eqz p1, :cond_61
+    if-eqz p1, :cond_5
 
     .line 86
     .line 87
@@ -229,7 +229,7 @@
     move-result p1
 
     .line 91
-    if-nez p1, :cond_61
+    if-nez p1, :cond_5
 
     .line 92
     .line 93
@@ -242,11 +242,11 @@
     .line 96
     .line 97
     .line 98
-    :cond_61
+    :cond_5
     return-void
 
     .line 99
-    :pswitch_62
+    :pswitch_2
     check-cast v0, Llibs/nx0;
 
     .line 100
@@ -263,7 +263,7 @@
     return-void
 
     .line 107
-    :pswitch_6a
+    :pswitch_3
     check-cast v0, Lcom/mixplorer/activities/ExploreActivity;
 
     .line 108
@@ -280,7 +280,7 @@
     return-void
 
     .line 115
-    :pswitch_72
+    :pswitch_4
     check-cast v0, Llibs/xv1;
 
     .line 116
@@ -293,12 +293,12 @@
     return-void
 
     .line 121
-    :pswitch_data_78
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_72
-        :pswitch_6a
-        :pswitch_62
-        :pswitch_32
-        :pswitch_d
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

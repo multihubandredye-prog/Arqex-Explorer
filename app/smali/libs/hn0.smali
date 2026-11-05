@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/in0;Ljavax/net/ssl/SSLContext;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/hn0;->Nu:Llibs/in0;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/hn0;->Nu:Llibs/in0;
@@ -63,19 +63,19 @@
     monitor-enter v0
 
     .line 14
-    :try_start_d
+    :try_start_0
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
     .line 15
     .line 16
     .line 17
     monitor-exit v0
-    :try_end_11
-    .catchall {:try_start_d .. :try_end_11} :catchall_6d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 18
-    :cond_11
-    :try_start_11
+    :cond_0
+    :try_start_1
     iget-object v0, p0, Llibs/hn0;->Nu:Llibs/in0;
 
     .line 19
@@ -108,7 +108,7 @@
 
     .line 33
     .line 34
-    if-le v2, v3, :cond_29
+    if-le v2, v3, :cond_1
 
     .line 35
     .line 36
@@ -117,18 +117,18 @@
     .line 37
     .line 38
     .line 39
-    goto :goto_29
+    goto :goto_0
 
     .line 40
-    :catchall_27
+    :catchall_0
     nop
 
     .line 41
-    goto :goto_3e
+    goto :goto_1
 
     .line 42
-    :cond_29
-    :goto_29
+    :cond_1
+    :goto_0
     iget-object v2, p0, Llibs/hn0;->Nu:Llibs/in0;
 
     .line 43
@@ -164,13 +164,13 @@
     .line 59
     .line 60
     invoke-virtual {v2, v3}, Llibs/in0;->b(Llibs/gn0;)V
-    :try_end_3e
-    .catchall {:try_start_11 .. :try_end_3e} :catchall_27
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 61
     .line 62
     .line 63
-    :goto_3e
+    :goto_1
     iget-object v0, p0, Llibs/hn0;->Nu:Llibs/in0;
 
     .line 64
@@ -187,7 +187,7 @@
     move-result v0
 
     .line 71
-    if-eqz v0, :cond_59
+    if-eqz v0, :cond_3
 
     .line 72
     .line 73
@@ -199,7 +199,7 @@
 
     .line 76
     .line 77
-    if-eqz v2, :cond_52
+    if-eqz v2, :cond_2
 
     .line 78
     .line 79
@@ -208,10 +208,10 @@
     .line 80
     .line 81
     .line 82
-    goto :goto_63
+    goto :goto_2
 
     .line 83
-    :cond_52
+    :cond_2
     iget-object v0, v0, Llibs/in0;->l:Llibs/en0;
 
     .line 84
@@ -225,7 +225,7 @@
     .line 88
     .line 89
     .line 90
-    :cond_59
+    :cond_3
     iget-object v0, p0, Llibs/hn0;->Nu:Llibs/in0;
 
     .line 91
@@ -242,11 +242,11 @@
     move-result v0
 
     .line 98
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 99
     .line 100
-    :goto_63
+    :goto_2
     iget-object v0, p0, Llibs/hn0;->Nu:Llibs/in0;
 
     .line 101
@@ -255,7 +255,7 @@
 
     .line 103
     .line 104
-    if-eqz v0, :cond_6c
+    if-eqz v0, :cond_4
 
     .line 105
     .line 106
@@ -264,27 +264,27 @@
     .line 107
     .line 108
     .line 109
-    :cond_6c
+    :cond_4
     return-void
 
     .line 110
-    :catchall_6d
+    :catchall_1
     move-exception v1
 
     .line 111
-    :try_start_6e
+    :try_start_2
     monitor-exit v0
-    :try_end_6f
-    .catchall {:try_start_6e .. :try_end_6f} :catchall_6d
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 112
-    goto :goto_71
+    goto :goto_4
 
     .line 113
-    :goto_70
+    :goto_3
     throw v1
 
     .line 114
-    :goto_71
-    goto :goto_70
+    :goto_4
+    goto :goto_3
 .end method

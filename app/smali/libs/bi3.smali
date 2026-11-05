@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Llibs/bi3;)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -134,7 +134,7 @@
 .end method
 
 .method public static a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 10
+    .locals 8
 
     .line 1
     const-string v0, "name"
@@ -149,7 +149,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_d9
+    if-eqz v0, :cond_12
 
     .line 8
     .line 9
@@ -165,7 +165,7 @@
     move-result p0
 
     .line 15
-    if-eqz p0, :cond_13
+    if-eqz p0, :cond_0
 
     .line 16
     .line 17
@@ -176,7 +176,7 @@
     return-object p0
 
     .line 20
-    :cond_13
+    :cond_0
     const-string p0, "black"
 
     .line 21
@@ -189,7 +189,7 @@
     move-result p0
 
     .line 26
-    if-eqz p0, :cond_1e
+    if-eqz p0, :cond_1
 
     .line 27
     .line 28
@@ -200,7 +200,7 @@
     return-object p0
 
     .line 31
-    :cond_1e
+    :cond_1
     const-string p0, "silver"
 
     .line 32
@@ -213,7 +213,7 @@
     move-result p0
 
     .line 37
-    if-eqz p0, :cond_29
+    if-eqz p0, :cond_2
 
     .line 38
     .line 39
@@ -224,7 +224,7 @@
     return-object p0
 
     .line 42
-    :cond_29
+    :cond_2
     const-string p0, "gray"
 
     .line 43
@@ -237,7 +237,7 @@
     move-result p0
 
     .line 48
-    if-eqz p0, :cond_34
+    if-eqz p0, :cond_3
 
     .line 49
     .line 50
@@ -248,7 +248,7 @@
     return-object p0
 
     .line 53
-    :cond_34
+    :cond_3
     const-string p0, "white"
 
     .line 54
@@ -261,7 +261,7 @@
     move-result p0
 
     .line 59
-    if-eqz p0, :cond_3f
+    if-eqz p0, :cond_4
 
     .line 60
     .line 61
@@ -272,7 +272,7 @@
     return-object p0
 
     .line 64
-    :cond_3f
+    :cond_4
     const-string p0, "maroon"
 
     .line 65
@@ -285,7 +285,7 @@
     move-result p0
 
     .line 70
-    if-eqz p0, :cond_4a
+    if-eqz p0, :cond_5
 
     .line 71
     .line 72
@@ -296,7 +296,7 @@
     return-object p0
 
     .line 75
-    :cond_4a
+    :cond_5
     const-string p0, "red"
 
     .line 76
@@ -309,7 +309,7 @@
     move-result p0
 
     .line 81
-    if-eqz p0, :cond_55
+    if-eqz p0, :cond_6
 
     .line 82
     .line 83
@@ -320,7 +320,7 @@
     return-object p0
 
     .line 86
-    :cond_55
+    :cond_6
     const-string p0, "purple"
 
     .line 87
@@ -333,7 +333,7 @@
     move-result p0
 
     .line 92
-    if-eqz p0, :cond_60
+    if-eqz p0, :cond_7
 
     .line 93
     .line 94
@@ -344,7 +344,7 @@
     return-object p0
 
     .line 97
-    :cond_60
+    :cond_7
     const-string p0, "fuchsia"
 
     .line 98
@@ -357,7 +357,7 @@
     move-result p0
 
     .line 103
-    if-eqz p0, :cond_6b
+    if-eqz p0, :cond_8
 
     .line 104
     .line 105
@@ -368,7 +368,7 @@
     return-object p0
 
     .line 108
-    :cond_6b
+    :cond_8
     const-string p0, "magenta"
 
     .line 109
@@ -381,7 +381,7 @@
     move-result p0
 
     .line 114
-    if-eqz p0, :cond_76
+    if-eqz p0, :cond_9
 
     .line 115
     .line 116
@@ -392,7 +392,7 @@
     return-object p0
 
     .line 119
-    :cond_76
+    :cond_9
     const-string p0, "green"
 
     .line 120
@@ -405,7 +405,7 @@
     move-result p0
 
     .line 125
-    if-eqz p0, :cond_81
+    if-eqz p0, :cond_a
 
     .line 126
     .line 127
@@ -416,7 +416,7 @@
     return-object p0
 
     .line 130
-    :cond_81
+    :cond_a
     const-string p0, "lime"
 
     .line 131
@@ -429,7 +429,7 @@
     move-result p0
 
     .line 136
-    if-eqz p0, :cond_8c
+    if-eqz p0, :cond_b
 
     .line 137
     .line 138
@@ -440,7 +440,7 @@
     return-object p0
 
     .line 141
-    :cond_8c
+    :cond_b
     const-string p0, "olive"
 
     .line 142
@@ -453,7 +453,7 @@
     move-result p0
 
     .line 147
-    if-eqz p0, :cond_97
+    if-eqz p0, :cond_c
 
     .line 148
     .line 149
@@ -464,7 +464,7 @@
     return-object p0
 
     .line 152
-    :cond_97
+    :cond_c
     const-string p0, "yellow"
 
     .line 153
@@ -477,7 +477,7 @@
     move-result p0
 
     .line 158
-    if-eqz p0, :cond_a2
+    if-eqz p0, :cond_d
 
     .line 159
     .line 160
@@ -488,7 +488,7 @@
     return-object p0
 
     .line 163
-    :cond_a2
+    :cond_d
     const-string p0, "navy"
 
     .line 164
@@ -501,7 +501,7 @@
     move-result p0
 
     .line 169
-    if-eqz p0, :cond_ad
+    if-eqz p0, :cond_e
 
     .line 170
     .line 171
@@ -512,7 +512,7 @@
     return-object p0
 
     .line 174
-    :cond_ad
+    :cond_e
     const-string p0, "blue"
 
     .line 175
@@ -525,7 +525,7 @@
     move-result p0
 
     .line 180
-    if-eqz p0, :cond_b8
+    if-eqz p0, :cond_f
 
     .line 181
     .line 182
@@ -536,7 +536,7 @@
     return-object p0
 
     .line 185
-    :cond_b8
+    :cond_f
     const-string p0, "teal"
 
     .line 186
@@ -549,7 +549,7 @@
     move-result p0
 
     .line 191
-    if-eqz p0, :cond_c3
+    if-eqz p0, :cond_10
 
     .line 192
     .line 193
@@ -560,7 +560,7 @@
     return-object p0
 
     .line 196
-    :cond_c3
+    :cond_10
     const-string p0, "aqua"
 
     .line 197
@@ -573,7 +573,7 @@
     move-result p0
 
     .line 202
-    if-eqz p0, :cond_ce
+    if-eqz p0, :cond_11
 
     .line 203
     .line 204
@@ -584,7 +584,7 @@
     return-object p0
 
     .line 207
-    :cond_ce
+    :cond_11
     const-string p0, "cyan"
 
     .line 208
@@ -597,7 +597,7 @@
     move-result p0
 
     .line 213
-    if-eqz p0, :cond_1b0
+    if-eqz p0, :cond_18
 
     .line 214
     .line 215
@@ -608,7 +608,7 @@
     return-object p0
 
     .line 218
-    :cond_d9
+    :cond_12
     const-string v0, "&HBBGGRR"
 
     .line 219
@@ -640,7 +640,7 @@
     const/4 v6, 0x4
 
     .line 231
-    if-eqz v0, :cond_107
+    if-eqz v0, :cond_13
 
     .line 232
     .line 233
@@ -703,7 +703,7 @@
     return-object p0
 
     .line 264
-    :cond_107
+    :cond_13
     const-string v0, "&HAABBGGRR"
 
     .line 265
@@ -720,7 +720,7 @@
 
     .line 271
     .line 272
-    if-eqz v0, :cond_135
+    if-eqz v0, :cond_14
 
     .line 273
     .line 274
@@ -794,7 +794,7 @@
     return-object p0
 
     .line 310
-    :cond_135
+    :cond_14
     const-string v0, "decimalCodedBBGGRR"
 
     .line 311
@@ -814,7 +814,7 @@
 
     .line 318
     .line 319
-    if-eqz v0, :cond_172
+    if-eqz v0, :cond_16
 
     .line 320
     .line 321
@@ -834,7 +834,7 @@
     move-result-object p0
 
     .line 329
-    :goto_148
+    :goto_0
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     .line 330
@@ -843,7 +843,7 @@
     move-result p1
 
     .line 333
-    if-ge p1, v4, :cond_153
+    if-ge p1, v4, :cond_15
 
     .line 334
     .line 335
@@ -855,10 +855,10 @@
     move-result-object p0
 
     .line 339
-    goto :goto_148
+    goto :goto_0
 
     .line 340
-    :cond_153
+    :cond_15
     new-instance p1, Ljava/lang/StringBuilder;
 
     .line 341
@@ -918,7 +918,7 @@
     return-object p0
 
     .line 371
-    :cond_172
+    :cond_16
     const-string v0, "decimalCodedAABBGGRR"
 
     .line 372
@@ -931,7 +931,7 @@
     move-result p0
 
     .line 377
-    if-eqz p0, :cond_1b0
+    if-eqz p0, :cond_18
 
     .line 378
     .line 379
@@ -951,7 +951,7 @@
     move-result-object p0
 
     .line 387
-    :goto_182
+    :goto_1
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     .line 388
@@ -960,7 +960,7 @@
     move-result p1
 
     .line 391
-    if-ge p1, v7, :cond_18d
+    if-ge p1, v7, :cond_17
 
     .line 392
     .line 393
@@ -972,10 +972,10 @@
     move-result-object p0
 
     .line 397
-    goto :goto_182
+    goto :goto_1
 
     .line 398
-    :cond_18d
+    :cond_17
     new-instance p1, Ljava/lang/StringBuilder;
 
     .line 399
@@ -1043,7 +1043,7 @@
     return-object p0
 
     .line 433
-    :cond_1b0
+    :cond_18
     const/4 p0, 0x0
 
     .line 434
@@ -1053,7 +1053,7 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

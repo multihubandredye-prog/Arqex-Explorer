@@ -43,7 +43,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     sget-object v0, Llibs/ou0;->d:Ljava/lang/String;
@@ -58,7 +58,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -70,7 +70,7 @@
 
     .line 12
     .line 13
-    :cond_c
+    :cond_0
     invoke-static {}, Llibs/t43;->String()Z
 
     .line 14
@@ -79,7 +79,7 @@
     move-result v0
 
     .line 17
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_1
 
     .line 18
     .line 19
@@ -87,15 +87,15 @@
 
     .line 20
     .line 21
-    goto :goto_17
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_1
     const-string v0, "4450"
 
     .line 23
     .line 24
-    :goto_17
+    :goto_0
     sput-object v0, Llibs/ou0;->e:Ljava/lang/String;
 
     .line 25

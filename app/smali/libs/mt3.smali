@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic a(Landroid/view/View;)F
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->getTranslationY()F
@@ -20,7 +20,7 @@
 .end method
 
 .method public static bridge synthetic b(FLandroid/view/View;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p1, p0}, Landroid/view/View;->setAlpha(F)V
@@ -32,7 +32,7 @@
 .end method
 
 .method public static bridge synthetic c(Landroid/view/View;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/high16 v0, 0x3f800000    # 1.0f
@@ -48,7 +48,7 @@
 .end method
 
 .method public static bridge synthetic d(FLandroid/view/View;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p1, p0}, Landroid/view/View;->setTranslationY(F)V
@@ -60,7 +60,7 @@
 .end method
 
 .method public static bridge synthetic e(Landroid/view/View;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -75,7 +75,7 @@
 .end method
 
 .method public static bridge synthetic f(FLandroid/view/View;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p1, p0}, Landroid/view/View;->setScaleX(F)V
@@ -87,7 +87,7 @@
 .end method
 
 .method public static bridge synthetic g(Landroid/view/View;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -102,7 +102,7 @@
 .end method
 
 .method public static bridge synthetic h(FLandroid/view/View;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p1, p0}, Landroid/view/View;->setPivotX(F)V
@@ -114,7 +114,7 @@
 .end method
 
 .method public static bridge synthetic i(FLandroid/view/View;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p1, p0}, Landroid/view/View;->setTranslationX(F)V
@@ -126,7 +126,7 @@
 .end method
 
 .method public static bridge synthetic j(FLandroid/view/View;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p1, p0}, Landroid/view/View;->setPivotY(F)V
@@ -138,7 +138,7 @@
 .end method
 
 .method public static bridge synthetic k(FLandroid/view/View;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p1, p0}, Landroid/view/View;->setRotationY(F)V
@@ -150,7 +150,7 @@
 .end method
 
 .method public static bridge synthetic l(FLandroid/view/View;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p1, p0}, Landroid/view/View;->setScaleY(F)V

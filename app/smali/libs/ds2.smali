@@ -31,7 +31,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/16 v0, 0x40
@@ -42,7 +42,7 @@
 
     .line 4
     .line 5
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     .line 6
     .line 7
@@ -54,7 +54,7 @@
     return-void
 
     .line 11
-    :array_a
+    :array_0
     .array-data 4
         0x428a2f98
         0x71374491
@@ -90,7 +90,7 @@
         0x14292967
         0x27b70a85
         0x2e1b2138
-        0x4d2c6dfc    # 1.80805568E8f
+        0x4d2c6dfc    # 1.8080557E8f
         0x53380d13
         0x650a7354
         0x766a0abb
@@ -109,7 +109,7 @@
         0x2748774c
         0x34b0bcb5
         0x391c0cb3
-        0x4ed8aa4a    # 1.81751936E9f
+        0x4ed8aa4a    # 1.8175194E9f
         0x5b9cca4f
         0x682e6ff3
         0x748f82ee
@@ -124,7 +124,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/gu0;-><init>()V
@@ -153,7 +153,7 @@
 .end method
 
 .method public constructor <init>(Llibs/ds2;)V
-    .registers 3
+    .locals 1
 
     .line 14
     invoke-direct {p0, p1}, Llibs/gu0;-><init>(Llibs/gu0;)V
@@ -172,7 +172,7 @@
 .end method
 
 .method public static m(III)I
-    .registers 3
+    .locals 0
 
     .line 1
     and-int/2addr p1, p0
@@ -192,7 +192,7 @@
 .end method
 
 .method public static n(III)I
-    .registers 4
+    .locals 1
 
     .line 1
     and-int v0, p0, p1
@@ -215,7 +215,7 @@
 .end method
 
 .method public static p(I)I
-    .registers 4
+    .locals 3
 
     .line 1
     ushr-int/lit8 v0, p0, 0x2
@@ -261,7 +261,7 @@
 .end method
 
 .method public static q(I)I
-    .registers 4
+    .locals 3
 
     .line 1
     ushr-int/lit8 v0, p0, 0x6
@@ -309,7 +309,7 @@
 
 # virtual methods
 .method public final b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "SHA-224"
@@ -320,7 +320,7 @@
 .end method
 
 .method public final c(I[B)I
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Llibs/gu0;->i()V
@@ -428,7 +428,7 @@
 .end method
 
 .method public final d()Llibs/ar1;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/ds2;
@@ -444,7 +444,7 @@
 .end method
 
 .method public final e()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x1c
@@ -455,7 +455,7 @@
 .end method
 
 .method public final f(Llibs/ar1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     check-cast p1, Llibs/ds2;
@@ -471,7 +471,7 @@
 .end method
 
 .method public final j()V
-    .registers 20
+    .locals 19
 
     .line 1
     move-object/from16 v0, p0
@@ -486,7 +486,7 @@
 
     .line 6
     .line 7
-    :goto_6
+    :goto_0
     const/16 v3, 0x3f
 
     .line 8
@@ -495,7 +495,7 @@
 
     .line 10
     .line 11
-    if-gt v2, v3, :cond_40
+    if-gt v2, v3, :cond_0
 
     .line 12
     .line 13
@@ -612,10 +612,10 @@
 
     .line 63
     .line 64
-    goto :goto_6
+    goto :goto_0
 
     .line 65
-    :cond_40
+    :cond_0
     iget v2, v0, Llibs/ds2;->d:I
 
     .line 66
@@ -657,12 +657,12 @@
     const/4 v13, 0x0
 
     .line 84
-    :goto_53
+    :goto_1
     const/16 v14, 0x8
 
     .line 85
     .line 86
-    if-ge v12, v14, :cond_17b
+    if-ge v12, v14, :cond_1
 
     .line 87
     .line 88
@@ -1248,11 +1248,11 @@
 
     .line 377
     .line 378
-    goto/16 :goto_53
+    goto/16 :goto_1
 
     .line 379
     .line 380
-    :cond_17b
+    :cond_1
     iget v12, v0, Llibs/ds2;->d:I
 
     .line 381
@@ -1348,8 +1348,8 @@
     const/4 v2, 0x0
 
     .line 423
-    :goto_1a6
-    if-ge v2, v1, :cond_1ad
+    :goto_2
+    if-ge v2, v1, :cond_2
 
     .line 424
     .line 425
@@ -1361,15 +1361,15 @@
 
     .line 428
     .line 429
-    goto :goto_1a6
+    goto :goto_2
 
     .line 430
-    :cond_1ad
+    :cond_2
     return-void
 .end method
 
 .method public final k(J)V
-    .registers 7
+    .locals 4
 
     .line 1
     iget v0, p0, Llibs/ds2;->m:I
@@ -1380,7 +1380,7 @@
 
     .line 4
     .line 5
-    if-le v0, v1, :cond_9
+    if-le v0, v1, :cond_0
 
     .line 6
     .line 7
@@ -1389,7 +1389,7 @@
     .line 8
     .line 9
     .line 10
-    :cond_9
+    :cond_0
     const/16 v0, 0x20
 
     .line 11
@@ -1424,7 +1424,7 @@
 .end method
 
 .method public final l(I[B)V
-    .registers 6
+    .locals 3
 
     .line 1
     aget-byte v0, p2, p1
@@ -1511,7 +1511,7 @@
 
     .line 40
     .line 41
-    if-ne p2, v2, :cond_2d
+    if-ne p2, v2, :cond_0
 
     .line 42
     .line 43
@@ -1520,12 +1520,12 @@
     .line 44
     .line 45
     .line 46
-    :cond_2d
+    :cond_0
     return-void
 .end method
 
 .method public final r(Llibs/ds2;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-virtual {p0, p1}, Llibs/gu0;->h(Llibs/gu0;)V
@@ -1628,7 +1628,7 @@
 .end method
 
 .method public final reset()V
-    .registers 5
+    .locals 4
 
     .line 1
     invoke-super {p0}, Llibs/gu0;->reset()V
@@ -1718,7 +1718,7 @@
     const/4 v1, 0x0
 
     .line 48
-    :goto_2f
+    :goto_0
     iget-object v2, p0, Llibs/ds2;->l:[I
 
     .line 49
@@ -1726,7 +1726,7 @@
     array-length v3, v2
 
     .line 51
-    if-eq v1, v3, :cond_39
+    if-eq v1, v3, :cond_0
 
     .line 52
     .line 53
@@ -1738,9 +1738,9 @@
 
     .line 56
     .line 57
-    goto :goto_2f
+    goto :goto_0
 
     .line 58
-    :cond_39
+    :cond_0
     return-void
 .end method

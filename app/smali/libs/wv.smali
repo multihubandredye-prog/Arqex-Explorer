@@ -15,7 +15,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/CodeEditorActivity;Ljava/util/ArrayList;Llibs/cv;B)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-byte p4, p0, Llibs/wv;->c:B
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public final z(Landroid/view/View;I)V
-    .registers 6
+    .locals 3
 
     .line 1
     iget-byte p1, p0, Llibs/wv;->c:B
@@ -60,7 +60,7 @@
 
     .line 6
     .line 7
-    packed-switch p1, :pswitch_data_40
+    packed-switch p1, :pswitch_data_0
 
     .line 8
     .line 9
@@ -126,7 +126,7 @@
     return-void
 
     .line 41
-    :pswitch_28
+    :pswitch_0
     invoke-virtual {v1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     .line 42
@@ -173,8 +173,8 @@
     nop
 
     .line 65
-    :pswitch_data_40
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_28
+        :pswitch_0
     .end packed-switch
 .end method

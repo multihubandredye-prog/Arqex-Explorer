@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Z[B)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Llibs/d51;-><init>(Z[B)V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final d([B)V
-    .registers 7
+    .locals 5
 
     .line 1
     const/4 v0, 0x1
@@ -28,26 +28,26 @@
     const/4 v1, 0x3
 
     .line 3
-    :try_start_2
+    :try_start_0
     invoke-static {v0, v1, p1}, Llibs/mg3;->j(II[B)Ljava/lang/String;
 
     .line 4
     .line 5
     .line 6
     move-result-object v1
-    :try_end_6
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_2 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 7
-    goto :goto_9
+    goto :goto_0
 
     .line 8
-    :catch_7
+    :catch_0
     const-string v1, "unknown"
 
     .line 9
     .line 10
-    :goto_9
+    :goto_0
     new-instance v2, Ljava/lang/StringBuilder;
 
     .line 11
@@ -119,7 +119,7 @@
     move-result v2
 
     .line 45
-    if-ltz v2, :cond_44
+    if-ltz v2, :cond_0
 
     .line 46
     .line 47
@@ -166,10 +166,10 @@
     add-int/2addr v0, v2
 
     .line 68
-    goto :goto_4d
+    goto :goto_1
 
     .line 69
-    :cond_44
+    :cond_0
     new-instance v2, Llibs/aj0;
 
     .line 70
@@ -187,7 +187,7 @@
 
     .line 77
     .line 78
-    :goto_4d
+    :goto_1
     array-length v1, p1
 
     .line 79

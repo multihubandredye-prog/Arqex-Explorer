@@ -19,7 +19,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 21
+    .locals 21
 
     .line 1
     sget-object v0, Llibs/ff0;->g:Ljava/math/BigInteger;
@@ -194,7 +194,7 @@
 
     .line 84
     .line 85
-    fill-array-data v10, :array_d4
+    fill-array-data v10, :array_0
 
     .line 86
     .line 87
@@ -207,7 +207,7 @@
 
     .line 91
     .line 92
-    fill-array-data v3, :array_da
+    fill-array-data v3, :array_1
 
     .line 93
     .line 94
@@ -220,7 +220,7 @@
 
     .line 98
     .line 99
-    fill-array-data v7, :array_e0
+    fill-array-data v7, :array_2
 
     .line 100
     .line 101
@@ -365,7 +365,7 @@
 
     .line 173
     .line 174
-    fill-array-data v0, :array_e6
+    fill-array-data v0, :array_3
 
     .line 175
     .line 176
@@ -374,7 +374,7 @@
 
     .line 178
     .line 179
-    fill-array-data v1, :array_ec
+    fill-array-data v1, :array_4
 
     .line 180
     .line 181
@@ -383,7 +383,7 @@
 
     .line 183
     .line 184
-    fill-array-data v2, :array_f2
+    fill-array-data v2, :array_5
 
     .line 185
     .line 186
@@ -442,7 +442,7 @@
     nop
 
     .line 213
-    :array_d4
+    :array_0
     .array-data 1
         -0x1t
         0x0t
@@ -455,7 +455,7 @@
     .line 217
     .line 218
     .line 219
-    :array_da
+    :array_1
     .array-data 1
         0x1t
         0x0t
@@ -468,7 +468,7 @@
     .line 223
     .line 224
     .line 225
-    :array_e0
+    :array_2
     .array-data 1
         -0x1t
         0x0t
@@ -482,7 +482,7 @@
     .line 229
     .line 230
     .line 231
-    :array_e6
+    :array_3
     .array-data 1
         -0x1t
         0x0t
@@ -495,7 +495,7 @@
     .line 235
     .line 236
     .line 237
-    :array_ec
+    :array_4
     .array-data 1
         0x1t
         0x0t
@@ -508,7 +508,7 @@
     .line 241
     .line 242
     .line 243
-    :array_f2
+    :array_5
     .array-data 1
         -0x1t
         0x0t
@@ -518,7 +518,7 @@
 .end method
 
 .method public static a(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;BI)Llibs/da3;
-    .registers 7
+    .locals 2
 
     .line 1
     add-int/lit8 v0, p4, 0x5
@@ -604,7 +604,7 @@
     move-result p0
 
     .line 42
-    if-eqz p0, :cond_31
+    if-eqz p0, :cond_0
 
     .line 43
     .line 44
@@ -620,7 +620,7 @@
     move-result-object p1
 
     .line 50
-    :cond_31
+    :cond_0
     new-instance p0, Llibs/da3;
 
     .line 51
@@ -638,27 +638,27 @@
 .end method
 
 .method public static b(BIZ)[Ljava/math/BigInteger;
-    .registers 8
+    .locals 5
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-eq p0, v0, :cond_e
+    if-eq p0, v0, :cond_1
 
     .line 3
     .line 4
     const/4 v1, -0x1
 
     .line 5
-    if-ne p0, v1, :cond_7
+    if-ne p0, v1, :cond_0
 
     .line 6
     .line 7
-    goto :goto_e
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     const-string p0, "mu must be 1 or -1"
 
     .line 9
@@ -674,9 +674,9 @@
     return-object p0
 
     .line 15
-    :cond_e
-    :goto_e
-    if-eqz p2, :cond_18
+    :cond_1
+    :goto_0
+    if-eqz p2, :cond_2
 
     .line 16
     .line 17
@@ -695,10 +695,10 @@
     move-result-object v1
 
     .line 24
-    goto :goto_1c
+    goto :goto_1
 
     .line 25
-    :cond_18
+    :cond_2
     sget-object p2, Llibs/ff0;->f:Ljava/math/BigInteger;
 
     .line 26
@@ -707,26 +707,26 @@
 
     .line 28
     .line 29
-    :goto_1c
+    :goto_1
     const/4 v2, 0x1
 
     .line 30
-    :goto_1d
-    if-ge v2, p1, :cond_35
+    :goto_2
+    if-ge v2, p1, :cond_4
 
     .line 31
     .line 32
-    if-ne p0, v0, :cond_23
+    if-ne p0, v0, :cond_3
 
     .line 33
     .line 34
     move-object v3, v1
 
     .line 35
-    goto :goto_27
+    goto :goto_3
 
     .line 36
-    :cond_23
+    :cond_3
     invoke-virtual {v1}, Ljava/math/BigInteger;->negate()Ljava/math/BigInteger;
 
     .line 37
@@ -735,7 +735,7 @@
     move-result-object v3
 
     .line 40
-    :goto_27
+    :goto_3
     invoke-virtual {p2, v0}, Ljava/math/BigInteger;->shiftLeft(I)Ljava/math/BigInteger;
 
     .line 41
@@ -765,10 +765,10 @@
     move-object p2, v4
 
     .line 53
-    goto :goto_1d
+    goto :goto_2
 
     .line 54
-    :cond_35
+    :cond_4
     const/4 p0, 0x2
 
     .line 55
@@ -791,7 +791,7 @@
 .end method
 
 .method public static c(Llibs/gf0;)[Ljava/math/BigInteger;
-    .registers 8
+    .locals 7
 
     .line 1
     invoke-virtual {p0}, Llibs/gf0;->s()Z
@@ -805,7 +805,7 @@
     const/4 v1, 0x0
 
     .line 6
-    if-eqz v0, :cond_75
+    if-eqz v0, :cond_4
 
     .line 7
     .line 8
@@ -840,21 +840,21 @@
     const/4 v3, 0x1
 
     .line 23
-    if-nez v2, :cond_1a
+    if-nez v2, :cond_0
 
     .line 24
     .line 25
     const/4 v4, -0x1
 
     .line 26
-    goto :goto_1b
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_0
     const/4 v4, 0x1
 
     .line 28
-    :goto_1b
+    :goto_0
     int-to-byte v4, v4
 
     .line 29
@@ -862,7 +862,7 @@
 
     .line 30
     .line 31
-    if-eqz p0, :cond_6f
+    if-eqz p0, :cond_3
 
     .line 32
     .line 33
@@ -881,17 +881,17 @@
     const/4 v6, 0x2
 
     .line 40
-    if-eqz v5, :cond_2b
+    if-eqz v5, :cond_1
 
     .line 41
     .line 42
     const/4 p0, 0x1
 
     .line 43
-    goto :goto_34
+    goto :goto_1
 
     .line 44
-    :cond_2b
+    :cond_1
     sget-object v5, Llibs/ff0;->j:Ljava/math/BigInteger;
 
     .line 45
@@ -904,14 +904,14 @@
     move-result p0
 
     .line 50
-    if-eqz p0, :cond_6f
+    if-eqz p0, :cond_3
 
     .line 51
     .line 52
     const/4 p0, 0x2
 
     .line 53
-    :goto_34
+    :goto_1
     add-int/lit8 v0, v0, 0x3
 
     .line 54
@@ -930,7 +930,7 @@
     move-result-object v0
 
     .line 61
-    if-ne v4, v3, :cond_4e
+    if-ne v4, v3, :cond_2
 
     .line 62
     .line 63
@@ -966,7 +966,7 @@
 
     .line 78
     .line 79
-    :cond_4e
+    :cond_2
     sget-object v2, Llibs/ff0;->g:Ljava/math/BigInteger;
 
     .line 80
@@ -1034,7 +1034,7 @@
     return-object v0
 
     .line 112
-    :cond_6f
+    :cond_3
     const-string p0, "h (Cofactor) must be 2 or 4"
 
     .line 113
@@ -1047,7 +1047,7 @@
     return-object v1
 
     .line 118
-    :cond_75
+    :cond_4
     const-string p0, "si is defined for Koblitz curves only"
 
     .line 119

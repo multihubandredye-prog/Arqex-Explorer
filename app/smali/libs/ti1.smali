@@ -14,14 +14,14 @@
 
 # direct methods
 .method public constructor <init>(BLjava/lang/String;)V
-    .registers 6
+    .locals 3
 
     .line 1
     iput-byte p1, p0, Llibs/ti1;->a:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_82
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -62,8 +62,8 @@
     const/4 v0, 0x0
 
     .line 24
-    :goto_17
-    if-ge v0, p2, :cond_29
+    :goto_0
+    if-ge v0, p2, :cond_0
 
     .line 25
     .line 26
@@ -96,14 +96,14 @@
 
     .line 40
     .line 41
-    goto :goto_17
+    goto :goto_0
 
     .line 42
-    :cond_29
+    :cond_0
     return-void
 
     .line 43
-    :pswitch_2a
+    :pswitch_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 44
@@ -235,7 +235,7 @@
     return-void
 
     .line 110
-    :pswitch_6d
+    :pswitch_1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 111
@@ -267,7 +267,7 @@
     return-void
 
     .line 125
-    :pswitch_7c
+    :pswitch_2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 126
@@ -280,18 +280,18 @@
     return-void
 
     .line 131
-    :pswitch_data_82
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_7c
-        :pswitch_6d
-        :pswitch_2a
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public final a(Ljava/lang/String;)Z
-    .registers 8
+    .locals 6
 
     .line 1
     iget-byte v0, p0, Llibs/ti1;->a:B
@@ -305,7 +305,7 @@
 
     .line 5
     .line 6
-    packed-switch v0, :pswitch_data_3e
+    packed-switch v0, :pswitch_data_0
 
     .line 7
     .line 8
@@ -333,7 +333,7 @@
     return p1
 
     .line 20
-    :pswitch_13
+    :pswitch_0
     check-cast v2, Llibs/vi1;
 
     .line 21
@@ -352,7 +352,7 @@
     return p1
 
     .line 28
-    :pswitch_1b
+    :pswitch_1
     check-cast v2, Ljava/lang/String;
 
     .line 29
@@ -368,7 +368,7 @@
     return p1
 
     .line 35
-    :pswitch_22
+    :pswitch_2
     check-cast v2, Ljava/util/ArrayList;
 
     .line 36
@@ -387,8 +387,8 @@
     const/4 v4, 0x0
 
     .line 43
-    :cond_2a
-    if-ge v4, v0, :cond_3b
+    :cond_0
+    if-ge v4, v0, :cond_1
 
     .line 44
     .line 45
@@ -416,41 +416,41 @@
     move-result v5
 
     .line 57
-    if-eqz v5, :cond_2a
+    if-eqz v5, :cond_0
 
     .line 58
     .line 59
-    goto :goto_3c
+    goto :goto_0
 
     .line 60
-    :cond_3b
+    :cond_1
     const/4 v1, 0x0
 
     .line 61
-    :goto_3c
+    :goto_0
     return v1
 
     .line 62
     nop
 
     .line 63
-    :pswitch_data_3e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_22
-        :pswitch_1b
-        :pswitch_13
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/ti1;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_22
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -466,7 +466,7 @@
     return-object v0
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 12
@@ -513,8 +513,8 @@
     return-object v0
 
     .line 35
-    :pswitch_data_22
+    :pswitch_data_0
     .packed-switch 0x3
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method

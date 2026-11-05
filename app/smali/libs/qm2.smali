@@ -21,7 +21,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/e72;
@@ -52,7 +52,7 @@
 .end method
 
 .method public constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Llibs/Theta;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
@@ -60,14 +60,14 @@
     .line 2
     .line 3
     .line 4
-    if-eqz p2, :cond_6
+    if-eqz p2, :cond_0
 
     .line 5
     .line 6
-    goto :goto_c
+    goto :goto_0
 
     .line 7
-    :cond_6
+    :cond_0
     const-class p2, Llibs/jm2;
 
     .line 8
@@ -80,7 +80,7 @@
     move-result-object p2
 
     .line 13
-    :goto_c
+    :goto_0
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
 
     .line 14
@@ -97,7 +97,7 @@
 .end method
 
 .method public constructor <init>(Landroid/os/Parcelable;)V
-    .registers 2
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1}, Llibs/Theta;-><init>(Landroid/os/Parcelable;)V
@@ -108,7 +108,7 @@
 
 # virtual methods
 .method public final b(Llibs/qm2;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iget-object p1, p1, Llibs/qm2;->Z:Landroid/os/Parcelable;
@@ -123,7 +123,7 @@
 .end method
 
 .method public final writeToParcel(Landroid/os/Parcel;I)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-super {p0, p1, p2}, Llibs/Theta;->writeToParcel(Landroid/os/Parcel;I)V

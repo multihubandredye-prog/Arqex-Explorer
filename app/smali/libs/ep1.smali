@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/InputStream;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/ir0;-><init>(Ljava/io/InputStream;)V
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final available()I
-    .registers 4
+    .locals 3
 
     .line 1
     iget v0, p0, Llibs/ep1;->Pi:I
@@ -48,7 +48,7 @@
 
     .line 6
     .line 7
-    if-ne v0, v2, :cond_d
+    if-ne v0, v2, :cond_0
 
     .line 8
     .line 9
@@ -63,7 +63,7 @@
     return v0
 
     .line 14
-    :cond_d
+    :cond_0
     invoke-virtual {v1}, Ljava/io/InputStream;->available()I
 
     .line 15
@@ -84,14 +84,14 @@
 .end method
 
 .method public final c(J)J
-    .registers 7
+    .locals 4
 
     .line 1
     iget v0, p0, Llibs/ep1;->Pi:I
 
     .line 2
     .line 3
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -102,12 +102,12 @@
     return-wide p1
 
     .line 8
-    :cond_7
+    :cond_0
     const/high16 v1, -0x80000000
 
     .line 9
     .line 10
-    if-eq v0, v1, :cond_11
+    if-eq v0, v1, :cond_1
 
     .line 11
     .line 12
@@ -118,33 +118,33 @@
 
     .line 14
     .line 15
-    if-lez v3, :cond_11
+    if-lez v3, :cond_1
 
     .line 16
     .line 17
     int-to-long p1, v0
 
     .line 18
-    :cond_11
+    :cond_1
     return-wide p1
 .end method
 
 .method public final close()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/ep1;->Rho:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     const/4 v0, 0x1
 
     .line 7
@@ -161,7 +161,7 @@
 .end method
 
 .method public final i(J)V
-    .registers 7
+    .locals 4
 
     .line 1
     iget v0, p0, Llibs/ep1;->Pi:I
@@ -172,7 +172,7 @@
 
     .line 4
     .line 5
-    if-eq v0, v1, :cond_11
+    if-eq v0, v1, :cond_0
 
     .line 6
     .line 7
@@ -184,7 +184,7 @@
 
     .line 10
     .line 11
-    if-eqz v3, :cond_11
+    if-eqz v3, :cond_0
 
     .line 12
     .line 13
@@ -201,12 +201,12 @@
 
     .line 17
     .line 18
-    :cond_11
+    :cond_0
     return-void
 .end method
 
 .method public final mark(I)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-super {p0, p1}, Llibs/ir0;->mark(I)V
@@ -243,7 +243,7 @@
 .end method
 
 .method public final read()I
-    .registers 8
+    .locals 7
 
     .line 1
     const-wide/16 v0, 0x1
@@ -266,7 +266,7 @@
 
     .line 10
     .line 11
-    if-nez v6, :cond_e
+    if-nez v6, :cond_0
 
     .line 12
     .line 13
@@ -276,7 +276,7 @@
     return v0
 
     .line 15
-    :cond_e
+    :cond_0
     iget-object v2, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;
 
     .line 16
@@ -298,7 +298,7 @@
 .end method
 
 .method public final read([BII)I
-    .registers 6
+    .locals 2
 
     int-to-long v0, p3
 
@@ -311,12 +311,12 @@
 
     const/4 v0, -0x1
 
-    if-ne p3, v0, :cond_a
+    if-ne p3, v0, :cond_0
 
     return v0
 
     .line 26
-    :cond_a
+    :cond_0
     iget-object v0, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;
 
     invoke-virtual {v0, p1, p2, p3}, Ljava/io/InputStream;->read([BII)I
@@ -332,7 +332,7 @@
 .end method
 
 .method public final reset()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Llibs/ir0;->reset()V
@@ -352,7 +352,7 @@
 .end method
 
 .method public final skip(J)J
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-virtual {p0, p1, p2}, Llibs/ep1;->c(J)J
@@ -371,14 +371,14 @@
 
     .line 8
     .line 9
-    if-nez v2, :cond_b
+    if-nez v2, :cond_0
 
     .line 10
     .line 11
     return-wide v0
 
     .line 12
-    :cond_b
+    :cond_0
     iget-object v0, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;
 
     .line 13

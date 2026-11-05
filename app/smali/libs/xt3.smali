@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/y3;
@@ -41,7 +41,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 .end method
 
 .method public static a()Llibs/xt3;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/xt3;->d:Llibs/y3;
@@ -72,7 +72,7 @@
 
     .line 8
     .line 9
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     .line 10
     .line 11
@@ -85,6 +85,6 @@
     .line 14
     .line 15
     .line 16
-    :cond_f
+    :cond_0
     return-object v0
 .end method

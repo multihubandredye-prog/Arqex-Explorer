@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/$f;Llibs/Auth;)V
-    .registers 5
+    .locals 2
 
     .line 70
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -47,7 +47,7 @@
 .end method
 
 .method public constructor <init>(Llibs/Param;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -91,7 +91,7 @@
     move-result v0
 
     .line 22
-    if-nez v0, :cond_3e
+    if-nez v0, :cond_1
 
     .line 23
     .line 24
@@ -143,7 +143,7 @@
     move-result v0
 
     .line 48
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_0
 
     .line 49
     .line 50
@@ -171,11 +171,11 @@
 
     .line 61
     .line 62
-    :cond_3d
+    :cond_0
     return-void
 
     .line 63
-    :cond_3e
+    :cond_1
     const-string p1, "wrong version for private key info"
 
     .line 64
@@ -192,14 +192,14 @@
 .end method
 
 .method public static g(Ljava/lang/Object;)Llibs/bg2;
-    .registers 2
+    .locals 1
 
     .line 1
     instance-of v0, p0, Llibs/bg2;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -210,8 +210,8 @@
     return-object p0
 
     .line 8
-    :cond_7
-    if-eqz p0, :cond_13
+    :cond_0
+    if-eqz p0, :cond_1
 
     .line 9
     .line 10
@@ -235,7 +235,7 @@
     return-object v0
 
     .line 20
-    :cond_13
+    :cond_1
     const/4 p0, 0x0
 
     .line 21
@@ -245,7 +245,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Llibs/Init;
@@ -300,7 +300,7 @@
 
     .line 28
     .line 29
-    if-eqz v2, :cond_26
+    if-eqz v2, :cond_0
 
     .line 30
     .line 31
@@ -318,7 +318,7 @@
     .line 37
     .line 38
     .line 39
-    :cond_26
+    :cond_0
     new-instance v1, Llibs/p10;
 
     .line 40
@@ -332,7 +332,7 @@
 .end method
 
 .method public final h()Llibs/$f;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bg2;->Y:Llibs/$f;
@@ -343,7 +343,7 @@
 .end method
 
 .method public final i()Llibs/Theme;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bg2;->X:Llibs/Part;

@@ -46,7 +46,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/16 v0, 0x10
@@ -57,7 +57,7 @@
 
     .line 4
     .line 5
-    fill-array-data v0, :array_12
+    fill-array-data v0, :array_0
 
     .line 6
     .line 7
@@ -73,7 +73,7 @@
 
     .line 12
     .line 13
-    fill-array-data v0, :array_1e
+    fill-array-data v0, :array_1
 
     .line 14
     .line 15
@@ -85,7 +85,7 @@
     return-void
 
     .line 19
-    :array_12
+    :array_0
     .array-data 1
         0x0t
         0x0t
@@ -117,7 +117,7 @@
     .line 29
     .line 30
     .line 31
-    :array_1e
+    :array_1
     .array-data 1
         -0x2t
         0x53t
@@ -127,7 +127,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -148,7 +148,7 @@
 
 # virtual methods
 .method public final a(Llibs/rw2;)V
-    .registers 8
+    .locals 6
 
     .line 1
     iget v0, p1, Llibs/rw2;->c:I
@@ -183,7 +183,7 @@
     move-result v1
 
     .line 17
-    if-eqz v1, :cond_80
+    if-eqz v1, :cond_2
 
     .line 18
     .line 19
@@ -300,7 +300,7 @@
     move-result v2
 
     .line 76
-    if-eqz v2, :cond_54
+    if-eqz v2, :cond_0
 
     .line 77
     .line 78
@@ -316,10 +316,10 @@
 
     .line 83
     .line 84
-    goto :goto_5d
+    goto :goto_0
 
     .line 85
-    :cond_54
+    :cond_0
     invoke-virtual {p1, v0}, Llibs/rw2;->x(I)V
 
     .line 86
@@ -337,7 +337,7 @@
 
     .line 93
     .line 94
-    :goto_5d
+    :goto_0
     invoke-virtual {v1, p1}, Llibs/oj0;->a(Llibs/rw2;)J
 
     .line 95
@@ -382,7 +382,7 @@
 
     .line 115
     .line 116
-    if-eqz v5, :cond_7b
+    if-eqz v5, :cond_1
 
     .line 117
     .line 118
@@ -400,7 +400,7 @@
     return-void
 
     .line 124
-    :cond_7b
+    :cond_1
     iget p1, p1, Llibs/rw2;->d:I
 
     .line 125
@@ -412,7 +412,7 @@
     return-void
 
     .line 129
-    :cond_80
+    :cond_2
     const-string p1, "Could not find SMB2 Packet header"
 
     .line 130
@@ -426,7 +426,7 @@
 .end method
 
 .method public final b()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/ov2;->n:I
@@ -437,7 +437,7 @@
 .end method
 
 .method public final c()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/ov2;->p:I
@@ -448,7 +448,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 15
+    .locals 14
 
     .line 1
     iget-object v0, p0, Llibs/ov2;->a:Llibs/pu2;

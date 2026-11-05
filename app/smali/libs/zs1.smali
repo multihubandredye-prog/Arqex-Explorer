@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic a(Landroid/os/StatFs;)J
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Landroid/os/StatFs;->getBlockSizeLong()J
@@ -20,7 +20,7 @@
 .end method
 
 .method public static bridge synthetic b(Landroid/os/HandlerThread;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/os/HandlerThread;->quitSafely()Z
@@ -32,7 +32,7 @@
 .end method
 
 .method public static bridge synthetic c(Landroid/os/StatFs;)J
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Landroid/os/StatFs;->getAvailableBlocksLong()J
@@ -47,7 +47,7 @@
 .end method
 
 .method public static bridge synthetic d(Landroid/os/StatFs;)J
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Landroid/os/StatFs;->getBlockCountLong()J

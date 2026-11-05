@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;B)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-byte p4, p0, Llibs/x31;->X:B
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final c([Ljava/lang/Object;)Z
-    .registers 7
+    .locals 5
 
     .line 1
     iget-byte v0, p0, Llibs/x31;->X:B
@@ -70,7 +70,7 @@
     const/4 v4, 0x1
 
     .line 10
-    packed-switch v0, :pswitch_data_2c
+    packed-switch v0, :pswitch_data_0
 
     .line 11
     .line 12
@@ -90,20 +90,20 @@
     const/4 p1, 0x0
 
     .line 20
-    :try_start_13
+    :try_start_0
     invoke-virtual {v2, p1}, Llibs/ds;->write(I)V
 
     .line 21
     .line 22
     .line 23
     invoke-virtual {v2}, Llibs/ds;->flush()V
-    :try_end_19
-    .catchall {:try_start_13 .. :try_end_19} :catchall_19
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 24
     .line 25
     .line 26
-    :catchall_19
+    :catchall_0
     invoke-static {v1}, Llibs/ji0;->k(Ljava/io/Closeable;)V
 
     .line 27
@@ -121,7 +121,7 @@
     return v4
 
     .line 35
-    :pswitch_22
+    :pswitch_0
     check-cast v3, Lcom/mixplorer/widgets/MiEditText;
 
     .line 36
@@ -142,8 +142,8 @@
     return v4
 
     .line 45
-    :pswitch_data_2c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_22
+        :pswitch_0
     .end packed-switch
 .end method

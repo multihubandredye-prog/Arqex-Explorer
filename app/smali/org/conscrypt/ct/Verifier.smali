@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/conscrypt/ct/LogStore;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method private getSCTsFromOCSPResponse([B[Lorg/conscrypt/OpenSSLX509Certificate;)Ljava/util/List;
-    .registers 13
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B[",
@@ -38,7 +38,7 @@
     .end annotation
 
     .line 1
-    if-eqz p1, :cond_37
+    if-eqz p1, :cond_2
 
     .line 2
     .line 3
@@ -48,14 +48,14 @@
     const/4 v1, 0x2
 
     .line 5
-    if-ge v0, v1, :cond_7
+    if-ge v0, v1, :cond_0
 
     .line 6
     .line 7
-    goto :goto_37
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
     .line 9
@@ -109,7 +109,7 @@
     move-result-object p1
 
     .line 33
-    if-nez p1, :cond_25
+    if-nez p1, :cond_1
 
     .line 34
     .line 35
@@ -120,8 +120,8 @@
     return-object p1
 
     .line 38
-    :cond_25
-    :try_start_25
+    :cond_1
+    :try_start_0
     invoke-static {p1}, Lorg/conscrypt/ct/Serialization;->readDEROctetString([B)[B
 
     .line 39
@@ -148,14 +148,14 @@
     .line 50
     .line 51
     move-result-object p1
-    :try_end_33
-    .catch Lorg/conscrypt/ct/SerializationException; {:try_start_25 .. :try_end_33} :catch_34
+    :try_end_0
+    .catch Lorg/conscrypt/ct/SerializationException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 52
     return-object p1
 
     .line 53
-    :catch_34
+    :catch_0
     sget-object p1, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     .line 54
@@ -163,8 +163,8 @@
     return-object p1
 
     .line 56
-    :cond_37
-    :goto_37
+    :cond_2
+    :goto_0
     sget-object p1, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     .line 57
@@ -173,7 +173,7 @@
 .end method
 
 .method private static getSCTsFromSCTList([BLorg/conscrypt/ct/SignedCertificateTimestamp$Origin;)Ljava/util/List;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B",
@@ -186,7 +186,7 @@
     .end annotation
 
     .line 1
-    if-nez p0, :cond_5
+    if-nez p0, :cond_0
 
     .line 2
     .line 3
@@ -197,19 +197,19 @@
     return-object p0
 
     .line 6
-    :cond_5
+    :cond_0
     const/4 v0, 0x2
 
     .line 7
-    :try_start_6
+    :try_start_0
     invoke-static {p0, v0, v0}, Lorg/conscrypt/ct/Serialization;->readList([BII)[[B
 
     .line 8
     .line 9
     .line 10
     move-result-object p0
-    :try_end_a
-    .catch Lorg/conscrypt/ct/SerializationException; {:try_start_6 .. :try_end_a} :catch_20
+    :try_end_0
+    .catch Lorg/conscrypt/ct/SerializationException; {:try_start_0 .. :try_end_0} :catch_1
 
     .line 11
     new-instance v0, Ljava/util/ArrayList;
@@ -227,8 +227,8 @@
     const/4 v2, 0x0
 
     .line 18
-    :goto_11
-    if-ge v2, v1, :cond_1f
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     .line 19
     .line 20
@@ -236,7 +236,7 @@
 
     .line 21
     .line 22
-    :try_start_15
+    :try_start_1
     invoke-static {v3, p1}, Lorg/conscrypt/ct/SignedCertificateTimestamp;->decode([BLorg/conscrypt/ct/SignedCertificateTimestamp$Origin;)Lorg/conscrypt/ct/SignedCertificateTimestamp;
 
     .line 23
@@ -246,25 +246,25 @@
 
     .line 26
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_1c
-    .catch Lorg/conscrypt/ct/SerializationException; {:try_start_15 .. :try_end_1c} :catch_1c
+    :try_end_1
+    .catch Lorg/conscrypt/ct/SerializationException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 27
     .line 28
     .line 29
-    :catch_1c
+    :catch_0
     add-int/lit8 v2, v2, 0x1
 
     .line 30
     .line 31
-    goto :goto_11
+    goto :goto_0
 
     .line 32
-    :cond_1f
+    :cond_1
     return-object v0
 
     .line 33
-    :catch_20
+    :catch_1
     sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     .line 34
@@ -273,7 +273,7 @@
 .end method
 
 .method private getSCTsFromTLSExtension([B)Ljava/util/List;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B)",
@@ -300,7 +300,7 @@
 .end method
 
 .method private getSCTsFromX509Extension(Lorg/conscrypt/OpenSSLX509Certificate;)Ljava/util/List;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -325,7 +325,7 @@
     move-result-object p1
 
     .line 7
-    if-nez p1, :cond_b
+    if-nez p1, :cond_0
 
     .line 8
     .line 9
@@ -336,8 +336,8 @@
     return-object p1
 
     .line 12
-    :cond_b
-    :try_start_b
+    :cond_0
+    :try_start_0
     invoke-static {p1}, Lorg/conscrypt/ct/Serialization;->readDEROctetString([B)[B
 
     .line 13
@@ -364,14 +364,14 @@
     .line 24
     .line 25
     move-result-object p1
-    :try_end_19
-    .catch Lorg/conscrypt/ct/SerializationException; {:try_start_b .. :try_end_19} :catch_1a
+    :try_end_0
+    .catch Lorg/conscrypt/ct/SerializationException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 26
     return-object p1
 
     .line 27
-    :catch_1a
+    :catch_0
     sget-object p1, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     .line 28
@@ -380,7 +380,7 @@
 .end method
 
 .method private markSCTsAsInvalid(Ljava/util/List;Lorg/conscrypt/ct/VerificationResult;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -401,7 +401,7 @@
     move-result-object p1
 
     .line 5
-    :goto_4
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 6
@@ -410,7 +410,7 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -460,15 +460,15 @@
     .line 33
     .line 34
     .line 35
-    goto :goto_4
+    goto :goto_0
 
     .line 36
-    :cond_23
+    :cond_0
     return-void
 .end method
 
 .method private verifyEmbeddedSCTs(Ljava/util/List;[Lorg/conscrypt/OpenSSLX509Certificate;Lorg/conscrypt/ct/VerificationResult;)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -490,21 +490,21 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
     return-void
 
     .line 8
-    :cond_7
+    :cond_0
     array-length v0, p2
 
     .line 9
     const/4 v1, 0x2
 
     .line 10
-    if-lt v0, v1, :cond_16
+    if-lt v0, v1, :cond_1
 
     .line 11
     .line 12
@@ -522,27 +522,27 @@
 
     .line 17
     .line 18
-    :try_start_11
+    :try_start_0
     invoke-static {v0, p2}, Lorg/conscrypt/ct/CertificateEntry;->createForPrecertificate(Lorg/conscrypt/OpenSSLX509Certificate;Lorg/conscrypt/OpenSSLX509Certificate;)Lorg/conscrypt/ct/CertificateEntry;
 
     .line 19
     .line 20
     .line 21
     move-result-object p2
-    :try_end_15
-    .catch Ljava/security/cert/CertificateException; {:try_start_11 .. :try_end_15} :catch_16
+    :try_end_0
+    .catch Ljava/security/cert/CertificateException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 22
-    goto :goto_17
+    goto :goto_0
 
     .line 23
-    :catch_16
-    :cond_16
+    :catch_0
+    :cond_1
     const/4 p2, 0x0
 
     .line 24
-    :goto_17
-    if-nez p2, :cond_1d
+    :goto_0
+    if-nez p2, :cond_2
 
     .line 25
     .line 26
@@ -554,7 +554,7 @@
     return-void
 
     .line 30
-    :cond_1d
+    :cond_2
     invoke-direct {p0, p1, p2, p3}, Lorg/conscrypt/ct/Verifier;->verifySCTs(Ljava/util/List;Lorg/conscrypt/ct/CertificateEntry;Lorg/conscrypt/ct/VerificationResult;)V
 
     .line 31
@@ -564,7 +564,7 @@
 .end method
 
 .method private verifyExternalSCTs(Ljava/util/List;Lorg/conscrypt/OpenSSLX509Certificate;Lorg/conscrypt/ct/VerificationResult;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -586,23 +586,23 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
     return-void
 
     .line 8
-    :cond_7
-    :try_start_7
+    :cond_0
+    :try_start_0
     invoke-static {p2}, Lorg/conscrypt/ct/CertificateEntry;->createForX509Certificate(Ljava/security/cert/X509Certificate;)Lorg/conscrypt/ct/CertificateEntry;
 
     .line 9
     .line 10
     .line 11
     move-result-object p2
-    :try_end_b
-    .catch Ljava/security/cert/CertificateException; {:try_start_7 .. :try_end_b} :catch_f
+    :try_end_0
+    .catch Ljava/security/cert/CertificateException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 12
     invoke-direct {p0, p1, p2, p3}, Lorg/conscrypt/ct/Verifier;->verifySCTs(Ljava/util/List;Lorg/conscrypt/ct/CertificateEntry;Lorg/conscrypt/ct/VerificationResult;)V
@@ -613,7 +613,7 @@
     return-void
 
     .line 16
-    :catch_f
+    :catch_0
     invoke-direct {p0, p1, p3}, Lorg/conscrypt/ct/Verifier;->markSCTsAsInvalid(Ljava/util/List;Lorg/conscrypt/ct/VerificationResult;)V
 
     .line 17
@@ -623,7 +623,7 @@
 .end method
 
 .method private verifySCTs(Ljava/util/List;Lorg/conscrypt/ct/CertificateEntry;Lorg/conscrypt/ct/VerificationResult;)V
-    .registers 8
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -645,7 +645,7 @@
     move-result-object p1
 
     .line 5
-    :goto_4
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 6
@@ -654,7 +654,7 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_2
 
     .line 10
     .line 11
@@ -699,7 +699,7 @@
     move-result-object v2
 
     .line 32
-    if-nez v2, :cond_27
+    if-nez v2, :cond_0
 
     .line 33
     .line 34
@@ -712,10 +712,10 @@
     .line 37
     .line 38
     .line 39
-    goto :goto_35
+    goto :goto_1
 
     .line 40
-    :cond_27
+    :cond_0
     invoke-virtual {v2, v0, p2}, Lorg/conscrypt/ct/LogInfo;->verifySingleSCT(Lorg/conscrypt/ct/SignedCertificateTimestamp;Lorg/conscrypt/ct/CertificateEntry;)Lorg/conscrypt/ct/VerifiedSCT$Status;
 
     .line 41
@@ -733,7 +733,7 @@
 
     .line 48
     .line 49
-    if-ne v0, v3, :cond_35
+    if-ne v0, v3, :cond_1
 
     .line 50
     .line 51
@@ -742,8 +742,8 @@
     .line 52
     .line 53
     .line 54
-    :cond_35
-    :goto_35
+    :cond_1
+    :goto_1
     invoke-virtual {v1}, Lorg/conscrypt/ct/VerifiedSCT$Builder;->build()Lorg/conscrypt/ct/VerifiedSCT;
 
     .line 55
@@ -757,17 +757,17 @@
     .line 59
     .line 60
     .line 61
-    goto :goto_4
+    goto :goto_0
 
     .line 62
-    :cond_3d
+    :cond_2
     return-void
 .end method
 
 
 # virtual methods
 .method public verifySignedCertificateTimestamps(Ljava/util/List;[B[B)Lorg/conscrypt/ct/VerificationResult;
-    .registers 8
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -792,12 +792,12 @@
 
     const/4 v1, 0x0
 
-    :goto_b
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -816,10 +816,10 @@
 
     move v1, v3
 
-    goto :goto_b
+    goto :goto_0
 
     .line 46
-    :cond_21
+    :cond_0
     invoke-virtual {p0, v0, p2, p3}, Lorg/conscrypt/ct/Verifier;->verifySignedCertificateTimestamps([Lorg/conscrypt/OpenSSLX509Certificate;[B[B)Lorg/conscrypt/ct/VerificationResult;
 
     move-result-object p1
@@ -828,13 +828,13 @@
 .end method
 
 .method public verifySignedCertificateTimestamps([Lorg/conscrypt/OpenSSLX509Certificate;[B[B)Lorg/conscrypt/ct/VerificationResult;
-    .registers 7
+    .locals 3
 
     .line 1
     array-length v0, p1
 
     .line 2
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_0
 
     .line 3
     .line 4
@@ -900,7 +900,7 @@
     return-object v2
 
     .line 36
-    :cond_23
+    :cond_0
     const-string p1, "Chain of certificates mustn\'t be empty."
 
     .line 37

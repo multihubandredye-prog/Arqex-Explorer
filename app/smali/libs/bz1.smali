@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -41,7 +41,7 @@
 .end method
 
 .method public constructor <init>(Llibs/zy1;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -64,14 +64,14 @@
 
 # virtual methods
 .method public final a(I[B)I
-    .registers 5
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/bz1;->Object:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_24
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -87,7 +87,7 @@
     return p1
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     iget-object v0, p0, Llibs/dz1;->r:Llibs/zy1;
 
     .line 12
@@ -144,14 +144,14 @@
     nop
 
     .line 37
-    :pswitch_data_24
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final d(I[B)I
-    .registers 6
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/bz1;->Object:B
@@ -161,7 +161,7 @@
     const/4 v1, 0x0
 
     .line 4
-    packed-switch v0, :pswitch_data_2c
+    packed-switch v0, :pswitch_data_0
 
     .line 5
     .line 6
@@ -170,7 +170,7 @@
 
     .line 8
     .line 9
-    if-nez v0, :cond_2b
+    if-nez v0, :cond_2
 
     .line 10
     .line 11
@@ -178,14 +178,14 @@
 
     .line 12
     .line 13
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 14
     .line 15
-    goto :goto_2b
+    goto :goto_1
 
     .line 16
-    :cond_f
+    :cond_0
     aget-byte v0, p2, p1
 
     .line 17
@@ -210,7 +210,7 @@
 
     .line 27
     .line 28
-    if-eqz p1, :cond_27
+    if-eqz p1, :cond_1
 
     .line 29
     .line 30
@@ -231,10 +231,10 @@
 
     .line 38
     .line 39
-    goto :goto_2a
+    goto :goto_0
 
     .line 40
-    :cond_27
+    :cond_1
     const/4 p1, 0x0
 
     .line 41
@@ -242,31 +242,31 @@
 
     .line 42
     .line 43
-    :goto_2a
+    :goto_0
     const/4 v1, 0x6
 
     .line 44
-    :cond_2b
-    :goto_2b
-    :pswitch_2b
+    :cond_2
+    :goto_1
+    :pswitch_0
     return v1
 
     .line 45
-    :pswitch_data_2c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2b
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final g(I[B)I
-    .registers 6
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/bz1;->Object:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_1e
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -277,7 +277,7 @@
     return p1
 
     .line 8
-    :pswitch_7
+    :pswitch_0
     iget-object v0, p0, Llibs/dz1;->r:Llibs/zy1;
 
     .line 9
@@ -325,14 +325,14 @@
     return v0
 
     .line 31
-    :pswitch_data_1e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_7
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/bz1;->Object:B
@@ -343,7 +343,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_3c
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -417,7 +417,7 @@
     return-object v0
 
     .line 45
-    :pswitch_2c
+    :pswitch_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 46
@@ -450,8 +450,8 @@
     return-object v0
 
     .line 61
-    :pswitch_data_3c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2c
+        :pswitch_0
     .end packed-switch
 .end method

@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;IB)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/v31;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 21
+    .locals 20
 
     .line 1
     move-object/from16 v1, p0
@@ -64,7 +64,7 @@
     const/4 v4, 0x0
 
     .line 10
-    packed-switch v0, :pswitch_data_7e
+    packed-switch v0, :pswitch_data_0
 
     .line 11
     .line 12
@@ -113,7 +113,7 @@
     const/4 v14, 0x1
 
     .line 33
-    :try_start_20
+    :try_start_0
     invoke-static {v3, v2, v9, v4, v7}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 34
@@ -122,8 +122,8 @@
     const/4 v15, 0x0
 
     .line 37
-    :goto_24
-    if-ge v15, v10, :cond_34
+    :goto_0
+    if-ge v15, v10, :cond_0
 
     .line 38
     .line 39
@@ -148,22 +148,22 @@
 
     .line 49
     .line 50
-    goto :goto_24
+    goto :goto_0
 
     .line 51
-    :catchall_32
+    :catchall_0
     move-exception v0
 
     .line 52
-    goto :goto_66
+    goto :goto_3
 
     .line 53
-    :cond_34
+    :cond_0
     const/4 v15, 0x0
 
     .line 54
-    :goto_35
-    if-ge v15, v10, :cond_52
+    :goto_1
+    if-ge v15, v10, :cond_2
 
     .line 55
     .line 56
@@ -183,8 +183,8 @@
 
     .line 63
     .line 64
-    :goto_3f
-    if-ltz v17, :cond_4c
+    :goto_2
+    if-ltz v17, :cond_1
 
     .line 65
     .line 66
@@ -208,10 +208,10 @@
 
     .line 75
     .line 76
-    goto :goto_3f
+    goto :goto_2
 
     .line 77
-    :cond_4c
+    :cond_1
     invoke-static {v9, v5, v6, v8}, Llibs/ji0;->a([I[I[I[I)V
 
     .line 78
@@ -221,13 +221,13 @@
 
     .line 81
     .line 82
-    goto :goto_35
+    goto :goto_1
 
     .line 83
-    :cond_52
+    :cond_2
     invoke-static {v9, v4, v3, v2, v7}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-    :try_end_55
-    .catchall {:try_start_20 .. :try_end_55} :catchall_32
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 84
     .line 85
@@ -265,7 +265,7 @@
     return-void
 
     .line 103
-    :goto_66
+    :goto_3
     invoke-static {v11}, Llibs/ji0;->b([[I)V
 
     .line 104
@@ -299,7 +299,7 @@
     throw v0
 
     .line 120
-    :pswitch_77
+    :pswitch_0
     check-cast v3, Llibs/xt1;
 
     .line 121
@@ -315,8 +315,8 @@
     nop
 
     .line 127
-    :pswitch_data_7e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_77
+        :pswitch_0
     .end packed-switch
 .end method

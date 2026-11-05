@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/t0;->a:B
@@ -30,14 +30,14 @@
 
 # virtual methods
 .method public final createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .registers 13
+    .locals 11
 
     .line 1
     iget-byte v0, p0, Llibs/t0;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_94
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -54,7 +54,7 @@
     return-object v0
 
     .line 12
-    :pswitch_b
+    :pswitch_0
     new-instance v0, Llibs/l13;
 
     .line 13
@@ -67,7 +67,7 @@
     return-object v0
 
     .line 18
-    :pswitch_11
+    :pswitch_1
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     .line 19
@@ -79,28 +79,28 @@
     const/4 v1, 0x0
 
     .line 23
-    if-eqz v0, :cond_93
+    if-eqz v0, :cond_6
 
     .line 24
     .line 25
     const/4 v2, 0x1
 
     .line 26
-    if-eq v0, v2, :cond_8a
+    if-eq v0, v2, :cond_5
 
     .line 27
     .line 28
     const/4 v3, 0x2
 
     .line 29
-    if-eq v0, v3, :cond_78
+    if-eq v0, v3, :cond_4
 
     .line 30
     .line 31
     const/4 v4, 0x3
 
     .line 32
-    if-ne v0, v4, :cond_6e
+    if-ne v0, v4, :cond_3
 
     .line 33
     .line 34
@@ -132,7 +132,7 @@
     move-result v0
 
     .line 48
-    if-eqz v0, :cond_54
+    if-eqz v0, :cond_2
 
     .line 49
     .line 50
@@ -140,11 +140,11 @@
 
     .line 51
     .line 52
-    if-eq v0, v2, :cond_4b
+    if-eq v0, v2, :cond_1
 
     .line 53
     .line 54
-    if-ne v0, v3, :cond_41
+    if-ne v0, v3, :cond_0
 
     .line 55
     .line 56
@@ -164,14 +164,14 @@
     move-result-object v0
 
     .line 64
-    :goto_3f
+    :goto_0
     move-object v8, v0
 
     .line 65
-    goto :goto_61
+    goto :goto_1
 
     .line 66
-    :cond_41
+    :cond_0
     const-string p1, "Bad representation: "
 
     .line 67
@@ -189,10 +189,10 @@
     .line 73
     .line 74
     .line 75
-    goto :goto_93
+    goto :goto_2
 
     .line 76
-    :cond_4b
+    :cond_1
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     .line 77
@@ -209,10 +209,10 @@
     move-result-object v0
 
     .line 84
-    goto :goto_3f
+    goto :goto_0
 
     .line 85
-    :cond_54
+    :cond_2
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     .line 86
@@ -237,10 +237,10 @@
     move-result-object v0
 
     .line 97
-    goto :goto_3f
+    goto :goto_0
 
     .line 98
-    :goto_61
+    :goto_1
     invoke-static {p1}, Llibs/z0;->e(Landroid/os/Parcel;)Llibs/z0;
 
     .line 99
@@ -265,10 +265,10 @@
     move-object v1, v5
 
     .line 110
-    goto :goto_93
+    goto :goto_2
 
     .line 111
-    :cond_6e
+    :cond_3
     const-string p1, "Unknown URI type: "
 
     .line 112
@@ -286,10 +286,10 @@
     .line 118
     .line 119
     .line 120
-    goto :goto_93
+    goto :goto_2
 
     .line 121
-    :cond_78
+    :cond_4
     new-instance v1, Llibs/x0;
 
     .line 122
@@ -323,10 +323,10 @@
     .line 136
     .line 137
     .line 138
-    goto :goto_93
+    goto :goto_2
 
     .line 139
-    :cond_8a
+    :cond_5
     new-instance v1, Llibs/b1;
 
     .line 140
@@ -344,27 +344,27 @@
     .line 146
     .line 147
     .line 148
-    :cond_93
-    :goto_93
+    :cond_6
+    :goto_2
     return-object v1
 
     .line 149
-    :pswitch_data_94
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_11
-        :pswitch_b
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final newArray(I)[Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/t0;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_e
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -376,7 +376,7 @@
     return-object p1
 
     .line 9
-    :pswitch_8
+    :pswitch_0
     new-array p1, p1, [Llibs/l13;
 
     .line 10
@@ -384,7 +384,7 @@
     return-object p1
 
     .line 12
-    :pswitch_b
+    :pswitch_1
     new-array p1, p1, [Llibs/c1;
 
     .line 13
@@ -392,9 +392,9 @@
     return-object p1
 
     .line 15
-    :pswitch_data_e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_b
-        :pswitch_8
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

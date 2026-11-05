@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final b(Llibs/Init;Ljava/lang/Object;)Ljava/util/List;
-    .registers 3
+    .locals 0
 
     .line 1
     check-cast p2, Llibs/ed0;
@@ -49,7 +49,7 @@
     move-result p2
 
     .line 9
-    if-eqz p2, :cond_d
+    if-eqz p2, :cond_0
 
     .line 10
     .line 11
@@ -60,7 +60,7 @@
     return-object p1
 
     .line 14
-    :cond_d
+    :cond_0
     new-instance p2, Llibs/jz0;
 
     .line 15

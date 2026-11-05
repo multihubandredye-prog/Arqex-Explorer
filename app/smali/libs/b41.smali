@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/b41;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/b41;->X:B
@@ -57,7 +57,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_22
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -101,7 +101,7 @@
     return-void
 
     .line 31
-    :pswitch_1e
+    :pswitch_0
     invoke-static {v2, v1}, Llibs/hp0;->Map(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 32
@@ -110,8 +110,8 @@
     return-void
 
     .line 35
-    :pswitch_data_22
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1e
+        :pswitch_0
     .end packed-switch
 .end method

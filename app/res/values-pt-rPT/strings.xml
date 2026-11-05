@@ -372,4 +372,10 @@ Tema ativo:"</string>
     <string name="arqex_zoom_label_suffix">x)</string>
     <string name="arqex_zoom_preview">📁 Pré-visualização do zoom — arraste a barra</string>
     <string name="arqex_zoom_test">Testar</string>
+    <string name="arqex_effect_bars_title">Barras animadas (topo, separadores e rodapé)</string>
+    <string name="arqex_effect_bars_desc">Animação em movimento na barra superior, na barra de separadores e na barra inferior do ecrã principal.</string>
+    <string name="arqex_effect_menu_title">Menus animados</string>
+    <string name="arqex_effect_menu_desc">Animação em movimento nas barras e divisórias dos menus popup, listas de diálogos e painel lateral.</string>
+    <string name="arqex_effect_settings_title">Definições animadas</string>
+    <string name="arqex_effect_settings_desc">Animação em movimento na barra e nas divisórias do ecrã de Definições.</string>
 </resources>

@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/jr;->X:B
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final c()Ljava/lang/Object;
-    .registers 9
+    .locals 8
 
     .line 1
     iget-byte v0, p0, Llibs/jr;->X:B
@@ -60,7 +60,7 @@
     const/4 v7, 0x1
 
     .line 12
-    packed-switch v0, :pswitch_data_f2
+    packed-switch v0, :pswitch_data_0
 
     .line 13
     .line 14
@@ -77,7 +77,7 @@
     return-object v0
 
     .line 21
-    :pswitch_14
+    :pswitch_0
     new-instance v0, Llibs/g83;
 
     .line 22
@@ -94,7 +94,7 @@
     return-object v0
 
     .line 29
-    :pswitch_1c
+    :pswitch_1
     new-instance v0, Llibs/g83;
 
     .line 30
@@ -119,7 +119,7 @@
     return-object v0
 
     .line 41
-    :pswitch_28
+    :pswitch_2
     new-instance v0, Llibs/g83;
 
     .line 42
@@ -144,7 +144,7 @@
     return-object v0
 
     .line 53
-    :pswitch_34
+    :pswitch_3
     new-instance v0, Llibs/g83;
 
     .line 54
@@ -161,7 +161,7 @@
     return-object v0
 
     .line 61
-    :pswitch_3c
+    :pswitch_4
     new-instance v0, Llibs/c83;
 
     .line 62
@@ -174,7 +174,7 @@
     return-object v0
 
     .line 67
-    :pswitch_42
+    :pswitch_5
     new-instance v0, Llibs/b83;
 
     .line 68
@@ -199,7 +199,7 @@
     return-object v0
 
     .line 79
-    :pswitch_4e
+    :pswitch_6
     new-instance v0, Llibs/b83;
 
     .line 80
@@ -224,7 +224,7 @@
     return-object v0
 
     .line 91
-    :pswitch_5a
+    :pswitch_7
     new-instance v0, Llibs/b83;
 
     .line 92
@@ -249,7 +249,7 @@
     return-object v0
 
     .line 103
-    :pswitch_66
+    :pswitch_8
     new-instance v0, Llibs/a83;
 
     .line 104
@@ -262,7 +262,7 @@
     return-object v0
 
     .line 109
-    :pswitch_6c
+    :pswitch_9
     new-instance v0, Llibs/wr2;
 
     .line 110
@@ -275,7 +275,7 @@
     return-object v0
 
     .line 115
-    :pswitch_72
+    :pswitch_a
     new-instance v0, Llibs/wr2;
 
     .line 116
@@ -288,7 +288,7 @@
     return-object v0
 
     .line 121
-    :pswitch_78
+    :pswitch_b
     new-instance v0, Llibs/wr2;
 
     .line 122
@@ -301,7 +301,7 @@
     return-object v0
 
     .line 127
-    :pswitch_7e
+    :pswitch_c
     new-instance v0, Llibs/wr2;
 
     .line 128
@@ -314,7 +314,7 @@
     return-object v0
 
     .line 133
-    :pswitch_84
+    :pswitch_d
     new-instance v0, Llibs/eh2;
 
     .line 134
@@ -327,7 +327,7 @@
     return-object v0
 
     .line 139
-    :pswitch_8a
+    :pswitch_e
     new-instance v0, Llibs/r82;
 
     .line 140
@@ -340,7 +340,7 @@
     return-object v0
 
     .line 145
-    :pswitch_90
+    :pswitch_f
     new-instance v0, Llibs/b42;
 
     .line 146
@@ -353,7 +353,7 @@
     return-object v0
 
     .line 151
-    :pswitch_96
+    :pswitch_10
     new-instance v0, Llibs/a42;
 
     .line 152
@@ -366,11 +366,11 @@
     return-object v0
 
     .line 157
-    :pswitch_9c
+    :pswitch_11
     return-object v1
 
     .line 158
-    :pswitch_9d
+    :pswitch_12
     new-instance v0, Llibs/s20;
 
     .line 159
@@ -387,11 +387,11 @@
     return-object v0
 
     .line 166
-    :pswitch_a5
+    :pswitch_13
     return-object v1
 
     .line 167
-    :pswitch_a6
+    :pswitch_14
     new-instance v0, Llibs/nf0;
 
     .line 168
@@ -417,7 +417,7 @@
     return-object v0
 
     .line 180
-    :pswitch_b3
+    :pswitch_15
     new-instance v0, Llibs/nf0;
 
     .line 181
@@ -443,7 +443,7 @@
     return-object v0
 
     .line 193
-    :pswitch_c0
+    :pswitch_16
     new-instance v0, Llibs/nf0;
 
     .line 194
@@ -469,7 +469,7 @@
     return-object v0
 
     .line 206
-    :pswitch_cd
+    :pswitch_17
     new-instance v0, Llibs/v80;
 
     .line 207
@@ -482,7 +482,7 @@
     return-object v0
 
     .line 212
-    :pswitch_d3
+    :pswitch_18
     new-instance v0, Llibs/c40;
 
     .line 213
@@ -495,7 +495,7 @@
     return-object v0
 
     .line 218
-    :pswitch_d9
+    :pswitch_19
     new-instance v0, Llibs/c40;
 
     .line 219
@@ -508,7 +508,7 @@
     return-object v0
 
     .line 224
-    :pswitch_df
+    :pswitch_1a
     new-instance v0, Llibs/s00;
 
     .line 225
@@ -521,7 +521,7 @@
     return-object v0
 
     .line 230
-    :pswitch_e5
+    :pswitch_1b
     new-instance v0, Llibs/s00;
 
     .line 231
@@ -534,7 +534,7 @@
     return-object v0
 
     .line 236
-    :pswitch_eb
+    :pswitch_1c
     new-instance v0, Llibs/ir;
 
     .line 237
@@ -550,49 +550,49 @@
     nop
 
     .line 243
-    :pswitch_data_f2
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_eb
-        :pswitch_e5
-        :pswitch_df
-        :pswitch_d9
-        :pswitch_d3
-        :pswitch_cd
-        :pswitch_c0
-        :pswitch_b3
-        :pswitch_a6
-        :pswitch_a5
-        :pswitch_9d
-        :pswitch_9c
-        :pswitch_96
-        :pswitch_90
-        :pswitch_8a
-        :pswitch_84
-        :pswitch_7e
-        :pswitch_78
-        :pswitch_72
-        :pswitch_6c
-        :pswitch_66
-        :pswitch_5a
-        :pswitch_4e
-        :pswitch_42
-        :pswitch_3c
-        :pswitch_34
-        :pswitch_28
         :pswitch_1c
+        :pswitch_1b
+        :pswitch_1a
+        :pswitch_19
+        :pswitch_18
+        :pswitch_17
+        :pswitch_16
+        :pswitch_15
         :pswitch_14
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/jr;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_6e
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -604,7 +604,7 @@
     return-object v0
 
     .line 9
-    :pswitch_8
+    :pswitch_0
     sget-object v0, Llibs/wh1;->Y:Llibs/mh1;
 
     .line 10
@@ -616,7 +616,7 @@
     return-object v0
 
     .line 14
-    :pswitch_d
+    :pswitch_1
     const-string v0, "rsa-sha2-512"
 
     .line 15
@@ -624,7 +624,7 @@
     return-object v0
 
     .line 17
-    :pswitch_10
+    :pswitch_2
     const-string v0, "rsa-sha2-256"
 
     .line 18
@@ -632,7 +632,7 @@
     return-object v0
 
     .line 20
-    :pswitch_13
+    :pswitch_3
     sget-object v0, Llibs/wh1;->Omicron:Llibs/sh1;
 
     .line 21
@@ -644,7 +644,7 @@
     return-object v0
 
     .line 25
-    :pswitch_18
+    :pswitch_4
     sget-object v0, Llibs/wh1;->Xi:Llibs/rh1;
 
     .line 26
@@ -656,7 +656,7 @@
     return-object v0
 
     .line 30
-    :pswitch_1d
+    :pswitch_5
     sget-object v0, Llibs/wh1;->Y:Llibs/mh1;
 
     .line 31
@@ -668,7 +668,7 @@
     return-object v0
 
     .line 35
-    :pswitch_22
+    :pswitch_6
     sget-object v0, Llibs/wh1;->Y:Llibs/mh1;
 
     .line 36
@@ -680,7 +680,7 @@
     return-object v0
 
     .line 40
-    :pswitch_27
+    :pswitch_7
     sget-object v0, Llibs/wh1;->Y:Llibs/mh1;
 
     .line 41
@@ -692,7 +692,7 @@
     return-object v0
 
     .line 45
-    :pswitch_2c
+    :pswitch_8
     sget-object v0, Llibs/wh1;->Y:Llibs/mh1;
 
     .line 46
@@ -704,7 +704,7 @@
     return-object v0
 
     .line 50
-    :pswitch_31
+    :pswitch_9
     const-string v0, "sha512"
 
     .line 51
@@ -712,7 +712,7 @@
     return-object v0
 
     .line 53
-    :pswitch_34
+    :pswitch_a
     const-string v0, "sha384"
 
     .line 54
@@ -720,7 +720,7 @@
     return-object v0
 
     .line 56
-    :pswitch_37
+    :pswitch_b
     const-string v0, "sha256"
 
     .line 57
@@ -728,7 +728,7 @@
     return-object v0
 
     .line 59
-    :pswitch_3a
+    :pswitch_c
     const-string v0, "sha1"
 
     .line 60
@@ -736,7 +736,7 @@
     return-object v0
 
     .line 62
-    :pswitch_3d
+    :pswitch_d
     const-string v0, "PuTTY"
 
     .line 63
@@ -744,7 +744,7 @@
     return-object v0
 
     .line 65
-    :pswitch_40
+    :pswitch_e
     const-string v0, "PKCS8"
 
     .line 66
@@ -752,7 +752,7 @@
     return-object v0
 
     .line 68
-    :pswitch_43
+    :pswitch_f
     const-string v0, "OpenSSHv1"
 
     .line 69
@@ -760,7 +760,7 @@
     return-object v0
 
     .line 71
-    :pswitch_46
+    :pswitch_10
     const-string v0, "OpenSSH"
 
     .line 72
@@ -768,7 +768,7 @@
     return-object v0
 
     .line 74
-    :pswitch_49
+    :pswitch_11
     const-string v0, "none"
 
     .line 75
@@ -776,7 +776,7 @@
     return-object v0
 
     .line 77
-    :pswitch_4c
+    :pswitch_12
     const-string v0, "default"
 
     .line 78
@@ -784,7 +784,7 @@
     return-object v0
 
     .line 80
-    :pswitch_4f
+    :pswitch_13
     const-string v0, "ext-info-c"
 
     .line 81
@@ -792,7 +792,7 @@
     return-object v0
 
     .line 83
-    :pswitch_52
+    :pswitch_14
     const-string v0, "ecdh-sha2-nistp521"
 
     .line 84
@@ -800,7 +800,7 @@
     return-object v0
 
     .line 86
-    :pswitch_55
+    :pswitch_15
     const-string v0, "ecdh-sha2-nistp384"
 
     .line 87
@@ -808,7 +808,7 @@
     return-object v0
 
     .line 89
-    :pswitch_58
+    :pswitch_16
     const-string v0, "ecdh-sha2-nistp256"
 
     .line 90
@@ -816,7 +816,7 @@
     return-object v0
 
     .line 92
-    :pswitch_5b
+    :pswitch_17
     const-string v0, "zlib@openssh.com"
 
     .line 93
@@ -824,7 +824,7 @@
     return-object v0
 
     .line 95
-    :pswitch_5e
+    :pswitch_18
     const-string v0, "diffie-hellman-group-exchange-sha256"
 
     .line 96
@@ -832,7 +832,7 @@
     return-object v0
 
     .line 98
-    :pswitch_61
+    :pswitch_19
     const-string v0, "diffie-hellman-group-exchange-sha1"
 
     .line 99
@@ -840,7 +840,7 @@
     return-object v0
 
     .line 101
-    :pswitch_64
+    :pswitch_1a
     const-string v0, "curve25519-sha256@libssh.org"
 
     .line 102
@@ -848,7 +848,7 @@
     return-object v0
 
     .line 104
-    :pswitch_67
+    :pswitch_1b
     const-string v0, "curve25519-sha256"
 
     .line 105
@@ -856,7 +856,7 @@
     return-object v0
 
     .line 107
-    :pswitch_6a
+    :pswitch_1c
     const-string v0, "chacha20-poly1305@openssh.com"
 
     .line 108
@@ -867,49 +867,49 @@
     nop
 
     .line 111
-    :pswitch_data_6e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_6a
-        :pswitch_67
-        :pswitch_64
-        :pswitch_61
-        :pswitch_5e
-        :pswitch_5b
-        :pswitch_58
-        :pswitch_55
-        :pswitch_52
-        :pswitch_4f
-        :pswitch_4c
-        :pswitch_49
-        :pswitch_46
-        :pswitch_43
-        :pswitch_40
-        :pswitch_3d
-        :pswitch_3a
-        :pswitch_37
-        :pswitch_34
-        :pswitch_31
-        :pswitch_2c
-        :pswitch_27
-        :pswitch_22
-        :pswitch_1d
+        :pswitch_1c
+        :pswitch_1b
+        :pswitch_1a
+        :pswitch_19
         :pswitch_18
+        :pswitch_17
+        :pswitch_16
+        :pswitch_15
+        :pswitch_14
         :pswitch_13
+        :pswitch_12
+        :pswitch_11
         :pswitch_10
+        :pswitch_f
+        :pswitch_e
         :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
         :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/jr;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_e
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -925,7 +925,7 @@
     return-object v0
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     const-string v0, "chacha20-poly1305@openssh.com"
 
     .line 12
@@ -936,8 +936,8 @@
     nop
 
     .line 15
-    :pswitch_data_e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method

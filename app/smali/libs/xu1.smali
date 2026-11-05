@@ -33,7 +33,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/nn0;
@@ -56,7 +56,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
@@ -132,7 +132,7 @@
 .end method
 
 .method public static a(FFF)F
-    .registers 3
+    .locals 0
 
     .line 1
     sub-float/2addr p1, p0
@@ -151,7 +151,7 @@
 
 # virtual methods
 .method public final draw(Landroid/graphics/Canvas;)V
-    .registers 12
+    .locals 10
 
     .line 1
     iget-object v0, p0, Llibs/xu1;->a:Landroid/graphics/Path;
@@ -367,7 +367,7 @@
 
     .line 109
     .line 110
-    if-eqz v2, :cond_7b
+    if-eqz v2, :cond_0
 
     .line 111
     .line 112
@@ -379,7 +379,7 @@
     move-result v2
 
     .line 116
-    if-eqz v2, :cond_7b
+    if-eqz v2, :cond_0
 
     .line 117
     .line 118
@@ -394,15 +394,15 @@
     sub-float/2addr v2, v3
 
     .line 123
-    goto :goto_7d
+    goto :goto_0
 
     .line 124
-    :cond_7b
+    :cond_0
     iget v2, p0, Llibs/xu1;->j:F
 
     .line 125
     .line 126
-    :goto_7d
+    :goto_0
     iget-object v3, p0, Llibs/xu1;->k:Ljava/lang/Boolean;
 
     .line 127
@@ -411,7 +411,7 @@
 
     .line 129
     .line 130
-    if-eqz v3, :cond_8b
+    if-eqz v3, :cond_1
 
     .line 131
     .line 132
@@ -423,7 +423,7 @@
     move-result v3
 
     .line 136
-    if-eqz v3, :cond_8b
+    if-eqz v3, :cond_1
 
     .line 137
     .line 138
@@ -431,7 +431,7 @@
 
     .line 139
     .line 140
-    :cond_8b
+    :cond_1
     add-float/2addr v5, v4
 
     .line 141
@@ -520,7 +520,7 @@
 .end method
 
 .method public final getOpacity()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, -0x3
@@ -530,7 +530,7 @@
 .end method
 
 .method public final onBoundsChange(Landroid/graphics/Rect;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-super {p0, p1}, Landroid/graphics/drawable/Drawable;->onBoundsChange(Landroid/graphics/Rect;)V
@@ -610,7 +610,7 @@
 .end method
 
 .method public final setAlpha(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/xu1;->c:Landroid/graphics/Paint;
@@ -631,7 +631,7 @@
 .end method
 
 .method public final setColorFilter(Landroid/graphics/ColorFilter;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/xu1;->c:Landroid/graphics/Paint;

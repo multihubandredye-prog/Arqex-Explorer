@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/f23;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/c23;-><init>(Llibs/f23;)V
@@ -17,7 +17,7 @@
 .end method
 
 .method public static c(Landroid/bluetooth/BluetoothDevice;)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Landroid/bluetooth/BluetoothDevice;->getBluetoothClass()Landroid/bluetooth/BluetoothClass;
@@ -28,14 +28,14 @@
     move-result-object v0
 
     .line 5
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
-    goto :goto_12
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     invoke-virtual {p0}, Landroid/bluetooth/BluetoothDevice;->getBluetoothClass()Landroid/bluetooth/BluetoothClass;
 
     .line 9
@@ -52,12 +52,12 @@
     move-result p0
 
     .line 16
-    sparse-switch p0, :sswitch_data_36
+    sparse-switch p0, :sswitch_data_0
 
     .line 17
     .line 18
     .line 19
-    :goto_12
+    :goto_0
     const-string p0, ""
 
     .line 20
@@ -65,7 +65,7 @@
     return-object p0
 
     .line 22
-    :sswitch_15
+    :sswitch_0
     const-string p0, "UNCATEGORIZED"
 
     .line 23
@@ -73,7 +73,7 @@
     return-object p0
 
     .line 25
-    :sswitch_18
+    :sswitch_1
     const-string p0, "HEALTH"
 
     .line 26
@@ -81,7 +81,7 @@
     return-object p0
 
     .line 28
-    :sswitch_1b
+    :sswitch_2
     const-string p0, "TOY"
 
     .line 29
@@ -89,7 +89,7 @@
     return-object p0
 
     .line 31
-    :sswitch_1e
+    :sswitch_3
     const-string p0, "WEARABLE"
 
     .line 32
@@ -97,7 +97,7 @@
     return-object p0
 
     .line 34
-    :sswitch_21
+    :sswitch_4
     const-string p0, "IMAGING"
 
     .line 35
@@ -105,7 +105,7 @@
     return-object p0
 
     .line 37
-    :sswitch_24
+    :sswitch_5
     const-string p0, "PERIPHERAL"
 
     .line 38
@@ -113,7 +113,7 @@
     return-object p0
 
     .line 40
-    :sswitch_27
+    :sswitch_6
     const-string p0, "AUDIO_VIDEO"
 
     .line 41
@@ -121,7 +121,7 @@
     return-object p0
 
     .line 43
-    :sswitch_2a
+    :sswitch_7
     const-string p0, "NETWORKING"
 
     .line 44
@@ -129,7 +129,7 @@
     return-object p0
 
     .line 46
-    :sswitch_2d
+    :sswitch_8
     const-string p0, "PHONE"
 
     .line 47
@@ -137,7 +137,7 @@
     return-object p0
 
     .line 49
-    :sswitch_30
+    :sswitch_9
     const-string p0, "PC"
 
     .line 50
@@ -145,7 +145,7 @@
     return-object p0
 
     .line 52
-    :sswitch_33
+    :sswitch_a
     const-string p0, "MISC"
 
     .line 53
@@ -153,26 +153,26 @@
     return-object p0
 
     .line 55
-    :sswitch_data_36
+    :sswitch_data_0
     .sparse-switch
-        0x0 -> :sswitch_33
-        0x100 -> :sswitch_30
-        0x200 -> :sswitch_2d
-        0x300 -> :sswitch_2a
-        0x400 -> :sswitch_27
-        0x500 -> :sswitch_24
-        0x600 -> :sswitch_21
-        0x700 -> :sswitch_1e
-        0x800 -> :sswitch_1b
-        0x900 -> :sswitch_18
-        0x1f00 -> :sswitch_15
+        0x0 -> :sswitch_a
+        0x100 -> :sswitch_9
+        0x200 -> :sswitch_8
+        0x300 -> :sswitch_7
+        0x400 -> :sswitch_6
+        0x500 -> :sswitch_5
+        0x600 -> :sswitch_4
+        0x700 -> :sswitch_3
+        0x800 -> :sswitch_2
+        0x900 -> :sswitch_1
+        0x1f00 -> :sswitch_0
     .end sparse-switch
 .end method
 
 
 # virtual methods
 .method public final a()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "Bluetooth_Scanner"
@@ -183,7 +183,7 @@
 .end method
 
 .method public final run()V
-    .registers 20
+    .locals 19
 
     .line 1
     move-object/from16 v1, p0
@@ -210,7 +210,7 @@
     move-result-object v4
 
     .line 13
-    :try_start_c
+    :try_start_0
     invoke-static {}, Landroid/bluetooth/BluetoothAdapter;->getDefaultAdapter()Landroid/bluetooth/BluetoothAdapter;
 
     .line 14
@@ -219,7 +219,7 @@
     move-result-object v5
 
     .line 17
-    if-eqz v5, :cond_150
+    if-eqz v5, :cond_6
 
     .line 18
     .line 19
@@ -231,26 +231,26 @@
     move-result v6
 
     .line 23
-    if-nez v6, :cond_1a
+    if-nez v6, :cond_0
 
     .line 24
     .line 25
-    goto/16 :goto_150
+    goto/16 :goto_5
 
     .line 26
     .line 27
-    :cond_1a
+    :cond_0
     invoke-virtual {v5}, Landroid/bluetooth/BluetoothAdapter;->getBondedDevices()Ljava/util/Set;
 
     .line 28
     .line 29
     .line 30
     move-result-object v5
-    :try_end_1e
-    .catch Ljava/lang/Exception; {:try_start_c .. :try_end_1e} :catch_154
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 31
-    if-eqz v5, :cond_14c
+    if-eqz v5, :cond_5
 
     .line 32
     .line 33
@@ -262,7 +262,7 @@
     move-result v6
 
     .line 37
-    if-lez v6, :cond_14c
+    if-lez v6, :cond_5
 
     .line 38
     .line 39
@@ -274,7 +274,7 @@
     move-result-object v5
 
     .line 43
-    :goto_2a
+    :goto_0
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
     .line 44
@@ -283,7 +283,7 @@
     move-result v6
 
     .line 47
-    if-eqz v6, :cond_14c
+    if-eqz v6, :cond_5
 
     .line 48
     .line 49
@@ -307,16 +307,16 @@
     move-result v7
 
     .line 59
-    if-eqz v7, :cond_3e
+    if-eqz v7, :cond_1
 
     .line 60
     .line 61
-    goto/16 :goto_14c
+    goto/16 :goto_4
 
     .line 62
     .line 63
-    :cond_3e
-    :try_start_3e
+    :cond_1
+    :try_start_1
     invoke-virtual {v6}, Landroid/bluetooth/BluetoothDevice;->getName()Ljava/lang/String;
 
     .line 64
@@ -606,7 +606,7 @@
     .line 216
     .line 217
     .line 218
-    if-eqz v14, :cond_13e
+    if-eqz v14, :cond_4
 
     .line 219
     .line 220
@@ -618,7 +618,7 @@
     move-result v4
 
     .line 224
-    if-eqz v4, :cond_e6
+    if-eqz v4, :cond_2
 
     .line 225
     .line 226
@@ -626,18 +626,18 @@
 
     .line 227
     .line 228
-    goto :goto_e6
+    goto :goto_1
 
     .line 229
-    :catchall_e4
+    :catchall_0
     move-exception v0
 
     .line 230
-    goto :goto_144
+    goto :goto_3
 
     .line 231
-    :cond_e6
-    :goto_e6
+    :cond_2
+    :goto_1
     invoke-virtual/range {v18 .. v18}, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
 
     .line 232
@@ -692,7 +692,7 @@
     move-result v7
 
     .line 259
-    if-lez v7, :cond_116
+    if-lez v7, :cond_3
 
     .line 260
     .line 261
@@ -727,14 +727,14 @@
     move-result-object v5
 
     .line 278
-    goto :goto_117
+    goto :goto_2
 
     .line 279
-    :cond_116
+    :cond_3
     move-object v5, v0
 
     .line 280
-    :goto_117
+    :goto_2
     invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 281
@@ -808,13 +808,13 @@
 
     .line 316
     invoke-virtual {v3, v1, v8, v4}, Llibs/f23;->b(Llibs/c23;Llibs/r90;I)V
-    :try_end_13e
-    .catchall {:try_start_3e .. :try_end_13e} :catchall_e4
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 317
     .line 318
     .line 319
-    :cond_13e
+    :cond_4
     move-object/from16 v4, v16
 
     .line 320
@@ -823,11 +823,11 @@
 
     .line 322
     .line 323
-    goto/16 :goto_2a
+    goto/16 :goto_0
 
     .line 324
     .line 325
-    :goto_144
+    :goto_3
     invoke-static {v0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 326
@@ -844,8 +844,8 @@
     return-void
 
     .line 333
-    :cond_14c
-    :goto_14c
+    :cond_5
+    :goto_4
     invoke-virtual {v3, v1}, Llibs/f23;->a(Llibs/c23;)V
 
     .line 334
@@ -854,12 +854,12 @@
     return-void
 
     .line 337
-    :cond_150
-    :goto_150
-    :try_start_150
+    :cond_6
+    :goto_5
+    :try_start_2
     invoke-virtual {v3, v1}, Llibs/f23;->a(Llibs/c23;)V
-    :try_end_153
-    .catch Ljava/lang/Exception; {:try_start_150 .. :try_end_153} :catch_154
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 338
     .line 339
@@ -867,7 +867,7 @@
     return-void
 
     .line 341
-    :catch_154
+    :catch_0
     invoke-virtual {v3, v1}, Llibs/f23;->a(Llibs/c23;)V
 
     .line 342

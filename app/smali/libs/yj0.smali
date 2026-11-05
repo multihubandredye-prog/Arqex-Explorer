@@ -15,12 +15,12 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     .line 33
     iput-object p1, p0, Llibs/yj0;->a:Ljava/lang/Object;
@@ -28,7 +28,7 @@
     return-void
 
     .line 34
-    :cond_8
+    :cond_0
     const-string p1, "null source"
 
     invoke-static {p1}, Llibs/ic0;->p(Ljava/lang/String;)V
@@ -39,7 +39,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Object;IZ)V
-    .registers 4
+    .locals 0
 
     .line 28
     invoke-direct {p0, p1}, Llibs/yj0;-><init>(Ljava/lang/Object;)V
@@ -61,7 +61,7 @@
 .end method
 
 .method public constructor <init>(Llibs/w63;ILjava/lang/Exception;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/yj0;-><init>(Ljava/lang/Object;)V
@@ -86,26 +86,26 @@
 
     .line 12
     .line 13
-    if-nez p3, :cond_10
+    if-nez p3, :cond_0
 
     .line 14
     .line 15
     const/4 p1, 0x1
 
     .line 16
-    goto :goto_11
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     const/4 p1, 0x0
 
     .line 18
-    :goto_11
+    :goto_0
     iput-boolean p1, p0, Llibs/yj0;->c:Z
 
     .line 19
     .line 20
-    if-eqz p3, :cond_1a
+    if-eqz p3, :cond_1
 
     .line 21
     .line 22
@@ -118,14 +118,14 @@
     .line 25
     .line 26
     .line 27
-    :cond_1a
+    :cond_1
     return-void
 .end method
 
 
 # virtual methods
 .method public final a(Ljava/lang/Object;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/yj0;->d:Ljava/util/HashMap;
@@ -141,7 +141,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

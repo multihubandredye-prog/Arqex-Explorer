@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/a;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/qc;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 6
+    .locals 5
 
     .line 1
     iget-byte v0, p0, Llibs/qc;->X:B
@@ -50,7 +50,7 @@
 
     .line 5
     .line 6
-    packed-switch v0, :pswitch_data_84
+    packed-switch v0, :pswitch_data_0
 
     .line 7
     .line 8
@@ -75,7 +75,7 @@
     return-void
 
     .line 19
-    :pswitch_12
+    :pswitch_0
     sget v0, Llibs/bi2;->failed:I
 
     .line 20
@@ -96,7 +96,7 @@
     return-void
 
     .line 29
-    :pswitch_1c
+    :pswitch_1
     sget v0, Llibs/bi2;->not_found:I
 
     .line 30
@@ -117,7 +117,7 @@
     return-void
 
     .line 39
-    :pswitch_26
+    :pswitch_2
     invoke-virtual {v2}, Lcom/mixplorer/activities/a;->f()V
 
     .line 40
@@ -126,8 +126,8 @@
     return-void
 
     .line 43
-    :pswitch_2a
-    :try_start_2a
+    :pswitch_3
+    :try_start_0
     new-instance v0, Landroid/content/Intent;
 
     .line 44
@@ -145,7 +145,7 @@
     move-result v3
 
     .line 52
-    if-eqz v3, :cond_3d
+    if-eqz v3, :cond_0
 
     .line 53
     .line 54
@@ -158,18 +158,18 @@
     .line 57
     .line 58
     .line 59
-    goto :goto_3d
+    goto :goto_0
 
     .line 60
-    :catchall_3b
+    :catchall_0
     move-exception v0
 
     .line 61
-    goto :goto_63
+    goto :goto_2
 
     .line 62
-    :cond_3d
-    :goto_3d
+    :cond_0
+    :goto_0
     invoke-static {}, Llibs/t43;->Task()Z
 
     .line 63
@@ -178,7 +178,7 @@
     move-result v3
 
     .line 66
-    if-eqz v3, :cond_4d
+    if-eqz v3, :cond_1
 
     .line 67
     .line 68
@@ -199,10 +199,10 @@
     .line 75
     .line 76
     .line 77
-    goto :goto_5d
+    goto :goto_1
 
     .line 78
-    :cond_4d
+    :cond_1
     const-string v3, "app_package"
 
     .line 79
@@ -233,22 +233,22 @@
     .line 92
     .line 93
     .line 94
-    :goto_5d
+    :goto_1
     const/16 v3, 0x7a
 
     .line 95
     .line 96
     invoke-static {v2, v0, v3}, Llibs/sw1;->Item(Landroid/app/Activity;Landroid/content/Intent;I)V
-    :try_end_62
-    .catchall {:try_start_2a .. :try_end_62} :catchall_3b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 97
     .line 98
     .line 99
-    goto :goto_73
+    goto :goto_3
 
     .line 100
-    :goto_63
+    :goto_2
     invoke-static {v0}, Llibs/vl3;->Map(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 101
@@ -281,12 +281,12 @@
     .line 114
     .line 115
     .line 116
-    :goto_73
+    :goto_3
     return-void
 
     .line 117
-    :pswitch_74
-    :try_start_74
+    :pswitch_4
+    :try_start_1
     new-instance v0, Llibs/qc;
 
     .line 118
@@ -300,17 +300,17 @@
     .line 122
     .line 123
     invoke-virtual {v2, v0}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
-    :try_end_7d
-    .catchall {:try_start_74 .. :try_end_7d} :catchall_7d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 124
     .line 125
     .line 126
-    :catchall_7d
+    :catchall_1
     return-void
 
     .line 127
-    :pswitch_7e
+    :pswitch_5
     const-string v0, "android.permission.POST_NOTIFICATIONS"
 
     .line 128
@@ -323,13 +323,13 @@
     return-void
 
     .line 133
-    :pswitch_data_84
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_7e
-        :pswitch_74
-        :pswitch_2a
-        :pswitch_26
-        :pswitch_1c
-        :pswitch_12
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

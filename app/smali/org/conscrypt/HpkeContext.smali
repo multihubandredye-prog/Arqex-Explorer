@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/conscrypt/HpkeSpi;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method private static findFirstProvider(Ljava/lang/String;)Ljava/security/Provider;
-    .registers 6
+    .locals 5
 
     .line 1
     invoke-static {}, Ljava/security/Security;->getProviders()[Ljava/security/Provider;
@@ -42,8 +42,8 @@
     const/4 v2, 0x0
 
     .line 7
-    :goto_6
-    if-ge v2, v1, :cond_1a
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     .line 8
     .line 9
@@ -63,7 +63,7 @@
     move-result-object v3
 
     .line 17
-    if-eqz v3, :cond_17
+    if-eqz v3, :cond_0
 
     .line 18
     .line 19
@@ -78,15 +78,15 @@
     return-object p0
 
     .line 24
-    :cond_17
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
     .line 25
     .line 26
-    goto :goto_6
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_1
     new-instance v0, Ljava/security/NoSuchAlgorithmException;
 
     .line 28
@@ -108,21 +108,21 @@
     .line 36
     .line 37
     .line 38
-    goto :goto_27
+    goto :goto_2
 
     .line 39
-    :goto_26
+    :goto_1
     throw v0
 
     .line 40
-    :goto_27
-    goto :goto_26
+    :goto_2
+    goto :goto_1
 .end method
 
 .method public static findSpi(Ljava/lang/String;)Lorg/conscrypt/HpkeSpi;
-    .registers 2
+    .locals 1
 
-    if-eqz p0, :cond_b
+    if-eqz p0, :cond_0
 
     .line 65
     invoke-static {p0}, Lorg/conscrypt/HpkeContext;->findFirstProvider(Ljava/lang/String;)Ljava/security/Provider;
@@ -136,7 +136,7 @@
     return-object p0
 
     .line 66
-    :cond_b
+    :cond_0
     new-instance p0, Ljava/security/NoSuchAlgorithmException;
 
     const-string v0, "null algorithm"
@@ -147,23 +147,23 @@
 .end method
 
 .method public static findSpi(Ljava/lang/String;Ljava/lang/String;)Lorg/conscrypt/HpkeSpi;
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_1f
+    if-eqz p1, :cond_1
 
     .line 60
     invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_1
 
     .line 61
     invoke-static {p1}, Ljava/security/Security;->getProvider(Ljava/lang/String;)Ljava/security/Provider;
 
     move-result-object v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 62
     invoke-static {p0, v0}, Lorg/conscrypt/HpkeContext;->findSpi(Ljava/lang/String;Ljava/security/Provider;)Lorg/conscrypt/HpkeSpi;
@@ -173,7 +173,7 @@
     return-object p0
 
     .line 63
-    :cond_13
+    :cond_0
     new-instance p0, Ljava/security/NoSuchProviderException;
 
     const-string v0, "Unknown Provider: "
@@ -187,7 +187,7 @@
     throw p0
 
     .line 64
-    :cond_1f
+    :cond_1
     const-string p0, "Invalid provider name"
 
     invoke-static {p0}, Llibs/ic0;->p(Ljava/lang/String;)V
@@ -198,13 +198,13 @@
 .end method
 
 .method public static findSpi(Ljava/lang/String;Ljava/security/Provider;)Lorg/conscrypt/HpkeSpi;
-    .registers 4
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-eqz p1, :cond_35
+    if-eqz p1, :cond_3
 
     .line 3
     .line 4
@@ -220,7 +220,7 @@
     move-result-object p0
 
     .line 10
-    if-eqz p0, :cond_2d
+    if-eqz p0, :cond_2
 
     .line 11
     .line 12
@@ -236,7 +236,7 @@
 
     .line 17
     .line 18
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_0
 
     .line 19
     .line 20
@@ -244,10 +244,10 @@
 
     .line 21
     .line 22
-    goto :goto_1a
+    goto :goto_0
 
     .line 23
-    :cond_16
+    :cond_0
     invoke-static {p0}, Lorg/conscrypt/DuckTypedHpkeSpi;->newInstance(Ljava/lang/Object;)Lorg/conscrypt/DuckTypedHpkeSpi;
 
     .line 24
@@ -256,15 +256,15 @@
     move-result-object p0
 
     .line 27
-    :goto_1a
-    if-eqz p0, :cond_1d
+    :goto_0
+    if-eqz p0, :cond_1
 
     .line 28
     .line 29
     return-object p0
 
     .line 30
-    :cond_1d
+    :cond_1
     invoke-virtual {p1}, Ljava/security/Provider;->getName()Ljava/lang/String;
 
     .line 31
@@ -297,7 +297,7 @@
     return-object v0
 
     .line 46
-    :cond_2d
+    :cond_2
     new-instance p0, Ljava/security/NoSuchAlgorithmException;
 
     .line 47
@@ -314,7 +314,7 @@
     throw p0
 
     .line 54
-    :cond_35
+    :cond_3
     const-string p0, "null Provider"
 
     .line 55
@@ -330,7 +330,7 @@
 
 # virtual methods
 .method public export(I[B)[B
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/HpkeContext;->spi:Lorg/conscrypt/HpkeSpi;
@@ -349,7 +349,7 @@
 .end method
 
 .method public getSpi()Lorg/conscrypt/HpkeSpi;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/HpkeContext;->spi:Lorg/conscrypt/HpkeSpi;

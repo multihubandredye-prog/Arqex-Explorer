@@ -19,7 +19,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-wide v0, 0xdf8475800L
@@ -37,7 +37,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/en3;-><init>()V
@@ -49,7 +49,7 @@
 .end method
 
 .method public static h()Llibs/p6;
-    .registers 9
+    .locals 9
 
     .line 1
     sget-object v0, Llibs/p6;->i:Llibs/p6;
@@ -67,7 +67,7 @@
     const/4 v2, 0x0
 
     .line 8
-    if-nez v0, :cond_28
+    if-nez v0, :cond_1
 
     .line 9
     .line 10
@@ -97,7 +97,7 @@
 
     .line 23
     .line 24
-    if-nez v0, :cond_27
+    if-nez v0, :cond_0
 
     .line 25
     .line 26
@@ -120,7 +120,7 @@
 
     .line 34
     .line 35
-    if-ltz v5, :cond_27
+    if-ltz v5, :cond_0
 
     .line 36
     .line 37
@@ -131,11 +131,11 @@
     return-object v0
 
     .line 40
-    :cond_27
+    :cond_0
     return-object v2
 
     .line 41
-    :cond_28
+    :cond_1
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
     .line 42
@@ -159,7 +159,7 @@
 
     .line 51
     .line 52
-    if-lez v7, :cond_42
+    if-lez v7, :cond_2
 
     .line 53
     .line 54
@@ -190,7 +190,7 @@
     return-object v2
 
     .line 67
-    :cond_42
+    :cond_2
     sget-object v1, Llibs/p6;->i:Llibs/p6;
 
     .line 68
@@ -213,14 +213,14 @@
 
 # virtual methods
 .method public final i()V
-    .registers 11
+    .locals 10
 
     .line 1
     iget-boolean v0, p0, Llibs/p6;->e:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_7c
+    if-nez v0, :cond_8
 
     .line 4
     .line 5
@@ -240,18 +240,18 @@
 
     .line 12
     .line 13
-    if-nez v5, :cond_11
+    if-nez v5, :cond_0
 
     .line 14
     .line 15
-    if-nez v2, :cond_11
+    if-nez v2, :cond_0
 
     .line 16
     .line 17
     return-void
 
     .line 18
-    :cond_11
+    :cond_0
     const/4 v5, 0x1
 
     .line 19
@@ -266,12 +266,12 @@
     monitor-enter v5
 
     .line 24
-    :try_start_17
+    :try_start_0
     sget-object v6, Llibs/p6;->i:Llibs/p6;
 
     .line 25
     .line 26
-    if-nez v6, :cond_2d
+    if-nez v6, :cond_1
 
     .line 27
     .line 28
@@ -302,18 +302,18 @@
     .line 41
     .line 42
     .line 43
-    goto :goto_2d
+    goto :goto_0
 
     .line 44
-    :catchall_2b
+    :catchall_0
     move-exception v0
 
     .line 45
-    goto :goto_7a
+    goto :goto_4
 
     .line 46
-    :cond_2d
-    :goto_2d
+    :cond_1
+    :goto_0
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
     .line 47
@@ -326,11 +326,11 @@
 
     .line 51
     .line 52
-    if-eqz v8, :cond_44
+    if-eqz v8, :cond_2
 
     .line 53
     .line 54
-    if-eqz v2, :cond_44
+    if-eqz v2, :cond_2
 
     .line 55
     .line 56
@@ -360,15 +360,15 @@
 
     .line 67
     .line 68
-    goto :goto_54
+    goto :goto_1
 
     .line 69
-    :cond_44
+    :cond_2
     cmp-long v8, v0, v3
 
     .line 70
     .line 71
-    if-eqz v8, :cond_4c
+    if-eqz v8, :cond_3
 
     .line 72
     .line 73
@@ -379,11 +379,11 @@
 
     .line 75
     .line 76
-    goto :goto_54
+    goto :goto_1
 
     .line 77
-    :cond_4c
-    if-eqz v2, :cond_74
+    :cond_3
+    if-eqz v2, :cond_7
 
     .line 78
     .line 79
@@ -399,7 +399,7 @@
 
     .line 84
     .line 85
-    :goto_54
+    :goto_1
     sub-long/2addr v0, v6
 
     .line 86
@@ -407,12 +407,12 @@
 
     .line 87
     .line 88
-    :goto_57
+    :goto_2
     iget-object v3, v2, Llibs/p6;->f:Llibs/p6;
 
     .line 89
     .line 90
-    if-eqz v3, :cond_65
+    if-eqz v3, :cond_5
 
     .line 91
     .line 92
@@ -427,22 +427,22 @@
 
     .line 96
     .line 97
-    if-gez v4, :cond_63
+    if-gez v4, :cond_4
 
     .line 98
     .line 99
-    goto :goto_65
+    goto :goto_3
 
     .line 100
-    :cond_63
+    :cond_4
     move-object v2, v3
 
     .line 101
-    goto :goto_57
+    goto :goto_2
 
     .line 102
-    :cond_65
-    :goto_65
+    :cond_5
+    :goto_3
     iput-object v3, p0, Llibs/p6;->f:Llibs/p6;
 
     .line 103
@@ -455,7 +455,7 @@
 
     .line 107
     .line 108
-    if-ne v2, v0, :cond_72
+    if-ne v2, v0, :cond_6
 
     .line 109
     .line 110
@@ -464,21 +464,21 @@
     .line 111
     .line 112
     invoke-virtual {v0}, Ljava/lang/Object;->notify()V
-    :try_end_72
-    .catchall {:try_start_17 .. :try_end_72} :catchall_2b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 113
     .line 114
     .line 115
-    :cond_72
+    :cond_6
     monitor-exit v5
 
     .line 116
     return-void
 
     .line 117
-    :cond_74
-    :try_start_74
+    :cond_7
+    :try_start_1
     new-instance v0, Ljava/lang/AssertionError;
 
     .line 118
@@ -491,16 +491,16 @@
     throw v0
 
     .line 123
-    :goto_7a
+    :goto_4
     monitor-exit v5
-    :try_end_7b
-    .catchall {:try_start_74 .. :try_end_7b} :catchall_2b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 124
     throw v0
 
     .line 125
-    :cond_7c
+    :cond_8
     const-string v0, "Unbalanced enter/exit"
 
     .line 126
@@ -514,7 +514,7 @@
 .end method
 
 .method public final j(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/p6;->k()Z
@@ -525,18 +525,18 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_1
 
     .line 6
     .line 7
-    if-nez p1, :cond_9
+    if-nez p1, :cond_0
 
     .line 8
     .line 9
-    goto :goto_f
+    goto :goto_0
 
     .line 10
-    :cond_9
+    :cond_0
     const/4 p1, 0x0
 
     .line 11
@@ -551,13 +551,13 @@
     throw p1
 
     .line 16
-    :cond_f
-    :goto_f
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public final k()Z
-    .registers 5
+    .locals 4
 
     .line 1
     iget-boolean v0, p0, Llibs/p6;->e:Z
@@ -567,14 +567,14 @@
     const/4 v1, 0x0
 
     .line 4
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 5
     .line 6
     return v1
 
     .line 7
-    :cond_6
+    :cond_0
     iput-boolean v1, p0, Llibs/p6;->e:Z
 
     .line 8
@@ -586,13 +586,13 @@
     monitor-enter v0
 
     .line 12
-    :try_start_b
+    :try_start_0
     sget-object v2, Llibs/p6;->i:Llibs/p6;
 
     .line 13
     .line 14
-    :goto_d
-    if-eqz v2, :cond_20
+    :goto_0
+    if-eqz v2, :cond_2
 
     .line 15
     .line 16
@@ -600,7 +600,7 @@
 
     .line 17
     .line 18
-    if-ne v3, p0, :cond_1e
+    if-ne v3, p0, :cond_1
 
     .line 19
     .line 20
@@ -616,8 +616,8 @@
 
     .line 25
     iput-object v2, p0, Llibs/p6;->f:Llibs/p6;
-    :try_end_1a
-    .catchall {:try_start_b .. :try_end_1a} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 26
     .line 27
@@ -627,21 +627,21 @@
     return v1
 
     .line 29
-    :catchall_1c
+    :catchall_0
     move-exception v1
 
     .line 30
-    goto :goto_23
+    goto :goto_1
 
     .line 31
-    :cond_1e
+    :cond_1
     move-object v2, v3
 
     .line 32
-    goto :goto_d
+    goto :goto_0
 
     .line 33
-    :cond_20
+    :cond_2
     monitor-exit v0
 
     .line 34
@@ -651,26 +651,26 @@
     return v0
 
     .line 36
-    :goto_23
-    :try_start_23
+    :goto_1
+    :try_start_1
     monitor-exit v0
-    :try_end_24
-    .catchall {:try_start_23 .. :try_end_24} :catchall_1c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 37
-    goto :goto_26
+    goto :goto_3
 
     .line 38
-    :goto_25
+    :goto_2
     throw v1
 
     .line 39
-    :goto_26
-    goto :goto_25
+    :goto_3
+    goto :goto_2
 .end method
 
 .method public l(Ljava/io/IOException;)Ljava/io/IOException;
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/io/InterruptedIOException;
@@ -686,7 +686,7 @@
     .line 6
     .line 7
     .line 8
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_0
 
     .line 9
     .line 10
@@ -695,12 +695,12 @@
     .line 11
     .line 12
     .line 13
-    :cond_c
+    :cond_0
     return-object v0
 .end method
 
 .method public m()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void

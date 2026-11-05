@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,7 +22,7 @@
 .end method
 
 .method public constructor <init>(Llibs/oi0;Ljava/lang/String;I)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,20 +46,20 @@
 .end method
 
 .method public static a([C)[B
-    .registers 6
+    .locals 5
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-eqz p0, :cond_22
+    if-eqz p0, :cond_1
 
     .line 3
     .line 4
     array-length v1, p0
 
     .line 5
-    if-lez v1, :cond_22
+    if-lez v1, :cond_1
 
     .line 6
     .line 7
@@ -78,11 +78,11 @@
 
     .line 13
     .line 14
-    :goto_d
+    :goto_0
     array-length v2, p0
 
     .line 15
-    if-eq v0, v2, :cond_21
+    if-eq v0, v2, :cond_0
 
     .line 16
     .line 17
@@ -120,14 +120,14 @@
 
     .line 32
     .line 33
-    goto :goto_d
+    goto :goto_0
 
     .line 34
-    :cond_21
+    :cond_0
     return-object v1
 
     .line 35
-    :cond_22
+    :cond_1
     new-array p0, v0, [B
 
     .line 36
@@ -136,13 +136,13 @@
 .end method
 
 .method public static b([C)[B
-    .registers 5
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-eqz p0, :cond_11
+    if-eqz p0, :cond_1
 
     .line 3
     .line 4
@@ -153,8 +153,8 @@
 
     .line 6
     .line 7
-    :goto_6
-    if-eq v0, v1, :cond_10
+    :goto_0
+    if-eq v0, v1, :cond_0
 
     .line 8
     .line 9
@@ -173,14 +173,14 @@
 
     .line 15
     .line 16
-    goto :goto_6
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     return-object v2
 
     .line 18
-    :cond_11
+    :cond_1
     new-array p0, v0, [B
 
     .line 19
@@ -194,7 +194,7 @@
 .end method
 
 .method public d(Ljava/lang/String;)Ljava/lang/String;
-    .registers 14
+    .locals 12
 
     .line 1
     iget-object v0, p0, Llibs/pe;->b:Ljava/lang/Object;
@@ -245,7 +245,7 @@
 
     .line 24
     .line 25
-    if-eqz v2, :cond_1e
+    if-eqz v2, :cond_0
 
     .line 26
     .line 27
@@ -257,7 +257,7 @@
     move-result-object v4
 
     .line 31
-    :cond_1e
+    :cond_0
     iget-object v1, v0, Llibs/oi0;->a:Llibs/hi0;
 
     .line 32
@@ -273,14 +273,14 @@
     const/4 v5, 0x0
 
     .line 38
-    if-eqz v1, :cond_3d
+    if-eqz v1, :cond_2
 
     .line 39
     .line 40
     array-length v1, v4
 
     .line 41
-    if-ltz v1, :cond_33
+    if-ltz v1, :cond_1
 
     .line 42
     .line 43
@@ -300,10 +300,10 @@
     move-result-object v1
 
     .line 51
-    goto :goto_41
+    goto :goto_0
 
     .line 52
-    :cond_33
+    :cond_1
     new-instance p1, Ljava/lang/NegativeArraySizeException;
 
     .line 53
@@ -324,7 +324,7 @@
     throw p1
 
     .line 62
-    :cond_3d
+    :cond_2
     invoke-static {v2, p1}, Llibs/ji0;->Get(Ljavax/crypto/Mac;[B)[B
 
     .line 63
@@ -333,7 +333,7 @@
     move-result-object v1
 
     .line 66
-    :goto_41
+    :goto_0
     new-array v2, v3, [B
 
     .line 67
@@ -370,8 +370,8 @@
     const/4 v9, 0x0
 
     .line 82
-    :goto_51
-    if-ge v9, v3, :cond_5e
+    :goto_1
+    if-ge v9, v3, :cond_3
 
     .line 83
     .line 84
@@ -397,10 +397,10 @@
 
     .line 93
     .line 94
-    goto :goto_51
+    goto :goto_1
 
     .line 95
-    :cond_5e
+    :cond_3
     invoke-virtual {p0, v0, p1, v6}, Llibs/pe;->c(Llibs/oi0;[B[B)[B
 
     .line 96
@@ -450,26 +450,26 @@
 
     .line 117
     .line 118
-    if-ne p1, v8, :cond_78
+    if-ne p1, v8, :cond_4
 
     .line 119
     .line 120
-    goto :goto_79
+    goto :goto_2
 
     .line 121
-    :cond_78
+    :cond_4
     const/4 v8, 0x0
 
     .line 122
-    :goto_79
-    if-eqz v8, :cond_7c
+    :goto_2
+    if-eqz v8, :cond_5
 
     .line 123
     .line 124
     const/4 v7, 0x5
 
     .line 125
-    :cond_7c
+    :cond_5
     int-to-double v0, v0
 
     .line 126
@@ -517,12 +517,12 @@
     .line 146
     .line 147
     .line 148
-    if-eqz v8, :cond_aa
+    if-eqz v8, :cond_7
 
     .line 149
     .line 150
-    :goto_95
-    if-ge v5, p1, :cond_c6
+    :goto_3
+    if-ge v5, p1, :cond_a
 
     .line 151
     .line 152
@@ -530,7 +530,7 @@
 
     .line 153
     .line 154
-    if-ltz v1, :cond_a2
+    if-ltz v1, :cond_6
 
     .line 155
     .line 156
@@ -538,7 +538,7 @@
 
     .line 157
     .line 158
-    if-ge v1, v2, :cond_a2
+    if-ge v1, v2, :cond_6
 
     .line 159
     .line 160
@@ -546,15 +546,15 @@
 
     .line 161
     .line 162
-    goto :goto_a4
+    goto :goto_4
 
     .line 163
-    :cond_a2
+    :cond_6
     add-int/lit8 v1, v1, 0x18
 
     .line 164
     .line 165
-    :goto_a4
+    :goto_4
     int-to-byte v1, v1
 
     .line 166
@@ -566,12 +566,12 @@
 
     .line 169
     .line 170
-    goto :goto_95
+    goto :goto_3
 
     .line 171
-    :cond_aa
-    :goto_aa
-    if-ge v5, p1, :cond_c6
+    :cond_7
+    :goto_5
+    if-ge v5, p1, :cond_a
 
     .line 172
     .line 173
@@ -583,7 +583,7 @@
 
     .line 176
     .line 177
-    if-le v1, v2, :cond_bc
+    if-le v1, v2, :cond_9
 
     .line 178
     .line 179
@@ -591,7 +591,7 @@
 
     .line 180
     .line 181
-    if-le v1, v2, :cond_b9
+    if-le v1, v2, :cond_8
 
     .line 182
     .line 183
@@ -599,18 +599,18 @@
 
     .line 184
     .line 185
-    goto :goto_c0
+    goto :goto_6
 
     .line 186
-    :cond_b9
+    :cond_8
     add-int/lit8 v1, v1, 0x35
 
     .line 187
     .line 188
-    goto :goto_c0
+    goto :goto_6
 
     .line 189
-    :cond_bc
+    :cond_9
     sget-object v2, Llibs/ah;->b:[C
 
     .line 190
@@ -619,7 +619,7 @@
 
     .line 192
     .line 193
-    :goto_c0
+    :goto_6
     int-to-byte v1, v1
 
     .line 194
@@ -631,10 +631,10 @@
 
     .line 197
     .line 198
-    goto :goto_aa
+    goto :goto_5
 
     .line 199
-    :cond_c6
+    :cond_a
     new-instance p1, Ljava/lang/String;
 
     .line 200
@@ -660,7 +660,7 @@
 .end method
 
 .method public i([BI[B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/pe;->b:Ljava/lang/Object;

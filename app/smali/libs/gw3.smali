@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/nv3;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p1}, Llibs/nv3;->b()Llibs/Theme;
@@ -34,7 +34,7 @@
 
 # virtual methods
 .method public final e()[B
-    .registers 2
+    .locals 1
 
     .line 1
     :try_start_0
@@ -48,14 +48,14 @@
     .line 5
     .line 6
     move-result-object v0
-    :try_end_6
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 7
     return-object v0
 
     .line 8
-    :catch_7
+    :catch_0
     move-exception v0
 
     .line 9

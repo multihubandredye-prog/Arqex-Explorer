@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/la0;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/pe;-><init>()V
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public final e(I)Llibs/hh1;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Llibs/p82;->f(I)Llibs/hh1;
@@ -69,7 +69,7 @@
 .end method
 
 .method public final f(I)Llibs/hh1;
-    .registers 6
+    .locals 4
 
     .line 1
     div-int/lit8 p1, p1, 0x8
@@ -111,7 +111,7 @@
 .end method
 
 .method public final g(II)Llibs/ta2;
-    .registers 7
+    .locals 4
 
     .line 1
     div-int/lit8 p1, p1, 0x8
@@ -159,7 +159,7 @@
 .end method
 
 .method public final j(I)[B
-    .registers 20
+    .locals 18
 
     .line 1
     move-object/from16 v0, p0
@@ -233,15 +233,15 @@
     const/4 v10, 0x0
 
     .line 34
-    :goto_21
-    if-gt v9, v3, :cond_76
+    :goto_0
+    if-gt v9, v3, :cond_5
 
     .line 35
     .line 36
     const/4 v11, 0x3
 
     .line 37
-    :goto_24
+    :goto_1
     aget-byte v12, v6, v11
 
     .line 38
@@ -256,7 +256,7 @@
 
     .line 42
     .line 43
-    if-nez v12, :cond_2f
+    if-nez v12, :cond_0
 
     .line 44
     .line 45
@@ -264,10 +264,10 @@
 
     .line 46
     .line 47
-    goto :goto_24
+    goto :goto_1
 
     .line 48
-    :cond_2f
+    :cond_0
     iget-object v11, v0, Llibs/pe;->c:Ljava/io/Serializable;
 
     .line 49
@@ -280,11 +280,11 @@
 
     .line 53
     .line 54
-    if-eqz v12, :cond_6f
+    if-eqz v12, :cond_4
 
     .line 55
     .line 56
-    if-eqz v11, :cond_3d
+    if-eqz v11, :cond_1
 
     .line 57
     .line 58
@@ -296,7 +296,7 @@
     .line 60
     .line 61
     .line 62
-    :cond_3d
+    :cond_1
     invoke-virtual {v1, v6, v8, v5}, Llibs/lw0;->update([BII)V
 
     .line 63
@@ -322,8 +322,8 @@
     const/4 v13, 0x1
 
     .line 75
-    :goto_4a
-    if-ge v13, v12, :cond_6a
+    :goto_2
+    if-ge v13, v12, :cond_3
 
     .line 76
     .line 77
@@ -343,11 +343,11 @@
     const/4 v14, 0x0
 
     .line 85
-    :goto_54
+    :goto_3
     array-length v15, v11
 
     .line 86
-    if-eq v14, v15, :cond_66
+    if-eq v14, v15, :cond_2
 
     .line 87
     .line 88
@@ -381,10 +381,10 @@
     const/4 v4, 0x1
 
     .line 102
-    goto :goto_54
+    goto :goto_3
 
     .line 103
-    :cond_66
+    :cond_2
     add-int/lit8 v13, v13, 0x1
 
     .line 104
@@ -392,10 +392,10 @@
     const/4 v4, 0x1
 
     .line 106
-    goto :goto_4a
+    goto :goto_2
 
     .line 107
-    :cond_6a
+    :cond_3
     add-int/2addr v10, v2
 
     .line 108
@@ -406,10 +406,10 @@
     const/4 v4, 0x1
 
     .line 111
-    goto :goto_21
+    goto :goto_0
 
     .line 112
-    :cond_6f
+    :cond_4
     const-string v1, "iteration count must be at least 1."
 
     .line 113
@@ -425,6 +425,6 @@
     return-object v1
 
     .line 119
-    :cond_76
+    :cond_5
     return-object v7
 .end method

@@ -27,7 +27,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-wide/16 v0, 0x0
@@ -75,7 +75,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/xr2;
@@ -96,7 +96,7 @@
 .end method
 
 .method public constructor <init>(Llibs/gu0;)V
-    .registers 2
+    .locals 0
 
     .line 10
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -108,7 +108,7 @@
 .end method
 
 .method public static b([B)V
-    .registers 3
+    .locals 2
 
     .line 1
     array-length v0, p0
@@ -118,8 +118,8 @@
 
     .line 3
     .line 4
-    :goto_3
-    if-ltz v0, :cond_14
+    :goto_0
+    if-ltz v0, :cond_1
 
     .line 5
     .line 6
@@ -142,30 +142,30 @@
 
     .line 14
     .line 15
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     .line 16
     .line 17
-    goto :goto_14
+    goto :goto_1
 
     .line 18
-    :cond_11
+    :cond_0
     add-int/lit8 v0, v0, -0x1
 
     .line 19
     .line 20
-    goto :goto_3
+    goto :goto_0
 
     .line 21
-    :cond_14
-    :goto_14
+    :cond_1
+    :goto_1
     return-void
 .end method
 
 
 # virtual methods
 .method public final a()Llibs/l50;
-    .registers 24
+    .locals 23
 
     .line 1
     move-object/from16 v0, p0
@@ -194,7 +194,7 @@
 
     .line 12
     .line 13
-    if-eqz v1, :cond_153
+    if-eqz v1, :cond_9
 
     .line 14
     .line 15
@@ -257,7 +257,7 @@
 
     .line 43
     .line 44
-    :goto_2b
+    :goto_0
     iget-object v14, v0, Llibs/m50;->e:Ljava/security/SecureRandom;
 
     .line 45
@@ -344,14 +344,14 @@
     move-result v15
 
     .line 88
-    if-nez v15, :cond_5a
+    if-nez v15, :cond_0
 
     .line 89
     .line 90
-    goto :goto_2b
+    goto :goto_0
 
     .line 91
-    :cond_5a
+    :cond_0
     invoke-static {v9}, Llibs/t43;->g([B)[B
 
     .line 92
@@ -375,16 +375,16 @@
     const/4 v4, 0x0
 
     .line 102
-    :goto_65
-    if-ge v4, v2, :cond_150
+    :goto_1
+    if-ge v4, v2, :cond_8
 
     .line 103
     .line 104
     const/4 v6, 0x1
 
     .line 105
-    :goto_68
-    if-gt v6, v12, :cond_87
+    :goto_2
+    if-gt v6, v12, :cond_1
 
     .line 106
     .line 107
@@ -444,10 +444,10 @@
 
     .line 134
     .line 135
-    goto :goto_68
+    goto :goto_2
 
     .line 136
-    :cond_87
+    :cond_1
     move/from16 v20, v2
 
     .line 137
@@ -565,15 +565,15 @@
 
     .line 194
     .line 195
-    if-eq v4, v6, :cond_c6
+    if-eq v4, v6, :cond_2
 
     .line 196
     .line 197
-    goto/16 :goto_149
+    goto/16 :goto_5
 
     .line 198
     .line 199
-    :cond_c6
+    :cond_2
     iget v4, v0, Llibs/m50;->d:I
 
     .line 200
@@ -586,7 +586,7 @@
     move-result v4
 
     .line 205
-    if-eqz v4, :cond_149
+    if-eqz v4, :cond_7
 
     .line 206
     .line 207
@@ -594,7 +594,7 @@
 
     .line 208
     .line 209
-    if-ltz v1, :cond_125
+    if-ltz v1, :cond_5
 
     .line 210
     .line 211
@@ -678,12 +678,12 @@
     const/4 v6, 0x1
 
     .line 249
-    :goto_f8
+    :goto_3
     const/high16 v8, 0x10000
 
     .line 250
     .line 251
-    if-ge v6, v8, :cond_11a
+    if-ge v6, v8, :cond_4
 
     .line 252
     .line 253
@@ -730,14 +730,14 @@
     move-result v9
 
     .line 276
-    if-ltz v9, :cond_116
+    if-ltz v9, :cond_3
 
     .line 277
     .line 278
-    goto :goto_11c
+    goto :goto_4
 
     .line 279
-    :cond_116
+    :cond_3
     add-int/lit8 v6, v6, 0x1
 
     .line 280
@@ -745,16 +745,16 @@
     const/4 v13, 0x0
 
     .line 282
-    goto :goto_f8
+    goto :goto_3
 
     .line 283
-    :cond_11a
+    :cond_4
     move-object/from16 v8, v16
 
     .line 284
     .line 285
-    :goto_11c
-    if-eqz v8, :cond_125
+    :goto_4
+    if-eqz v8, :cond_5
 
     .line 286
     .line 287
@@ -773,7 +773,7 @@
     return-object v1
 
     .line 294
-    :cond_125
+    :cond_5
     iget-object v4, v0, Llibs/m50;->e:Ljava/security/SecureRandom;
 
     .line 295
@@ -802,7 +802,7 @@
     move-result-object v1
 
     .line 308
-    :cond_133
+    :cond_6
     invoke-static {v3, v1, v4}, Llibs/ef;->c(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/security/SecureRandom;)Ljava/math/BigInteger;
 
     .line 309
@@ -830,7 +830,7 @@
     const/4 v9, 0x1
 
     .line 321
-    if-le v7, v9, :cond_133
+    if-le v7, v9, :cond_6
 
     .line 322
     .line 323
@@ -849,8 +849,8 @@
     return-object v1
 
     .line 330
-    :cond_149
-    :goto_149
+    :cond_7
+    :goto_5
     add-int/lit8 v4, v19, 0x1
 
     .line 331
@@ -862,19 +862,19 @@
     const/4 v6, 0x0
 
     .line 335
-    goto/16 :goto_65
+    goto/16 :goto_1
 
     .line 336
     .line 337
-    :cond_150
+    :cond_8
     const/4 v4, 0x1
 
     .line 338
-    goto/16 :goto_2b
+    goto/16 :goto_0
 
     .line 339
     .line 340
-    :cond_153
+    :cond_9
     const/16 v16, 0x0
 
     .line 341
@@ -923,11 +923,11 @@
 
     .line 363
     .line 364
-    if-eqz v12, :cond_25e
+    if-eqz v12, :cond_11
 
     .line 365
     .line 366
-    :goto_16d
+    :goto_6
     iget-object v12, v0, Llibs/m50;->e:Ljava/security/SecureRandom;
 
     .line 367
@@ -980,8 +980,8 @@
     const/4 v14, 0x0
 
     .line 394
-    :goto_189
-    if-eq v14, v1, :cond_197
+    :goto_7
+    if-eq v14, v1, :cond_a
 
     .line 395
     .line 396
@@ -1008,10 +1008,10 @@
 
     .line 406
     .line 407
-    goto :goto_189
+    goto :goto_7
 
     .line 408
-    :cond_197
+    :cond_a
     aget-byte v14, v8, v13
 
     .line 409
@@ -1069,14 +1069,14 @@
     move-result v14
 
     .line 435
-    if-nez v14, :cond_1b5
+    if-nez v14, :cond_b
 
     .line 436
     .line 437
-    goto :goto_16d
+    goto :goto_6
 
     .line 438
-    :cond_1b5
+    :cond_b
     invoke-static {v2}, Llibs/t43;->g([B)[B
 
     .line 439
@@ -1093,20 +1093,20 @@
     const/4 v15, 0x0
 
     .line 446
-    :goto_1bd
+    :goto_8
     const/16 v1, 0x1000
 
     .line 447
     .line 448
-    if-ge v15, v1, :cond_256
+    if-ge v15, v1, :cond_10
 
     .line 449
     .line 450
     const/4 v1, 0x1
 
     .line 451
-    :goto_1c2
-    if-gt v1, v10, :cond_1e0
+    :goto_9
+    if-gt v1, v10, :cond_c
 
     .line 452
     .line 453
@@ -1163,10 +1163,10 @@
 
     .line 479
     .line 480
-    goto :goto_1c2
+    goto :goto_9
 
     .line 481
-    :cond_1e0
+    :cond_c
     move-object/from16 v21, v2
 
     .line 482
@@ -1284,11 +1284,11 @@
 
     .line 539
     .line 540
-    if-eq v2, v6, :cond_222
+    if-eq v2, v6, :cond_e
 
     .line 541
     .line 542
-    :cond_21d
+    :cond_d
     const/16 v17, 0x1
 
     .line 543
@@ -1297,10 +1297,10 @@
 
     .line 545
     .line 546
-    goto :goto_24e
+    goto :goto_a
 
     .line 547
-    :cond_222
+    :cond_e
     iget v2, v0, Llibs/m50;->d:I
 
     .line 548
@@ -1313,7 +1313,7 @@
     move-result v2
 
     .line 553
-    if-eqz v2, :cond_21d
+    if-eqz v2, :cond_d
 
     .line 554
     .line 555
@@ -1345,7 +1345,7 @@
     move-result-object v4
 
     .line 569
-    :cond_238
+    :cond_f
     invoke-static {v3, v4, v2}, Llibs/ef;->c(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/security/SecureRandom;)Ljava/math/BigInteger;
 
     .line 570
@@ -1373,7 +1373,7 @@
     const/4 v8, 0x1
 
     .line 582
-    if-le v7, v8, :cond_238
+    if-le v7, v8, :cond_f
 
     .line 583
     .line 584
@@ -1392,7 +1392,7 @@
     return-object v2
 
     .line 591
-    :goto_24e
+    :goto_a
     add-int/lit8 v15, v15, 0x1
 
     .line 592
@@ -1405,11 +1405,11 @@
 
     .line 596
     .line 597
-    goto/16 :goto_1bd
+    goto/16 :goto_8
 
     .line 598
     .line 599
-    :cond_256
+    :cond_10
     const/16 v17, 0x1
 
     .line 600
@@ -1422,11 +1422,11 @@
 
     .line 604
     .line 605
-    goto/16 :goto_16d
+    goto/16 :goto_6
 
     .line 606
     .line 607
-    :cond_25e
+    :cond_11
     const-string v1, "can only use SHA-1 for generating FIPS 186-2 parameters"
 
     .line 608
@@ -1440,7 +1440,7 @@
 .end method
 
 .method public final c(Llibs/k3;)V
-    .registers 7
+    .locals 5
 
     .line 1
     iget v0, p1, Llibs/k3;->X:I
@@ -1455,7 +1455,7 @@
 
     .line 6
     .line 7
-    if-lt v0, v2, :cond_60
+    if-lt v0, v2, :cond_7
 
     .line 8
     .line 9
@@ -1463,7 +1463,7 @@
 
     .line 10
     .line 11
-    if-gt v0, v3, :cond_60
+    if-gt v0, v3, :cond_7
 
     .line 12
     .line 13
@@ -1471,11 +1471,11 @@
 
     .line 14
     .line 15
-    if-nez v4, :cond_60
+    if-nez v4, :cond_7
 
     .line 16
     .line 17
-    if-ne v0, v2, :cond_1d
+    if-ne v0, v2, :cond_1
 
     .line 18
     .line 19
@@ -1483,14 +1483,14 @@
 
     .line 20
     .line 21
-    if-ne v1, v2, :cond_17
+    if-ne v1, v2, :cond_0
 
     .line 22
     .line 23
-    goto :goto_1d
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_0
     const-string p1, "N must be 160 for L = 1024"
 
     .line 25
@@ -1503,8 +1503,8 @@
     return-void
 
     .line 30
-    :cond_1d
-    :goto_1d
+    :cond_1
+    :goto_0
     const/16 v2, 0x800
 
     .line 31
@@ -1513,7 +1513,7 @@
 
     .line 33
     .line 34
-    if-ne v0, v2, :cond_30
+    if-ne v0, v2, :cond_3
 
     .line 35
     .line 36
@@ -1521,18 +1521,18 @@
 
     .line 37
     .line 38
-    if-eq v1, v2, :cond_30
+    if-eq v1, v2, :cond_3
 
     .line 39
     .line 40
-    if-ne v1, v4, :cond_2a
+    if-ne v1, v4, :cond_2
 
     .line 41
     .line 42
-    goto :goto_30
+    goto :goto_1
 
     .line 43
-    :cond_2a
+    :cond_2
     const-string p1, "N must be 224 or 256 for L = 2048"
 
     .line 44
@@ -1545,20 +1545,20 @@
     return-void
 
     .line 49
-    :cond_30
-    :goto_30
-    if-ne v0, v3, :cond_3b
+    :cond_3
+    :goto_1
+    if-ne v0, v3, :cond_5
 
     .line 50
     .line 51
-    if-ne v1, v4, :cond_35
+    if-ne v1, v4, :cond_4
 
     .line 52
     .line 53
-    goto :goto_3b
+    goto :goto_2
 
     .line 54
-    :cond_35
+    :cond_4
     const-string p1, "N must be 256 for L = 3072"
 
     .line 55
@@ -1571,8 +1571,8 @@
     return-void
 
     .line 60
-    :cond_3b
-    :goto_3b
+    :cond_5
+    :goto_2
     iget-object v2, p0, Llibs/m50;->a:Llibs/gu0;
 
     .line 61
@@ -1589,7 +1589,7 @@
 
     .line 67
     .line 68
-    if-lt v2, v1, :cond_5a
+    if-lt v2, v1, :cond_6
 
     .line 69
     .line 70
@@ -1638,7 +1638,7 @@
     return-void
 
     .line 91
-    :cond_5a
+    :cond_6
     const-string p1, "Digest output size too small for value of N"
 
     .line 92
@@ -1651,7 +1651,7 @@
     return-void
 
     .line 97
-    :cond_60
+    :cond_7
     const-string p1, "L values must be between 1024 and 3072 and a multiple of 1024"
 
     .line 98

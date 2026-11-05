@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/od;Ljava/lang/Comparable;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/z91;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final onLongClick(Landroid/view/View;)Z
-    .registers 9
+    .locals 7
 
     .line 1
     iget-byte p1, p0, Llibs/z91;->X:B
@@ -66,7 +66,7 @@
 
     .line 9
     .line 10
-    packed-switch p1, :pswitch_data_b6
+    packed-switch p1, :pswitch_data_0
 
     .line 11
     .line 12
@@ -175,7 +175,7 @@
     move-result v5
 
     .line 69
-    if-nez v5, :cond_69
+    if-nez v5, :cond_0
 
     .line 70
     .line 71
@@ -187,7 +187,7 @@
     move-result v5
 
     .line 75
-    if-nez v5, :cond_69
+    if-nez v5, :cond_0
 
     .line 76
     .line 77
@@ -247,14 +247,14 @@
     move-result p1
 
     .line 105
-    goto :goto_6a
+    goto :goto_0
 
     .line 106
-    :cond_69
+    :cond_0
     const/4 p1, 0x0
 
     .line 107
-    :goto_6a
+    :goto_0
     invoke-virtual {v4}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     .line 108
@@ -263,7 +263,7 @@
     move-result-object v0
 
     .line 111
-    if-eqz p1, :cond_77
+    if-eqz p1, :cond_1
 
     .line 112
     .line 113
@@ -279,10 +279,10 @@
     move-result-object p1
 
     .line 119
-    goto :goto_7d
+    goto :goto_1
 
     .line 120
-    :cond_77
+    :cond_1
     sget p1, Llibs/bi2;->not_matched:I
 
     .line 121
@@ -295,7 +295,7 @@
     move-result-object p1
 
     .line 126
-    :goto_7d
+    :goto_1
     invoke-static {v0, p1, v1, v2}, Llibs/gx1;->c(Landroid/content/Context;Ljava/lang/Object;IZ)V
 
     .line 127
@@ -304,7 +304,7 @@
     return v2
 
     .line 130
-    :pswitch_81
+    :pswitch_0
     check-cast v4, Llibs/ga1;
 
     .line 131
@@ -355,7 +355,7 @@
     return v2
 
     .line 156
-    :pswitch_9b
+    :pswitch_1
     check-cast v4, Llibs/ga1;
 
     .line 157
@@ -409,9 +409,9 @@
     nop
 
     .line 183
-    :pswitch_data_b6
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_9b
-        :pswitch_81
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

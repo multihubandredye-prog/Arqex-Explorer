@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/util/concurrent/atomic/AtomicLong;Landroid/widget/TextView;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/o8;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final c([Ljava/lang/Object;)Z
-    .registers 7
+    .locals 5
 
     .line 1
     iget-byte v0, p0, Llibs/o8;->X:B
@@ -63,7 +63,7 @@
 
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_b8
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
@@ -113,7 +113,7 @@
     return v2
 
     .line 35
-    :pswitch_22
+    :pswitch_0
     aget-object p1, p1, v1
 
     .line 36
@@ -159,7 +159,7 @@
     return v2
 
     .line 58
-    :pswitch_39
+    :pswitch_1
     aget-object p1, p1, v1
 
     .line 59
@@ -205,7 +205,7 @@
     return v2
 
     .line 81
-    :pswitch_50
+    :pswitch_2
     aget-object p1, p1, v1
 
     .line 82
@@ -251,7 +251,7 @@
     return v2
 
     .line 104
-    :pswitch_67
+    :pswitch_3
     aget-object p1, p1, v1
 
     .line 105
@@ -297,7 +297,7 @@
     return v2
 
     .line 127
-    :pswitch_7e
+    :pswitch_4
     aget-object p1, p1, v1
 
     .line 128
@@ -343,7 +343,7 @@
     return v2
 
     .line 150
-    :pswitch_95
+    :pswitch_5
     const-wide/16 v0, 0x0
 
     .line 151
@@ -373,7 +373,7 @@
     return v2
 
     .line 165
-    :pswitch_a4
+    :pswitch_6
     aget-object p1, p1, v1
 
     .line 166
@@ -414,14 +414,14 @@
     nop
 
     .line 185
-    :pswitch_data_b8
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a4
-        :pswitch_95
-        :pswitch_7e
-        :pswitch_67
-        :pswitch_50
-        :pswitch_39
-        :pswitch_22
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

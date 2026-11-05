@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,18 +25,18 @@
 
 # virtual methods
 .method public final a()V
-    .registers 3
+    .locals 2
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Llibs/cp;->a:Z
 
     .line 3
     .line 4
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 5
     .line 6
@@ -46,14 +46,14 @@
     return-void
 
     .line 8
-    :catchall_7
+    :catchall_0
     move-exception v0
 
     .line 9
-    goto :goto_32
+    goto :goto_1
 
     .line 10
-    :cond_9
+    :cond_0
     const/4 v0, 0x1
 
     .line 11
@@ -66,15 +66,15 @@
     .line 14
     .line 15
     monitor-exit p0
-    :try_end_f
-    .catchall {:try_start_1 .. :try_end_f} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 16
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_1
 
     .line 17
     .line 18
-    :try_start_11
+    :try_start_1
     invoke-static {}, Llibs/t43;->Intent()Z
 
     .line 19
@@ -83,7 +83,7 @@
     move-result v1
 
     .line 22
-    if-eqz v1, :cond_29
+    if-eqz v1, :cond_1
 
     .line 23
     .line 24
@@ -96,55 +96,55 @@
 
     .line 28
     invoke-static {v0}, Llibs/bp;->h(Landroid/os/CancellationSignal;)V
-    :try_end_1e
-    .catchall {:try_start_11 .. :try_end_1e} :catchall_1f
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 29
     .line 30
     .line 31
-    goto :goto_29
+    goto :goto_0
 
     .line 32
-    :catchall_1f
+    :catchall_1
     move-exception v0
 
     .line 33
     monitor-enter p0
 
     .line 34
-    :try_start_21
+    :try_start_2
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
 
     .line 35
     .line 36
     .line 37
     monitor-exit p0
-    :try_end_25
-    .catchall {:try_start_21 .. :try_end_25} :catchall_26
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
     .line 38
     throw v0
 
     .line 39
-    :catchall_26
+    :catchall_2
     move-exception v0
 
     .line 40
-    :try_start_27
+    :try_start_3
     monitor-exit p0
-    :try_end_28
-    .catchall {:try_start_27 .. :try_end_28} :catchall_26
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
     .line 41
     throw v0
 
     .line 42
-    :cond_29
-    :goto_29
+    :cond_1
+    :goto_0
     monitor-enter p0
 
     .line 43
-    :try_start_2a
+    :try_start_4
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
 
     .line 44
@@ -156,30 +156,30 @@
     return-void
 
     .line 48
-    :catchall_2f
+    :catchall_3
     move-exception v0
 
     .line 49
     monitor-exit p0
-    :try_end_31
-    .catchall {:try_start_2a .. :try_end_31} :catchall_2f
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_3
 
     .line 50
     throw v0
 
     .line 51
-    :goto_32
-    :try_start_32
+    :goto_1
+    :try_start_5
     monitor-exit p0
-    :try_end_33
-    .catchall {:try_start_32 .. :try_end_33} :catchall_7
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 52
     throw v0
 .end method
 
 .method public final b()Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-static {}, Llibs/t43;->Intent()Z
@@ -190,7 +190,7 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -200,16 +200,16 @@
     return-object v0
 
     .line 9
-    :cond_8
+    :cond_0
     monitor-enter p0
 
     .line 10
-    :try_start_9
+    :try_start_0
     iget-object v0, p0, Llibs/cp;->b:Ljava/lang/Object;
 
     .line 11
     .line 12
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_1
 
     .line 13
     .line 14
@@ -230,7 +230,7 @@
 
     .line 22
     .line 23
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_1
 
     .line 24
     .line 25
@@ -239,18 +239,18 @@
     .line 26
     .line 27
     .line 28
-    goto :goto_1e
+    goto :goto_0
 
     .line 29
-    :catchall_1c
+    :catchall_0
     move-exception v0
 
     .line 30
-    goto :goto_22
+    goto :goto_1
 
     .line 31
-    :cond_1e
-    :goto_1e
+    :cond_1
+    :goto_0
     iget-object v0, p0, Llibs/cp;->b:Ljava/lang/Object;
 
     .line 32
@@ -261,23 +261,23 @@
     return-object v0
 
     .line 35
-    :goto_22
+    :goto_1
     monitor-exit p0
-    :try_end_23
-    .catchall {:try_start_9 .. :try_end_23} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 36
     throw v0
 .end method
 
 .method public final c()Z
-    .registers 2
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Llibs/cp;->a:Z
 
     .line 3
@@ -288,13 +288,13 @@
     return v0
 
     .line 6
-    :catchall_5
+    :catchall_0
     move-exception v0
 
     .line 7
     monitor-exit p0
-    :try_end_7
-    .catchall {:try_start_1 .. :try_end_7} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 8
     throw v0

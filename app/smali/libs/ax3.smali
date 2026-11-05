@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,18 +26,18 @@
 .end method
 
 .method public final declared-synchronized b()Llibs/zw3;
-    .registers 2
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Llibs/ax3;->a:Llibs/zw3;
 
     .line 3
     .line 4
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 5
     .line 6
@@ -50,34 +50,34 @@
 
     .line 10
     iput-object v0, p0, Llibs/ax3;->a:Llibs/zw3;
-    :try_end_b
-    .catchall {:try_start_1 .. :try_end_b} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 11
     .line 12
-    goto :goto_e
+    goto :goto_0
 
     .line 13
-    :catchall_c
+    :catchall_0
     move-exception v0
 
     .line 14
-    goto :goto_10
+    goto :goto_1
 
     .line 15
-    :cond_e
-    :goto_e
+    :cond_0
+    :goto_0
     monitor-exit p0
 
     .line 16
     return-object v0
 
     .line 17
-    :goto_10
-    :try_start_10
+    :goto_1
+    :try_start_1
     monitor-exit p0
-    :try_end_11
-    .catchall {:try_start_10 .. :try_end_11} :catchall_c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 18
     throw v0

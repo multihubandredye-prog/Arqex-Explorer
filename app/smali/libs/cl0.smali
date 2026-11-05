@@ -30,7 +30,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/v1;Ljava/lang/String;Llibs/rp0;ZLjava/lang/String;ZLlibs/m52;Llibs/zl0;Ljava/util/Properties;)V
-    .registers 10
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -78,53 +78,53 @@
 .end method
 
 .method private final a()V
-    .registers 4
+    .locals 3
 
     iget-object v0, p0, Llibs/cl0;->Xi:Llibs/m52;
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Llibs/m52;->Set()Z
 
     move-result v1
 
-    if-nez v1, :cond_25
+    if-nez v1, :cond_1
 
     sget-object v1, Lcom/mixplorer/AppImpl;->Mu:Llibs/c2;
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     invoke-virtual {v1, v0}, Llibs/c2;->All(Llibs/m52;)V
 
-    :cond_11
+    :cond_0
     iget-object v0, p0, Llibs/cl0;->X:Llibs/v1;
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     iget-object v0, v0, Llibs/v1;->Y:Ljava/lang/Object;
 
     instance-of v1, v0, Lcom/mixplorer/activities/BrowseActivity;
 
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_1
 
     check-cast v0, Lcom/mixplorer/activities/BrowseActivity;
 
     iget-object v0, v0, Lcom/mixplorer/activities/BrowseActivity;->Romeo:Llibs/r31;
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     const/4 v1, -0x1
 
     invoke-virtual {v0, v1}, Llibs/r31;->Url(I)V
 
-    :cond_25
+    :cond_1
     return-void
 .end method
 
 
 # virtual methods
 .method public final onCancel(Landroid/content/DialogInterface;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Llibs/cl0;->a()V
 
@@ -132,22 +132,22 @@
 .end method
 
 .method public final onClick(Landroid/view/View;)V
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_0
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setEnabled(Z)V
 
-    :cond_6
+    :cond_0
     invoke-direct {p0}, Llibs/cl0;->a()V
 
     return-void
 .end method
 
 .method public final run()V
-    .registers 10
+    .locals 9
 
     .line 1
     new-instance v0, Llibs/r4;

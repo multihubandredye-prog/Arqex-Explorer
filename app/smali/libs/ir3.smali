@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/hardware/usb/UsbManager;Landroid/hardware/usb/UsbDevice;Landroid/hardware/usb/UsbInterface;)V
-    .registers 5
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -58,7 +58,7 @@
 .end method
 
 .method public static c(Landroid/hardware/usb/UsbManager;)Ljava/util/ArrayList;
-    .registers 16
+    .locals 15
 
     .line 1
     const-string v0, "UsbMSDevice"
@@ -98,7 +98,7 @@
     move-result-object v2
 
     .line 20
-    :cond_13
+    :cond_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     .line 21
@@ -107,7 +107,7 @@
     move-result v3
 
     .line 24
-    if-eqz v3, :cond_dc
+    if-eqz v3, :cond_a
 
     .line 25
     .line 26
@@ -127,7 +127,7 @@
     move-result-object v3
 
     .line 34
-    :try_start_21
+    :try_start_0
     new-instance v4, Ljava/lang/StringBuilder;
 
     .line 35
@@ -256,13 +256,13 @@
 
     .line 103
     invoke-static {v0, v4}, Llibs/vw1;->r(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_69
-    .catchall {:try_start_21 .. :try_end_69} :catchall_69
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 104
     .line 105
     .line 106
-    :catchall_69
+    :catchall_0
     invoke-static {v3}, Llibs/wy0;->w(Landroid/hardware/usb/UsbDevice;)I
 
     .line 107
@@ -277,8 +277,8 @@
     const/4 v6, 0x0
 
     .line 112
-    :goto_6f
-    if-ge v6, v4, :cond_13
+    :goto_0
+    if-ge v6, v4, :cond_0
 
     .line 113
     .line 114
@@ -290,7 +290,7 @@
     move-result-object v7
 
     .line 118
-    :try_start_75
+    :try_start_1
     invoke-static {v7}, Llibs/wy0;->f(Landroid/hardware/usb/UsbInterface;)I
 
     .line 119
@@ -303,7 +303,7 @@
 
     .line 123
     .line 124
-    if-ne v8, v9, :cond_d9
+    if-ne v8, v9, :cond_9
 
     .line 125
     .line 126
@@ -318,7 +318,7 @@
     const/4 v9, 0x6
 
     .line 131
-    if-eq v8, v9, :cond_8e
+    if-eq v8, v9, :cond_1
 
     .line 132
     .line 133
@@ -333,22 +333,22 @@
     const/4 v9, 0x5
 
     .line 138
-    if-ne v8, v9, :cond_d9
+    if-ne v8, v9, :cond_9
 
     .line 139
     .line 140
-    goto :goto_8e
+    goto :goto_1
 
     .line 141
-    :catchall_8c
+    :catchall_1
     move-exception v7
 
     .line 142
-    goto :goto_d2
+    goto :goto_5
 
     .line 143
-    :cond_8e
-    :goto_8e
+    :cond_1
+    :goto_1
     invoke-static {v7}, Llibs/wy0;->Object(Landroid/hardware/usb/UsbInterface;)I
 
     .line 144
@@ -361,14 +361,14 @@
 
     .line 148
     .line 149
-    if-eq v8, v9, :cond_97
+    if-eq v8, v9, :cond_2
 
     .line 150
     .line 151
-    goto :goto_d9
+    goto :goto_6
 
     .line 152
-    :cond_97
+    :cond_2
     invoke-static {v7}, Llibs/wy0;->String(Landroid/hardware/usb/UsbInterface;)I
 
     .line 153
@@ -380,7 +380,7 @@
     const/4 v9, 0x2
 
     .line 157
-    if-eq v8, v9, :cond_a3
+    if-eq v8, v9, :cond_3
 
     .line 158
     .line 159
@@ -393,7 +393,7 @@
     .line 162
     .line 163
     .line 164
-    :cond_a3
+    :cond_3
     const/4 v10, 0x0
 
     .line 165
@@ -403,8 +403,8 @@
     const/4 v12, 0x0
 
     .line 167
-    :goto_a6
-    if-ge v12, v8, :cond_be
+    :goto_2
+    if-ge v12, v8, :cond_6
 
     .line 168
     .line 169
@@ -424,7 +424,7 @@
     move-result v14
 
     .line 177
-    if-ne v14, v9, :cond_bb
+    if-ne v14, v9, :cond_5
 
     .line 178
     .line 179
@@ -436,42 +436,42 @@
     move-result v14
 
     .line 183
-    if-nez v14, :cond_ba
+    if-nez v14, :cond_4
 
     .line 184
     .line 185
     move-object v10, v13
 
     .line 186
-    goto :goto_bb
+    goto :goto_3
 
     .line 187
-    :cond_ba
+    :cond_4
     move-object v11, v13
 
     .line 188
-    :cond_bb
-    :goto_bb
+    :cond_5
+    :goto_3
     add-int/lit8 v12, v12, 0x1
 
     .line 189
     .line 190
-    goto :goto_a6
+    goto :goto_2
 
     .line 191
-    :cond_be
-    if-eqz v10, :cond_cc
+    :cond_6
+    if-eqz v10, :cond_8
 
     .line 192
     .line 193
-    if-nez v11, :cond_c3
+    if-nez v11, :cond_7
 
     .line 194
     .line 195
-    goto :goto_cc
+    goto :goto_4
 
     .line 196
-    :cond_c3
+    :cond_7
     new-instance v8, Llibs/ir3;
 
     .line 197
@@ -486,26 +486,26 @@
     .line 202
     .line 203
     .line 204
-    goto :goto_d9
+    goto :goto_6
 
     .line 205
-    :cond_cc
-    :goto_cc
+    :cond_8
+    :goto_4
     const-string v7, "Not all needed endpoints found!"
 
     .line 206
     .line 207
     invoke-static {v0, v7}, Llibs/vw1;->i(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_d1
-    .catchall {:try_start_75 .. :try_end_d1} :catchall_8c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 208
     .line 209
     .line 210
-    goto :goto_d9
+    goto :goto_6
 
     .line 211
-    :goto_d2
+    :goto_5
     invoke-static {v7}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 212
@@ -519,23 +519,23 @@
     .line 216
     .line 217
     .line 218
-    :cond_d9
-    :goto_d9
+    :cond_9
+    :goto_6
     add-int/lit8 v6, v6, 0x1
 
     .line 219
     .line 220
-    goto :goto_6f
+    goto :goto_0
 
     .line 221
-    :cond_dc
+    :cond_a
     return-object v1
 .end method
 
 
 # virtual methods
 .method public final a()V
-    .registers 3
+    .locals 2
 
     .line 1
     const/4 v0, 0x1
@@ -549,14 +549,14 @@
 
     .line 5
     .line 6
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     .line 7
     .line 8
     return-void
 
     .line 9
-    :cond_8
+    :cond_0
     iget-object v1, p0, Llibs/ir3;->e:Landroid/hardware/usb/UsbInterface;
 
     .line 10
@@ -573,7 +573,7 @@
 
     .line 16
     .line 17
-    if-nez v0, :cond_17
+    if-nez v0, :cond_1
 
     .line 18
     .line 19
@@ -586,7 +586,7 @@
     .line 22
     .line 23
     .line 24
-    :cond_17
+    :cond_1
     iget-object v0, p0, Llibs/ir3;->c:Landroid/hardware/usb/UsbDeviceConnection;
 
     .line 25
@@ -609,7 +609,7 @@
 .end method
 
 .method public final b()Llibs/ig;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ir3;->f:Llibs/p23;
@@ -620,7 +620,7 @@
 .end method
 
 .method public final d()V
-    .registers 5
+    .locals 4
 
     .line 1
     const/4 v0, 0x1
@@ -658,7 +658,7 @@
 
     .line 17
     .line 18
-    if-gez v1, :cond_19
+    if-gez v1, :cond_0
 
     .line 19
     .line 20
@@ -671,10 +671,10 @@
     .line 23
     .line 24
     .line 25
-    goto :goto_2d
+    goto :goto_0
 
     .line 26
-    :cond_19
+    :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     .line 27
@@ -713,12 +713,12 @@
     .line 44
     .line 45
     .line 46
-    :goto_2d
+    :goto_0
     return-void
 .end method
 
 .method public final e()Ljava/util/ArrayList;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ir3;->g:Ljava/util/ArrayList;
@@ -729,18 +729,18 @@
 .end method
 
 .method public final f()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v1, p0, Llibs/ir3;->c:Landroid/hardware/usb/UsbDeviceConnection;
 
     .line 3
     .line 4
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_0
 
     .line 5
     .line 6
@@ -750,25 +750,25 @@
     .line 8
     .line 9
     move-result-object v0
-    :try_end_9
-    .catchall {:try_start_1 .. :try_end_9} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 10
     return-object v0
 
     .line 11
-    :catchall_a
+    :catchall_0
     move-exception v1
 
     .line 12
-    goto :goto_d
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     return-object v0
 
     .line 14
-    :goto_d
+    :goto_0
     const-string v2, "USB_Serial"
 
     .line 15
@@ -790,7 +790,7 @@
 .end method
 
 .method public final g()Landroid/hardware/usb/UsbDevice;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ir3;->d:Landroid/hardware/usb/UsbDevice;
@@ -801,7 +801,7 @@
 .end method
 
 .method public final h()V
-    .registers 14
+    .locals 13
 
     .line 1
     iget-object v0, p0, Llibs/ir3;->b:Landroid/hardware/usb/UsbManager;
@@ -820,7 +820,7 @@
     move-result v0
 
     .line 9
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_0
 
     .line 10
     .line 11
@@ -863,7 +863,7 @@
     .line 30
     .line 31
     .line 32
-    :cond_1f
+    :cond_0
     const-string v0, "UsbMSDevice"
 
     .line 33
@@ -878,7 +878,7 @@
     const/4 v3, 0x0
 
     .line 38
-    :try_start_25
+    :try_start_0
     const-string v4, "setup device"
 
     .line 39
@@ -908,7 +908,7 @@
 
     .line 52
     .line 53
-    if-nez v4, :cond_3f
+    if-nez v4, :cond_1
 
     .line 54
     .line 55
@@ -924,15 +924,15 @@
     return-void
 
     .line 61
-    :catchall_3c
+    :catchall_0
     move-exception v1
 
     .line 62
-    goto/16 :goto_18e
+    goto/16 :goto_7
 
     .line 63
     .line 64
-    :cond_3f
+    :cond_1
     iput-boolean v3, p0, Llibs/ir3;->a:Z
 
     .line 65
@@ -949,7 +949,7 @@
     move-result v4
 
     .line 72
-    if-nez v4, :cond_4f
+    if-nez v4, :cond_2
 
     .line 73
     .line 74
@@ -965,7 +965,7 @@
     return-void
 
     .line 80
-    :cond_4f
+    :cond_2
     const-string v4, "Device is opened."
 
     .line 81
@@ -1037,8 +1037,8 @@
     const/4 v6, 0x0
 
     .line 117
-    :goto_74
-    if-ge v6, v4, :cond_97
+    :goto_0
+    if-ge v6, v4, :cond_5
 
     .line 118
     .line 119
@@ -1065,7 +1065,7 @@
     const/4 v9, 0x2
 
     .line 130
-    if-ne v8, v9, :cond_94
+    if-ne v8, v9, :cond_4
 
     .line 131
     .line 132
@@ -1081,17 +1081,17 @@
 
     .line 137
     .line 138
-    if-ne v8, v9, :cond_8d
+    if-ne v8, v9, :cond_3
 
     .line 139
     .line 140
     move-object v1, v7
 
     .line 141
-    goto :goto_94
+    goto :goto_1
 
     .line 142
-    :cond_8d
+    :cond_3
     invoke-static {v7}, Llibs/wy0;->x(Landroid/hardware/usb/UsbEndpoint;)I
 
     .line 143
@@ -1100,23 +1100,23 @@
     move-result v8
 
     .line 146
-    if-nez v8, :cond_94
+    if-nez v8, :cond_4
 
     .line 147
     .line 148
     move-object v5, v7
 
     .line 149
-    :cond_94
-    :goto_94
+    :cond_4
+    :goto_1
     add-int/lit8 v6, v6, 0x1
 
     .line 150
     .line 151
-    goto :goto_74
+    goto :goto_0
 
     .line 152
-    :cond_97
+    :cond_5
     iget-object v4, p0, Llibs/ir3;->c:Landroid/hardware/usb/UsbDeviceConnection;
 
     .line 153
@@ -1129,7 +1129,7 @@
     move-result v6
 
     .line 158
-    if-eqz v6, :cond_a5
+    if-eqz v6, :cond_6
 
     .line 159
     .line 160
@@ -1142,10 +1142,10 @@
     .line 163
     .line 164
     .line 165
-    goto :goto_aa
+    goto :goto_2
 
     .line 166
-    :cond_a5
+    :cond_6
     new-instance v6, Llibs/xy0;
 
     .line 167
@@ -1155,7 +1155,7 @@
     .line 169
     .line 170
     .line 171
-    :goto_aa
+    :goto_2
     invoke-static {v1}, Llibs/wy0;->e(Landroid/hardware/usb/UsbEndpoint;)I
 
     .line 172
@@ -1199,12 +1199,12 @@
 
     .line 193
     .line 194
-    :goto_c1
+    :goto_3
     const/16 v4, 0x200
 
     .line 195
     .line 196
-    if-ge v1, v4, :cond_c8
+    if-ge v1, v4, :cond_7
 
     .line 197
     .line 198
@@ -1212,10 +1212,10 @@
 
     .line 199
     .line 200
-    goto :goto_c1
+    goto :goto_3
 
     .line 201
-    :cond_c8
+    :cond_7
     invoke-static {v1}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     .line 202
@@ -1268,8 +1268,8 @@
     const/4 v7, 0x0
 
     .line 227
-    :goto_e2
-    if-ge v7, v6, :cond_188
+    :goto_4
+    if-ge v7, v6, :cond_c
 
     .line 228
     .line 229
@@ -1297,7 +1297,7 @@
     move-result-object v9
 
     .line 241
-    if-eqz v9, :cond_183
+    if-eqz v9, :cond_b
 
     .line 242
     .line 243
@@ -1365,7 +1365,7 @@
     move-result v6
 
     .line 277
-    if-le v6, v2, :cond_119
+    if-le v6, v2, :cond_8
 
     .line 278
     .line 279
@@ -1373,15 +1373,15 @@
 
     .line 280
     .line 281
-    goto :goto_11b
+    goto :goto_5
 
     .line 282
-    :cond_119
+    :cond_8
     const-string v6, " partition..."
 
     .line 283
     .line 284
-    :goto_11b
+    :goto_5
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 285
@@ -1414,9 +1414,9 @@
     const/4 v7, 0x0
 
     .line 300
-    :cond_12b
-    :goto_12b
-    if-ge v7, v5, :cond_17d
+    :cond_9
+    :goto_6
+    if-ge v7, v5, :cond_a
 
     .line 301
     .line 302
@@ -1548,7 +1548,7 @@
     move-result-object v8
 
     .line 372
-    if-eqz v8, :cond_12b
+    if-eqz v8, :cond_9
 
     .line 373
     .line 374
@@ -1565,10 +1565,10 @@
 
     .line 380
     .line 381
-    goto :goto_12b
+    goto :goto_6
 
     .line 382
-    :cond_17d
+    :cond_a
     const-string v1, "Done!"
 
     .line 383
@@ -1581,17 +1581,17 @@
     return-void
 
     .line 388
-    :cond_183
+    :cond_b
     invoke-virtual {v1}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
 
     .line 389
     .line 390
     .line 391
-    goto/16 :goto_e2
+    goto/16 :goto_4
 
     .line 392
     .line 393
-    :cond_188
+    :cond_c
     new-instance v1, Llibs/ts;
 
     .line 394
@@ -1602,11 +1602,11 @@
     .line 397
     .line 398
     throw v1
-    :try_end_18e
-    .catchall {:try_start_25 .. :try_end_18e} :catchall_3c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 399
-    :goto_18e
+    :goto_7
     invoke-static {v1}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 400
@@ -1641,7 +1641,7 @@
 
     .line 416
     .line 417
-    if-nez v0, :cond_1aa
+    if-nez v0, :cond_d
 
     .line 418
     .line 419
@@ -1661,24 +1661,24 @@
     return-void
 
     .line 427
-    :cond_1aa
+    :cond_d
     check-cast v1, Ljava/io/IOException;
 
     .line 428
     .line 429
-    goto :goto_1ae
+    goto :goto_9
 
     .line 430
-    :goto_1ad
+    :goto_8
     throw v1
 
     .line 431
-    :goto_1ae
-    goto :goto_1ad
+    :goto_9
+    goto :goto_8
 .end method
 
 .method public final i()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/ir3;->a:Z

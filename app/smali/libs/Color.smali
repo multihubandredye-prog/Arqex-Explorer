@@ -9,10 +9,10 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 3
+    .locals 1
 
     .line 1
-    packed-switch p1, :pswitch_data_14
+    packed-switch p1, :pswitch_data_0
 
     .line 2
     .line 3
@@ -25,7 +25,7 @@
     return-void
 
     .line 8
-    :pswitch_7
+    :pswitch_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 9
@@ -51,14 +51,14 @@
     return-void
 
     .line 21
-    :pswitch_data_14
+    :pswitch_data_0
     .packed-switch 0x3
-        :pswitch_7
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 21
     iput-object p1, p0, Llibs/Color;->a:Ljava/lang/Object;
@@ -71,7 +71,7 @@
 
 # virtual methods
 .method public a(Llibs/qj0;)Z
-    .registers 2
+    .locals 0
 
     .line 1
     const/4 p1, 0x1
@@ -81,7 +81,7 @@
 .end method
 
 .method public b(Llibs/qj0;)V
-    .registers 6
+    .locals 4
 
     .line 1
     sget-object v0, Llibs/s70;->b:Llibs/bn1;
@@ -122,7 +122,7 @@
 .end method
 
 .method public c(Llibs/qj0;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p0, p1}, Llibs/Color;->a(Llibs/qj0;)Z
@@ -133,7 +133,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -145,7 +145,7 @@
     return-void
 
     .line 11
-    :cond_a
+    :cond_0
     iget-object v0, p0, Llibs/Color;->a:Ljava/lang/Object;
 
     .line 12
@@ -163,7 +163,7 @@
 .end method
 
 .method public d(Llibs/ae2;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/Color;->a:Ljava/lang/Object;
@@ -186,7 +186,7 @@
 
     .line 10
     .line 11
-    if-ge v1, v2, :cond_f
+    if-ge v1, v2, :cond_0
 
     .line 12
     .line 13
@@ -195,7 +195,7 @@
     .line 14
     .line 15
     .line 16
-    :cond_f
+    :cond_0
     return-void
 .end method
 

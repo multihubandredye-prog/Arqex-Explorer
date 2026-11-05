@@ -56,7 +56,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-string v0, "jcifs.smb.client.transaction_buf_size"
@@ -88,7 +88,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Llibs/c63;-><init>()V
@@ -156,7 +156,7 @@
 
 # virtual methods
 .method public final e(I[B)I
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -166,7 +166,7 @@
 .end method
 
 .method public final hasMoreElements()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/bc3;->Echo:Z
@@ -177,7 +177,7 @@
 .end method
 
 .method public final j(I[B)I
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -187,7 +187,7 @@
 .end method
 
 .method public final n()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Llibs/c63;->n()V
@@ -210,7 +210,7 @@
 .end method
 
 .method public final nextElement()Ljava/lang/Object;
-    .registers 6
+    .locals 5
 
     .line 1
     iget-boolean v0, p0, Llibs/bc3;->Foxtrot:Z
@@ -224,7 +224,7 @@
     const/4 v2, 0x0
 
     .line 6
-    if-eqz v0, :cond_7b
+    if-eqz v0, :cond_5
 
     .line 7
     .line 8
@@ -252,7 +252,7 @@
 
     .line 19
     .line 20
-    if-eq v4, v1, :cond_2b
+    if-eq v4, v1, :cond_1
 
     .line 21
     .line 22
@@ -260,7 +260,7 @@
 
     .line 23
     .line 24
-    if-ne v4, v0, :cond_31
+    if-ne v4, v0, :cond_2
 
     .line 25
     .line 26
@@ -275,14 +275,14 @@
     and-int/2addr v0, v1
 
     .line 31
-    if-ne v0, v1, :cond_21
+    if-ne v0, v1, :cond_0
 
     .line 32
     .line 33
-    goto :goto_31
+    goto :goto_0
 
     .line 34
-    :cond_21
+    :cond_0
     iget-object v0, p0, Llibs/bc3;->Uniform:Ljava/lang/String;
 
     .line 35
@@ -302,11 +302,11 @@
 
     .line 42
     .line 43
-    goto :goto_31
+    goto :goto_0
 
     .line 44
-    :cond_2b
-    if-ne v4, v1, :cond_31
+    :cond_1
+    if-ne v4, v1, :cond_2
 
     .line 45
     .line 46
@@ -318,8 +318,8 @@
 
     .line 49
     .line 50
-    :cond_31
-    :goto_31
+    :cond_2
+    :goto_0
     rem-int/lit8 v0, v3, 0x2
 
     .line 51
@@ -328,22 +328,22 @@
 
     .line 53
     .line 54
-    if-nez v0, :cond_39
+    if-nez v0, :cond_3
 
     .line 55
     .line 56
     const/4 v0, 0x0
 
     .line 57
-    goto :goto_3b
+    goto :goto_1
 
     .line 58
-    :cond_39
+    :cond_3
     rsub-int/lit8 v0, v0, 0x2
 
     .line 59
     .line 60
-    :goto_3b
+    :goto_1
     iput v0, p0, Llibs/bc3;->Bravo:I
 
     .line 61
@@ -420,22 +420,22 @@
 
     .line 95
     .line 96
-    if-nez v0, :cond_63
+    if-nez v0, :cond_4
 
     .line 97
     .line 98
     const/4 v0, 0x0
 
     .line 99
-    goto :goto_65
+    goto :goto_2
 
     .line 100
-    :cond_63
+    :cond_4
     rsub-int/lit8 v0, v0, 0x2
 
     .line 101
     .line 102
-    :goto_65
+    :goto_2
     iput v0, p0, Llibs/bc3;->Charlie:I
 
     .line 103
@@ -479,15 +479,15 @@
 
     .line 122
     .line 123
-    goto :goto_d3
+    goto :goto_5
 
     .line 124
-    :cond_7b
+    :cond_5
     iget-byte v0, p0, Llibs/c63;->Z:B
 
     .line 125
     .line 126
-    if-eq v0, v1, :cond_84
+    if-eq v0, v1, :cond_6
 
     .line 127
     .line 128
@@ -499,10 +499,10 @@
 
     .line 131
     .line 132
-    goto :goto_88
+    goto :goto_3
 
     .line 133
-    :cond_84
+    :cond_6
     const/16 v0, -0x5f
 
     .line 134
@@ -511,7 +511,7 @@
 
     .line 136
     .line 137
-    :goto_88
+    :goto_3
     const/16 v0, 0x33
 
     .line 138
@@ -532,7 +532,7 @@
 
     .line 146
     .line 147
-    if-lez v4, :cond_9b
+    if-lez v4, :cond_7
 
     .line 148
     .line 149
@@ -551,7 +551,7 @@
 
     .line 155
     .line 156
-    :cond_9b
+    :cond_7
     iget v4, p0, Llibs/bc3;->Hotel:I
 
     .line 157
@@ -614,22 +614,22 @@
 
     .line 183
     .line 184
-    if-nez v0, :cond_bb
+    if-nez v0, :cond_8
 
     .line 185
     .line 186
     const/4 v0, 0x0
 
     .line 187
-    goto :goto_bd
+    goto :goto_4
 
     .line 188
-    :cond_bb
+    :cond_8
     rsub-int/lit8 v0, v0, 0x2
 
     .line 189
     .line 190
-    :goto_bd
+    :goto_4
     iput v0, p0, Llibs/bc3;->Charlie:I
 
     .line 191
@@ -678,7 +678,7 @@
 
     .line 211
     .line 212
-    :goto_d3
+    :goto_5
     iget v1, p0, Llibs/bc3;->Juliet:I
 
     .line 213
@@ -694,7 +694,7 @@
 
     .line 218
     .line 219
-    if-lt v1, v3, :cond_e5
+    if-lt v1, v3, :cond_9
 
     .line 220
     .line 221
@@ -709,7 +709,7 @@
 
     .line 225
     .line 226
-    if-lt v1, v0, :cond_e5
+    if-lt v1, v0, :cond_9
 
     .line 227
     .line 228
@@ -717,12 +717,12 @@
 
     .line 229
     .line 230
-    :cond_e5
+    :cond_9
     return-object p0
 .end method
 
 .method public final q(I[B)I
-    .registers 7
+    .locals 4
 
     .line 1
     iget v0, p0, Llibs/bc3;->Bravo:I
@@ -737,7 +737,7 @@
 
     .line 6
     .line 7
-    if-ne v1, v2, :cond_1a
+    if-ne v1, v2, :cond_1
 
     .line 8
     .line 9
@@ -752,14 +752,14 @@
     and-int/2addr v1, v2
 
     .line 14
-    if-ne v1, v2, :cond_10
+    if-ne v1, v2, :cond_0
 
     .line 15
     .line 16
-    goto :goto_1a
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     iget-object v1, p0, Llibs/bc3;->Uniform:Ljava/lang/String;
 
     .line 18
@@ -779,15 +779,15 @@
     add-int/2addr v1, p1
 
     .line 26
-    goto :goto_1b
+    goto :goto_1
 
     .line 27
-    :cond_1a
-    :goto_1a
+    :cond_1
+    :goto_0
     move v1, p1
 
     .line 28
-    :goto_1b
+    :goto_1
     iget v2, p0, Llibs/bc3;->Hotel:I
 
     .line 29
@@ -795,16 +795,16 @@
     const/4 v3, 0x0
 
     .line 31
-    if-lez v2, :cond_35
+    if-lez v2, :cond_3
 
     .line 32
     .line 33
-    :goto_20
+    :goto_2
     add-int/lit8 v2, v0, -0x1
 
     .line 34
     .line 35
-    if-lez v0, :cond_2b
+    if-lez v0, :cond_2
 
     .line 36
     .line 37
@@ -822,10 +822,10 @@
     move v0, v2
 
     .line 43
-    goto :goto_20
+    goto :goto_2
 
     .line 44
-    :cond_2b
+    :cond_2
     iget-object v0, p0, Llibs/bc3;->Whiskey:[B
 
     .line 45
@@ -846,12 +846,12 @@
     add-int/2addr v1, v0
 
     .line 54
-    :cond_35
+    :cond_3
     iget v0, p0, Llibs/bc3;->Kilo:I
 
     .line 55
     .line 56
-    if-lez v0, :cond_57
+    if-lez v0, :cond_5
 
     .line 57
     .line 58
@@ -859,12 +859,12 @@
 
     .line 59
     .line 60
-    :goto_3b
+    :goto_3
     add-int/lit8 v2, v0, -0x1
 
     .line 61
     .line 62
-    if-lez v0, :cond_46
+    if-lez v0, :cond_4
 
     .line 63
     .line 64
@@ -882,10 +882,10 @@
     move v0, v2
 
     .line 70
-    goto :goto_3b
+    goto :goto_3
 
     .line 71
-    :cond_46
+    :cond_4
     iget-object v0, p0, Llibs/bc3;->Whiskey:[B
 
     .line 72
@@ -921,7 +921,7 @@
     add-int/2addr v1, v0
 
     .line 88
-    :cond_57
+    :cond_5
     sub-int/2addr v1, p1
 
     .line 89
@@ -929,7 +929,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/String;
@@ -1250,7 +1250,7 @@
 .end method
 
 .method public final v(I[B)I
-    .registers 9
+    .locals 6
 
     .line 1
     iget v0, p0, Llibs/bc3;->November:I
@@ -1296,7 +1296,7 @@
 
     .line 21
     .line 22
-    if-eq v1, v3, :cond_46
+    if-eq v1, v3, :cond_0
 
     .line 23
     .line 24
@@ -1393,7 +1393,7 @@
 
     .line 70
     .line 71
-    :cond_46
+    :cond_0
     iget v1, p0, Llibs/bc3;->Hotel:I
 
     .line 72
@@ -1430,7 +1430,7 @@
 
     .line 88
     .line 89
-    if-ne v4, v3, :cond_62
+    if-ne v4, v3, :cond_1
 
     .line 90
     .line 91
@@ -1450,7 +1450,7 @@
 
     .line 98
     .line 99
-    :cond_62
+    :cond_1
     iget v0, p0, Llibs/bc3;->Kilo:I
 
     .line 100
@@ -1471,22 +1471,22 @@
 
     .line 108
     .line 109
-    if-nez v4, :cond_70
+    if-nez v4, :cond_2
 
     .line 110
     .line 111
     const/4 v4, 0x0
 
     .line 112
-    goto :goto_72
+    goto :goto_0
 
     .line 113
-    :cond_70
+    :cond_2
     iget v4, p0, Llibs/bc3;->Lima:I
 
     .line 114
     .line 115
-    :goto_72
+    :goto_0
     int-to-long v4, v4
 
     .line 116
@@ -1503,7 +1503,7 @@
 
     .line 122
     .line 123
-    if-ne v4, v3, :cond_85
+    if-ne v4, v3, :cond_3
 
     .line 124
     .line 125
@@ -1523,10 +1523,10 @@
 
     .line 132
     .line 133
-    goto :goto_95
+    goto :goto_1
 
     .line 134
-    :cond_85
+    :cond_3
     add-int/lit8 v3, v1, 0x5
 
     .line 135
@@ -1561,7 +1561,7 @@
     add-int/2addr v1, p2
 
     .line 150
-    :goto_95
+    :goto_1
     sub-int/2addr v1, p1
 
     .line 151
@@ -1569,7 +1569,7 @@
 .end method
 
 .method public x(I[B)I
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -1579,13 +1579,13 @@
 .end method
 
 .method public y([B)I
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :try_start_1
+    :try_start_0
     const-string v1, "WrLeh\u0000B13BWz\u0000"
 
     .line 3
@@ -1600,8 +1600,8 @@
     .line 8
     .line 9
     move-result-object v1
-    :try_end_9
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_1 .. :try_end_9} :catch_24
+    :try_end_0
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 10
     const-wide/16 v2, 0x0
@@ -1659,12 +1659,12 @@
 
     .line 36
     .line 37
-    :catch_24
+    :catch_0
     return v0
 .end method
 
 .method public z(I[B)I
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0

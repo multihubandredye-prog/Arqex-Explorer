@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/si;Ljava/lang/String;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/ri;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 9
+    .locals 8
 
     .line 1
     iget-byte v0, p0, Llibs/ri;->X:B
@@ -57,7 +57,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_5e
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -78,7 +78,7 @@
     return-void
 
     .line 18
-    :pswitch_11
+    :pswitch_0
     iget-object v0, v2, Llibs/si;->a:Lcom/mixplorer/activities/BrowseActivity;
 
     .line 19
@@ -104,8 +104,8 @@
     const/4 v5, 0x0
 
     .line 29
-    :goto_1c
-    if-ge v5, v3, :cond_5d
+    :goto_0
+    if-ge v5, v3, :cond_3
 
     .line 30
     .line 31
@@ -121,7 +121,7 @@
     move-result-object v7
 
     .line 37
-    if-eqz v7, :cond_5a
+    if-eqz v7, :cond_2
 
     .line 38
     .line 39
@@ -137,7 +137,7 @@
 
     .line 44
     .line 45
-    if-nez v7, :cond_5a
+    if-nez v7, :cond_2
 
     .line 46
     .line 47
@@ -161,7 +161,7 @@
     move-result v7
 
     .line 57
-    if-eqz v7, :cond_5a
+    if-eqz v7, :cond_2
 
     .line 58
     .line 59
@@ -176,7 +176,7 @@
     const/4 v2, 0x1
 
     .line 64
-    if-eqz v1, :cond_52
+    if-eqz v1, :cond_1
 
     .line 65
     .line 66
@@ -201,25 +201,25 @@
     move-result v1
 
     .line 77
-    if-nez v1, :cond_4f
+    if-nez v1, :cond_0
 
     .line 78
     .line 79
     const/4 v4, 0x1
 
     .line 80
-    :cond_4f
+    :cond_0
     invoke-virtual {v6, v4}, Llibs/xt1;->Old(Z)V
 
     .line 81
     .line 82
     .line 83
-    :cond_52
+    :cond_1
     iget-object v0, v0, Lcom/mixplorer/activities/BrowseActivity;->Romeo:Llibs/r31;
 
     .line 84
     .line 85
-    if-eqz v0, :cond_5d
+    if-eqz v0, :cond_3
 
     .line 86
     .line 87
@@ -228,24 +228,24 @@
     .line 88
     .line 89
     .line 90
-    goto :goto_5d
+    goto :goto_1
 
     .line 91
-    :cond_5a
+    :cond_2
     add-int/lit8 v5, v5, 0x1
 
     .line 92
     .line 93
-    goto :goto_1c
+    goto :goto_0
 
     .line 94
-    :cond_5d
-    :goto_5d
+    :cond_3
+    :goto_1
     return-void
 
     .line 95
-    :pswitch_data_5e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_11
+        :pswitch_0
     .end packed-switch
 .end method

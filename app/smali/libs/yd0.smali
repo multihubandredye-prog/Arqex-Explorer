@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/xd0;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final Add(Landroid/graphics/drawable/Drawable;Z)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-static {p1, p2}, Llibs/Echo;->q(Landroid/graphics/drawable/Drawable;Z)V
@@ -31,7 +31,7 @@
 .end method
 
 .method public final Set(Landroid/graphics/drawable/Drawable;)Z
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p1}, Llibs/Echo;->y(Landroid/graphics/drawable/Drawable;)Z
@@ -46,7 +46,7 @@
 .end method
 
 .method public final t(Landroid/graphics/drawable/Drawable;)I
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p1}, Llibs/Echo;->a(Landroid/graphics/drawable/Drawable;)I

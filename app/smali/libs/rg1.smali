@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/ae;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final a(Llibs/bg2;)Ljava/security/PrivateKey;
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p1, Llibs/bg2;->Y:Llibs/$f;
@@ -42,7 +42,7 @@
     move-result v1
 
     .line 11
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_0
 
     .line 12
     .line 13
@@ -58,7 +58,7 @@
     return-object v0
 
     .line 19
-    :cond_12
+    :cond_0
     sget-object v1, Llibs/dx3;->Kappa:Llibs/App;
 
     .line 20
@@ -71,7 +71,7 @@
     move-result v1
 
     .line 25
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_1
 
     .line 26
     .line 27
@@ -87,7 +87,7 @@
     return-object v0
 
     .line 33
-    :cond_20
+    :cond_1
     const-string p1, "algorithm identifier "
 
     .line 34
@@ -108,7 +108,7 @@
 .end method
 
 .method public final b(Llibs/ji3;)Ljava/security/PublicKey;
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p1, Llibs/ji3;->X:Llibs/$f;
@@ -131,7 +131,7 @@
     move-result v1
 
     .line 11
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_0
 
     .line 12
     .line 13
@@ -147,7 +147,7 @@
     return-object v0
 
     .line 19
-    :cond_12
+    :cond_0
     sget-object v1, Llibs/dx3;->Kappa:Llibs/App;
 
     .line 20
@@ -160,7 +160,7 @@
     move-result v1
 
     .line 25
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_1
 
     .line 26
     .line 27
@@ -176,7 +176,7 @@
     return-object v0
 
     .line 33
-    :cond_20
+    :cond_1
     const-string p1, "algorithm identifier "
 
     .line 34
@@ -197,14 +197,14 @@
 .end method
 
 .method public final engineGeneratePrivate(Ljava/security/spec/KeySpec;)Ljava/security/PrivateKey;
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Ljavax/crypto/spec/DHPrivateKeySpec;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -224,7 +224,7 @@
     return-object v0
 
     .line 13
-    :cond_c
+    :cond_0
     invoke-super {p0, p1}, Llibs/ae;->engineGeneratePrivate(Ljava/security/spec/KeySpec;)Ljava/security/PrivateKey;
 
     .line 14
@@ -237,14 +237,14 @@
 .end method
 
 .method public final engineGeneratePublic(Ljava/security/spec/KeySpec;)Ljava/security/PublicKey;
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Ljavax/crypto/spec/DHPublicKeySpec;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -264,7 +264,7 @@
     return-object v0
 
     .line 13
-    :cond_c
+    :cond_0
     invoke-super {p0, p1}, Llibs/ae;->engineGeneratePublic(Ljava/security/spec/KeySpec;)Ljava/security/PublicKey;
 
     .line 14
@@ -277,7 +277,7 @@
 .end method
 
 .method public final engineGetKeySpec(Ljava/security/Key;Ljava/lang/Class;)Ljava/security/spec/KeySpec;
-    .registers 5
+    .locals 2
 
     .line 1
     const-class v0, Ljavax/crypto/spec/DHPrivateKeySpec;
@@ -292,7 +292,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -300,7 +300,7 @@
 
     .line 10
     .line 11
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
@@ -360,7 +360,7 @@
     return-object p2
 
     .line 41
-    :cond_28
+    :cond_0
     const-class v0, Ljavax/crypto/spec/DHPublicKeySpec;
 
     .line 42
@@ -373,7 +373,7 @@
     move-result v0
 
     .line 47
-    if-eqz v0, :cond_50
+    if-eqz v0, :cond_1
 
     .line 48
     .line 49
@@ -381,7 +381,7 @@
 
     .line 50
     .line 51
-    if-eqz v0, :cond_50
+    if-eqz v0, :cond_1
 
     .line 52
     .line 53
@@ -441,7 +441,7 @@
     return-object p2
 
     .line 81
-    :cond_50
+    :cond_1
     invoke-super {p0, p1, p2}, Llibs/ae;->engineGetKeySpec(Ljava/security/Key;Ljava/lang/Class;)Ljava/security/spec/KeySpec;
 
     .line 82
@@ -454,14 +454,14 @@
 .end method
 
 .method public final engineTranslateKey(Ljava/security/Key;)Ljava/security/Key;
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Ljavax/crypto/interfaces/DHPublicKey;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -481,12 +481,12 @@
     return-object v0
 
     .line 13
-    :cond_c
+    :cond_0
     instance-of v0, p1, Ljavax/crypto/interfaces/DHPrivateKey;
 
     .line 14
     .line 15
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     .line 16
     .line 17
@@ -506,7 +506,7 @@
     return-object v0
 
     .line 25
-    :cond_18
+    :cond_1
     const-string p1, "key type unknown"
 
     .line 26

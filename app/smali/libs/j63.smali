@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/wx;Ljava/nio/charset/Charset;)V
-    .registers 4
+    .locals 1
 
     .line 1
     const-string v0, "session"
@@ -55,14 +55,14 @@
 
 # virtual methods
 .method public final Intent(Ljava/lang/String;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-boolean v0, p0, Llibs/j63;->Two:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_2f
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -153,7 +153,7 @@
     return-void
 
     .line 48
-    :cond_2f
+    :cond_0
     new-instance p1, Llibs/qy2;
 
     .line 49
@@ -171,7 +171,7 @@
 .end method
 
 .method public final List(Ljava/lang/String;Llibs/oy2;)V
-    .registers 4
+    .locals 1
 
     .line 1
     :try_start_0
@@ -187,7 +187,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -199,14 +199,14 @@
     return-void
 
     .line 13
-    :catch_c
+    :catch_0
     move-exception p1
 
     .line 14
-    goto :goto_39
+    goto :goto_0
 
     .line 15
-    :cond_e
+    :cond_0
     const-string v0, "exit-status"
 
     .line 16
@@ -219,7 +219,7 @@
     move-result v0
 
     .line 21
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
     .line 22
     .line 23
@@ -231,7 +231,7 @@
     return-void
 
     .line 27
-    :cond_1a
+    :cond_1
     const-string v0, "exit-signal"
 
     .line 28
@@ -244,7 +244,7 @@
     move-result v0
 
     .line 33
-    if-eqz v0, :cond_35
+    if-eqz v0, :cond_2
 
     .line 34
     .line 35
@@ -283,10 +283,10 @@
     return-void
 
     .line 54
-    :cond_35
+    :cond_2
     invoke-super {p0, p1, p2}, Llibs/Xi;->List(Ljava/lang/String;Llibs/oy2;)V
-    :try_end_38
-    .catch Llibs/rj; {:try_start_0 .. :try_end_38} :catch_c
+    :try_end_0
+    .catch Llibs/rj; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 55
     .line 56
@@ -294,7 +294,7 @@
     return-void
 
     .line 58
-    :goto_39
+    :goto_0
     new-instance p2, Llibs/vx;
 
     .line 59
@@ -308,14 +308,14 @@
 .end method
 
 .method public final Object(Llibs/oy2;)V
-    .registers 6
+    .locals 4
 
     .line 1
     const-string v0, "Bad extended data type = "
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     invoke-virtual {p1}, Llibs/uj;->String()J
 
     .line 4
@@ -330,7 +330,7 @@
     const/4 v1, 0x1
 
     .line 9
-    if-ne v2, v1, :cond_12
+    if-ne v2, v1, :cond_0
 
     .line 10
     .line 11
@@ -346,14 +346,14 @@
     return-void
 
     .line 17
-    :catch_10
+    :catch_0
     move-exception p1
 
     .line 18
-    goto :goto_26
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     new-instance p1, Llibs/vx;
 
     .line 20
@@ -390,11 +390,11 @@
     .line 37
     .line 38
     throw p1
-    :try_end_26
-    .catch Llibs/rj; {:try_start_2 .. :try_end_26} :catch_10
+    :try_end_0
+    .catch Llibs/rj; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 39
-    :goto_26
+    :goto_0
     new-instance v0, Llibs/vx;
 
     .line 40
@@ -408,14 +408,14 @@
 .end method
 
 .method public final i(Llibs/ny2;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/j63;->One:Llibs/tr;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -424,7 +424,7 @@
     .line 6
     .line 7
     .line 8
-    :cond_7
+    :cond_0
     invoke-super {p0, p1}, Llibs/Xi;->i(Llibs/ny2;)V
 
     .line 9
@@ -434,7 +434,7 @@
 .end method
 
 .method public final w()V
-    .registers 4
+    .locals 3
 
     .line 1
     const/4 v0, 0x1
@@ -469,7 +469,7 @@
 .end method
 
 .method public final x()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/j63;->One:Llibs/tr;

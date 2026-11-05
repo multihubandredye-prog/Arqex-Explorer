@@ -25,7 +25,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     const/4 v0, 0x5
@@ -120,7 +120,7 @@
 .end method
 
 .method public constructor <init>(Llibs/hi3;Llibs/q22;Llibs/dn2;Llibs/wz;Llibs/b91;Llibs/e72;)V
-    .registers 7
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -187,7 +187,7 @@
 .end method
 
 .method public static a(Llibs/wx3;Ljava/lang/String;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-interface {p0, p1}, Llibs/wx3;->e(Ljava/lang/String;)Llibs/w52;
@@ -226,14 +226,14 @@
 
     .line 18
     .line 19
-    if-eqz p0, :cond_15
+    if-eqz p0, :cond_0
 
     .line 20
     .line 21
     move-object p1, p0
 
     .line 22
-    :cond_15
+    :cond_0
     check-cast p1, Ljava/lang/Boolean;
 
     .line 23
@@ -252,7 +252,7 @@
 
 # virtual methods
 .method public final b(Ljava/lang/Iterable;)Llibs/hl2;
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/vc1;
@@ -291,7 +291,7 @@
 .end method
 
 .method public final c(Ljava/lang/String;Llibs/w52;Llibs/la1;)Llibs/hl2;
-    .registers 7
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/kg3;->d:Llibs/wz;
@@ -314,7 +314,7 @@
     move-result v2
 
     .line 11
-    if-eqz v2, :cond_15
+    if-eqz v2, :cond_0
 
     .line 12
     .line 13
@@ -334,10 +334,10 @@
     move-result-object p1
 
     .line 21
-    goto :goto_5f
+    goto :goto_1
 
     .line 22
-    :cond_15
+    :cond_0
     const/16 v0, 0x2e
 
     .line 23
@@ -353,7 +353,7 @@
     const/4 v2, -0x1
 
     .line 29
-    if-ne v0, v2, :cond_21
+    if-ne v0, v2, :cond_1
 
     .line 30
     .line 31
@@ -361,10 +361,10 @@
 
     .line 32
     .line 33
-    goto :goto_27
+    goto :goto_0
 
     .line 34
-    :cond_21
+    :cond_1
     add-int/lit8 v0, v0, 0x1
 
     .line 35
@@ -377,7 +377,7 @@
     move-result-object p1
 
     .line 40
-    :goto_27
+    :goto_0
     invoke-interface {v1, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
     .line 41
@@ -386,7 +386,7 @@
     move-result v0
 
     .line 44
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_2
 
     .line 45
     .line 46
@@ -406,10 +406,10 @@
     move-result-object p1
 
     .line 54
-    goto :goto_5f
+    goto :goto_1
 
     .line 55
-    :cond_36
+    :cond_2
     sget-object v0, Llibs/wz;->d:Ljava/util/HashMap;
 
     .line 56
@@ -438,7 +438,7 @@
     move-result v0
 
     .line 69
-    if-nez v0, :cond_49
+    if-nez v0, :cond_3
 
     .line 70
     .line 71
@@ -446,10 +446,10 @@
 
     .line 72
     .line 73
-    goto :goto_5f
+    goto :goto_1
 
     .line 74
-    :cond_49
+    :cond_3
     iget-object p1, p1, Llibs/w52;->a:Ljava/lang/Object;
 
     .line 75
@@ -492,7 +492,7 @@
     move-result-object p1
 
     .line 96
-    :goto_5f
+    :goto_1
     new-instance v0, Llibs/m81;
 
     .line 97
@@ -506,19 +506,19 @@
 
     .line 102
     .line 103
-    if-eqz p1, :cond_69
+    if-eqz p1, :cond_4
 
     .line 104
     .line 105
-    goto :goto_6b
+    goto :goto_2
 
     .line 106
-    :cond_69
+    :cond_4
     const-string p1, "(unknown)"
 
     .line 107
     .line 108
-    :goto_6b
+    :goto_2
     check-cast p1, Ljava/lang/String;
 
     .line 109
@@ -535,7 +535,7 @@
     move-result p2
 
     .line 116
-    if-eqz p2, :cond_7a
+    if-eqz p2, :cond_5
 
     .line 117
     .line 118
@@ -550,7 +550,7 @@
     return-object p1
 
     .line 123
-    :cond_7a
+    :cond_5
     const-string p2, "Image of type "
 
     .line 124
@@ -591,7 +591,7 @@
 .end method
 
 .method public final d(Llibs/wx3;Ljava/lang/String;Ljava/lang/String;Llibs/gs0;)Llibs/ob1;
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-interface {p1, p2}, Llibs/wx3;->g(Ljava/lang/String;)Llibs/wx3;
@@ -652,14 +652,14 @@
 
     .line 30
     .line 31
-    if-eqz p1, :cond_21
+    if-eqz p1, :cond_0
 
     .line 32
     .line 33
     move-object p2, p1
 
     .line 34
-    :cond_21
+    :cond_0
     check-cast p2, Llibs/ob1;
 
     .line 35
@@ -668,7 +668,7 @@
 .end method
 
 .method public final e(Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/kg3;->c:Llibs/dn2;
@@ -695,7 +695,7 @@
     move-result v0
 
     .line 13
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 14
     .line 15
@@ -713,7 +713,7 @@
     return-object p1
 
     .line 21
-    :cond_14
+    :cond_0
     const-string v0, "word/"
 
     .line 22

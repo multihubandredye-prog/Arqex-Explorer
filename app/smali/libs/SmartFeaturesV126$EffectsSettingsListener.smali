@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(ILandroid/content/Context;Landroid/widget/TextView;Llibs/xt1;)V
-    .registers 5
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,45 +39,73 @@
 
 # virtual methods
 .method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
-    .registers 4
+    .locals 1
 
     iget p1, p0, Llibs/SmartFeaturesV126$EffectsSettingsListener;->action:I
 
     const/4 v0, 0x1
 
-    if-ne p1, v0, :cond_9
+    if-ne p1, v0, :cond_0
 
     invoke-static {p2}, Llibs/SmartFeaturesV126;->setClickZoomEnabled(Z)V
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x2
 
-    if-ne p1, v0, :cond_11
+    if-ne p1, v0, :cond_1
 
     iget-object p1, p0, Llibs/SmartFeaturesV126$EffectsSettingsListener;->page:Llibs/xt1;
 
     invoke-static {p2, p1}, Llibs/SmartFeaturesV126;->setAnimatedLinesEnabled(ZLlibs/xt1;)V
 
-    :cond_11
-    :goto_11
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x3
+
+    if-ne p1, v0, :cond_3
+
+    iget-object p1, p0, Llibs/SmartFeaturesV126$EffectsSettingsListener;->page:Llibs/xt1;
+
+    invoke-static {p2, p1}, Llibs/SmartFeaturesV126;->setAnimBarsEnabled(ZLlibs/xt1;)V
+
+    goto :goto_0
+
+    :cond_3
+    const/4 v0, 0x4
+
+    if-ne p1, v0, :cond_4
+
+    invoke-static {p2}, Llibs/SmartFeaturesV126;->setAnimMenuEnabled(Z)V
+
+    goto :goto_0
+
+    :cond_4
+    const/4 v0, 0x5
+
+    if-ne p1, v0, :goto_0
+
+    invoke-static {p2}, Llibs/SmartFeaturesV126;->setAnimSettingsEnabled(Z)V
+
+    :goto_0
     iget-object p1, p0, Llibs/SmartFeaturesV126$EffectsSettingsListener;->rowTextView:Landroid/widget/TextView;
 
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_2
 
     invoke-static {p1}, Llibs/SmartFeaturesV126;->refreshSettingsRowText(Landroid/widget/TextView;)V
 
-    :cond_18
+    :cond_2
     return-void
 .end method
 
 .method public onClick(Landroid/view/View;)V
-    .registers 4
+    .locals 2
 
     iget p1, p0, Llibs/SmartFeaturesV126$EffectsSettingsListener;->action:I
 
-    if-nez p1, :cond_e
+    if-nez p1, :cond_0
 
     iget-object p1, p0, Llibs/SmartFeaturesV126$EffectsSettingsListener;->ctx:Landroid/content/Context;
 
@@ -89,10 +117,10 @@
 
     return-void
 
-    :cond_e
+    :cond_0
     iget-object p1, p0, Llibs/SmartFeaturesV126$EffectsSettingsListener;->cbRef:Landroid/widget/CheckBox;
 
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_1
 
     invoke-virtual {p1}, Landroid/widget/CompoundButton;->isChecked()Z
 
@@ -102,6 +130,6 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/CompoundButton;->setChecked(Z)V
 
-    :cond_1b
+    :cond_1
     return-void
 .end method

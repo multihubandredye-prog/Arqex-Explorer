@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/ks;->d:Ljava/nio/charset/Charset;
@@ -24,7 +24,7 @@
 .end method
 
 .method public static varargs a(Llibs/s73;[B[[B)[B
-    .registers 5
+    .locals 2
 
     .line 1
     :try_start_0
@@ -51,8 +51,8 @@
     const/4 v0, 0x0
 
     .line 12
-    :goto_b
-    if-ge v0, p1, :cond_15
+    :goto_0
+    if-ge v0, p1, :cond_0
 
     .line 13
     .line 14
@@ -69,24 +69,24 @@
 
     .line 20
     .line 21
-    goto :goto_b
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     invoke-interface {p0}, Llibs/uo1;->a()[B
 
     .line 23
     .line 24
     .line 25
     move-result-object p0
-    :try_end_19
-    .catch Llibs/q43; {:try_start_0 .. :try_end_19} :catch_1a
+    :try_end_0
+    .catch Llibs/q43; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 26
     return-object p0
 
     .line 27
-    :catch_1a
+    :catch_0
     move-exception p0
 
     .line 28
@@ -99,19 +99,19 @@
     .line 31
     .line 32
     .line 33
-    goto :goto_22
+    goto :goto_2
 
     .line 34
-    :goto_21
+    :goto_1
     throw p1
 
     .line 35
-    :goto_22
-    goto :goto_21
+    :goto_2
+    goto :goto_1
 .end method
 
 .method public static varargs b(Llibs/s73;[[B)[B
-    .registers 5
+    .locals 3
 
     .line 1
     :try_start_0
@@ -133,8 +133,8 @@
     const/4 v1, 0x0
 
     .line 9
-    :goto_8
-    if-ge v1, v0, :cond_12
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     .line 10
     .line 11
@@ -151,24 +151,24 @@
 
     .line 17
     .line 18
-    goto :goto_8
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     invoke-interface {p0}, Llibs/dr1;->e()[B
 
     .line 20
     .line 21
     .line 22
     move-result-object p0
-    :try_end_16
-    .catch Llibs/q43; {:try_start_0 .. :try_end_16} :catch_17
+    :try_end_0
+    .catch Llibs/q43; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 23
     return-object p0
 
     .line 24
-    :catch_17
+    :catch_0
     move-exception p0
 
     .line 25
@@ -181,22 +181,22 @@
     .line 28
     .line 29
     .line 30
-    goto :goto_1f
+    goto :goto_2
 
     .line 31
-    :goto_1e
+    :goto_1
     throw p1
 
     .line 32
-    :goto_1f
-    goto :goto_1e
+    :goto_2
+    goto :goto_1
 .end method
 
 .method public static c(Ljava/lang/String;)[B
-    .registers 2
+    .locals 1
 
     .line 1
-    if-nez p0, :cond_6
+    if-nez p0, :cond_0
 
     .line 2
     .line 3
@@ -210,7 +210,7 @@
     return-object p0
 
     .line 7
-    :cond_6
+    :cond_0
     sget-object v0, Llibs/b22;->a:Ljava/nio/charset/Charset;
 
     .line 8

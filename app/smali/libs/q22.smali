@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/q22;
@@ -45,7 +45,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/Map;Ljava/util/Map;Llibs/hi3;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -71,7 +71,7 @@
 
 # virtual methods
 .method public final a(Ljava/lang/String;Ljava/lang/String;)Llibs/w52;
-    .registers 5
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/q22;->b:Ljava/util/Map;
@@ -94,7 +94,7 @@
     move-result v0
 
     .line 11
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     .line 12
     .line 13
@@ -102,10 +102,10 @@
 
     .line 14
     .line 15
-    goto :goto_18
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_0
     iget-object p1, p1, Llibs/w52;->a:Ljava/lang/Object;
 
     .line 17
@@ -123,7 +123,7 @@
     .line 23
     .line 24
     .line 25
-    :goto_18
+    :goto_0
     new-instance v0, Llibs/n22;
 
     .line 26

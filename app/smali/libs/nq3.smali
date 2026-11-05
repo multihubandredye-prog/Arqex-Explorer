@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/bt1;Llibs/n81;)V
-    .registers 8
+    .locals 5
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -50,21 +50,21 @@
     const/4 v1, 0x0
 
     .line 15
-    if-eqz p2, :cond_12
+    if-eqz p2, :cond_0
 
     .line 16
     .line 17
     const/4 v2, 0x1
 
     .line 18
-    goto :goto_13
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     const/4 v2, 0x0
 
     .line 20
-    :goto_13
+    :goto_0
     iput-boolean v2, p0, Llibs/nq3;->c:Z
 
     .line 21
@@ -73,7 +73,7 @@
 
     .line 23
     .line 24
-    if-eqz v2, :cond_35
+    if-eqz v2, :cond_1
 
     .line 25
     .line 26
@@ -90,7 +90,7 @@
     .line 31
     .line 32
     .line 33
-    :try_start_20
+    :try_start_0
     const-string v2, "newInstance"
 
     .line 34
@@ -121,18 +121,18 @@
     .line 47
     .line 48
     move-result-object p1
-    :try_end_30
-    .catchall {:try_start_20 .. :try_end_30} :catchall_31
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 49
-    goto :goto_32
+    goto :goto_1
 
     .line 50
-    :catchall_31
+    :catchall_0
     const/4 p1, 0x0
 
     .line 51
-    :goto_32
+    :goto_1
     iput-object p1, p0, Llibs/nq3;->b:Ljava/lang/Object;
 
     .line 52
@@ -140,7 +140,7 @@
     return-void
 
     .line 54
-    :cond_35
+    :cond_1
     invoke-static {}, Llibs/t43;->Map()Z
 
     .line 55
@@ -149,7 +149,7 @@
     move-result p2
 
     .line 58
-    if-eqz p2, :cond_46
+    if-eqz p2, :cond_2
 
     .line 59
     .line 60
@@ -176,7 +176,7 @@
     return-void
 
     .line 71
-    :cond_46
+    :cond_2
     new-instance p1, Lexceptions/NotSupportedException;
 
     .line 72
@@ -190,7 +190,7 @@
 .end method
 
 .method public constructor <init>(Llibs/ep1;Llibs/n81;)V
-    .registers 8
+    .locals 5
 
     .line 77
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -209,29 +209,29 @@
 
     const/4 v1, 0x0
 
-    if-eqz p2, :cond_12
+    if-eqz p2, :cond_0
 
     const/4 v2, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     const/4 v2, 0x0
 
     .line 80
-    :goto_13
+    :goto_0
     iput-boolean v2, p0, Llibs/nq3;->c:Z
 
     .line 81
     iput-object p1, p0, Llibs/nq3;->e:Llibs/ep1;
 
-    if-eqz v2, :cond_31
+    if-eqz v2, :cond_1
 
     .line 82
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 83
-    :try_start_1c
+    :try_start_0
     const-string v2, "newInstance"
 
     new-array v3, v0, [Ljava/lang/Class;
@@ -247,27 +247,27 @@
     invoke-virtual {p2, v2, v3, v0}, Llibs/uc;->d(Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
-    :try_end_2c
-    .catchall {:try_start_1c .. :try_end_2c} :catchall_2d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_2e
+    goto :goto_1
 
-    :catchall_2d
+    :catchall_0
     const/4 p1, 0x0
 
     .line 84
-    :goto_2e
+    :goto_1
     iput-object p1, p0, Llibs/nq3;->b:Ljava/lang/Object;
 
     return-void
 
     .line 85
-    :cond_31
+    :cond_1
     invoke-static {}, Llibs/t43;->Map()Z
 
     move-result p2
 
-    if-eqz p2, :cond_3e
+    if-eqz p2, :cond_2
 
     .line 86
     invoke-static {p1}, Llibs/gq1;->e(Llibs/ep1;)Landroid/graphics/BitmapRegionDecoder;
@@ -279,7 +279,7 @@
     return-void
 
     .line 87
-    :cond_3e
+    :cond_2
     new-instance p1, Lexceptions/NotSupportedException;
 
     invoke-direct {p1}, Lexceptions/NotSupportedException;-><init>()V
@@ -290,7 +290,7 @@
 
 # virtual methods
 .method public final a(Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
-    .registers 13
+    .locals 10
 
     .line 1
     iget-object v0, p0, Llibs/nq3;->a:Ljava/util/concurrent/locks/ReentrantLock;
@@ -302,10 +302,10 @@
     .line 4
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     iget-boolean v1, p0, Llibs/nq3;->c:Z
-    :try_end_7
-    .catchall {:try_start_5 .. :try_end_7} :catchall_38
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 7
     .line 8
@@ -313,23 +313,23 @@
 
     .line 9
     .line 10
-    if-eqz v1, :cond_3a
+    if-eqz v1, :cond_0
 
     .line 11
     .line 12
-    :try_start_b
+    :try_start_1
     iget-object v1, p0, Llibs/nq3;->d:Llibs/n81;
 
     .line 13
     .line 14
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-    :try_end_10
-    .catchall {:try_start_b .. :try_end_10} :catchall_38
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 15
     .line 16
     .line 17
-    :try_start_10
+    :try_start_2
     const-string v3, "decodeRegion"
 
     .line 18
@@ -399,19 +399,19 @@
 
     .line 49
     check-cast p1, Landroid/graphics/Bitmap;
-    :try_end_32
-    .catchall {:try_start_10 .. :try_end_32} :catchall_33
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 50
     .line 51
-    goto :goto_34
+    goto :goto_0
 
     .line 52
-    :catchall_33
+    :catchall_0
     const/4 p1, 0x0
 
     .line 53
-    :goto_34
+    :goto_0
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 54
@@ -420,15 +420,15 @@
     return-object p1
 
     .line 57
-    :catchall_38
+    :catchall_1
     move-exception p1
 
     .line 58
-    goto :goto_52
+    goto :goto_1
 
     .line 59
-    :cond_3a
-    :try_start_3a
+    :cond_0
+    :try_start_3
     invoke-static {}, Llibs/t43;->Map()Z
 
     .line 60
@@ -437,7 +437,7 @@
     move-result v1
 
     .line 63
-    if-eqz v1, :cond_4c
+    if-eqz v1, :cond_1
 
     .line 64
     .line 65
@@ -455,8 +455,8 @@
     .line 71
     .line 72
     move-result-object p1
-    :try_end_48
-    .catchall {:try_start_3a .. :try_end_48} :catchall_38
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 73
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
@@ -467,8 +467,8 @@
     return-object p1
 
     .line 77
-    :cond_4c
-    :try_start_4c
+    :cond_1
+    :try_start_4
     new-instance p1, Lexceptions/NotSupportedException;
 
     .line 78
@@ -479,11 +479,11 @@
     .line 81
     .line 82
     throw p1
-    :try_end_52
-    .catchall {:try_start_4c .. :try_end_52} :catchall_38
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 83
-    :goto_52
+    :goto_1
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 84
@@ -493,7 +493,7 @@
 .end method
 
 .method public final b()I
-    .registers 9
+    .locals 8
 
     .line 1
     iget-object v0, p0, Llibs/nq3;->a:Ljava/util/concurrent/locks/ReentrantLock;
@@ -505,10 +505,10 @@
     .line 4
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     iget-boolean v1, p0, Llibs/nq3;->c:Z
-    :try_end_7
-    .catchall {:try_start_5 .. :try_end_7} :catchall_2c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 7
     .line 8
@@ -516,18 +516,18 @@
 
     .line 9
     .line 10
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_0
 
     .line 11
     .line 12
-    :try_start_b
+    :try_start_1
     iget-object v1, p0, Llibs/nq3;->d:Llibs/n81;
 
     .line 13
     .line 14
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-    :try_end_10
-    .catchall {:try_start_b .. :try_end_10} :catchall_2c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 15
     .line 16
@@ -535,7 +535,7 @@
     const/4 v3, 0x0
 
     .line 18
-    :try_start_11
+    :try_start_2
     const-string v4, "getHeight"
 
     .line 19
@@ -581,11 +581,11 @@
     .line 39
     .line 40
     move-result v3
-    :try_end_28
-    .catchall {:try_start_11 .. :try_end_28} :catchall_28
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 41
-    :catchall_28
+    :catchall_0
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 42
@@ -594,15 +594,15 @@
     return v3
 
     .line 45
-    :catchall_2c
+    :catchall_1
     move-exception v1
 
     .line 46
-    goto :goto_46
+    goto :goto_0
 
     .line 47
-    :cond_2e
-    :try_start_2e
+    :cond_0
+    :try_start_3
     invoke-static {}, Llibs/t43;->Map()Z
 
     .line 48
@@ -611,7 +611,7 @@
     move-result v1
 
     .line 51
-    if-eqz v1, :cond_40
+    if-eqz v1, :cond_1
 
     .line 52
     .line 53
@@ -629,8 +629,8 @@
     .line 59
     .line 60
     move-result v1
-    :try_end_3c
-    .catchall {:try_start_2e .. :try_end_3c} :catchall_2c
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 61
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
@@ -641,8 +641,8 @@
     return v1
 
     .line 65
-    :cond_40
-    :try_start_40
+    :cond_1
+    :try_start_4
     new-instance v1, Lexceptions/NotSupportedException;
 
     .line 66
@@ -653,11 +653,11 @@
     .line 69
     .line 70
     throw v1
-    :try_end_46
-    .catchall {:try_start_40 .. :try_end_46} :catchall_2c
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 71
-    :goto_46
+    :goto_0
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 72
@@ -667,7 +667,7 @@
 .end method
 
 .method public final c()I
-    .registers 9
+    .locals 8
 
     .line 1
     iget-object v0, p0, Llibs/nq3;->a:Ljava/util/concurrent/locks/ReentrantLock;
@@ -679,10 +679,10 @@
     .line 4
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     iget-boolean v1, p0, Llibs/nq3;->c:Z
-    :try_end_7
-    .catchall {:try_start_5 .. :try_end_7} :catchall_2c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 7
     .line 8
@@ -690,18 +690,18 @@
 
     .line 9
     .line 10
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_0
 
     .line 11
     .line 12
-    :try_start_b
+    :try_start_1
     iget-object v1, p0, Llibs/nq3;->d:Llibs/n81;
 
     .line 13
     .line 14
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-    :try_end_10
-    .catchall {:try_start_b .. :try_end_10} :catchall_2c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 15
     .line 16
@@ -709,7 +709,7 @@
     const/4 v3, 0x0
 
     .line 18
-    :try_start_11
+    :try_start_2
     const-string v4, "getWidth"
 
     .line 19
@@ -755,11 +755,11 @@
     .line 39
     .line 40
     move-result v3
-    :try_end_28
-    .catchall {:try_start_11 .. :try_end_28} :catchall_28
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 41
-    :catchall_28
+    :catchall_0
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 42
@@ -768,15 +768,15 @@
     return v3
 
     .line 45
-    :catchall_2c
+    :catchall_1
     move-exception v1
 
     .line 46
-    goto :goto_46
+    goto :goto_0
 
     .line 47
-    :cond_2e
-    :try_start_2e
+    :cond_0
+    :try_start_3
     invoke-static {}, Llibs/t43;->Map()Z
 
     .line 48
@@ -785,7 +785,7 @@
     move-result v1
 
     .line 51
-    if-eqz v1, :cond_40
+    if-eqz v1, :cond_1
 
     .line 52
     .line 53
@@ -803,8 +803,8 @@
     .line 59
     .line 60
     move-result v1
-    :try_end_3c
-    .catchall {:try_start_2e .. :try_end_3c} :catchall_2c
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 61
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
@@ -815,8 +815,8 @@
     return v1
 
     .line 65
-    :cond_40
-    :try_start_40
+    :cond_1
+    :try_start_4
     new-instance v1, Lexceptions/NotSupportedException;
 
     .line 66
@@ -827,11 +827,11 @@
     .line 69
     .line 70
     throw v1
-    :try_end_46
-    .catchall {:try_start_40 .. :try_end_46} :catchall_2c
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 71
-    :goto_46
+    :goto_0
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 72
@@ -841,7 +841,7 @@
 .end method
 
 .method public final d()Z
-    .registers 9
+    .locals 8
 
     .line 1
     iget-object v0, p0, Llibs/nq3;->a:Ljava/util/concurrent/locks/ReentrantLock;
@@ -853,10 +853,10 @@
     .line 4
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     iget-boolean v1, p0, Llibs/nq3;->c:Z
-    :try_end_7
-    .catchall {:try_start_5 .. :try_end_7} :catchall_2c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 7
     .line 8
@@ -864,18 +864,18 @@
 
     .line 9
     .line 10
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_0
 
     .line 11
     .line 12
-    :try_start_b
+    :try_start_1
     iget-object v1, p0, Llibs/nq3;->d:Llibs/n81;
 
     .line 13
     .line 14
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-    :try_end_10
-    .catchall {:try_start_b .. :try_end_10} :catchall_2c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 15
     .line 16
@@ -883,7 +883,7 @@
     const/4 v3, 0x0
 
     .line 18
-    :try_start_11
+    :try_start_2
     const-string v4, "isRecycled"
 
     .line 19
@@ -929,11 +929,11 @@
     .line 39
     .line 40
     move-result v3
-    :try_end_28
-    .catchall {:try_start_11 .. :try_end_28} :catchall_28
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 41
-    :catchall_28
+    :catchall_0
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 42
@@ -942,15 +942,15 @@
     return v3
 
     .line 45
-    :catchall_2c
+    :catchall_1
     move-exception v1
 
     .line 46
-    goto :goto_46
+    goto :goto_0
 
     .line 47
-    :cond_2e
-    :try_start_2e
+    :cond_0
+    :try_start_3
     invoke-static {}, Llibs/t43;->Map()Z
 
     .line 48
@@ -959,7 +959,7 @@
     move-result v1
 
     .line 51
-    if-eqz v1, :cond_40
+    if-eqz v1, :cond_1
 
     .line 52
     .line 53
@@ -977,8 +977,8 @@
     .line 59
     .line 60
     move-result v1
-    :try_end_3c
-    .catchall {:try_start_2e .. :try_end_3c} :catchall_2c
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 61
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
@@ -989,8 +989,8 @@
     return v1
 
     .line 65
-    :cond_40
-    :try_start_40
+    :cond_1
+    :try_start_4
     new-instance v1, Lexceptions/NotSupportedException;
 
     .line 66
@@ -1001,11 +1001,11 @@
     .line 69
     .line 70
     throw v1
-    :try_end_46
-    .catchall {:try_start_40 .. :try_end_46} :catchall_2c
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 71
-    :goto_46
+    :goto_0
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 72

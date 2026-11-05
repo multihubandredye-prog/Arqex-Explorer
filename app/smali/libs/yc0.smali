@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;Llibs/s12;Ljava/util/List;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final a()Ljava/util/List;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/yc0;->a:Ljava/util/List;

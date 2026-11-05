@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/CodeEditorActivity;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iput-object p1, p0, Llibs/aw;->f:Lcom/mixplorer/activities/CodeEditorActivity;
@@ -54,7 +54,7 @@
     const/4 v2, 0x1
 
     .line 19
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_0
 
     .line 20
     .line 21
@@ -62,7 +62,7 @@
 
     .line 22
     .line 23
-    if-eqz p1, :cond_1f
+    if-eqz p1, :cond_0
 
     .line 24
     .line 25
@@ -74,14 +74,14 @@
     move-result p1
 
     .line 29
-    if-le p1, v2, :cond_1f
+    if-le p1, v2, :cond_0
 
     .line 30
     .line 31
     const/4 v2, 0x2
 
     .line 32
-    :cond_1f
+    :cond_0
     iput v2, p0, Llibs/aw;->e:I
 
     .line 33
@@ -92,7 +92,7 @@
 
 # virtual methods
 .method public final c()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/aw;->d:Ljava/util/ArrayList;
@@ -111,7 +111,7 @@
 .end method
 
 .method public final d()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, -0x2
@@ -121,7 +121,7 @@
 .end method
 
 .method public final e()F
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/aw;->e:I
@@ -142,10 +142,10 @@
 .end method
 
 .method public final f(Lcom/mixplorer/widgets/MiViewPager;I)Ljava/lang/Object;
-    .registers 5
+    .locals 2
 
     .line 1
-    if-ltz p2, :cond_11
+    if-ltz p2, :cond_0
 
     .line 2
     .line 3
@@ -161,7 +161,7 @@
     move-result v1
 
     .line 9
-    if-ge p2, v1, :cond_11
+    if-ge p2, v1, :cond_0
 
     .line 10
     .line 11
@@ -177,14 +177,14 @@
 
     .line 16
     .line 17
-    goto :goto_12
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     const/4 p2, 0x0
 
     .line 19
-    :goto_12
+    :goto_0
     invoke-virtual {p2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     .line 20
@@ -193,7 +193,7 @@
     move-result-object v0
 
     .line 23
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
     .line 24
     .line 25
@@ -221,7 +221,7 @@
 
     .line 36
     .line 37
-    :cond_24
+    :cond_1
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     .line 38

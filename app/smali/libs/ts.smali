@@ -5,15 +5,15 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
-    packed-switch p1, :pswitch_data_1c
+    packed-switch p1, :pswitch_data_0
 
     .line 2
     .line 3
     .line 4
-    :pswitch_3
+    :pswitch_0
     const-string p1, "CodedOutputStream was writing to a flat byte array and ran out of space."
 
     .line 5
@@ -26,7 +26,7 @@
     return-void
 
     .line 10
-    :pswitch_9
+    :pswitch_1
     const-string p1, "The file system is flagged as read-only. No modifications allowed."
 
     .line 11
@@ -39,7 +39,7 @@
     return-void
 
     .line 16
-    :pswitch_f
+    :pswitch_2
     const-string p1, "read-only"
 
     .line 17
@@ -52,7 +52,7 @@
     return-void
 
     .line 22
-    :pswitch_15
+    :pswitch_3
     const-string p1, "directory is full"
 
     .line 23
@@ -68,18 +68,18 @@
     nop
 
     .line 29
-    :pswitch_data_1c
+    :pswitch_data_0
     .packed-switch 0x2
-        :pswitch_15
         :pswitch_3
-        :pswitch_3
-        :pswitch_f
-        :pswitch_9
+        :pswitch_0
+        :pswitch_0
+        :pswitch_2
+        :pswitch_1
     .end packed-switch
 .end method
 
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     const-string p1, "directory would grow beyond 2097152 bytes"
 
@@ -90,7 +90,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 32
     invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
@@ -99,7 +99,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/Exception;)V
-    .registers 3
+    .locals 0
 
     .line 31
     invoke-direct {p0, p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
@@ -108,7 +108,7 @@
 .end method
 
 .method public synthetic constructor <init>(ZZ)V
-    .registers 3
+    .locals 0
 
     .line 29
     invoke-direct {p0}, Ljava/io/IOException;-><init>()V

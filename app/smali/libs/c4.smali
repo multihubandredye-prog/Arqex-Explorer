@@ -13,7 +13,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 80
     iput-byte p1, p0, Llibs/c4;->a:B
@@ -24,7 +24,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 7
+    .locals 5
 
     .line 1
     const/4 v0, 0x1
@@ -50,7 +50,7 @@
 
     .line 11
     .line 12
-    if-eqz p1, :cond_32
+    if-eqz p1, :cond_2
 
     .line 13
     .line 14
@@ -74,7 +74,7 @@
     move-result v4
 
     .line 24
-    if-eqz v4, :cond_1d
+    if-eqz v4, :cond_0
 
     .line 25
     .line 26
@@ -86,7 +86,7 @@
     move-result-object v2
 
     .line 30
-    :cond_1d
+    :cond_0
     sget-object v0, Llibs/xb2;->c:Ljava/util/regex/Pattern;
 
     .line 31
@@ -107,7 +107,7 @@
     move-result v3
 
     .line 40
-    if-eqz v3, :cond_2e
+    if-eqz v3, :cond_1
 
     .line 41
     .line 42
@@ -119,22 +119,22 @@
     move-result-object v0
 
     .line 46
-    goto :goto_2f
+    goto :goto_0
 
     .line 47
-    :cond_2e
+    :cond_1
     const/4 v0, 0x0
 
     .line 48
-    :goto_2f
+    :goto_0
     iput-object v0, p0, Llibs/c4;->c:Ljava/lang/String;
 
     .line 49
     .line 50
-    goto :goto_36
+    goto :goto_1
 
     .line 51
-    :cond_32
+    :cond_2
     const-string v0, "UTF-8"
 
     .line 52
@@ -143,7 +143,7 @@
 
     .line 54
     .line 55
-    :goto_36
+    :goto_1
     const-string v0, "multipart/form-data"
 
     .line 56
@@ -156,7 +156,7 @@
     move-result v0
 
     .line 61
-    if-eqz v0, :cond_4d
+    if-eqz v0, :cond_3
 
     .line 62
     .line 63
@@ -180,7 +180,7 @@
     move-result v0
 
     .line 73
-    if-eqz v0, :cond_4d
+    if-eqz v0, :cond_3
 
     .line 74
     .line 75
@@ -189,12 +189,12 @@
     .line 76
     .line 77
     .line 78
-    :cond_4d
+    :cond_3
     return-void
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;B)V
-    .registers 4
+    .locals 0
 
     .line 79
     iput-byte p3, p0, Llibs/c4;->a:B
@@ -211,7 +211,7 @@
 
 # virtual methods
 .method public toString()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     iget-byte v0, p0, Llibs/c4;->a:B
@@ -222,12 +222,12 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_6c
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
     .line 8
-    :pswitch_7
+    :pswitch_0
     invoke-super {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     .line 9
@@ -239,7 +239,7 @@
     return-object v0
 
     .line 13
-    :pswitch_c
+    :pswitch_1
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 14
@@ -257,7 +257,7 @@
 
     .line 21
     .line 22
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_0
 
     .line 23
     .line 24
@@ -275,7 +275,7 @@
     .line 30
     .line 31
     .line 32
-    :cond_1f
+    :cond_0
     iget-object v1, p0, Llibs/c4;->c:Ljava/lang/String;
 
     .line 33
@@ -305,7 +305,7 @@
     return-object v0
 
     .line 47
-    :pswitch_2e
+    :pswitch_2
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 48
@@ -349,7 +349,7 @@
     return-object v0
 
     .line 70
-    :pswitch_45
+    :pswitch_3
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 71
@@ -393,7 +393,7 @@
     return-object v0
 
     .line 93
-    :pswitch_5c
+    :pswitch_4
     iget-object v0, p0, Llibs/c4;->b:Ljava/lang/String;
 
     .line 94
@@ -428,12 +428,12 @@
     nop
 
     .line 109
-    :pswitch_data_6c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_5c
-        :pswitch_7
-        :pswitch_45
-        :pswitch_2e
-        :pswitch_c
+        :pswitch_4
+        :pswitch_0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
     .end packed-switch
 .end method

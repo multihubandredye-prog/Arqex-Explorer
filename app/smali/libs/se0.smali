@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,7 +26,7 @@
 
 # virtual methods
 .method public final a()Z
-    .registers 8
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/se0;->a:Ljava/lang/Long;
@@ -39,11 +39,11 @@
     const/4 v2, 0x1
 
     .line 5
-    if-nez v0, :cond_32
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
-    :try_start_6
+    :try_start_0
     const-class v0, Landroid/os/Build;
 
     .line 8
@@ -110,15 +110,15 @@
     .line 39
     .line 40
     iput-object v0, p0, Llibs/se0;->a:Ljava/lang/Long;
-    :try_end_29
-    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_29} :catch_2a
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 41
     .line 42
-    goto :goto_32
+    goto :goto_0
 
     .line 43
-    :catch_2a
+    :catch_0
     const-wide/16 v3, -0x1
 
     .line 44
@@ -135,8 +135,8 @@
 
     .line 50
     .line 51
-    :cond_32
-    :goto_32
+    :cond_0
+    :goto_0
     invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
     .line 52
@@ -154,13 +154,13 @@
 
     .line 59
     .line 60
-    if-ltz v0, :cond_3e
+    if-ltz v0, :cond_1
 
     .line 61
     .line 62
     const/4 v1, 0x1
 
     .line 63
-    :cond_3e
+    :cond_1
     return v1
 .end method

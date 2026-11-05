@@ -15,7 +15,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     const/16 v0, 0xb
@@ -171,7 +171,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -198,7 +198,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/wm;->X:Llibs/Load;
@@ -209,7 +209,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/math/BigInteger;
@@ -237,7 +237,7 @@
     move-result v0
 
     .line 14
-    if-ltz v0, :cond_19
+    if-ltz v0, :cond_1
 
     .line 15
     .line 16
@@ -245,14 +245,14 @@
 
     .line 17
     .line 18
-    if-le v0, v1, :cond_14
+    if-le v0, v1, :cond_0
 
     .line 19
     .line 20
-    goto :goto_19
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_0
     sget-object v1, Llibs/wm;->Y:[Ljava/lang/String;
 
     .line 22
@@ -261,16 +261,16 @@
 
     .line 24
     .line 25
-    goto :goto_1b
+    goto :goto_1
 
     .line 26
-    :cond_19
-    :goto_19
+    :cond_1
+    :goto_0
     const-string v0, "invalid"
 
     .line 27
     .line 28
-    :goto_1b
+    :goto_1
     const-string v1, "CRLReason: "
 
     .line 29

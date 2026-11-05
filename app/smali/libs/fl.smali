@@ -11,30 +11,30 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 22
     invoke-static {}, Llibs/t43;->Item()Z
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     const/16 v0, 0x200
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/16 v0, 0x20
 
-    :goto_b
+    :goto_0
     invoke-direct {p0, v0}, Llibs/fl;-><init>(I)V
 
     return-void
 .end method
 
 .method public constructor <init>(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/io/OutputStream;-><init>()V
@@ -42,7 +42,7 @@
     .line 2
     .line 3
     .line 4
-    if-ltz p1, :cond_a
+    if-ltz p1, :cond_0
 
     .line 5
     .line 6
@@ -57,7 +57,7 @@
     return-void
 
     .line 11
-    :cond_a
+    :cond_0
     const-string v0, "Negative initial size: "
 
     .line 12
@@ -84,14 +84,14 @@
 
 # virtual methods
 .method public final close()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final i(I)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/fl;->X:[B
@@ -105,7 +105,7 @@
 
     .line 5
     .line 6
-    if-lez v1, :cond_31
+    if-lez v1, :cond_4
 
     .line 7
     .line 8
@@ -120,14 +120,14 @@
 
     .line 12
     .line 13
-    if-gez v2, :cond_f
+    if-gez v2, :cond_0
 
     .line 14
     .line 15
     move v1, p1
 
     .line 16
-    :cond_f
+    :cond_0
     const v2, 0x7ffffff7
 
     .line 17
@@ -137,15 +137,15 @@
 
     .line 20
     .line 21
-    if-lez v3, :cond_2b
+    if-lez v3, :cond_3
 
     .line 22
     .line 23
-    if-ltz p1, :cond_25
+    if-ltz p1, :cond_2
 
     .line 24
     .line 25
-    if-le p1, v2, :cond_21
+    if-le p1, v2, :cond_1
 
     .line 26
     .line 27
@@ -159,19 +159,19 @@
     .line 31
     .line 32
     .line 33
-    goto :goto_2b
+    goto :goto_0
 
     .line 34
-    :cond_21
+    :cond_1
     const v1, 0x7ffffff7
 
     .line 35
     .line 36
     .line 37
-    goto :goto_2b
+    goto :goto_0
 
     .line 38
-    :cond_25
+    :cond_2
     new-instance p1, Ljava/lang/OutOfMemoryError;
 
     .line 39
@@ -184,8 +184,8 @@
     throw p1
 
     .line 44
-    :cond_2b
-    :goto_2b
+    :cond_3
+    :goto_0
     invoke-static {v1, v0}, Llibs/u73;->d(I[B)[B
 
     .line 45
@@ -198,12 +198,12 @@
 
     .line 49
     .line 50
-    :cond_31
+    :cond_4
     return-void
 .end method
 
 .method public final declared-synchronized m()V
-    .registers 2
+    .locals 1
 
     .line 1
     monitor-enter p0
@@ -212,10 +212,10 @@
     const/4 v0, 0x0
 
     .line 3
-    :try_start_2
+    :try_start_0
     iput v0, p0, Llibs/fl;->Y:I
-    :try_end_4
-    .catchall {:try_start_2 .. :try_end_4} :catchall_6
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 4
     .line 5
@@ -225,27 +225,27 @@
     return-void
 
     .line 7
-    :catchall_6
+    :catchall_0
     move-exception v0
 
     .line 8
-    :try_start_7
+    :try_start_1
     monitor-exit p0
-    :try_end_8
-    .catchall {:try_start_7 .. :try_end_8} :catchall_6
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 9
     throw v0
 .end method
 
 .method public declared-synchronized toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     new-instance v0, Ljava/lang/String;
 
     .line 3
@@ -262,8 +262,8 @@
 
     .line 9
     invoke-direct {v0, v1, v3, v2}, Ljava/lang/String;-><init>([BII)V
-    :try_end_b
-    .catchall {:try_start_1 .. :try_end_b} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 10
     .line 11
@@ -274,30 +274,30 @@
     return-object v0
 
     .line 14
-    :catchall_d
+    :catchall_0
     move-exception v0
 
     .line 15
-    :try_start_e
+    :try_start_1
     monitor-exit p0
-    :try_end_f
-    .catchall {:try_start_e .. :try_end_f} :catchall_d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 16
     throw v0
 .end method
 
 .method public final declared-synchronized w()I
-    .registers 2
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget v0, p0, Llibs/fl;->Y:I
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 3
     .line 4
@@ -307,26 +307,26 @@
     return v0
 
     .line 6
-    :catchall_5
+    :catchall_0
     move-exception v0
 
     .line 7
-    :try_start_6
+    :try_start_1
     monitor-exit p0
-    :try_end_7
-    .catchall {:try_start_6 .. :try_end_7} :catchall_5
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 8
     throw v0
 .end method
 
 .method public final declared-synchronized write(I)V
-    .registers 4
+    .locals 2
 
     monitor-enter p0
 
     .line 45
-    :try_start_1
+    :try_start_0
     iget v0, p0, Llibs/fl;->Y:I
 
     add-int/lit8 v0, v0, 0x1
@@ -346,45 +346,45 @@
 
     .line 47
     iput v1, p0, Llibs/fl;->Y:I
-    :try_end_13
-    .catchall {:try_start_1 .. :try_end_13} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 48
     monitor-exit p0
 
     return-void
 
-    :catchall_15
+    :catchall_0
     move-exception p1
 
-    :try_start_16
+    :try_start_1
     monitor-exit p0
-    :try_end_17
-    .catchall {:try_start_16 .. :try_end_17} :catchall_15
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method
 
 .method public final declared-synchronized write([BII)V
-    .registers 6
+    .locals 2
 
     .line 1
     monitor-enter p0
 
     .line 2
-    if-ltz p2, :cond_24
+    if-ltz p2, :cond_0
 
     .line 3
     .line 4
-    :try_start_3
+    :try_start_0
     array-length v0, p1
 
     .line 5
-    if-gt p2, v0, :cond_24
+    if-gt p2, v0, :cond_0
 
     .line 6
     .line 7
-    if-ltz p3, :cond_24
+    if-ltz p3, :cond_0
 
     .line 8
     .line 9
@@ -398,7 +398,7 @@
     sub-int/2addr v0, v1
 
     .line 13
-    if-gtz v0, :cond_24
+    if-gtz v0, :cond_0
 
     .line 14
     .line 15
@@ -435,8 +435,8 @@
 
     .line 31
     iput p1, p0, Llibs/fl;->Y:I
-    :try_end_20
-    .catchall {:try_start_3 .. :try_end_20} :catchall_22
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 32
     .line 33
@@ -446,15 +446,15 @@
     return-void
 
     .line 35
-    :catchall_22
+    :catchall_0
     move-exception p1
 
     .line 36
-    goto :goto_2a
+    goto :goto_0
 
     .line 37
-    :cond_24
-    :try_start_24
+    :cond_0
+    :try_start_1
     new-instance p1, Ljava/lang/IndexOutOfBoundsException;
 
     .line 38
@@ -467,23 +467,23 @@
     throw p1
 
     .line 43
-    :goto_2a
+    :goto_0
     monitor-exit p0
-    :try_end_2b
-    .catchall {:try_start_24 .. :try_end_2b} :catchall_22
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 44
     throw p1
 .end method
 
 .method public final declared-synchronized x()[B
-    .registers 3
+    .locals 2
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Llibs/fl;->X:[B
 
     .line 3
@@ -498,8 +498,8 @@
     .line 8
     .line 9
     move-result-object v0
-    :try_end_9
-    .catchall {:try_start_1 .. :try_end_9} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 10
     monitor-exit p0
@@ -508,14 +508,14 @@
     return-object v0
 
     .line 12
-    :catchall_b
+    :catchall_0
     move-exception v0
 
     .line 13
-    :try_start_c
+    :try_start_1
     monitor-exit p0
-    :try_end_d
-    .catchall {:try_start_c .. :try_end_d} :catchall_b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 14
     throw v0

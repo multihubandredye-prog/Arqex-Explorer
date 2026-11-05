@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/ia2;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/ul0;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/ul0;->X:B
@@ -50,7 +50,7 @@
 
     .line 5
     .line 6
-    packed-switch v0, :pswitch_data_32
+    packed-switch v0, :pswitch_data_0
 
     .line 7
     .line 8
@@ -71,7 +71,7 @@
     return-void
 
     .line 17
-    :pswitch_10
+    :pswitch_0
     invoke-static {}, Llibs/je;->Context()Llibs/je;
 
     .line 18
@@ -97,7 +97,7 @@
     return-void
 
     .line 30
-    :pswitch_1d
+    :pswitch_1
     sget v0, Llibs/bi2;->failed:I
 
     .line 31
@@ -118,7 +118,7 @@
     return-void
 
     .line 40
-    :pswitch_27
+    :pswitch_2
     sget v0, Llibs/bi2;->done:I
 
     .line 41
@@ -142,10 +142,10 @@
     nop
 
     .line 51
-    :pswitch_data_32
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_27
-        :pswitch_1d
-        :pswitch_10
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

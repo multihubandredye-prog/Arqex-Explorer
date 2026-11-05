@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(II)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/dw;-><init>()V
@@ -33,14 +33,14 @@
 
 # virtual methods
 .method public final All(ILjava/io/StringWriter;)Z
-    .registers 4
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/u22;->i:I
 
     .line 2
     .line 3
-    if-lt p1, v0, :cond_1e
+    if-lt p1, v0, :cond_1
 
     .line 4
     .line 5
@@ -48,14 +48,14 @@
 
     .line 6
     .line 7
-    if-le p1, v0, :cond_9
+    if-le p1, v0, :cond_0
 
     .line 8
     .line 9
-    goto :goto_1e
+    goto :goto_0
 
     .line 10
-    :cond_9
+    :cond_0
     const-string v0, "&#"
 
     .line 11
@@ -97,8 +97,8 @@
     return p1
 
     .line 31
-    :cond_1e
-    :goto_1e
+    :cond_1
+    :goto_0
     const/4 p1, 0x0
 
     .line 32

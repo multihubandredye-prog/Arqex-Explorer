@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>([B)V
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/dl;
@@ -24,7 +24,7 @@
     const/4 p1, 0x0
 
     .line 7
-    :try_start_6
+    :try_start_0
     new-instance v1, Llibs/Uri;
 
     .line 8
@@ -48,9 +48,9 @@
     .line 18
     .line 19
     move-result-object p1
-    :try_end_13
-    .catch Ljava/lang/ClassCastException; {:try_start_6 .. :try_end_13} :catch_38
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_6 .. :try_end_13} :catch_36
+    :try_end_0
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 20
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -70,14 +70,14 @@
 
     .line 28
     .line 29
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_0
 
     .line 30
     .line 31
-    goto :goto_31
+    goto :goto_0
 
     .line 32
-    :cond_1f
+    :cond_0
     sget-object v1, Llibs/fm0;->Sigma:Llibs/App;
 
     .line 33
@@ -90,7 +90,7 @@
     move-result-object v0
 
     .line 38
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_1
 
     .line 39
     .line 40
@@ -114,8 +114,8 @@
 
     .line 49
     .line 50
-    :cond_31
-    :goto_31
+    :cond_1
+    :goto_0
     iget-object p1, p1, Llibs/uq;->X:Llibs/pj3;
 
     .line 51
@@ -127,21 +127,21 @@
     return-void
 
     .line 55
-    :catch_36
+    :catch_0
     move-exception v0
 
     .line 56
-    goto :goto_3a
+    goto :goto_1
 
     .line 57
-    :catch_38
+    :catch_1
     move-exception v0
 
     .line 58
-    goto :goto_42
+    goto :goto_2
 
     .line 59
-    :goto_3a
+    :goto_1
     invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     .line 60
@@ -158,7 +158,7 @@
     throw p1
 
     .line 67
-    :goto_42
+    :goto_2
     invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     .line 68
@@ -178,10 +178,10 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     .line 2
     .line 3
@@ -191,12 +191,12 @@
     return p1
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v0, p1, Llibs/tv3;
 
     .line 6
     .line 7
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     .line 8
     .line 9
@@ -206,7 +206,7 @@
     return p1
 
     .line 11
-    :cond_a
+    :cond_1
     check-cast p1, Llibs/tv3;
 
     .line 12
@@ -231,7 +231,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/tv3;->a:Llibs/uq;

@@ -12,7 +12,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/m22;
@@ -32,7 +32,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public final a()Ljava/util/List;
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
@@ -57,7 +57,7 @@
 .end method
 
 .method public final c()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -67,7 +67,7 @@
 .end method
 
 .method public final e(Ljava/lang/String;)Llibs/w52;
-    .registers 2
+    .locals 0
 
     .line 1
     sget-object p1, Llibs/w52;->b:Llibs/w52;
@@ -78,7 +78,7 @@
 .end method
 
 .method public final f(Ljava/lang/String;)Llibs/w52;
-    .registers 2
+    .locals 0
 
     .line 1
     sget-object p1, Llibs/w52;->b:Llibs/w52;
@@ -89,7 +89,7 @@
 .end method
 
 .method public final g(Ljava/lang/String;)Llibs/wx3;
-    .registers 2
+    .locals 0
 
     .line 1
     return-object p0

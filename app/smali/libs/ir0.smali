@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/InputStream;)V
-    .registers 2
+    .locals 0
 
     .line 9
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
@@ -35,7 +35,7 @@
 .end method
 
 .method public constructor <init>(Ljava/io/InputStream;Llibs/r21;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public available()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;
@@ -76,21 +76,21 @@
 .end method
 
 .method public close()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-boolean v0, p0, Llibs/ir0;->X:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
-    goto :goto_16
+    goto :goto_0
 
     .line 6
-    :cond_5
+    :cond_0
     iget-object v0, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;
 
     .line 7
@@ -106,7 +106,7 @@
 
     .line 12
     .line 13
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_1
 
     .line 14
     .line 15
@@ -115,34 +115,34 @@
     .line 16
     .line 17
     .line 18
-    :cond_11
-    if-eqz v0, :cond_16
+    :cond_1
+    if-eqz v0, :cond_2
 
     .line 19
     .line 20
-    :try_start_13
+    :try_start_0
     invoke-virtual {v0}, Ljava/io/InputStream;->close()V
-    :try_end_16
-    .catchall {:try_start_13 .. :try_end_16} :catchall_16
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 21
     .line 22
     .line 23
-    :catchall_16
-    :cond_16
-    :goto_16
+    :catchall_0
+    :cond_2
+    :goto_0
     return-void
 .end method
 
 .method public mark(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -151,12 +151,12 @@
     .line 6
     .line 7
     .line 8
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method public markSupported()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;
@@ -175,7 +175,7 @@
 .end method
 
 .method public read()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;
@@ -194,7 +194,7 @@
 .end method
 
 .method public read([B)I
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -209,7 +209,7 @@
 .end method
 
 .method public read([BII)I
-    .registers 5
+    .locals 1
 
     .line 9
     iget-object v0, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;
@@ -222,14 +222,14 @@
 .end method
 
 .method public reset()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -241,7 +241,7 @@
     return-void
 
     .line 9
-    :cond_8
+    :cond_0
     const-string v0, "Stream closed"
 
     .line 10
@@ -255,7 +255,7 @@
 .end method
 
 .method public skip(J)J
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;

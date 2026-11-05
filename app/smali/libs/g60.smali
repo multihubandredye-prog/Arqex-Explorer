@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Param;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -61,7 +61,7 @@
     const/4 v2, 0x0
 
     .line 20
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_1
 
     .line 21
     .line 22
@@ -81,7 +81,7 @@
 
     .line 29
     .line 30
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_0
 
     .line 31
     .line 32
@@ -89,7 +89,7 @@
 
     .line 33
     .line 34
-    if-nez v1, :cond_2f
+    if-nez v1, :cond_0
 
     .line 35
     .line 36
@@ -116,10 +116,10 @@
     const/4 v0, 0x1
 
     .line 47
-    goto :goto_35
+    goto :goto_0
 
     .line 48
-    :cond_2f
+    :cond_0
     const-string p1, "object parse error"
 
     .line 49
@@ -132,8 +132,8 @@
     throw v2
 
     .line 54
-    :cond_35
-    :goto_35
+    :cond_1
+    :goto_0
     invoke-virtual {p1, v0}, Llibs/Param;->q(I)Llibs/Core;
 
     .line 55
@@ -146,7 +146,7 @@
 
     .line 59
     .line 60
-    if-eqz v3, :cond_41
+    if-eqz v3, :cond_2
 
     .line 61
     .line 62
@@ -157,11 +157,11 @@
 
     .line 64
     .line 65
-    goto :goto_4c
+    goto :goto_1
 
     .line 66
-    :cond_41
-    if-eqz v1, :cond_4c
+    :cond_2
+    if-eqz v1, :cond_3
 
     .line 67
     .line 68
@@ -182,8 +182,8 @@
     .line 75
     .line 76
     .line 77
-    :cond_4c
-    :goto_4c
+    :cond_3
+    :goto_1
     iput-object v2, p0, Llibs/g60;->Y:Llibs/f60;
 
     .line 78
@@ -290,7 +290,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Llibs/Init;
@@ -329,7 +329,7 @@
     move-result v2
 
     .line 19
-    if-eqz v2, :cond_22
+    if-eqz v2, :cond_0
 
     .line 20
     .line 21
@@ -359,7 +359,7 @@
     .line 33
     .line 34
     .line 35
-    :cond_22
+    :cond_0
     iget-object v1, p0, Llibs/g60;->Y:Llibs/f60;
 
     .line 36

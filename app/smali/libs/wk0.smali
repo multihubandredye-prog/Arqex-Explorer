@@ -24,7 +24,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/v1;Llibs/m52;Ljava/lang/String;Llibs/zl0;Ljava/lang/String;Ljava/util/Properties;B)V
-    .registers 8
+    .locals 0
 
     .line 1
     iput-byte p7, p0, Llibs/wk0;->X:B
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 15
+    .locals 14
 
     .line 1
     iget-byte v0, p0, Llibs/wk0;->X:B
@@ -77,7 +77,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_48
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -114,7 +114,7 @@
     return-void
 
     .line 24
-    :pswitch_17
+    :pswitch_0
     iget-object v13, p0, Llibs/wk0;->Xi:Ljava/util/Properties;
 
     .line 25
@@ -147,7 +147,7 @@
     return-void
 
     .line 40
-    :pswitch_27
+    :pswitch_1
     iget-object v5, p0, Llibs/wk0;->Xi:Ljava/util/Properties;
 
     .line 41
@@ -180,7 +180,7 @@
     return-void
 
     .line 56
-    :pswitch_37
+    :pswitch_2
     iget-object v11, p0, Llibs/wk0;->Xi:Ljava/util/Properties;
 
     .line 57
@@ -216,10 +216,10 @@
     nop
 
     .line 73
-    :pswitch_data_48
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_37
-        :pswitch_27
-        :pswitch_17
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(J)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/security/cert/X509CRLEntry;-><init>()V
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public finalize()V
-    .registers 6
+    .locals 5
 
     .line 1
     :try_start_0
@@ -65,29 +65,29 @@
 
     .line 6
     .line 7
-    if-eqz v4, :cond_e
+    if-eqz v4, :cond_0
 
     .line 8
     .line 9
     invoke-static {v0, v1, p0}, Lorg/conscrypt/NativeCrypto;->X509_REVOKED_free(JLorg/conscrypt/OpenSSLX509CRLEntry;)V
-    :try_end_b
-    .catchall {:try_start_0 .. :try_end_b} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 10
     .line 11
     .line 12
-    goto :goto_e
+    goto :goto_0
 
     .line 13
-    :catchall_c
+    :catchall_0
     move-exception v0
 
     .line 14
-    goto :goto_12
+    goto :goto_1
 
     .line 15
-    :cond_e
-    :goto_e
+    :cond_0
+    :goto_0
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
     .line 16
@@ -96,7 +96,7 @@
     return-void
 
     .line 19
-    :goto_12
+    :goto_1
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
     .line 20
@@ -106,7 +106,7 @@
 .end method
 
 .method public getCriticalExtensionOIDs()Ljava/util/Set;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -135,7 +135,7 @@
     array-length v1, v0
 
     .line 9
-    if-nez v1, :cond_16
+    if-nez v1, :cond_0
 
     .line 10
     .line 11
@@ -157,7 +157,7 @@
     array-length v1, v1
 
     .line 19
-    if-nez v1, :cond_16
+    if-nez v1, :cond_0
 
     .line 20
     .line 21
@@ -167,7 +167,7 @@
     return-object v0
 
     .line 23
-    :cond_16
+    :cond_0
     new-instance v1, Ljava/util/HashSet;
 
     .line 24
@@ -189,7 +189,7 @@
 .end method
 
 .method public getEncoded()[B
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/OpenSSLX509CRLEntry;->mContext:J
@@ -208,7 +208,7 @@
 .end method
 
 .method public getExtensionValue(Ljava/lang/String;)[B
-    .registers 4
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/OpenSSLX509CRLEntry;->mContext:J
@@ -227,7 +227,7 @@
 .end method
 
 .method public getNonCriticalExtensionOIDs()Ljava/util/Set;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -256,7 +256,7 @@
     array-length v1, v0
 
     .line 9
-    if-nez v1, :cond_16
+    if-nez v1, :cond_0
 
     .line 10
     .line 11
@@ -278,7 +278,7 @@
     array-length v1, v1
 
     .line 19
-    if-nez v1, :cond_16
+    if-nez v1, :cond_0
 
     .line 20
     .line 21
@@ -288,7 +288,7 @@
     return-object v0
 
     .line 23
-    :cond_16
+    :cond_0
     new-instance v1, Ljava/util/HashSet;
 
     .line 24
@@ -310,7 +310,7 @@
 .end method
 
 .method public getRevocationDate()Ljava/util/Date;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLX509CRLEntry;->revocationDate:Ljava/util/Date;
@@ -333,7 +333,7 @@
 .end method
 
 .method public getSerialNumber()Ljava/math/BigInteger;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/math/BigInteger;
@@ -361,7 +361,7 @@
 .end method
 
 .method public hasExtensions()Z
-    .registers 6
+    .locals 5
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/OpenSSLX509CRLEntry;->mContext:J
@@ -385,7 +385,7 @@
     const/4 v1, 0x1
 
     .line 10
-    if-nez v0, :cond_16
+    if-nez v0, :cond_1
 
     .line 11
     .line 12
@@ -404,24 +404,24 @@
     array-length v0, v0
 
     .line 19
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 20
     .line 21
-    goto :goto_16
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     return v2
 
     .line 23
-    :cond_16
-    :goto_16
+    :cond_1
+    :goto_0
     return v1
 .end method
 
 .method public hasUnsupportedCriticalExtension()Z
-    .registers 9
+    .locals 8
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/OpenSSLX509CRLEntry;->mContext:J
@@ -448,8 +448,8 @@
     const/4 v4, 0x0
 
     .line 11
-    :goto_a
-    if-ge v4, v1, :cond_1e
+    :goto_0
+    if-ge v4, v1, :cond_1
 
     .line 12
     .line 13
@@ -477,27 +477,27 @@
     move-result v5
 
     .line 25
-    if-eq v5, v2, :cond_1b
+    if-eq v5, v2, :cond_0
 
     .line 26
     .line 27
     return v2
 
     .line 28
-    :cond_1b
+    :cond_0
     add-int/lit8 v4, v4, 0x1
 
     .line 29
     .line 30
-    goto :goto_a
+    goto :goto_0
 
     .line 31
-    :cond_1e
+    :cond_1
     return v3
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Ljava/io/ByteArrayOutputStream;
@@ -517,7 +517,7 @@
     move-result-wide v1
 
     .line 10
-    :try_start_9
+    :try_start_0
     iget-wide v3, p0, Lorg/conscrypt/OpenSSLX509CRLEntry;->mContext:J
 
     .line 11
@@ -533,8 +533,8 @@
     .line 17
     .line 18
     move-result-object v0
-    :try_end_12
-    .catchall {:try_start_9 .. :try_end_12} :catchall_16
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 19
     invoke-static {v1, v2}, Lorg/conscrypt/NativeCrypto;->BIO_free_all(J)V
@@ -545,7 +545,7 @@
     return-object v0
 
     .line 23
-    :catchall_16
+    :catchall_0
     move-exception v0
 
     .line 24

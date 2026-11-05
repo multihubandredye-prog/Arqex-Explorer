@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/TextEditorActivity;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/wk3;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 14
+    .locals 8
 
     .line 1
     iget-byte p2, p0, Llibs/wk3;->X:B
@@ -50,7 +50,7 @@
 
     .line 5
     .line 6
-    packed-switch p2, :pswitch_data_ee
+    packed-switch p2, :pswitch_data_0
 
     .line 7
     .line 8
@@ -59,7 +59,7 @@
 
     .line 10
     .line 11
-    :try_start_a
+    :try_start_0
     invoke-virtual {p1}, Landroid/widget/AdapterView;->getAdapter()Landroid/widget/Adapter;
 
     .line 12
@@ -92,7 +92,7 @@
     const/4 p3, 0x4
 
     .line 27
-    if-eq p2, p3, :cond_c4
+    if-eq p2, p3, :cond_b
 
     .line 28
     .line 29
@@ -102,14 +102,14 @@
     const/4 v1, 0x1
 
     .line 31
-    if-eq p2, v0, :cond_bc
+    if-eq p2, v0, :cond_a
 
     .line 32
     .line 33
     const/4 v0, 0x6
 
     .line 34
-    if-eq p2, v0, :cond_b3
+    if-eq p2, v0, :cond_9
 
     .line 35
     .line 36
@@ -117,7 +117,7 @@
 
     .line 37
     .line 38
-    if-eq p2, v0, :cond_ad
+    if-eq p2, v0, :cond_8
 
     .line 39
     .line 40
@@ -125,7 +125,7 @@
 
     .line 41
     .line 42
-    if-eq p2, v0, :cond_a2
+    if-eq p2, v0, :cond_7
 
     .line 43
     .line 44
@@ -133,7 +133,7 @@
 
     .line 45
     .line 46
-    if-eq p2, v0, :cond_97
+    if-eq p2, v0, :cond_6
 
     .line 47
     .line 48
@@ -160,8 +160,8 @@
     const/4 v2, 0x0
 
     .line 59
-    :goto_3a
-    if-ge v2, v0, :cond_c4
+    :goto_0
+    if-ge v2, v0, :cond_b
 
     .line 60
     .line 61
@@ -193,25 +193,25 @@
 
     .line 74
     .line 75
-    if-eqz v4, :cond_6b
+    if-eqz v4, :cond_2
 
     .line 76
     .line 77
-    if-eq v4, v1, :cond_5e
+    if-eq v4, v1, :cond_1
 
     .line 78
     .line 79
     const/4 v5, 0x3
 
     .line 80
-    if-eq v4, v5, :cond_52
+    if-eq v4, v5, :cond_0
 
     .line 81
     .line 82
-    goto :goto_3a
+    goto :goto_0
 
     .line 83
-    :cond_52
+    :cond_0
     iget-boolean v4, v3, Lcom/mixplorer/widgets/MiEditor;->o0:Z
 
     .line 84
@@ -233,10 +233,10 @@
     .line 92
     .line 93
     .line 94
-    goto :goto_3a
+    goto :goto_0
 
     .line 95
-    :cond_5e
+    :cond_1
     iget-object v4, p5, Lcom/mixplorer/activities/TextEditorActivity;->OOO:Llibs/il3;
 
     .line 96
@@ -259,10 +259,10 @@
     .line 105
     .line 106
     .line 107
-    goto :goto_3a
+    goto :goto_0
 
     .line 108
-    :cond_6b
+    :cond_2
     iget-object v4, p5, Lcom/mixplorer/activities/TextEditorActivity;->oO:Lcom/mixplorer/widgets/MiEditor;
 
     .line 109
@@ -283,7 +283,7 @@
 
     .line 117
     .line 118
-    if-eqz v4, :cond_7b
+    if-eqz v4, :cond_3
 
     .line 119
     .line 120
@@ -292,21 +292,21 @@
     .line 121
     .line 122
     .line 123
-    goto :goto_7e
+    goto :goto_1
 
     .line 124
-    :cond_7b
+    :cond_3
     invoke-virtual {v3}, Lcom/mixplorer/widgets/MiEditText;->clearFocus()V
 
     .line 125
     .line 126
     .line 127
-    :goto_7e
+    :goto_1
     iget-boolean v4, v3, Lcom/mixplorer/widgets/MiEditor;->India:Z
 
     .line 128
     .line 129
-    if-eqz v4, :cond_85
+    if-eqz v4, :cond_4
 
     .line 130
     .line 131
@@ -315,12 +315,12 @@
     .line 132
     .line 133
     .line 134
-    :cond_85
+    :cond_4
     iget-boolean v4, v3, Lcom/mixplorer/widgets/MiEditor;->India:Z
 
     .line 135
     .line 136
-    if-nez v4, :cond_93
+    if-nez v4, :cond_5
 
     .line 137
     .line 138
@@ -342,16 +342,16 @@
     .line 146
     .line 147
     .line 148
-    :cond_93
+    :cond_5
     invoke-virtual {p5, v3}, Lcom/mixplorer/activities/TextEditorActivity;->Save(Lcom/mixplorer/widgets/MiEditor;)V
 
     .line 149
     .line 150
     .line 151
-    goto :goto_3a
+    goto :goto_0
 
     .line 152
-    :cond_97
+    :cond_6
     iget-boolean p1, p5, Lcom/mixplorer/activities/TextEditorActivity;->Il:Z
 
     .line 153
@@ -364,7 +364,7 @@
 
     .line 157
     .line 158
-    if-nez p1, :cond_c4
+    if-nez p1, :cond_b
 
     .line 159
     .line 160
@@ -372,10 +372,10 @@
 
     .line 161
     .line 162
-    goto :goto_c4
+    goto :goto_2
 
     .line 163
-    :cond_a2
+    :cond_7
     iget-boolean p1, p5, Lcom/mixplorer/activities/TextEditorActivity;->o:Z
 
     .line 164
@@ -388,7 +388,7 @@
 
     .line 168
     .line 169
-    if-nez p1, :cond_c4
+    if-nez p1, :cond_b
 
     .line 170
     .line 171
@@ -396,10 +396,10 @@
 
     .line 172
     .line 173
-    goto :goto_c4
+    goto :goto_2
 
     .line 174
-    :cond_ad
+    :cond_8
     iget-boolean p1, p5, Lcom/mixplorer/activities/TextEditorActivity;->O:Z
 
     .line 175
@@ -411,10 +411,10 @@
 
     .line 178
     .line 179
-    goto :goto_c4
+    goto :goto_2
 
     .line 180
-    :cond_b3
+    :cond_9
     iget-boolean p1, p5, Lcom/mixplorer/activities/TextEditorActivity;->I:Z
 
     .line 181
@@ -431,10 +431,10 @@
     .line 186
     .line 187
     .line 188
-    goto :goto_c4
+    goto :goto_2
 
     .line 189
-    :cond_bc
+    :cond_a
     iget-boolean p1, p5, Lcom/mixplorer/activities/TextEditorActivity;->Tango:Z
 
     .line 190
@@ -451,8 +451,8 @@
     .line 195
     .line 196
     .line 197
-    :cond_c4
-    :goto_c4
+    :cond_b
+    :goto_2
     iget-object p1, p5, Lcom/mixplorer/activities/TextEditorActivity;->oO:Lcom/mixplorer/widgets/MiEditor;
 
     .line 198
@@ -461,13 +461,13 @@
 
     .line 200
     invoke-virtual {p5, p1, p2}, Lcom/mixplorer/activities/TextEditorActivity;->Yes(Lcom/mixplorer/widgets/MiEditor;Ljava/lang/String;)V
-    :try_end_ca
-    .catchall {:try_start_a .. :try_end_ca} :catchall_ca
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 201
     .line 202
     .line 203
-    :catchall_ca
+    :catchall_0
     iget-object p1, p5, Lcom/mixplorer/activities/a;->Lambda:Llibs/be2;
 
     .line 204
@@ -480,7 +480,7 @@
     return-void
 
     .line 209
-    :pswitch_d0
+    :pswitch_0
     sget p2, Lcom/mixplorer/activities/TextEditorActivity;->$c:I
 
     .line 210
@@ -539,8 +539,8 @@
     return-void
 
     .line 239
-    :pswitch_data_ee
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_d0
+        :pswitch_0
     .end packed-switch
 .end method

@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljavax/net/ssl/SSLEngine;-><init>()V
@@ -34,7 +34,7 @@
 .end method
 
 .method public final getHandshakeSession()Ljavax/net/ssl/SSLSession;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/AbstractConscryptEngine;->handshakeSession()Ljavax/net/ssl/SSLSession;

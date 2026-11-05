@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;ZZLjava/lang/String;Ljava/lang/String;)V
-    .registers 8
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -98,7 +98,7 @@
 
 # virtual methods
 .method public final compareTo(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
 
     .line 1
     check-cast p1, Llibs/ww0;
@@ -120,14 +120,14 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Llibs/ww0;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -143,7 +143,7 @@
 
     .line 10
     .line 11
-    if-ne p1, v0, :cond_e
+    if-ne p1, v0, :cond_0
 
     .line 12
     .line 13
@@ -153,7 +153,7 @@
     return p1
 
     .line 15
-    :cond_e
+    :cond_0
     const/4 p1, 0x0
 
     .line 16
@@ -161,7 +161,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/ww0;->Nu:I

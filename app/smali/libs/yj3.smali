@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/w52;Ljava/util/List;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public final a()Ljava/util/List;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/yj3;->b:Ljava/util/List;
@@ -48,7 +48,7 @@
 .end method
 
 .method public final b(Llibs/Init;Ljava/lang/Object;)Ljava/util/List;
-    .registers 7
+    .locals 4
 
     .line 1
     check-cast p2, Llibs/ed0;
@@ -83,7 +83,7 @@
     move-result-object v0
 
     .line 17
-    :cond_10
+    :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 18
@@ -96,7 +96,7 @@
 
     .line 22
     .line 23
-    if-eqz v1, :cond_2d
+    if-eqz v1, :cond_1
 
     .line 24
     .line 25
@@ -127,7 +127,7 @@
     move-result v3
 
     .line 38
-    if-eqz v3, :cond_10
+    if-eqz v3, :cond_0
 
     .line 39
     .line 40
@@ -140,14 +140,14 @@
     .line 43
     .line 44
     .line 45
-    goto :goto_2e
+    goto :goto_0
 
     .line 46
-    :cond_2d
+    :cond_1
     move-object v0, v2
 
     .line 47
-    :goto_2e
+    :goto_0
     invoke-virtual {v0}, Llibs/w52;->b()Z
 
     .line 48
@@ -156,14 +156,14 @@
     move-result v1
 
     .line 51
-    if-nez v1, :cond_35
+    if-nez v1, :cond_2
 
     .line 52
     .line 53
-    goto :goto_3f
+    goto :goto_1
 
     .line 54
-    :cond_35
+    :cond_2
     iget-object v0, v0, Llibs/w52;->a:Ljava/lang/Object;
 
     .line 55
@@ -184,7 +184,7 @@
     move-result-object v2
 
     .line 64
-    :goto_3f
+    :goto_1
     const-string v0, "table"
 
     .line 65
@@ -201,14 +201,14 @@
 
     .line 71
     .line 72
-    if-eqz v1, :cond_4a
+    if-eqz v1, :cond_3
 
     .line 73
     .line 74
     move-object v0, v1
 
     .line 75
-    :cond_4a
+    :cond_3
     check-cast v0, Llibs/gz0;
 
     .line 76

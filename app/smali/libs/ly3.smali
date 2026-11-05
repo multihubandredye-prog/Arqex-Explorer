@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 7
+    .locals 7
 
     .line 1
     const/16 v0, 0x100
@@ -34,8 +34,8 @@
     const/4 v2, 0x0
 
     .line 9
-    :goto_8
-    if-ge v2, v0, :cond_28
+    :goto_0
+    if-ge v2, v0, :cond_2
 
     .line 10
     .line 11
@@ -45,12 +45,12 @@
     const/4 v3, 0x0
 
     .line 13
-    :goto_c
+    :goto_1
     const/16 v5, 0x8
 
     .line 14
     .line 15
-    if-ge v3, v5, :cond_21
+    if-ge v3, v5, :cond_1
 
     .line 16
     .line 17
@@ -61,7 +61,7 @@
     const/4 v6, 0x1
 
     .line 20
-    if-ne v5, v6, :cond_1c
+    if-ne v5, v6, :cond_0
 
     .line 21
     .line 22
@@ -77,23 +77,23 @@
     xor-int/2addr v4, v5
 
     .line 28
-    goto :goto_1e
+    goto :goto_2
 
     .line 29
-    :cond_1c
+    :cond_0
     ushr-int/lit8 v4, v4, 0x1
 
     .line 30
     .line 31
-    :goto_1e
+    :goto_2
     add-int/lit8 v3, v3, 0x1
 
     .line 32
     .line 33
-    goto :goto_c
+    goto :goto_1
 
     .line 34
-    :cond_21
+    :cond_1
     sget-object v3, Llibs/ly3;->b:[I
 
     .line 35
@@ -106,15 +106,15 @@
 
     .line 39
     .line 40
-    goto :goto_8
+    goto :goto_0
 
     .line 41
-    :cond_28
+    :cond_2
     return-void
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -139,7 +139,7 @@
 
 # virtual methods
 .method public final a()B
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/ly3;->a:[I
@@ -175,7 +175,7 @@
 .end method
 
 .method public final b([C)V
-    .registers 6
+    .locals 4
 
     .line 1
     const v0, 0x12345678
@@ -221,8 +221,8 @@
     array-length v0, p1
 
     .line 22
-    :goto_15
-    if-ge v2, v0, :cond_22
+    :goto_0
+    if-ge v2, v0, :cond_0
 
     .line 23
     .line 24
@@ -246,15 +246,15 @@
 
     .line 33
     .line 34
-    goto :goto_15
+    goto :goto_0
 
     .line 35
-    :cond_22
+    :cond_0
     return-void
 .end method
 
 .method public final c(B)V
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/ly3;->a:[I

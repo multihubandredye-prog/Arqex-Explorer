@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/w40;Ljava/lang/Thread;[ILjava/lang/String;Llibs/lz;)V
-    .registers 6
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/v40;->e:Llibs/w40;
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public final a()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -61,7 +61,7 @@
 .end method
 
 .method public final e(Llibs/rp0;)Z
-    .registers 8
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/v40;->e:Llibs/w40;
@@ -87,7 +87,7 @@
     const/4 v2, 0x0
 
     .line 12
-    if-nez v1, :cond_56
+    if-nez v1, :cond_2
 
     .line 13
     .line 14
@@ -115,7 +115,7 @@
 
     .line 25
     .line 26
-    if-eqz v3, :cond_48
+    if-eqz v3, :cond_0
 
     .line 27
     .line 28
@@ -204,7 +204,7 @@
     return v2
 
     .line 73
-    :cond_48
+    :cond_0
     sget-object v1, Llibs/z40;->Map:Ljava/lang/Object;
 
     .line 74
@@ -217,7 +217,7 @@
     move-result-object p1
 
     .line 79
-    if-eqz p1, :cond_55
+    if-eqz p1, :cond_1
 
     .line 80
     .line 81
@@ -230,11 +230,11 @@
     .line 84
     .line 85
     .line 86
-    :cond_55
+    :cond_1
     return v2
 
     .line 87
-    :cond_56
+    :cond_2
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 88

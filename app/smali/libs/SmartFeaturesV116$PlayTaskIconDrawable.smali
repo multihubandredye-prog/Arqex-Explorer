@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 4
+    .locals 2
 
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public draw(Landroid/graphics/Canvas;)V
-    .registers 8
+    .locals 6
 
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
@@ -129,7 +129,7 @@
 .end method
 
 .method public getIntrinsicHeight()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Llibs/SmartFeaturesV116$PlayTaskIconDrawable;->sizePx:I
 
@@ -137,7 +137,7 @@
 .end method
 
 .method public getIntrinsicWidth()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Llibs/SmartFeaturesV116$PlayTaskIconDrawable;->sizePx:I
 
@@ -145,7 +145,7 @@
 .end method
 
 .method public getOpacity()I
-    .registers 2
+    .locals 1
 
     const/4 v0, -0x3
 
@@ -153,7 +153,7 @@
 .end method
 
 .method public setAlpha(I)V
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Llibs/SmartFeaturesV116$PlayTaskIconDrawable;->paint:Landroid/graphics/Paint;
 
@@ -165,7 +165,7 @@
 .end method
 
 .method public setColorFilter(Landroid/graphics/ColorFilter;)V
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Llibs/SmartFeaturesV116$PlayTaskIconDrawable;->paint:Landroid/graphics/Paint;
 

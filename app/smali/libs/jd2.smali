@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/rd2;JZ)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 9
+    .locals 8
 
     .line 1
     invoke-static {}, Llibs/lp;->a()Llibs/lp;
@@ -60,7 +60,7 @@
     const/4 v7, 0x0
 
     .line 8
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     .line 9
     .line 10
@@ -92,12 +92,12 @@
     .line 22
     .line 23
     .line 24
-    :cond_17
+    :cond_0
     iget-object v0, v6, Llibs/rd2;->View:Llibs/dg0;
 
     .line 25
     .line 26
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_2
 
     .line 27
     .line 28
@@ -113,7 +113,7 @@
 
     .line 33
     .line 34
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_2
 
     .line 35
     .line 36
@@ -121,7 +121,7 @@
 
     .line 37
     .line 38
-    if-eqz v1, :cond_29
+    if-eqz v1, :cond_1
 
     .line 39
     .line 40
@@ -129,12 +129,12 @@
 
     .line 41
     .line 42
-    :cond_29
+    :cond_1
     invoke-virtual {v0, v7}, Landroid/view/View;->setVisibility(I)V
 
     .line 43
     .line 44
     .line 45
-    :cond_2c
+    :cond_2
     return-void
 .end method

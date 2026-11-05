@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 .end method
 
 .method public b()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -49,7 +49,7 @@
 .end method
 
 .method public c()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/dm2;->a:Llibs/em2;
@@ -65,7 +65,7 @@
 .end method
 
 .method public final d(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/dm2;->a:Llibs/em2;
@@ -81,7 +81,7 @@
 .end method
 
 .method public final e(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/dm2;->a:Llibs/em2;
@@ -97,7 +97,7 @@
 .end method
 
 .method public final f(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/dm2;->a:Llibs/em2;
@@ -119,28 +119,28 @@
 .end method
 
 .method public i(Llibs/um2;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public j(Llibs/um2;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public k(Llibs/um2;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final l(Llibs/qd0;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/dm2;->a:Llibs/em2;
@@ -156,7 +156,7 @@
 .end method
 
 .method public final m(Llibs/qd0;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/dm2;->a:Llibs/em2;

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/x13;Landroid/content/Context;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/v13;->a:Llibs/x13;
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
 
     .line 1
     const-string v0, "window"
@@ -42,7 +42,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -82,7 +82,7 @@
     return-object v0
 
     .line 27
-    :cond_1a
+    :cond_0
     invoke-super {p0, p1}, Landroid/content/ContextWrapper;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     .line 28

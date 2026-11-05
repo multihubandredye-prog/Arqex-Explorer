@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(I[B)V
-    .registers 3
+    .locals 0
 
     .line 1
     new-instance p1, Llibs/iu2;
@@ -26,7 +26,7 @@
 .end method
 
 .method public constructor <init>(Llibs/xw2;)V
-    .registers 2
+    .locals 0
 
     .line 10
     invoke-direct {p0, p1}, Llibs/qj0;-><init>(Llibs/xw2;)V
@@ -35,7 +35,7 @@
 .end method
 
 .method public constructor <init>([B)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 

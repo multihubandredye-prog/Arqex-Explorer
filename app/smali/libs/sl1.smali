@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/tl1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/sl1;->a:Llibs/tl1;
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .registers 8
+    .locals 5
 
     .line 1
     iget-object p1, p0, Llibs/sl1;->a:Llibs/tl1;
@@ -79,11 +79,11 @@
     float-to-int p2, p2
 
     .line 23
-    if-nez v2, :cond_36
+    if-nez v2, :cond_0
 
     .line 24
     .line 25
-    if-eqz p1, :cond_36
+    if-eqz p1, :cond_0
 
     .line 26
     .line 27
@@ -95,11 +95,11 @@
     move-result v4
 
     .line 31
-    if-eqz v4, :cond_36
+    if-eqz v4, :cond_0
 
     .line 32
     .line 33
-    if-ltz v3, :cond_36
+    if-ltz v3, :cond_0
 
     .line 34
     .line 35
@@ -111,11 +111,11 @@
     move-result v4
 
     .line 39
-    if-ge v3, v4, :cond_36
+    if-ge v3, v4, :cond_0
 
     .line 40
     .line 41
-    if-ltz p2, :cond_36
+    if-ltz p2, :cond_0
 
     .line 42
     .line 43
@@ -127,7 +127,7 @@
     move-result p1
 
     .line 47
-    if-ge p2, p1, :cond_36
+    if-ge p2, p1, :cond_0
 
     .line 48
     .line 49
@@ -140,14 +140,14 @@
     .line 52
     .line 53
     .line 54
-    goto :goto_3c
+    goto :goto_0
 
     .line 55
-    :cond_36
+    :cond_0
     const/4 p1, 0x1
 
     .line 56
-    if-ne v2, p1, :cond_3c
+    if-ne v2, p1, :cond_1
 
     .line 57
     .line 58
@@ -156,8 +156,8 @@
     .line 59
     .line 60
     .line 61
-    :cond_3c
-    :goto_3c
+    :cond_1
+    :goto_0
     const/4 p1, 0x0
 
     .line 62

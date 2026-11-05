@@ -19,7 +19,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-string v0, ".*[pP]assword(?: for .*)?:\\s?\\z"
@@ -57,7 +57,7 @@
 .end method
 
 .method public constructor <init>(Llibs/ye;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

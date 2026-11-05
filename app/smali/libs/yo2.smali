@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/ap2;-><init>(I)V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final b(Llibs/za;Ljava/util/Locale;)Ljava/lang/String;
-    .registers 16
+    .locals 13
 
     .line 1
     iget v0, p0, Llibs/ap2;->a:I
@@ -48,7 +48,7 @@
 
     .line 14
     .line 15
-    if-lez v4, :cond_31
+    if-lez v4, :cond_0
 
     .line 16
     .line 17
@@ -61,7 +61,7 @@
 
     .line 21
     .line 22
-    if-gez v4, :cond_31
+    if-gez v4, :cond_0
 
     .line 23
     .line 24
@@ -117,7 +117,7 @@
     return-object p1
 
     .line 50
-    :cond_31
+    :cond_0
     new-instance v2, Ljava/lang/StringBuilder;
 
     .line 51
@@ -152,15 +152,15 @@
     move-result-object v2
 
     .line 68
-    if-nez p1, :cond_47
+    if-nez p1, :cond_1
 
     .line 69
     .line 70
-    goto/16 :goto_d1
+    goto/16 :goto_6
 
     .line 71
     .line 72
-    :cond_47
+    :cond_1
     invoke-virtual {p1, v0, v1}, Llibs/za;->Context(J)Ljava/util/List;
 
     .line 73
@@ -192,7 +192,7 @@
     const/4 v6, -0x1
 
     .line 85
-    :goto_54
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 86
@@ -201,7 +201,7 @@
     move-result v7
 
     .line 89
-    if-eqz v7, :cond_cf
+    if-eqz v7, :cond_c
 
     .line 90
     .line 91
@@ -240,17 +240,17 @@
     const/4 v10, 0x0
 
     .line 108
-    if-nez p2, :cond_6f
+    if-nez p2, :cond_2
 
     .line 109
     .line 110
     const/4 v9, -0x1
 
     .line 111
-    goto :goto_b0
+    goto :goto_1
 
     .line 112
-    :cond_6f
+    :cond_2
     invoke-virtual {p2}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
 
     .line 113
@@ -275,7 +275,7 @@
     move-result v11
 
     .line 124
-    if-eqz v11, :cond_9b
+    if-eqz v11, :cond_5
 
     .line 125
     .line 126
@@ -303,17 +303,17 @@
     move-result v11
 
     .line 138
-    if-eqz v11, :cond_8d
+    if-eqz v11, :cond_3
 
     .line 139
     .line 140
     const/4 v9, 0x3
 
     .line 141
-    goto :goto_b0
+    goto :goto_1
 
     .line 142
-    :cond_8d
+    :cond_3
     invoke-virtual {v9}, Ljava/util/Locale;->getCountry()Ljava/lang/String;
 
     .line 143
@@ -330,24 +330,24 @@
     move-result v9
 
     .line 150
-    if-eqz v9, :cond_99
+    if-eqz v9, :cond_4
 
     .line 151
     .line 152
     const/4 v9, 0x2
 
     .line 153
-    goto :goto_b0
+    goto :goto_1
 
     .line 154
-    :cond_99
+    :cond_4
     const/4 v9, 0x0
 
     .line 155
-    goto :goto_b0
+    goto :goto_1
 
     .line 156
-    :cond_9b
+    :cond_5
     invoke-virtual {v9}, Ljava/util/Locale;->getCountry()Ljava/lang/String;
 
     .line 157
@@ -364,7 +364,7 @@
     move-result v11
 
     .line 164
-    if-nez v11, :cond_af
+    if-nez v11, :cond_6
 
     .line 165
     .line 166
@@ -384,15 +384,15 @@
     move-result v9
 
     .line 174
-    if-eqz v9, :cond_99
+    if-eqz v9, :cond_4
 
     .line 175
     .line 176
-    :cond_af
+    :cond_6
     const/4 v9, 0x1
 
     .line 177
-    :goto_b0
+    :goto_1
     iget v7, v7, Llibs/yp3;->h:I
 
     .line 178
@@ -402,7 +402,7 @@
     .line 180
     .line 181
     .line 182
-    if-eq v7, v11, :cond_c2
+    if-eq v7, v11, :cond_9
 
     .line 183
     .line 184
@@ -411,35 +411,35 @@
     .line 185
     .line 186
     .line 187
-    if-ne v7, v11, :cond_bd
+    if-ne v7, v11, :cond_7
 
     .line 188
     .line 189
-    goto :goto_c2
+    goto :goto_2
 
     .line 190
-    :cond_bd
-    if-nez v7, :cond_c0
+    :cond_7
+    if-nez v7, :cond_8
 
     .line 191
     .line 192
-    goto :goto_c3
+    goto :goto_3
 
     .line 193
-    :cond_c0
+    :cond_8
     move v10, v7
 
     .line 194
-    goto :goto_c3
+    goto :goto_3
 
     .line 195
-    :cond_c2
-    :goto_c2
+    :cond_9
+    :goto_2
     const/4 v10, -0x1
 
     .line 196
-    :goto_c3
-    if-le v9, v5, :cond_c9
+    :goto_3
+    if-le v9, v5, :cond_a
 
     .line 197
     .line 198
@@ -449,43 +449,43 @@
     move v5, v9
 
     .line 200
-    :goto_c7
+    :goto_4
     move v6, v10
 
     .line 201
-    goto :goto_cd
+    goto :goto_5
 
     .line 202
-    :cond_c9
-    if-le v10, v6, :cond_cd
+    :cond_a
+    if-le v10, v6, :cond_b
 
     .line 203
     .line 204
     move-object v1, v4
 
     .line 205
-    goto :goto_c7
+    goto :goto_4
 
     .line 206
-    :cond_cd
-    :goto_cd
+    :cond_b
+    :goto_5
     move-object v4, v8
 
     .line 207
-    goto :goto_54
+    goto :goto_0
 
     .line 208
-    :cond_cf
-    if-nez v1, :cond_d2
+    :cond_c
+    if-nez v1, :cond_d
 
     .line 209
     .line 210
-    :goto_d1
+    :goto_6
     return-object v2
 
     .line 211
-    :cond_d2
-    if-nez p2, :cond_ef
+    :cond_d
+    if-nez p2, :cond_e
 
     .line 212
     .line 213
@@ -540,7 +540,7 @@
     return-object p1
 
     .line 240
-    :cond_ef
+    :cond_e
     invoke-virtual {v1, p1, p2}, Llibs/ko2;->a(Llibs/za;Ljava/util/Locale;)Ljava/lang/String;
 
     .line 241

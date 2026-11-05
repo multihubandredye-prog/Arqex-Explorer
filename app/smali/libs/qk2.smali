@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-wide/16 v0, 0x1
@@ -43,7 +43,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -73,7 +73,7 @@
 
 # virtual methods
 .method public final a(ZLlibs/et;)V
-    .registers 6
+    .locals 3
 
     .line 1
     instance-of v0, p2, Llibs/ua2;
@@ -84,7 +84,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -107,10 +107,10 @@
 
     .line 15
     .line 16
-    goto :goto_15
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     move-object v2, p2
 
     .line 18
@@ -122,12 +122,12 @@
 
     .line 21
     .line 22
-    :goto_15
+    :goto_0
     iput-boolean p1, v1, Llibs/rk2;->a:Z
 
     .line 23
     .line 24
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_1
 
     .line 25
     .line 26
@@ -158,7 +158,7 @@
     return-void
 
     .line 39
-    :cond_26
+    :cond_1
     check-cast p2, Llibs/uk2;
 
     .line 40
@@ -184,7 +184,7 @@
 .end method
 
 .method public final d(II[B)[B
-    .registers 11
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/qk2;->Y:Llibs/uk2;
@@ -194,7 +194,7 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_d2
+    if-eqz v0, :cond_c
 
     .line 5
     .line 6
@@ -220,7 +220,7 @@
 
     .line 15
     .line 16
-    if-gt p2, v2, :cond_ce
+    if-gt p2, v2, :cond_b
 
     .line 17
     .line 18
@@ -235,7 +235,7 @@
     add-int/2addr v2, v3
 
     .line 23
-    if-ne p2, v2, :cond_21
+    if-ne p2, v2, :cond_1
 
     .line 24
     .line 25
@@ -243,14 +243,14 @@
 
     .line 26
     .line 27
-    if-eqz v2, :cond_1d
+    if-eqz v2, :cond_0
 
     .line 28
     .line 29
-    goto :goto_21
+    goto :goto_0
 
     .line 30
-    :cond_1d
+    :cond_0
     invoke-static {v4}, Llibs/fg3;->f(Ljava/lang/String;)V
 
     .line 31
@@ -259,23 +259,23 @@
     return-object v1
 
     .line 34
-    :cond_21
-    :goto_21
+    :cond_1
+    :goto_0
     const/4 v2, 0x0
 
     .line 35
-    if-nez p1, :cond_27
+    if-nez p1, :cond_2
 
     .line 36
     .line 37
     array-length v5, p3
 
     .line 38
-    if-eq p2, v5, :cond_2d
+    if-eq p2, v5, :cond_3
 
     .line 39
     .line 40
-    :cond_27
+    :cond_2
     new-array v5, p2, [B
 
     .line 41
@@ -288,7 +288,7 @@
     move-object p3, v5
 
     .line 46
-    :cond_2d
+    :cond_3
     new-instance p1, Ljava/math/BigInteger;
 
     .line 47
@@ -318,7 +318,7 @@
     move-result p2
 
     .line 61
-    if-gez p2, :cond_ca
+    if-gez p2, :cond_a
 
     .line 62
     .line 63
@@ -330,7 +330,7 @@
 
     .line 66
     .line 67
-    if-eqz p3, :cond_8a
+    if-eqz p3, :cond_6
 
     .line 68
     .line 69
@@ -342,7 +342,7 @@
 
     .line 72
     .line 73
-    if-eqz p3, :cond_85
+    if-eqz p3, :cond_5
 
     .line 74
     .line 75
@@ -446,14 +446,14 @@
     move-result p1
 
     .line 125
-    if-eqz p1, :cond_7f
+    if-eqz p1, :cond_4
 
     .line 126
     .line 127
-    goto :goto_8e
+    goto :goto_1
 
     .line 128
-    :cond_7f
+    :cond_4
     const-string p1, "RSA engine faulty decryption/signing detected"
 
     .line 129
@@ -466,7 +466,7 @@
     return-object v1
 
     .line 134
-    :cond_85
+    :cond_5
     invoke-virtual {v0, p1}, Llibs/rk2;->d(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
     .line 135
@@ -475,10 +475,10 @@
     move-result-object v4
 
     .line 138
-    goto :goto_8e
+    goto :goto_1
 
     .line 139
-    :cond_8a
+    :cond_6
     invoke-virtual {v0, p1}, Llibs/rk2;->d(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
     .line 140
@@ -487,7 +487,7 @@
     move-result-object v4
 
     .line 143
-    :goto_8e
+    :goto_1
     invoke-virtual {v4}, Ljava/math/BigInteger;->toByteArray()[B
 
     .line 144
@@ -500,7 +500,7 @@
 
     .line 148
     .line 149
-    if-eqz p2, :cond_bd
+    if-eqz p2, :cond_8
 
     .line 150
     .line 151
@@ -508,7 +508,7 @@
 
     .line 152
     .line 153
-    if-nez p2, :cond_a9
+    if-nez p2, :cond_7
 
     .line 154
     .line 155
@@ -523,7 +523,7 @@
     move-result p3
 
     .line 160
-    if-le p2, p3, :cond_a9
+    if-le p2, p3, :cond_7
 
     .line 161
     .line 162
@@ -545,7 +545,7 @@
     return-object p3
 
     .line 170
-    :cond_a9
+    :cond_7
     array-length p2, p1
 
     .line 171
@@ -557,7 +557,7 @@
     move-result p3
 
     .line 175
-    if-ge p2, p3, :cond_c9
+    if-ge p2, p3, :cond_9
 
     .line 176
     .line 177
@@ -590,12 +590,12 @@
     return-object p3
 
     .line 190
-    :cond_bd
+    :cond_8
     aget-byte p2, p1, v2
 
     .line 191
     .line 192
-    if-nez p2, :cond_c9
+    if-nez p2, :cond_9
 
     .line 193
     .line 194
@@ -617,11 +617,11 @@
     return-object p3
 
     .line 202
-    :cond_c9
+    :cond_9
     return-object p1
 
     .line 203
-    :cond_ca
+    :cond_a
     invoke-static {v4}, Llibs/fg3;->f(Ljava/lang/String;)V
 
     .line 204
@@ -630,7 +630,7 @@
     return-object v1
 
     .line 207
-    :cond_ce
+    :cond_b
     invoke-static {v4}, Llibs/fg3;->f(Ljava/lang/String;)V
 
     .line 208
@@ -639,7 +639,7 @@
     return-object v1
 
     .line 211
-    :cond_d2
+    :cond_c
     const-string p1, "RSA engine not initialised"
 
     .line 212
@@ -653,7 +653,7 @@
 .end method
 
 .method public final f()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/qk2;->X:Llibs/rk2;
@@ -672,7 +672,7 @@
 .end method
 
 .method public final g()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/qk2;->X:Llibs/rk2;

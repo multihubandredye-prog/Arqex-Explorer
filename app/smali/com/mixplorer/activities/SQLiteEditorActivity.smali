@@ -65,7 +65,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Llibs/ia2;-><init>()V
@@ -220,7 +220,7 @@
 .end method
 
 .method public static End(Ljava/io/OutputStreamWriter;Llibs/dy2;ZLjava/lang/String;Ljava/lang/String;)V
-    .registers 23
+    .locals 18
 
     .line 1
     move-object/from16 v0, p0
@@ -247,7 +247,7 @@
 
     .line 12
     .line 13
-    if-eqz v4, :cond_168
+    if-eqz v4, :cond_15
 
     .line 14
     .line 15
@@ -259,15 +259,15 @@
     move-result v5
 
     .line 19
-    if-eqz v5, :cond_16
+    if-eqz v5, :cond_0
 
     .line 20
     .line 21
-    goto/16 :goto_168
+    goto/16 :goto_b
 
     .line 22
     .line 23
-    :cond_16
+    :cond_0
     invoke-interface {v4}, Landroid/database/Cursor;->getCount()I
 
     .line 24
@@ -280,22 +280,22 @@
 
     .line 28
     .line 29
-    if-ge v5, v6, :cond_20
+    if-ge v5, v6, :cond_1
 
     .line 30
     .line 31
     move v7, v5
 
     .line 32
-    goto :goto_22
+    goto :goto_0
 
     .line 33
-    :cond_20
+    :cond_1
     const/16 v7, 0xdac
 
     .line 34
     .line 35
-    :goto_22
+    :goto_0
     const-string v8, "\n"
 
     .line 36
@@ -304,7 +304,7 @@
 
     .line 38
     .line 39
-    if-eqz p2, :cond_5b
+    if-eqz p2, :cond_4
 
     .line 40
     .line 41
@@ -327,7 +327,7 @@
     move-object v10, v9
 
     .line 50
-    :goto_31
+    :goto_1
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 51
@@ -336,7 +336,7 @@
     move-result v11
 
     .line 54
-    if-eqz v11, :cond_54
+    if-eqz v11, :cond_3
 
     .line 55
     .line 56
@@ -360,7 +360,7 @@
     move-result v12
 
     .line 66
-    if-lez v12, :cond_47
+    if-lez v12, :cond_2
 
     .line 67
     .line 68
@@ -372,7 +372,7 @@
     move-result-object v10
 
     .line 72
-    :cond_47
+    :cond_2
     new-instance v12, Ljava/lang/StringBuilder;
 
     .line 73
@@ -395,10 +395,10 @@
     move-result-object v10
 
     .line 84
-    goto :goto_31
+    goto :goto_1
 
     .line 85
-    :cond_54
+    :cond_3
     invoke-virtual {v0, v10}, Ljava/io/Writer;->append(Ljava/lang/CharSequence;)Ljava/io/Writer;
 
     .line 86
@@ -412,12 +412,12 @@
     .line 90
     .line 91
     .line 92
-    :cond_5b
+    :cond_4
     const/4 v10, 0x0
 
     .line 93
-    :goto_5c
-    if-eq v10, v7, :cond_168
+    :goto_2
+    if-eq v10, v7, :cond_15
 
     .line 94
     .line 95
@@ -429,7 +429,7 @@
     move-result v11
 
     .line 99
-    if-nez v11, :cond_165
+    if-nez v11, :cond_14
 
     .line 100
     .line 101
@@ -441,7 +441,7 @@
     move-result v11
 
     .line 105
-    if-eqz v11, :cond_163
+    if-eqz v11, :cond_13
 
     .line 106
     .line 107
@@ -454,7 +454,7 @@
     .line 110
     .line 111
     .line 112
-    :cond_6f
+    :cond_5
     invoke-static {v4, v10}, Lcom/mixplorer/activities/SQLiteEditorActivity;->Get(Landroid/database/Cursor;I)[Ljava/lang/Object;
 
     .line 113
@@ -482,23 +482,23 @@
     move-result v13
 
     .line 125
-    if-nez v13, :cond_7f
+    if-nez v13, :cond_6
 
     .line 126
     .line 127
-    goto :goto_83
+    goto :goto_3
 
     .line 128
-    :cond_7f
+    :cond_6
     add-int/lit8 v13, v7, -0x1
 
     .line 129
     .line 130
-    if-le v10, v13, :cond_6f
+    if-le v10, v13, :cond_5
 
     .line 131
     .line 132
-    :goto_83
+    :goto_3
     invoke-virtual {v11}, Ljava/util/ArrayList;->size()I
 
     .line 133
@@ -510,8 +510,8 @@
     const/4 v13, 0x0
 
     .line 137
-    :goto_88
-    if-ge v13, v10, :cond_14f
+    :goto_4
+    if-ge v13, v10, :cond_11
 
     .line 138
     .line 139
@@ -539,7 +539,7 @@
     move-result v15
 
     .line 151
-    if-nez v15, :cond_14b
+    if-nez v15, :cond_10
 
     .line 152
     .line 153
@@ -553,8 +553,8 @@
     const/4 v1, 0x0
 
     .line 157
-    :goto_9c
-    if-ge v1, v15, :cond_138
+    :goto_5
+    if-ge v1, v15, :cond_f
 
     .line 158
     .line 159
@@ -562,7 +562,7 @@
 
     .line 160
     .line 161
-    if-eqz v6, :cond_a6
+    if-eqz v6, :cond_7
 
     .line 162
     .line 163
@@ -570,11 +570,11 @@
 
     .line 164
     .line 165
-    if-eqz v12, :cond_ac
+    if-eqz v12, :cond_8
 
     .line 166
     .line 167
-    :cond_a6
+    :cond_7
     move/from16 v16, v1
 
     .line 168
@@ -586,15 +586,15 @@
     const/4 v4, 0x1
 
     .line 172
-    goto :goto_110
+    goto :goto_7
 
     .line 173
-    :cond_ac
+    :cond_8
     instance-of v12, v6, Ljava/lang/String;
 
     .line 174
     .line 175
-    if-eqz v12, :cond_fb
+    if-eqz v12, :cond_d
 
     .line 176
     .line 177
@@ -618,7 +618,7 @@
 
     .line 186
     .line 187
-    if-nez v12, :cond_c4
+    if-nez v12, :cond_9
 
     .line 188
     .line 189
@@ -634,11 +634,11 @@
     move-result v12
 
     .line 195
-    if-eqz v12, :cond_ce
+    if-eqz v12, :cond_a
 
     .line 196
     .line 197
-    :cond_c4
+    :cond_9
     check-cast v6, Ljava/lang/String;
 
     .line 198
@@ -659,7 +659,7 @@
     move-result-object v6
 
     .line 207
-    :cond_ce
+    :cond_a
     invoke-static {v3}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
 
     .line 208
@@ -668,7 +668,7 @@
     move-result v12
 
     .line 211
-    if-nez v12, :cond_e8
+    if-nez v12, :cond_b
 
     .line 212
     .line 213
@@ -687,7 +687,7 @@
     const/4 v4, 0x1
 
     .line 220
-    if-ne v12, v4, :cond_eb
+    if-ne v12, v4, :cond_c
 
     .line 221
     .line 222
@@ -711,10 +711,10 @@
     move-result-object v6
 
     .line 232
-    goto :goto_eb
+    goto :goto_6
 
     .line 233
-    :cond_e8
+    :cond_b
     move-object/from16 v17, v4
 
     .line 234
@@ -722,8 +722,8 @@
     const/4 v4, 0x1
 
     .line 236
-    :cond_eb
-    :goto_eb
+    :cond_c
+    :goto_6
     new-instance v1, Ljava/lang/StringBuilder;
 
     .line 237
@@ -751,10 +751,10 @@
     move-result-object v1
 
     .line 251
-    goto :goto_111
+    goto :goto_8
 
     .line 252
-    :cond_fb
+    :cond_d
     move/from16 v16, v1
 
     .line 253
@@ -793,14 +793,14 @@
     move-result-object v1
 
     .line 272
-    goto :goto_111
+    goto :goto_8
 
     .line 273
-    :goto_110
+    :goto_7
     move-object v1, v9
 
     .line 274
-    :goto_111
+    :goto_8
     invoke-virtual/range {p2 .. p2}, Ljava/lang/String;->length()I
 
     .line 275
@@ -809,7 +809,7 @@
     move-result v6
 
     .line 278
-    if-lez v6, :cond_11e
+    if-lez v6, :cond_e
 
     .line 279
     .line 280
@@ -825,15 +825,15 @@
     move-result-object v6
 
     .line 286
-    goto :goto_120
+    goto :goto_9
 
     .line 287
-    :cond_11e
+    :cond_e
     move-object/from16 v6, p2
 
     .line 288
     .line 289
-    :goto_120
+    :goto_9
     new-instance v12, Ljava/lang/StringBuilder;
 
     .line 290
@@ -878,11 +878,11 @@
     const/4 v12, 0x1
 
     .line 311
-    goto/16 :goto_9c
+    goto/16 :goto_5
 
     .line 312
     .line 313
-    :cond_138
+    :cond_f
     move-object/from16 v6, p2
 
     .line 314
@@ -918,11 +918,11 @@
     const/4 v12, 0x1
 
     .line 330
-    goto/16 :goto_88
+    goto/16 :goto_4
 
     .line 331
     .line 332
-    :cond_14b
+    :cond_10
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 333
@@ -931,7 +931,7 @@
     return-void
 
     .line 336
-    :cond_14f
+    :cond_11
     move-object/from16 v17, v4
 
     .line 337
@@ -944,7 +944,7 @@
 
     .line 341
     .line 342
-    if-le v1, v4, :cond_15a
+    if-le v1, v4, :cond_12
 
     .line 343
     .line 344
@@ -952,14 +952,14 @@
 
     .line 345
     .line 346
-    goto :goto_15b
+    goto :goto_a
 
     .line 347
-    :cond_15a
+    :cond_12
     add-int/2addr v1, v7
 
     .line 348
-    :goto_15b
+    :goto_a
     move v10, v7
 
     .line 349
@@ -974,30 +974,30 @@
     move v7, v1
 
     .line 354
-    goto/16 :goto_5c
+    goto/16 :goto_2
 
     .line 355
     .line 356
-    :cond_163
+    :cond_13
     const/4 v0, 0x0
 
     .line 357
     throw v0
 
     .line 358
-    :cond_165
+    :cond_14
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 359
     .line 360
     .line 361
-    :cond_168
-    :goto_168
+    :cond_15
+    :goto_b
     return-void
 .end method
 
 .method public static Get(Landroid/database/Cursor;I)[Ljava/lang/Object;
-    .registers 7
+    .locals 5
 
     .line 1
     invoke-interface {p0}, Landroid/database/Cursor;->getColumnCount()I
@@ -1015,8 +1015,8 @@
     const/4 v2, 0x0
 
     .line 8
-    :goto_7
-    if-ge v2, v0, :cond_41
+    :goto_0
+    if-ge v2, v0, :cond_4
 
     .line 9
     .line 10
@@ -1031,28 +1031,28 @@
     const/4 v4, 0x1
 
     .line 15
-    if-eq v3, v4, :cond_34
+    if-eq v3, v4, :cond_3
 
     .line 16
     .line 17
     const/4 v4, 0x2
 
     .line 18
-    if-eq v3, v4, :cond_29
+    if-eq v3, v4, :cond_2
 
     .line 19
     .line 20
     const/4 v4, 0x3
 
     .line 21
-    if-eq v3, v4, :cond_22
+    if-eq v3, v4, :cond_1
 
     .line 22
     .line 23
     const/4 v4, 0x4
 
     .line 24
-    if-eq v3, v4, :cond_1d
+    if-eq v3, v4, :cond_0
 
     .line 25
     .line 26
@@ -1063,10 +1063,10 @@
 
     .line 28
     .line 29
-    goto :goto_3e
+    goto :goto_1
 
     .line 30
-    :cond_1d
+    :cond_0
     const-string v3, "[BLOB]"
 
     .line 31
@@ -1075,10 +1075,10 @@
 
     .line 33
     .line 34
-    goto :goto_3e
+    goto :goto_1
 
     .line 35
-    :cond_22
+    :cond_1
     invoke-interface {p0, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     .line 36
@@ -1091,10 +1091,10 @@
 
     .line 40
     .line 41
-    goto :goto_3e
+    goto :goto_1
 
     .line 42
-    :cond_29
+    :cond_2
     invoke-interface {p0, v2}, Landroid/database/Cursor;->getFloat(I)F
 
     .line 43
@@ -1115,10 +1115,10 @@
 
     .line 51
     .line 52
-    goto :goto_3e
+    goto :goto_1
 
     .line 53
-    :cond_34
+    :cond_3
     invoke-interface {p0, v2}, Landroid/database/Cursor;->getLong(I)J
 
     .line 54
@@ -1139,20 +1139,20 @@
 
     .line 62
     .line 63
-    :goto_3e
+    :goto_1
     add-int/lit8 v2, v2, 0x1
 
     .line 64
     .line 65
-    goto :goto_7
+    goto :goto_0
 
     .line 66
-    :cond_41
+    :cond_4
     return-object v1
 .end method
 
 .method public static Post(Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, " "
@@ -1167,7 +1167,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -1183,12 +1183,12 @@
     move-result-object p0
 
     .line 15
-    :cond_e
+    :cond_0
     return-object p0
 .end method
 
 .method public static Put(Llibs/dy2;)Lorg/json/JSONArray;
-    .registers 10
+    .locals 9
 
     .line 1
     new-instance v0, Lorg/json/JSONArray;
@@ -1224,7 +1224,7 @@
     move-result v2
 
     .line 18
-    if-lez v2, :cond_16
+    if-lez v2, :cond_0
 
     .line 19
     .line 20
@@ -1233,7 +1233,7 @@
     .line 21
     .line 22
     .line 23
-    :cond_16
+    :cond_0
     const/4 v2, 0x0
 
     .line 24
@@ -1251,8 +1251,8 @@
     const/4 v5, 0x0
 
     .line 30
-    :goto_1d
-    if-ge v2, v4, :cond_5f
+    :goto_0
+    if-ge v2, v4, :cond_3
 
     .line 31
     .line 32
@@ -1269,11 +1269,11 @@
     .line 37
     .line 38
     .line 39
-    if-nez v6, :cond_36
+    if-nez v6, :cond_1
 
     .line 40
     .line 41
-    :try_start_28
+    :try_start_0
     invoke-interface {p0, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     .line 42
@@ -1299,15 +1299,15 @@
     .line 52
     .line 53
     .line 54
-    goto :goto_57
+    goto :goto_1
 
     .line 55
-    :cond_36
+    :cond_1
     instance-of v8, v6, [B
 
     .line 56
     .line 57
-    if-eqz v8, :cond_4c
+    if-eqz v8, :cond_2
 
     .line 58
     .line 59
@@ -1344,10 +1344,10 @@
     .line 74
     .line 75
     .line 76
-    goto :goto_57
+    goto :goto_1
 
     .line 77
-    :cond_4c
+    :cond_2
     invoke-interface {p0, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     .line 78
@@ -1365,14 +1365,14 @@
     .line 84
     .line 85
     invoke-virtual {v7, v8, v6}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-    :try_end_57
-    .catch Lorg/json/JSONException; {:try_start_28 .. :try_end_57} :catch_57
+    :try_end_0
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 86
     .line 87
     .line 88
-    :catch_57
-    :goto_57
+    :catch_0
+    :goto_1
     invoke-virtual {v0, v7}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
 
     .line 89
@@ -1386,10 +1386,10 @@
 
     .line 94
     .line 95
-    goto :goto_1d
+    goto :goto_0
 
     .line 96
-    :cond_5f
+    :cond_3
     invoke-interface {v1}, Landroid/database/Cursor;->moveToNext()Z
 
     .line 97
@@ -1398,7 +1398,7 @@
     move-result v2
 
     .line 100
-    if-nez v2, :cond_16
+    if-nez v2, :cond_0
 
     .line 101
     .line 102
@@ -1406,7 +1406,7 @@
 .end method
 
 .method public static Work(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 6
+    .locals 3
 
     .line 1
     :try_start_0
@@ -1432,8 +1432,8 @@
     .line 11
     .line 12
     invoke-virtual {v0}, Llibs/xv1;->start()V
-    :try_end_e
-    .catchall {:try_start_0 .. :try_end_e} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 13
     .line 14
@@ -1441,7 +1441,7 @@
     return-void
 
     .line 16
-    :catchall_f
+    :catchall_0
     move-exception p0
 
     .line 17
@@ -1468,7 +1468,7 @@
 
 # virtual methods
 .method public final Add(Ljava/lang/String;)Ljava/util/ArrayList;
-    .registers 10
+    .locals 8
 
     .line 1
     new-instance v0, Ljava/util/ArrayList;
@@ -1488,7 +1488,7 @@
     move-result v1
 
     .line 10
-    if-nez v1, :cond_2b
+    if-nez v1, :cond_0
 
     .line 11
     .line 12
@@ -1551,15 +1551,15 @@
 
     .line 42
     .line 43
-    goto :goto_2c
+    goto :goto_0
 
     .line 44
-    :cond_2b
+    :cond_0
     const/4 p1, 0x0
 
     .line 45
-    :goto_2c
-    if-eqz p1, :cond_e0
+    :goto_0
+    if-eqz p1, :cond_9
 
     .line 46
     .line 47
@@ -1580,7 +1580,7 @@
     move-result v0
 
     .line 56
-    if-lez v0, :cond_3c
+    if-lez v0, :cond_1
 
     .line 57
     .line 58
@@ -1589,7 +1589,7 @@
     .line 59
     .line 60
     .line 61
-    :cond_3c
+    :cond_1
     new-instance v2, Llibs/vx2;
 
     .line 62
@@ -1640,7 +1640,7 @@
     move-result v3
 
     .line 85
-    if-nez v3, :cond_be
+    if-nez v3, :cond_8
 
     .line 86
     .line 87
@@ -1656,14 +1656,14 @@
     move-result v3
 
     .line 93
-    if-eqz v3, :cond_5f
+    if-eqz v3, :cond_2
 
     .line 94
     .line 95
-    goto :goto_be
+    goto :goto_4
 
     .line 96
-    :cond_5f
+    :cond_2
     const-string v3, "char"
 
     .line 97
@@ -1676,7 +1676,7 @@
     move-result v3
 
     .line 102
-    if-nez v3, :cond_bb
+    if-nez v3, :cond_7
 
     .line 103
     .line 104
@@ -1692,7 +1692,7 @@
     move-result v3
 
     .line 110
-    if-nez v3, :cond_bb
+    if-nez v3, :cond_7
 
     .line 111
     .line 112
@@ -1708,7 +1708,7 @@
     move-result v3
 
     .line 118
-    if-nez v3, :cond_bb
+    if-nez v3, :cond_7
 
     .line 119
     .line 120
@@ -1724,14 +1724,14 @@
     move-result v3
 
     .line 126
-    if-eqz v3, :cond_80
+    if-eqz v3, :cond_3
 
     .line 127
     .line 128
-    goto :goto_bb
+    goto :goto_3
 
     .line 129
-    :cond_80
+    :cond_3
     const-string v3, "real"
 
     .line 130
@@ -1744,7 +1744,7 @@
     move-result v3
 
     .line 135
-    if-nez v3, :cond_b8
+    if-nez v3, :cond_6
 
     .line 136
     .line 137
@@ -1760,7 +1760,7 @@
     move-result v3
 
     .line 143
-    if-nez v3, :cond_b8
+    if-nez v3, :cond_6
 
     .line 144
     .line 145
@@ -1776,7 +1776,7 @@
     move-result v3
 
     .line 151
-    if-nez v3, :cond_b8
+    if-nez v3, :cond_6
 
     .line 152
     .line 153
@@ -1792,7 +1792,7 @@
     move-result v3
 
     .line 159
-    if-nez v3, :cond_b8
+    if-nez v3, :cond_6
 
     .line 160
     .line 161
@@ -1808,14 +1808,14 @@
     move-result v3
 
     .line 167
-    if-eqz v3, :cond_a9
+    if-eqz v3, :cond_4
 
     .line 168
     .line 169
-    goto :goto_b8
+    goto :goto_2
 
     .line 170
-    :cond_a9
+    :cond_4
     const-string v3, "blob"
 
     .line 171
@@ -1828,7 +1828,7 @@
     move-result v0
 
     .line 176
-    if-eqz v0, :cond_b5
+    if-eqz v0, :cond_5
 
     .line 177
     .line 178
@@ -1836,49 +1836,49 @@
 
     .line 179
     .line 180
-    :goto_b3
+    :goto_1
     move-object v6, v0
 
     .line 181
-    goto :goto_c1
+    goto :goto_5
 
     .line 182
-    :cond_b5
+    :cond_5
     const-string v0, "NULL"
 
     .line 183
     .line 184
-    goto :goto_b3
+    goto :goto_1
 
     .line 185
-    :cond_b8
-    :goto_b8
+    :cond_6
+    :goto_2
     const-string v0, "REAL"
 
     .line 186
     .line 187
-    goto :goto_b3
+    goto :goto_1
 
     .line 188
-    :cond_bb
-    :goto_bb
+    :cond_7
+    :goto_3
     const-string v0, "TEXT"
 
     .line 189
     .line 190
-    goto :goto_b3
+    goto :goto_1
 
     .line 191
-    :cond_be
-    :goto_be
+    :cond_8
+    :goto_4
     const-string v0, "INTEGER"
 
     .line 192
     .line 193
-    goto :goto_b3
+    goto :goto_1
 
     .line 194
-    :goto_c1
+    :goto_5
     const/4 v0, 0x3
 
     .line 195
@@ -1930,7 +1930,7 @@
     move-result v0
 
     .line 219
-    if-nez v0, :cond_3c
+    if-nez v0, :cond_1
 
     .line 220
     .line 221
@@ -1942,12 +1942,12 @@
     return-object v1
 
     .line 225
-    :cond_e0
+    :cond_9
     return-object v0
 .end method
 
 .method public final All()V
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/activities/SQLiteEditorActivity;->Victor:Llibs/by2;
@@ -1961,7 +1961,7 @@
     const/4 v2, 0x0
 
     .line 6
-    :try_start_5
+    :try_start_0
     iget-object v3, p0, Lcom/mixplorer/activities/SQLiteEditorActivity;->Whiskey:Landroid/database/sqlite/SQLiteDatabase;
 
     .line 7
@@ -1994,7 +1994,7 @@
     move-result-object v1
 
     .line 22
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_0
 
     .line 23
     .line 24
@@ -2006,7 +2006,7 @@
     move-result v3
 
     .line 28
-    if-lez v3, :cond_20
+    if-lez v3, :cond_0
 
     .line 29
     .line 30
@@ -2015,15 +2015,15 @@
     .line 31
     .line 32
     .line 33
-    :cond_20
+    :cond_0
     invoke-static {v1}, Llibs/ji0;->i(Landroid/database/Cursor;)V
-    :try_end_23
-    .catchall {:try_start_5 .. :try_end_23} :catchall_23
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 34
     .line 35
     .line 36
-    :catchall_23
+    :catchall_0
     iget v0, v0, Llibs/by2;->a:I
 
     .line 37
@@ -2037,7 +2037,7 @@
 .end method
 
 .method public final Any(Ljava/lang/String;Llibs/ml1;)V
-    .registers 13
+    .locals 10
 
     .line 1
     new-instance v0, Llibs/$d;
@@ -2180,7 +2180,7 @@
 .end method
 
 .method public final Bit(Ljava/lang/String;)I
-    .registers 9
+    .locals 7
 
     .line 1
     const-string v0, "SELECT * FROM sqlite_master WHERE type IN (\'table\', \'view\') ORDER BY type, name"
@@ -2199,7 +2199,7 @@
 
     .line 8
     .line 9
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_0
 
     .line 10
     .line 11
@@ -2211,7 +2211,7 @@
 
     .line 14
     .line 15
-    if-eq v1, v2, :cond_13
+    if-eq v1, v2, :cond_0
 
     .line 16
     .line 17
@@ -2220,7 +2220,7 @@
     .line 18
     .line 19
     .line 20
-    :cond_13
+    :cond_0
     iget-object v0, v0, Llibs/v1;->Y:Ljava/lang/Object;
 
     .line 21
@@ -2250,7 +2250,7 @@
 
     .line 34
     .line 35
-    if-eqz v0, :cond_7b
+    if-eqz v0, :cond_5
 
     .line 36
     .line 37
@@ -2262,7 +2262,7 @@
     move-result v0
 
     .line 41
-    if-lez v0, :cond_7b
+    if-lez v0, :cond_5
 
     .line 42
     .line 43
@@ -2284,7 +2284,7 @@
     const/4 v2, 0x0
 
     .line 51
-    :cond_32
+    :cond_1
     iget-object v3, p0, Lcom/mixplorer/activities/SQLiteEditorActivity;->Xray:Landroid/database/Cursor;
 
     .line 52
@@ -2312,7 +2312,7 @@
     move-result-object v4
 
     .line 64
-    if-eqz p1, :cond_48
+    if-eqz p1, :cond_2
 
     .line 65
     .line 66
@@ -2324,14 +2324,14 @@
     move-result v5
 
     .line 70
-    if-eqz v5, :cond_53
+    if-eqz v5, :cond_3
 
     .line 71
     .line 72
-    goto :goto_52
+    goto :goto_0
 
     .line 73
-    :cond_48
+    :cond_2
     const-string v5, "android_metadata"
 
     .line 74
@@ -2344,19 +2344,19 @@
     move-result v5
 
     .line 79
-    if-nez v5, :cond_53
+    if-nez v5, :cond_3
 
     .line 80
     .line 81
-    if-nez v1, :cond_53
+    if-nez v1, :cond_3
 
     .line 82
     .line 83
-    :goto_52
+    :goto_0
     move v1, v2
 
     .line 84
-    :cond_53
+    :cond_3
     iget-object v5, p0, Lcom/mixplorer/activities/SQLiteEditorActivity;->Yankee:Ljava/util/ArrayList;
 
     .line 85
@@ -2381,7 +2381,7 @@
     move-result v3
 
     .line 96
-    if-eqz v3, :cond_64
+    if-eqz v3, :cond_4
 
     .line 97
     .line 98
@@ -2389,15 +2389,15 @@
 
     .line 99
     .line 100
-    goto :goto_66
+    goto :goto_1
 
     .line 101
-    :cond_64
+    :cond_4
     const-string v3, ""
 
     .line 102
     .line 103
-    :goto_66
+    :goto_1
     invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 104
@@ -2432,14 +2432,14 @@
     move-result v3
 
     .line 121
-    if-nez v3, :cond_32
+    if-nez v3, :cond_1
 
     .line 122
     .line 123
     return v1
 
     .line 124
-    :cond_7b
+    :cond_5
     const/4 p1, -0x1
 
     .line 125
@@ -2447,7 +2447,7 @@
 .end method
 
 .method public final Bot(Ljava/lang/String;ZLlibs/vx2;Llibs/ml1;)V
-    .registers 39
+    .locals 34
 
     .line 1
     move-object/from16 v1, p0
@@ -2464,21 +2464,21 @@
     const/4 v12, 0x0
 
     .line 7
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
     const/4 v2, 0x1
 
     .line 10
-    goto :goto_b
+    goto :goto_0
 
     .line 11
-    :cond_a
+    :cond_0
     const/4 v2, 0x0
 
     .line 12
-    :goto_b
+    :goto_0
     iget-object v3, v1, Lcom/mixplorer/activities/SQLiteEditorActivity;->Victor:Llibs/by2;
 
     .line 13
@@ -2490,7 +2490,7 @@
     const/4 v3, 0x0
 
     .line 17
-    if-eqz v2, :cond_1f
+    if-eqz v2, :cond_1
 
     .line 18
     .line 19
@@ -2518,10 +2518,10 @@
 
     .line 30
     .line 31
-    goto :goto_25
+    goto :goto_1
 
     .line 32
-    :cond_1f
+    :cond_1
     const/4 v6, -0x1
 
     .line 33
@@ -2538,12 +2538,12 @@
     const/4 v0, -0x1
 
     .line 38
-    :goto_25
+    :goto_1
     new-instance v13, Llibs/$d;
 
     .line 39
     .line 40
-    if-eqz v2, :cond_2c
+    if-eqz v2, :cond_2
 
     .line 41
     .line 42
@@ -2551,15 +2551,15 @@
 
     .line 43
     .line 44
-    goto :goto_2e
+    goto :goto_2
 
     .line 45
-    :cond_2c
+    :cond_2
     sget v4, Llibs/bi2;->add_column:I
 
     .line 46
     .line 47
-    :goto_2e
+    :goto_2
     invoke-static {v4}, Llibs/ho2;->Add(I)Ljava/lang/String;
 
     .line 48
@@ -2736,7 +2736,7 @@
     move-result v9
 
     .line 139
-    if-nez v9, :cond_97
+    if-nez v9, :cond_3
 
     .line 140
     .line 141
@@ -2760,15 +2760,15 @@
 
     .line 150
     .line 151
-    goto :goto_99
+    goto :goto_3
 
     .line 152
-    :cond_97
+    :cond_3
     const/16 v21, 0x0
 
     .line 153
     .line 154
-    :goto_99
+    :goto_3
     new-array v5, v12, [Ljava/lang/String;
 
     .line 155
@@ -2818,7 +2818,7 @@
     move-result-object v5
 
     .line 179
-    if-eqz v2, :cond_b7
+    if-eqz v2, :cond_4
 
     .line 180
     .line 181
@@ -2827,26 +2827,26 @@
     .line 182
     .line 183
     .line 184
-    :cond_b7
+    :cond_4
     iput-object v3, v13, Llibs/od;->Two:Landroid/widget/LinearLayout;
 
     .line 185
     .line 186
-    if-ne v6, v11, :cond_bd
+    if-ne v6, v11, :cond_5
 
     .line 187
     .line 188
     const/4 v6, 0x1
 
     .line 189
-    goto :goto_be
+    goto :goto_4
 
     .line 190
-    :cond_bd
+    :cond_5
     const/4 v6, 0x0
 
     .line 191
-    :goto_be
+    :goto_4
     new-instance v8, Llibs/px2;
 
     .line 192
@@ -2872,7 +2872,7 @@
     move-result-object v6
 
     .line 204
-    if-eqz v2, :cond_d0
+    if-eqz v2, :cond_6
 
     .line 205
     .line 206
@@ -2881,7 +2881,7 @@
     .line 207
     .line 208
     .line 209
-    :cond_d0
+    :cond_6
     sget v20, Llibs/bi2;->def:I
 
     .line 210
@@ -2962,21 +2962,21 @@
 
     .line 248
     .line 249
-    if-ne v0, v11, :cond_fc
+    if-ne v0, v11, :cond_7
 
     .line 250
     .line 251
     const/4 v0, 0x1
 
     .line 252
-    goto :goto_fd
+    goto :goto_5
 
     .line 253
-    :cond_fc
+    :cond_7
     const/4 v0, 0x0
 
     .line 254
-    :goto_fd
+    :goto_5
     const/16 v7, 0x66
 
     .line 255
@@ -2993,7 +2993,7 @@
     move-result-object v7
 
     .line 262
-    if-eqz v2, :cond_10a
+    if-eqz v2, :cond_8
 
     .line 263
     .line 264
@@ -3002,7 +3002,7 @@
     .line 265
     .line 266
     .line 267
-    :cond_10a
+    :cond_8
     new-instance v0, Llibs/qx2;
 
     .line 268
@@ -3065,7 +3065,7 @@
 
     .line 296
     .line 297
-    if-eqz v2, :cond_12d
+    if-eqz v2, :cond_9
 
     .line 298
     .line 299
@@ -3073,15 +3073,15 @@
 
     .line 300
     .line 301
-    goto :goto_12f
+    goto :goto_6
 
     .line 302
-    :cond_12d
+    :cond_9
     sget v0, Llibs/bi2;->add:I
 
     .line 303
     .line 304
-    :goto_12f
+    :goto_6
     invoke-virtual {v13, v0}, Llibs/od;->Firebase(I)V
 
     .line 305
@@ -3106,7 +3106,7 @@
 .end method
 
 .method public final Buf(Landroid/database/Cursor;Z)V
-    .registers 27
+    .locals 24
 
     .line 1
     move-object/from16 v0, p0
@@ -3133,7 +3133,7 @@
 
     .line 12
     .line 13
-    if-eqz v2, :cond_13
+    if-eqz v2, :cond_0
 
     .line 14
     .line 15
@@ -3146,7 +3146,7 @@
     .line 18
     .line 19
     .line 20
-    :cond_13
+    :cond_0
     iget-object v2, v0, Lcom/mixplorer/activities/SQLiteEditorActivity;->Victor:Llibs/by2;
 
     .line 21
@@ -3189,7 +3189,7 @@
     const/4 v13, 0x1
 
     .line 38
-    if-eqz v1, :cond_b3
+    if-eqz v1, :cond_b
 
     .line 39
     .line 40
@@ -3213,7 +3213,7 @@
     move-result v14
 
     .line 50
-    if-eqz p2, :cond_9c
+    if-eqz p2, :cond_9
 
     .line 51
     .line 52
@@ -3234,12 +3234,12 @@
 
     .line 60
     .line 61
-    :goto_3c
+    :goto_0
     const/16 v4, 0x64
 
     .line 62
     .line 63
-    if-ge v3, v4, :cond_68
+    if-ge v3, v4, :cond_4
 
     .line 64
     .line 65
@@ -3247,7 +3247,7 @@
 
     .line 66
     .line 67
-    if-ge v3, v4, :cond_68
+    if-ge v3, v4, :cond_4
 
     .line 68
     .line 69
@@ -3259,15 +3259,15 @@
     move-result v4
 
     .line 73
-    if-eqz v4, :cond_5e
+    if-eqz v4, :cond_2
 
     .line 74
     .line 75
     const/4 v4, 0x0
 
     .line 76
-    :goto_4b
-    if-ge v4, v14, :cond_5e
+    :goto_1
+    if-ge v4, v14, :cond_2
 
     .line 77
     .line 78
@@ -3275,7 +3275,7 @@
 
     .line 79
     .line 80
-    if-nez v17, :cond_5b
+    if-nez v17, :cond_1
 
     .line 81
     .line 82
@@ -3287,7 +3287,7 @@
     move-result v17
 
     .line 86
-    if-eqz v17, :cond_5b
+    if-eqz v17, :cond_1
 
     .line 87
     .line 88
@@ -3299,27 +3299,27 @@
 
     .line 91
     .line 92
-    :cond_5b
+    :cond_1
     add-int/lit8 v4, v4, 0x1
 
     .line 93
     .line 94
-    goto :goto_4b
+    goto :goto_1
 
     .line 95
-    :cond_5e
+    :cond_2
     move/from16 v4, v16
 
     .line 96
     .line 97
-    if-ne v4, v14, :cond_63
+    if-ne v4, v14, :cond_3
 
     .line 98
     .line 99
-    goto :goto_68
+    goto :goto_2
 
     .line 100
-    :cond_63
+    :cond_3
     add-int/lit8 v3, v3, 0x1
 
     .line 101
@@ -3328,16 +3328,16 @@
 
     .line 103
     .line 104
-    goto :goto_3c
+    goto :goto_0
 
     .line 105
-    :cond_68
-    :goto_68
+    :cond_4
+    :goto_2
     const/4 v2, 0x0
 
     .line 106
-    :goto_69
-    if-ge v2, v14, :cond_9d
+    :goto_3
+    if-ge v2, v14, :cond_a
 
     .line 107
     .line 108
@@ -3357,19 +3357,19 @@
 
     .line 115
     .line 116
-    if-eq v3, v13, :cond_89
+    if-eq v3, v13, :cond_8
 
     .line 117
     .line 118
-    if-eq v3, v10, :cond_86
+    if-eq v3, v10, :cond_7
 
     .line 119
     .line 120
-    if-eq v3, v11, :cond_81
+    if-eq v3, v11, :cond_6
 
     .line 121
     .line 122
-    if-eq v3, v9, :cond_7e
+    if-eq v3, v9, :cond_5
 
     .line 123
     .line 124
@@ -3377,18 +3377,18 @@
 
     .line 125
     .line 126
-    goto :goto_8b
+    goto :goto_4
 
     .line 127
-    :cond_7e
+    :cond_5
     move-object/from16 v21, v7
 
     .line 128
     .line 129
-    goto :goto_8b
+    goto :goto_4
 
     .line 130
-    :cond_81
+    :cond_6
     const-string v3, "TEXT"
 
     .line 131
@@ -3397,23 +3397,23 @@
 
     .line 133
     .line 134
-    goto :goto_8b
+    goto :goto_4
 
     .line 135
-    :cond_86
+    :cond_7
     move-object/from16 v21, v6
 
     .line 136
     .line 137
-    goto :goto_8b
+    goto :goto_4
 
     .line 138
-    :cond_89
+    :cond_8
     move-object/from16 v21, v5
 
     .line 139
     .line 140
-    :goto_8b
+    :goto_4
     const/16 v22, 0x0
 
     .line 141
@@ -3444,14 +3444,14 @@
 
     .line 155
     .line 156
-    goto :goto_69
+    goto :goto_3
 
     .line 157
-    :cond_9c
+    :cond_9
     move-object v15, v12
 
     .line 158
-    :cond_9d
+    :cond_a
     invoke-interface {v1}, Landroid/database/Cursor;->moveToFirst()Z
 
     .line 159
@@ -3490,12 +3490,12 @@
 
     .line 177
     .line 178
-    goto/16 :goto_113
+    goto/16 :goto_9
 
     .line 179
     .line 180
-    :cond_b3
-    if-eqz p2, :cond_111
+    :cond_b
+    if-eqz p2, :cond_11
 
     .line 181
     .line 182
@@ -3537,8 +3537,8 @@
     const/4 v14, 0x0
 
     .line 200
-    :goto_c7
-    if-ge v14, v3, :cond_10f
+    :goto_5
+    if-ge v14, v3, :cond_10
 
     .line 201
     .line 202
@@ -3570,19 +3570,19 @@
     move-result v16
 
     .line 216
-    sparse-switch v16, :sswitch_data_188
+    sparse-switch v16, :sswitch_data_0
 
     .line 217
     .line 218
     .line 219
-    :goto_da
+    :goto_6
     const/4 v15, -0x1
 
     .line 220
-    goto :goto_ff
+    goto :goto_7
 
     .line 221
-    :sswitch_dc
+    :sswitch_0
     invoke-virtual {v15, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     .line 222
@@ -3591,21 +3591,21 @@
     move-result v15
 
     .line 225
-    if-nez v15, :cond_e3
+    if-nez v15, :cond_c
 
     .line 226
     .line 227
-    goto :goto_da
+    goto :goto_6
 
     .line 228
-    :cond_e3
+    :cond_c
     const/4 v15, 0x3
 
     .line 229
-    goto :goto_ff
+    goto :goto_7
 
     .line 230
-    :sswitch_e5
+    :sswitch_1
     invoke-virtual {v15, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     .line 231
@@ -3614,21 +3614,21 @@
     move-result v15
 
     .line 234
-    if-nez v15, :cond_ec
+    if-nez v15, :cond_d
 
     .line 235
     .line 236
-    goto :goto_da
+    goto :goto_6
 
     .line 237
-    :cond_ec
+    :cond_d
     const/4 v15, 0x2
 
     .line 238
-    goto :goto_ff
+    goto :goto_7
 
     .line 239
-    :sswitch_ee
+    :sswitch_2
     invoke-virtual {v15, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     .line 240
@@ -3637,21 +3637,21 @@
     move-result v15
 
     .line 243
-    if-nez v15, :cond_f5
+    if-nez v15, :cond_e
 
     .line 244
     .line 245
-    goto :goto_da
+    goto :goto_6
 
     .line 246
-    :cond_f5
+    :cond_e
     const/4 v15, 0x1
 
     .line 247
-    goto :goto_ff
+    goto :goto_7
 
     .line 248
-    :sswitch_f7
+    :sswitch_3
     invoke-virtual {v15, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     .line 249
@@ -3660,19 +3660,19 @@
     move-result v15
 
     .line 252
-    if-nez v15, :cond_fe
+    if-nez v15, :cond_f
 
     .line 253
     .line 254
-    goto :goto_da
+    goto :goto_6
 
     .line 255
-    :cond_fe
+    :cond_f
     const/4 v15, 0x0
 
     .line 256
-    :goto_ff
-    packed-switch v15, :pswitch_data_19a
+    :goto_7
+    packed-switch v15, :pswitch_data_0
 
     .line 257
     .line 258
@@ -3680,35 +3680,35 @@
     const/4 v15, 0x3
 
     .line 260
-    goto :goto_10b
+    goto :goto_8
 
     .line 261
-    :pswitch_104
+    :pswitch_0
     const/4 v15, 0x2
 
     .line 262
-    goto :goto_10b
+    goto :goto_8
 
     .line 263
-    :pswitch_106
+    :pswitch_1
     const/4 v15, 0x0
 
     .line 264
-    goto :goto_10b
+    goto :goto_8
 
     .line 265
-    :pswitch_108
+    :pswitch_2
     const/4 v15, 0x4
 
     .line 266
-    goto :goto_10b
+    goto :goto_8
 
     .line 267
-    :pswitch_10a
+    :pswitch_3
     const/4 v15, 0x1
 
     .line 268
-    :goto_10b
+    :goto_8
     aput v15, v2, v4
 
     .line 269
@@ -3716,24 +3716,24 @@
     add-int/2addr v4, v13
 
     .line 271
-    goto :goto_c7
+    goto :goto_5
 
     .line 272
-    :cond_10f
+    :cond_10
     move-object v15, v1
 
     .line 273
-    goto :goto_113
+    goto :goto_9
 
     .line 274
-    :cond_111
+    :cond_11
     move-object v2, v12
 
     .line 275
     move-object v15, v2
 
     .line 276
-    :goto_113
+    :goto_9
     iget-object v1, v0, Lcom/mixplorer/activities/SQLiteEditorActivity;->Romeo:Llibs/rn0;
 
     .line 277
@@ -3743,7 +3743,7 @@
     .line 279
     .line 280
     .line 281
-    if-eqz p2, :cond_187
+    if-eqz p2, :cond_13
 
     .line 282
     .line 283
@@ -3778,8 +3778,8 @@
     const/4 v4, 0x0
 
     .line 298
-    :goto_129
-    if-ge v4, v2, :cond_187
+    :goto_a
+    if-ge v4, v2, :cond_13
 
     .line 299
     .line 300
@@ -3824,7 +3824,7 @@
 
     .line 320
     .line 321
-    if-eqz v8, :cond_149
+    if-eqz v8, :cond_12
 
     .line 322
     .line 323
@@ -3832,7 +3832,7 @@
 
     .line 324
     .line 325
-    if-ne v8, v11, :cond_149
+    if-ne v8, v11, :cond_12
 
     .line 326
     .line 327
@@ -3840,15 +3840,15 @@
 
     .line 328
     .line 329
-    goto :goto_14b
+    goto :goto_b
 
     .line 330
-    :cond_149
+    :cond_12
     sget v8, Llibs/xx2;->Pi:I
 
     .line 331
     .line 332
-    :goto_14b
+    :goto_b
     const/high16 v9, 0x41880000    # 17.0f
 
     .line 333
@@ -3958,19 +3958,19 @@
 
     .line 390
     .line 391
-    goto :goto_129
+    goto :goto_a
 
     .line 392
-    :cond_187
+    :cond_13
     return-void
 
     .line 393
-    :sswitch_data_188
+    :sswitch_data_0
     .sparse-switch
-        -0x607ef2e2 -> :sswitch_f7
-        0x1f279d -> :sswitch_ee
-        0x24bd87 -> :sswitch_e5
-        0x26519e -> :sswitch_dc
+        -0x607ef2e2 -> :sswitch_3
+        0x1f279d -> :sswitch_2
+        0x24bd87 -> :sswitch_1
+        0x26519e -> :sswitch_0
     .end sparse-switch
 
     .line 394
@@ -3991,17 +3991,17 @@
     .line 409
     .line 410
     .line 411
-    :pswitch_data_19a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_10a
-        :pswitch_108
-        :pswitch_106
-        :pswitch_104
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final Call(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
-    .registers 9
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/util/ArrayList;
@@ -4075,7 +4075,7 @@
     move-result p3
 
     .line 40
-    if-nez p3, :cond_2f
+    if-nez p3, :cond_0
 
     .line 41
     .line 42
@@ -4091,8 +4091,8 @@
     move-result-object p2
 
     .line 48
-    :cond_2f
-    if-eqz p7, :cond_34
+    :cond_0
+    if-eqz p7, :cond_1
 
     .line 49
     .line 50
@@ -4100,15 +4100,15 @@
 
     .line 51
     .line 52
-    goto :goto_36
+    goto :goto_0
 
     .line 53
-    :cond_34
+    :cond_1
     const-string p3, "ALTER TABLE \'%s\' ADD COLUMN %s"
 
     .line 54
     .line 55
-    :goto_36
+    :goto_0
     const/4 p4, 0x2
 
     .line 56
@@ -4149,7 +4149,7 @@
     move-result-object p1
 
     .line 73
-    if-nez p1, :cond_4e
+    if-nez p1, :cond_2
 
     .line 74
     .line 75
@@ -4161,15 +4161,15 @@
     return-object p2
 
     .line 79
-    :cond_4e
+    :cond_2
     return-object p1
 .end method
 
 .method public final synthetic Cur(Z)V
-    .registers 2
+    .locals 0
 
     .line 1
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 2
     .line 3
@@ -4178,19 +4178,19 @@
     .line 4
     .line 5
     .line 6
-    :cond_5
+    :cond_0
     return-void
 .end method
 
 .method public final Link()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-boolean v0, p0, Lcom/mixplorer/activities/SQLiteEditorActivity;->lI:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -4206,19 +4206,19 @@
     .line 9
     .line 10
     .line 11
-    :cond_a
+    :cond_0
     return-void
 .end method
 
 .method public final Mid(Z)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/activities/SQLiteEditorActivity;->OO:Llibs/xv1;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -4226,14 +4226,14 @@
 
     .line 6
     .line 7
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     .line 8
     .line 9
     return-void
 
     .line 10
-    :cond_9
+    :cond_0
     iget-object v0, p0, Lcom/mixplorer/activities/SQLiteEditorActivity;->ll:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     .line 11
@@ -4249,7 +4249,7 @@
     const/4 v1, 0x0
 
     .line 17
-    if-nez v0, :cond_23
+    if-nez v0, :cond_1
 
     .line 18
     .line 19
@@ -4286,7 +4286,7 @@
     return-void
 
     .line 36
-    :cond_23
+    :cond_1
     new-instance v0, Llibs/$d;
 
     .line 37
@@ -4381,7 +4381,7 @@
 .end method
 
 .method public final New(Ljava/io/InputStream;Ljava/lang/String;ZCCLlibs/xv1;)V
-    .registers 40
+    .locals 33
 
     .line 1
     move-object/from16 v1, p0
@@ -4432,7 +4432,7 @@
     .line 23
     .line 24
     .line 25
-    :try_start_18
+    :try_start_0
     iget-object v7, v1, Lcom/mixplorer/activities/SQLiteEditorActivity;->Whiskey:Landroid/database/sqlite/SQLiteDatabase;
 
     .line 26
@@ -4553,15 +4553,15 @@
     .line 85
     .line 86
     move-result-object v7
-    :try_end_56
-    .catchall {:try_start_18 .. :try_end_56} :catchall_1f5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_7
 
     .line 87
-    if-eqz p3, :cond_6d
+    if-eqz p3, :cond_0
 
     .line 88
     .line 89
-    :try_start_58
+    :try_start_1
     new-array v8, v14, [Ljava/lang/String;
 
     .line 90
@@ -4580,14 +4580,14 @@
     .line 97
     .line 98
     move-result-object v7
-    :try_end_62
-    .catchall {:try_start_58 .. :try_end_62} :catchall_63
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 99
-    goto :goto_6d
+    goto :goto_1
 
     .line 100
-    :catchall_63
+    :catchall_0
     move-exception v0
 
     .line 101
@@ -4602,18 +4602,18 @@
 
     .line 105
     .line 106
-    :goto_69
+    :goto_0
     const/16 v17, 0x0
 
     .line 107
     .line 108
-    goto/16 :goto_1fa
+    goto/16 :goto_d
 
     .line 109
     .line 110
-    :cond_6d
-    :goto_6d
-    :try_start_6d
+    :cond_0
+    :goto_1
+    :try_start_2
     sget-object v8, Llibs/js;->e:Ljava/nio/charset/Charset;
 
     .line 111
@@ -4671,8 +4671,8 @@
     .line 139
     .line 140
     invoke-direct {v7, v4}, Llibs/rn;-><init>(Llibs/sn;)V
-    :try_end_8e
-    .catchall {:try_start_6d .. :try_end_8e} :catchall_1f5
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_7
 
     .line 141
     .line 142
@@ -4691,8 +4691,8 @@
 
     .line 148
     .line 149
-    :goto_94
-    :try_start_94
+    :goto_2
+    :try_start_3
     invoke-virtual {v7}, Llibs/rn;->hasNext()Z
 
     .line 150
@@ -4701,7 +4701,7 @@
     move-result v18
 
     .line 153
-    if-eqz v18, :cond_1c4
+    if-eqz v18, :cond_a
 
     .line 154
     .line 155
@@ -4727,11 +4727,11 @@
     .line 165
     .line 166
     move-result-object v18
-    :try_end_a6
-    .catchall {:try_start_94 .. :try_end_a6} :catchall_1be
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_4
 
     .line 167
-    :try_start_a6
+    :try_start_4
     iget-object v5, v5, Llibs/tn;->Lambda:[Ljava/lang/String;
 
     .line 168
@@ -4747,7 +4747,7 @@
     move-result v20
 
     .line 174
-    if-nez v20, :cond_1b5
+    if-nez v20, :cond_9
 
     .line 175
     .line 176
@@ -4759,7 +4759,7 @@
     move-result v6
 
     .line 180
-    if-ge v6, v8, :cond_144
+    if-ge v6, v8, :cond_4
 
     .line 181
     .line 182
@@ -4771,8 +4771,8 @@
     move-result v6
 
     .line 186
-    :goto_b9
-    if-ge v6, v8, :cond_134
+    :goto_3
+    if-ge v6, v8, :cond_3
 
     .line 187
     .line 188
@@ -4807,7 +4807,7 @@
     move-result-object v14
 
     .line 205
-    :goto_cc
+    :goto_4
     new-instance v15, Llibs/vx2;
 
     .line 206
@@ -4823,15 +4823,15 @@
     .line 212
     .line 213
     move-result v15
-    :try_end_d5
-    .catchall {:try_start_a6 .. :try_end_d5} :catchall_12f
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_3
 
     .line 214
-    if-eqz v15, :cond_f1
+    if-eqz v15, :cond_1
 
     .line 215
     .line 216
-    :try_start_d7
+    :try_start_5
     new-instance v14, Ljava/lang/StringBuilder;
 
     .line 217
@@ -4861,14 +4861,14 @@
     .line 231
     .line 232
     move-result-object v14
-    :try_end_e8
-    .catchall {:try_start_d7 .. :try_end_e8} :catchall_e9
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
     .line 233
-    goto :goto_cc
+    goto :goto_4
 
     .line 234
-    :catchall_e9
+    :catchall_1
     move-exception v0
 
     .line 235
@@ -4883,15 +4883,15 @@
 
     .line 239
     .line 240
-    goto/16 :goto_1fa
+    goto/16 :goto_d
 
     .line 241
     .line 242
-    :cond_f1
+    :cond_1
     move-object v15, v4
 
     .line 243
-    :try_start_f2
+    :try_start_6
     const-string v4, "TEXT"
 
     .line 244
@@ -4917,8 +4917,8 @@
     .line 254
     .line 255
     const-string v7, ""
-    :try_end_100
-    .catchall {:try_start_f2 .. :try_end_100} :catchall_12f
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_3
 
     .line 256
     .line 257
@@ -4956,7 +4956,7 @@
 
     .line 272
     .line 273
-    :try_start_110
+    :try_start_7
     invoke-virtual/range {v1 .. v8}, Lcom/mixplorer/activities/SQLiteEditorActivity;->Call(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
 
     .line 274
@@ -4965,7 +4965,7 @@
     move-result-object v3
 
     .line 277
-    if-nez v3, :cond_124
+    if-nez v3, :cond_2
 
     .line 278
     .line 279
@@ -4998,10 +4998,10 @@
     const/4 v14, 0x0
 
     .line 292
-    goto :goto_b9
+    goto :goto_3
 
     .line 293
-    :cond_124
+    :cond_2
     new-instance v0, Ljava/lang/Exception;
 
     .line 294
@@ -5014,20 +5014,20 @@
     throw v0
 
     .line 299
-    :catchall_12a
+    :catchall_2
     move-exception v0
 
     .line 300
-    :goto_12b
+    :goto_5
     move-object/from16 v6, v18
 
     .line 301
     .line 302
-    goto/16 :goto_1fa
+    goto/16 :goto_d
 
     .line 303
     .line 304
-    :catchall_12f
+    :catchall_3
     move-exception v0
 
     .line 305
@@ -5038,10 +5038,10 @@
 
     .line 307
     .line 308
-    goto :goto_12b
+    goto :goto_5
 
     .line 309
-    :cond_134
+    :cond_3
     move v14, v3
 
     .line 310
@@ -5075,10 +5075,10 @@
 
     .line 323
     .line 324
-    goto :goto_14e
+    goto :goto_6
 
     .line 325
-    :cond_144
+    :cond_4
     move v14, v3
 
     .line 326
@@ -5101,7 +5101,7 @@
 
     .line 334
     .line 335
-    :goto_14e
+    :goto_6
     new-instance v3, Landroid/content/ContentValues;
 
     .line 336
@@ -5114,11 +5114,11 @@
     const/4 v5, 0x0
 
     .line 341
-    :goto_154
+    :goto_7
     array-length v6, v15
 
     .line 342
-    if-ge v5, v6, :cond_18d
+    if-ge v5, v6, :cond_7
 
     .line 343
     .line 344
@@ -5146,7 +5146,7 @@
     move-result v8
 
     .line 356
-    if-nez v8, :cond_16f
+    if-nez v8, :cond_5
 
     .line 357
     .line 358
@@ -5167,10 +5167,10 @@
     .line 365
     .line 366
     .line 367
-    goto :goto_18a
+    goto :goto_8
 
     .line 368
-    :cond_16f
+    :cond_5
     const-string v7, "TEXT"
 
     .line 369
@@ -5185,19 +5185,19 @@
     .line 374
     .line 375
     move-result v7
-    :try_end_177
-    .catchall {:try_start_110 .. :try_end_177} :catchall_12a
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_2
 
     .line 376
     iget-object v6, v6, Llibs/vx2;->X:Ljava/lang/String;
 
     .line 377
     .line 378
-    if-eqz v7, :cond_183
+    if-eqz v7, :cond_6
 
     .line 379
     .line 380
-    :try_start_17b
+    :try_start_8
     invoke-static {v6}, Lcom/mixplorer/activities/SQLiteEditorActivity;->Post(Ljava/lang/String;)Ljava/lang/String;
 
     .line 381
@@ -5211,10 +5211,10 @@
     .line 385
     .line 386
     .line 387
-    goto :goto_18a
+    goto :goto_8
 
     .line 388
-    :cond_183
+    :cond_6
     invoke-static {v6}, Lcom/mixplorer/activities/SQLiteEditorActivity;->Post(Ljava/lang/String;)Ljava/lang/String;
 
     .line 389
@@ -5228,15 +5228,15 @@
     .line 393
     .line 394
     .line 395
-    :goto_18a
+    :goto_8
     add-int/lit8 v5, v5, 0x1
 
     .line 396
     .line 397
-    goto :goto_154
+    goto :goto_7
 
     .line 398
-    :cond_18d
+    :cond_7
     iget-object v5, v1, Lcom/mixplorer/activities/SQLiteEditorActivity;->Whiskey:Landroid/database/sqlite/SQLiteDatabase;
 
     .line 399
@@ -5261,8 +5261,8 @@
     .line 408
     .line 409
     move-result-wide v5
-    :try_end_199
-    .catchall {:try_start_17b .. :try_end_199} :catchall_12a
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_2
 
     .line 410
     const-wide/16 v15, -0x1
@@ -5273,11 +5273,11 @@
 
     .line 413
     .line 414
-    if-nez v3, :cond_1aa
+    if-nez v3, :cond_8
 
     .line 415
     .line 416
-    if-eqz v17, :cond_261
+    if-eqz v17, :cond_e
 
     .line 417
     .line 418
@@ -5290,7 +5290,7 @@
     .line 421
     .line 422
     .line 423
-    :goto_1a6
+    :goto_9
     invoke-virtual {v12, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     .line 424
@@ -5299,7 +5299,7 @@
     return-void
 
     .line 427
-    :cond_1aa
+    :cond_8
     add-int/lit8 v3, v14, 0x1
 
     .line 428
@@ -5319,11 +5319,11 @@
     const/4 v14, 0x0
 
     .line 436
-    goto/16 :goto_94
+    goto/16 :goto_2
 
     .line 437
     .line 438
-    :cond_1b5
+    :cond_9
     move v14, v3
 
     .line 439
@@ -5331,7 +5331,7 @@
 
     .line 440
     .line 441
-    :try_start_1b8
+    :try_start_9
     new-instance v0, Ljava/lang/InterruptedException;
 
     .line 442
@@ -5342,11 +5342,11 @@
     .line 445
     .line 446
     throw v0
-    :try_end_1be
-    .catchall {:try_start_1b8 .. :try_end_1be} :catchall_12a
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_2
 
     .line 447
-    :catchall_1be
+    :catchall_4
     move-exception v0
 
     .line 448
@@ -5357,14 +5357,14 @@
 
     .line 450
     .line 451
-    :goto_1c2
+    :goto_a
     move-object v6, v8
 
     .line 452
-    goto :goto_1fa
+    goto :goto_d
 
     .line 453
-    :cond_1c4
+    :cond_a
     move v14, v3
 
     .line 454
@@ -5372,7 +5372,7 @@
 
     .line 455
     .line 456
-    :try_start_1c7
+    :try_start_a
     iget-object v0, v1, Lcom/mixplorer/activities/SQLiteEditorActivity;->O0:Llibs/sn;
 
     .line 457
@@ -5401,8 +5401,8 @@
     .line 470
     .line 471
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
-    :try_end_1d9
-    .catchall {:try_start_1c7 .. :try_end_1d9} :catchall_1ee
+    :try_end_a
+    .catchall {:try_start_a .. :try_end_a} :catchall_6
 
     .line 472
     .line 473
@@ -5410,30 +5410,30 @@
     const/4 v3, 0x1
 
     .line 475
-    if-lt v14, v3, :cond_1de
+    if-lt v14, v3, :cond_b
 
     .line 476
     .line 477
     const/4 v5, 0x1
 
     .line 478
-    goto :goto_1df
+    goto :goto_b
 
     .line 479
-    :cond_1de
+    :cond_b
     const/4 v5, 0x0
 
     .line 480
-    :goto_1df
-    :try_start_1df
+    :goto_b
+    :try_start_b
     invoke-virtual {v13, v3}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-    :try_end_1e2
-    .catchall {:try_start_1df .. :try_end_1e2} :catchall_1ea
+    :try_end_b
+    .catchall {:try_start_b .. :try_end_b} :catchall_5
 
     .line 481
     .line 482
     .line 483
-    if-eqz v5, :cond_261
+    if-eqz v5, :cond_e
 
     .line 484
     .line 485
@@ -5446,10 +5446,10 @@
     .line 488
     .line 489
     .line 490
-    goto :goto_1a6
+    goto :goto_9
 
     .line 491
-    :catchall_1ea
+    :catchall_5
     move-exception v0
 
     .line 492
@@ -5457,17 +5457,17 @@
 
     .line 493
     .line 494
-    goto :goto_1c2
+    goto :goto_a
 
     .line 495
-    :catchall_1ee
+    :catchall_6
     move-exception v0
 
     .line 496
-    goto :goto_1c2
+    goto :goto_a
 
     .line 497
-    :goto_1f0
+    :goto_c
     move/from16 v14, p3
 
     .line 498
@@ -5475,11 +5475,11 @@
     move-object v6, v8
 
     .line 500
-    goto/16 :goto_69
+    goto/16 :goto_0
 
     .line 501
     .line 502
-    :catchall_1f5
+    :catchall_7
     move-exception v0
 
     .line 503
@@ -5490,11 +5490,11 @@
 
     .line 505
     .line 506
-    goto :goto_1f0
+    goto :goto_c
 
     .line 507
-    :goto_1fa
-    :try_start_1fa
+    :goto_d
+    :try_start_c
     iget-object v3, v1, Lcom/mixplorer/activities/SQLiteEditorActivity;->Whiskey:Landroid/database/sqlite/SQLiteDatabase;
 
     .line 508
@@ -5532,15 +5532,15 @@
     .line 526
     .line 527
     move-result v0
-    :try_end_20f
-    .catchall {:try_start_1fa .. :try_end_20f} :catchall_244
+    :try_end_c
+    .catchall {:try_start_c .. :try_end_c} :catchall_8
 
     .line 528
-    if-eqz v0, :cond_21c
+    if-eqz v0, :cond_c
 
     .line 529
     .line 530
-    if-eqz v17, :cond_261
+    if-eqz v17, :cond_e
 
     .line 531
     .line 532
@@ -5553,17 +5553,17 @@
     .line 535
     .line 536
     .line 537
-    :goto_218
+    :goto_e
     invoke-virtual {v12, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     .line 538
     .line 539
     .line 540
-    goto :goto_261
+    goto :goto_10
 
     .line 541
-    :cond_21c
-    :try_start_21c
+    :cond_c
+    :try_start_d
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 542
@@ -5604,7 +5604,7 @@
     .line 561
     .line 562
     .line 563
-    if-eqz v6, :cond_246
+    if-eqz v6, :cond_d
 
     .line 564
     .line 565
@@ -5639,18 +5639,18 @@
     move-result-object v10
 
     .line 580
-    goto :goto_246
+    goto :goto_f
 
     .line 581
-    :catchall_244
+    :catchall_8
     move-exception v0
 
     .line 582
-    goto :goto_262
+    goto :goto_11
 
     .line 583
-    :cond_246
-    :goto_246
+    :cond_d
+    :goto_f
     invoke-virtual {v0, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 584
@@ -5682,13 +5682,13 @@
     .line 598
     .line 599
     invoke-virtual {v12, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-    :try_end_259
-    .catchall {:try_start_21c .. :try_end_259} :catchall_244
+    :try_end_d
+    .catchall {:try_start_d .. :try_end_d} :catchall_8
 
     .line 600
     .line 601
     .line 602
-    if-eqz v17, :cond_261
+    if-eqz v17, :cond_e
 
     .line 603
     .line 604
@@ -5701,16 +5701,16 @@
     .line 607
     .line 608
     .line 609
-    goto :goto_218
+    goto :goto_e
 
     .line 610
-    :cond_261
-    :goto_261
+    :cond_e
+    :goto_10
     return-void
 
     .line 611
-    :goto_262
-    if-eqz v17, :cond_26c
+    :goto_11
+    if-eqz v17, :cond_f
 
     .line 612
     .line 613
@@ -5728,20 +5728,20 @@
     .line 619
     .line 620
     .line 621
-    :cond_26c
-    goto :goto_26e
+    :cond_f
+    goto :goto_13
 
     .line 622
-    :goto_26d
+    :goto_12
     throw v0
 
     .line 623
-    :goto_26e
-    goto :goto_26d
+    :goto_13
+    goto :goto_12
 .end method
 
 .method public final Node([Ljava/lang/Object;III)V
-    .registers 31
+    .locals 26
 
     .line 1
     move-object/from16 v1, p0
@@ -5763,7 +5763,7 @@
     const/4 v7, 0x0
 
     .line 10
-    if-gez v3, :cond_15
+    if-gez v3, :cond_0
 
     .line 11
     .line 12
@@ -5787,7 +5787,7 @@
     return-void
 
     .line 22
-    :cond_15
+    :cond_0
     iget-object v6, v2, Llibs/by2;->b:Ljava/lang/String;
 
     .line 23
@@ -5795,21 +5795,21 @@
     const/4 v8, 0x1
 
     .line 25
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_1
 
     .line 26
     .line 27
     const/4 v2, 0x1
 
     .line 28
-    goto :goto_1d
+    goto :goto_0
 
     .line 29
-    :cond_1c
+    :cond_1
     const/4 v2, 0x0
 
     .line 30
-    :goto_1d
+    :goto_0
     iget-object v3, v1, Lcom/mixplorer/activities/SQLiteEditorActivity;->Quebec:Llibs/xx2;
 
     .line 31
@@ -5825,11 +5825,11 @@
     const/4 v5, 0x0
 
     .line 37
-    if-eqz v4, :cond_32
+    if-eqz v4, :cond_2
 
     .line 38
     .line 39
-    if-eqz v9, :cond_32
+    if-eqz v9, :cond_2
 
     .line 40
     .line 41
@@ -5848,19 +5848,19 @@
     array-length v10, v3
 
     .line 48
-    if-ne v4, v10, :cond_32
+    if-ne v4, v10, :cond_2
 
     .line 49
     .line 50
-    goto :goto_33
+    goto :goto_1
 
     .line 51
-    :cond_32
+    :cond_2
     move-object v3, v5
 
     .line 52
-    :goto_33
-    if-eqz v2, :cond_3e
+    :goto_1
+    if-eqz v2, :cond_3
 
     .line 53
     .line 54
@@ -5882,22 +5882,22 @@
     move-object v6, v4
 
     .line 62
-    goto :goto_40
+    goto :goto_2
 
     .line 63
-    :cond_3e
+    :cond_3
     move-object v10, v6
 
     .line 64
     move-object v6, v0
 
     .line 65
-    :goto_40
+    :goto_2
     new-instance v11, Llibs/$d;
 
     .line 66
     .line 67
-    if-eqz v2, :cond_47
+    if-eqz v2, :cond_4
 
     .line 68
     .line 69
@@ -5905,15 +5905,15 @@
 
     .line 70
     .line 71
-    goto :goto_49
+    goto :goto_3
 
     .line 72
-    :cond_47
+    :cond_4
     sget v4, Llibs/bi2;->modify:I
 
     .line 73
     .line 74
-    :goto_49
+    :goto_3
     invoke-static {v4}, Llibs/ho2;->Add(I)Ljava/lang/String;
 
     .line 75
@@ -5930,7 +5930,7 @@
     const/4 v12, 0x0
 
     .line 82
-    :goto_51
+    :goto_4
     invoke-interface {v9}, Ljava/util/List;->size()I
 
     .line 83
@@ -5939,7 +5939,7 @@
     move-result v4
 
     .line 86
-    if-ge v12, v4, :cond_db
+    if-ge v12, v4, :cond_e
 
     .line 87
     .line 88
@@ -5959,14 +5959,14 @@
 
     .line 95
     .line 96
-    if-eqz v3, :cond_67
+    if-eqz v3, :cond_5
 
     .line 97
     .line 98
     array-length v4, v3
 
     .line 99
-    if-le v4, v12, :cond_67
+    if-le v4, v12, :cond_5
 
     .line 100
     .line 101
@@ -5974,22 +5974,22 @@
 
     .line 102
     .line 103
-    goto :goto_68
+    goto :goto_5
 
     .line 104
-    :cond_67
+    :cond_5
     const/4 v4, 0x0
 
     .line 105
-    :goto_68
-    if-nez v2, :cond_70
+    :goto_5
+    if-nez v2, :cond_6
 
     .line 106
     .line 107
     array-length v14, v0
 
     .line 108
-    if-ge v12, v14, :cond_70
+    if-ge v12, v14, :cond_6
 
     .line 109
     .line 110
@@ -5997,39 +5997,39 @@
 
     .line 111
     .line 112
-    goto :goto_71
+    goto :goto_6
 
     .line 113
-    :cond_70
+    :cond_6
     move-object v14, v5
 
     .line 114
-    :goto_71
+    :goto_6
     const-string v15, ""
 
     .line 115
     .line 116
-    if-nez v14, :cond_7b
+    if-nez v14, :cond_8
 
     .line 117
     .line 118
-    if-eqz v2, :cond_79
+    if-eqz v2, :cond_7
 
     .line 119
     .line 120
     move-object v14, v15
 
     .line 121
-    goto :goto_7b
+    goto :goto_7
 
     .line 122
-    :cond_79
+    :cond_7
     const-string v14, "NULL"
 
     .line 123
     .line 124
-    :cond_7b
-    :goto_7b
+    :cond_8
+    :goto_7
     new-instance v5, Ljava/lang/StringBuilder;
 
     .line 125
@@ -6057,28 +6057,28 @@
     move-result-object v16
 
     .line 139
-    if-eq v4, v8, :cond_a2
+    if-eq v4, v8, :cond_a
 
     .line 140
     .line 141
     const/4 v5, 0x2
 
     .line 142
-    if-eq v4, v5, :cond_a2
+    if-eq v4, v5, :cond_a
 
     .line 143
     .line 144
     const/4 v5, 0x3
 
     .line 145
-    if-eq v4, v5, :cond_99
+    if-eq v4, v5, :cond_9
 
     .line 146
     .line 147
     const/4 v5, 0x4
 
     .line 148
-    if-eq v4, v5, :cond_99
+    if-eq v4, v5, :cond_9
 
     .line 149
     .line 150
@@ -6089,10 +6089,10 @@
     const/4 v15, 0x1
 
     .line 153
-    goto :goto_a8
+    goto :goto_8
 
     .line 154
-    :cond_99
+    :cond_9
     const v4, 0x60001
 
     .line 155
@@ -6107,10 +6107,10 @@
     .line 160
     .line 161
     .line 162
-    goto :goto_a8
+    goto :goto_8
 
     .line 163
-    :cond_a2
+    :cond_a
     const/16 v4, 0x1002
 
     .line 164
@@ -6123,8 +6123,8 @@
 
     .line 168
     .line 169
-    :goto_a8
-    if-ne v4, v12, :cond_ad
+    :goto_8
+    if-ne v4, v12, :cond_b
 
     .line 170
     .line 171
@@ -6132,19 +6132,19 @@
 
     .line 172
     .line 173
-    goto :goto_af
+    goto :goto_9
 
     .line 174
-    :cond_ad
+    :cond_b
     const/16 v21, 0x0
 
     .line 175
     .line 176
-    :goto_af
+    :goto_9
     const/4 v5, -0x1
 
     .line 177
-    if-eqz v21, :cond_b5
+    if-eqz v21, :cond_c
 
     .line 178
     .line 179
@@ -6152,16 +6152,16 @@
 
     .line 180
     .line 181
-    goto :goto_b7
+    goto :goto_a
 
     .line 182
-    :cond_b5
+    :cond_c
     const/16 v19, -0x1
 
     .line 183
     .line 184
-    :goto_b7
-    if-eqz v21, :cond_c0
+    :goto_a
+    if-eqz v21, :cond_d
 
     .line 185
     .line 186
@@ -6177,15 +6177,15 @@
 
     .line 191
     .line 192
-    goto :goto_c2
+    goto :goto_b
 
     .line 193
-    :cond_c0
+    :cond_d
     const/16 v20, -0x1
 
     .line 194
     .line 195
-    :goto_c2
+    :goto_b
     const/16 v24, 0x0
 
     .line 196
@@ -6233,11 +6233,11 @@
     const/4 v5, 0x0
 
     .line 218
-    goto/16 :goto_51
+    goto/16 :goto_4
 
     .line 219
     .line 220
-    :cond_db
+    :cond_e
     new-instance v0, Llibs/pm1;
 
     .line 221
@@ -6319,7 +6319,7 @@
 
     .line 258
     .line 259
-    if-eqz v2, :cond_107
+    if-eqz v2, :cond_f
 
     .line 260
     .line 261
@@ -6327,21 +6327,21 @@
 
     .line 262
     .line 263
-    goto :goto_109
+    goto :goto_c
 
     .line 264
-    :cond_107
+    :cond_f
     sget v0, Llibs/bi2;->update:I
 
     .line 265
     .line 266
-    :goto_109
+    :goto_c
     invoke-virtual {v11, v0}, Llibs/od;->Firebase(I)V
 
     .line 267
     .line 268
     .line 269
-    if-eqz v2, :cond_111
+    if-eqz v2, :cond_10
 
     .line 270
     .line 271
@@ -6349,15 +6349,15 @@
 
     .line 272
     .line 273
-    goto :goto_113
+    goto :goto_d
 
     .line 274
-    :cond_111
+    :cond_10
     sget v0, Llibs/bi2;->delete:I
 
     .line 275
     .line 276
-    :goto_113
+    :goto_d
     invoke-virtual {v11, v0}, Llibs/od;->Yes(I)V
 
     .line 277
@@ -6377,14 +6377,14 @@
 .end method
 
 .method public final Nxt(ILlibs/v1;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 7
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/activities/SQLiteEditorActivity;->Victor:Llibs/by2;
 
     .line 2
     .line 3
-    if-gez p1, :cond_b
+    if-gez p1, :cond_0
 
     .line 4
     .line 5
@@ -6403,7 +6403,7 @@
 
     .line 11
     .line 12
-    :cond_b
+    :cond_0
     iput-object p3, v0, Llibs/by2;->d:Ljava/lang/String;
 
     .line 13
@@ -6428,7 +6428,7 @@
     move-result p3
 
     .line 24
-    if-eqz p3, :cond_24
+    if-eqz p3, :cond_2
 
     .line 25
     .line 26
@@ -6436,11 +6436,11 @@
 
     .line 27
     .line 28
-    if-eqz p3, :cond_22
+    if-eqz p3, :cond_1
 
     .line 29
     .line 30
-    if-eq p3, p2, :cond_22
+    if-eq p3, p2, :cond_1
 
     .line 31
     .line 32
@@ -6449,12 +6449,12 @@
     .line 33
     .line 34
     .line 35
-    :cond_22
+    :cond_1
     iput-object p2, v0, Llibs/by2;->f:Landroid/database/Cursor;
 
     .line 36
     .line 37
-    :cond_24
+    :cond_2
     new-instance p3, Llibs/s01;
 
     .line 38
@@ -6477,7 +6477,7 @@
 .end method
 
 .method public final Old(Ljava/util/concurrent/atomic/AtomicBoolean;Z)V
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-static {}, Llibs/gx1;->a()V
@@ -6485,7 +6485,7 @@
     .line 2
     .line 3
     .line 4
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_1
 
     .line 5
     .line 6
@@ -6497,7 +6497,7 @@
     move-result v0
 
     .line 10
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 11
     .line 12
@@ -6505,15 +6505,15 @@
 
     .line 13
     .line 14
-    goto :goto_10
+    goto :goto_0
 
     .line 15
-    :cond_e
+    :cond_0
     sget v0, Llibs/bi2;->failed:I
 
     .line 16
     .line 17
-    :goto_10
+    :goto_0
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 18
@@ -6530,7 +6530,7 @@
     .line 23
     .line 24
     .line 25
-    :cond_18
+    :cond_1
     iget-object v0, p0, Lcom/mixplorer/activities/SQLiteEditorActivity;->OO:Llibs/xv1;
 
     .line 26
@@ -6548,11 +6548,11 @@
     move-result p1
 
     .line 34
-    if-eqz p1, :cond_28
+    if-eqz p1, :cond_2
 
     .line 35
     .line 36
-    if-eqz p2, :cond_28
+    if-eqz p2, :cond_2
 
     .line 37
     .line 38
@@ -6561,12 +6561,12 @@
     .line 39
     .line 40
     .line 41
-    :cond_28
+    :cond_2
     return-void
 .end method
 
 .method public final Raw(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p0, p1}, Lcom/mixplorer/activities/SQLiteEditorActivity;->Bit(Ljava/lang/String;)I
@@ -6577,7 +6577,7 @@
     move-result p1
 
     .line 5
-    if-ltz p1, :cond_13
+    if-ltz p1, :cond_0
 
     .line 6
     .line 7
@@ -6593,7 +6593,7 @@
     move-result v0
 
     .line 13
-    if-lez v0, :cond_13
+    if-lez v0, :cond_0
 
     .line 14
     .line 15
@@ -6608,7 +6608,7 @@
     return-void
 
     .line 20
-    :cond_13
+    :cond_0
     new-instance p1, Llibs/lu1;
 
     .line 21
@@ -6635,26 +6635,26 @@
 .end method
 
 .method public final Run()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/activities/SQLiteEditorActivity;->Il:Ljava/io/File;
 
     .line 2
     .line 3
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
-    goto :goto_33
+    goto :goto_0
 
     .line 6
-    :cond_5
+    :cond_0
     iget-boolean v0, p0, Lcom/mixplorer/activities/SQLiteEditorActivity;->lI:Z
 
     .line 7
     .line 8
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_1
 
     .line 9
     .line 10
@@ -6717,7 +6717,7 @@
     move-result v0
 
     .line 41
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_1
 
     .line 42
     .line 43
@@ -6738,13 +6738,13 @@
     .line 50
     .line 51
     .line 52
-    :cond_33
-    :goto_33
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public final State()V
-    .registers 4
+    .locals 3
 
     .line 1
     :try_start_0
@@ -6752,13 +6752,13 @@
 
     .line 2
     .line 3
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->close()V
-    :try_end_7
-    .catchall {:try_start_0 .. :try_end_7} :catchall_8
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 6
     .line 7
@@ -6766,18 +6766,18 @@
     return-void
 
     .line 9
-    :catchall_8
+    :catchall_0
     move-exception v0
 
     .line 10
-    goto :goto_b
+    goto :goto_0
 
     .line 11
-    :cond_a
+    :cond_0
     return-void
 
     .line 12
-    :goto_b
+    :goto_0
     invoke-static {v0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 13
@@ -6817,7 +6817,7 @@
 .end method
 
 .method public final Sync(Ljava/lang/String;)Llibs/v1;
-    .registers 6
+    .locals 4
 
     .line 1
     new-instance v0, Llibs/v1;
@@ -6836,7 +6836,7 @@
     .line 7
     .line 8
     .line 9
-    :try_start_8
+    :try_start_0
     iget-object v1, p0, Lcom/mixplorer/activities/SQLiteEditorActivity;->Whiskey:Landroid/database/sqlite/SQLiteDatabase;
 
     .line 10
@@ -6852,7 +6852,7 @@
     move-result-object p1
 
     .line 16
-    if-eqz p1, :cond_1f
+    if-eqz p1, :cond_0
 
     .line 17
     .line 18
@@ -6868,7 +6868,7 @@
     move-result v1
 
     .line 24
-    if-lez v1, :cond_1f
+    if-lez v1, :cond_0
 
     .line 25
     .line 26
@@ -6877,28 +6877,28 @@
     .line 27
     .line 28
     .line 29
-    goto :goto_1f
+    goto :goto_0
 
     .line 30
-    :catchall_1d
+    :catchall_0
     move-exception p1
 
     .line 31
-    goto :goto_22
+    goto :goto_1
 
     .line 32
-    :cond_1f
-    :goto_1f
+    :cond_0
+    :goto_0
     iput-object v3, v0, Llibs/v1;->Z:Ljava/lang/Object;
-    :try_end_21
-    .catchall {:try_start_8 .. :try_end_21} :catchall_1d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 33
     .line 34
     return-object v0
 
     .line 35
-    :goto_22
+    :goto_1
     invoke-static {p1}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 36
@@ -6939,13 +6939,13 @@
 .end method
 
 .method public final declared-synchronized Task()V
-    .registers 5
+    .locals 4
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     invoke-virtual {p0}, Lcom/mixplorer/activities/SQLiteEditorActivity;->State()V
 
     .line 3
@@ -6966,7 +6966,7 @@
 
     .line 11
     .line 12
-    if-eqz v0, :cond_4b
+    if-eqz v0, :cond_0
 
     .line 13
     .line 14
@@ -7001,11 +7001,11 @@
     .line 29
     .line 30
     move-result-object v0
-    :try_end_1e
-    .catchall {:try_start_1 .. :try_end_1e} :catchall_49
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
     .line 31
-    :try_start_1e
+    :try_start_1
     iget-object v2, p0, Lcom/mixplorer/activities/SQLiteEditorActivity;->Il:Ljava/io/File;
 
     .line 32
@@ -7027,16 +7027,16 @@
 
     .line 41
     iput-object v2, p0, Lcom/mixplorer/activities/SQLiteEditorActivity;->Whiskey:Landroid/database/sqlite/SQLiteDatabase;
-    :try_end_2a
-    .catchall {:try_start_1e .. :try_end_2a} :catchall_2b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 42
     .line 43
-    goto :goto_73
+    goto :goto_0
 
     .line 44
-    :catchall_2b
-    :try_start_2b
+    :catchall_0
+    :try_start_2
     invoke-virtual {v0, v1}, Landroid/database/sqlite/SQLiteDatabase$OpenParams$Builder;->setOpenFlags(I)Landroid/database/sqlite/SQLiteDatabase$OpenParams$Builder;
 
     .line 45
@@ -7063,19 +7063,19 @@
 
     .line 57
     iput-object v0, p0, Lcom/mixplorer/activities/SQLiteEditorActivity;->Whiskey:Landroid/database/sqlite/SQLiteDatabase;
-    :try_end_3a
-    .catchall {:try_start_2b .. :try_end_3a} :catchall_3b
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 58
     .line 59
-    goto :goto_73
+    goto :goto_0
 
     .line 60
-    :catchall_3b
+    :catchall_1
     move-exception v0
 
     .line 61
-    :try_start_3c
+    :try_start_3
     const-string v1, "SQLiteAct"
 
     .line 62
@@ -7094,27 +7094,27 @@
     .line 69
     .line 70
     invoke-virtual {p0}, Landroid/app/Activity;->finish()V
-    :try_end_48
-    .catchall {:try_start_3c .. :try_end_48} :catchall_49
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
     .line 71
     .line 72
     .line 73
-    goto :goto_73
+    goto :goto_0
 
     .line 74
-    :catchall_49
+    :catchall_2
     move-exception v0
 
     .line 75
-    goto :goto_75
+    goto :goto_1
 
     .line 76
-    :cond_4b
+    :cond_0
     const/4 v0, 0x0
 
     .line 77
-    :try_start_4c
+    :try_start_4
     iget-object v3, p0, Lcom/mixplorer/activities/SQLiteEditorActivity;->Il:Ljava/io/File;
 
     .line 78
@@ -7136,16 +7136,16 @@
 
     .line 87
     iput-object v2, p0, Lcom/mixplorer/activities/SQLiteEditorActivity;->Whiskey:Landroid/database/sqlite/SQLiteDatabase;
-    :try_end_58
-    .catchall {:try_start_4c .. :try_end_58} :catchall_59
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_3
 
     .line 88
     .line 89
-    goto :goto_73
+    goto :goto_0
 
     .line 90
-    :catchall_59
-    :try_start_59
+    :catchall_3
+    :try_start_5
     iget-object v2, p0, Lcom/mixplorer/activities/SQLiteEditorActivity;->Il:Ljava/io/File;
 
     .line 91
@@ -7167,19 +7167,19 @@
 
     .line 100
     iput-object v0, p0, Lcom/mixplorer/activities/SQLiteEditorActivity;->Whiskey:Landroid/database/sqlite/SQLiteDatabase;
-    :try_end_65
-    .catchall {:try_start_59 .. :try_end_65} :catchall_66
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_4
 
     .line 101
     .line 102
-    goto :goto_73
+    goto :goto_0
 
     .line 103
-    :catchall_66
+    :catchall_4
     move-exception v0
 
     .line 104
-    :try_start_67
+    :try_start_6
     const-string v1, "SQLiteAct"
 
     .line 105
@@ -7198,31 +7198,31 @@
     .line 112
     .line 113
     invoke-virtual {p0}, Landroid/app/Activity;->finish()V
-    :try_end_73
-    .catchall {:try_start_67 .. :try_end_73} :catchall_49
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
     .line 114
     .line 115
     .line 116
-    :goto_73
+    :goto_0
     monitor-exit p0
 
     .line 117
     return-void
 
     .line 118
-    :goto_75
-    :try_start_75
+    :goto_1
+    :try_start_7
     monitor-exit p0
-    :try_end_76
-    .catchall {:try_start_75 .. :try_end_76} :catchall_49
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_2
 
     .line 119
     throw v0
 .end method
 
 .method public final declared-synchronized Top(Ljava/lang/String;ILjava/lang/String;)V
-    .registers 10
+    .locals 6
 
     .line 1
     const-string v0, " ORDER BY "
@@ -7248,12 +7248,12 @@
     monitor-enter p0
 
     .line 12
-    :try_start_b
+    :try_start_0
     iget-object v5, p0, Lcom/mixplorer/activities/SQLiteEditorActivity;->Xray:Landroid/database/Cursor;
 
     .line 13
     .line 14
-    if-eqz v5, :cond_ce
+    if-eqz v5, :cond_6
 
     .line 15
     .line 16
@@ -7265,15 +7265,15 @@
     move-result v5
 
     .line 20
-    if-eqz v5, :cond_17
+    if-eqz v5, :cond_0
 
     .line 21
     .line 22
-    goto/16 :goto_ce
+    goto/16 :goto_5
 
     .line 23
     .line 24
-    :cond_17
+    :cond_0
     iget-object v5, p0, Lcom/mixplorer/activities/SQLiteEditorActivity;->Victor:Llibs/by2;
 
     .line 25
@@ -7287,7 +7287,7 @@
     .line 29
     .line 30
     .line 31
-    if-ltz p2, :cond_7e
+    if-ltz p2, :cond_3
 
     .line 32
     .line 33
@@ -7303,7 +7303,7 @@
     move-result v5
 
     .line 39
-    if-lez v5, :cond_7e
+    if-lez v5, :cond_3
 
     .line 40
     .line 41
@@ -7361,7 +7361,7 @@
     move-result v4
 
     .line 69
-    if-eqz v4, :cond_4c
+    if-eqz v4, :cond_1
 
     .line 70
     .line 71
@@ -7369,18 +7369,18 @@
 
     .line 72
     .line 73
-    goto :goto_58
+    goto :goto_0
 
     .line 74
-    :catchall_49
+    :catchall_0
     move-exception p1
 
     .line 75
-    goto/16 :goto_d0
+    goto/16 :goto_6
 
     .line 76
     .line 77
-    :cond_4c
+    :cond_1
     new-instance v4, Ljava/lang/StringBuilder;
 
     .line 78
@@ -7403,7 +7403,7 @@
     move-result-object v3
 
     .line 89
-    :goto_58
+    :goto_0
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 90
@@ -7417,7 +7417,7 @@
     move-result v3
 
     .line 96
-    if-eqz v3, :cond_64
+    if-eqz v3, :cond_2
 
     .line 97
     .line 98
@@ -7425,10 +7425,10 @@
 
     .line 99
     .line 100
-    goto :goto_70
+    goto :goto_1
 
     .line 101
-    :cond_64
+    :cond_2
     new-instance v3, Ljava/lang/StringBuilder;
 
     .line 102
@@ -7451,7 +7451,7 @@
     move-result-object v2
 
     .line 113
-    :goto_70
+    :goto_1
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 114
@@ -7477,10 +7477,10 @@
 
     .line 125
     .line 126
-    goto :goto_c5
+    goto :goto_4
 
     .line 127
-    :cond_7e
+    :cond_3
     iget-object v2, p0, Lcom/mixplorer/activities/SQLiteEditorActivity;->Victor:Llibs/by2;
 
     .line 128
@@ -7526,7 +7526,7 @@
     move-result v3
 
     .line 150
-    if-eqz v3, :cond_9a
+    if-eqz v3, :cond_4
 
     .line 151
     .line 152
@@ -7534,10 +7534,10 @@
 
     .line 153
     .line 154
-    goto :goto_a6
+    goto :goto_2
 
     .line 155
-    :cond_9a
+    :cond_4
     new-instance v3, Ljava/lang/StringBuilder;
 
     .line 156
@@ -7560,7 +7560,7 @@
     move-result-object v1
 
     .line 167
-    :goto_a6
+    :goto_2
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 168
@@ -7574,7 +7574,7 @@
     move-result v1
 
     .line 174
-    if-eqz v1, :cond_b2
+    if-eqz v1, :cond_5
 
     .line 175
     .line 176
@@ -7582,10 +7582,10 @@
 
     .line 177
     .line 178
-    goto :goto_be
+    goto :goto_3
 
     .line 179
-    :cond_b2
+    :cond_5
     new-instance v1, Ljava/lang/StringBuilder;
 
     .line 180
@@ -7608,7 +7608,7 @@
     move-result-object v0
 
     .line 191
-    :goto_be
+    :goto_3
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 192
@@ -7622,7 +7622,7 @@
     move-result-object v1
 
     .line 198
-    :goto_c5
+    :goto_4
     invoke-virtual {p0, v1}, Lcom/mixplorer/activities/SQLiteEditorActivity;->Sync(Ljava/lang/String;)Llibs/v1;
 
     .line 199
@@ -7632,8 +7632,8 @@
 
     .line 202
     invoke-virtual {p0, p2, v0, p1, p3}, Lcom/mixplorer/activities/SQLiteEditorActivity;->Nxt(ILlibs/v1;Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_cc
-    .catchall {:try_start_b .. :try_end_cc} :catchall_49
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 203
     .line 204
@@ -7644,36 +7644,36 @@
     return-void
 
     .line 207
-    :cond_ce
-    :goto_ce
+    :cond_6
+    :goto_5
     monitor-exit p0
 
     .line 208
     return-void
 
     .line 209
-    :goto_d0
-    :try_start_d0
+    :goto_6
+    :try_start_1
     monitor-exit p0
-    :try_end_d1
-    .catchall {:try_start_d0 .. :try_end_d1} :catchall_49
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 210
     throw p1
 .end method
 
 .method public final Wait(Ljava/lang/String;Ljava/util/ArrayList;)Ljava/lang/String;
-    .registers 6
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-eqz p2, :cond_17
+    if-eqz p2, :cond_0
 
     .line 3
     .line 4
-    :try_start_3
+    :try_start_0
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
 
     .line 5
@@ -7682,7 +7682,7 @@
     move-result v1
 
     .line 8
-    if-lez v1, :cond_17
+    if-lez v1, :cond_0
 
     .line 9
     .line 10
@@ -7707,36 +7707,36 @@
     .line 19
     .line 20
     .line 21
-    goto :goto_1c
+    goto :goto_0
 
     .line 22
-    :catchall_15
+    :catchall_0
     move-exception p1
 
     .line 23
-    goto :goto_1e
+    goto :goto_1
 
     .line 24
-    :cond_17
+    :cond_0
     iget-object p2, p0, Lcom/mixplorer/activities/SQLiteEditorActivity;->Whiskey:Landroid/database/sqlite/SQLiteDatabase;
 
     .line 25
     .line 26
     invoke-virtual {p2, p1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-    :try_end_1c
-    .catchall {:try_start_3 .. :try_end_1c} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 27
     .line 28
     .line 29
-    :goto_1c
+    :goto_0
     const/4 p1, 0x0
 
     .line 30
     return-object p1
 
     .line 31
-    :goto_1e
+    :goto_1
     invoke-static {p1}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 32
@@ -7773,7 +7773,7 @@
 .end method
 
 .method public final onBackPressed()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/activities/SQLiteEditorActivity;->ll:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -7788,7 +7788,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -7803,7 +7803,7 @@
     return-void
 
     .line 14
-    :cond_d
+    :cond_0
     invoke-super {p0}, Lcom/mixplorer/activities/a;->onBackPressed()V
 
     .line 15
@@ -7813,7 +7813,7 @@
 .end method
 
 .method public final onConfigurationChanged(Landroid/content/res/Configuration;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-super {p0, p1}, Lcom/mixplorer/activities/a;->onConfigurationChanged(Landroid/content/res/Configuration;)V
@@ -7846,7 +7846,7 @@
 .end method
 
 .method public final onCreate(Landroid/os/Bundle;)V
-    .registers 13
+    .locals 11
 
     .line 1
     invoke-super {p0, p1}, Llibs/ia2;->onCreate(Landroid/os/Bundle;)V
@@ -7914,7 +7914,7 @@
     const/4 v2, 0x1
 
     .line 34
-    :try_start_21
+    :try_start_0
     const-class v3, Landroid/database/CursorWindow;
 
     .line 35
@@ -7949,20 +7949,20 @@
 
     .line 51
     invoke-virtual {v3, p1, v4}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
-    :try_end_35
-    .catchall {:try_start_21 .. :try_end_35} :catchall_36
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 52
     .line 53
     .line 54
-    goto :goto_37
+    goto :goto_0
 
     .line 55
-    :catchall_36
+    :catchall_0
     nop
 
     .line 56
-    :goto_37
+    :goto_0
     sget v3, Llibs/wh2;->overflow:I
 
     .line 57
@@ -9116,7 +9116,7 @@
     move-result-object p1
 
     .line 669
-    if-eqz p1, :cond_2f7
+    if-eqz p1, :cond_1
 
     .line 670
     .line 671
@@ -9230,7 +9230,7 @@
 
     .line 728
     .line 729
-    if-eqz v0, :cond_2e5
+    if-eqz v0, :cond_0
 
     .line 730
     .line 731
@@ -9242,7 +9242,7 @@
     move-result v0
 
     .line 735
-    if-nez v0, :cond_2e5
+    if-nez v0, :cond_0
 
     .line 736
     .line 737
@@ -9255,7 +9255,7 @@
     .line 740
     .line 741
     .line 742
-    :cond_2e5
+    :cond_0
     new-instance v0, Llibs/xv1;
 
     .line 743
@@ -9290,7 +9290,7 @@
     return-void
 
     .line 760
-    :cond_2f7
+    :cond_1
     const-string p1, "Drawable cannot be null."
 
     .line 761
@@ -9304,14 +9304,14 @@
 .end method
 
 .method public final onDestroy()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/activities/SQLiteEditorActivity;->oO:Llibs/xv1;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -9323,7 +9323,7 @@
     move-result v0
 
     .line 9
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     .line 10
     .line 11
@@ -9336,12 +9336,12 @@
     .line 14
     .line 15
     .line 16
-    :cond_f
+    :cond_0
     iget-object v0, p0, Lcom/mixplorer/activities/SQLiteEditorActivity;->Victor:Llibs/by2;
 
     .line 17
     .line 18
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     .line 19
     .line 20
@@ -9354,7 +9354,7 @@
     .line 23
     .line 24
     .line 25
-    :cond_18
+    :cond_1
     iget-object v0, p0, Lcom/mixplorer/activities/SQLiteEditorActivity;->Xray:Landroid/database/Cursor;
 
     .line 26
@@ -9383,7 +9383,7 @@
 .end method
 
 .method public final onNewIntent(Landroid/content/Intent;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-super {p0, p1}, Llibs/ia2;->onNewIntent(Landroid/content/Intent;)V
@@ -9395,7 +9395,7 @@
 
     .line 5
     .line 6
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
@@ -9407,7 +9407,7 @@
     move-result v0
 
     .line 12
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     .line 13
     .line 14
@@ -9420,7 +9420,7 @@
     .line 17
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     new-instance v0, Llibs/xv1;
 
     .line 20
@@ -9456,14 +9456,14 @@
 .end method
 
 .method public final onPause()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Lcom/mixplorer/activities/SQLiteEditorActivity;->lI:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -9471,7 +9471,7 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -9488,7 +9488,7 @@
     .line 14
     .line 15
     .line 16
-    :cond_f
+    :cond_0
     invoke-super {p0}, Llibs/ia2;->onPause()V
 
     .line 17

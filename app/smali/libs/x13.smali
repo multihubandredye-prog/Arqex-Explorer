@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Llibs/gx1;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
@@ -23,7 +23,7 @@
 
 # virtual methods
 .method public final a(Llibs/ic0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/x13;->a:Llibs/ic0;
@@ -34,7 +34,7 @@
 .end method
 
 .method public final getApplicationContext()Landroid/content/Context;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/v13;

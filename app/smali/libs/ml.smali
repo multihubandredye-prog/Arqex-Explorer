@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -28,7 +28,7 @@
 
 # virtual methods
 .method public c()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -38,14 +38,14 @@
 .end method
 
 .method public final close()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public i([B)I
-    .registers 2
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -55,7 +55,7 @@
 .end method
 
 .method public m()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0

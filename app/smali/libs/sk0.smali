@@ -26,7 +26,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/app/Activity;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;Landroid/view/KeyEvent$Callback;B)V
-    .registers 9
+    .locals 0
 
     .line 22
     iput-byte p8, p0, Llibs/sk0;->X:B
@@ -51,7 +51,7 @@
 .end method
 
 .method public synthetic constructor <init>(Llibs/v1;Llibs/m52;Ljava/util/Properties;Llibs/bv1;Llibs/$d;Ljava/lang/String;Llibs/zl0;)V
-    .registers 9
+    .locals 1
 
     .line 23
     const/4 v0, 0x1
@@ -78,7 +78,7 @@
 .end method
 
 .method public synthetic constructor <init>(Llibs/v1;Llibs/zl0;Llibs/m52;Ljava/lang/String;Llibs/zl0;Ljava/util/Properties;Llibs/$d;)V
-    .registers 9
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -127,7 +127,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 31
+    .locals 29
 
     .line 1
     move-object/from16 v0, p0
@@ -175,7 +175,7 @@
 
     .line 21
     .line 22
-    packed-switch v2, :pswitch_data_394
+    packed-switch v2, :pswitch_data_0
 
     .line 23
     .line 24
@@ -296,15 +296,15 @@
     move-result v9
 
     .line 83
-    if-eqz v9, :cond_56
+    if-eqz v9, :cond_0
 
     .line 84
     .line 85
-    goto/16 :goto_1da
+    goto/16 :goto_1
 
     .line 86
     .line 87
-    :cond_56
+    :cond_0
     invoke-virtual {v8}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     .line 88
@@ -329,7 +329,7 @@
     move-result v9
 
     .line 99
-    if-eqz v9, :cond_75
+    if-eqz v9, :cond_1
 
     .line 100
     .line 101
@@ -360,11 +360,11 @@
     .line 114
     .line 115
     .line 116
-    goto/16 :goto_1da
+    goto/16 :goto_1
 
     .line 117
     .line 118
-    :cond_75
+    :cond_1
     sget v9, Llibs/bi2;->meta_year:I
 
     .line 119
@@ -393,15 +393,15 @@
     move-result v10
 
     .line 132
-    if-eqz v10, :cond_87
+    if-eqz v10, :cond_2
 
     .line 133
     .line 134
-    goto/16 :goto_1da
+    goto/16 :goto_1
 
     .line 135
     .line 136
-    :cond_87
+    :cond_2
     sget v10, Llibs/bi2;->enter_key:I
 
     .line 137
@@ -430,15 +430,15 @@
     move-result v11
 
     .line 150
-    if-eqz v11, :cond_99
+    if-eqz v11, :cond_3
 
     .line 151
     .line 152
-    goto/16 :goto_1da
+    goto/16 :goto_1
 
     .line 153
     .line 154
-    :cond_99
+    :cond_3
     sget v11, Llibs/bi2;->reenter:I
 
     .line 155
@@ -467,15 +467,15 @@
     move-result v12
 
     .line 168
-    if-eqz v12, :cond_ab
+    if-eqz v12, :cond_4
 
     .line 169
     .line 170
-    goto/16 :goto_1da
+    goto/16 :goto_1
 
     .line 171
     .line 172
-    :cond_ab
+    :cond_4
     invoke-virtual {v10}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     .line 173
@@ -516,7 +516,7 @@
     move-result v12
 
     .line 192
-    if-nez v12, :cond_d2
+    if-nez v12, :cond_5
 
     .line 193
     .line 194
@@ -547,11 +547,11 @@
     .line 207
     .line 208
     .line 209
-    goto/16 :goto_1da
+    goto/16 :goto_1
 
     .line 210
     .line 211
-    :cond_d2
+    :cond_5
     invoke-virtual {v8}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     .line 212
@@ -683,7 +683,7 @@
     move-result-object v2
 
     .line 278
-    if-eqz v2, :cond_123
+    if-eqz v2, :cond_6
 
     .line 279
     .line 280
@@ -711,7 +711,7 @@
     move-result-object v5
 
     .line 292
-    :cond_123
+    :cond_6
     move-object/from16 v23, v5
 
     .line 293
@@ -995,8 +995,8 @@
     const/4 v3, 0x0
 
     .line 437
-    :cond_1b4
-    if-ge v3, v1, :cond_1c5
+    :cond_7
+    if-ge v3, v1, :cond_8
 
     .line 438
     .line 439
@@ -1024,20 +1024,20 @@
     move-result v4
 
     .line 451
-    if-nez v4, :cond_1b4
+    if-nez v4, :cond_7
 
     .line 452
     .line 453
-    goto :goto_1c8
+    goto :goto_0
 
     .line 454
-    :cond_1c5
+    :cond_8
     invoke-virtual {v2, v6, v8}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     .line 455
     .line 456
     .line 457
-    :goto_1c8
+    :goto_0
     new-instance v14, Llibs/m93;
 
     .line 458
@@ -1072,11 +1072,11 @@
     .line 473
     .line 474
     .line 475
-    :goto_1da
+    :goto_1
     return-void
 
     .line 476
-    :pswitch_1db
+    :pswitch_0
     check-cast v13, Lcom/mixplorer/activities/SQLiteEditorActivity;
 
     .line 477
@@ -1129,14 +1129,14 @@
     move-result v1
 
     .line 502
-    if-eqz v1, :cond_1f8
+    if-eqz v1, :cond_9
 
     .line 503
     .line 504
-    goto :goto_218
+    goto :goto_2
 
     .line 505
-    :cond_1f8
+    :cond_9
     sget v1, Llibs/bi2;->separator:I
 
     .line 506
@@ -1149,14 +1149,14 @@
     move-result v1
 
     .line 511
-    if-eqz v1, :cond_201
+    if-eqz v1, :cond_a
 
     .line 512
     .line 513
-    goto :goto_218
+    goto :goto_2
 
     .line 514
-    :cond_201
+    :cond_a
     invoke-virtual/range {v22 .. v22}, Llibs/lj;->dismiss()V
 
     .line 515
@@ -1200,11 +1200,11 @@
     .line 535
     .line 536
     .line 537
-    :goto_218
+    :goto_2
     return-void
 
     .line 538
-    :pswitch_219
+    :pswitch_1
     check-cast v13, Llibs/v1;
 
     .line 539
@@ -1269,15 +1269,15 @@
     move-result v12
 
     .line 570
-    if-eqz v12, :cond_23d
+    if-eqz v12, :cond_b
 
     .line 571
     .line 572
-    goto/16 :goto_33f
+    goto/16 :goto_6
 
     .line 573
     .line 574
-    :cond_23d
+    :cond_b
     invoke-virtual {v2}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     .line 575
@@ -1305,7 +1305,7 @@
     const/4 v15, 0x3
 
     .line 587
-    if-ge v14, v15, :cond_25f
+    if-ge v14, v15, :cond_c
 
     .line 588
     .line 589
@@ -1342,11 +1342,11 @@
     .line 604
     .line 605
     .line 606
-    goto/16 :goto_33f
+    goto/16 :goto_6
 
     .line 607
     .line 608
-    :cond_25f
+    :cond_c
     iget v14, v10, Llibs/m52;->Upsilon:I
 
     .line 609
@@ -1354,7 +1354,7 @@
     const/4 v15, 0x7
 
     .line 611
-    if-ne v14, v15, :cond_29d
+    if-ne v14, v15, :cond_e
 
     .line 612
     .line 613
@@ -1386,15 +1386,15 @@
     move-result v3
 
     .line 627
-    if-eqz v3, :cond_276
+    if-eqz v3, :cond_d
 
     .line 628
     .line 629
-    goto/16 :goto_33f
+    goto/16 :goto_6
 
     .line 630
     .line 631
-    :cond_276
+    :cond_d
     invoke-virtual {v2}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     .line 632
@@ -1435,7 +1435,7 @@
     move-result v2
 
     .line 651
-    if-nez v2, :cond_29d
+    if-nez v2, :cond_e
 
     .line 652
     .line 653
@@ -1466,11 +1466,11 @@
     .line 666
     .line 667
     .line 668
-    goto/16 :goto_33f
+    goto/16 :goto_6
 
     .line 669
     .line 670
-    :cond_29d
+    :cond_e
     sget v2, Llibs/bi2;->filename:I
 
     .line 671
@@ -1519,14 +1519,14 @@
     move-result v1
 
     .line 694
-    if-eqz v9, :cond_2b8
+    if-eqz v9, :cond_f
 
     .line 695
     .line 696
-    goto :goto_2bd
+    goto :goto_3
 
     .line 697
-    :cond_2b8
+    :cond_f
     new-instance v9, Ljava/util/Properties;
 
     .line 698
@@ -1536,22 +1536,22 @@
     .line 700
     .line 701
     .line 702
-    :goto_2bd
-    if-ne v14, v15, :cond_2c1
+    :goto_3
+    if-ne v14, v15, :cond_10
 
     .line 703
     .line 704
     const/4 v3, 0x1
 
     .line 705
-    goto :goto_2c2
+    goto :goto_4
 
     .line 706
-    :cond_2c1
+    :cond_10
     const/4 v3, 0x0
 
     .line 707
-    :goto_2c2
+    :goto_4
     invoke-static {v3}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
 
     .line 708
@@ -1666,7 +1666,7 @@
 
     .line 766
     .line 767
-    if-ne v14, v1, :cond_320
+    if-ne v14, v1, :cond_12
 
     .line 768
     .line 769
@@ -1682,18 +1682,18 @@
 
     .line 774
     .line 775
-    if-ne v1, v2, :cond_309
+    if-ne v1, v2, :cond_11
 
     .line 776
     .line 777
-    goto :goto_30a
+    goto :goto_5
 
     .line 778
-    :cond_309
+    :cond_11
     const/4 v6, 0x1
 
     .line 779
-    :goto_30a
+    :goto_5
     sget-object v1, Llibs/ou0;->h:Ljava/lang/String;
 
     .line 780
@@ -1734,7 +1734,7 @@
     .line 799
     .line 800
     .line 801
-    :cond_320
+    :cond_12
     invoke-virtual {v8}, Llibs/od;->dismiss()V
 
     .line 802
@@ -1794,11 +1794,11 @@
     .line 830
     .line 831
     .line 832
-    :goto_33f
+    :goto_6
     return-void
 
     .line 833
-    :pswitch_340
+    :pswitch_2
     move-object v6, v13
 
     .line 834
@@ -1856,7 +1856,7 @@
 
     .line 859
     .line 860
-    if-eqz v1, :cond_36a
+    if-eqz v1, :cond_13
 
     .line 861
     .line 862
@@ -1880,15 +1880,15 @@
     move-result v4
 
     .line 872
-    if-eqz v4, :cond_36a
+    if-eqz v4, :cond_13
 
     .line 873
     .line 874
-    goto :goto_392
+    goto :goto_7
 
     .line 875
-    :cond_36a
-    if-eqz v1, :cond_374
+    :cond_13
+    if-eqz v1, :cond_14
 
     .line 876
     .line 877
@@ -1908,7 +1908,7 @@
     move-result-object v5
 
     .line 885
-    :cond_374
+    :cond_14
     move-object v10, v5
 
     .line 886
@@ -1967,17 +1967,17 @@
     .line 913
     .line 914
     .line 915
-    :goto_392
+    :goto_7
     return-void
 
     .line 916
     nop
 
     .line 917
-    :pswitch_data_394
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_340
-        :pswitch_219
-        :pswitch_1db
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

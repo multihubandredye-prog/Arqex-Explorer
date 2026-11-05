@@ -20,7 +20,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/SQLiteEditorActivity;Ljava/lang/String;Llibs/$d;Llibs/ml1;B)V
-    .registers 6
+    .locals 0
 
     .line 1
     iput-byte p5, p0, Llibs/nx2;->X:B
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 10
+    .locals 8
 
     .line 1
     iget-byte v0, p0, Llibs/nx2;->X:B
@@ -83,7 +83,7 @@
 
     .line 12
     .line 13
-    packed-switch v0, :pswitch_data_9c
+    packed-switch v0, :pswitch_data_0
 
     .line 14
     .line 15
@@ -121,7 +121,7 @@
     .line 31
     .line 32
     .line 33
-    if-nez p1, :cond_38
+    if-nez p1, :cond_0
 
     .line 34
     .line 35
@@ -162,20 +162,20 @@
     .line 54
     .line 55
     .line 56
-    goto :goto_3b
+    goto :goto_0
 
     .line 57
-    :cond_38
+    :cond_0
     invoke-static {v6, p1, v2, v2}, Llibs/gx1;->c(Landroid/content/Context;Ljava/lang/Object;IZ)V
 
     .line 58
     .line 59
     .line 60
-    :goto_3b
+    :goto_0
     return-void
 
     .line 61
-    :pswitch_3c
+    :pswitch_0
     sget v0, Lcom/mixplorer/activities/SQLiteEditorActivity;->III:I
 
     .line 62
@@ -208,14 +208,14 @@
     move-result v0
 
     .line 77
-    if-eqz v0, :cond_4f
+    if-eqz v0, :cond_1
 
     .line 78
     .line 79
-    goto :goto_9a
+    goto :goto_1
 
     .line 80
-    :cond_4f
+    :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 81
@@ -306,7 +306,7 @@
     .line 126
     .line 127
     .line 128
-    if-nez v0, :cond_97
+    if-nez v0, :cond_2
 
     .line 129
     .line 130
@@ -347,24 +347,24 @@
     .line 149
     .line 150
     .line 151
-    goto :goto_9a
+    goto :goto_1
 
     .line 152
-    :cond_97
+    :cond_2
     invoke-static {v6, v0, v2, v2}, Llibs/gx1;->c(Landroid/content/Context;Ljava/lang/Object;IZ)V
 
     .line 153
     .line 154
     .line 155
-    :goto_9a
+    :goto_1
     return-void
 
     .line 156
     nop
 
     .line 157
-    :pswitch_data_9c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_3c
+        :pswitch_0
     .end packed-switch
 .end method

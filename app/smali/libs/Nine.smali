@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic List(Landroid/view/accessibility/AccessibilityNodeInfo;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->isLongClickable()Z
@@ -20,7 +20,7 @@
 .end method
 
 .method public static bridge synthetic Map(Landroid/view/accessibility/AccessibilityNodeInfo;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->isFocusable()Z
@@ -35,7 +35,7 @@
 .end method
 
 .method public static bridge synthetic Object(Landroid/view/accessibility/AccessibilityNodeInfo;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->isSelected()Z
@@ -50,7 +50,7 @@
 .end method
 
 .method public static bridge synthetic Set(Landroid/view/accessibility/AccessibilityNodeInfo;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->isEnabled()Z
@@ -65,7 +65,7 @@
 .end method
 
 .method public static bridge synthetic String(Landroid/view/accessibility/AccessibilityNodeInfo;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->isPassword()Z
@@ -80,7 +80,7 @@
 .end method
 
 .method public static bridge synthetic a(Landroid/view/accessibility/AccessibilityNodeInfo;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->getActions()I
@@ -95,7 +95,7 @@
 .end method
 
 .method public static bridge synthetic b(Landroid/view/View;)Landroid/view/accessibility/AccessibilityNodeInfo;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->createAccessibilityNodeInfo()Landroid/view/accessibility/AccessibilityNodeInfo;
@@ -110,7 +110,7 @@
 .end method
 
 .method public static bridge synthetic c(Ljava/lang/Object;)Landroid/view/accessibility/AccessibilityNodeInfo;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
@@ -121,7 +121,7 @@
 .end method
 
 .method public static bridge synthetic d(Landroid/view/accessibility/AccessibilityNodeInfo;)Ljava/lang/CharSequence;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->getText()Ljava/lang/CharSequence;
@@ -136,7 +136,7 @@
 .end method
 
 .method public static bridge synthetic e(Landroid/view/View$AccessibilityDelegate;Landroid/view/View;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2}, Landroid/view/View$AccessibilityDelegate;->sendAccessibilityEvent(Landroid/view/View;I)V
@@ -148,7 +148,7 @@
 .end method
 
 .method public static bridge synthetic f(Landroid/view/View$AccessibilityDelegate;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2}, Landroid/view/View$AccessibilityDelegate;->sendAccessibilityEventUnchecked(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
@@ -160,7 +160,7 @@
 .end method
 
 .method public static bridge synthetic g(Landroid/view/View$AccessibilityDelegate;Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2}, Landroid/view/View$AccessibilityDelegate;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
@@ -172,7 +172,7 @@
 .end method
 
 .method public static bridge synthetic h(Landroid/view/accessibility/AccessibilityNodeInfo;I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
@@ -184,7 +184,7 @@
 .end method
 
 .method public static bridge synthetic i(Landroid/view/accessibility/AccessibilityNodeInfo;Landroid/graphics/Rect;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->getBoundsInScreen(Landroid/graphics/Rect;)V
@@ -196,7 +196,7 @@
 .end method
 
 .method public static bridge synthetic j(Landroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
@@ -208,7 +208,7 @@
 .end method
 
 .method public static bridge synthetic k(Landroid/view/accessibility/AccessibilityNodeInfo;Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setScrollable(Z)V
@@ -220,7 +220,7 @@
 .end method
 
 .method public static bridge synthetic l(Landroid/view/accessibility/AccessibilityRecord;I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityRecord;->setFromIndex(I)V
@@ -232,7 +232,7 @@
 .end method
 
 .method public static bridge synthetic m(Landroid/view/View$AccessibilityDelegate;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2}, Landroid/view/View$AccessibilityDelegate;->dispatchPopulateAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
@@ -247,7 +247,7 @@
 .end method
 
 .method public static bridge synthetic n(Landroid/view/View$AccessibilityDelegate;Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2, p3}, Landroid/view/View$AccessibilityDelegate;->onRequestSendAccessibilityEvent(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
@@ -262,7 +262,7 @@
 .end method
 
 .method public static bridge synthetic p(Landroid/view/accessibility/AccessibilityNodeInfo;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->isFocused()Z
@@ -277,7 +277,7 @@
 .end method
 
 .method public static bridge synthetic q(Landroid/view/accessibility/AccessibilityNodeInfo;)Ljava/lang/CharSequence;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->getContentDescription()Ljava/lang/CharSequence;
@@ -292,7 +292,7 @@
 .end method
 
 .method public static bridge synthetic r(Landroid/view/View$AccessibilityDelegate;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2}, Landroid/view/View$AccessibilityDelegate;->onInitializeAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
@@ -304,7 +304,7 @@
 .end method
 
 .method public static bridge synthetic s(Landroid/view/accessibility/AccessibilityNodeInfo;Landroid/graphics/Rect;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->getBoundsInParent(Landroid/graphics/Rect;)V
@@ -316,7 +316,7 @@
 .end method
 
 .method public static bridge synthetic t(Landroid/view/accessibility/AccessibilityNodeInfo;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->isCheckable()Z
@@ -331,7 +331,7 @@
 .end method
 
 .method public static bridge synthetic u(Landroid/view/accessibility/AccessibilityNodeInfo;)Ljava/lang/CharSequence;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->getClassName()Ljava/lang/CharSequence;
@@ -346,7 +346,7 @@
 .end method
 
 .method public static bridge synthetic v(Landroid/view/View$AccessibilityDelegate;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2}, Landroid/view/View$AccessibilityDelegate;->onPopulateAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
@@ -358,7 +358,7 @@
 .end method
 
 .method public static bridge synthetic w(Landroid/view/accessibility/AccessibilityNodeInfo;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->isScrollable()Z
@@ -373,7 +373,7 @@
 .end method
 
 .method public static bridge synthetic x(Landroid/view/accessibility/AccessibilityNodeInfo;)Ljava/lang/CharSequence;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->getPackageName()Ljava/lang/CharSequence;
@@ -388,7 +388,7 @@
 .end method
 
 .method public static bridge synthetic y(Landroid/view/accessibility/AccessibilityNodeInfo;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->isClickable()Z
@@ -403,7 +403,7 @@
 .end method
 
 .method public static bridge synthetic z(Landroid/view/accessibility/AccessibilityNodeInfo;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->isChecked()Z

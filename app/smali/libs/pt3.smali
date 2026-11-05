@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static a(Landroid/view/WindowInsets;Lcom/mixplorer/widgets/MiViewPager;)V
-    .registers 3
+    .locals 1
 
     .line 1
     sget v0, Llibs/wh2;->tag_window_insets_animation_callback:I
@@ -24,7 +24,7 @@
 
     .line 8
     .line 9
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -33,12 +33,12 @@
     .line 12
     .line 13
     .line 14
-    :cond_d
+    :cond_0
     return-void
 .end method
 
 .method public static b(Landroid/view/View;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->isNestedScrollingEnabled()Z
@@ -53,7 +53,7 @@
 .end method
 
 .method public static c(Llibs/tt;F)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/View;->setElevation(F)V
@@ -65,7 +65,7 @@
 .end method
 
 .method public static d(Lcom/mixplorer/widgets/MiViewPager;Llibs/v1;)V
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/ot3;
@@ -89,7 +89,7 @@
 
     .line 11
     .line 12
-    if-ge p1, v1, :cond_12
+    if-ge p1, v1, :cond_0
 
     .line 13
     .line 14
@@ -102,7 +102,7 @@
     .line 17
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     sget p1, Llibs/wh2;->tag_compat_insets_dispatch:I
 
     .line 20
@@ -115,14 +115,14 @@
     move-result-object p1
 
     .line 25
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_1
 
     .line 26
     .line 27
     return-void
 
     .line 28
-    :cond_1b
+    :cond_1
     invoke-virtual {p0, v0}, Landroid/view/View;->setOnApplyWindowInsetsListener(Landroid/view/View$OnApplyWindowInsetsListener;)V
 
     .line 29
@@ -132,7 +132,7 @@
 .end method
 
 .method public static e(Landroid/view/ViewGroup;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->stopNestedScroll()V

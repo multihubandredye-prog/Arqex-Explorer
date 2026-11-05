@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/za;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/se3;->a:Llibs/za;
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final chooseClientAlias([Ljava/lang/String;[Ljava/security/Principal;Ljava/net/Socket;)Ljava/lang/String;
-    .registers 6
+    .locals 2
 
     .line 1
     array-length p2, p1
@@ -36,8 +36,8 @@
     const/4 p3, 0x0
 
     .line 3
-    :goto_2
-    if-ge p3, p2, :cond_14
+    :goto_0
+    if-ge p3, p2, :cond_1
 
     .line 4
     .line 5
@@ -57,7 +57,7 @@
     move-result v0
 
     .line 13
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 14
     .line 15
@@ -68,15 +68,15 @@
     return-object p1
 
     .line 18
-    :cond_11
+    :cond_0
     add-int/lit8 p3, p3, 0x1
 
     .line 19
     .line 20
-    goto :goto_2
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_1
     const/4 p1, 0x0
 
     .line 22
@@ -84,7 +84,7 @@
 .end method
 
 .method public final chooseServerAlias(Ljava/lang/String;[Ljava/security/Principal;Ljava/net/Socket;)Ljava/lang/String;
-    .registers 4
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -94,7 +94,7 @@
 .end method
 
 .method public final getCertificateChain(Ljava/lang/String;)[Ljava/security/cert/X509Certificate;
-    .registers 4
+    .locals 2
 
     .line 1
     const-string v0, "key"
@@ -109,7 +109,7 @@
     move-result p1
 
     .line 7
-    if-eqz p1, :cond_17
+    if-eqz p1, :cond_0
 
     .line 8
     .line 9
@@ -146,7 +146,7 @@
     return-object v0
 
     .line 24
-    :cond_17
+    :cond_0
     const/4 p1, 0x0
 
     .line 25
@@ -154,7 +154,7 @@
 .end method
 
 .method public final getClientAliases(Ljava/lang/String;[Ljava/security/Principal;)[Ljava/lang/String;
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -164,7 +164,7 @@
 .end method
 
 .method public final getPrivateKey(Ljava/lang/String;)Ljava/security/PrivateKey;
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "key"
@@ -179,7 +179,7 @@
     move-result p1
 
     .line 7
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
     .line 8
     .line 9
@@ -198,7 +198,7 @@
     return-object p1
 
     .line 16
-    :cond_f
+    :cond_0
     const/4 p1, 0x0
 
     .line 17
@@ -206,7 +206,7 @@
 .end method
 
 .method public final getServerAliases(Ljava/lang/String;[Ljava/security/Principal;)[Ljava/lang/String;
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0

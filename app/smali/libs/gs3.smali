@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic a(Ljava/time/Instant;)J
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Ljava/time/Instant;->getEpochSecond()J
@@ -20,7 +20,7 @@
 .end method
 
 .method public static bridge synthetic b()Ljava/time/Instant;
-    .registers 1
+    .locals 1
 
     .line 1
     invoke-static {}, Ljava/time/Instant;->now()Ljava/time/Instant;

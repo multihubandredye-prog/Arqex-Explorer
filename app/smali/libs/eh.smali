@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>([B)V
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
@@ -70,7 +70,7 @@
     move-result v1
 
     .line 27
-    if-lez v1, :cond_4b
+    if-lez v1, :cond_1
 
     .line 28
     .line 29
@@ -141,7 +141,7 @@
 
     .line 63
     .line 64
-    if-lez v2, :cond_44
+    if-lez v2, :cond_0
 
     .line 65
     .line 66
@@ -149,10 +149,10 @@
 
     .line 67
     .line 68
-    goto :goto_48
+    goto :goto_0
 
     .line 69
-    :cond_44
+    :cond_0
     const/4 p1, 0x1
 
     .line 70
@@ -163,7 +163,7 @@
 
     .line 72
     .line 73
-    :goto_48
+    :goto_0
     iput v2, p0, Llibs/eh;->e:I
 
     .line 74
@@ -171,7 +171,7 @@
     return-void
 
     .line 76
-    :cond_4b
+    :cond_1
     new-instance p1, Llibs/br0;
 
     .line 77

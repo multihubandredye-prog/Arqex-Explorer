@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     invoke-static {}, Ljavax/xml/parsers/DocumentBuilderFactory;->newInstance()Ljavax/xml/parsers/DocumentBuilderFactory;
@@ -44,7 +44,7 @@
 .end method
 
 .method public static a(Lorg/w3c/dom/Element;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-interface {p0, p1, p2}, Lorg/w3c/dom/Element;->getAttributeNS(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -63,7 +63,7 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -78,15 +78,15 @@
     return-object p0
 
     .line 16
-    :cond_f
+    :cond_0
     return-object p1
 .end method
 
 .method public static b(Lorg/w3c/dom/Node;)Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     .line 2
     .line 3
@@ -96,7 +96,7 @@
     return-object p0
 
     .line 5
-    :cond_4
+    :cond_0
     invoke-interface {p0}, Lorg/w3c/dom/Node;->getChildNodes()Lorg/w3c/dom/NodeList;
 
     .line 6
@@ -117,7 +117,7 @@
     const/4 v1, 0x0
 
     .line 15
-    :goto_e
+    :goto_0
     invoke-interface {p0}, Lorg/w3c/dom/NodeList;->getLength()I
 
     .line 16
@@ -126,7 +126,7 @@
     move-result v2
 
     .line 19
-    if-ge v1, v2, :cond_2d
+    if-ge v1, v2, :cond_2
 
     .line 20
     .line 21
@@ -138,7 +138,7 @@
     move-result-object v2
 
     .line 25
-    if-eqz v2, :cond_2a
+    if-eqz v2, :cond_1
 
     .line 26
     .line 27
@@ -153,7 +153,7 @@
     const/4 v4, 0x3
 
     .line 32
-    if-ne v3, v4, :cond_2a
+    if-ne v3, v4, :cond_1
 
     .line 33
     .line 34
@@ -174,15 +174,15 @@
     .line 41
     .line 42
     .line 43
-    :cond_2a
+    :cond_1
     add-int/lit8 v1, v1, 0x1
 
     .line 44
     .line 45
-    goto :goto_e
+    goto :goto_0
 
     .line 46
-    :cond_2d
+    :cond_2
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 47
@@ -203,7 +203,7 @@
 .end method
 
 .method public static c([B)Lorg/w3c/dom/Document;
-    .registers 4
+    .locals 3
 
     .line 1
     sget-object v0, Llibs/fs1;->a:Ljavax/xml/parsers/DocumentBuilderFactory;
@@ -241,7 +241,7 @@
     .line 18
     .line 19
     .line 20
-    :try_start_13
+    :try_start_0
     new-instance p0, Lorg/xml/sax/InputSource;
 
     .line 21
@@ -266,8 +266,8 @@
     .line 32
     .line 33
     move-result-object p0
-    :try_end_21
-    .catchall {:try_start_13 .. :try_end_21} :catchall_25
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 34
     invoke-static {v1}, Llibs/ji0;->k(Ljava/io/Closeable;)V
@@ -278,11 +278,11 @@
     return-object p0
 
     .line 38
-    :catchall_25
+    :catchall_0
     move-exception p0
 
     .line 39
-    :try_start_26
+    :try_start_1
     const-string v0, "EPUB"
 
     .line 40
@@ -296,8 +296,8 @@
 
     .line 45
     invoke-static {v0, p0}, Llibs/vw1;->i(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_2f
-    .catchall {:try_start_26 .. :try_end_2f} :catchall_34
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 46
     .line 47
@@ -313,7 +313,7 @@
     return-object p0
 
     .line 53
-    :catchall_34
+    :catchall_1
     move-exception p0
 
     .line 54
@@ -326,7 +326,7 @@
 .end method
 
 .method public static d(Lorg/w3c/dom/Element;Ljava/lang/String;Ljava/lang/String;)Lorg/w3c/dom/Element;
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-interface {p0, p1, p2}, Lorg/w3c/dom/Element;->getElementsByTagNameNS(Ljava/lang/String;Ljava/lang/String;)Lorg/w3c/dom/NodeList;
@@ -345,7 +345,7 @@
     move-result p1
 
     .line 9
-    if-nez p1, :cond_c
+    if-nez p1, :cond_0
 
     .line 10
     .line 11
@@ -355,7 +355,7 @@
     return-object p0
 
     .line 13
-    :cond_c
+    :cond_0
     const/4 p1, 0x0
 
     .line 14

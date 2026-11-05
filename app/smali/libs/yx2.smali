@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/zx2;Llibs/cy2;)V
-    .registers 4
+    .locals 1
 
     .line 1
     iput-object p1, p0, Llibs/yx2;->Three:Llibs/zx2;
@@ -63,7 +63,7 @@
     const/4 p1, 0x0
 
     .line 24
-    :goto_17
+    :goto_0
     iget-object p2, p0, Llibs/yx2;->Omega:Llibs/cy2;
 
     .line 25
@@ -80,7 +80,7 @@
     move-result p2
 
     .line 32
-    if-ge p1, p2, :cond_3f
+    if-ge p1, p2, :cond_0
 
     .line 33
     .line 34
@@ -139,9 +139,9 @@
 
     .line 62
     .line 63
-    goto :goto_17
+    goto :goto_0
 
     .line 64
-    :cond_3f
+    :cond_0
     return-void
 .end method

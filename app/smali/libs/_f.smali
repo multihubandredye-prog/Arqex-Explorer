@@ -41,7 +41,7 @@
 
 # direct methods
 .method public constructor <init>(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;IZI)V
-    .registers 11
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -103,21 +103,21 @@
     const/4 p4, 0x0
 
     .line 30
-    if-lt p3, p8, :cond_21
+    if-lt p3, p8, :cond_0
 
     .line 31
     .line 32
     const/4 p3, 0x1
 
     .line 33
-    goto :goto_22
+    goto :goto_0
 
     .line 34
-    :cond_21
+    :cond_0
     const/4 p3, 0x0
 
     .line 35
-    :goto_22
+    :goto_0
     iput-boolean p3, p0, Llibs/_f;->j:Z
 
     .line 36
@@ -154,7 +154,7 @@
 
     .line 52
     .line 53
-    packed-switch p1, :pswitch_data_5a
+    packed-switch p1, :pswitch_data_0
 
     .line 54
     .line 55
@@ -163,63 +163,63 @@
 
     .line 57
     .line 58
-    goto :goto_4e
+    goto :goto_1
 
     .line 59
-    :pswitch_3a
+    :pswitch_0
     const-string p1, "TORRENT"
 
     .line 60
     .line 61
-    goto :goto_4e
+    goto :goto_1
 
     .line 62
-    :pswitch_3d
+    :pswitch_1
     const-string p1, "ENCRYPT"
 
     .line 63
     .line 64
-    goto :goto_4e
+    goto :goto_1
 
     .line 65
-    :pswitch_40
+    :pswitch_2
     const-string p1, "TAGGER"
 
     .line 66
     .line 67
-    goto :goto_4e
+    goto :goto_1
 
     .line 68
-    :pswitch_43
+    :pswitch_3
     const-string p1, "READER"
 
     .line 69
     .line 70
-    goto :goto_4e
+    goto :goto_1
 
     .line 71
-    :pswitch_46
+    :pswitch_4
     const-string p1, "IMAGE"
 
     .line 72
     .line 73
-    goto :goto_4e
+    goto :goto_1
 
     .line 74
-    :pswitch_49
+    :pswitch_5
     const-string p1, "CODECS"
 
     .line 75
     .line 76
-    goto :goto_4e
+    goto :goto_1
 
     .line 77
-    :pswitch_4c
+    :pswitch_6
     const-string p1, "ARCHIVE"
 
     .line 78
     .line 79
-    :goto_4e
+    :goto_1
     sget-object p4, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
     .line 80
@@ -244,20 +244,20 @@
     return-void
 
     .line 91
-    :pswitch_data_5a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_4c
-        :pswitch_49
-        :pswitch_46
-        :pswitch_43
-        :pswitch_40
-        :pswitch_3d
-        :pswitch_3a
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static a(Ljava/lang/String;)Llibs/_f;
-    .registers 5
+    .locals 4
 
     .line 1
     invoke-static {p0}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
@@ -268,7 +268,7 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_24
+    if-nez v0, :cond_1
 
     .line 6
     .line 7
@@ -284,7 +284,7 @@
     move-result v0
 
     .line 13
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
     .line 14
     .line 15
@@ -299,11 +299,11 @@
     const/4 v1, 0x0
 
     .line 20
-    :goto_13
+    :goto_0
     const/4 v2, 0x7
 
     .line 21
-    if-ge v1, v2, :cond_24
+    if-ge v1, v2, :cond_1
 
     .line 22
     .line 23
@@ -323,22 +323,22 @@
     move-result v3
 
     .line 31
-    if-eqz v3, :cond_21
+    if-eqz v3, :cond_0
 
     .line 32
     .line 33
     return-object v2
 
     .line 34
-    :cond_21
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
     .line 35
     .line 36
-    goto :goto_13
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_1
     const/4 p0, 0x0
 
     .line 38
@@ -346,7 +346,7 @@
 .end method
 
 .method public static b()I
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -356,7 +356,7 @@
 .end method
 
 .method public static g()[Llibs/_f;
-    .registers 3
+    .locals 3
 
     .line 1
     const/4 v0, 0x7
@@ -449,7 +449,7 @@
 
 # virtual methods
 .method public final c()Landroid/content/pm/PackageInfo;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/_f;->k:Ljava/io/File;
@@ -468,7 +468,7 @@
 
     .line 8
     .line 9
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     .line 10
     .line 11
@@ -495,7 +495,7 @@
     return-object v0
 
     .line 22
-    :cond_15
+    :cond_0
     iget-object v0, p0, Llibs/_f;->b:Ljava/lang/String;
 
     .line 23
@@ -516,7 +516,7 @@
 .end method
 
 .method public final d()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -534,7 +534,7 @@
 .end method
 
 .method public final e(Landroid/content/pm/PackageInfo;)Z
-    .registers 10
+    .locals 8
 
     .line 1
     iget-boolean v0, p0, Llibs/_f;->j:Z
@@ -544,14 +544,14 @@
     const/4 v1, 0x1
 
     .line 4
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     .line 5
     .line 6
     return v1
 
     .line 7
-    :cond_6
+    :cond_0
     iget v0, p0, Llibs/_f;->f:I
 
     .line 8
@@ -567,7 +567,7 @@
     const/4 v3, 0x0
 
     .line 14
-    if-le v0, v2, :cond_1b
+    if-le v0, v2, :cond_1
 
     .line 15
     .line 16
@@ -595,12 +595,12 @@
     return p1
 
     .line 28
-    :cond_1b
+    :cond_1
     iget-object v0, p0, Llibs/_f;->h:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     .line 29
     .line 30
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_2
 
     .line 31
     .line 32
@@ -612,7 +612,7 @@
     move-result v0
 
     .line 36
-    if-nez v0, :cond_7e
+    if-nez v0, :cond_7
 
     .line 37
     .line 38
@@ -628,12 +628,12 @@
     move-result v0
 
     .line 44
-    if-eqz v0, :cond_7e
+    if-eqz v0, :cond_7
 
     .line 45
     .line 46
-    :cond_2d
-    if-nez p1, :cond_33
+    :cond_2
+    if-nez p1, :cond_3
 
     .line 47
     .line 48
@@ -645,8 +645,8 @@
     move-result-object p1
 
     .line 52
-    :cond_33
-    if-eqz p1, :cond_73
+    :cond_3
+    if-eqz p1, :cond_5
 
     .line 53
     .line 54
@@ -753,42 +753,42 @@
 
     .line 108
     .line 109
-    if-gez v0, :cond_70
+    if-gez v0, :cond_4
 
     .line 110
     .line 111
     const/4 v0, 0x1
 
     .line 112
-    goto :goto_71
+    goto :goto_0
 
     .line 113
-    :cond_70
+    :cond_4
     const/4 v0, 0x0
 
     .line 114
-    :goto_71
+    :goto_0
     iput-boolean v0, p0, Llibs/_f;->i:Z
 
     .line 115
     .line 116
-    :cond_73
+    :cond_5
     new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     .line 117
     .line 118
-    if-eqz p1, :cond_78
+    if-eqz p1, :cond_6
 
     .line 119
     .line 120
-    goto :goto_79
+    goto :goto_1
 
     .line 121
-    :cond_78
+    :cond_6
     const/4 v1, 0x0
 
     .line 122
-    :goto_79
+    :goto_1
     invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
     .line 123
@@ -798,7 +798,7 @@
 
     .line 126
     .line 127
-    :cond_7e
+    :cond_7
     iget-object p1, p0, Llibs/_f;->h:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     .line 128
@@ -815,7 +815,7 @@
 .end method
 
 .method public final f()V
-    .registers 7
+    .locals 6
 
     .line 1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -841,7 +841,7 @@
 
     .line 11
     .line 12
-    if-gez v4, :cond_2f
+    if-gez v4, :cond_0
 
     .line 13
     .line 14
@@ -907,12 +907,12 @@
     .line 46
     .line 47
     .line 48
-    :cond_2f
+    :cond_0
     return-void
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/_f;->b:Ljava/lang/String;

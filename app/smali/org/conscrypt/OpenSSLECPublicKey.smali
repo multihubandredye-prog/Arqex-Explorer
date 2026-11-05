@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/security/spec/ECPublicKeySpec;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,7 +29,7 @@
     .line 2
     .line 3
     .line 4
-    :try_start_3
+    :try_start_0
     invoke-virtual {p1}, Ljava/security/spec/ECPublicKeySpec;->getParams()Ljava/security/spec/ECParameterSpec;
 
     .line 5
@@ -107,15 +107,15 @@
     .line 41
     .line 42
     iput-object v0, p0, Lorg/conscrypt/OpenSSLECPublicKey;->key:Lorg/conscrypt/OpenSSLKey;
-    :try_end_2b
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_2b} :catch_2c
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 43
     .line 44
     return-void
 
     .line 45
-    :catch_2c
+    :catch_0
     move-exception p1
 
     .line 46
@@ -132,7 +132,7 @@
 .end method
 
 .method public constructor <init>(Lorg/conscrypt/OpenSSLECGroupContext;Lorg/conscrypt/OpenSSLKey;)V
-    .registers 3
+    .locals 0
 
     .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -147,7 +147,7 @@
 .end method
 
 .method public constructor <init>(Lorg/conscrypt/OpenSSLKey;)V
-    .registers 6
+    .locals 4
 
     .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -179,7 +179,7 @@
 .end method
 
 .method public static getInstance(Ljava/security/interfaces/ECPublicKey;)Lorg/conscrypt/OpenSSLKey;
-    .registers 5
+    .locals 4
 
     .line 1
     :try_start_0
@@ -247,8 +247,8 @@
 
     .line 32
     invoke-direct {v1, v2, v3}, Lorg/conscrypt/OpenSSLKey;-><init>(J)V
-    :try_end_22
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_22} :catch_23
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 33
     .line 34
@@ -256,7 +256,7 @@
     return-object v1
 
     .line 36
-    :catch_23
+    :catch_0
     move-exception p0
 
     .line 37
@@ -273,7 +273,7 @@
 .end method
 
 .method private getPublicKey()Ljava/security/spec/ECPoint;
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Lorg/conscrypt/OpenSSLECPointContext;
@@ -330,7 +330,7 @@
 .end method
 
 .method private readObject(Ljava/io/ObjectInputStream;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
@@ -350,7 +350,7 @@
 
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     new-instance v0, Lorg/conscrypt/OpenSSLKey;
 
     .line 11
@@ -369,8 +369,8 @@
     .line 18
     .line 19
     iput-object v0, p0, Lorg/conscrypt/OpenSSLECPublicKey;->key:Lorg/conscrypt/OpenSSLKey;
-    :try_end_14
-    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_9 .. :try_end_14} :catch_2b
+    :try_end_0
+    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 20
     .line 21
@@ -419,7 +419,7 @@
     return-void
 
     .line 44
-    :catch_2b
+    :catch_0
     move-exception p1
 
     .line 45
@@ -436,7 +436,7 @@
 .end method
 
 .method private writeObject(Ljava/io/ObjectOutputStream;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLECPublicKey;->key:Lorg/conscrypt/OpenSSLKey;
@@ -451,7 +451,7 @@
     move-result v0
 
     .line 7
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     .line 8
     .line 9
@@ -476,7 +476,7 @@
     return-void
 
     .line 20
-    :cond_13
+    :cond_0
     new-instance p1, Ljava/io/NotSerializableException;
 
     .line 21
@@ -496,25 +496,25 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 7
+    .locals 5
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v1, p1, Lorg/conscrypt/OpenSSLECPublicKey;
 
     .line 6
     .line 7
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_1
 
     .line 8
     .line 9
@@ -541,7 +541,7 @@
     return p1
 
     .line 20
-    :cond_13
+    :cond_1
     instance-of v1, p1, Ljava/security/interfaces/ECPublicKey;
 
     .line 21
@@ -549,14 +549,14 @@
     const/4 v2, 0x0
 
     .line 23
-    if-nez v1, :cond_19
+    if-nez v1, :cond_2
 
     .line 24
     .line 25
     return v2
 
     .line 26
-    :cond_19
+    :cond_2
     check-cast p1, Ljava/security/interfaces/ECPublicKey;
 
     .line 27
@@ -585,14 +585,14 @@
     move-result v1
 
     .line 40
-    if-nez v1, :cond_2a
+    if-nez v1, :cond_3
 
     .line 41
     .line 42
     return v2
 
     .line 43
-    :cond_2a
+    :cond_3
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLECPublicKey;->getParams()Ljava/security/spec/ECParameterSpec;
 
     .line 44
@@ -633,7 +633,7 @@
     move-result v3
 
     .line 63
-    if-eqz v3, :cond_67
+    if-eqz v3, :cond_4
 
     .line 64
     .line 65
@@ -661,7 +661,7 @@
     move-result v3
 
     .line 77
-    if-eqz v3, :cond_67
+    if-eqz v3, :cond_4
 
     .line 78
     .line 79
@@ -689,7 +689,7 @@
     move-result v3
 
     .line 91
-    if-eqz v3, :cond_67
+    if-eqz v3, :cond_4
 
     .line 92
     .line 93
@@ -709,19 +709,19 @@
     move-result p1
 
     .line 101
-    if-ne v1, p1, :cond_67
+    if-ne v1, p1, :cond_4
 
     .line 102
     .line 103
     return v0
 
     .line 104
-    :cond_67
+    :cond_4
     return v2
 .end method
 
 .method public getAlgorithm()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "EC"
@@ -732,7 +732,7 @@
 .end method
 
 .method public getEncoded()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLECPublicKey;->key:Lorg/conscrypt/OpenSSLKey;
@@ -759,7 +759,7 @@
 .end method
 
 .method public getFormat()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "X.509"
@@ -770,7 +770,7 @@
 .end method
 
 .method public getOpenSSLKey()Lorg/conscrypt/OpenSSLKey;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLECPublicKey;->key:Lorg/conscrypt/OpenSSLKey;
@@ -781,7 +781,7 @@
 .end method
 
 .method public getParams()Ljava/security/spec/ECParameterSpec;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLECPublicKey;->group:Lorg/conscrypt/OpenSSLECGroupContext;
@@ -800,7 +800,7 @@
 .end method
 
 .method public getW()Ljava/security/spec/ECPoint;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/OpenSSLECPublicKey;->getPublicKey()Ljava/security/spec/ECPoint;
@@ -815,7 +815,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLECPublicKey;->key:Lorg/conscrypt/OpenSSLKey;
@@ -850,7 +850,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLECPublicKey;->key:Lorg/conscrypt/OpenSSLKey;

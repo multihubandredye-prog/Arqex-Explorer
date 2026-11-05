@@ -9,7 +9,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/Err;->b:B
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final a()Llibs/zw3;
-    .registers 18
+    .locals 17
 
     .line 1
     move-object/from16 v0, p0
@@ -51,7 +51,7 @@
     const/4 v5, 0x1
 
     .line 10
-    packed-switch v1, :pswitch_data_4d4
+    packed-switch v1, :pswitch_data_0
 
     .line 11
     .line 12
@@ -118,7 +118,7 @@
     return-object v2
 
     .line 45
-    :pswitch_2c
+    :pswitch_0
     const/4 v1, 0x0
 
     .line 46
@@ -329,7 +329,7 @@
     return-object v4
 
     .line 153
-    :pswitch_98
+    :pswitch_1
     const-string v1, "B99B99B099B323E02709A4D696E6768756151751"
 
     .line 154
@@ -392,7 +392,7 @@
     return-object v2
 
     .line 185
-    :pswitch_b8
+    :pswitch_2
     const-string v1, "1053CDE42C14D696E67687561517533BF3F83345"
 
     .line 186
@@ -455,7 +455,7 @@
     return-object v2
 
     .line 217
-    :pswitch_d8
+    :pswitch_3
     const/4 v1, 0x0
 
     .line 218
@@ -669,7 +669,7 @@
     return-object v4
 
     .line 326
-    :pswitch_145
+    :pswitch_4
     const-string v1, "2AA058F73A0E33AB486B0F610410C53A7F132310"
 
     .line 327
@@ -732,7 +732,7 @@
     return-object v2
 
     .line 358
-    :pswitch_165
+    :pswitch_5
     new-instance v4, Llibs/a43;
 
     .line 359
@@ -786,7 +786,7 @@
     return-object v3
 
     .line 385
-    :pswitch_180
+    :pswitch_6
     const-string v1, "000E0D4D696E6768756151750CC03A4473D03679"
 
     .line 386
@@ -849,7 +849,7 @@
     return-object v2
 
     .line 417
-    :pswitch_1a0
+    :pswitch_7
     const-string v1, "4099B5A457F9D69F79213D094C4BCD4D4262210B"
 
     .line 418
@@ -916,7 +916,7 @@
     return-object v2
 
     .line 451
-    :pswitch_1c2
+    :pswitch_8
     new-instance v4, Llibs/a43;
 
     .line 452
@@ -974,7 +974,7 @@
     return-object v3
 
     .line 480
-    :pswitch_1df
+    :pswitch_9
     const-string v1, "77E2B07370EB0F832A6DD5B62DFC88CD06BB84BE"
 
     .line 481
@@ -1041,7 +1041,7 @@
     return-object v2
 
     .line 514
-    :pswitch_201
+    :pswitch_a
     new-instance v4, Llibs/a43;
 
     .line 515
@@ -1099,7 +1099,7 @@
     return-object v3
 
     .line 543
-    :pswitch_21e
+    :pswitch_b
     new-instance v5, Llibs/a43;
 
     .line 544
@@ -1157,7 +1157,7 @@
     return-object v4
 
     .line 572
-    :pswitch_23b
+    :pswitch_c
     const-string v1, "74D59FF07F6B413D0EA14B344B20A2DB049B50C3"
 
     .line 573
@@ -1224,7 +1224,7 @@
     return-object v2
 
     .line 606
-    :pswitch_25d
+    :pswitch_d
     new-instance v4, Llibs/a43;
 
     .line 607
@@ -1282,7 +1282,7 @@
     return-object v3
 
     .line 635
-    :pswitch_27a
+    :pswitch_e
     const-string v1, "10B7B4D696E676875615175137C8A16FD0DA2211"
 
     .line 636
@@ -1349,7 +1349,7 @@
     return-object v2
 
     .line 669
-    :pswitch_29c
+    :pswitch_f
     const-string v1, "103FAEC74D696E676875615175777FC5B191EF30"
 
     .line 670
@@ -1415,7 +1415,7 @@
     return-object v2
 
     .line 702
-    :pswitch_2bd
+    :pswitch_10
     const-string v1, "85E25BFE5C86226CDB12016F7553F9D0E693A268"
 
     .line 703
@@ -1481,7 +1481,7 @@
     return-object v2
 
     .line 735
-    :pswitch_2de
+    :pswitch_11
     new-instance v4, Llibs/o00;
 
     .line 736
@@ -1535,7 +1535,7 @@
     return-object v3
 
     .line 762
-    :pswitch_2f9
+    :pswitch_12
     const-string v1, "24B7B137C8A14D696E6768756151756FD0DA2E5C"
 
     .line 763
@@ -1601,7 +1601,7 @@
     return-object v2
 
     .line 795
-    :pswitch_31a
+    :pswitch_13
     new-instance v4, Llibs/a43;
 
     .line 796
@@ -1658,7 +1658,7 @@
     return-object v3
 
     .line 823
-    :pswitch_336
+    :pswitch_14
     const-string v1, "985BD3ADBAD4D696E676875615175A21B43A97E3"
 
     .line 824
@@ -1724,7 +1724,7 @@
     return-object v2
 
     .line 856
-    :pswitch_357
+    :pswitch_15
     const-string v1, "4D696E676875615175985BD3ADBADA21B43A97E2"
 
     .line 857
@@ -1787,7 +1787,7 @@
     return-object v5
 
     .line 888
-    :pswitch_377
+    :pswitch_16
     const/4 v10, 0x1
 
     .line 889
@@ -1853,7 +1853,7 @@
     return-object v2
 
     .line 921
-    :pswitch_398
+    :pswitch_17
     const/4 v1, 0x0
 
     .line 922
@@ -1919,7 +1919,7 @@
     return-object v3
 
     .line 954
-    :pswitch_3b9
+    :pswitch_18
     const-string v1, "D09E8800291CB85396CC6717393284AAA0DA64BA"
 
     .line 955
@@ -1982,7 +1982,7 @@
     return-object v2
 
     .line 986
-    :pswitch_3d9
+    :pswitch_19
     const-string v1, "A335926AA319A27A1D00896A6773A4827ACDAC73"
 
     .line 987
@@ -2045,7 +2045,7 @@
     return-object v2
 
     .line 1018
-    :pswitch_3f9
+    :pswitch_1a
     const-string v1, "C49D360886E704936A6678E1139D26B7819F7E90"
 
     .line 1019
@@ -2108,7 +2108,7 @@
     return-object v2
 
     .line 1050
-    :pswitch_419
+    :pswitch_1b
     const/4 v1, 0x0
 
     .line 1051
@@ -2322,7 +2322,7 @@
     return-object v4
 
     .line 1159
-    :pswitch_486
+    :pswitch_1c
     const/4 v10, 0x1
 
     .line 1160
@@ -2477,36 +2477,36 @@
     return-object v11
 
     .line 1237
-    :pswitch_data_4d4
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_486
-        :pswitch_419
-        :pswitch_3f9
-        :pswitch_3d9
-        :pswitch_3b9
-        :pswitch_398
-        :pswitch_377
-        :pswitch_357
-        :pswitch_336
-        :pswitch_31a
-        :pswitch_2f9
-        :pswitch_2de
-        :pswitch_2bd
-        :pswitch_29c
-        :pswitch_27a
-        :pswitch_25d
-        :pswitch_23b
-        :pswitch_21e
-        :pswitch_201
-        :pswitch_1df
-        :pswitch_1c2
-        :pswitch_1a0
-        :pswitch_180
-        :pswitch_165
-        :pswitch_145
-        :pswitch_d8
-        :pswitch_b8
-        :pswitch_98
-        :pswitch_2c
+        :pswitch_1c
+        :pswitch_1b
+        :pswitch_1a
+        :pswitch_19
+        :pswitch_18
+        :pswitch_17
+        :pswitch_16
+        :pswitch_15
+        :pswitch_14
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

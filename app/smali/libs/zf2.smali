@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static a(IILandroid/graphics/RectF;)Landroid/graphics/Matrix;
-    .registers 6
+    .locals 3
 
     .line 1
     new-instance v0, Landroid/graphics/Matrix;
@@ -107,18 +107,18 @@
 .end method
 
 .method public static b(Landroid/app/Activity;Llibs/rp0;ILjava/lang/String;Landroid/print/PrintAttributes$MediaSize;)V
-    .registers 6
+    .locals 1
 
     .line 1
-    if-nez p1, :cond_3
+    if-nez p1, :cond_0
 
     .line 2
     .line 3
-    goto :goto_d
+    goto :goto_0
 
     .line 4
-    :cond_3
-    :try_start_3
+    :cond_0
+    :try_start_0
     const-string v0, "print"
 
     .line 5
@@ -135,15 +135,15 @@
 
     .line 11
     .line 12
-    if-nez p0, :cond_e
+    if-nez p0, :cond_1
 
     .line 13
     .line 14
-    :goto_d
+    :goto_0
     return-void
 
     .line 15
-    :cond_e
+    :cond_1
     new-instance v0, Landroid/print/PrintAttributes$Builder;
 
     .line 16
@@ -190,8 +190,8 @@
     .line 37
     .line 38
     invoke-virtual {p0, p3, v0, p4}, Landroid/print/PrintManager;->print(Ljava/lang/String;Landroid/print/PrintDocumentAdapter;Landroid/print/PrintAttributes;)Landroid/print/PrintJob;
-    :try_end_28
-    .catchall {:try_start_3 .. :try_end_28} :catchall_29
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 39
     .line 40
@@ -199,7 +199,7 @@
     return-void
 
     .line 42
-    :catchall_29
+    :catchall_0
     move-exception p0
 
     .line 43
@@ -259,7 +259,7 @@
 .end method
 
 .method public static c(Landroid/app/Activity;Landroid/graphics/Bitmap;Ljava/lang/String;Landroid/print/PrintAttributes$MediaSize;)V
-    .registers 6
+    .locals 2
 
     .line 1
     :try_start_0
@@ -279,14 +279,14 @@
 
     .line 8
     .line 9
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 10
     .line 11
     return-void
 
     .line 12
-    :cond_b
+    :cond_0
     new-instance v1, Landroid/print/PrintAttributes$Builder;
 
     .line 13
@@ -333,8 +333,8 @@
     .line 34
     .line 35
     invoke-virtual {v0, p2, v1, p3}, Landroid/print/PrintManager;->print(Ljava/lang/String;Landroid/print/PrintDocumentAdapter;Landroid/print/PrintAttributes;)Landroid/print/PrintJob;
-    :try_end_25
-    .catchall {:try_start_0 .. :try_end_25} :catchall_26
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 36
     .line 37
@@ -342,7 +342,7 @@
     return-void
 
     .line 39
-    :catchall_26
+    :catchall_0
     move-exception p0
 
     .line 40
@@ -402,13 +402,13 @@
 .end method
 
 .method public static d(Landroid/app/Activity;Landroid/print/PrintAttributes$MediaSize;Llibs/v1;Ljava/lang/String;)V
-    .registers 7
+    .locals 3
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    :try_start_1
+    :try_start_0
     const-string v1, "print"
 
     .line 3
@@ -468,8 +468,8 @@
     .line 31
     .line 32
     invoke-virtual {v1, p3, v2, p1}, Landroid/print/PrintManager;->print(Ljava/lang/String;Landroid/print/PrintDocumentAdapter;Landroid/print/PrintAttributes;)Landroid/print/PrintJob;
-    :try_end_22
-    .catchall {:try_start_1 .. :try_end_22} :catchall_23
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 33
     .line 34
@@ -477,7 +477,7 @@
     return-void
 
     .line 36
-    :catchall_23
+    :catchall_0
     move-exception p0
 
     .line 37
@@ -534,7 +534,7 @@
 .end method
 
 .method public static e(Landroid/app/Activity;Llibs/rp0;Ljava/lang/CharSequence;FLandroid/print/PrintAttributes$MediaSize;)V
-    .registers 10
+    .locals 5
 
     .line 1
     const/4 v0, 0x1
@@ -543,7 +543,7 @@
     const/4 v1, 0x0
 
     .line 3
-    :try_start_2
+    :try_start_0
     const-string v2, "print"
 
     .line 4
@@ -624,8 +624,8 @@
     .line 43
     .line 44
     invoke-virtual {v2, p4, v4, p2}, Landroid/print/PrintManager;->print(Ljava/lang/String;Landroid/print/PrintDocumentAdapter;Landroid/print/PrintAttributes;)Landroid/print/PrintJob;
-    :try_end_2e
-    .catchall {:try_start_2 .. :try_end_2e} :catchall_2f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 45
     .line 46
@@ -633,7 +633,7 @@
     return-void
 
     .line 48
-    :catchall_2f
+    :catchall_0
     move-exception p0
 
     .line 49
@@ -687,7 +687,7 @@
 .end method
 
 .method public static f(Landroid/app/Activity;Landroid/webkit/WebView;Ljava/lang/String;)V
-    .registers 6
+    .locals 3
 
     .line 1
     sget-object v0, Landroid/print/PrintAttributes$MediaSize;->UNKNOWN_PORTRAIT:Landroid/print/PrintAttributes$MediaSize;
@@ -697,7 +697,7 @@
     const/4 v1, 0x1
 
     .line 4
-    :try_start_3
+    :try_start_0
     const-string v2, "print"
 
     .line 5
@@ -755,7 +755,7 @@
     move-result v2
 
     .line 33
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_0
 
     .line 34
     .line 35
@@ -767,17 +767,17 @@
     move-result-object p1
 
     .line 39
-    goto :goto_2d
+    goto :goto_0
 
     .line 40
-    :catchall_27
+    :catchall_0
     move-exception p0
 
     .line 41
-    goto :goto_31
+    goto :goto_1
 
     .line 42
-    :cond_29
+    :cond_0
     invoke-virtual {p1}, Landroid/webkit/WebView;->createPrintDocumentAdapter()Landroid/print/PrintDocumentAdapter;
 
     .line 43
@@ -786,10 +786,10 @@
     move-result-object p1
 
     .line 46
-    :goto_2d
+    :goto_0
     invoke-virtual {p0, p2, p1, v0}, Landroid/print/PrintManager;->print(Ljava/lang/String;Landroid/print/PrintDocumentAdapter;Landroid/print/PrintAttributes;)Landroid/print/PrintJob;
-    :try_end_30
-    .catchall {:try_start_3 .. :try_end_30} :catchall_27
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 47
     .line 48
@@ -797,7 +797,7 @@
     return-void
 
     .line 50
-    :goto_31
+    :goto_1
     invoke-static {p0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 51

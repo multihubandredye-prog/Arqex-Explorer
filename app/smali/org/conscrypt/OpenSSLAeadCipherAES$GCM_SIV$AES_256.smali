@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/OpenSSLAeadCipherAES$GCM_SIV;-><init>()V
@@ -19,21 +19,21 @@
 
 # virtual methods
 .method public checkSupportedKeySize(I)V
-    .registers 5
+    .locals 3
 
     .line 1
     const/16 v0, 0x20
 
     .line 2
     .line 3
-    if-ne p1, v0, :cond_5
+    if-ne p1, v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     new-instance v0, Ljava/security/InvalidKeyException;
 
     .line 7

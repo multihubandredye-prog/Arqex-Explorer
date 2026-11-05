@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r31;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/g31;->X:Llibs/r31;
@@ -32,7 +32,7 @@
 
 # virtual methods
 .method public a(Llibs/r90;Llibs/r90;Llibs/r90;II)V
-    .registers 13
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/g31;->X:Llibs/r31;
@@ -42,7 +42,7 @@
     const/4 v1, 0x0
 
     .line 4
-    :try_start_3
+    :try_start_0
     sget-object v2, Lcom/mixplorer/AppImpl;->X:Llibs/k70;
 
     .line 5
@@ -58,7 +58,7 @@
     move-result-object v4
 
     .line 11
-    if-eqz v4, :cond_16
+    if-eqz v4, :cond_0
 
     .line 12
     .line 13
@@ -70,23 +70,23 @@
     move-result-object v4
 
     .line 17
-    :goto_10
+    :goto_0
     check-cast v4, Ljava/lang/String;
 
     .line 18
     .line 19
-    goto :goto_1b
+    goto :goto_1
 
     .line 20
-    :catchall_13
+    :catchall_0
     move-exception p1
 
     .line 21
-    goto/16 :goto_a0
+    goto/16 :goto_8
 
     .line 22
     .line 23
-    :cond_16
+    :cond_0
     invoke-virtual {p1, v1}, Llibs/r90;->d(I)Ljava/lang/Object;
 
     .line 24
@@ -95,10 +95,10 @@
     move-result-object v4
 
     .line 27
-    goto :goto_10
+    goto :goto_0
 
     .line 28
-    :goto_1b
+    :goto_1
     const/16 v5, 0xe
 
     .line 29
@@ -123,7 +123,7 @@
     move-result-object v6
 
     .line 40
-    if-eqz v6, :cond_2e
+    if-eqz v6, :cond_1
 
     .line 41
     .line 42
@@ -135,10 +135,10 @@
     move-result-object p2
 
     .line 46
-    goto :goto_32
+    goto :goto_2
 
     .line 47
-    :cond_2e
+    :cond_1
     invoke-virtual {p2, v1}, Llibs/r90;->d(I)Ljava/lang/Object;
 
     .line 48
@@ -147,7 +147,7 @@
     move-result-object p2
 
     .line 51
-    :goto_32
+    :goto_2
     check-cast p2, Ljava/lang/String;
 
     .line 52
@@ -179,11 +179,11 @@
     const/4 v6, -0x1
 
     .line 66
-    if-eqz v2, :cond_7e
+    if-eqz v2, :cond_6
 
     .line 67
     .line 68
-    if-eqz p3, :cond_60
+    if-eqz p3, :cond_3
 
     .line 69
     .line 70
@@ -199,7 +199,7 @@
     move-result-object v2
 
     .line 76
-    if-eqz v2, :cond_54
+    if-eqz v2, :cond_2
 
     .line 77
     .line 78
@@ -211,15 +211,15 @@
     move-result-object p3
 
     .line 82
-    :goto_51
+    :goto_3
     check-cast p3, Ljava/lang/String;
 
     .line 83
     .line 84
-    goto :goto_59
+    goto :goto_4
 
     .line 85
-    :cond_54
+    :cond_2
     invoke-virtual {p3, v1}, Llibs/r90;->d(I)Ljava/lang/Object;
 
     .line 86
@@ -228,10 +228,10 @@
     move-result-object p3
 
     .line 89
-    goto :goto_51
+    goto :goto_3
 
     .line 90
-    :goto_59
+    :goto_4
     invoke-virtual {p1, v5, p3}, Llibs/k70;->Set(ILjava/lang/String;)Llibs/yq3;
 
     .line 91
@@ -244,15 +244,15 @@
 
     .line 95
     .line 96
-    goto :goto_7a
+    goto :goto_5
 
     .line 97
-    :cond_60
+    :cond_3
     iget-object p1, p1, Llibs/r90;->Omega:Ljava/util/ArrayList;
 
     .line 98
     .line 99
-    if-eqz p1, :cond_79
+    if-eqz p1, :cond_4
 
     .line 100
     .line 101
@@ -264,7 +264,7 @@
     move-result p3
 
     .line 105
-    if-lez p3, :cond_79
+    if-lez p3, :cond_4
 
     .line 106
     .line 107
@@ -298,27 +298,27 @@
     sub-int/2addr p1, v3
 
     .line 121
-    goto :goto_7a
+    goto :goto_5
 
     .line 122
-    :cond_79
+    :cond_4
     const/4 p1, -0x1
 
     .line 123
-    :goto_7a
-    if-lt p1, v4, :cond_7d
+    :goto_5
+    if-lt p1, v4, :cond_5
 
     .line 124
     .line 125
-    goto :goto_7e
+    goto :goto_6
 
     .line 126
-    :cond_7d
+    :cond_5
     move v6, p1
 
     .line 127
-    :cond_7e
-    :goto_7e
+    :cond_6
+    :goto_6
     sget-object p1, Lcom/mixplorer/AppImpl;->X:Llibs/k70;
 
     .line 128
@@ -340,34 +340,34 @@
 
     .line 137
     .line 138
-    if-lt p1, p2, :cond_8c
+    if-lt p1, p2, :cond_7
 
     .line 139
     .line 140
-    goto :goto_8d
+    goto :goto_7
 
     .line 141
-    :cond_8c
+    :cond_7
     const/4 v3, 0x0
 
     .line 142
-    :goto_8d
-    if-eqz v3, :cond_9f
+    :goto_7
+    if-eqz v3, :cond_9
 
     .line 143
     .line 144
     const/4 p1, 0x5
 
     .line 145
-    if-lt p4, p1, :cond_94
+    if-lt p4, p1, :cond_8
 
     .line 146
     .line 147
-    if-ge p5, p1, :cond_9f
+    if-ge p5, p1, :cond_9
 
     .line 148
     .line 149
-    :cond_94
+    :cond_8
     iget-object p1, v0, Llibs/r31;->h:Lcom/mixplorer/widgets/MiDraggableListView;
 
     .line 150
@@ -385,17 +385,17 @@
     .line 156
     .line 157
     invoke-virtual {v0, p1}, Llibs/r31;->Part(Ljava/util/List;)V
-    :try_end_9f
-    .catchall {:try_start_3 .. :try_end_9f} :catchall_13
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 158
     .line 159
     .line 160
-    :cond_9f
+    :cond_9
     return-void
 
     .line 161
-    :goto_a0
+    :goto_8
     const-string p2, "HUB"
 
     .line 162
@@ -438,7 +438,7 @@
 .end method
 
 .method public b()V
-    .registers 5
+    .locals 4
 
     .line 1
     const-string v0, "Closed"
@@ -470,7 +470,7 @@
 
     .line 15
     .line 16
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 17
     .line 18
@@ -482,7 +482,7 @@
     return-void
 
     .line 22
-    :cond_15
+    :cond_0
     invoke-virtual {v2}, Lcom/mixplorer/activities/BrowseActivity;->Get()Llibs/xt1;
 
     .line 23
@@ -522,7 +522,7 @@
 .end method
 
 .method public c()V
-    .registers 5
+    .locals 4
 
     .line 1
     const-string v0, "Opened"
@@ -563,7 +563,7 @@
     move-result v2
 
     .line 21
-    if-eqz v2, :cond_1a
+    if-eqz v2, :cond_0
 
     .line 22
     .line 23
@@ -575,7 +575,7 @@
     return-void
 
     .line 27
-    :cond_1a
+    :cond_0
     iget-object v2, v0, Llibs/r31;->d:Llibs/al;
 
     .line 28
@@ -623,7 +623,7 @@
     move-result v1
 
     .line 50
-    if-ne v1, v3, :cond_3c
+    if-ne v1, v3, :cond_1
 
     .line 51
     .line 52
@@ -631,7 +631,7 @@
 
     .line 53
     .line 54
-    if-eqz v1, :cond_3c
+    if-eqz v1, :cond_1
 
     .line 55
     .line 56
@@ -644,6 +644,6 @@
     .line 59
     .line 60
     .line 61
-    :cond_3c
+    :cond_1
     return-void
 .end method

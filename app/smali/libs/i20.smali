@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     const-string v0, "DES"
@@ -26,14 +26,14 @@
 
 # virtual methods
 .method public final engineGenerateSecret(Ljava/security/spec/KeySpec;)Ljavax/crypto/SecretKey;
-    .registers 4
+    .locals 2
 
     .line 1
     instance-of v0, p1, Ljavax/crypto/spec/DESKeySpec;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -65,7 +65,7 @@
     return-object v0
 
     .line 19
-    :cond_12
+    :cond_0
     invoke-super {p0, p1}, Llibs/ee;->engineGenerateSecret(Ljava/security/spec/KeySpec;)Ljavax/crypto/SecretKey;
 
     .line 20
@@ -78,17 +78,17 @@
 .end method
 
 .method public final engineGetKeySpec(Ljavax/crypto/SecretKey;Ljava/lang/Class;)Ljava/security/spec/KeySpec;
-    .registers 5
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-eqz p2, :cond_42
+    if-eqz p2, :cond_3
 
     .line 3
     .line 4
-    if-eqz p1, :cond_3c
+    if-eqz p1, :cond_2
 
     .line 5
     .line 6
@@ -104,7 +104,7 @@
     move-result v1
 
     .line 12
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_0
 
     .line 13
     .line 14
@@ -132,7 +132,7 @@
     return-object p2
 
     .line 26
-    :cond_19
+    :cond_0
     const-class v1, Ljavax/crypto/spec/DESKeySpec;
 
     .line 27
@@ -145,7 +145,7 @@
     move-result p2
 
     .line 32
-    if-eqz p2, :cond_36
+    if-eqz p2, :cond_1
 
     .line 33
     .line 34
@@ -157,14 +157,14 @@
     move-result-object p1
 
     .line 38
-    :try_start_25
+    :try_start_0
     new-instance p2, Ljavax/crypto/spec/DESKeySpec;
 
     .line 39
     .line 40
     invoke-direct {p2, p1}, Ljavax/crypto/spec/DESKeySpec;-><init>([B)V
-    :try_end_2a
-    .catch Ljava/lang/Exception; {:try_start_25 .. :try_end_2a} :catch_2b
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 41
     .line 42
@@ -172,7 +172,7 @@
     return-object p2
 
     .line 44
-    :catch_2b
+    :catch_0
     move-exception p1
 
     .line 45
@@ -196,7 +196,7 @@
     throw p2
 
     .line 55
-    :cond_36
+    :cond_1
     const-string p1, "Invalid KeySpec"
 
     .line 56
@@ -209,7 +209,7 @@
     return-object v0
 
     .line 61
-    :cond_3c
+    :cond_2
     const-string p1, "key parameter is null"
 
     .line 62
@@ -222,7 +222,7 @@
     return-object v0
 
     .line 67
-    :cond_42
+    :cond_3
     const-string p1, "keySpec parameter is null"
 
     .line 68

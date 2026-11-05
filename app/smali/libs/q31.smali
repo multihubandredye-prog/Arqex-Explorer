@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Integer;ILjava/util/ArrayList;Llibs/zl0;)V
-    .registers 5
+    .locals 0
 
     .line 16
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Integer;Landroid/database/Cursor;Ljava/util/HashSet;JLlibs/zl0;)V
-    .registers 7
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

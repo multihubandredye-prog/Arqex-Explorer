@@ -33,7 +33,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Context;I)V
-    .registers 3
+    .locals 0
 
     .line 322
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 .end method
 
 .method static synthetic access$200(Llibs/ArqexUpdater$Check;)Landroid/content/Context;
-    .registers 1
+    .locals 0
 
     .line 314
     iget-object p0, p0, Llibs/ArqexUpdater$Check;->ctx:Landroid/content/Context;
@@ -57,7 +57,7 @@
 .end method
 
 .method static synthetic access$300(Llibs/ArqexUpdater$Check;)I
-    .registers 1
+    .locals 0
 
     .line 314
     iget p0, p0, Llibs/ArqexUpdater$Check;->mode:I
@@ -66,28 +66,28 @@
 .end method
 
 .method private manual()Z
-    .registers 3
+    .locals 2
 
     .line 328
     iget v0, p0, Llibs/ArqexUpdater$Check;->mode:I
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_6
+    if-ne v0, v1, :cond_0
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_7
+    :goto_0
     return v1
 .end method
 
 
 # virtual methods
 .method public run()V
-    .registers 14
+    .locals 13
 
     const-string v0, "HTTP "
 
@@ -97,7 +97,7 @@
     const/4 v2, 0x0
 
     .line 338
-    :try_start_5
+    :try_start_0
     new-instance v3, Ljava/net/URL;
 
     const-string v4, "https://api.github.com/repos/multihubandredye-prog/Arqex-Explorer/releases/latest"
@@ -109,13 +109,13 @@
     move-result-object v3
 
     check-cast v3, Ljava/net/HttpURLConnection;
-    :try_end_12
-    .catchall {:try_start_5 .. :try_end_12} :catchall_d7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_4
 
     const/16 v4, 0x2710
 
     .line 339
-    :try_start_14
+    :try_start_1
     invoke-virtual {v3, v4}, Ljava/net/HttpURLConnection;->setConnectTimeout(I)V
 
     const/16 v4, 0x3a98
@@ -144,7 +144,7 @@
 
     const/16 v5, 0xc8
 
-    if-eq v4, v5, :cond_43
+    if-eq v4, v5, :cond_0
 
     .line 345
     new-instance v5, Ljava/lang/StringBuilder;
@@ -163,10 +163,10 @@
 
     move-object v0, v2
 
-    goto/16 :goto_bf
+    goto/16 :goto_3
 
     .line 347
-    :cond_43
+    :cond_0
     invoke-virtual {v3}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
 
     move-result-object v0
@@ -188,12 +188,12 @@
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     .line 351
-    :goto_58
+    :goto_0
     invoke-virtual {v4}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
 
     move-result-object v5
 
-    if-eqz v5, :cond_68
+    if-eqz v5, :cond_1
 
     .line 352
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -204,10 +204,10 @@
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    goto :goto_58
+    goto :goto_0
 
     .line 354
-    :cond_68
+    :cond_1
     invoke-virtual {v4}, Ljava/io/BufferedReader;->close()V
 
     .line 355
@@ -225,62 +225,62 @@
     invoke-virtual {v4, v0, v2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
-    :try_end_7a
-    .catchall {:try_start_14 .. :try_end_7a} :catchall_d3
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_3
 
-    if-eqz v0, :cond_83
+    if-eqz v0, :cond_2
 
     .line 357
-    :try_start_7c
+    :try_start_2
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v5
 
-    if-nez v5, :cond_83
+    if-nez v5, :cond_2
 
     move-object v0, v2
 
     .line 360
-    :cond_83
+    :cond_2
     const-string v5, "body"
 
     invoke-virtual {v4, v5, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
-    :try_end_89
-    .catchall {:try_start_7c .. :try_end_89} :catchall_ce
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
     .line 361
-    :try_start_89
+    :try_start_3
     const-string v6, "assets"
 
     invoke-virtual {v4, v6}, Lorg/json/JSONObject;->optJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     move-result-object v4
 
-    if-eqz v4, :cond_bb
+    if-eqz v4, :cond_5
 
     const/4 v6, 0x0
 
     .line 363
-    :goto_92
+    :goto_1
     invoke-virtual {v4}, Lorg/json/JSONArray;->length()I
 
     move-result v7
 
-    if-ge v6, v7, :cond_bb
+    if-ge v6, v7, :cond_5
 
     .line 364
     invoke-virtual {v4, v6}, Lorg/json/JSONArray;->optJSONObject(I)Lorg/json/JSONObject;
 
     move-result-object v7
 
-    if-nez v7, :cond_9f
+    if-nez v7, :cond_3
 
-    goto :goto_b8
+    goto :goto_2
 
     .line 368
-    :cond_9f
+    :cond_3
     const-string v8, "name"
 
     invoke-virtual {v7, v8, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -294,7 +294,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_b8
+    if-eqz v8, :cond_4
 
     .line 370
     const-string v1, "browser_download_url"
@@ -302,8 +302,8 @@
     invoke-virtual {v7, v1, v2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
-    :try_end_b3
-    .catchall {:try_start_89 .. :try_end_b3} :catchall_c9
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     move-object v4, v2
 
@@ -313,15 +313,15 @@
 
     move-object v1, v5
 
-    goto :goto_bf
+    goto :goto_3
 
-    :cond_b8
-    :goto_b8
+    :cond_4
+    :goto_2
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_92
+    goto :goto_1
 
-    :cond_bb
+    :cond_5
     move-object v4, v2
 
     move-object v1, v5
@@ -330,17 +330,17 @@
 
     move-object v0, v4
 
-    :goto_bf
-    if-eqz v3, :cond_c4
+    :goto_3
+    if-eqz v3, :cond_6
 
     .line 381
-    :try_start_c1
+    :try_start_4
     invoke-virtual {v3}, Ljava/net/HttpURLConnection;->disconnect()V
-    :try_end_c4
-    .catchall {:try_start_c1 .. :try_end_c4} :catchall_c4
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    :catchall_c4
-    :cond_c4
+    :catchall_0
+    :cond_6
     move-object v10, v0
 
     move-object v9, v1
@@ -349,9 +349,9 @@
 
     move-object v11, v4
 
-    goto :goto_ec
+    goto :goto_5
 
-    :catchall_c9
+    :catchall_1
     move-exception v1
 
     move-object v12, v1
@@ -360,9 +360,9 @@
 
     move-object v0, v12
 
-    goto :goto_db
+    goto :goto_4
 
-    :catchall_ce
+    :catchall_2
     move-exception v4
 
     move-object v5, v1
@@ -371,18 +371,18 @@
 
     move-object v0, v4
 
-    goto :goto_db
+    goto :goto_4
 
-    :catchall_d3
+    :catchall_3
     move-exception v0
 
     move-object v5, v1
 
     move-object v1, v2
 
-    goto :goto_db
+    goto :goto_4
 
-    :catchall_d7
+    :catchall_4
     move-exception v0
 
     move-object v5, v1
@@ -392,8 +392,8 @@
     move-object v3, v1
 
     .line 377
-    :goto_db
-    :try_start_db
+    :goto_4
+    :try_start_5
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -401,19 +401,19 @@
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
     move-result-object v4
-    :try_end_e3
-    .catchall {:try_start_db .. :try_end_e3} :catchall_100
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_7
 
-    if-eqz v3, :cond_e8
+    if-eqz v3, :cond_7
 
     .line 381
-    :try_start_e5
+    :try_start_6
     invoke-virtual {v3}, Ljava/net/HttpURLConnection;->disconnect()V
-    :try_end_e8
-    .catchall {:try_start_e5 .. :try_end_e8} :catchall_e8
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_5
 
-    :catchall_e8
-    :cond_e8
+    :catchall_5
+    :cond_7
     move-object v8, v1
 
     move-object v10, v2
@@ -423,8 +423,8 @@
     move-object v9, v5
 
     .line 391
-    :goto_ec
-    :try_start_ec
+    :goto_5
+    :try_start_7
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -442,25 +442,25 @@
     invoke-direct/range {v6 .. v11}, Llibs/ArqexUpdater$Check$1;-><init>(Llibs/ArqexUpdater$Check;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-    :try_end_ff
-    .catchall {:try_start_ec .. :try_end_ff} :catchall_ff
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_6
 
-    :catchall_ff
+    :catchall_6
     return-void
 
-    :catchall_100
+    :catchall_7
     move-exception v0
 
-    if-eqz v3, :cond_106
+    if-eqz v3, :cond_8
 
     .line 381
-    :try_start_103
+    :try_start_8
     invoke-virtual {v3}, Ljava/net/HttpURLConnection;->disconnect()V
-    :try_end_106
-    .catchall {:try_start_103 .. :try_end_106} :catchall_106
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_8
 
     .line 385
-    :catchall_106
-    :cond_106
+    :catchall_8
+    :cond_8
     throw v0
 .end method

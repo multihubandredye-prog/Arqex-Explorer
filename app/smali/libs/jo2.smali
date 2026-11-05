@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>([Landroid/graphics/Bitmap;Llibs/pf;)V
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,7 +33,7 @@
     const/4 v2, 0x0
 
     .line 8
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_2
 
     .line 9
     .line 10
@@ -41,7 +41,7 @@
 
     .line 11
     .line 12
-    if-eqz p2, :cond_1c
+    if-eqz p2, :cond_1
 
     .line 13
     .line 14
@@ -66,7 +66,7 @@
 
     .line 22
     .line 23
-    if-lez p2, :cond_1b
+    if-lez p2, :cond_0
 
     .line 24
     .line 25
@@ -75,11 +75,11 @@
     .line 26
     .line 27
     .line 28
-    :cond_1b
+    :cond_0
     return-void
 
     .line 29
-    :cond_1c
+    :cond_1
     const-string p1, "BitmapPool must not be null"
 
     .line 30
@@ -92,7 +92,7 @@
     throw v2
 
     .line 35
-    :cond_22
+    :cond_2
     const-string p1, "Bitmap must not be null"
 
     .line 36
@@ -108,7 +108,7 @@
 
 # virtual methods
 .method public final a()V
-    .registers 3
+    .locals 2
 
     .line 1
     const/4 v0, 0x1

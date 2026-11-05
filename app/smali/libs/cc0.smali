@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final a()I
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-static {}, Llibs/t43;->Work()Z
@@ -38,7 +38,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -65,7 +65,7 @@
     return v0
 
     .line 18
-    :cond_11
+    :cond_0
     const/4 v0, 0x0
 
     .line 19
@@ -73,7 +73,7 @@
 .end method
 
 .method public final b()I
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-static {}, Llibs/t43;->Work()Z
@@ -84,7 +84,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -111,7 +111,7 @@
     return v0
 
     .line 18
-    :cond_11
+    :cond_0
     const/4 v0, 0x0
 
     .line 19
@@ -119,10 +119,10 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     .line 1
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     .line 2
     .line 3
@@ -132,8 +132,8 @@
     return p1
 
     .line 5
-    :cond_4
-    if-eqz p1, :cond_1a
+    :cond_0
+    if-eqz p1, :cond_2
 
     .line 6
     .line 7
@@ -149,14 +149,14 @@
     move-result-object v1
 
     .line 13
-    if-eq v0, v1, :cond_f
+    if-eq v0, v1, :cond_1
 
     .line 14
     .line 15
-    goto :goto_1a
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_1
     check-cast p1, Llibs/cc0;
 
     .line 17
@@ -180,8 +180,8 @@
     return p1
 
     .line 27
-    :cond_1a
-    :goto_1a
+    :cond_2
+    :goto_0
     const/4 p1, 0x0
 
     .line 28
@@ -189,7 +189,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/cc0;->a:Ljava/lang/Object;
@@ -208,7 +208,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

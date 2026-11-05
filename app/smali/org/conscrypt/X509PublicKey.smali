@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;[B)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,31 +40,31 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
     .line 6
-    if-nez p1, :cond_8
+    if-nez p1, :cond_1
 
     .line 7
     .line 8
     return v1
 
     .line 9
-    :cond_8
+    :cond_1
     const-class v2, Lorg/conscrypt/X509PublicKey;
 
     .line 10
@@ -77,14 +77,14 @@
     move-result-object v3
 
     .line 15
-    if-eq v2, v3, :cond_11
+    if-eq v2, v3, :cond_2
 
     .line 16
     .line 17
     return v1
 
     .line 18
-    :cond_11
+    :cond_2
     check-cast p1, Lorg/conscrypt/X509PublicKey;
 
     .line 19
@@ -97,18 +97,18 @@
 
     .line 23
     .line 24
-    if-nez v2, :cond_1c
+    if-nez v2, :cond_3
 
     .line 25
     .line 26
-    if-eqz v3, :cond_23
+    if-eqz v3, :cond_4
 
     .line 27
     .line 28
     return v1
 
     .line 29
-    :cond_1c
+    :cond_3
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     .line 30
@@ -117,14 +117,14 @@
     move-result v2
 
     .line 33
-    if-nez v2, :cond_23
+    if-nez v2, :cond_4
 
     .line 34
     .line 35
     return v1
 
     .line 36
-    :cond_23
+    :cond_4
     iget-object v2, p0, Lorg/conscrypt/X509PublicKey;->encoded:[B
 
     .line 37
@@ -141,19 +141,19 @@
     move-result p1
 
     .line 44
-    if-nez p1, :cond_2e
+    if-nez p1, :cond_5
 
     .line 45
     .line 46
     return v1
 
     .line 47
-    :cond_2e
+    :cond_5
     return v0
 .end method
 
 .method public getAlgorithm()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/X509PublicKey;->algorithm:Ljava/lang/String;
@@ -164,7 +164,7 @@
 .end method
 
 .method public getEncoded()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/X509PublicKey;->encoded:[B
@@ -175,7 +175,7 @@
 .end method
 
 .method public getFormat()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "X.509"
@@ -186,24 +186,24 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/X509PublicKey;->algorithm:Ljava/lang/String;
 
     .line 2
     .line 3
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
     const/4 v0, 0x0
 
     .line 6
-    goto :goto_a
+    goto :goto_0
 
     .line 7
-    :cond_6
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     .line 8
@@ -212,7 +212,7 @@
     move-result v0
 
     .line 11
-    :goto_a
+    :goto_0
     const/16 v1, 0x1f
 
     .line 12
@@ -243,7 +243,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

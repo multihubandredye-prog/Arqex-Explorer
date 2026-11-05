@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ky;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -59,7 +59,7 @@
 .end method
 
 .method public constructor <init>(Z)V
-    .registers 2
+    .locals 0
 
     .line 21
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -73,21 +73,21 @@
 
 # virtual methods
 .method public final varargs a([Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/jy;->a:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
     array-length v0, p1
 
     .line 6
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
@@ -110,7 +110,7 @@
     return-void
 
     .line 17
-    :cond_10
+    :cond_0
     const-string p1, "At least one cipher suite is required"
 
     .line 18
@@ -123,7 +123,7 @@
     return-void
 
     .line 23
-    :cond_16
+    :cond_1
     const-string p1, "no cipher suites for cleartext connections"
 
     .line 24
@@ -137,14 +137,14 @@
 .end method
 
 .method public final varargs b([Llibs/rt;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-boolean v0, p0, Llibs/jy;->a:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
@@ -158,11 +158,11 @@
     const/4 v1, 0x0
 
     .line 9
-    :goto_8
+    :goto_0
     array-length v2, p1
 
     .line 10
-    if-ge v1, v2, :cond_14
+    if-ge v1, v2, :cond_0
 
     .line 11
     .line 12
@@ -182,10 +182,10 @@
 
     .line 19
     .line 20
-    goto :goto_8
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_0
     invoke-virtual {p0, v0}, Llibs/jy;->a([Ljava/lang/String;)V
 
     .line 22
@@ -194,7 +194,7 @@
     return-void
 
     .line 25
-    :cond_18
+    :cond_1
     const-string p1, "no cipher suites for cleartext connections"
 
     .line 26
@@ -208,21 +208,21 @@
 .end method
 
 .method public final varargs c([Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/jy;->a:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
     array-length v0, p1
 
     .line 6
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
@@ -245,7 +245,7 @@
     return-void
 
     .line 17
-    :cond_10
+    :cond_0
     const-string p1, "At least one TLS version is required"
 
     .line 18
@@ -258,7 +258,7 @@
     return-void
 
     .line 23
-    :cond_16
+    :cond_1
     const-string p1, "no TLS versions for cleartext connections"
 
     .line 24
@@ -272,14 +272,14 @@
 .end method
 
 .method public final varargs d([Llibs/fn3;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-boolean v0, p0, Llibs/jy;->a:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
@@ -293,11 +293,11 @@
     const/4 v1, 0x0
 
     .line 9
-    :goto_8
+    :goto_0
     array-length v2, p1
 
     .line 10
-    if-ge v1, v2, :cond_14
+    if-ge v1, v2, :cond_0
 
     .line 11
     .line 12
@@ -317,10 +317,10 @@
 
     .line 19
     .line 20
-    goto :goto_8
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_0
     invoke-virtual {p0, v0}, Llibs/jy;->c([Ljava/lang/String;)V
 
     .line 22
@@ -329,7 +329,7 @@
     return-void
 
     .line 25
-    :cond_18
+    :cond_1
     const-string p1, "no TLS versions for cleartext connections"
 
     .line 26

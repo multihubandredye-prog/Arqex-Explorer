@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/util/Collection;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/el1;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final test(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/el1;->X:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_14
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -63,7 +63,7 @@
     return p1
 
     .line 13
-    :pswitch_c
+    :pswitch_0
     invoke-interface {v1, p1}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
     .line 14
@@ -82,8 +82,8 @@
     nop
 
     .line 21
-    :pswitch_data_14
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_c
+        :pswitch_0
     .end packed-switch
 .end method

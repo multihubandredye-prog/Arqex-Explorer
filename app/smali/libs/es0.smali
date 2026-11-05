@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/en3;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/en3;-><init>()V
@@ -17,7 +17,7 @@
     .line 2
     .line 3
     .line 4
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     .line 5
     .line 6
@@ -28,7 +28,7 @@
     return-void
 
     .line 9
-    :cond_8
+    :cond_0
     const-string p1, "delegate == null"
 
     .line 10
@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public final a()Llibs/en3;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/es0;->e:Llibs/en3;
@@ -66,7 +66,7 @@
 .end method
 
 .method public final b()Llibs/en3;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/es0;->e:Llibs/en3;
@@ -85,7 +85,7 @@
 .end method
 
 .method public final c()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/es0;->e:Llibs/en3;
@@ -104,7 +104,7 @@
 .end method
 
 .method public final d(J)Llibs/en3;
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/es0;->e:Llibs/en3;
@@ -123,7 +123,7 @@
 .end method
 
 .method public final e()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/es0;->e:Llibs/en3;
@@ -142,7 +142,7 @@
 .end method
 
 .method public final f()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/es0;->e:Llibs/en3;
@@ -158,7 +158,7 @@
 .end method
 
 .method public final g(J)Llibs/en3;
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/es0;->e:Llibs/en3;

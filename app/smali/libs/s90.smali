@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/dd3;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -72,7 +72,7 @@
 
     .line 29
     .line 30
-    if-eqz p1, :cond_21
+    if-eqz p1, :cond_0
 
     .line 31
     .line 32
@@ -80,14 +80,14 @@
 
     .line 33
     .line 34
-    :cond_21
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 6
+    .locals 3
 
     .line 1
     check-cast p1, Llibs/r90;
@@ -186,14 +186,14 @@
 
     .line 50
     .line 51
-    if-eqz v0, :cond_3e
+    if-eqz v0, :cond_1
 
     .line 52
     .line 53
     const/4 v2, 0x1
 
     .line 54
-    if-eq v0, v2, :cond_39
+    if-eq v0, v2, :cond_0
 
     .line 55
     .line 56
@@ -203,7 +203,7 @@
     return p1
 
     .line 58
-    :cond_39
+    :cond_0
     invoke-virtual {v1, p2, p1}, Llibs/p0;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
 
     .line 59
@@ -215,7 +215,7 @@
     return p1
 
     .line 63
-    :cond_3e
+    :cond_1
     invoke-virtual {v1, p1, p2}, Llibs/p0;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
 
     .line 64

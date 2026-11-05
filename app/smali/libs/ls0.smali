@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 8
+    .locals 8
 
     .line 1
     const/16 v0, 0x100
@@ -26,8 +26,8 @@
     const/4 v3, 0x0
 
     .line 7
-    :goto_6
-    if-ge v3, v0, :cond_20
+    :goto_0
+    if-ge v3, v0, :cond_2
 
     .line 8
     .line 9
@@ -37,8 +37,8 @@
     const/4 v5, 0x0
 
     .line 11
-    :goto_a
-    if-ltz v4, :cond_1b
+    :goto_1
+    if-ltz v4, :cond_1
 
     .line 12
     .line 13
@@ -51,7 +51,7 @@
     and-int/2addr v6, v3
 
     .line 16
-    if-eqz v6, :cond_18
+    if-eqz v6, :cond_0
 
     .line 17
     .line 18
@@ -70,15 +70,15 @@
     xor-int/2addr v5, v6
 
     .line 25
-    :cond_18
+    :cond_0
     add-int/lit8 v4, v4, -0x1
 
     .line 26
     .line 27
-    goto :goto_a
+    goto :goto_1
 
     .line 28
-    :cond_1b
+    :cond_1
     aput v5, v1, v3
 
     .line 29
@@ -87,10 +87,10 @@
 
     .line 31
     .line 32
-    goto :goto_6
+    goto :goto_0
 
     .line 33
-    :cond_20
+    :cond_2
     sput-object v1, Llibs/ls0;->a:[I
 
     .line 34
@@ -99,7 +99,7 @@
 .end method
 
 .method public static a([I[I)V
-    .registers 19
+    .locals 17
 
     .line 1
     const/4 v0, 0x0
@@ -145,11 +145,11 @@
     const/4 v12, 0x0
 
     .line 18
-    :goto_11
+    :goto_0
     const/4 v13, 0x4
 
     .line 19
-    if-ge v8, v13, :cond_4f
+    if-ge v8, v13, :cond_1
 
     .line 20
     .line 21
@@ -160,12 +160,12 @@
     const/4 v14, 0x0
 
     .line 24
-    :goto_17
+    :goto_1
     const/16 v15, 0x20
 
     .line 25
     .line 26
-    if-ge v14, v15, :cond_4c
+    if-ge v14, v15, :cond_0
 
     .line 27
     .line 28
@@ -269,18 +269,18 @@
 
     .line 75
     .line 76
-    goto :goto_17
+    goto :goto_1
 
     .line 77
-    :cond_4c
+    :cond_0
     add-int/lit8 v8, v8, 0x1
 
     .line 78
     .line 79
-    goto :goto_11
+    goto :goto_0
 
     .line 80
-    :cond_4f
+    :cond_1
     aput v9, p0, v0
 
     .line 81
@@ -301,7 +301,7 @@
 .end method
 
 .method public static b([I[I)V
-    .registers 8
+    .locals 6
 
     .line 1
     const/4 v0, 0x0
@@ -411,7 +411,7 @@
 .end method
 
 .method public static c([I[I)V
-    .registers 8
+    .locals 6
 
     .line 1
     const/4 v0, 0x0
@@ -522,13 +522,13 @@
 .end method
 
 .method public static d([B[B)V
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :cond_1
+    :cond_0
     aget-byte v1, p0, v0
 
     .line 3
@@ -621,7 +621,7 @@
 
     .line 43
     .line 44
-    if-lt v0, v1, :cond_1
+    if-lt v0, v1, :cond_0
 
     .line 45
     .line 46
@@ -629,7 +629,7 @@
 .end method
 
 .method public static e([I[I[I)V
-    .registers 6
+    .locals 3
 
     .line 1
     const/4 v0, 0x0

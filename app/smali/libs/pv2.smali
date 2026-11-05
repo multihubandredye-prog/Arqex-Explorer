@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 17
     sget-object v0, Llibs/hv2;->Y:Llibs/hv2;
@@ -29,7 +29,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/List;[B)V
-    .registers 4
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/hv2;->Y:Llibs/hv2;
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public final c(Llibs/rw2;)V
-    .registers 12
+    .locals 10
 
     .line 1
     iget-object v0, p1, Llibs/rw2;->b:Llibs/oj0;
@@ -100,8 +100,8 @@
     const/4 v4, 0x0
 
     .line 15
-    :goto_e
-    if-ge v4, v0, :cond_3d
+    :goto_0
+    if-ge v4, v0, :cond_1
 
     .line 16
     .line 17
@@ -135,7 +135,7 @@
 
     .line 30
     .line 31
-    if-eqz v6, :cond_28
+    if-eqz v6, :cond_0
 
     .line 32
     .line 33
@@ -152,10 +152,10 @@
 
     .line 39
     .line 40
-    goto :goto_e
+    goto :goto_0
 
     .line 41
-    :cond_28
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     .line 42
@@ -199,7 +199,7 @@
     throw p1
 
     .line 62
-    :cond_3d
+    :cond_1
     new-array v0, v2, [B
 
     .line 63
@@ -217,7 +217,7 @@
 .end method
 
 .method public final d(Llibs/rw2;)I
-    .registers 5
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
@@ -227,7 +227,7 @@
 
     .line 3
     .line 4
-    if-eqz v1, :cond_47
+    if-eqz v1, :cond_2
 
     .line 5
     .line 6
@@ -235,7 +235,7 @@
 
     .line 7
     .line 8
-    if-eqz v2, :cond_41
+    if-eqz v2, :cond_1
 
     .line 9
     .line 10
@@ -272,7 +272,7 @@
     move-result-object v0
 
     .line 27
-    :goto_1a
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 28
@@ -281,7 +281,7 @@
     move-result v2
 
     .line 31
-    if-eqz v2, :cond_2e
+    if-eqz v2, :cond_0
 
     .line 32
     .line 33
@@ -310,10 +310,10 @@
     .line 44
     .line 45
     .line 46
-    goto :goto_1a
+    goto :goto_0
 
     .line 47
-    :cond_2e
+    :cond_0
     iget-object v0, p0, Llibs/pv2;->c:[B
 
     .line 48
@@ -355,7 +355,7 @@
     return p1
 
     .line 66
-    :cond_41
+    :cond_1
     const-string p1, "A salt should be provided"
 
     .line 67
@@ -368,7 +368,7 @@
     return v0
 
     .line 72
-    :cond_47
+    :cond_2
     const-string p1, "There should be at least 1 hash algorithm provided"
 
     .line 73

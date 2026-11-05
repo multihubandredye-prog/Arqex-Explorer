@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final d(Ljava/security/Key;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "RSA"
@@ -57,7 +57,7 @@
 .end method
 
 .method public final g(Llibs/tj;)Ljava/security/PublicKey;
-    .registers 5
+    .locals 3
 
     .line 1
     :try_start_0
@@ -75,8 +75,8 @@
     .line 7
     .line 8
     move-result-object p1
-    :try_end_8
-    .catch Llibs/rj; {:try_start_0 .. :try_end_8} :catch_18
+    :try_end_0
+    .catch Llibs/rj; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 9
     const-string v1, "RSA"
@@ -111,7 +111,7 @@
     return-object p1
 
     .line 25
-    :catch_18
+    :catch_0
     move-exception p1
 
     .line 26
@@ -128,7 +128,7 @@
 .end method
 
 .method public final h(Ljava/security/PublicKey;Llibs/uj;)V
-    .registers 4
+    .locals 1
 
     .line 1
     check-cast p1, Ljava/security/interfaces/RSAPublicKey;

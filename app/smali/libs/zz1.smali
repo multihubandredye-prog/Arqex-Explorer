@@ -39,7 +39,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/b02;Ljava/lang/Thread;IJLjava/lang/String;J)V
-    .registers 9
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/zz1;->Psi:Llibs/b02;
@@ -149,7 +149,7 @@
 
 # virtual methods
 .method public final close()V
-    .registers 7
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/zz1;->Nu:Ljava/util/concurrent/atomic/AtomicLong;
@@ -176,8 +176,8 @@
 
     .line 12
     .line 13
-    :cond_c
-    :goto_c
+    :cond_0
+    :goto_0
     iget-object v0, p0, Llibs/zz1;->Omicron:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     .line 14
@@ -193,7 +193,7 @@
     const/4 v1, 0x0
 
     .line 20
-    if-nez v0, :cond_3c
+    if-nez v0, :cond_1
 
     .line 21
     .line 22
@@ -209,7 +209,7 @@
     move-result v0
 
     .line 28
-    if-nez v0, :cond_3c
+    if-nez v0, :cond_1
 
     .line 29
     .line 30
@@ -217,22 +217,22 @@
 
     .line 31
     .line 32
-    :try_start_1f
+    :try_start_0
     invoke-static {v2, v3}, Ljava/lang/Thread;->sleep(J)V
-    :try_end_22
-    .catchall {:try_start_1f .. :try_end_22} :catchall_23
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 33
     .line 34
     .line 35
-    goto :goto_24
+    goto :goto_1
 
     .line 36
-    :catchall_23
+    :catchall_0
     nop
 
     .line 37
-    :goto_24
+    :goto_1
     iget-object v0, p0, Llibs/zz1;->Mu:Ljava/util/concurrent/atomic/AtomicLong;
 
     .line 38
@@ -261,7 +261,7 @@
 
     .line 50
     .line 51
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 52
     .line 53
@@ -278,10 +278,10 @@
 
     .line 59
     .line 60
-    goto :goto_c
+    goto :goto_0
 
     .line 61
-    :cond_3c
+    :cond_1
     iget-object v0, p0, Llibs/zz1;->Lambda:Llibs/lc2;
 
     .line 62
@@ -308,27 +308,27 @@
     move-result v0
 
     .line 75
-    if-nez v0, :cond_4d
+    if-nez v0, :cond_2
 
     .line 76
     .line 77
     return-void
 
     .line 78
-    :cond_4d
-    goto :goto_4f
+    :cond_2
+    goto :goto_3
 
     .line 79
-    :goto_4e
+    :goto_2
     throw v1
 
     .line 80
-    :goto_4f
-    goto :goto_4e
+    :goto_3
+    goto :goto_2
 .end method
 
 .method public final declared-synchronized write(I)V
-    .registers 5
+    .locals 3
 
     monitor-enter p0
 
@@ -337,7 +337,7 @@
     const/4 v0, 0x1
 
     .line 130
-    :try_start_3
+    :try_start_0
     new-array v1, v0, [B
 
     const/4 v2, 0x0
@@ -346,27 +346,27 @@
 
     .line 131
     invoke-virtual {p0, v1, v2, v0}, Llibs/zz1;->write([BII)V
-    :try_end_b
-    .catchall {:try_start_3 .. :try_end_b} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 132
     monitor-exit p0
 
     return-void
 
-    :catchall_d
+    :catchall_0
     move-exception p1
 
-    :try_start_e
+    :try_start_1
     monitor-exit p0
-    :try_end_f
-    .catchall {:try_start_e .. :try_end_f} :catchall_d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method
 
 .method public final write([B)V
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -379,7 +379,7 @@
 .end method
 
 .method public final write([BII)V
-    .registers 13
+    .locals 9
 
     .line 1
     iget-object v0, p0, Llibs/zz1;->Sigma:Ljava/lang/Thread;
@@ -394,7 +394,7 @@
     move-result v0
 
     .line 7
-    if-nez v0, :cond_78
+    if-nez v0, :cond_4
 
     .line 8
     .line 9
@@ -402,7 +402,7 @@
 
     .line 10
     .line 11
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
@@ -414,16 +414,16 @@
     move-result v0
 
     .line 17
-    if-nez v0, :cond_78
+    if-nez v0, :cond_4
 
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     iget-object v0, p0, Llibs/zz1;->Y:Llibs/yz1;
 
     .line 20
     .line 21
-    if-nez v0, :cond_2f
+    if-nez v0, :cond_1
 
     .line 22
     .line 23
@@ -474,8 +474,8 @@
 
     .line 47
     .line 48
-    :cond_2f
-    :goto_2f
+    :cond_1
+    :goto_0
     iget-object v0, p0, Llibs/zz1;->Omicron:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     .line 49
@@ -488,7 +488,7 @@
     move-result v0
 
     .line 54
-    if-nez v0, :cond_49
+    if-nez v0, :cond_2
 
     .line 55
     .line 56
@@ -508,7 +508,7 @@
 
     .line 63
     .line 64
-    if-lt v0, v1, :cond_49
+    if-lt v0, v1, :cond_2
 
     .line 65
     .line 66
@@ -516,25 +516,25 @@
 
     .line 67
     .line 68
-    :try_start_43
+    :try_start_0
     invoke-static {v0, v1}, Ljava/lang/Thread;->sleep(J)V
-    :try_end_46
-    .catchall {:try_start_43 .. :try_end_46} :catchall_47
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 69
     .line 70
     .line 71
-    goto :goto_2f
+    goto :goto_0
 
     .line 72
-    :catchall_47
+    :catchall_0
     nop
 
     .line 73
-    goto :goto_2f
+    goto :goto_0
 
     .line 74
-    :cond_49
+    :cond_2
     iget-object v0, p0, Llibs/zz1;->Lambda:Llibs/lc2;
 
     .line 75
@@ -569,7 +569,7 @@
 
     .line 91
     .line 92
-    if-nez p1, :cond_77
+    if-nez p1, :cond_3
 
     .line 93
     .line 94
@@ -623,11 +623,11 @@
     .line 118
     .line 119
     .line 120
-    :cond_77
+    :cond_3
     return-void
 
     .line 121
-    :cond_78
+    :cond_4
     new-instance p1, Ljava/io/InterruptedIOException;
 
     .line 122
@@ -637,13 +637,13 @@
     .line 124
     .line 125
     .line 126
-    goto :goto_7f
+    goto :goto_2
 
     .line 127
-    :goto_7e
+    :goto_1
     throw p1
 
     .line 128
-    :goto_7f
-    goto :goto_7e
+    :goto_2
+    goto :goto_1
 .end method

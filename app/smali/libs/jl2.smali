@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/to3;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -54,7 +54,7 @@
 .end method
 
 .method public constructor <init>(Llibs/wx;)V
-    .registers 4
+    .locals 2
 
     .line 1
     const/4 v0, 0x1
@@ -129,7 +129,7 @@
 
 # virtual methods
 .method public a()V
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/jl2;->Z:Llibs/py2;
@@ -193,7 +193,7 @@
 .end method
 
 .method public final run()V
-    .registers 10
+    .locals 9
 
     .line 1
     iget-byte v0, p0, Llibs/jl2;->X:B
@@ -206,7 +206,7 @@
     const/4 v2, 0x0
 
     .line 5
-    packed-switch v0, :pswitch_data_e8
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -270,8 +270,8 @@
     .line 35
     .line 36
     .line 37
-    :goto_24
-    :try_start_24
+    :goto_0
+    :try_start_0
     invoke-virtual {p0}, Ljava/lang/Thread;->isInterrupted()Z
 
     .line 38
@@ -280,7 +280,7 @@
     move-result v0
 
     .line 41
-    if-nez v0, :cond_89
+    if-nez v0, :cond_1
 
     .line 42
     .line 43
@@ -310,7 +310,7 @@
     move-result v0
 
     .line 55
-    if-eqz v0, :cond_55
+    if-eqz v0, :cond_0
 
     .line 56
     .line 57
@@ -364,18 +364,18 @@
     .line 81
     .line 82
     .line 83
-    goto :goto_55
+    goto :goto_1
 
     .line 84
-    :catch_53
+    :catch_0
     move-exception v0
 
     .line 85
-    goto :goto_5d
+    goto :goto_2
 
     .line 86
-    :cond_55
-    :goto_55
+    :cond_0
+    :goto_1
     sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
     .line 87
@@ -385,17 +385,17 @@
     .line 89
     .line 90
     invoke-virtual {v0, v6, v7}, Ljava/util/concurrent/TimeUnit;->sleep(J)V
-    :try_end_5c
-    .catch Ljava/lang/InterruptedException; {:try_start_24 .. :try_end_5c} :catch_6d
-    .catch Ljava/lang/Exception; {:try_start_24 .. :try_end_5c} :catch_53
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 91
     .line 92
     .line 93
-    goto :goto_24
+    goto :goto_0
 
     .line 94
-    :goto_5d
+    :goto_2
     invoke-virtual {p0}, Ljava/lang/Thread;->isInterrupted()Z
 
     .line 95
@@ -404,7 +404,7 @@
     move-result v4
 
     .line 98
-    if-nez v4, :cond_89
+    if-nez v4, :cond_1
 
     .line 99
     .line 100
@@ -425,10 +425,10 @@
     .line 107
     .line 108
     .line 109
-    goto :goto_89
+    goto :goto_3
 
     .line 110
-    :catch_6d
+    :catch_1
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     .line 111
@@ -483,8 +483,8 @@
     .line 136
     .line 137
     .line 138
-    :cond_89
-    :goto_89
+    :cond_1
+    :goto_3
     iget-object v0, p0, Llibs/jl2;->Y:Llibs/bn1;
 
     .line 139
@@ -529,7 +529,7 @@
     return-void
 
     .line 160
-    :pswitch_9f
+    :pswitch_0
     iget-object v0, p0, Llibs/jl2;->Z:Llibs/py2;
 
     .line 161
@@ -538,7 +538,7 @@
 
     .line 163
     .line 164
-    :try_start_a3
+    :try_start_1
     iget-object v3, v0, Llibs/to3;->Omicron:Llibs/y70;
 
     .line 165
@@ -568,41 +568,41 @@
 
     .line 178
     .line 179
-    :goto_b2
+    :goto_4
     invoke-virtual {p0}, Ljava/lang/Thread;->isInterrupted()Z
 
     .line 180
     .line 181
     .line 182
     move-result v6
-    :try_end_b6
-    .catch Ljava/lang/Exception; {:try_start_a3 .. :try_end_b6} :catch_c4
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_2
 
     .line 183
-    if-nez v6, :cond_e0
+    if-nez v6, :cond_4
 
     .line 184
     .line 185
-    :try_start_b8
+    :try_start_2
     invoke-virtual {v4, v5, v2, v1}, Ljava/io/InputStream;->read([BII)I
 
     .line 186
     .line 187
     .line 188
     move-result v1
-    :try_end_bc
-    .catch Ljava/net/SocketTimeoutException; {:try_start_b8 .. :try_end_bc} :catch_ce
-    .catch Ljava/lang/Exception; {:try_start_b8 .. :try_end_bc} :catch_c4
+    :try_end_2
+    .catch Ljava/net/SocketTimeoutException; {:try_start_2 .. :try_end_2} :catch_3
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
 
     .line 189
     const/4 v6, -0x1
 
     .line 190
-    if-eq v1, v6, :cond_c6
+    if-eq v1, v6, :cond_2
 
     .line 191
     .line 192
-    :try_start_bf
+    :try_start_3
     invoke-virtual {v3, v1, v5}, Llibs/y70;->e(I[B)I
 
     .line 193
@@ -611,17 +611,17 @@
     move-result v1
 
     .line 196
-    goto :goto_b2
+    goto :goto_4
 
     .line 197
-    :catch_c4
+    :catch_2
     move-exception v1
 
     .line 198
-    goto :goto_d7
+    goto :goto_5
 
     .line 199
-    :cond_c6
+    :cond_2
     new-instance v1, Llibs/po3;
 
     .line 200
@@ -638,7 +638,7 @@
     throw v1
 
     .line 207
-    :catch_ce
+    :catch_3
     move-exception v6
 
     .line 208
@@ -650,20 +650,20 @@
     move-result v7
 
     .line 212
-    if-nez v7, :cond_d6
+    if-nez v7, :cond_3
 
     .line 213
     .line 214
-    goto :goto_b2
+    goto :goto_4
 
     .line 215
-    :cond_d6
+    :cond_3
     throw v6
-    :try_end_d7
-    .catch Ljava/lang/Exception; {:try_start_bf .. :try_end_d7} :catch_c4
+    :try_end_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
 
     .line 216
-    :goto_d7
+    :goto_5
     invoke-virtual {p0}, Ljava/lang/Thread;->isInterrupted()Z
 
     .line 217
@@ -672,7 +672,7 @@
     move-result v2
 
     .line 220
-    if-nez v2, :cond_e0
+    if-nez v2, :cond_4
 
     .line 221
     .line 222
@@ -681,7 +681,7 @@
     .line 223
     .line 224
     .line 225
-    :cond_e0
+    :cond_4
     iget-object v0, p0, Llibs/jl2;->Y:Llibs/bn1;
 
     .line 226
@@ -698,8 +698,8 @@
     return-void
 
     .line 233
-    :pswitch_data_e8
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_9f
+        :pswitch_0
     .end packed-switch
 .end method

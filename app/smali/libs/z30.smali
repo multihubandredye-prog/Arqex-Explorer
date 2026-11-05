@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,7 +23,7 @@
     .line 2
     .line 3
     .line 4
-    :try_start_3
+    :try_start_0
     invoke-static {p1}, Llibs/r43;->d(Ljava/lang/String;)Ljava/security/KeyPairGenerator;
 
     .line 5
@@ -42,32 +42,32 @@
     .line 12
     .line 13
     sget-object p1, Llibs/r43;->c:Lorg/conscrypt/OpenSSLProvider;
-    :try_end_e
-    .catch Ljava/security/GeneralSecurityException; {:try_start_3 .. :try_end_e} :catch_23
+    :try_end_0
+    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 14
     .line 15
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_0
 
     .line 16
     .line 17
-    :try_start_10
+    :try_start_1
     invoke-static {p2, p1}, Ljavax/crypto/KeyAgreement;->getInstance(Ljava/lang/String;Ljava/security/Provider;)Ljavax/crypto/KeyAgreement;
 
     .line 18
     .line 19
     .line 20
     move-result-object p1
-    :try_end_14
-    .catchall {:try_start_10 .. :try_end_14} :catchall_15
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 21
-    goto :goto_20
+    goto :goto_0
 
     .line 22
-    :catchall_15
-    :cond_15
-    :try_start_15
+    :catchall_0
+    :cond_0
+    :try_start_2
     sget-object p1, Llibs/r43;->d:Llibs/hh;
 
     .line 23
@@ -78,15 +78,15 @@
     .line 26
     .line 27
     move-result-object p1
-    :try_end_1b
-    .catchall {:try_start_15 .. :try_end_1b} :catchall_1c
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 28
-    goto :goto_20
+    goto :goto_0
 
     .line 29
-    :catchall_1c
-    :try_start_1c
+    :catchall_1
+    :try_start_3
     invoke-static {p2}, Ljavax/crypto/KeyAgreement;->getInstance(Ljava/lang/String;)Ljavax/crypto/KeyAgreement;
 
     .line 30
@@ -95,17 +95,17 @@
     move-result-object p1
 
     .line 33
-    :goto_20
+    :goto_0
     iput-object p1, p0, Llibs/z30;->b:Ljavax/crypto/KeyAgreement;
-    :try_end_22
-    .catch Ljava/security/GeneralSecurityException; {:try_start_1c .. :try_end_22} :catch_23
+    :try_end_3
+    .catch Ljava/security/GeneralSecurityException; {:try_start_3 .. :try_end_3} :catch_0
 
     .line 34
     .line 35
     return-void
 
     .line 36
-    :catch_23
+    :catch_0
     move-exception p1
 
     .line 37

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/xv0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/wv0;->a:Llibs/xv0;
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final onChanged()V
-    .registers 3
+    .locals 2
 
     .line 1
     const/4 v0, 0x1
@@ -50,7 +50,7 @@
 .end method
 
 .method public final onInvalidated()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/wv0;->a:Llibs/xv0;

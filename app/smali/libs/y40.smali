@@ -15,7 +15,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/z40;Ljava/lang/Thread;Ljava/util/HashSet;B)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-byte p4, p0, Llibs/y40;->a:B
@@ -45,14 +45,14 @@
 
 # virtual methods
 .method public final a()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/y40;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_a
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -63,7 +63,7 @@
     return v0
 
     .line 8
-    :pswitch_7
+    :pswitch_0
     const/4 v0, 0x0
 
     .line 9
@@ -73,14 +73,14 @@
     nop
 
     .line 11
-    :pswitch_data_a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_7
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final e(Llibs/rp0;)Z
-    .registers 12
+    .locals 10
 
     .line 1
     iget-byte v0, p0, Llibs/y40;->a:B
@@ -106,7 +106,7 @@
     const/4 v5, 0x0
 
     .line 12
-    packed-switch v0, :pswitch_data_88
+    packed-switch v0, :pswitch_data_0
 
     .line 13
     .line 14
@@ -119,7 +119,7 @@
     move-result v0
 
     .line 19
-    if-nez v0, :cond_46
+    if-nez v0, :cond_2
 
     .line 20
     .line 21
@@ -127,7 +127,7 @@
 
     .line 22
     .line 23
-    if-nez v0, :cond_49
+    if-nez v0, :cond_3
 
     .line 24
     .line 25
@@ -143,7 +143,7 @@
     move-result v0
 
     .line 31
-    if-eqz v0, :cond_49
+    if-eqz v0, :cond_3
 
     .line 32
     .line 33
@@ -159,19 +159,19 @@
 
     .line 38
     .line 39
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_0
 
     .line 40
     .line 41
-    goto :goto_49
+    goto :goto_0
 
     .line 42
-    :cond_29
+    :cond_0
     iget-boolean v0, v4, Llibs/z40;->k:Z
 
     .line 43
     .line 44
-    if-nez v0, :cond_38
+    if-nez v0, :cond_1
 
     .line 45
     .line 46
@@ -191,14 +191,14 @@
     move-result v0
 
     .line 54
-    if-eqz v0, :cond_38
+    if-eqz v0, :cond_1
 
     .line 55
     .line 56
-    goto :goto_49
+    goto :goto_0
 
     .line 57
-    :cond_38
+    :cond_1
     invoke-virtual {v4, p1}, Llibs/z40;->Work(Llibs/rp0;)Llibs/kz;
 
     .line 58
@@ -207,7 +207,7 @@
     move-result-object v0
 
     .line 61
-    if-eqz v0, :cond_49
+    if-eqz v0, :cond_3
 
     .line 62
     .line 63
@@ -224,21 +224,21 @@
     .line 68
     .line 69
     .line 70
-    goto :goto_49
+    goto :goto_0
 
     .line 71
-    :cond_46
+    :cond_2
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 72
     .line 73
     .line 74
-    :cond_49
-    :goto_49
+    :cond_3
+    :goto_0
     return v5
 
     .line 75
-    :pswitch_4a
+    :pswitch_0
     invoke-virtual {v3}, Ljava/lang/Thread;->isInterrupted()Z
 
     .line 76
@@ -247,7 +247,7 @@
     move-result v0
 
     .line 79
-    if-nez v0, :cond_83
+    if-nez v0, :cond_6
 
     .line 80
     .line 81
@@ -255,7 +255,7 @@
 
     .line 82
     .line 83
-    if-nez v0, :cond_86
+    if-nez v0, :cond_7
 
     .line 84
     .line 85
@@ -271,7 +271,7 @@
     move-result v0
 
     .line 91
-    if-eqz v0, :cond_86
+    if-eqz v0, :cond_7
 
     .line 92
     .line 93
@@ -288,19 +288,19 @@
 
     .line 99
     .line 100
-    if-eqz v0, :cond_66
+    if-eqz v0, :cond_4
 
     .line 101
     .line 102
-    goto :goto_86
+    goto :goto_1
 
     .line 103
-    :cond_66
+    :cond_4
     iget-boolean v0, v4, Llibs/z40;->k:Z
 
     .line 104
     .line 105
-    if-nez v0, :cond_75
+    if-nez v0, :cond_5
 
     .line 106
     .line 107
@@ -320,14 +320,14 @@
     move-result v0
 
     .line 115
-    if-eqz v0, :cond_75
+    if-eqz v0, :cond_5
 
     .line 116
     .line 117
-    goto :goto_86
+    goto :goto_1
 
     .line 118
-    :cond_75
+    :cond_5
     invoke-virtual {v4, p1}, Llibs/z40;->Work(Llibs/rp0;)Llibs/kz;
 
     .line 119
@@ -336,7 +336,7 @@
     move-result-object v0
 
     .line 122
-    if-eqz v0, :cond_86
+    if-eqz v0, :cond_7
 
     .line 123
     .line 124
@@ -353,25 +353,25 @@
     .line 129
     .line 130
     .line 131
-    goto :goto_86
+    goto :goto_1
 
     .line 132
-    :cond_83
+    :cond_6
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 133
     .line 134
     .line 135
-    :cond_86
-    :goto_86
+    :cond_7
+    :goto_1
     return v5
 
     .line 136
     nop
 
     .line 137
-    :pswitch_data_88
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_4a
+        :pswitch_0
     .end packed-switch
 .end method

@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Llibs/ln1;-><init>()V
@@ -37,7 +37,7 @@
 
     .line 5
     .line 6
-    if-ge p1, v0, :cond_e1
+    if-ge p1, v0, :cond_4
 
     .line 7
     .line 8
@@ -45,7 +45,7 @@
 
     .line 9
     .line 10
-    if-nez v0, :cond_da
+    if-nez v0, :cond_3
 
     .line 11
     .line 12
@@ -53,7 +53,7 @@
 
     .line 13
     .line 14
-    if-eq p1, v0, :cond_d3
+    if-eq p1, v0, :cond_2
 
     .line 15
     .line 16
@@ -237,7 +237,7 @@
 
     .line 121
     .line 122
-    if-le p1, v1, :cond_94
+    if-le p1, v1, :cond_0
 
     .line 123
     .line 124
@@ -291,11 +291,11 @@
     .line 146
     .line 147
     .line 148
-    goto :goto_ac
+    goto :goto_0
 
     .line 149
-    :cond_94
-    if-le p1, v0, :cond_a6
+    :cond_0
+    if-le p1, v0, :cond_1
 
     .line 150
     .line 151
@@ -330,10 +330,10 @@
     .line 164
     .line 165
     .line 166
-    goto :goto_ac
+    goto :goto_0
 
     .line 167
-    :cond_a6
+    :cond_1
     add-int/lit8 p1, p1, 0x30
 
     .line 168
@@ -346,7 +346,7 @@
     .line 171
     .line 172
     .line 173
-    :goto_ac
+    :goto_0
     invoke-virtual {p0}, Llibs/ln1;->m()V
 
     .line 174
@@ -424,7 +424,7 @@
     return-void
 
     .line 212
-    :cond_d3
+    :cond_2
     const-string p1, "bitLength cannot be 384 use SHA384 instead"
 
     .line 213
@@ -440,7 +440,7 @@
     throw p1
 
     .line 219
-    :cond_da
+    :cond_3
     const-string p1, "bitLength needs to be a multiple of 8"
 
     .line 220
@@ -456,7 +456,7 @@
     throw p1
 
     .line 226
-    :cond_e1
+    :cond_4
     const-string p1, "bitLength cannot be >= 512"
 
     .line 227
@@ -473,7 +473,7 @@
 .end method
 
 .method public constructor <init>(Llibs/nt2;)V
-    .registers 3
+    .locals 1
 
     .line 233
     invoke-direct {p0, p1}, Llibs/ln1;-><init>(Llibs/ln1;)V
@@ -490,10 +490,10 @@
 .end method
 
 .method public static q(J[BII)V
-    .registers 10
+    .locals 5
 
     .line 1
-    if-lez p4, :cond_3b
+    if-lez p4, :cond_1
 
     .line 2
     .line 3
@@ -519,12 +519,12 @@
     move-result v2
 
     .line 13
-    :goto_c
+    :goto_0
     add-int/lit8 v2, v2, -0x1
 
     .line 14
     .line 15
-    if-ltz v2, :cond_1c
+    if-ltz v2, :cond_0
 
     .line 16
     .line 17
@@ -551,11 +551,11 @@
 
     .line 27
     .line 28
-    goto :goto_c
+    goto :goto_0
 
     .line 29
-    :cond_1c
-    if-le p4, v0, :cond_3b
+    :cond_0
+    if-le p4, v0, :cond_1
 
     .line 30
     .line 31
@@ -586,12 +586,12 @@
     move-result p0
 
     .line 44
-    :goto_2b
+    :goto_1
     add-int/lit8 p0, p0, -0x1
 
     .line 45
     .line 46
-    if-ltz p0, :cond_3b
+    if-ltz p0, :cond_1
 
     .line 47
     .line 48
@@ -618,17 +618,17 @@
 
     .line 58
     .line 59
-    goto :goto_2b
+    goto :goto_1
 
     .line 60
-    :cond_3b
+    :cond_1
     return-void
 .end method
 
 
 # virtual methods
 .method public final b()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -677,7 +677,7 @@
 .end method
 
 .method public final c(I[B)I
-    .registers 8
+    .locals 5
 
     .line 1
     invoke-virtual {p0}, Llibs/ln1;->m()V
@@ -826,7 +826,7 @@
 .end method
 
 .method public final d()Llibs/ar1;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/nt2;
@@ -842,7 +842,7 @@
 .end method
 
 .method public final e()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/nt2;->q:I
@@ -853,7 +853,7 @@
 .end method
 
 .method public final f(Llibs/ar1;)V
-    .registers 4
+    .locals 2
 
     .line 1
     check-cast p1, Llibs/nt2;
@@ -868,7 +868,7 @@
 
     .line 6
     .line 7
-    if-ne v0, v1, :cond_2c
+    if-ne v0, v1, :cond_0
 
     .line 8
     .line 9
@@ -944,7 +944,7 @@
     return-void
 
     .line 45
-    :cond_2c
+    :cond_0
     new-instance p1, Llibs/br1;
 
     .line 46
@@ -958,7 +958,7 @@
 .end method
 
 .method public final reset()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-super {p0}, Llibs/ln1;->reset()V

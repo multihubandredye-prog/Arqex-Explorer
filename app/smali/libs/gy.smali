@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/String;[BB)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/gy;->a:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final a(Ljava/nio/ByteBuffer;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/gy;->a:B
@@ -53,7 +53,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_30
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -113,7 +113,7 @@
     return-void
 
     .line 37
-    :pswitch_24
+    :pswitch_0
     const/16 v0, 0x51
 
     .line 38
@@ -123,7 +123,7 @@
     .line 40
     .line 41
     .line 42
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_0
 
     .line 43
     .line 44
@@ -132,21 +132,21 @@
     .line 45
     .line 46
     .line 47
-    :cond_2e
+    :cond_0
     return-void
 
     .line 48
     nop
 
     .line 49
-    :pswitch_data_30
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_24
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final b(Ljava/lang/Long;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte p1, p0, Llibs/gy;->a:B
@@ -159,7 +159,7 @@
     const/4 v1, 0x5
 
     .line 5
-    packed-switch p1, :pswitch_data_2a
+    packed-switch p1, :pswitch_data_0
 
     .line 6
     .line 7
@@ -172,7 +172,7 @@
     move-result p1
 
     .line 12
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_0
 
     .line 13
     .line 14
@@ -189,11 +189,11 @@
     .line 19
     .line 20
     .line 21
-    :cond_14
+    :cond_0
     return-void
 
     .line 22
-    :pswitch_15
+    :pswitch_0
     invoke-static {v1}, Llibs/zm1;->Context(I)Z
 
     .line 23
@@ -202,7 +202,7 @@
     move-result p1
 
     .line 26
-    if-eqz p1, :cond_28
+    if-eqz p1, :cond_1
 
     .line 27
     .line 28
@@ -231,15 +231,15 @@
     .line 39
     .line 40
     .line 41
-    :cond_28
+    :cond_1
     return-void
 
     .line 42
     nop
 
     .line 43
-    :pswitch_data_2a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_15
+        :pswitch_0
     .end packed-switch
 .end method

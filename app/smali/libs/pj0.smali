@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/x81;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/pj0;->a:Llibs/x81;
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final onProgress(JJ)V
-    .registers 5
+    .locals 0
 
     .line 1
     iget-object p3, p0, Llibs/pj0;->a:Llibs/x81;

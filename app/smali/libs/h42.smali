@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -43,7 +43,7 @@
 .end method
 
 .method public constructor <init>(Llibs/la0;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -61,14 +61,14 @@
 
 # virtual methods
 .method public final e(I)Llibs/hh1;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/h42;->d:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_10
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -84,7 +84,7 @@
     return-object p1
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     invoke-virtual {p0, p1}, Llibs/h42;->f(I)Llibs/hh1;
 
     .line 12
@@ -99,14 +99,14 @@
     nop
 
     .line 17
-    :pswitch_data_10
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final f(I)Llibs/hh1;
-    .registers 5
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/h42;->d:B
@@ -116,7 +116,7 @@
     const/4 v1, 0x0
 
     .line 4
-    packed-switch v0, :pswitch_data_34
+    packed-switch v0, :pswitch_data_0
 
     .line 5
     .line 6
@@ -137,7 +137,7 @@
     move-result v0
 
     .line 15
-    if-gt p1, v0, :cond_1a
+    if-gt p1, v0, :cond_0
 
     .line 16
     .line 17
@@ -158,10 +158,10 @@
     .line 24
     .line 25
     .line 26
-    goto :goto_26
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_0
     const-string v0, "Can\'t generate a derived key "
 
     .line 28
@@ -186,11 +186,11 @@
     const/4 v2, 0x0
 
     .line 39
-    :goto_26
+    :goto_0
     return-object v2
 
     .line 40
-    :pswitch_27
+    :pswitch_0
     div-int/lit8 p1, p1, 0x8
 
     .line 41
@@ -218,14 +218,14 @@
     nop
 
     .line 53
-    :pswitch_data_34
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_27
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final g(II)Llibs/ta2;
-    .registers 7
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/h42;->d:B
@@ -235,7 +235,7 @@
     const/4 v1, 0x0
 
     .line 4
-    packed-switch v0, :pswitch_data_46
+    packed-switch v0, :pswitch_data_0
 
     .line 5
     .line 6
@@ -264,7 +264,7 @@
     move-result v2
 
     .line 19
-    if-gt v0, v2, :cond_23
+    if-gt v0, v2, :cond_0
 
     .line 20
     .line 21
@@ -294,10 +294,10 @@
     .line 33
     .line 34
     .line 35
-    goto :goto_2f
+    goto :goto_0
 
     .line 36
-    :cond_23
+    :cond_0
     const-string p1, "Can\'t generate a derived key "
 
     .line 37
@@ -322,11 +322,11 @@
     const/4 v2, 0x0
 
     .line 48
-    :goto_2f
+    :goto_0
     return-object v2
 
     .line 49
-    :pswitch_30
+    :pswitch_0
     div-int/lit8 p1, p1, 0x8
 
     .line 50
@@ -371,14 +371,14 @@
     nop
 
     .line 71
-    :pswitch_data_46
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_30
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public j()[B
-    .registers 7
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/h42;->e:Llibs/la0;
@@ -440,12 +440,12 @@
     const/4 v3, 0x1
 
     .line 30
-    :goto_1d
+    :goto_0
     iget v4, p0, Llibs/pe;->a:I
 
     .line 31
     .line 32
-    if-ge v3, v4, :cond_2a
+    if-ge v3, v4, :cond_0
 
     .line 33
     .line 34
@@ -463,15 +463,15 @@
 
     .line 41
     .line 42
-    goto :goto_1d
+    goto :goto_0
 
     .line 43
-    :cond_2a
+    :cond_0
     return-object v2
 .end method
 
 .method public k(I)[B
-    .registers 10
+    .locals 8
 
     .line 1
     iget-object v0, p0, Llibs/h42;->e:Llibs/la0;
@@ -500,7 +500,7 @@
     const/4 v5, 0x0
 
     .line 13
-    :goto_c
+    :goto_0
     iget-object v6, p0, Llibs/pe;->b:Ljava/lang/Object;
 
     .line 14
@@ -538,7 +538,7 @@
     .line 30
     .line 31
     .line 32
-    if-le p1, v1, :cond_24
+    if-le p1, v1, :cond_0
 
     .line 33
     .line 34
@@ -546,14 +546,14 @@
 
     .line 35
     .line 36
-    goto :goto_25
+    goto :goto_1
 
     .line 37
-    :cond_24
+    :cond_0
     move v6, p1
 
     .line 38
-    :goto_25
+    :goto_1
     invoke-static {v2, v4, v3, v5, v6}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 39
@@ -565,14 +565,14 @@
     sub-int/2addr p1, v6
 
     .line 43
-    if-nez p1, :cond_2d
+    if-nez p1, :cond_1
 
     .line 44
     .line 45
     return-object v3
 
     .line 46
-    :cond_2d
+    :cond_1
     invoke-virtual {v0}, Llibs/mo1;->reset()V
 
     .line 47
@@ -583,5 +583,5 @@
     .line 50
     .line 51
     .line 52
-    goto :goto_c
+    goto :goto_0
 .end method

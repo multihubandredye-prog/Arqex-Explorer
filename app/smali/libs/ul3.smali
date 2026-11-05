@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic a(Landroid/hardware/usb/UsbDevice;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/hardware/usb/UsbDevice;->getManufacturerName()Ljava/lang/String;
@@ -20,7 +20,7 @@
 .end method
 
 .method public static bridge synthetic b(Landroid/widget/EdgeEffect;I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/widget/EdgeEffect;->setColor(I)V
@@ -32,7 +32,7 @@
 .end method
 
 .method public static bridge synthetic c(Landroid/hardware/usb/UsbDevice;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/hardware/usb/UsbDevice;->getProductName()Ljava/lang/String;
@@ -47,7 +47,7 @@
 .end method
 
 .method public static bridge synthetic d(Landroid/hardware/usb/UsbDevice;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/hardware/usb/UsbDevice;->getProductName()Ljava/lang/String;

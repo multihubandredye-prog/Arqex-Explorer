@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,7 +17,7 @@
 .end method
 
 .method public static init()V
-    .registers 1
+    .locals 1
 
     .line 1
     :try_start_0
@@ -26,8 +26,8 @@
     .line 2
     .line 3
     invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
-    :try_end_5
-    .catchall {:try_start_0 .. :try_end_5} :catchall_6
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 4
     .line 5
@@ -35,7 +35,7 @@
     return-void
 
     .line 7
-    :catchall_6
+    :catchall_0
     new-instance v0, Ljava/lang/UnsatisfiedLinkError;
 
     .line 8

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/vw3;->b:B
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final a()Llibs/zw3;
-    .registers 21
+    .locals 20
 
     .line 1
     move-object/from16 v0, p0
@@ -66,7 +66,7 @@
 
     .line 18
     .line 19
-    packed-switch v1, :pswitch_data_30c
+    packed-switch v1, :pswitch_data_0
 
     .line 20
     .line 21
@@ -208,7 +208,7 @@
     return-object v11
 
     .line 91
-    :pswitch_5a
+    :pswitch_0
     new-instance v8, Ljava/math/BigInteger;
 
     .line 92
@@ -342,7 +342,7 @@
     return-object v1
 
     .line 156
-    :pswitch_9b
+    :pswitch_1
     new-instance v5, Ljava/math/BigInteger;
 
     .line 157
@@ -478,7 +478,7 @@
     return-object v2
 
     .line 223
-    :pswitch_de
+    :pswitch_2
     new-instance v1, Ljava/math/BigInteger;
 
     .line 224
@@ -600,7 +600,7 @@
     return-object v3
 
     .line 284
-    :pswitch_11b
+    :pswitch_3
     move-wide v4, v8
 
     .line 285
@@ -725,7 +725,7 @@
     return-object v4
 
     .line 346
-    :pswitch_159
+    :pswitch_4
     move-wide v4, v8
 
     .line 347
@@ -859,7 +859,7 @@
     return-object v5
 
     .line 411
-    :pswitch_19a
+    :pswitch_5
     move-wide v4, v8
 
     .line 412
@@ -987,7 +987,7 @@
     return-object v6
 
     .line 474
-    :pswitch_1d9
+    :pswitch_6
     move-wide v4, v8
 
     .line 475
@@ -1112,7 +1112,7 @@
     return-object v7
 
     .line 536
-    :pswitch_217
+    :pswitch_7
     new-instance v4, Ljava/math/BigInteger;
 
     .line 537
@@ -1226,7 +1226,7 @@
     return-object v1
 
     .line 593
-    :pswitch_250
+    :pswitch_8
     new-instance v5, Ljava/math/BigInteger;
 
     .line 594
@@ -1356,7 +1356,7 @@
     return-object v2
 
     .line 656
-    :pswitch_28f
+    :pswitch_9
     new-instance v6, Ljava/math/BigInteger;
 
     .line 657
@@ -1479,7 +1479,7 @@
     return-object v3
 
     .line 716
-    :pswitch_2cb
+    :pswitch_a
     new-instance v7, Ljava/math/BigInteger;
 
     .line 717
@@ -1615,18 +1615,18 @@
     nop
 
     .line 781
-    :pswitch_data_30c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2cb
-        :pswitch_28f
-        :pswitch_250
-        :pswitch_217
-        :pswitch_1d9
-        :pswitch_19a
-        :pswitch_159
-        :pswitch_11b
-        :pswitch_de
-        :pswitch_9b
-        :pswitch_5a
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

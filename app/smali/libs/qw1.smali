@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic a(Llibs/bs1;)Landroid/net/Uri;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/app/Activity;->getReferrer()Landroid/net/Uri;

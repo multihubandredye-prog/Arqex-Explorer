@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(JB)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/f81;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final b(Llibs/x61;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/f81;->X:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_10
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -60,7 +60,7 @@
     return-void
 
     .line 12
-    :pswitch_b
+    :pswitch_0
     invoke-static {v1, v2, p1}, Llibs/za;->q(JLlibs/x61;)V
 
     .line 13
@@ -72,8 +72,8 @@
     nop
 
     .line 17
-    :pswitch_data_10
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_b
+        :pswitch_0
     .end packed-switch
 .end method

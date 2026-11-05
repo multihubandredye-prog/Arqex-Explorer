@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const/16 v0, 0x100
@@ -28,7 +28,7 @@
 
     .line 4
     .line 5
-    fill-array-data v1, :array_18
+    fill-array-data v1, :array_0
 
     .line 6
     .line 7
@@ -41,7 +41,7 @@
 
     .line 11
     .line 12
-    fill-array-data v0, :array_21c
+    fill-array-data v0, :array_1
 
     .line 13
     .line 14
@@ -66,7 +66,7 @@
     return-void
 
     .line 25
-    :array_18
+    :array_0
     .array-data 4
         0x1ff8
         0x7fffd8
@@ -332,7 +332,7 @@
     .line 29
     .line 30
     .line 31
-    :array_21c
+    :array_1
     .array-data 1
         0xdt
         0x17t
@@ -594,7 +594,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 9
+    .locals 8
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -621,12 +621,12 @@
     const/4 v0, 0x0
 
     .line 13
-    :goto_c
+    :goto_0
     const/16 v2, 0x100
 
     .line 14
     .line 15
-    if-ge v0, v2, :cond_5e
+    if-ge v0, v2, :cond_4
 
     .line 16
     .line 17
@@ -659,12 +659,12 @@
 
     .line 31
     .line 32
-    :goto_1f
+    :goto_1
     const/16 v6, 0x8
 
     .line 33
     .line 34
-    if-le v3, v6, :cond_45
+    if-le v3, v6, :cond_2
 
     .line 35
     .line 36
@@ -691,7 +691,7 @@
 
     .line 46
     .line 47
-    if-eqz v5, :cond_3e
+    if-eqz v5, :cond_1
 
     .line 48
     .line 49
@@ -699,7 +699,7 @@
 
     .line 50
     .line 51
-    if-nez v7, :cond_3b
+    if-nez v7, :cond_0
 
     .line 52
     .line 53
@@ -716,15 +716,15 @@
 
     .line 59
     .line 60
-    :cond_3b
+    :cond_0
     aget-object v5, v5, v6
 
     .line 61
     .line 62
-    goto :goto_1f
+    goto :goto_1
 
     .line 63
-    :cond_3e
+    :cond_1
     const-string v0, "invalid dictionary: prefix not unique"
 
     .line 64
@@ -740,7 +740,7 @@
     throw v0
 
     .line 70
-    :cond_45
+    :cond_2
     rsub-int/lit8 v3, v3, 0x8
 
     .line 71
@@ -762,12 +762,12 @@
     move v6, v2
 
     .line 79
-    :goto_4e
+    :goto_2
     add-int v7, v2, v3
 
     .line 80
     .line 81
-    if-ge v6, v7, :cond_5b
+    if-ge v6, v7, :cond_3
 
     .line 82
     .line 83
@@ -787,17 +787,17 @@
 
     .line 90
     .line 91
-    goto :goto_4e
+    goto :goto_2
 
     .line 92
-    :cond_5b
+    :cond_3
     add-int/lit8 v0, v0, 0x1
 
     .line 93
     .line 94
-    goto :goto_c
+    goto :goto_0
 
     .line 95
-    :cond_5e
+    :cond_4
     return-void
 .end method

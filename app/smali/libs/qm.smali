@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "CRC-32"
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public final engineDigest()[B
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/qm;->a:Ljava/util/zip/CRC32;
@@ -80,7 +80,7 @@
 .end method
 
 .method public final engineGetDigestLength()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x4
@@ -90,7 +90,7 @@
 .end method
 
 .method public final engineReset()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/qm;->a:Ljava/util/zip/CRC32;
@@ -106,7 +106,7 @@
 .end method
 
 .method public final engineUpdate(B)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/qm;->a:Ljava/util/zip/CRC32;
@@ -122,7 +122,7 @@
 .end method
 
 .method public final engineUpdate([BII)V
-    .registers 5
+    .locals 1
 
     .line 7
     iget-object v0, p0, Llibs/qm;->a:Ljava/util/zip/CRC32;

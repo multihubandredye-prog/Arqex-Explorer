@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;Ljava/lang/reflect/Field;Lcom/android/apksig/internal/asn1/Asn1Field;)V
-    .registers 6
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -84,7 +84,7 @@
     const/4 v1, -0x1
 
     .line 29
-    if-ne p2, v0, :cond_29
+    if-ne p2, v0, :cond_1
 
     .line 30
     .line 31
@@ -96,7 +96,7 @@
     move-result p2
 
     .line 35
-    if-eq p2, v1, :cond_27
+    if-eq p2, v1, :cond_0
 
     .line 36
     .line 37
@@ -104,16 +104,16 @@
 
     .line 38
     .line 39
-    goto :goto_29
+    goto :goto_0
 
     .line 40
-    :cond_27
+    :cond_0
     sget-object p2, Llibs/x5;->X:Llibs/x5;
 
     .line 41
     .line 42
-    :cond_29
-    :goto_29
+    :cond_1
+    :goto_0
     invoke-static {p2}, Llibs/xf3;->z(Llibs/x5;)I
 
     .line 43
@@ -134,7 +134,7 @@
     move-result p2
 
     .line 52
-    if-eq p2, v1, :cond_3a
+    if-eq p2, v1, :cond_2
 
     .line 53
     .line 54
@@ -146,15 +146,15 @@
     move-result p1
 
     .line 58
-    goto :goto_49
+    goto :goto_2
 
     .line 59
-    :cond_3a
+    :cond_2
     sget-object p2, Llibs/z5;->Y:Llibs/z5;
 
     .line 60
     .line 61
-    if-eq p1, p2, :cond_48
+    if-eq p1, p2, :cond_4
 
     .line 62
     .line 63
@@ -162,14 +162,14 @@
 
     .line 64
     .line 65
-    if-ne p1, p2, :cond_43
+    if-ne p1, p2, :cond_3
 
     .line 66
     .line 67
-    goto :goto_48
+    goto :goto_1
 
     .line 68
-    :cond_43
+    :cond_3
     invoke-static {p1}, Llibs/xf3;->Object(Llibs/z5;)I
 
     .line 69
@@ -178,15 +178,15 @@
     move-result p1
 
     .line 72
-    goto :goto_49
+    goto :goto_2
 
     .line 73
-    :cond_48
-    :goto_48
+    :cond_4
+    :goto_1
     const/4 p1, -0x1
 
     .line 74
-    :goto_49
+    :goto_2
     iput p1, p0, Llibs/s5;->g:I
 
     .line 75
@@ -207,7 +207,7 @@
 
     .line 83
     .line 84
-    if-eq p1, p2, :cond_59
+    if-eq p1, p2, :cond_5
 
     .line 85
     .line 86
@@ -215,11 +215,11 @@
 
     .line 87
     .line 88
-    if-ne p1, p2, :cond_5f
+    if-ne p1, p2, :cond_6
 
     .line 89
     .line 90
-    :cond_59
+    :cond_5
     invoke-interface {p3}, Lcom/android/apksig/internal/asn1/Asn1Field;->tagNumber()I
 
     .line 91
@@ -228,11 +228,11 @@
     move-result p2
 
     .line 94
-    if-eq p2, v1, :cond_66
+    if-eq p2, v1, :cond_7
 
     .line 95
     .line 96
-    :cond_5f
+    :cond_6
     invoke-interface {p3}, Lcom/android/apksig/internal/asn1/Asn1Field;->optional()Z
 
     .line 97
@@ -248,7 +248,7 @@
     return-void
 
     .line 103
-    :cond_66
+    :cond_7
     new-instance p2, Llibs/v5;
 
     .line 104
@@ -290,7 +290,7 @@
 
 # virtual methods
 .method public final a()[B
-    .registers 9
+    .locals 8
 
     .line 1
     iget-object v0, p0, Llibs/s5;->b:Ljava/lang/Object;
@@ -312,7 +312,7 @@
     const/4 v1, 0x0
 
     .line 10
-    if-nez v0, :cond_18
+    if-nez v0, :cond_1
 
     .line 11
     .line 12
@@ -320,14 +320,14 @@
 
     .line 13
     .line 14
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 15
     .line 16
     return-object v1
 
     .line 17
-    :cond_10
+    :cond_0
     new-instance v0, Llibs/v5;
 
     .line 18
@@ -344,7 +344,7 @@
     throw v0
 
     .line 25
-    :cond_18
+    :cond_1
     iget-object v2, p0, Llibs/s5;->d:Llibs/z5;
 
     .line 26
@@ -373,7 +373,7 @@
     move-result v3
 
     .line 39
-    if-eqz v3, :cond_6e
+    if-eqz v3, :cond_6
 
     .line 40
     .line 41
@@ -391,14 +391,14 @@
     const/4 v7, 0x0
 
     .line 47
-    if-eq v3, v5, :cond_66
+    if-eq v3, v5, :cond_5
 
     .line 48
     .line 49
     const/4 v5, 0x2
 
     .line 50
-    if-ne v3, v5, :cond_60
+    if-ne v3, v5, :cond_4
 
     .line 51
     .line 52
@@ -414,11 +414,11 @@
 
     .line 57
     .line 58
-    if-eq v2, v3, :cond_58
+    if-eq v2, v3, :cond_3
 
     .line 59
     .line 60
-    if-ge v6, v3, :cond_4c
+    if-ge v6, v3, :cond_2
 
     .line 61
     .line 62
@@ -457,7 +457,7 @@
     return-object v0
 
     .line 77
-    :cond_4c
+    :cond_2
     new-instance v0, Llibs/v5;
 
     .line 78
@@ -482,7 +482,7 @@
     throw v0
 
     .line 89
-    :cond_58
+    :cond_3
     new-instance v0, Llibs/v5;
 
     .line 90
@@ -499,7 +499,7 @@
     throw v0
 
     .line 97
-    :cond_60
+    :cond_4
     const-string v0, "Unknown tagging mode: "
 
     .line 98
@@ -512,7 +512,7 @@
     return-object v1
 
     .line 103
-    :cond_66
+    :cond_5
     new-array v1, v5, [[B
 
     .line 104
@@ -529,6 +529,6 @@
     move-result-object v0
 
     .line 111
-    :cond_6e
+    :cond_6
     return-object v0
 .end method

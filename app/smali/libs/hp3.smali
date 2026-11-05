@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 7
+    .locals 7
 
     .line 1
     const/4 v0, 0x1
@@ -22,7 +22,7 @@
     const/4 v1, 0x0
 
     .line 3
-    :try_start_2
+    :try_start_0
     const-string v2, "X509"
 
     .line 4
@@ -51,7 +51,7 @@
     move-result-object v2
 
     .line 17
-    if-eqz v2, :cond_35
+    if-eqz v2, :cond_1
 
     .line 18
     .line 19
@@ -61,8 +61,8 @@
     const/4 v4, 0x0
 
     .line 21
-    :goto_14
-    if-ge v4, v3, :cond_35
+    :goto_0
+    if-ge v4, v3, :cond_1
 
     .line 22
     .line 23
@@ -74,7 +74,7 @@
 
     .line 26
     .line 27
-    if-eqz v6, :cond_23
+    if-eqz v6, :cond_0
 
     .line 28
     .line 29
@@ -83,30 +83,30 @@
     .line 30
     .line 31
     sput-object v5, Llibs/hp3;->a:Ljavax/net/ssl/X509TrustManager;
-    :try_end_20
-    .catchall {:try_start_2 .. :try_end_20} :catchall_21
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 32
     .line 33
-    goto :goto_35
+    goto :goto_2
 
     .line 34
-    :catchall_21
+    :catchall_0
     move-exception v2
 
     .line 35
-    goto :goto_26
+    goto :goto_1
 
     .line 36
-    :cond_23
+    :cond_0
     add-int/lit8 v4, v4, 0x1
 
     .line 37
     .line 38
-    goto :goto_14
+    goto :goto_0
 
     .line 39
-    :goto_26
+    :goto_1
     invoke-static {v2}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 40
@@ -136,8 +136,8 @@
     .line 52
     .line 53
     .line 54
-    :cond_35
-    :goto_35
+    :cond_1
+    :goto_2
     new-instance v2, Llibs/gp3;
 
     .line 55

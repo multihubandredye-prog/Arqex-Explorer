@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/BrowseActivity;Ljava/lang/String;Ljava/util/ArrayList;I)V
-    .registers 5
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 5
+    .locals 4
 
     iget-object v0, p0, Llibs/SmartFeaturesV116$EmptyScanUiRunnable;->activity:Lcom/mixplorer/activities/BrowseActivity;
 

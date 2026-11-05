@@ -47,7 +47,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 3
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

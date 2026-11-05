@@ -55,7 +55,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 117
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -110,7 +110,7 @@
 
     iput-object v0, p0, Llibs/n32;->h:Ljava/net/ProxySelector;
 
-    if-nez v0, :cond_39
+    if-nez v0, :cond_0
 
     .line 126
     new-instance v0, Llibs/l22;
@@ -120,7 +120,7 @@
     iput-object v0, p0, Llibs/n32;->h:Ljava/net/ProxySelector;
 
     .line 127
-    :cond_39
+    :cond_0
     sget-object v0, Llibs/h00;->b:Llibs/s73;
 
     iput-object v0, p0, Llibs/n32;->i:Llibs/h00;
@@ -192,7 +192,7 @@
 .end method
 
 .method public constructor <init>(Llibs/o32;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

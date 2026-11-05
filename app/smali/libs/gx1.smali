@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/widget/Toast;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Landroid/widget/Toast;-><init>(Landroid/content/Context;)V
@@ -29,22 +29,22 @@
 .end method
 
 .method public static a()V
-    .registers 3
+    .locals 3
 
     .line 1
     sget-object v0, Llibs/gx1;->b:Llibs/gx1;
 
     .line 2
     .line 3
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
-    :try_start_5
+    :cond_0
+    :try_start_0
     iget-object v0, v0, Llibs/gx1;->a:Landroid/widget/Toast;
 
     .line 7
@@ -57,7 +57,7 @@
     move-result-object v0
 
     .line 12
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_1
 
     .line 13
     .line 14
@@ -81,7 +81,7 @@
 
     .line 23
     .line 24
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_1
 
     .line 25
     .line 26
@@ -113,7 +113,7 @@
     move-result v0
 
     .line 40
-    if-lez v0, :cond_36
+    if-lez v0, :cond_1
 
     .line 41
     .line 42
@@ -142,14 +142,14 @@
     .line 53
     .line 54
     .line 55
-    :cond_36
+    :cond_1
     sget-object v0, Llibs/gx1;->b:Llibs/gx1;
 
     .line 56
     .line 57
     invoke-virtual {v0}, Landroid/widget/Toast;->cancel()V
-    :try_end_3b
-    .catchall {:try_start_5 .. :try_end_3b} :catchall_3c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 58
     .line 59
@@ -157,7 +157,7 @@
     return-void
 
     .line 61
-    :catchall_3c
+    :catchall_0
     move-exception v0
 
     .line 62
@@ -200,7 +200,7 @@
 .end method
 
 .method public static b()V
-    .registers 3
+    .locals 3
 
     .line 1
     sget-object v0, Llibs/zt0;->f:Landroid/os/Handler;
@@ -229,17 +229,17 @@
 .end method
 
 .method public static c(Landroid/content/Context;Ljava/lang/Object;IZ)V
-    .registers 7
+    .locals 3
 
     .line 1
-    if-nez p1, :cond_3
+    if-nez p1, :cond_0
 
     .line 2
     .line 3
     return-void
 
     .line 4
-    :cond_3
+    :cond_0
     const/4 v0, 0x0
 
     .line 5
@@ -247,34 +247,34 @@
 
     .line 6
     .line 7
-    if-eqz p3, :cond_f
+    if-eqz p3, :cond_1
 
     .line 8
     .line 9
-    :try_start_8
+    :try_start_0
     invoke-static {}, Llibs/gx1;->a()V
 
     .line 10
     .line 11
     .line 12
-    goto :goto_f
+    goto :goto_0
 
     .line 13
-    :catchall_c
+    :catchall_0
     move-exception p0
 
     .line 14
-    goto/16 :goto_b3
+    goto/16 :goto_2
 
     .line 15
     .line 16
-    :cond_f
-    :goto_f
+    :cond_1
+    :goto_0
     instance-of p3, p1, Ljava/lang/Integer;
 
     .line 17
     .line 18
-    if-eqz p3, :cond_20
+    if-eqz p3, :cond_2
 
     .line 19
     .line 20
@@ -302,10 +302,10 @@
     move-result-object p1
 
     .line 32
-    goto :goto_24
+    goto :goto_1
 
     .line 33
-    :cond_20
+    :cond_2
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     .line 34
@@ -314,7 +314,7 @@
     move-result-object p1
 
     .line 37
-    :goto_24
+    :goto_1
     sget-object p3, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 38
@@ -327,7 +327,7 @@
     move-result p3
 
     .line 43
-    if-nez p3, :cond_30
+    if-nez p3, :cond_3
 
     .line 44
     .line 45
@@ -339,7 +339,7 @@
     return-void
 
     .line 49
-    :cond_30
+    :cond_3
     new-instance p3, Landroid/widget/Toast;
 
     .line 50
@@ -449,14 +449,14 @@
     move-result p3
 
     .line 106
-    if-ne p3, p1, :cond_6c
+    if-ne p3, p1, :cond_4
 
     .line 107
     .line 108
     const/4 p1, -0x1
 
     .line 109
-    :cond_6c
+    :cond_4
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 110
@@ -529,7 +529,7 @@
     move-result-object p2
 
     .line 147
-    if-eqz p2, :cond_ad
+    if-eqz p2, :cond_5
 
     .line 148
     .line 149
@@ -553,7 +553,7 @@
 
     .line 158
     .line 159
-    if-eqz p2, :cond_ad
+    if-eqz p2, :cond_5
 
     .line 160
     .line 161
@@ -582,14 +582,14 @@
     .line 172
     .line 173
     .line 174
-    :cond_ad
+    :cond_5
     sget-object p0, Llibs/gx1;->b:Llibs/gx1;
 
     .line 175
     .line 176
     invoke-virtual {p0}, Llibs/gx1;->show()V
-    :try_end_b2
-    .catchall {:try_start_8 .. :try_end_b2} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 177
     .line 178
@@ -597,7 +597,7 @@
     return-void
 
     .line 180
-    :goto_b3
+    :goto_2
     invoke-static {p0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 181
@@ -630,7 +630,7 @@
 .end method
 
 .method public static d(Ljava/lang/Object;)V
-    .registers 4
+    .locals 3
 
     .line 1
     sget-object v0, Llibs/zt0;->f:Landroid/os/Handler;
@@ -661,7 +661,7 @@
 
 # virtual methods
 .method public final getDuration()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/gx1;->a:Landroid/widget/Toast;
@@ -680,7 +680,7 @@
 .end method
 
 .method public final getGravity()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/gx1;->a:Landroid/widget/Toast;
@@ -699,7 +699,7 @@
 .end method
 
 .method public final getHorizontalMargin()F
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/gx1;->a:Landroid/widget/Toast;
@@ -718,7 +718,7 @@
 .end method
 
 .method public final getVerticalMargin()F
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/gx1;->a:Landroid/widget/Toast;
@@ -737,7 +737,7 @@
 .end method
 
 .method public final getView()Landroid/view/View;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/gx1;->a:Landroid/widget/Toast;
@@ -756,7 +756,7 @@
 .end method
 
 .method public final getXOffset()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/gx1;->a:Landroid/widget/Toast;
@@ -775,7 +775,7 @@
 .end method
 
 .method public final getYOffset()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/gx1;->a:Landroid/widget/Toast;
@@ -794,7 +794,7 @@
 .end method
 
 .method public final setDuration(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/gx1;->a:Landroid/widget/Toast;
@@ -810,7 +810,7 @@
 .end method
 
 .method public final setGravity(III)V
-    .registers 5
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/gx1;->a:Landroid/widget/Toast;
@@ -826,7 +826,7 @@
 .end method
 
 .method public final setMargin(FF)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/gx1;->a:Landroid/widget/Toast;
@@ -842,7 +842,7 @@
 .end method
 
 .method public final setText(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/gx1;->a:Landroid/widget/Toast;
@@ -858,7 +858,7 @@
 .end method
 
 .method public final setText(Ljava/lang/CharSequence;)V
-    .registers 3
+    .locals 1
 
     .line 7
     iget-object v0, p0, Llibs/gx1;->a:Landroid/widget/Toast;
@@ -869,7 +869,7 @@
 .end method
 
 .method public final setView(Landroid/view/View;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/gx1;->a:Landroid/widget/Toast;
@@ -881,7 +881,7 @@
     .line 4
     .line 5
     .line 6
-    if-eqz p1, :cond_2c
+    if-eqz p1, :cond_0
 
     .line 7
     .line 8
@@ -914,11 +914,11 @@
 
     .line 22
     .line 23
-    if-lt v1, v2, :cond_2c
+    if-lt v1, v2, :cond_0
 
     .line 24
     .line 25
-    :try_start_18
+    :try_start_0
     const-class v1, Landroid/view/View;
 
     .line 26
@@ -944,8 +944,8 @@
     .line 36
     .line 37
     invoke-virtual {v1, p1, v0}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
-    :try_end_27
-    .catchall {:try_start_18 .. :try_end_27} :catchall_28
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 38
     .line 39
@@ -953,7 +953,7 @@
     return-void
 
     .line 41
-    :catchall_28
+    :catchall_0
     move-exception p1
 
     .line 42
@@ -962,12 +962,12 @@
     .line 43
     .line 44
     .line 45
-    :cond_2c
+    :cond_0
     return-void
 .end method
 
 .method public final show()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/gx1;->a:Landroid/widget/Toast;

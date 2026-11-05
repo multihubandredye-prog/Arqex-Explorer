@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/yp1;Llibs/xp1;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/tp1;->Y:Llibs/yp1;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final applyTransformation(FLandroid/view/animation/Transformation;)V
-    .registers 12
+    .locals 9
 
     .line 1
     iget-object p2, p0, Llibs/tp1;->Y:Llibs/yp1;
@@ -53,7 +53,7 @@
 
     .line 9
     .line 10
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_0
 
     .line 11
     .line 12
@@ -138,7 +138,7 @@
     return-void
 
     .line 49
-    :cond_30
+    :cond_0
     iget v0, v2, Llibs/xp1;->h:F
 
     .line 50

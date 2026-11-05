@@ -89,13 +89,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 30
+    .locals 30
 
     .line 1
     :try_start_0
     invoke-static {}, Lorg/conscrypt/NativeCryptoJni;->init()V
-    :try_end_3
-    .catch Ljava/lang/UnsatisfiedLinkError; {:try_start_0 .. :try_end_3} :catch_5
+    :try_end_0
+    .catch Ljava/lang/UnsatisfiedLinkError; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 2
     .line 3
@@ -103,14 +103,14 @@
     const/4 v0, 0x0
 
     .line 5
-    goto :goto_6
+    goto :goto_0
 
     .line 6
-    :catch_5
+    :catch_0
     move-exception v0
 
     .line 7
-    :goto_6
+    :goto_0
     sput-object v0, Lorg/conscrypt/NativeCrypto;->loadError:Ljava/lang/UnsatisfiedLinkError;
 
     .line 8
@@ -227,7 +227,7 @@
 
     .line 64
     .line 65
-    if-nez v0, :cond_92
+    if-nez v0, :cond_3
 
     .line 66
     .line 67
@@ -250,7 +250,7 @@
 
     .line 75
     .line 76
-    if-nez v3, :cond_8c
+    if-nez v3, :cond_2
 
     .line 77
     .line 78
@@ -273,8 +273,8 @@
     const/4 v7, 0x0
 
     .line 87
-    :goto_56
-    if-ge v7, v2, :cond_75
+    :goto_1
+    if-ge v7, v2, :cond_0
 
     .line 88
     .line 89
@@ -332,10 +332,10 @@
 
     .line 116
     .line 117
-    goto :goto_56
+    goto :goto_1
 
     .line 118
-    :cond_75
+    :cond_0
     sget-object v0, Lorg/conscrypt/NativeCrypto;->SUPPORTED_TLS_1_2_CIPHER_SUITES:[Ljava/lang/String;
 
     .line 119
@@ -367,29 +367,29 @@
     move-result v0
 
     .line 133
-    if-ne v0, v5, :cond_88
+    if-ne v0, v5, :cond_1
 
     .line 134
     .line 135
     const/4 v0, 0x1
 
     .line 136
-    goto :goto_89
+    goto :goto_2
 
     .line 137
-    :cond_88
+    :cond_1
     const/4 v0, 0x0
 
     .line 138
-    :goto_89
+    :goto_2
     sput-boolean v0, Lorg/conscrypt/NativeCrypto;->HAS_AES_HARDWARE:Z
 
     .line 139
     .line 140
-    goto :goto_99
+    goto :goto_3
 
     .line 141
-    :cond_8c
+    :cond_2
     const-string v0, "Invalid cipher list returned by get_cipher_names"
 
     .line 142
@@ -402,7 +402,7 @@
     return-void
 
     .line 147
-    :cond_92
+    :cond_3
     sput-boolean v4, Lorg/conscrypt/NativeCrypto;->HAS_AES_HARDWARE:Z
 
     .line 148
@@ -418,7 +418,7 @@
     const/4 v0, 0x0
 
     .line 154
-    :goto_99
+    :goto_3
     const-string v2, "TLS_RSA_WITH_AES_256_CBC_SHA"
 
     .line 155
@@ -522,7 +522,7 @@
 
     .line 204
     .line 205
-    if-eqz v0, :cond_ed
+    if-eqz v0, :cond_4
 
     .line 206
     .line 207
@@ -586,10 +586,10 @@
 
     .line 236
     .line 237
-    goto :goto_10b
+    goto :goto_4
 
     .line 238
-    :cond_ed
+    :cond_4
     new-array v0, v4, [Ljava/lang/String;
 
     .line 239
@@ -650,7 +650,7 @@
 
     .line 267
     .line 268
-    :goto_10b
+    :goto_4
     sput-object v0, Lorg/conscrypt/NativeCrypto;->DEFAULT_X509_CIPHER_SUITES:[Ljava/lang/String;
 
     .line 269
@@ -759,7 +759,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -1005,7 +1005,7 @@
 .end method
 
 .method public static EVP_HPKE_CTX_setup_base_mode_recipient(Lorg/conscrypt/HpkeSuite;[B[B[B)Ljava/lang/Object;
-    .registers 11
+    .locals 7
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/HpkeSuite;->getKem()Lorg/conscrypt/HpkeSuite$KEM;
@@ -1080,7 +1080,7 @@
 .end method
 
 .method public static EVP_HPKE_CTX_setup_base_mode_sender(Lorg/conscrypt/HpkeSuite;[B[B)[Ljava/lang/Object;
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/HpkeSuite;->getKem()Lorg/conscrypt/HpkeSuite$KEM;
@@ -1146,7 +1146,7 @@
 .end method
 
 .method public static EVP_HPKE_CTX_setup_base_mode_sender_with_seed_for_testing(Lorg/conscrypt/HpkeSuite;[B[B[B)[Ljava/lang/Object;
-    .registers 11
+    .locals 7
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/HpkeSuite;->getKem()Lorg/conscrypt/HpkeSuite$KEM;
@@ -1707,7 +1707,7 @@
 .end method
 
 .method public static X509_NAME_hash(Ljavax/security/auth/x500/X500Principal;)I
-    .registers 2
+    .locals 1
 
     .line 50
     const-string v0, "SHA1"
@@ -1720,7 +1720,7 @@
 .end method
 
 .method private static X509_NAME_hash(Ljavax/security/auth/x500/X500Principal;Ljava/lang/String;)I
-    .registers 3
+    .locals 1
 
     .line 1
     :try_start_0
@@ -1799,8 +1799,8 @@
 
     .line 35
     aget-byte p0, p0, v0
-    :try_end_24
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_24} :catch_2a
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 36
     .line 37
@@ -1818,7 +1818,7 @@
     return p0
 
     .line 43
-    :catch_2a
+    :catch_0
     move-exception p0
 
     .line 44
@@ -1835,7 +1835,7 @@
 .end method
 
 .method public static X509_NAME_hash_old(Ljavax/security/auth/x500/X500Principal;)I
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "MD5"
@@ -1983,20 +1983,20 @@
 .end method
 
 .method public static checkAvailability()V
-    .registers 0
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public static checkEnabledCipherSuites([Ljava/lang/String;)[Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-eqz p0, :cond_65
+    if-eqz p0, :cond_7
 
     .line 3
     .line 4
@@ -2006,11 +2006,11 @@
     const/4 v2, 0x0
 
     .line 6
-    :goto_5
+    :goto_0
     array-length v3, p0
 
     .line 7
-    if-ge v2, v3, :cond_64
+    if-ge v2, v3, :cond_6
 
     .line 8
     .line 9
@@ -2018,7 +2018,7 @@
 
     .line 10
     .line 11
-    if-eqz v3, :cond_58
+    if-eqz v3, :cond_5
 
     .line 12
     .line 13
@@ -2034,7 +2034,7 @@
     move-result v3
 
     .line 19
-    if-nez v3, :cond_55
+    if-nez v3, :cond_4
 
     .line 20
     .line 21
@@ -2054,14 +2054,14 @@
     move-result v3
 
     .line 29
-    if-eqz v3, :cond_1f
+    if-eqz v3, :cond_0
 
     .line 30
     .line 31
-    goto :goto_55
+    goto :goto_1
 
     .line 32
-    :cond_1f
+    :cond_0
     sget-object v3, Lorg/conscrypt/NativeCrypto;->SUPPORTED_TLS_1_2_CIPHER_SUITES_SET:Ljava/util/Set;
 
     .line 33
@@ -2078,14 +2078,14 @@
     move-result v3
 
     .line 40
-    if-eqz v3, :cond_2a
+    if-eqz v3, :cond_1
 
     .line 41
     .line 42
-    goto :goto_55
+    goto :goto_1
 
     .line 43
-    :cond_2a
+    :cond_1
     sget-object v3, Lorg/conscrypt/NativeCrypto;->DEFAULT_SPAKE_CIPHER_SUITES:[Ljava/lang/String;
 
     .line 44
@@ -2106,14 +2106,14 @@
     move-result v3
 
     .line 53
-    if-eqz v3, :cond_37
+    if-eqz v3, :cond_2
 
     .line 54
     .line 55
-    goto :goto_55
+    goto :goto_1
 
     .line 56
-    :cond_37
+    :cond_2
     sget-object v3, Lorg/conscrypt/NativeCrypto;->SUPPORTED_LEGACY_CIPHER_SUITES_SET:Ljava/util/Set;
 
     .line 57
@@ -2130,14 +2130,14 @@
     move-result v3
 
     .line 64
-    if-eqz v3, :cond_42
+    if-eqz v3, :cond_3
 
     .line 65
     .line 66
-    goto :goto_55
+    goto :goto_1
 
     .line 67
-    :cond_42
+    :cond_3
     new-instance v1, Ljava/lang/StringBuilder;
 
     .line 68
@@ -2175,16 +2175,16 @@
     return-object v0
 
     .line 86
-    :cond_55
-    :goto_55
+    :cond_4
+    :goto_1
     add-int/lit8 v2, v2, 0x1
 
     .line 87
     .line 88
-    goto :goto_5
+    goto :goto_0
 
     .line 89
-    :cond_58
+    :cond_5
     const-string p0, "cipherSuites["
 
     .line 90
@@ -2209,11 +2209,11 @@
     return-object v0
 
     .line 101
-    :cond_64
+    :cond_6
     return-object p0
 
     .line 102
-    :cond_65
+    :cond_7
     const-string p0, "cipherSuites == null"
 
     .line 103
@@ -2227,13 +2227,13 @@
 .end method
 
 .method public static checkEnabledProtocols([Ljava/lang/String;)[Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-eqz p0, :cond_2d
+    if-eqz p0, :cond_3
 
     .line 3
     .line 4
@@ -2243,8 +2243,8 @@
     const/4 v2, 0x0
 
     .line 6
-    :goto_5
-    if-ge v2, v1, :cond_2c
+    :goto_0
+    if-ge v2, v1, :cond_2
 
     .line 7
     .line 8
@@ -2252,7 +2252,7 @@
 
     .line 9
     .line 10
-    if-eqz v3, :cond_26
+    if-eqz v3, :cond_1
 
     .line 11
     .line 12
@@ -2276,7 +2276,7 @@
     move-result v4
 
     .line 22
-    if-eqz v4, :cond_1a
+    if-eqz v4, :cond_0
 
     .line 23
     .line 24
@@ -2284,10 +2284,10 @@
 
     .line 25
     .line 26
-    goto :goto_5
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_0
     const-string p0, "protocol "
 
     .line 28
@@ -2312,7 +2312,7 @@
     return-object v0
 
     .line 39
-    :cond_26
+    :cond_1
     const-string p0, "protocols contains null"
 
     .line 40
@@ -2325,11 +2325,11 @@
     return-object v0
 
     .line 45
-    :cond_2c
+    :cond_2
     return-object p0
 
     .line 46
-    :cond_2d
+    :cond_3
     const-string p0, "protocols == null"
 
     .line 47
@@ -2343,7 +2343,7 @@
 .end method
 
 .method public static cipherSuiteFromJava(Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "SSL_RSA_WITH_3DES_EDE_CBC_SHA"
@@ -2358,7 +2358,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -2366,12 +2366,12 @@
 
     .line 10
     .line 11
-    :cond_a
+    :cond_0
     return-object p0
 .end method
 
 .method public static cipherSuiteToJava(Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "TLS_RSA_WITH_3DES_EDE_CBC_SHA"
@@ -2386,7 +2386,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -2394,7 +2394,7 @@
 
     .line 10
     .line 11
-    :cond_a
+    :cond_0
     return-object p0
 .end method
 
@@ -2423,7 +2423,7 @@
 .end method
 
 .method public static getDefaultProtocols()[Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/NativeCrypto;->TLSV13_PROTOCOLS:[Ljava/lang/String;
@@ -2452,7 +2452,7 @@
 .end method
 
 .method private static getProtocolConstant(Ljava/lang/String;)I
-    .registers 3
+    .locals 2
 
     .line 1
     const-string v0, "TLSv1"
@@ -2467,7 +2467,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -2478,7 +2478,7 @@
     return p0
 
     .line 12
-    :cond_b
+    :cond_0
     const-string v0, "TLSv1.1"
 
     .line 13
@@ -2491,7 +2491,7 @@
     move-result v0
 
     .line 18
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     .line 19
     .line 20
@@ -2502,7 +2502,7 @@
     return p0
 
     .line 23
-    :cond_16
+    :cond_1
     const-string v0, "TLSv1.2"
 
     .line 24
@@ -2515,7 +2515,7 @@
     move-result v0
 
     .line 29
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_2
 
     .line 30
     .line 31
@@ -2526,7 +2526,7 @@
     return p0
 
     .line 34
-    :cond_21
+    :cond_2
     const-string v0, "TLSv1.3"
 
     .line 35
@@ -2539,7 +2539,7 @@
     move-result v0
 
     .line 40
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_3
 
     .line 41
     .line 42
@@ -2550,7 +2550,7 @@
     return p0
 
     .line 45
-    :cond_2c
+    :cond_3
     new-instance v0, Ljava/lang/AssertionError;
 
     .line 46
@@ -2576,7 +2576,7 @@
 .end method
 
 .method private static getProtocolRange([Ljava/lang/String;)Lorg/conscrypt/NativeCrypto$Range;
-    .registers 7
+    .locals 6
 
     .line 1
     invoke-static {p0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -2599,7 +2599,7 @@
     move-object v3, v2
 
     .line 9
-    :goto_8
+    :goto_0
     sget-object v4, Lorg/conscrypt/NativeCrypto;->SUPPORTED_PROTOCOLS:[Ljava/lang/String;
 
     .line 10
@@ -2607,7 +2607,7 @@
     array-length v5, v4
 
     .line 12
-    if-ge v1, v5, :cond_20
+    if-ge v1, v5, :cond_3
 
     .line 13
     .line 14
@@ -2623,48 +2623,48 @@
     move-result v5
 
     .line 20
-    if-eqz v5, :cond_1a
+    if-eqz v5, :cond_1
 
     .line 21
     .line 22
-    if-nez v2, :cond_18
+    if-nez v2, :cond_0
 
     .line 23
     .line 24
     move-object v2, v4
 
     .line 25
-    :cond_18
+    :cond_0
     move-object v3, v4
 
     .line 26
-    goto :goto_1d
+    goto :goto_1
 
     .line 27
-    :cond_1a
-    if-eqz v2, :cond_1d
+    :cond_1
+    if-eqz v2, :cond_2
 
     .line 28
     .line 29
-    goto :goto_20
+    goto :goto_2
 
     .line 30
-    :cond_1d
-    :goto_1d
+    :cond_2
+    :goto_1
     add-int/lit8 v1, v1, 0x1
 
     .line 31
     .line 32
-    goto :goto_8
+    goto :goto_0
 
     .line 33
-    :cond_20
-    :goto_20
-    if-eqz v2, :cond_2a
+    :cond_3
+    :goto_2
+    if-eqz v2, :cond_4
 
     .line 34
     .line 35
-    if-eqz v3, :cond_2a
+    if-eqz v3, :cond_4
 
     .line 36
     .line 37
@@ -2680,7 +2680,7 @@
     return-object p0
 
     .line 43
-    :cond_2a
+    :cond_4
     const-string p0, "No protocols enabled."
 
     .line 44
@@ -2697,7 +2697,7 @@
 .end method
 
 .method public static getSupportedCipherSuites()[Ljava/lang/String;
-    .registers 4
+    .locals 4
 
     .line 1
     sget-object v0, Lorg/conscrypt/NativeCrypto;->SUPPORTED_TLS_1_2_CIPHER_SUITES:[Ljava/lang/String;
@@ -2753,7 +2753,7 @@
 .end method
 
 .method public static getSupportedProtocols()[Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/NativeCrypto;->SUPPORTED_PROTOCOLS:[Ljava/lang/String;
@@ -2878,7 +2878,7 @@
 .end method
 
 .method public static setEnabledCipherSuites(JLorg/conscrypt/NativeSsl;[Ljava/lang/String;[Ljava/lang/String;)V
-    .registers 9
+    .locals 4
 
     .line 1
     invoke-static {p3}, Lorg/conscrypt/NativeCrypto;->checkEnabledCipherSuites([Ljava/lang/String;)[Ljava/lang/String;
@@ -2910,11 +2910,11 @@
     const/4 v1, 0x0
 
     .line 16
-    :goto_f
+    :goto_0
     array-length v2, p3
 
     .line 17
-    if-ge v1, v2, :cond_45
+    if-ge v1, v2, :cond_3
 
     .line 18
     .line 19
@@ -2934,14 +2934,14 @@
     move-result v3
 
     .line 27
-    if-eqz v3, :cond_1d
+    if-eqz v3, :cond_0
 
     .line 28
     .line 29
-    goto :goto_42
+    goto :goto_1
 
     .line 30
-    :cond_1d
+    :cond_0
     const-string v3, "TLS_FALLBACK_SCSV"
 
     .line 31
@@ -2954,7 +2954,7 @@
     move-result v3
 
     .line 36
-    if-eqz v3, :cond_3b
+    if-eqz v3, :cond_2
 
     .line 37
     .line 38
@@ -2970,7 +2970,7 @@
     move-result v3
 
     .line 44
-    if-nez v3, :cond_35
+    if-nez v3, :cond_1
 
     .line 45
     .line 46
@@ -2986,11 +2986,11 @@
     move-result v3
 
     .line 52
-    if-eqz v3, :cond_3b
+    if-eqz v3, :cond_2
 
     .line 53
     .line 54
-    :cond_35
+    :cond_1
     const-wide/16 v2, 0x400
 
     .line 55
@@ -3000,10 +3000,10 @@
     .line 57
     .line 58
     .line 59
-    goto :goto_42
+    goto :goto_1
 
     .line 60
-    :cond_3b
+    :cond_2
     invoke-static {v2}, Lorg/conscrypt/NativeCrypto;->cipherSuiteFromJava(Ljava/lang/String;)Ljava/lang/String;
 
     .line 61
@@ -3017,15 +3017,15 @@
     .line 65
     .line 66
     .line 67
-    :goto_42
+    :goto_1
     add-int/lit8 v1, v1, 0x1
 
     .line 68
     .line 69
-    goto :goto_f
+    goto :goto_0
 
     .line 70
-    :cond_45
+    :cond_3
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     .line 71
@@ -3059,7 +3059,7 @@
 .end method
 
 .method public static setEnabledProtocols(JLorg/conscrypt/NativeSsl;[Ljava/lang/String;)V
-    .registers 5
+    .locals 1
 
     .line 1
     invoke-static {p3}, Lorg/conscrypt/NativeCrypto;->checkEnabledProtocols([Ljava/lang/String;)[Ljava/lang/String;
@@ -3114,7 +3114,7 @@
 .end method
 
 .method public static setTlsV1DeprecationStatus(ZZ)V
-    .registers 11
+    .locals 9
 
     .line 1
     const/4 v0, 0x4
@@ -3148,7 +3148,7 @@
 
     .line 13
     .line 14
-    if-eqz p0, :cond_1e
+    if-eqz p0, :cond_0
 
     .line 15
     .line 16
@@ -3180,10 +3180,10 @@
 
     .line 29
     .line 30
-    goto :goto_34
+    goto :goto_0
 
     .line 31
-    :cond_1e
+    :cond_0
     new-array p0, v1, [Ljava/lang/String;
 
     .line 32
@@ -3228,8 +3228,8 @@
 
     .line 52
     .line 53
-    :goto_34
-    if-eqz p1, :cond_43
+    :goto_0
+    if-eqz p1, :cond_1
 
     .line 54
     .line 55
@@ -3260,7 +3260,7 @@
     return-void
 
     .line 68
-    :cond_43
+    :cond_1
     new-array p0, v2, [Ljava/lang/String;
 
     .line 69

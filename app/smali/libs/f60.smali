@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Param;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -77,7 +77,7 @@
 
     .line 29
     .line 30
-    if-eqz v2, :cond_30
+    if-eqz v2, :cond_0
 
     .line 31
     .line 32
@@ -116,7 +116,7 @@
     return-void
 
     .line 49
-    :cond_30
+    :cond_0
     invoke-virtual {p1, v1}, Llibs/Param;->q(I)Llibs/Core;
 
     .line 50
@@ -129,7 +129,7 @@
 
     .line 54
     .line 55
-    if-eqz v2, :cond_78
+    if-eqz v2, :cond_1
 
     .line 56
     .line 57
@@ -263,7 +263,7 @@
     return-void
 
     .line 121
-    :cond_78
+    :cond_1
     const-string p1, "object parse error"
 
     .line 122
@@ -282,7 +282,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 8
+    .locals 7
 
     .line 1
     new-instance v0, Llibs/Init;
@@ -326,7 +326,7 @@
 
     .line 21
     .line 22
-    if-nez v2, :cond_21
+    if-nez v2, :cond_0
 
     .line 23
     .line 24
@@ -347,10 +347,10 @@
     .line 31
     .line 32
     .line 33
-    goto :goto_4c
+    goto :goto_0
 
     .line 34
-    :cond_21
+    :cond_0
     new-instance v3, Llibs/Init;
 
     .line 35
@@ -432,7 +432,7 @@
     .line 75
     .line 76
     .line 77
-    :goto_4c
+    :goto_0
     new-instance v1, Llibs/p10;
 
     .line 78

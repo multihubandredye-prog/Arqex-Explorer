@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/reflect/Field;Lcom/android/apksig/internal/asn1/Asn1Field;)V
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -64,7 +64,7 @@
     const/4 v2, -0x1
 
     .line 21
-    if-ne v0, v1, :cond_21
+    if-ne v0, v1, :cond_1
 
     .line 22
     .line 23
@@ -76,7 +76,7 @@
     move-result v0
 
     .line 27
-    if-eq v0, v2, :cond_1f
+    if-eq v0, v2, :cond_0
 
     .line 28
     .line 29
@@ -84,16 +84,16 @@
 
     .line 30
     .line 31
-    goto :goto_21
+    goto :goto_0
 
     .line 32
-    :cond_1f
+    :cond_0
     sget-object v0, Llibs/x5;->X:Llibs/x5;
 
     .line 33
     .line 34
-    :cond_21
-    :goto_21
+    :cond_1
+    :goto_0
     invoke-static {v0}, Llibs/xf3;->z(Llibs/x5;)I
 
     .line 35
@@ -114,7 +114,7 @@
     move-result v0
 
     .line 44
-    if-eq v0, v2, :cond_32
+    if-eq v0, v2, :cond_2
 
     .line 45
     .line 46
@@ -126,15 +126,15 @@
     move-result p1
 
     .line 50
-    goto :goto_41
+    goto :goto_2
 
     .line 51
-    :cond_32
+    :cond_2
     sget-object v0, Llibs/z5;->Y:Llibs/z5;
 
     .line 52
     .line 53
-    if-eq p1, v0, :cond_40
+    if-eq p1, v0, :cond_4
 
     .line 54
     .line 55
@@ -142,14 +142,14 @@
 
     .line 56
     .line 57
-    if-ne p1, v0, :cond_3b
+    if-ne p1, v0, :cond_3
 
     .line 58
     .line 59
-    goto :goto_40
+    goto :goto_1
 
     .line 60
-    :cond_3b
+    :cond_3
     invoke-static {p1}, Llibs/xf3;->Object(Llibs/z5;)I
 
     .line 61
@@ -158,15 +158,15 @@
     move-result p1
 
     .line 64
-    goto :goto_41
+    goto :goto_2
 
     .line 65
-    :cond_40
-    :goto_40
+    :cond_4
+    :goto_1
     const/4 p1, -0x1
 
     .line 66
-    :goto_41
+    :goto_2
     iput p1, p0, Llibs/o5;->e:I
 
     .line 67
@@ -187,7 +187,7 @@
 
     .line 75
     .line 76
-    if-eq p1, v0, :cond_51
+    if-eq p1, v0, :cond_5
 
     .line 77
     .line 78
@@ -195,11 +195,11 @@
 
     .line 79
     .line 80
-    if-ne p1, v0, :cond_57
+    if-ne p1, v0, :cond_6
 
     .line 81
     .line 82
-    :cond_51
+    :cond_5
     invoke-interface {p2}, Lcom/android/apksig/internal/asn1/Asn1Field;->tagNumber()I
 
     .line 83
@@ -208,11 +208,11 @@
     move-result v0
 
     .line 86
-    if-eq v0, v2, :cond_5e
+    if-eq v0, v2, :cond_7
 
     .line 87
     .line 88
-    :cond_57
+    :cond_6
     invoke-interface {p2}, Lcom/android/apksig/internal/asn1/Asn1Field;->optional()Z
 
     .line 89
@@ -228,7 +228,7 @@
     return-void
 
     .line 95
-    :cond_5e
+    :cond_7
     new-instance p2, Llibs/r5;
 
     .line 96
@@ -270,7 +270,7 @@
 
 # virtual methods
 .method public final a(Llibs/af;Ljava/lang/Object;)V
-    .registers 8
+    .locals 5
 
     .line 1
     iget v0, p1, Llibs/af;->a:I
@@ -292,7 +292,7 @@
 
     .line 9
     .line 10
-    if-eq v4, v1, :cond_34
+    if-eq v4, v1, :cond_1
 
     .line 11
     .line 12
@@ -300,18 +300,18 @@
 
     .line 13
     .line 14
-    if-ne v0, v3, :cond_12
+    if-ne v0, v3, :cond_0
 
     .line 15
     .line 16
-    if-ne v1, v4, :cond_12
+    if-ne v1, v4, :cond_0
 
     .line 17
     .line 18
-    goto :goto_36
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     new-instance p1, Llibs/p5;
 
     .line 20
@@ -376,12 +376,12 @@
     throw p1
 
     .line 53
-    :cond_34
-    if-ne v0, v3, :cond_c8
+    :cond_1
+    if-ne v0, v3, :cond_5
 
     .line 54
     .line 55
-    :goto_36
+    :goto_0
     iget-object v0, p0, Llibs/o5;->f:Llibs/y5;
 
     .line 56
@@ -390,11 +390,11 @@
 
     .line 58
     .line 59
-    if-ne v0, v1, :cond_58
+    if-ne v0, v1, :cond_2
 
     .line 60
     .line 61
-    :try_start_3c
+    :try_start_0
     new-instance v0, Llibs/jl;
 
     .line 62
@@ -429,14 +429,14 @@
     .line 77
     .line 78
     move-result-object p1
-    :try_end_4e
-    .catch Llibs/bf; {:try_start_3c .. :try_end_4e} :catch_4f
+    :try_end_0
+    .catch Llibs/bf; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 79
-    goto :goto_58
+    goto :goto_1
 
     .line 80
-    :catch_4f
+    :catch_0
     move-exception p1
 
     .line 81
@@ -456,8 +456,8 @@
     throw p2
 
     .line 89
-    :cond_58
-    :goto_58
+    :cond_2
+    :goto_1
     iget-object v0, p0, Llibs/o5;->a:Ljava/lang/reflect/Field;
 
     .line 90
@@ -466,7 +466,7 @@
 
     .line 92
     .line 93
-    :try_start_5c
+    :try_start_1
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     .line 94
@@ -478,14 +478,14 @@
     const/4 v3, 0x6
 
     .line 98
-    if-eq v2, v3, :cond_74
+    if-eq v2, v3, :cond_3
 
     .line 99
     .line 100
     const/4 v3, 0x7
 
     .line 101
-    if-eq v2, v3, :cond_74
+    if-eq v2, v3, :cond_3
 
     .line 102
     .line 103
@@ -513,14 +513,14 @@
     return-void
 
     .line 115
-    :catch_72
+    :catch_1
     move-exception p1
 
     .line 116
-    goto :goto_98
+    goto :goto_2
 
     .line 117
-    :cond_74
+    :cond_3
     const-class v2, Llibs/w5;
 
     .line 118
@@ -541,7 +541,7 @@
     move-result v2
 
     .line 127
-    if-eqz v2, :cond_8c
+    if-eqz v2, :cond_4
 
     .line 128
     .line 129
@@ -569,7 +569,7 @@
     return-void
 
     .line 141
-    :cond_8c
+    :cond_4
     invoke-static {v0}, Llibs/zd2;->w(Ljava/lang/reflect/Field;)Ljava/lang/Class;
 
     .line 142
@@ -587,8 +587,8 @@
 
     .line 149
     invoke-virtual {v0, p2, p1}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
-    :try_end_97
-    .catch Ljava/lang/Exception; {:try_start_5c .. :try_end_97} :catch_72
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 150
     .line 151
@@ -596,7 +596,7 @@
     return-void
 
     .line 153
-    :goto_98
+    :goto_2
     new-instance v1, Llibs/r5;
 
     .line 154
@@ -687,7 +687,7 @@
     throw v1
 
     .line 201
-    :cond_c8
+    :cond_5
     new-instance p1, Llibs/p5;
 
     .line 202

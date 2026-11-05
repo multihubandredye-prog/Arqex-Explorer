@@ -11,7 +11,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/ez3;->Lambda:B
@@ -29,7 +29,7 @@
 
 # virtual methods
 .method public final f(Llibs/mz1;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/ez3;->Lambda:B
@@ -39,7 +39,7 @@
     const/4 v1, 0x4
 
     .line 4
-    packed-switch v0, :pswitch_data_2a
+    packed-switch v0, :pswitch_data_0
 
     .line 5
     .line 6
@@ -57,7 +57,7 @@
     move-result v0
 
     .line 14
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     .line 15
     .line 16
@@ -77,11 +77,11 @@
 
     .line 23
     .line 24
-    :cond_17
+    :cond_0
     return-void
 
     .line 25
-    :pswitch_18
+    :pswitch_0
     invoke-virtual {p1, v1}, Llibs/mz1;->b(I)V
 
     .line 26
@@ -95,7 +95,7 @@
     move-result v0
 
     .line 32
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_1
 
     .line 33
     .line 34
@@ -115,18 +115,18 @@
 
     .line 41
     .line 42
-    :cond_29
+    :cond_1
     return-void
 
     .line 43
-    :pswitch_data_2a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_18
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final h(Llibs/mz1;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/ez3;->Lambda:B
@@ -136,7 +136,7 @@
     const/4 v1, 0x4
 
     .line 4
-    packed-switch v0, :pswitch_data_2a
+    packed-switch v0, :pswitch_data_0
 
     .line 5
     .line 6
@@ -159,7 +159,7 @@
 
     .line 16
     .line 17
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     .line 18
     .line 19
@@ -172,11 +172,11 @@
     .line 22
     .line 23
     .line 24
-    :cond_17
+    :cond_0
     return-void
 
     .line 25
-    :pswitch_18
+    :pswitch_0
     invoke-virtual {p1, v1}, Llibs/mz1;->b(I)V
 
     .line 26
@@ -195,7 +195,7 @@
 
     .line 34
     .line 35
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_1
 
     .line 36
     .line 37
@@ -208,12 +208,12 @@
     .line 40
     .line 41
     .line 42
-    :cond_29
+    :cond_1
     return-void
 
     .line 43
-    :pswitch_data_2a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_18
+        :pswitch_0
     .end packed-switch
 .end method

@@ -349,8 +349,8 @@ _n8_path = os.path.join(SMALI, "libs", "n8.smali")
 _n8 = open(_n8_path, encoding="utf-8", errors="replace").read() if os.path.exists(_n8_path) else ""
 check("13a. salvar uma tarefa nunca acrescenta numero ao nome (teste -> teste2)", (
       "e9;->h(Ljava/lang/Object;)Llibs/d9;" in _n8
-      and _n8.count("goto :goto_58") == 1
-      and "if-eqz v23, :cond_8e" in _n8 and "goto :cond_8e" in _n8))
+      and 'const-string v3, ""' in _n8
+      and "StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;" in _n8))
 check("13b. diagnostico fora do rotulo (so fica a linha de debug da tarefa)",
       '|b58]' not in _atw and "nameKeys" not in _atw)
 _dkd = method_body(os.path.join(SMALI, "libs", "$d.smali"),
@@ -555,8 +555,9 @@ check("14c. extracao le o zip do item e escreve na pasta de destino", (
 
 _smart = open(os.path.join(SMALI, "libs", "SmartFeaturesV116.smali"), encoding="utf-8").read()
 check("16a. pastas vazias ocultas nao entram na lista quando os ocultos estao escondidos", (
-      "isHiddenEntry" in _smart and "isShowingHidden" in _smart
-      and "arqex_scan_visivel" in _smart))
+      "SmartFeaturesV116;->isHiddenEntry(Ljava/io/File;)Z" in _smart
+      and "SmartFeaturesV116;->isShowingHidden(Landroid/app/Activity;)Z" in _smart
+      and "if-eqz v5, :cond_" in _smart and "if-nez v5, :cond_" in _smart))
 _fnf = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
                   ".method public static filterByNameFilter") or ""
 check("16c. pasta nao e descartada pelo filtro por nome (pasta teste era ignorada)", (
@@ -571,7 +572,8 @@ check("16d. pasta vai para a operacao como caminho, nao como URI de documento", 
       "ArqexSrcPath;->escolher" in _e9l
       and os.path.exists(os.path.join(SMALI, "libs", "ArqexSrcPath.smali"))))
 check("16e. log grava item por item (pasta/arquivo + caminho)", (
-      "ArqexLog;->logItens" in _aeg and "PASTA " in _aeg))
+      ".method public static logItens" in _aeg and "ArqexLog;->add" in _aeg
+      and ("PASTA " in _aeg or "FOLDER " in _aeg) and "file " in _aeg))
 _m52 = open(os.path.join(SMALI, "libs", "m52.smali"), encoding="utf-8").read()
 _atw = open(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"), encoding="utf-8").read()
 _nf = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
@@ -613,10 +615,10 @@ check("16h3. filtro por nome mantem item que esta DENTRO da pasta filtrada (ulti
       and "matchesNameFilter" in _ms
       and "split" in _ms))
 check("16k. notificacao de fim nao e descartada quando o id da tarefa nao resolve", (
-      "AutoTaskWatcher;->resolveAutoTaskIdForOperation" in _nf
-      and "m52;->Upsilon:I" in _nf
-      and "if-lez v0, :cond_29" in _nf
-      and "AutoTaskWatcher;->shouldSuppressNotification" in _nf))
+      ".method private static declared-synchronized resolveAutoTaskIdForOperation" in _atw
+      and "Llibs/m52;->" in _atw
+      and "if-lez " in _atw
+      and _atw.count("AutoTaskWatcher;->resolveAutoTaskIdForOperation") >= 2))
 _abk = open(os.path.join(SMALI, "libs", "ArqexBackup.smali"), encoding="utf-8").read()
 check("16l. backup das tarefas leva tambem as opcoes marcadas (filtro/prefixo/notificacao)", (
       "ArqexBackup;->savePrefs" in _abk

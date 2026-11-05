@@ -15,7 +15,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 1
     new-instance v0, Llibs/i43;
@@ -75,7 +75,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 11
+    .locals 10
 
     .line 1
     const/4 v0, 0x5
@@ -216,7 +216,7 @@
 
 # virtual methods
 .method public final d(Llibs/xf3;Llibs/xf3;Z)Llibs/ig0;
-    .registers 10
+    .locals 6
 
     .line 1
     new-instance v0, Llibs/hg0;
@@ -248,7 +248,7 @@
 .end method
 
 .method public final e(Llibs/xf3;Llibs/xf3;[Llibs/xf3;Z)Llibs/ig0;
-    .registers 12
+    .locals 7
 
     .line 1
     new-instance v0, Llibs/hg0;
@@ -283,7 +283,7 @@
 .end method
 
 .method public final k()Llibs/ig0;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/j43;->j:Llibs/hg0;
@@ -294,13 +294,13 @@
 .end method
 
 .method public final r(I)Z
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x6
 
     .line 2
-    if-eq p1, v0, :cond_5
+    if-eq p1, v0, :cond_0
 
     .line 3
     .line 4
@@ -310,7 +310,7 @@
     return p1
 
     .line 6
-    :cond_5
+    :cond_0
     const/4 p1, 0x1
 
     .line 7
@@ -318,7 +318,7 @@
 .end method
 
 .method public final s()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0

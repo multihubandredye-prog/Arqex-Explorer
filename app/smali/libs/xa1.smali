@@ -50,7 +50,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/util/ArrayList;Ljava/lang/String;Landroid/app/Activity;ZLlibs/rp0;Ljava/lang/String;Landroid/net/Uri;Landroid/net/Uri;ILjava/util/ArrayList;Ljava/lang/String;ZZZLandroid/text/Editable;ZLjava/util/concurrent/atomic/AtomicBoolean;Ljava/util/concurrent/atomic/AtomicBoolean;ZI)V
-    .registers 21
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -111,7 +111,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 23
+    .locals 22
 
     .line 1
     move-object/from16 v0, p0
@@ -178,7 +178,7 @@
 
     .line 32
     .line 33
-    if-eqz v15, :cond_32
+    if-eqz v15, :cond_0
 
     .line 34
     .line 35
@@ -198,7 +198,7 @@
     move-result v6
 
     .line 43
-    if-eqz v6, :cond_32
+    if-eqz v6, :cond_0
 
     .line 44
     .line 45
@@ -211,10 +211,10 @@
     .line 48
     .line 49
     .line 50
-    goto :goto_42
+    goto :goto_1
 
     .line 51
-    :cond_32
+    :cond_0
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     .line 52
@@ -223,14 +223,14 @@
     move-result v6
 
     .line 55
-    if-lez v6, :cond_39
+    if-lez v6, :cond_1
 
     .line 56
     .line 57
-    goto :goto_3f
+    goto :goto_0
 
     .line 58
-    :cond_39
+    :cond_1
     sget v3, Llibs/bi2;->no_item:I
 
     .line 59
@@ -243,13 +243,13 @@
     move-result-object v3
 
     .line 64
-    :goto_3f
+    :goto_0
     invoke-interface {v2, v3}, Landroid/text/Editable;->append(Ljava/lang/CharSequence;)Landroid/text/Editable;
 
     .line 65
     .line 66
     .line 67
-    :goto_42
+    :goto_1
     const/4 v14, 0x1
 
     .line 68
@@ -410,7 +410,7 @@
     .line 139
     .line 140
     .line 141
-    if-eqz v16, :cond_e5
+    if-eqz v16, :cond_3
 
     .line 142
     .line 143
@@ -429,11 +429,11 @@
 
     .line 149
     .line 150
-    if-lez v2, :cond_a7
+    if-lez v2, :cond_2
 
     .line 151
     .line 152
-    if-eqz v11, :cond_a7
+    if-eqz v11, :cond_2
 
     .line 153
     .line 154
@@ -463,7 +463,7 @@
     .line 166
     .line 167
     .line 168
-    :cond_a7
+    :cond_2
     move-object v2, v1
 
     .line 169
@@ -589,10 +589,10 @@
     .line 227
     .line 228
     .line 229
-    goto :goto_ef
+    goto :goto_2
 
     .line 230
-    :cond_e5
+    :cond_3
     move/from16 v17, v15
 
     .line 231
@@ -613,8 +613,8 @@
     .line 238
     .line 239
     .line 240
-    :goto_ef
-    if-eqz v4, :cond_13a
+    :goto_2
+    if-eqz v4, :cond_a
 
     .line 241
     .line 242
@@ -622,11 +622,11 @@
 
     .line 243
     .line 244
-    if-eqz v1, :cond_13a
+    if-eqz v1, :cond_a
 
     .line 245
     .line 246
-    if-eqz v17, :cond_13a
+    if-eqz v17, :cond_a
 
     .line 247
     .line 248
@@ -646,7 +646,7 @@
 
     .line 255
     .line 256
-    if-eqz v2, :cond_10d
+    if-eqz v2, :cond_5
 
     .line 257
     .line 258
@@ -654,7 +654,7 @@
 
     .line 259
     .line 260
-    if-nez v2, :cond_10b
+    if-nez v2, :cond_4
 
     .line 261
     .line 262
@@ -666,22 +666,22 @@
     move-result v2
 
     .line 266
-    if-nez v2, :cond_10d
+    if-nez v2, :cond_5
 
     .line 267
     .line 268
-    :cond_10b
+    :cond_4
     const/4 v14, 0x1
 
     .line 269
-    goto :goto_10e
+    goto :goto_3
 
     .line 270
-    :cond_10d
+    :cond_5
     const/4 v14, 0x0
 
     .line 271
-    :goto_10e
+    :goto_3
     invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
     .line 272
@@ -690,7 +690,7 @@
     move-result v1
 
     .line 275
-    if-eqz v1, :cond_11d
+    if-eqz v1, :cond_7
 
     .line 276
     .line 277
@@ -702,27 +702,27 @@
     move-result v1
 
     .line 281
-    if-eqz v1, :cond_11b
+    if-eqz v1, :cond_6
 
     .line 282
     .line 283
-    goto :goto_11d
+    goto :goto_4
 
     .line 284
-    :cond_11b
+    :cond_6
     const/4 v1, 0x0
 
     .line 285
-    goto :goto_11e
+    goto :goto_5
 
     .line 286
-    :cond_11d
-    :goto_11d
+    :cond_7
+    :goto_4
     const/4 v1, 0x1
 
     .line 287
-    :goto_11e
-    if-eqz v14, :cond_123
+    :goto_5
+    if-eqz v14, :cond_8
 
     .line 288
     .line 289
@@ -730,10 +730,10 @@
 
     .line 290
     .line 291
-    goto :goto_12e
+    goto :goto_6
 
     .line 292
-    :cond_123
+    :cond_8
     invoke-virtual {v3}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
     .line 293
@@ -742,7 +742,7 @@
     move-result v2
 
     .line 296
-    if-eqz v2, :cond_12c
+    if-eqz v2, :cond_9
 
     .line 297
     .line 298
@@ -750,15 +750,15 @@
 
     .line 299
     .line 300
-    goto :goto_12e
+    goto :goto_6
 
     .line 301
-    :cond_12c
+    :cond_9
     sget v2, Llibs/bi2;->install:I
 
     .line 302
     .line 303
-    :goto_12e
+    :goto_6
     invoke-virtual {v13, v2}, Llibs/od;->Yes(I)V
 
     .line 304
@@ -780,16 +780,16 @@
 
     .line 313
     .line 314
-    goto :goto_13d
+    goto :goto_7
 
     .line 315
-    :cond_13a
+    :cond_a
     invoke-static {}, Llibs/t43;->Run()Z
 
     .line 316
     .line 317
     .line 318
-    :goto_13d
+    :goto_7
     invoke-virtual {v13, v15}, Llibs/od;->Mid(Z)V
 
     .line 319

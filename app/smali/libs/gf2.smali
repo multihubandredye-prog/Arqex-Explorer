@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ds1;Landroid/app/Activity;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/gf2;->X:Llibs/ds1;
@@ -36,21 +36,21 @@
 
 # virtual methods
 .method public final afterTextChanged(Landroid/text/Editable;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final beforeTextChanged(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final onTextChanged(Ljava/lang/CharSequence;III)V
-    .registers 6
+    .locals 1
 
     .line 1
     const-string p2, "#"
@@ -64,7 +64,7 @@
     const/4 p4, 0x0
 
     .line 6
-    if-eqz p3, :cond_a
+    if-eqz p3, :cond_0
 
     .line 7
     .line 8
@@ -75,8 +75,8 @@
     return-void
 
     .line 11
-    :cond_a
-    :try_start_a
+    :cond_0
+    :try_start_0
     invoke-static {p1}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
 
     .line 12
@@ -85,7 +85,7 @@
     move-result p3
 
     .line 15
-    if-nez p3, :cond_34
+    if-nez p3, :cond_1
 
     .line 16
     .line 17
@@ -108,7 +108,7 @@
     const/4 v0, 0x6
 
     .line 26
-    if-ne p3, v0, :cond_34
+    if-ne p3, v0, :cond_1
 
     .line 27
     .line 28
@@ -155,17 +155,17 @@
 
     .line 50
     invoke-virtual {p3, p1}, Llibs/ds1;->setColor(I)V
-    :try_end_34
-    .catch Ljava/lang/Exception; {:try_start_a .. :try_end_34} :catch_35
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 51
     .line 52
     .line 53
-    :cond_34
+    :cond_1
     return-void
 
     .line 54
-    :catch_35
+    :catch_0
     sget p1, Llibs/bi2;->failed:I
 
     .line 55

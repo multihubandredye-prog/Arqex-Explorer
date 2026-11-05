@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/uv;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 19
+    .locals 17
 
     .line 1
     move-object/from16 v1, p0
@@ -68,7 +68,7 @@
     const/4 v7, 0x0
 
     .line 14
-    packed-switch v2, :pswitch_data_2ce
+    packed-switch v2, :pswitch_data_0
 
     .line 15
     .line 16
@@ -84,16 +84,16 @@
 
     .line 21
     .line 22
-    if-nez v9, :cond_19
+    if-nez v9, :cond_0
 
     .line 23
     .line 24
-    goto/16 :goto_ab
+    goto/16 :goto_1
 
     .line 25
     .line 26
-    :cond_19
-    :try_start_19
+    :cond_0
+    :try_start_0
     invoke-virtual {v0}, Landroid/view/View;->getId()I
 
     .line 27
@@ -106,7 +106,7 @@
 
     .line 31
     .line 32
-    if-ne v2, v3, :cond_29
+    if-ne v2, v3, :cond_1
 
     .line 33
     .line 34
@@ -115,24 +115,24 @@
     .line 35
     .line 36
     .line 37
-    goto/16 :goto_ab
+    goto/16 :goto_1
 
     .line 38
     .line 39
-    :catchall_26
+    :catchall_0
     move-exception v0
 
     .line 40
-    goto/16 :goto_9e
+    goto/16 :goto_0
 
     .line 41
     .line 42
-    :cond_29
+    :cond_1
     sget v3, Llibs/wh2;->portion_next:I
 
     .line 43
     .line 44
-    if-ne v2, v3, :cond_32
+    if-ne v2, v3, :cond_2
 
     .line 45
     .line 46
@@ -141,16 +141,16 @@
     .line 47
     .line 48
     .line 49
-    goto/16 :goto_ab
+    goto/16 :goto_1
 
     .line 50
     .line 51
-    :cond_32
+    :cond_2
     sget v3, Llibs/wh2;->navigation:I
 
     .line 52
     .line 53
-    if-ne v2, v3, :cond_3b
+    if-ne v2, v3, :cond_3
 
     .line 54
     .line 55
@@ -159,16 +159,16 @@
     .line 56
     .line 57
     .line 58
-    goto/16 :goto_ab
+    goto/16 :goto_1
 
     .line 59
     .line 60
-    :cond_3b
+    :cond_3
     sget v0, Llibs/wh2;->toggle:I
 
     .line 61
     .line 62
-    if-ne v2, v0, :cond_66
+    if-ne v2, v0, :cond_6
 
     .line 63
     .line 64
@@ -176,7 +176,7 @@
 
     .line 65
     .line 66
-    if-eqz v0, :cond_48
+    if-eqz v0, :cond_4
 
     .line 67
     .line 68
@@ -185,11 +185,11 @@
     .line 69
     .line 70
     .line 71
-    goto/16 :goto_ab
+    goto/16 :goto_1
 
     .line 72
     .line 73
-    :cond_48
+    :cond_4
     invoke-virtual {v9}, Lcom/mixplorer/widgets/MiEditor;->i()Z
 
     .line 74
@@ -198,7 +198,7 @@
     move-result v0
 
     .line 77
-    if-eqz v0, :cond_5b
+    if-eqz v0, :cond_5
 
     .line 78
     .line 79
@@ -226,10 +226,10 @@
     .line 89
     .line 90
     .line 91
-    goto :goto_ab
+    goto :goto_1
 
     .line 92
-    :cond_5b
+    :cond_5
     invoke-virtual {v8}, Lcom/mixplorer/activities/a;->l()V
 
     .line 93
@@ -248,15 +248,15 @@
     .line 100
     .line 101
     .line 102
-    goto :goto_ab
+    goto :goto_1
 
     .line 103
-    :cond_66
+    :cond_6
     sget v0, Llibs/wh2;->overflow:I
 
     .line 104
     .line 105
-    if-ne v2, v0, :cond_6e
+    if-ne v2, v0, :cond_7
 
     .line 106
     .line 107
@@ -265,15 +265,15 @@
     .line 108
     .line 109
     .line 110
-    goto :goto_ab
+    goto :goto_1
 
     .line 111
-    :cond_6e
+    :cond_7
     sget v0, Llibs/wh2;->save:I
 
     .line 112
     .line 113
-    if-ne v2, v0, :cond_7e
+    if-ne v2, v0, :cond_9
 
     .line 114
     .line 115
@@ -281,7 +281,7 @@
 
     .line 116
     .line 117
-    if-eqz v0, :cond_7a
+    if-eqz v0, :cond_8
 
     .line 118
     .line 119
@@ -290,24 +290,24 @@
     .line 120
     .line 121
     .line 122
-    goto :goto_ab
+    goto :goto_1
 
     .line 123
-    :cond_7a
+    :cond_8
     invoke-virtual {v8, v9}, Lcom/mixplorer/activities/TextEditorActivity;->Get(Lcom/mixplorer/widgets/MiEditor;)V
 
     .line 124
     .line 125
     .line 126
-    goto :goto_ab
+    goto :goto_1
 
     .line 127
-    :cond_7e
+    :cond_9
     sget v0, Llibs/wh2;->undo:I
 
     .line 128
     .line 129
-    if-ne v2, v0, :cond_8e
+    if-ne v2, v0, :cond_b
 
     .line 130
     .line 131
@@ -315,7 +315,7 @@
 
     .line 132
     .line 133
-    if-eqz v0, :cond_8a
+    if-eqz v0, :cond_a
 
     .line 134
     .line 135
@@ -324,24 +324,24 @@
     .line 136
     .line 137
     .line 138
-    goto :goto_ab
+    goto :goto_1
 
     .line 139
-    :cond_8a
+    :cond_a
     invoke-virtual {v9}, Lcom/mixplorer/widgets/MiEditor;->r()V
 
     .line 140
     .line 141
     .line 142
-    goto :goto_ab
+    goto :goto_1
 
     .line 143
-    :cond_8e
+    :cond_b
     sget v0, Llibs/wh2;->redo:I
 
     .line 144
     .line 145
-    if-ne v2, v0, :cond_ab
+    if-ne v2, v0, :cond_d
 
     .line 146
     .line 147
@@ -349,7 +349,7 @@
 
     .line 148
     .line 149
-    if-eqz v0, :cond_9a
+    if-eqz v0, :cond_c
 
     .line 150
     .line 151
@@ -358,21 +358,21 @@
     .line 152
     .line 153
     .line 154
-    goto :goto_ab
+    goto :goto_1
 
     .line 155
-    :cond_9a
+    :cond_c
     invoke-virtual {v9}, Lcom/mixplorer/widgets/MiEditor;->k()V
-    :try_end_9d
-    .catchall {:try_start_19 .. :try_end_9d} :catchall_26
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 156
     .line 157
     .line 158
-    goto :goto_ab
+    goto :goto_1
 
     .line 159
-    :goto_9e
+    :goto_0
     invoke-static {v0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 160
@@ -398,12 +398,12 @@
     .line 170
     .line 171
     .line 172
-    :cond_ab
-    :goto_ab
+    :cond_d
+    :goto_1
     return-void
 
     .line 173
-    :pswitch_ac
+    :pswitch_0
     check-cast v5, Llibs/yx2;
 
     .line 174
@@ -420,7 +420,7 @@
 
     .line 180
     .line 181
-    if-eqz v4, :cond_b9
+    if-eqz v4, :cond_e
 
     .line 182
     .line 183
@@ -429,7 +429,7 @@
     .line 184
     .line 185
     .line 186
-    :cond_b9
+    :cond_e
     invoke-virtual {v5}, Llibs/um2;->f()I
 
     .line 187
@@ -438,7 +438,7 @@
     move-result v4
 
     .line 190
-    if-eq v4, v3, :cond_c8
+    if-eq v4, v3, :cond_f
 
     .line 191
     .line 192
@@ -446,7 +446,7 @@
 
     .line 193
     .line 194
-    if-eqz v3, :cond_c8
+    if-eqz v3, :cond_f
 
     .line 195
     .line 196
@@ -459,11 +459,11 @@
 
     .line 200
     .line 201
-    :cond_c8
+    :cond_f
     return-void
 
     .line 202
-    :pswitch_c9
+    :pswitch_1
     check-cast v5, Lcom/mixplorer/widgets/MiTabBar;
 
     .line 203
@@ -472,15 +472,15 @@
 
     .line 205
     .line 206
-    if-nez v2, :cond_d1
+    if-nez v2, :cond_10
 
     .line 207
     .line 208
-    goto/16 :goto_20b
+    goto/16 :goto_7
 
     .line 209
     .line 210
-    :cond_d1
+    :cond_10
     invoke-virtual {v5, v0}, Lcom/mixplorer/widgets/MiTabBar;->n(Landroid/view/View;)V
 
     .line 211
@@ -561,7 +561,7 @@
     move-result v4
 
     .line 250
-    if-eqz v4, :cond_123
+    if-eqz v4, :cond_11
 
     .line 251
     .line 252
@@ -613,7 +613,7 @@
 
     .line 277
     .line 278
-    if-eqz v10, :cond_20b
+    if-eqz v10, :cond_1b
 
     .line 279
     .line 280
@@ -639,11 +639,11 @@
     .line 288
     .line 289
     .line 290
-    goto/16 :goto_20b
+    goto/16 :goto_7
 
     .line 291
     .line 292
-    :cond_123
+    :cond_11
     const-wide/16 v8, 0x0
 
     .line 293
@@ -652,7 +652,7 @@
 
     .line 295
     .line 296
-    if-lez v4, :cond_1f9
+    if-lez v4, :cond_1a
 
     .line 297
     .line 298
@@ -680,7 +680,7 @@
     move-result v4
 
     .line 310
-    if-nez v4, :cond_154
+    if-nez v4, :cond_13
 
     .line 311
     .line 312
@@ -696,7 +696,7 @@
     move-result v4
 
     .line 318
-    if-lez v4, :cond_146
+    if-lez v4, :cond_12
 
     .line 319
     .line 320
@@ -712,10 +712,10 @@
     move-result-object v4
 
     .line 326
-    goto :goto_14c
+    goto :goto_2
 
     .line 327
-    :cond_146
+    :cond_12
     const-string v4, "?"
 
     .line 328
@@ -728,7 +728,7 @@
     move-result-object v4
 
     .line 333
-    :goto_14c
+    :goto_2
     const-string v8, "text="
 
     .line 334
@@ -745,7 +745,7 @@
     move-result-object v10
 
     .line 341
-    :cond_154
+    :cond_13
     move-object v13, v10
 
     .line 342
@@ -760,7 +760,7 @@
 
     .line 348
     .line 349
-    if-nez v0, :cond_1e5
+    if-nez v0, :cond_19
 
     .line 350
     .line 351
@@ -775,31 +775,31 @@
     const/4 v2, 0x0
 
     .line 356
-    if-eqz v0, :cond_166
+    if-eqz v0, :cond_14
 
     .line 357
     .line 358
-    goto :goto_167
+    goto :goto_3
 
     .line 359
-    :cond_166
+    :cond_14
     move-object v0, v2
 
     .line 360
-    :goto_167
+    :goto_3
     instance-of v3, v0, Lcom/mixplorer/activities/BrowseActivity;
 
     .line 361
     .line 362
-    if-nez v3, :cond_16d
+    if-nez v3, :cond_15
 
     .line 363
     .line 364
-    goto/16 :goto_1e5
+    goto/16 :goto_6
 
     .line 365
     .line 366
-    :cond_16d
+    :cond_15
     new-instance v3, Llibs/ml1;
 
     .line 367
@@ -868,17 +868,17 @@
     move-result v8
 
     .line 402
-    if-eqz v8, :cond_195
+    if-eqz v8, :cond_16
 
     .line 403
     .line 404
     move-object v5, v2
 
     .line 405
-    goto :goto_19d
+    goto :goto_4
 
     .line 406
-    :cond_195
+    :cond_16
     invoke-static {v5}, Llibs/vl3;->v(Ljava/lang/String;)I
 
     .line 407
@@ -895,8 +895,8 @@
     move-result-object v5
 
     .line 414
-    :goto_19d
-    if-eqz v5, :cond_1a6
+    :goto_4
+    if-eqz v5, :cond_17
 
     .line 415
     .line 416
@@ -912,15 +912,15 @@
     move-result v5
 
     .line 422
-    goto :goto_1a7
+    goto :goto_5
 
     .line 423
-    :cond_1a6
+    :cond_17
     const/4 v5, 0x0
 
     .line 424
-    :goto_1a7
-    if-lez v5, :cond_1d0
+    :goto_5
+    if-lez v5, :cond_18
 
     .line 425
     .line 426
@@ -995,7 +995,7 @@
     .line 463
     .line 464
     .line 465
-    :cond_1d0
+    :cond_18
     new-instance v2, Llibs/a00;
 
     .line 466
@@ -1032,11 +1032,11 @@
     .line 483
     .line 484
     .line 485
-    goto :goto_20b
+    goto :goto_7
 
     .line 486
-    :cond_1e5
-    :goto_1e5
+    :cond_19
+    :goto_6
     iget-object v0, v5, Lcom/mixplorer/widgets/MiTabBar;->Omicron:Llibs/ti;
 
     .line 487
@@ -1049,7 +1049,7 @@
 
     .line 491
     .line 492
-    if-eqz v11, :cond_20b
+    if-eqz v11, :cond_1b
 
     .line 493
     .line 494
@@ -1076,10 +1076,10 @@
     .line 503
     .line 504
     .line 505
-    goto :goto_20b
+    goto :goto_7
 
     .line 506
-    :cond_1f9
+    :cond_1a
     iget-object v0, v5, Lcom/mixplorer/widgets/MiTabBar;->Omicron:Llibs/ti;
 
     .line 507
@@ -1092,7 +1092,7 @@
 
     .line 511
     .line 512
-    if-eqz v8, :cond_20b
+    if-eqz v8, :cond_1b
 
     .line 513
     .line 514
@@ -1118,12 +1118,12 @@
     .line 522
     .line 523
     .line 524
-    :cond_20b
-    :goto_20b
+    :cond_1b
+    :goto_7
     return-void
 
     .line 525
-    :pswitch_20c
+    :pswitch_2
     check-cast v5, Lcom/mixplorer/widgets/MiCombo;
 
     .line 526
@@ -1140,7 +1140,7 @@
     return-void
 
     .line 533
-    :pswitch_214
+    :pswitch_3
     check-cast v5, Llibs/vm1;
 
     .line 534
@@ -1157,7 +1157,7 @@
 
     .line 540
     .line 541
-    if-eqz v4, :cond_221
+    if-eqz v4, :cond_1c
 
     .line 542
     .line 543
@@ -1166,7 +1166,7 @@
     .line 544
     .line 545
     .line 546
-    :cond_221
+    :cond_1c
     invoke-virtual {v5}, Llibs/um2;->f()I
 
     .line 547
@@ -1175,7 +1175,7 @@
     move-result v4
 
     .line 550
-    if-eq v4, v3, :cond_230
+    if-eq v4, v3, :cond_1d
 
     .line 551
     .line 552
@@ -1183,7 +1183,7 @@
 
     .line 553
     .line 554
-    if-eqz v3, :cond_230
+    if-eqz v3, :cond_1d
 
     .line 555
     .line 556
@@ -1196,16 +1196,16 @@
 
     .line 560
     .line 561
-    :cond_230
+    :cond_1d
     return-void
 
     .line 562
-    :pswitch_231
+    :pswitch_4
     check-cast v5, Lcom/mixplorer/activities/CodeEditorActivity;
 
     .line 563
     .line 564
-    :try_start_233
+    :try_start_1
     iget-object v2, v5, Lcom/mixplorer/activities/CodeEditorActivity;->ll:Llibs/cv;
 
     .line 565
@@ -1222,7 +1222,7 @@
 
     .line 571
     .line 572
-    if-ne v3, v8, :cond_245
+    if-ne v3, v8, :cond_1e
 
     .line 573
     .line 574
@@ -1231,24 +1231,24 @@
     .line 575
     .line 576
     .line 577
-    goto/16 :goto_2cc
+    goto/16 :goto_9
 
     .line 578
     .line 579
-    :catchall_242
+    :catchall_1
     move-exception v0
 
     .line 580
-    goto/16 :goto_2bf
+    goto/16 :goto_8
 
     .line 581
     .line 582
-    :cond_245
+    :cond_1e
     sget v0, Llibs/wh2;->toggle:I
 
     .line 583
     .line 584
-    if-ne v3, v0, :cond_269
+    if-ne v3, v0, :cond_21
 
     .line 585
     .line 586
@@ -1256,7 +1256,7 @@
 
     .line 587
     .line 588
-    if-eqz v0, :cond_252
+    if-eqz v0, :cond_1f
 
     .line 589
     .line 590
@@ -1265,11 +1265,11 @@
     .line 591
     .line 592
     .line 593
-    goto/16 :goto_2cc
+    goto/16 :goto_9
 
     .line 594
     .line 595
-    :cond_252
+    :cond_1f
     invoke-virtual {v2}, Llibs/cv;->e()Z
 
     .line 596
@@ -1278,7 +1278,7 @@
     move-result v0
 
     .line 599
-    if-eqz v0, :cond_262
+    if-eqz v0, :cond_20
 
     .line 600
     .line 601
@@ -1296,11 +1296,11 @@
     .line 607
     .line 608
     .line 609
-    goto/16 :goto_2cc
+    goto/16 :goto_9
 
     .line 610
     .line 611
-    :cond_262
+    :cond_20
     invoke-virtual {v5}, Lcom/mixplorer/activities/a;->l()V
 
     .line 612
@@ -1311,15 +1311,15 @@
     .line 615
     .line 616
     .line 617
-    goto :goto_2cc
+    goto :goto_9
 
     .line 618
-    :cond_269
+    :cond_21
     sget v0, Llibs/wh2;->overflow:I
 
     .line 619
     .line 620
-    if-ne v3, v0, :cond_271
+    if-ne v3, v0, :cond_22
 
     .line 621
     .line 622
@@ -1328,15 +1328,15 @@
     .line 623
     .line 624
     .line 625
-    goto :goto_2cc
+    goto :goto_9
 
     .line 626
-    :cond_271
+    :cond_22
     sget v0, Llibs/wh2;->save:I
 
     .line 627
     .line 628
-    if-ne v3, v0, :cond_281
+    if-ne v3, v0, :cond_24
 
     .line 629
     .line 630
@@ -1344,7 +1344,7 @@
 
     .line 631
     .line 632
-    if-eqz v0, :cond_27d
+    if-eqz v0, :cond_23
 
     .line 633
     .line 634
@@ -1353,24 +1353,24 @@
     .line 635
     .line 636
     .line 637
-    goto :goto_2cc
+    goto :goto_9
 
     .line 638
-    :cond_27d
+    :cond_23
     invoke-virtual {v5, v2}, Lcom/mixplorer/activities/CodeEditorActivity;->Work(Llibs/cv;)V
 
     .line 639
     .line 640
     .line 641
-    goto :goto_2cc
+    goto :goto_9
 
     .line 642
-    :cond_281
+    :cond_24
     sget v0, Llibs/wh2;->undo:I
 
     .line 643
     .line 644
-    if-ne v3, v0, :cond_2a0
+    if-ne v3, v0, :cond_27
 
     .line 645
     .line 646
@@ -1378,7 +1378,7 @@
 
     .line 647
     .line 648
-    if-eqz v0, :cond_28d
+    if-eqz v0, :cond_25
 
     .line 649
     .line 650
@@ -1387,10 +1387,10 @@
     .line 651
     .line 652
     .line 653
-    goto :goto_2cc
+    goto :goto_9
 
     .line 654
-    :cond_28d
+    :cond_25
     iget-object v0, v2, Llibs/cv;->Three:Llibs/oi1;
 
     .line 655
@@ -1407,7 +1407,7 @@
 
     .line 661
     .line 662
-    if-eqz v3, :cond_29c
+    if-eqz v3, :cond_26
 
     .line 663
     .line 664
@@ -1420,21 +1420,21 @@
     .line 667
     .line 668
     .line 669
-    :cond_29c
+    :cond_26
     invoke-virtual {v5, v2}, Lcom/mixplorer/activities/CodeEditorActivity;->Yes(Llibs/cv;)V
 
     .line 670
     .line 671
     .line 672
-    goto :goto_2cc
+    goto :goto_9
 
     .line 673
-    :cond_2a0
+    :cond_27
     sget v0, Llibs/wh2;->redo:I
 
     .line 674
     .line 675
-    if-ne v3, v0, :cond_2cc
+    if-ne v3, v0, :cond_2a
 
     .line 676
     .line 677
@@ -1442,7 +1442,7 @@
 
     .line 678
     .line 679
-    if-eqz v0, :cond_2ac
+    if-eqz v0, :cond_28
 
     .line 680
     .line 681
@@ -1451,10 +1451,10 @@
     .line 682
     .line 683
     .line 684
-    goto :goto_2cc
+    goto :goto_9
 
     .line 685
-    :cond_2ac
+    :cond_28
     iget-object v0, v2, Llibs/cv;->Three:Llibs/oi1;
 
     .line 686
@@ -1471,7 +1471,7 @@
 
     .line 692
     .line 693
-    if-eqz v3, :cond_2bb
+    if-eqz v3, :cond_29
 
     .line 694
     .line 695
@@ -1484,18 +1484,18 @@
     .line 698
     .line 699
     .line 700
-    :cond_2bb
+    :cond_29
     invoke-virtual {v5, v2}, Lcom/mixplorer/activities/CodeEditorActivity;->Yes(Llibs/cv;)V
-    :try_end_2be
-    .catchall {:try_start_233 .. :try_end_2be} :catchall_242
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 701
     .line 702
     .line 703
-    goto :goto_2cc
+    goto :goto_9
 
     .line 704
-    :goto_2bf
+    :goto_8
     invoke-static {v0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 705
@@ -1521,20 +1521,20 @@
     .line 715
     .line 716
     .line 717
-    :cond_2cc
-    :goto_2cc
+    :cond_2a
+    :goto_9
     return-void
 
     .line 718
     nop
 
     .line 719
-    :pswitch_data_2ce
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_231
-        :pswitch_214
-        :pswitch_20c
-        :pswitch_c9
-        :pswitch_ac
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

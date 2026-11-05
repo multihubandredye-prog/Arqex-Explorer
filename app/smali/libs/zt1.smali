@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/widgets/MiImageView;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/zt1;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/zt1;->X:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_16
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -71,7 +71,7 @@
     return-void
 
     .line 17
-    :pswitch_10
+    :pswitch_0
     sget v0, Lcom/mixplorer/widgets/MiImageView;->Upsilon:I
 
     .line 18
@@ -84,8 +84,8 @@
     return-void
 
     .line 23
-    :pswitch_data_16
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_10
+        :pswitch_0
     .end packed-switch
 .end method

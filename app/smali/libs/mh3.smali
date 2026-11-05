@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/nh3;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/mh3;->Z:Llibs/nh3;
@@ -27,14 +27,14 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     iget v0, p0, Llibs/fl;->Y:I
 
     .line 2
     .line 3
-    if-lez v0, :cond_f
+    if-lez v0, :cond_0
 
     .line 4
     .line 5
@@ -54,15 +54,15 @@
 
     .line 12
     .line 13
-    if-ne v1, v3, :cond_f
+    if-ne v1, v3, :cond_0
 
     .line 14
     .line 15
     move v0, v2
 
     .line 16
-    :cond_f
-    :try_start_f
+    :cond_0
+    :try_start_0
     new-instance v1, Ljava/lang/String;
 
     .line 17
@@ -91,8 +91,8 @@
 
     .line 29
     invoke-direct {v1, v2, v4, v0, v3}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
-    :try_end_1f
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_f .. :try_end_1f} :catch_20
+    :try_end_0
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 30
     .line 31
@@ -100,7 +100,7 @@
     return-object v1
 
     .line 33
-    :catch_20
+    :catch_0
     move-exception v0
 
     .line 34

@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/b23;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "ChaCha20"
@@ -30,7 +30,7 @@
 .end method
 
 .method public final c()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/b23;->Y:[I
@@ -53,7 +53,7 @@
 
     .line 10
     .line 11
-    if-nez v2, :cond_14
+    if-nez v2, :cond_0
 
     .line 12
     .line 13
@@ -73,12 +73,12 @@
 
     .line 20
     .line 21
-    :cond_14
+    :cond_0
     return-void
 .end method
 
 .method public final e([B)V
-    .registers 45
+    .locals 43
 
     .line 1
     move-object/from16 v0, p0
@@ -96,7 +96,7 @@
 
     .line 7
     .line 8
-    if-ne v2, v3, :cond_1df
+    if-ne v2, v3, :cond_2
 
     .line 9
     .line 10
@@ -107,7 +107,7 @@
     array-length v4, v2
 
     .line 13
-    if-ne v4, v3, :cond_1db
+    if-ne v4, v3, :cond_1
 
     .line 14
     .line 15
@@ -248,8 +248,8 @@
 
     .line 79
     .line 80
-    :goto_4f
-    if-lez v36, :cond_16f
+    :goto_0
+    if-lez v36, :cond_0
 
     .line 81
     .line 82
@@ -853,11 +853,11 @@
     const/4 v14, 0x5
 
     .line 366
-    goto/16 :goto_4f
+    goto/16 :goto_0
 
     .line 367
     .line 368
-    :cond_16f
+    :cond_0
     const/16 v37, 0x3
 
     .line 369
@@ -1080,7 +1080,7 @@
     return-void
 
     .line 476
-    :cond_1db
+    :cond_1
     invoke-static {}, Llibs/ic0;->l()V
 
     .line 477
@@ -1089,7 +1089,7 @@
     return-void
 
     .line 480
-    :cond_1df
+    :cond_2
     invoke-static {}, Llibs/ic0;->l()V
 
     .line 481
@@ -1099,7 +1099,7 @@
 .end method
 
 .method public final g()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/b23;->Y:[I
@@ -1129,7 +1129,7 @@
 .end method
 
 .method public final j([B[B)V
-    .registers 12
+    .locals 9
 
     .line 1
     const/4 v0, 0x0
@@ -1142,7 +1142,7 @@
 
     .line 4
     .line 5
-    if-eqz p1, :cond_7d
+    if-eqz p1, :cond_3
 
     .line 6
     .line 7
@@ -1157,21 +1157,21 @@
 
     .line 11
     .line 12
-    if-eq v3, v5, :cond_17
+    if-eq v3, v5, :cond_1
 
     .line 13
     .line 14
     array-length v3, p1
 
     .line 15
-    if-ne v3, v4, :cond_11
+    if-ne v3, v4, :cond_0
 
     .line 16
     .line 17
-    goto :goto_17
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     const-string p1, "ChaCha20 requires 128 bit or 256 bit key"
 
     .line 19
@@ -1184,8 +1184,8 @@
     return-void
 
     .line 24
-    :cond_17
-    :goto_17
+    :cond_1
+    :goto_0
     invoke-static {v0, p1}, Llibs/ji0;->Run(I[B)I
 
     .line 25
@@ -1254,7 +1254,7 @@
     array-length v3, p1
 
     .line 56
-    if-ne v3, v4, :cond_3c
+    if-ne v3, v4, :cond_2
 
     .line 57
     .line 58
@@ -1262,10 +1262,10 @@
 
     .line 59
     .line 60
-    goto :goto_3f
+    goto :goto_1
 
     .line 61
-    :cond_3c
+    :cond_2
     sget-object v3, Llibs/b23;->Rho:[B
 
     .line 62
@@ -1273,7 +1273,7 @@
     const/4 v5, 0x0
 
     .line 64
-    :goto_3f
+    :goto_1
     invoke-static {v5, p1}, Llibs/ji0;->Run(I[B)I
 
     .line 65
@@ -1402,7 +1402,7 @@
 
     .line 125
     .line 126
-    :cond_7d
+    :cond_3
     const/16 p1, 0xe
 
     .line 127

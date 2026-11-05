@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/qt;->X:B
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 11
+    .locals 8
 
     .line 1
     iget-byte v0, p0, Llibs/qt;->X:B
@@ -50,7 +50,7 @@
     const/4 v5, 0x1
 
     .line 8
-    packed-switch v0, :pswitch_data_b0
+    packed-switch v0, :pswitch_data_0
 
     .line 9
     .line 10
@@ -74,7 +74,7 @@
     return p1
 
     .line 20
-    :pswitch_13
+    :pswitch_0
     check-cast p1, Llibs/yl2;
 
     .line 21
@@ -98,34 +98,34 @@
 
     .line 30
     .line 31
-    if-lez p1, :cond_22
+    if-lez p1, :cond_0
 
     .line 32
     .line 33
     const/4 v3, 0x1
 
     .line 34
-    goto :goto_27
+    goto :goto_0
 
     .line 35
-    :cond_22
+    :cond_0
     cmp-long p1, v6, v1
 
     .line 36
     .line 37
-    if-gez p1, :cond_27
+    if-gez p1, :cond_1
 
     .line 38
     .line 39
     const/4 v3, -0x1
 
     .line 40
-    :cond_27
-    :goto_27
+    :cond_1
+    :goto_0
     return v3
 
     .line 41
-    :pswitch_28
+    :pswitch_1
     check-cast p1, Llibs/yl2;
 
     .line 42
@@ -157,34 +157,34 @@
 
     .line 55
     .line 56
-    if-lez p1, :cond_3b
+    if-lez p1, :cond_2
 
     .line 57
     .line 58
     const/4 v3, 0x1
 
     .line 59
-    goto :goto_40
+    goto :goto_1
 
     .line 60
-    :cond_3b
+    :cond_2
     cmp-long p1, v6, v1
 
     .line 61
     .line 62
-    if-gez p1, :cond_40
+    if-gez p1, :cond_3
 
     .line 63
     .line 64
     const/4 v3, -0x1
 
     .line 65
-    :cond_40
-    :goto_40
+    :cond_3
+    :goto_1
     return v3
 
     .line 66
-    :pswitch_41
+    :pswitch_2
     check-cast p1, Llibs/m02;
 
     .line 67
@@ -223,7 +223,7 @@
     return p2
 
     .line 84
-    :pswitch_53
+    :pswitch_3
     check-cast p1, Ljava/io/File;
 
     .line 85
@@ -255,7 +255,7 @@
     return v2
 
     .line 99
-    :pswitch_62
+    :pswitch_4
     check-cast p1, Ljava/lang/String;
 
     .line 100
@@ -275,7 +275,7 @@
     return p1
 
     .line 108
-    :pswitch_6b
+    :pswitch_5
     check-cast p1, Llibs/me0;
 
     .line 109
@@ -314,7 +314,7 @@
     return p2
 
     .line 126
-    :pswitch_7d
+    :pswitch_6
     check-cast p1, Ljava/lang/String;
 
     .line 127
@@ -350,8 +350,8 @@
     const/4 v1, 0x4
 
     .line 143
-    :goto_8e
-    if-ge v1, v0, :cond_a0
+    :goto_2
+    if-ge v1, v0, :cond_5
 
     .line 144
     .line 145
@@ -371,26 +371,26 @@
     move-result v6
 
     .line 153
-    if-eq v2, v6, :cond_9d
+    if-eq v2, v6, :cond_4
 
     .line 154
     .line 155
-    if-ge v2, v6, :cond_ae
+    if-ge v2, v6, :cond_6
 
     .line 156
     .line 157
-    goto :goto_ac
+    goto :goto_3
 
     .line 158
-    :cond_9d
+    :cond_4
     add-int/lit8 v1, v1, 0x1
 
     .line 159
     .line 160
-    goto :goto_8e
+    goto :goto_2
 
     .line 161
-    :cond_a0
+    :cond_5
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     .line 162
@@ -407,38 +407,38 @@
     move-result p2
 
     .line 169
-    if-eq p1, p2, :cond_af
+    if-eq p1, p2, :cond_7
 
     .line 170
     .line 171
-    if-ge p1, p2, :cond_ae
+    if-ge p1, p2, :cond_6
 
     .line 172
     .line 173
-    :goto_ac
+    :goto_3
     const/4 v3, -0x1
 
     .line 174
-    goto :goto_af
+    goto :goto_4
 
     .line 175
-    :cond_ae
+    :cond_6
     const/4 v3, 0x1
 
     .line 176
-    :cond_af
-    :goto_af
+    :cond_7
+    :goto_4
     return v3
 
     .line 177
-    :pswitch_data_b0
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_7d
-        :pswitch_6b
-        :pswitch_62
-        :pswitch_53
-        :pswitch_41
-        :pswitch_28
-        :pswitch_13
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

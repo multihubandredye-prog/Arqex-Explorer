@@ -11,7 +11,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/ee3;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/be3;->a:B
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final a()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/be3;->a:B
@@ -44,7 +44,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_20
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -65,7 +65,7 @@
     return-object v0
 
     .line 16
-    :pswitch_f
+    :pswitch_0
     iget-object v0, v1, Llibs/ee3;->a:Llibs/fi1;
 
     .line 17
@@ -82,7 +82,7 @@
     return-object v0
 
     .line 24
-    :pswitch_17
+    :pswitch_1
     iget-object v0, v1, Llibs/ee3;->a:Llibs/fi1;
 
     .line 25
@@ -102,15 +102,15 @@
     nop
 
     .line 33
-    :pswitch_data_20
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_17
-        :pswitch_f
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final b(Ljava/nio/channels/SelectionKey;)V
-    .registers 8
+    .locals 6
 
     .line 1
     iget-byte v0, p0, Llibs/be3;->a:B
@@ -123,7 +123,7 @@
     const/4 v2, 0x0
 
     .line 5
-    packed-switch v0, :pswitch_data_a6
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -148,7 +148,7 @@
     move-result v3
 
     .line 18
-    if-eqz v3, :cond_4b
+    if-eqz v3, :cond_3
 
     .line 19
     .line 20
@@ -165,7 +165,7 @@
     move-result v1
 
     .line 27
-    if-eqz v1, :cond_3f
+    if-eqz v1, :cond_2
 
     .line 28
     .line 29
@@ -189,7 +189,7 @@
 
     .line 38
     .line 39
-    if-eqz v3, :cond_2b
+    if-eqz v3, :cond_0
 
     .line 40
     .line 41
@@ -197,14 +197,14 @@
 
     .line 42
     .line 43
-    goto :goto_2c
+    goto :goto_0
 
     .line 44
-    :cond_2b
+    :cond_0
     move-object v3, v4
 
     .line 45
-    :goto_2c
+    :goto_0
     invoke-virtual {p1}, Ljava/nio/channels/SelectionKey;->isWritable()Z
 
     .line 46
@@ -213,7 +213,7 @@
     move-result v5
 
     .line 49
-    if-eqz v5, :cond_34
+    if-eqz v5, :cond_1
 
     .line 50
     .line 51
@@ -221,7 +221,7 @@
 
     .line 52
     .line 53
-    :cond_34
+    :cond_1
     const-string v5, "Processing "
 
     .line 54
@@ -243,7 +243,7 @@
     .line 62
     .line 63
     .line 64
-    :cond_3f
+    :cond_2
     new-instance v1, Llibs/de3;
 
     .line 65
@@ -266,11 +266,11 @@
     .line 74
     .line 75
     .line 76
-    :cond_4b
+    :cond_3
     return-void
 
     .line 77
-    :pswitch_4c
+    :pswitch_0
     invoke-virtual {p1}, Ljava/nio/channels/SelectionKey;->attachment()Ljava/lang/Object;
 
     .line 78
@@ -296,7 +296,7 @@
     return-void
 
     .line 90
-    :pswitch_59
+    :pswitch_1
     iget-object v0, p0, Llibs/be3;->b:Llibs/ee3;
 
     .line 91
@@ -325,7 +325,7 @@
     move-result v1
 
     .line 104
-    if-eqz v1, :cond_99
+    if-eqz v1, :cond_4
 
     .line 105
     .line 106
@@ -419,7 +419,7 @@
     .line 152
     .line 153
     .line 154
-    :cond_99
+    :cond_4
     iget-object v0, v3, Llibs/xt;->a:Llibs/yl1;
 
     .line 155
@@ -432,7 +432,7 @@
     move-result v0
 
     .line 160
-    if-eqz v0, :cond_a4
+    if-eqz v0, :cond_5
 
     .line 161
     .line 162
@@ -441,16 +441,16 @@
     .line 163
     .line 164
     .line 165
-    :cond_a4
+    :cond_5
     return-void
 
     .line 166
     nop
 
     .line 167
-    :pswitch_data_a6
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_59
-        :pswitch_4c
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

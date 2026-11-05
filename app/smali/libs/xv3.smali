@@ -36,7 +36,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/util/HashMap;
@@ -259,7 +259,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -307,7 +307,7 @@
 .end method
 
 .method public constructor <init>(Llibs/d90;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -371,10 +371,10 @@
 
     .line 31
     .line 32
-    :try_start_1f
+    :try_start_0
     invoke-virtual {p0, p1}, Llibs/xv3;->e(Llibs/d90;)V
-    :try_end_22
-    .catch Ljava/io/IOException; {:try_start_1f .. :try_end_22} :catch_23
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 33
     .line 34
@@ -382,7 +382,7 @@
     return-void
 
     .line 36
-    :catch_23
+    :catch_0
     move-exception p1
 
     .line 37
@@ -409,14 +409,14 @@
 
 # virtual methods
 .method public final a(Llibs/c90;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/xv3;->k:[B
 
     .line 2
     .line 3
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -446,7 +446,7 @@
 
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     invoke-virtual {v0}, [B->clone()Ljava/lang/Object;
 
     .line 20
@@ -468,7 +468,7 @@
 .end method
 
 .method public final b(Llibs/c90;)V
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/c90;
@@ -515,7 +515,7 @@
 
     .line 24
     .line 25
-    if-nez v1, :cond_2b
+    if-nez v1, :cond_1
 
     .line 26
     .line 27
@@ -531,14 +531,14 @@
     move-result-object v1
 
     .line 33
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_0
 
     .line 34
     .line 35
-    goto :goto_2b
+    goto :goto_0
 
     .line 36
-    :cond_23
+    :cond_0
     new-instance p1, Ljava/security/cert/CertificateParsingException;
 
     .line 37
@@ -555,8 +555,8 @@
     throw p1
 
     .line 44
-    :cond_2b
-    :goto_2b
+    :cond_1
+    :goto_0
     iget-object v1, p0, Llibs/xv3;->d:Llibs/sq;
 
     .line 45
@@ -583,7 +583,7 @@
 
     .line 57
     .line 58
-    if-nez v1, :cond_4e
+    if-nez v1, :cond_3
 
     .line 59
     .line 60
@@ -603,14 +603,14 @@
     move-result-object v1
 
     .line 68
-    if-eqz v1, :cond_46
+    if-eqz v1, :cond_2
 
     .line 69
     .line 70
-    goto :goto_4e
+    goto :goto_1
 
     .line 71
-    :cond_46
+    :cond_2
     new-instance p1, Ljava/security/cert/CertificateParsingException;
 
     .line 72
@@ -627,8 +627,8 @@
     throw p1
 
     .line 79
-    :cond_4e
-    :goto_4e
+    :cond_3
+    :goto_1
     iget-object v1, p0, Llibs/xv3;->f:Llibs/xq;
 
     .line 80
@@ -651,7 +651,7 @@
 
     .line 90
     .line 91
-    if-eqz v1, :cond_5f
+    if-eqz v1, :cond_4
 
     .line 92
     .line 93
@@ -660,12 +660,12 @@
     .line 94
     .line 95
     .line 96
-    :cond_5f
+    :cond_4
     iget-object v1, p0, Llibs/xv3;->i:Llibs/yq;
 
     .line 97
     .line 98
-    if-eqz v1, :cond_66
+    if-eqz v1, :cond_5
 
     .line 99
     .line 100
@@ -674,12 +674,12 @@
     .line 101
     .line 102
     .line 103
-    :cond_66
+    :cond_5
     iget-object v1, p0, Llibs/xv3;->j:Llibs/pq;
 
     .line 104
     .line 105
-    if-eqz v1, :cond_6d
+    if-eqz v1, :cond_6
 
     .line 106
     .line 107
@@ -688,7 +688,7 @@
     .line 108
     .line 109
     .line 110
-    :cond_6d
+    :cond_6
     const/16 v1, 0x30
 
     .line 111
@@ -702,7 +702,7 @@
 .end method
 
 .method public final c(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 7
+    .locals 5
 
     .line 1
     const/16 v0, 0x2e
@@ -726,7 +726,7 @@
     const/4 v3, 0x0
 
     .line 10
-    if-ne v0, v1, :cond_e
+    if-ne v0, v1, :cond_0
 
     .line 11
     .line 12
@@ -736,10 +736,10 @@
     move-object v0, v3
 
     .line 14
-    goto :goto_18
+    goto :goto_0
 
     .line 15
-    :cond_e
+    :cond_0
     invoke-virtual {p1, v2, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     .line 16
@@ -760,7 +760,7 @@
     move-result-object v0
 
     .line 25
-    :goto_18
+    :goto_0
     sget-object v4, Llibs/xv3;->l:Ljava/util/HashMap;
 
     .line 26
@@ -777,14 +777,14 @@
 
     .line 32
     .line 33
-    if-nez v1, :cond_23
+    if-nez v1, :cond_1
 
     .line 34
     .line 35
-    goto :goto_27
+    goto :goto_1
 
     .line 36
-    :cond_23
+    :cond_1
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     .line 37
@@ -793,8 +793,8 @@
     move-result v2
 
     .line 40
-    :goto_27
-    if-eqz v2, :cond_110
+    :goto_1
+    if-eqz v2, :cond_16
 
     .line 41
     .line 42
@@ -802,35 +802,35 @@
 
     .line 43
     .line 44
-    packed-switch v2, :pswitch_data_11c
+    packed-switch v2, :pswitch_data_0
 
     .line 45
     .line 46
     .line 47
-    goto :goto_5e
+    goto :goto_2
 
     .line 48
-    :pswitch_2f
+    :pswitch_0
     iget-object p1, p0, Llibs/xv3;->j:Llibs/pq;
 
     .line 49
     .line 50
-    if-nez v0, :cond_34
+    if-nez v0, :cond_2
 
     .line 51
     .line 52
     return-object p1
 
     .line 53
-    :cond_34
-    if-nez p1, :cond_37
+    :cond_2
+    if-nez p1, :cond_3
 
     .line 54
     .line 55
-    goto :goto_5e
+    goto :goto_2
 
     .line 56
-    :cond_37
+    :cond_3
     iget-object p1, p1, Llibs/pq;->a:Ljava/util/Hashtable;
 
     .line 57
@@ -843,14 +843,14 @@
     move-result-object p1
 
     .line 62
-    if-eqz p1, :cond_40
+    if-eqz p1, :cond_4
 
     .line 63
     .line 64
     return-object p1
 
     .line 65
-    :cond_40
+    :cond_4
     const-string p1, "No extension found with name "
 
     .line 66
@@ -871,27 +871,27 @@
     return-object v3
 
     .line 75
-    :pswitch_4a
+    :pswitch_1
     iget-object p1, p0, Llibs/xv3;->i:Llibs/yq;
 
     .line 76
     .line 77
-    if-nez v0, :cond_4f
+    if-nez v0, :cond_5
 
     .line 78
     .line 79
     return-object p1
 
     .line 80
-    :cond_4f
-    if-nez p1, :cond_52
+    :cond_5
+    if-nez p1, :cond_6
 
     .line 81
     .line 82
-    goto :goto_5e
+    goto :goto_2
 
     .line 83
-    :cond_52
+    :cond_6
     invoke-virtual {p1, v0}, Llibs/yq;->b(Ljava/lang/String;)Ljava/lang/Object;
 
     .line 84
@@ -903,28 +903,28 @@
     return-object p1
 
     .line 88
-    :pswitch_57
+    :pswitch_2
     iget-object p1, p0, Llibs/xv3;->h:Llibs/tq;
 
     .line 89
     .line 90
-    if-nez v0, :cond_5c
+    if-nez v0, :cond_7
 
     .line 91
     .line 92
     return-object p1
 
     .line 93
-    :cond_5c
-    if-nez p1, :cond_5f
+    :cond_7
+    if-nez p1, :cond_8
 
     .line 94
     .line 95
-    :goto_5e
+    :goto_2
     return-object v3
 
     .line 96
-    :cond_5f
+    :cond_8
     invoke-virtual {p1, v0}, Llibs/tq;->b(Ljava/lang/String;)Ljava/lang/Object;
 
     .line 97
@@ -936,19 +936,19 @@
     return-object p1
 
     .line 101
-    :pswitch_64
+    :pswitch_3
     iget-object p1, p0, Llibs/xv3;->g:Llibs/br;
 
     .line 102
     .line 103
-    if-nez v0, :cond_69
+    if-nez v0, :cond_9
 
     .line 104
     .line 105
     return-object p1
 
     .line 106
-    :cond_69
+    :cond_9
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 107
@@ -966,7 +966,7 @@
     move-result v0
 
     .line 115
-    if-eqz v0, :cond_77
+    if-eqz v0, :cond_a
 
     .line 116
     .line 117
@@ -977,7 +977,7 @@
     return-object p1
 
     .line 120
-    :cond_77
+    :cond_a
     const-string p1, "Attribute name not recognized by CertAttrSet: CertificateX509Key."
 
     .line 121
@@ -990,19 +990,19 @@
     return-object v3
 
     .line 126
-    :pswitch_7d
+    :pswitch_4
     iget-object p1, p0, Llibs/xv3;->f:Llibs/xq;
 
     .line 127
     .line 128
-    if-nez v0, :cond_82
+    if-nez v0, :cond_b
 
     .line 129
     .line 130
     return-object p1
 
     .line 131
-    :cond_82
+    :cond_b
     invoke-virtual {p1, v0}, Llibs/xq;->b(Ljava/lang/String;)Ljava/lang/Object;
 
     .line 132
@@ -1014,19 +1014,19 @@
     return-object p1
 
     .line 136
-    :pswitch_87
+    :pswitch_5
     iget-object p1, p0, Llibs/xv3;->e:Llibs/zq;
 
     .line 137
     .line 138
-    if-nez v0, :cond_8c
+    if-nez v0, :cond_c
 
     .line 139
     .line 140
     return-object p1
 
     .line 141
-    :cond_8c
+    :cond_c
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 142
@@ -1044,7 +1044,7 @@
     move-result v1
 
     .line 150
-    if-eqz v1, :cond_a3
+    if-eqz v1, :cond_d
 
     .line 151
     .line 152
@@ -1072,7 +1072,7 @@
     return-object v0
 
     .line 164
-    :cond_a3
+    :cond_d
     const-string v1, "notAfter"
 
     .line 165
@@ -1085,7 +1085,7 @@
     move-result v0
 
     .line 170
-    if-eqz v0, :cond_b7
+    if-eqz v0, :cond_e
 
     .line 171
     .line 172
@@ -1113,7 +1113,7 @@
     return-object v0
 
     .line 184
-    :cond_b7
+    :cond_e
     const-string p1, "Attribute name not recognized by CertAttrSet: CertificateValidity."
 
     .line 185
@@ -1126,19 +1126,19 @@
     return-object v3
 
     .line 190
-    :pswitch_bd
+    :pswitch_6
     iget-object p1, p0, Llibs/xv3;->d:Llibs/sq;
 
     .line 191
     .line 192
-    if-nez v0, :cond_c2
+    if-nez v0, :cond_f
 
     .line 193
     .line 194
     return-object p1
 
     .line 195
-    :cond_c2
+    :cond_f
     invoke-virtual {p1, v0}, Llibs/sq;->b(Ljava/lang/String;)Ljava/lang/Object;
 
     .line 196
@@ -1150,19 +1150,19 @@
     return-object p1
 
     .line 200
-    :pswitch_c7
+    :pswitch_7
     iget-object p1, p0, Llibs/xv3;->c:Llibs/oq;
 
     .line 201
     .line 202
-    if-nez v0, :cond_cc
+    if-nez v0, :cond_10
 
     .line 203
     .line 204
     return-object p1
 
     .line 205
-    :cond_cc
+    :cond_10
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 206
@@ -1180,7 +1180,7 @@
     move-result v0
 
     .line 214
-    if-eqz v0, :cond_da
+    if-eqz v0, :cond_11
 
     .line 215
     .line 216
@@ -1191,7 +1191,7 @@
     return-object p1
 
     .line 219
-    :cond_da
+    :cond_11
     const-string p1, "Attribute name not recognized by CertAttrSet:CertificateAlgorithmId."
 
     .line 220
@@ -1204,19 +1204,19 @@
     return-object v3
 
     .line 225
-    :pswitch_e0
+    :pswitch_8
     iget-object v1, p0, Llibs/xv3;->b:Llibs/wq;
 
     .line 226
     .line 227
-    if-nez v0, :cond_e5
+    if-nez v0, :cond_12
 
     .line 228
     .line 229
     return-object v1
 
     .line 230
-    :cond_e5
+    :cond_12
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 231
@@ -1230,7 +1230,7 @@
     move-result p1
 
     .line 237
-    if-eqz p1, :cond_f1
+    if-eqz p1, :cond_13
 
     .line 238
     .line 239
@@ -1241,7 +1241,7 @@
     return-object p1
 
     .line 242
-    :cond_f1
+    :cond_13
     const-string p1, "Attribute name not recognized by CertAttrSet:CertificateSerialNumber."
 
     .line 243
@@ -1254,19 +1254,19 @@
     return-object v3
 
     .line 248
-    :pswitch_f7
+    :pswitch_9
     iget-object v1, p0, Llibs/xv3;->a:Llibs/ar;
 
     .line 249
     .line 250
-    if-nez v0, :cond_fc
+    if-nez v0, :cond_14
 
     .line 251
     .line 252
     return-object v1
 
     .line 253
-    :cond_fc
+    :cond_14
     invoke-virtual {v0, p1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     .line 254
@@ -1275,7 +1275,7 @@
     move-result p1
 
     .line 257
-    if-eqz p1, :cond_10a
+    if-eqz p1, :cond_15
 
     .line 258
     .line 259
@@ -1295,7 +1295,7 @@
     return-object p1
 
     .line 267
-    :cond_10a
+    :cond_15
     const-string p1, "Attribute name not recognized by CertAttrSet: CertificateVersion."
 
     .line 268
@@ -1308,7 +1308,7 @@
     return-object v3
 
     .line 273
-    :cond_110
+    :cond_16
     new-instance v0, Ljava/security/cert/CertificateParsingException;
 
     .line 274
@@ -1333,23 +1333,23 @@
     throw v0
 
     .line 285
-    :pswitch_data_11c
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_f7
-        :pswitch_e0
-        :pswitch_c7
-        :pswitch_bd
-        :pswitch_87
-        :pswitch_7d
-        :pswitch_64
-        :pswitch_57
-        :pswitch_4a
-        :pswitch_2f
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final d()[B
-    .registers 3
+    .locals 2
 
     .line 1
     :try_start_0
@@ -1357,7 +1357,7 @@
 
     .line 2
     .line 3
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -1387,25 +1387,25 @@
 
     .line 18
     .line 19
-    goto :goto_17
+    goto :goto_0
 
     .line 20
-    :catch_13
+    :catch_0
     move-exception v0
 
     .line 21
-    goto :goto_1e
+    goto :goto_1
 
     .line 22
-    :catch_15
+    :catch_1
     move-exception v0
 
     .line 23
-    goto :goto_28
+    goto :goto_2
 
     .line 24
-    :cond_17
-    :goto_17
+    :cond_0
+    :goto_0
     invoke-virtual {v0}, [B->clone()Ljava/lang/Object;
 
     .line 25
@@ -1415,16 +1415,16 @@
 
     .line 28
     check-cast v0, [B
-    :try_end_1d
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_1d} :catch_15
-    .catch Ljava/security/cert/CertificateException; {:try_start_0 .. :try_end_1d} :catch_13
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/security/cert/CertificateException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 29
     .line 30
     return-object v0
 
     .line 31
-    :goto_1e
+    :goto_1
     new-instance v1, Ljava/security/cert/CertificateEncodingException;
 
     .line 32
@@ -1445,7 +1445,7 @@
     throw v1
 
     .line 41
-    :goto_28
+    :goto_2
     new-instance v1, Ljava/security/cert/CertificateEncodingException;
 
     .line 42
@@ -1467,7 +1467,7 @@
 .end method
 
 .method public final e(Llibs/d90;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-byte v0, p1, Llibs/d90;->a:B
@@ -1478,7 +1478,7 @@
 
     .line 4
     .line 5
-    if-ne v0, v1, :cond_131
+    if-ne v0, v1, :cond_e
 
     .line 6
     .line 7
@@ -1517,7 +1517,7 @@
     move-result v1
 
     .line 24
-    if-eqz v1, :cond_24
+    if-eqz v1, :cond_0
 
     .line 25
     .line 26
@@ -1542,7 +1542,7 @@
     move-result-object v0
 
     .line 37
-    :cond_24
+    :cond_0
     new-instance v1, Llibs/wq;
 
     .line 38
@@ -1606,7 +1606,7 @@
     move-result v0
 
     .line 70
-    if-nez v0, :cond_129
+    if-nez v0, :cond_d
 
     .line 71
     .line 72
@@ -1656,7 +1656,7 @@
 
     .line 95
     .line 96
-    if-nez v2, :cond_70
+    if-nez v2, :cond_2
 
     .line 97
     .line 98
@@ -1668,14 +1668,14 @@
     move-result v0
 
     .line 102
-    if-nez v0, :cond_68
+    if-nez v0, :cond_1
 
     .line 103
     .line 104
-    goto :goto_70
+    goto :goto_0
 
     .line 105
-    :cond_68
+    :cond_1
     new-instance p1, Ljava/security/cert/CertificateParsingException;
 
     .line 106
@@ -1692,8 +1692,8 @@
     throw p1
 
     .line 113
-    :cond_70
-    :goto_70
+    :cond_2
+    :goto_0
     new-instance v0, Llibs/br;
 
     .line 114
@@ -1719,7 +1719,7 @@
     move-result v0
 
     .line 126
-    if-eqz v0, :cond_128
+    if-eqz v0, :cond_c
 
     .line 127
     .line 128
@@ -1731,7 +1731,7 @@
 
     .line 131
     .line 132
-    if-eqz v0, :cond_120
+    if-eqz v0, :cond_b
 
     .line 133
     .line 134
@@ -1754,7 +1754,7 @@
     move-result v2
 
     .line 143
-    if-eqz v2, :cond_a5
+    if-eqz v2, :cond_4
 
     .line 144
     .line 145
@@ -1783,15 +1783,15 @@
     move-result v0
 
     .line 158
-    if-nez v0, :cond_a1
+    if-nez v0, :cond_3
 
     .line 159
     .line 160
-    goto/16 :goto_128
+    goto/16 :goto_1
 
     .line 161
     .line 162
-    :cond_a1
+    :cond_3
     invoke-virtual {p1}, Llibs/b90;->a()Llibs/d90;
 
     .line 163
@@ -1800,7 +1800,7 @@
     move-result-object v0
 
     .line 166
-    :cond_a5
+    :cond_4
     const/4 v2, 0x2
 
     .line 167
@@ -1812,7 +1812,7 @@
     move-result v3
 
     .line 171
-    if-eqz v3, :cond_c0
+    if-eqz v3, :cond_6
 
     .line 172
     .line 173
@@ -1841,14 +1841,14 @@
     move-result v0
 
     .line 186
-    if-nez v0, :cond_bc
+    if-nez v0, :cond_5
 
     .line 187
     .line 188
-    goto :goto_128
+    goto :goto_1
 
     .line 189
-    :cond_bc
+    :cond_5
     invoke-virtual {p1}, Llibs/b90;->a()Llibs/d90;
 
     .line 190
@@ -1857,7 +1857,7 @@
     move-result-object v0
 
     .line 193
-    :cond_c0
+    :cond_6
     iget-object p1, p0, Llibs/xv3;->a:Llibs/ar;
 
     .line 194
@@ -1869,7 +1869,7 @@
     sub-int/2addr p1, v2
 
     .line 198
-    if-nez p1, :cond_118
+    if-nez p1, :cond_a
 
     .line 199
     .line 200
@@ -1884,7 +1884,7 @@
     and-int/2addr p1, v2
 
     .line 205
-    if-ne p1, v2, :cond_de
+    if-ne p1, v2, :cond_7
 
     .line 206
     .line 207
@@ -1899,7 +1899,7 @@
     move-result p1
 
     .line 212
-    if-eqz p1, :cond_de
+    if-eqz p1, :cond_7
 
     .line 213
     .line 214
@@ -1920,7 +1920,7 @@
 
     .line 222
     .line 223
-    :cond_de
+    :cond_7
     iget-object p1, p0, Llibs/xv3;->f:Llibs/xq;
 
     .line 224
@@ -1949,15 +1949,15 @@
     move-result p1
 
     .line 237
-    if-eqz p1, :cond_128
+    if-eqz p1, :cond_c
 
     .line 238
     .line 239
-    if-eqz v0, :cond_110
+    if-eqz v0, :cond_9
 
     .line 240
     .line 241
-    :try_start_f0
+    :try_start_0
     const-string p1, "SubjectAlternativeName"
 
     .line 242
@@ -1974,7 +1974,7 @@
     move-result-object p1
 
     .line 249
-    if-eqz p1, :cond_100
+    if-eqz p1, :cond_8
 
     .line 250
     .line 251
@@ -1990,7 +1990,7 @@
     throw p1
 
     .line 257
-    :cond_100
+    :cond_8
     new-instance p1, Ljava/io/IOException;
 
     .line 258
@@ -2005,11 +2005,11 @@
     .line 263
     .line 264
     throw p1
-    :try_end_108
-    .catch Ljava/io/IOException; {:try_start_f0 .. :try_end_108} :catch_108
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 265
-    :catch_108
+    :catch_0
     new-instance p1, Ljava/security/cert/CertificateParsingException;
 
     .line 266
@@ -2026,7 +2026,7 @@
     throw p1
 
     .line 273
-    :cond_110
+    :cond_9
     new-instance p1, Ljava/security/cert/CertificateParsingException;
 
     .line 274
@@ -2043,7 +2043,7 @@
     throw p1
 
     .line 281
-    :cond_118
+    :cond_a
     new-instance p1, Ljava/security/cert/CertificateParsingException;
 
     .line 282
@@ -2060,7 +2060,7 @@
     throw p1
 
     .line 289
-    :cond_120
+    :cond_b
     new-instance p1, Ljava/security/cert/CertificateParsingException;
 
     .line 290
@@ -2077,12 +2077,12 @@
     throw p1
 
     .line 297
-    :cond_128
-    :goto_128
+    :cond_c
+    :goto_1
     return-void
 
     .line 298
-    :cond_129
+    :cond_d
     new-instance p1, Ljava/security/cert/CertificateParsingException;
 
     .line 299
@@ -2099,7 +2099,7 @@
     throw p1
 
     .line 306
-    :cond_131
+    :cond_e
     new-instance p1, Ljava/security/cert/CertificateParsingException;
 
     .line 307
@@ -2117,7 +2117,7 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     instance-of v0, p1, Llibs/xv3;
@@ -2127,7 +2127,7 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_5
 
     .line 5
     .line 6
@@ -2135,19 +2135,19 @@
 
     .line 7
     .line 8
-    if-ne p0, p1, :cond_a
+    if-ne p0, p1, :cond_0
 
     .line 9
     .line 10
-    goto :goto_2a
+    goto :goto_1
 
     .line 11
-    :cond_a
+    :cond_0
     iget-object v0, p0, Llibs/xv3;->k:[B
 
     .line 12
     .line 13
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_5
 
     .line 14
     .line 15
@@ -2155,32 +2155,32 @@
 
     .line 16
     .line 17
-    if-nez v2, :cond_13
+    if-nez v2, :cond_1
 
     .line 18
     .line 19
-    goto :goto_2c
+    goto :goto_2
 
     .line 20
-    :cond_13
+    :cond_1
     array-length v0, v0
 
     .line 21
     array-length v2, v2
 
     .line 22
-    if-eq v0, v2, :cond_18
+    if-eq v0, v2, :cond_2
 
     .line 23
     .line 24
-    goto :goto_2c
+    goto :goto_2
 
     .line 25
-    :cond_18
+    :cond_2
     const/4 v0, 0x0
 
     .line 26
-    :goto_19
+    :goto_0
     iget-object v2, p0, Llibs/xv3;->k:[B
 
     .line 27
@@ -2188,7 +2188,7 @@
     array-length v3, v2
 
     .line 29
-    if-ge v0, v3, :cond_2a
+    if-ge v0, v3, :cond_4
 
     .line 30
     .line 31
@@ -2204,36 +2204,36 @@
 
     .line 36
     .line 37
-    if-eq v2, v3, :cond_27
+    if-eq v2, v3, :cond_3
 
     .line 38
     .line 39
-    goto :goto_2c
+    goto :goto_2
 
     .line 40
-    :cond_27
+    :cond_3
     add-int/lit8 v0, v0, 0x1
 
     .line 41
     .line 42
-    goto :goto_19
+    goto :goto_0
 
     .line 43
-    :cond_2a
-    :goto_2a
+    :cond_4
+    :goto_1
     const/4 p1, 0x1
 
     .line 44
     return p1
 
     .line 45
-    :cond_2c
-    :goto_2c
+    :cond_5
+    :goto_2
     return v1
 .end method
 
 .method public final f(Ljava/lang/Object;Ljava/lang/String;)V
-    .registers 9
+    .locals 6
 
     .line 1
     const/16 v0, 0x2e
@@ -2257,7 +2257,7 @@
     const/4 v3, 0x0
 
     .line 10
-    if-ne v0, v1, :cond_e
+    if-ne v0, v1, :cond_0
 
     .line 11
     .line 12
@@ -2267,10 +2267,10 @@
     move-object v0, v3
 
     .line 14
-    goto :goto_18
+    goto :goto_0
 
     .line 15
-    :cond_e
+    :cond_0
     invoke-virtual {p2, v2, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     .line 16
@@ -2291,7 +2291,7 @@
     move-result-object v0
 
     .line 25
-    :goto_18
+    :goto_0
     sget-object v4, Llibs/xv3;->l:Ljava/util/HashMap;
 
     .line 26
@@ -2308,14 +2308,14 @@
 
     .line 32
     .line 33
-    if-nez v1, :cond_23
+    if-nez v1, :cond_1
 
     .line 34
     .line 35
-    goto :goto_27
+    goto :goto_1
 
     .line 36
-    :cond_23
+    :cond_1
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     .line 37
@@ -2324,8 +2324,8 @@
     move-result v2
 
     .line 40
-    :goto_27
-    if-eqz v2, :cond_20a
+    :goto_1
+    if-eqz v2, :cond_28
 
     .line 41
     .line 42
@@ -2349,7 +2349,7 @@
 
     .line 51
     .line 52
-    packed-switch v2, :pswitch_data_216
+    packed-switch v2, :pswitch_data_0
 
     .line 53
     .line 54
@@ -2357,8 +2357,8 @@
     return-void
 
     .line 56
-    :pswitch_37
-    if-nez v0, :cond_54
+    :pswitch_0
+    if-nez v0, :cond_4
 
     .line 57
     .line 58
@@ -2374,7 +2374,7 @@
 
     .line 63
     .line 64
-    if-ltz p2, :cond_50
+    if-ltz p2, :cond_3
 
     .line 65
     .line 66
@@ -2382,7 +2382,7 @@
 
     .line 67
     .line 68
-    if-eqz p2, :cond_4a
+    if-eqz p2, :cond_2
 
     .line 69
     .line 70
@@ -2397,7 +2397,7 @@
     return-void
 
     .line 75
-    :cond_4a
+    :cond_2
     const-string p1, "Extensions class type invalid."
 
     .line 76
@@ -2410,7 +2410,7 @@
     return-void
 
     .line 81
-    :cond_50
+    :cond_3
     invoke-static {v5}, Llibs/fg3;->e(Ljava/lang/String;)V
 
     .line 82
@@ -2419,12 +2419,12 @@
     return-void
 
     .line 85
-    :cond_54
+    :cond_4
     iget-object p2, p0, Llibs/xv3;->j:Llibs/pq;
 
     .line 86
     .line 87
-    if-nez p2, :cond_5f
+    if-nez p2, :cond_5
 
     .line 88
     .line 89
@@ -2441,7 +2441,7 @@
 
     .line 95
     .line 96
-    :cond_5f
+    :cond_5
     invoke-virtual {p2, p1, v0}, Llibs/pq;->b(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 97
@@ -2450,8 +2450,8 @@
     return-void
 
     .line 100
-    :pswitch_63
-    if-nez v0, :cond_80
+    :pswitch_1
+    if-nez v0, :cond_8
 
     .line 101
     .line 102
@@ -2467,7 +2467,7 @@
 
     .line 107
     .line 108
-    if-ltz p2, :cond_7c
+    if-ltz p2, :cond_7
 
     .line 109
     .line 110
@@ -2475,7 +2475,7 @@
 
     .line 111
     .line 112
-    if-eqz p2, :cond_76
+    if-eqz p2, :cond_6
 
     .line 113
     .line 114
@@ -2490,7 +2490,7 @@
     return-void
 
     .line 119
-    :cond_76
+    :cond_6
     const-string p1, "SubjectUniqueId class type invalid."
 
     .line 120
@@ -2503,7 +2503,7 @@
     return-void
 
     .line 125
-    :cond_7c
+    :cond_7
     invoke-static {v5}, Llibs/fg3;->e(Ljava/lang/String;)V
 
     .line 126
@@ -2512,7 +2512,7 @@
     return-void
 
     .line 129
-    :cond_80
+    :cond_8
     iget-object p2, p0, Llibs/xv3;->i:Llibs/yq;
 
     .line 130
@@ -2525,8 +2525,8 @@
     return-void
 
     .line 135
-    :pswitch_86
-    if-nez v0, :cond_a3
+    :pswitch_2
+    if-nez v0, :cond_b
 
     .line 136
     .line 137
@@ -2542,7 +2542,7 @@
 
     .line 142
     .line 143
-    if-ltz p2, :cond_9f
+    if-ltz p2, :cond_a
 
     .line 144
     .line 145
@@ -2550,7 +2550,7 @@
 
     .line 146
     .line 147
-    if-eqz p2, :cond_99
+    if-eqz p2, :cond_9
 
     .line 148
     .line 149
@@ -2565,7 +2565,7 @@
     return-void
 
     .line 154
-    :cond_99
+    :cond_9
     const-string p1, "IssuerUniqueId class type invalid."
 
     .line 155
@@ -2578,7 +2578,7 @@
     return-void
 
     .line 160
-    :cond_9f
+    :cond_a
     invoke-static {v5}, Llibs/fg3;->e(Ljava/lang/String;)V
 
     .line 161
@@ -2587,7 +2587,7 @@
     return-void
 
     .line 164
-    :cond_a3
+    :cond_b
     iget-object p2, p0, Llibs/xv3;->h:Llibs/tq;
 
     .line 165
@@ -2600,8 +2600,8 @@
     return-void
 
     .line 170
-    :pswitch_a9
-    if-nez v0, :cond_ba
+    :pswitch_3
+    if-nez v0, :cond_d
 
     .line 171
     .line 172
@@ -2609,7 +2609,7 @@
 
     .line 173
     .line 174
-    if-eqz p2, :cond_b4
+    if-eqz p2, :cond_c
 
     .line 175
     .line 176
@@ -2624,7 +2624,7 @@
     return-void
 
     .line 181
-    :cond_b4
+    :cond_c
     const-string p1, "Key class type invalid."
 
     .line 182
@@ -2637,7 +2637,7 @@
     return-void
 
     .line 187
-    :cond_ba
+    :cond_d
     iget-object p2, p0, Llibs/xv3;->g:Llibs/br;
 
     .line 188
@@ -2659,7 +2659,7 @@
     move-result v0
 
     .line 198
-    if-eqz v0, :cond_cc
+    if-eqz v0, :cond_e
 
     .line 199
     .line 200
@@ -2674,7 +2674,7 @@
     return-void
 
     .line 205
-    :cond_cc
+    :cond_e
     const-string p1, "Attribute name not recognized by CertAttrSet: CertificateX509Key."
 
     .line 206
@@ -2687,8 +2687,8 @@
     return-void
 
     .line 211
-    :pswitch_d2
-    if-nez v0, :cond_e3
+    :pswitch_4
+    if-nez v0, :cond_10
 
     .line 212
     .line 213
@@ -2696,7 +2696,7 @@
 
     .line 214
     .line 215
-    if-eqz p2, :cond_dd
+    if-eqz p2, :cond_f
 
     .line 216
     .line 217
@@ -2711,7 +2711,7 @@
     return-void
 
     .line 222
-    :cond_dd
+    :cond_f
     const-string p1, "Subject class type invalid."
 
     .line 223
@@ -2724,7 +2724,7 @@
     return-void
 
     .line 228
-    :cond_e3
+    :cond_10
     iget-object p2, p0, Llibs/xv3;->f:Llibs/xq;
 
     .line 229
@@ -2738,7 +2738,7 @@
 
     .line 234
     .line 235
-    if-eqz v2, :cond_ff
+    if-eqz v2, :cond_12
 
     .line 236
     .line 237
@@ -2750,7 +2750,7 @@
     move-result v0
 
     .line 241
-    if-eqz v0, :cond_f9
+    if-eqz v0, :cond_11
 
     .line 242
     .line 243
@@ -2769,7 +2769,7 @@
     return-void
 
     .line 250
-    :cond_f9
+    :cond_11
     const-string p1, "Attribute name not recognized by CertAttrSet:CertificateSubjectName."
 
     .line 251
@@ -2782,7 +2782,7 @@
     return-void
 
     .line 256
-    :cond_ff
+    :cond_12
     invoke-static {v1}, Llibs/ic0;->t(Ljava/lang/String;)V
 
     .line 257
@@ -2791,8 +2791,8 @@
     return-void
 
     .line 260
-    :pswitch_103
-    if-nez v0, :cond_114
+    :pswitch_5
+    if-nez v0, :cond_14
 
     .line 261
     .line 262
@@ -2800,7 +2800,7 @@
 
     .line 263
     .line 264
-    if-eqz p2, :cond_10e
+    if-eqz p2, :cond_13
 
     .line 265
     .line 266
@@ -2815,7 +2815,7 @@
     return-void
 
     .line 271
-    :cond_10e
+    :cond_13
     const-string p1, "CertificateValidity class type invalid."
 
     .line 272
@@ -2828,7 +2828,7 @@
     return-void
 
     .line 277
-    :cond_114
+    :cond_14
     iget-object p2, p0, Llibs/xv3;->e:Llibs/zq;
 
     .line 278
@@ -2842,7 +2842,7 @@
 
     .line 283
     .line 284
-    if-eqz v1, :cond_13d
+    if-eqz v1, :cond_17
 
     .line 285
     .line 286
@@ -2858,7 +2858,7 @@
     move-result v1
 
     .line 292
-    if-eqz v1, :cond_12a
+    if-eqz v1, :cond_15
 
     .line 293
     .line 294
@@ -2873,7 +2873,7 @@
     return-void
 
     .line 299
-    :cond_12a
+    :cond_15
     const-string v1, "notAfter"
 
     .line 300
@@ -2886,7 +2886,7 @@
     move-result v0
 
     .line 305
-    if-eqz v0, :cond_137
+    if-eqz v0, :cond_16
 
     .line 306
     .line 307
@@ -2901,7 +2901,7 @@
     return-void
 
     .line 312
-    :cond_137
+    :cond_16
     const-string p1, "Attribute name not recognized by CertAttrSet: CertificateValidity."
 
     .line 313
@@ -2914,7 +2914,7 @@
     return-void
 
     .line 318
-    :cond_13d
+    :cond_17
     const-string p1, "Attribute must be of type Date."
 
     .line 319
@@ -2927,8 +2927,8 @@
     return-void
 
     .line 324
-    :pswitch_143
-    if-nez v0, :cond_154
+    :pswitch_6
+    if-nez v0, :cond_19
 
     .line 325
     .line 326
@@ -2936,7 +2936,7 @@
 
     .line 327
     .line 328
-    if-eqz p2, :cond_14e
+    if-eqz p2, :cond_18
 
     .line 329
     .line 330
@@ -2951,7 +2951,7 @@
     return-void
 
     .line 335
-    :cond_14e
+    :cond_18
     const-string p1, "Issuer class type invalid."
 
     .line 336
@@ -2964,7 +2964,7 @@
     return-void
 
     .line 341
-    :cond_154
+    :cond_19
     iget-object p2, p0, Llibs/xv3;->d:Llibs/sq;
 
     .line 342
@@ -2978,7 +2978,7 @@
 
     .line 347
     .line 348
-    if-eqz v2, :cond_170
+    if-eqz v2, :cond_1b
 
     .line 349
     .line 350
@@ -2990,7 +2990,7 @@
     move-result v0
 
     .line 354
-    if-eqz v0, :cond_16a
+    if-eqz v0, :cond_1a
 
     .line 355
     .line 356
@@ -3009,7 +3009,7 @@
     return-void
 
     .line 363
-    :cond_16a
+    :cond_1a
     const-string p1, "Attribute name not recognized by CertAttrSet:CertificateIssuerName."
 
     .line 364
@@ -3022,7 +3022,7 @@
     return-void
 
     .line 369
-    :cond_170
+    :cond_1b
     invoke-static {v1}, Llibs/ic0;->t(Ljava/lang/String;)V
 
     .line 370
@@ -3031,8 +3031,8 @@
     return-void
 
     .line 373
-    :pswitch_174
-    if-nez v0, :cond_185
+    :pswitch_7
+    if-nez v0, :cond_1d
 
     .line 374
     .line 375
@@ -3040,7 +3040,7 @@
 
     .line 376
     .line 377
-    if-eqz p2, :cond_17f
+    if-eqz p2, :cond_1c
 
     .line 378
     .line 379
@@ -3055,7 +3055,7 @@
     return-void
 
     .line 384
-    :cond_17f
+    :cond_1c
     const-string p1, "AlgorithmId class type invalid."
 
     .line 385
@@ -3068,7 +3068,7 @@
     return-void
 
     .line 390
-    :cond_185
+    :cond_1d
     iget-object p2, p0, Llibs/xv3;->c:Llibs/oq;
 
     .line 391
@@ -3082,7 +3082,7 @@
 
     .line 396
     .line 397
-    if-eqz v1, :cond_1a1
+    if-eqz v1, :cond_1f
 
     .line 398
     .line 399
@@ -3098,7 +3098,7 @@
     move-result v0
 
     .line 405
-    if-eqz v0, :cond_19b
+    if-eqz v0, :cond_1e
 
     .line 406
     .line 407
@@ -3113,7 +3113,7 @@
     return-void
 
     .line 412
-    :cond_19b
+    :cond_1e
     const-string p1, "Attribute name not recognized by CertAttrSet:CertificateAlgorithmId."
 
     .line 413
@@ -3126,7 +3126,7 @@
     return-void
 
     .line 418
-    :cond_1a1
+    :cond_1f
     const-string p1, "Attribute must be of type AlgorithmId."
 
     .line 419
@@ -3139,8 +3139,8 @@
     return-void
 
     .line 424
-    :pswitch_1a7
-    if-nez v0, :cond_1b8
+    :pswitch_8
+    if-nez v0, :cond_21
 
     .line 425
     .line 426
@@ -3148,7 +3148,7 @@
 
     .line 427
     .line 428
-    if-eqz p2, :cond_1b2
+    if-eqz p2, :cond_20
 
     .line 429
     .line 430
@@ -3163,7 +3163,7 @@
     return-void
 
     .line 435
-    :cond_1b2
+    :cond_20
     const-string p1, "SerialNumber class type invalid."
 
     .line 436
@@ -3176,7 +3176,7 @@
     return-void
 
     .line 441
-    :cond_1b8
+    :cond_21
     iget-object v1, p0, Llibs/xv3;->b:Llibs/wq;
 
     .line 442
@@ -3190,7 +3190,7 @@
 
     .line 447
     .line 448
-    if-eqz v2, :cond_1d2
+    if-eqz v2, :cond_23
 
     .line 449
     .line 450
@@ -3202,7 +3202,7 @@
     move-result p2
 
     .line 454
-    if-eqz p2, :cond_1cc
+    if-eqz p2, :cond_22
 
     .line 455
     .line 456
@@ -3217,7 +3217,7 @@
     return-void
 
     .line 461
-    :cond_1cc
+    :cond_22
     const-string p1, "Attribute name not recognized by CertAttrSet:CertificateSerialNumber."
 
     .line 462
@@ -3230,7 +3230,7 @@
     return-void
 
     .line 467
-    :cond_1d2
+    :cond_23
     const-string p1, "Attribute must be of type SerialNumber."
 
     .line 468
@@ -3243,8 +3243,8 @@
     return-void
 
     .line 473
-    :pswitch_1d8
-    if-nez v0, :cond_1e9
+    :pswitch_9
+    if-nez v0, :cond_25
 
     .line 474
     .line 475
@@ -3252,7 +3252,7 @@
 
     .line 476
     .line 477
-    if-eqz p2, :cond_1e3
+    if-eqz p2, :cond_24
 
     .line 478
     .line 479
@@ -3267,7 +3267,7 @@
     return-void
 
     .line 484
-    :cond_1e3
+    :cond_24
     const-string p1, "Version class type invalid."
 
     .line 485
@@ -3280,7 +3280,7 @@
     return-void
 
     .line 490
-    :cond_1e9
+    :cond_25
     iget-object v1, p0, Llibs/xv3;->a:Llibs/ar;
 
     .line 491
@@ -3289,7 +3289,7 @@
 
     .line 493
     .line 494
-    if-eqz v2, :cond_204
+    if-eqz v2, :cond_27
 
     .line 495
     .line 496
@@ -3301,7 +3301,7 @@
     move-result p2
 
     .line 500
-    if-eqz p2, :cond_1fe
+    if-eqz p2, :cond_26
 
     .line 501
     .line 502
@@ -3324,7 +3324,7 @@
     return-void
 
     .line 511
-    :cond_1fe
+    :cond_26
     const-string p1, "Attribute name not recognized by CertAttrSet: CertificateVersion."
 
     .line 512
@@ -3337,7 +3337,7 @@
     return-void
 
     .line 517
-    :cond_204
+    :cond_27
     const-string p1, "Attribute must be of type Integer."
 
     .line 518
@@ -3350,7 +3350,7 @@
     return-void
 
     .line 523
-    :cond_20a
+    :cond_28
     new-instance p1, Ljava/security/cert/CertificateException;
 
     .line 524
@@ -3375,23 +3375,23 @@
     throw p1
 
     .line 535
-    :pswitch_data_216
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_1d8
-        :pswitch_1a7
-        :pswitch_174
-        :pswitch_143
-        :pswitch_103
-        :pswitch_d2
-        :pswitch_a9
-        :pswitch_86
-        :pswitch_63
-        :pswitch_37
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "info"
@@ -3402,7 +3402,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 5
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
@@ -3411,7 +3411,7 @@
     const/4 v1, 0x1
 
     .line 3
-    :goto_2
+    :goto_0
     iget-object v2, p0, Llibs/xv3;->k:[B
 
     .line 4
@@ -3419,7 +3419,7 @@
     array-length v3, v2
 
     .line 6
-    if-ge v1, v3, :cond_f
+    if-ge v1, v3, :cond_0
 
     .line 7
     .line 8
@@ -3438,22 +3438,22 @@
 
     .line 14
     .line 15
-    goto :goto_2
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_0
     return v0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 9
+    .locals 8
 
     .line 1
     iget-object v0, p0, Llibs/xv3;->f:Llibs/xq;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_1ec
+    if-eqz v0, :cond_5
 
     .line 4
     .line 5
@@ -3461,7 +3461,7 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_1ec
+    if-eqz v0, :cond_5
 
     .line 8
     .line 9
@@ -3469,7 +3469,7 @@
 
     .line 10
     .line 11
-    if-eqz v0, :cond_1ec
+    if-eqz v0, :cond_5
 
     .line 12
     .line 13
@@ -3477,7 +3477,7 @@
 
     .line 14
     .line 15
-    if-eqz v0, :cond_1ec
+    if-eqz v0, :cond_5
 
     .line 16
     .line 17
@@ -3485,7 +3485,7 @@
 
     .line 18
     .line 19
-    if-eqz v0, :cond_1ec
+    if-eqz v0, :cond_5
 
     .line 20
     .line 21
@@ -3493,7 +3493,7 @@
 
     .line 22
     .line 23
-    if-eqz v0, :cond_1ec
+    if-eqz v0, :cond_5
 
     .line 24
     .line 25
@@ -3854,7 +3854,7 @@
 
     .line 217
     .line 218
-    if-eqz v1, :cond_f5
+    if-eqz v1, :cond_0
 
     .line 219
     .line 220
@@ -3906,12 +3906,12 @@
     .line 244
     .line 245
     .line 246
-    :cond_f5
+    :cond_0
     iget-object v1, p0, Llibs/xv3;->i:Llibs/yq;
 
     .line 247
     .line 248
-    if-eqz v1, :cond_113
+    if-eqz v1, :cond_1
 
     .line 249
     .line 250
@@ -3963,12 +3963,12 @@
     .line 274
     .line 275
     .line 276
-    :cond_113
+    :cond_1
     iget-object v1, p0, Llibs/xv3;->j:Llibs/pq;
 
     .line 277
     .line 278
-    if-eqz v1, :cond_1e2
+    if-eqz v1, :cond_4
 
     .line 279
     .line 280
@@ -4029,7 +4029,7 @@
     const/4 v2, 0x0
 
     .line 309
-    :goto_134
+    :goto_0
     array-length v4, v1
 
     .line 310
@@ -4041,7 +4041,7 @@
 
     .line 313
     .line 314
-    if-ge v2, v4, :cond_192
+    if-ge v2, v4, :cond_3
 
     .line 315
     .line 316
@@ -4089,7 +4089,7 @@
 
     .line 339
     .line 340
-    :try_start_153
+    :try_start_0
     invoke-virtual {v2}, Llibs/gm0;->toString()Ljava/lang/String;
 
     .line 341
@@ -4107,7 +4107,7 @@
 
     .line 348
     .line 349
-    if-eqz v2, :cond_190
+    if-eqz v2, :cond_2
 
     .line 350
     .line 351
@@ -4187,16 +4187,16 @@
 
     .line 392
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    :try_end_18a
-    .catch Ljava/lang/Exception; {:try_start_153 .. :try_end_18a} :catch_18b
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 393
     .line 394
     .line 395
-    goto :goto_190
+    goto :goto_1
 
     .line 396
-    :catch_18b
+    :catch_0
     const-string v2, ", Error parsing this extension"
 
     .line 397
@@ -4206,15 +4206,15 @@
     .line 399
     .line 400
     .line 401
-    :cond_190
-    :goto_190
+    :cond_2
+    :goto_1
     move v2, v6
 
     .line 402
-    goto :goto_134
+    goto :goto_0
 
     .line 403
-    :cond_192
+    :cond_3
     iget-object v1, p0, Llibs/xv3;->j:Llibs/pq;
 
     .line 404
@@ -4236,7 +4236,7 @@
     move-result v2
 
     .line 414
-    if-nez v2, :cond_1e2
+    if-nez v2, :cond_4
 
     .line 415
     .line 416
@@ -4298,7 +4298,7 @@
     const/4 v2, 0x1
 
     .line 446
-    :goto_1bd
+    :goto_2
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 447
@@ -4307,7 +4307,7 @@
     move-result v3
 
     .line 450
-    if-eqz v3, :cond_1e2
+    if-eqz v3, :cond_4
 
     .line 451
     .line 452
@@ -4367,10 +4367,10 @@
     move v2, v7
 
     .line 482
-    goto :goto_1bd
+    goto :goto_2
 
     .line 483
-    :cond_1e2
+    :cond_4
     const-string v1, "\n]"
 
     .line 484
@@ -4391,7 +4391,7 @@
     return-object v0
 
     .line 493
-    :cond_1ec
+    :cond_5
     const-string v0, "X.509 cert is incomplete"
 
     .line 494

@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/providers/DocProvider;Llibs/tc0;Ljava/lang/String;Ljava/util/concurrent/atomic/AtomicInteger;)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/sc0;->e:Lcom/mixplorer/providers/DocProvider;
@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public final e(Llibs/rp0;)Z
-    .registers 11
+    .locals 9
 
     .line 1
     iget-boolean v0, p1, Llibs/rp0;->One:Z
@@ -57,7 +57,7 @@
     const/4 v1, 0x0
 
     .line 4
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 5
     .line 6
@@ -69,14 +69,14 @@
     move-result v0
 
     .line 10
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 11
     .line 12
-    goto :goto_16
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     iget-object v0, p1, Llibs/rp0;->Foxtrot:Ljava/lang/String;
 
     .line 14
@@ -93,15 +93,15 @@
     move-result v0
 
     .line 21
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1
 
     .line 22
     .line 23
-    :goto_16
+    :goto_0
     return v1
 
     .line 24
-    :cond_17
+    :cond_1
     sget-object v0, Lcom/mixplorer/AppImpl;->Lambda:Llibs/vg3;
 
     .line 25

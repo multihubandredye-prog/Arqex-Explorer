@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/in0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/en0;->X:Llibs/in0;
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final varargs c([Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object p1, p0, Llibs/en0;->X:Llibs/in0;

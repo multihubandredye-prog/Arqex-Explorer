@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/w3c/dom/Element;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
     move-result-object v0
 
     .line 18
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 19
     .line 20
@@ -67,8 +67,8 @@
     return-void
 
     .line 28
-    :cond_1b
-    :try_start_1b
+    :cond_0
+    :try_start_0
     invoke-static {}, Ljavax/xml/transform/TransformerFactory;->newInstance()Ljavax/xml/transform/TransformerFactory;
 
     .line 29
@@ -131,14 +131,14 @@
     .line 60
     .line 61
     move-result-object p1
-    :try_end_3d
-    .catchall {:try_start_1b .. :try_end_3d} :catchall_3e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 62
-    goto :goto_52
+    goto :goto_0
 
     .line 63
-    :catchall_3e
+    :catchall_0
     move-exception p1
 
     .line 64
@@ -181,7 +181,7 @@
 
     .line 82
     .line 83
-    :goto_52
+    :goto_0
     const-string v0, "DavFile"
 
     .line 84

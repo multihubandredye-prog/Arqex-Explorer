@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/rz0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/lz0;-><init>(Llibs/rz0;)V
@@ -23,26 +23,26 @@
 
 # virtual methods
 .method public final close()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/lz0;->Y:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     iget-boolean v0, p0, Llibs/qz0;->Lambda:Z
 
     .line 7
     .line 8
-    if-nez v0, :cond_c
+    if-nez v0, :cond_1
 
     .line 9
     .line 10
@@ -51,7 +51,7 @@
     .line 11
     .line 12
     .line 13
-    :cond_c
+    :cond_1
     const/4 v0, 0x1
 
     .line 14
@@ -63,14 +63,14 @@
 .end method
 
 .method public final e(JLlibs/vj;)J
-    .registers 6
+    .locals 2
 
     .line 1
     iget-boolean p1, p0, Llibs/lz0;->Y:Z
 
     .line 2
     .line 3
-    if-nez p1, :cond_1d
+    if-nez p1, :cond_2
 
     .line 4
     .line 5
@@ -82,14 +82,14 @@
 
     .line 8
     .line 9
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 10
     .line 11
     return-wide v0
 
     .line 12
-    :cond_b
+    :cond_0
     const-wide/16 p1, 0x2000
 
     .line 13
@@ -106,7 +106,7 @@
 
     .line 19
     .line 20
-    if-nez p3, :cond_1c
+    if-nez p3, :cond_1
 
     .line 21
     .line 22
@@ -125,11 +125,11 @@
     return-wide v0
 
     .line 29
-    :cond_1c
+    :cond_1
     return-wide p1
 
     .line 30
-    :cond_1d
+    :cond_2
     const-string p1, "closed"
 
     .line 31

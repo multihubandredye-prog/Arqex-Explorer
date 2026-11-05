@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/mk;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 9
+    .locals 3
 
     .line 1
     iget-byte p2, p0, Llibs/mk;->X:B
@@ -46,7 +46,7 @@
     const/4 p4, 0x0
 
     .line 4
-    packed-switch p2, :pswitch_data_d4
+    packed-switch p2, :pswitch_data_0
 
     .line 5
     .line 6
@@ -91,7 +91,7 @@
 
     .line 26
     .line 27
-    if-ne p1, p3, :cond_69
+    if-ne p1, p3, :cond_3
 
     .line 28
     .line 29
@@ -107,7 +107,7 @@
     move-result-object p1
 
     .line 35
-    if-eqz p1, :cond_69
+    if-eqz p1, :cond_3
 
     .line 36
     .line 37
@@ -119,14 +119,14 @@
     move-result p1
 
     .line 41
-    if-nez p1, :cond_2b
+    if-nez p1, :cond_0
 
     .line 42
     .line 43
-    goto :goto_69
+    goto :goto_2
 
     .line 44
-    :cond_2b
+    :cond_0
     invoke-static {}, Llibs/Echo;->j()Landroid/print/PrintAttributes$MediaSize;
 
     .line 45
@@ -136,7 +136,7 @@
 
     .line 48
     .line 49
-    if-eqz p1, :cond_37
+    if-eqz p1, :cond_1
 
     .line 50
     .line 51
@@ -148,10 +148,10 @@
     move-result-object p1
 
     .line 55
-    goto :goto_3b
+    goto :goto_0
 
     .line 56
-    :cond_37
+    :cond_1
     invoke-static {}, Llibs/Echo;->List()Landroid/print/PrintAttributes$MediaSize;
 
     .line 57
@@ -160,7 +160,7 @@
     move-result-object p1
 
     .line 60
-    :goto_3b
+    :goto_0
     iget-object p3, p2, Lcom/mixplorer/activities/HexViewerActivity;->Uniform:Llibs/rp0;
 
     .line 61
@@ -202,8 +202,8 @@
     move-result v1
 
     .line 81
-    :goto_50
-    if-ge p4, v1, :cond_63
+    :goto_1
+    if-ge p4, v1, :cond_2
 
     .line 82
     .line 83
@@ -237,10 +237,10 @@
 
     .line 98
     .line 99
-    goto :goto_50
+    goto :goto_1
 
     .line 100
-    :cond_63
+    :cond_2
     sget p4, Llibs/sa3;->k:I
 
     .line 101
@@ -253,8 +253,8 @@
     .line 104
     .line 105
     .line 106
-    :cond_69
-    :goto_69
+    :cond_3
+    :goto_2
     iget-object p1, p2, Lcom/mixplorer/activities/a;->Lambda:Llibs/be2;
 
     .line 107
@@ -267,7 +267,7 @@
     return-void
 
     .line 112
-    :pswitch_6f
+    :pswitch_0
     iget-object p2, p0, Llibs/mk;->Y:Ljava/lang/Object;
 
     .line 113
@@ -304,11 +304,11 @@
 
     .line 129
     .line 130
-    if-eqz p5, :cond_a1
+    if-eqz p5, :cond_5
 
     .line 131
     .line 132
-    if-nez p3, :cond_89
+    if-nez p3, :cond_4
 
     .line 133
     .line 134
@@ -317,10 +317,10 @@
     .line 135
     .line 136
     .line 137
-    goto :goto_a1
+    goto :goto_3
 
     .line 138
-    :cond_89
+    :cond_4
     iget-object p3, p2, Lcom/mixplorer/activities/EBookReaderActivity;->o:Llibs/kl2;
 
     .line 139
@@ -369,8 +369,8 @@
     .line 160
     .line 161
     .line 162
-    :cond_a1
-    :goto_a1
+    :cond_5
+    :goto_3
     iget-object p1, p2, Lcom/mixplorer/activities/a;->Lambda:Llibs/be2;
 
     .line 163
@@ -383,7 +383,7 @@
     return-void
 
     .line 168
-    :pswitch_a7
+    :pswitch_1
     iget-object p1, p0, Llibs/mk;->Y:Ljava/lang/Object;
 
     .line 169
@@ -451,7 +451,7 @@
     move-result p2
 
     .line 203
-    if-nez p2, :cond_d3
+    if-nez p2, :cond_6
 
     .line 204
     .line 205
@@ -468,13 +468,13 @@
     .line 210
     .line 211
     .line 212
-    :cond_d3
+    :cond_6
     return-void
 
     .line 213
-    :pswitch_data_d4
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a7
-        :pswitch_6f
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

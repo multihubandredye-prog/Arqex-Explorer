@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 10
+    .locals 9
 
     .line 29
     const-string v7, ""
@@ -55,7 +55,7 @@
 .end method
 
 .method public constructor <init>(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
-    .registers 9
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -115,10 +115,10 @@
 .end method
 
 .method public static f(Ljava/lang/String;)Z
-    .registers 3
+    .locals 2
 
     .line 1
-    if-eqz p0, :cond_1f
+    if-eqz p0, :cond_0
 
     .line 2
     .line 3
@@ -134,7 +134,7 @@
 
     .line 8
     .line 9
-    if-ne v0, v1, :cond_1f
+    if-ne v0, v1, :cond_0
 
     .line 10
     .line 11
@@ -150,7 +150,7 @@
     move-result v0
 
     .line 17
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_0
 
     .line 18
     .line 19
@@ -173,7 +173,7 @@
     move-result p0
 
     .line 28
-    if-eqz p0, :cond_1f
+    if-eqz p0, :cond_0
 
     .line 29
     .line 30
@@ -183,7 +183,7 @@
     return p0
 
     .line 32
-    :cond_1f
+    :cond_0
     const/4 p0, 0x0
 
     .line 33
@@ -191,7 +191,7 @@
 .end method
 
 .method public static l(JJLjava/lang/String;)V
-    .registers 7
+    .locals 2
 
     .line 1
     sget-object v0, Lcom/mixplorer/AppImpl;->X:Llibs/k70;
@@ -218,7 +218,7 @@
     move-result-object p4
 
     .line 13
-    if-eqz p4, :cond_39
+    if-eqz p4, :cond_0
 
     .line 14
     .line 15
@@ -301,12 +301,12 @@
     .line 56
     .line 57
     .line 58
-    :cond_39
+    :cond_0
     return-void
 .end method
 
 .method public static n(Ljava/lang/String;ZJ)V
-    .registers 8
+    .locals 4
 
     .line 1
     sget-object v0, Lcom/mixplorer/AppImpl;->X:Llibs/k70;
@@ -333,7 +333,7 @@
     move-result-object p0
 
     .line 13
-    if-eqz p0, :cond_38
+    if-eqz p0, :cond_1
 
     .line 14
     .line 15
@@ -361,21 +361,21 @@
     move-result-wide v1
 
     .line 27
-    if-eqz p1, :cond_1e
+    if-eqz p1, :cond_0
 
     .line 28
     .line 29
     sub-long/2addr v1, p2
 
     .line 30
-    goto :goto_1f
+    goto :goto_0
 
     .line 31
-    :cond_1e
+    :cond_0
     add-long/2addr v1, p2
 
     .line 32
-    :goto_1f
+    :goto_0
     new-instance p1, Ljava/lang/StringBuilder;
 
     .line 33
@@ -421,14 +421,14 @@
     .line 55
     .line 56
     .line 57
-    :cond_38
+    :cond_1
     return-void
 .end method
 
 
 # virtual methods
 .method public final a(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 7
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/yq3;->Xi:Ljava/lang/String;
@@ -447,7 +447,7 @@
     move-result v2
 
     .line 9
-    if-nez v2, :cond_e
+    if-nez v2, :cond_0
 
     .line 10
     .line 11
@@ -459,7 +459,7 @@
     move-result-object v0
 
     .line 15
-    :cond_e
+    :cond_0
     const-string v2, "=(?:[^\n]*)\\n"
 
     .line 16
@@ -500,7 +500,7 @@
     move-result v2
 
     .line 35
-    if-nez v2, :cond_28
+    if-nez v2, :cond_1
 
     .line 36
     .line 37
@@ -512,7 +512,7 @@
     move-result-object v0
 
     .line 41
-    :cond_28
+    :cond_1
     const-string v2, "="
 
     .line 42
@@ -533,7 +533,7 @@
     move-result p2
 
     .line 51
-    if-eqz p2, :cond_3a
+    if-eqz p2, :cond_2
 
     .line 52
     .line 53
@@ -551,7 +551,7 @@
     move-result-object p1
 
     .line 59
-    :cond_3a
+    :cond_2
     iput-object p1, p0, Llibs/yq3;->Xi:Ljava/lang/String;
 
     .line 60
@@ -567,7 +567,7 @@
 .end method
 
 .method public final b()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     const-string v0, "/"
@@ -578,7 +578,7 @@
 
     .line 4
     .line 5
-    :try_start_4
+    :try_start_0
     const-string v2, "remote"
 
     .line 6
@@ -589,11 +589,11 @@
     .line 9
     .line 10
     move-result-object v2
-    :try_end_a
-    .catchall {:try_start_4 .. :try_end_a} :catchall_22
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 11
-    :try_start_a
+    :try_start_1
     invoke-static {v2}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
 
     .line 12
@@ -602,7 +602,7 @@
     move-result v3
 
     .line 15
-    if-nez v3, :cond_21
+    if-nez v3, :cond_1
 
     .line 16
     .line 17
@@ -621,7 +621,7 @@
 
     .line 23
     .line 24
-    if-eq v3, v4, :cond_20
+    if-eq v3, v4, :cond_0
 
     .line 25
     .line 26
@@ -631,36 +631,36 @@
     .line 28
     .line 29
     move-result-object v0
-    :try_end_1d
-    .catchall {:try_start_a .. :try_end_1d} :catchall_1e
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 30
     return-object v0
 
     .line 31
-    :catchall_1e
+    :catchall_0
     move-exception v0
 
     .line 32
-    goto :goto_24
+    goto :goto_0
 
     .line 33
-    :cond_20
+    :cond_0
     return-object v2
 
     .line 34
-    :cond_21
+    :cond_1
     return-object v1
 
     .line 35
-    :catchall_22
+    :catchall_1
     move-exception v0
 
     .line 36
     move-object v2, v1
 
     .line 37
-    :goto_24
+    :goto_0
     const-string v3, "Remote: "
 
     .line 38
@@ -711,7 +711,7 @@
 .end method
 
 .method public final c()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     const-string v0, "encoding"
@@ -734,7 +734,7 @@
     move-result v1
 
     .line 11
-    if-nez v1, :cond_11
+    if-nez v1, :cond_0
 
     .line 12
     .line 13
@@ -749,7 +749,7 @@
     return-object v0
 
     .line 18
-    :cond_11
+    :cond_0
     const-string v0, "charset"
 
     .line 19
@@ -770,7 +770,7 @@
     move-result v1
 
     .line 28
-    if-nez v1, :cond_22
+    if-nez v1, :cond_1
 
     .line 29
     .line 30
@@ -785,7 +785,7 @@
     return-object v0
 
     .line 35
-    :cond_22
+    :cond_1
     const-string v0, "UTF-8"
 
     .line 36
@@ -794,14 +794,14 @@
 .end method
 
 .method public final compareTo(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
 
     .line 1
     check-cast p1, Llibs/yq3;
 
     .line 2
     .line 3
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_0
 
     .line 4
     .line 5
@@ -840,7 +840,7 @@
     return p1
 
     .line 22
-    :cond_15
+    :cond_0
     const/4 p1, 0x0
 
     .line 23
@@ -848,14 +848,14 @@
 .end method
 
 .method public final d()Ljava/util/Properties;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/yq3;->Pi:Ljava/util/Properties;
 
     .line 2
     .line 3
-    if-nez v0, :cond_3f
+    if-nez v0, :cond_1
 
     .line 4
     .line 5
@@ -872,7 +872,7 @@
 
     .line 11
     .line 12
-    :try_start_b
+    :try_start_0
     new-instance v0, Llibs/dl;
 
     .line 13
@@ -906,7 +906,7 @@
     move-result v1
 
     .line 29
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_0
 
     .line 30
     .line 31
@@ -915,34 +915,34 @@
     .line 32
     .line 33
     invoke-direct {v1, v0, v2}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
-    :try_end_23
-    .catchall {:try_start_b .. :try_end_23} :catchall_3f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
     .line 34
     .line 35
     .line 36
-    :try_start_23
+    :try_start_1
     iget-object v0, p0, Llibs/yq3;->Pi:Ljava/util/Properties;
 
     .line 37
     .line 38
     invoke-virtual {v0, v1}, Ljava/util/Properties;->load(Ljava/io/Reader;)V
-    :try_end_28
-    .catchall {:try_start_23 .. :try_end_28} :catchall_2c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 39
     .line 40
     .line 41
-    :try_start_28
+    :try_start_2
     invoke-static {v1}, Llibs/ji0;->k(Ljava/io/Closeable;)V
 
     .line 42
     .line 43
     .line 44
-    goto :goto_3f
+    goto :goto_0
 
     .line 45
-    :catchall_2c
+    :catchall_0
     move-exception v0
 
     .line 46
@@ -952,33 +952,33 @@
     .line 48
     .line 49
     throw v0
-    :try_end_31
-    .catchall {:try_start_28 .. :try_end_31} :catchall_3f
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
     .line 50
-    :cond_31
-    :try_start_31
+    :cond_0
+    :try_start_3
     iget-object v1, p0, Llibs/yq3;->Pi:Ljava/util/Properties;
 
     .line 51
     .line 52
     invoke-virtual {v1, v0}, Ljava/util/Properties;->load(Ljava/io/InputStream;)V
-    :try_end_36
-    .catchall {:try_start_31 .. :try_end_36} :catchall_3a
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 53
     .line 54
     .line 55
-    :try_start_36
+    :try_start_4
     invoke-static {v0}, Llibs/ji0;->k(Ljava/io/Closeable;)V
 
     .line 56
     .line 57
     .line 58
-    goto :goto_3f
+    goto :goto_0
 
     .line 59
-    :catchall_3a
+    :catchall_1
     move-exception v1
 
     .line 60
@@ -988,13 +988,13 @@
     .line 62
     .line 63
     throw v1
-    :try_end_3f
-    .catchall {:try_start_36 .. :try_end_3f} :catchall_3f
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
     .line 64
-    :catchall_3f
-    :cond_3f
-    :goto_3f
+    :catchall_2
+    :cond_1
+    :goto_0
     iget-object v0, p0, Llibs/yq3;->Pi:Ljava/util/Properties;
 
     .line 65
@@ -1003,14 +1003,14 @@
 .end method
 
 .method public final e()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/yq3;->Z:Llibs/xq3;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -1030,7 +1030,7 @@
     move-result v0
 
     .line 13
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     .line 14
     .line 15
@@ -1057,7 +1057,7 @@
     return v0
 
     .line 26
-    :cond_19
+    :cond_0
     const/4 v0, 0x0
 
     .line 27
@@ -1065,14 +1065,14 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Llibs/yq3;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -1112,7 +1112,7 @@
     move-result p1
 
     .line 23
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_0
 
     .line 24
     .line 25
@@ -1122,7 +1122,7 @@
     return p1
 
     .line 27
-    :cond_1a
+    :cond_0
     const/4 p1, 0x0
 
     .line 28
@@ -1130,7 +1130,7 @@
 .end method
 
 .method public final g()Z
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Llibs/yq3;->e()Z
@@ -1141,7 +1141,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -1161,7 +1161,7 @@
     move-result v0
 
     .line 15
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 16
     .line 17
@@ -1171,7 +1171,7 @@
     return v0
 
     .line 19
-    :cond_12
+    :cond_0
     const/4 v0, 0x0
 
     .line 20
@@ -1179,7 +1179,7 @@
 .end method
 
 .method public final h(Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/yq3;->d()Ljava/util/Properties;
@@ -1190,7 +1190,7 @@
     move-result-object v0
 
     .line 5
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -1205,7 +1205,7 @@
     return-object p1
 
     .line 12
-    :cond_b
+    :cond_0
     const/4 p1, 0x0
 
     .line 13
@@ -1213,7 +1213,7 @@
 .end method
 
 .method public final i(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/yq3;->d()Ljava/util/Properties;
@@ -1224,7 +1224,7 @@
     move-result-object v0
 
     .line 5
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -1239,7 +1239,7 @@
     return-object p1
 
     .line 12
-    :cond_b
+    :cond_0
     const/4 p1, 0x0
 
     .line 13
@@ -1247,7 +1247,7 @@
 .end method
 
 .method public final j(Ljava/lang/String;)Z
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Llibs/yq3;->k(Ljava/lang/String;)Ljava/lang/Boolean;
@@ -1258,7 +1258,7 @@
     move-result-object p1
 
     .line 5
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
     .line 6
     .line 7
@@ -1270,7 +1270,7 @@
     move-result p1
 
     .line 11
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
     .line 12
     .line 13
@@ -1280,7 +1280,7 @@
     return p1
 
     .line 15
-    :cond_e
+    :cond_0
     const/4 p1, 0x0
 
     .line 16
@@ -1288,7 +1288,7 @@
 .end method
 
 .method public final k(Ljava/lang/String;)Ljava/lang/Boolean;
-    .registers 5
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
@@ -1310,7 +1310,7 @@
     move-result v2
 
     .line 10
-    if-nez v2, :cond_60
+    if-nez v2, :cond_2
 
     .line 11
     .line 12
@@ -1334,7 +1334,7 @@
     move-result v0
 
     .line 22
-    if-nez v0, :cond_5a
+    if-nez v0, :cond_1
 
     .line 23
     .line 24
@@ -1350,7 +1350,7 @@
     move-result v0
 
     .line 30
-    if-nez v0, :cond_5a
+    if-nez v0, :cond_1
 
     .line 31
     .line 32
@@ -1366,7 +1366,7 @@
     move-result v0
 
     .line 38
-    if-nez v0, :cond_5a
+    if-nez v0, :cond_1
 
     .line 39
     .line 40
@@ -1382,7 +1382,7 @@
     move-result v0
 
     .line 46
-    if-nez v0, :cond_5a
+    if-nez v0, :cond_1
 
     .line 47
     .line 48
@@ -1398,7 +1398,7 @@
     move-result v0
 
     .line 54
-    if-nez v0, :cond_5a
+    if-nez v0, :cond_1
 
     .line 55
     .line 56
@@ -1414,7 +1414,7 @@
     move-result v0
 
     .line 62
-    if-nez v0, :cond_5a
+    if-nez v0, :cond_1
 
     .line 63
     .line 64
@@ -1430,7 +1430,7 @@
     move-result v0
 
     .line 70
-    if-nez v0, :cond_5a
+    if-nez v0, :cond_1
 
     .line 71
     .line 72
@@ -1446,7 +1446,7 @@
     move-result v0
 
     .line 78
-    if-nez v0, :cond_5a
+    if-nez v0, :cond_1
 
     .line 79
     .line 80
@@ -1462,26 +1462,26 @@
     move-result p1
 
     .line 86
-    if-eqz p1, :cond_58
+    if-eqz p1, :cond_0
 
     .line 87
     .line 88
-    goto :goto_5a
+    goto :goto_0
 
     .line 89
-    :cond_58
+    :cond_0
     const/4 p1, 0x0
 
     .line 90
-    goto :goto_5b
+    goto :goto_1
 
     .line 91
-    :cond_5a
-    :goto_5a
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
     .line 92
-    :goto_5b
+    :goto_1
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     .line 93
@@ -1493,7 +1493,7 @@
     return-object p1
 
     .line 97
-    :cond_60
+    :cond_2
     const-string v1, "keep_alive"
 
     .line 98
@@ -1506,7 +1506,7 @@
     move-result p1
 
     .line 103
-    if-eqz p1, :cond_6b
+    if-eqz p1, :cond_3
 
     .line 104
     .line 105
@@ -1517,26 +1517,26 @@
     return-object p1
 
     .line 108
-    :cond_6b
+    :cond_3
     return-object v0
 .end method
 
 .method public final m()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/yq3;->Lambda:Ljava/lang/String;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     return-object v0
 
     .line 6
-    :cond_5
+    :cond_0
     const-string v0, ""
 
     .line 7

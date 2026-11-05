@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/gx0;
@@ -29,7 +29,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/net/URLStreamHandler;-><init>()V
@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public final getDefaultPort()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x1bd
@@ -54,7 +54,7 @@
 .end method
 
 .method public final openConnection(Ljava/net/URL;)Ljava/net/URLConnection;
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/mc3;
@@ -70,7 +70,7 @@
 .end method
 
 .method public final parseURL(Ljava/net/URL;Ljava/lang/String;II)V
-    .registers 15
+    .locals 10
 
     .line 1
     invoke-virtual {p1}, Ljava/net/URL;->getHost()Ljava/lang/String;
@@ -93,7 +93,7 @@
     move-result v2
 
     .line 11
-    if-eqz v2, :cond_11
+    if-eqz v2, :cond_0
 
     .line 12
     .line 13
@@ -105,10 +105,10 @@
 
     .line 16
     .line 17
-    goto :goto_27
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     invoke-virtual {p2, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     .line 19
@@ -117,11 +117,11 @@
     move-result v1
 
     .line 22
-    if-nez v1, :cond_27
+    if-nez v1, :cond_1
 
     .line 23
     .line 24
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_1
 
     .line 25
     .line 26
@@ -133,7 +133,7 @@
     move-result v0
 
     .line 30
-    if-nez v0, :cond_27
+    if-nez v0, :cond_1
 
     .line 31
     .line 32
@@ -153,8 +153,8 @@
 
     .line 39
     .line 40
-    :cond_27
-    :goto_27
+    :cond_1
+    :goto_0
     invoke-super {p0, p1, p2, p3, p4}, Ljava/net/URLStreamHandler;->parseURL(Ljava/net/URL;Ljava/lang/String;II)V
 
     .line 41
@@ -176,7 +176,7 @@
     move-result-object p3
 
     .line 51
-    if-eqz p3, :cond_48
+    if-eqz p3, :cond_2
 
     .line 52
     .line 53
@@ -216,7 +216,7 @@
     move-result-object p2
 
     .line 73
-    :cond_48
+    :cond_2
     move-object v7, p2
 
     .line 74
@@ -231,7 +231,7 @@
     const/4 p3, -0x1
 
     .line 79
-    if-ne p2, p3, :cond_55
+    if-ne p2, p3, :cond_3
 
     .line 80
     .line 81
@@ -243,14 +243,14 @@
 
     .line 84
     .line 85
-    goto :goto_56
+    goto :goto_1
 
     .line 86
-    :cond_55
+    :cond_3
     move v4, p2
 
     .line 87
-    :goto_56
+    :goto_1
     invoke-virtual {p1}, Ljava/net/URL;->getHost()Ljava/lang/String;
 
     .line 88

@@ -13,7 +13,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Thread;Llibs/b11;B)V
-    .registers 4
+    .locals 0
 
     .line 12
     iput-byte p3, p0, Llibs/w01;->a:B
@@ -28,7 +28,7 @@
 .end method
 
 .method public constructor <init>(Llibs/x01;Ljava/lang/Thread;)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x2
@@ -55,7 +55,7 @@
 .end method
 
 .method private final a(Ljava/lang/String;ZJJ)V
-    .registers 7
+    .locals 0
 
     .line 1
     return-void
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public final onProgress(JJ)V
-    .registers 8
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/w01;->a:B
@@ -79,7 +79,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_44
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -92,7 +92,7 @@
 
     .line 13
     .line 14
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_1
 
     .line 15
     .line 16
@@ -104,33 +104,33 @@
     move-result p1
 
     .line 20
-    if-nez p1, :cond_16
+    if-nez p1, :cond_0
 
     .line 21
     .line 22
-    goto :goto_1d
+    goto :goto_0
 
     .line 23
-    :cond_16
+    :cond_0
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 24
     .line 25
     .line 26
-    goto :goto_1d
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_1
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 28
     .line 29
     .line 30
-    :goto_1d
+    :goto_0
     return-void
 
     .line 31
-    :pswitch_1e
+    :pswitch_0
     invoke-static {v1}, Llibs/hp0;->x(Ljava/lang/Thread;)Z
 
     .line 32
@@ -139,7 +139,7 @@
     move-result v0
 
     .line 35
-    if-nez v0, :cond_2b
+    if-nez v0, :cond_2
 
     .line 36
     .line 37
@@ -155,20 +155,20 @@
 
     .line 42
     .line 43
-    goto :goto_2e
+    goto :goto_1
 
     .line 44
-    :cond_2b
+    :cond_2
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 45
     .line 46
     .line 47
-    :goto_2e
+    :goto_1
     return-void
 
     .line 48
-    :pswitch_2f
+    :pswitch_1
     invoke-static {v1}, Llibs/hp0;->x(Ljava/lang/Thread;)Z
 
     .line 49
@@ -177,7 +177,7 @@
     move-result v0
 
     .line 52
-    if-nez v0, :cond_3f
+    if-nez v0, :cond_3
 
     .line 53
     .line 54
@@ -200,38 +200,38 @@
 
     .line 62
     .line 63
-    goto :goto_42
+    goto :goto_2
 
     .line 64
-    :cond_3f
+    :cond_3
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 65
     .line 66
     .line 67
-    :goto_42
+    :goto_2
     return-void
 
     .line 68
     nop
 
     .line 69
-    :pswitch_data_44
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2f
-        :pswitch_1e
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public onProgressDone(Ljava/lang/String;ZJJ)V
-    .registers 8
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/w01;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_a
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -241,28 +241,28 @@
     .line 7
     .line 8
     .line 9
-    :pswitch_8
+    :pswitch_0
     return-void
 
     .line 10
     nop
 
     .line 11
-    :pswitch_data_a
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_8
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public onProgressPath(Ljava/lang/String;ZJJ)Ljava/lang/String;
-    .registers 8
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/w01;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_18
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -278,7 +278,7 @@
     return-object p1
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     iget-object p2, p0, Llibs/w01;->b:Ljava/lang/Thread;
 
     .line 12
@@ -291,14 +291,14 @@
     move-result p2
 
     .line 17
-    if-nez p2, :cond_13
+    if-nez p2, :cond_0
 
     .line 18
     .line 19
-    goto :goto_17
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 21
@@ -307,47 +307,47 @@
     const/4 p1, 0x0
 
     .line 24
-    :goto_17
+    :goto_0
     return-object p1
 
     .line 25
-    :pswitch_data_18
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public onProgressPath(Ljava/lang/String;Z)V
-    .registers 4
+    .locals 1
 
     iget-byte v0, p0, Llibs/w01;->a:B
 
-    packed-switch v0, :pswitch_data_16
+    packed-switch v0, :pswitch_data_0
 
     invoke-super {p0, p1, p2}, Lcom/mixplorer/ProgressListener;->onProgressPath(Ljava/lang/String;Z)V
 
     return-void
 
     .line 25
-    :pswitch_9
+    :pswitch_0
     iget-object p1, p0, Llibs/w01;->b:Ljava/lang/Thread;
 
     invoke-static {p1}, Llibs/hp0;->x(Ljava/lang/Thread;)Z
 
     move-result p1
 
-    if-nez p1, :cond_12
+    if-nez p1, :cond_0
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     invoke-static {}, Llibs/cr2;->a()V
 
-    :goto_15
+    :goto_0
     return-void
 
-    :pswitch_data_16
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_9
+        :pswitch_0
     .end packed-switch
 .end method

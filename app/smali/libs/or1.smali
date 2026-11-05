@@ -24,7 +24,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/yr1;Landroid/app/Activity;Llibs/ik3;[Ljava/lang/Object;Ljava/util/HashSet;Llibs/rp0;Ljava/lang/String;Llibs/ek3;)V
-    .registers 9
+    .locals 0
 
     .line 1
     const/4 p6, 0x1
@@ -67,7 +67,7 @@
 .end method
 
 .method public synthetic constructor <init>(Llibs/yr1;Landroid/app/Activity;Llibs/ik3;[Ljava/lang/Object;Ljava/util/HashSet;Llibs/rp0;Llibs/ek3;B)V
-    .registers 9
+    .locals 0
 
     .line 20
     iput-byte p8, p0, Llibs/or1;->X:B
@@ -92,7 +92,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 57
+    .locals 56
 
     .line 1
     move-object/from16 v1, p0
@@ -140,7 +140,7 @@
 
     .line 21
     .line 22
-    packed-switch v0, :pswitch_data_5e2
+    packed-switch v0, :pswitch_data_0
 
     .line 23
     .line 24
@@ -205,7 +205,7 @@
 
     .line 54
     .line 55
-    if-eqz v26, :cond_3b
+    if-eqz v26, :cond_0
 
     .line 56
     .line 57
@@ -213,14 +213,14 @@
 
     .line 58
     .line 59
-    goto :goto_3c
+    goto :goto_0
 
     .line 60
-    :cond_3b
+    :cond_0
     move-object v12, v10
 
     .line 61
-    :goto_3c
+    :goto_0
     sget v26, Llibs/bi2;->metadata:I
 
     .line 62
@@ -242,12 +242,12 @@
     .line 70
     .line 71
     .line 72
-    :try_start_47
+    :try_start_0
     aget-object v9, v3, v14
 
     .line 73
     .line 74
-    if-eqz v9, :cond_4d
+    if-eqz v9, :cond_1
 
     .line 75
     .line 76
@@ -255,12 +255,12 @@
 
     .line 77
     .line 78
-    :cond_4d
+    :cond_1
     aget-object v9, v3, v21
 
     .line 79
     .line 80
-    if-eqz v9, :cond_54
+    if-eqz v9, :cond_2
 
     .line 81
     .line 82
@@ -268,19 +268,19 @@
 
     .line 83
     .line 84
-    goto :goto_55
+    goto :goto_1
 
     .line 85
-    :cond_54
+    :cond_2
     move-object v9, v10
 
     .line 86
-    :goto_55
+    :goto_1
     aget-object v12, v3, v20
 
     .line 87
     .line 88
-    if-eqz v12, :cond_5f
+    if-eqz v12, :cond_3
 
     .line 89
     .line 90
@@ -288,24 +288,24 @@
 
     .line 91
     .line 92
-    goto :goto_5f
+    goto :goto_2
 
     .line 93
-    :catchall_5c
+    :catchall_0
     move-exception v0
 
     .line 94
-    goto/16 :goto_21c
+    goto/16 :goto_12
 
     .line 95
     .line 96
-    :cond_5f
-    :goto_5f
+    :cond_3
+    :goto_2
     aget-object v12, v3, v19
 
     .line 97
     .line 98
-    if-eqz v12, :cond_65
+    if-eqz v12, :cond_4
 
     .line 99
     .line 100
@@ -313,12 +313,12 @@
 
     .line 101
     .line 102
-    :cond_65
+    :cond_4
     aget-object v12, v3, v18
 
     .line 103
     .line 104
-    if-eqz v12, :cond_6e
+    if-eqz v12, :cond_5
 
     .line 105
     .line 106
@@ -326,22 +326,22 @@
 
     .line 107
     .line 108
-    :goto_6b
+    :goto_3
     move-object/from16 v26, v15
 
     .line 109
     .line 110
-    goto :goto_70
+    goto :goto_4
 
     .line 111
-    :cond_6e
+    :cond_5
     move-object v12, v10
 
     .line 112
-    goto :goto_6b
+    goto :goto_3
 
     .line 113
-    :goto_70
+    :goto_4
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     .line 114
@@ -354,7 +354,7 @@
 
     .line 118
     .line 119
-    if-eqz v17, :cond_7b
+    if-eqz v17, :cond_6
 
     .line 120
     .line 121
@@ -362,10 +362,10 @@
 
     .line 122
     .line 123
-    goto :goto_82
+    goto :goto_5
 
     .line 124
-    :cond_7b
+    :cond_6
     new-instance v10, Ljava/util/Date;
 
     .line 125
@@ -379,12 +379,12 @@
 
     .line 130
     .line 131
-    :goto_82
+    :goto_5
     aget-object v10, v3, v16
 
     .line 132
     .line 133
-    if-eqz v10, :cond_89
+    if-eqz v10, :cond_7
 
     .line 134
     .line 135
@@ -392,19 +392,19 @@
 
     .line 136
     .line 137
-    goto :goto_8a
+    goto :goto_6
 
     .line 138
-    :cond_89
+    :cond_7
     const/4 v10, 0x0
 
     .line 139
-    :goto_8a
+    :goto_6
     aget-object v16, v3, v35
 
     .line 140
     .line 141
-    if-eqz v16, :cond_93
+    if-eqz v16, :cond_8
 
     .line 142
     .line 143
@@ -416,20 +416,20 @@
 
     .line 146
     .line 147
-    goto :goto_95
+    goto :goto_7
 
     .line 148
-    :cond_93
+    :cond_8
     const/16 v46, 0x0
 
     .line 149
     .line 150
-    :goto_95
+    :goto_7
     aget-object v16, v3, v34
 
     .line 151
     .line 152
-    if-eqz v16, :cond_a0
+    if-eqz v16, :cond_9
 
     .line 153
     .line 154
@@ -441,27 +441,27 @@
 
     .line 157
     .line 158
-    :goto_9d
+    :goto_8
     const/16 v37, 0xf
 
     .line 159
     .line 160
-    goto :goto_a2
+    goto :goto_9
 
     .line 161
-    :cond_a0
+    :cond_9
     const/4 v8, 0x0
 
     .line 162
-    goto :goto_9d
+    goto :goto_8
 
     .line 163
-    :goto_a2
+    :goto_9
     aget-object v16, v3, v25
 
     .line 164
     .line 165
-    if-eqz v16, :cond_ab
+    if-eqz v16, :cond_a
 
     .line 166
     .line 167
@@ -473,20 +473,20 @@
 
     .line 170
     .line 171
-    goto :goto_ad
+    goto :goto_a
 
     .line 172
-    :cond_ab
+    :cond_a
     const/16 v47, 0x0
 
     .line 173
     .line 174
-    :goto_ad
+    :goto_a
     aget-object v16, v3, v24
 
     .line 175
     .line 176
-    if-eqz v16, :cond_b6
+    if-eqz v16, :cond_b
 
     .line 177
     .line 178
@@ -498,20 +498,20 @@
 
     .line 181
     .line 182
-    goto :goto_b8
+    goto :goto_b
 
     .line 183
-    :cond_b6
+    :cond_b
     const/16 v48, 0x0
 
     .line 184
     .line 185
-    :goto_b8
+    :goto_b
     aget-object v16, v3, v23
 
     .line 186
     .line 187
-    if-eqz v16, :cond_c1
+    if-eqz v16, :cond_c
 
     .line 188
     .line 189
@@ -523,20 +523,20 @@
 
     .line 192
     .line 193
-    goto :goto_c3
+    goto :goto_c
 
     .line 194
-    :cond_c1
+    :cond_c
     const/16 v49, 0x0
 
     .line 195
     .line 196
-    :goto_c3
+    :goto_c
     aget-object v16, v3, v22
 
     .line 197
     .line 198
-    if-eqz v16, :cond_cc
+    if-eqz v16, :cond_d
 
     .line 199
     .line 200
@@ -548,20 +548,20 @@
 
     .line 203
     .line 204
-    goto :goto_ce
+    goto :goto_d
 
     .line 205
-    :cond_cc
+    :cond_d
     const/16 v50, 0x0
 
     .line 206
     .line 207
-    :goto_ce
+    :goto_d
     aget-object v16, v3, v37
 
     .line 208
     .line 209
-    if-eqz v16, :cond_d7
+    if-eqz v16, :cond_e
 
     .line 210
     .line 211
@@ -573,15 +573,15 @@
 
     .line 214
     .line 215
-    goto :goto_d9
+    goto :goto_e
 
     .line 216
-    :cond_d7
+    :cond_e
     const/16 v51, 0x0
 
     .line 217
     .line 218
-    :goto_d9
+    :goto_e
     const/16 v16, 0x10
 
     .line 219
@@ -590,7 +590,7 @@
 
     .line 221
     .line 222
-    if-eqz v16, :cond_e4
+    if-eqz v16, :cond_f
 
     .line 223
     .line 224
@@ -602,15 +602,15 @@
 
     .line 227
     .line 228
-    goto :goto_e6
+    goto :goto_f
 
     .line 229
-    :cond_e4
+    :cond_f
     const/16 v52, 0x0
 
     .line 230
     .line 231
-    :goto_e6
+    :goto_f
     const/16 v16, 0x11
 
     .line 232
@@ -619,7 +619,7 @@
 
     .line 234
     .line 235
-    if-eqz v16, :cond_f1
+    if-eqz v16, :cond_10
 
     .line 236
     .line 237
@@ -631,15 +631,15 @@
 
     .line 240
     .line 241
-    goto :goto_f3
+    goto :goto_10
 
     .line 242
-    :cond_f1
+    :cond_10
     const/16 v53, 0x0
 
     .line 243
     .line 244
-    :goto_f3
+    :goto_10
     const/16 v16, 0x12
 
     .line 245
@@ -648,7 +648,7 @@
 
     .line 247
     .line 248
-    if-eqz v16, :cond_fe
+    if-eqz v16, :cond_11
 
     .line 249
     .line 250
@@ -660,15 +660,15 @@
 
     .line 253
     .line 254
-    goto :goto_100
+    goto :goto_11
 
     .line 255
-    :cond_fe
+    :cond_11
     const/16 v54, 0x0
 
     .line 256
     .line 257
-    :goto_100
+    :goto_11
     const/16 v16, 0x13
 
     .line 258
@@ -1222,16 +1222,16 @@
     .line 536
     .line 537
     invoke-virtual {v11}, Llibs/od;->show()V
-    :try_end_21b
-    .catchall {:try_start_47 .. :try_end_21b} :catchall_5c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 538
     .line 539
     .line 540
-    goto :goto_238
+    goto :goto_13
 
     .line 541
-    :goto_21c
+    :goto_12
     invoke-static {v0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 542
@@ -1286,11 +1286,11 @@
     .line 567
     .line 568
     .line 569
-    :goto_238
+    :goto_13
     return-void
 
     .line 570
-    :pswitch_239
+    :pswitch_0
     const/16 v21, 0x3
 
     .line 571
@@ -1327,12 +1327,12 @@
 
     .line 587
     .line 588
-    :try_start_24b
+    :try_start_1
     aget-object v9, v2, v36
 
     .line 589
     .line 590
-    if-eqz v9, :cond_251
+    if-eqz v9, :cond_12
 
     .line 591
     .line 592
@@ -1340,12 +1340,12 @@
 
     .line 593
     .line 594
-    :cond_251
+    :cond_12
     aget-object v9, v2, v21
 
     .line 595
     .line 596
-    if-eqz v9, :cond_258
+    if-eqz v9, :cond_13
 
     .line 597
     .line 598
@@ -1353,19 +1353,19 @@
 
     .line 599
     .line 600
-    goto :goto_259
+    goto :goto_14
 
     .line 601
-    :cond_258
+    :cond_13
     const/4 v9, 0x0
 
     .line 602
-    :goto_259
+    :goto_14
     aget-object v10, v2, v20
 
     .line 603
     .line 604
-    if-eqz v10, :cond_263
+    if-eqz v10, :cond_14
 
     .line 605
     .line 606
@@ -1373,27 +1373,27 @@
 
     .line 607
     .line 608
-    goto :goto_264
+    goto :goto_15
 
     .line 609
-    :catchall_260
+    :catchall_1
     move-exception v0
 
     .line 610
-    goto/16 :goto_3b0
+    goto/16 :goto_22
 
     .line 611
     .line 612
-    :cond_263
+    :cond_14
     const/4 v10, 0x0
 
     .line 613
-    :goto_264
+    :goto_15
     aget-object v11, v2, v19
 
     .line 614
     .line 615
-    if-eqz v11, :cond_26c
+    if-eqz v11, :cond_15
 
     .line 616
     .line 617
@@ -1404,19 +1404,19 @@
     move-object v13, v11
 
     .line 620
-    goto :goto_26d
+    goto :goto_16
 
     .line 621
-    :cond_26c
+    :cond_15
     const/4 v13, 0x0
 
     .line 622
-    :goto_26d
+    :goto_16
     aget-object v11, v2, v18
 
     .line 623
     .line 624
-    if-eqz v11, :cond_274
+    if-eqz v11, :cond_16
 
     .line 625
     .line 626
@@ -1424,19 +1424,19 @@
 
     .line 627
     .line 628
-    goto :goto_275
+    goto :goto_17
 
     .line 629
-    :cond_274
+    :cond_16
     const/4 v11, 0x0
 
     .line 630
-    :goto_275
+    :goto_17
     aget-object v12, v2, v17
 
     .line 631
     .line 632
-    if-eqz v12, :cond_27c
+    if-eqz v12, :cond_17
 
     .line 633
     .line 634
@@ -1444,19 +1444,19 @@
 
     .line 635
     .line 636
-    goto :goto_27d
+    goto :goto_18
 
     .line 637
-    :cond_27c
+    :cond_17
     const/4 v12, 0x0
 
     .line 638
-    :goto_27d
+    :goto_18
     aget-object v14, v2, v16
 
     .line 639
     .line 640
-    if-eqz v14, :cond_286
+    if-eqz v14, :cond_18
 
     .line 641
     .line 642
@@ -1464,27 +1464,27 @@
 
     .line 643
     .line 644
-    :goto_283
+    :goto_19
     const/16 v35, 0x9
 
     .line 645
     .line 646
-    goto :goto_288
+    goto :goto_1a
 
     .line 647
-    :cond_286
+    :cond_18
     const/4 v14, 0x0
 
     .line 648
-    goto :goto_283
+    goto :goto_19
 
     .line 649
-    :goto_288
+    :goto_1a
     aget-object v15, v2, v35
 
     .line 650
     .line 651
-    if-eqz v15, :cond_291
+    if-eqz v15, :cond_19
 
     .line 652
     .line 653
@@ -1492,27 +1492,27 @@
 
     .line 654
     .line 655
-    :goto_28e
+    :goto_1b
     const/16 v34, 0xa
 
     .line 656
     .line 657
-    goto :goto_293
+    goto :goto_1c
 
     .line 658
-    :cond_291
+    :cond_19
     const/4 v15, 0x0
 
     .line 659
-    goto :goto_28e
+    goto :goto_1b
 
     .line 660
-    :goto_293
+    :goto_1c
     aget-object v16, v2, v34
 
     .line 661
     .line 662
-    if-eqz v16, :cond_29e
+    if-eqz v16, :cond_1a
 
     .line 663
     .line 664
@@ -1528,10 +1528,10 @@
 
     .line 669
     .line 670
-    goto :goto_2a1
+    goto :goto_1d
 
     .line 671
-    :cond_29e
+    :cond_1a
     move-object/from16 v23, v0
 
     .line 672
@@ -1539,12 +1539,12 @@
     const/4 v0, 0x0
 
     .line 674
-    :goto_2a1
+    :goto_1d
     aget-object v16, v2, v25
 
     .line 675
     .line 676
-    if-eqz v16, :cond_2ae
+    if-eqz v16, :cond_1b
 
     .line 677
     .line 678
@@ -1560,15 +1560,15 @@
 
     .line 683
     .line 684
-    :goto_2ab
+    :goto_1e
     move-object/from16 v24, v3
 
     .line 685
     .line 686
-    goto :goto_2b2
+    goto :goto_1f
 
     .line 687
-    :cond_2ae
+    :cond_1b
     move-object/from16 v22, v2
 
     .line 688
@@ -1576,10 +1576,10 @@
     const/4 v2, 0x0
 
     .line 690
-    goto :goto_2ab
+    goto :goto_1e
 
     .line 691
-    :goto_2b2
+    :goto_1f
     new-instance v3, Llibs/$d;
 
     .line 692
@@ -1780,17 +1780,17 @@
 
     .line 792
     .line 793
-    if-nez v20, :cond_31c
+    if-nez v20, :cond_1c
 
     .line 794
     .line 795
     move-wide v11, v14
 
     .line 796
-    goto :goto_320
+    goto :goto_20
 
     .line 797
-    :cond_31c
+    :cond_1c
     invoke-virtual/range {v20 .. v20}, Ljava/util/Calendar;->getTimeInMillis()J
 
     .line 798
@@ -1799,7 +1799,7 @@
     move-result-wide v11
 
     .line 801
-    :goto_320
+    :goto_20
     invoke-direct {v10, v11, v12}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
 
     .line 802
@@ -1930,17 +1930,17 @@
 
     .line 864
     .line 865
-    if-nez v13, :cond_364
+    if-nez v13, :cond_1d
 
     .line 866
     .line 867
     move-wide v10, v14
 
     .line 868
-    goto :goto_368
+    goto :goto_21
 
     .line 869
-    :cond_364
+    :cond_1d
     invoke-virtual {v13}, Ljava/util/Calendar;->getTimeInMillis()J
 
     .line 870
@@ -1949,7 +1949,7 @@
     move-result-wide v10
 
     .line 873
-    :goto_368
+    :goto_21
     invoke-direct {v9, v10, v11}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
 
     .line 874
@@ -2089,16 +2089,16 @@
     .line 940
     .line 941
     invoke-virtual {v0}, Llibs/od;->show()V
-    :try_end_3af
-    .catchall {:try_start_24b .. :try_end_3af} :catchall_260
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 942
     .line 943
     .line 944
-    goto :goto_3d1
+    goto :goto_23
 
     .line 945
-    :goto_3b0
+    :goto_22
     new-instance v2, Ljava/lang/StringBuilder;
 
     .line 946
@@ -2160,11 +2160,11 @@
     .line 976
     .line 977
     .line 978
-    :goto_3d1
+    :goto_23
     return-void
 
     .line 979
-    :pswitch_3d2
+    :pswitch_1
     const/16 v21, 0x3
 
     .line 980
@@ -2209,12 +2209,12 @@
 
     .line 1000
     .line 1001
-    :try_start_3e8
+    :try_start_2
     aget-object v8, v2, v45
 
     .line 1002
     .line 1003
-    if-eqz v8, :cond_3ee
+    if-eqz v8, :cond_1e
 
     .line 1004
     .line 1005
@@ -2222,7 +2222,7 @@
 
     .line 1006
     .line 1007
-    :cond_3ee
+    :cond_1e
     const/16 v36, 0x2
 
     .line 1008
@@ -2231,7 +2231,7 @@
 
     .line 1010
     .line 1011
-    if-eqz v8, :cond_3f7
+    if-eqz v8, :cond_1f
 
     .line 1012
     .line 1013
@@ -2239,19 +2239,19 @@
 
     .line 1014
     .line 1015
-    goto :goto_3f8
+    goto :goto_24
 
     .line 1016
-    :cond_3f7
+    :cond_1f
     const/4 v8, 0x0
 
     .line 1017
-    :goto_3f8
+    :goto_24
     aget-object v10, v2, v21
 
     .line 1018
     .line 1019
-    if-eqz v10, :cond_3ff
+    if-eqz v10, :cond_20
 
     .line 1020
     .line 1021
@@ -2259,19 +2259,19 @@
 
     .line 1022
     .line 1023
-    goto :goto_400
+    goto :goto_25
 
     .line 1024
-    :cond_3ff
+    :cond_20
     const/4 v10, 0x0
 
     .line 1025
-    :goto_400
+    :goto_25
     aget-object v11, v2, v20
 
     .line 1026
     .line 1027
-    if-eqz v11, :cond_407
+    if-eqz v11, :cond_21
 
     .line 1028
     .line 1029
@@ -2279,19 +2279,19 @@
 
     .line 1030
     .line 1031
-    goto :goto_408
+    goto :goto_26
 
     .line 1032
-    :cond_407
+    :cond_21
     const/4 v11, 0x0
 
     .line 1033
-    :goto_408
+    :goto_26
     aget-object v12, v2, v19
 
     .line 1034
     .line 1035
-    if-eqz v12, :cond_40f
+    if-eqz v12, :cond_22
 
     .line 1036
     .line 1037
@@ -2299,19 +2299,19 @@
 
     .line 1038
     .line 1039
-    goto :goto_410
+    goto :goto_27
 
     .line 1040
-    :cond_40f
+    :cond_22
     const/4 v12, 0x0
 
     .line 1041
-    :goto_410
+    :goto_27
     aget-object v13, v2, v18
 
     .line 1042
     .line 1043
-    if-eqz v13, :cond_417
+    if-eqz v13, :cond_23
 
     .line 1044
     .line 1045
@@ -2319,19 +2319,19 @@
 
     .line 1046
     .line 1047
-    goto :goto_418
+    goto :goto_28
 
     .line 1048
-    :cond_417
+    :cond_23
     const/4 v13, 0x0
 
     .line 1049
-    :goto_418
+    :goto_28
     aget-object v14, v2, v17
 
     .line 1050
     .line 1051
-    if-eqz v14, :cond_420
+    if-eqz v14, :cond_24
 
     .line 1052
     .line 1053
@@ -2339,21 +2339,21 @@
 
     .line 1054
     .line 1055
-    :goto_41e
+    :goto_29
     move-object v15, v0
 
     .line 1056
-    goto :goto_422
+    goto :goto_2a
 
     .line 1057
-    :cond_420
+    :cond_24
     const/4 v14, 0x0
 
     .line 1058
-    goto :goto_41e
+    goto :goto_29
 
     .line 1059
-    :goto_422
+    :goto_2a
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     .line 1060
@@ -2379,7 +2379,7 @@
 
     .line 1071
     .line 1072
-    if-eqz v16, :cond_43a
+    if-eqz v16, :cond_25
 
     .line 1073
     .line 1074
@@ -2387,37 +2387,37 @@
 
     .line 1075
     .line 1076
-    :goto_433
+    :goto_2b
     const/16 v35, 0x9
 
     .line 1077
     .line 1078
-    goto :goto_43d
+    goto :goto_2c
 
     .line 1079
-    :catchall_436
+    :catchall_2
     move-object/from16 v28, v5
 
     .line 1080
     .line 1081
-    goto/16 :goto_5cd
+    goto/16 :goto_33
 
     .line 1082
     .line 1083
-    :cond_43a
+    :cond_25
     move-object/from16 v16, v3
 
     .line 1084
     .line 1085
-    goto :goto_433
+    goto :goto_2b
 
     .line 1086
-    :goto_43d
+    :goto_2c
     aget-object v18, v2, v35
 
     .line 1087
     .line 1088
-    if-eqz v18, :cond_446
+    if-eqz v18, :cond_26
 
     .line 1089
     .line 1090
@@ -2425,28 +2425,28 @@
 
     .line 1091
     .line 1092
-    :goto_443
+    :goto_2d
     const/16 v34, 0xa
 
     .line 1093
     .line 1094
-    goto :goto_449
+    goto :goto_2e
 
     .line 1095
-    :cond_446
+    :cond_26
     move-object/from16 v18, v3
 
     .line 1096
     .line 1097
-    goto :goto_443
+    goto :goto_2d
 
     .line 1098
-    :goto_449
+    :goto_2e
     aget-object v19, v2, v34
 
     .line 1099
     .line 1100
-    if-eqz v19, :cond_451
+    if-eqz v19, :cond_27
 
     .line 1101
     .line 1102
@@ -2458,7 +2458,7 @@
 
     .line 1105
     .line 1106
-    :cond_451
+    :cond_27
     move-wide/from16 v19, v0
 
     .line 1107
@@ -2475,18 +2475,18 @@
 
     .line 1113
     .line 1114
-    if-eqz v1, :cond_45c
+    if-eqz v1, :cond_28
 
     .line 1115
     .line 1116
-    goto :goto_45d
+    goto :goto_2f
 
     .line 1117
-    :cond_45c
+    :cond_28
     const/4 v1, 0x0
 
     .line 1118
-    :goto_45d
+    :goto_2f
     sget v21, Llibs/bi2;->metadata:I
 
     .line 1119
@@ -2546,7 +2546,7 @@
 
     .line 1146
     .line 1147
-    if-le v3, v15, :cond_481
+    if-le v3, v15, :cond_29
 
     .line 1148
     .line 1149
@@ -2558,14 +2558,14 @@
 
     .line 1152
     .line 1153
-    goto :goto_482
+    goto :goto_30
 
     .line 1154
-    :cond_481
+    :cond_29
     move-object v3, v4
 
     .line 1155
-    :goto_482
+    :goto_30
     sget v15, Llibs/y81;->a:I
 
     .line 1156
@@ -2579,7 +2579,7 @@
     .line 1160
     .line 1161
     .line 1162
-    if-nez v3, :cond_48f
+    if-nez v3, :cond_2a
 
     .line 1163
     .line 1164
@@ -2590,10 +2590,10 @@
 
     .line 1166
     .line 1167
-    goto :goto_4aa
+    goto :goto_31
 
     .line 1168
-    :cond_48f
+    :cond_2a
     new-instance v15, Llibs/dl;
 
     .line 1169
@@ -2604,8 +2604,8 @@
     .line 1172
     .line 1173
     array-length v3, v3
-    :try_end_495
-    .catchall {:try_start_3e8 .. :try_end_495} :catchall_436
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
     .line 1174
     move-object/from16 v28, v5
@@ -2615,7 +2615,7 @@
     int-to-long v4, v3
 
     .line 1177
-    :try_start_498
+    :try_start_3
     sget-object v53, Llibs/y81;->b:Llibs/od0;
 
     .line 1178
@@ -2652,8 +2652,8 @@
     move-result-object v3
 
     .line 1195
-    :goto_4aa
-    if-eqz v3, :cond_4af
+    :goto_31
+    if-eqz v3, :cond_2b
 
     .line 1196
     .line 1197
@@ -2661,14 +2661,14 @@
 
     .line 1198
     .line 1199
-    goto :goto_4b0
+    goto :goto_32
 
     .line 1200
-    :cond_4af
+    :cond_2b
     const/4 v3, 0x0
 
     .line 1201
-    :goto_4b0
+    :goto_32
     iput-object v3, v1, Llibs/xr1;->a:Landroid/graphics/Bitmap;
 
     .line 1202
@@ -3225,17 +3225,17 @@
     .line 1481
     .line 1482
     invoke-virtual {v0}, Llibs/od;->show()V
-    :try_end_5cc
-    .catchall {:try_start_498 .. :try_end_5cc} :catchall_5cd
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_3
 
     .line 1483
     .line 1484
     .line 1485
-    goto :goto_5e0
+    goto :goto_34
 
     .line 1486
-    :catchall_5cd
-    :goto_5cd
+    :catchall_3
+    :goto_33
     const-string v0, "Metadata PDF NULL!"
 
     .line 1487
@@ -3271,15 +3271,15 @@
     .line 1503
     .line 1504
     .line 1505
-    :goto_5e0
+    :goto_34
     return-void
 
     .line 1506
     nop
 
-    :pswitch_data_5e2
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_3d2
-        :pswitch_239
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

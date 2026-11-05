@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/InputStream;)V
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/Eta;
@@ -58,7 +58,7 @@
 
 # virtual methods
 .method public final a()Ljava/lang/Object;
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/hd1;->X:Llibs/ra;
@@ -79,7 +79,7 @@
     const/4 v3, 0x0
 
     .line 9
-    if-eq v1, v2, :cond_db
+    if-eq v1, v2, :cond_6
 
     .line 10
     .line 11
@@ -87,7 +87,7 @@
 
     .line 12
     .line 13
-    if-eq v1, v2, :cond_d5
+    if-eq v1, v2, :cond_5
 
     .line 14
     .line 15
@@ -99,7 +99,7 @@
 
     .line 18
     .line 19
-    if-eq v1, v2, :cond_b8
+    if-eq v1, v2, :cond_4
 
     .line 20
     .line 21
@@ -107,7 +107,7 @@
 
     .line 22
     .line 23
-    if-eq v1, v2, :cond_b2
+    if-eq v1, v2, :cond_3
 
     .line 24
     .line 25
@@ -115,16 +115,16 @@
 
     .line 26
     .line 27
-    if-eq v1, v2, :cond_ac
+    if-eq v1, v2, :cond_2
 
     .line 28
     .line 29
-    packed-switch v1, :pswitch_data_dc
+    packed-switch v1, :pswitch_data_0
 
     .line 30
     .line 31
     .line 32
-    packed-switch v1, :pswitch_data_ec
+    packed-switch v1, :pswitch_data_1
 
     .line 33
     .line 34
@@ -149,7 +149,7 @@
     return-object v3
 
     .line 45
-    :pswitch_2c
+    :pswitch_0
     invoke-virtual {v0}, Llibs/ra;->m()Llibs/k12;
 
     .line 46
@@ -161,7 +161,7 @@
     return-object v0
 
     .line 50
-    :pswitch_31
+    :pswitch_1
     new-instance v1, Llibs/t72;
 
     .line 51
@@ -174,15 +174,15 @@
     return-object v1
 
     .line 56
-    :pswitch_37
-    :try_start_37
+    :pswitch_2
+    :try_start_0
     new-instance v1, Llibs/v72;
 
     .line 57
     .line 58
     invoke-direct {v1, v0, v4}, Llibs/v72;-><init>(Ljava/io/InputStream;Llibs/Eta;)V
-    :try_end_3c
-    .catch Llibs/o72; {:try_start_37 .. :try_end_3c} :catch_3d
+    :try_end_0
+    .catch Llibs/o72; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 59
     .line 60
@@ -190,7 +190,7 @@
     return-object v1
 
     .line 62
-    :catch_3d
+    :catch_0
     move-exception v0
 
     .line 63
@@ -206,7 +206,7 @@
     return-object v3
 
     .line 69
-    :pswitch_44
+    :pswitch_3
     new-instance v1, Ljava/util/ArrayList;
 
     .line 70
@@ -216,7 +216,7 @@
     .line 72
     .line 73
     .line 74
-    :goto_49
+    :goto_0
     invoke-virtual {v0}, Llibs/ra;->c()I
 
     .line 75
@@ -228,11 +228,11 @@
     const/4 v4, 0x4
 
     .line 79
-    if-ne v2, v4, :cond_60
+    if-ne v2, v4, :cond_0
 
     .line 80
     .line 81
-    :try_start_50
+    :try_start_1
     new-instance v2, Llibs/q72;
 
     .line 82
@@ -243,16 +243,16 @@
     .line 85
     .line 86
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_58
-    .catch Llibs/o72; {:try_start_50 .. :try_end_58} :catch_59
+    :try_end_1
+    .catch Llibs/o72; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 87
     .line 88
     .line 89
-    goto :goto_49
+    goto :goto_0
 
     .line 90
-    :catch_59
+    :catch_1
     move-exception v0
 
     .line 91
@@ -268,7 +268,7 @@
     return-object v3
 
     .line 97
-    :cond_60
+    :cond_0
     new-instance v0, Llibs/iz1;
 
     .line 98
@@ -305,7 +305,7 @@
     return-object v0
 
     .line 115
-    :pswitch_72
+    :pswitch_4
     new-instance v1, Ljava/util/ArrayList;
 
     .line 116
@@ -315,7 +315,7 @@
     .line 118
     .line 119
     .line 120
-    :goto_77
+    :goto_1
     invoke-virtual {v0}, Llibs/ra;->c()I
 
     .line 121
@@ -327,11 +327,11 @@
     const/4 v4, 0x2
 
     .line 125
-    if-ne v2, v4, :cond_94
+    if-ne v2, v4, :cond_1
 
     .line 126
     .line 127
-    :try_start_7e
+    :try_start_2
     new-instance v2, Llibs/w72;
 
     .line 128
@@ -354,16 +354,16 @@
     .line 137
     .line 138
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_8c
-    .catch Llibs/o72; {:try_start_7e .. :try_end_8c} :catch_8d
+    :try_end_2
+    .catch Llibs/o72; {:try_start_2 .. :try_end_2} :catch_2
 
     .line 139
     .line 140
     .line 141
-    goto :goto_77
+    goto :goto_1
 
     .line 142
-    :catch_8d
+    :catch_2
     move-exception v0
 
     .line 143
@@ -379,7 +379,7 @@
     return-object v3
 
     .line 149
-    :cond_94
+    :cond_1
     new-instance v0, Llibs/iz1;
 
     .line 150
@@ -416,7 +416,7 @@
     return-object v0
 
     .line 167
-    :pswitch_a6
+    :pswitch_5
     new-instance v1, Llibs/n72;
 
     .line 168
@@ -429,7 +429,7 @@
     return-object v1
 
     .line 173
-    :cond_ac
+    :cond_2
     new-instance v1, Llibs/p72;
 
     .line 174
@@ -442,7 +442,7 @@
     return-object v1
 
     .line 179
-    :cond_b2
+    :cond_3
     new-instance v1, Llibs/e72;
 
     .line 180
@@ -455,8 +455,8 @@
     return-object v1
 
     .line 185
-    :cond_b8
-    :try_start_b8
+    :cond_4
+    :try_start_3
     invoke-virtual {v0}, Llibs/ra;->m()Llibs/k12;
 
     .line 186
@@ -484,8 +484,8 @@
     .line 198
     .line 199
     invoke-direct {v0, v1, v4}, Llibs/kk1;-><init>(Llibs/hh2;Llibs/Eta;)V
-    :try_end_c9
-    .catch Llibs/o72; {:try_start_b8 .. :try_end_c9} :catch_ca
+    :try_end_3
+    .catch Llibs/o72; {:try_start_3 .. :try_end_3} :catch_3
 
     .line 200
     .line 201
@@ -493,7 +493,7 @@
     return-object v0
 
     .line 203
-    :catch_ca
+    :catch_3
     move-exception v0
 
     .line 204
@@ -517,7 +517,7 @@
     return-object v3
 
     .line 214
-    :cond_d5
+    :cond_5
     new-instance v1, Llibs/k72;
 
     .line 215
@@ -530,18 +530,18 @@
     return-object v1
 
     .line 220
-    :cond_db
+    :cond_6
     return-object v3
 
     .line 221
-    :pswitch_data_dc
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_a6
-        :pswitch_72
-        :pswitch_a6
-        :pswitch_44
-        :pswitch_37
-        :pswitch_31
+        :pswitch_5
+        :pswitch_4
+        :pswitch_5
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
     .end packed-switch
 
     .line 222
@@ -560,17 +560,17 @@
     .line 235
     .line 236
     .line 237
-    :pswitch_data_ec
+    :pswitch_data_1
     .packed-switch 0x3c
-        :pswitch_2c
-        :pswitch_2c
-        :pswitch_2c
-        :pswitch_2c
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final iterator()Ljava/util/Iterator;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/rn;

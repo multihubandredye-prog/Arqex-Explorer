@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,14 +54,14 @@
 
 # virtual methods
 .method public final a(ZLlibs/et;)V
-    .registers 3
+    .locals 0
 
     .line 1
     instance-of p1, p2, Llibs/hh1;
 
     .line 2
     .line 3
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
     .line 4
     .line 5
@@ -85,7 +85,7 @@
     return-void
 
     .line 15
-    :cond_e
+    :cond_0
     const-string p1, "invalid parameter passed to RC4 init - "
 
     .line 16
@@ -107,7 +107,7 @@
 .end method
 
 .method public final b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "RC4"
@@ -118,7 +118,7 @@
 .end method
 
 .method public final c([B)V
-    .registers 9
+    .locals 7
 
     .line 1
     iput-object p1, p0, Llibs/zi2;->Lambda:[B
@@ -144,7 +144,7 @@
 
     .line 11
     .line 12
-    if-nez v1, :cond_11
+    if-nez v1, :cond_0
 
     .line 13
     .line 14
@@ -156,12 +156,12 @@
 
     .line 17
     .line 18
-    :cond_11
+    :cond_0
     const/4 v1, 0x0
 
     .line 19
-    :goto_12
-    if-ge v1, v2, :cond_1c
+    :goto_0
+    if-ge v1, v2, :cond_1
 
     .line 20
     .line 21
@@ -180,18 +180,18 @@
 
     .line 27
     .line 28
-    goto :goto_12
+    goto :goto_0
 
     .line 29
-    :cond_1c
+    :cond_1
     const/4 v1, 0x0
 
     .line 30
     const/4 v3, 0x0
 
     .line 31
-    :goto_1e
-    if-ge v0, v2, :cond_39
+    :goto_1
+    if-ge v0, v2, :cond_2
 
     .line 32
     .line 33
@@ -247,15 +247,15 @@
 
     .line 56
     .line 57
-    goto :goto_1e
+    goto :goto_1
 
     .line 58
-    :cond_39
+    :cond_2
     return-void
 .end method
 
 .method public final d(III[B[B)I
-    .registers 12
+    .locals 6
 
     .line 1
     add-int v0, p1, p2
@@ -268,7 +268,7 @@
     const/4 v2, 0x0
 
     .line 5
-    if-gt v0, v1, :cond_41
+    if-gt v0, v1, :cond_2
 
     .line 6
     .line 7
@@ -279,12 +279,12 @@
     array-length v1, p5
 
     .line 10
-    if-gt v0, v1, :cond_3b
+    if-gt v0, v1, :cond_1
 
     .line 11
     .line 12
-    :goto_b
-    if-ge v2, p2, :cond_3a
+    :goto_0
+    if-ge v2, p2, :cond_0
 
     .line 13
     .line 14
@@ -380,14 +380,14 @@
 
     .line 57
     .line 58
-    goto :goto_b
+    goto :goto_0
 
     .line 59
-    :cond_3a
+    :cond_0
     return p2
 
     .line 60
-    :cond_3b
+    :cond_1
     const-string p1, "output buffer too short"
 
     .line 61
@@ -400,7 +400,7 @@
     return v2
 
     .line 66
-    :cond_41
+    :cond_2
     const-string p1, "input buffer too short"
 
     .line 67
@@ -414,7 +414,7 @@
 .end method
 
 .method public final reset()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/zi2;->Lambda:[B

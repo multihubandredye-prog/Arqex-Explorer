@@ -30,7 +30,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/CodeEditorActivity;Llibs/cv;Llibs/fd3;Ljava/nio/charset/Charset;ILjava/lang/String;ZLlibs/od;)V
-    .registers 10
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -81,7 +81,7 @@
 .end method
 
 .method public constructor <init>(Lcom/mixplorer/activities/TextEditorActivity;Lcom/mixplorer/widgets/MiEditor;Ljava/lang/String;Ljava/nio/charset/Charset;ILjava/lang/String;ZLlibs/od;)V
-    .registers 10
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -112,7 +112,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 28
+    .locals 27
 
     .line 1
     move-object/from16 v1, p0
@@ -159,7 +159,7 @@
 
     .line 22
     .line 23
-    packed-switch v0, :pswitch_data_2f6
+    packed-switch v0, :pswitch_data_0
 
     .line 24
     .line 25
@@ -193,7 +193,7 @@
 
     .line 38
     .line 39
-    :try_start_26
+    :try_start_0
     iget-object v15, v1, Llibs/zv;->Z:Ljava/lang/String;
 
     .line 40
@@ -238,7 +238,7 @@
 
     .line 60
     .line 61
-    if-eqz v5, :cond_101
+    if-eqz v5, :cond_7
 
     .line 62
     .line 63
@@ -258,7 +258,7 @@
     move-result v5
 
     .line 71
-    if-nez v5, :cond_fb
+    if-nez v5, :cond_6
 
     .line 72
     .line 73
@@ -270,7 +270,7 @@
     move-result v5
 
     .line 77
-    if-eqz v5, :cond_65
+    if-eqz v5, :cond_0
 
     .line 78
     .line 79
@@ -304,26 +304,26 @@
     move-result-object v10
 
     .line 95
-    goto :goto_7d
+    goto :goto_0
 
     .line 96
-    :catchall_5f
+    :catchall_0
     move-exception v0
 
     .line 97
-    goto/16 :goto_107
+    goto/16 :goto_4
 
     .line 98
     .line 99
-    :catch_62
+    :catch_0
     move-exception v0
 
     .line 100
-    goto/16 :goto_121
+    goto/16 :goto_5
 
     .line 101
     .line 102
-    :cond_65
+    :cond_0
     iget-object v11, v14, Lcom/mixplorer/widgets/MiEditor;->Uniform:Llibs/rp0;
 
     .line 103
@@ -372,8 +372,8 @@
     move-result-object v10
 
     .line 126
-    :goto_7d
-    if-eqz v10, :cond_f5
+    :goto_0
+    if-eqz v10, :cond_5
 
     .line 127
     .line 128
@@ -403,11 +403,11 @@
 
     .line 139
     .line 140
-    if-nez v3, :cond_ef
+    if-nez v3, :cond_4
 
     .line 141
     .line 142
-    if-eqz v15, :cond_a5
+    if-eqz v15, :cond_1
 
     .line 143
     .line 144
@@ -452,16 +452,16 @@
     .line 163
     .line 164
     .line 165
-    goto :goto_a8
+    goto :goto_1
 
     .line 166
-    :cond_a5
+    :cond_1
     invoke-static {v10}, Llibs/t43;->Any(Llibs/rp0;)V
 
     .line 167
     .line 168
     .line 169
-    :goto_a8
+    :goto_1
     new-instance v4, Landroid/content/Intent;
 
     .line 170
@@ -472,9 +472,9 @@
     .line 173
     .line 174
     iget-boolean v0, v14, Lcom/mixplorer/widgets/MiEditor;->Three:Z
-    :try_end_af
-    .catch Lexceptions/AlreadyExistsException; {:try_start_26 .. :try_end_af} :catch_62
-    .catchall {:try_start_26 .. :try_end_af} :catchall_5f
+    :try_end_0
+    .catch Lexceptions/AlreadyExistsException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 175
     .line 176
@@ -482,14 +482,14 @@
 
     .line 177
     .line 178
-    if-eqz v0, :cond_ca
+    if-eqz v0, :cond_2
 
     .line 179
     .line 180
     const/4 v3, 0x0
 
     .line 181
-    :try_start_b4
+    :try_start_1
     iput-boolean v3, v14, Lcom/mixplorer/widgets/MiEditor;->Three:Z
 
     .line 182
@@ -529,10 +529,10 @@
     .line 200
     .line 201
     .line 202
-    goto :goto_db
+    goto :goto_2
 
     .line 203
-    :cond_ca
+    :cond_2
     invoke-static {v10}, Lcom/mixplorer/providers/FileProvider;->k(Llibs/rp0;)Landroid/net/Uri;
 
     .line 204
@@ -566,11 +566,11 @@
     .line 218
     .line 219
     .line 220
-    :goto_db
+    :goto_2
     invoke-virtual {v11}, Llibs/od;->dismiss()V
-    :try_end_de
-    .catch Lexceptions/AlreadyExistsException; {:try_start_b4 .. :try_end_de} :catch_62
-    .catchall {:try_start_b4 .. :try_end_de} :catchall_5f
+    :try_end_1
+    .catch Lexceptions/AlreadyExistsException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 221
     .line 222
@@ -582,7 +582,7 @@
     const/4 v3, 0x0
 
     .line 226
-    if-eqz v0, :cond_ec
+    if-eqz v0, :cond_3
 
     .line 227
     .line 228
@@ -594,26 +594,26 @@
     move-result v0
 
     .line 232
-    if-nez v0, :cond_ec
+    if-nez v0, :cond_3
 
     .line 233
     .line 234
-    :goto_e9
+    :goto_3
     invoke-static {v12, v8}, Llibs/vw1;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 235
     .line 236
     .line 237
-    :cond_ec
+    :cond_3
     iput-boolean v3, v13, Lcom/mixplorer/activities/TextEditorActivity;->Romeo:Z
 
     .line 238
     .line 239
-    goto :goto_139
+    goto :goto_6
 
     .line 240
-    :cond_ef
-    :try_start_ef
+    :cond_4
+    :try_start_2
     new-instance v0, Ljava/lang/Exception;
 
     .line 241
@@ -626,7 +626,7 @@
     throw v0
 
     .line 246
-    :cond_f5
+    :cond_5
     new-instance v0, Ljava/lang/Exception;
 
     .line 247
@@ -639,7 +639,7 @@
     throw v0
 
     .line 252
-    :cond_fb
+    :cond_6
     new-instance v0, Lexceptions/AlreadyExistsException;
 
     .line 253
@@ -652,7 +652,7 @@
     throw v0
 
     .line 258
-    :cond_101
+    :cond_7
     new-instance v0, Ljava/lang/Exception;
 
     .line 259
@@ -663,13 +663,13 @@
     .line 262
     .line 263
     throw v0
-    :try_end_107
-    .catch Lexceptions/AlreadyExistsException; {:try_start_ef .. :try_end_107} :catch_62
-    .catchall {:try_start_ef .. :try_end_107} :catchall_5f
+    :try_end_2
+    .catch Lexceptions/AlreadyExistsException; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 264
-    :goto_107
-    :try_start_107
+    :goto_4
+    :try_start_3
     invoke-static {v12, v9, v0}, Llibs/vw1;->j(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 265
@@ -688,8 +688,8 @@
 
     .line 273
     invoke-static {v0}, Llibs/gx1;->d(Ljava/lang/Object;)V
-    :try_end_113
-    .catchall {:try_start_107 .. :try_end_113} :catchall_11f
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 274
     .line 275
@@ -701,7 +701,7 @@
     const/4 v3, 0x0
 
     .line 279
-    if-eqz v0, :cond_ec
+    if-eqz v0, :cond_3
 
     .line 280
     .line 281
@@ -713,22 +713,22 @@
     move-result v0
 
     .line 285
-    if-nez v0, :cond_ec
+    if-nez v0, :cond_3
 
     .line 286
     .line 287
-    goto :goto_e9
+    goto :goto_3
 
     .line 288
-    :catchall_11f
+    :catchall_1
     move-exception v0
 
     .line 289
-    goto :goto_13a
+    goto :goto_7
 
     .line 290
-    :goto_121
-    :try_start_121
+    :goto_5
+    :try_start_4
     invoke-static {v12, v9, v0}, Llibs/vw1;->j(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 291
@@ -747,8 +747,8 @@
 
     .line 299
     invoke-static {v0}, Llibs/gx1;->d(Ljava/lang/Object;)V
-    :try_end_12d
-    .catchall {:try_start_121 .. :try_end_12d} :catchall_11f
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 300
     .line 301
@@ -760,7 +760,7 @@
     const/4 v3, 0x0
 
     .line 305
-    if-eqz v0, :cond_ec
+    if-eqz v0, :cond_3
 
     .line 306
     .line 307
@@ -772,18 +772,18 @@
     move-result v0
 
     .line 311
-    if-nez v0, :cond_ec
+    if-nez v0, :cond_3
 
     .line 312
     .line 313
-    goto :goto_e9
+    goto :goto_3
 
     .line 314
-    :goto_139
+    :goto_6
     return-void
 
     .line 315
-    :goto_13a
+    :goto_7
     iget-object v2, v1, Llibs/zv;->Y:Llibs/rp0;
 
     .line 316
@@ -791,7 +791,7 @@
     const/4 v3, 0x0
 
     .line 318
-    if-eqz v2, :cond_148
+    if-eqz v2, :cond_8
 
     .line 319
     .line 320
@@ -803,7 +803,7 @@
     move-result v2
 
     .line 324
-    if-nez v2, :cond_148
+    if-nez v2, :cond_8
 
     .line 325
     .line 326
@@ -812,7 +812,7 @@
     .line 327
     .line 328
     .line 329
-    :cond_148
+    :cond_8
     iput-boolean v3, v13, Lcom/mixplorer/activities/TextEditorActivity;->Romeo:Z
 
     .line 330
@@ -820,7 +820,7 @@
     throw v0
 
     .line 332
-    :pswitch_14b
+    :pswitch_0
     move-object v11, v6
 
     .line 333
@@ -853,7 +853,7 @@
     const/4 v5, 0x1
 
     .line 346
-    :try_start_159
+    :try_start_5
     move-object v14, v10
 
     .line 347
@@ -896,7 +896,7 @@
 
     .line 365
     .line 366
-    if-eqz v10, :cond_27b
+    if-eqz v10, :cond_11
 
     .line 367
     .line 368
@@ -916,7 +916,7 @@
     move-result-object v10
 
     .line 376
-    if-nez v10, :cond_273
+    if-nez v10, :cond_10
 
     .line 377
     .line 378
@@ -924,7 +924,7 @@
 
     .line 379
     .line 380
-    if-eqz v10, :cond_1af
+    if-eqz v10, :cond_9
 
     .line 381
     .line 382
@@ -948,7 +948,7 @@
     move-result v10
 
     .line 392
-    if-nez v10, :cond_1af
+    if-nez v10, :cond_9
 
     .line 393
     .line 394
@@ -976,7 +976,7 @@
     move-result v10
 
     .line 406
-    if-eqz v10, :cond_1af
+    if-eqz v10, :cond_9
 
     .line 407
     .line 408
@@ -999,52 +999,52 @@
 
     .line 416
     .line 417
-    goto :goto_1af
+    goto :goto_a
 
     .line 418
-    :catchall_1a1
+    :catchall_2
     move-exception v0
 
     .line 419
     move-object v15, v6
 
     .line 420
-    goto/16 :goto_283
+    goto/16 :goto_f
 
     .line 421
     .line 422
-    :catch_1a5
+    :catch_1
     move-exception v0
 
     .line 423
     move-object v15, v6
 
     .line 424
-    :goto_1a7
+    :goto_8
     const/4 v6, 0x1
 
     .line 425
-    goto/16 :goto_29d
+    goto/16 :goto_10
 
     .line 426
     .line 427
-    :catch_1aa
+    :catch_2
     move-exception v0
 
     .line 428
     move-object v15, v6
 
     .line 429
-    :goto_1ac
+    :goto_9
     const/4 v6, 0x1
 
     .line 430
-    goto/16 :goto_2bf
+    goto/16 :goto_11
 
     .line 431
     .line 432
-    :cond_1af
-    :goto_1af
+    :cond_9
+    :goto_a
     invoke-static {v0, v2}, Llibs/tr3;->w(Ljava/lang/String;Llibs/zl0;)Z
 
     .line 433
@@ -1053,7 +1053,7 @@
     move-result v10
 
     .line 436
-    if-eqz v10, :cond_1c4
+    if-eqz v10, :cond_a
 
     .line 437
     .line 438
@@ -1083,10 +1083,10 @@
     move-result-object v14
 
     .line 452
-    goto :goto_1dc
+    goto :goto_b
 
     .line 453
-    :cond_1c4
+    :cond_a
     iget-object v14, v13, Llibs/cv;->Tau:Llibs/rp0;
 
     .line 454
@@ -1133,21 +1133,21 @@
     .line 475
     .line 476
     move-result-object v14
-    :try_end_1dc
-    .catch Lexceptions/AlreadyExistsException; {:try_start_159 .. :try_end_1dc} :catch_1aa
-    .catch Lexceptions/NotSupportedException; {:try_start_159 .. :try_end_1dc} :catch_1a5
-    .catchall {:try_start_159 .. :try_end_1dc} :catchall_1a1
+    :try_end_5
+    .catch Lexceptions/AlreadyExistsException; {:try_start_5 .. :try_end_5} :catch_2
+    .catch Lexceptions/NotSupportedException; {:try_start_5 .. :try_end_5} :catch_1
+    .catchall {:try_start_5 .. :try_end_5} :catchall_2
 
     .line 477
-    :goto_1dc
-    if-eqz v14, :cond_26b
+    :goto_b
+    if-eqz v14, :cond_f
 
     .line 478
     .line 479
     move-object v15, v6
 
     .line 480
-    :try_start_1df
+    :try_start_6
     iget-wide v5, v14, Llibs/rp0;->Four:J
 
     .line 481
@@ -1168,11 +1168,11 @@
 
     .line 489
     .line 490
-    if-nez v3, :cond_264
+    if-nez v3, :cond_e
 
     .line 491
     .line 492
-    if-eqz v10, :cond_20a
+    if-eqz v10, :cond_b
 
     .line 493
     .line 494
@@ -1217,38 +1217,38 @@
     .line 513
     .line 514
     .line 515
-    goto :goto_20d
+    goto :goto_c
 
     .line 516
-    :catchall_203
+    :catchall_3
     move-exception v0
 
     .line 517
-    goto/16 :goto_283
+    goto/16 :goto_f
 
     .line 518
     .line 519
-    :catch_206
+    :catch_3
     move-exception v0
 
     .line 520
-    goto :goto_1a7
+    goto :goto_8
 
     .line 521
-    :catch_208
+    :catch_4
     move-exception v0
 
     .line 522
-    goto :goto_1ac
+    goto :goto_9
 
     .line 523
-    :cond_20a
+    :cond_b
     invoke-static {v14}, Llibs/t43;->Any(Llibs/rp0;)V
 
     .line 524
     .line 525
     .line 526
-    :goto_20d
+    :goto_c
     new-instance v4, Landroid/content/Intent;
 
     .line 527
@@ -1259,10 +1259,10 @@
     .line 530
     .line 531
     iget-boolean v0, v13, Llibs/cv;->Omicron:Z
-    :try_end_214
-    .catch Lexceptions/AlreadyExistsException; {:try_start_1df .. :try_end_214} :catch_208
-    .catch Lexceptions/NotSupportedException; {:try_start_1df .. :try_end_214} :catch_206
-    .catchall {:try_start_1df .. :try_end_214} :catchall_203
+    :try_end_6
+    .catch Lexceptions/AlreadyExistsException; {:try_start_6 .. :try_end_6} :catch_4
+    .catch Lexceptions/NotSupportedException; {:try_start_6 .. :try_end_6} :catch_3
+    .catchall {:try_start_6 .. :try_end_6} :catchall_3
 
     .line 532
     .line 533
@@ -1270,14 +1270,14 @@
 
     .line 534
     .line 535
-    if-eqz v0, :cond_238
+    if-eqz v0, :cond_c
 
     .line 536
     .line 537
     const/4 v3, 0x0
 
     .line 538
-    :try_start_219
+    :try_start_7
     iput-boolean v3, v13, Llibs/cv;->Omicron:Z
 
     .line 539
@@ -1301,17 +1301,17 @@
     .line 549
     .line 550
     new-instance v0, Llibs/hk;
-    :try_end_227
-    .catch Lexceptions/AlreadyExistsException; {:try_start_219 .. :try_end_227} :catch_234
-    .catch Lexceptions/NotSupportedException; {:try_start_219 .. :try_end_227} :catch_230
-    .catchall {:try_start_219 .. :try_end_227} :catchall_203
+    :try_end_7
+    .catch Lexceptions/AlreadyExistsException; {:try_start_7 .. :try_end_7} :catch_6
+    .catch Lexceptions/NotSupportedException; {:try_start_7 .. :try_end_7} :catch_5
+    .catchall {:try_start_7 .. :try_end_7} :catchall_3
 
     .line 551
     .line 552
     const/4 v3, 0x1
 
     .line 553
-    :try_start_228
+    :try_start_8
     invoke-direct {v0, v1, v2, v13, v3}, Llibs/hk;-><init>(Ljava/lang/Object;ZLjava/lang/Object;B)V
 
     .line 554
@@ -1325,32 +1325,32 @@
     const/4 v6, 0x1
 
     .line 560
-    goto :goto_24b
+    goto :goto_d
 
     .line 561
-    :catch_230
+    :catch_5
     move-exception v0
 
     .line 562
     const/4 v3, 0x1
 
     .line 563
-    goto/16 :goto_1a7
+    goto/16 :goto_8
 
     .line 564
     .line 565
-    :catch_234
+    :catch_6
     move-exception v0
 
     .line 566
     const/4 v3, 0x1
 
     .line 567
-    goto/16 :goto_1ac
+    goto/16 :goto_9
 
     .line 568
     .line 569
-    :cond_238
+    :cond_c
     const/4 v3, 0x1
 
     .line 570
@@ -1368,10 +1368,10 @@
     .line 576
     .line 577
     new-instance v0, Llibs/uk;
-    :try_end_242
-    .catch Lexceptions/AlreadyExistsException; {:try_start_228 .. :try_end_242} :catch_208
-    .catch Lexceptions/NotSupportedException; {:try_start_228 .. :try_end_242} :catch_206
-    .catchall {:try_start_228 .. :try_end_242} :catchall_203
+    :try_end_8
+    .catch Lexceptions/AlreadyExistsException; {:try_start_8 .. :try_end_8} :catch_4
+    .catch Lexceptions/NotSupportedException; {:try_start_8 .. :try_end_8} :catch_3
+    .catchall {:try_start_8 .. :try_end_8} :catchall_3
 
     .line 578
     .line 579
@@ -1384,7 +1384,7 @@
     const/4 v6, 0x1
 
     .line 582
-    :try_start_245
+    :try_start_9
     invoke-direct/range {v0 .. v5}, Llibs/uk;-><init>(Ljava/lang/Object;ZLjava/lang/Comparable;Ljava/lang/Object;B)V
 
     .line 583
@@ -1395,12 +1395,12 @@
     .line 586
     .line 587
     .line 588
-    :goto_24b
+    :goto_d
     invoke-virtual {v11}, Llibs/od;->dismiss()V
-    :try_end_24e
-    .catch Lexceptions/AlreadyExistsException; {:try_start_245 .. :try_end_24e} :catch_262
-    .catch Lexceptions/NotSupportedException; {:try_start_245 .. :try_end_24e} :catch_260
-    .catchall {:try_start_245 .. :try_end_24e} :catchall_203
+    :try_end_9
+    .catch Lexceptions/AlreadyExistsException; {:try_start_9 .. :try_end_9} :catch_8
+    .catch Lexceptions/NotSupportedException; {:try_start_9 .. :try_end_9} :catch_7
+    .catchall {:try_start_9 .. :try_end_9} :catchall_3
 
     .line 589
     .line 590
@@ -1412,7 +1412,7 @@
     const/4 v3, 0x0
 
     .line 594
-    if-eqz v0, :cond_25c
+    if-eqz v0, :cond_d
 
     .line 595
     .line 596
@@ -1424,44 +1424,44 @@
     move-result v0
 
     .line 600
-    if-nez v0, :cond_25c
+    if-nez v0, :cond_d
 
     .line 601
     .line 602
-    :goto_259
+    :goto_e
     invoke-static {v15, v8}, Llibs/vw1;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 603
     .line 604
     .line 605
-    :cond_25c
+    :cond_d
     iput-boolean v3, v12, Lcom/mixplorer/activities/CodeEditorActivity;->Romeo:Z
 
     .line 606
     .line 607
-    goto/16 :goto_2e2
+    goto/16 :goto_12
 
     .line 608
     .line 609
-    :catch_260
+    :catch_7
     move-exception v0
 
     .line 610
-    goto :goto_29d
+    goto :goto_10
 
     .line 611
-    :catch_262
+    :catch_8
     move-exception v0
 
     .line 612
-    goto :goto_2bf
+    goto :goto_11
 
     .line 613
-    :cond_264
+    :cond_e
     const/4 v6, 0x1
 
     .line 614
-    :try_start_265
+    :try_start_a
     new-instance v0, Ljava/lang/Exception;
 
     .line 615
@@ -1474,7 +1474,7 @@
     throw v0
 
     .line 620
-    :cond_26b
+    :cond_f
     move-object v15, v6
 
     .line 621
@@ -1493,7 +1493,7 @@
     throw v0
 
     .line 628
-    :cond_273
+    :cond_10
     move-object v15, v6
 
     .line 629
@@ -1512,7 +1512,7 @@
     throw v0
 
     .line 636
-    :cond_27b
+    :cond_11
     move-object v15, v6
 
     .line 637
@@ -1529,14 +1529,14 @@
     .line 642
     .line 643
     throw v0
-    :try_end_283
-    .catch Lexceptions/AlreadyExistsException; {:try_start_265 .. :try_end_283} :catch_262
-    .catch Lexceptions/NotSupportedException; {:try_start_265 .. :try_end_283} :catch_260
-    .catchall {:try_start_265 .. :try_end_283} :catchall_203
+    :try_end_a
+    .catch Lexceptions/AlreadyExistsException; {:try_start_a .. :try_end_a} :catch_8
+    .catch Lexceptions/NotSupportedException; {:try_start_a .. :try_end_a} :catch_7
+    .catchall {:try_start_a .. :try_end_a} :catchall_3
 
     .line 644
-    :goto_283
-    :try_start_283
+    :goto_f
+    :try_start_b
     invoke-static {v15, v9, v0}, Llibs/vw1;->j(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 645
@@ -1555,8 +1555,8 @@
 
     .line 653
     invoke-static {v0}, Llibs/gx1;->d(Ljava/lang/Object;)V
-    :try_end_28f
-    .catchall {:try_start_283 .. :try_end_28f} :catchall_29b
+    :try_end_b
+    .catchall {:try_start_b .. :try_end_b} :catchall_4
 
     .line 654
     .line 655
@@ -1568,7 +1568,7 @@
     const/4 v3, 0x0
 
     .line 659
-    if-eqz v0, :cond_25c
+    if-eqz v0, :cond_d
 
     .line 660
     .line 661
@@ -1580,22 +1580,22 @@
     move-result v0
 
     .line 665
-    if-nez v0, :cond_25c
+    if-nez v0, :cond_d
 
     .line 666
     .line 667
-    goto :goto_259
+    goto :goto_e
 
     .line 668
-    :catchall_29b
+    :catchall_4
     move-exception v0
 
     .line 669
-    goto :goto_2e3
+    goto :goto_13
 
     .line 670
-    :goto_29d
-    :try_start_29d
+    :goto_10
+    :try_start_c
     invoke-static {v0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 671
@@ -1634,8 +1634,8 @@
 
     .line 689
     invoke-static {v0}, Llibs/gx1;->d(Ljava/lang/Object;)V
-    :try_end_2b3
-    .catchall {:try_start_29d .. :try_end_2b3} :catchall_29b
+    :try_end_c
+    .catchall {:try_start_c .. :try_end_c} :catchall_4
 
     .line 690
     .line 691
@@ -1647,7 +1647,7 @@
     const/4 v3, 0x0
 
     .line 695
-    if-eqz v0, :cond_25c
+    if-eqz v0, :cond_d
 
     .line 696
     .line 697
@@ -1659,15 +1659,15 @@
     move-result v0
 
     .line 701
-    if-nez v0, :cond_25c
+    if-nez v0, :cond_d
 
     .line 702
     .line 703
-    goto :goto_259
+    goto :goto_e
 
     .line 704
-    :goto_2bf
-    :try_start_2bf
+    :goto_11
+    :try_start_d
     invoke-static {v0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 705
@@ -1706,8 +1706,8 @@
 
     .line 723
     invoke-static {v0}, Llibs/gx1;->d(Ljava/lang/Object;)V
-    :try_end_2d5
-    .catchall {:try_start_2bf .. :try_end_2d5} :catchall_29b
+    :try_end_d
+    .catchall {:try_start_d .. :try_end_d} :catchall_4
 
     .line 724
     .line 725
@@ -1719,7 +1719,7 @@
     const/4 v3, 0x0
 
     .line 729
-    if-eqz v0, :cond_25c
+    if-eqz v0, :cond_d
 
     .line 730
     .line 731
@@ -1731,19 +1731,19 @@
     move-result v0
 
     .line 735
-    if-nez v0, :cond_25c
+    if-nez v0, :cond_d
 
     .line 736
     .line 737
-    goto/16 :goto_259
+    goto/16 :goto_e
 
     .line 738
     .line 739
-    :goto_2e2
+    :goto_12
     return-void
 
     .line 740
-    :goto_2e3
+    :goto_13
     iget-object v2, v1, Llibs/zv;->Y:Llibs/rp0;
 
     .line 741
@@ -1751,7 +1751,7 @@
     const/4 v3, 0x0
 
     .line 743
-    if-eqz v2, :cond_2f1
+    if-eqz v2, :cond_12
 
     .line 744
     .line 745
@@ -1763,7 +1763,7 @@
     move-result v2
 
     .line 749
-    if-nez v2, :cond_2f1
+    if-nez v2, :cond_12
 
     .line 750
     .line 751
@@ -1772,24 +1772,24 @@
     .line 752
     .line 753
     .line 754
-    :cond_2f1
+    :cond_12
     iput-boolean v3, v12, Lcom/mixplorer/activities/CodeEditorActivity;->Romeo:Z
 
     .line 755
     .line 756
-    goto :goto_2f5
+    goto :goto_15
 
     .line 757
-    :goto_2f4
+    :goto_14
     throw v0
 
     .line 758
-    :goto_2f5
-    goto :goto_2f4
+    :goto_15
+    goto :goto_14
 
     .line 759
-    :pswitch_data_2f6
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_14b
+        :pswitch_0
     .end packed-switch
 .end method

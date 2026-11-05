@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/z40;Ljava/lang/Thread;Ljava/util/HashSet;Ljava/util/HashSet;Ljava/util/HashSet;Ljava/util/HashSet;)V
-    .registers 7
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/x40;->f:Llibs/z40;
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public final a()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -67,7 +67,7 @@
 .end method
 
 .method public final e(Llibs/rp0;)Z
-    .registers 8
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/x40;->a:Ljava/lang/Thread;
@@ -85,7 +85,7 @@
     const/4 v1, 0x0
 
     .line 8
-    if-nez v0, :cond_7d
+    if-nez v0, :cond_6
 
     .line 9
     .line 10
@@ -93,7 +93,7 @@
 
     .line 11
     .line 12
-    if-nez v0, :cond_7c
+    if-nez v0, :cond_5
 
     .line 13
     .line 14
@@ -109,7 +109,7 @@
     move-result v0
 
     .line 20
-    if-eqz v0, :cond_7c
+    if-eqz v0, :cond_5
 
     .line 21
     .line 22
@@ -126,14 +126,14 @@
 
     .line 28
     .line 29
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_0
 
     .line 30
     .line 31
-    goto :goto_7c
+    goto :goto_0
 
     .line 32
-    :cond_1f
+    :cond_0
     iget-object v0, p0, Llibs/x40;->f:Llibs/z40;
 
     .line 33
@@ -142,7 +142,7 @@
 
     .line 35
     .line 36
-    if-nez v2, :cond_32
+    if-nez v2, :cond_1
 
     .line 37
     .line 38
@@ -166,14 +166,14 @@
     move-result v2
 
     .line 48
-    if-eqz v2, :cond_32
+    if-eqz v2, :cond_1
 
     .line 49
     .line 50
-    goto :goto_7c
+    goto :goto_0
 
     .line 51
-    :cond_32
+    :cond_1
     invoke-virtual {v0, p1}, Llibs/z40;->Work(Llibs/rp0;)Llibs/kz;
 
     .line 52
@@ -182,7 +182,7 @@
     move-result-object v0
 
     .line 55
-    if-eqz v0, :cond_7c
+    if-eqz v0, :cond_5
 
     .line 56
     .line 57
@@ -190,7 +190,7 @@
 
     .line 58
     .line 59
-    if-eqz v2, :cond_73
+    if-eqz v2, :cond_4
 
     .line 60
     .line 61
@@ -206,7 +206,7 @@
     move-result v2
 
     .line 67
-    if-nez v2, :cond_4d
+    if-nez v2, :cond_2
 
     .line 68
     .line 69
@@ -227,7 +227,7 @@
     .line 76
     .line 77
     .line 78
-    :cond_4d
+    :cond_2
     iget-object v2, v0, Llibs/kz;->Xi:Llibs/zp;
 
     .line 79
@@ -244,7 +244,7 @@
     move-result v2
 
     .line 86
-    if-nez v2, :cond_60
+    if-nez v2, :cond_3
 
     .line 87
     .line 88
@@ -265,7 +265,7 @@
     .line 95
     .line 96
     .line 97
-    :cond_60
+    :cond_3
     iget-object v2, v0, Llibs/kz;->Xi:Llibs/zp;
 
     .line 98
@@ -282,7 +282,7 @@
     move-result v2
 
     .line 105
-    if-nez v2, :cond_73
+    if-nez v2, :cond_4
 
     .line 106
     .line 107
@@ -303,7 +303,7 @@
     .line 114
     .line 115
     .line 116
-    :cond_73
+    :cond_4
     iget-object v0, p0, Llibs/x40;->e:Ljava/util/HashSet;
 
     .line 117
@@ -321,12 +321,12 @@
     .line 123
     .line 124
     .line 125
-    :cond_7c
-    :goto_7c
+    :cond_5
+    :goto_0
     return v1
 
     .line 126
-    :cond_7d
+    :cond_6
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 127

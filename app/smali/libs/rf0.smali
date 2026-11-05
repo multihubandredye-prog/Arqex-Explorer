@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 6
+    .locals 6
 
     .line 1
     new-instance v0, Llibs/bn1;
@@ -137,7 +137,7 @@
 .end method
 
 .method public static a(ILjava/security/Key;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     const-string v0, "ECDSA"
@@ -160,7 +160,7 @@
     move-result v0
 
     .line 11
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     .line 12
     .line 13
@@ -184,16 +184,16 @@
     move-result v0
 
     .line 23
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_1
 
     .line 24
     .line 25
-    :cond_18
+    :cond_0
     instance-of v0, p1, Ljava/security/interfaces/ECKey;
 
     .line 26
     .line 27
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_1
 
     .line 28
     .line 29
@@ -233,7 +233,7 @@
     move-result p1
 
     .line 47
-    if-ne p1, p0, :cond_32
+    if-ne p1, p0, :cond_1
 
     .line 48
     .line 49
@@ -243,7 +243,7 @@
     return p0
 
     .line 51
-    :cond_32
+    :cond_1
     const/4 p0, 0x0
 
     .line 52
@@ -251,7 +251,7 @@
 .end method
 
 .method public static b(Ljava/lang/String;Llibs/tj;)Ljava/security/PublicKey;
-    .registers 13
+    .locals 11
 
     .line 1
     const-string v0, "Unknown curve "
@@ -274,7 +274,7 @@
     move-result-object v2
 
     .line 11
-    :try_start_a
+    :try_start_0
     sget-object v3, Llibs/ue3;->c:Ljava/nio/charset/Charset;
 
     .line 12
@@ -344,7 +344,7 @@
 
     .line 45
     .line 46
-    if-eqz v8, :cond_6e
+    if-eqz v8, :cond_0
 
     .line 47
     .line 48
@@ -461,7 +461,7 @@
     .line 109
     .line 110
     .line 111
-    :cond_6e
+    :cond_0
     sget-object p1, Llibs/rf0;->b:Ljava/util/HashMap;
 
     .line 112
@@ -474,7 +474,7 @@
     move-result p1
 
     .line 117
-    if-eqz p1, :cond_ac
+    if-eqz p1, :cond_2
 
     .line 118
     .line 119
@@ -528,7 +528,7 @@
 
     .line 144
     .line 145
-    if-eqz p0, :cond_a6
+    if-eqz p0, :cond_1
 
     .line 146
     .line 147
@@ -572,7 +572,7 @@
     return-object p0
 
     .line 167
-    :cond_a6
+    :cond_1
     new-instance p0, Ljava/lang/NullPointerException;
 
     .line 168
@@ -585,7 +585,7 @@
     throw p0
 
     .line 173
-    :cond_ac
+    :cond_2
     new-instance p0, Ljava/security/GeneralSecurityException;
 
     .line 174
@@ -604,11 +604,11 @@
     .line 181
     .line 182
     throw p0
-    :try_end_b6
-    .catch Ljava/lang/Exception; {:try_start_a .. :try_end_b6} :catch_b6
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 183
-    :catch_b6
+    :catch_0
     move-exception p0
 
     .line 184
@@ -625,7 +625,7 @@
 .end method
 
 .method public static c(Ljava/security/PublicKey;Llibs/uj;)V
-    .registers 5
+    .locals 3
 
     .line 1
     check-cast p0, Ljava/security/interfaces/ECPublicKey;

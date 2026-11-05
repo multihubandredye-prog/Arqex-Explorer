@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Landroid/service/quicksettings/TileService;-><init>()V
@@ -21,22 +21,22 @@
 .end method
 
 .method public static c(Landroid/service/quicksettings/Tile;I)V
-    .registers 5
+    .locals 3
 
     .line 1
-    if-nez p0, :cond_3
+    if-nez p0, :cond_0
 
     .line 2
     .line 3
     return-void
 
     .line 4
-    :cond_3
+    :cond_0
     sget-object v0, Llibs/zm3;->X:Landroid/graphics/drawable/Icon;
 
     .line 5
     .line 6
-    if-nez v0, :cond_19
+    if-nez v0, :cond_1
 
     .line 7
     .line 8
@@ -78,8 +78,8 @@
 
     .line 25
     .line 26
-    :cond_19
-    if-eqz v0, :cond_1e
+    :cond_1
+    if-eqz v0, :cond_2
 
     .line 27
     .line 28
@@ -88,7 +88,7 @@
     .line 29
     .line 30
     .line 31
-    :cond_1e
+    :cond_2
     invoke-static {p0, p1}, Llibs/Lima;->u(Landroid/service/quicksettings/Tile;I)V
 
     .line 32
@@ -105,7 +105,7 @@
 
 # virtual methods
 .method public a()Ljava/lang/Class;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -120,7 +120,7 @@
 .end method
 
 .method public final b(Ljava/lang/String;)V
-    .registers 7
+    .locals 5
 
     .line 1
     invoke-virtual {p0}, Llibs/zm3;->f()Landroid/service/quicksettings/Tile;
@@ -131,14 +131,14 @@
     move-result-object v0
 
     .line 5
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
     return-void
 
     .line 8
-    :cond_7
+    :cond_0
     invoke-virtual {p0}, Llibs/zm3;->d()I
 
     .line 9
@@ -153,21 +153,21 @@
     const/4 v2, 0x1
 
     .line 14
-    if-eq v0, v1, :cond_11
+    if-eq v0, v1, :cond_1
 
     .line 15
     .line 16
     const/4 v0, 0x1
 
     .line 17
-    goto :goto_12
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_1
     const/4 v0, 0x0
 
     .line 19
-    :goto_12
+    :goto_0
     new-instance v1, Landroid/content/Intent;
 
     .line 20
@@ -229,7 +229,7 @@
     .line 50
     .line 51
     .line 52
-    if-eqz v0, :cond_38
+    if-eqz v0, :cond_2
 
     .line 53
     .line 54
@@ -237,15 +237,15 @@
 
     .line 55
     .line 56
-    goto :goto_3a
+    goto :goto_1
 
     .line 57
-    :cond_38
+    :cond_2
     const-string p1, "0"
 
     .line 58
     .line 59
-    :goto_3a
+    :goto_1
     const-string v0, "on"
 
     .line 60
@@ -290,7 +290,7 @@
 .end method
 
 .method public d()I
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-static {}, Llibs/t53;->g()Z
@@ -301,7 +301,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -311,7 +311,7 @@
     return v0
 
     .line 9
-    :cond_8
+    :cond_0
     const/4 v0, 0x1
 
     .line 10
@@ -319,7 +319,7 @@
 .end method
 
 .method public e()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -336,7 +336,7 @@
 .end method
 
 .method public final onBind(Landroid/content/Intent;)Landroid/os/IBinder;
-    .registers 6
+    .locals 4
 
     .line 1
     :try_start_0
@@ -354,11 +354,11 @@
     .line 7
     .line 8
     move-result-object v0
-    :try_end_8
-    .catchall {:try_start_0 .. :try_end_8} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 9
-    :try_start_8
+    :try_start_1
     sget-object v1, Llibs/zt0;->g:Landroid/content/Context;
 
     .line 10
@@ -377,17 +377,17 @@
     .line 17
     .line 18
     invoke-static {v1, v2}, Llibs/Lima;->s(Landroid/content/Context;Landroid/content/ComponentName;)V
-    :try_end_14
-    .catchall {:try_start_8 .. :try_end_14} :catchall_14
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 19
     .line 20
     .line 21
-    :catchall_14
+    :catchall_0
     return-object p1
 
     .line 22
-    :catchall_15
+    :catchall_1
     const/4 p1, 0x0
 
     .line 23
@@ -395,7 +395,7 @@
 .end method
 
 .method public final onStartListening()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-super {p0}, Landroid/service/quicksettings/TileService;->onStartListening()V
@@ -428,7 +428,7 @@
 .end method
 
 .method public final onStopListening()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-super {p0}, Landroid/service/quicksettings/TileService;->onStopListening()V
@@ -466,7 +466,7 @@
 .end method
 
 .method public final onTileAdded()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-super {p0}, Landroid/service/quicksettings/TileService;->onTileAdded()V
@@ -499,7 +499,7 @@
 .end method
 
 .method public final onTileRemoved()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-super {p0}, Landroid/service/quicksettings/TileService;->onTileRemoved()V

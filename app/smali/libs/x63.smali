@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/wc;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final engineGenerateParameters()Ljava/security/AlgorithmParameters;
-    .registers 4
+    .locals 3
 
     .line 1
     const/16 v0, 0x20
@@ -34,7 +34,7 @@
 
     .line 6
     .line 7
-    if-nez v1, :cond_f
+    if-nez v1, :cond_0
 
     .line 8
     .line 9
@@ -51,13 +51,13 @@
 
     .line 15
     .line 16
-    :cond_f
+    :cond_0
     invoke-virtual {v1, v0}, Ljava/security/SecureRandom;->nextBytes([B)V
 
     .line 17
     .line 18
     .line 19
-    :try_start_12
+    :try_start_0
     const-string v1, "Shacal2"
 
     .line 20
@@ -80,8 +80,8 @@
     .line 29
     .line 30
     invoke-virtual {v1, v2}, Ljava/security/AlgorithmParameters;->init(Ljava/security/spec/AlgorithmParameterSpec;)V
-    :try_end_20
-    .catch Ljava/lang/Exception; {:try_start_12 .. :try_end_20} :catch_21
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 31
     .line 32
@@ -89,7 +89,7 @@
     return-object v1
 
     .line 34
-    :catch_21
+    :catch_0
     move-exception v0
 
     .line 35
@@ -113,7 +113,7 @@
 .end method
 
 .method public final engineInit(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    .registers 3
+    .locals 0
 
     .line 1
     new-instance p1, Ljava/security/InvalidAlgorithmParameterException;

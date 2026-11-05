@@ -9,14 +9,14 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/h9;->c:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_12
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -33,7 +33,7 @@
     return-void
 
     .line 12
-    :pswitch_b
+    :pswitch_0
     sget-object p1, Llibs/f9;->Y:Llibs/f9;
 
     .line 13
@@ -49,16 +49,16 @@
     nop
 
     .line 19
-    :pswitch_data_12
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_b
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public final a(Llibs/rw2;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/h9;->c:B
@@ -69,7 +69,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_2c
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -100,7 +100,7 @@
     return-void
 
     .line 20
-    :pswitch_13
+    :pswitch_0
     iget v0, v1, Llibs/f9;->X:I
 
     .line 21
@@ -154,8 +154,8 @@
     nop
 
     .line 45
-    :pswitch_data_2c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_13
+        :pswitch_0
     .end packed-switch
 .end method

@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/al;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/lk;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/lk;->X:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_22
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -71,12 +71,12 @@
     return-void
 
     .line 17
-    :pswitch_10
+    :pswitch_0
     iget-object p1, v1, Llibs/al;->l:Lcom/mixplorer/widgets/MiEditText;
 
     .line 18
     .line 19
-    if-eqz p1, :cond_19
+    if-eqz p1, :cond_0
 
     .line 20
     .line 21
@@ -89,7 +89,7 @@
     .line 24
     .line 25
     .line 26
-    :cond_19
+    :cond_0
     iget-object p1, v1, Llibs/al;->m:Landroid/widget/ImageView;
 
     .line 27
@@ -109,8 +109,8 @@
     nop
 
     .line 35
-    :pswitch_data_22
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_10
+        :pswitch_0
     .end packed-switch
 .end method

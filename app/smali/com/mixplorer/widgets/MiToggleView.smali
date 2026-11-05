@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -24,7 +24,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public final b(II)V
-    .registers 6
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
@@ -64,7 +64,7 @@
 
     .line 6
     .line 7
-    if-nez v0, :cond_2b
+    if-nez v0, :cond_0
 
     .line 8
     .line 9
@@ -134,16 +134,16 @@
     .line 41
     .line 42
     .line 43
-    goto :goto_2e
+    goto :goto_0
 
     .line 44
-    :cond_2b
+    :cond_0
     invoke-virtual {v0}, Llibs/sp1;->stop()V
 
     .line 45
     .line 46
     .line 47
-    :goto_2e
+    :goto_0
     iget-object v0, p0, Lcom/mixplorer/widgets/MiToggleView;->Phi:Llibs/sp1;
 
     .line 48
@@ -164,12 +164,12 @@
     monitor-enter v0
 
     .line 57
-    :try_start_38
+    :try_start_0
     iget-boolean v1, p1, Llibs/sp1;->Two:Z
 
     .line 58
     .line 59
-    if-eqz v1, :cond_49
+    if-eqz v1, :cond_1
 
     .line 60
     .line 61
@@ -191,18 +191,18 @@
     .line 69
     .line 70
     .line 71
-    goto :goto_49
+    goto :goto_1
 
     .line 72
-    :catchall_47
+    :catchall_0
     move-exception p1
 
     .line 73
-    goto :goto_50
+    goto :goto_2
 
     .line 74
-    :cond_49
-    :goto_49
+    :cond_1
+    :goto_1
     iput p2, p1, Llibs/sp1;->Five:I
 
     .line 75
@@ -218,17 +218,17 @@
     return-void
 
     .line 81
-    :goto_50
+    :goto_2
     monitor-exit v0
-    :try_end_51
-    .catchall {:try_start_38 .. :try_end_51} :catchall_47
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 82
     throw p1
 .end method
 
 .method public final draw(Landroid/graphics/Canvas;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-super {p0, p1}, Lcom/mixplorer/widgets/MiImageView;->draw(Landroid/graphics/Canvas;)V
@@ -244,7 +244,7 @@
     move-result-object v0
 
     .line 8
-    if-nez v0, :cond_33
+    if-nez v0, :cond_0
 
     .line 9
     .line 10
@@ -252,7 +252,7 @@
 
     .line 11
     .line 12
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_0
 
     .line 13
     .line 14
@@ -334,6 +334,6 @@
     .line 50
     .line 51
     .line 52
-    :cond_33
+    :cond_0
     return-void
 .end method

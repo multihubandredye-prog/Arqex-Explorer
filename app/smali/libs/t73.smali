@@ -19,7 +19,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     const-string v0, "ASCII"
@@ -84,7 +84,7 @@
 
     .line 32
     .line 33
-    fill-array-data v0, :array_26
+    fill-array-data v0, :array_0
 
     .line 34
     .line 35
@@ -96,7 +96,7 @@
     return-void
 
     .line 39
-    :array_26
+    :array_0
     .array-data 1
         0x22t
         0x2at
@@ -118,7 +118,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 11
+    .locals 9
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -141,7 +141,7 @@
     const/4 v2, 0x0
 
     .line 11
-    if-gt v0, v1, :cond_83
+    if-gt v0, v1, :cond_8
 
     .line 12
     .line 13
@@ -160,7 +160,7 @@
     const/4 v1, 0x0
 
     .line 20
-    if-gez v0, :cond_1e
+    if-gez v0, :cond_0
 
     .line 21
     .line 22
@@ -180,10 +180,10 @@
 
     .line 29
     .line 30
-    goto :goto_33
+    goto :goto_0
 
     .line 31
-    :cond_1e
+    :cond_0
     invoke-virtual {p1, v1, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     .line 32
@@ -227,7 +227,7 @@
     move-object p1, v3
 
     .line 52
-    :goto_33
+    :goto_0
     invoke-static {p1, v0}, Llibs/t73;->d(Ljava/lang/String;Ljava/lang/String;)[B
 
     .line 53
@@ -248,18 +248,18 @@
 
     .line 61
     .line 62
-    if-eq v0, v3, :cond_7d
+    if-eq v0, v3, :cond_7
 
     .line 63
     .line 64
     const/4 v0, 0x0
 
     .line 65
-    :goto_40
+    :goto_1
     array-length v4, p1
 
     .line 66
-    if-ge v0, v4, :cond_7c
+    if-ge v0, v4, :cond_6
 
     .line 67
     .line 68
@@ -271,28 +271,28 @@
 
     .line 71
     .line 72
-    if-ne v5, v4, :cond_72
+    if-ne v5, v4, :cond_5
 
     .line 73
     .line 74
     int-to-byte v4, v5
 
     .line 75
-    if-ge v4, v3, :cond_5a
+    if-ge v4, v3, :cond_2
 
     .line 76
     .line 77
     const/4 v5, 0x5
 
     .line 78
-    if-ne v4, v5, :cond_50
+    if-ne v4, v5, :cond_1
 
     .line 79
     .line 80
-    goto :goto_5a
+    goto :goto_2
 
     .line 81
-    :cond_50
+    :cond_1
     const-string p1, "character < 0x20 at"
 
     .line 82
@@ -313,8 +313,8 @@
     throw v2
 
     .line 91
-    :cond_5a
-    :goto_5a
+    :cond_2
+    :goto_2
     sget-object v5, Llibs/t73;->e:[B
 
     .line 92
@@ -325,8 +325,8 @@
     const/4 v7, 0x0
 
     .line 95
-    :goto_5e
-    if-ge v7, v6, :cond_6f
+    :goto_3
+    if-ge v7, v6, :cond_4
 
     .line 96
     .line 97
@@ -334,7 +334,7 @@
 
     .line 98
     .line 99
-    if-eq v4, v8, :cond_67
+    if-eq v4, v8, :cond_3
 
     .line 100
     .line 101
@@ -342,10 +342,10 @@
 
     .line 102
     .line 103
-    goto :goto_5e
+    goto :goto_3
 
     .line 104
-    :cond_67
+    :cond_3
     const-string p1, "illegal character "
 
     .line 105
@@ -362,15 +362,15 @@
     throw v2
 
     .line 112
-    :cond_6f
+    :cond_4
     add-int/lit8 v0, v0, 0x1
 
     .line 113
     .line 114
-    goto :goto_40
+    goto :goto_1
 
     .line 115
-    :cond_72
+    :cond_5
     const-string p1, "multi-byte character at "
 
     .line 116
@@ -391,11 +391,11 @@
     throw v2
 
     .line 125
-    :cond_7c
+    :cond_6
     return-void
 
     .line 126
-    :cond_7d
+    :cond_7
     const-string p1, "0x20 can not be the first character"
 
     .line 127
@@ -408,7 +408,7 @@
     throw v2
 
     .line 132
-    :cond_83
+    :cond_8
     const-string p1, "name too long"
 
     .line 133
@@ -418,19 +418,19 @@
     .line 135
     .line 136
     .line 137
-    goto :goto_8a
+    goto :goto_5
 
     .line 138
-    :goto_89
+    :goto_4
     throw v2
 
     .line 139
-    :goto_8a
-    goto :goto_89
+    :goto_5
+    goto :goto_4
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 140
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -446,10 +446,10 @@
 .end method
 
 .method public static b(Ljava/lang/String;ILjava/lang/String;I)V
-    .registers 6
+    .locals 2
 
     .line 1
-    if-eqz p0, :cond_4b
+    if-eqz p0, :cond_2
 
     .line 2
     .line 3
@@ -465,7 +465,7 @@
 
     .line 8
     .line 9
-    if-lt v0, p1, :cond_2e
+    if-lt v0, p1, :cond_1
 
     .line 10
     .line 11
@@ -477,14 +477,14 @@
     move-result p1
 
     .line 15
-    if-gt p1, p3, :cond_11
+    if-gt p1, p3, :cond_0
 
     .line 16
     .line 17
     return-void
 
     .line 18
-    :cond_11
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     .line 19
@@ -538,7 +538,7 @@
     throw p1
 
     .line 47
-    :cond_2e
+    :cond_1
     new-instance p3, Ljava/lang/IllegalArgumentException;
 
     .line 48
@@ -592,7 +592,7 @@
     throw p3
 
     .line 76
-    :cond_4b
+    :cond_2
     const-string p0, " is null"
 
     .line 77
@@ -614,7 +614,7 @@
 .end method
 
 .method public static c(Ljava/lang/String;)Llibs/t73;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "."
@@ -629,7 +629,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -640,7 +640,7 @@
     return-object p0
 
     .line 12
-    :cond_b
+    :cond_0
     const-string v0, ".."
 
     .line 13
@@ -653,7 +653,7 @@
     move-result v0
 
     .line 18
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     .line 19
     .line 20
@@ -664,7 +664,7 @@
     return-object p0
 
     .line 23
-    :cond_16
+    :cond_1
     new-instance v0, Llibs/t73;
 
     .line 24
@@ -678,7 +678,7 @@
 .end method
 
 .method public static d(Ljava/lang/String;Ljava/lang/String;)[B
-    .registers 7
+    .locals 5
 
     .line 1
     const/4 v0, 0x1
@@ -781,7 +781,7 @@
 
 # virtual methods
 .method public final a()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/t73;->a:[B
@@ -842,14 +842,14 @@
     move-result v2
 
     .line 29
-    if-eqz v2, :cond_1f
+    if-eqz v2, :cond_0
 
     .line 30
     .line 31
     return-object v1
 
     .line 32
-    :cond_1f
+    :cond_0
     const-string v2, "."
 
     .line 33
@@ -866,14 +866,14 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Llibs/t73;
 
     .line 2
     .line 3
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -883,7 +883,7 @@
     return p1
 
     .line 7
-    :cond_6
+    :cond_0
     check-cast p1, Llibs/t73;
 
     .line 8
@@ -908,7 +908,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/t73;->a:[B
@@ -927,7 +927,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

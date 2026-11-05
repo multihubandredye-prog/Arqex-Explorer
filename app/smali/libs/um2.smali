@@ -41,7 +41,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
@@ -56,7 +56,7 @@
 .end method
 
 .method public constructor <init>(Landroid/view/View;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -131,7 +131,7 @@
 
 # virtual methods
 .method public final a(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/um2;->Omicron:I
@@ -149,7 +149,7 @@
 .end method
 
 .method public final b()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, -0x1
@@ -167,14 +167,14 @@
 .end method
 
 .method public final c()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/um2;->Pi:Ljava/util/ArrayList;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -183,7 +183,7 @@
     .line 6
     .line 7
     .line 8
-    :cond_7
+    :cond_0
     iget v0, p0, Llibs/um2;->Omicron:I
 
     .line 9
@@ -200,7 +200,7 @@
 .end method
 
 .method public final d()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/um2;->Omicron:I
@@ -219,7 +219,7 @@
 .end method
 
 .method public final e(IIZ)V
-    .registers 5
+    .locals 1
 
     .line 1
     const/16 v0, 0x8
@@ -244,7 +244,7 @@
 .end method
 
 .method public final f()I
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/um2;->Chi:Llibs/rn0;
@@ -254,14 +254,14 @@
     const/4 v1, -0x1
 
     .line 4
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 5
     .line 6
     return v1
 
     .line 7
-    :cond_6
+    :cond_0
     const/16 v2, 0x20c
 
     .line 8
@@ -274,7 +274,7 @@
     move-result v2
 
     .line 13
-    if-nez v2, :cond_1e
+    if-nez v2, :cond_2
 
     .line 14
     .line 15
@@ -286,14 +286,14 @@
     move-result v2
 
     .line 19
-    if-nez v2, :cond_15
+    if-nez v2, :cond_1
 
     .line 20
     .line 21
-    goto :goto_1e
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_1
     iget-object v0, v0, Llibs/vm2;->Xi:Llibs/III;
 
     .line 23
@@ -313,13 +313,13 @@
     return v0
 
     .line 31
-    :cond_1e
-    :goto_1e
+    :cond_2
+    :goto_0
     return v1
 .end method
 
 .method public final g()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/um2;->Mu:I
@@ -329,7 +329,7 @@
     const/4 v1, -0x1
 
     .line 4
-    if-ne v0, v1, :cond_7
+    if-ne v0, v1, :cond_0
 
     .line 5
     .line 6
@@ -337,12 +337,12 @@
 
     .line 7
     .line 8
-    :cond_7
+    :cond_0
     return v0
 .end method
 
 .method public final h()Ljava/util/List;
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/um2;->Omicron:I
@@ -353,7 +353,7 @@
 
     .line 4
     .line 5
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     .line 6
     .line 7
@@ -361,7 +361,7 @@
 
     .line 8
     .line 9
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_1
 
     .line 10
     .line 11
@@ -373,14 +373,14 @@
     move-result v0
 
     .line 15
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
     .line 16
     .line 17
-    goto :goto_14
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     iget-object v0, p0, Llibs/um2;->Rho:Ljava/util/List;
 
     .line 19
@@ -388,8 +388,8 @@
     return-object v0
 
     .line 21
-    :cond_14
-    :goto_14
+    :cond_1
+    :goto_0
     sget-object v0, Llibs/um2;->Psi:Ljava/util/List;
 
     .line 22
@@ -398,7 +398,7 @@
 .end method
 
 .method public final i(I)Z
-    .registers 3
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/um2;->Omicron:I
@@ -408,7 +408,7 @@
     and-int/2addr p1, v0
 
     .line 4
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_0
 
     .line 5
     .line 6
@@ -418,7 +418,7 @@
     return p1
 
     .line 8
-    :cond_7
+    :cond_0
     const/4 p1, 0x0
 
     .line 9
@@ -426,7 +426,7 @@
 .end method
 
 .method public final j()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/um2;->Omicron:I
@@ -439,14 +439,14 @@
     and-int/2addr v0, v1
 
     .line 5
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
     return v1
 
     .line 8
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
     .line 9
@@ -454,7 +454,7 @@
 .end method
 
 .method public final k()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/um2;->Omicron:I
@@ -465,7 +465,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -475,7 +475,7 @@
     return v0
 
     .line 9
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 10
@@ -483,7 +483,7 @@
 .end method
 
 .method public final l()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/um2;->Omicron:I
@@ -494,7 +494,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -504,7 +504,7 @@
     return v0
 
     .line 9
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 10
@@ -512,14 +512,14 @@
 .end method
 
 .method public final m()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/um2;->Tau:Llibs/om2;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -529,7 +529,7 @@
     return v0
 
     .line 7
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
     .line 8
@@ -537,7 +537,7 @@
 .end method
 
 .method public final n()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/um2;->Omicron:I
@@ -548,7 +548,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -558,7 +558,7 @@
     return v0
 
     .line 9
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 10
@@ -566,7 +566,7 @@
 .end method
 
 .method public final p()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/um2;->Omicron:I
@@ -577,7 +577,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -587,7 +587,7 @@
     return v0
 
     .line 9
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 10
@@ -595,7 +595,7 @@
 .end method
 
 .method public final q(ZI)V
-    .registers 5
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/um2;->Z:I
@@ -605,7 +605,7 @@
     const/4 v1, -0x1
 
     .line 4
-    if-ne v0, v1, :cond_9
+    if-ne v0, v1, :cond_0
 
     .line 5
     .line 6
@@ -617,12 +617,12 @@
 
     .line 9
     .line 10
-    :cond_9
+    :cond_0
     iget v0, p0, Llibs/um2;->Mu:I
 
     .line 11
     .line 12
-    if-ne v0, v1, :cond_11
+    if-ne v0, v1, :cond_1
 
     .line 13
     .line 14
@@ -634,8 +634,8 @@
 
     .line 17
     .line 18
-    :cond_11
-    if-eqz p1, :cond_16
+    :cond_1
+    if-eqz p1, :cond_2
 
     .line 19
     .line 20
@@ -646,7 +646,7 @@
 
     .line 22
     .line 23
-    :cond_16
+    :cond_2
     iget p1, p0, Llibs/um2;->Y:I
 
     .line 24
@@ -670,7 +670,7 @@
     move-result-object p2
 
     .line 34
-    if-eqz p2, :cond_2c
+    if-eqz p2, :cond_3
 
     .line 35
     .line 36
@@ -693,12 +693,12 @@
 
     .line 44
     .line 45
-    :cond_2c
+    :cond_3
     return-void
 .end method
 
 .method public final r()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/um2;->Z:I
@@ -708,7 +708,7 @@
     const/4 v1, -0x1
 
     .line 4
-    if-ne v0, v1, :cond_9
+    if-ne v0, v1, :cond_0
 
     .line 5
     .line 6
@@ -720,12 +720,12 @@
 
     .line 9
     .line 10
-    :cond_9
+    :cond_0
     return-void
 .end method
 
 .method public final s(II)V
-    .registers 5
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/um2;->Omicron:I
@@ -753,7 +753,7 @@
 .end method
 
 .method public final t(Z)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/um2;->Sigma:I
@@ -763,26 +763,26 @@
     const/4 v1, 0x1
 
     .line 4
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_0
 
     .line 5
     .line 6
     sub-int/2addr v0, v1
 
     .line 7
-    goto :goto_8
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     add-int/2addr v0, v1
 
     .line 9
-    :goto_8
+    :goto_0
     iput v0, p0, Llibs/um2;->Sigma:I
 
     .line 10
     .line 11
-    if-gez v0, :cond_23
+    if-gez v0, :cond_1
 
     .line 12
     .line 13
@@ -831,12 +831,12 @@
     return-void
 
     .line 36
-    :cond_23
-    if-nez p1, :cond_2e
+    :cond_1
+    if-nez p1, :cond_2
 
     .line 37
     .line 38
-    if-ne v0, v1, :cond_2e
+    if-ne v0, v1, :cond_2
 
     .line 39
     .line 40
@@ -855,12 +855,12 @@
     return-void
 
     .line 47
-    :cond_2e
-    if-eqz p1, :cond_38
+    :cond_2
+    if-eqz p1, :cond_3
 
     .line 48
     .line 49
-    if-nez v0, :cond_38
+    if-nez v0, :cond_3
 
     .line 50
     .line 51
@@ -876,12 +876,12 @@
 
     .line 56
     .line 57
-    :cond_38
+    :cond_3
     return-void
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -997,7 +997,7 @@
     move-result v1
 
     .line 62
-    if-eqz v1, :cond_50
+    if-eqz v1, :cond_1
 
     .line 63
     .line 64
@@ -1014,7 +1014,7 @@
 
     .line 70
     .line 71
-    if-eqz v1, :cond_4b
+    if-eqz v1, :cond_0
 
     .line 72
     .line 73
@@ -1022,21 +1022,21 @@
 
     .line 74
     .line 75
-    goto :goto_4d
+    goto :goto_0
 
     .line 76
-    :cond_4b
+    :cond_0
     const-string v1, "[attachedScrap]"
 
     .line 77
     .line 78
-    :goto_4d
+    :goto_0
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 79
     .line 80
     .line 81
-    :cond_50
+    :cond_1
     invoke-virtual {p0}, Llibs/um2;->k()Z
 
     .line 82
@@ -1045,7 +1045,7 @@
     move-result v1
 
     .line 85
-    if-eqz v1, :cond_5b
+    if-eqz v1, :cond_2
 
     .line 86
     .line 87
@@ -1058,7 +1058,7 @@
     .line 90
     .line 91
     .line 92
-    :cond_5b
+    :cond_2
     invoke-virtual {p0}, Llibs/um2;->j()Z
 
     .line 93
@@ -1067,7 +1067,7 @@
     move-result v1
 
     .line 96
-    if-nez v1, :cond_66
+    if-nez v1, :cond_3
 
     .line 97
     .line 98
@@ -1080,7 +1080,7 @@
     .line 101
     .line 102
     .line 103
-    :cond_66
+    :cond_3
     iget v1, p0, Llibs/um2;->Omicron:I
 
     .line 104
@@ -1089,7 +1089,7 @@
 
     .line 106
     .line 107
-    if-eqz v1, :cond_71
+    if-eqz v1, :cond_4
 
     .line 108
     .line 109
@@ -1102,7 +1102,7 @@
     .line 112
     .line 113
     .line 114
-    :cond_71
+    :cond_4
     invoke-virtual {p0}, Llibs/um2;->l()Z
 
     .line 115
@@ -1111,7 +1111,7 @@
     move-result v1
 
     .line 118
-    if-eqz v1, :cond_7c
+    if-eqz v1, :cond_5
 
     .line 119
     .line 120
@@ -1124,7 +1124,7 @@
     .line 123
     .line 124
     .line 125
-    :cond_7c
+    :cond_5
     invoke-virtual {p0}, Llibs/um2;->u()Z
 
     .line 126
@@ -1133,7 +1133,7 @@
     move-result v1
 
     .line 129
-    if-eqz v1, :cond_87
+    if-eqz v1, :cond_6
 
     .line 130
     .line 131
@@ -1146,7 +1146,7 @@
     .line 134
     .line 135
     .line 136
-    :cond_87
+    :cond_6
     invoke-virtual {p0}, Llibs/um2;->n()Z
 
     .line 137
@@ -1155,7 +1155,7 @@
     move-result v1
 
     .line 140
-    if-eqz v1, :cond_92
+    if-eqz v1, :cond_7
 
     .line 141
     .line 142
@@ -1168,7 +1168,7 @@
     .line 145
     .line 146
     .line 147
-    :cond_92
+    :cond_7
     iget v1, p0, Llibs/um2;->Omicron:I
 
     .line 148
@@ -1181,7 +1181,7 @@
 
     .line 152
     .line 153
-    if-nez v1, :cond_ab
+    if-nez v1, :cond_9
 
     .line 154
     .line 155
@@ -1197,7 +1197,7 @@
     move-result v1
 
     .line 161
-    if-eqz v1, :cond_a7
+    if-eqz v1, :cond_8
 
     .line 162
     .line 163
@@ -1209,22 +1209,22 @@
     move-result v1
 
     .line 167
-    goto :goto_a8
+    goto :goto_1
 
     .line 168
-    :cond_a7
+    :cond_8
     const/4 v1, 0x0
 
     .line 169
-    :goto_a8
-    if-nez v1, :cond_ab
+    :goto_1
+    if-nez v1, :cond_9
 
     .line 170
     .line 171
-    goto :goto_c3
+    goto :goto_2
 
     .line 172
-    :cond_ab
+    :cond_9
     new-instance v1, Ljava/lang/StringBuilder;
 
     .line 173
@@ -1269,7 +1269,7 @@
     .line 194
     .line 195
     .line 196
-    :goto_c3
+    :goto_2
     iget v1, p0, Llibs/um2;->Omicron:I
 
     .line 197
@@ -1278,7 +1278,7 @@
 
     .line 199
     .line 200
-    if-nez v1, :cond_cf
+    if-nez v1, :cond_a
 
     .line 201
     .line 202
@@ -1290,11 +1290,11 @@
     move-result v1
 
     .line 206
-    if-eqz v1, :cond_d4
+    if-eqz v1, :cond_b
 
     .line 207
     .line 208
-    :cond_cf
+    :cond_a
     const-string v1, " undefined adapter position"
 
     .line 209
@@ -1304,7 +1304,7 @@
     .line 211
     .line 212
     .line 213
-    :cond_d4
+    :cond_b
     invoke-virtual {v2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     .line 214
@@ -1313,7 +1313,7 @@
     move-result-object v1
 
     .line 217
-    if-nez v1, :cond_df
+    if-nez v1, :cond_c
 
     .line 218
     .line 219
@@ -1326,7 +1326,7 @@
     .line 222
     .line 223
     .line 224
-    :cond_df
+    :cond_c
     const-string v1, "}"
 
     .line 225
@@ -1348,7 +1348,7 @@
 .end method
 
 .method public final u()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/um2;->Omicron:I
@@ -1359,7 +1359,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -1369,7 +1369,7 @@
     return v0
 
     .line 9
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 10
@@ -1377,7 +1377,7 @@
 .end method
 
 .method public final v()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/um2;->Omicron:I
@@ -1388,7 +1388,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -1398,7 +1398,7 @@
     return v0
 
     .line 9
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 10

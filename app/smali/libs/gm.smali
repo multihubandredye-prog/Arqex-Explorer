@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Llibs/zl;-><init>()V
@@ -83,7 +83,7 @@
 
 # virtual methods
 .method public final b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "CAST6"
@@ -94,7 +94,7 @@
 .end method
 
 .method public final i()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x10
@@ -105,14 +105,14 @@
 .end method
 
 .method public final reset()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final v(II[B[B)I
-    .registers 16
+    .locals 11
 
     .line 1
     invoke-static {p1, p3}, Llibs/zl;->p(I[B)I
@@ -168,7 +168,7 @@
     const/4 v4, 0x0
 
     .line 26
-    :goto_19
+    :goto_0
     const/4 v5, 0x6
 
     .line 27
@@ -183,7 +183,7 @@
 
     .line 31
     .line 32
-    if-ge v4, v5, :cond_51
+    if-ge v4, v5, :cond_0
 
     .line 33
     .line 34
@@ -286,12 +286,12 @@
 
     .line 80
     .line 81
-    goto :goto_19
+    goto :goto_0
 
     .line 82
-    :cond_51
-    :goto_51
-    if-ge v5, v3, :cond_84
+    :cond_0
+    :goto_1
+    if-ge v5, v3, :cond_1
 
     .line 83
     .line 84
@@ -395,10 +395,10 @@
 
     .line 131
     .line 132
-    goto :goto_51
+    goto :goto_1
 
     .line 133
-    :cond_84
+    :cond_1
     filled-new-array {v0, v1, v2, p1}, [I
 
     .line 134
@@ -468,7 +468,7 @@
 .end method
 
 .method public final w(II[B[B)I
-    .registers 16
+    .locals 11
 
     .line 1
     invoke-static {p1, p3}, Llibs/zl;->p(I[B)I
@@ -524,7 +524,7 @@
     const/4 v4, 0x0
 
     .line 26
-    :goto_19
+    :goto_0
     const/4 v5, 0x6
 
     .line 27
@@ -539,7 +539,7 @@
 
     .line 31
     .line 32
-    if-ge v4, v5, :cond_4f
+    if-ge v4, v5, :cond_0
 
     .line 33
     .line 34
@@ -638,12 +638,12 @@
 
     .line 78
     .line 79
-    goto :goto_19
+    goto :goto_0
 
     .line 80
-    :cond_4f
-    :goto_4f
-    if-ge v5, v3, :cond_80
+    :cond_0
+    :goto_1
+    if-ge v5, v3, :cond_1
 
     .line 81
     .line 82
@@ -743,10 +743,10 @@
 
     .line 127
     .line 128
-    goto :goto_4f
+    goto :goto_1
 
     .line 129
-    :cond_80
+    :cond_1
     filled-new-array {v0, v1, v2, p1}, [I
 
     .line 130
@@ -816,7 +816,7 @@
 .end method
 
 .method public final y([B)V
-    .registers 21
+    .locals 19
 
     .line 1
     move-object/from16 v0, p0
@@ -842,7 +842,7 @@
     const/4 v5, 0x0
 
     .line 12
-    :goto_b
+    :goto_0
     const/16 v6, 0x18
 
     .line 13
@@ -859,15 +859,15 @@
 
     .line 19
     .line 20
-    if-ge v5, v6, :cond_2d
+    if-ge v5, v6, :cond_1
 
     .line 21
     .line 22
     const/4 v6, 0x0
 
     .line 23
-    :goto_16
-    if-ge v6, v7, :cond_2a
+    :goto_1
+    if-ge v6, v7, :cond_0
 
     .line 24
     .line 25
@@ -906,18 +906,18 @@
 
     .line 41
     .line 42
-    goto :goto_16
+    goto :goto_1
 
     .line 43
-    :cond_2a
+    :cond_0
     add-int/lit8 v5, v5, 0x1
 
     .line 44
     .line 45
-    goto :goto_b
+    goto :goto_0
 
     .line 46
-    :cond_2d
+    :cond_1
     const/16 v2, 0x40
 
     .line 47
@@ -937,12 +937,12 @@
     const/4 v1, 0x0
 
     .line 55
-    :goto_36
+    :goto_2
     iget-object v3, v0, Llibs/gm;->One:[I
 
     .line 56
     .line 57
-    if-ge v1, v7, :cond_45
+    if-ge v1, v7, :cond_2
 
     .line 58
     .line 59
@@ -966,19 +966,19 @@
 
     .line 68
     .line 69
-    goto :goto_36
+    goto :goto_2
 
     .line 70
-    :cond_45
+    :cond_2
     const/4 v1, 0x0
 
     .line 71
-    :goto_46
+    :goto_3
     const/16 v2, 0xc
 
     .line 72
     .line 73
-    if-ge v1, v2, :cond_186
+    if-ge v1, v2, :cond_3
 
     .line 74
     .line 75
@@ -1636,10 +1636,10 @@
     const/4 v4, 0x0
 
     .line 389
-    goto/16 :goto_46
+    goto/16 :goto_3
 
     .line 390
     .line 391
-    :cond_186
+    :cond_3
     return-void
 .end method

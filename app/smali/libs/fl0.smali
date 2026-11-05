@@ -35,7 +35,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/v1;Ljava/util/ArrayList;Lcom/mixplorer/widgets/MiEditText;Lcom/mixplorer/widgets/MiEditText;Lcom/mixplorer/widgets/MiCombo;Lcom/mixplorer/widgets/MiEditText;Lcom/mixplorer/widgets/MiEditText;Lcom/mixplorer/widgets/MiCombo;Ljava/util/Properties;Ljava/lang/String;Llibs/ml1;Llibs/m52;Ljava/lang/String;Llibs/zl0;)V
-    .registers 15
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/fl0;->q:Llibs/v1;
@@ -105,7 +105,7 @@
 
 # virtual methods
 .method public final z(Landroid/view/View;I)V
-    .registers 15
+    .locals 12
 
     .line 1
     iget-object v0, p0, Llibs/fl0;->c:Ljava/util/ArrayList;
@@ -210,7 +210,7 @@
     const/4 v7, -0x1
 
     .line 51
-    if-nez v5, :cond_42
+    if-nez v5, :cond_1
 
     .line 52
     .line 53
@@ -222,14 +222,14 @@
     move-result v4
 
     .line 57
-    if-eqz v4, :cond_43
+    if-eqz v4, :cond_2
 
     .line 58
     .line 59
     const/4 v5, 0x1
 
     .line 60
-    if-eq v4, v5, :cond_40
+    if-eq v4, v5, :cond_0
 
     .line 61
     .line 62
@@ -237,22 +237,22 @@
 
     .line 63
     .line 64
-    goto :goto_43
+    goto :goto_0
 
     .line 65
-    :cond_40
+    :cond_0
     const/4 v7, 0x7
 
     .line 66
-    goto :goto_43
+    goto :goto_0
 
     .line 67
-    :cond_42
+    :cond_1
     const/4 v4, 0x0
 
     .line 68
-    :cond_43
-    :goto_43
+    :cond_2
+    :goto_0
     new-instance v5, Ljava/lang/StringBuilder;
 
     .line 69
@@ -286,7 +286,7 @@
     move-result v8
 
     .line 85
-    if-eqz v8, :cond_58
+    if-eqz v8, :cond_3
 
     .line 86
     .line 87
@@ -294,7 +294,7 @@
 
     .line 88
     .line 89
-    :cond_58
+    :cond_3
     new-instance v8, Ljava/lang/StringBuilder;
 
     .line 90
@@ -387,7 +387,7 @@
     move-result v10
 
     .line 139
-    if-nez v10, :cond_a8
+    if-nez v10, :cond_4
 
     .line 140
     .line 141
@@ -415,7 +415,7 @@
 
     .line 152
     .line 153
-    if-eqz v4, :cond_a8
+    if-eqz v4, :cond_4
 
     .line 154
     .line 155
@@ -427,7 +427,7 @@
     move-result-object v6
 
     .line 159
-    if-eqz v6, :cond_a8
+    if-eqz v6, :cond_4
 
     .line 160
     .line 161
@@ -447,19 +447,19 @@
     move-result-object v9
 
     .line 169
-    :cond_a8
+    :cond_4
     iget-object v4, p0, Llibs/fl0;->j:Ljava/util/Properties;
 
     .line 170
     .line 171
-    if-eqz v4, :cond_ad
+    if-eqz v4, :cond_5
 
     .line 172
     .line 173
-    goto :goto_b2
+    goto :goto_1
 
     .line 174
-    :cond_ad
+    :cond_5
     new-instance v4, Ljava/util/Properties;
 
     .line 175
@@ -469,7 +469,7 @@
     .line 177
     .line 178
     .line 179
-    :goto_b2
+    :goto_1
     const-string v6, "from"
 
     .line 180

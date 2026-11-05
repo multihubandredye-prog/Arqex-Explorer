@@ -39,7 +39,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/16 v0, 0x10
@@ -50,7 +50,7 @@
 
     .line 4
     .line 5
-    fill-array-data v0, :array_14
+    fill-array-data v0, :array_0
 
     .line 6
     .line 7
@@ -67,7 +67,7 @@
 
     .line 13
     .line 14
-    fill-array-data v0, :array_20
+    fill-array-data v0, :array_1
 
     .line 15
     .line 16
@@ -82,7 +82,7 @@
     nop
 
     .line 21
-    :array_14
+    :array_0
     .array-data 1
         0x2dt
         0x2dt
@@ -112,7 +112,7 @@
     .line 29
     .line 30
     .line 31
-    :array_20
+    :array_1
     .array-data 1
         0x2dt
         0x2dt
@@ -129,7 +129,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/security/cert/CertificateFactorySpi;-><init>()V
@@ -167,7 +167,7 @@
 .end method
 
 .method public static bridge synthetic a()[B
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/OpenSSLX509CertificateFactory;->PEM_MARKER:[B
@@ -178,7 +178,7 @@
 .end method
 
 .method public static bridge synthetic b()[B
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/OpenSSLX509CertificateFactory;->PKCS7_MARKER:[B
@@ -189,7 +189,7 @@
 .end method
 
 .method public static bridge synthetic c([B)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-static {p0}, Lorg/conscrypt/OpenSSLX509CertificateFactory;->isMaybePkcs7([B)Z
@@ -204,7 +204,7 @@
 .end method
 
 .method private static isMaybePkcs7([B)Z
-    .registers 7
+    .locals 6
 
     .line 1
     array-length v0, p0
@@ -216,7 +216,7 @@
     const/4 v2, 0x2
 
     .line 4
-    if-lt v0, v2, :cond_36
+    if-lt v0, v2, :cond_5
 
     .line 5
     .line 6
@@ -228,14 +228,14 @@
 
     .line 9
     .line 10
-    if-eq v0, v3, :cond_c
+    if-eq v0, v3, :cond_0
 
     .line 11
     .line 12
-    goto :goto_36
+    goto :goto_1
 
     .line 13
-    :cond_c
+    :cond_0
     const/4 v0, 0x1
 
     .line 14
@@ -254,75 +254,75 @@
     const/4 v5, 0x6
 
     .line 21
-    if-gt v3, v4, :cond_17
+    if-gt v3, v4, :cond_1
 
     .line 22
     .line 23
-    goto :goto_2e
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_1
     const/16 v2, 0x81
 
     .line 25
     .line 26
-    if-ne v3, v2, :cond_1d
+    if-ne v3, v2, :cond_2
 
     .line 27
     .line 28
     const/4 v2, 0x3
 
     .line 29
-    goto :goto_2e
+    goto :goto_0
 
     .line 30
-    :cond_1d
+    :cond_2
     const/16 v2, 0x82
 
     .line 31
     .line 32
-    if-ne v3, v2, :cond_23
+    if-ne v3, v2, :cond_3
 
     .line 33
     .line 34
     const/4 v2, 0x4
 
     .line 35
-    goto :goto_2e
+    goto :goto_0
 
     .line 36
-    :cond_23
+    :cond_3
     const/16 v2, 0x83
 
     .line 37
     .line 38
-    if-ne v3, v2, :cond_29
+    if-ne v3, v2, :cond_4
 
     .line 39
     .line 40
     const/4 v2, 0x5
 
     .line 41
-    goto :goto_2e
+    goto :goto_0
 
     .line 42
-    :cond_29
+    :cond_4
     const/16 v2, 0x84
 
     .line 43
     .line 44
-    if-ne v3, v2, :cond_36
+    if-ne v3, v2, :cond_5
 
     .line 45
     .line 46
     const/4 v2, 0x6
 
     .line 47
-    :goto_2e
+    :goto_0
     array-length v3, p0
 
     .line 48
-    if-ge v2, v3, :cond_36
+    if-ge v2, v3, :cond_5
 
     .line 49
     .line 50
@@ -330,22 +330,22 @@
 
     .line 51
     .line 52
-    if-ne p0, v5, :cond_36
+    if-ne p0, v5, :cond_5
 
     .line 53
     .line 54
     return v0
 
     .line 55
-    :cond_36
-    :goto_36
+    :cond_5
+    :goto_1
     return v1
 .end method
 
 
 # virtual methods
 .method public engineGenerateCRL(Ljava/io/InputStream;)Ljava/security/cert/CRL;
-    .registers 3
+    .locals 1
 
     .line 1
     :try_start_0
@@ -362,15 +362,15 @@
 
     .line 7
     check-cast p1, Ljava/security/cert/CRL;
-    :try_end_8
-    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_0 .. :try_end_8} :catch_9
+    :try_end_0
+    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 8
     .line 9
     return-object p1
 
     .line 10
-    :catch_9
+    :catch_0
     move-exception p1
 
     .line 11
@@ -387,7 +387,7 @@
 .end method
 
 .method public engineGenerateCRLs(Ljava/io/InputStream;)Ljava/util/Collection;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -401,7 +401,7 @@
     .end annotation
 
     .line 1
-    if-nez p1, :cond_5
+    if-nez p1, :cond_0
 
     .line 2
     .line 3
@@ -412,8 +412,8 @@
     return-object p1
 
     .line 6
-    :cond_5
-    :try_start_5
+    :cond_0
+    :try_start_0
     iget-object v0, p0, Lorg/conscrypt/OpenSSLX509CertificateFactory;->crlParser:Lorg/conscrypt/OpenSSLX509CertificateFactory$Parser;
 
     .line 7
@@ -424,14 +424,14 @@
     .line 10
     .line 11
     move-result-object p1
-    :try_end_b
-    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_5 .. :try_end_b} :catch_c
+    :try_end_0
+    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 12
     return-object p1
 
     .line 13
-    :catch_c
+    :catch_0
     move-exception p1
 
     .line 14
@@ -448,7 +448,7 @@
 .end method
 
 .method public engineGenerateCertPath(Ljava/io/InputStream;)Ljava/security/cert/CertPath;
-    .registers 2
+    .locals 0
 
     .line 54
     invoke-static {p1}, Lorg/conscrypt/OpenSSLX509CertPath;->fromEncoding(Ljava/io/InputStream;)Ljava/security/cert/CertPath;
@@ -459,7 +459,7 @@
 .end method
 
 .method public engineGenerateCertPath(Ljava/io/InputStream;Ljava/lang/String;)Ljava/security/cert/CertPath;
-    .registers 3
+    .locals 0
 
     .line 53
     invoke-static {p1, p2}, Lorg/conscrypt/OpenSSLX509CertPath;->fromEncoding(Ljava/io/InputStream;Ljava/lang/String;)Ljava/security/cert/CertPath;
@@ -470,7 +470,7 @@
 .end method
 
 .method public engineGenerateCertPath(Ljava/util/List;)Ljava/security/cert/CertPath;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -503,7 +503,7 @@
     const/4 v1, 0x0
 
     .line 11
-    :goto_a
+    :goto_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     .line 12
@@ -512,7 +512,7 @@
     move-result v2
 
     .line 15
-    if-ge v1, v2, :cond_2e
+    if-ge v1, v2, :cond_1
 
     .line 16
     .line 17
@@ -532,7 +532,7 @@
 
     .line 24
     .line 25
-    if-eqz v3, :cond_22
+    if-eqz v3, :cond_0
 
     .line 26
     .line 27
@@ -549,10 +549,10 @@
 
     .line 33
     .line 34
-    goto :goto_a
+    goto :goto_0
 
     .line 35
-    :cond_22
+    :cond_0
     new-instance p1, Ljava/security/cert/CertificateException;
 
     .line 36
@@ -577,7 +577,7 @@
     throw p1
 
     .line 47
-    :cond_2e
+    :cond_1
     new-instance p1, Lorg/conscrypt/OpenSSLX509CertPath;
 
     .line 48
@@ -591,7 +591,7 @@
 .end method
 
 .method public engineGenerateCertificate(Ljava/io/InputStream;)Ljava/security/cert/Certificate;
-    .registers 3
+    .locals 1
 
     .line 1
     :try_start_0
@@ -608,15 +608,15 @@
 
     .line 7
     check-cast p1, Ljava/security/cert/Certificate;
-    :try_end_8
-    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_0 .. :try_end_8} :catch_9
+    :try_end_0
+    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 8
     .line 9
     return-object p1
 
     .line 10
-    :catch_9
+    :catch_0
     move-exception p1
 
     .line 11
@@ -633,7 +633,7 @@
 .end method
 
 .method public engineGenerateCertificates(Ljava/io/InputStream;)Ljava/util/Collection;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -658,14 +658,14 @@
     .line 5
     .line 6
     move-result-object p1
-    :try_end_6
-    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 7
     return-object p1
 
     .line 8
-    :catch_7
+    :catch_0
     move-exception p1
 
     .line 9
@@ -682,7 +682,7 @@
 .end method
 
 .method public engineGetCertPathEncodings()Ljava/util/Iterator;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

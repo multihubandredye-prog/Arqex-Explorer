@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/cc3;-><init>()V
@@ -25,7 +25,7 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/String;
@@ -146,7 +146,7 @@
 .end method
 
 .method public final x(II[B)I
-    .registers 9
+    .locals 5
 
     .line 1
     const/4 p2, 0x0
@@ -174,12 +174,12 @@
     const/4 v0, 0x0
 
     .line 12
-    :goto_b
+    :goto_0
     iget v2, p0, Llibs/cc3;->Victor:I
 
     .line 13
     .line 14
-    if-ge v0, v2, :cond_4d
+    if-ge v0, v2, :cond_1
 
     .line 15
     .line 16
@@ -289,7 +289,7 @@
     const/4 v4, 0x4
 
     .line 68
-    if-lt v2, v4, :cond_4a
+    if-lt v2, v4, :cond_0
 
     .line 69
     .line 70
@@ -302,15 +302,15 @@
     .line 73
     .line 74
     .line 75
-    :cond_4a
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
     .line 76
     .line 77
-    goto :goto_b
+    goto :goto_0
 
     .line 78
-    :cond_4d
+    :cond_1
     sub-int/2addr v1, p1
 
     .line 79
@@ -318,7 +318,7 @@
 .end method
 
 .method public final y([B)I
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x0

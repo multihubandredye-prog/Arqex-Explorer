@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ck3;Lorg/xmlpull/v1/XmlPullParser;)V
-    .registers 10
+    .locals 7
 
     .line 1
     sget-object v0, Llibs/zs;->Omicron:Llibs/zs;
@@ -144,8 +144,8 @@
     move-result v1
 
     .line 61
-    :goto_3c
-    if-ge v0, v1, :cond_99
+    :goto_0
+    if-ge v0, v1, :cond_3
 
     .line 62
     .line 63
@@ -244,7 +244,7 @@
     move-result v5
 
     .line 112
-    if-eqz v5, :cond_7c
+    if-eqz v5, :cond_0
 
     .line 113
     .line 114
@@ -260,7 +260,7 @@
     move-result v3
 
     .line 120
-    if-eqz v3, :cond_7c
+    if-eqz v3, :cond_0
 
     .line 121
     .line 122
@@ -268,11 +268,11 @@
 
     .line 123
     .line 124
-    goto :goto_95
+    goto :goto_1
 
     .line 125
-    :cond_7c
-    if-nez v2, :cond_89
+    :cond_0
+    if-nez v2, :cond_1
 
     .line 126
     .line 127
@@ -288,7 +288,7 @@
     move-result v3
 
     .line 133
-    if-eqz v3, :cond_89
+    if-eqz v3, :cond_1
 
     .line 134
     .line 135
@@ -296,11 +296,11 @@
 
     .line 136
     .line 137
-    goto :goto_95
+    goto :goto_1
 
     .line 138
-    :cond_89
-    if-nez v2, :cond_95
+    :cond_1
+    if-nez v2, :cond_2
 
     .line 139
     .line 140
@@ -316,7 +316,7 @@
     move-result v2
 
     .line 146
-    if-eqz v2, :cond_95
+    if-eqz v2, :cond_2
 
     .line 147
     .line 148
@@ -324,8 +324,8 @@
 
     .line 149
     .line 150
-    :cond_95
-    :goto_95
+    :cond_2
+    :goto_1
     add-int/lit8 v0, v0, 0x1
 
     .line 151
@@ -333,10 +333,10 @@
     int-to-short v0, v0
 
     .line 153
-    goto :goto_3c
+    goto :goto_0
 
     .line 154
-    :cond_99
+    :cond_3
     invoke-interface {p2}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
 
     .line 155
@@ -373,8 +373,8 @@
     move-result v1
 
     .line 172
-    :goto_ab
-    if-ge v0, v1, :cond_e1
+    :goto_2
+    if-ge v0, v1, :cond_4
 
     .line 173
     .line 174
@@ -477,17 +477,17 @@
 
     .line 224
     .line 225
-    goto :goto_ab
+    goto :goto_2
 
     .line 226
-    :cond_e1
+    :cond_4
     return-void
 .end method
 
 
 # virtual methods
 .method public final c()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/zf3;->l:Ljava/util/LinkedList;
@@ -502,7 +502,7 @@
     move-result-object v1
 
     .line 7
-    :goto_6
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 8
@@ -511,7 +511,7 @@
     move-result v2
 
     .line 11
-    if-eqz v2, :cond_16
+    if-eqz v2, :cond_0
 
     .line 12
     .line 13
@@ -532,10 +532,10 @@
     .line 20
     .line 21
     .line 22
-    goto :goto_6
+    goto :goto_0
 
     .line 23
-    :cond_16
+    :cond_0
     iget-object v1, p0, Llibs/xs;->c:Llibs/qx0;
 
     .line 24
@@ -568,7 +568,7 @@
 .end method
 
 .method public final g(Llibs/f1;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/zf3;->f:Ljava/lang/String;
@@ -681,7 +681,7 @@
     move-result-object v0
 
     .line 59
-    :goto_3a
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 60
@@ -690,7 +690,7 @@
     move-result v1
 
     .line 63
-    if-eqz v1, :cond_4a
+    if-eqz v1, :cond_0
 
     .line 64
     .line 65
@@ -711,9 +711,9 @@
     .line 72
     .line 73
     .line 74
-    goto :goto_3a
+    goto :goto_0
 
     .line 75
-    :cond_4a
+    :cond_0
     return-void
 .end method

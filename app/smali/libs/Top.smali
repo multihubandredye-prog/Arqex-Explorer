@@ -19,7 +19,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-string v0, "SC"
@@ -34,7 +34,7 @@
     move-result-object v0
 
     .line 7
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
     .line 8
     .line 9
@@ -55,12 +55,12 @@
     .line 16
     .line 17
     .line 18
-    :cond_11
+    :cond_0
     return-void
 .end method
 
 .method public constructor <init>()V
-    .registers 5
+    .locals 4
 
     .line 1
     const/16 v0, 0x20
@@ -101,7 +101,7 @@
 
 # virtual methods
 .method public final d()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x10
@@ -112,7 +112,7 @@
 .end method
 
 .method public final e([BI[B)V
-    .registers 8
+    .locals 4
 
     .line 1
     iput p2, p0, Llibs/Top;->g:I
@@ -198,14 +198,14 @@
 
     .line 43
     .line 44
-    if-nez p2, :cond_2e
+    if-nez p2, :cond_0
 
     .line 45
     .line 46
     const/4 v2, 0x1
 
     .line 47
-    :cond_2e
+    :cond_0
     new-instance p2, Llibs/g;
 
     .line 48
@@ -236,7 +236,7 @@
 .end method
 
 .method public final f()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -246,7 +246,7 @@
 .end method
 
 .method public final g(III[B[B)V
-    .registers 25
+    .locals 19
 
     .line 1
     move-object/from16 v1, p0
@@ -273,22 +273,22 @@
 
     .line 12
     .line 13
-    if-gtz v3, :cond_10
+    if-gtz v3, :cond_0
 
     .line 14
     .line 15
-    goto/16 :goto_cf
+    goto/16 :goto_6
 
     .line 16
     .line 17
-    :cond_10
+    :cond_0
     array-length v4, v11
 
     .line 18
     sub-int/2addr v4, v0
 
     .line 19
-    if-lt v4, v3, :cond_e0
+    if-lt v4, v3, :cond_8
 
     .line 20
     .line 21
@@ -298,7 +298,7 @@
     sub-int/2addr v4, v2
 
     .line 23
-    if-lt v4, v3, :cond_da
+    if-lt v4, v3, :cond_7
 
     .line 24
     .line 25
@@ -316,11 +316,11 @@
     const/4 v6, 0x4
 
     .line 31
-    if-eqz v4, :cond_85
+    if-eqz v4, :cond_3
 
     .line 32
     .line 33
-    :try_start_20
+    :try_start_0
     invoke-static {v11, v0, v8, v2, v6}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 34
@@ -336,19 +336,19 @@
     .line 40
     .line 41
     iget v4, v1, Llibs/Top;->g:I
-    :try_end_2a
-    .catchall {:try_start_20 .. :try_end_2a} :catchall_85
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
     .line 42
     .line 43
-    if-nez v4, :cond_58
+    if-nez v4, :cond_1
 
     .line 44
     .line 45
     const/4 v7, 0x0
 
     .line 46
-    :try_start_2d
+    :try_start_1
     sget-wide v4, Llibs/py;->d:J
 
     .line 47
@@ -393,8 +393,8 @@
     .line 64
     .line 65
     iget-object v14, v1, Llibs/Top;->h:[B
-    :try_end_42
-    .catchall {:try_start_2d .. :try_end_42} :catchall_54
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 66
     .line 67
@@ -409,7 +409,7 @@
     const/4 v15, 0x4
 
     .line 72
-    :try_start_47
+    :try_start_2
     invoke-static/range {v4 .. v14}, Llibs/py;->g(J[BI[BI[B[BII[B)I
 
     .line 73
@@ -423,11 +423,11 @@
 
     .line 78
     .line 79
-    goto :goto_72
+    goto :goto_1
 
     .line 80
-    :catchall_4f
-    :goto_4f
+    :catchall_0
+    :goto_0
     move-object/from16 v11, p4
 
     .line 81
@@ -436,10 +436,10 @@
 
     .line 83
     .line 84
-    goto :goto_88
+    goto :goto_3
 
     .line 85
-    :catchall_54
+    :catchall_1
     const/4 v15, 0x4
 
     .line 86
@@ -447,10 +447,10 @@
 
     .line 87
     .line 88
-    goto :goto_4f
+    goto :goto_0
 
     .line 89
-    :cond_58
+    :cond_1
     const/4 v15, 0x4
 
     .line 90
@@ -483,8 +483,8 @@
     .line 103
     .line 104
     iget-object v14, v1, Llibs/Top;->h:[B
-    :try_end_69
-    .catchall {:try_start_47 .. :try_end_69} :catchall_4f
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 105
     .line 106
@@ -500,19 +500,19 @@
 
     .line 111
     .line 112
-    :try_start_6f
+    :try_start_3
     invoke-static/range {v4 .. v14}, Llibs/py;->f(J[BI[BI[B[BII[B)I
 
     .line 113
     .line 114
     .line 115
-    :goto_72
+    :goto_1
     const/16 v4, 0xb
 
     .line 116
     .line 117
-    :goto_74
-    if-lt v4, v15, :cond_cf
+    :goto_2
+    if-lt v4, v15, :cond_6
 
     .line 118
     .line 119
@@ -532,28 +532,28 @@
 
     .line 126
     aput-byte v6, v5, v4
-    :try_end_7f
-    .catchall {:try_start_6f .. :try_end_7f} :catchall_88
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_3
 
     .line 127
     .line 128
-    if-eqz v6, :cond_82
+    if-eqz v6, :cond_2
 
     .line 129
     .line 130
-    goto :goto_cf
+    goto :goto_6
 
     .line 131
-    :cond_82
+    :cond_2
     add-int/lit8 v4, v4, -0x1
 
     .line 132
     .line 133
-    goto :goto_74
+    goto :goto_2
 
     .line 134
-    :catchall_85
-    :cond_85
+    :catchall_2
+    :cond_3
     const/4 v15, 0x4
 
     .line 135
@@ -561,9 +561,9 @@
 
     .line 136
     .line 137
-    :catchall_88
-    :goto_88
-    :try_start_88
+    :catchall_3
+    :goto_3
+    :try_start_4
     iget-object v4, v1, Llibs/Top;->i:Llibs/is0;
 
     .line 138
@@ -572,21 +572,21 @@
 
     .line 140
     .line 141
-    if-nez v5, :cond_90
+    if-nez v5, :cond_4
 
     .line 142
     .line 143
     const/4 v5, 0x1
 
     .line 144
-    goto :goto_91
+    goto :goto_4
 
     .line 145
-    :cond_90
+    :cond_4
     const/4 v5, 0x0
 
     .line 146
-    :goto_91
+    :goto_4
     new-instance v6, Llibs/g;
 
     .line 147
@@ -678,8 +678,8 @@
 
     .line 190
     .line 191
-    :goto_be
-    if-lt v0, v15, :cond_cf
+    :goto_5
+    if-lt v0, v15, :cond_6
 
     .line 192
     .line 193
@@ -699,32 +699,32 @@
 
     .line 200
     aput-byte v3, v2, v0
-    :try_end_c9
-    .catch Ljava/lang/Exception; {:try_start_88 .. :try_end_c9} :catch_d0
+    :try_end_4
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
 
     .line 201
     .line 202
-    if-eqz v3, :cond_cc
+    if-eqz v3, :cond_5
 
     .line 203
     .line 204
-    goto :goto_cf
+    goto :goto_6
 
     .line 205
-    :cond_cc
+    :cond_5
     add-int/lit8 v0, v0, -0x1
 
     .line 206
     .line 207
-    goto :goto_be
+    goto :goto_5
 
     .line 208
-    :cond_cf
-    :goto_cf
+    :cond_6
+    :goto_6
     return-void
 
     .line 209
-    :catch_d0
+    :catch_0
     move-exception v0
 
     .line 210
@@ -747,7 +747,7 @@
     throw v0
 
     .line 219
-    :cond_da
+    :cond_7
     const-string v0, "Output buffer is too small for the requested transform length."
 
     .line 220
@@ -760,7 +760,7 @@
     return-void
 
     .line 225
-    :cond_e0
+    :cond_8
     const-string v0, "Input buffer is too small for the requested transform length."
 
     .line 226

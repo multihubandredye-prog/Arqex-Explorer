@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     invoke-static {}, Llibs/ah;->x()Landroid/util/SparseArray;

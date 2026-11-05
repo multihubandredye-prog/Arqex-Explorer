@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/dn3;
@@ -37,7 +37,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public a()Llibs/en3;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -65,7 +65,7 @@
 .end method
 
 .method public b()Llibs/en3;
-    .registers 3
+    .locals 2
 
     .line 1
     const-wide/16 v0, 0x0
@@ -80,14 +80,14 @@
 .end method
 
 .method public c()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-boolean v0, p0, Llibs/en3;->a:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -98,7 +98,7 @@
     return-wide v0
 
     .line 8
-    :cond_7
+    :cond_0
     const-string v0, "No deadline"
 
     .line 9
@@ -116,7 +116,7 @@
 .end method
 
 .method public d(J)Llibs/en3;
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -134,7 +134,7 @@
 .end method
 
 .method public e()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/en3;->a:Z
@@ -145,7 +145,7 @@
 .end method
 
 .method public f()V
-    .registers 6
+    .locals 5
 
     .line 1
     invoke-static {}, Ljava/lang/Thread;->interrupted()Z
@@ -156,7 +156,7 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_21
+    if-nez v0, :cond_2
 
     .line 6
     .line 7
@@ -164,7 +164,7 @@
 
     .line 8
     .line 9
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_1
 
     .line 10
     .line 11
@@ -191,14 +191,14 @@
 
     .line 21
     .line 22
-    if-lez v4, :cond_18
+    if-lez v4, :cond_0
 
     .line 23
     .line 24
-    goto :goto_20
+    goto :goto_0
 
     .line 25
-    :cond_18
+    :cond_0
     new-instance v0, Ljava/io/InterruptedIOException;
 
     .line 26
@@ -215,12 +215,12 @@
     throw v0
 
     .line 33
-    :cond_20
-    :goto_20
+    :cond_1
+    :goto_0
     return-void
 
     .line 34
-    :cond_21
+    :cond_2
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     .line 35
@@ -251,7 +251,7 @@
 .end method
 
 .method public g(J)Llibs/en3;
-    .registers 7
+    .locals 4
 
     .line 1
     const-wide/16 v0, 0x0
@@ -265,7 +265,7 @@
 
     .line 5
     .line 6
-    if-ltz v3, :cond_18
+    if-ltz v3, :cond_1
 
     .line 7
     .line 8
@@ -273,7 +273,7 @@
 
     .line 9
     .line 10
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 11
     .line 12
@@ -292,7 +292,7 @@
     return-object p0
 
     .line 19
-    :cond_12
+    :cond_0
     const-string p1, "unit == null"
 
     .line 20
@@ -305,7 +305,7 @@
     return-object v2
 
     .line 25
-    :cond_18
+    :cond_1
     const-string v0, "timeout < 0: "
 
     .line 26

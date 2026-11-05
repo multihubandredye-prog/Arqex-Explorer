@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;ZB)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/rm1;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-byte p1, p0, Llibs/rm1;->X:B
@@ -57,7 +57,7 @@
 
     .line 6
     .line 7
-    packed-switch p1, :pswitch_data_40
+    packed-switch p1, :pswitch_data_0
 
     .line 8
     .line 9
@@ -109,7 +109,7 @@
     return-void
 
     .line 35
-    :pswitch_22
+    :pswitch_0
     check-cast v1, Lcom/mixplorer/activities/LocalizeActivity;
 
     .line 36
@@ -126,7 +126,7 @@
     return-void
 
     .line 43
-    :pswitch_2a
+    :pswitch_1
     check-cast v1, Lcom/mixplorer/activities/LocalizeActivity;
 
     .line 44
@@ -171,9 +171,9 @@
     nop
 
     .line 65
-    :pswitch_data_40
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2a
-        :pswitch_22
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

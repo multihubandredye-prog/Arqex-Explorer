@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>([B)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,14 +23,14 @@
     array-length v0, p1
 
     .line 5
-    if-ltz v0, :cond_12
+    if-ltz v0, :cond_0
 
     .line 6
     .line 7
     array-length v1, p1
 
     .line 8
-    if-gt v0, v1, :cond_12
+    if-gt v0, v1, :cond_0
 
     .line 9
     .line 10
@@ -53,7 +53,7 @@
     return-void
 
     .line 19
-    :cond_12
+    :cond_0
     const-string p1, "Invalid buffer arguments"
 
     .line 20

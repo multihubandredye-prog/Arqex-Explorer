@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     const/16 v0, 0xd
@@ -26,7 +26,7 @@
 
 # virtual methods
 .method public final x()Llibs/v1;
-    .registers 6
+    .locals 5
 
     .line 1
     invoke-super {p0}, Llibs/v1;->x()Llibs/v1;

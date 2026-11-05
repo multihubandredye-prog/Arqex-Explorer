@@ -99,7 +99,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/qt;
@@ -1500,7 +1500,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -1521,7 +1521,7 @@
 .end method
 
 .method public static declared-synchronized a(Ljava/lang/String;)Llibs/rt;
-    .registers 7
+    .locals 6
 
     .line 1
     const-class v0, Llibs/rt;
@@ -1531,7 +1531,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     sget-object v1, Llibs/rt;->c:Ljava/util/LinkedHashMap;
 
     .line 5
@@ -1548,7 +1548,7 @@
 
     .line 11
     .line 12
-    if-nez v2, :cond_44
+    if-nez v2, :cond_3
 
     .line 13
     .line 14
@@ -1571,7 +1571,7 @@
     const/4 v5, 0x4
 
     .line 23
-    if-eqz v4, :cond_21
+    if-eqz v4, :cond_0
 
     .line 24
     .line 25
@@ -1591,10 +1591,10 @@
     move-result-object v2
 
     .line 33
-    goto :goto_31
+    goto :goto_0
 
     .line 34
-    :cond_21
+    :cond_0
     invoke-virtual {p0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     .line 35
@@ -1603,7 +1603,7 @@
     move-result v2
 
     .line 38
-    if-eqz v2, :cond_30
+    if-eqz v2, :cond_1
 
     .line 39
     .line 40
@@ -1623,14 +1623,14 @@
     move-result-object v2
 
     .line 48
-    goto :goto_31
+    goto :goto_0
 
     .line 49
-    :cond_30
+    :cond_1
     move-object v2, p0
 
     .line 50
-    :goto_31
+    :goto_0
     invoke-interface {v1, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 51
@@ -1643,7 +1643,7 @@
 
     .line 55
     .line 56
-    if-nez v2, :cond_41
+    if-nez v2, :cond_2
 
     .line 57
     .line 58
@@ -1656,44 +1656,44 @@
     .line 61
     .line 62
     .line 63
-    goto :goto_41
+    goto :goto_1
 
     .line 64
-    :catchall_3f
+    :catchall_0
     move-exception p0
 
     .line 65
-    goto :goto_46
+    goto :goto_2
 
     .line 66
-    :cond_41
-    :goto_41
+    :cond_2
+    :goto_1
     invoke-interface {v1, p0, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_44
-    .catchall {:try_start_3 .. :try_end_44} :catchall_3f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 67
     .line 68
     .line 69
-    :cond_44
+    :cond_3
     monitor-exit v0
 
     .line 70
     return-object v2
 
     .line 71
-    :goto_46
-    :try_start_46
+    :goto_2
+    :try_start_1
     monitor-exit v0
-    :try_end_47
-    .catchall {:try_start_46 .. :try_end_47} :catchall_3f
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 72
     throw p0
 .end method
 
 .method public static b(Ljava/lang/String;)Llibs/rt;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/rt;
@@ -1720,7 +1720,7 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/rt;->a:Ljava/lang/String;

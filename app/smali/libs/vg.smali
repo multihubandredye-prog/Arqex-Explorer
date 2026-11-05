@@ -9,7 +9,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/vg;->a:B
@@ -27,14 +27,14 @@
 
 # virtual methods
 .method public get()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/vg;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_16
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -50,7 +50,7 @@
     return-object v0
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     sget-object v0, Llibs/wg;->c:Ljava/util/concurrent/atomic/AtomicInteger;
 
     .line 12
@@ -77,21 +77,21 @@
     nop
 
     .line 23
-    :pswitch_data_16
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public initialValue()Ljava/lang/Object;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/vg;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_60
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -107,7 +107,7 @@
     return-object v0
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     const/16 v0, 0x400
 
     .line 12
@@ -119,7 +119,7 @@
     return-object v0
 
     .line 16
-    :pswitch_f
+    :pswitch_1
     new-instance v0, Llibs/ib3;
 
     .line 17
@@ -132,7 +132,7 @@
     return-object v0
 
     .line 22
-    :pswitch_15
+    :pswitch_2
     new-instance v0, Ljava/util/WeakHashMap;
 
     .line 23
@@ -145,7 +145,7 @@
     return-object v0
 
     .line 28
-    :pswitch_1b
+    :pswitch_3
     new-instance v0, Ljava/util/WeakHashMap;
 
     .line 29
@@ -158,7 +158,7 @@
     return-object v0
 
     .line 34
-    :pswitch_21
+    :pswitch_4
     new-instance v0, Ljava/text/SimpleDateFormat;
 
     .line 35
@@ -196,7 +196,7 @@
     return-object v0
 
     .line 53
-    :pswitch_34
+    :pswitch_5
     new-instance v0, Ljava/text/SimpleDateFormat;
 
     .line 54
@@ -234,7 +234,7 @@
     return-object v0
 
     .line 72
-    :pswitch_47
+    :pswitch_6
     new-instance v0, Ljava/util/HashMap;
 
     .line 73
@@ -247,7 +247,7 @@
     return-object v0
 
     .line 78
-    :pswitch_4d
+    :pswitch_7
     new-instance v0, Ljava/text/SimpleDateFormat;
 
     .line 79
@@ -285,15 +285,15 @@
     return-object v0
 
     .line 97
-    :pswitch_data_60
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_4d
-        :pswitch_47
-        :pswitch_34
-        :pswitch_21
-        :pswitch_1b
-        :pswitch_15
-        :pswitch_f
-        :pswitch_a
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

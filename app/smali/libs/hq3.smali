@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/iq3;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public final a()V
-    .registers 7
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/hq3;->a:Ljava/util/ArrayList;
@@ -70,8 +70,8 @@
 
     .line 8
     .line 9
-    :goto_8
-    if-ltz v1, :cond_40
+    :goto_0
+    if-ltz v1, :cond_2
 
     .line 10
     .line 11
@@ -103,18 +103,18 @@
 
     .line 24
     .line 25
-    if-gtz v3, :cond_3d
+    if-gtz v3, :cond_1
 
     .line 26
     .line 27
-    if-ltz v3, :cond_1d
+    if-ltz v3, :cond_0
 
     .line 28
     .line 29
-    goto :goto_3d
+    goto :goto_1
 
     .line 30
-    :cond_1d
+    :cond_0
     new-instance v3, Ljava/lang/IllegalStateException;
 
     .line 31
@@ -175,21 +175,21 @@
     throw v3
 
     .line 62
-    :cond_3d
-    :goto_3d
+    :cond_1
+    :goto_1
     add-int/lit8 v1, v1, -0x1
 
     .line 63
     .line 64
-    goto :goto_8
+    goto :goto_0
 
     .line 65
-    :cond_40
+    :cond_2
     return-void
 .end method
 
 .method public final b(Llibs/ap3;)Llibs/li1;
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/hq3;->a:Ljava/util/ArrayList;
@@ -208,8 +208,8 @@
 
     .line 8
     .line 9
-    :goto_8
-    if-ltz v1, :cond_23
+    :goto_0
+    if-ltz v1, :cond_2
 
     .line 10
     .line 11
@@ -225,7 +225,7 @@
 
     .line 16
     .line 17
-    if-eqz p1, :cond_19
+    if-eqz p1, :cond_0
 
     .line 18
     .line 19
@@ -233,7 +233,7 @@
 
     .line 20
     .line 21
-    if-eq v3, p1, :cond_19
+    if-eq v3, p1, :cond_0
 
     .line 22
     .line 23
@@ -241,10 +241,10 @@
 
     .line 24
     .line 25
-    goto :goto_8
+    goto :goto_0
 
     .line 26
-    :cond_19
+    :cond_0
     invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 27
@@ -257,19 +257,19 @@
 
     .line 31
     .line 32
-    if-eq p1, v0, :cond_22
+    if-eq p1, v0, :cond_1
 
     .line 33
     .line 34
-    goto :goto_23
+    goto :goto_1
 
     .line 35
-    :cond_22
+    :cond_1
     return-object v2
 
     .line 36
-    :cond_23
-    :goto_23
+    :cond_2
+    :goto_1
     const/4 p1, 0x0
 
     .line 37
@@ -277,7 +277,7 @@
 .end method
 
 .method public final c()Z
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/hq3;->a:Ljava/util/ArrayList;
@@ -298,7 +298,7 @@
     sub-int/2addr v1, v2
 
     .line 9
-    if-ltz v1, :cond_14
+    if-ltz v1, :cond_0
 
     .line 10
     .line 11
@@ -322,7 +322,7 @@
     return v2
 
     .line 21
-    :cond_14
+    :cond_0
     const/4 v0, 0x0
 
     .line 22
@@ -330,7 +330,7 @@
 .end method
 
 .method public final d(Llibs/ap3;)Z
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/hq3;->a:Ljava/util/ArrayList;
@@ -348,23 +348,23 @@
     const/4 v2, 0x0
 
     .line 8
-    if-nez p1, :cond_c
+    if-nez p1, :cond_0
 
     .line 9
     .line 10
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_2
 
     .line 11
     .line 12
-    goto :goto_19
+    goto :goto_1
 
     .line 13
-    :cond_c
+    :cond_0
     const/4 v3, 0x0
 
     .line 14
-    :goto_d
-    if-ge v3, v1, :cond_1e
+    :goto_0
+    if-ge v3, v1, :cond_2
 
     .line 15
     .line 16
@@ -384,25 +384,25 @@
 
     .line 23
     .line 24
-    if-ne v4, p1, :cond_1b
+    if-ne v4, p1, :cond_1
 
     .line 25
     .line 26
-    :goto_19
+    :goto_1
     const/4 p1, 0x1
 
     .line 27
     return p1
 
     .line 28
-    :cond_1b
+    :cond_1
     add-int/lit8 v3, v3, 0x1
 
     .line 29
     .line 30
-    goto :goto_d
+    goto :goto_0
 
     .line 31
-    :cond_1e
+    :cond_2
     return v2
 .end method

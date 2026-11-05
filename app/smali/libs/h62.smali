@@ -14,7 +14,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     const/high16 v0, 0x3f800000    # 1.0f
@@ -60,7 +60,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -72,7 +72,7 @@
 .end method
 
 .method public static a(F)F
-    .registers 4
+    .locals 3
 
     .line 1
     const/high16 v0, 0x41000000    # 8.0f
@@ -91,7 +91,7 @@
 
     .line 8
     .line 9
-    if-gez v1, :cond_14
+    if-gez v1, :cond_0
 
     .line 10
     .line 11
@@ -121,7 +121,7 @@
     return p0
 
     .line 21
-    :cond_14
+    :cond_0
     sub-float p0, v0, p0
 
     .line 22
@@ -166,7 +166,7 @@
 
 # virtual methods
 .method public final getInterpolation(F)F
-    .registers 3
+    .locals 1
 
     .line 1
     sget v0, Llibs/h62;->a:F
@@ -192,7 +192,7 @@
 
     .line 11
     .line 12
-    if-lez v0, :cond_10
+    if-lez v0, :cond_0
 
     .line 13
     .line 14
@@ -203,6 +203,6 @@
     add-float/2addr p1, v0
 
     .line 17
-    :cond_10
+    :cond_0
     return p1
 .end method

@@ -17,7 +17,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(BLjava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 10
     iput-byte p1, p0, Llibs/cd0;->X:B
@@ -30,7 +30,7 @@
 .end method
 
 .method public synthetic constructor <init>(Llibs/kg3;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x2
@@ -55,7 +55,7 @@
 
 # virtual methods
 .method public a()Ljava/io/InputStream;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/cd0;->Y:Ljava/lang/String;
@@ -66,7 +66,7 @@
 
     .line 4
     .line 5
-    :try_start_4
+    :try_start_0
     new-instance v2, Ljava/net/URI;
 
     .line 6
@@ -84,7 +84,7 @@
     move-result v3
 
     .line 14
-    if-eqz v3, :cond_15
+    if-eqz v3, :cond_0
 
     .line 15
     .line 16
@@ -93,23 +93,23 @@
     .line 17
     .line 18
     invoke-direct {v3, v2}, Llibs/w52;-><init>(Ljava/lang/Object;)V
-    :try_end_14
-    .catch Ljava/net/URISyntaxException; {:try_start_4 .. :try_end_14} :catch_15
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_14} :catch_2b
+    :try_end_0
+    .catch Ljava/net/URISyntaxException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
 
     .line 19
     .line 20
     .line 21
-    goto :goto_16
+    goto :goto_0
 
     .line 22
-    :catch_15
-    :cond_15
+    :catch_0
+    :cond_0
     move-object v3, v1
 
     .line 23
-    :goto_16
-    :try_start_16
+    :goto_0
+    :try_start_1
     invoke-virtual {v3}, Llibs/w52;->b()Z
 
     .line 24
@@ -118,7 +118,7 @@
     move-result v2
 
     .line 27
-    if-eqz v2, :cond_2d
+    if-eqz v2, :cond_1
 
     .line 28
     .line 29
@@ -150,17 +150,17 @@
     move-result-object v0
 
     .line 43
-    goto :goto_49
+    goto :goto_1
 
     .line 44
-    :catch_2b
+    :catch_1
     move-exception v1
 
     .line 45
-    goto :goto_52
+    goto :goto_2
 
     .line 46
-    :cond_2d
+    :cond_1
     invoke-virtual {v1}, Llibs/w52;->b()Z
 
     .line 47
@@ -169,7 +169,7 @@
     move-result v2
 
     .line 50
-    if-eqz v2, :cond_4a
+    if-eqz v2, :cond_2
 
     .line 51
     .line 52
@@ -217,11 +217,11 @@
     move-result-object v0
 
     .line 74
-    :goto_49
+    :goto_1
     return-object v0
 
     .line 75
-    :cond_4a
+    :cond_2
     new-instance v1, Ljava/io/IOException;
 
     .line 76
@@ -236,11 +236,11 @@
     .line 81
     .line 82
     throw v1
-    :try_end_52
-    .catch Ljava/io/IOException; {:try_start_16 .. :try_end_52} :catch_2b
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 83
-    :goto_52
+    :goto_2
     const-string v2, "could not open external image \'"
 
     .line 84
@@ -277,7 +277,7 @@
 .end method
 
 .method public apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/cd0;->X:B
@@ -288,7 +288,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_22
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -308,7 +308,7 @@
     return-object p1
 
     .line 15
-    :pswitch_e
+    :pswitch_0
     check-cast p1, Ljava/lang/String;
 
     .line 16
@@ -353,21 +353,21 @@
     return-object p1
 
     .line 35
-    :pswitch_data_22
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_e
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public b(Llibs/np0;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     iget-boolean v0, p1, Llibs/np0;->q:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -394,7 +394,7 @@
     return p1
 
     .line 16
-    :cond_f
+    :cond_0
     const/4 p1, 0x0
 
     .line 17
@@ -402,7 +402,7 @@
 .end method
 
 .method public test(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/cd0;->X:B
@@ -417,7 +417,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_1c
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -437,7 +437,7 @@
     return p1
 
     .line 17
-    :pswitch_10
+    :pswitch_0
     const-string v0, "w:type"
 
     .line 18
@@ -464,8 +464,8 @@
     nop
 
     .line 29
-    :pswitch_data_1c
+    :pswitch_data_0
     .packed-switch 0x3
-        :pswitch_10
+        :pswitch_0
     .end packed-switch
 .end method

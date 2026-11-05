@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/PlayerActivity;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/id2;->Y:Lcom/mixplorer/activities/PlayerActivity;
@@ -32,7 +32,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 6
+    .locals 5
 
     .line 1
     iget v0, p0, Llibs/id2;->X:F
@@ -47,14 +47,14 @@
 
     .line 6
     .line 7
-    if-nez v1, :cond_9
+    if-nez v1, :cond_0
 
     .line 8
     .line 9
     return-void
 
     .line 10
-    :cond_9
+    :cond_0
     iget-object v2, p0, Llibs/id2;->Y:Lcom/mixplorer/activities/PlayerActivity;
 
     .line 11
@@ -63,7 +63,7 @@
 
     .line 13
     .line 14
-    if-nez v3, :cond_27
+    if-nez v3, :cond_2
 
     .line 15
     .line 16
@@ -71,14 +71,14 @@
 
     .line 17
     .line 18
-    if-nez v1, :cond_14
+    if-nez v1, :cond_1
 
     .line 19
     .line 20
-    goto :goto_24
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_1
     sget v3, Llibs/zt0;->a:I
 
     .line 22
@@ -111,13 +111,13 @@
 
     .line 36
     .line 37
-    :goto_24
+    :goto_0
     invoke-virtual {v2}, Lcom/mixplorer/activities/PlayerActivity;->Raw()V
 
     .line 38
     .line 39
     .line 40
-    :cond_27
+    :cond_2
     invoke-virtual {v1}, Llibs/rd2;->k()Z
 
     .line 41
@@ -126,7 +126,7 @@
     move-result v3
 
     .line 44
-    if-nez v3, :cond_30
+    if-nez v3, :cond_3
 
     .line 45
     .line 46
@@ -135,7 +135,7 @@
     .line 47
     .line 48
     .line 49
-    :cond_30
+    :cond_3
     invoke-virtual {v1, v0}, Llibs/rd2;->x(F)V
 
     .line 50

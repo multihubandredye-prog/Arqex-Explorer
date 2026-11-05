@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/security/interfaces/ECPrivateKey;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -34,7 +34,7 @@
     move-result p1
 
     .line 11
-    if-nez p1, :cond_5c
+    if-nez p1, :cond_5
 
     .line 12
     .line 13
@@ -50,7 +50,7 @@
     move-result p1
 
     .line 19
-    if-nez p1, :cond_5c
+    if-nez p1, :cond_5
 
     .line 20
     .line 21
@@ -66,14 +66,14 @@
     move-result p1
 
     .line 27
-    if-eqz p1, :cond_1d
+    if-eqz p1, :cond_0
 
     .line 28
     .line 29
-    goto :goto_5c
+    goto :goto_2
 
     .line 30
-    :cond_1d
+    :cond_0
     const-string p1, "secp384r1"
 
     .line 31
@@ -86,7 +86,7 @@
     move-result p1
 
     .line 36
-    if-nez p1, :cond_53
+    if-nez p1, :cond_4
 
     .line 37
     .line 38
@@ -102,14 +102,14 @@
     move-result p1
 
     .line 44
-    if-eqz p1, :cond_2e
+    if-eqz p1, :cond_1
 
     .line 45
     .line 46
-    goto :goto_53
+    goto :goto_1
 
     .line 47
-    :cond_2e
+    :cond_1
     const-string p1, "secp521r1"
 
     .line 48
@@ -122,7 +122,7 @@
     move-result p1
 
     .line 53
-    if-nez p1, :cond_4a
+    if-nez p1, :cond_3
 
     .line 54
     .line 55
@@ -138,14 +138,14 @@
     move-result p1
 
     .line 61
-    if-eqz p1, :cond_3f
+    if-eqz p1, :cond_2
 
     .line 62
     .line 63
-    goto :goto_4a
+    goto :goto_0
 
     .line 64
-    :cond_3f
+    :cond_2
     const-string p1, "Unsupported curve name "
 
     .line 65
@@ -169,8 +169,8 @@
     throw p1
 
     .line 75
-    :cond_4a
-    :goto_4a
+    :cond_3
+    :goto_0
     const-string p1, "ecdsa-sha2-nistp521"
 
     .line 76
@@ -190,8 +190,8 @@
     return-void
 
     .line 84
-    :cond_53
-    :goto_53
+    :cond_4
+    :goto_1
     const-string p1, "ecdsa-sha2-nistp384"
 
     .line 85
@@ -211,8 +211,8 @@
     return-void
 
     .line 93
-    :cond_5c
-    :goto_5c
+    :cond_5
+    :goto_2
     const-string p1, "ecdsa-sha2-nistp256"
 
     .line 94
@@ -235,7 +235,7 @@
 
 # virtual methods
 .method public final a()Ljava/security/PrivateKey;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/jd3;->a:Ljava/security/PrivateKey;
@@ -246,14 +246,14 @@
 .end method
 
 .method public final b(Ljava/lang/String;[B)[B
-    .registers 6
+    .locals 3
 
     .line 1
     const-string p1, "DER decode failed: "
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     iget-object v0, p0, Llibs/pd3;->c:Ljava/lang/String;
 
     .line 4
@@ -293,13 +293,13 @@
     .line 22
     .line 23
     invoke-direct {v0}, Llibs/n1;-><init>()V
-    :try_end_19
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_19} :catch_41
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 24
     .line 25
     .line 26
-    :try_start_19
+    :try_start_1
     new-instance v1, Llibs/cl;
 
     .line 27
@@ -364,15 +364,15 @@
     .line 60
     .line 61
     move-result-object p1
-    :try_end_3d
-    .catch Ljava/io/IOException; {:try_start_19 .. :try_end_3d} :catch_45
-    .catchall {:try_start_19 .. :try_end_3d} :catchall_43
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 62
-    :try_start_3d
+    :try_start_2
     invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
-    :try_end_40
-    .catch Ljava/lang/Exception; {:try_start_3d .. :try_end_40} :catch_41
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 63
     .line 64
@@ -380,25 +380,25 @@
     return-object p1
 
     .line 66
-    :catch_41
+    :catch_0
     move-exception p1
 
     .line 67
-    goto :goto_60
+    goto :goto_1
 
     .line 68
-    :catchall_43
+    :catchall_0
     move-exception p1
 
     .line 69
-    goto :goto_5c
+    goto :goto_0
 
     .line 70
-    :catch_45
+    :catch_1
     move-exception p2
 
     .line 71
-    :try_start_46
+    :try_start_3
     new-instance v1, Ljava/io/IOException;
 
     .line 72
@@ -439,23 +439,23 @@
     .line 91
     .line 92
     throw v1
-    :try_end_5c
-    .catchall {:try_start_46 .. :try_end_5c} :catchall_43
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 93
-    :goto_5c
-    :try_start_5c
+    :goto_0
+    :try_start_4
     invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
 
     .line 94
     .line 95
     .line 96
     throw p1
-    :try_end_60
-    .catch Ljava/lang/Exception; {:try_start_5c .. :try_end_60} :catch_41
+    :try_end_4
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
 
     .line 97
-    :goto_60
+    :goto_1
     new-instance p2, Ljava/io/IOException;
 
     .line 98
@@ -521,7 +521,7 @@
 .end method
 
 .method public final c([B)[B
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/pd3;->b:Ljava/lang/String;
@@ -540,10 +540,10 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     .line 2
     .line 3
@@ -553,12 +553,12 @@
     return p1
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v0, p1, Llibs/pd3;
 
     .line 6
     .line 7
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_1
 
     .line 8
     .line 9
@@ -570,7 +570,7 @@
 
     .line 12
     .line 13
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_1
 
     .line 14
     .line 15
@@ -589,7 +589,7 @@
     return p1
 
     .line 22
-    :cond_15
+    :cond_1
     const/4 p1, 0x0
 
     .line 23
@@ -597,7 +597,7 @@
 .end method
 
 .method public final getAlgorithm()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/pd3;->b:Ljava/lang/String;
@@ -608,7 +608,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/jd3;->a:Ljava/security/PrivateKey;

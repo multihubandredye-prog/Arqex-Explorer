@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/PlayerActivity;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/hd2;->Y:Lcom/mixplorer/activities/PlayerActivity;
@@ -32,7 +32,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 10
+    .locals 9
 
     .line 1
     invoke-static {}, Llibs/lp;->a()Llibs/lp;
@@ -43,7 +43,7 @@
     move-result-object v0
 
     .line 5
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_1
 
     .line 6
     .line 7
@@ -58,7 +58,7 @@
     monitor-enter v3
 
     .line 12
-    :try_start_b
+    :try_start_0
     iget-object v4, v0, Llibs/lp;->h:Ljava/util/concurrent/ScheduledFuture;
 
     .line 13
@@ -66,7 +66,7 @@
     const/4 v5, 0x0
 
     .line 15
-    if-eqz v4, :cond_1e
+    if-eqz v4, :cond_0
 
     .line 16
     .line 17
@@ -78,7 +78,7 @@
     move-result v4
 
     .line 21
-    if-nez v4, :cond_1e
+    if-nez v4, :cond_0
 
     .line 22
     .line 23
@@ -91,18 +91,18 @@
     .line 26
     .line 27
     .line 28
-    goto :goto_1e
+    goto :goto_0
 
     .line 29
-    :catchall_1c
+    :catchall_0
     move-exception v0
 
     .line 30
-    goto :goto_31
+    goto :goto_1
 
     .line 31
-    :cond_1e
-    :goto_1e
+    :cond_0
+    :goto_0
     iget-object v4, v0, Llibs/lp;->g:Ljava/util/concurrent/ScheduledExecutorService;
 
     .line 32
@@ -139,20 +139,20 @@
     monitor-exit v3
 
     .line 49
-    goto :goto_33
+    goto :goto_2
 
     .line 50
-    :goto_31
+    :goto_1
     monitor-exit v3
-    :try_end_32
-    .catchall {:try_start_b .. :try_end_32} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 51
     throw v0
 
     .line 52
-    :cond_33
-    :goto_33
+    :cond_1
+    :goto_2
     iget-object v0, p0, Llibs/hd2;->Y:Lcom/mixplorer/activities/PlayerActivity;
 
     .line 53

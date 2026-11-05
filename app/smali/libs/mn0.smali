@@ -20,7 +20,7 @@
 
 # direct methods
 .method static synthetic constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const/16 v0, 0xc9
@@ -31,7 +31,7 @@
 
     .line 4
     .line 5
-    fill-array-data v1, :array_12
+    fill-array-data v1, :array_0
 
     .line 6
     .line 7
@@ -44,7 +44,7 @@
 
     .line 11
     .line 12
-    fill-array-data v0, :array_1a8
+    fill-array-data v0, :array_1
 
     .line 13
     .line 14
@@ -59,7 +59,7 @@
     nop
 
     .line 19
-    :array_12
+    :array_0
     .array-data 4
         0x0
         0x38d1b717    # 1.0E-4f
@@ -276,7 +276,7 @@
     .line 29
     .line 30
     .line 31
-    :array_1a8
+    :array_1
     .array-data 4
         0x0
         0x3cb5dcc6    # 0.0222f
@@ -483,10 +483,10 @@
 .end method
 
 .method public constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
-    packed-switch p1, :pswitch_data_10
+    packed-switch p1, :pswitch_data_0
 
     .line 2
     .line 3
@@ -503,7 +503,7 @@
     return-void
 
     .line 10
-    :pswitch_9
+    :pswitch_0
     sget-object p1, Llibs/mn0;->d:[F
 
     .line 11
@@ -519,14 +519,14 @@
     nop
 
     .line 17
-    :pswitch_data_10
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_9
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public constructor <init>([F)V
-    .registers 3
+    .locals 1
 
     .line 17
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -553,7 +553,7 @@
 
 # virtual methods
 .method public final getInterpolation(F)F
-    .registers 6
+    .locals 4
 
     .line 1
     const/high16 v0, 0x3f800000    # 1.0f
@@ -564,14 +564,14 @@
 
     .line 4
     .line 5
-    if-ltz v1, :cond_7
+    if-ltz v1, :cond_0
 
     .line 6
     .line 7
     return v0
 
     .line 8
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
     .line 9
@@ -579,14 +579,14 @@
 
     .line 10
     .line 11
-    if-gtz v1, :cond_d
+    if-gtz v1, :cond_1
 
     .line 12
     .line 13
     return v0
 
     .line 14
-    :cond_d
+    :cond_1
     iget-object v0, p0, Llibs/mn0;->a:[F
 
     .line 15

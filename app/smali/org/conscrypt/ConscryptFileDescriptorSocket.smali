@@ -42,7 +42,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;ILjava/net/InetAddress;ILorg/conscrypt/SSLParametersImpl;)V
-    .registers 6
+    .locals 0
 
     .line 80
     invoke-direct {p0, p1, p2, p3, p4}, Lorg/conscrypt/OpenSSLSocketImpl;-><init>(Ljava/lang/String;ILjava/net/InetAddress;I)V
@@ -113,7 +113,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;ILorg/conscrypt/SSLParametersImpl;)V
-    .registers 5
+    .locals 1
 
     .line 58
     invoke-direct {p0, p1, p2}, Lorg/conscrypt/OpenSSLSocketImpl;-><init>(Ljava/lang/String;I)V
@@ -184,7 +184,7 @@
 .end method
 
 .method public constructor <init>(Ljava/net/InetAddress;ILjava/net/InetAddress;ILorg/conscrypt/SSLParametersImpl;)V
-    .registers 6
+    .locals 0
 
     .line 91
     invoke-direct {p0, p1, p2, p3, p4}, Lorg/conscrypt/OpenSSLSocketImpl;-><init>(Ljava/net/InetAddress;ILjava/net/InetAddress;I)V
@@ -255,7 +255,7 @@
 .end method
 
 .method public constructor <init>(Ljava/net/InetAddress;ILorg/conscrypt/SSLParametersImpl;)V
-    .registers 5
+    .locals 1
 
     .line 69
     invoke-direct {p0, p1, p2}, Lorg/conscrypt/OpenSSLSocketImpl;-><init>(Ljava/net/InetAddress;I)V
@@ -326,7 +326,7 @@
 .end method
 
 .method public constructor <init>(Ljava/net/Socket;Ljava/lang/String;IZLorg/conscrypt/SSLParametersImpl;)V
-    .registers 6
+    .locals 0
 
     .line 102
     invoke-direct {p0, p1, p2, p3, p4}, Lorg/conscrypt/OpenSSLSocketImpl;-><init>(Ljava/net/Socket;Ljava/lang/String;IZ)V
@@ -397,7 +397,7 @@
 .end method
 
 .method public constructor <init>(Lorg/conscrypt/SSLParametersImpl;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/OpenSSLSocketImpl;-><init>()V
@@ -514,7 +514,7 @@
 .end method
 
 .method private assertReadableOrWriteableState()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->state:I
@@ -524,21 +524,21 @@
     const/4 v1, 0x5
 
     .line 4
-    if-eq v0, v1, :cond_1f
+    if-eq v0, v1, :cond_1
 
     .line 5
     .line 6
     const/4 v1, 0x4
 
     .line 7
-    if-ne v0, v1, :cond_9
+    if-ne v0, v1, :cond_0
 
     .line 8
     .line 9
-    goto :goto_1f
+    goto :goto_0
 
     .line 10
-    :cond_9
+    :cond_0
     new-instance v0, Ljava/lang/AssertionError;
 
     .line 11
@@ -581,13 +581,13 @@
     throw v0
 
     .line 32
-    :cond_1f
-    :goto_1f
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public static bridge synthetic c(Lorg/conscrypt/ConscryptFileDescriptorSocket;)Lorg/conscrypt/NativeSsl;
-    .registers 1
+    .locals 0
 
     .line 1
     iget-object p0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
@@ -598,7 +598,7 @@
 .end method
 
 .method private clientSessionContext()Lorg/conscrypt/ClientSessionContext;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -617,7 +617,7 @@
 .end method
 
 .method private closeUnderlyingSocket()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/OpenSSLSocketImpl;->close()V
@@ -629,7 +629,7 @@
 .end method
 
 .method private free()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
@@ -644,7 +644,7 @@
     move-result v0
 
     .line 7
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     .line 8
     .line 9
@@ -666,12 +666,12 @@
     .line 17
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     return-void
 .end method
 
 .method public static bridge synthetic i(Lorg/conscrypt/ConscryptFileDescriptorSocket;)I
-    .registers 1
+    .locals 0
 
     .line 1
     iget p0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->state:I
@@ -682,7 +682,7 @@
 .end method
 
 .method public static bridge synthetic m(Lorg/conscrypt/ConscryptFileDescriptorSocket;)I
-    .registers 1
+    .locals 0
 
     .line 1
     iget p0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->writeTimeoutMilliseconds:I
@@ -693,7 +693,7 @@
 .end method
 
 .method private static newSsl(Lorg/conscrypt/SSLParametersImpl;Lorg/conscrypt/ConscryptFileDescriptorSocket;)Lorg/conscrypt/NativeSsl;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p0, p1, p1, p1}, Lorg/conscrypt/NativeSsl;->newInstance(Lorg/conscrypt/SSLParametersImpl;Lorg/conscrypt/NativeCrypto$SSLHandshakeCallbacks;Lorg/conscrypt/SSLParametersImpl$AliasChooser;Lorg/conscrypt/SSLParametersImpl$PSKCallbacks;)Lorg/conscrypt/NativeSsl;
@@ -708,7 +708,7 @@
 .end method
 
 .method private provideAfterHandshakeSession()Lorg/conscrypt/ConscryptSession;
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->state:I
@@ -718,7 +718,7 @@
     const/4 v1, 0x2
 
     .line 4
-    if-ge v0, v1, :cond_a
+    if-ge v0, v1, :cond_0
 
     .line 5
     .line 6
@@ -733,7 +733,7 @@
     return-object v0
 
     .line 11
-    :cond_a
+    :cond_0
     invoke-direct {p0}, Lorg/conscrypt/ConscryptFileDescriptorSocket;->provideSession()Lorg/conscrypt/ConscryptSession;
 
     .line 12
@@ -746,7 +746,7 @@
 .end method
 
 .method private provideHandshakeSession()Lorg/conscrypt/ConscryptSession;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
@@ -756,7 +756,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget v1, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->state:I
 
     .line 5
@@ -764,14 +764,14 @@
     const/4 v2, 0x2
 
     .line 7
-    if-lt v1, v2, :cond_10
+    if-lt v1, v2, :cond_0
 
     .line 8
     .line 9
     const/4 v2, 0x5
 
     .line 10
-    if-ge v1, v2, :cond_10
+    if-ge v1, v2, :cond_0
 
     .line 11
     .line 12
@@ -779,17 +779,17 @@
 
     .line 13
     .line 14
-    goto :goto_14
+    goto :goto_0
 
     .line 15
-    :catchall_e
+    :catchall_0
     move-exception v1
 
     .line 16
-    goto :goto_16
+    goto :goto_1
 
     .line 17
-    :cond_10
+    :cond_0
     invoke-static {}, Lorg/conscrypt/SSLNullSession;->getNullSession()Lorg/conscrypt/ConscryptSession;
 
     .line 18
@@ -798,24 +798,24 @@
     move-result-object v1
 
     .line 21
-    :goto_14
+    :goto_0
     monitor-exit v0
 
     .line 22
     return-object v1
 
     .line 23
-    :goto_16
+    :goto_1
     monitor-exit v0
-    :try_end_17
-    .catchall {:try_start_3 .. :try_end_17} :catchall_e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 24
     throw v1
 .end method
 
 .method private provideSession()Lorg/conscrypt/ConscryptSession;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
@@ -825,7 +825,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget v1, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->state:I
 
     .line 5
@@ -834,7 +834,7 @@
 
     .line 7
     .line 8
-    if-ne v1, v2, :cond_16
+    if-ne v1, v2, :cond_1
 
     .line 9
     .line 10
@@ -842,14 +842,14 @@
 
     .line 11
     .line 12
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     .line 13
     .line 14
-    goto :goto_12
+    goto :goto_0
 
     .line 15
-    :cond_e
+    :cond_0
     invoke-static {}, Lorg/conscrypt/SSLNullSession;->getNullSession()Lorg/conscrypt/ConscryptSession;
 
     .line 16
@@ -858,49 +858,49 @@
     move-result-object v1
 
     .line 19
-    :goto_12
+    :goto_0
     monitor-exit v0
-    :try_end_13
-    .catchall {:try_start_3 .. :try_end_13} :catchall_14
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 20
     return-object v1
 
     .line 21
-    :catchall_14
+    :catchall_0
     move-exception v1
 
     .line 22
-    goto :goto_36
+    goto :goto_3
 
     .line 23
-    :cond_16
+    :cond_1
     const/4 v2, 0x5
 
     .line 24
     const/4 v3, 0x1
 
     .line 25
-    if-lt v1, v2, :cond_1c
+    if-lt v1, v2, :cond_2
 
     .line 26
     .line 27
     const/4 v1, 0x1
 
     .line 28
-    goto :goto_1d
+    goto :goto_1
 
     .line 29
-    :cond_1c
+    :cond_2
     const/4 v1, 0x0
 
     .line 30
-    :goto_1d
-    if-nez v1, :cond_29
+    :goto_1
+    if-nez v1, :cond_3
 
     .line 31
     .line 32
-    :try_start_1f
+    :try_start_1
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLSocketImpl;->isConnected()Z
 
     .line 33
@@ -909,37 +909,37 @@
     move-result v2
 
     .line 36
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_3
 
     .line 37
     .line 38
     invoke-direct {p0}, Lorg/conscrypt/ConscryptFileDescriptorSocket;->waitForHandshake()V
-    :try_end_28
-    .catch Ljava/io/IOException; {:try_start_1f .. :try_end_28} :catch_2b
-    .catchall {:try_start_1f .. :try_end_28} :catchall_14
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 39
     .line 40
     .line 41
-    goto :goto_2a
+    goto :goto_2
 
     .line 42
-    :cond_29
+    :cond_3
     move v3, v1
 
     .line 43
-    :goto_2a
+    :goto_2
     move v1, v3
 
     .line 44
-    :catch_2b
-    :try_start_2b
+    :catch_0
+    :try_start_2
     monitor-exit v0
-    :try_end_2c
-    .catchall {:try_start_2b .. :try_end_2c} :catchall_14
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 45
-    if-nez v1, :cond_33
+    if-nez v1, :cond_4
 
     .line 46
     .line 47
@@ -954,7 +954,7 @@
     return-object v0
 
     .line 52
-    :cond_33
+    :cond_4
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->activeSession:Lorg/conscrypt/ActiveSession;
 
     .line 53
@@ -962,18 +962,18 @@
     return-object v0
 
     .line 55
-    :goto_36
-    :try_start_36
+    :goto_3
+    :try_start_3
     monitor-exit v0
-    :try_end_37
-    .catchall {:try_start_36 .. :try_end_37} :catchall_14
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 56
     throw v1
 .end method
 
 .method private sessionContext()Lorg/conscrypt/AbstractSessionContext;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -992,7 +992,7 @@
 .end method
 
 .method private shutdownAndFreeSslNative()V
-    .registers 3
+    .locals 2
 
     .line 1
     :try_start_0
@@ -1018,14 +1018,14 @@
 
     .line 12
     invoke-virtual {v0, v1}, Lorg/conscrypt/NativeSsl;->shutdown(Ljava/io/FileDescriptor;)V
-    :try_end_e
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_e} :catch_e
-    .catchall {:try_start_0 .. :try_end_e} :catchall_15
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 13
     .line 14
     .line 15
-    :catch_e
+    :catch_0
     invoke-direct {p0}, Lorg/conscrypt/ConscryptFileDescriptorSocket;->free()V
 
     .line 16
@@ -1039,7 +1039,7 @@
     return-void
 
     .line 22
-    :catchall_15
+    :catchall_0
     move-exception v0
 
     .line 23
@@ -1057,25 +1057,25 @@
 .end method
 
 .method private transitionTo(I)V
-    .registers 15
+    .locals 13
 
     .line 1
     iget v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->state:I
 
     .line 2
     .line 3
-    if-ne v0, p1, :cond_5
+    if-ne v0, p1, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     const/4 v0, 0x2
 
     .line 7
-    if-eq p1, v0, :cond_6f
+    if-eq p1, v0, :cond_6
 
     .line 8
     .line 9
@@ -1086,7 +1086,7 @@
 
     .line 11
     .line 12
-    if-eq p1, v1, :cond_48
+    if-eq p1, v1, :cond_4
 
     .line 13
     .line 14
@@ -1094,14 +1094,14 @@
 
     .line 15
     .line 16
-    if-eq p1, v1, :cond_12
+    if-eq p1, v1, :cond_1
 
     .line 17
     .line 18
-    goto :goto_75
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_1
     iget-wide v4, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->handshakeStartedMillis:J
 
     .line 20
@@ -1110,7 +1110,7 @@
 
     .line 22
     .line 23
-    if-eqz v6, :cond_30
+    if-eqz v6, :cond_3
 
     .line 24
     .line 25
@@ -1122,7 +1122,7 @@
     move-result-object v7
 
     .line 29
-    if-eqz v7, :cond_2e
+    if-eqz v7, :cond_2
 
     .line 30
     .line 31
@@ -1158,12 +1158,12 @@
     .line 45
     .line 46
     .line 47
-    :cond_2e
+    :cond_2
     iput-wide v2, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->handshakeStartedMillis:J
 
     .line 48
     .line 49
-    :cond_30
+    :cond_3
     iget-object v2, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
 
     .line 50
@@ -1176,7 +1176,7 @@
     move-result v2
 
     .line 55
-    if-nez v2, :cond_75
+    if-nez v2, :cond_7
 
     .line 56
     .line 57
@@ -1184,11 +1184,11 @@
 
     .line 58
     .line 59
-    if-lt v2, v0, :cond_75
+    if-lt v2, v0, :cond_7
 
     .line 60
     .line 61
-    if-ge v2, v1, :cond_75
+    if-ge v2, v1, :cond_7
 
     .line 62
     .line 63
@@ -1209,10 +1209,10 @@
 
     .line 71
     .line 72
-    goto :goto_75
+    goto :goto_0
 
     .line 73
-    :cond_48
+    :cond_4
     iget-wide v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->handshakeStartedMillis:J
 
     .line 74
@@ -1221,7 +1221,7 @@
 
     .line 76
     .line 77
-    if-eqz v4, :cond_75
+    if-eqz v4, :cond_7
 
     .line 78
     .line 79
@@ -1233,7 +1233,7 @@
     move-result-object v5
 
     .line 83
-    if-eqz v5, :cond_6c
+    if-eqz v5, :cond_5
 
     .line 84
     .line 85
@@ -1285,15 +1285,15 @@
     .line 107
     .line 108
     .line 109
-    :cond_6c
+    :cond_5
     iput-wide v2, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->handshakeStartedMillis:J
 
     .line 110
     .line 111
-    goto :goto_75
+    goto :goto_0
 
     .line 112
-    :cond_6f
+    :cond_6
     invoke-static {}, Lorg/conscrypt/Platform;->getMillisSinceBoot()J
 
     .line 113
@@ -1306,8 +1306,8 @@
 
     .line 117
     .line 118
-    :cond_75
-    :goto_75
+    :cond_7
+    :goto_0
     iput p1, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->state:I
 
     .line 119
@@ -1316,7 +1316,7 @@
 .end method
 
 .method public static bridge synthetic w(Lorg/conscrypt/ConscryptFileDescriptorSocket;)Lorg/conscrypt/ConscryptSession;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/ConscryptFileDescriptorSocket;->provideHandshakeSession()Lorg/conscrypt/ConscryptSession;
@@ -1331,7 +1331,7 @@
 .end method
 
 .method private waitForHandshake()V
-    .registers 5
+    .locals 4
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/ConscryptFileDescriptorSocket;->startHandshake()V
@@ -1346,11 +1346,11 @@
     monitor-enter v0
 
     .line 7
-    :goto_6
-    :try_start_6
+    :goto_0
+    :try_start_0
     iget v1, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->state:I
-    :try_end_8
-    .catchall {:try_start_6 .. :try_end_8} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 8
     .line 9
@@ -1361,49 +1361,49 @@
 
     .line 11
     .line 12
-    if-eq v1, v2, :cond_2a
+    if-eq v1, v2, :cond_0
 
     .line 13
     .line 14
     const/4 v2, 0x4
 
     .line 15
-    if-eq v1, v2, :cond_2a
+    if-eq v1, v2, :cond_0
 
     .line 16
     .line 17
-    if-eq v1, v3, :cond_2a
+    if-eq v1, v3, :cond_0
 
     .line 18
     .line 19
-    :try_start_12
+    :try_start_1
     iget-object v1, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
 
     .line 20
     .line 21
     invoke-virtual {v1}, Ljava/lang/Object;->wait()V
-    :try_end_17
-    .catch Ljava/lang/InterruptedException; {:try_start_12 .. :try_end_17} :catch_1a
-    .catchall {:try_start_12 .. :try_end_17} :catchall_18
+    :try_end_1
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 22
     .line 23
     .line 24
-    goto :goto_6
+    goto :goto_0
 
     .line 25
-    :catchall_18
+    :catchall_0
     move-exception v1
 
     .line 26
-    goto :goto_36
+    goto :goto_1
 
     .line 27
-    :catch_1a
+    :catch_0
     move-exception v1
 
     .line 28
-    :try_start_1b
+    :try_start_2
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     .line 29
@@ -1433,8 +1433,8 @@
     throw v2
 
     .line 43
-    :cond_2a
-    if-eq v1, v3, :cond_2e
+    :cond_0
+    if-eq v1, v3, :cond_1
 
     .line 44
     .line 45
@@ -1444,7 +1444,7 @@
     return-void
 
     .line 47
-    :cond_2e
+    :cond_1
     new-instance v1, Ljava/net/SocketException;
 
     .line 48
@@ -1461,25 +1461,25 @@
     throw v1
 
     .line 55
-    :goto_36
+    :goto_1
     monitor-exit v0
-    :try_end_37
-    .catchall {:try_start_1b .. :try_end_37} :catchall_18
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 56
-    goto :goto_39
+    goto :goto_3
 
     .line 57
-    :goto_38
+    :goto_2
     throw v1
 
     .line 58
-    :goto_39
-    goto :goto_38
+    :goto_3
+    goto :goto_2
 .end method
 
 .method public static bridge synthetic x(Lorg/conscrypt/ConscryptFileDescriptorSocket;)Lorg/conscrypt/ConscryptSession;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/ConscryptFileDescriptorSocket;->provideSession()Lorg/conscrypt/ConscryptSession;
@@ -1496,7 +1496,7 @@
 
 # virtual methods
 .method public final chooseClientAlias(Ljavax/net/ssl/X509KeyManager;[Ljavax/security/auth/x500/X500Principal;[Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-interface {p1, p3, p2, p0}, Ljavax/net/ssl/X509KeyManager;->chooseClientAlias([Ljava/lang/String;[Ljava/security/Principal;Ljava/net/Socket;)Ljava/lang/String;
@@ -1511,7 +1511,7 @@
 .end method
 
 .method public final chooseClientPSKIdentity(Lorg/conscrypt/PSKKeyManager;Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-interface {p1, p2, p0}, Lorg/conscrypt/PSKKeyManager;->chooseClientKeyIdentity(Ljava/lang/String;Ljava/net/Socket;)Ljava/lang/String;
@@ -1526,7 +1526,7 @@
 .end method
 
 .method public final chooseServerAlias(Ljavax/net/ssl/X509KeyManager;Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -1544,7 +1544,7 @@
 .end method
 
 .method public final chooseServerPSKIdentityHint(Lorg/conscrypt/PSKKeyManager;)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-interface {p1, p0}, Lorg/conscrypt/PSKKeyManager;->chooseServerKeyIdentityHint(Ljava/net/Socket;)Ljava/lang/String;
@@ -1559,7 +1559,7 @@
 .end method
 
 .method public final clientCertificateRequested([B[I[[B)V
-    .registers 5
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
@@ -1575,7 +1575,7 @@
 .end method
 
 .method public final clientPSKKeyRequested(Ljava/lang/String;[B[B)I
-    .registers 5
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
@@ -1594,25 +1594,25 @@
 .end method
 
 .method public final close()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
 
     .line 2
     .line 3
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     monitor-enter v0
 
     .line 7
-    :try_start_6
+    :try_start_0
     iget v1, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->state:I
 
     .line 8
@@ -1621,7 +1621,7 @@
 
     .line 10
     .line 11
-    if-ne v1, v2, :cond_10
+    if-ne v1, v2, :cond_1
 
     .line 12
     .line 13
@@ -1631,20 +1631,20 @@
     return-void
 
     .line 15
-    :catchall_e
+    :catchall_0
     move-exception v1
 
     .line 16
-    goto :goto_55
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_1
     invoke-direct {p0, v2}, Lorg/conscrypt/ConscryptFileDescriptorSocket;->transitionTo(I)V
 
     .line 18
     .line 19
     .line 20
-    if-nez v1, :cond_22
+    if-nez v1, :cond_2
 
     .line 21
     .line 22
@@ -1673,18 +1673,18 @@
     return-void
 
     .line 35
-    :cond_22
+    :cond_2
     const/4 v2, 0x5
 
     .line 36
-    if-eq v1, v2, :cond_34
+    if-eq v1, v2, :cond_3
 
     .line 37
     .line 38
     const/4 v2, 0x4
 
     .line 39
-    if-eq v1, v2, :cond_34
+    if-eq v1, v2, :cond_3
 
     .line 40
     .line 41
@@ -1712,7 +1712,7 @@
     return-void
 
     .line 53
-    :cond_34
+    :cond_3
     iget-object v1, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
 
     .line 54
@@ -1731,19 +1731,19 @@
     .line 61
     .line 62
     monitor-exit v0
-    :try_end_3e
-    .catchall {:try_start_6 .. :try_end_3e} :catchall_e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 63
-    if-nez v1, :cond_42
+    if-nez v1, :cond_4
 
     .line 64
     .line 65
-    if-eqz v2, :cond_47
+    if-eqz v2, :cond_5
 
     .line 66
     .line 67
-    :cond_42
+    :cond_4
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
 
     .line 68
@@ -1753,8 +1753,8 @@
     .line 70
     .line 71
     .line 72
-    :cond_47
-    if-eqz v1, :cond_4c
+    :cond_5
+    if-eqz v1, :cond_6
 
     .line 73
     .line 74
@@ -1763,8 +1763,8 @@
     .line 75
     .line 76
     .line 77
-    :cond_4c
-    if-eqz v2, :cond_51
+    :cond_6
+    if-eqz v2, :cond_7
 
     .line 78
     .line 79
@@ -1773,7 +1773,7 @@
     .line 80
     .line 81
     .line 82
-    :cond_51
+    :cond_7
     invoke-direct {p0}, Lorg/conscrypt/ConscryptFileDescriptorSocket;->shutdownAndFreeSslNative()V
 
     .line 83
@@ -1782,18 +1782,18 @@
     return-void
 
     .line 86
-    :goto_55
-    :try_start_55
+    :goto_0
+    :try_start_1
     monitor-exit v0
-    :try_end_56
-    .catchall {:try_start_55 .. :try_end_56} :catchall_e
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 87
     throw v1
 .end method
 
 .method public exportKeyingMaterial(Ljava/lang/String;[BI)[B
-    .registers 7
+    .locals 3
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
@@ -1803,7 +1803,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget v1, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->state:I
 
     .line 5
@@ -1811,7 +1811,7 @@
     const/4 v2, 0x3
 
     .line 7
-    if-lt v1, v2, :cond_17
+    if-lt v1, v2, :cond_1
 
     .line 8
     .line 9
@@ -1819,17 +1819,17 @@
 
     .line 10
     .line 11
-    if-ne v1, v2, :cond_d
+    if-ne v1, v2, :cond_0
 
     .line 12
     .line 13
-    goto :goto_17
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     monitor-exit v0
-    :try_end_e
-    .catchall {:try_start_3 .. :try_end_e} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 15
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
@@ -1847,36 +1847,36 @@
     return-object p1
 
     .line 22
-    :catchall_15
+    :catchall_0
     move-exception p1
 
     .line 23
-    goto :goto_1a
+    goto :goto_1
 
     .line 24
-    :cond_17
-    :goto_17
+    :cond_1
+    :goto_0
     const/4 p1, 0x0
 
     .line 25
-    :try_start_18
+    :try_start_1
     monitor-exit v0
 
     .line 26
     return-object p1
 
     .line 27
-    :goto_1a
+    :goto_1
     monitor-exit v0
-    :try_end_1b
-    .catchall {:try_start_18 .. :try_end_1b} :catchall_15
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 28
     throw p1
 .end method
 
 .method public final finalize()V
-    .registers 3
+    .locals 2
 
     .line 1
     :try_start_0
@@ -1884,7 +1884,7 @@
 
     .line 2
     .line 3
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -1893,36 +1893,36 @@
     .line 6
     .line 7
     .line 8
-    goto :goto_a
+    goto :goto_0
 
     .line 9
-    :catchall_8
+    :catchall_0
     move-exception v0
 
     .line 10
-    goto :goto_1d
+    goto :goto_2
 
     .line 11
-    :cond_a
-    :goto_a
+    :cond_0
+    :goto_0
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
 
     .line 12
     .line 13
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1
 
     .line 14
     .line 15
     monitor-enter v0
-    :try_end_f
-    .catchall {:try_start_0 .. :try_end_f} :catchall_8
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 16
     const/16 v1, 0x8
 
     .line 17
     .line 18
-    :try_start_11
+    :try_start_1
     invoke-direct {p0, v1}, Lorg/conscrypt/ConscryptFileDescriptorSocket;->transitionTo(I)V
 
     .line 19
@@ -1931,26 +1931,26 @@
     monitor-exit v0
 
     .line 22
-    goto :goto_19
+    goto :goto_1
 
     .line 23
-    :catchall_16
+    :catchall_1
     move-exception v1
 
     .line 24
     monitor-exit v0
-    :try_end_18
-    .catchall {:try_start_11 .. :try_end_18} :catchall_16
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 25
-    :try_start_18
+    :try_start_2
     throw v1
-    :try_end_19
-    .catchall {:try_start_18 .. :try_end_19} :catchall_8
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 26
-    :cond_19
-    :goto_19
+    :cond_1
+    :goto_1
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
     .line 27
@@ -1959,7 +1959,7 @@
     return-void
 
     .line 30
-    :goto_1d
+    :goto_2
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
     .line 31
@@ -1969,7 +1969,7 @@
 .end method
 
 .method public final getActiveSession()Ljavax/net/ssl/SSLSession;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->activeSession:Lorg/conscrypt/ActiveSession;
@@ -1980,7 +1980,7 @@
 .end method
 
 .method public final getApplicationProtocol()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/ConscryptFileDescriptorSocket;->provideAfterHandshakeSession()Lorg/conscrypt/ConscryptSession;
@@ -2003,7 +2003,7 @@
 .end method
 
 .method public final getApplicationProtocols()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -2022,7 +2022,7 @@
 .end method
 
 .method public final getChannelId()[B
-    .registers 4
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/ConscryptFileDescriptorSocket;->getUseClientMode()Z
@@ -2033,7 +2033,7 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_22
+    if-nez v0, :cond_1
 
     .line 6
     .line 7
@@ -2044,7 +2044,7 @@
     monitor-enter v0
 
     .line 10
-    :try_start_9
+    :try_start_0
     iget v1, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->state:I
 
     .line 11
@@ -2052,13 +2052,13 @@
     const/4 v2, 0x5
 
     .line 13
-    if-ne v1, v2, :cond_18
+    if-ne v1, v2, :cond_0
 
     .line 14
     .line 15
     monitor-exit v0
-    :try_end_f
-    .catchall {:try_start_9 .. :try_end_f} :catchall_16
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 16
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
@@ -2076,15 +2076,15 @@
     return-object v0
 
     .line 23
-    :catchall_16
+    :catchall_0
     move-exception v1
 
     .line 24
-    goto :goto_20
+    goto :goto_0
 
     .line 25
-    :cond_18
-    :try_start_18
+    :cond_0
+    :try_start_1
     new-instance v1, Ljava/lang/IllegalStateException;
 
     .line 26
@@ -2101,16 +2101,16 @@
     throw v1
 
     .line 33
-    :goto_20
+    :goto_0
     monitor-exit v0
-    :try_end_21
-    .catchall {:try_start_18 .. :try_end_21} :catchall_16
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 34
     throw v1
 
     .line 35
-    :cond_22
+    :cond_1
     const-string v0, "Client mode"
 
     .line 36
@@ -2127,7 +2127,7 @@
 .end method
 
 .method public final getCurveNameForTesting()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
@@ -2146,7 +2146,7 @@
 .end method
 
 .method public final getEnableSessionCreation()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -2165,7 +2165,7 @@
 .end method
 
 .method public final getEnabledCipherSuites()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -2184,7 +2184,7 @@
 .end method
 
 .method public final getEnabledProtocols()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -2203,7 +2203,7 @@
 .end method
 
 .method public final getHandshakeApplicationProtocol()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
@@ -2213,7 +2213,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget v1, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->state:I
 
     .line 5
@@ -2221,14 +2221,14 @@
     const/4 v2, 0x2
 
     .line 7
-    if-lt v1, v2, :cond_12
+    if-lt v1, v2, :cond_0
 
     .line 8
     .line 9
     const/4 v2, 0x5
 
     .line 10
-    if-ge v1, v2, :cond_12
+    if-ge v1, v2, :cond_0
 
     .line 11
     .line 12
@@ -2240,38 +2240,38 @@
     move-result-object v1
 
     .line 16
-    goto :goto_13
+    goto :goto_0
 
     .line 17
-    :catchall_10
+    :catchall_0
     move-exception v1
 
     .line 18
-    goto :goto_15
+    goto :goto_1
 
     .line 19
-    :cond_12
+    :cond_0
     const/4 v1, 0x0
 
     .line 20
-    :goto_13
+    :goto_0
     monitor-exit v0
 
     .line 21
     return-object v1
 
     .line 22
-    :goto_15
+    :goto_1
     monitor-exit v0
-    :try_end_16
-    .catchall {:try_start_3 .. :try_end_16} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 23
     throw v1
 .end method
 
 .method public final getHandshakeSession()Ljavax/net/ssl/SSLSession;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
@@ -2281,7 +2281,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget v1, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->state:I
 
     .line 5
@@ -2289,14 +2289,14 @@
     const/4 v2, 0x2
 
     .line 7
-    if-lt v1, v2, :cond_1d
+    if-lt v1, v2, :cond_0
 
     .line 8
     .line 9
     const/4 v2, 0x5
 
     .line 10
-    if-ge v1, v2, :cond_1d
+    if-ge v1, v2, :cond_0
 
     .line 11
     .line 12
@@ -2332,14 +2332,14 @@
     return-object v1
 
     .line 28
-    :catchall_1b
+    :catchall_0
     move-exception v1
 
     .line 29
-    goto :goto_20
+    goto :goto_0
 
     .line 30
-    :cond_1d
+    :cond_0
     const/4 v1, 0x0
 
     .line 31
@@ -2349,17 +2349,17 @@
     return-object v1
 
     .line 33
-    :goto_20
+    :goto_0
     monitor-exit v0
-    :try_end_21
-    .catchall {:try_start_3 .. :try_end_21} :catchall_1b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 34
     throw v1
 .end method
 
 .method public final getInputStream()Ljava/io/InputStream;
-    .registers 4
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/AbstractConscryptSocket;->checkOpen()V
@@ -2374,7 +2374,7 @@
     monitor-enter v0
 
     .line 7
-    :try_start_6
+    :try_start_0
     iget v1, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->state:I
 
     .line 8
@@ -2383,7 +2383,7 @@
 
     .line 10
     .line 11
-    if-eq v1, v2, :cond_1f
+    if-eq v1, v2, :cond_1
 
     .line 12
     .line 13
@@ -2391,7 +2391,7 @@
 
     .line 14
     .line 15
-    if-nez v1, :cond_1a
+    if-nez v1, :cond_0
 
     .line 16
     .line 17
@@ -2408,21 +2408,21 @@
 
     .line 23
     .line 24
-    goto :goto_1a
+    goto :goto_0
 
     .line 25
-    :catchall_18
+    :catchall_0
     move-exception v1
 
     .line 26
-    goto :goto_27
+    goto :goto_1
 
     .line 27
-    :cond_1a
-    :goto_1a
+    :cond_0
+    :goto_0
     monitor-exit v0
-    :try_end_1b
-    .catchall {:try_start_6 .. :try_end_1b} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 28
     invoke-direct {p0}, Lorg/conscrypt/ConscryptFileDescriptorSocket;->waitForHandshake()V
@@ -2433,8 +2433,8 @@
     return-object v1
 
     .line 32
-    :cond_1f
-    :try_start_1f
+    :cond_1
+    :try_start_1
     new-instance v1, Ljava/net/SocketException;
 
     .line 33
@@ -2451,17 +2451,17 @@
     throw v1
 
     .line 40
-    :goto_27
+    :goto_1
     monitor-exit v0
-    :try_end_28
-    .catchall {:try_start_1f .. :try_end_28} :catchall_18
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 41
     throw v1
 .end method
 
 .method public final getNeedClientAuth()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -2480,7 +2480,7 @@
 .end method
 
 .method public final getOutputStream()Ljava/io/OutputStream;
-    .registers 4
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/AbstractConscryptSocket;->checkOpen()V
@@ -2495,7 +2495,7 @@
     monitor-enter v0
 
     .line 7
-    :try_start_6
+    :try_start_0
     iget v1, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->state:I
 
     .line 8
@@ -2504,7 +2504,7 @@
 
     .line 10
     .line 11
-    if-eq v1, v2, :cond_1f
+    if-eq v1, v2, :cond_1
 
     .line 12
     .line 13
@@ -2512,7 +2512,7 @@
 
     .line 14
     .line 15
-    if-nez v1, :cond_1a
+    if-nez v1, :cond_0
 
     .line 16
     .line 17
@@ -2529,21 +2529,21 @@
 
     .line 23
     .line 24
-    goto :goto_1a
+    goto :goto_0
 
     .line 25
-    :catchall_18
+    :catchall_0
     move-exception v1
 
     .line 26
-    goto :goto_27
+    goto :goto_1
 
     .line 27
-    :cond_1a
-    :goto_1a
+    :cond_0
+    :goto_0
     monitor-exit v0
-    :try_end_1b
-    .catchall {:try_start_6 .. :try_end_1b} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 28
     invoke-direct {p0}, Lorg/conscrypt/ConscryptFileDescriptorSocket;->waitForHandshake()V
@@ -2554,8 +2554,8 @@
     return-object v1
 
     .line 32
-    :cond_1f
-    :try_start_1f
+    :cond_1
+    :try_start_1
     new-instance v1, Ljava/net/SocketException;
 
     .line 33
@@ -2572,17 +2572,17 @@
     throw v1
 
     .line 40
-    :goto_27
+    :goto_1
     monitor-exit v0
-    :try_end_28
-    .catchall {:try_start_1f .. :try_end_28} :catchall_18
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 41
     throw v1
 .end method
 
 .method public final getPSKKey(Lorg/conscrypt/PSKKeyManager;Ljava/lang/String;Ljava/lang/String;)Ljavax/crypto/SecretKey;
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-interface {p1, p2, p3, p0}, Lorg/conscrypt/PSKKeyManager;->getKey(Ljava/lang/String;Ljava/lang/String;Ljava/net/Socket;)Ljavax/crypto/SecretKey;
@@ -2597,7 +2597,7 @@
 .end method
 
 .method public final getSSLParameters()Ljavax/net/ssl/SSLParameters;
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-super {p0}, Ljavax/net/ssl/SSLSocket;->getSSLParameters()Ljavax/net/ssl/SSLParameters;
@@ -2621,7 +2621,7 @@
 .end method
 
 .method public final getSession()Ljavax/net/ssl/SSLSession;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->externalSession:Ljavax/net/ssl/SSLSession;
@@ -2632,7 +2632,7 @@
 .end method
 
 .method public final getSoWriteTimeout()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->writeTimeoutMilliseconds:I
@@ -2643,7 +2643,7 @@
 .end method
 
 .method public final getSupportedCipherSuites()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-static {}, Lorg/conscrypt/NativeCrypto;->getSupportedCipherSuites()[Ljava/lang/String;
@@ -2658,7 +2658,7 @@
 .end method
 
 .method public final getSupportedProtocols()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-static {}, Lorg/conscrypt/NativeCrypto;->getSupportedProtocols()[Ljava/lang/String;
@@ -2673,7 +2673,7 @@
 .end method
 
 .method public getTlsUnique()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
@@ -2692,7 +2692,7 @@
 .end method
 
 .method public final getUseClientMode()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -2711,7 +2711,7 @@
 .end method
 
 .method public final getWantClientAuth()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -2730,7 +2730,7 @@
 .end method
 
 .method public final onNewSessionEstablished(J)V
-    .registers 4
+    .locals 1
 
     .line 1
     :try_start_0
@@ -2769,32 +2769,32 @@
 
     .line 19
     invoke-virtual {p2, p1}, Lorg/conscrypt/AbstractSessionContext;->cacheSession(Lorg/conscrypt/NativeSslSession;)V
-    :try_end_15
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_15} :catch_15
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 20
     .line 21
     .line 22
-    :catch_15
+    :catch_0
     return-void
 .end method
 
 .method public final onSSLStateChange(II)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/16 p2, 0x20
 
     .line 2
     .line 3
-    if-eq p1, p2, :cond_5
+    if-eq p1, p2, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     iget-object p1, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
 
     .line 7
@@ -2802,7 +2802,7 @@
     monitor-enter p1
 
     .line 9
-    :try_start_8
+    :try_start_0
     iget p2, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->state:I
 
     .line 10
@@ -2811,7 +2811,7 @@
 
     .line 12
     .line 13
-    if-ne p2, v0, :cond_12
+    if-ne p2, v0, :cond_1
 
     .line 14
     .line 15
@@ -2821,14 +2821,14 @@
     return-void
 
     .line 17
-    :catchall_10
+    :catchall_0
     move-exception p2
 
     .line 18
-    goto :goto_27
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_1
     const/4 p2, 0x5
 
     .line 20
@@ -2838,8 +2838,8 @@
     .line 22
     .line 23
     monitor-exit p1
-    :try_end_17
-    .catchall {:try_start_8 .. :try_end_17} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 24
     invoke-virtual {p0}, Lorg/conscrypt/AbstractConscryptSocket;->notifyHandshakeCompletedListeners()V
@@ -2854,7 +2854,7 @@
     monitor-enter p2
 
     .line 30
-    :try_start_1d
+    :try_start_1
     iget-object p1, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
 
     .line 31
@@ -2870,30 +2870,30 @@
     return-void
 
     .line 37
-    :catchall_24
+    :catchall_1
     move-exception p1
 
     .line 38
     monitor-exit p2
-    :try_end_26
-    .catchall {:try_start_1d .. :try_end_26} :catchall_24
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 39
     throw p1
 
     .line 40
-    :goto_27
-    :try_start_27
+    :goto_0
+    :try_start_2
     monitor-exit p1
-    :try_end_28
-    .catchall {:try_start_27 .. :try_end_28} :catchall_10
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 41
     throw p2
 .end method
 
 .method public selectApplicationProtocol([B)I
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -2908,7 +2908,7 @@
     move-result-object v0
 
     .line 7
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     .line 8
     .line 9
@@ -2918,7 +2918,7 @@
     return p1
 
     .line 11
-    :cond_a
+    :cond_0
     invoke-virtual {v0, p1}, Lorg/conscrypt/ApplicationProtocolSelectorAdapter;->selectApplicationProtocol([B)I
 
     .line 12
@@ -2931,7 +2931,7 @@
 .end method
 
 .method public final serverCertificateRequested()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
@@ -2941,7 +2941,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
 
     .line 5
@@ -2957,20 +2957,20 @@
     return-void
 
     .line 11
-    :catchall_a
+    :catchall_0
     move-exception v1
 
     .line 12
     monitor-exit v0
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 13
     throw v1
 .end method
 
 .method public final serverPSKKeyRequested(Ljava/lang/String;Ljava/lang/String;[B)I
-    .registers 5
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
@@ -2989,7 +2989,7 @@
 .end method
 
 .method public final serverSessionRequested([B)J
-    .registers 4
+    .locals 2
 
     .line 1
     const-wide/16 v0, 0x0
@@ -3000,20 +3000,20 @@
 .end method
 
 .method public final setApplicationProtocolSelector(Lorg/conscrypt/ApplicationProtocolSelector;)V
-    .registers 3
+    .locals 1
 
     .line 1
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     .line 2
     .line 3
     const/4 p1, 0x0
 
     .line 4
-    goto :goto_a
+    goto :goto_0
 
     .line 5
-    :cond_4
+    :cond_0
     new-instance v0, Lorg/conscrypt/ApplicationProtocolSelectorAdapter;
 
     .line 6
@@ -3026,7 +3026,7 @@
     move-object p1, v0
 
     .line 11
-    :goto_a
+    :goto_0
     invoke-virtual {p0, p1}, Lorg/conscrypt/ConscryptFileDescriptorSocket;->setApplicationProtocolSelector(Lorg/conscrypt/ApplicationProtocolSelectorAdapter;)V
 
     .line 12
@@ -3036,7 +3036,7 @@
 .end method
 
 .method public final setApplicationProtocolSelector(Lorg/conscrypt/ApplicationProtocolSelectorAdapter;)V
-    .registers 3
+    .locals 1
 
     .line 15
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -3047,7 +3047,7 @@
 .end method
 
 .method public final setApplicationProtocols([Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -3063,7 +3063,7 @@
 .end method
 
 .method public final setChannelIdEnabled(Z)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/ConscryptFileDescriptorSocket;->getUseClientMode()Z
@@ -3074,7 +3074,7 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_1
 
     .line 6
     .line 7
@@ -3085,18 +3085,18 @@
     monitor-enter v0
 
     .line 10
-    :try_start_9
+    :try_start_0
     iget v1, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->state:I
 
     .line 11
     .line 12
-    if-nez v1, :cond_15
+    if-nez v1, :cond_0
 
     .line 13
     .line 14
     monitor-exit v0
-    :try_end_e
-    .catchall {:try_start_9 .. :try_end_e} :catchall_13
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 15
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -3110,15 +3110,15 @@
     return-void
 
     .line 20
-    :catchall_13
+    :catchall_0
     move-exception p1
 
     .line 21
-    goto :goto_1d
+    goto :goto_0
 
     .line 22
-    :cond_15
-    :try_start_15
+    :cond_0
+    :try_start_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     .line 23
@@ -3135,16 +3135,16 @@
     throw p1
 
     .line 30
-    :goto_1d
+    :goto_0
     monitor-exit v0
-    :try_end_1e
-    .catchall {:try_start_15 .. :try_end_1e} :catchall_13
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 31
     throw p1
 
     .line 32
-    :cond_1f
+    :cond_1
     const-string p1, "Client mode"
 
     .line 33
@@ -3158,7 +3158,7 @@
 .end method
 
 .method public final setChannelIdPrivateKey(Ljava/security/PrivateKey;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/ConscryptFileDescriptorSocket;->getUseClientMode()Z
@@ -3169,7 +3169,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_4
 
     .line 6
     .line 7
@@ -3180,18 +3180,18 @@
     monitor-enter v0
 
     .line 10
-    :try_start_9
+    :try_start_0
     iget v1, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->state:I
 
     .line 11
     .line 12
-    if-nez v1, :cond_3c
+    if-nez v1, :cond_3
 
     .line 13
     .line 14
     monitor-exit v0
-    :try_end_e
-    .catchall {:try_start_9 .. :try_end_e} :catchall_3a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 15
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -3201,7 +3201,7 @@
     const/4 v1, 0x0
 
     .line 18
-    if-nez p1, :cond_19
+    if-nez p1, :cond_0
 
     .line 19
     .line 20
@@ -3219,7 +3219,7 @@
     return-void
 
     .line 26
-    :cond_19
+    :cond_0
     const/4 v2, 0x1
 
     .line 27
@@ -3227,12 +3227,12 @@
 
     .line 28
     .line 29
-    :try_start_1c
+    :try_start_1
     instance-of v0, p1, Ljava/security/interfaces/ECKey;
 
     .line 30
     .line 31
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_1
 
     .line 32
     .line 33
@@ -3251,8 +3251,8 @@
     move-result-object v1
 
     .line 40
-    :cond_27
-    if-nez v1, :cond_33
+    :cond_1
+    if-nez v1, :cond_2
 
     .line 41
     .line 42
@@ -3276,7 +3276,7 @@
     move-result-object v1
 
     .line 52
-    :cond_33
+    :cond_2
     invoke-static {p1, v1}, Lorg/conscrypt/OpenSSLKey;->fromECPrivateKeyForTLSStackOnly(Ljava/security/PrivateKey;Ljava/security/spec/ECParameterSpec;)Lorg/conscrypt/OpenSSLKey;
 
     .line 53
@@ -3286,24 +3286,24 @@
 
     .line 56
     iput-object p1, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->channelIdPrivateKey:Lorg/conscrypt/OpenSSLKey;
-    :try_end_39
-    .catch Ljava/security/InvalidKeyException; {:try_start_1c .. :try_end_39} :catch_39
+    :try_end_1
+    .catch Ljava/security/InvalidKeyException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 57
     .line 58
-    :catch_39
+    :catch_0
     return-void
 
     .line 59
-    :catchall_3a
+    :catchall_0
     move-exception p1
 
     .line 60
-    goto :goto_44
+    goto :goto_0
 
     .line 61
-    :cond_3c
-    :try_start_3c
+    :cond_3
+    :try_start_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
     .line 62
@@ -3320,16 +3320,16 @@
     throw p1
 
     .line 69
-    :goto_44
+    :goto_0
     monitor-exit v0
-    :try_end_45
-    .catchall {:try_start_3c .. :try_end_45} :catchall_3a
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 70
     throw p1
 
     .line 71
-    :cond_46
+    :cond_4
     const-string p1, "Server mode"
 
     .line 72
@@ -3343,7 +3343,7 @@
 .end method
 
 .method public final setEnableSessionCreation(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -3359,7 +3359,7 @@
 .end method
 
 .method public final setEnabledCipherSuites([Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -3375,7 +3375,7 @@
 .end method
 
 .method public final setEnabledProtocols([Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -3391,7 +3391,7 @@
 .end method
 
 .method public final setHandshakeTimeout(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput p1, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->handshakeTimeoutMilliseconds:I
@@ -3402,28 +3402,28 @@
 .end method
 
 .method public final setHostname(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
 
     .line 2
     .line 3
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_0
 
     .line 4
     .line 5
     const/4 v1, 0x1
 
     .line 6
-    goto :goto_7
+    goto :goto_0
 
     .line 7
-    :cond_6
+    :cond_0
     const/4 v1, 0x0
 
     .line 8
-    :goto_7
+    :goto_0
     invoke-virtual {v0, v1}, Lorg/conscrypt/SSLParametersImpl;->setUseSni(Z)V
 
     .line 9
@@ -3438,7 +3438,7 @@
 .end method
 
 .method public final setNeedClientAuth(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -3454,7 +3454,7 @@
 .end method
 
 .method public final setSSLParameters(Ljavax/net/ssl/SSLParameters;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-super {p0, p1}, Ljavax/net/ssl/SSLSocket;->setSSLParameters(Ljavax/net/ssl/SSLParameters;)V
@@ -3475,7 +3475,7 @@
 .end method
 
 .method public final setSoWriteTimeout(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     iput p1, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->writeTimeoutMilliseconds:I
@@ -3494,7 +3494,7 @@
 .end method
 
 .method public final setUseClientMode(Z)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
@@ -3504,18 +3504,18 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget v1, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->state:I
 
     .line 5
     .line 6
-    if-nez v1, :cond_10
+    if-nez v1, :cond_0
 
     .line 7
     .line 8
     monitor-exit v0
-    :try_end_8
-    .catchall {:try_start_3 .. :try_end_8} :catchall_e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 9
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -3530,15 +3530,15 @@
     return-void
 
     .line 15
-    :catchall_e
+    :catchall_0
     move-exception p1
 
     .line 16
-    goto :goto_18
+    goto :goto_0
 
     .line 17
-    :cond_10
-    :try_start_10
+    :cond_0
+    :try_start_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     .line 18
@@ -3555,17 +3555,17 @@
     throw p1
 
     .line 25
-    :goto_18
+    :goto_0
     monitor-exit v0
-    :try_end_19
-    .catchall {:try_start_10 .. :try_end_19} :catchall_e
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 26
     throw p1
 .end method
 
 .method public final setUseSessionTickets(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -3581,7 +3581,7 @@
 .end method
 
 .method public final setWantClientAuth(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -3597,7 +3597,7 @@
 .end method
 
 .method public final startHandshake()V
-    .registers 9
+    .locals 8
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/AbstractConscryptSocket;->checkOpen()V
@@ -3612,12 +3612,12 @@
     monitor-enter v0
 
     .line 7
-    :try_start_6
+    :try_start_0
     iget v1, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->state:I
 
     .line 8
     .line 9
-    if-nez v1, :cond_152
+    if-nez v1, :cond_b
 
     .line 10
     .line 11
@@ -3630,8 +3630,8 @@
     .line 14
     .line 15
     monitor-exit v0
-    :try_end_f
-    .catchall {:try_start_6 .. :try_end_f} :catchall_150
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_a
 
     .line 16
     const/4 v0, 0x1
@@ -3641,7 +3641,7 @@
 
     .line 18
     .line 19
-    :try_start_12
+    :try_start_1
     iget-object v3, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->guard:Ljava/lang/Object;
 
     .line 20
@@ -3684,7 +3684,7 @@
     move-result v3
 
     .line 41
-    if-eqz v3, :cond_4a
+    if-eqz v3, :cond_0
 
     .line 42
     .line 43
@@ -3724,7 +3724,7 @@
     move-result-object v3
 
     .line 61
-    if-eqz v3, :cond_4a
+    if-eqz v3, :cond_0
 
     .line 62
     .line 63
@@ -3737,27 +3737,27 @@
     .line 66
     .line 67
     .line 68
-    goto :goto_4a
+    goto :goto_0
 
     .line 69
-    :catchall_44
+    :catchall_0
     move-exception v1
 
     .line 70
-    goto/16 :goto_13a
+    goto/16 :goto_a
 
     .line 71
     .line 72
-    :catch_47
+    :catch_0
     move-exception v1
 
     .line 73
-    goto/16 :goto_12c
+    goto/16 :goto_9
 
     .line 74
     .line 75
-    :cond_4a
-    :goto_4a
+    :cond_0
+    :goto_0
     invoke-virtual {p0}, Lorg/conscrypt/AbstractConscryptSocket;->getSoTimeout()I
 
     .line 76
@@ -3778,7 +3778,7 @@
 
     .line 84
     .line 85
-    if-ltz v5, :cond_5e
+    if-ltz v5, :cond_1
 
     .line 86
     .line 87
@@ -3796,29 +3796,29 @@
     .line 93
     .line 94
     .line 95
-    :cond_5e
+    :cond_1
     iget-object v5, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
 
     .line 96
     .line 97
     monitor-enter v5
-    :try_end_61
-    .catch Ljavax/net/ssl/SSLProtocolException; {:try_start_12 .. :try_end_61} :catch_47
-    .catchall {:try_start_12 .. :try_end_61} :catchall_44
+    :try_end_1
+    .catch Ljavax/net/ssl/SSLProtocolException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 98
-    :try_start_61
+    :try_start_2
     iget v6, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->state:I
 
     .line 99
     .line 100
-    if-ne v6, v2, :cond_7c
+    if-ne v6, v2, :cond_2
 
     .line 101
     .line 102
     monitor-exit v5
-    :try_end_66
-    .catchall {:try_start_61 .. :try_end_66} :catchall_79
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
     .line 103
     iget-object v1, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
@@ -3828,7 +3828,7 @@
     monitor-enter v1
 
     .line 106
-    :try_start_69
+    :try_start_3
     invoke-direct {p0, v2}, Lorg/conscrypt/ConscryptFileDescriptorSocket;->transitionTo(I)V
 
     .line 107
@@ -3844,51 +3844,51 @@
     .line 113
     .line 114
     monitor-exit v1
-    :try_end_72
-    .catchall {:try_start_69 .. :try_end_72} :catchall_76
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 115
-    :try_start_72
+    :try_start_4
     invoke-direct {p0}, Lorg/conscrypt/ConscryptFileDescriptorSocket;->shutdownAndFreeSslNative()V
-    :try_end_75
-    .catch Ljava/io/IOException; {:try_start_72 .. :try_end_75} :catch_75
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
 
     .line 116
     .line 117
     .line 118
-    :catch_75
+    :catch_1
     return-void
 
     .line 119
-    :catchall_76
+    :catchall_1
     move-exception v0
 
     .line 120
-    :try_start_77
+    :try_start_5
     monitor-exit v1
-    :try_end_78
-    .catchall {:try_start_77 .. :try_end_78} :catchall_76
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
     .line 121
     throw v0
 
     .line 122
-    :catchall_79
+    :catchall_2
     move-exception v1
 
     .line 123
-    goto/16 :goto_12a
+    goto/16 :goto_8
 
     .line 124
     .line 125
-    :cond_7c
-    :try_start_7c
+    :cond_2
+    :try_start_6
     monitor-exit v5
-    :try_end_7d
-    .catchall {:try_start_7c .. :try_end_7d} :catchall_79
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
     .line 126
-    :try_start_7d
+    :try_start_7
     iget-object v5, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
 
     .line 127
@@ -3939,37 +3939,37 @@
 
     .line 151
     invoke-virtual {v5, v6, v7}, Lorg/conscrypt/ActiveSession;->onPeerCertificateAvailable(Ljava/lang/String;I)V
-    :try_end_99
-    .catch Ljava/security/cert/CertificateException; {:try_start_7d .. :try_end_99} :catch_fa
-    .catch Ljavax/net/ssl/SSLException; {:try_start_7d .. :try_end_99} :catch_f8
-    .catchall {:try_start_7d .. :try_end_99} :catchall_44
+    :try_end_7
+    .catch Ljava/security/cert/CertificateException; {:try_start_7 .. :try_end_7} :catch_5
+    .catch Ljavax/net/ssl/SSLException; {:try_start_7 .. :try_end_7} :catch_4
+    .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
     .line 152
     .line 153
     .line 154
-    :try_start_99
+    :try_start_8
     iget-object v5, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
 
     .line 155
     .line 156
     monitor-enter v5
-    :try_end_9c
-    .catch Ljavax/net/ssl/SSLProtocolException; {:try_start_99 .. :try_end_9c} :catch_47
-    .catchall {:try_start_99 .. :try_end_9c} :catchall_44
+    :try_end_8
+    .catch Ljavax/net/ssl/SSLProtocolException; {:try_start_8 .. :try_end_8} :catch_0
+    .catchall {:try_start_8 .. :try_end_8} :catchall_0
 
     .line 157
-    :try_start_9c
+    :try_start_9
     iget v6, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->state:I
 
     .line 158
     .line 159
-    if-ne v6, v2, :cond_b6
+    if-ne v6, v2, :cond_3
 
     .line 160
     .line 161
     monitor-exit v5
-    :try_end_a1
-    .catchall {:try_start_9c .. :try_end_a1} :catchall_b4
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_4
 
     .line 162
     iget-object v1, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
@@ -3979,7 +3979,7 @@
     monitor-enter v1
 
     .line 165
-    :try_start_a4
+    :try_start_a
     invoke-direct {p0, v2}, Lorg/conscrypt/ConscryptFileDescriptorSocket;->transitionTo(I)V
 
     .line 166
@@ -3995,55 +3995,55 @@
     .line 172
     .line 173
     monitor-exit v1
-    :try_end_ad
-    .catchall {:try_start_a4 .. :try_end_ad} :catchall_b1
+    :try_end_a
+    .catchall {:try_start_a .. :try_end_a} :catchall_3
 
     .line 174
-    :try_start_ad
+    :try_start_b
     invoke-direct {p0}, Lorg/conscrypt/ConscryptFileDescriptorSocket;->shutdownAndFreeSslNative()V
-    :try_end_b0
-    .catch Ljava/io/IOException; {:try_start_ad .. :try_end_b0} :catch_b0
+    :try_end_b
+    .catch Ljava/io/IOException; {:try_start_b .. :try_end_b} :catch_2
 
     .line 175
     .line 176
     .line 177
-    :catch_b0
+    :catch_2
     return-void
 
     .line 178
-    :catchall_b1
+    :catchall_3
     move-exception v0
 
     .line 179
-    :try_start_b2
+    :try_start_c
     monitor-exit v1
-    :try_end_b3
-    .catchall {:try_start_b2 .. :try_end_b3} :catchall_b1
+    :try_end_c
+    .catchall {:try_start_c .. :try_end_c} :catchall_3
 
     .line 180
     throw v0
 
     .line 181
-    :catchall_b4
+    :catchall_4
     move-exception v1
 
     .line 182
-    goto :goto_f6
+    goto :goto_4
 
     .line 183
-    :cond_b6
-    :try_start_b6
+    :cond_3
+    :try_start_d
     monitor-exit v5
-    :try_end_b7
-    .catchall {:try_start_b6 .. :try_end_b7} :catchall_b4
+    :try_end_d
+    .catchall {:try_start_d .. :try_end_d} :catchall_4
 
     .line 184
-    :try_start_b7
+    :try_start_e
     iget v5, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->handshakeTimeoutMilliseconds:I
 
     .line 185
     .line 186
-    if-ltz v5, :cond_c1
+    if-ltz v5, :cond_4
 
     .line 187
     .line 188
@@ -4057,35 +4057,35 @@
     .line 192
     .line 193
     .line 194
-    :cond_c1
+    :cond_4
     iget-object v3, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
 
     .line 195
     .line 196
     monitor-enter v3
-    :try_end_c4
-    .catch Ljavax/net/ssl/SSLProtocolException; {:try_start_b7 .. :try_end_c4} :catch_47
-    .catchall {:try_start_b7 .. :try_end_c4} :catchall_44
+    :try_end_e
+    .catch Ljavax/net/ssl/SSLProtocolException; {:try_start_e .. :try_end_e} :catch_0
+    .catchall {:try_start_e .. :try_end_e} :catchall_0
 
     .line 197
-    :try_start_c4
+    :try_start_f
     iget v4, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->state:I
 
     .line 198
     .line 199
-    if-ne v4, v2, :cond_c9
+    if-ne v4, v2, :cond_5
 
     .line 200
     .line 201
-    goto :goto_ca
+    goto :goto_1
 
     .line 202
-    :cond_c9
+    :cond_5
     const/4 v0, 0x0
 
     .line 203
-    :goto_ca
-    if-ne v4, v1, :cond_d3
+    :goto_1
+    if-ne v4, v1, :cond_6
 
     .line 204
     .line 205
@@ -4097,17 +4097,17 @@
     .line 207
     .line 208
     .line 209
-    goto :goto_d7
+    goto :goto_2
 
     .line 210
-    :catchall_d1
+    :catchall_5
     move-exception v1
 
     .line 211
-    goto :goto_f4
+    goto :goto_3
 
     .line 212
-    :cond_d3
+    :cond_6
     const/4 v1, 0x5
 
     .line 213
@@ -4116,8 +4116,8 @@
     .line 214
     .line 215
     .line 216
-    :goto_d7
-    if-nez v0, :cond_de
+    :goto_2
+    if-nez v0, :cond_7
 
     .line 217
     .line 218
@@ -4130,13 +4130,13 @@
     .line 221
     .line 222
     .line 223
-    :cond_de
+    :cond_7
     monitor-exit v3
-    :try_end_df
-    .catchall {:try_start_c4 .. :try_end_df} :catchall_d1
+    :try_end_f
+    .catchall {:try_start_f .. :try_end_f} :catchall_5
 
     .line 224
-    if-eqz v0, :cond_113
+    if-eqz v0, :cond_8
 
     .line 225
     .line 226
@@ -4147,7 +4147,7 @@
     monitor-enter v0
 
     .line 229
-    :try_start_e4
+    :try_start_10
     invoke-direct {p0, v2}, Lorg/conscrypt/ConscryptFileDescriptorSocket;->transitionTo(I)V
 
     .line 230
@@ -4163,97 +4163,97 @@
     .line 236
     .line 237
     monitor-exit v0
-    :try_end_ed
-    .catchall {:try_start_e4 .. :try_end_ed} :catchall_f1
+    :try_end_10
+    .catchall {:try_start_10 .. :try_end_10} :catchall_6
 
     .line 238
-    :try_start_ed
+    :try_start_11
     invoke-direct {p0}, Lorg/conscrypt/ConscryptFileDescriptorSocket;->shutdownAndFreeSslNative()V
-    :try_end_f0
-    .catch Ljava/io/IOException; {:try_start_ed .. :try_end_f0} :catch_f0
+    :try_end_11
+    .catch Ljava/io/IOException; {:try_start_11 .. :try_end_11} :catch_3
 
     .line 239
     .line 240
     .line 241
-    :catch_f0
+    :catch_3
     return-void
 
     .line 242
-    :catchall_f1
+    :catchall_6
     move-exception v1
 
     .line 243
-    :try_start_f2
+    :try_start_12
     monitor-exit v0
-    :try_end_f3
-    .catchall {:try_start_f2 .. :try_end_f3} :catchall_f1
+    :try_end_12
+    .catchall {:try_start_12 .. :try_end_12} :catchall_6
 
     .line 244
     throw v1
 
     .line 245
-    :goto_f4
-    :try_start_f4
+    :goto_3
+    :try_start_13
     monitor-exit v3
-    :try_end_f5
-    .catchall {:try_start_f4 .. :try_end_f5} :catchall_d1
+    :try_end_13
+    .catchall {:try_start_13 .. :try_end_13} :catchall_5
 
     .line 246
-    :try_start_f5
+    :try_start_14
     throw v1
-    :try_end_f6
-    .catch Ljavax/net/ssl/SSLProtocolException; {:try_start_f5 .. :try_end_f6} :catch_47
-    .catchall {:try_start_f5 .. :try_end_f6} :catchall_44
+    :try_end_14
+    .catch Ljavax/net/ssl/SSLProtocolException; {:try_start_14 .. :try_end_14} :catch_0
+    .catchall {:try_start_14 .. :try_end_14} :catchall_0
 
     .line 247
-    :goto_f6
-    :try_start_f6
+    :goto_4
+    :try_start_15
     monitor-exit v5
-    :try_end_f7
-    .catchall {:try_start_f6 .. :try_end_f7} :catchall_b4
+    :try_end_15
+    .catchall {:try_start_15 .. :try_end_15} :catchall_4
 
     .line 248
-    :try_start_f7
+    :try_start_16
     throw v1
 
     .line 249
-    :catch_f8
+    :catch_4
     move-exception v1
 
     .line 250
-    goto :goto_fc
+    goto :goto_5
 
     .line 251
-    :catch_fa
+    :catch_5
     move-exception v1
 
     .line 252
-    goto :goto_11d
+    goto :goto_7
 
     .line 253
-    :goto_fc
+    :goto_5
     iget-object v3, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
 
     .line 254
     .line 255
     monitor-enter v3
-    :try_end_ff
-    .catch Ljavax/net/ssl/SSLProtocolException; {:try_start_f7 .. :try_end_ff} :catch_47
-    .catchall {:try_start_f7 .. :try_end_ff} :catchall_44
+    :try_end_16
+    .catch Ljavax/net/ssl/SSLProtocolException; {:try_start_16 .. :try_end_16} :catch_0
+    .catchall {:try_start_16 .. :try_end_16} :catchall_0
 
     .line 256
-    :try_start_ff
+    :try_start_17
     iget v4, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->state:I
 
     .line 257
     .line 258
-    if-ne v4, v2, :cond_119
+    if-ne v4, v2, :cond_9
 
     .line 259
     .line 260
     monitor-exit v3
-    :try_end_104
-    .catchall {:try_start_ff .. :try_end_104} :catchall_117
+    :try_end_17
+    .catchall {:try_start_17 .. :try_end_17} :catchall_8
 
     .line 261
     iget-object v1, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket;->ssl:Lorg/conscrypt/NativeSsl;
@@ -4263,7 +4263,7 @@
     monitor-enter v1
 
     .line 264
-    :try_start_107
+    :try_start_18
     invoke-direct {p0, v2}, Lorg/conscrypt/ConscryptFileDescriptorSocket;->transitionTo(I)V
 
     .line 265
@@ -4279,69 +4279,69 @@
     .line 271
     .line 272
     monitor-exit v1
-    :try_end_110
-    .catchall {:try_start_107 .. :try_end_110} :catchall_114
+    :try_end_18
+    .catchall {:try_start_18 .. :try_end_18} :catchall_7
 
     .line 273
-    :try_start_110
+    :try_start_19
     invoke-direct {p0}, Lorg/conscrypt/ConscryptFileDescriptorSocket;->shutdownAndFreeSslNative()V
-    :try_end_113
-    .catch Ljava/io/IOException; {:try_start_110 .. :try_end_113} :catch_113
+    :try_end_19
+    .catch Ljava/io/IOException; {:try_start_19 .. :try_end_19} :catch_6
 
     .line 274
     .line 275
     .line 276
-    :catch_113
-    :cond_113
+    :catch_6
+    :cond_8
     return-void
 
     .line 277
-    :catchall_114
+    :catchall_7
     move-exception v0
 
     .line 278
-    :try_start_115
+    :try_start_1a
     monitor-exit v1
-    :try_end_116
-    .catchall {:try_start_115 .. :try_end_116} :catchall_114
+    :try_end_1a
+    .catchall {:try_start_1a .. :try_end_1a} :catchall_7
 
     .line 279
     throw v0
 
     .line 280
-    :catchall_117
+    :catchall_8
     move-exception v1
 
     .line 281
-    goto :goto_11b
+    goto :goto_6
 
     .line 282
-    :cond_119
-    :try_start_119
+    :cond_9
+    :try_start_1b
     monitor-exit v3
-    :try_end_11a
-    .catchall {:try_start_119 .. :try_end_11a} :catchall_117
+    :try_end_1b
+    .catchall {:try_start_1b .. :try_end_1b} :catchall_8
 
     .line 283
-    :try_start_11a
+    :try_start_1c
     throw v1
-    :try_end_11b
-    .catch Ljavax/net/ssl/SSLProtocolException; {:try_start_11a .. :try_end_11b} :catch_47
-    .catchall {:try_start_11a .. :try_end_11b} :catchall_44
+    :try_end_1c
+    .catch Ljavax/net/ssl/SSLProtocolException; {:try_start_1c .. :try_end_1c} :catch_0
+    .catchall {:try_start_1c .. :try_end_1c} :catchall_0
 
     .line 284
-    :goto_11b
-    :try_start_11b
+    :goto_6
+    :try_start_1d
     monitor-exit v3
-    :try_end_11c
-    .catchall {:try_start_11b .. :try_end_11c} :catchall_117
+    :try_end_1d
+    .catchall {:try_start_1d .. :try_end_1d} :catchall_8
 
     .line 285
-    :try_start_11c
+    :try_start_1e
     throw v1
 
     .line 286
-    :goto_11d
+    :goto_7
     new-instance v3, Ljavax/net/ssl/SSLHandshakeException;
 
     .line 287
@@ -4365,27 +4365,27 @@
     .line 297
     .line 298
     throw v3
-    :try_end_12a
-    .catch Ljavax/net/ssl/SSLProtocolException; {:try_start_11c .. :try_end_12a} :catch_47
-    .catchall {:try_start_11c .. :try_end_12a} :catchall_44
+    :try_end_1e
+    .catch Ljavax/net/ssl/SSLProtocolException; {:try_start_1e .. :try_end_1e} :catch_0
+    .catchall {:try_start_1e .. :try_end_1e} :catchall_0
 
     .line 299
-    :goto_12a
-    :try_start_12a
+    :goto_8
+    :try_start_1f
     monitor-exit v5
-    :try_end_12b
-    .catchall {:try_start_12a .. :try_end_12b} :catchall_79
+    :try_end_1f
+    .catchall {:try_start_1f .. :try_end_1f} :catchall_2
 
     .line 300
-    :try_start_12b
+    :try_start_20
     throw v1
-    :try_end_12c
-    .catch Ljavax/net/ssl/SSLProtocolException; {:try_start_12b .. :try_end_12c} :catch_47
-    .catchall {:try_start_12b .. :try_end_12c} :catchall_44
+    :try_end_20
+    .catch Ljavax/net/ssl/SSLProtocolException; {:try_start_20 .. :try_end_20} :catch_0
+    .catchall {:try_start_20 .. :try_end_20} :catchall_0
 
     .line 301
-    :goto_12c
-    :try_start_12c
+    :goto_9
+    :try_start_21
     new-instance v3, Ljavax/net/ssl/SSLHandshakeException;
 
     .line 302
@@ -4412,12 +4412,12 @@
     .line 313
     .line 314
     throw v1
-    :try_end_13a
-    .catchall {:try_start_12c .. :try_end_13a} :catchall_44
+    :try_end_21
+    .catchall {:try_start_21 .. :try_end_21} :catchall_0
 
     .line 315
-    :goto_13a
-    if-eqz v0, :cond_14f
+    :goto_a
+    if-eqz v0, :cond_a
 
     .line 316
     .line 317
@@ -4428,7 +4428,7 @@
     monitor-enter v0
 
     .line 320
-    :try_start_13f
+    :try_start_22
     invoke-direct {p0, v2}, Lorg/conscrypt/ConscryptFileDescriptorSocket;->transitionTo(I)V
 
     .line 321
@@ -4444,77 +4444,77 @@
     .line 327
     .line 328
     monitor-exit v0
-    :try_end_148
-    .catchall {:try_start_13f .. :try_end_148} :catchall_14c
+    :try_end_22
+    .catchall {:try_start_22 .. :try_end_22} :catchall_9
 
     .line 329
-    :try_start_148
+    :try_start_23
     invoke-direct {p0}, Lorg/conscrypt/ConscryptFileDescriptorSocket;->shutdownAndFreeSslNative()V
-    :try_end_14b
-    .catch Ljava/io/IOException; {:try_start_148 .. :try_end_14b} :catch_14f
+    :try_end_23
+    .catch Ljava/io/IOException; {:try_start_23 .. :try_end_23} :catch_7
 
     .line 330
     .line 331
     .line 332
-    goto :goto_14f
+    goto :goto_b
 
     .line 333
-    :catchall_14c
+    :catchall_9
     move-exception v1
 
     .line 334
-    :try_start_14d
+    :try_start_24
     monitor-exit v0
-    :try_end_14e
-    .catchall {:try_start_14d .. :try_end_14e} :catchall_14c
+    :try_end_24
+    .catchall {:try_start_24 .. :try_end_24} :catchall_9
 
     .line 335
     throw v1
 
     .line 336
-    :catch_14f
-    :cond_14f
-    :goto_14f
+    :catch_7
+    :cond_a
+    :goto_b
     throw v1
 
     .line 337
-    :catchall_150
+    :catchall_a
     move-exception v1
 
     .line 338
-    goto :goto_154
+    goto :goto_c
 
     .line 339
-    :cond_152
-    :try_start_152
+    :cond_b
+    :try_start_25
     monitor-exit v0
 
     .line 340
     return-void
 
     .line 341
-    :goto_154
+    :goto_c
     monitor-exit v0
-    :try_end_155
-    .catchall {:try_start_152 .. :try_end_155} :catchall_150
+    :try_end_25
+    .catchall {:try_start_25 .. :try_end_25} :catchall_a
 
     .line 342
     throw v1
 .end method
 
 .method public final verifyCertificateChain([[BLjava/lang/String;)V
-    .registers 7
+    .locals 4
 
     .line 1
-    if-eqz p1, :cond_43
+    if-eqz p1, :cond_2
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     array-length v0, p1
 
     .line 4
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_2
 
     .line 5
     .line 6
@@ -4538,7 +4538,7 @@
     move-result-object v0
 
     .line 16
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_1
 
     .line 17
     .line 18
@@ -4575,7 +4575,7 @@
     move-result v1
 
     .line 35
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_0
 
     .line 36
     .line 37
@@ -4587,21 +4587,21 @@
     return-void
 
     .line 41
-    :catch_28
+    :catch_0
     move-exception p1
 
     .line 42
-    goto :goto_4b
+    goto :goto_0
 
     .line 43
-    :catch_2a
+    :catch_1
     move-exception p1
 
     .line 44
-    goto :goto_51
+    goto :goto_1
 
     .line 45
-    :cond_2c
+    :cond_0
     const/4 p2, 0x0
 
     .line 46
@@ -4633,7 +4633,7 @@
     return-void
 
     .line 60
-    :cond_3b
+    :cond_1
     new-instance p1, Ljava/security/cert/CertificateException;
 
     .line 61
@@ -4650,7 +4650,7 @@
     throw p1
 
     .line 68
-    :cond_43
+    :cond_2
     new-instance p1, Ljava/security/cert/CertificateException;
 
     .line 69
@@ -4665,12 +4665,12 @@
     .line 74
     .line 75
     throw p1
-    :try_end_4b
-    .catch Ljava/security/cert/CertificateException; {:try_start_2 .. :try_end_4b} :catch_2a
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_4b} :catch_28
+    :try_end_0
+    .catch Ljava/security/cert/CertificateException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 76
-    :goto_4b
+    :goto_0
     new-instance p2, Ljava/security/cert/CertificateException;
 
     .line 77
@@ -4683,6 +4683,6 @@
     throw p2
 
     .line 82
-    :goto_51
+    :goto_1
     throw p1
 .end method

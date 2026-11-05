@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;I)V
-    .registers 3
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -34,37 +34,37 @@
 .end method
 
 .method private dismissSafe()V
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Llibs/CustomThemeV128$ActionListener;->dialog:Llibs/ml1;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
-    :try_start_4
+    :try_start_0
     invoke-virtual {v0}, Llibs/od;->dismiss()V
-    :try_end_7
-    .catchall {:try_start_4 .. :try_end_7} :catchall_8
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_9
+    goto :goto_0
 
-    :catchall_8
+    :catchall_0
     nop
 
-    :cond_9
-    :goto_9
+    :cond_0
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 6
+    .locals 4
 
     iget v0, p0, Llibs/CustomThemeV128$ActionListener;->action:I
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_d
+    if-ne v0, v1, :cond_0
 
     iget-object v1, p0, Llibs/CustomThemeV128$ActionListener;->context:Landroid/content/Context;
 
@@ -74,10 +74,10 @@
 
     return-void
 
-    :cond_d
+    :cond_0
     const/16 v1, 0xb
 
-    if-ne v0, v1, :cond_18
+    if-ne v0, v1, :cond_1
 
     iget-object v1, p0, Llibs/CustomThemeV128$ActionListener;->context:Landroid/content/Context;
 
@@ -87,10 +87,10 @@
 
     return-void
 
-    :cond_18
+    :cond_1
     const/16 v1, 0xd
 
-    if-ne v0, v1, :cond_27
+    if-ne v0, v1, :cond_2
 
     invoke-direct {p0}, Llibs/CustomThemeV128$ActionListener;->dismissSafe()V
 
@@ -102,10 +102,10 @@
 
     return-void
 
-    :cond_27
+    :cond_2
     const/16 v1, 0x32
 
-    if-ne v0, v1, :cond_38
+    if-ne v0, v1, :cond_3
 
     invoke-direct {p0}, Llibs/CustomThemeV128$ActionListener;->dismissSafe()V
 
@@ -119,20 +119,20 @@
 
     return-void
 
-    :cond_38
+    :cond_3
     const/16 v1, 0x33
 
-    if-ne v0, v1, :cond_59
+    if-ne v0, v1, :cond_4
 
     iget-object v1, p0, Llibs/CustomThemeV128$ActionListener;->pathInput:Landroid/widget/EditText;
 
-    if-eqz v1, :cond_64
+    if-eqz v1, :cond_5
 
     invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v1
 
-    if-eqz v1, :cond_64
+    if-eqz v1, :cond_5
 
     invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -152,10 +152,10 @@
 
     return-void
 
-    :cond_59
+    :cond_4
     const/16 v1, 0x3c
 
-    if-ne v0, v1, :cond_64
+    if-ne v0, v1, :cond_5
 
     iget-object v1, p0, Llibs/CustomThemeV128$ActionListener;->context:Landroid/content/Context;
 
@@ -163,6 +163,6 @@
 
     invoke-static {v1, v2}, Llibs/CustomThemeV128;->shareExportedFile(Landroid/content/Context;Ljava/lang/String;)V
 
-    :cond_64
+    :cond_5
     return-void
 .end method

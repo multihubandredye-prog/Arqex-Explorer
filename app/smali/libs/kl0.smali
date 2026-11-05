@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
@@ -30,13 +30,13 @@
 .end method
 
 .method public static a(Llibs/rp0;Llibs/ik3;Ljava/util/LinkedHashMap;Z)Z
-    .registers 16
+    .locals 12
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :try_start_1
+    :try_start_0
     invoke-virtual {p0}, Llibs/rp0;->View()Llibs/zl0;
 
     .line 3
@@ -99,8 +99,8 @@
     .line 34
     .line 35
     move-result-object v1
-    :try_end_23
-    .catchall {:try_start_1 .. :try_end_23} :catchall_7f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 36
     const-wide/16 v2, 0x0
@@ -110,18 +110,18 @@
     const/4 v4, 0x0
 
     .line 39
-    :try_start_26
+    :try_start_1
     invoke-virtual {p0, v2, v3}, Llibs/rp0;->Post(J)Ljava/io/InputStream;
 
     .line 40
     .line 41
     .line 42
     move-result-object v2
-    :try_end_2a
-    .catchall {:try_start_26 .. :try_end_2a} :catchall_81
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
     .line 43
-    :try_start_2a
+    :try_start_2
     invoke-virtual {v1, v0}, Llibs/rp0;->Node(Z)Ljava/io/OutputStream;
 
     .line 44
@@ -238,7 +238,7 @@
     move-result p1
 
     .line 99
-    if-eqz p1, :cond_78
+    if-eqz p1, :cond_0
 
     .line 100
     .line 101
@@ -266,30 +266,30 @@
     move-result-object p0
 
     .line 113
-    if-eqz p0, :cond_78
+    if-eqz p0, :cond_0
 
     .line 114
     .line 115
     invoke-static {p0}, Llibs/t43;->Any(Llibs/rp0;)V
-    :try_end_75
-    .catchall {:try_start_2a .. :try_end_75} :catchall_76
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 116
     .line 117
     .line 118
-    goto :goto_78
+    goto :goto_0
 
     .line 119
-    :catchall_76
+    :catchall_0
     move-exception p0
 
     .line 120
-    goto :goto_83
+    goto :goto_1
 
     .line 121
-    :cond_78
-    :goto_78
-    :try_start_78
+    :cond_0
+    :goto_0
+    :try_start_3
     invoke-static {v4}, Llibs/ji0;->k(Ljava/io/Closeable;)V
 
     .line 122
@@ -303,21 +303,21 @@
     return v8
 
     .line 128
-    :catchall_7f
+    :catchall_1
     move-exception p0
 
     .line 129
-    goto :goto_8a
+    goto :goto_2
 
     .line 130
-    :catchall_81
+    :catchall_2
     move-exception p0
 
     .line 131
     move-object v2, v4
 
     .line 132
-    :goto_83
+    :goto_1
     invoke-static {v4}, Llibs/ji0;->k(Ljava/io/Closeable;)V
 
     .line 133
@@ -329,11 +329,11 @@
     .line 137
     .line 138
     throw p0
-    :try_end_8a
-    .catchall {:try_start_78 .. :try_end_8a} :catchall_7f
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 139
-    :goto_8a
+    :goto_2
     const-string p1, "EXIF"
 
     .line 140

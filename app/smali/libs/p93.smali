@@ -22,7 +22,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/app/Activity;Ljava/util/HashMap;Llibs/rp0;[CLjava/lang/String;B)V
-    .registers 7
+    .locals 0
 
     .line 18
     iput-byte p6, p0, Llibs/p93;->X:B
@@ -43,7 +43,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/util/HashMap;Landroid/app/Activity;Llibs/rp0;[CLjava/lang/String;)V
-    .registers 7
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -84,7 +84,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 18
+    .locals 16
 
     .line 1
     move-object/from16 v0, p0
@@ -109,7 +109,7 @@
 
     .line 10
     .line 11
-    packed-switch v1, :pswitch_data_88
+    packed-switch v1, :pswitch_data_0
 
     .line 12
     .line 13
@@ -164,7 +164,7 @@
     return-void
 
     .line 40
-    :pswitch_27
+    :pswitch_0
     iget-object v6, v0, Llibs/p93;->Y:Ljava/util/HashMap;
 
     .line 41
@@ -181,7 +181,7 @@
 
     .line 47
     .line 48
-    if-nez v1, :cond_3e
+    if-nez v1, :cond_0
 
     .line 49
     .line 50
@@ -207,10 +207,10 @@
     .line 60
     .line 61
     .line 62
-    goto :goto_6c
+    goto :goto_0
 
     .line 63
-    :cond_3e
+    :cond_0
     new-instance v10, Llibs/$d;
 
     .line 64
@@ -297,11 +297,11 @@
     .line 107
     .line 108
     .line 109
-    :goto_6c
+    :goto_0
     return-void
 
     .line 110
-    :pswitch_6d
+    :pswitch_1
     new-instance v10, Ljava/util/ArrayList;
 
     .line 111
@@ -355,9 +355,9 @@
     nop
 
     .line 137
-    :pswitch_data_88
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_6d
-        :pswitch_27
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

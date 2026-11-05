@@ -13,7 +13,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public static readByte(Ljava/io/InputStream;)B
-    .registers 2
+    .locals 1
 
     .line 1
     :try_start_0
@@ -40,7 +40,7 @@
     const/4 v0, -0x1
 
     .line 6
-    if-eq p0, v0, :cond_9
+    if-eq p0, v0, :cond_0
 
     .line 7
     .line 8
@@ -50,7 +50,7 @@
     return p0
 
     .line 10
-    :cond_9
+    :cond_0
     new-instance p0, Lorg/conscrypt/ct/SerializationException;
 
     .line 11
@@ -65,11 +65,11 @@
     .line 16
     .line 17
     throw p0
-    :try_end_11
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_11} :catch_11
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 18
-    :catch_11
+    :catch_0
     move-exception p0
 
     .line 19
@@ -86,7 +86,7 @@
 .end method
 
 .method public static readDEROctetString(Ljava/io/InputStream;)[B
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-static {p0}, Lorg/conscrypt/ct/Serialization;->readByte(Ljava/io/InputStream;)B
@@ -104,7 +104,7 @@
     const/4 v1, 0x4
 
     .line 8
-    if-ne v0, v1, :cond_1d
+    if-ne v0, v1, :cond_1
 
     .line 9
     .line 10
@@ -123,7 +123,7 @@
 
     .line 16
     .line 17
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_0
 
     .line 18
     .line 19
@@ -139,7 +139,7 @@
     move-result v0
 
     .line 25
-    :cond_18
+    :cond_0
     invoke-static {p0, v0}, Lorg/conscrypt/ct/Serialization;->readFixedBytes(Ljava/io/InputStream;I)[B
 
     .line 26
@@ -151,7 +151,7 @@
     return-object p0
 
     .line 30
-    :cond_1d
+    :cond_1
     new-instance p0, Lorg/conscrypt/ct/SerializationException;
 
     .line 31
@@ -177,7 +177,7 @@
 .end method
 
 .method public static readDEROctetString([B)[B
-    .registers 2
+    .locals 1
 
     .line 42
     new-instance v0, Ljava/io/ByteArrayInputStream;
@@ -192,7 +192,7 @@
 .end method
 
 .method public static readFixedBytes(Ljava/io/InputStream;I)[B
-    .registers 5
+    .locals 3
 
     .line 1
     const-string v0, "Premature end of input, expected "
@@ -203,11 +203,11 @@
 
     .line 4
     .line 5
-    if-ltz p1, :cond_29
+    if-ltz p1, :cond_1
 
     .line 6
     .line 7
-    :try_start_6
+    :try_start_0
     new-array v1, p1, [B
 
     .line 8
@@ -220,14 +220,14 @@
     move-result p0
 
     .line 13
-    if-lt p0, p1, :cond_f
+    if-lt p0, p1, :cond_0
 
     .line 14
     .line 15
     return-object v1
 
     .line 16
-    :cond_f
+    :cond_0
     new-instance v1, Lorg/conscrypt/ct/SerializationException;
 
     .line 17
@@ -276,7 +276,7 @@
     throw v1
 
     .line 42
-    :cond_29
+    :cond_1
     new-instance p0, Lorg/conscrypt/ct/SerializationException;
 
     .line 43
@@ -309,11 +309,11 @@
     .line 58
     .line 59
     throw p0
-    :try_end_3b
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_3b} :catch_3b
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 60
-    :catch_3b
+    :catch_0
     move-exception p0
 
     .line 61
@@ -330,7 +330,7 @@
 .end method
 
 .method public static readList(Ljava/io/InputStream;II)[[B
-    .registers 4
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/util/ArrayList;
@@ -359,8 +359,8 @@
     .line 13
     .line 14
     .line 15
-    :goto_e
-    :try_start_e
+    :goto_0
+    :try_start_0
     invoke-virtual {p1}, Ljava/io/InputStream;->available()I
 
     .line 16
@@ -369,7 +369,7 @@
     move-result p0
 
     .line 19
-    if-lez p0, :cond_1c
+    if-lez p0, :cond_0
 
     .line 20
     .line 21
@@ -382,16 +382,16 @@
 
     .line 25
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_1b
-    .catch Ljava/io/IOException; {:try_start_e .. :try_end_1b} :catch_29
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 26
     .line 27
     .line 28
-    goto :goto_e
+    goto :goto_0
 
     .line 29
-    :cond_1c
+    :cond_0
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     .line 30
@@ -419,7 +419,7 @@
     return-object p0
 
     .line 42
-    :catch_29
+    :catch_0
     move-exception p0
 
     .line 43
@@ -432,19 +432,19 @@
     .line 46
     .line 47
     .line 48
-    goto :goto_31
+    goto :goto_2
 
     .line 49
-    :goto_30
+    :goto_1
     throw p1
 
     .line 50
-    :goto_31
-    goto :goto_30
+    :goto_2
+    goto :goto_1
 .end method
 
 .method public static readList([BII)[[B
-    .registers 4
+    .locals 1
 
     .line 51
     new-instance v0, Ljava/io/ByteArrayInputStream;
@@ -459,18 +459,18 @@
 .end method
 
 .method public static readLong(Ljava/io/InputStream;I)J
-    .registers 8
+    .locals 6
 
     .line 1
     const/16 v0, 0x8
 
     .line 2
     .line 3
-    if-gt p1, v0, :cond_18
+    if-gt p1, v0, :cond_1
 
     .line 4
     .line 5
-    if-ltz p1, :cond_18
+    if-ltz p1, :cond_1
 
     .line 6
     .line 7
@@ -481,8 +481,8 @@
     const/4 v3, 0x0
 
     .line 10
-    :goto_9
-    if-ge v3, p1, :cond_17
+    :goto_0
+    if-ge v3, p1, :cond_0
 
     .line 11
     .line 12
@@ -511,14 +511,14 @@
 
     .line 22
     .line 23
-    goto :goto_9
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_0
     return-wide v1
 
     .line 25
-    :cond_18
+    :cond_1
     const-string p0, "Invalid width: "
 
     .line 26
@@ -544,17 +544,17 @@
 .end method
 
 .method public static readNumber(Ljava/io/InputStream;I)I
-    .registers 5
+    .locals 3
 
     .line 1
     const/4 v0, 0x4
 
     .line 2
-    if-gt p1, v0, :cond_16
+    if-gt p1, v0, :cond_1
 
     .line 3
     .line 4
-    if-ltz p1, :cond_16
+    if-ltz p1, :cond_1
 
     .line 5
     .line 6
@@ -564,8 +564,8 @@
     const/4 v1, 0x0
 
     .line 8
-    :goto_7
-    if-ge v0, p1, :cond_15
+    :goto_0
+    if-ge v0, p1, :cond_0
 
     .line 9
     .line 10
@@ -592,14 +592,14 @@
 
     .line 20
     .line 21
-    goto :goto_7
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     return v1
 
     .line 23
-    :cond_16
+    :cond_1
     new-instance p0, Lorg/conscrypt/ct/SerializationException;
 
     .line 24
@@ -621,19 +621,19 @@
     .line 32
     .line 33
     .line 34
-    goto :goto_23
+    goto :goto_2
 
     .line 35
-    :goto_22
+    :goto_1
     throw p0
 
     .line 36
-    :goto_23
-    goto :goto_22
+    :goto_2
+    goto :goto_1
 .end method
 
 .method public static readVariableBytes(Ljava/io/InputStream;I)[B
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p0, p1}, Lorg/conscrypt/ct/Serialization;->readNumber(Ljava/io/InputStream;I)I
@@ -656,13 +656,13 @@
 .end method
 
 .method public static writeFixedBytes(Ljava/io/OutputStream;[B)V
-    .registers 2
+    .locals 0
 
     .line 1
     :try_start_0
     invoke-virtual {p0, p1}, Ljava/io/OutputStream;->write([B)V
-    :try_end_3
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_3} :catch_4
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 2
     .line 3
@@ -670,7 +670,7 @@
     return-void
 
     .line 5
-    :catch_4
+    :catch_0
     move-exception p0
 
     .line 6
@@ -687,10 +687,10 @@
 .end method
 
 .method public static writeNumber(Ljava/io/OutputStream;JI)V
-    .registers 9
+    .locals 5
 
     .line 1
-    if-ltz p3, :cond_5c
+    if-ltz p3, :cond_4
 
     .line 2
     .line 3
@@ -698,7 +698,7 @@
 
     .line 4
     .line 5
-    if-ge p3, v0, :cond_32
+    if-ge p3, v0, :cond_1
 
     .line 6
     .line 7
@@ -718,14 +718,14 @@
 
     .line 14
     .line 15
-    if-gez v2, :cond_11
+    if-gez v2, :cond_0
 
     .line 16
     .line 17
-    goto :goto_32
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     new-instance p0, Lorg/conscrypt/ct/SerializationException;
 
     .line 19
@@ -787,9 +787,9 @@
     throw p0
 
     .line 51
-    :cond_32
-    :goto_32
-    if-lez p3, :cond_5b
+    :cond_1
+    :goto_0
+    if-lez p3, :cond_3
 
     .line 52
     .line 53
@@ -816,7 +816,7 @@
 
     .line 63
     .line 64
-    if-gez v4, :cond_4d
+    if-gez v4, :cond_2
 
     .line 65
     .line 66
@@ -840,35 +840,35 @@
     int-to-byte v0, v1
 
     .line 74
-    :try_start_49
+    :try_start_0
     invoke-virtual {p0, v0}, Ljava/io/OutputStream;->write(I)V
 
     .line 75
     .line 76
     .line 77
-    goto :goto_51
+    goto :goto_1
 
     .line 78
-    :cond_4d
+    :cond_2
     const/4 v0, 0x0
 
     .line 79
     invoke-virtual {p0, v0}, Ljava/io/OutputStream;->write(I)V
-    :try_end_51
-    .catch Ljava/io/IOException; {:try_start_49 .. :try_end_51} :catch_54
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 80
     .line 81
     .line 82
-    :goto_51
+    :goto_1
     add-int/lit8 p3, p3, -0x1
 
     .line 83
     .line 84
-    goto :goto_32
+    goto :goto_0
 
     .line 85
-    :catch_54
+    :catch_0
     move-exception p0
 
     .line 86
@@ -884,11 +884,11 @@
     throw p1
 
     .line 92
-    :cond_5b
+    :cond_3
     return-void
 
     .line 93
-    :cond_5c
+    :cond_4
     new-instance p0, Lorg/conscrypt/ct/SerializationException;
 
     .line 94
@@ -910,19 +910,19 @@
     .line 102
     .line 103
     .line 104
-    goto :goto_69
+    goto :goto_3
 
     .line 105
-    :goto_68
+    :goto_2
     throw p0
 
     .line 106
-    :goto_69
-    goto :goto_68
+    :goto_3
+    goto :goto_2
 .end method
 
 .method public static writeVariableBytes(Ljava/io/OutputStream;[BI)V
-    .registers 5
+    .locals 2
 
     .line 1
     array-length v0, p1

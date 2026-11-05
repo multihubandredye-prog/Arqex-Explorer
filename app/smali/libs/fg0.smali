@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/security/spec/EllipticCurve;Ljava/security/spec/ECPoint;Ljava/math/BigInteger;Ljava/math/BigInteger;)V
-    .registers 6
+    .locals 0
 
     .line 116
     invoke-virtual {p5}, Ljava/math/BigInteger;->intValue()I
@@ -25,7 +25,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Llibs/kf0;Llibs/ig0;Ljava/math/BigInteger;Ljava/math/BigInteger;[B)V
-    .registers 13
+    .locals 6
 
     .line 1
     iget-object v0, p2, Llibs/kf0;->a:Llibs/lr0;
@@ -40,7 +40,7 @@
     move-result v1
 
     .line 7
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
@@ -61,10 +61,10 @@
     .line 16
     .line 17
     .line 18
-    goto :goto_3e
+    goto :goto_1
 
     .line 19
-    :cond_12
+    :cond_0
     check-cast v0, Llibs/lu0;
 
     .line 20
@@ -113,12 +113,12 @@
     const/4 v4, 0x0
 
     .line 41
-    :goto_28
+    :goto_0
     add-int/lit8 v2, v2, -0x1
 
     .line 42
     .line 43
-    if-ltz v2, :cond_34
+    if-ltz v2, :cond_1
 
     .line 44
     .line 45
@@ -137,10 +137,10 @@
     move v4, v5
 
     .line 52
-    goto :goto_28
+    goto :goto_0
 
     .line 53
-    :cond_34
+    :cond_1
     new-instance v1, Ljava/security/spec/ECFieldF2m;
 
     .line 54
@@ -161,7 +161,7 @@
     .line 61
     .line 62
     .line 63
-    :goto_3e
+    :goto_1
     iget-object v0, p2, Llibs/kf0;->b:Llibs/xf3;
 
     .line 64

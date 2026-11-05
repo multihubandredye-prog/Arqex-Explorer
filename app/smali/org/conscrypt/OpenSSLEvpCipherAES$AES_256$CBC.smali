@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/conscrypt/OpenSSLCipher$Padding;)V
-    .registers 3
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/OpenSSLCipher$Mode;->CBC:Lorg/conscrypt/OpenSSLCipher$Mode;

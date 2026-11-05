@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/o7;)V
-    .registers 7
+    .locals 5
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     const/4 v2, 0x0
 
     .line 14
-    if-ne v0, v1, :cond_3f
+    if-ne v0, v1, :cond_1
 
     .line 15
     .line 16
@@ -82,7 +82,7 @@
 
     .line 32
     .line 33
-    if-eqz v1, :cond_33
+    if-eqz v1, :cond_0
 
     .line 34
     .line 35
@@ -121,7 +121,7 @@
     return-void
 
     .line 52
-    :cond_33
+    :cond_0
     const-string p1, "Referral Entry for \'"
 
     .line 53
@@ -146,7 +146,7 @@
     throw v2
 
     .line 64
-    :cond_3f
+    :cond_1
     const-string v0, "Expecting exactly 1 referral for a domain referral, found: "
 
     .line 65
@@ -170,7 +170,7 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

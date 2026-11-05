@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -24,17 +24,17 @@
 
 # virtual methods
 .method public run()V
-    .registers 4
+    .locals 3
 
     :try_start_0
     sget-object v0, Llibs/zt0;->e:Lcom/mixplorer/activities/a;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     sget-object v0, Llibs/zt0;->g:Landroid/content/Context;
 
-    :cond_6
-    if-eqz v0, :cond_12
+    :cond_0
+    if-eqz v0, :cond_1
 
     iget-object v1, p0, Llibs/SmartFeaturesV116$ToastRunnable;->message:Ljava/lang/String;
 
@@ -45,10 +45,10 @@
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
-    :try_end_12
-    .catchall {:try_start_0 .. :try_end_12} :catchall_12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_12
-    :cond_12
+    :catchall_0
+    :cond_1
     return-void
 .end method

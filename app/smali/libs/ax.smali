@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Object;ZB)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-byte p4, p0, Llibs/ax;->X:B
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 13
+    .locals 11
 
     .line 1
     iget-byte v0, p0, Llibs/ax;->X:B
@@ -63,7 +63,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_4e
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -89,7 +89,7 @@
 
     .line 20
     .line 21
-    if-eqz p1, :cond_25
+    if-eqz p1, :cond_0
 
     .line 22
     .line 23
@@ -97,7 +97,7 @@
 
     .line 24
     .line 25
-    if-eqz p1, :cond_25
+    if-eqz p1, :cond_0
 
     .line 26
     .line 27
@@ -109,7 +109,7 @@
     move-result p1
 
     .line 31
-    if-eqz p1, :cond_25
+    if-eqz p1, :cond_0
 
     .line 32
     .line 33
@@ -122,11 +122,11 @@
     .line 36
     .line 37
     .line 38
-    :cond_25
+    :cond_0
     return-void
 
     .line 39
-    :pswitch_26
+    :pswitch_0
     check-cast v2, Lcom/mixplorer/activities/ConfigServerActivity;
 
     .line 40
@@ -209,8 +209,8 @@
     nop
 
     .line 79
-    :pswitch_data_4e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_26
+        :pswitch_0
     .end packed-switch
 .end method

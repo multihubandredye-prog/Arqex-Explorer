@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/h5;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iput-object p1, p0, Llibs/g5;->Lambda:Llibs/h5;
@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public final hasNext()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/g5;->X:I
@@ -70,7 +70,7 @@
 
     .line 4
     .line 5
-    if-eq v0, v1, :cond_8
+    if-eq v0, v1, :cond_0
 
     .line 6
     .line 7
@@ -80,7 +80,7 @@
     return v0
 
     .line 9
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 10
@@ -88,7 +88,7 @@
 .end method
 
 .method public final next()Ljava/lang/Object;
-    .registers 6
+    .locals 5
 
     .line 1
     iget v0, p0, Llibs/g5;->X:I
@@ -99,7 +99,7 @@
 
     .line 4
     .line 5
-    if-eq v0, v1, :cond_23
+    if-eq v0, v1, :cond_1
 
     .line 6
     .line 7
@@ -119,11 +119,11 @@
 
     .line 14
     .line 15
-    if-ne v2, v1, :cond_1d
+    if-ne v2, v1, :cond_0
 
     .line 16
     .line 17
-    if-eqz v4, :cond_1d
+    if-eqz v4, :cond_0
 
     .line 18
     .line 19
@@ -152,7 +152,7 @@
     return-object v4
 
     .line 30
-    :cond_1d
+    :cond_0
     new-instance v0, Ljava/util/ConcurrentModificationException;
 
     .line 31
@@ -165,7 +165,7 @@
     throw v0
 
     .line 36
-    :cond_23
+    :cond_1
     invoke-static {}, Llibs/t22;->b()V
 
     .line 37
@@ -178,14 +178,14 @@
 .end method
 
 .method public final remove()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget v0, p0, Llibs/g5;->Z:I
 
     .line 2
     .line 3
-    if-ltz v0, :cond_20
+    if-ltz v0, :cond_1
 
     .line 4
     .line 5
@@ -201,7 +201,7 @@
     move-result v0
 
     .line 11
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
@@ -239,7 +239,7 @@
 
     .line 28
     .line 29
-    :cond_1c
+    :cond_0
     const/4 v0, -0x1
 
     .line 30
@@ -250,7 +250,7 @@
     return-void
 
     .line 33
-    :cond_20
+    :cond_1
     invoke-static {}, Llibs/ic0;->r()V
 
     .line 34

@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/en3;-><init>()V
@@ -19,21 +19,21 @@
 
 # virtual methods
 .method public final d(J)Llibs/en3;
-    .registers 3
+    .locals 0
 
     .line 1
     return-object p0
 .end method
 
 .method public final f()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final g(J)Llibs/en3;
-    .registers 3
+    .locals 0
 
     .line 1
     return-object p0

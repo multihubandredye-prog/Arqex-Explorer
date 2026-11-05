@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;I)V
-    .registers 4
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/s82;->Bundle:Llibs/App;
@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public final engineGenerateSecret(Ljava/security/spec/KeySpec;)Ljavax/crypto/SecretKey;
-    .registers 13
+    .locals 11
 
     .line 1
     instance-of v0, p1, Ljavax/crypto/spec/PBEKeySpec;
@@ -41,7 +41,7 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_b0
+    if-eqz v0, :cond_7
 
     .line 5
     .line 6
@@ -60,7 +60,7 @@
     move-result-object p1
 
     .line 13
-    if-eqz p1, :cond_aa
+    if-eqz p1, :cond_6
 
     .line 14
     .line 15
@@ -72,7 +72,7 @@
     move-result p1
 
     .line 19
-    if-lez p1, :cond_92
+    if-lez p1, :cond_5
 
     .line 20
     .line 21
@@ -84,7 +84,7 @@
     move-result p1
 
     .line 25
-    if-lez p1, :cond_7a
+    if-lez p1, :cond_4
 
     .line 26
     .line 27
@@ -99,7 +99,7 @@
     array-length p1, p1
 
     .line 32
-    if-eqz p1, :cond_74
+    if-eqz p1, :cond_3
 
     .line 33
     .line 34
@@ -111,7 +111,7 @@
 
     .line 37
     .line 38
-    if-eqz p1, :cond_5e
+    if-eqz p1, :cond_2
 
     .line 39
     .line 40
@@ -142,7 +142,7 @@
     move-result v2
 
     .line 53
-    if-eqz v2, :cond_39
+    if-eqz v2, :cond_0
 
     .line 54
     .line 55
@@ -152,10 +152,10 @@
     const/4 v6, 0x6
 
     .line 57
-    goto :goto_43
+    goto :goto_0
 
     .line 58
-    :cond_39
+    :cond_0
     sget-object v2, Llibs/s82;->Task:Llibs/App;
 
     .line 59
@@ -168,7 +168,7 @@
     move-result v2
 
     .line 64
-    if-eqz v2, :cond_58
+    if-eqz v2, :cond_1
 
     .line 65
     .line 66
@@ -178,7 +178,7 @@
     const/4 v6, 0x1
 
     .line 68
-    :goto_43
+    :goto_0
     invoke-virtual {v9}, Ljavax/crypto/spec/PBEKeySpec;->getKeyLength()I
 
     .line 69
@@ -222,7 +222,7 @@
     return-object v2
 
     .line 89
-    :cond_58
+    :cond_1
     const-string v0, "Invalid KeySpec: unknown PRF algorithm "
 
     .line 90
@@ -235,7 +235,7 @@
     return-object v1
 
     .line 95
-    :cond_5e
+    :cond_2
     invoke-virtual {v9}, Ljavax/crypto/spec/PBEKeySpec;->getKeyLength()I
 
     .line 96
@@ -282,7 +282,7 @@
     return-object v2
 
     .line 117
-    :cond_74
+    :cond_3
     const-string p1, "password empty"
 
     .line 118
@@ -295,7 +295,7 @@
     return-object v1
 
     .line 123
-    :cond_7a
+    :cond_4
     new-instance p1, Ljava/security/spec/InvalidKeySpecException;
 
     .line 124
@@ -342,7 +342,7 @@
     throw p1
 
     .line 147
-    :cond_92
+    :cond_5
     new-instance p1, Ljava/security/spec/InvalidKeySpecException;
 
     .line 148
@@ -389,7 +389,7 @@
     throw p1
 
     .line 171
-    :cond_aa
+    :cond_6
     const-string p1, "missing required salt"
 
     .line 172
@@ -402,7 +402,7 @@
     return-object v1
 
     .line 177
-    :cond_b0
+    :cond_7
     const-string p1, "Invalid KeySpec"
 
     .line 178

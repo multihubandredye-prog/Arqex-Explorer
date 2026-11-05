@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/vq0;[BI)V
-    .registers 5
+    .locals 1
 
     .line 1
     iget-object v0, p1, Llibs/sy1;->c:Llibs/fi1;

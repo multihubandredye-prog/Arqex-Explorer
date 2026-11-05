@@ -33,7 +33,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 5
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
@@ -164,7 +164,7 @@
 
 # virtual methods
 .method public final c(Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-boolean p1, p0, Llibs/cj3;->Five:Z
@@ -175,7 +175,7 @@
 .end method
 
 .method public getCloseInterpolator()Landroid/view/animation/Interpolator;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/cj3;->Three:Landroid/view/animation/Interpolator;
@@ -186,7 +186,7 @@
 .end method
 
 .method public getOpenInterpolator()Landroid/view/animation/Interpolator;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/cj3;->Four:Landroid/view/animation/Interpolator;
@@ -197,14 +197,14 @@
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 9
+    .locals 7
 
     .line 1
     iget-boolean v0, p0, Llibs/cj3;->Five:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_117
+    if-eqz v0, :cond_d
 
     .line 4
     .line 5
@@ -231,15 +231,15 @@
 
     .line 15
     .line 16
-    if-gez v0, :cond_13
+    if-gez v0, :cond_0
 
     .line 17
     .line 18
-    goto/16 :goto_117
+    goto/16 :goto_1
 
     .line 19
     .line 20
-    :cond_13
+    :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     .line 21
@@ -248,7 +248,7 @@
     move-result v0
 
     .line 24
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_1
 
     .line 25
     .line 26
@@ -256,7 +256,7 @@
 
     .line 27
     .line 28
-    if-nez v0, :cond_22
+    if-nez v0, :cond_1
 
     .line 29
     .line 30
@@ -271,7 +271,7 @@
     return p1
 
     .line 35
-    :cond_22
+    :cond_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     .line 36
@@ -292,26 +292,26 @@
     const/4 v4, 0x1
 
     .line 43
-    if-eqz v0, :cond_a3
+    if-eqz v0, :cond_8
 
     .line 44
     .line 45
-    if-eq v0, v4, :cond_82
+    if-eq v0, v4, :cond_6
 
     .line 46
     .line 47
     const/4 v1, 0x2
 
     .line 48
-    if-eq v0, v1, :cond_33
+    if-eq v0, v1, :cond_2
 
     .line 49
     .line 50
-    goto/16 :goto_112
+    goto/16 :goto_0
 
     .line 51
     .line 52
-    :cond_33
+    :cond_2
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     .line 53
@@ -362,7 +362,7 @@
 
     .line 75
     .line 76
-    if-ne v6, v4, :cond_66
+    if-ne v6, v4, :cond_4
 
     .line 77
     .line 78
@@ -370,7 +370,7 @@
 
     .line 79
     .line 80
-    if-eqz v0, :cond_54
+    if-eqz v0, :cond_3
 
     .line 81
     .line 82
@@ -379,7 +379,7 @@
     .line 83
     .line 84
     .line 85
-    :cond_54
+    :cond_3
     invoke-virtual {p0}, Landroid/widget/AbsListView;->getSelector()Landroid/graphics/drawable/Drawable;
 
     .line 86
@@ -414,8 +414,8 @@
     return v4
 
     .line 103
-    :cond_66
-    if-nez v6, :cond_112
+    :cond_4
+    if-nez v6, :cond_c
 
     .line 104
     .line 105
@@ -438,7 +438,7 @@
 
     .line 113
     .line 114
-    if-lez v0, :cond_77
+    if-lez v0, :cond_5
 
     .line 115
     .line 116
@@ -446,11 +446,11 @@
 
     .line 117
     .line 118
-    goto/16 :goto_112
+    goto/16 :goto_0
 
     .line 119
     .line 120
-    :cond_77
+    :cond_5
     iget v0, p0, Llibs/cj3;->Tau:I
 
     .line 121
@@ -462,7 +462,7 @@
 
     .line 124
     .line 125
-    if-lez v0, :cond_112
+    if-lez v0, :cond_c
 
     .line 126
     .line 127
@@ -470,16 +470,16 @@
 
     .line 128
     .line 129
-    goto/16 :goto_112
+    goto/16 :goto_0
 
     .line 130
     .line 131
-    :cond_82
+    :cond_6
     iget v0, p0, Llibs/cj3;->Chi:I
 
     .line 132
     .line 133
-    if-ne v0, v4, :cond_112
+    if-ne v0, v4, :cond_c
 
     .line 134
     .line 135
@@ -487,7 +487,7 @@
 
     .line 136
     .line 137
-    if-eqz v0, :cond_9c
+    if-eqz v0, :cond_7
 
     .line 138
     .line 139
@@ -512,7 +512,7 @@
     move-result v0
 
     .line 150
-    if-nez v0, :cond_9c
+    if-nez v0, :cond_7
 
     .line 151
     .line 152
@@ -527,7 +527,7 @@
 
     .line 156
     .line 157
-    :cond_9c
+    :cond_7
     invoke-virtual {p1, v3}, Landroid/view/MotionEvent;->setAction(I)V
 
     .line 158
@@ -541,7 +541,7 @@
     return v4
 
     .line 164
-    :cond_a3
+    :cond_8
     iget v0, p0, Llibs/cj3;->Psi:I
 
     .line 165
@@ -608,7 +608,7 @@
 
     .line 195
     .line 196
-    if-ne v2, v0, :cond_d7
+    if-ne v2, v0, :cond_9
 
     .line 197
     .line 198
@@ -616,7 +616,7 @@
 
     .line 199
     .line 200
-    if-eqz v0, :cond_d7
+    if-eqz v0, :cond_9
 
     .line 201
     .line 202
@@ -628,7 +628,7 @@
     move-result v0
 
     .line 206
-    if-eqz v0, :cond_d7
+    if-eqz v0, :cond_9
 
     .line 207
     .line 208
@@ -648,7 +648,7 @@
     return v4
 
     .line 216
-    :cond_d7
+    :cond_9
     iget v0, p0, Llibs/cj3;->Psi:I
 
     .line 217
@@ -676,7 +676,7 @@
 
     .line 228
     .line 229
-    if-eqz v2, :cond_fe
+    if-eqz v2, :cond_a
 
     .line 230
     .line 231
@@ -688,7 +688,7 @@
     move-result v2
 
     .line 235
-    if-eqz v2, :cond_fe
+    if-eqz v2, :cond_a
 
     .line 236
     .line 237
@@ -726,12 +726,12 @@
     return v4
 
     .line 255
-    :cond_fe
+    :cond_a
     instance-of v1, v0, Llibs/aj3;
 
     .line 256
     .line 257
-    if-eqz v1, :cond_10b
+    if-eqz v1, :cond_b
 
     .line 258
     .line 259
@@ -752,12 +752,12 @@
     .line 266
     .line 267
     .line 268
-    :cond_10b
+    :cond_b
     iget-object v0, p0, Llibs/cj3;->Omega:Llibs/aj3;
 
     .line 269
     .line 270
-    if-eqz v0, :cond_112
+    if-eqz v0, :cond_c
 
     .line 271
     .line 272
@@ -766,8 +766,8 @@
     .line 273
     .line 274
     .line 275
-    :cond_112
-    :goto_112
+    :cond_c
+    :goto_0
     invoke-super {p0, p1}, Lcom/mixplorer/widgets/MiListView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     .line 276
@@ -779,8 +779,8 @@
     return p1
 
     .line 280
-    :cond_117
-    :goto_117
+    :cond_d
+    :goto_1
     invoke-super {p0, p1}, Lcom/mixplorer/widgets/MiListView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     .line 281
@@ -793,7 +793,7 @@
 .end method
 
 .method public bridge synthetic setAdapter(Landroid/widget/Adapter;)V
-    .registers 2
+    .locals 0
 
     .line 14
     check-cast p1, Landroid/widget/ListAdapter;
@@ -804,7 +804,7 @@
 .end method
 
 .method public setAdapter(Landroid/widget/ListAdapter;)V
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/ui3;
@@ -833,7 +833,7 @@
 .end method
 
 .method public setCloseInterpolator(Landroid/view/animation/Interpolator;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/cj3;->Three:Landroid/view/animation/Interpolator;
@@ -844,7 +844,7 @@
 .end method
 
 .method public setMenuCreator(Llibs/yi3;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/cj3;->One:Llibs/yi3;
@@ -855,7 +855,7 @@
 .end method
 
 .method public setOnMenuItemClickListener(Llibs/vi3;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/cj3;->Two:Llibs/vi3;
@@ -866,21 +866,21 @@
 .end method
 
 .method public setOnMenuStateChangeListener(Llibs/wi3;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public setOnSwipeListener(Llibs/xi3;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public setOpenInterpolator(Landroid/view/animation/Interpolator;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/cj3;->Four:Landroid/view/animation/Interpolator;
@@ -891,7 +891,7 @@
 .end method
 
 .method public setSwipeDirection(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput p1, p0, Llibs/cj3;->Rho:I

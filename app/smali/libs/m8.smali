@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Object;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/m8;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 16
+    .locals 10
 
     .line 1
     iget-byte p1, p0, Llibs/m8;->X:B
@@ -63,7 +63,7 @@
     const/4 v1, 0x0
 
     .line 9
-    packed-switch p1, :pswitch_data_190
+    packed-switch p1, :pswitch_data_0
 
     .line 10
     .line 11
@@ -106,7 +106,7 @@
     const/4 p5, 0x3
 
     .line 30
-    if-ne p3, p4, :cond_42
+    if-ne p3, p4, :cond_1
 
     .line 31
     .line 32
@@ -114,7 +114,7 @@
 
     .line 33
     .line 34
-    if-eqz p3, :cond_30
+    if-eqz p3, :cond_0
 
     .line 35
     .line 36
@@ -130,7 +130,7 @@
     move-result p3
 
     .line 42
-    if-nez p3, :cond_30
+    if-nez p3, :cond_0
 
     .line 43
     .line 44
@@ -143,7 +143,7 @@
     .line 47
     .line 48
     .line 49
-    :cond_30
+    :cond_0
     invoke-virtual {p1}, Lcom/mixplorer/activities/BrowseActivity;->Get()Llibs/xt1;
 
     .line 50
@@ -174,11 +174,11 @@
     .line 63
     .line 64
     .line 65
-    goto/16 :goto_145
+    goto/16 :goto_0
 
     .line 66
     .line 67
-    :cond_42
+    :cond_1
     sget p4, Llibs/wh2;->menu_create_section:I
 
     .line 68
@@ -187,7 +187,7 @@
 
     .line 70
     .line 71
-    if-ne p3, p4, :cond_84
+    if-ne p3, p4, :cond_2
 
     .line 72
     .line 73
@@ -303,16 +303,16 @@
 
     .line 130
     .line 131
-    goto/16 :goto_145
+    goto/16 :goto_0
 
     .line 132
     .line 133
-    :cond_84
+    :cond_2
     sget p4, Llibs/wh2;->menu_reset_defaults:I
 
     .line 134
     .line 135
-    if-ne p3, p4, :cond_95
+    if-ne p3, p4, :cond_3
 
     .line 136
     .line 137
@@ -341,16 +341,16 @@
     .line 146
     .line 147
     .line 148
-    goto/16 :goto_145
+    goto/16 :goto_0
 
     .line 149
     .line 150
-    :cond_95
+    :cond_3
     sget p4, Llibs/wh2;->menu_remove_all:I
 
     .line 151
     .line 152
-    if-ne p3, p4, :cond_a0
+    if-ne p3, p4, :cond_4
 
     .line 153
     .line 154
@@ -363,11 +363,11 @@
     .line 157
     .line 158
     .line 159
-    goto/16 :goto_145
+    goto/16 :goto_0
 
     .line 160
     .line 161
-    :cond_a0
+    :cond_4
     sget p4, Llibs/wh2;->menu_options:I
 
     .line 162
@@ -375,7 +375,7 @@
     const/4 v0, 0x0
 
     .line 164
-    if-ne p3, p4, :cond_13e
+    if-ne p3, p4, :cond_5
 
     .line 165
     .line 166
@@ -673,15 +673,15 @@
     .line 316
     .line 317
     .line 318
-    goto :goto_145
+    goto :goto_0
 
     .line 319
-    :cond_13e
+    :cond_5
     sget p4, Llibs/wh2;->menu_export:I
 
     .line 320
     .line 321
-    if-ne p3, p4, :cond_145
+    if-ne p3, p4, :cond_6
 
     .line 322
     .line 323
@@ -690,8 +690,8 @@
     .line 324
     .line 325
     .line 326
-    :cond_145
-    :goto_145
+    :cond_6
+    :goto_0
     iget-object p1, p1, Lcom/mixplorer/activities/a;->Lambda:Llibs/be2;
 
     .line 327
@@ -704,7 +704,7 @@
     return-void
 
     .line 332
-    :pswitch_14b
+    :pswitch_0
     check-cast p5, Llibs/lj;
 
     .line 333
@@ -713,7 +713,7 @@
 
     .line 335
     .line 336
-    :try_start_14f
+    :try_start_0
     invoke-virtual {p4, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     .line 337
@@ -744,16 +744,16 @@
     .line 350
     .line 351
     invoke-virtual {p5, p1}, Llibs/lj;->Param(Ljava/lang/String;)V
-    :try_end_161
-    .catchall {:try_start_14f .. :try_end_161} :catchall_162
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 352
     .line 353
     .line 354
-    goto :goto_173
+    goto :goto_1
 
     .line 355
-    :catchall_162
+    :catchall_0
     move-exception v0
 
     .line 356
@@ -789,11 +789,11 @@
     .line 370
     .line 371
     .line 372
-    :goto_173
+    :goto_1
     return-void
 
     .line 373
-    :pswitch_174
+    :pswitch_1
     check-cast p5, Landroid/widget/LinearLayout;
 
     .line 374
@@ -802,7 +802,7 @@
 
     .line 376
     .line 377
-    if-eqz p3, :cond_189
+    if-eqz p3, :cond_7
 
     .line 378
     .line 379
@@ -818,7 +818,7 @@
 
     .line 384
     .line 385
-    if-eq p1, p2, :cond_189
+    if-eq p1, p2, :cond_7
 
     .line 386
     .line 387
@@ -832,24 +832,24 @@
     .line 391
     .line 392
     .line 393
-    goto :goto_18e
+    goto :goto_2
 
     .line 394
-    :cond_189
-    if-nez p3, :cond_18e
+    :cond_7
+    if-nez p3, :cond_8
 
     invoke-static {p5, p4, p3}, Llibs/AutoTaskWatcher;->onTriggerAfterChanged(Landroid/view/View;Landroid/view/View;I)V
 
-    :cond_18e
-    :goto_18e
+    :cond_8
+    :goto_2
     return-void
 
     nop
 
     .line 409
-    :pswitch_data_190
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_174
-        :pswitch_14b
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

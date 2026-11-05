@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/PlayerActivity;Landroid/view/View;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/ed2;->d:Lcom/mixplorer/activities/PlayerActivity;
@@ -40,21 +40,21 @@
 
 # virtual methods
 .method public final onLayoutChange(Landroid/view/View;IIIIIIII)V
-    .registers 10
+    .locals 0
 
     .line 1
     iget-object p2, p0, Llibs/ed2;->c:Landroid/view/View;
 
     .line 2
     .line 3
-    if-eq p2, p1, :cond_5
+    if-eq p2, p1, :cond_0
 
     .line 4
     .line 5
-    goto :goto_16
+    goto :goto_0
 
     .line 6
-    :cond_5
+    :cond_0
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
     .line 7
@@ -67,7 +67,7 @@
 
     .line 11
     .line 12
-    if-ne p2, p3, :cond_17
+    if-ne p2, p3, :cond_2
 
     .line 13
     .line 14
@@ -83,20 +83,20 @@
 
     .line 19
     .line 20
-    if-eq p2, p3, :cond_16
+    if-eq p2, p3, :cond_1
 
     .line 21
     .line 22
-    goto :goto_17
+    goto :goto_1
 
     .line 23
-    :cond_16
-    :goto_16
+    :cond_1
+    :goto_0
     return-void
 
     .line 24
-    :cond_17
-    :goto_17
+    :cond_2
+    :goto_1
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
     .line 25

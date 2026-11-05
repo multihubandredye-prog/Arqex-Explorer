@@ -4,12 +4,12 @@
 
 # direct methods
 .method public static show(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 10
+    .locals 8
 
     :try_start_0
     sget-object v0, Llibs/zt0;->g:Landroid/content/Context;
 
-    if-eqz v0, :cond_49
+    if-eqz v0, :cond_1
 
     const-string v1, "notification"
 
@@ -23,7 +23,7 @@
 
     const/16 v3, 0x1a
 
-    if-lt v2, v3, :cond_25
+    if-lt v2, v3, :cond_0
 
     new-instance v4, Landroid/app/NotificationChannel;
 
@@ -41,14 +41,14 @@
 
     invoke-direct {v4, v0, v5}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    goto :goto_2a
+    goto :goto_0
 
-    :cond_25
+    :cond_0
     new-instance v4, Landroid/app/Notification$Builder;
 
     invoke-direct {v4, v0}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
 
-    :goto_2a
+    :goto_0
     invoke-virtual {v0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
     move-result-object v5
@@ -76,10 +76,10 @@
     long-to-int v6, v6
 
     invoke-virtual {v1, v6, v5}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
-    :try_end_49
-    .catchall {:try_start_0 .. :try_end_49} :catchall_49
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_49
-    :cond_49
+    :catchall_0
+    :cond_1
     return-void
 .end method

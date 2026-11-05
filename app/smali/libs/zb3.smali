@@ -29,7 +29,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-string v0, "jcifs.smb.client.SessionSetupAndX.TreeConnectAndX"
@@ -71,7 +71,7 @@
 .end method
 
 .method public constructor <init>(Llibs/rc3;Llibs/c63;Ljava/lang/Object;)V
-    .registers 10
+    .locals 6
 
     .line 1
     invoke-direct {p0, p2}, Llibs/d1;-><init>(Llibs/c63;)V
@@ -141,7 +141,7 @@
     const/4 v5, 0x1
 
     .line 34
-    if-ne v2, v5, :cond_c4
+    if-ne v2, v5, :cond_9
 
     .line 35
     .line 36
@@ -149,7 +149,7 @@
 
     .line 37
     .line 38
-    if-eqz v2, :cond_b5
+    if-eqz v2, :cond_7
 
     .line 39
     .line 40
@@ -161,7 +161,7 @@
 
     .line 43
     .line 44
-    if-ne p3, v2, :cond_3c
+    if-ne p3, v2, :cond_0
 
     .line 45
     .line 46
@@ -193,15 +193,15 @@
 
     .line 59
     .line 60
-    goto :goto_94
+    goto :goto_0
 
     .line 61
-    :cond_3c
+    :cond_0
     iget-boolean v1, v0, Llibs/tc3;->h:Z
 
     .line 62
     .line 63
-    if-eqz v1, :cond_61
+    if-eqz v1, :cond_2
 
     .line 64
     .line 65
@@ -248,21 +248,21 @@
     array-length v0, v0
 
     .line 86
-    if-nez v0, :cond_94
+    if-nez v0, :cond_4
 
     .line 87
     .line 88
     array-length p1, p1
 
     .line 89
-    if-eqz p1, :cond_5b
+    if-eqz p1, :cond_1
 
     .line 90
     .line 91
-    goto :goto_94
+    goto :goto_0
 
     .line 92
-    :cond_5b
+    :cond_1
     const-string p1, "Null setup prohibited."
 
     .line 93
@@ -275,12 +275,12 @@
     throw p2
 
     .line 98
-    :cond_61
+    :cond_2
     sget-boolean p1, Llibs/zb3;->Oscar:Z
 
     .line 99
     .line 100
-    if-nez p1, :cond_af
+    if-nez p1, :cond_6
 
     .line 101
     .line 102
@@ -292,7 +292,7 @@
 
     .line 105
     .line 106
-    if-eqz p1, :cond_80
+    if-eqz p1, :cond_3
 
     .line 107
     .line 108
@@ -336,10 +336,10 @@
     .line 126
     .line 127
     .line 128
-    goto :goto_94
+    goto :goto_0
 
     .line 129
-    :cond_80
+    :cond_3
     invoke-virtual {p2}, Ljava/lang/String;->length()I
 
     .line 130
@@ -380,8 +380,8 @@
     .line 147
     .line 148
     .line 149
-    :cond_94
-    :goto_94
+    :cond_4
+    :goto_0
     iget-object p1, p3, Llibs/g22;->Y:Ljava/lang/String;
 
     .line 150
@@ -394,7 +394,7 @@
 
     .line 154
     .line 155
-    if-eqz p2, :cond_a4
+    if-eqz p2, :cond_5
 
     .line 156
     .line 157
@@ -414,7 +414,7 @@
 
     .line 164
     .line 165
-    :cond_a4
+    :cond_5
     iget-object p1, p3, Llibs/g22;->X:Ljava/lang/String;
 
     .line 166
@@ -438,7 +438,7 @@
     return-void
 
     .line 176
-    :cond_af
+    :cond_6
     const-string p1, "Plain text passwords are disabled"
 
     .line 177
@@ -451,12 +451,12 @@
     throw p2
 
     .line 182
-    :cond_b5
+    :cond_7
     instance-of p1, p3, [B
 
     .line 183
     .line 184
-    if-eqz p1, :cond_be
+    if-eqz p1, :cond_8
 
     .line 185
     .line 186
@@ -471,7 +471,7 @@
     return-void
 
     .line 191
-    :cond_be
+    :cond_8
     new-instance p1, Llibs/lc3;
 
     .line 192
@@ -484,8 +484,8 @@
     throw p1
 
     .line 197
-    :cond_c4
-    if-nez v2, :cond_f5
+    :cond_9
+    if-nez v2, :cond_c
 
     .line 198
     .line 199
@@ -493,7 +493,7 @@
 
     .line 200
     .line 201
-    if-eqz p1, :cond_ef
+    if-eqz p1, :cond_b
 
     .line 202
     .line 203
@@ -529,7 +529,7 @@
 
     .line 218
     .line 219
-    if-eqz p2, :cond_e4
+    if-eqz p2, :cond_a
 
     .line 220
     .line 221
@@ -549,7 +549,7 @@
 
     .line 228
     .line 229
-    :cond_e4
+    :cond_a
     iget-object p1, p3, Llibs/g22;->X:Ljava/lang/String;
 
     .line 230
@@ -573,7 +573,7 @@
     return-void
 
     .line 240
-    :cond_ef
+    :cond_b
     new-instance p1, Llibs/lc3;
 
     .line 241
@@ -586,7 +586,7 @@
     throw p1
 
     .line 246
-    :cond_f5
+    :cond_c
     new-instance p1, Llibs/lc3;
 
     .line 247
@@ -606,7 +606,7 @@
 
 # virtual methods
 .method public final e(I[B)I
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -616,7 +616,7 @@
 .end method
 
 .method public final j(I[B)I
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -626,7 +626,7 @@
 .end method
 
 .method public final q(I[B)I
-    .registers 7
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
@@ -636,7 +636,7 @@
 
     .line 3
     .line 4
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_0
 
     .line 5
     .line 6
@@ -654,10 +654,10 @@
     add-int/2addr v0, p1
 
     .line 12
-    goto :goto_2e
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     iget-object v1, p0, Llibs/zb3;->Foxtrot:[B
 
     .line 14
@@ -732,7 +732,7 @@
     add-int/2addr v0, v1
 
     .line 47
-    :goto_2e
+    :goto_0
     sget-object v1, Llibs/kc3;->Save:Ljava/lang/String;
 
     .line 48
@@ -778,7 +778,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/String;
@@ -875,21 +875,21 @@
 
     .line 50
     .line 51
-    if-nez v3, :cond_36
+    if-nez v3, :cond_0
 
     .line 52
     .line 53
     const/4 v3, 0x0
 
     .line 54
-    goto :goto_37
+    goto :goto_0
 
     .line 55
-    :cond_36
+    :cond_0
     array-length v3, v3
 
     .line 56
-    :goto_37
+    :goto_0
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 57
@@ -908,18 +908,18 @@
 
     .line 65
     .line 66
-    if-nez v3, :cond_44
+    if-nez v3, :cond_1
 
     .line 67
     .line 68
-    goto :goto_45
+    goto :goto_1
 
     .line 69
-    :cond_44
+    :cond_1
     array-length v2, v3
 
     .line 70
-    :goto_45
+    :goto_1
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 71
@@ -1031,7 +1031,7 @@
 .end method
 
 .method public final v(I[B)I
-    .registers 7
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/zb3;->Lima:Llibs/rc3;
@@ -1108,7 +1108,7 @@
 
     .line 38
     .line 39
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_0
 
     .line 40
     .line 41
@@ -1127,10 +1127,10 @@
 
     .line 47
     .line 48
-    goto :goto_42
+    goto :goto_0
 
     .line 49
-    :cond_30
+    :cond_0
     iget-object v1, p0, Llibs/zb3;->Foxtrot:[B
 
     .line 50
@@ -1169,7 +1169,7 @@
 
     .line 66
     .line 67
-    :goto_42
+    :goto_0
     add-int/lit8 v1, v0, 0x1
 
     .line 68
@@ -1228,14 +1228,14 @@
 .end method
 
 .method public final x(B)I
-    .registers 3
+    .locals 1
 
     .line 1
     const/16 v0, 0x75
 
     .line 2
     .line 3
-    if-ne p1, v0, :cond_7
+    if-ne p1, v0, :cond_0
 
     .line 4
     .line 5
@@ -1246,7 +1246,7 @@
     return p1
 
     .line 8
-    :cond_7
+    :cond_0
     const/4 p1, 0x0
 
     .line 9

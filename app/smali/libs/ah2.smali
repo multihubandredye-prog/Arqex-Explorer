@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/yg2;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Llibs/bh2;-><init>()V
@@ -70,7 +70,7 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

@@ -11,7 +11,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/ad3;Llibs/wd3;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/yc3;->Mu:B
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final b()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/yc3;->Mu:B
@@ -44,7 +44,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_16
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -62,7 +62,7 @@
     return-void
 
     .line 15
-    :pswitch_e
+    :pswitch_0
     invoke-virtual {v1}, Llibs/as;->Wait()V
 
     .line 16
@@ -79,8 +79,8 @@
     nop
 
     .line 23
-    :pswitch_data_16
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_e
+        :pswitch_0
     .end packed-switch
 .end method

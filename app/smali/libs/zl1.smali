@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/ListIterator;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/zl1;->X:Ljava/util/ListIterator;
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final hasNext()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/zl1;->X:Ljava/util/ListIterator;
@@ -49,7 +49,7 @@
 .end method
 
 .method public final next()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/zl1;->X:Ljava/util/ListIterator;

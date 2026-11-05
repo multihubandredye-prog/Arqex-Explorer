@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/view/View;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -24,15 +24,15 @@
 
 # virtual methods
 .method public run()V
-    .registers 4
+    .locals 3
 
     iget-object v0, p0, Llibs/SmartFeaturesV126$ZoomPreviewResetRunnable;->view:Landroid/view/View;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
-    :cond_5
+    :cond_0
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0

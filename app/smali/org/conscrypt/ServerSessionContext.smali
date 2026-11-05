@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 1
     const/16 v0, 0x64
@@ -50,7 +50,7 @@
 
 # virtual methods
 .method public getSessionFromPersistentCache([B)Lorg/conscrypt/NativeSslSession;
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ServerSessionContext;->persistentCache:Lorg/conscrypt/SSLServerSessionCache;
@@ -60,7 +60,7 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 5
     .line 6
@@ -72,7 +72,7 @@
     move-result-object p1
 
     .line 10
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_0
 
     .line 11
     .line 12
@@ -87,7 +87,7 @@
     move-result-object p1
 
     .line 17
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_0
 
     .line 18
     .line 19
@@ -99,7 +99,7 @@
     move-result v0
 
     .line 23
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 24
     .line 25
@@ -111,19 +111,19 @@
     return-object p1
 
     .line 29
-    :cond_1c
+    :cond_0
     return-object v1
 .end method
 
 .method public onBeforeAddSession(Lorg/conscrypt/NativeSslSession;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ServerSessionContext;->persistentCache:Lorg/conscrypt/SSLServerSessionCache;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -135,7 +135,7 @@
     move-result-object v0
 
     .line 9
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -156,19 +156,19 @@
     .line 18
     .line 19
     .line 20
-    :cond_13
+    :cond_0
     return-void
 .end method
 
 .method public onBeforeRemoveSession(Lorg/conscrypt/NativeSslSession;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public setPersistentCache(Lorg/conscrypt/SSLServerSessionCache;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Lorg/conscrypt/ServerSessionContext;->persistentCache:Lorg/conscrypt/SSLServerSessionCache;

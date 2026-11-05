@@ -59,7 +59,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 20
+    .locals 20
 
     .line 1
     const-class v0, Ljava/lang/String;
@@ -81,7 +81,7 @@
     const/4 v4, 0x2
 
     .line 10
-    :try_start_9
+    :try_start_0
     new-array v5, v4, [Ljava/lang/String;
 
     .line 11
@@ -111,21 +111,21 @@
     const/4 v6, 0x0
 
     .line 23
-    :goto_16
+    :goto_0
     const/4 v9, 0x0
 
     .line 24
-    if-ge v6, v4, :cond_34
+    if-ge v6, v4, :cond_0
 
     .line 25
     .line 26
     aget-object v10, v5, v6
-    :try_end_1b
-    .catchall {:try_start_9 .. :try_end_1b} :catchall_21a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_6
 
     .line 27
     .line 28
-    :try_start_1b
+    :try_start_1
     new-instance v11, Ljava/lang/StringBuilder;
 
     .line 29
@@ -163,30 +163,30 @@
     .line 47
     .line 48
     move-result-object v5
-    :try_end_30
-    .catchall {:try_start_1b .. :try_end_30} :catchall_31
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 49
-    goto :goto_36
+    goto :goto_1
 
     .line 50
-    :catchall_31
+    :catchall_0
     add-int/lit8 v6, v6, 0x1
 
     .line 51
     .line 52
-    goto :goto_16
+    goto :goto_0
 
     .line 53
-    :cond_34
+    :cond_0
     move-object v5, v9
 
     .line 54
     move-object v10, v5
 
     .line 55
-    :goto_36
-    if-eqz v5, :cond_21a
+    :goto_1
+    if-eqz v5, :cond_4
 
     .line 56
     .line 57
@@ -202,10 +202,10 @@
     const/4 v13, 0x3
 
     .line 61
-    :try_start_3c
+    :try_start_2
     const-string v14, "EVP_AEAD_CTX_seal"
-    :try_end_3e
-    .catchall {:try_start_3c .. :try_end_3e} :catchall_b8
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 62
     .line 63
@@ -217,7 +217,7 @@
 
     .line 66
     .line 67
-    :try_start_42
+    :try_start_3
     new-array v7, v15, [Ljava/lang/Class;
 
     .line 68
@@ -396,21 +396,21 @@
 
     .line 156
     .line 157
-    if-eqz v7, :cond_a0
+    if-eqz v7, :cond_1
 
     .line 158
     .line 159
     const/4 v7, 0x1
 
     .line 160
-    goto :goto_a1
+    goto :goto_2
 
     .line 161
-    :cond_a0
+    :cond_1
     const/4 v7, 0x0
 
     .line 162
-    :goto_a1
+    :goto_2
     sput-boolean v7, Llibs/py;->x:Z
 
     .line 163
@@ -431,7 +431,7 @@
 
     .line 171
     .line 172
-    if-nez v7, :cond_b4
+    if-nez v7, :cond_3
 
     .line 173
     .line 174
@@ -439,43 +439,43 @@
 
     .line 175
     .line 176
-    if-eqz v7, :cond_b2
+    if-eqz v7, :cond_2
 
     .line 177
     .line 178
-    goto :goto_b4
+    goto :goto_3
 
     .line 179
-    :cond_b2
+    :cond_2
     const/4 v7, 0x0
 
     .line 180
-    goto :goto_b5
+    goto :goto_4
 
     .line 181
-    :cond_b4
-    :goto_b4
+    :cond_3
+    :goto_3
     const/4 v7, 0x1
 
     .line 182
-    :goto_b5
+    :goto_4
     sput-boolean v7, Llibs/py;->w:Z
-    :try_end_b7
-    .catchall {:try_start_42 .. :try_end_b7} :catchall_ba
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
     .line 183
     .line 184
-    goto :goto_ba
+    goto :goto_5
 
     .line 185
-    :catchall_b8
+    :catchall_1
     const/16 v16, 0x0
 
     .line 186
     .line 187
-    :catchall_ba
-    :goto_ba
-    :try_start_ba
+    :catchall_2
+    :goto_5
+    :try_start_4
     new-instance v7, Ljava/lang/StringBuilder;
 
     .line 188
@@ -665,13 +665,13 @@
     .line 284
     .line 285
     sput-boolean v8, Llibs/py;->z:Z
-    :try_end_11e
-    .catchall {:try_start_ba .. :try_end_11e} :catchall_11e
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_3
 
     .line 286
     .line 287
-    :catchall_11e
-    :try_start_11e
+    :catchall_3
+    :try_start_5
     new-instance v7, Ljava/lang/StringBuilder;
 
     .line 288
@@ -894,13 +894,13 @@
     .line 401
     .line 402
     sput-boolean v8, Llibs/py;->y:Z
-    :try_end_193
-    .catchall {:try_start_11e .. :try_end_193} :catchall_193
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_4
 
     .line 403
     .line 404
-    :catchall_193
-    :try_start_193
+    :catchall_4
+    :try_start_6
     new-instance v7, Ljava/lang/StringBuilder;
 
     .line 405
@@ -1114,13 +1114,13 @@
     .line 513
     .line 514
     sput-boolean v8, Llibs/py;->Object:Z
-    :try_end_203
-    .catchall {:try_start_193 .. :try_end_203} :catchall_203
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_5
 
     .line 515
     .line 516
-    :catchall_203
-    :try_start_203
+    :catchall_5
+    :try_start_7
     const-string v0, "Scrypt_generate_key"
 
     .line 517
@@ -1162,19 +1162,19 @@
 
     .line 536
     invoke-virtual {v0, v8}, Ljava/lang/reflect/Method;->setAccessible(Z)V
-    :try_end_21a
-    .catchall {:try_start_203 .. :try_end_21a} :catchall_21a
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_6
 
     .line 537
     .line 538
     .line 539
-    :catchall_21a
-    :cond_21a
+    :catchall_6
+    :cond_4
     return-void
 .end method
 
 .method public static a(Ljava/lang/Object;J[B[BZ)V
-    .registers 7
+    .locals 1
 
     .line 1
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1251,7 +1251,7 @@
 .end method
 
 .method public static b(Ljava/lang/Object;[BI[BII)V
-    .registers 8
+    .locals 2
 
     .line 1
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1355,7 +1355,7 @@
 .end method
 
 .method public static c(Ljava/lang/String;)J
-    .registers 3
+    .locals 2
 
     .line 1
     const/4 v0, 0x1
@@ -1403,13 +1403,13 @@
 .end method
 
 .method public static d(Ljava/lang/Class;Ljava/lang/String;)J
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :try_start_1
+    :try_start_0
     invoke-virtual {p0, p1, v0}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     .line 3
@@ -1434,14 +1434,14 @@
     move-result-object p0
 
     .line 14
-    if-nez p0, :cond_10
+    if-nez p0, :cond_0
 
     .line 15
     .line 16
-    goto :goto_17
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     check-cast p0, Ljava/lang/Long;
 
     .line 18
@@ -1452,15 +1452,15 @@
     .line 21
     .line 22
     move-result-wide p0
-    :try_end_16
-    .catchall {:try_start_1 .. :try_end_16} :catchall_17
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 23
     return-wide p0
 
     .line 24
-    :catchall_17
-    :goto_17
+    :catchall_0
+    :goto_0
     const-wide/16 p0, 0x0
 
     .line 25
@@ -1469,7 +1469,7 @@
 .end method
 
 .method public static e()Ljava/lang/Object;
-    .registers 3
+    .locals 3
 
     .line 1
     sget-object v0, Llibs/py;->r:Ljava/lang/reflect/Method;
@@ -1517,7 +1517,7 @@
 .end method
 
 .method public static f(J[BI[BI[B[BII[B)I
-    .registers 12
+    .locals 1
 
     .line 1
     invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1671,7 +1671,7 @@
 .end method
 
 .method public static g(J[BI[BI[B[BII[B)I
-    .registers 12
+    .locals 1
 
     .line 1
     invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;

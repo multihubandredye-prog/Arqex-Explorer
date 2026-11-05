@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/view/View;Ljava/lang/ref/WeakReference;Z)V
-    .registers 5
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,26 +38,26 @@
 
 # virtual methods
 .method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 9
+    .locals 3
 
     const/16 v0, 0x8
 
-    if-ne p3, v0, :cond_28
+    if-ne p3, v0, :cond_1
 
     iget-object v1, p0, Llibs/AutoTaskWatcher$IntervalListener;->triggerAtRow:Landroid/view/View;
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_0
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_b
+    :cond_0
     iget-boolean v0, p0, Llibs/AutoTaskWatcher$IntervalListener;->isNewTask:Z
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_2
 
     iget-boolean v0, p0, Llibs/AutoTaskWatcher$IntervalListener;->autoChecked:Z
 
-    if-nez v0, :cond_30
+    if-nez v0, :cond_2
 
     const/4 v0, 0x1
 
@@ -65,7 +65,7 @@
 
     iget-object v1, p0, Llibs/AutoTaskWatcher$IntervalListener;->checkBoxRef:Ljava/lang/ref/WeakReference;
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_2
 
     invoke-virtual {v1}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
@@ -73,7 +73,7 @@
 
     instance-of v2, v1, Landroid/widget/CheckBox;
 
-    if-eqz v2, :cond_30
+    if-eqz v2, :cond_2
 
     check-cast v1, Landroid/widget/CheckBox;
 
@@ -81,15 +81,15 @@
 
     return-void
 
-    :cond_28
+    :cond_1
     iget-object v0, p0, Llibs/AutoTaskWatcher$IntervalListener;->triggerAtRow:Landroid/view/View;
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_2
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_30
+    :cond_2
     return-void
 .end method

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/math/BigInteger;)V
-    .registers 3
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/Size;->g:Llibs/Level;
@@ -41,7 +41,7 @@
 .end method
 
 .method public constructor <init>(Ljava/math/BigInteger;[B)V
-    .registers 4
+    .locals 1
 
     .line 15
     sget-object v0, Llibs/Size;->g:Llibs/Level;
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public final a()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/Key;->Z:Ljava/math/BigInteger;

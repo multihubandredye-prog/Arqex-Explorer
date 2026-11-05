@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/security/AlgorithmParametersSpi;-><init>()V
@@ -23,7 +23,7 @@
 
 # virtual methods
 .method public final engineGetEncoded()[B
-    .registers 5
+    .locals 4
 
     .line 1
     :try_start_0
@@ -143,14 +143,14 @@
     .line 61
     .line 62
     move-result-object v0
-    :try_end_3e
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_3e} :catch_3f
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 63
     return-object v0
 
     .line 64
-    :catch_3f
+    :catch_0
     const-string v0, "Error encoding IESParameters"
 
     .line 65
@@ -167,9 +167,9 @@
 .end method
 
 .method public final engineGetEncoded(Ljava/lang/String;)[B
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_2
 
     .line 71
     const-string v0, "ASN.1"
@@ -178,30 +178,30 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
-    goto :goto_16
+    goto :goto_0
 
     .line 72
-    :cond_b
+    :cond_0
     const-string v0, "X.509"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_1
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_14
+    :cond_1
     const/4 p1, 0x0
 
     return-object p1
 
     .line 73
-    :cond_16
-    :goto_16
+    :cond_2
+    :goto_0
     invoke-virtual {p0}, Llibs/j0;->engineGetEncoded()[B
 
     move-result-object p1
@@ -210,13 +210,13 @@
 .end method
 
 .method public final engineGetParameterSpec(Ljava/lang/Class;)Ljava/security/spec/AlgorithmParameterSpec;
-    .registers 4
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_2
 
     .line 3
     .line 4
@@ -224,7 +224,7 @@
 
     .line 5
     .line 6
-    if-eq p1, v1, :cond_12
+    if-eq p1, v1, :cond_1
 
     .line 7
     .line 8
@@ -232,14 +232,14 @@
 
     .line 9
     .line 10
-    if-ne p1, v1, :cond_c
+    if-ne p1, v1, :cond_0
 
     .line 11
     .line 12
-    goto :goto_12
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     const-string p1, "unknown parameter spec passed to ElGamal parameters object."
 
     .line 14
@@ -252,8 +252,8 @@
     return-object v0
 
     .line 19
-    :cond_12
-    :goto_12
+    :cond_1
+    :goto_0
     iget-object p1, p0, Llibs/j0;->a:Llibs/o61;
 
     .line 20
@@ -261,7 +261,7 @@
     return-object p1
 
     .line 22
-    :cond_15
+    :cond_2
     const-string p1, "argument to getParameterSpec must not be null"
 
     .line 23
@@ -275,12 +275,12 @@
 .end method
 
 .method public final engineInit(Ljava/security/spec/AlgorithmParameterSpec;)V
-    .registers 3
+    .locals 1
 
     .line 61
     instance-of v0, p1, Llibs/o61;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 62
     check-cast p1, Llibs/o61;
@@ -290,7 +290,7 @@
     return-void
 
     .line 63
-    :cond_9
+    :cond_0
     const-string p1, "IESParameterSpec required to initialise a IES algorithm parameters object"
 
     invoke-static {p1}, Llibs/bf0;->d(Ljava/lang/String;)V
@@ -299,14 +299,14 @@
 .end method
 
 .method public final engineInit([B)V
-    .registers 7
+    .locals 5
 
     .line 1
     const-string v0, "Not a valid IES Parameter encoding."
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     invoke-static {p1}, Llibs/Theme;->j([B)Llibs/Theme;
 
     .line 4
@@ -403,16 +403,16 @@
     .line 49
     .line 50
     iput-object v1, p0, Llibs/j0;->a:Llibs/o61;
-    :try_end_33
-    .catch Ljava/lang/ClassCastException; {:try_start_2 .. :try_end_33} :catch_38
-    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_2 .. :try_end_33} :catch_34
+    :try_end_0
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 51
     .line 52
     return-void
 
     .line 53
-    :catch_34
+    :catch_0
     invoke-static {v0}, Llibs/ic0;->t(Ljava/lang/String;)V
 
     .line 54
@@ -421,7 +421,7 @@
     return-void
 
     .line 57
-    :catch_38
+    :catch_1
     invoke-static {v0}, Llibs/ic0;->t(Ljava/lang/String;)V
 
     .line 58
@@ -431,9 +431,9 @@
 .end method
 
 .method public final engineInit([BLjava/lang/String;)V
-    .registers 4
+    .locals 1
 
-    if-eqz p2, :cond_1e
+    if-eqz p2, :cond_2
 
     .line 64
     const-string v0, "ASN.1"
@@ -442,24 +442,24 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 65
-    :cond_b
+    :cond_0
     const-string v0, "X.509"
 
     invoke-virtual {p2, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_1
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 66
-    :cond_14
+    :cond_1
     const-string p1, "Unknown parameter format "
 
     invoke-virtual {p1, p2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
@@ -471,15 +471,15 @@
     return-void
 
     .line 67
-    :cond_1e
-    :goto_1e
+    :cond_2
+    :goto_0
     invoke-virtual {p0, p1}, Llibs/j0;->engineInit([B)V
 
     return-void
 .end method
 
 .method public final engineToString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "IES Parameters"

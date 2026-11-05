@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final a()[B
-    .registers 10
+    .locals 9
 
     .line 1
     invoke-virtual {p0}, Llibs/Phi;->b()[B
@@ -42,7 +42,7 @@
 
     .line 6
     .line 7
-    if-eqz v1, :cond_54
+    if-eqz v1, :cond_5
 
     .line 8
     .line 9
@@ -54,7 +54,7 @@
     move-result v1
 
     .line 13
-    if-lez v1, :cond_54
+    if-lez v1, :cond_5
 
     .line 14
     .line 15
@@ -66,14 +66,14 @@
     move-result v1
 
     .line 19
-    if-nez v1, :cond_15
+    if-nez v1, :cond_0
 
     .line 20
     .line 21
     return-object v0
 
     .line 22
-    :cond_15
+    :cond_0
     array-length v2, v0
 
     .line 23
@@ -93,7 +93,7 @@
     const/4 v4, 0x0
 
     .line 29
-    :goto_1c
+    :goto_0
     array-length v5, v0
 
     .line 30
@@ -104,7 +104,7 @@
     const/4 v6, -0x1
 
     .line 33
-    if-ge v3, v5, :cond_41
+    if-ge v3, v5, :cond_3
 
     .line 34
     .line 35
@@ -124,7 +124,7 @@
 
     .line 42
     .line 43
-    if-ne v7, v6, :cond_3d
+    if-ne v7, v6, :cond_2
 
     .line 44
     .line 45
@@ -144,15 +144,15 @@
 
     .line 52
     .line 53
-    if-eq v7, v8, :cond_38
+    if-eq v7, v8, :cond_1
 
     .line 54
     .line 55
-    if-nez v6, :cond_3d
+    if-nez v6, :cond_2
 
     .line 56
     .line 57
-    :cond_38
+    :cond_1
     add-int/lit8 v4, v4, 0x2
 
     .line 58
@@ -161,22 +161,22 @@
 
     .line 60
     .line 61
-    goto :goto_3e
+    goto :goto_1
 
     .line 62
-    :cond_3d
+    :cond_2
     move v4, v5
 
     .line 63
-    :goto_3e
+    :goto_1
     add-int/lit8 v3, v3, 0x1
 
     .line 64
     .line 65
-    goto :goto_1c
+    goto :goto_0
 
     .line 66
-    :cond_41
+    :cond_3
     add-int/lit8 v3, v4, 0x1
 
     .line 67
@@ -207,7 +207,7 @@
 
     .line 79
     .line 80
-    if-ne v0, v6, :cond_53
+    if-ne v0, v6, :cond_4
 
     .line 81
     .line 82
@@ -215,11 +215,11 @@
 
     .line 83
     .line 84
-    :cond_53
+    :cond_4
     return-object v1
 
     .line 85
-    :cond_54
+    :cond_5
     return-object v0
 .end method
 
@@ -227,14 +227,14 @@
 .end method
 
 .method public final c([B)V
-    .registers 10
+    .locals 8
 
     .line 1
     iget-boolean v0, p0, Llibs/Phi;->a:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_4
 
     .line 4
     .line 5
@@ -246,7 +246,7 @@
     move-result v0
 
     .line 9
-    if-lez v0, :cond_45
+    if-lez v0, :cond_4
 
     .line 10
     .line 11
@@ -258,14 +258,14 @@
     move-result v0
 
     .line 15
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
     .line 16
     .line 17
-    goto :goto_41
+    goto :goto_1
 
     .line 18
-    :cond_11
+    :cond_0
     array-length v1, p1
 
     .line 19
@@ -282,12 +282,12 @@
     const/4 v3, 0x0
 
     .line 24
-    :goto_17
+    :goto_0
     add-int/lit8 v4, v1, -0x1
 
     .line 25
     .line 26
-    if-ge v2, v4, :cond_3c
+    if-ge v2, v4, :cond_3
 
     .line 27
     .line 28
@@ -306,7 +306,7 @@
     const/4 v5, -0x1
 
     .line 35
-    if-ne v4, v5, :cond_37
+    if-ne v4, v5, :cond_2
 
     .line 36
     .line 37
@@ -318,7 +318,7 @@
 
     .line 40
     .line 41
-    if-nez v5, :cond_37
+    if-nez v5, :cond_2
 
     .line 42
     .line 43
@@ -338,19 +338,19 @@
 
     .line 50
     .line 51
-    if-eq v6, v7, :cond_36
+    if-eq v6, v7, :cond_1
 
     .line 52
     .line 53
-    if-nez v5, :cond_37
+    if-nez v5, :cond_2
 
     .line 54
     .line 55
-    :cond_36
+    :cond_1
     move v3, v4
 
     .line 56
-    :cond_37
+    :cond_2
     add-int/lit8 v3, v3, 0x1
 
     .line 57
@@ -359,10 +359,10 @@
 
     .line 59
     .line 60
-    goto :goto_17
+    goto :goto_0
 
     .line 61
-    :cond_3c
+    :cond_3
     aget-byte p1, p1, v3
 
     .line 62
@@ -374,7 +374,7 @@
     move-object p1, v0
 
     .line 66
-    :goto_41
+    :goto_1
     invoke-virtual {p0, p1}, Llibs/Phi;->d([B)V
 
     .line 67
@@ -383,7 +383,7 @@
     return-void
 
     .line 70
-    :cond_45
+    :cond_4
     invoke-virtual {p0, p1}, Llibs/Phi;->d([B)V
 
     .line 71
@@ -396,31 +396,31 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
     .line 6
-    if-nez p1, :cond_8
+    if-nez p1, :cond_1
 
     .line 7
     .line 8
     return v1
 
     .line 9
-    :cond_8
+    :cond_1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 10
@@ -437,14 +437,14 @@
     move-result-object v3
 
     .line 17
-    if-eq v2, v3, :cond_13
+    if-eq v2, v3, :cond_2
 
     .line 18
     .line 19
     return v1
 
     .line 20
-    :cond_13
+    :cond_2
     check-cast p1, Llibs/Phi;
 
     .line 21
@@ -457,26 +457,26 @@
 
     .line 25
     .line 26
-    if-ne v2, p1, :cond_1c
+    if-ne v2, p1, :cond_3
 
     .line 27
     .line 28
     return v0
 
     .line 29
-    :cond_1c
+    :cond_3
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-boolean v0, p0, Llibs/Phi;->a:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -484,15 +484,15 @@
 
     .line 6
     .line 7
-    goto :goto_9
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     const/16 v0, 0x4d5
 
     .line 9
     .line 10
-    :goto_9
+    :goto_0
     const/16 v1, 0x1f
 
     .line 11

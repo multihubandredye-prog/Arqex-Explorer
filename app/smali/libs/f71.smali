@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/os/IBinder;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final a()Landroid/os/ParcelFileDescriptor;
-    .registers 6
+    .locals 5
 
     .line 1
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
@@ -49,7 +49,7 @@
     move-result-object v1
 
     .line 9
-    :try_start_8
+    :try_start_0
     const-string v2, "moe.shizuku.server.IRemoteProcess"
 
     .line 10
@@ -91,7 +91,7 @@
     move-result v3
 
     .line 30
-    if-eqz v3, :cond_24
+    if-eqz v3, :cond_0
 
     .line 31
     .line 32
@@ -103,17 +103,17 @@
     move-result-object v2
 
     .line 36
-    goto :goto_25
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_0
     const/4 v2, 0x0
 
     .line 38
-    :goto_25
+    :goto_0
     check-cast v2, Landroid/os/ParcelFileDescriptor;
-    :try_end_27
-    .catchall {:try_start_8 .. :try_end_27} :catchall_2e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 39
     .line 40
@@ -130,7 +130,7 @@
     return-object v2
 
     .line 47
-    :catchall_2e
+    :catchall_0
     move-exception v2
 
     .line 48
@@ -148,7 +148,7 @@
 .end method
 
 .method public final asBinder()Landroid/os/IBinder;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/f71;->a:Landroid/os/IBinder;
@@ -159,7 +159,7 @@
 .end method
 
 .method public final b()Landroid/os/ParcelFileDescriptor;
-    .registers 6
+    .locals 5
 
     .line 1
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
@@ -178,7 +178,7 @@
     move-result-object v1
 
     .line 9
-    :try_start_8
+    :try_start_0
     const-string v2, "moe.shizuku.server.IRemoteProcess"
 
     .line 10
@@ -220,7 +220,7 @@
     move-result v3
 
     .line 30
-    if-eqz v3, :cond_24
+    if-eqz v3, :cond_0
 
     .line 31
     .line 32
@@ -232,17 +232,17 @@
     move-result-object v2
 
     .line 36
-    goto :goto_25
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_0
     const/4 v2, 0x0
 
     .line 38
-    :goto_25
+    :goto_0
     check-cast v2, Landroid/os/ParcelFileDescriptor;
-    :try_end_27
-    .catchall {:try_start_8 .. :try_end_27} :catchall_2e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 39
     .line 40
@@ -259,7 +259,7 @@
     return-object v2
 
     .line 47
-    :catchall_2e
+    :catchall_0
     move-exception v2
 
     .line 48
@@ -277,7 +277,7 @@
 .end method
 
 .method public final d()Landroid/os/ParcelFileDescriptor;
-    .registers 6
+    .locals 5
 
     .line 1
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
@@ -296,7 +296,7 @@
     move-result-object v1
 
     .line 9
-    :try_start_8
+    :try_start_0
     const-string v2, "moe.shizuku.server.IRemoteProcess"
 
     .line 10
@@ -338,7 +338,7 @@
     move-result v3
 
     .line 30
-    if-eqz v3, :cond_24
+    if-eqz v3, :cond_0
 
     .line 31
     .line 32
@@ -350,17 +350,17 @@
     move-result-object v2
 
     .line 36
-    goto :goto_25
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_0
     const/4 v2, 0x0
 
     .line 38
-    :goto_25
+    :goto_0
     check-cast v2, Landroid/os/ParcelFileDescriptor;
-    :try_end_27
-    .catchall {:try_start_8 .. :try_end_27} :catchall_2e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 39
     .line 40
@@ -377,7 +377,7 @@
     return-object v2
 
     .line 47
-    :catchall_2e
+    :catchall_0
     move-exception v2
 
     .line 48
@@ -395,7 +395,7 @@
 .end method
 
 .method public final destroy()V
-    .registers 6
+    .locals 5
 
     .line 1
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
@@ -414,7 +414,7 @@
     move-result-object v1
 
     .line 9
-    :try_start_8
+    :try_start_0
     const-string v2, "moe.shizuku.server.IRemoteProcess"
 
     .line 10
@@ -440,8 +440,8 @@
     .line 20
     .line 21
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-    :try_end_17
-    .catchall {:try_start_8 .. :try_end_17} :catchall_1e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 22
     .line 23
@@ -459,7 +459,7 @@
     return-void
 
     .line 31
-    :catchall_1e
+    :catchall_0
     move-exception v2
 
     .line 32
@@ -477,7 +477,7 @@
 .end method
 
 .method public final r()I
-    .registers 6
+    .locals 5
 
     .line 1
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
@@ -496,7 +496,7 @@
     move-result-object v1
 
     .line 9
-    :try_start_8
+    :try_start_0
     const-string v2, "moe.shizuku.server.IRemoteProcess"
 
     .line 10
@@ -532,8 +532,8 @@
     .line 26
     .line 27
     move-result v2
-    :try_end_1b
-    .catchall {:try_start_8 .. :try_end_1b} :catchall_22
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 28
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
@@ -549,7 +549,7 @@
     return v2
 
     .line 35
-    :catchall_22
+    :catchall_0
     move-exception v2
 
     .line 36
@@ -567,7 +567,7 @@
 .end method
 
 .method public final u()I
-    .registers 6
+    .locals 5
 
     .line 1
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
@@ -586,7 +586,7 @@
     move-result-object v1
 
     .line 9
-    :try_start_8
+    :try_start_0
     const-string v2, "moe.shizuku.server.IRemoteProcess"
 
     .line 10
@@ -622,8 +622,8 @@
     .line 26
     .line 27
     move-result v2
-    :try_end_1b
-    .catchall {:try_start_8 .. :try_end_1b} :catchall_22
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 28
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
@@ -639,7 +639,7 @@
     return v2
 
     .line 35
-    :catchall_22
+    :catchall_0
     move-exception v2
 
     .line 36

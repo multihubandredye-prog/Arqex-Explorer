@@ -28,7 +28,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r31;Llibs/$d;Llibs/bv1;Ljava/lang/String;Ljava/util/LinkedHashSet;Llibs/bv1;ZLjava/lang/String;Llibs/zl0;)V
-    .registers 10
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 10
+    .locals 8
 
     .line 1
     iget-object v0, p0, Llibs/f21;->X:Llibs/r31;
@@ -133,7 +133,7 @@
 
     .line 26
     .line 27
-    if-ne v1, v3, :cond_30
+    if-ne v1, v3, :cond_0
 
     .line 28
     .line 29
@@ -182,15 +182,15 @@
     move-object v3, p1
 
     .line 48
-    goto :goto_56
+    goto :goto_0
 
     .line 49
-    :cond_30
+    :cond_0
     sget v3, Llibs/bi2;->new_folder_name:I
 
     .line 50
     .line 51
-    if-ne v1, v3, :cond_40
+    if-ne v1, v3, :cond_1
 
     .line 52
     .line 53
@@ -220,7 +220,7 @@
     return-void
 
     .line 65
-    :cond_40
+    :cond_1
     move v2, v1
 
     .line 66
@@ -240,7 +240,7 @@
 
     .line 71
     .line 72
-    if-ne v0, p1, :cond_51
+    if-ne v0, p1, :cond_2
 
     .line 73
     .line 74
@@ -260,7 +260,7 @@
     return-void
 
     .line 82
-    :cond_51
+    :cond_2
     iget-object p1, p0, Llibs/f21;->Omicron:Ljava/lang/String;
 
     .line 83
@@ -272,7 +272,7 @@
     move-object v4, p1
 
     .line 87
-    :goto_56
+    :goto_0
     sget p1, Llibs/bi2;->only_files:I
 
     .line 88

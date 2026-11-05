@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/conscrypt/HpkeSuite;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Lorg/conscrypt/HpkeImpl;-><init>(Lorg/conscrypt/HpkeSuite;)V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public getPrivateRecipientKeyBytes(Ljava/security/PrivateKey;)[B
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-static {}, Lorg/conscrypt/HpkeImpl;->a()Lorg/conscrypt/OpenSslXwingKeyFactory;
@@ -42,7 +42,7 @@
 
     .line 10
     .line 11
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
@@ -61,7 +61,7 @@
     return-object p1
 
     .line 20
-    :cond_13
+    :cond_0
     const-string p1, "Unexpected private key class"
 
     .line 21
@@ -78,7 +78,7 @@
 .end method
 
 .method public getRecipientPublicKeyBytes(Ljava/security/PublicKey;)[B
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-static {}, Lorg/conscrypt/HpkeImpl;->a()Lorg/conscrypt/OpenSslXwingKeyFactory;
@@ -101,7 +101,7 @@
 
     .line 10
     .line 11
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
@@ -120,7 +120,7 @@
     return-object p1
 
     .line 20
-    :cond_13
+    :cond_0
     const-string p1, "Unexpected public key class"
 
     .line 21

@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 8
     iput-byte p1, p0, Llibs/iv;->a:B
@@ -23,7 +23,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/CodeEditorActivity;Llibs/cv;)V
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -44,14 +44,14 @@
 
 # virtual methods
 .method public final onDismiss(Landroid/content/DialogInterface;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-byte p1, p0, Llibs/iv;->a:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_24
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -64,7 +64,7 @@
     return-void
 
     .line 10
-    :pswitch_9
+    :pswitch_0
     sget-boolean p1, Lcom/mixplorer/activities/ConfigServerActivity;->IlI:Z
 
     .line 11
@@ -72,7 +72,7 @@
     return-void
 
     .line 13
-    :pswitch_c
+    :pswitch_1
     sget p1, Llibs/lw;->a:I
 
     .line 14
@@ -81,7 +81,7 @@
 
     .line 16
     .line 17
-    if-ne p1, v0, :cond_18
+    if-ne p1, v0, :cond_0
 
     .line 18
     .line 19
@@ -93,11 +93,11 @@
 
     .line 22
     .line 23
-    if-eq p1, v0, :cond_20
+    if-eq p1, v0, :cond_1
 
     .line 24
     .line 25
-    :cond_18
+    :cond_0
     sget-object p1, Llibs/lw;->g:Llibs/k31;
 
     .line 26
@@ -114,11 +114,11 @@
     .line 31
     .line 32
     .line 33
-    :cond_20
+    :cond_1
     return-void
 
     .line 34
-    :pswitch_21
+    :pswitch_2
     sget p1, Lcom/mixplorer/activities/CodeEditorActivity;->_d:I
 
     .line 35
@@ -126,10 +126,10 @@
     return-void
 
     .line 37
-    :pswitch_data_24
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_21
-        :pswitch_c
-        :pswitch_9
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

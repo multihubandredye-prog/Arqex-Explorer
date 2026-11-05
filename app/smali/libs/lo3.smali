@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/mo3;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V

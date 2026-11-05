@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/az2;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/zy2;->Object:Llibs/az2;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final Old(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/zy2;->z:F

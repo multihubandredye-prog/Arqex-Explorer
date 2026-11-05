@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/hv2;->Mu:Llibs/hv2;
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final c(Llibs/rw2;)V
-    .registers 3
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/ks;->e:Ljava/nio/charset/Charset;
@@ -50,7 +50,7 @@
 .end method
 
 .method public final d(Llibs/rw2;)I
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/kv2;->b:Ljava/lang/String;

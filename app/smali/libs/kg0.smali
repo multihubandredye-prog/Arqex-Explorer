@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(ILjava/math/BigInteger;Llibs/c10;Llibs/xw3;)V
-    .registers 9
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -94,7 +94,7 @@
     .line 43
     .line 44
     .line 45
-    if-eqz p3, :cond_36
+    if-eqz p3, :cond_0
 
     .line 46
     .line 47
@@ -112,7 +112,7 @@
     .line 53
     .line 54
     .line 55
-    :cond_36
+    :cond_0
     new-instance p1, Llibs/p10;
 
     .line 56
@@ -130,7 +130,7 @@
 .end method
 
 .method public constructor <init>(Llibs/Param;)V
-    .registers 2
+    .locals 0
 
     .line 63
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -142,10 +142,10 @@
 .end method
 
 .method public static g(Llibs/Theme;)Llibs/kg0;
-    .registers 2
+    .locals 1
 
     .line 1
-    if-eqz p0, :cond_c
+    if-eqz p0, :cond_0
 
     .line 2
     .line 3
@@ -169,7 +169,7 @@
     return-object v0
 
     .line 13
-    :cond_c
+    :cond_0
     const/4 p0, 0x0
 
     .line 14
@@ -179,7 +179,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/kg0;->X:Llibs/Param;
@@ -190,7 +190,7 @@
 .end method
 
 .method public final h()Ljava/math/BigInteger;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/kg0;->X:Llibs/Param;
@@ -233,7 +233,7 @@
 .end method
 
 .method public final i(I)Llibs/Theme;
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/kg0;->X:Llibs/Param;
@@ -248,7 +248,7 @@
     move-result-object v0
 
     .line 7
-    :cond_6
+    :cond_0
     invoke-interface {v0}, Ljava/util/Enumeration;->hasMoreElements()Z
 
     .line 8
@@ -257,7 +257,7 @@
     move-result v1
 
     .line 11
-    if-eqz v1, :cond_24
+    if-eqz v1, :cond_1
 
     .line 12
     .line 13
@@ -277,7 +277,7 @@
 
     .line 20
     .line 21
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_0
 
     .line 22
     .line 23
@@ -289,7 +289,7 @@
 
     .line 26
     .line 27
-    if-ne v2, p1, :cond_6
+    if-ne v2, p1, :cond_0
 
     .line 28
     .line 29
@@ -309,7 +309,7 @@
     return-object p1
 
     .line 37
-    :cond_24
+    :cond_1
     const/4 p1, 0x0
 
     .line 38

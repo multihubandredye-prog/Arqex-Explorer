@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static a(Landroid/view/View;)Llibs/ev3;
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->getRootWindowInsets()Landroid/view/WindowInsets;
@@ -19,14 +19,14 @@
     const/4 v1, 0x0
 
     .line 6
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     .line 7
     .line 8
     return-object v1
 
     .line 9
-    :cond_8
+    :cond_0
     invoke-static {v1, v0}, Llibs/ev3;->c(Landroid/view/View;Landroid/view/WindowInsets;)Llibs/ev3;
 
     .line 10

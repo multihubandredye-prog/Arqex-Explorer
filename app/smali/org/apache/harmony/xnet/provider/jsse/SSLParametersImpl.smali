@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,7 +17,7 @@
 .end method
 
 .method public static getDefault()Lorg/apache/harmony/xnet/provider/jsse/SSLParametersImpl;
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Lorg/apache/harmony/xnet/provider/jsse/CryptoRuntimeException;

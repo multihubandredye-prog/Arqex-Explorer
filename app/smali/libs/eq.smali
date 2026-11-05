@@ -33,7 +33,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/t5;
@@ -56,7 +56,7 @@
 .end method
 
 .method public constructor <init>(Ljava/nio/ByteBuffer;SSIIJJJJLjava/lang/String;I)V
-    .registers 16
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -112,7 +112,7 @@
 .end method
 
 .method public static a(Ljava/nio/ByteBuffer;II)Ljava/lang/String;
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->hasArray()Z
@@ -123,7 +123,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -146,10 +146,10 @@
     add-int/2addr p0, p1
 
     .line 16
-    goto :goto_20
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     new-array v0, p2, [B
 
     .line 18
@@ -162,15 +162,15 @@
     move-result v1
 
     .line 23
-    :try_start_16
+    :try_start_0
     invoke-virtual {p0, p1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     .line 24
     .line 25
     .line 26
     invoke-virtual {p0, v0}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
-    :try_end_1c
-    .catchall {:try_start_16 .. :try_end_1c} :catchall_27
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 27
     .line 28
@@ -183,7 +183,7 @@
     const/4 p0, 0x0
 
     .line 33
-    :goto_20
+    :goto_0
     sget-object p1, Llibs/ue3;->c:Ljava/nio/charset/Charset;
 
     .line 34
@@ -199,7 +199,7 @@
     return-object p0
 
     .line 40
-    :catchall_27
+    :catchall_0
     move-exception p1
 
     .line 41
@@ -212,7 +212,7 @@
 .end method
 
 .method public static b(Ljava/nio/ByteBuffer;)Llibs/eq;
-    .registers 24
+    .locals 23
 
     .line 1
     move-object/from16 v1, p0
@@ -240,7 +240,7 @@
 
     .line 13
     .line 14
-    if-lt v0, v2, :cond_e2
+    if-lt v0, v2, :cond_2
 
     .line 15
     .line 16
@@ -272,7 +272,7 @@
     .line 30
     .line 31
     .line 32
-    if-ne v2, v4, :cond_c5
+    if-ne v2, v4, :cond_1
 
     .line 33
     .line 34
@@ -459,7 +459,7 @@
     move-result v4
 
     .line 123
-    if-gt v5, v4, :cond_a4
+    if-gt v5, v4, :cond_0
 
     .line 124
     .line 125
@@ -491,7 +491,7 @@
     add-int/2addr v0, v5
 
     .line 139
-    :try_start_8a
+    :try_start_0
     invoke-virtual {v1, v0}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
     .line 140
@@ -503,8 +503,8 @@
     .line 144
     .line 145
     move-result-object v8
-    :try_end_91
-    .catchall {:try_start_8a .. :try_end_91} :catchall_9f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 146
     invoke-virtual {v1, v3}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
@@ -533,7 +533,7 @@
     return-object v7
 
     .line 160
-    :catchall_9f
+    :catchall_0
     move-exception v0
 
     .line 161
@@ -545,7 +545,7 @@
     throw v0
 
     .line 165
-    :cond_a4
+    :cond_0
     new-instance v0, Llibs/sy3;
 
     .line 166
@@ -609,7 +609,7 @@
     throw v0
 
     .line 198
-    :cond_c5
+    :cond_1
     move-wide/from16 v19, v5
 
     .line 199
@@ -667,7 +667,7 @@
     throw v0
 
     .line 227
-    :cond_e2
+    :cond_2
     new-instance v0, Llibs/sy3;
 
     .line 228

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/k13;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/g13;->a:Llibs/k13;
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final characters([CII)V
-    .registers 5
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/String;
@@ -52,14 +52,14 @@
 .end method
 
 .method public final endDocument()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final endElement(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 5
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/g13;->a:Llibs/k13;
@@ -75,7 +75,7 @@
 .end method
 
 .method public final processingInstruction(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/af;
@@ -105,7 +105,7 @@
 .end method
 
 .method public final startDocument()V
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/is;
@@ -133,7 +133,7 @@
 .end method
 
 .method public final startElement(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/xml/sax/Attributes;)V
-    .registers 6
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/g13;->a:Llibs/k13;

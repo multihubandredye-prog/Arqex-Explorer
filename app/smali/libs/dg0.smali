@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 13
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public constructor <init>(Lcom/mixplorer/activities/PlayerActivity;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/dg0;->Z:Ljava/lang/Object;
@@ -55,14 +55,14 @@
 
 # virtual methods
 .method public a(ZLlibs/et;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-boolean p1, p0, Llibs/dg0;->X:Z
 
     .line 2
     .line 3
-    if-eqz p1, :cond_21
+    if-eqz p1, :cond_1
 
     .line 4
     .line 5
@@ -70,7 +70,7 @@
 
     .line 6
     .line 7
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_0
 
     .line 8
     .line 9
@@ -101,7 +101,7 @@
     return-void
 
     .line 22
-    :cond_15
+    :cond_0
     new-instance p1, Ljava/security/SecureRandom;
 
     .line 23
@@ -126,7 +126,7 @@
     return-void
 
     .line 34
-    :cond_21
+    :cond_1
     check-cast p2, Llibs/pg0;
 
     .line 35
@@ -139,21 +139,21 @@
 .end method
 
 .method public b()V
-    .registers 4
+    .locals 3
 
     .line 1
     sget-object v0, Lcom/mixplorer/AppImpl;->Pi:Llibs/rd2;
 
     .line 2
     .line 3
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     iget-object v1, p0, Llibs/dg0;->Z:Ljava/lang/Object;
 
     .line 7
@@ -175,7 +175,7 @@
 
     .line 16
     .line 17
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_1
 
     .line 18
     .line 19
@@ -184,7 +184,7 @@
     .line 20
     .line 21
     .line 22
-    :cond_15
+    :cond_1
     iget-object v0, p0, Llibs/dg0;->Y:Ljava/lang/Object;
 
     .line 23
@@ -214,7 +214,7 @@
 .end method
 
 .method public c([B)[Ljava/math/BigInteger;
-    .registers 12
+    .locals 10
 
     .line 1
     iget-boolean v0, p0, Llibs/dg0;->X:Z
@@ -224,7 +224,7 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_bc
+    if-eqz v0, :cond_6
 
     .line 5
     .line 6
@@ -288,11 +288,11 @@
 
     .line 35
     .line 36
-    if-gt p1, v2, :cond_b6
+    if-gt p1, v2, :cond_5
 
     .line 37
     .line 38
-    :cond_25
+    :cond_0
     iget-object p1, v5, Llibs/ag0;->b:Llibs/sf0;
 
     .line 39
@@ -314,7 +314,7 @@
     .line 47
     .line 48
     .line 49
-    if-nez v1, :cond_37
+    if-nez v1, :cond_1
 
     .line 50
     .line 51
@@ -327,7 +327,7 @@
     .line 54
     .line 55
     .line 56
-    :cond_37
+    :cond_1
     move-object v2, v1
 
     .line 57
@@ -347,8 +347,8 @@
 
     .line 64
     .line 65
-    :cond_40
-    :goto_40
+    :cond_2
+    :goto_0
     new-instance v1, Ljava/math/BigInteger;
 
     .line 66
@@ -370,7 +370,7 @@
     move-result v9
 
     .line 76
-    if-ltz v9, :cond_40
+    if-ltz v9, :cond_2
 
     .line 77
     .line 78
@@ -382,14 +382,14 @@
     move-result v9
 
     .line 82
-    if-ltz v9, :cond_54
+    if-ltz v9, :cond_3
 
     .line 83
     .line 84
-    goto :goto_40
+    goto :goto_0
 
     .line 85
-    :cond_54
+    :cond_3
     invoke-static {v1}, Llibs/zm1;->Object(Ljava/math/BigInteger;)I
 
     .line 86
@@ -398,14 +398,14 @@
     move-result v9
 
     .line 89
-    if-ge v9, v8, :cond_5b
+    if-ge v9, v8, :cond_4
 
     .line 90
     .line 91
-    goto :goto_40
+    goto :goto_0
 
     .line 92
-    :cond_5b
+    :cond_4
     new-instance v2, Llibs/or0;
 
     .line 93
@@ -521,7 +521,7 @@
     move-result v1
 
     .line 151
-    if-nez v1, :cond_25
+    if-nez v1, :cond_0
 
     .line 152
     .line 153
@@ -587,7 +587,7 @@
     return-object v1
 
     .line 183
-    :cond_b6
+    :cond_5
     const-string p1, "input too large for ECNR key."
 
     .line 184
@@ -600,7 +600,7 @@
     return-object v1
 
     .line 189
-    :cond_bc
+    :cond_6
     const-string p1, "not initialised for signing"
 
     .line 190
@@ -614,21 +614,21 @@
 .end method
 
 .method public d()V
-    .registers 4
+    .locals 3
 
     .line 1
     sget-object v0, Lcom/mixplorer/AppImpl;->Pi:Llibs/rd2;
 
     .line 2
     .line 3
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     iget-object v1, p0, Llibs/dg0;->Z:Ljava/lang/Object;
 
     .line 7
@@ -650,7 +650,7 @@
 
     .line 16
     .line 17
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_1
 
     .line 18
     .line 19
@@ -663,7 +663,7 @@
     .line 22
     .line 23
     .line 24
-    :cond_17
+    :cond_1
     iget-object v0, p0, Llibs/dg0;->Y:Ljava/lang/Object;
 
     .line 25
@@ -693,7 +693,7 @@
 .end method
 
 .method public f(Ljava/math/BigInteger;Ljava/math/BigInteger;[B)Z
-    .registers 10
+    .locals 6
 
     .line 1
     iget-boolean v0, p0, Llibs/dg0;->X:Z
@@ -703,7 +703,7 @@
     const/4 v1, 0x0
 
     .line 4
-    if-nez v0, :cond_6f
+    if-nez v0, :cond_5
 
     .line 5
     .line 6
@@ -755,7 +755,7 @@
     move-result p3
 
     .line 30
-    if-gt p3, v3, :cond_69
+    if-gt p3, v3, :cond_4
 
     .line 31
     .line 32
@@ -771,7 +771,7 @@
     move-result p3
 
     .line 38
-    if-ltz p3, :cond_68
+    if-ltz p3, :cond_3
 
     .line 39
     .line 40
@@ -783,14 +783,14 @@
     move-result p3
 
     .line 44
-    if-ltz p3, :cond_2e
+    if-ltz p3, :cond_0
 
     .line 45
     .line 46
-    goto :goto_68
+    goto :goto_0
 
     .line 47
-    :cond_2e
+    :cond_0
     sget-object p3, Llibs/ff0;->f:Ljava/math/BigInteger;
 
     .line 48
@@ -803,7 +803,7 @@
     move-result p3
 
     .line 53
-    if-ltz p3, :cond_68
+    if-ltz p3, :cond_3
 
     .line 54
     .line 55
@@ -815,14 +815,14 @@
     move-result p3
 
     .line 59
-    if-ltz p3, :cond_3d
+    if-ltz p3, :cond_1
 
     .line 60
     .line 61
-    goto :goto_68
+    goto :goto_0
 
     .line 62
-    :cond_3d
+    :cond_1
     iget-object p3, v0, Llibs/ag0;->b:Llibs/sf0;
 
     .line 63
@@ -859,14 +859,14 @@
     move-result p3
 
     .line 80
-    if-eqz p3, :cond_52
+    if-eqz p3, :cond_2
 
     .line 81
     .line 82
-    goto :goto_68
+    goto :goto_0
 
     .line 83
-    :cond_52
+    :cond_2
     invoke-virtual {p2}, Llibs/ig0;->b()V
 
     .line 84
@@ -911,12 +911,12 @@
     return p1
 
     .line 105
-    :cond_68
-    :goto_68
+    :cond_3
+    :goto_0
     return v1
 
     .line 106
-    :cond_69
+    :cond_4
     const-string p1, "input too large for ECNR key."
 
     .line 107
@@ -929,7 +929,7 @@
     return v1
 
     .line 112
-    :cond_6f
+    :cond_5
     const-string p1, "not initialised for verifying"
 
     .line 113

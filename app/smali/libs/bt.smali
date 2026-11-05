@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/nr0;Ljavax/crypto/Cipher;)V
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-direct {p0, p1}, Llibs/ir0;-><init>(Ljava/io/InputStream;)V
@@ -77,7 +77,7 @@
 
     .line 27
     .line 28
-    if-le p1, p2, :cond_20
+    if-le p1, p2, :cond_0
 
     .line 29
     .line 30
@@ -85,14 +85,14 @@
 
     .line 31
     .line 32
-    goto :goto_21
+    goto :goto_0
 
     .line 33
-    :cond_20
+    :cond_0
     const/4 p1, 0x0
 
     .line 34
-    :goto_21
+    :goto_0
     add-int/2addr v0, p1
 
     .line 35
@@ -110,7 +110,7 @@
 
 # virtual methods
 .method public final available()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/bt;->Upsilon:I
@@ -128,7 +128,7 @@
 .end method
 
 .method public final c()Z
-    .registers 11
+    .locals 10
 
     .line 1
     iget-boolean v0, p0, Llibs/bt;->Phi:Z
@@ -138,14 +138,14 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     .line 5
     .line 6
-    goto :goto_3d
+    goto :goto_1
 
     .line 7
-    :cond_6
+    :cond_0
     iput v1, p0, Llibs/bt;->Tau:I
 
     .line 8
@@ -154,7 +154,7 @@
 
     .line 10
     .line 11
-    :goto_a
+    :goto_0
     iget v0, p0, Llibs/bt;->Upsilon:I
 
     .line 12
@@ -162,7 +162,7 @@
     const/4 v2, 0x1
 
     .line 14
-    if-nez v0, :cond_59
+    if-nez v0, :cond_5
 
     .line 15
     .line 16
@@ -189,18 +189,18 @@
 
     .line 26
     .line 27
-    if-eqz v3, :cond_1f
+    if-eqz v3, :cond_1
 
     .line 28
     .line 29
     array-length v3, v3
 
     .line 30
-    if-ge v3, v0, :cond_23
+    if-ge v3, v0, :cond_2
 
     .line 31
     .line 32
-    :cond_1f
+    :cond_1
     new-array v0, v0, [B
 
     .line 33
@@ -209,7 +209,7 @@
 
     .line 35
     .line 36
-    :cond_23
+    :cond_2
     iget-object v0, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;
 
     .line 37
@@ -233,11 +233,11 @@
     const/4 v0, -0x1
 
     .line 47
-    if-ne v7, v0, :cond_45
+    if-ne v7, v0, :cond_4
 
     .line 48
     .line 49
-    :try_start_30
+    :try_start_0
     iget-object v0, p0, Llibs/bt;->Sigma:[B
 
     .line 50
@@ -251,8 +251,8 @@
 
     .line 55
     iput v0, p0, Llibs/bt;->Upsilon:I
-    :try_end_38
-    .catch Ljava/lang/Exception; {:try_start_30 .. :try_end_38} :catch_3e
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 56
     .line 57
@@ -260,19 +260,19 @@
 
     .line 58
     .line 59
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_3
 
     .line 60
     .line 61
-    goto :goto_59
+    goto :goto_2
 
     .line 62
-    :cond_3d
-    :goto_3d
+    :cond_3
+    :goto_1
     return v1
 
     .line 63
-    :catch_3e
+    :catch_0
     move-exception v0
 
     .line 64
@@ -288,8 +288,8 @@
     return v1
 
     .line 70
-    :cond_45
-    :try_start_45
+    :cond_4
+    :try_start_1
     iget-object v5, p0, Llibs/bt;->Rho:[B
 
     .line 71
@@ -313,15 +313,15 @@
 
     .line 80
     iput v0, p0, Llibs/bt;->Upsilon:I
-    :try_end_51
-    .catch Ljavax/crypto/ShortBufferException; {:try_start_45 .. :try_end_51} :catch_52
+    :try_end_1
+    .catch Ljavax/crypto/ShortBufferException; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 81
     .line 82
-    goto :goto_a
+    goto :goto_0
 
     .line 83
-    :catch_52
+    :catch_1
     move-exception v0
 
     .line 84
@@ -337,13 +337,13 @@
     throw v1
 
     .line 90
-    :cond_59
-    :goto_59
+    :cond_5
+    :goto_2
     return v2
 .end method
 
 .method public final close()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;
@@ -355,24 +355,24 @@
     .line 4
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     iget-object v0, p0, Llibs/bt;->Pi:Ljavax/crypto/Cipher;
 
     .line 7
     .line 8
     invoke-virtual {v0}, Ljavax/crypto/Cipher;->doFinal()[B
-    :try_end_a
-    .catch Ljava/security/GeneralSecurityException; {:try_start_5 .. :try_end_a} :catch_a
+    :try_end_0
+    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 9
     .line 10
     .line 11
-    :catch_a
+    :catch_0
     return-void
 .end method
 
 .method public final markSupported()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -382,32 +382,32 @@
 .end method
 
 .method public final read()I
-    .registers 4
+    .locals 3
 
     .line 47
     iget-object v0, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1
 
     .line 48
     iget v0, p0, Llibs/bt;->Tau:I
 
     iget v1, p0, Llibs/bt;->Upsilon:I
 
-    if-ne v0, v1, :cond_12
+    if-ne v0, v1, :cond_0
 
     invoke-virtual {p0}, Llibs/bt;->c()Z
 
     move-result v0
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     const/4 v0, -0x1
 
     return v0
 
     .line 49
-    :cond_12
+    :cond_0
     iget-object v0, p0, Llibs/bt;->Sigma:[B
 
     iget v1, p0, Llibs/bt;->Tau:I
@@ -423,7 +423,7 @@
     return v0
 
     .line 50
-    :cond_1f
+    :cond_1
     const-string v0, "in == null"
 
     invoke-static {v0}, Llibs/cr2;->c(Ljava/lang/String;)V
@@ -434,14 +434,14 @@
 .end method
 
 .method public final read([BII)I
-    .registers 6
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_3
 
     .line 4
     .line 5
@@ -453,7 +453,7 @@
 
     .line 8
     .line 9
-    if-ne v0, v1, :cond_12
+    if-ne v0, v1, :cond_0
 
     .line 10
     .line 11
@@ -465,7 +465,7 @@
     move-result v0
 
     .line 15
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     .line 16
     .line 17
@@ -475,7 +475,7 @@
     return p1
 
     .line 19
-    :cond_12
+    :cond_0
     iget v0, p0, Llibs/bt;->Upsilon:I
 
     .line 20
@@ -487,15 +487,15 @@
     sub-int/2addr v0, v1
 
     .line 24
-    if-ge v0, p3, :cond_1a
+    if-ge v0, p3, :cond_1
 
     .line 25
     .line 26
     move p3, v0
 
     .line 27
-    :cond_1a
-    if-eqz p1, :cond_21
+    :cond_1
+    if-eqz p1, :cond_2
 
     .line 28
     .line 29
@@ -508,7 +508,7 @@
     .line 32
     .line 33
     .line 34
-    :cond_21
+    :cond_2
     iget p1, p0, Llibs/bt;->Tau:I
 
     .line 35
@@ -523,7 +523,7 @@
     return p3
 
     .line 40
-    :cond_27
+    :cond_3
     const-string p1, "in == null"
 
     .line 41
@@ -540,7 +540,7 @@
 .end method
 
 .method public final skip(J)J
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;

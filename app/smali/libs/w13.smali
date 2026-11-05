@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/x13;Landroid/view/WindowManager;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/w13;->Y:Llibs/x13;
@@ -36,14 +36,14 @@
 
 # virtual methods
 .method public final addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-    .registers 5
+    .locals 2
 
     .line 1
     const-string v0, "WindowManagerWrapper"
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     const-string v1, "WindowManager\'s addView(view, params) has been hooked."
 
     .line 4
@@ -58,9 +58,9 @@
     .line 9
     .line 10
     invoke-interface {v1, p1, p2}, Landroid/view/ViewManager;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-    :try_end_c
-    .catch Landroid/view/WindowManager$BadTokenException; {:try_start_2 .. :try_end_c} :catch_f
-    .catchall {:try_start_2 .. :try_end_c} :catchall_d
+    :try_end_0
+    .catch Landroid/view/WindowManager$BadTokenException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 11
     .line 12
@@ -68,21 +68,21 @@
     return-void
 
     .line 14
-    :catchall_d
+    :catchall_0
     move-exception p1
 
     .line 15
-    goto :goto_11
+    goto :goto_0
 
     .line 16
-    :catch_f
+    :catch_0
     move-exception p1
 
     .line 17
-    goto :goto_17
+    goto :goto_1
 
     .line 18
-    :goto_11
+    :goto_0
     const-string p2, "[addView]"
 
     .line 19
@@ -92,10 +92,10 @@
     .line 21
     .line 22
     .line 23
-    goto :goto_2b
+    goto :goto_2
 
     .line 24
-    :goto_17
+    :goto_1
     invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     .line 25
@@ -117,7 +117,7 @@
 
     .line 34
     .line 35
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_0
 
     .line 36
     .line 37
@@ -134,13 +134,13 @@
     .line 42
     .line 43
     .line 44
-    :cond_2b
-    :goto_2b
+    :cond_0
+    :goto_2
     return-void
 .end method
 
 .method public final getDefaultDisplay()Landroid/view/Display;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/w13;->X:Landroid/view/WindowManager;
@@ -159,7 +159,7 @@
 .end method
 
 .method public final removeView(Landroid/view/View;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/w13;->X:Landroid/view/WindowManager;
@@ -175,7 +175,7 @@
 .end method
 
 .method public final removeViewImmediate(Landroid/view/View;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/w13;->X:Landroid/view/WindowManager;
@@ -191,7 +191,7 @@
 .end method
 
 .method public final updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/w13;->X:Landroid/view/WindowManager;

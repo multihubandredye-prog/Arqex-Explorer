@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ug0;IIII)V
-    .registers 6
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/tg0;->a:Llibs/ug0;
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public final e(Llibs/rp0;)Z
-    .registers 18
+    .locals 16
 
     .line 1
     move-object/from16 v1, p0
@@ -69,7 +69,7 @@
     const/4 v3, 0x0
 
     .line 8
-    if-nez v2, :cond_365
+    if-nez v2, :cond_25
 
     .line 9
     .line 10
@@ -128,7 +128,7 @@
 
     .line 36
     .line 37
-    if-eqz v6, :cond_3a
+    if-eqz v6, :cond_0
 
     .line 38
     .line 39
@@ -144,7 +144,7 @@
     move-result v0
 
     .line 45
-    if-eqz v0, :cond_3a
+    if-eqz v0, :cond_0
 
     .line 46
     .line 47
@@ -160,7 +160,7 @@
 
     .line 52
     .line 53
-    if-ne v4, v13, :cond_3a
+    if-ne v4, v13, :cond_0
 
     .line 54
     .line 55
@@ -168,11 +168,11 @@
 
     .line 56
     .line 57
-    goto/16 :goto_35c
+    goto/16 :goto_14
 
     .line 58
     .line 59
-    :cond_3a
+    :cond_0
     const-string v0, "META-INF/encryption.xml"
 
     .line 60
@@ -189,14 +189,14 @@
     move-result v0
 
     .line 67
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_1
 
     .line 68
     .line 69
-    goto :goto_87
+    goto :goto_0
 
     .line 70
-    :cond_45
+    :cond_1
     const-string v0, "META-INF/container.xml"
 
     .line 71
@@ -213,7 +213,7 @@
     move-result v0
 
     .line 78
-    if-eqz v0, :cond_87
+    if-eqz v0, :cond_2
 
     .line 79
     .line 80
@@ -321,22 +321,22 @@
 
     .line 131
     .line 132
-    if-eqz v0, :cond_87
+    if-eqz v0, :cond_2
 
     .line 133
     .line 134
     move-object v10, v0
 
     .line 135
-    goto :goto_88
+    goto :goto_1
 
     .line 136
-    :cond_87
-    :goto_87
+    :cond_2
+    :goto_0
     move-object v10, v2
 
     .line 137
-    :goto_88
+    :goto_1
     iget-object v0, v7, Llibs/ug0;->h:Lorg/w3c/dom/Element;
 
     .line 138
@@ -345,7 +345,7 @@
 
     .line 140
     .line 141
-    if-nez v0, :cond_cd
+    if-nez v0, :cond_6
 
     .line 142
     .line 143
@@ -365,7 +365,7 @@
     move-result v0
 
     .line 151
-    if-nez v0, :cond_a2
+    if-nez v0, :cond_3
 
     .line 152
     .line 153
@@ -385,11 +385,11 @@
     move-result v0
 
     .line 161
-    if-eqz v0, :cond_cd
+    if-eqz v0, :cond_6
 
     .line 162
     .line 163
-    :cond_a2
+    :cond_3
     iget-object v0, v10, Llibs/vg0;->a:Ljava/lang/String;
 
     .line 164
@@ -414,7 +414,7 @@
     move-result-object v0
 
     .line 175
-    if-eqz v0, :cond_b5
+    if-eqz v0, :cond_4
 
     .line 176
     .line 177
@@ -426,14 +426,14 @@
     move-result-object v0
 
     .line 181
-    goto :goto_b6
+    goto :goto_2
 
     .line 182
-    :cond_b5
+    :cond_4
     const/4 v0, 0x0
 
     .line 183
-    :goto_b6
+    :goto_2
     iput-object v0, v7, Llibs/ug0;->h:Lorg/w3c/dom/Element;
 
     .line 184
@@ -454,7 +454,7 @@
     move-result v0
 
     .line 193
-    if-ltz v0, :cond_c9
+    if-ltz v0, :cond_5
 
     .line 194
     .line 195
@@ -470,20 +470,20 @@
     move-result-object v0
 
     .line 201
-    goto :goto_cb
+    goto :goto_3
 
     .line 202
-    :cond_c9
+    :cond_5
     const-string v0, ""
 
     .line 203
     .line 204
-    :goto_cb
+    :goto_3
     iput-object v0, v7, Llibs/ug0;->r:Ljava/lang/String;
 
     .line 205
     .line 206
-    :cond_cd
+    :cond_6
     iget-object v0, v7, Llibs/ug0;->h:Lorg/w3c/dom/Element;
 
     .line 207
@@ -492,7 +492,7 @@
 
     .line 209
     .line 210
-    if-eqz v0, :cond_e0
+    if-eqz v0, :cond_7
 
     .line 211
     .line 212
@@ -500,7 +500,7 @@
 
     .line 213
     .line 214
-    if-nez v9, :cond_e0
+    if-nez v9, :cond_7
 
     .line 215
     .line 216
@@ -508,7 +508,7 @@
 
     .line 217
     .line 218
-    if-nez v9, :cond_e4
+    if-nez v9, :cond_8
 
     .line 219
     .line 220
@@ -516,24 +516,24 @@
 
     .line 221
     .line 222
-    if-eqz v9, :cond_e0
+    if-eqz v9, :cond_7
 
     .line 223
     .line 224
-    goto :goto_e4
+    goto :goto_4
 
     .line 225
-    :cond_e0
+    :cond_7
     const/16 p1, 0x1
 
     .line 226
     .line 227
-    goto/16 :goto_183
+    goto/16 :goto_7
 
     .line 228
     .line 229
-    :cond_e4
-    :goto_e4
+    :cond_8
+    :goto_4
     const-string v9, "metadata"
 
     .line 230
@@ -692,7 +692,7 @@
     const/4 v5, 0x0
 
     .line 309
-    :goto_134
+    :goto_5
     invoke-interface {v14}, Lorg/w3c/dom/NodeList;->getLength()I
 
     .line 310
@@ -701,7 +701,7 @@
     move-result v0
 
     .line 313
-    if-ge v5, v0, :cond_163
+    if-ge v5, v0, :cond_9
 
     .line 314
     .line 315
@@ -717,7 +717,7 @@
 
     .line 320
     .line 321
-    :try_start_140
+    :try_start_0
     new-instance v6, Llibs/zr1;
 
     .line 322
@@ -748,16 +748,16 @@
     .line 335
     .line 336
     invoke-virtual {v15, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_152
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_140 .. :try_end_152} :catch_153
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 337
     .line 338
     .line 339
-    goto :goto_15d
+    goto :goto_6
 
     .line 340
-    :catch_153
+    :catch_0
     move-exception v0
 
     .line 341
@@ -778,7 +778,7 @@
     .line 348
     .line 349
     .line 350
-    :goto_15d
+    :goto_6
     add-int/lit8 v5, v5, 0x1
 
     .line 351
@@ -790,10 +790,10 @@
 
     .line 354
     .line 355
-    goto :goto_134
+    goto :goto_5
 
     .line 356
-    :cond_163
+    :cond_9
     const-string v0, "language"
 
     .line 357
@@ -806,7 +806,7 @@
     move-result-object v0
 
     .line 362
-    if-eqz v0, :cond_171
+    if-eqz v0, :cond_a
 
     .line 363
     .line 364
@@ -822,7 +822,7 @@
 
     .line 369
     .line 370
-    :cond_171
+    :cond_a
     const-string v0, "coverage"
 
     .line 371
@@ -835,7 +835,7 @@
     move-result-object v0
 
     .line 376
-    if-eqz v0, :cond_17c
+    if-eqz v0, :cond_b
 
     .line 377
     .line 378
@@ -844,7 +844,7 @@
     .line 379
     .line 380
     .line 381
-    :cond_17c
+    :cond_b
     iput-object v11, v7, Llibs/ug0;->c:Llibs/as1;
 
     .line 382
@@ -852,16 +852,16 @@
     const/4 v0, 0x4
 
     .line 384
-    if-ne v4, v0, :cond_183
+    if-ne v4, v0, :cond_c
 
     .line 385
     .line 386
-    goto/16 :goto_35c
+    goto/16 :goto_14
 
     .line 387
     .line 388
-    :cond_183
-    :goto_183
+    :cond_c
+    :goto_7
     iget-object v0, v7, Llibs/ug0;->n:Ljava/util/HashSet;
 
     .line 389
@@ -874,7 +874,7 @@
 
     .line 393
     .line 394
-    if-eqz v0, :cond_1eb
+    if-eqz v0, :cond_12
 
     .line 395
     .line 396
@@ -890,7 +890,7 @@
     move-result v0
 
     .line 402
-    if-lez v0, :cond_1b1
+    if-lez v0, :cond_d
 
     .line 403
     .line 404
@@ -918,7 +918,7 @@
     move-result v2
 
     .line 416
-    if-le v0, v2, :cond_1b1
+    if-le v0, v2, :cond_d
 
     .line 417
     .line 418
@@ -954,12 +954,12 @@
 
     .line 433
     .line 434
-    :cond_1b1
+    :cond_d
     iget-object v0, v7, Llibs/ug0;->d:[B
 
     .line 435
     .line 436
-    if-nez v0, :cond_1e8
+    if-nez v0, :cond_11
 
     .line 437
     .line 438
@@ -967,14 +967,14 @@
 
     .line 439
     .line 440
-    if-eqz v0, :cond_1ba
+    if-eqz v0, :cond_e
 
     .line 441
     .line 442
-    goto :goto_1e8
+    goto :goto_9
 
     .line 443
-    :cond_1ba
+    :cond_e
     iget-object v0, v7, Llibs/ug0;->p:Ljava/util/LinkedHashSet;
 
     .line 444
@@ -991,7 +991,7 @@
     move-result v0
 
     .line 451
-    if-eqz v0, :cond_1e8
+    if-eqz v0, :cond_11
 
     .line 452
     .line 453
@@ -1014,7 +1014,7 @@
 
     .line 461
     .line 462
-    if-nez v0, :cond_1d3
+    if-nez v0, :cond_f
 
     .line 463
     .line 464
@@ -1022,19 +1022,19 @@
 
     .line 465
     .line 466
-    if-eqz v0, :cond_1d6
+    if-eqz v0, :cond_10
 
     .line 467
     .line 468
-    :cond_1d3
+    :cond_f
     const/16 v2, 0x8
 
     .line 469
     .line 470
-    goto :goto_1e4
+    goto :goto_8
 
     .line 471
-    :cond_1d6
+    :cond_10
     iget-object v0, v7, Llibs/ug0;->p:Ljava/util/LinkedHashSet;
 
     .line 472
@@ -1047,7 +1047,7 @@
     move-result v0
 
     .line 477
-    if-nez v0, :cond_35e
+    if-nez v0, :cond_24
 
     .line 478
     .line 479
@@ -1055,33 +1055,33 @@
 
     .line 480
     .line 481
-    if-ne v4, v2, :cond_35e
+    if-ne v4, v2, :cond_24
 
     .line 482
     .line 483
-    goto/16 :goto_35c
+    goto/16 :goto_14
 
     .line 484
     .line 485
-    :goto_1e4
-    if-ne v4, v2, :cond_35e
+    :goto_8
+    if-ne v4, v2, :cond_24
 
     .line 486
     .line 487
-    goto/16 :goto_35c
+    goto/16 :goto_14
 
     .line 488
     .line 489
-    :cond_1e8
-    :goto_1e8
+    :cond_11
+    :goto_9
     move-object v3, v10
 
     .line 490
-    goto/16 :goto_35e
+    goto/16 :goto_15
 
     .line 491
     .line 492
-    :cond_1eb
+    :cond_12
     move-object v3, v10
 
     .line 493
@@ -1089,7 +1089,7 @@
 
     .line 494
     .line 495
-    if-eqz v0, :cond_35e
+    if-eqz v0, :cond_24
 
     .line 496
     .line 497
@@ -1122,7 +1122,7 @@
     move-result v6
 
     .line 512
-    if-nez v6, :cond_204
+    if-nez v6, :cond_13
 
     .line 513
     .line 514
@@ -1132,10 +1132,10 @@
     const/4 v6, 0x0
 
     .line 516
-    goto :goto_20b
+    goto :goto_a
 
     .line 517
-    :cond_204
+    :cond_13
     const/4 v6, 0x0
 
     .line 518
@@ -1151,7 +1151,7 @@
 
     .line 523
     .line 524
-    :goto_20b
+    :goto_a
     const-string v9, "href"
 
     .line 525
@@ -1164,14 +1164,14 @@
 
     .line 529
     .line 530
-    if-nez v0, :cond_214
+    if-nez v0, :cond_14
 
     .line 531
     .line 532
-    goto :goto_23b
+    goto :goto_c
 
     .line 533
-    :cond_214
+    :cond_14
     invoke-interface {v0, v8, v13}, Lorg/w3c/dom/Element;->getElementsByTagNameNS(Ljava/lang/String;Ljava/lang/String;)Lorg/w3c/dom/NodeList;
 
     .line 534
@@ -1183,7 +1183,7 @@
     const/4 v14, 0x0
 
     .line 538
-    :goto_219
+    :goto_b
     invoke-interface {v0}, Lorg/w3c/dom/NodeList;->getLength()I
 
     .line 539
@@ -1192,7 +1192,7 @@
     move-result v15
 
     .line 542
-    if-ge v14, v15, :cond_23b
+    if-ge v14, v15, :cond_15
 
     .line 543
     .line 544
@@ -1249,11 +1249,11 @@
     const/4 v6, 0x0
 
     .line 571
-    goto :goto_219
+    goto :goto_b
 
     .line 572
-    :cond_23b
-    :goto_23b
+    :cond_15
+    :goto_c
     iput-object v5, v7, Llibs/ug0;->n:Ljava/util/HashSet;
 
     .line 573
@@ -1270,7 +1270,7 @@
     move-result v0
 
     .line 580
-    if-lez v0, :cond_286
+    if-lez v0, :cond_18
 
     .line 581
     .line 582
@@ -1303,7 +1303,7 @@
     move-result-object v5
 
     .line 597
-    :goto_254
+    :goto_d
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
     .line 598
@@ -1312,7 +1312,7 @@
     move-result v6
 
     .line 601
-    if-eqz v6, :cond_284
+    if-eqz v6, :cond_17
 
     .line 602
     .line 603
@@ -1352,7 +1352,7 @@
     move-result v14
 
     .line 621
-    if-le v8, v14, :cond_27e
+    if-le v8, v14, :cond_16
 
     .line 622
     .line 623
@@ -1388,7 +1388,7 @@
 
     .line 638
     .line 639
-    :cond_27e
+    :cond_16
     iget-object v8, v6, Llibs/vg0;->a:Ljava/lang/String;
 
     .line 640
@@ -1398,15 +1398,15 @@
     .line 642
     .line 643
     .line 644
-    goto :goto_254
+    goto :goto_d
 
     .line 645
-    :cond_284
+    :cond_17
     iput-object v0, v7, Llibs/ug0;->j:Ljava/util/HashMap;
 
     .line 646
     .line 647
-    :cond_286
+    :cond_18
     iget-object v0, v7, Llibs/ug0;->h:Lorg/w3c/dom/Element;
 
     .line 648
@@ -1452,7 +1452,7 @@
     move-result v8
 
     .line 670
-    if-nez v8, :cond_2ab
+    if-nez v8, :cond_19
 
     .line 671
     .line 672
@@ -1472,18 +1472,18 @@
     move-result v8
 
     .line 680
-    if-nez v8, :cond_2bb
+    if-nez v8, :cond_1b
 
     .line 681
     .line 682
-    :goto_2a9
+    :goto_e
     move-object v6, v0
 
     .line 683
-    goto :goto_2bb
+    goto :goto_f
 
     .line 684
-    :cond_2ab
+    :cond_19
     const-string v6, "reference"
 
     .line 685
@@ -1508,19 +1508,19 @@
     move-result v6
 
     .line 696
-    if-nez v6, :cond_2ba
+    if-nez v6, :cond_1a
 
     .line 697
     .line 698
-    goto :goto_2a9
+    goto :goto_e
 
     .line 699
-    :cond_2ba
+    :cond_1a
     const/4 v6, 0x0
 
     .line 700
-    :cond_2bb
-    :goto_2bb
+    :cond_1b
+    :goto_f
     invoke-static {v6}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
 
     .line 701
@@ -1529,7 +1529,7 @@
     move-result v0
 
     .line 704
-    if-nez v0, :cond_2c8
+    if-nez v0, :cond_1c
 
     .line 705
     .line 706
@@ -1546,7 +1546,7 @@
     .line 711
     .line 712
     .line 713
-    :cond_2c8
+    :cond_1c
     const-string v0, "cover-image"
 
     .line 714
@@ -1571,7 +1571,7 @@
     move-result v6
 
     .line 725
-    if-nez v6, :cond_2de
+    if-nez v6, :cond_1d
 
     .line 726
     .line 727
@@ -1588,10 +1588,10 @@
     .line 732
     .line 733
     .line 734
-    goto :goto_30c
+    goto :goto_11
 
     .line 735
-    :cond_2de
+    :cond_1d
     invoke-interface {v2}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     .line 736
@@ -1608,8 +1608,8 @@
     move-result-object v0
 
     .line 743
-    :cond_2e6
-    :goto_2e6
+    :cond_1e
+    :goto_10
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 744
@@ -1618,7 +1618,7 @@
     move-result v6
 
     .line 747
-    if-eqz v6, :cond_30c
+    if-eqz v6, :cond_1f
 
     .line 748
     .line 749
@@ -1654,7 +1654,7 @@
     move-result v8
 
     .line 765
-    if-eqz v8, :cond_2e6
+    if-eqz v8, :cond_1e
 
     .line 766
     .line 767
@@ -1683,11 +1683,11 @@
     .line 778
     .line 779
     .line 780
-    goto :goto_2e6
+    goto :goto_10
 
     .line 781
-    :cond_30c
-    :goto_30c
+    :cond_1f
+    :goto_11
     iput-object v5, v7, Llibs/ug0;->p:Ljava/util/LinkedHashSet;
 
     .line 782
@@ -1700,7 +1700,7 @@
     move-result v0
 
     .line 787
-    if-nez v0, :cond_319
+    if-nez v0, :cond_20
 
     .line 788
     .line 789
@@ -1708,14 +1708,14 @@
 
     .line 790
     .line 791
-    if-ne v4, v2, :cond_319
+    if-ne v4, v2, :cond_20
 
     .line 792
     .line 793
-    goto :goto_35c
+    goto :goto_14
 
     .line 794
-    :cond_319
+    :cond_20
     iget-object v0, v7, Llibs/ug0;->j:Ljava/util/HashMap;
 
     .line 795
@@ -1736,7 +1736,7 @@
     move-result-object v8
 
     .line 804
-    :goto_323
+    :goto_12
     invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
 
     .line 805
@@ -1745,7 +1745,7 @@
     move-result v0
 
     .line 808
-    if-eqz v0, :cond_35e
+    if-eqz v0, :cond_24
 
     .line 809
     .line 810
@@ -1780,7 +1780,7 @@
     move-result v0
 
     .line 825
-    if-eqz v0, :cond_357
+    if-eqz v0, :cond_23
 
     .line 826
     .line 827
@@ -1797,7 +1797,7 @@
 
     .line 833
     .line 834
-    if-nez v0, :cond_347
+    if-nez v0, :cond_21
 
     .line 835
     .line 836
@@ -1805,19 +1805,19 @@
 
     .line 837
     .line 838
-    if-eqz v0, :cond_34a
+    if-eqz v0, :cond_22
 
     .line 839
     .line 840
-    :cond_347
+    :cond_21
     const/16 v2, 0x8
 
     .line 841
     .line 842
-    goto :goto_35a
+    goto :goto_13
 
     .line 843
-    :cond_34a
+    :cond_22
     iget-object v0, v7, Llibs/ug0;->p:Ljava/util/LinkedHashSet;
 
     .line 844
@@ -1830,7 +1830,7 @@
     move-result v0
 
     .line 849
-    if-nez v0, :cond_357
+    if-nez v0, :cond_23
 
     .line 850
     .line 851
@@ -1838,35 +1838,35 @@
 
     .line 852
     .line 853
-    if-ne v4, v2, :cond_35e
+    if-ne v4, v2, :cond_24
 
     .line 854
     .line 855
-    goto :goto_35c
+    goto :goto_14
 
     .line 856
-    :cond_357
+    :cond_23
     const/16 v2, 0x8
 
     .line 857
     .line 858
-    goto :goto_323
+    goto :goto_12
 
     .line 859
-    :goto_35a
-    if-ne v4, v2, :cond_35e
+    :goto_13
+    if-ne v4, v2, :cond_24
 
     .line 860
     .line 861
-    :goto_35c
+    :goto_14
     const/4 v3, 0x1
 
     .line 862
-    goto :goto_366
+    goto :goto_16
 
     .line 863
-    :cond_35e
-    :goto_35e
+    :cond_24
+    :goto_15
     iget-object v0, v7, Llibs/ug0;->j:Ljava/util/HashMap;
 
     .line 864
@@ -1880,10 +1880,10 @@
     .line 868
     .line 869
     .line 870
-    :cond_365
+    :cond_25
     const/4 v3, 0x0
 
     .line 871
-    :goto_366
+    :goto_16
     return v3
 .end method

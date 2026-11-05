@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(I[B)V
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,7 +29,7 @@
 
     .line 6
     .line 7
-    if-gt v0, v1, :cond_15
+    if-gt v0, v1, :cond_0
 
     .line 8
     .line 9
@@ -62,7 +62,7 @@
     return-void
 
     .line 22
-    :cond_15
+    :cond_0
     const-string p1, "RC5 key length can be no greater than 255"
 
     .line 23

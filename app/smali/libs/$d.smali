@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;I)V
-    .registers 8
+    .locals 3
 
     .line 1
     const/4 v0, 0x1
@@ -25,7 +25,7 @@
     .line 8
     .line 9
     .line 10
-    if-lez p4, :cond_f
+    if-lez p4, :cond_0
 
     .line 11
     .line 12
@@ -34,16 +34,16 @@
     .line 13
     .line 14
     .line 15
-    goto :goto_12
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_0
     invoke-virtual {p0, p2}, Llibs/od;->System(Ljava/lang/String;)V
 
     .line 17
     .line 18
     .line 19
-    :goto_12
+    :goto_0
     sget p1, Llibs/wh2;->message:I
 
     .line 20
@@ -68,7 +68,7 @@
     move-result p2
 
     .line 31
-    if-nez p2, :cond_83
+    if-nez p2, :cond_4
 
     .line 32
     .line 33
@@ -100,21 +100,21 @@
 
     .line 46
     .line 47
-    if-eqz p2, :cond_32
+    if-eqz p2, :cond_1
 
     .line 48
     .line 49
     const/4 p2, 0x5
 
     .line 50
-    goto :goto_33
+    goto :goto_1
 
     .line 51
-    :cond_32
+    :cond_1
     const/4 p2, 0x3
 
     .line 52
-    :goto_33
+    :goto_1
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setGravity(I)V
 
     .line 53
@@ -148,11 +148,11 @@
     move-result p4
 
     .line 69
-    if-ltz p4, :cond_7f
+    if-ltz p4, :cond_3
 
     .line 70
     .line 71
-    if-nez p4, :cond_4c
+    if-nez p4, :cond_2
 
     .line 72
     .line 73
@@ -164,7 +164,7 @@
     move-result-object p3
 
     .line 77
-    :cond_4c
+    :cond_2
     new-instance v0, Landroid/text/SpannableStringBuilder;
 
     .line 78
@@ -260,7 +260,7 @@
     return-void
 
     .line 128
-    :cond_7f
+    :cond_3
     invoke-virtual {p1, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 129
@@ -269,7 +269,7 @@
     return-void
 
     .line 132
-    :cond_83
+    :cond_4
     const/16 p2, 0x8
 
     .line 133
@@ -283,7 +283,7 @@
 .end method
 
 .method public static Api(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
-    .registers 16
+    .locals 10
 
     .line 1
     const-class v1, Llibs/$d;
@@ -293,7 +293,7 @@
     monitor-enter v1
 
     .line 4
-    :try_start_3
+    :try_start_0
     new-instance v9, Llibs/za;
 
     .line 5
@@ -335,13 +335,13 @@
     .line 21
     .line 22
     invoke-virtual {v3, v2}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
-    :try_end_18
-    .catchall {:try_start_3 .. :try_end_18} :catchall_24
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 23
     .line 24
     .line 25
-    :try_start_18
+    :try_start_1
     invoke-virtual {v9}, Llibs/za;->Intent()Ljava/lang/Object;
 
     .line 26
@@ -360,28 +360,28 @@
     .line 33
     .line 34
     move-result p0
-    :try_end_22
-    .catchall {:try_start_18 .. :try_end_22} :catchall_27
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 35
-    :try_start_22
+    :try_start_2
     monitor-exit v1
 
     .line 36
     return p0
 
     .line 37
-    :catchall_24
+    :catchall_0
     move-exception v0
 
     .line 38
     move-object p0, v0
 
     .line 39
-    goto :goto_35
+    goto :goto_0
 
     .line 40
-    :catchall_27
+    :catchall_1
     move-exception v0
 
     .line 41
@@ -414,17 +414,17 @@
     return p0
 
     .line 54
-    :goto_35
+    :goto_0
     monitor-exit v1
-    :try_end_36
-    .catchall {:try_start_22 .. :try_end_36} :catchall_24
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 55
     throw p0
 .end method
 
 .method public static Uri(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 18
+    .locals 11
 
     .line 1
     const-class v1, Llibs/$d;
@@ -434,7 +434,7 @@
     monitor-enter v1
 
     .line 4
-    :try_start_3
+    :try_start_0
     new-instance v10, Llibs/za;
 
     .line 5
@@ -481,13 +481,13 @@
     .line 24
     .line 25
     invoke-virtual {p0, v2}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
-    :try_end_1b
-    .catchall {:try_start_3 .. :try_end_1b} :catchall_34
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
     .line 26
     .line 27
     .line 28
-    :try_start_1b
+    :try_start_1
     invoke-virtual {v10}, Llibs/za;->Intent()Ljava/lang/Object;
 
     .line 29
@@ -497,22 +497,22 @@
 
     .line 32
     check-cast p0, Ljava/lang/String;
-    :try_end_21
-    .catchall {:try_start_1b .. :try_end_21} :catchall_22
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 33
     .line 34
-    goto :goto_40
+    goto :goto_0
 
     .line 35
-    :catchall_22
+    :catchall_0
     move-exception v0
 
     .line 36
     move-object p0, v0
 
     .line 37
-    :try_start_24
+    :try_start_2
     const-string p1, "DLG"
 
     .line 38
@@ -531,29 +531,29 @@
     .line 45
     .line 46
     const-string p0, ""
-    :try_end_2f
-    .catchall {:try_start_24 .. :try_end_2f} :catchall_34
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
     .line 47
     .line 48
-    :try_start_2f
+    :try_start_3
     monitor-exit v1
 
     .line 49
     return-object p0
 
     .line 50
-    :catchall_31
+    :catchall_1
     move-exception v0
 
     .line 51
     move-object p0, v0
 
     .line 52
-    goto :goto_42
+    goto :goto_1
 
     .line 53
-    :catchall_34
+    :catchall_2
     move-exception v0
 
     .line 54
@@ -580,24 +580,24 @@
     const/4 p0, 0x0
 
     .line 65
-    :goto_40
+    :goto_0
     monitor-exit v1
 
     .line 66
     return-object p0
 
     .line 67
-    :goto_42
+    :goto_1
     monitor-exit v1
-    :try_end_43
-    .catchall {:try_start_2f .. :try_end_43} :catchall_31
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 68
     throw p0
 .end method
 
 .method public static Url(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IILlibs/za;)V
-    .registers 24
+    .locals 16
 
     .line 1
     new-instance v0, Llibs/$d;
@@ -657,7 +657,7 @@
 
     .line 29
     .line 30
-    if-eq v4, v1, :cond_36
+    if-eq v4, v1, :cond_0
 
     .line 31
     .line 32
@@ -715,14 +715,14 @@
     move-result-object v2
 
     .line 54
-    goto :goto_37
+    goto :goto_0
 
     .line 55
-    :cond_36
+    :cond_0
     const/4 v2, 0x0
 
     .line 56
-    :goto_37
+    :goto_0
     new-instance v1, Ljava/util/concurrent/atomic/AtomicReference;
 
     .line 57
@@ -832,7 +832,7 @@
 
 # virtual methods
 .method public final Gms(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/od;->X:Lcom/mixplorer/activities/a;
@@ -847,7 +847,7 @@
 .end method
 
 .method public final Ok()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/od;->X:Lcom/mixplorer/activities/a;
@@ -862,7 +862,7 @@
 .end method
 
 .method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
-    .registers 4
+    .locals 2
 
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
 
@@ -870,25 +870,25 @@
 
     const/4 v1, 0x4
 
-    if-ne v0, v1, :cond_15
+    if-ne v0, v1, :cond_0
 
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     invoke-static {}, Llibs/SmartFeaturesV116;->closeFolderDialog()Z
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
     return v0
 
-    :cond_15
+    :cond_0
     invoke-super {p0, p1}, Llibs/od;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
     move-result v0
@@ -897,19 +897,19 @@
 .end method
 
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 11
+    .locals 9
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
-    if-nez v0, :cond_62
+    if-nez v0, :cond_1
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
-    if-eqz v0, :cond_62
+    if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
 
@@ -925,7 +925,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_62
+    if-eqz v1, :cond_1
 
     const v1, 0x1020002
 
@@ -935,7 +935,7 @@
 
     instance-of v1, v0, Landroid/view/ViewGroup;
 
-    if-eqz v1, :cond_62
+    if-eqz v1, :cond_1
 
     check-cast v0, Landroid/view/ViewGroup;
 
@@ -943,7 +943,7 @@
 
     move-result v1
 
-    if-lez v1, :cond_62
+    if-lez v1, :cond_1
 
     const/4 v1, 0x0
 
@@ -989,25 +989,25 @@
 
     add-int/2addr v7, v5
 
-    if-lt v3, v1, :cond_5d
+    if-lt v3, v1, :cond_0
 
-    if-ge v3, v6, :cond_5d
+    if-ge v3, v6, :cond_0
 
-    if-lt v4, v5, :cond_5d
+    if-lt v4, v5, :cond_0
 
-    if-ge v4, v7, :cond_5d
+    if-ge v4, v7, :cond_0
 
-    goto :goto_62
+    goto :goto_0
 
-    :cond_5d
+    :cond_0
     invoke-static {}, Llibs/SmartFeaturesV116;->closeFolderDialog()Z
 
     const/4 v0, 0x1
 
     return v0
 
-    :cond_62
-    :goto_62
+    :cond_1
+    :goto_0
     invoke-super {p0, p1}, Landroid/app/Dialog;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
@@ -1016,7 +1016,7 @@
 .end method
 
 .method public show()V
-    .registers 2
+    .locals 1
 
     invoke-super {p0}, Llibs/od;->show()V
 

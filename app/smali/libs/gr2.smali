@@ -5,7 +5,7 @@
 
 # direct methods
 .method public synthetic constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,7 +17,7 @@
 .end method
 
 .method public static a(Llibs/rz1;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-static {p0}, Llibs/kr2;->Init(Llibs/rz1;)V

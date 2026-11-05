@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Class;B)V
-    .registers 9
+    .locals 6
 
     .line 1
     iput-byte p2, p0, Llibs/dy1;->a:B
@@ -38,7 +38,7 @@
     const/4 v5, 0x1
 
     .line 11
-    packed-switch p2, :pswitch_data_54
+    packed-switch p2, :pswitch_data_0
 
     .line 12
     .line 13
@@ -88,7 +88,7 @@
     return-void
 
     .line 37
-    :pswitch_24
+    :pswitch_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 38
@@ -141,7 +141,7 @@
     return-void
 
     .line 63
-    :pswitch_3e
+    :pswitch_1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 64
@@ -186,9 +186,9 @@
     nop
 
     .line 85
-    :pswitch_data_54
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_3e
-        :pswitch_24
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

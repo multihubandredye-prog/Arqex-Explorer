@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/PreferenceActivity;Llibs/ml1;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/qe2;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/qe2;->X:B
@@ -57,7 +57,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_6a
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -70,7 +70,7 @@
     return-void
 
     .line 14
-    :pswitch_d
+    :pswitch_0
     invoke-static {v2, v1, p1}, Lcom/mixplorer/activities/PreferenceActivity;->New(Lcom/mixplorer/activities/PreferenceActivity;Llibs/ml1;Landroid/view/View;)V
 
     .line 15
@@ -79,7 +79,7 @@
     return-void
 
     .line 18
-    :pswitch_11
+    :pswitch_1
     sget-boolean p1, Lcom/mixplorer/activities/PreferenceActivity;->O:Z
 
     .line 19
@@ -108,7 +108,7 @@
     move-result p1
 
     .line 32
-    if-nez p1, :cond_27
+    if-nez p1, :cond_0
 
     .line 33
     .line 34
@@ -122,12 +122,12 @@
     .line 38
     .line 39
     .line 40
-    :cond_27
+    :cond_0
     sget-object p1, Llibs/ho2;->a:Ljava/lang/String;
 
     .line 41
     .line 42
-    :try_start_29
+    :try_start_0
     invoke-static {}, Llibs/je;->t()Llibs/je;
 
     .line 43
@@ -157,13 +157,13 @@
 
     .line 56
     invoke-virtual {p1, v0}, Llibs/je;->r(Ljava/lang/String;)Z
-    :try_end_3a
-    .catchall {:try_start_29 .. :try_end_3a} :catchall_3a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 57
     .line 58
     .line 59
-    :catchall_3a
+    :catchall_0
     invoke-virtual {v1}, Llibs/od;->dismiss()V
 
     .line 60
@@ -172,7 +172,7 @@
     return-void
 
     .line 63
-    :pswitch_3e
+    :pswitch_2
     sget-boolean p1, Lcom/mixplorer/activities/PreferenceActivity;->O:Z
 
     .line 64
@@ -185,7 +185,7 @@
     return-void
 
     .line 69
-    :pswitch_44
+    :pswitch_3
     sget-boolean p1, Lcom/mixplorer/activities/PreferenceActivity;->O:Z
 
     .line 70
@@ -249,7 +249,7 @@
     return-void
 
     .line 102
-    :pswitch_65
+    :pswitch_4
     invoke-static {v2, v1}, Lcom/mixplorer/activities/PreferenceActivity;->Wait(Lcom/mixplorer/activities/PreferenceActivity;Llibs/ml1;)V
 
     .line 103
@@ -261,12 +261,12 @@
     nop
 
     .line 107
-    :pswitch_data_6a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_65
-        :pswitch_44
-        :pswitch_3e
-        :pswitch_11
-        :pswitch_d
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

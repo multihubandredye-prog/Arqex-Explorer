@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/v33;->j:Ljava/math/BigInteger;
@@ -28,7 +28,7 @@
 .end method
 
 .method public constructor <init>(Ljava/math/BigInteger;)V
-    .registers 5
+    .locals 3
 
     .line 1
     const/16 v0, 0x8
@@ -40,7 +40,7 @@
     .line 4
     .line 5
     .line 6
-    if-eqz p1, :cond_32
+    if-eqz p1, :cond_1
 
     .line 7
     .line 8
@@ -52,7 +52,7 @@
     move-result v0
 
     .line 12
-    if-ltz v0, :cond_32
+    if-ltz v0, :cond_1
 
     .line 13
     .line 14
@@ -68,7 +68,7 @@
     move-result v0
 
     .line 20
-    if-gez v0, :cond_32
+    if-gez v0, :cond_1
 
     .line 21
     .line 22
@@ -95,7 +95,7 @@
     const/4 v1, -0x1
 
     .line 33
-    if-ne v0, v1, :cond_2f
+    if-ne v0, v1, :cond_0
 
     .line 34
     .line 35
@@ -115,7 +115,7 @@
     move-result v2
 
     .line 43
-    if-eqz v2, :cond_2f
+    if-eqz v2, :cond_0
 
     .line 44
     .line 45
@@ -124,7 +124,7 @@
     .line 46
     .line 47
     .line 48
-    :cond_2f
+    :cond_0
     iput-object p1, p0, Llibs/w33;->Chi:[I
 
     .line 49
@@ -132,7 +132,7 @@
     return-void
 
     .line 51
-    :cond_32
+    :cond_1
     const-string p1, "x value invalid for SecP384R1FieldElement"
 
     .line 52
@@ -149,7 +149,7 @@
 .end method
 
 .method public constructor <init>([I)V
-    .registers 3
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -165,7 +165,7 @@
 
 # virtual methods
 .method public final All()Llibs/xf3;
-    .registers 9
+    .locals 8
 
     .line 1
     const/16 v0, 0xc
@@ -184,7 +184,7 @@
     move-result v2
 
     .line 9
-    if-nez v2, :cond_8b
+    if-nez v2, :cond_2
 
     .line 10
     .line 11
@@ -196,14 +196,14 @@
     move-result v2
 
     .line 15
-    if-eqz v2, :cond_11
+    if-eqz v2, :cond_0
 
     .line 16
     .line 17
-    goto :goto_8b
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     new-array v2, v0, [I
 
     .line 19
@@ -402,7 +402,7 @@
     move-result v0
 
     .line 130
-    if-eqz v0, :cond_89
+    if-eqz v0, :cond_1
 
     .line 131
     .line 132
@@ -418,20 +418,20 @@
     return-object v0
 
     .line 138
-    :cond_89
+    :cond_1
     const/4 v0, 0x0
 
     .line 139
     return-object v0
 
     .line 140
-    :cond_8b
-    :goto_8b
+    :cond_2
+    :goto_0
     return-object p0
 .end method
 
 .method public final Android()Ljava/math/BigInteger;
-    .registers 3
+    .locals 2
 
     .line 1
     const/16 v0, 0xc
@@ -454,7 +454,7 @@
 .end method
 
 .method public final Bit()Llibs/xf3;
-    .registers 3
+    .locals 2
 
     .line 1
     const/16 v0, 0xc
@@ -487,7 +487,7 @@
 .end method
 
 .method public final Data()Z
-    .registers 3
+    .locals 2
 
     .line 1
     const/16 v0, 0xc
@@ -510,7 +510,7 @@
 .end method
 
 .method public final Item()Z
-    .registers 3
+    .locals 2
 
     .line 1
     const/16 v0, 0xc
@@ -533,7 +533,7 @@
 .end method
 
 .method public final Link(Llibs/xf3;)Llibs/xf3;
-    .registers 4
+    .locals 2
 
     .line 1
     const/16 v0, 0xc
@@ -574,7 +574,7 @@
 .end method
 
 .method public final Post()Llibs/xf3;
-    .registers 5
+    .locals 4
 
     .line 1
     const/16 v0, 0xc
@@ -597,7 +597,7 @@
     move-result v3
 
     .line 11
-    if-eqz v3, :cond_15
+    if-eqz v3, :cond_0
 
     .line 12
     .line 13
@@ -607,8 +607,8 @@
     const/4 v3, 0x0
 
     .line 15
-    :goto_e
-    if-ge v3, v0, :cond_1a
+    :goto_0
+    if-ge v3, v0, :cond_1
 
     .line 16
     .line 17
@@ -620,10 +620,10 @@
 
     .line 20
     .line 21
-    goto :goto_e
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     sget-object v3, Llibs/k12;->e:[I
 
     .line 23
@@ -633,7 +633,7 @@
     .line 25
     .line 26
     .line 27
-    :cond_1a
+    :cond_1
     new-instance v0, Llibs/w33;
 
     .line 28
@@ -647,7 +647,7 @@
 .end method
 
 .method public final Result()Llibs/xf3;
-    .registers 4
+    .locals 3
 
     .line 1
     const/16 v0, 0xc
@@ -684,7 +684,7 @@
 .end method
 
 .method public final System()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/w33;->Chi:[I
@@ -702,14 +702,14 @@
     const/4 v1, 0x1
 
     .line 8
-    if-ne v0, v1, :cond_a
+    if-ne v0, v1, :cond_0
 
     .line 9
     .line 10
     return v1
 
     .line 11
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
     .line 12
@@ -717,7 +717,7 @@
 .end method
 
 .method public final True(Llibs/xf3;)Llibs/xf3;
-    .registers 4
+    .locals 2
 
     .line 1
     const/16 v0, 0xc
@@ -758,7 +758,7 @@
 .end method
 
 .method public final b(Llibs/xf3;)Llibs/xf3;
-    .registers 5
+    .locals 3
 
     .line 1
     const/16 v0, 0xc
@@ -789,7 +789,7 @@
     move-result p1
 
     .line 15
-    if-nez p1, :cond_1f
+    if-nez p1, :cond_0
 
     .line 16
     .line 17
@@ -804,7 +804,7 @@
     const/4 v2, -0x1
 
     .line 22
-    if-ne p1, v2, :cond_22
+    if-ne p1, v2, :cond_1
 
     .line 23
     .line 24
@@ -820,17 +820,17 @@
     move-result p1
 
     .line 30
-    if-eqz p1, :cond_22
+    if-eqz p1, :cond_1
 
     .line 31
     .line 32
-    :cond_1f
+    :cond_0
     invoke-static {v1}, Llibs/k12;->f([I)V
 
     .line 33
     .line 34
     .line 35
-    :cond_22
+    :cond_1
     new-instance p1, Llibs/w33;
 
     .line 36
@@ -844,10 +844,10 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     .line 1
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     .line 2
     .line 3
@@ -857,12 +857,12 @@
     return p1
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v0, p1, Llibs/w33;
 
     .line 6
     .line 7
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     .line 8
     .line 9
@@ -872,7 +872,7 @@
     return p1
 
     .line 11
-    :cond_a
+    :cond_1
     check-cast p1, Llibs/w33;
 
     .line 12
@@ -901,7 +901,7 @@
 .end method
 
 .method public final f()Llibs/xf3;
-    .registers 5
+    .locals 4
 
     .line 1
     const/16 v0, 0xc
@@ -924,7 +924,7 @@
     move-result v2
 
     .line 11
-    if-nez v2, :cond_1b
+    if-nez v2, :cond_0
 
     .line 12
     .line 13
@@ -939,7 +939,7 @@
     const/4 v3, -0x1
 
     .line 18
-    if-ne v2, v3, :cond_1e
+    if-ne v2, v3, :cond_1
 
     .line 19
     .line 20
@@ -955,17 +955,17 @@
     move-result v0
 
     .line 26
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_1
 
     .line 27
     .line 28
-    :cond_1b
+    :cond_0
     invoke-static {v1}, Llibs/k12;->f([I)V
 
     .line 29
     .line 30
     .line 31
-    :cond_1e
+    :cond_1
     new-instance v0, Llibs/w33;
 
     .line 32
@@ -979,7 +979,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 4
+    .locals 3
 
     .line 1
     sget-object v0, Llibs/w33;->Psi:Ljava/math/BigInteger;
@@ -1017,7 +1017,7 @@
 .end method
 
 .method public final p(Llibs/xf3;)Llibs/xf3;
-    .registers 4
+    .locals 2
 
     .line 1
     const/16 v0, 0xc
@@ -1067,7 +1067,7 @@
 .end method
 
 .method public final w()I
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/w33;->Psi:Ljava/math/BigInteger;

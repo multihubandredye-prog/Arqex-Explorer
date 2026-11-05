@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(ILandroid/app/Activity;Llibs/xl1;)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput p1, p0, Llibs/t81;->c:I
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final c(Ljava/lang/Exception;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-static {p1}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
@@ -66,7 +66,7 @@
 .end method
 
 .method public final d(Llibs/jo2;)V
-    .registers 10
+    .locals 8
 
     .line 1
     new-instance v0, Llibs/xv1;

@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/widgets/MiEditor;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/dl3;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/dl3;->X:B
@@ -50,7 +50,7 @@
 
     .line 5
     .line 6
-    packed-switch v0, :pswitch_data_4e
+    packed-switch v0, :pswitch_data_0
 
     .line 7
     .line 8
@@ -59,7 +59,7 @@
 
     .line 10
     .line 11
-    if-lez v0, :cond_24
+    if-lez v0, :cond_1
 
     .line 12
     .line 13
@@ -71,7 +71,7 @@
     move-result v0
 
     .line 17
-    if-nez v0, :cond_15
+    if-nez v0, :cond_0
 
     .line 18
     .line 19
@@ -80,7 +80,7 @@
     .line 20
     .line 21
     .line 22
-    :cond_15
+    :cond_0
     iget v0, v2, Lcom/mixplorer/widgets/MiEditor;->Nine:I
 
     .line 23
@@ -110,11 +110,11 @@
 
     .line 36
     .line 37
-    :cond_24
+    :cond_1
     return-void
 
     .line 38
-    :pswitch_25
+    :pswitch_0
     invoke-virtual {v2, v1}, Lcom/mixplorer/widgets/MiEditor;->setEnabled(Z)V
 
     .line 39
@@ -123,7 +123,7 @@
     return-void
 
     .line 42
-    :pswitch_29
+    :pswitch_1
     sget v0, Lcom/mixplorer/activities/TextEditorActivity;->$c:I
 
     .line 43
@@ -160,7 +160,7 @@
     return-void
 
     .line 60
-    :pswitch_3b
+    :pswitch_2
     sget v0, Lcom/mixplorer/activities/TextEditorActivity;->$c:I
 
     .line 61
@@ -198,10 +198,10 @@
     return-void
 
     .line 79
-    :pswitch_data_4e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_3b
-        :pswitch_29
-        :pswitch_25
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

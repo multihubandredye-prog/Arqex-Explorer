@@ -18,7 +18,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-wide/16 v0, 0x0
@@ -41,7 +41,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,7 +55,7 @@
 
 # virtual methods
 .method public final a()Ljava/math/BigInteger;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/dl2;->a:Ljava/math/BigInteger;
@@ -70,7 +70,7 @@
     move-result v0
 
     .line 7
-    :cond_6
+    :cond_0
     new-instance v1, Ljava/math/BigInteger;
 
     .line 8
@@ -96,7 +96,7 @@
     move-result v2
 
     .line 20
-    if-nez v2, :cond_6
+    if-nez v2, :cond_0
 
     .line 21
     .line 22
@@ -112,7 +112,7 @@
     move-result v2
 
     .line 28
-    if-gez v2, :cond_6
+    if-gez v2, :cond_0
 
     .line 29
     .line 30
@@ -120,7 +120,7 @@
 .end method
 
 .method public final b()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -130,7 +130,7 @@
 .end method
 
 .method public final c(Ljava/math/BigInteger;Ljava/security/SecureRandom;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/dl2;->a:Ljava/math/BigInteger;
@@ -145,7 +145,7 @@
 .end method
 
 .method public final d(Ljava/math/BigInteger;Ljava/math/BigInteger;[B)V
-    .registers 4
+    .locals 0
 
     .line 1
     new-instance p1, Ljava/lang/IllegalStateException;

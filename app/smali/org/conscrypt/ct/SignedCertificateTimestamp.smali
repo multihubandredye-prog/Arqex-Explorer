@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/conscrypt/ct/SignedCertificateTimestamp$Version;[BJ[BLorg/conscrypt/ct/DigitallySigned;Lorg/conscrypt/ct/SignedCertificateTimestamp$Origin;)V
-    .registers 8
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,7 +55,7 @@
 .end method
 
 .method public static decode(Ljava/io/InputStream;Lorg/conscrypt/ct/SignedCertificateTimestamp$Origin;)Lorg/conscrypt/ct/SignedCertificateTimestamp;
-    .registers 11
+    .locals 9
 
     .line 1
     const/4 v0, 0x1
@@ -81,7 +81,7 @@
     move-result v1
 
     .line 12
-    if-ne v0, v1, :cond_29
+    if-ne v0, v1, :cond_0
 
     .line 13
     .line 14
@@ -143,7 +143,7 @@
     return-object v1
 
     .line 42
-    :cond_29
+    :cond_0
     new-instance p0, Lorg/conscrypt/ct/SerializationException;
 
     .line 43
@@ -169,7 +169,7 @@
 .end method
 
 .method public static decode([BLorg/conscrypt/ct/SignedCertificateTimestamp$Origin;)Lorg/conscrypt/ct/SignedCertificateTimestamp;
-    .registers 3
+    .locals 1
 
     .line 54
     new-instance v0, Ljava/io/ByteArrayInputStream;
@@ -186,7 +186,7 @@
 
 # virtual methods
 .method public encodeTBS(Ljava/io/OutputStream;Lorg/conscrypt/ct/CertificateEntry;)V
-    .registers 6
+    .locals 3
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ct/SignedCertificateTimestamp;->version:Lorg/conscrypt/ct/SignedCertificateTimestamp$Version;
@@ -266,7 +266,7 @@
 .end method
 
 .method public encodeTBS(Lorg/conscrypt/ct/CertificateEntry;)[B
-    .registers 3
+    .locals 1
 
     .line 39
     new-instance v0, Ljava/io/ByteArrayOutputStream;
@@ -285,7 +285,7 @@
 .end method
 
 .method public getExtensions()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ct/SignedCertificateTimestamp;->extensions:[B
@@ -296,7 +296,7 @@
 .end method
 
 .method public getLogID()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ct/SignedCertificateTimestamp;->logId:[B
@@ -307,7 +307,7 @@
 .end method
 
 .method public getOrigin()Lorg/conscrypt/ct/SignedCertificateTimestamp$Origin;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ct/SignedCertificateTimestamp;->origin:Lorg/conscrypt/ct/SignedCertificateTimestamp$Origin;
@@ -318,7 +318,7 @@
 .end method
 
 .method public getSignature()Lorg/conscrypt/ct/DigitallySigned;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ct/SignedCertificateTimestamp;->signature:Lorg/conscrypt/ct/DigitallySigned;
@@ -329,7 +329,7 @@
 .end method
 
 .method public getTimestamp()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/ct/SignedCertificateTimestamp;->timestamp:J
@@ -340,7 +340,7 @@
 .end method
 
 .method public getVersion()Lorg/conscrypt/ct/SignedCertificateTimestamp$Version;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ct/SignedCertificateTimestamp;->version:Lorg/conscrypt/ct/SignedCertificateTimestamp$Version;

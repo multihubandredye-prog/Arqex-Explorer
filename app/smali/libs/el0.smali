@@ -22,7 +22,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/io/Serializable;Ljava/lang/Object;Ljava/lang/Object;B)V
-    .registers 7
+    .locals 0
 
     .line 18
     iput-byte p6, p0, Llibs/el0;->X:B
@@ -43,7 +43,7 @@
 .end method
 
 .method public synthetic constructor <init>(Llibs/r31;Ljava/util/HashSet;Llibs/zl0;Ljava/lang/String;Ljava/util/Properties;)V
-    .registers 7
+    .locals 1
 
     .line 19
     const/4 v0, 0x2
@@ -66,7 +66,7 @@
 .end method
 
 .method public synthetic constructor <init>(Llibs/rp0;Ljava/lang/String;Llibs/b11;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 7
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -107,7 +107,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 19
+    .locals 18
 
     .line 1
     move-object/from16 v1, p0
@@ -138,7 +138,7 @@
 
     .line 14
     .line 15
-    packed-switch v0, :pswitch_data_cc
+    packed-switch v0, :pswitch_data_0
 
     .line 16
     .line 17
@@ -198,7 +198,7 @@
     return-void
 
     .line 43
-    :pswitch_2a
+    :pswitch_0
     move-object v10, v6
 
     .line 44
@@ -254,7 +254,7 @@
     return-void
 
     .line 68
-    :pswitch_43
+    :pswitch_1
     check-cast v6, Llibs/rp0;
 
     .line 69
@@ -291,7 +291,7 @@
 
     .line 83
     .line 84
-    :try_start_53
+    :try_start_0
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     .line 85
@@ -327,7 +327,7 @@
     move-result v6
 
     .line 101
-    if-eqz v6, :cond_7d
+    if-eqz v6, :cond_1
 
     .line 102
     .line 103
@@ -339,7 +339,7 @@
     move-result v6
 
     .line 107
-    if-eqz v6, :cond_7d
+    if-eqz v6, :cond_1
 
     .line 108
     .line 109
@@ -348,8 +348,8 @@
     .line 110
     .line 111
     iput-object v0, v5, Llibs/b11;->d:Ljava/lang/String;
-    :try_end_70
-    .catchall {:try_start_53 .. :try_end_70} :catchall_7b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 112
     .line 113
@@ -361,32 +361,32 @@
 
     .line 116
     .line 117
-    if-lez v0, :cond_78
+    if-lez v0, :cond_0
 
     .line 118
     .line 119
-    :goto_76
+    :goto_0
     iput-wide v6, v5, Llibs/b11;->a:J
 
     .line 120
     .line 121
-    :cond_78
+    :cond_0
     iput-boolean v2, v5, Llibs/b11;->c:Z
 
     .line 122
     .line 123
-    goto :goto_ae
+    goto :goto_3
 
     .line 124
-    :catchall_7b
+    :catchall_0
     move-exception v0
 
     .line 125
-    goto :goto_8e
+    goto :goto_1
 
     .line 126
-    :cond_7d
-    :try_start_7d
+    :cond_1
+    :try_start_1
     new-instance v9, Llibs/w01;
 
     .line 127
@@ -403,8 +403,8 @@
 
     .line 133
     invoke-static/range {v7 .. v12}, Llibs/u73;->Context(Ljava/lang/String;Ljava/lang/String;Lcom/mixplorer/ProgressListener;Ljava/lang/String;ZZ)Z
-    :try_end_87
-    .catchall {:try_start_7d .. :try_end_87} :catchall_7b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 134
     .line 135
@@ -417,15 +417,15 @@
 
     .line 139
     .line 140
-    if-lez v0, :cond_78
+    if-lez v0, :cond_0
 
     .line 141
     .line 142
-    goto :goto_76
+    goto :goto_0
 
     .line 143
-    :goto_8e
-    :try_start_8e
+    :goto_1
+    :try_start_2
     invoke-static {v0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 144
@@ -450,7 +450,7 @@
     move-result v0
 
     .line 155
-    if-eqz v0, :cond_a7
+    if-eqz v0, :cond_2
 
     .line 156
     .line 157
@@ -467,23 +467,23 @@
 
     .line 163
     iput-object v0, v5, Llibs/b11;->d:Ljava/lang/String;
-    :try_end_a4
-    .catchall {:try_start_8e .. :try_end_a4} :catchall_a5
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 164
     .line 165
-    goto :goto_a7
+    goto :goto_2
 
     .line 166
-    :catchall_a5
+    :catchall_1
     move-exception v0
 
     .line 167
-    goto :goto_af
+    goto :goto_4
 
     .line 168
-    :cond_a7
-    :goto_a7
+    :cond_2
+    :goto_2
     iget-wide v6, v5, Llibs/b11;->b:J
 
     .line 169
@@ -492,18 +492,18 @@
 
     .line 171
     .line 172
-    if-lez v0, :cond_78
+    if-lez v0, :cond_0
 
     .line 173
     .line 174
-    goto :goto_76
+    goto :goto_0
 
     .line 175
-    :goto_ae
+    :goto_3
     return-void
 
     .line 176
-    :goto_af
+    :goto_4
     iget-wide v6, v5, Llibs/b11;->b:J
 
     .line 177
@@ -512,7 +512,7 @@
 
     .line 179
     .line 180
-    if-lez v8, :cond_b7
+    if-lez v8, :cond_3
 
     .line 181
     .line 182
@@ -520,7 +520,7 @@
 
     .line 183
     .line 184
-    :cond_b7
+    :cond_3
     iput-boolean v2, v5, Llibs/b11;->c:Z
 
     .line 185
@@ -528,7 +528,7 @@
     throw v0
 
     .line 187
-    :pswitch_ba
+    :pswitch_2
     check-cast v6, Llibs/fl0;
 
     .line 188
@@ -565,10 +565,10 @@
     return-void
 
     .line 205
-    :pswitch_data_cc
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_ba
-        :pswitch_43
-        :pswitch_2a
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

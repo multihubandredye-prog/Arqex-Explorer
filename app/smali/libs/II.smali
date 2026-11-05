@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/a92;-><init>()V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final Link()Llibs/c00;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/II;->d:Llibs/I1;
@@ -47,7 +47,7 @@
 .end method
 
 .method public final Node()Llibs/o0;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/II;->c:Llibs/o0;
@@ -58,7 +58,7 @@
 .end method
 
 .method public final State(Llibs/o0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/II;->c:Llibs/o0;
@@ -69,7 +69,7 @@
 .end method
 
 .method public final Task(Llibs/I1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/II;->d:Llibs/I1;

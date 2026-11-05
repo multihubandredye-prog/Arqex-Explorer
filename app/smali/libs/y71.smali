@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/os/IBinder;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final asBinder()Landroid/os/IBinder;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/y71;->a:Landroid/os/IBinder;
@@ -41,7 +41,7 @@
 .end method
 
 .method public final l()V
-    .registers 6
+    .locals 5
 
     .line 1
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
@@ -60,7 +60,7 @@
     move-result-object v1
 
     .line 9
-    :try_start_8
+    :try_start_0
     const-string v2, "moe.shizuku.server.IShizukuService"
 
     .line 10
@@ -95,8 +95,8 @@
     .line 25
     .line 26
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-    :try_end_1c
-    .catchall {:try_start_8 .. :try_end_1c} :catchall_23
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 27
     .line 28
@@ -114,7 +114,7 @@
     return-void
 
     .line 36
-    :catchall_23
+    :catchall_0
     move-exception v2
 
     .line 37
@@ -132,7 +132,7 @@
 .end method
 
 .method public final p(Llibs/p73;Landroid/os/Bundle;)I
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
@@ -151,7 +151,7 @@
     move-result-object v1
 
     .line 9
-    :try_start_8
+    :try_start_0
     const-string v2, "moe.shizuku.server.IShizukuService"
 
     .line 10
@@ -206,8 +206,8 @@
     .line 37
     .line 38
     move-result p1
-    :try_end_26
-    .catchall {:try_start_8 .. :try_end_26} :catchall_2d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 39
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
@@ -223,7 +223,7 @@
     return p1
 
     .line 46
-    :catchall_2d
+    :catchall_0
     move-exception p1
 
     .line 47
@@ -241,7 +241,7 @@
 .end method
 
 .method public final q()Z
-    .registers 6
+    .locals 5
 
     .line 1
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
@@ -260,7 +260,7 @@
     move-result-object v1
 
     .line 9
-    :try_start_8
+    :try_start_0
     const-string v2, "moe.shizuku.server.IShizukuService"
 
     .line 10
@@ -297,18 +297,18 @@
     .line 27
     .line 28
     move-result v2
-    :try_end_1c
-    .catchall {:try_start_8 .. :try_end_1c} :catchall_26
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 29
-    if-eqz v2, :cond_1f
+    if-eqz v2, :cond_0
 
     .line 30
     .line 31
     const/4 v4, 0x1
 
     .line 32
-    :cond_1f
+    :cond_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
     .line 33
@@ -322,7 +322,7 @@
     return v4
 
     .line 39
-    :catchall_26
+    :catchall_0
     move-exception v2
 
     .line 40
@@ -340,7 +340,7 @@
 .end method
 
 .method public final s(Llibs/p73;Landroid/os/Bundle;)I
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
@@ -359,7 +359,7 @@
     move-result-object v1
 
     .line 9
-    :try_start_8
+    :try_start_0
     const-string v2, "moe.shizuku.server.IShizukuService"
 
     .line 10
@@ -414,8 +414,8 @@
     .line 37
     .line 38
     move-result p1
-    :try_end_26
-    .catchall {:try_start_8 .. :try_end_26} :catchall_2d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 39
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
@@ -431,7 +431,7 @@
     return p1
 
     .line 46
-    :catchall_2d
+    :catchall_0
     move-exception p1
 
     .line 47
@@ -449,7 +449,7 @@
 .end method
 
 .method public final x([Ljava/lang/String;)Llibs/h71;
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
@@ -468,7 +468,7 @@
     move-result-object v1
 
     .line 9
-    :try_start_8
+    :try_start_0
     const-string v2, "moe.shizuku.server.IShizukuService"
 
     .line 10
@@ -531,8 +531,8 @@
     .line 41
     .line 42
     move-result-object p1
-    :try_end_2a
-    .catchall {:try_start_8 .. :try_end_2a} :catchall_31
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 43
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
@@ -548,7 +548,7 @@
     return-object p1
 
     .line 50
-    :catchall_31
+    :catchall_0
     move-exception p1
 
     .line 51

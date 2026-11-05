@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Param;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -43,7 +43,7 @@
     const/4 v2, 0x0
 
     .line 10
-    if-lt v0, v1, :cond_b3
+    if-lt v0, v1, :cond_5
 
     .line 11
     .line 12
@@ -58,7 +58,7 @@
     const/4 v1, 0x7
 
     .line 17
-    if-gt v0, v1, :cond_b3
+    if-gt v0, v1, :cond_5
 
     .line 18
     .line 19
@@ -80,7 +80,7 @@
     const/4 v3, 0x1
 
     .line 27
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_0
 
     .line 28
     .line 29
@@ -107,15 +107,15 @@
     const/4 v0, 0x1
 
     .line 40
-    goto :goto_2a
+    goto :goto_0
 
     .line 41
-    :cond_28
+    :cond_0
     iput-object v2, p0, Llibs/pj3;->X:Llibs/Api;
 
     .line 42
     .line 43
-    :goto_2a
+    :goto_0
     add-int/lit8 v1, v0, 0x1
 
     .line 44
@@ -196,7 +196,7 @@
     move-result v2
 
     .line 83
-    if-ge v1, v2, :cond_79
+    if-ge v1, v2, :cond_2
 
     .line 84
     .line 85
@@ -212,7 +212,7 @@
 
     .line 90
     .line 91
-    if-nez v2, :cond_6c
+    if-nez v2, :cond_1
 
     .line 92
     .line 93
@@ -228,7 +228,7 @@
 
     .line 98
     .line 99
-    if-nez v2, :cond_6c
+    if-nez v2, :cond_1
 
     .line 100
     .line 101
@@ -244,11 +244,11 @@
 
     .line 106
     .line 107
-    if-eqz v2, :cond_79
+    if-eqz v2, :cond_2
 
     .line 108
     .line 109
-    :cond_6c
+    :cond_1
     add-int/lit8 v0, v0, 0x4
 
     .line 110
@@ -276,7 +276,7 @@
     move v1, v0
 
     .line 122
-    :cond_79
+    :cond_2
     invoke-virtual {p1}, Llibs/Param;->size()I
 
     .line 123
@@ -285,7 +285,7 @@
     move-result v0
 
     .line 126
-    if-ge v1, v0, :cond_94
+    if-ge v1, v0, :cond_3
 
     .line 127
     .line 128
@@ -301,7 +301,7 @@
 
     .line 133
     .line 134
-    if-nez v0, :cond_94
+    if-nez v0, :cond_3
 
     .line 135
     .line 136
@@ -332,7 +332,7 @@
     move v1, v0
 
     .line 149
-    :cond_94
+    :cond_3
     invoke-virtual {p1}, Llibs/Param;->size()I
 
     .line 150
@@ -341,7 +341,7 @@
     move-result v0
 
     .line 153
-    if-ge v1, v0, :cond_b2
+    if-ge v1, v0, :cond_4
 
     .line 154
     .line 155
@@ -357,7 +357,7 @@
 
     .line 160
     .line 161
-    if-eqz v0, :cond_b2
+    if-eqz v0, :cond_4
 
     .line 162
     .line 163
@@ -393,11 +393,11 @@
 
     .line 178
     .line 179
-    :cond_b2
+    :cond_4
     return-void
 
     .line 180
-    :cond_b3
+    :cond_5
     const-string v0, "Bad sequence size: "
 
     .line 181
@@ -421,7 +421,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/Init;
@@ -440,7 +440,7 @@
 
     .line 8
     .line 9
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
     .line 10
     .line 11
@@ -449,7 +449,7 @@
     .line 12
     .line 13
     .line 14
-    :cond_d
+    :cond_0
     iget-object v1, p0, Llibs/pj3;->Y:Llibs/$f;
 
     .line 15
@@ -481,7 +481,7 @@
 
     .line 30
     .line 31
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_1
 
     .line 32
     .line 33
@@ -490,12 +490,12 @@
     .line 34
     .line 35
     .line 36
-    :cond_23
+    :cond_1
     iget-object v1, p0, Llibs/pj3;->Nu:Llibs/Param;
 
     .line 37
     .line 38
-    if-eqz v1, :cond_2a
+    if-eqz v1, :cond_2
 
     .line 39
     .line 40
@@ -504,12 +504,12 @@
     .line 41
     .line 42
     .line 43
-    :cond_2a
+    :cond_2
     iget-object v1, p0, Llibs/pj3;->Xi:Llibs/im0;
 
     .line 44
     .line 45
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_3
 
     .line 46
     .line 47
@@ -527,7 +527,7 @@
     .line 53
     .line 54
     .line 55
-    :cond_36
+    :cond_3
     new-instance v1, Llibs/p10;
 
     .line 56

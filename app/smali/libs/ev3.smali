@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -24,7 +24,7 @@
 
     .line 4
     .line 5
-    if-lt v0, v1, :cond_b
+    if-lt v0, v1, :cond_0
 
     .line 6
     .line 7
@@ -39,12 +39,12 @@
     return-void
 
     .line 12
-    :cond_b
+    :cond_0
     const/16 v1, 0x1e
 
     .line 13
     .line 14
-    if-lt v0, v1, :cond_14
+    if-lt v0, v1, :cond_1
 
     .line 15
     .line 16
@@ -59,7 +59,7 @@
     return-void
 
     .line 21
-    :cond_14
+    :cond_1
     sget-object v0, Llibs/dv3;->b:Llibs/ev3;
 
     .line 22
@@ -72,7 +72,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 86
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -88,7 +88,7 @@
 .end method
 
 .method public constructor <init>(Landroid/view/WindowInsets;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -104,7 +104,7 @@
 
     .line 7
     .line 8
-    if-lt v0, v1, :cond_11
+    if-lt v0, v1, :cond_0
 
     .line 9
     .line 10
@@ -124,12 +124,12 @@
     return-void
 
     .line 18
-    :cond_11
+    :cond_0
     const/16 v1, 0x1e
 
     .line 19
     .line 20
-    if-lt v0, v1, :cond_1d
+    if-lt v0, v1, :cond_1
 
     .line 21
     .line 22
@@ -149,12 +149,12 @@
     return-void
 
     .line 30
-    :cond_1d
+    :cond_1
     const/16 v1, 0x1d
 
     .line 31
     .line 32
-    if-lt v0, v1, :cond_29
+    if-lt v0, v1, :cond_2
 
     .line 33
     .line 34
@@ -174,12 +174,12 @@
     return-void
 
     .line 42
-    :cond_29
+    :cond_2
     const/16 v1, 0x1c
 
     .line 43
     .line 44
-    if-lt v0, v1, :cond_35
+    if-lt v0, v1, :cond_3
 
     .line 45
     .line 46
@@ -199,12 +199,12 @@
     return-void
 
     .line 54
-    :cond_35
+    :cond_3
     const/16 v1, 0x15
 
     .line 55
     .line 56
-    if-lt v0, v1, :cond_41
+    if-lt v0, v1, :cond_4
 
     .line 57
     .line 58
@@ -224,12 +224,12 @@
     return-void
 
     .line 66
-    :cond_41
+    :cond_4
     const/16 v1, 0x14
 
     .line 67
     .line 68
-    if-lt v0, v1, :cond_4d
+    if-lt v0, v1, :cond_5
 
     .line 69
     .line 70
@@ -249,7 +249,7 @@
     return-void
 
     .line 78
-    :cond_4d
+    :cond_5
     new-instance p1, Llibs/dv3;
 
     .line 79
@@ -267,7 +267,7 @@
 .end method
 
 .method public static c(Landroid/view/View;Landroid/view/WindowInsets;)Llibs/ev3;
-    .registers 9
+    .locals 7
 
     .line 1
     new-instance v0, Llibs/ev3;
@@ -292,7 +292,7 @@
     .line 11
     .line 12
     .line 13
-    if-eqz p0, :cond_e1
+    if-eqz p0, :cond_7
 
     .line 14
     .line 15
@@ -304,7 +304,7 @@
     move-result p1
 
     .line 19
-    if-eqz p1, :cond_e1
+    if-eqz p1, :cond_7
 
     .line 20
     .line 21
@@ -320,7 +320,7 @@
     move-result p1
 
     .line 27
-    if-eqz p1, :cond_22
+    if-eqz p1, :cond_0
 
     .line 28
     .line 29
@@ -332,11 +332,11 @@
     move-result-object p1
 
     .line 33
-    goto/16 :goto_ce
+    goto/16 :goto_2
 
     .line 34
     .line 35
-    :cond_22
+    :cond_0
     invoke-static {}, Llibs/t43;->Item()Z
 
     .line 36
@@ -348,7 +348,7 @@
     const/4 v1, 0x0
 
     .line 40
-    if-eqz p1, :cond_cd
+    if-eqz p1, :cond_6
 
     .line 41
     .line 42
@@ -356,7 +356,7 @@
 
     .line 43
     .line 44
-    if-eqz p1, :cond_cd
+    if-eqz p1, :cond_6
 
     .line 45
     .line 46
@@ -368,15 +368,15 @@
     move-result p1
 
     .line 50
-    if-nez p1, :cond_35
+    if-nez p1, :cond_1
 
     .line 51
     .line 52
-    goto/16 :goto_cd
+    goto/16 :goto_1
 
     .line 53
     .line 54
-    :cond_35
+    :cond_1
     invoke-virtual {p0}, Landroid/view/View;->getRootView()Landroid/view/View;
 
     .line 55
@@ -385,7 +385,7 @@
     move-result-object p1
 
     .line 58
-    :try_start_39
+    :try_start_0
     sget-object v2, Llibs/su3;->a:Ljava/lang/reflect/Field;
 
     .line 59
@@ -398,7 +398,7 @@
     move-result-object p1
 
     .line 64
-    if-eqz p1, :cond_cd
+    if-eqz p1, :cond_6
 
     .line 65
     .line 66
@@ -434,11 +434,11 @@
 
     .line 81
     .line 82
-    if-eqz v2, :cond_cd
+    if-eqz v2, :cond_6
 
     .line 83
     .line 84
-    if-eqz p1, :cond_cd
+    if-eqz p1, :cond_6
 
     .line 85
     .line 86
@@ -450,7 +450,7 @@
 
     .line 89
     .line 90
-    if-lt v3, v4, :cond_61
+    if-lt v3, v4, :cond_2
 
     .line 91
     .line 92
@@ -463,15 +463,15 @@
     .line 95
     .line 96
     .line 97
-    goto :goto_84
+    goto :goto_0
 
     .line 98
-    :cond_61
+    :cond_2
     const/16 v4, 0x1e
 
     .line 99
     .line 100
-    if-lt v3, v4, :cond_6b
+    if-lt v3, v4, :cond_3
 
     .line 101
     .line 102
@@ -484,15 +484,15 @@
     .line 105
     .line 106
     .line 107
-    goto :goto_84
+    goto :goto_0
 
     .line 108
-    :cond_6b
+    :cond_3
     const/16 v4, 0x1d
 
     .line 109
     .line 110
-    if-lt v3, v4, :cond_75
+    if-lt v3, v4, :cond_4
 
     .line 111
     .line 112
@@ -505,15 +505,15 @@
     .line 115
     .line 116
     .line 117
-    goto :goto_84
+    goto :goto_0
 
     .line 118
-    :cond_75
+    :cond_4
     const/16 v4, 0x14
 
     .line 119
     .line 120
-    if-lt v3, v4, :cond_7f
+    if-lt v3, v4, :cond_5
 
     .line 121
     .line 122
@@ -526,10 +526,10 @@
     .line 125
     .line 126
     .line 127
-    goto :goto_84
+    goto :goto_0
 
     .line 128
-    :cond_7f
+    :cond_5
     new-instance v3, Llibs/wq3;
 
     .line 129
@@ -539,7 +539,7 @@
     .line 131
     .line 132
     .line 133
-    :goto_84
+    :goto_0
     iget v4, v2, Landroid/graphics/Rect;->left:I
 
     .line 134
@@ -628,16 +628,16 @@
     .line 177
     .line 178
     invoke-virtual {v3, v2}, Llibs/dv3;->d(Landroid/view/View;)V
-    :try_end_b4
-    .catch Ljava/lang/IllegalAccessException; {:try_start_39 .. :try_end_b4} :catch_b5
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 179
     .line 180
     .line 181
-    goto :goto_ce
+    goto :goto_2
 
     .line 182
-    :catch_b5
+    :catch_0
     move-exception p1
 
     .line 183
@@ -684,12 +684,12 @@
     .line 204
     .line 205
     .line 206
-    :cond_cd
-    :goto_cd
+    :cond_6
+    :goto_1
     move-object p1, v1
 
     .line 207
-    :goto_ce
+    :goto_2
     iget-object v1, v0, Llibs/ev3;->a:Llibs/dv3;
 
     .line 208
@@ -725,14 +725,14 @@
     .line 224
     .line 225
     .line 226
-    :cond_e1
+    :cond_7
     return-object v0
 .end method
 
 
 # virtual methods
 .method public final a()Llibs/cc0;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ev3;->a:Llibs/dv3;
@@ -751,7 +751,7 @@
 .end method
 
 .method public final b()Landroid/view/WindowInsets;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/ev3;->a:Llibs/dv3;
@@ -762,7 +762,7 @@
 
     .line 4
     .line 5
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_0
 
     .line 6
     .line 7
@@ -777,7 +777,7 @@
     return-object v0
 
     .line 12
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
     .line 13
@@ -785,10 +785,10 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     .line 2
     .line 3
@@ -798,12 +798,12 @@
     return p1
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v0, p1, Llibs/ev3;
 
     .line 6
     .line 7
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     .line 8
     .line 9
@@ -813,7 +813,7 @@
     return p1
 
     .line 11
-    :cond_a
+    :cond_1
     check-cast p1, Llibs/ev3;
 
     .line 12
@@ -838,14 +838,14 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ev3;->a:Llibs/dv3;
 
     .line 2
     .line 3
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -855,7 +855,7 @@
     return v0
 
     .line 7
-    :cond_6
+    :cond_0
     invoke-virtual {v0}, Llibs/dv3;->hashCode()I
 
     .line 8

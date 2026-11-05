@@ -28,7 +28,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/app/Activity;Lcom/mixplorer/widgets/MiCombo;Lcom/mixplorer/widgets/MiCombo;Lcom/mixplorer/widgets/MiCombo;Landroid/widget/CheckBox;Landroid/widget/CheckBox;Llibs/xt1;Llibs/h31;Llibs/$d;)V
-    .registers 10
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 12
+    .locals 10
 
     .line 1
     iget-object v7, p0, Llibs/vu0;->Omicron:Llibs/h31;

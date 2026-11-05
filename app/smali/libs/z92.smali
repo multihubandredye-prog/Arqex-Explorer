@@ -19,7 +19,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/bn1;
@@ -67,7 +67,7 @@
 .end method
 
 .method public constructor <init>(Llibs/s73;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -97,7 +97,7 @@
 
 # virtual methods
 .method public final a(Llibs/nw2;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/z92;->c:Llibs/pu2;
@@ -112,7 +112,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -132,7 +132,7 @@
     move-result v0
 
     .line 17
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_0
 
     .line 18
     .line 19
@@ -155,14 +155,14 @@
     const/4 v0, 0x1
 
     .line 28
-    if-ne p1, v0, :cond_1e
+    if-ne p1, v0, :cond_0
 
     .line 29
     .line 30
     return v0
 
     .line 31
-    :cond_1e
+    :cond_0
     const/4 p1, 0x0
 
     .line 32
@@ -170,7 +170,7 @@
 .end method
 
 .method public final b(Llibs/nw2;Ljavax/crypto/spec/SecretKeySpec;)[B
-    .registers 13
+    .locals 10
 
     .line 1
     sget-object v0, Llibs/z92;->d:Llibs/bn1;
@@ -218,7 +218,7 @@
     const/4 v4, 0x0
 
     .line 22
-    :try_start_15
+    :try_start_0
     invoke-virtual {p1}, Llibs/qj0;->b()Llibs/xw2;
 
     .line 23
@@ -353,14 +353,14 @@
     move-result-object v1
 
     .line 90
-    if-eqz p2, :cond_71
+    if-eqz p2, :cond_0
 
     .line 91
     .line 92
     array-length v5, p2
 
     .line 93
-    if-eqz v5, :cond_71
+    if-eqz v5, :cond_0
 
     .line 94
     .line 95
@@ -392,9 +392,9 @@
 
     .line 106
     invoke-static {v1, v4, v5, p2, v6}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-    :try_end_6c
-    .catch Llibs/q43; {:try_start_15 .. :try_end_6c} :catch_6f
-    .catch Llibs/sj; {:try_start_15 .. :try_end_6c} :catch_6d
+    :try_end_0
+    .catch Llibs/q43; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Llibs/sj; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 107
     .line 108
@@ -402,25 +402,25 @@
     return-object v5
 
     .line 110
-    :catch_6d
+    :catch_0
     move-exception p2
 
     .line 111
-    goto :goto_72
+    goto :goto_0
 
     .line 112
-    :catch_6f
+    :catch_1
     move-exception p2
 
     .line 113
-    goto :goto_85
+    goto :goto_1
 
     .line 114
-    :cond_71
+    :cond_0
     return-object v1
 
     .line 115
-    :goto_72
+    :goto_0
     new-array v1, v3, [Ljava/lang/Object;
 
     .line 116
@@ -458,7 +458,7 @@
     throw p1
 
     .line 134
-    :goto_85
+    :goto_1
     new-array v1, v3, [Ljava/lang/Object;
 
     .line 135
@@ -493,7 +493,7 @@
 .end method
 
 .method public final c(Ljava/lang/String;)Llibs/f;
-    .registers 4
+    .locals 2
 
     .line 1
     sget-object v0, Llibs/z92;->e:Llibs/vg;
@@ -512,17 +512,17 @@
 
     .line 8
     .line 9
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 10
     .line 11
     const/4 v1, 0x0
 
     .line 12
-    goto :goto_12
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 14
@@ -535,8 +535,8 @@
 
     .line 18
     .line 19
-    :goto_12
-    if-eqz v1, :cond_18
+    :goto_0
+    if-eqz v1, :cond_1
 
     .line 20
     .line 21
@@ -548,7 +548,7 @@
     return-object v1
 
     .line 25
-    :cond_18
+    :cond_1
     iget-object v1, p0, Llibs/z92;->a:Llibs/s73;
 
     .line 26
@@ -561,7 +561,7 @@
     move-result-object v1
 
     .line 31
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_2
 
     .line 32
     .line 33
@@ -570,6 +570,6 @@
     .line 34
     .line 35
     .line 36
-    :cond_23
+    :cond_2
     return-object v1
 .end method

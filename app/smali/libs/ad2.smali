@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Comparable;JB)V
-    .registers 6
+    .locals 0
 
     .line 1
     iput-byte p5, p0, Llibs/ad2;->X:B
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 14
+    .locals 13
 
     .line 1
     iget-byte v0, p0, Llibs/ad2;->X:B
@@ -73,7 +73,7 @@
     const/4 v6, 0x1
 
     .line 11
-    packed-switch v0, :pswitch_data_8c
+    packed-switch v0, :pswitch_data_0
 
     .line 12
     .line 13
@@ -126,14 +126,14 @@
 
     .line 37
     .line 38
-    if-gtz v4, :cond_28
+    if-gtz v4, :cond_0
 
     .line 39
     .line 40
     const/4 v5, 0x1
 
     .line 41
-    :cond_28
+    :cond_0
     invoke-virtual {v0, v3, v9, v10, v5}, Lcom/mixplorer/activities/TextEditorActivity;->Exec(Lcom/mixplorer/widgets/MiEditor;JZ)V
 
     .line 42
@@ -147,7 +147,7 @@
     return-void
 
     .line 48
-    :pswitch_2f
+    :pswitch_0
     check-cast v4, Llibs/dg0;
 
     .line 49
@@ -224,7 +224,7 @@
 
     .line 87
     .line 88
-    if-eqz v3, :cond_5d
+    if-eqz v3, :cond_1
 
     .line 89
     .line 90
@@ -236,7 +236,7 @@
     .line 92
     .line 93
     .line 94
-    :cond_5d
+    :cond_1
     invoke-virtual {v0}, Lcom/mixplorer/activities/PlayerActivity;->Init()V
 
     .line 95
@@ -324,8 +324,8 @@
     return-void
 
     .line 141
-    :pswitch_data_8c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2f
+        :pswitch_0
     .end packed-switch
 .end method

@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/oc0;->a:B
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final onDismiss(Landroid/content/DialogInterface;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-byte p1, p0, Llibs/oc0;->a:B
@@ -40,7 +40,7 @@
     const/4 v0, 0x0
 
     .line 4
-    packed-switch p1, :pswitch_data_20
+    packed-switch p1, :pswitch_data_0
 
     .line 5
     .line 6
@@ -52,12 +52,12 @@
     return-void
 
     .line 10
-    :pswitch_9
+    :pswitch_0
     sget-object p1, Llibs/hp0;->c:Llibs/xv1;
 
     .line 11
     .line 12
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_0
 
     .line 13
     .line 14
@@ -69,7 +69,7 @@
     move-result p1
 
     .line 18
-    if-nez p1, :cond_18
+    if-nez p1, :cond_0
 
     .line 19
     .line 20
@@ -82,11 +82,11 @@
     .line 23
     .line 24
     .line 25
-    :cond_18
+    :cond_0
     return-void
 
     .line 26
-    :pswitch_19
+    :pswitch_1
     sget-object p1, Llibs/pc0;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     .line 27
@@ -102,9 +102,9 @@
     nop
 
     .line 33
-    :pswitch_data_20
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_19
-        :pswitch_9
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

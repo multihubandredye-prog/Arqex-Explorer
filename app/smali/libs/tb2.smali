@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(C[F)V
-    .registers 3
+    .locals 0
 
     .line 18
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,7 +26,7 @@
 .end method
 
 .method public constructor <init>(Llibs/tb2;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -65,7 +65,7 @@
 .end method
 
 .method public static a(Landroid/graphics/Path;FFFFFFFZZ)V
-    .registers 63
+    .locals 53
 
     .line 1
     move/from16 v1, p1
@@ -349,7 +349,7 @@
 
     .line 141
     .line 142
-    if-nez v38, :cond_95
+    if-nez v38, :cond_0
 
     .line 143
     .line 144
@@ -365,7 +365,7 @@
     return-void
 
     .line 150
-    :cond_95
+    :cond_0
     const-wide/high16 v38, 0x3ff0000000000000L    # 1.0
 
     .line 151
@@ -386,7 +386,7 @@
 
     .line 159
     .line 160
-    if-gez v44, :cond_d1
+    if-gez v44, :cond_1
 
     .line 161
     .line 162
@@ -484,7 +484,7 @@
     return-void
 
     .line 210
-    :cond_d1
+    :cond_1
     move/from16 v0, p9
 
     .line 211
@@ -509,7 +509,7 @@
 
     .line 221
     .line 222
-    if-ne v3, v0, :cond_e4
+    if-ne v3, v0, :cond_2
 
     .line 223
     .line 224
@@ -521,10 +521,10 @@
 
     .line 227
     .line 228
-    goto :goto_e8
+    goto :goto_0
 
     .line 229
-    :cond_e4
+    :cond_2
     add-double v30, v30, v1
 
     .line 230
@@ -533,7 +533,7 @@
 
     .line 232
     .line 233
-    :goto_e8
+    :goto_0
     sub-double v1, v20, v34
 
     .line 234
@@ -578,22 +578,22 @@
 
     .line 254
     .line 255
-    if-ltz v6, :cond_102
+    if-ltz v6, :cond_3
 
     .line 256
     .line 257
     const/4 v6, 0x1
 
     .line 258
-    goto :goto_103
+    goto :goto_1
 
     .line 259
-    :cond_102
+    :cond_3
     const/4 v6, 0x0
 
     .line 260
-    :goto_103
-    if-eq v0, v6, :cond_111
+    :goto_1
+    if-eq v0, v6, :cond_5
 
     .line 261
     .line 262
@@ -608,22 +608,22 @@
 
     .line 268
     .line 269
-    if-lez v0, :cond_110
+    if-lez v0, :cond_4
 
     .line 270
     .line 271
     sub-double/2addr v1, v6
 
     .line 272
-    goto :goto_111
+    goto :goto_2
 
     .line 273
-    :cond_110
+    :cond_4
     add-double/2addr v1, v6
 
     .line 274
-    :cond_111
-    :goto_111
+    :cond_5
+    :goto_2
     invoke-static {v14, v15}, Ljava/lang/Double;->isNaN(D)Z
 
     .line 275
@@ -820,8 +820,8 @@
     const/4 v5, 0x0
 
     .line 374
-    :goto_175
-    if-ge v5, v0, :cond_215
+    :goto_3
+    if-ge v5, v0, :cond_6
 
     .line 375
     .line 376
@@ -1141,10 +1141,10 @@
 
     .line 531
     .line 532
-    goto/16 :goto_175
+    goto/16 :goto_3
 
     .line 533
     .line 534
-    :cond_215
+    :cond_6
     return-void
 .end method

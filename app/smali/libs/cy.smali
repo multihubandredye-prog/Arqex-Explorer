@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/hy;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/cy;->X:B
@@ -36,14 +36,14 @@
 
 # virtual methods
 .method public final run()V
-    .registers 7
+    .locals 6
 
     .line 1
     iget-byte v0, p0, Llibs/cy;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_80
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -80,14 +80,14 @@
     move-result v1
 
     .line 22
-    if-nez v1, :cond_18
+    if-nez v1, :cond_0
 
     .line 23
     .line 24
     return-void
 
     .line 25
-    :cond_18
+    :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     .line 26
@@ -113,7 +113,7 @@
     throw v0
 
     .line 38
-    :pswitch_25
+    :pswitch_0
     iget-object v0, p0, Llibs/cy;->Y:Llibs/hy;
 
     .line 39
@@ -141,7 +141,7 @@
     const/4 v3, 0x0
 
     .line 51
-    if-eqz v2, :cond_44
+    if-eqz v2, :cond_1
 
     .line 52
     .line 53
@@ -177,7 +177,7 @@
     .line 67
     .line 68
     .line 69
-    :cond_44
+    :cond_1
     iget-object v2, v0, Llibs/hy;->l:Ljava/util/LinkedList;
 
     .line 70
@@ -208,58 +208,58 @@
     monitor-enter v1
 
     .line 85
-    :try_start_54
+    :try_start_0
     iget-boolean v2, v1, Llibs/Three;->X:Z
-    :try_end_56
-    .catchall {:try_start_54 .. :try_end_56} :catchall_60
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 86
     .line 87
-    if-eqz v2, :cond_5a
+    if-eqz v2, :cond_2
 
     .line 88
     .line 89
     monitor-exit v1
 
     .line 90
-    goto :goto_63
+    goto :goto_1
 
     .line 91
-    :cond_5a
+    :cond_2
     const-wide/16 v4, 0x2710
 
     .line 92
     .line 93
-    :try_start_5c
+    :try_start_1
     invoke-virtual {v1, v4, v5}, Ljava/lang/Object;->wait(J)V
-    :try_end_5f
-    .catch Ljava/lang/InterruptedException; {:try_start_5c .. :try_end_5f} :catch_62
-    .catchall {:try_start_5c .. :try_end_5f} :catchall_60
+    :try_end_1
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 94
     .line 95
     .line 96
-    goto :goto_62
+    goto :goto_0
 
     .line 97
-    :catchall_60
+    :catchall_0
     move-exception v0
 
     .line 98
-    goto :goto_7d
+    goto :goto_2
 
     .line 99
-    :catch_62
-    :goto_62
+    :catch_0
+    :goto_0
     monitor-exit v1
 
     .line 100
-    :goto_63
+    :goto_1
     iget-boolean v1, v1, Llibs/Three;->X:Z
 
     .line 101
     .line 102
-    if-nez v1, :cond_7c
+    if-nez v1, :cond_4
 
     .line 103
     .line 104
@@ -274,7 +274,7 @@
     move-result v1
 
     .line 109
-    if-eqz v1, :cond_75
+    if-eqz v1, :cond_3
 
     .line 110
     .line 111
@@ -291,7 +291,7 @@
     .line 116
     .line 117
     .line 118
-    :cond_75
+    :cond_3
     iget-object v0, v0, Llibs/hy;->p:Llibs/zo3;
 
     .line 119
@@ -305,15 +305,15 @@
     .line 123
     .line 124
     .line 125
-    :cond_7c
+    :cond_4
     return-void
 
     .line 126
-    :goto_7d
-    :try_start_7d
+    :goto_2
+    :try_start_2
     monitor-exit v1
-    :try_end_7e
-    .catchall {:try_start_7d .. :try_end_7e} :catchall_60
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 127
     throw v0
@@ -322,8 +322,8 @@
     nop
 
     .line 129
-    :pswitch_data_80
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_25
+        :pswitch_0
     .end packed-switch
 .end method

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 2
+    .locals 0
 
     invoke-static {p1}, Llibs/SmartFeaturesV116;->runAutoTaskNow(Landroid/view/View;)V
 
@@ -27,7 +27,7 @@
 .end method
 
 .method public onLongClick(Landroid/view/View;)Z
-    .registers 3
+    .locals 1
 
     invoke-static {p1}, Llibs/SmartFeaturesV116;->showPlayTaskTooltip(Landroid/view/View;)V
 

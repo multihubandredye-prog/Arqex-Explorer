@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(ILlibs/Oscar;I)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance p1, Landroid/os/Bundle;
@@ -72,7 +72,7 @@
     move-result v0
 
     .line 17
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_0
 
     .line 18
     .line 19
@@ -101,6 +101,6 @@
     .line 30
     .line 31
     .line 32
-    :cond_1f
+    :cond_0
     return-void
 .end method

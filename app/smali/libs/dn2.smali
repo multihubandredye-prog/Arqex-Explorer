@@ -15,7 +15,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/dn2;
@@ -39,7 +39,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/List;)V
-    .registers 7
+    .locals 5
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -64,7 +64,7 @@
     move-result-object v1
 
     .line 13
-    :goto_c
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 14
@@ -73,7 +73,7 @@
     move-result v2
 
     .line 17
-    if-eqz v2, :cond_2d
+    if-eqz v2, :cond_0
 
     .line 18
     .line 19
@@ -127,10 +127,10 @@
     .line 43
     .line 44
     .line 45
-    goto :goto_c
+    goto :goto_0
 
     .line 46
-    :cond_2d
+    :cond_0
     iput-object v0, p0, Llibs/dn2;->a:Ljava/util/HashMap;
 
     .line 47
@@ -152,7 +152,7 @@
     move-result-object p1
 
     .line 57
-    :goto_38
+    :goto_1
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 58
@@ -161,7 +161,7 @@
     move-result v1
 
     .line 61
-    if-eqz v1, :cond_69
+    if-eqz v1, :cond_2
 
     .line 62
     .line 63
@@ -210,7 +210,7 @@
     move-result-object v2
 
     .line 86
-    if-nez v2, :cond_5f
+    if-nez v2, :cond_1
 
     .line 87
     .line 88
@@ -228,7 +228,7 @@
     .line 94
     .line 95
     .line 96
-    :cond_5f
+    :cond_1
     check-cast v2, Ljava/util/List;
 
     .line 97
@@ -246,10 +246,10 @@
     .line 103
     .line 104
     .line 105
-    goto :goto_38
+    goto :goto_1
 
     .line 106
-    :cond_69
+    :cond_2
     iput-object v0, p0, Llibs/dn2;->b:Ljava/util/HashMap;
 
     .line 107
@@ -260,7 +260,7 @@
 
 # virtual methods
 .method public final a(Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/dn2;->a:Ljava/util/HashMap;
@@ -287,7 +287,7 @@
 
     .line 12
     .line 13
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 14
     .line 15
@@ -298,7 +298,7 @@
     return-object v0
 
     .line 18
-    :cond_11
+    :cond_0
     const-string v0, "Could not find relationship \'"
 
     .line 19

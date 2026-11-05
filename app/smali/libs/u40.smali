@@ -17,7 +17,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Thread;Ljava/io/Serializable;Ljava/lang/Object;B)V
-    .registers 6
+    .locals 0
 
     .line 1
     iput-byte p5, p0, Llibs/u40;->a:B
@@ -51,14 +51,14 @@
 
 # virtual methods
 .method public a()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/u40;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_c
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -74,21 +74,21 @@
     return v0
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     const/4 v0, 0x0
 
     .line 12
     return v0
 
     .line 13
-    :pswitch_data_c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final e(Llibs/rp0;)Z
-    .registers 9
+    .locals 7
 
     .line 1
     iget-byte v0, p0, Llibs/u40;->a:B
@@ -117,7 +117,7 @@
     const/4 v6, 0x0
 
     .line 13
-    packed-switch v0, :pswitch_data_ac
+    packed-switch v0, :pswitch_data_0
 
     .line 14
     .line 15
@@ -134,7 +134,7 @@
     move-result v0
 
     .line 22
-    if-nez v0, :cond_59
+    if-nez v0, :cond_2
 
     .line 23
     .line 24
@@ -166,7 +166,7 @@
     move-result v3
 
     .line 38
-    if-eqz v3, :cond_5c
+    if-eqz v3, :cond_3
 
     .line 39
     .line 40
@@ -203,7 +203,7 @@
 
     .line 56
     .line 57
-    if-nez v2, :cond_3c
+    if-nez v2, :cond_0
 
     .line 58
     .line 59
@@ -211,7 +211,7 @@
 
     .line 60
     .line 61
-    :cond_3c
+    :cond_0
     const/4 v1, 0x2
 
     .line 62
@@ -239,7 +239,7 @@
 
     .line 73
     .line 74
-    if-nez v1, :cond_50
+    if-nez v1, :cond_1
 
     .line 75
     .line 76
@@ -252,7 +252,7 @@
     .line 79
     .line 80
     .line 81
-    :cond_50
+    :cond_1
     invoke-interface {v1, v0, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 82
@@ -267,21 +267,21 @@
     .line 87
     .line 88
     .line 89
-    goto :goto_5c
+    goto :goto_0
 
     .line 90
-    :cond_59
+    :cond_2
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 91
     .line 92
     .line 93
-    :cond_5c
-    :goto_5c
+    :cond_3
+    :goto_0
     return v6
 
     .line 94
-    :pswitch_5d
+    :pswitch_0
     check-cast v5, Llibs/lz;
 
     .line 95
@@ -306,7 +306,7 @@
     move-result v1
 
     .line 106
-    if-nez v1, :cond_a7
+    if-nez v1, :cond_5
 
     .line 107
     .line 108
@@ -325,7 +325,7 @@
 
     .line 114
     .line 115
-    if-eqz v1, :cond_99
+    if-eqz v1, :cond_4
 
     .line 116
     .line 117
@@ -397,10 +397,10 @@
     .line 151
     .line 152
     .line 153
-    goto :goto_aa
+    goto :goto_1
 
     .line 154
-    :cond_99
+    :cond_4
     sget-object v1, Llibs/z40;->Map:Ljava/lang/Object;
 
     .line 155
@@ -413,7 +413,7 @@
     move-result-object p1
 
     .line 160
-    if-eqz p1, :cond_aa
+    if-eqz p1, :cond_6
 
     .line 161
     .line 162
@@ -426,25 +426,25 @@
     .line 165
     .line 166
     .line 167
-    goto :goto_aa
+    goto :goto_1
 
     .line 168
-    :cond_a7
+    :cond_5
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 169
     .line 170
     .line 171
-    :cond_aa
-    :goto_aa
+    :cond_6
+    :goto_1
     return v6
 
     .line 172
     nop
 
     .line 173
-    :pswitch_data_ac
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_5d
+        :pswitch_0
     .end packed-switch
 .end method

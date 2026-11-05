@@ -35,7 +35,7 @@
 
 # direct methods
 .method public constructor <init>(J)V
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -83,7 +83,7 @@
 
 # virtual methods
 .method public final Object(Llibs/v12;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/d63;->n:Llibs/v12;
@@ -94,7 +94,7 @@
 .end method
 
 .method public final String(Llibs/kr3;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/d63;->b:Llibs/kr3;
@@ -105,7 +105,7 @@
 .end method
 
 .method public final a(Llibs/e63;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-wide v0, p1, Llibs/e63;->a:J
@@ -133,7 +133,7 @@
 .end method
 
 .method public final b()Ljavax/crypto/SecretKey;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/d63;->d:Ljavax/crypto/SecretKey;
@@ -144,7 +144,7 @@
 .end method
 
 .method public final c()Llibs/pu2;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/d63;->m:Llibs/pu2;
@@ -155,7 +155,7 @@
 .end method
 
 .method public final d()Ljavax/crypto/SecretKey;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/d63;->e:Ljavax/crypto/SecretKey;
@@ -166,7 +166,7 @@
 .end method
 
 .method public final e()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/d63;->g:[B
@@ -177,7 +177,7 @@
 .end method
 
 .method public final f()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Llibs/d63;->a:J
@@ -188,7 +188,7 @@
 .end method
 
 .method public final g()Ljavax/crypto/SecretKey;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/d63;->c:Ljavax/crypto/spec/SecretKeySpec;
@@ -199,7 +199,7 @@
 .end method
 
 .method public final h()Ljavax/crypto/SecretKey;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/d63;->f:Ljavax/crypto/SecretKey;
@@ -210,7 +210,7 @@
 .end method
 
 .method public final i()Llibs/v12;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/d63;->n:Llibs/v12;
@@ -221,7 +221,7 @@
 .end method
 
 .method public final j(J)Llibs/e63;
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/d63;->h:Ljava/util/concurrent/ConcurrentHashMap;
@@ -252,7 +252,7 @@
 .end method
 
 .method public final k()Llibs/kr3;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/d63;->b:Llibs/kr3;
@@ -263,7 +263,7 @@
 .end method
 
 .method public final l()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/d63;->l:Z
@@ -274,7 +274,7 @@
 .end method
 
 .method public final m()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/d63;->k:Z
@@ -285,7 +285,7 @@
 .end method
 
 .method public final n()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/d63;->j:Z
@@ -296,7 +296,7 @@
 .end method
 
 .method public final p()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/d63;->n:Llibs/v12;
@@ -307,7 +307,7 @@
 
     .line 4
     .line 5
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_0
 
     .line 6
     .line 7
@@ -317,7 +317,7 @@
     return v0
 
     .line 9
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 10
@@ -325,7 +325,7 @@
 .end method
 
 .method public final q()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/d63;->i:Ljava/util/concurrent/atomic/AtomicLong;
@@ -344,7 +344,7 @@
 .end method
 
 .method public final r(Ljavax/crypto/spec/SecretKeySpec;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/d63;->d:Ljavax/crypto/SecretKey;
@@ -355,7 +355,7 @@
 .end method
 
 .method public final s(Llibs/pu2;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/d63;->m:Llibs/pu2;
@@ -366,7 +366,7 @@
 .end method
 
 .method public final t(Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-boolean p1, p0, Llibs/d63;->l:Z
@@ -377,7 +377,7 @@
 .end method
 
 .method public final u(Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-boolean p1, p0, Llibs/d63;->k:Z
@@ -388,7 +388,7 @@
 .end method
 
 .method public final v(Ljavax/crypto/spec/SecretKeySpec;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/d63;->e:Ljavax/crypto/SecretKey;
@@ -399,7 +399,7 @@
 .end method
 
 .method public final w([B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/d63;->g:[B
@@ -410,7 +410,7 @@
 .end method
 
 .method public final x(Ljavax/crypto/spec/SecretKeySpec;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/d63;->c:Ljavax/crypto/spec/SecretKeySpec;
@@ -421,7 +421,7 @@
 .end method
 
 .method public final y(Ljavax/crypto/SecretKey;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/d63;->f:Ljavax/crypto/SecretKey;
@@ -432,7 +432,7 @@
 .end method
 
 .method public final z(Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-boolean p1, p0, Llibs/d63;->j:Z

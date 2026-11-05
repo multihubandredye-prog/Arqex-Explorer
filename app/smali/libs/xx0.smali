@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/HexViewerActivity;Landroid/content/Context;Ljava/util/ArrayList;)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/xx0;->a:Lcom/mixplorer/activities/HexViewerActivity;
@@ -34,7 +34,7 @@
 
 # virtual methods
 .method public final getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .registers 8
+    .locals 4
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/widget/ArrayAdapter;->getItem(I)Ljava/lang/Object;
@@ -49,7 +49,7 @@
 
     .line 6
     .line 7
-    if-nez p2, :cond_5a
+    if-nez p2, :cond_1
 
     .line 8
     .line 9
@@ -127,7 +127,7 @@
 
     .line 46
     .line 47
-    if-nez v0, :cond_44
+    if-nez v0, :cond_0
 
     .line 48
     .line 49
@@ -171,7 +171,7 @@
 
     .line 68
     .line 69
-    :cond_44
+    :cond_0
     invoke-virtual {p3, v0}, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
 
     .line 70
@@ -212,7 +212,7 @@
 
     .line 90
     .line 91
-    :cond_5a
+    :cond_1
     invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     .line 92
@@ -257,7 +257,7 @@
 
     .line 112
     .line 113
-    if-eqz v1, :cond_7c
+    if-eqz v1, :cond_2
 
     .line 114
     .line 115
@@ -281,7 +281,7 @@
     .line 123
     .line 124
     .line 125
-    :cond_7c
+    :cond_2
     iget-object p3, p3, Llibs/wx0;->a:Lcom/mixplorer/widgets/MiTextView;
 
     .line 126

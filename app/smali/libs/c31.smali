@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/r31;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/c31;->d:Llibs/r31;
@@ -33,14 +33,14 @@
 
 # virtual methods
 .method public final z(Landroid/view/View;I)V
-    .registers 5
+    .locals 2
 
     .line 1
     iget p1, p0, Llibs/c31;->c:I
 
     .line 2
     .line 3
-    if-lt p2, p1, :cond_6
+    if-lt p2, p1, :cond_0
 
     .line 4
     .line 5
@@ -48,7 +48,7 @@
 
     .line 6
     .line 7
-    :cond_6
+    :cond_0
     iget-object p1, p0, Llibs/c31;->d:Llibs/r31;
 
     .line 8

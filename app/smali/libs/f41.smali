@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/ArrayList;Landroid/app/Activity;Llibs/rp0;Ljava/util/HashSet;Ljava/lang/String;Llibs/r31;)V
-    .registers 7
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/f41;->c:Ljava/util/ArrayList;
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public final z(Landroid/view/View;I)V
-    .registers 26
+    .locals 23
 
     .line 1
     move-object/from16 v0, p0
@@ -99,7 +99,7 @@
 
     .line 19
     .line 20
-    if-eqz v1, :cond_aa
+    if-eqz v1, :cond_4
 
     .line 21
     .line 22
@@ -113,33 +113,33 @@
     const/4 v13, 0x1
 
     .line 26
-    if-eq v1, v13, :cond_9c
+    if-eq v1, v13, :cond_3
 
     .line 27
     .line 28
     const/4 v6, 0x2
 
     .line 29
-    if-eq v1, v6, :cond_3b
+    if-eq v1, v6, :cond_2
 
     .line 30
     .line 31
     const/4 v6, 0x3
 
     .line 32
-    if-eq v1, v6, :cond_2f
+    if-eq v1, v6, :cond_1
 
     .line 33
     .line 34
-    if-eq v1, v5, :cond_25
+    if-eq v1, v5, :cond_0
 
     .line 35
     .line 36
-    goto/16 :goto_bb
+    goto/16 :goto_0
 
     .line 37
     .line 38
-    :cond_25
+    :cond_0
     new-instance v1, Llibs/pn0;
 
     .line 39
@@ -154,11 +154,11 @@
     .line 44
     .line 45
     .line 46
-    goto/16 :goto_bb
+    goto/16 :goto_0
 
     .line 47
     .line 48
-    :cond_2f
+    :cond_1
     new-instance v1, Llibs/a2;
 
     .line 49
@@ -177,11 +177,11 @@
     .line 56
     .line 57
     .line 58
-    goto/16 :goto_bb
+    goto/16 :goto_0
 
     .line 59
     .line 60
-    :cond_3b
+    :cond_2
     new-instance v14, Llibs/$d;
 
     .line 61
@@ -370,10 +370,10 @@
     .line 154
     .line 155
     .line 156
-    goto :goto_bb
+    goto :goto_0
 
     .line 157
-    :cond_9c
+    :cond_3
     new-instance v1, Llibs/xv1;
 
     .line 158
@@ -397,10 +397,10 @@
     .line 168
     .line 169
     .line 170
-    goto :goto_bb
+    goto :goto_0
 
     .line 171
-    :cond_aa
+    :cond_4
     new-instance v1, Llibs/xv1;
 
     .line 172
@@ -432,8 +432,8 @@
     .line 186
     .line 187
     .line 188
-    :goto_bb
-    if-eqz v2, :cond_c0
+    :goto_0
+    if-eqz v2, :cond_5
 
     .line 189
     .line 190
@@ -442,6 +442,6 @@
     .line 191
     .line 192
     .line 193
-    :cond_c0
+    :cond_5
     return-void
 .end method

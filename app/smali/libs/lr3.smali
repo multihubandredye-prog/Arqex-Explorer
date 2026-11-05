@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ra;)V
-    .registers 12
+    .locals 10
 
     .line 1
     invoke-direct {p0}, Llibs/jz;-><init>()V
@@ -38,7 +38,7 @@
     .line 13
     .line 14
     .line 15
-    :goto_e
+    :goto_0
     iget-object v2, v0, Llibs/j93;->Y:Ljava/io/InputStream;
 
     .line 16
@@ -61,32 +61,32 @@
     const/4 v5, 0x0
 
     .line 25
-    if-gez v3, :cond_1c
+    if-gez v3, :cond_0
 
     .line 26
     .line 27
-    goto/16 :goto_88
+    goto/16 :goto_3
 
     .line 28
     .line 29
-    :cond_1c
+    :cond_0
     const/16 v6, 0xc0
 
     .line 30
     .line 31
-    if-ge v3, v6, :cond_21
+    if-ge v3, v6, :cond_1
 
     .line 32
     .line 33
-    goto :goto_4e
+    goto :goto_1
 
     .line 34
-    :cond_21
+    :cond_1
     const/16 v7, 0xdf
 
     .line 35
     .line 36
-    if-gt v3, v7, :cond_31
+    if-gt v3, v7, :cond_2
 
     .line 37
     .line 38
@@ -113,15 +113,15 @@
 
     .line 48
     .line 49
-    goto :goto_4e
+    goto :goto_1
 
     .line 50
-    :cond_31
+    :cond_2
     const/16 v6, 0xff
 
     .line 51
     .line 52
-    if-ne v3, v6, :cond_af
+    if-ne v3, v6, :cond_b
 
     .line 53
     .line 54
@@ -178,7 +178,7 @@
     or-int/2addr v3, v6
 
     .line 79
-    :goto_4e
+    :goto_1
     invoke-virtual {v2}, Llibs/ra;->read()I
 
     .line 80
@@ -187,7 +187,7 @@
     move-result v6
 
     .line 83
-    if-ltz v6, :cond_a7
+    if-ltz v6, :cond_a
 
     .line 84
     .line 85
@@ -199,7 +199,7 @@
 
     .line 88
     .line 89
-    if-lez v7, :cond_6b
+    if-lez v7, :cond_4
 
     .line 90
     .line 91
@@ -211,7 +211,7 @@
     move-result v7
 
     .line 95
-    if-ltz v7, :cond_67
+    if-ltz v7, :cond_3
 
     .line 96
     .line 97
@@ -229,10 +229,10 @@
     const/4 v3, 0x1
 
     .line 103
-    goto :goto_6c
+    goto :goto_2
 
     .line 104
-    :cond_67
+    :cond_3
     invoke-static {}, Llibs/ic0;->u()V
 
     .line 105
@@ -241,12 +241,12 @@
     throw v4
 
     .line 108
-    :cond_6b
+    :cond_4
     const/4 v3, 0x0
 
     .line 109
-    :goto_6c
-    if-lez v7, :cond_7b
+    :goto_2
+    if-lez v7, :cond_6
 
     .line 110
     .line 111
@@ -258,7 +258,7 @@
     move-result v9
 
     .line 115
-    if-ltz v9, :cond_77
+    if-ltz v9, :cond_5
 
     .line 116
     .line 117
@@ -268,10 +268,10 @@
     sub-int/2addr v7, v9
 
     .line 119
-    goto :goto_6c
+    goto :goto_2
 
     .line 120
-    :cond_77
+    :cond_5
     invoke-static {}, Llibs/ic0;->u()V
 
     .line 121
@@ -280,8 +280,8 @@
     throw v4
 
     .line 124
-    :cond_7b
-    if-eq v6, v1, :cond_83
+    :cond_6
+    if-eq v6, v1, :cond_7
 
     .line 125
     .line 126
@@ -294,10 +294,10 @@
     .line 129
     .line 130
     .line 131
-    goto :goto_88
+    goto :goto_3
 
     .line 132
-    :cond_83
+    :cond_7
     new-instance v4, Llibs/o81;
 
     .line 133
@@ -307,8 +307,8 @@
     .line 135
     .line 136
     .line 137
-    :goto_88
-    if-eqz v4, :cond_8e
+    :goto_3
+    if-eqz v4, :cond_8
 
     .line 138
     .line 139
@@ -317,10 +317,10 @@
     .line 140
     .line 141
     .line 142
-    goto :goto_e
+    goto :goto_0
 
     .line 143
-    :cond_8e
+    :cond_8
     invoke-virtual {p1}, Ljava/util/Vector;->size()I
 
     .line 144
@@ -337,7 +337,7 @@
 
     .line 150
     .line 151
-    :goto_96
+    :goto_4
     iget-object v0, p0, Llibs/lr3;->j:[Llibs/mr3;
 
     .line 152
@@ -345,7 +345,7 @@
     array-length v1, v0
 
     .line 154
-    if-eq v5, v1, :cond_a6
+    if-eq v5, v1, :cond_9
 
     .line 155
     .line 156
@@ -369,14 +369,14 @@
 
     .line 165
     .line 166
-    goto :goto_96
+    goto :goto_4
 
     .line 167
-    :cond_a6
+    :cond_9
     return-void
 
     .line 168
-    :cond_a7
+    :cond_a
     new-instance p1, Ljava/io/EOFException;
 
     .line 169
@@ -393,7 +393,7 @@
     throw p1
 
     .line 176
-    :cond_af
+    :cond_b
     const-string p1, "unrecognised length reading user attribute sub packet"
 
     .line 177
@@ -403,13 +403,13 @@
     .line 179
     .line 180
     .line 181
-    goto :goto_b6
+    goto :goto_6
 
     .line 182
-    :goto_b5
+    :goto_5
     throw v4
 
     .line 183
-    :goto_b6
-    goto :goto_b5
+    :goto_6
+    goto :goto_5
 .end method

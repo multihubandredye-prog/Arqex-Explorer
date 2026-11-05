@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     .line 1
     new-instance v0, Llibs/November;
@@ -327,7 +327,7 @@
     move-result v2
 
     .line 168
-    if-eqz v2, :cond_ae
+    if-eqz v2, :cond_0
 
     .line 169
     .line 170
@@ -339,14 +339,14 @@
     move-result-object v2
 
     .line 174
-    goto :goto_af
+    goto :goto_0
 
     .line 175
-    :cond_ae
+    :cond_0
     move-object v2, v1
 
     .line 176
-    :goto_af
+    :goto_0
     const v3, 0x1020036
 
     .line 177
@@ -369,7 +369,7 @@
     move-result v2
 
     .line 188
-    if-eqz v2, :cond_c2
+    if-eqz v2, :cond_1
 
     .line 189
     .line 190
@@ -381,14 +381,14 @@
     move-result-object v2
 
     .line 194
-    goto :goto_c3
+    goto :goto_1
 
     .line 195
-    :cond_c2
+    :cond_1
     move-object v2, v1
 
     .line 196
-    :goto_c3
+    :goto_1
     const v3, 0x1020037
 
     .line 197
@@ -415,7 +415,7 @@
     move-result v2
 
     .line 210
-    if-eqz v2, :cond_d8
+    if-eqz v2, :cond_2
 
     .line 211
     .line 212
@@ -427,14 +427,14 @@
     move-result-object v2
 
     .line 216
-    goto :goto_d9
+    goto :goto_2
 
     .line 217
-    :cond_d8
+    :cond_2
     move-object v2, v1
 
     .line 218
-    :goto_d9
+    :goto_2
     const v3, 0x1020038
 
     .line 219
@@ -457,7 +457,7 @@
     move-result v2
 
     .line 230
-    if-eqz v2, :cond_ec
+    if-eqz v2, :cond_3
 
     .line 231
     .line 232
@@ -469,14 +469,14 @@
     move-result-object v2
 
     .line 236
-    goto :goto_ed
+    goto :goto_3
 
     .line 237
-    :cond_ec
+    :cond_3
     move-object v2, v1
 
     .line 238
-    :goto_ed
+    :goto_3
     const v3, 0x1020039
 
     .line 239
@@ -499,7 +499,7 @@
     move-result v2
 
     .line 250
-    if-eqz v2, :cond_100
+    if-eqz v2, :cond_4
 
     .line 251
     .line 252
@@ -511,14 +511,14 @@
     move-result-object v2
 
     .line 256
-    goto :goto_101
+    goto :goto_4
 
     .line 257
-    :cond_100
+    :cond_4
     move-object v2, v1
 
     .line 258
-    :goto_101
+    :goto_4
     const v3, 0x102003a
 
     .line 259
@@ -541,7 +541,7 @@
     move-result v2
 
     .line 270
-    if-eqz v2, :cond_114
+    if-eqz v2, :cond_5
 
     .line 271
     .line 272
@@ -553,14 +553,14 @@
     move-result-object v2
 
     .line 276
-    goto :goto_115
+    goto :goto_5
 
     .line 277
-    :cond_114
+    :cond_5
     move-object v2, v1
 
     .line 278
-    :goto_115
+    :goto_5
     const v3, 0x102003b
 
     .line 279
@@ -583,7 +583,7 @@
     move-result v2
 
     .line 290
-    if-eqz v2, :cond_128
+    if-eqz v2, :cond_6
 
     .line 291
     .line 292
@@ -595,14 +595,14 @@
     move-result-object v2
 
     .line 296
-    goto :goto_129
+    goto :goto_6
 
     .line 297
-    :cond_128
+    :cond_6
     move-object v2, v1
 
     .line 298
-    :goto_129
+    :goto_6
     const v3, 0x1020046
 
     .line 299
@@ -625,7 +625,7 @@
     move-result v2
 
     .line 310
-    if-eqz v2, :cond_13c
+    if-eqz v2, :cond_7
 
     .line 311
     .line 312
@@ -637,14 +637,14 @@
     move-result-object v2
 
     .line 316
-    goto :goto_13d
+    goto :goto_7
 
     .line 317
-    :cond_13c
+    :cond_7
     move-object v2, v1
 
     .line 318
-    :goto_13d
+    :goto_7
     const v3, 0x1020047
 
     .line 319
@@ -667,7 +667,7 @@
     move-result v2
 
     .line 330
-    if-eqz v2, :cond_150
+    if-eqz v2, :cond_8
 
     .line 331
     .line 332
@@ -679,14 +679,14 @@
     move-result-object v2
 
     .line 336
-    goto :goto_151
+    goto :goto_8
 
     .line 337
-    :cond_150
+    :cond_8
     move-object v2, v1
 
     .line 338
-    :goto_151
+    :goto_8
     const v3, 0x1020048
 
     .line 339
@@ -709,7 +709,7 @@
     move-result v2
 
     .line 350
-    if-eqz v2, :cond_164
+    if-eqz v2, :cond_9
 
     .line 351
     .line 352
@@ -721,14 +721,14 @@
     move-result-object v2
 
     .line 356
-    goto :goto_165
+    goto :goto_9
 
     .line 357
-    :cond_164
+    :cond_9
     move-object v2, v1
 
     .line 358
-    :goto_165
+    :goto_9
     const v3, 0x1020049
 
     .line 359
@@ -751,7 +751,7 @@
     move-result v2
 
     .line 370
-    if-eqz v2, :cond_178
+    if-eqz v2, :cond_a
 
     .line 371
     .line 372
@@ -763,14 +763,14 @@
     move-result-object v2
 
     .line 376
-    goto :goto_179
+    goto :goto_a
 
     .line 377
-    :cond_178
+    :cond_a
     move-object v2, v1
 
     .line 378
-    :goto_179
+    :goto_a
     const v3, 0x102003c
 
     .line 379
@@ -793,7 +793,7 @@
     move-result v2
 
     .line 390
-    if-eqz v2, :cond_18c
+    if-eqz v2, :cond_b
 
     .line 391
     .line 392
@@ -805,14 +805,14 @@
     move-result-object v2
 
     .line 396
-    goto :goto_18d
+    goto :goto_b
 
     .line 397
-    :cond_18c
+    :cond_b
     move-object v2, v1
 
     .line 398
-    :goto_18d
+    :goto_b
     const v3, 0x102003d
 
     .line 399
@@ -839,7 +839,7 @@
     move-result v2
 
     .line 412
-    if-eqz v2, :cond_1a2
+    if-eqz v2, :cond_c
 
     .line 413
     .line 414
@@ -851,14 +851,14 @@
     move-result-object v2
 
     .line 418
-    goto :goto_1a3
+    goto :goto_c
 
     .line 419
-    :cond_1a2
+    :cond_c
     move-object v2, v1
 
     .line 420
-    :goto_1a3
+    :goto_c
     const v3, 0x1020042
 
     .line 421
@@ -885,7 +885,7 @@
     move-result v2
 
     .line 434
-    if-eqz v2, :cond_1b8
+    if-eqz v2, :cond_d
 
     .line 435
     .line 436
@@ -897,14 +897,14 @@
     move-result-object v2
 
     .line 440
-    goto :goto_1b9
+    goto :goto_d
 
     .line 441
-    :cond_1b8
+    :cond_d
     move-object v2, v1
 
     .line 442
-    :goto_1b9
+    :goto_d
     const v3, 0x1020044
 
     .line 443
@@ -927,7 +927,7 @@
     move-result v2
 
     .line 454
-    if-eqz v2, :cond_1cc
+    if-eqz v2, :cond_e
 
     .line 455
     .line 456
@@ -939,14 +939,14 @@
     move-result-object v2
 
     .line 460
-    goto :goto_1cd
+    goto :goto_e
 
     .line 461
-    :cond_1cc
+    :cond_e
     move-object v2, v1
 
     .line 462
-    :goto_1cd
+    :goto_e
     const v3, 0x1020045
 
     .line 463
@@ -969,7 +969,7 @@
     move-result v2
 
     .line 474
-    if-eqz v2, :cond_1e0
+    if-eqz v2, :cond_f
 
     .line 475
     .line 476
@@ -981,14 +981,14 @@
     move-result-object v2
 
     .line 480
-    goto :goto_1e1
+    goto :goto_f
 
     .line 481
-    :cond_1e0
+    :cond_f
     move-object v2, v1
 
     .line 482
-    :goto_1e1
+    :goto_f
     const v3, 0x102004a
 
     .line 483
@@ -1011,7 +1011,7 @@
     move-result v2
 
     .line 494
-    if-eqz v2, :cond_1f4
+    if-eqz v2, :cond_10
 
     .line 495
     .line 496
@@ -1023,14 +1023,14 @@
     move-result-object v2
 
     .line 500
-    goto :goto_1f5
+    goto :goto_10
 
     .line 501
-    :cond_1f4
+    :cond_10
     move-object v2, v1
 
     .line 502
-    :goto_1f5
+    :goto_10
     const v3, 0x1020054
 
     .line 503
@@ -1045,7 +1045,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Object;ILjava/lang/Class;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -1061,11 +1061,11 @@
     move-result p3
 
     .line 8
-    if-eqz p3, :cond_14
+    if-eqz p3, :cond_0
 
     .line 9
     .line 10
-    if-nez p1, :cond_14
+    if-nez p1, :cond_0
 
     .line 11
     .line 12
@@ -1088,7 +1088,7 @@
     return-void
 
     .line 21
-    :cond_14
+    :cond_0
     iput-object p1, p0, Llibs/November;->a:Ljava/lang/Object;
 
     .line 22
@@ -1099,32 +1099,32 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v1, p1, Llibs/November;
 
     .line 6
     .line 7
-    if-nez v1, :cond_9
+    if-nez v1, :cond_1
 
     .line 8
     .line 9
     return v0
 
     .line 10
-    :cond_9
+    :cond_1
     check-cast p1, Llibs/November;
 
     .line 11
@@ -1137,18 +1137,18 @@
 
     .line 15
     .line 16
-    if-nez v1, :cond_14
+    if-nez v1, :cond_2
 
     .line 17
     .line 18
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_3
 
     .line 19
     .line 20
     return v0
 
     .line 21
-    :cond_14
+    :cond_2
     invoke-virtual {v1, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     .line 22
@@ -1157,14 +1157,14 @@
     move-result p1
 
     .line 25
-    if-nez p1, :cond_1b
+    if-nez p1, :cond_3
 
     .line 26
     .line 27
     return v0
 
     .line 28
-    :cond_1b
+    :cond_3
     const/4 p1, 0x1
 
     .line 29
@@ -1172,14 +1172,14 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/November;->a:Ljava/lang/Object;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -1194,7 +1194,7 @@
     return v0
 
     .line 10
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
     .line 11

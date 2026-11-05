@@ -21,7 +21,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/s53;
@@ -83,7 +83,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -95,7 +95,7 @@
 .end method
 
 .method public static a(Ljava/util/HashSet;Ljava/util/HashSet;)V
-    .registers 6
+    .locals 4
 
     .line 1
     sget-object v0, Llibs/u53;->f:Ljava/util/Map;
@@ -105,7 +105,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
 
     .line 5
@@ -114,7 +114,7 @@
     move-result v1
 
     .line 8
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_0
 
     .line 9
     .line 10
@@ -170,18 +170,18 @@
     .line 36
     .line 37
     .line 38
-    goto :goto_28
+    goto :goto_0
 
     .line 39
-    :catchall_26
+    :catchall_0
     move-exception p0
 
     .line 40
-    goto :goto_55
+    goto :goto_2
 
     .line 41
-    :cond_28
-    :goto_28
+    :cond_0
+    :goto_0
     invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     .line 42
@@ -190,8 +190,8 @@
     move-result-object p0
 
     .line 45
-    :cond_2c
-    :goto_2c
+    :cond_1
+    :goto_1
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 46
@@ -200,7 +200,7 @@
     move-result v1
 
     .line 49
-    if-eqz v1, :cond_53
+    if-eqz v1, :cond_2
 
     .line 50
     .line 51
@@ -233,7 +233,7 @@
     .line 64
     .line 65
     .line 66
-    if-eqz p1, :cond_2c
+    if-eqz p1, :cond_1
 
     .line 67
     .line 68
@@ -245,7 +245,7 @@
     move-result v2
 
     .line 72
-    if-nez v2, :cond_2c
+    if-nez v2, :cond_1
 
     .line 73
     .line 74
@@ -266,35 +266,35 @@
     .line 81
     .line 82
     .line 83
-    goto :goto_2c
+    goto :goto_1
 
     .line 84
-    :cond_53
+    :cond_2
     monitor-exit v0
 
     .line 85
     return-void
 
     .line 86
-    :goto_55
+    :goto_2
     monitor-exit v0
-    :try_end_56
-    .catchall {:try_start_3 .. :try_end_56} :catchall_26
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 87
-    goto :goto_58
+    goto :goto_4
 
     .line 88
-    :goto_57
+    :goto_3
     throw p0
 
     .line 89
-    :goto_58
-    goto :goto_57
+    :goto_4
+    goto :goto_3
 .end method
 
 .method public static b(Landroid/content/Context;)Landroid/content/Intent;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Landroid/content/Intent;
@@ -350,7 +350,7 @@
 .end method
 
 .method public static c()Ljava/util/Map;
-    .registers 2
+    .locals 2
 
     .line 1
     sget-object v0, Llibs/u53;->f:Ljava/util/Map;
@@ -360,34 +360,34 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     monitor-exit v0
 
     .line 5
     return-object v0
 
     .line 6
-    :catchall_5
+    :catchall_0
     move-exception v1
 
     .line 7
     monitor-exit v0
-    :try_end_7
-    .catchall {:try_start_3 .. :try_end_7} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 8
     throw v1
 .end method
 
 .method public static d()Z
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/u53;->b:Llibs/c11;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -395,7 +395,7 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -405,7 +405,7 @@
     return v0
 
     .line 11
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
     .line 12
@@ -413,7 +413,7 @@
 .end method
 
 .method public static e()V
-    .registers 4
+    .locals 4
 
     .line 1
     sget-object v0, Lcom/mixplorer/activities/a;->Hotel:Llibs/xt1;
@@ -424,19 +424,19 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
-    goto :goto_8
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
     .line 9
-    :goto_8
-    if-eqz v0, :cond_20
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 10
     .line 11
@@ -444,7 +444,7 @@
 
     .line 12
     .line 13
-    if-nez v1, :cond_20
+    if-nez v1, :cond_1
 
     .line 14
     .line 15
@@ -484,18 +484,18 @@
     .line 31
     .line 32
     .line 33
-    :cond_20
+    :cond_1
     return-void
 .end method
 
 .method public static f(Landroid/content/Context;Landroid/appwidget/AppWidgetManager;IZ)V
-    .registers 10
+    .locals 6
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :try_start_1
+    :try_start_0
     new-instance v1, Landroid/widget/RemoteViews;
 
     .line 3
@@ -588,7 +588,7 @@
     move-result v2
 
     .line 50
-    if-nez v2, :cond_3a
+    if-nez v2, :cond_0
 
     .line 51
     .line 52
@@ -600,23 +600,23 @@
 
     .line 55
     .line 56
-    goto :goto_3a
+    goto :goto_0
 
     .line 57
-    :catchall_38
+    :catchall_0
     move-exception p0
 
     .line 58
-    goto :goto_57
+    goto :goto_2
 
     .line 59
-    :cond_3a
-    :goto_3a
+    :cond_0
+    :goto_0
     sget v2, Llibs/wh2;->widget_http_switch:I
 
     .line 60
     .line 61
-    if-eqz p3, :cond_45
+    if-eqz p3, :cond_1
 
     .line 62
     .line 63
@@ -632,10 +632,10 @@
     move-result-object p0
 
     .line 69
-    goto :goto_4b
+    goto :goto_1
 
     .line 70
-    :cond_45
+    :cond_1
     sget v3, Llibs/vh2;->icon_widget_server_off:I
 
     .line 71
@@ -648,7 +648,7 @@
     move-result-object p0
 
     .line 76
-    :goto_4b
+    :goto_1
     invoke-virtual {v1, v2, p0}, Landroid/widget/RemoteViews;->setImageViewBitmap(ILandroid/graphics/Bitmap;)V
 
     .line 77
@@ -664,8 +664,8 @@
     .line 83
     .line 84
     invoke-virtual {p0, p3}, Llibs/s53;->h(Z)V
-    :try_end_56
-    .catchall {:try_start_1 .. :try_end_56} :catchall_38
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 85
     .line 86
@@ -673,7 +673,7 @@
     return-void
 
     .line 88
-    :goto_57
+    :goto_2
     invoke-static {p0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 89

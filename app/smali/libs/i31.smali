@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/util/LinkedHashSet;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final add(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     check-cast p1, Llibs/i41;
@@ -29,7 +29,7 @@
     monitor-enter p0
 
     .line 4
-    :try_start_3
+    :try_start_0
     invoke-virtual {p0, p1}, Ljava/util/AbstractCollection;->remove(Ljava/lang/Object;)Z
 
     .line 5
@@ -43,7 +43,7 @@
     move-result v0
 
     .line 11
-    if-nez v0, :cond_22
+    if-nez v0, :cond_0
 
     .line 12
     .line 13
@@ -59,7 +59,7 @@
 
     .line 18
     .line 19
-    if-lt v0, v1, :cond_22
+    if-lt v0, v1, :cond_0
 
     .line 20
     .line 21
@@ -84,26 +84,26 @@
     .line 30
     .line 31
     .line 32
-    goto :goto_22
+    goto :goto_0
 
     .line 33
-    :catchall_20
+    :catchall_0
     move-exception p1
 
     .line 34
-    goto :goto_28
+    goto :goto_1
 
     .line 35
-    :cond_22
-    :goto_22
+    :cond_0
+    :goto_0
     invoke-super {p0, p1}, Ljava/util/LinkedHashSet;->add(Ljava/lang/Object;)Z
 
     .line 36
     .line 37
     .line 38
     move-result p1
-    :try_end_26
-    .catchall {:try_start_3 .. :try_end_26} :catchall_20
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 39
     monitor-exit p0
@@ -112,11 +112,11 @@
     return p1
 
     .line 41
-    :goto_28
-    :try_start_28
+    :goto_1
+    :try_start_1
     monitor-exit p0
-    :try_end_29
-    .catchall {:try_start_28 .. :try_end_29} :catchall_20
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 42
     throw p1

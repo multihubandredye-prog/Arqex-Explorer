@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/h23;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/f23;->b:Llibs/h23;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final a(Llibs/c23;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget v0, p0, Llibs/f23;->a:I
@@ -62,7 +62,7 @@
     const/4 v3, 0x1
 
     .line 12
-    if-ge v0, v2, :cond_13
+    if-ge v0, v2, :cond_0
 
     .line 13
     .line 14
@@ -80,7 +80,7 @@
     return-void
 
     .line 20
-    :cond_13
+    :cond_0
     iput v3, p0, Llibs/f23;->a:I
 
     .line 21
@@ -110,7 +110,7 @@
 .end method
 
 .method public final b(Llibs/c23;Llibs/r90;I)V
-    .registers 11
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/f23;->b:Llibs/h23;

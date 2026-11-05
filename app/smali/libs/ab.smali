@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(ILlibs/Init;)V
-    .registers 8
+    .locals 5
 
     .line 1
     new-instance v0, Llibs/fl;
@@ -23,7 +23,7 @@
     const/4 v2, 0x0
 
     .line 8
-    :goto_7
+    :goto_0
     iget-object v3, p2, Llibs/Init;->Y:Ljava/lang/Object;
 
     .line 9
@@ -40,11 +40,11 @@
     move-result v3
 
     .line 16
-    if-eq v2, v3, :cond_38
+    if-eq v2, v3, :cond_0
 
     .line 17
     .line 18
-    :try_start_11
+    :try_start_0
     invoke-virtual {p2, v2}, Llibs/Init;->Intent(I)Llibs/Core;
 
     .line 19
@@ -70,8 +70,8 @@
 
     .line 30
     invoke-virtual {v0, v3}, Ljava/io/OutputStream;->write([B)V
-    :try_end_20
-    .catch Ljava/io/IOException; {:try_start_11 .. :try_end_20} :catch_23
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 31
     .line 32
@@ -80,10 +80,10 @@
 
     .line 34
     .line 35
-    goto :goto_7
+    goto :goto_0
 
     .line 36
-    :catch_23
+    :catch_0
     move-exception p1
 
     .line 37
@@ -125,7 +125,7 @@
     throw p2
 
     .line 57
-    :cond_38
+    :cond_0
     invoke-virtual {v0}, Llibs/fl;->x()[B
 
     .line 58
@@ -148,14 +148,14 @@
 
 # virtual methods
 .method public final h(Llibs/v60;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-boolean v0, p0, Llibs/Android;->X:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -163,15 +163,15 @@
 
     .line 6
     .line 7
-    goto :goto_9
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     const/16 v0, 0x40
 
     .line 9
     .line 10
-    :goto_9
+    :goto_0
     iget v1, p0, Llibs/Android;->Y:I
 
     .line 11

@@ -26,7 +26,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/util/HashMap;
@@ -130,7 +130,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "EC"
@@ -146,7 +146,7 @@
 .end method
 
 .method public static assertCurvesAreValid()V
-    .registers 4
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/util/ArrayList;
@@ -178,8 +178,8 @@
     move-result-object v1
 
     .line 16
-    :cond_f
-    :goto_f
+    :cond_0
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 17
@@ -188,7 +188,7 @@
     move-result v2
 
     .line 20
-    if-eqz v2, :cond_25
+    if-eqz v2, :cond_1
 
     .line 21
     .line 22
@@ -212,7 +212,7 @@
     move-result-object v3
 
     .line 32
-    if-nez v3, :cond_f
+    if-nez v3, :cond_0
 
     .line 33
     .line 34
@@ -221,10 +221,10 @@
     .line 35
     .line 36
     .line 37
-    goto :goto_f
+    goto :goto_0
 
     .line 38
-    :cond_25
+    :cond_1
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     .line 39
@@ -233,14 +233,14 @@
     move-result v1
 
     .line 42
-    if-gtz v1, :cond_2c
+    if-gtz v1, :cond_2
 
     .line 43
     .line 44
     return-void
 
     .line 45
-    :cond_2c
+    :cond_2
     new-instance v1, Ljava/lang/AssertionError;
 
     .line 46
@@ -292,28 +292,28 @@
     .line 70
     .line 71
     .line 72
-    goto :goto_49
+    goto :goto_2
 
     .line 73
-    :goto_48
+    :goto_1
     throw v1
 
     .line 74
-    :goto_49
-    goto :goto_48
+    :goto_2
+    goto :goto_1
 .end method
 
 
 # virtual methods
 .method public generateKeyPair()Ljava/security/KeyPair;
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLECKeyPairGenerator;->group:Lorg/conscrypt/OpenSSLECGroupContext;
 
     .line 2
     .line 3
-    if-nez v0, :cond_27
+    if-nez v0, :cond_1
 
     .line 4
     .line 5
@@ -357,17 +357,17 @@
 
     .line 24
     .line 25
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_0
 
     .line 26
     .line 27
     move-object v0, v1
 
     .line 28
-    goto :goto_27
+    goto :goto_0
 
     .line 29
-    :cond_1c
+    :cond_0
     const-string v1, "Curve not recognized: "
 
     .line 30
@@ -391,8 +391,8 @@
     return-object v0
 
     .line 40
-    :cond_27
-    :goto_27
+    :cond_1
+    :goto_0
     new-instance v1, Lorg/conscrypt/OpenSSLKey;
 
     .line 41
@@ -457,7 +457,7 @@
 .end method
 
 .method public initialize(ILjava/security/SecureRandom;)V
-    .registers 4
+    .locals 1
 
     .line 51
     sget-object p2, Lorg/conscrypt/OpenSSLECKeyPairGenerator;->SIZE_TO_CURVE_NAME:Ljava/util/Map;
@@ -472,14 +472,14 @@
 
     check-cast p2, Ljava/lang/String;
 
-    if-eqz p2, :cond_23
+    if-eqz p2, :cond_1
 
     .line 52
     invoke-static {p2}, Lorg/conscrypt/OpenSSLECGroupContext;->getCurveByName(Ljava/lang/String;)Lorg/conscrypt/OpenSSLECGroupContext;
 
     move-result-object p1
 
-    if-eqz p1, :cond_17
+    if-eqz p1, :cond_0
 
     .line 53
     iput-object p1, p0, Lorg/conscrypt/OpenSSLECKeyPairGenerator;->group:Lorg/conscrypt/OpenSSLECGroupContext;
@@ -487,7 +487,7 @@
     return-void
 
     .line 54
-    :cond_17
+    :cond_0
     new-instance p1, Ljava/security/InvalidParameterException;
 
     const-string v0, "unknown curve "
@@ -501,7 +501,7 @@
     throw p1
 
     .line 55
-    :cond_23
+    :cond_1
     new-instance p2, Ljava/security/InvalidParameterException;
 
     const-string v0, "unknown key size "
@@ -518,14 +518,14 @@
 .end method
 
 .method public initialize(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    .registers 4
+    .locals 1
 
     .line 1
     instance-of p2, p1, Ljava/security/spec/ECParameterSpec;
 
     .line 2
     .line 3
-    if-eqz p2, :cond_d
+    if-eqz p2, :cond_0
 
     .line 4
     .line 5
@@ -548,12 +548,12 @@
     return-void
 
     .line 14
-    :cond_d
+    :cond_0
     instance-of p2, p1, Ljava/security/spec/ECGenParameterSpec;
 
     .line 15
     .line 16
-    if-eqz p2, :cond_2c
+    if-eqz p2, :cond_2
 
     .line 17
     .line 18
@@ -577,7 +577,7 @@
     move-result-object p2
 
     .line 28
-    if-eqz p2, :cond_20
+    if-eqz p2, :cond_1
 
     .line 29
     .line 30
@@ -588,7 +588,7 @@
     return-void
 
     .line 33
-    :cond_20
+    :cond_1
     new-instance p2, Ljava/security/InvalidAlgorithmParameterException;
 
     .line 34
@@ -613,7 +613,7 @@
     throw p2
 
     .line 45
-    :cond_2c
+    :cond_2
     const-string p1, "parameter must be ECParameterSpec or ECGenParameterSpec"
 
     .line 46

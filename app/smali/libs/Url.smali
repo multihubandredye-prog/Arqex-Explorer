@@ -16,7 +16,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/bn1;
@@ -48,7 +48,7 @@
 .end method
 
 .method public constructor <init>(Llibs/d10;Ljava/io/InputStream;)V
-    .registers 3
+    .locals 0
 
     .line 12
     invoke-direct {p0, p2}, Ljava/io/FilterInputStream;-><init>(Ljava/io/InputStream;)V
@@ -60,7 +60,7 @@
 .end method
 
 .method public constructor <init>(Llibs/s73;[B)V
-    .registers 4
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/io/ByteArrayInputStream;
@@ -87,7 +87,7 @@
 
 # virtual methods
 .method public final c()Llibs/Sign;
-    .registers 11
+    .locals 10
 
     .line 1
     iget-object v0, p0, Llibs/Url;->X:Llibs/s73;
@@ -97,7 +97,7 @@
     const/4 v1, 0x0
 
     .line 4
-    :try_start_3
+    :try_start_0
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 5
@@ -220,9 +220,9 @@
     .line 64
     .line 65
     invoke-virtual {v3, v2}, Llibs/bn1;->b([Ljava/lang/Object;)V
-    :try_end_43
-    .catch Llibs/Icon; {:try_start_3 .. :try_end_43} :catch_46
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_43} :catch_44
+    :try_end_0
+    .catch Llibs/Icon; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 66
     .line 67
@@ -230,21 +230,21 @@
     return-object v0
 
     .line 69
-    :catch_44
+    :catch_0
     move-exception v0
 
     .line 70
-    goto :goto_48
+    goto :goto_0
 
     .line 71
-    :catch_46
+    :catch_1
     move-exception v0
 
     .line 72
-    goto :goto_52
+    goto :goto_1
 
     .line 73
-    :goto_48
+    :goto_0
     new-instance v2, Llibs/Icon;
 
     .line 74
@@ -265,12 +265,12 @@
     throw v2
 
     .line 83
-    :goto_52
+    :goto_1
     throw v0
 .end method
 
 .method public final iterator()Ljava/util/Iterator;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/Path;

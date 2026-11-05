@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     const-string v0, "Diffie-Hellman"
@@ -32,7 +32,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Llibs/e90;)V
-    .registers 3
+    .locals 0
 
     .line 8
     invoke-direct {p0, p1, p2}, Llibs/vc;-><init>(Ljava/lang/String;Llibs/e90;)V
@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public final a(Ljava/math/BigInteger;)[B
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/uf1;->i:Ljava/math/BigInteger;
@@ -77,14 +77,14 @@
     array-length v1, p1
 
     .line 16
-    if-ne v1, v0, :cond_12
+    if-ne v1, v0, :cond_0
 
     .line 17
     .line 18
     return-object p1
 
     .line 19
-    :cond_12
+    :cond_0
     const/4 v1, 0x0
 
     .line 20
@@ -92,7 +92,7 @@
 
     .line 21
     .line 22
-    if-nez v2, :cond_25
+    if-nez v2, :cond_1
 
     .line 23
     .line 24
@@ -103,7 +103,7 @@
 
     .line 26
     .line 27
-    if-ne v2, v3, :cond_25
+    if-ne v2, v3, :cond_1
 
     .line 28
     .line 29
@@ -128,7 +128,7 @@
     return-object v3
 
     .line 38
-    :cond_25
+    :cond_1
     new-array v2, v0, [B
 
     .line 39
@@ -151,7 +151,7 @@
 .end method
 
 .method public final engineDoPhase(Ljava/security/Key;Z)Ljava/security/Key;
-    .registers 6
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/uf1;->h:Ljava/math/BigInteger;
@@ -161,7 +161,7 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_60
+    if-eqz v0, :cond_3
 
     .line 5
     .line 6
@@ -169,7 +169,7 @@
 
     .line 7
     .line 8
-    if-eqz v0, :cond_5a
+    if-eqz v0, :cond_2
 
     .line 9
     .line 10
@@ -205,7 +205,7 @@
     move-result v0
 
     .line 26
-    if-eqz v0, :cond_54
+    if-eqz v0, :cond_1
 
     .line 27
     .line 28
@@ -237,11 +237,11 @@
     move-result v0
 
     .line 42
-    if-eqz v0, :cond_54
+    if-eqz v0, :cond_1
 
     .line 43
     .line 44
-    if-eqz p2, :cond_3c
+    if-eqz p2, :cond_0
 
     .line 45
     .line 46
@@ -276,7 +276,7 @@
     return-object v1
 
     .line 61
-    :cond_3c
+    :cond_0
     invoke-interface {p1}, Ljavax/crypto/interfaces/DHPublicKey;->getY()Ljava/math/BigInteger;
 
     .line 62
@@ -325,7 +325,7 @@
     return-object v0
 
     .line 85
-    :cond_54
+    :cond_1
     const-string p1, "DHPublicKey not for this KeyAgreement!"
 
     .line 86
@@ -338,7 +338,7 @@
     return-object v1
 
     .line 91
-    :cond_5a
+    :cond_2
     const-string p1, "DHKeyAgreement doPhase requires DHPublicKey"
 
     .line 92
@@ -351,7 +351,7 @@
     return-object v1
 
     .line 97
-    :cond_60
+    :cond_3
     const-string p1, "Diffie-Hellman not initialised."
 
     .line 98
@@ -365,12 +365,12 @@
 .end method
 
 .method public final engineGenerateSecret([BI)I
-    .registers 4
+    .locals 1
 
     .line 62
     iget-object v0, p0, Llibs/uf1;->h:Ljava/math/BigInteger;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 63
     invoke-super {p0, p1, p2}, Llibs/vc;->engineGenerateSecret([BI)I
@@ -380,7 +380,7 @@
     return p1
 
     .line 64
-    :cond_9
+    :cond_0
     const-string p1, "Diffie-Hellman not initialised."
 
     invoke-static {p1}, Llibs/ic0;->h(Ljava/lang/String;)V
@@ -391,14 +391,14 @@
 .end method
 
 .method public final engineGenerateSecret(Ljava/lang/String;)Ljavax/crypto/SecretKey;
-    .registers 8
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/uf1;->h:Ljava/math/BigInteger;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_3
 
     .line 4
     .line 5
@@ -426,7 +426,7 @@
     move-result v1
 
     .line 17
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_2
 
     .line 18
     .line 19
@@ -441,22 +441,22 @@
 
     .line 23
     .line 24
-    if-eqz v3, :cond_1a
+    if-eqz v3, :cond_0
 
     .line 25
     .line 26
-    goto :goto_2d
+    goto :goto_1
 
     .line 27
-    :cond_1a
+    :cond_0
     const/4 v3, 0x0
 
     .line 28
-    :goto_1b
+    :goto_0
     array-length v4, v0
 
     .line 29
-    if-ge v3, v4, :cond_25
+    if-ge v3, v4, :cond_1
 
     .line 30
     .line 31
@@ -464,7 +464,7 @@
 
     .line 32
     .line 33
-    if-nez v4, :cond_25
+    if-nez v4, :cond_1
 
     .line 34
     .line 35
@@ -472,10 +472,10 @@
 
     .line 36
     .line 37
-    goto :goto_1b
+    goto :goto_0
 
     .line 38
-    :cond_25
+    :cond_1
     array-length v4, v0
 
     .line 39
@@ -494,7 +494,7 @@
     move-object v0, v5
 
     .line 46
-    :goto_2d
+    :goto_1
     invoke-direct {v1, v0, p1}, Ljavax/crypto/spec/SecretKeySpec;-><init>([BLjava/lang/String;)V
 
     .line 47
@@ -503,7 +503,7 @@
     return-object v1
 
     .line 50
-    :cond_31
+    :cond_2
     invoke-super {p0, p1}, Llibs/vc;->engineGenerateSecret(Ljava/lang/String;)Ljavax/crypto/SecretKey;
 
     .line 51
@@ -515,7 +515,7 @@
     return-object p1
 
     .line 55
-    :cond_36
+    :cond_3
     const-string p1, "Diffie-Hellman not initialised."
 
     .line 56
@@ -532,12 +532,12 @@
 .end method
 
 .method public final engineGenerateSecret()[B
-    .registers 2
+    .locals 1
 
     .line 65
     iget-object v0, p0, Llibs/uf1;->h:Ljava/math/BigInteger;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 66
     invoke-super {p0}, Llibs/vc;->engineGenerateSecret()[B
@@ -547,7 +547,7 @@
     return-object v0
 
     .line 67
-    :cond_9
+    :cond_0
     const-string v0, "Diffie-Hellman not initialised."
 
     invoke-static {v0}, Llibs/ic0;->h(Ljava/lang/String;)V
@@ -558,12 +558,12 @@
 .end method
 
 .method public final engineInit(Ljava/security/Key;Ljava/security/SecureRandom;)V
-    .registers 3
+    .locals 0
 
     .line 69
     instance-of p2, p1, Ljavax/crypto/interfaces/DHPrivateKey;
 
-    if-eqz p2, :cond_23
+    if-eqz p2, :cond_0
 
     .line 70
     check-cast p1, Ljavax/crypto/interfaces/DHPrivateKey;
@@ -602,7 +602,7 @@
     return-void
 
     .line 74
-    :cond_23
+    :cond_0
     const-string p1, "DHKeyAgreement requires DHPrivateKey"
 
     invoke-static {p1}, Llibs/bf0;->k(Ljava/lang/String;)V
@@ -611,14 +611,14 @@
 .end method
 
 .method public final engineInit(Ljava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    .registers 4
+    .locals 0
 
     .line 1
     instance-of p3, p1, Ljavax/crypto/interfaces/DHPrivateKey;
 
     .line 2
     .line 3
-    if-eqz p3, :cond_3e
+    if-eqz p3, :cond_2
 
     .line 4
     .line 5
@@ -626,7 +626,7 @@
 
     .line 6
     .line 7
-    if-eqz p2, :cond_21
+    if-eqz p2, :cond_1
 
     .line 8
     .line 9
@@ -634,7 +634,7 @@
 
     .line 10
     .line 11
-    if-eqz p3, :cond_1b
+    if-eqz p3, :cond_0
 
     .line 12
     .line 13
@@ -666,10 +666,10 @@
 
     .line 26
     .line 27
-    goto :goto_35
+    goto :goto_0
 
     .line 28
-    :cond_1b
+    :cond_0
     const-string p1, "DHKeyAgreement only accepts DHParameterSpec"
 
     .line 29
@@ -682,7 +682,7 @@
     return-void
 
     .line 34
-    :cond_21
+    :cond_1
     invoke-interface {p1}, Ljavax/crypto/interfaces/DHKey;->getParams()Ljavax/crypto/spec/DHParameterSpec;
 
     .line 35
@@ -723,7 +723,7 @@
 
     .line 53
     .line 54
-    :goto_35
+    :goto_0
     invoke-interface {p1}, Ljavax/crypto/interfaces/DHPrivateKey;->getX()Ljava/math/BigInteger;
 
     .line 55
@@ -743,7 +743,7 @@
     return-void
 
     .line 63
-    :cond_3e
+    :cond_2
     const-string p1, "DHKeyAgreement requires DHPrivateKey for initialisation"
 
     .line 64

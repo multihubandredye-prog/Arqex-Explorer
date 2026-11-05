@@ -30,7 +30,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/app/Activity;ZLlibs/rp0;ZLandroid/net/Uri;Landroid/net/Uri;Ljava/util/ArrayList;Ljava/lang/String;ZZZ)V
-    .registers 12
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -84,7 +84,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 22
+    .locals 21
 
     .line 1
     move-object/from16 v0, p0

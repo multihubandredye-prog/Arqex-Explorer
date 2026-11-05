@@ -28,7 +28,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/nx0;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;)V
-    .registers 10
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 9
+    .locals 7
 
     .line 1
     iget-object p1, p0, Llibs/kx0;->X:Llibs/nx0;
@@ -99,7 +99,7 @@
     const/4 v3, 0x0
 
     .line 9
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -150,10 +150,10 @@
     const/4 v4, 0x1
 
     .line 36
-    goto :goto_2a
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_0
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 38
@@ -166,12 +166,12 @@
     const/4 v4, 0x0
 
     .line 43
-    :goto_2a
+    :goto_0
     iget-object v5, p0, Llibs/kx0;->Z:Landroid/widget/TextView;
 
     .line 44
     .line 45
-    if-eqz v5, :cond_4b
+    if-eqz v5, :cond_1
 
     .line 46
     .line 47
@@ -228,12 +228,12 @@
 
     .line 75
     .line 76
-    :cond_4b
+    :cond_1
     iget-object v5, p0, Llibs/kx0;->Lambda:Landroid/widget/TextView;
 
     .line 77
     .line 78
-    if-eqz v5, :cond_6c
+    if-eqz v5, :cond_2
 
     .line 79
     .line 80
@@ -290,12 +290,12 @@
 
     .line 108
     .line 109
-    :cond_6c
+    :cond_2
     iget-object v5, p0, Llibs/kx0;->Mu:Landroid/widget/TextView;
 
     .line 110
     .line 111
-    if-eqz v5, :cond_8d
+    if-eqz v5, :cond_3
 
     .line 112
     .line 113
@@ -352,12 +352,12 @@
 
     .line 141
     .line 142
-    :cond_8d
+    :cond_3
     iget-object v5, p0, Llibs/kx0;->Nu:Landroid/widget/TextView;
 
     .line 143
     .line 144
-    if-eqz v5, :cond_ae
+    if-eqz v5, :cond_4
 
     .line 145
     .line 146
@@ -414,12 +414,12 @@
 
     .line 174
     .line 175
-    :cond_ae
+    :cond_4
     iget-object v5, p0, Llibs/kx0;->Xi:Landroid/widget/TextView;
 
     .line 176
     .line 177
-    if-eqz v5, :cond_cf
+    if-eqz v5, :cond_5
 
     .line 178
     .line 179
@@ -476,12 +476,12 @@
 
     .line 207
     .line 208
-    :cond_cf
+    :cond_5
     iget-object v5, p0, Llibs/kx0;->Omicron:Landroid/widget/TextView;
 
     .line 209
     .line 210
-    if-eqz v5, :cond_f0
+    if-eqz v5, :cond_6
 
     .line 211
     .line 212
@@ -538,12 +538,12 @@
 
     .line 240
     .line 241
-    :cond_f0
+    :cond_6
     iget-object v5, p0, Llibs/kx0;->Pi:Landroid/widget/TextView;
 
     .line 242
     .line 243
-    if-eqz v5, :cond_111
+    if-eqz v5, :cond_7
 
     .line 244
     .line 245
@@ -600,8 +600,8 @@
 
     .line 273
     .line 274
-    :cond_111
-    if-ne v4, v2, :cond_11f
+    :cond_7
+    if-ne v4, v2, :cond_8
 
     .line 275
     .line 276
@@ -629,7 +629,7 @@
     move-result-object v0
 
     .line 288
-    :cond_11f
+    :cond_8
     sget-object v1, Llibs/tr3;->a:Ljava/util/regex/Pattern;
 
     .line 289

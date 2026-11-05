@@ -29,7 +29,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/16 v0, 0x14
@@ -40,7 +40,7 @@
 
     .line 4
     .line 5
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     .line 6
     .line 7
@@ -52,7 +52,7 @@
     return-void
 
     .line 11
-    :array_a
+    :array_0
     .array-data 4
         -0x40800000    # -1.0f
         -0x40800000    # -1.0f
@@ -78,7 +78,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -183,7 +183,7 @@
 .end method
 
 .method public static a(Ljava/lang/String;)V
-    .registers 4
+    .locals 3
 
     .line 1
     invoke-static {}, Landroid/opengl/GLES20;->glGetError()I
@@ -194,14 +194,14 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
     return-void
 
     .line 8
-    :cond_7
+    :cond_0
     new-instance v1, Ljava/lang/Exception;
 
     .line 9
@@ -246,17 +246,17 @@
 .end method
 
 .method public static b(ILjava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 1
-    if-ltz p0, :cond_3
+    if-ltz p0, :cond_0
 
     .line 2
     .line 3
     return-void
 
     .line 4
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/Exception;
 
     .line 5
@@ -286,7 +286,7 @@
 .end method
 
 .method public static c(ILjava/lang/String;)I
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-static {p0}, Landroid/opengl/GLES20;->glCreateShader(I)I
@@ -362,7 +362,7 @@
 
     .line 39
     .line 40
-    if-nez p0, :cond_2d
+    if-nez p0, :cond_0
 
     .line 41
     .line 42
@@ -374,6 +374,6 @@
     return v1
 
     .line 46
-    :cond_2d
+    :cond_0
     return v0
 .end method

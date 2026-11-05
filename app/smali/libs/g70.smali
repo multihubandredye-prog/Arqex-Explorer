@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 5
+    .locals 4
 
     .line 1
     sget-object v0, Llibs/zt0;->g:Landroid/content/Context;
@@ -33,14 +33,14 @@
 
 # virtual methods
 .method public final onCreate(Landroid/database/sqlite/SQLiteDatabase;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final onUpgrade(Landroid/database/sqlite/SQLiteDatabase;II)V
-    .registers 4
+    .locals 0
 
     .line 1
     return-void

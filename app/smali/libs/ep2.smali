@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(JLlibs/vj;)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-wide p1, p0, Llibs/ep2;->X:J
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final c()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Llibs/ep2;->X:J
@@ -44,7 +44,7 @@
 .end method
 
 .method public final m()Llibs/dk;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ep2;->Y:Llibs/vj;

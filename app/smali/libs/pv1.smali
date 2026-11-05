@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/pv1;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onKey(Landroid/view/View;ILandroid/view/KeyEvent;)Z
-    .registers 9
+    .locals 5
 
     .line 1
     iget-byte v0, p0, Llibs/pv1;->X:B
@@ -57,7 +57,7 @@
 
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_98
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
@@ -78,7 +78,7 @@
     move-result p1
 
     .line 20
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_1
 
     .line 21
     .line 22
@@ -90,7 +90,7 @@
     move-result p1
 
     .line 26
-    if-eq p1, v3, :cond_2b
+    if-eq p1, v3, :cond_1
 
     .line 27
     .line 28
@@ -98,7 +98,7 @@
 
     .line 29
     .line 30
-    if-eq p2, p1, :cond_27
+    if-eq p2, p1, :cond_0
 
     .line 31
     .line 32
@@ -106,7 +106,7 @@
 
     .line 33
     .line 34
-    if-eq p2, p1, :cond_27
+    if-eq p2, p1, :cond_0
 
     .line 35
     .line 36
@@ -114,11 +114,11 @@
 
     .line 37
     .line 38
-    if-ne p2, p1, :cond_2b
+    if-ne p2, p1, :cond_1
 
     .line 39
     .line 40
-    :cond_27
+    :cond_0
     invoke-virtual {v4}, Llibs/tl1;->a()V
 
     .line 41
@@ -127,11 +127,11 @@
     const/4 v2, 0x1
 
     .line 44
-    :cond_2b
+    :cond_1
     return v2
 
     .line 45
-    :pswitch_2c
+    :pswitch_0
     check-cast v4, Lcom/mixplorer/widgets/MiTabBar;
 
     .line 46
@@ -153,7 +153,7 @@
     move-result p1
 
     .line 56
-    if-eqz p1, :cond_4f
+    if-eqz p1, :cond_3
 
     .line 57
     .line 58
@@ -165,11 +165,11 @@
     move-result p1
 
     .line 62
-    if-nez p1, :cond_4f
+    if-nez p1, :cond_3
 
     .line 63
     .line 64
-    if-ne p2, v1, :cond_4f
+    if-ne p2, v1, :cond_3
 
     .line 65
     .line 66
@@ -177,7 +177,7 @@
 
     .line 67
     .line 68
-    if-eqz p1, :cond_4e
+    if-eqz p1, :cond_2
 
     .line 69
     .line 70
@@ -198,15 +198,15 @@
     .line 77
     .line 78
     .line 79
-    :cond_4e
+    :cond_2
     const/4 v2, 0x1
 
     .line 80
-    :cond_4f
+    :cond_3
     return v2
 
     .line 81
-    :pswitch_50
+    :pswitch_1
     check-cast v4, Lcom/mixplorer/widgets/MiTabBar;
 
     .line 82
@@ -228,7 +228,7 @@
     move-result p1
 
     .line 92
-    if-eqz p1, :cond_73
+    if-eqz p1, :cond_5
 
     .line 93
     .line 94
@@ -240,11 +240,11 @@
     move-result p1
 
     .line 98
-    if-nez p1, :cond_73
+    if-nez p1, :cond_5
 
     .line 99
     .line 100
-    if-ne p2, v1, :cond_73
+    if-ne p2, v1, :cond_5
 
     .line 101
     .line 102
@@ -252,7 +252,7 @@
 
     .line 103
     .line 104
-    if-eqz p1, :cond_72
+    if-eqz p1, :cond_4
 
     .line 105
     .line 106
@@ -273,15 +273,15 @@
     .line 113
     .line 114
     .line 115
-    :cond_72
+    :cond_4
     const/4 v2, 0x1
 
     .line 116
-    :cond_73
+    :cond_5
     return v2
 
     .line 117
-    :pswitch_74
+    :pswitch_2
     check-cast v4, Lcom/mixplorer/widgets/MiTabBar;
 
     .line 118
@@ -303,7 +303,7 @@
     move-result p1
 
     .line 128
-    if-eqz p1, :cond_97
+    if-eqz p1, :cond_7
 
     .line 129
     .line 130
@@ -315,11 +315,11 @@
     move-result p1
 
     .line 134
-    if-nez p1, :cond_97
+    if-nez p1, :cond_7
 
     .line 135
     .line 136
-    if-ne p2, v1, :cond_97
+    if-ne p2, v1, :cond_7
 
     .line 137
     .line 138
@@ -327,7 +327,7 @@
 
     .line 139
     .line 140
-    if-eqz p1, :cond_96
+    if-eqz p1, :cond_6
 
     .line 141
     .line 142
@@ -348,18 +348,18 @@
     .line 149
     .line 150
     .line 151
-    :cond_96
+    :cond_6
     const/4 v2, 0x1
 
     .line 152
-    :cond_97
+    :cond_7
     return v2
 
     .line 153
-    :pswitch_data_98
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_74
-        :pswitch_50
-        :pswitch_2c
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

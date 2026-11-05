@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -24,11 +24,11 @@
 
 # virtual methods
 .method public final onLongClick(Landroid/view/View;)Z
-    .registers 5
+    .locals 3
 
     iget-object v0, p0, Llibs/ModernUiTheme$TasksLongClickListener;->activity:Landroid/app/Activity;
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     const-string v1, "Tarefas Autom\u00e1ticas"
 
@@ -36,7 +36,7 @@
 
     invoke-static {v0, v1, v2, v2}, Llibs/gx1;->c(Landroid/content/Context;Ljava/lang/Object;IZ)V
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x1
 
     return v0

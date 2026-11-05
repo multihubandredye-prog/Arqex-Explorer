@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/ArrayList;)V
-    .registers 3
+    .locals 1
 
     .line 11
     sget-object v0, Llibs/Size;->n:Llibs/Level;
@@ -28,7 +28,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/ArrayList;[B)V
-    .registers 4
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/Size;->n:Llibs/Level;
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public final a()Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/util/ArrayList;
@@ -74,7 +74,7 @@
 .end method
 
 .method public final c(I)Llibs/Sign;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/Attr;->Y:Ljava/util/ArrayList;
@@ -97,7 +97,7 @@
 .end method
 
 .method public final iterator()Ljava/util/Iterator;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/util/ArrayList;

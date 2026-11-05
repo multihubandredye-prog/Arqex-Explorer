@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 20
     new-instance v0, Llibs/ov2;
@@ -31,7 +31,7 @@
 .end method
 
 .method public constructor <init>(ILlibs/pu2;Llibs/cv2;JJ)V
-    .registers 9
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/ov2;
@@ -72,7 +72,7 @@
 .end method
 
 .method public constructor <init>(Llibs/xw2;)V
-    .registers 2
+    .locals 0
 
     .line 21
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -86,7 +86,7 @@
 
 # virtual methods
 .method public bridge synthetic a(Llibs/rw2;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Llibs/lv2;->h(Llibs/rw2;)V
@@ -98,7 +98,7 @@
 .end method
 
 .method public b()Llibs/xw2;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/lv2;->a:Llibs/xw2;
@@ -109,7 +109,7 @@
 .end method
 
 .method public c()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/high16 v0, 0x10000
@@ -120,14 +120,14 @@
 .end method
 
 .method public d()Llibs/lv2;
-    .registers 1
+    .locals 0
 
     .line 1
     return-object p0
 .end method
 
 .method public final e(Llibs/mv2;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p1}, Llibs/qj0;->a()Llibs/rw2;
@@ -187,7 +187,7 @@
 .end method
 
 .method public final f(Llibs/mv2;)V
-    .registers 7
+    .locals 5
 
     .line 1
     invoke-virtual {p1}, Llibs/qj0;->a()Llibs/rw2;
@@ -267,15 +267,15 @@
     move-result v4
 
     .line 40
-    if-lez v2, :cond_39
+    if-lez v2, :cond_0
 
     .line 41
     .line 42
     const/4 v3, 0x0
 
     .line 43
-    :goto_2a
-    if-ge v3, v2, :cond_4a
+    :goto_0
+    if-ge v3, v2, :cond_2
 
     .line 44
     .line 45
@@ -301,11 +301,11 @@
 
     .line 56
     .line 57
-    goto :goto_2a
+    goto :goto_0
 
     .line 58
-    :cond_39
-    if-lez v4, :cond_3f
+    :cond_0
+    if-lez v4, :cond_1
 
     .line 59
     .line 60
@@ -314,11 +314,11 @@
     .line 61
     .line 62
     .line 63
-    goto :goto_4a
+    goto :goto_1
 
     .line 64
-    :cond_3f
-    if-nez v4, :cond_4a
+    :cond_1
+    if-nez v4, :cond_2
 
     .line 65
     .line 66
@@ -330,7 +330,7 @@
     move-result v0
 
     .line 70
-    if-lez v0, :cond_4a
+    if-lez v0, :cond_2
 
     .line 71
     .line 72
@@ -339,8 +339,8 @@
     .line 73
     .line 74
     .line 75
-    :cond_4a
-    :goto_4a
+    :cond_2
+    :goto_1
     iput-object p1, p0, Llibs/lv2;->d:Llibs/c41;
 
     .line 76
@@ -369,7 +369,7 @@
 .end method
 
 .method public g(Llibs/rw2;)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -389,7 +389,7 @@
 .end method
 
 .method public h(Llibs/rw2;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iput-object p1, p0, Llibs/lv2;->b:Llibs/rw2;
@@ -453,14 +453,14 @@
     const/4 v2, 0x2
 
     .line 32
-    if-eqz v1, :cond_2a
+    if-eqz v1, :cond_0
 
     .line 33
     .line 34
     const/4 v3, 0x1
 
     .line 35
-    if-eq v1, v3, :cond_2a
+    if-eq v1, v3, :cond_0
 
     .line 36
     .line 37
@@ -473,16 +473,16 @@
     .line 40
     .line 41
     .line 42
-    goto :goto_2d
+    goto :goto_0
 
     .line 43
-    :cond_2a
+    :cond_0
     invoke-virtual {p1, v2}, Llibs/rw2;->i(I)V
 
     .line 44
     .line 45
     .line 46
-    :goto_2d
+    :goto_0
     iget-object v1, v0, Llibs/ov2;->a:Llibs/pu2;
 
     .line 47
@@ -495,7 +495,7 @@
     move-result v1
 
     .line 52
-    if-eqz v1, :cond_41
+    if-eqz v1, :cond_1
 
     .line 53
     .line 54
@@ -503,7 +503,7 @@
 
     .line 55
     .line 56
-    fill-array-data v1, :array_94
+    fill-array-data v1, :array_0
 
     .line 57
     .line 58
@@ -518,16 +518,16 @@
     .line 63
     .line 64
     .line 65
-    goto :goto_44
+    goto :goto_1
 
     .line 66
-    :cond_41
+    :cond_1
     invoke-virtual {p1}, Llibs/rw2;->k()V
 
     .line 67
     .line 68
     .line 69
-    :goto_44
+    :goto_1
     iget-object v1, v0, Llibs/ov2;->e:Llibs/cv2;
 
     .line 70
@@ -603,7 +603,7 @@
     move-result v1
 
     .line 108
-    if-eqz v1, :cond_73
+    if-eqz v1, :cond_2
 
     .line 109
     .line 110
@@ -616,10 +616,10 @@
     .line 113
     .line 114
     .line 115
-    goto :goto_7b
+    goto :goto_2
 
     .line 116
-    :cond_73
+    :cond_2
     invoke-virtual {p1}, Llibs/rw2;->k()V
 
     .line 117
@@ -634,7 +634,7 @@
     .line 122
     .line 123
     .line 124
-    :goto_7b
+    :goto_2
     iget-wide v0, v0, Llibs/ov2;->h:J
 
     .line 125
@@ -684,7 +684,7 @@
     nop
 
     .line 149
-    :array_94
+    :array_0
     .array-data 1
         0x0t
         0x0t
@@ -692,7 +692,7 @@
 .end method
 
 .method public i(Llibs/rw2;)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -712,7 +712,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

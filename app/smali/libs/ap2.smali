@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/4 v0, 0x4
@@ -23,7 +23,7 @@
 
     .line 3
     .line 4
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     .line 5
     .line 6
@@ -38,7 +38,7 @@
     nop
 
     .line 11
-    :array_a
+    :array_0
     .array-data 4
         0x3b800000    # 0.00390625f
         0x38000001
@@ -48,7 +48,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -64,7 +64,7 @@
 .end method
 
 .method public static a(I)F
-    .registers 3
+    .locals 2
 
     .line 1
     and-int/lit16 v0, p0, -0x100
@@ -100,7 +100,7 @@
 
 # virtual methods
 .method public b(Llibs/za;Ljava/util/Locale;)Ljava/lang/String;
-    .registers 3
+    .locals 0
 
     .line 1
     iget p1, p0, Llibs/ap2;->a:I

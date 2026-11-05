@@ -16,7 +16,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 11
+    .locals 11
 
     .line 1
     const/16 v0, 0x100
@@ -37,7 +37,7 @@
     const/4 v1, 0x0
 
     .line 9
-    :goto_8
+    :goto_0
     sget-object v2, Llibs/tm;->b:[J
 
     .line 10
@@ -45,7 +45,7 @@
     array-length v2, v2
 
     .line 12
-    if-ge v1, v2, :cond_2f
+    if-ge v1, v2, :cond_2
 
     .line 13
     .line 14
@@ -55,12 +55,12 @@
     const/4 v4, 0x0
 
     .line 16
-    :goto_f
+    :goto_1
     const/16 v5, 0x8
 
     .line 17
     .line 18
-    if-ge v4, v5, :cond_28
+    if-ge v4, v5, :cond_1
 
     .line 19
     .line 20
@@ -79,7 +79,7 @@
 
     .line 26
     .line 27
-    if-nez v10, :cond_24
+    if-nez v10, :cond_0
 
     .line 28
     .line 29
@@ -96,22 +96,22 @@
     xor-long/2addr v2, v5
 
     .line 36
-    goto :goto_25
+    goto :goto_2
 
     .line 37
-    :cond_24
+    :cond_0
     ushr-long/2addr v2, v9
 
     .line 38
-    :goto_25
+    :goto_2
     add-int/lit8 v4, v4, 0x1
 
     .line 39
     .line 40
-    goto :goto_f
+    goto :goto_1
 
     .line 41
-    :cond_28
+    :cond_1
     sget-object v4, Llibs/tm;->b:[J
 
     .line 42
@@ -124,15 +124,15 @@
 
     .line 46
     .line 47
-    goto :goto_8
+    goto :goto_0
 
     .line 48
-    :cond_2f
+    :cond_2
     return-void
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -154,7 +154,7 @@
 
 # virtual methods
 .method public final getValue()J
-    .registers 5
+    .locals 4
 
     .line 1
     iget-wide v0, p0, Llibs/tm;->a:J
@@ -172,7 +172,7 @@
 .end method
 
 .method public final reset()V
-    .registers 3
+    .locals 2
 
     .line 1
     const-wide/16 v0, -0x1
@@ -187,7 +187,7 @@
 .end method
 
 .method public final update(I)V
-    .registers 7
+    .locals 5
 
     and-int/lit16 p1, p1, 0xff
 
@@ -216,14 +216,14 @@
 .end method
 
 .method public final update([BII)V
-    .registers 10
+    .locals 6
 
     .line 1
     add-int/2addr p3, p2
 
     .line 2
-    :goto_1
-    if-ge p2, p3, :cond_19
+    :goto_0
+    if-ge p2, p3, :cond_0
 
     .line 3
     .line 4
@@ -274,9 +274,9 @@
     move p2, v0
 
     .line 25
-    goto :goto_1
+    goto :goto_0
 
     .line 26
-    :cond_19
+    :cond_0
     return-void
 .end method

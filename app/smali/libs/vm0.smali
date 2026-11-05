@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(ILjava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 41
     invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
@@ -26,7 +26,7 @@
 .end method
 
 .method public constructor <init>(Llibs/yn2;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
@@ -50,15 +50,15 @@
     const/4 v2, 0x0
 
     .line 12
-    :goto_b
+    :goto_0
     array-length v3, v1
 
     .line 13
-    if-ge v2, v3, :cond_1d
+    if-ge v2, v3, :cond_1
 
     .line 14
     .line 15
-    if-lez v2, :cond_15
+    if-lez v2, :cond_0
 
     .line 16
     .line 17
@@ -71,7 +71,7 @@
     .line 20
     .line 21
     .line 22
-    :cond_15
+    :cond_0
     aget-object v3, v1, v2
 
     .line 23
@@ -85,10 +85,10 @@
 
     .line 28
     .line 29
-    goto :goto_b
+    goto :goto_0
 
     .line 30
-    :cond_1d
+    :cond_1
     iget p1, p1, Llibs/yn2;->a:I
 
     .line 31
@@ -115,7 +115,7 @@
 
 # virtual methods
 .method public final getMessage()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/vm0;->X:Ljava/lang/String;

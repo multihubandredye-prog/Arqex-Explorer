@@ -22,7 +22,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Lorg/conscrypt/OkHostnameVerifier;
@@ -61,7 +61,7 @@
 .end method
 
 .method private constructor <init>(Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -77,7 +77,7 @@
 .end method
 
 .method public static allSubjectAltNames(Ljava/security/cert/X509Certificate;)Ljava/util/List;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -154,7 +154,7 @@
 .end method
 
 .method private static getSubjectAltNames(Ljava/security/cert/X509Certificate;I)Ljava/util/List;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -176,7 +176,7 @@
     .line 4
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     invoke-virtual {p0}, Ljava/security/cert/X509Certificate;->getSubjectAlternativeNames()Ljava/util/Collection;
 
     .line 7
@@ -185,7 +185,7 @@
     move-result-object p0
 
     .line 10
-    if-nez p0, :cond_e
+    if-nez p0, :cond_0
 
     .line 11
     .line 12
@@ -196,7 +196,7 @@
     return-object p0
 
     .line 15
-    :cond_e
+    :cond_0
     invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     .line 16
@@ -205,8 +205,8 @@
     move-result-object p0
 
     .line 19
-    :cond_12
-    :goto_12
+    :cond_1
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 20
@@ -215,7 +215,7 @@
     move-result v1
 
     .line 23
-    if-eqz v1, :cond_45
+    if-eqz v1, :cond_4
 
     .line 24
     .line 25
@@ -231,7 +231,7 @@
 
     .line 30
     .line 31
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_1
 
     .line 32
     .line 33
@@ -246,14 +246,14 @@
     const/4 v3, 0x2
 
     .line 38
-    if-ge v2, v3, :cond_28
+    if-ge v2, v3, :cond_2
 
     .line 39
     .line 40
-    goto :goto_12
+    goto :goto_0
 
     .line 41
-    :cond_28
+    :cond_2
     const/4 v2, 0x0
 
     .line 42
@@ -269,14 +269,14 @@
 
     .line 47
     .line 48
-    if-nez v2, :cond_32
+    if-nez v2, :cond_3
 
     .line 49
     .line 50
-    goto :goto_12
+    goto :goto_0
 
     .line 51
-    :cond_32
+    :cond_3
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     .line 52
@@ -285,7 +285,7 @@
     move-result v2
 
     .line 55
-    if-ne v2, p1, :cond_12
+    if-ne v2, p1, :cond_1
 
     .line 56
     .line 57
@@ -304,25 +304,25 @@
 
     .line 63
     .line 64
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_1
 
     .line 65
     .line 66
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_44
-    .catch Ljava/security/cert/CertificateParsingException; {:try_start_5 .. :try_end_44} :catch_46
+    :try_end_0
+    .catch Ljava/security/cert/CertificateParsingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 67
     .line 68
     .line 69
-    goto :goto_12
+    goto :goto_0
 
     .line 70
-    :cond_45
+    :cond_4
     return-object v0
 
     .line 71
-    :catch_46
+    :catch_0
     sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     .line 72
@@ -331,7 +331,7 @@
 .end method
 
 .method public static strictInstance()Lorg/conscrypt/OkHostnameVerifier;
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Lorg/conscrypt/OkHostnameVerifier;
@@ -350,7 +350,7 @@
 .end method
 
 .method public static verifyAsIpAddress(Ljava/lang/String;)Z
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/OkHostnameVerifier;->VERIFY_AS_IP_ADDRESS:Ljava/util/regex/Pattern;
@@ -377,13 +377,13 @@
 .end method
 
 .method private verifyHostName(Ljava/lang/String;Ljava/lang/String;)Z
-    .registers 9
+    .locals 6
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-eqz p1, :cond_b3
+    if-eqz p1, :cond_b
 
     .line 3
     .line 4
@@ -395,7 +395,7 @@
     move-result v1
 
     .line 8
-    if-eqz v1, :cond_b3
+    if-eqz v1, :cond_b
 
     .line 9
     .line 10
@@ -411,7 +411,7 @@
     move-result v2
 
     .line 16
-    if-nez v2, :cond_b3
+    if-nez v2, :cond_b
 
     .line 17
     .line 18
@@ -427,16 +427,16 @@
     move-result v3
 
     .line 24
-    if-eqz v3, :cond_1b
+    if-eqz v3, :cond_0
 
     .line 25
     .line 26
-    goto/16 :goto_b3
+    goto/16 :goto_0
 
     .line 27
     .line 28
-    :cond_1b
-    if-eqz p2, :cond_b3
+    :cond_0
+    if-eqz p2, :cond_b
 
     .line 29
     .line 30
@@ -448,7 +448,7 @@
     move-result v3
 
     .line 34
-    if-eqz v3, :cond_b3
+    if-eqz v3, :cond_b
 
     .line 35
     .line 36
@@ -460,7 +460,7 @@
     move-result v3
 
     .line 40
-    if-nez v3, :cond_b3
+    if-nez v3, :cond_b
 
     .line 41
     .line 42
@@ -472,15 +472,15 @@
     move-result v2
 
     .line 46
-    if-eqz v2, :cond_31
+    if-eqz v2, :cond_1
 
     .line 47
     .line 48
-    goto/16 :goto_b3
+    goto/16 :goto_0
 
     .line 49
     .line 50
-    :cond_31
+    :cond_1
     invoke-virtual {p1, v1}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
     .line 51
@@ -489,7 +489,7 @@
     move-result v2
 
     .line 54
-    if-nez v2, :cond_3b
+    if-nez v2, :cond_2
 
     .line 55
     .line 56
@@ -501,7 +501,7 @@
     move-result-object p1
 
     .line 60
-    :cond_3b
+    :cond_2
     invoke-virtual {p2, v1}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
     .line 61
@@ -510,7 +510,7 @@
     move-result v2
 
     .line 64
-    if-nez v2, :cond_45
+    if-nez v2, :cond_3
 
     .line 65
     .line 66
@@ -522,7 +522,7 @@
     move-result-object p2
 
     .line 70
-    :cond_45
+    :cond_3
     sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     .line 71
@@ -547,7 +547,7 @@
     move-result v1
 
     .line 82
-    if-nez v1, :cond_58
+    if-nez v1, :cond_4
 
     .line 83
     .line 84
@@ -562,7 +562,7 @@
     return p1
 
     .line 89
-    :cond_58
+    :cond_4
     const-string v1, "*."
 
     .line 90
@@ -575,7 +575,7 @@
     move-result v2
 
     .line 95
-    if-eqz v2, :cond_b3
+    if-eqz v2, :cond_b
 
     .line 96
     .line 97
@@ -597,14 +597,14 @@
     const/4 v4, -0x1
 
     .line 105
-    if-eq v2, v4, :cond_6b
+    if-eq v2, v4, :cond_5
 
     .line 106
     .line 107
-    goto :goto_b3
+    goto :goto_0
 
     .line 108
-    :cond_6b
+    :cond_5
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     .line 109
@@ -621,14 +621,14 @@
     move-result v5
 
     .line 116
-    if-ge v2, v5, :cond_76
+    if-ge v2, v5, :cond_6
 
     .line 117
     .line 118
     return v0
 
     .line 119
-    :cond_76
+    :cond_6
     invoke-virtual {v1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     .line 120
@@ -637,14 +637,14 @@
     move-result v1
 
     .line 123
-    if-eqz v1, :cond_7d
+    if-eqz v1, :cond_7
 
     .line 124
     .line 125
     return v0
 
     .line 126
-    :cond_7d
+    :cond_7
     iget-boolean v1, p0, Lorg/conscrypt/OkHostnameVerifier;->strictWildcardMode:Z
 
     .line 127
@@ -653,7 +653,7 @@
 
     .line 129
     .line 130
-    if-eqz v1, :cond_94
+    if-eqz v1, :cond_8
 
     .line 131
     .line 132
@@ -687,14 +687,14 @@
     move-result v1
 
     .line 146
-    if-gez v1, :cond_94
+    if-gez v1, :cond_8
 
     .line 147
     .line 148
     return v0
 
     .line 149
-    :cond_94
+    :cond_8
     invoke-virtual {p2, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     .line 150
@@ -711,14 +711,14 @@
     move-result v1
 
     .line 157
-    if-nez v1, :cond_9f
+    if-nez v1, :cond_9
 
     .line 158
     .line 159
     return v0
 
     .line 160
-    :cond_9f
+    :cond_9
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     .line 161
@@ -738,7 +738,7 @@
     sub-int/2addr v1, p2
 
     .line 169
-    if-lez v1, :cond_b2
+    if-lez v1, :cond_a
 
     .line 170
     .line 171
@@ -753,24 +753,24 @@
     move-result p1
 
     .line 176
-    if-eq p1, v4, :cond_b2
+    if-eq p1, v4, :cond_a
 
     .line 177
     .line 178
     return v0
 
     .line 179
-    :cond_b2
+    :cond_a
     return v3
 
     .line 180
-    :cond_b3
-    :goto_b3
+    :cond_b
+    :goto_0
     return v0
 .end method
 
 .method private verifyHostName(Ljava/lang/String;Ljava/security/cert/X509Certificate;)Z
-    .registers 7
+    .locals 4
 
     .line 181
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -795,8 +795,8 @@
 
     const/4 v2, 0x0
 
-    :goto_11
-    if-ge v2, v0, :cond_24
+    :goto_0
+    if-ge v2, v0, :cond_1
 
     .line 184
     invoke-interface {p2, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -809,23 +809,23 @@
 
     move-result v3
 
-    if-eqz v3, :cond_21
+    if-eqz v3, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
-    :cond_21
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_24
+    :cond_1
     return v1
 .end method
 
 .method private verifyIpAddress(Ljava/lang/String;Ljava/security/cert/X509Certificate;)Z
-    .registers 7
+    .locals 4
 
     .line 1
     const/4 v0, 0x7
@@ -853,8 +853,8 @@
     const/4 v2, 0x0
 
     .line 12
-    :goto_b
-    if-ge v2, v0, :cond_1e
+    :goto_0
+    if-ge v2, v0, :cond_1
 
     .line 13
     .line 14
@@ -878,7 +878,7 @@
     move-result v3
 
     .line 24
-    if-eqz v3, :cond_1b
+    if-eqz v3, :cond_0
 
     .line 25
     .line 26
@@ -888,29 +888,29 @@
     return p1
 
     .line 28
-    :cond_1b
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
     .line 29
     .line 30
-    goto :goto_b
+    goto :goto_0
 
     .line 31
-    :cond_1e
+    :cond_1
     return v1
 .end method
 
 
 # virtual methods
 .method public verify(Ljava/lang/String;Ljava/security/cert/X509Certificate;)Z
-    .registers 4
+    .locals 1
 
     .line 26
     invoke-static {p1}, Lorg/conscrypt/OkHostnameVerifier;->verifyAsIpAddress(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 27
     invoke-direct {p0, p1, p2}, Lorg/conscrypt/OkHostnameVerifier;->verifyIpAddress(Ljava/lang/String;Ljava/security/cert/X509Certificate;)Z
@@ -920,7 +920,7 @@
     return p1
 
     .line 28
-    :cond_b
+    :cond_0
     invoke-direct {p0, p1, p2}, Lorg/conscrypt/OkHostnameVerifier;->verifyHostName(Ljava/lang/String;Ljava/security/cert/X509Certificate;)Z
 
     move-result p1
@@ -929,7 +929,7 @@
 .end method
 
 .method public verify([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljavax/net/ssl/SSLSession;)Z
-    .registers 6
+    .locals 2
 
     .line 1
     array-length v0, p1
@@ -938,7 +938,7 @@
     const/4 v1, 0x0
 
     .line 3
-    if-lez v0, :cond_b
+    if-lez v0, :cond_0
 
     .line 4
     .line 5
@@ -957,8 +957,8 @@
     return p1
 
     .line 12
-    :cond_b
-    :try_start_b
+    :cond_0
+    :try_start_0
     invoke-interface {p3}, Ljavax/net/ssl/SSLSession;->getPeerCertificates()[Ljava/security/cert/Certificate;
 
     .line 13
@@ -981,13 +981,13 @@
     .line 22
     .line 23
     move-result p1
-    :try_end_17
-    .catch Ljavax/net/ssl/SSLException; {:try_start_b .. :try_end_17} :catch_18
+    :try_end_0
+    .catch Ljavax/net/ssl/SSLException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 24
     return p1
 
     .line 25
-    :catch_18
+    :catch_0
     return v1
 .end method

@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/xc;-><init>()V
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final engineGenerateParameters()Ljava/security/AlgorithmParameters;
-    .registers 25
+    .locals 24
 
     .line 1
     move-object/from16 v1, p0
@@ -57,7 +57,7 @@
 
     .line 11
     .line 12
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 13
     .line 14
@@ -69,10 +69,10 @@
 
     .line 17
     .line 18
-    goto :goto_1b
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     new-instance v0, Ljava/security/SecureRandom;
 
     .line 20
@@ -90,7 +90,7 @@
 
     .line 27
     .line 28
-    :goto_1b
+    :goto_0
     sget-object v9, Llibs/jt0;->d:Ljava/math/BigInteger;
 
     .line 29
@@ -137,7 +137,7 @@
 
     .line 49
     .line 50
-    if-eq v0, v8, :cond_1b2
+    if-eq v0, v8, :cond_b
 
     .line 51
     .line 52
@@ -145,11 +145,11 @@
 
     .line 53
     .line 54
-    if-ne v0, v15, :cond_1aa
+    if-ne v0, v15, :cond_a
 
     .line 55
     .line 56
-    :goto_37
+    :goto_1
     const-wide/16 v16, 0x0
 
     .line 57
@@ -158,7 +158,7 @@
 
     .line 59
     .line 60
-    if-ltz v0, :cond_46
+    if-ltz v0, :cond_1
 
     .line 61
     .line 62
@@ -173,11 +173,11 @@
 
     .line 68
     .line 69
-    if-lez v0, :cond_4c
+    if-lez v0, :cond_2
 
     .line 70
     .line 71
-    :cond_46
+    :cond_1
     const/16 v20, 0x0
 
     .line 72
@@ -186,17 +186,17 @@
 
     .line 74
     .line 75
-    goto/16 :goto_19c
+    goto/16 :goto_8
 
     .line 76
     .line 77
-    :cond_4c
-    :goto_4c
+    :cond_2
+    :goto_2
     cmp-long v0, v6, v16
 
     .line 78
     .line 79
-    if-ltz v0, :cond_5c
+    if-ltz v0, :cond_3
 
     .line 80
     .line 81
@@ -204,7 +204,7 @@
 
     .line 82
     .line 83
-    if-gtz v0, :cond_5c
+    if-gtz v0, :cond_3
 
     .line 84
     .line 85
@@ -220,11 +220,11 @@
 
     .line 90
     .line 91
-    if-nez v0, :cond_63
+    if-nez v0, :cond_4
 
     .line 92
     .line 93
-    :cond_5c
+    :cond_3
     move-wide v14, v4
 
     .line 94
@@ -236,11 +236,11 @@
 
     .line 97
     .line 98
-    goto/16 :goto_189
+    goto/16 :goto_7
 
     .line 99
     .line 100
-    :cond_63
+    :cond_4
     move-wide/from16 v20, v4
 
     .line 101
@@ -366,16 +366,16 @@
 
     .line 162
     .line 163
-    :goto_a2
+    :goto_3
     const/4 v3, 0x0
 
     .line 164
-    :goto_a3
+    :goto_4
     const/16 v4, 0x20
 
     .line 165
     .line 166
-    if-ge v3, v4, :cond_bf
+    if-ge v3, v4, :cond_5
 
     .line 167
     .line 168
@@ -426,10 +426,10 @@
     move v3, v7
 
     .line 191
-    goto :goto_a3
+    goto :goto_4
 
     .line 192
-    :cond_bf
+    :cond_5
     new-instance v3, Ljava/math/BigInteger;
 
     .line 193
@@ -446,8 +446,8 @@
     const/4 v7, 0x0
 
     .line 200
-    :goto_c7
-    if-ge v7, v4, :cond_e0
+    :goto_5
+    if-ge v7, v4, :cond_6
 
     .line 201
     .line 202
@@ -495,10 +495,10 @@
 
     .line 223
     .line 224
-    goto :goto_c7
+    goto :goto_5
 
     .line 225
-    :cond_e0
+    :cond_6
     const/16 v16, 0x20
 
     .line 226
@@ -611,7 +611,7 @@
     move-result v4
 
     .line 281
-    if-nez v4, :cond_11e
+    if-nez v4, :cond_7
 
     .line 282
     .line 283
@@ -623,14 +623,14 @@
     move-result-object v3
 
     .line 287
-    :cond_11e
+    :cond_7
     move-object v4, v3
 
     .line 288
     const/4 v3, 0x0
 
     .line 289
-    :goto_120
+    :goto_6
     invoke-virtual {v13, v5}, Ljava/math/BigInteger;->multiply(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
     .line 290
@@ -701,7 +701,7 @@
     const/4 v8, 0x1
 
     .line 323
-    if-ne v0, v8, :cond_14a
+    if-ne v0, v8, :cond_8
 
     .line 324
     .line 325
@@ -713,11 +713,11 @@
 
     .line 328
     .line 329
-    goto/16 :goto_a2
+    goto/16 :goto_3
 
     .line 330
     .line 331
-    :cond_14a
+    :cond_8
     invoke-virtual {v13, v5}, Ljava/math/BigInteger;->multiply(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
     .line 332
@@ -766,7 +766,7 @@
     move-result v0
 
     .line 355
-    if-nez v0, :cond_182
+    if-nez v0, :cond_9
 
     .line 356
     .line 357
@@ -810,7 +810,7 @@
     move-result v0
 
     .line 377
-    if-eqz v0, :cond_182
+    if-eqz v0, :cond_9
 
     .line 378
     .line 379
@@ -829,10 +829,10 @@
     move-object v7, v11
 
     .line 386
-    goto :goto_1be
+    goto :goto_9
 
     .line 387
-    :cond_182
+    :cond_9
     add-int/lit8 v3, v3, 0x2
 
     .line 388
@@ -845,10 +845,10 @@
 
     .line 392
     .line 393
-    goto :goto_120
+    goto :goto_6
 
     .line 394
-    :goto_189
+    :goto_7
     iget-object v0, v2, Llibs/jt0;->b:Ljava/security/SecureRandom;
 
     .line 395
@@ -886,11 +886,11 @@
 
     .line 410
     .line 411
-    goto/16 :goto_4c
+    goto/16 :goto_2
 
     .line 412
     .line 413
-    :goto_19c
+    :goto_8
     iget-object v0, v2, Llibs/jt0;->b:Ljava/security/SecureRandom;
 
     .line 414
@@ -917,11 +917,11 @@
 
     .line 424
     .line 425
-    goto/16 :goto_37
+    goto/16 :goto_1
 
     .line 426
     .line 427
-    :cond_1aa
+    :cond_a
     const/16 v22, 0x0
 
     .line 428
@@ -938,7 +938,7 @@
     return-object v22
 
     .line 435
-    :cond_1b2
+    :cond_b
     const/16 v20, 0x0
 
     .line 436
@@ -965,7 +965,7 @@
     .line 445
     .line 446
     .line 447
-    :goto_1be
+    :goto_9
     aget-object v0, v7, v20
 
     .line 448
@@ -1006,7 +1006,7 @@
     move-result v7
 
     .line 467
-    :goto_1d2
+    :goto_a
     new-instance v8, Ljava/math/BigInteger;
 
     .line 468
@@ -1028,7 +1028,7 @@
     move-result v9
 
     .line 478
-    if-lez v9, :cond_21e
+    if-lez v9, :cond_c
 
     .line 479
     .line 480
@@ -1040,7 +1040,7 @@
     move-result v9
 
     .line 484
-    if-gez v9, :cond_21e
+    if-gez v9, :cond_c
 
     .line 485
     .line 486
@@ -1060,7 +1060,7 @@
     move-result v9
 
     .line 494
-    if-eqz v9, :cond_21e
+    if-eqz v9, :cond_c
 
     .line 495
     .line 496
@@ -1076,7 +1076,7 @@
     .line 500
     .line 501
     .line 502
-    :try_start_1f5
+    :try_start_0
     const-string v0, "GOST3410"
 
     .line 503
@@ -1132,8 +1132,8 @@
     .line 529
     .line 530
     invoke-virtual {v0, v3}, Ljava/security/AlgorithmParameters;->init(Ljava/security/spec/AlgorithmParameterSpec;)V
-    :try_end_214
-    .catch Ljava/lang/Exception; {:try_start_1f5 .. :try_end_214} :catch_215
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 531
     .line 532
@@ -1141,7 +1141,7 @@
     return-object v0
 
     .line 534
-    :catch_215
+    :catch_0
     move-exception v0
 
     .line 535
@@ -1161,7 +1161,7 @@
     return-object v22
 
     .line 543
-    :cond_21e
+    :cond_c
     const/4 v9, 0x0
 
     .line 544
@@ -1169,11 +1169,11 @@
 
     .line 545
     .line 546
-    goto :goto_1d2
+    goto :goto_a
 .end method
 
 .method public final engineInit(ILjava/security/SecureRandom;)V
-    .registers 3
+    .locals 0
 
     .line 9
     iput p1, p0, Llibs/b0;->c:I
@@ -1185,7 +1185,7 @@
 .end method
 
 .method public final engineInit(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    .registers 3
+    .locals 0
 
     .line 1
     new-instance p1, Ljava/security/InvalidAlgorithmParameterException;

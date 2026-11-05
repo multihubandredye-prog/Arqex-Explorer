@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/ContentViewerActivity;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/zz;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 9
+    .locals 8
 
     .line 1
     iget-byte v0, p0, Llibs/zz;->X:B
@@ -50,7 +50,7 @@
 
     .line 5
     .line 6
-    packed-switch v0, :pswitch_data_b4
+    packed-switch v0, :pswitch_data_0
 
     .line 7
     .line 8
@@ -97,7 +97,7 @@
 
     .line 30
     .line 31
-    if-eqz v0, :cond_41
+    if-eqz v0, :cond_0
 
     .line 32
     .line 33
@@ -117,7 +117,7 @@
 
     .line 40
     .line 41
-    if-nez v7, :cond_41
+    if-nez v7, :cond_0
 
     .line 42
     .line 43
@@ -164,11 +164,11 @@
     .line 64
     .line 65
     .line 66
-    :cond_41
+    :cond_0
     return-void
 
     .line 67
-    :pswitch_42
+    :pswitch_0
     sget v0, Lcom/mixplorer/activities/ContentViewerActivity;->III:I
 
     .line 68
@@ -177,19 +177,19 @@
 
     .line 70
     .line 71
-    if-eqz v0, :cond_49
+    if-eqz v0, :cond_1
 
     .line 72
     .line 73
-    goto :goto_4a
+    goto :goto_0
 
     .line 74
-    :cond_49
+    :cond_1
     const/4 v0, 0x0
 
     .line 75
-    :goto_4a
-    if-eqz v0, :cond_51
+    :goto_0
+    if-eqz v0, :cond_2
 
     .line 76
     .line 77
@@ -202,11 +202,11 @@
     .line 80
     .line 81
     .line 82
-    :cond_51
+    :cond_2
     return-void
 
     .line 83
-    :pswitch_52
+    :pswitch_1
     sget v0, Lcom/mixplorer/activities/ContentViewerActivity;->III:I
 
     .line 84
@@ -218,7 +218,7 @@
     const/4 v3, 0x0
 
     .line 88
-    :try_start_57
+    :try_start_0
     iget-object v4, v2, Lcom/mixplorer/activities/ContentViewerActivity;->Oo:Llibs/rp0;
 
     .line 89
@@ -235,7 +235,7 @@
     move-result v5
 
     .line 96
-    if-nez v5, :cond_98
+    if-nez v5, :cond_3
 
     .line 97
     .line 98
@@ -337,18 +337,18 @@
     move-result-object v4
 
     .line 150
-    goto :goto_98
+    goto :goto_1
 
     .line 151
-    :catchall_96
+    :catchall_0
     move-exception v0
 
     .line 152
-    goto :goto_a3
+    goto :goto_2
 
     .line 153
-    :cond_98
-    :goto_98
+    :cond_3
+    :goto_1
     new-instance v0, Llibs/gj;
 
     .line 154
@@ -363,16 +363,16 @@
     .line 159
     .line 160
     invoke-virtual {v2, v0}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
-    :try_end_a2
-    .catchall {:try_start_57 .. :try_end_a2} :catchall_96
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 161
     .line 162
     .line 163
-    goto :goto_b2
+    goto :goto_3
 
     .line 164
-    :goto_a3
+    :goto_2
     invoke-static {v0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 165
@@ -402,16 +402,16 @@
     .line 177
     .line 178
     .line 179
-    :goto_b2
+    :goto_3
     return-void
 
     .line 180
     nop
 
     .line 181
-    :pswitch_data_b4
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_52
-        :pswitch_42
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

@@ -13,7 +13,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;Ljava/io/Serializable;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/f8;->a:B
@@ -37,7 +37,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/Object;Ljava/io/Serializable;BZ)V
-    .registers 5
+    .locals 0
 
     .line 11
     iput-byte p3, p0, Llibs/f8;->a:B
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public final e(Llibs/rp0;)Z
-    .registers 11
+    .locals 9
 
     .line 1
     iget-byte v0, p0, Llibs/f8;->a:B
@@ -64,7 +64,7 @@
     const/4 v1, 0x0
 
     .line 4
-    packed-switch v0, :pswitch_data_104
+    packed-switch v0, :pswitch_data_0
 
     .line 5
     .line 6
@@ -73,7 +73,7 @@
 
     .line 8
     .line 9
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -109,7 +109,7 @@
     move-result v0
 
     .line 27
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_0
 
     .line 28
     .line 29
@@ -126,11 +126,11 @@
     .line 34
     .line 35
     .line 36
-    :cond_23
+    :cond_0
     return v1
 
     .line 37
-    :pswitch_24
+    :pswitch_0
     iget-wide v2, p1, Llibs/rp0;->Pi:J
 
     .line 38
@@ -144,7 +144,7 @@
 
     .line 43
     .line 44
-    if-nez v0, :cond_52
+    if-nez v0, :cond_1
 
     .line 45
     .line 46
@@ -221,11 +221,11 @@
     .line 81
     .line 82
     .line 83
-    :cond_52
+    :cond_1
     return v1
 
     .line 84
-    :pswitch_53
+    :pswitch_1
     iget-object v0, p0, Llibs/f8;->b:Ljava/lang/Object;
 
     .line 85
@@ -308,7 +308,7 @@
     return v1
 
     .line 124
-    :pswitch_7b
+    :pswitch_2
     move-object v5, p1
 
     .line 125
@@ -316,14 +316,14 @@
 
     .line 126
     .line 127
-    if-nez p1, :cond_81
+    if-nez p1, :cond_2
 
     .line 128
     .line 129
-    goto :goto_d4
+    goto :goto_0
 
     .line 130
-    :cond_81
+    :cond_2
     new-instance p1, Ljava/lang/StringBuilder;
 
     .line 131
@@ -383,7 +383,7 @@
     move-result v0
 
     .line 161
-    if-eqz v0, :cond_d4
+    if-eqz v0, :cond_3
 
     .line 162
     .line 163
@@ -414,7 +414,7 @@
     monitor-enter v2
 
     .line 176
-    :try_start_af
+    :try_start_0
     iget-object v3, p0, Llibs/f8;->c:Ljava/lang/Object;
 
     .line 177
@@ -458,8 +458,8 @@
     .line 197
     .line 198
     monitor-exit v2
-    :try_end_c6
-    .catchall {:try_start_af .. :try_end_c6} :catchall_d0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 199
     invoke-virtual {v5}, Llibs/rp0;->Context()Z
@@ -470,7 +470,7 @@
     move-result p1
 
     .line 203
-    if-eqz p1, :cond_d4
+    if-eqz p1, :cond_3
 
     .line 204
     .line 205
@@ -479,31 +479,31 @@
     .line 206
     .line 207
     .line 208
-    goto :goto_d4
+    goto :goto_0
 
     .line 209
-    :catchall_d0
+    :catchall_0
     move-exception v0
 
     .line 210
     move-object p1, v0
 
     .line 211
-    :try_start_d2
+    :try_start_1
     monitor-exit v2
-    :try_end_d3
-    .catchall {:try_start_d2 .. :try_end_d3} :catchall_d0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 212
     throw p1
 
     .line 213
-    :cond_d4
-    :goto_d4
+    :cond_3
+    :goto_0
     return v1
 
     .line 214
-    :pswitch_d5
+    :pswitch_3
     move-object v5, p1
 
     .line 215
@@ -555,7 +555,7 @@
     return v1
 
     .line 239
-    :pswitch_ee
+    :pswitch_4
     move-object v5, p1
 
     .line 240
@@ -580,7 +580,7 @@
 
     .line 250
     .line 251
-    if-nez p1, :cond_103
+    if-nez p1, :cond_4
 
     .line 252
     .line 253
@@ -597,16 +597,16 @@
     .line 258
     .line 259
     .line 260
-    :cond_103
+    :cond_4
     return v1
 
     .line 261
-    :pswitch_data_104
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_ee
-        :pswitch_d5
-        :pswitch_7b
-        :pswitch_53
-        :pswitch_24
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

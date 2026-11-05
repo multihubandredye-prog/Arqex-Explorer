@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/aw0;Llibs/eh0;)V
-    .registers 3
+    .locals 0
 
     .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,7 +29,7 @@
 .end method
 
 .method public constructor <init>([BLlibs/eh0;)V
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +52,7 @@
 
     .line 10
     .line 11
-    if-ne v0, v2, :cond_17
+    if-ne v0, v2, :cond_0
 
     .line 12
     .line 13
@@ -79,7 +79,7 @@
     return-void
 
     .line 24
-    :cond_17
+    :cond_0
     const-string p1, "public-key length is wrong"
 
     .line 25

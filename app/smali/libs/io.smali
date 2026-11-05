@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Llibs/vd;ZLlibs/xv1;)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public final a(Ljava/lang/String;Ljava/lang/String;)Ljava/util/ArrayList;
-    .registers 21
+    .locals 18
 
     .line 1
     move-object/from16 v0, p0
@@ -73,7 +73,7 @@
 
     .line 8
     .line 9
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_0
 
     .line 10
     .line 11
@@ -81,14 +81,14 @@
 
     .line 12
     .line 13
-    goto :goto_e
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     move-object v3, v1
 
     .line 15
-    :goto_e
+    :goto_0
     const-string v4, "\" AND artist:\""
 
     .line 16
@@ -173,7 +173,7 @@
     move-result v5
 
     .line 57
-    if-nez v5, :cond_16c
+    if-nez v5, :cond_f
 
     .line 58
     .line 59
@@ -197,7 +197,7 @@
     move-result v4
 
     .line 69
-    if-nez v4, :cond_166
+    if-nez v4, :cond_e
 
     .line 70
     .line 71
@@ -213,7 +213,7 @@
     move-result v4
 
     .line 77
-    if-gtz v4, :cond_57
+    if-gtz v4, :cond_1
 
     .line 78
     .line 79
@@ -230,12 +230,12 @@
 
     .line 85
     .line 86
-    goto/16 :goto_14f
+    goto/16 :goto_c
 
     .line 87
     .line 88
-    :cond_57
-    if-eqz v2, :cond_5c
+    :cond_1
+    if-eqz v2, :cond_2
 
     .line 89
     .line 90
@@ -243,15 +243,15 @@
 
     .line 91
     .line 92
-    goto :goto_5e
+    goto :goto_1
 
     .line 93
-    :cond_5c
+    :cond_2
     const-string v2, "releases"
 
     .line 94
     .line 95
-    :goto_5e
+    :goto_1
     invoke-virtual {v3, v2}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     .line 96
@@ -280,8 +280,8 @@
     const/4 v8, 0x0
 
     .line 109
-    :goto_6c
-    if-ge v8, v4, :cond_14c
+    :goto_2
+    if-ge v8, v4, :cond_b
 
     .line 110
     .line 111
@@ -318,14 +318,14 @@
 
     .line 127
     .line 128
-    if-eqz v12, :cond_c5
+    if-eqz v12, :cond_4
 
     .line 129
     .line 130
     const/4 v14, 0x0
 
     .line 131
-    :goto_82
+    :goto_3
     invoke-virtual {v12}, Lorg/json/JSONArray;->length()I
 
     .line 132
@@ -334,7 +334,7 @@
     move-result v15
 
     .line 135
-    if-ge v14, v15, :cond_c5
+    if-ge v14, v15, :cond_4
 
     .line 136
     .line 137
@@ -375,14 +375,14 @@
 
     .line 155
     .line 156
-    if-eqz v7, :cond_b2
+    if-eqz v7, :cond_3
 
     .line 157
     .line 158
     const/4 v0, 0x0
 
     .line 159
-    :goto_9e
+    :goto_4
     invoke-virtual {v7}, Lorg/json/JSONArray;->length()I
 
     .line 160
@@ -391,7 +391,7 @@
     move-result v1
 
     .line 163
-    if-ge v0, v1, :cond_b2
+    if-ge v0, v1, :cond_3
 
     .line 164
     .line 165
@@ -420,10 +420,10 @@
 
     .line 177
     .line 178
-    goto :goto_9e
+    goto :goto_4
 
     .line 179
-    :cond_b2
+    :cond_3
     new-instance v0, Llibs/oc1;
 
     .line 180
@@ -458,10 +458,10 @@
 
     .line 196
     .line 197
-    goto :goto_82
+    goto :goto_3
 
     .line 198
-    :cond_c5
+    :cond_4
     move-object/from16 v17, v1
 
     .line 199
@@ -486,7 +486,7 @@
     move-result-object v0
 
     .line 210
-    if-eqz v0, :cond_f5
+    if-eqz v0, :cond_7
 
     .line 211
     .line 212
@@ -497,7 +497,7 @@
     const/4 v1, 0x0
 
     .line 215
-    :goto_d6
+    :goto_5
     invoke-virtual {v0}, Lorg/json/JSONArray;->length()I
 
     .line 216
@@ -506,7 +506,7 @@
     move-result v7
 
     .line 219
-    if-ge v1, v7, :cond_f0
+    if-ge v1, v7, :cond_5
 
     .line 220
     .line 221
@@ -546,32 +546,32 @@
     move-result v7
 
     .line 239
-    if-nez v7, :cond_f2
+    if-nez v7, :cond_6
 
     .line 240
     .line 241
-    :cond_f0
+    :cond_5
     move-object v15, v6
 
     .line 242
-    goto :goto_f7
+    goto :goto_6
 
     .line 243
-    :cond_f2
+    :cond_6
     add-int/lit8 v1, v1, 0x1
 
     .line 244
     .line 245
-    goto :goto_d6
+    goto :goto_5
 
     .line 246
-    :cond_f5
+    :cond_7
     move-object/from16 v15, v17
 
     .line 247
     .line 248
-    :goto_f7
-    :try_start_f7
+    :goto_6
+    :try_start_0
     const-string v0, "date"
 
     .line 249
@@ -592,7 +592,7 @@
     move-result v1
 
     .line 258
-    if-nez v1, :cond_112
+    if-nez v1, :cond_8
 
     .line 259
     .line 260
@@ -604,7 +604,7 @@
     move-result v1
 
     .line 264
-    if-eqz v1, :cond_114
+    if-eqz v1, :cond_9
 
     .line 265
     .line 266
@@ -617,48 +617,48 @@
 
     .line 270
     aget-object v0, v0, p2
-    :try_end_10f
-    .catchall {:try_start_f7 .. :try_end_10f} :catchall_110
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 271
     .line 272
-    goto :goto_114
+    goto :goto_7
 
     .line 273
-    :catchall_110
+    :catchall_0
     nop
 
     .line 274
-    goto :goto_118
+    goto :goto_9
 
     .line 275
-    :cond_112
+    :cond_8
     move-object/from16 v0, p1
 
     .line 276
     .line 277
-    :cond_114
-    :goto_114
+    :cond_9
+    :goto_7
     move-object v14, v0
 
     .line 278
-    :goto_115
+    :goto_8
     move-object/from16 v16, v10
 
     .line 279
     .line 280
-    goto :goto_11b
+    goto :goto_a
 
     .line 281
-    :goto_118
+    :goto_9
     move-object/from16 v14, p1
 
     .line 282
     .line 283
-    goto :goto_115
+    goto :goto_8
 
     .line 284
-    :goto_11b
+    :goto_a
     new-instance v10, Llibs/pc1;
 
     .line 285
@@ -735,14 +735,14 @@
 
     .line 321
     .line 322
-    if-lt v0, v1, :cond_144
+    if-lt v0, v1, :cond_a
 
     .line 323
     .line 324
-    goto :goto_14e
+    goto :goto_b
 
     .line 325
-    :cond_144
+    :cond_a
     add-int/lit8 v8, v8, 0x1
 
     .line 326
@@ -755,20 +755,20 @@
 
     .line 330
     .line 331
-    goto/16 :goto_6c
+    goto/16 :goto_2
 
     .line 332
     .line 333
-    :cond_14c
+    :cond_b
     const/16 p2, 0x0
 
     .line 334
     .line 335
-    :goto_14e
+    :goto_b
     move-object v1, v3
 
     .line 336
-    :goto_14f
+    :goto_c
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     .line 337
@@ -780,7 +780,7 @@
     const/4 v2, 0x1
 
     .line 341
-    if-ne v0, v2, :cond_165
+    if-ne v0, v2, :cond_d
 
     .line 342
     .line 343
@@ -803,25 +803,25 @@
 
     .line 351
     .line 352
-    if-eqz v2, :cond_162
+    if-eqz v2, :cond_c
 
     .line 353
     .line 354
-    goto :goto_165
+    goto :goto_d
 
     .line 355
-    :cond_162
+    :cond_c
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     .line 356
     .line 357
     .line 358
-    :cond_165
-    :goto_165
+    :cond_d
+    :goto_d
     return-object v1
 
     .line 359
-    :cond_166
+    :cond_e
     const/16 p1, 0x0
 
     .line 360
@@ -834,7 +834,7 @@
     return-object p1
 
     .line 365
-    :cond_16c
+    :cond_f
     const/16 p1, 0x0
 
     .line 366
@@ -848,7 +848,7 @@
 .end method
 
 .method public final call()Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     .line 1
     :try_start_0
@@ -866,14 +866,14 @@
     .line 7
     .line 8
     move-result-object v0
-    :try_end_8
-    .catchall {:try_start_0 .. :try_end_8} :catchall_9
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 9
     return-object v0
 
     .line 10
-    :catchall_9
+    :catchall_0
     move-exception v0
 
     .line 11

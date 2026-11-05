@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 9
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -20,7 +20,7 @@
 .end method
 
 .method public constructor <init>(ILjava/security/SecureRandom;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public a()[B
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/ct;->b:I
@@ -66,7 +66,7 @@
 .end method
 
 .method public b(Llibs/ct;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p1, Llibs/ct;->a:Ljava/security/SecureRandom;

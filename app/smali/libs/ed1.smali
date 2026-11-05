@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/util/HashMap;
@@ -72,7 +72,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -103,7 +103,7 @@
 
 # virtual methods
 .method public final a(Llibs/a72;)Ljava/security/KeyPair;
-    .registers 6
+    .locals 4
 
     .line 1
     :try_start_0
@@ -135,7 +135,7 @@
 
     .line 14
     .line 15
-    if-nez v1, :cond_12
+    if-nez v1, :cond_0
 
     .line 16
     .line 17
@@ -143,7 +143,7 @@
 
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     iget-object v0, p0, Llibs/ed1;->a:Llibs/dd1;
 
     .line 20
@@ -219,8 +219,8 @@
 
     .line 57
     invoke-direct {v1, v2, p1}, Ljava/security/KeyPair;-><init>(Ljava/security/PublicKey;Ljava/security/PrivateKey;)V
-    :try_end_3b
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_3b} :catch_3c
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 58
     .line 59
@@ -228,7 +228,7 @@
     return-object v1
 
     .line 61
-    :catch_3c
+    :catch_0
     move-exception p1
 
     .line 62
@@ -266,7 +266,7 @@
 .end method
 
 .method public final b(Llibs/bg2;)Ljava/security/PrivateKey;
-    .registers 5
+    .locals 3
 
     .line 1
     :try_start_0
@@ -294,7 +294,7 @@
 
     .line 12
     .line 13
-    if-nez v1, :cond_10
+    if-nez v1, :cond_0
 
     .line 14
     .line 15
@@ -302,7 +302,7 @@
 
     .line 16
     .line 17
-    :cond_10
+    :cond_0
     iget-object v0, p0, Llibs/ed1;->a:Llibs/dd1;
 
     .line 18
@@ -338,14 +338,14 @@
     .line 34
     .line 35
     move-result-object p1
-    :try_end_23
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_23} :catch_24
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 36
     return-object p1
 
     .line 37
-    :catch_24
+    :catch_0
     move-exception p1
 
     .line 38

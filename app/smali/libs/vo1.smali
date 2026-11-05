@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(ILjava/util/ArrayList;[B)V
-    .registers 5
+    .locals 1
 
     const/4 v0, 0x2
 
@@ -24,7 +24,7 @@
     .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
     .line 33
     iput p1, p0, Llibs/vo1;->b:I
@@ -38,7 +38,7 @@
     return-void
 
     .line 36
-    :cond_f
+    :cond_0
     const-string p1, "PEM Key Type required"
 
     invoke-static {p1}, Llibs/cr2;->c(Ljava/lang/String;)V
@@ -49,7 +49,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/ComponentName;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x3
 
@@ -70,7 +70,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -89,7 +89,7 @@
 
     .line 8
     .line 9
-    :try_start_8
+    :try_start_0
     invoke-static {p1}, Ljavax/crypto/Mac;->getInstance(Ljava/lang/String;)Ljavax/crypto/Mac;
 
     .line 10
@@ -111,15 +111,15 @@
 
     .line 19
     iput p1, p0, Llibs/vo1;->b:I
-    :try_end_14
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_8 .. :try_end_14} :catch_15
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 20
     .line 21
     return-void
 
     .line 22
-    :catch_15
+    :catch_0
     move-exception p1
 
     .line 23
@@ -135,7 +135,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;[BI)V
-    .registers 5
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -157,7 +157,7 @@
 .end method
 
 .method public constructor <init>(Llibs/og2;ILjava/lang/String;)V
-    .registers 5
+    .locals 1
 
     const/4 v0, 0x4
 
@@ -179,7 +179,7 @@
 .end method
 
 .method public static c(Ljava/lang/String;)Llibs/vo1;
-    .registers 9
+    .locals 8
 
     .line 1
     const-string v0, "HTTP/1."
@@ -209,7 +209,7 @@
 
     .line 13
     .line 14
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_3
 
     .line 15
     .line 16
@@ -225,7 +225,7 @@
 
     .line 21
     .line 22
-    if-lt v0, v5, :cond_39
+    if-lt v0, v5, :cond_2
 
     .line 23
     .line 24
@@ -241,7 +241,7 @@
     move-result v0
 
     .line 30
-    if-ne v0, v3, :cond_39
+    if-ne v0, v3, :cond_2
 
     .line 31
     .line 32
@@ -260,18 +260,18 @@
 
     .line 38
     .line 39
-    if-nez v0, :cond_29
+    if-nez v0, :cond_0
 
     .line 40
     .line 41
-    goto :goto_4c
+    goto :goto_0
 
     .line 42
-    :cond_29
+    :cond_0
     const/4 v2, 0x1
 
     .line 43
-    if-ne v0, v2, :cond_2f
+    if-ne v0, v2, :cond_1
 
     .line 44
     .line 45
@@ -279,10 +279,10 @@
 
     .line 46
     .line 47
-    goto :goto_4c
+    goto :goto_0
 
     .line 48
-    :cond_2f
+    :cond_1
     new-instance v0, Ljava/net/ProtocolException;
 
     .line 49
@@ -303,7 +303,7 @@
     throw v0
 
     .line 58
-    :cond_39
+    :cond_2
     new-instance v0, Ljava/net/ProtocolException;
 
     .line 59
@@ -324,7 +324,7 @@
     throw v0
 
     .line 68
-    :cond_43
+    :cond_3
     const-string v0, "ICY "
 
     .line 69
@@ -337,14 +337,14 @@
     move-result v0
 
     .line 74
-    if-eqz v0, :cond_94
+    if-eqz v0, :cond_7
 
     .line 75
     .line 76
     const/4 v5, 0x4
 
     .line 77
-    :goto_4c
+    :goto_0
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     .line 78
@@ -357,11 +357,11 @@
 
     .line 82
     .line 83
-    if-lt v0, v6, :cond_8a
+    if-lt v0, v6, :cond_6
 
     .line 84
     .line 85
-    :try_start_54
+    :try_start_0
     invoke-virtual {p0, v5, v6}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     .line 86
@@ -376,8 +376,8 @@
     .line 91
     .line 92
     move-result v0
-    :try_end_5c
-    .catch Ljava/lang/NumberFormatException; {:try_start_54 .. :try_end_5c} :catch_80
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 93
     invoke-virtual {p0}, Ljava/lang/String;->length()I
@@ -388,7 +388,7 @@
     move-result v7
 
     .line 97
-    if-le v7, v6, :cond_78
+    if-le v7, v6, :cond_5
 
     .line 98
     .line 99
@@ -400,7 +400,7 @@
     move-result v6
 
     .line 103
-    if-ne v6, v3, :cond_6e
+    if-ne v6, v3, :cond_4
 
     .line 104
     .line 105
@@ -415,10 +415,10 @@
     move-result-object p0
 
     .line 110
-    goto :goto_7a
+    goto :goto_1
 
     .line 111
-    :cond_6e
+    :cond_4
     new-instance v0, Ljava/net/ProtocolException;
 
     .line 112
@@ -439,12 +439,12 @@
     throw v0
 
     .line 121
-    :cond_78
+    :cond_5
     const-string p0, ""
 
     .line 122
     .line 123
-    :goto_7a
+    :goto_1
     new-instance v1, Llibs/vo1;
 
     .line 124
@@ -457,7 +457,7 @@
     return-object v1
 
     .line 129
-    :catch_80
+    :catch_0
     new-instance v0, Ljava/net/ProtocolException;
 
     .line 130
@@ -478,7 +478,7 @@
     throw v0
 
     .line 139
-    :cond_8a
+    :cond_6
     new-instance v0, Ljava/net/ProtocolException;
 
     .line 140
@@ -499,7 +499,7 @@
     throw v0
 
     .line 149
-    :cond_94
+    :cond_7
     new-instance v0, Ljava/net/ProtocolException;
 
     .line 150
@@ -523,7 +523,7 @@
 
 # virtual methods
 .method public a()Landroid/os/Bundle;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Landroid/os/Bundle;
@@ -606,7 +606,7 @@
 
     .line 42
     .line 43
-    if-eqz v1, :cond_32
+    if-eqz v1, :cond_0
 
     .line 44
     .line 45
@@ -622,7 +622,7 @@
     return-object v0
 
     .line 51
-    :cond_32
+    :cond_0
     const-string v0, "process name suffix must not be null"
 
     .line 52
@@ -639,7 +639,7 @@
 .end method
 
 .method public b([B)V
-    .registers 5
+    .locals 3
 
     .line 1
     :try_start_0
@@ -669,8 +669,8 @@
     .line 13
     .line 14
     invoke-virtual {v0, v1}, Ljavax/crypto/Mac;->init(Ljava/security/Key;)V
-    :try_end_10
-    .catch Ljava/security/InvalidKeyException; {:try_start_0 .. :try_end_10} :catch_11
+    :try_end_0
+    .catch Ljava/security/InvalidKeyException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 15
     .line 16
@@ -678,7 +678,7 @@
     return-void
 
     .line 18
-    :catch_11
+    :catch_0
     move-exception p1
 
     .line 19
@@ -691,14 +691,14 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/vo1;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_36
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -714,7 +714,7 @@
     return-object v0
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     iget-object v0, p0, Llibs/vo1;->c:Ljava/io/Serializable;
 
     .line 12
@@ -739,7 +739,7 @@
 
     .line 22
     .line 23
-    if-ne v2, v3, :cond_1b
+    if-ne v2, v3, :cond_0
 
     .line 24
     .line 25
@@ -747,15 +747,15 @@
 
     .line 26
     .line 27
-    goto :goto_1d
+    goto :goto_0
 
     .line 28
-    :cond_1b
+    :cond_0
     const-string v2, "HTTP/1.1"
 
     .line 29
     .line 30
-    :goto_1d
+    :goto_0
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     .line 31
@@ -803,8 +803,8 @@
     nop
 
     .line 55
-    :pswitch_data_36
+    :pswitch_data_0
     .packed-switch 0x4
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method

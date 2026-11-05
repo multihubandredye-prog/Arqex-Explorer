@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x2
 
@@ -24,7 +24,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/RuntimeException;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/iq;->X:B
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public final getCause()Ljava/lang/Throwable;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/iq;->X:B
@@ -57,7 +57,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_a
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -66,13 +66,13 @@
 
     .line 9
     .line 10
-    :pswitch_9
+    :pswitch_0
     return-object v1
 
     .line 11
-    :pswitch_data_a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_9
-        :pswitch_9
+        :pswitch_0
+        :pswitch_0
     .end packed-switch
 .end method

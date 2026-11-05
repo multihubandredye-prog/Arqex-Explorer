@@ -15,7 +15,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/bn1;
@@ -47,7 +47,7 @@
 .end method
 
 .method public constructor <init>(Llibs/b63;Llibs/z92;)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x2
@@ -72,7 +72,7 @@
 
 # virtual methods
 .method public final a(Llibs/qj0;)Z
-    .registers 2
+    .locals 0
 
     .line 1
     instance-of p1, p1, Llibs/nw2;
@@ -83,7 +83,7 @@
 .end method
 
 .method public final b(Llibs/qj0;)V
-    .registers 13
+    .locals 11
 
     .line 1
     move-object v0, p1
@@ -139,7 +139,7 @@
     move-result v6
 
     .line 26
-    if-nez v6, :cond_2c
+    if-nez v6, :cond_0
 
     .line 27
     .line 28
@@ -176,7 +176,7 @@
     return-void
 
     .line 45
-    :cond_2c
+    :cond_0
     invoke-virtual {v0}, Llibs/qj0;->b()Llibs/xw2;
 
     .line 46
@@ -213,7 +213,7 @@
     move-result-object v6
 
     .line 63
-    if-nez v6, :cond_51
+    if-nez v6, :cond_1
 
     .line 64
     .line 65
@@ -250,7 +250,7 @@
     return-void
 
     .line 82
-    :cond_51
+    :cond_1
     iget-object v6, v6, Llibs/i63;->Upsilon:Llibs/k63;
 
     .line 83
@@ -290,7 +290,7 @@
     move-result v7
 
     .line 101
-    if-nez v7, :cond_ff
+    if-nez v7, :cond_5
 
     .line 102
     .line 103
@@ -302,7 +302,7 @@
     move-result v7
 
     .line 107
-    if-eqz v7, :cond_8d
+    if-eqz v7, :cond_2
 
     .line 108
     .line 109
@@ -327,7 +327,7 @@
     .line 118
     .line 119
     .line 120
-    :try_start_77
+    :try_start_0
     iget-object p1, p0, Llibs/Color;->a:Ljava/lang/Object;
 
     .line 121
@@ -346,8 +346,8 @@
     .line 128
     .line 129
     invoke-virtual {p1, v0}, Llibs/Color;->c(Llibs/qj0;)V
-    :try_end_83
-    .catch Llibs/sj; {:try_start_77 .. :try_end_83} :catch_84
+    :try_end_0
+    .catch Llibs/sj; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 130
     .line 131
@@ -355,7 +355,7 @@
     return-void
 
     .line 133
-    :catch_84
+    :catch_0
     move-exception p1
 
     .line 134
@@ -375,7 +375,7 @@
     throw v0
 
     .line 142
-    :cond_8d
+    :cond_2
     sget-object v7, Llibs/ov2;->r:[B
 
     .line 143
@@ -388,11 +388,11 @@
     move-result v6
 
     .line 148
-    if-eqz v6, :cond_ec
+    if-eqz v6, :cond_4
 
     .line 149
     .line 150
-    :try_start_95
+    :try_start_1
     new-instance p1, Llibs/ou2;
 
     .line 151
@@ -466,7 +466,7 @@
 
     .line 186
     .line 187
-    if-eqz v10, :cond_dc
+    if-eqz v10, :cond_3
 
     .line 188
     .line 189
@@ -528,14 +528,14 @@
     return-void
 
     .line 219
-    :catch_da
+    :catch_1
     move-exception p1
 
     .line 220
-    goto :goto_e4
+    goto :goto_0
 
     .line 221
-    :cond_dc
+    :cond_3
     iget-object v0, p0, Llibs/Color;->a:Ljava/lang/Object;
 
     .line 222
@@ -545,8 +545,8 @@
     .line 224
     .line 225
     invoke-virtual {v0, p1}, Llibs/Color;->c(Llibs/qj0;)V
-    :try_end_e3
-    .catch Llibs/sj; {:try_start_95 .. :try_end_e3} :catch_da
+    :try_end_1
+    .catch Llibs/sj; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 226
     .line 227
@@ -554,7 +554,7 @@
     return-void
 
     .line 229
-    :goto_e4
+    :goto_0
     new-instance v0, Llibs/zw2;
 
     .line 230
@@ -571,7 +571,7 @@
     throw v0
 
     .line 237
-    :cond_ec
+    :cond_4
     new-array v0, v1, [Ljava/lang/Object;
 
     .line 238
@@ -609,7 +609,7 @@
     throw p1
 
     .line 256
-    :cond_ff
+    :cond_5
     new-array v0, v1, [Ljava/lang/Object;
 
     .line 257

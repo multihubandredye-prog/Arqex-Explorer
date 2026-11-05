@@ -5,10 +5,10 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
-    packed-switch p1, :pswitch_data_e
+    packed-switch p1, :pswitch_data_0
 
     .line 2
     .line 3
@@ -21,7 +21,7 @@
     return-void
 
     .line 8
-    :pswitch_7
+    :pswitch_0
     const-string p1, "Message was missing required fields.  (Lite runtime could not determine which fields were missing)."
 
     .line 9
@@ -37,14 +37,14 @@
     nop
 
     .line 15
-    :pswitch_data_e
+    :pswitch_data_0
     .packed-switch 0x2
-        :pswitch_7
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 15
     invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V

@@ -15,7 +15,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const v0, 0x1010214
@@ -39,7 +39,7 @@
 .end method
 
 .method public constructor <init>(Llibs/ia2;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Llibs/im2;-><init>()V
@@ -87,7 +87,7 @@
 
     .line 23
     .line 24
-    if-nez v0, :cond_20
+    if-nez v0, :cond_0
 
     .line 25
     .line 26
@@ -104,7 +104,7 @@
     .line 31
     .line 32
     .line 33
-    :cond_20
+    :cond_0
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 34
@@ -116,7 +116,7 @@
 
 # virtual methods
 .method public final a(Landroid/graphics/Rect;Landroid/view/View;Llibs/vm2;)V
-    .registers 4
+    .locals 0
 
     .line 1
     iget-object p2, p0, Llibs/fc0;->a:Landroid/graphics/drawable/Drawable;
@@ -126,7 +126,7 @@
     const/4 p3, 0x0
 
     .line 4
-    if-nez p2, :cond_9
+    if-nez p2, :cond_0
 
     .line 5
     .line 6
@@ -138,7 +138,7 @@
     return-void
 
     .line 10
-    :cond_9
+    :cond_0
     invoke-virtual {p2}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
     .line 11
@@ -156,7 +156,7 @@
 .end method
 
 .method public final b(Landroid/graphics/Canvas;Llibs/vm2;)V
-    .registers 10
+    .locals 7
 
     .line 1
     invoke-virtual {p2}, Llibs/vm2;->getLayoutManager()Llibs/jm2;
@@ -167,7 +167,7 @@
     move-result-object v0
 
     .line 5
-    if-eqz v0, :cond_70
+    if-eqz v0, :cond_3
 
     .line 6
     .line 7
@@ -175,14 +175,14 @@
 
     .line 8
     .line 9
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 10
     .line 11
-    goto :goto_70
+    goto :goto_2
 
     .line 12
-    :cond_b
+    :cond_0
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     .line 13
@@ -199,7 +199,7 @@
     const/4 v1, 0x0
 
     .line 20
-    if-eqz v0, :cond_39
+    if-eqz v0, :cond_1
 
     .line 21
     .line 22
@@ -211,7 +211,7 @@
     move-result v0
 
     .line 26
-    if-eqz v0, :cond_39
+    if-eqz v0, :cond_1
 
     .line 27
     .line 28
@@ -274,10 +274,10 @@
     .line 55
     .line 56
     .line 57
-    goto :goto_3e
+    goto :goto_0
 
     .line 58
-    :cond_39
+    :cond_1
     invoke-virtual {p2}, Landroid/view/View;->getWidth()I
 
     .line 59
@@ -289,7 +289,7 @@
     const/4 v0, 0x0
 
     .line 63
-    :goto_3e
+    :goto_0
     invoke-virtual {p2}, Landroid/view/ViewGroup;->getChildCount()I
 
     .line 64
@@ -298,8 +298,8 @@
     move-result v3
 
     .line 67
-    :goto_42
-    if-ge v1, v3, :cond_6d
+    :goto_1
+    if-ge v1, v3, :cond_2
 
     .line 68
     .line 69
@@ -381,16 +381,16 @@
 
     .line 108
     .line 109
-    goto :goto_42
+    goto :goto_1
 
     .line 110
-    :cond_6d
+    :cond_2
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     .line 111
     .line 112
     .line 113
-    :cond_70
-    :goto_70
+    :cond_3
+    :goto_2
     return-void
 .end method

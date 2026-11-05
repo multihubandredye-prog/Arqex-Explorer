@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 5
+    .locals 3
 
     .line 1
     const-string v0, "AES"
@@ -41,7 +41,7 @@
 
 # virtual methods
 .method public final a(I[B)V
-    .registers 4
+    .locals 1
 
     .line 1
     :try_start_0
@@ -54,8 +54,8 @@
 
     .line 5
     invoke-static {v0, p2, p1}, Llibs/qc0;->s(Ljavax/crypto/Cipher;[BI)V
-    :try_end_7
-    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_7} :catch_8
+    :try_end_0
+    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 6
     .line 7
@@ -63,7 +63,7 @@
     return-void
 
     .line 9
-    :catch_8
+    :catch_0
     move-exception p1
 
     .line 10
@@ -80,7 +80,7 @@
 .end method
 
 .method public final d()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x10
@@ -91,7 +91,7 @@
 .end method
 
 .method public final h(Ljavax/crypto/Cipher;I[B[B)V
-    .registers 6
+    .locals 1
 
     .line 1
     iput p2, p0, Llibs/du0;->f:I
@@ -126,21 +126,21 @@
     const/4 p4, 0x1
 
     .line 17
-    if-ne p2, p4, :cond_14
+    if-ne p2, p4, :cond_0
 
     .line 18
     .line 19
     const/4 p2, 0x1
 
     .line 20
-    goto :goto_15
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_0
     const/4 p2, 0x2
 
     .line 22
-    :goto_15
+    :goto_0
     iget-object v0, p0, Llibs/du0;->i:Ljavax/crypto/spec/SecretKeySpec;
 
     .line 23
@@ -158,14 +158,14 @@
 .end method
 
 .method public final j()Ljavax/crypto/Cipher;
-    .registers 6
+    .locals 5
 
     .line 1
     iget-boolean v0, p0, Llibs/du0;->g:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_17
+    if-nez v0, :cond_1
 
     .line 4
     .line 5
@@ -180,21 +180,21 @@
     const/4 v2, 0x1
 
     .line 10
-    if-ne v1, v2, :cond_d
+    if-ne v1, v2, :cond_0
 
     .line 11
     .line 12
     const/4 v1, 0x1
 
     .line 13
-    goto :goto_e
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     const/4 v1, 0x2
 
     .line 15
-    :goto_e
+    :goto_0
     iget-object v3, p0, Llibs/du0;->i:Ljavax/crypto/spec/SecretKeySpec;
 
     .line 16
@@ -212,7 +212,7 @@
 
     .line 23
     .line 24
-    :cond_17
+    :cond_1
     iget-object v0, p0, Llibs/dd;->e:Ljavax/crypto/Cipher;
 
     .line 25
@@ -221,7 +221,7 @@
 .end method
 
 .method public final update([BII)V
-    .registers 25
+    .locals 21
 
     .line 1
     move-object/from16 v1, p0
@@ -235,7 +235,7 @@
     const/4 v2, 0x2
 
     .line 6
-    if-ne v0, v2, :cond_b
+    if-ne v0, v2, :cond_0
 
     .line 7
     .line 8
@@ -246,16 +246,16 @@
     move v5, v0
 
     .line 11
-    goto :goto_d
+    goto :goto_0
 
     .line 12
-    :cond_b
+    :cond_0
     move/from16 v5, p3
 
     .line 13
     .line 14
-    :goto_d
-    :try_start_d
+    :goto_0
+    :try_start_0
     invoke-virtual {v1}, Llibs/du0;->j()Ljavax/crypto/Cipher;
 
     .line 15
@@ -281,8 +281,8 @@
     .line 25
     .line 26
     invoke-virtual/range {v2 .. v7}, Ljavax/crypto/Cipher;->doFinal([BII[BI)I
-    :try_end_1c
-    .catch Ljava/security/GeneralSecurityException; {:try_start_d .. :try_end_1c} :catch_c6
+    :try_end_0
+    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 27
     .line 28
@@ -535,7 +535,7 @@
 
     .line 138
     .line 139
-    if-ltz v20, :cond_be
+    if-ltz v20, :cond_1
 
     .line 140
     .line 141
@@ -657,7 +657,7 @@
     return-void
 
     .line 191
-    :cond_be
+    :cond_1
     new-instance v0, Ljava/lang/ArithmeticException;
 
     .line 192
@@ -674,7 +674,7 @@
     throw v0
 
     .line 199
-    :catch_c6
+    :catch_0
     move-exception v0
 
     .line 200

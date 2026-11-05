@@ -8,7 +8,7 @@
 
 # direct methods
 .method public synthetic constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,7 +22,7 @@
 
 # virtual methods
 .method public final accept(Ljava/io/File;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;

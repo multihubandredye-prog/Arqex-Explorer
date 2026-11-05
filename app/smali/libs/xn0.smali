@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/wn0;Z)V
-    .registers 11
+    .locals 8
 
     .line 1
     invoke-virtual {p1}, Llibs/wn0;->g()Llibs/ko0;
@@ -50,7 +50,7 @@
     move-result p2
 
     .line 19
-    if-lez p2, :cond_37
+    if-lez p2, :cond_0
 
     .line 20
     .line 21
@@ -129,7 +129,7 @@
     return-void
 
     .line 56
-    :cond_37
+    :cond_0
     const-string p2, "root directory size is "
 
     .line 57
@@ -156,7 +156,7 @@
 
 # virtual methods
 .method public final h(Ljava/nio/ByteBuffer;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/xn0;->g:Llibs/hl;
@@ -176,7 +176,7 @@
 .end method
 
 .method public final i(Ljava/nio/ByteBuffer;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/xn0;->g:Llibs/hl;

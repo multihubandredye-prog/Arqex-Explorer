@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/oi1;Landroid/content/Context;Llibs/cv;)V
-    .registers 5
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -90,7 +90,7 @@
 
 # virtual methods
 .method public final a(Landroid/view/inputmethod/ExtractedText;)Z
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/rh0;->d:Llibs/cv;
@@ -108,7 +108,7 @@
     const/4 v2, 0x0
 
     .line 8
-    if-eqz v1, :cond_3c
+    if-eqz v1, :cond_1
 
     .line 9
     .line 10
@@ -167,7 +167,7 @@
     move-result v1
 
     .line 37
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_0
 
     .line 38
     .line 39
@@ -183,7 +183,7 @@
 
     .line 44
     .line 45
-    :cond_2c
+    :cond_0
     iput v2, p1, Landroid/view/inputmethod/ExtractedText;->startOffset:I
 
     .line 46
@@ -218,19 +218,19 @@
     return p1
 
     .line 61
-    :cond_3c
+    :cond_1
     return v2
 .end method
 
 .method public final b()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/rh0;->b:Landroid/view/inputmethod/InputMethodManager;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -246,7 +246,7 @@
     move-result v2
 
     .line 11
-    if-eqz v2, :cond_14
+    if-eqz v2, :cond_0
 
     .line 12
     .line 13
@@ -266,12 +266,12 @@
     .line 19
     .line 20
     .line 21
-    :cond_14
+    :cond_0
     return-void
 .end method
 
 .method public final beginBatchEdit()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/rh0;->c:I
@@ -288,7 +288,7 @@
 
     .line 6
     .line 7
-    if-ne v0, v1, :cond_c
+    if-ne v0, v1, :cond_0
 
     .line 8
     .line 9
@@ -300,12 +300,12 @@
 
     .line 12
     .line 13
-    :cond_c
+    :cond_0
     return v1
 .end method
 
 .method public final c()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/rh0;->e:Llibs/oi1;
@@ -316,19 +316,19 @@
 
     .line 4
     .line 5
-    if-nez v1, :cond_7
+    if-nez v1, :cond_0
 
     .line 6
     .line 7
-    goto :goto_20
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     iget-object v1, p0, Llibs/rh0;->b:Landroid/view/inputmethod/InputMethodManager;
 
     .line 9
     .line 10
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_2
 
     .line 11
     .line 12
@@ -340,7 +340,7 @@
     move-result v2
 
     .line 16
-    if-eqz v2, :cond_1a
+    if-eqz v2, :cond_1
 
     .line 17
     .line 18
@@ -352,7 +352,7 @@
     move-result v2
 
     .line 22
-    if-nez v2, :cond_1a
+    if-nez v2, :cond_1
 
     .line 23
     .line 24
@@ -361,7 +361,7 @@
     .line 25
     .line 26
     .line 27
-    :cond_1a
+    :cond_1
     const/4 v2, 0x0
 
     .line 28
@@ -374,13 +374,13 @@
     .line 31
     .line 32
     .line 33
-    :cond_20
-    :goto_20
+    :cond_2
+    :goto_0
     return-void
 .end method
 
 .method public final clearMetaKeyStates(I)Z
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/rh0;->d:Llibs/cv;
@@ -395,7 +395,7 @@
     move-result-object v1
 
     .line 7
-    if-nez v1, :cond_a
+    if-nez v1, :cond_0
 
     .line 8
     .line 9
@@ -405,7 +405,7 @@
     return p1
 
     .line 11
-    :cond_a
+    :cond_0
     iget-object v1, p0, Llibs/rh0;->e:Llibs/oi1;
 
     .line 12
@@ -414,11 +414,11 @@
 
     .line 14
     .line 15
-    if-eqz v2, :cond_17
+    if-eqz v2, :cond_1
 
     .line 16
     .line 17
-    :try_start_10
+    :try_start_0
     invoke-virtual {v0}, Llibs/cv;->getText()Llibs/fd3;
 
     .line 18
@@ -428,14 +428,14 @@
 
     .line 21
     invoke-virtual {v2, v1, v0, p1}, Landroid/text/method/MetaKeyKeyListener;->clearMetaKeyState(Landroid/view/View;Landroid/text/Editable;I)V
-    :try_end_17
-    .catchall {:try_start_10 .. :try_end_17} :catchall_17
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 22
     .line 23
     .line 24
-    :catchall_17
-    :cond_17
+    :catchall_0
+    :cond_1
     const/4 p1, 0x1
 
     .line 25
@@ -443,7 +443,7 @@
 .end method
 
 .method public final closeConnection()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-static {}, Llibs/t43;->Item()Z
@@ -454,7 +454,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -463,17 +463,17 @@
     .line 8
     .line 9
     .line 10
-    :cond_9
+    :cond_0
     monitor-enter p0
 
     .line 11
-    :goto_a
-    :try_start_a
+    :goto_0
+    :try_start_0
     iget v0, p0, Llibs/rh0;->c:I
 
     .line 12
     .line 13
-    if-lez v0, :cond_14
+    if-lez v0, :cond_1
 
     .line 14
     .line 15
@@ -482,17 +482,17 @@
     .line 16
     .line 17
     .line 18
-    goto :goto_a
+    goto :goto_0
 
     .line 19
-    :catchall_12
+    :catchall_0
     move-exception v0
 
     .line 20
-    goto :goto_19
+    goto :goto_1
 
     .line 21
-    :cond_14
+    :cond_1
     const/4 v0, -0x1
 
     .line 22
@@ -506,25 +506,25 @@
     return-void
 
     .line 26
-    :goto_19
+    :goto_1
     monitor-exit p0
-    :try_end_1a
-    .catchall {:try_start_a .. :try_end_1a} :catchall_12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 27
-    goto :goto_1c
+    goto :goto_3
 
     .line 28
-    :goto_1b
+    :goto_2
     throw v0
 
     .line 29
-    :goto_1c
-    goto :goto_1b
+    :goto_3
+    goto :goto_2
 .end method
 
 .method public final commitCompletion(Landroid/view/inputmethod/CompletionInfo;)Z
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Llibs/rh0;->beginBatchEdit()Z
@@ -553,14 +553,14 @@
 .end method
 
 .method public final d()V
-    .registers 7
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/rh0;->b:Landroid/view/inputmethod/InputMethodManager;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -576,7 +576,7 @@
     move-result-object v2
 
     .line 11
-    if-eqz v2, :cond_2b
+    if-eqz v2, :cond_0
 
     .line 12
     .line 13
@@ -584,7 +584,7 @@
 
     .line 14
     .line 15
-    if-gtz v2, :cond_2b
+    if-gtz v2, :cond_0
 
     .line 16
     .line 17
@@ -641,12 +641,12 @@
     .line 42
     .line 43
     .line 44
-    :cond_2b
+    :cond_0
     return-void
 .end method
 
 .method public final endBatchEdit()Z
-    .registers 4
+    .locals 3
 
     .line 1
     iget v0, p0, Llibs/rh0;->c:I
@@ -672,7 +672,7 @@
 
     .line 11
     .line 12
-    if-nez v0, :cond_14
+    if-nez v0, :cond_0
 
     .line 13
     .line 14
@@ -691,12 +691,12 @@
 
     .line 20
     .line 21
-    :cond_14
+    :cond_0
     return v1
 .end method
 
 .method public final getCursorCapsMode(I)I
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/rh0;->d:Llibs/cv;
@@ -711,7 +711,7 @@
     move-result-object v0
 
     .line 7
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     .line 8
     .line 9
@@ -721,7 +721,7 @@
     return p1
 
     .line 11
-    :cond_a
+    :cond_0
     iget-object v1, p0, Llibs/rh0;->f:Llibs/on;
 
     .line 12
@@ -734,14 +734,14 @@
 
     .line 16
     .line 17
-    if-le v2, v1, :cond_13
+    if-le v2, v1, :cond_1
 
     .line 18
     .line 19
     move v2, v1
 
     .line 20
-    :cond_13
+    :cond_1
     invoke-static {v0, v2, p1}, Landroid/text/TextUtils;->getCapsMode(Ljava/lang/CharSequence;II)I
 
     .line 21
@@ -754,7 +754,7 @@
 .end method
 
 .method public final getEditable()Landroid/text/Editable;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/rh0;->d:Llibs/cv;
@@ -773,7 +773,7 @@
 .end method
 
 .method public final getExtractedText(Landroid/view/inputmethod/ExtractedTextRequest;I)Landroid/view/inputmethod/ExtractedText;
-    .registers 3
+    .locals 0
 
     .line 1
     iget-object p1, p0, Llibs/rh0;->d:Llibs/cv;
@@ -788,11 +788,11 @@
     move-result-object p1
 
     .line 7
-    if-eqz p1, :cond_1e
+    if-eqz p1, :cond_0
 
     .line 8
     .line 9
-    :try_start_8
+    :try_start_0
     new-instance p1, Landroid/view/inputmethod/ExtractedText;
 
     .line 10
@@ -808,18 +808,18 @@
     .line 16
     .line 17
     move-result p2
-    :try_end_11
-    .catchall {:try_start_8 .. :try_end_11} :catchall_14
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 18
-    if-eqz p2, :cond_1e
+    if-eqz p2, :cond_0
 
     .line 19
     .line 20
     return-object p1
 
     .line 21
-    :catchall_14
+    :catchall_0
     move-exception p1
 
     .line 22
@@ -840,7 +840,7 @@
     .line 29
     .line 30
     .line 31
-    :cond_1e
+    :cond_0
     const/4 p1, 0x0
 
     .line 32
@@ -848,7 +848,7 @@
 .end method
 
 .method public final getSelectedText(I)Ljava/lang/CharSequence;
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object p1, p0, Llibs/rh0;->d:Llibs/cv;
@@ -866,14 +866,14 @@
     const/4 v0, 0x0
 
     .line 8
-    if-nez p1, :cond_a
+    if-nez p1, :cond_0
 
     .line 9
     .line 10
     return-object v0
 
     .line 11
-    :cond_a
+    :cond_0
     iget-object v1, p0, Llibs/rh0;->f:Llibs/on;
 
     .line 12
@@ -886,7 +886,7 @@
 
     .line 16
     .line 17
-    if-le v2, v1, :cond_15
+    if-le v2, v1, :cond_1
 
     .line 18
     .line 19
@@ -899,19 +899,19 @@
     move v1, v3
 
     .line 22
-    :cond_15
-    if-eq v2, v1, :cond_1f
+    :cond_1
+    if-eq v2, v1, :cond_3
 
     .line 23
     .line 24
-    if-gez v2, :cond_1a
+    if-gez v2, :cond_2
 
     .line 25
     .line 26
-    goto :goto_1f
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_2
     invoke-static {p1, v2, v1}, Landroid/text/TextUtils;->substring(Ljava/lang/CharSequence;II)Ljava/lang/String;
 
     .line 28
@@ -923,13 +923,13 @@
     return-object p1
 
     .line 32
-    :cond_1f
-    :goto_1f
+    :cond_3
+    :goto_0
     return-object v0
 .end method
 
 .method public final getSurroundingText(III)Landroid/view/inputmethod/SurroundingText;
-    .registers 6
+    .locals 2
 
     .line 1
     invoke-static {}, Llibs/t43;->Sync()Z
@@ -940,7 +940,7 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -955,15 +955,15 @@
     return-object p1
 
     .line 12
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
     .line 13
-    if-ltz p1, :cond_57
+    if-ltz p1, :cond_5
 
     .line 14
     .line 15
-    if-ltz p2, :cond_53
+    if-ltz p2, :cond_4
 
     .line 16
     .line 17
@@ -984,14 +984,14 @@
     move-result-object p1
 
     .line 26
-    if-nez p1, :cond_1c
+    if-nez p1, :cond_1
 
     .line 27
     .line 28
-    goto :goto_22
+    goto :goto_0
 
     .line 29
-    :cond_1c
+    :cond_1
     invoke-virtual {p0, p2, p3}, Llibs/rh0;->getTextAfterCursor(II)Ljava/lang/CharSequence;
 
     .line 30
@@ -1000,15 +1000,15 @@
     move-result-object p2
 
     .line 33
-    if-nez p2, :cond_23
+    if-nez p2, :cond_2
 
     .line 34
     .line 35
-    :goto_22
+    :goto_0
     return-object v0
 
     .line 36
-    :cond_23
+    :cond_2
     invoke-virtual {p0, p3}, Llibs/rh0;->getSelectedText(I)Ljava/lang/CharSequence;
 
     .line 37
@@ -1017,7 +1017,7 @@
     move-result-object p3
 
     .line 40
-    if-nez p3, :cond_2b
+    if-nez p3, :cond_3
 
     .line 41
     .line 42
@@ -1025,7 +1025,7 @@
 
     .line 43
     .line 44
-    :cond_2b
+    :cond_3
     const/4 v0, 0x3
 
     .line 45
@@ -1112,7 +1112,7 @@
     return-object v0
 
     .line 84
-    :cond_53
+    :cond_4
     invoke-static {}, Llibs/ic0;->l()V
 
     .line 85
@@ -1121,7 +1121,7 @@
     return-object v0
 
     .line 88
-    :cond_57
+    :cond_5
     invoke-static {}, Llibs/ic0;->l()V
 
     .line 89
@@ -1131,7 +1131,7 @@
 .end method
 
 .method public final getTextAfterCursor(II)Ljava/lang/CharSequence;
-    .registers 6
+    .locals 3
 
     .line 1
     iget-object p2, p0, Llibs/rh0;->d:Llibs/cv;
@@ -1146,7 +1146,7 @@
     move-result-object p2
 
     .line 7
-    if-nez p2, :cond_a
+    if-nez p2, :cond_0
 
     .line 8
     .line 9
@@ -1156,7 +1156,7 @@
     return-object p1
 
     .line 11
-    :cond_a
+    :cond_0
     iget-object v0, p0, Llibs/rh0;->f:Llibs/on;
 
     .line 12
@@ -1169,26 +1169,26 @@
 
     .line 16
     .line 17
-    if-le v1, v0, :cond_13
+    if-le v1, v0, :cond_1
 
     .line 18
     .line 19
-    goto :goto_14
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_1
     move v1, v0
 
     .line 21
-    :goto_14
-    if-gez v1, :cond_17
+    :goto_0
+    if-gez v1, :cond_2
 
     .line 22
     .line 23
     const/4 v1, 0x0
 
     .line 24
-    :cond_17
+    :cond_2
     add-int v0, v1, p1
 
     .line 25
@@ -1201,7 +1201,7 @@
     move-result v2
 
     .line 30
-    if-le v0, v2, :cond_24
+    if-le v0, v2, :cond_3
 
     .line 31
     .line 32
@@ -1216,7 +1216,7 @@
     sub-int/2addr p1, v1
 
     .line 37
-    :cond_24
+    :cond_3
     add-int/2addr p1, v1
 
     .line 38
@@ -1232,7 +1232,7 @@
 .end method
 
 .method public final getTextBeforeCursor(II)Ljava/lang/CharSequence;
-    .registers 5
+    .locals 2
 
     .line 1
     iget-object p2, p0, Llibs/rh0;->d:Llibs/cv;
@@ -1247,7 +1247,7 @@
     move-result-object p2
 
     .line 7
-    if-nez p2, :cond_a
+    if-nez p2, :cond_0
 
     .line 8
     .line 9
@@ -1257,7 +1257,7 @@
     return-object p1
 
     .line 11
-    :cond_a
+    :cond_0
     iget-object v0, p0, Llibs/rh0;->f:Llibs/on;
 
     .line 12
@@ -1270,15 +1270,15 @@
 
     .line 16
     .line 17
-    if-le v1, v0, :cond_13
+    if-le v1, v0, :cond_1
 
     .line 18
     .line 19
     move v1, v0
 
     .line 20
-    :cond_13
-    if-gtz v1, :cond_18
+    :cond_1
+    if-gtz v1, :cond_2
 
     .line 21
     .line 22
@@ -1289,15 +1289,15 @@
     return-object p1
 
     .line 25
-    :cond_18
-    if-le p1, v1, :cond_1b
+    :cond_2
+    if-le p1, v1, :cond_3
 
     .line 26
     .line 27
     move p1, v1
 
     .line 28
-    :cond_1b
+    :cond_3
     sub-int p1, v1, p1
 
     .line 29

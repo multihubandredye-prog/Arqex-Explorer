@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljavax/crypto/SecretKeyFactorySpi;-><init>()V
@@ -17,7 +17,7 @@
 .end method
 
 .method private getValue(Ljava/security/spec/KeySpec;Ljava/lang/String;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -53,14 +53,14 @@
 
 # virtual methods
 .method public engineGenerateSecret(Ljava/security/spec/KeySpec;)Ljavax/crypto/SecretKey;
-    .registers 10
+    .locals 8
 
     .line 1
     instance-of v0, p1, Lorg/conscrypt/ScryptKeySpec;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -116,7 +116,7 @@
     move-result p1
 
     .line 31
-    :goto_1e
+    :goto_0
     move v5, v4
 
     .line 32
@@ -129,11 +129,11 @@
     move-object v2, v1
 
     .line 35
-    goto :goto_64
+    goto :goto_1
 
     .line 36
-    :cond_23
-    :try_start_23
+    :cond_0
+    :try_start_0
     const-string v0, "getPassword"
 
     .line 37
@@ -260,19 +260,19 @@
     .line 98
     .line 99
     move-result p1
-    :try_end_63
-    .catch Ljava/lang/Exception; {:try_start_23 .. :try_end_63} :catch_86
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 100
-    goto :goto_1e
+    goto :goto_0
 
     .line 101
-    :goto_64
+    :goto_1
     rem-int/lit8 v1, p1, 0x8
 
     .line 102
     .line 103
-    if-nez v1, :cond_7f
+    if-nez v1, :cond_1
 
     .line 104
     .line 105
@@ -321,7 +321,7 @@
     return-object v7
 
     .line 128
-    :cond_7f
+    :cond_1
     const-string p1, "Cannot produce fractional-byte outputs"
 
     .line 129
@@ -337,7 +337,7 @@
     return-object p1
 
     .line 135
-    :catch_86
+    :catch_0
     move-exception v0
 
     .line 136
@@ -357,22 +357,22 @@
     .line 142
     .line 143
     .line 144
-    goto :goto_91
+    goto :goto_3
 
     .line 145
-    :goto_90
+    :goto_2
     throw v0
 
     .line 146
-    :goto_91
-    goto :goto_90
+    :goto_3
+    goto :goto_2
 .end method
 
 .method public engineGetKeySpec(Ljavax/crypto/SecretKey;Ljava/lang/Class;)Ljava/security/spec/KeySpec;
-    .registers 3
+    .locals 0
 
     .line 1
-    if-nez p1, :cond_a
+    if-nez p1, :cond_0
 
     .line 2
     .line 3
@@ -392,7 +392,7 @@
     throw p1
 
     .line 11
-    :cond_a
+    :cond_0
     new-instance p1, Lorg/conscrypt/ScryptSecretKeyFactory$NotImplementedException;
 
     .line 12
@@ -406,10 +406,10 @@
 .end method
 
 .method public engineTranslateKey(Ljavax/crypto/SecretKey;)Ljavax/crypto/SecretKey;
-    .registers 3
+    .locals 1
 
     .line 1
-    if-nez p1, :cond_a
+    if-nez p1, :cond_0
 
     .line 2
     .line 3
@@ -429,7 +429,7 @@
     throw p1
 
     .line 11
-    :cond_a
+    :cond_0
     new-instance p1, Lorg/conscrypt/ScryptSecretKeyFactory$NotImplementedException;
 
     .line 12

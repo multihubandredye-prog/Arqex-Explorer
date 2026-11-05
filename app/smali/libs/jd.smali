@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/view/View;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/jd;->a:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onEditorAction(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
-    .registers 9
+    .locals 5
 
     .line 1
     iget-byte v0, p0, Llibs/jd;->a:B
@@ -58,31 +58,31 @@
 
     .line 9
     .line 10
-    packed-switch v0, :pswitch_data_56
+    packed-switch v0, :pswitch_data_0
 
     .line 11
     .line 12
     .line 13
-    if-eqz v4, :cond_2e
+    if-eqz v4, :cond_2
 
     .line 14
     .line 15
-    if-nez p1, :cond_11
+    if-nez p1, :cond_0
 
     .line 16
     .line 17
-    goto :goto_2e
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     const/4 v0, 0x3
 
     .line 19
-    if-eq p2, v0, :cond_2a
+    if-eq p2, v0, :cond_1
 
     .line 20
     .line 21
-    :try_start_14
+    :try_start_0
     invoke-virtual {p1}, Landroid/widget/TextView;->getInputType()I
 
     .line 22
@@ -94,11 +94,11 @@
     and-int/2addr p1, v3
 
     .line 26
-    if-eq p1, v3, :cond_2e
+    if-eq p1, v3, :cond_2
 
     .line 27
     .line 28
-    if-eqz p3, :cond_2e
+    if-eqz p3, :cond_2
 
     .line 29
     .line 30
@@ -110,7 +110,7 @@
     move-result p1
 
     .line 34
-    if-nez p1, :cond_2e
+    if-nez p1, :cond_2
 
     .line 35
     .line 36
@@ -122,17 +122,17 @@
     move-result p1
 
     .line 40
-    if-eq p1, v1, :cond_2a
+    if-eq p1, v1, :cond_1
 
     .line 41
     .line 42
-    goto :goto_2e
+    goto :goto_0
 
     .line 43
-    :cond_2a
+    :cond_1
     invoke-virtual {v4}, Landroid/view/View;->performClick()Z
-    :try_end_2d
-    .catchall {:try_start_14 .. :try_end_2d} :catchall_2e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 44
     .line 45
@@ -140,33 +140,33 @@
     const/4 v2, 0x1
 
     .line 47
-    :catchall_2e
-    :cond_2e
-    :goto_2e
+    :catchall_0
+    :cond_2
+    :goto_0
     return v2
 
     .line 48
-    :pswitch_2f
-    if-eqz v4, :cond_55
+    :pswitch_0
+    if-eqz v4, :cond_5
 
     .line 49
     .line 50
-    if-nez p1, :cond_34
+    if-nez p1, :cond_3
 
     .line 51
     .line 52
-    goto :goto_55
+    goto :goto_1
 
     .line 53
-    :cond_34
+    :cond_3
     const/4 v0, 0x6
 
     .line 54
-    if-eq p2, v0, :cond_4b
+    if-eq p2, v0, :cond_4
 
     .line 55
     .line 56
-    :try_start_37
+    :try_start_1
     invoke-virtual {p1}, Landroid/view/View;->hasFocus()Z
 
     .line 57
@@ -175,11 +175,11 @@
     move-result p2
 
     .line 60
-    if-eqz p2, :cond_55
+    if-eqz p2, :cond_5
 
     .line 61
     .line 62
-    if-eqz p3, :cond_55
+    if-eqz p3, :cond_5
 
     .line 63
     .line 64
@@ -191,7 +191,7 @@
     move-result p2
 
     .line 68
-    if-nez p2, :cond_55
+    if-nez p2, :cond_5
 
     .line 69
     .line 70
@@ -203,11 +203,11 @@
     move-result p2
 
     .line 74
-    if-ne p2, v1, :cond_55
+    if-ne p2, v1, :cond_5
 
     .line 75
     .line 76
-    :cond_4b
+    :cond_4
     invoke-virtual {p1}, Landroid/widget/TextView;->getInputType()I
 
     .line 77
@@ -219,25 +219,25 @@
     and-int/2addr p1, v3
 
     .line 81
-    if-eq p1, v3, :cond_55
+    if-eq p1, v3, :cond_5
 
     .line 82
     .line 83
     invoke-virtual {v4}, Landroid/view/View;->performClick()Z
-    :try_end_55
-    .catchall {:try_start_37 .. :try_end_55} :catchall_55
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 84
     .line 85
     .line 86
-    :catchall_55
-    :cond_55
-    :goto_55
+    :catchall_1
+    :cond_5
+    :goto_1
     return v2
 
     .line 87
-    :pswitch_data_56
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2f
+        :pswitch_0
     .end packed-switch
 .end method

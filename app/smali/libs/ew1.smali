@@ -25,7 +25,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/Eta;
@@ -57,7 +57,7 @@
 .end method
 
 .method public constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
@@ -65,7 +65,7 @@
     .line 2
     .line 3
     .line 4
-    if-nez p2, :cond_b
+    if-nez p2, :cond_0
 
     .line 5
     .line 6
@@ -81,7 +81,7 @@
     move-result-object p2
 
     .line 12
-    :cond_b
+    :cond_0
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     .line 13
@@ -114,7 +114,7 @@
 .end method
 
 .method public constructor <init>(Landroid/os/Parcelable;)V
-    .registers 2
+    .locals 0
 
     .line 27
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
@@ -125,7 +125,7 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -191,7 +191,7 @@
 .end method
 
 .method public final writeToParcel(Landroid/os/Parcel;I)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V

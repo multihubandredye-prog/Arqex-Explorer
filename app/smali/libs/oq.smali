@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/$e;)V
-    .registers 2
+    .locals 0
 
     .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -24,7 +24,7 @@
 .end method
 
 .method public constructor <init>(Llibs/b90;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -58,7 +58,7 @@
 
 # virtual methods
 .method public final a(Llibs/c90;)V
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/c90;
@@ -96,7 +96,7 @@
 .end method
 
 .method public final getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "algorithmID"
@@ -107,14 +107,14 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/oq;->a:Llibs/$e;
 
     .line 2
     .line 3
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -125,7 +125,7 @@
     return-object v0
 
     .line 8
-    :cond_7
+    :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     .line 9

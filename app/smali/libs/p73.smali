@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Landroid/os/Handler;
@@ -48,7 +48,7 @@
 .end method
 
 .method public constructor <init>(Llibs/vo1;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
@@ -103,20 +103,20 @@
 
 # virtual methods
 .method public final asBinder()Landroid/os/IBinder;
-    .registers 1
+    .locals 0
 
     .line 1
     return-object p0
 .end method
 
 .method public final onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .registers 8
+    .locals 3
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-lt p1, v0, :cond_d
+    if-lt p1, v0, :cond_0
 
     .line 3
     .line 4
@@ -125,7 +125,7 @@
     .line 5
     .line 6
     .line 7
-    if-gt p1, v1, :cond_d
+    if-gt p1, v1, :cond_0
 
     .line 8
     .line 9
@@ -138,19 +138,19 @@
     .line 12
     .line 13
     .line 14
-    :cond_d
+    :cond_0
     sget-object v1, Llibs/p73;->d:Landroid/os/Handler;
 
     .line 15
     .line 16
-    if-eq p1, v0, :cond_2b
+    if-eq p1, v0, :cond_3
 
     .line 17
     .line 18
     const/4 v2, 0x2
 
     .line 19
-    if-eq p1, v2, :cond_19
+    if-eq p1, v2, :cond_1
 
     .line 20
     .line 21
@@ -165,19 +165,19 @@
     return p1
 
     .line 26
-    :cond_19
+    :cond_1
     iget-boolean p1, p0, Llibs/p73;->c:Z
 
     .line 27
     .line 28
-    if-eqz p1, :cond_1e
+    if-eqz p1, :cond_2
 
     .line 29
     .line 30
-    goto :goto_43
+    goto :goto_0
 
     .line 31
-    :cond_1e
+    :cond_2
     iput-boolean v0, p0, Llibs/p73;->c:Z
 
     .line 32
@@ -203,7 +203,7 @@
     return v0
 
     .line 44
-    :cond_2b
+    :cond_3
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     .line 45
@@ -230,7 +230,7 @@
     .line 56
     .line 57
     .line 58
-    :try_start_39
+    :try_start_0
     new-instance p2, Llibs/m73;
 
     .line 59
@@ -247,13 +247,13 @@
 
     .line 65
     invoke-interface {p1, p2, p3}, Landroid/os/IBinder;->linkToDeath(Landroid/os/IBinder$DeathRecipient;I)V
-    :try_end_43
-    .catch Landroid/os/RemoteException; {:try_start_39 .. :try_end_43} :catch_43
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 66
     .line 67
     .line 68
-    :catch_43
-    :goto_43
+    :catch_0
+    :goto_0
     return v0
 .end method

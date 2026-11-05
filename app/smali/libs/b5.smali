@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/ArrayList;)V
-    .registers 3
+    .locals 1
 
     .line 14
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public a()Llibs/a5;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/b5;->a:Ljava/util/ArrayList;
@@ -69,7 +69,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Llibs/b5;->a:Ljava/util/ArrayList;
 
     .line 5
@@ -82,7 +82,7 @@
     move-result v1
 
     .line 10
-    if-nez v1, :cond_1c
+    if-nez v1, :cond_0
 
     .line 11
     .line 12
@@ -114,27 +114,27 @@
 
     .line 25
     .line 26
-    goto :goto_1d
+    goto :goto_0
 
     .line 27
-    :catchall_1a
+    :catchall_0
     move-exception v1
 
     .line 28
-    goto :goto_2c
+    goto :goto_1
 
     .line 29
-    :cond_1c
+    :cond_0
     const/4 v1, 0x0
 
     .line 30
-    :goto_1d
+    :goto_0
     monitor-exit v0
-    :try_end_1e
-    .catchall {:try_start_3 .. :try_end_1e} :catchall_1a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 31
-    if-nez v1, :cond_26
+    if-nez v1, :cond_1
 
     .line 32
     .line 33
@@ -150,7 +150,7 @@
     return-object v0
 
     .line 39
-    :cond_26
+    :cond_1
     iget-object v0, v1, Llibs/a5;->a:[J
 
     .line 40
@@ -163,18 +163,18 @@
     return-object v1
 
     .line 45
-    :goto_2c
-    :try_start_2c
+    :goto_1
+    :try_start_1
     monitor-exit v0
-    :try_end_2d
-    .catchall {:try_start_2c .. :try_end_2d} :catchall_1a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 46
     throw v1
 .end method
 
 .method public b(Llibs/a5;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p1, Llibs/a5;->a:[J
@@ -193,7 +193,7 @@
     monitor-enter v0
 
     .line 9
-    :try_start_8
+    :try_start_0
     iget-object v1, p0, Llibs/b5;->a:Ljava/util/ArrayList;
 
     .line 10
@@ -210,7 +210,7 @@
 
     .line 16
     .line 17
-    if-ge v1, v2, :cond_1a
+    if-ge v1, v2, :cond_0
 
     .line 18
     .line 19
@@ -223,28 +223,28 @@
     .line 22
     .line 23
     .line 24
-    goto :goto_1a
+    goto :goto_0
 
     .line 25
-    :catchall_18
+    :catchall_0
     move-exception p1
 
     .line 26
-    goto :goto_1c
+    goto :goto_1
 
     .line 27
-    :cond_1a
-    :goto_1a
+    :cond_0
+    :goto_0
     monitor-exit v0
 
     .line 28
     return-void
 
     .line 29
-    :goto_1c
+    :goto_1
     monitor-exit v0
-    :try_end_1d
-    .catchall {:try_start_8 .. :try_end_1d} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 30
     throw p1

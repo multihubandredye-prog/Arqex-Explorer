@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
-    .registers 5
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -31,7 +31,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;ILjava/lang/String;I)V
-    .registers 6
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public final h(Ljavax/crypto/Cipher;I[B[B)V
-    .registers 8
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/dg;->f:B
@@ -59,19 +59,19 @@
     const/4 v2, 0x1
 
     .line 5
-    packed-switch v0, :pswitch_data_22
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
     .line 8
-    if-ne p2, v2, :cond_a
+    if-ne p2, v2, :cond_0
 
     .line 9
     .line 10
     const/4 v1, 0x1
 
     .line 11
-    :cond_a
+    :cond_0
     invoke-virtual {p0, p3}, Llibs/dd;->g([B)Ljavax/crypto/spec/SecretKeySpec;
 
     .line 12
@@ -88,15 +88,15 @@
     return-void
 
     .line 19
-    :pswitch_12
-    if-ne p2, v2, :cond_15
+    :pswitch_0
+    if-ne p2, v2, :cond_1
 
     .line 20
     .line 21
     const/4 v1, 0x1
 
     .line 22
-    :cond_15
+    :cond_1
     invoke-virtual {p0, p3}, Llibs/dd;->g([B)Ljavax/crypto/spec/SecretKeySpec;
 
     .line 23
@@ -122,8 +122,8 @@
     return-void
 
     .line 35
-    :pswitch_data_22
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_12
+        :pswitch_0
     .end packed-switch
 .end method

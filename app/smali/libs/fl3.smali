@@ -15,7 +15,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/TextEditorActivity;Lcom/mixplorer/widgets/MiEditor;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/fl3;->a:Lcom/mixplorer/activities/TextEditorActivity;
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public a(IIII)V
-    .registers 14
+    .locals 9
 
     .line 1
     sget v0, Lcom/mixplorer/activities/TextEditorActivity;->$c:I
@@ -69,7 +69,7 @@
     .line 14
     .line 15
     .line 16
-    if-eq p2, p4, :cond_14
+    if-eq p2, p4, :cond_0
 
     .line 17
     .line 18
@@ -80,12 +80,12 @@
 
     .line 20
     .line 21
-    :cond_14
+    :cond_0
     const-wide/16 v0, 0x0
 
     .line 22
     .line 23
-    if-ne p3, p1, :cond_1f
+    if-ne p3, p1, :cond_1
 
     .line 24
     .line 25
@@ -99,10 +99,10 @@
     .line 29
     .line 30
     .line 31
-    goto :goto_24
+    goto :goto_0
 
     .line 32
-    :cond_1f
+    :cond_1
     iput-wide v0, v3, Lcom/mixplorer/widgets/MiEditor;->IlI:J
 
     .line 33
@@ -112,7 +112,7 @@
     .line 35
     .line 36
     .line 37
-    :goto_24
+    :goto_0
     invoke-virtual {v3}, Landroid/widget/TextView;->hasSelection()Z
 
     .line 38
@@ -121,20 +121,20 @@
     move-result v4
 
     .line 41
-    if-eqz v4, :cond_2c
+    if-eqz v4, :cond_2
 
     .line 42
     .line 43
-    goto/16 :goto_ef
+    goto/16 :goto_4
 
     .line 44
     .line 45
-    :cond_2c
+    :cond_2
     iget-boolean v4, v3, Lcom/mixplorer/widgets/MiEditor;->Seven:Z
 
     .line 46
     .line 47
-    if-nez v4, :cond_ef
+    if-nez v4, :cond_8
 
     .line 48
     .line 49
@@ -156,7 +156,7 @@
     const/4 v6, 0x1
 
     .line 57
-    if-eqz v4, :cond_8a
+    if-eqz v4, :cond_4
 
     .line 58
     .line 59
@@ -164,7 +164,7 @@
 
     .line 60
     .line 61
-    if-nez v7, :cond_8a
+    if-nez v7, :cond_4
 
     .line 62
     .line 63
@@ -172,11 +172,11 @@
 
     .line 64
     .line 65
-    if-eqz v4, :cond_8a
+    if-eqz v4, :cond_4
 
     .line 66
     .line 67
-    if-eq p1, p3, :cond_8a
+    if-eq p1, p3, :cond_4
 
     .line 68
     .line 69
@@ -196,7 +196,7 @@
     move-result p1
 
     .line 77
-    if-nez p1, :cond_65
+    if-nez p1, :cond_3
 
     .line 78
     .line 79
@@ -215,7 +215,7 @@
 
     .line 85
     .line 86
-    if-lez v4, :cond_65
+    if-lez v4, :cond_3
 
     .line 87
     .line 88
@@ -247,19 +247,19 @@
 
     .line 99
     .line 100
-    :goto_63
+    :goto_1
     const/4 v7, 0x1
 
     .line 101
-    goto :goto_ce
+    goto :goto_3
 
     .line 102
-    :cond_65
+    :cond_3
     iget-boolean p1, v3, Lcom/mixplorer/widgets/MiEditor;->Hotel:Z
 
     .line 103
     .line 104
-    if-nez p1, :cond_cc
+    if-nez p1, :cond_6
 
     .line 105
     .line 106
@@ -314,7 +314,7 @@
     add-int/2addr p3, p2
 
     .line 131
-    if-ne p1, p3, :cond_cc
+    if-ne p1, p3, :cond_6
 
     .line 132
     .line 133
@@ -326,15 +326,15 @@
 
     .line 136
     .line 137
-    :goto_88
+    :goto_2
     const/4 v7, 0x2
 
     .line 138
-    goto :goto_ce
+    goto :goto_3
 
     .line 139
-    :cond_8a
-    if-eq p2, p4, :cond_cc
+    :cond_4
+    if-eq p2, p4, :cond_6
 
     .line 140
     .line 141
@@ -354,7 +354,7 @@
     move-result p1
 
     .line 149
-    if-nez p1, :cond_ac
+    if-nez p1, :cond_5
 
     .line 150
     .line 151
@@ -373,7 +373,7 @@
 
     .line 157
     .line 158
-    if-lez v4, :cond_ac
+    if-lez v4, :cond_5
 
     .line 159
     .line 160
@@ -405,15 +405,15 @@
 
     .line 171
     .line 172
-    goto :goto_63
+    goto :goto_1
 
     .line 173
-    :cond_ac
+    :cond_5
     iget-boolean p1, v3, Lcom/mixplorer/widgets/MiEditor;->Hotel:Z
 
     .line 174
     .line 175
-    if-nez p1, :cond_cc
+    if-nez p1, :cond_6
 
     .line 176
     .line 177
@@ -460,7 +460,7 @@
     add-int/2addr p3, p2
 
     .line 198
-    if-ne p1, p3, :cond_cc
+    if-ne p1, p3, :cond_6
 
     .line 199
     .line 200
@@ -472,18 +472,18 @@
 
     .line 203
     .line 204
-    goto :goto_88
+    goto :goto_2
 
     .line 205
-    :cond_cc
+    :cond_6
     const/4 v5, 0x0
 
     .line 206
     const/4 v7, 0x0
 
     .line 207
-    :goto_ce
-    if-eqz v7, :cond_ef
+    :goto_3
+    if-eqz v7, :cond_8
 
     .line 208
     .line 209
@@ -499,7 +499,7 @@
 
     .line 214
     .line 215
-    if-eqz p1, :cond_df
+    if-eqz p1, :cond_7
 
     .line 216
     .line 217
@@ -518,7 +518,7 @@
     return-void
 
     .line 224
-    :cond_df
+    :cond_7
     iput-wide v5, v3, Lcom/mixplorer/widgets/MiEditor;->Kilo:J
 
     .line 225
@@ -549,7 +549,7 @@
     .line 238
     .line 239
     .line 240
-    :cond_ef
-    :goto_ef
+    :cond_8
+    :goto_4
     return-void
 .end method

@@ -25,7 +25,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 26
+    .locals 26
 
     .line 1
     new-instance v0, Ljava/util/HashSet;
@@ -615,7 +615,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -627,7 +627,7 @@
 .end method
 
 .method public static a(Ljava/lang/String;)Llibs/la0;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-static {p0}, Llibs/yh3;->e(Ljava/lang/String;)Ljava/lang/String;
@@ -650,7 +650,7 @@
     move-result v0
 
     .line 11
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
@@ -666,7 +666,7 @@
     return-object p0
 
     .line 19
-    :cond_12
+    :cond_0
     sget-object v0, Llibs/qa0;->a:Ljava/util/HashSet;
 
     .line 20
@@ -679,7 +679,7 @@
     move-result v0
 
     .line 25
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_1
 
     .line 26
     .line 27
@@ -695,7 +695,7 @@
     return-object p0
 
     .line 33
-    :cond_20
+    :cond_1
     sget-object v0, Llibs/qa0;->c:Ljava/util/HashSet;
 
     .line 34
@@ -708,7 +708,7 @@
     move-result v0
 
     .line 39
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_2
 
     .line 40
     .line 41
@@ -724,7 +724,7 @@
     return-object p0
 
     .line 47
-    :cond_2e
+    :cond_2
     sget-object v0, Llibs/qa0;->d:Ljava/util/HashSet;
 
     .line 48
@@ -737,7 +737,7 @@
     move-result v0
 
     .line 53
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_3
 
     .line 54
     .line 55
@@ -753,7 +753,7 @@
     return-object p0
 
     .line 61
-    :cond_3c
+    :cond_3
     sget-object v0, Llibs/qa0;->e:Ljava/util/HashSet;
 
     .line 62
@@ -766,7 +766,7 @@
     move-result v0
 
     .line 67
-    if-eqz v0, :cond_4a
+    if-eqz v0, :cond_4
 
     .line 68
     .line 69
@@ -782,7 +782,7 @@
     return-object p0
 
     .line 75
-    :cond_4a
+    :cond_4
     sget-object v0, Llibs/qa0;->f:Ljava/util/HashSet;
 
     .line 76
@@ -795,7 +795,7 @@
     move-result v0
 
     .line 81
-    if-eqz v0, :cond_58
+    if-eqz v0, :cond_5
 
     .line 82
     .line 83
@@ -811,7 +811,7 @@
     return-object p0
 
     .line 89
-    :cond_58
+    :cond_5
     sget-object v0, Llibs/qa0;->g:Ljava/util/HashSet;
 
     .line 90
@@ -824,7 +824,7 @@
     move-result v0
 
     .line 95
-    if-eqz v0, :cond_68
+    if-eqz v0, :cond_6
 
     .line 96
     .line 97
@@ -844,7 +844,7 @@
     return-object p0
 
     .line 105
-    :cond_68
+    :cond_6
     sget-object v0, Llibs/qa0;->h:Ljava/util/HashSet;
 
     .line 106
@@ -857,7 +857,7 @@
     move-result p0
 
     .line 111
-    if-eqz p0, :cond_78
+    if-eqz p0, :cond_7
 
     .line 112
     .line 113
@@ -877,7 +877,7 @@
     return-object p0
 
     .line 121
-    :cond_78
+    :cond_7
     const/4 p0, 0x0
 
     .line 122
@@ -885,7 +885,7 @@
 .end method
 
 .method public static b(Ljava/lang/String;Ljava/lang/String;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     sget-object v0, Llibs/qa0;->b:Ljava/util/HashSet;
@@ -900,7 +900,7 @@
     move-result v1
 
     .line 7
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
@@ -912,11 +912,11 @@
     move-result v0
 
     .line 13
-    if-nez v0, :cond_70
+    if-nez v0, :cond_7
 
     .line 14
     .line 15
-    :cond_e
+    :cond_0
     sget-object v0, Llibs/qa0;->c:Ljava/util/HashSet;
 
     .line 16
@@ -929,7 +929,7 @@
     move-result v1
 
     .line 21
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_1
 
     .line 22
     .line 23
@@ -941,11 +941,11 @@
     move-result v0
 
     .line 27
-    if-nez v0, :cond_70
+    if-nez v0, :cond_7
 
     .line 28
     .line 29
-    :cond_1c
+    :cond_1
     sget-object v0, Llibs/qa0;->d:Ljava/util/HashSet;
 
     .line 30
@@ -958,7 +958,7 @@
     move-result v1
 
     .line 35
-    if-eqz v1, :cond_2a
+    if-eqz v1, :cond_2
 
     .line 36
     .line 37
@@ -970,11 +970,11 @@
     move-result v0
 
     .line 41
-    if-nez v0, :cond_70
+    if-nez v0, :cond_7
 
     .line 42
     .line 43
-    :cond_2a
+    :cond_2
     sget-object v0, Llibs/qa0;->e:Ljava/util/HashSet;
 
     .line 44
@@ -987,7 +987,7 @@
     move-result v1
 
     .line 49
-    if-eqz v1, :cond_38
+    if-eqz v1, :cond_3
 
     .line 50
     .line 51
@@ -999,11 +999,11 @@
     move-result v0
 
     .line 55
-    if-nez v0, :cond_70
+    if-nez v0, :cond_7
 
     .line 56
     .line 57
-    :cond_38
+    :cond_3
     sget-object v0, Llibs/qa0;->f:Ljava/util/HashSet;
 
     .line 58
@@ -1016,7 +1016,7 @@
     move-result v1
 
     .line 63
-    if-eqz v1, :cond_46
+    if-eqz v1, :cond_4
 
     .line 64
     .line 65
@@ -1028,11 +1028,11 @@
     move-result v0
 
     .line 69
-    if-nez v0, :cond_70
+    if-nez v0, :cond_7
 
     .line 70
     .line 71
-    :cond_46
+    :cond_4
     sget-object v0, Llibs/qa0;->g:Ljava/util/HashSet;
 
     .line 72
@@ -1045,7 +1045,7 @@
     move-result v1
 
     .line 77
-    if-eqz v1, :cond_54
+    if-eqz v1, :cond_5
 
     .line 78
     .line 79
@@ -1057,11 +1057,11 @@
     move-result v0
 
     .line 83
-    if-nez v0, :cond_70
+    if-nez v0, :cond_7
 
     .line 84
     .line 85
-    :cond_54
+    :cond_5
     sget-object v0, Llibs/qa0;->h:Ljava/util/HashSet;
 
     .line 86
@@ -1074,7 +1074,7 @@
     move-result v1
 
     .line 91
-    if-eqz v1, :cond_62
+    if-eqz v1, :cond_6
 
     .line 92
     .line 93
@@ -1086,11 +1086,11 @@
     move-result v0
 
     .line 97
-    if-nez v0, :cond_70
+    if-nez v0, :cond_7
 
     .line 98
     .line 99
-    :cond_62
+    :cond_6
     sget-object v0, Llibs/qa0;->a:Ljava/util/HashSet;
 
     .line 100
@@ -1103,7 +1103,7 @@
     move-result p0
 
     .line 105
-    if-eqz p0, :cond_72
+    if-eqz p0, :cond_8
 
     .line 106
     .line 107
@@ -1115,18 +1115,18 @@
     move-result p0
 
     .line 111
-    if-eqz p0, :cond_72
+    if-eqz p0, :cond_8
 
     .line 112
     .line 113
-    :cond_70
+    :cond_7
     const/4 p0, 0x1
 
     .line 114
     return p0
 
     .line 115
-    :cond_72
+    :cond_8
     const/4 p0, 0x0
 
     .line 116

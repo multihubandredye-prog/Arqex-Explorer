@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 1
     const/16 v0, 0x10
@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public final b()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x8
@@ -42,7 +42,7 @@
 .end method
 
 .method public final e([BI[B)V
-    .registers 7
+    .locals 3
 
     .line 1
     iget-object p1, p0, Llibs/Chi;->b:Ljava/lang/String;
@@ -53,7 +53,7 @@
 
     .line 4
     .line 5
-    :try_start_4
+    :try_start_0
     invoke-static {p1}, Llibs/ad1;->c(Ljava/lang/String;)Ljava/security/Provider;
 
     .line 6
@@ -62,7 +62,7 @@
     move-result-object v1
 
     .line 9
-    if-nez v1, :cond_f
+    if-nez v1, :cond_0
 
     .line 10
     .line 11
@@ -74,10 +74,10 @@
     move-result-object v1
 
     .line 15
-    goto :goto_17
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_0
     invoke-static {p1}, Llibs/ad1;->c(Ljava/lang/String;)Ljava/security/Provider;
 
     .line 17
@@ -94,12 +94,12 @@
     move-result-object v1
 
     .line 24
-    :goto_17
+    :goto_0
     iput-object v1, p0, Llibs/Chi;->a:Ljavax/crypto/Cipher;
 
     .line 25
     .line 26
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_2
 
     .line 27
     .line 28
@@ -136,21 +136,21 @@
 
     .line 44
     .line 45
-    if-nez p2, :cond_30
+    if-nez p2, :cond_1
 
     .line 46
     .line 47
     const/4 p2, 0x1
 
     .line 48
-    goto :goto_31
+    goto :goto_1
 
     .line 49
-    :cond_30
+    :cond_1
     const/4 p2, 0x2
 
     .line 50
-    :goto_31
+    :goto_1
     invoke-virtual {v0, p2, p3}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;)V
 
     .line 51
@@ -159,7 +159,7 @@
     return-void
 
     .line 54
-    :cond_35
+    :cond_2
     new-instance p2, Ljava/io/IOException;
 
     .line 55
@@ -192,13 +192,13 @@
     .line 70
     .line 71
     throw p2
-    :try_end_47
-    .catch Ljavax/crypto/NoSuchPaddingException; {:try_start_4 .. :try_end_47} :catch_57
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_4 .. :try_end_47} :catch_4d
-    .catch Ljava/security/InvalidKeyException; {:try_start_4 .. :try_end_47} :catch_47
+    :try_end_0
+    .catch Ljavax/crypto/NoSuchPaddingException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/security/InvalidKeyException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 72
-    :catch_47
+    :catch_0
     const-string p1, "Invalid encryption key"
 
     .line 73
@@ -211,7 +211,7 @@
     return-void
 
     .line 78
-    :catch_4d
+    :catch_1
     const-string p2, "Algorithm not supported:"
 
     .line 79
@@ -232,7 +232,7 @@
     return-void
 
     .line 88
-    :catch_57
+    :catch_2
     const-string p1, "Padding type not supported"
 
     .line 89

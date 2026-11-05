@@ -36,7 +36,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ILjava/util/ArrayList;Llibs/rp0;[C[CLjava/lang/String;Landroid/app/Activity;Llibs/r93;Llibs/$d;)V
-    .registers 14
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -102,7 +102,7 @@
 
 # virtual methods
 .method public final f(Llibs/t4;)V
-    .registers 16
+    .locals 14
 
     .line 1
     iget-object p1, p0, Llibs/m93;->X:Ljava/lang/String;
@@ -166,7 +166,7 @@
     const/4 v12, 0x0
 
     .line 30
-    :try_start_1d
+    :try_start_0
     new-array v13, v12, [Ljava/lang/String;
 
     .line 31
@@ -288,7 +288,7 @@
     const/4 v11, 0x1
 
     .line 91
-    if-eqz v8, :cond_61
+    if-eqz v8, :cond_0
 
     .line 92
     .line 93
@@ -300,10 +300,10 @@
 
     .line 96
     .line 97
-    goto :goto_65
+    goto :goto_0
 
     .line 98
-    :cond_61
+    :cond_0
     new-array v8, v11, [Ljava/security/cert/Certificate;
 
     .line 99
@@ -312,7 +312,7 @@
 
     .line 101
     .line 102
-    :goto_65
+    :goto_0
     iget-object v10, p1, Llibs/za;->Z:Ljava/lang/Object;
 
     .line 103
@@ -348,8 +348,8 @@
     .line 119
     .line 120
     invoke-virtual {v9, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
-    :try_end_7a
-    .catchall {:try_start_1d .. :try_end_7a} :catchall_7b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 121
     .line 122
@@ -357,7 +357,7 @@
     return-void
 
     .line 124
-    :catchall_7b
+    :catchall_0
     move-exception v0
 
     .line 125

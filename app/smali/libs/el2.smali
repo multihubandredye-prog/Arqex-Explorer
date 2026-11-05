@@ -15,7 +15,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -31,12 +31,12 @@
 
     .line 7
     .line 8
-    :goto_7
+    :goto_0
     const/16 v2, 0x39
 
     .line 9
     .line 10
-    if-gt v1, v2, :cond_12
+    if-gt v1, v2, :cond_0
 
     .line 11
     .line 12
@@ -52,20 +52,20 @@
     int-to-char v1, v1
 
     .line 18
-    goto :goto_7
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     const/16 v1, 0x61
 
     .line 20
     .line 21
-    :goto_14
+    :goto_1
     const/16 v2, 0x7a
 
     .line 22
     .line 23
-    if-gt v1, v2, :cond_1f
+    if-gt v1, v2, :cond_1
 
     .line 24
     .line 25
@@ -81,10 +81,10 @@
     int-to-char v1, v1
 
     .line 31
-    goto :goto_14
+    goto :goto_1
 
     .line 32
-    :cond_1f
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 33
@@ -109,7 +109,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

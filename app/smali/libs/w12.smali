@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>([B[BLjava/lang/String;Ljava/lang/String;[BLjava/util/Set;Llibs/iv3;)V
-    .registers 8
+    .locals 0
 
     .line 1
     invoke-direct {p0, p6, p7}, Llibs/d22;-><init>(Ljava/util/Set;Llibs/iv3;)V
@@ -33,39 +33,39 @@
 
     .line 5
     .line 6
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     .line 7
     .line 8
-    goto :goto_9
+    goto :goto_0
 
     .line 9
-    :cond_8
+    :cond_0
     move-object p1, p7
 
     .line 10
-    :goto_9
+    :goto_0
     iput-object p1, p0, Llibs/w12;->g:[B
 
     .line 11
     .line 12
-    if-eqz p2, :cond_e
+    if-eqz p2, :cond_1
 
     .line 13
     .line 14
-    goto :goto_f
+    goto :goto_1
 
     .line 15
-    :cond_e
+    :cond_1
     move-object p2, p7
 
     .line 16
-    :goto_f
+    :goto_1
     iput-object p2, p0, Llibs/w12;->h:[B
 
     .line 17
     .line 18
-    if-eqz p3, :cond_18
+    if-eqz p3, :cond_2
 
     .line 19
     .line 20
@@ -77,19 +77,19 @@
     move-result-object p1
 
     .line 24
-    goto :goto_19
+    goto :goto_2
 
     .line 25
-    :cond_18
+    :cond_2
     move-object p1, p7
 
     .line 26
-    :goto_19
+    :goto_2
     iput-object p1, p0, Llibs/w12;->i:[B
 
     .line 27
     .line 28
-    if-eqz p4, :cond_22
+    if-eqz p4, :cond_3
 
     .line 29
     .line 30
@@ -101,14 +101,14 @@
     move-result-object p1
 
     .line 34
-    goto :goto_23
+    goto :goto_3
 
     .line 35
-    :cond_22
+    :cond_3
     move-object p1, p7
 
     .line 36
-    :goto_23
+    :goto_3
     iput-object p1, p0, Llibs/w12;->j:[B
 
     .line 37
@@ -117,18 +117,18 @@
 
     .line 39
     .line 40
-    if-eqz p5, :cond_2a
+    if-eqz p5, :cond_4
 
     .line 41
     .line 42
-    goto :goto_2b
+    goto :goto_4
 
     .line 43
-    :cond_2a
+    :cond_4
     move-object p5, p7
 
     .line 44
-    :goto_2b
+    :goto_4
     iput-object p5, p0, Llibs/w12;->l:[B
 
     .line 45
@@ -143,7 +143,7 @@
 
 # virtual methods
 .method public final Object(Llibs/rw2;)V
-    .registers 12
+    .locals 10
 
     .line 1
     const-string v0, "NTLMSSP\u0000"
@@ -184,7 +184,7 @@
     move-result v0
 
     .line 21
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_1
 
     .line 22
     .line 23
@@ -192,33 +192,33 @@
 
     .line 24
     .line 25
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 26
     .line 27
-    goto :goto_1e
+    goto :goto_0
 
     .line 28
-    :cond_1b
+    :cond_0
     const/16 v0, 0x40
 
     .line 29
     .line 30
-    goto :goto_20
+    goto :goto_1
 
     .line 31
-    :cond_1e
-    :goto_1e
+    :cond_1
+    :goto_0
     const/16 v0, 0x48
 
     .line 32
     .line 33
-    :goto_20
+    :goto_1
     iget-object v2, p0, Llibs/w12;->m:[B
 
     .line 34
     .line 35
-    if-eqz v2, :cond_26
+    if-eqz v2, :cond_2
 
     .line 36
     .line 37
@@ -226,7 +226,7 @@
 
     .line 38
     .line 39
-    :cond_26
+    :cond_2
     iget-object v2, p0, Llibs/w12;->g:[B
 
     .line 40
@@ -325,7 +325,7 @@
     move-result v0
 
     .line 89
-    if-eqz v0, :cond_83
+    if-eqz v0, :cond_3
 
     .line 90
     .line 91
@@ -370,7 +370,7 @@
 
     .line 111
     .line 112
-    fill-array-data v8, :array_ae
+    fill-array-data v8, :array_0
 
     .line 113
     .line 114
@@ -405,15 +405,15 @@
     .line 129
     .line 130
     .line 131
-    goto :goto_8c
+    goto :goto_2
 
     .line 132
-    :cond_83
+    :cond_3
     iget-object v0, p0, Llibs/w12;->m:[B
 
     .line 133
     .line 134
-    if-eqz v0, :cond_8c
+    if-eqz v0, :cond_4
 
     .line 135
     .line 136
@@ -426,13 +426,13 @@
     .line 139
     .line 140
     .line 141
-    :cond_8c
-    :goto_8c
+    :cond_4
+    :goto_2
     iget-object v0, p0, Llibs/w12;->m:[B
 
     .line 142
     .line 143
-    if-eqz v0, :cond_95
+    if-eqz v0, :cond_5
 
     .line 144
     .line 145
@@ -445,7 +445,7 @@
     .line 148
     .line 149
     .line 150
-    :cond_95
+    :cond_5
     array-length v0, v2
 
     .line 151
@@ -497,7 +497,7 @@
     return-void
 
     .line 175
-    :array_ae
+    :array_0
     .array-data 1
         0x0t
         0x0t
@@ -506,7 +506,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -526,7 +526,7 @@
 
     .line 9
     .line 10
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_0
 
     .line 11
     .line 12
@@ -538,15 +538,15 @@
     move-result-object v1
 
     .line 16
-    goto :goto_12
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     const-string v1, "[]"
 
     .line 18
     .line 19
-    :goto_12
+    :goto_0
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 20
@@ -621,7 +621,7 @@
 
     .line 58
     .line 59
-    if-eqz v2, :cond_44
+    if-eqz v2, :cond_1
 
     .line 60
     .line 61
@@ -638,10 +638,10 @@
     .line 66
     .line 67
     .line 68
-    goto :goto_47
+    goto :goto_1
 
     .line 69
-    :cond_44
+    :cond_1
     sget-object v2, Llibs/b22;->a:Ljava/nio/charset/Charset;
 
     .line 70
@@ -649,7 +649,7 @@
     move-object v3, v1
 
     .line 72
-    :goto_47
+    :goto_1
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 73
@@ -668,7 +668,7 @@
 
     .line 81
     .line 82
-    if-eqz v2, :cond_5b
+    if-eqz v2, :cond_2
 
     .line 83
     .line 84
@@ -685,14 +685,14 @@
     .line 89
     .line 90
     .line 91
-    goto :goto_5c
+    goto :goto_2
 
     .line 92
-    :cond_5b
+    :cond_2
     move-object v3, v1
 
     .line 93
-    :goto_5c
+    :goto_2
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 94
@@ -711,7 +711,7 @@
 
     .line 102
     .line 103
-    if-eqz v2, :cond_6f
+    if-eqz v2, :cond_3
 
     .line 104
     .line 105
@@ -728,7 +728,7 @@
     .line 110
     .line 111
     .line 112
-    :cond_6f
+    :cond_3
     const-string v2, "\',\n  encryptedRandomSessionKey=[<secret>],\n}"
 
     .line 113

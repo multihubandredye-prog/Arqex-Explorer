@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Lorg/conscrypt/OpenSSLCipherRSA;-><init>(I)V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public doCryptoOperation([B[B)I
-    .registers 6
+    .locals 3
 
     .line 1
     iget-boolean v0, p0, Lorg/conscrypt/OpenSSLCipherRSA;->encrypting:Z
@@ -30,11 +30,11 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
     .line 6
     .line 7
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
@@ -68,7 +68,7 @@
     return p1
 
     .line 23
-    :cond_16
+    :cond_0
     array-length v0, p1
 
     .line 24
@@ -99,12 +99,12 @@
     return p1
 
     .line 37
-    :cond_24
-    if-eqz v1, :cond_36
+    :cond_1
+    if-eqz v1, :cond_2
 
     .line 38
     .line 39
-    :try_start_26
+    :try_start_0
     array-length v0, p1
 
     .line 40
@@ -135,14 +135,14 @@
     return p1
 
     .line 53
-    :catch_34
+    :catch_0
     move-exception p1
 
     .line 54
-    goto :goto_44
+    goto :goto_0
 
     .line 55
-    :cond_36
+    :cond_2
     array-length v0, p1
 
     .line 56
@@ -168,14 +168,14 @@
     .line 66
     .line 67
     move-result p1
-    :try_end_43
-    .catch Ljava/security/SignatureException; {:try_start_26 .. :try_end_43} :catch_34
+    :try_end_0
+    .catch Ljava/security/SignatureException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 68
     return p1
 
     .line 69
-    :goto_44
+    :goto_0
     new-instance p2, Ljavax/crypto/IllegalBlockSizeException;
 
     .line 70

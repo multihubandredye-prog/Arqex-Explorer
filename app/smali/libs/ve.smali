@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/xe;Ljava/lang/String;Ljava/security/Key;[C[Ljava/security/cert/Certificate;)V
-    .registers 13
+    .locals 7
 
     .line 1
     iput-object p1, p0, Llibs/ve;->f:Llibs/xe;
@@ -203,7 +203,7 @@
 .end method
 
 .method public constructor <init>(Llibs/xe;Ljava/lang/String;Ljava/security/cert/Certificate;)V
-    .registers 4
+    .locals 0
 
     .line 101
     iput-object p1, p0, Llibs/ve;->f:Llibs/xe;
@@ -237,7 +237,7 @@
 .end method
 
 .method public constructor <init>(Llibs/xe;Ljava/lang/String;Ljava/util/Date;ILjava/io/Serializable;[Ljava/security/cert/Certificate;)V
-    .registers 7
+    .locals 0
 
     .line 113
     iput-object p1, p0, Llibs/ve;->f:Llibs/xe;
@@ -268,7 +268,7 @@
 .end method
 
 .method public constructor <init>(Llibs/xe;Ljava/lang/String;Ljava/util/Date;Ljava/security/cert/Certificate;)V
-    .registers 5
+    .locals 0
 
     .line 107
     iput-object p1, p0, Llibs/ve;->f:Llibs/xe;
@@ -298,7 +298,7 @@
 .end method
 
 .method public constructor <init>(Llibs/xe;Ljava/lang/String;[B[Ljava/security/cert/Certificate;)V
-    .registers 5
+    .locals 0
 
     .line 95
     iput-object p1, p0, Llibs/ve;->f:Llibs/xe;

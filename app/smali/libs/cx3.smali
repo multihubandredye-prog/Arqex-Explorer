@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(IIII)V
-    .registers 9
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -63,11 +63,11 @@
 
     .line 24
     .line 25
-    if-nez p3, :cond_30
+    if-nez p3, :cond_1
 
     .line 26
     .line 27
-    if-nez p4, :cond_2b
+    if-nez p4, :cond_0
 
     .line 28
     .line 29
@@ -97,10 +97,10 @@
     .line 41
     .line 42
     .line 43
-    goto :goto_62
+    goto :goto_0
 
     .line 44
-    :cond_2b
+    :cond_0
     invoke-static {p1}, Llibs/ic0;->p(Ljava/lang/String;)V
 
     .line 45
@@ -112,12 +112,12 @@
     throw p1
 
     .line 49
-    :cond_30
-    if-le p3, p2, :cond_6a
+    :cond_1
+    if-le p3, p2, :cond_2
 
     .line 50
     .line 51
-    if-le p4, p3, :cond_6a
+    if-le p4, p3, :cond_2
 
     .line 52
     .line 53
@@ -207,7 +207,7 @@
     .line 97
     .line 98
     .line 99
-    :goto_62
+    :goto_0
     new-instance p1, Llibs/p10;
 
     .line 100
@@ -224,7 +224,7 @@
     return-void
 
     .line 107
-    :cond_6a
+    :cond_2
     invoke-static {p1}, Llibs/ic0;->p(Ljava/lang/String;)V
 
     .line 108
@@ -237,7 +237,7 @@
 .end method
 
 .method public constructor <init>(Ljava/math/BigInteger;)V
-    .registers 3
+    .locals 1
 
     .line 112
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -258,7 +258,7 @@
 .end method
 
 .method public constructor <init>(Llibs/Param;)V
-    .registers 3
+    .locals 1
 
     .line 115
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -295,7 +295,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/Init;

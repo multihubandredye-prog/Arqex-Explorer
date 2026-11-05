@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/kw0;)V
-    .registers 4
+    .locals 2
 
     .line 84
     const-string v0, "HMACT64"
@@ -60,7 +60,7 @@
 .end method
 
 .method public constructor <init>([B)V
-    .registers 9
+    .locals 7
 
     .line 1
     const-string v0, "HMACT64"
@@ -106,7 +106,7 @@
     const/4 v2, 0x0
 
     .line 22
-    :goto_15
+    :goto_0
     const/16 v3, 0x5c
 
     .line 23
@@ -115,7 +115,7 @@
 
     .line 25
     .line 26
-    if-ge v2, v1, :cond_2e
+    if-ge v2, v1, :cond_0
 
     .line 27
     .line 28
@@ -159,12 +159,12 @@
 
     .line 45
     .line 46
-    goto :goto_15
+    goto :goto_0
 
     .line 47
-    :cond_2e
-    :goto_2e
-    if-ge v1, v0, :cond_3b
+    :cond_0
+    :goto_1
+    if-ge v1, v0, :cond_1
 
     .line 48
     .line 49
@@ -188,11 +188,11 @@
 
     .line 58
     .line 59
-    goto :goto_2e
+    goto :goto_1
 
     .line 60
-    :cond_3b
-    :try_start_3b
+    :cond_1
+    :try_start_0
     const-string p1, "MD5"
 
     .line 61
@@ -206,8 +206,8 @@
 
     .line 66
     iput-object p1, p0, Llibs/kw0;->X:Ljava/security/MessageDigest;
-    :try_end_43
-    .catch Ljava/lang/Exception; {:try_start_3b .. :try_end_43} :catch_47
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 67
     .line 68
@@ -219,7 +219,7 @@
     return-void
 
     .line 72
-    :catch_47
+    :catch_0
     move-exception p1
 
     .line 73
@@ -239,21 +239,21 @@
     const/4 p1, 0x0
 
     .line 81
-    goto :goto_52
+    goto :goto_3
 
     .line 82
-    :goto_51
+    :goto_2
     throw p1
 
     .line 83
-    :goto_52
-    goto :goto_51
+    :goto_3
+    goto :goto_2
 .end method
 
 
 # virtual methods
 .method public final clone()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     :try_start_0
@@ -262,8 +262,8 @@
     .line 2
     .line 3
     invoke-direct {v0, p0}, Llibs/kw0;-><init>(Llibs/kw0;)V
-    :try_end_5
-    .catch Ljava/lang/CloneNotSupportedException; {:try_start_0 .. :try_end_5} :catch_6
+    :try_end_0
+    .catch Ljava/lang/CloneNotSupportedException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 4
     .line 5
@@ -271,7 +271,7 @@
     return-object v0
 
     .line 7
-    :catch_6
+    :catch_0
     move-exception v0
 
     .line 8
@@ -295,7 +295,7 @@
 .end method
 
 .method public final engineDigest([BII)I
-    .registers 7
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/kw0;->X:Ljava/security/MessageDigest;
@@ -324,21 +324,21 @@
     .line 13
     .line 14
     .line 15
-    :try_start_e
+    :try_start_0
     invoke-virtual {v0, p1, p2, p3}, Ljava/security/MessageDigest;->digest([BII)I
 
     .line 16
     .line 17
     .line 18
     move-result p1
-    :try_end_12
-    .catch Ljava/lang/Exception; {:try_start_e .. :try_end_12} :catch_13
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 19
     return p1
 
     .line 20
-    :catch_13
+    :catch_0
     invoke-static {}, Llibs/ic0;->r()V
 
     .line 21
@@ -351,7 +351,7 @@
 .end method
 
 .method public final engineDigest()[B
-    .registers 4
+    .locals 3
 
     .line 25
     iget-object v0, p0, Llibs/kw0;->X:Ljava/security/MessageDigest;
@@ -374,7 +374,7 @@
 .end method
 
 .method public final engineGetDigestLength()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/kw0;->X:Ljava/security/MessageDigest;
@@ -393,7 +393,7 @@
 .end method
 
 .method public final engineReset()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/kw0;->X:Ljava/security/MessageDigest;
@@ -418,7 +418,7 @@
 .end method
 
 .method public final engineUpdate(B)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/kw0;->X:Ljava/security/MessageDigest;
@@ -434,7 +434,7 @@
 .end method
 
 .method public final engineUpdate([BII)V
-    .registers 5
+    .locals 1
 
     .line 7
     iget-object v0, p0, Llibs/kw0;->X:Ljava/security/MessageDigest;

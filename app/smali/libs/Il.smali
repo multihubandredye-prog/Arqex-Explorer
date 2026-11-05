@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/json/JSONObject;B)V
-    .registers 20
+    .locals 17
 
     .line 1
     move-object/from16 v0, p0
@@ -91,7 +91,7 @@
 
     .line 36
     .line 37
-    packed-switch p2, :pswitch_data_a8
+    packed-switch p2, :pswitch_data_0
 
     .line 38
     .line 39
@@ -212,7 +212,7 @@
     return-void
 
     .line 104
-    :pswitch_67
+    :pswitch_0
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     .line 105
@@ -332,16 +332,16 @@
     nop
 
     .line 169
-    :pswitch_data_a8
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_67
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public final a()Llibs/dc;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/Il;->a:B

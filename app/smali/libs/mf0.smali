@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/mf0;->X:B
@@ -32,14 +32,14 @@
 
 # virtual methods
 .method public final getFieldSize()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/mf0;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_24
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -75,7 +75,7 @@
     return v0
 
     .line 21
-    :pswitch_14
+    :pswitch_0
     iget-object v0, p0, Llibs/mf0;->Y:Llibs/lg0;
 
     .line 22
@@ -110,14 +110,14 @@
     nop
 
     .line 37
-    :pswitch_data_24
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_14
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final k(Llibs/d6;)Ljava/math/BigInteger;
-    .registers 6
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/mf0;->X:B
@@ -127,7 +127,7 @@
     const/4 v1, 0x0
 
     .line 4
-    packed-switch v0, :pswitch_data_60
+    packed-switch v0, :pswitch_data_0
 
     .line 5
     .line 6
@@ -200,7 +200,7 @@
     move-result v0
 
     .line 41
-    if-nez v0, :cond_34
+    if-nez v0, :cond_0
 
     .line 42
     .line 43
@@ -221,10 +221,10 @@
     move-result-object v1
 
     .line 52
-    goto :goto_39
+    goto :goto_0
 
     .line 53
-    :cond_34
+    :cond_0
     const-string p1, "Infinity is not a valid agreement value for ECDHC"
 
     .line 54
@@ -234,11 +234,11 @@
     .line 56
     .line 57
     .line 58
-    :goto_39
+    :goto_0
     return-object v1
 
     .line 59
-    :pswitch_3a
+    :pswitch_0
     check-cast p1, Llibs/pg0;
 
     .line 60
@@ -279,7 +279,7 @@
     move-result v0
 
     .line 79
-    if-nez v0, :cond_5a
+    if-nez v0, :cond_1
 
     .line 80
     .line 81
@@ -300,10 +300,10 @@
     move-result-object v1
 
     .line 90
-    goto :goto_5f
+    goto :goto_1
 
     .line 91
-    :cond_5a
+    :cond_1
     const-string p1, "Infinity is not a valid agreement value for ECDH"
 
     .line 92
@@ -313,25 +313,25 @@
     .line 94
     .line 95
     .line 96
-    :goto_5f
+    :goto_1
     return-object v1
 
     .line 97
-    :pswitch_data_60
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_3a
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final q(Llibs/d6;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/mf0;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_10
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -347,7 +347,7 @@
     return-void
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     check-cast p1, Llibs/lg0;
 
     .line 12
@@ -362,8 +362,8 @@
     nop
 
     .line 17
-    :pswitch_data_10
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method

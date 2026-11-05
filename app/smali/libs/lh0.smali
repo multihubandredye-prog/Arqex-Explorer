@@ -5,10 +5,10 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 5
+    .locals 3
 
     .line 1
-    packed-switch p1, :pswitch_data_36
+    packed-switch p1, :pswitch_data_0
 
     .line 2
     .line 3
@@ -53,7 +53,7 @@
     return-void
 
     .line 26
-    :pswitch_19
+    :pswitch_0
     const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
     .line 27
@@ -111,8 +111,8 @@
     nop
 
     .line 55
-    :pswitch_data_36
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_19
+        :pswitch_0
     .end packed-switch
 .end method

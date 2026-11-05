@@ -38,7 +38,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,28 +60,28 @@
     const/4 v1, 0x1
 
     .line 10
-    if-eq p1, v1, :cond_29
+    if-eq p1, v1, :cond_4
 
     .line 11
     .line 12
     const/4 v1, 0x3
 
     .line 13
-    if-eq p1, v1, :cond_26
+    if-eq p1, v1, :cond_3
 
     .line 14
     .line 15
     const/4 v1, 0x5
 
     .line 16
-    if-eq p1, v1, :cond_23
+    if-eq p1, v1, :cond_2
 
     .line 17
     .line 18
     const/4 v1, 0x7
 
     .line 19
-    if-eq p1, v1, :cond_20
+    if-eq p1, v1, :cond_1
 
     .line 20
     .line 21
@@ -89,7 +89,7 @@
 
     .line 22
     .line 23
-    if-eq p1, v1, :cond_1d
+    if-eq p1, v1, :cond_0
 
     .line 24
     .line 25
@@ -101,47 +101,47 @@
 
     .line 28
     .line 29
-    goto :goto_2b
+    goto :goto_0
 
     .line 30
-    :cond_1d
+    :cond_0
     iput v1, p0, Llibs/zy3;->Y:I
 
     .line 31
     .line 32
-    goto :goto_2b
+    goto :goto_0
 
     .line 33
-    :cond_20
+    :cond_1
     iput v1, p0, Llibs/zy3;->Y:I
 
     .line 34
     .line 35
-    goto :goto_2b
+    goto :goto_0
 
     .line 36
-    :cond_23
+    :cond_2
     iput v1, p0, Llibs/zy3;->Y:I
 
     .line 37
     .line 38
-    goto :goto_2b
+    goto :goto_0
 
     .line 39
-    :cond_26
+    :cond_3
     iput v1, p0, Llibs/zy3;->Y:I
 
     .line 40
     .line 41
-    goto :goto_2b
+    goto :goto_0
 
     .line 42
-    :cond_29
+    :cond_4
     iput v1, p0, Llibs/zy3;->Y:I
 
     .line 43
     .line 44
-    :goto_2b
+    :goto_0
     iput-boolean v0, p0, Llibs/zy3;->Z:Z
 
     .line 45
@@ -163,7 +163,7 @@
 
 # virtual methods
 .method public final clone()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Ljava/lang/Object;->clone()Ljava/lang/Object;

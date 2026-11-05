@@ -81,7 +81,7 @@
 
 # direct methods
 .method public constructor <init>(JJ)V
-    .registers 9
+    .locals 4
 
     .line 1
     long-to-int p4, p3
@@ -116,7 +116,7 @@
 
 # virtual methods
 .method public final c([B)V
-    .registers 13
+    .locals 11
 
     .line 1
     const/4 v0, 0x0
@@ -696,7 +696,7 @@
 
     .line 287
     .line 288
-    if-lt v4, v8, :cond_126
+    if-lt v4, v8, :cond_0
 
     .line 289
     .line 290
@@ -709,12 +709,12 @@
     .line 293
     .line 294
     .line 295
-    :cond_126
+    :cond_0
     const/16 v9, 0xc4
 
     .line 296
     .line 297
-    if-lt v4, v9, :cond_12d
+    if-lt v4, v9, :cond_1
 
     .line 298
     .line 299
@@ -723,12 +723,12 @@
     .line 300
     .line 301
     .line 302
-    :cond_12d
+    :cond_1
     const/16 v1, 0xcc
 
     .line 303
     .line 304
-    if-lt v4, v1, :cond_136
+    if-lt v4, v1, :cond_2
 
     .line 305
     .line 306
@@ -741,12 +741,12 @@
     .line 309
     .line 310
     .line 311
-    :cond_136
+    :cond_2
     const/16 v8, 0xd0
 
     .line 312
     .line 313
-    if-lt v4, v8, :cond_13d
+    if-lt v4, v8, :cond_3
 
     .line 314
     .line 315
@@ -755,12 +755,12 @@
     .line 316
     .line 317
     .line 318
-    :cond_13d
+    :cond_3
     const/16 v1, 0xd4
 
     .line 319
     .line 320
-    if-lt v4, v1, :cond_144
+    if-lt v4, v1, :cond_4
 
     .line 321
     .line 322
@@ -769,12 +769,12 @@
     .line 323
     .line 324
     .line 325
-    :cond_144
+    :cond_4
     const/16 v8, 0xd8
 
     .line 326
     .line 327
-    if-lt v4, v8, :cond_14b
+    if-lt v4, v8, :cond_5
 
     .line 328
     .line 329
@@ -783,12 +783,12 @@
     .line 330
     .line 331
     .line 332
-    :cond_14b
+    :cond_5
     const/16 v1, 0xe4
 
     .line 333
     .line 334
-    if-lt v4, v1, :cond_154
+    if-lt v4, v1, :cond_6
 
     .line 335
     .line 336
@@ -801,12 +801,12 @@
     .line 339
     .line 340
     .line 341
-    :cond_154
+    :cond_6
     const/16 v8, 0xe8
 
     .line 342
     .line 343
-    if-lt v4, v8, :cond_15b
+    if-lt v4, v8, :cond_7
 
     .line 344
     .line 345
@@ -815,12 +815,12 @@
     .line 346
     .line 347
     .line 348
-    :cond_15b
+    :cond_7
     const/16 v1, 0xf4
 
     .line 349
     .line 350
-    if-lt v4, v1, :cond_164
+    if-lt v4, v1, :cond_8
 
     .line 351
     .line 352
@@ -833,12 +833,12 @@
     .line 355
     .line 356
     .line 357
-    :cond_164
+    :cond_8
     const/16 v8, 0xf8
 
     .line 358
     .line 359
-    if-lt v4, v8, :cond_16b
+    if-lt v4, v8, :cond_9
 
     .line 360
     .line 361
@@ -847,12 +847,12 @@
     .line 362
     .line 363
     .line 364
-    :cond_16b
+    :cond_9
     const/16 v1, 0x100
 
     .line 365
     .line 366
-    if-lt v4, v1, :cond_174
+    if-lt v4, v1, :cond_a
 
     .line 367
     .line 368
@@ -865,12 +865,12 @@
     .line 371
     .line 372
     .line 373
-    :cond_174
+    :cond_a
     const/16 v1, 0x108
 
     .line 374
     .line 375
-    if-lt v4, v1, :cond_17d
+    if-lt v4, v1, :cond_b
 
     .line 376
     .line 377
@@ -883,12 +883,12 @@
     .line 380
     .line 381
     .line 382
-    :cond_17d
+    :cond_b
     const/16 v8, 0x10c
 
     .line 383
     .line 384
-    if-lt v4, v8, :cond_184
+    if-lt v4, v8, :cond_c
 
     .line 385
     .line 386
@@ -897,12 +897,12 @@
     .line 387
     .line 388
     .line 389
-    :cond_184
+    :cond_c
     const/16 v1, 0x114
 
     .line 390
     .line 391
-    if-lt v4, v1, :cond_18d
+    if-lt v4, v1, :cond_d
 
     .line 392
     .line 393
@@ -915,7 +915,7 @@
     .line 396
     .line 397
     .line 398
-    :cond_18d
+    :cond_d
     iget v1, p0, Llibs/ox1;->Link:I
 
     .line 399
@@ -923,7 +923,7 @@
     and-int/2addr v1, v7
 
     .line 401
-    if-eqz v1, :cond_1fc
+    if-eqz v1, :cond_12
 
     .line 402
     .line 403
@@ -989,8 +989,8 @@
     const/4 v7, 0x0
 
     .line 435
-    :goto_1b2
-    if-ge v7, v5, :cond_1fa
+    :goto_0
+    if-ge v7, v5, :cond_11
 
     .line 436
     .line 437
@@ -1001,8 +1001,8 @@
     const/4 v9, 0x0
 
     .line 440
-    :goto_1b7
-    if-ge v9, v7, :cond_1cf
+    :goto_1
+    if-ge v9, v7, :cond_f
 
     .line 441
     .line 442
@@ -1030,21 +1030,21 @@
 
     .line 453
     .line 454
-    if-eqz v10, :cond_1c9
+    if-eqz v10, :cond_e
 
     .line 455
     .line 456
     array-length v10, v10
 
     .line 457
-    goto :goto_1ca
+    goto :goto_2
 
     .line 458
-    :cond_1c9
+    :cond_e
     const/4 v10, 0x0
 
     .line 459
-    :goto_1ca
+    :goto_2
     add-int/2addr v10, v3
 
     .line 460
@@ -1055,10 +1055,10 @@
 
     .line 462
     .line 463
-    goto :goto_1b7
+    goto :goto_1
 
     .line 464
-    :cond_1cf
+    :cond_f
     invoke-static {v8, v2, p1}, Llibs/f3;->m(II[B)I
 
     .line 465
@@ -1088,7 +1088,7 @@
     move-result v9
 
     .line 479
-    if-lt v9, v3, :cond_1f4
+    if-lt v9, v3, :cond_10
 
     .line 480
     .line 481
@@ -1129,10 +1129,10 @@
 
     .line 499
     .line 500
-    goto :goto_1b2
+    goto :goto_0
 
     .line 501
-    :cond_1f4
+    :cond_10
     const-string p1, "Invalid EXTH record length"
 
     .line 502
@@ -1145,24 +1145,24 @@
     return-void
 
     .line 507
-    :cond_1fa
+    :cond_11
     iput-object v1, p0, Llibs/ox1;->State:Llibs/f1;
 
     .line 508
     .line 509
-    :cond_1fc
+    :cond_12
     iget-object v1, p0, Llibs/ox1;->State:Llibs/f1;
 
     .line 510
     .line 511
-    if-nez v1, :cond_201
+    if-nez v1, :cond_13
 
     .line 512
     .line 513
-    goto :goto_228
+    goto :goto_6
 
     .line 514
-    :cond_201
+    :cond_13
     iget-object v1, v1, Llibs/f1;->c:Ljava/lang/Object;
 
     .line 515
@@ -1185,8 +1185,8 @@
     const/4 v6, 0x0
 
     .line 524
-    :goto_20b
-    if-ge v6, v4, :cond_21f
+    :goto_3
+    if-ge v6, v4, :cond_15
 
     .line 525
     .line 526
@@ -1210,31 +1210,31 @@
 
     .line 535
     .line 536
-    if-eqz v7, :cond_21b
+    if-eqz v7, :cond_14
 
     .line 537
     .line 538
     array-length v7, v7
 
     .line 539
-    goto :goto_21c
+    goto :goto_4
 
     .line 540
-    :cond_21b
+    :cond_14
     const/4 v7, 0x0
 
     .line 541
-    :goto_21c
+    :goto_4
     add-int/2addr v7, v3
 
     .line 542
     add-int/2addr v5, v7
 
     .line 543
-    goto :goto_20b
+    goto :goto_3
 
     .line 544
-    :cond_21f
+    :cond_15
     add-int/lit8 v1, v5, 0xc
 
     .line 545
@@ -1242,23 +1242,23 @@
     rem-int/2addr v5, v2
 
     .line 547
-    if-nez v5, :cond_225
+    if-nez v5, :cond_16
 
     .line 548
     .line 549
-    goto :goto_227
+    goto :goto_5
 
     .line 550
-    :cond_225
+    :cond_16
     rsub-int/lit8 v0, v5, 0x4
 
     .line 551
     .line 552
-    :goto_227
+    :goto_5
     add-int/2addr v0, v1
 
     .line 553
-    :goto_228
+    :goto_6
     add-int/lit16 v0, v0, 0x118
 
     .line 554
@@ -1279,7 +1279,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

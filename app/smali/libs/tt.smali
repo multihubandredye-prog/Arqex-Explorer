@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 7
+    .locals 5
 
     .line 1
     invoke-direct {p0, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
@@ -114,7 +114,7 @@
 
     .line 48
     .line 49
-    if-lt v3, v4, :cond_4c
+    if-lt v3, v4, :cond_0
 
     .line 50
     .line 51
@@ -156,7 +156,7 @@
     move-result v1
 
     .line 71
-    if-eqz v1, :cond_73
+    if-eqz v1, :cond_1
 
     .line 72
     .line 73
@@ -165,10 +165,10 @@
     .line 74
     .line 75
     .line 76
-    goto :goto_73
+    goto :goto_0
 
     .line 77
-    :cond_4c
+    :cond_0
     new-instance p1, Llibs/st;
 
     .line 78
@@ -246,8 +246,8 @@
     .line 114
     .line 115
     .line 116
-    :cond_73
-    :goto_73
+    :cond_1
+    :goto_0
     invoke-virtual {v0}, Landroid/graphics/drawable/ShapeDrawable;->getPaint()Landroid/graphics/Paint;
 
     .line 117
@@ -277,7 +277,7 @@
 
 # virtual methods
 .method public final onAnimationEnd()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-super {p0}, Landroid/widget/ImageView;->onAnimationEnd()V
@@ -289,7 +289,7 @@
 
     .line 5
     .line 6
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
@@ -306,12 +306,12 @@
     .line 13
     .line 14
     .line 15
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method public final onAnimationStart()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-super {p0}, Landroid/widget/ImageView;->onAnimationStart()V
@@ -323,7 +323,7 @@
 
     .line 5
     .line 6
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
@@ -340,28 +340,28 @@
     .line 13
     .line 14
     .line 15
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method public final onDraw(Landroid/graphics/Canvas;)V
-    .registers 2
+    .locals 0
 
     .line 1
     :try_start_0
     invoke-super {p0, p1}, Landroid/widget/ImageView;->onDraw(Landroid/graphics/Canvas;)V
-    :try_end_3
-    .catchall {:try_start_0 .. :try_end_3} :catchall_3
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 2
     .line 3
     .line 4
-    :catchall_3
+    :catchall_0
     return-void
 .end method
 
 .method public final onMeasure(II)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-super {p0, p1, p2}, Landroid/widget/ImageView;->onMeasure(II)V
@@ -381,14 +381,14 @@
 
     .line 9
     .line 10
-    if-lt p1, p2, :cond_c
+    if-lt p1, p2, :cond_0
 
     .line 11
     .line 12
     return-void
 
     .line 13
-    :cond_c
+    :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     .line 14
@@ -436,7 +436,7 @@
 .end method
 
 .method public final setBackgroundColor(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
@@ -451,7 +451,7 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -480,6 +480,6 @@
     .line 20
     .line 21
     .line 22
-    :cond_15
+    :cond_0
     return-void
 .end method

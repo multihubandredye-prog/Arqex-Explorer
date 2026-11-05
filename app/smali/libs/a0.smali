@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/xc;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final engineGenerateParameters()Ljava/security/AlgorithmParameters;
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/a0;->b:Ljava/security/SecureRandom;
@@ -53,14 +53,14 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
-    goto :goto_c
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     new-instance v0, Ljava/security/SecureRandom;
 
     .line 9
@@ -70,7 +70,7 @@
     .line 11
     .line 12
     .line 13
-    :goto_c
+    :goto_0
     const/16 v2, 0x14
 
     .line 14
@@ -98,7 +98,7 @@
     move-result-object v0
 
     .line 26
-    :try_start_19
+    :try_start_0
     const-string v2, "ElGamal"
 
     .line 27
@@ -137,8 +137,8 @@
     .line 44
     .line 45
     invoke-virtual {v2, v3}, Ljava/security/AlgorithmParameters;->init(Ljava/security/spec/AlgorithmParameterSpec;)V
-    :try_end_2f
-    .catch Ljava/lang/Exception; {:try_start_19 .. :try_end_2f} :catch_30
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 46
     .line 47
@@ -146,7 +146,7 @@
     return-object v2
 
     .line 49
-    :catch_30
+    :catch_0
     move-exception v0
 
     .line 50
@@ -170,7 +170,7 @@
 .end method
 
 .method public final engineInit(ILjava/security/SecureRandom;)V
-    .registers 3
+    .locals 0
 
     .line 28
     iput p1, p0, Llibs/a0;->c:I
@@ -182,14 +182,14 @@
 .end method
 
 .method public final engineInit(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    .registers 4
+    .locals 1
 
     .line 1
     instance-of v0, p1, Ljavax/crypto/spec/DHGenParameterSpec;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -228,7 +228,7 @@
     return-void
 
     .line 22
-    :cond_15
+    :cond_0
     const-string p1, "DH parameter generator requires a DHGenParameterSpec for initialisation"
 
     .line 23

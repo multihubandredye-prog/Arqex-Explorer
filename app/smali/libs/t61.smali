@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public a()Z
-    .registers 2
+    .locals 1
 
     .line 1
     instance-of v0, p0, Llibs/yl0;
@@ -34,7 +34,7 @@
 .end method
 
 .method public b()Z
-    .registers 2
+    .locals 1
 
     .line 1
     instance-of v0, p0, Llibs/oj;
@@ -45,7 +45,7 @@
 .end method
 
 .method public c()Z
-    .registers 2
+    .locals 1
 
     .line 1
     instance-of v0, p0, Llibs/wg3;
@@ -56,7 +56,7 @@
 .end method
 
 .method public d(Ljava/lang/String;Z)Z
-    .registers 3
+    .locals 0
 
     .line 1
     instance-of p1, p0, Llibs/z42;
@@ -67,7 +67,7 @@
 .end method
 
 .method public e(Llibs/rp0;)Z
-    .registers 2
+    .locals 0
 
     .line 1
     instance-of p1, p0, Llibs/vp;
@@ -78,7 +78,7 @@
 .end method
 
 .method public f()Z
-    .registers 2
+    .locals 1
 
     .line 1
     instance-of v0, p0, Llibs/xl0;

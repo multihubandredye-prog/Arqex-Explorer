@@ -41,7 +41,7 @@
 
 # direct methods
 .method static synthetic constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/s53;
@@ -87,7 +87,7 @@
 .end method
 
 .method public synthetic constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -99,7 +99,7 @@
 .end method
 
 .method public static c(Landroid/content/Context;)Landroid/content/Intent;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Landroid/content/Intent;
@@ -155,7 +155,7 @@
 .end method
 
 .method public static d(Landroid/content/Context;)Landroid/content/Intent;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Landroid/content/Intent;
@@ -211,7 +211,7 @@
 .end method
 
 .method public static e(Landroid/content/Context;)Landroid/content/Intent;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Landroid/content/Intent;
@@ -267,14 +267,14 @@
 .end method
 
 .method public static f()Z
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/t53;->Y:Llibs/z40;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -282,7 +282,7 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -292,7 +292,7 @@
     return v0
 
     .line 11
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
     .line 12
@@ -300,14 +300,14 @@
 .end method
 
 .method public static g()Z
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/t53;->Xi:Llibs/in0;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -315,7 +315,7 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -325,7 +325,7 @@
     return v0
 
     .line 11
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
     .line 12
@@ -333,14 +333,14 @@
 .end method
 
 .method public static j()Z
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/t53;->Tau:Llibs/bx2;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -348,7 +348,7 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -358,7 +358,7 @@
     return v0
 
     .line 11
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
     .line 12
@@ -366,13 +366,13 @@
 .end method
 
 .method public static k(Landroid/content/Context;Landroid/appwidget/AppWidgetManager;IZ)V
-    .registers 10
+    .locals 6
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :try_start_1
+    :try_start_0
     new-instance v1, Landroid/widget/RemoteViews;
 
     .line 3
@@ -465,7 +465,7 @@
     move-result v2
 
     .line 50
-    if-nez v2, :cond_3a
+    if-nez v2, :cond_0
 
     .line 51
     .line 52
@@ -477,23 +477,23 @@
 
     .line 55
     .line 56
-    goto :goto_3a
+    goto :goto_0
 
     .line 57
-    :catchall_38
+    :catchall_0
     move-exception p0
 
     .line 58
-    goto :goto_57
+    goto :goto_2
 
     .line 59
-    :cond_3a
-    :goto_3a
+    :cond_0
+    :goto_0
     sget v2, Llibs/wh2;->widget_dlna_switch:I
 
     .line 60
     .line 61
-    if-eqz p3, :cond_45
+    if-eqz p3, :cond_1
 
     .line 62
     .line 63
@@ -509,10 +509,10 @@
     move-result-object p0
 
     .line 69
-    goto :goto_4b
+    goto :goto_1
 
     .line 70
-    :cond_45
+    :cond_1
     sget v3, Llibs/vh2;->icon_widget_server_off:I
 
     .line 71
@@ -525,7 +525,7 @@
     move-result-object p0
 
     .line 76
-    :goto_4b
+    :goto_1
     invoke-virtual {v1, v2, p0}, Landroid/widget/RemoteViews;->setImageViewBitmap(ILandroid/graphics/Bitmap;)V
 
     .line 77
@@ -541,8 +541,8 @@
     .line 83
     .line 84
     invoke-virtual {p0, p3}, Llibs/s53;->h(Z)V
-    :try_end_56
-    .catchall {:try_start_1 .. :try_end_56} :catchall_38
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 85
     .line 86
@@ -550,7 +550,7 @@
     return-void
 
     .line 88
-    :goto_57
+    :goto_2
     invoke-static {p0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 89
@@ -587,13 +587,13 @@
 .end method
 
 .method public static l(Landroid/content/Context;Landroid/appwidget/AppWidgetManager;IZ)V
-    .registers 10
+    .locals 6
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :try_start_1
+    :try_start_0
     new-instance v1, Landroid/widget/RemoteViews;
 
     .line 3
@@ -686,7 +686,7 @@
     move-result v2
 
     .line 50
-    if-nez v2, :cond_3a
+    if-nez v2, :cond_0
 
     .line 51
     .line 52
@@ -698,23 +698,23 @@
 
     .line 55
     .line 56
-    goto :goto_3a
+    goto :goto_0
 
     .line 57
-    :catchall_38
+    :catchall_0
     move-exception p0
 
     .line 58
-    goto :goto_57
+    goto :goto_2
 
     .line 59
-    :cond_3a
-    :goto_3a
+    :cond_0
+    :goto_0
     sget v2, Llibs/wh2;->widget_ftp_switch:I
 
     .line 60
     .line 61
-    if-eqz p3, :cond_45
+    if-eqz p3, :cond_1
 
     .line 62
     .line 63
@@ -730,10 +730,10 @@
     move-result-object p0
 
     .line 69
-    goto :goto_4b
+    goto :goto_1
 
     .line 70
-    :cond_45
+    :cond_1
     sget v3, Llibs/vh2;->icon_widget_server_off:I
 
     .line 71
@@ -746,7 +746,7 @@
     move-result-object p0
 
     .line 76
-    :goto_4b
+    :goto_1
     invoke-virtual {v1, v2, p0}, Landroid/widget/RemoteViews;->setImageViewBitmap(ILandroid/graphics/Bitmap;)V
 
     .line 77
@@ -762,8 +762,8 @@
     .line 83
     .line 84
     invoke-virtual {p0, p3}, Llibs/s53;->h(Z)V
-    :try_end_56
-    .catchall {:try_start_1 .. :try_end_56} :catchall_38
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 85
     .line 86
@@ -771,7 +771,7 @@
     return-void
 
     .line 88
-    :goto_57
+    :goto_2
     invoke-static {p0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 89
@@ -808,13 +808,13 @@
 .end method
 
 .method public static m(Landroid/content/Context;Landroid/appwidget/AppWidgetManager;IZ)V
-    .registers 10
+    .locals 6
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :try_start_1
+    :try_start_0
     new-instance v1, Landroid/widget/RemoteViews;
 
     .line 3
@@ -907,7 +907,7 @@
     move-result v2
 
     .line 50
-    if-nez v2, :cond_3a
+    if-nez v2, :cond_0
 
     .line 51
     .line 52
@@ -919,23 +919,23 @@
 
     .line 55
     .line 56
-    goto :goto_3a
+    goto :goto_0
 
     .line 57
-    :catchall_38
+    :catchall_0
     move-exception p0
 
     .line 58
-    goto :goto_57
+    goto :goto_2
 
     .line 59
-    :cond_3a
-    :goto_3a
+    :cond_0
+    :goto_0
     sget v2, Llibs/wh2;->widget_smb_switch:I
 
     .line 60
     .line 61
-    if-eqz p3, :cond_45
+    if-eqz p3, :cond_1
 
     .line 62
     .line 63
@@ -951,10 +951,10 @@
     move-result-object p0
 
     .line 69
-    goto :goto_4b
+    goto :goto_1
 
     .line 70
-    :cond_45
+    :cond_1
     sget v3, Llibs/vh2;->icon_widget_server_off:I
 
     .line 71
@@ -967,7 +967,7 @@
     move-result-object p0
 
     .line 76
-    :goto_4b
+    :goto_1
     invoke-virtual {v1, v2, p0}, Landroid/widget/RemoteViews;->setImageViewBitmap(ILandroid/graphics/Bitmap;)V
 
     .line 77
@@ -983,8 +983,8 @@
     .line 83
     .line 84
     invoke-virtual {p0, p3}, Llibs/s53;->h(Z)V
-    :try_end_56
-    .catchall {:try_start_1 .. :try_end_56} :catchall_38
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 85
     .line 86
@@ -992,7 +992,7 @@
     return-void
 
     .line 88
-    :goto_57
+    :goto_2
     invoke-static {p0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 89
@@ -1031,7 +1031,7 @@
 
 # virtual methods
 .method public a()V
-    .registers 3
+    .locals 2
 
     .line 1
     const-string v0, "FingerprintManager not available on this device"
@@ -1051,7 +1051,7 @@
 .end method
 
 .method public b(Ljava/lang/String;Ljava/lang/Exception;)V
-    .registers 4
+    .locals 1
 
     .line 1
     const-string v0, "Fingerprint"
@@ -1067,14 +1067,14 @@
 .end method
 
 .method public h()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public i()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void

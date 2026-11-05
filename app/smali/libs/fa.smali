@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/security/spec/ECPublicKeySpec;Llibs/pg2;)V
-    .registers 4
+    .locals 0
 
     .line 115
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +52,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Llibs/fa;)V
-    .registers 3
+    .locals 0
 
     .line 183
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -79,7 +79,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Llibs/ji3;Llibs/pg2;)V
-    .registers 8
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -170,7 +170,7 @@
     const/4 v2, 0x0
 
     .line 45
-    if-ne v0, v1, :cond_57
+    if-ne v0, v1, :cond_1
 
     .line 46
     .line 47
@@ -190,7 +190,7 @@
     sub-int/2addr v1, v3
 
     .line 53
-    if-ne v0, v1, :cond_57
+    if-ne v0, v1, :cond_1
 
     .line 54
     .line 55
@@ -201,15 +201,15 @@
     const/4 v1, 0x3
 
     .line 58
-    if-eq v0, v3, :cond_3d
+    if-eq v0, v3, :cond_0
 
     .line 59
     .line 60
-    if-ne v0, v1, :cond_57
+    if-ne v0, v1, :cond_1
 
     .line 61
     .line 62
-    :cond_3d
+    :cond_0
     invoke-virtual {p3}, Llibs/kf0;->j()I
 
     .line 63
@@ -232,11 +232,11 @@
     sub-int/2addr v3, v1
 
     .line 72
-    if-lt v0, v3, :cond_57
+    if-lt v0, v3, :cond_1
 
     .line 73
     .line 74
-    :try_start_49
+    :try_start_0
     invoke-static {p1}, Llibs/Theme;->j([B)Llibs/Theme;
 
     .line 75
@@ -249,15 +249,15 @@
 
     .line 79
     check-cast p2, Llibs/Part;
-    :try_end_50
-    .catch Ljava/io/IOException; {:try_start_49 .. :try_end_50} :catch_51
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 80
     .line 81
-    goto :goto_57
+    goto :goto_0
 
     .line 82
-    :catch_51
+    :catch_0
     const-string p1, "error recovering public key"
 
     .line 83
@@ -270,8 +270,8 @@
     throw v2
 
     .line 88
-    :cond_57
-    :goto_57
+    :cond_1
+    :goto_0
     invoke-virtual {p2}, Llibs/Part;->q()[B
 
     .line 89
@@ -288,7 +288,7 @@
     move-result-object p1
 
     .line 96
-    if-eqz p1, :cond_6c
+    if-eqz p1, :cond_2
 
     .line 97
     .line 98
@@ -315,7 +315,7 @@
     return-void
 
     .line 109
-    :cond_6c
+    :cond_2
     const-string p1, "string cannot be null"
 
     .line 110
@@ -329,7 +329,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Llibs/pg0;Ljava/security/spec/ECParameterSpec;Llibs/pg2;)V
-    .registers 6
+    .locals 1
 
     .line 142
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -351,7 +351,7 @@
     .line 147
     iput-object p1, p0, Llibs/fa;->Y:Llibs/ig0;
 
-    if-nez p3, :cond_23
+    if-nez p3, :cond_0
 
     .line 148
     iget-object p1, v0, Llibs/sf0;->X:Llibs/kf0;
@@ -373,21 +373,21 @@
 
     iput-object p1, p0, Llibs/fa;->Z:Ljava/security/spec/ECParameterSpec;
 
-    goto :goto_25
+    goto :goto_0
 
     .line 152
-    :cond_23
+    :cond_0
     iput-object p3, p0, Llibs/fa;->Z:Ljava/security/spec/ECParameterSpec;
 
     .line 153
-    :goto_25
+    :goto_0
     iput-object p4, p0, Llibs/fa;->Lambda:Llibs/pg2;
 
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Llibs/pg0;Llibs/gg0;Llibs/pg2;)V
-    .registers 6
+    .locals 1
 
     .line 154
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -405,7 +405,7 @@
     .line 157
     iput-object p1, p0, Llibs/fa;->X:Ljava/lang/String;
 
-    if-nez p3, :cond_21
+    if-nez p3, :cond_0
 
     .line 158
     iget-object p1, v0, Llibs/sf0;->X:Llibs/kf0;
@@ -427,10 +427,10 @@
 
     iput-object p1, p0, Llibs/fa;->Z:Ljava/security/spec/ECParameterSpec;
 
-    goto :goto_2d
+    goto :goto_0
 
     .line 162
-    :cond_21
+    :cond_0
     iget-object p1, p3, Llibs/gg0;->X:Llibs/kf0;
 
     .line 163
@@ -446,7 +446,7 @@
     iput-object p1, p0, Llibs/fa;->Z:Ljava/security/spec/ECParameterSpec;
 
     .line 165
-    :goto_2d
+    :goto_0
     invoke-virtual {p1}, Ljava/security/spec/ECParameterSpec;->getCurve()Ljava/security/spec/EllipticCurve;
 
     move-result-object p1
@@ -491,7 +491,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Llibs/pg0;Llibs/pg2;)V
-    .registers 4
+    .locals 0
 
     .line 172
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -517,7 +517,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Llibs/qg0;Llibs/pg2;)V
-    .registers 8
+    .locals 4
 
     .line 120
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -536,7 +536,7 @@
 
     const/4 v0, 0x0
 
-    if-eqz p2, :cond_36
+    if-eqz p2, :cond_0
 
     .line 125
     iget-object v1, p2, Llibs/gg0;->X:Llibs/kf0;
@@ -585,13 +585,13 @@
 
     iput-object p1, p0, Llibs/fa;->Z:Ljava/security/spec/ECParameterSpec;
 
-    goto :goto_5e
+    goto :goto_0
 
     .line 134
-    :cond_36
+    :cond_0
     iget-object p1, p1, Llibs/ig0;->a:Llibs/kf0;
 
-    if-nez p1, :cond_5b
+    if-nez p1, :cond_1
 
     .line 135
     move-object p1, p3
@@ -632,21 +632,21 @@
 
     iput-object p1, p0, Llibs/fa;->Y:Llibs/ig0;
 
-    :cond_5b
+    :cond_1
     const/4 p1, 0x0
 
     .line 140
     iput-object p1, p0, Llibs/fa;->Z:Ljava/security/spec/ECParameterSpec;
 
     .line 141
-    :goto_5e
+    :goto_0
     iput-object p3, p0, Llibs/fa;->Lambda:Llibs/pg2;
 
     return-void
 .end method
 
 .method public constructor <init>(Ljava/security/interfaces/ECPublicKey;Llibs/pg2;)V
-    .registers 3
+    .locals 0
 
     .line 178
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -685,7 +685,7 @@
 .end method
 
 .method public static b(Ljava/security/spec/EllipticCurve;Llibs/sf0;)Ljava/security/spec/ECParameterSpec;
-    .registers 6
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/security/spec/ECParameterSpec;
@@ -769,14 +769,14 @@
 
 # virtual methods
 .method public final a()Llibs/gg0;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/fa;->Z:Ljava/security/spec/ECParameterSpec;
 
     .line 2
     .line 3
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -786,7 +786,7 @@
     return-object v0
 
     .line 7
-    :cond_6
+    :cond_0
     invoke-static {v0}, Llibs/df0;->f(Ljava/security/spec/ECParameterSpec;)Llibs/gg0;
 
     .line 8
@@ -799,14 +799,14 @@
 .end method
 
 .method public final c()Llibs/gg0;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/fa;->Z:Ljava/security/spec/ECParameterSpec;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -821,7 +821,7 @@
     return-object v0
 
     .line 10
-    :cond_9
+    :cond_0
     iget-object v0, p0, Llibs/fa;->Lambda:Llibs/pg2;
 
     .line 11
@@ -842,7 +842,7 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     instance-of v0, p1, Llibs/fa;
@@ -852,14 +852,14 @@
     const/4 v1, 0x0
 
     .line 4
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 5
     .line 6
     return v1
 
     .line 7
-    :cond_6
+    :cond_0
     check-cast p1, Llibs/fa;
 
     .line 8
@@ -880,7 +880,7 @@
     move-result v0
 
     .line 17
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_1
 
     .line 18
     .line 19
@@ -908,7 +908,7 @@
     move-result p1
 
     .line 31
-    if-eqz p1, :cond_22
+    if-eqz p1, :cond_1
 
     .line 32
     .line 33
@@ -918,12 +918,12 @@
     return p1
 
     .line 35
-    :cond_22
+    :cond_1
     return v1
 .end method
 
 .method public final getAlgorithm()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/fa;->X:Ljava/lang/String;
@@ -934,7 +934,7 @@
 .end method
 
 .method public final getEncoded()[B
-    .registers 9
+    .locals 8
 
     .line 1
     iget-object v0, p0, Llibs/fa;->Z:Ljava/security/spec/ECParameterSpec;
@@ -945,7 +945,7 @@
 
     .line 4
     .line 5
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_1
 
     .line 6
     .line 7
@@ -968,7 +968,7 @@
     move-result-object v1
 
     .line 16
-    if-nez v1, :cond_1b
+    if-nez v1, :cond_0
 
     .line 17
     .line 18
@@ -992,7 +992,7 @@
     .line 26
     .line 27
     .line 28
-    :cond_1b
+    :cond_0
     new-instance v2, Llibs/xw3;
 
     .line 29
@@ -1002,11 +1002,11 @@
     .line 31
     .line 32
     .line 33
-    goto :goto_59
+    goto :goto_0
 
     .line 34
-    :cond_21
-    if-nez v0, :cond_29
+    :cond_1
+    if-nez v0, :cond_2
 
     .line 35
     .line 36
@@ -1019,10 +1019,10 @@
     .line 39
     .line 40
     .line 41
-    goto :goto_59
+    goto :goto_0
 
     .line 42
-    :cond_29
+    :cond_2
     invoke-virtual {v0}, Ljava/security/spec/ECParameterSpec;->getCurve()Ljava/security/spec/EllipticCurve;
 
     .line 43
@@ -1119,7 +1119,7 @@
     move-object v2, v1
 
     .line 90
-    :goto_59
+    :goto_0
     iget-object v1, p0, Llibs/fa;->Y:Llibs/ig0;
 
     .line 91
@@ -1131,7 +1131,7 @@
     const/4 v3, 0x0
 
     .line 95
-    if-nez v0, :cond_87
+    if-nez v0, :cond_3
 
     .line 96
     .line 97
@@ -1209,10 +1209,10 @@
     .line 133
     .line 134
     .line 135
-    goto :goto_b0
+    goto :goto_1
 
     .line 136
-    :cond_87
+    :cond_3
     invoke-virtual {p0}, Llibs/fa;->getQ()Llibs/ig0;
 
     .line 137
@@ -1292,7 +1292,7 @@
     .line 175
     .line 176
     .line 177
-    :goto_b0
+    :goto_1
     new-instance v0, Llibs/ji3;
 
     .line 178
@@ -1331,7 +1331,7 @@
 .end method
 
 .method public final getFormat()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "X.509"
@@ -1342,7 +1342,7 @@
 .end method
 
 .method public final getParams()Ljava/security/spec/ECParameterSpec;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/fa;->Z:Ljava/security/spec/ECParameterSpec;
@@ -1353,7 +1353,7 @@
 .end method
 
 .method public final getQ()Llibs/ig0;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/fa;->Z:Ljava/security/spec/ECParameterSpec;
@@ -1364,7 +1364,7 @@
 
     .line 4
     .line 5
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -1387,12 +1387,12 @@
     return-object v0
 
     .line 16
-    :cond_f
+    :cond_0
     return-object v1
 .end method
 
 .method public final getW()Ljava/security/spec/ECPoint;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/security/spec/ECPoint;
@@ -1445,7 +1445,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/fa;->Y:Llibs/ig0;
@@ -1483,7 +1483,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Ljava/lang/StringBuffer;

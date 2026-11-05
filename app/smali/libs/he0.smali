@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/util/concurrent/atomic/AtomicInteger;Ljava/util/LinkedHashMap;Landroid/widget/CheckBox;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 13
+    .locals 7
 
     .line 1
     iget-object p1, p0, Llibs/he0;->X:Ljava/util/concurrent/atomic/AtomicInteger;
@@ -137,16 +137,16 @@
     const/4 v4, -0x1
 
     .line 47
-    sparse-switch p2, :sswitch_data_116
+    sparse-switch p2, :sswitch_data_0
 
     .line 48
     .line 49
     .line 50
-    goto/16 :goto_a6
+    goto/16 :goto_0
 
     .line 51
     .line 52
-    :sswitch_33
+    :sswitch_0
     const-string p2, "DropBoxHash"
 
     .line 53
@@ -159,24 +159,24 @@
     move-result p2
 
     .line 58
-    if-nez p2, :cond_3d
+    if-nez p2, :cond_0
 
     .line 59
     .line 60
-    goto/16 :goto_a6
+    goto/16 :goto_0
 
     .line 61
     .line 62
-    :cond_3d
+    :cond_0
     const/16 v4, 0x9
 
     .line 63
     .line 64
-    goto/16 :goto_a6
+    goto/16 :goto_0
 
     .line 65
     .line 66
-    :sswitch_41
+    :sswitch_1
     const-string p2, "CRC-64"
 
     .line 67
@@ -189,24 +189,24 @@
     move-result p2
 
     .line 72
-    if-nez p2, :cond_4b
+    if-nez p2, :cond_1
 
     .line 73
     .line 74
-    goto/16 :goto_a6
+    goto/16 :goto_0
 
     .line 75
     .line 76
-    :cond_4b
+    :cond_1
     const/16 v4, 0x8
 
     .line 77
     .line 78
-    goto/16 :goto_a6
+    goto/16 :goto_0
 
     .line 79
     .line 80
-    :sswitch_4f
+    :sswitch_2
     const-string p2, "CRC-32"
 
     .line 81
@@ -219,21 +219,21 @@
     move-result p2
 
     .line 86
-    if-nez p2, :cond_58
+    if-nez p2, :cond_2
 
     .line 87
     .line 88
-    goto :goto_a6
+    goto :goto_0
 
     .line 89
-    :cond_58
+    :cond_2
     const/4 v4, 0x7
 
     .line 90
-    goto :goto_a6
+    goto :goto_0
 
     .line 91
-    :sswitch_5a
+    :sswitch_3
     const-string p2, "SHA-1"
 
     .line 92
@@ -246,21 +246,21 @@
     move-result p2
 
     .line 97
-    if-nez p2, :cond_63
+    if-nez p2, :cond_3
 
     .line 98
     .line 99
-    goto :goto_a6
+    goto :goto_0
 
     .line 100
-    :cond_63
+    :cond_3
     const/4 v4, 0x6
 
     .line 101
-    goto :goto_a6
+    goto :goto_0
 
     .line 102
-    :sswitch_65
+    :sswitch_4
     const-string p2, "MD5"
 
     .line 103
@@ -273,21 +273,21 @@
     move-result p2
 
     .line 108
-    if-nez p2, :cond_6e
+    if-nez p2, :cond_4
 
     .line 109
     .line 110
-    goto :goto_a6
+    goto :goto_0
 
     .line 111
-    :cond_6e
+    :cond_4
     const/4 v4, 0x5
 
     .line 112
-    goto :goto_a6
+    goto :goto_0
 
     .line 113
-    :sswitch_70
+    :sswitch_5
     const-string p2, "MD4"
 
     .line 114
@@ -300,21 +300,21 @@
     move-result p2
 
     .line 119
-    if-nez p2, :cond_79
+    if-nez p2, :cond_5
 
     .line 120
     .line 121
-    goto :goto_a6
+    goto :goto_0
 
     .line 122
-    :cond_79
+    :cond_5
     const/4 v4, 0x4
 
     .line 123
-    goto :goto_a6
+    goto :goto_0
 
     .line 124
-    :sswitch_7b
+    :sswitch_6
     const-string p2, "QuickXor"
 
     .line 125
@@ -327,21 +327,21 @@
     move-result p2
 
     .line 130
-    if-nez p2, :cond_84
+    if-nez p2, :cond_6
 
     .line 131
     .line 132
-    goto :goto_a6
+    goto :goto_0
 
     .line 133
-    :cond_84
+    :cond_6
     const/4 v4, 0x3
 
     .line 134
-    goto :goto_a6
+    goto :goto_0
 
     .line 135
-    :sswitch_86
+    :sswitch_7
     const-string p2, "SHA-512"
 
     .line 136
@@ -354,21 +354,21 @@
     move-result p2
 
     .line 141
-    if-nez p2, :cond_8f
+    if-nez p2, :cond_7
 
     .line 142
     .line 143
-    goto :goto_a6
+    goto :goto_0
 
     .line 144
-    :cond_8f
+    :cond_7
     const/4 v4, 0x2
 
     .line 145
-    goto :goto_a6
+    goto :goto_0
 
     .line 146
-    :sswitch_91
+    :sswitch_8
     const-string p2, "SHA-384"
 
     .line 147
@@ -381,21 +381,21 @@
     move-result p2
 
     .line 152
-    if-nez p2, :cond_9a
+    if-nez p2, :cond_8
 
     .line 153
     .line 154
-    goto :goto_a6
+    goto :goto_0
 
     .line 155
-    :cond_9a
+    :cond_8
     const/4 v4, 0x1
 
     .line 156
-    goto :goto_a6
+    goto :goto_0
 
     .line 157
-    :sswitch_9c
+    :sswitch_9
     const-string p2, "SHA-256"
 
     .line 158
@@ -408,31 +408,31 @@
     move-result p2
 
     .line 163
-    if-nez p2, :cond_a5
+    if-nez p2, :cond_9
 
     .line 164
     .line 165
-    goto :goto_a6
+    goto :goto_0
 
     .line 166
-    :cond_a5
+    :cond_9
     const/4 v4, 0x0
 
     .line 167
-    :goto_a6
-    packed-switch v4, :pswitch_data_140
+    :goto_0
+    packed-switch v4, :pswitch_data_0
 
     .line 168
     .line 169
     .line 170
-    goto :goto_f2
+    goto :goto_2
 
     .line 171
-    :pswitch_aa
+    :pswitch_0
     monitor-enter p4
 
     .line 172
-    :try_start_ab
+    :try_start_0
     invoke-interface {p4}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     .line 173
@@ -449,8 +449,8 @@
     move-result-object p2
 
     .line 180
-    :cond_b3
-    :goto_b3
+    :cond_a
+    :goto_1
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     .line 181
@@ -459,7 +459,7 @@
     move-result v4
 
     .line 184
-    if-eqz v4, :cond_f1
+    if-eqz v4, :cond_d
 
     .line 185
     .line 186
@@ -487,14 +487,14 @@
 
     .line 197
     .line 198
-    if-nez v5, :cond_c8
+    if-nez v5, :cond_b
 
     .line 199
     .line 200
-    goto :goto_b3
+    goto :goto_1
 
     .line 201
-    :cond_c8
+    :cond_b
     invoke-interface {v5, v0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     .line 202
@@ -503,7 +503,7 @@
     move-result v5
 
     .line 205
-    if-nez v5, :cond_b3
+    if-nez v5, :cond_a
 
     .line 206
     .line 207
@@ -515,7 +515,7 @@
     move-result v5
 
     .line 211
-    if-nez v5, :cond_e8
+    if-nez v5, :cond_c
 
     .line 212
     .line 213
@@ -552,17 +552,17 @@
     .line 228
     .line 229
     .line 230
-    goto :goto_b3
+    goto :goto_1
 
     .line 231
-    :catchall_e6
+    :catchall_0
     move-exception p1
 
     .line 232
-    goto :goto_111
+    goto :goto_5
 
     .line 233
-    :cond_e8
+    :cond_c
     const-string v5, ", "
 
     .line 234
@@ -577,16 +577,16 @@
     .line 239
     .line 240
     .line 241
-    goto :goto_b3
+    goto :goto_1
 
     .line 242
-    :cond_f1
+    :cond_d
     monitor-exit p4
-    :try_end_f2
-    .catchall {:try_start_ab .. :try_end_f2} :catchall_e6
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 243
-    :goto_f2
+    :goto_2
     invoke-virtual {p5, v3}, Landroid/widget/CompoundButton;->setChecked(Z)V
 
     .line 244
@@ -600,18 +600,18 @@
     move-result p2
 
     .line 250
-    if-gtz p2, :cond_fc
+    if-gtz p2, :cond_e
 
     .line 251
     .line 252
-    goto :goto_fd
+    goto :goto_3
 
     .line 253
-    :cond_fc
+    :cond_e
     const/4 p3, 0x0
 
     .line 254
-    :goto_fd
+    :goto_3
     invoke-virtual {p5, p3}, Landroid/view/View;->setVisibility(I)V
 
     .line 255
@@ -625,7 +625,7 @@
     move-result p2
 
     .line 261
-    if-gtz p2, :cond_109
+    if-gtz p2, :cond_f
 
     .line 262
     .line 263
@@ -633,10 +633,10 @@
 
     .line 264
     .line 265
-    goto :goto_10d
+    goto :goto_4
 
     .line 266
-    :cond_109
+    :cond_f
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 267
@@ -645,7 +645,7 @@
     move-result-object p1
 
     .line 270
-    :goto_10d
+    :goto_4
     invoke-virtual {p5, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 271
@@ -654,39 +654,39 @@
     return-void
 
     .line 274
-    :goto_111
-    :try_start_111
+    :goto_5
+    :try_start_1
     monitor-exit p4
-    :try_end_112
-    .catchall {:try_start_111 .. :try_end_112} :catchall_e6
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 275
-    goto :goto_114
+    goto :goto_7
 
     .line 276
-    :goto_113
+    :goto_6
     throw p1
 
     .line 277
-    :goto_114
-    goto :goto_113
+    :goto_7
+    goto :goto_6
 
     .line 278
     nop
 
     .line 279
-    :sswitch_data_116
+    :sswitch_data_0
     .sparse-switch
-        -0x5ad4ae6e -> :sswitch_9c
-        -0x5ad4aa52 -> :sswitch_91
-        -0x5ad4a3ab -> :sswitch_86
-        -0x3bb5ccb2 -> :sswitch_7b
-        0x1297d -> :sswitch_70
-        0x1297e -> :sswitch_65
-        0x4b35330 -> :sswitch_5a
-        0x76f75d18 -> :sswitch_4f
-        0x76f75d77 -> :sswitch_41
-        0x79260b6a -> :sswitch_33
+        -0x5ad4ae6e -> :sswitch_9
+        -0x5ad4aa52 -> :sswitch_8
+        -0x5ad4a3ab -> :sswitch_7
+        -0x3bb5ccb2 -> :sswitch_6
+        0x1297d -> :sswitch_5
+        0x1297e -> :sswitch_4
+        0x4b35330 -> :sswitch_3
+        0x76f75d18 -> :sswitch_2
+        0x76f75d77 -> :sswitch_1
+        0x79260b6a -> :sswitch_0
     .end sparse-switch
 
     .line 280
@@ -731,17 +731,17 @@
     .line 319
     .line 320
     .line 321
-    :pswitch_data_140
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_aa
-        :pswitch_aa
-        :pswitch_aa
-        :pswitch_aa
-        :pswitch_aa
-        :pswitch_aa
-        :pswitch_aa
-        :pswitch_aa
-        :pswitch_aa
-        :pswitch_aa
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
     .end packed-switch
 .end method

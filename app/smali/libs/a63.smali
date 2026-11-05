@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/rp0;JJ)V
-    .registers 8
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -75,7 +75,7 @@
 
 # virtual methods
 .method public final a()Llibs/rp0;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/a63;->e:Llibs/rp0;
@@ -86,7 +86,7 @@
 .end method
 
 .method public final b()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Llibs/a63;->f:J
@@ -97,7 +97,7 @@
 .end method
 
 .method public final c()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/a63;->j:[B
@@ -108,7 +108,7 @@
 .end method
 
 .method public final d()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/a63;->e:Llibs/rp0;
@@ -123,7 +123,7 @@
 .end method
 
 .method public final e()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/a63;->d:[B
@@ -134,7 +134,7 @@
 .end method
 
 .method public final f()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Llibs/a63;->a:J
@@ -145,7 +145,7 @@
 .end method
 
 .method public final g()Ljava/util/List;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/a63;->g:Ljava/util/ArrayList;
@@ -156,7 +156,7 @@
 .end method
 
 .method public final h()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/a63;->h:I
@@ -167,7 +167,7 @@
 .end method
 
 .method public final i()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Llibs/a63;->b:J
@@ -178,7 +178,7 @@
 .end method
 
 .method public final j()I
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/a63;->e:Llibs/rp0;
@@ -197,7 +197,7 @@
 
     .line 8
     .line 9
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     .line 10
     .line 11
@@ -224,12 +224,12 @@
     add-int/2addr v2, v1
 
     .line 22
-    :cond_15
+    :cond_0
     iget-object v1, v0, Llibs/rp0;->Three:Ljava/lang/String;
 
     .line 23
     .line 24
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_1
 
     .line 25
     .line 26
@@ -248,12 +248,12 @@
     add-int/2addr v2, v1
 
     .line 33
-    :cond_20
+    :cond_1
     iget-object v1, v0, Llibs/rp0;->Xi:Ljava/lang/String;
 
     .line 34
     .line 35
-    if-eqz v1, :cond_2b
+    if-eqz v1, :cond_2
 
     .line 36
     .line 37
@@ -272,12 +272,12 @@
     add-int/2addr v2, v1
 
     .line 44
-    :cond_2b
+    :cond_2
     iget-object v1, v0, Llibs/rp0;->Omicron:Ljava/lang/String;
 
     .line 45
     .line 46
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_3
 
     .line 47
     .line 48
@@ -296,12 +296,12 @@
     add-int/2addr v2, v1
 
     .line 55
-    :cond_36
+    :cond_3
     iget-object v1, v0, Llibs/rp0;->Eight:Ljava/lang/String;
 
     .line 56
     .line 57
-    if-eqz v1, :cond_41
+    if-eqz v1, :cond_4
 
     .line 58
     .line 59
@@ -320,12 +320,12 @@
     add-int/2addr v2, v1
 
     .line 66
-    :cond_41
+    :cond_4
     iget-object v1, v0, Llibs/rp0;->Foxtrot:Ljava/lang/String;
 
     .line 67
     .line 68
-    if-eqz v1, :cond_4c
+    if-eqz v1, :cond_5
 
     .line 69
     .line 70
@@ -344,12 +344,12 @@
     add-int/2addr v2, v1
 
     .line 77
-    :cond_4c
+    :cond_5
     iget-object v1, v0, Llibs/rp0;->India:Ljava/lang/String;
 
     .line 78
     .line 79
-    if-eqz v1, :cond_57
+    if-eqz v1, :cond_6
 
     .line 80
     .line 81
@@ -368,12 +368,12 @@
     add-int/2addr v2, v1
 
     .line 88
-    :cond_57
+    :cond_6
     iget-object v1, v0, Llibs/rp0;->lI:Ljava/lang/String;
 
     .line 89
     .line 90
-    if-eqz v1, :cond_62
+    if-eqz v1, :cond_7
 
     .line 91
     .line 92
@@ -392,12 +392,12 @@
     add-int/2addr v2, v1
 
     .line 99
-    :cond_62
+    :cond_7
     iget-object v1, v0, Llibs/rp0;->Oo:Ljava/lang/String;
 
     .line 100
     .line 101
-    if-eqz v1, :cond_6d
+    if-eqz v1, :cond_8
 
     .line 102
     .line 103
@@ -416,12 +416,12 @@
     add-int/2addr v2, v1
 
     .line 110
-    :cond_6d
+    :cond_8
     iget-object v1, v0, Llibs/rp0;->Tau:Landroid/graphics/Point;
 
     .line 111
     .line 112
-    if-eqz v1, :cond_73
+    if-eqz v1, :cond_9
 
     .line 113
     .line 114
@@ -429,12 +429,12 @@
 
     .line 115
     .line 116
-    :cond_73
+    :cond_9
     iget-object v1, v0, Llibs/rp0;->Hotel:Llibs/ie;
 
     .line 117
     .line 118
-    if-eqz v1, :cond_79
+    if-eqz v1, :cond_a
 
     .line 119
     .line 120
@@ -442,12 +442,12 @@
 
     .line 121
     .line 122
-    :cond_79
+    :cond_a
     iget-object v1, v0, Llibs/rp0;->Zulu:Llibs/xl2;
 
     .line 123
     .line 124
-    if-eqz v1, :cond_7f
+    if-eqz v1, :cond_b
 
     .line 125
     .line 126
@@ -455,12 +455,12 @@
 
     .line 127
     .line 128
-    :cond_7f
+    :cond_b
     iget-object v0, v0, Llibs/rp0;->Uniform:Llibs/zp;
 
     .line 129
     .line 130
-    if-eqz v0, :cond_85
+    if-eqz v0, :cond_c
 
     .line 131
     .line 132
@@ -468,7 +468,7 @@
 
     .line 133
     .line 134
-    :cond_85
+    :cond_c
     const/16 v0, 0x1e
 
     .line 135
@@ -480,7 +480,7 @@
 
     .line 138
     .line 139
-    if-eqz v1, :cond_8e
+    if-eqz v1, :cond_d
 
     .line 140
     .line 141
@@ -490,12 +490,12 @@
     add-int/2addr v0, v1
 
     .line 143
-    :cond_8e
+    :cond_d
     iget-object v1, p0, Llibs/a63;->i:Ljava/lang/String;
 
     .line 144
     .line 145
-    if-eqz v1, :cond_99
+    if-eqz v1, :cond_e
 
     .line 146
     .line 147
@@ -514,12 +514,12 @@
     add-int/2addr v0, v1
 
     .line 154
-    :cond_99
+    :cond_e
     iget-object v1, p0, Llibs/a63;->g:Ljava/util/ArrayList;
 
     .line 155
     .line 156
-    if-eqz v1, :cond_ad
+    if-eqz v1, :cond_f
 
     .line 157
     .line 158
@@ -531,7 +531,7 @@
     move-result v1
 
     .line 162
-    if-nez v1, :cond_ad
+    if-nez v1, :cond_f
 
     .line 163
     .line 164
@@ -557,12 +557,12 @@
     return v1
 
     .line 174
-    :cond_ad
+    :cond_f
     return v0
 .end method
 
 .method public final k()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/a63;->k:Z
@@ -573,7 +573,7 @@
 .end method
 
 .method public final l()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/a63;->c:Z
@@ -584,7 +584,7 @@
 .end method
 
 .method public final m(Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-boolean p1, p0, Llibs/a63;->k:Z
@@ -595,7 +595,7 @@
 .end method
 
 .method public final n(Llibs/rp0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/a63;->e:Llibs/rp0;
@@ -606,7 +606,7 @@
 .end method
 
 .method public final p(J)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-wide p1, p0, Llibs/a63;->f:J
@@ -617,7 +617,7 @@
 .end method
 
 .method public final q([B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/a63;->j:[B
@@ -628,7 +628,7 @@
 .end method
 
 .method public final r([B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/a63;->d:[B
@@ -639,7 +639,7 @@
 .end method
 
 .method public final s(Ljava/util/ArrayList;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/a63;->g:Ljava/util/ArrayList;
@@ -650,7 +650,7 @@
 .end method
 
 .method public final t(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput p1, p0, Llibs/a63;->h:I
@@ -661,7 +661,7 @@
 .end method
 
 .method public final u(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/a63;->i:Ljava/lang/String;

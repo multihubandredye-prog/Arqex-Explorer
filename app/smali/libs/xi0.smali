@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/yi0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/xi0;->f:Llibs/yi0;
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public final e(Llibs/rp0;)Z
-    .registers 11
+    .locals 9
 
     .line 1
     iget-object v0, p0, Llibs/xi0;->c:Ljava/lang/String;
@@ -86,7 +86,7 @@
     const/4 v6, 0x0
 
     .line 17
-    :try_start_10
+    :try_start_0
     invoke-virtual {v3, v4, v0, v6}, Llibs/ej0;->k(Ljava/lang/String;Ljava/lang/String;[B)Ljava/lang/String;
 
     .line 18
@@ -96,8 +96,8 @@
 
     .line 21
     iput-object v4, p0, Llibs/xi0;->a:Ljava/lang/String;
-    :try_end_16
-    .catchall {:try_start_10 .. :try_end_16} :catchall_63
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 22
     .line 23
@@ -141,7 +141,7 @@
 
     .line 42
     .line 43
-    if-eqz p1, :cond_63
+    if-eqz p1, :cond_0
 
     .line 44
     .line 45
@@ -248,7 +248,7 @@
     .line 98
     .line 99
     .line 100
-    :catchall_63
-    :cond_63
+    :catchall_0
+    :cond_0
     return v5
 .end method

@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,14 +33,14 @@
 .end method
 
 .method public final hasNext()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/tn1;->Z:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -56,7 +56,7 @@
 
     .line 10
     .line 11
-    :cond_a
+    :cond_0
     iget-boolean v0, p0, Llibs/tn1;->Y:Z
 
     .line 12
@@ -65,14 +65,14 @@
 .end method
 
 .method public final next()Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-boolean v0, p0, Llibs/tn1;->Z:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -81,12 +81,12 @@
     .line 6
     .line 7
     .line 8
-    :cond_7
+    :cond_0
     iget-boolean v0, p0, Llibs/tn1;->Y:Z
 
     .line 9
     .line 10
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_2
 
     .line 11
     .line 12
@@ -103,7 +103,7 @@
 
     .line 18
     .line 19
-    if-nez v1, :cond_17
+    if-nez v1, :cond_1
 
     .line 20
     .line 21
@@ -114,11 +114,11 @@
 
     .line 23
     .line 24
-    :cond_17
+    :cond_1
     return-object v0
 
     .line 25
-    :cond_18
+    :cond_2
     invoke-static {}, Llibs/t22;->b()V
 
     .line 26
@@ -131,7 +131,7 @@
 .end method
 
 .method public final remove()V
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/UnsupportedOperationException;

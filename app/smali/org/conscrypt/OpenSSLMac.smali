@@ -13,7 +13,7 @@
 
 # direct methods
 .method private constructor <init>(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljavax/crypto/MacSpi;-><init>()V
@@ -47,7 +47,7 @@
 .end method
 
 .method public synthetic constructor <init>(II)V
-    .registers 3
+    .locals 0
 
     .line 15
     invoke-direct {p0, p1}, Lorg/conscrypt/OpenSSLMac;-><init>(I)V
@@ -61,7 +61,7 @@
 .end method
 
 .method public engineDoFinal()[B
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLMac;->doFinal()[B
@@ -81,7 +81,7 @@
 .end method
 
 .method public engineGetMacLength()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/OpenSSLMac;->size:I
@@ -92,18 +92,18 @@
 .end method
 
 .method public engineInit(Ljava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
-    .registers 4
+    .locals 1
 
     .line 1
     instance-of v0, p1, Ljavax/crypto/SecretKey;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_2
 
     .line 4
     .line 5
-    if-nez p2, :cond_22
+    if-nez p2, :cond_1
 
     .line 6
     .line 7
@@ -115,14 +115,14 @@
     move-result-object p1
 
     .line 11
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_0
 
     .line 12
     .line 13
-    :try_start_c
+    :try_start_0
     invoke-virtual {p0, p1}, Lorg/conscrypt/OpenSSLMac;->initContext([B)V
-    :try_end_f
-    .catch Ljava/lang/RuntimeException; {:try_start_c .. :try_end_f} :catch_13
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 14
     .line 15
@@ -137,7 +137,7 @@
     return-void
 
     .line 20
-    :catch_13
+    :catch_0
     move-exception p1
 
     .line 21
@@ -157,7 +157,7 @@
     throw p2
 
     .line 29
-    :cond_1c
+    :cond_0
     const-string p1, "key cannot be encoded"
 
     .line 30
@@ -170,7 +170,7 @@
     return-void
 
     .line 35
-    :cond_22
+    :cond_1
     const-string p1, "unknown parameter type"
 
     .line 36
@@ -183,7 +183,7 @@
     return-void
 
     .line 41
-    :cond_28
+    :cond_2
     const-string p1, "key must be a SecretKey"
 
     .line 42
@@ -197,21 +197,21 @@
 .end method
 
 .method public engineReset()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Lorg/conscrypt/OpenSSLMac;->initialized:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLMac;->resetContext()V
 
     .line 7
@@ -221,7 +221,7 @@
 .end method
 
 .method public engineUpdate(B)V
-    .registers 4
+    .locals 2
 
     .line 66
     iget-object v0, p0, Lorg/conscrypt/OpenSSLMac;->singleByte:[B
@@ -239,7 +239,7 @@
 .end method
 
 .method public engineUpdate(Ljava/nio/ByteBuffer;)V
-    .registers 7
+    .locals 5
 
     .line 1
     invoke-virtual {p1}, Ljava/nio/Buffer;->hasRemaining()Z
@@ -250,14 +250,14 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
     return-void
 
     .line 8
-    :cond_7
+    :cond_0
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->isDirect()Z
 
     .line 9
@@ -266,7 +266,7 @@
     move-result v0
 
     .line 12
-    if-nez v0, :cond_11
+    if-nez v0, :cond_1
 
     .line 13
     .line 14
@@ -278,7 +278,7 @@
     return-void
 
     .line 18
-    :cond_11
+    :cond_1
     invoke-static {p1}, Lorg/conscrypt/NativeCrypto;->getDirectBufferAddress(Ljava/nio/Buffer;)J
 
     .line 19
@@ -295,7 +295,7 @@
 
     .line 25
     .line 26
-    if-nez v4, :cond_1f
+    if-nez v4, :cond_2
 
     .line 27
     .line 28
@@ -307,7 +307,7 @@
     return-void
 
     .line 32
-    :cond_1f
+    :cond_2
     invoke-virtual {p1}, Ljava/nio/Buffer;->position()I
 
     .line 33
@@ -316,7 +316,7 @@
     move-result v2
 
     .line 36
-    if-ltz v2, :cond_3b
+    if-ltz v2, :cond_4
 
     .line 37
     .line 38
@@ -334,7 +334,7 @@
     move-result v3
 
     .line 44
-    if-ltz v3, :cond_35
+    if-ltz v3, :cond_3
 
     .line 45
     .line 46
@@ -354,7 +354,7 @@
     return-void
 
     .line 54
-    :cond_35
+    :cond_3
     const-string p1, "Negative remaining amount"
 
     .line 55
@@ -367,7 +367,7 @@
     return-void
 
     .line 60
-    :cond_3b
+    :cond_4
     const-string p1, "Negative position"
 
     .line 61

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/graphics/Typeface;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, ""
@@ -29,7 +29,7 @@
 .end method
 
 .method public static a(Landroid/text/TextPaint;Landroid/graphics/Typeface;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Landroid/graphics/Paint;->getTypeface()Landroid/graphics/Typeface;
@@ -40,17 +40,17 @@
     move-result-object v0
 
     .line 5
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
     const/4 v0, 0x0
 
     .line 8
-    goto :goto_c
+    goto :goto_0
 
     .line 9
-    :cond_8
+    :cond_0
     invoke-virtual {v0}, Landroid/graphics/Typeface;->getStyle()I
 
     .line 10
@@ -59,7 +59,7 @@
     move-result v0
 
     .line 13
-    :goto_c
+    :goto_0
     invoke-virtual {p1}, Landroid/graphics/Typeface;->getStyle()I
 
     .line 14
@@ -79,7 +79,7 @@
 
     .line 21
     .line 22
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_1
 
     .line 23
     .line 24
@@ -91,12 +91,12 @@
     .line 26
     .line 27
     .line 28
-    :cond_1b
+    :cond_1
     and-int/lit8 v0, v0, 0x2
 
     .line 29
     .line 30
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_2
 
     .line 31
     .line 32
@@ -109,7 +109,7 @@
     .line 35
     .line 36
     .line 37
-    :cond_24
+    :cond_2
     invoke-virtual {p0, p1}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
     .line 38
@@ -121,7 +121,7 @@
 
 # virtual methods
 .method public final updateDrawState(Landroid/text/TextPaint;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/y00;->X:Landroid/graphics/Typeface;
@@ -137,7 +137,7 @@
 .end method
 
 .method public final updateMeasureState(Landroid/text/TextPaint;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/y00;->X:Landroid/graphics/Typeface;

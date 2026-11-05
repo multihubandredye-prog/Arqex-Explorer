@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;I)V
-    .registers 6
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
@@ -157,7 +157,7 @@
 
 # virtual methods
 .method public final List(Llibs/sw0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p1}, Llibs/sw0;->x()Ljava/lang/String;

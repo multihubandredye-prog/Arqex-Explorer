@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public final a(J)V
-    .registers 6
+    .locals 3
 
     .line 1
     iget-wide v0, p0, Llibs/yp;->a:J
@@ -64,7 +64,7 @@
 
     .line 11
     .line 12
-    if-nez v2, :cond_14
+    if-nez v2, :cond_0
 
     .line 13
     .line 14
@@ -83,7 +83,7 @@
     return-void
 
     .line 21
-    :cond_14
+    :cond_0
     iget p2, p1, Landroid/graphics/Point;->x:I
 
     .line 22

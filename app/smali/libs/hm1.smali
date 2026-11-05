@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/s60;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public final close()V
-    .registers 3
+    .locals 2
 
     .line 1
     const/4 v0, 0x1
@@ -82,7 +82,7 @@
 
     .line 10
     .line 11
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     .line 12
     .line 13
@@ -95,19 +95,19 @@
 
     .line 17
     .line 18
-    :cond_11
+    :cond_0
     return-void
 .end method
 
 .method public final i(Ljava/nio/ByteBuffer;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-boolean v0, p0, Llibs/hm1;->Nu:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_4e
+    if-nez v0, :cond_3
 
     .line 4
     .line 5
@@ -119,7 +119,7 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -179,12 +179,12 @@
     return-void
 
     .line 39
-    :cond_26
+    :cond_0
     iget-object v0, p0, Llibs/hm1;->Lambda:[B
 
     .line 40
     .line 41
-    if-nez v0, :cond_30
+    if-nez v0, :cond_1
 
     .line 42
     .line 43
@@ -200,8 +200,8 @@
 
     .line 48
     .line 49
-    :cond_30
-    :goto_30
+    :cond_1
+    :goto_0
     invoke-virtual {p1}, Ljava/nio/Buffer;->hasRemaining()Z
 
     .line 50
@@ -210,7 +210,7 @@
     move-result v0
 
     .line 53
-    if-eqz v0, :cond_4d
+    if-eqz v0, :cond_2
 
     .line 54
     .line 55
@@ -258,14 +258,14 @@
     .line 75
     .line 76
     .line 77
-    goto :goto_30
+    goto :goto_0
 
     .line 78
-    :cond_4d
+    :cond_2
     return-void
 
     .line 79
-    :cond_4e
+    :cond_3
     const-string p1, "Closed"
 
     .line 80
@@ -279,14 +279,14 @@
 .end method
 
 .method public final m(II[B)V
-    .registers 6
+    .locals 2
 
     .line 1
     iget-boolean v0, p0, Llibs/hm1;->Nu:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_3e
+    if-nez v0, :cond_3
 
     .line 4
     .line 5
@@ -303,7 +303,7 @@
 
     .line 11
     .line 12
-    if-nez p1, :cond_13
+    if-nez p1, :cond_0
 
     .line 13
     .line 14
@@ -319,8 +319,8 @@
 
     .line 19
     .line 20
-    :cond_13
-    :goto_13
+    :cond_0
+    :goto_0
     iget-object p1, p0, Llibs/hm1;->Y:Ljava/util/zip/Inflater;
 
     .line 21
@@ -333,11 +333,11 @@
     move-result p1
 
     .line 26
-    if-nez p1, :cond_3d
+    if-nez p1, :cond_2
 
     .line 27
     .line 28
-    :try_start_1b
+    :try_start_0
     iget-object p1, p0, Llibs/hm1;->Y:Ljava/util/zip/Inflater;
 
     .line 29
@@ -352,18 +352,18 @@
     .line 34
     .line 35
     move-result p1
-    :try_end_23
-    .catch Ljava/util/zip/DataFormatException; {:try_start_1b .. :try_end_23} :catch_35
+    :try_end_0
+    .catch Ljava/util/zip/DataFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 36
-    if-nez p1, :cond_26
+    if-nez p1, :cond_1
 
     .line 37
     .line 38
-    goto :goto_3d
+    goto :goto_1
 
     .line 39
-    :cond_26
+    :cond_1
     iget-object p2, p0, Llibs/hm1;->Z:[B
 
     .line 40
@@ -394,10 +394,10 @@
 
     .line 52
     .line 53
-    goto :goto_13
+    goto :goto_0
 
     .line 54
-    :catch_35
+    :catch_0
     move-exception p1
 
     .line 55
@@ -416,12 +416,12 @@
     throw p1
 
     .line 62
-    :cond_3d
-    :goto_3d
+    :cond_2
+    :goto_1
     return-void
 
     .line 63
-    :cond_3e
+    :cond_3
     const-string p1, "Closed"
 
     .line 64

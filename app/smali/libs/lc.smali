@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/a;Ljava/lang/String;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/lc;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 6
+    .locals 5
 
     .line 1
     iget-byte v0, p0, Llibs/lc;->X:B
@@ -57,7 +57,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_1e
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -70,7 +70,7 @@
     return-void
 
     .line 14
-    :pswitch_d
+    :pswitch_0
     const/4 v0, 0x1
 
     .line 15
@@ -80,7 +80,7 @@
     const/4 v4, 0x0
 
     .line 17
-    :try_start_10
+    :try_start_0
     new-array v0, v0, [Ljava/lang/String;
 
     .line 18
@@ -93,13 +93,13 @@
 
     .line 22
     invoke-virtual {v2, v1, v3, v0}, Lcom/mixplorer/activities/a;->View(IZ[Ljava/lang/String;)V
-    :try_end_18
-    .catchall {:try_start_10 .. :try_end_18} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 23
     .line 24
     .line 25
-    :catchall_18
+    :catchall_0
     sput-object v4, Llibs/ou0;->b:Ljava/lang/String;
 
     .line 26
@@ -114,8 +114,8 @@
     nop
 
     .line 31
-    :pswitch_data_1e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_d
+        :pswitch_0
     .end packed-switch
 .end method

@@ -31,7 +31,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/bn1;
@@ -63,7 +63,7 @@
 .end method
 
 .method public constructor <init>(Lcom/mixplorer/services/SMBServerService;Llibs/jc3;ILjava/util/ArrayList;Ljava/lang/String;)V
-    .registers 8
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -146,13 +146,13 @@
 
 # virtual methods
 .method public final a(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 7
+    .locals 4
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    :try_start_1
+    :try_start_0
     new-instance v1, Landroid/net/nsd/NsdServiceInfo;
 
     .line 3
@@ -189,7 +189,7 @@
     move-result p2
 
     .line 22
-    if-eqz p2, :cond_25
+    if-eqz p2, :cond_0
 
     .line 23
     .line 24
@@ -205,7 +205,7 @@
     move-result p2
 
     .line 30
-    if-eqz p2, :cond_25
+    if-eqz p2, :cond_0
 
     .line 31
     .line 32
@@ -214,18 +214,18 @@
     .line 33
     .line 34
     .line 35
-    goto :goto_25
+    goto :goto_0
 
     .line 36
-    :catchall_23
+    :catchall_0
     move-exception p2
 
     .line 37
-    goto :goto_44
+    goto :goto_1
 
     .line 38
-    :cond_25
-    :goto_25
+    :cond_0
+    :goto_0
     new-instance p2, Llibs/ax2;
 
     .line 39
@@ -240,11 +240,11 @@
     .line 44
     .line 45
     monitor-enter v2
-    :try_end_2d
-    .catchall {:try_start_1 .. :try_end_2d} :catchall_23
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 46
-    :try_start_2d
+    :try_start_1
     iget-object v3, p0, Llibs/bx2;->j:Ljava/util/ArrayList;
 
     .line 47
@@ -255,11 +255,11 @@
     .line 50
     .line 51
     monitor-exit v2
-    :try_end_33
-    .catchall {:try_start_2d .. :try_end_33} :catchall_41
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 52
-    :try_start_33
+    :try_start_2
     iget-object v2, p0, Llibs/bx2;->d:Landroid/content/Context;
 
     .line 53
@@ -281,8 +281,8 @@
     .line 61
     .line 62
     invoke-virtual {v2, v1, v0, p2}, Landroid/net/nsd/NsdManager;->registerService(Landroid/net/nsd/NsdServiceInfo;ILandroid/net/nsd/NsdManager$RegistrationListener;)V
-    :try_end_40
-    .catchall {:try_start_33 .. :try_end_40} :catchall_23
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 63
     .line 64
@@ -290,23 +290,23 @@
     return-void
 
     .line 66
-    :catchall_41
+    :catchall_1
     move-exception p2
 
     .line 67
-    :try_start_42
+    :try_start_3
     monitor-exit v2
-    :try_end_43
-    .catchall {:try_start_42 .. :try_end_43} :catchall_41
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 68
-    :try_start_43
+    :try_start_4
     throw p2
-    :try_end_44
-    .catchall {:try_start_43 .. :try_end_44} :catchall_23
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 69
-    :goto_44
+    :goto_1
     sget-object v1, Llibs/bx2;->k:Llibs/bn1;
 
     .line 70
@@ -350,7 +350,7 @@
 .end method
 
 .method public final b()V
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/bx2;->g:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -368,14 +368,14 @@
     move-result v0
 
     .line 8
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 9
     .line 10
     return-void
 
     .line 11
-    :cond_a
+    :cond_0
     new-instance v0, Ljava/net/ServerSocket;
 
     .line 12
@@ -467,7 +467,7 @@
 .end method
 
 .method public final c()V
-    .registers 8
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/bx2;->g:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -482,12 +482,12 @@
     .line 5
     .line 6
     .line 7
-    :try_start_6
+    :try_start_0
     iget-object v0, p0, Llibs/bx2;->i:Llibs/vz1;
 
     .line 8
     .line 9
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     .line 10
     .line 11
@@ -504,7 +504,7 @@
 
     .line 17
     .line 18
-    if-eqz v2, :cond_1e
+    if-eqz v2, :cond_0
 
     .line 19
     .line 20
@@ -516,7 +516,7 @@
     move-result v2
 
     .line 24
-    if-nez v2, :cond_1e
+    if-nez v2, :cond_0
 
     .line 25
     .line 26
@@ -529,27 +529,27 @@
     .line 29
     .line 30
     .line 31
-    :cond_1e
+    :cond_0
     iget-object v0, v0, Llibs/vz1;->d:Ljava/util/concurrent/ExecutorService;
 
     .line 32
     .line 33
     invoke-interface {v0}, Ljava/util/concurrent/ExecutorService;->shutdownNow()Ljava/util/List;
-    :try_end_23
-    .catchall {:try_start_6 .. :try_end_23} :catchall_24
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 34
     .line 35
     .line 36
-    goto :goto_25
+    goto :goto_0
 
     .line 37
-    :catchall_24
+    :catchall_0
     nop
 
     .line 38
-    :cond_25
-    :goto_25
+    :cond_1
+    :goto_0
     invoke-static {}, Llibs/t43;->Intent()Z
 
     .line 39
@@ -558,7 +558,7 @@
     move-result v0
 
     .line 42
-    if-eqz v0, :cond_5e
+    if-eqz v0, :cond_3
 
     .line 43
     .line 44
@@ -593,7 +593,7 @@
     monitor-enter v2
 
     .line 59
-    :try_start_3a
+    :try_start_1
     iget-object v3, p0, Llibs/bx2;->j:Ljava/util/ArrayList;
 
     .line 60
@@ -609,8 +609,8 @@
     const/4 v5, 0x0
 
     .line 66
-    :goto_41
-    if-ge v5, v4, :cond_55
+    :goto_1
+    if-ge v5, v4, :cond_2
 
     .line 67
     .line 68
@@ -620,15 +620,15 @@
     .line 70
     .line 71
     move-result-object v6
-    :try_end_47
-    .catchall {:try_start_3a .. :try_end_47} :catchall_53
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
     .line 72
     add-int/lit8 v5, v5, 0x1
 
     .line 73
     .line 74
-    :try_start_49
+    :try_start_2
     invoke-static {v6}, Llibs/Zero;->f(Ljava/lang/Object;)Landroid/net/nsd/NsdManager$RegistrationListener;
 
     .line 75
@@ -638,31 +638,31 @@
 
     .line 78
     invoke-static {v0, v6}, Llibs/Zero;->q(Landroid/net/nsd/NsdManager;Landroid/net/nsd/NsdManager$RegistrationListener;)V
-    :try_end_50
-    .catchall {:try_start_49 .. :try_end_50} :catchall_51
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 79
     .line 80
     .line 81
-    goto :goto_41
+    goto :goto_1
 
     .line 82
-    :catchall_51
+    :catchall_1
     nop
 
     .line 83
-    goto :goto_41
+    goto :goto_1
 
     .line 84
-    :catchall_53
+    :catchall_2
     move-exception v0
 
     .line 85
-    goto :goto_5c
+    goto :goto_2
 
     .line 86
-    :cond_55
-    :try_start_55
+    :cond_2
+    :try_start_3
     iget-object v0, p0, Llibs/bx2;->j:Ljava/util/ArrayList;
 
     .line 87
@@ -675,40 +675,40 @@
     monitor-exit v2
 
     .line 92
-    goto :goto_5e
+    goto :goto_3
 
     .line 93
-    :goto_5c
+    :goto_2
     monitor-exit v2
-    :try_end_5d
-    .catchall {:try_start_55 .. :try_end_5d} :catchall_53
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
     .line 94
     throw v0
 
     .line 95
-    :cond_5e
-    :goto_5e
-    :try_start_5e
+    :cond_3
+    :goto_3
+    :try_start_4
     iget-object v0, p0, Llibs/bx2;->f:Ljava/net/ServerSocket;
 
     .line 96
     .line 97
-    if-eqz v0, :cond_76
+    if-eqz v0, :cond_4
 
     .line 98
     .line 99
     invoke-virtual {v0}, Ljava/net/ServerSocket;->close()V
-    :try_end_65
-    .catch Ljava/io/IOException; {:try_start_5e .. :try_end_65} :catch_66
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
 
     .line 100
     .line 101
     .line 102
-    goto :goto_76
+    goto :goto_4
 
     .line 103
-    :catch_66
+    :catch_0
     move-exception v0
 
     .line 104
@@ -743,8 +743,8 @@
     .line 117
     .line 118
     .line 119
-    :cond_76
-    :goto_76
+    :cond_4
+    :goto_4
     iget-object v0, p0, Llibs/bx2;->h:Ljava/util/concurrent/ExecutorService;
 
     .line 120

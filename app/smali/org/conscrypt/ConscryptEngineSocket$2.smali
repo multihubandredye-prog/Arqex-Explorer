@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljavax/net/ssl/X509ExtendedTrustManager;Lorg/conscrypt/ConscryptEngineSocket;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Lorg/conscrypt/ConscryptEngineSocket$2;->val$extendedDelegate:Ljavax/net/ssl/X509ExtendedTrustManager;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public checkClientTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 10
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket$2;->val$extendedDelegate:Ljavax/net/ssl/X509ExtendedTrustManager;
@@ -44,7 +44,7 @@
 .end method
 
 .method public checkClientTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/net/Socket;)V
-    .registers 4
+    .locals 0
 
     .line 1
     new-instance p1, Ljava/lang/AssertionError;
@@ -64,7 +64,7 @@
 .end method
 
 .method public checkClientTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljavax/net/ssl/SSLEngine;)V
-    .registers 5
+    .locals 1
 
     .line 9
     iget-object p3, p0, Lorg/conscrypt/ConscryptEngineSocket$2;->val$extendedDelegate:Ljavax/net/ssl/X509ExtendedTrustManager;
@@ -77,7 +77,7 @@
 .end method
 
 .method public checkServerTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 10
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket$2;->val$extendedDelegate:Ljavax/net/ssl/X509ExtendedTrustManager;
@@ -88,7 +88,7 @@
 .end method
 
 .method public checkServerTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/net/Socket;)V
-    .registers 4
+    .locals 0
 
     .line 1
     new-instance p1, Ljava/lang/AssertionError;
@@ -108,7 +108,7 @@
 .end method
 
 .method public checkServerTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljavax/net/ssl/SSLEngine;)V
-    .registers 5
+    .locals 1
 
     .line 9
     iget-object p3, p0, Lorg/conscrypt/ConscryptEngineSocket$2;->val$extendedDelegate:Ljavax/net/ssl/X509ExtendedTrustManager;
@@ -121,7 +121,7 @@
 .end method
 
 .method public getAcceptedIssuers()[Ljava/security/cert/X509Certificate;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptEngineSocket$2;->val$extendedDelegate:Ljavax/net/ssl/X509ExtendedTrustManager;

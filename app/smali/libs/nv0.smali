@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/sv0;ZII)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final c([Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object p1, p0, Llibs/nv0;->X:Llibs/sv0;
@@ -59,7 +59,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -68,12 +68,12 @@
     .line 8
     .line 9
     .line 10
-    :cond_9
+    :cond_0
     iget v0, p0, Llibs/nv0;->Z:I
 
     .line 11
     .line 12
-    :goto_b
+    :goto_0
     iget v1, p0, Llibs/nv0;->Lambda:I
 
     .line 13
@@ -81,7 +81,7 @@
     const/4 v2, 0x0
 
     .line 15
-    if-gt v0, v1, :cond_1a
+    if-gt v0, v1, :cond_1
 
     .line 16
     .line 17
@@ -102,10 +102,10 @@
 
     .line 25
     .line 26
-    goto :goto_b
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_1
     iput-boolean v2, p1, Llibs/sv0;->Top:Z
 
     .line 28

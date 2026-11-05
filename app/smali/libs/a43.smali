@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 26
+    .locals 24
 
     .line 1
     move-object/from16 v1, p0
@@ -93,7 +93,7 @@
     const/4 v6, 0x1
 
     .line 38
-    packed-switch v0, :pswitch_data_4a2
+    packed-switch v0, :pswitch_data_0
 
     .line 39
     .line 40
@@ -240,7 +240,7 @@
     return-void
 
     .line 113
-    :pswitch_70
+    :pswitch_0
     const/16 v0, 0x23b
 
     .line 114
@@ -366,7 +366,7 @@
     return-void
 
     .line 176
-    :pswitch_af
+    :pswitch_1
     const/4 v4, 0x0
 
     .line 177
@@ -497,7 +497,7 @@
     return-void
 
     .line 242
-    :pswitch_f1
+    :pswitch_2
     const/4 v4, 0x0
 
     .line 243
@@ -615,7 +615,7 @@
     return-void
 
     .line 301
-    :pswitch_12c
+    :pswitch_3
     const/16 v0, 0xc
 
     .line 302
@@ -750,7 +750,7 @@
     return-void
 
     .line 369
-    :pswitch_170
+    :pswitch_4
     const/16 v0, 0xc
 
     .line 370
@@ -872,7 +872,7 @@
     return-void
 
     .line 430
-    :pswitch_1ad
+    :pswitch_5
     const/16 v0, 0xef
 
     .line 431
@@ -998,7 +998,7 @@
     return-void
 
     .line 493
-    :pswitch_1ec
+    :pswitch_6
     const/4 v0, 0x0
 
     .line 494
@@ -1132,7 +1132,7 @@
     return-void
 
     .line 560
-    :pswitch_22f
+    :pswitch_7
     const/4 v0, 0x0
 
     .line 561
@@ -1253,7 +1253,7 @@
     return-void
 
     .line 620
-    :pswitch_26b
+    :pswitch_8
     const/4 v4, 0x0
 
     .line 621
@@ -1397,7 +1397,7 @@
     return-void
 
     .line 693
-    :pswitch_2b4
+    :pswitch_9
     const/4 v4, 0x0
 
     .line 694
@@ -1541,7 +1541,7 @@
     return-void
 
     .line 766
-    :pswitch_2fd
+    :pswitch_a
     const/16 v0, 0xa3
 
     .line 767
@@ -1678,7 +1678,7 @@
     return-void
 
     .line 834
-    :pswitch_341
+    :pswitch_b
     const/16 v0, 0xa3
 
     .line 835
@@ -1828,7 +1828,7 @@
     return-void
 
     .line 909
-    :pswitch_38c
+    :pswitch_c
     const/16 v0, 0xa3
 
     .line 910
@@ -1935,7 +1935,7 @@
     return-void
 
     .line 961
-    :pswitch_3c0
+    :pswitch_d
     const/16 v0, 0x83
 
     .line 962
@@ -2089,7 +2089,7 @@
     return-void
 
     .line 1038
-    :pswitch_40d
+    :pswitch_e
     const/16 v0, 0x83
 
     .line 1039
@@ -2243,7 +2243,7 @@
     return-void
 
     .line 1115
-    :pswitch_45a
+    :pswitch_f
     const/4 v4, 0x0
 
     .line 1116
@@ -2386,38 +2386,38 @@
     return-void
 
     .line 1187
-    :pswitch_data_4a2
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_45a
-        :pswitch_40d
-        :pswitch_3c0
-        :pswitch_38c
-        :pswitch_341
-        :pswitch_2fd
-        :pswitch_2b4
-        :pswitch_26b
-        :pswitch_22f
-        :pswitch_1ec
-        :pswitch_1ad
-        :pswitch_170
-        :pswitch_12c
-        :pswitch_f1
-        :pswitch_af
-        :pswitch_70
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public final a()Llibs/kf0;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/a43;->j:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_86
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -2438,7 +2438,7 @@
     return-object v0
 
     .line 14
-    :pswitch_d
+    :pswitch_0
     new-instance v0, Llibs/a43;
 
     .line 15
@@ -2455,7 +2455,7 @@
     return-object v0
 
     .line 22
-    :pswitch_15
+    :pswitch_1
     new-instance v0, Llibs/a43;
 
     .line 23
@@ -2472,7 +2472,7 @@
     return-object v0
 
     .line 30
-    :pswitch_1d
+    :pswitch_2
     new-instance v0, Llibs/a43;
 
     .line 31
@@ -2489,7 +2489,7 @@
     return-object v0
 
     .line 38
-    :pswitch_25
+    :pswitch_3
     new-instance v0, Llibs/a43;
 
     .line 39
@@ -2506,7 +2506,7 @@
     return-object v0
 
     .line 46
-    :pswitch_2d
+    :pswitch_4
     new-instance v0, Llibs/a43;
 
     .line 47
@@ -2523,7 +2523,7 @@
     return-object v0
 
     .line 54
-    :pswitch_35
+    :pswitch_5
     new-instance v0, Llibs/a43;
 
     .line 55
@@ -2540,7 +2540,7 @@
     return-object v0
 
     .line 62
-    :pswitch_3d
+    :pswitch_6
     new-instance v0, Llibs/a43;
 
     .line 63
@@ -2557,7 +2557,7 @@
     return-object v0
 
     .line 70
-    :pswitch_45
+    :pswitch_7
     new-instance v0, Llibs/a43;
 
     .line 71
@@ -2574,7 +2574,7 @@
     return-object v0
 
     .line 78
-    :pswitch_4d
+    :pswitch_8
     new-instance v0, Llibs/a43;
 
     .line 79
@@ -2590,7 +2590,7 @@
     return-object v0
 
     .line 85
-    :pswitch_54
+    :pswitch_9
     new-instance v0, Llibs/a43;
 
     .line 86
@@ -2606,7 +2606,7 @@
     return-object v0
 
     .line 92
-    :pswitch_5b
+    :pswitch_a
     new-instance v0, Llibs/a43;
 
     .line 93
@@ -2622,7 +2622,7 @@
     return-object v0
 
     .line 99
-    :pswitch_62
+    :pswitch_b
     new-instance v0, Llibs/a43;
 
     .line 100
@@ -2638,7 +2638,7 @@
     return-object v0
 
     .line 106
-    :pswitch_69
+    :pswitch_c
     new-instance v0, Llibs/a43;
 
     .line 107
@@ -2654,7 +2654,7 @@
     return-object v0
 
     .line 113
-    :pswitch_70
+    :pswitch_d
     new-instance v0, Llibs/a43;
 
     .line 114
@@ -2670,7 +2670,7 @@
     return-object v0
 
     .line 120
-    :pswitch_77
+    :pswitch_e
     new-instance v0, Llibs/a43;
 
     .line 121
@@ -2686,7 +2686,7 @@
     return-object v0
 
     .line 127
-    :pswitch_7e
+    :pswitch_f
     new-instance v0, Llibs/a43;
 
     .line 128
@@ -2705,36 +2705,36 @@
     nop
 
     .line 135
-    :pswitch_data_86
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_7e
-        :pswitch_77
-        :pswitch_70
-        :pswitch_69
-        :pswitch_62
-        :pswitch_5b
-        :pswitch_54
-        :pswitch_4d
-        :pswitch_45
-        :pswitch_3d
-        :pswitch_35
-        :pswitch_2d
-        :pswitch_25
-        :pswitch_1d
-        :pswitch_15
+        :pswitch_f
+        :pswitch_e
         :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public b()Llibs/zd2;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/a43;->j:B
 
     .line 2
     .line 3
-    sparse-switch v0, :sswitch_data_34
+    sparse-switch v0, :sswitch_data_0
 
     .line 4
     .line 5
@@ -2750,7 +2750,7 @@
     return-object v0
 
     .line 11
-    :sswitch_a
+    :sswitch_0
     new-instance v0, Llibs/or0;
 
     .line 12
@@ -2766,7 +2766,7 @@
     return-object v0
 
     .line 18
-    :sswitch_11
+    :sswitch_1
     new-instance v0, Llibs/or0;
 
     .line 19
@@ -2782,7 +2782,7 @@
     return-object v0
 
     .line 25
-    :sswitch_18
+    :sswitch_2
     new-instance v0, Llibs/or0;
 
     .line 26
@@ -2798,7 +2798,7 @@
     return-object v0
 
     .line 32
-    :sswitch_1f
+    :sswitch_3
     new-instance v0, Llibs/or0;
 
     .line 33
@@ -2814,7 +2814,7 @@
     return-object v0
 
     .line 39
-    :sswitch_26
+    :sswitch_4
     new-instance v0, Llibs/or0;
 
     .line 40
@@ -2830,7 +2830,7 @@
     return-object v0
 
     .line 46
-    :sswitch_2d
+    :sswitch_5
     new-instance v0, Llibs/or0;
 
     .line 47
@@ -2846,26 +2846,26 @@
     return-object v0
 
     .line 53
-    :sswitch_data_34
+    :sswitch_data_0
     .sparse-switch
-        0x4 -> :sswitch_2d
-        0x9 -> :sswitch_26
-        0xb -> :sswitch_1f
-        0xc -> :sswitch_18
-        0xe -> :sswitch_11
-        0x10 -> :sswitch_a
+        0x4 -> :sswitch_5
+        0x9 -> :sswitch_4
+        0xb -> :sswitch_3
+        0xc -> :sswitch_2
+        0xe -> :sswitch_1
+        0x10 -> :sswitch_0
     .end sparse-switch
 .end method
 
 .method public final d(Llibs/xf3;Llibs/xf3;Z)Llibs/ig0;
-    .registers 10
+    .locals 6
 
     .line 1
     iget-byte v0, p0, Llibs/a43;->j:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_ca
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -2898,7 +2898,7 @@
     return-object v0
 
     .line 18
-    :pswitch_11
+    :pswitch_0
     new-instance v0, Llibs/hg0;
 
     .line 19
@@ -2927,7 +2927,7 @@
     return-object v0
 
     .line 30
-    :pswitch_1d
+    :pswitch_1
     new-instance v0, Llibs/hg0;
 
     .line 31
@@ -2956,7 +2956,7 @@
     return-object v0
 
     .line 42
-    :pswitch_29
+    :pswitch_2
     new-instance v0, Llibs/hg0;
 
     .line 43
@@ -2985,7 +2985,7 @@
     return-object v0
 
     .line 54
-    :pswitch_35
+    :pswitch_3
     new-instance v0, Llibs/hg0;
 
     .line 55
@@ -3014,7 +3014,7 @@
     return-object v0
 
     .line 66
-    :pswitch_41
+    :pswitch_4
     new-instance v0, Llibs/hg0;
 
     .line 67
@@ -3043,7 +3043,7 @@
     return-object v0
 
     .line 78
-    :pswitch_4d
+    :pswitch_5
     new-instance v0, Llibs/hg0;
 
     .line 79
@@ -3072,7 +3072,7 @@
     return-object v0
 
     .line 90
-    :pswitch_59
+    :pswitch_6
     new-instance v0, Llibs/hg0;
 
     .line 91
@@ -3101,7 +3101,7 @@
     return-object v0
 
     .line 102
-    :pswitch_65
+    :pswitch_7
     new-instance v0, Llibs/hg0;
 
     .line 103
@@ -3130,7 +3130,7 @@
     return-object v0
 
     .line 114
-    :pswitch_71
+    :pswitch_8
     new-instance v0, Llibs/hg0;
 
     .line 115
@@ -3159,7 +3159,7 @@
     return-object v0
 
     .line 126
-    :pswitch_7d
+    :pswitch_9
     new-instance v0, Llibs/hg0;
 
     .line 127
@@ -3187,7 +3187,7 @@
     return-object v0
 
     .line 137
-    :pswitch_88
+    :pswitch_a
     new-instance v0, Llibs/hg0;
 
     .line 138
@@ -3215,7 +3215,7 @@
     return-object v0
 
     .line 148
-    :pswitch_93
+    :pswitch_b
     new-instance v0, Llibs/hg0;
 
     .line 149
@@ -3243,7 +3243,7 @@
     return-object v0
 
     .line 159
-    :pswitch_9e
+    :pswitch_c
     new-instance v0, Llibs/hg0;
 
     .line 160
@@ -3271,7 +3271,7 @@
     return-object v0
 
     .line 170
-    :pswitch_a9
+    :pswitch_d
     new-instance v0, Llibs/hg0;
 
     .line 171
@@ -3299,7 +3299,7 @@
     return-object v0
 
     .line 181
-    :pswitch_b4
+    :pswitch_e
     new-instance v0, Llibs/hg0;
 
     .line 182
@@ -3327,7 +3327,7 @@
     return-object v0
 
     .line 192
-    :pswitch_bf
+    :pswitch_f
     new-instance v0, Llibs/hg0;
 
     .line 193
@@ -3355,36 +3355,36 @@
     return-object v0
 
     .line 203
-    :pswitch_data_ca
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_bf
-        :pswitch_b4
-        :pswitch_a9
-        :pswitch_9e
-        :pswitch_93
-        :pswitch_88
-        :pswitch_7d
-        :pswitch_71
-        :pswitch_65
-        :pswitch_59
-        :pswitch_4d
-        :pswitch_41
-        :pswitch_35
-        :pswitch_29
-        :pswitch_1d
-        :pswitch_11
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final e(Llibs/xf3;Llibs/xf3;[Llibs/xf3;Z)Llibs/ig0;
-    .registers 12
+    .locals 7
 
     .line 1
     iget-byte v0, p0, Llibs/a43;->j:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_dc
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -3420,7 +3420,7 @@
     return-object v0
 
     .line 19
-    :pswitch_12
+    :pswitch_0
     new-instance v0, Llibs/hg0;
 
     .line 20
@@ -3452,7 +3452,7 @@
     return-object v0
 
     .line 32
-    :pswitch_1f
+    :pswitch_1
     new-instance v0, Llibs/hg0;
 
     .line 33
@@ -3484,7 +3484,7 @@
     return-object v0
 
     .line 45
-    :pswitch_2c
+    :pswitch_2
     new-instance v0, Llibs/hg0;
 
     .line 46
@@ -3516,7 +3516,7 @@
     return-object v0
 
     .line 58
-    :pswitch_39
+    :pswitch_3
     new-instance v0, Llibs/hg0;
 
     .line 59
@@ -3548,7 +3548,7 @@
     return-object v0
 
     .line 71
-    :pswitch_46
+    :pswitch_4
     new-instance v0, Llibs/hg0;
 
     .line 72
@@ -3580,7 +3580,7 @@
     return-object v0
 
     .line 84
-    :pswitch_53
+    :pswitch_5
     new-instance v0, Llibs/hg0;
 
     .line 85
@@ -3612,7 +3612,7 @@
     return-object v0
 
     .line 97
-    :pswitch_60
+    :pswitch_6
     new-instance v0, Llibs/hg0;
 
     .line 98
@@ -3644,7 +3644,7 @@
     return-object v0
 
     .line 110
-    :pswitch_6d
+    :pswitch_7
     new-instance v0, Llibs/hg0;
 
     .line 111
@@ -3676,7 +3676,7 @@
     return-object v0
 
     .line 123
-    :pswitch_7a
+    :pswitch_8
     new-instance v0, Llibs/hg0;
 
     .line 124
@@ -3708,7 +3708,7 @@
     return-object v0
 
     .line 136
-    :pswitch_87
+    :pswitch_9
     new-instance v0, Llibs/hg0;
 
     .line 137
@@ -3739,7 +3739,7 @@
     return-object v0
 
     .line 148
-    :pswitch_93
+    :pswitch_a
     new-instance v0, Llibs/hg0;
 
     .line 149
@@ -3770,7 +3770,7 @@
     return-object v0
 
     .line 160
-    :pswitch_9f
+    :pswitch_b
     new-instance v0, Llibs/hg0;
 
     .line 161
@@ -3801,7 +3801,7 @@
     return-object v0
 
     .line 172
-    :pswitch_ab
+    :pswitch_c
     new-instance v0, Llibs/hg0;
 
     .line 173
@@ -3832,7 +3832,7 @@
     return-object v0
 
     .line 184
-    :pswitch_b7
+    :pswitch_d
     new-instance v0, Llibs/hg0;
 
     .line 185
@@ -3863,7 +3863,7 @@
     return-object v0
 
     .line 196
-    :pswitch_c3
+    :pswitch_e
     new-instance v0, Llibs/hg0;
 
     .line 197
@@ -3894,7 +3894,7 @@
     return-object v0
 
     .line 208
-    :pswitch_cf
+    :pswitch_f
     new-instance v0, Llibs/hg0;
 
     .line 209
@@ -3928,36 +3928,36 @@
     nop
 
     .line 221
-    :pswitch_data_dc
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_cf
-        :pswitch_c3
-        :pswitch_b7
-        :pswitch_ab
-        :pswitch_9f
-        :pswitch_93
-        :pswitch_87
-        :pswitch_7a
-        :pswitch_6d
-        :pswitch_60
-        :pswitch_53
-        :pswitch_46
-        :pswitch_39
-        :pswitch_2c
-        :pswitch_1f
-        :pswitch_12
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final i(Ljava/math/BigInteger;)Llibs/xf3;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/a43;->j:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_6c
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -3974,7 +3974,7 @@
     return-object v0
 
     .line 12
-    :pswitch_b
+    :pswitch_0
     new-instance v0, Llibs/h43;
 
     .line 13
@@ -3987,7 +3987,7 @@
     return-object v0
 
     .line 18
-    :pswitch_11
+    :pswitch_1
     new-instance v0, Llibs/h43;
 
     .line 19
@@ -4000,7 +4000,7 @@
     return-object v0
 
     .line 24
-    :pswitch_17
+    :pswitch_2
     new-instance v0, Llibs/g43;
 
     .line 25
@@ -4013,7 +4013,7 @@
     return-object v0
 
     .line 30
-    :pswitch_1d
+    :pswitch_3
     new-instance v0, Llibs/g43;
 
     .line 31
@@ -4026,7 +4026,7 @@
     return-object v0
 
     .line 36
-    :pswitch_23
+    :pswitch_4
     new-instance v0, Llibs/f43;
 
     .line 37
@@ -4039,7 +4039,7 @@
     return-object v0
 
     .line 42
-    :pswitch_29
+    :pswitch_5
     new-instance v0, Llibs/e43;
 
     .line 43
@@ -4052,7 +4052,7 @@
     return-object v0
 
     .line 48
-    :pswitch_2f
+    :pswitch_6
     new-instance v0, Llibs/e43;
 
     .line 49
@@ -4065,7 +4065,7 @@
     return-object v0
 
     .line 54
-    :pswitch_35
+    :pswitch_7
     new-instance v0, Llibs/d43;
 
     .line 55
@@ -4078,7 +4078,7 @@
     return-object v0
 
     .line 60
-    :pswitch_3b
+    :pswitch_8
     new-instance v0, Llibs/d43;
 
     .line 61
@@ -4091,7 +4091,7 @@
     return-object v0
 
     .line 66
-    :pswitch_41
+    :pswitch_9
     new-instance v0, Llibs/c43;
 
     .line 67
@@ -4104,7 +4104,7 @@
     return-object v0
 
     .line 72
-    :pswitch_47
+    :pswitch_a
     new-instance v0, Llibs/c43;
 
     .line 73
@@ -4117,7 +4117,7 @@
     return-object v0
 
     .line 78
-    :pswitch_4d
+    :pswitch_b
     new-instance v0, Llibs/c43;
 
     .line 79
@@ -4130,7 +4130,7 @@
     return-object v0
 
     .line 84
-    :pswitch_53
+    :pswitch_c
     new-instance v0, Llibs/b43;
 
     .line 85
@@ -4143,7 +4143,7 @@
     return-object v0
 
     .line 90
-    :pswitch_59
+    :pswitch_d
     new-instance v0, Llibs/b43;
 
     .line 91
@@ -4156,7 +4156,7 @@
     return-object v0
 
     .line 96
-    :pswitch_5f
+    :pswitch_e
     new-instance v0, Llibs/z33;
 
     .line 97
@@ -4169,7 +4169,7 @@
     return-object v0
 
     .line 102
-    :pswitch_65
+    :pswitch_f
     new-instance v0, Llibs/z33;
 
     .line 103
@@ -4185,36 +4185,36 @@
     nop
 
     .line 109
-    :pswitch_data_6c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_65
-        :pswitch_5f
-        :pswitch_59
-        :pswitch_53
-        :pswitch_4d
-        :pswitch_47
-        :pswitch_41
-        :pswitch_3b
-        :pswitch_35
-        :pswitch_2f
-        :pswitch_29
-        :pswitch_23
-        :pswitch_1d
-        :pswitch_17
-        :pswitch_11
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
         :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final j()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/a43;->j:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_38
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -4226,7 +4226,7 @@
     return v0
 
     .line 9
-    :pswitch_8
+    :pswitch_0
     const/16 v0, 0x199
 
     .line 10
@@ -4234,7 +4234,7 @@
     return v0
 
     .line 12
-    :pswitch_b
+    :pswitch_1
     const/16 v0, 0x199
 
     .line 13
@@ -4242,7 +4242,7 @@
     return v0
 
     .line 15
-    :pswitch_e
+    :pswitch_2
     const/16 v0, 0x11b
 
     .line 16
@@ -4250,7 +4250,7 @@
     return v0
 
     .line 18
-    :pswitch_11
+    :pswitch_3
     const/16 v0, 0x11b
 
     .line 19
@@ -4258,7 +4258,7 @@
     return v0
 
     .line 21
-    :pswitch_14
+    :pswitch_4
     const/16 v0, 0xef
 
     .line 22
@@ -4266,7 +4266,7 @@
     return v0
 
     .line 24
-    :pswitch_17
+    :pswitch_5
     const/16 v0, 0xe9
 
     .line 25
@@ -4274,7 +4274,7 @@
     return v0
 
     .line 27
-    :pswitch_1a
+    :pswitch_6
     const/16 v0, 0xe9
 
     .line 28
@@ -4282,7 +4282,7 @@
     return v0
 
     .line 30
-    :pswitch_1d
+    :pswitch_7
     const/16 v0, 0xc1
 
     .line 31
@@ -4290,7 +4290,7 @@
     return v0
 
     .line 33
-    :pswitch_20
+    :pswitch_8
     const/16 v0, 0xc1
 
     .line 34
@@ -4298,7 +4298,7 @@
     return v0
 
     .line 36
-    :pswitch_23
+    :pswitch_9
     const/16 v0, 0xa3
 
     .line 37
@@ -4306,7 +4306,7 @@
     return v0
 
     .line 39
-    :pswitch_26
+    :pswitch_a
     const/16 v0, 0xa3
 
     .line 40
@@ -4314,7 +4314,7 @@
     return v0
 
     .line 42
-    :pswitch_29
+    :pswitch_b
     const/16 v0, 0xa3
 
     .line 43
@@ -4322,7 +4322,7 @@
     return v0
 
     .line 45
-    :pswitch_2c
+    :pswitch_c
     const/16 v0, 0x83
 
     .line 46
@@ -4330,7 +4330,7 @@
     return v0
 
     .line 48
-    :pswitch_2f
+    :pswitch_d
     const/16 v0, 0x83
 
     .line 49
@@ -4338,7 +4338,7 @@
     return v0
 
     .line 51
-    :pswitch_32
+    :pswitch_e
     const/16 v0, 0x71
 
     .line 52
@@ -4346,7 +4346,7 @@
     return v0
 
     .line 54
-    :pswitch_35
+    :pswitch_f
     const/16 v0, 0x71
 
     .line 55
@@ -4354,36 +4354,36 @@
     return v0
 
     .line 57
-    :pswitch_data_38
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_35
-        :pswitch_32
-        :pswitch_2f
-        :pswitch_2c
-        :pswitch_29
-        :pswitch_26
-        :pswitch_23
-        :pswitch_20
-        :pswitch_1d
-        :pswitch_1a
-        :pswitch_17
-        :pswitch_14
-        :pswitch_11
+        :pswitch_f
         :pswitch_e
+        :pswitch_d
+        :pswitch_c
         :pswitch_b
+        :pswitch_a
+        :pswitch_9
         :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final k()Llibs/ig0;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/a43;->j:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_38
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -4395,7 +4395,7 @@
     return-object v0
 
     .line 9
-    :pswitch_8
+    :pswitch_0
     iget-object v0, p0, Llibs/a43;->k:Llibs/hg0;
 
     .line 10
@@ -4403,7 +4403,7 @@
     return-object v0
 
     .line 12
-    :pswitch_b
+    :pswitch_1
     iget-object v0, p0, Llibs/a43;->k:Llibs/hg0;
 
     .line 13
@@ -4411,7 +4411,7 @@
     return-object v0
 
     .line 15
-    :pswitch_e
+    :pswitch_2
     iget-object v0, p0, Llibs/a43;->k:Llibs/hg0;
 
     .line 16
@@ -4419,7 +4419,7 @@
     return-object v0
 
     .line 18
-    :pswitch_11
+    :pswitch_3
     iget-object v0, p0, Llibs/a43;->k:Llibs/hg0;
 
     .line 19
@@ -4427,7 +4427,7 @@
     return-object v0
 
     .line 21
-    :pswitch_14
+    :pswitch_4
     iget-object v0, p0, Llibs/a43;->k:Llibs/hg0;
 
     .line 22
@@ -4435,7 +4435,7 @@
     return-object v0
 
     .line 24
-    :pswitch_17
+    :pswitch_5
     iget-object v0, p0, Llibs/a43;->k:Llibs/hg0;
 
     .line 25
@@ -4443,7 +4443,7 @@
     return-object v0
 
     .line 27
-    :pswitch_1a
+    :pswitch_6
     iget-object v0, p0, Llibs/a43;->k:Llibs/hg0;
 
     .line 28
@@ -4451,7 +4451,7 @@
     return-object v0
 
     .line 30
-    :pswitch_1d
+    :pswitch_7
     iget-object v0, p0, Llibs/a43;->k:Llibs/hg0;
 
     .line 31
@@ -4459,7 +4459,7 @@
     return-object v0
 
     .line 33
-    :pswitch_20
+    :pswitch_8
     iget-object v0, p0, Llibs/a43;->k:Llibs/hg0;
 
     .line 34
@@ -4467,7 +4467,7 @@
     return-object v0
 
     .line 36
-    :pswitch_23
+    :pswitch_9
     iget-object v0, p0, Llibs/a43;->k:Llibs/hg0;
 
     .line 37
@@ -4475,7 +4475,7 @@
     return-object v0
 
     .line 39
-    :pswitch_26
+    :pswitch_a
     iget-object v0, p0, Llibs/a43;->k:Llibs/hg0;
 
     .line 40
@@ -4483,7 +4483,7 @@
     return-object v0
 
     .line 42
-    :pswitch_29
+    :pswitch_b
     iget-object v0, p0, Llibs/a43;->k:Llibs/hg0;
 
     .line 43
@@ -4491,7 +4491,7 @@
     return-object v0
 
     .line 45
-    :pswitch_2c
+    :pswitch_c
     iget-object v0, p0, Llibs/a43;->k:Llibs/hg0;
 
     .line 46
@@ -4499,7 +4499,7 @@
     return-object v0
 
     .line 48
-    :pswitch_2f
+    :pswitch_d
     iget-object v0, p0, Llibs/a43;->k:Llibs/hg0;
 
     .line 49
@@ -4507,7 +4507,7 @@
     return-object v0
 
     .line 51
-    :pswitch_32
+    :pswitch_e
     iget-object v0, p0, Llibs/a43;->k:Llibs/hg0;
 
     .line 52
@@ -4515,7 +4515,7 @@
     return-object v0
 
     .line 54
-    :pswitch_35
+    :pswitch_f
     iget-object v0, p0, Llibs/a43;->k:Llibs/hg0;
 
     .line 55
@@ -4523,36 +4523,36 @@
     return-object v0
 
     .line 57
-    :pswitch_data_38
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_35
-        :pswitch_32
-        :pswitch_2f
-        :pswitch_2c
-        :pswitch_29
-        :pswitch_26
-        :pswitch_23
-        :pswitch_20
-        :pswitch_1d
-        :pswitch_1a
-        :pswitch_17
-        :pswitch_14
-        :pswitch_11
+        :pswitch_f
         :pswitch_e
+        :pswitch_d
+        :pswitch_c
         :pswitch_b
+        :pswitch_a
+        :pswitch_9
         :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final r(I)Z
-    .registers 3
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/a43;->j:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_7c
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -4560,406 +4560,406 @@
     const/4 v0, 0x6
 
     .line 7
-    if-eq p1, v0, :cond_a
+    if-eq p1, v0, :cond_0
 
     .line 8
     .line 9
     const/4 p1, 0x0
 
     .line 10
-    goto :goto_b
+    goto :goto_0
 
     .line 11
-    :cond_a
+    :cond_0
     const/4 p1, 0x1
 
     .line 12
-    :goto_b
+    :goto_0
     return p1
 
     .line 13
-    :pswitch_c
+    :pswitch_0
     const/4 v0, 0x6
 
     .line 14
-    if-eq p1, v0, :cond_11
+    if-eq p1, v0, :cond_1
 
     .line 15
     .line 16
     const/4 p1, 0x0
 
     .line 17
-    goto :goto_12
+    goto :goto_1
 
     .line 18
-    :cond_11
+    :cond_1
     const/4 p1, 0x1
 
     .line 19
-    :goto_12
+    :goto_1
     return p1
 
     .line 20
-    :pswitch_13
+    :pswitch_1
     const/4 v0, 0x6
 
     .line 21
-    if-eq p1, v0, :cond_18
+    if-eq p1, v0, :cond_2
 
     .line 22
     .line 23
     const/4 p1, 0x0
 
     .line 24
-    goto :goto_19
+    goto :goto_2
 
     .line 25
-    :cond_18
+    :cond_2
     const/4 p1, 0x1
 
     .line 26
-    :goto_19
+    :goto_2
     return p1
 
     .line 27
-    :pswitch_1a
+    :pswitch_2
     const/4 v0, 0x6
 
     .line 28
-    if-eq p1, v0, :cond_1f
+    if-eq p1, v0, :cond_3
 
     .line 29
     .line 30
     const/4 p1, 0x0
 
     .line 31
-    goto :goto_20
+    goto :goto_3
 
     .line 32
-    :cond_1f
+    :cond_3
     const/4 p1, 0x1
 
     .line 33
-    :goto_20
+    :goto_3
     return p1
 
     .line 34
-    :pswitch_21
+    :pswitch_3
     const/4 v0, 0x6
 
     .line 35
-    if-eq p1, v0, :cond_26
+    if-eq p1, v0, :cond_4
 
     .line 36
     .line 37
     const/4 p1, 0x0
 
     .line 38
-    goto :goto_27
+    goto :goto_4
 
     .line 39
-    :cond_26
+    :cond_4
     const/4 p1, 0x1
 
     .line 40
-    :goto_27
+    :goto_4
     return p1
 
     .line 41
-    :pswitch_28
+    :pswitch_4
     const/4 v0, 0x6
 
     .line 42
-    if-eq p1, v0, :cond_2d
+    if-eq p1, v0, :cond_5
 
     .line 43
     .line 44
     const/4 p1, 0x0
 
     .line 45
-    goto :goto_2e
+    goto :goto_5
 
     .line 46
-    :cond_2d
+    :cond_5
     const/4 p1, 0x1
 
     .line 47
-    :goto_2e
+    :goto_5
     return p1
 
     .line 48
-    :pswitch_2f
+    :pswitch_5
     const/4 v0, 0x6
 
     .line 49
-    if-eq p1, v0, :cond_34
+    if-eq p1, v0, :cond_6
 
     .line 50
     .line 51
     const/4 p1, 0x0
 
     .line 52
-    goto :goto_35
+    goto :goto_6
 
     .line 53
-    :cond_34
+    :cond_6
     const/4 p1, 0x1
 
     .line 54
-    :goto_35
+    :goto_6
     return p1
 
     .line 55
-    :pswitch_36
+    :pswitch_6
     const/4 v0, 0x6
 
     .line 56
-    if-eq p1, v0, :cond_3b
+    if-eq p1, v0, :cond_7
 
     .line 57
     .line 58
     const/4 p1, 0x0
 
     .line 59
-    goto :goto_3c
+    goto :goto_7
 
     .line 60
-    :cond_3b
+    :cond_7
     const/4 p1, 0x1
 
     .line 61
-    :goto_3c
+    :goto_7
     return p1
 
     .line 62
-    :pswitch_3d
+    :pswitch_7
     const/4 v0, 0x6
 
     .line 63
-    if-eq p1, v0, :cond_42
+    if-eq p1, v0, :cond_8
 
     .line 64
     .line 65
     const/4 p1, 0x0
 
     .line 66
-    goto :goto_43
+    goto :goto_8
 
     .line 67
-    :cond_42
+    :cond_8
     const/4 p1, 0x1
 
     .line 68
-    :goto_43
+    :goto_8
     return p1
 
     .line 69
-    :pswitch_44
+    :pswitch_8
     const/4 v0, 0x6
 
     .line 70
-    if-eq p1, v0, :cond_49
+    if-eq p1, v0, :cond_9
 
     .line 71
     .line 72
     const/4 p1, 0x0
 
     .line 73
-    goto :goto_4a
+    goto :goto_9
 
     .line 74
-    :cond_49
+    :cond_9
     const/4 p1, 0x1
 
     .line 75
-    :goto_4a
+    :goto_9
     return p1
 
     .line 76
-    :pswitch_4b
+    :pswitch_9
     const/4 v0, 0x6
 
     .line 77
-    if-eq p1, v0, :cond_50
+    if-eq p1, v0, :cond_a
 
     .line 78
     .line 79
     const/4 p1, 0x0
 
     .line 80
-    goto :goto_51
+    goto :goto_a
 
     .line 81
-    :cond_50
+    :cond_a
     const/4 p1, 0x1
 
     .line 82
-    :goto_51
+    :goto_a
     return p1
 
     .line 83
-    :pswitch_52
+    :pswitch_a
     const/4 v0, 0x6
 
     .line 84
-    if-eq p1, v0, :cond_57
+    if-eq p1, v0, :cond_b
 
     .line 85
     .line 86
     const/4 p1, 0x0
 
     .line 87
-    goto :goto_58
+    goto :goto_b
 
     .line 88
-    :cond_57
+    :cond_b
     const/4 p1, 0x1
 
     .line 89
-    :goto_58
+    :goto_b
     return p1
 
     .line 90
-    :pswitch_59
+    :pswitch_b
     const/4 v0, 0x6
 
     .line 91
-    if-eq p1, v0, :cond_5e
+    if-eq p1, v0, :cond_c
 
     .line 92
     .line 93
     const/4 p1, 0x0
 
     .line 94
-    goto :goto_5f
+    goto :goto_c
 
     .line 95
-    :cond_5e
+    :cond_c
     const/4 p1, 0x1
 
     .line 96
-    :goto_5f
+    :goto_c
     return p1
 
     .line 97
-    :pswitch_60
+    :pswitch_c
     const/4 v0, 0x6
 
     .line 98
-    if-eq p1, v0, :cond_65
+    if-eq p1, v0, :cond_d
 
     .line 99
     .line 100
     const/4 p1, 0x0
 
     .line 101
-    goto :goto_66
+    goto :goto_d
 
     .line 102
-    :cond_65
+    :cond_d
     const/4 p1, 0x1
 
     .line 103
-    :goto_66
+    :goto_d
     return p1
 
     .line 104
-    :pswitch_67
+    :pswitch_d
     const/4 v0, 0x6
 
     .line 105
-    if-eq p1, v0, :cond_6c
+    if-eq p1, v0, :cond_e
 
     .line 106
     .line 107
     const/4 p1, 0x0
 
     .line 108
-    goto :goto_6d
+    goto :goto_e
 
     .line 109
-    :cond_6c
+    :cond_e
     const/4 p1, 0x1
 
     .line 110
-    :goto_6d
+    :goto_e
     return p1
 
     .line 111
-    :pswitch_6e
+    :pswitch_e
     const/4 v0, 0x6
 
     .line 112
-    if-eq p1, v0, :cond_73
+    if-eq p1, v0, :cond_f
 
     .line 113
     .line 114
     const/4 p1, 0x0
 
     .line 115
-    goto :goto_74
+    goto :goto_f
 
     .line 116
-    :cond_73
+    :cond_f
     const/4 p1, 0x1
 
     .line 117
-    :goto_74
+    :goto_f
     return p1
 
     .line 118
-    :pswitch_75
+    :pswitch_f
     const/4 v0, 0x6
 
     .line 119
-    if-eq p1, v0, :cond_7a
+    if-eq p1, v0, :cond_10
 
     .line 120
     .line 121
     const/4 p1, 0x0
 
     .line 122
-    goto :goto_7b
+    goto :goto_10
 
     .line 123
-    :cond_7a
+    :cond_10
     const/4 p1, 0x1
 
     .line 124
-    :goto_7b
+    :goto_10
     return p1
 
     .line 125
-    :pswitch_data_7c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_75
-        :pswitch_6e
-        :pswitch_67
-        :pswitch_60
-        :pswitch_59
-        :pswitch_52
-        :pswitch_4b
-        :pswitch_44
-        :pswitch_3d
-        :pswitch_36
-        :pswitch_2f
-        :pswitch_28
-        :pswitch_21
-        :pswitch_1a
-        :pswitch_13
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
         :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final s()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/a43;->j:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_28
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -4970,112 +4970,112 @@
     return v0
 
     .line 8
-    :pswitch_7
+    :pswitch_0
     const/4 v0, 0x0
 
     .line 9
     return v0
 
     .line 10
-    :pswitch_9
+    :pswitch_1
     const/4 v0, 0x1
 
     .line 11
     return v0
 
     .line 12
-    :pswitch_b
+    :pswitch_2
     const/4 v0, 0x0
 
     .line 13
     return v0
 
     .line 14
-    :pswitch_d
+    :pswitch_3
     const/4 v0, 0x1
 
     .line 15
     return v0
 
     .line 16
-    :pswitch_f
+    :pswitch_4
     const/4 v0, 0x1
 
     .line 17
     return v0
 
     .line 18
-    :pswitch_11
+    :pswitch_5
     const/4 v0, 0x0
 
     .line 19
     return v0
 
     .line 20
-    :pswitch_13
+    :pswitch_6
     const/4 v0, 0x1
 
     .line 21
     return v0
 
     .line 22
-    :pswitch_15
+    :pswitch_7
     const/4 v0, 0x0
 
     .line 23
     return v0
 
     .line 24
-    :pswitch_17
+    :pswitch_8
     const/4 v0, 0x0
 
     .line 25
     return v0
 
     .line 26
-    :pswitch_19
+    :pswitch_9
     const/4 v0, 0x0
 
     .line 27
     return v0
 
     .line 28
-    :pswitch_1b
+    :pswitch_a
     const/4 v0, 0x0
 
     .line 29
     return v0
 
     .line 30
-    :pswitch_1d
+    :pswitch_b
     const/4 v0, 0x1
 
     .line 31
     return v0
 
     .line 32
-    :pswitch_1f
+    :pswitch_c
     const/4 v0, 0x0
 
     .line 33
     return v0
 
     .line 34
-    :pswitch_21
+    :pswitch_d
     const/4 v0, 0x0
 
     .line 35
     return v0
 
     .line 36
-    :pswitch_23
+    :pswitch_e
     const/4 v0, 0x0
 
     .line 37
     return v0
 
     .line 38
-    :pswitch_25
+    :pswitch_f
     const/4 v0, 0x0
 
     .line 39
@@ -5085,23 +5085,23 @@
     nop
 
     .line 41
-    :pswitch_data_28
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_25
-        :pswitch_23
-        :pswitch_21
-        :pswitch_1f
-        :pswitch_1d
-        :pswitch_1b
-        :pswitch_19
-        :pswitch_17
-        :pswitch_15
-        :pswitch_13
-        :pswitch_11
         :pswitch_f
+        :pswitch_e
         :pswitch_d
+        :pswitch_c
         :pswitch_b
+        :pswitch_a
         :pswitch_9
+        :pswitch_8
         :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

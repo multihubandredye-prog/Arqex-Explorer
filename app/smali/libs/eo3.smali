@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/pc3;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/cc3;-><init>()V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/String;
@@ -76,7 +76,7 @@
 .end method
 
 .method public final x(II[B)I
-    .registers 6
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/eo3;->Xray:Llibs/pc3;
@@ -87,7 +87,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -102,7 +102,7 @@
     monitor-enter v1
 
     .line 12
-    :try_start_b
+    :try_start_0
     invoke-virtual {v0, p1, p2, p3}, Llibs/go3;->m(II[B)V
 
     .line 13
@@ -123,24 +123,24 @@
     return p2
 
     .line 22
-    :catchall_15
+    :catchall_0
     move-exception p1
 
     .line 23
     monitor-exit v1
-    :try_end_17
-    .catchall {:try_start_b .. :try_end_17} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 24
     throw p1
 
     .line 25
-    :cond_18
+    :cond_0
     return p2
 .end method
 
 .method public final y([B)I
-    .registers 2
+    .locals 0
 
     .line 1
     const/4 p1, 0x0

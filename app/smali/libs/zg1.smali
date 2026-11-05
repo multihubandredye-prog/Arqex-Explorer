@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "DSA"
@@ -84,7 +84,7 @@
 
 # virtual methods
 .method public final generateKeyPair()Ljava/security/KeyPair;
-    .registers 6
+    .locals 5
 
     .line 1
     iget-boolean v0, p0, Llibs/zg1;->e:Z
@@ -95,7 +95,7 @@
 
     .line 4
     .line 5
-    if-nez v0, :cond_39
+    if-nez v0, :cond_1
 
     .line 6
     .line 7
@@ -124,7 +124,7 @@
 
     .line 19
     .line 20
-    if-le v2, v4, :cond_18
+    if-le v2, v4, :cond_0
 
     .line 21
     .line 22
@@ -132,15 +132,15 @@
 
     .line 23
     .line 24
-    goto :goto_1a
+    goto :goto_0
 
     .line 25
-    :cond_18
+    :cond_0
     const/16 v2, 0xa0
 
     .line 26
     .line 27
-    :goto_1a
+    :goto_0
     iput v2, v0, Llibs/m50;->c:I
 
     .line 28
@@ -204,7 +204,7 @@
 
     .line 57
     .line 58
-    :cond_39
+    :cond_1
     invoke-virtual {v1}, Llibs/i50;->x()Llibs/v1;
 
     .line 59
@@ -268,34 +268,34 @@
 .end method
 
 .method public final initialize(ILjava/security/SecureRandom;)V
-    .registers 5
+    .locals 2
 
     const/16 v0, 0x200
 
-    if-lt p1, v0, :cond_1b
+    if-lt p1, v0, :cond_2
 
     const/16 v0, 0x1000
 
-    if-gt p1, v0, :cond_1b
+    if-gt p1, v0, :cond_2
 
     const/16 v0, 0x400
 
-    if-ge p1, v0, :cond_10
+    if-ge p1, v0, :cond_0
 
     .line 46
     rem-int/lit8 v1, p1, 0x40
 
-    if-nez v1, :cond_1b
+    if-nez v1, :cond_2
 
-    :cond_10
-    if-lt p1, v0, :cond_16
+    :cond_0
+    if-lt p1, v0, :cond_1
 
     rem-int/lit16 v0, p1, 0x400
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_2
 
     .line 47
-    :cond_16
+    :cond_1
     iput p1, p0, Llibs/zg1;->b:I
 
     .line 48
@@ -304,7 +304,7 @@
     return-void
 
     .line 49
-    :cond_1b
+    :cond_2
     const-string p1, "strength must be from 512 - 4096 and a multiple of 1024 above 1024"
 
     invoke-static {p1}, Llibs/bf0;->m(Ljava/lang/String;)V
@@ -313,14 +313,14 @@
 .end method
 
 .method public final initialize(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    .registers 7
+    .locals 4
 
     .line 1
     instance-of v0, p1, Ljava/security/spec/DSAParameterSpec;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -393,7 +393,7 @@
     return-void
 
     .line 40
-    :cond_27
+    :cond_0
     const-string p1, "parameter object not a DSAParameterSpec"
 
     .line 41

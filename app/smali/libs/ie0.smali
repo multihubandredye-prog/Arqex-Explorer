@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/ie0;->a:B
@@ -30,14 +30,14 @@
 
 # virtual methods
 .method public final onCheckedChanged(Landroid/widget/CompoundButton;Z)V
-    .registers 3
+    .locals 0
 
     .line 1
     iget-byte p1, p0, Llibs/ie0;->a:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_4c
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -62,7 +62,7 @@
     return-void
 
     .line 16
-    :pswitch_f
+    :pswitch_0
     const-string p1, "ARCHIVE_FOLDERS"
 
     .line 17
@@ -83,7 +83,7 @@
     return-void
 
     .line 26
-    :pswitch_19
+    :pswitch_1
     const-string p1, "FILE_CONTENT"
 
     .line 27
@@ -104,7 +104,7 @@
     return-void
 
     .line 36
-    :pswitch_23
+    :pswitch_2
     const-string p1, "CURRENT_FOLDER"
 
     .line 37
@@ -125,7 +125,7 @@
     return-void
 
     .line 46
-    :pswitch_2d
+    :pswitch_3
     const-string p1, "IGNORE_NO_SEARCH"
 
     .line 47
@@ -146,7 +146,7 @@
     return-void
 
     .line 56
-    :pswitch_37
+    :pswitch_4
     const-string p1, "PRINT"
 
     .line 57
@@ -167,7 +167,7 @@
     return-void
 
     .line 66
-    :pswitch_41
+    :pswitch_5
     const-string p1, "IGNORE_NO_SEARCH"
 
     .line 67
@@ -190,13 +190,13 @@
     .line 76
     nop
 
-    :pswitch_data_4c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_41
-        :pswitch_37
-        :pswitch_2d
-        :pswitch_23
-        :pswitch_19
-        :pswitch_f
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

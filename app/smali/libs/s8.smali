@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/app/Activity;ZB)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/s8;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 11
+    .locals 10
 
     .line 1
     iget-byte v0, p0, Llibs/s8;->X:B
@@ -60,7 +60,7 @@
 
     .line 7
     .line 8
-    packed-switch v0, :pswitch_data_52
+    packed-switch v0, :pswitch_data_0
 
     .line 9
     .line 10
@@ -73,7 +73,7 @@
     return-void
 
     .line 15
-    :pswitch_e
+    :pswitch_0
     sget v0, Llibs/bi2;->operation_aborted:I
 
     .line 16
@@ -91,7 +91,7 @@
     .line 22
     .line 23
     .line 24
-    if-eqz v2, :cond_1c
+    if-eqz v2, :cond_0
 
     .line 25
     .line 26
@@ -100,11 +100,11 @@
     .line 27
     .line 28
     .line 29
-    :cond_1c
+    :cond_0
     return-void
 
     .line 30
-    :pswitch_1d
+    :pswitch_1
     invoke-static {}, Llibs/e9;->j()[Ljava/lang/String;
 
     .line 31
@@ -147,8 +147,8 @@
     move-result v0
 
     .line 52
-    :goto_33
-    if-ge v1, v0, :cond_45
+    :goto_0
+    if-ge v1, v0, :cond_1
 
     .line 53
     .line 54
@@ -181,10 +181,10 @@
     .line 67
     .line 68
     .line 69
-    goto :goto_33
+    goto :goto_0
 
     .line 70
-    :cond_45
+    :cond_1
     new-instance v4, Llibs/t8;
 
     .line 71
@@ -210,9 +210,9 @@
     return-void
 
     .line 83
-    :pswitch_data_52
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1d
-        :pswitch_e
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

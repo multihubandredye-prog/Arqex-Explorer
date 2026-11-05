@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "EdDSA"
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public generateKeyPair()Ljava/security/KeyPair;
-    .registers 5
+    .locals 4
 
     .line 1
     const/16 v0, 0x20
@@ -90,21 +90,21 @@
 .end method
 
 .method public initialize(ILjava/security/SecureRandom;)V
-    .registers 3
+    .locals 0
 
     .line 1
     const/16 p2, 0xff
 
     .line 2
     .line 3
-    if-ne p1, p2, :cond_5
+    if-ne p1, p2, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     const-string p1, "EdDSA only supports key size 255"
 
     .line 7
@@ -118,7 +118,7 @@
 .end method
 
 .method public initialize(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    .registers 3
+    .locals 0
 
     .line 12
     new-instance p1, Ljava/security/InvalidAlgorithmParameterException;

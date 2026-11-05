@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ow1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Lcom/mixplorer/widgets/MiWebView$MyJavascriptInterface;->this$0:Llibs/ow1;
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public done(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
     .annotation runtime Landroid/webkit/JavascriptInterface;
     .end annotation
 
@@ -38,23 +38,23 @@
     .line 2
     .line 3
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-    :try_end_5
-    .catchall {:try_start_0 .. :try_end_5} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 4
     .line 5
     .line 6
-    :catchall_5
+    :catchall_0
     return-void
 .end method
 
 .method public getLink(Ljava/lang/String;)Ljava/lang/String;
-    .registers 6
+    .locals 4
     .annotation runtime Landroid/webkit/JavascriptInterface;
     .end annotation
 
     .line 1
-    if-eqz p1, :cond_49
+    if-eqz p1, :cond_2
 
     .line 2
     .line 3
@@ -64,7 +64,7 @@
     const/4 v1, 0x0
 
     .line 5
-    :try_start_4
+    :try_start_0
     const-string v2, "file://"
 
     .line 6
@@ -77,7 +77,7 @@
     move-result v2
 
     .line 11
-    if-eqz v2, :cond_49
+    if-eqz v2, :cond_2
 
     .line 12
     .line 13
@@ -89,14 +89,14 @@
 
     .line 16
     .line 17
-    if-nez v2, :cond_13
+    if-nez v2, :cond_0
 
     .line 18
     .line 19
-    goto :goto_49
+    goto :goto_1
 
     .line 20
-    :cond_13
+    :cond_0
     invoke-static {p1, v1}, Llibs/ji0;->Bot(Ljava/lang/String;Z)Landroid/net/Uri;
 
     .line 21
@@ -142,7 +142,7 @@
     move-result-object v2
 
     .line 43
-    if-eqz v2, :cond_39
+    if-eqz v2, :cond_1
 
     .line 44
     .line 45
@@ -154,7 +154,7 @@
     move-result-object v3
 
     .line 49
-    if-eqz v3, :cond_39
+    if-eqz v3, :cond_1
 
     .line 50
     .line 51
@@ -164,25 +164,25 @@
     .line 53
     .line 54
     move-result-object p1
-    :try_end_36
-    .catchall {:try_start_4 .. :try_end_36} :catchall_37
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 55
     return-object p1
 
     .line 56
-    :catchall_37
+    :catchall_0
     move-exception v2
 
     .line 57
-    goto :goto_3a
+    goto :goto_0
 
     .line 58
-    :cond_39
+    :cond_1
     return-object p1
 
     .line 59
-    :goto_3a
+    :goto_0
     invoke-static {v2}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 60
@@ -212,13 +212,13 @@
     .line 72
     .line 73
     .line 74
-    :cond_49
-    :goto_49
+    :cond_2
+    :goto_1
     return-object p1
 .end method
 
 .method public log(Ljava/lang/String;)V
-    .registers 6
+    .locals 4
     .annotation runtime Landroid/webkit/JavascriptInterface;
     .end annotation
 
@@ -247,18 +247,18 @@
     .line 10
     .line 11
     invoke-static {v0, v1, v2}, Llibs/vw1;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_d
-    .catchall {:try_start_0 .. :try_end_d} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 12
     .line 13
     .line 14
-    :catchall_d
+    :catchall_0
     return-void
 .end method
 
 .method public trigger(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
     .annotation runtime Landroid/webkit/JavascriptInterface;
     .end annotation
 
@@ -269,12 +269,12 @@
     .line 2
     .line 3
     invoke-static {v0, p1}, Llibs/vw1;->e(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_5
-    .catchall {:try_start_0 .. :try_end_5} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 4
     .line 5
     .line 6
-    :catchall_5
+    :catchall_0
     return-void
 .end method

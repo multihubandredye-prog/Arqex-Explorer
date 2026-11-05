@@ -21,7 +21,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/util/HashMap;
@@ -41,7 +41,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -78,7 +78,7 @@
 .end method
 
 .method public final b()Z
-    .registers 9
+    .locals 8
 
     .line 1
     iget-object v0, p0, Llibs/yd;->a:Llibs/h5;
@@ -96,7 +96,7 @@
     const/4 v2, 0x0
 
     .line 8
-    if-lez v1, :cond_34
+    if-lez v1, :cond_1
 
     .line 9
     .line 10
@@ -104,7 +104,7 @@
 
     .line 11
     .line 12
-    if-nez v1, :cond_34
+    if-nez v1, :cond_1
 
     .line 13
     .line 14
@@ -116,7 +116,7 @@
     move-result-object v0
 
     .line 18
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_0
 
     .line 19
     .line 20
@@ -184,18 +184,18 @@
     return v0
 
     .line 50
-    :cond_31
+    :cond_0
     invoke-static {}, Llibs/t22;->b()V
 
     .line 51
     .line 52
     .line 53
-    :cond_34
+    :cond_1
     return v2
 .end method
 
 .method public final c()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -221,7 +221,7 @@
 .end method
 
 .method public final d(Llibs/pn0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/yd;->d:Llibs/pn0;
@@ -232,7 +232,7 @@
 .end method
 
 .method public final e(Llibs/rp0;Ljava/util/List;)Z
-    .registers 8
+    .locals 5
 
     .line 1
     new-instance v0, Llibs/wd;
@@ -280,7 +280,7 @@
 .end method
 
 .method public final f(Llibs/rp0;IJLjava/lang/String;)V
-    .registers 9
+    .locals 3
 
     .line 1
     sget-object v0, Llibs/yd;->f:Ljava/util/HashMap;
@@ -293,19 +293,19 @@
     const/4 v1, 0x2
 
     .line 5
-    if-eq p2, v1, :cond_9
+    if-eq p2, v1, :cond_0
 
     .line 6
     .line 7
     const/4 v1, 0x1
 
     .line 8
-    if-ne p2, v1, :cond_14
+    if-ne p2, v1, :cond_1
 
     .line 9
     .line 10
-    :cond_9
-    :try_start_9
+    :cond_0
+    :try_start_0
     invoke-static {p3, p4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     .line 11
@@ -327,17 +327,17 @@
     .line 19
     .line 20
     .line 21
-    :cond_14
+    :cond_1
     monitor-exit v0
-    :try_end_15
-    .catchall {:try_start_9 .. :try_end_15} :catchall_33
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 22
     iget-object v0, p0, Llibs/yd;->d:Llibs/pn0;
 
     .line 23
     .line 24
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_2
 
     .line 25
     .line 26
@@ -386,18 +386,18 @@
     .line 49
     .line 50
     .line 51
-    :cond_32
+    :cond_2
     return-void
 
     .line 52
-    :catchall_33
+    :catchall_0
     move-exception p1
 
     .line 53
-    :try_start_34
+    :try_start_1
     monitor-exit v0
-    :try_end_35
-    .catchall {:try_start_34 .. :try_end_35} :catchall_33
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 54
     throw p1

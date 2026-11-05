@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Llibs/App;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljavax/crypto/SecretKeyFactorySpi;-><init>()V
@@ -33,14 +33,14 @@
 
 # virtual methods
 .method public engineGenerateSecret(Ljava/security/spec/KeySpec;)Ljavax/crypto/SecretKey;
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Ljavax/crypto/spec/SecretKeySpec;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -51,7 +51,7 @@
     return-object p1
 
     .line 8
-    :cond_7
+    :cond_0
     const-string p1, "Invalid KeySpec"
 
     .line 9
@@ -68,17 +68,17 @@
 .end method
 
 .method public engineGetKeySpec(Ljavax/crypto/SecretKey;Ljava/lang/Class;)Ljava/security/spec/KeySpec;
-    .registers 7
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-eqz p2, :cond_45
+    if-eqz p2, :cond_2
 
     .line 3
     .line 4
-    if-eqz p1, :cond_3f
+    if-eqz p1, :cond_1
 
     .line 5
     .line 6
@@ -94,7 +94,7 @@
     move-result v0
 
     .line 12
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     .line 13
     .line 14
@@ -122,11 +122,11 @@
     return-object p2
 
     .line 26
-    :cond_19
+    :cond_0
     const/4 v0, 0x1
 
     .line 27
-    :try_start_1a
+    :try_start_0
     new-array v1, v0, [Ljava/lang/Class;
 
     .line 28
@@ -175,15 +175,15 @@
 
     .line 50
     check-cast p1, Ljava/security/spec/KeySpec;
-    :try_end_33
-    .catch Ljava/lang/Exception; {:try_start_1a .. :try_end_33} :catch_34
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 51
     .line 52
     return-object p1
 
     .line 53
-    :catch_34
+    :catch_0
     move-exception p1
 
     .line 54
@@ -207,7 +207,7 @@
     throw p2
 
     .line 64
-    :cond_3f
+    :cond_1
     const-string p1, "key parameter is null"
 
     .line 65
@@ -220,7 +220,7 @@
     return-object v0
 
     .line 70
-    :cond_45
+    :cond_2
     const-string p1, "keySpec parameter is null"
 
     .line 71
@@ -234,10 +234,10 @@
 .end method
 
 .method public final engineTranslateKey(Ljavax/crypto/SecretKey;)Ljavax/crypto/SecretKey;
-    .registers 5
+    .locals 3
 
     .line 1
-    if-eqz p1, :cond_26
+    if-eqz p1, :cond_1
 
     .line 2
     .line 3
@@ -261,7 +261,7 @@
     move-result v0
 
     .line 13
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 14
     .line 15
@@ -285,7 +285,7 @@
     return-object v0
 
     .line 25
-    :cond_18
+    :cond_0
     new-instance p1, Ljava/security/InvalidKeyException;
 
     .line 26
@@ -314,7 +314,7 @@
     throw p1
 
     .line 39
-    :cond_26
+    :cond_1
     const-string p1, "key parameter is null"
 
     .line 40

@@ -51,7 +51,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/16 v0, 0x20
@@ -62,7 +62,7 @@
 
     .line 4
     .line 5
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     .line 6
     .line 7
@@ -74,7 +74,7 @@
     return-void
 
     .line 11
-    :array_a
+    :array_0
     .array-data 1
         0x0t
         -0x1t
@@ -112,7 +112,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 6
+    .locals 5
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -324,7 +324,7 @@
     const/4 v3, 0x0
 
     .line 104
-    if-eqz v0, :cond_7b
+    if-eqz v0, :cond_0
 
     .line 105
     .line 106
@@ -362,7 +362,7 @@
     return-void
 
     .line 124
-    :cond_7b
+    :cond_0
     const-string v0, "Unknown S-Box - possible types: \"Default\", \"E-Test\", \"E-A\", \"E-B\", \"E-C\", \"E-D\", \"D-Test\", \"D-A\"."
 
     .line 125
@@ -376,7 +376,7 @@
 .end method
 
 .method public constructor <init>(Llibs/wt0;)V
-    .registers 6
+    .locals 4
 
     .line 143
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -485,7 +485,7 @@
 .end method
 
 .method public constructor <init>([B)V
-    .registers 7
+    .locals 5
 
     .line 130
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -612,7 +612,7 @@
 
 # virtual methods
 .method public final a(B)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget v0, p0, Llibs/wt0;->g:I
@@ -638,7 +638,7 @@
     array-length p1, v2
 
     .line 12
-    if-ne v1, p1, :cond_16
+    if-ne v1, p1, :cond_0
 
     .line 13
     .line 14
@@ -659,7 +659,7 @@
 
     .line 22
     .line 23
-    :cond_16
+    :cond_0
     iget-wide v0, p0, Llibs/wt0;->h:J
 
     .line 24
@@ -679,7 +679,7 @@
 .end method
 
 .method public final b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "GOST3411"
@@ -690,7 +690,7 @@
 .end method
 
 .method public final c(I[B)I
-    .registers 7
+    .locals 4
 
     .line 1
     iget-wide v0, p0, Llibs/wt0;->h:J
@@ -717,12 +717,12 @@
     .line 11
     .line 12
     .line 13
-    :goto_c
+    :goto_0
     iget v0, p0, Llibs/wt0;->g:I
 
     .line 14
     .line 15
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 16
     .line 17
@@ -731,10 +731,10 @@
     .line 18
     .line 19
     .line 20
-    goto :goto_c
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_0
     invoke-virtual {p0, v3}, Llibs/wt0;->k([B)V
 
     .line 22
@@ -774,7 +774,7 @@
 .end method
 
 .method public final d()Llibs/ar1;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/wt0;
@@ -790,7 +790,7 @@
 .end method
 
 .method public final e()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x20
@@ -801,7 +801,7 @@
 .end method
 
 .method public final f(Llibs/ar1;)V
-    .registers 8
+    .locals 6
 
     .line 1
     check-cast p1, Llibs/wt0;
@@ -1010,7 +1010,7 @@
 .end method
 
 .method public final g()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x20
@@ -1021,7 +1021,7 @@
 .end method
 
 .method public final h([B)V
-    .registers 7
+    .locals 5
 
     .line 1
     const/4 v0, 0x0
@@ -1030,7 +1030,7 @@
     const/4 v1, 0x0
 
     .line 3
-    :goto_2
+    :goto_0
     iget-object v2, p0, Llibs/wt0;->l:[B
 
     .line 4
@@ -1039,7 +1039,7 @@
 
     .line 6
     .line 7
-    if-ge v1, v3, :cond_15
+    if-ge v1, v3, :cond_0
 
     .line 8
     .line 9
@@ -1069,10 +1069,10 @@
 
     .line 20
     .line 21
-    goto :goto_2
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     const/16 v1, 0x18
 
     .line 23
@@ -1091,13 +1091,13 @@
 .end method
 
 .method public final i([B)[B
-    .registers 7
+    .locals 5
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :goto_1
+    :goto_0
     const/16 v1, 0x8
 
     .line 3
@@ -1106,7 +1106,7 @@
 
     .line 5
     .line 6
-    if-ge v0, v1, :cond_28
+    if-ge v0, v1, :cond_0
 
     .line 7
     .line 8
@@ -1174,15 +1174,15 @@
 
     .line 39
     .line 40
-    goto :goto_1
+    goto :goto_0
 
     .line 41
-    :cond_28
+    :cond_0
     return-object v2
 .end method
 
 .method public final j([B)V
-    .registers 9
+    .locals 7
 
     .line 1
     const/4 v0, 0x0
@@ -1191,7 +1191,7 @@
     const/4 v1, 0x0
 
     .line 3
-    :goto_2
+    :goto_0
     array-length v2, p1
 
     .line 4
@@ -1205,7 +1205,7 @@
 
     .line 7
     .line 8
-    if-ge v1, v2, :cond_20
+    if-ge v1, v2, :cond_0
 
     .line 9
     .line 10
@@ -1255,10 +1255,10 @@
 
     .line 31
     .line 32
-    goto :goto_2
+    goto :goto_0
 
     .line 33
-    :cond_20
+    :cond_0
     aget-short v1, v4, v0
 
     .line 34
@@ -1328,14 +1328,14 @@
     .line 62
     .line 63
     .line 64
-    :goto_3f
+    :goto_1
     array-length v1, p1
 
     .line 65
     div-int/2addr v1, v3
 
     .line 66
-    if-ge v0, v1, :cond_54
+    if-ge v0, v1, :cond_1
 
     .line 67
     .line 68
@@ -1373,15 +1373,15 @@
 
     .line 83
     .line 84
-    goto :goto_3f
+    goto :goto_1
 
     .line 85
-    :cond_54
+    :cond_1
     return-void
 .end method
 
 .method public final k([B)V
-    .registers 14
+    .locals 12
 
     .line 1
     const/4 v0, 0x0
@@ -1425,12 +1425,12 @@
     const/4 v4, 0x0
 
     .line 22
-    :goto_15
+    :goto_0
     iget-object v5, p0, Llibs/wt0;->s:[B
 
     .line 23
     .line 24
-    if-ge v4, v2, :cond_26
+    if-ge v4, v2, :cond_0
 
     .line 25
     .line 26
@@ -1460,10 +1460,10 @@
 
     .line 37
     .line 38
-    goto :goto_15
+    goto :goto_0
 
     .line 39
-    :cond_26
+    :cond_0
     invoke-virtual {p0, v5}, Llibs/wt0;->i([B)[B
 
     .line 40
@@ -1505,11 +1505,11 @@
     const/4 v8, 0x1
 
     .line 60
-    :goto_3b
+    :goto_1
     const/4 v9, 0x4
 
     .line 61
-    if-ge v8, v9, :cond_81
+    if-ge v8, v9, :cond_3
 
     .line 62
     .line 63
@@ -1521,8 +1521,8 @@
     const/4 v9, 0x0
 
     .line 67
-    :goto_42
-    if-ge v9, v2, :cond_53
+    :goto_2
+    if-ge v9, v2, :cond_1
 
     .line 68
     .line 69
@@ -1556,10 +1556,10 @@
 
     .line 82
     .line 83
-    goto :goto_42
+    goto :goto_2
 
     .line 84
-    :cond_53
+    :cond_1
     iget-object v9, p0, Llibs/wt0;->r:[B
 
     .line 85
@@ -1581,8 +1581,8 @@
     const/4 v9, 0x0
 
     .line 95
-    :goto_5e
-    if-ge v9, v2, :cond_6d
+    :goto_3
+    if-ge v9, v2, :cond_2
 
     .line 96
     .line 97
@@ -1612,10 +1612,10 @@
 
     .line 108
     .line 109
-    goto :goto_5e
+    goto :goto_3
 
     .line 110
-    :cond_6d
+    :cond_2
     invoke-virtual {p0, v5}, Llibs/wt0;->i([B)[B
 
     .line 111
@@ -1651,19 +1651,19 @@
 
     .line 128
     .line 129
-    goto :goto_3b
+    goto :goto_1
 
     .line 130
-    :cond_81
+    :cond_3
     const/4 v3, 0x0
 
     .line 131
-    :goto_82
+    :goto_4
     const/16 v4, 0xc
 
     .line 132
     .line 133
-    if-ge v3, v4, :cond_8c
+    if-ge v3, v4, :cond_4
 
     .line 134
     .line 135
@@ -1676,15 +1676,15 @@
 
     .line 139
     .line 140
-    goto :goto_82
+    goto :goto_4
 
     .line 141
-    :cond_8c
+    :cond_4
     const/4 v3, 0x0
 
     .line 142
-    :goto_8d
-    if-ge v3, v2, :cond_9a
+    :goto_5
+    if-ge v3, v2, :cond_5
 
     .line 143
     .line 144
@@ -1710,10 +1710,10 @@
 
     .line 153
     .line 154
-    goto :goto_8d
+    goto :goto_5
 
     .line 155
-    :cond_9a
+    :cond_5
     invoke-virtual {p0, v6}, Llibs/wt0;->j([B)V
 
     .line 156
@@ -1722,8 +1722,8 @@
     const/4 v1, 0x0
 
     .line 159
-    :goto_9e
-    if-ge v1, v2, :cond_ab
+    :goto_6
+    if-ge v1, v2, :cond_6
 
     .line 160
     .line 161
@@ -1749,19 +1749,19 @@
 
     .line 170
     .line 171
-    goto :goto_9e
+    goto :goto_6
 
     .line 172
-    :cond_ab
+    :cond_6
     const/4 v1, 0x0
 
     .line 173
-    :goto_ac
+    :goto_7
     const/16 v2, 0x3d
 
     .line 174
     .line 175
-    if-ge v1, v2, :cond_b6
+    if-ge v1, v2, :cond_7
 
     .line 176
     .line 177
@@ -1774,10 +1774,10 @@
 
     .line 181
     .line 182
-    goto :goto_ac
+    goto :goto_7
 
     .line 183
-    :cond_b6
+    :cond_7
     array-length v1, p1
 
     .line 184
@@ -1790,7 +1790,7 @@
 .end method
 
 .method public final l([B)V
-    .registers 7
+    .locals 5
 
     .line 1
     const/4 v0, 0x0
@@ -1799,7 +1799,7 @@
     const/4 v1, 0x0
 
     .line 3
-    :goto_2
+    :goto_0
     iget-object v2, p0, Llibs/wt0;->d:[B
 
     .line 4
@@ -1807,7 +1807,7 @@
     array-length v3, v2
 
     .line 6
-    if-eq v0, v3, :cond_19
+    if-eq v0, v3, :cond_0
 
     .line 7
     .line 8
@@ -1848,15 +1848,15 @@
 
     .line 24
     .line 25
-    goto :goto_2
+    goto :goto_0
 
     .line 26
-    :cond_19
+    :cond_0
     return-void
 .end method
 
 .method public final reset()V
-    .registers 6
+    .locals 5
 
     .line 1
     const-wide/16 v0, 0x0
@@ -1877,7 +1877,7 @@
     const/4 v1, 0x0
 
     .line 9
-    :goto_8
+    :goto_0
     iget-object v2, p0, Llibs/wt0;->a:[B
 
     .line 10
@@ -1885,7 +1885,7 @@
     array-length v3, v2
 
     .line 12
-    if-ge v1, v3, :cond_12
+    if-ge v1, v3, :cond_0
 
     .line 13
     .line 14
@@ -1897,14 +1897,14 @@
 
     .line 17
     .line 18
-    goto :goto_8
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     const/4 v1, 0x0
 
     .line 20
-    :goto_13
+    :goto_1
     iget-object v2, p0, Llibs/wt0;->b:[B
 
     .line 21
@@ -1912,7 +1912,7 @@
     array-length v3, v2
 
     .line 23
-    if-ge v1, v3, :cond_1d
+    if-ge v1, v3, :cond_1
 
     .line 24
     .line 25
@@ -1924,14 +1924,14 @@
 
     .line 28
     .line 29
-    goto :goto_13
+    goto :goto_1
 
     .line 30
-    :cond_1d
+    :cond_1
     const/4 v1, 0x0
 
     .line 31
-    :goto_1e
+    :goto_2
     iget-object v2, p0, Llibs/wt0;->c:[B
 
     .line 32
@@ -1939,7 +1939,7 @@
     array-length v3, v2
 
     .line 34
-    if-ge v1, v3, :cond_28
+    if-ge v1, v3, :cond_2
 
     .line 35
     .line 36
@@ -1951,14 +1951,14 @@
 
     .line 39
     .line 40
-    goto :goto_1e
+    goto :goto_2
 
     .line 41
-    :cond_28
+    :cond_2
     const/4 v1, 0x0
 
     .line 42
-    :goto_29
+    :goto_3
     iget-object v2, p0, Llibs/wt0;->e:[[B
 
     .line 43
@@ -1973,7 +1973,7 @@
     array-length v4, v3
 
     .line 48
-    if-ge v1, v4, :cond_36
+    if-ge v1, v4, :cond_3
 
     .line 49
     .line 50
@@ -1985,14 +1985,14 @@
 
     .line 53
     .line 54
-    goto :goto_29
+    goto :goto_3
 
     .line 55
-    :cond_36
+    :cond_3
     const/4 v1, 0x0
 
     .line 56
-    :goto_37
+    :goto_4
     const/4 v3, 0x3
 
     .line 57
@@ -2003,7 +2003,7 @@
     array-length v4, v3
 
     .line 60
-    if-ge v1, v4, :cond_42
+    if-ge v1, v4, :cond_4
 
     .line 61
     .line 62
@@ -2015,14 +2015,14 @@
 
     .line 65
     .line 66
-    goto :goto_37
+    goto :goto_4
 
     .line 67
-    :cond_42
+    :cond_4
     const/4 v1, 0x0
 
     .line 68
-    :goto_43
+    :goto_5
     iget-object v3, p0, Llibs/wt0;->d:[B
 
     .line 69
@@ -2030,7 +2030,7 @@
     array-length v4, v3
 
     .line 71
-    if-ge v1, v4, :cond_4d
+    if-ge v1, v4, :cond_5
 
     .line 72
     .line 73
@@ -2042,14 +2042,14 @@
 
     .line 76
     .line 77
-    goto :goto_43
+    goto :goto_5
 
     .line 78
-    :cond_4d
+    :cond_5
     const/4 v1, 0x0
 
     .line 79
-    :goto_4e
+    :goto_6
     iget-object v3, p0, Llibs/wt0;->f:[B
 
     .line 80
@@ -2057,7 +2057,7 @@
     array-length v4, v3
 
     .line 82
-    if-ge v1, v4, :cond_58
+    if-ge v1, v4, :cond_6
 
     .line 83
     .line 84
@@ -2069,10 +2069,10 @@
 
     .line 87
     .line 88
-    goto :goto_4e
+    goto :goto_6
 
     .line 89
-    :cond_58
+    :cond_6
     const/4 v1, 0x2
 
     .line 90
@@ -2097,7 +2097,7 @@
 .end method
 
 .method public final update([BII)V
-    .registers 9
+    .locals 5
 
     .line 1
     :goto_0
@@ -2105,11 +2105,11 @@
 
     .line 2
     .line 3
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
-    if-lez p3, :cond_10
+    if-lez p3, :cond_0
 
     .line 6
     .line 7
@@ -2133,8 +2133,8 @@
     goto :goto_0
 
     .line 17
-    :cond_10
-    :goto_10
+    :cond_0
+    :goto_1
     iget-object v0, p0, Llibs/wt0;->f:[B
 
     .line 18
@@ -2142,7 +2142,7 @@
     array-length v1, v0
 
     .line 20
-    if-le p3, v1, :cond_2c
+    if-le p3, v1, :cond_1
 
     .line 21
     .line 22
@@ -2196,12 +2196,12 @@
 
     .line 43
     .line 44
-    goto :goto_10
+    goto :goto_1
 
     .line 45
-    :cond_2c
-    :goto_2c
-    if-lez p3, :cond_38
+    :cond_1
+    :goto_2
+    if-lez p3, :cond_2
 
     .line 46
     .line 47
@@ -2222,9 +2222,9 @@
 
     .line 55
     .line 56
-    goto :goto_2c
+    goto :goto_2
 
     .line 57
-    :cond_38
+    :cond_2
     return-void
 .end method

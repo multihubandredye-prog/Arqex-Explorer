@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/vq0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/tq0;->j:Llibs/vq0;
@@ -23,7 +23,7 @@
     .line 4
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     iget-object p1, p1, Llibs/vq0;->e:Llibs/z6;
 
     .line 7
@@ -37,15 +37,15 @@
 
     .line 12
     iput-object p1, p0, Llibs/tq0;->i:Ljava/util/Iterator;
-    :try_end_d
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_d} :catch_e
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 13
     .line 14
     return-void
 
     .line 15
-    :catch_e
+    :catch_0
     sget-object p1, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     .line 16
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public final Data()Llibs/ny1;
-    .registers 10
+    .locals 9
 
     .line 1
     new-instance v0, Ljava/util/HashSet;
@@ -92,7 +92,7 @@
     move-result v2
 
     .line 12
-    if-eqz v2, :cond_a0
+    if-eqz v2, :cond_3
 
     .line 13
     .line 14
@@ -140,7 +140,7 @@
 
     .line 35
     .line 36
-    if-nez v4, :cond_7c
+    if-nez v4, :cond_2
 
     .line 37
     .line 38
@@ -157,7 +157,7 @@
     .line 43
     .line 44
     .line 45
-    :try_start_2c
+    :try_start_0
     invoke-virtual {v1, v5}, Llibs/uy1;->g(I)J
 
     .line 46
@@ -178,14 +178,14 @@
 
     .line 54
     .line 55
-    if-nez v8, :cond_39
+    if-nez v8, :cond_0
 
     .line 56
     .line 57
-    goto :goto_47
+    goto :goto_0
 
     .line 58
-    :cond_39
+    :cond_0
     iget-object v0, v0, Llibs/sy1;->c:Llibs/fi1;
 
     .line 59
@@ -214,7 +214,7 @@
     move-result-object v0
 
     .line 72
-    :goto_47
+    :goto_0
     invoke-virtual {v1, v2}, Llibs/uy1;->d(I)I
 
     .line 73
@@ -232,7 +232,7 @@
     .line 79
     .line 80
     .line 81
-    :cond_50
+    :cond_1
     invoke-virtual {v3}, Llibs/uq0;->Data()Llibs/ny1;
 
     .line 82
@@ -241,7 +241,7 @@
     move-result-object v0
 
     .line 85
-    if-eqz v0, :cond_a0
+    if-eqz v0, :cond_3
 
     .line 86
     .line 87
@@ -255,18 +255,18 @@
     .line 91
     .line 92
     move-result v4
-    :try_end_5c
-    .catch Ljava/io/IOException; {:try_start_2c .. :try_end_5c} :catch_5f
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 93
-    if-ne v4, v2, :cond_50
+    if-ne v4, v2, :cond_1
 
     .line 94
     .line 95
     return-object v0
 
     .line 96
-    :catch_5f
+    :catch_0
     move-exception v0
 
     .line 97
@@ -324,7 +324,7 @@
     throw v2
 
     .line 125
-    :cond_7c
+    :cond_2
     new-instance v0, Ljava/lang/IllegalStateException;
 
     .line 126
@@ -393,7 +393,7 @@
     throw v0
 
     .line 161
-    :cond_a0
+    :cond_3
     const/4 v0, 0x0
 
     .line 162

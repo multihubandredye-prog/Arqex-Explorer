@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/wv1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/vv1;->d:Llibs/wv1;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final onScale(Landroid/view/ScaleGestureDetector;)Z
-    .registers 8
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/vv1;->d:Llibs/wv1;
@@ -208,15 +208,15 @@
 
     .line 84
     .line 85
-    if-ltz p1, :cond_58
+    if-ltz p1, :cond_0
 
     .line 86
     .line 87
-    goto/16 :goto_c8
+    goto/16 :goto_2
 
     .line 88
     .line 89
-    :cond_58
+    :cond_0
     iget p1, p0, Llibs/vv1;->b:I
 
     .line 90
@@ -224,7 +224,7 @@
     const/4 v1, 0x0
 
     .line 92
-    if-gez p1, :cond_7c
+    if-gez p1, :cond_3
 
     .line 93
     .line 94
@@ -232,14 +232,14 @@
 
     .line 95
     .line 96
-    if-ltz v3, :cond_62
+    if-ltz v3, :cond_1
 
     .line 97
     .line 98
-    goto :goto_7c
+    goto :goto_0
 
     .line 99
-    :cond_62
+    :cond_1
     iget-object p1, v0, Llibs/wv1;->Lambda:Landroid/graphics/PointF;
 
     .line 100
@@ -259,7 +259,7 @@
 
     .line 107
     .line 108
-    if-gez v4, :cond_73
+    if-gez v4, :cond_2
 
     .line 109
     .line 110
@@ -274,15 +274,15 @@
     .line 113
     .line 114
     .line 115
-    goto :goto_af
+    goto :goto_1
 
     .line 116
-    :cond_73
+    :cond_2
     cmpl-float v3, p1, v1
 
     .line 117
     .line 118
-    if-lez v3, :cond_af
+    if-lez v3, :cond_7
 
     .line 119
     .line 120
@@ -294,16 +294,16 @@
     .line 122
     .line 123
     .line 124
-    goto :goto_af
+    goto :goto_1
 
     .line 125
-    :cond_7c
-    :goto_7c
+    :cond_3
+    :goto_0
     iget-object v3, v0, Llibs/wv1;->Lambda:Landroid/graphics/PointF;
 
     .line 126
     .line 127
-    if-gtz p1, :cond_98
+    if-gtz p1, :cond_5
 
     .line 128
     .line 129
@@ -322,7 +322,7 @@
 
     .line 135
     .line 136
-    if-gez v4, :cond_8f
+    if-gez v4, :cond_4
 
     .line 137
     .line 138
@@ -337,15 +337,15 @@
     .line 141
     .line 142
     .line 143
-    goto :goto_af
+    goto :goto_1
 
     .line 144
-    :cond_8f
+    :cond_4
     cmpl-float v3, p1, v1
 
     .line 145
     .line 146
-    if-lez v3, :cond_af
+    if-lez v3, :cond_7
 
     .line 147
     .line 148
@@ -357,10 +357,10 @@
     .line 150
     .line 151
     .line 152
-    goto :goto_af
+    goto :goto_1
 
     .line 153
-    :cond_98
+    :cond_5
     iget p1, v3, Landroid/graphics/PointF;->y:F
 
     .line 154
@@ -376,7 +376,7 @@
 
     .line 159
     .line 160
-    if-gez v4, :cond_a7
+    if-gez v4, :cond_6
 
     .line 161
     .line 162
@@ -391,15 +391,15 @@
     .line 165
     .line 166
     .line 167
-    goto :goto_af
+    goto :goto_1
 
     .line 168
-    :cond_a7
+    :cond_6
     cmpl-float v3, p1, v1
 
     .line 169
     .line 170
-    if-lez v3, :cond_af
+    if-lez v3, :cond_7
 
     .line 171
     .line 172
@@ -411,8 +411,8 @@
     .line 174
     .line 175
     .line 176
-    :cond_af
-    :goto_af
+    :cond_7
+    :goto_1
     iget-object p1, v0, Llibs/wv1;->Lambda:Landroid/graphics/PointF;
 
     .line 177
@@ -432,7 +432,7 @@
 
     .line 184
     .line 185
-    if-gez v4, :cond_c0
+    if-gez v4, :cond_8
 
     .line 186
     .line 187
@@ -450,12 +450,12 @@
     return v2
 
     .line 193
-    :cond_c0
+    :cond_8
     cmpl-float v3, p1, v1
 
     .line 194
     .line 195
-    if-lez v3, :cond_c8
+    if-lez v3, :cond_9
 
     .line 196
     .line 197
@@ -467,13 +467,13 @@
     .line 199
     .line 200
     .line 201
-    :cond_c8
-    :goto_c8
+    :cond_9
+    :goto_2
     return v2
 .end method
 
 .method public final onScaleBegin(Landroid/view/ScaleGestureDetector;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 p1, 0x0

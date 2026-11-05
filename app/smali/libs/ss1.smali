@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Landroid/text/style/CharacterStyle;-><init>()V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final updateDrawState(Landroid/text/TextPaint;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/ss1;->a:I

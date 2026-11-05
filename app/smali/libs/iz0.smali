@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final a(Llibs/si3;)Llibs/si3;
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/iz0;->c:Ljava/util/List;
@@ -62,7 +62,7 @@
     .line 14
     .line 15
     .line 16
-    :goto_f
+    :goto_0
     iget-object v0, v1, Llibs/zl1;->X:Ljava/util/ListIterator;
 
     .line 17
@@ -75,7 +75,7 @@
     move-result v2
 
     .line 22
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_0
 
     .line 23
     .line 24
@@ -112,9 +112,9 @@
     move-object p1, v2
 
     .line 41
-    goto :goto_f
+    goto :goto_0
 
     .line 42
-    :cond_29
+    :cond_0
     return-object p1
 .end method

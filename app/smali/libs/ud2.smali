@@ -9,7 +9,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/ud2;->c:B
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final c(DJ)I
-    .registers 23
+    .locals 18
 
     .line 1
     move-object/from16 v0, p0
@@ -42,7 +42,7 @@
 
     .line 6
     .line 7
-    packed-switch v3, :pswitch_data_65c
+    packed-switch v3, :pswitch_data_0
 
     .line 8
     .line 9
@@ -55,7 +55,7 @@
 
     .line 13
     .line 14
-    if-eqz v5, :cond_18
+    if-eqz v5, :cond_1
 
     .line 15
     .line 16
@@ -67,30 +67,30 @@
 
     .line 19
     .line 20
-    if-nez v5, :cond_16
+    if-nez v5, :cond_0
 
     .line 21
     .line 22
-    goto :goto_18
+    goto :goto_0
 
     .line 23
-    :cond_16
+    :cond_0
     const/4 v1, 0x0
 
     .line 24
-    goto :goto_19
+    goto :goto_1
 
     .line 25
-    :cond_18
-    :goto_18
+    :cond_1
+    :goto_0
     const/4 v1, 0x2
 
     .line 26
-    :goto_19
+    :goto_1
     return v1
 
     .line 27
-    :pswitch_1a
+    :pswitch_0
     const-wide/16 v1, 0x0
 
     .line 28
@@ -99,17 +99,17 @@
 
     .line 30
     .line 31
-    if-nez v3, :cond_22
+    if-nez v3, :cond_2
 
     .line 32
     .line 33
     const/4 v1, 0x1
 
     .line 34
-    goto :goto_45
+    goto :goto_2
 
     .line 35
-    :cond_22
+    :cond_2
     const-wide/high16 v1, 0x3ff0000000000000L    # 1.0
 
     .line 36
@@ -118,17 +118,17 @@
 
     .line 38
     .line 39
-    if-nez v3, :cond_2a
+    if-nez v3, :cond_3
 
     .line 40
     .line 41
     const/4 v1, 0x2
 
     .line 42
-    goto :goto_45
+    goto :goto_2
 
     .line 43
-    :cond_2a
+    :cond_3
     const-wide/high16 v1, 0x4000000000000000L    # 2.0
 
     .line 44
@@ -137,17 +137,17 @@
 
     .line 46
     .line 47
-    if-nez v3, :cond_32
+    if-nez v3, :cond_4
 
     .line 48
     .line 49
     const/4 v1, 0x4
 
     .line 50
-    goto :goto_45
+    goto :goto_2
 
     .line 51
-    :cond_32
+    :cond_4
     const-wide/high16 v1, 0x4008000000000000L    # 3.0
 
     .line 52
@@ -156,7 +156,7 @@
 
     .line 54
     .line 55
-    if-nez v3, :cond_3b
+    if-nez v3, :cond_5
 
     .line 56
     .line 57
@@ -164,10 +164,10 @@
 
     .line 58
     .line 59
-    goto :goto_45
+    goto :goto_2
 
     .line 60
-    :cond_3b
+    :cond_5
     const-wide/high16 v1, 0x4018000000000000L    # 6.0
 
     .line 61
@@ -176,7 +176,7 @@
 
     .line 63
     .line 64
-    if-nez v3, :cond_44
+    if-nez v3, :cond_6
 
     .line 65
     .line 66
@@ -184,18 +184,18 @@
 
     .line 67
     .line 68
-    goto :goto_45
+    goto :goto_2
 
     .line 69
-    :cond_44
+    :cond_6
     const/4 v1, 0x0
 
     .line 70
-    :goto_45
+    :goto_2
     return v1
 
     .line 71
-    :pswitch_46
+    :pswitch_1
     const-wide/16 v3, 0x0
 
     .line 72
@@ -204,17 +204,17 @@
 
     .line 74
     .line 75
-    if-nez v5, :cond_4e
+    if-nez v5, :cond_7
 
     .line 76
     .line 77
     const/4 v1, 0x1
 
     .line 78
-    goto :goto_8f
+    goto :goto_3
 
     .line 79
-    :cond_4e
+    :cond_7
     const-wide/high16 v3, 0x3ff0000000000000L    # 1.0
 
     .line 80
@@ -223,17 +223,17 @@
 
     .line 82
     .line 83
-    if-nez v5, :cond_56
+    if-nez v5, :cond_8
 
     .line 84
     .line 85
     const/4 v1, 0x2
 
     .line 86
-    goto :goto_8f
+    goto :goto_3
 
     .line 87
-    :cond_56
+    :cond_8
     const-wide/high16 v3, 0x4000000000000000L    # 2.0
 
     .line 88
@@ -242,17 +242,17 @@
 
     .line 90
     .line 91
-    if-nez v5, :cond_5e
+    if-nez v5, :cond_9
 
     .line 92
     .line 93
     const/4 v1, 0x4
 
     .line 94
-    goto :goto_8f
+    goto :goto_3
 
     .line 95
-    :cond_5e
+    :cond_9
     long-to-double v1, v1
 
     .line 96
@@ -264,7 +264,7 @@
 
     .line 99
     .line 100
-    if-nez v5, :cond_76
+    if-nez v5, :cond_a
 
     .line 101
     .line 102
@@ -280,7 +280,7 @@
 
     .line 107
     .line 108
-    if-gtz v9, :cond_76
+    if-gtz v9, :cond_a
 
     .line 109
     .line 110
@@ -292,7 +292,7 @@
 
     .line 113
     .line 114
-    if-gtz v9, :cond_76
+    if-gtz v9, :cond_a
 
     .line 115
     .line 116
@@ -300,15 +300,15 @@
 
     .line 117
     .line 118
-    goto :goto_8f
+    goto :goto_3
 
     .line 119
-    :cond_76
+    :cond_a
     cmpl-double v5, p1, v1
 
     .line 120
     .line 121
-    if-nez v5, :cond_8e
+    if-nez v5, :cond_b
 
     .line 122
     .line 123
@@ -324,7 +324,7 @@
 
     .line 128
     .line 129
-    if-gtz v5, :cond_8e
+    if-gtz v5, :cond_b
 
     .line 130
     .line 131
@@ -339,7 +339,7 @@
 
     .line 137
     .line 138
-    if-gtz v5, :cond_8e
+    if-gtz v5, :cond_b
 
     .line 139
     .line 140
@@ -347,18 +347,18 @@
 
     .line 141
     .line 142
-    goto :goto_8f
+    goto :goto_3
 
     .line 143
-    :cond_8e
+    :cond_b
     const/4 v1, 0x0
 
     .line 144
-    :goto_8f
+    :goto_3
     return v1
 
     .line 145
-    :pswitch_90
+    :pswitch_2
     const-wide/16 v3, 0x0
 
     .line 146
@@ -367,18 +367,18 @@
 
     .line 148
     .line 149
-    if-nez v5, :cond_99
+    if-nez v5, :cond_c
 
     .line 150
     .line 151
     const/4 v1, 0x1
 
     .line 152
-    goto/16 :goto_172
+    goto/16 :goto_6
 
     .line 153
     .line 154
-    :cond_99
+    :cond_c
     const-wide/high16 v5, 0x3ff0000000000000L    # 1.0
 
     .line 155
@@ -387,18 +387,18 @@
 
     .line 157
     .line 158
-    if-nez v7, :cond_a2
+    if-nez v7, :cond_d
 
     .line 159
     .line 160
     const/4 v1, 0x2
 
     .line 161
-    goto/16 :goto_172
+    goto/16 :goto_6
 
     .line 162
     .line 163
-    :cond_a2
+    :cond_d
     const-wide/high16 v7, 0x4059000000000000L    # 100.0
 
     .line 164
@@ -415,7 +415,7 @@
 
     .line 170
     .line 171
-    if-eqz v11, :cond_171
+    if-eqz v11, :cond_15
 
     .line 172
     .line 173
@@ -427,7 +427,7 @@
 
     .line 176
     .line 177
-    if-eqz v11, :cond_171
+    if-eqz v11, :cond_15
 
     .line 178
     .line 179
@@ -439,7 +439,7 @@
 
     .line 182
     .line 183
-    if-eqz v11, :cond_171
+    if-eqz v11, :cond_15
 
     .line 184
     .line 185
@@ -451,7 +451,7 @@
 
     .line 188
     .line 189
-    if-eqz v11, :cond_171
+    if-eqz v11, :cond_15
 
     .line 190
     .line 191
@@ -466,7 +466,7 @@
 
     .line 197
     .line 198
-    if-eqz v11, :cond_171
+    if-eqz v11, :cond_15
 
     .line 199
     .line 200
@@ -492,7 +492,7 @@
 
     .line 213
     .line 214
-    if-nez v15, :cond_108
+    if-nez v15, :cond_f
 
     .line 215
     .line 216
@@ -503,7 +503,7 @@
 
     .line 218
     .line 219
-    if-nez v11, :cond_eb
+    if-nez v11, :cond_e
 
     .line 220
     .line 221
@@ -515,7 +515,7 @@
 
     .line 224
     .line 225
-    if-gtz v11, :cond_eb
+    if-gtz v11, :cond_e
 
     .line 226
     .line 227
@@ -530,11 +530,11 @@
 
     .line 233
     .line 234
-    if-lez v11, :cond_171
+    if-lez v11, :cond_15
 
     .line 235
     .line 236
-    :cond_eb
+    :cond_e
     rem-double v1, p1, v13
 
     .line 237
@@ -550,7 +550,7 @@
 
     .line 244
     .line 245
-    if-eqz v11, :cond_171
+    if-eqz v11, :cond_15
 
     .line 246
     .line 247
@@ -565,7 +565,7 @@
 
     .line 253
     .line 254
-    if-eqz v11, :cond_171
+    if-eqz v11, :cond_15
 
     .line 255
     .line 256
@@ -580,16 +580,16 @@
 
     .line 262
     .line 263
-    if-eqz v11, :cond_171
+    if-eqz v11, :cond_15
 
     .line 264
     .line 265
-    :cond_108
+    :cond_f
     cmpl-double v1, p1, v3
 
     .line 266
     .line 267
-    if-eqz v1, :cond_118
+    if-eqz v1, :cond_10
 
     .line 268
     .line 269
@@ -608,14 +608,14 @@
 
     .line 277
     .line 278
-    if-nez v3, :cond_118
+    if-nez v3, :cond_10
 
     .line 279
     .line 280
-    goto :goto_171
+    goto :goto_5
 
     .line 281
-    :cond_118
+    :cond_10
     const-wide/high16 v1, 0x4008000000000000L    # 3.0
 
     .line 282
@@ -624,7 +624,7 @@
 
     .line 284
     .line 285
-    if-eqz v3, :cond_16e
+    if-eqz v3, :cond_14
 
     .line 286
     .line 287
@@ -636,7 +636,7 @@
 
     .line 290
     .line 291
-    if-eqz v3, :cond_16e
+    if-eqz v3, :cond_14
 
     .line 292
     .line 293
@@ -651,7 +651,7 @@
 
     .line 299
     .line 300
-    if-eqz v3, :cond_16e
+    if-eqz v3, :cond_14
 
     .line 301
     .line 302
@@ -666,7 +666,7 @@
 
     .line 308
     .line 309
-    if-eqz v3, :cond_16e
+    if-eqz v3, :cond_14
 
     .line 310
     .line 311
@@ -681,19 +681,19 @@
 
     .line 317
     .line 318
-    if-nez v3, :cond_140
+    if-nez v3, :cond_11
 
     .line 319
     .line 320
-    goto :goto_16e
+    goto :goto_4
 
     .line 321
-    :cond_140
+    :cond_11
     cmpl-double v1, p1, v5
 
     .line 322
     .line 323
-    if-eqz v1, :cond_16c
+    if-eqz v1, :cond_13
 
     .line 324
     .line 325
@@ -701,7 +701,7 @@
 
     .line 326
     .line 327
-    if-eqz v1, :cond_169
+    if-eqz v1, :cond_12
 
     .line 328
     .line 329
@@ -713,7 +713,7 @@
 
     .line 332
     .line 333
-    if-eqz v3, :cond_169
+    if-eqz v3, :cond_12
 
     .line 334
     .line 335
@@ -728,7 +728,7 @@
 
     .line 341
     .line 342
-    if-eqz v3, :cond_169
+    if-eqz v3, :cond_12
 
     .line 343
     .line 344
@@ -743,7 +743,7 @@
 
     .line 350
     .line 351
-    if-eqz v3, :cond_169
+    if-eqz v3, :cond_12
 
     .line 352
     .line 353
@@ -758,44 +758,44 @@
 
     .line 359
     .line 360
-    if-nez v3, :cond_16c
+    if-nez v3, :cond_13
 
     .line 361
     .line 362
-    :cond_169
+    :cond_12
     const/16 v1, 0x10
 
     .line 363
     .line 364
-    goto :goto_172
+    goto :goto_6
 
     .line 365
-    :cond_16c
+    :cond_13
     const/4 v1, 0x0
 
     .line 366
-    goto :goto_172
+    goto :goto_6
 
     .line 367
-    :cond_16e
-    :goto_16e
+    :cond_14
+    :goto_4
     const/16 v1, 0x8
 
     .line 368
     .line 369
-    goto :goto_172
+    goto :goto_6
 
     .line 370
-    :cond_171
-    :goto_171
+    :cond_15
+    :goto_5
     const/4 v1, 0x4
 
     .line 371
-    :goto_172
+    :goto_6
     return v1
 
     .line 372
-    :pswitch_173
+    :pswitch_3
     const-wide/16 v3, 0xa
 
     .line 373
@@ -812,17 +812,17 @@
 
     .line 379
     .line 380
-    if-nez v9, :cond_17f
+    if-nez v9, :cond_16
 
     .line 381
     .line 382
     const/4 v1, 0x2
 
     .line 383
-    goto :goto_1af
+    goto :goto_8
 
     .line 384
-    :cond_17f
+    :cond_16
     rem-long v3, v1, v3
 
     .line 385
@@ -835,17 +835,17 @@
 
     .line 389
     .line 390
-    if-nez v7, :cond_189
+    if-nez v7, :cond_17
 
     .line 391
     .line 392
     const/4 v1, 0x4
 
     .line 393
-    goto :goto_1af
+    goto :goto_8
 
     .line 394
-    :cond_189
+    :cond_17
     const-wide/16 v3, 0x64
 
     .line 395
@@ -861,7 +861,7 @@
 
     .line 400
     .line 401
-    if-eqz v5, :cond_1ad
+    if-eqz v5, :cond_19
 
     .line 402
     .line 403
@@ -873,7 +873,7 @@
 
     .line 406
     .line 407
-    if-eqz v5, :cond_1ad
+    if-eqz v5, :cond_19
 
     .line 408
     .line 409
@@ -885,7 +885,7 @@
 
     .line 412
     .line 413
-    if-eqz v5, :cond_1ad
+    if-eqz v5, :cond_19
 
     .line 414
     .line 415
@@ -897,7 +897,7 @@
 
     .line 418
     .line 419
-    if-eqz v5, :cond_1ad
+    if-eqz v5, :cond_19
 
     .line 420
     .line 421
@@ -909,31 +909,31 @@
 
     .line 424
     .line 425
-    if-nez v5, :cond_1ab
+    if-nez v5, :cond_18
 
     .line 426
     .line 427
-    goto :goto_1ad
+    goto :goto_7
 
     .line 428
-    :cond_1ab
+    :cond_18
     const/4 v1, 0x0
 
     .line 429
-    goto :goto_1af
+    goto :goto_8
 
     .line 430
-    :cond_1ad
-    :goto_1ad
+    :cond_19
+    :goto_7
     const/16 v1, 0x8
 
     .line 431
     .line 432
-    :goto_1af
+    :goto_8
     return v1
 
     .line 433
-    :pswitch_1b0
+    :pswitch_4
     const-wide/high16 v3, 0x3ff0000000000000L    # 1.0
 
     .line 434
@@ -942,17 +942,17 @@
 
     .line 436
     .line 437
-    if-nez v5, :cond_1b8
+    if-nez v5, :cond_1a
 
     .line 438
     .line 439
     const/4 v1, 0x2
 
     .line 440
-    goto :goto_1e8
+    goto :goto_9
 
     .line 441
-    :cond_1b8
+    :cond_1a
     const-wide/high16 v3, 0x4000000000000000L    # 2.0
 
     .line 442
@@ -961,17 +961,17 @@
 
     .line 444
     .line 445
-    if-nez v5, :cond_1c0
+    if-nez v5, :cond_1b
 
     .line 446
     .line 447
     const/4 v1, 0x4
 
     .line 448
-    goto :goto_1e8
+    goto :goto_9
 
     .line 449
-    :cond_1c0
+    :cond_1b
     long-to-double v1, v1
 
     .line 450
@@ -979,7 +979,7 @@
 
     .line 451
     .line 452
-    if-nez v3, :cond_1d4
+    if-nez v3, :cond_1c
 
     .line 453
     .line 454
@@ -991,7 +991,7 @@
 
     .line 457
     .line 458
-    if-gtz v5, :cond_1d4
+    if-gtz v5, :cond_1c
 
     .line 459
     .line 460
@@ -1003,7 +1003,7 @@
 
     .line 463
     .line 464
-    if-gtz v5, :cond_1d4
+    if-gtz v5, :cond_1c
 
     .line 465
     .line 466
@@ -1011,15 +1011,15 @@
 
     .line 467
     .line 468
-    goto :goto_1e8
+    goto :goto_9
 
     .line 469
-    :cond_1d4
+    :cond_1c
     cmpl-double v3, p1, v1
 
     .line 470
     .line 471
-    if-nez v3, :cond_1e7
+    if-nez v3, :cond_1d
 
     .line 472
     .line 473
@@ -1031,7 +1031,7 @@
 
     .line 476
     .line 477
-    if-gtz v3, :cond_1e7
+    if-gtz v3, :cond_1d
 
     .line 478
     .line 479
@@ -1043,7 +1043,7 @@
 
     .line 482
     .line 483
-    if-gtz v3, :cond_1e7
+    if-gtz v3, :cond_1d
 
     .line 484
     .line 485
@@ -1051,18 +1051,18 @@
 
     .line 486
     .line 487
-    goto :goto_1e8
+    goto :goto_9
 
     .line 488
-    :cond_1e7
+    :cond_1d
     const/4 v1, 0x0
 
     .line 489
-    :goto_1e8
+    :goto_9
     return v1
 
     .line 490
-    :pswitch_1e9
+    :pswitch_5
     const-wide/high16 v3, 0x4024000000000000L    # 10.0
 
     .line 491
@@ -1083,7 +1083,7 @@
 
     .line 499
     .line 500
-    if-nez v11, :cond_212
+    if-nez v11, :cond_1e
 
     .line 501
     .line 502
@@ -1099,7 +1099,7 @@
 
     .line 507
     .line 508
-    if-eqz v13, :cond_212
+    if-eqz v13, :cond_1e
 
     .line 509
     .line 510
@@ -1114,7 +1114,7 @@
 
     .line 516
     .line 517
-    if-eqz v13, :cond_212
+    if-eqz v13, :cond_1e
 
     .line 518
     .line 519
@@ -1129,18 +1129,18 @@
 
     .line 525
     .line 526
-    if-eqz v13, :cond_212
+    if-eqz v13, :cond_1e
 
     .line 527
     .line 528
     const/4 v1, 0x2
 
     .line 529
-    goto/16 :goto_29a
+    goto/16 :goto_a
 
     .line 530
     .line 531
-    :cond_212
+    :cond_1e
     const-wide/high16 v7, 0x4000000000000000L    # 2.0
 
     .line 532
@@ -1149,7 +1149,7 @@
 
     .line 534
     .line 535
-    if-nez v11, :cond_22f
+    if-nez v11, :cond_1f
 
     .line 536
     .line 537
@@ -1165,7 +1165,7 @@
 
     .line 542
     .line 543
-    if-eqz v13, :cond_22f
+    if-eqz v13, :cond_1f
 
     .line 544
     .line 545
@@ -1177,7 +1177,7 @@
 
     .line 548
     .line 549
-    if-eqz v13, :cond_22f
+    if-eqz v13, :cond_1f
 
     .line 550
     .line 551
@@ -1189,18 +1189,18 @@
 
     .line 554
     .line 555
-    if-eqz v13, :cond_22f
+    if-eqz v13, :cond_1f
 
     .line 556
     .line 557
     const/4 v1, 0x4
 
     .line 558
-    goto/16 :goto_29a
+    goto/16 :goto_a
 
     .line 559
     .line 560
-    :cond_22f
+    :cond_1f
     long-to-double v1, v1
 
     .line 561
@@ -1208,7 +1208,7 @@
 
     .line 562
     .line 563
-    if-nez v7, :cond_240
+    if-nez v7, :cond_20
 
     .line 564
     .line 565
@@ -1220,7 +1220,7 @@
 
     .line 568
     .line 569
-    if-gtz v11, :cond_240
+    if-gtz v11, :cond_20
 
     .line 570
     .line 571
@@ -1232,11 +1232,11 @@
 
     .line 574
     .line 575
-    if-lez v11, :cond_246
+    if-lez v11, :cond_21
 
     .line 576
     .line 577
-    :cond_240
+    :cond_20
     const-wide/high16 v7, 0x4022000000000000L    # 9.0
 
     .line 578
@@ -1245,16 +1245,16 @@
 
     .line 580
     .line 581
-    if-nez v11, :cond_285
+    if-nez v11, :cond_25
 
     .line 582
     .line 583
-    :cond_246
+    :cond_21
     cmpl-double v5, p1, v1
 
     .line 584
     .line 585
-    if-nez v5, :cond_282
+    if-nez v5, :cond_24
 
     .line 586
     .line 587
@@ -1266,7 +1266,7 @@
 
     .line 590
     .line 591
-    if-gtz v7, :cond_282
+    if-gtz v7, :cond_24
 
     .line 592
     .line 593
@@ -1278,7 +1278,7 @@
 
     .line 596
     .line 597
-    if-lez v7, :cond_25a
+    if-lez v7, :cond_22
 
     .line 598
     .line 599
@@ -1286,11 +1286,11 @@
 
     .line 600
     .line 601
-    if-nez v3, :cond_282
+    if-nez v3, :cond_24
 
     .line 602
     .line 603
-    :cond_25a
+    :cond_22
     const-wide v3, 0x4051800000000000L    # 70.0
 
     .line 604
@@ -1302,7 +1302,7 @@
 
     .line 609
     .line 610
-    if-gtz v7, :cond_282
+    if-gtz v7, :cond_24
 
     .line 611
     .line 612
@@ -1317,7 +1317,7 @@
 
     .line 618
     .line 619
-    if-lez v7, :cond_270
+    if-lez v7, :cond_23
 
     .line 620
     .line 621
@@ -1325,11 +1325,11 @@
 
     .line 622
     .line 623
-    if-nez v3, :cond_282
+    if-nez v3, :cond_24
 
     .line 624
     .line 625
-    :cond_270
+    :cond_23
     const-wide v1, 0x4056800000000000L    # 90.0
 
     .line 626
@@ -1341,7 +1341,7 @@
 
     .line 631
     .line 632
-    if-gtz v3, :cond_282
+    if-gtz v3, :cond_24
 
     .line 633
     .line 634
@@ -1356,19 +1356,19 @@
 
     .line 640
     .line 641
-    if-lez v3, :cond_285
+    if-lez v3, :cond_25
 
     .line 642
     .line 643
-    :cond_282
+    :cond_24
     const/16 v1, 0x8
 
     .line 644
     .line 645
-    goto :goto_29a
+    goto :goto_a
 
     .line 646
-    :cond_285
+    :cond_25
     const-wide/16 v1, 0x0
 
     .line 647
@@ -1377,7 +1377,7 @@
 
     .line 649
     .line 650
-    if-eqz v3, :cond_299
+    if-eqz v3, :cond_26
 
     .line 651
     .line 652
@@ -1396,7 +1396,7 @@
 
     .line 660
     .line 661
-    if-nez v5, :cond_299
+    if-nez v5, :cond_26
 
     .line 662
     .line 663
@@ -1404,18 +1404,18 @@
 
     .line 664
     .line 665
-    goto :goto_29a
+    goto :goto_a
 
     .line 666
-    :cond_299
+    :cond_26
     const/4 v1, 0x0
 
     .line 667
-    :goto_29a
+    :goto_a
     return v1
 
     .line 668
-    :pswitch_29b
+    :pswitch_6
     const-wide/16 v3, 0xa
 
     .line 669
@@ -1440,7 +1440,7 @@
 
     .line 679
     .line 680
-    if-nez v13, :cond_2b1
+    if-nez v13, :cond_27
 
     .line 681
     .line 682
@@ -1452,17 +1452,17 @@
 
     .line 685
     .line 686
-    if-eqz v7, :cond_2b1
+    if-eqz v7, :cond_27
 
     .line 687
     .line 688
     const/4 v1, 0x2
 
     .line 689
-    goto :goto_2ee
+    goto :goto_c
 
     .line 690
-    :cond_2b1
+    :cond_27
     rem-long v5, v1, v3
 
     .line 691
@@ -1479,7 +1479,7 @@
 
     .line 697
     .line 698
-    if-gtz v15, :cond_2d0
+    if-gtz v15, :cond_29
 
     .line 699
     .line 700
@@ -1491,7 +1491,7 @@
 
     .line 703
     .line 704
-    if-gtz v15, :cond_2d0
+    if-gtz v15, :cond_29
 
     .line 705
     .line 706
@@ -1507,7 +1507,7 @@
 
     .line 711
     .line 712
-    if-gtz v15, :cond_2cd
+    if-gtz v15, :cond_28
 
     .line 713
     .line 714
@@ -1515,19 +1515,19 @@
 
     .line 715
     .line 716
-    if-lez v13, :cond_2d0
+    if-lez v13, :cond_29
 
     .line 717
     .line 718
-    :cond_2cd
+    :cond_28
     const/16 v1, 0x8
 
     .line 719
     .line 720
-    goto :goto_2ee
+    goto :goto_c
 
     .line 721
-    :cond_2d0
+    :cond_29
     rem-long v5, v1, v3
 
     .line 722
@@ -1540,7 +1540,7 @@
 
     .line 726
     .line 727
-    if-eqz v15, :cond_2ec
+    if-eqz v15, :cond_2b
 
     .line 728
     .line 729
@@ -1556,7 +1556,7 @@
 
     .line 734
     .line 735
-    if-lez v13, :cond_2ec
+    if-lez v13, :cond_2b
 
     .line 736
     .line 737
@@ -1567,7 +1567,7 @@
 
     .line 739
     .line 740
-    if-gtz v3, :cond_2ea
+    if-gtz v3, :cond_2a
 
     .line 741
     .line 742
@@ -1575,31 +1575,31 @@
 
     .line 743
     .line 744
-    if-gtz v3, :cond_2ea
+    if-gtz v3, :cond_2a
 
     .line 745
     .line 746
-    goto :goto_2ec
+    goto :goto_b
 
     .line 747
-    :cond_2ea
+    :cond_2a
     const/4 v1, 0x0
 
     .line 748
-    goto :goto_2ee
+    goto :goto_c
 
     .line 749
-    :cond_2ec
-    :goto_2ec
+    :cond_2b
+    :goto_b
     const/16 v1, 0x10
 
     .line 750
     .line 751
-    :goto_2ee
+    :goto_c
     return v1
 
     .line 752
-    :pswitch_2ef
+    :pswitch_7
     const-wide/16 v3, 0x0
 
     .line 753
@@ -1608,7 +1608,7 @@
 
     .line 755
     .line 756
-    if-eqz v5, :cond_2fe
+    if-eqz v5, :cond_2d
 
     .line 757
     .line 758
@@ -1620,30 +1620,30 @@
 
     .line 761
     .line 762
-    if-nez v3, :cond_2fc
+    if-nez v3, :cond_2c
 
     .line 763
     .line 764
-    goto :goto_2fe
+    goto :goto_d
 
     .line 765
-    :cond_2fc
+    :cond_2c
     const/4 v1, 0x0
 
     .line 766
-    goto :goto_2ff
+    goto :goto_e
 
     .line 767
-    :cond_2fe
-    :goto_2fe
+    :cond_2d
+    :goto_d
     const/4 v1, 0x2
 
     .line 768
-    :goto_2ff
+    :goto_e
     return v1
 
     .line 769
-    :pswitch_300
+    :pswitch_8
     const-wide/high16 v3, 0x3ff0000000000000L    # 1.0
 
     .line 770
@@ -1652,17 +1652,17 @@
 
     .line 772
     .line 773
-    if-nez v5, :cond_308
+    if-nez v5, :cond_2e
 
     .line 774
     .line 775
     const/4 v1, 0x2
 
     .line 776
-    goto :goto_33d
+    goto :goto_10
 
     .line 777
-    :cond_308
+    :cond_2e
     const-wide/16 v3, 0x0
 
     .line 778
@@ -1671,7 +1671,7 @@
 
     .line 780
     .line 781
-    if-eqz v5, :cond_33b
+    if-eqz v5, :cond_31
 
     .line 782
     .line 783
@@ -1686,7 +1686,7 @@
 
     .line 787
     .line 788
-    if-nez v5, :cond_324
+    if-nez v5, :cond_2f
 
     .line 789
     .line 790
@@ -1702,7 +1702,7 @@
 
     .line 795
     .line 796
-    if-gtz v9, :cond_324
+    if-gtz v9, :cond_2f
 
     .line 797
     .line 798
@@ -1714,19 +1714,19 @@
 
     .line 801
     .line 802
-    if-gtz v9, :cond_324
+    if-gtz v9, :cond_2f
 
     .line 803
     .line 804
-    goto :goto_33b
+    goto :goto_f
 
     .line 805
-    :cond_324
+    :cond_2f
     cmpl-double v5, p1, v1
 
     .line 806
     .line 807
-    if-nez v5, :cond_339
+    if-nez v5, :cond_30
 
     .line 808
     .line 809
@@ -1742,7 +1742,7 @@
 
     .line 814
     .line 815
-    if-gtz v5, :cond_339
+    if-gtz v5, :cond_30
 
     .line 816
     .line 817
@@ -1754,7 +1754,7 @@
 
     .line 820
     .line 821
-    if-gtz v5, :cond_339
+    if-gtz v5, :cond_30
 
     .line 822
     .line 823
@@ -1762,27 +1762,27 @@
 
     .line 824
     .line 825
-    goto :goto_33d
+    goto :goto_10
 
     .line 826
-    :cond_339
+    :cond_30
     const/4 v1, 0x0
 
     .line 827
-    goto :goto_33d
+    goto :goto_10
 
     .line 828
-    :cond_33b
-    :goto_33b
+    :cond_31
+    :goto_f
     const/16 v1, 0x8
 
     .line 829
     .line 830
-    :goto_33d
+    :goto_10
     return v1
 
     .line 831
-    :pswitch_33e
+    :pswitch_9
     const-wide/high16 v3, 0x4024000000000000L    # 10.0
 
     .line 832
@@ -1811,7 +1811,7 @@
 
     .line 844
     .line 845
-    if-nez v13, :cond_35f
+    if-nez v13, :cond_33
 
     .line 846
     .line 847
@@ -1822,7 +1822,7 @@
 
     .line 849
     .line 850
-    if-nez v13, :cond_35d
+    if-nez v13, :cond_32
 
     .line 851
     .line 852
@@ -1834,7 +1834,7 @@
 
     .line 855
     .line 856
-    if-gtz v13, :cond_35d
+    if-gtz v13, :cond_32
 
     .line 857
     .line 858
@@ -1842,18 +1842,18 @@
 
     .line 859
     .line 860
-    if-lez v13, :cond_35f
+    if-lez v13, :cond_33
 
     .line 861
     .line 862
-    :cond_35d
+    :cond_32
     const/4 v1, 0x2
 
     .line 863
-    goto :goto_382
+    goto :goto_11
 
     .line 864
-    :cond_35f
+    :cond_33
     long-to-double v1, v1
 
     .line 865
@@ -1861,7 +1861,7 @@
 
     .line 866
     .line 867
-    if-nez v5, :cond_381
+    if-nez v5, :cond_35
 
     .line 868
     .line 869
@@ -1873,7 +1873,7 @@
 
     .line 872
     .line 873
-    if-gtz v13, :cond_381
+    if-gtz v13, :cond_35
 
     .line 874
     .line 875
@@ -1885,7 +1885,7 @@
 
     .line 878
     .line 879
-    if-gtz v13, :cond_381
+    if-gtz v13, :cond_35
 
     .line 880
     .line 881
@@ -1893,7 +1893,7 @@
 
     .line 882
     .line 883
-    if-nez v3, :cond_37e
+    if-nez v3, :cond_34
 
     .line 884
     .line 885
@@ -1905,7 +1905,7 @@
 
     .line 888
     .line 889
-    if-gtz v3, :cond_37e
+    if-gtz v3, :cond_34
 
     .line 890
     .line 891
@@ -1913,27 +1913,27 @@
 
     .line 892
     .line 893
-    if-lez v3, :cond_381
+    if-lez v3, :cond_35
 
     .line 894
     .line 895
-    :cond_37e
+    :cond_34
     const/16 v1, 0x8
 
     .line 896
     .line 897
-    goto :goto_382
+    goto :goto_11
 
     .line 898
-    :cond_381
+    :cond_35
     const/4 v1, 0x0
 
     .line 899
-    :goto_382
+    :goto_11
     return v1
 
     .line 900
-    :pswitch_383
+    :pswitch_a
     const-wide/high16 v3, 0x4024000000000000L    # 10.0
 
     .line 901
@@ -1958,7 +1958,7 @@
 
     .line 911
     .line 912
-    if-nez v11, :cond_399
+    if-nez v11, :cond_36
 
     .line 913
     .line 914
@@ -1970,17 +1970,17 @@
 
     .line 917
     .line 918
-    if-eqz v11, :cond_399
+    if-eqz v11, :cond_36
 
     .line 919
     .line 920
     const/4 v1, 0x2
 
     .line 921
-    goto :goto_3e8
+    goto :goto_13
 
     .line 922
-    :cond_399
+    :cond_36
     long-to-double v1, v1
 
     .line 923
@@ -1992,7 +1992,7 @@
 
     .line 926
     .line 927
-    if-nez v11, :cond_3bf
+    if-nez v11, :cond_38
 
     .line 928
     .line 929
@@ -2004,7 +2004,7 @@
 
     .line 932
     .line 933
-    if-gtz v13, :cond_3bf
+    if-gtz v13, :cond_38
 
     .line 934
     .line 935
@@ -2016,7 +2016,7 @@
 
     .line 938
     .line 939
-    if-gtz v13, :cond_3bf
+    if-gtz v13, :cond_38
 
     .line 940
     .line 941
@@ -2024,7 +2024,7 @@
 
     .line 942
     .line 943
-    if-nez v11, :cond_3bc
+    if-nez v11, :cond_37
 
     .line 944
     .line 945
@@ -2040,7 +2040,7 @@
 
     .line 950
     .line 951
-    if-gtz v15, :cond_3bc
+    if-gtz v15, :cond_37
 
     .line 952
     .line 953
@@ -2048,19 +2048,19 @@
 
     .line 954
     .line 955
-    if-lez v13, :cond_3bf
+    if-lez v13, :cond_38
 
     .line 956
     .line 957
-    :cond_3bc
+    :cond_37
     const/16 v1, 0x8
 
     .line 958
     .line 959
-    goto :goto_3e8
+    goto :goto_13
 
     .line 960
-    :cond_3bf
+    :cond_38
     const-wide/16 v11, 0x0
 
     .line 961
@@ -2069,7 +2069,7 @@
 
     .line 963
     .line 964
-    if-eqz v13, :cond_3e6
+    if-eqz v13, :cond_3b
 
     .line 965
     .line 966
@@ -2077,7 +2077,7 @@
 
     .line 967
     .line 968
-    if-nez v11, :cond_3d5
+    if-nez v11, :cond_39
 
     .line 969
     .line 970
@@ -2089,7 +2089,7 @@
 
     .line 973
     .line 974
-    if-gtz v13, :cond_3d5
+    if-gtz v13, :cond_39
 
     .line 975
     .line 976
@@ -2101,16 +2101,16 @@
 
     .line 979
     .line 980
-    if-lez v13, :cond_3e6
+    if-lez v13, :cond_3b
 
     .line 981
     .line 982
-    :cond_3d5
+    :cond_39
     cmpl-double v3, p1, v1
 
     .line 983
     .line 984
-    if-nez v3, :cond_3e4
+    if-nez v3, :cond_3a
 
     .line 985
     .line 986
@@ -2122,7 +2122,7 @@
 
     .line 989
     .line 990
-    if-gtz v3, :cond_3e4
+    if-gtz v3, :cond_3a
 
     .line 991
     .line 992
@@ -2130,31 +2130,31 @@
 
     .line 993
     .line 994
-    if-gtz v3, :cond_3e4
+    if-gtz v3, :cond_3a
 
     .line 995
     .line 996
-    goto :goto_3e6
+    goto :goto_12
 
     .line 997
-    :cond_3e4
+    :cond_3a
     const/4 v1, 0x0
 
     .line 998
-    goto :goto_3e8
+    goto :goto_13
 
     .line 999
-    :cond_3e6
-    :goto_3e6
+    :cond_3b
+    :goto_12
     const/16 v1, 0x10
 
     .line 1000
     .line 1001
-    :goto_3e8
+    :goto_13
     return v1
 
     .line 1002
-    :pswitch_3e9
+    :pswitch_b
     const-wide/16 v3, 0x1
 
     .line 1003
@@ -2163,17 +2163,17 @@
 
     .line 1005
     .line 1006
-    if-nez v5, :cond_3f1
+    if-nez v5, :cond_3c
 
     .line 1007
     .line 1008
     const/4 v1, 0x2
 
     .line 1009
-    goto :goto_436
+    goto :goto_15
 
     .line 1010
-    :cond_3f1
+    :cond_3c
     const-wide/16 v5, 0xa
 
     .line 1011
@@ -2202,7 +2202,7 @@
 
     .line 1023
     .line 1024
-    if-gtz v17, :cond_414
+    if-gtz v17, :cond_3e
 
     .line 1025
     .line 1026
@@ -2214,7 +2214,7 @@
 
     .line 1029
     .line 1030
-    if-gtz v17, :cond_414
+    if-gtz v17, :cond_3e
 
     .line 1031
     .line 1032
@@ -2226,7 +2226,7 @@
 
     .line 1035
     .line 1036
-    if-gtz v15, :cond_411
+    if-gtz v15, :cond_3d
 
     .line 1037
     .line 1038
@@ -2234,19 +2234,19 @@
 
     .line 1039
     .line 1040
-    if-lez v15, :cond_414
+    if-lez v15, :cond_3e
 
     .line 1041
     .line 1042
-    :cond_411
+    :cond_3d
     const/16 v1, 0x8
 
     .line 1043
     .line 1044
-    goto :goto_436
+    goto :goto_15
 
     .line 1045
-    :cond_414
+    :cond_3e
     rem-long v7, v1, v5
 
     .line 1046
@@ -2259,7 +2259,7 @@
 
     .line 1050
     .line 1051
-    if-gtz v17, :cond_420
+    if-gtz v17, :cond_3f
 
     .line 1052
     .line 1053
@@ -2267,11 +2267,11 @@
 
     .line 1054
     .line 1055
-    if-lez v15, :cond_434
+    if-lez v15, :cond_41
 
     .line 1056
     .line 1057
-    :cond_420
+    :cond_3f
     const-wide/16 v3, 0x5
 
     .line 1058
@@ -2284,7 +2284,7 @@
 
     .line 1062
     .line 1063
-    if-lez v7, :cond_434
+    if-lez v7, :cond_41
 
     .line 1064
     .line 1065
@@ -2295,7 +2295,7 @@
 
     .line 1067
     .line 1068
-    if-gtz v3, :cond_432
+    if-gtz v3, :cond_40
 
     .line 1069
     .line 1070
@@ -2303,31 +2303,31 @@
 
     .line 1071
     .line 1072
-    if-gtz v3, :cond_432
+    if-gtz v3, :cond_40
 
     .line 1073
     .line 1074
-    goto :goto_434
+    goto :goto_14
 
     .line 1075
-    :cond_432
+    :cond_40
     const/4 v1, 0x0
 
     .line 1076
-    goto :goto_436
+    goto :goto_15
 
     .line 1077
-    :cond_434
-    :goto_434
+    :cond_41
+    :goto_14
     const/16 v1, 0x10
 
     .line 1078
     .line 1079
-    :goto_436
+    :goto_15
     return v1
 
     .line 1080
-    :pswitch_437
+    :pswitch_c
     const-wide/16 v3, 0x1
 
     .line 1081
@@ -2336,17 +2336,17 @@
 
     .line 1083
     .line 1084
-    if-nez v5, :cond_43f
+    if-nez v5, :cond_42
 
     .line 1085
     .line 1086
     const/4 v1, 0x2
 
     .line 1087
-    goto :goto_44f
+    goto :goto_16
 
     .line 1088
-    :cond_43f
+    :cond_42
     const-wide/16 v3, 0x2
 
     .line 1089
@@ -2355,7 +2355,7 @@
 
     .line 1091
     .line 1092
-    if-gtz v5, :cond_44e
+    if-gtz v5, :cond_43
 
     .line 1093
     .line 1094
@@ -2367,7 +2367,7 @@
 
     .line 1097
     .line 1098
-    if-gtz v5, :cond_44e
+    if-gtz v5, :cond_43
 
     .line 1099
     .line 1100
@@ -2375,18 +2375,18 @@
 
     .line 1101
     .line 1102
-    goto :goto_44f
+    goto :goto_16
 
     .line 1103
-    :cond_44e
+    :cond_43
     const/4 v1, 0x0
 
     .line 1104
-    :goto_44f
+    :goto_16
     return v1
 
     .line 1105
-    :pswitch_450
+    :pswitch_d
     const-wide/16 v3, 0x1
 
     .line 1106
@@ -2395,17 +2395,17 @@
 
     .line 1108
     .line 1109
-    if-nez v5, :cond_458
+    if-nez v5, :cond_44
 
     .line 1110
     .line 1111
     const/4 v1, 0x2
 
     .line 1112
-    goto :goto_47b
+    goto :goto_17
 
     .line 1113
-    :cond_458
+    :cond_44
     const-wide/16 v3, 0x2
 
     .line 1114
@@ -2414,17 +2414,17 @@
 
     .line 1116
     .line 1117
-    if-nez v5, :cond_460
+    if-nez v5, :cond_45
 
     .line 1118
     .line 1119
     const/4 v1, 0x4
 
     .line 1120
-    goto :goto_47b
+    goto :goto_17
 
     .line 1121
-    :cond_460
+    :cond_45
     long-to-double v1, v1
 
     .line 1122
@@ -2440,7 +2440,7 @@
 
     .line 1127
     .line 1128
-    if-nez v7, :cond_471
+    if-nez v7, :cond_46
 
     .line 1129
     .line 1130
@@ -2448,7 +2448,7 @@
 
     .line 1131
     .line 1132
-    if-gtz v1, :cond_471
+    if-gtz v1, :cond_46
 
     .line 1133
     .line 1134
@@ -2456,11 +2456,11 @@
 
     .line 1135
     .line 1136
-    if-lez v1, :cond_47a
+    if-lez v1, :cond_47
 
     .line 1137
     .line 1138
-    :cond_471
+    :cond_46
     rem-double v1, p1, v3
 
     .line 1139
@@ -2469,7 +2469,7 @@
 
     .line 1141
     .line 1142
-    if-nez v3, :cond_47a
+    if-nez v3, :cond_47
 
     .line 1143
     .line 1144
@@ -2477,18 +2477,18 @@
 
     .line 1145
     .line 1146
-    goto :goto_47b
+    goto :goto_17
 
     .line 1147
-    :cond_47a
+    :cond_47
     const/4 v1, 0x0
 
     .line 1148
-    :goto_47b
+    :goto_17
     return v1
 
     .line 1149
-    :pswitch_47c
+    :pswitch_e
     const-wide/16 v3, 0x64
 
     .line 1150
@@ -2505,7 +2505,7 @@
 
     .line 1156
     .line 1157
-    if-eqz v9, :cond_4a3
+    if-eqz v9, :cond_4b
 
     .line 1158
     .line 1159
@@ -2521,7 +2521,7 @@
 
     .line 1164
     .line 1165
-    if-eqz v9, :cond_4a1
+    if-eqz v9, :cond_4a
 
     .line 1166
     .line 1167
@@ -2536,7 +2536,7 @@
 
     .line 1171
     .line 1172
-    if-gtz v5, :cond_49f
+    if-gtz v5, :cond_49
 
     .line 1173
     .line 1174
@@ -2548,45 +2548,45 @@
 
     .line 1177
     .line 1178
-    if-lez v5, :cond_49c
+    if-lez v5, :cond_48
 
     .line 1179
     .line 1180
-    goto :goto_49f
+    goto :goto_18
 
     .line 1181
-    :cond_49c
+    :cond_48
     const/16 v1, 0x8
 
     .line 1182
     .line 1183
-    goto :goto_4a4
+    goto :goto_19
 
     .line 1184
-    :cond_49f
-    :goto_49f
+    :cond_49
+    :goto_18
     const/4 v1, 0x0
 
     .line 1185
-    goto :goto_4a4
+    goto :goto_19
 
     .line 1186
-    :cond_4a1
+    :cond_4a
     const/4 v1, 0x4
 
     .line 1187
-    goto :goto_4a4
+    goto :goto_19
 
     .line 1188
-    :cond_4a3
+    :cond_4b
     const/4 v1, 0x2
 
     .line 1189
-    :goto_4a4
+    :goto_19
     return v1
 
     .line 1190
-    :pswitch_4a5
+    :pswitch_f
     const-wide/16 v3, 0x64
 
     .line 1191
@@ -2603,17 +2603,17 @@
 
     .line 1197
     .line 1198
-    if-nez v9, :cond_4b1
+    if-nez v9, :cond_4c
 
     .line 1199
     .line 1200
     const/4 v1, 0x2
 
     .line 1201
-    goto :goto_4cc
+    goto :goto_1a
 
     .line 1202
-    :cond_4b1
+    :cond_4c
     rem-long v5, v1, v3
 
     .line 1203
@@ -2626,17 +2626,17 @@
 
     .line 1207
     .line 1208
-    if-nez v9, :cond_4bb
+    if-nez v9, :cond_4d
 
     .line 1209
     .line 1210
     const/4 v1, 0x4
 
     .line 1211
-    goto :goto_4cc
+    goto :goto_1a
 
     .line 1212
-    :cond_4bb
+    :cond_4d
     rem-long/2addr v1, v3
 
     .line 1213
@@ -2648,7 +2648,7 @@
 
     .line 1216
     .line 1217
-    if-gtz v5, :cond_4cb
+    if-gtz v5, :cond_4e
 
     .line 1218
     .line 1219
@@ -2660,7 +2660,7 @@
 
     .line 1222
     .line 1223
-    if-gtz v5, :cond_4cb
+    if-gtz v5, :cond_4e
 
     .line 1224
     .line 1225
@@ -2668,18 +2668,18 @@
 
     .line 1226
     .line 1227
-    goto :goto_4cc
+    goto :goto_1a
 
     .line 1228
-    :cond_4cb
+    :cond_4e
     const/4 v1, 0x0
 
     .line 1229
-    :goto_4cc
+    :goto_1a
     return v1
 
     .line 1230
-    :pswitch_4cd
+    :pswitch_10
     const-wide/high16 v3, 0x3ff0000000000000L    # 1.0
 
     .line 1231
@@ -2688,7 +2688,7 @@
 
     .line 1233
     .line 1234
-    if-eqz v5, :cond_50f
+    if-eqz v5, :cond_55
 
     .line 1235
     .line 1236
@@ -2700,14 +2700,14 @@
 
     .line 1239
     .line 1240
-    if-nez v5, :cond_4da
+    if-nez v5, :cond_4f
 
     .line 1241
     .line 1242
-    goto :goto_50f
+    goto :goto_1c
 
     .line 1243
-    :cond_4da
+    :cond_4f
     const-wide/high16 v3, 0x4000000000000000L    # 2.0
 
     .line 1244
@@ -2716,7 +2716,7 @@
 
     .line 1246
     .line 1247
-    if-eqz v5, :cond_50d
+    if-eqz v5, :cond_54
 
     .line 1248
     .line 1249
@@ -2728,14 +2728,14 @@
 
     .line 1252
     .line 1253
-    if-nez v5, :cond_4e7
+    if-nez v5, :cond_50
 
     .line 1254
     .line 1255
-    goto :goto_50d
+    goto :goto_1b
 
     .line 1256
-    :cond_4e7
+    :cond_50
     long-to-double v1, v1
 
     .line 1257
@@ -2743,7 +2743,7 @@
 
     .line 1258
     .line 1259
-    if-nez v3, :cond_4f8
+    if-nez v3, :cond_51
 
     .line 1260
     .line 1261
@@ -2755,7 +2755,7 @@
 
     .line 1264
     .line 1265
-    if-gtz v5, :cond_4f8
+    if-gtz v5, :cond_51
 
     .line 1266
     .line 1267
@@ -2767,16 +2767,16 @@
 
     .line 1270
     .line 1271
-    if-lez v5, :cond_508
+    if-lez v5, :cond_52
 
     .line 1272
     .line 1273
-    :cond_4f8
+    :cond_51
     cmpl-double v3, p1, v1
 
     .line 1274
     .line 1275
-    if-nez v3, :cond_50b
+    if-nez v3, :cond_53
 
     .line 1276
     .line 1277
@@ -2788,7 +2788,7 @@
 
     .line 1280
     .line 1281
-    if-gtz v3, :cond_50b
+    if-gtz v3, :cond_53
 
     .line 1282
     .line 1283
@@ -2800,43 +2800,43 @@
 
     .line 1286
     .line 1287
-    if-gtz v3, :cond_50b
+    if-gtz v3, :cond_53
 
     .line 1288
     .line 1289
-    :cond_508
+    :cond_52
     const/16 v1, 0x8
 
     .line 1290
     .line 1291
-    goto :goto_510
+    goto :goto_1d
 
     .line 1292
-    :cond_50b
+    :cond_53
     const/4 v1, 0x0
 
     .line 1293
-    goto :goto_510
+    goto :goto_1d
 
     .line 1294
-    :cond_50d
-    :goto_50d
+    :cond_54
+    :goto_1b
     const/4 v1, 0x4
 
     .line 1295
-    goto :goto_510
+    goto :goto_1d
 
     .line 1296
-    :cond_50f
-    :goto_50f
+    :cond_55
+    :goto_1c
     const/4 v1, 0x2
 
     .line 1297
-    :goto_510
+    :goto_1d
     return v1
 
     .line 1298
-    :pswitch_511
+    :pswitch_11
     const-wide/16 v3, 0xa
 
     .line 1299
@@ -2857,7 +2857,7 @@
 
     .line 1307
     .line 1308
-    if-nez v11, :cond_528
+    if-nez v11, :cond_57
 
     .line 1309
     .line 1310
@@ -2873,22 +2873,22 @@
 
     .line 1315
     .line 1316
-    if-nez v11, :cond_526
+    if-nez v11, :cond_56
 
     .line 1317
     .line 1318
-    goto :goto_528
+    goto :goto_1e
 
     .line 1319
-    :cond_526
+    :cond_56
     const/4 v1, 0x2
 
     .line 1320
-    goto :goto_548
+    goto :goto_20
 
     .line 1321
-    :cond_528
-    :goto_528
+    :cond_57
+    :goto_1e
     rem-long v3, v1, v3
 
     .line 1322
@@ -2901,7 +2901,7 @@
 
     .line 1326
     .line 1327
-    if-gtz v7, :cond_547
+    if-gtz v7, :cond_59
 
     .line 1328
     .line 1329
@@ -2913,7 +2913,7 @@
 
     .line 1332
     .line 1333
-    if-gtz v7, :cond_547
+    if-gtz v7, :cond_59
 
     .line 1334
     .line 1335
@@ -2928,7 +2928,7 @@
 
     .line 1339
     .line 1340
-    if-gtz v5, :cond_544
+    if-gtz v5, :cond_58
 
     .line 1341
     .line 1342
@@ -2940,38 +2940,38 @@
 
     .line 1345
     .line 1346
-    if-gtz v5, :cond_544
+    if-gtz v5, :cond_58
 
     .line 1347
     .line 1348
-    goto :goto_547
+    goto :goto_1f
 
     .line 1349
-    :cond_544
+    :cond_58
     const/16 v1, 0x8
 
     .line 1350
     .line 1351
-    goto :goto_548
+    goto :goto_20
 
     .line 1352
-    :cond_547
-    :goto_547
+    :cond_59
+    :goto_1f
     const/4 v1, 0x0
 
     .line 1353
-    :goto_548
+    :goto_20
     return v1
 
     .line 1354
-    :pswitch_549
+    :pswitch_12
     const/4 v1, 0x0
 
     .line 1355
     return v1
 
     .line 1356
-    :pswitch_54b
+    :pswitch_13
     const-wide/16 v3, 0x1
 
     .line 1357
@@ -2980,17 +2980,17 @@
 
     .line 1359
     .line 1360
-    if-nez v5, :cond_553
+    if-nez v5, :cond_5a
 
     .line 1361
     .line 1362
     const/4 v1, 0x2
 
     .line 1363
-    goto :goto_573
+    goto :goto_22
 
     .line 1364
-    :cond_553
+    :cond_5a
     const-wide/16 v3, 0x0
 
     .line 1365
@@ -2999,7 +2999,7 @@
 
     .line 1367
     .line 1368
-    if-eqz v5, :cond_571
+    if-eqz v5, :cond_5c
 
     .line 1369
     .line 1370
@@ -3010,7 +3010,7 @@
 
     .line 1372
     .line 1373
-    if-nez v3, :cond_56f
+    if-nez v3, :cond_5b
 
     .line 1374
     .line 1375
@@ -3030,7 +3030,7 @@
 
     .line 1382
     .line 1383
-    if-gtz v5, :cond_56f
+    if-gtz v5, :cond_5b
 
     .line 1384
     .line 1385
@@ -3042,31 +3042,31 @@
 
     .line 1388
     .line 1389
-    if-gtz v5, :cond_56f
+    if-gtz v5, :cond_5b
 
     .line 1390
     .line 1391
-    goto :goto_571
+    goto :goto_21
 
     .line 1392
-    :cond_56f
+    :cond_5b
     const/4 v1, 0x0
 
     .line 1393
-    goto :goto_573
+    goto :goto_22
 
     .line 1394
-    :cond_571
-    :goto_571
+    :cond_5c
+    :goto_21
     const/16 v1, 0x8
 
     .line 1395
     .line 1396
-    :goto_573
+    :goto_22
     return v1
 
     .line 1397
-    :pswitch_574
+    :pswitch_14
     const-wide/16 v3, 0x0
 
     .line 1398
@@ -3075,7 +3075,7 @@
 
     .line 1400
     .line 1401
-    if-eqz v5, :cond_597
+    if-eqz v5, :cond_5f
 
     .line 1402
     .line 1403
@@ -3087,14 +3087,14 @@
 
     .line 1406
     .line 1407
-    if-nez v5, :cond_581
+    if-nez v5, :cond_5d
 
     .line 1408
     .line 1409
-    goto :goto_597
+    goto :goto_23
 
     .line 1410
-    :cond_581
+    :cond_5d
     long-to-double v1, v1
 
     .line 1411
@@ -3102,7 +3102,7 @@
 
     .line 1412
     .line 1413
-    if-nez v3, :cond_595
+    if-nez v3, :cond_5e
 
     .line 1414
     .line 1415
@@ -3114,7 +3114,7 @@
 
     .line 1418
     .line 1419
-    if-gtz v3, :cond_595
+    if-gtz v3, :cond_5e
 
     .line 1420
     .line 1421
@@ -3126,7 +3126,7 @@
 
     .line 1424
     .line 1425
-    if-gtz v3, :cond_595
+    if-gtz v3, :cond_5e
 
     .line 1426
     .line 1427
@@ -3134,26 +3134,26 @@
 
     .line 1428
     .line 1429
-    goto :goto_598
+    goto :goto_24
 
     .line 1430
-    :cond_595
+    :cond_5e
     const/4 v1, 0x0
 
     .line 1431
-    goto :goto_598
+    goto :goto_24
 
     .line 1432
-    :cond_597
-    :goto_597
+    :cond_5f
+    :goto_23
     const/4 v1, 0x2
 
     .line 1433
-    :goto_598
+    :goto_24
     return v1
 
     .line 1434
-    :pswitch_599
+    :pswitch_15
     const-wide/high16 v1, 0x3ff0000000000000L    # 1.0
 
     .line 1435
@@ -3162,17 +3162,17 @@
 
     .line 1437
     .line 1438
-    if-nez v3, :cond_5a1
+    if-nez v3, :cond_60
 
     .line 1439
     .line 1440
     const/4 v1, 0x2
 
     .line 1441
-    goto :goto_5aa
+    goto :goto_25
 
     .line 1442
-    :cond_5a1
+    :cond_60
     const-wide/high16 v1, 0x4000000000000000L    # 2.0
 
     .line 1443
@@ -3181,25 +3181,25 @@
 
     .line 1445
     .line 1446
-    if-nez v3, :cond_5a9
+    if-nez v3, :cond_61
 
     .line 1447
     .line 1448
     const/4 v1, 0x4
 
     .line 1449
-    goto :goto_5aa
+    goto :goto_25
 
     .line 1450
-    :cond_5a9
+    :cond_61
     const/4 v1, 0x0
 
     .line 1451
-    :goto_5aa
+    :goto_25
     return v1
 
     .line 1452
-    :pswitch_5ab
+    :pswitch_16
     const-wide/16 v1, 0x0
 
     .line 1453
@@ -3208,17 +3208,17 @@
 
     .line 1455
     .line 1456
-    if-nez v3, :cond_5b3
+    if-nez v3, :cond_62
 
     .line 1457
     .line 1458
     const/4 v1, 0x1
 
     .line 1459
-    goto :goto_5bc
+    goto :goto_26
 
     .line 1460
-    :cond_5b3
+    :cond_62
     const-wide/high16 v1, 0x3ff0000000000000L    # 1.0
 
     .line 1461
@@ -3227,25 +3227,25 @@
 
     .line 1463
     .line 1464
-    if-nez v3, :cond_5bb
+    if-nez v3, :cond_63
 
     .line 1465
     .line 1466
     const/4 v1, 0x2
 
     .line 1467
-    goto :goto_5bc
+    goto :goto_26
 
     .line 1468
-    :cond_5bb
+    :cond_63
     const/4 v1, 0x0
 
     .line 1469
-    :goto_5bc
+    :goto_26
     return v1
 
     .line 1470
-    :pswitch_5bd
+    :pswitch_17
     const-wide/16 v3, 0x0
 
     .line 1471
@@ -3254,17 +3254,17 @@
 
     .line 1473
     .line 1474
-    if-nez v5, :cond_5c5
+    if-nez v5, :cond_64
 
     .line 1475
     .line 1476
     const/4 v1, 0x1
 
     .line 1477
-    goto :goto_5d5
+    goto :goto_28
 
     .line 1478
-    :cond_5c5
+    :cond_64
     const-wide/16 v3, 0x0
 
     .line 1479
@@ -3273,7 +3273,7 @@
 
     .line 1481
     .line 1482
-    if-eqz v5, :cond_5d4
+    if-eqz v5, :cond_66
 
     .line 1483
     .line 1484
@@ -3285,30 +3285,30 @@
 
     .line 1487
     .line 1488
-    if-nez v5, :cond_5d2
+    if-nez v5, :cond_65
 
     .line 1489
     .line 1490
-    goto :goto_5d4
+    goto :goto_27
 
     .line 1491
-    :cond_5d2
+    :cond_65
     const/4 v1, 0x0
 
     .line 1492
-    goto :goto_5d5
+    goto :goto_28
 
     .line 1493
-    :cond_5d4
-    :goto_5d4
+    :cond_66
+    :goto_27
     const/4 v1, 0x2
 
     .line 1494
-    :goto_5d5
+    :goto_28
     return v1
 
     .line 1495
-    :pswitch_5d6
+    :pswitch_18
     const-wide/high16 v3, 0x4024000000000000L    # 10.0
 
     .line 1496
@@ -3325,7 +3325,7 @@
 
     .line 1502
     .line 1503
-    if-eqz v7, :cond_606
+    if-eqz v7, :cond_6a
 
     .line 1504
     .line 1505
@@ -3344,7 +3344,7 @@
 
     .line 1511
     .line 1512
-    if-nez v9, :cond_5f5
+    if-nez v9, :cond_67
 
     .line 1513
     .line 1514
@@ -3356,7 +3356,7 @@
 
     .line 1517
     .line 1518
-    if-gtz v9, :cond_5f5
+    if-gtz v9, :cond_67
 
     .line 1519
     .line 1520
@@ -3368,11 +3368,11 @@
 
     .line 1523
     .line 1524
-    if-lez v11, :cond_606
+    if-lez v11, :cond_6a
 
     .line 1525
     .line 1526
-    :cond_5f5
+    :cond_67
     const-wide/high16 v1, 0x3ff0000000000000L    # 1.0
 
     .line 1527
@@ -3381,7 +3381,7 @@
 
     .line 1529
     .line 1530
-    if-nez v9, :cond_604
+    if-nez v9, :cond_69
 
     .line 1531
     .line 1532
@@ -3393,37 +3393,37 @@
 
     .line 1535
     .line 1536
-    if-nez v3, :cond_602
+    if-nez v3, :cond_68
 
     .line 1537
     .line 1538
-    goto :goto_604
+    goto :goto_29
 
     .line 1539
-    :cond_602
+    :cond_68
     const/4 v1, 0x2
 
     .line 1540
-    goto :goto_607
+    goto :goto_2a
 
     .line 1541
-    :cond_604
-    :goto_604
+    :cond_69
+    :goto_29
     const/4 v1, 0x0
 
     .line 1542
-    goto :goto_607
+    goto :goto_2a
 
     .line 1543
-    :cond_606
+    :cond_6a
     const/4 v1, 0x1
 
     .line 1544
-    :goto_607
+    :goto_2a
     return v1
 
     .line 1545
-    :pswitch_608
+    :pswitch_19
     const-wide/16 v3, 0xa
 
     .line 1546
@@ -3439,7 +3439,7 @@
 
     .line 1551
     .line 1552
-    if-eqz v5, :cond_620
+    if-eqz v5, :cond_6c
 
     .line 1553
     .line 1554
@@ -3451,7 +3451,7 @@
 
     .line 1557
     .line 1558
-    if-eqz v5, :cond_620
+    if-eqz v5, :cond_6c
 
     .line 1559
     .line 1560
@@ -3463,30 +3463,30 @@
 
     .line 1563
     .line 1564
-    if-nez v5, :cond_61e
+    if-nez v5, :cond_6b
 
     .line 1565
     .line 1566
-    goto :goto_620
+    goto :goto_2b
 
     .line 1567
-    :cond_61e
+    :cond_6b
     const/4 v1, 0x2
 
     .line 1568
-    goto :goto_621
+    goto :goto_2c
 
     .line 1569
-    :cond_620
-    :goto_620
+    :cond_6c
+    :goto_2b
     const/4 v1, 0x0
 
     .line 1570
-    :goto_621
+    :goto_2c
     return v1
 
     .line 1571
-    :pswitch_622
+    :pswitch_1a
     const-wide/16 v3, 0xa
 
     .line 1572
@@ -3503,7 +3503,7 @@
 
     .line 1578
     .line 1579
-    if-nez v7, :cond_638
+    if-nez v7, :cond_6e
 
     .line 1580
     .line 1581
@@ -3522,30 +3522,30 @@
 
     .line 1587
     .line 1588
-    if-nez v5, :cond_636
+    if-nez v5, :cond_6d
 
     .line 1589
     .line 1590
-    goto :goto_638
+    goto :goto_2d
 
     .line 1591
-    :cond_636
+    :cond_6d
     const/4 v1, 0x2
 
     .line 1592
-    goto :goto_639
+    goto :goto_2e
 
     .line 1593
-    :cond_638
-    :goto_638
+    :cond_6e
+    :goto_2d
     const/4 v1, 0x0
 
     .line 1594
-    :goto_639
+    :goto_2e
     return v1
 
     .line 1595
-    :pswitch_63a
+    :pswitch_1b
     const-wide/16 v3, 0xa
 
     .line 1596
@@ -3562,7 +3562,7 @@
 
     .line 1602
     .line 1603
-    if-nez v7, :cond_64f
+    if-nez v7, :cond_6f
 
     .line 1604
     .line 1605
@@ -3581,25 +3581,25 @@
 
     .line 1611
     .line 1612
-    if-eqz v5, :cond_64f
+    if-eqz v5, :cond_6f
 
     .line 1613
     .line 1614
     const/4 v1, 0x2
 
     .line 1615
-    goto :goto_650
+    goto :goto_2f
 
     .line 1616
-    :cond_64f
+    :cond_6f
     const/4 v1, 0x0
 
     .line 1617
-    :goto_650
+    :goto_2f
     return v1
 
     .line 1618
-    :pswitch_651
+    :pswitch_1c
     const-wide/high16 v1, 0x3ff0000000000000L    # 1.0
 
     .line 1619
@@ -3608,57 +3608,57 @@
 
     .line 1621
     .line 1622
-    if-eqz v3, :cond_659
+    if-eqz v3, :cond_70
 
     .line 1623
     .line 1624
     const/4 v1, 0x0
 
     .line 1625
-    goto :goto_65a
+    goto :goto_30
 
     .line 1626
-    :cond_659
+    :cond_70
     const/4 v1, 0x2
 
     .line 1627
-    :goto_65a
+    :goto_30
     return v1
 
     .line 1628
     nop
 
     .line 1629
-    :pswitch_data_65c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_651
-        :pswitch_63a
-        :pswitch_622
-        :pswitch_608
-        :pswitch_5d6
-        :pswitch_5bd
-        :pswitch_5ab
-        :pswitch_599
-        :pswitch_574
-        :pswitch_54b
-        :pswitch_549
-        :pswitch_511
-        :pswitch_4cd
-        :pswitch_4a5
-        :pswitch_47c
-        :pswitch_450
-        :pswitch_437
-        :pswitch_3e9
-        :pswitch_383
-        :pswitch_33e
-        :pswitch_300
-        :pswitch_2ef
-        :pswitch_29b
-        :pswitch_1e9
-        :pswitch_1b0
-        :pswitch_173
-        :pswitch_90
-        :pswitch_46
+        :pswitch_1c
+        :pswitch_1b
         :pswitch_1a
+        :pswitch_19
+        :pswitch_18
+        :pswitch_17
+        :pswitch_16
+        :pswitch_15
+        :pswitch_14
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

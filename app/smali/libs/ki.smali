@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/ki;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/ki;->X:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_28
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -64,7 +64,7 @@
     return-void
 
     .line 14
-    :pswitch_d
+    :pswitch_0
     check-cast v1, Ljava/util/LinkedHashSet;
 
     .line 15
@@ -77,7 +77,7 @@
     return-void
 
     .line 20
-    :pswitch_13
+    :pswitch_1
     check-cast v1, Llibs/xt1;
 
     .line 21
@@ -97,21 +97,21 @@
     const/4 v2, 0x0
 
     .line 29
-    if-nez v0, :cond_20
+    if-nez v0, :cond_0
 
     .line 30
     .line 31
     const/4 v0, 0x1
 
     .line 32
-    goto :goto_21
+    goto :goto_0
 
     .line 33
-    :cond_20
+    :cond_0
     const/4 v0, 0x0
 
     .line 34
-    :goto_21
+    :goto_0
     invoke-virtual {v1, v0}, Llibs/xt1;->Old(Z)V
 
     .line 35
@@ -125,9 +125,9 @@
     return-void
 
     .line 41
-    :pswitch_data_28
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_13
-        :pswitch_d
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

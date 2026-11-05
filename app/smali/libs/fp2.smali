@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public final close()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/fp2;->m()Llibs/dk;
@@ -45,7 +45,7 @@
 .end method
 
 .method public i()Llibs/wq1;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0

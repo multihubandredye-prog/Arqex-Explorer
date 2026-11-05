@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/Iterator;Llibs/je2;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,18 +42,18 @@
 
 # virtual methods
 .method public final hasNext()Z
-    .registers 4
+    .locals 3
 
     .line 1
     iget-boolean v0, p0, Llibs/d32;->Lambda:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_23
+    if-nez v0, :cond_2
 
     .line 4
     .line 5
-    :cond_4
+    :cond_0
     iget-object v0, p0, Llibs/d32;->X:Ljava/util/Iterator;
 
     .line 6
@@ -69,7 +69,7 @@
     const/4 v2, 0x1
 
     .line 12
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_1
 
     .line 13
     .line 14
@@ -97,7 +97,7 @@
     move-result v0
 
     .line 26
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_0
 
     .line 27
     .line 28
@@ -105,10 +105,10 @@
 
     .line 29
     .line 30
-    goto :goto_21
+    goto :goto_0
 
     .line 31
-    :cond_1e
+    :cond_1
     const/4 v0, 0x0
 
     .line 32
@@ -116,12 +116,12 @@
 
     .line 33
     .line 34
-    :goto_21
+    :goto_0
     iput-boolean v2, p0, Llibs/d32;->Lambda:Z
 
     .line 35
     .line 36
-    :cond_23
+    :cond_2
     iget-boolean v0, p0, Llibs/d32;->Z:Z
 
     .line 37
@@ -130,14 +130,14 @@
 .end method
 
 .method public final next()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/d32;->Lambda:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -153,12 +153,12 @@
 
     .line 10
     .line 11
-    :cond_a
+    :cond_0
     iget-boolean v0, p0, Llibs/d32;->Z:Z
 
     .line 12
     .line 13
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_1
 
     .line 14
     .line 15
@@ -176,7 +176,7 @@
     return-object v0
 
     .line 21
-    :cond_14
+    :cond_1
     invoke-static {}, Llibs/t22;->b()V
 
     .line 22
@@ -189,7 +189,7 @@
 .end method
 
 .method public final remove()V
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/UnsupportedOperationException;

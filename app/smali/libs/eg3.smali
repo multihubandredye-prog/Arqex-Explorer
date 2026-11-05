@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/kg3;Ljava/lang/String;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/eg3;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final a()Ljava/io/InputStream;
-    .registers 6
+    .locals 5
 
     .line 1
     iget-byte v0, p0, Llibs/eg3;->X:B
@@ -64,7 +64,7 @@
 
     .line 9
     .line 10
-    packed-switch v0, :pswitch_data_38
+    packed-switch v0, :pswitch_data_0
 
     .line 11
     .line 12
@@ -85,7 +85,7 @@
 
     .line 20
     .line 21
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 22
     .line 23
@@ -96,10 +96,10 @@
 
     .line 25
     .line 26
-    goto :goto_21
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_0
     invoke-virtual {v2, v3}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     .line 28
@@ -113,11 +113,11 @@
     .line 32
     .line 33
     .line 34
-    :goto_21
+    :goto_0
     return-object v1
 
     .line 35
-    :pswitch_22
+    :pswitch_0
     iget-object v0, v4, Llibs/kg3;->e:Llibs/b91;
 
     .line 36
@@ -134,7 +134,7 @@
 
     .line 42
     .line 43
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_1
 
     .line 44
     .line 45
@@ -145,10 +145,10 @@
 
     .line 47
     .line 48
-    goto :goto_37
+    goto :goto_1
 
     .line 49
-    :cond_30
+    :cond_1
     invoke-virtual {v2, v3}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     .line 50
@@ -162,12 +162,12 @@
     .line 54
     .line 55
     .line 56
-    :goto_37
+    :goto_1
     return-object v1
 
     .line 57
-    :pswitch_data_38
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_22
+        :pswitch_0
     .end packed-switch
 .end method

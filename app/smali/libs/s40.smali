@@ -15,7 +15,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(ZLjava/lang/String;Ljava/util/HashSet;Ljava/util/concurrent/atomic/AtomicReference;)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public final a(Llibs/dj;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/s40;->c:Ljava/util/HashSet;

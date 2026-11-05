@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(I[B)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Llibs/y41;-><init>(I[B)V
@@ -17,7 +17,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;[B)V
-    .registers 3
+    .locals 0
 
     .line 5
     invoke-direct {p0, p1, p2}, Llibs/y41;-><init>(Ljava/lang/String;[B)V
@@ -28,7 +28,7 @@
 
 # virtual methods
 .method public final b()[B
-    .registers 4
+    .locals 3
 
     .line 1
     iget v0, p0, Llibs/y41;->b:I
@@ -54,7 +54,7 @@
 .end method
 
 .method public final d(I[B)V
-    .registers 6
+    .locals 3
 
     .line 1
     add-int/lit8 v0, p1, 0x4
@@ -105,14 +105,14 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Llibs/u41;
 
     .line 2
     .line 3
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -122,7 +122,7 @@
     return p1
 
     .line 7
-    :cond_6
+    :cond_0
     invoke-super {p0, p1}, Llibs/y41;->equals(Ljava/lang/Object;)Z
 
     .line 8

@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/app/Activity;Ljava/util/concurrent/atomic/AtomicLong;Landroid/widget/TextView;)V
-    .registers 5
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -49,7 +49,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/util/concurrent/atomic/AtomicLong;Landroid/app/Activity;Landroid/widget/TextView;)V
-    .registers 5
+    .locals 1
 
     .line 14
     const/4 v0, 0x0
@@ -68,7 +68,7 @@
 .end method
 
 .method public synthetic constructor <init>(Llibs/yr1;Landroid/app/Activity;Ljava/util/concurrent/atomic/AtomicLong;Landroid/widget/TextView;B)V
-    .registers 6
+    .locals 0
 
     .line 15
     iput-byte p5, p0, Llibs/j8;->X:B
@@ -87,7 +87,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 19
+    .locals 17
 
     .line 1
     move-object/from16 v0, p0
@@ -113,7 +113,7 @@
 
     .line 11
     .line 12
-    packed-switch v1, :pswitch_data_b6
+    packed-switch v1, :pswitch_data_0
 
     .line 13
     .line 14
@@ -146,7 +146,7 @@
     return-void
 
     .line 29
-    :pswitch_1c
+    :pswitch_0
     invoke-virtual {v5}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
 
     .line 30
@@ -175,7 +175,7 @@
     return-void
 
     .line 43
-    :pswitch_2a
+    :pswitch_1
     invoke-virtual {v5}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
 
     .line 44
@@ -204,7 +204,7 @@
     return-void
 
     .line 57
-    :pswitch_38
+    :pswitch_2
     invoke-virtual {v5}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
 
     .line 58
@@ -233,7 +233,7 @@
     return-void
 
     .line 71
-    :pswitch_46
+    :pswitch_3
     invoke-virtual {v5}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
 
     .line 72
@@ -262,7 +262,7 @@
     return-void
 
     .line 85
-    :pswitch_54
+    :pswitch_4
     invoke-virtual {v5}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
 
     .line 86
@@ -291,7 +291,7 @@
     return-void
 
     .line 99
-    :pswitch_62
+    :pswitch_5
     invoke-virtual {v5}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
 
     .line 100
@@ -349,7 +349,7 @@
     return-void
 
     .line 128
-    :pswitch_7f
+    :pswitch_6
     invoke-virtual {v5}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
 
     .line 129
@@ -366,7 +366,7 @@
 
     .line 135
     .line 136
-    if-gtz v1, :cond_94
+    if-gtz v1, :cond_0
 
     .line 137
     .line 138
@@ -391,7 +391,7 @@
     .line 147
     .line 148
     .line 149
-    :cond_94
+    :cond_0
     invoke-virtual {v5}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
 
     .line 150
@@ -458,14 +458,14 @@
     return-void
 
     .line 183
-    :pswitch_data_b6
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_7f
-        :pswitch_62
-        :pswitch_54
-        :pswitch_46
-        :pswitch_38
-        :pswitch_2a
-        :pswitch_1c
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

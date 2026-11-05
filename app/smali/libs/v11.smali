@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r31;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/v11;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 8
+    .locals 2
 
     .line 1
     iget-byte p1, p0, Llibs/v11;->X:B
@@ -60,7 +60,7 @@
     const/4 v1, 0x1
 
     .line 10
-    packed-switch p1, :pswitch_data_e2
+    packed-switch p1, :pswitch_data_0
 
     .line 11
     .line 12
@@ -85,7 +85,7 @@
     move-result p1
 
     .line 23
-    if-lez p1, :cond_25
+    if-lez p1, :cond_0
 
     .line 24
     .line 25
@@ -116,8 +116,8 @@
 
     .line 37
     .line 38
-    :cond_25
-    if-nez p4, :cond_39
+    :cond_0
+    if-nez p4, :cond_1
 
     .line 39
     .line 40
@@ -125,7 +125,7 @@
 
     .line 41
     .line 42
-    if-eqz p1, :cond_71
+    if-eqz p1, :cond_4
 
     .line 43
     .line 44
@@ -141,7 +141,7 @@
     move-result p1
 
     .line 50
-    if-nez p1, :cond_71
+    if-nez p1, :cond_4
 
     .line 51
     .line 52
@@ -154,10 +154,10 @@
     .line 55
     .line 56
     .line 57
-    goto :goto_71
+    goto :goto_1
 
     .line 58
-    :cond_39
+    :cond_1
     invoke-virtual {p4, p5}, Llibs/r90;->d(I)Ljava/lang/Object;
 
     .line 59
@@ -186,7 +186,7 @@
     move-result-object p3
 
     .line 72
-    if-eqz p3, :cond_51
+    if-eqz p3, :cond_2
 
     .line 73
     .line 74
@@ -198,26 +198,26 @@
     move-result p2
 
     .line 78
-    if-eqz p2, :cond_51
+    if-eqz p2, :cond_2
 
     .line 79
     .line 80
     const/4 p2, 0x1
 
     .line 81
-    goto :goto_52
+    goto :goto_0
 
     .line 82
-    :cond_51
+    :cond_2
     const/4 p2, 0x0
 
     .line 83
-    :goto_52
+    :goto_0
     iget-object p3, v0, Llibs/r31;->e:Lcom/mixplorer/widgets/MiDrawer;
 
     .line 84
     .line 85
-    if-eqz p3, :cond_63
+    if-eqz p3, :cond_3
 
     .line 86
     .line 87
@@ -233,7 +233,7 @@
     move-result p3
 
     .line 93
-    if-nez p3, :cond_63
+    if-nez p3, :cond_3
 
     .line 94
     .line 95
@@ -246,7 +246,7 @@
     .line 98
     .line 99
     .line 100
-    :cond_63
+    :cond_3
     new-instance p3, Llibs/xv1;
 
     .line 101
@@ -273,12 +273,12 @@
     .line 112
     .line 113
     .line 114
-    :cond_71
-    :goto_71
+    :cond_4
+    :goto_1
     return-void
 
     .line 115
-    :pswitch_72
+    :pswitch_0
     iget-object p1, v0, Llibs/r31;->h:Lcom/mixplorer/widgets/MiDraggableListView;
 
     .line 116
@@ -299,7 +299,7 @@
     move-result p1
 
     .line 125
-    if-lez p1, :cond_8b
+    if-lez p1, :cond_5
 
     .line 126
     .line 127
@@ -330,15 +330,15 @@
 
     .line 139
     .line 140
-    :cond_8b
-    if-nez p4, :cond_8e
+    :cond_5
+    if-nez p4, :cond_6
 
     .line 141
     .line 142
-    goto :goto_e0
+    goto :goto_4
 
     .line 143
-    :cond_8e
+    :cond_6
     invoke-virtual {p4, p5}, Llibs/r90;->d(I)Ljava/lang/Object;
 
     .line 144
@@ -367,7 +367,7 @@
     move-result-object p3
 
     .line 157
-    if-eqz p3, :cond_bb
+    if-eqz p3, :cond_8
 
     .line 158
     .line 159
@@ -379,7 +379,7 @@
     move-result p4
 
     .line 163
-    if-eqz p4, :cond_bb
+    if-eqz p4, :cond_8
 
     .line 164
     .line 165
@@ -391,7 +391,7 @@
     move-result p1
 
     .line 169
-    if-nez p1, :cond_ad
+    if-nez p1, :cond_7
 
     .line 170
     .line 171
@@ -399,15 +399,15 @@
 
     .line 172
     .line 173
-    goto :goto_af
+    goto :goto_2
 
     .line 174
-    :cond_ad
+    :cond_7
     const-string p1, "0"
 
     .line 175
     .line 176
-    :goto_af
+    :goto_2
     const-string p2, "*fldr*"
 
     .line 177
@@ -429,11 +429,11 @@
     .line 185
     .line 186
     .line 187
-    goto :goto_e0
+    goto :goto_4
 
     .line 188
-    :cond_bb
-    if-eqz p3, :cond_c5
+    :cond_8
+    if-eqz p3, :cond_9
 
     .line 189
     .line 190
@@ -445,21 +445,21 @@
     move-result p2
 
     .line 194
-    if-eqz p2, :cond_c5
+    if-eqz p2, :cond_9
 
     .line 195
     .line 196
     const/4 p2, 0x1
 
     .line 197
-    goto :goto_c6
+    goto :goto_3
 
     .line 198
-    :cond_c5
+    :cond_9
     const/4 p2, 0x0
 
     .line 199
-    :goto_c6
+    :goto_3
     sget-object p3, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 200
@@ -472,7 +472,7 @@
     move-result p3
 
     .line 205
-    if-nez p3, :cond_d3
+    if-nez p3, :cond_a
 
     .line 206
     .line 207
@@ -485,7 +485,7 @@
     .line 210
     .line 211
     .line 212
-    :cond_d3
+    :cond_a
     new-instance p3, Llibs/xv1;
 
     .line 213
@@ -509,15 +509,15 @@
     .line 223
     .line 224
     .line 225
-    :goto_e0
+    :goto_4
     return-void
 
     .line 226
     nop
 
     .line 227
-    :pswitch_data_e2
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_72
+        :pswitch_0
     .end packed-switch
 .end method

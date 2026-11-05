@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 
 # virtual methods
 .method public final a(J)V
-    .registers 7
+    .locals 4
 
     .line 1
     const-wide/32 v0, 0xffff
@@ -78,7 +78,7 @@
 .end method
 
 .method public final getValue()J
-    .registers 5
+    .locals 4
 
     .line 1
     iget-wide v0, p0, Llibs/a_;->b:J
@@ -103,7 +103,7 @@
 .end method
 
 .method public final reset()V
-    .registers 3
+    .locals 2
 
     .line 1
     const-wide/16 v0, 0x1
@@ -126,7 +126,7 @@
 .end method
 
 .method public final update([BII)V
-    .registers 14
+    .locals 10
 
     .line 1
     const/4 v0, 0x1
@@ -137,7 +137,7 @@
     .line 3
     .line 4
     .line 5
-    if-ne p3, v0, :cond_18
+    if-ne p3, v0, :cond_0
 
     .line 6
     .line 7
@@ -183,7 +183,7 @@
     return-void
 
     .line 25
-    :cond_18
+    :cond_0
     div-int/lit16 v0, p3, 0x15b0
 
     .line 26
@@ -195,12 +195,12 @@
     rem-int/2addr p3, v3
 
     .line 30
-    :goto_1d
+    :goto_0
     add-int/lit8 v4, v0, -0x1
 
     .line 31
     .line 32
-    if-lez v0, :cond_45
+    if-lez v0, :cond_2
 
     .line 33
     .line 34
@@ -208,7 +208,7 @@
 
     .line 35
     .line 36
-    :goto_23
+    :goto_1
     add-int/lit8 v5, v0, -0x1
 
     .line 37
@@ -217,7 +217,7 @@
 
     .line 39
     .line 40
-    if-lez v0, :cond_3b
+    if-lez v0, :cond_1
 
     .line 41
     .line 42
@@ -260,10 +260,10 @@
     move v0, v5
 
     .line 59
-    goto :goto_23
+    goto :goto_1
 
     .line 60
-    :cond_3b
+    :cond_1
     rem-long/2addr v6, v1
 
     .line 61
@@ -285,11 +285,11 @@
     move v0, v4
 
     .line 69
-    goto :goto_1d
+    goto :goto_0
 
     .line 70
-    :cond_45
-    :goto_45
+    :cond_2
+    :goto_2
     add-int/lit8 v0, p3, -0x1
 
     .line 71
@@ -298,7 +298,7 @@
 
     .line 73
     .line 74
-    if-lez p3, :cond_5d
+    if-lez p3, :cond_3
 
     .line 75
     .line 76
@@ -341,10 +341,10 @@
     move p3, v0
 
     .line 93
-    goto :goto_45
+    goto :goto_2
 
     .line 94
-    :cond_5d
+    :cond_3
     rem-long/2addr v3, v1
 
     .line 95

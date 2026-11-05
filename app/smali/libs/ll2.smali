@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ia3;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public final a()Llibs/vj;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ll2;->X:Llibs/vj;
@@ -58,7 +58,7 @@
 .end method
 
 .method public final b()Llibs/en3;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ll2;->Y:Llibs/ia3;
@@ -77,7 +77,7 @@
 .end method
 
 .method public final close()V
-    .registers 8
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/ll2;->Y:Llibs/ia3;
@@ -88,15 +88,15 @@
 
     .line 4
     .line 5
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_0
 
     .line 6
     .line 7
-    goto :goto_25
+    goto :goto_3
 
     .line 8
-    :cond_7
-    :try_start_7
+    :cond_0
+    :try_start_0
     iget-object v1, p0, Llibs/ll2;->X:Llibs/vj;
 
     .line 9
@@ -113,57 +113,57 @@
 
     .line 15
     .line 16
-    if-lez v6, :cond_17
+    if-lez v6, :cond_1
 
     .line 17
     .line 18
     invoke-interface {v0, v2, v3, v1}, Llibs/ia3;->j(JLlibs/vj;)V
-    :try_end_14
-    .catchall {:try_start_7 .. :try_end_14} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 19
     .line 20
     .line 21
-    goto :goto_17
+    goto :goto_0
 
     .line 22
-    :catchall_15
+    :catchall_0
     move-exception v1
 
     .line 23
-    goto :goto_18
+    goto :goto_1
 
     .line 24
-    :cond_17
-    :goto_17
+    :cond_1
+    :goto_0
     const/4 v1, 0x0
 
     .line 25
-    :goto_18
-    :try_start_18
+    :goto_1
+    :try_start_1
     invoke-interface {v0}, Llibs/ia3;->close()V
-    :try_end_1b
-    .catchall {:try_start_18 .. :try_end_1b} :catchall_1c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 26
     .line 27
     .line 28
-    goto :goto_20
+    goto :goto_2
 
     .line 29
-    :catchall_1c
+    :catchall_1
     move-exception v0
 
     .line 30
-    if-nez v1, :cond_20
+    if-nez v1, :cond_2
 
     .line 31
     .line 32
     move-object v1, v0
 
     .line 33
-    :cond_20
-    :goto_20
+    :cond_2
+    :goto_2
     const/4 v0, 0x1
 
     .line 34
@@ -171,15 +171,15 @@
 
     .line 35
     .line 36
-    if-nez v1, :cond_26
+    if-nez v1, :cond_3
 
     .line 37
     .line 38
-    :goto_25
+    :goto_3
     return-void
 
     .line 39
-    :cond_26
+    :cond_3
     sget-object v0, Llibs/vr3;->a:Ljava/nio/charset/Charset;
 
     .line 40
@@ -188,14 +188,14 @@
 .end method
 
 .method public final d(J)Llibs/ck;
-    .registers 4
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/ll2;->Z:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -216,7 +216,7 @@
     return-object p0
 
     .line 14
-    :cond_d
+    :cond_0
     const-string p1, "closed"
 
     .line 15
@@ -233,14 +233,14 @@
 .end method
 
 .method public final flush()V
-    .registers 8
+    .locals 7
 
     .line 1
     iget-boolean v0, p0, Llibs/ll2;->Z:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_17
+    if-nez v0, :cond_1
 
     .line 4
     .line 5
@@ -264,7 +264,7 @@
 
     .line 14
     .line 15
-    if-lez v6, :cond_13
+    if-lez v6, :cond_0
 
     .line 16
     .line 17
@@ -273,7 +273,7 @@
     .line 18
     .line 19
     .line 20
-    :cond_13
+    :cond_0
     invoke-interface {v5}, Llibs/ia3;->flush()V
 
     .line 21
@@ -282,7 +282,7 @@
     return-void
 
     .line 24
-    :cond_17
+    :cond_1
     const-string v0, "closed"
 
     .line 25
@@ -296,7 +296,7 @@
 .end method
 
 .method public final isOpen()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/ll2;->Z:Z
@@ -311,14 +311,14 @@
 .end method
 
 .method public final j(JLlibs/vj;)V
-    .registers 5
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/ll2;->Z:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -339,7 +339,7 @@
     return-void
 
     .line 14
-    :cond_d
+    :cond_0
     const-string p1, "closed"
 
     .line 15
@@ -353,14 +353,14 @@
 .end method
 
 .method public final k()Llibs/ck;
-    .registers 9
+    .locals 8
 
     .line 1
     iget-boolean v0, p0, Llibs/ll2;->Z:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_2d
+    if-nez v0, :cond_3
 
     .line 4
     .line 5
@@ -380,17 +380,17 @@
 
     .line 12
     .line 13
-    if-nez v5, :cond_10
+    if-nez v5, :cond_0
 
     .line 14
     .line 15
     move-wide v1, v3
 
     .line 16
-    goto :goto_23
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     iget-object v5, v0, Llibs/vj;->X:Llibs/s43;
 
     .line 18
@@ -407,7 +407,7 @@
 
     .line 24
     .line 25
-    if-ge v6, v7, :cond_23
+    if-ge v6, v7, :cond_1
 
     .line 26
     .line 27
@@ -415,7 +415,7 @@
 
     .line 28
     .line 29
-    if-eqz v7, :cond_23
+    if-eqz v7, :cond_1
 
     .line 30
     .line 31
@@ -432,13 +432,13 @@
     sub-long/2addr v1, v5
 
     .line 36
-    :cond_23
-    :goto_23
+    :cond_1
+    :goto_0
     cmp-long v5, v1, v3
 
     .line 37
     .line 38
-    if-lez v5, :cond_2c
+    if-lez v5, :cond_2
 
     .line 39
     .line 40
@@ -451,11 +451,11 @@
     .line 43
     .line 44
     .line 45
-    :cond_2c
+    :cond_2
     return-object p0
 
     .line 46
-    :cond_2d
+    :cond_3
     const-string v0, "closed"
 
     .line 47
@@ -472,7 +472,7 @@
 .end method
 
 .method public final l(Llibs/ql;)Llibs/ck;
-    .registers 4
+    .locals 2
 
     .line 1
     iget-boolean v0, p0, Llibs/ll2;->Z:Z
@@ -482,11 +482,11 @@
     const/4 v1, 0x0
 
     .line 4
-    if-nez v0, :cond_16
+    if-nez v0, :cond_1
 
     .line 5
     .line 6
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_0
 
     .line 7
     .line 8
@@ -507,7 +507,7 @@
     return-object p0
 
     .line 17
-    :cond_10
+    :cond_0
     const-string p1, "byteString == null"
 
     .line 18
@@ -520,7 +520,7 @@
     return-object v1
 
     .line 23
-    :cond_16
+    :cond_1
     const-string p1, "closed"
 
     .line 24
@@ -534,14 +534,14 @@
 .end method
 
 .method public final p(I[B)Llibs/ck;
-    .registers 5
+    .locals 2
 
     .line 1
     iget-boolean v0, p0, Llibs/ll2;->Z:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -565,7 +565,7 @@
     return-object p0
 
     .line 15
-    :cond_e
+    :cond_0
     const-string p1, "closed"
 
     .line 16
@@ -582,14 +582,14 @@
 .end method
 
 .method public final r(Ljava/lang/String;)Llibs/ck;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/ll2;->Z:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -610,7 +610,7 @@
     return-object p0
 
     .line 14
-    :cond_d
+    :cond_0
     const-string p1, "closed"
 
     .line 15
@@ -627,14 +627,14 @@
 .end method
 
 .method public final s(J)Llibs/ck;
-    .registers 4
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/ll2;->Z:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -655,7 +655,7 @@
     return-object p0
 
     .line 14
-    :cond_d
+    :cond_0
     const-string p1, "closed"
 
     .line 15
@@ -672,7 +672,7 @@
 .end method
 
 .method public final t()Ljava/io/OutputStream;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/_b;
@@ -691,7 +691,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -737,12 +737,12 @@
 .end method
 
 .method public final write(Ljava/nio/ByteBuffer;)I
-    .registers 3
+    .locals 1
 
     .line 31
     iget-boolean v0, p0, Llibs/ll2;->Z:Z
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 32
     iget-object v0, p0, Llibs/ll2;->X:Llibs/vj;
@@ -757,7 +757,7 @@
     return p1
 
     .line 34
-    :cond_e
+    :cond_0
     const-string p1, "closed"
 
     invoke-static {p1}, Llibs/ic0;->h(Ljava/lang/String;)V
@@ -768,7 +768,7 @@
 .end method
 
 .method public final write([B)Llibs/ck;
-    .registers 5
+    .locals 3
 
     .line 1
     iget-boolean v0, p0, Llibs/ll2;->Z:Z
@@ -778,11 +778,11 @@
     const/4 v1, 0x0
 
     .line 4
-    if-nez v0, :cond_18
+    if-nez v0, :cond_1
 
     .line 5
     .line 6
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     .line 7
     .line 8
@@ -809,7 +809,7 @@
     return-object p0
 
     .line 19
-    :cond_12
+    :cond_0
     const-string p1, "source == null"
 
     .line 20
@@ -822,7 +822,7 @@
     return-object v1
 
     .line 25
-    :cond_18
+    :cond_1
     const-string p1, "closed"
 
     .line 26
@@ -836,14 +836,14 @@
 .end method
 
 .method public final writeByte(I)Llibs/ck;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/ll2;->Z:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -864,7 +864,7 @@
     return-object p0
 
     .line 14
-    :cond_d
+    :cond_0
     const-string p1, "closed"
 
     .line 15
@@ -881,14 +881,14 @@
 .end method
 
 .method public final writeInt(I)Llibs/ck;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/ll2;->Z:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -909,7 +909,7 @@
     return-object p0
 
     .line 14
-    :cond_d
+    :cond_0
     const-string p1, "closed"
 
     .line 15
@@ -926,14 +926,14 @@
 .end method
 
 .method public final writeShort(I)Llibs/ck;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/ll2;->Z:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -954,7 +954,7 @@
     return-object p0
 
     .line 14
-    :cond_d
+    :cond_0
     const-string p1, "closed"
 
     .line 15

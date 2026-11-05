@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/aa1;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onLongClick(Landroid/view/View;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     iget-byte p1, p0, Llibs/aa1;->X:B
@@ -53,7 +53,7 @@
 
     .line 6
     .line 7
-    packed-switch p1, :pswitch_data_68
+    packed-switch p1, :pswitch_data_0
 
     .line 8
     .line 9
@@ -62,7 +62,7 @@
 
     .line 11
     .line 12
-    if-eqz v2, :cond_46
+    if-eqz v2, :cond_2
 
     .line 13
     .line 14
@@ -82,7 +82,7 @@
     move-result v0
 
     .line 22
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 23
     .line 24
@@ -91,7 +91,7 @@
     .line 25
     .line 26
     .line 27
-    :cond_1a
+    :cond_0
     iget-object v0, v2, Lcom/mixplorer/activities/ImageViewerActivity;->Zulu:Lcom/mixplorer/widgets/MiSliderLayout;
 
     .line 28
@@ -116,7 +116,7 @@
     move-result v3
 
     .line 39
-    if-eqz v3, :cond_2c
+    if-eqz v3, :cond_1
 
     .line 40
     .line 41
@@ -125,16 +125,16 @@
     .line 42
     .line 43
     .line 44
-    goto :goto_2f
+    goto :goto_0
 
     .line 45
-    :cond_2c
+    :cond_1
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 46
     .line 47
     .line 48
-    :goto_2f
+    :goto_0
     iget-object p1, v2, Lcom/mixplorer/activities/b;->November:Landroid/widget/TextView;
 
     .line 49
@@ -182,11 +182,11 @@
     const/4 v0, 0x1
 
     .line 71
-    :cond_46
+    :cond_2
     return v0
 
     .line 72
-    :pswitch_47
+    :pswitch_0
     check-cast v2, Llibs/ga1;
 
     .line 73
@@ -252,8 +252,8 @@
     return v1
 
     .line 105
-    :pswitch_data_68
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_47
+        :pswitch_0
     .end packed-switch
 .end method

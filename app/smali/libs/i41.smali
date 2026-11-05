@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Z)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -50,7 +50,7 @@
 
 # virtual methods
 .method public final compareTo(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
 
     .line 1
     check-cast p1, Llibs/i41;
@@ -72,14 +72,14 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     instance-of v0, p1, Llibs/i41;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -95,7 +95,7 @@
 
     .line 10
     .line 11
-    if-ne v0, v1, :cond_14
+    if-ne v0, v1, :cond_0
 
     .line 12
     .line 13
@@ -107,7 +107,7 @@
 
     .line 16
     .line 17
-    if-ne p1, v0, :cond_14
+    if-ne p1, v0, :cond_0
 
     .line 18
     .line 19
@@ -117,7 +117,7 @@
     return p1
 
     .line 21
-    :cond_14
+    :cond_0
     const/4 p1, 0x0
 
     .line 22
@@ -125,7 +125,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/i41;->Z:I
@@ -136,7 +136,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/i41;->X:Ljava/lang/String;

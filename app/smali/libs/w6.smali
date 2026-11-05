@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Param;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -35,7 +35,7 @@
     const/4 v2, 0x0
 
     .line 10
-    if-ne v0, v1, :cond_3c
+    if-ne v0, v1, :cond_2
 
     .line 11
     .line 12
@@ -54,7 +54,7 @@
 
     .line 18
     .line 19
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_0
 
     .line 20
     .line 21
@@ -65,11 +65,11 @@
 
     .line 23
     .line 24
-    goto :goto_23
+    goto :goto_0
 
     .line 25
-    :cond_18
-    if-eqz v0, :cond_23
+    :cond_0
+    if-eqz v0, :cond_1
 
     .line 26
     .line 27
@@ -90,8 +90,8 @@
     .line 34
     .line 35
     .line 36
-    :cond_23
-    :goto_23
+    :cond_1
+    :goto_0
     iput-object v2, p0, Llibs/w6;->X:Llibs/x6;
 
     .line 37
@@ -145,7 +145,7 @@
     return-void
 
     .line 61
-    :cond_3c
+    :cond_2
     const-string v0, "Bad sequence size: "
 
     .line 62
@@ -169,7 +169,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/Init;

@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/l92;Llibs/la0;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public final a(B)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/b92;->a:Llibs/fl;
@@ -70,7 +70,7 @@
 .end method
 
 .method public final b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "NULL"
@@ -81,7 +81,7 @@
 .end method
 
 .method public final c(I[B)I
-    .registers 7
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/b92;->a:Llibs/fl;
@@ -103,7 +103,7 @@
     const/4 v2, 0x0
 
     .line 10
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_0
 
     .line 11
     .line 12
@@ -115,10 +115,10 @@
     .line 14
     .line 15
     .line 16
-    goto :goto_19
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     array-length v1, v0
 
     .line 18
@@ -136,7 +136,7 @@
     .line 24
     .line 25
     .line 26
-    :goto_19
+    :goto_0
     invoke-virtual {p0}, Llibs/b92;->reset()V
 
     .line 27
@@ -161,7 +161,7 @@
 .end method
 
 .method public final e()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/b92;->b:Llibs/la0;
@@ -180,7 +180,7 @@
 .end method
 
 .method public final reset()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/b92;->a:Llibs/fl;
@@ -205,7 +205,7 @@
 .end method
 
 .method public final update([BII)V
-    .registers 5
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/b92;->a:Llibs/fl;

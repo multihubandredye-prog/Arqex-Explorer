@@ -23,7 +23,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 27
+    .locals 27
 
     .line 1
     new-instance v0, Ljava/util/HashMap;
@@ -1192,7 +1192,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Llibs/e90;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljavax/crypto/KeyAgreementSpi;-><init>()V
@@ -1217,7 +1217,7 @@
 .end method
 
 .method public engineGenerateSecret([BI)I
-    .registers 6
+    .locals 3
 
     .line 236
     invoke-virtual {p0}, Llibs/vc;->engineGenerateSecret()[B
@@ -1231,7 +1231,7 @@
 
     array-length v2, v0
 
-    if-lt v1, v2, :cond_10
+    if-lt v1, v2, :cond_0
 
     const/4 v1, 0x0
 
@@ -1246,7 +1246,7 @@
     return p1
 
     .line 240
-    :cond_10
+    :cond_0
     new-instance p1, Ljavax/crypto/ShortBufferException;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -1277,7 +1277,7 @@
 .end method
 
 .method public engineGenerateSecret(Ljava/lang/String;)Ljavax/crypto/SecretKey;
-    .registers 12
+    .locals 10
 
     .line 1
     iget-object v0, p0, Llibs/vc;->c:Ljava/math/BigInteger;
@@ -1312,7 +1312,7 @@
     move-result v3
 
     .line 17
-    if-eqz v3, :cond_1b
+    if-eqz v3, :cond_0
 
     .line 18
     .line 19
@@ -1332,14 +1332,14 @@
 
     .line 26
     .line 27
-    goto :goto_1c
+    goto :goto_0
 
     .line 28
-    :cond_1b
+    :cond_0
     move-object v1, p1
 
     .line 29
-    :goto_1c
+    :goto_0
     const/16 v2, 0x5b
 
     .line 30
@@ -1352,7 +1352,7 @@
     move-result v3
 
     .line 35
-    if-lez v3, :cond_3d
+    if-lez v3, :cond_1
 
     .line 36
     .line 37
@@ -1404,10 +1404,10 @@
 
     .line 60
     .line 61
-    goto :goto_55
+    goto :goto_1
 
     .line 62
-    :cond_3d
+    :cond_1
     invoke-static {v1}, Llibs/yh3;->e(Ljava/lang/String;)Ljava/lang/String;
 
     .line 63
@@ -1428,17 +1428,17 @@
     move-result v5
 
     .line 72
-    if-nez v5, :cond_4b
+    if-nez v5, :cond_2
 
     .line 73
     .line 74
     const/4 v3, -0x1
 
     .line 75
-    goto :goto_55
+    goto :goto_1
 
     .line 76
-    :cond_4b
+    :cond_2
     invoke-virtual {v4, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 77
@@ -1459,7 +1459,7 @@
     move-result v3
 
     .line 86
-    :goto_55
+    :goto_1
     iget-object v4, p0, Llibs/vc;->b:Llibs/e90;
 
     .line 87
@@ -1467,11 +1467,11 @@
     const/4 v5, 0x0
 
     .line 89
-    if-eqz v4, :cond_98
+    if-eqz v4, :cond_5
 
     .line 90
     .line 91
-    if-ltz v3, :cond_8c
+    if-ltz v3, :cond_4
 
     .line 92
     .line 93
@@ -1487,18 +1487,18 @@
 
     .line 98
     .line 99
-    if-eqz v8, :cond_7e
+    if-eqz v8, :cond_3
 
     .line 100
     .line 101
-    :try_start_64
+    :try_start_0
     new-instance v8, Llibs/App;
 
     .line 102
     .line 103
     invoke-direct {v8, v1}, Llibs/App;-><init>(Ljava/lang/String;)V
-    :try_end_69
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_64 .. :try_end_69} :catch_72
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 104
     .line 105
@@ -1517,10 +1517,10 @@
     .line 112
     .line 113
     .line 114
-    goto :goto_87
+    goto :goto_2
 
     .line 115
-    :catch_72
+    :catch_0
     new-instance p1, Ljava/security/NoSuchAlgorithmException;
 
     .line 116
@@ -1545,7 +1545,7 @@
     throw p1
 
     .line 127
-    :cond_7e
+    :cond_3
     new-instance v3, Llibs/wd1;
 
     .line 128
@@ -1563,7 +1563,7 @@
     .line 134
     .line 135
     .line 136
-    :goto_87
+    :goto_2
     invoke-interface {v4, v6, v7}, Llibs/e90;->d(I[B)I
 
     .line 137
@@ -1572,10 +1572,10 @@
     move-object v0, v7
 
     .line 140
-    goto :goto_a2
+    goto :goto_3
 
     .line 141
-    :cond_8c
+    :cond_4
     new-instance p1, Ljava/security/NoSuchAlgorithmException;
 
     .line 142
@@ -1600,8 +1600,8 @@
     throw p1
 
     .line 153
-    :cond_98
-    if-lez v3, :cond_a2
+    :cond_5
+    if-lez v3, :cond_6
 
     .line 154
     .line 155
@@ -1621,8 +1621,8 @@
     move-object v0, v4
 
     .line 163
-    :cond_a2
-    :goto_a2
+    :cond_6
+    :goto_3
     sget-object v3, Llibs/vc;->g:Ljava/util/Hashtable;
 
     .line 164
@@ -1635,7 +1635,7 @@
     move-result v1
 
     .line 169
-    if-eqz v1, :cond_ad
+    if-eqz v1, :cond_7
 
     .line 170
     .line 171
@@ -1644,7 +1644,7 @@
     .line 172
     .line 173
     .line 174
-    :cond_ad
+    :cond_7
     new-instance v1, Ljavax/crypto/spec/SecretKeySpec;
 
     .line 175
@@ -1657,7 +1657,7 @@
     move-result v3
 
     .line 180
-    if-lez v3, :cond_be
+    if-lez v3, :cond_8
 
     .line 181
     .line 182
@@ -1677,10 +1677,10 @@
     move-result-object p1
 
     .line 190
-    goto :goto_e7
+    goto :goto_4
 
     .line 191
-    :cond_be
+    :cond_8
     sget-object v2, Llibs/my1;->k:Llibs/App;
 
     .line 192
@@ -1697,7 +1697,7 @@
     move-result v2
 
     .line 199
-    if-eqz v2, :cond_cb
+    if-eqz v2, :cond_9
 
     .line 200
     .line 201
@@ -1705,10 +1705,10 @@
 
     .line 202
     .line 203
-    goto :goto_e7
+    goto :goto_4
 
     .line 204
-    :cond_cb
+    :cond_9
     sget-object v2, Llibs/ss0;->a:Llibs/App;
 
     .line 205
@@ -1725,7 +1725,7 @@
     move-result v2
 
     .line 212
-    if-eqz v2, :cond_d8
+    if-eqz v2, :cond_a
 
     .line 213
     .line 214
@@ -1733,10 +1733,10 @@
 
     .line 215
     .line 216
-    goto :goto_e7
+    goto :goto_4
 
     .line 217
-    :cond_d8
+    :cond_a
     sget-object v2, Llibs/vc;->e:Ljava/util/HashMap;
 
     .line 218
@@ -1761,15 +1761,15 @@
 
     .line 228
     .line 229
-    if-eqz v2, :cond_e7
+    if-eqz v2, :cond_b
 
     .line 230
     .line 231
     move-object p1, v2
 
     .line 232
-    :cond_e7
-    :goto_e7
+    :cond_b
+    :goto_4
     invoke-direct {v1, v0, p1}, Ljavax/crypto/spec/SecretKeySpec;-><init>([BLjava/lang/String;)V
 
     .line 233
@@ -1779,12 +1779,12 @@
 .end method
 
 .method public engineGenerateSecret()[B
-    .registers 3
+    .locals 2
 
     .line 243
     iget-object v0, p0, Llibs/vc;->b:Llibs/e90;
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 244
     iget-object v0, p0, Llibs/vc;->c:Ljava/math/BigInteger;
@@ -1796,7 +1796,7 @@
     return-object v0
 
     .line 245
-    :cond_b
+    :cond_0
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "KDF can only be used when algorithm is known"

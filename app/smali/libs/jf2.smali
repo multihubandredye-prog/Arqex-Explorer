@@ -15,7 +15,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/PreferenceActivity;Ljava/util/ArrayList;Llibs/ml1;B)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-byte p4, p0, Llibs/jf2;->c:B
@@ -43,7 +43,7 @@
 .end method
 
 .method private final declared-synchronized Link(Landroid/view/View;I)V
-    .registers 14
+    .locals 11
 
     .line 1
     const/4 p1, 0x0
@@ -60,7 +60,7 @@
     monitor-enter p0
 
     .line 7
-    :try_start_6
+    :try_start_0
     iget-object v1, p0, Llibs/jf2;->d:Ljava/util/ArrayList;
 
     .line 8
@@ -74,15 +74,15 @@
 
     .line 13
     check-cast p2, Llibs/r90;
-    :try_end_e
-    .catchall {:try_start_6 .. :try_end_e} :catchall_5a0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 14
     .line 15
     const/4 v1, 0x1
 
     .line 16
-    :try_start_f
+    :try_start_1
     iget p2, p2, Llibs/r90;->Z:I
 
     .line 17
@@ -94,7 +94,7 @@
     const/4 v3, 0x0
 
     .line 21
-    if-ne p2, v2, :cond_52e
+    if-ne p2, v2, :cond_3d
 
     .line 22
     .line 23
@@ -193,7 +193,7 @@
 
     .line 71
     .line 72
-    if-eqz p2, :cond_4c
+    if-eqz p2, :cond_0
 
     .line 73
     .line 74
@@ -202,7 +202,7 @@
     .line 75
     .line 76
     .line 77
-    :cond_4c
+    :cond_0
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 78
@@ -229,7 +229,7 @@
 
     .line 90
     .line 91
-    if-eqz p2, :cond_5f
+    if-eqz p2, :cond_1
 
     .line 92
     .line 93
@@ -238,7 +238,7 @@
     .line 94
     .line 95
     .line 96
-    :cond_5f
+    :cond_1
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 97
@@ -251,7 +251,7 @@
     move-result v2
 
     .line 102
-    if-nez v2, :cond_71
+    if-nez v2, :cond_2
 
     .line 103
     .line 104
@@ -259,32 +259,32 @@
 
     .line 105
     .line 106
-    if-nez v2, :cond_71
+    if-nez v2, :cond_2
 
     .line 107
     .line 108
     const/4 v2, 0x1
 
     .line 109
-    goto :goto_72
+    goto :goto_0
 
     .line 110
-    :catchall_6d
+    :catchall_0
     move-exception v0
 
     .line 111
     move-object p2, v0
 
     .line 112
-    goto/16 :goto_586
+    goto/16 :goto_8
 
     .line 113
     .line 114
-    :cond_71
+    :cond_2
     const/4 v2, 0x0
 
     .line 115
-    :goto_72
+    :goto_0
     iget-object v4, p2, Llibs/p63;->Key:Landroid/content/SharedPreferences$Editor;
 
     .line 116
@@ -307,7 +307,7 @@
 
     .line 126
     .line 127
-    if-eqz p2, :cond_83
+    if-eqz p2, :cond_3
 
     .line 128
     .line 129
@@ -316,7 +316,7 @@
     .line 130
     .line 131
     .line 132
-    :cond_83
+    :cond_3
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 133
@@ -343,7 +343,7 @@
 
     .line 145
     .line 146
-    if-eqz p2, :cond_96
+    if-eqz p2, :cond_4
 
     .line 147
     .line 148
@@ -352,7 +352,7 @@
     .line 149
     .line 150
     .line 151
-    :cond_96
+    :cond_4
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 152
@@ -379,7 +379,7 @@
 
     .line 164
     .line 165
-    if-eqz p2, :cond_a9
+    if-eqz p2, :cond_5
 
     .line 166
     .line 167
@@ -388,7 +388,7 @@
     .line 168
     .line 169
     .line 170
-    :cond_a9
+    :cond_5
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 171
@@ -415,7 +415,7 @@
 
     .line 183
     .line 184
-    if-eqz p2, :cond_bc
+    if-eqz p2, :cond_6
 
     .line 185
     .line 186
@@ -424,7 +424,7 @@
     .line 187
     .line 188
     .line 189
-    :cond_bc
+    :cond_6
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 190
@@ -451,7 +451,7 @@
 
     .line 202
     .line 203
-    if-eqz p2, :cond_cf
+    if-eqz p2, :cond_7
 
     .line 204
     .line 205
@@ -460,7 +460,7 @@
     .line 206
     .line 207
     .line 208
-    :cond_cf
+    :cond_7
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 209
@@ -487,7 +487,7 @@
 
     .line 221
     .line 222
-    if-eqz p2, :cond_e2
+    if-eqz p2, :cond_8
 
     .line 223
     .line 224
@@ -496,7 +496,7 @@
     .line 225
     .line 226
     .line 227
-    :cond_e2
+    :cond_8
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 228
@@ -509,7 +509,7 @@
     move-result v2
 
     .line 233
-    if-nez v2, :cond_f1
+    if-nez v2, :cond_a
 
     .line 234
     .line 235
@@ -517,26 +517,26 @@
 
     .line 236
     .line 237
-    if-eqz v2, :cond_ef
+    if-eqz v2, :cond_9
 
     .line 238
     .line 239
-    goto :goto_f1
+    goto :goto_1
 
     .line 240
-    :cond_ef
+    :cond_9
     const/4 v2, 0x0
 
     .line 241
-    goto :goto_f2
+    goto :goto_2
 
     .line 242
-    :cond_f1
-    :goto_f1
+    :cond_a
+    :goto_1
     const/4 v2, 0x1
 
     .line 243
-    :goto_f2
+    :goto_2
     iget-object v4, p2, Llibs/p63;->Key:Landroid/content/SharedPreferences$Editor;
 
     .line 244
@@ -559,7 +559,7 @@
 
     .line 254
     .line 255
-    if-eqz p2, :cond_103
+    if-eqz p2, :cond_b
 
     .line 256
     .line 257
@@ -568,7 +568,7 @@
     .line 258
     .line 259
     .line 260
-    :cond_103
+    :cond_b
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 261
@@ -595,7 +595,7 @@
 
     .line 273
     .line 274
-    if-eqz p2, :cond_116
+    if-eqz p2, :cond_c
 
     .line 275
     .line 276
@@ -604,7 +604,7 @@
     .line 277
     .line 278
     .line 279
-    :cond_116
+    :cond_c
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 280
@@ -617,7 +617,7 @@
     move-result v2
 
     .line 285
-    if-nez v2, :cond_127
+    if-nez v2, :cond_e
 
     .line 286
     .line 287
@@ -629,26 +629,26 @@
     move-result v2
 
     .line 291
-    if-eqz v2, :cond_125
+    if-eqz v2, :cond_d
 
     .line 292
     .line 293
-    goto :goto_127
+    goto :goto_3
 
     .line 294
-    :cond_125
+    :cond_d
     const/4 v2, 0x0
 
     .line 295
-    goto :goto_128
+    goto :goto_4
 
     .line 296
-    :cond_127
-    :goto_127
+    :cond_e
+    :goto_3
     const/4 v2, 0x1
 
     .line 297
-    :goto_128
+    :goto_4
     invoke-virtual {p2, v2}, Llibs/p63;->System(Z)V
 
     .line 298
@@ -702,7 +702,7 @@
 
     .line 325
     .line 326
-    if-eqz p2, :cond_14a
+    if-eqz p2, :cond_f
 
     .line 327
     .line 328
@@ -711,7 +711,7 @@
     .line 329
     .line 330
     .line 331
-    :cond_14a
+    :cond_f
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 332
@@ -738,7 +738,7 @@
 
     .line 344
     .line 345
-    if-eqz p2, :cond_15d
+    if-eqz p2, :cond_10
 
     .line 346
     .line 347
@@ -747,7 +747,7 @@
     .line 348
     .line 349
     .line 350
-    :cond_15d
+    :cond_10
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 351
@@ -774,7 +774,7 @@
 
     .line 363
     .line 364
-    if-eqz p2, :cond_170
+    if-eqz p2, :cond_11
 
     .line 365
     .line 366
@@ -783,7 +783,7 @@
     .line 367
     .line 368
     .line 369
-    :cond_170
+    :cond_11
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 370
@@ -810,7 +810,7 @@
 
     .line 382
     .line 383
-    if-eqz p2, :cond_183
+    if-eqz p2, :cond_12
 
     .line 384
     .line 385
@@ -819,7 +819,7 @@
     .line 386
     .line 387
     .line 388
-    :cond_183
+    :cond_12
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 389
@@ -846,7 +846,7 @@
 
     .line 401
     .line 402
-    if-eqz p2, :cond_196
+    if-eqz p2, :cond_13
 
     .line 403
     .line 404
@@ -855,7 +855,7 @@
     .line 405
     .line 406
     .line 407
-    :cond_196
+    :cond_13
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 408
@@ -890,7 +890,7 @@
 
     .line 424
     .line 425
-    if-eqz p2, :cond_1ad
+    if-eqz p2, :cond_14
 
     .line 426
     .line 427
@@ -899,7 +899,7 @@
     .line 428
     .line 429
     .line 430
-    :cond_1ad
+    :cond_14
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 431
@@ -926,7 +926,7 @@
 
     .line 443
     .line 444
-    if-eqz p2, :cond_1c0
+    if-eqz p2, :cond_15
 
     .line 445
     .line 446
@@ -935,7 +935,7 @@
     .line 447
     .line 448
     .line 449
-    :cond_1c0
+    :cond_15
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 450
@@ -962,7 +962,7 @@
 
     .line 462
     .line 463
-    if-eqz p2, :cond_1d3
+    if-eqz p2, :cond_16
 
     .line 464
     .line 465
@@ -971,7 +971,7 @@
     .line 466
     .line 467
     .line 468
-    :cond_1d3
+    :cond_16
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 469
@@ -998,7 +998,7 @@
 
     .line 481
     .line 482
-    if-eqz p2, :cond_1e6
+    if-eqz p2, :cond_17
 
     .line 483
     .line 484
@@ -1007,7 +1007,7 @@
     .line 485
     .line 486
     .line 487
-    :cond_1e6
+    :cond_17
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 488
@@ -1077,7 +1077,7 @@
 
     .line 523
     .line 524
-    if-eqz p2, :cond_210
+    if-eqz p2, :cond_18
 
     .line 525
     .line 526
@@ -1086,7 +1086,7 @@
     .line 527
     .line 528
     .line 529
-    :cond_210
+    :cond_18
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 530
@@ -1113,7 +1113,7 @@
 
     .line 542
     .line 543
-    if-eqz p2, :cond_223
+    if-eqz p2, :cond_19
 
     .line 544
     .line 545
@@ -1122,7 +1122,7 @@
     .line 546
     .line 547
     .line 548
-    :cond_223
+    :cond_19
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 549
@@ -1149,7 +1149,7 @@
 
     .line 561
     .line 562
-    if-eqz p2, :cond_236
+    if-eqz p2, :cond_1a
 
     .line 563
     .line 564
@@ -1158,7 +1158,7 @@
     .line 565
     .line 566
     .line 567
-    :cond_236
+    :cond_1a
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 568
@@ -1193,7 +1193,7 @@
 
     .line 584
     .line 585
-    if-eqz p2, :cond_24d
+    if-eqz p2, :cond_1b
 
     .line 586
     .line 587
@@ -1202,7 +1202,7 @@
     .line 588
     .line 589
     .line 590
-    :cond_24d
+    :cond_1b
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 591
@@ -1215,7 +1215,7 @@
     move-result v2
 
     .line 596
-    if-eqz v2, :cond_25c
+    if-eqz v2, :cond_1c
 
     .line 597
     .line 598
@@ -1226,21 +1226,21 @@
     const/4 v4, 0x4
 
     .line 601
-    if-lt v2, v4, :cond_25c
+    if-lt v2, v4, :cond_1c
 
     .line 602
     .line 603
     const/4 v2, 0x1
 
     .line 604
-    goto :goto_25d
+    goto :goto_5
 
     .line 605
-    :cond_25c
+    :cond_1c
     const/4 v2, 0x0
 
     .line 606
-    :goto_25d
+    :goto_5
     iget-object v4, p2, Llibs/p63;->Key:Landroid/content/SharedPreferences$Editor;
 
     .line 607
@@ -1263,7 +1263,7 @@
 
     .line 617
     .line 618
-    if-eqz p2, :cond_26e
+    if-eqz p2, :cond_1d
 
     .line 619
     .line 620
@@ -1272,7 +1272,7 @@
     .line 621
     .line 622
     .line 623
-    :cond_26e
+    :cond_1d
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 624
@@ -1316,7 +1316,7 @@
 
     .line 645
     .line 646
-    if-eqz p2, :cond_28a
+    if-eqz p2, :cond_1e
 
     .line 647
     .line 648
@@ -1325,7 +1325,7 @@
     .line 649
     .line 650
     .line 651
-    :cond_28a
+    :cond_1e
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 652
@@ -1352,7 +1352,7 @@
 
     .line 664
     .line 665
-    if-eqz p2, :cond_29d
+    if-eqz p2, :cond_1f
 
     .line 666
     .line 667
@@ -1361,7 +1361,7 @@
     .line 668
     .line 669
     .line 670
-    :cond_29d
+    :cond_1f
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 671
@@ -1388,7 +1388,7 @@
 
     .line 683
     .line 684
-    if-eqz p2, :cond_2b0
+    if-eqz p2, :cond_20
 
     .line 685
     .line 686
@@ -1397,7 +1397,7 @@
     .line 687
     .line 688
     .line 689
-    :cond_2b0
+    :cond_20
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 690
@@ -1424,7 +1424,7 @@
 
     .line 702
     .line 703
-    if-eqz p2, :cond_2c3
+    if-eqz p2, :cond_21
 
     .line 704
     .line 705
@@ -1433,7 +1433,7 @@
     .line 706
     .line 707
     .line 708
-    :cond_2c3
+    :cond_21
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 709
@@ -1460,7 +1460,7 @@
 
     .line 721
     .line 722
-    if-eqz p2, :cond_2d6
+    if-eqz p2, :cond_22
 
     .line 723
     .line 724
@@ -1469,7 +1469,7 @@
     .line 725
     .line 726
     .line 727
-    :cond_2d6
+    :cond_22
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 728
@@ -1496,7 +1496,7 @@
 
     .line 740
     .line 741
-    if-eqz p2, :cond_2e9
+    if-eqz p2, :cond_23
 
     .line 742
     .line 743
@@ -1505,7 +1505,7 @@
     .line 744
     .line 745
     .line 746
-    :cond_2e9
+    :cond_23
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 747
@@ -1627,7 +1627,7 @@
 
     .line 810
     .line 811
-    if-eqz p2, :cond_32f
+    if-eqz p2, :cond_24
 
     .line 812
     .line 813
@@ -1636,7 +1636,7 @@
     .line 814
     .line 815
     .line 816
-    :cond_32f
+    :cond_24
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 817
@@ -1663,7 +1663,7 @@
 
     .line 829
     .line 830
-    if-eqz p2, :cond_342
+    if-eqz p2, :cond_25
 
     .line 831
     .line 832
@@ -1672,7 +1672,7 @@
     .line 833
     .line 834
     .line 835
-    :cond_342
+    :cond_25
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 836
@@ -1699,7 +1699,7 @@
 
     .line 848
     .line 849
-    if-eqz v2, :cond_354
+    if-eqz v2, :cond_26
 
     .line 850
     .line 851
@@ -1707,7 +1707,7 @@
 
     .line 852
     .line 853
-    :cond_354
+    :cond_26
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 854
@@ -1734,7 +1734,7 @@
 
     .line 866
     .line 867
-    if-eqz v2, :cond_366
+    if-eqz v2, :cond_27
 
     .line 868
     .line 869
@@ -1742,7 +1742,7 @@
 
     .line 870
     .line 871
-    :cond_366
+    :cond_27
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 872
@@ -1769,7 +1769,7 @@
 
     .line 884
     .line 885
-    if-eqz p2, :cond_379
+    if-eqz p2, :cond_28
 
     .line 886
     .line 887
@@ -1778,7 +1778,7 @@
     .line 888
     .line 889
     .line 890
-    :cond_379
+    :cond_28
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 891
@@ -1805,7 +1805,7 @@
 
     .line 903
     .line 904
-    if-eqz p2, :cond_38c
+    if-eqz p2, :cond_29
 
     .line 905
     .line 906
@@ -1814,7 +1814,7 @@
     .line 907
     .line 908
     .line 909
-    :cond_38c
+    :cond_29
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 910
@@ -1859,7 +1859,7 @@
 
     .line 932
     .line 933
-    if-eqz p2, :cond_3a9
+    if-eqz p2, :cond_2a
 
     .line 934
     .line 935
@@ -1868,7 +1868,7 @@
     .line 936
     .line 937
     .line 938
-    :cond_3a9
+    :cond_2a
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 939
@@ -1895,7 +1895,7 @@
 
     .line 951
     .line 952
-    if-eqz p2, :cond_3bc
+    if-eqz p2, :cond_2b
 
     .line 953
     .line 954
@@ -1904,7 +1904,7 @@
     .line 955
     .line 956
     .line 957
-    :cond_3bc
+    :cond_2b
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 958
@@ -1939,7 +1939,7 @@
 
     .line 974
     .line 975
-    if-eqz p2, :cond_3d3
+    if-eqz p2, :cond_2c
 
     .line 976
     .line 977
@@ -1948,7 +1948,7 @@
     .line 978
     .line 979
     .line 980
-    :cond_3d3
+    :cond_2c
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 981
@@ -1979,7 +1979,7 @@
 
     .line 995
     .line 996
-    if-eqz p2, :cond_3e8
+    if-eqz p2, :cond_2d
 
     .line 997
     .line 998
@@ -1988,7 +1988,7 @@
     .line 999
     .line 1000
     .line 1001
-    :cond_3e8
+    :cond_2d
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 1002
@@ -2015,7 +2015,7 @@
 
     .line 1014
     .line 1015
-    if-eqz p2, :cond_3fb
+    if-eqz p2, :cond_2e
 
     .line 1016
     .line 1017
@@ -2024,7 +2024,7 @@
     .line 1018
     .line 1019
     .line 1020
-    :cond_3fb
+    :cond_2e
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 1021
@@ -2051,7 +2051,7 @@
 
     .line 1033
     .line 1034
-    if-eqz p2, :cond_40e
+    if-eqz p2, :cond_2f
 
     .line 1035
     .line 1036
@@ -2060,7 +2060,7 @@
     .line 1037
     .line 1038
     .line 1039
-    :cond_40e
+    :cond_2f
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 1040
@@ -2087,7 +2087,7 @@
 
     .line 1052
     .line 1053
-    if-eqz p2, :cond_421
+    if-eqz p2, :cond_30
 
     .line 1054
     .line 1055
@@ -2096,7 +2096,7 @@
     .line 1056
     .line 1057
     .line 1058
-    :cond_421
+    :cond_30
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 1059
@@ -2123,7 +2123,7 @@
 
     .line 1071
     .line 1072
-    if-eqz p2, :cond_434
+    if-eqz p2, :cond_31
 
     .line 1073
     .line 1074
@@ -2132,7 +2132,7 @@
     .line 1075
     .line 1076
     .line 1077
-    :cond_434
+    :cond_31
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 1078
@@ -2159,7 +2159,7 @@
 
     .line 1090
     .line 1091
-    if-eqz p2, :cond_447
+    if-eqz p2, :cond_32
 
     .line 1092
     .line 1093
@@ -2168,7 +2168,7 @@
     .line 1094
     .line 1095
     .line 1096
-    :cond_447
+    :cond_32
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 1097
@@ -2195,7 +2195,7 @@
 
     .line 1109
     .line 1110
-    if-eqz p2, :cond_45a
+    if-eqz p2, :cond_33
 
     .line 1111
     .line 1112
@@ -2204,7 +2204,7 @@
     .line 1113
     .line 1114
     .line 1115
-    :cond_45a
+    :cond_33
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 1116
@@ -2231,7 +2231,7 @@
 
     .line 1128
     .line 1129
-    if-eqz p2, :cond_46d
+    if-eqz p2, :cond_34
 
     .line 1130
     .line 1131
@@ -2240,7 +2240,7 @@
     .line 1132
     .line 1133
     .line 1134
-    :cond_46d
+    :cond_34
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 1135
@@ -2267,7 +2267,7 @@
 
     .line 1147
     .line 1148
-    if-eqz p2, :cond_480
+    if-eqz p2, :cond_35
 
     .line 1149
     .line 1150
@@ -2276,7 +2276,7 @@
     .line 1151
     .line 1152
     .line 1153
-    :cond_480
+    :cond_35
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 1154
@@ -2303,7 +2303,7 @@
 
     .line 1166
     .line 1167
-    if-eqz p2, :cond_493
+    if-eqz p2, :cond_36
 
     .line 1168
     .line 1169
@@ -2312,7 +2312,7 @@
     .line 1170
     .line 1171
     .line 1172
-    :cond_493
+    :cond_36
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 1173
@@ -2339,7 +2339,7 @@
 
     .line 1185
     .line 1186
-    if-eqz p2, :cond_4a6
+    if-eqz p2, :cond_37
 
     .line 1187
     .line 1188
@@ -2348,7 +2348,7 @@
     .line 1189
     .line 1190
     .line 1191
-    :cond_4a6
+    :cond_37
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 1192
@@ -2375,7 +2375,7 @@
 
     .line 1204
     .line 1205
-    if-eqz p2, :cond_4b9
+    if-eqz p2, :cond_38
 
     .line 1206
     .line 1207
@@ -2384,7 +2384,7 @@
     .line 1208
     .line 1209
     .line 1210
-    :cond_4b9
+    :cond_38
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 1211
@@ -2439,8 +2439,8 @@
     move-result-object p2
 
     .line 1238
-    :cond_4d5
-    :goto_4d5
+    :cond_39
+    :goto_6
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     .line 1239
@@ -2449,7 +2449,7 @@
     move-result v2
 
     .line 1242
-    if-eqz v2, :cond_4f5
+    if-eqz v2, :cond_3b
 
     .line 1243
     .line 1244
@@ -2477,7 +2477,7 @@
     move-result v4
 
     .line 1256
-    if-nez v4, :cond_4f1
+    if-nez v4, :cond_3a
 
     .line 1257
     .line 1258
@@ -2493,20 +2493,20 @@
     move-result v4
 
     .line 1264
-    if-eqz v4, :cond_4d5
+    if-eqz v4, :cond_39
 
     .line 1265
     .line 1266
-    :cond_4f1
+    :cond_3a
     invoke-interface {v0, v2}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     .line 1267
     .line 1268
     .line 1269
-    goto :goto_4d5
+    goto :goto_6
 
     .line 1270
-    :cond_4f5
+    :cond_3b
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     .line 1271
@@ -2537,7 +2537,7 @@
     move-result-object p2
 
     .line 1286
-    if-eqz p2, :cond_511
+    if-eqz p2, :cond_3c
 
     .line 1287
     .line 1288
@@ -2559,7 +2559,7 @@
     .line 1296
     .line 1297
     .line 1298
-    :cond_511
+    :cond_3c
     const-string p2, "en"
 
     .line 1299
@@ -2612,15 +2612,15 @@
     .line 1324
     .line 1325
     .line 1326
-    goto :goto_577
+    goto :goto_7
 
     .line 1327
-    :cond_52e
+    :cond_3d
     sget v0, Llibs/bi2;->theme:I
 
     .line 1328
     .line 1329
-    if-ne p2, v0, :cond_541
+    if-ne p2, v0, :cond_3e
 
     .line 1330
     .line 1331
@@ -2650,15 +2650,15 @@
     .line 1343
     .line 1344
     .line 1345
-    goto :goto_577
+    goto :goto_7
 
     .line 1346
-    :cond_541
+    :cond_3e
     sget v0, Llibs/bi2;->remember:I
 
     .line 1347
     .line 1348
-    if-ne p2, v0, :cond_555
+    if-ne p2, v0, :cond_3f
 
     .line 1349
     .line 1350
@@ -2689,15 +2689,15 @@
     .line 1363
     .line 1364
     .line 1365
-    goto :goto_577
+    goto :goto_7
 
     .line 1366
-    :cond_555
+    :cond_3f
     sget v0, Llibs/bi2;->servers:I
 
     .line 1367
     .line 1368
-    if-ne p2, v0, :cond_56e
+    if-ne p2, v0, :cond_40
 
     .line 1369
     .line 1370
@@ -2717,7 +2717,7 @@
     move-result-object p2
 
     .line 1378
-    if-eqz p2, :cond_577
+    if-eqz p2, :cond_41
 
     .line 1379
     .line 1380
@@ -2739,15 +2739,15 @@
     .line 1388
     .line 1389
     .line 1390
-    goto :goto_577
+    goto :goto_7
 
     .line 1391
-    :cond_56e
+    :cond_40
     sget v0, Llibs/bi2;->password:I
 
     .line 1392
     .line 1393
-    if-ne p2, v0, :cond_577
+    if-ne p2, v0, :cond_41
 
     .line 1394
     .line 1395
@@ -2760,8 +2760,8 @@
     .line 1398
     .line 1399
     .line 1400
-    :cond_577
-    :goto_577
+    :cond_41
+    :goto_7
     iget-object p2, p0, Llibs/jf2;->e:Llibs/ml1;
 
     .line 1401
@@ -2784,17 +2784,17 @@
 
     .line 1411
     invoke-static {p2}, Llibs/gx1;->d(Ljava/lang/Object;)V
-    :try_end_585
-    .catchall {:try_start_f .. :try_end_585} :catchall_6d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 1412
     .line 1413
     .line 1414
-    goto :goto_59e
+    goto :goto_9
 
     .line 1415
-    :goto_586
-    :try_start_586
+    :goto_8
+    :try_start_2
     const-string v0, "PrefAct"
 
     .line 1416
@@ -2837,51 +2837,51 @@
 
     .line 1436
     invoke-static {p1}, Llibs/gx1;->d(Ljava/lang/Object;)V
-    :try_end_59e
-    .catchall {:try_start_586 .. :try_end_59e} :catchall_5a0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 1437
     .line 1438
     .line 1439
-    :goto_59e
+    :goto_9
     monitor-exit p0
 
     .line 1440
     return-void
 
     .line 1441
-    :catchall_5a0
+    :catchall_1
     move-exception v0
 
     .line 1442
     move-object p1, v0
 
     .line 1443
-    :try_start_5a2
+    :try_start_3
     monitor-exit p0
-    :try_end_5a3
-    .catchall {:try_start_5a2 .. :try_end_5a3} :catchall_5a0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 1444
-    goto :goto_5a5
+    goto :goto_b
 
     .line 1445
-    :goto_5a4
+    :goto_a
     throw p1
 
     .line 1446
-    :goto_5a5
-    goto :goto_5a4
+    :goto_b
+    goto :goto_a
 .end method
 
 .method private final declared-synchronized Node(Landroid/view/View;I)V
-    .registers 8
+    .locals 5
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object p1, p0, Llibs/jf2;->d:Ljava/util/ArrayList;
 
     .line 3
@@ -2895,12 +2895,12 @@
 
     .line 8
     check-cast p1, Llibs/r90;
-    :try_end_9
-    .catchall {:try_start_1 .. :try_end_9} :catchall_562
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 9
     .line 10
-    :try_start_9
+    :try_start_1
     iget v0, p1, Llibs/r90;->Z:I
 
     .line 11
@@ -2915,7 +2915,7 @@
     const/4 v3, 0x1
 
     .line 16
-    if-ne v0, v1, :cond_41
+    if-ne v0, v1, :cond_2
 
     .line 17
     .line 18
@@ -2927,7 +2927,7 @@
     move-result p2
 
     .line 22
-    if-eqz p2, :cond_53c
+    if-eqz p2, :cond_3f
 
     .line 23
     .line 24
@@ -2968,7 +2968,7 @@
 
     .line 42
     .line 43
-    if-eqz p2, :cond_2f
+    if-eqz p2, :cond_0
 
     .line 44
     .line 45
@@ -2977,7 +2977,7 @@
     .line 46
     .line 47
     .line 48
-    :cond_2f
+    :cond_0
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 49
@@ -2990,7 +2990,7 @@
     move-result p2
 
     .line 54
-    if-eqz p2, :cond_3e
+    if-eqz p2, :cond_1
 
     .line 55
     .line 56
@@ -2999,32 +2999,32 @@
     .line 57
     .line 58
     .line 59
-    goto :goto_3e
+    goto :goto_0
 
     .line 60
-    :catchall_3b
+    :catchall_0
     move-exception p1
 
     .line 61
-    goto/16 :goto_54e
+    goto/16 :goto_4
 
     .line 62
     .line 63
-    :cond_3e
-    :goto_3e
+    :cond_1
+    :goto_0
     move v2, p2
 
     .line 64
-    goto/16 :goto_53c
+    goto/16 :goto_2
 
     .line 65
     .line 66
-    :cond_41
+    :cond_2
     sget v1, Llibs/bi2;->settings_allow_root:I
 
     .line 67
     .line 68
-    if-ne v0, v1, :cond_62
+    if-ne v0, v1, :cond_3
 
     .line 69
     .line 70
@@ -3081,16 +3081,16 @@
     .line 95
     .line 96
     .line 97
-    goto/16 :goto_53c
+    goto/16 :goto_2
 
     .line 98
     .line 99
-    :cond_62
+    :cond_3
     sget v1, Llibs/bi2;->settings_auto_remount:I
 
     .line 100
     .line 101
-    if-ne v0, v1, :cond_91
+    if-ne v0, v1, :cond_5
 
     .line 102
     .line 103
@@ -3131,7 +3131,7 @@
 
     .line 121
     .line 122
-    if-eqz p2, :cond_7e
+    if-eqz p2, :cond_4
 
     .line 123
     .line 124
@@ -3140,7 +3140,7 @@
     .line 125
     .line 126
     .line 127
-    :cond_7e
+    :cond_4
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 128
@@ -3174,16 +3174,16 @@
     .line 142
     .line 143
     .line 144
-    goto/16 :goto_53c
+    goto/16 :goto_2
 
     .line 145
     .line 146
-    :cond_91
+    :cond_5
     sget v1, Llibs/bi2;->settings_data_folder_in_root:I
 
     .line 147
     .line 148
-    if-ne v0, v1, :cond_b5
+    if-ne v0, v1, :cond_7
 
     .line 149
     .line 150
@@ -3224,7 +3224,7 @@
 
     .line 168
     .line 169
-    if-eqz p2, :cond_ad
+    if-eqz p2, :cond_6
 
     .line 170
     .line 171
@@ -3233,7 +3233,7 @@
     .line 172
     .line 173
     .line 174
-    :cond_ad
+    :cond_6
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 175
@@ -3246,16 +3246,16 @@
     move-result v2
 
     .line 180
-    goto/16 :goto_53c
+    goto/16 :goto_2
 
     .line 181
     .line 182
-    :cond_b5
+    :cond_7
     sget v1, Llibs/bi2;->settings_swipe_new_tab:I
 
     .line 183
     .line 184
-    if-ne v0, v1, :cond_e0
+    if-ne v0, v1, :cond_9
 
     .line 185
     .line 186
@@ -3291,7 +3291,7 @@
     move-result v0
 
     .line 202
-    if-eqz v0, :cond_dd
+    if-eqz v0, :cond_8
 
     .line 203
     .line 204
@@ -3331,21 +3331,21 @@
     .line 220
     .line 221
     .line 222
-    :cond_dd
-    :goto_dd
+    :cond_8
+    :goto_1
     move v2, v0
 
     .line 223
-    goto/16 :goto_53c
+    goto/16 :goto_2
 
     .line 224
     .line 225
-    :cond_e0
+    :cond_9
     sget v1, Llibs/bi2;->settings_swipe_loop:I
 
     .line 226
     .line 227
-    if-ne v0, v1, :cond_109
+    if-ne v0, v1, :cond_a
 
     .line 228
     .line 229
@@ -3381,7 +3381,7 @@
     move-result v0
 
     .line 245
-    if-eqz v0, :cond_dd
+    if-eqz v0, :cond_8
 
     .line 246
     .line 247
@@ -3421,15 +3421,15 @@
     .line 263
     .line 264
     .line 265
-    goto :goto_dd
+    goto :goto_1
 
     .line 266
-    :cond_109
+    :cond_a
     sget p2, Llibs/bi2;->settings_update_media_store:I
 
     .line 267
     .line 268
-    if-ne v0, p2, :cond_12d
+    if-ne v0, p2, :cond_c
 
     .line 269
     .line 270
@@ -3470,7 +3470,7 @@
 
     .line 288
     .line 289
-    if-eqz p2, :cond_125
+    if-eqz p2, :cond_b
 
     .line 290
     .line 291
@@ -3479,7 +3479,7 @@
     .line 292
     .line 293
     .line 294
-    :cond_125
+    :cond_b
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 295
@@ -3492,16 +3492,16 @@
     move-result v2
 
     .line 300
-    goto/16 :goto_53c
+    goto/16 :goto_2
 
     .line 301
     .line 302
-    :cond_12d
+    :cond_c
     sget p2, Llibs/bi2;->settings_merge_tasks:I
 
     .line 303
     .line 304
-    if-ne v0, p2, :cond_151
+    if-ne v0, p2, :cond_e
 
     .line 305
     .line 306
@@ -3542,7 +3542,7 @@
 
     .line 324
     .line 325
-    if-eqz p2, :cond_149
+    if-eqz p2, :cond_d
 
     .line 326
     .line 327
@@ -3551,7 +3551,7 @@
     .line 328
     .line 329
     .line 330
-    :cond_149
+    :cond_d
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 331
@@ -3564,16 +3564,16 @@
     move-result v2
 
     .line 336
-    goto/16 :goto_53c
+    goto/16 :goto_2
 
     .line 337
     .line 338
-    :cond_151
+    :cond_e
     sget p2, Llibs/bi2;->settings_tap_execute:I
 
     .line 339
     .line 340
-    if-ne v0, p2, :cond_175
+    if-ne v0, p2, :cond_10
 
     .line 341
     .line 342
@@ -3614,7 +3614,7 @@
 
     .line 360
     .line 361
-    if-eqz p2, :cond_16d
+    if-eqz p2, :cond_f
 
     .line 362
     .line 363
@@ -3623,7 +3623,7 @@
     .line 364
     .line 365
     .line 366
-    :cond_16d
+    :cond_f
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 367
@@ -3636,16 +3636,16 @@
     move-result v2
 
     .line 372
-    goto/16 :goto_53c
+    goto/16 :goto_2
 
     .line 373
     .line 374
-    :cond_175
+    :cond_10
     sget p2, Llibs/bi2;->settings_split_action_bar:I
 
     .line 375
     .line 376
-    if-ne v0, p2, :cond_1a4
+    if-ne v0, p2, :cond_12
 
     .line 377
     .line 378
@@ -3686,7 +3686,7 @@
 
     .line 396
     .line 397
-    if-eqz p2, :cond_191
+    if-eqz p2, :cond_11
 
     .line 398
     .line 399
@@ -3695,7 +3695,7 @@
     .line 400
     .line 401
     .line 402
-    :cond_191
+    :cond_11
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 403
@@ -3729,16 +3729,16 @@
     .line 417
     .line 418
     .line 419
-    goto/16 :goto_53c
+    goto/16 :goto_2
 
     .line 420
     .line 421
-    :cond_1a4
+    :cond_12
     sget p2, Llibs/bi2;->settings_startup_lock:I
 
     .line 422
     .line 423
-    if-ne v0, p2, :cond_1c8
+    if-ne v0, p2, :cond_14
 
     .line 424
     .line 425
@@ -3779,7 +3779,7 @@
 
     .line 443
     .line 444
-    if-eqz p2, :cond_1c0
+    if-eqz p2, :cond_13
 
     .line 445
     .line 446
@@ -3788,7 +3788,7 @@
     .line 447
     .line 448
     .line 449
-    :cond_1c0
+    :cond_13
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 450
@@ -3801,11 +3801,11 @@
     move-result v2
 
     .line 455
-    goto/16 :goto_53c
+    goto/16 :goto_2
 
     .line 456
     .line 457
-    :cond_1c8
+    :cond_14
     sget p2, Llibs/bi2;->settings_bottom_bar:I
 
     .line 458
@@ -3814,7 +3814,7 @@
 
     .line 460
     .line 461
-    if-ne v0, p2, :cond_20f
+    if-ne v0, p2, :cond_16
 
     .line 462
     .line 463
@@ -3855,7 +3855,7 @@
 
     .line 481
     .line 482
-    if-eqz p2, :cond_1e6
+    if-eqz p2, :cond_15
 
     .line 483
     .line 484
@@ -3864,7 +3864,7 @@
     .line 485
     .line 486
     .line 487
-    :cond_1e6
+    :cond_15
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 488
@@ -3940,16 +3940,16 @@
     .line 524
     .line 525
     .line 526
-    goto/16 :goto_53c
+    goto/16 :goto_2
 
     .line 527
     .line 528
-    :cond_20f
+    :cond_16
     sget p2, Llibs/bi2;->settings_show_tab_bar:I
 
     .line 529
     .line 530
-    if-ne v0, p2, :cond_23e
+    if-ne v0, p2, :cond_18
 
     .line 531
     .line 532
@@ -3990,7 +3990,7 @@
 
     .line 550
     .line 551
-    if-eqz p2, :cond_22b
+    if-eqz p2, :cond_17
 
     .line 552
     .line 553
@@ -3999,7 +3999,7 @@
     .line 554
     .line 555
     .line 556
-    :cond_22b
+    :cond_17
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 557
@@ -4033,16 +4033,16 @@
     .line 571
     .line 572
     .line 573
-    goto/16 :goto_53c
+    goto/16 :goto_2
 
     .line 574
     .line 575
-    :cond_23e
+    :cond_18
     sget p2, Llibs/bi2;->settings_show_breadcrumb:I
 
     .line 576
     .line 577
-    if-ne v0, p2, :cond_26d
+    if-ne v0, p2, :cond_1a
 
     .line 578
     .line 579
@@ -4083,7 +4083,7 @@
 
     .line 597
     .line 598
-    if-eqz p2, :cond_25a
+    if-eqz p2, :cond_19
 
     .line 599
     .line 600
@@ -4092,7 +4092,7 @@
     .line 601
     .line 602
     .line 603
-    :cond_25a
+    :cond_19
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 604
@@ -4126,16 +4126,16 @@
     .line 618
     .line 619
     .line 620
-    goto/16 :goto_53c
+    goto/16 :goto_2
 
     .line 621
     .line 622
-    :cond_26d
+    :cond_1a
     sget p2, Llibs/bi2;->settings_show_tool_bar:I
 
     .line 623
     .line 624
-    if-ne v0, p2, :cond_29c
+    if-ne v0, p2, :cond_1c
 
     .line 625
     .line 626
@@ -4176,7 +4176,7 @@
 
     .line 644
     .line 645
-    if-eqz p2, :cond_289
+    if-eqz p2, :cond_1b
 
     .line 646
     .line 647
@@ -4185,7 +4185,7 @@
     .line 648
     .line 649
     .line 650
-    :cond_289
+    :cond_1b
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 651
@@ -4219,16 +4219,16 @@
     .line 665
     .line 666
     .line 667
-    goto/16 :goto_53c
+    goto/16 :goto_2
 
     .line 668
     .line 669
-    :cond_29c
+    :cond_1c
     sget p2, Llibs/bi2;->settings_draw_tab_close:I
 
     .line 670
     .line 671
-    if-ne v0, p2, :cond_2cb
+    if-ne v0, p2, :cond_1e
 
     .line 672
     .line 673
@@ -4269,7 +4269,7 @@
 
     .line 691
     .line 692
-    if-eqz p2, :cond_2b8
+    if-eqz p2, :cond_1d
 
     .line 693
     .line 694
@@ -4278,7 +4278,7 @@
     .line 695
     .line 696
     .line 697
-    :cond_2b8
+    :cond_1d
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 698
@@ -4312,16 +4312,16 @@
     .line 712
     .line 713
     .line 714
-    goto/16 :goto_53c
+    goto/16 :goto_2
 
     .line 715
     .line 716
-    :cond_2cb
+    :cond_1e
     sget p2, Llibs/bi2;->settings_custom_otg:I
 
     .line 717
     .line 718
-    if-ne v0, p2, :cond_2ef
+    if-ne v0, p2, :cond_20
 
     .line 719
     .line 720
@@ -4362,7 +4362,7 @@
 
     .line 738
     .line 739
-    if-eqz p2, :cond_2e7
+    if-eqz p2, :cond_1f
 
     .line 740
     .line 741
@@ -4371,7 +4371,7 @@
     .line 742
     .line 743
     .line 744
-    :cond_2e7
+    :cond_1f
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 745
@@ -4384,16 +4384,16 @@
     move-result v2
 
     .line 750
-    goto/16 :goto_53c
+    goto/16 :goto_2
 
     .line 751
     .line 752
-    :cond_2ef
+    :cond_20
     sget p2, Llibs/bi2;->settings_select_by_icon:I
 
     .line 753
     .line 754
-    if-ne v0, p2, :cond_313
+    if-ne v0, p2, :cond_22
 
     .line 755
     .line 756
@@ -4434,7 +4434,7 @@
 
     .line 774
     .line 775
-    if-eqz p2, :cond_30b
+    if-eqz p2, :cond_21
 
     .line 776
     .line 777
@@ -4443,7 +4443,7 @@
     .line 778
     .line 779
     .line 780
-    :cond_30b
+    :cond_21
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 781
@@ -4456,16 +4456,16 @@
     move-result v2
 
     .line 786
-    goto/16 :goto_53c
+    goto/16 :goto_2
 
     .line 787
     .line 788
-    :cond_313
+    :cond_22
     sget p2, Llibs/bi2;->settings_keep_last_modified:I
 
     .line 789
     .line 790
-    if-ne v0, p2, :cond_337
+    if-ne v0, p2, :cond_24
 
     .line 791
     .line 792
@@ -4506,7 +4506,7 @@
 
     .line 810
     .line 811
-    if-eqz p2, :cond_32f
+    if-eqz p2, :cond_23
 
     .line 812
     .line 813
@@ -4515,7 +4515,7 @@
     .line 814
     .line 815
     .line 816
-    :cond_32f
+    :cond_23
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 817
@@ -4528,16 +4528,16 @@
     move-result v2
 
     .line 822
-    goto/16 :goto_53c
+    goto/16 :goto_2
 
     .line 823
     .line 824
-    :cond_337
+    :cond_24
     sget p2, Llibs/bi2;->settings_animations:I
 
     .line 825
     .line 826
-    if-ne v0, p2, :cond_369
+    if-ne v0, p2, :cond_26
 
     .line 827
     .line 828
@@ -4578,7 +4578,7 @@
 
     .line 846
     .line 847
-    if-eqz p2, :cond_353
+    if-eqz p2, :cond_25
 
     .line 848
     .line 849
@@ -4587,7 +4587,7 @@
     .line 850
     .line 851
     .line 852
-    :cond_353
+    :cond_25
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 853
@@ -4626,16 +4626,16 @@
     .line 870
     .line 871
     .line 872
-    goto/16 :goto_53c
+    goto/16 :goto_2
 
     .line 873
     .line 874
-    :cond_369
+    :cond_26
     sget p2, Llibs/bi2;->settings_can_undo:I
 
     .line 875
     .line 876
-    if-ne v0, p2, :cond_38d
+    if-ne v0, p2, :cond_28
 
     .line 877
     .line 878
@@ -4676,7 +4676,7 @@
 
     .line 896
     .line 897
-    if-eqz p2, :cond_385
+    if-eqz p2, :cond_27
 
     .line 898
     .line 899
@@ -4685,7 +4685,7 @@
     .line 900
     .line 901
     .line 902
-    :cond_385
+    :cond_27
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 903
@@ -4698,16 +4698,16 @@
     move-result v2
 
     .line 908
-    goto/16 :goto_53c
+    goto/16 :goto_2
 
     .line 909
     .line 910
-    :cond_38d
+    :cond_28
     sget p2, Llibs/bi2;->settings_allow_shizuku:I
 
     .line 911
     .line 912
-    if-ne v0, p2, :cond_3a3
+    if-ne v0, p2, :cond_29
 
     .line 913
     .line 914
@@ -4743,16 +4743,16 @@
     move-result v2
 
     .line 930
-    goto/16 :goto_53c
+    goto/16 :goto_2
 
     .line 931
     .line 932
-    :cond_3a3
+    :cond_29
     sget p2, Llibs/bi2;->settings_trash:I
 
     .line 933
     .line 934
-    if-ne v0, p2, :cond_3c7
+    if-ne v0, p2, :cond_2b
 
     .line 935
     .line 936
@@ -4793,7 +4793,7 @@
 
     .line 954
     .line 955
-    if-eqz p2, :cond_3bf
+    if-eqz p2, :cond_2a
 
     .line 956
     .line 957
@@ -4802,7 +4802,7 @@
     .line 958
     .line 959
     .line 960
-    :cond_3bf
+    :cond_2a
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 961
@@ -4815,16 +4815,16 @@
     move-result v2
 
     .line 966
-    goto/16 :goto_53c
+    goto/16 :goto_2
 
     .line 967
     .line 968
-    :cond_3c7
+    :cond_2b
     sget p2, Llibs/bi2;->settings_remember_del_option:I
 
     .line 969
     .line 970
-    if-ne v0, p2, :cond_3eb
+    if-ne v0, p2, :cond_2d
 
     .line 971
     .line 972
@@ -4865,7 +4865,7 @@
 
     .line 990
     .line 991
-    if-eqz p2, :cond_3e3
+    if-eqz p2, :cond_2c
 
     .line 992
     .line 993
@@ -4874,7 +4874,7 @@
     .line 994
     .line 995
     .line 996
-    :cond_3e3
+    :cond_2c
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 997
@@ -4887,16 +4887,16 @@
     move-result v2
 
     .line 1002
-    goto/16 :goto_53c
+    goto/16 :goto_2
 
     .line 1003
     .line 1004
-    :cond_3eb
+    :cond_2d
     sget p2, Llibs/bi2;->settings_static_enc_key:I
 
     .line 1005
     .line 1006
-    if-ne v0, p2, :cond_40f
+    if-ne v0, p2, :cond_2f
 
     .line 1007
     .line 1008
@@ -4937,7 +4937,7 @@
 
     .line 1026
     .line 1027
-    if-eqz p2, :cond_407
+    if-eqz p2, :cond_2e
 
     .line 1028
     .line 1029
@@ -4946,7 +4946,7 @@
     .line 1030
     .line 1031
     .line 1032
-    :cond_407
+    :cond_2e
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 1033
@@ -4959,16 +4959,16 @@
     move-result v2
 
     .line 1038
-    goto/16 :goto_53c
+    goto/16 :goto_2
 
     .line 1039
     .line 1040
-    :cond_40f
+    :cond_2f
     sget p2, Llibs/bi2;->settings_play_background:I
 
     .line 1041
     .line 1042
-    if-ne v0, p2, :cond_433
+    if-ne v0, p2, :cond_31
 
     .line 1043
     .line 1044
@@ -5009,7 +5009,7 @@
 
     .line 1062
     .line 1063
-    if-eqz p2, :cond_42b
+    if-eqz p2, :cond_30
 
     .line 1064
     .line 1065
@@ -5018,7 +5018,7 @@
     .line 1066
     .line 1067
     .line 1068
-    :cond_42b
+    :cond_30
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 1069
@@ -5031,16 +5031,16 @@
     move-result v2
 
     .line 1074
-    goto/16 :goto_53c
+    goto/16 :goto_2
 
     .line 1075
     .line 1076
-    :cond_433
+    :cond_31
     sget p2, Llibs/bi2;->settings_back_to_visited_folder:I
 
     .line 1077
     .line 1078
-    if-ne v0, p2, :cond_457
+    if-ne v0, p2, :cond_33
 
     .line 1079
     .line 1080
@@ -5081,7 +5081,7 @@
 
     .line 1098
     .line 1099
-    if-eqz p2, :cond_44f
+    if-eqz p2, :cond_32
 
     .line 1100
     .line 1101
@@ -5090,7 +5090,7 @@
     .line 1102
     .line 1103
     .line 1104
-    :cond_44f
+    :cond_32
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 1105
@@ -5103,16 +5103,16 @@
     move-result v2
 
     .line 1110
-    goto/16 :goto_53c
+    goto/16 :goto_2
 
     .line 1111
     .line 1112
-    :cond_457
+    :cond_33
     sget p2, Llibs/bi2;->settings_open_archive:I
 
     .line 1113
     .line 1114
-    if-ne v0, p2, :cond_47b
+    if-ne v0, p2, :cond_35
 
     .line 1115
     .line 1116
@@ -5153,7 +5153,7 @@
 
     .line 1134
     .line 1135
-    if-eqz p2, :cond_473
+    if-eqz p2, :cond_34
 
     .line 1136
     .line 1137
@@ -5162,7 +5162,7 @@
     .line 1138
     .line 1139
     .line 1140
-    :cond_473
+    :cond_34
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 1141
@@ -5175,16 +5175,16 @@
     move-result v2
 
     .line 1146
-    goto/16 :goto_53c
+    goto/16 :goto_2
 
     .line 1147
     .line 1148
-    :cond_47b
+    :cond_35
     sget p2, Llibs/bi2;->settings_show_toast:I
 
     .line 1149
     .line 1150
-    if-ne v0, p2, :cond_49f
+    if-ne v0, p2, :cond_37
 
     .line 1151
     .line 1152
@@ -5225,7 +5225,7 @@
 
     .line 1170
     .line 1171
-    if-eqz p2, :cond_497
+    if-eqz p2, :cond_36
 
     .line 1172
     .line 1173
@@ -5234,7 +5234,7 @@
     .line 1174
     .line 1175
     .line 1176
-    :cond_497
+    :cond_36
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 1177
@@ -5247,16 +5247,16 @@
     move-result v2
 
     .line 1182
-    goto/16 :goto_53c
+    goto/16 :goto_2
 
     .line 1183
     .line 1184
-    :cond_49f
+    :cond_37
     sget p2, Llibs/bi2;->settings_full_wake_lock:I
 
     .line 1185
     .line 1186
-    if-ne v0, p2, :cond_4c3
+    if-ne v0, p2, :cond_39
 
     .line 1187
     .line 1188
@@ -5297,7 +5297,7 @@
 
     .line 1206
     .line 1207
-    if-eqz p2, :cond_4bb
+    if-eqz p2, :cond_38
 
     .line 1208
     .line 1209
@@ -5306,7 +5306,7 @@
     .line 1210
     .line 1211
     .line 1212
-    :cond_4bb
+    :cond_38
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 1213
@@ -5319,16 +5319,16 @@
     move-result v2
 
     .line 1218
-    goto/16 :goto_53c
+    goto/16 :goto_2
 
     .line 1219
     .line 1220
-    :cond_4c3
+    :cond_39
     sget p2, Llibs/bi2;->settings_enable_logging:I
 
     .line 1221
     .line 1222
-    if-ne v0, p2, :cond_507
+    if-ne v0, p2, :cond_3c
 
     .line 1223
     .line 1224
@@ -5369,7 +5369,7 @@
 
     .line 1242
     .line 1243
-    if-eqz p2, :cond_4df
+    if-eqz p2, :cond_3a
 
     .line 1244
     .line 1245
@@ -5378,7 +5378,7 @@
     .line 1246
     .line 1247
     .line 1248
-    :cond_4df
+    :cond_3a
     sget-object p2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 1249
@@ -5391,7 +5391,7 @@
     move-result v2
 
     .line 1254
-    if-eqz v2, :cond_4f4
+    if-eqz v2, :cond_3b
 
     .line 1255
     .line 1256
@@ -5417,10 +5417,10 @@
     .line 1266
     .line 1267
     .line 1268
-    goto :goto_53c
+    goto :goto_2
 
     .line 1269
-    :cond_4f4
+    :cond_3b
     sget-object p2, Llibs/vw1;->b:Ljava/lang/Object;
 
     .line 1270
@@ -5453,15 +5453,15 @@
     .line 1285
     .line 1286
     .line 1287
-    goto :goto_53c
+    goto :goto_2
 
     .line 1288
-    :cond_507
+    :cond_3c
     sget p2, Llibs/bi2;->reset:I
 
     .line 1289
     .line 1290
-    if-ne v0, p2, :cond_519
+    if-ne v0, p2, :cond_3d
 
     .line 1291
     .line 1292
@@ -5483,8 +5483,8 @@
     .line 1300
     .line 1301
     invoke-virtual {p1}, Llibs/od;->dismiss()V
-    :try_end_517
-    .catchall {:try_start_9 .. :try_end_517} :catchall_3b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 1302
     .line 1303
@@ -5495,13 +5495,13 @@
     return-void
 
     .line 1306
-    :cond_519
-    :try_start_519
+    :cond_3d
+    :try_start_2
     sget p2, Llibs/bi2;->settings_custom_datetime:I
 
     .line 1307
     .line 1308
-    if-ne v0, p2, :cond_52b
+    if-ne v0, p2, :cond_3e
 
     .line 1309
     .line 1310
@@ -5523,8 +5523,8 @@
     .line 1318
     .line 1319
     invoke-virtual {p1}, Llibs/od;->dismiss()V
-    :try_end_529
-    .catchall {:try_start_519 .. :try_end_529} :catchall_3b
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 1320
     .line 1321
@@ -5535,13 +5535,13 @@
     return-void
 
     .line 1324
-    :cond_52b
-    :try_start_52b
+    :cond_3e
+    :try_start_3
     sget p2, Llibs/bi2;->export:I
 
     .line 1325
     .line 1326
-    if-ne v0, p2, :cond_53c
+    if-ne v0, p2, :cond_3f
 
     .line 1327
     .line 1328
@@ -5562,8 +5562,8 @@
     .line 1335
     .line 1336
     invoke-virtual {p1}, Llibs/od;->dismiss()V
-    :try_end_53a
-    .catchall {:try_start_52b .. :try_end_53a} :catchall_3b
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 1337
     .line 1338
@@ -5574,30 +5574,30 @@
     return-void
 
     .line 1341
-    :cond_53c
-    :goto_53c
+    :cond_3f
+    :goto_2
     iget-object p2, p0, Llibs/jf2;->f:Lcom/mixplorer/activities/PreferenceActivity;
 
     .line 1342
     .line 1343
-    if-eqz v2, :cond_543
+    if-eqz v2, :cond_40
 
     .line 1344
     .line 1345
-    :try_start_540
+    :try_start_4
     iget-object p2, p2, Lcom/mixplorer/activities/PreferenceActivity;->Romeo:Landroid/graphics/drawable/Drawable;
 
     .line 1346
     .line 1347
-    goto :goto_545
+    goto :goto_3
 
     .line 1348
-    :cond_543
+    :cond_40
     iget-object p2, p2, Lcom/mixplorer/activities/PreferenceActivity;->Sierra:Landroid/graphics/drawable/Drawable;
 
     .line 1349
     .line 1350
-    :goto_545
+    :goto_3
     iput-object p2, p1, Llibs/r90;->Lambda:Landroid/graphics/drawable/Drawable;
 
     .line 1351
@@ -5608,17 +5608,17 @@
     .line 1354
     .line 1355
     invoke-static {v2}, Llibs/tr3;->c(Z)V
-    :try_end_54d
-    .catchall {:try_start_540 .. :try_end_54d} :catchall_3b
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 1356
     .line 1357
     .line 1358
-    goto :goto_560
+    goto :goto_5
 
     .line 1359
-    :goto_54e
-    :try_start_54e
+    :goto_4
+    :try_start_5
     const-string p2, "PrefAct"
 
     .line 1360
@@ -5649,51 +5649,51 @@
 
     .line 1374
     invoke-static {p1}, Llibs/gx1;->d(Ljava/lang/Object;)V
-    :try_end_560
-    .catchall {:try_start_54e .. :try_end_560} :catchall_562
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
     .line 1375
     .line 1376
     .line 1377
-    :goto_560
+    :goto_5
     monitor-exit p0
 
     .line 1378
     return-void
 
     .line 1379
-    :catchall_562
+    :catchall_1
     move-exception p1
 
     .line 1380
-    :try_start_563
+    :try_start_6
     monitor-exit p0
-    :try_end_564
-    .catchall {:try_start_563 .. :try_end_564} :catchall_562
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
     .line 1381
-    goto :goto_566
+    goto :goto_7
 
     .line 1382
-    :goto_565
+    :goto_6
     throw p1
 
     .line 1383
-    :goto_566
-    goto :goto_565
+    :goto_7
+    goto :goto_6
 .end method
 
 
 # virtual methods
 .method public final declared-synchronized z(Landroid/view/View;I)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/jf2;->c:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_e
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -5706,7 +5706,7 @@
     return-void
 
     .line 10
-    :pswitch_9
+    :pswitch_0
     invoke-direct {p0, p1, p2}, Llibs/jf2;->Node(Landroid/view/View;I)V
 
     .line 11
@@ -5718,8 +5718,8 @@
     nop
 
     .line 15
-    :pswitch_data_e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_9
+        :pswitch_0
     .end packed-switch
 .end method

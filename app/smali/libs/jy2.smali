@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,25 +37,25 @@
     invoke-virtual {p0}, Llibs/jy2;->a()V
 
     .line 54
-    :try_start_d
+    :try_start_0
     new-instance v1, Ljava/net/MulticastSocket;
 
     invoke-direct {v1}, Ljava/net/MulticastSocket;-><init>()V
 
     iput-object v1, p0, Llibs/jy2;->X:Ljava/net/MulticastSocket;
-    :try_end_14
-    .catch Ljava/lang/Exception; {:try_start_d .. :try_end_14} :catch_15
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_19
+    goto :goto_0
 
-    :catch_15
+    :catch_0
     move-exception v1
 
     .line 55
     invoke-static {v1}, Llibs/t70;->a(Ljava/lang/Exception;)V
 
     .line 56
-    :goto_19
+    :goto_0
     iput-object v0, p0, Llibs/jy2;->Lambda:Ljava/lang/Thread;
 
     .line 57
@@ -65,7 +65,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -93,7 +93,7 @@
     .line 12
     .line 13
     .line 14
-    :try_start_d
+    :try_start_0
     new-instance v1, Ljava/net/InetSocketAddress;
 
     .line 15
@@ -124,9 +124,9 @@
     .line 28
     .line 29
     iput-object v2, p0, Llibs/jy2;->X:Ljava/net/MulticastSocket;
-    :try_end_1e
-    .catch Ljava/net/BindException; {:try_start_d .. :try_end_1e} :catch_23
-    .catch Ljava/lang/Exception; {:try_start_d .. :try_end_1e} :catch_21
+    :try_end_0
+    .catch Ljava/net/BindException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 30
     .line 31
@@ -134,30 +134,30 @@
 
     .line 32
     .line 33
-    goto :goto_28
+    goto :goto_1
 
     .line 34
-    :catch_21
+    :catch_0
     move-exception p1
 
     .line 35
-    goto :goto_25
+    goto :goto_0
 
     .line 36
-    :catch_23
+    :catch_1
     move-exception p1
 
     .line 37
-    goto :goto_2d
+    goto :goto_2
 
     .line 38
-    :goto_25
+    :goto_0
     invoke-static {p1}, Llibs/t70;->a(Ljava/lang/Exception;)V
 
     .line 39
     .line 40
     .line 41
-    :goto_28
+    :goto_1
     iput-object v0, p0, Llibs/jy2;->Lambda:Ljava/lang/Thread;
 
     .line 42
@@ -169,7 +169,7 @@
     return-void
 
     .line 46
-    :goto_2d
+    :goto_2
     invoke-static {p1}, Llibs/t70;->a(Ljava/lang/Exception;)V
 
     .line 47
@@ -179,7 +179,7 @@
 .end method
 
 .method public static e()Llibs/jy2;
-    .registers 4
+    .locals 4
 
     .line 1
     invoke-static {}, Llibs/u73;->Task()Ljava/lang/String;
@@ -198,7 +198,7 @@
     move-result v1
 
     .line 9
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_0
 
     .line 10
     .line 11
@@ -216,7 +216,7 @@
     .line 17
     .line 18
     .line 19
-    :try_start_12
+    :try_start_0
     new-instance v1, Ljava/net/MulticastSocket;
 
     .line 20
@@ -258,8 +258,8 @@
     .line 38
     .line 39
     invoke-virtual {v1, v2}, Ljava/net/DatagramSocket;->bind(Ljava/net/SocketAddress;)V
-    :try_end_29
-    .catch Ljava/lang/Exception; {:try_start_12 .. :try_end_29} :catch_2a
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 40
     .line 41
@@ -267,7 +267,7 @@
     return-object v0
 
     .line 43
-    :catch_2a
+    :catch_0
     const-string v0, "Not opened"
 
     .line 44
@@ -283,7 +283,7 @@
     return-object v0
 
     .line 50
-    :cond_31
+    :cond_0
     new-instance v1, Llibs/jy2;
 
     .line 51
@@ -293,7 +293,7 @@
     .line 53
     .line 54
     .line 55
-    :try_start_36
+    :try_start_1
     invoke-static {v0}, Ljava/net/InetAddress;->getByName(Ljava/lang/String;)Ljava/net/InetAddress;
 
     .line 56
@@ -315,8 +315,8 @@
     .line 64
     .line 65
     invoke-virtual {v2, v0}, Ljava/net/MulticastSocket;->setNetworkInterface(Ljava/net/NetworkInterface;)V
-    :try_end_43
-    .catch Ljava/lang/Exception; {:try_start_36 .. :try_end_43} :catch_44
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 66
     .line 67
@@ -324,7 +324,7 @@
     return-object v1
 
     .line 69
-    :catch_44
+    :catch_1
     move-exception v0
 
     .line 70
@@ -339,22 +339,22 @@
 
 # virtual methods
 .method public final a()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/jy2;->X:Ljava/net/MulticastSocket;
 
     .line 2
     .line 3
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
-    :try_start_5
+    :cond_0
+    :try_start_0
     invoke-virtual {v0}, Ljava/net/DatagramSocket;->close()V
 
     .line 7
@@ -364,15 +364,15 @@
 
     .line 10
     iput-object v0, p0, Llibs/jy2;->X:Ljava/net/MulticastSocket;
-    :try_end_b
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_b} :catch_c
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 11
     .line 12
     return-void
 
     .line 13
-    :catch_c
+    :catch_0
     move-exception v0
 
     .line 14
@@ -385,7 +385,7 @@
 .end method
 
 .method public final b(Ljava/lang/String;ILlibs/iy2;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-virtual {p3}, Llibs/iy2;->v()Ljava/lang/String;
@@ -405,7 +405,7 @@
 .end method
 
 .method public final c(Ljava/lang/String;ILjava/lang/String;)Z
-    .registers 6
+    .locals 2
 
     .line 1
     :try_start_0
@@ -447,8 +447,8 @@
     .line 19
     .line 20
     invoke-virtual {p1, v0}, Ljava/net/DatagramSocket;->send(Ljava/net/DatagramPacket;)V
-    :try_end_16
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_16} :catch_18
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 21
     .line 22
@@ -459,7 +459,7 @@
     return p1
 
     .line 25
-    :catch_18
+    :catch_0
     move-exception p1
 
     .line 26
@@ -472,7 +472,7 @@
 
     .line 30
     .line 31
-    if-eqz p1, :cond_52
+    if-eqz p1, :cond_0
 
     .line 32
     .line 33
@@ -570,7 +570,7 @@
     .line 81
     .line 82
     .line 83
-    :cond_52
+    :cond_0
     const/4 p1, 0x0
 
     .line 84
@@ -578,7 +578,7 @@
 .end method
 
 .method public final d()V
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -606,7 +606,7 @@
     move-result-object v2
 
     .line 14
-    if-eqz v2, :cond_22
+    if-eqz v2, :cond_0
 
     .line 15
     .line 16
@@ -645,7 +645,7 @@
     .line 33
     .line 34
     .line 35
-    :cond_22
+    :cond_0
     new-instance v1, Ljava/lang/Thread;
 
     .line 36
@@ -676,7 +676,7 @@
 .end method
 
 .method public final run()V
-    .registers 6
+    .locals 5
 
     .line 1
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
@@ -691,12 +691,12 @@
 
     .line 6
     .line 7
-    :cond_6
+    :cond_0
     iget-object v2, p0, Llibs/jy2;->Lambda:Ljava/lang/Thread;
 
     .line 8
     .line 9
-    if-ne v2, v0, :cond_45
+    if-ne v2, v0, :cond_3
 
     .line 10
     .line 11
@@ -734,14 +734,14 @@
     move-result v4
 
     .line 29
-    if-lez v4, :cond_1f
+    if-lez v4, :cond_1
 
     .line 30
     .line 31
-    goto :goto_29
+    goto :goto_0
 
     .line 32
-    :cond_1f
+    :cond_1
     iget-object v2, p0, Llibs/jy2;->X:Ljava/net/MulticastSocket;
 
     .line 33
@@ -762,13 +762,13 @@
     move-result-object v2
 
     .line 42
-    :goto_29
+    :goto_0
     invoke-virtual {v3, v2}, Llibs/dj;->z(Ljava/lang/String;)V
 
     .line 43
     .line 44
     .line 45
-    :try_start_2c
+    :try_start_0
     iget-object v2, p0, Llibs/jy2;->X:Ljava/net/MulticastSocket;
 
     .line 46
@@ -787,29 +787,29 @@
     .line 53
     .line 54
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-    :try_end_38
-    .catch Ljava/lang/Exception; {:try_start_2c .. :try_end_38} :catch_39
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 55
     .line 56
     .line 57
-    goto :goto_3a
+    goto :goto_1
 
     .line 58
-    :catch_39
+    :catch_0
     const/4 v3, 0x0
 
     .line 59
-    :goto_3a
-    if-nez v3, :cond_3d
+    :goto_1
+    if-nez v3, :cond_2
 
     .line 60
     .line 61
-    goto :goto_45
+    goto :goto_2
 
     .line 62
-    :cond_3d
-    if-eqz v1, :cond_6
+    :cond_2
+    if-eqz v1, :cond_0
 
     .line 63
     .line 64
@@ -821,11 +821,11 @@
     move-result v2
 
     .line 68
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_0
 
     .line 69
     .line 70
-    :cond_45
-    :goto_45
+    :cond_3
+    :goto_2
     return-void
 .end method

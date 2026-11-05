@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(ZILlibs/Core;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2, p3}, Llibs/Height;-><init>(ZILlibs/Core;)V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final h(Llibs/v60;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/Height;->Z:Llibs/Core;
@@ -54,7 +54,7 @@
 
     .line 16
     .line 17
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_0
 
     .line 18
     .line 19
@@ -84,7 +84,7 @@
     return-void
 
     .line 33
-    :cond_20
+    :cond_0
     invoke-virtual {v0}, Llibs/Theme;->k()Z
 
     .line 34
@@ -93,19 +93,19 @@
     move-result v1
 
     .line 37
-    if-eqz v1, :cond_27
+    if-eqz v1, :cond_1
 
     .line 38
     .line 39
-    goto :goto_29
+    goto :goto_0
 
     .line 40
-    :cond_27
+    :cond_1
     const/16 v3, 0x80
 
     .line 41
     .line 42
-    :goto_29
+    :goto_0
     invoke-virtual {p1, v3, v2}, Llibs/v60;->Run(II)V
 
     .line 43
@@ -120,7 +120,7 @@
 .end method
 
 .method public final i()I
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/Height;->Z:Llibs/Core;
@@ -159,7 +159,7 @@
 
     .line 18
     .line 19
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_0
 
     .line 20
     .line 21
@@ -188,7 +188,7 @@
     return v2
 
     .line 32
-    :cond_1f
+    :cond_0
     add-int/lit8 v0, v0, -0x1
 
     .line 33
@@ -208,14 +208,14 @@
 .end method
 
 .method public final k()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/Height;->Y:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -225,7 +225,7 @@
     return v0
 
     .line 7
-    :cond_6
+    :cond_0
     iget-object v0, p0, Llibs/Height;->Z:Llibs/Core;
 
     .line 8

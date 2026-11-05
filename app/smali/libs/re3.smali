@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>([B)V
-    .registers 4
+    .locals 2
 
     .line 1
     const-string v0, "---- BEGIN SSHTOOLS ENCRYPTED PRIVATE KEY ----"
@@ -55,7 +55,7 @@
 .end method
 
 .method public static g()[B
-    .registers 5
+    .locals 5
 
     .line 1
     invoke-static {}, Llibs/zc1;->e()Llibs/zc1;
@@ -177,7 +177,7 @@
 
 # virtual methods
 .method public final a(Ljava/lang/String;)Llibs/he3;
-    .registers 12
+    .locals 10
 
     .line 1
     const-string p1, "Unsupported private key algorithm type "
@@ -208,7 +208,7 @@
     const/4 v3, 0x0
 
     .line 15
-    :try_start_e
+    :try_start_0
     sget-object v4, Llibs/gl;->X:Ljava/lang/String;
 
     .line 16
@@ -229,7 +229,7 @@
     move-result v5
 
     .line 25
-    if-eqz v5, :cond_73
+    if-eqz v5, :cond_2
 
     .line 26
     .line 27
@@ -261,7 +261,7 @@
     move-result v4
 
     .line 41
-    if-eqz v4, :cond_32
+    if-eqz v4, :cond_0
 
     .line 42
     .line 43
@@ -270,22 +270,22 @@
     .line 44
     .line 45
     .line 46
-    goto :goto_32
+    goto :goto_0
 
     .line 47
-    :catchall_2e
+    :catchall_0
     move-exception v0
 
     .line 48
     move-object p1, v0
 
     .line 49
-    goto/16 :goto_118
+    goto/16 :goto_4
 
     .line 50
     .line 51
-    :cond_32
-    :goto_32
+    :cond_0
+    :goto_0
     invoke-virtual {v2}, Llibs/gl;->m()[B
 
     .line 52
@@ -351,14 +351,14 @@
     .line 80
     .line 81
     invoke-direct {v4, v8}, Llibs/gl;-><init>([B)V
-    :try_end_53
-    .catch Llibs/fe3; {:try_start_e .. :try_end_53} :catch_112
-    .catchall {:try_start_e .. :try_end_53} :catchall_2e
+    :try_end_0
+    .catch Llibs/fe3; {:try_start_0 .. :try_end_0} :catch_1
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 82
     .line 83
     .line 84
-    :try_start_53
+    :try_start_1
     invoke-virtual {v4}, Llibs/gl;->x()J
 
     .line 85
@@ -378,7 +378,7 @@
 
     .line 92
     .line 93
-    if-nez v0, :cond_69
+    if-nez v0, :cond_1
 
     .line 94
     .line 95
@@ -388,34 +388,34 @@
     .line 97
     .line 98
     move-result-object v0
-    :try_end_62
-    .catchall {:try_start_53 .. :try_end_62} :catchall_66
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 99
-    :try_start_62
+    :try_start_2
     invoke-virtual {v4}, Llibs/gl;->close()V
-    :try_end_65
-    .catch Llibs/fe3; {:try_start_62 .. :try_end_65} :catch_112
-    .catchall {:try_start_62 .. :try_end_65} :catchall_2e
+    :try_end_2
+    .catch Llibs/fe3; {:try_start_2 .. :try_end_2} :catch_1
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 100
     .line 101
     .line 102
-    goto :goto_77
+    goto :goto_2
 
     .line 103
-    :catchall_66
+    :catchall_1
     move-exception v0
 
     .line 104
     move-object p1, v0
 
     .line 105
-    goto :goto_6f
+    goto :goto_1
 
     .line 106
-    :cond_69
-    :try_start_69
+    :cond_1
+    :try_start_3
     new-instance p1, Llibs/ub1;
 
     .line 107
@@ -426,12 +426,12 @@
     .line 110
     .line 111
     throw p1
-    :try_end_6f
-    .catchall {:try_start_69 .. :try_end_6f} :catchall_66
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 112
-    :goto_6f
-    :try_start_6f
+    :goto_1
+    :try_start_4
     invoke-virtual {v4}, Llibs/gl;->close()V
 
     .line 113
@@ -440,19 +440,19 @@
     throw p1
 
     .line 116
-    :cond_73
+    :cond_2
     invoke-virtual {v2}, Llibs/gl;->m()[B
 
     .line 117
     .line 118
     .line 119
     move-result-object v0
-    :try_end_77
-    .catch Llibs/fe3; {:try_start_6f .. :try_end_77} :catch_112
-    .catchall {:try_start_6f .. :try_end_77} :catchall_2e
+    :try_end_4
+    .catch Llibs/fe3; {:try_start_4 .. :try_end_4} :catch_1
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 120
-    :goto_77
+    :goto_2
     invoke-virtual {v2}, Llibs/gl;->close()V
 
     .line 121
@@ -463,7 +463,7 @@
     .line 124
     .line 125
     .line 126
-    :try_start_7d
+    :try_start_5
     sget-object v0, Llibs/gl;->X:Ljava/lang/String;
 
     .line 127
@@ -488,7 +488,7 @@
     move-result v2
 
     .line 138
-    if-eqz v2, :cond_cd
+    if-eqz v2, :cond_3
 
     .line 139
     .line 140
@@ -602,9 +602,9 @@
     .line 196
     .line 197
     iput-object v4, p1, Llibs/he3;->a:Llibs/je3;
-    :try_end_c6
-    .catch Llibs/fe3; {:try_start_7d .. :try_end_c6} :catch_108
-    .catchall {:try_start_7d .. :try_end_c6} :catchall_ca
+    :try_end_5
+    .catch Llibs/fe3; {:try_start_5 .. :try_end_5} :catch_0
+    .catchall {:try_start_5 .. :try_end_5} :catchall_2
 
     .line 198
     .line 199
@@ -616,18 +616,18 @@
     return-object p1
 
     .line 203
-    :catchall_ca
+    :catchall_2
     move-exception v0
 
     .line 204
     move-object p1, v0
 
     .line 205
-    goto :goto_10e
+    goto :goto_3
 
     .line 206
-    :cond_cd
-    :try_start_cd
+    :cond_3
+    :try_start_6
     const-string v2, "ssh-rsa"
 
     .line 207
@@ -640,7 +640,7 @@
     move-result v2
 
     .line 212
-    if-eqz v2, :cond_fe
+    if-eqz v2, :cond_4
 
     .line 213
     .line 214
@@ -714,9 +714,9 @@
 
     .line 249
     iput-object p1, v4, Llibs/he3;->a:Llibs/je3;
-    :try_end_fa
-    .catch Llibs/fe3; {:try_start_cd .. :try_end_fa} :catch_108
-    .catchall {:try_start_cd .. :try_end_fa} :catchall_ca
+    :try_end_6
+    .catch Llibs/fe3; {:try_start_6 .. :try_end_6} :catch_0
+    .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
     .line 250
     .line 251
@@ -728,8 +728,8 @@
     return-object v4
 
     .line 255
-    :cond_fe
-    :try_start_fe
+    :cond_4
+    :try_start_7
     new-instance v2, Ljava/io/IOException;
 
     .line 256
@@ -748,13 +748,13 @@
     .line 263
     .line 264
     throw v2
-    :try_end_108
-    .catch Llibs/fe3; {:try_start_fe .. :try_end_108} :catch_108
-    .catchall {:try_start_fe .. :try_end_108} :catchall_ca
+    :try_end_7
+    .catch Llibs/fe3; {:try_start_7 .. :try_end_7} :catch_0
+    .catchall {:try_start_7 .. :try_end_7} :catchall_2
 
     .line 265
-    :catch_108
-    :try_start_108
+    :catch_0
+    :try_start_8
     new-instance p1, Llibs/ts;
 
     .line 266
@@ -765,11 +765,11 @@
     .line 269
     .line 270
     throw p1
-    :try_end_10e
-    .catchall {:try_start_108 .. :try_end_10e} :catchall_ca
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_2
 
     .line 271
-    :goto_10e
+    :goto_3
     invoke-virtual {v1}, Llibs/gl;->close()V
 
     .line 272
@@ -778,8 +778,8 @@
     throw p1
 
     .line 275
-    :catch_112
-    :try_start_112
+    :catch_1
+    :try_start_9
     new-instance p1, Llibs/ts;
 
     .line 276
@@ -790,11 +790,11 @@
     .line 279
     .line 280
     throw p1
-    :try_end_118
-    .catchall {:try_start_112 .. :try_end_118} :catchall_2e
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_0
 
     .line 281
-    :goto_118
+    :goto_4
     invoke-virtual {v2}, Llibs/gl;->close()V
 
     .line 282
@@ -804,7 +804,7 @@
 .end method
 
 .method public final b()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/re3;->Mu:[B

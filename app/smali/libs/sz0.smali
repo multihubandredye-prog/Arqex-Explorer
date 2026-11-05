@@ -15,7 +15,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 14
+    .locals 14
 
     .line 1
     const-string v0, "PRI * HTTP/2.0\r\n\r\nSM\r\n\r\n"
@@ -185,7 +185,7 @@
     const/4 v0, 0x0
 
     .line 80
-    :goto_4f
+    :goto_0
     sget-object v5, Llibs/sz0;->d:[Ljava/lang/String;
 
     .line 81
@@ -197,7 +197,7 @@
 
     .line 84
     .line 85
-    if-ge v0, v8, :cond_73
+    if-ge v0, v8, :cond_0
 
     .line 86
     .line 87
@@ -257,10 +257,10 @@
 
     .line 114
     .line 115
-    goto :goto_4f
+    goto :goto_0
 
     .line 116
-    :cond_73
+    :cond_0
     sget-object v0, Llibs/sz0;->c:[Ljava/lang/String;
 
     .line 117
@@ -369,8 +369,8 @@
     const/4 v4, 0x0
 
     .line 170
-    :goto_a9
-    if-ge v4, v2, :cond_e6
+    :goto_1
+    if-ge v4, v2, :cond_1
 
     .line 171
     .line 172
@@ -484,11 +484,11 @@
 
     .line 229
     .line 230
-    goto :goto_a9
+    goto :goto_1
 
     .line 231
-    :cond_e6
-    :goto_e6
+    :cond_1
+    :goto_2
     sget-object v0, Llibs/sz0;->c:[Ljava/lang/String;
 
     .line 232
@@ -496,7 +496,7 @@
     array-length v2, v0
 
     .line 234
-    if-ge v1, v2, :cond_f8
+    if-ge v1, v2, :cond_3
 
     .line 235
     .line 236
@@ -504,7 +504,7 @@
 
     .line 237
     .line 238
-    if-nez v2, :cond_f5
+    if-nez v2, :cond_2
 
     .line 239
     .line 240
@@ -520,20 +520,20 @@
 
     .line 245
     .line 246
-    :cond_f5
+    :cond_2
     add-int/lit8 v1, v1, 0x1
 
     .line 247
     .line 248
-    goto :goto_e6
+    goto :goto_2
 
     .line 249
-    :cond_f8
+    :cond_3
     return-void
 .end method
 
 .method public static a(ZIIBB)Ljava/lang/String;
-    .registers 15
+    .locals 10
 
     .line 1
     sget-object v0, Llibs/sz0;->b:[Ljava/lang/String;
@@ -549,7 +549,7 @@
     const/4 v3, 0x1
 
     .line 6
-    if-ge p3, v1, :cond_a
+    if-ge p3, v1, :cond_0
 
     .line 7
     .line 8
@@ -557,10 +557,10 @@
 
     .line 9
     .line 10
-    goto :goto_1c
+    goto :goto_0
 
     .line 11
-    :cond_a
+    :cond_0
     invoke-static {p3}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
 
     .line 12
@@ -597,7 +597,7 @@
     move-result-object v0
 
     .line 29
-    :goto_1c
+    :goto_0
     const/4 v1, 0x5
 
     .line 30
@@ -610,7 +610,7 @@
     const/4 v6, 0x4
 
     .line 33
-    if-nez p4, :cond_25
+    if-nez p4, :cond_1
 
     .line 34
     .line 35
@@ -618,37 +618,37 @@
 
     .line 36
     .line 37
-    goto :goto_6b
+    goto :goto_2
 
     .line 38
-    :cond_25
+    :cond_1
     sget-object v7, Llibs/sz0;->d:[Ljava/lang/String;
 
     .line 39
     .line 40
-    if-eq p3, v5, :cond_69
+    if-eq p3, v5, :cond_7
 
     .line 41
     .line 42
-    if-eq p3, v4, :cond_69
+    if-eq p3, v4, :cond_7
 
     .line 43
     .line 44
-    if-eq p3, v6, :cond_61
+    if-eq p3, v6, :cond_5
 
     .line 45
     .line 46
     const/4 v8, 0x6
 
     .line 47
-    if-eq p3, v8, :cond_61
+    if-eq p3, v8, :cond_5
 
     .line 48
     .line 49
     const/4 v8, 0x7
 
     .line 50
-    if-eq p3, v8, :cond_69
+    if-eq p3, v8, :cond_7
 
     .line 51
     .line 52
@@ -656,7 +656,7 @@
 
     .line 53
     .line 54
-    if-eq p3, v8, :cond_69
+    if-eq p3, v8, :cond_7
 
     .line 55
     .line 56
@@ -667,7 +667,7 @@
     array-length v9, v8
 
     .line 59
-    if-ge p4, v9, :cond_3f
+    if-ge p4, v9, :cond_2
 
     .line 60
     .line 61
@@ -675,16 +675,16 @@
 
     .line 62
     .line 63
-    goto :goto_41
+    goto :goto_1
 
     .line 64
-    :cond_3f
+    :cond_2
     aget-object v7, v7, p4
 
     .line 65
     .line 66
-    :goto_41
-    if-ne p3, v1, :cond_50
+    :goto_1
+    if-ne p3, v1, :cond_3
 
     .line 67
     .line 68
@@ -692,7 +692,7 @@
 
     .line 69
     .line 70
-    if-eqz v8, :cond_50
+    if-eqz v8, :cond_3
 
     .line 71
     .line 72
@@ -712,11 +712,11 @@
     move-result-object p3
 
     .line 80
-    goto :goto_6b
+    goto :goto_2
 
     .line 81
-    :cond_50
-    if-nez p3, :cond_5f
+    :cond_3
+    if-nez p3, :cond_4
 
     .line 82
     .line 83
@@ -724,7 +724,7 @@
 
     .line 84
     .line 85
-    if-eqz p3, :cond_5f
+    if-eqz p3, :cond_4
 
     .line 86
     .line 87
@@ -744,18 +744,18 @@
     move-result-object p3
 
     .line 95
-    goto :goto_6b
+    goto :goto_2
 
     .line 96
-    :cond_5f
+    :cond_4
     move-object p3, v7
 
     .line 97
-    goto :goto_6b
+    goto :goto_2
 
     .line 98
-    :cond_61
-    if-ne p4, v3, :cond_66
+    :cond_5
+    if-ne p4, v3, :cond_6
 
     .line 99
     .line 100
@@ -763,24 +763,24 @@
 
     .line 101
     .line 102
-    goto :goto_6b
+    goto :goto_2
 
     .line 103
-    :cond_66
+    :cond_6
     aget-object p3, v7, p4
 
     .line 104
     .line 105
-    goto :goto_6b
+    goto :goto_2
 
     .line 106
-    :cond_69
+    :cond_7
     aget-object p3, v7, p4
 
     .line 107
     .line 108
-    :goto_6b
-    if-eqz p0, :cond_70
+    :goto_2
+    if-eqz p0, :cond_8
 
     .line 109
     .line 110
@@ -788,15 +788,15 @@
 
     .line 111
     .line 112
-    goto :goto_72
+    goto :goto_3
 
     .line 113
-    :cond_70
+    :cond_8
     const-string p0, ">>"
 
     .line 114
     .line 115
-    :goto_72
+    :goto_3
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 116
@@ -861,7 +861,7 @@
 .end method
 
 .method public static varargs b(Ljava/lang/String;[Ljava/lang/Object;)V
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/IllegalArgumentException;
@@ -893,7 +893,7 @@
 .end method
 
 .method public static varargs c(Ljava/lang/String;[Ljava/lang/Object;)V
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/io/IOException;

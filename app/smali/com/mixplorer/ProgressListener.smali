@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,14 +29,14 @@
 
 # virtual methods
 .method public interrupted()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public onFileExists(Llibs/rp0;Ljava/lang/String;Llibs/k52;)I
-    .registers 4
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -46,42 +46,42 @@
 .end method
 
 .method public onFinished(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public onProgress(JJ)V
-    .registers 5
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public onProgressDone(Ljava/lang/String;Z)V
-    .registers 3
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public onProgressDone(Ljava/lang/String;ZJJ)V
-    .registers 7
+    .locals 0
 
     .line 2
     return-void
 .end method
 
 .method public onProgressFi(Llibs/rp0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public onProgressOffset(JJ)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2, p3, p4}, Lcom/mixplorer/ProgressListener;->onProgress(JJ)V
@@ -93,21 +93,21 @@
 .end method
 
 .method public onProgressPath(Ljava/lang/String;ZJJ)Ljava/lang/String;
-    .registers 7
+    .locals 0
 
     .line 1
     return-object p1
 .end method
 
 .method public onProgressPath(Ljava/lang/String;Z)V
-    .registers 3
+    .locals 0
 
     .line 2
     return-void
 .end method
 
 .method public onQualityPass(II)Z
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0

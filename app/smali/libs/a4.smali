@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/reflect/Field;Llibs/b4;Landroid/view/ViewTreeObserver$OnScrollChangedListener;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final onScrollChanged()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/a4;->a:Ljava/lang/reflect/Field;
@@ -57,7 +57,7 @@
 
     .line 6
     .line 7
-    :try_start_6
+    :try_start_0
     invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 8
@@ -70,7 +70,7 @@
 
     .line 12
     .line 13
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     .line 14
     .line 15
@@ -82,23 +82,23 @@
     move-result-object v0
 
     .line 19
-    if-nez v0, :cond_15
+    if-nez v0, :cond_0
 
     .line 20
     .line 21
-    goto :goto_18
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     invoke-interface {v2}, Landroid/view/ViewTreeObserver$OnScrollChangedListener;->onScrollChanged()V
-    :try_end_18
-    .catch Ljava/lang/IllegalAccessException; {:try_start_6 .. :try_end_18} :catch_18
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 23
     .line 24
     .line 25
-    :catch_18
-    :cond_18
-    :goto_18
+    :catch_0
+    :cond_1
+    :goto_0
     return-void
 .end method

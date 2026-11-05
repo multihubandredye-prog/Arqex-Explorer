@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/ap2;-><init>(I)V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final b(Llibs/za;Ljava/util/Locale;)Ljava/lang/String;
-    .registers 3
+    .locals 0
 
     .line 1
     new-instance p1, Ljava/lang/StringBuilder;

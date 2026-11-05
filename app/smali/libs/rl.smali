@@ -12,7 +12,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/bm1;
@@ -39,7 +39,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,13 +51,13 @@
 .end method
 
 .method public static a(Ljava/util/Iterator;I)Llibs/rl;
-    .registers 4
+    .locals 2
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-ne p1, v0, :cond_a
+    if-ne p1, v0, :cond_0
 
     .line 3
     .line 4
@@ -76,7 +76,7 @@
     return-object p0
 
     .line 11
-    :cond_a
+    :cond_0
     ushr-int/lit8 v0, p1, 0x1
 
     .line 12
@@ -114,7 +114,7 @@
 
 # virtual methods
 .method public final b(Llibs/rl;)Llibs/rl;
-    .registers 10
+    .locals 8
 
     .line 1
     invoke-virtual {p0}, Llibs/rl;->size()I
@@ -154,7 +154,7 @@
 
     .line 17
     .line 18
-    if-gez v7, :cond_e6
+    if-gez v7, :cond_8
 
     .line 19
     .line 20
@@ -166,7 +166,7 @@
 
     .line 23
     .line 24
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 25
     .line 26
@@ -177,7 +177,7 @@
 
     .line 28
     .line 29
-    :cond_1c
+    :cond_0
     invoke-virtual {p1}, Llibs/rl;->size()I
 
     .line 30
@@ -186,14 +186,14 @@
     move-result v0
 
     .line 33
-    if-nez v0, :cond_23
+    if-nez v0, :cond_1
 
     .line 34
     .line 35
     return-object p0
 
     .line 36
-    :cond_23
+    :cond_1
     invoke-virtual {p0}, Llibs/rl;->size()I
 
     .line 37
@@ -202,14 +202,14 @@
     move-result v0
 
     .line 40
-    if-nez v0, :cond_2a
+    if-nez v0, :cond_2
 
     .line 41
     .line 42
     return-object p1
 
     .line 43
-    :cond_2a
+    :cond_2
     invoke-virtual {p0}, Llibs/rl;->size()I
 
     .line 44
@@ -236,7 +236,7 @@
 
     .line 54
     .line 55
-    if-ge v1, v2, :cond_50
+    if-ge v1, v2, :cond_3
 
     .line 56
     .line 57
@@ -286,8 +286,8 @@
     return-object p1
 
     .line 81
-    :cond_50
-    if-eqz v6, :cond_7e
+    :cond_3
+    if-eqz v6, :cond_4
 
     .line 82
     .line 83
@@ -314,7 +314,7 @@
     add-int/2addr v5, v4
 
     .line 94
-    if-ge v5, v2, :cond_7e
+    if-ge v5, v2, :cond_4
 
     .line 95
     .line 96
@@ -377,8 +377,8 @@
     return-object v0
 
     .line 127
-    :cond_7e
-    if-eqz v6, :cond_a1
+    :cond_4
+    if-eqz v6, :cond_5
 
     .line 128
     .line 129
@@ -406,7 +406,7 @@
     move-result v4
 
     .line 141
-    if-le v3, v4, :cond_a1
+    if-le v3, v4, :cond_5
 
     .line 142
     .line 143
@@ -422,7 +422,7 @@
     move-result v4
 
     .line 149
-    if-le v3, v4, :cond_a1
+    if-le v3, v4, :cond_5
 
     .line 150
     .line 151
@@ -447,7 +447,7 @@
     return-object p1
 
     .line 162
-    :cond_a1
+    :cond_5
     invoke-virtual {p0}, Llibs/rl;->e()I
 
     .line 163
@@ -484,7 +484,7 @@
 
     .line 179
     .line 180
-    if-lt v1, v0, :cond_bb
+    if-lt v1, v0, :cond_6
 
     .line 181
     .line 182
@@ -500,7 +500,7 @@
     return-object v0
 
     .line 188
-    :cond_bb
+    :cond_6
     new-instance v0, Llibs/kk1;
 
     .line 189
@@ -544,7 +544,7 @@
 
     .line 210
     .line 211
-    :goto_d2
+    :goto_0
     invoke-virtual {p1}, Ljava/util/AbstractCollection;->isEmpty()Z
 
     .line 212
@@ -553,7 +553,7 @@
     move-result v1
 
     .line 215
-    if-nez v1, :cond_e5
+    if-nez v1, :cond_7
 
     .line 216
     .line 217
@@ -581,14 +581,14 @@
     move-object v0, v2
 
     .line 229
-    goto :goto_d2
+    goto :goto_0
 
     .line 230
-    :cond_e5
+    :cond_7
     return-object v0
 
     .line 231
-    :cond_e6
+    :cond_8
     const-string p1, "ByteString would be too long: "
 
     .line 232
@@ -606,18 +606,18 @@
 .end method
 
 .method public final c(III[B)V
-    .registers 7
+    .locals 2
 
     .line 1
-    if-ltz p1, :cond_41
+    if-ltz p1, :cond_5
 
     .line 2
     .line 3
-    if-ltz p2, :cond_37
+    if-ltz p2, :cond_4
 
     .line 4
     .line 5
-    if-ltz p3, :cond_2d
+    if-ltz p3, :cond_3
 
     .line 6
     .line 7
@@ -633,7 +633,7 @@
     move-result v1
 
     .line 13
-    if-gt v0, v1, :cond_23
+    if-gt v0, v1, :cond_2
 
     .line 14
     .line 15
@@ -644,11 +644,11 @@
     array-length v1, p4
 
     .line 18
-    if-gt v0, v1, :cond_19
+    if-gt v0, v1, :cond_1
 
     .line 19
     .line 20
-    if-lez p3, :cond_18
+    if-lez p3, :cond_0
 
     .line 21
     .line 22
@@ -657,11 +657,11 @@
     .line 23
     .line 24
     .line 25
-    :cond_18
+    :cond_0
     return-void
 
     .line 26
-    :cond_19
+    :cond_1
     const-string p1, "Target end offset < 0: "
 
     .line 27
@@ -682,7 +682,7 @@
     return-void
 
     .line 36
-    :cond_23
+    :cond_2
     const-string p1, "Source end offset < 0: "
 
     .line 37
@@ -703,7 +703,7 @@
     return-void
 
     .line 46
-    :cond_2d
+    :cond_3
     const-string p1, "Length < 0: "
 
     .line 47
@@ -724,7 +724,7 @@
     return-void
 
     .line 56
-    :cond_37
+    :cond_4
     const-string p1, "Target offset < 0: "
 
     .line 57
@@ -745,7 +745,7 @@
     return-void
 
     .line 66
-    :cond_41
+    :cond_5
     const-string p2, "Source offset < 0: "
 
     .line 67
@@ -770,7 +770,7 @@
 .end method
 
 .method public e()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -780,7 +780,7 @@
 .end method
 
 .method public f()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -814,7 +814,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I

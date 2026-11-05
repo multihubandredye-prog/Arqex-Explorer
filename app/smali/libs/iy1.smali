@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/sx0;Llibs/lr2;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,7 +31,7 @@
 .end method
 
 .method public static a(Ljava/lang/String;Ljava/lang/String;Llibs/lr2;)Llibs/iy1;
-    .registers 5
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -52,7 +52,7 @@
     .line 9
     .line 10
     .line 11
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_0
 
     .line 12
     .line 13
@@ -70,7 +70,7 @@
     .line 19
     .line 20
     .line 21
-    :cond_14
+    :cond_0
     new-instance p0, Llibs/rx0;
 
     .line 22

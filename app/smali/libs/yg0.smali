@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,7 +29,7 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 7
+    .locals 6
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -81,17 +81,17 @@
 
     .line 27
     .line 28
-    if-nez v1, :cond_1f
+    if-nez v1, :cond_0
 
     .line 29
     .line 30
     const/4 v1, 0x0
 
     .line 31
-    goto :goto_44
+    goto :goto_1
 
     .line 32
-    :cond_1f
+    :cond_0
     new-instance v2, Ljava/lang/StringBuilder;
 
     .line 33
@@ -111,12 +111,12 @@
     const/4 v4, 0x0
 
     .line 41
-    :goto_28
-    if-ge v4, v3, :cond_3b
+    :goto_0
+    if-ge v4, v3, :cond_2
 
     .line 42
     .line 43
-    if-lez v4, :cond_31
+    if-lez v4, :cond_1
 
     .line 44
     .line 45
@@ -129,7 +129,7 @@
     .line 48
     .line 49
     .line 50
-    :cond_31
+    :cond_1
     aget-byte v5, v1, v4
 
     .line 51
@@ -147,10 +147,10 @@
 
     .line 58
     .line 59
-    goto :goto_28
+    goto :goto_0
 
     .line 60
-    :cond_3b
+    :cond_2
     const-string v1, " }"
 
     .line 61
@@ -168,7 +168,7 @@
     move-result-object v1
 
     .line 69
-    :goto_44
+    :goto_1
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 70

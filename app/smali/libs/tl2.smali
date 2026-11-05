@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/rb2;Llibs/ug3;ILjava/util/ArrayList;)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput p3, p0, Llibs/tl2;->a:I
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final e(Llibs/rp0;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-static {p1}, Llibs/rb2;->b(Llibs/rp0;)Llibs/yl2;
@@ -44,7 +44,7 @@
     move-result-object p1
 
     .line 5
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_1
 
     .line 6
     .line 7
@@ -52,7 +52,7 @@
 
     .line 8
     .line 9
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -60,11 +60,11 @@
 
     .line 12
     .line 13
-    if-ne v1, v0, :cond_13
+    if-ne v1, v0, :cond_1
 
     .line 14
     .line 15
-    :cond_e
+    :cond_0
     iget-object v0, p0, Llibs/tl2;->b:Ljava/util/ArrayList;
 
     .line 16
@@ -74,7 +74,7 @@
     .line 18
     .line 19
     .line 20
-    :cond_13
+    :cond_1
     const/4 p1, 0x0
 
     .line 21

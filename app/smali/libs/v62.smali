@@ -35,7 +35,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .end method
 
 .method public static a(Ljava/io/InputStream;)Llibs/v62;
-    .registers 12
+    .locals 11
 
     .line 1
     new-instance v0, Llibs/v62;
@@ -348,7 +348,7 @@
     const/4 v8, 0x0
 
     .line 149
-    :cond_94
+    :cond_0
     invoke-virtual {p0, v4}, Ljava/io/InputStream;->read([B)I
 
     .line 150
@@ -360,7 +360,7 @@
     const/4 v10, -0x1
 
     .line 154
-    if-eq v9, v10, :cond_bd
+    if-eq v9, v10, :cond_3
 
     .line 155
     .line 156
@@ -372,11 +372,11 @@
     move-result v10
 
     .line 160
-    if-nez v10, :cond_b7
+    if-nez v10, :cond_2
 
     .line 161
     .line 162
-    if-lez v5, :cond_b1
+    if-lez v5, :cond_1
 
     .line 163
     .line 164
@@ -391,7 +391,7 @@
     add-int/2addr v10, v9
 
     .line 169
-    if-le v10, v5, :cond_b1
+    if-le v10, v5, :cond_1
 
     .line 170
     .line 171
@@ -410,20 +410,20 @@
     const/4 v8, 0x1
 
     .line 178
-    :cond_b1
+    :cond_1
     invoke-virtual {v3, v4, v6, v9}, Llibs/fl;->write([BII)V
 
     .line 179
     .line 180
     .line 181
-    if-eqz v8, :cond_94
+    if-eqz v8, :cond_0
 
     .line 182
     .line 183
-    goto :goto_bd
+    goto :goto_0
 
     .line 184
-    :cond_b7
+    :cond_2
     new-instance p0, Ljava/io/InterruptedIOException;
 
     .line 185
@@ -436,8 +436,8 @@
     throw p0
 
     .line 190
-    :cond_bd
-    :goto_bd
+    :cond_3
+    :goto_0
     invoke-virtual {v3}, Llibs/fl;->x()[B
 
     .line 191
@@ -459,8 +459,8 @@
 
     .line 200
     .line 201
-    :goto_c8
-    if-ge v6, v2, :cond_da
+    :goto_1
+    if-ge v6, v2, :cond_4
 
     .line 202
     .line 203
@@ -493,17 +493,17 @@
 
     .line 217
     .line 218
-    goto :goto_c8
+    goto :goto_1
 
     .line 219
-    :cond_da
+    :cond_4
     return-object v0
 .end method
 
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

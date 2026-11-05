@@ -11,10 +11,10 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
-    packed-switch p1, :pswitch_data_3c
+    packed-switch p1, :pswitch_data_0
 
     .line 2
     .line 3
@@ -89,7 +89,7 @@
     return-void
 
     .line 42
-    :pswitch_29
+    :pswitch_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 43
@@ -127,16 +127,16 @@
     nop
 
     .line 61
-    :pswitch_data_3c
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_29
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public varargs a(I[Ljava/lang/Object;)V
-    .registers 4
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/ap3;
@@ -161,17 +161,17 @@
 .end method
 
 .method public b(Ljava/lang/String;)Ljava/lang/String;
-    .registers 7
+    .locals 5
 
     .line 1
-    if-nez p1, :cond_3
+    if-nez p1, :cond_0
 
     .line 2
     .line 3
-    goto :goto_1f
+    goto :goto_0
 
     .line 4
-    :cond_3
+    :cond_0
     iget-object v0, p0, Llibs/q3;->a:Ljava/util/ArrayList;
 
     .line 5
@@ -187,8 +187,8 @@
     const/4 v2, 0x0
 
     .line 11
-    :cond_a
-    if-ge v2, v1, :cond_1f
+    :cond_1
+    if-ge v2, v1, :cond_2
 
     .line 12
     .line 13
@@ -220,7 +220,7 @@
     move-result v4
 
     .line 27
-    if-eqz v4, :cond_a
+    if-eqz v4, :cond_1
 
     .line 28
     .line 29
@@ -231,8 +231,8 @@
     return-object p1
 
     .line 32
-    :cond_1f
-    :goto_1f
+    :cond_2
+    :goto_0
     const/4 p1, 0x0
 
     .line 33

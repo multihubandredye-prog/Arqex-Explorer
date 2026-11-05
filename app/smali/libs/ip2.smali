@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const-string v0, "GMT"
@@ -32,7 +32,7 @@
 .end method
 
 .method public static a(Ljava/lang/String;Ljava/text/SimpleDateFormat;)J
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-static {p0}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
@@ -47,15 +47,15 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
     return-wide v1
 
     .line 10
-    :cond_9
-    :try_start_9
+    :cond_0
+    :try_start_0
     invoke-virtual {p1}, Ljava/text/DateFormat;->getTimeZone()Ljava/util/TimeZone;
 
     .line 11
@@ -68,7 +68,7 @@
 
     .line 15
     .line 16
-    if-eq v0, v3, :cond_17
+    if-eq v0, v3, :cond_1
 
     .line 17
     .line 18
@@ -77,18 +77,18 @@
     .line 19
     .line 20
     .line 21
-    goto :goto_17
+    goto :goto_0
 
     .line 22
-    :catchall_15
+    :catchall_0
     move-exception p0
 
     .line 23
-    goto :goto_20
+    goto :goto_1
 
     .line 24
-    :cond_17
-    :goto_17
+    :cond_1
+    :goto_0
     invoke-virtual {p1, p0}, Ljava/text/DateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
 
     .line 25
@@ -103,14 +103,14 @@
     .line 30
     .line 31
     move-result-wide p0
-    :try_end_1f
-    .catchall {:try_start_9 .. :try_end_1f} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 32
     return-wide p0
 
     .line 33
-    :goto_20
+    :goto_1
     invoke-static {p0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 34
@@ -150,18 +150,18 @@
 .end method
 
 .method public static b(Llibs/a71;Llibs/n32;ZZ)Llibs/n32;
-    .registers 6
+    .locals 2
 
     .line 1
-    if-nez p2, :cond_a
+    if-nez p2, :cond_0
 
     .line 2
     .line 3
-    if-nez p0, :cond_a
+    if-nez p0, :cond_0
 
     .line 4
     .line 5
-    :try_start_4
+    :try_start_0
     invoke-static {}, Llibs/t43;->Item()Z
 
     .line 6
@@ -170,12 +170,12 @@
     move-result v0
 
     .line 9
-    if-nez v0, :cond_29
+    if-nez v0, :cond_2
 
     .line 10
     .line 11
-    :cond_a
-    if-nez p2, :cond_f
+    :cond_0
+    if-nez p2, :cond_1
 
     .line 12
     .line 13
@@ -183,15 +183,15 @@
 
     .line 14
     .line 15
-    goto :goto_11
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_1
     sget-object v0, Llibs/hp3;->b:Llibs/gp3;
 
     .line 17
     .line 18
-    :goto_11
+    :goto_0
     new-instance v1, Llibs/o43;
 
     .line 19
@@ -201,7 +201,7 @@
     .line 21
     .line 22
     .line 23
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_3
 
     .line 24
     .line 25
@@ -221,7 +221,7 @@
 
     .line 32
     .line 33
-    if-eqz p2, :cond_29
+    if-eqz p2, :cond_2
 
     .line 34
     .line 35
@@ -238,11 +238,11 @@
 
     .line 41
     .line 42
-    :cond_29
+    :cond_2
     return-object p1
 
     .line 43
-    :cond_2a
+    :cond_3
     new-instance p0, Ljava/lang/NullPointerException;
 
     .line 44
@@ -257,11 +257,11 @@
     .line 49
     .line 50
     throw p0
-    :try_end_32
-    .catchall {:try_start_4 .. :try_end_32} :catchall_32
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 51
-    :catchall_32
+    :catchall_0
     move-exception p0
 
     .line 52

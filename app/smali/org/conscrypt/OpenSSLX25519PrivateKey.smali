@@ -19,7 +19,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/16 v0, 0x10
@@ -30,7 +30,7 @@
 
     .line 4
     .line 5
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     .line 6
     .line 7
@@ -42,7 +42,7 @@
     return-void
 
     .line 11
-    :array_a
+    :array_0
     .array-data 1
         0x30t
         0x2et
@@ -64,7 +64,7 @@
 .end method
 
 .method public constructor <init>(Ljava/security/spec/EncodedKeySpec;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -103,11 +103,11 @@
     const/4 v2, 0x0
 
     .line 19
-    if-eqz v1, :cond_24
+    if-eqz v1, :cond_0
 
     .line 20
     .line 21
-    :try_start_14
+    :try_start_0
     invoke-static {v0}, Lorg/conscrypt/NativeCrypto;->EVP_raw_X25519_private_key([B)[B
 
     .line 22
@@ -117,27 +117,27 @@
 
     .line 25
     iput-object v0, p0, Lorg/conscrypt/OpenSSLX25519PrivateKey;->uCoordinate:[B
-    :try_end_1a
-    .catch Ljava/security/InvalidKeyException; {:try_start_14 .. :try_end_1a} :catch_1d
-    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_14 .. :try_end_1a} :catch_1b
+    :try_end_0
+    .catch Ljava/security/InvalidKeyException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 26
     .line 27
-    goto :goto_32
+    goto :goto_1
 
     .line 28
-    :catch_1b
+    :catch_0
     move-exception p1
 
     .line 29
-    goto :goto_1e
+    goto :goto_0
 
     .line 30
-    :catch_1d
+    :catch_1
     move-exception p1
 
     .line 31
-    :goto_1e
+    :goto_0
     new-instance v0, Ljava/security/spec/InvalidKeySpecException;
 
     .line 32
@@ -150,7 +150,7 @@
     throw v0
 
     .line 37
-    :cond_24
+    :cond_0
     const-string v1, "raw"
 
     .line 38
@@ -171,7 +171,7 @@
     move-result p1
 
     .line 47
-    if-eqz p1, :cond_3e
+    if-eqz p1, :cond_2
 
     .line 48
     .line 49
@@ -179,7 +179,7 @@
 
     .line 50
     .line 51
-    :goto_32
+    :goto_1
     array-length p1, v0
 
     .line 52
@@ -187,14 +187,14 @@
 
     .line 53
     .line 54
-    if-ne p1, v0, :cond_38
+    if-ne p1, v0, :cond_1
 
     .line 55
     .line 56
     return-void
 
     .line 57
-    :cond_38
+    :cond_1
     const-string p1, "Invalid key size"
 
     .line 58
@@ -207,7 +207,7 @@
     throw v2
 
     .line 63
-    :cond_3e
+    :cond_2
     const-string p1, "Encoding must be in PKCS#8 or raw format"
 
     .line 64
@@ -221,7 +221,7 @@
 .end method
 
 .method public constructor <init>([B)V
-    .registers 4
+    .locals 2
 
     .line 69
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -231,7 +231,7 @@
 
     const/16 v1, 0x20
 
-    if-ne v0, v1, :cond_11
+    if-ne v0, v1, :cond_0
 
     .line 71
     invoke-virtual {p1}, [B->clone()Ljava/lang/Object;
@@ -245,7 +245,7 @@
     return-void
 
     .line 72
-    :cond_11
+    :cond_0
     const-string p1, "Invalid key size"
 
     invoke-static {p1}, Llibs/ic0;->p(Ljava/lang/String;)V
@@ -256,7 +256,7 @@
 .end method
 
 .method private readObject(Ljava/io/ObjectInputStream;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
@@ -275,14 +275,14 @@
 
     .line 8
     .line 9
-    if-ne p1, v0, :cond_b
+    if-ne p1, v0, :cond_0
 
     .line 10
     .line 11
     return-void
 
     .line 12
-    :cond_b
+    :cond_0
     const-string p1, "Invalid key size"
 
     .line 13
@@ -296,7 +296,7 @@
 .end method
 
 .method private writeObject(Ljava/io/ObjectOutputStream;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
@@ -310,14 +310,14 @@
 
 # virtual methods
 .method public destroy()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLX25519PrivateKey;->uCoordinate:[B
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -336,15 +336,15 @@
 
     .line 11
     .line 12
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     .line 2
     .line 3
@@ -354,12 +354,12 @@
     return p1
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v0, p1, Lorg/conscrypt/OpenSSLX25519PrivateKey;
 
     .line 6
     .line 7
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     .line 8
     .line 9
@@ -369,7 +369,7 @@
     return p1
 
     .line 11
-    :cond_a
+    :cond_1
     check-cast p1, Lorg/conscrypt/OpenSSLX25519PrivateKey;
 
     .line 12
@@ -394,7 +394,7 @@
 .end method
 
 .method public getAlgorithm()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "XDH"
@@ -405,14 +405,14 @@
 .end method
 
 .method public getEncoded()[B
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLX25519PrivateKey;->uCoordinate:[B
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -431,7 +431,7 @@
     return-object v0
 
     .line 12
-    :cond_b
+    :cond_0
     const-string v0, "key is destroyed"
 
     .line 13
@@ -448,7 +448,7 @@
 .end method
 
 .method public getFormat()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "PKCS#8"
@@ -459,14 +459,14 @@
 .end method
 
 .method public getU()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLX25519PrivateKey;->uCoordinate:[B
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -485,7 +485,7 @@
     return-object v0
 
     .line 12
-    :cond_b
+    :cond_0
     const-string v0, "key is destroyed"
 
     .line 13
@@ -502,7 +502,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLX25519PrivateKey;->uCoordinate:[B
@@ -521,14 +521,14 @@
 .end method
 
 .method public isDestroyed()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLX25519PrivateKey;->uCoordinate:[B
 
     .line 2
     .line 3
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -538,7 +538,7 @@
     return v0
 
     .line 7
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
     .line 8

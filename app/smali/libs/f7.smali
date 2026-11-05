@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/g7;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final a()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/f7;->a:Llibs/g7;
@@ -52,7 +52,7 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     instance-of v0, p1, Llibs/f7;
@@ -62,7 +62,7 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 5
     .line 6
@@ -78,7 +78,7 @@
 
     .line 11
     .line 12
-    if-ne v0, v2, :cond_1b
+    if-ne v0, v2, :cond_0
 
     .line 13
     .line 14
@@ -90,7 +90,7 @@
 
     .line 17
     .line 18
-    if-ne v0, v2, :cond_1b
+    if-ne v0, v2, :cond_0
 
     .line 19
     .line 20
@@ -102,7 +102,7 @@
 
     .line 23
     .line 24
-    if-ne v0, p1, :cond_1b
+    if-ne v0, p1, :cond_0
 
     .line 25
     .line 26
@@ -112,12 +112,12 @@
     return p1
 
     .line 28
-    :cond_1b
+    :cond_0
     return v1
 .end method
 
 .method public final hashCode()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/f7;->b:I
@@ -143,7 +143,7 @@
 
     .line 11
     .line 12
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_0
 
     .line 13
     .line 14
@@ -155,14 +155,14 @@
     move-result v1
 
     .line 18
-    goto :goto_13
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     const/4 v1, 0x0
 
     .line 20
-    :goto_13
+    :goto_0
     add-int/2addr v0, v1
 
     .line 21

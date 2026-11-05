@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/al;Ljava/util/ArrayList;Llibs/ll1;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final onItemLongClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)Z
-    .registers 8
+    .locals 2
 
     .line 1
     invoke-virtual {p1}, Landroid/widget/AdapterView;->getAdapter()Landroid/widget/Adapter;
@@ -105,7 +105,7 @@
     const/4 p2, 0x0
 
     .line 31
-    if-eqz p1, :cond_75
+    if-eqz p1, :cond_4
 
     .line 32
     .line 33
@@ -117,7 +117,7 @@
 
     .line 36
     .line 37
-    if-gtz p5, :cond_75
+    if-gtz p5, :cond_4
 
     .line 38
     .line 39
@@ -128,18 +128,18 @@
     const/4 v0, 0x1
 
     .line 42
-    if-eq p5, v0, :cond_2e
+    if-eq p5, v0, :cond_0
 
     .line 43
     .line 44
     const/4 v1, 0x2
 
     .line 45
-    if-ne p5, v1, :cond_75
+    if-ne p5, v1, :cond_4
 
     .line 46
     .line 47
-    :cond_2e
+    :cond_0
     invoke-virtual {p1}, Llibs/m52;->Set()Z
 
     .line 48
@@ -148,7 +148,7 @@
     move-result p5
 
     .line 51
-    if-nez p5, :cond_75
+    if-nez p5, :cond_4
 
     .line 52
     .line 53
@@ -160,7 +160,7 @@
 
     .line 56
     .line 57
-    if-eqz p5, :cond_61
+    if-eqz p5, :cond_2
 
     .line 58
     .line 59
@@ -176,8 +176,8 @@
     move-result-object p1
 
     .line 65
-    :cond_40
-    :goto_40
+    :cond_1
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 66
@@ -186,7 +186,7 @@
     move-result p2
 
     .line 69
-    if-eqz p2, :cond_6f
+    if-eqz p2, :cond_3
 
     .line 70
     .line 71
@@ -206,14 +206,14 @@
 
     .line 78
     .line 79
-    if-eqz p2, :cond_40
+    if-eqz p2, :cond_1
 
     .line 80
     .line 81
     array-length p3, p2
 
     .line 82
-    if-lez p3, :cond_40
+    if-lez p3, :cond_1
 
     .line 83
     .line 84
@@ -233,7 +233,7 @@
     move-result p2
 
     .line 92
-    if-ne p2, p4, :cond_40
+    if-ne p2, p4, :cond_1
 
     .line 93
     .line 94
@@ -242,10 +242,10 @@
     .line 95
     .line 96
     .line 97
-    goto :goto_40
+    goto :goto_0
 
     .line 98
-    :cond_61
+    :cond_2
     iput-boolean v0, p1, Llibs/m52;->Lambda:Z
 
     .line 99
@@ -274,7 +274,7 @@
     .line 110
     .line 111
     .line 112
-    :cond_6f
+    :cond_3
     iget-object p1, p0, Llibs/pk;->Z:Llibs/ll1;
 
     .line 113
@@ -287,6 +287,6 @@
     return v0
 
     .line 118
-    :cond_75
+    :cond_4
     return p2
 .end method

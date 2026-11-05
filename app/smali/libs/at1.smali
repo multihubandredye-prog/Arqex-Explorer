@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/o7;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final onClose(Ljava/io/IOException;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iget-object p1, p0, Llibs/at1;->a:Llibs/o7;

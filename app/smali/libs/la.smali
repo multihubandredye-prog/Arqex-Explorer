@@ -16,7 +16,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/util/HashMap;
@@ -120,7 +120,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -152,7 +152,7 @@
 
     .line 15
     .line 16
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 17
     .line 18
@@ -175,7 +175,7 @@
     return-void
 
     .line 27
-    :cond_1a
+    :cond_0
     const-string v0, "No Mac defined for "
 
     .line 28
@@ -202,7 +202,7 @@
 
 # virtual methods
 .method public final a()[B
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/la;->a:Llibs/to1;
@@ -230,7 +230,7 @@
 .end method
 
 .method public final b([B)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/hh1;
@@ -255,7 +255,7 @@
 .end method
 
 .method public final reset()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/la;->a:Llibs/to1;
@@ -271,7 +271,7 @@
 .end method
 
 .method public final update([B)V
-    .registers 5
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
@@ -293,7 +293,7 @@
 .end method
 
 .method public final update([BII)V
-    .registers 5
+    .locals 1
 
     .line 9
     iget-object v0, p0, Llibs/la;->a:Llibs/to1;

@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/as;[BB)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/yr;->a:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final a(Ljava/nio/ByteBuffer;)V
-    .registers 7
+    .locals 5
 
     .line 1
     iget-byte v0, p0, Llibs/yr;->a:B
@@ -57,7 +57,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_60
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -115,7 +115,7 @@
     .line 37
     .line 38
     .line 39
-    if-eqz v1, :cond_2b
+    if-eqz v1, :cond_0
 
     .line 40
     .line 41
@@ -124,11 +124,11 @@
     .line 42
     .line 43
     .line 44
-    :cond_2b
+    :cond_0
     return-void
 
     .line 45
-    :pswitch_2c
+    :pswitch_0
     const-string v0, "exit-status"
 
     .line 46
@@ -137,7 +137,7 @@
 
     .line 48
     .line 49
-    :try_start_30
+    :try_start_0
     invoke-virtual {p1, v3}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
     .line 50
@@ -195,16 +195,16 @@
     .line 78
     .line 79
     invoke-virtual {p1, v1}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
-    :try_end_51
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_30 .. :try_end_51} :catch_52
+    :try_end_0
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 80
     .line 81
     .line 82
-    goto :goto_5e
+    goto :goto_0
 
     .line 83
-    :catch_52
+    :catch_0
     iget-object p1, v2, Llibs/as;->a:Llibs/hy;
 
     .line 84
@@ -229,21 +229,21 @@
     .line 93
     .line 94
     .line 95
-    :goto_5e
+    :goto_0
     return-void
 
     .line 96
     nop
 
     .line 97
-    :pswitch_data_60
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2c
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final b(Ljava/lang/Long;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-byte p1, p0, Llibs/yr;->a:B
@@ -260,7 +260,7 @@
 
     .line 6
     .line 7
-    packed-switch p1, :pswitch_data_4c
+    packed-switch p1, :pswitch_data_0
 
     .line 8
     .line 9
@@ -273,7 +273,7 @@
     move-result p1
 
     .line 14
-    if-eqz p1, :cond_2e
+    if-eqz p1, :cond_0
 
     .line 15
     .line 16
@@ -334,11 +334,11 @@
     .line 45
     .line 46
     .line 47
-    :cond_2e
+    :cond_0
     return-void
 
     .line 48
-    :pswitch_2f
+    :pswitch_0
     invoke-static {v1}, Llibs/zm1;->Context(I)Z
 
     .line 49
@@ -347,7 +347,7 @@
     move-result p1
 
     .line 52
-    if-eqz p1, :cond_4a
+    if-eqz p1, :cond_1
 
     .line 53
     .line 54
@@ -390,15 +390,15 @@
     .line 73
     .line 74
     .line 75
-    :cond_4a
+    :cond_1
     return-void
 
     .line 76
     nop
 
     .line 77
-    :pswitch_data_4c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2f
+        :pswitch_0
     .end packed-switch
 .end method

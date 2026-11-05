@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Param;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -33,7 +33,7 @@
     const/4 v2, 0x1
 
     .line 10
-    if-lt v0, v2, :cond_3d
+    if-lt v0, v2, :cond_2
 
     .line 11
     .line 12
@@ -48,7 +48,7 @@
     const/4 v3, 0x2
 
     .line 17
-    if-gt v0, v3, :cond_3d
+    if-gt v0, v3, :cond_2
 
     .line 18
     .line 19
@@ -79,7 +79,7 @@
     move-result v0
 
     .line 32
-    if-le v0, v2, :cond_3c
+    if-le v0, v2, :cond_1
 
     .line 33
     .line 34
@@ -99,7 +99,7 @@
 
     .line 41
     .line 42
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_0
 
     .line 43
     .line 44
@@ -107,7 +107,7 @@
 
     .line 45
     .line 46
-    if-nez v0, :cond_36
+    if-nez v0, :cond_0
 
     .line 47
     .line 48
@@ -126,7 +126,7 @@
     return-void
 
     .line 55
-    :cond_36
+    :cond_0
     const-string p1, "Bad tag for \'content\'"
 
     .line 56
@@ -139,11 +139,11 @@
     throw v1
 
     .line 61
-    :cond_3c
+    :cond_1
     return-void
 
     .line 62
-    :cond_3d
+    :cond_2
     const-string v0, "Bad sequence size: "
 
     .line 63
@@ -167,7 +167,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/Init;
@@ -195,7 +195,7 @@
 
     .line 13
     .line 14
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_0
 
     .line 15
     .line 16
@@ -213,7 +213,7 @@
     .line 22
     .line 23
     .line 24
-    :cond_17
+    :cond_0
     new-instance v1, Llibs/hb;
 
     .line 25

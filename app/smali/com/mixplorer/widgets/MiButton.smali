@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -16,7 +16,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 5
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
@@ -31,7 +31,7 @@
 
     .line 6
     .line 7
-    if-nez p1, :cond_1c
+    if-nez p1, :cond_0
 
     .line 8
     .line 9
@@ -75,7 +75,7 @@
 
     .line 28
     .line 29
-    :cond_1c
+    :cond_0
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
 
     .line 30
@@ -85,7 +85,7 @@
 
     .line 33
     .line 34
-    if-nez p1, :cond_37
+    if-nez p1, :cond_1
 
     .line 35
     .line 36
@@ -131,7 +131,7 @@
 
     .line 55
     .line 56
-    :cond_37
+    :cond_1
     invoke-static {p1}, Llibs/va3;->d(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
     .line 57

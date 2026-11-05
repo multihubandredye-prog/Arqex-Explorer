@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 99
     invoke-direct {p0}, Llibs/qd;-><init>()V
@@ -37,7 +37,7 @@
 .end method
 
 .method public constructor <init>(Lorg/json/JSONObject;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Llibs/qd;-><init>()V
@@ -169,7 +169,7 @@
 
     .line 65
     .line 66
-    if-eqz v0, :cond_53
+    if-eqz v0, :cond_0
 
     .line 67
     .line 68
@@ -197,21 +197,21 @@
     move-result v0
 
     .line 80
-    if-eqz v0, :cond_53
+    if-eqz v0, :cond_0
 
     .line 81
     .line 82
     const/4 v0, 0x1
 
     .line 83
-    goto :goto_54
+    goto :goto_0
 
     .line 84
-    :cond_53
+    :cond_0
     const/4 v0, 0x0
 
     .line 85
-    :goto_54
+    :goto_0
     invoke-direct {v1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
     .line 86
@@ -243,7 +243,7 @@
 
 # virtual methods
 .method public final a()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -253,14 +253,14 @@
 .end method
 
 .method public final b()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/ic1;->Z:Ljava/lang/String;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -276,7 +276,7 @@
     move-result v0
 
     .line 11
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
@@ -286,7 +286,7 @@
     return v0
 
     .line 15
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
     .line 16
@@ -294,7 +294,7 @@
 .end method
 
 .method public final c()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, ""
@@ -305,7 +305,7 @@
 .end method
 
 .method public final d()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, ""
@@ -316,7 +316,7 @@
 .end method
 
 .method public final e()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, ""
@@ -327,7 +327,7 @@
 .end method
 
 .method public final f()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ic1;->Lambda:Ljava/lang/String;
@@ -338,7 +338,7 @@
 .end method
 
 .method public final g()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, ""
@@ -349,7 +349,7 @@
 .end method
 
 .method public final h()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -400,7 +400,7 @@
 .end method
 
 .method public final i()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Llibs/ic1;->Mu:J
@@ -411,7 +411,7 @@
 .end method
 
 .method public final j()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -421,7 +421,7 @@
 .end method
 
 .method public final k()[Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -431,7 +431,7 @@
 .end method
 
 .method public final l()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -441,7 +441,7 @@
 .end method
 
 .method public final m()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ic1;->Y:Ljava/lang/String;
@@ -452,7 +452,7 @@
 .end method
 
 .method public final n()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -462,7 +462,7 @@
 .end method
 
 .method public final p()Ljava/util/concurrent/atomic/AtomicBoolean;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ic1;->Xi:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -473,7 +473,7 @@
 .end method
 
 .method public final q()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Llibs/ic1;->Nu:J
@@ -484,7 +484,7 @@
 .end method
 
 .method public final r()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ic1;->X:Ljava/lang/String;

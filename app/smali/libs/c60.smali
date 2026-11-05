@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     const/4 v0, 0x2
@@ -49,7 +49,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -61,14 +61,14 @@
 .end method
 
 .method public static a(Ljava/security/PublicKey;)Llibs/p50;
-    .registers 6
+    .locals 5
 
     .line 1
     instance-of v0, p0, Ljava/security/interfaces/DSAPublicKey;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -153,7 +153,7 @@
     return-object v0
 
     .line 46
-    :cond_2d
+    :cond_0
     new-instance v0, Ljava/security/InvalidKeyException;
 
     .line 47

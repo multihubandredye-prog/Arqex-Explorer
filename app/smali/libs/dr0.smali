@@ -9,7 +9,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/dr0;->a:B
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final a(Llibs/p23;Ljava/nio/ByteBuffer;)Llibs/gb2;
-    .registers 15
+    .locals 12
 
     .line 1
     iget-byte v0, p0, Llibs/dr0;->a:B
@@ -51,26 +51,26 @@
 
     .line 9
     .line 10
-    packed-switch v0, :pswitch_data_68
+    packed-switch v0, :pswitch_data_0
 
     .line 11
     .line 12
     .line 13
-    :try_start_c
+    :try_start_0
     invoke-static {p2}, Llibs/jp1;->b(Ljava/nio/ByteBuffer;)Llibs/jp1;
 
     .line 14
     .line 15
     .line 16
     move-result-object v1
-    :try_end_10
-    .catchall {:try_start_c .. :try_end_10} :catchall_11
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 17
-    goto :goto_2c
+    goto :goto_0
 
     .line 18
-    :catchall_11
+    :catchall_0
     move-exception v0
 
     .line 19
@@ -124,12 +124,12 @@
     .line 43
     .line 44
     .line 45
-    :goto_2c
+    :goto_0
     return-object v1
 
     .line 46
-    :pswitch_2d
-    :try_start_2d
+    :pswitch_0
+    :try_start_1
     iget-wide v10, p1, Llibs/p23;->e:J
 
     .line 47
@@ -183,8 +183,8 @@
     .line 71
     .line 72
     invoke-direct {p2, v0, p1, v8, v9}, Llibs/kn;-><init>(IIJ)V
-    :try_end_4a
-    .catchall {:try_start_2d .. :try_end_4a} :catchall_4c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 73
     .line 74
@@ -192,10 +192,10 @@
     move-object v1, p2
 
     .line 76
-    goto :goto_67
+    goto :goto_1
 
     .line 77
-    :catchall_4c
+    :catchall_1
     move-exception v0
 
     .line 78
@@ -249,25 +249,25 @@
     .line 102
     .line 103
     .line 104
-    :goto_67
+    :goto_1
     return-object v1
 
     .line 105
-    :pswitch_data_68
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2d
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/dr0;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_c
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -279,7 +279,7 @@
     return-object v0
 
     .line 9
-    :pswitch_8
+    :pswitch_0
     const-string v0, "FileSystem"
 
     .line 10
@@ -290,8 +290,8 @@
     nop
 
     .line 13
-    :pswitch_data_c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_8
+        :pswitch_0
     .end packed-switch
 .end method

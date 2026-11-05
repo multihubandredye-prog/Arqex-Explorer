@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/TextEditorActivity;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iput-object p1, p0, Llibs/ll3;->f:Lcom/mixplorer/activities/TextEditorActivity;
@@ -54,7 +54,7 @@
     const/4 v1, 0x1
 
     .line 19
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_0
 
     .line 20
     .line 21
@@ -66,14 +66,14 @@
     move-result p1
 
     .line 25
-    if-le p1, v1, :cond_1b
+    if-le p1, v1, :cond_0
 
     .line 26
     .line 27
     const/4 v1, 0x2
 
     .line 28
-    :cond_1b
+    :cond_0
     iput v1, p0, Llibs/ll3;->e:I
 
     .line 29
@@ -84,7 +84,7 @@
 
 # virtual methods
 .method public final a(Lcom/mixplorer/widgets/MiViewPager;ILjava/lang/Object;)V
-    .registers 4
+    .locals 0
 
     .line 1
     check-cast p3, Landroid/widget/FrameLayout;
@@ -100,7 +100,7 @@
 .end method
 
 .method public final c()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ll3;->d:Ljava/util/ArrayList;
@@ -119,7 +119,7 @@
 .end method
 
 .method public final d()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, -0x2
@@ -129,7 +129,7 @@
 .end method
 
 .method public final e()F
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/ll3;->e:I
@@ -150,13 +150,13 @@
 .end method
 
 .method public final f(Lcom/mixplorer/widgets/MiViewPager;I)Ljava/lang/Object;
-    .registers 6
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-ltz p2, :cond_12
+    if-ltz p2, :cond_0
 
     .line 3
     .line 4
@@ -172,7 +172,7 @@
     move-result v2
 
     .line 10
-    if-ge p2, v2, :cond_12
+    if-ge p2, v2, :cond_0
 
     .line 11
     .line 12
@@ -188,22 +188,22 @@
 
     .line 17
     .line 18
-    goto :goto_13
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     move-object p2, v0
 
     .line 20
-    :goto_13
-    if-nez p2, :cond_16
+    :goto_0
+    if-nez p2, :cond_1
 
     .line 21
     .line 22
     return-object v0
 
     .line 23
-    :cond_16
+    :cond_1
     invoke-virtual {p2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     .line 24
@@ -212,7 +212,7 @@
     move-result-object v0
 
     .line 27
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_2
 
     .line 28
     .line 29
@@ -240,7 +240,7 @@
 
     .line 40
     .line 41
-    :cond_28
+    :cond_2
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     .line 42
@@ -250,7 +250,7 @@
 .end method
 
 .method public final g(Landroid/view/View;Ljava/lang/Object;)Z
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p1, p2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z

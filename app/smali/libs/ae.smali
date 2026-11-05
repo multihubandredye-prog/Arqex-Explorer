@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/security/KeyFactorySpi;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public a(Llibs/bg2;)Ljava/security/PrivateKey;
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object v0, p1, Llibs/bg2;->Y:Llibs/$f;
@@ -33,7 +33,7 @@
     const/4 v1, 0x0
 
     .line 6
-    :goto_5
+    :goto_0
     sget-object v2, Llibs/c60;->a:[Llibs/App;
 
     .line 7
@@ -41,7 +41,7 @@
     array-length v3, v2
 
     .line 9
-    if-eq v1, v3, :cond_1b
+    if-eq v1, v3, :cond_1
 
     .line 10
     .line 11
@@ -57,7 +57,7 @@
     move-result v2
 
     .line 17
-    if-eqz v2, :cond_18
+    if-eqz v2, :cond_0
 
     .line 18
     .line 19
@@ -73,15 +73,15 @@
     return-object v0
 
     .line 25
-    :cond_18
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
     .line 26
     .line 27
-    goto :goto_5
+    goto :goto_0
 
     .line 28
-    :cond_1b
+    :cond_1
     const-string p1, "algorithm identifier "
 
     .line 29
@@ -102,7 +102,7 @@
 .end method
 
 .method public b(Llibs/ji3;)Ljava/security/PublicKey;
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object v0, p1, Llibs/ji3;->X:Llibs/$f;
@@ -116,7 +116,7 @@
     const/4 v1, 0x0
 
     .line 6
-    :goto_5
+    :goto_0
     sget-object v2, Llibs/c60;->a:[Llibs/App;
 
     .line 7
@@ -124,7 +124,7 @@
     array-length v3, v2
 
     .line 9
-    if-eq v1, v3, :cond_1b
+    if-eq v1, v3, :cond_1
 
     .line 10
     .line 11
@@ -140,7 +140,7 @@
     move-result v2
 
     .line 17
-    if-eqz v2, :cond_18
+    if-eqz v2, :cond_0
 
     .line 18
     .line 19
@@ -156,15 +156,15 @@
     return-object v0
 
     .line 25
-    :cond_18
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
     .line 26
     .line 27
-    goto :goto_5
+    goto :goto_0
 
     .line 28
-    :cond_1b
+    :cond_1
     const-string p1, "algorithm identifier "
 
     .line 29
@@ -185,7 +185,7 @@
 .end method
 
 .method public engineGeneratePrivate(Ljava/security/spec/KeySpec;)Ljava/security/PrivateKey;
-    .registers 4
+    .locals 2
 
     .line 1
     instance-of v0, p1, Ljava/security/spec/PKCS8EncodedKeySpec;
@@ -195,11 +195,11 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     check-cast p1, Ljava/security/spec/PKCS8EncodedKeySpec;
 
     .line 7
@@ -226,14 +226,14 @@
     .line 18
     .line 19
     move-result-object p1
-    :try_end_13
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_13} :catch_14
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 20
     return-object p1
 
     .line 21
-    :catch_14
+    :catch_0
     const-string p1, "encoded key spec not recognised"
 
     .line 22
@@ -246,7 +246,7 @@
     return-object v1
 
     .line 27
-    :cond_1a
+    :cond_0
     const-string p1, "key spec not recognised"
 
     .line 28
@@ -260,7 +260,7 @@
 .end method
 
 .method public engineGeneratePublic(Ljava/security/spec/KeySpec;)Ljava/security/PublicKey;
-    .registers 4
+    .locals 2
 
     .line 1
     instance-of v0, p1, Ljava/security/spec/X509EncodedKeySpec;
@@ -270,11 +270,11 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     check-cast p1, Ljava/security/spec/X509EncodedKeySpec;
 
     .line 7
@@ -301,14 +301,14 @@
     .line 18
     .line 19
     move-result-object p1
-    :try_end_13
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_13} :catch_14
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 20
     return-object p1
 
     .line 21
-    :catch_14
+    :catch_0
     const-string p1, "encoded key spec not recognised"
 
     .line 22
@@ -321,7 +321,7 @@
     return-object v1
 
     .line 27
-    :cond_1a
+    :cond_0
     const-string p1, "key spec not recognised"
 
     .line 28
@@ -335,7 +335,7 @@
 .end method
 
 .method public engineGetKeySpec(Ljava/security/Key;Ljava/lang/Class;)Ljava/security/spec/KeySpec;
-    .registers 5
+    .locals 2
 
     .line 1
     const-class v0, Ljava/security/spec/PKCS8EncodedKeySpec;
@@ -350,7 +350,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -374,7 +374,7 @@
     move-result v0
 
     .line 19
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_0
 
     .line 20
     .line 21
@@ -398,7 +398,7 @@
     return-object p2
 
     .line 31
-    :cond_1e
+    :cond_0
     const-class v0, Ljava/security/spec/X509EncodedKeySpec;
 
     .line 32
@@ -411,7 +411,7 @@
     move-result v0
 
     .line 37
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_1
 
     .line 38
     .line 39
@@ -435,7 +435,7 @@
     move-result v0
 
     .line 49
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_1
 
     .line 50
     .line 51
@@ -459,7 +459,7 @@
     return-object p2
 
     .line 61
-    :cond_3c
+    :cond_1
     invoke-static {p1, p2}, Llibs/bf0;->b(Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 62

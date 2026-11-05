@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/EBookReaderActivity;Lcom/mixplorer/widgets/MiEditText;I)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object p1, p0, Llibs/af0;->X:Lcom/mixplorer/activities/EBookReaderActivity;

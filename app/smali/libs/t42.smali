@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/c2;Llibs/m52;Ljava/util/concurrent/atomic/AtomicBoolean;)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/t42;->c:Llibs/c2;
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final interrupted()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/t42;->a:Llibs/m52;
@@ -54,14 +54,14 @@
     move-result v0
 
     .line 7
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     .line 8
     .line 9
     return-void
 
     .line 10
-    :cond_9
+    :cond_0
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 11
@@ -71,7 +71,7 @@
 .end method
 
 .method public final onProgress(JJ)V
-    .registers 6
+    .locals 1
 
     .line 1
     iget-object p3, p0, Llibs/t42;->a:Llibs/m52;
@@ -86,7 +86,7 @@
     move-result p4
 
     .line 7
-    if-nez p4, :cond_f
+    if-nez p4, :cond_0
 
     .line 8
     .line 9
@@ -105,7 +105,7 @@
     return-void
 
     .line 16
-    :cond_f
+    :cond_0
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 17
@@ -115,7 +115,7 @@
 .end method
 
 .method public final onProgressOffset(JJ)V
-    .registers 6
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/t42;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -130,7 +130,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -139,6 +139,6 @@
     .line 10
     .line 11
     .line 12
-    :cond_b
+    :cond_0
     return-void
 .end method

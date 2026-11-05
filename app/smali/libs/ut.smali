@@ -45,7 +45,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     sget v0, Llibs/sa3;->l:I
@@ -72,7 +72,7 @@
 .end method
 
 .method public constructor <init>(Z)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -279,7 +279,7 @@
 
 # virtual methods
 .method public final a(Landroid/graphics/Canvas;)Z
-    .registers 16
+    .locals 14
 
     .line 1
     iget-object v0, p0, Llibs/ut;->d:Landroid/graphics/RectF;
@@ -297,19 +297,19 @@
     const/4 v1, 0x0
 
     .line 8
-    if-nez v0, :cond_fb
+    if-nez v0, :cond_8
 
     .line 9
     .line 10
-    if-nez p1, :cond_d
+    if-nez p1, :cond_0
 
     .line 11
     .line 12
-    goto/16 :goto_fb
+    goto/16 :goto_2
 
     .line 13
     .line 14
-    :cond_d
+    :cond_0
     iget-object v3, p0, Llibs/ut;->d:Landroid/graphics/RectF;
 
     .line 15
@@ -352,7 +352,7 @@
 
     .line 33
     .line 34
-    if-eqz p1, :cond_c3
+    if-eqz p1, :cond_6
 
     .line 35
     .line 36
@@ -386,7 +386,7 @@
 
     .line 49
     .line 50
-    if-ltz v7, :cond_80
+    if-ltz v7, :cond_3
 
     .line 51
     .line 52
@@ -420,7 +420,7 @@
 
     .line 67
     .line 68
-    if-lez v7, :cond_51
+    if-lez v7, :cond_1
 
     .line 69
     .line 70
@@ -450,7 +450,7 @@
 
     .line 81
     .line 82
-    :cond_51
+    :cond_1
     div-double/2addr v3, v5
 
     .line 83
@@ -501,7 +501,7 @@
 
     .line 105
     .line 106
-    if-eqz v4, :cond_70
+    if-eqz v4, :cond_2
 
     .line 107
     .line 108
@@ -513,10 +513,10 @@
 
     .line 111
     .line 112
-    goto :goto_83
+    goto :goto_0
 
     .line 113
-    :cond_70
+    :cond_2
     const/high16 v4, 0x3f800000    # 1.0f
 
     .line 114
@@ -550,10 +550,10 @@
 
     .line 127
     .line 128
-    goto :goto_83
+    goto :goto_0
 
     .line 129
-    :cond_80
+    :cond_3
     add-long/2addr v3, v1
 
     .line 130
@@ -561,7 +561,7 @@
 
     .line 131
     .line 132
-    :goto_83
+    :goto_0
     iget v3, p0, Llibs/ut;->j:F
 
     .line 133
@@ -599,7 +599,7 @@
 
     .line 148
     .line 149
-    if-lez v3, :cond_99
+    if-lez v3, :cond_4
 
     .line 150
     .line 151
@@ -610,7 +610,7 @@
 
     .line 153
     .line 154
-    :cond_99
+    :cond_4
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     .line 155
@@ -635,7 +635,7 @@
     move-result v1
 
     .line 166
-    if-nez v1, :cond_c1
+    if-nez v1, :cond_5
 
     .line 167
     .line 168
@@ -651,7 +651,7 @@
     move-result v1
 
     .line 174
-    if-nez v1, :cond_c1
+    if-nez v1, :cond_5
 
     .line 175
     .line 176
@@ -691,14 +691,14 @@
     .line 192
     .line 193
     .line 194
-    :cond_c1
+    :cond_5
     const/4 v1, 0x1
 
     .line 195
-    goto :goto_d5
+    goto :goto_1
 
     .line 196
-    :cond_c3
+    :cond_6
     iget p1, p0, Llibs/ut;->j:F
 
     .line 197
@@ -711,7 +711,7 @@
     move-result p1
 
     .line 202
-    if-nez p1, :cond_d5
+    if-nez p1, :cond_7
 
     .line 203
     .line 204
@@ -735,13 +735,13 @@
     .line 212
     .line 213
     .line 214
-    :cond_d5
-    :goto_d5
+    :cond_7
+    :goto_1
     iget-boolean p1, p0, Llibs/ut;->p:Z
 
     .line 215
     .line 216
-    if-eqz p1, :cond_fb
+    if-eqz p1, :cond_8
 
     .line 217
     .line 218
@@ -757,7 +757,7 @@
     move-result p1
 
     .line 224
-    if-nez p1, :cond_fb
+    if-nez p1, :cond_8
 
     .line 225
     .line 226
@@ -819,13 +819,13 @@
     .line 250
     .line 251
     .line 252
-    :cond_fb
-    :goto_fb
+    :cond_8
+    :goto_2
     return v1
 .end method
 
 .method public final b(FII)V
-    .registers 8
+    .locals 4
 
     .line 1
     iput p2, p0, Llibs/ut;->n:I
@@ -934,7 +934,7 @@
 
     .line 46
     .line 47
-    if-eqz p1, :cond_38
+    if-eqz p1, :cond_0
 
     .line 48
     .line 49
@@ -953,14 +953,14 @@
 
     .line 55
     .line 56
-    goto :goto_39
+    goto :goto_0
 
     .line 57
-    :cond_38
+    :cond_0
     const/4 p1, 0x0
 
     .line 58
-    :goto_39
+    :goto_0
     iget p2, v1, Landroid/graphics/RectF;->top:F
 
     .line 59
@@ -990,7 +990,7 @@
 .end method
 
 .method public final c(III)V
-    .registers 5
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ut;->a:Landroid/graphics/Paint;
@@ -1024,14 +1024,14 @@
 .end method
 
 .method public final d(Z)V
-    .registers 4
+    .locals 2
 
     .line 1
     iput-boolean p1, p0, Llibs/ut;->k:Z
 
     .line 2
     .line 3
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 4
     .line 5
@@ -1050,7 +1050,7 @@
     return-void
 
     .line 12
-    :cond_b
+    :cond_0
     const/4 p1, 0x0
 
     .line 13

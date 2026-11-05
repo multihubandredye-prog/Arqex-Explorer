@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ko0;[BZ)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0, p3}, Llibs/Tau;-><init>(Z)V
@@ -31,7 +31,7 @@
 .end method
 
 .method public static u(Llibs/ko0;Z)Llibs/ao0;
-    .registers 6
+    .locals 4
 
     .line 1
     new-instance v0, Llibs/ao0;
@@ -54,7 +54,7 @@
     .line 9
     .line 10
     .line 11
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     .line 12
     .line 13
@@ -70,7 +70,7 @@
 
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     .line 20
@@ -112,7 +112,7 @@
 
 # virtual methods
 .method public final List(Llibs/t73;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Llibs/ao0;->x()Llibs/t73;
@@ -131,7 +131,7 @@
     move-result v0
 
     .line 9
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     .line 10
     .line 11
@@ -154,12 +154,12 @@
     .line 18
     .line 19
     .line 20
-    :cond_13
+    :cond_0
     return-void
 .end method
 
 .method public final Map(J)V
-    .registers 9
+    .locals 6
 
     .line 1
     const-wide/32 v0, 0x7fffffff
@@ -171,7 +171,7 @@
 
     .line 5
     .line 6
-    if-gtz v2, :cond_2a
+    if-gtz v2, :cond_1
 
     .line 7
     .line 8
@@ -191,7 +191,7 @@
 
     .line 15
     .line 16
-    if-ne v0, v1, :cond_25
+    if-ne v0, v1, :cond_0
 
     .line 17
     .line 18
@@ -237,7 +237,7 @@
     return-void
 
     .line 38
-    :cond_25
+    :cond_0
     long-to-int p2, p1
 
     .line 39
@@ -249,7 +249,7 @@
     return-void
 
     .line 43
-    :cond_2a
+    :cond_1
     invoke-static {}, Llibs/ic0;->w()V
 
     .line 44
@@ -259,7 +259,7 @@
 .end method
 
 .method public final Object(J)V
-    .registers 6
+    .locals 3
 
     .line 1
     const/16 v0, 0xe
@@ -304,7 +304,7 @@
 .end method
 
 .method public final String(J)V
-    .registers 6
+    .locals 3
 
     .line 1
     const/16 v0, 0x16
@@ -349,7 +349,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -416,7 +416,7 @@
 .end method
 
 .method public final v()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/ao0;->Y:[B
@@ -439,7 +439,7 @@
 .end method
 
 .method public final w()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/ao0;->Y:[B
@@ -462,7 +462,7 @@
 .end method
 
 .method public final x()Llibs/t73;
-    .registers 7
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/ao0;->Y:[B
@@ -476,7 +476,7 @@
 
     .line 5
     .line 6
-    if-nez v2, :cond_9
+    if-nez v2, :cond_0
 
     .line 7
     .line 8
@@ -486,7 +486,7 @@
     return-object v0
 
     .line 10
-    :cond_9
+    :cond_0
     sget-object v2, Llibs/t73;->b:Ljava/nio/charset/Charset;
 
     .line 11
@@ -502,8 +502,8 @@
     const/4 v4, 0x0
 
     .line 17
-    :goto_10
-    if-ge v4, v2, :cond_1c
+    :goto_0
+    if-ge v4, v2, :cond_1
 
     .line 18
     .line 19
@@ -526,10 +526,10 @@
 
     .line 27
     .line 28
-    goto :goto_10
+    goto :goto_0
 
     .line 29
-    :cond_1c
+    :cond_1
     aget-byte v2, v0, v1
 
     .line 30
@@ -541,7 +541,7 @@
     const/4 v4, 0x5
 
     .line 34
-    if-ne v2, v4, :cond_27
+    if-ne v2, v4, :cond_2
 
     .line 35
     .line 36
@@ -553,7 +553,7 @@
 
     .line 39
     .line 40
-    :cond_27
+    :cond_2
     const/4 v2, 0x3
 
     .line 41
@@ -561,8 +561,8 @@
 
     .line 42
     .line 43
-    :goto_2a
-    if-ge v1, v2, :cond_38
+    :goto_1
+    if-ge v1, v2, :cond_3
 
     .line 44
     .line 45
@@ -589,10 +589,10 @@
 
     .line 55
     .line 56
-    goto :goto_2a
+    goto :goto_1
 
     .line 57
-    :cond_38
+    :cond_3
     new-instance v0, Llibs/t73;
 
     .line 58
@@ -640,7 +640,7 @@
 .end method
 
 .method public final y()J
-    .registers 7
+    .locals 6
 
     .line 1
     sget-object v0, Llibs/ko0;->Nu:Llibs/jo0;
@@ -659,7 +659,7 @@
 
     .line 8
     .line 9
-    if-ne v2, v0, :cond_1b
+    if-ne v2, v0, :cond_0
 
     .line 10
     .line 11
@@ -702,7 +702,7 @@
     return-wide v0
 
     .line 28
-    :cond_1b
+    :cond_0
     invoke-static {v1, v3}, Llibs/en1;->n(I[B)I
 
     .line 29
@@ -718,7 +718,7 @@
 .end method
 
 .method public final z()Z
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Llibs/ao0;->v()I
@@ -735,7 +735,7 @@
     and-int/2addr v0, v1
 
     .line 7
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -751,7 +751,7 @@
 
     .line 14
     .line 15
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_0
 
     .line 16
     .line 17
@@ -767,7 +767,7 @@
 
     .line 22
     .line 23
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_0
 
     .line 24
     .line 25
@@ -783,14 +783,14 @@
 
     .line 30
     .line 31
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_0
 
     .line 32
     .line 33
     return v1
 
     .line 34
-    :cond_21
+    :cond_0
     const/4 v0, 0x0
 
     .line 35

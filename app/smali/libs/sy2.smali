@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/af;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -75,14 +75,14 @@
 
     .line 22
     .line 23
-    if-nez p1, :cond_19
+    if-nez p1, :cond_0
 
     .line 24
     .line 25
-    goto :goto_3d
+    goto :goto_0
 
     .line 26
-    :cond_19
+    :cond_0
     invoke-virtual {p1, p0}, Llibs/af;->r(Llibs/wz2;)V
 
     .line 27
@@ -92,7 +92,7 @@
 
     .line 30
     .line 31
-    if-eqz p1, :cond_36
+    if-eqz p1, :cond_1
 
     .line 32
     .line 33
@@ -138,12 +138,12 @@
 
     .line 54
     .line 55
-    :cond_36
+    :cond_1
     iget-object p1, p0, Llibs/sy2;->d:Llibs/ty2;
 
     .line 56
     .line 57
-    if-eqz p1, :cond_3d
+    if-eqz p1, :cond_2
 
     .line 58
     .line 59
@@ -152,15 +152,15 @@
     .line 60
     .line 61
     .line 62
-    :cond_3d
-    :goto_3d
+    :cond_2
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final a(FF)V
-    .registers 6
+    .locals 3
 
     .line 1
     iget-boolean v0, p0, Llibs/sy2;->h:Z
@@ -171,7 +171,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -220,12 +220,12 @@
 
     .line 29
     .line 30
-    :cond_1d
+    :cond_0
     iget-object v0, p0, Llibs/sy2;->d:Llibs/ty2;
 
     .line 31
     .line 32
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
     .line 33
     .line 34
@@ -234,7 +234,7 @@
     .line 35
     .line 36
     .line 37
-    :cond_24
+    :cond_1
     iput p1, p0, Llibs/sy2;->b:F
 
     .line 38
@@ -275,7 +275,7 @@
 .end method
 
 .method public final b(FFFFFF)V
-    .registers 9
+    .locals 2
 
     .line 1
     iget-boolean v0, p0, Llibs/sy2;->f:Z
@@ -285,7 +285,7 @@
     const/4 v1, 0x0
 
     .line 4
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     .line 5
     .line 6
@@ -293,11 +293,11 @@
 
     .line 7
     .line 8
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1
 
     .line 9
     .line 10
-    :cond_9
+    :cond_0
     iget-object v0, p0, Llibs/sy2;->d:Llibs/ty2;
 
     .line 11
@@ -324,7 +324,7 @@
 
     .line 23
     .line 24
-    :cond_17
+    :cond_1
     new-instance p1, Llibs/ty2;
 
     .line 25
@@ -354,7 +354,7 @@
 .end method
 
 .method public final c(FFFZZFF)V
-    .registers 20
+    .locals 12
 
     .line 1
     const/4 v10, 0x1
@@ -437,7 +437,7 @@
 .end method
 
 .method public final close()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/sy2;->a:Ljava/util/ArrayList;
@@ -477,7 +477,7 @@
 .end method
 
 .method public final d(FFFF)V
-    .registers 7
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/sy2;->d:Llibs/ty2;
@@ -534,7 +534,7 @@
 .end method
 
 .method public final e(FF)V
-    .registers 6
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/sy2;->d:Llibs/ty2;

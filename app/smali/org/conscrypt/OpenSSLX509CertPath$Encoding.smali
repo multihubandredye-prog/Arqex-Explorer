@@ -27,7 +27,7 @@
 
 # direct methods
 .method private static synthetic $values()[Lorg/conscrypt/OpenSSLX509CertPath$Encoding;
-    .registers 3
+    .locals 3
 
     .line 1
     const/4 v0, 0x2
@@ -63,7 +63,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 1
     new-instance v0, Lorg/conscrypt/OpenSSLX509CertPath$Encoding;
@@ -126,7 +126,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -149,7 +149,7 @@
 .end method
 
 .method public static bridge synthetic a(Lorg/conscrypt/OpenSSLX509CertPath$Encoding;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
     iget-object p0, p0, Lorg/conscrypt/OpenSSLX509CertPath$Encoding;->apiName:Ljava/lang/String;
@@ -160,7 +160,7 @@
 .end method
 
 .method public static findByApiName(Ljava/lang/String;)Lorg/conscrypt/OpenSSLX509CertPath$Encoding;
-    .registers 6
+    .locals 5
 
     .line 1
     invoke-static {}, Lorg/conscrypt/OpenSSLX509CertPath$Encoding;->values()[Lorg/conscrypt/OpenSSLX509CertPath$Encoding;
@@ -177,8 +177,8 @@
     const/4 v2, 0x0
 
     .line 7
-    :goto_6
-    if-ge v2, v1, :cond_16
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     .line 8
     .line 9
@@ -198,22 +198,22 @@
     move-result v4
 
     .line 17
-    if-eqz v4, :cond_13
+    if-eqz v4, :cond_0
 
     .line 18
     .line 19
     return-object v3
 
     .line 20
-    :cond_13
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
     .line 21
     .line 22
-    goto :goto_6
+    goto :goto_0
 
     .line 23
-    :cond_16
+    :cond_1
     const/4 p0, 0x0
 
     .line 24
@@ -221,7 +221,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lorg/conscrypt/OpenSSLX509CertPath$Encoding;
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Lorg/conscrypt/OpenSSLX509CertPath$Encoding;
@@ -244,7 +244,7 @@
 .end method
 
 .method public static values()[Lorg/conscrypt/OpenSSLX509CertPath$Encoding;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/OpenSSLX509CertPath$Encoding;->$VALUES:[Lorg/conscrypt/OpenSSLX509CertPath$Encoding;

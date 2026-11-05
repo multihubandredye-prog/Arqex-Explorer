@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/security/SignatureSpi;-><init>()V
@@ -36,7 +36,7 @@
 .end method
 
 .method private static verifyKey(Lorg/conscrypt/OpenSSLKey;)Lorg/conscrypt/OpenSSLKey;
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLKey;->getNativeRef()Lorg/conscrypt/NativeRef$EVP_PKEY;
@@ -59,14 +59,14 @@
 
     .line 10
     .line 11
-    if-ne v0, v1, :cond_d
+    if-ne v0, v1, :cond_0
 
     .line 12
     .line 13
     return-object p0
 
     .line 14
-    :cond_d
+    :cond_0
     const-string p0, "Non-EC key used to initialize EC signature."
 
     .line 15
@@ -85,7 +85,7 @@
 
 # virtual methods
 .method public engineGetParameter(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -95,7 +95,7 @@
 .end method
 
 .method public engineInitSign(Ljava/security/PrivateKey;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p1}, Lorg/conscrypt/OpenSSLKey;->fromPrivateKey(Ljava/security/PrivateKey;)Lorg/conscrypt/OpenSSLKey;
@@ -122,7 +122,7 @@
 .end method
 
 .method public engineInitVerify(Ljava/security/PublicKey;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p1}, Lorg/conscrypt/OpenSSLKey;->fromPublicKey(Ljava/security/PublicKey;)Lorg/conscrypt/OpenSSLKey;
@@ -149,21 +149,21 @@
 .end method
 
 .method public engineSetParameter(Ljava/lang/String;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public engineSign()[B
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLSignatureRawECDSA;->key:Lorg/conscrypt/OpenSSLKey;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_4e
+    if-eqz v0, :cond_2
 
     .line 4
     .line 5
@@ -187,7 +187,7 @@
 
     .line 14
     .line 15
-    :try_start_e
+    :try_start_0
     iget-object v2, p0, Lorg/conscrypt/OpenSSLSignatureRawECDSA;->buffer:Lorg/conscrypt/ExposedByteArrayOutputStream;
 
     .line 16
@@ -232,11 +232,11 @@
     move-result v2
 
     .line 37
-    if-ltz v2, :cond_3a
+    if-ltz v2, :cond_1
 
     .line 38
     .line 39
-    if-eq v2, v0, :cond_34
+    if-eq v2, v0, :cond_0
 
     .line 40
     .line 41
@@ -248,9 +248,9 @@
 
     .line 44
     invoke-static {v1, v3, v0, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-    :try_end_2e
-    .catch Ljava/lang/Exception; {:try_start_e .. :try_end_2e} :catch_32
-    .catchall {:try_start_e .. :try_end_2e} :catchall_30
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 45
     .line 46
@@ -258,25 +258,25 @@
     move-object v1, v0
 
     .line 48
-    goto :goto_34
+    goto :goto_0
 
     .line 49
-    :catchall_30
+    :catchall_0
     move-exception v0
 
     .line 50
-    goto :goto_48
+    goto :goto_2
 
     .line 51
-    :catch_32
+    :catch_0
     move-exception v0
 
     .line 52
-    goto :goto_42
+    goto :goto_1
 
     .line 53
-    :cond_34
-    :goto_34
+    :cond_0
+    :goto_0
     iget-object v0, p0, Lorg/conscrypt/OpenSSLSignatureRawECDSA;->buffer:Lorg/conscrypt/ExposedByteArrayOutputStream;
 
     .line 54
@@ -289,8 +289,8 @@
     return-object v1
 
     .line 59
-    :cond_3a
-    :try_start_3a
+    :cond_1
+    :try_start_1
     new-instance v0, Ljava/security/SignatureException;
 
     .line 60
@@ -305,13 +305,13 @@
     .line 65
     .line 66
     throw v0
-    :try_end_42
-    .catch Ljava/lang/Exception; {:try_start_3a .. :try_end_42} :catch_32
-    .catchall {:try_start_3a .. :try_end_42} :catchall_30
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 67
-    :goto_42
-    :try_start_42
+    :goto_1
+    :try_start_2
     new-instance v1, Ljava/security/SignatureException;
 
     .line 68
@@ -322,11 +322,11 @@
     .line 71
     .line 72
     throw v1
-    :try_end_48
-    .catchall {:try_start_42 .. :try_end_48} :catchall_30
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 73
-    :goto_48
+    :goto_2
     iget-object v1, p0, Lorg/conscrypt/OpenSSLSignatureRawECDSA;->buffer:Lorg/conscrypt/ExposedByteArrayOutputStream;
 
     .line 74
@@ -339,7 +339,7 @@
     throw v0
 
     .line 79
-    :cond_4e
+    :cond_2
     const-string v0, "No key provided"
 
     .line 80
@@ -356,7 +356,7 @@
 .end method
 
 .method public engineUpdate(B)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLSignatureRawECDSA;->buffer:Lorg/conscrypt/ExposedByteArrayOutputStream;
@@ -372,7 +372,7 @@
 .end method
 
 .method public engineUpdate([BII)V
-    .registers 5
+    .locals 1
 
     .line 7
     iget-object v0, p0, Lorg/conscrypt/OpenSSLSignatureRawECDSA;->buffer:Lorg/conscrypt/ExposedByteArrayOutputStream;
@@ -383,18 +383,18 @@
 .end method
 
 .method public engineVerify([B)Z
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLSignatureRawECDSA;->key:Lorg/conscrypt/OpenSSLKey;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_3f
+    if-eqz v0, :cond_2
 
     .line 4
     .line 5
-    :try_start_4
+    :try_start_0
     iget-object v0, p0, Lorg/conscrypt/OpenSSLSignatureRawECDSA;->buffer:Lorg/conscrypt/ExposedByteArrayOutputStream;
 
     .line 6
@@ -437,33 +437,33 @@
     .line 25
     .line 26
     move-result p1
-    :try_end_1a
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_1a} :catch_32
-    .catchall {:try_start_4 .. :try_end_1a} :catchall_30
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 27
     const/4 v0, -0x1
 
     .line 28
-    if-eq p1, v0, :cond_28
+    if-eq p1, v0, :cond_1
 
     .line 29
     .line 30
     const/4 v0, 0x1
 
     .line 31
-    if-ne p1, v0, :cond_21
+    if-ne p1, v0, :cond_0
 
     .line 32
     .line 33
-    goto :goto_22
+    goto :goto_0
 
     .line 34
-    :cond_21
+    :cond_0
     const/4 v0, 0x0
 
     .line 35
-    :goto_22
+    :goto_0
     iget-object p1, p0, Lorg/conscrypt/OpenSSLSignatureRawECDSA;->buffer:Lorg/conscrypt/ExposedByteArrayOutputStream;
 
     .line 36
@@ -476,8 +476,8 @@
     return v0
 
     .line 41
-    :cond_28
-    :try_start_28
+    :cond_1
+    :try_start_1
     new-instance p1, Ljava/security/SignatureException;
 
     .line 42
@@ -492,23 +492,23 @@
     .line 47
     .line 48
     throw p1
-    :try_end_30
-    .catch Ljava/lang/Exception; {:try_start_28 .. :try_end_30} :catch_32
-    .catchall {:try_start_28 .. :try_end_30} :catchall_30
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 49
-    :catchall_30
+    :catchall_0
     move-exception p1
 
     .line 50
-    goto :goto_39
+    goto :goto_1
 
     .line 51
-    :catch_32
+    :catch_0
     move-exception p1
 
     .line 52
-    :try_start_33
+    :try_start_2
     new-instance v0, Ljava/security/SignatureException;
 
     .line 53
@@ -519,11 +519,11 @@
     .line 56
     .line 57
     throw v0
-    :try_end_39
-    .catchall {:try_start_33 .. :try_end_39} :catchall_30
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 58
-    :goto_39
+    :goto_1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLSignatureRawECDSA;->buffer:Lorg/conscrypt/ExposedByteArrayOutputStream;
 
     .line 59
@@ -536,7 +536,7 @@
     throw p1
 
     .line 64
-    :cond_3f
+    :cond_2
     const-string p1, "No key provided"
 
     .line 65

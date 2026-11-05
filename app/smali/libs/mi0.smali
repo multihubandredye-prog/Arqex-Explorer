@@ -31,7 +31,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/security/SecureRandom;
@@ -51,7 +51,7 @@
 .end method
 
 .method public constructor <init>(Llibs/oi0;Ljava/io/OutputStream;Ljava/lang/String;)V
-    .registers 8
+    .locals 4
 
     .line 1
     invoke-direct {p0, p2}, Ljava/io/FilterOutputStream;-><init>(Ljava/io/OutputStream;)V
@@ -111,7 +111,7 @@
 
     .line 29
     .line 30
-    if-eqz v1, :cond_54
+    if-eqz v1, :cond_1
 
     .line 31
     .line 32
@@ -136,7 +136,7 @@
 
     .line 42
     .line 43
-    if-eqz p2, :cond_31
+    if-eqz p2, :cond_0
 
     .line 44
     .line 45
@@ -148,16 +148,16 @@
     move-result-object p2
 
     .line 49
-    goto :goto_33
+    goto :goto_0
 
     .line 50
-    :cond_31
+    :cond_0
     new-array p2, v2, [B
 
     .line 51
     .line 52
-    :goto_33
-    :try_start_33
+    :goto_0
+    :try_start_0
     invoke-static {v2, v1}, Llibs/u73;->d(I[B)[B
 
     .line 53
@@ -175,38 +175,38 @@
 
     .line 60
     iput-object p2, p0, Llibs/mi0;->Z:[B
-    :try_end_3d
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_33 .. :try_end_3d} :catch_42
-    .catch Ljavax/crypto/IllegalBlockSizeException; {:try_start_33 .. :try_end_3d} :catch_40
-    .catch Ljavax/crypto/BadPaddingException; {:try_start_33 .. :try_end_3d} :catch_3e
+    :try_end_0
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljavax/crypto/IllegalBlockSizeException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljavax/crypto/BadPaddingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 61
     .line 62
-    goto :goto_58
+    goto :goto_4
 
     .line 63
-    :catch_3e
+    :catch_0
     move-exception p1
 
     .line 64
-    goto :goto_44
+    goto :goto_1
 
     .line 65
-    :catch_40
+    :catch_1
     move-exception p1
 
     .line 66
-    goto :goto_4a
+    goto :goto_2
 
     .line 67
-    :catch_42
+    :catch_2
     move-exception p2
 
     .line 68
-    goto :goto_50
+    goto :goto_3
 
     .line 69
-    :goto_44
+    :goto_1
     new-instance p2, Llibs/ii0;
 
     .line 70
@@ -219,7 +219,7 @@
     throw p2
 
     .line 75
-    :goto_4a
+    :goto_2
     new-instance p2, Llibs/ii0;
 
     .line 76
@@ -232,16 +232,16 @@
     throw p2
 
     .line 81
-    :goto_50
+    :goto_3
     invoke-virtual {p2}, Ljava/lang/Throwable;->printStackTrace()V
 
     .line 82
     .line 83
     .line 84
-    goto :goto_58
+    goto :goto_4
 
     .line 85
-    :cond_54
+    :cond_1
     new-array p2, v2, [B
 
     .line 86
@@ -250,7 +250,7 @@
 
     .line 88
     .line 89
-    :goto_58
+    :goto_4
     invoke-static {}, Llibs/hg;->b()Ljavax/crypto/Cipher;
 
     .line 90
@@ -259,7 +259,7 @@
     move-result-object p2
 
     .line 93
-    :try_start_5c
+    :try_start_1
     iget-object p3, p0, Llibs/mi0;->Z:[B
 
     .line 94
@@ -268,8 +268,8 @@
 
     .line 96
     invoke-static {p1, v1, p2, p3}, Llibs/ji0;->h(Llibs/oi0;ILjavax/crypto/Cipher;[B)V
-    :try_end_62
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_5c .. :try_end_62} :catch_77
+    :try_end_1
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_1 .. :try_end_1} :catch_4
 
     .line 97
     .line 98
@@ -282,14 +282,14 @@
     move-result-object p2
 
     .line 103
-    :try_start_66
+    :try_start_2
     iget-object p3, p0, Llibs/mi0;->Z:[B
 
     .line 104
     .line 105
     invoke-static {p1, v1, p2, p3}, Llibs/ji0;->h(Llibs/oi0;ILjavax/crypto/Cipher;[B)V
-    :try_end_6b
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_66 .. :try_end_6b} :catch_70
+    :try_end_2
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_2 .. :try_end_2} :catch_3
 
     .line 106
     .line 107
@@ -305,7 +305,7 @@
     return-void
 
     .line 113
-    :catch_70
+    :catch_3
     move-exception p1
 
     .line 114
@@ -321,7 +321,7 @@
     throw p2
 
     .line 120
-    :catch_77
+    :catch_4
     move-exception p1
 
     .line 121
@@ -340,14 +340,14 @@
 
 # virtual methods
 .method public final c(Z)V
-    .registers 13
+    .locals 11
 
     .line 1
     iget-object v5, p0, Llibs/mi0;->Mu:[B
 
     .line 2
     .line 3
-    if-nez p1, :cond_10
+    if-nez p1, :cond_1
 
     .line 4
     .line 5
@@ -358,14 +358,14 @@
     array-length v0, v5
 
     .line 8
-    if-ne p1, v0, :cond_a
+    if-ne p1, v0, :cond_0
 
     .line 9
     .line 10
-    goto :goto_10
+    goto :goto_0
 
     .line 11
-    :cond_a
+    :cond_0
     const-string p1, "Buffer not full"
 
     .line 12
@@ -378,8 +378,8 @@
     return-void
 
     .line 17
-    :cond_10
-    :goto_10
+    :cond_1
+    :goto_0
     iget p1, p0, Llibs/mi0;->Rho:I
 
     .line 18
@@ -388,7 +388,7 @@
 
     .line 20
     .line 21
-    if-nez p1, :cond_21
+    if-nez p1, :cond_2
 
     .line 22
     .line 23
@@ -396,7 +396,7 @@
 
     .line 24
     .line 25
-    if-eqz p1, :cond_21
+    if-eqz p1, :cond_2
 
     .line 26
     .line 27
@@ -413,7 +413,7 @@
     .line 32
     .line 33
     .line 34
-    :cond_21
+    :cond_2
     iget p1, p0, Llibs/mi0;->Xi:I
 
     .line 35
@@ -425,7 +425,7 @@
     const/4 v2, 0x0
 
     .line 39
-    if-lez p1, :cond_4d
+    if-lez p1, :cond_4
 
     .line 40
     .line 41
@@ -437,7 +437,7 @@
 
     .line 44
     .line 45
-    if-lez v3, :cond_38
+    if-lez v3, :cond_3
 
     .line 46
     .line 47
@@ -459,7 +459,7 @@
     .line 55
     .line 56
     .line 57
-    :cond_38
+    :cond_3
     iget-object v3, v1, Llibs/oi0;->e:Ljavax/crypto/Mac;
 
     .line 58
@@ -482,8 +482,8 @@
     const/4 v6, 0x0
 
     .line 67
-    :goto_42
-    if-ge v6, v4, :cond_4d
+    :goto_1
+    if-ge v6, v4, :cond_4
 
     .line 68
     .line 69
@@ -503,21 +503,21 @@
 
     .line 76
     .line 77
-    goto :goto_42
+    goto :goto_1
 
     .line 78
-    :cond_4d
-    :try_start_4d
+    :cond_4
+    :try_start_0
     iget v3, p0, Llibs/mi0;->Nu:I
 
     .line 79
     .line 80
     array-length v4, v5
-    :try_end_50
-    .catch Ljavax/crypto/IllegalBlockSizeException; {:try_start_4d .. :try_end_50} :catch_6f
-    .catch Ljavax/crypto/BadPaddingException; {:try_start_4d .. :try_end_50} :catch_6c
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_4d .. :try_end_50} :catch_69
-    .catch Llibs/ni0; {:try_start_4d .. :try_end_50} :catch_66
+    :try_end_0
+    .catch Ljavax/crypto/IllegalBlockSizeException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljavax/crypto/BadPaddingException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Llibs/ni0; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 81
     const/16 v6, 0x8
@@ -531,24 +531,24 @@
     const/4 v8, 0x1
 
     .line 86
-    if-ne v3, v4, :cond_8b
+    if-ne v3, v4, :cond_7
 
     .line 87
     .line 88
-    :try_start_57
+    :try_start_1
     iget-boolean v0, v0, Llibs/hi0;->e:Z
 
     .line 89
     .line 90
-    if-eqz v0, :cond_72
+    if-eqz v0, :cond_6
 
     .line 91
     .line 92
     array-length v0, v5
 
     .line 93
-    :goto_5c
-    if-ge v2, v0, :cond_b1
+    :goto_2
+    if-ge v2, v0, :cond_8
 
     .line 94
     .line 95
@@ -556,63 +556,63 @@
 
     .line 96
     .line 97
-    if-eqz v3, :cond_63
+    if-eqz v3, :cond_5
 
     .line 98
     .line 99
-    goto :goto_72
+    goto :goto_3
 
     .line 100
-    :cond_63
+    :cond_5
     add-int/lit8 v2, v2, 0x1
 
     .line 101
     .line 102
-    goto :goto_5c
+    goto :goto_2
 
     .line 103
-    :catch_66
+    :catch_0
     move-exception v0
 
     .line 104
     move-object p1, v0
 
     .line 105
-    goto :goto_be
+    goto :goto_5
 
     .line 106
-    :catch_69
+    :catch_1
     move-exception v0
 
     .line 107
     move-object p1, v0
 
     .line 108
-    goto :goto_c4
+    goto :goto_6
 
     .line 109
-    :catch_6c
+    :catch_2
     move-exception v0
 
     .line 110
     move-object p1, v0
 
     .line 111
-    goto :goto_ca
+    goto :goto_7
 
     .line 112
-    :catch_6f
+    :catch_3
     move-exception v0
 
     .line 113
     move-object p1, v0
 
     .line 114
-    goto :goto_d0
+    goto :goto_8
 
     .line 115
-    :cond_72
-    :goto_72
+    :cond_6
+    :goto_3
     invoke-static {v7}, Llibs/t43;->j([B)J
 
     .line 116
@@ -663,10 +663,10 @@
     move-result-object v5
 
     .line 139
-    goto :goto_b1
+    goto :goto_4
 
     .line 140
-    :cond_8b
+    :cond_7
     invoke-static {v7}, Llibs/t43;->j([B)J
 
     .line 141
@@ -745,15 +745,15 @@
     .line 176
     .line 177
     move-result-object v5
-    :try_end_b1
-    .catch Ljavax/crypto/IllegalBlockSizeException; {:try_start_57 .. :try_end_b1} :catch_6f
-    .catch Ljavax/crypto/BadPaddingException; {:try_start_57 .. :try_end_b1} :catch_6c
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_57 .. :try_end_b1} :catch_69
-    .catch Llibs/ni0; {:try_start_57 .. :try_end_b1} :catch_66
+    :try_end_1
+    .catch Ljavax/crypto/IllegalBlockSizeException; {:try_start_1 .. :try_end_1} :catch_3
+    .catch Ljavax/crypto/BadPaddingException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Llibs/ni0; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 178
-    :cond_b1
-    :goto_b1
+    :cond_8
+    :goto_4
     iget-object v0, p0, Ljava/io/FilterOutputStream;->out:Ljava/io/OutputStream;
 
     .line 179
@@ -781,7 +781,7 @@
     return-void
 
     .line 191
-    :goto_be
+    :goto_5
     new-instance v0, Ljava/io/IOException;
 
     .line 192
@@ -794,7 +794,7 @@
     throw v0
 
     .line 197
-    :goto_c4
+    :goto_6
     new-instance v0, Ljava/io/IOException;
 
     .line 198
@@ -807,7 +807,7 @@
     throw v0
 
     .line 203
-    :goto_ca
+    :goto_7
     new-instance v0, Ljava/io/IOException;
 
     .line 204
@@ -820,7 +820,7 @@
     throw v0
 
     .line 209
-    :goto_d0
+    :goto_8
     new-instance v0, Ljava/io/IOException;
 
     .line 210
@@ -830,19 +830,19 @@
     .line 212
     .line 213
     .line 214
-    goto :goto_d7
+    goto :goto_a
 
     .line 215
-    :goto_d6
+    :goto_9
     throw v0
 
     .line 216
-    :goto_d7
-    goto :goto_d6
+    :goto_a
+    goto :goto_9
 .end method
 
 .method public final close()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -862,12 +862,12 @@
 .end method
 
 .method public final declared-synchronized write(I)V
-    .registers 5
+    .locals 3
 
     monitor-enter p0
 
     .line 55
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Llibs/mi0;->Mu:[B
 
     iget v1, p0, Llibs/mi0;->Nu:I
@@ -883,46 +883,46 @@
     .line 56
     array-length p1, v0
 
-    if-ne v2, p1, :cond_16
+    if-ne v2, p1, :cond_0
 
     const/4 p1, 0x0
 
     .line 57
     invoke-virtual {p0, p1}, Llibs/mi0;->c(Z)V
-    :try_end_13
-    .catchall {:try_start_1 .. :try_end_13} :catchall_14
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_16
+    goto :goto_0
 
-    :catchall_14
+    :catchall_0
     move-exception p1
 
-    goto :goto_18
+    goto :goto_1
 
     .line 58
-    :cond_16
-    :goto_16
+    :cond_0
+    :goto_0
     monitor-exit p0
 
     return-void
 
-    :goto_18
-    :try_start_18
+    :goto_1
+    :try_start_1
     monitor-exit p0
-    :try_end_19
-    .catchall {:try_start_18 .. :try_end_19} :catchall_14
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method
 
 .method public final declared-synchronized write([BII)V
-    .registers 8
+    .locals 4
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget v0, p0, Llibs/mi0;->Nu:I
 
     .line 3
@@ -938,7 +938,7 @@
     array-length v3, v2
 
     .line 9
-    if-gt v1, v3, :cond_1e
+    if-gt v1, v3, :cond_0
 
     .line 10
     .line 11
@@ -965,7 +965,7 @@
     array-length p2, p2
 
     .line 22
-    if-ne p1, p2, :cond_30
+    if-ne p1, p2, :cond_1
 
     .line 23
     .line 24
@@ -977,19 +977,19 @@
     .line 26
     .line 27
     .line 28
-    goto :goto_30
+    goto :goto_1
 
     .line 29
-    :catchall_1c
+    :catchall_0
     move-exception p1
 
     .line 30
-    goto :goto_32
+    goto :goto_2
 
     .line 31
-    :cond_1e
-    :goto_1e
-    if-lez p3, :cond_30
+    :cond_0
+    :goto_0
+    if-lez p3, :cond_1
 
     .line 32
     .line 33
@@ -1016,8 +1016,8 @@
 
     .line 43
     invoke-virtual {p0, p1, p2, v0}, Llibs/mi0;->write([BII)V
-    :try_end_2d
-    .catchall {:try_start_1 .. :try_end_2d} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 44
     .line 45
@@ -1028,31 +1028,31 @@
     add-int/2addr p2, v0
 
     .line 48
-    goto :goto_1e
+    goto :goto_0
 
     .line 49
-    :cond_30
-    :goto_30
+    :cond_1
+    :goto_1
     monitor-exit p0
 
     .line 50
     return-void
 
     .line 51
-    :goto_32
-    :try_start_32
+    :goto_2
+    :try_start_1
     monitor-exit p0
-    :try_end_33
-    .catchall {:try_start_32 .. :try_end_33} :catchall_1c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 52
-    goto :goto_35
+    goto :goto_4
 
     .line 53
-    :goto_34
+    :goto_3
     throw p1
 
     .line 54
-    :goto_35
-    goto :goto_34
+    :goto_4
+    goto :goto_3
 .end method

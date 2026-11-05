@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/m0;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final a(Llibs/mx;)V
-    .registers 10
+    .locals 8
 
     .line 1
     const-class v0, Llibs/b30;
@@ -192,7 +192,7 @@
 
     .line 90
     .line 91
-    if-eqz v1, :cond_b1
+    if-eqz v1, :cond_0
 
     .line 92
     .line 93
@@ -353,7 +353,7 @@
     .line 176
     .line 177
     .line 178
-    :cond_b1
+    :cond_0
     const-class v1, Llibs/e30;
 
     .line 179

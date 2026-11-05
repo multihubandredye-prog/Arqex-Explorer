@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/widgets/MiSliderLayout;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/mv1;->d:Lcom/mixplorer/widgets/MiSliderLayout;
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final a(Lcom/mixplorer/widgets/MiViewPager;ILjava/lang/Object;)V
-    .registers 5
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/mv1;->d:Lcom/mixplorer/widgets/MiSliderLayout;
@@ -67,7 +67,7 @@
 .end method
 
 .method public final b()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/mv1;->d:Lcom/mixplorer/widgets/MiSliderLayout;
@@ -91,7 +91,7 @@
 .end method
 
 .method public final c()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/mv1;->c:Ljava/util/ArrayList;
@@ -110,7 +110,7 @@
 .end method
 
 .method public final d()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, -0x2
@@ -120,7 +120,7 @@
 .end method
 
 .method public final f(Lcom/mixplorer/widgets/MiViewPager;I)Ljava/lang/Object;
-    .registers 14
+    .locals 11
 
     .line 1
     invoke-virtual {p0, p2}, Llibs/mv1;->j(I)Llibs/fb3;
@@ -283,7 +283,7 @@
     .line 83
     .line 84
     .line 85
-    if-eqz v3, :cond_60
+    if-eqz v3, :cond_0
 
     .line 86
     .line 87
@@ -305,7 +305,7 @@
     .line 95
     .line 96
     .line 97
-    :cond_60
+    :cond_0
     iget-object p2, v0, Llibs/fb3;->Lambda:Llibs/qt1;
 
     .line 98
@@ -761,7 +761,7 @@
     move-result p2
 
     .line 342
-    if-eqz p2, :cond_15c
+    if-eqz p2, :cond_1
 
     .line 343
     .line 344
@@ -774,7 +774,7 @@
     .line 347
     .line 348
     .line 349
-    :cond_15c
+    :cond_1
     invoke-virtual {v0, v4}, Llibs/fb3;->b(Z)V
 
     .line 350
@@ -793,7 +793,7 @@
 .end method
 
 .method public final g(Landroid/view/View;Ljava/lang/Object;)Z
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p1, p2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
@@ -808,10 +808,10 @@
 .end method
 
 .method public final j(I)Llibs/fb3;
-    .registers 4
+    .locals 2
 
     .line 1
-    if-ltz p1, :cond_11
+    if-ltz p1, :cond_0
 
     .line 2
     .line 3
@@ -827,7 +827,7 @@
     move-result v1
 
     .line 9
-    if-ge p1, v1, :cond_11
+    if-ge p1, v1, :cond_0
 
     .line 10
     .line 11
@@ -846,7 +846,7 @@
     return-object p1
 
     .line 18
-    :cond_11
+    :cond_0
     const/4 p1, 0x0
 
     .line 19

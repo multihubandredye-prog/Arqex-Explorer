@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/hv2;->Lambda:Llibs/hv2;
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public final c(Llibs/rw2;)V
-    .registers 10
+    .locals 8
 
     .line 1
     iget-object v0, p1, Llibs/rw2;->b:Llibs/oj0;
@@ -77,8 +77,8 @@
     const/4 v2, 0x0
 
     .line 17
-    :goto_10
-    if-ge v2, v0, :cond_41
+    :goto_0
+    if-ge v2, v0, :cond_1
 
     .line 18
     .line 19
@@ -116,7 +116,7 @@
 
     .line 34
     .line 35
-    if-eqz v4, :cond_2c
+    if-eqz v4, :cond_0
 
     .line 36
     .line 37
@@ -133,10 +133,10 @@
 
     .line 43
     .line 44
-    goto :goto_10
+    goto :goto_0
 
     .line 45
-    :cond_2c
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     .line 46
@@ -180,12 +180,12 @@
     throw p1
 
     .line 66
-    :cond_41
+    :cond_1
     return-void
 .end method
 
 .method public final d(Llibs/rw2;)I
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/hu2;->b:Ljava/util/ArrayList;
@@ -226,8 +226,8 @@
     const/4 v2, 0x0
 
     .line 21
-    :goto_14
-    if-ge v2, v1, :cond_26
+    :goto_0
+    if-ge v2, v1, :cond_0
 
     .line 22
     .line 23
@@ -262,10 +262,10 @@
     .line 36
     .line 37
     .line 38
-    goto :goto_14
+    goto :goto_0
 
     .line 39
-    :cond_26
+    :cond_0
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     .line 40

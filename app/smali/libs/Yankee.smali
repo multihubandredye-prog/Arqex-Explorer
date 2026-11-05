@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/json/JSONObject;)V
-    .registers 6
+    .locals 4
 
     .line 1
     const-string v0, " 12:00:00"
@@ -75,7 +75,7 @@
     .line 29
     .line 30
     .line 31
-    :try_start_1e
+    :try_start_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     .line 32
@@ -120,16 +120,16 @@
     .line 53
     .line 54
     invoke-static {v1, v2}, Llibs/ip2;->a(Ljava/lang/String;Ljava/text/SimpleDateFormat;)J
-    :try_end_38
-    .catch Ljava/lang/Exception; {:try_start_1e .. :try_end_38} :catch_39
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 55
     .line 56
     .line 57
-    goto :goto_41
+    goto :goto_0
 
     .line 58
-    :catch_39
+    :catch_0
     new-instance v1, Ljava/util/Date;
 
     .line 59
@@ -144,7 +144,7 @@
     .line 64
     .line 65
     .line 66
-    :goto_41
+    :goto_0
     const-string v1, "location"
 
     .line 67
@@ -193,7 +193,7 @@
     .line 90
     .line 91
     .line 92
-    :try_start_5b
+    :try_start_1
     new-instance v1, Ljava/lang/StringBuilder;
 
     .line 93
@@ -238,16 +238,16 @@
     .line 114
     .line 115
     invoke-static {v0, v1}, Llibs/ip2;->a(Ljava/lang/String;Ljava/text/SimpleDateFormat;)J
-    :try_end_75
-    .catch Ljava/lang/Exception; {:try_start_5b .. :try_end_75} :catch_76
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 116
     .line 117
     .line 118
-    goto :goto_7e
+    goto :goto_1
 
     .line 119
-    :catch_76
+    :catch_1
     new-instance v0, Ljava/util/Date;
 
     .line 120
@@ -262,7 +262,7 @@
     .line 125
     .line 126
     .line 127
-    :goto_7e
+    :goto_1
     const-string v0, "validated"
 
     .line 128
@@ -280,7 +280,7 @@
     .line 134
     .line 135
     .line 136
-    :try_start_87
+    :try_start_2
     const-string v0, "base_storage"
 
     .line 137
@@ -302,13 +302,13 @@
 
     .line 146
     iput-wide v0, p0, Llibs/Yankee;->a:J
-    :try_end_93
-    .catch Ljava/lang/Exception; {:try_start_87 .. :try_end_93} :catch_93
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
 
     .line 147
     .line 148
-    :catch_93
-    :try_start_93
+    :catch_2
+    :try_start_3
     const-string v0, "used_storage_size"
 
     .line 149
@@ -330,13 +330,13 @@
 
     .line 158
     iput-wide v0, p0, Llibs/Yankee;->b:J
-    :try_end_9f
-    .catch Ljava/lang/Exception; {:try_start_93 .. :try_end_9f} :catch_9f
+    :try_end_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_3
 
     .line 159
     .line 160
-    :catch_9f
-    :try_start_9f
+    :catch_3
+    :try_start_4
     const-string v0, "bonus_storage"
 
     .line 161
@@ -358,12 +358,12 @@
 
     .line 170
     iput-wide v0, p0, Llibs/Yankee;->c:J
-    :try_end_ab
-    .catch Ljava/lang/Exception; {:try_start_9f .. :try_end_ab} :catch_ab
+    :try_end_4
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_4
 
     .line 171
     .line 172
-    :catch_ab
+    :catch_4
     const-string v0, "storage_limit"
 
     .line 173
@@ -407,7 +407,7 @@
 
 # virtual methods
 .method public final a()Llibs/dc;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/Yankee;->d:Llibs/dc;

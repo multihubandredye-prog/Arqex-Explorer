@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Landroid/content/ContentProvider;-><init>()V
@@ -23,14 +23,14 @@
 .end method
 
 .method public static a(Landroid/os/Bundle;)V
-    .registers 4
+    .locals 3
 
     .line 1
     sget-object v0, Llibs/k73;->a:Landroid/os/IBinder;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -42,14 +42,14 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
     return-void
 
     .line 12
-    :cond_b
+    :cond_0
     sget-object v0, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 13
@@ -62,14 +62,14 @@
     move-result v0
 
     .line 18
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     .line 19
     .line 20
-    goto :goto_45
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_1
     const-string v0, "moe.shizuku.privileged.api.intent.extra.BINDER"
 
     .line 22
@@ -86,7 +86,7 @@
 
     .line 28
     .line 29
-    if-eqz p0, :cond_45
+    if-eqz p0, :cond_2
 
     .line 30
     .line 31
@@ -94,7 +94,7 @@
 
     .line 32
     .line 33
-    if-eqz v1, :cond_45
+    if-eqz v1, :cond_2
 
     .line 34
     .line 35
@@ -115,7 +115,7 @@
 
     .line 43
     .line 44
-    if-eqz v1, :cond_45
+    if-eqz v1, :cond_2
 
     .line 45
     .line 46
@@ -165,13 +165,13 @@
     .line 68
     .line 69
     .line 70
-    :cond_45
-    :goto_45
+    :cond_2
+    :goto_0
     return-void
 .end method
 
 .method public static b(Lcom/mixplorer/AppImpl;)V
-    .registers 5
+    .locals 4
 
     .line 1
     const-string v0, "content://"
@@ -182,14 +182,14 @@
 
     .line 4
     .line 5
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_0
 
     .line 6
     .line 7
-    goto :goto_5f
+    goto :goto_1
 
     .line 8
-    :cond_7
+    :cond_0
     new-instance v1, Llibs/l73;
 
     .line 9
@@ -220,7 +220,7 @@
     .line 22
     .line 23
     .line 24
-    :try_start_17
+    :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     .line 25
@@ -291,19 +291,19 @@
     .line 60
     .line 61
     move-result-object v0
-    :try_end_3d
-    .catchall {:try_start_17 .. :try_end_3d} :catchall_3e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 62
-    goto :goto_3f
+    goto :goto_0
 
     .line 63
-    :catchall_3e
+    :catchall_0
     const/4 v0, 0x0
 
     .line 64
-    :goto_3f
-    if-eqz v0, :cond_5f
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 65
     .line 66
@@ -340,7 +340,7 @@
 
     .line 82
     .line 83
-    if-eqz v0, :cond_5f
+    if-eqz v0, :cond_1
 
     .line 84
     .line 85
@@ -348,7 +348,7 @@
 
     .line 86
     .line 87
-    if-eqz v0, :cond_5f
+    if-eqz v0, :cond_1
 
     .line 88
     .line 89
@@ -365,15 +365,15 @@
     .line 94
     .line 95
     .line 96
-    :cond_5f
-    :goto_5f
+    :cond_1
+    :goto_1
     return-void
 .end method
 
 
 # virtual methods
 .method public final attachInfo(Landroid/content/Context;Landroid/content/pm/ProviderInfo;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-super {p0, p1, p2}, Landroid/content/ContentProvider;->attachInfo(Landroid/content/Context;Landroid/content/pm/ProviderInfo;)V
@@ -385,7 +385,7 @@
 
     .line 5
     .line 6
-    if-nez p1, :cond_15
+    if-nez p1, :cond_1
 
     .line 7
     .line 8
@@ -393,7 +393,7 @@
 
     .line 9
     .line 10
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
     .line 11
     .line 12
@@ -407,7 +407,7 @@
     return-void
 
     .line 16
-    :cond_f
+    :cond_0
     const-string p1, "android:exported must be true"
 
     .line 17
@@ -420,7 +420,7 @@
     return-void
 
     .line 22
-    :cond_15
+    :cond_1
     const-string p1, "android:multiprocess must be false"
 
     .line 23
@@ -434,20 +434,20 @@
 .end method
 
 .method public final call(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
-    .registers 7
+    .locals 3
 
     .line 1
     const/4 p2, 0x0
 
     .line 2
-    if-nez p3, :cond_4
+    if-nez p3, :cond_0
 
     .line 3
     .line 4
-    goto :goto_4c
+    goto :goto_2
 
     .line 5
-    :cond_4
+    :cond_0
     const-class v0, Lmoe/shizuku/api/BinderContainer;
 
     .line 6
@@ -474,7 +474,7 @@
     .line 17
     .line 18
     .line 19
-    :try_start_12
+    :try_start_0
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
 
     .line 20
@@ -488,7 +488,7 @@
     .line 24
     .line 25
     .line 26
-    if-eq v1, v2, :cond_40
+    if-eq v1, v2, :cond_4
 
     .line 27
     .line 28
@@ -497,14 +497,14 @@
     .line 29
     .line 30
     .line 31
-    if-eq v1, p3, :cond_21
+    if-eq v1, p3, :cond_1
 
     .line 32
     .line 33
-    goto :goto_4b
+    goto :goto_1
 
     .line 34
-    :cond_21
+    :cond_1
     const-string p3, "getBinder"
 
     .line 35
@@ -517,7 +517,7 @@
     move-result p1
 
     .line 40
-    if-eqz p1, :cond_4b
+    if-eqz p1, :cond_5
 
     .line 41
     .line 42
@@ -525,7 +525,7 @@
 
     .line 43
     .line 44
-    if-eqz p1, :cond_3f
+    if-eqz p1, :cond_3
 
     .line 45
     .line 46
@@ -537,14 +537,14 @@
     move-result p3
 
     .line 50
-    if-nez p3, :cond_34
+    if-nez p3, :cond_2
 
     .line 51
     .line 52
-    goto :goto_3f
+    goto :goto_0
 
     .line 53
-    :cond_34
+    :cond_2
     const-string p3, "moe.shizuku.privileged.api.intent.extra.BINDER"
 
     .line 54
@@ -566,12 +566,12 @@
     return-object v0
 
     .line 64
-    :cond_3f
-    :goto_3f
+    :cond_3
+    :goto_0
     return-object p2
 
     .line 65
-    :cond_40
+    :cond_4
     const-string v1, "sendBinder"
 
     .line 66
@@ -584,29 +584,29 @@
     move-result p1
 
     .line 71
-    if-eqz p1, :cond_4b
+    if-eqz p1, :cond_5
 
     .line 72
     .line 73
     invoke-static {p3}, Lcom/mixplorer/providers/ShizukuProvider;->a(Landroid/os/Bundle;)V
-    :try_end_4b
-    .catchall {:try_start_12 .. :try_end_4b} :catchall_4c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 74
     .line 75
     .line 76
-    :cond_4b
-    :goto_4b
+    :cond_5
+    :goto_1
     return-object v0
 
     .line 77
-    :catchall_4c
-    :goto_4c
+    :catchall_0
+    :goto_2
     return-object p2
 .end method
 
 .method public final delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
-    .registers 4
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -616,7 +616,7 @@
 .end method
 
 .method public final getType(Landroid/net/Uri;)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -626,7 +626,7 @@
 .end method
 
 .method public final insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -636,7 +636,7 @@
 .end method
 
 .method public final onCreate()Z
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-static {}, Llibs/zt0;->k()Ljava/lang/String;
@@ -659,7 +659,7 @@
 .end method
 
 .method public final query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-    .registers 6
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -669,7 +669,7 @@
 .end method
 
 .method public final update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-    .registers 5
+    .locals 0
 
     .line 1
     const/4 p1, 0x0

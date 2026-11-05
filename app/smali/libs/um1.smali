@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/LocalizeActivity;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -84,7 +84,7 @@
 
 # virtual methods
 .method public final a(Ljava/util/ArrayList;[IZ)V
-    .registers 13
+    .locals 9
 
     .line 1
     invoke-virtual {p0}, Landroid/view/ViewGroup;->removeAllViews()V
@@ -117,8 +117,8 @@
     const/4 v2, 0x0
 
     .line 15
-    :goto_e
-    if-ge v2, p2, :cond_82
+    :goto_0
+    if-ge v2, p2, :cond_3
 
     .line 16
     .line 17
@@ -159,7 +159,7 @@
 
     .line 35
     .line 36
-    if-nez v1, :cond_2b
+    if-nez v1, :cond_0
 
     .line 37
     .line 38
@@ -167,25 +167,25 @@
 
     .line 39
     .line 40
-    if-eqz v6, :cond_2b
+    if-eqz v6, :cond_0
 
     .line 41
     .line 42
     const/4 v6, 0x0
 
     .line 43
-    goto :goto_46
+    goto :goto_1
 
     .line 44
-    :cond_2b
+    :cond_0
     const/4 v6, 0x2
 
     .line 45
-    if-nez v1, :cond_39
+    if-nez v1, :cond_1
 
     .line 46
     .line 47
-    if-nez p3, :cond_39
+    if-nez p3, :cond_1
 
     .line 48
     .line 49
@@ -197,7 +197,7 @@
 
     .line 52
     .line 53
-    if-ne v7, v6, :cond_39
+    if-ne v7, v6, :cond_1
 
     .line 54
     .line 55
@@ -205,11 +205,11 @@
 
     .line 56
     .line 57
-    goto :goto_46
+    goto :goto_1
 
     .line 58
-    :cond_39
-    if-nez p3, :cond_44
+    :cond_1
+    if-nez p3, :cond_2
 
     .line 59
     .line 60
@@ -221,7 +221,7 @@
 
     .line 63
     .line 64
-    if-ne v7, v6, :cond_44
+    if-ne v7, v6, :cond_2
 
     .line 65
     .line 66
@@ -229,15 +229,15 @@
 
     .line 67
     .line 68
-    goto :goto_46
+    goto :goto_1
 
     .line 69
-    :cond_44
+    :cond_2
     sget v6, Lcom/mixplorer/activities/LocalizeActivity;->oOo:I
 
     .line 70
     .line 71
-    :goto_46
+    :goto_1
     const/4 v7, -0x1
 
     .line 72
@@ -347,15 +347,15 @@
 
     .line 129
     .line 130
-    goto :goto_e
+    goto :goto_0
 
     .line 131
-    :cond_82
+    :cond_3
     return-void
 .end method
 
 .method public final onClick(Landroid/view/View;)V
-    .registers 8
+    .locals 6
 
     .line 1
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
@@ -377,30 +377,30 @@
     const/4 v1, 0x1
 
     .line 10
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 11
     .line 12
-    goto :goto_f
+    goto :goto_0
 
     .line 13
-    :cond_c
-    if-ne v0, v1, :cond_f
+    :cond_0
+    if-ne v0, v1, :cond_1
 
     .line 14
     .line 15
     const/4 v1, 0x2
 
     .line 16
-    :cond_f
-    :goto_f
+    :cond_1
+    :goto_0
     const/4 v0, 0x0
 
     .line 17
     const/4 v2, 0x0
 
     .line 18
-    :goto_11
+    :goto_1
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     .line 19
@@ -409,7 +409,7 @@
     move-result v3
 
     .line 22
-    if-ge v2, v3, :cond_41
+    if-ge v2, v3, :cond_3
 
     .line 23
     .line 24
@@ -425,7 +425,7 @@
 
     .line 29
     .line 30
-    if-eqz v4, :cond_3e
+    if-eqz v4, :cond_2
 
     .line 31
     .line 32
@@ -490,20 +490,20 @@
     .line 61
     .line 62
     .line 63
-    :cond_3e
+    :cond_2
     add-int/lit8 v2, v2, 0x1
 
     .line 64
     .line 65
-    goto :goto_11
+    goto :goto_1
 
     .line 66
-    :cond_41
+    :cond_3
     iget-object v0, p0, Llibs/um1;->Mu:Llibs/bf0;
 
     .line 67
     .line 68
-    if-eqz v0, :cond_56
+    if-eqz v0, :cond_4
 
     .line 69
     .line 70
@@ -540,7 +540,7 @@
 
     .line 86
     .line 87
-    :cond_56
+    :cond_4
     iput-byte v1, p1, Llibs/tm1;->a:B
 
     .line 88

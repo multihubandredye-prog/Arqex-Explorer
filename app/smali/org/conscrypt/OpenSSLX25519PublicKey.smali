@@ -19,7 +19,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/16 v0, 0xc
@@ -30,7 +30,7 @@
 
     .line 4
     .line 5
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     .line 6
     .line 7
@@ -42,7 +42,7 @@
     return-void
 
     .line 11
-    :array_a
+    :array_0
     .array-data 1
         0x30t
         0x2at
@@ -60,7 +60,7 @@
 .end method
 
 .method public constructor <init>(Ljava/security/spec/EncodedKeySpec;)V
-    .registers 7
+    .locals 5
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -107,7 +107,7 @@
 
     .line 22
     .line 23
-    if-eqz v1, :cond_37
+    if-eqz v1, :cond_2
 
     .line 24
     .line 25
@@ -123,7 +123,7 @@
     move-result v1
 
     .line 31
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_1
 
     .line 32
     .line 33
@@ -136,7 +136,7 @@
     array-length v4, v0
 
     .line 36
-    if-lt v4, v1, :cond_2d
+    if-lt v4, v1, :cond_0
 
     .line 37
     .line 38
@@ -158,7 +158,7 @@
     return-void
 
     .line 46
-    :cond_2d
+    :cond_0
     invoke-static {v3}, Llibs/t22;->d(Ljava/lang/String;)V
 
     .line 47
@@ -167,7 +167,7 @@
     throw v2
 
     .line 50
-    :cond_31
+    :cond_1
     const-string p1, "Invalid format"
 
     .line 51
@@ -180,7 +180,7 @@
     throw v2
 
     .line 56
-    :cond_37
+    :cond_2
     const-string v1, "raw"
 
     .line 57
@@ -201,14 +201,14 @@
     move-result p1
 
     .line 66
-    if-eqz p1, :cond_4d
+    if-eqz p1, :cond_4
 
     .line 67
     .line 68
     array-length p1, v0
 
     .line 69
-    if-ne p1, v4, :cond_49
+    if-ne p1, v4, :cond_3
 
     .line 70
     .line 71
@@ -219,7 +219,7 @@
     return-void
 
     .line 74
-    :cond_49
+    :cond_3
     invoke-static {v3}, Llibs/t22;->d(Ljava/lang/String;)V
 
     .line 75
@@ -228,7 +228,7 @@
     throw v2
 
     .line 78
-    :cond_4d
+    :cond_4
     const-string p1, "Encoding must be in X.509 or raw format"
 
     .line 79
@@ -242,7 +242,7 @@
 .end method
 
 .method public constructor <init>([B)V
-    .registers 4
+    .locals 2
 
     .line 84
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -252,7 +252,7 @@
 
     const/16 v1, 0x20
 
-    if-ne v0, v1, :cond_11
+    if-ne v0, v1, :cond_0
 
     .line 86
     invoke-virtual {p1}, [B->clone()Ljava/lang/Object;
@@ -266,7 +266,7 @@
     return-void
 
     .line 87
-    :cond_11
+    :cond_0
     const-string p1, "Invalid key size"
 
     invoke-static {p1}, Llibs/ic0;->p(Ljava/lang/String;)V
@@ -277,7 +277,7 @@
 .end method
 
 .method private readObject(Ljava/io/ObjectInputStream;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
@@ -296,14 +296,14 @@
 
     .line 8
     .line 9
-    if-ne p1, v0, :cond_b
+    if-ne p1, v0, :cond_0
 
     .line 10
     .line 11
     return-void
 
     .line 12
-    :cond_b
+    :cond_0
     const-string p1, "Invalid key size"
 
     .line 13
@@ -317,7 +317,7 @@
 .end method
 
 .method private writeObject(Ljava/io/ObjectOutputStream;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
@@ -331,7 +331,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLX25519PublicKey;->uCoordinate:[B
@@ -341,11 +341,11 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_2
 
     .line 5
     .line 6
-    if-ne p0, p1, :cond_9
+    if-ne p0, p1, :cond_0
 
     .line 7
     .line 8
@@ -355,19 +355,19 @@
     return p1
 
     .line 10
-    :cond_9
+    :cond_0
     instance-of v2, p1, Lorg/conscrypt/OpenSSLX25519PublicKey;
 
     .line 11
     .line 12
-    if-nez v2, :cond_e
+    if-nez v2, :cond_1
 
     .line 13
     .line 14
     return v1
 
     .line 15
-    :cond_e
+    :cond_1
     check-cast p1, Lorg/conscrypt/OpenSSLX25519PublicKey;
 
     .line 16
@@ -387,7 +387,7 @@
     return p1
 
     .line 24
-    :cond_17
+    :cond_2
     const-string p1, "key is destroyed"
 
     .line 25
@@ -401,7 +401,7 @@
 .end method
 
 .method public getAlgorithm()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "XDH"
@@ -412,14 +412,14 @@
 .end method
 
 .method public getEncoded()[B
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLX25519PublicKey;->uCoordinate:[B
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -438,7 +438,7 @@
     return-object v0
 
     .line 12
-    :cond_b
+    :cond_0
     const-string v0, "key is destroyed"
 
     .line 13
@@ -455,7 +455,7 @@
 .end method
 
 .method public getFormat()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "X.509"
@@ -466,14 +466,14 @@
 .end method
 
 .method public getU()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLX25519PublicKey;->uCoordinate:[B
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -492,7 +492,7 @@
     return-object v0
 
     .line 12
-    :cond_b
+    :cond_0
     const-string v0, "key is destroyed"
 
     .line 13
@@ -509,14 +509,14 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLX25519PublicKey;->uCoordinate:[B
 
     .line 2
     .line 3
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -531,7 +531,7 @@
     return v0
 
     .line 10
-    :cond_9
+    :cond_0
     const-string v0, "key is destroyed"
 
     .line 11

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>([B)V
-    .registers 3
+    .locals 1
 
     .line 1
     :try_start_0
@@ -27,9 +27,9 @@
     .line 7
     .line 8
     move-result-object p1
-    :try_end_8
-    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_8} :catch_14
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_8} :catch_12
+    :try_end_0
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 9
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,21 +52,21 @@
     return-void
 
     .line 19
-    :catch_12
+    :catch_0
     move-exception p1
 
     .line 20
-    goto :goto_16
+    goto :goto_0
 
     .line 21
-    :catch_14
+    :catch_1
     move-exception p1
 
     .line 22
-    goto :goto_1f
+    goto :goto_1
 
     .line 23
-    :goto_16
+    :goto_0
     invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     .line 24
@@ -86,7 +86,7 @@
     throw p1
 
     .line 32
-    :goto_1f
+    :goto_1
     invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     .line 33
@@ -109,10 +109,10 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     .line 2
     .line 3
@@ -122,12 +122,12 @@
     return p1
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v0, p1, Llibs/aw3;
 
     .line 6
     .line 7
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     .line 8
     .line 9
@@ -137,7 +137,7 @@
     return p1
 
     .line 11
-    :cond_a
+    :cond_1
     check-cast p1, Llibs/aw3;
 
     .line 12
@@ -162,7 +162,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/aw3;->a:Llibs/mq;

@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/cj3;Landroid/content/Context;Landroid/widget/ListAdapter;)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/ui3;->c:Llibs/cj3;
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final areAllItemsEnabled()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ui3;->a:Landroid/widget/ListAdapter;
@@ -61,7 +61,7 @@
 .end method
 
 .method public final getCount()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ui3;->a:Landroid/widget/ListAdapter;
@@ -80,7 +80,7 @@
 .end method
 
 .method public final getItem(I)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ui3;->a:Landroid/widget/ListAdapter;
@@ -99,7 +99,7 @@
 .end method
 
 .method public final getItemId(I)J
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/ui3;->a:Landroid/widget/ListAdapter;
@@ -118,7 +118,7 @@
 .end method
 
 .method public final getItemViewType(I)I
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ui3;->a:Landroid/widget/ListAdapter;
@@ -137,7 +137,7 @@
 .end method
 
 .method public final getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .registers 11
+    .locals 7
 
     .line 1
     const/4 v0, 0x0
@@ -147,7 +147,7 @@
 
     .line 3
     .line 4
-    if-nez p2, :cond_70
+    if-nez p2, :cond_1
 
     .line 5
     .line 6
@@ -189,7 +189,7 @@
 
     .line 25
     .line 26
-    if-eqz v1, :cond_56
+    if-eqz v1, :cond_0
 
     .line 27
     .line 28
@@ -221,11 +221,11 @@
     const/4 v4, 0x0
 
     .line 42
-    :goto_29
+    :goto_0
     array-length v5, v1
 
     .line 43
-    if-ge v4, v5, :cond_56
+    if-ge v4, v5, :cond_0
 
     .line 44
     .line 45
@@ -308,10 +308,10 @@
 
     .line 85
     .line 86
-    goto :goto_29
+    goto :goto_0
 
     .line 87
-    :cond_56
+    :cond_0
     new-instance v0, Llibs/bj3;
 
     .line 88
@@ -362,7 +362,7 @@
     return-object v1
 
     .line 113
-    :cond_70
+    :cond_1
     check-cast p2, Llibs/aj3;
 
     .line 114
@@ -382,7 +382,7 @@
     const/4 v3, 0x1
 
     .line 122
-    if-eqz v2, :cond_91
+    if-eqz v2, :cond_2
 
     .line 123
     .line 124
@@ -430,12 +430,12 @@
 
     .line 145
     .line 146
-    :cond_91
+    :cond_2
     iget v2, p2, Llibs/aj3;->Omicron:I
 
     .line 147
     .line 148
-    if-ne v2, v3, :cond_9a
+    if-ne v2, v3, :cond_3
 
     .line 149
     .line 150
@@ -448,7 +448,7 @@
     .line 153
     .line 154
     .line 155
-    :cond_9a
+    :cond_3
     invoke-virtual {p2, p1}, Llibs/aj3;->setPosition(I)V
 
     .line 156
@@ -471,7 +471,7 @@
 .end method
 
 .method public final getViewTypeCount()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ui3;->a:Landroid/widget/ListAdapter;
@@ -490,7 +490,7 @@
 .end method
 
 .method public final getWrappedAdapter()Landroid/widget/ListAdapter;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ui3;->a:Landroid/widget/ListAdapter;
@@ -501,7 +501,7 @@
 .end method
 
 .method public final hasStableIds()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ui3;->a:Landroid/widget/ListAdapter;
@@ -520,7 +520,7 @@
 .end method
 
 .method public final isEmpty()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ui3;->a:Landroid/widget/ListAdapter;
@@ -539,7 +539,7 @@
 .end method
 
 .method public final isEnabled(I)Z
-    .registers 3
+    .locals 1
 
     .line 1
     :try_start_0
@@ -553,14 +553,14 @@
     .line 5
     .line 6
     move-result p1
-    :try_end_6
-    .catchall {:try_start_0 .. :try_end_6} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 7
     return p1
 
     .line 8
-    :catchall_7
+    :catchall_0
     const/4 p1, 0x0
 
     .line 9
@@ -568,7 +568,7 @@
 .end method
 
 .method public final registerDataSetObserver(Landroid/database/DataSetObserver;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ui3;->a:Landroid/widget/ListAdapter;
@@ -584,7 +584,7 @@
 .end method
 
 .method public final unregisterDataSetObserver(Landroid/database/DataSetObserver;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ui3;->a:Landroid/widget/ListAdapter;

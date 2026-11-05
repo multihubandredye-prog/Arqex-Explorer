@@ -27,7 +27,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 13
+    .locals 13
 
     .line 1
     invoke-static {}, Llibs/t43;->z()I
@@ -117,7 +117,7 @@
     move-result v0
 
     .line 44
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_0
 
     .line 45
     .line 46
@@ -126,7 +126,7 @@
     .line 47
     .line 48
     .line 49
-    :cond_30
+    :cond_0
     sput-object v5, Llibs/l6;->g:Ljava/util/concurrent/ThreadPoolExecutor;
 
     .line 50
@@ -148,7 +148,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -196,12 +196,12 @@
     monitor-enter v0
 
     .line 24
-    :try_start_17
+    :try_start_0
     sget-object v1, Llibs/l6;->i:Llibs/i6;
 
     .line 25
     .line 26
-    if-nez v1, :cond_29
+    if-nez v1, :cond_0
 
     .line 27
     .line 28
@@ -226,21 +226,21 @@
 
     .line 38
     .line 39
-    goto :goto_29
+    goto :goto_0
 
     .line 40
-    :catchall_27
+    :catchall_0
     move-exception v1
 
     .line 41
-    goto :goto_3b
+    goto :goto_1
 
     .line 42
-    :cond_29
-    :goto_29
+    :cond_0
+    :goto_0
     monitor-exit v0
-    :try_end_2a
-    .catchall {:try_start_17 .. :try_end_2a} :catchall_27
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 43
     iput-object v1, p0, Llibs/l6;->f:Landroid/os/Handler;
@@ -276,11 +276,11 @@
     return-void
 
     .line 60
-    :goto_3b
-    :try_start_3b
+    :goto_1
+    :try_start_1
     monitor-exit v0
-    :try_end_3c
-    .catchall {:try_start_3b .. :try_end_3c} :catchall_27
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 61
     throw v1
@@ -289,7 +289,7 @@
 
 # virtual methods
 .method public varargs a([Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p1}, Lcom/mixplorer/providers/FileProvider;->i([Ljava/lang/Object;)Ljava/lang/Object;
@@ -304,7 +304,7 @@
 .end method
 
 .method public final varargs b(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)V
-    .registers 6
+    .locals 3
 
     .line 1
     iget v0, p0, Llibs/l6;->c:I
@@ -317,7 +317,7 @@
     const/4 v2, 0x1
 
     .line 5
-    if-eq v0, v2, :cond_1d
+    if-eq v0, v2, :cond_2
 
     .line 6
     .line 7
@@ -333,18 +333,18 @@
     move-result v0
 
     .line 13
-    if-eq v0, v2, :cond_17
+    if-eq v0, v2, :cond_1
 
     .line 14
     .line 15
-    if-eq v0, v1, :cond_11
+    if-eq v0, v1, :cond_0
 
     .line 16
     .line 17
-    goto :goto_1d
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     const-string p1, "Cannot execute task: the task has already been executed (a task can be executed only once)"
 
     .line 19
@@ -357,7 +357,7 @@
     return-void
 
     .line 24
-    :cond_17
+    :cond_1
     const-string p1, "Cannot execute task: the task is already running."
 
     .line 25
@@ -370,8 +370,8 @@
     return-void
 
     .line 30
-    :cond_1d
-    :goto_1d
+    :cond_2
+    :goto_0
     iput v1, p0, Llibs/l6;->c:I
 
     .line 31
@@ -397,21 +397,21 @@
 .end method
 
 .method public c(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public d(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final e(Ljava/lang/Object;)V
-    .registers 6
+    .locals 4
 
     .line 1
     new-instance v0, Llibs/h6;

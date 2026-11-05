@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/FilterOutputStream;Ljava/io/OutputStream;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/io/OutputStream;-><init>()V
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final close()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ok3;->X:Ljava/io/FilterOutputStream;
@@ -58,7 +58,7 @@
 .end method
 
 .method public final flush()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ok3;->X:Ljava/io/FilterOutputStream;
@@ -83,7 +83,7 @@
 .end method
 
 .method public final write(I)V
-    .registers 3
+    .locals 1
 
     .line 14
     iget-object v0, p0, Llibs/ok3;->X:Ljava/io/FilterOutputStream;
@@ -99,7 +99,7 @@
 .end method
 
 .method public final write([B)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ok3;->X:Ljava/io/FilterOutputStream;
@@ -124,7 +124,7 @@
 .end method
 
 .method public final write([BII)V
-    .registers 5
+    .locals 1
 
     .line 12
     iget-object v0, p0, Llibs/ok3;->X:Ljava/io/FilterOutputStream;

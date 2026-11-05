@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ee3;Llibs/yl1;Ljava/nio/channels/ServerSocketChannel;)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/ce3;->c:Llibs/ee3;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final a(Ljava/nio/channels/SelectionKey;Llibs/yl1;)Z
-    .registers 14
+    .locals 11
 
     .line 1
     iget-object v0, p0, Llibs/ce3;->c:Llibs/ee3;
@@ -56,7 +56,7 @@
     const/4 v5, 0x0
 
     .line 9
-    :try_start_8
+    :try_start_0
     invoke-static {}, Llibs/ck0;->b()Llibs/ck0;
 
     .line 10
@@ -152,7 +152,7 @@
     move-result-object v4
 
     .line 58
-    if-eqz v4, :cond_93
+    if-eqz v4, :cond_0
 
     .line 59
     .line 60
@@ -282,13 +282,13 @@
     .line 126
     .line 127
     invoke-virtual {v0, v6, v4}, Llibs/ee3;->b(Llibs/bd3;Ljava/nio/channels/SelectableChannel;)V
-    :try_end_81
-    .catchall {:try_start_8 .. :try_end_81} :catchall_90
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 128
     .line 129
     .line 130
-    :try_start_81
+    :try_start_1
     invoke-virtual {p1}, Ljava/nio/channels/SelectionKey;->channel()Ljava/nio/channels/SelectableChannel;
 
     .line 131
@@ -307,8 +307,8 @@
     .line 138
     .line 139
     move-result p1
-    :try_end_8b
-    .catchall {:try_start_81 .. :try_end_8b} :catchall_8d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 140
     xor-int/2addr p1, v3
@@ -317,28 +317,28 @@
     return p1
 
     .line 142
-    :catchall_8d
+    :catchall_0
     move-exception p2
 
     .line 143
     const/4 v0, 0x1
 
     .line 144
-    goto :goto_a1
+    goto :goto_0
 
     .line 145
-    :catchall_90
+    :catchall_1
     move-exception p2
 
     .line 146
     const/4 v0, 0x0
 
     .line 147
-    goto :goto_a1
+    goto :goto_0
 
     .line 148
-    :cond_93
-    :try_start_93
+    :cond_0
+    :try_start_2
     invoke-static {v2}, Llibs/zm1;->Context(I)Z
 
     .line 149
@@ -347,7 +347,7 @@
     move-result p2
 
     .line 152
-    if-eqz p2, :cond_a0
+    if-eqz p2, :cond_1
 
     .line 153
     .line 154
@@ -360,17 +360,17 @@
     .line 157
     .line 158
     invoke-static {p2, v0}, Llibs/zm1;->Set(Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_a0
-    .catchall {:try_start_93 .. :try_end_a0} :catchall_90
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 159
     .line 160
     .line 161
-    :cond_a0
+    :cond_1
     return v3
 
     .line 162
-    :goto_a1
+    :goto_0
     invoke-static {v2}, Llibs/zm1;->Context(I)Z
 
     .line 163
@@ -379,7 +379,7 @@
     move-result v1
 
     .line 166
-    if-eqz v1, :cond_ae
+    if-eqz v1, :cond_2
 
     .line 167
     .line 168
@@ -396,25 +396,25 @@
     .line 173
     .line 174
     .line 175
-    :cond_ae
-    if-eqz v4, :cond_bc
+    :cond_2
+    if-eqz v4, :cond_3
 
     .line 176
     .line 177
-    if-nez v0, :cond_bc
+    if-nez v0, :cond_3
 
     .line 178
     .line 179
-    :try_start_b2
+    :try_start_3
     invoke-virtual {v4}, Ljava/nio/channels/spi/AbstractInterruptibleChannel;->close()V
-    :try_end_b5
-    .catch Ljava/io/IOException; {:try_start_b2 .. :try_end_b5} :catch_b5
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
 
     .line 180
     .line 181
     .line 182
-    :catch_b5
-    :try_start_b5
+    :catch_0
+    :try_start_4
     invoke-virtual {v4}, Ljava/nio/channels/SocketChannel;->socket()Ljava/net/Socket;
 
     .line 183
@@ -424,14 +424,14 @@
 
     .line 186
     invoke-virtual {p2}, Ljava/net/Socket;->close()V
-    :try_end_bc
-    .catch Ljava/io/IOException; {:try_start_b5 .. :try_end_bc} :catch_bc
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
 
     .line 187
     .line 188
     .line 189
-    :catch_bc
-    :cond_bc
+    :catch_1
+    :cond_3
     invoke-virtual {p1}, Ljava/nio/channels/SelectionKey;->channel()Ljava/nio/channels/SelectableChannel;
 
     .line 190

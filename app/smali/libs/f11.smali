@@ -28,7 +28,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r31;Llibs/xt1;Ljava/lang/String;JJJJJLlibs/l11;)V
-    .registers 15
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 15
+    .locals 14
 
     .line 1
     iget-object v13, p0, Llibs/f11;->Pi:Llibs/l11;

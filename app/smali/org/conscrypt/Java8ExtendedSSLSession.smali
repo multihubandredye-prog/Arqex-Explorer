@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/conscrypt/ExternalSession;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Lorg/conscrypt/Java7ExtendedSSLSession;-><init>(Lorg/conscrypt/ExternalSession;)V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final getRequestedServerNames()Ljava/util/List;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -42,7 +42,7 @@
     move-result-object v0
 
     .line 7
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 8
     .line 9
@@ -53,7 +53,7 @@
     return-object v0
 
     .line 12
-    :cond_b
+    :cond_0
     new-instance v1, Ljavax/net/ssl/SNIHostName;
 
     .line 13

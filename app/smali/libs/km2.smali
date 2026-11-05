@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(II)V
-    .registers 3
+    .locals 0
 
     .line 18
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(II)V
@@ -41,7 +41,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
@@ -80,7 +80,7 @@
 .end method
 
 .method public constructor <init>(Landroid/view/ViewGroup$LayoutParams;)V
-    .registers 2
+    .locals 0
 
     .line 26
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
@@ -106,7 +106,7 @@
 .end method
 
 .method public constructor <init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
-    .registers 2
+    .locals 0
 
     .line 22
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
@@ -132,7 +132,7 @@
 .end method
 
 .method public constructor <init>(Llibs/km2;)V
-    .registers 2
+    .locals 0
 
     .line 30
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
@@ -160,14 +160,14 @@
 
 # virtual methods
 .method public final a()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/km2;->a:Llibs/um2;
 
     .line 2
     .line 3
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -177,7 +177,7 @@
     return v0
 
     .line 7
-    :cond_6
+    :cond_0
     invoke-virtual {v0}, Llibs/um2;->g()I
 
     .line 8
@@ -190,7 +190,7 @@
 .end method
 
 .method public final b()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/km2;->a:Llibs/um2;
@@ -209,14 +209,14 @@
 .end method
 
 .method public final c()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/km2;->a:Llibs/um2;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -228,7 +228,7 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -238,7 +238,7 @@
     return v0
 
     .line 13
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
     .line 14
@@ -246,7 +246,7 @@
 .end method
 
 .method public final d()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/km2;->a:Llibs/um2;

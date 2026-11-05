@@ -11,7 +11,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,7 +23,7 @@
 .end method
 
 .method public static getDigestSizeBytesByJcaDigestAlgorithmStandardName(Ljava/lang/String;)I
-    .registers 3
+    .locals 2
 
     .line 1
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -50,7 +50,7 @@
     move-result v1
 
     .line 13
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     .line 14
     .line 15
@@ -61,7 +61,7 @@
     return p0
 
     .line 18
-    :cond_11
+    :cond_0
     const-string v1, "SHA-512"
 
     .line 19
@@ -74,7 +74,7 @@
     move-result v1
 
     .line 24
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_1
 
     .line 25
     .line 26
@@ -85,7 +85,7 @@
     return p0
 
     .line 29
-    :cond_1c
+    :cond_1
     const-string v1, "SHA-1"
 
     .line 30
@@ -98,7 +98,7 @@
     move-result v1
 
     .line 35
-    if-eqz v1, :cond_27
+    if-eqz v1, :cond_2
 
     .line 36
     .line 37
@@ -109,7 +109,7 @@
     return p0
 
     .line 40
-    :cond_27
+    :cond_2
     const-string v1, "SHA-384"
 
     .line 41
@@ -122,7 +122,7 @@
     move-result v1
 
     .line 46
-    if-eqz v1, :cond_32
+    if-eqz v1, :cond_3
 
     .line 47
     .line 48
@@ -133,7 +133,7 @@
     return p0
 
     .line 51
-    :cond_32
+    :cond_3
     const-string v1, "SHA-224"
 
     .line 52
@@ -146,7 +146,7 @@
     move-result v0
 
     .line 57
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_4
 
     .line 58
     .line 59
@@ -157,7 +157,7 @@
     return p0
 
     .line 62
-    :cond_3d
+    :cond_4
     new-instance v0, Ljava/security/NoSuchAlgorithmException;
 
     .line 63
@@ -183,7 +183,7 @@
 .end method
 
 .method public static getEVP_MDByJcaDigestAlgorithmStandardName(Ljava/lang/String;)J
-    .registers 3
+    .locals 2
 
     .line 1
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -210,7 +210,7 @@
     move-result v1
 
     .line 13
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     .line 14
     .line 15
@@ -221,7 +221,7 @@
     return-wide v0
 
     .line 18
-    :cond_11
+    :cond_0
     const-string v1, "SHA-512"
 
     .line 19
@@ -234,7 +234,7 @@
     move-result v1
 
     .line 24
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_1
 
     .line 25
     .line 26
@@ -245,7 +245,7 @@
     return-wide v0
 
     .line 29
-    :cond_1c
+    :cond_1
     const-string v1, "SHA-1"
 
     .line 30
@@ -258,7 +258,7 @@
     move-result v1
 
     .line 35
-    if-eqz v1, :cond_27
+    if-eqz v1, :cond_2
 
     .line 36
     .line 37
@@ -269,7 +269,7 @@
     return-wide v0
 
     .line 40
-    :cond_27
+    :cond_2
     const-string v1, "SHA-384"
 
     .line 41
@@ -282,7 +282,7 @@
     move-result v1
 
     .line 46
-    if-eqz v1, :cond_32
+    if-eqz v1, :cond_3
 
     .line 47
     .line 48
@@ -293,7 +293,7 @@
     return-wide v0
 
     .line 51
-    :cond_32
+    :cond_3
     const-string v1, "SHA-224"
 
     .line 52
@@ -306,7 +306,7 @@
     move-result v0
 
     .line 57
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_4
 
     .line 58
     .line 59
@@ -317,7 +317,7 @@
     return-wide v0
 
     .line 62
-    :cond_3d
+    :cond_4
     new-instance v0, Ljava/security/NoSuchAlgorithmException;
 
     .line 63
@@ -343,7 +343,7 @@
 .end method
 
 .method public static getJcaDigestAlgorithmStandardName(Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -370,7 +370,7 @@
     move-result v1
 
     .line 13
-    if-nez v1, :cond_5d
+    if-nez v1, :cond_5
 
     .line 14
     .line 15
@@ -386,14 +386,14 @@
     move-result v1
 
     .line 21
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_0
 
     .line 22
     .line 23
-    goto :goto_5d
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_0
     const-string v0, "SHA-512"
 
     .line 25
@@ -406,7 +406,7 @@
     move-result v1
 
     .line 30
-    if-nez v1, :cond_5d
+    if-nez v1, :cond_5
 
     .line 31
     .line 32
@@ -422,14 +422,14 @@
     move-result v1
 
     .line 38
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_1
 
     .line 39
     .line 40
-    goto :goto_5d
+    goto :goto_0
 
     .line 41
-    :cond_28
+    :cond_1
     const-string v0, "SHA-1"
 
     .line 42
@@ -442,7 +442,7 @@
     move-result v1
 
     .line 47
-    if-nez v1, :cond_5d
+    if-nez v1, :cond_5
 
     .line 48
     .line 49
@@ -458,14 +458,14 @@
     move-result v1
 
     .line 55
-    if-eqz v1, :cond_39
+    if-eqz v1, :cond_2
 
     .line 56
     .line 57
-    goto :goto_5d
+    goto :goto_0
 
     .line 58
-    :cond_39
+    :cond_2
     const-string v0, "SHA-384"
 
     .line 59
@@ -478,7 +478,7 @@
     move-result v1
 
     .line 64
-    if-nez v1, :cond_5d
+    if-nez v1, :cond_5
 
     .line 65
     .line 66
@@ -494,14 +494,14 @@
     move-result v1
 
     .line 72
-    if-eqz v1, :cond_4a
+    if-eqz v1, :cond_3
 
     .line 73
     .line 74
-    goto :goto_5d
+    goto :goto_0
 
     .line 75
-    :cond_4a
+    :cond_3
     const-string v0, "SHA-224"
 
     .line 76
@@ -514,7 +514,7 @@
     move-result v1
 
     .line 81
-    if-nez v1, :cond_5d
+    if-nez v1, :cond_5
 
     .line 82
     .line 83
@@ -530,27 +530,27 @@
     move-result p0
 
     .line 89
-    if-eqz p0, :cond_5b
+    if-eqz p0, :cond_4
 
     .line 90
     .line 91
-    goto :goto_5d
+    goto :goto_0
 
     .line 92
-    :cond_5b
+    :cond_4
     const/4 p0, 0x0
 
     .line 93
     return-object p0
 
     .line 94
-    :cond_5d
-    :goto_5d
+    :cond_5
+    :goto_0
     return-object v0
 .end method
 
 .method public static getJcaDigestAlgorithmStandardNameFromEVP_MD(J)Ljava/lang/String;
-    .registers 5
+    .locals 3
 
     .line 1
     sget-wide v0, Lorg/conscrypt/EvpMdRef$MD5;->EVP_MD:J
@@ -561,7 +561,7 @@
 
     .line 4
     .line 5
-    if-nez v2, :cond_9
+    if-nez v2, :cond_0
 
     .line 6
     .line 7
@@ -572,7 +572,7 @@
     return-object p0
 
     .line 10
-    :cond_9
+    :cond_0
     sget-wide v0, Lorg/conscrypt/EvpMdRef$SHA1;->EVP_MD:J
 
     .line 11
@@ -581,7 +581,7 @@
 
     .line 13
     .line 14
-    if-nez v2, :cond_12
+    if-nez v2, :cond_1
 
     .line 15
     .line 16
@@ -592,7 +592,7 @@
     return-object p0
 
     .line 19
-    :cond_12
+    :cond_1
     sget-wide v0, Lorg/conscrypt/EvpMdRef$SHA224;->EVP_MD:J
 
     .line 20
@@ -601,7 +601,7 @@
 
     .line 22
     .line 23
-    if-nez v2, :cond_1b
+    if-nez v2, :cond_2
 
     .line 24
     .line 25
@@ -612,7 +612,7 @@
     return-object p0
 
     .line 28
-    :cond_1b
+    :cond_2
     sget-wide v0, Lorg/conscrypt/EvpMdRef$SHA256;->EVP_MD:J
 
     .line 29
@@ -621,7 +621,7 @@
 
     .line 31
     .line 32
-    if-nez v2, :cond_24
+    if-nez v2, :cond_3
 
     .line 33
     .line 34
@@ -632,7 +632,7 @@
     return-object p0
 
     .line 37
-    :cond_24
+    :cond_3
     sget-wide v0, Lorg/conscrypt/EvpMdRef$SHA384;->EVP_MD:J
 
     .line 38
@@ -641,7 +641,7 @@
 
     .line 40
     .line 41
-    if-nez v2, :cond_2d
+    if-nez v2, :cond_4
 
     .line 42
     .line 43
@@ -652,7 +652,7 @@
     return-object p0
 
     .line 46
-    :cond_2d
+    :cond_4
     sget-wide v0, Lorg/conscrypt/EvpMdRef$SHA512;->EVP_MD:J
 
     .line 47
@@ -661,7 +661,7 @@
 
     .line 49
     .line 50
-    if-nez v2, :cond_36
+    if-nez v2, :cond_5
 
     .line 51
     .line 52
@@ -672,7 +672,7 @@
     return-object p0
 
     .line 55
-    :cond_36
+    :cond_5
     const-string p0, "Unknown EVP_MD reference"
 
     .line 56

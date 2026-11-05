@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/l3;Ljava/util/ArrayList;)V
-    .registers 7
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -69,8 +69,8 @@
     const/4 v1, 0x0
 
     .line 25
-    :goto_18
-    if-ge v1, p1, :cond_36
+    :goto_0
+    if-ge v1, p1, :cond_0
 
     .line 26
     .line 27
@@ -90,7 +90,7 @@
 
     .line 34
     .line 35
-    :try_start_22
+    :try_start_0
     iget-object v3, p0, Llibs/i3;->Z:Ljava/util/ArrayList;
 
     .line 36
@@ -112,16 +112,16 @@
 
     .line 45
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_2f
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_22 .. :try_end_2f} :catch_30
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 46
     .line 47
     .line 48
-    goto :goto_18
+    goto :goto_0
 
     .line 49
-    :catch_30
+    :catch_0
     move-exception p1
 
     .line 50
@@ -136,7 +136,7 @@
     throw p1
 
     .line 55
-    :cond_36
+    :cond_0
     iget-object p1, p0, Llibs/i3;->Z:Ljava/util/ArrayList;
 
     .line 56
@@ -179,7 +179,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 14
+    .locals 13
 
     .line 1
     iget-object v0, p0, Llibs/i3;->Y:Ljava/util/ArrayList;
@@ -212,7 +212,7 @@
 
     .line 14
     .line 15
-    :try_start_e
+    :try_start_0
     invoke-virtual {v2}, Llibs/l3;->f()Llibs/k3;
 
     .line 16
@@ -221,8 +221,8 @@
     move-result-object v5
 
     .line 19
-    :goto_12
-    if-eqz v5, :cond_93
+    :goto_0
+    if-eqz v5, :cond_3
 
     .line 20
     .line 21
@@ -242,7 +242,7 @@
 
     .line 28
     .line 29
-    if-gtz v12, :cond_7c
+    if-gtz v12, :cond_2
 
     .line 30
     .line 31
@@ -272,7 +272,7 @@
     const/4 v7, 0x0
 
     .line 45
-    :goto_2c
+    :goto_1
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     .line 46
@@ -281,7 +281,7 @@
     move-result v8
 
     .line 49
-    if-ge v7, v8, :cond_77
+    if-ge v7, v8, :cond_1
 
     .line 50
     .line 51
@@ -340,7 +340,7 @@
     move-result v9
 
     .line 78
-    if-ne v9, v11, :cond_52
+    if-ne v9, v11, :cond_0
 
     .line 79
     .line 80
@@ -348,10 +348,10 @@
 
     .line 81
     .line 82
-    goto :goto_2c
+    goto :goto_1
 
     .line 83
-    :cond_52
+    :cond_0
     new-instance v0, Ljava/lang/RuntimeException;
 
     .line 84
@@ -413,21 +413,21 @@
     throw v0
 
     .line 116
-    :catch_73
+    :catch_0
     move-exception v0
 
     .line 117
-    goto :goto_94
+    goto :goto_2
 
     .line 118
-    :catch_75
+    :catch_1
     move-exception v0
 
     .line 119
-    goto :goto_94
+    goto :goto_2
 
     .line 120
-    :cond_77
+    :cond_1
     invoke-virtual {v2}, Llibs/l3;->f()Llibs/k3;
 
     .line 121
@@ -436,10 +436,10 @@
     move-result-object v5
 
     .line 124
-    goto :goto_12
+    goto :goto_0
 
     .line 125
-    :cond_7c
+    :cond_2
     new-instance v0, Ljava/lang/RuntimeException;
 
     .line 126
@@ -481,16 +481,16 @@
     .line 146
     .line 147
     throw v0
-    :try_end_93
-    .catch Ljava/io/IOException; {:try_start_e .. :try_end_93} :catch_75
-    .catch Ljava/security/DigestException; {:try_start_e .. :try_end_93} :catch_73
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/security/DigestException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 148
-    :cond_93
+    :cond_3
     return-void
 
     .line 149
-    :goto_94
+    :goto_2
     invoke-static {v0}, Llibs/ic0;->k(Ljava/lang/Throwable;)V
 
     .line 150

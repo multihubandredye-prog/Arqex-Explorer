@@ -20,7 +20,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/d9;Ljava/util/ArrayList;ILjava/util/ArrayList;Llibs/ml1;)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object p1, p0, Llibs/y8;->X:Llibs/d9;
@@ -88,15 +88,15 @@
     monitor-enter v0
 
     .line 16
-    :try_start_f
+    :try_start_0
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     .line 17
     .line 18
     .line 19
     monitor-exit v0
-    :try_end_13
-    .catchall {:try_start_f .. :try_end_13} :catchall_27
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 20
     invoke-static {v0}, Llibs/e9;->p(Ljava/util/ArrayList;)V
@@ -117,7 +117,7 @@
     move-result p1
 
     .line 30
-    if-nez p1, :cond_23
+    if-nez p1, :cond_0
 
     .line 31
     .line 32
@@ -129,7 +129,7 @@
     return-void
 
     .line 36
-    :cond_23
+    :cond_0
     invoke-virtual {v3}, Llibs/ml1;->App()V
 
     .line 37
@@ -138,14 +138,14 @@
     return-void
 
     .line 40
-    :catchall_27
+    :catchall_0
     move-exception p1
 
     .line 41
-    :try_start_28
+    :try_start_1
     monitor-exit v0
-    :try_end_29
-    .catchall {:try_start_28 .. :try_end_29} :catchall_27
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 42
     throw p1

@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Param;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -34,7 +34,7 @@
     const/4 v1, 0x4
 
     .line 9
-    if-gt v0, v1, :cond_46
+    if-gt v0, v1, :cond_1
 
     .line 10
     .line 11
@@ -49,7 +49,7 @@
     const/4 v2, 0x3
 
     .line 16
-    if-lt v0, v2, :cond_46
+    if-lt v0, v2, :cond_1
 
     .line 17
     .line 18
@@ -84,7 +84,7 @@
     move-result v2
 
     .line 33
-    if-ne v2, v1, :cond_2d
+    if-ne v2, v1, :cond_0
 
     .line 34
     .line 35
@@ -111,7 +111,7 @@
 
     .line 45
     .line 46
-    :cond_2d
+    :cond_0
     add-int/lit8 v1, v0, 0x1
 
     .line 47
@@ -163,7 +163,7 @@
     return-void
 
     .line 71
-    :cond_46
+    :cond_1
     const-string v0, "Bad sequence size: "
 
     .line 72
@@ -190,7 +190,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/Init;
@@ -218,7 +218,7 @@
 
     .line 13
     .line 14
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_0
 
     .line 15
     .line 16
@@ -227,7 +227,7 @@
     .line 17
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     iget-object v1, p0, Llibs/i32;->Z:Llibs/$f;
 
     .line 20

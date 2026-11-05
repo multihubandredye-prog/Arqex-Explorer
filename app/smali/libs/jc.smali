@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic a(Landroid/content/Context;I)Landroid/graphics/drawable/Icon;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p0, p1}, Landroid/graphics/drawable/Icon;->createWithResource(Landroid/content/Context;I)Landroid/graphics/drawable/Icon;
@@ -20,7 +20,7 @@
 .end method
 
 .method public static bridge synthetic b(Landroid/graphics/Bitmap;)Landroid/graphics/drawable/Icon;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-static {p0}, Landroid/graphics/drawable/Icon;->createWithBitmap(Landroid/graphics/Bitmap;)Landroid/graphics/drawable/Icon;
@@ -35,7 +35,7 @@
 .end method
 
 .method public static bridge synthetic c(Landroid/view/ViewGroup;)Landroid/view/WindowInsets;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getRootWindowInsets()Landroid/view/WindowInsets;
@@ -50,7 +50,7 @@
 .end method
 
 .method public static bridge synthetic d(Landroid/media/MediaMetadataRetriever;Llibs/ll0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/media/MediaMetadataRetriever;->setDataSource(Landroid/media/MediaDataSource;)V

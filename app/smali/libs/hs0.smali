@@ -19,7 +19,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/16 v0, 0x20
@@ -30,7 +30,7 @@
 
     .line 4
     .line 5
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     .line 6
     .line 7
@@ -42,7 +42,7 @@
     return-void
 
     .line 11
-    :array_a
+    :array_0
     .array-data 1
         0x69t
         0x0t
@@ -80,7 +80,7 @@
 .end method
 
 .method public constructor <init>(Llibs/cg;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0, p1}, Llibs/bh3;-><init>(Llibs/cg;)V
@@ -127,7 +127,7 @@
 
 # virtual methods
 .method public final a(ZLlibs/et;)V
-    .registers 5
+    .locals 2
 
     .line 1
     const-wide/16 v0, 0x0
@@ -155,7 +155,7 @@
 
     .line 13
     .line 14
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_0
 
     .line 15
     .line 16
@@ -167,12 +167,12 @@
 
     .line 19
     .line 20
-    :cond_13
+    :cond_0
     instance-of p1, p2, Llibs/ua2;
 
     .line 21
     .line 22
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_1
 
     .line 23
     .line 24
@@ -184,12 +184,12 @@
 
     .line 27
     .line 28
-    :cond_1b
+    :cond_1
     instance-of p1, p2, Llibs/va2;
 
     .line 29
     .line 30
-    if-eqz p1, :cond_23
+    if-eqz p1, :cond_2
 
     .line 31
     .line 32
@@ -201,7 +201,7 @@
 
     .line 35
     .line 36
-    :cond_23
+    :cond_2
     check-cast p2, Llibs/hh1;
 
     .line 37
@@ -214,7 +214,7 @@
 .end method
 
 .method public final b()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/hs0;->Y:Llibs/nm;
@@ -307,7 +307,7 @@
 .end method
 
 .method public final c(B)B
-    .registers 9
+    .locals 7
 
     .line 1
     iget-wide v0, p0, Llibs/hs0;->Lambda:J
@@ -326,7 +326,7 @@
 
     .line 8
     .line 9
-    if-lez v5, :cond_51
+    if-lez v5, :cond_0
 
     .line 10
     .line 11
@@ -341,7 +341,7 @@
 
     .line 15
     .line 16
-    if-nez v5, :cond_51
+    if-nez v5, :cond_0
 
     .line 17
     .line 18
@@ -465,7 +465,7 @@
     .line 80
     .line 81
     .line 82
-    :cond_51
+    :cond_0
     iget-wide v0, p0, Llibs/hs0;->Lambda:J
 
     .line 83
@@ -493,7 +493,7 @@
 .end method
 
 .method public final i()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/hs0;->Y:Llibs/nm;
@@ -508,7 +508,7 @@
 .end method
 
 .method public final r(II[B[B)I
-    .registers 12
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/hs0;->Y:Llibs/nm;
@@ -547,7 +547,7 @@
 .end method
 
 .method public final reset()V
-    .registers 3
+    .locals 2
 
     .line 1
     const-wide/16 v0, 0x0

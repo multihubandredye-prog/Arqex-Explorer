@@ -19,7 +19,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -81,7 +81,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 2409
     invoke-static {}, Lorg/conscrypt/Platform;->getDefaultProviderName()Ljava/lang/String;
@@ -94,7 +94,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 8
+    .locals 6
 
     .line 2403
     invoke-static {}, Lorg/conscrypt/Platform;->provideTrustManagerByDefault()Z
@@ -123,7 +123,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;ZLjava/lang/String;)V
-    .registers 10
+    .locals 6
 
     .line 2406
     invoke-static {}, Lorg/conscrypt/Platform;->isTlsV1Deprecated()Z
@@ -150,7 +150,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;ZLjava/lang/String;ZZ)V
-    .registers 22
+    .locals 16
 
     .line 1
     move-object/from16 v0, p0
@@ -186,18 +186,18 @@
     const/4 v2, 0x0
 
     .line 18
-    if-nez p4, :cond_1c
+    if-nez p4, :cond_1
 
     .line 19
     .line 20
-    if-eqz p5, :cond_16
+    if-eqz p5, :cond_0
 
     .line 21
     .line 22
-    goto :goto_1c
+    goto :goto_0
 
     .line 23
-    :cond_16
+    :cond_0
     const-string v1, "TLSv1 is not deprecated and cannot be disabled."
 
     .line 24
@@ -210,8 +210,8 @@
     throw v2
 
     .line 29
-    :cond_1c
-    :goto_1c
+    :cond_1
+    :goto_0
     invoke-static/range {p4 .. p5}, Lorg/conscrypt/Platform;->setup(ZZ)V
 
     .line 30
@@ -277,7 +277,7 @@
 
     .line 63
     .line 64
-    if-nez v5, :cond_55
+    if-nez v5, :cond_3
 
     .line 65
     .line 66
@@ -293,17 +293,17 @@
     move-result v5
 
     .line 72
-    if-eqz v5, :cond_4b
+    if-eqz v5, :cond_2
 
     .line 73
     .line 74
     move-object v1, v6
 
     .line 75
-    goto :goto_56
+    goto :goto_1
 
     .line 76
-    :cond_4b
+    :cond_2
     const-string v3, "Choice of default protocol is unsupported: "
 
     .line 77
@@ -324,11 +324,11 @@
     throw v2
 
     .line 86
-    :cond_55
+    :cond_3
     move-object v1, v7
 
     .line 87
-    :goto_56
+    :goto_1
     const-string v2, "SSLContext.SSL"
 
     .line 88
@@ -488,7 +488,7 @@
 
     .line 171
     .line 172
-    if-eqz p2, :cond_bd
+    if-eqz p2, :cond_4
 
     .line 173
     .line 174
@@ -522,7 +522,7 @@
     .line 188
     .line 189
     .line 190
-    :cond_bd
+    :cond_4
     const-class v2, Lorg/conscrypt/KeyManagerFactoryImpl;
 
     .line 191
@@ -4335,7 +4335,7 @@
     move-result v1
 
     .line 2250
-    if-eqz v1, :cond_8d2
+    if-eqz v1, :cond_5
 
     .line 2251
     .line 2252
@@ -4351,10 +4351,10 @@
     move-result-object v1
 
     .line 2258
-    goto :goto_8d8
+    goto :goto_2
 
     .line 2259
-    :cond_8d2
+    :cond_5
     const-string v1, "HpkeImpl"
 
     .line 2260
@@ -4367,7 +4367,7 @@
     move-result-object v1
 
     .line 2265
-    :goto_8d8
+    :goto_2
     const-string v2, "$X25519_AES_128"
 
     .line 2266
@@ -4541,7 +4541,7 @@
     move-result v1
 
     .line 2356
-    if-eqz v1, :cond_961
+    if-eqz v1, :cond_6
 
     .line 2357
     .line 2358
@@ -4625,18 +4625,18 @@
     .line 2400
     .line 2401
     .line 2402
-    :cond_961
+    :cond_6
     return-void
 .end method
 
 .method private classExists(Ljava/lang/String;)Z
-    .registers 2
+    .locals 0
 
     .line 1
     :try_start_0
     invoke-static {p1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-    :try_end_3
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_3} :catch_5
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 2
     .line 3
@@ -4647,7 +4647,7 @@
     return p1
 
     .line 6
-    :catch_5
+    :catch_0
     const/4 p1, 0x0
 
     .line 7
@@ -4655,7 +4655,7 @@
 .end method
 
 .method private putECDHKeyAgreementImplClass(Ljava/lang/String;)V
-    .registers 5
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -4708,7 +4708,7 @@
 .end method
 
 .method private putImplClassWithKeyConstraints(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 6
+    .locals 1
 
     .line 1
     invoke-virtual {p0, p1, p2}, Ljava/util/Dictionary;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -4716,7 +4716,7 @@
     .line 2
     .line 3
     .line 4
-    if-eqz p3, :cond_19
+    if-eqz p3, :cond_0
 
     .line 5
     .line 6
@@ -4756,8 +4756,8 @@
     .line 24
     .line 25
     .line 26
-    :cond_19
-    if-eqz p4, :cond_2f
+    :cond_0
+    if-eqz p4, :cond_1
 
     .line 27
     .line 28
@@ -4797,12 +4797,12 @@
     .line 46
     .line 47
     .line 48
-    :cond_2f
+    :cond_1
     return-void
 .end method
 
 .method private putMacImplClass(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 6
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -4863,7 +4863,7 @@
 .end method
 
 .method private putRAWRSASignatureImplClass(Ljava/lang/String;)V
-    .registers 5
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -4939,7 +4939,7 @@
 .end method
 
 .method private putRSACipherImplClass(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 6
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -5023,7 +5023,7 @@
 .end method
 
 .method private putSignatureImplClass(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 6
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -5084,7 +5084,7 @@
 .end method
 
 .method private putSymmetricCipherImplClass(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 5
+    .locals 2
 
     .line 1
     const-string v0, "Cipher."
@@ -5136,7 +5136,7 @@
 .end method
 
 .method private putXDHKeyAgreementImplClass(Ljava/lang/String;)V
-    .registers 5
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

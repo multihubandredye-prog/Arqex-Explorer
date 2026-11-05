@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/net/Socket;Ljava/io/InputStream;JLlibs/om0;)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public final available()I
-    .registers 5
+    .locals 4
 
     .line 1
     iget-wide v0, p0, Llibs/an0;->Z:J
@@ -94,7 +94,7 @@
 .end method
 
 .method public final close()V
-    .registers 8
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/an0;->Lambda:Ljava/io/InputStream;
@@ -148,19 +148,19 @@
     const/4 v5, 0x0
 
     .line 26
-    :try_start_19
+    :try_start_0
     invoke-virtual {v0}, Llibs/tm0;->j()Llibs/yn2;
-    :try_end_1c
-    .catch Ljava/io/IOException; {:try_start_19 .. :try_end_1c} :catch_2a
-    .catch Llibs/qw; {:try_start_19 .. :try_end_1c} :catch_1d
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Llibs/qw; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 27
     .line 28
     .line 29
-    goto :goto_36
+    goto :goto_0
 
     .line 30
-    :catch_1d
+    :catch_0
     move-exception v6
 
     .line 31
@@ -185,10 +185,10 @@
     .line 40
     .line 41
     .line 42
-    goto :goto_36
+    goto :goto_0
 
     .line 43
-    :catch_2a
+    :catch_1
     move-exception v6
 
     .line 44
@@ -213,7 +213,7 @@
     .line 53
     .line 54
     .line 55
-    :goto_36
+    :goto_0
     invoke-virtual {v3}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
 
     .line 56
@@ -232,7 +232,7 @@
 .end method
 
 .method public final mark(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/an0;->Lambda:Ljava/io/InputStream;
@@ -256,7 +256,7 @@
 .end method
 
 .method public final markSupported()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/an0;->Lambda:Ljava/io/InputStream;
@@ -275,7 +275,7 @@
 .end method
 
 .method public final read()I
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/an0;->Lambda:Ljava/io/InputStream;
@@ -290,7 +290,7 @@
     move-result v0
 
     .line 7
-    if-ltz v0, :cond_f
+    if-ltz v0, :cond_0
 
     .line 8
     .line 9
@@ -309,12 +309,12 @@
 
     .line 15
     .line 16
-    :cond_f
+    :cond_0
     return v0
 .end method
 
 .method public final read([B)I
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -329,7 +329,7 @@
 .end method
 
 .method public final read([BII)I
-    .registers 6
+    .locals 2
 
     .line 18
     iget-object v0, p0, Llibs/an0;->Lambda:Ljava/io/InputStream;
@@ -338,7 +338,7 @@
 
     move-result p1
 
-    if-lez p1, :cond_e
+    if-lez p1, :cond_0
 
     .line 19
     iget-wide p2, p0, Llibs/an0;->Mu:J
@@ -349,18 +349,18 @@
 
     iput-wide p2, p0, Llibs/an0;->Mu:J
 
-    :cond_e
+    :cond_0
     return p1
 .end method
 
 .method public final declared-synchronized reset()V
-    .registers 3
+    .locals 2
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Llibs/an0;->Lambda:Ljava/io/InputStream;
 
     .line 3
@@ -375,8 +375,8 @@
     .line 8
     .line 9
     iput-wide v0, p0, Llibs/an0;->Mu:J
-    :try_end_a
-    .catchall {:try_start_1 .. :try_end_a} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 10
     .line 11
@@ -386,21 +386,21 @@
     return-void
 
     .line 13
-    :catchall_c
+    :catchall_0
     move-exception v0
 
     .line 14
-    :try_start_d
+    :try_start_1
     monitor-exit p0
-    :try_end_e
-    .catchall {:try_start_d .. :try_end_e} :catchall_c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 15
     throw v0
 .end method
 
 .method public final skip(J)J
-    .registers 6
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/an0;->Lambda:Ljava/io/InputStream;
@@ -423,7 +423,7 @@
 
     .line 10
     .line 11
-    if-lez v2, :cond_11
+    if-lez v2, :cond_0
 
     .line 12
     .line 13
@@ -438,6 +438,6 @@
 
     .line 17
     .line 18
-    :cond_11
+    :cond_0
     return-wide p1
 .end method

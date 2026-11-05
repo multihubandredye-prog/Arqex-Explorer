@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 40
     invoke-direct {p0}, Llibs/lv2;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method public constructor <init>(Llibs/pu2;JJJ)V
-    .registers 16
+    .locals 8
 
     .line 1
     sget-object v3, Llibs/cv2;->Upsilon:Llibs/cv2;
@@ -65,7 +65,7 @@
 
     .line 22
     .line 23
-    if-eqz p4, :cond_26
+    if-eqz p4, :cond_0
 
     .line 24
     .line 25
@@ -99,14 +99,14 @@
 
     .line 38
     .line 39
-    :cond_26
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final g(Llibs/rw2;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p1}, Llibs/rw2;->v()V
@@ -126,7 +126,7 @@
 .end method
 
 .method public final i(Llibs/rw2;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/lv2;->c:I

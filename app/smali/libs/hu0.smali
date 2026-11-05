@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(ILlibs/Auth;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -34,10 +34,10 @@
 .end method
 
 .method public static g(Ljava/lang/Object;)Llibs/hu0;
-    .registers 5
+    .locals 4
 
     .line 1
-    if-eqz p0, :cond_bb
+    if-eqz p0, :cond_4
 
     .line 2
     .line 3
@@ -45,15 +45,15 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
-    goto/16 :goto_bb
+    goto/16 :goto_2
 
     .line 8
     .line 9
-    :cond_8
+    :cond_0
     instance-of v0, p0, Llibs/Height;
 
     .line 10
@@ -61,7 +61,7 @@
     const/4 v1, 0x0
 
     .line 12
-    if-eqz v0, :cond_94
+    if-eqz v0, :cond_2
 
     .line 13
     .line 14
@@ -79,16 +79,16 @@
     const/4 v3, 0x0
 
     .line 20
-    packed-switch v2, :pswitch_data_be
+    packed-switch v2, :pswitch_data_0
 
     .line 21
     .line 22
     .line 23
-    goto/16 :goto_94
+    goto/16 :goto_1
 
     .line 24
     .line 25
-    :pswitch_18
+    :pswitch_0
     new-instance p0, Llibs/hu0;
 
     .line 26
@@ -109,7 +109,7 @@
 
     .line 34
     .line 35
-    if-eqz v3, :cond_29
+    if-eqz v3, :cond_1
 
     .line 36
     .line 37
@@ -121,10 +121,10 @@
     move-result-object v0
 
     .line 41
-    goto :goto_39
+    goto :goto_0
 
     .line 42
-    :cond_29
+    :cond_1
     invoke-virtual {v0}, Llibs/Height;->p()Llibs/Theme;
 
     .line 43
@@ -157,7 +157,7 @@
     move-result-object v0
 
     .line 58
-    :goto_39
+    :goto_0
     invoke-direct {p0, v2, v0}, Llibs/hu0;-><init>(ILlibs/Auth;)V
 
     .line 59
@@ -166,7 +166,7 @@
     return-object p0
 
     .line 62
-    :pswitch_3d
+    :pswitch_1
     new-instance p0, Llibs/hu0;
 
     .line 63
@@ -187,7 +187,7 @@
     return-object p0
 
     .line 72
-    :pswitch_47
+    :pswitch_2
     new-instance p0, Llibs/hu0;
 
     .line 73
@@ -208,7 +208,7 @@
     return-object p0
 
     .line 82
-    :pswitch_51
+    :pswitch_3
     new-instance p0, Llibs/hu0;
 
     .line 83
@@ -229,7 +229,7 @@
     return-object p0
 
     .line 92
-    :pswitch_5b
+    :pswitch_4
     new-instance p0, Llibs/hu0;
 
     .line 93
@@ -265,7 +265,7 @@
     return-object p0
 
     .line 109
-    :pswitch_6c
+    :pswitch_5
     const-string p0, "unknown tag: "
 
     .line 110
@@ -286,7 +286,7 @@
     return-object v1
 
     .line 119
-    :pswitch_76
+    :pswitch_6
     new-instance p0, Llibs/hu0;
 
     .line 120
@@ -307,7 +307,7 @@
     return-object p0
 
     .line 129
-    :pswitch_80
+    :pswitch_7
     new-instance p0, Llibs/hu0;
 
     .line 130
@@ -328,7 +328,7 @@
     return-object p0
 
     .line 139
-    :pswitch_8a
+    :pswitch_8
     new-instance p0, Llibs/hu0;
 
     .line 140
@@ -349,17 +349,17 @@
     return-object p0
 
     .line 149
-    :cond_94
-    :goto_94
+    :cond_2
+    :goto_1
     instance-of v0, p0, [B
 
     .line 150
     .line 151
-    if-eqz v0, :cond_a9
+    if-eqz v0, :cond_3
 
     .line 152
     .line 153
-    :try_start_98
+    :try_start_0
     check-cast p0, [B
 
     .line 154
@@ -378,14 +378,14 @@
     .line 161
     .line 162
     move-result-object p0
-    :try_end_a2
-    .catch Ljava/io/IOException; {:try_start_98 .. :try_end_a2} :catch_a3
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 163
     return-object p0
 
     .line 164
-    :catch_a3
+    :catch_0
     const-string p0, "unable to parse encoded general name"
 
     .line 165
@@ -398,7 +398,7 @@
     return-object v1
 
     .line 170
-    :cond_a9
+    :cond_3
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 171
@@ -435,8 +435,8 @@
     return-object v1
 
     .line 188
-    :cond_bb
-    :goto_bb
+    :cond_4
+    :goto_2
     check-cast p0, Llibs/hu0;
 
     .line 189
@@ -444,24 +444,24 @@
     return-object p0
 
     .line 191
-    :pswitch_data_be
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_8a
-        :pswitch_80
-        :pswitch_76
-        :pswitch_6c
-        :pswitch_5b
-        :pswitch_51
-        :pswitch_47
-        :pswitch_3d
-        :pswitch_18
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 5
+    .locals 4
 
     .line 1
     iget v0, p0, Llibs/hu0;->Y:I
@@ -475,7 +475,7 @@
 
     .line 5
     .line 6
-    if-ne v0, v1, :cond_e
+    if-ne v0, v1, :cond_0
 
     .line 7
     .line 8
@@ -494,7 +494,7 @@
     return-object v1
 
     .line 15
-    :cond_e
+    :cond_0
     new-instance v1, Llibs/s10;
 
     .line 16
@@ -511,7 +511,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/StringBuffer;
@@ -548,28 +548,28 @@
 
     .line 18
     .line 19
-    if-eq v1, v2, :cond_33
+    if-eq v1, v2, :cond_1
 
     .line 20
     .line 21
     const/4 v2, 0x2
 
     .line 22
-    if-eq v1, v2, :cond_33
+    if-eq v1, v2, :cond_1
 
     .line 23
     .line 24
     const/4 v2, 0x4
 
     .line 25
-    if-eq v1, v2, :cond_25
+    if-eq v1, v2, :cond_0
 
     .line 26
     .line 27
     const/4 v2, 0x6
 
     .line 28
-    if-eq v1, v2, :cond_33
+    if-eq v1, v2, :cond_1
 
     .line 29
     .line 30
@@ -586,10 +586,10 @@
     .line 35
     .line 36
     .line 37
-    goto :goto_40
+    goto :goto_0
 
     .line 38
-    :cond_25
+    :cond_0
     invoke-static {v3}, Llibs/nv3;->g(Ljava/lang/Object;)Llibs/nv3;
 
     .line 39
@@ -615,10 +615,10 @@
     .line 49
     .line 50
     .line 51
-    goto :goto_40
+    goto :goto_0
 
     .line 52
-    :cond_33
+    :cond_1
     invoke-static {v3}, Llibs/j10;->n(Ljava/lang/Object;)Llibs/j10;
 
     .line 53
@@ -644,7 +644,7 @@
     .line 63
     .line 64
     .line 65
-    :goto_40
+    :goto_0
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     .line 66

@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/za;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,7 +23,7 @@
 
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     const-string v0, "getRootVolumePath"
 
     .line 7
@@ -52,20 +52,20 @@
     .line 18
     .line 19
     iput-object p1, p0, Llibs/qi0;->b:Ljava/lang/String;
-    :try_end_14
-    .catchall {:try_start_5 .. :try_end_14} :catchall_14
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 20
     .line 21
-    :catchall_14
+    :catchall_0
     return-void
 .end method
 
 .method public static b([Ljava/lang/Object;)Llibs/li0;
-    .registers 7
+    .locals 6
 
     .line 1
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     .line 2
     .line 3
@@ -75,7 +75,7 @@
     return-object p0
 
     .line 5
-    :cond_4
+    :cond_0
     new-instance v0, Llibs/li0;
 
     .line 6
@@ -183,13 +183,13 @@
 
 # virtual methods
 .method public final a(Ljava/lang/String;)Z
-    .registers 8
+    .locals 6
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v1, p0, Llibs/qi0;->a:Ljava/lang/Object;
 
     .line 3
@@ -239,19 +239,19 @@
     .line 25
     .line 26
     move-result p1
-    :try_end_1a
-    .catchall {:try_start_1 .. :try_end_1a} :catchall_1b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 27
     return p1
 
     .line 28
-    :catchall_1b
+    :catchall_0
     return v0
 .end method
 
 .method public final c(Ljava/lang/String;)Llibs/li0;
-    .registers 8
+    .locals 6
 
     .line 1
     :try_start_0
@@ -307,14 +307,14 @@
     .line 25
     .line 26
     move-result-object p1
-    :try_end_1a
-    .catchall {:try_start_0 .. :try_end_1a} :catchall_1b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 27
     return-object p1
 
     .line 28
-    :catchall_1b
+    :catchall_0
     new-instance p1, Ljava/lang/RuntimeException;
 
     .line 29
@@ -328,7 +328,7 @@
 .end method
 
 .method public final d()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -360,7 +360,7 @@
 .end method
 
 .method public final e(Ljava/lang/String;)Ljava/io/InputStream;
-    .registers 8
+    .locals 6
 
     .line 1
     :try_start_0
@@ -407,15 +407,15 @@
 
     .line 21
     check-cast p1, Ljava/io/InputStream;
-    :try_end_16
-    .catchall {:try_start_0 .. :try_end_16} :catchall_17
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 22
     .line 23
     return-object p1
 
     .line 24
-    :catchall_17
+    :catchall_0
     move-exception p1
 
     .line 25

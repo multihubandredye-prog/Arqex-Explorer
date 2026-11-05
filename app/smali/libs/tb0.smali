@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/wb0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/tb0;->a:Llibs/wb0;
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final call()Ljava/lang/Object;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/tb0;->a:Llibs/wb0;
@@ -40,7 +40,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Llibs/tb0;->a:Llibs/wb0;
 
     .line 5
@@ -49,24 +49,24 @@
 
     .line 7
     .line 8
-    if-nez v2, :cond_d
+    if-nez v2, :cond_0
 
     .line 9
     .line 10
     monitor-exit v0
 
     .line 11
-    goto :goto_23
+    goto :goto_0
 
     .line 12
-    :catchall_b
+    :catchall_0
     move-exception v1
 
     .line 13
-    goto :goto_25
+    goto :goto_1
 
     .line 14
-    :cond_d
+    :cond_0
     invoke-virtual {v1}, Llibs/wb0;->View()V
 
     .line 15
@@ -84,7 +84,7 @@
     move-result v1
 
     .line 23
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_1
 
     .line 24
     .line 25
@@ -108,21 +108,21 @@
 
     .line 34
     .line 35
-    :cond_22
+    :cond_1
     monitor-exit v0
 
     .line 36
-    :goto_23
+    :goto_0
     const/4 v0, 0x0
 
     .line 37
     return-object v0
 
     .line 38
-    :goto_25
+    :goto_1
     monitor-exit v0
-    :try_end_26
-    .catchall {:try_start_3 .. :try_end_26} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 39
     throw v1

@@ -26,7 +26,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/app/Activity;Landroid/content/Intent;Landroid/net/Uri;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;Llibs/rp0;Z)V
-    .registers 9
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -72,7 +72,7 @@
 
 # virtual methods
 .method public final a(Ljava/lang/String;Llibs/$d;)V
-    .registers 12
+    .locals 9
 
     .line 1
     iget-object v1, p0, Llibs/db1;->X:Landroid/app/Activity;
@@ -107,7 +107,7 @@
 
     .line 16
     .line 17
-    :try_start_10
+    :try_start_0
     const-string p2, "ignore"
 
     .line 18
@@ -120,13 +120,13 @@
     move-result p1
 
     .line 23
-    if-eqz p1, :cond_1f
+    if-eqz p1, :cond_0
 
     .line 24
     .line 25
     invoke-static/range {v1 .. v8}, Llibs/xg0;->Any(Landroid/app/Activity;Landroid/content/Intent;Landroid/net/Uri;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;Llibs/rp0;Z)V
-    :try_end_1b
-    .catchall {:try_start_10 .. :try_end_1b} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 26
     .line 27
@@ -134,21 +134,21 @@
     return-void
 
     .line 29
-    :catchall_1c
+    :catchall_0
     move-exception v0
 
     .line 30
     move-object p1, v0
 
     .line 31
-    goto :goto_20
+    goto :goto_0
 
     .line 32
-    :cond_1f
+    :cond_0
     return-void
 
     .line 33
-    :goto_20
+    :goto_0
     invoke-static {p1}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 34

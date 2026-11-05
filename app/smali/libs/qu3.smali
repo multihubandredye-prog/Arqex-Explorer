@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(JIJLlibs/dn1;)V
-    .registers 7
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2, p3, p6}, Llibs/ru3;-><init>(JILlibs/dn1;)V
@@ -27,13 +27,13 @@
 
 # virtual methods
 .method public final a(J)V
-    .registers 3
+    .locals 0
 
     .line 1
     :try_start_0
     invoke-super {p0, p1, p2}, Llibs/ru3;->a(J)V
-    :try_end_3
-    .catch Llibs/vx; {:try_start_0 .. :try_end_3} :catch_4
+    :try_end_0
+    .catch Llibs/vx; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 2
     .line 3
@@ -41,7 +41,7 @@
     return-void
 
     .line 5
-    :catch_4
+    :catch_0
     move-exception p1
 
     .line 6

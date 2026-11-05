@@ -18,7 +18,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/bn1;
@@ -66,7 +66,7 @@
 .end method
 
 .method public constructor <init>(Llibs/s73;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -82,7 +82,7 @@
 .end method
 
 .method public static a(Ljavax/crypto/SecretKey;Llibs/s73;)Llibs/uo1;
-    .registers 4
+    .locals 2
 
     .line 1
     sget-object v0, Llibs/da2;->Z:Llibs/vg;
@@ -101,17 +101,17 @@
 
     .line 8
     .line 9
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 10
     .line 11
     const/4 v1, 0x0
 
     .line 12
-    goto :goto_12
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 14
@@ -124,8 +124,8 @@
 
     .line 18
     .line 19
-    :goto_12
-    if-eqz v1, :cond_18
+    :goto_0
+    if-eqz v1, :cond_1
 
     .line 20
     .line 21
@@ -137,7 +137,7 @@
     return-object v1
 
     .line 25
-    :cond_18
+    :cond_1
     invoke-interface {p0}, Ljava/security/Key;->getAlgorithm()Ljava/lang/String;
 
     .line 26
@@ -167,7 +167,7 @@
     .line 38
     .line 39
     .line 40
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_2
 
     .line 41
     .line 42
@@ -176,12 +176,12 @@
     .line 43
     .line 44
     .line 45
-    :cond_2c
+    :cond_2
     return-object p1
 .end method
 
 .method public static b([BLjavax/crypto/SecretKey;Llibs/ov2;Llibs/s73;)Z
-    .registers 5
+    .locals 1
 
     .line 1
     invoke-static {p1, p3}, Llibs/da2;->a(Ljavax/crypto/SecretKey;Llibs/s73;)Llibs/uo1;
@@ -225,7 +225,7 @@
     sub-int/2addr v0, p3
 
     .line 22
-    if-lez v0, :cond_1a
+    if-lez v0, :cond_0
 
     .line 23
     .line 24
@@ -234,7 +234,7 @@
     .line 25
     .line 26
     .line 27
-    :cond_1a
+    :cond_0
     invoke-interface {p1}, Llibs/uo1;->a()[B
 
     .line 28
@@ -254,14 +254,14 @@
 
     .line 35
     .line 36
-    if-ne p2, p3, :cond_26
+    if-ne p2, p3, :cond_1
 
     .line 37
     .line 38
-    goto :goto_2a
+    goto :goto_0
 
     .line 39
-    :cond_26
+    :cond_1
     invoke-static {p0, p3}, Ljava/util/Arrays;->copyOf([BI)[B
 
     .line 40
@@ -270,7 +270,7 @@
     move-result-object p0
 
     .line 43
-    :goto_2a
+    :goto_0
     invoke-static {p1, p0}, Ljava/security/MessageDigest;->isEqual([B[B)Z
 
     .line 44
@@ -279,7 +279,7 @@
     move-result p0
 
     .line 47
-    if-nez p0, :cond_32
+    if-nez p0, :cond_2
 
     .line 48
     .line 49
@@ -289,7 +289,7 @@
     return p0
 
     .line 51
-    :cond_32
+    :cond_2
     const/4 p0, 0x1
 
     .line 52
@@ -299,10 +299,10 @@
 
 # virtual methods
 .method public final d(Llibs/mv2;Ljavax/crypto/SecretKey;)Z
-    .registers 5
+    .locals 2
 
     .line 1
-    if-nez p2, :cond_4
+    if-nez p2, :cond_0
 
     .line 2
     .line 3
@@ -312,8 +312,8 @@
     return p1
 
     .line 5
-    :cond_4
-    :try_start_4
+    :cond_0
+    :try_start_0
     invoke-virtual {p1}, Llibs/qj0;->a()Llibs/rw2;
 
     .line 6
@@ -348,14 +348,14 @@
     .line 21
     .line 22
     move-result p1
-    :try_end_16
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_16} :catch_17
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 23
     return p1
 
     .line 24
-    :catch_17
+    :catch_0
     move-exception p1
 
     .line 25
@@ -372,13 +372,13 @@
 .end method
 
 .method public final j(Llibs/lv2;Ljavax/crypto/SecretKey;)Llibs/lv2;
-    .registers 7
+    .locals 4
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-eqz p2, :cond_9
+    if-eqz p2, :cond_0
 
     .line 3
     .line 4
@@ -394,7 +394,7 @@
     return-object v1
 
     .line 10
-    :cond_9
+    :cond_0
     invoke-virtual {p1}, Llibs/lv2;->b()Llibs/xw2;
 
     .line 11

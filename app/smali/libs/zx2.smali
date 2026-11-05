@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/SQLiteEditorActivity;Landroid/database/Cursor;)V
-    .registers 4
+    .locals 1
 
     .line 1
     iput-object p1, p0, Llibs/zx2;->f:Lcom/mixplorer/activities/SQLiteEditorActivity;
@@ -33,26 +33,26 @@
 
     .line 7
     .line 8
-    if-eqz p2, :cond_b
+    if-eqz p2, :cond_0
 
     .line 9
     .line 10
     const/4 p1, 0x1
 
     .line 11
-    goto :goto_c
+    goto :goto_0
 
     .line 12
-    :cond_b
+    :cond_0
     const/4 p1, 0x0
 
     .line 13
-    :goto_c
+    :goto_0
     iput-boolean p1, p0, Llibs/zx2;->c:Z
 
     .line 14
     .line 15
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_1
 
     .line 16
     .line 17
@@ -65,7 +65,7 @@
     .line 20
     .line 21
     .line 22
-    :cond_15
+    :cond_1
     new-instance p1, Llibs/ql1;
 
     .line 23
@@ -78,7 +78,7 @@
     .line 26
     .line 27
     .line 28
-    if-eqz p2, :cond_20
+    if-eqz p2, :cond_2
 
     .line 29
     .line 30
@@ -87,21 +87,21 @@
     .line 31
     .line 32
     .line 33
-    :cond_20
+    :cond_2
     return-void
 .end method
 
 
 # virtual methods
 .method public final a()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/zx2;->c:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -109,7 +109,7 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -124,7 +124,7 @@
     return v0
 
     .line 14
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
     .line 15
@@ -132,7 +132,7 @@
 .end method
 
 .method public final g(Llibs/um2;I)V
-    .registers 10
+    .locals 7
 
     .line 1
     check-cast p1, Llibs/yx2;
@@ -143,7 +143,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_ab
+    if-eqz v0, :cond_7
 
     .line 6
     .line 7
@@ -178,7 +178,7 @@
 
     .line 21
     .line 22
-    if-ne v2, v3, :cond_a5
+    if-ne v2, v3, :cond_6
 
     .line 23
     .line 24
@@ -197,8 +197,8 @@
     .line 29
     .line 30
     .line 31
-    :goto_1e
-    if-ge v2, p2, :cond_a4
+    :goto_0
+    if-ge v2, p2, :cond_5
 
     .line 32
     .line 33
@@ -230,7 +230,7 @@
 
     .line 46
     .line 47
-    if-nez v3, :cond_3c
+    if-nez v3, :cond_0
 
     .line 48
     .line 49
@@ -253,15 +253,15 @@
     .line 58
     .line 59
     .line 60
-    goto :goto_a0
+    goto :goto_2
 
     .line 61
-    :cond_3c
+    :cond_0
     instance-of v6, v3, Ljava/lang/String;
 
     .line 62
     .line 63
-    if-eqz v6, :cond_56
+    if-eqz v6, :cond_1
 
     .line 64
     .line 65
@@ -281,7 +281,7 @@
     move-result v6
 
     .line 73
-    if-eqz v6, :cond_56
+    if-eqz v6, :cond_1
 
     .line 74
     .line 75
@@ -304,15 +304,15 @@
     .line 84
     .line 85
     .line 86
-    goto :goto_a0
+    goto :goto_2
 
     .line 87
-    :cond_56
+    :cond_1
     instance-of v6, v3, [B
 
     .line 88
     .line 89
-    if-eqz v6, :cond_75
+    if-eqz v6, :cond_2
 
     .line 90
     .line 91
@@ -364,15 +364,15 @@
     .line 115
     .line 116
     .line 117
-    goto :goto_a0
+    goto :goto_2
 
     .line 118
-    :cond_75
+    :cond_2
     instance-of v6, v3, Ljava/lang/Integer;
 
     .line 119
     .line 120
-    if-nez v6, :cond_93
+    if-nez v6, :cond_4
 
     .line 121
     .line 122
@@ -380,7 +380,7 @@
 
     .line 123
     .line 124
-    if-nez v6, :cond_93
+    if-nez v6, :cond_4
 
     .line 125
     .line 126
@@ -388,14 +388,14 @@
 
     .line 127
     .line 128
-    if-eqz v6, :cond_82
+    if-eqz v6, :cond_3
 
     .line 129
     .line 130
-    goto :goto_93
+    goto :goto_1
 
     .line 131
-    :cond_82
+    :cond_3
     const v5, 0x800013
 
     .line 132
@@ -424,11 +424,11 @@
     .line 145
     .line 146
     .line 147
-    goto :goto_a0
+    goto :goto_2
 
     .line 148
-    :cond_93
-    :goto_93
+    :cond_4
+    :goto_1
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setGravity(I)V
 
     .line 149
@@ -452,20 +452,20 @@
     .line 159
     .line 160
     .line 161
-    :goto_a0
+    :goto_2
     add-int/lit8 v2, v2, 0x1
 
     .line 162
     .line 163
-    goto/16 :goto_1e
+    goto/16 :goto_0
 
     .line 164
     .line 165
-    :cond_a4
+    :cond_5
     return-void
 
     .line 166
-    :cond_a5
+    :cond_6
     const-string p1, "columnIndexValues count doesn\'t match columnCount"
 
     .line 167
@@ -478,7 +478,7 @@
     return-void
 
     .line 172
-    :cond_ab
+    :cond_7
     const-string p1, "this should only be called when the cursor is valid"
 
     .line 173
@@ -492,7 +492,7 @@
 .end method
 
 .method public final h(Llibs/rn0;)Llibs/um2;
-    .registers 6
+    .locals 4
 
     .line 1
     new-instance v0, Llibs/yx2;
@@ -541,7 +541,7 @@
 .end method
 
 .method public final n(I)[Ljava/lang/Object;
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/zx2;->b:Landroid/database/Cursor;
@@ -556,7 +556,7 @@
     move-result v1
 
     .line 7
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
@@ -571,7 +571,7 @@
     return-object p1
 
     .line 14
-    :cond_d
+    :cond_0
     const-string v0, "couldn\'t move cursor to position "
 
     .line 15

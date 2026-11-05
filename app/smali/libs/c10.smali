@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(I[B)V
-    .registers 3
+    .locals 0
 
     .line 17
     invoke-direct {p0, p1, p2}, Llibs/AdMob;-><init>(I[B)V
@@ -14,7 +14,7 @@
 .end method
 
 .method public constructor <init>(Llibs/Core;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-interface {p1}, Llibs/Core;->b()Llibs/Theme;
@@ -49,7 +49,7 @@
 .end method
 
 .method public constructor <init>([B)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -60,10 +60,10 @@
 .end method
 
 .method public static q(Ljava/lang/Object;)Llibs/c10;
-    .registers 3
+    .locals 2
 
     .line 1
-    if-eqz p0, :cond_2a
+    if-eqz p0, :cond_2
 
     .line 2
     .line 3
@@ -71,19 +71,19 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
-    goto :goto_2a
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     instance-of v0, p0, Llibs/r40;
 
     .line 9
     .line 10
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1
 
     .line 11
     .line 12
@@ -111,7 +111,7 @@
     return-object v0
 
     .line 24
-    :cond_17
+    :cond_1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 25
@@ -151,8 +151,8 @@
     return-object p0
 
     .line 43
-    :cond_2a
-    :goto_2a
+    :cond_2
+    :goto_0
     check-cast p0, Llibs/c10;
 
     .line 44
@@ -161,7 +161,7 @@
 .end method
 
 .method public static r(Llibs/Height;)Llibs/c10;
-    .registers 6
+    .locals 5
 
     .line 1
     invoke-virtual {p0}, Llibs/Height;->p()Llibs/Theme;
@@ -176,7 +176,7 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -191,7 +191,7 @@
     return-object p0
 
     .line 14
-    :cond_d
+    :cond_0
     check-cast p0, Llibs/Part;
 
     .line 15
@@ -210,7 +210,7 @@
     const/4 v1, 0x1
 
     .line 22
-    if-lt v0, v1, :cond_2b
+    if-lt v0, v1, :cond_2
 
     .line 23
     .line 24
@@ -231,7 +231,7 @@
 
     .line 30
     .line 31
-    if-eqz v3, :cond_25
+    if-eqz v3, :cond_1
 
     .line 32
     .line 33
@@ -246,7 +246,7 @@
     .line 36
     .line 37
     .line 38
-    :cond_25
+    :cond_1
     new-instance p0, Llibs/c10;
 
     .line 39
@@ -259,7 +259,7 @@
     return-object p0
 
     .line 44
-    :cond_2b
+    :cond_2
     const-string p0, "truncated BIT STRING detected"
 
     .line 45
@@ -278,7 +278,7 @@
 
 # virtual methods
 .method public final h(Llibs/v60;)V
-    .registers 8
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/AdMob;->X:[B
@@ -300,7 +300,7 @@
 
     .line 9
     .line 10
-    if-lez v3, :cond_16
+    if-lez v3, :cond_0
 
     .line 11
     .line 12
@@ -331,7 +331,7 @@
 
     .line 22
     .line 23
-    :cond_16
+    :cond_0
     array-length v0, v1
 
     .line 24
@@ -370,7 +370,7 @@
 .end method
 
 .method public final i()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/AdMob;->X:[B

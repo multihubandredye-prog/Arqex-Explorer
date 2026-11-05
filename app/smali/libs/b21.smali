@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r31;Llibs/xt1;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/b21;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 9
+    .locals 8
 
     .line 1
     iget-byte v0, p0, Llibs/b21;->X:B
@@ -57,7 +57,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_66
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -87,7 +87,7 @@
     return-void
 
     .line 23
-    :pswitch_16
+    :pswitch_0
     iget-object v0, v2, Llibs/r31;->a:Lcom/mixplorer/activities/BrowseActivity;
 
     .line 24
@@ -114,8 +114,8 @@
     const/4 v4, 0x0
 
     .line 35
-    :goto_22
-    if-ge v4, v3, :cond_56
+    :goto_0
+    if-ge v4, v3, :cond_2
 
     .line 36
     .line 37
@@ -135,7 +135,7 @@
     move-result v6
 
     .line 45
-    if-nez v6, :cond_40
+    if-nez v6, :cond_0
 
     .line 46
     .line 47
@@ -171,11 +171,11 @@
     move-result v6
 
     .line 63
-    if-eqz v6, :cond_53
+    if-eqz v6, :cond_1
 
     .line 64
     .line 65
-    :cond_40
+    :cond_0
     invoke-virtual {v5}, Llibs/vm2;->Run()V
 
     .line 66
@@ -204,7 +204,7 @@
 
     .line 78
     .line 79
-    if-nez v6, :cond_53
+    if-nez v6, :cond_1
 
     .line 80
     .line 81
@@ -213,15 +213,15 @@
     .line 82
     .line 83
     .line 84
-    :cond_53
+    :cond_1
     add-int/lit8 v4, v4, 0x1
 
     .line 85
     .line 86
-    goto :goto_22
+    goto :goto_0
 
     .line 87
-    :cond_56
+    :cond_2
     invoke-virtual {v1}, Llibs/xt1;->getIAdapter()Llibs/sv0;
 
     .line 88
@@ -254,8 +254,8 @@
     return-void
 
     .line 103
-    :pswitch_data_66
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_16
+        :pswitch_0
     .end packed-switch
 .end method

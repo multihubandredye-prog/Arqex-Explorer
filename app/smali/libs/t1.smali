@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/z1;Ljava/util/ArrayList;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/t1;->c:Llibs/z1;
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final a(Llibs/q1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     const/4 p1, 0x1
@@ -56,14 +56,14 @@
 .end method
 
 .method public final c(Llibs/q1;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-boolean p1, p0, Llibs/t1;->a:Z
 
     .line 2
     .line 3
-    if-nez p1, :cond_24
+    if-nez p1, :cond_0
 
     .line 4
     .line 5
@@ -82,8 +82,8 @@
     const/4 v1, 0x0
 
     .line 12
-    :goto_b
-    if-ge v1, v0, :cond_24
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     .line 13
     .line 14
@@ -129,9 +129,9 @@
 
     .line 35
     .line 36
-    goto :goto_b
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_0
     return-void
 .end method

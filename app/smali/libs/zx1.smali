@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/cz3;
@@ -97,7 +97,7 @@
 
 # virtual methods
 .method public final Node(Llibs/mz1;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-virtual {p1}, Llibs/mz1;->c()I
@@ -108,7 +108,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -121,7 +121,7 @@
     .line 10
     .line 11
     .line 12
-    :cond_b
+    :cond_0
     invoke-virtual {p1}, Llibs/mz1;->c()I
 
     .line 13
@@ -130,7 +130,7 @@
     move-result v0
 
     .line 16
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1
 
     .line 17
     .line 18
@@ -150,7 +150,7 @@
 
     .line 25
     .line 26
-    :cond_19
+    :cond_1
     invoke-virtual {p1}, Llibs/mz1;->c()I
 
     .line 27
@@ -167,7 +167,7 @@
 .end method
 
 .method public final State(Llibs/mz1;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/zx1;->Sigma:Ljava/lang/String;
@@ -234,7 +234,7 @@
 .end method
 
 .method public final Task()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x15

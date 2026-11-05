@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/util/HashMap;
@@ -31,7 +31,7 @@
 .end method
 
 .method public static a(Ljava/lang/String;)I
-    .registers 4
+    .locals 3
 
     .line 1
     sget-object v0, Llibs/gl0;->b:Ljava/util/HashMap;
@@ -46,7 +46,7 @@
     move-result v1
 
     .line 7
-    if-nez v1, :cond_20
+    if-nez v1, :cond_0
 
     .line 8
     .line 9
@@ -98,7 +98,7 @@
     return p0
 
     .line 33
-    :cond_20
+    :cond_0
     const-string v0, "There is already a queue named "
 
     .line 34

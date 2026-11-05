@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/fo0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -50,7 +50,7 @@
 
 # virtual methods
 .method public final hasNext()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/eo0;->X:Ljava/util/Iterator;
@@ -69,7 +69,7 @@
 .end method
 
 .method public final next()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/eo0;->X:Ljava/util/Iterator;
@@ -92,7 +92,7 @@
 .end method
 
 .method public final remove()V
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/UnsupportedOperationException;

@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/bl1;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/b62;->d:B
@@ -58,14 +58,14 @@
 
 # virtual methods
 .method public final a(Landroid/view/View;)I
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/b62;->d:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_36
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -117,14 +117,14 @@
 
     .line 28
     .line 29
-    :goto_1c
+    :goto_0
     add-int/2addr v1, p1
 
     .line 30
     return v1
 
     .line 31
-    :pswitch_1e
+    :pswitch_0
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     .line 32
@@ -172,24 +172,24 @@
 
     .line 53
     .line 54
-    goto :goto_1c
+    goto :goto_0
 
     .line 55
-    :pswitch_data_36
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1e
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final b(Landroid/view/View;)I
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/b62;->d:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_26
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -225,14 +225,14 @@
 
     .line 20
     .line 21
-    :goto_14
+    :goto_0
     add-int/2addr p1, v0
 
     .line 22
     return p1
 
     .line 23
-    :pswitch_16
+    :pswitch_0
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     .line 24
@@ -264,24 +264,24 @@
 
     .line 37
     .line 38
-    goto :goto_14
+    goto :goto_0
 
     .line 39
-    :pswitch_data_26
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_16
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final c(Landroid/view/View;)I
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/b62;->d:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_26
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -317,14 +317,14 @@
 
     .line 20
     .line 21
-    :goto_14
+    :goto_0
     add-int/2addr p1, v0
 
     .line 22
     return p1
 
     .line 23
-    :pswitch_16
+    :pswitch_0
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     .line 24
@@ -356,24 +356,24 @@
 
     .line 37
     .line 38
-    goto :goto_14
+    goto :goto_0
 
     .line 39
-    :pswitch_data_26
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_16
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final d(Landroid/view/View;)I
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/b62;->d:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_36
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -425,14 +425,14 @@
 
     .line 28
     .line 29
-    :goto_1c
+    :goto_0
     sub-int/2addr v1, p1
 
     .line 30
     return v1
 
     .line 31
-    :pswitch_1e
+    :pswitch_0
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     .line 32
@@ -480,17 +480,17 @@
 
     .line 53
     .line 54
-    goto :goto_1c
+    goto :goto_0
 
     .line 55
-    :pswitch_data_36
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1e
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final e()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/b62;->d:B
@@ -501,7 +501,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_e
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -513,7 +513,7 @@
     return v0
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     iget v0, v1, Llibs/jm2;->f:I
 
     .line 12
@@ -524,14 +524,14 @@
     nop
 
     .line 15
-    :pswitch_data_e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final f()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/b62;->d:B
@@ -542,7 +542,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_16
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -559,14 +559,14 @@
     move-result v1
 
     .line 14
-    :goto_d
+    :goto_0
     sub-int/2addr v0, v1
 
     .line 15
     return v0
 
     .line 16
-    :pswitch_f
+    :pswitch_0
     iget v0, v1, Llibs/jm2;->f:I
 
     .line 17
@@ -579,17 +579,17 @@
     move-result v1
 
     .line 22
-    goto :goto_d
+    goto :goto_0
 
     .line 23
-    :pswitch_data_16
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_f
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final g()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/b62;->d:B
@@ -600,7 +600,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_12
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -616,7 +616,7 @@
     return v0
 
     .line 13
-    :pswitch_c
+    :pswitch_0
     invoke-virtual {v1}, Llibs/jm2;->String()I
 
     .line 14
@@ -631,14 +631,14 @@
     nop
 
     .line 19
-    :pswitch_data_12
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_c
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final h()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/b62;->d:B
@@ -649,7 +649,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_e
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -661,7 +661,7 @@
     return v0
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     iget v0, v1, Llibs/jm2;->d:I
 
     .line 12
@@ -672,14 +672,14 @@
     nop
 
     .line 15
-    :pswitch_data_e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final i()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/b62;->d:B
@@ -690,7 +690,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_12
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -706,7 +706,7 @@
     return v0
 
     .line 13
-    :pswitch_c
+    :pswitch_0
     invoke-virtual {v1}, Llibs/jm2;->Object()I
 
     .line 14
@@ -721,14 +721,14 @@
     nop
 
     .line 19
-    :pswitch_data_12
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_c
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final j()I
-    .registers 4
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/b62;->d:B
@@ -739,7 +739,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_20
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -767,14 +767,14 @@
     move-result v1
 
     .line 19
-    :goto_12
+    :goto_0
     sub-int/2addr v0, v1
 
     .line 20
     return v0
 
     .line 21
-    :pswitch_14
+    :pswitch_0
     iget v0, v1, Llibs/jm2;->f:I
 
     .line 22
@@ -798,17 +798,17 @@
     move-result v1
 
     .line 32
-    goto :goto_12
+    goto :goto_0
 
     .line 33
-    :pswitch_data_20
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_14
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final k(Landroid/view/View;)I
-    .registers 5
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/b62;->d:B
@@ -823,7 +823,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_16
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -840,7 +840,7 @@
     return p1
 
     .line 16
-    :pswitch_f
+    :pswitch_0
     invoke-virtual {v2, p1, v1}, Llibs/jm2;->Intent(Landroid/view/View;Landroid/graphics/Rect;)V
 
     .line 17
@@ -856,14 +856,14 @@
     nop
 
     .line 23
-    :pswitch_data_16
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_f
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final l(Landroid/view/View;)I
-    .registers 5
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/b62;->d:B
@@ -878,7 +878,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_16
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -895,7 +895,7 @@
     return p1
 
     .line 16
-    :pswitch_f
+    :pswitch_0
     invoke-virtual {v2, p1, v1}, Llibs/jm2;->Intent(Landroid/view/View;Landroid/graphics/Rect;)V
 
     .line 17
@@ -911,14 +911,14 @@
     nop
 
     .line 23
-    :pswitch_data_16
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_f
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final m(I)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/b62;->d:B
@@ -932,7 +932,7 @@
 
     .line 5
     .line 6
-    packed-switch v0, :pswitch_data_3a
+    packed-switch v0, :pswitch_data_0
 
     .line 7
     .line 8
@@ -941,7 +941,7 @@
 
     .line 10
     .line 11
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
@@ -957,8 +957,8 @@
     move-result v2
 
     .line 19
-    :goto_12
-    if-ge v1, v2, :cond_20
+    :goto_0
+    if-ge v1, v2, :cond_0
 
     .line 20
     .line 21
@@ -983,19 +983,19 @@
 
     .line 31
     .line 32
-    goto :goto_12
+    goto :goto_0
 
     .line 33
-    :cond_20
+    :cond_0
     return-void
 
     .line 34
-    :pswitch_21
+    :pswitch_0
     iget-object v0, v2, Llibs/jm2;->b:Llibs/vm2;
 
     .line 35
     .line 36
-    if-eqz v0, :cond_39
+    if-eqz v0, :cond_1
 
     .line 37
     .line 38
@@ -1011,8 +1011,8 @@
     move-result v2
 
     .line 44
-    :goto_2b
-    if-ge v1, v2, :cond_39
+    :goto_1
+    if-ge v1, v2, :cond_1
 
     .line 45
     .line 46
@@ -1037,15 +1037,15 @@
 
     .line 56
     .line 57
-    goto :goto_2b
+    goto :goto_1
 
     .line 58
-    :cond_39
+    :cond_1
     return-void
 
     .line 59
-    :pswitch_data_3a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_21
+        :pswitch_0
     .end packed-switch
 .end method

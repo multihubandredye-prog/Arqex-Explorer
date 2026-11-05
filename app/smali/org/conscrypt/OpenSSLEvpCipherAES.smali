@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/conscrypt/OpenSSLCipher$Mode;Lorg/conscrypt/OpenSSLCipher$Padding;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Lorg/conscrypt/OpenSSLEvpCipher;-><init>(Lorg/conscrypt/OpenSSLCipher$Mode;Lorg/conscrypt/OpenSSLCipher$Padding;)V
@@ -23,7 +23,7 @@
 
 # virtual methods
 .method public checkSupportedMode(Lorg/conscrypt/OpenSSLCipher$Mode;)V
-    .registers 5
+    .locals 3
 
     .line 1
     sget-object v0, Lorg/conscrypt/OpenSSLEvpCipherAES$1;->$SwitchMap$org$conscrypt$OpenSSLCipher$Mode:[I
@@ -45,28 +45,28 @@
     const/4 v1, 0x1
 
     .line 10
-    if-eq v0, v1, :cond_2a
+    if-eq v0, v1, :cond_1
 
     .line 11
     .line 12
     const/4 v1, 0x2
 
     .line 13
-    if-eq v0, v1, :cond_2a
+    if-eq v0, v1, :cond_1
 
     .line 14
     .line 15
     const/4 v1, 0x3
 
     .line 16
-    if-ne v0, v1, :cond_12
+    if-ne v0, v1, :cond_0
 
     .line 17
     .line 18
-    goto :goto_2a
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     new-instance v0, Ljava/security/NoSuchAlgorithmException;
 
     .line 20
@@ -113,13 +113,13 @@
     throw v0
 
     .line 43
-    :cond_2a
-    :goto_2a
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public checkSupportedPadding(Lorg/conscrypt/OpenSSLCipher$Padding;)V
-    .registers 5
+    .locals 3
 
     .line 1
     sget-object v0, Lorg/conscrypt/OpenSSLEvpCipherAES$1;->$SwitchMap$org$conscrypt$OpenSSLCipher$Padding:[I
@@ -141,21 +141,21 @@
     const/4 v1, 0x1
 
     .line 10
-    if-eq v0, v1, :cond_27
+    if-eq v0, v1, :cond_1
 
     .line 11
     .line 12
     const/4 v1, 0x2
 
     .line 13
-    if-ne v0, v1, :cond_f
+    if-ne v0, v1, :cond_0
 
     .line 14
     .line 15
-    goto :goto_27
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_0
     new-instance v0, Ljavax/crypto/NoSuchPaddingException;
 
     .line 17
@@ -202,13 +202,13 @@
     throw v0
 
     .line 40
-    :cond_27
-    :goto_27
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public getBaseCipherName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "AES"
@@ -219,7 +219,7 @@
 .end method
 
 .method public getCipherBlockSize()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x10
@@ -230,7 +230,7 @@
 .end method
 
 .method public getCipherName(ILorg/conscrypt/OpenSSLCipher$Mode;)Ljava/lang/String;
-    .registers 5
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

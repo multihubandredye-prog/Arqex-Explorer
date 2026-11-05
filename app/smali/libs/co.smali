@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(IIII)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2, p3, p4}, Llibs/rr;-><init>(IIII)V
@@ -40,13 +40,13 @@
 
 # virtual methods
 .method public final declared-synchronized c()I
-    .registers 3
+    .locals 2
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget v0, p0, Llibs/rr;->a:I
 
     .line 3
@@ -64,8 +64,8 @@
     .line 9
     .line 10
     move-result v1
-    :try_end_a
-    .catchall {:try_start_1 .. :try_end_a} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 11
     sub-int/2addr v0, v1
@@ -77,27 +77,27 @@
     return v0
 
     .line 14
-    :catchall_d
+    :catchall_0
     move-exception v0
 
     .line 15
-    :try_start_e
+    :try_start_1
     monitor-exit p0
-    :try_end_f
-    .catchall {:try_start_e .. :try_end_f} :catchall_d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 16
     throw v0
 .end method
 
 .method public final declared-synchronized g(Ljava/nio/ByteBuffer;)I
-    .registers 9
+    .locals 7
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     invoke-virtual {p1}, Ljava/nio/Buffer;->remaining()I
 
     .line 3
@@ -187,7 +187,7 @@
     move-result p1
 
     .line 47
-    if-eqz p1, :cond_6f
+    if-eqz p1, :cond_0
 
     .line 48
     .line 49
@@ -315,21 +315,21 @@
     .line 107
     .line 108
     .line 109
-    goto :goto_6f
+    goto :goto_0
 
     .line 110
-    :catchall_6d
+    :catchall_0
     move-exception p1
 
     .line 111
-    goto :goto_74
+    goto :goto_1
 
     .line 112
-    :cond_6f
-    :goto_6f
+    :cond_0
+    :goto_0
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
-    :try_end_72
-    .catchall {:try_start_1 .. :try_end_72} :catchall_6d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 113
     .line 114
@@ -340,24 +340,24 @@
     return v0
 
     .line 117
-    :goto_74
-    :try_start_74
+    :goto_1
+    :try_start_1
     monitor-exit p0
-    :try_end_75
-    .catchall {:try_start_74 .. :try_end_75} :catchall_6d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 118
     throw p1
 .end method
 
 .method public final declared-synchronized h()Z
-    .registers 2
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Llibs/co;->e:Ljava/nio/ByteBuffer;
 
     .line 3
@@ -368,8 +368,8 @@
     .line 6
     .line 7
     move-result v0
-    :try_end_7
-    .catchall {:try_start_1 .. :try_end_7} :catchall_9
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 8
     monitor-exit p0
@@ -378,27 +378,27 @@
     return v0
 
     .line 10
-    :catchall_9
+    :catchall_0
     move-exception v0
 
     .line 11
-    :try_start_a
+    :try_start_1
     monitor-exit p0
-    :try_end_b
-    .catchall {:try_start_a .. :try_end_b} :catchall_9
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 12
     throw v0
 .end method
 
 .method public final declared-synchronized i()Z
-    .registers 3
+    .locals 2
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget v0, p0, Llibs/rr;->d:I
 
     .line 3
@@ -415,47 +415,47 @@
 
     .line 9
     iget v1, p0, Llibs/rr;->b:I
-    :try_end_a
-    .catchall {:try_start_1 .. :try_end_a} :catchall_11
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 10
     .line 11
-    if-ge v0, v1, :cond_e
+    if-ge v0, v1, :cond_0
 
     .line 12
     .line 13
     const/4 v0, 0x1
 
     .line 14
-    goto :goto_f
+    goto :goto_0
 
     .line 15
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
     .line 16
-    :goto_f
+    :goto_0
     monitor-exit p0
 
     .line 17
     return v0
 
     .line 18
-    :catchall_11
+    :catchall_0
     move-exception v0
 
     .line 19
-    :try_start_12
+    :try_start_1
     monitor-exit p0
-    :try_end_13
-    .catchall {:try_start_12 .. :try_end_13} :catchall_11
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 20
     throw v0
 .end method
 
 .method public final declared-synchronized j(Ljava/nio/ByteBuffer;)V
-    .registers 9
+    .locals 7
 
     .line 1
     monitor-enter p0
@@ -467,7 +467,7 @@
     const/4 v1, 0x0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget-object v2, p0, Llibs/co;->e:Ljava/nio/ByteBuffer;
 
     .line 5
@@ -525,7 +525,7 @@
     move-result p1
 
     .line 33
-    if-eqz p1, :cond_61
+    if-eqz p1, :cond_0
 
     .line 34
     .line 35
@@ -647,38 +647,38 @@
     .line 91
     .line 92
     .line 93
-    goto :goto_61
+    goto :goto_0
 
     .line 94
-    :catchall_5d
+    :catchall_0
     move-exception p1
 
     .line 95
-    goto :goto_6e
+    goto :goto_3
 
     .line 96
-    :catch_5f
+    :catch_0
     move-exception p1
 
     .line 97
-    goto :goto_65
+    goto :goto_1
 
     .line 98
-    :cond_61
-    :goto_61
+    :cond_0
+    :goto_0
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
-    :try_end_64
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_64} :catch_5f
-    .catchall {:try_start_3 .. :try_end_64} :catchall_5d
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 99
     .line 100
     .line 101
-    goto :goto_6c
+    goto :goto_2
 
     .line 102
-    :goto_65
-    :try_start_65
+    :goto_1
+    :try_start_1
     const-string v2, "Buffer overflow?"
 
     .line 103
@@ -688,37 +688,37 @@
     .line 105
     .line 106
     invoke-static {v0, v2, p1, v1}, Llibs/zm1;->Node(ILjava/lang/String;Ljava/lang/Throwable;[Ljava/lang/Object;)V
-    :try_end_6c
-    .catchall {:try_start_65 .. :try_end_6c} :catchall_5d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 107
     .line 108
     .line 109
-    :goto_6c
+    :goto_2
     monitor-exit p0
 
     .line 110
     return-void
 
     .line 111
-    :goto_6e
-    :try_start_6e
+    :goto_3
+    :try_start_2
     monitor-exit p0
-    :try_end_6f
-    .catchall {:try_start_6e .. :try_end_6f} :catchall_5d
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 112
     throw p1
 .end method
 
 .method public final declared-synchronized k()I
-    .registers 2
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Llibs/co;->e:Ljava/nio/ByteBuffer;
 
     .line 3
@@ -729,8 +729,8 @@
     .line 6
     .line 7
     move-result v0
-    :try_end_7
-    .catchall {:try_start_1 .. :try_end_7} :catchall_9
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 8
     monitor-exit p0
@@ -739,14 +739,14 @@
     return v0
 
     .line 10
-    :catchall_9
+    :catchall_0
     move-exception v0
 
     .line 11
-    :try_start_a
+    :try_start_1
     monitor-exit p0
-    :try_end_b
-    .catchall {:try_start_a .. :try_end_b} :catchall_9
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 12
     throw v0

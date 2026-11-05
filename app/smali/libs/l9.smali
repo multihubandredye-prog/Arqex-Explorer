@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/f9;->Nu:Llibs/f9;
@@ -23,7 +23,7 @@
 
 # virtual methods
 .method public final a(Llibs/rw2;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/g9;->a:Llibs/f9;

@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/widgets/MiDraggableListView;Landroid/widget/ListAdapter;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/gs1;->b:Lcom/mixplorer/widgets/MiDraggableListView;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .registers 15
+    .locals 11
 
     .line 1
     iget-object p3, p0, Llibs/gs1;->a:Landroid/widget/ListAdapter;
@@ -53,7 +53,7 @@
     const/4 v2, 0x0
 
     .line 7
-    if-eqz p2, :cond_24
+    if-eqz p2, :cond_0
 
     .line 8
     .line 9
@@ -77,7 +77,7 @@
     move-result-object p3
 
     .line 19
-    if-eq p3, v3, :cond_47
+    if-eq p3, v3, :cond_1
 
     .line 20
     .line 21
@@ -108,10 +108,10 @@
     .line 34
     .line 35
     .line 36
-    goto :goto_47
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_0
     new-instance p2, Landroid/widget/FrameLayout;
 
     .line 38
@@ -179,8 +179,8 @@
     .line 70
     .line 71
     .line 72
-    :cond_47
-    :goto_47
+    :cond_1
+    :goto_0
     iget v3, v1, Lcom/mixplorer/widgets/MiDraggableListView;->Echo:I
 
     .line 73
@@ -192,25 +192,25 @@
     const/4 v5, 0x1
 
     .line 77
-    if-eq p1, v3, :cond_52
+    if-eq p1, v3, :cond_2
 
     .line 78
     .line 79
-    if-eq p1, v4, :cond_52
+    if-eq p1, v4, :cond_2
 
     .line 80
     .line 81
     const/4 v6, 0x1
 
     .line 82
-    goto :goto_53
+    goto :goto_1
 
     .line 83
-    :cond_52
+    :cond_2
     const/4 v6, 0x0
 
     .line 84
-    :goto_53
+    :goto_1
     iget v7, v1, Lcom/mixplorer/widgets/MiDraggableListView;->Seven:I
 
     .line 85
@@ -218,57 +218,57 @@
     const/4 v8, 0x2
 
     .line 87
-    if-eq v7, v8, :cond_5e
+    if-eq v7, v8, :cond_4
 
     .line 88
     .line 89
     const/4 v9, 0x3
 
     .line 90
-    if-ne v7, v9, :cond_5c
+    if-ne v7, v9, :cond_3
 
     .line 91
     .line 92
-    goto :goto_5e
+    goto :goto_2
 
     .line 93
-    :cond_5c
+    :cond_3
     const/4 v7, 0x0
 
     .line 94
-    goto :goto_5f
+    goto :goto_3
 
     .line 95
-    :cond_5e
-    :goto_5e
+    :cond_4
+    :goto_2
     const/4 v7, 0x1
 
     .line 96
-    :goto_5f
-    if-nez v6, :cond_66
+    :goto_3
+    if-nez v6, :cond_6
 
     .line 97
     .line 98
-    if-nez v7, :cond_64
+    if-nez v7, :cond_5
 
     .line 99
     .line 100
-    goto :goto_66
+    goto :goto_4
 
     .line 101
-    :cond_64
+    :cond_5
     const/4 v6, 0x0
 
     .line 102
-    goto :goto_67
+    goto :goto_5
 
     .line 103
-    :cond_66
-    :goto_66
+    :cond_6
+    :goto_4
     const/4 v6, 0x1
 
     .line 104
-    :goto_67
+    :goto_5
     invoke-virtual {p2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     .line 105
@@ -281,11 +281,11 @@
 
     .line 109
     .line 110
-    if-eqz v6, :cond_7d
+    if-eqz v6, :cond_8
 
     .line 111
     .line 112
-    if-eq v10, v0, :cond_7d
+    if-eq v10, v0, :cond_8
 
     .line 113
     .line 114
@@ -297,36 +297,36 @@
 
     .line 117
     .line 118
-    if-ne p3, v8, :cond_78
+    if-ne p3, v8, :cond_7
 
     .line 119
     .line 120
-    goto :goto_79
+    goto :goto_6
 
     .line 121
-    :cond_78
+    :cond_7
     const/4 v5, 0x0
 
     .line 122
-    :goto_79
+    :goto_6
     invoke-static {p2, v5}, Lcom/mixplorer/widgets/MiDraggableListView;->q(Landroid/widget/FrameLayout;Z)V
 
     .line 123
     .line 124
     .line 125
-    goto :goto_b3
+    goto :goto_9
 
     .line 126
-    :cond_7d
-    if-eqz v7, :cond_b3
+    :cond_8
+    if-eqz v7, :cond_d
 
     .line 127
     .line 128
-    if-ne p1, v3, :cond_8f
+    if-ne p1, v3, :cond_a
 
     .line 129
     .line 130
-    if-eq v10, v5, :cond_8f
+    if-eq v10, v5, :cond_a
 
     .line 131
     .line 132
@@ -338,28 +338,28 @@
 
     .line 135
     .line 136
-    if-ne p3, v8, :cond_8a
+    if-ne p3, v8, :cond_9
 
     .line 137
     .line 138
-    goto :goto_8b
+    goto :goto_7
 
     .line 139
-    :cond_8a
+    :cond_9
     const/4 v5, 0x0
 
     .line 140
-    :goto_8b
+    :goto_7
     invoke-static {p2, v5}, Lcom/mixplorer/widgets/MiDraggableListView;->q(Landroid/widget/FrameLayout;Z)V
 
     .line 141
     .line 142
     .line 143
-    goto :goto_b3
+    goto :goto_9
 
     .line 144
-    :cond_8f
-    if-ne p1, v4, :cond_b3
+    :cond_a
+    if-ne p1, v4, :cond_d
 
     .line 145
     .line 146
@@ -406,7 +406,7 @@
 
     .line 166
     .line 167
-    if-eq p3, v4, :cond_aa
+    if-eq p3, v4, :cond_b
 
     .line 168
     .line 169
@@ -414,35 +414,35 @@
 
     .line 170
     .line 171
-    :cond_aa
+    :cond_b
     iget p3, v1, Lcom/mixplorer/widgets/MiDraggableListView;->Seven:I
 
     .line 172
     .line 173
-    if-ne p3, v8, :cond_af
+    if-ne p3, v8, :cond_c
 
     .line 174
     .line 175
-    goto :goto_b0
+    goto :goto_8
 
     .line 176
-    :cond_af
+    :cond_c
     const/4 v5, 0x0
 
     .line 177
-    :goto_b0
+    :goto_8
     invoke-static {p2, v5}, Lcom/mixplorer/widgets/MiDraggableListView;->q(Landroid/widget/FrameLayout;Z)V
 
     .line 178
     .line 179
     .line 180
-    :cond_b3
-    :goto_b3
+    :cond_d
+    :goto_9
     iget p3, v9, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 181
     .line 182
-    if-eq p3, v10, :cond_ba
+    if-eq p3, v10, :cond_e
 
     .line 183
     .line 184
@@ -451,7 +451,7 @@
     .line 185
     .line 186
     .line 187
-    :cond_ba
+    :cond_e
     invoke-virtual {p2}, Landroid/view/View;->getVisibility()I
 
     .line 188
@@ -463,7 +463,7 @@
     const/4 v4, 0x4
 
     .line 192
-    if-ne p1, v3, :cond_c9
+    if-ne p1, v3, :cond_f
 
     .line 193
     .line 194
@@ -471,34 +471,34 @@
 
     .line 195
     .line 196
-    if-eqz p1, :cond_c9
+    if-eqz p1, :cond_f
 
     .line 197
     .line 198
-    if-nez p3, :cond_cc
+    if-nez p3, :cond_10
 
     .line 199
     .line 200
     const/4 v2, 0x4
 
     .line 201
-    goto :goto_cd
+    goto :goto_a
 
     .line 202
-    :cond_c9
-    if-ne p3, v4, :cond_cc
+    :cond_f
+    if-ne p3, v4, :cond_10
 
     .line 203
     .line 204
-    goto :goto_cd
+    goto :goto_a
 
     .line 205
-    :cond_cc
+    :cond_10
     move v2, p3
 
     .line 206
-    :goto_cd
-    if-eq v2, p3, :cond_e4
+    :goto_a
+    if-eq v2, p3, :cond_11
 
     .line 207
     .line 208
@@ -543,6 +543,6 @@
 
     .line 228
     .line 229
-    :cond_e4
+    :cond_11
     return-object p2
 .end method

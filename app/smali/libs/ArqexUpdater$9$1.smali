@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Llibs/ArqexUpdater$9;Landroid/content/Context;)V
-    .registers 3
+    .locals 0
 
     .line 757
     iput-object p1, p0, Llibs/ArqexUpdater$9$1;->this$0:Llibs/ArqexUpdater$9;
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 5
+    .locals 4
 
     .line 759
     iget-object v0, p0, Llibs/ArqexUpdater$9$1;->this$0:Llibs/ArqexUpdater$9;

@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/IOException;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "Decryption of the key failed. A supplied passphrase may be incorrect."
@@ -21,7 +21,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 8
     invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
@@ -30,7 +30,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/Exception;)V
-    .registers 3
+    .locals 0
 
     .line 7
     invoke-direct {p0, p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V

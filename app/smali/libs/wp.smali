@@ -13,7 +13,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(JLjava/util/ArrayList;B)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-byte p4, p0, Llibs/wp;->a:B
@@ -39,14 +39,14 @@
 
 # virtual methods
 .method public final a()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/wp;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_e
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -57,7 +57,7 @@
     return v0
 
     .line 8
-    :pswitch_7
+    :pswitch_0
     invoke-static {}, Llibs/t43;->Wait()Z
 
     .line 9
@@ -73,14 +73,14 @@
     return v0
 
     .line 15
-    :pswitch_data_e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_7
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final e(Llibs/rp0;)Z
-    .registers 12
+    .locals 10
 
     .line 1
     iget-byte v0, p0, Llibs/wp;->a:B
@@ -110,7 +110,7 @@
     const/4 v9, 0x0
 
     .line 14
-    packed-switch v0, :pswitch_data_52
+    packed-switch v0, :pswitch_data_0
 
     .line 15
     .line 16
@@ -119,19 +119,19 @@
 
     .line 18
     .line 19
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 20
     .line 21
-    goto :goto_30
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     cmp-long v0, v7, v5
 
     .line 23
     .line 24
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
     .line 25
     .line 26
@@ -139,7 +139,7 @@
 
     .line 27
     .line 28
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
     .line 29
     .line 30
@@ -151,14 +151,14 @@
 
     .line 33
     .line 34
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
     .line 35
     .line 36
-    goto :goto_30
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_1
     iget-object v0, p1, Llibs/rp0;->Two:Ljava/lang/String;
 
     .line 38
@@ -171,41 +171,41 @@
     move-result v0
 
     .line 43
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_2
 
     .line 44
     .line 45
-    goto :goto_30
+    goto :goto_0
 
     .line 46
-    :cond_2d
+    :cond_2
     invoke-interface {v1, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 47
     .line 48
     .line 49
-    :goto_30
+    :goto_0
     return v9
 
     .line 50
-    :pswitch_31
+    :pswitch_0
     iget-boolean v0, p1, Llibs/rp0;->One:Z
 
     .line 51
     .line 52
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_3
 
     .line 53
     .line 54
-    goto :goto_51
+    goto :goto_1
 
     .line 55
-    :cond_36
+    :cond_3
     cmp-long v0, v7, v5
 
     .line 56
     .line 57
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_4
 
     .line 58
     .line 59
@@ -213,7 +213,7 @@
 
     .line 60
     .line 61
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_4
 
     .line 62
     .line 63
@@ -225,14 +225,14 @@
 
     .line 66
     .line 67
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_4
 
     .line 68
     .line 69
-    goto :goto_51
+    goto :goto_1
 
     .line 70
-    :cond_45
+    :cond_4
     iget-object v0, p1, Llibs/rp0;->Two:Ljava/lang/String;
 
     .line 71
@@ -245,25 +245,25 @@
     move-result v0
 
     .line 76
-    if-eqz v0, :cond_4e
+    if-eqz v0, :cond_5
 
     .line 77
     .line 78
-    goto :goto_51
+    goto :goto_1
 
     .line 79
-    :cond_4e
+    :cond_5
     invoke-interface {v1, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 80
     .line 81
     .line 82
-    :goto_51
+    :goto_1
     return v9
 
     .line 83
-    :pswitch_data_52
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_31
+        :pswitch_0
     .end packed-switch
 .end method

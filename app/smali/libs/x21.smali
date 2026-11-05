@@ -20,7 +20,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r31;Llibs/rp0;Landroid/net/Uri;Landroid/net/Uri;B)V
-    .registers 6
+    .locals 0
 
     .line 1
     iput-byte p5, p0, Llibs/x21;->X:B
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 30
+    .locals 29
 
     .line 1
     move-object/from16 v0, p0
@@ -69,7 +69,7 @@
 
     .line 6
     .line 7
-    packed-switch v1, :pswitch_data_48
+    packed-switch v1, :pswitch_data_0
 
     .line 8
     .line 9
@@ -127,7 +127,7 @@
     return-void
 
     .line 33
-    :pswitch_20
+    :pswitch_0
     iget-object v1, v2, Llibs/r31;->a:Lcom/mixplorer/activities/BrowseActivity;
 
     .line 34
@@ -208,8 +208,8 @@
     return-void
 
     .line 73
-    :pswitch_data_48
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_20
+        :pswitch_0
     .end packed-switch
 .end method

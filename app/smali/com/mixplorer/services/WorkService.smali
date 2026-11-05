@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Landroid/app/job/JobService;-><init>()V
 
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final onStartJob(Landroid/app/job/JobParameters;)Z
-    .registers 6
+    .locals 4
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -69,7 +69,7 @@
 .end method
 
 .method public final onStopJob(Landroid/app/job/JobParameters;)Z
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x1
 

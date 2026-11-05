@@ -5,7 +5,7 @@
 
 # direct methods
 .method public synthetic constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/util/Vector;-><init>()V
@@ -19,20 +19,20 @@
 
 # virtual methods
 .method public a(Ljava/lang/String;)Llibs/u6;
-    .registers 7
+    .locals 5
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     .line 3
     .line 4
     return-object v0
 
     .line 5
-    :cond_4
+    :cond_0
     invoke-virtual {p0}, Ljava/util/AbstractCollection;->size()I
 
     .line 6
@@ -44,8 +44,8 @@
     const/4 v2, 0x0
 
     .line 10
-    :goto_9
-    if-ge v2, v1, :cond_1d
+    :goto_0
+    if-ge v2, v1, :cond_2
 
     .line 11
     .line 12
@@ -73,21 +73,21 @@
     move-result v4
 
     .line 24
-    if-nez v4, :cond_1a
+    if-nez v4, :cond_1
 
     .line 25
     .line 26
     return-object v3
 
     .line 27
-    :cond_1a
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
     .line 28
     .line 29
-    goto :goto_9
+    goto :goto_0
 
     .line 30
-    :cond_1d
+    :cond_2
     return-object v0
 .end method

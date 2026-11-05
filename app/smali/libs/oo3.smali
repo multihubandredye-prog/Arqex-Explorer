@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Exception;)V
-    .registers 2
+    .locals 0
 
     .line 9
     invoke-direct {p0}, Ljava/io/IOException;-><init>()V
@@ -21,7 +21,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 11
     invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
@@ -30,7 +30,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Throwable;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "Connection in error"
@@ -52,14 +52,14 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/oo3;->X:Ljava/lang/Throwable;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -133,7 +133,7 @@
     return-object v0
 
     .line 43
-    :cond_2a
+    :cond_0
     invoke-super {p0}, Ljava/io/IOException;->toString()Ljava/lang/String;
 
     .line 44

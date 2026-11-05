@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/qx;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final d(Llibs/yj0;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget p1, p1, Llibs/yj0;->b:I
@@ -42,7 +42,7 @@
     .line 4
     .line 5
     .line 6
-    if-ne p1, v0, :cond_f
+    if-ne p1, v0, :cond_0
 
     .line 7
     .line 8
@@ -62,6 +62,6 @@
     .line 14
     .line 15
     .line 16
-    :cond_f
+    :cond_0
     return-void
 .end method

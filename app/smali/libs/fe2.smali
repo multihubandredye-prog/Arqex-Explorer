@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,7 +22,7 @@
 
 # virtual methods
 .method public final a(Llibs/gl;ILlibs/w63;)V
-    .registers 6
+    .locals 2
 
     .line 1
     :try_start_0
@@ -55,9 +55,9 @@
     .line 14
     .line 15
     invoke-virtual {v1, v0, p1}, Llibs/Sigma;->q(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_11
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_11} :catch_14
-    .catch Llibs/dc2; {:try_start_0 .. :try_end_11} :catch_12
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Llibs/dc2; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 16
     .line 17
@@ -65,21 +65,21 @@
     return-void
 
     .line 19
-    :catch_12
+    :catch_0
     move-exception p1
 
     .line 20
-    goto :goto_16
+    goto :goto_0
 
     .line 21
-    :catch_14
+    :catch_1
     move-exception p1
 
     .line 22
-    goto :goto_1f
+    goto :goto_1
 
     .line 23
-    :goto_16
+    :goto_0
     const/4 v0, 0x3
 
     .line 24
@@ -96,10 +96,10 @@
     .line 29
     .line 30
     .line 31
-    goto :goto_27
+    goto :goto_2
 
     .line 32
-    :goto_1f
+    :goto_1
     const/4 v0, 0x4
 
     .line 33
@@ -116,6 +116,6 @@
     .line 38
     .line 39
     .line 40
-    :goto_27
+    :goto_2
     return-void
 .end method

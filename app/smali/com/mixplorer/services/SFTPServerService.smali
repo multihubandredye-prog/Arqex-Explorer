@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/dx1;
@@ -33,7 +33,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/ex1;-><init>()V
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public final e(Landroid/content/Intent;)I
-    .registers 14
+    .locals 12
 
     .line 1
     new-instance v0, Llibs/kk1;
@@ -92,14 +92,14 @@
     const/4 v3, -0x1
 
     .line 16
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_0
 
     .line 17
     .line 18
-    goto :goto_1e
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     const-string v2, "appWidgetId"
 
     .line 20
@@ -120,15 +120,15 @@
     .line 27
     .line 28
     .line 29
-    if-eq v2, v5, :cond_1f
+    if-eq v2, v5, :cond_1
 
     .line 30
     .line 31
-    :goto_1e
+    :goto_0
     return v3
 
     .line 32
-    :cond_1f
+    :cond_1
     invoke-static {}, Llibs/y53;->c()Z
 
     .line 33
@@ -137,7 +137,7 @@
     move-result v2
 
     .line 36
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_2
 
     .line 37
     .line 38
@@ -149,7 +149,7 @@
     return v3
 
     .line 42
-    :cond_29
+    :cond_2
     const/4 v2, 0x1
 
     .line 43
@@ -272,7 +272,7 @@
     move-result-object v3
 
     .line 104
-    if-eqz v3, :cond_8c
+    if-eqz v3, :cond_4
 
     .line 105
     .line 106
@@ -308,8 +308,8 @@
     array-length v8, v6
 
     .line 122
-    :goto_79
-    if-ge v4, v8, :cond_8c
+    :goto_1
+    if-ge v4, v8, :cond_4
 
     .line 123
     .line 124
@@ -325,7 +325,7 @@
     move-result v10
 
     .line 130
-    if-eqz v10, :cond_86
+    if-eqz v10, :cond_3
 
     .line 131
     .line 132
@@ -334,7 +334,7 @@
     .line 133
     .line 134
     .line 135
-    :cond_86
+    :cond_3
     invoke-static {v7, v3, v9, v2}, Llibs/y53;->d(Landroid/content/Context;Landroid/appwidget/AppWidgetManager;IZ)V
 
     .line 136
@@ -344,10 +344,10 @@
 
     .line 139
     .line 140
-    goto :goto_79
+    goto :goto_1
 
     .line 141
-    :cond_8c
+    :cond_4
     invoke-virtual {v5, v2}, Llibs/s53;->h(Z)V
 
     .line 142
@@ -383,7 +383,7 @@
 .end method
 
 .method public final g()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -407,7 +407,7 @@
 .end method
 
 .method public final onCreate()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/services/SFTPServerService;->Z:Llibs/y53;
@@ -435,7 +435,7 @@
 .end method
 
 .method public final onDestroy()V
-    .registers 11
+    .locals 10
 
     .line 1
     invoke-super {p0}, Llibs/ex1;->onDestroy()V
@@ -475,7 +475,7 @@
     const/4 v3, 0x2
 
     .line 20
-    if-eqz v2, :cond_1f
+    if-eqz v2, :cond_0
 
     .line 21
     .line 22
@@ -497,7 +497,7 @@
     .line 30
     .line 31
     .line 32
-    :cond_1f
+    :cond_0
     sget v2, Lcom/mixplorer/providers/WidgetSFTPProvider;->a:I
 
     .line 33
@@ -514,7 +514,7 @@
     move-result-object v2
 
     .line 40
-    if-eqz v2, :cond_4d
+    if-eqz v2, :cond_2
 
     .line 41
     .line 42
@@ -553,8 +553,8 @@
     const/4 v7, 0x0
 
     .line 59
-    :goto_3a
-    if-ge v7, v6, :cond_4d
+    :goto_0
+    if-ge v7, v6, :cond_2
 
     .line 60
     .line 61
@@ -570,7 +570,7 @@
     move-result v9
 
     .line 67
-    if-eqz v9, :cond_47
+    if-eqz v9, :cond_1
 
     .line 68
     .line 69
@@ -579,7 +579,7 @@
     .line 70
     .line 71
     .line 72
-    :cond_47
+    :cond_1
     invoke-static {v5, v2, v8, v0}, Llibs/y53;->d(Landroid/content/Context;Landroid/appwidget/AppWidgetManager;IZ)V
 
     .line 73
@@ -589,10 +589,10 @@
 
     .line 76
     .line 77
-    goto :goto_3a
+    goto :goto_0
 
     .line 78
-    :cond_4d
+    :cond_2
     const v2, 0x20575
 
     .line 79

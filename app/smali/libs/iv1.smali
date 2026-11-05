@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/fb3;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/iv1;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 7
+    .locals 6
 
     .line 1
     iget-byte v0, p0, Llibs/iv1;->X:B
@@ -46,7 +46,7 @@
     const/4 v1, 0x0
 
     .line 4
-    packed-switch v0, :pswitch_data_6a
+    packed-switch v0, :pswitch_data_0
 
     .line 5
     .line 6
@@ -101,14 +101,14 @@
 
     .line 32
     .line 33
-    if-nez v3, :cond_23
+    if-nez v3, :cond_0
 
     .line 34
     .line 35
-    goto :goto_5d
+    goto :goto_0
 
     .line 36
-    :cond_23
+    :cond_0
     invoke-virtual {v3}, Llibs/eb3;->toString()Ljava/lang/String;
 
     .line 37
@@ -164,7 +164,7 @@
     monitor-enter v5
 
     .line 63
-    :try_start_3e
+    :try_start_0
     iget-object v1, v4, Llibs/sj0;->b:Ljava/lang/Object;
 
     .line 64
@@ -175,8 +175,8 @@
     .line 67
     .line 68
     monitor-exit v5
-    :try_end_44
-    .catchall {:try_start_3e .. :try_end_44} :catchall_5e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 69
     invoke-static {}, Llibs/c;->i()Llibs/c;
@@ -226,24 +226,24 @@
     .line 92
     .line 93
     .line 94
-    :goto_5d
+    :goto_0
     return-void
 
     .line 95
-    :catchall_5e
+    :catchall_0
     move-exception v0
 
     .line 96
-    :try_start_5f
+    :try_start_1
     monitor-exit v5
-    :try_end_60
-    .catchall {:try_start_5f .. :try_end_60} :catchall_5e
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 97
     throw v0
 
     .line 98
-    :pswitch_61
+    :pswitch_0
     iget-object v0, p0, Llibs/iv1;->Y:Llibs/fb3;
 
     .line 99
@@ -263,8 +263,8 @@
     nop
 
     .line 107
-    :pswitch_data_6a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_61
+        :pswitch_0
     .end packed-switch
 .end method

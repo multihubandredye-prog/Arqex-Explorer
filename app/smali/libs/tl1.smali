@@ -57,7 +57,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     .line 1
     :try_start_0
@@ -96,17 +96,17 @@
 
     .line 17
     sput-object v0, Llibs/tl1;->y:Ljava/lang/reflect/Method;
-    :try_end_12
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_12} :catch_12
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 18
     .line 19
-    :catch_12
+    :catch_0
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -258,7 +258,7 @@
 
 # virtual methods
 .method public final a()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/tl1;->b:Llibs/b4;
@@ -299,7 +299,7 @@
 .end method
 
 .method public final b()V
-    .registers 22
+    .locals 21
 
     .line 1
     move-object/from16 v0, p0
@@ -324,7 +324,7 @@
     const/4 v5, 0x0
 
     .line 11
-    if-nez v1, :cond_62
+    if-nez v1, :cond_0
 
     .line 12
     .line 13
@@ -487,10 +487,10 @@
     .line 96
     .line 97
     .line 98
-    goto :goto_68
+    goto :goto_0
 
     .line 99
-    :cond_62
+    :cond_0
     invoke-virtual {v3}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
 
     .line 100
@@ -503,7 +503,7 @@
 
     .line 104
     .line 105
-    :goto_68
+    :goto_0
     iget-object v1, v0, Llibs/tl1;->d:Llibs/ol1;
 
     .line 106
@@ -531,7 +531,7 @@
 
     .line 117
     .line 118
-    if-nez v7, :cond_7a
+    if-nez v7, :cond_1
 
     .line 119
     .line 120
@@ -542,7 +542,7 @@
 
     .line 122
     .line 123
-    :cond_7a
+    :cond_1
     invoke-virtual {v3}, Landroid/widget/PopupWindow;->getInputMethodMode()I
 
     .line 124
@@ -578,24 +578,24 @@
     const/4 v10, -0x1
 
     .line 140
-    if-nez v8, :cond_8f
+    if-nez v8, :cond_2
 
     .line 141
     .line 142
-    if-ne v7, v10, :cond_93
+    if-ne v7, v10, :cond_3
 
     .line 143
     .line 144
-    :cond_8f
+    :cond_2
     move/from16 v20, v1
 
     .line 145
     .line 146
-    goto/16 :goto_156
+    goto/16 :goto_8
 
     .line 147
     .line 148
-    :cond_93
+    :cond_3
     iget v11, v0, Llibs/tl1;->f:I
 
     .line 149
@@ -604,11 +604,11 @@
 
     .line 151
     .line 152
-    if-eq v11, v9, :cond_b7
+    if-eq v11, v9, :cond_5
 
     .line 153
     .line 154
-    if-eq v11, v10, :cond_a0
+    if-eq v11, v10, :cond_4
 
     .line 155
     .line 156
@@ -620,10 +620,10 @@
     move-result v2
 
     .line 160
-    goto :goto_cf
+    goto :goto_1
 
     .line 161
-    :cond_a0
+    :cond_4
     invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     .line 162
@@ -670,10 +670,10 @@
     move-result v2
 
     .line 183
-    goto :goto_cf
+    goto :goto_1
 
     .line 184
-    :cond_b7
+    :cond_5
     invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     .line 185
@@ -724,7 +724,7 @@
     move-result v2
 
     .line 208
-    :goto_cf
+    :goto_1
     iget-object v11, v0, Llibs/tl1;->d:Llibs/ol1;
 
     .line 209
@@ -779,7 +779,7 @@
     move-result-object v4
 
     .line 236
-    if-nez v4, :cond_f2
+    if-nez v4, :cond_6
 
     .line 237
     .line 238
@@ -791,29 +791,29 @@
 
     .line 241
     .line 242
-    goto :goto_14e
+    goto :goto_6
 
     .line 243
-    :cond_f2
+    :cond_6
     add-int/2addr v13, v14
 
     .line 244
-    if-lez v15, :cond_f8
+    if-lez v15, :cond_7
 
     .line 245
     .line 246
-    if-eqz v16, :cond_f8
+    if-eqz v16, :cond_7
 
     .line 247
     .line 248
-    goto :goto_f9
+    goto :goto_2
 
     .line 249
-    :cond_f8
+    :cond_7
     const/4 v15, 0x0
 
     .line 250
-    :goto_f9
+    :goto_2
     invoke-interface {v4}, Landroid/widget/Adapter;->getCount()I
 
     .line 251
@@ -836,8 +836,8 @@
     const/4 v10, 0x0
 
     .line 260
-    :goto_103
-    if-ge v9, v14, :cond_14b
+    :goto_3
+    if-ge v9, v14, :cond_c
 
     .line 261
     .line 262
@@ -849,7 +849,7 @@
     move-result v5
 
     .line 266
-    if-eq v5, v10, :cond_10f
+    if-eq v5, v10, :cond_8
 
     .line 267
     .line 268
@@ -860,15 +860,15 @@
 
     .line 270
     .line 271
-    goto :goto_111
+    goto :goto_4
 
     .line 272
-    :cond_10f
+    :cond_8
     move-object/from16 v5, v18
 
     .line 273
     .line 274
-    :goto_111
+    :goto_4
     invoke-interface {v4, v9, v5, v11}, Landroid/widget/Adapter;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
 
     .line 275
@@ -885,7 +885,7 @@
     move-result-object v12
 
     .line 282
-    if-eqz v12, :cond_128
+    if-eqz v12, :cond_9
 
     .line 283
     .line 284
@@ -893,7 +893,7 @@
 
     .line 285
     .line 286
-    if-lez v12, :cond_128
+    if-lez v12, :cond_9
 
     .line 287
     .line 288
@@ -913,10 +913,10 @@
     move-result v12
 
     .line 296
-    goto :goto_133
+    goto :goto_5
 
     .line 297
-    :cond_128
+    :cond_9
     move/from16 v20, v1
 
     .line 298
@@ -940,20 +940,20 @@
 
     .line 307
     .line 308
-    :goto_133
+    :goto_5
     invoke-virtual {v5, v2, v12}, Landroid/view/View;->measure(II)V
 
     .line 309
     .line 310
     .line 311
-    if-lez v9, :cond_139
+    if-lez v9, :cond_a
 
     .line 312
     .line 313
     add-int/2addr v13, v15
 
     .line 314
-    :cond_139
+    :cond_a
     invoke-virtual {v5}, Landroid/view/View;->getMeasuredHeight()I
 
     .line 315
@@ -965,14 +965,14 @@
     add-int/2addr v13, v12
 
     .line 319
-    if-lt v13, v6, :cond_141
+    if-lt v13, v6, :cond_b
 
     .line 320
     .line 321
-    goto :goto_14e
+    goto :goto_6
 
     .line 322
-    :cond_141
+    :cond_b
     add-int/lit8 v9, v9, 0x1
 
     .line 323
@@ -992,10 +992,10 @@
 
     .line 330
     .line 331
-    goto :goto_103
+    goto :goto_3
 
     .line 332
-    :cond_14b
+    :cond_c
     move/from16 v20, v1
 
     .line 333
@@ -1003,8 +1003,8 @@
     move v6, v13
 
     .line 335
-    :goto_14e
-    if-lez v6, :cond_153
+    :goto_6
+    if-lez v6, :cond_d
 
     .line 336
     .line 337
@@ -1012,26 +1012,26 @@
 
     .line 338
     .line 339
-    goto :goto_154
+    goto :goto_7
 
     .line 340
-    :cond_153
+    :cond_d
     const/4 v1, 0x0
 
     .line 341
-    :goto_154
+    :goto_7
     add-int/2addr v6, v1
 
     .line 342
-    goto :goto_158
+    goto :goto_9
 
     .line 343
-    :goto_156
+    :goto_8
     add-int v6, v6, v20
 
     .line 344
     .line 345
-    :goto_158
+    :goto_9
     invoke-virtual {v3}, Landroid/widget/PopupWindow;->getInputMethodMode()I
 
     .line 346
@@ -1043,21 +1043,21 @@
     const/4 v2, 0x2
 
     .line 350
-    if-ne v1, v2, :cond_161
+    if-ne v1, v2, :cond_e
 
     .line 351
     .line 352
     const/4 v1, 0x1
 
     .line 353
-    goto :goto_162
+    goto :goto_a
 
     .line 354
-    :cond_161
+    :cond_e
     const/4 v1, 0x0
 
     .line 355
-    :goto_162
+    :goto_a
     invoke-virtual {v3}, Landroid/widget/PopupWindow;->isShowing()Z
 
     .line 356
@@ -1074,28 +1074,28 @@
 
     .line 362
     .line 363
-    if-eqz v2, :cond_1b9
+    if-eqz v2, :cond_18
 
     .line 364
     .line 365
     const/4 v2, -0x1
 
     .line 366
-    if-ne v4, v2, :cond_171
+    if-ne v4, v2, :cond_f
 
     .line 367
     .line 368
     const/4 v13, -0x1
 
     .line 369
-    goto :goto_17e
+    goto :goto_b
 
     .line 370
-    :cond_171
+    :cond_f
     const/4 v9, -0x2
 
     .line 371
-    if-ne v4, v9, :cond_17d
+    if-ne v4, v9, :cond_10
 
     .line 372
     .line 373
@@ -1115,131 +1115,131 @@
 
     .line 380
     .line 381
-    goto :goto_17e
+    goto :goto_b
 
     .line 382
-    :cond_17d
+    :cond_10
     move v13, v4
 
     .line 383
-    :goto_17e
-    if-ne v7, v2, :cond_19e
+    :goto_b
+    if-ne v7, v2, :cond_16
 
     .line 384
     .line 385
-    if-eqz v1, :cond_184
+    if-eqz v1, :cond_11
 
     .line 386
     .line 387
     move v7, v6
 
     .line 388
-    goto :goto_185
+    goto :goto_c
 
     .line 389
-    :cond_184
+    :cond_11
     const/4 v7, -0x1
 
     .line 390
-    :goto_185
+    :goto_c
     iget v4, v0, Llibs/tl1;->f:I
 
     .line 391
     .line 392
-    if-eqz v1, :cond_194
+    if-eqz v1, :cond_13
 
     .line 393
     .line 394
-    if-ne v4, v2, :cond_18e
+    if-ne v4, v2, :cond_12
 
     .line 395
     .line 396
     const/4 v10, -0x1
 
     .line 397
-    :goto_18c
+    :goto_d
     const/4 v12, 0x0
 
     .line 398
-    goto :goto_190
+    goto :goto_e
 
     .line 399
-    :cond_18e
+    :cond_12
     const/4 v10, 0x0
 
     .line 400
-    goto :goto_18c
+    goto :goto_d
 
     .line 401
-    :goto_190
+    :goto_e
     invoke-virtual {v3, v10, v12}, Landroid/widget/PopupWindow;->setWindowLayoutMode(II)V
 
     .line 402
     .line 403
     .line 404
-    goto :goto_19c
+    goto :goto_10
 
     .line 405
-    :cond_194
-    if-ne v4, v2, :cond_198
+    :cond_13
+    if-ne v4, v2, :cond_14
 
     .line 406
     .line 407
     const/4 v1, -0x1
 
     .line 408
-    goto :goto_199
+    goto :goto_f
 
     .line 409
-    :cond_198
+    :cond_14
     const/4 v1, 0x0
 
     .line 410
-    :goto_199
+    :goto_f
     invoke-virtual {v3, v1, v2}, Landroid/widget/PopupWindow;->setWindowLayoutMode(II)V
 
     .line 411
     .line 412
     .line 413
-    :cond_19c
-    :goto_19c
+    :cond_15
+    :goto_10
     move v14, v7
 
     .line 414
-    goto :goto_1a2
+    goto :goto_11
 
     .line 415
-    :cond_19e
+    :cond_16
     const/4 v9, -0x2
 
     .line 416
-    if-ne v7, v9, :cond_19c
+    if-ne v7, v9, :cond_15
 
     .line 417
     .line 418
     move v14, v6
 
     .line 419
-    :goto_1a2
-    if-nez v5, :cond_1a8
+    :goto_11
+    if-nez v5, :cond_17
 
     .line 420
     .line 421
-    if-nez v8, :cond_1a8
+    if-nez v8, :cond_17
 
     .line 422
     .line 423
     const/4 v4, 0x1
 
     .line 424
-    goto :goto_1a9
+    goto :goto_12
 
     .line 425
-    :cond_1a8
+    :cond_17
     const/4 v4, 0x0
 
     .line 426
-    :goto_1a9
+    :goto_12
     invoke-virtual {v3, v4}, Landroid/widget/PopupWindow;->setOutsideTouchable(Z)V
 
     .line 427
@@ -1266,15 +1266,15 @@
     .line 438
     .line 439
     .line 440
-    goto/16 :goto_234
+    goto/16 :goto_19
 
     .line 441
     .line 442
-    :cond_1b9
+    :cond_18
     const/4 v2, -0x1
 
     .line 443
-    if-ne v4, v2, :cond_1bf
+    if-ne v4, v2, :cond_19
 
     .line 444
     .line 445
@@ -1284,14 +1284,14 @@
     const/4 v9, -0x2
 
     .line 447
-    goto :goto_1d0
+    goto :goto_14
 
     .line 448
-    :cond_1bf
+    :cond_19
     const/4 v9, -0x2
 
     .line 449
-    if-ne v4, v9, :cond_1cc
+    if-ne v4, v9, :cond_1a
 
     .line 450
     .line 451
@@ -1312,32 +1312,32 @@
     .line 458
     .line 459
     .line 460
-    goto :goto_1cf
+    goto :goto_13
 
     .line 461
-    :cond_1cc
+    :cond_1a
     invoke-virtual {v3, v4}, Landroid/widget/PopupWindow;->setWidth(I)V
 
     .line 462
     .line 463
     .line 464
-    :goto_1cf
+    :goto_13
     const/4 v1, 0x0
 
     .line 465
-    :goto_1d0
-    if-ne v7, v2, :cond_1d4
+    :goto_14
+    if-ne v7, v2, :cond_1b
 
     .line 466
     .line 467
     const/4 v2, -0x1
 
     .line 468
-    goto :goto_1de
+    goto :goto_16
 
     .line 469
-    :cond_1d4
-    if-ne v7, v9, :cond_1da
+    :cond_1b
+    if-ne v7, v9, :cond_1c
 
     .line 470
     .line 471
@@ -1346,20 +1346,20 @@
     .line 472
     .line 473
     .line 474
-    goto :goto_1dd
+    goto :goto_15
 
     .line 475
-    :cond_1da
+    :cond_1c
     invoke-virtual {v3, v7}, Landroid/widget/PopupWindow;->setHeight(I)V
 
     .line 476
     .line 477
     .line 478
-    :goto_1dd
+    :goto_15
     const/4 v2, 0x0
 
     .line 479
-    :goto_1de
+    :goto_16
     invoke-virtual {v3, v1, v2}, Landroid/widget/PopupWindow;->setWindowLayoutMode(II)V
 
     .line 480
@@ -1369,14 +1369,14 @@
 
     .line 483
     .line 484
-    if-eqz v1, :cond_1f3
+    if-eqz v1, :cond_1d
 
     .line 485
     .line 486
     const/4 v2, 0x1
 
     .line 487
-    :try_start_1e6
+    :try_start_0
     new-array v4, v2, [Ljava/lang/Object;
 
     .line 488
@@ -1394,40 +1394,40 @@
     .line 494
     .line 495
     invoke-virtual {v1, v3, v4}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_1f1
-    .catch Ljava/lang/Exception; {:try_start_1e6 .. :try_end_1f1} :catch_1f2
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 496
     .line 497
     .line 498
-    goto :goto_1f3
+    goto :goto_17
 
     .line 499
-    :catch_1f2
+    :catch_0
     nop
 
     .line 500
-    :cond_1f3
-    :goto_1f3
-    if-nez v5, :cond_1f9
+    :cond_1d
+    :goto_17
+    if-nez v5, :cond_1e
 
     .line 501
     .line 502
-    if-nez v8, :cond_1f9
+    if-nez v8, :cond_1e
 
     .line 503
     .line 504
     const/4 v12, 0x1
 
     .line 505
-    goto :goto_1fa
+    goto :goto_18
 
     .line 506
-    :cond_1f9
+    :cond_1e
     const/4 v12, 0x0
 
     .line 507
-    :goto_1fa
+    :goto_18
     invoke-virtual {v3, v12}, Landroid/widget/PopupWindow;->setOutsideTouchable(Z)V
 
     .line 508
@@ -1479,7 +1479,7 @@
 
     .line 533
     .line 534
-    if-eqz v1, :cond_21f
+    if-eqz v1, :cond_1f
 
     .line 535
     .line 536
@@ -1495,16 +1495,16 @@
     move-result v1
 
     .line 542
-    if-eqz v1, :cond_229
+    if-eqz v1, :cond_20
 
     .line 543
     .line 544
-    :cond_21f
+    :cond_1f
     iget-object v1, v0, Llibs/tl1;->d:Llibs/ol1;
 
     .line 545
     .line 546
-    if-eqz v1, :cond_229
+    if-eqz v1, :cond_20
 
     .line 547
     .line 548
@@ -1520,12 +1520,12 @@
     .line 552
     .line 553
     .line 554
-    :cond_229
+    :cond_20
     iget-boolean v1, v0, Llibs/tl1;->x:Z
 
     .line 555
     .line 556
-    if-nez v1, :cond_234
+    if-nez v1, :cond_21
 
     .line 557
     .line 558
@@ -1542,8 +1542,8 @@
     .line 563
     .line 564
     .line 565
-    :cond_234
-    :goto_234
+    :cond_21
+    :goto_19
     iget-object v1, v0, Llibs/tl1;->d:Llibs/ol1;
 
     .line 566

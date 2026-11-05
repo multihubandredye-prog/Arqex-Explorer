@@ -15,7 +15,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/bn1;
@@ -47,7 +47,7 @@
 .end method
 
 .method public constructor <init>(Llibs/dv2;Llibs/f62;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/nv2;-><init>()V
@@ -69,7 +69,7 @@
 
 # virtual methods
 .method public final h(Llibs/mv2;)V
-    .registers 11
+    .locals 9
 
     .line 1
     invoke-virtual {p1}, Llibs/qj0;->b()Llibs/xw2;
@@ -117,7 +117,7 @@
     const/4 v4, 0x0
 
     .line 22
-    :try_start_15
+    :try_start_0
     iget-object v5, p0, Llibs/qv2;->b:Llibs/dv2;
 
     .line 23
@@ -137,8 +137,8 @@
     .line 31
     .line 32
     move-result-object p1
-    :try_end_20
-    .catch Llibs/sj; {:try_start_15 .. :try_end_20} :catch_94
+    :try_end_0
+    .catch Llibs/sj; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 33
     invoke-virtual {p1}, Llibs/lv2;->b()Llibs/xw2;
@@ -186,7 +186,7 @@
     .line 54
     .line 55
     .line 56
-    :try_start_37
+    :try_start_1
     iget-object v7, v1, Llibs/f62;->b:Ljava/util/HashMap;
 
     .line 57
@@ -203,7 +203,7 @@
 
     .line 63
     .line 64
-    if-eqz v7, :cond_7a
+    if-eqz v7, :cond_0
 
     .line 65
     .line 66
@@ -216,8 +216,8 @@
     .line 69
     .line 70
     invoke-interface {v0, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_48
-    .catchall {:try_start_37 .. :try_end_48} :catchall_78
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 71
     .line 72
@@ -248,7 +248,7 @@
     .line 85
     .line 86
     .line 87
-    :try_start_56
+    :try_start_2
     iget-object v5, v0, Llibs/fg2;->a:Llibs/bn1;
 
     .line 88
@@ -294,8 +294,8 @@
     .line 108
     .line 109
     invoke-interface {p1}, Ljava/util/concurrent/locks/Condition;->signalAll()V
-    :try_end_6f
-    .catchall {:try_start_56 .. :try_end_6f} :catchall_73
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 110
     .line 111
@@ -308,7 +308,7 @@
     return-void
 
     .line 116
-    :catchall_73
+    :catchall_0
     move-exception p1
 
     .line 117
@@ -320,15 +320,15 @@
     throw p1
 
     .line 121
-    :catchall_78
+    :catchall_1
     move-exception p1
 
     .line 122
-    goto :goto_8c
+    goto :goto_0
 
     .line 123
-    :cond_7a
-    :try_start_7a
+    :cond_0
+    :try_start_3
     new-instance p1, Llibs/zw2;
 
     .line 124
@@ -361,11 +361,11 @@
     .line 139
     .line 140
     throw p1
-    :try_end_8c
-    .catchall {:try_start_7a .. :try_end_8c} :catchall_78
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 141
-    :goto_8c
+    :goto_0
     invoke-virtual {v6}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;->writeLock()Ljava/util/concurrent/locks/ReentrantReadWriteLock$WriteLock;
 
     .line 142
@@ -382,7 +382,7 @@
     throw p1
 
     .line 149
-    :catch_94
+    :catch_0
     move-exception v0
 
     .line 150

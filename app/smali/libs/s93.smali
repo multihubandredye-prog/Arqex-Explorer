@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/rp0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/t61;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final d(Ljava/lang/String;Z)Z
-    .registers 3
+    .locals 0
 
     .line 1
     sget-object p2, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
@@ -70,7 +70,7 @@
 .end method
 
 .method public final e(Llibs/rp0;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p1, Llibs/rp0;->Xi:Ljava/lang/String;
@@ -101,7 +101,7 @@
     move-result v0
 
     .line 15
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_0
 
     .line 16
     .line 17
@@ -137,7 +137,7 @@
     move-result p1
 
     .line 33
-    if-eqz p1, :cond_24
+    if-eqz p1, :cond_0
 
     .line 34
     .line 35
@@ -147,7 +147,7 @@
     return p1
 
     .line 37
-    :cond_24
+    :cond_0
     const/4 p1, 0x0
 
     .line 38
@@ -155,7 +155,7 @@
 .end method
 
 .method public final f()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1

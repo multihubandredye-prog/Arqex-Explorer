@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Z)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final a(Llibs/Init;Llibs/i03;)Z
-    .registers 7
+    .locals 4
 
     .line 1
     iget-boolean p1, p0, Llibs/in;->a:Z
@@ -47,11 +47,11 @@
 
     .line 4
     .line 5
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_0
 
     .line 6
     .line 7
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 8
     .line 9
@@ -63,7 +63,7 @@
     move-result-object v0
 
     .line 13
-    :cond_c
+    :cond_0
     iget-object p1, p2, Llibs/k03;->b:Llibs/g03;
 
     .line 14
@@ -74,7 +74,7 @@
     const/4 v1, 0x1
 
     .line 17
-    if-eqz p1, :cond_38
+    if-eqz p1, :cond_3
 
     .line 18
     .line 19
@@ -97,8 +97,8 @@
     const/4 v2, 0x0
 
     .line 28
-    :cond_1b
-    :goto_1b
+    :cond_1
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 29
@@ -107,7 +107,7 @@
     move-result v3
 
     .line 32
-    if-eqz v3, :cond_39
+    if-eqz v3, :cond_4
 
     .line 33
     .line 34
@@ -127,7 +127,7 @@
 
     .line 41
     .line 42
-    if-eqz v0, :cond_35
+    if-eqz v0, :cond_2
 
     .line 43
     .line 44
@@ -147,43 +147,43 @@
     move-result v3
 
     .line 52
-    if-eqz v3, :cond_1b
+    if-eqz v3, :cond_1
 
     .line 53
     .line 54
-    :cond_35
+    :cond_2
     add-int/lit8 v2, v2, 0x1
 
     .line 55
     .line 56
-    goto :goto_1b
+    goto :goto_0
 
     .line 57
-    :cond_38
+    :cond_3
     const/4 v2, 0x1
 
     .line 58
-    :cond_39
-    if-ne v2, v1, :cond_3c
+    :cond_4
+    if-ne v2, v1, :cond_5
 
     .line 59
     .line 60
     return v1
 
     .line 61
-    :cond_3c
+    :cond_5
     return p2
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-boolean v0, p0, Llibs/in;->a:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -210,7 +210,7 @@
     return-object v0
 
     .line 16
-    :cond_f
+    :cond_0
     const-string v0, "only-child"
 
     .line 17

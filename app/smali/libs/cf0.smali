@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/a6;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final a(Llibs/mx;)V
-    .registers 20
+    .locals 18
 
     .line 1
     move-object/from16 v0, p1
@@ -768,7 +768,7 @@
     move-result v1
 
     .line 399
-    if-nez v1, :cond_270
+    if-nez v1, :cond_0
 
     .line 400
     .line 401
@@ -1192,7 +1192,7 @@
     .line 623
     .line 624
     .line 625
-    :cond_270
+    :cond_0
     const-string v1, "KeyFactory.ECDSA"
 
     .line 626

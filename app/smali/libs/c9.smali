@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;Ljava/util/ArrayList;Ljava/util/ArrayList;Llibs/ml1;[Ljava/lang/String;)V
-    .registers 6
+    .locals 0
 
     .line 1
     iput-object p2, p0, Llibs/c9;->c:Ljava/util/ArrayList;
@@ -51,13 +51,13 @@
 
 # virtual methods
 .method public final declared-synchronized z(Landroid/view/View;I)V
-    .registers 10
+    .locals 7
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object p1, p0, Llibs/c9;->c:Ljava/util/ArrayList;
 
     .line 3
@@ -70,7 +70,7 @@
     move-result p1
 
     .line 8
-    if-lt p2, p1, :cond_2d
+    if-lt p2, p1, :cond_0
 
     .line 9
     .line 10
@@ -127,8 +127,8 @@
 
     .line 38
     invoke-static {p1, p2}, Llibs/vw1;->e(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_28
-    .catchall {:try_start_1 .. :try_end_28} :catchall_2a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 39
     .line 40
@@ -139,28 +139,28 @@
     return-void
 
     .line 43
-    :catchall_2a
+    :catchall_0
     move-exception v0
 
     .line 44
     move-object p1, v0
 
     .line 45
-    goto :goto_52
+    goto :goto_0
 
     .line 46
-    :cond_2d
-    :try_start_2d
+    :cond_0
+    :try_start_1
     iget-object p1, p0, Llibs/c9;->c:Ljava/util/ArrayList;
 
     .line 47
     .line 48
     monitor-enter p1
-    :try_end_30
-    .catchall {:try_start_2d .. :try_end_30} :catchall_2a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 49
-    :try_start_30
+    :try_start_2
     iget-object v0, p0, Llibs/c9;->c:Ljava/util/ArrayList;
 
     .line 50
@@ -178,11 +178,11 @@
     .line 56
     .line 57
     monitor-exit p1
-    :try_end_39
-    .catchall {:try_start_30 .. :try_end_39} :catchall_4e
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 58
-    :try_start_39
+    :try_start_3
     iget-object p1, p0, Llibs/c9;->d:Landroid/app/Activity;
 
     .line 59
@@ -216,8 +216,8 @@
     .line 73
     .line 74
     invoke-static {p1, v0, v2, v1, v4}, Llibs/e9;->a(Landroid/app/Activity;Llibs/d9;Ljava/util/ArrayList;Llibs/xl1;[Ljava/lang/String;)V
-    :try_end_4c
-    .catchall {:try_start_39 .. :try_end_4c} :catchall_2a
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 75
     .line 76
@@ -228,27 +228,27 @@
     return-void
 
     .line 79
-    :catchall_4e
+    :catchall_1
     move-exception v0
 
     .line 80
     move-object p2, v0
 
     .line 81
-    :try_start_50
+    :try_start_4
     monitor-exit p1
-    :try_end_51
-    .catchall {:try_start_50 .. :try_end_51} :catchall_4e
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 82
-    :try_start_51
+    :try_start_5
     throw p2
 
     .line 83
-    :goto_52
+    :goto_0
     monitor-exit p0
-    :try_end_53
-    .catchall {:try_start_51 .. :try_end_53} :catchall_2a
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 84
     throw p1

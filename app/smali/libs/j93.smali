@@ -11,7 +11,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/io/InputStream;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/j93;->X:B
@@ -31,10 +31,10 @@
 .end method
 
 .method public static c([BLjava/lang/String;II)[B
-    .registers 4
+    .locals 0
 
     .line 1
-    if-ne p3, p2, :cond_9
+    if-ne p3, p2, :cond_0
 
     .line 2
     .line 3
@@ -55,7 +55,7 @@
     return-object p0
 
     .line 10
-    :cond_9
+    :cond_0
     new-instance p0, Ljava/io/EOFException;
 
     .line 11
@@ -87,7 +87,7 @@
 
 # virtual methods
 .method public final available()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/j93;->X:B
@@ -98,7 +98,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_18
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -122,7 +122,7 @@
     return v0
 
     .line 17
-    :pswitch_10
+    :pswitch_0
     check-cast v1, Llibs/dl;
 
     .line 18
@@ -141,14 +141,14 @@
     nop
 
     .line 25
-    :pswitch_data_18
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_10
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public i()Llibs/i93;
-    .registers 11
+    .locals 10
 
     .line 1
     iget-object v0, p0, Llibs/j93;->Y:Ljava/io/InputStream;
@@ -170,14 +170,14 @@
     const/4 v2, 0x0
 
     .line 10
-    if-gez v1, :cond_c
+    if-gez v1, :cond_0
 
     .line 11
     .line 12
     return-object v2
 
     .line 13
-    :cond_c
+    :cond_0
     const/16 v3, 0x10
 
     .line 14
@@ -190,19 +190,19 @@
 
     .line 18
     .line 19
-    if-ge v1, v5, :cond_15
+    if-ge v1, v5, :cond_1
 
     .line 20
     .line 21
-    goto :goto_3f
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_1
     const/16 v6, 0xdf
 
     .line 23
     .line 24
-    if-gt v1, v6, :cond_24
+    if-gt v1, v6, :cond_2
 
     .line 25
     .line 26
@@ -228,15 +228,15 @@
 
     .line 35
     .line 36
-    goto :goto_3f
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_2
     const/16 v5, 0xff
 
     .line 38
     .line 39
-    if-ne v1, v5, :cond_fb
+    if-ne v1, v5, :cond_14
 
     .line 40
     .line 41
@@ -291,7 +291,7 @@
     or-int/2addr v1, v2
 
     .line 64
-    :goto_3f
+    :goto_0
     invoke-virtual {v0}, Llibs/dl;->read()I
 
     .line 65
@@ -300,7 +300,7 @@
     move-result v2
 
     .line 68
-    if-ltz v2, :cond_f3
+    if-ltz v2, :cond_13
 
     .line 69
     .line 70
@@ -340,23 +340,23 @@
     const/4 v9, 0x4
 
     .line 86
-    if-eq v0, v1, :cond_82
+    if-eq v0, v1, :cond_7
 
     .line 87
     .line 88
-    if-eq v2, v8, :cond_7c
+    if-eq v2, v8, :cond_6
 
     .line 89
     .line 90
-    if-eq v2, v7, :cond_75
+    if-eq v2, v7, :cond_5
 
     .line 91
     .line 92
-    if-eq v2, v6, :cond_6e
+    if-eq v2, v6, :cond_4
 
     .line 93
     .line 94
-    if-ne v2, v3, :cond_66
+    if-ne v2, v3, :cond_3
 
     .line 95
     .line 96
@@ -372,10 +372,10 @@
     move-result-object v5
 
     .line 102
-    goto :goto_82
+    goto :goto_1
 
     .line 103
-    :cond_66
+    :cond_3
     new-instance v0, Ljava/io/EOFException;
 
     .line 104
@@ -392,7 +392,7 @@
     throw v0
 
     .line 111
-    :cond_6e
+    :cond_4
     const-string v1, "Signature Key Expiration Time"
 
     .line 112
@@ -405,10 +405,10 @@
     move-result-object v5
 
     .line 117
-    goto :goto_82
+    goto :goto_1
 
     .line 118
-    :cond_75
+    :cond_5
     const-string v1, "Signature Expiration Time"
 
     .line 119
@@ -421,10 +421,10 @@
     move-result-object v5
 
     .line 124
-    goto :goto_82
+    goto :goto_1
 
     .line 125
-    :cond_7c
+    :cond_6
     const-string v1, "Signature Creation Time"
 
     .line 126
@@ -437,35 +437,35 @@
     move-result-object v5
 
     .line 131
-    :cond_82
-    :goto_82
-    if-eq v2, v8, :cond_ed
+    :cond_7
+    :goto_1
+    if-eq v2, v8, :cond_12
 
     .line 132
     .line 133
-    if-eq v2, v7, :cond_e7
+    if-eq v2, v7, :cond_11
 
     .line 134
     .line 135
-    if-eq v2, v9, :cond_e1
+    if-eq v2, v9, :cond_10
 
     .line 136
     .line 137
     const/4 v0, 0x5
 
     .line 138
-    if-eq v2, v0, :cond_db
+    if-eq v2, v0, :cond_f
 
     .line 139
     .line 140
     const/4 v0, 0x7
 
     .line 141
-    if-eq v2, v0, :cond_d5
+    if-eq v2, v0, :cond_e
 
     .line 142
     .line 143
-    if-eq v2, v6, :cond_cf
+    if-eq v2, v6, :cond_d
 
     .line 144
     .line 145
@@ -473,11 +473,11 @@
 
     .line 146
     .line 147
-    if-eq v2, v0, :cond_c9
+    if-eq v2, v0, :cond_c
 
     .line 148
     .line 149
-    if-eq v2, v3, :cond_c3
+    if-eq v2, v3, :cond_b
 
     .line 150
     .line 151
@@ -485,7 +485,7 @@
 
     .line 152
     .line 153
-    if-eq v2, v0, :cond_bd
+    if-eq v2, v0, :cond_a
 
     .line 154
     .line 155
@@ -493,7 +493,7 @@
 
     .line 156
     .line 157
-    if-eq v2, v0, :cond_b7
+    if-eq v2, v0, :cond_9
 
     .line 158
     .line 159
@@ -501,11 +501,11 @@
 
     .line 160
     .line 161
-    if-eq v2, v0, :cond_b1
+    if-eq v2, v0, :cond_8
 
     .line 162
     .line 163
-    packed-switch v2, :pswitch_data_102
+    packed-switch v2, :pswitch_data_0
 
     .line 164
     .line 165
@@ -522,7 +522,7 @@
     return-object v0
 
     .line 172
-    :pswitch_ab
+    :pswitch_0
     new-instance v0, Llibs/am0;
 
     .line 173
@@ -535,7 +535,7 @@
     return-object v0
 
     .line 178
-    :cond_b1
+    :cond_8
     new-instance v0, Llibs/am0;
 
     .line 179
@@ -548,7 +548,7 @@
     return-object v0
 
     .line 184
-    :cond_b7
+    :cond_9
     new-instance v0, Llibs/am0;
 
     .line 185
@@ -561,7 +561,7 @@
     return-object v0
 
     .line 190
-    :cond_bd
+    :cond_a
     new-instance v0, Llibs/am0;
 
     .line 191
@@ -574,7 +574,7 @@
     return-object v0
 
     .line 196
-    :cond_c3
+    :cond_b
     new-instance v0, Llibs/xb1;
 
     .line 197
@@ -587,8 +587,8 @@
     return-object v0
 
     .line 202
-    :cond_c9
-    :pswitch_c9
+    :cond_c
+    :pswitch_1
     new-instance v0, Llibs/am0;
 
     .line 203
@@ -601,7 +601,7 @@
     return-object v0
 
     .line 208
-    :cond_cf
+    :cond_d
     new-instance v0, Llibs/am0;
 
     .line 209
@@ -614,7 +614,7 @@
     return-object v0
 
     .line 214
-    :cond_d5
+    :cond_e
     new-instance v0, Llibs/am0;
 
     .line 215
@@ -627,7 +627,7 @@
     return-object v0
 
     .line 220
-    :cond_db
+    :cond_f
     new-instance v0, Llibs/am0;
 
     .line 221
@@ -640,7 +640,7 @@
     return-object v0
 
     .line 226
-    :cond_e1
+    :cond_10
     new-instance v0, Llibs/am0;
 
     .line 227
@@ -653,7 +653,7 @@
     return-object v0
 
     .line 232
-    :cond_e7
+    :cond_11
     new-instance v0, Llibs/am0;
 
     .line 233
@@ -666,7 +666,7 @@
     return-object v0
 
     .line 238
-    :cond_ed
+    :cond_12
     new-instance v0, Llibs/z73;
 
     .line 239
@@ -679,7 +679,7 @@
     return-object v0
 
     .line 244
-    :cond_f3
+    :cond_13
     new-instance v0, Ljava/io/EOFException;
 
     .line 245
@@ -696,7 +696,7 @@
     throw v0
 
     .line 252
-    :cond_fb
+    :cond_14
     const-string v0, "unexpected length header"
 
     .line 253
@@ -712,16 +712,16 @@
     nop
 
     .line 259
-    :pswitch_data_102
+    :pswitch_data_0
     .packed-switch 0x14
-        :pswitch_ab
-        :pswitch_c9
-        :pswitch_c9
+        :pswitch_0
+        :pswitch_1
+        :pswitch_1
     .end packed-switch
 .end method
 
 .method public final read()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/j93;->X:B
@@ -732,7 +732,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_16
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -752,7 +752,7 @@
     return v0
 
     .line 15
-    :pswitch_e
+    :pswitch_0
     check-cast v1, Llibs/dl;
 
     .line 16
@@ -771,8 +771,8 @@
     nop
 
     .line 23
-    :pswitch_data_16
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_e
+        :pswitch_0
     .end packed-switch
 .end method

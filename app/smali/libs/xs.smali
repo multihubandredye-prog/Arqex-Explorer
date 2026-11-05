@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/xs;Llibs/zs;)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,14 +45,14 @@
     const/4 p2, 0x1
 
     .line 14
-    if-eq p1, p2, :cond_4f
+    if-eq p1, p2, :cond_6
 
     .line 15
     .line 16
     const/4 p2, 0x3
 
     .line 17
-    if-eq p1, p2, :cond_49
+    if-eq p1, p2, :cond_5
 
     .line 18
     .line 19
@@ -60,28 +60,28 @@
 
     .line 20
     .line 21
-    if-eq p1, p2, :cond_43
+    if-eq p1, p2, :cond_4
 
     .line 22
     .line 23
     const/4 p2, 0x5
 
     .line 24
-    if-eq p1, p2, :cond_3c
+    if-eq p1, p2, :cond_3
 
     .line 25
     .line 26
     const/4 p2, 0x6
 
     .line 27
-    if-eq p1, p2, :cond_35
+    if-eq p1, p2, :cond_2
 
     .line 28
     .line 29
     const/4 p2, 0x7
 
     .line 30
-    if-eq p1, p2, :cond_2f
+    if-eq p1, p2, :cond_1
 
     .line 31
     .line 32
@@ -89,7 +89,7 @@
 
     .line 33
     .line 34
-    if-eq p1, p2, :cond_29
+    if-eq p1, p2, :cond_0
 
     .line 35
     .line 36
@@ -102,10 +102,10 @@
     .line 39
     .line 40
     .line 41
-    goto :goto_54
+    goto :goto_0
 
     .line 42
-    :cond_29
+    :cond_0
     new-instance p1, Llibs/nj0;
 
     .line 43
@@ -115,10 +115,10 @@
     .line 45
     .line 46
     .line 47
-    goto :goto_54
+    goto :goto_0
 
     .line 48
-    :cond_2f
+    :cond_1
     new-instance p1, Llibs/ag3;
 
     .line 49
@@ -128,10 +128,10 @@
     .line 51
     .line 52
     .line 53
-    goto :goto_54
+    goto :goto_0
 
     .line 54
-    :cond_35
+    :cond_2
     new-instance p1, Llibs/lj0;
 
     .line 55
@@ -144,10 +144,10 @@
     .line 58
     .line 59
     .line 60
-    goto :goto_54
+    goto :goto_0
 
     .line 61
-    :cond_3c
+    :cond_3
     new-instance p1, Llibs/lj0;
 
     .line 62
@@ -160,10 +160,10 @@
     .line 65
     .line 66
     .line 67
-    goto :goto_54
+    goto :goto_0
 
     .line 68
-    :cond_43
+    :cond_4
     new-instance p1, Llibs/lo2;
 
     .line 69
@@ -173,10 +173,10 @@
     .line 71
     .line 72
     .line 73
-    goto :goto_54
+    goto :goto_0
 
     .line 74
-    :cond_49
+    :cond_5
     new-instance p1, Llibs/tx3;
 
     .line 75
@@ -186,10 +186,10 @@
     .line 77
     .line 78
     .line 79
-    goto :goto_54
+    goto :goto_0
 
     .line 80
-    :cond_4f
+    :cond_6
     new-instance p1, Llibs/sh3;
 
     .line 81
@@ -199,7 +199,7 @@
     .line 83
     .line 84
     .line 85
-    :goto_54
+    :goto_0
     iput-object p1, p0, Llibs/xs;->c:Llibs/qx0;
 
     .line 86
@@ -210,14 +210,14 @@
 
 # virtual methods
 .method public final a()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/xs;->d:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -233,7 +233,7 @@
 
     .line 10
     .line 11
-    :cond_a
+    :cond_0
     iget-object v0, p0, Llibs/xs;->c:Llibs/qx0;
 
     .line 12
@@ -246,21 +246,21 @@
 .end method
 
 .method public final b()Landroid/content/Context;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/xs;->a:Landroid/content/Context;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     return-object v0
 
     .line 6
-    :cond_5
+    :cond_0
     iget-object v0, p0, Llibs/xs;->b:Llibs/xs;
 
     .line 7
@@ -277,14 +277,14 @@
 .end method
 
 .method public c()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public d()Llibs/sx3;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/xs;->b:Llibs/xs;
@@ -303,7 +303,7 @@
 .end method
 
 .method public e(Ljava/lang/String;Ljava/lang/String;)I
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/xs;->d()Llibs/sx3;
@@ -330,7 +330,7 @@
 .end method
 
 .method public final f(Llibs/f1;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/xs;->a()I

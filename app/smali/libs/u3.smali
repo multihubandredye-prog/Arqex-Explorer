@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/u3;->X:B
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 10
+    .locals 7
 
     .line 1
     iget-byte v0, p0, Llibs/u3;->X:B
@@ -46,7 +46,7 @@
     const/4 v3, -0x1
 
     .line 6
-    packed-switch v0, :pswitch_data_f6
+    packed-switch v0, :pswitch_data_0
 
     .line 7
     .line 8
@@ -75,11 +75,11 @@
 
     .line 20
     .line 21
-    if-ge v0, v4, :cond_1c
+    if-ge v0, v4, :cond_1
 
     .line 22
     .line 23
-    if-ge v4, v5, :cond_1a
+    if-ge v4, v5, :cond_0
 
     .line 24
     .line 25
@@ -87,19 +87,19 @@
 
     .line 26
     .line 27
-    :cond_1a
+    :cond_0
     const/4 v1, -0x1
 
     .line 28
-    goto :goto_23
+    goto :goto_0
 
     .line 29
-    :cond_1c
-    if-le v0, v4, :cond_23
+    :cond_1
+    if-le v0, v4, :cond_3
 
     .line 30
     .line 31
-    if-ge v0, v6, :cond_22
+    if-ge v0, v6, :cond_2
 
     .line 32
     .line 33
@@ -107,16 +107,16 @@
 
     .line 34
     .line 35
-    :cond_22
+    :cond_2
     const/4 v1, 0x1
 
     .line 36
-    :cond_23
-    :goto_23
+    :cond_3
+    :goto_0
     return v1
 
     .line 37
-    :pswitch_24
+    :pswitch_0
     check-cast p1, Llibs/gl2;
 
     .line 38
@@ -146,7 +146,7 @@
     .line 50
     .line 51
     .line 52
-    if-ne p1, v3, :cond_38
+    if-ne p1, v3, :cond_4
 
     .line 53
     .line 54
@@ -155,8 +155,8 @@
     .line 55
     .line 56
     .line 57
-    :cond_38
-    if-ne p2, v3, :cond_3d
+    :cond_4
+    if-ne p2, v3, :cond_5
 
     .line 58
     .line 59
@@ -165,14 +165,14 @@
     .line 60
     .line 61
     .line 62
-    :cond_3d
+    :cond_5
     sub-int/2addr p1, p2
 
     .line 63
     return p1
 
     .line 64
-    :pswitch_3f
+    :pswitch_1
     check-cast p1, Llibs/zv1;
 
     .line 65
@@ -193,14 +193,14 @@
 
     .line 73
     .line 74
-    :goto_49
+    :goto_1
     sub-int/2addr p1, p2
 
     .line 75
     return p1
 
     .line 76
-    :pswitch_4b
+    :pswitch_2
     check-cast p1, Llibs/rp0;
 
     .line 77
@@ -245,35 +245,35 @@
 
     .line 97
     .line 98
-    if-eq p1, v0, :cond_65
+    if-eq p1, v0, :cond_6
 
     .line 99
     .line 100
-    if-ne p2, v0, :cond_6a
+    if-ne p2, v0, :cond_8
 
     .line 101
     .line 102
-    :cond_65
-    if-ne p2, v0, :cond_69
+    :cond_6
+    if-ne p2, v0, :cond_7
 
     .line 103
     .line 104
     const/4 v1, -0x1
 
     .line 105
-    goto :goto_6a
+    goto :goto_2
 
     .line 106
-    :cond_69
+    :cond_7
     const/4 v1, 0x1
 
     .line 107
-    :cond_6a
-    :goto_6a
+    :cond_8
+    :goto_2
     return v1
 
     .line 108
-    :pswitch_6b
+    :pswitch_3
     check-cast p1, Llibs/e80;
 
     .line 109
@@ -290,10 +290,10 @@
 
     .line 115
     .line 116
-    goto :goto_49
+    goto :goto_1
 
     .line 117
-    :pswitch_74
+    :pswitch_4
     check-cast p1, Ljava/util/List;
 
     .line 118
@@ -318,7 +318,7 @@
     move-result-object v3
 
     .line 129
-    if-eq v0, v3, :cond_98
+    if-eq v0, v3, :cond_9
 
     .line 130
     .line 131
@@ -365,10 +365,10 @@
     sub-int/2addr p1, p2
 
     .line 152
-    goto :goto_ae
+    goto :goto_3
 
     .line 153
-    :cond_98
+    :cond_9
     invoke-interface {p2, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     .line 154
@@ -413,11 +413,11 @@
 
     .line 174
     .line 175
-    :goto_ae
+    :goto_3
     return p1
 
     .line 176
-    :pswitch_af
+    :pswitch_5
     check-cast p1, Llibs/hw;
 
     .line 177
@@ -448,7 +448,7 @@
     return p2
 
     .line 190
-    :pswitch_bd
+    :pswitch_6
     check-cast p1, Llibs/s5;
 
     .line 191
@@ -481,11 +481,11 @@
     move-result p2
 
     .line 206
-    goto/16 :goto_49
+    goto/16 :goto_1
 
     .line 207
     .line 208
-    :pswitch_cf
+    :pswitch_7
     check-cast p1, Llibs/o5;
 
     .line 209
@@ -518,11 +518,11 @@
     move-result p2
 
     .line 224
-    goto/16 :goto_49
+    goto/16 :goto_1
 
     .line 225
     .line 226
-    :pswitch_e1
+    :pswitch_8
     check-cast p1, Llibs/t3;
 
     .line 227
@@ -547,42 +547,42 @@
 
     .line 237
     .line 238
-    if-ne p1, p2, :cond_f0
+    if-ne p1, p2, :cond_a
 
     .line 239
     .line 240
-    goto :goto_f5
+    goto :goto_4
 
     .line 241
-    :cond_f0
-    if-ge p1, p2, :cond_f4
+    :cond_a
+    if-ge p1, p2, :cond_b
 
     .line 242
     .line 243
     const/4 v1, -0x1
 
     .line 244
-    goto :goto_f5
+    goto :goto_4
 
     .line 245
-    :cond_f4
+    :cond_b
     const/4 v1, 0x1
 
     .line 246
-    :goto_f5
+    :goto_4
     return v1
 
     .line 247
-    :pswitch_data_f6
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_e1
-        :pswitch_cf
-        :pswitch_bd
-        :pswitch_af
-        :pswitch_74
-        :pswitch_6b
-        :pswitch_4b
-        :pswitch_3f
-        :pswitch_24
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

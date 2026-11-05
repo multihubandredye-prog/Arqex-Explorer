@@ -19,7 +19,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const-string v0, "([a-zA-Z0-9-!#$%&\'*+.^_`{|}~]+)/([a-zA-Z0-9-!#$%&\'*+.^_`{|}~]+)"
@@ -58,7 +58,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -82,7 +82,7 @@
 .end method
 
 .method public static a(Ljava/lang/String;)Llibs/wq1;
-    .registers 11
+    .locals 10
 
     .line 1
     sget-object v0, Llibs/wq1;->d:Ljava/util/regex/Pattern;
@@ -109,7 +109,7 @@
 
     .line 12
     .line 13
-    if-eqz v1, :cond_c2
+    if-eqz v1, :cond_8
 
     .line 14
     .line 15
@@ -175,7 +175,7 @@
     const/4 v6, 0x0
 
     .line 45
-    :goto_2c
+    :goto_0
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     .line 46
@@ -184,7 +184,7 @@
     move-result v7
 
     .line 49
-    if-ge v0, v7, :cond_bc
+    if-ge v0, v7, :cond_7
 
     .line 50
     .line 51
@@ -213,7 +213,7 @@
 
     .line 63
     .line 64
-    if-eqz v7, :cond_9b
+    if-eqz v7, :cond_6
 
     .line 65
     .line 66
@@ -225,7 +225,7 @@
     move-result-object v0
 
     .line 70
-    if-eqz v0, :cond_96
+    if-eqz v0, :cond_5
 
     .line 71
     .line 72
@@ -241,14 +241,14 @@
     move-result v0
 
     .line 78
-    if-nez v0, :cond_50
+    if-nez v0, :cond_0
 
     .line 79
     .line 80
-    goto :goto_96
+    goto :goto_3
 
     .line 81
-    :cond_50
+    :cond_0
     invoke-virtual {v4, v5}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     .line 82
@@ -257,7 +257,7 @@
     move-result-object v0
 
     .line 85
-    if-eqz v0, :cond_6f
+    if-eqz v0, :cond_1
 
     .line 86
     .line 87
@@ -273,7 +273,7 @@
     move-result v9
 
     .line 93
-    if-eqz v9, :cond_74
+    if-eqz v9, :cond_2
 
     .line 94
     .line 95
@@ -285,7 +285,7 @@
     move-result v7
 
     .line 99
-    if-eqz v7, :cond_74
+    if-eqz v7, :cond_2
 
     .line 100
     .line 101
@@ -297,7 +297,7 @@
     move-result v7
 
     .line 105
-    if-le v7, v5, :cond_74
+    if-le v7, v5, :cond_2
 
     .line 106
     .line 107
@@ -309,10 +309,10 @@
     move-result-object v0
 
     .line 111
-    goto :goto_74
+    goto :goto_1
 
     .line 112
-    :cond_6f
+    :cond_1
     const/4 v0, 0x3
 
     .line 113
@@ -324,9 +324,9 @@
     move-result-object v0
 
     .line 117
-    :cond_74
-    :goto_74
-    if-eqz v6, :cond_95
+    :cond_2
+    :goto_1
+    if-eqz v6, :cond_4
 
     .line 118
     .line 119
@@ -338,14 +338,14 @@
     move-result v7
 
     .line 123
-    if-eqz v7, :cond_7d
+    if-eqz v7, :cond_3
 
     .line 124
     .line 125
-    goto :goto_95
+    goto :goto_2
 
     .line 126
-    :cond_7d
+    :cond_3
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     .line 127
@@ -392,13 +392,13 @@
     throw v1
 
     .line 150
-    :cond_95
-    :goto_95
+    :cond_4
+    :goto_2
     move-object v6, v0
 
     .line 151
-    :cond_96
-    :goto_96
+    :cond_5
+    :goto_3
     invoke-virtual {v4}, Ljava/util/regex/Matcher;->end()I
 
     .line 152
@@ -407,10 +407,10 @@
     move-result v0
 
     .line 155
-    goto :goto_2c
+    goto :goto_0
 
     .line 156
-    :cond_9b
+    :cond_6
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     .line 157
@@ -472,7 +472,7 @@
     throw v1
 
     .line 189
-    :cond_bc
+    :cond_7
     new-instance v0, Llibs/wq1;
 
     .line 190
@@ -485,7 +485,7 @@
     return-object v0
 
     .line 195
-    :cond_c2
+    :cond_8
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     .line 196
@@ -526,28 +526,28 @@
     .line 215
     .line 216
     .line 217
-    goto :goto_da
+    goto :goto_5
 
     .line 218
-    :goto_d9
+    :goto_4
     throw v0
 
     .line 219
-    :goto_da
-    goto :goto_d9
+    :goto_5
+    goto :goto_4
 .end method
 
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Llibs/wq1;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -571,7 +571,7 @@
     move-result p1
 
     .line 15
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     .line 16
     .line 17
@@ -581,7 +581,7 @@
     return p1
 
     .line 19
-    :cond_12
+    :cond_0
     const/4 p1, 0x0
 
     .line 20
@@ -589,7 +589,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/wq1;->a:Ljava/lang/String;
@@ -608,7 +608,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/wq1;->a:Ljava/lang/String;

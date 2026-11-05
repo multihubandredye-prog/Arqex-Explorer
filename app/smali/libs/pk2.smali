@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/a6;-><init>()V
@@ -17,7 +17,7 @@
 .end method
 
 .method public static e(Llibs/mx;Ljava/lang/String;Ljava/lang/String;Llibs/App;)V
-    .registers 11
+    .locals 7
 
     .line 1
     const-string v0, "WITHRSA"
@@ -203,7 +203,7 @@
     .line 94
     .line 95
     .line 96
-    if-eqz p3, :cond_81
+    if-eqz p3, :cond_0
 
     .line 97
     .line 98
@@ -265,12 +265,12 @@
     .line 128
     .line 129
     .line 130
-    :cond_81
+    :cond_0
     return-void
 .end method
 
 .method public static f(Llibs/mx;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 7
+    .locals 4
 
     .line 1
     const-string v0, "withRSA/ISO9796-2"
@@ -380,7 +380,7 @@
 .end method
 
 .method public static g(Llibs/mx;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 7
+    .locals 4
 
     .line 1
     const-string v0, "withRSA/PSS"
@@ -558,7 +558,7 @@
 .end method
 
 .method public static h(Llibs/mx;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 7
+    .locals 4
 
     .line 1
     const-string v0, "withRSA/X9.31"
@@ -670,7 +670,7 @@
 
 # virtual methods
 .method public final a(Llibs/mx;)V
-    .registers 13
+    .locals 11
 
     .line 1
     const-string v0, "AlgorithmParameters.PSS"
@@ -1433,7 +1433,7 @@
     move-result v8
 
     .line 409
-    if-eqz v8, :cond_1a5
+    if-eqz v8, :cond_0
 
     .line 410
     .line 411
@@ -1458,7 +1458,7 @@
     .line 420
     .line 421
     .line 422
-    :cond_1a5
+    :cond_0
     const-string v0, "MD4"
 
     .line 423
@@ -1471,7 +1471,7 @@
     move-result v8
 
     .line 428
-    if-eqz v8, :cond_1b8
+    if-eqz v8, :cond_1
 
     .line 429
     .line 430
@@ -1496,7 +1496,7 @@
     .line 439
     .line 440
     .line 441
-    :cond_1b8
+    :cond_1
     const-string v0, "MD5"
 
     .line 442
@@ -1509,7 +1509,7 @@
     move-result v8
 
     .line 447
-    if-eqz v8, :cond_1d4
+    if-eqz v8, :cond_2
 
     .line 448
     .line 449
@@ -1551,7 +1551,7 @@
     .line 467
     .line 468
     .line 469
-    :cond_1d4
+    :cond_2
     const-string v0, "SHA1"
 
     .line 470
@@ -1564,7 +1564,7 @@
     move-result v8
 
     .line 475
-    if-eqz v8, :cond_228
+    if-eqz v8, :cond_3
 
     .line 476
     .line 477
@@ -1710,7 +1710,7 @@
     .line 551
     .line 552
     .line 553
-    :cond_228
+    :cond_3
     const-class v0, Llibs/ab0;
 
     .line 554
@@ -2048,7 +2048,7 @@
     move-result v2
 
     .line 730
-    if-eqz v2, :cond_2ff
+    if-eqz v2, :cond_4
 
     .line 731
     .line 732
@@ -2120,7 +2120,7 @@
     .line 766
     .line 767
     .line 768
-    :cond_2ff
+    :cond_4
     const-string v0, "RIPEMD160"
 
     .line 769
@@ -2133,7 +2133,7 @@
     move-result v2
 
     .line 774
-    if-eqz v2, :cond_336
+    if-eqz v2, :cond_5
 
     .line 775
     .line 776
@@ -2226,7 +2226,7 @@
     .line 821
     .line 822
     .line 823
-    :cond_336
+    :cond_5
     const-string v0, "RIPEMD256"
 
     .line 824
@@ -2239,7 +2239,7 @@
     move-result v2
 
     .line 829
-    if-eqz v2, :cond_352
+    if-eqz v2, :cond_6
 
     .line 830
     .line 831
@@ -2281,7 +2281,7 @@
     .line 849
     .line 850
     .line 851
-    :cond_352
+    :cond_6
     const-string v0, "WHIRLPOOL"
 
     .line 852
@@ -2294,7 +2294,7 @@
     move-result v1
 
     .line 857
-    if-eqz v1, :cond_37c
+    if-eqz v1, :cond_7
 
     .line 858
     .line 859
@@ -2362,6 +2362,6 @@
     .line 891
     .line 892
     .line 893
-    :cond_37c
+    :cond_7
     return-void
 .end method

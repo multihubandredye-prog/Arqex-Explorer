@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/c63;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/d1;-><init>(Llibs/c63;)V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final e(I[B)I
-    .registers 7
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
@@ -36,7 +36,7 @@
     const/4 v1, 0x0
 
     .line 3
-    :goto_2
+    :goto_0
     add-int v2, p1, v1
 
     .line 4
@@ -45,7 +45,7 @@
 
     .line 6
     .line 7
-    if-eqz v2, :cond_16
+    if-eqz v2, :cond_1
 
     .line 8
     .line 9
@@ -57,17 +57,17 @@
 
     .line 12
     .line 13
-    if-gt v1, v3, :cond_10
+    if-gt v1, v3, :cond_0
 
     .line 14
     .line 15
     move v1, v2
 
     .line 16
-    goto :goto_2
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     const-string p1, "zero termination not found: "
 
     .line 18
@@ -80,8 +80,8 @@
     return v0
 
     .line 23
-    :cond_16
-    :try_start_16
+    :cond_1
+    :try_start_0
     new-instance v2, Ljava/lang/String;
 
     .line 24
@@ -96,8 +96,8 @@
     .line 29
     .line 30
     iput-object v2, p0, Llibs/ec3;->Hotel:Ljava/lang/String;
-    :try_end_1f
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_16 .. :try_end_1f} :catch_24
+    :try_end_0
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 31
     .line 32
@@ -114,12 +114,12 @@
     return v1
 
     .line 37
-    :catch_24
+    :catch_0
     return v0
 .end method
 
 .method public final j(I[B)I
-    .registers 5
+    .locals 2
 
     .line 1
     aget-byte p1, p2, p1
@@ -136,21 +136,21 @@
     const/4 v1, 0x1
 
     .line 7
-    if-ne p2, v1, :cond_a
+    if-ne p2, v1, :cond_0
 
     .line 8
     .line 9
     const/4 p2, 0x1
 
     .line 10
-    goto :goto_b
+    goto :goto_0
 
     .line 11
-    :cond_a
+    :cond_0
     const/4 p2, 0x0
 
     .line 12
-    :goto_b
+    :goto_0
     iput-boolean p2, p0, Llibs/ec3;->Foxtrot:Z
 
     .line 13
@@ -161,14 +161,14 @@
     and-int/2addr p1, p2
 
     .line 16
-    if-ne p1, p2, :cond_12
+    if-ne p1, p2, :cond_1
 
     .line 17
     .line 18
     const/4 v0, 0x1
 
     .line 19
-    :cond_12
+    :cond_1
     iput-boolean v0, p0, Llibs/ec3;->Golf:Z
 
     .line 20
@@ -177,7 +177,7 @@
 .end method
 
 .method public final q(I[B)I
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -187,7 +187,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/String;
@@ -290,7 +290,7 @@
 .end method
 
 .method public final v(I[B)I
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0

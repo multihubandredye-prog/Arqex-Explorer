@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r31;Ljava/lang/String;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/o11;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 10
+    .locals 9
 
     .line 1
     iget-byte v0, p0, Llibs/o11;->X:B
@@ -52,7 +52,7 @@
     const/4 v1, 0x0
 
     .line 4
-    packed-switch v0, :pswitch_data_7a
+    packed-switch v0, :pswitch_data_0
 
     .line 5
     .line 6
@@ -88,17 +88,17 @@
     const/4 v4, 0x0
 
     .line 22
-    if-eqz v3, :cond_19
+    if-eqz v3, :cond_0
 
     .line 23
     .line 24
     move-object v2, v4
 
     .line 25
-    goto :goto_21
+    goto :goto_0
 
     .line 26
-    :cond_19
+    :cond_0
     invoke-static {v2}, Llibs/vl3;->v(Ljava/lang/String;)I
 
     .line 27
@@ -115,8 +115,8 @@
     move-result-object v2
 
     .line 34
-    :goto_21
-    if-eqz v2, :cond_62
+    :goto_0
+    if-eqz v2, :cond_2
 
     .line 35
     .line 36
@@ -136,7 +136,7 @@
     monitor-enter v3
 
     .line 44
-    :try_start_2b
+    :try_start_0
     iget-object v2, v2, Llibs/qe0;->Mike:Ljava/util/HashMap;
 
     .line 45
@@ -157,7 +157,7 @@
     move-result-object v2
 
     .line 54
-    :goto_35
+    :goto_1
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     .line 55
@@ -166,7 +166,7 @@
     move-result v5
 
     .line 58
-    if-eqz v5, :cond_5e
+    if-eqz v5, :cond_1
 
     .line 59
     .line 60
@@ -232,34 +232,34 @@
     .line 90
     .line 91
     .line 92
-    goto :goto_35
+    goto :goto_1
 
     .line 93
-    :catchall_5c
+    :catchall_0
     move-exception v0
 
     .line 94
-    goto :goto_60
+    goto :goto_2
 
     .line 95
-    :cond_5e
+    :cond_1
     monitor-exit v3
 
     .line 96
-    goto :goto_62
+    goto :goto_3
 
     .line 97
-    :goto_60
+    :goto_2
     monitor-exit v3
-    :try_end_61
-    .catchall {:try_start_2b .. :try_end_61} :catchall_5c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 98
     throw v0
 
     .line 99
-    :cond_62
-    :goto_62
+    :cond_2
+    :goto_3
     iget-object v1, v0, Llibs/r31;->j:Landroid/os/Handler;
 
     .line 100
@@ -285,7 +285,7 @@
     return-void
 
     .line 112
-    :pswitch_6f
+    :pswitch_0
     iget-object v0, p0, Llibs/o11;->Y:Llibs/r31;
 
     .line 113
@@ -309,8 +309,8 @@
     nop
 
     .line 123
-    :pswitch_data_7a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_6f
+        :pswitch_0
     .end packed-switch
 .end method

@@ -37,7 +37,7 @@
 
 # direct methods
 .method private constructor <init>(Lorg/conscrypt/ct/LogInfo$Builder;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -185,7 +185,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lorg/conscrypt/ct/LogInfo$Builder;I)V
-    .registers 3
+    .locals 0
 
     .line 75
     invoke-direct {p0, p1}, Lorg/conscrypt/ct/LogInfo;-><init>(Lorg/conscrypt/ct/LogInfo$Builder;)V
@@ -196,20 +196,20 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v1, p1, Lorg/conscrypt/ct/LogInfo;
 
     .line 6
@@ -217,14 +217,14 @@
     const/4 v2, 0x0
 
     .line 8
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     .line 9
     .line 10
     return v2
 
     .line 11
-    :cond_a
+    :cond_1
     check-cast p1, Lorg/conscrypt/ct/LogInfo;
 
     .line 12
@@ -237,7 +237,7 @@
 
     .line 16
     .line 17
-    if-ne v1, v3, :cond_43
+    if-ne v1, v3, :cond_2
 
     .line 18
     .line 19
@@ -257,7 +257,7 @@
     move-result v1
 
     .line 27
-    if-eqz v1, :cond_43
+    if-eqz v1, :cond_2
 
     .line 28
     .line 29
@@ -277,7 +277,7 @@
     move-result v1
 
     .line 37
-    if-eqz v1, :cond_43
+    if-eqz v1, :cond_2
 
     .line 38
     .line 39
@@ -297,7 +297,7 @@
     move-result v1
 
     .line 47
-    if-eqz v1, :cond_43
+    if-eqz v1, :cond_2
 
     .line 48
     .line 49
@@ -313,7 +313,7 @@
 
     .line 54
     .line 55
-    if-nez v1, :cond_43
+    if-nez v1, :cond_2
 
     .line 56
     .line 57
@@ -333,19 +333,19 @@
     move-result p1
 
     .line 65
-    if-eqz p1, :cond_43
+    if-eqz p1, :cond_2
 
     .line 66
     .line 67
     return v0
 
     .line 68
-    :cond_43
+    :cond_2
     return v2
 .end method
 
 .method public getDescription()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ct/LogInfo;->description:Ljava/lang/String;
@@ -356,7 +356,7 @@
 .end method
 
 .method public getID()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ct/LogInfo;->logId:[B
@@ -367,7 +367,7 @@
 .end method
 
 .method public getOperator()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ct/LogInfo;->operator:Ljava/lang/String;
@@ -378,7 +378,7 @@
 .end method
 
 .method public getPublicKey()Ljava/security/PublicKey;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ct/LogInfo;->publicKey:Ljava/security/PublicKey;
@@ -389,7 +389,7 @@
 .end method
 
 .method public getState()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/ct/LogInfo;->state:I
@@ -400,7 +400,7 @@
 .end method
 
 .method public getStateAt(J)I
-    .registers 6
+    .locals 3
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/ct/LogInfo;->stateTimestamp:J
@@ -411,7 +411,7 @@
 
     .line 4
     .line 5
-    if-ltz v2, :cond_9
+    if-ltz v2, :cond_0
 
     .line 6
     .line 7
@@ -422,7 +422,7 @@
     return p1
 
     .line 10
-    :cond_9
+    :cond_0
     const/4 p1, 0x0
 
     .line 11
@@ -430,7 +430,7 @@
 .end method
 
 .method public getStateTimestamp()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/ct/LogInfo;->stateTimestamp:J
@@ -441,7 +441,7 @@
 .end method
 
 .method public getUrl()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ct/LogInfo;->url:Ljava/lang/String;
@@ -452,7 +452,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 9
+    .locals 8
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ct/LogInfo;->logId:[B
@@ -572,7 +572,7 @@
 .end method
 
 .method public verifySingleSCT(Lorg/conscrypt/ct/SignedCertificateTimestamp;Lorg/conscrypt/ct/CertificateEntry;)Lorg/conscrypt/ct/VerifiedSCT$Status;
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-virtual {p1}, Lorg/conscrypt/ct/SignedCertificateTimestamp;->getLogID()[B
@@ -599,7 +599,7 @@
     move-result v0
 
     .line 13
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
     .line 14
     .line 15
@@ -610,19 +610,19 @@
     return-object p1
 
     .line 18
-    :cond_11
-    :try_start_11
+    :cond_0
+    :try_start_0
     invoke-virtual {p1, p2}, Lorg/conscrypt/ct/SignedCertificateTimestamp;->encodeTBS(Lorg/conscrypt/ct/CertificateEntry;)[B
 
     .line 19
     .line 20
     .line 21
     move-result-object p2
-    :try_end_15
-    .catch Lorg/conscrypt/ct/SerializationException; {:try_start_11 .. :try_end_15} :catch_4a
+    :try_end_0
+    .catch Lorg/conscrypt/ct/SerializationException; {:try_start_0 .. :try_end_0} :catch_3
 
     .line 22
-    :try_start_15
+    :try_start_1
     invoke-virtual {p1}, Lorg/conscrypt/ct/SignedCertificateTimestamp;->getSignature()Lorg/conscrypt/ct/DigitallySigned;
 
     .line 23
@@ -645,23 +645,23 @@
     .line 32
     .line 33
     move-result-object v0
-    :try_end_21
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_15 .. :try_end_21} :catch_47
+    :try_end_1
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_1 .. :try_end_1} :catch_2
 
     .line 34
-    :try_start_21
+    :try_start_2
     iget-object v1, p0, Lorg/conscrypt/ct/LogInfo;->publicKey:Ljava/security/PublicKey;
 
     .line 35
     .line 36
     invoke-virtual {v0, v1}, Ljava/security/Signature;->initVerify(Ljava/security/PublicKey;)V
-    :try_end_26
-    .catch Ljava/security/InvalidKeyException; {:try_start_21 .. :try_end_26} :catch_44
+    :try_end_2
+    .catch Ljava/security/InvalidKeyException; {:try_start_2 .. :try_end_2} :catch_1
 
     .line 37
     .line 38
     .line 39
-    :try_start_26
+    :try_start_3
     invoke-virtual {v0, p2}, Ljava/security/Signature;->update([B)V
 
     .line 40
@@ -691,7 +691,7 @@
     move-result p1
 
     .line 54
-    if-nez p1, :cond_3c
+    if-nez p1, :cond_1
 
     .line 55
     .line 56
@@ -702,24 +702,24 @@
     return-object p1
 
     .line 59
-    :catch_3a
+    :catch_0
     move-exception p1
 
     .line 60
-    goto :goto_3f
+    goto :goto_0
 
     .line 61
-    :cond_3c
+    :cond_1
     sget-object p1, Lorg/conscrypt/ct/VerifiedSCT$Status;->VALID:Lorg/conscrypt/ct/VerifiedSCT$Status;
-    :try_end_3e
-    .catch Ljava/security/SignatureException; {:try_start_26 .. :try_end_3e} :catch_3a
+    :try_end_3
+    .catch Ljava/security/SignatureException; {:try_start_3 .. :try_end_3} :catch_0
 
     .line 62
     .line 63
     return-object p1
 
     .line 64
-    :goto_3f
+    :goto_0
     invoke-static {p1}, Llibs/ic0;->k(Ljava/lang/Throwable;)V
 
     .line 65
@@ -731,7 +731,7 @@
     return-object p1
 
     .line 69
-    :catch_44
+    :catch_1
     sget-object p1, Lorg/conscrypt/ct/VerifiedSCT$Status;->INVALID_SCT:Lorg/conscrypt/ct/VerifiedSCT$Status;
 
     .line 70
@@ -739,7 +739,7 @@
     return-object p1
 
     .line 72
-    :catch_47
+    :catch_2
     sget-object p1, Lorg/conscrypt/ct/VerifiedSCT$Status;->INVALID_SCT:Lorg/conscrypt/ct/VerifiedSCT$Status;
 
     .line 73
@@ -747,7 +747,7 @@
     return-object p1
 
     .line 75
-    :catch_4a
+    :catch_3
     sget-object p1, Lorg/conscrypt/ct/VerifiedSCT$Status;->INVALID_SCT:Lorg/conscrypt/ct/VerifiedSCT$Status;
 
     .line 76

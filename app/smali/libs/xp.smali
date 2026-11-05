@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/ArrayList;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iput-object p1, p0, Llibs/xp;->c:Ljava/util/ArrayList;
@@ -70,7 +70,7 @@
 
 # virtual methods
 .method public final e(Llibs/rp0;)Z
-    .registers 8
+    .locals 6
 
     .line 1
     iget-boolean v0, p1, Llibs/rp0;->One:Z
@@ -80,14 +80,14 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     .line 5
     .line 6
-    goto :goto_25
+    goto :goto_0
 
     .line 7
-    :cond_6
+    :cond_0
     iget v0, p0, Llibs/xp;->a:I
 
     .line 8
@@ -106,14 +106,14 @@
 
     .line 14
     .line 15
-    if-lt v0, v3, :cond_11
+    if-lt v0, v3, :cond_1
 
     .line 16
     .line 17
     return v2
 
     .line 18
-    :cond_11
+    :cond_1
     iget-wide v2, p1, Llibs/rp0;->Five:J
 
     .line 19
@@ -126,14 +126,14 @@
 
     .line 23
     .line 24
-    if-gez v0, :cond_1a
+    if-gez v0, :cond_2
 
     .line 25
     .line 26
-    goto :goto_25
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_2
     iget-object v0, p0, Llibs/xp;->c:Ljava/util/ArrayList;
 
     .line 28
@@ -146,7 +146,7 @@
     move-result v2
 
     .line 33
-    if-nez v2, :cond_25
+    if-nez v2, :cond_3
 
     .line 34
     .line 35
@@ -155,7 +155,7 @@
     .line 36
     .line 37
     .line 38
-    :cond_25
-    :goto_25
+    :cond_3
+    :goto_0
     return v1
 .end method

@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Llibs/a92;-><init>()V
@@ -72,14 +72,14 @@
 
 # virtual methods
 .method public final Call()Llibs/oO;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/k90;->f:Llibs/oO;
 
     .line 2
     .line 3
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -96,12 +96,12 @@
 
     .line 11
     .line 12
-    :cond_b
+    :cond_0
     return-object v0
 .end method
 
 .method public final Link()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/k90;->c:Ljava/lang/String;
@@ -112,7 +112,7 @@
 .end method
 
 .method public final Node()Llibs/b_;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/k90;->h:Llibs/b_;
@@ -123,7 +123,7 @@
 .end method
 
 .method public final Post(Llibs/dj;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/k90;->g:Llibs/dj;
@@ -134,7 +134,7 @@
 .end method
 
 .method public final Run(Llibs/b_;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/k90;->h:Llibs/b_;
@@ -145,7 +145,7 @@
 .end method
 
 .method public final State()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/k90;->e:I
@@ -156,7 +156,7 @@
 .end method
 
 .method public final Sync()V
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "/rootDesc.xml"
@@ -171,14 +171,14 @@
 .end method
 
 .method public final Task()Llibs/uw0;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/k90;->d:Llibs/uw0;
 
     .line 2
     .line 3
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -195,12 +195,12 @@
 
     .line 11
     .line 12
-    :cond_b
+    :cond_0
     return-object v0
 .end method
 
 .method public final Wait(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput p1, p0, Llibs/k90;->e:I
@@ -211,7 +211,7 @@
 .end method
 
 .method public final Work()Llibs/dj;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/k90;->g:Llibs/dj;

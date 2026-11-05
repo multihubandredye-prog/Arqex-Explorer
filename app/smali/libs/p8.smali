@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/widgets/MiEditText;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/p8;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final c([Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/p8;->X:B
@@ -53,7 +53,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_92
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -66,7 +66,7 @@
 
     .line 13
     .line 14
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     .line 15
     .line 16
@@ -83,10 +83,10 @@
     .line 21
     .line 22
     .line 23
-    goto :goto_1c
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_0
     check-cast p1, Ljava/lang/String;
 
     .line 25
@@ -96,7 +96,7 @@
     .line 27
     .line 28
     .line 29
-    :goto_1c
+    :goto_0
     invoke-virtual {v3}, Landroid/view/View;->requestFocus()Z
 
     .line 30
@@ -105,7 +105,7 @@
     return v1
 
     .line 33
-    :pswitch_20
+    :pswitch_0
     sget-boolean v0, Lcom/mixplorer/activities/ConfigServerActivity;->IlI:Z
 
     .line 34
@@ -118,7 +118,7 @@
 
     .line 38
     .line 39
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_1
 
     .line 40
     .line 41
@@ -135,10 +135,10 @@
     .line 46
     .line 47
     .line 48
-    goto :goto_35
+    goto :goto_1
 
     .line 49
-    :cond_30
+    :cond_1
     check-cast p1, Ljava/lang/String;
 
     .line 50
@@ -148,7 +148,7 @@
     .line 52
     .line 53
     .line 54
-    :goto_35
+    :goto_1
     invoke-virtual {v3}, Landroid/view/View;->requestFocus()Z
 
     .line 55
@@ -157,7 +157,7 @@
     return v1
 
     .line 58
-    :pswitch_39
+    :pswitch_1
     sget-boolean v0, Lcom/mixplorer/activities/ConfigServerActivity;->IlI:Z
 
     .line 59
@@ -170,7 +170,7 @@
 
     .line 63
     .line 64
-    if-eqz v0, :cond_49
+    if-eqz v0, :cond_2
 
     .line 65
     .line 66
@@ -187,10 +187,10 @@
     .line 71
     .line 72
     .line 73
-    goto :goto_4e
+    goto :goto_2
 
     .line 74
-    :cond_49
+    :cond_2
     check-cast p1, Ljava/lang/String;
 
     .line 75
@@ -200,7 +200,7 @@
     .line 77
     .line 78
     .line 79
-    :goto_4e
+    :goto_2
     invoke-virtual {v3}, Landroid/view/View;->requestFocus()Z
 
     .line 80
@@ -209,7 +209,7 @@
     return v1
 
     .line 83
-    :pswitch_52
+    :pswitch_2
     aget-object p1, p1, v2
 
     .line 84
@@ -226,7 +226,7 @@
     return v1
 
     .line 91
-    :pswitch_5a
+    :pswitch_3
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 92
@@ -244,7 +244,7 @@
 
     .line 99
     .line 100
-    if-eqz v2, :cond_6b
+    if-eqz v2, :cond_3
 
     .line 101
     .line 102
@@ -257,10 +257,10 @@
     .line 105
     .line 106
     .line 107
-    goto :goto_86
+    goto :goto_4
 
     .line 108
-    :cond_6b
+    :cond_3
     check-cast p1, Ljava/util/Set;
 
     .line 109
@@ -273,7 +273,7 @@
     move-result-object p1
 
     .line 114
-    :goto_71
+    :goto_3
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 115
@@ -282,7 +282,7 @@
     move-result v2
 
     .line 118
-    if-eqz v2, :cond_86
+    if-eqz v2, :cond_4
 
     .line 119
     .line 120
@@ -312,11 +312,11 @@
     .line 132
     .line 133
     .line 134
-    goto :goto_71
+    goto :goto_3
 
     .line 135
-    :cond_86
-    :goto_86
+    :cond_4
+    :goto_4
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 136
@@ -341,11 +341,11 @@
     return v1
 
     .line 147
-    :pswitch_data_92
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_5a
-        :pswitch_52
-        :pswitch_39
-        :pswitch_20
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

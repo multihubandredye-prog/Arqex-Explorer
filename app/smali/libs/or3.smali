@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/to3;)V
-    .registers 6
+    .locals 4
 
     .line 1
     const-string v0, "ssh-userauth"
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method public final b(Ljava/lang/String;Llibs/Four;Llibs/Kappa;)Z
-    .registers 11
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/or3;->Lambda:Llibs/eg2;
@@ -97,7 +97,7 @@
     const/4 v0, 0x0
 
     .line 9
-    :try_start_8
+    :try_start_0
     invoke-virtual {p0}, Llibs/Four;->a()V
 
     .line 10
@@ -234,19 +234,19 @@
     .line 77
     .line 78
     move-result p1
-    :try_end_4e
-    .catchall {:try_start_8 .. :try_end_4e} :catchall_60
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 79
     iget-object p2, p0, Llibs/Four;->X:Llibs/bn1;
 
     .line 80
     .line 81
-    if-eqz p1, :cond_62
+    if-eqz p1, :cond_0
 
     .line 82
     .line 83
-    :try_start_52
+    :try_start_1
     iget-object p3, p3, Llibs/Kappa;->Y:Ljava/lang/String;
 
     .line 84
@@ -272,17 +272,17 @@
     .line 94
     .line 95
     .line 96
-    goto :goto_6f
+    goto :goto_0
 
     .line 97
-    :catchall_60
+    :catchall_0
     move-exception p1
 
     .line 98
-    goto :goto_7b
+    goto :goto_1
 
     .line 99
-    :cond_62
+    :cond_0
     iget-object p3, p3, Llibs/Kappa;->Y:Ljava/lang/String;
 
     .line 100
@@ -304,13 +304,13 @@
     .line 108
     .line 109
     invoke-virtual {p2, v1}, Llibs/bn1;->b([Ljava/lang/Object;)V
-    :try_end_6f
-    .catchall {:try_start_52 .. :try_end_6f} :catchall_60
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 110
     .line 111
     .line 112
-    :goto_6f
+    :goto_0
     iput-object v0, p0, Llibs/or3;->Nu:Llibs/Kappa;
 
     .line 113
@@ -335,7 +335,7 @@
     return p1
 
     .line 124
-    :goto_7b
+    :goto_1
     iput-object v0, p0, Llibs/or3;->Nu:Llibs/Kappa;
 
     .line 125
@@ -361,7 +361,7 @@
 .end method
 
 .method public final c(Llibs/cr1;Llibs/oy2;)V
-    .registers 9
+    .locals 6
 
     .line 1
     const/16 v0, 0x32
@@ -380,7 +380,7 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_be
+    if-eqz v0, :cond_1
 
     .line 10
     .line 11
@@ -397,7 +397,7 @@
     .line 16
     .line 17
     .line 18
-    :try_start_11
+    :try_start_0
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
 
     .line 19
@@ -409,7 +409,7 @@
     const/4 v1, 0x1
 
     .line 23
-    packed-switch v0, :pswitch_data_c4
+    packed-switch v0, :pswitch_data_0
 
     .line 24
     .line 25
@@ -456,42 +456,42 @@
     .line 44
     .line 45
     invoke-virtual {v0, v3}, Llibs/bn1;->b([Ljava/lang/Object;)V
-    :try_end_2f
-    .catchall {:try_start_11 .. :try_end_2f} :catchall_36
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 46
     .line 47
     .line 48
-    :try_start_2f
+    :try_start_1
     iget-object v0, p0, Llibs/or3;->Nu:Llibs/Kappa;
 
     .line 49
     .line 50
     invoke-interface {v0, p1, p2}, Llibs/py2;->c(Llibs/cr1;Llibs/oy2;)V
-    :try_end_34
-    .catch Llibs/nr3; {:try_start_2f .. :try_end_34} :catch_39
-    .catchall {:try_start_2f .. :try_end_34} :catchall_36
+    :try_end_1
+    .catch Llibs/nr3; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 51
     .line 52
     .line 53
-    goto/16 :goto_ae
+    goto/16 :goto_0
 
     .line 54
     .line 55
-    :catchall_36
+    :catchall_0
     move-exception p1
 
     .line 56
-    goto/16 :goto_b6
+    goto/16 :goto_1
 
     .line 57
     .line 58
-    :catch_39
+    :catch_0
     move-exception p1
 
     .line 59
-    :try_start_3a
+    :try_start_2
     iget-object p2, p0, Llibs/or3;->Lambda:Llibs/eg2;
 
     .line 60
@@ -501,19 +501,19 @@
     .line 62
     .line 63
     .line 64
-    goto :goto_ae
+    goto :goto_0
 
     .line 65
-    :pswitch_40
+    :pswitch_0
     invoke-virtual {p2}, Llibs/uj;->Object()V
 
     .line 66
     .line 67
     .line 68
-    goto :goto_ae
+    goto :goto_0
 
     .line 69
-    :pswitch_44
+    :pswitch_1
     iget-object p1, p0, Llibs/Four;->Z:Llibs/to3;
 
     .line 70
@@ -531,20 +531,20 @@
     .line 76
     .line 77
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
-    :try_end_4f
-    .catchall {:try_start_3a .. :try_end_4f} :catchall_36
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 78
     .line 79
     .line 80
-    :try_start_4f
+    :try_start_3
     iput-boolean v1, p2, Llibs/e00;->f:Z
-    :try_end_51
-    .catchall {:try_start_4f .. :try_end_51} :catchall_67
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 81
     .line 82
-    :try_start_51
+    :try_start_4
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
     .line 83
@@ -584,10 +584,10 @@
     .line 101
     .line 102
     .line 103
-    goto :goto_ae
+    goto :goto_0
 
     .line 104
-    :catchall_67
+    :catchall_1
     move-exception p1
 
     .line 105
@@ -599,7 +599,7 @@
     throw p1
 
     .line 109
-    :pswitch_6c
+    :pswitch_2
     sget-object p1, Llibs/ue3;->c:Ljava/nio/charset/Charset;
 
     .line 110
@@ -661,7 +661,7 @@
     move-result p1
 
     .line 140
-    if-eqz p1, :cond_a7
+    if-eqz p1, :cond_0
 
     .line 141
     .line 142
@@ -677,7 +677,7 @@
     move-result p1
 
     .line 148
-    if-eqz p1, :cond_a7
+    if-eqz p1, :cond_0
 
     .line 149
     .line 150
@@ -714,10 +714,10 @@
     .line 165
     .line 166
     .line 167
-    goto :goto_ae
+    goto :goto_0
 
     .line 168
-    :cond_a7
+    :cond_0
     iget-object p1, p0, Llibs/or3;->Lambda:Llibs/eg2;
 
     .line 169
@@ -727,13 +727,13 @@
     .line 171
     .line 172
     invoke-virtual {p1, p2}, Llibs/eg2;->b(Ljava/lang/Object;)V
-    :try_end_ae
-    .catchall {:try_start_51 .. :try_end_ae} :catchall_36
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 173
     .line 174
     .line 175
-    :goto_ae
+    :goto_0
     iget-object p1, p0, Llibs/or3;->Lambda:Llibs/eg2;
 
     .line 176
@@ -750,7 +750,7 @@
     return-void
 
     .line 183
-    :goto_b6
+    :goto_1
     iget-object p2, p0, Llibs/or3;->Lambda:Llibs/eg2;
 
     .line 184
@@ -767,7 +767,7 @@
     throw p1
 
     .line 191
-    :cond_be
+    :cond_1
     new-instance p1, Llibs/po3;
 
     .line 192
@@ -780,16 +780,16 @@
     throw p1
 
     .line 197
-    :pswitch_data_c4
+    :pswitch_data_0
     .packed-switch 0x10
-        :pswitch_6c
-        :pswitch_44
-        :pswitch_40
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final i(Llibs/ny2;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-super {p0, p1}, Llibs/Four;->i(Llibs/ny2;)V

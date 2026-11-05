@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -79,7 +79,7 @@
 .end method
 
 .method public static a()Llibs/dd3;
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/dd3;

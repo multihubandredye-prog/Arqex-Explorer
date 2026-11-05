@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/nio/charset/Charset;ZLjava/lang/String;ZZZJLjava/lang/String;I)V
-    .registers 25
+    .locals 13
 
     .line 1
     invoke-direct {p0}, Llibs/b02;-><init>()V
@@ -73,7 +73,7 @@
 
 # virtual methods
 .method public final Base(Llibs/rp0;)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     .line 1
     iget-object p1, p1, Llibs/rp0;->Three:Ljava/lang/String;
@@ -92,14 +92,14 @@
 .end method
 
 .method public final Mid(Llibs/rp0;Z)Ljava/lang/String;
-    .registers 5
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/b02;->a:Llibs/vd;
 
     .line 2
     .line 3
-    if-eqz p2, :cond_b
+    if-eqz p2, :cond_0
 
     .line 4
     .line 5
@@ -115,15 +115,15 @@
     move-result-object v1
 
     .line 11
-    goto :goto_d
+    goto :goto_0
 
     .line 12
-    :cond_b
+    :cond_0
     iget-object v1, p1, Llibs/rp0;->Juliet:Ljava/lang/String;
 
     .line 13
     .line 14
-    :goto_d
+    :goto_0
     invoke-virtual {v0, p1, v1, p2}, Llibs/vd;->Add(Llibs/rp0;Ljava/lang/String;Z)Ljava/lang/String;
 
     .line 15
@@ -136,7 +136,7 @@
 .end method
 
 .method public final Result(Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p1}, Llibs/ji0;->Any(Ljava/lang/String;)Ljava/lang/String;
@@ -151,7 +151,7 @@
 .end method
 
 .method public final True()[Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     const/4 v0, 0x1
@@ -176,7 +176,7 @@
 .end method
 
 .method public final a()Ljava/util/LinkedHashMap;
-    .registers 4
+    .locals 3
 
     .line 1
     invoke-super {p0}, Llibs/b02;->a()Ljava/util/LinkedHashMap;

@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/qw0;I)V
-    .registers 4
+    .locals 1
 
     .line 1
     iput-object p1, p0, Llibs/ap1;->Mu:Llibs/qw0;
@@ -61,7 +61,7 @@
 
 # virtual methods
 .method public final hasNext()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/ap1;->Z:I
@@ -72,7 +72,7 @@
 
     .line 4
     .line 5
-    if-ge v0, v1, :cond_8
+    if-ge v0, v1, :cond_0
 
     .line 6
     .line 7
@@ -82,7 +82,7 @@
     return v0
 
     .line 9
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 10
@@ -90,7 +90,7 @@
 .end method
 
 .method public final next()Ljava/lang/Object;
-    .registers 4
+    .locals 3
 
     .line 1
     iget v0, p0, Llibs/ap1;->Z:I
@@ -135,14 +135,14 @@
 .end method
 
 .method public final remove()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-boolean v0, p0, Llibs/ap1;->Lambda:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -189,7 +189,7 @@
     return-void
 
     .line 26
-    :cond_19
+    :cond_0
     invoke-static {}, Llibs/ic0;->r()V
 
     .line 27

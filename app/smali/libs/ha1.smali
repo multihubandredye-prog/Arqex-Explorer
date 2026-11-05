@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/dm1;I)V
-    .registers 7
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -135,7 +135,7 @@
 .end method
 
 .method public constructor <init>(Llibs/ha1;)V
-    .registers 3
+    .locals 1
 
     .line 59
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

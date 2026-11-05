@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/PreferenceActivity;IB)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/df2;->X:B
@@ -40,84 +40,84 @@
 .end method
 
 .method private final a(Landroid/text/Editable;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final b(Landroid/text/Editable;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final c(Landroid/text/Editable;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final d(Landroid/text/Editable;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final e(Landroid/text/Editable;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final f(Landroid/text/Editable;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final g(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final h(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final i(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final j(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final k(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final l(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     .line 1
     return-void
@@ -126,7 +126,7 @@
 
 # virtual methods
 .method public final afterTextChanged(Landroid/text/Editable;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iget-byte p1, p0, Llibs/df2;->X:B
@@ -137,7 +137,7 @@
 .end method
 
 .method public final beforeTextChanged(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     .line 1
     iget-byte p1, p0, Llibs/df2;->X:B
@@ -148,7 +148,7 @@
 .end method
 
 .method public final onTextChanged(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     .line 1
     iget-byte p2, p0, Llibs/df2;->X:B
@@ -163,7 +163,7 @@
 
     .line 6
     .line 7
-    packed-switch p2, :pswitch_data_46
+    packed-switch p2, :pswitch_data_0
 
     .line 8
     .line 9
@@ -188,7 +188,7 @@
     return-void
 
     .line 20
-    :pswitch_13
+    :pswitch_0
     iget-object p2, p4, Lcom/mixplorer/activities/PreferenceActivity;->Whiskey:Ljava/util/List;
 
     .line 21
@@ -209,7 +209,7 @@
     return-void
 
     .line 30
-    :pswitch_1d
+    :pswitch_1
     iget-object p2, p4, Lcom/mixplorer/activities/PreferenceActivity;->Whiskey:Ljava/util/List;
 
     .line 31
@@ -230,7 +230,7 @@
     return-void
 
     .line 40
-    :pswitch_27
+    :pswitch_2
     iget-object p2, p4, Lcom/mixplorer/activities/PreferenceActivity;->Whiskey:Ljava/util/List;
 
     .line 41
@@ -251,7 +251,7 @@
     return-void
 
     .line 50
-    :pswitch_31
+    :pswitch_3
     iget-object p2, p4, Lcom/mixplorer/activities/PreferenceActivity;->Whiskey:Ljava/util/List;
 
     .line 51
@@ -272,7 +272,7 @@
     return-void
 
     .line 60
-    :pswitch_3b
+    :pswitch_4
     iget-object p2, p4, Lcom/mixplorer/activities/PreferenceActivity;->Whiskey:Ljava/util/List;
 
     .line 61
@@ -296,12 +296,12 @@
     nop
 
     .line 71
-    :pswitch_data_46
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_3b
-        :pswitch_31
-        :pswitch_27
-        :pswitch_1d
-        :pswitch_13
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

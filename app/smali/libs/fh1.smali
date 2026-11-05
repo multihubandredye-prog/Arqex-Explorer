@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-wide/32 v0, 0x10001
@@ -37,7 +37,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 6
+    .locals 5
 
     .line 1
     const-string v0, "RSA"
@@ -97,7 +97,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 31
     invoke-direct {p0, p1}, Ljava/security/KeyPairGenerator;-><init>(Ljava/lang/String;)V
@@ -108,7 +108,7 @@
 
 # virtual methods
 .method public final generateKeyPair()Ljava/security/KeyPair;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/fh1;->a:Llibs/tk2;
@@ -178,7 +178,7 @@
 .end method
 
 .method public final initialize(ILjava/security/SecureRandom;)V
-    .registers 5
+    .locals 2
 
     .line 32
     new-instance v0, Llibs/h50;
@@ -196,14 +196,14 @@
 .end method
 
 .method public final initialize(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    .registers 5
+    .locals 2
 
     .line 1
     instance-of v0, p1, Ljava/security/spec/RSAKeyGenParameterSpec;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -248,7 +248,7 @@
     return-void
 
     .line 26
-    :cond_19
+    :cond_0
     const-string p1, "parameter object not a RSAKeyGenParameterSpec"
 
     .line 27

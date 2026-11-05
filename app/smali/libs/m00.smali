@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/ue3;->c:Ljava/nio/charset/Charset;
@@ -24,7 +24,7 @@
 .end method
 
 .method public static a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, ":"
@@ -47,7 +47,7 @@
 
     .line 10
     .line 11
-    if-eqz p1, :cond_20
+    if-eqz p1, :cond_0
 
     .line 12
     .line 13
@@ -91,7 +91,7 @@
     return-object p0
 
     .line 33
-    :cond_20
+    :cond_0
     const-string p0, "charset == null"
 
     .line 34

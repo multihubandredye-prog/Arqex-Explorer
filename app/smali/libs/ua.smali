@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/security/interfaces/RSAPrivateCrtKey;)V
-    .registers 3
+    .locals 1
 
     .line 66
     invoke-direct {p0}, Llibs/va;-><init>()V
@@ -87,7 +87,7 @@
 .end method
 
 .method public constructor <init>(Ljava/security/spec/RSAPrivateCrtKeySpec;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/va;-><init>()V
@@ -195,7 +195,7 @@
 .end method
 
 .method public constructor <init>(Llibs/vk2;)V
-    .registers 3
+    .locals 1
 
     .line 53
     invoke-direct {p0, p1}, Llibs/va;-><init>(Llibs/vk2;)V
@@ -240,7 +240,7 @@
 .end method
 
 .method public constructor <init>(Llibs/wk2;)V
-    .registers 3
+    .locals 1
 
     .line 75
     invoke-direct {p0}, Llibs/va;-><init>()V
@@ -299,20 +299,20 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v1, p1, Ljava/security/interfaces/RSAPrivateCrtKey;
 
     .line 6
@@ -320,14 +320,14 @@
     const/4 v2, 0x0
 
     .line 8
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     .line 9
     .line 10
     return v2
 
     .line 11
-    :cond_a
+    :cond_1
     check-cast p1, Ljava/security/interfaces/RSAPrivateCrtKey;
 
     .line 12
@@ -352,7 +352,7 @@
     move-result v1
 
     .line 23
-    if-eqz v1, :cond_6d
+    if-eqz v1, :cond_2
 
     .line 24
     .line 25
@@ -376,7 +376,7 @@
     move-result v1
 
     .line 35
-    if-eqz v1, :cond_6d
+    if-eqz v1, :cond_2
 
     .line 36
     .line 37
@@ -400,7 +400,7 @@
     move-result v1
 
     .line 47
-    if-eqz v1, :cond_6d
+    if-eqz v1, :cond_2
 
     .line 48
     .line 49
@@ -424,7 +424,7 @@
     move-result v1
 
     .line 59
-    if-eqz v1, :cond_6d
+    if-eqz v1, :cond_2
 
     .line 60
     .line 61
@@ -448,7 +448,7 @@
     move-result v1
 
     .line 71
-    if-eqz v1, :cond_6d
+    if-eqz v1, :cond_2
 
     .line 72
     .line 73
@@ -472,7 +472,7 @@
     move-result v1
 
     .line 83
-    if-eqz v1, :cond_6d
+    if-eqz v1, :cond_2
 
     .line 84
     .line 85
@@ -496,7 +496,7 @@
     move-result v1
 
     .line 95
-    if-eqz v1, :cond_6d
+    if-eqz v1, :cond_2
 
     .line 96
     .line 97
@@ -520,19 +520,19 @@
     move-result p1
 
     .line 107
-    if-eqz p1, :cond_6d
+    if-eqz p1, :cond_2
 
     .line 108
     .line 109
     return v0
 
     .line 110
-    :cond_6d
+    :cond_2
     return v2
 .end method
 
 .method public final getCrtCoefficient()Ljava/math/BigInteger;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ua;->Rho:Ljava/math/BigInteger;
@@ -543,7 +543,7 @@
 .end method
 
 .method public final getEncoded()[B
-    .registers 13
+    .locals 12
 
     .line 1
     new-instance v0, Llibs/$f;
@@ -616,7 +616,7 @@
 .end method
 
 .method public final getFormat()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "PKCS#8"
@@ -627,7 +627,7 @@
 .end method
 
 .method public final getPrimeExponentP()Ljava/math/BigInteger;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ua;->Omicron:Ljava/math/BigInteger;
@@ -638,7 +638,7 @@
 .end method
 
 .method public final getPrimeExponentQ()Ljava/math/BigInteger;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ua;->Pi:Ljava/math/BigInteger;
@@ -649,7 +649,7 @@
 .end method
 
 .method public final getPrimeP()Ljava/math/BigInteger;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ua;->Nu:Ljava/math/BigInteger;
@@ -660,7 +660,7 @@
 .end method
 
 .method public final getPrimeQ()Ljava/math/BigInteger;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ua;->Xi:Ljava/math/BigInteger;
@@ -671,7 +671,7 @@
 .end method
 
 .method public final getPublicExponent()Ljava/math/BigInteger;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ua;->Mu:Ljava/math/BigInteger;
@@ -682,7 +682,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/va;->X:Ljava/math/BigInteger;
@@ -731,7 +731,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/StringBuffer;

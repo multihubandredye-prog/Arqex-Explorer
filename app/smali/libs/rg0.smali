@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,14 +17,14 @@
 .end method
 
 .method public static a(Ljava/security/PrivateKey;)Llibs/d6;
-    .registers 9
+    .locals 8
 
     .line 1
     instance-of v0, p0, Llibs/jg0;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
@@ -40,7 +40,7 @@
     move-result-object v0
 
     .line 11
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     .line 12
     .line 13
@@ -56,7 +56,7 @@
     move-result-object v0
 
     .line 19
-    :cond_12
+    :cond_0
     new-instance v1, Llibs/lg0;
 
     .line 20
@@ -106,12 +106,12 @@
     return-object v1
 
     .line 44
-    :cond_2b
+    :cond_1
     instance-of v0, p0, Ljava/security/interfaces/ECPrivateKey;
 
     .line 45
     .line 46
-    if-eqz v0, :cond_52
+    if-eqz v0, :cond_2
 
     .line 47
     .line 48
@@ -184,8 +184,8 @@
     return-object v1
 
     .line 83
-    :cond_52
-    :try_start_52
+    :cond_2
+    :try_start_0
     invoke-interface {p0}, Ljava/security/Key;->getEncoded()[B
 
     .line 84
@@ -194,7 +194,7 @@
     move-result-object p0
 
     .line 87
-    if-eqz p0, :cond_70
+    if-eqz p0, :cond_4
 
     .line 88
     .line 89
@@ -218,7 +218,7 @@
 
     .line 98
     .line 99
-    if-eqz v0, :cond_69
+    if-eqz v0, :cond_3
 
     .line 100
     .line 101
@@ -228,14 +228,14 @@
     .line 103
     .line 104
     move-result-object p0
-    :try_end_68
-    .catch Ljava/lang/Exception; {:try_start_52 .. :try_end_68} :catch_78
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 105
     return-object p0
 
     .line 106
-    :cond_69
+    :cond_3
     const-string p0, "can\'t identify EC private key."
 
     .line 107
@@ -251,8 +251,8 @@
     return-object p0
 
     .line 113
-    :cond_70
-    :try_start_70
+    :cond_4
+    :try_start_1
     new-instance p0, Ljava/security/InvalidKeyException;
 
     .line 114
@@ -267,11 +267,11 @@
     .line 119
     .line 120
     throw p0
-    :try_end_78
-    .catch Ljava/lang/Exception; {:try_start_70 .. :try_end_78} :catch_78
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 121
-    :catch_78
+    :catch_0
     move-exception v0
 
     .line 122
@@ -312,14 +312,14 @@
 .end method
 
 .method public static b(Ljava/security/PublicKey;)Llibs/d6;
-    .registers 9
+    .locals 8
 
     .line 1
     instance-of v0, p0, Llibs/og0;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_44
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
@@ -335,7 +335,7 @@
     move-result-object v0
 
     .line 11
-    if-nez v0, :cond_2b
+    if-nez v0, :cond_0
 
     .line 12
     .line 13
@@ -400,7 +400,7 @@
     return-object v1
 
     .line 44
-    :cond_2b
+    :cond_0
     new-instance v1, Llibs/pg0;
 
     .line 45
@@ -450,12 +450,12 @@
     return-object v1
 
     .line 69
-    :cond_44
+    :cond_1
     instance-of v0, p0, Ljava/security/interfaces/ECPublicKey;
 
     .line 70
     .line 71
-    if-eqz v0, :cond_73
+    if-eqz v0, :cond_2
 
     .line 72
     .line 73
@@ -544,8 +544,8 @@
     return-object v1
 
     .line 116
-    :cond_73
-    :try_start_73
+    :cond_2
+    :try_start_0
     invoke-interface {p0}, Ljava/security/Key;->getEncoded()[B
 
     .line 117
@@ -554,7 +554,7 @@
     move-result-object p0
 
     .line 120
-    if-eqz p0, :cond_91
+    if-eqz p0, :cond_4
 
     .line 121
     .line 122
@@ -578,7 +578,7 @@
 
     .line 131
     .line 132
-    if-eqz v0, :cond_8a
+    if-eqz v0, :cond_3
 
     .line 133
     .line 134
@@ -588,14 +588,14 @@
     .line 136
     .line 137
     move-result-object p0
-    :try_end_89
-    .catch Ljava/lang/Exception; {:try_start_73 .. :try_end_89} :catch_99
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 138
     return-object p0
 
     .line 139
-    :cond_8a
+    :cond_3
     const-string p0, "cannot identify EC public key."
 
     .line 140
@@ -611,8 +611,8 @@
     return-object p0
 
     .line 146
-    :cond_91
-    :try_start_91
+    :cond_4
+    :try_start_1
     new-instance p0, Ljava/security/InvalidKeyException;
 
     .line 147
@@ -627,11 +627,11 @@
     .line 152
     .line 153
     throw p0
-    :try_end_99
-    .catch Ljava/lang/Exception; {:try_start_91 .. :try_end_99} :catch_99
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 154
-    :catch_99
+    :catch_0
     move-exception v0
 
     .line 155
@@ -672,7 +672,7 @@
 .end method
 
 .method public static c(Llibs/App;)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/ww3;->c:Ljava/util/Hashtable;
@@ -691,7 +691,7 @@
 
     .line 8
     .line 9
-    if-nez v0, :cond_2d
+    if-nez v0, :cond_2
 
     .line 10
     .line 11
@@ -711,7 +711,7 @@
 
     .line 18
     .line 19
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_0
 
     .line 20
     .line 21
@@ -731,8 +731,8 @@
 
     .line 28
     .line 29
-    :cond_1c
-    if-nez v0, :cond_26
+    :cond_0
+    if-nez v0, :cond_1
 
     .line 30
     .line 31
@@ -752,8 +752,8 @@
 
     .line 38
     .line 39
-    :cond_26
-    if-nez v0, :cond_2d
+    :cond_1
+    if-nez v0, :cond_2
 
     .line 40
     .line 41
@@ -768,12 +768,12 @@
     return-object p0
 
     .line 46
-    :cond_2d
+    :cond_2
     return-object v0
 .end method
 
 .method public static d(Ljava/lang/String;)Llibs/zw3;
-    .registers 4
+    .locals 3
 
     .line 1
     sget-object v0, Llibs/v00;->a:Ljava/util/Hashtable;
@@ -803,17 +803,17 @@
     const/4 v1, 0x0
 
     .line 14
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
     .line 15
     .line 16
     move-object v0, v1
 
     .line 17
-    goto :goto_15
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     invoke-virtual {v0}, Llibs/ax3;->b()Llibs/zw3;
 
     .line 19
@@ -822,8 +822,8 @@
     move-result-object v0
 
     .line 22
-    :goto_15
-    if-nez v0, :cond_55
+    :goto_0
+    if-nez v0, :cond_7
 
     .line 23
     .line 24
@@ -851,17 +851,17 @@
 
     .line 35
     .line 36
-    if-nez v0, :cond_27
+    if-nez v0, :cond_1
 
     .line 37
     .line 38
     move-object v0, v1
 
     .line 39
-    goto :goto_2b
+    goto :goto_1
 
     .line 40
-    :cond_27
+    :cond_1
     invoke-static {v0}, Llibs/ww3;->b(Llibs/App;)Llibs/zw3;
 
     .line 41
@@ -870,8 +870,8 @@
     move-result-object v0
 
     .line 44
-    :goto_2b
-    if-nez v0, :cond_39
+    :goto_1
+    if-nez v0, :cond_3
 
     .line 45
     .line 46
@@ -883,17 +883,17 @@
     move-result-object v0
 
     .line 50
-    if-nez v0, :cond_35
+    if-nez v0, :cond_2
 
     .line 51
     .line 52
     move-object v0, v1
 
     .line 53
-    goto :goto_39
+    goto :goto_2
 
     .line 54
-    :cond_35
+    :cond_2
     invoke-static {v0}, Llibs/nq2;->d(Llibs/App;)Llibs/zw3;
 
     .line 55
@@ -902,9 +902,9 @@
     move-result-object v0
 
     .line 58
-    :cond_39
-    :goto_39
-    if-nez v0, :cond_47
+    :cond_3
+    :goto_2
+    if-nez v0, :cond_5
 
     .line 59
     .line 60
@@ -916,17 +916,17 @@
     move-result-object v0
 
     .line 64
-    if-nez v0, :cond_43
+    if-nez v0, :cond_4
 
     .line 65
     .line 66
     move-object v0, v1
 
     .line 67
-    goto :goto_47
+    goto :goto_3
 
     .line 68
-    :cond_43
+    :cond_4
     invoke-static {v0}, Llibs/nq2;->d(Llibs/App;)Llibs/zw3;
 
     .line 69
@@ -935,9 +935,9 @@
     move-result-object v0
 
     .line 72
-    :cond_47
-    :goto_47
-    if-nez v0, :cond_55
+    :cond_5
+    :goto_3
+    if-nez v0, :cond_7
 
     .line 73
     .line 74
@@ -949,14 +949,14 @@
     move-result-object p0
 
     .line 78
-    if-nez p0, :cond_50
+    if-nez p0, :cond_6
 
     .line 79
     .line 80
     return-object v1
 
     .line 81
-    :cond_50
+    :cond_6
     invoke-static {p0}, Llibs/pk3;->b(Llibs/App;)Llibs/zw3;
 
     .line 82
@@ -968,12 +968,12 @@
     return-object p0
 
     .line 86
-    :cond_55
+    :cond_7
     return-object v0
 .end method
 
 .method public static e(Llibs/App;)Llibs/zw3;
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/v00;->c:Ljava/util/Hashtable;
@@ -992,17 +992,17 @@
 
     .line 8
     .line 9
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 10
     .line 11
     const/4 v0, 0x0
 
     .line 12
-    goto :goto_10
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     invoke-virtual {v0}, Llibs/ax3;->b()Llibs/zw3;
 
     .line 14
@@ -1011,8 +1011,8 @@
     move-result-object v0
 
     .line 17
-    :goto_10
-    if-nez v0, :cond_2b
+    :goto_0
+    if-nez v0, :cond_3
 
     .line 18
     .line 19
@@ -1024,7 +1024,7 @@
     move-result-object v0
 
     .line 23
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_1
 
     .line 24
     .line 25
@@ -1036,8 +1036,8 @@
     move-result-object v0
 
     .line 29
-    :cond_1c
-    if-nez v0, :cond_24
+    :cond_1
+    if-nez v0, :cond_2
 
     .line 30
     .line 31
@@ -1053,8 +1053,8 @@
     move-result-object v0
 
     .line 37
-    :cond_24
-    if-nez v0, :cond_2b
+    :cond_2
+    if-nez v0, :cond_3
 
     .line 38
     .line 39
@@ -1069,12 +1069,12 @@
     return-object p0
 
     .line 44
-    :cond_2b
+    :cond_3
     return-object v0
 .end method
 
 .method public static f(Ljava/lang/String;)Llibs/App;
-    .registers 4
+    .locals 3
 
     .line 1
     const/16 v0, 0x20
@@ -1089,7 +1089,7 @@
     move-result v1
 
     .line 7
-    if-lez v1, :cond_12
+    if-lez v1, :cond_0
 
     .line 8
     .line 9
@@ -1113,11 +1113,11 @@
     move-result-object p0
 
     .line 19
-    :cond_12
+    :cond_0
     const/4 v0, 0x0
 
     .line 20
-    :try_start_13
+    :try_start_0
     invoke-virtual {p0, v0}, Ljava/lang/String;->charAt(I)C
 
     .line 21
@@ -1130,7 +1130,7 @@
 
     .line 25
     .line 26
-    if-lt v1, v2, :cond_29
+    if-lt v1, v2, :cond_1
 
     .line 27
     .line 28
@@ -1146,7 +1146,7 @@
 
     .line 33
     .line 34
-    if-gt v0, v1, :cond_29
+    if-gt v0, v1, :cond_1
 
     .line 35
     .line 36
@@ -1162,21 +1162,21 @@
     return-object v0
 
     .line 42
-    :cond_29
+    :cond_1
     invoke-static {p0}, Llibs/rg0;->h(Ljava/lang/String;)Llibs/App;
 
     .line 43
     .line 44
     .line 45
     move-result-object p0
-    :try_end_2d
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_13 .. :try_end_2d} :catch_2e
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 46
     return-object p0
 
     .line 47
-    :catch_2e
+    :catch_0
     invoke-static {p0}, Llibs/rg0;->h(Ljava/lang/String;)Llibs/App;
 
     .line 48
@@ -1189,10 +1189,10 @@
 .end method
 
 .method public static g(Ljava/math/BigInteger;Ljava/math/BigInteger;)I
-    .registers 2
+    .locals 0
 
     .line 1
-    if-nez p0, :cond_16
+    if-nez p0, :cond_1
 
     .line 2
     .line 3
@@ -1208,7 +1208,7 @@
     move-result-object p0
 
     .line 9
-    if-nez p0, :cond_f
+    if-nez p0, :cond_0
 
     .line 10
     .line 11
@@ -1223,7 +1223,7 @@
     return p0
 
     .line 16
-    :cond_f
+    :cond_0
     iget-object p0, p0, Llibs/gg0;->Lambda:Ljava/math/BigInteger;
 
     .line 17
@@ -1239,7 +1239,7 @@
     return p0
 
     .line 23
-    :cond_16
+    :cond_1
     invoke-virtual {p0}, Ljava/math/BigInteger;->bitLength()I
 
     .line 24
@@ -1252,7 +1252,7 @@
 .end method
 
 .method public static h(Ljava/lang/String;)Llibs/App;
-    .registers 3
+    .locals 2
 
     .line 1
     sget-object v0, Llibs/ww3;->a:Ljava/util/Hashtable;
@@ -1279,7 +1279,7 @@
 
     .line 12
     .line 13
-    if-nez v0, :cond_37
+    if-nez v0, :cond_3
 
     .line 14
     .line 15
@@ -1291,7 +1291,7 @@
     move-result-object v0
 
     .line 19
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     .line 20
     .line 21
@@ -1303,8 +1303,8 @@
     move-result-object v0
 
     .line 25
-    :cond_18
-    if-nez v0, :cond_1e
+    :cond_0
+    if-nez v0, :cond_1
 
     .line 26
     .line 27
@@ -1316,8 +1316,8 @@
     move-result-object v0
 
     .line 31
-    :cond_1e
-    if-nez v0, :cond_28
+    :cond_1
+    if-nez v0, :cond_2
 
     .line 32
     .line 33
@@ -1337,8 +1337,8 @@
 
     .line 40
     .line 41
-    :cond_28
-    if-nez v0, :cond_37
+    :cond_2
+    if-nez v0, :cond_3
 
     .line 42
     .line 43
@@ -1369,6 +1369,6 @@
     return-object p0
 
     .line 56
-    :cond_37
+    :cond_3
     return-object v0
 .end method

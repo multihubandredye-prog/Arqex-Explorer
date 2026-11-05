@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 4
+    .locals 2
 
     .line 1
     iput-byte p1, p0, Llibs/Level;->p:B
@@ -24,12 +24,12 @@
 
     .line 6
     .line 7
-    packed-switch p1, :pswitch_data_30
+    packed-switch p1, :pswitch_data_0
 
     .line 8
     .line 9
     .line 10
-    :pswitch_9
+    :pswitch_0
     const/4 p1, 0x1
 
     .line 11
@@ -41,7 +41,7 @@
     return-void
 
     .line 15
-    :pswitch_e
+    :pswitch_1
     const/16 p1, 0x10
 
     .line 16
@@ -54,7 +54,7 @@
     return-void
 
     .line 21
-    :pswitch_14
+    :pswitch_2
     const/16 p1, 0x11
 
     .line 22
@@ -67,7 +67,7 @@
     return-void
 
     .line 27
-    :pswitch_1a
+    :pswitch_3
     const/16 p1, 0xa
 
     .line 28
@@ -80,7 +80,7 @@
     return-void
 
     .line 33
-    :pswitch_20
+    :pswitch_4
     const/4 p1, 0x6
 
     .line 34
@@ -92,7 +92,7 @@
     return-void
 
     .line 38
-    :pswitch_25
+    :pswitch_5
     const/4 p1, 0x5
 
     .line 39
@@ -104,7 +104,7 @@
     return-void
 
     .line 43
-    :pswitch_2a
+    :pswitch_6
     const/4 p1, 0x2
 
     .line 44
@@ -119,27 +119,27 @@
     nop
 
     .line 49
-    :pswitch_data_30
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_2a
-        :pswitch_9
-        :pswitch_9
-        :pswitch_25
-        :pswitch_20
-        :pswitch_1a
-        :pswitch_14
-        :pswitch_e
+        :pswitch_6
+        :pswitch_0
+        :pswitch_0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
     .end packed-switch
 .end method
 
 .method public constructor <init>(Ljava/util/EnumSet;B)V
-    .registers 5
+    .locals 2
 
     iput-byte p2, p0, Llibs/Level;->p:B
 
     sget-object v0, Llibs/Width;->Y:Llibs/Width;
 
-    packed-switch p2, :pswitch_data_14
+    packed-switch p2, :pswitch_data_0
 
     const/4 p2, 0x3
 
@@ -150,7 +150,7 @@
 
     return-void
 
-    :pswitch_e
+    :pswitch_0
     const/4 p2, 0x4
 
     .line 50
@@ -160,23 +160,23 @@
 
     nop
 
-    :pswitch_data_14
+    :pswitch_data_0
     .packed-switch 0x3
-        :pswitch_e
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public final c(Llibs/s73;)Llibs/Color;
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/Level;->p:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_46
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -196,7 +196,7 @@
     return-object v0
 
     .line 13
-    :pswitch_c
+    :pswitch_0
     new-instance v0, Llibs/Google;
 
     .line 14
@@ -213,7 +213,7 @@
     return-object v0
 
     .line 21
-    :pswitch_14
+    :pswitch_1
     new-instance v0, Llibs/Google;
 
     .line 22
@@ -229,7 +229,7 @@
     return-object v0
 
     .line 28
-    :pswitch_1b
+    :pswitch_2
     new-instance v0, Llibs/Google;
 
     .line 29
@@ -245,7 +245,7 @@
     return-object v0
 
     .line 35
-    :pswitch_22
+    :pswitch_3
     new-instance v0, Llibs/Google;
 
     .line 36
@@ -261,7 +261,7 @@
     return-object v0
 
     .line 42
-    :pswitch_29
+    :pswitch_4
     new-instance v0, Llibs/Google;
 
     .line 43
@@ -277,7 +277,7 @@
     return-object v0
 
     .line 49
-    :pswitch_30
+    :pswitch_5
     new-instance v0, Llibs/Google;
 
     .line 50
@@ -293,7 +293,7 @@
     return-object v0
 
     .line 56
-    :pswitch_37
+    :pswitch_6
     new-instance v0, Llibs/Google;
 
     .line 57
@@ -309,7 +309,7 @@
     return-object v0
 
     .line 63
-    :pswitch_3e
+    :pswitch_7
     new-instance v0, Llibs/Google;
 
     .line 64
@@ -328,28 +328,28 @@
     nop
 
     .line 71
-    :pswitch_data_46
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_3e
-        :pswitch_37
-        :pswitch_30
-        :pswitch_29
-        :pswitch_22
-        :pswitch_1b
-        :pswitch_14
-        :pswitch_c
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final d(Llibs/s73;)Llibs/Color;
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/Level;->p:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_46
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -369,7 +369,7 @@
     return-object v0
 
     .line 13
-    :pswitch_c
+    :pswitch_0
     new-instance v0, Llibs/Firebase;
 
     .line 14
@@ -386,7 +386,7 @@
     return-object v0
 
     .line 21
-    :pswitch_14
+    :pswitch_1
     new-instance v0, Llibs/Firebase;
 
     .line 22
@@ -402,7 +402,7 @@
     return-object v0
 
     .line 28
-    :pswitch_1b
+    :pswitch_2
     new-instance v0, Llibs/Firebase;
 
     .line 29
@@ -418,7 +418,7 @@
     return-object v0
 
     .line 35
-    :pswitch_22
+    :pswitch_3
     new-instance v0, Llibs/Firebase;
 
     .line 36
@@ -434,7 +434,7 @@
     return-object v0
 
     .line 42
-    :pswitch_29
+    :pswitch_4
     new-instance v0, Llibs/Firebase;
 
     .line 43
@@ -450,7 +450,7 @@
     return-object v0
 
     .line 49
-    :pswitch_30
+    :pswitch_5
     new-instance v0, Llibs/Firebase;
 
     .line 50
@@ -466,7 +466,7 @@
     return-object v0
 
     .line 56
-    :pswitch_37
+    :pswitch_6
     new-instance v0, Llibs/Firebase;
 
     .line 57
@@ -482,7 +482,7 @@
     return-object v0
 
     .line 63
-    :pswitch_3e
+    :pswitch_7
     new-instance v0, Llibs/Firebase;
 
     .line 64
@@ -501,15 +501,15 @@
     nop
 
     .line 71
-    :pswitch_data_46
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_3e
-        :pswitch_37
-        :pswitch_30
-        :pswitch_29
-        :pswitch_22
-        :pswitch_1b
-        :pswitch_14
-        :pswitch_c
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

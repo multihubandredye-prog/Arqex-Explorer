@@ -13,7 +13,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r31;Llibs/xt1;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/d31;->c:B
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final z(Landroid/view/View;I)V
-    .registers 43
+    .locals 40
 
     .line 1
     move-object/from16 v0, p0
@@ -64,7 +64,7 @@
     const/4 v5, 0x0
 
     .line 11
-    packed-switch v2, :pswitch_data_416
+    packed-switch v2, :pswitch_data_0
 
     .line 12
     .line 13
@@ -97,19 +97,19 @@
 
     .line 25
     .line 26
-    if-eqz v1, :cond_1f0
+    if-eqz v1, :cond_6
 
     .line 27
     .line 28
-    if-eq v1, v4, :cond_1f
+    if-eq v1, v4, :cond_0
 
     .line 29
     .line 30
-    goto/16 :goto_404
+    goto/16 :goto_5
 
     .line 31
     .line 32
-    :cond_1f
+    :cond_0
     iget-object v1, v3, Llibs/r31;->a:Lcom/mixplorer/activities/BrowseActivity;
 
     .line 33
@@ -139,7 +139,7 @@
     move-result v16
 
     .line 47
-    if-eqz v16, :cond_39
+    if-eqz v16, :cond_1
 
     .line 48
     .line 49
@@ -157,10 +157,10 @@
     .line 55
     .line 56
     .line 57
-    goto :goto_77
+    goto :goto_0
 
     .line 58
-    :cond_39
+    :cond_1
     invoke-static {}, Llibs/t43;->Call()Z
 
     .line 59
@@ -169,7 +169,7 @@
     move-result v16
 
     .line 62
-    if-eqz v16, :cond_48
+    if-eqz v16, :cond_2
 
     .line 63
     .line 64
@@ -187,10 +187,10 @@
     .line 70
     .line 71
     .line 72
-    goto :goto_77
+    goto :goto_0
 
     .line 73
-    :cond_48
+    :cond_2
     invoke-static {}, Llibs/t43;->Task()Z
 
     .line 74
@@ -199,7 +199,7 @@
     move-result v16
 
     .line 77
-    if-eqz v16, :cond_57
+    if-eqz v16, :cond_3
 
     .line 78
     .line 79
@@ -217,10 +217,10 @@
     .line 85
     .line 86
     .line 87
-    goto :goto_77
+    goto :goto_0
 
     .line 88
-    :cond_57
+    :cond_3
     invoke-static {}, Llibs/t43;->Item()Z
 
     .line 89
@@ -229,7 +229,7 @@
     move-result v16
 
     .line 92
-    if-eqz v16, :cond_64
+    if-eqz v16, :cond_4
 
     .line 93
     .line 94
@@ -245,10 +245,10 @@
 
     .line 99
     .line 100
-    goto :goto_77
+    goto :goto_0
 
     .line 101
-    :cond_64
+    :cond_4
     invoke-static {}, Llibs/t43;->Data()Z
 
     .line 102
@@ -257,7 +257,7 @@
     move-result v16
 
     .line 105
-    if-eqz v16, :cond_71
+    if-eqz v16, :cond_5
 
     .line 106
     .line 107
@@ -273,10 +273,10 @@
 
     .line 112
     .line 113
-    goto :goto_77
+    goto :goto_0
 
     .line 114
-    :cond_71
+    :cond_5
     const/16 v16, 0x1b58
 
     .line 115
@@ -289,7 +289,7 @@
 
     .line 119
     .line 120
-    :goto_77
+    :goto_0
     new-instance v2, Llibs/$d;
 
     .line 121
@@ -1015,11 +1015,11 @@
     .line 493
     .line 494
     .line 495
-    goto/16 :goto_404
+    goto/16 :goto_5
 
     .line 496
     .line 497
-    :cond_1f0
+    :cond_6
     const/16 p1, 0x8
 
     .line 498
@@ -1077,7 +1077,7 @@
 
     .line 525
     .line 526
-    if-eqz v7, :cond_214
+    if-eqz v7, :cond_7
 
     .line 527
     .line 528
@@ -1085,15 +1085,15 @@
 
     .line 529
     .line 530
-    :goto_211
+    :goto_1
     const/16 v27, 0x6
 
     .line 531
     .line 532
-    goto :goto_22a
+    goto :goto_2
 
     .line 533
-    :cond_214
+    :cond_7
     invoke-static {}, Llibs/t43;->Sync()Z
 
     .line 534
@@ -1102,7 +1102,7 @@
     move-result v7
 
     .line 537
-    if-eqz v7, :cond_21d
+    if-eqz v7, :cond_8
 
     .line 538
     .line 539
@@ -1110,10 +1110,10 @@
 
     .line 540
     .line 541
-    goto :goto_211
+    goto :goto_1
 
     .line 542
-    :cond_21d
+    :cond_8
     invoke-static {}, Llibs/t43;->Item()Z
 
     .line 543
@@ -1122,7 +1122,7 @@
     move-result v7
 
     .line 546
-    if-eqz v7, :cond_226
+    if-eqz v7, :cond_9
 
     .line 547
     .line 548
@@ -1130,19 +1130,19 @@
 
     .line 549
     .line 550
-    goto :goto_211
+    goto :goto_1
 
     .line 551
-    :cond_226
+    :cond_9
     const v7, 0x8000
 
     .line 552
     .line 553
     .line 554
-    goto :goto_211
+    goto :goto_1
 
     .line 555
-    :goto_22a
+    :goto_2
     new-instance v1, Llibs/$d;
 
     .line 556
@@ -1811,8 +1811,8 @@
     const/4 v15, 0x0
 
     .line 895
-    :goto_37e
-    if-ge v12, v5, :cond_3c4
+    :goto_3
+    if-ge v12, v5, :cond_b
 
     .line 896
     .line 897
@@ -1828,7 +1828,7 @@
     move-result v5
 
     .line 903
-    if-ne v7, v5, :cond_38b
+    if-ne v7, v5, :cond_a
 
     .line 904
     .line 905
@@ -1836,15 +1836,15 @@
 
     .line 906
     .line 907
-    goto :goto_38d
+    goto :goto_4
 
     .line 908
-    :cond_38b
+    :cond_a
     move/from16 v21, v15
 
     .line 909
     .line 910
-    :goto_38d
+    :goto_4
     new-instance v15, Llibs/r90;
 
     .line 911
@@ -1955,10 +1955,10 @@
     const/4 v9, 0x2
 
     .line 964
-    goto :goto_37e
+    goto :goto_3
 
     .line 965
-    :cond_3c4
+    :cond_b
     sget v4, Llibs/bi2;->iterations:I
 
     .line 966
@@ -2089,19 +2089,19 @@
     .line 1027
     .line 1028
     .line 1029
-    :goto_404
+    :goto_5
     return-void
 
     .line 1030
-    :pswitch_405
-    if-nez v1, :cond_408
+    :pswitch_0
+    if-nez v1, :cond_c
 
     .line 1031
     .line 1032
     const/4 v5, 0x1
 
     .line 1033
-    :cond_408
+    :cond_c
     iget-object v1, v3, Llibs/r31;->a:Lcom/mixplorer/activities/BrowseActivity;
 
     .line 1034
@@ -2129,8 +2129,8 @@
     .line 1046
     return-void
 
-    :pswitch_data_416
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_405
+        :pswitch_0
     .end packed-switch
 .end method

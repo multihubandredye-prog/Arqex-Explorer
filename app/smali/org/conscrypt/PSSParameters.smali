@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/security/AlgorithmParametersSpi;-><init>()V
@@ -31,38 +31,38 @@
 
 # virtual methods
 .method public engineGetEncoded()[B
-    .registers 11
+    .locals 10
 
     .line 1
     const-wide/16 v0, 0x0
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     invoke-static {}, Lorg/conscrypt/NativeCrypto;->asn1_write_init()J
 
     .line 4
     .line 5
     .line 6
     move-result-wide v2
-    :try_end_6
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_6} :catch_61
-    .catchall {:try_start_2 .. :try_end_6} :catchall_5c
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
+    .catchall {:try_start_0 .. :try_end_0} :catchall_3
 
     .line 7
-    :try_start_6
+    :try_start_1
     invoke-static {v2, v3}, Lorg/conscrypt/NativeCrypto;->asn1_write_sequence(J)J
 
     .line 8
     .line 9
     .line 10
     move-result-wide v4
-    :try_end_a
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_a} :catch_57
-    .catchall {:try_start_6 .. :try_end_a} :catchall_52
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
     .line 11
-    :try_start_a
+    :try_start_2
     iget-object v6, p0, Lorg/conscrypt/PSSParameters;->spec:Ljava/security/spec/PSSParameterSpec;
 
     .line 12
@@ -106,23 +106,23 @@
     .line 32
     .line 33
     move-result v6
-    :try_end_21
-    .catch Ljava/io/IOException; {:try_start_a .. :try_end_21} :catch_3d
-    .catchall {:try_start_a .. :try_end_21} :catchall_3b
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 34
     const/16 v7, 0x14
 
     .line 35
     .line 36
-    if-eq v6, v7, :cond_47
+    if-eq v6, v7, :cond_0
 
     .line 37
     .line 38
     const/4 v6, 0x2
 
     .line 39
-    :try_start_26
+    :try_start_3
     invoke-static {v4, v5, v6}, Lorg/conscrypt/NativeCrypto;->asn1_write_tag(JI)J
 
     .line 40
@@ -147,13 +147,13 @@
 
     .line 50
     invoke-static {v0, v1, v6, v7}, Lorg/conscrypt/NativeCrypto;->asn1_write_uint64(JJ)V
-    :try_end_34
-    .catchall {:try_start_26 .. :try_end_34} :catchall_3f
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 51
     .line 52
     .line 53
-    :try_start_34
+    :try_start_4
     invoke-static {v4, v5}, Lorg/conscrypt/NativeCrypto;->asn1_write_flush(J)V
 
     .line 54
@@ -164,24 +164,24 @@
     .line 57
     .line 58
     .line 59
-    goto :goto_47
+    goto :goto_0
 
     .line 60
-    :catchall_3b
+    :catchall_0
     move-exception v0
 
     .line 61
-    goto :goto_69
+    goto :goto_2
 
     .line 62
-    :catch_3d
+    :catch_0
     move-exception v0
 
     .line 63
-    goto :goto_65
+    goto :goto_1
 
     .line 64
-    :catchall_3f
+    :catchall_1
     move-exception v6
 
     .line 65
@@ -198,17 +198,17 @@
     throw v6
 
     .line 72
-    :cond_47
-    :goto_47
+    :cond_0
+    :goto_0
     invoke-static {v2, v3}, Lorg/conscrypt/NativeCrypto;->asn1_write_finish(J)[B
 
     .line 73
     .line 74
     .line 75
     move-result-object v0
-    :try_end_4b
-    .catch Ljava/io/IOException; {:try_start_34 .. :try_end_4b} :catch_3d
-    .catchall {:try_start_34 .. :try_end_4b} :catchall_3b
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 76
     invoke-static {v4, v5}, Lorg/conscrypt/NativeCrypto;->asn1_write_free(J)V
@@ -224,7 +224,7 @@
     return-object v0
 
     .line 83
-    :catchall_52
+    :catchall_2
     move-exception v4
 
     .line 84
@@ -237,10 +237,10 @@
     move-wide v4, v8
 
     .line 87
-    goto :goto_69
+    goto :goto_2
 
     .line 88
-    :catch_57
+    :catch_1
     move-exception v4
 
     .line 89
@@ -253,10 +253,10 @@
     move-wide v4, v8
 
     .line 92
-    goto :goto_65
+    goto :goto_1
 
     .line 93
-    :catchall_5c
+    :catchall_3
     move-exception v2
 
     .line 94
@@ -269,10 +269,10 @@
     move-wide v2, v4
 
     .line 97
-    goto :goto_69
+    goto :goto_2
 
     .line 98
-    :catch_61
+    :catch_2
     move-exception v2
 
     .line 99
@@ -285,19 +285,19 @@
     move-wide v2, v4
 
     .line 102
-    :goto_65
-    :try_start_65
+    :goto_1
+    :try_start_5
     invoke-static {v2, v3}, Lorg/conscrypt/NativeCrypto;->asn1_write_cleanup(J)V
 
     .line 103
     .line 104
     .line 105
     throw v0
-    :try_end_69
-    .catchall {:try_start_65 .. :try_end_69} :catchall_3b
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 106
-    :goto_69
+    :goto_2
     invoke-static {v4, v5}, Lorg/conscrypt/NativeCrypto;->asn1_write_free(J)V
 
     .line 107
@@ -312,9 +312,9 @@
 .end method
 
 .method public engineGetEncoded(Ljava/lang/String;)[B
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_1e
+    if-eqz p1, :cond_1
 
     .line 113
     const-string v0, "ASN.1"
@@ -323,7 +323,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_1
 
     const-string v0, "X.509"
 
@@ -331,12 +331,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 114
-    :cond_13
+    :cond_0
     const-string v0, "Unsupported format: "
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
@@ -350,8 +350,8 @@
     return-object p1
 
     .line 115
-    :cond_1e
-    :goto_1e
+    :cond_1
+    :goto_0
     invoke-virtual {p0}, Lorg/conscrypt/PSSParameters;->engineGetEncoded()[B
 
     move-result-object p1
@@ -360,7 +360,7 @@
 .end method
 
 .method public engineGetParameterSpec(Ljava/lang/Class;)Ljava/security/spec/AlgorithmParameterSpec;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -372,7 +372,7 @@
     .end annotation
 
     .line 1
-    if-eqz p1, :cond_9
+    if-eqz p1, :cond_0
 
     .line 2
     .line 3
@@ -380,7 +380,7 @@
 
     .line 4
     .line 5
-    if-ne p1, v0, :cond_9
+    if-ne p1, v0, :cond_0
 
     .line 6
     .line 7
@@ -391,7 +391,7 @@
     return-object p1
 
     .line 10
-    :cond_9
+    :cond_0
     const-string v0, "Unsupported class: "
 
     .line 11
@@ -408,12 +408,12 @@
 .end method
 
 .method public engineInit(Ljava/security/spec/AlgorithmParameterSpec;)V
-    .registers 3
+    .locals 1
 
     .line 155
     instance-of v0, p1, Ljava/security/spec/PSSParameterSpec;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 156
     check-cast p1, Ljava/security/spec/PSSParameterSpec;
@@ -423,7 +423,7 @@
     return-void
 
     .line 157
-    :cond_9
+    :cond_0
     const-string p1, "Only PSSParameterSpec is supported"
 
     invoke-static {p1}, Llibs/bf0;->d(Ljava/lang/String;)V
@@ -432,36 +432,36 @@
 .end method
 
 .method public engineInit([B)V
-    .registers 15
+    .locals 13
 
     .line 1
     const-wide/16 v1, 0x0
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     invoke-static {p1}, Lorg/conscrypt/NativeCrypto;->asn1_read_init([B)J
 
     .line 4
     .line 5
     .line 6
     move-result-wide v3
-    :try_end_6
-    .catchall {:try_start_2 .. :try_end_6} :catchall_8e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_5
 
     .line 7
-    :try_start_6
+    :try_start_1
     invoke-static {v3, v4}, Lorg/conscrypt/NativeCrypto;->asn1_read_sequence(J)J
 
     .line 8
     .line 9
     .line 10
     move-result-wide v5
-    :try_end_a
-    .catchall {:try_start_6 .. :try_end_a} :catchall_8b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_4
 
     .line 11
-    :try_start_a
+    :try_start_2
     invoke-static {v5, v6}, Lorg/conscrypt/OAEPParameters;->readHash(J)Ljava/lang/String;
 
     .line 12
@@ -487,40 +487,40 @@
     .line 22
     .line 23
     move-result v0
-    :try_end_17
-    .catchall {:try_start_a .. :try_end_17} :catchall_27
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 24
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_0
 
     .line 25
     .line 26
-    :try_start_19
+    :try_start_3
     invoke-static {v5, v6}, Lorg/conscrypt/NativeCrypto;->asn1_read_tagged(J)J
 
     .line 27
     .line 28
     .line 29
     move-result-wide v9
-    :try_end_1d
-    .catchall {:try_start_19 .. :try_end_1d} :catchall_30
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
     .line 30
-    :try_start_1d
+    :try_start_4
     invoke-static {v9, v10}, Lorg/conscrypt/NativeCrypto;->asn1_read_uint64(J)J
 
     .line 31
     .line 32
     .line 33
     move-result-wide v11
-    :try_end_21
-    .catchall {:try_start_1d .. :try_end_21} :catchall_2c
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 34
     long-to-int v0, v11
 
     .line 35
-    :try_start_22
+    :try_start_5
     invoke-static {v9, v10}, Lorg/conscrypt/NativeCrypto;->asn1_read_free(J)V
 
     .line 36
@@ -529,10 +529,10 @@
     move v11, v0
 
     .line 39
-    goto :goto_3a
+    goto :goto_2
 
     .line 40
-    :catchall_27
+    :catchall_0
     move-exception v0
 
     .line 41
@@ -542,32 +542,32 @@
     move-wide v1, v5
 
     .line 43
-    goto/16 :goto_91
+    goto/16 :goto_4
 
     .line 44
     .line 45
-    :catchall_2c
+    :catchall_1
     move-exception v0
 
     .line 46
     move-wide v1, v9
 
     .line 47
-    :goto_2e
+    :goto_0
     move-object p1, v0
 
     .line 48
-    goto :goto_32
+    goto :goto_1
 
     .line 49
-    :catchall_30
+    :catchall_2
     move-exception v0
 
     .line 50
-    goto :goto_2e
+    goto :goto_0
 
     .line 51
-    :goto_32
+    :goto_1
     invoke-static {v1, v2}, Lorg/conscrypt/NativeCrypto;->asn1_read_free(J)V
 
     .line 52
@@ -576,7 +576,7 @@
     throw p1
 
     .line 55
-    :cond_36
+    :cond_0
     const/16 v0, 0x14
 
     .line 56
@@ -585,7 +585,7 @@
 
     .line 58
     .line 59
-    :goto_3a
+    :goto_2
     const/4 v0, 0x3
 
     .line 60
@@ -595,19 +595,19 @@
     .line 62
     .line 63
     move-result v0
-    :try_end_3f
-    .catchall {:try_start_22 .. :try_end_3f} :catchall_27
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 64
     const-string v7, "Error reading ASN.1 encoding"
 
     .line 65
     .line 66
-    if-eqz v0, :cond_63
+    if-eqz v0, :cond_2
 
     .line 67
     .line 68
-    :try_start_43
+    :try_start_6
     invoke-static {v5, v6}, Lorg/conscrypt/NativeCrypto;->asn1_read_tagged(J)J
 
     .line 69
@@ -622,8 +622,8 @@
     .line 74
     .line 75
     move-result-wide v9
-    :try_end_4b
-    .catchall {:try_start_43 .. :try_end_4b} :catchall_5d
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_3
 
     .line 76
     long-to-int v0, v9
@@ -632,7 +632,7 @@
     int-to-long v9, v0
 
     .line 78
-    :try_start_4d
+    :try_start_7
     invoke-static {v1, v2}, Lorg/conscrypt/NativeCrypto;->asn1_read_free(J)V
 
     .line 79
@@ -646,14 +646,14 @@
 
     .line 84
     .line 85
-    if-nez v2, :cond_57
+    if-nez v2, :cond_1
 
     .line 86
     .line 87
-    goto :goto_63
+    goto :goto_3
 
     .line 88
-    :cond_57
+    :cond_1
     new-instance p1, Ljava/io/IOException;
 
     .line 89
@@ -666,7 +666,7 @@
     throw p1
 
     .line 94
-    :catchall_5d
+    :catchall_3
     move-exception v0
 
     .line 95
@@ -681,8 +681,8 @@
     throw p1
 
     .line 100
-    :cond_63
-    :goto_63
+    :cond_2
+    :goto_3
     invoke-static {v5, v6}, Lorg/conscrypt/NativeCrypto;->asn1_read_is_empty(J)Z
 
     .line 101
@@ -691,7 +691,7 @@
     move-result v0
 
     .line 104
-    if-eqz v0, :cond_85
+    if-eqz v0, :cond_3
 
     .line 105
     .line 106
@@ -703,7 +703,7 @@
     move-result v0
 
     .line 110
-    if-eqz v0, :cond_85
+    if-eqz v0, :cond_3
 
     .line 111
     .line 112
@@ -733,8 +733,8 @@
     .line 124
     .line 125
     iput-object v7, p0, Lorg/conscrypt/PSSParameters;->spec:Ljava/security/spec/PSSParameterSpec;
-    :try_end_7e
-    .catchall {:try_start_4d .. :try_end_7e} :catchall_27
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
     .line 126
     .line 127
@@ -751,8 +751,8 @@
     return-void
 
     .line 134
-    :cond_85
-    :try_start_85
+    :cond_3
+    :try_start_8
     new-instance p1, Ljava/io/IOException;
 
     .line 135
@@ -763,21 +763,21 @@
     .line 138
     .line 139
     throw p1
-    :try_end_8b
-    .catchall {:try_start_85 .. :try_end_8b} :catchall_27
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_0
 
     .line 140
-    :catchall_8b
+    :catchall_4
     move-exception v0
 
     .line 141
     move-object p1, v0
 
     .line 142
-    goto :goto_91
+    goto :goto_4
 
     .line 143
-    :catchall_8e
+    :catchall_5
     move-exception v0
 
     .line 144
@@ -787,7 +787,7 @@
     move-wide v3, v1
 
     .line 146
-    :goto_91
+    :goto_4
     invoke-static {v1, v2}, Lorg/conscrypt/NativeCrypto;->asn1_read_free(J)V
 
     .line 147
@@ -798,21 +798,21 @@
     .line 150
     .line 151
     .line 152
-    goto :goto_99
+    goto :goto_6
 
     .line 153
-    :goto_98
+    :goto_5
     throw p1
 
     .line 154
-    :goto_99
-    goto :goto_98
+    :goto_6
+    goto :goto_5
 .end method
 
 .method public engineInit([BLjava/lang/String;)V
-    .registers 4
+    .locals 1
 
-    if-eqz p2, :cond_1d
+    if-eqz p2, :cond_1
 
     .line 158
     const-string v0, "ASN.1"
@@ -821,7 +821,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_1
 
     const-string v0, "X.509"
 
@@ -829,12 +829,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
-    goto :goto_1d
+    goto :goto_0
 
     .line 159
-    :cond_13
+    :cond_0
     const-string p1, "Unsupported format: "
 
     invoke-virtual {p1, p2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
@@ -846,15 +846,15 @@
     return-void
 
     .line 160
-    :cond_1d
-    :goto_1d
+    :cond_1
+    :goto_0
     invoke-virtual {p0, p1}, Lorg/conscrypt/PSSParameters;->engineInit([B)V
 
     return-void
 .end method
 
 .method public engineToString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "Conscrypt PSS AlgorithmParameters"

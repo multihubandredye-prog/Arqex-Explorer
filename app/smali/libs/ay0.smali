@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(JJLjava/lang/String;)V
-    .registers 6
+    .locals 0
 
     .line 22
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

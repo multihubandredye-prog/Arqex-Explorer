@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ra;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Llibs/zj0;-><init>()V
@@ -30,7 +30,7 @@
     move-result v0
 
     .line 8
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_0
 
     .line 9
     .line 10
@@ -38,7 +38,7 @@
 
     .line 11
     .line 12
-    if-eq v0, v1, :cond_43
+    if-eq v0, v1, :cond_0
 
     .line 13
     .line 14
@@ -154,7 +154,7 @@
     return-void
 
     .line 68
-    :cond_43
+    :cond_0
     const-string p1, "future extensions not yet implemented."
 
     .line 69
@@ -173,7 +173,7 @@
 
 # virtual methods
 .method public l(Llibs/ta;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/ng0;->Omicron:Llibs/App;
@@ -214,7 +214,7 @@
     move-result v1
 
     .line 19
-    if-ltz v1, :cond_34
+    if-ltz v1, :cond_1
 
     .line 20
     .line 21
@@ -255,7 +255,7 @@
 
     .line 39
     .line 40
-    if-nez v3, :cond_2f
+    if-nez v3, :cond_0
 
     .line 41
     .line 42
@@ -273,7 +273,7 @@
     return-void
 
     .line 48
-    :cond_2f
+    :cond_0
     array-length v2, v0
 
     .line 49
@@ -285,7 +285,7 @@
     return-void
 
     .line 53
-    :cond_34
+    :cond_1
     const-string p1, "value must not be null, or negative"
 
     .line 54

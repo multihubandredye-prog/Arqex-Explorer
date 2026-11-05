@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/le3;Ljava/lang/String;)V
-    .registers 5
+    .locals 2
 
     .line 1
     const-string v0, "---- BEGIN SSH2 PUBLIC KEY ----"
@@ -28,7 +28,7 @@
     .line 6
     .line 7
     .line 8
-    :try_start_7
+    :try_start_0
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 9
@@ -52,8 +52,8 @@
     .line 19
     .line 20
     invoke-virtual {p0}, Llibs/pq2;->c()Llibs/le3;
-    :try_end_16
-    .catch Llibs/fe3; {:try_start_7 .. :try_end_16} :catch_17
+    :try_end_0
+    .catch Llibs/fe3; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 21
     .line 22
@@ -61,7 +61,7 @@
     return-void
 
     .line 24
-    :catch_17
+    :catch_0
     const-string p1, "Failed to encode public key"
 
     .line 25
@@ -78,7 +78,7 @@
 .end method
 
 .method public constructor <init>([B)V
-    .registers 4
+    .locals 2
 
     .line 31
     const-string v0, "---- BEGIN SSH2 PUBLIC KEY ----"
@@ -103,7 +103,7 @@
 
 # virtual methods
 .method public final c()Llibs/le3;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/pq2;->Lambda:[B
@@ -122,7 +122,7 @@
 .end method
 
 .method public final g(Ljava/lang/String;)V
-    .registers 6
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -153,21 +153,21 @@
 
     .line 14
     .line 15
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_0
 
     .line 16
     .line 17
     move-object v1, v3
 
     .line 18
-    goto :goto_13
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     move-object v1, v2
 
     .line 20
-    :goto_13
+    :goto_0
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     .line 21
@@ -202,14 +202,14 @@
     move-result p1
 
     .line 38
-    if-eqz p1, :cond_28
+    if-eqz p1, :cond_1
 
     .line 39
     .line 40
     move-object v2, v3
 
     .line 41
-    :cond_28
+    :cond_1
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 42
@@ -240,7 +240,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     :try_start_0
@@ -265,8 +265,8 @@
     .line 10
     .line 11
     invoke-direct {v0, v1, v2}, Ljava/lang/String;-><init>([BLjava/lang/String;)V
-    :try_end_d
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_d} :catch_e
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 12
     .line 13
@@ -274,7 +274,7 @@
     return-object v0
 
     .line 15
-    :catch_e
+    :catch_0
     const-string v0, "Invalid encoding!"
 
     .line 16

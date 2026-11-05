@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(J)V
-    .registers 5
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/ic0;
@@ -42,14 +42,14 @@
 .end method
 
 .method public static b()Ljava/lang/String;
-    .registers 3
+    .locals 3
 
     .line 1
     sget-object v0, Llibs/jm0;->b:Ljava/lang/String;
 
     .line 2
     .line 3
-    if-nez v0, :cond_24
+    if-nez v0, :cond_1
 
     .line 4
     .line 5
@@ -90,7 +90,7 @@
     move-result v1
 
     .line 24
-    if-nez v1, :cond_1e
+    if-nez v1, :cond_0
 
     .line 25
     .line 26
@@ -103,7 +103,7 @@
     .line 29
     .line 30
     .line 31
-    :cond_1e
+    :cond_0
     invoke-virtual {v0}, Ljava/io/File;->getPath()Ljava/lang/String;
 
     .line 32
@@ -116,14 +116,14 @@
 
     .line 36
     .line 37
-    :cond_24
+    :cond_1
     return-object v0
 .end method
 
 
 # virtual methods
 .method public final a()Llibs/xb0;
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Ljava/io/File;
@@ -151,7 +151,7 @@
     move-result v1
 
     .line 14
-    if-nez v1, :cond_1d
+    if-nez v1, :cond_1
 
     .line 15
     .line 16
@@ -163,7 +163,7 @@
     move-result v1
 
     .line 20
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_0
 
     .line 21
     .line 22
@@ -175,18 +175,18 @@
     move-result v1
 
     .line 26
-    if-nez v1, :cond_1d
+    if-nez v1, :cond_1
 
     .line 27
     .line 28
-    :cond_1b
+    :cond_0
     const/4 v0, 0x0
 
     .line 29
     return-object v0
 
     .line 30
-    :cond_1d
+    :cond_1
     iget-wide v1, p0, Llibs/jm0;->a:J
 
     .line 31
@@ -198,12 +198,12 @@
     monitor-enter v3
 
     .line 35
-    :try_start_22
+    :try_start_0
     sget-object v4, Llibs/xb0;->Nu:Llibs/xb0;
 
     .line 36
     .line 37
-    if-nez v4, :cond_30
+    if-nez v4, :cond_2
 
     .line 38
     .line 39
@@ -217,34 +217,34 @@
     .line 43
     .line 44
     sput-object v4, Llibs/xb0;->Nu:Llibs/xb0;
-    :try_end_2d
-    .catchall {:try_start_22 .. :try_end_2d} :catchall_2e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 45
     .line 46
-    goto :goto_30
+    goto :goto_0
 
     .line 47
-    :catchall_2e
+    :catchall_0
     move-exception v0
 
     .line 48
-    goto :goto_32
+    goto :goto_1
 
     .line 49
-    :cond_30
-    :goto_30
+    :cond_2
+    :goto_0
     monitor-exit v3
 
     .line 50
     return-object v4
 
     .line 51
-    :goto_32
-    :try_start_32
+    :goto_1
+    :try_start_1
     monitor-exit v3
-    :try_end_33
-    .catchall {:try_start_32 .. :try_end_33} :catchall_2e
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 52
     throw v0

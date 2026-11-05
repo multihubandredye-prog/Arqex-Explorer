@@ -14,14 +14,14 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/oo1;->b:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_12
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -38,7 +38,7 @@
     return-void
 
     .line 12
-    :pswitch_b
+    :pswitch_0
     const-string p1, "md5-hash-handle"
 
     .line 13
@@ -54,14 +54,14 @@
     nop
 
     .line 19
-    :pswitch_data_12
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_b
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 19
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -73,7 +73,7 @@
 .end method
 
 .method public static b([BJJLlibs/w63;)[B
-    .registers 13
+    .locals 7
 
     .line 1
     move-object v0, p5
@@ -129,7 +129,7 @@
     move-wide v1, p1
 
     .line 26
-    :goto_19
+    :goto_0
     const-wide/16 p1, 0x0
 
     .line 27
@@ -138,7 +138,7 @@
 
     .line 29
     .line 30
-    if-lez v5, :cond_39
+    if-lez v5, :cond_1
 
     .line 31
     .line 32
@@ -168,7 +168,7 @@
     move-result p2
 
     .line 44
-    if-lez p2, :cond_36
+    if-lez p2, :cond_0
 
     .line 45
     .line 46
@@ -193,17 +193,17 @@
     add-long/2addr v1, v5
 
     .line 55
-    :cond_36
+    :cond_0
     move-object p4, p0
 
     .line 56
     move-object p0, p1
 
     .line 57
-    goto :goto_19
+    goto :goto_0
 
     .line 58
-    :cond_39
+    :cond_1
     iget-object p0, v0, Llibs/Nu;->a:Ljava/security/MessageDigest;
 
     .line 59
@@ -222,7 +222,7 @@
 
 # virtual methods
 .method public final a(Llibs/gl;ILlibs/w63;)V
-    .registers 20
+    .locals 16
 
     .line 1
     move-object/from16 v1, p0
@@ -254,12 +254,12 @@
 
     .line 13
     .line 14
-    packed-switch v0, :pswitch_data_d6
+    packed-switch v0, :pswitch_data_0
 
     .line 15
     .line 16
     .line 17
-    :try_start_10
+    :try_start_0
     invoke-virtual/range {p1 .. p1}, Llibs/gl;->m()[B
 
     .line 18
@@ -309,8 +309,8 @@
 
     .line 41
     invoke-virtual/range {p1 .. p1}, Llibs/gl;->m()[B
-    :try_end_2b
-    .catch Ljava/lang/Exception; {:try_start_10 .. :try_end_2b} :catch_50
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
     .line 42
     .line 43
@@ -319,7 +319,7 @@
 
     .line 45
     .line 46
-    :try_start_2d
+    :try_start_1
     invoke-static/range {v3 .. v8}, Llibs/oo1;->b([BJJLlibs/w63;)[B
 
     .line 47
@@ -333,13 +333,13 @@
     .line 51
     .line 52
     invoke-direct {v3}, Llibs/v92;-><init>()V
-    :try_end_36
-    .catch Ljava/lang/Exception; {:try_start_2d .. :try_end_36} :catch_49
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 53
     .line 54
     .line 55
-    :try_start_36
+    :try_start_2
     invoke-virtual {v3, v13}, Ljava/io/OutputStream;->write(I)V
 
     .line 56
@@ -361,29 +361,29 @@
     .line 66
     .line 67
     invoke-virtual {v8, v3}, Llibs/qi3;->j(Llibs/v92;)V
-    :try_end_45
-    .catchall {:try_start_36 .. :try_end_45} :catchall_4b
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 68
     .line 69
     .line 70
-    :try_start_45
+    :try_start_3
     invoke-virtual {v3}, Ljava/io/OutputStream;->close()V
 
     .line 71
     .line 72
     .line 73
-    goto :goto_61
+    goto :goto_1
 
     .line 74
-    :catch_49
+    :catch_0
     move-exception v0
 
     .line 75
-    goto :goto_53
+    goto :goto_0
 
     .line 76
-    :catchall_4b
+    :catchall_0
     move-exception v0
 
     .line 77
@@ -393,11 +393,11 @@
     .line 79
     .line 80
     throw v0
-    :try_end_50
-    .catch Ljava/lang/Exception; {:try_start_45 .. :try_end_50} :catch_49
+    :try_end_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
 
     .line 81
-    :catch_50
+    :catch_1
     move-exception v0
 
     .line 82
@@ -405,7 +405,7 @@
 
     .line 83
     .line 84
-    :goto_53
+    :goto_0
     const-string v3, "Failed to process EXT_MD5_HASH_HANDLE"
 
     .line 85
@@ -432,16 +432,16 @@
     .line 96
     .line 97
     .line 98
-    :goto_61
+    :goto_1
     return-void
 
     .line 99
-    :pswitch_62
+    :pswitch_0
     move-object/from16 v8, p3
 
     .line 100
     .line 101
-    :try_start_64
+    :try_start_4
     sget-object v0, Llibs/gl;->X:Ljava/lang/String;
 
     .line 102
@@ -526,25 +526,25 @@
     .line 143
     .line 144
     move-result-object v3
-    :try_end_90
-    .catch Ljava/lang/Exception; {:try_start_64 .. :try_end_90} :catch_b4
+    :try_end_4
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_2
 
     .line 145
     const/4 v9, 0x1
 
     .line 146
-    :try_start_91
+    :try_start_5
     invoke-static/range {v3 .. v8}, Llibs/oo1;->b([BJJLlibs/w63;)[B
 
     .line 147
     .line 148
     .line 149
     move-result-object v0
-    :try_end_95
-    .catchall {:try_start_91 .. :try_end_95} :catchall_bb
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_2
 
     .line 150
-    :try_start_95
+    :try_start_6
     invoke-static {v3}, Llibs/Sigma;->f([B)Ljava/lang/String;
 
     .line 151
@@ -563,13 +563,13 @@
     .line 158
     .line 159
     invoke-direct {v3}, Llibs/v92;-><init>()V
-    :try_end_a1
-    .catch Ljava/lang/Exception; {:try_start_95 .. :try_end_a1} :catch_b4
+    :try_end_6
+    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_2
 
     .line 160
     .line 161
     .line 162
-    :try_start_a1
+    :try_start_7
     invoke-virtual {v3, v13}, Ljava/io/OutputStream;->write(I)V
 
     .line 163
@@ -591,29 +591,29 @@
     .line 173
     .line 174
     invoke-virtual {v8, v3}, Llibs/qi3;->j(Llibs/v92;)V
-    :try_end_b0
-    .catchall {:try_start_a1 .. :try_end_b0} :catchall_b6
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_1
 
     .line 175
     .line 176
     .line 177
-    :try_start_b0
+    :try_start_8
     invoke-virtual {v3}, Ljava/io/OutputStream;->close()V
 
     .line 178
     .line 179
     .line 180
-    goto :goto_d4
+    goto :goto_3
 
     .line 181
-    :catch_b4
+    :catch_2
     move-exception v0
 
     .line 182
-    goto :goto_c4
+    goto :goto_2
 
     .line 183
-    :catchall_b6
+    :catchall_1
     move-exception v0
 
     .line 184
@@ -625,7 +625,7 @@
     throw v0
 
     .line 188
-    :catchall_bb
+    :catchall_2
     move-exception v0
 
     .line 189
@@ -643,11 +643,11 @@
     .line 195
     .line 196
     throw v0
-    :try_end_c4
-    .catch Ljava/lang/Exception; {:try_start_b0 .. :try_end_c4} :catch_b4
+    :try_end_8
+    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_2
 
     .line 197
-    :goto_c4
+    :goto_2
     const-string v3, "Failed to process EXT_MD5_HASH"
 
     .line 198
@@ -680,15 +680,15 @@
     .line 211
     .line 212
     .line 213
-    :goto_d4
+    :goto_3
     return-void
 
     .line 214
     nop
 
     .line 215
-    :pswitch_data_d6
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_62
+        :pswitch_0
     .end packed-switch
 .end method

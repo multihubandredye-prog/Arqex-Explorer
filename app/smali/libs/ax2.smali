@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,7 +22,7 @@
 
 # virtual methods
 .method public final onRegistrationFailed(Landroid/net/nsd/NsdServiceInfo;I)V
-    .registers 7
+    .locals 4
 
     .line 1
     sget-object v0, Llibs/bx2;->k:Llibs/bn1;
@@ -86,7 +86,7 @@
 .end method
 
 .method public final onServiceRegistered(Landroid/net/nsd/NsdServiceInfo;)V
-    .registers 6
+    .locals 4
 
     .line 1
     sget-object v0, Llibs/bx2;->k:Llibs/bn1;
@@ -135,7 +135,7 @@
 .end method
 
 .method public final onServiceUnregistered(Landroid/net/nsd/NsdServiceInfo;)V
-    .registers 5
+    .locals 3
 
     .line 1
     sget-object p1, Llibs/bx2;->k:Llibs/bn1;
@@ -169,7 +169,7 @@
 .end method
 
 .method public final onUnregistrationFailed(Landroid/net/nsd/NsdServiceInfo;I)V
-    .registers 6
+    .locals 3
 
     .line 1
     sget-object p1, Llibs/bx2;->k:Llibs/bn1;

@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/il0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/hl0;->Lambda:Llibs/il0;
@@ -63,7 +63,7 @@
 
 # virtual methods
 .method public final a()V
-    .registers 6
+    .locals 5
 
     .line 1
     :cond_0
@@ -80,7 +80,7 @@
     move-result v0
 
     .line 7
-    if-nez v0, :cond_98
+    if-nez v0, :cond_2
 
     .line 8
     .line 9
@@ -90,13 +90,13 @@
     const/4 v1, 0x0
 
     .line 11
-    :try_start_a
+    :try_start_0
     monitor-enter p0
-    :try_end_b
-    .catchall {:try_start_a .. :try_end_b} :catchall_24
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 12
-    :try_start_b
+    :try_start_1
     iget-object v2, p0, Llibs/hl0;->Z:Ljava/util/LinkedList;
 
     .line 13
@@ -114,15 +114,15 @@
     .line 19
     .line 20
     monitor-exit p0
-    :try_end_14
-    .catchall {:try_start_b .. :try_end_14} :catchall_70
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_3
 
     .line 21
-    if-eqz v2, :cond_4e
+    if-eqz v2, :cond_1
 
     .line 22
     .line 23
-    :try_start_16
+    :try_start_2
     iget-object v3, p0, Llibs/hl0;->Lambda:Llibs/il0;
 
     .line 24
@@ -133,21 +133,21 @@
     .line 27
     .line 28
     invoke-interface {v2}, Ljava/lang/Runnable;->run()V
-    :try_end_1e
-    .catchall {:try_start_16 .. :try_end_1e} :catchall_26
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 29
     .line 30
     .line 31
-    :goto_1e
-    :try_start_1e
+    :goto_1
+    :try_start_3
     iget-object v2, p0, Llibs/hl0;->Lambda:Llibs/il0;
 
     .line 32
     .line 33
     invoke-virtual {v2}, Llibs/il0;->g()V
-    :try_end_23
-    .catchall {:try_start_1e .. :try_end_23} :catchall_24
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 34
     .line 35
@@ -155,18 +155,18 @@
     goto :goto_0
 
     .line 37
-    :catchall_24
+    :catchall_0
     move-exception v2
 
     .line 38
-    goto :goto_73
+    goto :goto_2
 
     .line 39
-    :catchall_26
+    :catchall_1
     move-exception v2
 
     .line 40
-    :try_start_27
+    :try_start_4
     invoke-virtual {v2}, Ljava/lang/Throwable;->printStackTrace()V
 
     .line 41
@@ -220,20 +220,20 @@
     .line 67
     .line 68
     invoke-static {v0, v3, v2, v4}, Llibs/zm1;->Node(ILjava/lang/String;Ljava/lang/Throwable;[Ljava/lang/Object;)V
-    :try_end_46
-    .catchall {:try_start_27 .. :try_end_46} :catchall_47
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
     .line 69
     .line 70
     .line 71
-    goto :goto_1e
+    goto :goto_1
 
     .line 72
-    :catchall_47
+    :catchall_2
     move-exception v2
 
     .line 73
-    :try_start_48
+    :try_start_5
     iget-object v3, p0, Llibs/hl0;->Lambda:Llibs/il0;
 
     .line 74
@@ -246,7 +246,7 @@
     throw v2
 
     .line 79
-    :cond_4e
+    :cond_1
     const/4 v2, 0x3
 
     .line 80
@@ -306,8 +306,8 @@
     .line 108
     .line 109
     invoke-static {v2, v3}, Llibs/zm1;->Err(Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_6f
-    .catchall {:try_start_48 .. :try_end_6f} :catchall_24
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 110
     .line 111
@@ -315,23 +315,23 @@
     goto :goto_0
 
     .line 113
-    :catchall_70
+    :catchall_3
     move-exception v2
 
     .line 114
-    :try_start_71
+    :try_start_6
     monitor-exit p0
-    :try_end_72
-    .catchall {:try_start_71 .. :try_end_72} :catchall_70
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_3
 
     .line 115
-    :try_start_72
+    :try_start_7
     throw v2
-    :try_end_73
-    .catchall {:try_start_72 .. :try_end_73} :catchall_24
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
     .line 116
-    :goto_73
+    :goto_2
     invoke-virtual {v2}, Ljava/lang/Throwable;->printStackTrace()V
 
     .line 117
@@ -401,12 +401,12 @@
 
     .line 152
     .line 153
-    :cond_98
+    :cond_2
     return-void
 .end method
 
 .method public final run()V
-    .registers 6
+    .locals 5
 
     .line 1
     const/4 v0, 0x6
@@ -423,7 +423,7 @@
     const/4 v2, 0x0
 
     .line 7
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
@@ -456,7 +456,7 @@
     .line 22
     .line 23
     .line 24
-    :cond_17
+    :cond_0
     invoke-virtual {p0}, Llibs/hl0;->a()V
 
     .line 25
@@ -470,7 +470,7 @@
     move-result v1
 
     .line 31
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_1
 
     .line 32
     .line 33
@@ -503,7 +503,7 @@
     .line 46
     .line 47
     .line 48
-    :cond_2f
+    :cond_1
     monitor-enter p0
 
     .line 49
@@ -511,28 +511,28 @@
 
     .line 50
     .line 51
-    :try_start_32
+    :try_start_0
     invoke-virtual {p0, v3, v4}, Ljava/lang/Object;->wait(J)V
-    :try_end_35
-    .catch Ljava/lang/InterruptedException; {:try_start_32 .. :try_end_35} :catch_38
-    .catchall {:try_start_32 .. :try_end_35} :catchall_36
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 52
     .line 53
     .line 54
-    goto :goto_38
+    goto :goto_0
 
     .line 55
-    :catchall_36
+    :catchall_0
     move-exception v0
 
     .line 56
-    goto :goto_5b
+    goto :goto_1
 
     .line 57
-    :catch_38
-    :goto_38
-    :try_start_38
+    :catch_0
+    :goto_0
+    :try_start_1
     iget-object v1, p0, Llibs/hl0;->Z:Ljava/util/LinkedList;
 
     .line 58
@@ -554,11 +554,11 @@
     .line 66
     .line 67
     monitor-exit p0
-    :try_end_43
-    .catchall {:try_start_38 .. :try_end_43} :catchall_36
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 68
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_0
 
     .line 69
     .line 70
@@ -570,7 +570,7 @@
     move-result v0
 
     .line 74
-    if-eqz v0, :cond_5a
+    if-eqz v0, :cond_2
 
     .line 75
     .line 76
@@ -603,24 +603,24 @@
     .line 89
     .line 90
     .line 91
-    :cond_5a
+    :cond_2
     return-void
 
     .line 92
-    :goto_5b
-    :try_start_5b
+    :goto_1
+    :try_start_2
     monitor-exit p0
-    :try_end_5c
-    .catchall {:try_start_5b .. :try_end_5c} :catchall_36
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 93
-    goto :goto_5e
+    goto :goto_3
 
     .line 94
-    :goto_5d
+    :goto_2
     throw v0
 
     .line 95
-    :goto_5e
-    goto :goto_5d
+    :goto_3
+    goto :goto_2
 .end method

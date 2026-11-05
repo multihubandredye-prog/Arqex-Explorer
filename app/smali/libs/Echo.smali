@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic List()Landroid/print/PrintAttributes$MediaSize;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/print/PrintAttributes$MediaSize;->ISO_A4:Landroid/print/PrintAttributes$MediaSize;
@@ -24,7 +24,7 @@
 .end method
 
 .method public static bridge synthetic Map()Landroid/print/PrintAttributes$MediaSize;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/print/PrintAttributes$MediaSize;->UNKNOWN_PORTRAIT:Landroid/print/PrintAttributes$MediaSize;
@@ -35,7 +35,7 @@
 .end method
 
 .method public static bridge synthetic Object(Landroid/print/PrintAttributes$MediaSize;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/print/PrintAttributes$MediaSize;->getHeightMils()I
@@ -50,7 +50,7 @@
 .end method
 
 .method public static bridge synthetic Set()Landroid/print/PrintAttributes$MediaSize;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/print/PrintAttributes$MediaSize;->UNKNOWN_LANDSCAPE:Landroid/print/PrintAttributes$MediaSize;
@@ -61,7 +61,7 @@
 .end method
 
 .method public static bridge synthetic String()Landroid/print/PrintAttributes$MediaSize;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/print/PrintAttributes$MediaSize;->ISO_A4:Landroid/print/PrintAttributes$MediaSize;
@@ -80,7 +80,7 @@
 .end method
 
 .method public static bridge synthetic a(Landroid/graphics/drawable/Drawable;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getAlpha()I
@@ -95,7 +95,7 @@
 .end method
 
 .method public static bridge synthetic b(Landroid/print/PrintAttributes$Margins;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/print/PrintAttributes$Margins;->getLeftMils()I
@@ -110,7 +110,7 @@
 .end method
 
 .method public static bridge synthetic c(Landroid/print/PrintAttributes$MediaSize;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/print/PrintAttributes$MediaSize;->getWidthMils()I
@@ -125,7 +125,7 @@
 .end method
 
 .method public static bridge synthetic d(Landroid/view/accessibility/AccessibilityEvent;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityEvent;->getContentChangeTypes()I
@@ -140,7 +140,7 @@
 .end method
 
 .method public static bridge synthetic e(Llibs/fd3;Landroid/view/KeyEvent;)I
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p0, p1}, Landroid/text/method/MetaKeyKeyListener;->getMetaState(Ljava/lang/CharSequence;Landroid/view/KeyEvent;)I
@@ -155,7 +155,7 @@
 .end method
 
 .method public static bridge synthetic f(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p0, p1}, Landroid/provider/DocumentsContract;->buildChildDocumentsUri(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
@@ -170,7 +170,7 @@
 .end method
 
 .method public static bridge synthetic g(Landroid/view/accessibility/AccessibilityNodeInfo;)Landroid/os/Bundle;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->getExtras()Landroid/os/Bundle;
@@ -185,7 +185,7 @@
 .end method
 
 .method public static bridge synthetic h()Landroid/print/PageRange;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/print/PageRange;->ALL_PAGES:Landroid/print/PageRange;
@@ -196,7 +196,7 @@
 .end method
 
 .method public static bridge synthetic i(Landroid/print/PrintAttributes;)Landroid/print/PrintAttributes$Margins;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/print/PrintAttributes;->getMinMargins()Landroid/print/PrintAttributes$Margins;
@@ -211,7 +211,7 @@
 .end method
 
 .method public static bridge synthetic j()Landroid/print/PrintAttributes$MediaSize;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/print/PrintAttributes$MediaSize;->ISO_A4:Landroid/print/PrintAttributes$MediaSize;
@@ -222,7 +222,7 @@
 .end method
 
 .method public static bridge synthetic k(Landroid/print/PrintAttributes;)Landroid/print/PrintAttributes$MediaSize;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/print/PrintAttributes;->getMediaSize()Landroid/print/PrintAttributes$MediaSize;
@@ -237,7 +237,7 @@
 .end method
 
 .method public static bridge synthetic l(II)Landroid/view/accessibility/AccessibilityNodeInfo$CollectionInfo;
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -255,7 +255,7 @@
 .end method
 
 .method public static bridge synthetic m(Ljava/lang/Object;)Landroid/view/accessibility/AccessibilityNodeInfo$CollectionInfo;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo$CollectionInfo;
@@ -266,7 +266,7 @@
 .end method
 
 .method public static bridge synthetic n(Ljava/lang/Object;)Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;
@@ -277,7 +277,7 @@
 .end method
 
 .method public static bridge synthetic p(ZIIII)Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-static {p1, p2, p3, p4, p0}, Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;->obtain(IIIIZ)Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;
@@ -292,7 +292,7 @@
 .end method
 
 .method public static bridge synthetic q(Landroid/graphics/drawable/Drawable;Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->setAutoMirrored(Z)V
@@ -304,7 +304,7 @@
 .end method
 
 .method public static bridge synthetic r(Landroid/print/PrintDocumentAdapter$WriteResultCallback;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "Failed to print image"
@@ -320,7 +320,7 @@
 .end method
 
 .method public static bridge synthetic s(Landroid/print/PrintDocumentAdapter$WriteResultCallback;[Landroid/print/PageRange;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/print/PrintDocumentAdapter$WriteResultCallback;->onWriteFinished([Landroid/print/PageRange;)V
@@ -332,7 +332,7 @@
 .end method
 
 .method public static bridge synthetic t(Landroid/view/accessibility/AccessibilityEvent;I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityEvent;->setContentChangeTypes(I)V
@@ -344,7 +344,7 @@
 .end method
 
 .method public static bridge synthetic u(Landroid/view/accessibility/AccessibilityNodeInfo;Landroid/view/accessibility/AccessibilityNodeInfo$CollectionInfo;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setCollectionInfo(Landroid/view/accessibility/AccessibilityNodeInfo$CollectionInfo;)V
@@ -356,7 +356,7 @@
 .end method
 
 .method public static bridge synthetic v(Landroid/view/accessibility/AccessibilityNodeInfo;Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setCollectionItemInfo(Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;)V
@@ -368,7 +368,7 @@
 .end method
 
 .method public static bridge synthetic w(Landroid/webkit/WebView;Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -383,7 +383,7 @@
 .end method
 
 .method public static bridge synthetic x(Landroid/widget/PopupWindow;Landroid/view/View;II)V
-    .registers 5
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -398,7 +398,7 @@
 .end method
 
 .method public static bridge synthetic y(Landroid/graphics/drawable/Drawable;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->isAutoMirrored()Z
@@ -413,7 +413,7 @@
 .end method
 
 .method public static bridge synthetic z(Landroid/print/PrintAttributes$Margins;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/print/PrintAttributes$Margins;->getTopMils()I

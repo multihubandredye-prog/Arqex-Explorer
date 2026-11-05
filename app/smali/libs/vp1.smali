@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/yp1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/vp1;->X:Llibs/yp1;
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iget-object p1, p0, Llibs/vp1;->X:Llibs/yp1;
@@ -46,7 +46,7 @@
 .end method
 
 .method public final scheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;J)V
-    .registers 5
+    .locals 0
 
     .line 1
     iget-object p1, p0, Llibs/vp1;->X:Llibs/yp1;
@@ -62,7 +62,7 @@
 .end method
 
 .method public final unscheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iget-object p1, p0, Llibs/vp1;->X:Llibs/yp1;

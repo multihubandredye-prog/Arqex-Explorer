@@ -30,7 +30,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/my2;)V
-    .registers 9
+    .locals 7
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -91,7 +91,7 @@
 
     .line 30
     .line 31
-    if-nez v1, :cond_6b
+    if-nez v1, :cond_0
 
     .line 32
     .line 33
@@ -244,7 +244,7 @@
     return-void
 
     .line 108
-    :cond_6b
+    :cond_0
     new-instance p1, Llibs/qy2;
 
     .line 109
@@ -262,7 +262,7 @@
 .end method
 
 .method public static m(Llibs/dp2;Ljava/nio/charset/Charset;)Ljava/lang/String;
-    .registers 5
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/String;
@@ -292,7 +292,7 @@
     const/4 v1, 0x1
 
     .line 14
-    if-ne v2, v1, :cond_17
+    if-ne v2, v1, :cond_0
 
     .line 15
     .line 16
@@ -312,7 +312,7 @@
     return-object v0
 
     .line 24
-    :cond_17
+    :cond_0
     new-instance p1, Llibs/fr2;
 
     .line 25
@@ -367,7 +367,7 @@
 
 # virtual methods
 .method public final c(Llibs/co2;)Llibs/dp2;
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-virtual {p0, p1}, Llibs/er2;->w(Llibs/co2;)Llibs/eg2;
@@ -398,7 +398,7 @@
 .end method
 
 .method public final close()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/er2;->Mu:Llibs/j63;
@@ -432,13 +432,13 @@
 .end method
 
 .method public final declared-synchronized i(Llibs/ea2;)Llibs/co2;
-    .registers 7
+    .locals 5
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     new-instance v0, Llibs/co2;
 
     .line 3
@@ -469,8 +469,8 @@
     .line 16
     .line 17
     invoke-direct {v0, p1, v1, v2}, Llibs/co2;-><init>(Llibs/ea2;J)V
-    :try_end_13
-    .catchall {:try_start_1 .. :try_end_13} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 18
     .line 19
@@ -481,21 +481,21 @@
     return-object v0
 
     .line 22
-    :catchall_15
+    :catchall_0
     move-exception p1
 
     .line 23
-    :try_start_16
+    :try_start_1
     monitor-exit p0
-    :try_end_17
-    .catchall {:try_start_16 .. :try_end_17} :catchall_15
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 24
     throw p1
 .end method
 
 .method public final w(Llibs/co2;)Llibs/eg2;
-    .registers 10
+    .locals 8
 
     .line 1
     iget-wide v0, p1, Llibs/co2;->f:J
@@ -607,13 +607,13 @@
 .end method
 
 .method public final declared-synchronized x(Llibs/mr2;)V
-    .registers 5
+    .locals 3
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     invoke-virtual {p1}, Llibs/uj;->a()I
 
     .line 3
@@ -708,8 +708,8 @@
     .line 50
     .line 51
     invoke-virtual {p1}, Llibs/ds;->flush()V
-    :try_end_35
-    .catchall {:try_start_1 .. :try_end_35} :catchall_37
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 52
     .line 53
@@ -720,14 +720,14 @@
     return-void
 
     .line 56
-    :catchall_37
+    :catchall_0
     move-exception p1
 
     .line 57
-    :try_start_38
+    :try_start_1
     monitor-exit p0
-    :try_end_39
-    .catchall {:try_start_38 .. :try_end_39} :catchall_37
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 58
     throw p1

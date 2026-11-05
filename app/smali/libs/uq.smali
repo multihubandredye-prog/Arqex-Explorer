@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Param;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -46,7 +46,7 @@
     const/4 v3, 0x0
 
     .line 13
-    if-ne v1, v2, :cond_3e
+    if-ne v1, v2, :cond_2
 
     .line 14
     .line 15
@@ -62,7 +62,7 @@
 
     .line 20
     .line 21
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_0
 
     .line 22
     .line 23
@@ -73,11 +73,11 @@
 
     .line 25
     .line 26
-    goto :goto_25
+    goto :goto_0
 
     .line 27
-    :cond_1a
-    if-eqz v0, :cond_25
+    :cond_0
+    if-eqz v0, :cond_1
 
     .line 28
     .line 29
@@ -98,8 +98,8 @@
     .line 36
     .line 37
     .line 38
-    :cond_25
-    :goto_25
+    :cond_1
+    :goto_0
     iput-object v3, p0, Llibs/uq;->X:Llibs/pj3;
 
     .line 39
@@ -153,7 +153,7 @@
     return-void
 
     .line 63
-    :cond_3e
+    :cond_2
     const-string p1, "sequence wrong size for CertificateList"
 
     .line 64
@@ -167,14 +167,14 @@
 .end method
 
 .method public static g(Llibs/Core;)Llibs/uq;
-    .registers 2
+    .locals 1
 
     .line 1
     instance-of v0, p0, Llibs/uq;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -185,8 +185,8 @@
     return-object p0
 
     .line 8
-    :cond_7
-    if-eqz p0, :cond_13
+    :cond_0
+    if-eqz p0, :cond_1
 
     .line 9
     .line 10
@@ -210,7 +210,7 @@
     return-object v0
 
     .line 20
-    :cond_13
+    :cond_1
     const/4 p0, 0x0
 
     .line 21
@@ -220,7 +220,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/Init;
@@ -275,7 +275,7 @@
 .end method
 
 .method public final h()Ljava/util/Enumeration;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/uq;->X:Llibs/pj3;
@@ -286,7 +286,7 @@
 
     .line 4
     .line 5
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -302,7 +302,7 @@
     return-object v0
 
     .line 13
-    :cond_c
+    :cond_0
     new-instance v1, Llibs/oj3;
 
     .line 14
@@ -324,14 +324,14 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/uq;->Lambda:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -354,7 +354,7 @@
 
     .line 13
     .line 14
-    :cond_d
+    :cond_0
     iget v0, p0, Llibs/uq;->Mu:I
 
     .line 15

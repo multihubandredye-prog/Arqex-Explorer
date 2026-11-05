@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/widgets/MiEditor;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/ts1;->Lambda:Lcom/mixplorer/widgets/MiEditor;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final afterTextChanged(Landroid/text/Editable;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget v0, p0, Llibs/ts1;->Y:I
@@ -69,7 +69,7 @@
     move-result v0
 
     .line 17
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_0
 
     .line 18
     .line 19
@@ -94,7 +94,7 @@
     .line 28
     .line 29
     .line 30
-    :cond_1d
+    :cond_0
     invoke-virtual {p1}, Landroid/widget/TextView;->getLineHeight()I
 
     .line 31
@@ -103,7 +103,7 @@
     move-result v0
 
     .line 34
-    if-lez v0, :cond_44
+    if-lez v0, :cond_1
 
     .line 35
     .line 36
@@ -127,7 +127,7 @@
     move-result v1
 
     .line 46
-    if-gt v0, v1, :cond_44
+    if-gt v0, v1, :cond_1
 
     .line 47
     .line 48
@@ -163,7 +163,7 @@
     move-result v0
 
     .line 64
-    if-le v1, v0, :cond_44
+    if-le v1, v0, :cond_1
 
     .line 65
     .line 66
@@ -172,12 +172,12 @@
     .line 67
     .line 68
     .line 69
-    :cond_44
+    :cond_1
     iget-object p1, p1, Lcom/mixplorer/widgets/MiEditor;->ll:Llibs/dy2;
 
     .line 70
     .line 71
-    if-eqz p1, :cond_66
+    if-eqz p1, :cond_3
 
     .line 72
     .line 73
@@ -215,7 +215,7 @@
 
     .line 90
     .line 91
-    if-eqz v1, :cond_63
+    if-eqz v1, :cond_2
 
     .line 92
     .line 93
@@ -232,18 +232,18 @@
     .line 98
     .line 99
     .line 100
-    :cond_63
+    :cond_2
     invoke-virtual {v0, p1}, Lcom/mixplorer/activities/TextEditorActivity;->Save(Lcom/mixplorer/widgets/MiEditor;)V
 
     .line 101
     .line 102
     .line 103
-    :cond_66
+    :cond_3
     return-void
 .end method
 
 .method public final beforeTextChanged(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     .line 1
     add-int p4, p2, p3
@@ -262,7 +262,7 @@
 
     .line 8
     .line 9
-    if-lez p3, :cond_1b
+    if-lez p3, :cond_1
 
     .line 10
     .line 11
@@ -270,17 +270,17 @@
 
     .line 12
     .line 13
-    if-nez p1, :cond_10
+    if-nez p1, :cond_0
 
     .line 14
     .line 15
     const/4 p4, 0x0
 
     .line 16
-    goto :goto_14
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     .line 18
@@ -289,7 +289,7 @@
     move-result p4
 
     .line 21
-    :goto_14
+    :goto_0
     invoke-static {p4, p1}, Lcom/mixplorer/widgets/MiEditor;->f(ILjava/lang/CharSequence;)I
 
     .line 22
@@ -305,12 +305,12 @@
 
     .line 27
     .line 28
-    :cond_1b
+    :cond_1
     iget-boolean p2, p2, Lcom/mixplorer/widgets/MiEditor;->Il:Z
 
     .line 29
     .line 30
-    if-nez p2, :cond_21
+    if-nez p2, :cond_2
 
     .line 31
     .line 32
@@ -318,22 +318,22 @@
 
     .line 33
     .line 34
-    :cond_21
+    :cond_2
     return-void
 .end method
 
 .method public final onTextChanged(Ljava/lang/CharSequence;III)V
-    .registers 6
+    .locals 1
 
     .line 1
-    if-nez p1, :cond_3
+    if-nez p1, :cond_0
 
     .line 2
     .line 3
-    goto :goto_43
+    goto :goto_1
 
     .line 4
-    :cond_3
+    :cond_0
     iput p2, p0, Llibs/ts1;->Y:I
 
     .line 5
@@ -358,7 +358,7 @@
 
     .line 15
     .line 16
-    if-lez p4, :cond_22
+    if-lez p4, :cond_2
 
     .line 17
     .line 18
@@ -366,17 +366,17 @@
 
     .line 19
     .line 20
-    if-nez p1, :cond_17
+    if-nez p1, :cond_1
 
     .line 21
     .line 22
     const/4 v0, 0x0
 
     .line 23
-    goto :goto_1b
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_1
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     .line 25
@@ -385,7 +385,7 @@
     move-result v0
 
     .line 28
-    :goto_1b
+    :goto_0
     invoke-static {v0, p1}, Lcom/mixplorer/widgets/MiEditor;->f(ILjava/lang/CharSequence;)I
 
     .line 29
@@ -401,12 +401,12 @@
 
     .line 34
     .line 35
-    :cond_22
+    :cond_2
     iget-boolean p4, p3, Lcom/mixplorer/widgets/MiEditor;->Il:Z
 
     .line 36
     .line 37
-    if-nez p4, :cond_43
+    if-nez p4, :cond_3
 
     .line 38
     .line 39
@@ -414,7 +414,7 @@
 
     .line 40
     .line 41
-    if-eqz p3, :cond_43
+    if-eqz p3, :cond_3
 
     .line 42
     .line 43
@@ -465,7 +465,7 @@
 
     .line 67
     .line 68
-    :cond_43
-    :goto_43
+    :cond_3
+    :goto_1
     return-void
 .end method

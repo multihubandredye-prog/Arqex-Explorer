@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/ae;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final a(Llibs/bg2;)Ljava/security/PrivateKey;
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object v0, p1, Llibs/bg2;->Y:Llibs/$f;
@@ -33,7 +33,7 @@
     const/4 v1, 0x0
 
     .line 6
-    :goto_5
+    :goto_0
     sget-object v2, Llibs/bl2;->a:[Llibs/App;
 
     .line 7
@@ -41,7 +41,7 @@
     array-length v3, v2
 
     .line 9
-    if-eq v1, v3, :cond_39
+    if-eq v1, v3, :cond_2
 
     .line 10
     .line 11
@@ -57,7 +57,7 @@
     move-result v2
 
     .line 17
-    if-eqz v2, :cond_36
+    if-eqz v2, :cond_1
 
     .line 18
     .line 19
@@ -89,7 +89,7 @@
     move-result v1
 
     .line 33
-    if-nez v1, :cond_28
+    if-nez v1, :cond_0
 
     .line 34
     .line 35
@@ -105,7 +105,7 @@
     return-object p1
 
     .line 41
-    :cond_28
+    :cond_0
     new-instance v0, Llibs/ua;
 
     .line 42
@@ -134,15 +134,15 @@
     return-object v0
 
     .line 55
-    :cond_36
+    :cond_1
     add-int/lit8 v1, v1, 0x1
 
     .line 56
     .line 57
-    goto :goto_5
+    goto :goto_0
 
     .line 58
-    :cond_39
+    :cond_2
     const-string p1, "algorithm identifier "
 
     .line 59
@@ -163,7 +163,7 @@
 .end method
 
 .method public final b(Llibs/ji3;)Ljava/security/PublicKey;
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object v0, p1, Llibs/ji3;->X:Llibs/$f;
@@ -177,7 +177,7 @@
     const/4 v1, 0x0
 
     .line 6
-    :goto_5
+    :goto_0
     sget-object v2, Llibs/bl2;->a:[Llibs/App;
 
     .line 7
@@ -185,7 +185,7 @@
     array-length v3, v2
 
     .line 9
-    if-eq v1, v3, :cond_1b
+    if-eq v1, v3, :cond_1
 
     .line 10
     .line 11
@@ -201,7 +201,7 @@
     move-result v2
 
     .line 17
-    if-eqz v2, :cond_18
+    if-eqz v2, :cond_0
 
     .line 18
     .line 19
@@ -217,15 +217,15 @@
     return-object v0
 
     .line 25
-    :cond_18
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
     .line 26
     .line 27
-    goto :goto_5
+    goto :goto_0
 
     .line 28
-    :cond_1b
+    :cond_1
     const-string p1, "algorithm identifier "
 
     .line 29
@@ -246,18 +246,18 @@
 .end method
 
 .method public final engineGeneratePrivate(Ljava/security/spec/KeySpec;)Ljava/security/PrivateKey;
-    .registers 5
+    .locals 3
 
     .line 1
     instance-of v0, p1, Ljava/security/spec/PKCS8EncodedKeySpec;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
-    :try_start_4
+    :try_start_0
     move-object v0, p1
 
     .line 6
@@ -287,18 +287,18 @@
     .line 18
     .line 19
     move-result-object p1
-    :try_end_13
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_13} :catch_14
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 20
     return-object p1
 
     .line 21
-    :catch_14
+    :catch_0
     move-exception v0
 
     .line 22
-    :try_start_15
+    :try_start_1
     new-instance v1, Llibs/ua;
 
     .line 23
@@ -324,8 +324,8 @@
 
     .line 34
     invoke-direct {v1, p1}, Llibs/ua;-><init>(Llibs/wk2;)V
-    :try_end_24
-    .catch Ljava/lang/Exception; {:try_start_15 .. :try_end_24} :catch_25
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 35
     .line 36
@@ -333,7 +333,7 @@
     return-object v1
 
     .line 38
-    :catch_25
+    :catch_1
     new-instance p1, Llibs/em0;
 
     .line 39
@@ -367,12 +367,12 @@
     throw p1
 
     .line 55
-    :cond_36
+    :cond_0
     instance-of v0, p1, Ljava/security/spec/RSAPrivateCrtKeySpec;
 
     .line 56
     .line 57
-    if-eqz v0, :cond_42
+    if-eqz v0, :cond_1
 
     .line 58
     .line 59
@@ -392,12 +392,12 @@
     return-object v0
 
     .line 67
-    :cond_42
+    :cond_1
     instance-of v0, p1, Ljava/security/spec/RSAPrivateKeySpec;
 
     .line 68
     .line 69
-    if-eqz v0, :cond_4e
+    if-eqz v0, :cond_2
 
     .line 70
     .line 71
@@ -417,7 +417,7 @@
     return-object v0
 
     .line 79
-    :cond_4e
+    :cond_2
     new-instance v0, Ljava/security/spec/InvalidKeySpecException;
 
     .line 80
@@ -459,14 +459,14 @@
 .end method
 
 .method public final engineGeneratePublic(Ljava/security/spec/KeySpec;)Ljava/security/PublicKey;
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Ljava/security/spec/RSAPublicKeySpec;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -486,7 +486,7 @@
     return-object v0
 
     .line 13
-    :cond_c
+    :cond_0
     invoke-super {p0, p1}, Llibs/ae;->engineGeneratePublic(Ljava/security/spec/KeySpec;)Ljava/security/PublicKey;
 
     .line 14
@@ -499,7 +499,7 @@
 .end method
 
 .method public final engineGetKeySpec(Ljava/security/Key;Ljava/lang/Class;)Ljava/security/spec/KeySpec;
-    .registers 12
+    .locals 9
 
     .line 1
     const-class v0, Ljava/security/spec/RSAPublicKeySpec;
@@ -514,7 +514,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -522,7 +522,7 @@
 
     .line 10
     .line 11
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
@@ -558,7 +558,7 @@
     return-object p2
 
     .line 29
-    :cond_1c
+    :cond_0
     const-class v0, Ljava/security/spec/RSAPrivateKeySpec;
 
     .line 30
@@ -571,7 +571,7 @@
     move-result v0
 
     .line 35
-    if-eqz v0, :cond_38
+    if-eqz v0, :cond_1
 
     .line 36
     .line 37
@@ -579,7 +579,7 @@
 
     .line 38
     .line 39
-    if-eqz v0, :cond_38
+    if-eqz v0, :cond_1
 
     .line 40
     .line 41
@@ -615,7 +615,7 @@
     return-object p2
 
     .line 57
-    :cond_38
+    :cond_1
     const-class v0, Ljava/security/spec/RSAPrivateCrtKeySpec;
 
     .line 58
@@ -628,7 +628,7 @@
     move-result v0
 
     .line 63
-    if-eqz v0, :cond_6c
+    if-eqz v0, :cond_2
 
     .line 64
     .line 65
@@ -636,7 +636,7 @@
 
     .line 66
     .line 67
-    if-eqz v0, :cond_6c
+    if-eqz v0, :cond_2
 
     .line 68
     .line 69
@@ -720,7 +720,7 @@
     return-object v0
 
     .line 109
-    :cond_6c
+    :cond_2
     invoke-super {p0, p1, p2}, Llibs/ae;->engineGetKeySpec(Ljava/security/Key;Ljava/lang/Class;)Ljava/security/spec/KeySpec;
 
     .line 110
@@ -733,14 +733,14 @@
 .end method
 
 .method public final engineTranslateKey(Ljava/security/Key;)Ljava/security/Key;
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Ljava/security/interfaces/RSAPublicKey;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -760,12 +760,12 @@
     return-object v0
 
     .line 13
-    :cond_c
+    :cond_0
     instance-of v0, p1, Ljava/security/interfaces/RSAPrivateCrtKey;
 
     .line 14
     .line 15
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     .line 16
     .line 17
@@ -785,12 +785,12 @@
     return-object v0
 
     .line 25
-    :cond_18
+    :cond_1
     instance-of v0, p1, Ljava/security/interfaces/RSAPrivateKey;
 
     .line 26
     .line 27
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_2
 
     .line 28
     .line 29
@@ -810,7 +810,7 @@
     return-object v0
 
     .line 37
-    :cond_24
+    :cond_2
     const-string p1, "key type unknown"
 
     .line 38

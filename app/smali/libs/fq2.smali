@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/w52;Llibs/w52;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/fq2;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final h(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/fq2;->X:B
@@ -57,7 +57,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_1c
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -81,7 +81,7 @@
     return p1
 
     .line 19
-    :pswitch_12
+    :pswitch_0
     check-cast p1, Llibs/dq2;
 
     .line 20
@@ -104,8 +104,8 @@
     nop
 
     .line 29
-    :pswitch_data_1c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_12
+        :pswitch_0
     .end packed-switch
 .end method

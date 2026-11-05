@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Llibs/a92;-><init>()V
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public final Link()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/h63;->e:Ljava/lang/String;
@@ -78,7 +78,7 @@
 .end method
 
 .method public final Node()Llibs/t02;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/h63;->c:Llibs/t02;
@@ -89,7 +89,7 @@
 .end method
 
 .method public final State()Llibs/oO;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/h63;->d:Llibs/oO;
@@ -100,7 +100,7 @@
 .end method
 
 .method public final Task(Llibs/t02;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/h63;->c:Llibs/t02;
@@ -111,7 +111,7 @@
 .end method
 
 .method public final Work(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/h63;->e:Ljava/lang/String;

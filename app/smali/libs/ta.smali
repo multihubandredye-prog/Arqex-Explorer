@@ -11,7 +11,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/ta;->X:B
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public close()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/ta;->X:B
@@ -44,7 +44,7 @@
 
     .line 4
     .line 5
-    sparse-switch v0, :sswitch_data_18
+    sparse-switch v0, :sswitch_data_0
 
     .line 6
     .line 7
@@ -57,7 +57,7 @@
     return-void
 
     .line 12
-    :sswitch_b
+    :sswitch_0
     check-cast v1, Ljava/io/RandomAccessFile;
 
     .line 13
@@ -70,7 +70,7 @@
     return-void
 
     .line 18
-    :sswitch_11
+    :sswitch_1
     check-cast v1, Llibs/fl;
 
     .line 19
@@ -86,22 +86,22 @@
     nop
 
     .line 25
-    :sswitch_data_18
+    :sswitch_data_0
     .sparse-switch
-        0x0 -> :sswitch_11
-        0x3 -> :sswitch_b
+        0x0 -> :sswitch_1
+        0x3 -> :sswitch_0
     .end sparse-switch
 .end method
 
 .method public flush()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/ta;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_12
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -114,7 +114,7 @@
     return-void
 
     .line 10
-    :pswitch_9
+    :pswitch_0
     iget-object v0, p0, Llibs/ta;->Y:Ljava/lang/Object;
 
     .line 11
@@ -134,14 +134,14 @@
     nop
 
     .line 19
-    :pswitch_data_12
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_9
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final write(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/ta;->X:B
@@ -152,7 +152,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_22
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -169,7 +169,7 @@
     return-void
 
     .line 14
-    :pswitch_d
+    :pswitch_0
     check-cast v1, Llibs/lw0;
 
     .line 15
@@ -185,7 +185,7 @@
     return-void
 
     .line 21
-    :pswitch_14
+    :pswitch_1
     check-cast v1, Llibs/xr2;
 
     .line 22
@@ -201,7 +201,7 @@
     return-void
 
     .line 28
-    :pswitch_1b
+    :pswitch_2
     check-cast v1, Llibs/fl;
 
     .line 29
@@ -217,22 +217,22 @@
     nop
 
     .line 35
-    :pswitch_data_22
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1b
-        :pswitch_14
-        :pswitch_d
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final write([BII)V
-    .registers 6
+    .locals 2
 
     iget-byte v0, p0, Llibs/ta;->X:B
 
     iget-object v1, p0, Llibs/ta;->Y:Ljava/lang/Object;
 
-    packed-switch v0, :pswitch_data_20
+    packed-switch v0, :pswitch_data_0
 
     .line 35
     check-cast v1, Ljava/io/RandomAccessFile;
@@ -242,7 +242,7 @@
     return-void
 
     .line 36
-    :pswitch_d
+    :pswitch_0
     check-cast v1, Llibs/lw0;
 
     invoke-virtual {v1, p1, p2, p3}, Llibs/lw0;->update([BII)V
@@ -250,7 +250,7 @@
     return-void
 
     .line 37
-    :pswitch_13
+    :pswitch_1
     check-cast v1, Llibs/xr2;
 
     invoke-virtual {v1, p1, p2, p3}, Llibs/gu0;->update([BII)V
@@ -258,7 +258,7 @@
     return-void
 
     .line 38
-    :pswitch_19
+    :pswitch_2
     check-cast v1, Llibs/fl;
 
     invoke-virtual {v1, p1, p2, p3}, Llibs/fl;->write([BII)V
@@ -267,10 +267,10 @@
 
     nop
 
-    :pswitch_data_20
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_19
-        :pswitch_13
-        :pswitch_d
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

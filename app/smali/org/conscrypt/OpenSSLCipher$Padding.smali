@@ -25,7 +25,7 @@
 
 # direct methods
 .method private static synthetic $values()[Lorg/conscrypt/OpenSSLCipher$Padding;
-    .registers 3
+    .locals 3
 
     .line 1
     const/4 v0, 0x3
@@ -72,7 +72,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Lorg/conscrypt/OpenSSLCipher$Padding;
@@ -151,7 +151,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -168,7 +168,7 @@
 .end method
 
 .method public static getNormalized(Ljava/lang/String;)Lorg/conscrypt/OpenSSLCipher$Padding;
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -195,7 +195,7 @@
 
     .line 12
     .line 13
-    if-ne p0, v0, :cond_10
+    if-ne p0, v0, :cond_0
 
     .line 14
     .line 15
@@ -203,12 +203,12 @@
 
     .line 16
     .line 17
-    :cond_10
+    :cond_0
     return-object p0
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lorg/conscrypt/OpenSSLCipher$Padding;
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Lorg/conscrypt/OpenSSLCipher$Padding;
@@ -231,7 +231,7 @@
 .end method
 
 .method public static values()[Lorg/conscrypt/OpenSSLCipher$Padding;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/OpenSSLCipher$Padding;->$VALUES:[Lorg/conscrypt/OpenSSLCipher$Padding;

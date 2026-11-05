@@ -81,7 +81,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     new-instance v0, Landroid/graphics/Paint;
 
@@ -193,7 +193,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 6
+    .locals 4
 
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
@@ -291,14 +291,14 @@
 .end method
 
 .method public static attachToActivity(Landroid/app/Activity;)V
-    .registers 5
+    .locals 4
 
-    if-nez p0, :cond_3
+    if-nez p0, :cond_0
 
     return-void
 
-    :cond_3
-    :try_start_3
+    :cond_0
+    :try_start_0
     sget v0, Llibs/wh2;->page_content:I
 
     invoke-virtual {p0, v0}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
@@ -307,11 +307,11 @@
 
     instance-of v1, v0, Landroid/widget/FrameLayout;
 
-    if-nez v1, :cond_e
+    if-nez v1, :cond_1
 
     return-void
 
-    :cond_e
+    :cond_1
     check-cast v0, Landroid/widget/FrameLayout;
 
     const v1, 0x7f0803f7
@@ -322,7 +322,7 @@
 
     instance-of v3, v2, Llibs/AnimatedPageDividersView;
 
-    if-eqz v3, :cond_24
+    if-eqz v3, :cond_2
 
     check-cast v2, Llibs/AnimatedPageDividersView;
 
@@ -332,12 +332,12 @@
 
     return-void
 
-    :cond_24
-    if-eqz v2, :cond_29
+    :cond_2
+    if-eqz v2, :cond_3
 
     invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    :cond_29
+    :cond_3
     new-instance v2, Llibs/AnimatedPageDividersView;
 
     invoke-direct {v2, p0}, Llibs/AnimatedPageDividersView;-><init>(Landroid/content/Context;)V
@@ -363,15 +363,15 @@
     invoke-virtual {v0, v2, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     invoke-virtual {v2}, Landroid/view/View;->postInvalidateOnAnimation()V
-    :try_end_49
-    .catchall {:try_start_3 .. :try_end_49} :catchall_49
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_49
+    :catchall_0
     return-void
 .end method
 
 .method private static blendRgb(IIF)I
-    .registers 7
+    .locals 4
 
     shr-int/lit8 v0, p0, 0x10
 
@@ -445,7 +445,7 @@
 .end method
 
 .method private static computeThemeTriplet(III[I)V
-    .registers 8
+    .locals 4
 
     const v0, 0xffffff
 
@@ -453,11 +453,11 @@
 
     const/4 v2, -0x1
 
-    if-ne v1, v0, :cond_22
+    if-ne v1, v0, :cond_1
 
     and-int v1, p2, v0
 
-    if-ne v1, v0, :cond_12
+    if-ne v1, v0, :cond_0
 
     const v0, -0x2b2b28
 
@@ -465,9 +465,9 @@
 
     move v3, v2
 
-    goto :goto_48
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     const v0, 0x3eb33333    # 0.35f
 
     invoke-static {p2, v2, v0}, Llibs/AnimatedPageDividersView;->blendRgb(IIF)I
@@ -482,14 +482,14 @@
 
     move-result v3
 
-    goto :goto_48
+    goto :goto_0
 
-    :cond_22
+    :cond_1
     invoke-static {p0}, Llibs/ModernUiTheme;->isLightColor(I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_39
+    if-eqz v0, :cond_2
 
     move v0, p1
 
@@ -507,9 +507,9 @@
 
     move-result v3
 
-    goto :goto_48
+    goto :goto_0
 
-    :cond_39
+    :cond_2
     move v0, p1
 
     const v1, 0x3f051eb8    # 0.52f
@@ -524,7 +524,7 @@
 
     move-result v3
 
-    :goto_48
+    :goto_0
     const/4 v2, 0x0
 
     aput v0, p3, v2
@@ -541,7 +541,7 @@
 .end method
 
 .method private drawCssLine(Landroid/graphics/Canvas;FFFFF)V
-    .registers 13
+    .locals 6
 
     iget-object v0, p0, Llibs/AnimatedPageDividersView;->shaderMatrix:Landroid/graphics/Matrix;
 
@@ -583,61 +583,61 @@
 .end method
 
 .method public static drawItemBoxBorder(Llibs/eu1;Landroid/graphics/Canvas;Landroid/graphics/Point;)V
-    .registers 13
+    .locals 10
 
-    if-eqz p0, :cond_c3
+    if-eqz p0, :cond_9
 
-    if-eqz p1, :cond_c3
+    if-eqz p1, :cond_9
 
-    if-nez p2, :cond_8
+    if-nez p2, :cond_0
 
-    goto/16 :goto_c3
+    goto/16 :goto_2
 
-    :cond_8
+    :cond_0
     invoke-static {}, Llibs/SmartFeaturesV126;->isAnimatedLinesEnabled()Z
 
     move-result v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_1
 
     return-void
 
-    :cond_f
-    :try_start_f
+    :cond_1
+    :try_start_0
     invoke-static {}, Llibs/AnimatedPageDividersView;->ensureStaticItemShaders()V
 
     sget-object v0, Llibs/AnimatedPageDividersView;->sBoxCoreShader:Landroid/graphics/LinearGradient;
 
-    if-eqz v0, :cond_c3
+    if-eqz v0, :cond_9
 
     sget-object v1, Llibs/AnimatedPageDividersView;->sBoxGlowShader:Landroid/graphics/LinearGradient;
 
-    if-nez v1, :cond_1c
+    if-nez v1, :cond_2
 
-    goto/16 :goto_c3
+    goto/16 :goto_2
 
-    :cond_1c
+    :cond_2
     iget-object v2, p0, Llibs/eu1;->Two:Llibs/yt3;
 
-    if-eqz v2, :cond_44
+    if-eqz v2, :cond_4
 
     invoke-virtual {v2}, Llibs/yt3;->a()Z
 
     move-result v2
 
-    if-eqz v2, :cond_44
+    if-eqz v2, :cond_4
 
     iget v2, p0, Llibs/eu1;->_g:I
 
     iget v3, p0, Llibs/eu1;->_h:I
 
-    if-lez v2, :cond_c3
+    if-lez v2, :cond_9
 
-    if-gtz v3, :cond_30
+    if-gtz v3, :cond_3
 
-    goto/16 :goto_c3
+    goto/16 :goto_2
 
-    :cond_30
+    :cond_3
     const/high16 v4, 0x3fc00000    # 1.5f
 
     invoke-static {v4}, Llibs/ModernUiTheme;->dpF(F)F
@@ -660,9 +660,9 @@
 
     move-result v2
 
-    goto :goto_76
+    goto :goto_0
 
-    :cond_44
+    :cond_4
     const/high16 v2, 0x41000000    # 8.0f
 
     invoke-static {v2}, Llibs/ModernUiTheme;->dp(F)I
@@ -671,15 +671,15 @@
 
     iget v3, p2, Landroid/graphics/Point;->x:I
 
-    if-le v3, v2, :cond_c3
+    if-le v3, v2, :cond_9
 
     iget v4, p2, Landroid/graphics/Point;->y:I
 
-    if-gt v4, v2, :cond_53
+    if-gt v4, v2, :cond_5
 
-    goto :goto_c3
+    goto :goto_2
 
-    :cond_53
+    :cond_5
     iget v2, p0, Llibs/eu1;->lI:I
 
     int-to-float v4, v2
@@ -704,23 +704,23 @@
 
     cmpg-float v8, v3, v8
 
-    if-gtz v8, :cond_6d
+    if-gtz v8, :cond_6
 
     const v3, 0x3e0f5c29    # 0.14f
 
-    :cond_6d
+    :cond_6
     const/high16 v8, 0x3f000000    # 0.5f
 
     cmpl-float v8, v3, v8
 
-    if-lez v8, :cond_75
+    if-lez v8, :cond_7
 
     const/high16 v3, 0x3f000000    # 0.5f
 
-    :cond_75
+    :cond_7
     mul-float/2addr v2, v3
 
-    :goto_76
+    :goto_0
     sub-float v3, v6, v4
 
     const/high16 v8, 0x42700000    # 60.0f
@@ -731,7 +731,7 @@
 
     cmpl-float v3, v3, v8
 
-    if-ltz v3, :cond_91
+    if-ltz v3, :cond_8
 
     const v3, 0x3fa66666    # 1.3f
 
@@ -745,9 +745,9 @@
 
     move-result v8
 
-    goto :goto_9f
+    goto :goto_1
 
-    :cond_91
+    :cond_8
     const v3, 0x3f866666    # 1.05f
 
     invoke-static {v3}, Llibs/ModernUiTheme;->dpF(F)F
@@ -760,7 +760,7 @@
 
     move-result v8
 
-    :goto_9f
+    :goto_1
     const/high16 p2, 0x3f000000    # 0.5f
 
     mul-float/2addr p2, v3
@@ -796,64 +796,41 @@
     invoke-virtual {p0, v3}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
     invoke-virtual {p1, v9, v2, v2, p0}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
-    :try_end_c3
-    .catchall {:try_start_f .. :try_end_c3} :catchall_c3
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_c3
-    :cond_c3
-    :goto_c3
+    :catchall_0
+    :cond_9
+    :goto_2
     return-void
 .end method
 
-.method public static drawItemHorizDivider(Landroid/view/View;Landroid/graphics/Canvas;III)V
-    .registers 12
+.method public static drawForcedHorizDivider(Landroid/view/View;Landroid/graphics/Canvas;III)V
+    .locals 7
 
-    if-eqz p0, :cond_4c
+    if-eqz p0, :cond_3
 
-    if-eqz p1, :cond_4c
+    if-eqz p1, :cond_3
 
-    if-gt p3, p2, :cond_7
+    if-gt p3, p2, :cond_0
 
-    goto :goto_4c
+    goto :goto_0
 
-    :cond_7
-    :try_start_7
-    invoke-static {}, Llibs/SmartFeaturesV126;->isAnimatedLinesEnabled()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1e
-
-    invoke-static {}, Llibs/va3;->View()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_4c
-
-    sget v1, Llibs/sa3;->a:I
-
-    sub-int v1, p4, v1
-
-    invoke-virtual {v0, p2, v1, p3, p4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
-
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
-
-    return-void
-
-    :cond_1e
+    :cond_0
+    :try_start_0
     invoke-static {}, Llibs/AnimatedPageDividersView;->ensureStaticItemShaders()V
 
     sget-object v0, Llibs/AnimatedPageDividersView;->sDivCoreShader:Landroid/graphics/LinearGradient;
 
     sget-object v1, Llibs/AnimatedPageDividersView;->sDivGlowShader:Landroid/graphics/LinearGradient;
 
-    if-eqz v0, :cond_4c
+    if-eqz v0, :cond_3
 
-    if-nez v1, :cond_2a
+    if-nez v1, :cond_2
 
-    goto :goto_4c
+    goto :goto_0
 
-    :cond_2a
+    :cond_2
     invoke-static {p0, v0, v1}, Llibs/AnimatedPageDividersView;->updateItemShaderMatrix(Landroid/view/View;Landroid/graphics/Shader;Landroid/graphics/Shader;)V
 
     int-to-float v1, p2
@@ -887,41 +864,133 @@
     sget-object v5, Llibs/AnimatedPageDividersView;->sDivCorePaint:Landroid/graphics/Paint;
 
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
-    :try_end_4b
-    .catchall {:try_start_7 .. :try_end_4b} :catchall_4c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
-    :catchall_4c
-    :cond_4c
-    :goto_4c
+    :catchall_0
+    :cond_3
+    :goto_0
     return-void
 .end method
+.method public static drawItemHorizDivider(Landroid/view/View;Landroid/graphics/Canvas;III)V
+    .locals 7
 
-.method public static drawItemVertDivider(Landroid/view/View;Landroid/graphics/Canvas;II)V
-    .registers 11
+    if-eqz p0, :cond_3
 
-    if-eqz p0, :cond_4d
+    if-eqz p1, :cond_3
 
-    if-eqz p1, :cond_4d
+    if-gt p3, p2, :cond_0
 
-    if-gtz p3, :cond_7
+    goto :goto_0
 
-    goto :goto_4d
-
-    :cond_7
-    :try_start_7
+    :cond_0
+    :try_start_0
     invoke-static {}, Llibs/SmartFeaturesV126;->isAnimatedLinesEnabled()Z
 
     move-result v0
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_1
 
     invoke-static {}, Llibs/va3;->View()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    if-eqz v0, :cond_4d
+    if-eqz v0, :cond_3
+
+    sget v1, Llibs/sa3;->a:I
+
+    sub-int v1, p4, v1
+
+    invoke-virtual {v0, p2, v1, p3, p4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+
+    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+
+    return-void
+
+    :cond_1
+    invoke-static {}, Llibs/AnimatedPageDividersView;->ensureStaticItemShaders()V
+
+    sget-object v0, Llibs/AnimatedPageDividersView;->sDivCoreShader:Landroid/graphics/LinearGradient;
+
+    sget-object v1, Llibs/AnimatedPageDividersView;->sDivGlowShader:Landroid/graphics/LinearGradient;
+
+    if-eqz v0, :cond_3
+
+    if-nez v1, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    invoke-static {p0, v0, v1}, Llibs/AnimatedPageDividersView;->updateItemShaderMatrix(Landroid/view/View;Landroid/graphics/Shader;Landroid/graphics/Shader;)V
+
+    int-to-float v1, p2
+
+    int-to-float v3, p3
+
+    int-to-float v4, p4
+
+    const/high16 p0, 0x40000000    # 2.0f
+
+    invoke-static {p0}, Llibs/ModernUiTheme;->dpF(F)F
+
+    move-result p0
+
+    sub-float v2, v4, p0
+
+    move-object v0, p1
+
+    sget-object v5, Llibs/AnimatedPageDividersView;->sDivGlowPaint:Landroid/graphics/Paint;
+
+    invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
+
+    const/high16 p0, 0x3f800000    # 1.0f
+
+    invoke-static {p0}, Llibs/ModernUiTheme;->dpF(F)F
+
+    move-result p0
+
+    sub-float v2, v4, p0
+
+    sget-object v5, Llibs/AnimatedPageDividersView;->sDivCorePaint:Landroid/graphics/Paint;
+
+    invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    return-void
+
+    :catchall_0
+    :cond_3
+    :goto_0
+    return-void
+.end method
+
+.method public static drawItemVertDivider(Landroid/view/View;Landroid/graphics/Canvas;II)V
+    .locals 7
+
+    if-eqz p0, :cond_3
+
+    if-eqz p1, :cond_3
+
+    if-gtz p3, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    :try_start_0
+    invoke-static {}, Llibs/SmartFeaturesV126;->isAnimatedLinesEnabled()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    invoke-static {}, Llibs/va3;->View()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_3
 
     sget v1, Llibs/sa3;->a:I
 
@@ -935,20 +1004,20 @@
 
     return-void
 
-    :cond_1f
+    :cond_1
     invoke-static {}, Llibs/AnimatedPageDividersView;->ensureStaticItemShaders()V
 
     sget-object v0, Llibs/AnimatedPageDividersView;->sDivCoreShader:Landroid/graphics/LinearGradient;
 
     sget-object v1, Llibs/AnimatedPageDividersView;->sDivGlowShader:Landroid/graphics/LinearGradient;
 
-    if-eqz v0, :cond_4d
+    if-eqz v0, :cond_3
 
-    if-nez v1, :cond_2b
+    if-nez v1, :cond_2
 
-    goto :goto_4d
+    goto :goto_0
 
-    :cond_2b
+    :cond_2
     invoke-static {p0, v0, v1}, Llibs/AnimatedPageDividersView;->updateItemShaderMatrix(Landroid/view/View;Landroid/graphics/Shader;Landroid/graphics/Shader;)V
 
     int-to-float v3, p2
@@ -982,19 +1051,19 @@
     sget-object v5, Llibs/AnimatedPageDividersView;->sDivCorePaint:Landroid/graphics/Paint;
 
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
-    :try_end_4c
-    .catchall {:try_start_7 .. :try_end_4c} :catchall_4d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
-    :catchall_4d
-    :cond_4d
-    :goto_4d
+    :catchall_0
+    :cond_3
+    :goto_0
     return-void
 .end method
 
 .method private ensureShaders(I)V
-    .registers 16
+    .locals 14
 
     iget v0, p0, Llibs/AnimatedPageDividersView;->frameTick:I
 
@@ -1004,19 +1073,19 @@
 
     iget v1, p0, Llibs/AnimatedPageDividersView;->cachedWidth:I
 
-    if-ne p1, v1, :cond_13
+    if-ne p1, v1, :cond_0
 
     iget-object v1, p0, Llibs/AnimatedPageDividersView;->coreShader:Landroid/graphics/LinearGradient;
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_0
 
     and-int/lit8 v0, v0, 0x17
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     return-void
 
-    :cond_13
+    :cond_0
     const-string v0, "TINT_POPUP_BG"
 
     const-string v1, "#FF121214"
@@ -1043,27 +1112,27 @@
 
     iget v0, p0, Llibs/AnimatedPageDividersView;->cachedWidth:I
 
-    if-ne p1, v0, :cond_40
+    if-ne p1, v0, :cond_1
 
     iget v0, p0, Llibs/AnimatedPageDividersView;->cachedBg:I
 
-    if-ne v8, v0, :cond_40
+    if-ne v8, v0, :cond_1
 
     iget v0, p0, Llibs/AnimatedPageDividersView;->cachedAccent:I
 
-    if-ne v9, v0, :cond_40
+    if-ne v9, v0, :cond_1
 
     iget v0, p0, Llibs/AnimatedPageDividersView;->cachedCtrl:I
 
-    if-ne v10, v0, :cond_40
+    if-ne v10, v0, :cond_1
 
     iget-object v0, p0, Llibs/AnimatedPageDividersView;->coreShader:Landroid/graphics/LinearGradient;
 
-    if-eqz v0, :cond_40
+    if-eqz v0, :cond_1
 
     return-void
 
-    :cond_40
+    :cond_1
     iput p1, p0, Llibs/AnimatedPageDividersView;->cachedWidth:I
 
     iput v8, p0, Llibs/AnimatedPageDividersView;->cachedBg:I
@@ -1082,11 +1151,11 @@
 
     cmpg-float v1, v3, v0
 
-    if-gez v1, :cond_55
+    if-gez v1, :cond_2
 
     move v3, v0
 
-    :cond_55
+    :cond_2
     iput v3, p0, Llibs/AnimatedPageDividersView;->periodPx:F
 
     const/4 v0, 0x3
@@ -1223,7 +1292,7 @@
 .end method
 
 .method private static ensureStaticItemShaders()V
-    .registers 16
+    .locals 16
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -1231,7 +1300,7 @@
 
     sget-object v2, Llibs/AnimatedPageDividersView;->sBoxCoreShader:Landroid/graphics/LinearGradient;
 
-    if-eqz v2, :cond_13
+    if-eqz v2, :cond_0
 
     sget-wide v2, Llibs/AnimatedPageDividersView;->sLastThemeCheckMs:J
 
@@ -1241,11 +1310,11 @@
 
     cmp-long v2, v2, v4
 
-    if-gez v2, :cond_13
+    if-gez v2, :cond_0
 
     return-void
 
-    :cond_13
+    :cond_0
     sput-wide v0, Llibs/AnimatedPageDividersView;->sLastThemeCheckMs:J
 
     const-string v0, "TINT_POPUP_BG"
@@ -1274,23 +1343,23 @@
 
     sget-object v0, Llibs/AnimatedPageDividersView;->sBoxCoreShader:Landroid/graphics/LinearGradient;
 
-    if-eqz v0, :cond_3e
+    if-eqz v0, :cond_1
 
     sget v0, Llibs/AnimatedPageDividersView;->sCachedBg:I
 
-    if-ne v8, v0, :cond_3e
+    if-ne v8, v0, :cond_1
 
     sget v0, Llibs/AnimatedPageDividersView;->sCachedTab:I
 
-    if-ne v9, v0, :cond_3e
+    if-ne v9, v0, :cond_1
 
     sget v0, Llibs/AnimatedPageDividersView;->sCachedCtrl:I
 
-    if-ne v10, v0, :cond_3e
+    if-ne v10, v0, :cond_1
 
     return-void
 
-    :cond_3e
+    :cond_1
     sput v8, Llibs/AnimatedPageDividersView;->sCachedBg:I
 
     sput v9, Llibs/AnimatedPageDividersView;->sCachedTab:I
@@ -1559,25 +1628,25 @@
 .end method
 
 .method private static invalidateTreeItems(Landroid/view/View;)V
-    .registers 4
+    .locals 3
 
-    if-nez p0, :cond_3
+    if-nez p0, :cond_0
 
     return-void
 
-    :cond_3
+    :cond_0
     instance-of v0, p0, Llibs/eu1;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_1
 
     invoke-virtual {p0}, Landroid/view/View;->postInvalidateOnAnimation()V
 
     return-void
 
-    :cond_b
+    :cond_1
     instance-of v0, p0, Landroid/view/ViewGroup;
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_2
 
     check-cast p0, Landroid/view/ViewGroup;
 
@@ -1587,8 +1656,8 @@
 
     const/4 v1, 0x0
 
-    :goto_16
-    if-ge v1, v0, :cond_22
+    :goto_0
+    if-ge v1, v0, :cond_2
 
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
@@ -1598,49 +1667,49 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_22
+    :cond_2
     return-void
 .end method
 
 .method public static scheduleItemNextFrame(Landroid/view/View;)V
-    .registers 2
+    .locals 1
 
-    if-nez p0, :cond_3
+    if-nez p0, :cond_0
 
     return-void
 
-    :cond_3
+    :cond_0
     invoke-static {}, Llibs/SmartFeaturesV126;->isAnimatedLinesEnabled()Z
 
     move-result v0
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     return-void
 
-    :cond_a
+    :cond_1
     invoke-virtual {p0}, Landroid/view/View;->getWindowVisibility()I
 
     move-result v0
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_2
 
     invoke-virtual {p0}, Landroid/view/View;->isShown()Z
 
     move-result v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_2
 
     invoke-virtual {p0}, Landroid/view/View;->postInvalidateOnAnimation()V
 
-    :cond_19
+    :cond_2
     return-void
 .end method
 
 .method private static updateItemShaderMatrix(Landroid/view/View;Landroid/graphics/Shader;Landroid/graphics/Shader;)V
-    .registers 7
+    .locals 4
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -1694,9 +1763,9 @@
 
 # virtual methods
 .method public bindBars(Landroid/app/Activity;Landroid/view/ViewGroup;)V
-    .registers 4
+    .locals 1
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     sget v0, Llibs/wh2;->top_bar:I
 
@@ -1706,8 +1775,8 @@
 
     iput-object v0, p0, Llibs/AnimatedPageDividersView;->topBarView:Landroid/view/View;
 
-    :cond_a
-    if-eqz p2, :cond_1c
+    :cond_0
+    if-eqz p2, :cond_1
 
     sget v0, Llibs/wh2;->tab_bar:I
 
@@ -1725,12 +1794,12 @@
 
     iput-object v0, p0, Llibs/AnimatedPageDividersView;->bottomBarView:Landroid/view/View;
 
-    :cond_1c
+    :cond_1
     return-void
 .end method
 
 .method public invalidateThemeCache()V
-    .registers 3
+    .locals 2
 
     const/4 v0, -0x1
 
@@ -1752,18 +1821,18 @@
 
     instance-of v1, v0, Landroid/view/View;
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_0
 
     check-cast v0, Landroid/view/View;
 
     invoke-static {v0}, Llibs/AnimatedPageDividersView;->invalidateTreeItems(Landroid/view/View;)V
 
-    :cond_1a
+    :cond_0
     return-void
 .end method
 
 .method protected onAttachedToWindow()V
-    .registers 1
+    .locals 0
 
     invoke-super {p0}, Landroid/view/View;->onAttachedToWindow()V
 
@@ -1773,17 +1842,17 @@
 .end method
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
-    .registers 16
+    .locals 14
 
-    invoke-static {}, Llibs/SmartFeaturesV126;->isAnimatedLinesEnabled()Z
+    invoke-static {}, Llibs/SmartFeaturesV126;->isAnimBarsEnabled()Z
 
     move-result v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-void
 
-    :cond_7
+    :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v7
@@ -1792,26 +1861,26 @@
 
     move-result v8
 
-    if-lez v7, :cond_16f
+    if-lez v7, :cond_b
 
-    if-gtz v8, :cond_15
+    if-gtz v8, :cond_1
 
-    goto/16 :goto_16f
+    goto/16 :goto_1
 
-    :cond_15
+    :cond_1
     invoke-direct {p0, v7}, Llibs/AnimatedPageDividersView;->ensureShaders(I)V
 
     iget-object v0, p0, Llibs/AnimatedPageDividersView;->coreShader:Landroid/graphics/LinearGradient;
 
-    if-eqz v0, :cond_16f
+    if-eqz v0, :cond_b
 
     iget-object v0, p0, Llibs/AnimatedPageDividersView;->glowShader:Landroid/graphics/LinearGradient;
 
-    if-nez v0, :cond_22
+    if-nez v0, :cond_2
 
-    goto/16 :goto_16f
+    goto/16 :goto_1
 
-    :cond_22
+    :cond_2
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
@@ -1832,20 +1901,20 @@
 
     iget-object v0, p0, Llibs/AnimatedPageDividersView;->tabBarView:Landroid/view/View;
 
-    if-eqz v0, :cond_39
+    if-eqz v0, :cond_3
 
     iget-object v0, p0, Llibs/AnimatedPageDividersView;->bottomBarView:Landroid/view/View;
 
-    if-nez v0, :cond_53
+    if-nez v0, :cond_4
 
-    :cond_39
+    :cond_3
     invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     instance-of v1, v0, Landroid/view/ViewGroup;
 
-    if-eqz v1, :cond_53
+    if-eqz v1, :cond_4
 
     check-cast v0, Landroid/view/ViewGroup;
 
@@ -1865,7 +1934,7 @@
 
     iput-object v0, p0, Llibs/AnimatedPageDividersView;->bottomBarView:Landroid/view/View;
 
-    :cond_53
+    :cond_4
     const v0, 0x3f19999a    # 0.6f
 
     invoke-static {v0}, Llibs/ModernUiTheme;->dpF(F)F
@@ -1874,23 +1943,23 @@
 
     iget-object v12, p0, Llibs/AnimatedPageDividersView;->tabBarView:Landroid/view/View;
 
-    if-eqz v12, :cond_f5
+    if-eqz v12, :cond_7
 
     invoke-virtual {v12}, Landroid/view/View;->getVisibility()I
 
     move-result v0
 
-    if-nez v0, :cond_f5
+    if-nez v0, :cond_7
 
     invoke-virtual {v12}, Landroid/view/View;->getHeight()I
 
     move-result v13
 
-    if-lez v13, :cond_f5
+    if-lez v13, :cond_7
 
     instance-of v0, v12, Lcom/mixplorer/widgets/MiTabBar;
 
-    if-eqz v0, :cond_b6
+    if-eqz v0, :cond_5
 
     move-object v0, v12
 
@@ -1898,13 +1967,13 @@
 
     iget-object v0, v0, Lcom/mixplorer/widgets/MiTabBar;->Mu:Landroid/widget/HorizontalScrollView;
 
-    if-eqz v0, :cond_b6
+    if-eqz v0, :cond_5
 
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
     move-result v1
 
-    if-nez v1, :cond_b6
+    if-nez v1, :cond_5
 
     invoke-virtual {v0}, Landroid/view/View;->getBottom()I
 
@@ -1916,11 +1985,11 @@
 
     move-result v1
 
-    if-le v0, v1, :cond_b6
+    if-le v0, v1, :cond_5
 
     sub-int v1, v13, v1
 
-    if-ge v0, v1, :cond_b6
+    if-ge v0, v1, :cond_5
 
     invoke-virtual {v12}, Landroid/view/View;->getTop()I
 
@@ -1940,7 +2009,7 @@
 
     cmpl-float v0, v3, v0
 
-    if-lez v0, :cond_b6
+    if-lez v0, :cond_5
 
     const v0, 0x3f266666    # 0.65f
 
@@ -1966,14 +2035,14 @@
 
     invoke-direct/range {v0 .. v6}, Llibs/AnimatedPageDividersView;->drawCssLine(Landroid/graphics/Canvas;FFFFF)V
 
-    :cond_b6
+    :cond_5
     invoke-virtual {v12}, Landroid/view/View;->getTop()I
 
     move-result v0
 
     div-int/lit8 v1, v8, 0x2
 
-    if-ge v0, v1, :cond_cb
+    if-ge v0, v1, :cond_6
 
     invoke-virtual {v12}, Landroid/view/View;->getBottom()I
 
@@ -1989,9 +2058,9 @@
 
     sub-float v3, v0, v11
 
-    goto :goto_d3
+    goto :goto_0
 
-    :cond_cb
+    :cond_6
     int-to-float v0, v0
 
     invoke-virtual {v12}, Landroid/view/View;->getTranslationY()F
@@ -2002,12 +2071,12 @@
 
     add-float v3, v0, v11
 
-    :goto_d3
+    :goto_0
     const/high16 v0, 0x3f800000    # 1.0f
 
     cmpl-float v0, v3, v0
 
-    if-lez v0, :cond_f5
+    if-lez v0, :cond_7
 
     add-int/lit8 v0, v8, -0x1
 
@@ -2015,7 +2084,7 @@
 
     cmpg-float v0, v3, v0
 
-    if-gez v0, :cond_f5
+    if-gez v0, :cond_7
 
     const v0, 0x3f4ccccd    # 0.8f
 
@@ -2037,24 +2106,24 @@
 
     invoke-direct/range {v0 .. v6}, Llibs/AnimatedPageDividersView;->drawCssLine(Landroid/graphics/Canvas;FFFFF)V
 
-    :cond_f5
+    :cond_7
     iget-object v0, p0, Llibs/AnimatedPageDividersView;->topBarView:Landroid/view/View;
 
-    if-eqz v0, :cond_105
+    if-eqz v0, :cond_8
 
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
     move-result v1
 
-    if-nez v1, :cond_11f
+    if-nez v1, :cond_9
 
     invoke-virtual {v0}, Landroid/view/View;->getHeight()I
 
     move-result v0
 
-    if-lez v0, :cond_11f
+    if-lez v0, :cond_9
 
-    :cond_105
+    :cond_8
     const v0, 0x3f266666    # 0.65f
 
     invoke-static {v0}, Llibs/ModernUiTheme;->dpF(F)F
@@ -2081,22 +2150,22 @@
 
     invoke-direct/range {v0 .. v6}, Llibs/AnimatedPageDividersView;->drawCssLine(Landroid/graphics/Canvas;FFFFF)V
 
-    :cond_11f
+    :cond_9
     iget-object v0, p0, Llibs/AnimatedPageDividersView;->bottomBarView:Landroid/view/View;
 
-    if-eqz v0, :cond_160
+    if-eqz v0, :cond_a
 
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
     move-result v1
 
-    if-nez v1, :cond_160
+    if-nez v1, :cond_a
 
     invoke-virtual {v0}, Landroid/view/View;->getHeight()I
 
     move-result v1
 
-    if-lez v1, :cond_160
+    if-lez v1, :cond_a
 
     invoke-virtual {v0}, Landroid/view/View;->getTop()I
 
@@ -2116,7 +2185,7 @@
 
     cmpl-float v0, v3, v0
 
-    if-lez v0, :cond_160
+    if-lez v0, :cond_a
 
     add-int/lit8 v8, v8, -0x1
 
@@ -2124,7 +2193,7 @@
 
     cmpg-float v0, v3, v0
 
-    if-gez v0, :cond_160
+    if-gez v0, :cond_a
 
     const v0, 0x3f333333    # 0.7f
 
@@ -2150,32 +2219,32 @@
 
     invoke-direct/range {v0 .. v6}, Llibs/AnimatedPageDividersView;->drawCssLine(Landroid/graphics/Canvas;FFFFF)V
 
-    :cond_160
+    :cond_a
     invoke-virtual {p0}, Landroid/view/View;->getWindowVisibility()I
 
     move-result v0
 
-    if-nez v0, :cond_16f
+    if-nez v0, :cond_b
 
     invoke-virtual {p0}, Landroid/view/View;->isShown()Z
 
     move-result v0
 
-    if-eqz v0, :cond_16f
+    if-eqz v0, :cond_b
 
     invoke-virtual {p0}, Landroid/view/View;->postInvalidateOnAnimation()V
 
-    :cond_16f
-    :goto_16f
+    :cond_b
+    :goto_1
     return-void
 .end method
 
 .method protected onWindowVisibilityChanged(I)V
-    .registers 3
+    .locals 1
 
     invoke-super {p0, p1}, Landroid/view/View;->onWindowVisibilityChanged(I)V
 
-    if-nez p1, :cond_15
+    if-nez p1, :cond_0
 
     invoke-virtual {p0}, Landroid/view/View;->postInvalidateOnAnimation()V
 
@@ -2185,12 +2254,12 @@
 
     instance-of p1, v0, Landroid/view/View;
 
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_0
 
     check-cast v0, Landroid/view/View;
 
     invoke-static {v0}, Llibs/AnimatedPageDividersView;->invalidateTreeItems(Landroid/view/View;)V
 
-    :cond_15
+    :cond_0
     return-void
 .end method

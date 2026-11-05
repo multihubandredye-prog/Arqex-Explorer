@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/hl;)V
-    .registers 4
+    .locals 2
 
     .line 1
     const-wide/16 v0, 0x0
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final d()I
-    .registers 3
+    .locals 2
 
     .line 1
     const/16 v0, 0xd
@@ -65,7 +65,7 @@
 .end method
 
 .method public final e()J
-    .registers 5
+    .locals 4
 
     .line 1
     invoke-virtual {p0}, Llibs/fh;->j()J
@@ -124,7 +124,7 @@
 .end method
 
 .method public final f(I)J
-    .registers 8
+    .locals 6
 
     .line 1
     const/16 v0, 0xb
@@ -187,7 +187,7 @@
 .end method
 
 .method public g()Llibs/ko0;
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/ko0;->Nu:Llibs/jo0;
@@ -198,7 +198,7 @@
 .end method
 
 .method public final h()J
-    .registers 10
+    .locals 9
 
     .line 1
     const/16 v0, 0xb
@@ -287,7 +287,7 @@
 .end method
 
 .method public i()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x11
@@ -306,7 +306,7 @@
 .end method
 
 .method public j()J
-    .registers 3
+    .locals 2
 
     .line 1
     const/16 v0, 0x13
@@ -321,7 +321,7 @@
     move-result v1
 
     .line 7
-    if-nez v1, :cond_f
+    if-nez v1, :cond_0
 
     .line 8
     .line 9
@@ -340,7 +340,7 @@
     return-wide v0
 
     .line 16
-    :cond_f
+    :cond_0
     invoke-virtual {p0, v0}, Llibs/m43;->a(I)I
 
     .line 17
@@ -356,7 +356,7 @@
 .end method
 
 .method public k()J
-    .registers 3
+    .locals 2
 
     .line 1
     const/16 v0, 0x16
@@ -378,7 +378,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -410,8 +410,8 @@
     const/4 v3, 0x0
 
     .line 16
-    :goto_f
-    if-ge v3, v2, :cond_21
+    :goto_0
+    if-ge v3, v2, :cond_1
 
     .line 17
     .line 18
@@ -427,14 +427,14 @@
     move-result v4
 
     .line 24
-    if-nez v4, :cond_1a
+    if-nez v4, :cond_0
 
     .line 25
     .line 26
-    goto :goto_21
+    goto :goto_1
 
     .line 27
-    :cond_1a
+    :cond_0
     int-to-char v4, v4
 
     .line 28
@@ -447,11 +447,11 @@
 
     .line 32
     .line 33
-    goto :goto_f
+    goto :goto_0
 
     .line 34
-    :cond_21
-    :goto_21
+    :cond_1
+    :goto_1
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 35

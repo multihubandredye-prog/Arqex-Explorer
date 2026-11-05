@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic a(Landroid/view/View;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->getImportantForAccessibility()I
@@ -20,7 +20,7 @@
 .end method
 
 .method public static bridge synthetic b(Landroid/appwidget/AppWidgetManager;I)Landroid/os/Bundle;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/appwidget/AppWidgetManager;->getAppWidgetOptions(I)Landroid/os/Bundle;
@@ -35,7 +35,7 @@
 .end method
 
 .method public static bridge synthetic c(Landroid/view/View;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -50,7 +50,7 @@
 .end method
 
 .method public static bridge synthetic d(Landroid/view/View;I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/View;->setImportantForAccessibility(I)V
@@ -62,7 +62,7 @@
 .end method
 
 .method public static bridge synthetic e(Landroid/view/View;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->hasTransientState()Z
@@ -77,7 +77,7 @@
 .end method
 
 .method public static bridge synthetic f(Landroid/view/View;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->getWindowSystemUiVisibility()I
@@ -92,7 +92,7 @@
 .end method
 
 .method public static bridge synthetic g(Landroid/view/View;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->postInvalidateOnAnimation()V

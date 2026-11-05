@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/kk1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/lf;->a:Llibs/kk1;
@@ -27,34 +27,34 @@
 
 # virtual methods
 .method public final onAuthenticationError(ILjava/lang/CharSequence;)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-eq p1, v0, :cond_18
+    if-eq p1, v0, :cond_1
 
     .line 3
     .line 4
     const/4 v0, 0x3
 
     .line 5
-    if-eq p1, v0, :cond_18
+    if-eq p1, v0, :cond_1
 
     .line 6
     .line 7
     const/4 v0, 0x5
 
     .line 8
-    if-eq p1, v0, :cond_17
+    if-eq p1, v0, :cond_0
 
     .line 9
     .line 10
     const/4 v0, 0x7
 
     .line 11
-    if-eq p1, v0, :cond_18
+    if-eq p1, v0, :cond_1
 
     .line 12
     .line 13
@@ -62,7 +62,7 @@
 
     .line 14
     .line 15
-    if-eq p1, v0, :cond_18
+    if-eq p1, v0, :cond_1
 
     .line 16
     .line 17
@@ -70,7 +70,7 @@
 
     .line 18
     .line 19
-    if-eq p1, v0, :cond_17
+    if-eq p1, v0, :cond_0
 
     .line 20
     .line 21
@@ -78,15 +78,15 @@
 
     .line 22
     .line 23
-    goto :goto_18
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_0
     return-void
 
     .line 25
-    :cond_18
-    :goto_18
+    :cond_1
+    :goto_0
     invoke-static {p1, p2}, Llibs/kk1;->u(ILjava/lang/CharSequence;)V
 
     .line 26
@@ -96,7 +96,7 @@
 .end method
 
 .method public final onAuthenticationFailed()V
-    .registers 3
+    .locals 2
 
     .line 1
     const-string v0, "Not recognized"
@@ -115,7 +115,7 @@
 .end method
 
 .method public final onAuthenticationHelp(ILjava/lang/CharSequence;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-static {p1, p2}, Llibs/kk1;->u(ILjava/lang/CharSequence;)V
@@ -127,7 +127,7 @@
 .end method
 
 .method public final onAuthenticationSucceeded(Landroid/hardware/biometrics/BiometricPrompt$AuthenticationResult;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object p1, p0, Llibs/lf;->a:Llibs/kk1;

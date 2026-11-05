@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Llibs/uc;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final e()Llibs/_f;
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/_g;->g:Llibs/_f;
@@ -50,7 +50,7 @@
 .end method
 
 .method public final f()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     sget-object v0, Llibs/_g;->g:Llibs/_f;
@@ -77,7 +77,7 @@
 .end method
 
 .method public final h(Ljava/io/InputStream;J)Ljava/util/Map;
-    .registers 11
+    .locals 7
 
     .line 1
     :try_start_0
@@ -162,15 +162,15 @@
 
     .line 39
     check-cast p1, Ljava/util/Map;
-    :try_end_28
-    .catchall {:try_start_0 .. :try_end_28} :catchall_29
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 40
     .line 41
     return-object p1
 
     .line 42
-    :catchall_29
+    :catchall_0
     new-instance p1, Ljava/util/HashMap;
 
     .line 43
@@ -184,7 +184,7 @@
 .end method
 
 .method public final i(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x1

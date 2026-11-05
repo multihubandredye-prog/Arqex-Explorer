@@ -13,7 +13,7 @@
 
 # direct methods
 .method private constructor <init>(J)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/security/cert/X509CRL;-><init>()V
@@ -77,7 +77,7 @@
 .end method
 
 .method public static fromPkcs7DerInputStream(Ljava/io/InputStream;)Ljava/util/List;
-    .registers 9
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -102,7 +102,7 @@
     .line 5
     .line 6
     .line 7
-    :try_start_6
+    :try_start_0
     invoke-virtual {v0}, Lorg/conscrypt/OpenSSLBIOInputStream;->getBioContext()J
 
     .line 8
@@ -120,9 +120,9 @@
     .line 14
     .line 15
     move-result-object p0
-    :try_end_f
-    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_f} :catch_33
-    .catchall {:try_start_6 .. :try_end_f} :catchall_31
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 16
     invoke-virtual {v0}, Lorg/conscrypt/OpenSSLBIOInputStream;->release()V
@@ -148,8 +148,8 @@
     const/4 v2, 0x0
 
     .line 27
-    :goto_1a
-    if-ge v2, v1, :cond_30
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     .line 28
     .line 29
@@ -165,14 +165,14 @@
 
     .line 34
     .line 35
-    if-nez v7, :cond_25
+    if-nez v7, :cond_0
 
     .line 36
     .line 37
-    goto :goto_2d
+    goto :goto_1
 
     .line 38
-    :cond_25
+    :cond_0
     new-instance v5, Lorg/conscrypt/OpenSSLX509CRL;
 
     .line 39
@@ -187,30 +187,30 @@
     .line 44
     .line 45
     .line 46
-    :goto_2d
+    :goto_1
     add-int/lit8 v2, v2, 0x1
 
     .line 47
     .line 48
-    goto :goto_1a
+    goto :goto_0
 
     .line 49
-    :cond_30
+    :cond_1
     return-object v0
 
     .line 50
-    :catchall_31
+    :catchall_0
     move-exception p0
 
     .line 51
-    goto :goto_3a
+    goto :goto_2
 
     .line 52
-    :catch_33
+    :catch_0
     move-exception p0
 
     .line 53
-    :try_start_34
+    :try_start_1
     new-instance v1, Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException;
 
     .line 54
@@ -221,29 +221,29 @@
     .line 57
     .line 58
     throw v1
-    :try_end_3a
-    .catchall {:try_start_34 .. :try_end_3a} :catchall_31
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 59
-    :goto_3a
+    :goto_2
     invoke-virtual {v0}, Lorg/conscrypt/OpenSSLBIOInputStream;->release()V
 
     .line 60
     .line 61
     .line 62
-    goto :goto_3f
+    goto :goto_4
 
     .line 63
-    :goto_3e
+    :goto_3
     throw p0
 
     .line 64
-    :goto_3f
-    goto :goto_3e
+    :goto_4
+    goto :goto_3
 .end method
 
 .method public static fromPkcs7PemInputStream(Ljava/io/InputStream;)Ljava/util/List;
-    .registers 9
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -268,7 +268,7 @@
     .line 5
     .line 6
     .line 7
-    :try_start_6
+    :try_start_0
     invoke-virtual {v0}, Lorg/conscrypt/OpenSSLBIOInputStream;->getBioContext()J
 
     .line 8
@@ -286,9 +286,9 @@
     .line 14
     .line 15
     move-result-object p0
-    :try_end_f
-    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_f} :catch_33
-    .catchall {:try_start_6 .. :try_end_f} :catchall_31
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 16
     invoke-virtual {v0}, Lorg/conscrypt/OpenSSLBIOInputStream;->release()V
@@ -314,8 +314,8 @@
     const/4 v2, 0x0
 
     .line 27
-    :goto_1a
-    if-ge v2, v1, :cond_30
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     .line 28
     .line 29
@@ -331,14 +331,14 @@
 
     .line 34
     .line 35
-    if-nez v7, :cond_25
+    if-nez v7, :cond_0
 
     .line 36
     .line 37
-    goto :goto_2d
+    goto :goto_1
 
     .line 38
-    :cond_25
+    :cond_0
     new-instance v5, Lorg/conscrypt/OpenSSLX509CRL;
 
     .line 39
@@ -353,30 +353,30 @@
     .line 44
     .line 45
     .line 46
-    :goto_2d
+    :goto_1
     add-int/lit8 v2, v2, 0x1
 
     .line 47
     .line 48
-    goto :goto_1a
+    goto :goto_0
 
     .line 49
-    :cond_30
+    :cond_1
     return-object v0
 
     .line 50
-    :catchall_31
+    :catchall_0
     move-exception p0
 
     .line 51
-    goto :goto_3a
+    goto :goto_2
 
     .line 52
-    :catch_33
+    :catch_0
     move-exception p0
 
     .line 53
-    :try_start_34
+    :try_start_1
     new-instance v1, Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException;
 
     .line 54
@@ -387,29 +387,29 @@
     .line 57
     .line 58
     throw v1
-    :try_end_3a
-    .catchall {:try_start_34 .. :try_end_3a} :catchall_31
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 59
-    :goto_3a
+    :goto_2
     invoke-virtual {v0}, Lorg/conscrypt/OpenSSLBIOInputStream;->release()V
 
     .line 60
     .line 61
     .line 62
-    goto :goto_3f
+    goto :goto_4
 
     .line 63
-    :goto_3e
+    :goto_3
     throw p0
 
     .line 64
-    :goto_3f
-    goto :goto_3e
+    :goto_4
+    goto :goto_3
 .end method
 
 .method public static fromX509DerInputStream(Ljava/io/InputStream;)Lorg/conscrypt/OpenSSLX509CRL;
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Lorg/conscrypt/OpenSSLBIOInputStream;
@@ -424,7 +424,7 @@
     .line 5
     .line 6
     .line 7
-    :try_start_6
+    :try_start_0
     invoke-virtual {v0}, Lorg/conscrypt/OpenSSLBIOInputStream;->getBioContext()J
 
     .line 8
@@ -439,9 +439,9 @@
     .line 13
     .line 14
     move-result-wide v1
-    :try_end_e
-    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_e} :catch_24
-    .catchall {:try_start_6 .. :try_end_e} :catchall_22
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 15
     const-wide/16 v3, 0x0
@@ -452,7 +452,7 @@
 
     .line 18
     .line 19
-    if-nez p0, :cond_19
+    if-nez p0, :cond_0
 
     .line 20
     .line 21
@@ -467,16 +467,16 @@
     return-object p0
 
     .line 26
-    :cond_19
-    :try_start_19
+    :cond_0
+    :try_start_1
     new-instance p0, Lorg/conscrypt/OpenSSLX509CRL;
 
     .line 27
     .line 28
     invoke-direct {p0, v1, v2}, Lorg/conscrypt/OpenSSLX509CRL;-><init>(J)V
-    :try_end_1e
-    .catch Ljava/lang/Exception; {:try_start_19 .. :try_end_1e} :catch_24
-    .catchall {:try_start_19 .. :try_end_1e} :catchall_22
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 29
     .line 30
@@ -489,18 +489,18 @@
     return-object p0
 
     .line 35
-    :catchall_22
+    :catchall_0
     move-exception p0
 
     .line 36
-    goto :goto_2b
+    goto :goto_0
 
     .line 37
-    :catch_24
+    :catch_0
     move-exception p0
 
     .line 38
-    :try_start_25
+    :try_start_2
     new-instance v1, Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException;
 
     .line 39
@@ -511,11 +511,11 @@
     .line 42
     .line 43
     throw v1
-    :try_end_2b
-    .catchall {:try_start_25 .. :try_end_2b} :catchall_22
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 44
-    :goto_2b
+    :goto_0
     invoke-virtual {v0}, Lorg/conscrypt/OpenSSLBIOInputStream;->release()V
 
     .line 45
@@ -525,7 +525,7 @@
 .end method
 
 .method public static fromX509PemInputStream(Ljava/io/InputStream;)Lorg/conscrypt/OpenSSLX509CRL;
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Lorg/conscrypt/OpenSSLBIOInputStream;
@@ -540,7 +540,7 @@
     .line 5
     .line 6
     .line 7
-    :try_start_6
+    :try_start_0
     invoke-virtual {v0}, Lorg/conscrypt/OpenSSLBIOInputStream;->getBioContext()J
 
     .line 8
@@ -555,9 +555,9 @@
     .line 13
     .line 14
     move-result-wide v1
-    :try_end_e
-    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_e} :catch_24
-    .catchall {:try_start_6 .. :try_end_e} :catchall_22
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 15
     const-wide/16 v3, 0x0
@@ -568,7 +568,7 @@
 
     .line 18
     .line 19
-    if-nez p0, :cond_19
+    if-nez p0, :cond_0
 
     .line 20
     .line 21
@@ -583,16 +583,16 @@
     return-object p0
 
     .line 26
-    :cond_19
-    :try_start_19
+    :cond_0
+    :try_start_1
     new-instance p0, Lorg/conscrypt/OpenSSLX509CRL;
 
     .line 27
     .line 28
     invoke-direct {p0, v1, v2}, Lorg/conscrypt/OpenSSLX509CRL;-><init>(J)V
-    :try_end_1e
-    .catch Ljava/lang/Exception; {:try_start_19 .. :try_end_1e} :catch_24
-    .catchall {:try_start_19 .. :try_end_1e} :catchall_22
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 29
     .line 30
@@ -605,18 +605,18 @@
     return-object p0
 
     .line 35
-    :catchall_22
+    :catchall_0
     move-exception p0
 
     .line 36
-    goto :goto_2b
+    goto :goto_0
 
     .line 37
-    :catch_24
+    :catch_0
     move-exception p0
 
     .line 38
-    :try_start_25
+    :try_start_2
     new-instance v1, Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException;
 
     .line 39
@@ -627,11 +627,11 @@
     .line 42
     .line 43
     throw v1
-    :try_end_2b
-    .catchall {:try_start_25 .. :try_end_2b} :catchall_22
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 44
-    :goto_2b
+    :goto_0
     invoke-virtual {v0}, Lorg/conscrypt/OpenSSLBIOInputStream;->release()V
 
     .line 45
@@ -641,7 +641,7 @@
 .end method
 
 .method public static toDate(J)Ljava/util/Date;
-    .registers 5
+    .locals 3
 
     .line 1
     const-string v0, "UTC"
@@ -693,7 +693,7 @@
 .end method
 
 .method private verifyInternal(Ljava/security/PublicKey;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLX509CRL;->getSigAlgName()Ljava/lang/String;
@@ -704,7 +704,7 @@
     move-result-object v0
 
     .line 5
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -716,8 +716,8 @@
     move-result-object v0
 
     .line 11
-    :cond_a
-    if-nez p2, :cond_11
+    :cond_0
+    if-nez p2, :cond_1
 
     .line 12
     .line 13
@@ -729,10 +729,10 @@
     move-result-object p2
 
     .line 17
-    goto :goto_15
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_1
     invoke-static {v0, p2}, Ljava/security/Signature;->getInstance(Ljava/lang/String;Ljava/lang/String;)Ljava/security/Signature;
 
     .line 19
@@ -741,7 +741,7 @@
     move-result-object p2
 
     .line 22
-    :goto_15
+    :goto_0
     invoke-virtual {p2, p1}, Ljava/security/Signature;->initVerify(Ljava/security/PublicKey;)V
 
     .line 23
@@ -776,14 +776,14 @@
     move-result p1
 
     .line 40
-    if-eqz p1, :cond_2a
+    if-eqz p1, :cond_2
 
     .line 41
     .line 42
     return-void
 
     .line 43
-    :cond_2a
+    :cond_2
     const-string p1, "signature did not verify"
 
     .line 44
@@ -797,7 +797,7 @@
 .end method
 
 .method private verifyOpenSSL(Lorg/conscrypt/OpenSSLKey;)V
-    .registers 4
+    .locals 2
 
     .line 1
     :try_start_0
@@ -814,9 +814,9 @@
 
     .line 7
     invoke-static {v0, v1, p0, p1}, Lorg/conscrypt/NativeCrypto;->X509_CRL_verify(JLorg/conscrypt/OpenSSLX509CRL;Lorg/conscrypt/NativeRef$EVP_PKEY;)V
-    :try_end_9
-    .catch Ljavax/crypto/BadPaddingException; {:try_start_0 .. :try_end_9} :catch_c
-    .catch Ljavax/crypto/IllegalBlockSizeException; {:try_start_0 .. :try_end_9} :catch_a
+    :try_end_0
+    .catch Ljavax/crypto/BadPaddingException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljavax/crypto/IllegalBlockSizeException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 8
     .line 9
@@ -824,18 +824,18 @@
     return-void
 
     .line 11
-    :catch_a
+    :catch_0
     move-exception p1
 
     .line 12
-    goto :goto_d
+    goto :goto_0
 
     .line 13
-    :catch_c
+    :catch_1
     move-exception p1
 
     .line 14
-    :goto_d
+    :goto_0
     new-instance v0, Ljava/security/SignatureException;
 
     .line 15
@@ -851,7 +851,7 @@
 
 # virtual methods
 .method public finalize()V
-    .registers 6
+    .locals 5
 
     .line 1
     :try_start_0
@@ -867,7 +867,7 @@
 
     .line 6
     .line 7
-    if-eqz v4, :cond_10
+    if-eqz v4, :cond_0
 
     .line 8
     .line 9
@@ -876,24 +876,24 @@
     .line 10
     .line 11
     invoke-static {v0, v1, p0}, Lorg/conscrypt/NativeCrypto;->X509_CRL_free(JLorg/conscrypt/OpenSSLX509CRL;)V
-    :try_end_d
-    .catchall {:try_start_0 .. :try_end_d} :catchall_e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 12
     .line 13
     .line 14
-    goto :goto_10
+    goto :goto_0
 
     .line 15
-    :catchall_e
+    :catchall_0
     move-exception v0
 
     .line 16
-    goto :goto_14
+    goto :goto_1
 
     .line 17
-    :cond_10
-    :goto_10
+    :cond_0
+    :goto_0
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
     .line 18
@@ -902,7 +902,7 @@
     return-void
 
     .line 21
-    :goto_14
+    :goto_1
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
     .line 22
@@ -912,7 +912,7 @@
 .end method
 
 .method public getCriticalExtensionOIDs()Ljava/util/Set;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -941,7 +941,7 @@
     array-length v1, v0
 
     .line 9
-    if-nez v1, :cond_16
+    if-nez v1, :cond_0
 
     .line 10
     .line 11
@@ -963,7 +963,7 @@
     array-length v1, v1
 
     .line 19
-    if-nez v1, :cond_16
+    if-nez v1, :cond_0
 
     .line 20
     .line 21
@@ -973,7 +973,7 @@
     return-object v0
 
     .line 23
-    :cond_16
+    :cond_0
     new-instance v1, Ljava/util/HashSet;
 
     .line 24
@@ -995,7 +995,7 @@
 .end method
 
 .method public getEncoded()[B
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/OpenSSLX509CRL;->mContext:J
@@ -1014,7 +1014,7 @@
 .end method
 
 .method public getExtensionValue(Ljava/lang/String;)[B
-    .registers 4
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/OpenSSLX509CRL;->mContext:J
@@ -1033,7 +1033,7 @@
 .end method
 
 .method public getIssuerDN()Ljava/security/Principal;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLX509CRL;->getIssuerX500Principal()Ljavax/security/auth/x500/X500Principal;
@@ -1048,7 +1048,7 @@
 .end method
 
 .method public getIssuerX500Principal()Ljavax/security/auth/x500/X500Principal;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/OpenSSLX509CRL;->mContext:J
@@ -1076,7 +1076,7 @@
 .end method
 
 .method public getNextUpdate()Ljava/util/Date;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLX509CRL;->nextUpdate:Ljava/util/Date;
@@ -1099,7 +1099,7 @@
 .end method
 
 .method public getNonCriticalExtensionOIDs()Ljava/util/Set;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1128,7 +1128,7 @@
     array-length v1, v0
 
     .line 9
-    if-nez v1, :cond_16
+    if-nez v1, :cond_0
 
     .line 10
     .line 11
@@ -1150,7 +1150,7 @@
     array-length v1, v1
 
     .line 19
-    if-nez v1, :cond_16
+    if-nez v1, :cond_0
 
     .line 20
     .line 21
@@ -1160,7 +1160,7 @@
     return-object v0
 
     .line 23
-    :cond_16
+    :cond_0
     new-instance v1, Ljava/util/HashSet;
 
     .line 24
@@ -1182,7 +1182,7 @@
 .end method
 
 .method public getRevokedCertificate(Ljava/math/BigInteger;)Ljava/security/cert/X509CRLEntry;
-    .registers 7
+    .locals 5
 
     .line 47
     iget-wide v0, p0, Lorg/conscrypt/OpenSSLX509CRL;->mContext:J
@@ -1203,13 +1203,13 @@
 
     cmp-long v4, v0, v2
 
-    if-nez v4, :cond_12
+    if-nez v4, :cond_0
 
     return-object p1
 
     .line 50
-    :cond_12
-    :try_start_12
+    :cond_0
+    :try_start_0
     new-instance v2, Lorg/conscrypt/OpenSSLX509CRLEntry;
 
     invoke-static {v0, v1}, Lorg/conscrypt/NativeCrypto;->X509_REVOKED_dup(J)J
@@ -1217,24 +1217,24 @@
     move-result-wide v0
 
     invoke-direct {v2, v0, v1}, Lorg/conscrypt/OpenSSLX509CRLEntry;-><init>(J)V
-    :try_end_1b
-    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_12 .. :try_end_1b} :catch_1c
+    :try_end_0
+    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v2
 
-    :catch_1c
+    :catch_0
     return-object p1
 .end method
 
 .method public getRevokedCertificate(Ljava/security/cert/X509Certificate;)Ljava/security/cert/X509CRLEntry;
-    .registers 9
+    .locals 7
 
     .line 1
     instance-of v0, p1, Lorg/conscrypt/OpenSSLX509Certificate;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
@@ -1279,15 +1279,15 @@
 
     .line 23
     .line 24
-    if-nez v4, :cond_1a
+    if-nez v4, :cond_0
 
     .line 25
     .line 26
     return-object p1
 
     .line 27
-    :cond_1a
-    :try_start_1a
+    :cond_0
+    :try_start_0
     new-instance v2, Lorg/conscrypt/OpenSSLX509CRLEntry;
 
     .line 28
@@ -1301,8 +1301,8 @@
 
     .line 33
     invoke-direct {v2, v0, v1}, Lorg/conscrypt/OpenSSLX509CRLEntry;-><init>(J)V
-    :try_end_23
-    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_1a .. :try_end_23} :catch_24
+    :try_end_0
+    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 34
     .line 35
@@ -1310,11 +1310,11 @@
     return-object v2
 
     .line 37
-    :catch_24
+    :catch_0
     return-object p1
 
     .line 38
-    :cond_25
+    :cond_1
     invoke-virtual {p1}, Ljava/security/cert/X509Certificate;->getSerialNumber()Ljava/math/BigInteger;
 
     .line 39
@@ -1335,7 +1335,7 @@
 .end method
 
 .method public getRevokedCertificates()Ljava/util/Set;
-    .registers 8
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1359,21 +1359,21 @@
     move-result-object v0
 
     .line 7
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_2
 
     .line 8
     .line 9
     array-length v1, v0
 
     .line 10
-    if-nez v1, :cond_c
+    if-nez v1, :cond_0
 
     .line 11
     .line 12
-    goto :goto_23
+    goto :goto_1
 
     .line 13
-    :cond_c
+    :cond_0
     new-instance v1, Ljava/util/HashSet;
 
     .line 14
@@ -1389,8 +1389,8 @@
     const/4 v3, 0x0
 
     .line 20
-    :goto_13
-    if-ge v3, v2, :cond_22
+    :goto_0
+    if-ge v3, v2, :cond_1
 
     .line 21
     .line 22
@@ -1398,7 +1398,7 @@
 
     .line 23
     .line 24
-    :try_start_17
+    :try_start_0
     new-instance v6, Lorg/conscrypt/OpenSSLX509CRLEntry;
 
     .line 25
@@ -1409,26 +1409,26 @@
     .line 28
     .line 29
     invoke-virtual {v1, v6}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-    :try_end_1f
-    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_17 .. :try_end_1f} :catch_1f
+    :try_end_0
+    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 30
     .line 31
     .line 32
-    :catch_1f
+    :catch_0
     add-int/lit8 v3, v3, 0x1
 
     .line 33
     .line 34
-    goto :goto_13
+    goto :goto_0
 
     .line 35
-    :cond_22
+    :cond_1
     return-object v1
 
     .line 36
-    :cond_23
-    :goto_23
+    :cond_2
+    :goto_1
     const/4 v0, 0x0
 
     .line 37
@@ -1436,7 +1436,7 @@
 .end method
 
 .method public getSigAlgName()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLX509CRL;->getSigAlgOID()Ljava/lang/String;
@@ -1455,14 +1455,14 @@
     move-result-object v1
 
     .line 9
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_0
 
     .line 10
     .line 11
     return-object v1
 
     .line 12
-    :cond_b
+    :cond_0
     invoke-static {v0}, Lorg/conscrypt/Platform;->oidToAlgorithmName(Ljava/lang/String;)Ljava/lang/String;
 
     .line 13
@@ -1471,19 +1471,19 @@
     move-result-object v1
 
     .line 16
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_1
 
     .line 17
     .line 18
     return-object v1
 
     .line 19
-    :cond_12
+    :cond_1
     return-object v0
 .end method
 
 .method public getSigAlgOID()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/OpenSSLX509CRL;->mContext:J
@@ -1502,7 +1502,7 @@
 .end method
 
 .method public getSigAlgParams()[B
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/OpenSSLX509CRL;->mContext:J
@@ -1521,7 +1521,7 @@
 .end method
 
 .method public getSignature()[B
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/OpenSSLX509CRL;->mContext:J
@@ -1540,7 +1540,7 @@
 .end method
 
 .method public getTBSCertList()[B
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/OpenSSLX509CRL;->mContext:J
@@ -1559,7 +1559,7 @@
 .end method
 
 .method public getThisUpdate()Ljava/util/Date;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLX509CRL;->thisUpdate:Ljava/util/Date;
@@ -1582,7 +1582,7 @@
 .end method
 
 .method public getVersion()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/OpenSSLX509CRL;->mContext:J
@@ -1608,7 +1608,7 @@
 .end method
 
 .method public hasUnsupportedCriticalExtension()Z
-    .registers 9
+    .locals 8
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/OpenSSLX509CRL;->mContext:J
@@ -1635,8 +1635,8 @@
     const/4 v4, 0x0
 
     .line 11
-    :goto_a
-    if-ge v4, v1, :cond_1e
+    :goto_0
+    if-ge v4, v1, :cond_1
 
     .line 12
     .line 13
@@ -1664,27 +1664,27 @@
     move-result v5
 
     .line 25
-    if-eq v5, v2, :cond_1b
+    if-eq v5, v2, :cond_0
 
     .line 26
     .line 27
     return v2
 
     .line 28
-    :cond_1b
+    :cond_0
     add-int/lit8 v4, v4, 0x1
 
     .line 29
     .line 30
-    goto :goto_a
+    goto :goto_0
 
     .line 31
-    :cond_1e
+    :cond_1
     return v3
 .end method
 
 .method public isRevoked(Ljava/security/cert/Certificate;)Z
-    .registers 10
+    .locals 8
 
     .line 1
     instance-of v0, p1, Ljava/security/cert/X509Certificate;
@@ -1694,19 +1694,19 @@
     const/4 v1, 0x0
 
     .line 4
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 5
     .line 6
     return v1
 
     .line 7
-    :cond_6
+    :cond_0
     instance-of v0, p1, Lorg/conscrypt/OpenSSLX509Certificate;
 
     .line 8
     .line 9
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_1
 
     .line 10
     .line 11
@@ -1714,15 +1714,15 @@
 
     .line 12
     .line 13
-    :goto_c
+    :goto_0
     move-object v7, p1
 
     .line 14
-    goto :goto_1c
+    goto :goto_1
 
     .line 15
-    :cond_e
-    :try_start_e
+    :cond_1
+    :try_start_0
     new-instance v0, Ljava/io/ByteArrayInputStream;
 
     .line 16
@@ -1746,14 +1746,14 @@
     .line 26
     .line 27
     move-result-object p1
-    :try_end_1b
-    .catch Ljava/lang/Exception; {:try_start_e .. :try_end_1b} :catch_30
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 28
-    goto :goto_c
+    goto :goto_0
 
     .line 29
-    :goto_1c
+    :goto_1
     iget-wide v2, p0, Lorg/conscrypt/OpenSSLX509CRL;->mContext:J
 
     .line 30
@@ -1785,7 +1785,7 @@
 
     .line 43
     .line 44
-    if-eqz p1, :cond_2f
+    if-eqz p1, :cond_2
 
     .line 45
     .line 46
@@ -1795,11 +1795,11 @@
     return p1
 
     .line 48
-    :cond_2f
+    :cond_2
     return v1
 
     .line 49
-    :catch_30
+    :catch_0
     move-exception v0
 
     .line 50
@@ -1819,7 +1819,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Ljava/io/ByteArrayOutputStream;
@@ -1839,7 +1839,7 @@
     move-result-wide v1
 
     .line 10
-    :try_start_9
+    :try_start_0
     iget-wide v3, p0, Lorg/conscrypt/OpenSSLX509CRL;->mContext:J
 
     .line 11
@@ -1855,8 +1855,8 @@
     .line 17
     .line 18
     move-result-object v0
-    :try_end_12
-    .catchall {:try_start_9 .. :try_end_12} :catchall_16
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 19
     invoke-static {v1, v2}, Lorg/conscrypt/NativeCrypto;->BIO_free_all(J)V
@@ -1867,7 +1867,7 @@
     return-object v0
 
     .line 23
-    :catchall_16
+    :catchall_0
     move-exception v0
 
     .line 24
@@ -1880,14 +1880,14 @@
 .end method
 
 .method public verify(Ljava/security/PublicKey;)V
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Lorg/conscrypt/OpenSSLKeyHolder;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -1911,7 +1911,7 @@
     return-void
 
     .line 15
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
     .line 16
@@ -1924,7 +1924,7 @@
 .end method
 
 .method public verify(Ljava/security/PublicKey;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1, p2}, Lorg/conscrypt/OpenSSLX509CRL;->verifyInternal(Ljava/security/PublicKey;Ljava/lang/String;)V

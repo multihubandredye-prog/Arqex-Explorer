@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ex2;Ljava/util/UUID;Ljava/lang/String;ILlibs/jc3;Llibs/pu2;)V
-    .registers 7
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/cx2;->k:Llibs/ex2;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final c()Llibs/ow2;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/cx2;->k:Llibs/ex2;
@@ -48,7 +48,7 @@
 .end method
 
 .method public final d()Llibs/sz1;
-    .registers 7
+    .locals 6
 
     .line 1
     new-instance v0, Llibs/sz1;

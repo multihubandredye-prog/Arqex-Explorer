@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/as;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/wr;->a:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final a(Ljava/nio/ByteBuffer;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/wr;->a:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_28
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -73,7 +73,7 @@
     return-void
 
     .line 19
-    :pswitch_12
+    :pswitch_0
     const/16 v0, 0x64
 
     .line 20
@@ -95,7 +95,7 @@
     return-void
 
     .line 30
-    :pswitch_1d
+    :pswitch_1
     const/16 v0, 0x60
 
     .line 31
@@ -117,15 +117,15 @@
     return-void
 
     .line 41
-    :pswitch_data_28
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1d
-        :pswitch_12
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final b(Ljava/lang/Long;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte p1, p0, Llibs/wr;->a:B
@@ -139,7 +139,7 @@
     const/4 v1, 0x5
 
     .line 6
-    packed-switch p1, :pswitch_data_2c
+    packed-switch p1, :pswitch_data_0
 
     .line 7
     .line 8
@@ -152,7 +152,7 @@
     move-result p1
 
     .line 13
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_0
 
     .line 14
     .line 15
@@ -165,11 +165,11 @@
     .line 18
     .line 19
     .line 20
-    :cond_13
+    :cond_0
     return-void
 
     .line 21
-    :pswitch_14
+    :pswitch_0
     invoke-static {v1}, Llibs/zm1;->Context(I)Z
 
     .line 22
@@ -178,7 +178,7 @@
     move-result p1
 
     .line 25
-    if-eqz p1, :cond_1f
+    if-eqz p1, :cond_1
 
     .line 26
     .line 27
@@ -191,11 +191,11 @@
     .line 30
     .line 31
     .line 32
-    :cond_1f
+    :cond_1
     return-void
 
     .line 33
-    :pswitch_20
+    :pswitch_1
     invoke-static {v1}, Llibs/zm1;->Context(I)Z
 
     .line 34
@@ -204,7 +204,7 @@
     move-result p1
 
     .line 37
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_2
 
     .line 38
     .line 39
@@ -217,13 +217,13 @@
     .line 42
     .line 43
     .line 44
-    :cond_2b
+    :cond_2
     return-void
 
     .line 45
-    :pswitch_data_2c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_20
-        :pswitch_14
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

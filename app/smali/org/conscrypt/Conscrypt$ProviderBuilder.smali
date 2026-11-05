@@ -17,7 +17,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -85,7 +85,7 @@
 .end method
 
 .method public synthetic constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 33
     invoke-direct {p0}, Lorg/conscrypt/Conscrypt$ProviderBuilder;-><init>()V
@@ -96,7 +96,7 @@
 
 # virtual methods
 .method public build()Ljava/security/Provider;
-    .registers 7
+    .locals 6
 
     .line 1
     new-instance v0, Lorg/conscrypt/OpenSSLProvider;
@@ -132,7 +132,7 @@
 .end method
 
 .method public defaultTlsProtocol(Ljava/lang/String;)Lorg/conscrypt/Conscrypt$ProviderBuilder;
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Lorg/conscrypt/Conscrypt$ProviderBuilder;->defaultTlsProtocol:Ljava/lang/String;
@@ -143,7 +143,7 @@
 .end method
 
 .method public isTlsV1Deprecated(Z)Lorg/conscrypt/Conscrypt$ProviderBuilder;
-    .registers 2
+    .locals 0
 
     .line 1
     iput-boolean p1, p0, Lorg/conscrypt/Conscrypt$ProviderBuilder;->deprecatedTlsV1:Z
@@ -154,7 +154,7 @@
 .end method
 
 .method public isTlsV1Enabled(Z)Lorg/conscrypt/Conscrypt$ProviderBuilder;
-    .registers 2
+    .locals 0
 
     .line 1
     iput-boolean p1, p0, Lorg/conscrypt/Conscrypt$ProviderBuilder;->enabledTlsV1:Z
@@ -165,7 +165,7 @@
 .end method
 
 .method public provideTrustManager()Lorg/conscrypt/Conscrypt$ProviderBuilder;
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -185,7 +185,7 @@
 .end method
 
 .method public provideTrustManager(Z)Lorg/conscrypt/Conscrypt$ProviderBuilder;
-    .registers 2
+    .locals 0
 
     .line 7
     iput-boolean p1, p0, Lorg/conscrypt/Conscrypt$ProviderBuilder;->provideTrustManager:Z
@@ -194,7 +194,7 @@
 .end method
 
 .method public setName(Ljava/lang/String;)Lorg/conscrypt/Conscrypt$ProviderBuilder;
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Lorg/conscrypt/Conscrypt$ProviderBuilder;->name:Ljava/lang/String;

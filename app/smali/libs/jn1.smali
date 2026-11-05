@@ -31,7 +31,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/BrowseActivity;Llibs/vd;Llibs/dj;)V
-    .registers 5
+    .locals 1
 
     .line 1
     const v0, 0x1030010
@@ -80,7 +80,7 @@
 
     .line 24
     .line 25
-    :try_start_18
+    :try_start_0
     invoke-static {}, Llibs/t43;->Item()Z
 
     .line 26
@@ -92,7 +92,7 @@
     const/4 p3, 0x1
 
     .line 30
-    if-eqz p2, :cond_30
+    if-eqz p2, :cond_0
 
     .line 31
     .line 32
@@ -108,7 +108,7 @@
 
     .line 37
     .line 38
-    if-eqz p1, :cond_55
+    if-eqz p1, :cond_2
 
     .line 39
     .line 40
@@ -122,17 +122,17 @@
     .line 44
     .line 45
     .line 46
-    goto :goto_55
+    goto :goto_1
 
     .line 47
-    :catchall_2e
+    :catchall_0
     move-exception p1
 
     .line 48
-    goto :goto_4c
+    goto :goto_0
 
     .line 49
-    :cond_30
+    :cond_0
     invoke-static {}, Llibs/t43;->List()Z
 
     .line 50
@@ -141,7 +141,7 @@
     move-result p2
 
     .line 53
-    if-eqz p2, :cond_55
+    if-eqz p2, :cond_2
 
     .line 54
     .line 55
@@ -162,7 +162,7 @@
 
     .line 63
     .line 64
-    if-eqz p1, :cond_44
+    if-eqz p1, :cond_1
 
     .line 65
     .line 66
@@ -171,7 +171,7 @@
     .line 67
     .line 68
     .line 69
-    :cond_44
+    :cond_1
     invoke-static {}, Landroid/webkit/CookieManager;->getInstance()Landroid/webkit/CookieManager;
 
     .line 70
@@ -181,16 +181,16 @@
 
     .line 73
     invoke-virtual {p1, p3}, Landroid/webkit/CookieManager;->setAcceptCookie(Z)V
-    :try_end_4b
-    .catchall {:try_start_18 .. :try_end_4b} :catchall_2e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 74
     .line 75
     .line 76
-    goto :goto_55
+    goto :goto_1
 
     .line 77
-    :goto_4c
+    :goto_0
     const-string p2, "LoginDialog"
 
     .line 78
@@ -208,8 +208,8 @@
     .line 84
     .line 85
     .line 86
-    :cond_55
-    :goto_55
+    :cond_2
+    :goto_1
     new-instance p1, Llibs/x80;
 
     .line 87
@@ -231,7 +231,7 @@
 .end method
 
 .method public static c(Llibs/vd;Llibs/dj;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;Llibs/jn1;)V
-    .registers 15
+    .locals 9
 
     .line 1
     new-instance v0, Llibs/xv1;
@@ -282,7 +282,7 @@
 .end method
 
 .method public static d()V
-    .registers 5
+    .locals 5
 
     .line 1
     const/4 v0, 0x0
@@ -291,7 +291,7 @@
     const/4 v1, 0x1
 
     .line 3
-    :try_start_2
+    :try_start_0
     invoke-static {}, Landroid/webkit/CookieManager;->getInstance()Landroid/webkit/CookieManager;
 
     .line 4
@@ -300,7 +300,7 @@
     move-result-object v2
 
     .line 7
-    if-eqz v2, :cond_39
+    if-eqz v2, :cond_2
 
     .line 8
     .line 9
@@ -316,22 +316,22 @@
 
     .line 14
     .line 15
-    if-lt v3, v4, :cond_12
+    if-lt v3, v4, :cond_0
 
     .line 16
     .line 17
     const/4 v3, 0x1
 
     .line 18
-    goto :goto_13
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     const/4 v3, 0x0
 
     .line 20
-    :goto_13
-    if-eqz v3, :cond_1e
+    :goto_0
+    if-eqz v3, :cond_1
 
     .line 21
     .line 22
@@ -345,17 +345,17 @@
     .line 26
     .line 27
     .line 28
-    goto :goto_39
+    goto :goto_1
 
     .line 29
-    :catchall_1c
+    :catchall_0
     move-exception v2
 
     .line 30
-    goto :goto_4f
+    goto :goto_2
 
     .line 31
-    :cond_1e
+    :cond_1
     invoke-static {}, Llibs/t43;->List()Z
 
     .line 32
@@ -364,7 +364,7 @@
     move-result v3
 
     .line 35
-    if-eqz v3, :cond_39
+    if-eqz v3, :cond_2
 
     .line 36
     .line 37
@@ -405,8 +405,8 @@
     .line 56
     .line 57
     .line 58
-    :cond_39
-    :goto_39
+    :cond_2
+    :goto_1
     sget-object v2, Llibs/zt0;->g:Landroid/content/Context;
 
     .line 59
@@ -432,7 +432,7 @@
     move-result v3
 
     .line 71
-    if-nez v3, :cond_4e
+    if-nez v3, :cond_3
 
     .line 72
     .line 73
@@ -442,17 +442,17 @@
     .line 75
     .line 76
     invoke-virtual {v2}, Landroid/webkit/WebViewDatabase;->clearFormData()V
-    :try_end_4e
-    .catchall {:try_start_2 .. :try_end_4e} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 77
     .line 78
     .line 79
-    :cond_4e
+    :cond_3
     return-void
 
     .line 80
-    :goto_4f
+    :goto_2
     invoke-static {v2}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 81
@@ -488,7 +488,7 @@
 
 # virtual methods
 .method public final a(Ljava/lang/String;)V
-    .registers 12
+    .locals 10
 
     .line 1
     invoke-virtual {p0}, Llibs/jn1;->b()V
@@ -508,7 +508,7 @@
     move-result v0
 
     .line 10
-    if-lez v0, :cond_19
+    if-lez v0, :cond_0
 
     .line 11
     .line 12
@@ -539,14 +539,14 @@
     move-result-object v0
 
     .line 25
-    goto :goto_1a
+    goto :goto_0
 
     .line 26
-    :cond_19
+    :cond_0
     move-object v0, p1
 
     .line 27
-    :goto_1a
+    :goto_0
     const-string v1, "Checking > "
 
     .line 28
@@ -572,7 +572,7 @@
 
     .line 39
     .line 40
-    if-nez v0, :cond_64
+    if-nez v0, :cond_1
 
     .line 41
     .line 42
@@ -584,7 +584,7 @@
     move-result v0
 
     .line 46
-    if-nez v0, :cond_64
+    if-nez v0, :cond_1
 
     .line 47
     .line 48
@@ -600,7 +600,7 @@
     move-result v0
 
     .line 54
-    if-eqz v0, :cond_64
+    if-eqz v0, :cond_1
 
     .line 55
     .line 56
@@ -695,12 +695,12 @@
     .line 99
     .line 100
     .line 101
-    :cond_64
+    :cond_1
     return-void
 .end method
 
 .method public final b()V
-    .registers 3
+    .locals 2
 
     .line 1
     :try_start_0
@@ -712,7 +712,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -720,7 +720,7 @@
 
     .line 8
     .line 9
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_1
 
     .line 10
     .line 11
@@ -732,14 +732,14 @@
     return-void
 
     .line 15
-    :catchall_e
+    :catchall_0
     move-exception v0
 
     .line 16
-    goto :goto_1e
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     invoke-static {}, Llibs/t43;->List()Z
 
     .line 18
@@ -748,7 +748,7 @@
     move-result v0
 
     .line 21
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_1
 
     .line 22
     .line 23
@@ -756,22 +756,22 @@
 
     .line 24
     .line 25
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_1
 
     .line 26
     .line 27
     invoke-static {v0}, Llibs/Papa;->y(Landroid/webkit/CookieSyncManager;)V
-    :try_end_1d
-    .catchall {:try_start_0 .. :try_end_1d} :catchall_e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 28
     .line 29
     .line 30
-    :cond_1d
+    :cond_1
     return-void
 
     .line 31
-    :goto_1e
+    :goto_0
     const-string v1, "LoginDialog"
 
     .line 32
@@ -793,7 +793,7 @@
 .end method
 
 .method public final dismiss()V
-    .registers 4
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
@@ -807,7 +807,7 @@
 
     .line 5
     .line 6
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
@@ -858,7 +858,7 @@
 
     .line 32
     .line 33
-    :cond_20
+    :cond_0
     invoke-super {p0}, Landroid/app/Dialog;->dismiss()V
 
     .line 34
@@ -868,7 +868,7 @@
 .end method
 
 .method public final onCreate(Landroid/os/Bundle;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-super {p0, p1}, Landroid/app/Dialog;->onCreate(Landroid/os/Bundle;)V
@@ -905,7 +905,7 @@
 
     .line 18
     .line 19
-    if-nez p1, :cond_18
+    if-nez p1, :cond_0
 
     .line 20
     .line 21
@@ -917,7 +917,7 @@
     return-void
 
     .line 25
-    :cond_18
+    :cond_0
     sget p1, Llibs/wh2;->content1:I
 
     .line 26
@@ -1065,7 +1065,7 @@
     move-result v1
 
     .line 104
-    if-nez v1, :cond_71
+    if-nez v1, :cond_1
 
     .line 105
     .line 106
@@ -1083,7 +1083,7 @@
     .line 112
     .line 113
     .line 114
-    :cond_71
+    :cond_1
     invoke-static {}, Llibs/t43;->Set()Z
 
     .line 115
@@ -1092,7 +1092,7 @@
     move-result v1
 
     .line 118
-    if-eqz v1, :cond_7d
+    if-eqz v1, :cond_2
 
     .line 119
     .line 120
@@ -1106,7 +1106,7 @@
     .line 124
     .line 125
     .line 126
-    :cond_7d
+    :cond_2
     invoke-static {}, Llibs/t43;->Intent()Z
 
     .line 127
@@ -1115,7 +1115,7 @@
     move-result v1
 
     .line 130
-    if-eqz v1, :cond_89
+    if-eqz v1, :cond_3
 
     .line 131
     .line 132
@@ -1129,7 +1129,7 @@
     .line 136
     .line 137
     .line 138
-    :cond_89
+    :cond_3
     invoke-virtual {p1, v0}, Landroid/webkit/WebSettings;->setLoadWithOverviewMode(Z)V
 
     .line 139
@@ -1143,7 +1143,7 @@
     move-result v1
 
     .line 145
-    if-eqz v1, :cond_95
+    if-eqz v1, :cond_4
 
     .line 146
     .line 147
@@ -1152,7 +1152,7 @@
     .line 148
     .line 149
     .line 150
-    :cond_95
+    :cond_4
     invoke-virtual {p1, v3}, Landroid/webkit/WebSettings;->setBlockNetworkLoads(Z)V
 
     .line 151
@@ -1162,7 +1162,7 @@
 
     .line 154
     .line 155
-    if-eqz v1, :cond_b2
+    if-eqz v1, :cond_5
 
     .line 156
     .line 157
@@ -1174,7 +1174,7 @@
     move-result v1
 
     .line 161
-    if-nez v1, :cond_b2
+    if-nez v1, :cond_5
 
     .line 162
     .line 163
@@ -1205,10 +1205,10 @@
     .line 176
     .line 177
     .line 178
-    goto :goto_c2
+    goto :goto_1
 
     .line 179
-    :cond_b2
+    :cond_5
     iget-object v0, p0, Llibs/jn1;->Nu:Llibs/vd;
 
     .line 180
@@ -1225,25 +1225,25 @@
     move-result v1
 
     .line 187
-    if-nez v1, :cond_bd
+    if-nez v1, :cond_6
 
     .line 188
     .line 189
-    goto :goto_bf
+    goto :goto_0
 
     .line 190
-    :cond_bd
+    :cond_6
     sget-object v0, Llibs/ou0;->d:Ljava/lang/String;
 
     .line 191
     .line 192
-    :goto_bf
+    :goto_0
     invoke-virtual {p1, v0}, Landroid/webkit/WebSettings;->setUserAgentString(Ljava/lang/String;)V
 
     .line 193
     .line 194
     .line 195
-    :goto_c2
+    :goto_1
     iget-object p1, p0, Llibs/jn1;->Mu:Llibs/ow1;
 
     .line 196
@@ -1289,21 +1289,21 @@
 .end method
 
 .method public final show()V
-    .registers 2
+    .locals 1
 
     .line 1
     sget-boolean v0, Llibs/jn1;->Sigma:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     const/4 v0, 0x1
 
     .line 7

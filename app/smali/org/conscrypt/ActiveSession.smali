@@ -38,7 +38,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/conscrypt/NativeSsl;Lorg/conscrypt/AbstractSessionContext;)V
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -105,28 +105,28 @@
 .end method
 
 .method private checkPeerCertificatesPresent()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ActiveSession;->peerCertificates:[Ljava/security/cert/X509Certificate;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     array-length v0, v0
 
     .line 6
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
     return-void
 
     .line 9
-    :cond_8
+    :cond_0
     new-instance v0, Ljavax/net/ssl/SSLPeerUnverifiedException;
 
     .line 10
@@ -144,7 +144,7 @@
 .end method
 
 .method private configurePeer(Ljava/lang/String;I[Ljava/security/cert/X509Certificate;)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-object p1, p0, Lorg/conscrypt/ActiveSession;->peerHost:Ljava/lang/String;
@@ -166,7 +166,7 @@
     monitor-enter p1
 
     .line 10
-    :try_start_9
+    :try_start_0
     iget-object p2, p0, Lorg/conscrypt/ActiveSession;->ssl:Lorg/conscrypt/NativeSsl;
 
     .line 11
@@ -205,13 +205,13 @@
     return-void
 
     .line 28
-    :catchall_1b
+    :catchall_0
     move-exception p2
 
     .line 29
     monitor-exit p1
-    :try_end_1d
-    .catchall {:try_start_9 .. :try_end_1d} :catchall_1b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 30
     throw p2
@@ -220,7 +220,7 @@
 
 # virtual methods
 .method public getApplicationBufferSize()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x4000
@@ -231,14 +231,14 @@
 .end method
 
 .method public getApplicationProtocol()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ActiveSession;->applicationProtocol:Ljava/lang/String;
 
     .line 2
     .line 3
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -249,7 +249,7 @@
     monitor-enter v1
 
     .line 8
-    :try_start_7
+    :try_start_0
     iget-object v0, p0, Lorg/conscrypt/ActiveSession;->ssl:Lorg/conscrypt/NativeSsl;
 
     .line 9
@@ -271,8 +271,8 @@
 
     .line 18
     monitor-exit v1
-    :try_end_12
-    .catchall {:try_start_7 .. :try_end_12} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 19
     iput-object v0, p0, Lorg/conscrypt/ActiveSession;->applicationProtocol:Ljava/lang/String;
@@ -282,25 +282,25 @@
     return-object v0
 
     .line 22
-    :catchall_15
+    :catchall_0
     move-exception v0
 
     .line 23
-    :try_start_16
+    :try_start_1
     monitor-exit v1
-    :try_end_17
-    .catchall {:try_start_16 .. :try_end_17} :catchall_15
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 24
     throw v0
 
     .line 25
-    :cond_18
+    :cond_0
     return-object v0
 .end method
 
 .method public getCipherSuite()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ActiveSession;->ssl:Lorg/conscrypt/NativeSsl;
@@ -310,7 +310,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Lorg/conscrypt/ActiveSession;->ssl:Lorg/conscrypt/NativeSsl;
 
     .line 5
@@ -324,11 +324,11 @@
 
     .line 10
     monitor-exit v0
-    :try_end_a
-    .catchall {:try_start_3 .. :try_end_a} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 11
-    if-nez v1, :cond_f
+    if-nez v1, :cond_0
 
     .line 12
     .line 13
@@ -339,25 +339,25 @@
     return-object v0
 
     .line 16
-    :cond_f
+    :cond_0
     return-object v1
 
     .line 17
-    :catchall_10
+    :catchall_0
     move-exception v1
 
     .line 18
-    :try_start_11
+    :try_start_1
     monitor-exit v0
-    :try_end_12
-    .catchall {:try_start_11 .. :try_end_12} :catchall_10
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 19
     throw v1
 .end method
 
 .method public getCreationTime()J
-    .registers 6
+    .locals 5
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/ActiveSession;->creationTime:J
@@ -372,7 +372,7 @@
 
     .line 6
     .line 7
-    if-nez v4, :cond_18
+    if-nez v4, :cond_0
 
     .line 8
     .line 9
@@ -383,7 +383,7 @@
     monitor-enter v2
 
     .line 12
-    :try_start_b
+    :try_start_0
     iget-object v0, p0, Lorg/conscrypt/ActiveSession;->ssl:Lorg/conscrypt/NativeSsl;
 
     .line 13
@@ -406,31 +406,31 @@
     return-wide v0
 
     .line 22
-    :catchall_15
+    :catchall_0
     move-exception v0
 
     .line 23
     monitor-exit v2
-    :try_end_17
-    .catchall {:try_start_b .. :try_end_17} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 24
     throw v0
 
     .line 25
-    :cond_18
+    :cond_0
     return-wide v0
 .end method
 
 .method public getId()[B
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ActiveSession;->id:[B
 
     .line 2
     .line 3
-    if-nez v0, :cond_14
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -441,7 +441,7 @@
     monitor-enter v1
 
     .line 8
-    :try_start_7
+    :try_start_0
     iget-object v0, p0, Lorg/conscrypt/ActiveSession;->ssl:Lorg/conscrypt/NativeSsl;
 
     .line 9
@@ -461,24 +461,24 @@
     monitor-exit v1
 
     .line 17
-    goto :goto_14
+    goto :goto_0
 
     .line 18
-    :catchall_11
+    :catchall_0
     move-exception v0
 
     .line 19
     monitor-exit v1
-    :try_end_13
-    .catchall {:try_start_7 .. :try_end_13} :catchall_11
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 20
     throw v0
 
     .line 21
-    :cond_14
-    :goto_14
-    if-eqz v0, :cond_1d
+    :cond_0
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 22
     .line 23
@@ -497,7 +497,7 @@
     return-object v0
 
     .line 30
-    :cond_1d
+    :cond_1
     sget-object v0, Lorg/conscrypt/EmptyArray;->BYTE:[B
 
     .line 31
@@ -506,7 +506,7 @@
 .end method
 
 .method public getLastAccessedTime()J
-    .registers 6
+    .locals 5
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/ActiveSession;->lastAccessedTime:J
@@ -521,7 +521,7 @@
 
     .line 6
     .line 7
-    if-nez v4, :cond_c
+    if-nez v4, :cond_0
 
     .line 8
     .line 9
@@ -533,19 +533,19 @@
     move-result-wide v0
 
     .line 13
-    :cond_c
+    :cond_0
     return-wide v0
 .end method
 
 .method public getLocalCertificates()[Ljava/security/cert/Certificate;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ActiveSession;->localCertificates:[Ljava/security/cert/X509Certificate;
 
     .line 2
     .line 3
-    if-nez v0, :cond_14
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -556,7 +556,7 @@
     monitor-enter v1
 
     .line 8
-    :try_start_7
+    :try_start_0
     iget-object v0, p0, Lorg/conscrypt/ActiveSession;->ssl:Lorg/conscrypt/NativeSsl;
 
     .line 9
@@ -576,24 +576,24 @@
     monitor-exit v1
 
     .line 17
-    goto :goto_14
+    goto :goto_0
 
     .line 18
-    :catchall_11
+    :catchall_0
     move-exception v0
 
     .line 19
     monitor-exit v1
-    :try_end_13
-    .catchall {:try_start_7 .. :try_end_13} :catchall_11
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 20
     throw v0
 
     .line 21
-    :cond_14
-    :goto_14
-    if-nez v0, :cond_18
+    :cond_0
+    :goto_0
+    if-nez v0, :cond_1
 
     .line 22
     .line 23
@@ -603,7 +603,7 @@
     return-object v0
 
     .line 25
-    :cond_18
+    :cond_1
     invoke-virtual {v0}, [Ljava/security/cert/X509Certificate;->clone()Ljava/lang/Object;
 
     .line 26
@@ -620,7 +620,7 @@
 .end method
 
 .method public getLocalPrincipal()Ljava/security/Principal;
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/ActiveSession;->getLocalCertificates()[Ljava/security/cert/Certificate;
@@ -635,14 +635,14 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
     array-length v1, v0
 
     .line 10
-    if-lez v1, :cond_13
+    if-lez v1, :cond_0
 
     .line 11
     .line 12
@@ -664,7 +664,7 @@
     return-object v0
 
     .line 20
-    :cond_13
+    :cond_0
     const/4 v0, 0x0
 
     .line 21
@@ -672,7 +672,7 @@
 .end method
 
 .method public getPacketBufferSize()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x4145
@@ -683,7 +683,7 @@
 .end method
 
 .method public getPeerCertificateChain()[Ljavax/security/cert/X509Certificate;
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-static {}, Lorg/conscrypt/Platform;->isJavaxCertificateSupported()Z
@@ -694,7 +694,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     .line 6
     .line 7
@@ -707,7 +707,7 @@
 
     .line 11
     .line 12
-    if-nez v0, :cond_15
+    if-nez v0, :cond_0
 
     .line 13
     .line 14
@@ -727,11 +727,11 @@
 
     .line 21
     .line 22
-    :cond_15
+    :cond_0
     return-object v0
 
     .line 23
-    :cond_16
+    :cond_1
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     .line 24
@@ -749,7 +749,7 @@
 .end method
 
 .method public bridge synthetic getPeerCertificates()[Ljava/security/cert/Certificate;
-    .registers 2
+    .locals 1
 
     .line 13
     invoke-virtual {p0}, Lorg/conscrypt/ActiveSession;->getPeerCertificates()[Ljava/security/cert/X509Certificate;
@@ -760,7 +760,7 @@
 .end method
 
 .method public getPeerCertificates()[Ljava/security/cert/X509Certificate;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/ActiveSession;->checkPeerCertificatesPresent()V
@@ -788,7 +788,7 @@
 .end method
 
 .method public getPeerHost()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ActiveSession;->peerHost:Ljava/lang/String;
@@ -799,7 +799,7 @@
 .end method
 
 .method public getPeerPort()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/ActiveSession;->peerPort:I
@@ -810,7 +810,7 @@
 .end method
 
 .method public getPeerPrincipal()Ljava/security/Principal;
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/ActiveSession;->checkPeerCertificatesPresent()V
@@ -841,14 +841,14 @@
 .end method
 
 .method public getPeerSignedCertificateTimestamp()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ActiveSession;->peerTlsSctData:[B
 
     .line 2
     .line 3
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -858,7 +858,7 @@
     return-object v0
 
     .line 7
-    :cond_6
+    :cond_0
     invoke-virtual {v0}, [B->clone()Ljava/lang/Object;
 
     .line 8
@@ -875,14 +875,14 @@
 .end method
 
 .method public getProtocol()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ActiveSession;->protocol:Ljava/lang/String;
 
     .line 2
     .line 3
-    if-nez v0, :cond_14
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -893,7 +893,7 @@
     monitor-enter v1
 
     .line 8
-    :try_start_7
+    :try_start_0
     iget-object v0, p0, Lorg/conscrypt/ActiveSession;->ssl:Lorg/conscrypt/NativeSsl;
 
     .line 9
@@ -907,8 +907,8 @@
 
     .line 14
     monitor-exit v1
-    :try_end_e
-    .catchall {:try_start_7 .. :try_end_e} :catchall_11
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 15
     iput-object v0, p0, Lorg/conscrypt/ActiveSession;->protocol:Ljava/lang/String;
@@ -918,25 +918,25 @@
     return-object v0
 
     .line 18
-    :catchall_11
+    :catchall_0
     move-exception v0
 
     .line 19
-    :try_start_12
+    :try_start_1
     monitor-exit v1
-    :try_end_13
-    .catchall {:try_start_12 .. :try_end_13} :catchall_11
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 20
     throw v0
 
     .line 21
-    :cond_14
+    :cond_0
     return-object v0
 .end method
 
 .method public getRequestedServerName()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ActiveSession;->ssl:Lorg/conscrypt/NativeSsl;
@@ -946,7 +946,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Lorg/conscrypt/ActiveSession;->ssl:Lorg/conscrypt/NativeSsl;
 
     .line 5
@@ -965,20 +965,20 @@
     return-object v1
 
     .line 12
-    :catchall_b
+    :catchall_0
     move-exception v1
 
     .line 13
     monitor-exit v0
-    :try_end_d
-    .catchall {:try_start_3 .. :try_end_d} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 14
     throw v1
 .end method
 
 .method public getSessionContext()Ljavax/net/ssl/SSLSessionContext;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/ActiveSession;->isValid()Z
@@ -989,7 +989,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -1000,7 +1000,7 @@
     return-object v0
 
     .line 10
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
     .line 11
@@ -1008,7 +1008,7 @@
 .end method
 
 .method public getStatusResponses()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1022,7 +1022,7 @@
 
     .line 2
     .line 3
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -1033,7 +1033,7 @@
     return-object v0
 
     .line 8
-    :cond_7
+    :cond_0
     invoke-virtual {v0}, [B->clone()Ljava/lang/Object;
 
     .line 9
@@ -1058,7 +1058,7 @@
 .end method
 
 .method public getValue(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -1078,7 +1078,7 @@
 .end method
 
 .method public getValueNames()[Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -1098,7 +1098,7 @@
 .end method
 
 .method public invalidate()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ActiveSession;->ssl:Lorg/conscrypt/NativeSsl;
@@ -1108,7 +1108,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Lorg/conscrypt/ActiveSession;->ssl:Lorg/conscrypt/NativeSsl;
 
     .line 5
@@ -1128,20 +1128,20 @@
     return-void
 
     .line 13
-    :catchall_c
+    :catchall_0
     move-exception v1
 
     .line 14
     monitor-exit v0
-    :try_end_e
-    .catchall {:try_start_3 .. :try_end_e} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 15
     throw v1
 .end method
 
 .method public isValid()Z
-    .registers 8
+    .locals 7
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ActiveSession;->ssl:Lorg/conscrypt/NativeSsl;
@@ -1151,7 +1151,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Lorg/conscrypt/ActiveSession;->ssl:Lorg/conscrypt/NativeSsl;
 
     .line 5
@@ -1191,41 +1191,41 @@
 
     .line 22
     .line 23
-    if-gez v3, :cond_1a
+    if-gez v3, :cond_0
 
     .line 24
     .line 25
     const/4 v1, 0x1
 
     .line 26
-    goto :goto_1b
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_0
     const/4 v1, 0x0
 
     .line 28
-    :goto_1b
+    :goto_0
     monitor-exit v0
 
     .line 29
     return v1
 
     .line 30
-    :catchall_1d
+    :catchall_0
     move-exception v1
 
     .line 31
     monitor-exit v0
-    :try_end_1f
-    .catchall {:try_start_3 .. :try_end_1f} :catchall_1d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 32
     throw v1
 .end method
 
 .method public onPeerCertificateAvailable(Ljava/lang/String;I)V
-    .registers 5
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ActiveSession;->ssl:Lorg/conscrypt/NativeSsl;
@@ -1238,7 +1238,7 @@
     const/4 v1, 0x0
 
     .line 5
-    :try_start_4
+    :try_start_0
     iput-object v1, p0, Lorg/conscrypt/ActiveSession;->id:[B
 
     .line 6
@@ -1247,7 +1247,7 @@
 
     .line 8
     .line 9
-    if-nez v1, :cond_15
+    if-nez v1, :cond_0
 
     .line 10
     .line 11
@@ -1267,23 +1267,23 @@
 
     .line 18
     .line 19
-    goto :goto_15
+    goto :goto_0
 
     .line 20
-    :catchall_13
+    :catchall_0
     move-exception p1
 
     .line 21
-    goto :goto_24
+    goto :goto_1
 
     .line 22
-    :cond_15
-    :goto_15
+    :cond_0
+    :goto_0
     iget-object v1, p0, Lorg/conscrypt/ActiveSession;->peerCertificates:[Ljava/security/cert/X509Certificate;
 
     .line 23
     .line 24
-    if-nez v1, :cond_22
+    if-nez v1, :cond_1
 
     .line 25
     .line 26
@@ -1304,24 +1304,24 @@
     .line 33
     .line 34
     .line 35
-    :cond_22
+    :cond_1
     monitor-exit v0
 
     .line 36
     return-void
 
     .line 37
-    :goto_24
+    :goto_1
     monitor-exit v0
-    :try_end_25
-    .catchall {:try_start_4 .. :try_end_25} :catchall_13
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 38
     throw p1
 .end method
 
 .method public onPeerCertificatesReceived(Ljava/lang/String;I[Ljava/security/cert/X509Certificate;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2, p3}, Lorg/conscrypt/ActiveSession;->configurePeer(Ljava/lang/String;I[Ljava/security/cert/X509Certificate;)V
@@ -1333,7 +1333,7 @@
 .end method
 
 .method public putValue(Ljava/lang/String;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 1
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -1353,7 +1353,7 @@
 .end method
 
 .method public removeValue(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -1373,7 +1373,7 @@
 .end method
 
 .method public setLastAccessedTime(J)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-wide p1, p0, Lorg/conscrypt/ActiveSession;->lastAccessedTime:J

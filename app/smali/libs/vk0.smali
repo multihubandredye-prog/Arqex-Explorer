@@ -20,7 +20,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/ux2;Ljava/lang/String;Llibs/vx2;Llibs/$d;Llibs/ml1;)V
-    .registers 6
+    .locals 0
 
     .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 .end method
 
 .method public synthetic constructor <init>(Llibs/v1;Llibs/m52;Ljava/lang/String;Llibs/zl0;Ljava/util/Properties;)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -73,7 +73,7 @@
 
 # virtual methods
 .method public f(Llibs/t4;)V
-    .registers 16
+    .locals 14
 
     .line 1
     iget-object p1, p0, Llibs/vk0;->Y:Ljava/lang/Object;
@@ -214,7 +214,7 @@
     const/4 v10, 0x0
 
     .line 71
-    :try_start_46
+    :try_start_0
     const-string v11, "CREATE TEMPORARY TABLE backup(%1$s)"
 
     .line 72
@@ -264,7 +264,7 @@
 
     .line 95
     .line 96
-    if-nez v11, :cond_126
+    if-nez v11, :cond_5
 
     .line 97
     .line 98
@@ -324,7 +324,7 @@
 
     .line 125
     .line 126
-    if-nez v11, :cond_120
+    if-nez v11, :cond_4
 
     .line 127
     .line 128
@@ -377,7 +377,7 @@
 
     .line 152
     .line 153
-    if-nez v11, :cond_11a
+    if-nez v11, :cond_3
 
     .line 154
     .line 155
@@ -434,7 +434,7 @@
 
     .line 181
     .line 182
-    if-nez v11, :cond_114
+    if-nez v11, :cond_2
 
     .line 183
     .line 184
@@ -491,7 +491,7 @@
 
     .line 210
     .line 211
-    if-nez v0, :cond_10e
+    if-nez v0, :cond_1
 
     .line 212
     .line 213
@@ -528,7 +528,7 @@
 
     .line 229
     .line 230
-    if-nez v0, :cond_108
+    if-nez v0, :cond_0
 
     .line 231
     .line 232
@@ -542,8 +542,8 @@
     .line 236
     .line 237
     invoke-virtual {v6}, Lcom/mixplorer/activities/SQLiteEditorActivity;->Link()V
-    :try_end_ef
-    .catchall {:try_start_46 .. :try_end_ef} :catchall_106
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 238
     .line 239
@@ -573,7 +573,7 @@
     move-result v5
 
     .line 253
-    if-nez v5, :cond_148
+    if-nez v5, :cond_6
 
     .line 254
     .line 255
@@ -590,18 +590,18 @@
     .line 260
     .line 261
     .line 262
-    goto :goto_148
+    goto :goto_1
 
     .line 263
-    :catchall_106
+    :catchall_0
     move-exception v0
 
     .line 264
-    goto :goto_12c
+    goto :goto_0
 
     .line 265
-    :cond_108
-    :try_start_108
+    :cond_0
+    :try_start_1
     new-instance v0, Ljava/lang/Exception;
 
     .line 266
@@ -614,7 +614,7 @@
     throw v0
 
     .line 271
-    :cond_10e
+    :cond_1
     new-instance v0, Ljava/lang/Exception;
 
     .line 272
@@ -627,7 +627,7 @@
     throw v0
 
     .line 277
-    :cond_114
+    :cond_2
     new-instance v0, Ljava/lang/Exception;
 
     .line 278
@@ -640,7 +640,7 @@
     throw v0
 
     .line 283
-    :cond_11a
+    :cond_3
     new-instance v0, Ljava/lang/Exception;
 
     .line 284
@@ -653,7 +653,7 @@
     throw v0
 
     .line 289
-    :cond_120
+    :cond_4
     new-instance v0, Ljava/lang/Exception;
 
     .line 290
@@ -666,7 +666,7 @@
     throw v0
 
     .line 295
-    :cond_126
+    :cond_5
     new-instance v0, Ljava/lang/Exception;
 
     .line 296
@@ -677,12 +677,12 @@
     .line 299
     .line 300
     throw v0
-    :try_end_12c
-    .catchall {:try_start_108 .. :try_end_12c} :catchall_106
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 301
-    :goto_12c
-    :try_start_12c
+    :goto_0
+    :try_start_2
     invoke-static {v0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 302
@@ -692,8 +692,8 @@
 
     .line 305
     iput-object v0, p1, Llibs/ux2;->X:Ljava/lang/String;
-    :try_end_132
-    .catchall {:try_start_12c .. :try_end_132} :catchall_154
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 306
     .line 307
@@ -722,7 +722,7 @@
     move-result v5
 
     .line 320
-    if-nez v5, :cond_148
+    if-nez v5, :cond_6
 
     .line 321
     .line 322
@@ -739,8 +739,8 @@
     .line 327
     .line 328
     .line 329
-    :cond_148
-    :goto_148
+    :cond_6
+    :goto_1
     iget-object v0, v6, Lcom/mixplorer/activities/SQLiteEditorActivity;->Uniform:Landroid/os/Handler;
 
     .line 330
@@ -765,7 +765,7 @@
     return-void
 
     .line 341
-    :catchall_154
+    :catchall_1
     move-exception p1
 
     .line 342
@@ -794,7 +794,7 @@
     move-result v1
 
     .line 355
-    if-nez v1, :cond_16b
+    if-nez v1, :cond_7
 
     .line 356
     .line 357
@@ -811,6 +811,6 @@
     .line 362
     .line 363
     .line 364
-    :cond_16b
+    :cond_7
     throw p1
 .end method

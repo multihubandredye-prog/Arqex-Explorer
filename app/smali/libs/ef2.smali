@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/PreferenceActivity;Ljava/util/ArrayList;Llibs/ml1;)V
-    .registers 5
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -46,7 +46,7 @@
 .end method
 
 .method public constructor <init>(Lcom/mixplorer/activities/PreferenceActivity;Llibs/ml1;Ljava/util/ArrayList;)V
-    .registers 5
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public final z(Landroid/view/View;I)V
-    .registers 8
+    .locals 5
 
     .line 1
     iget-byte p1, p0, Llibs/ef2;->c:B
@@ -93,7 +93,7 @@
 
     .line 11
     .line 12
-    packed-switch p1, :pswitch_data_96
+    packed-switch p1, :pswitch_data_0
 
     .line 13
     .line 14
@@ -135,14 +135,14 @@
     move-result-object p1
 
     .line 34
-    if-nez p1, :cond_24
+    if-nez p1, :cond_0
 
     .line 35
     .line 36
-    goto :goto_2c
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_0
     iget-object p2, v4, Lcom/mixplorer/activities/PreferenceActivity;->Yankee:Llibs/ml1;
 
     .line 38
@@ -157,25 +157,25 @@
     .line 43
     .line 44
     .line 45
-    :goto_2c
+    :goto_0
     return-void
 
     .line 46
-    :pswitch_2d
+    :pswitch_0
     const/4 p1, 0x0
 
     .line 47
-    if-nez p2, :cond_32
+    if-nez p2, :cond_1
 
     .line 48
     .line 49
     move-object p2, p1
 
     .line 50
-    goto :goto_38
+    goto :goto_1
 
     .line 51
-    :cond_32
+    :cond_1
     invoke-virtual {v2, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     .line 52
@@ -188,12 +188,12 @@
 
     .line 56
     .line 57
-    :goto_38
+    :goto_1
     sget-boolean v2, Lcom/mixplorer/activities/PreferenceActivity;->O:Z
 
     .line 58
     .line 59
-    if-eqz p2, :cond_44
+    if-eqz p2, :cond_2
 
     .line 60
     .line 61
@@ -212,19 +212,19 @@
 
     .line 67
     .line 68
-    goto :goto_45
+    goto :goto_2
 
     .line 69
-    :cond_44
+    :cond_2
     move-object v2, p1
 
     .line 70
-    :goto_45
-    if-eqz p2, :cond_4d
+    :goto_2
+    if-eqz p2, :cond_3
 
     .line 71
     .line 72
-    if-eqz v2, :cond_4d
+    if-eqz v2, :cond_3
 
     .line 73
     .line 74
@@ -236,7 +236,7 @@
     move-result-object p1
 
     .line 78
-    :cond_4d
+    :cond_3
     new-instance p2, Ljava/lang/StringBuilder;
 
     .line 79
@@ -289,7 +289,7 @@
     move-result p2
 
     .line 106
-    if-nez p2, :cond_8c
+    if-nez p2, :cond_5
 
     .line 107
     .line 108
@@ -340,7 +340,7 @@
     .line 131
     .line 132
     .line 133
-    if-nez p1, :cond_8a
+    if-nez p1, :cond_4
 
     .line 134
     .line 135
@@ -352,12 +352,12 @@
     move-result-object p1
 
     .line 139
-    :cond_8a
+    :cond_4
     iput-object p1, p2, Llibs/p63;->g:Ljava/util/List;
 
     .line 140
     .line 141
-    :cond_8c
+    :cond_5
     sget-boolean p1, Lcom/mixplorer/activities/PreferenceActivity;->O:Z
 
     .line 142
@@ -378,8 +378,8 @@
     nop
 
     .line 151
-    :pswitch_data_96
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2d
+        :pswitch_0
     .end packed-switch
 .end method

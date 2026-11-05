@@ -30,7 +30,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/util/HashSet;
@@ -74,7 +74,7 @@
 .end method
 
 .method public constructor <init>(Landroid/os/Parcel;)V
-    .registers 2
+    .locals 0
 
     .line 35
     invoke-direct {p0}, Ljava/lang/Process;-><init>()V
@@ -94,7 +94,7 @@
 .end method
 
 .method public constructor <init>(Llibs/h71;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Process;-><init>()V
@@ -106,7 +106,7 @@
 
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     invoke-interface {p1}, Landroid/os/IInterface;->asBinder()Landroid/os/IBinder;
 
     .line 7
@@ -131,16 +131,16 @@
 
     .line 17
     invoke-interface {p1, v0, v1}, Landroid/os/IBinder;->linkToDeath(Landroid/os/IBinder$DeathRecipient;I)V
-    :try_end_13
-    .catch Landroid/os/RemoteException; {:try_start_5 .. :try_end_13} :catch_14
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 18
     .line 19
     .line 20
-    goto :goto_1c
+    goto :goto_0
 
     .line 21
-    :catch_14
+    :catch_0
     move-exception p1
 
     .line 22
@@ -157,7 +157,7 @@
     .line 27
     .line 28
     .line 29
-    :goto_1c
+    :goto_0
     sget-object p1, Llibs/n73;->Lambda:Ljava/util/Set;
 
     .line 30
@@ -173,7 +173,7 @@
 
 # virtual methods
 .method public final describeContents()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -183,7 +183,7 @@
 .end method
 
 .method public final destroy()V
-    .registers 2
+    .locals 1
 
     .line 1
     :try_start_0
@@ -192,8 +192,8 @@
     .line 2
     .line 3
     invoke-interface {v0}, Llibs/h71;->destroy()V
-    :try_end_5
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_5} :catch_6
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 4
     .line 5
@@ -201,7 +201,7 @@
     return-void
 
     .line 7
-    :catch_6
+    :catch_0
     move-exception v0
 
     .line 8
@@ -214,7 +214,7 @@
 .end method
 
 .method public final exitValue()I
-    .registers 2
+    .locals 1
 
     .line 1
     :try_start_0
@@ -228,14 +228,14 @@
     .line 5
     .line 6
     move-result v0
-    :try_end_6
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 7
     return v0
 
     .line 8
-    :catch_7
+    :catch_0
     move-exception v0
 
     .line 9
@@ -251,7 +251,7 @@
 .end method
 
 .method public final getErrorStream()Ljava/io/InputStream;
-    .registers 3
+    .locals 2
 
     .line 1
     :try_start_0
@@ -272,8 +272,8 @@
 
     .line 9
     invoke-direct {v0, v1}, Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;-><init>(Landroid/os/ParcelFileDescriptor;)V
-    :try_end_b
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_b} :catch_c
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 10
     .line 11
@@ -281,7 +281,7 @@
     return-object v0
 
     .line 13
-    :catch_c
+    :catch_0
     move-exception v0
 
     .line 14
@@ -297,18 +297,18 @@
 .end method
 
 .method public final getInputStream()Ljava/io/InputStream;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/n73;->Z:Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
 
     .line 2
     .line 3
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
-    :try_start_4
+    :try_start_0
     new-instance v0, Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
 
     .line 6
@@ -331,15 +331,15 @@
     .line 15
     .line 16
     iput-object v0, p0, Llibs/n73;->Z:Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
-    :try_end_11
-    .catch Landroid/os/RemoteException; {:try_start_4 .. :try_end_11} :catch_12
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 17
     .line 18
     return-object v0
 
     .line 19
-    :catch_12
+    :catch_0
     move-exception v0
 
     .line 20
@@ -351,23 +351,23 @@
     const/4 v0, 0x0
 
     .line 24
-    :cond_17
+    :cond_0
     return-object v0
 .end method
 
 .method public final getOutputStream()Ljava/io/OutputStream;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/n73;->Y:Landroid/os/ParcelFileDescriptor$AutoCloseOutputStream;
 
     .line 2
     .line 3
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
-    :try_start_4
+    :try_start_0
     new-instance v0, Landroid/os/ParcelFileDescriptor$AutoCloseOutputStream;
 
     .line 6
@@ -390,15 +390,15 @@
     .line 15
     .line 16
     iput-object v0, p0, Llibs/n73;->Y:Landroid/os/ParcelFileDescriptor$AutoCloseOutputStream;
-    :try_end_11
-    .catch Landroid/os/RemoteException; {:try_start_4 .. :try_end_11} :catch_12
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 17
     .line 18
     return-object v0
 
     .line 19
-    :catch_12
+    :catch_0
     move-exception v0
 
     .line 20
@@ -410,12 +410,12 @@
     const/4 v0, 0x0
 
     .line 24
-    :cond_17
+    :cond_0
     return-object v0
 .end method
 
 .method public final waitFor()I
-    .registers 2
+    .locals 1
 
     .line 1
     :try_start_0
@@ -429,14 +429,14 @@
     .line 5
     .line 6
     move-result v0
-    :try_end_6
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 7
     return v0
 
     .line 8
-    :catch_7
+    :catch_0
     move-exception v0
 
     .line 9
@@ -452,7 +452,7 @@
 .end method
 
 .method public final writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     iget-object p2, p0, Llibs/n73;->X:Llibs/h71;

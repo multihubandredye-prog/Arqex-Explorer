@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 5
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public synthetic constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/OpenSSLX509CertificateFactory$Parser;-><init>()V
@@ -83,7 +83,7 @@
 .end method
 
 .method public generateItem(Ljava/io/InputStream;)Ljava/lang/Object;
-    .registers 11
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -93,7 +93,7 @@
     .end annotation
 
     .line 1
-    if-eqz p1, :cond_ad
+    if-eqz p1, :cond_b
 
     .line 2
     .line 3
@@ -105,7 +105,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -125,7 +125,7 @@
     .line 15
     .line 16
     .line 17
-    :cond_10
+    :cond_0
     new-instance v1, Ljava/io/PushbackInputStream;
 
     .line 18
@@ -139,7 +139,7 @@
     .line 22
     .line 23
     .line 24
-    :try_start_17
+    :try_start_0
     invoke-static {}, Lorg/conscrypt/OpenSSLX509CertificateFactory;->b()[B
 
     .line 25
@@ -163,7 +163,7 @@
     move-result v3
 
     .line 35
-    if-ltz v3, :cond_9a
+    if-ltz v3, :cond_9
 
     .line 36
     .line 37
@@ -183,7 +183,7 @@
 
     .line 44
     .line 45
-    if-ne v3, v5, :cond_35
+    if-ne v3, v5, :cond_1
 
     .line 46
     .line 47
@@ -198,14 +198,14 @@
     return-object p1
 
     .line 52
-    :catch_33
+    :catch_0
     move-exception v1
 
     .line 53
-    goto :goto_a2
+    goto :goto_1
 
     .line 54
-    :cond_35
+    :cond_1
     invoke-static {v2}, Lorg/conscrypt/OpenSSLX509CertificateFactory;->c([B)Z
 
     .line 55
@@ -214,7 +214,7 @@
     move-result v3
 
     .line 58
-    if-eqz v3, :cond_4c
+    if-eqz v3, :cond_3
 
     .line 59
     .line 60
@@ -234,7 +234,7 @@
     move-result v2
 
     .line 68
-    if-nez v2, :cond_47
+    if-nez v2, :cond_2
 
     .line 69
     .line 70
@@ -244,7 +244,7 @@
     return-object p1
 
     .line 72
-    :cond_47
+    :cond_2
     invoke-interface {v1, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     .line 73
@@ -256,7 +256,7 @@
     return-object p1
 
     .line 77
-    :cond_4c
+    :cond_3
     aget-byte v2, v2, v4
 
     .line 78
@@ -265,7 +265,7 @@
 
     .line 80
     .line 81
-    if-ne v2, v3, :cond_57
+    if-ne v2, v3, :cond_4
 
     .line 82
     .line 83
@@ -280,7 +280,7 @@
     return-object p1
 
     .line 88
-    :cond_57
+    :cond_4
     invoke-static {}, Lorg/conscrypt/OpenSSLX509CertificateFactory;->a()[B
 
     .line 89
@@ -293,16 +293,16 @@
 
     .line 93
     new-array v2, v2, [B
-    :try_end_5e
-    .catch Ljava/lang/Exception; {:try_start_17 .. :try_end_5e} :catch_33
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 94
     .line 95
     const/4 v3, 0x0
 
     .line 96
-    :cond_5f
-    :goto_5f
+    :cond_5
+    :goto_0
     const/4 v6, -0x1
 
     .line 97
@@ -310,11 +310,11 @@
 
     .line 98
     .line 99
-    if-eq v3, v6, :cond_94
+    if-eq v3, v6, :cond_8
 
     .line 100
     .line 101
-    :try_start_64
+    :try_start_1
     invoke-virtual {v1}, Ljava/io/PushbackInputStream;->read()I
 
     .line 102
@@ -323,7 +323,7 @@
     move-result v3
 
     .line 105
-    if-ne v3, v5, :cond_5f
+    if-ne v3, v5, :cond_5
 
     .line 106
     .line 107
@@ -351,7 +351,7 @@
     array-length v8, v8
 
     .line 119
-    if-lt v6, v8, :cond_8e
+    if-lt v6, v8, :cond_7
 
     .line 120
     .line 121
@@ -376,7 +376,7 @@
     move-result v6
 
     .line 132
-    if-eqz v6, :cond_8a
+    if-eqz v6, :cond_6
 
     .line 133
     .line 134
@@ -391,16 +391,16 @@
     return-object p1
 
     .line 139
-    :cond_8a
+    :cond_6
     invoke-virtual {v1}, Ljava/io/PushbackInputStream;->read()I
 
     .line 140
     .line 141
     .line 142
-    goto :goto_5f
+    goto :goto_0
 
     .line 143
-    :cond_8e
+    :cond_7
     new-instance v1, Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException;
 
     .line 144
@@ -413,7 +413,7 @@
     throw v1
 
     .line 149
-    :cond_94
+    :cond_8
     new-instance v1, Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException;
 
     .line 150
@@ -426,7 +426,7 @@
     throw v1
 
     .line 155
-    :cond_9a
+    :cond_9
     new-instance v1, Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException;
 
     .line 156
@@ -441,25 +441,25 @@
     .line 161
     .line 162
     throw v1
-    :try_end_a2
-    .catch Ljava/lang/Exception; {:try_start_64 .. :try_end_a2} :catch_33
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 163
-    :goto_a2
-    if-eqz v0, :cond_a7
+    :goto_1
+    if-eqz v0, :cond_a
 
     .line 164
     .line 165
-    :try_start_a4
+    :try_start_2
     invoke-virtual {p1}, Ljava/io/InputStream;->reset()V
-    :try_end_a7
-    .catch Ljava/io/IOException; {:try_start_a4 .. :try_end_a7} :catch_a7
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
 
     .line 166
     .line 167
     .line 168
-    :catch_a7
-    :cond_a7
+    :catch_1
+    :cond_a
     new-instance p1, Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException;
 
     .line 169
@@ -472,7 +472,7 @@
     throw p1
 
     .line 174
-    :cond_ad
+    :cond_b
     new-instance p1, Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException;
 
     .line 175
@@ -486,19 +486,19 @@
     .line 179
     .line 180
     .line 181
-    goto :goto_b6
+    goto :goto_3
 
     .line 182
-    :goto_b5
+    :goto_2
     throw p1
 
     .line 183
-    :goto_b6
-    goto :goto_b5
+    :goto_3
+    goto :goto_2
 .end method
 
 .method public generateItems(Ljava/io/InputStream;)Ljava/util/Collection;
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -510,7 +510,7 @@
     .end annotation
 
     .line 1
-    if-eqz p1, :cond_73
+    if-eqz p1, :cond_8
 
     .line 2
     .line 3
@@ -526,7 +526,7 @@
 
     .line 8
     .line 9
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -535,7 +535,7 @@
     .line 12
     .line 13
     .line 14
-    :cond_d
+    :cond_0
     new-instance v2, Ljava/io/PushbackInputStream;
 
     .line 15
@@ -545,7 +545,7 @@
     .line 17
     .line 18
     .line 19
-    :try_start_12
+    :try_start_0
     invoke-static {}, Lorg/conscrypt/OpenSSLX509CertificateFactory;->b()[B
 
     .line 20
@@ -569,7 +569,7 @@
     move-result v4
 
     .line 30
-    if-gez v4, :cond_27
+    if-gez v4, :cond_1
 
     .line 31
     .line 32
@@ -585,14 +585,14 @@
     return-object v1
 
     .line 38
-    :catch_25
+    :catch_0
     move-exception v1
 
     .line 39
-    goto :goto_68
+    goto :goto_1
 
     .line 40
-    :cond_27
+    :cond_1
     const/4 v5, 0x0
 
     .line 41
@@ -612,7 +612,7 @@
     array-length v5, v5
 
     .line 49
-    if-ne v4, v5, :cond_41
+    if-ne v4, v5, :cond_2
 
     .line 50
     .line 51
@@ -632,7 +632,7 @@
     move-result v4
 
     .line 59
-    if-eqz v4, :cond_41
+    if-eqz v4, :cond_2
 
     .line 60
     .line 61
@@ -647,7 +647,7 @@
     return-object p1
 
     .line 66
-    :cond_41
+    :cond_2
     invoke-static {v3}, Lorg/conscrypt/OpenSSLX509CertificateFactory;->c([B)Z
 
     .line 67
@@ -656,7 +656,7 @@
     move-result v3
 
     .line 70
-    if-eqz v3, :cond_4c
+    if-eqz v3, :cond_3
 
     .line 71
     .line 72
@@ -666,14 +666,14 @@
     .line 74
     .line 75
     move-result-object p1
-    :try_end_4b
-    .catch Ljava/lang/Exception; {:try_start_12 .. :try_end_4b} :catch_25
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 76
     return-object p1
 
     .line 77
-    :cond_4c
+    :cond_3
     new-instance v3, Ljava/util/ArrayList;
 
     .line 78
@@ -683,8 +683,8 @@
     .line 80
     .line 81
     .line 82
-    :cond_51
-    if-eqz v0, :cond_56
+    :cond_4
+    if-eqz v0, :cond_5
 
     .line 83
     .line 84
@@ -693,8 +693,8 @@
     .line 85
     .line 86
     .line 87
-    :cond_56
-    :try_start_56
+    :cond_5
+    :try_start_1
     invoke-virtual {p0, v2}, Lorg/conscrypt/OpenSSLX509CertificateFactory$Parser;->generateItem(Ljava/io/InputStream;)Ljava/lang/Object;
 
     .line 88
@@ -704,59 +704,59 @@
 
     .line 91
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_5d
-    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_56 .. :try_end_5d} :catch_5e
+    :try_end_1
+    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 92
     .line 93
     .line 94
-    goto :goto_65
+    goto :goto_0
 
     .line 95
-    :catch_5e
+    :catch_1
     nop
 
     .line 96
-    if-eqz v0, :cond_64
+    if-eqz v0, :cond_6
 
     .line 97
     .line 98
-    :try_start_61
+    :try_start_2
     invoke-virtual {p1}, Ljava/io/InputStream;->reset()V
-    :try_end_64
-    .catch Ljava/io/IOException; {:try_start_61 .. :try_end_64} :catch_64
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
 
     .line 99
     .line 100
     .line 101
-    :catch_64
-    :cond_64
+    :catch_2
+    :cond_6
     const/4 v4, 0x0
 
     .line 102
-    :goto_65
-    if-nez v4, :cond_51
+    :goto_0
+    if-nez v4, :cond_4
 
     .line 103
     .line 104
     return-object v3
 
     .line 105
-    :goto_68
-    if-eqz v0, :cond_6d
+    :goto_1
+    if-eqz v0, :cond_7
 
     .line 106
     .line 107
-    :try_start_6a
+    :try_start_3
     invoke-virtual {p1}, Ljava/io/InputStream;->reset()V
-    :try_end_6d
-    .catch Ljava/io/IOException; {:try_start_6a .. :try_end_6d} :catch_6d
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_3
 
     .line 108
     .line 109
     .line 110
-    :catch_6d
-    :cond_6d
+    :catch_3
+    :cond_7
     new-instance p1, Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException;
 
     .line 111
@@ -769,7 +769,7 @@
     throw p1
 
     .line 116
-    :cond_73
+    :cond_8
     new-instance p1, Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException;
 
     .line 117
@@ -783,13 +783,13 @@
     .line 121
     .line 122
     .line 123
-    goto :goto_7c
+    goto :goto_3
 
     .line 124
-    :goto_7b
+    :goto_2
     throw p1
 
     .line 125
-    :goto_7c
-    goto :goto_7b
+    :goto_3
+    goto :goto_2
 .end method

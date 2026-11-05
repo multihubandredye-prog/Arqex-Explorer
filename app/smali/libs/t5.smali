@@ -16,7 +16,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/t5;
@@ -39,7 +39,7 @@
 .end method
 
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/t5;->X:B
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 9
+    .locals 6
 
     .line 1
     iget-byte v0, p0, Llibs/t5;->X:B
@@ -73,7 +73,7 @@
     const/4 v3, 0x0
 
     .line 6
-    packed-switch v0, :pswitch_data_9e
+    packed-switch v0, :pswitch_data_0
 
     .line 7
     .line 8
@@ -128,14 +128,14 @@
 
     .line 34
     .line 35
-    :goto_22
+    :goto_0
     sub-int/2addr p1, p2
 
     .line 36
     return p1
 
     .line 37
-    :pswitch_24
+    :pswitch_0
     check-cast p1, Llibs/ma0;
 
     .line 38
@@ -156,11 +156,11 @@
 
     .line 46
     .line 47
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_4
 
     .line 48
     .line 49
-    if-ne v0, v2, :cond_42
+    if-ne v0, v2, :cond_3
 
     .line 50
     .line 51
@@ -172,48 +172,48 @@
     move-result p1
 
     .line 55
-    if-eqz p1, :cond_40
+    if-eqz p1, :cond_2
 
     .line 56
     .line 57
-    if-ne p1, v2, :cond_3b
+    if-ne p1, v2, :cond_0
 
     .line 58
     .line 59
-    goto :goto_3e
+    goto :goto_1
 
     .line 60
-    :cond_3b
+    :cond_0
     invoke-static {p2, v4}, Llibs/t;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 61
     .line 62
     .line 63
-    :cond_3e
-    :goto_3e
+    :cond_1
+    :goto_1
     const/4 v1, 0x0
 
     .line 64
-    goto :goto_53
+    goto :goto_2
 
     .line 65
-    :cond_40
+    :cond_2
     const/4 v1, 0x1
 
     .line 66
-    goto :goto_53
+    goto :goto_2
 
     .line 67
-    :cond_42
+    :cond_3
     invoke-static {p1, v4}, Llibs/t;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 68
     .line 69
     .line 70
-    goto :goto_3e
+    goto :goto_1
 
     .line 71
-    :cond_46
+    :cond_4
     invoke-virtual {p2}, Ljava/lang/Enum;->ordinal()I
 
     .line 72
@@ -222,31 +222,31 @@
     move-result p1
 
     .line 75
-    if-eqz p1, :cond_3e
+    if-eqz p1, :cond_1
 
     .line 76
     .line 77
-    if-ne p1, v2, :cond_4f
+    if-ne p1, v2, :cond_5
 
     .line 78
     .line 79
-    goto :goto_53
+    goto :goto_2
 
     .line 80
-    :cond_4f
+    :cond_5
     invoke-static {p2, v4}, Llibs/t;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 81
     .line 82
     .line 83
-    goto :goto_3e
+    goto :goto_1
 
     .line 84
-    :goto_53
+    :goto_2
     return v1
 
     .line 85
-    :pswitch_54
+    :pswitch_1
     check-cast p1, Llibs/eq;
 
     .line 86
@@ -267,37 +267,37 @@
 
     .line 94
     .line 95
-    if-lez v0, :cond_62
+    if-lez v0, :cond_6
 
     .line 96
     .line 97
     const/4 v1, 0x1
 
     .line 98
-    goto :goto_68
+    goto :goto_3
 
     .line 99
-    :cond_62
+    :cond_6
     cmp-long v0, v4, p1
 
     .line 100
     .line 101
-    if-gez v0, :cond_67
+    if-gez v0, :cond_7
 
     .line 102
     .line 103
-    goto :goto_68
+    goto :goto_3
 
     .line 104
-    :cond_67
+    :cond_7
     const/4 v1, 0x0
 
     .line 105
-    :goto_68
+    :goto_3
     return v1
 
     .line 106
-    :pswitch_69
+    :pswitch_2
     check-cast p1, Llibs/la2;
 
     .line 107
@@ -338,10 +338,10 @@
     move-result p2
 
     .line 126
-    goto :goto_22
+    goto :goto_0
 
     .line 127
-    :pswitch_7e
+    :pswitch_3
     check-cast p1, [B
 
     .line 128
@@ -364,8 +364,8 @@
     move-result v0
 
     .line 137
-    :goto_88
-    if-ge v3, v0, :cond_99
+    :goto_4
+    if-ge v3, v0, :cond_9
 
     .line 138
     .line 139
@@ -388,22 +388,22 @@
     sub-int/2addr v1, v2
 
     .line 148
-    if-eqz v1, :cond_96
+    if-eqz v1, :cond_8
 
     .line 149
     .line 150
-    goto :goto_9d
+    goto :goto_5
 
     .line 151
-    :cond_96
+    :cond_8
     add-int/lit8 v3, v3, 0x1
 
     .line 152
     .line 153
-    goto :goto_88
+    goto :goto_4
 
     .line 154
-    :cond_99
+    :cond_9
     array-length p1, p1
 
     .line 155
@@ -414,15 +414,15 @@
 
     .line 157
     .line 158
-    :goto_9d
+    :goto_5
     return v1
 
     .line 159
-    :pswitch_data_9e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_7e
-        :pswitch_69
-        :pswitch_54
-        :pswitch_24
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

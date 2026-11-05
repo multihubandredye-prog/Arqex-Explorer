@@ -24,7 +24,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/app/Activity;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Landroid/view/KeyEvent$Callback;Ljava/lang/Object;B)V
-    .registers 8
+    .locals 0
 
     .line 1
     iput-byte p7, p0, Llibs/t31;->X:B
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 13
+    .locals 11
 
     .line 1
     iget-byte v0, p0, Llibs/t31;->X:B
@@ -93,7 +93,7 @@
 
     .line 12
     .line 13
-    packed-switch v0, :pswitch_data_64
+    packed-switch v0, :pswitch_data_0
 
     .line 14
     .line 15
@@ -159,14 +159,14 @@
     move-result v1
 
     .line 45
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_0
 
     .line 46
     .line 47
-    goto :goto_4c
+    goto :goto_0
 
     .line 48
-    :cond_2f
+    :cond_0
     invoke-virtual {v0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     .line 49
@@ -226,11 +226,11 @@
     .line 75
     .line 76
     .line 77
-    :goto_4c
+    :goto_0
     return-void
 
     .line 78
-    :pswitch_4d
+    :pswitch_0
     check-cast v5, Lcom/mixplorer/widgets/MiEditText;
 
     .line 79
@@ -284,8 +284,8 @@
     return-void
 
     .line 101
-    :pswitch_data_64
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_4d
+        :pswitch_0
     .end packed-switch
 .end method

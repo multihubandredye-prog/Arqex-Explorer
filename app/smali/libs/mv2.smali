@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/rw2;)V
-    .registers 3
+    .locals 1
 
     .line 10
     new-instance v0, Llibs/ov2;
@@ -18,7 +18,7 @@
 .end method
 
 .method public constructor <init>([B)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/ov2;
@@ -41,7 +41,7 @@
 
 # virtual methods
 .method public final e()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/qj0;->a:Ljava/lang/Object;
@@ -64,7 +64,7 @@
 .end method
 
 .method public final f()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/qj0;->a:Ljava/lang/Object;
@@ -83,7 +83,7 @@
 
     .line 8
     .line 9
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -93,7 +93,7 @@
     return v0
 
     .line 13
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
     .line 14
@@ -101,7 +101,7 @@
 .end method
 
 .method public g()Z
-    .registers 2
+    .locals 1
 
     .line 1
     instance-of v0, p0, Llibs/ou2;
@@ -112,7 +112,7 @@
 .end method
 
 .method public final h()Z
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/qj0;->a:Ljava/lang/Object;
@@ -146,7 +146,7 @@
     move-result v1
 
     .line 16
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_0
 
     .line 17
     .line 18
@@ -166,7 +166,7 @@
 
     .line 25
     .line 26
-    if-nez v4, :cond_1d
+    if-nez v4, :cond_0
 
     .line 27
     .line 28
@@ -176,7 +176,7 @@
     return v0
 
     .line 30
-    :cond_1d
+    :cond_0
     const/4 v0, 0x0
 
     .line 31
@@ -184,7 +184,7 @@
 .end method
 
 .method public final i()Z
-    .registers 7
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/qj0;->a:Ljava/lang/Object;
@@ -214,7 +214,7 @@
 
     .line 13
     .line 14
-    if-nez v5, :cond_19
+    if-nez v5, :cond_0
 
     .line 15
     .line 16
@@ -230,7 +230,7 @@
 
     .line 21
     .line 22
-    if-ne v0, v1, :cond_19
+    if-ne v0, v1, :cond_0
 
     .line 23
     .line 24
@@ -240,7 +240,7 @@
     return v0
 
     .line 26
-    :cond_19
+    :cond_0
     const/4 v0, 0x0
 
     .line 27
@@ -248,7 +248,7 @@
 .end method
 
 .method public final j()Z
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/qj0;->a:Ljava/lang/Object;
@@ -275,7 +275,7 @@
     move-result v2
 
     .line 13
-    if-eqz v2, :cond_16
+    if-eqz v2, :cond_0
 
     .line 14
     .line 15
@@ -287,7 +287,7 @@
 
     .line 18
     .line 19
-    if-eqz v4, :cond_16
+    if-eqz v4, :cond_0
 
     .line 20
     .line 21
@@ -297,7 +297,7 @@
     return v0
 
     .line 23
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
     .line 24
@@ -305,7 +305,7 @@
 .end method
 
 .method public k()Llibs/mv2;
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Llibs/mv2;->f()Z
@@ -316,7 +316,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -340,7 +340,7 @@
     return-object v0
 
     .line 17
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
     .line 18
@@ -348,7 +348,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

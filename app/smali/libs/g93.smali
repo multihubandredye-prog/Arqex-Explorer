@@ -19,7 +19,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/16 v0, 0x80
@@ -30,7 +30,7 @@
 
     .line 4
     .line 5
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     .line 6
     .line 7
@@ -42,7 +42,7 @@
     return-void
 
     .line 11
-    :array_a
+    :array_0
     .array-data 1
         0xat
         0x9t
@@ -176,7 +176,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/security/SignatureSpi;-><init>()V
@@ -203,7 +203,7 @@
 
 # virtual methods
 .method public final engineGetParameter(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -223,14 +223,14 @@
 .end method
 
 .method public final engineInitSign(Ljava/security/PrivateKey;)V
-    .registers 6
+    .locals 4
 
     .line 1
     instance-of v0, p1, Llibs/yf0;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -242,14 +242,14 @@
     move-result-object p1
 
     .line 9
-    goto :goto_a
+    goto :goto_0
 
     .line 10
-    :cond_9
+    :cond_0
     const/4 p1, 0x0
 
     .line 11
-    :goto_a
+    :goto_0
     new-instance v0, Llibs/wt0;
 
     .line 12
@@ -278,7 +278,7 @@
 
     .line 24
     .line 25
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_1
 
     .line 26
     .line 27
@@ -299,7 +299,7 @@
     return-void
 
     .line 36
-    :cond_23
+    :cond_1
     invoke-virtual {v2, v1, p1}, Llibs/k60;->a(ZLlibs/et;)V
 
     .line 37
@@ -309,7 +309,7 @@
 .end method
 
 .method public final engineInitVerify(Ljava/security/PublicKey;)V
-    .registers 9
+    .locals 7
 
     .line 1
     const-string v0, "can\'t recognise key type in DSA based signer"
@@ -320,7 +320,7 @@
 
     .line 4
     .line 5
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_0
 
     .line 6
     .line 7
@@ -332,11 +332,11 @@
     move-result-object v0
 
     .line 11
-    goto :goto_1f
+    goto :goto_0
 
     .line 12
-    :cond_b
-    :try_start_b
+    :cond_0
+    :try_start_0
     invoke-interface {p1}, Ljava/security/Key;->getEncoded()[B
 
     .line 13
@@ -365,7 +365,7 @@
 
     .line 25
     .line 26
-    if-eqz v1, :cond_57
+    if-eqz v1, :cond_3
 
     .line 27
     .line 28
@@ -375,11 +375,11 @@
     .line 30
     .line 31
     move-result-object v0
-    :try_end_1f
-    .catch Ljava/lang/Exception; {:try_start_b .. :try_end_1f} :catch_5d
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 32
-    :goto_1f
+    :goto_0
     new-instance v1, Llibs/wt0;
 
     .line 33
@@ -392,7 +392,7 @@
 
     .line 37
     .line 38
-    if-eqz p1, :cond_2a
+    if-eqz p1, :cond_1
 
     .line 39
     .line 40
@@ -400,15 +400,15 @@
 
     .line 41
     .line 42
-    goto :goto_2c
+    goto :goto_1
 
     .line 43
-    :cond_2a
+    :cond_1
     sget-object p1, Llibs/j60;->Lambda:[B
 
     .line 44
     .line 45
-    :goto_2c
+    :goto_1
     const/16 v2, 0x80
 
     .line 46
@@ -423,11 +423,11 @@
     const/4 v4, 0x0
 
     .line 51
-    :goto_32
+    :goto_2
     array-length v5, p1
 
     .line 52
-    if-ge v4, v5, :cond_4c
+    if-ge v4, v5, :cond_2
 
     .line 53
     .line 54
@@ -477,10 +477,10 @@
 
     .line 75
     .line 76
-    goto :goto_32
+    goto :goto_2
 
     .line 77
-    :cond_4c
+    :cond_2
     invoke-direct {v1, v2}, Llibs/wt0;-><init>([B)V
 
     .line 78
@@ -502,8 +502,8 @@
     return-void
 
     .line 88
-    :cond_57
-    :try_start_57
+    :cond_3
+    :try_start_1
     new-instance p1, Ljava/security/InvalidKeyException;
 
     .line 89
@@ -514,11 +514,11 @@
     .line 92
     .line 93
     throw p1
-    :try_end_5d
-    .catch Ljava/lang/Exception; {:try_start_57 .. :try_end_5d} :catch_5d
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 94
-    :catch_5d
+    :catch_0
     invoke-static {v0}, Llibs/bf0;->k(Ljava/lang/String;)V
 
     .line 95
@@ -528,7 +528,7 @@
 .end method
 
 .method public final engineSetParameter(Ljava/lang/String;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 9
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -541,7 +541,7 @@
 .end method
 
 .method public final engineSetParameter(Ljava/security/spec/AlgorithmParameterSpec;)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -561,7 +561,7 @@
 .end method
 
 .method public engineSign()[B
-    .registers 8
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/g93;->X:Llibs/wt0;
@@ -593,7 +593,7 @@
     .line 14
     .line 15
     .line 16
-    :try_start_f
+    :try_start_0
     iget-object v1, p0, Llibs/g93;->Y:Llibs/k60;
 
     .line 17
@@ -639,36 +639,36 @@
     array-length v4, v0
 
     .line 37
-    if-le v3, v4, :cond_2c
+    if-le v3, v4, :cond_0
 
     .line 38
     .line 39
     array-length v3, v1
 
     .line 40
-    :goto_27
+    :goto_0
     mul-int/lit8 v3, v3, 0x2
 
     .line 41
     .line 42
-    goto :goto_2e
+    goto :goto_1
 
     .line 43
-    :catch_2a
+    :catch_0
     move-exception v0
 
     .line 44
-    goto :goto_48
+    goto :goto_2
 
     .line 45
-    :cond_2c
+    :cond_0
     array-length v3, v0
 
     .line 46
-    goto :goto_27
+    goto :goto_0
 
     .line 47
-    :goto_2e
+    :goto_1
     new-array v4, v3, [B
 
     .line 48
@@ -720,14 +720,14 @@
     .line 70
     .line 71
     move-result-object v0
-    :try_end_47
-    .catch Ljava/lang/Exception; {:try_start_f .. :try_end_47} :catch_2a
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 72
     return-object v0
 
     .line 73
-    :goto_48
+    :goto_2
     invoke-static {v0}, Llibs/t;->i(Ljava/lang/Object;)V
 
     .line 74
@@ -740,7 +740,7 @@
 .end method
 
 .method public final engineUpdate(B)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/g93;->X:Llibs/wt0;
@@ -756,7 +756,7 @@
 .end method
 
 .method public final engineUpdate([BII)V
-    .registers 5
+    .locals 1
 
     .line 7
     iget-object v0, p0, Llibs/g93;->X:Llibs/wt0;
@@ -767,7 +767,7 @@
 .end method
 
 .method public engineVerify([B)Z
-    .registers 9
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/g93;->X:Llibs/wt0;
@@ -799,7 +799,7 @@
     .line 14
     .line 15
     .line 16
-    :try_start_f
+    :try_start_0
     invoke-static {p1}, Llibs/Theme;->j([B)Llibs/Theme;
 
     .line 17
@@ -901,8 +901,8 @@
     .line 61
     .line 62
     aput-object v1, v3, v5
-    :try_end_3f
-    .catch Ljava/lang/Exception; {:try_start_f .. :try_end_3f} :catch_4a
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 63
     .line 64
@@ -929,7 +929,7 @@
     return p1
 
     .line 75
-    :catch_4a
+    :catch_0
     const-string p1, "error decoding signature bytes."
 
     .line 76

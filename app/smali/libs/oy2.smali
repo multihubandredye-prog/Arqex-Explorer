@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 27
     invoke-direct {p0}, Llibs/uj;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method public constructor <init>(Llibs/cr1;)V
-    .registers 3
+    .locals 1
 
     .line 23
     invoke-direct {p0}, Llibs/uj;-><init>()V
@@ -36,7 +36,7 @@
 .end method
 
 .method public constructor <init>(Llibs/oy2;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Llibs/uj;-><init>()V

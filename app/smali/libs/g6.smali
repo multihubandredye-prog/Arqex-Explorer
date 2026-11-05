@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/l6;Llibs/f6;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/g6;->X:Llibs/l6;
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final done()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/g6;->X:Llibs/l6;
@@ -38,7 +38,7 @@
 
     .line 4
     .line 5
-    :try_start_4
+    :try_start_0
     invoke-virtual {p0}, Ljava/util/concurrent/FutureTask;->get()Ljava/lang/Object;
 
     .line 6
@@ -55,15 +55,15 @@
     move-result v3
 
     .line 13
-    if-nez v3, :cond_2f
+    if-nez v3, :cond_0
 
     .line 14
     .line 15
     invoke-virtual {v0, v2}, Llibs/l6;->e(Ljava/lang/Object;)V
-    :try_end_11
-    .catch Ljava/lang/InterruptedException; {:try_start_4 .. :try_end_11} :catch_29
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_4 .. :try_end_11} :catch_1e
-    .catch Ljava/util/concurrent/CancellationException; {:try_start_4 .. :try_end_11} :catch_12
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 16
     .line 17
@@ -71,7 +71,7 @@
     return-void
 
     .line 19
-    :catch_12
+    :catch_0
     nop
 
     .line 20
@@ -83,7 +83,7 @@
     move-result v1
 
     .line 24
-    if-nez v1, :cond_2f
+    if-nez v1, :cond_0
 
     .line 25
     .line 26
@@ -95,10 +95,10 @@
     .line 28
     .line 29
     .line 30
-    goto :goto_2f
+    goto :goto_0
 
     .line 31
-    :catch_1e
+    :catch_1
     move-exception v0
 
     .line 32
@@ -122,7 +122,7 @@
     return-void
 
     .line 42
-    :catch_29
+    :catch_2
     move-exception v0
 
     .line 43
@@ -135,7 +135,7 @@
     .line 46
     .line 47
     .line 48
-    :cond_2f
-    :goto_2f
+    :cond_0
+    :goto_0
     return-void
 .end method

@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(ILlibs/c21;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onDismiss(Landroid/content/DialogInterface;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 p1, 0x2
@@ -46,7 +46,7 @@
 
     .line 3
     .line 4
-    if-ne v0, p1, :cond_14
+    if-ne v0, p1, :cond_0
 
     .line 5
     .line 6
@@ -54,7 +54,7 @@
 
     .line 7
     .line 8
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_0
 
     .line 9
     .line 10
@@ -79,6 +79,6 @@
     .line 19
     .line 20
     .line 21
-    :cond_14
+    :cond_0
     return-void
 .end method

@@ -15,7 +15,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/rp0;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/ju;->X:B
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public a(J)Llibs/fh3;
-    .registers 15
+    .locals 12
 
     .line 1
     iget-byte v0, p0, Llibs/ju;->X:B
@@ -48,12 +48,12 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_60
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
     .line 8
-    :pswitch_7
+    :pswitch_0
     sget-boolean v0, Lcom/mixplorer/activities/PreferenceActivity;->O:Z
 
     .line 9
@@ -86,7 +86,7 @@
     return-object v2
 
     .line 24
-    :pswitch_17
+    :pswitch_1
     sget-boolean v0, Lcom/mixplorer/activities/PreferenceActivity;->O:Z
 
     .line 25
@@ -119,7 +119,7 @@
     return-object v2
 
     .line 40
-    :pswitch_27
+    :pswitch_2
     invoke-virtual {v1, p1, p2}, Llibs/rp0;->Post(J)Ljava/io/InputStream;
 
     .line 41
@@ -148,7 +148,7 @@
     return-object v3
 
     .line 54
-    :pswitch_35
+    :pswitch_3
     invoke-virtual {v1, p1, p2}, Llibs/rp0;->Post(J)Ljava/io/InputStream;
 
     .line 55
@@ -177,7 +177,7 @@
     return-object v4
 
     .line 68
-    :pswitch_43
+    :pswitch_4
     invoke-virtual {v1, p1, p2}, Llibs/rp0;->Get(J)Ljava/io/InputStream;
 
     .line 69
@@ -206,7 +206,7 @@
     return-object v5
 
     .line 82
-    :pswitch_51
+    :pswitch_5
     invoke-virtual {v1, p1, p2}, Llibs/rp0;->Get(J)Ljava/io/InputStream;
 
     .line 83
@@ -238,19 +238,19 @@
     nop
 
     .line 97
-    :pswitch_data_60
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_51
-        :pswitch_43
-        :pswitch_35
-        :pswitch_7
-        :pswitch_27
-        :pswitch_17
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_0
+        :pswitch_2
+        :pswitch_1
     .end packed-switch
 .end method
 
 .method public b(Llibs/x61;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ju;->Y:Llibs/rp0;

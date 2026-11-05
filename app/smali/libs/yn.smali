@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/jo2;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -63,7 +63,7 @@
 
 # virtual methods
 .method public final a()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/yn;->a:Ljava/util/concurrent/atomic/AtomicInteger;
@@ -79,7 +79,7 @@
 .end method
 
 .method public final b()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/yn;->a:Ljava/util/concurrent/atomic/AtomicInteger;
@@ -94,7 +94,7 @@
     move-result v0
 
     .line 7
-    if-lez v0, :cond_a
+    if-lez v0, :cond_0
 
     .line 8
     .line 9
@@ -104,7 +104,7 @@
     return v0
 
     .line 11
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
     .line 12
@@ -112,7 +112,7 @@
 .end method
 
 .method public final c()I
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/yn;->e()Z
@@ -123,7 +123,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -133,7 +133,7 @@
     return v0
 
     .line 9
-    :cond_8
+    :cond_0
     iget v0, p0, Llibs/yn;->c:I
 
     .line 10
@@ -142,7 +142,7 @@
 .end method
 
 .method public final d()Landroid/graphics/Bitmap;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/yn;->e()Z
@@ -153,7 +153,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -163,7 +163,7 @@
     return-object v0
 
     .line 9
-    :cond_8
+    :cond_0
     iget-object v0, p0, Llibs/yn;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
     .line 10
@@ -185,14 +185,14 @@
 .end method
 
 .method public final e()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/yn;->b:Llibs/jo2;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -200,7 +200,7 @@
 
     .line 6
     .line 7
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
@@ -211,8 +211,8 @@
 
     .line 11
     .line 12
-    :cond_b
-    if-nez v0, :cond_f
+    :cond_0
+    if-nez v0, :cond_1
 
     .line 13
     .line 14
@@ -222,7 +222,7 @@
     return v0
 
     .line 16
-    :cond_f
+    :cond_1
     const/4 v0, 0x0
 
     .line 17
@@ -230,21 +230,21 @@
 .end method
 
 .method public final f()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/yn;->b:Llibs/jo2;
 
     .line 2
     .line 3
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     invoke-virtual {v0}, Llibs/jo2;->a()V
 
     .line 7

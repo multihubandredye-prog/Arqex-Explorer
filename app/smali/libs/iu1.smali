@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/ru1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final onError(Landroid/media/MediaPlayer;II)Z
-    .registers 6
+    .locals 2
 
     .line 1
     const/4 p1, 0x1
@@ -40,7 +40,7 @@
 
     .line 3
     .line 4
-    if-eq p2, v0, :cond_3b
+    if-eq p2, v0, :cond_8
 
     .line 5
     .line 6
@@ -48,7 +48,7 @@
 
     .line 7
     .line 8
-    if-eq p2, v1, :cond_33
+    if-eq p2, v1, :cond_6
 
     .line 9
     .line 10
@@ -56,7 +56,7 @@
 
     .line 11
     .line 12
-    if-eq p2, p3, :cond_30
+    if-eq p2, p3, :cond_5
 
     .line 13
     .line 14
@@ -64,7 +64,7 @@
 
     .line 15
     .line 16
-    if-eq p2, p3, :cond_2d
+    if-eq p2, p3, :cond_4
 
     .line 17
     .line 18
@@ -72,7 +72,7 @@
 
     .line 19
     .line 20
-    if-eq p2, p3, :cond_2a
+    if-eq p2, p3, :cond_3
 
     .line 21
     .line 22
@@ -80,11 +80,11 @@
 
     .line 23
     .line 24
-    if-eq p2, p3, :cond_27
+    if-eq p2, p3, :cond_2
 
     .line 25
     .line 26
-    if-eq p2, p1, :cond_24
+    if-eq p2, p1, :cond_1
 
     .line 27
     .line 28
@@ -92,66 +92,66 @@
 
     .line 29
     .line 30
-    if-eq p2, p3, :cond_21
+    if-eq p2, p3, :cond_0
 
     .line 31
     .line 32
     const/4 p2, 0x0
 
     .line 33
-    goto :goto_3d
+    goto :goto_0
 
     .line 34
-    :cond_21
+    :cond_0
     const-string p2, "SERVER_DIED"
 
     .line 35
     .line 36
-    goto :goto_3d
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_1
     const-string p2, "UNKNOWN_ERROR"
 
     .line 38
     .line 39
-    goto :goto_3d
+    goto :goto_0
 
     .line 40
-    :cond_27
+    :cond_2
     const-string p2, "NO_DURATION"
 
     .line 41
     .line 42
-    goto :goto_3d
+    goto :goto_0
 
     .line 43
-    :cond_2a
+    :cond_3
     const-string p2, "TIMED_OUT"
 
     .line 44
     .line 45
-    goto :goto_3d
+    goto :goto_0
 
     .line 46
-    :cond_2d
+    :cond_4
     const-string p2, "IO_ERROR"
 
     .line 47
     .line 48
-    goto :goto_3d
+    goto :goto_0
 
     .line 49
-    :cond_30
+    :cond_5
     const-string p2, "MALFORMED"
 
     .line 50
     .line 51
-    goto :goto_3d
+    goto :goto_0
 
     .line 52
-    :cond_33
-    if-ne p3, v0, :cond_38
+    :cond_6
+    if-ne p3, v0, :cond_7
 
     .line 53
     .line 54
@@ -159,24 +159,24 @@
 
     .line 55
     .line 56
-    goto :goto_3d
+    goto :goto_0
 
     .line 57
-    :cond_38
+    :cond_7
     const-string p2, "UNSUPPORTED"
 
     .line 58
     .line 59
-    goto :goto_3d
+    goto :goto_0
 
     .line 60
-    :cond_3b
+    :cond_8
     const-string p2, "MEDIA_ERROR_SYSTEM"
 
     .line 61
     .line 62
-    :goto_3d
-    if-eqz p2, :cond_47
+    :goto_0
+    if-eqz p2, :cond_9
 
     .line 63
     .line 64
@@ -196,7 +196,7 @@
     return p1
 
     .line 72
-    :cond_47
+    :cond_9
     const/4 p1, 0x0
 
     .line 73

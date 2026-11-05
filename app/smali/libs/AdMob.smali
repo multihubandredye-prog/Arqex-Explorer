@@ -18,7 +18,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/16 v0, 0x10
@@ -29,7 +29,7 @@
 
     .line 4
     .line 5
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     .line 6
     .line 7
@@ -41,7 +41,7 @@
     return-void
 
     .line 11
-    :array_a
+    :array_0
     .array-data 2
         0x30s
         0x31s
@@ -63,7 +63,7 @@
 .end method
 
 .method public constructor <init>(I[B)V
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Llibs/Theme;-><init>()V
@@ -74,25 +74,25 @@
     const/4 v0, 0x0
 
     .line 5
-    if-eqz p2, :cond_26
+    if-eqz p2, :cond_3
 
     .line 6
     .line 7
     array-length v1, p2
 
     .line 8
-    if-nez v1, :cond_12
+    if-nez v1, :cond_1
 
     .line 9
     .line 10
-    if-nez p1, :cond_c
+    if-nez p1, :cond_0
 
     .line 11
     .line 12
-    goto :goto_12
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     const-string p1, "zero length data with non-zero pad bits"
 
     .line 14
@@ -105,16 +105,16 @@
     throw v0
 
     .line 19
-    :cond_12
-    :goto_12
+    :cond_1
+    :goto_0
     const/4 v1, 0x7
 
     .line 20
-    if-gt p1, v1, :cond_20
+    if-gt p1, v1, :cond_2
 
     .line 21
     .line 22
-    if-ltz p1, :cond_20
+    if-ltz p1, :cond_2
 
     .line 23
     .line 24
@@ -137,7 +137,7 @@
     return-void
 
     .line 33
-    :cond_20
+    :cond_2
     const-string p1, "pad bits cannot be greater than 7 or less than 0"
 
     .line 34
@@ -150,7 +150,7 @@
     throw v0
 
     .line 39
-    :cond_26
+    :cond_3
     const-string p1, "data cannot be null"
 
     .line 40
@@ -166,7 +166,7 @@
 
 # virtual methods
 .method public final c()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Ljava/lang/StringBuffer;
@@ -203,10 +203,10 @@
     const/4 v3, 0x0
 
     .line 19
-    :try_start_12
+    :try_start_0
     invoke-virtual {v2, p0}, Llibs/v60;->Call(Llibs/Core;)V
-    :try_end_15
-    .catch Ljava/io/IOException; {:try_start_12 .. :try_end_15} :catch_3a
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 20
     .line 21
@@ -219,11 +219,11 @@
     move-result-object v1
 
     .line 26
-    :goto_19
+    :goto_0
     array-length v2, v1
 
     .line 27
-    if-eq v3, v2, :cond_35
+    if-eq v3, v2, :cond_0
 
     .line 28
     .line 29
@@ -273,10 +273,10 @@
 
     .line 52
     .line 53
-    goto :goto_19
+    goto :goto_0
 
     .line 54
-    :cond_35
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     .line 55
@@ -288,7 +288,7 @@
     return-object v0
 
     .line 59
-    :catch_3a
+    :catch_0
     move-exception v0
 
     .line 60
@@ -322,19 +322,19 @@
     .line 74
     .line 75
     .line 76
-    goto :goto_4d
+    goto :goto_2
 
     .line 77
-    :goto_4c
+    :goto_1
     throw v1
 
     .line 78
-    :goto_4d
-    goto :goto_4c
+    :goto_2
+    goto :goto_1
 .end method
 
 .method public final g(Llibs/Theme;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     instance-of v0, p1, Llibs/AdMob;
@@ -344,14 +344,14 @@
     const/4 v1, 0x0
 
     .line 4
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 5
     .line 6
     return v1
 
     .line 7
-    :cond_6
+    :cond_0
     check-cast p1, Llibs/AdMob;
 
     .line 8
@@ -364,7 +364,7 @@
 
     .line 12
     .line 13
-    if-ne v0, v2, :cond_1e
+    if-ne v0, v2, :cond_1
 
     .line 14
     .line 15
@@ -392,7 +392,7 @@
     move-result p1
 
     .line 27
-    if-eqz p1, :cond_1e
+    if-eqz p1, :cond_1
 
     .line 28
     .line 29
@@ -402,12 +402,12 @@
     return p1
 
     .line 31
-    :cond_1e
+    :cond_1
     return v1
 .end method
 
 .method public final hashCode()I
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Llibs/AdMob;->n()[B
@@ -437,7 +437,7 @@
 .end method
 
 .method public final l()Llibs/Theme;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/c10;
@@ -461,7 +461,7 @@
 .end method
 
 .method public final m()Llibs/Theme;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/r40;
@@ -485,7 +485,7 @@
 .end method
 
 .method public final n()[B
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/AdMob;->X:[B
@@ -504,7 +504,7 @@
 
     .line 8
     .line 9
-    if-lez v2, :cond_17
+    if-lez v2, :cond_0
 
     .line 10
     .line 11
@@ -537,19 +537,19 @@
 
     .line 23
     .line 24
-    :cond_17
+    :cond_0
     return-object v1
 .end method
 
 .method public final p()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/AdMob;->Y:I
 
     .line 2
     .line 3
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -568,7 +568,7 @@
     return-object v0
 
     .line 12
-    :cond_b
+    :cond_0
     const-string v0, "attempt to get non-octet aligned data from BIT STRING"
 
     .line 13
@@ -585,7 +585,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/AdMob;->c()Ljava/lang/String;

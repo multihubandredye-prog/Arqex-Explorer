@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,7 +22,7 @@
 
 # virtual methods
 .method public final a(Llibs/le3;Llibs/wd3;)Z
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -32,7 +32,7 @@
 .end method
 
 .method public final b()V
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -48,7 +48,7 @@
 .end method
 
 .method public final c()Ljava/util/Iterator;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -64,7 +64,7 @@
 .end method
 
 .method public final remove()V
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/UnsupportedOperationException;

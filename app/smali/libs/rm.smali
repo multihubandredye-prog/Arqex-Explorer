@@ -16,7 +16,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     .line 1
     const/16 v0, 0x100
@@ -34,8 +34,8 @@
     const/4 v1, 0x0
 
     .line 8
-    :goto_7
-    if-ge v1, v0, :cond_25
+    :goto_0
+    if-ge v1, v0, :cond_2
 
     .line 9
     .line 10
@@ -46,12 +46,12 @@
     move v3, v1
 
     .line 13
-    :goto_c
+    :goto_1
     add-int/lit8 v2, v2, -0x1
 
     .line 14
     .line 15
-    if-ltz v2, :cond_1e
+    if-ltz v2, :cond_1
 
     .line 16
     .line 17
@@ -59,7 +59,7 @@
 
     .line 18
     .line 19
-    if-eqz v4, :cond_1b
+    if-eqz v4, :cond_0
 
     .line 20
     .line 21
@@ -75,18 +75,18 @@
     xor-int/2addr v3, v4
 
     .line 27
-    goto :goto_c
+    goto :goto_1
 
     .line 28
-    :cond_1b
+    :cond_0
     ushr-int/lit8 v3, v3, 0x1
 
     .line 29
     .line 30
-    goto :goto_c
+    goto :goto_1
 
     .line 31
-    :cond_1e
+    :cond_1
     sget-object v2, Llibs/rm;->b:[I
 
     .line 32
@@ -99,15 +99,15 @@
 
     .line 36
     .line 37
-    goto :goto_7
+    goto :goto_0
 
     .line 38
-    :cond_25
+    :cond_2
     return-void
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -128,7 +128,7 @@
 
 # virtual methods
 .method public final a(J)V
-    .registers 5
+    .locals 2
 
     .line 1
     const-wide v0, 0xffffffffL
@@ -152,7 +152,7 @@
 .end method
 
 .method public final getValue()J
-    .registers 5
+    .locals 4
 
     .line 1
     iget v0, p0, Llibs/rm;->a:I
@@ -176,7 +176,7 @@
 .end method
 
 .method public final reset()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -190,7 +190,7 @@
 .end method
 
 .method public final update([BII)V
-    .registers 7
+    .locals 3
 
     .line 1
     iget v0, p0, Llibs/rm;->a:I
@@ -201,12 +201,12 @@
 
     .line 4
     .line 5
-    :goto_4
+    :goto_0
     add-int/lit8 p3, p3, -0x1
 
     .line 6
     .line 7
-    if-ltz p3, :cond_18
+    if-ltz p3, :cond_0
 
     .line 8
     .line 9
@@ -243,10 +243,10 @@
     move p2, v1
 
     .line 24
-    goto :goto_4
+    goto :goto_0
 
     .line 25
-    :cond_18
+    :cond_0
     xor-int/lit8 p1, v0, -0x1
 
     .line 26

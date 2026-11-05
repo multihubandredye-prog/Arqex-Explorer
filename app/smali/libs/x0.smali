@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Llibs/z0;Llibs/z0;)V
-    .registers 5
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/c1;-><init>()V
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public final c()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/x0;->Mu:Llibs/z0;
@@ -68,7 +68,7 @@
 .end method
 
 .method public final compareTo(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
 
     .line 1
     check-cast p1, Llibs/c1;
@@ -103,7 +103,7 @@
 .end method
 
 .method public final d()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/x0;->Z:Ljava/lang/String;
@@ -114,7 +114,7 @@
 .end method
 
 .method public final describeContents()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -124,7 +124,7 @@
 .end method
 
 .method public final e()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -134,7 +134,7 @@
 .end method
 
 .method public final g()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -144,7 +144,7 @@
 .end method
 
 .method public final i()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -154,7 +154,7 @@
 .end method
 
 .method public final j()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, -0x1
@@ -164,7 +164,7 @@
 .end method
 
 .method public final k()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -174,7 +174,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/x0;->Nu:Ljava/lang/String;
@@ -185,7 +185,7 @@
 
     .line 4
     .line 5
-    if-eq v0, v1, :cond_9
+    if-eq v0, v1, :cond_0
 
     .line 6
     .line 7
@@ -196,7 +196,7 @@
     return-object v0
 
     .line 10
-    :cond_9
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 11
@@ -249,7 +249,7 @@
 
     .line 37
     .line 38
-    if-nez v1, :cond_35
+    if-nez v1, :cond_1
 
     .line 39
     .line 40
@@ -279,7 +279,7 @@
     .line 52
     .line 53
     .line 54
-    :cond_35
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 55
@@ -296,7 +296,7 @@
 .end method
 
 .method public final writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p2, 0x2

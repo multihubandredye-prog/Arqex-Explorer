@@ -9,7 +9,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/t20;->c:B
@@ -25,7 +25,7 @@
 .end method
 
 .method public static c(BB)V
-    .registers 2
+    .locals 0
 
     .line 1
     xor-int/lit8 p1, p1, -0x1
@@ -35,14 +35,14 @@
     and-int/2addr p0, p1
 
     .line 4
-    if-nez p0, :cond_6
+    if-nez p0, :cond_0
 
     .line 5
     .line 6
     return-void
 
     .line 7
-    :cond_6
+    :cond_0
     const-string p0, "Invalid format for r portion of Poly1305 key."
 
     .line 8
@@ -58,14 +58,14 @@
 
 # virtual methods
 .method public a()[B
-    .registers 4
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/t20;->c:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_6a
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -85,7 +85,7 @@
 
     .line 12
     .line 13
-    if-ne v1, v2, :cond_4e
+    if-ne v1, v2, :cond_0
 
     .line 14
     .line 15
@@ -222,10 +222,10 @@
 
     .line 77
     .line 78
-    goto :goto_54
+    goto :goto_0
 
     .line 79
-    :cond_4e
+    :cond_0
     const-string v0, "Poly1305 key must be 256 bits."
 
     .line 80
@@ -238,11 +238,11 @@
     const/4 v0, 0x0
 
     .line 85
-    :goto_54
+    :goto_0
     return-object v0
 
     .line 86
-    :pswitch_55
+    :pswitch_0
     const/16 v0, 0x8
 
     .line 87
@@ -251,7 +251,7 @@
 
     .line 89
     .line 90
-    :cond_59
+    :cond_1
     iget-object v1, p0, Llibs/ct;->a:Ljava/security/SecureRandom;
 
     .line 91
@@ -277,7 +277,7 @@
     move-result v1
 
     .line 103
-    if-nez v1, :cond_59
+    if-nez v1, :cond_1
 
     .line 104
     .line 105
@@ -287,21 +287,21 @@
     nop
 
     .line 107
-    :pswitch_data_6a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_55
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public b(Llibs/ct;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/t20;->c:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_2c
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -331,7 +331,7 @@
     return-void
 
     .line 19
-    :pswitch_12
+    :pswitch_0
     invoke-super {p0, p1}, Llibs/ct;->b(Llibs/ct;)V
 
     .line 20
@@ -345,29 +345,29 @@
 
     .line 25
     .line 26
-    if-eqz p1, :cond_28
+    if-eqz p1, :cond_2
 
     .line 27
     .line 28
     const/4 v1, 0x7
 
     .line 29
-    if-ne p1, v1, :cond_1f
+    if-ne p1, v1, :cond_0
 
     .line 30
     .line 31
-    goto :goto_28
+    goto :goto_0
 
     .line 32
-    :cond_1f
-    if-ne p1, v0, :cond_22
+    :cond_0
+    if-ne p1, v0, :cond_1
 
     .line 33
     .line 34
-    goto :goto_2a
+    goto :goto_1
 
     .line 35
-    :cond_22
+    :cond_1
     const-string p1, "DES key must be 64 bits long."
 
     .line 36
@@ -377,24 +377,24 @@
     .line 38
     .line 39
     .line 40
-    goto :goto_2a
+    goto :goto_1
 
     .line 41
-    :cond_28
-    :goto_28
+    :cond_2
+    :goto_0
     iput v0, p0, Llibs/ct;->b:I
 
     .line 42
     .line 43
-    :goto_2a
+    :goto_1
     return-void
 
     .line 44
     nop
 
     .line 45
-    :pswitch_data_2c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_12
+        :pswitch_0
     .end packed-switch
 .end method

@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/wd3;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/Three;-><init>()V
@@ -20,7 +20,7 @@
     .line 2
     .line 3
     .line 4
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     .line 5
     .line 6
@@ -31,7 +31,7 @@
     return-void
 
     .line 9
-    :cond_8
+    :cond_0
     invoke-static {}, Llibs/ic0;->l()V
 
     .line 10
@@ -49,7 +49,7 @@
 .end method
 
 .method public final run()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/sx;->Lambda:Llibs/wd3;
@@ -100,7 +100,7 @@
     const/4 v0, 0x0
 
     .line 25
-    :try_start_18
+    :try_start_0
     invoke-virtual {p0}, Llibs/sx;->b()V
 
     .line 26
@@ -110,8 +110,8 @@
 
     .line 29
     invoke-virtual {p0, v3}, Llibs/Three;->a(Z)V
-    :try_end_1f
-    .catchall {:try_start_18 .. :try_end_1f} :catchall_2e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 30
     .line 31
@@ -133,7 +133,7 @@
 
     .line 40
     .line 41
-    :goto_28
+    :goto_0
     invoke-virtual {v1}, Ljava/lang/ThreadLocal;->remove()V
 
     .line 42
@@ -146,14 +146,14 @@
     return-void
 
     .line 47
-    :catchall_2e
+    :catchall_0
     const/4 v2, 0x0
 
     .line 48
-    :try_start_2f
+    :try_start_1
     invoke-virtual {p0, v2}, Llibs/Three;->a(Z)V
-    :try_end_32
-    .catchall {:try_start_2f .. :try_end_32} :catchall_3e
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 49
     .line 50
@@ -179,10 +179,10 @@
 
     .line 61
     .line 62
-    goto :goto_28
+    goto :goto_0
 
     .line 63
-    :catchall_3e
+    :catchall_1
     move-exception v2
 
     .line 64
@@ -216,13 +216,13 @@
 
     .line 79
     .line 80
-    goto :goto_51
+    goto :goto_2
 
     .line 81
-    :goto_50
+    :goto_1
     throw v2
 
     .line 82
-    :goto_51
-    goto :goto_50
+    :goto_2
+    goto :goto_1
 .end method

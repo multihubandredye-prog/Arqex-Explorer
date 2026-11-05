@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(JLjava/util/List;Llibs/rp0;)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

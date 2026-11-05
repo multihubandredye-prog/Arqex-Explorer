@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,7 +17,7 @@
 .end method
 
 .method public static a(Llibs/$f;Llibs/Auth;)[B
-    .registers 3
+    .locals 1
 
     .line 1
     :try_start_0
@@ -48,14 +48,14 @@
     .line 14
     .line 15
     move-result-object p0
-    :try_end_f
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_f} :catch_10
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 16
     return-object p0
 
     .line 17
-    :catch_10
+    :catch_0
     const/4 p0, 0x0
 
     .line 18
@@ -63,7 +63,7 @@
 .end method
 
 .method public static b(Llibs/$f;Llibs/Auth;)[B
-    .registers 3
+    .locals 1
 
     .line 1
     :try_start_0
@@ -82,14 +82,14 @@
     .line 8
     .line 9
     move-result-object p0
-    :try_end_9
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_9} :catch_a
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 10
     return-object p0
 
     .line 11
-    :catch_a
+    :catch_0
     const/4 p0, 0x0
 
     .line 12
@@ -97,7 +97,7 @@
 .end method
 
 .method public static c(Llibs/ji3;)[B
-    .registers 2
+    .locals 1
 
     .line 1
     :try_start_0
@@ -111,14 +111,14 @@
     .line 5
     .line 6
     move-result-object p0
-    :try_end_6
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 7
     return-object p0
 
     .line 8
-    :catch_7
+    :catch_0
     const/4 p0, 0x0
 
     .line 9

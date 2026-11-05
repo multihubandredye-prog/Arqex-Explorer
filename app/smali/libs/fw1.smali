@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic List(Landroid/view/WindowInsets;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/WindowInsets;->getStableInsetRight()I
@@ -20,7 +20,7 @@
 .end method
 
 .method public static bridge synthetic Map(Landroid/view/WindowInsets;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/WindowInsets;->getStableInsetBottom()I
@@ -35,7 +35,7 @@
 .end method
 
 .method public static bridge synthetic Object(Landroid/view/WindowInsets;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/WindowInsets;->getStableInsetTop()I
@@ -50,7 +50,7 @@
 .end method
 
 .method public static bridge synthetic String(Landroid/media/session/MediaSession;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -65,7 +65,7 @@
 .end method
 
 .method public static bridge synthetic a(Landroid/app/job/JobParameters;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/app/job/JobParameters;->getJobId()I
@@ -80,7 +80,7 @@
 .end method
 
 .method public static bridge synthetic b(Landroid/view/WindowInsets;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/WindowInsets;->getStableInsetLeft()I
@@ -95,7 +95,7 @@
 .end method
 
 .method public static bridge synthetic c(Landroid/graphics/drawable/Drawable$ConstantState;Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
@@ -110,7 +110,7 @@
 .end method
 
 .method public static bridge synthetic d(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/VectorDrawable;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Landroid/graphics/drawable/VectorDrawable;
@@ -121,7 +121,7 @@
 .end method
 
 .method public static bridge synthetic e(Landroid/webkit/WebResourceRequest;)Landroid/net/Uri;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-interface {p0}, Landroid/webkit/WebResourceRequest;->getUrl()Landroid/net/Uri;
@@ -136,7 +136,7 @@
 .end method
 
 .method public static bridge synthetic f(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/print/PrintDocumentAdapter;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/webkit/WebView;->createPrintDocumentAdapter(Ljava/lang/String;)Landroid/print/PrintDocumentAdapter;
@@ -151,7 +151,7 @@
 .end method
 
 .method public static bridge synthetic g(Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/WindowInsets;->consumeStableInsets()Landroid/view/WindowInsets;
@@ -166,7 +166,7 @@
 .end method
 
 .method public static bridge synthetic h(Landroid/graphics/Paint;F)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/graphics/Paint;->setLetterSpacing(F)V
@@ -178,7 +178,7 @@
 .end method
 
 .method public static bridge synthetic i(Landroid/graphics/Paint;Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/graphics/Paint;->setFontFeatureSettings(Ljava/lang/String;)V
@@ -190,7 +190,7 @@
 .end method
 
 .method public static bridge synthetic j(Landroid/media/session/MediaSession;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -205,7 +205,7 @@
 .end method
 
 .method public static bridge synthetic k(Landroid/media/session/MediaSession;Llibs/nd2;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/media/session/MediaSession;->setCallback(Landroid/media/session/MediaSession$Callback;)V
@@ -217,7 +217,7 @@
 .end method
 
 .method public static bridge synthetic l(Landroid/net/nsd/NsdServiceInfo;)V
-    .registers 3
+    .locals 2
 
     .line 1
     const-string v0, "model"
@@ -237,7 +237,7 @@
 .end method
 
 .method public static bridge synthetic m(Landroid/text/TextPaint;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -252,7 +252,7 @@
 .end method
 
 .method public static bridge synthetic n(Landroid/text/TextPaint;Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/text/TextPaint;->setFontFeatureSettings(Ljava/lang/String;)V
@@ -264,7 +264,7 @@
 .end method
 
 .method public static bridge synthetic p(Landroid/view/ViewParent;Landroid/view/View;Landroid/view/ViewGroup;I)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-interface {p0, p1, p2, p3}, Landroid/view/ViewParent;->onNestedScrollAccepted(Landroid/view/View;Landroid/view/View;I)V
@@ -276,7 +276,7 @@
 .end method
 
 .method public static bridge synthetic q(Landroid/view/ViewParent;Landroid/view/ViewGroup;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-interface {p0, p1}, Landroid/view/ViewParent;->onStopNestedScroll(Landroid/view/View;)V
@@ -288,7 +288,7 @@
 .end method
 
 .method public static bridge synthetic r(Landroid/view/ViewParent;Landroid/view/ViewGroup;IIII)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-interface/range {p0 .. p5}, Landroid/view/ViewParent;->onNestedScroll(Landroid/view/View;IIII)V
@@ -300,7 +300,7 @@
 .end method
 
 .method public static bridge synthetic s(Landroid/view/ViewParent;Landroid/view/ViewGroup;II[I)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-interface {p0, p1, p2, p3, p4}, Landroid/view/ViewParent;->onNestedPreScroll(Landroid/view/View;II[I)V
@@ -312,7 +312,7 @@
 .end method
 
 .method public static bridge synthetic t(Landroid/webkit/WebSettings;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -327,7 +327,7 @@
 .end method
 
 .method public static bridge synthetic u(Ljava/util/concurrent/Phaser;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Ljava/util/concurrent/Phaser;->arriveAndDeregister()I
@@ -339,7 +339,7 @@
 .end method
 
 .method public static bridge synthetic v(Landroid/graphics/drawable/Drawable$ConstantState;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable$ConstantState;->canApplyTheme()Z
@@ -354,7 +354,7 @@
 .end method
 
 .method public static bridge synthetic w(Landroid/view/ViewParent;Landroid/view/View;Landroid/view/ViewGroup;I)Z
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-interface {p0, p1, p2, p3}, Landroid/view/ViewParent;->onStartNestedScroll(Landroid/view/View;Landroid/view/View;I)Z
@@ -369,7 +369,7 @@
 .end method
 
 .method public static bridge synthetic x(Landroid/view/ViewParent;Landroid/view/ViewGroup;FF)Z
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-interface {p0, p1, p2, p3}, Landroid/view/ViewParent;->onNestedPreFling(Landroid/view/View;FF)Z
@@ -384,7 +384,7 @@
 .end method
 
 .method public static bridge synthetic y(Landroid/view/ViewParent;Landroid/view/ViewGroup;FFZ)Z
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-interface {p0, p1, p2, p3, p4}, Landroid/view/ViewParent;->onNestedFling(Landroid/view/View;FFZ)Z
@@ -399,7 +399,7 @@
 .end method
 
 .method public static bridge synthetic z(Landroid/view/WindowInsets;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/WindowInsets;->isConsumed()Z

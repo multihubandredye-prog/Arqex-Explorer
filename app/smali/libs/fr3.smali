@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/c;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/fr3;->a:Llibs/c;
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iget-object p1, p0, Llibs/fr3;->a:Llibs/c;

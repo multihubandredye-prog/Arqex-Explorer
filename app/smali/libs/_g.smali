@@ -25,7 +25,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 15
+    .locals 15
 
     .line 1
     new-instance v0, Llibs/_f;
@@ -331,7 +331,7 @@
 .end method
 
 .method public static a(Z)Ljava/util/ArrayList;
-    .registers 16
+    .locals 15
 
     .line 1
     new-instance v1, Ljava/util/ArrayList;
@@ -343,7 +343,7 @@
     .line 4
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     sget v0, Llibs/bi2;->update:I
 
     .line 7
@@ -370,11 +370,11 @@
     const/4 v4, 0x0
 
     .line 18
-    :goto_11
+    :goto_0
     const/4 v5, 0x7
 
     .line 19
-    if-ge v4, v5, :cond_9f
+    if-ge v4, v5, :cond_4
 
     .line 20
     .line 21
@@ -386,7 +386,7 @@
 
     .line 24
     .line 25
-    if-eqz v6, :cond_9b
+    if-eqz v6, :cond_3
 
     .line 26
     .line 27
@@ -398,7 +398,7 @@
     move-result-object v6
 
     .line 31
-    if-eqz v6, :cond_9b
+    if-eqz v6, :cond_3
 
     .line 32
     .line 33
@@ -420,7 +420,7 @@
     const/4 v8, 0x2
 
     .line 41
-    if-lt v7, v8, :cond_3a
+    if-lt v7, v8, :cond_0
 
     .line 42
     .line 43
@@ -428,48 +428,48 @@
 
     .line 44
     .line 45
-    if-eqz v7, :cond_9b
+    if-eqz v7, :cond_3
 
     .line 46
     .line 47
     const/4 v9, 0x4
 
     .line 48
-    if-eq v7, v9, :cond_9b
+    if-eq v7, v9, :cond_3
 
     .line 49
     .line 50
-    if-eq v7, v8, :cond_9b
+    if-eq v7, v8, :cond_3
 
     .line 51
     .line 52
     const/4 v9, 0x3
 
     .line 53
-    if-ne v7, v9, :cond_3a
+    if-ne v7, v9, :cond_0
 
     .line 54
     .line 55
-    goto :goto_9b
+    goto :goto_3
 
     .line 56
-    :catchall_37
+    :catchall_0
     move-exception v0
 
     .line 57
     move-object p0, v0
 
     .line 58
-    goto :goto_a0
+    goto :goto_4
 
     .line 59
-    :cond_3a
+    :cond_0
     invoke-virtual {v5, v6}, Llibs/_f;->e(Landroid/content/pm/PackageInfo;)Z
 
     .line 60
     .line 61
     .line 62
-    if-eqz p0, :cond_9b
+    if-eqz p0, :cond_3
 
     .line 63
     .line 64
@@ -477,7 +477,7 @@
 
     .line 65
     .line 66
-    if-eqz v7, :cond_50
+    if-eqz v7, :cond_1
 
     .line 67
     .line 68
@@ -505,15 +505,15 @@
     move-result-object v6
 
     .line 80
-    goto :goto_52
+    goto :goto_1
 
     .line 81
-    :cond_50
+    :cond_1
     iget-object v6, v6, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     .line 82
     .line 83
-    :goto_52
+    :goto_1
     new-instance v9, Llibs/r90;
 
     .line 84
@@ -548,7 +548,7 @@
 
     .line 100
     .line 101
-    if-eqz v11, :cond_82
+    if-eqz v11, :cond_2
 
     .line 102
     .line 103
@@ -601,15 +601,15 @@
     move-result-object v11
 
     .line 130
-    goto :goto_84
+    goto :goto_2
 
     .line 131
-    :cond_82
+    :cond_2
     const-string v11, ""
 
     .line 132
     .line 133
-    :goto_84
+    :goto_2
     invoke-virtual {v7, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 134
@@ -651,27 +651,27 @@
     .line 152
     .line 153
     invoke-interface {v1, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-    :try_end_9b
-    .catchall {:try_start_5 .. :try_end_9b} :catchall_37
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 154
     .line 155
     .line 156
-    :cond_9b
-    :goto_9b
+    :cond_3
+    :goto_3
     add-int/lit8 v4, v4, 0x1
 
     .line 157
     .line 158
-    goto/16 :goto_11
+    goto/16 :goto_0
 
     .line 159
     .line 160
-    :cond_9f
+    :cond_4
     return-object v1
 
     .line 161
-    :goto_a0
+    :goto_4
     const-string v0, "ADDON"
 
     .line 162
@@ -693,14 +693,14 @@
 .end method
 
 .method public static b(Ljava/lang/String;)Ljava/io/File;
-    .registers 4
+    .locals 3
 
     .line 1
     sget-object v0, Llibs/_g;->i:Ljava/io/File;
 
     .line 2
     .line 3
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -720,7 +720,7 @@
 
     .line 12
     .line 13
-    :cond_c
+    :cond_0
     new-instance v0, Ljava/io/File;
 
     .line 14
@@ -750,7 +750,7 @@
 .end method
 
 .method public static c()Z
-    .registers 1
+    .locals 1
 
     .line 1
     invoke-static {}, Llibs/_f;->b()I
@@ -761,7 +761,7 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -771,7 +771,7 @@
     return v0
 
     .line 9
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 10
@@ -779,7 +779,7 @@
 .end method
 
 .method public static d()Z
-    .registers 2
+    .locals 2
 
     .line 1
     invoke-static {}, Llibs/_f;->b()I
@@ -793,14 +793,14 @@
     const/4 v1, 0x1
 
     .line 6
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_0
 
     .line 7
     .line 8
     return v1
 
     .line 9
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 10

@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/en;->a:B
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final a(Llibs/Init;Llibs/i03;)Z
-    .registers 6
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/en;->a:B
@@ -43,12 +43,12 @@
     const/4 v2, 0x0
 
     .line 5
-    packed-switch v0, :pswitch_data_2c
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
     .line 8
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_0
 
     .line 9
     .line 10
@@ -60,47 +60,47 @@
 
     .line 13
     .line 14
-    if-ne p2, p1, :cond_10
+    if-ne p2, p1, :cond_0
 
     .line 15
     .line 16
-    goto :goto_11
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     const/4 v1, 0x0
 
     .line 18
-    :goto_11
+    :goto_0
     return v1
 
     .line 19
-    :pswitch_12
+    :pswitch_0
     iget-object p1, p2, Llibs/k03;->b:Llibs/g03;
 
     .line 20
     .line 21
-    if-nez p1, :cond_17
+    if-nez p1, :cond_1
 
     .line 22
     .line 23
-    goto :goto_18
+    goto :goto_1
 
     .line 24
-    :cond_17
+    :cond_1
     const/4 v1, 0x0
 
     .line 25
-    :goto_18
+    :goto_1
     return v1
 
     .line 26
-    :pswitch_19
+    :pswitch_1
     instance-of p1, p2, Llibs/g03;
 
     .line 27
     .line 28
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_3
 
     .line 29
     .line 30
@@ -124,38 +124,38 @@
     move-result p1
 
     .line 40
-    if-nez p1, :cond_2a
+    if-nez p1, :cond_2
 
     .line 41
     .line 42
-    goto :goto_2b
+    goto :goto_2
 
     .line 43
-    :cond_2a
+    :cond_2
     const/4 v1, 0x0
 
     .line 44
-    :cond_2b
-    :goto_2b
+    :cond_3
+    :goto_2
     return v1
 
     .line 45
-    :pswitch_data_2c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_19
-        :pswitch_12
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/en;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_e
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -167,7 +167,7 @@
     return-object v0
 
     .line 9
-    :pswitch_8
+    :pswitch_0
     const-string v0, "root"
 
     .line 10
@@ -175,7 +175,7 @@
     return-object v0
 
     .line 12
-    :pswitch_b
+    :pswitch_1
     const-string v0, "empty"
 
     .line 13
@@ -183,9 +183,9 @@
     return-object v0
 
     .line 15
-    :pswitch_data_e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_b
-        :pswitch_8
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

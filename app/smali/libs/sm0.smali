@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/tm0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/k42;-><init>()V
@@ -27,14 +27,14 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Llibs/sm0;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
@@ -50,26 +50,26 @@
 
     .line 10
     .line 11
-    if-eq v0, p1, :cond_f
+    if-eq v0, p1, :cond_0
 
     .line 12
     .line 13
-    if-eq v0, p1, :cond_f
+    if-eq v0, p1, :cond_0
 
     .line 14
     .line 15
-    goto :goto_11
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_0
     const/4 p1, 0x1
 
     .line 17
     return p1
 
     .line 18
-    :cond_11
-    :goto_11
+    :cond_1
+    :goto_0
     const/4 p1, 0x0
 
     .line 19
@@ -77,7 +77,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/sm0;->a:Llibs/tm0;
@@ -96,7 +96,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 7
+    .locals 6
 
     .line 1
     const/4 v0, 0x1
@@ -129,7 +129,7 @@
     move-result v4
 
     .line 15
-    if-nez v4, :cond_13
+    if-nez v4, :cond_0
 
     .line 16
     .line 17
@@ -137,10 +137,10 @@
 
     .line 18
     .line 19
-    goto :goto_19
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     const-string v4, ";"
 
     .line 21
@@ -153,7 +153,7 @@
     move-result-object v3
 
     .line 26
-    :goto_19
+    :goto_0
     new-instance v4, Ljava/lang/StringBuilder;
 
     .line 27
@@ -184,11 +184,11 @@
     .line 40
     .line 41
     .line 42
-    :goto_29
+    :goto_1
     array-length v5, v3
 
     .line 43
-    if-ge v2, v5, :cond_47
+    if-ge v2, v5, :cond_2
 
     .line 44
     .line 45
@@ -225,7 +225,7 @@
     sub-int/2addr v5, v0
 
     .line 62
-    if-eq v2, v5, :cond_44
+    if-eq v2, v5, :cond_1
 
     .line 63
     .line 64
@@ -238,15 +238,15 @@
     .line 67
     .line 68
     .line 69
-    :cond_44
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
     .line 70
     .line 71
-    goto :goto_29
+    goto :goto_1
 
     .line 72
-    :cond_47
+    :cond_2
     const-string v0, "]"
 
     .line 73

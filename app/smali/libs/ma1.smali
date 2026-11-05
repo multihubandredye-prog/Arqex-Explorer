@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static a(Landroid/view/View;)Landroid/view/View$AccessibilityDelegate;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->getAccessibilityDelegate()Landroid/view/View$AccessibilityDelegate;
@@ -20,7 +20,7 @@
 .end method
 
 .method public static b(IIII)Landroid/graphics/Insets;
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-static {p0, p1, p2, p3}, Landroid/graphics/Insets;->of(IIII)Landroid/graphics/Insets;
@@ -35,24 +35,24 @@
 .end method
 
 .method public static c(Landroid/app/Service;ILandroid/app/Notification;I)V
-    .registers 5
+    .locals 1
 
     .line 1
-    if-eqz p3, :cond_c
+    if-eqz p3, :cond_1
 
     .line 2
     .line 3
     const/4 v0, -0x1
 
     .line 4
-    if-ne p3, v0, :cond_6
+    if-ne p3, v0, :cond_0
 
     .line 5
     .line 6
-    goto :goto_c
+    goto :goto_0
 
     .line 7
-    :cond_6
+    :cond_0
     and-int/lit16 p3, p3, 0xff
 
     .line 8
@@ -65,8 +65,8 @@
     return-void
 
     .line 13
-    :cond_c
-    :goto_c
+    :cond_1
+    :goto_0
     invoke-virtual {p0, p1, p2, p3}, Landroid/app/Service;->startForeground(ILandroid/app/Notification;I)V
 
     .line 14
@@ -76,24 +76,24 @@
 .end method
 
 .method public static d(Landroid/app/Service;ILandroid/app/Notification;I)V
-    .registers 5
+    .locals 1
 
     .line 1
-    if-eqz p3, :cond_e
+    if-eqz p3, :cond_1
 
     .line 2
     .line 3
     const/4 v0, -0x1
 
     .line 4
-    if-ne p3, v0, :cond_6
+    if-ne p3, v0, :cond_0
 
     .line 5
     .line 6
-    goto :goto_e
+    goto :goto_0
 
     .line 7
-    :cond_6
+    :cond_0
     const v0, 0x40000fff    # 2.0009763f
 
     .line 8
@@ -110,8 +110,8 @@
     return-void
 
     .line 15
-    :cond_e
-    :goto_e
+    :cond_1
+    :goto_0
     invoke-virtual {p0, p1, p2, p3}, Landroid/app/Service;->startForeground(ILandroid/app/Notification;I)V
 
     .line 16

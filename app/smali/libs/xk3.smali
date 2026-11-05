@@ -20,7 +20,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/TextEditorActivity;ZLcom/mixplorer/widgets/MiEditor;JI)V
-    .registers 7
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 7
+    .locals 5
 
     .line 1
     iget-wide v0, p0, Llibs/xk3;->Lambda:J
@@ -81,11 +81,11 @@
 
     .line 12
     .line 13
-    if-eqz v3, :cond_16
+    if-eqz v3, :cond_0
 
     .line 14
     .line 15
-    :try_start_e
+    :try_start_0
     invoke-virtual {v4}, Lcom/mixplorer/widgets/MiEditor;->getScrollView()Lcom/mixplorer/widgets/MiScrollView;
 
     .line 16
@@ -102,14 +102,14 @@
     return-void
 
     .line 23
-    :cond_16
+    :cond_0
     invoke-virtual {v2, v4, v0, v1, p1}, Lcom/mixplorer/activities/TextEditorActivity;->Msg(Lcom/mixplorer/widgets/MiEditor;JI)V
-    :try_end_19
-    .catchall {:try_start_e .. :try_end_19} :catchall_19
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 24
     .line 25
     .line 26
-    :catchall_19
+    :catchall_0
     return-void
 .end method

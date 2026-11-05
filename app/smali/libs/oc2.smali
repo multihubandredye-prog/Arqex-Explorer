@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic a(Landroid/widget/OverScroller;)F
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/widget/OverScroller;->getCurrVelocity()F
@@ -20,7 +20,7 @@
 .end method
 
 .method public static bridge synthetic b(Landroid/text/style/SuggestionSpan;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/text/style/SuggestionSpan;->getFlags()I
@@ -35,7 +35,7 @@
 .end method
 
 .method public static bridge synthetic c(Ljava/lang/Object;)Landroid/text/style/SuggestionSpan;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Landroid/text/style/SuggestionSpan;
@@ -46,7 +46,7 @@
 .end method
 
 .method public static bridge synthetic d(Ljava/lang/Object;)Landroid/view/View$AccessibilityDelegate;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Landroid/view/View$AccessibilityDelegate;
@@ -57,7 +57,7 @@
 .end method
 
 .method public static bridge synthetic e(Landroid/graphics/Paint;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -72,7 +72,7 @@
 .end method
 
 .method public static bridge synthetic f(Landroid/graphics/SurfaceTexture;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/graphics/SurfaceTexture;->release()V
@@ -84,7 +84,7 @@
 .end method
 
 .method public static bridge synthetic g(Landroid/view/View;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -99,7 +99,7 @@
 .end method
 
 .method public static bridge synthetic h(Landroid/view/View;Llibs/Bravo;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/View;->setAccessibilityDelegate(Landroid/view/View$AccessibilityDelegate;)V
@@ -111,7 +111,7 @@
 .end method
 
 .method public static bridge synthetic i(Llibs/wv1;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -126,7 +126,7 @@
 .end method
 
 .method public static bridge synthetic j(Llibs/wv1;Llibs/fd2;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/TextureView;->setSurfaceTextureListener(Landroid/view/TextureView$SurfaceTextureListener;)V
@@ -138,7 +138,7 @@
 .end method
 
 .method public static bridge synthetic k(Landroid/view/View;I)Z
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/View;->canScrollHorizontally(I)Z
@@ -153,7 +153,7 @@
 .end method
 
 .method public static bridge synthetic l(Ljava/lang/Object;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     instance-of p0, p0, Landroid/view/View$AccessibilityDelegate;

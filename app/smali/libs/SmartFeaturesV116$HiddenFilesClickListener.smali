@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,7 +25,7 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Llibs/SmartFeaturesV116$HiddenFilesClickListener;->activity:Landroid/app/Activity;
 
@@ -35,26 +35,26 @@
 .end method
 
 .method public onLongClick(Landroid/view/View;)Z
-    .registers 5
+    .locals 3
 
     iget-object v0, p0, Llibs/SmartFeaturesV116$HiddenFilesClickListener;->activity:Landroid/app/Activity;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1
 
     invoke-static {v0}, Llibs/SmartFeaturesV116;->isShowingHidden(Landroid/app/Activity;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
     const-string v1, "Ocultar arquivos ocultos"
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const-string v1, "Mostrar arquivos ocultos"
 
-    :goto_f
+    :goto_0
     const/4 v2, 0x0
 
     invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
@@ -63,7 +63,7 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    :cond_17
+    :cond_1
     const/4 v0, 0x1
 
     return v0

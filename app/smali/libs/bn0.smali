@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/net/Socket;Ljava/io/OutputStream;Llibs/om0;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/io/OutputStream;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final close()V
-    .registers 8
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/bn0;->X:Ljava/io/OutputStream;
@@ -93,19 +93,19 @@
     const/4 v5, 0x0
 
     .line 26
-    :try_start_19
+    :try_start_0
     invoke-virtual {v0}, Llibs/tm0;->j()Llibs/yn2;
-    :try_end_1c
-    .catch Ljava/io/IOException; {:try_start_19 .. :try_end_1c} :catch_2a
-    .catch Llibs/qw; {:try_start_19 .. :try_end_1c} :catch_1d
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Llibs/qw; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 27
     .line 28
     .line 29
-    goto :goto_36
+    goto :goto_0
 
     .line 30
-    :catch_1d
+    :catch_0
     move-exception v6
 
     .line 31
@@ -130,10 +130,10 @@
     .line 40
     .line 41
     .line 42
-    goto :goto_36
+    goto :goto_0
 
     .line 43
-    :catch_2a
+    :catch_1
     move-exception v6
 
     .line 44
@@ -158,7 +158,7 @@
     .line 53
     .line 54
     .line 55
-    :goto_36
+    :goto_0
     invoke-virtual {v3}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
 
     .line 56
@@ -177,7 +177,7 @@
 .end method
 
 .method public final flush()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bn0;->X:Ljava/io/OutputStream;
@@ -193,7 +193,7 @@
 .end method
 
 .method public final write(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bn0;->X:Ljava/io/OutputStream;
@@ -209,7 +209,7 @@
 .end method
 
 .method public final write([B)V
-    .registers 3
+    .locals 1
 
     .line 7
     iget-object v0, p0, Llibs/bn0;->X:Ljava/io/OutputStream;
@@ -220,7 +220,7 @@
 .end method
 
 .method public final write([BII)V
-    .registers 5
+    .locals 1
 
     .line 8
     iget-object v0, p0, Llibs/bn0;->X:Ljava/io/OutputStream;

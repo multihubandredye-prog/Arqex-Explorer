@@ -9,7 +9,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/s73;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/Google;->b:B
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final e(Llibs/Size;[B)Llibs/Sign;
-    .registers 13
+    .locals 10
 
     .line 1
     iget-byte v0, p0, Llibs/Google;->b:B
@@ -43,7 +43,7 @@
     const/4 v3, 0x0
 
     .line 6
-    packed-switch v0, :pswitch_data_208
+    packed-switch v0, :pswitch_data_0
 
     .line 7
     .line 8
@@ -68,7 +68,7 @@
     return-object v0
 
     .line 19
-    :pswitch_12
+    :pswitch_0
     const-string p1, "Could not parse ASN.1 SET contents."
 
     .line 20
@@ -82,7 +82,7 @@
     .line 24
     .line 25
     .line 26
-    :try_start_19
+    :try_start_0
     new-instance v4, Llibs/Url;
 
     .line 27
@@ -96,80 +96,80 @@
     .line 31
     .line 32
     invoke-direct {v4, v5, p2}, Llibs/Url;-><init>(Llibs/s73;[B)V
-    :try_end_22
-    .catchall {:try_start_19 .. :try_end_22} :catchall_56
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 33
     .line 34
     .line 35
-    :goto_22
-    :try_start_22
+    :goto_0
+    :try_start_1
     invoke-virtual {v4}, Ljava/io/InputStream;->available()I
 
     .line 36
     .line 37
     .line 38
     move-result v2
-    :try_end_26
-    .catch Ljava/io/IOException; {:try_start_22 .. :try_end_26} :catch_2d
-    .catchall {:try_start_22 .. :try_end_26} :catchall_2a
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 39
-    if-lez v2, :cond_2e
+    if-lez v2, :cond_0
 
     .line 40
     .line 41
     const/4 v2, 0x1
 
     .line 42
-    goto :goto_2f
+    goto :goto_1
 
     .line 43
-    :catchall_2a
+    :catchall_0
     move-exception p2
 
     .line 44
     move-object v2, v4
 
     .line 45
-    goto :goto_57
+    goto :goto_2
 
     .line 46
-    :catch_2d
+    :catch_0
     nop
 
     .line 47
-    :cond_2e
+    :cond_0
     const/4 v2, 0x0
 
     .line 48
-    :goto_2f
-    if-eqz v2, :cond_44
+    :goto_1
+    if-eqz v2, :cond_1
 
     .line 49
     .line 50
-    :try_start_31
+    :try_start_2
     invoke-virtual {v4}, Llibs/Url;->c()Llibs/Sign;
 
     .line 51
     .line 52
     .line 53
     move-result-object v2
-    :try_end_35
-    .catch Ljava/lang/Exception; {:try_start_31 .. :try_end_35} :catch_39
-    .catchall {:try_start_31 .. :try_end_35} :catchall_2a
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 54
-    :try_start_35
+    :try_start_3
     invoke-virtual {v0, v2}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 55
     .line 56
     .line 57
-    goto :goto_22
+    goto :goto_0
 
     .line 58
-    :catch_39
+    :catch_1
     move-exception p2
 
     .line 59
@@ -191,15 +191,15 @@
     .line 67
     .line 68
     throw v0
-    :try_end_44
-    .catchall {:try_start_35 .. :try_end_44} :catchall_2a
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 69
-    :cond_44
-    :try_start_44
+    :cond_1
+    :try_start_4
     invoke-virtual {v4}, Ljava/io/InputStream;->close()V
-    :try_end_47
-    .catch Ljava/io/IOException; {:try_start_44 .. :try_end_47} :catch_4d
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
 
     .line 70
     .line 71
@@ -216,7 +216,7 @@
     return-object p1
 
     .line 78
-    :catch_4d
+    :catch_2
     move-exception p2
 
     .line 79
@@ -236,15 +236,15 @@
     throw v0
 
     .line 87
-    :catchall_56
+    :catchall_1
     move-exception p2
 
     .line 88
-    :goto_57
-    :try_start_57
+    :goto_2
+    :try_start_5
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
-    :try_end_5a
-    .catch Ljava/io/IOException; {:try_start_57 .. :try_end_5a} :catch_5b
+    :try_end_5
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
 
     .line 89
     .line 90
@@ -252,7 +252,7 @@
     throw p2
 
     .line 92
-    :catch_5b
+    :catch_3
     move-exception p2
 
     .line 93
@@ -272,7 +272,7 @@
     throw v0
 
     .line 101
-    :pswitch_64
+    :pswitch_1
     const-string p1, "Unable to parse the ASN.1 SEQUENCE contents."
 
     .line 102
@@ -286,7 +286,7 @@
     .line 106
     .line 107
     .line 108
-    :try_start_6b
+    :try_start_6
     new-instance v4, Llibs/Url;
 
     .line 109
@@ -300,80 +300,80 @@
     .line 113
     .line 114
     invoke-direct {v4, v5, p2}, Llibs/Url;-><init>(Llibs/s73;[B)V
-    :try_end_74
-    .catchall {:try_start_6b .. :try_end_74} :catchall_a8
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_3
 
     .line 115
     .line 116
     .line 117
-    :goto_74
-    :try_start_74
+    :goto_3
+    :try_start_7
     invoke-virtual {v4}, Ljava/io/InputStream;->available()I
 
     .line 118
     .line 119
     .line 120
     move-result v2
-    :try_end_78
-    .catch Ljava/io/IOException; {:try_start_74 .. :try_end_78} :catch_7f
-    .catchall {:try_start_74 .. :try_end_78} :catchall_7c
+    :try_end_7
+    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_4
+    .catchall {:try_start_7 .. :try_end_7} :catchall_2
 
     .line 121
-    if-lez v2, :cond_80
+    if-lez v2, :cond_2
 
     .line 122
     .line 123
     const/4 v2, 0x1
 
     .line 124
-    goto :goto_81
+    goto :goto_4
 
     .line 125
-    :catchall_7c
+    :catchall_2
     move-exception p2
 
     .line 126
     move-object v2, v4
 
     .line 127
-    goto :goto_a9
+    goto :goto_5
 
     .line 128
-    :catch_7f
+    :catch_4
     nop
 
     .line 129
-    :cond_80
+    :cond_2
     const/4 v2, 0x0
 
     .line 130
-    :goto_81
-    if-eqz v2, :cond_96
+    :goto_4
+    if-eqz v2, :cond_3
 
     .line 131
     .line 132
-    :try_start_83
+    :try_start_8
     invoke-virtual {v4}, Llibs/Url;->c()Llibs/Sign;
 
     .line 133
     .line 134
     .line 135
     move-result-object v2
-    :try_end_87
-    .catch Ljava/lang/Exception; {:try_start_83 .. :try_end_87} :catch_8b
-    .catchall {:try_start_83 .. :try_end_87} :catchall_7c
+    :try_end_8
+    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_5
+    .catchall {:try_start_8 .. :try_end_8} :catchall_2
 
     .line 136
-    :try_start_87
+    :try_start_9
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 137
     .line 138
     .line 139
-    goto :goto_74
+    goto :goto_3
 
     .line 140
-    :catch_8b
+    :catch_5
     move-exception p2
 
     .line 141
@@ -395,15 +395,15 @@
     .line 149
     .line 150
     throw v0
-    :try_end_96
-    .catchall {:try_start_87 .. :try_end_96} :catchall_7c
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_2
 
     .line 151
-    :cond_96
-    :try_start_96
+    :cond_3
+    :try_start_a
     invoke-virtual {v4}, Ljava/io/InputStream;->close()V
-    :try_end_99
-    .catch Ljava/io/IOException; {:try_start_96 .. :try_end_99} :catch_9f
+    :try_end_a
+    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_6
 
     .line 152
     .line 153
@@ -420,7 +420,7 @@
     return-object p1
 
     .line 160
-    :catch_9f
+    :catch_6
     move-exception p2
 
     .line 161
@@ -440,15 +440,15 @@
     throw v0
 
     .line 169
-    :catchall_a8
+    :catchall_3
     move-exception p2
 
     .line 170
-    :goto_a9
-    :try_start_a9
+    :goto_5
+    :try_start_b
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
-    :try_end_ac
-    .catch Ljava/io/IOException; {:try_start_a9 .. :try_end_ac} :catch_ad
+    :try_end_b
+    .catch Ljava/io/IOException; {:try_start_b .. :try_end_b} :catch_7
 
     .line 171
     .line 172
@@ -456,7 +456,7 @@
     throw p2
 
     .line 174
-    :catch_ad
+    :catch_7
     move-exception p2
 
     .line 175
@@ -476,7 +476,7 @@
     throw v0
 
     .line 183
-    :pswitch_b6
+    :pswitch_2
     new-instance v0, Llibs/Section;
 
     .line 184
@@ -489,11 +489,11 @@
     return-object v0
 
     .line 189
-    :pswitch_bc
+    :pswitch_3
     array-length p1, p2
 
     .line 190
-    if-lez p1, :cond_11f
+    if-lez p1, :cond_7
 
     .line 191
     .line 192
@@ -550,7 +550,7 @@
     .line 219
     .line 220
     .line 221
-    :goto_dc
+    :goto_6
     invoke-virtual {p1}, Ljava/io/ByteArrayInputStream;->available()I
 
     .line 222
@@ -559,7 +559,7 @@
     move-result v1
 
     .line 225
-    if-lez v1, :cond_115
+    if-lez v1, :cond_6
 
     .line 226
     .line 227
@@ -575,7 +575,7 @@
 
     .line 232
     .line 233
-    if-ge v1, v3, :cond_f1
+    if-ge v1, v3, :cond_4
 
     .line 234
     .line 235
@@ -589,10 +589,10 @@
     .line 239
     .line 240
     .line 241
-    goto :goto_dc
+    goto :goto_6
 
     .line 242
-    :cond_f1
+    :cond_4
     and-int/lit8 v1, v1, 0x7f
 
     .line 243
@@ -608,7 +608,7 @@
     move-result-object v1
 
     .line 249
-    :cond_f8
+    :cond_5
     invoke-virtual {p1}, Ljava/io/ByteArrayInputStream;->read()I
 
     .line 250
@@ -651,7 +651,7 @@
     move-result-object v1
 
     .line 269
-    if-gt v4, v3, :cond_f8
+    if-gt v4, v3, :cond_5
 
     .line 270
     .line 271
@@ -665,10 +665,10 @@
     .line 275
     .line 276
     .line 277
-    goto :goto_dc
+    goto :goto_6
 
     .line 278
-    :cond_115
+    :cond_6
     new-instance v2, Llibs/Page;
 
     .line 279
@@ -686,10 +686,10 @@
     .line 285
     .line 286
     .line 287
-    goto :goto_124
+    goto :goto_7
 
     .line 288
-    :cond_11f
+    :cond_7
     const-string p1, "An ASN.1 OBJECT IDENTIFIER should have at least a one byte value"
 
     .line 289
@@ -699,27 +699,27 @@
     .line 291
     .line 292
     .line 293
-    :goto_124
+    :goto_7
     return-object v2
 
     .line 294
-    :pswitch_125
+    :pswitch_4
     array-length p1, p2
 
     .line 295
-    if-nez p1, :cond_129
+    if-nez p1, :cond_8
 
     .line 296
     .line 297
-    goto :goto_12a
+    goto :goto_8
 
     .line 298
-    :cond_129
+    :cond_8
     const/4 v1, 0x0
 
     .line 299
-    :goto_12a
-    if-eqz v1, :cond_132
+    :goto_8
+    if-eqz v1, :cond_9
 
     .line 300
     .line 301
@@ -732,10 +732,10 @@
     .line 304
     .line 305
     .line 306
-    goto :goto_137
+    goto :goto_9
 
     .line 307
-    :cond_132
+    :cond_9
     const-string p1, "ASN.1 NULL can not have a value"
 
     .line 308
@@ -745,11 +745,11 @@
     .line 310
     .line 311
     .line 312
-    :goto_137
+    :goto_9
     return-object v2
 
     .line 313
-    :pswitch_138
+    :pswitch_5
     new-instance p1, Llibs/Key;
 
     .line 314
@@ -771,7 +771,7 @@
     return-object p1
 
     .line 324
-    :pswitch_143
+    :pswitch_6
     new-instance p1, Ljava/math/BigInteger;
 
     .line 325
@@ -793,29 +793,29 @@
     return-object v0
 
     .line 335
-    :pswitch_14e
+    :pswitch_7
     array-length p1, p2
 
     .line 336
-    if-ne p1, v1, :cond_153
+    if-ne p1, v1, :cond_a
 
     .line 337
     .line 338
     const/4 p1, 0x1
 
     .line 339
-    goto :goto_154
+    goto :goto_a
 
     .line 340
-    :cond_153
+    :cond_a
     const/4 p1, 0x0
 
     .line 341
-    :goto_154
+    :goto_a
     array-length v0, p2
 
     .line 342
-    if-eqz p1, :cond_163
+    if-eqz p1, :cond_c
 
     .line 343
     .line 344
@@ -827,27 +827,27 @@
 
     .line 347
     .line 348
-    if-eqz p1, :cond_15e
+    if-eqz p1, :cond_b
 
     .line 349
     .line 350
-    goto :goto_15f
+    goto :goto_b
 
     .line 351
-    :cond_15e
+    :cond_b
     const/4 v1, 0x0
 
     .line 352
-    :goto_15f
+    :goto_b
     invoke-direct {v2, v1, p2}, Llibs/Dao;-><init>(Z[B)V
 
     .line 353
     .line 354
     .line 355
-    goto :goto_16c
+    goto :goto_c
 
     .line 356
-    :cond_163
+    :cond_c
     const-string p1, "Value of ASN1Boolean should have length 1, but was "
 
     .line 357
@@ -865,11 +865,11 @@
     .line 363
     .line 364
     .line 365
-    :goto_16c
+    :goto_c
     return-object v2
 
     .line 366
-    :pswitch_16d
+    :pswitch_8
     const-string v0, "Unable to parse Constructed ASN.1 BIT STRING"
 
     .line 367
@@ -882,11 +882,11 @@
 
     .line 371
     .line 372
-    if-ne v4, v5, :cond_1f8
+    if-ne v4, v5, :cond_11
 
     .line 373
     .line 374
-    :try_start_175
+    :try_start_c
     new-instance v4, Llibs/Url;
 
     .line 375
@@ -905,13 +905,13 @@
     .line 382
     .line 383
     iget-object p2, v4, Llibs/Url;->X:Llibs/s73;
-    :try_end_180
-    .catch Ljava/io/IOException; {:try_start_175 .. :try_end_180} :catch_1e2
-    .catchall {:try_start_175 .. :try_end_180} :catchall_1e0
+    :try_end_c
+    .catch Ljava/io/IOException; {:try_start_c .. :try_end_c} :catch_a
+    .catchall {:try_start_c .. :try_end_c} :catchall_5
 
     .line 384
     .line 385
-    :try_start_180
+    :try_start_d
     new-instance v2, Ljava/io/ByteArrayOutputStream;
 
     .line 386
@@ -924,8 +924,8 @@
     const/4 v5, 0x0
 
     .line 391
-    :cond_186
-    :goto_186
+    :cond_d
+    :goto_d
     invoke-virtual {v4}, Ljava/io/InputStream;->available()I
 
     .line 392
@@ -934,7 +934,7 @@
     move-result v6
 
     .line 395
-    if-lez v6, :cond_1ca
+    if-lez v6, :cond_10
 
     .line 396
     .line 397
@@ -959,21 +959,21 @@
 
     .line 407
     .line 408
-    if-ne v7, v8, :cond_19b
+    if-ne v7, v8, :cond_e
 
     .line 409
     .line 410
     const/4 v7, 0x1
 
     .line 411
-    goto :goto_19c
+    goto :goto_e
 
     .line 412
-    :cond_19b
+    :cond_e
     const/4 v7, 0x0
 
     .line 413
-    :goto_19c
+    :goto_e
     const-string v8, "Expected an ASN.1 BIT STRING as Constructed object, got: %s"
 
     .line 414
@@ -986,7 +986,7 @@
 
     .line 418
     .line 419
-    if-eqz v7, :cond_1c0
+    if-eqz v7, :cond_f
 
     .line 420
     .line 421
@@ -1025,7 +1025,7 @@
     move-result v7
 
     .line 438
-    if-gtz v7, :cond_186
+    if-gtz v7, :cond_d
 
     .line 439
     .line 440
@@ -1033,30 +1033,30 @@
 
     .line 441
     .line 442
-    goto :goto_186
+    goto :goto_d
 
     .line 443
-    :catchall_1ba
+    :catchall_4
     move-exception p1
 
     .line 444
     move-object v2, v4
 
     .line 445
-    goto :goto_1eb
+    goto :goto_10
 
     .line 446
-    :catch_1bd
+    :catch_8
     move-exception p1
 
     .line 447
     move-object v2, v4
 
     .line 448
-    goto :goto_1e3
+    goto :goto_f
 
     .line 449
-    :cond_1c0
+    :cond_f
     new-instance p1, Ljava/lang/IllegalStateException;
 
     .line 450
@@ -1077,7 +1077,7 @@
     throw p1
 
     .line 459
-    :cond_1ca
+    :cond_10
     new-instance p2, Llibs/Gms;
 
     .line 460
@@ -1091,25 +1091,25 @@
 
     .line 465
     invoke-direct {p2, p1, v1, v5}, Llibs/Gms;-><init>(Llibs/Size;[BI)V
-    :try_end_1d3
-    .catch Ljava/io/IOException; {:try_start_180 .. :try_end_1d3} :catch_1bd
-    .catchall {:try_start_180 .. :try_end_1d3} :catchall_1ba
+    :try_end_d
+    .catch Ljava/io/IOException; {:try_start_d .. :try_end_d} :catch_8
+    .catchall {:try_start_d .. :try_end_d} :catchall_4
 
     .line 466
     .line 467
     .line 468
-    :try_start_1d3
+    :try_start_e
     invoke-virtual {v4}, Ljava/io/InputStream;->close()V
-    :try_end_1d6
-    .catch Ljava/io/IOException; {:try_start_1d3 .. :try_end_1d6} :catch_1d7
+    :try_end_e
+    .catch Ljava/io/IOException; {:try_start_e .. :try_end_e} :catch_9
 
     .line 469
     .line 470
     .line 471
-    goto :goto_206
+    goto :goto_11
 
     .line 472
-    :catch_1d7
+    :catch_9
     move-exception p1
 
     .line 473
@@ -1129,19 +1129,19 @@
     throw p2
 
     .line 481
-    :catchall_1e0
+    :catchall_5
     move-exception p1
 
     .line 482
-    goto :goto_1eb
+    goto :goto_10
 
     .line 483
-    :catch_1e2
+    :catch_a
     move-exception p1
 
     .line 484
-    :goto_1e3
-    :try_start_1e3
+    :goto_f
+    :try_start_f
     new-instance p2, Llibs/Icon;
 
     .line 485
@@ -1156,15 +1156,15 @@
     .line 490
     .line 491
     throw p2
-    :try_end_1eb
-    .catchall {:try_start_1e3 .. :try_end_1eb} :catchall_1e0
+    :try_end_f
+    .catchall {:try_start_f .. :try_end_f} :catchall_5
 
     .line 492
-    :goto_1eb
-    :try_start_1eb
+    :goto_10
+    :try_start_10
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
-    :try_end_1ee
-    .catch Ljava/io/IOException; {:try_start_1eb .. :try_end_1ee} :catch_1ef
+    :try_end_10
+    .catch Ljava/io/IOException; {:try_start_10 .. :try_end_10} :catch_b
 
     .line 493
     .line 494
@@ -1172,7 +1172,7 @@
     throw p1
 
     .line 496
-    :catch_1ef
+    :catch_b
     move-exception p1
 
     .line 497
@@ -1192,7 +1192,7 @@
     throw p2
 
     .line 505
-    :cond_1f8
+    :cond_11
     aget-byte v0, p2, v3
 
     .line 506
@@ -1223,23 +1223,23 @@
     move-object p2, v1
 
     .line 519
-    :goto_206
+    :goto_11
     return-object p2
 
     .line 520
     nop
 
     .line 521
-    :pswitch_data_208
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_16d
-        :pswitch_14e
-        :pswitch_143
-        :pswitch_138
-        :pswitch_125
-        :pswitch_bc
-        :pswitch_b6
-        :pswitch_64
-        :pswitch_12
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

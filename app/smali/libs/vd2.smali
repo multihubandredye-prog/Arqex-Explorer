@@ -9,7 +9,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/vd2;->c:B
@@ -27,14 +27,14 @@
 
 # virtual methods
 .method public final c(DJ)I
-    .registers 8
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/vd2;->c:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_76
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -47,25 +47,25 @@
 
     .line 9
     .line 10
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 11
     .line 12
     const/4 p1, 0x2
 
     .line 13
-    goto :goto_e
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     const/4 p1, 0x0
 
     .line 15
-    :goto_e
+    :goto_0
     return p1
 
     .line 16
-    :pswitch_f
+    :pswitch_0
     long-to-double p3, p3
 
     .line 17
@@ -73,7 +73,7 @@
 
     .line 18
     .line 19
-    if-nez v0, :cond_20
+    if-nez v0, :cond_1
 
     .line 20
     .line 21
@@ -85,7 +85,7 @@
 
     .line 24
     .line 25
-    if-gtz v2, :cond_20
+    if-gtz v2, :cond_1
 
     .line 26
     .line 27
@@ -97,16 +97,16 @@
 
     .line 30
     .line 31
-    if-lez v2, :cond_33
+    if-lez v2, :cond_2
 
     .line 32
     .line 33
-    :cond_20
+    :cond_1
     cmpl-double v0, p1, p3
 
     .line 34
     .line 35
-    if-nez v0, :cond_35
+    if-nez v0, :cond_3
 
     .line 36
     .line 37
@@ -118,7 +118,7 @@
 
     .line 40
     .line 41
-    if-gtz v0, :cond_35
+    if-gtz v0, :cond_3
 
     .line 42
     .line 43
@@ -133,26 +133,26 @@
 
     .line 49
     .line 50
-    if-gtz v0, :cond_35
+    if-gtz v0, :cond_3
 
     .line 51
     .line 52
-    :cond_33
+    :cond_2
     const/4 p1, 0x2
 
     .line 53
-    goto :goto_36
+    goto :goto_1
 
     .line 54
-    :cond_35
+    :cond_3
     const/4 p1, 0x0
 
     .line 55
-    :goto_36
+    :goto_1
     return p1
 
     .line 56
-    :pswitch_37
+    :pswitch_1
     long-to-double p3, p3
 
     .line 57
@@ -160,7 +160,7 @@
 
     .line 58
     .line 59
-    if-nez v0, :cond_4a
+    if-nez v0, :cond_4
 
     .line 60
     .line 61
@@ -172,7 +172,7 @@
 
     .line 64
     .line 65
-    if-gtz v0, :cond_4a
+    if-gtz v0, :cond_4
 
     .line 66
     .line 67
@@ -184,25 +184,25 @@
 
     .line 70
     .line 71
-    if-gtz v0, :cond_4a
+    if-gtz v0, :cond_4
 
     .line 72
     .line 73
     const/4 p1, 0x2
 
     .line 74
-    goto :goto_4b
+    goto :goto_2
 
     .line 75
-    :cond_4a
+    :cond_4
     const/4 p1, 0x0
 
     .line 76
-    :goto_4b
+    :goto_2
     return p1
 
     .line 77
-    :pswitch_4c
+    :pswitch_2
     const-wide/16 p3, 0x0
 
     .line 78
@@ -211,7 +211,7 @@
 
     .line 80
     .line 81
-    if-eqz v0, :cond_5a
+    if-eqz v0, :cond_5
 
     .line 82
     .line 83
@@ -223,25 +223,25 @@
 
     .line 86
     .line 87
-    if-eqz v0, :cond_5a
+    if-eqz v0, :cond_5
 
     .line 88
     .line 89
     const/4 p1, 0x0
 
     .line 90
-    goto :goto_5b
+    goto :goto_3
 
     .line 91
-    :cond_5a
+    :cond_5
     const/4 p1, 0x2
 
     .line 92
-    :goto_5b
+    :goto_3
     return p1
 
     .line 93
-    :pswitch_5c
+    :pswitch_3
     const-wide/16 p1, 0x1
 
     .line 94
@@ -250,25 +250,25 @@
 
     .line 96
     .line 97
-    if-nez v0, :cond_64
+    if-nez v0, :cond_6
 
     .line 98
     .line 99
     const/4 p1, 0x2
 
     .line 100
-    goto :goto_65
+    goto :goto_4
 
     .line 101
-    :cond_64
+    :cond_6
     const/4 p1, 0x0
 
     .line 102
-    :goto_65
+    :goto_4
     return p1
 
     .line 103
-    :pswitch_66
+    :pswitch_4
     const-wide/16 p1, 0x0
 
     .line 104
@@ -277,7 +277,7 @@
 
     .line 106
     .line 107
-    if-gtz v0, :cond_74
+    if-gtz v0, :cond_7
 
     .line 108
     .line 109
@@ -289,30 +289,30 @@
 
     .line 112
     .line 113
-    if-gtz v0, :cond_74
+    if-gtz v0, :cond_7
 
     .line 114
     .line 115
     const/4 p1, 0x2
 
     .line 116
-    goto :goto_75
+    goto :goto_5
 
     .line 117
-    :cond_74
+    :cond_7
     const/4 p1, 0x0
 
     .line 118
-    :goto_75
+    :goto_5
     return p1
 
     .line 119
-    :pswitch_data_76
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_66
-        :pswitch_5c
-        :pswitch_4c
-        :pswitch_37
-        :pswitch_f
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

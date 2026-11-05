@@ -35,7 +35,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/util/HashMap;
@@ -63,7 +63,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
-    .registers 11
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -143,15 +143,15 @@
     const/4 p9, -0x1
 
     .line 40
-    packed-switch p8, :pswitch_data_68
+    packed-switch p8, :pswitch_data_0
 
     .line 41
     .line 42
     .line 43
-    goto :goto_4b
+    goto :goto_0
 
     .line 44
-    :pswitch_2b
+    :pswitch_0
     const-string p8, "2"
 
     .line 45
@@ -164,21 +164,21 @@
     move-result p1
 
     .line 50
-    if-nez p1, :cond_34
+    if-nez p1, :cond_0
 
     .line 51
     .line 52
-    goto :goto_4b
+    goto :goto_0
 
     .line 53
-    :cond_34
+    :cond_0
     const/4 p9, 0x2
 
     .line 54
-    goto :goto_4b
+    goto :goto_0
 
     .line 55
-    :pswitch_36
+    :pswitch_1
     const-string p8, "1"
 
     .line 56
@@ -191,21 +191,21 @@
     move-result p1
 
     .line 61
-    if-nez p1, :cond_3f
+    if-nez p1, :cond_1
 
     .line 62
     .line 63
-    goto :goto_4b
+    goto :goto_0
 
     .line 64
-    :cond_3f
+    :cond_1
     const/4 p9, 0x1
 
     .line 65
-    goto :goto_4b
+    goto :goto_0
 
     .line 66
-    :pswitch_41
+    :pswitch_2
     const-string p8, "0"
 
     .line 67
@@ -218,19 +218,19 @@
     move-result p1
 
     .line 72
-    if-nez p1, :cond_4a
+    if-nez p1, :cond_2
 
     .line 73
     .line 74
-    goto :goto_4b
+    goto :goto_0
 
     .line 75
-    :cond_4a
+    :cond_2
     const/4 p9, 0x0
 
     .line 76
-    :goto_4b
-    packed-switch p9, :pswitch_data_72
+    :goto_0
+    packed-switch p9, :pswitch_data_1
 
     .line 77
     .line 78
@@ -238,7 +238,7 @@
     return-void
 
     .line 80
-    :pswitch_4f
+    :pswitch_3
     new-instance p1, Llibs/zl;
 
     .line 81
@@ -255,7 +255,7 @@
     return-void
 
     .line 88
-    :pswitch_57
+    :pswitch_4
     new-instance p1, Llibs/gc0;
 
     .line 89
@@ -272,7 +272,7 @@
     return-void
 
     .line 96
-    :pswitch_5f
+    :pswitch_5
     new-instance p1, Llibs/qs;
 
     .line 97
@@ -292,11 +292,11 @@
     nop
 
     .line 105
-    :pswitch_data_68
+    :pswitch_data_0
     .packed-switch 0x30
-        :pswitch_41
-        :pswitch_36
-        :pswitch_2b
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 
     .line 106
@@ -309,16 +309,16 @@
     .line 113
     .line 114
     .line 115
-    :pswitch_data_72
+    :pswitch_data_1
     .packed-switch 0x0
-        :pswitch_5f
-        :pswitch_57
-        :pswitch_4f
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
     .end packed-switch
 .end method
 
 .method public static a()Llibs/lp;
-    .registers 2
+    .locals 2
 
     .line 1
     sget-object v0, Llibs/lp;->l:Ljava/util/Map;
@@ -328,7 +328,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     sget-object v1, Llibs/lp;->m:Ljava/lang/String;
 
     .line 5
@@ -351,20 +351,20 @@
     return-object v1
 
     .line 14
-    :catchall_d
+    :catchall_0
     move-exception v1
 
     .line 15
     monitor-exit v0
-    :try_end_f
-    .catchall {:try_start_3 .. :try_end_f} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 16
     throw v1
 .end method
 
 .method public static c(Landroid/app/Activity;Llibs/rp0;JLlibs/kp;)V
-    .registers 15
+    .locals 10
 
     .line 1
     new-instance v0, Llibs/h23;
@@ -477,7 +477,7 @@
 
 # virtual methods
 .method public final b()V
-    .registers 9
+    .locals 8
 
     .line 1
     iget-object v0, p0, Llibs/lp;->j:Ljava/util/concurrent/ExecutorService;
@@ -492,19 +492,19 @@
 
     .line 6
     .line 7
-    :try_start_6
+    :try_start_0
     iget-object v3, p0, Llibs/lp;->a:Llibs/d00;
 
     .line 8
     .line 9
     invoke-interface {v3}, Llibs/d00;->c()V
-    :try_end_b
-    .catchall {:try_start_6 .. :try_end_b} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 10
     .line 11
     .line 12
-    :goto_b
+    :goto_0
     invoke-interface {v2}, Ljava/util/concurrent/ExecutorService;->shutdownNow()Ljava/util/List;
 
     .line 13
@@ -523,11 +523,11 @@
     return-void
 
     .line 22
-    :catchall_15
+    :catchall_0
     move-exception v3
 
     .line 23
-    :try_start_16
+    :try_start_1
     const-string v4, "Cast"
 
     .line 24
@@ -559,16 +559,16 @@
     .line 36
     .line 37
     invoke-static {v4, v5, v6}, Llibs/vw1;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_27
-    .catchall {:try_start_16 .. :try_end_27} :catchall_28
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 38
     .line 39
     .line 40
-    goto :goto_b
+    goto :goto_0
 
     .line 41
-    :catchall_28
+    :catchall_1
     move-exception v3
 
     .line 42
@@ -587,19 +587,19 @@
     .line 49
     .line 50
     .line 51
-    goto :goto_34
+    goto :goto_2
 
     .line 52
-    :goto_33
+    :goto_1
     throw v3
 
     .line 53
-    :goto_34
-    goto :goto_33
+    :goto_2
+    goto :goto_1
 .end method
 
 .method public final d(Llibs/rp0;)[Ljava/lang/String;
-    .registers 6
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/util/HashSet;
@@ -773,18 +773,18 @@
 .end method
 
 .method public final e(Llibs/rp0;JZLlibs/sv0;)V
-    .registers 13
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/lp;->k:Llibs/kp;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
-    if-eqz p5, :cond_9
+    if-eqz p5, :cond_0
 
     .line 6
     .line 7
@@ -793,7 +793,7 @@
     .line 8
     .line 9
     .line 10
-    :cond_9
+    :cond_0
     new-instance p5, Llibs/xv1;
 
     .line 11
@@ -836,7 +836,7 @@
 .end method
 
 .method public final f()V
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/hp;

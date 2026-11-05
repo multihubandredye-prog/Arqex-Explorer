@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/kp0;Landroid/os/Handler;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/jp0;->Y:Llibs/kp0;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/z8;

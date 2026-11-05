@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/OutputStream;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/io/OutputStream;-><init>()V
@@ -29,14 +29,14 @@
 
 # virtual methods
 .method public close()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-boolean v0, p0, Llibs/jr0;->X:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -51,37 +51,37 @@
 
     .line 9
     .line 10
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 11
     .line 12
-    :try_start_b
+    :try_start_0
     invoke-virtual {p0}, Llibs/jr0;->flush()V
-    :try_end_e
-    .catchall {:try_start_b .. :try_end_e} :catchall_e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 13
     .line 14
     .line 15
-    :catchall_e
+    :catchall_0
     invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
 
     .line 16
     .line 17
     .line 18
-    :cond_11
+    :cond_0
     return-void
 .end method
 
 .method public flush()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/jr0;->Y:Ljava/io/OutputStream;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -90,12 +90,12 @@
     .line 6
     .line 7
     .line 8
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method public write([B)V
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -108,17 +108,17 @@
 .end method
 
 .method public write([BII)V
-    .registers 7
+    .locals 3
 
     .line 1
-    if-nez p3, :cond_3
+    if-nez p3, :cond_0
 
     .line 2
     .line 3
     return-void
 
     .line 4
-    :cond_3
+    :cond_0
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 5

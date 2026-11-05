@@ -15,7 +15,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-string v0, "jcifs.smb.client.listSize"
@@ -63,7 +63,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;I)V
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Llibs/bc3;-><init>()V
@@ -83,7 +83,7 @@
     move-result v1
 
     .line 10
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     .line 11
     .line 12
@@ -91,10 +91,10 @@
 
     .line 13
     .line 14
-    goto :goto_14
+    goto :goto_0
 
     .line 15
-    :cond_e
+    :cond_0
     invoke-virtual {p1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     .line 16
@@ -107,7 +107,7 @@
 
     .line 20
     .line 21
-    :goto_14
+    :goto_0
     and-int/lit8 p1, p2, 0x37
 
     .line 22
@@ -160,7 +160,7 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Ljava/lang/String;
@@ -315,7 +315,7 @@
 .end method
 
 .method public final x(I[B)I
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -325,7 +325,7 @@
 .end method
 
 .method public final y([B)I
-    .registers 7
+    .locals 5
 
     .line 1
     iget v0, p0, Llibs/mn3;->Yankee:I
@@ -439,7 +439,7 @@
 .end method
 
 .method public final z(I[B)I
-    .registers 5
+    .locals 2
 
     .line 1
     add-int/lit8 v0, p1, 0x1

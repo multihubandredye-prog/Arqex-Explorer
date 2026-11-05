@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>([C[BIIII)V
-    .registers 7
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public getBlockSize()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/ScryptKeySpec;->blockSize:I
@@ -71,7 +71,7 @@
 .end method
 
 .method public getCostParameter()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/ScryptKeySpec;->costParameter:I
@@ -82,7 +82,7 @@
 .end method
 
 .method public getKeyLength()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/ScryptKeySpec;->keyOutputBits:I
@@ -93,7 +93,7 @@
 .end method
 
 .method public getParallelizationParameter()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/ScryptKeySpec;->parallelizationParameter:I
@@ -104,7 +104,7 @@
 .end method
 
 .method public getPassword()[C
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ScryptKeySpec;->password:[C
@@ -115,7 +115,7 @@
 .end method
 
 .method public getSalt()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ScryptKeySpec;->salt:[B

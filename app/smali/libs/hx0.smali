@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/fn3;Llibs/rt;Ljava/util/List;Ljava/util/List;)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
 .end method
 
 .method public static a(Ljavax/net/ssl/SSLSession;)Llibs/hx0;
-    .registers 5
+    .locals 4
 
     .line 1
     invoke-interface {p0}, Ljavax/net/ssl/SSLSession;->getCipherSuite()Ljava/lang/String;
@@ -57,7 +57,7 @@
     const/4 v1, 0x0
 
     .line 6
-    if-eqz v0, :cond_59
+    if-eqz v0, :cond_5
 
     .line 7
     .line 8
@@ -73,7 +73,7 @@
     move-result v2
 
     .line 14
-    if-nez v2, :cond_53
+    if-nez v2, :cond_4
 
     .line 15
     .line 16
@@ -93,7 +93,7 @@
     move-result-object v2
 
     .line 24
-    if-eqz v2, :cond_4d
+    if-eqz v2, :cond_3
 
     .line 25
     .line 26
@@ -109,7 +109,7 @@
     move-result v3
 
     .line 32
-    if-nez v3, :cond_47
+    if-nez v3, :cond_2
 
     .line 33
     .line 34
@@ -121,26 +121,26 @@
     move-result-object v2
 
     .line 38
-    :try_start_25
+    :try_start_0
     invoke-interface {p0}, Ljavax/net/ssl/SSLSession;->getPeerCertificates()[Ljava/security/cert/Certificate;
 
     .line 39
     .line 40
     .line 41
     move-result-object v1
-    :try_end_29
-    .catch Ljavax/net/ssl/SSLPeerUnverifiedException; {:try_start_25 .. :try_end_29} :catch_2a
+    :try_end_0
+    .catch Ljavax/net/ssl/SSLPeerUnverifiedException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 42
-    goto :goto_2b
+    goto :goto_0
 
     .line 43
-    :catch_2a
+    :catch_0
     nop
 
     .line 44
-    :goto_2b
-    if-eqz v1, :cond_32
+    :goto_0
+    if-eqz v1, :cond_0
 
     .line 45
     .line 46
@@ -152,15 +152,15 @@
     move-result-object v1
 
     .line 50
-    goto :goto_34
+    goto :goto_1
 
     .line 51
-    :cond_32
+    :cond_0
     sget-object v1, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     .line 52
     .line 53
-    :goto_34
+    :goto_1
     invoke-interface {p0}, Ljavax/net/ssl/SSLSession;->getLocalCertificates()[Ljava/security/cert/Certificate;
 
     .line 54
@@ -169,7 +169,7 @@
     move-result-object p0
 
     .line 57
-    if-eqz p0, :cond_3f
+    if-eqz p0, :cond_1
 
     .line 58
     .line 59
@@ -181,15 +181,15 @@
     move-result-object p0
 
     .line 63
-    goto :goto_41
+    goto :goto_2
 
     .line 64
-    :cond_3f
+    :cond_1
     sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     .line 65
     .line 66
-    :goto_41
+    :goto_2
     new-instance v3, Llibs/hx0;
 
     .line 67
@@ -202,7 +202,7 @@
     return-object v3
 
     .line 72
-    :cond_47
+    :cond_2
     const-string p0, "tlsVersion == NONE"
 
     .line 73
@@ -215,7 +215,7 @@
     return-object v1
 
     .line 78
-    :cond_4d
+    :cond_3
     const-string p0, "tlsVersion == null"
 
     .line 79
@@ -228,7 +228,7 @@
     return-object v1
 
     .line 84
-    :cond_53
+    :cond_4
     const-string p0, "cipherSuite == SSL_NULL_WITH_NULL_NULL"
 
     .line 85
@@ -241,7 +241,7 @@
     return-object v1
 
     .line 90
-    :cond_59
+    :cond_5
     const-string p0, "cipherSuite == null"
 
     .line 91
@@ -255,7 +255,7 @@
 .end method
 
 .method public static b(Ljava/util/List;)Ljava/util/ArrayList;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/util/ArrayList;
@@ -275,7 +275,7 @@
     move-result-object p0
 
     .line 10
-    :goto_9
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 11
@@ -284,7 +284,7 @@
     move-result v1
 
     .line 14
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_1
 
     .line 15
     .line 16
@@ -304,7 +304,7 @@
 
     .line 23
     .line 24
-    if-eqz v2, :cond_27
+    if-eqz v2, :cond_0
 
     .line 25
     .line 26
@@ -333,10 +333,10 @@
     .line 37
     .line 38
     .line 39
-    goto :goto_9
+    goto :goto_0
 
     .line 40
-    :cond_27
+    :cond_0
     invoke-virtual {v1}, Ljava/security/cert/Certificate;->getType()Ljava/lang/String;
 
     .line 41
@@ -350,17 +350,17 @@
     .line 45
     .line 46
     .line 47
-    goto :goto_9
+    goto :goto_0
 
     .line 48
-    :cond_2f
+    :cond_1
     return-object v0
 .end method
 
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     instance-of v0, p1, Llibs/hx0;
@@ -370,14 +370,14 @@
     const/4 v1, 0x0
 
     .line 4
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 5
     .line 6
-    goto :goto_2f
+    goto :goto_0
 
     .line 7
-    :cond_6
+    :cond_0
     check-cast p1, Llibs/hx0;
 
     .line 8
@@ -398,7 +398,7 @@
     move-result v0
 
     .line 17
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_2
 
     .line 18
     .line 19
@@ -410,14 +410,14 @@
 
     .line 22
     .line 23
-    if-eq v0, v2, :cond_19
+    if-eq v0, v2, :cond_1
 
     .line 24
     .line 25
     return v1
 
     .line 26
-    :cond_19
+    :cond_1
     iget-object v0, p0, Llibs/hx0;->c:Ljava/util/List;
 
     .line 27
@@ -434,7 +434,7 @@
     move-result v0
 
     .line 34
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_2
 
     .line 35
     .line 36
@@ -454,7 +454,7 @@
     move-result p1
 
     .line 44
-    if-eqz p1, :cond_2f
+    if-eqz p1, :cond_2
 
     .line 45
     .line 46
@@ -464,13 +464,13 @@
     return p1
 
     .line 48
-    :cond_2f
-    :goto_2f
+    :cond_2
+    :goto_0
     return v1
 .end method
 
 .method public final hashCode()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/hx0;->a:Llibs/fn3;
@@ -550,7 +550,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

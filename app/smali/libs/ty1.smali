@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/vq0;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Llibs/ny1;-><init>(Llibs/vq0;I)V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final j()I
-    .registers 3
+    .locals 2
 
     .line 1
     const/16 v0, 0x10
@@ -41,7 +41,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     iget v0, p0, Llibs/ny1;->c:I

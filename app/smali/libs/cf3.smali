@@ -9,7 +9,7 @@
 
 # direct methods
 .method public varargs constructor <init>([Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/kf3;-><init>()V

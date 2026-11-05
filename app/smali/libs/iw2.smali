@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/pu2;Llibs/k00;JJLlibs/f5;I)V
-    .registers 19
+    .locals 10
 
     .line 1
     move-object/from16 v0, p7
@@ -83,7 +83,7 @@
 
 # virtual methods
 .method public final i(Llibs/rw2;)V
-    .registers 9
+    .locals 7
 
     .line 1
     iget v0, p0, Llibs/lv2;->c:I
@@ -256,18 +256,18 @@
 
     .line 88
     .line 89
-    if-eqz v4, :cond_5d
+    if-eqz v4, :cond_0
 
     .line 90
     .line 91
     array-length v5, v4
 
     .line 92
-    if-eq v5, v1, :cond_61
+    if-eq v5, v1, :cond_1
 
     .line 93
     .line 94
-    :cond_5d
+    :cond_0
     new-array v4, v1, [B
 
     .line 95
@@ -276,13 +276,13 @@
 
     .line 97
     .line 98
-    :cond_61
-    :goto_61
-    if-ge v2, v3, :cond_74
+    :cond_1
+    :goto_0
+    if-ge v2, v3, :cond_2
 
     .line 99
     .line 100
-    :try_start_63
+    :try_start_0
     invoke-virtual {v0, v4}, Llibs/f5;->i([B)I
 
     .line 101
@@ -292,8 +292,8 @@
 
     .line 104
     invoke-virtual {p1, v1, v4}, Llibs/rw2;->h(I[B)V
-    :try_end_6a
-    .catch Ljava/io/IOException; {:try_start_63 .. :try_end_6a} :catch_6d
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 105
     .line 106
@@ -302,10 +302,10 @@
 
     .line 108
     .line 109
-    goto :goto_61
+    goto :goto_0
 
     .line 110
-    :catch_6d
+    :catch_0
     move-exception p1
 
     .line 111
@@ -321,6 +321,6 @@
     throw v0
 
     .line 117
-    :cond_74
+    :cond_2
     return-void
 .end method

@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0xc
@@ -21,7 +21,7 @@
 .end method
 
 .method public static Wait()Llibs/wn2;
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/wn2;
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final Object()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -49,7 +49,7 @@
 .end method
 
 .method public final String()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -59,7 +59,7 @@
 .end method
 
 .method public final w()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -69,7 +69,7 @@
 .end method
 
 .method public final x()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -79,7 +79,7 @@
 .end method
 
 .method public final z()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0

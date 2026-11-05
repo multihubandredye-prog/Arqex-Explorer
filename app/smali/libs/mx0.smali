@@ -13,7 +13,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/od;Ljava/util/ArrayList;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/mx0;->c:B
@@ -37,14 +37,14 @@
 .end method
 
 .method private final j()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final k()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
@@ -53,14 +53,14 @@
 
 # virtual methods
 .method public final a(Lcom/mixplorer/widgets/MiViewPager;ILjava/lang/Object;)V
-    .registers 4
+    .locals 0
 
     .line 1
     iget-byte p2, p0, Llibs/mx0;->c:B
 
     .line 2
     .line 3
-    packed-switch p2, :pswitch_data_12
+    packed-switch p2, :pswitch_data_0
 
     .line 4
     .line 5
@@ -77,7 +77,7 @@
     return-void
 
     .line 12
-    :pswitch_b
+    :pswitch_0
     check-cast p3, Landroid/view/View;
 
     .line 13
@@ -93,14 +93,14 @@
     nop
 
     .line 19
-    :pswitch_data_12
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_b
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final b()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/mx0;->c:B
@@ -111,7 +111,7 @@
 .end method
 
 .method public final c()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/mx0;->c:B
@@ -122,7 +122,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_12
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -138,7 +138,7 @@
     return v0
 
     .line 13
-    :pswitch_c
+    :pswitch_0
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     .line 14
@@ -153,21 +153,21 @@
     nop
 
     .line 19
-    :pswitch_data_12
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_c
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final d()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/mx0;->c:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_a
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -178,7 +178,7 @@
     return v0
 
     .line 8
-    :pswitch_7
+    :pswitch_0
     const/4 v0, -0x2
 
     .line 9
@@ -188,14 +188,14 @@
     nop
 
     .line 11
-    :pswitch_data_a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_7
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final f(Lcom/mixplorer/widgets/MiViewPager;I)Ljava/lang/Object;
-    .registers 10
+    .locals 7
 
     .line 1
     iget-byte v0, p0, Llibs/mx0;->c:B
@@ -216,7 +216,7 @@
     const/4 v4, 0x1
 
     .line 9
-    packed-switch v0, :pswitch_data_170
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
@@ -276,7 +276,7 @@
 
     .line 40
     .line 41
-    if-nez v1, :cond_2e
+    if-nez v1, :cond_0
 
     .line 42
     .line 43
@@ -288,7 +288,7 @@
 
     .line 46
     .line 47
-    :cond_2e
+    :cond_0
     iget-object v1, v3, Llibs/ga1;->Seven:Llibs/mx0;
 
     .line 48
@@ -301,14 +301,14 @@
     move-result-object p2
 
     .line 53
-    if-nez p2, :cond_37
+    if-nez p2, :cond_1
 
     .line 54
     .line 55
-    goto :goto_8a
+    goto :goto_0
 
     .line 56
-    :cond_37
+    :cond_1
     invoke-virtual {v3, v0, p2}, Llibs/ga1;->Auth(Landroid/view/ViewGroup;Llibs/rp0;)V
 
     .line 57
@@ -323,7 +323,7 @@
 
     .line 63
     .line 64
-    if-nez p1, :cond_8a
+    if-nez p1, :cond_3
 
     .line 65
     .line 66
@@ -399,7 +399,7 @@
 
     .line 103
     .line 104
-    if-eqz p2, :cond_74
+    if-eqz p2, :cond_2
 
     .line 105
     .line 106
@@ -411,7 +411,7 @@
     move-result p2
 
     .line 110
-    if-nez p2, :cond_74
+    if-nez p2, :cond_2
 
     .line 111
     .line 112
@@ -424,7 +424,7 @@
     .line 115
     .line 116
     .line 117
-    :cond_74
+    :cond_2
     new-instance p2, Llibs/xv1;
 
     .line 118
@@ -465,12 +465,12 @@
     .line 137
     .line 138
     .line 139
-    :cond_8a
-    :goto_8a
+    :cond_3
+    :goto_0
     return-object v0
 
     .line 140
-    :pswitch_8b
+    :pswitch_0
     check-cast v3, Llibs/nx0;
 
     .line 141
@@ -534,7 +534,7 @@
 
     .line 172
     .line 173
-    if-ltz p2, :cond_bb
+    if-ltz p2, :cond_4
 
     .line 174
     .line 175
@@ -546,7 +546,7 @@
     move-result v6
 
     .line 179
-    if-ge p2, v6, :cond_bb
+    if-ge p2, v6, :cond_4
 
     .line 180
     .line 181
@@ -565,7 +565,7 @@
 
     .line 187
     .line 188
-    :cond_bb
+    :cond_4
     const/4 p2, 0x0
 
     .line 189
@@ -581,7 +581,7 @@
 
     .line 194
     .line 195
-    if-nez p2, :cond_ca
+    if-nez p2, :cond_5
 
     .line 196
     .line 197
@@ -593,17 +593,17 @@
     move-result p2
 
     .line 201
-    if-eqz p2, :cond_cd
+    if-eqz p2, :cond_6
 
     .line 202
     .line 203
-    :cond_ca
+    :cond_5
     invoke-virtual {v5, v1}, Landroid/view/View;->setVisibility(I)V
 
     .line 204
     .line 205
     .line 206
-    :cond_cd
+    :cond_6
     sget p2, Llibs/wh2;->hash_menu_crc32:I
 
     .line 207
@@ -616,7 +616,7 @@
     move-result p2
 
     .line 212
-    if-nez p2, :cond_de
+    if-nez p2, :cond_7
 
     .line 213
     .line 214
@@ -637,7 +637,7 @@
     .line 221
     .line 222
     .line 223
-    :cond_de
+    :cond_7
     sget p2, Llibs/wh2;->hash_menu_md5:I
 
     .line 224
@@ -650,7 +650,7 @@
     move-result p2
 
     .line 229
-    if-nez p2, :cond_ef
+    if-nez p2, :cond_8
 
     .line 230
     .line 231
@@ -671,7 +671,7 @@
     .line 238
     .line 239
     .line 240
-    :cond_ef
+    :cond_8
     sget p2, Llibs/wh2;->hash_menu_sha1:I
 
     .line 241
@@ -684,7 +684,7 @@
     move-result p2
 
     .line 246
-    if-nez p2, :cond_100
+    if-nez p2, :cond_9
 
     .line 247
     .line 248
@@ -705,7 +705,7 @@
     .line 255
     .line 256
     .line 257
-    :cond_100
+    :cond_9
     sget p2, Llibs/wh2;->hash_menu_sha256:I
 
     .line 258
@@ -718,7 +718,7 @@
     move-result p2
 
     .line 263
-    if-nez p2, :cond_111
+    if-nez p2, :cond_a
 
     .line 264
     .line 265
@@ -739,7 +739,7 @@
     .line 272
     .line 273
     .line 274
-    :cond_111
+    :cond_a
     sget p2, Llibs/wh2;->hash_menu_sha384:I
 
     .line 275
@@ -752,7 +752,7 @@
     move-result p2
 
     .line 280
-    if-nez p2, :cond_122
+    if-nez p2, :cond_b
 
     .line 281
     .line 282
@@ -773,7 +773,7 @@
     .line 289
     .line 290
     .line 291
-    :cond_122
+    :cond_b
     sget p2, Llibs/wh2;->hash_menu_sha512:I
 
     .line 292
@@ -786,7 +786,7 @@
     move-result p2
 
     .line 297
-    if-nez p2, :cond_133
+    if-nez p2, :cond_c
 
     .line 298
     .line 299
@@ -807,7 +807,7 @@
     .line 306
     .line 307
     .line 308
-    :cond_133
+    :cond_c
     sget p2, Llibs/wh2;->hash_menu_qx:I
 
     .line 309
@@ -820,7 +820,7 @@
     move-result p2
 
     .line 314
-    if-nez p2, :cond_144
+    if-nez p2, :cond_d
 
     .line 315
     .line 316
@@ -841,7 +841,7 @@
     .line 323
     .line 324
     .line 325
-    :cond_144
+    :cond_d
     sget p2, Llibs/wh2;->hash_menu_dbc:I
 
     .line 326
@@ -854,7 +854,7 @@
     move-result p2
 
     .line 331
-    if-nez p2, :cond_155
+    if-nez p2, :cond_e
 
     .line 332
     .line 333
@@ -875,7 +875,7 @@
     .line 340
     .line 341
     .line 342
-    :cond_155
+    :cond_e
     iget p2, v3, Llibs/nx0;->Bravo:I
 
     .line 343
@@ -899,7 +899,7 @@
 
     .line 354
     .line 355
-    if-nez p1, :cond_16e
+    if-nez p1, :cond_f
 
     .line 356
     .line 357
@@ -921,28 +921,28 @@
     .line 365
     .line 366
     .line 367
-    :cond_16e
+    :cond_f
     return-object v5
 
     .line 368
     nop
 
     .line 369
-    :pswitch_data_170
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_8b
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final g(Landroid/view/View;Ljava/lang/Object;)Z
-    .registers 4
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/mx0;->c:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_10
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -958,7 +958,7 @@
     return p1
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     invoke-virtual {p1, p2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     .line 12
@@ -973,17 +973,17 @@
     nop
 
     .line 17
-    :pswitch_data_10
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public l(I)Llibs/rp0;
-    .registers 4
+    .locals 2
 
     .line 1
-    if-ltz p1, :cond_11
+    if-ltz p1, :cond_0
 
     .line 2
     .line 3
@@ -999,7 +999,7 @@
     move-result v1
 
     .line 9
-    if-ge p1, v1, :cond_11
+    if-ge p1, v1, :cond_0
 
     .line 10
     .line 11
@@ -1018,7 +1018,7 @@
     return-object p1
 
     .line 18
-    :cond_11
+    :cond_0
     const/4 p1, 0x0
 
     .line 19

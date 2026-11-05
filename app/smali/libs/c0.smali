@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/xc;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final engineGenerateParameters()Ljava/security/AlgorithmParameters;
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Llibs/m40;
@@ -66,7 +66,7 @@
 
     .line 11
     .line 12
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     .line 13
     .line 14
@@ -82,10 +82,10 @@
 
     .line 19
     .line 20
-    goto :goto_1f
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_0
     new-instance v1, Ljava/security/SecureRandom;
 
     .line 22
@@ -107,7 +107,7 @@
 
     .line 31
     .line 32
-    :goto_1f
+    :goto_0
     invoke-virtual {v0}, Llibs/m40;->a()Llibs/l40;
 
     .line 33
@@ -116,7 +116,7 @@
     move-result-object v0
 
     .line 36
-    :try_start_23
+    :try_start_0
     const-string v1, "DH"
 
     .line 37
@@ -163,8 +163,8 @@
     .line 58
     .line 59
     invoke-virtual {v1, v2}, Ljava/security/AlgorithmParameters;->init(Ljava/security/spec/AlgorithmParameterSpec;)V
-    :try_end_3d
-    .catch Ljava/lang/Exception; {:try_start_23 .. :try_end_3d} :catch_3e
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 60
     .line 61
@@ -172,7 +172,7 @@
     return-object v1
 
     .line 63
-    :catch_3e
+    :catch_0
     move-exception v0
 
     .line 64
@@ -196,7 +196,7 @@
 .end method
 
 .method public final engineInit(ILjava/security/SecureRandom;)V
-    .registers 3
+    .locals 0
 
     .line 28
     iput p1, p0, Llibs/c0;->c:I
@@ -208,14 +208,14 @@
 .end method
 
 .method public final engineInit(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    .registers 4
+    .locals 1
 
     .line 1
     instance-of v0, p1, Ljavax/crypto/spec/DHGenParameterSpec;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -254,7 +254,7 @@
     return-void
 
     .line 22
-    :cond_15
+    :cond_0
     const-string p1, "DH parameter generator requires a DHGenParameterSpec for initialisation"
 
     .line 23

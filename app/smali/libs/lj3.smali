@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 6
+    .locals 6
 
     .line 1
     const-string v0, "SystemServiceHelper"
@@ -40,7 +40,7 @@
     .line 13
     .line 14
     .line 15
-    :try_start_e
+    :try_start_0
     const-string v1, "android.os.ServiceManager"
 
     .line 16
@@ -84,30 +84,30 @@
 
     .line 35
     sput-object v1, Llibs/lj3;->b:Ljava/lang/reflect/Method;
-    :try_end_24
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_e .. :try_end_24} :catch_27
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_e .. :try_end_24} :catch_25
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 36
     .line 37
     return-void
 
     .line 38
-    :catch_25
+    :catch_0
     move-exception v1
 
     .line 39
-    goto :goto_29
+    goto :goto_0
 
     .line 40
-    :catch_27
+    :catch_1
     move-exception v1
 
     .line 41
-    goto :goto_31
+    goto :goto_1
 
     .line 42
-    :goto_29
+    :goto_0
     invoke-static {v1}, Landroid/util/Log;->getStackTraceString(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 43
@@ -121,10 +121,10 @@
     .line 47
     .line 48
     .line 49
-    goto :goto_38
+    goto :goto_2
 
     .line 50
-    :goto_31
+    :goto_1
     invoke-static {v1}, Landroid/util/Log;->getStackTraceString(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 51
@@ -138,6 +138,6 @@
     .line 55
     .line 56
     .line 57
-    :goto_38
+    :goto_2
     return-void
 .end method

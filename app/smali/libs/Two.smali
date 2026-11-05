@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/util/AbstractCollection;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public addAll(Ljava/util/Collection;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -36,7 +36,7 @@
     const/4 v0, 0x0
 
     .line 5
-    if-eq p1, p0, :cond_1a
+    if-eq p1, p0, :cond_1
 
     .line 6
     .line 7
@@ -48,7 +48,7 @@
     move-result-object p1
 
     .line 11
-    :goto_a
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 12
@@ -57,7 +57,7 @@
     move-result v1
 
     .line 15
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_0
 
     .line 16
     .line 17
@@ -77,14 +77,14 @@
     const/4 v0, 0x1
 
     .line 25
-    goto :goto_a
+    goto :goto_0
 
     .line 26
-    :cond_19
+    :cond_0
     return v0
 
     .line 27
-    :cond_1a
+    :cond_1
     invoke-static {}, Llibs/ic0;->l()V
 
     .line 28

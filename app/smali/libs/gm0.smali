@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 85
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
 .end method
 
 .method public constructor <init>(Llibs/d90;)V
-    .registers 7
+    .locals 5
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -97,11 +97,11 @@
     const/4 v4, 0x1
 
     .line 30
-    if-ne v3, v4, :cond_4b
+    if-ne v3, v4, :cond_3
 
     .line 31
     .line 32
-    if-ne v3, v4, :cond_43
+    if-ne v3, v4, :cond_2
 
     .line 33
     .line 34
@@ -109,7 +109,7 @@
 
     .line 35
     .line 36
-    if-ne v3, v4, :cond_3b
+    if-ne v3, v4, :cond_1
 
     .line 37
     .line 38
@@ -125,14 +125,14 @@
     move-result v0
 
     .line 44
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_0
 
     .line 45
     .line 46
     const/4 v1, 0x1
 
     .line 47
-    :cond_2e
+    :cond_0
     iput-boolean v1, p0, Llibs/gm0;->b:Z
 
     .line 48
@@ -160,7 +160,7 @@
     return-void
 
     .line 60
-    :cond_3b
+    :cond_1
     const-string p1, "DerValue.getBoolean, invalid length "
 
     .line 61
@@ -177,7 +177,7 @@
     throw v0
 
     .line 68
-    :cond_43
+    :cond_2
     const-string p1, "DerValue.getBoolean, not a BOOLEAN "
 
     .line 69
@@ -194,7 +194,7 @@
     throw v0
 
     .line 76
-    :cond_4b
+    :cond_3
     iput-boolean v1, p0, Llibs/gm0;->b:Z
 
     .line 77
@@ -217,14 +217,14 @@
 
 # virtual methods
 .method public final b(Llibs/c90;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/gm0;->a:Llibs/j32;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_3a
+    if-eqz v0, :cond_3
 
     .line 4
     .line 5
@@ -232,7 +232,7 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_2
 
     .line 8
     .line 9
@@ -258,7 +258,7 @@
 
     .line 20
     .line 21
-    if-eqz v1, :cond_29
+    if-eqz v1, :cond_1
 
     .line 22
     .line 23
@@ -275,7 +275,7 @@
     .line 28
     .line 29
     .line 30
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_0
 
     .line 31
     .line 32
@@ -288,10 +288,10 @@
     .line 35
     .line 36
     .line 37
-    goto :goto_29
+    goto :goto_0
 
     .line 38
-    :cond_25
+    :cond_0
     const/4 v1, 0x0
 
     .line 39
@@ -300,8 +300,8 @@
     .line 40
     .line 41
     .line 42
-    :cond_29
-    :goto_29
+    :cond_1
+    :goto_0
     iget-object v1, p0, Llibs/gm0;->c:[B
 
     .line 43
@@ -323,7 +323,7 @@
     return-void
 
     .line 53
-    :cond_34
+    :cond_2
     const-string p1, "No value to encode for the extension!"
 
     .line 54
@@ -336,7 +336,7 @@
     return-void
 
     .line 59
-    :cond_3a
+    :cond_3
     const-string p1, "Null OID to encode for the extension!"
 
     .line 60
@@ -350,10 +350,10 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
 
     .line 1
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     .line 2
     .line 3
@@ -363,7 +363,7 @@
     return p1
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v0, p1, Llibs/gm0;
 
     .line 6
@@ -371,14 +371,14 @@
     const/4 v1, 0x0
 
     .line 8
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     .line 9
     .line 10
     return v1
 
     .line 11
-    :cond_a
+    :cond_1
     check-cast p1, Llibs/gm0;
 
     .line 12
@@ -391,14 +391,14 @@
 
     .line 16
     .line 17
-    if-eq v0, v2, :cond_13
+    if-eq v0, v2, :cond_2
 
     .line 18
     .line 19
     return v1
 
     .line 20
-    :cond_13
+    :cond_2
     iget-object v0, p0, Llibs/gm0;->a:Llibs/j32;
 
     .line 21
@@ -415,14 +415,14 @@
     move-result v0
 
     .line 28
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_3
 
     .line 29
     .line 30
     return v1
 
     .line 31
-    :cond_1e
+    :cond_3
     iget-object v0, p0, Llibs/gm0;->c:[B
 
     .line 32
@@ -443,7 +443,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/gm0;->c:[B
@@ -453,15 +453,15 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 5
     .line 6
     array-length v2, v0
 
     .line 7
-    :goto_6
-    if-lez v2, :cond_11
+    :goto_0
+    if-lez v2, :cond_0
 
     .line 8
     .line 9
@@ -483,10 +483,10 @@
     move v2, v3
 
     .line 17
-    goto :goto_6
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     mul-int/lit8 v1, v1, 0x1f
 
     .line 19
@@ -514,7 +514,7 @@
 
     .line 30
     .line 31
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_1
 
     .line 32
     .line 33
@@ -522,15 +522,15 @@
 
     .line 34
     .line 35
-    goto :goto_25
+    goto :goto_1
 
     .line 36
-    :cond_23
+    :cond_1
     const/16 v1, 0x4d5
 
     .line 37
     .line 38
-    :goto_25
+    :goto_1
     add-int/2addr v0, v1
 
     .line 39
@@ -538,7 +538,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -583,7 +583,7 @@
 
     .line 22
     .line 23
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_0
 
     .line 24
     .line 25
@@ -602,7 +602,7 @@
     return-object v0
 
     .line 32
-    :cond_1f
+    :cond_0
     const-string v1, " Criticality=false\n"
 
     .line 33

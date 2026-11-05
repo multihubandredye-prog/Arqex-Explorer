@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/p42;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/r52;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/r52;->X:B
@@ -53,7 +53,7 @@
     const/4 v3, 0x0
 
     .line 7
-    packed-switch v0, :pswitch_data_24
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -83,7 +83,7 @@
     return-void
 
     .line 23
-    :pswitch_16
+    :pswitch_0
     invoke-virtual {p1, v3}, Landroid/view/View;->setEnabled(Z)V
 
     .line 24
@@ -112,8 +112,8 @@
     nop
 
     .line 37
-    :pswitch_data_24
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_16
+        :pswitch_0
     .end packed-switch
 .end method

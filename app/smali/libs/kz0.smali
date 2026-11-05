@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -43,7 +43,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/StringBuilder;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -58,10 +58,10 @@
 .end method
 
 .method public static b(I)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
-    if-nez p0, :cond_5
+    if-nez p0, :cond_0
 
     .line 2
     .line 3
@@ -72,7 +72,7 @@
     return-object p0
 
     .line 6
-    :cond_5
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 7
@@ -126,7 +126,7 @@
 
 # virtual methods
 .method public a(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, ""
@@ -142,7 +142,7 @@
 .end method
 
 .method public c(Ljava/util/regex/Pattern;Llibs/xn2;)Llibs/kz0;
-    .registers 7
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/kz0;->b:Ljava/lang/StringBuilder;
@@ -169,7 +169,7 @@
     const/4 v1, 0x0
 
     .line 13
-    :goto_c
+    :goto_0
     invoke-virtual {p1}, Ljava/util/regex/Matcher;->find()Z
 
     .line 14
@@ -182,7 +182,7 @@
 
     .line 18
     .line 19
-    if-eqz v2, :cond_2b
+    if-eqz v2, :cond_0
 
     .line 20
     .line 21
@@ -228,10 +228,10 @@
     move-result v1
 
     .line 43
-    goto :goto_c
+    goto :goto_0
 
     .line 44
-    :cond_2b
+    :cond_0
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->length()I
 
     .line 45
@@ -261,7 +261,7 @@
 .end method
 
 .method public d(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 5
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/kz0;->b:Ljava/lang/StringBuilder;
@@ -276,7 +276,7 @@
     move-result v0
 
     .line 7
-    if-lez v0, :cond_31
+    if-lez v0, :cond_1
 
     .line 8
     .line 9
@@ -313,7 +313,7 @@
     .line 24
     .line 25
     .line 26
-    :goto_19
+    :goto_0
     invoke-virtual {p1}, Ljava/util/regex/Matcher;->find()Z
 
     .line 27
@@ -322,7 +322,7 @@
     move-result v1
 
     .line 30
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_0
 
     .line 31
     .line 32
@@ -331,10 +331,10 @@
     .line 33
     .line 34
     .line 35
-    goto :goto_19
+    goto :goto_0
 
     .line 36
-    :cond_23
+    :cond_0
     invoke-virtual {p1, v0}, Ljava/util/regex/Matcher;->appendTail(Ljava/lang/StringBuffer;)Ljava/lang/StringBuffer;
 
     .line 37
@@ -361,19 +361,19 @@
 
     .line 49
     .line 50
-    :cond_31
+    :cond_1
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/kz0;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_12
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -389,7 +389,7 @@
     return-object v0
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     iget-object v0, p0, Llibs/kz0;->b:Ljava/lang/StringBuilder;
 
     .line 12
@@ -408,8 +408,8 @@
     nop
 
     .line 19
-    :pswitch_data_12
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method

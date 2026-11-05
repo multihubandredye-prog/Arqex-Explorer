@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
@@ -22,7 +22,7 @@
 
 # virtual methods
 .method public final a(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-super {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -34,7 +34,7 @@
 .end method
 
 .method public final add(ILjava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 8
     check-cast p2, Ljava/lang/String;
@@ -46,7 +46,7 @@
 .end method
 
 .method public final add(Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
 
     .line 1
     check-cast p1, Ljava/lang/String;
@@ -65,7 +65,7 @@
 .end method
 
 .method public final set(ILjava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 1
     check-cast p2, Ljava/lang/String;

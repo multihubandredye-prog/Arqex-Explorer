@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>([BJJ)V
-    .registers 13
+    .locals 7
 
     .line 1
     const/4 v1, 0x3
@@ -116,8 +116,8 @@
 
     .line 48
     .line 49
-    :goto_30
-    if-ge p2, v6, :cond_46
+    :goto_0
+    if-ge p2, v6, :cond_0
 
     .line 50
     .line 51
@@ -158,17 +158,17 @@
 
     .line 69
     .line 70
-    goto :goto_30
+    goto :goto_0
 
     .line 71
-    :cond_46
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
@@ -31,7 +31,7 @@
     .line 4
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     const-class v0, Ljava/security/spec/ECParameterSpec;
 
     .line 7
@@ -56,18 +56,18 @@
     .line 16
     .line 17
     invoke-virtual {v0, v1}, Ljava/lang/reflect/Method;->setAccessible(Z)V
-    :try_end_13
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_13} :catch_13
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 18
     .line 19
     .line 20
-    :catch_13
+    :catch_0
     return-void
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -79,14 +79,14 @@
 .end method
 
 .method public static blockGuardOnNetwork()V
-    .registers 0
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public static checkClientTrusted(Ljavax/net/ssl/X509TrustManager;[Ljava/security/cert/X509Certificate;Ljava/lang/String;Lorg/conscrypt/AbstractConscryptSocket;)V
-    .registers 10
+    .locals 6
 
     .line 1
     const-string v0, "checkClientTrusted"
@@ -117,7 +117,7 @@
     move-result p0
 
     .line 13
-    if-nez p0, :cond_23
+    if-nez p0, :cond_0
 
     .line 14
     .line 15
@@ -153,7 +153,7 @@
     move-result p0
 
     .line 31
-    if-nez p0, :cond_23
+    if-nez p0, :cond_0
 
     .line 32
     .line 33
@@ -162,12 +162,12 @@
     .line 34
     .line 35
     .line 36
-    :cond_23
+    :cond_0
     return-void
 .end method
 
 .method public static checkClientTrusted(Ljavax/net/ssl/X509TrustManager;[Ljava/security/cert/X509Certificate;Ljava/lang/String;Lorg/conscrypt/ConscryptEngine;)V
-    .registers 10
+    .locals 6
 
     .line 37
     const-string v0, "checkClientTrusted"
@@ -186,7 +186,7 @@
 
     move-result p0
 
-    if-nez p0, :cond_23
+    if-nez p0, :cond_0
 
     .line 38
     invoke-virtual {v5}, Lorg/conscrypt/AbstractConscryptEngine;->getHandshakeSession()Ljavax/net/ssl/SSLSession;
@@ -206,17 +206,17 @@
 
     move-result p0
 
-    if-nez p0, :cond_23
+    if-nez p0, :cond_0
 
     .line 40
     invoke-interface {v1, v2, v3}, Ljavax/net/ssl/X509TrustManager;->checkClientTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
 
-    :cond_23
+    :cond_0
     return-void
 .end method
 
 .method public static checkServerTrusted(Ljavax/net/ssl/X509TrustManager;[Ljava/security/cert/X509Certificate;Ljava/lang/String;Lorg/conscrypt/AbstractConscryptSocket;)V
-    .registers 10
+    .locals 6
 
     .line 1
     const-string v0, "checkServerTrusted"
@@ -247,7 +247,7 @@
     move-result p0
 
     .line 13
-    if-nez p0, :cond_23
+    if-nez p0, :cond_0
 
     .line 14
     .line 15
@@ -283,7 +283,7 @@
     move-result p0
 
     .line 31
-    if-nez p0, :cond_23
+    if-nez p0, :cond_0
 
     .line 32
     .line 33
@@ -292,12 +292,12 @@
     .line 34
     .line 35
     .line 36
-    :cond_23
+    :cond_0
     return-void
 .end method
 
 .method public static checkServerTrusted(Ljavax/net/ssl/X509TrustManager;[Ljava/security/cert/X509Certificate;Ljava/lang/String;Lorg/conscrypt/ConscryptEngine;)V
-    .registers 10
+    .locals 6
 
     .line 37
     const-string v0, "checkServerTrusted"
@@ -316,7 +316,7 @@
 
     move-result p0
 
-    if-nez p0, :cond_23
+    if-nez p0, :cond_0
 
     .line 38
     invoke-virtual {v5}, Lorg/conscrypt/AbstractConscryptEngine;->getHandshakeSession()Ljavax/net/ssl/SSLSession;
@@ -336,17 +336,17 @@
 
     move-result p0
 
-    if-nez p0, :cond_23
+    if-nez p0, :cond_0
 
     .line 40
     invoke-interface {v1, v2, v3}, Ljavax/net/ssl/X509TrustManager;->checkServerTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
 
-    :cond_23
+    :cond_0
     return-void
 .end method
 
 .method private static checkTrusted(Ljava/lang/String;Ljavax/net/ssl/X509TrustManager;[Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;)Z
-    .registers 12
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -366,7 +366,7 @@
     const/4 v0, 0x0
 
     .line 2
-    :try_start_1
+    :try_start_0
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 3
@@ -433,10 +433,10 @@
     .line 32
     .line 33
     invoke-virtual {p0, p1, p4}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_23
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_1 .. :try_end_23} :catch_3c
-    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_23} :catch_3c
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_1 .. :try_end_23} :catch_24
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 34
     .line 35
@@ -444,7 +444,7 @@
     return v5
 
     .line 37
-    :catch_24
+    :catch_0
     move-exception p0
 
     .line 38
@@ -460,7 +460,7 @@
 
     .line 43
     .line 44
-    if-nez p1, :cond_35
+    if-nez p1, :cond_0
 
     .line 45
     .line 46
@@ -480,7 +480,7 @@
     return v0
 
     .line 54
-    :cond_35
+    :cond_0
     invoke-virtual {p0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
 
     .line 55
@@ -496,19 +496,19 @@
     throw p0
 
     .line 61
-    :catch_3c
+    :catch_1
     return v0
 .end method
 
 .method public static closeGuardClose(Ljava/lang/Object;)V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public static closeGuardGet()Ljava/lang/Object;
-    .registers 1
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -518,21 +518,21 @@
 .end method
 
 .method public static closeGuardOpen(Ljava/lang/Object;Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public static closeGuardWarnIfOpen(Ljava/lang/Object;)V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public static createEngineSocket(Ljava/lang/String;ILjava/net/InetAddress;ILorg/conscrypt/SSLParametersImpl;)Lorg/conscrypt/ConscryptEngineSocket;
-    .registers 14
+    .locals 9
 
     .line 1
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -543,7 +543,7 @@
 
     .line 4
     .line 5
-    if-lt v0, v1, :cond_11
+    if-lt v0, v1, :cond_0
 
     .line 6
     .line 7
@@ -574,7 +574,7 @@
     return-object v2
 
     .line 18
-    :cond_11
+    :cond_0
     move-object v3, p0
 
     .line 19
@@ -621,14 +621,14 @@
 .end method
 
 .method public static createEngineSocket(Ljava/lang/String;ILorg/conscrypt/SSLParametersImpl;)Lorg/conscrypt/ConscryptEngineSocket;
-    .registers 5
+    .locals 2
 
     .line 35
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x18
 
-    if-lt v0, v1, :cond_c
+    if-lt v0, v1, :cond_0
 
     .line 36
     new-instance v0, Lorg/conscrypt/Java8EngineSocket;
@@ -638,7 +638,7 @@
     return-object v0
 
     .line 37
-    :cond_c
+    :cond_0
     new-instance v0, Lorg/conscrypt/ConscryptEngineSocket;
 
     invoke-direct {v0, p0, p1, p2}, Lorg/conscrypt/ConscryptEngineSocket;-><init>(Ljava/lang/String;ILorg/conscrypt/SSLParametersImpl;)V
@@ -647,14 +647,14 @@
 .end method
 
 .method public static createEngineSocket(Ljava/net/InetAddress;ILjava/net/InetAddress;ILorg/conscrypt/SSLParametersImpl;)Lorg/conscrypt/ConscryptEngineSocket;
-    .registers 14
+    .locals 9
 
     .line 44
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x18
 
-    if-lt v0, v1, :cond_11
+    if-lt v0, v1, :cond_0
 
     .line 45
     new-instance v2, Lorg/conscrypt/Java8EngineSocket;
@@ -673,7 +673,7 @@
 
     return-object v2
 
-    :cond_11
+    :cond_0
     move-object v3, p0
 
     move v4, p1
@@ -705,14 +705,14 @@
 .end method
 
 .method public static createEngineSocket(Ljava/net/InetAddress;ILorg/conscrypt/SSLParametersImpl;)Lorg/conscrypt/ConscryptEngineSocket;
-    .registers 5
+    .locals 2
 
     .line 38
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x18
 
-    if-lt v0, v1, :cond_c
+    if-lt v0, v1, :cond_0
 
     .line 39
     new-instance v0, Lorg/conscrypt/Java8EngineSocket;
@@ -722,7 +722,7 @@
     return-object v0
 
     .line 40
-    :cond_c
+    :cond_0
     new-instance v0, Lorg/conscrypt/ConscryptEngineSocket;
 
     invoke-direct {v0, p0, p1, p2}, Lorg/conscrypt/ConscryptEngineSocket;-><init>(Ljava/net/InetAddress;ILorg/conscrypt/SSLParametersImpl;)V
@@ -731,14 +731,14 @@
 .end method
 
 .method public static createEngineSocket(Ljava/net/Socket;Ljava/lang/String;IZLorg/conscrypt/SSLParametersImpl;)Lorg/conscrypt/ConscryptEngineSocket;
-    .registers 14
+    .locals 9
 
     .line 47
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x18
 
-    if-lt v0, v1, :cond_11
+    if-lt v0, v1, :cond_0
 
     .line 48
     new-instance v2, Lorg/conscrypt/Java8EngineSocket;
@@ -757,7 +757,7 @@
 
     return-object v2
 
-    :cond_11
+    :cond_0
     move-object v3, p0
 
     move-object v4, p1
@@ -789,14 +789,14 @@
 .end method
 
 .method public static createEngineSocket(Lorg/conscrypt/SSLParametersImpl;)Lorg/conscrypt/ConscryptEngineSocket;
-    .registers 3
+    .locals 2
 
     .line 41
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x18
 
-    if-lt v0, v1, :cond_c
+    if-lt v0, v1, :cond_0
 
     .line 42
     new-instance v0, Lorg/conscrypt/Java8EngineSocket;
@@ -806,7 +806,7 @@
     return-object v0
 
     .line 43
-    :cond_c
+    :cond_0
     new-instance v0, Lorg/conscrypt/ConscryptEngineSocket;
 
     invoke-direct {v0, p0}, Lorg/conscrypt/ConscryptEngineSocket;-><init>(Lorg/conscrypt/SSLParametersImpl;)V
@@ -815,7 +815,7 @@
 .end method
 
 .method public static createFileDescriptorSocket(Ljava/lang/String;ILjava/net/InetAddress;ILorg/conscrypt/SSLParametersImpl;)Lorg/conscrypt/ConscryptFileDescriptorSocket;
-    .registers 14
+    .locals 9
 
     .line 1
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -826,7 +826,7 @@
 
     .line 4
     .line 5
-    if-lt v0, v1, :cond_11
+    if-lt v0, v1, :cond_0
 
     .line 6
     .line 7
@@ -857,7 +857,7 @@
     return-object v2
 
     .line 18
-    :cond_11
+    :cond_0
     move-object v3, p0
 
     .line 19
@@ -904,14 +904,14 @@
 .end method
 
 .method public static createFileDescriptorSocket(Ljava/lang/String;ILorg/conscrypt/SSLParametersImpl;)Lorg/conscrypt/ConscryptFileDescriptorSocket;
-    .registers 5
+    .locals 2
 
     .line 35
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x18
 
-    if-lt v0, v1, :cond_c
+    if-lt v0, v1, :cond_0
 
     .line 36
     new-instance v0, Lorg/conscrypt/Java8FileDescriptorSocket;
@@ -921,7 +921,7 @@
     return-object v0
 
     .line 37
-    :cond_c
+    :cond_0
     new-instance v0, Lorg/conscrypt/ConscryptFileDescriptorSocket;
 
     invoke-direct {v0, p0, p1, p2}, Lorg/conscrypt/ConscryptFileDescriptorSocket;-><init>(Ljava/lang/String;ILorg/conscrypt/SSLParametersImpl;)V
@@ -930,14 +930,14 @@
 .end method
 
 .method public static createFileDescriptorSocket(Ljava/net/InetAddress;ILjava/net/InetAddress;ILorg/conscrypt/SSLParametersImpl;)Lorg/conscrypt/ConscryptFileDescriptorSocket;
-    .registers 14
+    .locals 9
 
     .line 44
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x18
 
-    if-lt v0, v1, :cond_11
+    if-lt v0, v1, :cond_0
 
     .line 45
     new-instance v2, Lorg/conscrypt/Java8FileDescriptorSocket;
@@ -956,7 +956,7 @@
 
     return-object v2
 
-    :cond_11
+    :cond_0
     move-object v3, p0
 
     move v4, p1
@@ -988,14 +988,14 @@
 .end method
 
 .method public static createFileDescriptorSocket(Ljava/net/InetAddress;ILorg/conscrypt/SSLParametersImpl;)Lorg/conscrypt/ConscryptFileDescriptorSocket;
-    .registers 5
+    .locals 2
 
     .line 38
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x18
 
-    if-lt v0, v1, :cond_c
+    if-lt v0, v1, :cond_0
 
     .line 39
     new-instance v0, Lorg/conscrypt/Java8FileDescriptorSocket;
@@ -1005,7 +1005,7 @@
     return-object v0
 
     .line 40
-    :cond_c
+    :cond_0
     new-instance v0, Lorg/conscrypt/ConscryptFileDescriptorSocket;
 
     invoke-direct {v0, p0, p1, p2}, Lorg/conscrypt/ConscryptFileDescriptorSocket;-><init>(Ljava/net/InetAddress;ILorg/conscrypt/SSLParametersImpl;)V
@@ -1014,14 +1014,14 @@
 .end method
 
 .method public static createFileDescriptorSocket(Ljava/net/Socket;Ljava/lang/String;IZLorg/conscrypt/SSLParametersImpl;)Lorg/conscrypt/ConscryptFileDescriptorSocket;
-    .registers 14
+    .locals 9
 
     .line 47
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x18
 
-    if-lt v0, v1, :cond_11
+    if-lt v0, v1, :cond_0
 
     .line 48
     new-instance v2, Lorg/conscrypt/Java8FileDescriptorSocket;
@@ -1040,7 +1040,7 @@
 
     return-object v2
 
-    :cond_11
+    :cond_0
     move-object v3, p0
 
     move-object v4, p1
@@ -1072,14 +1072,14 @@
 .end method
 
 .method public static createFileDescriptorSocket(Lorg/conscrypt/SSLParametersImpl;)Lorg/conscrypt/ConscryptFileDescriptorSocket;
-    .registers 3
+    .locals 2
 
     .line 41
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x18
 
-    if-lt v0, v1, :cond_c
+    if-lt v0, v1, :cond_0
 
     .line 42
     new-instance v0, Lorg/conscrypt/Java8FileDescriptorSocket;
@@ -1089,7 +1089,7 @@
     return-object v0
 
     .line 43
-    :cond_c
+    :cond_0
     new-instance v0, Lorg/conscrypt/ConscryptFileDescriptorSocket;
 
     invoke-direct {v0, p0}, Lorg/conscrypt/ConscryptFileDescriptorSocket;-><init>(Lorg/conscrypt/SSLParametersImpl;)V
@@ -1098,7 +1098,7 @@
 .end method
 
 .method public static fromGCMParameterSpec(Ljava/security/spec/AlgorithmParameterSpec;)Lorg/conscrypt/GCMParameters;
-    .registers 6
+    .locals 5
 
     .line 1
     const-string v0, "GCMParameterSpec lacks expected methods"
@@ -1108,7 +1108,7 @@
     const/4 v1, 0x0
 
     .line 4
-    :try_start_3
+    :try_start_0
     const-string v2, "javax.crypto.spec.GCMParameterSpec"
 
     .line 5
@@ -1119,22 +1119,22 @@
     .line 8
     .line 9
     move-result-object v2
-    :try_end_9
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_3 .. :try_end_9} :catch_a
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 10
-    goto :goto_c
+    goto :goto_0
 
     .line 11
-    :catch_a
+    :catch_0
     nop
 
     .line 12
     move-object v2, v1
 
     .line 13
-    :goto_c
-    if-eqz v2, :cond_51
+    :goto_0
+    if-eqz v2, :cond_0
 
     .line 14
     .line 15
@@ -1154,11 +1154,11 @@
     move-result v3
 
     .line 23
-    if-eqz v3, :cond_51
+    if-eqz v3, :cond_0
 
     .line 24
     .line 25
-    :try_start_18
+    :try_start_1
     const-string v3, "getTLen"
 
     .line 26
@@ -1220,10 +1220,10 @@
     .line 54
     .line 55
     invoke-direct {v2, v3, p0}, Lorg/conscrypt/GCMParameters;-><init>(I[B)V
-    :try_end_39
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_18 .. :try_end_39} :catch_3e
-    .catch Ljava/lang/IllegalAccessException; {:try_start_18 .. :try_end_39} :catch_3c
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_18 .. :try_end_39} :catch_3a
+    :try_end_1
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_1 .. :try_end_1} :catch_3
+    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 56
     .line 57
@@ -1231,28 +1231,28 @@
     return-object v2
 
     .line 59
-    :catch_3a
+    :catch_1
     move-exception p0
 
     .line 60
-    goto :goto_40
+    goto :goto_1
 
     .line 61
-    :catch_3c
+    :catch_2
     move-exception p0
 
     .line 62
-    goto :goto_4a
+    goto :goto_2
 
     .line 63
-    :catch_3e
+    :catch_3
     move-exception p0
 
     .line 64
-    goto :goto_4e
+    goto :goto_3
 
     .line 65
-    :goto_40
+    :goto_1
     const-string v0, "Could not fetch GCM parameters"
 
     .line 66
@@ -1273,7 +1273,7 @@
     return-object v1
 
     .line 75
-    :goto_4a
+    :goto_2
     invoke-static {v0, p0}, Llibs/t22;->f(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 76
@@ -1282,24 +1282,24 @@
     return-object v1
 
     .line 79
-    :goto_4e
+    :goto_3
     invoke-static {v0, p0}, Llibs/t22;->f(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 80
     .line 81
     .line 82
-    :cond_51
+    :cond_0
     return-object v1
 .end method
 
 .method public static fromGCMParameters(Ljava/security/AlgorithmParameters;)Ljava/security/spec/AlgorithmParameterSpec;
-    .registers 3
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :try_start_1
+    :try_start_0
     const-string v1, "javax.crypto.spec.GCMParameterSpec"
 
     .line 3
@@ -1310,46 +1310,46 @@
     .line 6
     .line 7
     move-result-object v1
-    :try_end_7
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_1 .. :try_end_7} :catch_8
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 8
-    goto :goto_a
+    goto :goto_0
 
     .line 9
-    :catch_8
+    :catch_0
     nop
 
     .line 10
     move-object v1, v0
 
     .line 11
-    :goto_a
-    if-eqz v1, :cond_11
+    :goto_0
+    if-eqz v1, :cond_0
 
     .line 12
     .line 13
-    :try_start_c
+    :try_start_1
     invoke-virtual {p0, v1}, Ljava/security/AlgorithmParameters;->getParameterSpec(Ljava/lang/Class;)Ljava/security/spec/AlgorithmParameterSpec;
 
     .line 14
     .line 15
     .line 16
     move-result-object p0
-    :try_end_10
-    .catch Ljava/security/spec/InvalidParameterSpecException; {:try_start_c .. :try_end_10} :catch_11
+    :try_end_1
+    .catch Ljava/security/spec/InvalidParameterSpecException; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 17
     return-object p0
 
     .line 18
-    :catch_11
-    :cond_11
+    :catch_1
+    :cond_0
     return-object v0
 .end method
 
 .method private static varargs getClass([Ljava/lang/String;)Ljava/lang/Class;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
@@ -1367,8 +1367,8 @@
     const/4 v1, 0x0
 
     .line 3
-    :goto_2
-    if-ge v1, v0, :cond_e
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     .line 4
     .line 5
@@ -1376,29 +1376,29 @@
 
     .line 6
     .line 7
-    :try_start_6
+    :try_start_0
     invoke-static {v2}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     .line 8
     .line 9
     .line 10
     move-result-object p0
-    :try_end_a
-    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_a} :catch_b
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 11
     return-object p0
 
     .line 12
-    :catch_b
+    :catch_0
     add-int/lit8 v1, v1, 0x1
 
     .line 13
     .line 14
-    goto :goto_2
+    goto :goto_0
 
     .line 15
-    :cond_e
+    :cond_0
     const/4 p0, 0x0
 
     .line 16
@@ -1406,7 +1406,7 @@
 .end method
 
 .method public static getCurveName(Ljava/security/spec/ECParameterSpec;)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     sget-object v0, Lorg/conscrypt/Platform;->m_getCurveName:Ljava/lang/reflect/Method;
@@ -1416,15 +1416,15 @@
     const/4 v1, 0x0
 
     .line 4
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 5
     .line 6
     return-object v1
 
     .line 7
-    :cond_6
-    :try_start_6
+    :cond_0
+    :try_start_0
     invoke-virtual {v0, p0, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 8
@@ -1434,20 +1434,20 @@
 
     .line 11
     check-cast p0, Ljava/lang/String;
-    :try_end_c
-    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_c} :catch_d
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 12
     .line 13
     return-object p0
 
     .line 14
-    :catch_d
+    :catch_0
     return-object v1
 .end method
 
 .method public static getDefaultCertKeyStore()Ljava/security/KeyStore;
-    .registers 2
+    .locals 2
 
     .line 1
     const-string v0, "AndroidCAStore"
@@ -1465,12 +1465,12 @@
     const/4 v1, 0x0
 
     .line 8
-    :try_start_7
+    :try_start_0
     invoke-virtual {v0, v1, v1}, Ljava/security/KeyStore;->load(Ljava/io/InputStream;[C)V
-    :try_end_a
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_a} :catch_19
-    .catch Ljava/security/cert/CertificateException; {:try_start_7 .. :try_end_a} :catch_12
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_7 .. :try_end_a} :catch_b
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/security/cert/CertificateException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 9
     .line 10
@@ -1478,7 +1478,7 @@
     return-object v0
 
     .line 12
-    :catch_b
+    :catch_0
     move-exception v0
 
     .line 13
@@ -1494,7 +1494,7 @@
     throw v1
 
     .line 19
-    :catch_12
+    :catch_1
     move-exception v0
 
     .line 20
@@ -1510,7 +1510,7 @@
     throw v1
 
     .line 26
-    :catch_19
+    :catch_2
     move-exception v0
 
     .line 27
@@ -1527,7 +1527,7 @@
 .end method
 
 .method public static getDefaultHostnameVerifier()Lorg/conscrypt/ConscryptHostnameVerifier;
-    .registers 1
+    .locals 1
 
     .line 1
     invoke-static {}, Lorg/conscrypt/OkHostnameVerifier;->strictInstance()Lorg/conscrypt/OkHostnameVerifier;
@@ -1542,7 +1542,7 @@
 .end method
 
 .method public static getDefaultProviderName()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 1
     const-string v0, "Conscrypt"
@@ -1553,7 +1553,7 @@
 .end method
 
 .method public static getEndpointIdentificationAlgorithm(Ljavax/net/ssl/SSLParameters;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
     const/4 p0, 0x0
@@ -1563,7 +1563,7 @@
 .end method
 
 .method public static getFileDescriptor(Ljava/net/Socket;)Ljava/io/FileDescriptor;
-    .registers 4
+    .locals 3
 
     .line 1
     :try_start_0
@@ -1629,15 +1629,15 @@
 
     .line 32
     check-cast p0, Ljava/io/FileDescriptor;
-    :try_end_21
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_21} :catch_22
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 33
     .line 34
     return-object p0
 
     .line 35
-    :catch_22
+    :catch_0
     move-exception p0
 
     .line 36
@@ -1657,7 +1657,7 @@
 .end method
 
 .method public static getFileDescriptorFromSSLSocket(Lorg/conscrypt/AbstractConscryptSocket;)Ljava/io/FileDescriptor;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-static {p0}, Lorg/conscrypt/Platform;->getFileDescriptor(Ljava/net/Socket;)Ljava/io/FileDescriptor;
@@ -1672,7 +1672,7 @@
 .end method
 
 .method public static getHostStringFromInetSocketAddress(Ljava/net/InetSocketAddress;)Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -1686,11 +1686,11 @@
     const/4 v2, 0x0
 
     .line 6
-    if-le v0, v1, :cond_1a
+    if-le v0, v1, :cond_0
 
     .line 7
     .line 8
-    :try_start_7
+    :try_start_0
     const-class v0, Ljava/net/InetSocketAddress;
 
     .line 9
@@ -1716,16 +1716,16 @@
 
     .line 20
     check-cast p0, Ljava/lang/String;
-    :try_end_15
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_7 .. :try_end_15} :catch_16
-    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_15} :catch_1a
+    :try_end_0
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
     .line 21
     .line 22
     return-object p0
 
     .line 23
-    :catch_16
+    :catch_0
     move-exception p0
 
     .line 24
@@ -1734,13 +1734,13 @@
     .line 25
     .line 26
     .line 27
-    :catch_1a
-    :cond_1a
+    :catch_1
+    :cond_0
     return-object v2
 .end method
 
 .method public static getMillisSinceBoot()J
-    .registers 2
+    .locals 2
 
     .line 1
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -1755,7 +1755,7 @@
 .end method
 
 .method public static getOriginalHostNameFromInetAddress(Ljava/net/InetAddress;)Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -1766,14 +1766,14 @@
 
     .line 4
     .line 5
-    if-le v0, v1, :cond_3c
+    if-le v0, v1, :cond_1
 
     .line 6
     .line 7
     const/4 v0, 0x0
 
     .line 8
-    :try_start_7
+    :try_start_0
     const-class v1, Ljava/net/InetAddress;
 
     .line 9
@@ -1847,7 +1847,7 @@
 
     .line 44
     .line 45
-    if-nez v1, :cond_35
+    if-nez v1, :cond_0
 
     .line 46
     .line 47
@@ -1857,28 +1857,28 @@
     .line 49
     .line 50
     move-result-object p0
-    :try_end_32
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_7 .. :try_end_32} :catch_33
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_7 .. :try_end_32} :catch_3c
-    .catch Ljava/lang/IllegalAccessException; {:try_start_7 .. :try_end_32} :catch_3c
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_7 .. :try_end_32} :catch_3c
+    :try_end_0
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_1
 
     .line 51
     return-object p0
 
     .line 52
-    :catch_33
+    :catch_0
     move-exception p0
 
     .line 53
-    goto :goto_36
+    goto :goto_0
 
     .line 54
-    :cond_35
+    :cond_0
     return-object v1
 
     .line 55
-    :goto_36
+    :goto_0
     const-string v1, "Failed to get originalHostName"
 
     .line 56
@@ -1891,8 +1891,8 @@
     return-object v0
 
     .line 61
-    :catch_3c
-    :cond_3c
+    :catch_1
+    :cond_1
     invoke-virtual {p0}, Ljava/net/InetAddress;->getHostAddress()Ljava/lang/String;
 
     .line 62
@@ -1905,7 +1905,7 @@
 .end method
 
 .method public static getSSLParameters(Ljavax/net/ssl/SSLParameters;Lorg/conscrypt/SSLParametersImpl;Lorg/conscrypt/AbstractConscryptSocket;)V
-    .registers 5
+    .locals 2
 
     .line 1
     :try_start_0
@@ -1922,15 +1922,15 @@
 
     .line 7
     .line 8
-    if-lt v0, v1, :cond_15
+    if-lt v0, v1, :cond_0
 
     .line 9
     .line 10
     invoke-static {p0, p1, p2}, Lorg/conscrypt/Platform;->setParametersSniHostname(Ljavax/net/ssl/SSLParameters;Lorg/conscrypt/SSLParametersImpl;Lorg/conscrypt/AbstractConscryptSocket;)V
-    :try_end_c
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_c} :catch_15
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_c} :catch_15
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_c} :catch_d
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 11
     .line 12
@@ -1938,7 +1938,7 @@
     return-void
 
     .line 14
-    :catch_d
+    :catch_0
     move-exception p0
 
     .line 15
@@ -1955,13 +1955,13 @@
     .line 20
     .line 21
     .line 22
-    :catch_15
-    :cond_15
+    :catch_1
+    :cond_0
     return-void
 .end method
 
 .method public static getSSLParameters(Ljavax/net/ssl/SSLParameters;Lorg/conscrypt/SSLParametersImpl;Lorg/conscrypt/ConscryptEngine;)V
-    .registers 5
+    .locals 2
 
     .line 23
     :try_start_0
@@ -1972,18 +1972,18 @@
 
     const/16 v1, 0x18
 
-    if-lt v0, v1, :cond_15
+    if-lt v0, v1, :cond_0
 
     .line 25
     invoke-static {p0, p1, p2}, Lorg/conscrypt/Platform;->setParametersSniHostname(Ljavax/net/ssl/SSLParameters;Lorg/conscrypt/SSLParametersImpl;Lorg/conscrypt/ConscryptEngine;)V
-    :try_end_c
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_c} :catch_15
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_c} :catch_15
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_c} :catch_d
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_d
+    :catch_0
     move-exception p0
 
     .line 26
@@ -1993,13 +1993,13 @@
 
     invoke-static {p0}, Llibs/ic0;->k(Ljava/lang/Throwable;)V
 
-    :catch_15
-    :cond_15
+    :catch_1
+    :cond_0
     return-void
 .end method
 
 .method private static getSSLParametersFromImpl(Ljavax/net/ssl/SSLParameters;Lorg/conscrypt/SSLParametersImpl;)V
-    .registers 8
+    .locals 6
 
     .line 1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -2122,7 +2122,7 @@
     .line 59
     .line 60
     .line 61
-    :try_start_3c
+    :try_start_0
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 62
@@ -2172,19 +2172,19 @@
     .line 84
     .line 85
     invoke-virtual {v0, p0, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_57
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_3c .. :try_end_57} :catch_57
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_3c .. :try_end_57} :catch_57
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 86
     .line 87
     .line 88
-    :catch_57
+    :catch_0
     return-void
 .end method
 
 .method private static getSniHostnameFromParams(Ljavax/net/ssl/SSLParameters;)Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -2222,7 +2222,7 @@
 
     .line 17
     .line 18
-    if-eqz p0, :cond_34
+    if-eqz p0, :cond_1
 
     .line 19
     .line 20
@@ -2234,7 +2234,7 @@
     move-result-object p0
 
     .line 24
-    :cond_17
+    :cond_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 25
@@ -2243,7 +2243,7 @@
     move-result v0
 
     .line 28
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_1
 
     .line 29
     .line 30
@@ -2271,7 +2271,7 @@
     move-result v1
 
     .line 42
-    if-nez v1, :cond_17
+    if-nez v1, :cond_0
 
     .line 43
     .line 44
@@ -2294,12 +2294,12 @@
     return-object p0
 
     .line 53
-    :cond_34
+    :cond_1
     return-object v2
 .end method
 
 .method public static getStatsLog()Lorg/conscrypt/metrics/StatsLog;
-    .registers 2
+    .locals 2
 
     .line 1
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -2310,7 +2310,7 @@
 
     .line 4
     .line 5
-    if-lt v0, v1, :cond_b
+    if-lt v0, v1, :cond_0
 
     .line 6
     .line 7
@@ -2325,7 +2325,7 @@
     return-object v0
 
     .line 12
-    :cond_b
+    :cond_0
     invoke-static {}, Lorg/conscrypt/metrics/NoopStatsLog;->getInstance()Lorg/conscrypt/metrics/StatsLog;
 
     .line 13
@@ -2338,7 +2338,7 @@
 .end method
 
 .method public static getStatsSource()Lorg/conscrypt/metrics/Source;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/metrics/Source;->SOURCE_GMS:Lorg/conscrypt/metrics/Source;
@@ -2349,7 +2349,7 @@
 .end method
 
 .method public static getUids()[I
-    .registers 2
+    .locals 2
 
     .line 1
     invoke-static {}, Llibs/ek;->Object()I
@@ -2380,20 +2380,20 @@
 .end method
 
 .method public static isCTVerificationRequired(Ljava/lang/String;)Z
-    .registers 5
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
+    :cond_0
     const-string v1, "conscrypt.ct.enable"
 
     .line 6
@@ -2406,7 +2406,7 @@
     move-result-object v1
 
     .line 11
-    if-eqz v1, :cond_54
+    if-eqz v1, :cond_4
 
     .line 12
     .line 13
@@ -2418,14 +2418,14 @@
     move-result v1
 
     .line 17
-    if-nez v1, :cond_13
+    if-nez v1, :cond_1
 
     .line 18
     .line 19
-    goto :goto_54
+    goto :goto_1
 
     .line 20
-    :cond_13
+    :cond_1
     const-string v1, "\\."
 
     .line 21
@@ -2463,7 +2463,7 @@
 
     .line 38
     .line 39
-    :goto_26
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 40
@@ -2472,7 +2472,7 @@
     move-result v2
 
     .line 43
-    if-eqz v2, :cond_49
+    if-eqz v2, :cond_3
 
     .line 44
     .line 45
@@ -2508,7 +2508,7 @@
     move-result-object v3
 
     .line 61
-    if-eqz v3, :cond_42
+    if-eqz v3, :cond_2
 
     .line 62
     .line 63
@@ -2520,7 +2520,7 @@
     move-result v0
 
     .line 67
-    :cond_42
+    :cond_2
     const-string v3, "."
 
     .line 68
@@ -2533,10 +2533,10 @@
     move-result-object v1
 
     .line 73
-    goto :goto_26
+    goto :goto_0
 
     .line 74
-    :cond_49
+    :cond_3
     invoke-static {v1}, Ljava/security/Security;->getProperty(Ljava/lang/String;)Ljava/lang/String;
 
     .line 75
@@ -2545,7 +2545,7 @@
     move-result-object p0
 
     .line 78
-    if-eqz p0, :cond_54
+    if-eqz p0, :cond_4
 
     .line 79
     .line 80
@@ -2560,13 +2560,13 @@
     return p0
 
     .line 85
-    :cond_54
-    :goto_54
+    :cond_4
+    :goto_1
     return v0
 .end method
 
 .method public static isJavaxCertificateSupported()Z
-    .registers 1
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -2576,7 +2576,7 @@
 .end method
 
 .method public static isPakeSupported()Z
-    .registers 1
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -2586,14 +2586,14 @@
 .end method
 
 .method public static isSdkGreater(I)Z
-    .registers 2
+    .locals 1
 
     .line 1
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     .line 2
     .line 3
-    if-le v0, p0, :cond_6
+    if-le v0, p0, :cond_0
 
     .line 4
     .line 5
@@ -2603,7 +2603,7 @@
     return p0
 
     .line 7
-    :cond_6
+    :cond_0
     const/4 p0, 0x0
 
     .line 8
@@ -2611,7 +2611,7 @@
 .end method
 
 .method public static declared-synchronized isTlsV1Deprecated()Z
-    .registers 2
+    .locals 2
 
     .line 1
     const-class v0, Lorg/conscrypt/Platform;
@@ -2621,10 +2621,10 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     sget-boolean v1, Lorg/conscrypt/Platform;->DEPRECATED_TLS_V1:Z
-    :try_end_5
-    .catchall {:try_start_3 .. :try_end_5} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 5
     .line 6
@@ -2634,21 +2634,21 @@
     return v1
 
     .line 8
-    :catchall_7
+    :catchall_0
     move-exception v1
 
     .line 9
-    :try_start_8
+    :try_start_1
     monitor-exit v0
-    :try_end_9
-    .catchall {:try_start_8 .. :try_end_9} :catchall_7
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 10
     throw v1
 .end method
 
 .method public static declared-synchronized isTlsV1Filtered()Z
-    .registers 2
+    .locals 2
 
     .line 1
     const-class v0, Lorg/conscrypt/Platform;
@@ -2658,10 +2658,10 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     sget-boolean v1, Lorg/conscrypt/Platform;->FILTERED_TLS_V1:Z
-    :try_end_5
-    .catchall {:try_start_3 .. :try_end_5} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 5
     .line 6
@@ -2671,21 +2671,21 @@
     return v1
 
     .line 8
-    :catchall_7
+    :catchall_0
     move-exception v1
 
     .line 9
-    :try_start_8
+    :try_start_1
     monitor-exit v0
-    :try_end_9
-    .catchall {:try_start_8 .. :try_end_9} :catchall_7
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 10
     throw v1
 .end method
 
 .method public static declared-synchronized isTlsV1Supported()Z
-    .registers 2
+    .locals 2
 
     .line 1
     const-class v0, Lorg/conscrypt/Platform;
@@ -2695,10 +2695,10 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     sget-boolean v1, Lorg/conscrypt/Platform;->ENABLED_TLS_V1:Z
-    :try_end_5
-    .catchall {:try_start_3 .. :try_end_5} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 5
     .line 6
@@ -2708,21 +2708,21 @@
     return v1
 
     .line 8
-    :catchall_7
+    :catchall_0
     move-exception v1
 
     .line 9
-    :try_start_8
+    :try_start_1
     monitor-exit v0
-    :try_end_9
-    .catchall {:try_start_8 .. :try_end_9} :catchall_7
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 10
     throw v1
 .end method
 
 .method private static logStackTraceSnippet(Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 5
+    .locals 3
 
     .line 1
     const-string v0, "Conscrypt"
@@ -2745,18 +2745,18 @@
     const/4 p1, 0x0
 
     .line 11
-    :goto_a
+    :goto_0
     const/4 v1, 0x2
 
     .line 12
-    if-ge p1, v1, :cond_2a
+    if-ge p1, v1, :cond_0
 
     .line 13
     .line 14
     array-length v1, p0
 
     .line 15
-    if-ge p1, v1, :cond_2a
+    if-ge p1, v1, :cond_0
 
     .line 16
     .line 17
@@ -2807,15 +2807,15 @@
 
     .line 41
     .line 42
-    goto :goto_a
+    goto :goto_0
 
     .line 43
-    :cond_2a
+    :cond_0
     return-void
 .end method
 
 .method public static newDefaultBlocklist()Lorg/conscrypt/CertBlocklist;
-    .registers 1
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -2825,7 +2825,7 @@
 .end method
 
 .method public static newDefaultCertStore()Lorg/conscrypt/ConscryptCertStore;
-    .registers 1
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -2835,7 +2835,7 @@
 .end method
 
 .method public static newDefaultCertificateTransparency()Lorg/conscrypt/ct/CertificateTransparency;
-    .registers 1
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -2845,7 +2845,7 @@
 .end method
 
 .method public static oidToAlgorithmName(Ljava/lang/String;)Ljava/lang/String;
-    .registers 8
+    .locals 7
 
     .line 1
     const-class v0, Ljava/lang/String;
@@ -2861,7 +2861,7 @@
     const/4 v3, 0x0
 
     .line 6
-    :try_start_5
+    :try_start_0
     const-string v4, "org.apache.harmony.security.utils.AlgNameMapper"
 
     .line 7
@@ -2916,24 +2916,24 @@
 
     .line 33
     check-cast v4, Ljava/lang/String;
-    :try_end_22
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_5 .. :try_end_22} :catch_23
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_22} :catch_25
+    :try_end_0
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
     .line 34
     .line 35
     return-object v4
 
     .line 36
-    :catch_23
+    :catch_0
     move-exception p0
 
     .line 37
-    goto :goto_69
+    goto :goto_1
 
     .line 38
-    :catch_25
-    :try_start_25
+    :catch_1
+    :try_start_1
     const-string v4, "sun.security.x509.AlgorithmId"
 
     .line 39
@@ -3013,27 +3013,27 @@
 
     .line 78
     check-cast v0, Ljava/lang/String;
-    :try_end_4f
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_25 .. :try_end_4f} :catch_50
-    .catch Ljava/lang/Exception; {:try_start_25 .. :try_end_4f} :catch_52
+    :try_end_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_3
 
     .line 79
     .line 80
     return-object v0
 
     .line 81
-    :catch_50
+    :catch_2
     move-exception p0
 
     .line 82
-    goto :goto_53
+    goto :goto_0
 
     .line 83
-    :catch_52
+    :catch_3
     return-object p0
 
     .line 84
-    :goto_53
+    :goto_0
     invoke-virtual {p0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
 
     .line 85
@@ -3046,7 +3046,7 @@
 
     .line 89
     .line 90
-    if-nez v1, :cond_66
+    if-nez v1, :cond_1
 
     .line 91
     .line 92
@@ -3054,7 +3054,7 @@
 
     .line 93
     .line 94
-    if-nez v1, :cond_63
+    if-nez v1, :cond_0
 
     .line 95
     .line 96
@@ -3066,7 +3066,7 @@
     return-object v3
 
     .line 100
-    :cond_63
+    :cond_0
     check-cast v0, Ljava/lang/Error;
 
     .line 101
@@ -3074,7 +3074,7 @@
     throw v0
 
     .line 103
-    :cond_66
+    :cond_1
     check-cast v0, Ljava/lang/RuntimeException;
 
     .line 104
@@ -3082,7 +3082,7 @@
     throw v0
 
     .line 106
-    :goto_69
+    :goto_1
     invoke-virtual {p0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
 
     .line 107
@@ -3095,7 +3095,7 @@
 
     .line 111
     .line 112
-    if-nez v1, :cond_7c
+    if-nez v1, :cond_3
 
     .line 113
     .line 114
@@ -3103,7 +3103,7 @@
 
     .line 115
     .line 116
-    if-nez v1, :cond_79
+    if-nez v1, :cond_2
 
     .line 117
     .line 118
@@ -3115,7 +3115,7 @@
     return-object v3
 
     .line 122
-    :cond_79
+    :cond_2
     check-cast v0, Ljava/lang/Error;
 
     .line 123
@@ -3123,7 +3123,7 @@
     throw v0
 
     .line 125
-    :cond_7c
+    :cond_3
     check-cast v0, Ljava/lang/RuntimeException;
 
     .line 126
@@ -3132,7 +3132,7 @@
 .end method
 
 .method public static provideTrustManagerByDefault()Z
-    .registers 1
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -3142,7 +3142,7 @@
 .end method
 
 .method public static reasonCTVerificationRequired(Ljava/lang/String;)Lorg/conscrypt/metrics/CertificateTransparencyVerificationReason;
-    .registers 1
+    .locals 0
 
     .line 1
     sget-object p0, Lorg/conscrypt/metrics/CertificateTransparencyVerificationReason;->UNKNOWN:Lorg/conscrypt/metrics/CertificateTransparencyVerificationReason;
@@ -3153,7 +3153,7 @@
 .end method
 
 .method public static serverNamePermitted(Lorg/conscrypt/SSLParametersImpl;Ljava/lang/String;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -3164,7 +3164,7 @@
 
     .line 4
     .line 5
-    if-lt v0, v1, :cond_b
+    if-lt v0, v1, :cond_0
 
     .line 6
     .line 7
@@ -3179,7 +3179,7 @@
     return p0
 
     .line 12
-    :cond_b
+    :cond_0
     const/4 p0, 0x1
 
     .line 13
@@ -3187,7 +3187,7 @@
 .end method
 
 .method private static serverNamePermittedInternal(Lorg/conscrypt/SSLParametersImpl;Ljava/lang/String;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/SSLParametersImpl;->getSNIMatchers()Ljava/util/Collection;
@@ -3201,7 +3201,7 @@
     const/4 v0, 0x1
 
     .line 6
-    if-eqz p0, :cond_2c
+    if-eqz p0, :cond_3
 
     .line 7
     .line 8
@@ -3213,14 +3213,14 @@
     move-result v1
 
     .line 12
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     .line 13
     .line 14
-    goto :goto_2c
+    goto :goto_0
 
     .line 15
-    :cond_e
+    :cond_0
     invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     .line 16
@@ -3229,7 +3229,7 @@
     move-result-object p0
 
     .line 19
-    :cond_12
+    :cond_1
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 20
@@ -3238,7 +3238,7 @@
     move-result v1
 
     .line 23
-    if-eqz v1, :cond_2a
+    if-eqz v1, :cond_2
 
     .line 24
     .line 25
@@ -3271,27 +3271,27 @@
     move-result v1
 
     .line 40
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_1
 
     .line 41
     .line 42
     return v0
 
     .line 43
-    :cond_2a
+    :cond_2
     const/4 p0, 0x0
 
     .line 44
     return p0
 
     .line 45
-    :cond_2c
-    :goto_2c
+    :cond_3
+    :goto_0
     return v0
 .end method
 
 .method public static setCurveName(Ljava/security/spec/ECParameterSpec;Ljava/lang/String;)V
-    .registers 8
+    .locals 6
 
     .line 1
     :try_start_0
@@ -3342,25 +3342,25 @@
     .line 22
     .line 23
     invoke-virtual {v0, p0, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_19
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_19} :catch_19
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 24
     .line 25
     .line 26
-    :catch_19
+    :catch_0
     return-void
 .end method
 
 .method public static setEndpointIdentificationAlgorithm(Ljavax/net/ssl/SSLParameters;Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private static setParametersSniHostname(Ljavax/net/ssl/SSLParameters;Lorg/conscrypt/SSLParametersImpl;Lorg/conscrypt/AbstractConscryptSocket;)V
-    .registers 7
+    .locals 4
 
     .line 1
     invoke-virtual {p1}, Lorg/conscrypt/SSLParametersImpl;->getUseSni()Z
@@ -3371,7 +3371,7 @@
     move-result p1
 
     .line 5
-    if-eqz p1, :cond_36
+    if-eqz p1, :cond_0
 
     .line 6
     .line 7
@@ -3391,7 +3391,7 @@
     move-result p1
 
     .line 15
-    if-eqz p1, :cond_36
+    if-eqz p1, :cond_0
 
     .line 16
     .line 17
@@ -3471,19 +3471,19 @@
     .line 53
     .line 54
     .line 55
-    :cond_36
+    :cond_0
     return-void
 .end method
 
 .method private static setParametersSniHostname(Ljavax/net/ssl/SSLParameters;Lorg/conscrypt/SSLParametersImpl;Lorg/conscrypt/ConscryptEngine;)V
-    .registers 7
+    .locals 4
 
     .line 56
     invoke-virtual {p1}, Lorg/conscrypt/SSLParametersImpl;->getUseSni()Z
 
     move-result p1
 
-    if-eqz p1, :cond_36
+    if-eqz p1, :cond_0
 
     invoke-virtual {p2}, Lorg/conscrypt/ConscryptEngine;->getHostname()Ljava/lang/String;
 
@@ -3493,7 +3493,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_36
+    if-eqz p1, :cond_0
 
     .line 57
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -3538,12 +3538,12 @@
     .line 61
     invoke-virtual {p1, p0, v0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_36
+    :cond_0
     return-void
 .end method
 
 .method public static setSSLParameters(Ljavax/net/ssl/SSLParameters;Lorg/conscrypt/SSLParametersImpl;Lorg/conscrypt/AbstractConscryptSocket;)V
-    .registers 4
+    .locals 1
 
     .line 1
     :try_start_0
@@ -3560,7 +3560,7 @@
 
     .line 7
     .line 8
-    if-lt p1, v0, :cond_1b
+    if-lt p1, v0, :cond_0
 
     .line 9
     .line 10
@@ -3572,15 +3572,15 @@
     move-result-object p0
 
     .line 14
-    if-eqz p0, :cond_1b
+    if-eqz p0, :cond_0
 
     .line 15
     .line 16
     invoke-virtual {p2, p0}, Lorg/conscrypt/AbstractConscryptSocket;->setHostname(Ljava/lang/String;)V
-    :try_end_12
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_12} :catch_1b
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_12} :catch_1b
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_12} :catch_13
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 17
     .line 18
@@ -3588,7 +3588,7 @@
     return-void
 
     .line 20
-    :catch_13
+    :catch_0
     move-exception p0
 
     .line 21
@@ -3605,13 +3605,13 @@
     .line 26
     .line 27
     .line 28
-    :catch_1b
-    :cond_1b
+    :catch_1
+    :cond_0
     return-void
 .end method
 
 .method public static setSSLParameters(Ljavax/net/ssl/SSLParameters;Lorg/conscrypt/SSLParametersImpl;Lorg/conscrypt/ConscryptEngine;)V
-    .registers 4
+    .locals 1
 
     .line 29
     :try_start_0
@@ -3622,25 +3622,25 @@
 
     const/16 v0, 0x18
 
-    if-lt p1, v0, :cond_1b
+    if-lt p1, v0, :cond_0
 
     .line 31
     invoke-static {p0}, Lorg/conscrypt/Platform;->getSniHostnameFromParams(Ljavax/net/ssl/SSLParameters;)Ljava/lang/String;
 
     move-result-object p0
 
-    if-eqz p0, :cond_1b
+    if-eqz p0, :cond_0
 
     .line 32
     invoke-virtual {p2, p0}, Lorg/conscrypt/ConscryptEngine;->setHostname(Ljava/lang/String;)V
-    :try_end_12
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_12} :catch_1b
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_12} :catch_1b
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_12} :catch_13
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_13
+    :catch_0
     move-exception p0
 
     .line 33
@@ -3650,13 +3650,13 @@
 
     invoke-static {p0}, Llibs/ic0;->k(Ljava/lang/Throwable;)V
 
-    :catch_1b
-    :cond_1b
+    :catch_1
+    :cond_0
     return-void
 .end method
 
 .method private static setSSLParametersOnImpl(Ljavax/net/ssl/SSLParameters;Lorg/conscrypt/SSLParametersImpl;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -3744,7 +3744,7 @@
     .line 42
     .line 43
     .line 44
-    :try_start_2b
+    :try_start_0
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 45
@@ -3778,19 +3778,19 @@
     .line 59
     .line 60
     invoke-virtual {p1, p0}, Lorg/conscrypt/SSLParametersImpl;->setNamedGroups([Ljava/lang/String;)V
-    :try_end_3e
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_2b .. :try_end_3e} :catch_3e
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_2b .. :try_end_3e} :catch_3e
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 61
     .line 62
     .line 63
-    :catch_3e
+    :catch_0
     return-void
 .end method
 
 .method public static setSocketWriteTimeout(Ljava/net/Socket;J)V
-    .registers 16
+    .locals 13
 
     .line 1
     :try_start_0
@@ -3802,7 +3802,7 @@
     move-result-object p0
 
     .line 5
-    if-eqz p0, :cond_d2
+    if-eqz p0, :cond_8
 
     .line 6
     .line 7
@@ -3814,7 +3814,7 @@
     move-result v0
 
     .line 11
-    if-eqz v0, :cond_d2
+    if-eqz v0, :cond_8
 
     .line 12
     .line 13
@@ -3853,19 +3853,19 @@
     .line 28
     .line 29
     move-result-object v1
-    :try_end_1d
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_1d} :catch_da
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 30
     const-string v2, "Conscrypt"
 
     .line 31
     .line 32
-    if-nez v1, :cond_27
+    if-nez v1, :cond_0
 
     .line 33
     .line 34
-    :try_start_21
+    :try_start_1
     const-string p0, "StructTimeval == null; not setting socket write timeout"
 
     .line 35
@@ -3878,7 +3878,7 @@
     return-void
 
     .line 40
-    :cond_27
+    :cond_0
     const-string v5, "fromMillis"
 
     .line 41
@@ -3903,7 +3903,7 @@
     move-result-object v5
 
     .line 52
-    if-nez v5, :cond_3b
+    if-nez v5, :cond_1
 
     .line 53
     .line 54
@@ -3919,7 +3919,7 @@
     return-void
 
     .line 60
-    :cond_3b
+    :cond_1
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     .line 61
@@ -3971,7 +3971,7 @@
     move-result-object v5
 
     .line 85
-    if-nez v5, :cond_5c
+    if-nez v5, :cond_2
 
     .line 86
     .line 87
@@ -3987,7 +3987,7 @@
     return-void
 
     .line 93
-    :cond_5c
+    :cond_2
     invoke-virtual {v5, p1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 94
@@ -3996,7 +3996,7 @@
     move-result-object v5
 
     .line 97
-    if-nez v5, :cond_68
+    if-nez v5, :cond_3
 
     .line 98
     .line 99
@@ -4012,7 +4012,7 @@
     return-void
 
     .line 105
-    :cond_68
+    :cond_3
     new-array v6, v0, [Ljava/lang/String;
 
     .line 106
@@ -4041,7 +4041,7 @@
     move-result-object v6
 
     .line 119
-    if-nez v6, :cond_7e
+    if-nez v6, :cond_4
 
     .line 120
     .line 121
@@ -4057,7 +4057,7 @@
     return-void
 
     .line 127
-    :cond_7e
+    :cond_4
     const-string v7, "SOL_SOCKET"
 
     .line 128
@@ -4070,7 +4070,7 @@
     move-result-object v7
 
     .line 133
-    if-nez v7, :cond_8c
+    if-nez v7, :cond_5
 
     .line 134
     .line 135
@@ -4086,7 +4086,7 @@
     return-void
 
     .line 141
-    :cond_8c
+    :cond_5
     const-string v8, "SO_SNDTIMEO"
 
     .line 142
@@ -4099,7 +4099,7 @@
     move-result-object v6
 
     .line 147
-    if-nez v6, :cond_9a
+    if-nez v6, :cond_6
 
     .line 148
     .line 149
@@ -4115,7 +4115,7 @@
     return-void
 
     .line 155
-    :cond_9a
+    :cond_6
     invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 156
@@ -4170,7 +4170,7 @@
     move-result-object v1
 
     .line 181
-    if-nez v1, :cond_bc
+    if-nez v1, :cond_7
 
     .line 182
     .line 183
@@ -4186,7 +4186,7 @@
     return-void
 
     .line 189
-    :cond_bc
+    :cond_7
     invoke-virtual {v7, p1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 190
@@ -4231,7 +4231,7 @@
     return-void
 
     .line 211
-    :cond_d2
+    :cond_8
     new-instance p0, Ljava/net/SocketException;
 
     .line 212
@@ -4246,11 +4246,11 @@
     .line 217
     .line 218
     throw p0
-    :try_end_da
-    .catch Ljava/lang/Exception; {:try_start_21 .. :try_end_da} :catch_da
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 219
-    :catch_da
+    :catch_0
     move-exception p0
 
     .line 220
@@ -4293,8 +4293,8 @@
     move-result-object p0
 
     .line 241
-    :goto_f0
-    if-eqz p0, :cond_108
+    :goto_0
+    if-eqz p0, :cond_9
 
     .line 242
     .line 243
@@ -4337,15 +4337,15 @@
     move-result-object p0
 
     .line 264
-    goto :goto_f0
+    goto :goto_0
 
     .line 265
-    :cond_108
+    :cond_9
     return-void
 .end method
 
 .method public static declared-synchronized setup(ZZ)V
-    .registers 4
+    .locals 2
 
     .line 1
     const-class v0, Lorg/conscrypt/Platform;
@@ -4355,7 +4355,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     sput-boolean p0, Lorg/conscrypt/Platform;->DEPRECATED_TLS_V1:Z
 
     .line 5
@@ -4373,8 +4373,8 @@
     .line 11
     .line 12
     invoke-static {p0, p1}, Lorg/conscrypt/NativeCrypto;->setTlsV1DeprecationStatus(ZZ)V
-    :try_end_e
-    .catchall {:try_start_3 .. :try_end_e} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 13
     .line 14
@@ -4385,21 +4385,21 @@
     return-void
 
     .line 17
-    :catchall_10
+    :catchall_0
     move-exception p0
 
     .line 18
-    :try_start_11
+    :try_start_1
     monitor-exit v0
-    :try_end_12
-    .catchall {:try_start_11 .. :try_end_12} :catchall_10
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 19
     throw p0
 .end method
 
 .method public static supportsConscryptCertStore()Z
-    .registers 1
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -4409,7 +4409,7 @@
 .end method
 
 .method public static supportsX509ExtendedTrustManager()Z
-    .registers 2
+    .locals 2
 
     .line 1
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -4420,7 +4420,7 @@
 
     .line 4
     .line 5
-    if-le v0, v1, :cond_8
+    if-le v0, v1, :cond_0
 
     .line 6
     .line 7
@@ -4430,7 +4430,7 @@
     return v0
 
     .line 9
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 10
@@ -4438,7 +4438,7 @@
 .end method
 
 .method public static toGCMParameterSpec(I[B)Ljava/security/spec/AlgorithmParameterSpec;
-    .registers 10
+    .locals 8
 
     .line 1
     const-string v0, "Can\'t find GCMParameterSpec class"
@@ -4448,7 +4448,7 @@
     const/4 v1, 0x0
 
     .line 4
-    :try_start_3
+    :try_start_0
     const-string v2, "javax.crypto.spec.GCMParameterSpec"
 
     .line 5
@@ -4459,29 +4459,29 @@
     .line 8
     .line 9
     move-result-object v2
-    :try_end_9
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_3 .. :try_end_9} :catch_a
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 10
-    goto :goto_c
+    goto :goto_0
 
     .line 11
-    :catch_a
+    :catch_0
     nop
 
     .line 12
     move-object v2, v1
 
     .line 13
-    :goto_c
-    if-eqz v2, :cond_45
+    :goto_0
+    if-eqz v2, :cond_0
 
     .line 14
     .line 15
     const/4 v3, 0x2
 
     .line 16
-    :try_start_f
+    :try_start_1
     new-array v4, v3, [Ljava/lang/Class;
 
     .line 17
@@ -4545,54 +4545,54 @@
 
     .line 46
     check-cast p0, Ljava/security/spec/AlgorithmParameterSpec;
-    :try_end_2f
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_f .. :try_end_2f} :catch_38
-    .catch Ljava/lang/InstantiationException; {:try_start_f .. :try_end_2f} :catch_36
-    .catch Ljava/lang/IllegalAccessException; {:try_start_f .. :try_end_2f} :catch_34
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_f .. :try_end_2f} :catch_32
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_f .. :try_end_2f} :catch_30
+    :try_end_1
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_1 .. :try_end_1} :catch_5
+    .catch Ljava/lang/InstantiationException; {:try_start_1 .. :try_end_1} :catch_4
+    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_3
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 47
     .line 48
     return-object p0
 
     .line 49
-    :catch_30
+    :catch_1
     move-exception p0
 
     .line 50
-    goto :goto_3a
+    goto :goto_1
 
     .line 51
-    :catch_32
+    :catch_2
     move-exception p0
 
     .line 52
-    goto :goto_42
+    goto :goto_2
 
     .line 53
-    :catch_34
+    :catch_3
     move-exception p0
 
     .line 54
-    goto :goto_42
+    goto :goto_2
 
     .line 55
-    :catch_36
+    :catch_4
     move-exception p0
 
     .line 56
-    goto :goto_42
+    goto :goto_2
 
     .line 57
-    :catch_38
+    :catch_5
     move-exception p0
 
     .line 58
-    goto :goto_42
+    goto :goto_2
 
     .line 59
-    :goto_3a
+    :goto_1
     invoke-virtual {p0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
 
     .line 60
@@ -4606,36 +4606,36 @@
     .line 64
     .line 65
     .line 66
-    goto :goto_45
+    goto :goto_3
 
     .line 67
-    :goto_42
+    :goto_2
     invoke-static {v0, p0}, Lorg/conscrypt/Platform;->logStackTraceSnippet(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 68
     .line 69
     .line 70
-    :cond_45
-    :goto_45
+    :cond_0
+    :goto_3
     return-object v1
 .end method
 
 .method public static unwrapEngine(Ljavax/net/ssl/SSLEngine;)Ljavax/net/ssl/SSLEngine;
-    .registers 1
+    .locals 0
 
     .line 1
     return-object p0
 .end method
 
 .method public static wrapEngine(Lorg/conscrypt/ConscryptEngine;)Ljavax/net/ssl/SSLEngine;
-    .registers 1
+    .locals 0
 
     .line 1
     return-object p0
 .end method
 
 .method public static wrapSSLSession(Lorg/conscrypt/ExternalSession;)Ljavax/net/ssl/SSLSession;
-    .registers 3
+    .locals 2
 
     .line 1
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -4646,7 +4646,7 @@
 
     .line 4
     .line 5
-    if-lt v0, v1, :cond_c
+    if-lt v0, v1, :cond_0
 
     .line 6
     .line 7
@@ -4662,12 +4662,12 @@
     return-object v0
 
     .line 13
-    :cond_c
+    :cond_0
     return-object p0
 .end method
 
 .method public static wrapSocketFactoryIfNeeded(Lorg/conscrypt/OpenSSLSocketFactoryImpl;)Ljavax/net/ssl/SSLSocketFactory;
-    .registers 3
+    .locals 2
 
     .line 1
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -4678,7 +4678,7 @@
 
     .line 4
     .line 5
-    if-ge v0, v1, :cond_10
+    if-ge v0, v1, :cond_0
 
     .line 6
     .line 7
@@ -4686,7 +4686,7 @@
 
     .line 8
     .line 9
-    if-lt v0, v1, :cond_10
+    if-lt v0, v1, :cond_0
 
     .line 10
     .line 11
@@ -4702,12 +4702,12 @@
     return-object v0
 
     .line 17
-    :cond_10
+    :cond_0
     const/16 v1, 0x16
 
     .line 18
     .line 19
-    if-ge v0, v1, :cond_1a
+    if-ge v0, v1, :cond_1
 
     .line 20
     .line 21
@@ -4723,6 +4723,6 @@
     return-object v0
 
     .line 27
-    :cond_1a
+    :cond_1
     return-object p0
 .end method

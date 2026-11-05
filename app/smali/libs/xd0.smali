@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/wd0;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public y(Llibs/ht3;)I
-    .registers 8
+    .locals 6
 
     .line 1
     sget-boolean v0, Llibs/k12;->i:Z
@@ -37,14 +37,14 @@
     const/4 v3, 0x0
 
     .line 8
-    if-nez v0, :cond_25
+    if-nez v0, :cond_0
 
     .line 9
     .line 10
     const/4 v0, 0x1
 
     .line 11
-    :try_start_a
+    :try_start_0
     const-class v4, Landroid/graphics/drawable/Drawable;
 
     .line 12
@@ -66,16 +66,16 @@
     .line 20
     .line 21
     invoke-virtual {v4, v0}, Ljava/lang/reflect/Method;->setAccessible(Z)V
-    :try_end_17
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_a .. :try_end_17} :catch_18
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 22
     .line 23
     .line 24
-    goto :goto_23
+    goto :goto_0
 
     .line 25
-    :catch_18
+    :catch_0
     move-exception v4
 
     .line 26
@@ -97,21 +97,21 @@
     .line 34
     .line 35
     .line 36
-    :goto_23
+    :goto_0
     sput-boolean v0, Llibs/k12;->i:Z
 
     .line 37
     .line 38
-    :cond_25
+    :cond_0
     sget-object v0, Llibs/k12;->h:Ljava/lang/reflect/Method;
 
     .line 39
     .line 40
-    if-eqz v0, :cond_41
+    if-eqz v0, :cond_1
 
     .line 41
     .line 42
-    :try_start_29
+    :try_start_1
     invoke-virtual {v0, p1, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 43
@@ -130,14 +130,14 @@
     .line 50
     .line 51
     move-result p1
-    :try_end_33
-    .catch Ljava/lang/Exception; {:try_start_29 .. :try_end_33} :catch_34
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 52
-    goto :goto_42
+    goto :goto_1
 
     .line 53
-    :catch_34
+    :catch_1
     move-exception p1
 
     .line 54
@@ -163,22 +163,22 @@
 
     .line 65
     .line 66
-    :cond_41
+    :cond_1
     const/4 p1, -0x1
 
     .line 67
-    :goto_42
-    if-ltz p1, :cond_45
+    :goto_1
+    if-ltz p1, :cond_2
 
     .line 68
     .line 69
-    goto :goto_46
+    goto :goto_2
 
     .line 70
-    :cond_45
+    :cond_2
     const/4 p1, 0x0
 
     .line 71
-    :goto_46
+    :goto_2
     return p1
 .end method

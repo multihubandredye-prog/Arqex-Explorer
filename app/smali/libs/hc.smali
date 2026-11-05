@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic a()I
-    .registers 1
+    .locals 1
 
     .line 1
     invoke-static {}, Landroid/view/WindowInsets$Type;->statusBars()I
@@ -20,7 +20,7 @@
 .end method
 
 .method public static bridge synthetic b()Landroid/graphics/Bitmap$CompressFormat;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/Bitmap$CompressFormat;->WEBP_LOSSY:Landroid/graphics/Bitmap$CompressFormat;
@@ -31,7 +31,7 @@
 .end method
 
 .method public static bridge synthetic c(Landroid/view/WindowInsets;I)Landroid/graphics/Insets;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/WindowInsets;->getInsets(I)Landroid/graphics/Insets;
@@ -46,7 +46,7 @@
 .end method
 
 .method public static bridge synthetic d(Landroid/os/storage/StorageVolume;)Ljava/io/File;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/os/storage/StorageVolume;->getDirectory()Ljava/io/File;
@@ -61,7 +61,7 @@
 .end method
 
 .method public static bridge synthetic e(Lcom/mixplorer/providers/FileProvider;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/content/ContentProvider;->getCallingPackageUnchecked()Ljava/lang/String;
@@ -76,7 +76,7 @@
 .end method
 
 .method public static bridge synthetic f(Landroid/view/Window;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -91,7 +91,7 @@
 .end method
 
 .method public static bridge synthetic g(Llibs/xc0;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/provider/DocumentsProvider;->onCallingPackageChanged()V
@@ -103,7 +103,7 @@
 .end method
 
 .method public static bridge synthetic h()Z
-    .registers 1
+    .locals 1
 
     .line 1
     invoke-static {}, Landroid/os/Environment;->isExternalStorageManager()Z
@@ -118,7 +118,7 @@
 .end method
 
 .method public static bridge synthetic i(Landroid/view/WindowInsets;I)Z
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/WindowInsets;->isVisible(I)Z
@@ -133,7 +133,7 @@
 .end method
 
 .method public static bridge synthetic j()I
-    .registers 1
+    .locals 1
 
     .line 1
     invoke-static {}, Landroid/view/WindowInsets$Type;->navigationBars()I
@@ -148,7 +148,7 @@
 .end method
 
 .method public static bridge synthetic k()Landroid/graphics/Bitmap$CompressFormat;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/Bitmap$CompressFormat;->WEBP_LOSSLESS:Landroid/graphics/Bitmap$CompressFormat;
@@ -159,7 +159,7 @@
 .end method
 
 .method public static bridge synthetic l(Landroid/os/storage/StorageVolume;)Ljava/io/File;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/os/storage/StorageVolume;->getDirectory()Ljava/io/File;
@@ -174,7 +174,7 @@
 .end method
 
 .method public static bridge synthetic m()I
-    .registers 1
+    .locals 1
 
     .line 1
     invoke-static {}, Landroid/view/WindowInsets$Type;->ime()I

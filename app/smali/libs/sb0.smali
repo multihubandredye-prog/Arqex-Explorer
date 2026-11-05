@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/k00;Llibs/ac0;Llibs/qc3;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p3, p2}, Llibs/w32;-><init>(Llibs/k00;Llibs/qc3;Llibs/d73;)V
@@ -19,31 +19,31 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
     .line 6
-    if-nez p1, :cond_8
+    if-nez p1, :cond_1
 
     .line 7
     .line 8
     return v1
 
     .line 9
-    :cond_8
+    :cond_1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 10
@@ -60,14 +60,14 @@
     move-result-object v3
 
     .line 17
-    if-eq v2, v3, :cond_13
+    if-eq v2, v3, :cond_2
 
     .line 18
     .line 19
     return v1
 
     .line 20
-    :cond_13
+    :cond_2
     check-cast p1, Llibs/sb0;
 
     .line 21
@@ -84,18 +84,18 @@
 
     .line 27
     .line 28
-    if-nez v3, :cond_20
+    if-nez v3, :cond_3
 
     .line 29
     .line 30
-    if-eqz p1, :cond_27
+    if-eqz p1, :cond_4
 
     .line 31
     .line 32
     return v1
 
     .line 33
-    :cond_20
+    :cond_3
     invoke-virtual {v3, p1}, Llibs/qc3;->equals(Ljava/lang/Object;)Z
 
     .line 34
@@ -104,30 +104,30 @@
     move-result p1
 
     .line 37
-    if-nez p1, :cond_27
+    if-nez p1, :cond_4
 
     .line 38
     .line 39
     return v1
 
     .line 40
-    :cond_27
+    :cond_4
     iget-object p1, p0, Llibs/w32;->Y:Llibs/d73;
 
     .line 41
     .line 42
-    if-nez p1, :cond_2e
+    if-nez p1, :cond_5
 
     .line 43
     .line 44
-    if-eqz v2, :cond_37
+    if-eqz v2, :cond_6
 
     .line 45
     .line 46
     return v1
 
     .line 47
-    :cond_2e
+    :cond_5
     check-cast p1, Llibs/ac0;
 
     .line 48
@@ -140,19 +140,19 @@
     move-result p1
 
     .line 53
-    if-nez p1, :cond_37
+    if-nez p1, :cond_6
 
     .line 54
     .line 55
     return v1
 
     .line 56
-    :cond_37
+    :cond_6
     return v0
 .end method
 
 .method public final flush()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/w32;->Y:Llibs/d73;
@@ -176,7 +176,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 4
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
@@ -186,17 +186,17 @@
 
     .line 3
     .line 4
-    if-nez v1, :cond_7
+    if-nez v1, :cond_0
 
     .line 5
     .line 6
     const/4 v1, 0x0
 
     .line 7
-    goto :goto_b
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     invoke-virtual {v1}, Llibs/qc3;->hashCode()I
 
     .line 9
@@ -205,7 +205,7 @@
     move-result v1
 
     .line 12
-    :goto_b
+    :goto_0
     const/16 v2, 0x1f
 
     .line 13
@@ -221,14 +221,14 @@
 
     .line 18
     .line 19
-    if-nez v2, :cond_15
+    if-nez v2, :cond_1
 
     .line 20
     .line 21
-    goto :goto_1b
+    goto :goto_1
 
     .line 22
-    :cond_15
+    :cond_1
     check-cast v2, Llibs/ac0;
 
     .line 23
@@ -241,7 +241,7 @@
     move-result v0
 
     .line 28
-    :goto_1b
+    :goto_1
     add-int/2addr v1, v0
 
     .line 29
@@ -249,7 +249,7 @@
 .end method
 
 .method public final i()Llibs/rq0;
-    .registers 14
+    .locals 13
 
     .line 1
     iget-object v0, p0, Llibs/w32;->Y:Llibs/d73;
@@ -288,7 +288,7 @@
 
     .line 18
     .line 19
-    if-eqz v0, :cond_4a
+    if-eqz v0, :cond_0
 
     .line 20
     .line 21
@@ -365,7 +365,7 @@
 
     .line 55
     .line 56
-    :try_start_37
+    :try_start_0
     new-instance v2, Llibs/rw2;
 
     .line 57
@@ -384,15 +384,15 @@
 
     .line 65
     check-cast v0, Llibs/rq0;
-    :try_end_42
-    .catch Llibs/sj; {:try_start_37 .. :try_end_42} :catch_43
+    :try_end_0
+    .catch Llibs/sj; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 66
     .line 67
     return-object v0
 
     .line 68
-    :catch_43
+    :catch_0
     move-exception v0
 
     .line 69
@@ -408,7 +408,7 @@
     throw v1
 
     .line 75
-    :cond_4a
+    :cond_0
     const-string v0, "FileInformationClass not supported - "
 
     .line 76

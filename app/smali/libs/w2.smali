@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/w2;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public c(Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 1
 
     .line 1
     :try_start_0
@@ -50,14 +50,14 @@
     .line 5
     .line 6
     move-result-object p1
-    :try_end_6
-    .catchall {:try_start_0 .. :try_end_6} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 7
     return-object p1
 
     .line 8
-    :catchall_7
+    :catchall_0
     move-exception p1
 
     .line 9
@@ -73,7 +73,7 @@
     move-result-object p3
 
     .line 15
-    if-eqz p3, :cond_14
+    if-eqz p3, :cond_0
 
     .line 16
     .line 17
@@ -85,7 +85,7 @@
     move-result-object p1
 
     .line 21
-    :cond_14
+    :cond_0
     invoke-virtual {p1}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     .line 22
@@ -103,7 +103,7 @@
 .end method
 
 .method public final close()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/w2;->X:B
@@ -113,7 +113,7 @@
     const/4 v1, 0x0
 
     .line 4
-    packed-switch v0, :pswitch_data_1a
+    packed-switch v0, :pswitch_data_0
 
     .line 5
     .line 6
@@ -130,7 +130,7 @@
     return-void
 
     .line 13
-    :pswitch_c
+    :pswitch_0
     iget-object v0, p0, Llibs/w2;->Y:Ljava/lang/Object;
 
     .line 14
@@ -139,42 +139,42 @@
 
     .line 16
     .line 17
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     .line 18
     .line 19
-    goto :goto_18
+    goto :goto_0
 
     .line 20
-    :cond_13
-    :try_start_13
+    :cond_0
+    :try_start_0
     invoke-virtual {v0}, Ljava/io/InputStream;->close()V
-    :try_end_16
-    .catch Ljava/io/IOException; {:try_start_13 .. :try_end_16} :catch_16
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 21
     .line 22
     .line 23
-    :catch_16
+    :catch_0
     iput-object v1, p0, Llibs/w2;->Y:Ljava/lang/Object;
 
     .line 24
     .line 25
-    :goto_18
+    :goto_0
     return-void
 
     .line 26
     nop
 
     .line 27
-    :pswitch_data_1a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_c
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public i(I[B)I
-    .registers 9
+    .locals 6
 
     .line 1
     const/4 v0, 0x3
@@ -273,7 +273,7 @@
 .end method
 
 .method public m(J)V
-    .registers 7
+    .locals 4
 
     .line 1
     const/4 v0, 0x1
@@ -323,7 +323,7 @@
 .end method
 
 .method public read([B)I
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x1
@@ -380,7 +380,7 @@
 .end method
 
 .method public w(Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)V
-    .registers 5
+    .locals 1
 
     .line 1
     :try_start_0
@@ -389,9 +389,9 @@
     .line 2
     .line 3
     invoke-static {v0, p1, p2, p3}, Llibs/en1;->l(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_5
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_5} :catch_8
-    .catchall {:try_start_0 .. :try_end_5} :catchall_6
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 4
     .line 5
@@ -399,21 +399,21 @@
     return-void
 
     .line 7
-    :catchall_6
+    :catchall_0
     move-exception p1
 
     .line 8
-    goto :goto_a
+    goto :goto_0
 
     .line 9
-    :catch_8
+    :catch_0
     move-exception p1
 
     .line 10
-    goto :goto_1e
+    goto :goto_1
 
     .line 11
-    :goto_a
+    :goto_0
     new-instance p2, Ljava/io/IOException;
 
     .line 12
@@ -426,7 +426,7 @@
     move-result-object p3
 
     .line 17
-    if-eqz p3, :cond_16
+    if-eqz p3, :cond_0
 
     .line 18
     .line 19
@@ -438,7 +438,7 @@
     move-result-object p1
 
     .line 23
-    :cond_16
+    :cond_0
     invoke-virtual {p1}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     .line 24
@@ -455,6 +455,6 @@
     throw p2
 
     .line 31
-    :goto_1e
+    :goto_1
     throw p1
 .end method

@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -26,7 +26,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-direct {p0, p1, p2}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
@@ -92,7 +92,7 @@
 
     .line 31
     .line 32
-    if-eqz p1, :cond_27
+    if-eqz p1, :cond_0
 
     .line 33
     .line 34
@@ -107,14 +107,14 @@
     add-int/2addr p1, v2
 
     .line 39
-    goto :goto_28
+    goto :goto_0
 
     .line 40
-    :cond_27
+    :cond_0
     const/4 p1, 0x0
 
     .line 41
-    :goto_28
+    :goto_0
     add-int/2addr v0, p1
 
     .line 42
@@ -129,7 +129,7 @@
 
 # virtual methods
 .method public final a(FII)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput p2, p0, Lcom/mixplorer/widgets/MiCircleView;->Mu:I
@@ -153,7 +153,7 @@
 .end method
 
 .method public final b()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiCircleView;->Lambda:Llibs/ut;
@@ -177,7 +177,7 @@
 .end method
 
 .method public final c()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiCircleView;->Lambda:Llibs/ut;
@@ -201,7 +201,7 @@
 .end method
 
 .method public final onDraw(Landroid/graphics/Canvas;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
@@ -221,7 +221,7 @@
     move-result p1
 
     .line 10
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
     .line 11
     .line 12
@@ -230,12 +230,12 @@
     .line 13
     .line 14
     .line 15
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method public final onMeasure(II)V
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-super {p0, p1, p2}, Landroid/view/View;->onMeasure(II)V
@@ -281,7 +281,7 @@
 .end method
 
 .method public setStrokeWidth(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiCircleView;->Lambda:Llibs/ut;
@@ -313,7 +313,7 @@
 .end method
 
 .method public setText(Ljava/lang/String;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-static {p1}, Llibs/ho2;->j(Ljava/lang/String;)Ljava/lang/String;

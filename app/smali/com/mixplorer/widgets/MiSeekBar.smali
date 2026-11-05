@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -20,7 +20,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -31,7 +31,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .registers 4
+    .locals 0
 
     const/4 p3, 0x0
 
@@ -44,7 +44,7 @@
 
 # virtual methods
 .method public setProgressDrawable(Landroid/graphics/drawable/Drawable;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Landroid/widget/ProgressBar;->getProgressDrawable()Landroid/graphics/drawable/Drawable;
@@ -55,17 +55,17 @@
     move-result-object v0
 
     .line 5
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
     const/4 v0, 0x0
 
     .line 8
-    goto :goto_c
+    goto :goto_0
 
     .line 9
-    :cond_8
+    :cond_0
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     .line 10
@@ -74,13 +74,13 @@
     move-result-object v0
 
     .line 13
-    :goto_c
+    :goto_0
     invoke-super {p0, p1}, Landroid/widget/SeekBar;->setProgressDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 14
     .line 15
     .line 16
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     .line 17
     .line 18
@@ -97,6 +97,6 @@
     .line 23
     .line 24
     .line 25
-    :cond_18
+    :cond_1
     return-void
 .end method

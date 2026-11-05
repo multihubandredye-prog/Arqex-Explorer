@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(II)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/ap2;-><init>(I)V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final b(Llibs/za;Ljava/util/Locale;)Ljava/lang/String;
-    .registers 5
+    .locals 2
 
     .line 1
     new-instance p1, Ljava/lang/StringBuilder;
@@ -51,8 +51,8 @@
 
     .line 11
     .line 12
-    :goto_b
-    if-ltz p2, :cond_1f
+    :goto_0
+    if-ltz p2, :cond_0
 
     .line 13
     .line 14
@@ -89,10 +89,10 @@
 
     .line 30
     .line 31
-    goto :goto_b
+    goto :goto_0
 
     .line 32
-    :cond_1f
+    :cond_0
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 33

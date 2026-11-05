@@ -9,7 +9,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/hk1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/Psi;->a:Llibs/hk1;

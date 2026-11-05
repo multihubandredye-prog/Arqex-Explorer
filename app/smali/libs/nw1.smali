@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Landroid/webkit/WebViewClient;-><init>()V
@@ -17,7 +17,7 @@
 .end method
 
 .method public static b(Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "file://"
@@ -32,7 +32,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -47,12 +47,12 @@
     move-result-object p0
 
     .line 14
-    :cond_d
+    :cond_0
     return-object p0
 .end method
 
 .method public static c(Llibs/ow1;I)Ljava/lang/String;
-    .registers 7
+    .locals 5
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -80,17 +80,17 @@
 
     .line 13
     .line 14
-    if-nez v1, :cond_11
+    if-nez v1, :cond_0
 
     .line 15
     .line 16
     move-object v1, v3
 
     .line 17
-    goto :goto_2c
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     .line 19
@@ -140,7 +140,7 @@
     move-result-object v1
 
     .line 45
-    :goto_2c
+    :goto_0
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 46
@@ -155,17 +155,17 @@
 
     .line 52
     .line 53
-    if-nez p0, :cond_38
+    if-nez p0, :cond_1
 
     .line 54
     .line 55
     move-object p0, v3
 
     .line 56
-    goto :goto_51
+    goto :goto_1
 
     .line 57
-    :cond_38
+    :cond_1
     new-instance p0, Ljava/lang/StringBuilder;
 
     .line 58
@@ -213,7 +213,7 @@
     move-result-object p0
 
     .line 82
-    :goto_51
+    :goto_1
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 83
@@ -224,19 +224,19 @@
     .line 86
     .line 87
     .line 88
-    if-gtz p1, :cond_5a
+    if-gtz p1, :cond_2
 
     .line 89
     .line 90
-    goto :goto_5c
+    goto :goto_2
 
     .line 91
-    :cond_5a
+    :cond_2
     const-string v3, "var audios = document.body.getElementsByTagName(\'audio\');for (var i=0; i<audios.length; i++) {var aud = audios[i];aud.setAttribute(\'src\', window.Android.getLink(aud.src));aud.load();}var videos = document.body.getElementsByTagName(\'video\');for (var i=0; i<videos.length; i++) {var vid = videos[i];var sources = vid.getElementsByTagName(\'source\');for (var j=0; j<sources.length; j++) {var source = sources[j];source.setAttribute(\'src\', window.Android.getLink(source.src));}var tracks = vid.getElementsByTagName(\'track\');for (var j=0; j<tracks.length; j++) {var track = tracks[j];track.setAttribute(\'src\', window.Android.getLink(track.src));}vid.load();}"
 
     .line 92
     .line 93
-    :goto_5c
+    :goto_2
     const-string p0, "window.Android.done(\'<html>\'+document.getElementsByTagName(\'html\')[0].innerHTML+\'</html>\');"
 
     .line 94
@@ -253,7 +253,7 @@
 .end method
 
 .method public static g(Ljava/lang/String;ILjava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -337,7 +337,7 @@
 .end method
 
 .method public static h(Ljava/io/InputStream;Ljava/lang/String;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;
-    .registers 11
+    .locals 8
 
     .line 1
     invoke-static {}, Llibs/t43;->Item()Z
@@ -348,7 +348,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -409,7 +409,7 @@
     return-object v1
 
     .line 36
-    :cond_23
+    :cond_0
     move-object v2, p1
 
     .line 37
@@ -449,7 +449,7 @@
 .end method
 
 .method public final f(Llibs/ow1;Landroid/net/Uri;)Landroid/webkit/WebResourceResponse;
-    .registers 13
+    .locals 10
 
     .line 1
     const-string v0, "Not found2 > "
@@ -459,14 +459,14 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz p2, :cond_115
+    if-eqz p2, :cond_d
 
     .line 5
     .line 6
     const/4 v2, 0x0
 
     .line 7
-    :try_start_6
+    :try_start_0
     invoke-virtual {p2}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
     .line 8
@@ -487,15 +487,15 @@
     move-result v3
 
     .line 17
-    if-eqz v3, :cond_14
+    if-eqz v3, :cond_0
 
     .line 18
     .line 19
-    goto/16 :goto_115
+    goto/16 :goto_4
 
     .line 20
     .line 21
-    :cond_14
+    :cond_0
     invoke-static {p2}, Llibs/ji0;->w(Landroid/net/Uri;)Ljava/lang/String;
 
     .line 22
@@ -514,15 +514,15 @@
     .line 29
     .line 30
     move-result v4
-    :try_end_1e
-    .catchall {:try_start_6 .. :try_end_1e} :catchall_33
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 31
     const-string v5, "text/javascript"
 
     .line 32
     .line 33
-    if-eqz v4, :cond_36
+    if-eqz v4, :cond_1
 
     .line 34
     .line 35
@@ -530,7 +530,7 @@
 
     .line 36
     .line 37
-    :try_start_24
+    :try_start_1
     invoke-virtual {v3, p1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     .line 38
@@ -562,15 +562,15 @@
     return-object p1
 
     .line 52
-    :catchall_33
+    :catchall_0
     move-exception p1
 
     .line 53
-    goto/16 :goto_105
+    goto/16 :goto_3
 
     .line 54
     .line 55
-    :cond_36
+    :cond_1
     invoke-static {v3}, Llibs/nw1;->b(Ljava/lang/String;)Ljava/lang/String;
 
     .line 56
@@ -587,7 +587,7 @@
     move-result-object v4
 
     .line 63
-    if-nez v4, :cond_69
+    if-nez v4, :cond_4
 
     .line 64
     .line 65
@@ -611,7 +611,7 @@
     move-result v4
 
     .line 75
-    if-eqz v4, :cond_65
+    if-eqz v4, :cond_3
 
     .line 76
     .line 77
@@ -632,7 +632,7 @@
     move-result v4
 
     .line 86
-    if-eqz v4, :cond_5c
+    if-eqz v4, :cond_2
 
     .line 87
     .line 88
@@ -644,10 +644,10 @@
     move-result-object v4
 
     .line 92
-    goto :goto_69
+    goto :goto_0
 
     .line 93
-    :cond_5c
+    :cond_2
     invoke-static {v3}, Llibs/nw1;->b(Ljava/lang/String;)Ljava/lang/String;
 
     .line 94
@@ -664,10 +664,10 @@
     move-result-object v4
 
     .line 101
-    goto :goto_69
+    goto :goto_0
 
     .line 102
-    :cond_65
+    :cond_3
     invoke-static {v3}, Llibs/u73;->Intent(Ljava/lang/String;)Llibs/rp0;
 
     .line 103
@@ -676,9 +676,9 @@
     move-result-object v4
 
     .line 106
-    :cond_69
-    :goto_69
-    if-eqz v4, :cond_fb
+    :cond_4
+    :goto_0
+    if-eqz v4, :cond_c
 
     .line 107
     .line 108
@@ -694,15 +694,15 @@
     move-result-object v0
 
     .line 114
-    if-nez v0, :cond_75
+    if-nez v0, :cond_5
 
     .line 115
     .line 116
-    goto/16 :goto_115
+    goto/16 :goto_4
 
     .line 117
     .line 118
-    :cond_75
+    :cond_5
     invoke-virtual {p2}, Landroid/net/Uri;->getPath()Ljava/lang/String;
 
     .line 119
@@ -744,7 +744,7 @@
 
     .line 138
     .line 139
-    if-nez v3, :cond_90
+    if-nez v3, :cond_7
 
     .line 140
     .line 141
@@ -752,15 +752,15 @@
 
     .line 142
     .line 143
-    :cond_8e
-    :goto_8e
+    :cond_6
+    :goto_1
     move-object v3, v1
 
     .line 144
-    goto :goto_e2
+    goto :goto_2
 
     .line 145
-    :cond_90
+    :cond_7
     const-wide/32 v8, 0x8000
 
     .line 146
@@ -770,7 +770,7 @@
 
     .line 149
     .line 150
-    if-nez v3, :cond_9a
+    if-nez v3, :cond_8
 
     .line 151
     .line 152
@@ -778,15 +778,15 @@
 
     .line 153
     .line 154
-    goto :goto_8e
+    goto :goto_1
 
     .line 155
-    :cond_9a
+    :cond_8
     instance-of v3, v0, Llibs/rr0;
 
     .line 156
     .line 157
-    if-eqz v3, :cond_a9
+    if-eqz v3, :cond_9
 
     .line 158
     .line 159
@@ -812,10 +812,10 @@
 
     .line 168
     .line 169
-    goto :goto_e2
+    goto :goto_2
 
     .line 170
-    :cond_a9
+    :cond_9
     invoke-static {p2}, Llibs/jx1;->Intent(Ljava/lang/String;)Ljava/lang/String;
 
     .line 171
@@ -832,7 +832,7 @@
     move-result v3
 
     .line 178
-    if-eqz v3, :cond_bf
+    if-eqz v3, :cond_a
 
     .line 179
     .line 180
@@ -849,7 +849,7 @@
 
     .line 186
     .line 187
-    if-gtz v8, :cond_bf
+    if-gtz v8, :cond_a
 
     .line 188
     .line 189
@@ -857,11 +857,11 @@
 
     .line 190
     .line 191
-    goto :goto_8e
+    goto :goto_1
 
     .line 192
-    :cond_bf
-    if-eqz p2, :cond_8e
+    :cond_a
+    if-eqz p2, :cond_6
 
     .line 193
     .line 194
@@ -877,7 +877,7 @@
     move-result v3
 
     .line 200
-    if-eqz v3, :cond_8e
+    if-eqz v3, :cond_6
 
     .line 201
     .line 202
@@ -893,7 +893,7 @@
     move-result v3
 
     .line 208
-    if-nez v3, :cond_8e
+    if-nez v3, :cond_6
 
     .line 209
     .line 210
@@ -909,7 +909,7 @@
     move-result v3
 
     .line 216
-    if-nez v3, :cond_8e
+    if-nez v3, :cond_6
 
     .line 217
     .line 218
@@ -921,7 +921,7 @@
     move-result v3
 
     .line 222
-    if-nez v3, :cond_8e
+    if-nez v3, :cond_6
 
     .line 223
     .line 224
@@ -929,10 +929,10 @@
 
     .line 225
     .line 226
-    goto :goto_8e
+    goto :goto_1
 
     .line 227
-    :goto_e2
+    :goto_2
     invoke-static {v3}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
 
     .line 228
@@ -941,7 +941,7 @@
     move-result v4
 
     .line 231
-    if-eqz v4, :cond_f6
+    if-eqz v4, :cond_b
 
     .line 232
     .line 233
@@ -957,7 +957,7 @@
     move-result p1
 
     .line 239
-    if-eqz p1, :cond_f6
+    if-eqz p1, :cond_b
 
     .line 240
     .line 241
@@ -973,7 +973,7 @@
     move-result-object v3
 
     .line 247
-    :cond_f6
+    :cond_b
     invoke-static {v0, p2, v3}, Llibs/nw1;->h(Ljava/io/InputStream;Ljava/lang/String;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;
 
     .line 248
@@ -985,7 +985,7 @@
     return-object p1
 
     .line 252
-    :cond_fb
+    :cond_c
     new-instance p1, Ljava/lang/Exception;
 
     .line 253
@@ -1004,11 +1004,11 @@
     .line 260
     .line 261
     throw p1
-    :try_end_105
-    .catchall {:try_start_24 .. :try_end_105} :catchall_33
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 262
-    :goto_105
+    :goto_3
     invoke-static {p1}, Llibs/vl3;->Map(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 263
@@ -1041,13 +1041,13 @@
     .line 276
     .line 277
     .line 278
-    :cond_115
-    :goto_115
+    :cond_d
+    :goto_4
     return-object v1
 .end method
 
 .method public final i(Ljava/lang/String;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
@@ -1085,7 +1085,7 @@
     move-result v1
 
     .line 18
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     .line 19
     .line 20
@@ -1095,7 +1095,7 @@
     return p1
 
     .line 22
-    :cond_15
+    :cond_0
     invoke-static {p1}, Llibs/vl3;->w(Ljava/lang/String;)Z
 
     .line 23
@@ -1104,7 +1104,7 @@
     move-result v1
 
     .line 26
-    if-nez v1, :cond_2f
+    if-nez v1, :cond_1
 
     .line 27
     .line 28
@@ -1120,7 +1120,7 @@
     move-result v1
 
     .line 34
-    if-nez v1, :cond_2f
+    if-nez v1, :cond_1
 
     .line 35
     .line 36
@@ -1136,7 +1136,7 @@
     move-result v1
 
     .line 42
-    if-nez v1, :cond_2f
+    if-nez v1, :cond_1
 
     .line 43
     .line 44
@@ -1144,11 +1144,11 @@
 
     .line 45
     .line 46
-    if-eqz v1, :cond_38
+    if-eqz v1, :cond_2
 
     .line 47
     .line 48
-    :cond_2f
+    :cond_1
     const-string v1, "geo:"
 
     .line 49
@@ -1161,14 +1161,14 @@
     move-result v1
 
     .line 54
-    if-nez v1, :cond_38
+    if-nez v1, :cond_2
 
     .line 55
     .line 56
     return v0
 
     .line 57
-    :cond_38
+    :cond_2
     sget-object v0, Lcom/mixplorer/activities/a;->Hotel:Llibs/xt1;
 
     .line 58
@@ -1177,18 +1177,18 @@
 
     .line 60
     .line 61
-    if-eqz v0, :cond_3f
+    if-eqz v0, :cond_3
 
     .line 62
     .line 63
-    goto :goto_40
+    goto :goto_0
 
     .line 64
-    :cond_3f
+    :cond_3
     const/4 v0, 0x0
 
     .line 65
-    :goto_40
+    :goto_0
     invoke-static {v0, p1}, Lcom/mixplorer/activities/PreferenceActivity;->Void(Landroid/app/Activity;Ljava/lang/String;)Z
 
     .line 66
@@ -1201,7 +1201,7 @@
 .end method
 
 .method public final onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-super {p0, p1, p2}, Landroid/webkit/WebViewClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
@@ -1228,7 +1228,7 @@
 
     .line 12
     .line 13
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_0
 
     .line 14
     .line 15
@@ -1250,12 +1250,12 @@
     .line 23
     .line 24
     .line 25
-    :cond_18
+    :cond_0
     iget-boolean v1, v0, Llibs/ow1;->Xi:Z
 
     .line 26
     .line 27
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_1
 
     .line 28
     .line 29
@@ -1284,14 +1284,14 @@
     float-to-int v1, v1
 
     .line 40
-    goto :goto_29
+    goto :goto_0
 
     .line 41
-    :cond_28
+    :cond_1
     const/4 v1, -0x1
 
     .line 42
-    :goto_29
+    :goto_0
     invoke-static {}, Llibs/t43;->Data()Z
 
     .line 43
@@ -1300,7 +1300,7 @@
     move-result v2
 
     .line 46
-    if-eqz v2, :cond_37
+    if-eqz v2, :cond_2
 
     .line 47
     .line 48
@@ -1317,10 +1317,10 @@
     .line 53
     .line 54
     .line 55
-    goto :goto_44
+    goto :goto_1
 
     .line 56
-    :cond_37
+    :cond_2
     invoke-static {}, Llibs/t43;->Set()Z
 
     .line 57
@@ -1329,7 +1329,7 @@
     move-result v2
 
     .line 60
-    if-eqz v2, :cond_44
+    if-eqz v2, :cond_3
 
     .line 61
     .line 62
@@ -1346,13 +1346,13 @@
     .line 67
     .line 68
     .line 69
-    :cond_44
-    :goto_44
+    :cond_3
+    :goto_1
     iget-object p1, v0, Llibs/ow1;->Chi:Llibs/kw1;
 
     .line 70
     .line 71
-    if-eqz p1, :cond_4b
+    if-eqz p1, :cond_4
 
     .line 72
     .line 73
@@ -1361,12 +1361,12 @@
     .line 74
     .line 75
     .line 76
-    :cond_4b
+    :cond_4
     return-void
 .end method
 
 .method public final onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V
-    .registers 5
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -1390,7 +1390,7 @@
 
     .line 11
     .line 12
-    if-eqz p2, :cond_1d
+    if-eqz p2, :cond_0
 
     .line 13
     .line 14
@@ -1402,7 +1402,7 @@
     move-result p2
 
     .line 18
-    if-eqz p2, :cond_1d
+    if-eqz p2, :cond_0
 
     .line 19
     .line 20
@@ -1424,12 +1424,12 @@
     .line 28
     .line 29
     .line 30
-    :cond_1d
+    :cond_0
     return-void
 .end method
 
 .method public final onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V
-    .registers 5
+    .locals 0
 
     .line 41
     invoke-super {p0, p1, p2, p3, p4}, Landroid/webkit/WebViewClient;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V
@@ -1441,7 +1441,7 @@
 .end method
 
 .method public final onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V
-    .registers 5
+    .locals 1
 
     .line 1
     invoke-super {p0, p1, p2, p3}, Landroid/webkit/WebViewClient;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V
@@ -1521,7 +1521,7 @@
 .end method
 
 .method public final onUnhandledKeyEvent(Landroid/webkit/WebView;Landroid/view/KeyEvent;)V
-    .registers 4
+    .locals 1
 
     .line 1
     move-object v0, p1
@@ -1535,7 +1535,7 @@
 
     .line 5
     .line 6
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
@@ -1547,14 +1547,14 @@
     move-result v0
 
     .line 12
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 13
     .line 14
     return-void
 
     .line 15
-    :cond_e
+    :cond_0
     invoke-super {p0, p1, p2}, Landroid/webkit/WebViewClient;->onUnhandledKeyEvent(Landroid/webkit/WebView;Landroid/view/KeyEvent;)V
 
     .line 16
@@ -1564,7 +1564,7 @@
 .end method
 
 .method public final shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;
-    .registers 3
+    .locals 0
 
     .line 13
     check-cast p1, Llibs/ow1;
@@ -1581,7 +1581,7 @@
 .end method
 
 .method public final shouldInterceptRequest(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;
-    .registers 4
+    .locals 1
 
     .line 1
     check-cast p1, Llibs/ow1;
@@ -1611,7 +1611,7 @@
 .end method
 
 .method public final shouldOverrideUrlLoading(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Z
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-interface {p2}, Landroid/webkit/WebResourceRequest;->getUrl()Landroid/net/Uri;
@@ -1638,7 +1638,7 @@
     move-result v0
 
     .line 13
-    if-nez v0, :cond_17
+    if-nez v0, :cond_1
 
     .line 14
     .line 15
@@ -1650,22 +1650,22 @@
     move-result p1
 
     .line 19
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_0
 
     .line 20
     .line 21
-    goto :goto_17
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     const/4 p1, 0x0
 
     .line 23
     return p1
 
     .line 24
-    :cond_17
-    :goto_17
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
     .line 25
@@ -1673,31 +1673,31 @@
 .end method
 
 .method public final shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
-    .registers 4
+    .locals 1
 
     .line 26
     invoke-virtual {p0, p2}, Llibs/nw1;->i(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_1
 
     .line 27
     invoke-super {p0, p1, p2}, Landroid/webkit/WebViewClient;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 
-    :cond_f
-    :goto_f
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
     return p1

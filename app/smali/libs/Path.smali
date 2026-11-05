@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Url;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/Path;->X:Llibs/Url;
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final hasNext()Z
-    .registers 2
+    .locals 1
 
     .line 1
     :try_start_0
@@ -44,11 +44,11 @@
     .line 5
     .line 6
     move-result v0
-    :try_end_6
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_6} :catch_a
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 7
-    if-lez v0, :cond_a
+    if-lez v0, :cond_0
 
     .line 8
     .line 9
@@ -58,8 +58,8 @@
     return v0
 
     .line 11
-    :catch_a
-    :cond_a
+    :catch_0
+    :cond_0
     const/4 v0, 0x0
 
     .line 12
@@ -67,7 +67,7 @@
 .end method
 
 .method public final next()Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     .line 1
     :try_start_0
@@ -81,14 +81,14 @@
     .line 5
     .line 6
     move-result-object v0
-    :try_end_6
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 7
     return-object v0
 
     .line 8
-    :catch_7
+    :catch_0
     move-exception v0
 
     .line 9
@@ -113,7 +113,7 @@
 .end method
 
 .method public final remove()V
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/UnsupportedOperationException;

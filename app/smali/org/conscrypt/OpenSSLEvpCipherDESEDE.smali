@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/conscrypt/OpenSSLCipher$Mode;Lorg/conscrypt/OpenSSLCipher$Padding;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Lorg/conscrypt/OpenSSLEvpCipher;-><init>(Lorg/conscrypt/OpenSSLCipher$Mode;Lorg/conscrypt/OpenSSLCipher$Padding;)V
@@ -23,14 +23,14 @@
 
 # virtual methods
 .method public checkSupportedKeySize(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/16 v0, 0x10
 
     .line 2
     .line 3
-    if-eq p1, v0, :cond_e
+    if-eq p1, v0, :cond_1
 
     .line 4
     .line 5
@@ -38,14 +38,14 @@
 
     .line 6
     .line 7
-    if-ne p1, v0, :cond_9
+    if-ne p1, v0, :cond_0
 
     .line 8
     .line 9
-    goto :goto_e
+    goto :goto_0
 
     .line 10
-    :cond_9
+    :cond_0
     const-string p1, "key size must be 128 or 192 bits"
 
     .line 11
@@ -55,27 +55,27 @@
     .line 13
     .line 14
     .line 15
-    :cond_e
-    :goto_e
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public checkSupportedMode(Lorg/conscrypt/OpenSSLCipher$Mode;)V
-    .registers 5
+    .locals 3
 
     .line 1
     sget-object v0, Lorg/conscrypt/OpenSSLCipher$Mode;->CBC:Lorg/conscrypt/OpenSSLCipher$Mode;
 
     .line 2
     .line 3
-    if-ne p1, v0, :cond_5
+    if-ne p1, v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     new-instance v0, Ljava/security/NoSuchAlgorithmException;
 
     .line 7
@@ -123,7 +123,7 @@
 .end method
 
 .method public checkSupportedPadding(Lorg/conscrypt/OpenSSLCipher$Padding;)V
-    .registers 5
+    .locals 3
 
     .line 1
     sget-object v0, Lorg/conscrypt/OpenSSLEvpCipherDESEDE$1;->$SwitchMap$org$conscrypt$OpenSSLCipher$Padding:[I
@@ -145,21 +145,21 @@
     const/4 v1, 0x1
 
     .line 10
-    if-eq v0, v1, :cond_27
+    if-eq v0, v1, :cond_1
 
     .line 11
     .line 12
     const/4 v1, 0x2
 
     .line 13
-    if-ne v0, v1, :cond_f
+    if-ne v0, v1, :cond_0
 
     .line 14
     .line 15
-    goto :goto_27
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_0
     new-instance v0, Ljavax/crypto/NoSuchPaddingException;
 
     .line 17
@@ -206,13 +206,13 @@
     throw v0
 
     .line 40
-    :cond_27
-    :goto_27
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public getBaseCipherName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "DESede"
@@ -223,7 +223,7 @@
 .end method
 
 .method public getCipherBlockSize()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x8
@@ -234,14 +234,14 @@
 .end method
 
 .method public getCipherName(ILorg/conscrypt/OpenSSLCipher$Mode;)Ljava/lang/String;
-    .registers 4
+    .locals 1
 
     .line 1
     const/16 v0, 0x10
 
     .line 2
     .line 3
-    if-ne p1, v0, :cond_7
+    if-ne p1, v0, :cond_0
 
     .line 4
     .line 5
@@ -249,15 +249,15 @@
 
     .line 6
     .line 7
-    goto :goto_9
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     const-string p1, "des-ede3"
 
     .line 9
     .line 10
-    :goto_9
+    :goto_0
     const-string v0, "-"
 
     .line 11

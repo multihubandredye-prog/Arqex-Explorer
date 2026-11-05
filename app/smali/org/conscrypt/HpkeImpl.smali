@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Lorg/conscrypt/OpenSslXwingKeyFactory;
@@ -40,7 +40,7 @@
 .end method
 
 .method public constructor <init>(Lorg/conscrypt/HpkeSuite;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -63,7 +63,7 @@
 .end method
 
 .method public static bridge synthetic a()Lorg/conscrypt/OpenSslXwingKeyFactory;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/HpkeImpl;->xwingKeyFactory:Lorg/conscrypt/OpenSslXwingKeyFactory;
@@ -74,10 +74,10 @@
 .end method
 
 .method private checkArgumentsForBaseModeOnly(Ljava/security/Key;[B[B)V
-    .registers 4
+    .locals 0
 
     .line 1
-    if-nez p1, :cond_17
+    if-nez p1, :cond_1
 
     .line 2
     .line 3
@@ -94,21 +94,21 @@
     array-length p1, p2
 
     .line 10
-    if-gtz p1, :cond_f
+    if-gtz p1, :cond_0
 
     .line 11
     .line 12
     array-length p1, p3
 
     .line 13
-    if-gtz p1, :cond_f
+    if-gtz p1, :cond_0
 
     .line 14
     .line 15
     return-void
 
     .line 16
-    :cond_f
+    :cond_0
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     .line 17
@@ -125,7 +125,7 @@
     throw p1
 
     .line 24
-    :cond_17
+    :cond_1
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     .line 25
@@ -143,21 +143,21 @@
 .end method
 
 .method private checkInitialised()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/HpkeImpl;->ctx:Lorg/conscrypt/NativeRef$EVP_HPKE_CTX;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     const-string v0, "Not initialised"
 
     .line 7
@@ -171,7 +171,7 @@
 .end method
 
 .method private checkIsRecipient()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/HpkeImpl;->checkInitialised()V
@@ -183,14 +183,14 @@
 
     .line 5
     .line 6
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     .line 7
     .line 8
     return-void
 
     .line 9
-    :cond_8
+    :cond_0
     const-string v0, "Internal error"
 
     .line 10
@@ -204,7 +204,7 @@
 .end method
 
 .method private checkIsSender()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/HpkeImpl;->checkInitialised()V
@@ -216,14 +216,14 @@
 
     .line 5
     .line 6
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
     return-void
 
     .line 9
-    :cond_8
+    :cond_0
     const-string v0, "Internal error"
 
     .line 10
@@ -237,21 +237,21 @@
 .end method
 
 .method private checkNotInitialised()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/HpkeImpl;->ctx:Lorg/conscrypt/NativeRef$EVP_HPKE_CTX;
 
     .line 2
     .line 3
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     const-string v0, "Already initialised"
 
     .line 7
@@ -267,7 +267,7 @@
 
 # virtual methods
 .method public engineExport(I[B)[B
-    .registers 8
+    .locals 5
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/HpkeImpl;->checkInitialised()V
@@ -295,7 +295,7 @@
     move-result-wide v0
 
     .line 14
-    if-ltz p1, :cond_1b
+    if-ltz p1, :cond_0
 
     .line 15
     .line 16
@@ -306,7 +306,7 @@
 
     .line 18
     .line 19
-    if-gtz v4, :cond_1b
+    if-gtz v4, :cond_0
 
     .line 20
     .line 21
@@ -325,7 +325,7 @@
     return-object p1
 
     .line 28
-    :cond_1b
+    :cond_0
     new-instance p2, Ljava/lang/IllegalArgumentException;
 
     .line 29
@@ -379,7 +379,7 @@
 .end method
 
 .method public engineInitRecipient([BLjava/security/PrivateKey;[BLjava/security/PublicKey;[B[B)V
-    .registers 7
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/HpkeImpl;->checkNotInitialised()V
@@ -424,11 +424,11 @@
     move-result p5
 
     .line 23
-    if-ne p4, p5, :cond_2f
+    if-ne p4, p5, :cond_1
 
     .line 24
     .line 25
-    if-eqz p2, :cond_29
+    if-eqz p2, :cond_0
 
     .line 26
     .line 27
@@ -463,7 +463,7 @@
     return-void
 
     .line 42
-    :cond_29
+    :cond_0
     const-string p1, "null recipient key"
 
     .line 43
@@ -476,7 +476,7 @@
     return-void
 
     .line 48
-    :cond_2f
+    :cond_1
     new-instance p2, Ljava/security/InvalidKeyException;
 
     .line 49
@@ -519,7 +519,7 @@
 .end method
 
 .method public engineInitSender(Ljava/security/PublicKey;[BLjava/security/PrivateKey;[B[B)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/HpkeImpl;->checkNotInitialised()V
@@ -532,7 +532,7 @@
     .line 5
     .line 6
     .line 7
-    if-eqz p1, :cond_21
+    if-eqz p1, :cond_0
 
     .line 8
     .line 9
@@ -589,7 +589,7 @@
     return-void
 
     .line 34
-    :cond_21
+    :cond_0
     const-string p1, "null recipient key"
 
     .line 35
@@ -603,7 +603,7 @@
 .end method
 
 .method public engineInitSenderForTesting(Ljava/security/PublicKey;[BLjava/security/PrivateKey;[B[B[B)V
-    .registers 7
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/HpkeImpl;->checkNotInitialised()V
@@ -621,7 +621,7 @@
     .line 8
     .line 9
     .line 10
-    if-eqz p1, :cond_24
+    if-eqz p1, :cond_0
 
     .line 11
     .line 12
@@ -678,7 +678,7 @@
     return-void
 
     .line 37
-    :cond_24
+    :cond_0
     const-string p1, "null recipient key"
 
     .line 38
@@ -692,7 +692,7 @@
 .end method
 
 .method public engineOpen([B[B)[B
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/HpkeImpl;->checkIsRecipient()V
@@ -709,7 +709,7 @@
     .line 7
     .line 8
     .line 9
-    :try_start_8
+    :try_start_0
     iget-object v0, p0, Lorg/conscrypt/HpkeImpl;->ctx:Lorg/conscrypt/NativeRef$EVP_HPKE_CTX;
 
     .line 10
@@ -720,14 +720,14 @@
     .line 13
     .line 14
     move-result-object p1
-    :try_end_e
-    .catch Ljavax/crypto/BadPaddingException; {:try_start_8 .. :try_end_e} :catch_f
+    :try_end_0
+    .catch Ljavax/crypto/BadPaddingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 15
     return-object p1
 
     .line 16
-    :catch_f
+    :catch_0
     move-exception p1
 
     .line 17
@@ -752,7 +752,7 @@
 .end method
 
 .method public engineSeal([B[B)[B
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/HpkeImpl;->checkIsSender()V
@@ -785,7 +785,7 @@
 .end method
 
 .method public getEncapsulated()[B
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/HpkeImpl;->checkIsSender()V

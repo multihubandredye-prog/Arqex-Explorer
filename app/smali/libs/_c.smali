@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/nio/ByteBuffer;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -105,7 +105,7 @@
 .end method
 
 .method public static a(Ljava/io/InputStream;II)Llibs/_c;
-    .registers 12
+    .locals 9
 
     .line 1
     const/16 v0, 0x18
@@ -138,7 +138,7 @@
     const/4 v3, 0x0
 
     .line 15
-    :cond_e
+    :cond_0
     invoke-virtual {v1}, Ljava/nio/ByteBuffer;->array()[B
 
     .line 16
@@ -166,14 +166,14 @@
 
     .line 27
     .line 28
-    if-ltz v4, :cond_d9
+    if-ltz v4, :cond_c
 
     .line 29
     .line 30
     add-int/2addr v3, v4
 
     .line 31
-    if-lt v3, v0, :cond_e
+    if-lt v3, v0, :cond_0
 
     .line 32
     .line 33
@@ -201,7 +201,7 @@
 
     .line 44
     .line 45
-    if-ne v7, v3, :cond_c5
+    if-ne v7, v3, :cond_b
 
     .line 46
     .line 47
@@ -215,11 +215,11 @@
     .line 51
     .line 52
     .line 53
-    if-eq v7, v1, :cond_6b
+    if-eq v7, v1, :cond_2
 
     .line 54
     .line 55
-    if-eq v7, v3, :cond_6b
+    if-eq v7, v3, :cond_2
 
     .line 56
     .line 57
@@ -228,7 +228,7 @@
     .line 58
     .line 59
     .line 60
-    if-eq v7, v1, :cond_6b
+    if-eq v7, v1, :cond_2
 
     .line 61
     .line 62
@@ -237,7 +237,7 @@
     .line 63
     .line 64
     .line 65
-    if-eq v7, v1, :cond_6b
+    if-eq v7, v1, :cond_2
 
     .line 66
     .line 67
@@ -246,7 +246,7 @@
     .line 68
     .line 69
     .line 70
-    if-eq v7, v1, :cond_6b
+    if-eq v7, v1, :cond_2
 
     .line 71
     .line 72
@@ -255,7 +255,7 @@
     .line 73
     .line 74
     .line 75
-    if-eq v7, v1, :cond_6b
+    if-eq v7, v1, :cond_2
 
     .line 76
     .line 77
@@ -264,7 +264,7 @@
     .line 78
     .line 79
     .line 80
-    if-eq v7, v1, :cond_6b
+    if-eq v7, v1, :cond_2
 
     .line 81
     .line 82
@@ -273,14 +273,14 @@
     .line 83
     .line 84
     .line 85
-    if-ne v7, v1, :cond_57
+    if-ne v7, v1, :cond_1
 
     .line 86
     .line 87
-    goto :goto_6b
+    goto :goto_0
 
     .line 88
-    :cond_57
+    :cond_1
     new-instance p0, Ljava/io/StreamCorruptedException;
 
     .line 89
@@ -321,28 +321,28 @@
     throw p0
 
     .line 108
-    :cond_6b
-    :goto_6b
+    :cond_2
+    :goto_0
     iget v1, v0, Llibs/_c;->d:I
 
     .line 109
     .line 110
-    if-ltz v1, :cond_b1
+    if-ltz v1, :cond_a
 
     .line 111
     .line 112
-    if-gt v1, p2, :cond_b1
+    if-gt v1, p2, :cond_a
 
     .line 113
     .line 114
-    if-nez v1, :cond_74
+    if-nez v1, :cond_3
 
     .line 115
     .line 116
-    goto :goto_a4
+    goto :goto_2
 
     .line 117
-    :cond_74
+    :cond_3
     new-array p2, v1, [B
 
     .line 118
@@ -354,7 +354,7 @@
     const/4 p2, 0x0
 
     .line 122
-    :cond_79
+    :cond_4
     iget-object v4, v0, Llibs/_c;->g:[B
 
     .line 123
@@ -371,14 +371,14 @@
     move-result v4
 
     .line 130
-    if-ltz v4, :cond_ad
+    if-ltz v4, :cond_9
 
     .line 131
     .line 132
     add-int/2addr p2, v4
 
     .line 133
-    if-lt p2, v1, :cond_79
+    if-lt p2, v1, :cond_4
 
     .line 134
     .line 135
@@ -386,11 +386,11 @@
 
     .line 136
     .line 137
-    if-le p1, p0, :cond_90
+    if-le p1, p0, :cond_5
 
     .line 138
     .line 139
-    if-ne v7, v3, :cond_a4
+    if-ne v7, v3, :cond_7
 
     .line 140
     .line 141
@@ -398,11 +398,11 @@
 
     .line 142
     .line 143
-    if-gt p1, p0, :cond_a4
+    if-gt p1, p0, :cond_7
 
     .line 144
     .line 145
-    :cond_90
+    :cond_5
     iget-object p0, v0, Llibs/_c;->g:[B
 
     .line 146
@@ -417,8 +417,8 @@
     const/4 p2, 0x0
 
     .line 151
-    :goto_96
-    if-ge v2, p1, :cond_a0
+    :goto_1
+    if-ge v2, p1, :cond_6
 
     .line 152
     .line 153
@@ -437,24 +437,24 @@
 
     .line 159
     .line 160
-    goto :goto_96
+    goto :goto_1
 
     .line 161
-    :cond_a0
+    :cond_6
     iget p0, v0, Llibs/_c;->e:I
 
     .line 162
     .line 163
-    if-ne p2, p0, :cond_a5
+    if-ne p2, p0, :cond_8
 
     .line 164
     .line 165
-    :cond_a4
-    :goto_a4
+    :cond_7
+    :goto_2
     return-object v0
 
     .line 166
-    :cond_a5
+    :cond_8
     new-instance p0, Ljava/io/StreamCorruptedException;
 
     .line 167
@@ -471,7 +471,7 @@
     throw p0
 
     .line 174
-    :cond_ad
+    :cond_9
     invoke-static {v6}, Llibs/ic0;->t(Ljava/lang/String;)V
 
     .line 175
@@ -480,7 +480,7 @@
     return-object v5
 
     .line 178
-    :cond_b1
+    :cond_a
     new-instance p0, Ljava/io/StreamCorruptedException;
 
     .line 179
@@ -521,7 +521,7 @@
     throw p0
 
     .line 198
-    :cond_c5
+    :cond_b
     new-instance p0, Ljava/io/StreamCorruptedException;
 
     .line 199
@@ -562,7 +562,7 @@
     throw p0
 
     .line 218
-    :cond_d9
+    :cond_c
     invoke-static {v6}, Llibs/ic0;->t(Ljava/lang/String;)V
 
     .line 219
@@ -574,14 +574,14 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     iget v0, p0, Llibs/_c;->a:I
 
     .line 2
     .line 3
-    sparse-switch v0, :sswitch_data_78
+    sparse-switch v0, :sswitch_data_0
 
     .line 4
     .line 5
@@ -590,71 +590,71 @@
 
     .line 7
     .line 8
-    goto :goto_1f
+    goto :goto_0
 
     .line 9
-    :sswitch_8
+    :sswitch_0
     const-string v0, "OKAY"
 
     .line 10
     .line 11
-    goto :goto_1f
+    goto :goto_0
 
     .line 12
-    :sswitch_b
+    :sswitch_1
     const-string v0, "STLS"
 
     .line 13
     .line 14
-    goto :goto_1f
+    goto :goto_0
 
     .line 15
-    :sswitch_e
+    :sswitch_2
     const-string v0, "CNXN"
 
     .line 16
     .line 17
-    goto :goto_1f
+    goto :goto_0
 
     .line 18
-    :sswitch_11
+    :sswitch_3
     const-string v0, "OPEN"
 
     .line 19
     .line 20
-    goto :goto_1f
+    goto :goto_0
 
     .line 21
-    :sswitch_14
+    :sswitch_4
     const-string v0, "AUTH"
 
     .line 22
     .line 23
-    goto :goto_1f
+    goto :goto_0
 
     .line 24
-    :sswitch_17
+    :sswitch_5
     const-string v0, "WRTE"
 
     .line 25
     .line 26
-    goto :goto_1f
+    goto :goto_0
 
     .line 27
-    :sswitch_1a
+    :sswitch_6
     const-string v0, "CLSE"
 
     .line 28
     .line 29
-    goto :goto_1f
+    goto :goto_0
 
     .line 30
-    :sswitch_1d
+    :sswitch_7
     const-string v0, "SYNC"
 
     .line 31
     .line 32
-    :goto_1f
+    :goto_0
     const-string v1, "Message{command="
 
     .line 33
@@ -822,15 +822,15 @@
     return-object v0
 
     .line 121
-    :sswitch_data_78
+    :sswitch_data_0
     .sparse-switch
-        0x434e5953 -> :sswitch_1d
-        0x45534c43 -> :sswitch_1a
-        0x45545257 -> :sswitch_17
-        0x48545541 -> :sswitch_14
-        0x4e45504f -> :sswitch_11
-        0x4e584e43 -> :sswitch_e
-        0x534c5453 -> :sswitch_b
-        0x59414b4f -> :sswitch_8
+        0x434e5953 -> :sswitch_7
+        0x45534c43 -> :sswitch_6
+        0x45545257 -> :sswitch_5
+        0x48545541 -> :sswitch_4
+        0x4e45504f -> :sswitch_3
+        0x4e584e43 -> :sswitch_2
+        0x534c5453 -> :sswitch_1
+        0x59414b4f -> :sswitch_0
     .end sparse-switch
 .end method

@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/SQLiteEditorActivity;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/sx2;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 24
+    .locals 22
 
     .line 1
     move-object/from16 v0, p0
@@ -57,7 +57,7 @@
     const/4 v5, 0x1
 
     .line 9
-    packed-switch v1, :pswitch_data_2b8
+    packed-switch v1, :pswitch_data_0
 
     .line 10
     .line 11
@@ -227,8 +227,8 @@
     const/4 v11, 0x0
 
     .line 99
-    :goto_62
-    if-ge v11, v10, :cond_ae
+    :goto_0
+    if-ge v11, v10, :cond_3
 
     .line 100
     .line 101
@@ -277,7 +277,7 @@
 
     .line 123
     .line 124
-    if-ne v4, v5, :cond_80
+    if-ne v4, v5, :cond_0
 
     .line 125
     .line 126
@@ -285,14 +285,14 @@
 
     .line 127
     .line 128
-    goto :goto_81
+    goto :goto_1
 
     .line 129
-    :cond_80
+    :cond_0
     move-object v4, v6
 
     .line 130
-    :goto_81
+    :goto_1
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 131
@@ -306,7 +306,7 @@
     move-result v4
 
     .line 137
-    if-nez v4, :cond_91
+    if-nez v4, :cond_1
 
     .line 138
     .line 139
@@ -322,14 +322,14 @@
     move-result-object v4
 
     .line 145
-    goto :goto_92
+    goto :goto_2
 
     .line 146
-    :cond_91
+    :cond_1
     move-object v4, v6
 
     .line 147
-    :goto_92
+    :goto_2
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 148
@@ -339,7 +339,7 @@
 
     .line 151
     .line 152
-    if-ne v4, v5, :cond_9c
+    if-ne v4, v5, :cond_2
 
     .line 153
     .line 154
@@ -347,14 +347,14 @@
 
     .line 155
     .line 156
-    goto :goto_9d
+    goto :goto_3
 
     .line 157
-    :cond_9c
+    :cond_2
     move-object v4, v6
 
     .line 158
-    :goto_9d
+    :goto_3
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 159
@@ -387,10 +387,10 @@
     const/4 v2, 0x0
 
     .line 174
-    goto :goto_62
+    goto :goto_0
 
     .line 175
-    :cond_ae
+    :cond_3
     const/4 v12, 0x0
 
     .line 176
@@ -427,17 +427,17 @@
     move-result v4
 
     .line 193
-    if-gt v4, v5, :cond_c4
+    if-gt v4, v5, :cond_4
 
     .line 194
     .line 195
     const/4 v10, 0x0
 
     .line 196
-    goto :goto_ca
+    goto :goto_4
 
     .line 197
-    :cond_c4
+    :cond_4
     new-instance v4, Llibs/u8;
 
     .line 198
@@ -450,7 +450,7 @@
     move-object v10, v4
 
     .line 203
-    :goto_ca
+    :goto_4
     sget v11, Llibs/vh2;->icon_delete:I
 
     .line 204
@@ -617,7 +617,7 @@
     return-void
 
     .line 291
-    :pswitch_122
+    :pswitch_0
     sget v1, Lcom/mixplorer/activities/SQLiteEditorActivity;->III:I
 
     .line 292
@@ -634,7 +634,7 @@
 
     .line 298
     .line 299
-    if-ne v1, v2, :cond_131
+    if-ne v1, v2, :cond_5
 
     .line 300
     .line 301
@@ -643,16 +643,16 @@
     .line 302
     .line 303
     .line 304
-    goto/16 :goto_2b6
+    goto/16 :goto_8
 
     .line 305
     .line 306
-    :cond_131
+    :cond_5
     sget v2, Llibs/wh2;->navigation:I
 
     .line 307
     .line 308
-    if-ne v1, v2, :cond_1c7
+    if-ne v1, v2, :cond_8
 
     .line 309
     .line 310
@@ -683,8 +683,8 @@
     const/4 v7, 0x0
 
     .line 323
-    :goto_142
-    if-ge v7, v4, :cond_173
+    :goto_5
+    if-ge v7, v4, :cond_7
 
     .line 324
     .line 325
@@ -763,7 +763,7 @@
     move-result v8
 
     .line 362
-    if-eqz v8, :cond_16d
+    if-eqz v8, :cond_6
 
     .line 363
     .line 364
@@ -771,7 +771,7 @@
 
     .line 365
     .line 366
-    :cond_16d
+    :cond_6
     invoke-virtual {v1, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 367
@@ -781,10 +781,10 @@
 
     .line 370
     .line 371
-    goto :goto_142
+    goto :goto_5
 
     .line 372
-    :cond_173
+    :cond_7
     new-instance v2, Llibs/r90;
 
     .line 373
@@ -941,16 +941,16 @@
     .line 452
     .line 453
     .line 454
-    goto/16 :goto_2b6
+    goto/16 :goto_8
 
     .line 455
     .line 456
-    :cond_1c7
+    :cond_8
     sget v2, Llibs/wh2;->overflow:I
 
     .line 457
     .line 458
-    if-ne v1, v2, :cond_223
+    if-ne v1, v2, :cond_d
 
     .line 459
     .line 460
@@ -974,8 +974,8 @@
     move-result-object v2
 
     .line 470
-    :cond_1d5
-    :goto_1d5
+    :cond_9
+    :goto_6
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     .line 471
@@ -984,7 +984,7 @@
     move-result v4
 
     .line 474
-    if-eqz v4, :cond_202
+    if-eqz v4, :cond_c
 
     .line 475
     .line 476
@@ -1008,7 +1008,7 @@
 
     .line 485
     .line 486
-    if-eq v5, v6, :cond_1d5
+    if-eq v5, v6, :cond_9
 
     .line 487
     .line 488
@@ -1016,19 +1016,19 @@
 
     .line 489
     .line 490
-    if-ne v5, v6, :cond_1ec
+    if-ne v5, v6, :cond_a
 
     .line 491
     .line 492
-    goto :goto_1d5
+    goto :goto_6
 
     .line 493
-    :cond_1ec
+    :cond_a
     sget v6, Llibs/wh2;->menu_print:I
 
     .line 494
     .line 495
-    if-ne v5, v6, :cond_1f4
+    if-ne v5, v6, :cond_b
 
     .line 496
     .line 497
@@ -1037,10 +1037,10 @@
     .line 498
     .line 499
     .line 500
-    goto :goto_1d5
+    goto :goto_6
 
     .line 501
-    :cond_1f4
+    :cond_b
     new-instance v5, Ljava/lang/StringBuilder;
 
     .line 502
@@ -1066,10 +1066,10 @@
 
     .line 513
     .line 514
-    goto :goto_1d5
+    goto :goto_6
 
     .line 515
-    :cond_202
+    :cond_c
     new-instance v2, Llibs/ll1;
 
     .line 516
@@ -1129,11 +1129,11 @@
     .line 544
     .line 545
     .line 546
-    goto/16 :goto_2b6
+    goto/16 :goto_8
 
     .line 547
     .line 548
-    :cond_223
+    :cond_d
     const/4 v12, 0x0
 
     .line 549
@@ -1141,7 +1141,7 @@
 
     .line 550
     .line 551
-    if-ne v1, v2, :cond_22e
+    if-ne v1, v2, :cond_e
 
     .line 552
     .line 553
@@ -1153,11 +1153,11 @@
     .line 555
     .line 556
     .line 557
-    goto/16 :goto_2b6
+    goto/16 :goto_8
 
     .line 558
     .line 559
-    :cond_22e
+    :cond_e
     const/4 v4, 0x0
 
     .line 560
@@ -1165,7 +1165,7 @@
 
     .line 561
     .line 562
-    if-ne v1, v2, :cond_2ae
+    if-ne v1, v2, :cond_12
 
     .line 563
     .line 564
@@ -1198,7 +1198,7 @@
 
     .line 578
     .line 579
-    if-nez v1, :cond_251
+    if-nez v1, :cond_f
 
     .line 580
     .line 581
@@ -1224,10 +1224,10 @@
     .line 591
     .line 592
     .line 593
-    goto :goto_2b6
+    goto :goto_8
 
     .line 594
-    :cond_251
+    :cond_f
     invoke-interface {v1}, Landroid/database/Cursor;->getColumnCount()I
 
     .line 595
@@ -1236,7 +1236,7 @@
     move-result v2
 
     .line 598
-    if-gtz v2, :cond_264
+    if-gtz v2, :cond_10
 
     .line 599
     .line 600
@@ -1262,10 +1262,10 @@
     .line 610
     .line 611
     .line 612
-    goto :goto_2b6
+    goto :goto_8
 
     .line 613
-    :cond_264
+    :cond_10
     add-int/lit8 v4, v2, 0x1
 
     .line 614
@@ -1293,8 +1293,8 @@
     const/4 v5, 0x0
 
     .line 626
-    :goto_271
-    if-ge v5, v2, :cond_27d
+    :goto_7
+    if-ge v5, v2, :cond_11
 
     .line 627
     .line 628
@@ -1317,10 +1317,10 @@
     move v5, v6
 
     .line 637
-    goto :goto_271
+    goto :goto_7
 
     .line 638
-    :cond_27d
+    :cond_11
     sget v1, Llibs/bi2;->filter:I
 
     .line 639
@@ -1413,15 +1413,15 @@
     .line 684
     .line 685
     .line 686
-    goto :goto_2b6
+    goto :goto_8
 
     .line 687
-    :cond_2ae
+    :cond_12
     sget v2, Llibs/wh2;->commit_changes:I
 
     .line 688
     .line 689
-    if-ne v1, v2, :cond_2b6
+    if-ne v1, v2, :cond_13
 
     .line 690
     .line 691
@@ -1433,16 +1433,16 @@
     .line 693
     .line 694
     .line 695
-    :cond_2b6
-    :goto_2b6
+    :cond_13
+    :goto_8
     return-void
 
     .line 696
     nop
 
     .line 697
-    :pswitch_data_2b8
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_122
+        :pswitch_0
     .end packed-switch
 .end method

@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/vy3;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/uy3;->c:Llibs/vy3;
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public final a()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -45,7 +45,7 @@
 .end method
 
 .method public final e(Llibs/rp0;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/uy3;->c:Llibs/vy3;
@@ -67,19 +67,19 @@
     const/4 v3, 0x0
 
     .line 10
-    if-eqz v2, :cond_c
+    if-eqz v2, :cond_0
 
     .line 11
     .line 12
-    goto :goto_4a
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     iget-boolean v2, p0, Llibs/uy3;->a:Z
 
     .line 14
     .line 15
-    if-nez v2, :cond_21
+    if-nez v2, :cond_1
 
     .line 16
     .line 17
@@ -99,7 +99,7 @@
     move-result v2
 
     .line 25
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_1
 
     .line 26
     .line 27
@@ -118,7 +118,7 @@
     return v3
 
     .line 34
-    :cond_21
+    :cond_1
     iget-object v0, p1, Llibs/rp0;->Two:Ljava/lang/String;
 
     .line 35
@@ -135,7 +135,7 @@
     move-result v0
 
     .line 42
-    if-eqz v0, :cond_4a
+    if-eqz v0, :cond_2
 
     .line 43
     .line 44
@@ -151,7 +151,7 @@
     move-result v0
 
     .line 50
-    if-nez v0, :cond_4a
+    if-nez v0, :cond_2
 
     .line 51
     .line 52
@@ -183,7 +183,7 @@
     move-result v0
 
     .line 66
-    if-eqz v0, :cond_4a
+    if-eqz v0, :cond_2
 
     .line 67
     .line 68
@@ -200,7 +200,7 @@
     .line 73
     .line 74
     .line 75
-    :cond_4a
-    :goto_4a
+    :cond_2
+    :goto_0
     return v3
 .end method

@@ -13,9 +13,9 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 2
+    .locals 0
 
-    packed-switch p1, :pswitch_data_22
+    packed-switch p1, :pswitch_data_0
 
     .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
     return-void
 
     .line 43
-    :pswitch_12
+    :pswitch_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/16 p1, 0x100
@@ -60,17 +60,17 @@
 
     nop
 
-    :pswitch_data_22
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_12
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public constructor <init>(IIB)V
-    .registers 4
+    .locals 0
 
     .line 1
-    packed-switch p3, :pswitch_data_26
+    packed-switch p3, :pswitch_data_0
 
     .line 2
     .line 3
@@ -95,7 +95,7 @@
 
     .line 13
     .line 14
-    if-nez p1, :cond_11
+    if-nez p1, :cond_0
 
     .line 15
     .line 16
@@ -103,7 +103,7 @@
 
     .line 17
     .line 18
-    :cond_11
+    :cond_0
     iput p1, p0, Llibs/j41;->b:I
 
     .line 19
@@ -111,7 +111,7 @@
     return-void
 
     .line 21
-    :pswitch_14
+    :pswitch_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 22
@@ -132,7 +132,7 @@
 
     .line 30
     .line 31
-    if-nez p1, :cond_22
+    if-nez p1, :cond_1
 
     .line 32
     .line 33
@@ -140,7 +140,7 @@
 
     .line 34
     .line 35
-    :cond_22
+    :cond_1
     iput p1, p0, Llibs/j41;->b:I
 
     .line 36
@@ -151,8 +151,8 @@
     nop
 
     .line 39
-    :pswitch_data_26
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_14
+        :pswitch_0
     .end packed-switch
 .end method

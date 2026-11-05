@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/h90;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/wl3;-><init>()V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 12
+    .locals 11
 
     .line 1
     iget-object v0, p0, Llibs/b_;->Y:Llibs/h90;
@@ -45,7 +45,7 @@
     int-to-long v1, v1
 
     .line 8
-    :goto_7
+    :goto_0
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     .line 9
@@ -58,7 +58,7 @@
 
     .line 13
     .line 14
-    if-ne v3, v4, :cond_2f
+    if-ne v3, v4, :cond_0
 
     .line 15
     .line 16
@@ -115,23 +115,23 @@
 
     .line 40
     .line 41
-    :try_start_28
+    :try_start_0
     invoke-static {v3, v4}, Ljava/lang/Thread;->sleep(J)V
-    :try_end_2b
-    .catch Ljava/lang/InterruptedException; {:try_start_28 .. :try_end_2b} :catch_2b
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 42
     .line 43
     .line 44
-    :catch_2b
+    :catch_0
     invoke-virtual {v0}, Llibs/h90;->b()V
 
     .line 45
     .line 46
     .line 47
-    goto :goto_7
+    goto :goto_0
 
     .line 48
-    :cond_2f
+    :cond_0
     return-void
 .end method

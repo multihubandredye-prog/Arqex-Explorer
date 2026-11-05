@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/view/KeyEvent$Callback;Ljava/lang/Object;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/gw1;->a:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .registers 8
+    .locals 5
 
     .line 1
     iget-byte p1, p0, Llibs/gw1;->a:B
@@ -63,7 +63,7 @@
 
     .line 8
     .line 9
-    packed-switch p1, :pswitch_data_46
+    packed-switch p1, :pswitch_data_0
 
     .line 10
     .line 11
@@ -88,7 +88,7 @@
     move-result p1
 
     .line 22
-    if-ne p1, v1, :cond_33
+    if-ne p1, v1, :cond_1
 
     .line 23
     .line 24
@@ -100,7 +100,7 @@
     move-result p1
 
     .line 28
-    if-nez p1, :cond_20
+    if-nez p1, :cond_0
 
     .line 29
     .line 30
@@ -109,12 +109,12 @@
     .line 31
     .line 32
     .line 33
-    :cond_20
+    :cond_0
     iget-boolean p1, v3, Lcom/mixplorer/activities/TextEditorActivity;->I:Z
 
     .line 34
     .line 35
-    if-nez p1, :cond_33
+    if-nez p1, :cond_1
 
     .line 36
     .line 37
@@ -122,7 +122,7 @@
 
     .line 38
     .line 39
-    if-eqz p1, :cond_33
+    if-eqz p1, :cond_1
 
     .line 40
     .line 41
@@ -147,11 +147,11 @@
     .line 50
     .line 51
     .line 52
-    :cond_33
+    :cond_1
     return v0
 
     .line 53
-    :pswitch_34
+    :pswitch_0
     check-cast v3, Llibs/ow1;
 
     .line 54
@@ -168,7 +168,7 @@
     move-result p1
 
     .line 61
-    if-nez p1, :cond_44
+    if-nez p1, :cond_2
 
     .line 62
     .line 63
@@ -180,20 +180,20 @@
     move-result p1
 
     .line 67
-    if-eqz p1, :cond_45
+    if-eqz p1, :cond_3
 
     .line 68
     .line 69
-    :cond_44
+    :cond_2
     const/4 v0, 0x1
 
     .line 70
-    :cond_45
+    :cond_3
     return v0
 
     .line 71
-    :pswitch_data_46
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_34
+        :pswitch_0
     .end packed-switch
 .end method

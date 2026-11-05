@@ -9,20 +9,20 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     iput-byte p1, p0, Llibs/mb3;->Bravo:B
 
-    packed-switch p1, :pswitch_data_1e
+    packed-switch p1, :pswitch_data_0
 
     .line 43
-    :pswitch_5
+    :pswitch_0
     invoke-direct {p0}, Llibs/c63;-><init>()V
 
     return-void
 
     .line 44
-    :pswitch_9
+    :pswitch_1
     invoke-direct {p0}, Llibs/c63;-><init>()V
 
     const/16 p1, 0x71
@@ -33,7 +33,7 @@
     return-void
 
     .line 46
-    :pswitch_11
+    :pswitch_2
     invoke-direct {p0}, Llibs/c63;-><init>()V
 
     const/16 p1, 0x72
@@ -50,28 +50,28 @@
 
     nop
 
-    :pswitch_data_1e
+    :pswitch_data_0
     .packed-switch 0x4
-        :pswitch_11
-        :pswitch_5
-        :pswitch_9
+        :pswitch_2
+        :pswitch_0
+        :pswitch_1
     .end packed-switch
 .end method
 
 .method public constructor <init>(BLjava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/mb3;->Bravo:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_2a
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
     .line 6
-    :pswitch_5
+    :pswitch_0
     invoke-direct {p0}, Llibs/c63;-><init>()V
 
     .line 7
@@ -91,7 +91,7 @@
     return-void
 
     .line 15
-    :pswitch_e
+    :pswitch_1
     invoke-direct {p0}, Llibs/c63;-><init>()V
 
     .line 16
@@ -112,7 +112,7 @@
     return-void
 
     .line 25
-    :pswitch_18
+    :pswitch_2
     invoke-direct {p0}, Llibs/c63;-><init>()V
 
     .line 26
@@ -132,7 +132,7 @@
     return-void
 
     .line 34
-    :pswitch_21
+    :pswitch_3
     invoke-direct {p0}, Llibs/c63;-><init>()V
 
     .line 35
@@ -152,26 +152,26 @@
     return-void
 
     .line 43
-    :pswitch_data_2a
+    :pswitch_data_0
     .packed-switch 0x2
-        :pswitch_21
-        :pswitch_18
-        :pswitch_5
-        :pswitch_e
+        :pswitch_3
+        :pswitch_2
+        :pswitch_0
+        :pswitch_1
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public final e(I[B)I
-    .registers 3
+    .locals 0
 
     .line 1
     iget-byte p1, p0, Llibs/mb3;->Bravo:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_14
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -182,42 +182,42 @@
     return p1
 
     .line 8
-    :pswitch_7
+    :pswitch_0
     const/4 p1, 0x0
 
     .line 9
     return p1
 
     .line 10
-    :pswitch_9
+    :pswitch_1
     const/4 p1, 0x0
 
     .line 11
     return p1
 
     .line 12
-    :pswitch_b
+    :pswitch_2
     const/4 p1, 0x0
 
     .line 13
     return p1
 
     .line 14
-    :pswitch_d
+    :pswitch_3
     const/4 p1, 0x0
 
     .line 15
     return p1
 
     .line 16
-    :pswitch_f
+    :pswitch_4
     const/4 p1, 0x0
 
     .line 17
     return p1
 
     .line 18
-    :pswitch_11
+    :pswitch_5
     const/4 p1, 0x0
 
     .line 19
@@ -227,26 +227,26 @@
     nop
 
     .line 21
-    :pswitch_data_14
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_11
-        :pswitch_f
-        :pswitch_d
-        :pswitch_b
-        :pswitch_9
-        :pswitch_7
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final j(I[B)I
-    .registers 3
+    .locals 0
 
     .line 1
     iget-byte p1, p0, Llibs/mb3;->Bravo:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_14
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -257,42 +257,42 @@
     return p1
 
     .line 8
-    :pswitch_7
+    :pswitch_0
     const/4 p1, 0x0
 
     .line 9
     return p1
 
     .line 10
-    :pswitch_9
+    :pswitch_1
     const/4 p1, 0x0
 
     .line 11
     return p1
 
     .line 12
-    :pswitch_b
+    :pswitch_2
     const/4 p1, 0x0
 
     .line 13
     return p1
 
     .line 14
-    :pswitch_d
+    :pswitch_3
     const/4 p1, 0x0
 
     .line 15
     return p1
 
     .line 16
-    :pswitch_f
+    :pswitch_4
     const/4 p1, 0x0
 
     .line 17
     return p1
 
     .line 18
-    :pswitch_11
+    :pswitch_5
     const/4 p1, 0x0
 
     .line 19
@@ -302,19 +302,19 @@
     nop
 
     .line 21
-    :pswitch_data_14
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_11
-        :pswitch_f
-        :pswitch_d
-        :pswitch_b
-        :pswitch_9
-        :pswitch_7
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final q(I[B)I
-    .registers 6
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/mb3;->Bravo:B
@@ -327,7 +327,7 @@
     const/4 v2, 0x4
 
     .line 5
-    packed-switch v0, :pswitch_data_4e
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -335,7 +335,7 @@
     return v1
 
     .line 9
-    :pswitch_8
+    :pswitch_0
     add-int/lit8 v0, p1, 0x1
 
     .line 10
@@ -360,7 +360,7 @@
     move-result p2
 
     .line 21
-    :goto_14
+    :goto_0
     add-int/2addr p2, v0
 
     .line 22
@@ -370,8 +370,8 @@
     return p2
 
     .line 24
-    :pswitch_17
-    :try_start_17
+    :pswitch_1
+    :try_start_0
     const-string v0, "\u0002NT LM 0.12\u0000"
 
     .line 25
@@ -386,8 +386,8 @@
     .line 30
     .line 31
     move-result-object v0
-    :try_end_1f
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_17 .. :try_end_1f} :catch_24
+    :try_end_0
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 32
     array-length v2, v0
@@ -401,11 +401,11 @@
     array-length v1, v0
 
     .line 37
-    :catch_24
+    :catch_0
     return v1
 
     .line 38
-    :pswitch_25
+    :pswitch_2
     add-int/lit8 v0, p1, 0x1
 
     .line 39
@@ -430,10 +430,10 @@
     move-result p2
 
     .line 50
-    goto :goto_14
+    goto :goto_0
 
     .line 51
-    :pswitch_32
+    :pswitch_3
     add-int/lit8 v0, p1, 0x1
 
     .line 52
@@ -458,10 +458,10 @@
     move-result p2
 
     .line 63
-    goto :goto_14
+    goto :goto_0
 
     .line 64
-    :pswitch_3f
+    :pswitch_4
     add-int/lit8 v0, p1, 0x1
 
     .line 65
@@ -486,29 +486,29 @@
     move-result p2
 
     .line 76
-    goto :goto_14
+    goto :goto_0
 
     .line 77
-    :pswitch_4c
+    :pswitch_5
     return v1
 
     .line 78
     nop
 
     .line 79
-    :pswitch_data_4e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_4c
-        :pswitch_3f
-        :pswitch_32
-        :pswitch_25
-        :pswitch_17
-        :pswitch_8
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     iget-byte v0, p0, Llibs/mb3;->Bravo:B
@@ -523,7 +523,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_da
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -569,7 +569,7 @@
     return-object v0
 
     .line 31
-    :pswitch_1e
+    :pswitch_0
     new-instance v0, Ljava/lang/String;
 
     .line 32
@@ -629,7 +629,7 @@
     return-object v0
 
     .line 62
-    :pswitch_3d
+    :pswitch_1
     new-instance v0, Ljava/lang/String;
 
     .line 63
@@ -693,7 +693,7 @@
     return-object v0
 
     .line 95
-    :pswitch_5e
+    :pswitch_2
     new-instance v0, Ljava/lang/String;
 
     .line 96
@@ -749,7 +749,7 @@
     return-object v0
 
     .line 124
-    :pswitch_7b
+    :pswitch_3
     new-instance v0, Ljava/lang/String;
 
     .line 125
@@ -837,7 +837,7 @@
     return-object v0
 
     .line 169
-    :pswitch_a8
+    :pswitch_4
     new-instance v0, Ljava/lang/String;
 
     .line 170
@@ -893,7 +893,7 @@
     return-object v0
 
     .line 198
-    :pswitch_c5
+    :pswitch_5
     new-instance v0, Ljava/lang/String;
 
     .line 199
@@ -935,19 +935,19 @@
     return-object v0
 
     .line 219
-    :pswitch_data_da
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_c5
-        :pswitch_a8
-        :pswitch_7b
-        :pswitch_5e
-        :pswitch_3d
-        :pswitch_1e
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final v(I[B)I
-    .registers 5
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/mb3;->Bravo:B
@@ -957,16 +957,16 @@
     const/4 v1, 0x0
 
     .line 4
-    packed-switch v0, :pswitch_data_10
+    packed-switch v0, :pswitch_data_0
 
     .line 5
     .line 6
     .line 7
-    :pswitch_6
+    :pswitch_0
     return v1
 
     .line 8
-    :pswitch_7
+    :pswitch_1
     const-wide/16 v0, 0x6
 
     .line 9
@@ -982,20 +982,20 @@
     return p1
 
     .line 15
-    :pswitch_e
+    :pswitch_2
     return v1
 
     .line 16
     nop
 
     .line 17
-    :pswitch_data_10
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_e
-        :pswitch_e
-        :pswitch_7
-        :pswitch_6
-        :pswitch_6
-        :pswitch_6
+        :pswitch_2
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
     .end packed-switch
 .end method

@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
-    .registers 4
+    .locals 1
 
     .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -62,7 +62,7 @@
 .end method
 
 .method public constructor <init>(Llibs/ds;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iput-object p1, p0, Llibs/cs;->f:Ljava/lang/Object;
@@ -156,7 +156,7 @@
 
 # virtual methods
 .method public a()Landroid/graphics/drawable/NinePatchDrawable;
-    .registers 11
+    .locals 10
 
     .line 1
     iget-object v0, p0, Llibs/cs;->c:Ljava/lang/Object;
@@ -202,7 +202,7 @@
     move-result v5
 
     .line 22
-    if-nez v5, :cond_23
+    if-nez v5, :cond_0
 
     .line 23
     .line 24
@@ -228,7 +228,7 @@
     .line 34
     .line 35
     .line 36
-    :cond_23
+    :cond_0
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     .line 37
@@ -237,7 +237,7 @@
     move-result v5
 
     .line 40
-    if-nez v5, :cond_35
+    if-nez v5, :cond_1
 
     .line 41
     .line 42
@@ -263,7 +263,7 @@
     .line 52
     .line 53
     .line 54
-    :cond_35
+    :cond_1
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     .line 55
@@ -413,8 +413,8 @@
     const/4 v8, 0x0
 
     .line 131
-    :goto_82
-    if-ge v8, v7, :cond_94
+    :goto_0
+    if-ge v8, v7, :cond_2
 
     .line 132
     .line 133
@@ -447,10 +447,10 @@
     .line 146
     .line 147
     .line 148
-    goto :goto_82
+    goto :goto_0
 
     .line 149
-    :cond_94
+    :cond_2
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     .line 150
@@ -462,8 +462,8 @@
     const/4 v7, 0x0
 
     .line 154
-    :goto_99
-    if-ge v7, v4, :cond_ab
+    :goto_1
+    if-ge v7, v4, :cond_3
 
     .line 155
     .line 156
@@ -496,12 +496,12 @@
     .line 169
     .line 170
     .line 171
-    goto :goto_99
+    goto :goto_1
 
     .line 172
-    :cond_ab
-    :goto_ab
-    if-ge v2, v3, :cond_b3
+    :cond_3
+    :goto_2
+    if-ge v2, v3, :cond_4
 
     .line 173
     .line 174
@@ -514,10 +514,10 @@
 
     .line 178
     .line 179
-    goto :goto_ab
+    goto :goto_2
 
     .line 180
-    :cond_b3
+    :cond_4
     invoke-virtual {v5}, Ljava/nio/ByteBuffer;->array()[B
 
     .line 181
@@ -529,7 +529,7 @@
     const/4 v2, 0x0
 
     .line 185
-    if-eqz v0, :cond_c0
+    if-eqz v0, :cond_5
 
     .line 186
     .line 187
@@ -542,15 +542,15 @@
     .line 190
     .line 191
     .line 192
-    goto :goto_c1
+    goto :goto_3
 
     .line 193
-    :cond_c0
+    :cond_5
     move-object v3, v2
 
     .line 194
-    :goto_c1
-    if-eqz v3, :cond_cd
+    :goto_3
+    if-eqz v3, :cond_6
 
     .line 195
     .line 196
@@ -574,12 +574,12 @@
     return-object v0
 
     .line 206
-    :cond_cd
+    :cond_6
     return-object v2
 .end method
 
 .method public b(Z)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/cs;->c:Ljava/lang/Object;
@@ -610,7 +610,7 @@
 .end method
 
 .method public c(ZI)Z
-    .registers 19
+    .locals 16
 
     .line 1
     move-object/from16 v1, p0
@@ -621,12 +621,12 @@
 
     .line 4
     .line 5
-    :cond_4
-    :goto_4
+    :cond_0
+    :goto_0
     const/4 v2, 0x1
 
     .line 6
-    if-lez v0, :cond_136
+    if-lez v0, :cond_9
 
     .line 7
     .line 8
@@ -661,11 +661,11 @@
 
     .line 22
     .line 23
-    if-nez v8, :cond_7d
+    if-nez v8, :cond_5
 
     .line 24
     .line 25
-    if-eqz p1, :cond_7c
+    if-eqz p1, :cond_4
 
     .line 26
     .line 27
@@ -688,7 +688,7 @@
     monitor-enter v9
 
     .line 36
-    :try_start_23
+    :try_start_0
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
     .line 37
@@ -716,8 +716,8 @@
     add-long/2addr v10, v12
 
     .line 49
-    :cond_30
-    :goto_30
+    :cond_1
+    :goto_1
     iget-wide v12, v8, Llibs/ru3;->d:J
 
     .line 50
@@ -726,7 +726,7 @@
 
     .line 52
     .line 53
-    if-gtz v14, :cond_77
+    if-gtz v14, :cond_3
 
     .line 54
     .line 55
@@ -762,13 +762,13 @@
     .line 69
     .line 70
     invoke-virtual {v12, v14}, Llibs/bn1;->b([Ljava/lang/Object;)V
-    :try_end_48
-    .catchall {:try_start_23 .. :try_end_48} :catchall_67
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 71
     .line 72
     .line 73
-    :try_start_48
+    :try_start_1
     iget-object v12, v8, Llibs/ru3;->b:Ljava/lang/Object;
 
     .line 74
@@ -790,7 +790,7 @@
 
     .line 83
     .line 84
-    if-gtz v14, :cond_30
+    if-gtz v14, :cond_1
 
     .line 85
     .line 86
@@ -809,14 +809,14 @@
 
     .line 92
     .line 93
-    if-gtz v14, :cond_5f
+    if-gtz v14, :cond_2
 
     .line 94
     .line 95
-    goto :goto_30
+    goto :goto_1
 
     .line 96
-    :cond_5f
+    :cond_2
     new-instance v0, Llibs/vx;
 
     .line 97
@@ -831,23 +831,23 @@
     .line 102
     .line 103
     throw v0
-    :try_end_67
-    .catch Ljava/lang/InterruptedException; {:try_start_48 .. :try_end_67} :catch_69
-    .catchall {:try_start_48 .. :try_end_67} :catchall_67
+    :try_end_1
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 104
-    :catchall_67
+    :catchall_0
     move-exception v0
 
     .line 105
-    goto :goto_7a
+    goto :goto_2
 
     .line 106
-    :catch_69
+    :catch_0
     move-exception v0
 
     .line 107
-    :try_start_6a
+    :try_start_2
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     .line 108
@@ -873,31 +873,31 @@
     throw v2
 
     .line 120
-    :cond_77
+    :cond_3
     monitor-exit v9
 
     .line 121
     move-wide v3, v12
 
     .line 122
-    goto :goto_7d
+    goto :goto_3
 
     .line 123
-    :goto_7a
+    :goto_2
     monitor-exit v9
-    :try_end_7b
-    .catchall {:try_start_6a .. :try_end_7b} :catchall_67
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 124
     throw v0
 
     .line 125
-    :cond_7c
+    :cond_4
     return v5
 
     .line 126
-    :cond_7d
-    :goto_7d
+    :cond_5
+    :goto_3
     iget-object v6, v1, Llibs/cs;->f:Ljava/lang/Object;
 
     .line 127
@@ -1047,7 +1047,7 @@
     sub-int/2addr v0, v3
 
     .line 201
-    if-lez v0, :cond_d9
+    if-lez v0, :cond_6
 
     .line 202
     .line 203
@@ -1080,7 +1080,7 @@
     .line 216
     .line 217
     .line 218
-    :cond_d9
+    :cond_6
     iget-object v3, v1, Llibs/cs;->f:Ljava/lang/Object;
 
     .line 219
@@ -1110,7 +1110,7 @@
     .line 231
     .line 232
     .line 233
-    :try_start_e8
+    :try_start_3
     invoke-virtual {v3}, Llibs/Xi;->isOpen()Z
 
     .line 234
@@ -1119,13 +1119,13 @@
     move-result v3
 
     .line 237
-    if-eqz v3, :cond_f7
+    if-eqz v3, :cond_7
 
     .line 238
     .line 239
     invoke-interface {v4}, Llibs/Lambda;->run()V
-    :try_end_f1
-    .catchall {:try_start_e8 .. :try_end_f1} :catchall_f5
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 240
     .line 241
@@ -1135,17 +1135,17 @@
     .line 243
     .line 244
     .line 245
-    goto :goto_fb
+    goto :goto_4
 
     .line 246
-    :catchall_f5
+    :catchall_1
     move-exception v0
 
     .line 247
-    goto :goto_132
+    goto :goto_5
 
     .line 248
-    :cond_f7
+    :cond_7
     invoke-virtual {v8}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 249
@@ -1154,8 +1154,8 @@
     const/4 v2, 0x0
 
     .line 252
-    :goto_fb
-    if-eqz v2, :cond_12a
+    :goto_4
+    if-eqz v2, :cond_8
 
     .line 253
     .line 254
@@ -1201,7 +1201,7 @@
     .line 274
     .line 275
     .line 276
-    if-lez v0, :cond_4
+    if-lez v0, :cond_0
 
     .line 277
     .line 278
@@ -1242,11 +1242,11 @@
 
     .line 296
     .line 297
-    goto/16 :goto_4
+    goto/16 :goto_0
 
     .line 298
     .line 299
-    :cond_12a
+    :cond_8
     new-instance v0, Llibs/vx;
 
     .line 300
@@ -1263,7 +1263,7 @@
     throw v0
 
     .line 307
-    :goto_132
+    :goto_5
     invoke-virtual {v8}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 308
@@ -1272,6 +1272,6 @@
     throw v0
 
     .line 311
-    :cond_136
+    :cond_9
     return v2
 .end method

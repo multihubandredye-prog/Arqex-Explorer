@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/hl;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/fh;-><init>(Llibs/hl;)V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final g()Llibs/ko0;
-    .registers 9
+    .locals 8
 
     .line 1
     invoke-virtual {p0}, Llibs/fh;->j()J
@@ -157,7 +157,7 @@
 
     .line 63
     .line 64
-    if-gtz v4, :cond_4d
+    if-gtz v4, :cond_1
 
     .line 65
     .line 66
@@ -169,7 +169,7 @@
 
     .line 69
     .line 70
-    if-lez v4, :cond_4a
+    if-lez v4, :cond_0
 
     .line 71
     .line 72
@@ -180,7 +180,7 @@
     return-object v0
 
     .line 75
-    :cond_4a
+    :cond_0
     sget-object v0, Llibs/ko0;->Lambda:Llibs/ho0;
 
     .line 76
@@ -188,7 +188,7 @@
     return-object v0
 
     .line 78
-    :cond_4d
+    :cond_1
     const-string v2, "too many clusters for FAT12/16: "
 
     .line 79

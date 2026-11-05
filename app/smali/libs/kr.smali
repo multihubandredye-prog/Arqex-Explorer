@@ -14,7 +14,7 @@
 
 # direct methods
 .method public varargs constructor <init>([Llibs/t60;)V
-    .registers 7
+    .locals 5
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,7 +29,7 @@
     const/4 v0, 0x0
 
     .line 7
-    :try_start_6
+    :try_start_0
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 8
@@ -38,7 +38,7 @@
     array-length v1, p1
 
     .line 11
-    if-nez v1, :cond_14
+    if-nez v1, :cond_0
 
     .line 12
     .line 13
@@ -57,10 +57,10 @@
     move-object v0, p1
 
     .line 20
-    goto :goto_1f
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_0
     new-instance v1, Llibs/ah3;
 
     .line 22
@@ -82,7 +82,7 @@
     move-object v0, v1
 
     .line 32
-    :goto_1f
+    :goto_0
     iget-object p1, v0, Llibs/ah3;->X:Ljava/util/Iterator;
 
     .line 33
@@ -91,7 +91,7 @@
 
     .line 35
     .line 36
-    :goto_23
+    :goto_1
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 37
@@ -100,7 +100,7 @@
     move-result v3
 
     .line 40
-    if-eqz v3, :cond_35
+    if-eqz v3, :cond_1
 
     .line 41
     .line 42
@@ -127,13 +127,13 @@
     add-long/2addr v1, v3
 
     .line 53
-    goto :goto_23
+    goto :goto_1
 
     .line 54
-    :cond_35
+    :cond_1
     iput-wide v1, p0, Llibs/kr;->b:J
-    :try_end_37
-    .catchall {:try_start_6 .. :try_end_37} :catchall_3b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 55
     .line 56
@@ -145,7 +145,7 @@
     return-void
 
     .line 60
-    :catchall_3b
+    :catchall_0
     move-exception p1
 
     .line 61
@@ -154,21 +154,21 @@
     .line 62
     .line 63
     .line 64
-    goto :goto_41
+    goto :goto_3
 
     .line 65
-    :goto_40
+    :goto_2
     throw p1
 
     .line 66
-    :goto_41
-    goto :goto_40
+    :goto_3
+    goto :goto_2
 .end method
 
 
 # virtual methods
 .method public final a(JJ)Llibs/t60;
-    .registers 15
+    .locals 10
 
     .line 1
     invoke-virtual {p0, p1, p2}, Llibs/kr;->e(J)Llibs/la2;
@@ -235,7 +235,7 @@
 
     .line 32
     .line 33
-    if-gtz v9, :cond_27
+    if-gtz v9, :cond_0
 
     .line 34
     .line 35
@@ -250,7 +250,7 @@
     return-object p1
 
     .line 40
-    :cond_27
+    :cond_0
     new-instance v5, Ljava/util/ArrayList;
 
     .line 41
@@ -334,12 +334,12 @@
     move-result-wide v2
 
     .line 81
-    :goto_50
+    :goto_0
     add-int/lit8 v1, v1, 0x1
 
     .line 82
     .line 83
-    if-ge v1, p2, :cond_5a
+    if-ge v1, p2, :cond_1
 
     .line 84
     .line 85
@@ -352,10 +352,10 @@
     .line 88
     .line 89
     .line 90
-    goto :goto_50
+    goto :goto_0
 
     .line 91
-    :cond_5a
+    :cond_1
     aget-object p1, v0, p2
 
     .line 92
@@ -412,7 +412,7 @@
 .end method
 
 .method public final b(JJLlibs/s60;)V
-    .registers 15
+    .locals 9
 
     .line 1
     add-long v0, p1, p3
@@ -427,7 +427,7 @@
 
     .line 6
     .line 7
-    if-gtz v4, :cond_3f
+    if-gtz v4, :cond_3
 
     .line 8
     .line 9
@@ -447,8 +447,8 @@
     move-wide v6, p3
 
     .line 15
-    :goto_e
-    if-ge v2, v1, :cond_3e
+    :goto_0
+    if-ge v2, v1, :cond_2
 
     .line 16
     .line 17
@@ -468,7 +468,7 @@
 
     .line 24
     .line 25
-    if-ltz p3, :cond_21
+    if-ltz p3, :cond_0
 
     .line 26
     .line 27
@@ -486,10 +486,10 @@
     move-object v8, p5
 
     .line 33
-    goto :goto_3a
+    goto :goto_1
 
     .line 34
-    :cond_21
+    :cond_0
     invoke-interface {v3}, Llibs/t60;->size()J
 
     .line 35
@@ -505,7 +505,7 @@
 
     .line 40
     .line 41
-    if-ltz p3, :cond_2f
+    if-ltz p3, :cond_1
 
     .line 42
     .line 43
@@ -520,7 +520,7 @@
     return-void
 
     .line 48
-    :cond_2f
+    :cond_1
     move-object v8, p5
 
     .line 49
@@ -546,7 +546,7 @@
     move-wide v4, p1
 
     .line 59
-    :goto_3a
+    :goto_1
     add-int/lit8 v2, v2, 0x1
 
     .line 60
@@ -554,14 +554,14 @@
     move-object p5, v8
 
     .line 62
-    goto :goto_e
+    goto :goto_0
 
     .line 63
-    :cond_3e
+    :cond_2
     return-void
 
     .line 64
-    :cond_3f
+    :cond_3
     const-string p1, "Requested more than available"
 
     .line 65
@@ -575,7 +575,7 @@
 .end method
 
 .method public final c(IJ)Ljava/nio/ByteBuffer;
-    .registers 13
+    .locals 9
 
     .line 1
     int-to-long v0, p1
@@ -593,7 +593,7 @@
 
     .line 7
     .line 8
-    if-gtz v6, :cond_68
+    if-gtz v6, :cond_3
 
     .line 9
     .line 10
@@ -660,7 +660,7 @@
 
     .line 40
     .line 41
-    if-gtz v6, :cond_31
+    if-gtz v6, :cond_0
 
     .line 42
     .line 43
@@ -679,7 +679,7 @@
     return-object p1
 
     .line 50
-    :cond_31
+    :cond_0
     invoke-static {p1}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     .line 51
@@ -688,11 +688,11 @@
     move-result-object p1
 
     .line 54
-    :goto_35
+    :goto_0
     array-length v0, p2
 
     .line 55
-    if-ge p3, v0, :cond_64
+    if-ge p3, v0, :cond_2
 
     .line 56
     .line 57
@@ -704,7 +704,7 @@
     move-result v0
 
     .line 61
-    if-eqz v0, :cond_64
+    if-eqz v0, :cond_2
 
     .line 62
     .line 63
@@ -756,7 +756,7 @@
 
     .line 84
     .line 85
-    if-nez v8, :cond_5e
+    if-nez v8, :cond_1
 
     .line 86
     .line 87
@@ -773,10 +773,10 @@
 
     .line 93
     .line 94
-    goto :goto_35
+    goto :goto_0
 
     .line 95
-    :cond_5e
+    :cond_1
     new-instance p1, Ljava/lang/ArithmeticException;
 
     .line 96
@@ -789,7 +789,7 @@
     throw p1
 
     .line 101
-    :cond_64
+    :cond_2
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
 
     .line 102
@@ -798,7 +798,7 @@
     return-object p1
 
     .line 105
-    :cond_68
+    :cond_3
     const-string p1, "Requested more than available"
 
     .line 106
@@ -815,7 +815,7 @@
 .end method
 
 .method public final d(IJLjava/nio/ByteBuffer;)V
-    .registers 11
+    .locals 6
 
     .line 1
     int-to-long v3, p1
@@ -848,7 +848,7 @@
 .end method
 
 .method public final e(J)Llibs/la2;
-    .registers 10
+    .locals 7
 
     .line 1
     const/4 v0, 0x0
@@ -857,7 +857,7 @@
     move-wide v1, p1
 
     .line 3
-    :goto_2
+    :goto_0
     iget-object v3, p0, Llibs/kr;->a:[Llibs/t60;
 
     .line 4
@@ -865,7 +865,7 @@
     array-length v4, v3
 
     .line 6
-    if-ge v0, v4, :cond_29
+    if-ge v0, v4, :cond_1
 
     .line 7
     .line 8
@@ -885,7 +885,7 @@
 
     .line 15
     .line 16
-    if-gez v6, :cond_1f
+    if-gez v6, :cond_0
 
     .line 17
     .line 18
@@ -917,7 +917,7 @@
     return-object v0
 
     .line 32
-    :cond_1f
+    :cond_0
     aget-object v3, v3, v0
 
     .line 33
@@ -937,10 +937,10 @@
 
     .line 40
     .line 41
-    goto :goto_2
+    goto :goto_0
 
     .line 42
-    :cond_29
+    :cond_1
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
     .line 43
@@ -983,19 +983,19 @@
     .line 62
     .line 63
     .line 64
-    goto :goto_41
+    goto :goto_2
 
     .line 65
-    :goto_40
+    :goto_1
     throw v0
 
     .line 66
-    :goto_41
-    goto :goto_40
+    :goto_2
+    goto :goto_1
 .end method
 
 .method public final size()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Llibs/kr;->b:J

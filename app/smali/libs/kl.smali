@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/nio/ByteBuffer;Z)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,7 +22,7 @@
     .line 2
     .line 3
     .line 4
-    if-eqz p2, :cond_a
+    if-eqz p2, :cond_0
 
     .line 5
     .line 6
@@ -34,14 +34,14 @@
     move-result-object p2
 
     .line 10
-    goto :goto_b
+    goto :goto_0
 
     .line 11
-    :cond_a
+    :cond_0
     move-object p2, p1
 
     .line 12
-    :goto_b
+    :goto_0
     iput-object p2, p0, Llibs/kl;->a:Ljava/nio/ByteBuffer;
 
     .line 13
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public final a(JJ)Llibs/t60;
-    .registers 11
+    .locals 6
 
     .line 1
     iget v0, p0, Llibs/kl;->b:I
@@ -79,7 +79,7 @@
 
     .line 6
     .line 7
-    if-nez v3, :cond_e
+    if-nez v3, :cond_0
 
     .line 8
     .line 9
@@ -90,19 +90,19 @@
 
     .line 11
     .line 12
-    if-nez v5, :cond_e
+    if-nez v5, :cond_0
 
     .line 13
     .line 14
     return-object p0
 
     .line 15
-    :cond_e
+    :cond_0
     cmp-long v3, p3, v1
 
     .line 16
     .line 17
-    if-ltz v3, :cond_23
+    if-ltz v3, :cond_1
 
     .line 18
     .line 19
@@ -113,7 +113,7 @@
 
     .line 21
     .line 22
-    if-gtz v3, :cond_23
+    if-gtz v3, :cond_1
 
     .line 23
     .line 24
@@ -143,7 +143,7 @@
     return-object v0
 
     .line 36
-    :cond_23
+    :cond_1
     new-instance p1, Ljava/lang/IndexOutOfBoundsException;
 
     .line 37
@@ -197,7 +197,7 @@
 .end method
 
 .method public final b(JJLlibs/s60;)V
-    .registers 10
+    .locals 4
 
     .line 1
     const-wide/16 v0, 0x0
@@ -212,7 +212,7 @@
 
     .line 6
     .line 7
-    if-ltz v3, :cond_16
+    if-ltz v3, :cond_0
 
     .line 8
     .line 9
@@ -223,7 +223,7 @@
 
     .line 11
     .line 12
-    if-gtz v3, :cond_16
+    if-gtz v3, :cond_0
 
     .line 13
     .line 14
@@ -246,7 +246,7 @@
     return-void
 
     .line 23
-    :cond_16
+    :cond_0
     new-instance p1, Ljava/lang/IndexOutOfBoundsException;
 
     .line 24
@@ -300,7 +300,7 @@
 .end method
 
 .method public final c(IJ)Ljava/nio/ByteBuffer;
-    .registers 21
+    .locals 17
 
     .line 1
     move-object/from16 v1, p0
@@ -349,7 +349,7 @@
 
     .line 22
     .line 23
-    if-ltz v14, :cond_98
+    if-ltz v14, :cond_4
 
     .line 24
     .line 25
@@ -357,7 +357,7 @@
 
     .line 26
     .line 27
-    if-ltz v14, :cond_8e
+    if-ltz v14, :cond_3
 
     .line 28
     .line 29
@@ -368,7 +368,7 @@
 
     .line 31
     .line 32
-    if-gtz v14, :cond_73
+    if-gtz v14, :cond_2
 
     .line 33
     .line 34
@@ -380,7 +380,7 @@
 
     .line 37
     .line 38
-    if-ltz v16, :cond_65
+    if-ltz v16, :cond_1
 
     .line 39
     .line 40
@@ -388,7 +388,7 @@
 
     .line 41
     .line 42
-    if-gtz v11, :cond_4b
+    if-gtz v11, :cond_0
 
     .line 43
     .line 44
@@ -405,7 +405,7 @@
     monitor-enter v11
 
     .line 49
-    :try_start_30
+    :try_start_0
     iget-object v2, v1, Llibs/kl;->a:Ljava/nio/ByteBuffer;
 
     .line 50
@@ -454,19 +454,19 @@
     return-object v0
 
     .line 73
-    :catchall_48
+    :catchall_0
     move-exception v0
 
     .line 74
     monitor-exit v11
-    :try_end_4a
-    .catchall {:try_start_30 .. :try_end_4a} :catchall_48
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 75
     throw v0
 
     .line 76
-    :cond_4b
+    :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
     .line 77
@@ -515,7 +515,7 @@
     throw v0
 
     .line 102
-    :cond_65
+    :cond_1
     invoke-static {v2, v3, v9, v6}, Llibs/sk1;->u(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 103
@@ -544,7 +544,7 @@
     return-object v11
 
     .line 116
-    :cond_73
+    :cond_2
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
     .line 117
@@ -594,7 +594,7 @@
     throw v0
 
     .line 143
-    :cond_8e
+    :cond_3
     const-string v0, "size: "
 
     .line 144
@@ -615,7 +615,7 @@
     return-object v11
 
     .line 153
-    :cond_98
+    :cond_4
     const-string v0, "offset: "
 
     .line 154
@@ -637,7 +637,7 @@
 .end method
 
 .method public final d(IJLjava/nio/ByteBuffer;)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2, p3}, Llibs/kl;->c(IJ)Ljava/nio/ByteBuffer;
@@ -657,7 +657,7 @@
 .end method
 
 .method public final size()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/kl;->b:I

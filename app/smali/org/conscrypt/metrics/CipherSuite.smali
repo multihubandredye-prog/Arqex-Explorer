@@ -73,7 +73,7 @@
 
 # direct methods
 .method private static synthetic $values()[Lorg/conscrypt/metrics/CipherSuite;
-    .registers 3
+    .locals 3
 
     .line 1
     const/16 v0, 0x19
@@ -380,7 +380,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     .line 1
     new-instance v0, Lorg/conscrypt/metrics/CipherSuite;
@@ -1022,7 +1022,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;II)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
@@ -1043,7 +1043,7 @@
 .end method
 
 .method public static forName(Ljava/lang/String;)Lorg/conscrypt/metrics/CipherSuite;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "SSL_RSA_WITH_3DES_EDE_CBC_SHA"
@@ -1058,7 +1058,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -1069,22 +1069,22 @@
     return-object p0
 
     .line 12
-    :cond_b
-    :try_start_b
+    :cond_0
+    :try_start_0
     invoke-static {p0}, Lorg/conscrypt/metrics/CipherSuite;->valueOf(Ljava/lang/String;)Lorg/conscrypt/metrics/CipherSuite;
 
     .line 13
     .line 14
     .line 15
     move-result-object p0
-    :try_end_f
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_b .. :try_end_f} :catch_10
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 16
     return-object p0
 
     .line 17
-    :catch_10
+    :catch_0
     sget-object p0, Lorg/conscrypt/metrics/CipherSuite;->UNKNOWN_CIPHER_SUITE:Lorg/conscrypt/metrics/CipherSuite;
 
     .line 18
@@ -1093,7 +1093,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lorg/conscrypt/metrics/CipherSuite;
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Lorg/conscrypt/metrics/CipherSuite;
@@ -1116,7 +1116,7 @@
 .end method
 
 .method public static values()[Lorg/conscrypt/metrics/CipherSuite;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/metrics/CipherSuite;->$VALUES:[Lorg/conscrypt/metrics/CipherSuite;
@@ -1141,7 +1141,7 @@
 
 # virtual methods
 .method public getId()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/metrics/CipherSuite;->id:I

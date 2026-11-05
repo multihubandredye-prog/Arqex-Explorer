@@ -26,7 +26,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-wide/16 v0, 0x1
@@ -49,7 +49,7 @@
 .end method
 
 .method public constructor <init>(Llibs/Param;)V
-    .registers 16
+    .locals 14
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -75,7 +75,7 @@
     const/4 v2, 0x0
 
     .line 12
-    if-eqz v1, :cond_1b5
+    if-eqz v1, :cond_b
 
     .line 13
     .line 14
@@ -111,7 +111,7 @@
     move-result v1
 
     .line 30
-    if-eqz v1, :cond_1b5
+    if-eqz v1, :cond_b
 
     .line 31
     .line 32
@@ -130,7 +130,7 @@
 
     .line 38
     .line 39
-    if-eqz v4, :cond_2b
+    if-eqz v4, :cond_0
 
     .line 40
     .line 41
@@ -138,11 +138,11 @@
 
     .line 42
     .line 43
-    goto :goto_39
+    goto :goto_0
 
     .line 44
-    :cond_2b
-    if-eqz v3, :cond_38
+    :cond_0
+    if-eqz v3, :cond_1
 
     .line 45
     .line 46
@@ -166,14 +166,14 @@
     move-object v3, v4
 
     .line 56
-    goto :goto_39
+    goto :goto_0
 
     .line 57
-    :cond_38
+    :cond_1
     move-object v3, v2
 
     .line 58
-    :goto_39
+    :goto_0
     const/4 v4, 0x2
 
     .line 59
@@ -213,7 +213,7 @@
     move-result v7
 
     .line 77
-    if-eqz v7, :cond_a1
+    if-eqz v7, :cond_4
 
     .line 78
     .line 79
@@ -275,7 +275,7 @@
 
     .line 108
     .line 109
-    if-ltz v0, :cond_9d
+    if-ltz v0, :cond_3
 
     .line 110
     .line 111
@@ -287,7 +287,7 @@
     move-result v0
 
     .line 115
-    if-gez v0, :cond_9d
+    if-gez v0, :cond_3
 
     .line 116
     .line 117
@@ -333,7 +333,7 @@
     move-result v0
 
     .line 139
-    if-ltz v0, :cond_99
+    if-ltz v0, :cond_2
 
     .line 140
     .line 141
@@ -345,7 +345,7 @@
     move-result v0
 
     .line 145
-    if-gez v0, :cond_99
+    if-gez v0, :cond_2
 
     .line 146
     .line 147
@@ -358,11 +358,11 @@
     .line 150
     .line 151
     .line 152
-    goto/16 :goto_158
+    goto/16 :goto_2
 
     .line 153
     .line 154
-    :cond_99
+    :cond_2
     invoke-static {v7}, Llibs/ic0;->p(Ljava/lang/String;)V
 
     .line 155
@@ -371,7 +371,7 @@
     throw v2
 
     .line 158
-    :cond_9d
+    :cond_3
     invoke-static {v7}, Llibs/ic0;->p(Ljava/lang/String;)V
 
     .line 159
@@ -380,7 +380,7 @@
     throw v2
 
     .line 162
-    :cond_a1
+    :cond_4
     sget-object v7, Llibs/dx3;->User:Llibs/App;
 
     .line 163
@@ -393,7 +393,7 @@
     move-result v6
 
     .line 168
-    if-eqz v6, :cond_1af
+    if-eqz v6, :cond_a
 
     .line 169
     .line 170
@@ -457,7 +457,7 @@
     move-result v7
 
     .line 200
-    if-eqz v7, :cond_dd
+    if-eqz v7, :cond_5
 
     .line 201
     .line 202
@@ -502,10 +502,10 @@
     const/4 v11, 0x0
 
     .line 221
-    goto :goto_120
+    goto :goto_1
 
     .line 222
-    :cond_dd
+    :cond_5
     sget-object v7, Llibs/dx3;->Page:Llibs/App;
 
     .line 223
@@ -518,7 +518,7 @@
     move-result v6
 
     .line 228
-    if-eqz v6, :cond_1a9
+    if-eqz v6, :cond_9
 
     .line 229
     .line 230
@@ -643,7 +643,7 @@
     move v10, v7
 
     .line 289
-    :goto_120
+    :goto_1
     invoke-virtual {v5, v0}, Llibs/Param;->q(I)Llibs/Core;
 
     .line 290
@@ -754,7 +754,7 @@
     move-object v0, v7
 
     .line 345
-    :goto_158
+    :goto_2
     invoke-virtual {v5}, Llibs/Param;->size()I
 
     .line 346
@@ -766,7 +766,7 @@
     const/4 v3, 0x3
 
     .line 350
-    if-ne v1, v3, :cond_169
+    if-ne v1, v3, :cond_6
 
     .line 351
     .line 352
@@ -790,7 +790,7 @@
     move-result-object v2
 
     .line 362
-    :cond_169
+    :cond_6
     iput-object v0, p0, Llibs/zw3;->Y:Llibs/kf0;
 
     .line 363
@@ -807,7 +807,7 @@
 
     .line 369
     .line 370
-    if-eqz v3, :cond_178
+    if-eqz v3, :cond_7
 
     .line 371
     .line 372
@@ -819,10 +819,10 @@
 
     .line 375
     .line 376
-    goto :goto_185
+    goto :goto_3
 
     .line 377
-    :cond_178
+    :cond_7
     new-instance v3, Llibs/bx3;
 
     .line 378
@@ -848,7 +848,7 @@
 
     .line 389
     .line 390
-    :goto_185
+    :goto_3
     const/4 v0, 0x4
 
     .line 391
@@ -891,7 +891,7 @@
     const/4 v1, 0x6
 
     .line 410
-    if-ne v0, v1, :cond_1a8
+    if-ne v0, v1, :cond_8
 
     .line 411
     .line 412
@@ -922,11 +922,11 @@
 
     .line 424
     .line 425
-    :cond_1a8
+    :cond_8
     return-void
 
     .line 426
-    :cond_1a9
+    :cond_9
     const-string p1, "This type of EC basis is not implemented"
 
     .line 427
@@ -939,7 +939,7 @@
     throw v2
 
     .line 432
-    :cond_1af
+    :cond_a
     const-string p1, "This type of ECCurve is not implemented"
 
     .line 433
@@ -952,7 +952,7 @@
     throw v2
 
     .line 438
-    :cond_1b5
+    :cond_b
     const-string p1, "bad version in X9ECParameters"
 
     .line 439
@@ -966,7 +966,7 @@
 .end method
 
 .method public constructor <init>(Llibs/kf0;Llibs/bx3;Ljava/math/BigInteger;Ljava/math/BigInteger;[B)V
-    .registers 8
+    .locals 2
 
     .line 445
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -994,7 +994,7 @@
 
     move-result p3
 
-    if-eqz p3, :cond_21
+    if-eqz p3, :cond_0
 
     .line 453
     new-instance p1, Llibs/cx3;
@@ -1010,7 +1010,7 @@
     return-void
 
     .line 454
-    :cond_21
+    :cond_0
     iget-object p1, p1, Llibs/kf0;->a:Llibs/lr0;
 
     .line 455
@@ -1022,7 +1022,7 @@
 
     const/4 p5, 0x1
 
-    if-le p3, p5, :cond_72
+    if-le p3, p5, :cond_3
 
     invoke-interface {p1}, Llibs/lr0;->b()Ljava/math/BigInteger;
 
@@ -1034,11 +1034,11 @@
 
     move-result p3
 
-    if-eqz p3, :cond_72
+    if-eqz p3, :cond_3
 
     instance-of p1, p1, Llibs/lu0;
 
-    if-eqz p1, :cond_72
+    if-eqz p1, :cond_3
 
     .line 456
     check-cast p2, Llibs/lu0;
@@ -1061,7 +1061,7 @@
 
     const/4 v0, 0x3
 
-    if-ne p2, v0, :cond_57
+    if-ne p2, v0, :cond_1
 
     .line 461
     new-instance p2, Llibs/cx3;
@@ -1081,12 +1081,12 @@
     return-void
 
     .line 464
-    :cond_57
+    :cond_1
     array-length p2, p1
 
     const/4 v1, 0x5
 
-    if-ne p2, v1, :cond_6c
+    if-ne p2, v1, :cond_2
 
     .line 465
     new-instance p2, Llibs/cx3;
@@ -1108,7 +1108,7 @@
     return-void
 
     .line 466
-    :cond_6c
+    :cond_2
     const-string p1, "Only trinomial and pentomial curves are supported"
 
     invoke-static {p1}, Llibs/ic0;->p(Ljava/lang/String;)V
@@ -1116,7 +1116,7 @@
     throw p4
 
     .line 467
-    :cond_72
+    :cond_3
     const-string p1, "\'curve\' is of an unsupported type"
 
     invoke-static {p1}, Llibs/ic0;->p(Ljava/lang/String;)V
@@ -1125,7 +1125,7 @@
 .end method
 
 .method public constructor <init>(Llibs/kf0;Llibs/ig0;Ljava/math/BigInteger;Ljava/math/BigInteger;[B)V
-    .registers 12
+    .locals 6
 
     .line 444
     new-instance v2, Llibs/bx3;
@@ -1148,14 +1148,14 @@
 .end method
 
 .method public static g(Ljava/lang/Object;)Llibs/zw3;
-    .registers 2
+    .locals 1
 
     .line 1
     instance-of v0, p0, Llibs/zw3;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -1166,8 +1166,8 @@
     return-object p0
 
     .line 8
-    :cond_7
-    if-eqz p0, :cond_13
+    :cond_0
+    if-eqz p0, :cond_1
 
     .line 9
     .line 10
@@ -1191,7 +1191,7 @@
     return-object v0
 
     .line 20
-    :cond_13
+    :cond_1
     const/4 p0, 0x0
 
     .line 21
@@ -1201,7 +1201,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Llibs/Init;
@@ -1296,7 +1296,7 @@
 
     .line 50
     .line 51
-    if-eqz v1, :cond_3c
+    if-eqz v1, :cond_0
 
     .line 52
     .line 53
@@ -1314,7 +1314,7 @@
     .line 59
     .line 60
     .line 61
-    :cond_3c
+    :cond_0
     new-instance v1, Llibs/p10;
 
     .line 62

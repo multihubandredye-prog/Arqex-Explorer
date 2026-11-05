@@ -2,8 +2,6 @@
 .super Landroid/graphics/drawable/Drawable;
 .source "ArqexMenuIcon.java"
 
-# Arqex: icone simples desenhado na hora (mesmo tamanho/cor do icone de Ajuda),
-# um glifo por item do menu - sem depender de imagem.
 
 # instance fields
 .field private final cor:I
@@ -16,204 +14,10 @@
 
 .field private final tipo:I
 
+
 # direct methods
-.method public static forItem(Llibs/r90;)Landroid/graphics/drawable/Drawable;
-    .registers 8
-
-    const/4 v0, 0x0
-
-    if-nez p0, :arqex_fi_fim
-
-    :try_start_0
-    iget-object v1, p0, Llibs/r90;->Lambda:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v1, :arqex_fi_cria
-
-    return-object v1
-
-    :arqex_fi_cria
-    iget v1, p0, Llibs/r90;->Z:I
-
-    invoke-static {v1}, Llibs/HelpGuideV127;->menuIconType(I)I
-
-    move-result v1
-
-    if-gtz v1, :arqex_fi_fim
-
-    const-string v2, "TEXT_POPUP_PRIMARY"
-
-    const-string v3, "#FFEFF3F8"
-
-    invoke-static {v2, v3}, Llibs/va3;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v2
-
-    const/high16 v3, 0x41b00000    # 22.0f
-
-    invoke-static {v3}, Llibs/ModernUiTheme;->dp(F)I
-
-    move-result v3
-
-    new-instance v4, Llibs/ArqexMenuIcon;
-
-    invoke-direct {v4, v2, v3, v1}, Llibs/ArqexMenuIcon;-><init>(III)V
-
-    const/4 v5, 0x0
-
-    invoke-virtual {v4, v5, v5, v3, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
-
-    iput-object v4, p0, Llibs/r90;->Lambda:Landroid/graphics/drawable/Drawable;
-
-    return-object v4
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :catchall_0
-    move-object v1, v0
-
-    const-string v2, "ICONE erro ao criar o icone do menu"
-
-    invoke-static {v2}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
-
-    move-object v0, v1
-
-    :arqex_fi_fim
-    return-object v0
-.end method
-
-.method public static forId(I)Landroid/graphics/drawable/Drawable;
-    .registers 7
-
-    const/4 v0, 0x0
-
-    :try_start_0
-    invoke-static {p0}, Llibs/HelpGuideV127;->menuIconType(I)I
-
-    move-result v1
-
-    if-gtz v1, :arqex_fid_fim
-
-    const-string v2, "TEXT_POPUP_PRIMARY"
-
-    const-string v3, "#FFEFF3F8"
-
-    invoke-static {v2, v3}, Llibs/va3;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v2
-
-    const/high16 v3, 0x41b00000    # 22.0f
-
-    invoke-static {v3}, Llibs/ModernUiTheme;->dp(F)I
-
-    move-result v3
-
-    new-instance v4, Llibs/ArqexMenuIcon;
-
-    invoke-direct {v4, v2, v3, v1}, Llibs/ArqexMenuIcon;-><init>(III)V
-
-    const/4 v5, 0x0
-
-    invoke-virtual {v4, v5, v5, v3, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
-
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    return-object v4
-
-    :catchall_0
-    :arqex_fid_fim
-    return-object v0
-.end method
-
-.method public static paintRow(Landroid/view/View;)V
-    .registers 8
-
-    if-nez p0, :arqex_pr_fim
-
-    :try_start_0
-    invoke-virtual {p0}, Landroid/view/View;->getId()I
-
-    move-result v0
-
-    invoke-static {v0}, Llibs/HelpGuideV127;->menuIconType(I)I
-
-    move-result v1
-
-    if-gtz v1, :arqex_pr_fim
-
-    invoke-static {v0}, Llibs/ArqexMenuIcon;->forId(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v2
-
-    if-eqz v2, :arqex_pr_draw
-
-    return-void
-
-    :arqex_pr_draw
-    sget v3, Llibs/wh2;->file_name:I
-
-    invoke-virtual {p0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v3
-
-    instance-of v4, v3, Landroid/widget/TextView;
-
-    if-eqz v4, :arqex_pr_txt
-
-    return-void
-
-    :arqex_pr_txt
-    check-cast v3, Landroid/widget/TextView;
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v3, v2, v4, v4, v4}, Landroid/widget/TextView;->setCompoundDrawablesRelative(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-
-    const/high16 v4, 0x41200000    # 10.0f
-
-    invoke-static {v4}, Llibs/ModernUiTheme;->dp(F)I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setCompoundDrawablePadding(I)V
-
-    sget v4, Llibs/wh2;->file_image:I
-
-    invoke-virtual {p0, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v4
-
-    if-eqz v4, :arqex_pr_log
-
-    const/16 v5, 0x8
-
-    invoke-virtual {v4, v5}, Landroid/view/View;->setVisibility(I)V
-
-    :arqex_pr_log
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v5, "ICONE linha id="
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
-
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :catchall_0
-    :arqex_pr_fim
-    return-void
-.end method
-
 .method public constructor <init>(III)V
-    .registers 8
+    .locals 4
 
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
@@ -261,15 +65,210 @@
 
     return-void
 .end method
+
 .method private dot()Landroid/graphics/Paint;
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Llibs/ArqexMenuIcon;->ponto:Landroid/graphics/Paint;
 
     return-object v0
 .end method
+
+.method public static forId(I)Landroid/graphics/drawable/Drawable;
+    .locals 6
+
+    const/4 v0, 0x0
+
+    :try_start_0
+    invoke-static {p0}, Llibs/HelpGuideV127;->menuIconType(I)I
+
+    move-result v1
+
+    if-gtz v1, :cond_0
+
+    const-string v2, "TEXT_POPUP_PRIMARY"
+
+    const-string v3, "#FFEFF3F8"
+
+    invoke-static {v2, v3}, Llibs/va3;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/high16 v3, 0x41b00000    # 22.0f
+
+    invoke-static {v3}, Llibs/ModernUiTheme;->dp(F)I
+
+    move-result v3
+
+    new-instance v4, Llibs/ArqexMenuIcon;
+
+    invoke-direct {v4, v2, v3, v1}, Llibs/ArqexMenuIcon;-><init>(III)V
+
+    const/4 v5, 0x0
+
+    invoke-virtual {v4, v5, v5, v3, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    return-object v4
+
+    :catchall_0
+    :cond_0
+    return-object v0
+.end method
+
+.method public static forItem(Llibs/r90;)Landroid/graphics/drawable/Drawable;
+    .locals 7
+
+    const/4 v0, 0x0
+
+    if-nez p0, :cond_1
+
+    :try_start_0
+    iget-object v1, p0, Llibs/r90;->Lambda:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v1, :cond_0
+
+    return-object v1
+
+    :cond_0
+    iget v1, p0, Llibs/r90;->Z:I
+
+    invoke-static {v1}, Llibs/HelpGuideV127;->menuIconType(I)I
+
+    move-result v1
+
+    if-gtz v1, :cond_1
+
+    const-string v2, "TEXT_POPUP_PRIMARY"
+
+    const-string v3, "#FFEFF3F8"
+
+    invoke-static {v2, v3}, Llibs/va3;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/high16 v3, 0x41b00000    # 22.0f
+
+    invoke-static {v3}, Llibs/ModernUiTheme;->dp(F)I
+
+    move-result v3
+
+    new-instance v4, Llibs/ArqexMenuIcon;
+
+    invoke-direct {v4, v2, v3, v1}, Llibs/ArqexMenuIcon;-><init>(III)V
+
+    const/4 v5, 0x0
+
+    invoke-virtual {v4, v5, v5, v3, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+
+    iput-object v4, p0, Llibs/r90;->Lambda:Landroid/graphics/drawable/Drawable;
+
+    return-object v4
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :catchall_0
+    move-object v1, v0
+
+    const-string v2, "ICON error creating menu icon"
+
+    invoke-static {v2}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
+
+    move-object v0, v1
+
+    :cond_1
+    return-object v0
+.end method
+
+.method public static paintRow(Landroid/view/View;)V
+    .locals 7
+
+    if-nez p0, :cond_3
+
+    :try_start_0
+    invoke-virtual {p0}, Landroid/view/View;->getId()I
+
+    move-result v0
+
+    invoke-static {v0}, Llibs/HelpGuideV127;->menuIconType(I)I
+
+    move-result v1
+
+    if-gtz v1, :cond_3
+
+    invoke-static {v0}, Llibs/ArqexMenuIcon;->forId(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_0
+
+    return-void
+
+    :cond_0
+    sget v3, Llibs/wh2;->file_name:I
+
+    invoke-virtual {p0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v3
+
+    instance-of v4, v3, Landroid/widget/TextView;
+
+    if-eqz v4, :cond_1
+
+    return-void
+
+    :cond_1
+    check-cast v3, Landroid/widget/TextView;
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v3, v2, v4, v4, v4}, Landroid/widget/TextView;->setCompoundDrawablesRelative(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+
+    const/high16 v4, 0x41200000    # 10.0f
+
+    invoke-static {v4}, Llibs/ModernUiTheme;->dp(F)I
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setCompoundDrawablePadding(I)V
+
+    sget v4, Llibs/wh2;->file_image:I
+
+    invoke-virtual {p0, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_2
+
+    const/16 v5, 0x8
+
+    invoke-virtual {v4, v5}, Landroid/view/View;->setVisibility(I)V
+
+    :cond_2
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    const-string v5, "ICON row id="
+
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :catchall_0
+    :cond_3
+    return-void
+.end method
+
 .method private rect(FFFF)Landroid/graphics/RectF;
-    .registers 6
+    .locals 1
 
     new-instance v0, Landroid/graphics/RectF;
 
@@ -279,17 +278,19 @@
 
     return-object v0
 .end method
+
 .method private stroke()Landroid/graphics/Paint;
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Llibs/ArqexMenuIcon;->pincel:Landroid/graphics/Paint;
 
     return-object v0
 .end method
 
+
 # virtual methods
 .method public draw(Landroid/graphics/Canvas;)V
-    .registers 13
+    .locals 11
 
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
@@ -303,9 +304,9 @@
 
     move-result v2
 
-    if-lez v1, :arqex_icon_fim
+    if-lez v1, :cond_0
 
-    if-lez v2, :arqex_icon_fim
+    if-lez v2, :cond_0
 
     invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
 
@@ -339,406 +340,755 @@
 
     iget v6, p0, Llibs/ArqexMenuIcon;->tipo:I
 
-    packed-switch v6, :arqex_psw
+    packed-switch v6, :pswitch_data_0
 
-    :arqex_icon_1
+    :pswitch_0
     move-object v5, p1
+
     invoke-direct {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
+
     move-result-object v10
-    const v1, 0xbf733333    # -0.95f
-    const v2, 0xbf733333    # -0.95f
+
+    const v1, -0x408ccccd    # -0.95f
+
+    const v2, -0x408ccccd    # -0.95f
+
     const v3, 0x3f733333    # 0.95f
+
     const v4, 0x3f733333    # 0.95f
+
     invoke-direct {p0, v1, v2, v3, v4}, Llibs/ArqexMenuIcon;->rect(FFFF)Landroid/graphics/RectF;
+
     move-result-object v6
-    const v7, 0x42700000    # 60f
-    const v8, 0x437a0000    # 250f
+
+    const v7, 0x42700000    # 60.0f
+
+    const v8, 0x437a0000    # 250.0f
+
     const/4 v9, 0x0
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
+
     const v6, 0x3f0ccccd    # 0.55f
-    const v7, 0xbf733333    # -0.95f
+
+    const v7, -0x408ccccd    # -0.95f
+
     const v8, 0x3f733333    # 0.95f
-    const v9, 0xbf1eb852    # -0.62f
+
+    const v9, -0x40e147ae    # -0.62f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
     const v6, 0x3f733333    # 0.95f
-    const v7, 0xbf1eb852    # -0.62f
+
+    const v7, -0x40e147ae    # -0.62f
+
     const v8, 0x3ee66666    # 0.45f
-    const v9, 0xbf0ccccd    # -0.55f
+
+    const v9, -0x40f33333    # -0.55f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    goto :arqex_icon_fim
-    :arqex_icon_2
+
+    goto/16 :goto_0
+
+    :pswitch_1
     move-object v5, p1
+
     invoke-direct {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
+
     move-result-object v10
-    const v6, 0xbf400000    # -0.75f
+
+    const v6, -0x40c00000    # -0.75f
+
     const v7, 0x3d4ccccd    # 0.05f
+
     const v8, 0x3f400000    # 0.75f
+
     const v9, 0x3d4ccccd    # 0.05f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    const v6, 0xbf400000    # -0.75f
+
+    const v6, -0x40c00000    # -0.75f
+
     const v7, 0x3d4ccccd    # 0.05f
-    const v8, 0xbf400000    # -0.75f
+
+    const v8, -0x40c00000    # -0.75f
+
     const v9, 0x3f666666    # 0.9f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
     const v6, 0x3f400000    # 0.75f
+
     const v7, 0x3d4ccccd    # 0.05f
+
     const v8, 0x3f400000    # 0.75f
+
     const v9, 0x3f666666    # 0.9f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    const v6, 0xbf400000    # -0.75f
+
+    const v6, -0x40c00000    # -0.75f
+
     const v7, 0x3f666666    # 0.9f
+
     const v8, 0x3f400000    # 0.75f
+
     const v9, 0x3f666666    # 0.9f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    const v1, 0xbf000000    # -0.5f
-    const v2, 0xbf59999a    # -0.85f
+
+    const v1, -0x41000000    # -0.5f
+
+    const v2, -0x40a66666    # -0.85f
+
     const v3, 0x3f000000    # 0.5f
+
     const v4, 0x3eb33333    # 0.35f
+
     invoke-direct {p0, v1, v2, v3, v4}, Llibs/ArqexMenuIcon;->rect(FFFF)Landroid/graphics/RectF;
+
     move-result-object v6
-    const v7, 0x43340000    # 180f
-    const v8, 0x43340000    # 180f
+
+    const v7, 0x43340000    # 180.0f
+
+    const v8, 0x43340000    # 180.0f
+
     const/4 v9, 0x0
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
-    goto :arqex_icon_fim
-    :arqex_icon_3
+
+    goto/16 :goto_0
+
+    :pswitch_2
     move-object v5, p1
+
     invoke-direct {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
+
     move-result-object v10
-    const v6, 0xbf59999a    # -0.85f
+
+    const v6, -0x40a66666    # -0.85f
+
     const v7, 0x3f59999a    # 0.85f
+
     const v8, 0x3e4ccccd    # 0.2f
-    const v9, 0xbe4ccccd    # -0.2f
+
+    const v9, -0x41b33333    # -0.2f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
     move-object v9, v10
+
     const v6, 0x3f000000    # 0.5f
-    const v7, 0xbf000000    # -0.5f
+
+    const v7, -0x41000000    # -0.5f
+
     const v8, 0x3ea8f5c3    # 0.33f
+
     invoke-virtual/range {v5 .. v9}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
-    const v6, 0xbf59999a    # -0.85f
-    const v7, 0xbf59999a    # -0.85f
-    const v8, 0xbe4ccccd    # -0.2f
-    const v9, 0xbe4ccccd    # -0.2f
+
+    const v6, -0x40a66666    # -0.85f
+
+    const v7, -0x40a66666    # -0.85f
+
+    const v8, -0x41b33333    # -0.2f
+
+    const v9, -0x41b33333    # -0.2f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
     move-object v9, v10
+
     const v6, 0x3f000000    # 0.5f
+
     const v7, 0x3f000000    # 0.5f
+
     const v8, 0x3ea8f5c3    # 0.33f
+
     invoke-virtual/range {v5 .. v9}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
-    goto :arqex_icon_fim
-    :arqex_icon_4
+
+    goto/16 :goto_0
+
+    :pswitch_3
     move-object v5, p1
+
     invoke-direct {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
+
     move-result-object v10
-    const v6, 0xbf666666    # -0.9f
-    const v7, 0xbf266666    # -0.65f
+
+    const v6, -0x4099999a    # -0.9f
+
+    const v7, -0x40d9999a    # -0.65f
+
     const v8, 0x3f666666    # 0.9f
-    const v9, 0xbf266666    # -0.65f
+
+    const v9, -0x40d9999a    # -0.65f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    const v6, 0xbf0ccccd    # -0.55f
-    const v7, 0xbdcccccd    # -0.1f
+
+    const v6, -0x40f33333    # -0.55f
+
+    const v7, -0x42333333    # -0.1f
+
     const v8, 0x3f0ccccd    # 0.55f
-    const v9, 0xbdcccccd    # -0.1f
+
+    const v9, -0x42333333    # -0.1f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    const v6, 0xbe4ccccd    # -0.2f
+
+    const v6, -0x41b33333    # -0.2f
+
     const v7, 0x3ee66666    # 0.45f
+
     const v8, 0x3e4ccccd    # 0.2f
+
     const v9, 0x3ee66666    # 0.45f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    const v6, 0x00000000    # 0f
+
+    const v6, 0x0
+
     const v7, 0x3ee66666    # 0.45f
-    const v8, 0x00000000    # 0f
+
+    const v8, 0x0
+
     const v9, 0x3f733333    # 0.95f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    goto :arqex_icon_fim
-    :arqex_icon_5
+
+    goto/16 :goto_0
+
+    :pswitch_4
     move-object v5, p1
+
     invoke-direct {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
+
     move-result-object v10
-    const v6, 0xbf666666    # -0.9f
-    const v7, 0xbf59999a    # -0.85f
+
+    const v6, -0x4099999a    # -0.9f
+
+    const v7, -0x40a66666    # -0.85f
+
     const v8, 0x3f666666    # 0.9f
-    const v9, 0xbf59999a    # -0.85f
+
+    const v9, -0x40a66666    # -0.85f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    const v6, 0xbf666666    # -0.9f
-    const v7, 0xbf59999a    # -0.85f
-    const v8, 0xbf666666    # -0.9f
-    const v9, 0xbe4ccccd    # -0.2f
+
+    const v6, -0x4099999a    # -0.9f
+
+    const v7, -0x40a66666    # -0.85f
+
+    const v8, -0x4099999a    # -0.9f
+
+    const v9, -0x41b33333    # -0.2f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
     const v6, 0x3f666666    # 0.9f
-    const v7, 0xbf59999a    # -0.85f
+
+    const v7, -0x40a66666    # -0.85f
+
     const v8, 0x3f666666    # 0.9f
-    const v9, 0xbe4ccccd    # -0.2f
+
+    const v9, -0x41b33333    # -0.2f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    const v6, 0xbf666666    # -0.9f
-    const v7, 0xbe4ccccd    # -0.2f
+
+    const v6, -0x4099999a    # -0.9f
+
+    const v7, -0x41b33333    # -0.2f
+
     const v8, 0x3f666666    # 0.9f
-    const v9, 0xbe4ccccd    # -0.2f
+
+    const v9, -0x41b33333    # -0.2f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    const v6, 0xbf666666    # -0.9f
+
+    const v6, -0x4099999a    # -0.9f
+
     const v7, 0x3e4ccccd    # 0.2f
+
     const v8, 0x3f666666    # 0.9f
+
     const v9, 0x3e4ccccd    # 0.2f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    const v6, 0xbf666666    # -0.9f
+
+    const v6, -0x4099999a    # -0.9f
+
     const v7, 0x3e4ccccd    # 0.2f
-    const v8, 0xbf666666    # -0.9f
+
+    const v8, -0x4099999a    # -0.9f
+
     const v9, 0x3f59999a    # 0.85f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
     const v6, 0x3f666666    # 0.9f
+
     const v7, 0x3e4ccccd    # 0.2f
+
     const v8, 0x3f666666    # 0.9f
+
     const v9, 0x3f59999a    # 0.85f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    const v6, 0xbf666666    # -0.9f
+
+    const v6, -0x4099999a    # -0.9f
+
     const v7, 0x3f59999a    # 0.85f
+
     const v8, 0x3f666666    # 0.9f
+
     const v9, 0x3f59999a    # 0.85f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
     invoke-direct {p0}, Llibs/ArqexMenuIcon;->dot()Landroid/graphics/Paint;
+
     move-result-object v9
-    const v6, 0xbf19999a    # -0.6f
-    const v7, 0xbf051eb8    # -0.52f
+
+    const v6, -0x40e66666    # -0.6f
+
+    const v7, -0x40fae148    # -0.52f
+
     const v8, 0x3e051eb8    # 0.13f
+
     invoke-virtual/range {v5 .. v9}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+
     invoke-direct {p0}, Llibs/ArqexMenuIcon;->dot()Landroid/graphics/Paint;
+
     move-result-object v9
-    const v6, 0xbf19999a    # -0.6f
+
+    const v6, -0x40e66666    # -0.6f
+
     const v7, 0x3f051eb8    # 0.52f
+
     const v8, 0x3e051eb8    # 0.13f
+
     invoke-virtual/range {v5 .. v9}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
-    goto :arqex_icon_fim
-    :arqex_icon_6
+
+    goto/16 :goto_0
+
+    :pswitch_5
     move-object v5, p1
+
     invoke-direct {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
+
     move-result-object v10
-    const v6, 0xbee66666    # -0.45f
-    const v7, 0xbf4ccccd    # -0.8f
-    const v8, 0xbee66666    # -0.45f
+
+    const v6, -0x4119999a    # -0.45f
+
+    const v7, -0x40b33333    # -0.8f
+
+    const v8, -0x4119999a    # -0.45f
+
     const v9, 0x3f4ccccd    # 0.8f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    const v6, 0xbee66666    # -0.45f
+
+    const v6, -0x4119999a    # -0.45f
+
     const v7, 0x3f4ccccd    # 0.8f
+
     const v8, 0x3f4ccccd    # 0.8f
-    const v9, 0x00000000    # 0f
+
+    const v9, 0x0
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
     const v6, 0x3f4ccccd    # 0.8f
-    const v7, 0x00000000    # 0f
-    const v8, 0xbee66666    # -0.45f
-    const v9, 0xbf4ccccd    # -0.8f
+
+    const v7, 0x0
+
+    const v8, -0x4119999a    # -0.45f
+
+    const v9, -0x40b33333    # -0.8f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    goto :arqex_icon_fim
-    :arqex_icon_7
+
+    goto/16 :goto_0
+
+    :pswitch_6
     move-object v5, p1
+
     invoke-direct {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
+
     move-result-object v10
+
     invoke-direct {p0}, Llibs/ArqexMenuIcon;->dot()Landroid/graphics/Paint;
+
     move-result-object v9
-    const v6, 0xbf333333    # -0.7f
-    const v7, 0xbf19999a    # -0.6f
+
+    const v6, -0x40cccccd    # -0.7f
+
+    const v7, -0x40e66666    # -0.6f
+
     const v8, 0x3e23d70a    # 0.16f
+
     invoke-virtual/range {v5 .. v9}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+
     invoke-direct {p0}, Llibs/ArqexMenuIcon;->dot()Landroid/graphics/Paint;
+
     move-result-object v9
-    const v6, 0xbf333333    # -0.7f
-    const v7, 0x00000000    # 0f
+
+    const v6, -0x40cccccd    # -0.7f
+
+    const v7, 0x0
+
     const v8, 0x3e23d70a    # 0.16f
+
     invoke-virtual/range {v5 .. v9}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+
     invoke-direct {p0}, Llibs/ArqexMenuIcon;->dot()Landroid/graphics/Paint;
+
     move-result-object v9
-    const v6, 0xbf333333    # -0.7f
+
+    const v6, -0x40cccccd    # -0.7f
+
     const v7, 0x3f19999a    # 0.6f
+
     const v8, 0x3e23d70a    # 0.16f
+
     invoke-virtual/range {v5 .. v9}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
-    const v6, 0xbe99999a    # -0.3f
-    const v7, 0xbf19999a    # -0.6f
+
+    const v6, -0x41666666    # -0.3f
+
+    const v7, -0x40e66666    # -0.6f
+
     const v8, 0x3f59999a    # 0.85f
-    const v9, 0xbf19999a    # -0.6f
+
+    const v9, -0x40e66666    # -0.6f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    const v6, 0xbe99999a    # -0.3f
-    const v7, 0x00000000    # 0f
+
+    const v6, -0x41666666    # -0.3f
+
+    const v7, 0x0
+
     const v8, 0x3f59999a    # 0.85f
-    const v9, 0x00000000    # 0f
+
+    const v9, 0x0
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    const v6, 0xbe99999a    # -0.3f
+
+    const v6, -0x41666666    # -0.3f
+
     const v7, 0x3f19999a    # 0.6f
+
     const v8, 0x3f59999a    # 0.85f
+
     const v9, 0x3f19999a    # 0.6f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    goto :arqex_icon_fim
-    :arqex_icon_8
+
+    goto/16 :goto_0
+
+    :pswitch_7
     move-object v5, p1
+
     invoke-direct {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
+
     move-result-object v10
-    const v6, 0xbf333333    # -0.7f
-    const v7, 0xbf666666    # -0.9f
+
+    const v6, -0x40cccccd    # -0.7f
+
+    const v7, -0x4099999a    # -0.9f
+
     const v8, 0x3f0ccccd    # 0.55f
-    const v9, 0xbf666666    # -0.9f
+
+    const v9, -0x4099999a    # -0.9f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
     const v6, 0x3f0ccccd    # 0.55f
-    const v7, 0xbf666666    # -0.9f
+
+    const v7, -0x4099999a    # -0.9f
+
     const v8, 0x3f0ccccd    # 0.55f
+
     const v9, 0x3f666666    # 0.9f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
     const v6, 0x3f0ccccd    # 0.55f
+
     const v7, 0x3f666666    # 0.9f
-    const v8, 0xbf333333    # -0.7f
+
+    const v8, -0x40cccccd    # -0.7f
+
     const v9, 0x3f666666    # 0.9f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    const v6, 0xbf333333    # -0.7f
+
+    const v6, -0x40cccccd    # -0.7f
+
     const v7, 0x3f666666    # 0.9f
-    const v8, 0xbf333333    # -0.7f
-    const v9, 0xbf666666    # -0.9f
+
+    const v8, -0x40cccccd    # -0.7f
+
+    const v9, -0x4099999a    # -0.9f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    const v6, 0xbecccccd    # -0.4f
-    const v7, 0xbf000000    # -0.5f
+
+    const v6, -0x41333333    # -0.4f
+
+    const v7, -0x41000000    # -0.5f
+
     const v8, 0x3e19999a    # 0.15f
-    const v9, 0xbf000000    # -0.5f
+
+    const v9, -0x41000000    # -0.5f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    const v6, 0xbecccccd    # -0.4f
-    const v7, 0xbdcccccd    # -0.1f
+
+    const v6, -0x41333333    # -0.4f
+
+    const v7, -0x42333333    # -0.1f
+
     const v8, 0x3e19999a    # 0.15f
-    const v9, 0xbdcccccd    # -0.1f
+
+    const v9, -0x42333333    # -0.1f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    const v6, 0xbecccccd    # -0.4f
+
+    const v6, -0x41333333    # -0.4f
+
     const v7, 0x3e99999a    # 0.3f
+
     const v8, 0x3e19999a    # 0.15f
+
     const v9, 0x3e99999a    # 0.3f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    goto :arqex_icon_fim
-    :arqex_icon_9
+
+    goto/16 :goto_0
+
+    :pswitch_8
     move-object v5, p1
+
     invoke-direct {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
+
     move-result-object v10
-    const v6, 0xbf400000    # -0.75f
-    const v7, 0xbf0ccccd    # -0.55f
-    const v8, 0xbd4ccccd    # -0.05f
-    const v9, 0x00000000    # 0f
+
+    const v6, -0x40c00000    # -0.75f
+
+    const v7, -0x40f33333    # -0.55f
+
+    const v8, -0x42b33333    # -0.05f
+
+    const v9, 0x0
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    const v6, 0xbd4ccccd    # -0.05f
-    const v7, 0x00000000    # 0f
-    const v8, 0xbf400000    # -0.75f
+
+    const v6, -0x42b33333    # -0.05f
+
+    const v7, 0x0
+
+    const v8, -0x40c00000    # -0.75f
+
     const v9, 0x3f0ccccd    # 0.55f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
     const v6, 0x3e19999a    # 0.15f
+
     const v7, 0x3f19999a    # 0.6f
+
     const v8, 0x3f4ccccd    # 0.8f
+
     const v9, 0x3f19999a    # 0.6f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    goto :arqex_icon_fim
-    :arqex_icon_10
+
+    goto/16 :goto_0
+
+    :pswitch_9
     move-object v5, p1
+
     invoke-direct {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
+
     move-result-object v10
+
     move-object v9, v10
-    const v6, 0x00000000    # 0f
-    const v7, 0x00000000    # 0f
+
+    const v6, 0x0
+
+    const v7, 0x0
+
     const v8, 0x3ee66666    # 0.45f
+
     invoke-virtual/range {v5 .. v9}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
-    const v6, 0x00000000    # 0f
-    const v7, 0xbf733333    # -0.95f
-    const v8, 0x00000000    # 0f
-    const v9, 0xbf19999a    # -0.6f
+
+    const v6, 0x0
+
+    const v7, -0x408ccccd    # -0.95f
+
+    const v8, 0x0
+
+    const v9, -0x40e66666    # -0.6f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    const v6, 0x00000000    # 0f
+
+    const v6, 0x0
+
     const v7, 0x3f19999a    # 0.6f
-    const v8, 0x00000000    # 0f
+
+    const v8, 0x0
+
     const v9, 0x3f733333    # 0.95f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    const v6, 0xbf733333    # -0.95f
-    const v7, 0x00000000    # 0f
-    const v8, 0xbf19999a    # -0.6f
-    const v9, 0x00000000    # 0f
+
+    const v6, -0x408ccccd    # -0.95f
+
+    const v7, 0x0
+
+    const v8, -0x40e66666    # -0.6f
+
+    const v9, 0x0
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
     const v6, 0x3f19999a    # 0.6f
-    const v7, 0x00000000    # 0f
+
+    const v7, 0x0
+
     const v8, 0x3f733333    # 0.95f
-    const v9, 0x00000000    # 0f
+
+    const v9, 0x0
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    goto :arqex_icon_fim
-    :arqex_icon_11
+
+    goto :goto_0
+
+    :pswitch_a
     move-object v5, p1
+
     invoke-direct {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
+
     move-result-object v10
-    const v6, 0xbf333333    # -0.7f
-    const v7, 0xbf666666    # -0.9f
-    const v8, 0xbdcccccd    # -0.1f
-    const v9, 0xbf666666    # -0.9f
+
+    const v6, -0x40cccccd    # -0.7f
+
+    const v7, -0x4099999a    # -0.9f
+
+    const v8, -0x42333333    # -0.1f
+
+    const v9, -0x4099999a    # -0.9f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    const v6, 0xbdcccccd    # -0.1f
-    const v7, 0xbf666666    # -0.9f
-    const v8, 0xbdcccccd    # -0.1f
+
+    const v6, -0x42333333    # -0.1f
+
+    const v7, -0x4099999a    # -0.9f
+
+    const v8, -0x42333333    # -0.1f
+
     const v9, 0x3f666666    # 0.9f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    const v6, 0xbdcccccd    # -0.1f
+
+    const v6, -0x42333333    # -0.1f
+
     const v7, 0x3f666666    # 0.9f
-    const v8, 0xbf333333    # -0.7f
+
+    const v8, -0x40cccccd    # -0.7f
+
     const v9, 0x3f666666    # 0.9f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    const v6, 0xbf333333    # -0.7f
+
+    const v6, -0x40cccccd    # -0.7f
+
     const v7, 0x3f666666    # 0.9f
-    const v8, 0xbf333333    # -0.7f
-    const v9, 0xbf666666    # -0.9f
+
+    const v8, -0x40cccccd    # -0.7f
+
+    const v9, -0x4099999a    # -0.9f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    const v6, 0xbd4ccccd    # -0.05f
-    const v7, 0x00000000    # 0f
+
+    const v6, -0x42b33333    # -0.05f
+
+    const v7, 0x0
+
     const v8, 0x3f59999a    # 0.85f
-    const v9, 0x00000000    # 0f
+
+    const v9, 0x0
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
     const v6, 0x3f000000    # 0.5f
-    const v7, 0xbecccccd    # -0.4f
+
+    const v7, -0x41333333    # -0.4f
+
     const v8, 0x3f59999a    # 0.85f
-    const v9, 0x00000000    # 0f
+
+    const v9, 0x0
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
     const v6, 0x3f59999a    # 0.85f
-    const v7, 0x00000000    # 0f
+
+    const v7, 0x0
+
     const v8, 0x3f000000    # 0.5f
+
     const v9, 0x3ecccccd    # 0.4f
+
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    goto :arqex_icon_fim
-    :arqex_icon_fim
+
+    goto :goto_0
+
+    :cond_0
+    :goto_0
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
 
-    :arqex_psw
+    :pswitch_data_0
     .packed-switch 0x1
-        :arqex_icon_1
-        :arqex_icon_2
-        :arqex_icon_3
-        :arqex_icon_4
-        :arqex_icon_5
-        :arqex_icon_6
-        :arqex_icon_7
-        :arqex_icon_8
-        :arqex_icon_9
-        :arqex_icon_10
-        :arqex_icon_11
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+        :pswitch_3
+        :pswitch_4
+        :pswitch_5
+        :pswitch_6
+        :pswitch_7
+        :pswitch_8
+        :pswitch_9
+        :pswitch_a
     .end packed-switch
 .end method
+
 .method public getIntrinsicHeight()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Llibs/ArqexMenuIcon;->sizePx:I
 
     return v0
 .end method
+
 .method public getIntrinsicWidth()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Llibs/ArqexMenuIcon;->sizePx:I
 
     return v0
 .end method
+
 .method public getOpacity()I
-    .registers 2
+    .locals 1
 
     const/4 v0, -0x3
 
     return v0
 .end method
+
 .method public setAlpha(I)V
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Llibs/ArqexMenuIcon;->pincel:Landroid/graphics/Paint;
 
@@ -750,8 +1100,9 @@
 
     return-void
 .end method
+
 .method public setColorFilter(Landroid/graphics/ColorFilter;)V
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Llibs/ArqexMenuIcon;->pincel:Landroid/graphics/Paint;
 

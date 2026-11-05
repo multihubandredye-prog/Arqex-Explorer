@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/widgets/MiViewPager;Llibs/v1;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/ot3;->b:Lcom/mixplorer/widgets/MiViewPager;
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public final onApplyWindowInsets(Landroid/view/View;Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-static {p1, p2}, Llibs/ev3;->c(Landroid/view/View;Landroid/view/WindowInsets;)Llibs/ev3;
@@ -68,7 +68,7 @@
 
     .line 10
     .line 11
-    if-ge v1, v2, :cond_24
+    if-ge v1, v2, :cond_0
 
     .line 12
     .line 13
@@ -93,7 +93,7 @@
     move-result p2
 
     .line 24
-    if-eqz p2, :cond_24
+    if-eqz p2, :cond_0
 
     .line 25
     .line 26
@@ -120,7 +120,7 @@
     return-object p1
 
     .line 37
-    :cond_24
+    :cond_0
     iput-object v0, p0, Llibs/ot3;->a:Llibs/ev3;
 
     .line 38
@@ -145,7 +145,7 @@
     move-result v0
 
     .line 49
-    if-lt v0, v2, :cond_37
+    if-lt v0, v2, :cond_1
 
     .line 50
     .line 51
@@ -160,7 +160,7 @@
     return-object p1
 
     .line 56
-    :cond_37
+    :cond_1
     invoke-static {p1}, Llibs/ut3;->l(Landroid/view/View;)V
 
     .line 57

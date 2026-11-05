@@ -15,7 +15,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     :try_start_0
@@ -102,15 +102,15 @@
     .line 42
     .line 43
     sput-boolean v1, Llibs/su3;->d:Z
-    :try_end_2c
-    .catch Ljava/lang/ReflectiveOperationException; {:try_start_0 .. :try_end_2c} :catch_2d
+    :try_end_0
+    .catch Ljava/lang/ReflectiveOperationException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 44
     .line 45
     return-void
 
     .line 46
-    :catch_2d
+    :catch_0
     move-exception v0
 
     .line 47

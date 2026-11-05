@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/d7;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Llibs/uy1;-><init>(Llibs/uy1;I)V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 7
+    .locals 6
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -84,7 +84,7 @@
     move-result v2
 
     .line 33
-    if-nez v2, :cond_25
+    if-nez v2, :cond_0
 
     .line 34
     .line 35
@@ -92,10 +92,10 @@
 
     .line 36
     .line 37
-    goto :goto_3e
+    goto :goto_1
 
     .line 38
-    :cond_25
+    :cond_0
     new-array v3, v2, [C
 
     .line 39
@@ -111,8 +111,8 @@
     move-result v4
 
     .line 45
-    :goto_2c
-    if-ge v1, v2, :cond_39
+    :goto_0
+    if-ge v1, v2, :cond_1
 
     .line 46
     .line 47
@@ -136,10 +136,10 @@
 
     .line 56
     .line 57
-    goto :goto_2c
+    goto :goto_0
 
     .line 58
-    :cond_39
+    :cond_1
     new-instance v1, Ljava/lang/String;
 
     .line 59
@@ -149,7 +149,7 @@
     .line 61
     .line 62
     .line 63
-    :goto_3e
+    :goto_1
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 64
@@ -167,7 +167,7 @@
     move-result v2
 
     .line 72
-    if-nez v2, :cond_4f
+    if-nez v2, :cond_2
 
     .line 73
     .line 74
@@ -180,10 +180,10 @@
     .line 77
     .line 78
     .line 79
-    goto :goto_69
+    goto :goto_2
 
     .line 80
-    :cond_4f
+    :cond_2
     const-string v2, ",ref="
 
     .line 81
@@ -232,7 +232,7 @@
     .line 104
     .line 105
     .line 106
-    :goto_69
+    :goto_2
     const-string v1, ",id="
 
     .line 107

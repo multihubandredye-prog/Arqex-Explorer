@@ -96,7 +96,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Llibs/bv;Llibs/Init;)V
-    .registers 9
+    .locals 5
 
     .line 1
     invoke-direct {p0, p1}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
@@ -446,7 +446,7 @@
 .end method
 
 .method public static d(Lcom/mixplorer/activities/CodeEditorActivity;ILlibs/cv;Llibs/xv1;)Llibs/gd3;
-    .registers 21
+    .locals 17
 
     .line 1
     move-object/from16 v0, p2
@@ -480,7 +480,7 @@
     const/4 v2, 0x0
 
     .line 16
-    :try_start_f
+    :try_start_0
     iget-object v3, v0, Llibs/cv;->Tau:Llibs/rp0;
 
     .line 17
@@ -495,11 +495,11 @@
     .line 22
     .line 23
     move-result-object v3
-    :try_end_17
-    .catchall {:try_start_f .. :try_end_17} :catchall_fa
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_3
 
     .line 24
-    :try_start_17
+    :try_start_1
     iget-object v5, v0, Llibs/cv;->Tau:Llibs/rp0;
 
     .line 25
@@ -527,7 +527,7 @@
     const/4 v9, 0x1
 
     .line 37
-    if-eqz v5, :cond_60
+    if-eqz v5, :cond_1
 
     .line 38
     .line 39
@@ -540,7 +540,7 @@
 
     .line 43
     .line 44
-    if-gez v5, :cond_60
+    if-gez v5, :cond_1
 
     .line 45
     .line 46
@@ -561,8 +561,8 @@
 
     .line 54
     invoke-direct {v5, v3, v10}, Llibs/fp1;-><init>(Ljava/io/InputStream;I)V
-    :try_end_38
-    .catchall {:try_start_17 .. :try_end_38} :catchall_5d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 55
     .line 56
@@ -570,7 +570,7 @@
     long-to-int v3, v7
 
     .line 58
-    :try_start_39
+    :try_start_2
     invoke-static {v5, v3}, Llibs/xg0;->Task(Ljava/io/InputStream;I)Z
 
     .line 59
@@ -579,7 +579,7 @@
     move-result v3
 
     .line 62
-    if-eqz v3, :cond_5b
+    if-eqz v3, :cond_0
 
     .line 63
     .line 64
@@ -624,44 +624,44 @@
 
     .line 84
     invoke-direct {v3, v6}, Llibs/dl;-><init>([B)V
-    :try_end_56
-    .catchall {:try_start_39 .. :try_end_56} :catchall_57
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 85
     .line 86
     .line 87
-    goto :goto_a5
+    goto :goto_1
 
     .line 88
-    :catchall_57
+    :catchall_0
     move-exception v0
 
     .line 89
     move-object v3, v5
 
     .line 90
-    goto/16 :goto_fc
+    goto/16 :goto_6
 
     .line 91
     .line 92
-    :cond_5b
+    :cond_0
     move-object v3, v5
 
     .line 93
-    goto :goto_60
+    goto :goto_0
 
     .line 94
-    :catchall_5d
+    :catchall_1
     move-exception v0
 
     .line 95
-    goto/16 :goto_fc
+    goto/16 :goto_6
 
     .line 96
     .line 97
-    :cond_60
-    :goto_60
-    :try_start_60
+    :cond_1
+    :goto_0
+    :try_start_3
     const-string v5, "docx"
 
     .line 98
@@ -674,7 +674,7 @@
     move-result v5
 
     .line 103
-    if-eqz v5, :cond_6f
+    if-eqz v5, :cond_2
 
     .line 104
     .line 105
@@ -690,10 +690,10 @@
     move-result-object v3
 
     .line 111
-    goto :goto_a5
+    goto :goto_1
 
     .line 112
-    :cond_6f
+    :cond_2
     const-string v5, "gpg"
 
     .line 113
@@ -706,7 +706,7 @@
     move-result v5
 
     .line 118
-    if-eqz v5, :cond_a5
+    if-eqz v5, :cond_4
 
     .line 119
     .line 120
@@ -769,7 +769,7 @@
     move-result-object v5
 
     .line 149
-    if-eqz v5, :cond_9f
+    if-eqz v5, :cond_3
 
     .line 150
     .line 151
@@ -789,10 +789,10 @@
     move-result-object v3
 
     .line 159
-    goto :goto_a5
+    goto :goto_1
 
     .line 160
-    :cond_9f
+    :cond_3
     new-instance v0, Ljava/io/IOException;
 
     .line 161
@@ -805,9 +805,9 @@
     throw v0
 
     .line 166
-    :cond_a5
-    :goto_a5
-    if-eqz v3, :cond_f4
+    :cond_4
+    :goto_1
+    if-eqz v3, :cond_a
 
     .line 167
     .line 168
@@ -833,22 +833,22 @@
     .line 178
     .line 179
     invoke-direct {v5, v6, v7}, Llibs/bk;-><init>(Ljava/io/Reader;I)V
-    :try_end_b5
-    .catchall {:try_start_60 .. :try_end_b5} :catchall_5d
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 180
     .line 181
     .line 182
-    :try_start_b5
+    :try_start_4
     iput v9, v0, Llibs/cv;->Kilo:I
 
     .line 183
     .line 184
-    :goto_b7
+    :goto_2
     const/4 v2, 0x0
 
     .line 185
-    :goto_b8
+    :goto_3
     invoke-virtual {v5}, Llibs/bk;->read()I
 
     .line 186
@@ -857,7 +857,7 @@
     move-result v6
 
     .line 189
-    if-ltz v6, :cond_ed
+    if-ltz v6, :cond_9
 
     .line 190
     .line 191
@@ -869,7 +869,7 @@
     move-result v7
 
     .line 195
-    if-nez v7, :cond_e7
+    if-nez v7, :cond_8
 
     .line 196
     .line 197
@@ -884,7 +884,7 @@
 
     .line 201
     .line 202
-    if-ne v6, v7, :cond_da
+    if-ne v6, v7, :cond_6
 
     .line 203
     .line 204
@@ -892,7 +892,7 @@
 
     .line 205
     .line 206
-    if-eq v2, v8, :cond_d6
+    if-eq v2, v8, :cond_5
 
     .line 207
     .line 208
@@ -903,21 +903,21 @@
 
     .line 210
     .line 211
-    goto :goto_d6
+    goto :goto_4
 
     .line 212
-    :catchall_d3
+    :catchall_2
     move-exception v0
 
     .line 213
     move-object v2, v5
 
     .line 214
-    goto :goto_fc
+    goto :goto_6
 
     .line 215
-    :cond_d6
-    :goto_d6
+    :cond_5
+    :goto_4
     const/4 v2, 0x1
 
     .line 216
@@ -925,15 +925,15 @@
 
     .line 217
     .line 218
-    goto :goto_e2
+    goto :goto_5
 
     .line 219
-    :cond_da
-    if-ne v6, v10, :cond_e1
+    :cond_6
+    if-ne v6, v10, :cond_7
 
     .line 220
     .line 221
-    if-eqz v2, :cond_e1
+    if-eqz v2, :cond_7
 
     .line 222
     .line 223
@@ -941,14 +941,14 @@
 
     .line 224
     .line 225
-    goto :goto_b7
+    goto :goto_2
 
     .line 226
-    :cond_e1
+    :cond_7
     const/4 v2, 0x0
 
     .line 227
-    :goto_e2
+    :goto_5
     int-to-char v6, v6
 
     .line 228
@@ -957,10 +957,10 @@
     .line 229
     .line 230
     .line 231
-    goto :goto_b8
+    goto :goto_3
 
     .line 232
-    :cond_e7
+    :cond_8
     new-instance v0, Ljava/lang/InterruptedException;
 
     .line 233
@@ -971,11 +971,11 @@
     .line 236
     .line 237
     throw v0
-    :try_end_ed
-    .catchall {:try_start_b5 .. :try_end_ed} :catchall_d3
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
     .line 238
-    :cond_ed
+    :cond_9
     invoke-static {v5}, Llibs/ji0;->k(Ljava/io/Closeable;)V
 
     .line 239
@@ -989,8 +989,8 @@
     return-object v1
 
     .line 245
-    :cond_f4
-    :try_start_f4
+    :cond_a
+    :try_start_5
     new-instance v0, Ljava/io/IOException;
 
     .line 246
@@ -1001,18 +1001,18 @@
     .line 249
     .line 250
     throw v0
-    :try_end_fa
-    .catchall {:try_start_f4 .. :try_end_fa} :catchall_5d
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
     .line 251
-    :catchall_fa
+    :catchall_3
     move-exception v0
 
     .line 252
     move-object v3, v2
 
     .line 253
-    :goto_fc
+    :goto_6
     invoke-static {v2}, Llibs/ji0;->k(Ljava/io/Closeable;)V
 
     .line 254
@@ -1023,19 +1023,19 @@
     .line 257
     .line 258
     .line 259
-    goto :goto_104
+    goto :goto_8
 
     .line 260
-    :goto_103
+    :goto_7
     throw v0
 
     .line 261
-    :goto_104
-    goto :goto_103
+    :goto_8
+    goto :goto_7
 .end method
 
 .method public static getLineBreakValues()[Ljava/lang/String;
-    .registers 6
+    .locals 6
 
     .line 1
     sget v0, Llibs/bi2;->auto:I
@@ -1125,7 +1125,7 @@
 .end method
 
 .method private getScreenY()F
-    .registers 3
+    .locals 2
 
     .line 1
     const/4 v0, 0x2
@@ -1154,7 +1154,7 @@
 .end method
 
 .method private getTextHash()I
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/cv;->getText()Llibs/fd3;
@@ -1165,7 +1165,7 @@
     move-result-object v0
 
     .line 5
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -1175,7 +1175,7 @@
     return v0
 
     .line 9
-    :cond_8
+    :cond_0
     invoke-virtual {p0}, Llibs/cv;->getText()Llibs/fd3;
 
     .line 10
@@ -1196,10 +1196,10 @@
 .end method
 
 .method private setLayout(Llibs/fd3;)V
-    .registers 6
+    .locals 4
 
     .line 1
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_0
 
     .line 2
     .line 3
@@ -1232,14 +1232,14 @@
 
     .line 17
     .line 18
-    :cond_11
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final a(Llibs/gd3;Ljava/lang/String;JLlibs/xv1;)Llibs/fd3;
-    .registers 10
+    .locals 4
 
     .line 1
     new-instance v0, Llibs/fd3;
@@ -1287,7 +1287,7 @@
 
     .line 23
     .line 24
-    if-eqz p1, :cond_21
+    if-eqz p1, :cond_0
 
     .line 25
     .line 26
@@ -1309,7 +1309,7 @@
 
     .line 33
     .line 34
-    :cond_21
+    :cond_0
     const-wide/32 v2, 0x40000000
 
     .line 35
@@ -1319,7 +1319,7 @@
 
     .line 38
     .line 39
-    if-eqz p1, :cond_38
+    if-eqz p1, :cond_2
 
     .line 40
     .line 41
@@ -1335,14 +1335,14 @@
     move-result p1
 
     .line 47
-    if-eqz p1, :cond_31
+    if-eqz p1, :cond_1
 
     .line 48
     .line 49
-    goto :goto_35
+    goto :goto_0
 
     .line 50
-    :cond_31
+    :cond_1
     iget-object p1, p0, Llibs/cv;->Lima:Llibs/bv;
 
     .line 51
@@ -1351,13 +1351,13 @@
 
     .line 53
     .line 54
-    :goto_35
+    :goto_0
     invoke-virtual {v0, p2, p5}, Llibs/fd3;->x(Ljava/lang/String;Llibs/xv1;)V
 
     .line 55
     .line 56
     .line 57
-    :cond_38
+    :cond_2
     invoke-direct {p0, v0}, Llibs/cv;->setLayout(Llibs/fd3;)V
 
     .line 58
@@ -1367,7 +1367,7 @@
 .end method
 
 .method public final b()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/cv;->Three:Llibs/oi1;
@@ -1382,7 +1382,7 @@
     move-result v1
 
     .line 7
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
@@ -1416,12 +1416,12 @@
     .line 23
     .line 24
     .line 25
-    :cond_18
+    :cond_0
     return-void
 .end method
 
 .method public final c(F)I
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->getPaddingTop()I
@@ -1516,7 +1516,7 @@
 .end method
 
 .method public final compareTo(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
 
     .line 1
     check-cast p1, Llibs/cv;
@@ -1546,7 +1546,7 @@
 .end method
 
 .method public final dispatchDraw(Landroid/graphics/Canvas;)V
-    .registers 23
+    .locals 21
 
     .line 1
     move-object/from16 v0, p0
@@ -1561,7 +1561,7 @@
     move-result-object v1
 
     .line 7
-    if-eqz v1, :cond_25d
+    if-eqz v1, :cond_13
 
     .line 8
     .line 9
@@ -1573,15 +1573,15 @@
 
     .line 12
     .line 13
-    if-eqz v2, :cond_10
+    if-eqz v2, :cond_0
 
     .line 14
     .line 15
-    goto/16 :goto_25d
+    goto/16 :goto_a
 
     .line 16
     .line 17
-    :cond_10
+    :cond_0
     iget-object v2, v0, Llibs/cv;->Lima:Llibs/bv;
 
     .line 18
@@ -1590,7 +1590,7 @@
 
     .line 20
     .line 21
-    if-eqz v2, :cond_36
+    if-eqz v2, :cond_1
 
     .line 22
     .line 23
@@ -1662,7 +1662,7 @@
     .line 53
     .line 54
     .line 55
-    :cond_36
+    :cond_1
     iget-object v1, v0, Llibs/cv;->Four:Llibs/rl3;
 
     .line 56
@@ -1687,7 +1687,7 @@
 
     .line 66
     .line 67
-    if-lez v1, :cond_66
+    if-lez v1, :cond_2
 
     .line 68
     .line 69
@@ -1703,7 +1703,7 @@
 
     .line 74
     .line 75
-    if-ltz v2, :cond_66
+    if-ltz v2, :cond_2
 
     .line 76
     .line 77
@@ -1761,7 +1761,7 @@
     .line 101
     .line 102
     .line 103
-    :cond_66
+    :cond_2
     iget-object v1, v0, Llibs/cv;->Lima:Llibs/bv;
 
     .line 104
@@ -1791,7 +1791,7 @@
 
     .line 117
     .line 118
-    if-eqz v1, :cond_8a
+    if-eqz v1, :cond_4
 
     .line 119
     .line 120
@@ -1799,14 +1799,14 @@
 
     .line 121
     .line 122
-    if-eqz v1, :cond_7c
+    if-eqz v1, :cond_3
 
     .line 123
     .line 124
-    goto :goto_8a
+    goto :goto_0
 
     .line 125
-    :cond_7c
+    :cond_3
     invoke-virtual {v0}, Llibs/cv;->getSelectionStart()I
 
     .line 126
@@ -1823,29 +1823,29 @@
     move-result v2
 
     .line 133
-    if-eq v1, v2, :cond_8a
+    if-eq v1, v2, :cond_4
 
     .line 134
     .line 135
-    if-ltz v1, :cond_8a
+    if-ltz v1, :cond_4
 
     .line 136
     .line 137
-    if-gez v2, :cond_8e
+    if-gez v2, :cond_5
 
     .line 138
     .line 139
-    :cond_8a
-    :goto_8a
+    :cond_4
+    :goto_0
     move-object/from16 v1, p1
 
     .line 140
     .line 141
-    goto/16 :goto_166
+    goto/16 :goto_6
 
     .line 142
     .line 143
-    :cond_8e
+    :cond_5
     invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
 
     .line 144
@@ -1886,7 +1886,7 @@
     move-result v1
 
     .line 163
-    if-le v1, v15, :cond_ae
+    if-le v1, v15, :cond_6
 
     .line 164
     .line 165
@@ -1902,7 +1902,7 @@
     move-result v2
 
     .line 171
-    if-ne v2, v14, :cond_ae
+    if-ne v2, v14, :cond_6
 
     .line 172
     .line 173
@@ -1910,7 +1910,7 @@
 
     .line 174
     .line 175
-    :cond_ae
+    :cond_6
     iget-object v2, v0, Llibs/cv;->Four:Llibs/rl3;
 
     .line 176
@@ -1960,8 +1960,8 @@
     move v8, v15
 
     .line 198
-    :goto_c5
-    if-gt v8, v1, :cond_8a
+    :goto_1
+    if-gt v8, v1, :cond_4
 
     .line 199
     .line 200
@@ -1993,23 +1993,23 @@
 
     .line 213
     .line 214
-    if-nez v4, :cond_d9
+    if-nez v4, :cond_8
 
     .line 215
     .line 216
-    :cond_d7
+    :cond_7
     const/4 v2, 0x0
 
     .line 217
-    goto :goto_ee
+    goto :goto_2
 
     .line 218
-    :cond_d9
+    :cond_8
     iget-boolean v2, v2, Llibs/rl3;->a:Z
 
     .line 219
     .line 220
-    if-eqz v2, :cond_e8
+    if-eqz v2, :cond_9
 
     .line 221
     .line 222
@@ -2017,7 +2017,7 @@
 
     .line 223
     .line 224
-    if-eqz v2, :cond_d7
+    if-eqz v2, :cond_7
 
     .line 225
     .line 226
@@ -2033,10 +2033,10 @@
     move-result v2
 
     .line 232
-    goto :goto_ee
+    goto :goto_2
 
     .line 233
-    :cond_e8
+    :cond_9
     add-int/lit8 v2, v8, 0x1
 
     .line 234
@@ -2049,7 +2049,7 @@
     move-result v2
 
     .line 239
-    :goto_ee
+    :goto_2
     invoke-static {v13, v12}, Ljava/lang/Math;->max(II)I
 
     .line 240
@@ -2066,7 +2066,7 @@
     move-result v2
 
     .line 247
-    if-ge v4, v2, :cond_152
+    if-ge v4, v2, :cond_d
 
     .line 248
     .line 249
@@ -2119,25 +2119,25 @@
     .line 272
     .line 273
     .line 274
-    if-le v8, v15, :cond_118
+    if-le v8, v15, :cond_a
 
     .line 275
     .line 276
-    if-ge v8, v1, :cond_118
+    if-ge v8, v1, :cond_a
 
     .line 277
     .line 278
     move v12, v3
 
     .line 279
-    :goto_116
+    :goto_3
     move v4, v5
 
     .line 280
-    goto :goto_12c
+    goto :goto_4
 
     .line 281
-    :cond_118
+    :cond_a
     add-float v4, v3, v18
 
     .line 282
@@ -2162,31 +2162,31 @@
     sub-float/2addr v4, v2
 
     .line 291
-    if-ne v8, v15, :cond_127
+    if-ne v8, v15, :cond_b
 
     .line 292
     .line 293
-    if-ge v8, v1, :cond_127
+    if-ge v8, v1, :cond_b
 
     .line 294
     .line 295
-    goto :goto_116
+    goto :goto_3
 
     .line 296
-    :cond_127
-    if-ne v8, v1, :cond_12c
+    :cond_b
+    if-ne v8, v1, :cond_c
 
     .line 297
     .line 298
-    if-le v8, v15, :cond_12c
+    if-le v8, v15, :cond_c
 
     .line 299
     .line 300
     move v12, v3
 
     .line 301
-    :cond_12c
-    :goto_12c
+    :cond_c
+    :goto_4
     invoke-static {v3, v12}, Ljava/lang/Math;->max(FF)F
 
     .line 302
@@ -2207,7 +2207,7 @@
 
     .line 310
     .line 311
-    if-gez v12, :cond_152
+    if-gez v12, :cond_d
 
     .line 312
     .line 313
@@ -2262,10 +2262,10 @@
     .line 336
     .line 337
     .line 338
-    goto :goto_159
+    goto :goto_5
 
     .line 339
-    :cond_152
+    :cond_d
     move v12, v1
 
     .line 340
@@ -2281,7 +2281,7 @@
 
     .line 345
     .line 346
-    :goto_159
+    :goto_5
     add-int/lit8 v8, v8, 0x1
 
     .line 347
@@ -2305,12 +2305,12 @@
 
     .line 356
     .line 357
-    goto/16 :goto_c5
+    goto/16 :goto_1
 
     .line 358
     .line 359
-    :goto_166
-    :try_start_166
+    :goto_6
+    :try_start_0
     iget-object v2, v0, Llibs/cv;->Lima:Llibs/bv;
 
     .line 360
@@ -2319,7 +2319,7 @@
 
     .line 362
     .line 363
-    if-eqz v2, :cond_19a
+    if-eqz v2, :cond_e
 
     .line 364
     .line 365
@@ -2413,21 +2413,21 @@
 
     .line 406
     invoke-virtual {v2, v1, v3, v4}, Llibs/rl3;->z(Landroid/graphics/Canvas;IF)V
-    :try_end_198
-    .catchall {:try_start_166 .. :try_end_198} :catchall_199
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 407
     .line 408
     .line 409
-    goto :goto_19a
+    goto :goto_7
 
     .line 410
-    :catchall_199
+    :catchall_0
     nop
 
     .line 411
-    :cond_19a
-    :goto_19a
+    :cond_e
+    :goto_7
     invoke-super/range {p0 .. p1}, Landroid/widget/ScrollView;->dispatchDraw(Landroid/graphics/Canvas;)V
 
     .line 412
@@ -2457,7 +2457,7 @@
 
     .line 425
     .line 426
-    if-nez v6, :cond_1b0
+    if-nez v6, :cond_f
 
     .line 427
     .line 428
@@ -2469,10 +2469,10 @@
     .line 430
     .line 431
     .line 432
-    goto :goto_1e2
+    goto :goto_8
 
     .line 433
-    :cond_1b0
+    :cond_f
     invoke-virtual {v4}, Landroid/view/View;->getWidth()I
 
     .line 434
@@ -2575,7 +2575,7 @@
     .line 481
     .line 482
     .line 483
-    :goto_1e2
+    :goto_8
     iget v2, v0, Llibs/cv;->Golf:I
 
     .line 484
@@ -2587,14 +2587,14 @@
 
     .line 487
     .line 488
-    if-eq v2, v3, :cond_1f1
+    if-eq v2, v3, :cond_10
 
     .line 489
     .line 490
     const/4 v3, 0x2
 
     .line 491
-    if-eq v2, v3, :cond_1f1
+    if-eq v2, v3, :cond_10
 
     .line 492
     .line 493
@@ -2606,10 +2606,10 @@
     .line 495
     .line 496
     .line 497
-    goto :goto_25d
+    goto :goto_a
 
     .line 498
-    :cond_1f1
+    :cond_10
     invoke-virtual {v9}, Landroid/view/View;->getHeight()I
 
     .line 499
@@ -2626,17 +2626,17 @@
     move-result v3
 
     .line 506
-    if-gt v2, v3, :cond_1fd
+    if-gt v2, v3, :cond_11
 
     .line 507
     .line 508
     const/4 v8, 0x0
 
     .line 509
-    goto :goto_20e
+    goto :goto_9
 
     .line 510
-    :cond_1fd
+    :cond_11
     invoke-virtual {v0}, Landroid/view/View;->getScrollY()I
 
     .line 511
@@ -2674,7 +2674,7 @@
 
     .line 526
     .line 527
-    :goto_20e
+    :goto_9
     invoke-virtual {v0}, Landroid/view/View;->getHeight()I
 
     .line 528
@@ -2752,7 +2752,7 @@
     add-int/2addr v7, v6
 
     .line 562
-    if-le v5, v7, :cond_242
+    if-le v5, v7, :cond_12
 
     .line 563
     .line 564
@@ -2787,7 +2787,7 @@
 
     .line 578
     .line 579
-    :cond_242
+    :cond_12
     invoke-virtual {v0}, Landroid/view/View;->getWidth()I
 
     .line 580
@@ -2841,13 +2841,13 @@
     .line 604
     .line 605
     .line 606
-    :cond_25d
-    :goto_25d
+    :cond_13
+    :goto_a
     return-void
 .end method
 
 .method public final e()Z
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/cv;->Three:Llibs/oi1;
@@ -2888,7 +2888,7 @@
 
     .line 18
     .line 19
-    if-ne v0, v1, :cond_1e
+    if-ne v0, v1, :cond_1
 
     .line 20
     .line 21
@@ -2904,31 +2904,31 @@
 
     .line 26
     .line 27
-    if-eq v0, v1, :cond_1d
+    if-eq v0, v1, :cond_0
 
     .line 28
     .line 29
-    goto :goto_1e
+    goto :goto_0
 
     .line 30
-    :cond_1d
+    :cond_0
     return v4
 
     .line 31
-    :cond_1e
-    :goto_1e
+    :cond_1
+    :goto_0
     return v2
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Llibs/cv;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -2952,7 +2952,7 @@
     move-result v0
 
     .line 15
-    if-ne p1, v0, :cond_12
+    if-ne p1, v0, :cond_0
 
     .line 16
     .line 17
@@ -2962,7 +2962,7 @@
     return p1
 
     .line 19
-    :cond_12
+    :cond_0
     const/4 p1, 0x0
 
     .line 20
@@ -2970,14 +2970,14 @@
 .end method
 
 .method public final f()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/cv;->Four:Llibs/rl3;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -3002,12 +3002,12 @@
     .line 14
     .line 15
     .line 16
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method public final g(II)V
-    .registers 11
+    .locals 8
 
     .line 1
     iget-object v0, p0, Llibs/cv;->Three:Llibs/oi1;
@@ -3026,22 +3026,22 @@
     const/4 v2, 0x1
 
     .line 9
-    if-ltz p1, :cond_82
+    if-ltz p1, :cond_3
 
     .line 10
     .line 11
-    if-ltz p2, :cond_82
+    if-ltz p2, :cond_3
 
     .line 12
     .line 13
-    if-ne p1, p2, :cond_f
+    if-ne p1, p2, :cond_0
 
     .line 14
     .line 15
-    goto :goto_82
+    goto :goto_2
 
     .line 16
-    :cond_f
+    :cond_0
     invoke-virtual {p0}, Llibs/cv;->getText()Llibs/fd3;
 
     .line 17
@@ -3149,7 +3149,7 @@
 
     .line 64
     .line 65
-    if-gtz p2, :cond_4f
+    if-gtz p2, :cond_2
 
     .line 66
     .line 67
@@ -3157,7 +3157,7 @@
 
     .line 68
     .line 69
-    if-nez p2, :cond_4b
+    if-nez p2, :cond_1
 
     .line 70
     .line 71
@@ -3165,30 +3165,30 @@
 
     .line 72
     .line 73
-    if-lez p2, :cond_4b
+    if-lez p2, :cond_1
 
     .line 74
     .line 75
-    goto :goto_4f
+    goto :goto_0
 
     .line 76
-    :cond_4b
+    :cond_1
     invoke-virtual {v1, v3, v5, p1, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
     .line 77
     .line 78
     .line 79
-    goto :goto_52
+    goto :goto_1
 
     .line 80
-    :cond_4f
-    :goto_4f
+    :cond_2
+    :goto_0
     invoke-virtual {v1, p1, v4, v3, v5}, Landroid/graphics/RectF;->set(FFFF)V
 
     .line 81
     .line 82
     .line 83
-    :goto_52
+    :goto_1
     new-instance p2, Landroid/graphics/Rect;
 
     .line 84
@@ -3290,11 +3290,11 @@
     .line 128
     .line 129
     .line 130
-    goto :goto_90
+    goto :goto_3
 
     .line 131
-    :cond_82
-    :goto_82
+    :cond_3
+    :goto_2
     const/high16 v3, -0x40800000    # -1.0f
 
     .line 132
@@ -3304,7 +3304,7 @@
     .line 134
     .line 135
     .line 136
-    if-ne p1, p2, :cond_90
+    if-ne p1, p2, :cond_4
 
     .line 137
     .line 138
@@ -3321,8 +3321,8 @@
     .line 143
     .line 144
     .line 145
-    :cond_90
-    :goto_90
+    :cond_4
+    :goto_3
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
     .line 146
@@ -3337,7 +3337,7 @@
 .end method
 
 .method public getAccessibilityClassName()Ljava/lang/CharSequence;
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Llibs/cv;
@@ -3356,7 +3356,7 @@
 .end method
 
 .method public getCurrentLine()I
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/cv;->Four:Llibs/rl3;
@@ -3406,7 +3406,7 @@
 .end method
 
 .method public getHScrollX()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/cv;->Two:Llibs/nw0;
@@ -3425,7 +3425,7 @@
 .end method
 
 .method public getHighlightAs()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/cv;->Lima:Llibs/bv;
@@ -3440,7 +3440,7 @@
 .end method
 
 .method public getLayout()Llibs/rl3;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/cv;->Four:Llibs/rl3;
@@ -3451,7 +3451,7 @@
 .end method
 
 .method public getLineCount()I
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Llibs/cv;->getText()Llibs/fd3;
@@ -3465,7 +3465,7 @@
     const/4 v1, 0x0
 
     .line 6
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_1
 
     .line 7
     .line 8
@@ -3481,14 +3481,14 @@
 
     .line 13
     .line 14
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 15
     .line 16
     return v1
 
     .line 17
-    :cond_10
+    :cond_0
     invoke-virtual {v0}, Llibs/mk1;->d()I
 
     .line 18
@@ -3500,12 +3500,12 @@
     return v0
 
     .line 22
-    :cond_15
+    :cond_1
     return v1
 .end method
 
 .method public getProps()Llibs/bv;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/cv;->Lima:Llibs/bv;
@@ -3516,14 +3516,14 @@
 .end method
 
 .method public getRulerWidth()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/cv;->Two:Llibs/nw0;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -3534,7 +3534,7 @@
     return v0
 
     .line 8
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
     .line 9
@@ -3542,7 +3542,7 @@
 .end method
 
 .method public getSelectionEnd()I
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Llibs/cv;->getText()Llibs/fd3;
@@ -3553,7 +3553,7 @@
     move-result-object v0
 
     .line 5
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -3585,7 +3585,7 @@
     return v0
 
     .line 21
-    :cond_14
+    :cond_0
     const/4 v0, -0x1
 
     .line 22
@@ -3593,7 +3593,7 @@
 .end method
 
 .method public getSelectionStart()I
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Llibs/cv;->getText()Llibs/fd3;
@@ -3604,7 +3604,7 @@
     move-result-object v0
 
     .line 5
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -3636,7 +3636,7 @@
     return v0
 
     .line 21
-    :cond_14
+    :cond_0
     const/4 v0, -0x1
 
     .line 22
@@ -3644,14 +3644,14 @@
 .end method
 
 .method public getText()Llibs/fd3;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/cv;->Four:Llibs/rl3;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -3662,7 +3662,7 @@
     return-object v0
 
     .line 8
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
     .line 9
@@ -3670,7 +3670,7 @@
 .end method
 
 .method public getTextSize()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/cv;->Lima:Llibs/bv;
@@ -3685,7 +3685,7 @@
 .end method
 
 .method public getVisibleLineEnd()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/cv;->Four:Llibs/rl3;
@@ -3700,7 +3700,7 @@
 .end method
 
 .method public getVisibleLineStart()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/cv;->Four:Llibs/rl3;
@@ -3715,7 +3715,7 @@
 .end method
 
 .method public getWordIterator()Llibs/jv3;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/cv;->Five:Llibs/jv3;
@@ -3726,7 +3726,7 @@
 .end method
 
 .method public final h()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/cv;->Lima:Llibs/bv;
@@ -3740,7 +3740,7 @@
     const/4 v1, 0x0
 
     .line 6
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_2
 
     .line 7
     .line 8
@@ -3752,7 +3752,7 @@
 
     .line 11
     .line 12
-    if-eqz v2, :cond_36
+    if-eqz v2, :cond_1
 
     .line 13
     .line 14
@@ -3777,14 +3777,14 @@
 
     .line 24
     .line 25
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_0
 
     .line 26
     .line 27
-    goto :goto_1f
+    goto :goto_0
 
     .line 28
-    :cond_1b
+    :cond_0
     invoke-virtual {v0}, Llibs/mk1;->d()I
 
     .line 29
@@ -3793,7 +3793,7 @@
     move-result v1
 
     .line 32
-    :goto_1f
+    :goto_0
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 33
@@ -3839,7 +3839,7 @@
     move-result v1
 
     .line 55
-    :cond_36
+    :cond_1
     iget v0, p0, Llibs/cv;->Nine:I
 
     .line 56
@@ -3851,7 +3851,7 @@
     add-int/2addr v1, v0
 
     .line 60
-    :cond_3b
+    :cond_2
     iget-object v0, p0, Llibs/cv;->Two:Llibs/nw0;
 
     .line 61
@@ -3899,7 +3899,7 @@
 
     .line 82
     .line 83
-    if-ne v0, v1, :cond_5e
+    if-ne v0, v1, :cond_4
 
     .line 84
     .line 85
@@ -3915,19 +3915,19 @@
 
     .line 90
     .line 91
-    if-eq v0, v1, :cond_5d
+    if-eq v0, v1, :cond_3
 
     .line 92
     .line 93
-    goto :goto_5e
+    goto :goto_1
 
     .line 94
-    :cond_5d
+    :cond_3
     return-void
 
     .line 95
-    :cond_5e
-    :goto_5e
+    :cond_4
+    :goto_1
     iget v0, v2, Llibs/oi1;->Mu:I
 
     .line 96
@@ -3945,7 +3945,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->getId()I
@@ -3960,7 +3960,7 @@
 .end method
 
 .method public final i()I
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/cv;->getText()Llibs/fd3;
@@ -3971,7 +3971,7 @@
     move-result-object v0
 
     .line 5
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -3994,7 +3994,7 @@
     return v0
 
     .line 16
-    :cond_f
+    :cond_0
     const/4 v0, 0x0
 
     .line 17
@@ -4002,13 +4002,13 @@
 .end method
 
 .method public final j(IIZZZ)Z
-    .registers 20
+    .locals 14
 
     .line 1
     const/4 v13, 0x0
 
     .line 2
-    if-eqz p3, :cond_6
+    if-eqz p3, :cond_0
 
     .line 3
     .line 4
@@ -4016,15 +4016,15 @@
 
     .line 5
     .line 6
-    goto :goto_7
+    goto :goto_0
 
     .line 7
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
     .line 8
-    :goto_7
-    if-eqz p4, :cond_b
+    :goto_0
+    if-eqz p4, :cond_1
 
     .line 9
     .line 10
@@ -4032,8 +4032,8 @@
 
     .line 11
     .line 12
-    :cond_b
-    if-eqz p5, :cond_f
+    :cond_1
+    if-eqz p5, :cond_2
 
     .line 13
     .line 14
@@ -4041,7 +4041,7 @@
 
     .line 15
     .line 16
-    :cond_f
+    :cond_2
     move v8, v0
 
     .line 17
@@ -4070,7 +4070,7 @@
     move-result v0
 
     .line 30
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_3
 
     .line 31
     .line 32
@@ -4109,10 +4109,10 @@
     .line 45
     .line 46
     .line 47
-    goto :goto_39
+    goto :goto_1
 
     .line 48
-    :cond_2f
+    :cond_3
     new-instance v0, Landroid/view/KeyEvent;
 
     .line 49
@@ -4135,26 +4135,26 @@
     .line 56
     .line 57
     .line 58
-    :goto_39
+    :goto_1
     iget-object v1, p0, Llibs/cv;->Three:Llibs/oi1;
 
     .line 59
     .line 60
-    if-eqz v5, :cond_4b
+    if-eqz v5, :cond_5
 
     .line 61
     .line 62
     const/4 v0, 0x1
 
     .line 63
-    if-eq v5, v0, :cond_41
+    if-eq v5, v0, :cond_4
 
     .line 64
     .line 65
     return v13
 
     .line 66
-    :cond_41
+    :cond_4
     new-instance v0, Landroid/view/KeyEvent;
 
     .line 67
@@ -4175,7 +4175,7 @@
     return p1
 
     .line 76
-    :cond_4b
+    :cond_5
     invoke-virtual {v1, p1, v0}, Llibs/oi1;->onKeyDown(ILandroid/view/KeyEvent;)Z
 
     .line 77
@@ -4188,7 +4188,7 @@
 .end method
 
 .method public final k()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
@@ -4218,7 +4218,7 @@
 .end method
 
 .method public final l()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/cv;->Three:Llibs/oi1;
@@ -4291,7 +4291,7 @@
 
     .line 34
     .line 35
-    if-eqz v2, :cond_2e
+    if-eqz v2, :cond_0
 
     .line 36
     .line 37
@@ -4313,12 +4313,12 @@
 
     .line 46
     .line 47
-    :cond_2e
+    :cond_0
     return-void
 .end method
 
 .method public final m(Ljava/lang/String;)V
-    .registers 9
+    .locals 7
 
     .line 1
     invoke-virtual {p0}, Llibs/cv;->getText()Llibs/fd3;
@@ -4329,7 +4329,7 @@
     move-result-object v0
 
     .line 5
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_1
 
     .line 6
     .line 7
@@ -4341,7 +4341,7 @@
 
     .line 10
     .line 11
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_1
 
     .line 12
     .line 13
@@ -4356,7 +4356,7 @@
     monitor-enter v1
 
     .line 18
-    :try_start_11
+    :try_start_0
     sget-object v0, Landroid/text/Selection;->SELECTION_START:Ljava/lang/Object;
 
     .line 19
@@ -4382,7 +4382,7 @@
     const/4 v2, 0x0
 
     .line 31
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_0
 
     .line 32
     .line 33
@@ -4422,7 +4422,7 @@
 
     .line 50
     .line 51
-    :cond_32
+    :cond_0
     invoke-virtual {v1}, Llibs/gd3;->length()I
 
     .line 52
@@ -4446,8 +4446,8 @@
 
     .line 61
     invoke-virtual/range {v1 .. v6}, Llibs/fd3;->f(IILjava/lang/CharSequence;II)Llibs/gd3;
-    :try_end_3f
-    .catchall {:try_start_11 .. :try_end_3f} :catchall_41
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 62
     .line 63
@@ -4458,28 +4458,28 @@
     return-void
 
     .line 66
-    :catchall_41
+    :catchall_0
     move-exception v0
 
     .line 67
     move-object p1, v0
 
     .line 68
-    :try_start_43
+    :try_start_1
     monitor-exit v1
-    :try_end_44
-    .catchall {:try_start_43 .. :try_end_44} :catchall_41
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 69
     throw p1
 
     .line 70
-    :cond_45
+    :cond_1
     return-void
 .end method
 
 .method public final n(IILjava/lang/String;)V
-    .registers 11
+    .locals 7
 
     .line 1
     invoke-virtual {p0}, Llibs/cv;->getText()Llibs/fd3;
@@ -4490,7 +4490,7 @@
     move-result-object v0
 
     .line 5
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -4502,7 +4502,7 @@
 
     .line 10
     .line 11
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
@@ -4539,12 +4539,12 @@
     .line 26
     .line 27
     .line 28
-    :cond_1b
+    :cond_0
     return-void
 .end method
 
 .method public final onGenericMotionEvent(Landroid/view/MotionEvent;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/cv;->Three:Llibs/oi1;
@@ -4555,11 +4555,11 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
-    :try_start_6
+    :try_start_0
     invoke-virtual {p0}, Llibs/cv;->getText()Llibs/fd3;
 
     .line 8
@@ -4571,11 +4571,11 @@
     .line 12
     .line 13
     move-result v0
-    :try_end_d
-    .catch Ljava/lang/AbstractMethodError; {:try_start_6 .. :try_end_d} :catch_11
+    :try_end_0
+    .catch Ljava/lang/AbstractMethodError; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 14
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 15
     .line 16
@@ -4585,8 +4585,8 @@
     return p1
 
     .line 18
-    :catch_11
-    :cond_11
+    :catch_0
+    :cond_0
     invoke-super {p0, p1}, Landroid/widget/ScrollView;->onGenericMotionEvent(Landroid/view/MotionEvent;)Z
 
     .line 19
@@ -4599,7 +4599,7 @@
 .end method
 
 .method public final onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 14
+    .locals 12
 
     .line 1
     iget-object v0, p0, Llibs/cv;->Two:Llibs/nw0;
@@ -4626,7 +4626,7 @@
     const/4 v5, 0x1
 
     .line 11
-    :try_start_a
+    :try_start_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
 
     .line 12
@@ -4635,26 +4635,26 @@
     move-result v6
 
     .line 15
-    if-ne v6, v3, :cond_a7
+    if-ne v6, v3, :cond_5
 
     .line 16
     .line 17
-    if-eq v1, v3, :cond_3f
+    if-eq v1, v3, :cond_2
 
     .line 18
     .line 19
     const/4 v6, 0x5
 
     .line 20
-    if-eq v1, v6, :cond_17
+    if-eq v1, v6, :cond_0
 
     .line 21
     .line 22
-    goto/16 :goto_a7
+    goto/16 :goto_1
 
     .line 23
     .line 24
-    :cond_17
+    :cond_0
     iget-object v1, p0, Llibs/cv;->Lima:Llibs/bv;
 
     .line 25
@@ -4691,7 +4691,7 @@
 
     .line 41
     .line 42
-    if-eqz v1, :cond_bd
+    if-eqz v1, :cond_7
 
     .line 43
     .line 44
@@ -4707,7 +4707,7 @@
 
     .line 49
     .line 50
-    if-eqz v1, :cond_3a
+    if-eqz v1, :cond_1
 
     .line 51
     .line 52
@@ -4716,19 +4716,19 @@
     .line 53
     .line 54
     .line 55
-    goto :goto_3a
+    goto :goto_0
 
     .line 56
-    :catchall_37
+    :catchall_0
     nop
 
     .line 57
-    goto/16 :goto_be
+    goto/16 :goto_2
 
     .line 58
     .line 59
-    :cond_3a
-    :goto_3a
+    :cond_1
+    :goto_0
     iget-object v1, p0, Llibs/cv;->Four:Llibs/rl3;
 
     .line 60
@@ -4740,12 +4740,12 @@
     return v5
 
     .line 64
-    :cond_3f
+    :cond_2
     iget-boolean v6, p0, Llibs/cv;->Romeo:Z
 
     .line 65
     .line 66
-    if-eqz v6, :cond_a7
+    if-eqz v6, :cond_5
 
     .line 67
     .line 68
@@ -4764,7 +4764,7 @@
     sub-int/2addr v1, v6
 
     .line 75
-    if-eqz v1, :cond_bd
+    if-eqz v1, :cond_7
 
     .line 76
     .line 77
@@ -4798,8 +4798,8 @@
     .line 89
     .line 90
     move-result-wide v8
-    :try_end_5a
-    .catchall {:try_start_a .. :try_end_5a} :catchall_37
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 91
     invoke-static {v6, v7}, Ljava/lang/Double;->isNaN(D)Z
@@ -4818,7 +4818,7 @@
 
     .line 98
     .line 99
-    if-gt v1, v6, :cond_bd
+    if-gt v1, v6, :cond_7
 
     .line 100
     .line 101
@@ -4826,11 +4826,11 @@
 
     .line 102
     .line 103
-    if-lt v1, v6, :cond_bd
+    if-lt v1, v6, :cond_7
 
     .line 104
     .line 105
-    :try_start_68
+    :try_start_1
     iget-object v6, p0, Llibs/cv;->Lima:Llibs/bv;
 
     .line 106
@@ -4839,7 +4839,7 @@
 
     .line 108
     .line 109
-    if-eq v1, v7, :cond_bd
+    if-eq v1, v7, :cond_7
 
     .line 110
     .line 111
@@ -4851,7 +4851,7 @@
 
     .line 114
     .line 115
-    if-eqz v7, :cond_a3
+    if-eqz v7, :cond_4
 
     .line 116
     .line 117
@@ -4911,7 +4911,7 @@
     sub-int/2addr v1, v6
 
     .line 145
-    if-lez v1, :cond_99
+    if-lez v1, :cond_3
 
     .line 146
     .line 147
@@ -4928,7 +4928,7 @@
     .line 152
     .line 153
     .line 154
-    :cond_99
+    :cond_3
     invoke-virtual {p0}, Llibs/cv;->s()Z
 
     .line 155
@@ -4947,7 +4947,7 @@
     return v5
 
     .line 164
-    :cond_a3
+    :cond_4
     invoke-virtual {p0, v6}, Llibs/cv;->p(Llibs/bv;)V
 
     .line 165
@@ -4956,32 +4956,32 @@
     return v5
 
     .line 168
-    :cond_a7
-    :goto_a7
+    :cond_5
+    :goto_1
     iget-boolean v6, p0, Llibs/cv;->Romeo:Z
 
     .line 169
     .line 170
-    if-eqz v6, :cond_be
+    if-eqz v6, :cond_8
 
     .line 171
     .line 172
-    if-eq v1, v5, :cond_b2
+    if-eq v1, v5, :cond_6
 
     .line 173
     .line 174
-    if-eq v1, v2, :cond_b2
+    if-eq v1, v2, :cond_6
 
     .line 175
     .line 176
     const/4 v6, 0x6
 
     .line 177
-    if-ne v1, v6, :cond_be
+    if-ne v1, v6, :cond_8
 
     .line 178
     .line 179
-    :cond_b2
+    :cond_6
     iput-boolean v4, p0, Llibs/cv;->Romeo:Z
 
     .line 180
@@ -4994,23 +4994,23 @@
 
     .line 184
     .line 185
-    if-eqz v6, :cond_bd
+    if-eqz v6, :cond_7
 
     .line 186
     .line 187
     invoke-virtual {p0, v1}, Llibs/cv;->p(Llibs/bv;)V
-    :try_end_bd
-    .catchall {:try_start_68 .. :try_end_bd} :catchall_37
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 188
     .line 189
     .line 190
-    :cond_bd
+    :cond_7
     return v5
 
     .line 191
-    :cond_be
-    :goto_be
+    :cond_8
+    :goto_2
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     .line 192
@@ -5034,27 +5034,27 @@
 
     .line 201
     .line 202
-    if-eqz v1, :cond_1d1
+    if-eqz v1, :cond_17
 
     .line 203
     .line 204
-    if-eq v1, v5, :cond_13a
+    if-eq v1, v5, :cond_c
 
     .line 205
     .line 206
-    if-eq v1, v3, :cond_d3
+    if-eq v1, v3, :cond_9
 
     .line 207
     .line 208
-    if-eq v1, v2, :cond_1c7
+    if-eq v1, v2, :cond_16
 
     .line 209
     .line 210
-    goto/16 :goto_22b
+    goto/16 :goto_8
 
     .line 211
     .line 212
-    :cond_d3
+    :cond_9
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     .line 213
@@ -5137,7 +5137,7 @@
 
     .line 251
     .line 252
-    if-ne v0, v3, :cond_129
+    if-ne v0, v3, :cond_a
 
     .line 253
     .line 254
@@ -5235,12 +5235,12 @@
     return v4
 
     .line 298
-    :cond_129
+    :cond_a
     iget-boolean v0, v7, Llibs/fx0;->q:Z
 
     .line 299
     .line 300
-    if-nez v0, :cond_139
+    if-nez v0, :cond_b
 
     .line 301
     .line 302
@@ -5252,7 +5252,7 @@
 
     .line 305
     .line 306
-    if-eqz v1, :cond_139
+    if-eqz v1, :cond_b
 
     .line 307
     .line 308
@@ -5264,15 +5264,15 @@
 
     .line 311
     .line 312
-    if-lez v0, :cond_22b
+    if-lez v0, :cond_19
 
     .line 313
     .line 314
-    :cond_139
+    :cond_b
     return v4
 
     .line 315
-    :cond_13a
+    :cond_c
     iget-object v0, p0, Llibs/cv;->Lima:Llibs/bv;
 
     .line 316
@@ -5281,7 +5281,7 @@
 
     .line 318
     .line 319
-    if-eqz v0, :cond_1c7
+    if-eqz v0, :cond_16
 
     .line 320
     .line 321
@@ -5293,7 +5293,7 @@
 
     .line 324
     .line 325
-    if-lez v1, :cond_1c7
+    if-lez v1, :cond_16
 
     .line 326
     .line 327
@@ -5312,7 +5312,7 @@
 
     .line 333
     .line 334
-    if-gez v0, :cond_1c7
+    if-gez v0, :cond_16
 
     .line 335
     .line 336
@@ -5324,7 +5324,7 @@
     move-result v0
 
     .line 340
-    if-lez v0, :cond_1c7
+    if-lez v0, :cond_16
 
     .line 341
     .line 342
@@ -5332,7 +5332,7 @@
 
     .line 343
     .line 344
-    if-eqz p1, :cond_15c
+    if-eqz p1, :cond_d
 
     .line 345
     .line 346
@@ -5343,7 +5343,7 @@
     return v4
 
     .line 349
-    :cond_15c
+    :cond_d
     iget p1, v9, Landroid/graphics/PointF;->y:F
 
     .line 350
@@ -5356,7 +5356,7 @@
     move-result p1
 
     .line 355
-    if-ltz p1, :cond_1c6
+    if-ltz p1, :cond_15
 
     .line 356
     .line 357
@@ -5372,7 +5372,7 @@
     move-result p1
 
     .line 363
-    if-lez p1, :cond_1a9
+    if-lez p1, :cond_14
 
     .line 364
     .line 365
@@ -5384,32 +5384,32 @@
 
     .line 368
     .line 369
-    if-nez v1, :cond_174
+    if-nez v1, :cond_e
 
     .line 370
     .line 371
     const/4 v1, 0x1
 
     .line 372
-    goto :goto_17e
+    goto :goto_3
 
     .line 373
-    :cond_174
+    :cond_e
     iget-object v1, v1, Llibs/fd3;->Tau:Llibs/mk1;
 
     .line 374
     .line 375
-    if-nez v1, :cond_17a
+    if-nez v1, :cond_f
 
     .line 376
     .line 377
     const/4 v1, 0x0
 
     .line 378
-    goto :goto_17e
+    goto :goto_3
 
     .line 379
-    :cond_17a
+    :cond_f
     invoke-virtual {v1}, Llibs/mk1;->d()I
 
     .line 380
@@ -5418,16 +5418,16 @@
     move-result v1
 
     .line 383
-    :goto_17e
+    :goto_3
     const/4 v2, -0x1
 
     .line 384
-    :goto_17f
+    :goto_4
     sub-int v6, v1, v2
 
     .line 385
     .line 386
-    if-le v6, v5, :cond_198
+    if-le v6, v5, :cond_12
 
     .line 387
     .line 388
@@ -5442,17 +5442,17 @@
 
     .line 392
     .line 393
-    if-nez v7, :cond_18c
+    if-nez v7, :cond_10
 
     .line 394
     .line 395
     const/4 v7, 0x0
 
     .line 396
-    goto :goto_192
+    goto :goto_5
 
     .line 397
-    :cond_18c
+    :cond_10
     add-int/lit8 v8, v6, 0x1
 
     .line 398
@@ -5465,25 +5465,25 @@
     move-result v7
 
     .line 403
-    :goto_192
-    if-le v7, p1, :cond_196
+    :goto_5
+    if-le v7, p1, :cond_11
 
     .line 404
     .line 405
     move v1, v6
 
     .line 406
-    goto :goto_17f
+    goto :goto_4
 
     .line 407
-    :cond_196
+    :cond_11
     move v2, v6
 
     .line 408
-    goto :goto_17f
+    goto :goto_4
 
     .line 409
-    :cond_198
+    :cond_12
     invoke-static {v2, v4}, Ljava/lang/Math;->max(II)I
 
     .line 410
@@ -5500,17 +5500,17 @@
 
     .line 416
     .line 417
-    if-nez v0, :cond_1a4
+    if-nez v0, :cond_13
 
     .line 418
     .line 419
     const/4 p1, 0x0
 
     .line 420
-    goto :goto_1a9
+    goto :goto_6
 
     .line 421
-    :cond_1a4
+    :cond_13
     add-int/2addr p1, v5
 
     .line 422
@@ -5522,8 +5522,8 @@
     move-result p1
 
     .line 426
-    :cond_1a9
-    :goto_1a9
+    :cond_14
+    :goto_6
     add-int/lit8 v0, p1, 0x1
 
     .line 427
@@ -5536,7 +5536,7 @@
     move-result v1
 
     .line 432
-    if-gt v0, v1, :cond_1c6
+    if-gt v0, v1, :cond_15
 
     .line 433
     .line 434
@@ -5581,11 +5581,11 @@
     const/4 v4, 0x1
 
     .line 455
-    :cond_1c6
+    :cond_15
     return v4
 
     .line 456
-    :cond_1c7
+    :cond_16
     iput-boolean v4, v7, Llibs/fx0;->q:Z
 
     .line 457
@@ -5594,7 +5594,7 @@
 
     .line 459
     .line 460
-    if-ne v0, v3, :cond_22b
+    if-ne v0, v3, :cond_19
 
     .line 461
     .line 462
@@ -5606,7 +5606,7 @@
     return v5
 
     .line 466
-    :cond_1d1
+    :cond_17
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     .line 467
@@ -5734,18 +5734,18 @@
 
     .line 524
     .line 525
-    if-eqz v0, :cond_20f
+    if-eqz v0, :cond_18
 
     .line 526
     .line 527
-    goto :goto_210
+    goto :goto_7
 
     .line 528
-    :cond_20f
+    :cond_18
     const/4 v5, 0x0
 
     .line 529
-    :goto_210
+    :goto_7
     iput-boolean v5, v7, Llibs/fx0;->q:Z
 
     .line 530
@@ -5787,7 +5787,7 @@
     move-result v0
 
     .line 548
-    if-eqz v0, :cond_22b
+    if-eqz v0, :cond_19
 
     .line 549
     .line 550
@@ -5803,8 +5803,8 @@
     return v4
 
     .line 556
-    :cond_22b
-    :goto_22b
+    :cond_19
+    :goto_8
     invoke-super {p0, p1}, Landroid/widget/ScrollView;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
     .line 557
@@ -5817,7 +5817,7 @@
 .end method
 
 .method public final onLayout(ZIIII)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-super/range {p0 .. p5}, Landroid/widget/ScrollView;->onLayout(ZIIII)V
@@ -5829,7 +5829,7 @@
 .end method
 
 .method public final onScrollChanged(IIII)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/ScrollView;->onScrollChanged(IIII)V
@@ -5841,7 +5841,7 @@
 
     .line 5
     .line 6
-    if-eqz p1, :cond_2f
+    if-eqz p1, :cond_2
 
     .line 7
     .line 8
@@ -5849,14 +5849,14 @@
 
     .line 9
     .line 10
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_0
 
     .line 11
     .line 12
-    goto :goto_2f
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     invoke-virtual {p0}, Llibs/cv;->s()Z
 
     .line 14
@@ -5865,7 +5865,7 @@
     move-result p1
 
     .line 17
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_1
 
     .line 18
     .line 19
@@ -5874,7 +5874,7 @@
     .line 20
     .line 21
     .line 22
-    :cond_15
+    :cond_1
     iget p1, p0, Llibs/cv;->Golf:I
 
     .line 23
@@ -5882,7 +5882,7 @@
     const/4 p2, 0x2
 
     .line 25
-    if-eq p1, p2, :cond_2f
+    if-eq p1, p2, :cond_2
 
     .line 26
     .line 27
@@ -5897,7 +5897,7 @@
     move-result-object p1
 
     .line 32
-    if-eqz p1, :cond_2f
+    if-eqz p1, :cond_2
 
     .line 33
     .line 34
@@ -5917,7 +5917,7 @@
     move-result p2
 
     .line 42
-    if-le p1, p2, :cond_2f
+    if-le p1, p2, :cond_2
 
     .line 43
     .line 44
@@ -5929,13 +5929,13 @@
     .line 46
     .line 47
     .line 48
-    :cond_2f
-    :goto_2f
+    :cond_2
+    :goto_0
     return-void
 .end method
 
 .method public final onSizeChanged(IIII)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/ScrollView;->onSizeChanged(IIII)V
@@ -5951,7 +5951,7 @@
     move-result-object p1
 
     .line 8
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     .line 9
     .line 10
@@ -5963,7 +5963,7 @@
     move-result p1
 
     .line 14
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     .line 15
     .line 16
@@ -5972,19 +5972,19 @@
     .line 17
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     return-void
 .end method
 
 .method public final onTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/cv;->Romeo:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -5999,7 +5999,7 @@
     return p1
 
     .line 10
-    :cond_9
+    :cond_0
     invoke-super {p0, p1}, Landroid/widget/ScrollView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     .line 11
@@ -6012,7 +6012,7 @@
 .end method
 
 .method public final p(Llibs/bv;)V
-    .registers 12
+    .locals 10
 
     .line 1
     iput-object p1, p0, Llibs/cv;->Lima:Llibs/bv;
@@ -6201,7 +6201,7 @@
 
     .line 94
     .line 95
-    if-eqz v1, :cond_6d
+    if-eqz v1, :cond_0
 
     .line 96
     .line 97
@@ -6238,7 +6238,7 @@
     .line 108
     .line 109
     .line 110
-    :cond_6d
+    :cond_0
     iget-object v1, p0, Llibs/cv;->November:Llibs/uf;
 
     .line 111
@@ -6278,7 +6278,7 @@
 
     .line 130
     .line 131
-    if-nez v0, :cond_8b
+    if-nez v0, :cond_1
 
     .line 132
     .line 133
@@ -6295,7 +6295,7 @@
     .line 138
     .line 139
     .line 140
-    :cond_8b
+    :cond_1
     iget-object p1, p0, Llibs/cv;->Mike:Llibs/yu;
 
     .line 141
@@ -6309,7 +6309,7 @@
 .end method
 
 .method public final q()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/cv;->Four:Llibs/rl3;
@@ -6341,7 +6341,7 @@
 .end method
 
 .method public final r(Z)V
-    .registers 5
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
@@ -6354,7 +6354,7 @@
     const/4 v2, 0x1
 
     .line 5
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 6
     .line 7
@@ -6366,10 +6366,10 @@
 
     .line 10
     .line 11
-    goto :goto_f
+    goto :goto_0
 
     .line 12
-    :cond_b
+    :cond_0
     iput v0, p0, Llibs/cv;->Golf:I
 
     .line 13
@@ -6378,7 +6378,7 @@
 
     .line 15
     .line 16
-    :goto_f
+    :goto_0
     iget-object p1, p0, Llibs/cv;->November:Llibs/uf;
 
     .line 17
@@ -6411,7 +6411,7 @@
 .end method
 
 .method public final s()Z
-    .registers 14
+    .locals 13
 
     .line 1
     iget-object v0, p0, Llibs/cv;->Four:Llibs/rl3;
@@ -6525,7 +6525,7 @@
 
     .line 51
     .line 52
-    if-ne v5, v1, :cond_3c
+    if-ne v5, v1, :cond_1
 
     .line 53
     .line 54
@@ -6533,26 +6533,26 @@
 
     .line 55
     .line 56
-    if-eq v5, v2, :cond_3a
+    if-eq v5, v2, :cond_0
 
     .line 57
     .line 58
-    goto :goto_3c
+    goto :goto_0
 
     .line 59
-    :cond_3a
+    :cond_0
     const/4 v5, 0x0
 
     .line 60
-    goto :goto_3d
+    goto :goto_1
 
     .line 61
-    :cond_3c
-    :goto_3c
+    :cond_1
+    :goto_0
     const/4 v5, 0x1
 
     .line 62
-    :goto_3d
+    :goto_1
     iput v1, v0, Llibs/rl3;->y:I
 
     .line 63
@@ -6591,18 +6591,18 @@
 
     .line 79
     .line 80
-    if-eqz v7, :cond_54
+    if-eqz v7, :cond_2
 
     .line 81
     .line 82
     array-length v7, v7
 
     .line 83
-    if-eq v7, v6, :cond_58
+    if-eq v7, v6, :cond_3
 
     .line 84
     .line 85
-    :cond_54
+    :cond_2
     new-array v6, v6, [I
 
     .line 86
@@ -6611,19 +6611,19 @@
 
     .line 88
     .line 89
-    :cond_58
+    :cond_3
     iget-boolean v6, v0, Llibs/rl3;->a:Z
 
     .line 90
     .line 91
-    if-nez v6, :cond_6a
+    if-nez v6, :cond_4
 
     .line 92
     .line 93
     const/4 v2, 0x0
 
     .line 94
-    :goto_5d
+    :goto_2
     iget-object v6, v0, Llibs/rl3;->String:[I
 
     .line 95
@@ -6631,7 +6631,7 @@
     array-length v7, v6
 
     .line 97
-    if-ge v2, v7, :cond_9a
+    if-ge v2, v7, :cond_a
 
     .line 98
     .line 99
@@ -6650,22 +6650,22 @@
 
     .line 105
     .line 106
-    goto :goto_5d
+    goto :goto_2
 
     .line 107
-    :cond_6a
+    :cond_4
     iget-object v6, v0, Llibs/rl3;->g:Llibs/fd3;
 
     .line 108
     .line 109
-    if-nez v6, :cond_6f
+    if-nez v6, :cond_5
 
     .line 110
     .line 111
-    goto :goto_9a
+    goto :goto_6
 
     .line 112
-    :cond_6f
+    :cond_5
     const/4 v6, 0x0
 
     .line 113
@@ -6675,8 +6675,8 @@
     const/4 v8, 0x0
 
     .line 115
-    :goto_72
-    if-gt v6, v2, :cond_9a
+    :goto_3
+    if-gt v6, v2, :cond_a
 
     .line 116
     .line 117
@@ -6700,22 +6700,22 @@
     move-result v10
 
     .line 127
-    if-ne v9, v10, :cond_82
+    if-ne v9, v10, :cond_6
 
     .line 128
     .line 129
     const/4 v9, 0x1
 
     .line 130
-    goto :goto_83
+    goto :goto_4
 
     .line 131
-    :cond_82
+    :cond_6
     const/4 v9, 0x0
 
     .line 132
-    :goto_83
-    if-lt v6, v1, :cond_93
+    :goto_4
+    if-lt v6, v1, :cond_8
 
     .line 133
     .line 134
@@ -6727,17 +6727,17 @@
 
     .line 137
     .line 138
-    if-eqz v9, :cond_8d
+    if-eqz v9, :cond_7
 
     .line 139
     .line 140
     move v12, v7
 
     .line 141
-    goto :goto_90
+    goto :goto_5
 
     .line 142
-    :cond_8d
+    :cond_7
     add-int/lit8 v12, v7, -0x1
 
     .line 143
@@ -6745,7 +6745,7 @@
     neg-int v12, v12
 
     .line 145
-    :goto_90
+    :goto_5
     aput v12, v10, v8
 
     .line 146
@@ -6753,8 +6753,8 @@
     move v8, v11
 
     .line 148
-    :cond_93
-    if-eqz v9, :cond_97
+    :cond_8
+    if-eqz v9, :cond_9
 
     .line 149
     .line 150
@@ -6762,16 +6762,16 @@
 
     .line 151
     .line 152
-    :cond_97
+    :cond_9
     add-int/lit8 v6, v6, 0x1
 
     .line 153
     .line 154
-    goto :goto_72
+    goto :goto_3
 
     .line 155
-    :cond_9a
-    :goto_9a
+    :cond_a
+    :goto_6
     const/high16 v1, -0x40800000    # -1.0f
 
     .line 156
@@ -6780,7 +6780,7 @@
 
     .line 158
     .line 159
-    if-eqz v5, :cond_a4
+    if-eqz v5, :cond_b
 
     .line 160
     .line 161
@@ -6792,12 +6792,12 @@
     return v4
 
     .line 165
-    :cond_a4
+    :cond_b
     return v3
 .end method
 
 .method public setAllowSpellCheck(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/cv;->Lima:Llibs/bv;
@@ -6812,7 +6812,7 @@
 .end method
 
 .method public setAutoComplete(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/cv;->Lima:Llibs/bv;
@@ -6827,7 +6827,7 @@
 .end method
 
 .method public setAutoIndent(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/cv;->Lima:Llibs/bv;
@@ -6846,7 +6846,7 @@
     move-result-object v0
 
     .line 9
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -6862,12 +6862,12 @@
 
     .line 16
     .line 17
-    :cond_10
+    :cond_0
     return-void
 .end method
 
 .method public setEditable(Z)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/cv;->Lima:Llibs/bv;
@@ -6890,19 +6890,19 @@
 
     .line 10
     .line 11
-    if-ne p1, v2, :cond_d
+    if-ne p1, v2, :cond_0
 
     .line 12
     .line 13
-    goto :goto_3e
+    goto :goto_1
 
     .line 14
-    :cond_d
+    :cond_0
     iput-boolean p1, v0, Llibs/oi1;->Upsilon:Z
 
     .line 15
     .line 16
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_1
 
     .line 17
     .line 18
@@ -6918,10 +6918,10 @@
 
     .line 23
     .line 24
-    goto :goto_35
+    goto :goto_0
 
     .line 25
-    :cond_18
+    :cond_1
     const/4 p1, 0x0
 
     .line 26
@@ -6937,7 +6937,7 @@
     move-result-object p1
 
     .line 32
-    if-eqz p1, :cond_2f
+    if-eqz p1, :cond_2
 
     .line 33
     .line 34
@@ -6967,7 +6967,7 @@
     .line 46
     .line 47
     .line 48
-    :cond_2f
+    :cond_2
     invoke-virtual {v0}, Llibs/oi1;->g()V
 
     .line 49
@@ -6978,7 +6978,7 @@
     .line 52
     .line 53
     .line 54
-    :goto_35
+    :goto_0
     iget-object p1, v0, Llibs/oi1;->Six:Llibs/rh0;
 
     .line 55
@@ -6987,7 +6987,7 @@
 
     .line 57
     .line 58
-    if-eqz p1, :cond_3e
+    if-eqz p1, :cond_3
 
     .line 59
     .line 60
@@ -6996,20 +6996,20 @@
     .line 61
     .line 62
     .line 63
-    :cond_3e
-    :goto_3e
+    :cond_3
+    :goto_1
     return-void
 .end method
 
 .method public setHighlightRect(Z)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/cv;->India:Landroid/graphics/RectF;
 
     .line 2
     .line 3
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_0
 
     .line 4
     .line 5
@@ -7046,10 +7046,10 @@
     .line 20
     .line 21
     .line 22
-    goto :goto_1b
+    goto :goto_0
 
     .line 23
-    :cond_16
+    :cond_0
     const/high16 p1, -0x40800000    # -1.0f
 
     .line 24
@@ -7059,7 +7059,7 @@
     .line 26
     .line 27
     .line 28
-    :goto_1b
+    :goto_0
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     .line 29
@@ -7069,7 +7069,7 @@
 .end method
 
 .method public setInfoUpdateListener(Llibs/av;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/cv;->Sierra:Llibs/av;
@@ -7080,7 +7080,7 @@
 .end method
 
 .method public setNoSoftKey(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object p1, p0, Llibs/cv;->Three:Llibs/oi1;
@@ -7095,7 +7095,7 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -7104,12 +7104,12 @@
     .line 10
     .line 11
     .line 12
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public setSelectionAndInvalidate(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Llibs/cv;->getText()Llibs/fd3;
@@ -7120,7 +7120,7 @@
     move-result-object v0
 
     .line 5
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -7149,12 +7149,12 @@
     .line 18
     .line 19
     .line 20
-    :cond_13
+    :cond_0
     return-void
 .end method
 
 .method public setText(Llibs/fd3;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/cv;->Four:Llibs/rl3;
@@ -7244,7 +7244,7 @@
 
     .line 45
     .line 46
-    if-nez v0, :cond_33
+    if-nez v0, :cond_0
 
     .line 47
     .line 48
@@ -7256,7 +7256,7 @@
 
     .line 51
     .line 52
-    :cond_33
+    :cond_0
     iget-object v0, p0, Llibs/cv;->Mike:Llibs/yu;
 
     .line 53
@@ -7278,7 +7278,7 @@
 
     .line 62
     .line 63
-    if-eqz p1, :cond_44
+    if-eqz p1, :cond_1
 
     .line 64
     .line 65
@@ -7290,7 +7290,7 @@
     return-void
 
     .line 69
-    :cond_44
+    :cond_1
     invoke-virtual {v0}, Llibs/yu;->e()V
 
     .line 70
@@ -7300,7 +7300,7 @@
 .end method
 
 .method public setTextSize(F)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/cv;->Lima:Llibs/bv;
@@ -7323,7 +7323,7 @@
 .end method
 
 .method public setWrap(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/cv;->Lima:Llibs/bv;

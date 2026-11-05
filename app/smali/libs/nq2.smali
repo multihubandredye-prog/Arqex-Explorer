@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 35
+    .locals 35
 
     .line 1
     new-instance v0, Llibs/u00;
@@ -1058,13 +1058,13 @@
 .end method
 
 .method public static a(Llibs/jf0;Llibs/qs0;)Llibs/kf0;
-    .registers 6
+    .locals 4
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     new-instance v0, Llibs/l3;
 
     .line 3
@@ -1082,8 +1082,8 @@
     .line 9
     .line 10
     invoke-direct {v0, p0, v1, v2, v3}, Llibs/l3;-><init>(Llibs/kf0;ILlibs/ps0;Llibs/zd2;)V
-    :try_end_c
-    .catchall {:try_start_1 .. :try_end_c} :catchall_19
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 11
     .line 12
@@ -1115,21 +1115,21 @@
     return-object p0
 
     .line 26
-    :catchall_19
+    :catchall_0
     move-exception p1
 
     .line 27
-    :try_start_1a
+    :try_start_1
     monitor-exit p0
-    :try_end_1b
-    .catchall {:try_start_1a .. :try_end_1b} :catchall_19
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 28
     throw p1
 .end method
 
 .method public static b(Ljava/lang/String;Llibs/App;Llibs/ax3;)V
-    .registers 5
+    .locals 2
 
     .line 1
     sget-object v0, Llibs/nq2;->a:Ljava/util/Hashtable;
@@ -1171,7 +1171,7 @@
 .end method
 
 .method public static c(Ljava/lang/String;)Ljava/math/BigInteger;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/math/BigInteger;
@@ -1198,7 +1198,7 @@
 .end method
 
 .method public static d(Llibs/App;)Llibs/zw3;
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/nq2;->b:Ljava/util/Hashtable;
@@ -1217,7 +1217,7 @@
 
     .line 8
     .line 9
-    if-nez p0, :cond_c
+    if-nez p0, :cond_0
 
     .line 10
     .line 11
@@ -1227,7 +1227,7 @@
     return-object p0
 
     .line 13
-    :cond_c
+    :cond_0
     invoke-virtual {p0}, Llibs/ax3;->b()Llibs/zw3;
 
     .line 14
@@ -1240,7 +1240,7 @@
 .end method
 
 .method public static e(Ljava/lang/String;)Llibs/App;
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/nq2;->a:Ljava/util/Hashtable;

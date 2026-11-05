@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/rd2;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/nd2;->a:Llibs/rd2;
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final onCommand(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/ResultReceiver;)V
-    .registers 4
+    .locals 0
 
     .line 1
     const/4 p2, 0x1
@@ -61,7 +61,7 @@
 .end method
 
 .method public final onCustomAction(Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-static {p1}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
@@ -72,15 +72,15 @@
     move-result p2
 
     .line 5
-    if-eqz p2, :cond_7
+    if-eqz p2, :cond_0
 
     .line 6
     .line 7
-    goto :goto_31
+    goto :goto_0
 
     .line 8
-    :cond_7
-    :try_start_7
+    :cond_0
+    :try_start_0
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
 
     .line 9
@@ -94,7 +94,7 @@
     .line 13
     .line 14
     .line 15
-    if-eq p2, v0, :cond_1c
+    if-eq p2, v0, :cond_2
 
     .line 16
     .line 17
@@ -103,14 +103,14 @@
     .line 18
     .line 19
     .line 20
-    if-eq p2, v0, :cond_16
+    if-eq p2, v0, :cond_1
 
     .line 21
     .line 22
-    goto :goto_31
+    goto :goto_0
 
     .line 23
-    :cond_16
+    :cond_1
     const-string p2, "com.arqex.explorer.ACTION_RATE"
 
     .line 24
@@ -123,7 +123,7 @@
     return-void
 
     .line 29
-    :cond_1c
+    :cond_2
     const-string p2, "com.arqex.explorer.ACTION_STOP_NOTIFICATION"
 
     .line 30
@@ -136,7 +136,7 @@
     move-result p1
 
     .line 35
-    if-eqz p1, :cond_31
+    if-eqz p1, :cond_3
 
     .line 36
     .line 37
@@ -156,25 +156,25 @@
 
     .line 44
     .line 45
-    if-eqz p1, :cond_31
+    if-eqz p1, :cond_3
 
     .line 46
     .line 47
     invoke-virtual {p1}, Lcom/mixplorer/services/PlayerService;->s()Z
-    :try_end_31
-    .catchall {:try_start_7 .. :try_end_31} :catchall_31
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 48
     .line 49
     .line 50
-    :catchall_31
-    :cond_31
-    :goto_31
+    :catchall_0
+    :cond_3
+    :goto_0
     return-void
 .end method
 
 .method public final onFastForward()V
-    .registers 7
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/nd2;->a:Llibs/rd2;
@@ -225,7 +225,7 @@
 .end method
 
 .method public final onPause()V
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/nd2;->a:Llibs/rd2;
@@ -239,7 +239,7 @@
     const/4 v2, 0x1
 
     .line 6
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_0
 
     .line 7
     .line 8
@@ -255,7 +255,7 @@
     move-result v1
 
     .line 14
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_1
 
     .line 15
     .line 16
@@ -275,12 +275,12 @@
     return-void
 
     .line 24
-    :cond_17
+    :cond_0
     iget-object v0, v0, Llibs/rd2;->View:Llibs/dg0;
 
     .line 25
     .line 26
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_1
 
     .line 27
     .line 28
@@ -309,12 +309,12 @@
     .line 39
     .line 40
     .line 41
-    :cond_28
+    :cond_1
     return-void
 .end method
 
 .method public final onPlay()V
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/nd2;->a:Llibs/rd2;
@@ -328,7 +328,7 @@
     const/4 v2, 0x0
 
     .line 6
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_0
 
     .line 7
     .line 8
@@ -344,7 +344,7 @@
     move-result v1
 
     .line 14
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_1
 
     .line 15
     .line 16
@@ -364,12 +364,12 @@
     return-void
 
     .line 24
-    :cond_17
+    :cond_0
     iget-object v0, v0, Llibs/rd2;->View:Llibs/dg0;
 
     .line 25
     .line 26
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_1
 
     .line 27
     .line 28
@@ -398,12 +398,12 @@
     .line 39
     .line 40
     .line 41
-    :cond_28
+    :cond_1
     return-void
 .end method
 
 .method public final onRewind()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/nd2;->a:Llibs/rd2;
@@ -446,7 +446,7 @@
 .end method
 
 .method public final onSeekTo(J)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/nd2;->a:Llibs/rd2;
@@ -462,7 +462,7 @@
 .end method
 
 .method public final onSkipToNext()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/nd2;->a:Llibs/rd2;
@@ -481,7 +481,7 @@
 .end method
 
 .method public final onSkipToPrevious()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/nd2;->a:Llibs/rd2;
@@ -497,7 +497,7 @@
 .end method
 
 .method public final onStop()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/nd2;->a:Llibs/rd2;

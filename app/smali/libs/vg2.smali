@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/yg2;B)V
-    .registers 10
+    .locals 7
 
     .line 1
     iput-byte p2, p0, Llibs/vg2;->Y:B
@@ -25,7 +25,7 @@
     const/4 v1, 0x0
 
     .line 6
-    packed-switch p2, :pswitch_data_b0
+    packed-switch p2, :pswitch_data_0
 
     .line 7
     .line 8
@@ -76,14 +76,14 @@
     const/4 v2, 0x4
 
     .line 33
-    if-nez p2, :cond_23
+    if-nez p2, :cond_0
 
     .line 34
     .line 35
     const/4 p2, 0x4
 
     .line 36
-    :cond_23
+    :cond_0
     invoke-virtual {p1, p2}, Llibs/yg2;->m(I)Ljava/lang/String;
 
     .line 37
@@ -128,8 +128,8 @@
     .line 58
     .line 59
     .line 60
-    :goto_3b
-    if-ge v1, p2, :cond_6b
+    :goto_0
+    if-ge v1, p2, :cond_2
 
     .line 61
     .line 62
@@ -141,14 +141,14 @@
     move-result v3
 
     .line 66
-    if-nez v3, :cond_44
+    if-nez v3, :cond_1
 
     .line 67
     .line 68
     const/4 v3, 0x4
 
     .line 69
-    :cond_44
+    :cond_1
     invoke-virtual {p1, v3}, Llibs/yg2;->m(I)Ljava/lang/String;
 
     .line 70
@@ -221,14 +221,14 @@
 
     .line 106
     .line 107
-    goto :goto_3b
+    goto :goto_0
 
     .line 108
-    :cond_6b
+    :cond_2
     return-void
 
     .line 109
-    :pswitch_6c
+    :pswitch_0
     invoke-direct {p0}, Llibs/bh2;-><init>()V
 
     .line 110
@@ -254,8 +254,8 @@
     const/4 v3, 0x0
 
     .line 122
-    :goto_79
-    if-ge v1, p2, :cond_98
+    :goto_1
+    if-ge v1, p2, :cond_7
 
     .line 123
     .line 124
@@ -270,15 +270,15 @@
     int-to-char v4, v4
 
     .line 129
-    if-nez v4, :cond_83
+    if-nez v4, :cond_3
 
     .line 130
     .line 131
     const/4 v3, 0x1
 
     .line 132
-    :cond_83
-    if-nez v3, :cond_95
+    :cond_3
+    if-nez v3, :cond_6
 
     .line 133
     .line 134
@@ -290,43 +290,43 @@
 
     .line 137
     .line 138
-    if-eq v4, v5, :cond_92
+    if-eq v4, v5, :cond_5
 
     .line 139
     .line 140
-    if-ne v4, v6, :cond_8e
+    if-ne v4, v6, :cond_4
 
     .line 141
     .line 142
-    goto :goto_92
+    goto :goto_2
 
     .line 143
-    :cond_8e
+    :cond_4
     invoke-virtual {v2, v4}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
     .line 144
     .line 145
     .line 146
-    goto :goto_95
+    goto :goto_3
 
     .line 147
-    :cond_92
-    :goto_92
+    :cond_5
+    :goto_2
     invoke-virtual {v2, v6}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
     .line 148
     .line 149
     .line 150
-    :cond_95
-    :goto_95
+    :cond_6
+    :goto_3
     add-int/lit8 v1, v1, 0x1
 
     .line 151
     .line 152
-    goto :goto_79
+    goto :goto_1
 
     .line 153
-    :cond_98
+    :cond_7
     invoke-virtual {v2}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     .line 154
@@ -373,16 +373,16 @@
     return-void
 
     .line 177
-    :pswitch_data_b0
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_6c
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/vg2;->Y:B
@@ -393,7 +393,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_20
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -405,7 +405,7 @@
     return-object v1
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 12
@@ -450,8 +450,8 @@
     nop
 
     .line 33
-    :pswitch_data_20
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method

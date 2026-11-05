@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
-    .registers 7
+    .locals 3
 
     .line 1
     invoke-direct {p0, p3}, Llibs/vx;-><init>(Ljava/lang/String;)V
@@ -40,8 +40,8 @@
     const/4 v1, 0x0
 
     .line 13
-    :goto_c
-    if-ge v1, v0, :cond_1a
+    :goto_0
+    if-ge v1, v0, :cond_1
 
     .line 14
     .line 15
@@ -57,23 +57,23 @@
     move-result v2
 
     .line 21
-    if-ne v2, p2, :cond_17
+    if-ne v2, p2, :cond_0
 
     .line 22
     .line 23
-    goto :goto_1a
+    goto :goto_1
 
     .line 24
-    :cond_17
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
     .line 25
     .line 26
-    goto :goto_c
+    goto :goto_0
 
     .line 27
-    :cond_1a
-    :goto_1a
+    :cond_1
+    :goto_1
     iput-object p3, p0, Llibs/x32;->Lambda:Ljava/lang/String;
 
     .line 28
@@ -84,7 +84,7 @@
 
 # virtual methods
 .method public final getMessage()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/x32;->Lambda:Ljava/lang/String;
@@ -95,7 +95,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

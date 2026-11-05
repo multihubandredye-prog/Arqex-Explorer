@@ -18,7 +18,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/ic0;
@@ -41,7 +41,7 @@
 .end method
 
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/ic0;->X:B
@@ -57,17 +57,17 @@
 .end method
 
 .method private final a(Llibs/x61;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public static c(Ljava/lang/String;)V
-    .registers 3
+    .locals 2
 
     .line 1
-    if-eqz p0, :cond_36
+    if-eqz p0, :cond_1
 
     .line 2
     .line 3
@@ -83,7 +83,7 @@
     move-result v0
 
     .line 9
-    if-nez v0, :cond_36
+    if-nez v0, :cond_1
 
     .line 10
     .line 11
@@ -102,7 +102,7 @@
     const/4 v1, 0x0
 
     .line 18
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_0
 
     .line 19
     .line 20
@@ -138,10 +138,10 @@
     move-result-object p0
 
     .line 36
-    goto :goto_36
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_0
     const-string v0, "?"
 
     .line 38
@@ -154,7 +154,7 @@
     move-result v0
 
     .line 43
-    if-ltz v0, :cond_36
+    if-ltz v0, :cond_1
 
     .line 44
     .line 45
@@ -178,8 +178,8 @@
     move-result-object p0
 
     .line 55
-    :cond_36
-    :goto_36
+    :cond_1
+    :goto_0
     const-string v0, "RestUtil"
 
     .line 56
@@ -193,7 +193,7 @@
 .end method
 
 .method public static synthetic d()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Lexceptions/UnauthorizedException;
@@ -209,7 +209,7 @@
 .end method
 
 .method public static synthetic e(ILjava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -247,7 +247,7 @@
 .end method
 
 .method public static synthetic g(Ljava/lang/Object;Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/IllegalArgumentException;
@@ -285,7 +285,7 @@
 .end method
 
 .method public static synthetic h(Ljava/lang/String;)V
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -301,7 +301,7 @@
 .end method
 
 .method public static synthetic i(Ljava/lang/String;ILjava/lang/Object;I)V
-    .registers 6
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/IllegalArgumentException;
@@ -349,7 +349,7 @@
 .end method
 
 .method public static synthetic j(Ljava/lang/String;Ljava/lang/Exception;)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/qy2;
@@ -365,7 +365,7 @@
 .end method
 
 .method public static synthetic k(Ljava/lang/Throwable;)V
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/RuntimeException;
@@ -381,7 +381,7 @@
 .end method
 
 .method public static synthetic l()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/IllegalArgumentException;
@@ -397,7 +397,7 @@
 .end method
 
 .method public static synthetic m(ILjava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -435,7 +435,7 @@
 .end method
 
 .method public static synthetic n(Ljava/lang/Object;Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -473,7 +473,7 @@
 .end method
 
 .method public static synthetic p(Ljava/lang/String;)V
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/IllegalArgumentException;
@@ -489,7 +489,7 @@
 .end method
 
 .method public static synthetic q(Ljava/lang/Throwable;)V
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/my3;
@@ -505,7 +505,7 @@
 .end method
 
 .method public static synthetic r()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -521,7 +521,7 @@
 .end method
 
 .method public static synthetic s(Ljava/lang/Object;Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/id3;
@@ -559,7 +559,7 @@
 .end method
 
 .method public static synthetic t(Ljava/lang/String;)V
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/io/IOException;
@@ -575,7 +575,7 @@
 .end method
 
 .method public static synthetic u()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/io/EOFException;
@@ -591,7 +591,7 @@
 .end method
 
 .method public static synthetic v(Ljava/lang/Object;Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/AssertionError;
@@ -629,7 +629,7 @@
 .end method
 
 .method public static synthetic w()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/AssertionError;
@@ -645,7 +645,7 @@
 .end method
 
 .method public static synthetic x(Ljava/lang/Object;Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -683,7 +683,7 @@
 .end method
 
 .method public static synthetic y(Ljava/lang/Object;Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/fr2;
@@ -723,7 +723,7 @@
 
 # virtual methods
 .method public apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 1
     check-cast p1, Ljava/lang/String;
@@ -750,14 +750,14 @@
 .end method
 
 .method public b(Llibs/x61;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/ic0;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_a
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -767,21 +767,21 @@
     .line 7
     .line 8
     .line 9
-    :pswitch_8
+    :pswitch_0
     return-void
 
     .line 10
     nop
 
     .line 11
-    :pswitch_data_a
+    :pswitch_data_0
     .packed-switch 0xe
-        :pswitch_8
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public f(J)Z
-    .registers 6
+    .locals 3
 
     .line 1
     const-wide v0, 0xc0000056L
@@ -795,7 +795,7 @@
 
     .line 7
     .line 8
-    if-nez v2, :cond_b
+    if-nez v2, :cond_0
 
     .line 9
     .line 10
@@ -805,7 +805,7 @@
     return p1
 
     .line 12
-    :cond_b
+    :cond_0
     const/4 p1, 0x0
 
     .line 13

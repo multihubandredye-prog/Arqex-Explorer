@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r4;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/n4;->a:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onCheckedChanged(Landroid/widget/CompoundButton;Z)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-byte p1, p0, Llibs/n4;->a:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch p1, :pswitch_data_18
+    packed-switch p1, :pswitch_data_0
 
     .line 6
     .line 7
@@ -68,7 +68,7 @@
     return-void
 
     .line 16
-    :pswitch_f
+    :pswitch_0
     iget-object p1, v0, Llibs/r4;->Sierra:Llibs/q4;
 
     .line 17
@@ -88,8 +88,8 @@
     nop
 
     .line 25
-    :pswitch_data_18
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_f
+        :pswitch_0
     .end packed-switch
 .end method

@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/zo3;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/vo3;->a:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final a(Ljava/nio/ByteBuffer;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/vo3;->a:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_26
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -64,7 +64,7 @@
     return-void
 
     .line 14
-    :pswitch_d
+    :pswitch_0
     const/16 v0, 0x15
 
     .line 15
@@ -77,8 +77,8 @@
     return-void
 
     .line 20
-    :pswitch_13
-    :try_start_13
+    :pswitch_1
+    :try_start_0
     iget-object v0, v1, Llibs/zo3;->j:Ljava/lang/String;
 
     .line 21
@@ -96,16 +96,16 @@
 
     .line 28
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
-    :try_end_1e
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_13 .. :try_end_1e} :catch_1f
+    :try_end_0
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 29
     .line 30
     .line 31
-    goto :goto_24
+    goto :goto_0
 
     .line 32
-    :catch_1f
+    :catch_0
     const-string p1, "UTF-8 is not supported!!"
 
     .line 33
@@ -115,22 +115,22 @@
     .line 35
     .line 36
     .line 37
-    :goto_24
+    :goto_0
     return-void
 
     .line 38
     nop
 
     .line 39
-    :pswitch_data_26
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_13
-        :pswitch_d
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final b(Ljava/lang/Long;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-byte p1, p0, Llibs/vo3;->a:B
@@ -146,7 +146,7 @@
     const/4 v2, 0x5
 
     .line 6
-    packed-switch p1, :pswitch_data_64
+    packed-switch p1, :pswitch_data_0
 
     .line 7
     .line 8
@@ -159,7 +159,7 @@
     move-result p1
 
     .line 13
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_0
 
     .line 14
     .line 15
@@ -176,11 +176,11 @@
     .line 20
     .line 21
     .line 22
-    :cond_15
+    :cond_0
     return-void
 
     .line 23
-    :pswitch_16
+    :pswitch_0
     iget-object p1, p0, Llibs/vo3;->b:Llibs/zo3;
 
     .line 24
@@ -192,7 +192,7 @@
     monitor-enter p1
 
     .line 28
-    :try_start_1b
+    :try_start_0
     invoke-static {v2}, Llibs/zm1;->Context(I)Z
 
     .line 29
@@ -201,7 +201,7 @@
     move-result v2
 
     .line 32
-    if-eqz v2, :cond_2b
+    if-eqz v2, :cond_1
 
     .line 33
     .line 34
@@ -218,18 +218,18 @@
     .line 39
     .line 40
     .line 41
-    goto :goto_2b
+    goto :goto_0
 
     .line 42
-    :catchall_29
+    :catchall_0
     move-exception v0
 
     .line 43
-    goto :goto_36
+    goto :goto_1
 
     .line 44
-    :cond_2b
-    :goto_2b
+    :cond_1
+    :goto_0
     iget-object v1, p0, Llibs/vo3;->b:Llibs/zo3;
 
     .line 45
@@ -253,16 +253,16 @@
     return-void
 
     .line 55
-    :goto_36
+    :goto_1
     monitor-exit p1
-    :try_end_37
-    .catchall {:try_start_1b .. :try_end_37} :catchall_29
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 56
     throw v0
 
     .line 57
-    :pswitch_38
+    :pswitch_1
     iget-object p1, p0, Llibs/vo3;->b:Llibs/zo3;
 
     .line 58
@@ -275,7 +275,7 @@
     move-result v2
 
     .line 63
-    if-eqz v2, :cond_59
+    if-eqz v2, :cond_2
 
     .line 64
     .line 65
@@ -326,7 +326,7 @@
     .line 88
     .line 89
     .line 90
-    :cond_59
+    :cond_2
     iput-boolean v0, p1, Llibs/zo3;->m:Z
 
     .line 91
@@ -335,7 +335,7 @@
 
     .line 93
     .line 94
-    if-eqz v0, :cond_62
+    if-eqz v0, :cond_3
 
     .line 95
     .line 96
@@ -344,16 +344,16 @@
     .line 97
     .line 98
     .line 99
-    :cond_62
+    :cond_3
     return-void
 
     .line 100
     nop
 
     .line 101
-    :pswitch_data_64
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_38
-        :pswitch_16
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

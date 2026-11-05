@@ -13,7 +13,7 @@
 
 # direct methods
 .method private constructor <init>(Lorg/conscrypt/ct/VerifiedSCT$Builder;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -59,7 +59,7 @@
 
     .line 23
     .line 24
-    if-ne v0, v1, :cond_20
+    if-ne v0, v1, :cond_0
 
     .line 25
     .line 26
@@ -76,7 +76,7 @@
     .line 31
     .line 32
     .line 33
-    :cond_20
+    :cond_0
     invoke-static {p1}, Lorg/conscrypt/ct/VerifiedSCT$Builder;->b(Lorg/conscrypt/ct/VerifiedSCT$Builder;)Lorg/conscrypt/ct/SignedCertificateTimestamp;
 
     .line 34
@@ -117,7 +117,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lorg/conscrypt/ct/VerifiedSCT$Builder;I)V
-    .registers 3
+    .locals 0
 
     .line 52
     invoke-direct {p0, p1}, Lorg/conscrypt/ct/VerifiedSCT;-><init>(Lorg/conscrypt/ct/VerifiedSCT$Builder;)V
@@ -128,7 +128,7 @@
 
 # virtual methods
 .method public getLogInfo()Lorg/conscrypt/ct/LogInfo;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ct/VerifiedSCT;->logInfo:Lorg/conscrypt/ct/LogInfo;
@@ -139,7 +139,7 @@
 .end method
 
 .method public getSct()Lorg/conscrypt/ct/SignedCertificateTimestamp;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ct/VerifiedSCT;->sct:Lorg/conscrypt/ct/SignedCertificateTimestamp;
@@ -150,7 +150,7 @@
 .end method
 
 .method public getStatus()Lorg/conscrypt/ct/VerifiedSCT$Status;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ct/VerifiedSCT;->status:Lorg/conscrypt/ct/VerifiedSCT$Status;
@@ -161,7 +161,7 @@
 .end method
 
 .method public isValid()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ct/VerifiedSCT;->status:Lorg/conscrypt/ct/VerifiedSCT$Status;
@@ -172,7 +172,7 @@
 
     .line 4
     .line 5
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_0
 
     .line 6
     .line 7
@@ -182,7 +182,7 @@
     return v0
 
     .line 9
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 10

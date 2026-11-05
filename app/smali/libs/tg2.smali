@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/bn1;
@@ -41,7 +41,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Ljava/net/Proxy;->NO_PROXY:Ljava/net/Proxy;
@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public final a(Ljava/net/InetSocketAddress;Ljava/net/InetSocketAddress;)Ljava/net/Socket;
-    .registers 6
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/net/Socket;
@@ -75,7 +75,7 @@
     .line 6
     .line 7
     .line 8
-    if-eqz p2, :cond_c
+    if-eqz p2, :cond_0
 
     .line 9
     .line 10
@@ -84,7 +84,7 @@
     .line 11
     .line 12
     .line 13
-    :cond_c
+    :cond_0
     const/4 p2, 0x2
 
     .line 14
@@ -132,7 +132,7 @@
 .end method
 
 .method public final createSocket()Ljava/net/Socket;
-    .registers 3
+    .locals 2
 
     .line 17
     new-instance v0, Ljava/net/Socket;
@@ -145,7 +145,7 @@
 .end method
 
 .method public final createSocket(Ljava/lang/String;I)Ljava/net/Socket;
-    .registers 4
+    .locals 1
 
     .line 16
     new-instance v0, Ljava/net/InetSocketAddress;
@@ -162,7 +162,7 @@
 .end method
 
 .method public final createSocket(Ljava/lang/String;ILjava/net/InetAddress;I)Ljava/net/Socket;
-    .registers 6
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/net/InetSocketAddress;
@@ -195,7 +195,7 @@
 .end method
 
 .method public final createSocket(Ljava/net/InetAddress;I)Ljava/net/Socket;
-    .registers 4
+    .locals 1
 
     .line 18
     new-instance v0, Ljava/net/InetSocketAddress;
@@ -212,7 +212,7 @@
 .end method
 
 .method public final createSocket(Ljava/net/InetAddress;ILjava/net/InetAddress;I)Ljava/net/Socket;
-    .registers 6
+    .locals 1
 
     .line 19
     new-instance v0, Ljava/net/InetSocketAddress;

@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final a(Llibs/Init;Llibs/i03;)Z
-    .registers 5
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/gn;->a:Ljava/util/List;
@@ -45,7 +45,7 @@
     move-result-object v0
 
     .line 7
-    :cond_6
+    :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 8
@@ -54,7 +54,7 @@
     move-result v1
 
     .line 11
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_1
 
     .line 12
     .line 13
@@ -78,7 +78,7 @@
     move-result v1
 
     .line 23
-    if-eqz v1, :cond_6
+    if-eqz v1, :cond_0
 
     .line 24
     .line 25
@@ -88,7 +88,7 @@
     return p1
 
     .line 27
-    :cond_1a
+    :cond_1
     const/4 p1, 0x1
 
     .line 28
@@ -96,7 +96,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

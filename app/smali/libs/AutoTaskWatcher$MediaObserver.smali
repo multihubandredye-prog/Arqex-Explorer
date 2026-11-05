@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/os/Handler;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0, p1}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
@@ -15,7 +15,7 @@
 
 # virtual methods
 .method public onChange(Z)V
-    .registers 2
+    .locals 0
 
     invoke-static {}, Llibs/AutoTaskWatcher;->onMediaStoreChanged()V
 
@@ -23,7 +23,7 @@
 .end method
 
 .method public onChange(ZLandroid/net/Uri;)V
-    .registers 3
+    .locals 0
 
     invoke-static {}, Llibs/AutoTaskWatcher;->onMediaStoreChanged()V
 

@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic a(Landroid/graphics/Insets;)I
-    .registers 1
+    .locals 0
 
     .line 1
     iget p0, p0, Landroid/graphics/Insets;->left:I
@@ -16,7 +16,7 @@
 .end method
 
 .method public static bridge synthetic b(Landroid/os/storage/StorageVolume;)Landroid/content/Intent;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/os/storage/StorageVolume;->createOpenDocumentTreeIntent()Landroid/content/Intent;
@@ -31,7 +31,7 @@
 .end method
 
 .method public static bridge synthetic c(Landroid/content/ContentResolver;Landroid/net/Uri;Landroid/util/Size;)Landroid/graphics/Bitmap;
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -49,7 +49,7 @@
 .end method
 
 .method public static bridge synthetic d(Llibs/xc0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/provider/DocumentsProvider;->call(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
@@ -64,7 +64,7 @@
 .end method
 
 .method public static bridge synthetic e(Landroid/view/Window;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -79,7 +79,7 @@
 .end method
 
 .method public static bridge synthetic f(Landroid/graphics/Insets;)I
-    .registers 1
+    .locals 0
 
     .line 1
     iget p0, p0, Landroid/graphics/Insets;->top:I
@@ -90,7 +90,7 @@
 .end method
 
 .method public static bridge synthetic g(Landroid/view/Window;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -105,7 +105,7 @@
 .end method
 
 .method public static bridge synthetic h(Landroid/graphics/Insets;)I
-    .registers 1
+    .locals 0
 
     .line 1
     iget p0, p0, Landroid/graphics/Insets;->left:I
@@ -116,7 +116,7 @@
 .end method
 
 .method public static bridge synthetic i(Landroid/graphics/Insets;)I
-    .registers 1
+    .locals 0
 
     .line 1
     iget p0, p0, Landroid/graphics/Insets;->right:I
@@ -127,7 +127,7 @@
 .end method
 
 .method public static bridge synthetic j(Landroid/graphics/Insets;)I
-    .registers 1
+    .locals 0
 
     .line 1
     iget p0, p0, Landroid/graphics/Insets;->bottom:I

@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/px2;->a:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onCheckedChanged(Landroid/widget/CompoundButton;Z)V
-    .registers 6
+    .locals 3
 
     .line 1
     iget-byte p1, p0, Llibs/px2;->a:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch p1, :pswitch_data_4e
+    packed-switch p1, :pswitch_data_0
 
     .line 6
     .line 7
@@ -64,7 +64,7 @@
 
     .line 13
     .line 14
-    if-eqz p1, :cond_3f
+    if-eqz p1, :cond_1
 
     .line 15
     .line 16
@@ -84,7 +84,7 @@
     move-result p1
 
     .line 24
-    if-eqz p1, :cond_38
+    if-eqz p1, :cond_0
 
     .line 25
     .line 26
@@ -112,7 +112,7 @@
     move-result p1
 
     .line 38
-    if-eqz p1, :cond_38
+    if-eqz p1, :cond_0
 
     .line 39
     .line 40
@@ -149,7 +149,7 @@
     .line 55
     .line 56
     .line 57
-    :cond_38
+    :cond_0
     iget-object p1, v0, Llibs/rz1;->g:Ljava/lang/Object;
 
     .line 58
@@ -163,11 +163,11 @@
     .line 62
     .line 63
     .line 64
-    :cond_3f
+    :cond_1
     return-void
 
     .line 65
-    :pswitch_40
+    :pswitch_0
     check-cast v0, Lcom/mixplorer/activities/SQLiteEditorActivity;
 
     .line 66
@@ -176,7 +176,7 @@
 
     .line 68
     .line 69
-    if-eqz p2, :cond_4d
+    if-eqz p2, :cond_2
 
     .line 70
     .line 71
@@ -184,7 +184,7 @@
 
     .line 72
     .line 73
-    if-eqz p1, :cond_4d
+    if-eqz p1, :cond_2
 
     .line 74
     .line 75
@@ -193,12 +193,12 @@
     .line 76
     .line 77
     .line 78
-    :cond_4d
+    :cond_2
     return-void
 
     .line 79
-    :pswitch_data_4e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_40
+        :pswitch_0
     .end packed-switch
 .end method

@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(ILlibs/fl;)V
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/io/OutputStream;-><init>()V
@@ -53,7 +53,7 @@
 
     .line 17
     .line 18
-    if-eqz p1, :cond_23
+    if-eqz p1, :cond_0
 
     .line 19
     .line 20
@@ -89,7 +89,7 @@
     return-void
 
     .line 36
-    :cond_23
+    :cond_0
     iput-object p2, p0, Llibs/jy3;->Mu:Ljava/io/OutputStream;
 
     .line 37
@@ -100,7 +100,7 @@
 
 # virtual methods
 .method public final close()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/jy3;->Mu:Ljava/io/OutputStream;
@@ -140,7 +140,7 @@
 .end method
 
 .method public final flush()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/jy3;->Mu:Ljava/io/OutputStream;
@@ -156,7 +156,7 @@
 .end method
 
 .method public final write(I)V
-    .registers 3
+    .locals 1
 
     .line 21
     iget-object v0, p0, Llibs/jy3;->Mu:Ljava/io/OutputStream;
@@ -179,7 +179,7 @@
 .end method
 
 .method public final write([B)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/jy3;->Mu:Ljava/io/OutputStream;
@@ -218,7 +218,7 @@
 .end method
 
 .method public final write([BII)V
-    .registers 5
+    .locals 1
 
     .line 18
     iget-object v0, p0, Llibs/jy3;->Mu:Ljava/io/OutputStream;

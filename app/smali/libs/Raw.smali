@@ -36,7 +36,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const/16 v0, 0x100
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    fill-array-data v1, :array_28
+    fill-array-data v1, :array_0
 
     .line 6
     .line 7
@@ -60,7 +60,7 @@
 
     .line 11
     .line 12
-    fill-array-data v1, :array_ac
+    fill-array-data v1, :array_1
 
     .line 13
     .line 14
@@ -77,7 +77,7 @@
 
     .line 20
     .line 21
-    fill-array-data v1, :array_130
+    fill-array-data v1, :array_2
 
     .line 22
     .line 23
@@ -90,7 +90,7 @@
 
     .line 27
     .line 28
-    fill-array-data v1, :array_170
+    fill-array-data v1, :array_3
 
     .line 29
     .line 30
@@ -103,7 +103,7 @@
 
     .line 34
     .line 35
-    fill-array-data v0, :array_374
+    fill-array-data v0, :array_4
 
     .line 36
     .line 37
@@ -115,7 +115,7 @@
     return-void
 
     .line 41
-    :array_28
+    :array_0
     .array-data 1
         0x63t
         0x7ct
@@ -447,7 +447,7 @@
     .line 111
     .line 112
     .line 113
-    :array_ac
+    :array_1
     .array-data 1
         0x52t
         0x9t
@@ -707,7 +707,7 @@
         0x7dt
     .end array-data
 
-    :array_130
+    :array_2
     .array-data 4
         0x1
         0x2
@@ -741,7 +741,7 @@
         0x91
     .end array-data
 
-    :array_170
+    :array_3
     .array-data 4
         -0x5a9c9c3a
         -0x7b838308
@@ -816,7 +816,7 @@
         -0x11a5a54c
         -0x45f5fa5
         -0x9adad5c
-        0x4d3b3b76    # 1.96327264E8f
+        0x4d3b3b76    # 1.9632726E8f
         0x61d6d6b7
         -0x314c4c83
         0x7b292952
@@ -871,7 +871,7 @@
         0x1affffe5
         0xef3f3fd
         0x6dd2d2bf
-        0x4ccdcd81    # 1.07899912E8f
+        0x4ccdcd81    # 1.0789991E8f
         0x140c0c18
         0x35131326
         0x2fececc3
@@ -1001,7 +1001,7 @@
         0x3a16162c
     .end array-data
 
-    :array_374
+    :array_4
     .array-data 4
         0x50a7f451
         0x5365417e
@@ -1212,7 +1212,7 @@
         0xe50cd7f
         0x2ff69117
         -0x7229b28a
-        0x4db0ef43    # 3.71058784E8f
+        0x4db0ef43    # 3.7105878E8f
         0x544daacc
         -0x20fb691c
         -0x1c4a2e62
@@ -1263,7 +1263,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -1282,7 +1282,7 @@
 .end method
 
 .method public static d(II)I
-    .registers 3
+    .locals 1
 
     .line 1
     ushr-int v0, p0, p1
@@ -1302,7 +1302,7 @@
 .end method
 
 .method public static e(I)I
-    .registers 4
+    .locals 3
 
     .line 1
     and-int/lit16 v0, p0, 0xff
@@ -1392,7 +1392,7 @@
 
 # virtual methods
 .method public final a(ZLlibs/et;)V
-    .registers 24
+    .locals 21
 
     .line 1
     move-object/from16 v0, p0
@@ -1411,7 +1411,7 @@
 
     .line 8
     .line 9
-    if-eqz v3, :cond_240
+    if-eqz v3, :cond_9
 
     .line 10
     .line 11
@@ -1430,7 +1430,7 @@
 
     .line 17
     .line 18
-    if-lt v3, v4, :cond_23a
+    if-lt v3, v4, :cond_8
 
     .line 19
     .line 20
@@ -1438,7 +1438,7 @@
 
     .line 21
     .line 22
-    if-gt v3, v5, :cond_23a
+    if-gt v3, v5, :cond_8
 
     .line 23
     .line 24
@@ -1446,7 +1446,7 @@
 
     .line 25
     .line 26
-    if-nez v5, :cond_23a
+    if-nez v5, :cond_8
 
     .line 27
     .line 28
@@ -1516,7 +1516,7 @@
     const/4 v12, 0x3
 
     .line 58
-    if-eq v3, v9, :cond_1a5
+    if-eq v3, v9, :cond_4
 
     .line 59
     .line 60
@@ -1527,11 +1527,11 @@
     const/4 v14, 0x6
 
     .line 63
-    if-eq v3, v14, :cond_e6
+    if-eq v3, v14, :cond_2
 
     .line 64
     .line 65
-    if-ne v3, v11, :cond_e0
+    if-ne v3, v11, :cond_1
 
     .line 66
     .line 67
@@ -1690,12 +1690,12 @@
 
     .line 143
     .line 144
-    :goto_8f
+    :goto_0
     const/16 v12, 0xe
 
     .line 145
     .line 146
-    if-ge v8, v12, :cond_c6
+    if-ge v8, v12, :cond_0
 
     .line 147
     .line 148
@@ -1805,10 +1805,10 @@
 
     .line 197
     .line 198
-    goto :goto_8f
+    goto :goto_0
 
     .line 199
-    :cond_c6
+    :cond_0
     invoke-static {v2, v11}, Llibs/Raw;->d(II)I
 
     .line 200
@@ -1861,11 +1861,11 @@
 
     .line 222
     .line 223
-    goto/16 :goto_1f0
+    goto/16 :goto_3
 
     .line 224
     .line 225
-    :cond_e0
+    :cond_1
     const-string v1, "Should never get here"
 
     .line 226
@@ -1878,7 +1878,7 @@
     return-void
 
     .line 231
-    :cond_e6
+    :cond_2
     const/16 p2, 0x2
 
     .line 232
@@ -2063,8 +2063,8 @@
     const/4 v15, 0x2
 
     .line 319
-    :goto_13e
-    if-ge v13, v7, :cond_18d
+    :goto_1
+    if-ge v13, v7, :cond_3
 
     .line 320
     .line 321
@@ -2230,10 +2230,10 @@
 
     .line 396
     .line 397
-    goto :goto_13e
+    goto :goto_1
 
     .line 398
-    :cond_18d
+    :cond_3
     invoke-static {v2, v11}, Llibs/Raw;->d(II)I
 
     .line 399
@@ -2285,10 +2285,10 @@
 
     .line 420
     .line 421
-    goto :goto_1f0
+    goto :goto_3
 
     .line 422
-    :cond_1a5
+    :cond_4
     const/16 p2, 0x2
 
     .line 423
@@ -2368,12 +2368,12 @@
     const/4 v7, 0x1
 
     .line 461
-    :goto_1cc
+    :goto_2
     const/16 v12, 0xa
 
     .line 462
     .line 463
-    if-gt v7, v12, :cond_1f0
+    if-gt v7, v12, :cond_5
 
     .line 464
     .line 465
@@ -2444,32 +2444,32 @@
 
     .line 495
     .line 496
-    goto :goto_1cc
+    goto :goto_2
 
     .line 497
-    :cond_1f0
-    :goto_1f0
-    if-nez v1, :cond_235
+    :cond_5
+    :goto_3
+    if-nez v1, :cond_7
 
     .line 498
     .line 499
     const/4 v2, 0x1
 
     .line 500
-    :goto_1f3
+    :goto_4
     iget v3, v0, Llibs/Raw;->X:I
 
     .line 501
     .line 502
-    if-ge v2, v3, :cond_235
+    if-ge v2, v3, :cond_7
 
     .line 503
     .line 504
     const/4 v3, 0x0
 
     .line 505
-    :goto_1f8
-    if-ge v3, v9, :cond_232
+    :goto_5
+    if-ge v3, v9, :cond_6
 
     .line 506
     .line 507
@@ -2592,18 +2592,18 @@
 
     .line 561
     .line 562
-    goto :goto_1f8
+    goto :goto_5
 
     .line 563
-    :cond_232
+    :cond_6
     add-int/lit8 v2, v2, 0x1
 
     .line 564
     .line 565
-    goto :goto_1f3
+    goto :goto_4
 
     .line 566
-    :cond_235
+    :cond_7
     iput-object v6, v0, Llibs/Raw;->Y:[[I
 
     .line 567
@@ -2615,7 +2615,7 @@
     return-void
 
     .line 571
-    :cond_23a
+    :cond_8
     const-string v1, "Key length not 128/192/256 bits."
 
     .line 572
@@ -2628,7 +2628,7 @@
     return-void
 
     .line 577
-    :cond_240
+    :cond_9
     const-string v1, "invalid parameter passed to AES init - "
 
     .line 578
@@ -2650,7 +2650,7 @@
 .end method
 
 .method public final b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "AES"
@@ -2661,7 +2661,7 @@
 .end method
 
 .method public final c(I[B)V
-    .registers 7
+    .locals 4
 
     .line 1
     add-int/lit8 v0, p1, 0x1
@@ -2904,7 +2904,7 @@
 .end method
 
 .method public final f(I[B)V
-    .registers 6
+    .locals 3
 
     .line 1
     add-int/lit8 v0, p1, 0x1
@@ -3231,7 +3231,7 @@
 .end method
 
 .method public final i()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x10
@@ -3242,7 +3242,7 @@
 .end method
 
 .method public final r(II[B[B)I
-    .registers 28
+    .locals 23
 
     .line 1
     move-object/from16 v0, p0
@@ -3272,7 +3272,7 @@
     const/4 v6, 0x0
 
     .line 14
-    if-eqz v5, :cond_677
+    if-eqz v5, :cond_5
 
     .line 15
     .line 16
@@ -3283,7 +3283,7 @@
     array-length v7, v3
 
     .line 19
-    if-gt v5, v7, :cond_66f
+    if-gt v5, v7, :cond_4
 
     .line 20
     .line 21
@@ -3294,7 +3294,7 @@
     array-length v7, v4
 
     .line 24
-    if-gt v5, v7, :cond_667
+    if-gt v5, v7, :cond_3
 
     .line 25
     .line 26
@@ -3323,7 +3323,7 @@
 
     .line 36
     .line 37
-    if-eqz v5, :cond_331
+    if-eqz v5, :cond_1
 
     .line 38
     .line 39
@@ -3391,7 +3391,7 @@
 
     .line 68
     .line 69
-    :goto_44
+    :goto_0
     iget v6, v0, Llibs/Raw;->X:I
 
     .line 70
@@ -3403,7 +3403,7 @@
 
     .line 73
     .line 74
-    if-ge v15, v6, :cond_1b6
+    if-ge v15, v6, :cond_0
 
     .line 75
     .line 76
@@ -4166,11 +4166,11 @@
 
     .line 436
     .line 437
-    goto/16 :goto_44
+    goto/16 :goto_0
 
     .line 438
     .line 439
-    :cond_1b6
+    :cond_0
     const/16 v18, 0x3
 
     .line 440
@@ -4966,7 +4966,7 @@
     return v22
 
     .line 818
-    :cond_331
+    :cond_1
     const/16 v16, 0x0
 
     .line 819
@@ -5048,7 +5048,7 @@
     xor-int/2addr v6, v9
 
     .line 857
-    :goto_358
+    :goto_1
     sget-object v9, Llibs/Raw;->Tau:[I
 
     .line 858
@@ -5056,7 +5056,7 @@
     const/4 v10, 0x1
 
     .line 860
-    if-le v5, v10, :cond_4de
+    if-le v5, v10, :cond_2
 
     .line 861
     .line 862
@@ -5863,11 +5863,11 @@
 
     .line 1244
     .line 1245
-    goto/16 :goto_358
+    goto/16 :goto_1
 
     .line 1246
     .line 1247
-    :cond_4de
+    :cond_2
     and-int/lit16 v10, v3, 0xff
 
     .line 1248
@@ -6689,7 +6689,7 @@
     return v22
 
     .line 1640
-    :cond_667
+    :cond_3
     const/16 v16, 0x0
 
     .line 1641
@@ -6706,7 +6706,7 @@
     return v16
 
     .line 1648
-    :cond_66f
+    :cond_4
     const/16 v16, 0x0
 
     .line 1649
@@ -6723,7 +6723,7 @@
     return v16
 
     .line 1656
-    :cond_677
+    :cond_5
     const/16 v16, 0x0
 
     .line 1657
@@ -6741,7 +6741,7 @@
 .end method
 
 .method public final reset()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void

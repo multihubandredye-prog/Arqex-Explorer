@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/InputStream;Llibs/Eta;)V
-    .registers 10
+    .locals 7
 
     .line 1
     invoke-direct {p0}, Llibs/zj0;-><init>()V
@@ -52,7 +52,7 @@
 
     .line 19
     .line 20
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 21
     .line 22
@@ -60,10 +60,10 @@
 
     .line 23
     .line 24
-    goto :goto_1e
+    goto :goto_0
 
     .line 25
-    :cond_18
+    :cond_0
     new-instance v0, Llibs/ra;
 
     .line 26
@@ -76,7 +76,7 @@
     move-object p1, v0
 
     .line 31
-    :goto_1e
+    :goto_0
     invoke-virtual {p1}, Llibs/ra;->c()I
 
     .line 32
@@ -91,18 +91,18 @@
     const/4 v2, 0x7
 
     .line 37
-    if-eq v0, v1, :cond_39
+    if-eq v0, v1, :cond_2
 
     .line 38
     .line 39
-    if-ne v0, v2, :cond_29
+    if-ne v0, v2, :cond_1
 
     .line 40
     .line 41
-    goto :goto_39
+    goto :goto_1
 
     .line 42
-    :cond_29
+    :cond_1
     new-instance p1, Ljava/lang/StringBuilder;
 
     .line 43
@@ -135,8 +135,8 @@
     throw p1
 
     .line 58
-    :cond_39
-    :goto_39
+    :cond_2
+    :goto_1
     invoke-virtual {p1}, Llibs/ra;->m()Llibs/k12;
 
     .line 59
@@ -149,7 +149,7 @@
 
     .line 63
     .line 64
-    :goto_3f
+    :goto_2
     invoke-virtual {p1}, Llibs/ra;->c()I
 
     .line 65
@@ -162,7 +162,7 @@
 
     .line 69
     .line 70
-    if-ne v1, v3, :cond_4b
+    if-ne v1, v3, :cond_3
 
     .line 71
     .line 72
@@ -171,10 +171,10 @@
     .line 73
     .line 74
     .line 75
-    goto :goto_3f
+    goto :goto_2
 
     .line 76
-    :cond_4b
+    :cond_3
     invoke-static {p1}, Llibs/zj0;->Wait(Llibs/ra;)Llibs/jp3;
 
     .line 77
@@ -254,7 +254,7 @@
     .line 117
     .line 118
     .line 119
-    :goto_76
+    :goto_3
     invoke-virtual {p1}, Llibs/ra;->c()I
 
     .line 120
@@ -263,7 +263,7 @@
     move-result v1
 
     .line 123
-    if-eq v1, v2, :cond_86
+    if-eq v1, v2, :cond_5
 
     .line 124
     .line 125
@@ -279,19 +279,19 @@
 
     .line 130
     .line 131
-    if-ne v1, v4, :cond_85
+    if-ne v1, v4, :cond_4
 
     .line 132
     .line 133
-    goto :goto_86
+    goto :goto_4
 
     .line 134
-    :cond_85
+    :cond_4
     return-void
 
     .line 135
-    :cond_86
-    :goto_86
+    :cond_5
+    :goto_4
     invoke-virtual {p1}, Llibs/ra;->c()I
 
     .line 136
@@ -300,7 +300,7 @@
     move-result v1
 
     .line 139
-    if-ne v1, v2, :cond_b4
+    if-ne v1, v2, :cond_7
 
     .line 140
     .line 141
@@ -316,7 +316,7 @@
 
     .line 146
     .line 147
-    :goto_92
+    :goto_5
     invoke-virtual {p1}, Llibs/ra;->c()I
 
     .line 148
@@ -325,7 +325,7 @@
     move-result v4
 
     .line 151
-    if-ne v4, v3, :cond_9c
+    if-ne v4, v3, :cond_6
 
     .line 152
     .line 153
@@ -334,10 +334,10 @@
     .line 154
     .line 155
     .line 156
-    goto :goto_92
+    goto :goto_5
 
     .line 157
-    :cond_9c
+    :cond_6
     invoke-static {p1}, Llibs/zj0;->Wait(Llibs/ra;)Llibs/jp3;
 
     .line 158
@@ -379,10 +379,10 @@
     .line 178
     .line 179
     .line 180
-    goto :goto_76
+    goto :goto_3
 
     .line 181
-    :cond_b4
+    :cond_7
     invoke-virtual {p1}, Llibs/ra;->m()Llibs/k12;
 
     .line 182
@@ -423,13 +423,13 @@
     .line 201
     .line 202
     .line 203
-    goto :goto_76
+    goto :goto_3
 .end method
 
 
 # virtual methods
 .method public final iterator()Ljava/util/Iterator;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/v72;->Omicron:Ljava/util/ArrayList;

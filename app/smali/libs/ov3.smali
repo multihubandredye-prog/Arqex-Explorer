@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/security/Signature;Llibs/mv3;)V
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/security/Signer;-><init>()V
@@ -23,7 +23,7 @@
 
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     invoke-virtual {p1}, Ljava/security/Signature;->getAlgorithm()Ljava/lang/String;
 
     .line 7
@@ -41,15 +41,15 @@
 
     .line 14
     iput-object p1, p0, Llibs/ov3;->Y:Llibs/$e;
-    :try_end_f
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_5 .. :try_end_f} :catch_10
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 15
     .line 16
     return-void
 
     .line 17
-    :catch_10
+    :catch_0
     move-exception p1
 
     .line 18

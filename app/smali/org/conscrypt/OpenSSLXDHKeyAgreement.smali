@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/OpenSSLBaseDHKeyAgreement;-><init>()V
@@ -28,7 +28,7 @@
 
 # virtual methods
 .method public bridge synthetic computeKey([BLjava/lang/Object;Ljava/lang/Object;)I
-    .registers 4
+    .locals 0
 
     .line 17
     check-cast p2, [B
@@ -43,7 +43,7 @@
 .end method
 
 .method public computeKey([B[B[B)I
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-static {p1, p3, p2}, Lorg/conscrypt/NativeCrypto;->X25519([B[B[B)Z
@@ -54,7 +54,7 @@
     move-result p1
 
     .line 5
-    if-eqz p1, :cond_9
+    if-eqz p1, :cond_0
 
     .line 6
     .line 7
@@ -65,7 +65,7 @@
     return p1
 
     .line 10
-    :cond_9
+    :cond_0
     const-string p1, "Error running X25519"
 
     .line 11
@@ -82,7 +82,7 @@
 .end method
 
 .method public bridge synthetic convertPrivateKey(Ljava/security/PrivateKey;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 19
     invoke-virtual {p0, p1}, Lorg/conscrypt/OpenSSLXDHKeyAgreement;->convertPrivateKey(Ljava/security/PrivateKey;)[B
@@ -93,14 +93,14 @@
 .end method
 
 .method public convertPrivateKey(Ljava/security/PrivateKey;)[B
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Lorg/conscrypt/OpenSSLX25519PrivateKey;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -119,7 +119,7 @@
     return-object p1
 
     .line 12
-    :cond_b
+    :cond_0
     const-string p1, "Only OpenSSLX25519PublicKey accepted"
 
     .line 13
@@ -136,7 +136,7 @@
 .end method
 
 .method public bridge synthetic convertPublicKey(Ljava/security/PublicKey;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 19
     invoke-virtual {p0, p1}, Lorg/conscrypt/OpenSSLXDHKeyAgreement;->convertPublicKey(Ljava/security/PublicKey;)[B
@@ -147,14 +147,14 @@
 .end method
 
 .method public convertPublicKey(Ljava/security/PublicKey;)[B
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Lorg/conscrypt/OpenSSLX25519PublicKey;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -173,7 +173,7 @@
     return-object p1
 
     .line 12
-    :cond_b
+    :cond_0
     const-string p1, "Only OpenSSLX25519PublicKey accepted"
 
     .line 13
@@ -190,7 +190,7 @@
 .end method
 
 .method public bridge synthetic getOutputSize(Ljava/lang/Object;)I
-    .registers 2
+    .locals 0
 
     .line 1
     check-cast p1, [B
@@ -209,7 +209,7 @@
 .end method
 
 .method public getOutputSize([B)I
-    .registers 2
+    .locals 0
 
     .line 8
     const/16 p1, 0x20

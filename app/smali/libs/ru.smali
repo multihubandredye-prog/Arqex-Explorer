@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/nw;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final e(Llibs/en0;)V
-    .registers 15
+    .locals 13
 
     .line 1
     invoke-virtual {p0}, Llibs/nw;->l()Ljava/lang/String;
@@ -34,7 +34,7 @@
 
     .line 6
     .line 7
-    if-nez p1, :cond_e
+    if-nez p1, :cond_0
 
     .line 8
     .line 9
@@ -50,7 +50,7 @@
     return-void
 
     .line 15
-    :cond_e
+    :cond_0
     const-string v1, " "
 
     .line 16
@@ -125,19 +125,19 @@
     const/4 v7, 0x1
 
     .line 51
-    sparse-switch v5, :sswitch_data_154
+    sparse-switch v5, :sswitch_data_0
 
     .line 52
     .line 53
     .line 54
-    :goto_35
+    :goto_0
     const/4 v5, -0x1
 
     .line 55
-    goto :goto_57
+    goto :goto_1
 
     .line 56
-    :sswitch_37
+    :sswitch_0
     const-string v5, "utf8"
 
     .line 57
@@ -150,21 +150,21 @@
     move-result v5
 
     .line 62
-    if-nez v5, :cond_40
+    if-nez v5, :cond_1
 
     .line 63
     .line 64
-    goto :goto_35
+    goto :goto_0
 
     .line 65
-    :cond_40
+    :cond_1
     const/4 v5, 0x2
 
     .line 66
-    goto :goto_57
+    goto :goto_1
 
     .line 67
-    :sswitch_42
+    :sswitch_1
     const-string v5, "mlst"
 
     .line 68
@@ -177,21 +177,21 @@
     move-result v5
 
     .line 73
-    if-nez v5, :cond_4b
+    if-nez v5, :cond_2
 
     .line 74
     .line 75
-    goto :goto_35
+    goto :goto_0
 
     .line 76
-    :cond_4b
+    :cond_2
     const/4 v5, 0x1
 
     .line 77
-    goto :goto_57
+    goto :goto_1
 
     .line 78
-    :sswitch_4d
+    :sswitch_2
     const-string v5, "hash"
 
     .line 79
@@ -204,18 +204,18 @@
     move-result v5
 
     .line 84
-    if-nez v5, :cond_56
+    if-nez v5, :cond_3
 
     .line 85
     .line 86
-    goto :goto_35
+    goto :goto_0
 
     .line 87
-    :cond_56
+    :cond_3
     const/4 v5, 0x0
 
     .line 88
-    :goto_57
+    :goto_1
     const-string v8, "Wrong parameters!"
 
     .line 89
@@ -224,7 +224,7 @@
 
     .line 91
     .line 92
-    packed-switch v5, :pswitch_data_162
+    packed-switch v5, :pswitch_data_0
 
     .line 93
     .line 94
@@ -253,11 +253,11 @@
     return-void
 
     .line 107
-    :pswitch_6a
+    :pswitch_0
     array-length v1, p1
 
     .line 108
-    if-eq v1, v2, :cond_71
+    if-eq v1, v2, :cond_4
 
     .line 109
     .line 110
@@ -269,7 +269,7 @@
     return-void
 
     .line 114
-    :cond_71
+    :cond_4
     aget-object p1, p1, v7
 
     .line 115
@@ -286,7 +286,7 @@
     move-result p1
 
     .line 122
-    if-eqz p1, :cond_81
+    if-eqz p1, :cond_5
 
     .line 123
     .line 124
@@ -302,7 +302,7 @@
 
     .line 129
     .line 130
-    :cond_81
+    :cond_5
     const-string p1, "Done"
 
     .line 131
@@ -315,11 +315,11 @@
     return-void
 
     .line 136
-    :pswitch_87
+    :pswitch_1
     array-length v1, p1
 
     .line 137
-    if-eq v1, v2, :cond_8e
+    if-eq v1, v2, :cond_6
 
     .line 138
     .line 139
@@ -331,7 +331,7 @@
     return-void
 
     .line 143
-    :cond_8e
+    :cond_6
     new-instance v0, Ljava/util/ArrayList;
 
     .line 144
@@ -372,8 +372,8 @@
     const/4 v8, 0x0
 
     .line 163
-    :goto_a2
-    if-ge v8, v5, :cond_f3
+    :goto_2
+    if-ge v8, v5, :cond_b
 
     .line 164
     .line 165
@@ -406,19 +406,19 @@
     move-result v12
 
     .line 180
-    sparse-switch v12, :sswitch_data_16c
+    sparse-switch v12, :sswitch_data_1
 
     .line 181
     .line 182
     .line 183
-    :goto_b6
+    :goto_3
     const/4 v11, -0x1
 
     .line 184
-    goto :goto_e3
+    goto :goto_4
 
     .line 185
-    :sswitch_b8
+    :sswitch_3
     const-string v12, "type"
 
     .line 186
@@ -431,21 +431,21 @@
     move-result v11
 
     .line 191
-    if-nez v11, :cond_c1
+    if-nez v11, :cond_7
 
     .line 192
     .line 193
-    goto :goto_b6
+    goto :goto_3
 
     .line 194
-    :cond_c1
+    :cond_7
     const/4 v11, 0x3
 
     .line 195
-    goto :goto_e3
+    goto :goto_4
 
     .line 196
-    :sswitch_c3
+    :sswitch_4
     const-string v12, "size"
 
     .line 197
@@ -458,21 +458,21 @@
     move-result v11
 
     .line 202
-    if-nez v11, :cond_cc
+    if-nez v11, :cond_8
 
     .line 203
     .line 204
-    goto :goto_b6
+    goto :goto_3
 
     .line 205
-    :cond_cc
+    :cond_8
     const/4 v11, 0x2
 
     .line 206
-    goto :goto_e3
+    goto :goto_4
 
     .line 207
-    :sswitch_ce
+    :sswitch_5
     const-string v12, "perm"
 
     .line 208
@@ -485,21 +485,21 @@
     move-result v11
 
     .line 213
-    if-nez v11, :cond_d7
+    if-nez v11, :cond_9
 
     .line 214
     .line 215
-    goto :goto_b6
+    goto :goto_3
 
     .line 216
-    :cond_d7
+    :cond_9
     const/4 v11, 0x1
 
     .line 217
-    goto :goto_e3
+    goto :goto_4
 
     .line 218
-    :sswitch_d9
+    :sswitch_6
     const-string v12, "modify"
 
     .line 219
@@ -512,27 +512,27 @@
     move-result v11
 
     .line 224
-    if-nez v11, :cond_e2
+    if-nez v11, :cond_a
 
     .line 225
     .line 226
-    goto :goto_b6
+    goto :goto_3
 
     .line 227
-    :cond_e2
+    :cond_a
     const/4 v11, 0x0
 
     .line 228
-    :goto_e3
-    packed-switch v11, :pswitch_data_17e
+    :goto_4
+    packed-switch v11, :pswitch_data_1
 
     .line 229
     .line 230
     .line 231
-    goto :goto_f0
+    goto :goto_5
 
     .line 232
-    :pswitch_e7
+    :pswitch_2
     invoke-virtual {v0, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 233
@@ -548,15 +548,15 @@
     .line 239
     .line 240
     .line 241
-    :goto_f0
+    :goto_5
     add-int/lit8 v8, v8, 0x1
 
     .line 242
     .line 243
-    goto :goto_a2
+    goto :goto_2
 
     .line 244
-    :cond_f3
+    :cond_b
     iget-object p1, p0, Llibs/nw;->b:Llibs/cn0;
 
     .line 245
@@ -615,11 +615,11 @@
     return-void
 
     .line 274
-    :pswitch_111
+    :pswitch_3
     array-length v1, p1
 
     .line 275
-    if-ne v1, v7, :cond_11c
+    if-ne v1, v7, :cond_c
 
     .line 276
     .line 277
@@ -639,11 +639,11 @@
     return-void
 
     .line 285
-    :cond_11c
+    :cond_c
     array-length v1, p1
 
     .line 286
-    if-ne v1, v2, :cond_14e
+    if-ne v1, v2, :cond_f
 
     .line 287
     .line 288
@@ -671,7 +671,7 @@
     move-result v0
 
     .line 300
-    if-nez v0, :cond_146
+    if-nez v0, :cond_e
 
     .line 301
     .line 302
@@ -687,7 +687,7 @@
     move-result v0
 
     .line 308
-    if-nez v0, :cond_146
+    if-nez v0, :cond_e
 
     .line 309
     .line 310
@@ -703,14 +703,14 @@
     move-result v0
 
     .line 316
-    if-eqz v0, :cond_13e
+    if-eqz v0, :cond_d
 
     .line 317
     .line 318
-    goto :goto_146
+    goto :goto_6
 
     .line 319
-    :cond_13e
+    :cond_d
     const/16 p1, 0x1f5
 
     .line 320
@@ -727,8 +727,8 @@
     return-void
 
     .line 327
-    :cond_146
-    :goto_146
+    :cond_e
+    :goto_6
     iget-object v0, p0, Llibs/nw;->b:Llibs/cn0;
 
     .line 328
@@ -745,7 +745,7 @@
     return-void
 
     .line 335
-    :cond_14e
+    :cond_f
     const-string p1, "Malformed OPTS HASH"
 
     .line 336
@@ -758,11 +758,11 @@
     return-void
 
     .line 341
-    :sswitch_data_154
+    :sswitch_data_0
     .sparse-switch
-        0x30c10e -> :sswitch_4d
-        0x333040 -> :sswitch_42
-        0x36ef71 -> :sswitch_37
+        0x30c10e -> :sswitch_2
+        0x333040 -> :sswitch_1
+        0x36ef71 -> :sswitch_0
     .end sparse-switch
 
     .line 342
@@ -779,11 +779,11 @@
     .line 353
     .line 354
     .line 355
-    :pswitch_data_162
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_111
-        :pswitch_87
-        :pswitch_6a
+        :pswitch_3
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 
     .line 356
@@ -796,12 +796,12 @@
     .line 363
     .line 364
     .line 365
-    :sswitch_data_16c
+    :sswitch_data_1
     .sparse-switch
-        -0x3fb48746 -> :sswitch_d9
-        0x3472f0 -> :sswitch_ce
-        0x35e001 -> :sswitch_c3
-        0x368f3a -> :sswitch_b8
+        -0x3fb48746 -> :sswitch_6
+        0x3472f0 -> :sswitch_5
+        0x35e001 -> :sswitch_4
+        0x368f3a -> :sswitch_3
     .end sparse-switch
 
     .line 366
@@ -822,11 +822,11 @@
     .line 381
     .line 382
     .line 383
-    :pswitch_data_17e
+    :pswitch_data_1
     .packed-switch 0x0
-        :pswitch_e7
-        :pswitch_e7
-        :pswitch_e7
-        :pswitch_e7
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
     .end packed-switch
 .end method

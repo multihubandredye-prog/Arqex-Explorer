@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/ow1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,14 +30,14 @@
 
 # virtual methods
 .method public final onFindResultReceived(IIZ)V
-    .registers 4
+    .locals 0
 
     .line 1
     iget-object p1, p0, Llibs/hw1;->a:Llibs/ow1;
 
     .line 2
     .line 3
-    if-eqz p3, :cond_b
+    if-eqz p3, :cond_0
 
     .line 4
     .line 5
@@ -45,7 +45,7 @@
 
     .line 6
     .line 7
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 8
     .line 9
@@ -54,6 +54,6 @@
     .line 10
     .line 11
     .line 12
-    :cond_b
+    :cond_0
     return-void
 .end method

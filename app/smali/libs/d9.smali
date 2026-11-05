@@ -46,7 +46,7 @@
 
 # direct methods
 .method public constructor <init>(JJJLjava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;Ljava/lang/String;Ljava/lang/String;ZZZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
-    .registers 37
+    .locals 17
 
     .line 1
     move-object/from16 v0, p0
@@ -166,7 +166,7 @@
     move-result v16
 
     .line 60
-    if-eqz v16, :cond_42
+    if-eqz v16, :cond_0
 
     .line 61
     .line 62
@@ -178,15 +178,15 @@
 
     .line 65
     .line 66
-    goto :goto_44
+    goto :goto_0
 
     .line 67
-    :cond_42
+    :cond_0
     move-object/from16 v15, p18
 
     .line 68
     .line 69
-    :goto_44
+    :goto_0
     iput-object v15, v0, Llibs/d9;->Phi:Ljava/lang/String;
 
     .line 70
@@ -374,7 +374,7 @@
     .line 172
     .line 173
     .line 174
-    if-eqz p17, :cond_b4
+    if-eqz p17, :cond_1
 
     .line 175
     .line 176
@@ -386,15 +386,15 @@
     move-result-object v2
 
     .line 180
-    goto :goto_b6
+    goto :goto_1
 
     .line 181
-    :cond_b4
+    :cond_1
     const-string v2, ""
 
     .line 182
     .line 183
-    :goto_b6
+    :goto_1
     invoke-virtual {v13, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 184
@@ -476,7 +476,7 @@
 
 # virtual methods
 .method public final compareTo(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
 
     .line 1
     check-cast p1, Llibs/d9;
@@ -498,7 +498,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/d9;->Y:I
@@ -509,7 +509,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/d9;->Phi:Ljava/lang/String;

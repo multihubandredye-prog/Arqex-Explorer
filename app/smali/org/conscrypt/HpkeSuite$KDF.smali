@@ -29,7 +29,7 @@
 
 # direct methods
 .method private static synthetic $values()[Lorg/conscrypt/HpkeSuite$KDF;
-    .registers 3
+    .locals 3
 
     .line 1
     const/4 v0, 0x1
@@ -54,7 +54,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 6
+    .locals 6
 
     .line 1
     new-instance v0, Lorg/conscrypt/HpkeSuite$KDF;
@@ -104,7 +104,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;IIILjava/lang/String;)V
-    .registers 6
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II",
@@ -135,7 +135,7 @@
 .end method
 
 .method public static forId(I)Lorg/conscrypt/HpkeSuite$KDF;
-    .registers 6
+    .locals 5
 
     .line 1
     invoke-static {}, Lorg/conscrypt/HpkeSuite$KDF;->values()[Lorg/conscrypt/HpkeSuite$KDF;
@@ -152,8 +152,8 @@
     const/4 v2, 0x0
 
     .line 7
-    :goto_6
-    if-ge v2, v1, :cond_14
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     .line 8
     .line 9
@@ -169,22 +169,22 @@
     move-result v4
 
     .line 15
-    if-ne v4, p0, :cond_11
+    if-ne v4, p0, :cond_0
 
     .line 16
     .line 17
     return-object v3
 
     .line 18
-    :cond_11
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
     .line 19
     .line 20
-    goto :goto_6
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_1
     const-string v0, "Unknown KDF "
 
     .line 22
@@ -209,7 +209,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lorg/conscrypt/HpkeSuite$KDF;
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Lorg/conscrypt/HpkeSuite$KDF;
@@ -232,7 +232,7 @@
 .end method
 
 .method public static values()[Lorg/conscrypt/HpkeSuite$KDF;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/HpkeSuite$KDF;->$VALUES:[Lorg/conscrypt/HpkeSuite$KDF;
@@ -257,7 +257,7 @@
 
 # virtual methods
 .method public getHLength()I
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -274,7 +274,7 @@
 .end method
 
 .method public getId()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/HpkeSuite$KDF;->id:I
@@ -285,7 +285,7 @@
 .end method
 
 .method public getMacAlgorithmName()Ljava/lang/String;
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -302,7 +302,7 @@
 .end method
 
 .method public getMacLength()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/HpkeSuite$KDF;->hLength:I
@@ -313,7 +313,7 @@
 .end method
 
 .method public getMacName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/HpkeSuite$KDF;->hName:Ljava/lang/String;
@@ -324,7 +324,7 @@
 .end method
 
 .method public maxExportLength()J
-    .registers 5
+    .locals 4
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/HpkeSuite$KDF;->getMacLength()I

@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/PlayerActivity;Llibs/ml1;)V
-    .registers 3
+    .locals 0
 
     .line 1
     const/16 p1, 0x8
@@ -38,7 +38,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/Object;B)V
-    .registers 3
+    .locals 0
 
     .line 11
     iput-byte p2, p0, Llibs/y60;->X:B
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 15
+    .locals 13
 
     .line 1
     iget-byte v0, p0, Llibs/y60;->X:B
@@ -76,7 +76,7 @@
 
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_1f2
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
@@ -123,7 +123,7 @@
     return-void
 
     .line 34
-    :pswitch_21
+    :pswitch_0
     check-cast v5, Lcom/mixplorer/activities/TextEditorActivity;
 
     .line 35
@@ -207,7 +207,7 @@
 
     .line 74
     .line 75
-    if-eqz p1, :cond_51
+    if-eqz p1, :cond_0
 
     .line 76
     .line 77
@@ -222,11 +222,11 @@
 
     .line 81
     .line 82
-    :cond_51
+    :cond_0
     return-void
 
     .line 83
-    :pswitch_52
+    :pswitch_1
     move-object v6, v5
 
     .line 84
@@ -390,7 +390,7 @@
     return-void
 
     .line 162
-    :pswitch_a1
+    :pswitch_2
     check-cast v5, Llibs/ml1;
 
     .line 163
@@ -399,7 +399,7 @@
 
     .line 165
     .line 166
-    :try_start_a5
+    :try_start_0
     invoke-virtual {v5}, Llibs/ml1;->User()Ljava/util/ArrayList;
 
     .line 167
@@ -409,16 +409,16 @@
 
     .line 170
     invoke-static {p1}, Lcom/mixplorer/activities/PlayerActivity;->Bit(Ljava/util/ArrayList;)V
-    :try_end_ac
-    .catchall {:try_start_a5 .. :try_end_ac} :catchall_ad
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 171
     .line 172
     .line 173
-    goto :goto_be
+    goto :goto_0
 
     .line 174
-    :catchall_ad
+    :catchall_0
     move-exception v0
 
     .line 175
@@ -454,11 +454,11 @@
     .line 189
     .line 190
     .line 191
-    :goto_be
+    :goto_0
     return-void
 
     .line 192
-    :pswitch_bf
+    :pswitch_3
     check-cast v5, Llibs/ps1;
 
     .line 193
@@ -471,7 +471,7 @@
 
     .line 197
     .line 198
-    if-eqz p1, :cond_ca
+    if-eqz p1, :cond_1
 
     .line 199
     .line 200
@@ -480,11 +480,11 @@
     .line 201
     .line 202
     .line 203
-    :cond_ca
+    :cond_1
     return-void
 
     .line 204
-    :pswitch_cb
+    :pswitch_4
     check-cast v5, Lcom/mixplorer/activities/LocalizeActivity;
 
     .line 205
@@ -505,7 +505,7 @@
 
     .line 213
     .line 214
-    if-ne v0, v2, :cond_dc
+    if-ne v0, v2, :cond_2
 
     .line 215
     .line 216
@@ -514,16 +514,16 @@
     .line 217
     .line 218
     .line 219
-    goto/16 :goto_1a3
+    goto/16 :goto_3
 
     .line 220
     .line 221
-    :cond_dc
+    :cond_2
     sget v2, Llibs/wh2;->commit_changes:I
 
     .line 222
     .line 223
-    if-ne v0, v2, :cond_e5
+    if-ne v0, v2, :cond_3
 
     .line 224
     .line 225
@@ -532,16 +532,16 @@
     .line 226
     .line 227
     .line 228
-    goto/16 :goto_1a3
+    goto/16 :goto_3
 
     .line 229
     .line 230
-    :cond_e5
+    :cond_3
     sget v2, Llibs/wh2;->navigation:I
 
     .line 231
     .line 232
-    if-ne v0, v2, :cond_133
+    if-ne v0, v2, :cond_5
 
     .line 233
     .line 234
@@ -572,8 +572,8 @@
     const/4 v8, 0x0
 
     .line 247
-    :goto_f6
-    if-ge v8, v6, :cond_118
+    :goto_1
+    if-ge v8, v6, :cond_4
 
     .line 248
     .line 249
@@ -638,10 +638,10 @@
     add-int/2addr v7, v3
 
     .line 280
-    goto :goto_f6
+    goto :goto_1
 
     .line 281
-    :cond_118
+    :cond_4
     new-instance v1, Llibs/ll1;
 
     .line 282
@@ -687,16 +687,16 @@
     .line 304
     .line 305
     .line 306
-    goto/16 :goto_1a3
+    goto/16 :goto_3
 
     .line 307
     .line 308
-    :cond_133
+    :cond_5
     sget p1, Llibs/wh2;->overflow:I
 
     .line 309
     .line 310
-    if-ne v0, p1, :cond_1a3
+    if-ne v0, p1, :cond_c
 
     .line 311
     .line 312
@@ -720,8 +720,8 @@
     move-result-object v0
 
     .line 322
-    :cond_141
-    :goto_141
+    :cond_6
+    :goto_2
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 323
@@ -730,7 +730,7 @@
     move-result v1
 
     .line 326
-    if-eqz v1, :cond_185
+    if-eqz v1, :cond_b
 
     .line 327
     .line 328
@@ -754,7 +754,7 @@
 
     .line 337
     .line 338
-    if-ne v2, v3, :cond_15f
+    if-ne v2, v3, :cond_7
 
     .line 339
     .line 340
@@ -762,7 +762,7 @@
 
     .line 341
     .line 342
-    if-nez v2, :cond_177
+    if-nez v2, :cond_a
 
     .line 343
     .line 344
@@ -770,7 +770,7 @@
 
     .line 345
     .line 346
-    if-nez v2, :cond_177
+    if-nez v2, :cond_a
 
     .line 347
     .line 348
@@ -779,39 +779,39 @@
     .line 349
     .line 350
     .line 351
-    goto :goto_141
+    goto :goto_2
 
     .line 352
-    :cond_15f
+    :cond_7
     sget v3, Llibs/wh2;->menu_translate:I
 
     .line 353
     .line 354
-    if-ne v2, v3, :cond_164
+    if-ne v2, v3, :cond_8
 
     .line 355
     .line 356
-    goto :goto_141
+    goto :goto_2
 
     .line 357
-    :cond_164
+    :cond_8
     sget v3, Llibs/wh2;->menu_share:I
 
     .line 358
     .line 359
-    if-ne v2, v3, :cond_169
+    if-ne v2, v3, :cond_9
 
     .line 360
     .line 361
-    goto :goto_141
+    goto :goto_2
 
     .line 362
-    :cond_169
+    :cond_9
     sget v3, Llibs/wh2;->menu_export:I
 
     .line 363
     .line 364
-    if-ne v2, v3, :cond_177
+    if-ne v2, v3, :cond_a
 
     .line 365
     .line 366
@@ -823,7 +823,7 @@
 
     .line 369
     .line 370
-    if-nez v1, :cond_141
+    if-nez v1, :cond_6
 
     .line 371
     .line 372
@@ -832,10 +832,10 @@
     .line 373
     .line 374
     .line 375
-    goto :goto_141
+    goto :goto_2
 
     .line 376
-    :cond_177
+    :cond_a
     new-instance v2, Ljava/lang/StringBuilder;
 
     .line 377
@@ -861,10 +861,10 @@
 
     .line 388
     .line 389
-    goto :goto_141
+    goto :goto_2
 
     .line 390
-    :cond_185
+    :cond_b
     new-instance v0, Llibs/ll1;
 
     .line 391
@@ -921,12 +921,12 @@
     .line 418
     .line 419
     .line 420
-    :cond_1a3
-    :goto_1a3
+    :cond_c
+    :goto_3
     return-void
 
     .line 421
-    :pswitch_1a4
+    :pswitch_5
     check-cast v5, Llibs/ga1;
 
     .line 422
@@ -947,7 +947,7 @@
     return-void
 
     .line 431
-    :pswitch_1ae
+    :pswitch_6
     check-cast v5, Lcom/mixplorer/activities/ImageViewerActivity;
 
     .line 432
@@ -960,7 +960,7 @@
     return-void
 
     .line 437
-    :pswitch_1b4
+    :pswitch_7
     check-cast v5, Llibs/pp1;
 
     .line 438
@@ -973,7 +973,7 @@
     return-void
 
     .line 443
-    :pswitch_1ba
+    :pswitch_8
     check-cast v5, Lcom/mixplorer/activities/HexViewerActivity;
 
     .line 444
@@ -994,7 +994,7 @@
 
     .line 452
     .line 453
-    if-ne p1, v0, :cond_1ca
+    if-ne p1, v0, :cond_d
 
     .line 454
     .line 455
@@ -1003,15 +1003,15 @@
     .line 456
     .line 457
     .line 458
-    goto :goto_1d1
+    goto :goto_4
 
     .line 459
-    :cond_1ca
+    :cond_d
     sget v0, Llibs/wh2;->overflow:I
 
     .line 460
     .line 461
-    if-ne p1, v0, :cond_1d1
+    if-ne p1, v0, :cond_e
 
     .line 462
     .line 463
@@ -1020,12 +1020,12 @@
     .line 464
     .line 465
     .line 466
-    :cond_1d1
-    :goto_1d1
+    :cond_e
+    :goto_4
     return-void
 
     .line 467
-    :pswitch_1d2
+    :pswitch_9
     check-cast v5, Lcom/mixplorer/activities/FontViewerActivity;
 
     .line 468
@@ -1046,7 +1046,7 @@
 
     .line 476
     .line 477
-    if-ne p1, v0, :cond_1e2
+    if-ne p1, v0, :cond_f
 
     .line 478
     .line 479
@@ -1055,15 +1055,15 @@
     .line 480
     .line 481
     .line 482
-    goto :goto_1e9
+    goto :goto_5
 
     .line 483
-    :cond_1e2
+    :cond_f
     sget v0, Llibs/wh2;->overflow:I
 
     .line 484
     .line 485
-    if-ne p1, v0, :cond_1e9
+    if-ne p1, v0, :cond_10
 
     .line 486
     .line 487
@@ -1072,12 +1072,12 @@
     .line 488
     .line 489
     .line 490
-    :cond_1e9
-    :goto_1e9
+    :cond_10
+    :goto_5
     return-void
 
     .line 491
-    :pswitch_1ea
+    :pswitch_a
     check-cast v5, Llibs/xl1;
 
     .line 492
@@ -1094,18 +1094,18 @@
     return-void
 
     .line 499
-    :pswitch_data_1f2
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1ea
-        :pswitch_1d2
-        :pswitch_1ba
-        :pswitch_1b4
-        :pswitch_1ae
-        :pswitch_1a4
-        :pswitch_cb
-        :pswitch_bf
-        :pswitch_a1
-        :pswitch_52
-        :pswitch_21
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

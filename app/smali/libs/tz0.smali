@@ -13,7 +13,7 @@
 
 # direct methods
 .method public varargs constructor <init>(Llibs/e01;[Ljava/lang/Object;II)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/tz0;->Lambda:Llibs/e01;
@@ -43,14 +43,14 @@
 
 # virtual methods
 .method public final a()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/tz0;->Lambda:Llibs/e01;
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     iget v1, p0, Llibs/tz0;->Y:I
 
     .line 4
@@ -64,8 +64,8 @@
     .line 8
     .line 9
     invoke-virtual {v3, v1, v2}, Llibs/m01;->z(II)V
-    :try_end_b
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_b} :catch_c
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 10
     .line 11
@@ -73,7 +73,7 @@
     return-void
 
     .line 13
-    :catch_c
+    :catch_0
     move-exception v1
 
     .line 14

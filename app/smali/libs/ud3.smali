@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 11
     invoke-direct {p0}, Llibs/td3;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method public constructor <init>(Ljava/math/BigInteger;Ljava/math/BigInteger;)V
-    .registers 3
+    .locals 0
 
     .line 9
     invoke-direct {p0, p1, p2}, Llibs/td3;-><init>(Ljava/math/BigInteger;Ljava/math/BigInteger;)V
@@ -23,7 +23,7 @@
 .end method
 
 .method public constructor <init>(Ljava/security/interfaces/RSAPublicKey;)V
-    .registers 2
+    .locals 0
 
     .line 10
     invoke-direct {p0, p1}, Llibs/td3;-><init>(Ljava/security/interfaces/RSAPublicKey;)V
@@ -32,7 +32,7 @@
 .end method
 
 .method public constructor <init>(Llibs/ne3;)V
-    .registers 2
+    .locals 0
 
     .line 1
     check-cast p1, Llibs/td3;
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public final b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "rsa-sha2-256"
@@ -65,7 +65,7 @@
 .end method
 
 .method public final f()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "ssh-rsa"
@@ -76,7 +76,7 @@
 .end method
 
 .method public final getAlgorithm()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "rsa-sha2-256"

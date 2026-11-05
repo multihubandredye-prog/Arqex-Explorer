@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,7 +49,7 @@
 
     .line 17
     .line 18
-    if-eqz p2, :cond_1e
+    if-eqz p2, :cond_0
 
     .line 19
     .line 20
@@ -69,14 +69,14 @@
     move-result v1
 
     .line 28
-    if-lez v1, :cond_1e
+    if-lez v1, :cond_0
 
     .line 29
     .line 30
-    goto :goto_2e
+    goto :goto_0
 
     .line 31
-    :cond_1e
+    :cond_0
     invoke-virtual {p1, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     .line 32
@@ -85,17 +85,17 @@
     move-result p2
 
     .line 35
-    if-eqz p2, :cond_26
+    if-eqz p2, :cond_1
 
     .line 36
     .line 37
     move-object p2, p1
 
     .line 38
-    goto :goto_2e
+    goto :goto_0
 
     .line 39
-    :cond_26
+    :cond_1
     invoke-static {p1}, Llibs/vl3;->View(Ljava/lang/String;)Ljava/lang/String;
 
     .line 40
@@ -112,7 +112,7 @@
     move-result-object p2
 
     .line 47
-    :goto_2e
+    :goto_0
     iput-object p2, p0, Llibs/ns;->b:Ljava/lang/String;
 
     .line 48
@@ -125,7 +125,7 @@
     move-result p2
 
     .line 53
-    if-nez p2, :cond_4d
+    if-nez p2, :cond_2
 
     .line 54
     .line 55
@@ -141,7 +141,7 @@
     move-result p2
 
     .line 61
-    if-lez p2, :cond_4d
+    if-lez p2, :cond_2
 
     .line 62
     .line 63
@@ -176,6 +176,6 @@
 
     .line 77
     .line 78
-    :cond_4d
+    :cond_2
     return-void
 .end method

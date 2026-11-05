@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 6
+    .locals 6
 
     .line 1
     new-instance v0, Llibs/re0;
@@ -325,8 +325,8 @@
     .line 168
     .line 169
     .line 170
-    :goto_a9
-    if-ge v4, v0, :cond_ca
+    :goto_0
+    if-ge v4, v0, :cond_1
 
     .line 171
     .line 172
@@ -368,7 +368,7 @@
     move-result-object v2
 
     .line 192
-    if-nez v2, :cond_c4
+    if-nez v2, :cond_0
 
     .line 193
     .line 194
@@ -376,10 +376,10 @@
 
     .line 195
     .line 196
-    goto :goto_a9
+    goto :goto_0
 
     .line 197
-    :cond_c4
+    :cond_0
     const-string v0, "duplicate key: "
 
     .line 198
@@ -392,7 +392,7 @@
     return-void
 
     .line 203
-    :cond_ca
+    :cond_1
     invoke-static {v1}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
 
     .line 204

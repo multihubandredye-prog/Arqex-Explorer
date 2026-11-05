@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ra;)V
-    .registers 7
+    .locals 5
 
     .line 1
     invoke-direct {p0}, Llibs/jz;-><init>()V
@@ -112,7 +112,7 @@
     const/4 v1, 0x3
 
     .line 43
-    if-gt v0, v1, :cond_39
+    if-gt v0, v1, :cond_0
 
     .line 44
     .line 45
@@ -143,7 +143,7 @@
 
     .line 57
     .line 58
-    :cond_39
+    :cond_0
     invoke-virtual {p1}, Llibs/ra;->read()I
 
     .line 59
@@ -162,22 +162,22 @@
     const/4 v2, 0x1
 
     .line 66
-    if-eq v0, v2, :cond_72
+    if-eq v0, v2, :cond_1
 
     .line 67
     .line 68
     const/4 v2, 0x2
 
     .line 69
-    if-eq v0, v2, :cond_72
+    if-eq v0, v2, :cond_1
 
     .line 70
     .line 71
-    if-eq v0, v1, :cond_72
+    if-eq v0, v1, :cond_1
 
     .line 72
     .line 73
-    packed-switch v0, :pswitch_data_7a
+    packed-switch v0, :pswitch_data_0
 
     .line 74
     .line 75
@@ -197,7 +197,7 @@
     throw p1
 
     .line 83
-    :pswitch_52
+    :pswitch_0
     new-instance v0, Llibs/qf0;
 
     .line 84
@@ -214,7 +214,7 @@
     return-void
 
     .line 91
-    :pswitch_5a
+    :pswitch_1
     new-instance v0, Llibs/of0;
 
     .line 92
@@ -231,7 +231,7 @@
     return-void
 
     .line 99
-    :pswitch_62
+    :pswitch_2
     new-instance v0, Llibs/o50;
 
     .line 100
@@ -248,7 +248,7 @@
     return-void
 
     .line 107
-    :pswitch_6a
+    :pswitch_3
     new-instance v0, Llibs/ai0;
 
     .line 108
@@ -265,7 +265,7 @@
     return-void
 
     .line 115
-    :cond_72
+    :cond_1
     new-instance v0, Llibs/xk2;
 
     .line 116
@@ -282,20 +282,20 @@
     return-void
 
     .line 123
-    :pswitch_data_7a
+    :pswitch_data_0
     .packed-switch 0x10
-        :pswitch_6a
-        :pswitch_62
-        :pswitch_5a
-        :pswitch_52
-        :pswitch_6a
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+        :pswitch_3
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public final Top()[B
-    .registers 9
+    .locals 8
 
     .line 1
     new-instance v0, Llibs/fl;
@@ -403,7 +403,7 @@
     const/4 v3, 0x3
 
     .line 52
-    if-gt v2, v3, :cond_41
+    if-gt v2, v3, :cond_0
 
     .line 53
     .line 54
@@ -431,7 +431,7 @@
     .line 64
     .line 65
     .line 66
-    :cond_41
+    :cond_0
     iget v2, p0, Llibs/hh2;->m:I
 
     .line 67

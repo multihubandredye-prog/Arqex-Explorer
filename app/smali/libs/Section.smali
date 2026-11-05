@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Size;[B)V
-    .registers 3
+    .locals 0
 
     .line 7
     invoke-direct {p0, p1, p2}, Llibs/Kind;-><init>(Llibs/Size;[B)V
@@ -14,7 +14,7 @@
 .end method
 
 .method public constructor <init>([B)V
-    .registers 3
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/Size;->i:Llibs/Level;
@@ -32,7 +32,7 @@
 
 # virtual methods
 .method public final bridge synthetic a()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/Section;->c()[B
@@ -47,7 +47,7 @@
 .end method
 
 .method public final b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/Kind;->Y:[B
@@ -66,7 +66,7 @@
 .end method
 
 .method public final c()[B
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/Kind;->Y:[B

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/lw0;)V
-    .registers 2
+    .locals 0
 
     .line 7
     invoke-direct {p0}, Ljavax/crypto/MacSpi;-><init>()V
@@ -21,7 +21,7 @@
 .end method
 
 .method public constructor <init>(Llibs/to1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljavax/crypto/MacSpi;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final engineDoFinal()[B
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/de;->a:Llibs/to1;
@@ -67,7 +67,7 @@
 .end method
 
 .method public final engineGetMacLength()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/de;->a:Llibs/to1;
@@ -86,10 +86,10 @@
 .end method
 
 .method public final engineInit(Ljava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
-    .registers 9
+    .locals 6
 
     .line 1
-    if-eqz p1, :cond_e2
+    if-eqz p1, :cond_a
 
     .line 2
     .line 3
@@ -104,21 +104,21 @@
 
     .line 7
     .line 8
-    if-eqz v0, :cond_75
+    if-eqz v0, :cond_3
 
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     check-cast p1, Ljavax/crypto/SecretKey;
-    :try_end_b
-    .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_b} :catch_6f
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
     .line 11
     .line 12
-    :try_start_b
+    :try_start_1
     check-cast p2, Ljavax/crypto/spec/PBEParameterSpec;
-    :try_end_d
-    .catch Ljava/lang/Exception; {:try_start_b .. :try_end_d} :catch_69
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 13
     .line 14
@@ -126,11 +126,11 @@
 
     .line 15
     .line 16
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_0
 
     .line 17
     .line 18
-    if-nez p2, :cond_23
+    if-nez p2, :cond_0
 
     .line 19
     .line 20
@@ -166,7 +166,7 @@
     .line 34
     .line 35
     .line 36
-    :cond_23
+    :cond_0
     invoke-interface {v2}, Llibs/to1;->b()Ljava/lang/String;
 
     .line 37
@@ -191,17 +191,17 @@
 
     .line 47
     .line 48
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_1
 
     .line 49
     .line 50
     const/4 v0, 0x6
 
     .line 51
-    goto :goto_44
+    goto :goto_0
 
     .line 52
-    :cond_33
+    :cond_1
     invoke-interface {v2}, Llibs/to1;->b()Ljava/lang/String;
 
     .line 53
@@ -222,17 +222,17 @@
     move-result v0
 
     .line 62
-    if-eqz v0, :cond_41
+    if-eqz v0, :cond_2
 
     .line 63
     .line 64
     const/4 v0, 0x4
 
     .line 65
-    goto :goto_44
+    goto :goto_0
 
     .line 66
-    :cond_41
+    :cond_2
     const/4 v0, 0x1
 
     .line 67
@@ -240,7 +240,7 @@
 
     .line 68
     .line 69
-    :goto_44
+    :goto_0
     const/4 v4, 0x2
 
     .line 70
@@ -300,11 +300,11 @@
     const/4 p2, 0x0
 
     .line 98
-    :goto_61
+    :goto_1
     array-length v0, v4
 
     .line 99
-    if-eq p2, v0, :cond_d8
+    if-eq p2, v0, :cond_8
 
     .line 100
     .line 101
@@ -316,10 +316,10 @@
 
     .line 104
     .line 105
-    goto :goto_61
+    goto :goto_1
 
     .line 106
-    :catch_69
+    :catch_0
     const-string p1, "PKCS12 requires a PBEParameterSpec"
 
     .line 107
@@ -332,7 +332,7 @@
     return-void
 
     .line 112
-    :catch_6f
+    :catch_1
     const-string p1, "PKCS12 requires a SecretKey/PBEKey"
 
     .line 113
@@ -345,12 +345,12 @@
     return-void
 
     .line 118
-    :cond_75
+    :cond_3
     instance-of v0, p1, Llibs/pa;
 
     .line 119
     .line 120
-    if-eqz v0, :cond_b2
+    if-eqz v0, :cond_6
 
     .line 121
     .line 122
@@ -362,19 +362,19 @@
 
     .line 125
     .line 126
-    if-eqz v0, :cond_80
+    if-eqz v0, :cond_4
 
     .line 127
     .line 128
-    goto :goto_ca
+    goto :goto_3
 
     .line 129
-    :cond_80
+    :cond_4
     instance-of v0, p2, Ljavax/crypto/spec/PBEParameterSpec;
 
     .line 130
     .line 131
-    if-eqz v0, :cond_ac
+    if-eqz v0, :cond_5
 
     .line 132
     .line 133
@@ -442,11 +442,11 @@
     const/4 p2, 0x0
 
     .line 165
-    :goto_a4
+    :goto_2
     array-length v0, v3
 
     .line 166
-    if-eq p2, v0, :cond_d8
+    if-eq p2, v0, :cond_8
 
     .line 167
     .line 168
@@ -458,10 +458,10 @@
 
     .line 171
     .line 172
-    goto :goto_a4
+    goto :goto_2
 
     .line 173
-    :cond_ac
+    :cond_5
     const-string p1, "PBE requires PBE parameters to be set."
 
     .line 174
@@ -474,12 +474,12 @@
     return-void
 
     .line 179
-    :cond_b2
+    :cond_6
     instance-of v0, p2, Ljavax/crypto/spec/IvParameterSpec;
 
     .line 180
     .line 181
-    if-eqz v0, :cond_cc
+    if-eqz v0, :cond_7
 
     .line 182
     .line 183
@@ -521,15 +521,15 @@
     .line 201
     .line 202
     .line 203
-    :goto_ca
+    :goto_3
     move-object p1, v0
 
     .line 204
-    goto :goto_d8
+    goto :goto_4
 
     .line 205
-    :cond_cc
-    if-nez p2, :cond_dc
+    :cond_7
+    if-nez p2, :cond_9
 
     .line 206
     .line 207
@@ -553,8 +553,8 @@
     move-object p1, p2
 
     .line 217
-    :cond_d8
-    :goto_d8
+    :cond_8
+    :goto_4
     invoke-interface {v2, p1}, Llibs/to1;->c(Llibs/et;)V
 
     .line 218
@@ -563,7 +563,7 @@
     return-void
 
     .line 221
-    :cond_dc
+    :cond_9
     const-string p1, "unknown parameter type."
 
     .line 222
@@ -576,7 +576,7 @@
     return-void
 
     .line 227
-    :cond_e2
+    :cond_a
     const-string p1, "key is null"
 
     .line 228
@@ -590,7 +590,7 @@
 .end method
 
 .method public final engineReset()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/de;->a:Llibs/to1;
@@ -606,7 +606,7 @@
 .end method
 
 .method public final engineUpdate(B)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/de;->a:Llibs/to1;
@@ -622,7 +622,7 @@
 .end method
 
 .method public final engineUpdate([BII)V
-    .registers 5
+    .locals 1
 
     .line 7
     iget-object v0, p0, Llibs/de;->a:Llibs/to1;

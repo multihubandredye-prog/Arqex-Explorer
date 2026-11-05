@@ -28,7 +28,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/p32;Lcom/mixplorer/activities/BrowseActivity;ILjava/util/Set;ZIZLjava/lang/String;Ljava/lang/String;)V
-    .registers 10
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 10
+    .locals 9
 
     .line 1
     iget-object v7, p0, Llibs/o52;->Omicron:Ljava/lang/String;

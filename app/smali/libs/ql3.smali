@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Landroid/app/Dialog;-><init>(Landroid/content/Context;)V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onBackPressed()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Landroid/app/Dialog;->onBackPressed()V
@@ -48,7 +48,7 @@
 
     .line 5
     .line 6
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
@@ -57,12 +57,12 @@
     .line 9
     .line 10
     .line 11
-    :cond_a
+    :cond_0
     return-void
 .end method
 
 .method public final onCreate(Landroid/os/Bundle;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-super {p0, p1}, Landroid/app/Dialog;->onCreate(Landroid/os/Bundle;)V
@@ -81,7 +81,7 @@
     const/4 v0, 0x0
 
     .line 9
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_0
 
     .line 10
     .line 11
@@ -115,7 +115,7 @@
     .line 25
     .line 26
     .line 27
-    :cond_1a
+    :cond_0
     new-instance p1, Landroid/widget/FrameLayout;
 
     .line 28
@@ -212,7 +212,7 @@
     move-result v3
 
     .line 77
-    if-eqz v3, :cond_53
+    if-eqz v3, :cond_1
 
     .line 78
     .line 79
@@ -224,14 +224,14 @@
 
     .line 82
     .line 83
-    goto :goto_54
+    goto :goto_0
 
     .line 84
-    :cond_53
+    :cond_1
     const/4 v3, 0x0
 
     .line 85
-    :goto_54
+    :goto_0
     invoke-virtual {v2, v0, v0, v0, v3}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
     .line 86

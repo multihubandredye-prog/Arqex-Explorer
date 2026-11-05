@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/k00;Llibs/qc3;Llibs/d73;)V
-    .registers 6
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -92,13 +92,13 @@
 
 # virtual methods
 .method public final c()V
-    .registers 6
+    .locals 5
 
     .line 1
     :try_start_0
     invoke-virtual {p0}, Llibs/w32;->close()V
-    :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_3} :catch_4
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 2
     .line 3
@@ -106,7 +106,7 @@
     return-void
 
     .line 5
-    :catch_4
+    :catch_0
     move-exception v0
 
     .line 6
@@ -204,7 +204,7 @@
 .end method
 
 .method public final close()V
-    .registers 9
+    .locals 8
 
     .line 1
     new-instance v0, Llibs/fu2;
@@ -266,7 +266,7 @@
 .end method
 
 .method public flush()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/w32;->Y:Llibs/d73;

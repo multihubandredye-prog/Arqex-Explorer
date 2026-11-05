@@ -19,7 +19,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 1
     const/4 v0, 0x1
@@ -85,29 +85,29 @@
 .end method
 
 .method public constructor <init>(Z)V
-    .registers 2
+    .locals 0
 
     .line 42
     invoke-direct {p0}, Llibs/Theme;-><init>()V
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     .line 43
     sget-object p1, Llibs/Room;->Y:[B
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     sget-object p1, Llibs/Room;->Z:[B
 
-    :goto_a
+    :goto_0
     iput-object p1, p0, Llibs/Room;->X:[B
 
     return-void
 .end method
 
 .method public constructor <init>([B)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Llibs/Theme;-><init>()V
@@ -121,7 +121,7 @@
     const/4 v1, 0x1
 
     .line 6
-    if-ne v0, v1, :cond_22
+    if-ne v0, v1, :cond_2
 
     .line 7
     .line 8
@@ -132,7 +132,7 @@
 
     .line 10
     .line 11
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
     .line 12
     .line 13
@@ -147,7 +147,7 @@
     return-void
 
     .line 18
-    :cond_11
+    :cond_0
     const/16 v1, 0xff
 
     .line 19
@@ -155,7 +155,7 @@
     and-int/2addr v0, v1
 
     .line 21
-    if-ne v0, v1, :cond_1b
+    if-ne v0, v1, :cond_1
 
     .line 22
     .line 23
@@ -170,7 +170,7 @@
     return-void
 
     .line 28
-    :cond_1b
+    :cond_1
     invoke-static {p1}, Llibs/t43;->g([B)[B
 
     .line 29
@@ -186,7 +186,7 @@
     return-void
 
     .line 35
-    :cond_22
+    :cond_2
     const-string p1, "byte value should have 1 byte in it"
 
     .line 36
@@ -203,7 +203,7 @@
 .end method
 
 .method public static n([B)Llibs/Room;
-    .registers 3
+    .locals 2
 
     .line 1
     array-length v0, p0
@@ -212,7 +212,7 @@
     const/4 v1, 0x1
 
     .line 3
-    if-ne v0, v1, :cond_1a
+    if-ne v0, v1, :cond_2
 
     .line 4
     .line 5
@@ -223,7 +223,7 @@
 
     .line 7
     .line 8
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 9
     .line 10
@@ -234,7 +234,7 @@
     return-object p0
 
     .line 13
-    :cond_c
+    :cond_0
     const/16 v1, 0xff
 
     .line 14
@@ -242,7 +242,7 @@
     and-int/2addr v0, v1
 
     .line 16
-    if-ne v0, v1, :cond_14
+    if-ne v0, v1, :cond_1
 
     .line 17
     .line 18
@@ -253,7 +253,7 @@
     return-object p0
 
     .line 21
-    :cond_14
+    :cond_1
     new-instance v0, Llibs/Room;
 
     .line 22
@@ -266,7 +266,7 @@
     return-object v0
 
     .line 27
-    :cond_1a
+    :cond_2
     const-string p0, "BOOLEAN value should have 1 byte in it"
 
     .line 28
@@ -283,10 +283,10 @@
 .end method
 
 .method public static p(Llibs/Core;)Llibs/Room;
-    .registers 4
+    .locals 3
 
     .line 1
-    if-eqz p0, :cond_37
+    if-eqz p0, :cond_2
 
     .line 2
     .line 3
@@ -294,14 +294,14 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
-    goto :goto_37
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     instance-of v0, p0, [B
 
     .line 9
@@ -309,7 +309,7 @@
     const/4 v1, 0x0
 
     .line 11
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     .line 12
     .line 13
@@ -317,7 +317,7 @@
 
     .line 14
     .line 15
-    :try_start_e
+    :try_start_0
     invoke-static {p0}, Llibs/Theme;->j([B)Llibs/Theme;
 
     .line 16
@@ -327,15 +327,15 @@
 
     .line 19
     check-cast p0, Llibs/Room;
-    :try_end_14
-    .catch Ljava/io/IOException; {:try_start_e .. :try_end_14} :catch_15
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 20
     .line 21
     return-object p0
 
     .line 22
-    :catch_15
+    :catch_0
     move-exception p0
 
     .line 23
@@ -368,7 +368,7 @@
     return-object v1
 
     .line 38
-    :cond_25
+    :cond_1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 39
@@ -405,8 +405,8 @@
     return-object v1
 
     .line 56
-    :cond_37
-    :goto_37
+    :cond_2
+    :goto_0
     check-cast p0, Llibs/Room;
 
     .line 57
@@ -415,7 +415,7 @@
 .end method
 
 .method public static q(Llibs/Height;)Llibs/Room;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/Height;->p()Llibs/Theme;
@@ -430,7 +430,7 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -445,7 +445,7 @@
     return-object p0
 
     .line 14
-    :cond_d
+    :cond_0
     check-cast p0, Llibs/Part;
 
     .line 15
@@ -472,7 +472,7 @@
 
 # virtual methods
 .method public final g(Llibs/Theme;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     instance-of v0, p1, Llibs/Room;
@@ -482,7 +482,7 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 5
     .line 6
@@ -506,7 +506,7 @@
 
     .line 15
     .line 16
-    if-ne v0, p1, :cond_13
+    if-ne v0, p1, :cond_0
 
     .line 17
     .line 18
@@ -516,12 +516,12 @@
     return p1
 
     .line 20
-    :cond_13
+    :cond_0
     return v1
 .end method
 
 .method public final h(Llibs/v60;)V
-    .registers 4
+    .locals 2
 
     .line 1
     const/4 v0, 0x1
@@ -540,7 +540,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/Room;->X:[B
@@ -558,7 +558,7 @@
 .end method
 
 .method public final k()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -568,7 +568,7 @@
 .end method
 
 .method public final r()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/Room;->X:[B
@@ -582,7 +582,7 @@
 
     .line 5
     .line 6
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
@@ -592,12 +592,12 @@
     return v0
 
     .line 10
-    :cond_9
+    :cond_0
     return v1
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/Room;->X:[B
@@ -611,7 +611,7 @@
 
     .line 5
     .line 6
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
@@ -622,7 +622,7 @@
     return-object v0
 
     .line 11
-    :cond_a
+    :cond_0
     const-string v0, "FALSE"
 
     .line 12

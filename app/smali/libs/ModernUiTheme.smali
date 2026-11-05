@@ -11,15 +11,15 @@
 
 # direct methods
 .method public static attachTopBarTasksButton(Landroid/app/Activity;Landroid/view/ViewGroup;)V
-    .registers 13
+    .locals 11
 
-    if-eqz p0, :cond_125
+    if-eqz p0, :cond_5
 
-    if-nez p1, :cond_6
+    if-nez p1, :cond_0
 
-    goto/16 :goto_125
+    goto/16 :goto_1
 
-    :cond_6
+    :cond_0
     invoke-static {p0}, Llibs/ModernUiTheme;->refreshPinnedFolderShortcuts(Landroid/content/Context;)V
 
     const v0, 0x7f0803f0
@@ -28,11 +28,11 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_1
 
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    :cond_15
+    :cond_1
     new-instance v1, Landroid/widget/TextView;
 
     invoke-direct {v1, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -117,7 +117,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_87
+    if-eqz v8, :cond_2
 
     const/16 v3, 0x16
 
@@ -143,14 +143,14 @@
 
     move-result v5
 
-    goto :goto_d2
+    goto :goto_0
 
-    :cond_87
+    :cond_2
     const v8, 0xffffff
 
     and-int v10, v3, v8
 
-    if-nez v10, :cond_9b
+    if-nez v10, :cond_3
 
     const v3, 0x16ffffff
 
@@ -160,14 +160,14 @@
 
     const v5, 0x62ffffff
 
-    goto :goto_d2
+    goto :goto_0
 
-    :cond_9b
+    :cond_3
     invoke-static {v5}, Llibs/ModernUiTheme;->isLightColor(I)Z
 
     move-result v8
 
-    if-eqz v8, :cond_ba
+    if-eqz v8, :cond_4
 
     const/16 v3, 0x26
 
@@ -193,9 +193,9 @@
 
     move-result v5
 
-    goto :goto_d2
+    goto :goto_0
 
-    :cond_ba
+    :cond_4
     const/16 v3, 0x22
 
     invoke-static {v4, v3}, Llibs/ModernUiTheme;->withAlpha(II)I
@@ -220,7 +220,7 @@
 
     move-result v5
 
-    :goto_d2
+    :goto_0
     invoke-static {v3, v6, v7, v8}, Llibs/ModernUiTheme;->makeRoundedRect(IFII)Landroid/graphics/drawable/GradientDrawable;
 
     move-result-object v3
@@ -293,13 +293,13 @@
 
     invoke-static {p0, p1}, Llibs/SmartFeaturesV116;->attachTopBarExtras(Landroid/app/Activity;Landroid/view/ViewGroup;)V
 
-    :cond_125
-    :goto_125
+    :cond_5
+    :goto_1
     return-void
 .end method
 
 .method public static buildCleanLightSkinList()Ljava/util/ArrayList;
-    .registers 3
+    .locals 3
 
     invoke-static {}, Llibs/ModernUiTheme;->buildEmptySkinList()Ljava/util/ArrayList;
 
@@ -801,7 +801,7 @@
 .end method
 
 .method public static buildDarkTurquoiseSkinList()Ljava/util/ArrayList;
-    .registers 3
+    .locals 3
 
     invoke-static {}, Llibs/ModernUiTheme;->buildEmptySkinList()Ljava/util/ArrayList;
 
@@ -1303,7 +1303,7 @@
 .end method
 
 .method public static buildEmptySkinList()Ljava/util/ArrayList;
-    .registers 4
+    .locals 4
 
     new-instance v0, Ljava/util/ArrayList;
 
@@ -1313,8 +1313,8 @@
 
     const/4 v2, 0x0
 
-    :goto_8
-    if-ge v2, v1, :cond_12
+    :goto_0
+    if-ge v2, v1, :cond_0
 
     const-string v3, ""
 
@@ -1322,14 +1322,14 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     return-object v0
 .end method
 
 .method public static buildFileShortcutBitmap(Landroid/graphics/Bitmap;Z)Landroid/graphics/Bitmap;
-    .registers 14
+    .locals 12
 
     const/16 v0, 0xd8
 
@@ -1375,7 +1375,7 @@
 
     const/4 v3, 0x0
 
-    if-eqz p1, :cond_55
+    if-eqz p1, :cond_0
 
     new-instance v4, Landroid/graphics/RectF;
 
@@ -1407,9 +1407,9 @@
 
     const/high16 v4, 0x42b40000    # 90.0f
 
-    goto :goto_6c
+    goto :goto_0
 
-    :cond_55
+    :cond_0
     const/4 v4, 0x0
 
     invoke-virtual {v1, v4, v4, v4, v4}, Landroid/graphics/Canvas;->drawARGB(IIII)V
@@ -1430,8 +1430,8 @@
 
     const/high16 v4, 0x42dc0000    # 110.0f
 
-    :goto_6c
-    if-eqz p0, :cond_9a
+    :goto_0
+    if-eqz p0, :cond_1
 
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -1441,9 +1441,9 @@
 
     move-result v6
 
-    if-lez v5, :cond_9a
+    if-lez v5, :cond_1
 
-    if-lez v6, :cond_9a
+    if-lez v6, :cond_1
 
     int-to-float v5, v5
 
@@ -1485,7 +1485,7 @@
 
     return-object v0
 
-    :cond_9a
+    :cond_1
     const v3, -0xa0505
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setColor(I)V
@@ -1552,7 +1552,7 @@
 .end method
 
 .method public static buildFolderShortcutBitmap(Z)Landroid/graphics/Bitmap;
-    .registers 13
+    .locals 12
 
     const/16 v0, 0xd8
 
@@ -1596,7 +1596,7 @@
 
     invoke-virtual {v2, v4}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    if-eqz p0, :cond_96
+    if-eqz p0, :cond_0
 
     new-instance v3, Landroid/graphics/RectF;
 
@@ -1684,7 +1684,7 @@
 
     return-object v0
 
-    :cond_96
+    :cond_0
     const/4 v3, 0x0
 
     invoke-virtual {v1, v3, v3, v3, v3}, Landroid/graphics/Canvas;->drawARGB(IIII)V
@@ -1775,7 +1775,7 @@
 .end method
 
 .method public static buildLightTurquoiseSkinList()Ljava/util/ArrayList;
-    .registers 3
+    .locals 3
 
     invoke-static {}, Llibs/ModernUiTheme;->buildEmptySkinList()Ljava/util/ArrayList;
 
@@ -2277,7 +2277,7 @@
 .end method
 
 .method public static buildModernSlateSkinList()Ljava/util/ArrayList;
-    .registers 3
+    .locals 3
 
     invoke-static {}, Llibs/ModernUiTheme;->buildEmptySkinList()Ljava/util/ArrayList;
 
@@ -2779,15 +2779,15 @@
 .end method
 
 .method public static buildPlainShortcutBitmap(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
-    .registers 9
+    .locals 8
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     const/4 v0, 0x0
 
     return-object v0
 
-    :cond_4
+    :cond_0
     const/16 v0, 0xd8
 
     sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
@@ -2826,7 +2826,7 @@
 .end method
 
 .method public static buildTrueBlackSkinList()Ljava/util/ArrayList;
-    .registers 3
+    .locals 3
 
     invoke-static {}, Llibs/ModernUiTheme;->buildEmptySkinList()Ljava/util/ArrayList;
 
@@ -3328,7 +3328,7 @@
 .end method
 
 .method public static createPopupItemSelector()Landroid/graphics/drawable/Drawable;
-    .registers 5
+    .locals 5
 
     const-string v0, "HIGHLIGHT_POPUP_LIST_ITEM"
 
@@ -3378,7 +3378,7 @@
 .end method
 
 .method public static dp(F)I
-    .registers 2
+    .locals 1
 
     invoke-static {p0}, Llibs/ModernUiTheme;->dpF(F)F
 
@@ -3392,7 +3392,7 @@
 .end method
 
 .method public static dpF(F)F
-    .registers 2
+    .locals 1
 
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
@@ -3410,7 +3410,7 @@
 .end method
 
 .method public static getModernDrawable(I)Landroid/graphics/drawable/Drawable;
-    .registers 9
+    .locals 8
 
     sget v0, Llibs/vh2;->btn_dialog:I
 
@@ -3420,7 +3420,7 @@
 
     const/4 v4, 0x0
 
-    if-ne p0, v0, :cond_48
+    if-ne p0, v0, :cond_1
 
     const-string v0, "TINT_POPUP_BG"
 
@@ -3434,20 +3434,20 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     const/high16 v0, 0xd000000
 
     const/high16 v3, 0x1e000000
 
-    goto :goto_22
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     const v0, 0x18ffffff
 
     const v3, 0x30ffffff
 
-    :goto_22
+    :goto_0
     const/high16 v5, 0x41600000    # 14.0f
 
     invoke-static {v5}, Llibs/ModernUiTheme;->dp(F)I
@@ -3482,10 +3482,10 @@
 
     return-object v7
 
-    :cond_48
+    :cond_1
     sget v0, Llibs/vh2;->btn_dialog_pressed:I
 
-    if-ne p0, v0, :cond_73
+    if-ne p0, v0, :cond_2
 
     const-string v0, "TINT_POPUP_CONTROLS_PRESSED"
 
@@ -3523,29 +3523,29 @@
 
     return-object v5
 
-    :cond_73
+    :cond_2
     sget v0, Llibs/vh2;->dialog_button_separator:I
 
-    if-eq p0, v0, :cond_1e7
+    if-eq p0, v0, :cond_f
 
     sget v0, Llibs/vh2;->bg_dialog_body:I
 
-    if-eq p0, v0, :cond_1e7
+    if-eq p0, v0, :cond_f
 
     sget v0, Llibs/vh2;->bg_dialog_footer:I
 
-    if-eq p0, v0, :cond_1e7
+    if-eq p0, v0, :cond_f
 
     sget v0, Llibs/vh2;->bar_button:I
 
-    if-ne p0, v0, :cond_85
+    if-ne p0, v0, :cond_3
 
-    goto/16 :goto_1e7
+    goto/16 :goto_5
 
-    :cond_85
+    :cond_3
     sget v0, Llibs/vh2;->bg_dialog_header:I
 
-    if-ne p0, v0, :cond_c1
+    if-ne p0, v0, :cond_5
 
     const-string v0, "TINT_POPUP_BG"
 
@@ -3559,16 +3559,16 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9a
+    if-eqz v0, :cond_4
 
     const/high16 v0, 0x7000000
 
-    goto :goto_9d
+    goto :goto_1
 
-    :cond_9a
+    :cond_4
     const v0, 0xaffffff
 
-    :goto_9d
+    :goto_1
     const/high16 v1, 0x41b00000    # 22.0f
 
     invoke-static {v1}, Llibs/ModernUiTheme;->dpF(F)F
@@ -3605,10 +3605,10 @@
 
     return-object v2
 
-    :cond_c1
+    :cond_5
     sget v0, Llibs/vh2;->bg_popup:I
 
-    if-ne p0, v0, :cond_fb
+    if-ne p0, v0, :cond_7
 
     const-string v0, "TINT_POPUP_BG"
 
@@ -3622,16 +3622,16 @@
 
     move-result v2
 
-    if-eqz v2, :cond_d6
+    if-eqz v2, :cond_6
 
     const/high16 v2, 0x18000000
 
-    goto :goto_d9
+    goto :goto_2
 
-    :cond_d6
+    :cond_6
     const v2, 0x26ffffff
 
-    :goto_d9
+    :goto_2
     const/high16 v3, 0x40c00000    # 6.0f
 
     invoke-static {v3}, Llibs/ModernUiTheme;->dp(F)I
@@ -3662,10 +3662,10 @@
 
     return-object v5
 
-    :cond_fb
+    :cond_7
     sget v0, Llibs/vh2;->grid_item_bg_pressed:I
 
-    if-ne p0, v0, :cond_120
+    if-ne p0, v0, :cond_8
 
     const-string v0, "HIGHLIGHT_GRID_ITEM"
 
@@ -3701,29 +3701,29 @@
 
     return-object v0
 
-    :cond_120
+    :cond_8
     sget v0, Llibs/vh2;->bar_main_button_pressed:I
 
-    if-eq p0, v0, :cond_1c6
+    if-eq p0, v0, :cond_e
 
     sget v0, Llibs/vh2;->bar_action_button_pressed:I
 
-    if-eq p0, v0, :cond_1c6
+    if-eq p0, v0, :cond_e
 
     sget v0, Llibs/vh2;->bar_tool_button_pressed:I
 
-    if-ne p0, v0, :cond_12e
+    if-ne p0, v0, :cond_9
 
-    goto/16 :goto_1c6
+    goto/16 :goto_4
 
-    :cond_12e
+    :cond_9
     sget v0, Llibs/vh2;->tab_indicator_selected:I
 
     const/high16 v3, 0x40800000    # 4.0f
 
     const/high16 v5, 0x41c00000    # 24.0f
 
-    if-ne p0, v0, :cond_164
+    if-ne p0, v0, :cond_a
 
     const-string v0, "TINT_TAB_INDICATOR_SELECTED"
 
@@ -3771,10 +3771,10 @@
 
     return-object v0
 
-    :cond_164
+    :cond_a
     sget v0, Llibs/vh2;->tab_indicator_default:I
 
-    if-ne p0, v0, :cond_179
+    if-ne p0, v0, :cond_b
 
     const/4 v0, 0x0
 
@@ -3794,12 +3794,12 @@
 
     return-object v0
 
-    :cond_179
+    :cond_b
     sget v0, Llibs/vh2;->edit_text_default:I
 
     const/high16 v2, 0x41200000    # 10.0f
 
-    if-ne p0, v0, :cond_1a5
+    if-ne p0, v0, :cond_d
 
     const-string v0, "TINT_POPUP_BG"
 
@@ -3813,20 +3813,20 @@
 
     move-result v0
 
-    if-eqz v0, :cond_192
+    if-eqz v0, :cond_c
 
     const/high16 v0, 0xa000000
 
     const/high16 v3, 0x24000000
 
-    goto :goto_198
+    goto :goto_3
 
-    :cond_192
+    :cond_c
     const v0, 0x14ffffff
 
     const v3, 0x2effffff
 
-    :goto_198
+    :goto_3
     invoke-static {v2}, Llibs/ModernUiTheme;->dpF(F)F
 
     move-result v2
@@ -3841,10 +3841,10 @@
 
     return-object v0
 
-    :cond_1a5
+    :cond_d
     sget v0, Llibs/vh2;->edit_text_focused:I
 
-    if-ne p0, v0, :cond_1ed
+    if-ne p0, v0, :cond_10
 
     const-string v0, "TINT_POPUP_CONTROLS_PRESSED"
 
@@ -3876,8 +3876,8 @@
 
     return-object v0
 
-    :cond_1c6
-    :goto_1c6
+    :cond_e
+    :goto_4
     const-string v0, "HIGHLIGHT_BAR_MAIN_BUTTONS"
 
     const-string v1, "#24FFFFFF"
@@ -3912,22 +3912,22 @@
 
     return-object v0
 
-    :cond_1e7
-    :goto_1e7
+    :cond_f
+    :goto_5
     new-instance v0, Landroid/graphics/drawable/ColorDrawable;
 
     invoke-direct {v0, v4}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
 
     return-object v0
 
-    :cond_1ed
+    :cond_10
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
 .method public static inset(Landroid/graphics/drawable/Drawable;IIII)Landroid/graphics/drawable/InsetDrawable;
-    .registers 11
+    .locals 6
 
     new-instance v0, Llibs/ModernUiTheme$NoPadInsetDrawable;
 
@@ -3947,16 +3947,16 @@
 .end method
 
 .method public static isFolderShortcutIntent(Landroid/content/Intent;)Z
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     return v0
 
-    :cond_4
-    :try_start_4
+    :cond_0
+    :try_start_0
     invoke-virtual {p0}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v1
@@ -3969,30 +3969,30 @@
 
     const/4 v2, 0x1
 
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_1
 
     return v2
 
-    :cond_12
+    :cond_1
     const-string v1, "shortcut_fi_dir"
 
     invoke-virtual {p0, v1, v0}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result v1
-    :try_end_18
-    .catchall {:try_start_4 .. :try_end_18} :catchall_1b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_2
 
     return v2
 
-    :catchall_1b
-    :cond_1b
+    :catchall_0
+    :cond_2
     return v0
 .end method
 
 .method public static isLightColor(I)Z
-    .registers 4
+    .locals 3
 
     shr-int/lit8 v0, p0, 0x10
 
@@ -4016,20 +4016,20 @@
 
     const v1, 0x23668
 
-    if-lt v0, v1, :cond_19
+    if-lt v0, v1, :cond_0
 
     const/4 v0, 0x1
 
     return v0
 
-    :cond_19
+    :cond_0
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method public static makePressSelector(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/StateListDrawable;
-    .registers 6
+    .locals 4
 
     new-instance v0, Landroid/graphics/drawable/StateListDrawable;
 
@@ -4075,7 +4075,7 @@
 .end method
 
 .method public static makeRoundedRect(IFII)Landroid/graphics/drawable/GradientDrawable;
-    .registers 6
+    .locals 2
 
     new-instance v0, Landroid/graphics/drawable/GradientDrawable;
 
@@ -4089,49 +4089,49 @@
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/GradientDrawable;->setCornerRadius(F)V
 
-    if-lez p2, :cond_14
+    if-lez p2, :cond_0
 
     invoke-virtual {v0, p2, p3}, Landroid/graphics/drawable/GradientDrawable;->setStroke(II)V
 
-    :cond_14
+    :cond_0
     return-object v0
 .end method
 
 .method public static refreshPinnedFolderShortcuts(Landroid/content/Context;)V
-    .registers 4
+    .locals 3
 
     sget-boolean v0, Llibs/ModernUiTheme;->sPinnedFoldersRefreshed:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
-    :cond_5
-    if-nez p0, :cond_8
+    :cond_0
+    if-nez p0, :cond_1
 
     return-void
 
-    :cond_8
+    :cond_1
     const/4 v0, 0x1
 
     sput-boolean v0, Llibs/ModernUiTheme;->sPinnedFoldersRefreshed:Z
 
-    :try_start_b
+    :try_start_0
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x1a
 
-    if-lt v1, v2, :cond_28
+    if-lt v1, v2, :cond_3
 
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_2
 
     move-object v1, p0
 
-    :cond_18
+    :cond_2
     new-instance v2, Ljava/lang/Thread;
 
     new-instance p0, Llibs/ModernUiTheme$ShortcutRefreshRunnable;
@@ -4143,23 +4143,23 @@
     invoke-virtual {v2, v0}, Ljava/lang/Thread;->setDaemon(Z)V
 
     invoke-virtual {v2}, Ljava/lang/Thread;->start()V
-    :try_end_28
-    .catchall {:try_start_b .. :try_end_28} :catchall_28
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_28
-    :cond_28
+    :catchall_0
+    :cond_3
     return-void
 .end method
 
 .method public static resolveAdaptiveBitmapIcon(Landroid/graphics/Bitmap;)Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     :try_start_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1a
 
-    if-lt v0, v1, :cond_12
+    if-lt v0, v1, :cond_0
 
     const/4 v0, 0x1
 
@@ -4171,11 +4171,11 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     return-object v0
 
-    :cond_12
+    :cond_0
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Llibs/ModernUiTheme;->buildFileShortcutBitmap(Landroid/graphics/Bitmap;Z)Landroid/graphics/Bitmap;
@@ -4185,12 +4185,12 @@
     invoke-static {v0}, Llibs/y81;->i(Landroid/graphics/Bitmap;)Ljava/lang/Object;
 
     move-result-object v0
-    :try_end_1b
-    .catchall {:try_start_0 .. :try_end_1b} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object v0
 
-    :catchall_1c
+    :catchall_0
     invoke-static {p0}, Llibs/y81;->i(Landroid/graphics/Bitmap;)Ljava/lang/Object;
 
     move-result-object v0
@@ -4199,7 +4199,7 @@
 .end method
 
 .method public static resolveLegacyShortcutBitmap(Landroid/content/Intent;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
-    .registers 4
+    .locals 2
 
     :try_start_0
     invoke-static {p0}, Llibs/ModernUiTheme;->isFolderShortcutIntent(Landroid/content/Intent;)Z
@@ -4208,33 +4208,33 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     invoke-static {v1}, Llibs/ModernUiTheme;->buildFolderShortcutBitmap(Z)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     invoke-static {p1, v1}, Llibs/ModernUiTheme;->buildFileShortcutBitmap(Landroid/graphics/Bitmap;Z)Landroid/graphics/Bitmap;
 
     move-result-object v0
-    :try_end_10
-    .catchall {:try_start_0 .. :try_end_10} :catchall_13
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :goto_10
-    if-eqz v0, :cond_13
+    :goto_0
+    if-eqz v0, :cond_1
 
     return-object v0
 
-    :catchall_13
-    :cond_13
+    :catchall_0
+    :cond_1
     return-object p1
 .end method
 
 .method public static resolvePlainAdaptiveIcon(Landroid/graphics/Bitmap;)Ljava/lang/Object;
-    .registers 4
+    .locals 3
 
     :try_start_0
     invoke-static {p0}, Llibs/ModernUiTheme;->buildPlainShortcutBitmap(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
@@ -4245,26 +4245,26 @@
 
     const/16 v2, 0x1a
 
-    if-lt v1, v2, :cond_11
+    if-lt v1, v2, :cond_0
 
     invoke-static {v0}, Llibs/ModernUiTheme$ShortcutApi26;->createAdaptiveIcon(Landroid/graphics/Bitmap;)Landroid/graphics/drawable/Icon;
 
     move-result-object v1
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     return-object v1
 
-    :cond_11
+    :cond_0
     invoke-static {v0}, Llibs/y81;->i(Landroid/graphics/Bitmap;)Ljava/lang/Object;
 
     move-result-object v0
-    :try_end_15
-    .catchall {:try_start_0 .. :try_end_15} :catchall_16
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object v0
 
-    :catchall_16
+    :catchall_0
     invoke-static {p0}, Llibs/y81;->i(Landroid/graphics/Bitmap;)Ljava/lang/Object;
 
     move-result-object v0
@@ -4273,13 +4273,13 @@
 .end method
 
 .method public static resolveShortcutIcon(Landroid/content/Intent;Landroid/graphics/Bitmap;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
 
     invoke-static {p0}, Llibs/ModernUiTheme;->isFolderShortcutIntent(Landroid/content/Intent;)Z
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     invoke-static {p1}, Llibs/ModernUiTheme;->resolveAdaptiveBitmapIcon(Landroid/graphics/Bitmap;)Ljava/lang/Object;
 
@@ -4287,13 +4287,13 @@
 
     return-object v0
 
-    :cond_b
-    :try_start_b
+    :cond_0
+    :try_start_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1a
 
-    if-lt v0, v1, :cond_1d
+    if-lt v0, v1, :cond_1
 
     const/4 v0, 0x1
 
@@ -4305,11 +4305,11 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_1
 
     return-object v0
 
-    :cond_1d
+    :cond_1
     const/4 v0, 0x0
 
     invoke-static {v0}, Llibs/ModernUiTheme;->buildFolderShortcutBitmap(Z)Landroid/graphics/Bitmap;
@@ -4319,12 +4319,12 @@
     invoke-static {v0}, Llibs/y81;->i(Landroid/graphics/Bitmap;)Ljava/lang/Object;
 
     move-result-object v0
-    :try_end_26
-    .catchall {:try_start_b .. :try_end_26} :catchall_27
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object v0
 
-    :catchall_27
+    :catchall_0
     invoke-static {p1}, Llibs/y81;->i(Landroid/graphics/Bitmap;)Ljava/lang/Object;
 
     move-result-object v0
@@ -4333,21 +4333,21 @@
 .end method
 
 .method public static seedModernSkins(Llibs/p63;)V
-    .registers 11
+    .locals 10
 
-    if-nez p0, :cond_3
+    if-nez p0, :cond_0
 
     return-void
 
-    :cond_3
-    :try_start_3
+    :cond_0
+    :try_start_0
     iget-object v0, p0, Llibs/p63;->Api:Landroid/content/SharedPreferences;
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_1
 
     return-void
 
-    :cond_8
+    :cond_1
     const-string v1, "seed_skin_modern_v114"
 
     const/4 v2, 0x0
@@ -4356,22 +4356,22 @@
 
     move-result v2
 
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_2
 
     return-void
 
-    :cond_12
+    :cond_2
     const-string v2, "Skins"
 
     invoke-static {v2}, Llibs/p63;->Wait(Ljava/lang/String;)Landroid/content/SharedPreferences;
 
     move-result-object v2
 
-    if-nez v2, :cond_1b
+    if-nez v2, :cond_3
 
     return-void
 
-    :cond_1b
+    :cond_3
     invoke-static {}, Llibs/ModernUiTheme;->buildTrueBlackSkinList()Ljava/util/ArrayList;
 
     move-result-object v3
@@ -4466,13 +4466,13 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_a9
+    if-eqz v0, :cond_7
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v5
 
-    if-eqz v5, :cond_a9
+    if-eqz v5, :cond_7
 
     const-string v5, "Modern Dark"
 
@@ -4480,7 +4480,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_9b
+    if-nez v5, :cond_4
 
     const-string v5, "Modern Slate Blue"
 
@@ -4488,31 +4488,31 @@
 
     move-result v5
 
-    if-eqz v5, :cond_9d
+    if-eqz v5, :cond_5
 
-    :cond_9b
+    :cond_4
     move-object v8, v9
 
-    goto :goto_a9
+    goto :goto_0
 
-    :cond_9d
+    :cond_5
     const-string v5, "Modern Light"
 
     invoke-virtual {v5, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_a8
+    if-eqz v5, :cond_6
 
     const-string v8, "Claro Moderno"
 
-    goto :goto_a9
+    goto :goto_0
 
-    :cond_a8
+    :cond_6
     move-object v8, v0
 
-    :cond_a9
-    :goto_a9
+    :cond_7
+    :goto_0
     invoke-interface {v2, v3, v8}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     const/4 v0, 0x1
@@ -4528,66 +4528,66 @@
     const/4 v0, 0x0
 
     iput-object v0, p0, Llibs/p63;->g:Ljava/util/List;
-    :try_end_ba
-    .catchall {:try_start_3 .. :try_end_ba} :catchall_ba
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_ba
+    :catchall_0
     return-void
 .end method
 
 .method public static setTopBarTasksVisible(Landroid/view/ViewGroup;Z)V
-    .registers 5
+    .locals 3
 
-    if-nez p0, :cond_3
+    if-nez p0, :cond_0
 
     return-void
 
-    :cond_3
-    if-eqz p1, :cond_7
+    :cond_0
+    if-eqz p1, :cond_1
 
     const/4 v1, 0x0
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_7
+    :cond_1
     const/16 v1, 0x8
 
-    :goto_9
+    :goto_0
     const v0, 0x7f0803f0
 
     invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_2
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_15
+    :cond_2
     const v0, 0x7f0803f8
 
     invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_3
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_21
+    :cond_3
     invoke-static {p0, p1}, Llibs/SmartFeaturesV116;->onSelectionModeBarVisibilityChanged(Landroid/view/ViewGroup;Z)V
 
     return-void
 .end method
 
 .method public static styleDialogContainer(Landroid/view/ViewGroup;)V
-    .registers 5
+    .locals 4
 
-    if-nez p0, :cond_3
+    if-nez p0, :cond_0
 
     return-void
 
-    :cond_3
+    :cond_0
     const-string v0, "TINT_POPUP_BG"
 
     const-string v1, "#FF121214"
@@ -4600,16 +4600,16 @@
 
     move-result v1
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_1
 
     const/high16 v1, 0x16000000
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_14
+    :cond_1
     const v1, 0x26ffffff
 
-    :goto_17
+    :goto_0
     const/high16 v2, 0x41b00000    # 22.0f
 
     invoke-static {v2}, Llibs/ModernUiTheme;->dpF(F)F
@@ -4632,7 +4632,7 @@
 
     const/16 v1, 0x15
 
-    if-lt v0, v1, :cond_39
+    if-lt v0, v1, :cond_2
 
     sget-object v0, Landroid/view/ViewOutlineProvider;->BACKGROUND:Landroid/view/ViewOutlineProvider;
 
@@ -4642,18 +4642,18 @@
 
     invoke-virtual {p0, v0}, Landroid/view/View;->setClipToOutline(Z)V
 
-    :cond_39
+    :cond_2
     return-void
 .end method
 
 .method public static styleDialogFooter(Landroid/app/Dialog;)V
-    .registers 5
+    .locals 4
 
-    if-nez p0, :cond_3
+    if-nez p0, :cond_0
 
     return-void
 
-    :cond_3
+    :cond_0
     sget v0, Llibs/wh2;->dialog_footer:I
 
     invoke-virtual {p0, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
@@ -4662,7 +4662,7 @@
 
     instance-of v1, v0, Landroid/widget/LinearLayout;
 
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_1
 
     check-cast v0, Landroid/widget/LinearLayout;
 
@@ -4684,20 +4684,20 @@
 
     invoke-virtual {v0, v1, v2, v1, v2}, Landroid/view/View;->setPadding(IIII)V
 
-    :cond_23
+    :cond_1
     sget v0, Llibs/wh2;->button_separator:I
 
     invoke-virtual {p0, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_2
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
-    if-eqz v1, :cond_3c
+    if-eqz v1, :cond_2
 
     const/high16 v2, 0x41200000    # 10.0f
 
@@ -4709,7 +4709,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    :cond_3c
+    :cond_2
     sget v0, Llibs/wh2;->cancel:I
 
     invoke-virtual {p0, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
@@ -4718,13 +4718,13 @@
 
     instance-of v1, v0, Landroid/widget/TextView;
 
-    if-eqz v1, :cond_4b
+    if-eqz v1, :cond_3
 
     check-cast v0, Landroid/widget/TextView;
 
     invoke-static {v0}, Llibs/ModernUiTheme;->styleSingleDialogButton(Landroid/widget/TextView;)V
 
-    :cond_4b
+    :cond_3
     sget v0, Llibs/wh2;->ok:I
 
     invoke-virtual {p0, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
@@ -4733,28 +4733,28 @@
 
     instance-of v1, v0, Landroid/widget/TextView;
 
-    if-eqz v1, :cond_5a
+    if-eqz v1, :cond_4
 
     check-cast v0, Landroid/widget/TextView;
 
     invoke-static {v0}, Llibs/ModernUiTheme;->styleSingleDialogButton(Landroid/widget/TextView;)V
 
-    :cond_5a
+    :cond_4
     return-void
 .end method
 
 .method public static styleEditTextPadding(Landroid/widget/EditText;)V
-    .registers 6
+    .locals 5
 
-    if-eqz p0, :cond_36
+    if-eqz p0, :cond_1
 
     instance-of v0, p0, Lcom/mixplorer/widgets/MiEditor;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
-    goto :goto_36
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/high16 v0, 0x41400000    # 12.0f
 
     invoke-static {v0}, Llibs/ModernUiTheme;->dp(F)I
@@ -4801,19 +4801,19 @@
 
     invoke-virtual {p0, v2, v3, v0, v1}, Landroid/view/View;->setPadding(IIII)V
 
-    :cond_36
-    :goto_36
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public static styleSingleDialogButton(Landroid/widget/TextView;)V
-    .registers 5
+    .locals 4
 
-    if-nez p0, :cond_3
+    if-nez p0, :cond_0
 
     return-void
 
-    :cond_3
+    :cond_0
     new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
 
     const/4 v1, 0x0
@@ -4860,16 +4860,16 @@
 .end method
 
 .method public static tryCreateAnyShortcutResultIntent(Landroid/content/Context;Landroid/content/Intent;Ljava/lang/String;Landroid/graphics/Bitmap;)Landroid/content/Intent;
-    .registers 7
+    .locals 3
 
     const/4 v0, 0x0
 
-    :try_start_1
+    :try_start_0
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x1a
 
-    if-lt v1, v2, :cond_1c
+    if-lt v1, v2, :cond_1
 
     invoke-static {p1}, Llibs/ModernUiTheme;->isFolderShortcutIntent(Landroid/content/Intent;)Z
 
@@ -4877,35 +4877,35 @@
 
     const/4 v2, 0x1
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_0
 
     invoke-static {v2}, Llibs/ModernUiTheme;->buildFolderShortcutBitmap(Z)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     invoke-static {p3, v2}, Llibs/ModernUiTheme;->buildFileShortcutBitmap(Landroid/graphics/Bitmap;Z)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    :goto_17
+    :goto_0
     invoke-static {p0, p1, p2, v1}, Llibs/ModernUiTheme$ShortcutApi26;->createFolderResultIntent(Landroid/content/Context;Landroid/content/Intent;Ljava/lang/String;Landroid/graphics/Bitmap;)Landroid/content/Intent;
 
     move-result-object v0
-    :try_end_1b
-    .catchall {:try_start_1 .. :try_end_1b} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object v0
 
-    :catchall_1c
-    :cond_1c
+    :catchall_0
+    :cond_1
     return-object v0
 .end method
 
 .method public static tryCreateFolderShortcutResultIntent(Landroid/content/Context;Landroid/content/Intent;Ljava/lang/String;)Landroid/content/Intent;
-    .registers 6
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -4913,17 +4913,17 @@
 
     move-result v1
 
-    if-nez v1, :cond_8
+    if-nez v1, :cond_0
 
     return-object v0
 
-    :cond_8
-    :try_start_8
+    :cond_0
+    :try_start_0
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x1a
 
-    if-lt v1, v2, :cond_18
+    if-lt v1, v2, :cond_1
 
     const/4 v1, 0x1
 
@@ -4934,18 +4934,18 @@
     invoke-static {p0, p1, p2, v1}, Llibs/ModernUiTheme$ShortcutApi26;->createFolderResultIntent(Landroid/content/Context;Landroid/content/Intent;Ljava/lang/String;Landroid/graphics/Bitmap;)Landroid/content/Intent;
 
     move-result-object v0
-    :try_end_17
-    .catchall {:try_start_8 .. :try_end_17} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object v0
 
-    :catchall_18
-    :cond_18
+    :catchall_0
+    :cond_1
     return-object v0
 .end method
 
 .method public static withAlpha(II)I
-    .registers 3
+    .locals 1
 
     const v0, 0xffffff
 

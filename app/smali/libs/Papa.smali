@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic List(Landroid/webkit/CookieSyncManager;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/webkit/CookieSyncManager;->stopSync()V
@@ -17,7 +17,7 @@
 .end method
 
 .method public static bridge synthetic Map(Landroid/webkit/CookieSyncManager;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/webkit/CookieSyncManager;->sync()V
@@ -29,7 +29,7 @@
 .end method
 
 .method public static bridge synthetic Object(Landroid/widget/EdgeEffect;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/widget/EdgeEffect;->isFinished()Z
@@ -44,7 +44,7 @@
 .end method
 
 .method public static bridge synthetic String(Landroid/webkit/CookieSyncManager;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/webkit/CookieSyncManager;->startSync()V
@@ -56,7 +56,7 @@
 .end method
 
 .method public static bridge synthetic a(Landroid/graphics/Canvas;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/graphics/Canvas;->getMaximumBitmapWidth()I
@@ -71,7 +71,7 @@
 .end method
 
 .method public static bridge synthetic b(Llibs/wv1;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/TextureView;->getWidth()I
@@ -86,7 +86,7 @@
 .end method
 
 .method public static bridge synthetic c(Landroid/media/MediaPlayer;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -101,7 +101,7 @@
 .end method
 
 .method public static bridge synthetic d(Landroid/media/MediaPlayer;Landroid/view/Surface;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/media/MediaPlayer;->setSurface(Landroid/view/Surface;)V
@@ -113,7 +113,7 @@
 .end method
 
 .method public static bridge synthetic e(Landroid/view/Surface;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/Surface;->release()V
@@ -125,7 +125,7 @@
 .end method
 
 .method public static bridge synthetic f(Landroid/view/accessibility/AccessibilityRecord;I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityRecord;->setItemCount(I)V
@@ -137,7 +137,7 @@
 .end method
 
 .method public static bridge synthetic g(Landroid/view/accessibility/AccessibilityRecord;Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityRecord;->setScrollable(Z)V
@@ -149,7 +149,7 @@
 .end method
 
 .method public static bridge synthetic h(Landroid/view/inputmethod/InputMethodManager;Landroid/view/View;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/inputmethod/InputMethodManager;->viewClicked(Landroid/view/View;)V
@@ -161,7 +161,7 @@
 .end method
 
 .method public static bridge synthetic i(Landroid/webkit/CookieSyncManager;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/webkit/CookieSyncManager;->stopSync()V
@@ -173,7 +173,7 @@
 .end method
 
 .method public static bridge synthetic j(Landroid/widget/EdgeEffect;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/widget/EdgeEffect;->onRelease()V
@@ -185,7 +185,7 @@
 .end method
 
 .method public static bridge synthetic k(Landroid/widget/EdgeEffect;F)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/widget/EdgeEffect;->onPull(F)V
@@ -197,7 +197,7 @@
 .end method
 
 .method public static bridge synthetic l(Landroid/widget/EdgeEffect;I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/widget/EdgeEffect;->onAbsorb(I)V
@@ -209,7 +209,7 @@
 .end method
 
 .method public static bridge synthetic m(Landroid/widget/EdgeEffect;II)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2}, Landroid/widget/EdgeEffect;->setSize(II)V
@@ -221,7 +221,7 @@
 .end method
 
 .method public static bridge synthetic n(Lcom/mixplorer/widgets/MiDrawer;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -236,7 +236,7 @@
 .end method
 
 .method public static bridge synthetic p(Llibs/ow1;I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/webkit/WebView;->setScrollY(I)V
@@ -248,7 +248,7 @@
 .end method
 
 .method public static bridge synthetic q(Landroid/text/style/CharacterStyle;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     instance-of p0, p0, Landroid/text/style/SuggestionSpan;
@@ -259,7 +259,7 @@
 .end method
 
 .method public static bridge synthetic r(Landroid/widget/EdgeEffect;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/widget/EdgeEffect;->isFinished()Z
@@ -274,7 +274,7 @@
 .end method
 
 .method public static bridge synthetic s(Landroid/widget/EdgeEffect;Landroid/graphics/Canvas;)Z
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/widget/EdgeEffect;->draw(Landroid/graphics/Canvas;)Z
@@ -289,7 +289,7 @@
 .end method
 
 .method public static bridge synthetic t(Ljava/lang/Object;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     instance-of p0, p0, Landroid/text/style/SuggestionSpan;
@@ -300,7 +300,7 @@
 .end method
 
 .method public static bridge synthetic u(Llibs/eu1;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->isHovered()Z
@@ -315,7 +315,7 @@
 .end method
 
 .method public static bridge synthetic v(Landroid/graphics/Canvas;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/graphics/Canvas;->getMaximumBitmapHeight()I
@@ -330,7 +330,7 @@
 .end method
 
 .method public static bridge synthetic w(Llibs/wv1;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/TextureView;->getHeight()I
@@ -345,7 +345,7 @@
 .end method
 
 .method public static bridge synthetic x(Landroid/view/accessibility/AccessibilityRecord;I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityRecord;->setToIndex(I)V
@@ -357,7 +357,7 @@
 .end method
 
 .method public static bridge synthetic y(Landroid/webkit/CookieSyncManager;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/webkit/CookieSyncManager;->sync()V
@@ -369,7 +369,7 @@
 .end method
 
 .method public static bridge synthetic z(Landroid/widget/EdgeEffect;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/widget/EdgeEffect;->finish()V

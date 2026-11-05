@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/z1;Llibs/z1;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/u1;->b:Llibs/z1;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final a(Llibs/q1;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object p1, p0, Llibs/u1;->b:Llibs/z1;
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    if-nez v0, :cond_29
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -63,7 +63,7 @@
     move-result v0
 
     .line 13
-    if-nez v0, :cond_29
+    if-nez v0, :cond_0
 
     .line 14
     .line 15
@@ -71,7 +71,7 @@
 
     .line 16
     .line 17
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_0
 
     .line 18
     .line 19
@@ -86,8 +86,8 @@
     const/4 v1, 0x0
 
     .line 24
-    :goto_17
-    if-ge v1, v0, :cond_29
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     .line 25
     .line 26
@@ -120,22 +120,22 @@
 
     .line 40
     .line 41
-    goto :goto_17
+    goto :goto_0
 
     .line 42
-    :cond_29
+    :cond_0
     return-void
 .end method
 
 .method public final b(Llibs/q1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final c(Llibs/q1;)V
-    .registers 8
+    .locals 6
 
     .line 1
     invoke-virtual {p1, p0}, Llibs/q1;->e(Llibs/p1;)V
@@ -187,7 +187,7 @@
 
     .line 25
     .line 26
-    if-nez p1, :cond_52
+    if-nez p1, :cond_3
 
     .line 27
     .line 28
@@ -209,8 +209,8 @@
     const/4 v4, 0x0
 
     .line 36
-    :goto_23
-    if-ge v4, v2, :cond_33
+    :goto_0
+    if-ge v4, v2, :cond_1
 
     .line 37
     .line 38
@@ -230,27 +230,27 @@
 
     .line 45
     .line 46
-    if-nez v5, :cond_30
+    if-nez v5, :cond_0
 
     .line 47
     .line 48
-    goto :goto_52
+    goto :goto_2
 
     .line 49
-    :cond_30
+    :cond_0
     add-int/lit8 v4, v4, 0x1
 
     .line 50
     .line 51
-    goto :goto_23
+    goto :goto_0
 
     .line 52
-    :cond_33
+    :cond_1
     iget-object p1, v0, Llibs/q1;->X:Ljava/util/ArrayList;
 
     .line 53
     .line 54
-    if-eqz p1, :cond_50
+    if-eqz p1, :cond_2
 
     .line 55
     .line 56
@@ -277,8 +277,8 @@
     const/4 v2, 0x0
 
     .line 67
-    :goto_42
-    if-ge v2, v0, :cond_50
+    :goto_1
+    if-ge v2, v0, :cond_2
 
     .line 68
     .line 69
@@ -303,15 +303,15 @@
 
     .line 79
     .line 80
-    goto :goto_42
+    goto :goto_1
 
     .line 81
-    :cond_50
+    :cond_2
     iput-boolean v3, v1, Llibs/z1;->Pi:Z
 
     .line 82
     .line 83
-    :cond_52
-    :goto_52
+    :cond_3
+    :goto_2
     return-void
 .end method

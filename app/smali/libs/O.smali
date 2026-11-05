@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/json/JSONObject;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
     move-result-object p1
 
     .line 20
-    :try_start_13
+    :try_start_0
     const-string v0, "quota"
 
     .line 21
@@ -76,13 +76,13 @@
 
     .line 30
     iput-wide v0, p0, Llibs/O;->a:J
-    :try_end_1f
-    .catch Ljava/lang/Exception; {:try_start_13 .. :try_end_1f} :catch_1f
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 31
     .line 32
-    :catch_1f
-    :try_start_1f
+    :catch_0
+    :try_start_1
     const-string v0, "consumed"
 
     .line 33
@@ -104,12 +104,12 @@
 
     .line 42
     iput-wide v0, p0, Llibs/O;->b:J
-    :try_end_2b
-    .catch Ljava/lang/Exception; {:try_start_1f .. :try_end_2b} :catch_2b
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 43
     .line 44
-    :catch_2b
+    :catch_1
     new-instance p1, Llibs/dc;
 
     .line 45
@@ -137,7 +137,7 @@
 
 # virtual methods
 .method public final a()Llibs/dc;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/O;->c:Llibs/dc;

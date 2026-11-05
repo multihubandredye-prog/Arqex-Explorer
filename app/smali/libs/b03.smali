@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/i03;-><init>()V
@@ -22,7 +22,7 @@
 
 # virtual methods
 .method public final a()Ljava/util/List;
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
@@ -33,14 +33,14 @@
 .end method
 
 .method public final h(Llibs/k03;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final p()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "solidColor"

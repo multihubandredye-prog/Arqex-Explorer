@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/c2;Llibs/ia3;J)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/mk0;->Nu:Llibs/c2;
@@ -34,7 +34,7 @@
     .line 4
     .line 5
     .line 6
-    if-eqz p2, :cond_c
+    if-eqz p2, :cond_0
 
     .line 7
     .line 8
@@ -49,7 +49,7 @@
     return-void
 
     .line 13
-    :cond_c
+    :cond_0
     const-string p1, "delegate == null"
 
     .line 14
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public final b()Llibs/en3;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/mk0;->X:Llibs/ia3;
@@ -87,7 +87,7 @@
 .end method
 
 .method public final c()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/mk0;->X:Llibs/ia3;
@@ -103,21 +103,21 @@
 .end method
 
 .method public final close()V
-    .registers 6
+    .locals 5
 
     .line 1
     iget-boolean v0, p0, Llibs/mk0;->Mu:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     const/4 v0, 0x1
 
     .line 7
@@ -137,7 +137,7 @@
 
     .line 14
     .line 15
-    if-eqz v4, :cond_1f
+    if-eqz v4, :cond_2
 
     .line 16
     .line 17
@@ -149,14 +149,14 @@
 
     .line 20
     .line 21
-    if-nez v4, :cond_17
+    if-nez v4, :cond_1
 
     .line 22
     .line 23
-    goto :goto_1f
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_1
     new-instance v0, Ljava/net/ProtocolException;
 
     .line 25
@@ -173,9 +173,9 @@
     throw v0
 
     .line 32
-    :cond_1f
-    :goto_1f
-    :try_start_1f
+    :cond_2
+    :goto_0
+    :try_start_0
     invoke-virtual {p0}, Llibs/mk0;->c()V
 
     .line 33
@@ -185,8 +185,8 @@
 
     .line 36
     invoke-virtual {p0, v0}, Llibs/mk0;->i(Ljava/io/IOException;)Ljava/io/IOException;
-    :try_end_26
-    .catch Ljava/io/IOException; {:try_start_1f .. :try_end_26} :catch_27
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 37
     .line 38
@@ -194,7 +194,7 @@
     return-void
 
     .line 40
-    :catch_27
+    :catch_0
     move-exception v0
 
     .line 41
@@ -210,13 +210,13 @@
 .end method
 
 .method public final flush()V
-    .registers 2
+    .locals 1
 
     .line 1
     :try_start_0
     invoke-virtual {p0}, Llibs/mk0;->m()V
-    :try_end_3
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_3} :catch_4
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 2
     .line 3
@@ -224,7 +224,7 @@
     return-void
 
     .line 5
-    :catch_4
+    :catch_0
     move-exception v0
 
     .line 6
@@ -240,21 +240,21 @@
 .end method
 
 .method public final i(Ljava/io/IOException;)Ljava/io/IOException;
-    .registers 5
+    .locals 3
 
     .line 1
     iget-boolean v0, p0, Llibs/mk0;->Y:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     return-object p1
 
     .line 6
-    :cond_5
+    :cond_0
     const/4 v0, 0x1
 
     .line 7
@@ -281,14 +281,14 @@
 .end method
 
 .method public final j(JLlibs/vj;)V
-    .registers 9
+    .locals 5
 
     .line 1
     iget-boolean v0, p0, Llibs/mk0;->Mu:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_3d
+    if-nez v0, :cond_2
 
     .line 4
     .line 5
@@ -304,7 +304,7 @@
 
     .line 10
     .line 11
-    if-eqz v4, :cond_2c
+    if-eqz v4, :cond_1
 
     .line 12
     .line 13
@@ -319,14 +319,14 @@
 
     .line 17
     .line 18
-    if-gtz v4, :cond_14
+    if-gtz v4, :cond_0
 
     .line 19
     .line 20
-    goto :goto_2c
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_0
     new-instance p3, Ljava/net/ProtocolException;
 
     .line 22
@@ -375,9 +375,9 @@
     throw p3
 
     .line 45
-    :cond_2c
-    :goto_2c
-    :try_start_2c
+    :cond_1
+    :goto_0
+    :try_start_0
     iget-object v0, p0, Llibs/mk0;->X:Llibs/ia3;
 
     .line 46
@@ -395,15 +395,15 @@
 
     .line 53
     iput-wide v0, p0, Llibs/mk0;->Lambda:J
-    :try_end_36
-    .catch Ljava/io/IOException; {:try_start_2c .. :try_end_36} :catch_37
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 54
     .line 55
     return-void
 
     .line 56
-    :catch_37
+    :catch_0
     move-exception p1
 
     .line 57
@@ -418,7 +418,7 @@
     throw p1
 
     .line 62
-    :cond_3d
+    :cond_2
     const-string p1, "closed"
 
     .line 63
@@ -432,7 +432,7 @@
 .end method
 
 .method public final m()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/mk0;->X:Llibs/ia3;
@@ -448,7 +448,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

@@ -9,14 +9,14 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-string v0, "javax.crypto.spec.GCMParameterSpec"
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     const-class v1, Llibs/fu0;
 
     .line 4
@@ -35,18 +35,18 @@
     .line 11
     .line 12
     move-result-object v0
-    :try_end_c
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_c} :catch_d
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 13
-    goto :goto_e
+    goto :goto_0
 
     .line 14
-    :catch_d
+    :catch_0
     const/4 v0, 0x0
 
     .line 15
-    :goto_e
+    :goto_0
     sput-object v0, Llibs/fu0;->a:Ljava/lang/Class;
 
     .line 16
@@ -55,7 +55,7 @@
 .end method
 
 .method public static a(Ljava/security/spec/AlgorithmParameterSpec;)Llibs/ks0;
-    .registers 5
+    .locals 4
 
     .line 1
     :try_start_0
@@ -131,8 +131,8 @@
     .line 35
     .line 36
     invoke-direct {v3, p0, v0}, Llibs/ks0;-><init>(I[B)V
-    :try_end_26
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_26} :catch_27
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 37
     .line 38
@@ -140,7 +140,7 @@
     return-object v3
 
     .line 40
-    :catch_27
+    :catch_0
     const-string p0, "Cannot process GCMParameterSpec"
 
     .line 41
@@ -157,7 +157,7 @@
 .end method
 
 .method public static b(Llibs/p10;)Ljava/security/spec/AlgorithmParameterSpec;
-    .registers 7
+    .locals 6
 
     .line 1
     :try_start_0
@@ -259,16 +259,16 @@
 
     .line 48
     check-cast p0, Ljava/security/spec/AlgorithmParameterSpec;
-    :try_end_31
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_31} :catch_44
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_31} :catch_32
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 49
     .line 50
     return-object p0
 
     .line 51
-    :catch_32
+    :catch_0
     move-exception p0
 
     .line 52
@@ -305,7 +305,7 @@
     throw v0
 
     .line 69
-    :catch_44
+    :catch_1
     const-string p0, "No constructor found!"
 
     .line 70

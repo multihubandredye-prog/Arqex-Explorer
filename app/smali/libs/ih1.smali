@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 1
     const/16 v0, 0x9
@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public final c()Llibs/wh1;
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/wh1;->Lambda:Llibs/oh1;

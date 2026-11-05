@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -72,7 +72,7 @@
     const/4 v1, 0x4
 
     .line 26
-    if-ne v0, v1, :cond_21
+    if-ne v0, v1, :cond_0
 
     .line 27
     .line 28
@@ -90,7 +90,7 @@
     return-void
 
     .line 34
-    :cond_21
+    :cond_0
     new-instance p1, Llibs/ny2;
 
     .line 35
@@ -110,7 +110,7 @@
 
 # virtual methods
 .method public final a(Ljava/lang/String;)Z
-    .registers 7
+    .locals 5
 
     .line 1
     :try_start_0
@@ -132,14 +132,14 @@
     .line 9
     .line 10
     move-result p1
-    :try_end_a
-    .catch Llibs/zb; {:try_start_0 .. :try_end_a} :catch_b
+    :try_end_0
+    .catch Llibs/zb; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 11
     return p1
 
     .line 12
-    :catch_b
+    :catch_0
     move-exception v0
 
     .line 13
@@ -188,7 +188,7 @@
 .end method
 
 .method public final b(Ljava/lang/String;)Ljava/lang/String;
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/ui1;->d:[B
@@ -199,7 +199,7 @@
 
     .line 4
     .line 5
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -215,7 +215,7 @@
 
     .line 12
     .line 13
-    :cond_c
+    :cond_0
     iget-object v2, p0, Llibs/ui1;->a:Llibs/ce;
 
     .line 14
@@ -292,14 +292,14 @@
 
     .line 52
     .line 53
-    if-ne v3, v2, :cond_37
+    if-ne v3, v2, :cond_1
 
     .line 54
     .line 55
-    goto :goto_3e
+    goto :goto_0
 
     .line 56
-    :cond_37
+    :cond_1
     new-array v2, v3, [B
 
     .line 57
@@ -315,7 +315,7 @@
     move-object p1, v2
 
     .line 63
-    :goto_3e
+    :goto_0
     invoke-static {v1, p1}, Llibs/Epsilon;->q(Ljava/util/Base64$Encoder;[B)Ljava/lang/String;
 
     .line 64

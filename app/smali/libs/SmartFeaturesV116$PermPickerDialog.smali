@@ -25,19 +25,19 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0xc
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     sput-object v0, Llibs/SmartFeaturesV116$PermPickerDialog;->WEIGHTS:[I
 
     return-void
 
-    :array_a
+    :array_0
     .array-data 4
         0xfa0
         0x7d0
@@ -55,7 +55,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Lcom/mixplorer/widgets/MiEditText;Z)V
-    .registers 9
+    .locals 5
 
     const/4 v0, 0x1
 
@@ -79,13 +79,13 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_0
 
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_0
 
     invoke-static {}, Llibs/sa3;->s()Landroid/graphics/Point;
 
@@ -105,7 +105,7 @@
 
     iput v2, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    :cond_31
+    :cond_0
     sget v1, Llibs/bi2;->permissions:I
 
     invoke-static {v1}, Llibs/ho2;->Add(I)Ljava/lang/String;
@@ -244,13 +244,13 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_d1
+    if-eqz p1, :cond_1
 
     const/16 v4, 0x8
 
     invoke-virtual {p1, v4}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_d1
+    :cond_1
     sget p1, Llibs/wh2;->txt_permission:I
 
     invoke-virtual {p0, p1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
@@ -261,7 +261,7 @@
 
     iput-object p1, p0, Llibs/SmartFeaturesV116$PermPickerDialog;->txtPermission:Landroid/widget/TextView;
 
-    if-eqz p1, :cond_e8
+    if-eqz p1, :cond_2
 
     const-string v4, "TEXT_POPUP_PRIMARY"
 
@@ -273,7 +273,7 @@
 
     invoke-virtual {p1, v4}, Landroid/widget/TextView;->setTextColor(I)V
 
-    :cond_e8
+    :cond_2
     sget p1, Llibs/wh2;->txt_octal:I
 
     invoke-virtual {p0, p1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
@@ -284,7 +284,7 @@
 
     iput-object p1, p0, Llibs/SmartFeaturesV116$PermPickerDialog;->txtOctal:Lcom/mixplorer/widgets/MiEditText;
 
-    if-eqz p1, :cond_116
+    if-eqz p1, :cond_3
 
     sget p2, Llibs/sa3;->f:I
 
@@ -314,26 +314,26 @@
 
     invoke-virtual {p1, p0}, Landroid/widget/TextView;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    :cond_116
-    if-eqz p3, :cond_11b
+    :cond_3
+    if-eqz p3, :cond_4
 
     const/16 p1, 0x2f3
 
-    goto :goto_11d
+    goto :goto_0
 
-    :cond_11b
+    :cond_4
     const/16 p1, 0x284
 
-    :goto_11d
+    :goto_0
     iget-object p2, p0, Llibs/SmartFeaturesV116$PermPickerDialog;->targetField:Lcom/mixplorer/widgets/MiEditText;
 
-    if-eqz p2, :cond_12f
+    if-eqz p2, :cond_5
 
     invoke-virtual {p2}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object p2
 
-    if-eqz p2, :cond_12f
+    if-eqz p2, :cond_5
 
     invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -343,14 +343,14 @@
 
     move-result p1
 
-    :cond_12f
+    :cond_5
     iput-boolean v0, p0, Llibs/SmartFeaturesV116$PermPickerDialog;->syncing:Z
 
     invoke-direct {p0, p1}, Llibs/SmartFeaturesV116$PermPickerDialog;->applyModeToBoxes(I)V
 
     iget-object p2, p0, Llibs/SmartFeaturesV116$PermPickerDialog;->txtOctal:Lcom/mixplorer/widgets/MiEditText;
 
-    if-eqz p2, :cond_13f
+    if-eqz p2, :cond_6
 
     invoke-static {p1}, Llibs/SmartFeaturesV116$PermPickerDialog;->formatOctal(I)Ljava/lang/String;
 
@@ -358,10 +358,10 @@
 
     invoke-virtual {p2, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    :cond_13f
+    :cond_6
     iget-object p2, p0, Llibs/SmartFeaturesV116$PermPickerDialog;->txtPermission:Landroid/widget/TextView;
 
-    if-eqz p2, :cond_14a
+    if-eqz p2, :cond_7
 
     invoke-static {p1}, Llibs/je;->x(I)Ljava/lang/String;
 
@@ -369,7 +369,7 @@
 
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    :cond_14a
+    :cond_7
     iput-boolean v1, p0, Llibs/SmartFeaturesV116$PermPickerDialog;->syncing:Z
 
     iput-boolean v0, p0, Llibs/od;->Mu:Z
@@ -392,13 +392,13 @@
 .end method
 
 .method private applyModeToBoxes(I)V
-    .registers 5
+    .locals 3
 
-    if-gez p1, :cond_3
+    if-gez p1, :cond_0
 
     const/4 p1, 0x0
 
-    :cond_3
+    :cond_0
     div-int/lit16 v0, p1, 0x3e8
 
     rem-int/lit8 v0, v0, 0xa
@@ -433,28 +433,28 @@
 .end method
 
 .method private computeModeFromBoxes()I
-    .registers 6
+    .locals 5
 
     const/4 v0, 0x0
 
     const/4 v1, 0x0
 
-    :goto_2
+    :goto_0
     const/16 v2, 0xc
 
-    if-ge v1, v2, :cond_1a
+    if-ge v1, v2, :cond_1
 
     iget-object v2, p0, Llibs/SmartFeaturesV116$PermPickerDialog;->boxes:[Landroid/widget/CheckBox;
 
     aget-object v2, v2, v1
 
-    if-eqz v2, :cond_17
+    if-eqz v2, :cond_0
 
     invoke-virtual {v2}, Landroid/widget/CompoundButton;->isChecked()Z
 
     move-result v2
 
-    if-eqz v2, :cond_17
+    if-eqz v2, :cond_0
 
     sget-object v2, Llibs/SmartFeaturesV116$PermPickerDialog;->WEIGHTS:[I
 
@@ -462,33 +462,33 @@
 
     add-int/2addr v0, v2
 
-    :cond_17
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_1a
+    :cond_1
     return v0
 .end method
 
 .method public static formatOctal(I)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
-    if-gez p0, :cond_3
+    if-gez p0, :cond_0
 
     const/4 p0, 0x0
 
-    :cond_3
+    :cond_0
     const/16 v0, 0x1e61
 
-    if-le p0, v0, :cond_9
+    if-le p0, v0, :cond_1
 
     const/16 p0, 0x1e61
 
-    :cond_9
+    :cond_1
     const/16 v0, 0xa
 
-    if-ge p0, v0, :cond_1c
+    if-ge p0, v0, :cond_2
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -504,10 +504,10 @@
 
     return-object p0
 
-    :cond_1c
+    :cond_2
     const/16 v0, 0x64
 
-    if-ge p0, v0, :cond_2f
+    if-ge p0, v0, :cond_3
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -523,7 +523,7 @@
 
     return-object p0
 
-    :cond_2f
+    :cond_3
     invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object p0
@@ -532,7 +532,7 @@
 .end method
 
 .method private initBox(II)V
-    .registers 5
+    .locals 2
 
     move v1, p2
 
@@ -542,7 +542,7 @@
 
     check-cast p2, Landroid/widget/CheckBox;
 
-    if-eqz p2, :cond_1e
+    if-eqz p2, :cond_0
 
     invoke-static {}, Llibs/va3;->u()Landroid/graphics/drawable/Drawable;
 
@@ -562,128 +562,128 @@
 
     aput-object p2, v0, p1
 
-    :cond_1e
+    :cond_0
     return-void
 .end method
 
 .method private static rotuloPorId(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     sget v0, Llibs/wh2;->perm_sp_t:I
 
-    if-ne p0, v0, :cond_7
+    if-ne p0, v0, :cond_0
 
     const-string v0, "t"
 
     return-object v0
 
-    :cond_7
+    :cond_0
     sget v0, Llibs/wh2;->perm_sp_su:I
 
-    if-ne p0, v0, :cond_e
+    if-ne p0, v0, :cond_1
 
     const-string v0, "s"
 
     return-object v0
 
-    :cond_e
+    :cond_1
     sget v0, Llibs/wh2;->perm_sp_sg:I
 
-    if-ne p0, v0, :cond_15
+    if-ne p0, v0, :cond_2
 
     const-string v0, "s"
 
     return-object v0
 
-    :cond_15
+    :cond_2
     sget v0, Llibs/wh2;->perm_user_r:I
 
-    if-ne p0, v0, :cond_1c
+    if-ne p0, v0, :cond_3
 
     const-string v0, "r"
 
     return-object v0
 
-    :cond_1c
+    :cond_3
     sget v0, Llibs/wh2;->perm_group_r:I
 
-    if-ne p0, v0, :cond_23
+    if-ne p0, v0, :cond_4
 
     const-string v0, "r"
 
     return-object v0
 
-    :cond_23
+    :cond_4
     sget v0, Llibs/wh2;->perm_all_r:I
 
-    if-ne p0, v0, :cond_2a
+    if-ne p0, v0, :cond_5
 
     const-string v0, "r"
 
     return-object v0
 
-    :cond_2a
+    :cond_5
     sget v0, Llibs/wh2;->perm_user_w:I
 
-    if-ne p0, v0, :cond_31
+    if-ne p0, v0, :cond_6
 
     const-string v0, "w"
 
     return-object v0
 
-    :cond_31
+    :cond_6
     sget v0, Llibs/wh2;->perm_group_w:I
 
-    if-ne p0, v0, :cond_38
+    if-ne p0, v0, :cond_7
 
     const-string v0, "w"
 
     return-object v0
 
-    :cond_38
+    :cond_7
     sget v0, Llibs/wh2;->perm_all_w:I
 
-    if-ne p0, v0, :cond_3f
+    if-ne p0, v0, :cond_8
 
     const-string v0, "w"
 
     return-object v0
 
-    :cond_3f
+    :cond_8
     sget v0, Llibs/wh2;->perm_user_x:I
 
-    if-ne p0, v0, :cond_46
+    if-ne p0, v0, :cond_9
 
     const-string v0, "x"
 
     return-object v0
 
-    :cond_46
+    :cond_9
     sget v0, Llibs/wh2;->perm_group_x:I
 
-    if-ne p0, v0, :cond_4d
+    if-ne p0, v0, :cond_a
 
     const-string v0, "x"
 
     return-object v0
 
-    :cond_4d
+    :cond_a
     sget v0, Llibs/wh2;->perm_all_x:I
 
-    if-ne p0, v0, :cond_54
+    if-ne p0, v0, :cond_b
 
     const-string v0, "x"
 
     return-object v0
 
-    :cond_54
+    :cond_b
     const-string v0, ""
 
     return-object v0
 .end method
 
 .method private setBoxGroup(II)V
-    .registers 7
+    .locals 4
 
     const/4 v0, 0x1
 
@@ -693,89 +693,89 @@
 
     aget-object v3, v2, p1
 
-    if-eqz v3, :cond_12
+    if-eqz v3, :cond_1
 
     and-int/lit8 v2, p2, 0x4
 
-    if-eqz v2, :cond_e
+    if-eqz v2, :cond_0
 
     const/4 v2, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 v2, 0x0
 
-    :goto_f
+    :goto_0
     invoke-virtual {v3, v2}, Landroid/widget/CompoundButton;->setChecked(Z)V
 
-    :cond_12
+    :cond_1
     iget-object v2, p0, Llibs/SmartFeaturesV116$PermPickerDialog;->boxes:[Landroid/widget/CheckBox;
 
     add-int/lit8 v3, p1, 0x1
 
     aget-object v2, v2, v3
 
-    if-eqz v2, :cond_24
+    if-eqz v2, :cond_3
 
     and-int/lit8 v3, p2, 0x2
 
-    if-eqz v3, :cond_20
+    if-eqz v3, :cond_2
 
     const/4 v3, 0x1
 
-    goto :goto_21
+    goto :goto_1
 
-    :cond_20
+    :cond_2
     const/4 v3, 0x0
 
-    :goto_21
+    :goto_1
     invoke-virtual {v2, v3}, Landroid/widget/CompoundButton;->setChecked(Z)V
 
-    :cond_24
+    :cond_3
     iget-object v2, p0, Llibs/SmartFeaturesV116$PermPickerDialog;->boxes:[Landroid/widget/CheckBox;
 
     add-int/lit8 v3, p1, 0x2
 
     aget-object v2, v2, v3
 
-    if-eqz v2, :cond_35
+    if-eqz v2, :cond_5
 
     and-int/lit8 v3, p2, 0x1
 
-    if-eqz v3, :cond_31
+    if-eqz v3, :cond_4
 
-    goto :goto_32
+    goto :goto_2
 
-    :cond_31
+    :cond_4
     const/4 v0, 0x0
 
-    :goto_32
+    :goto_2
     invoke-virtual {v2, v0}, Landroid/widget/CompoundButton;->setChecked(Z)V
 
-    :cond_35
+    :cond_5
     return-void
 .end method
 
 
 # virtual methods
 .method public afterTextChanged(Landroid/text/Editable;)V
-    .registers 4
+    .locals 2
 
     iget-boolean v0, p0, Llibs/SmartFeaturesV116$PermPickerDialog;->syncing:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
-    :cond_5
+    :cond_0
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Llibs/SmartFeaturesV116$PermPickerDialog;->syncing:Z
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_1
 
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -785,17 +785,17 @@
 
     move-result p1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_1
     const/4 p1, 0x0
 
-    :goto_15
+    :goto_0
     invoke-direct {p0, p1}, Llibs/SmartFeaturesV116$PermPickerDialog;->applyModeToBoxes(I)V
 
     iget-object v1, p0, Llibs/SmartFeaturesV116$PermPickerDialog;->txtPermission:Landroid/widget/TextView;
 
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_2
 
     invoke-static {p1}, Llibs/je;->x(I)Ljava/lang/String;
 
@@ -803,24 +803,24 @@
 
     invoke-virtual {v1, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    :cond_23
+    :cond_2
     iput-boolean v0, p0, Llibs/SmartFeaturesV116$PermPickerDialog;->syncing:Z
 
     return-void
 .end method
 
 .method public beforeTextChanged(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     return-void
 .end method
 
 .method public commitSelection()V
-    .registers 3
+    .locals 2
 
     iget-object v0, p0, Llibs/SmartFeaturesV116$PermPickerDialog;->targetField:Lcom/mixplorer/widgets/MiEditText;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     invoke-direct {p0}, Llibs/SmartFeaturesV116$PermPickerDialog;->computeModeFromBoxes()I
 
@@ -832,20 +832,20 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
-    .registers 5
+    .locals 2
 
     iget-boolean p1, p0, Llibs/SmartFeaturesV116$PermPickerDialog;->syncing:Z
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     return-void
 
-    :cond_5
+    :cond_0
     const/4 p1, 0x1
 
     iput-boolean p1, p0, Llibs/SmartFeaturesV116$PermPickerDialog;->syncing:Z
@@ -856,7 +856,7 @@
 
     iget-object p2, p0, Llibs/SmartFeaturesV116$PermPickerDialog;->txtOctal:Lcom/mixplorer/widgets/MiEditText;
 
-    if-eqz p2, :cond_1e
+    if-eqz p2, :cond_1
 
     invoke-static {p1}, Llibs/SmartFeaturesV116$PermPickerDialog;->formatOctal(I)Ljava/lang/String;
 
@@ -870,10 +870,10 @@
 
     invoke-virtual {p2, v0}, Lcom/mixplorer/widgets/MiEditText;->setSelection(I)V
 
-    :cond_1e
+    :cond_1
     iget-object p2, p0, Llibs/SmartFeaturesV116$PermPickerDialog;->txtPermission:Landroid/widget/TextView;
 
-    if-eqz p2, :cond_29
+    if-eqz p2, :cond_2
 
     invoke-static {p1}, Llibs/je;->x(I)Ljava/lang/String;
 
@@ -881,7 +881,7 @@
 
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    :cond_29
+    :cond_2
     const/4 p1, 0x0
 
     iput-boolean p1, p0, Llibs/SmartFeaturesV116$PermPickerDialog;->syncing:Z
@@ -890,7 +890,7 @@
 .end method
 
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     return-void
 .end method

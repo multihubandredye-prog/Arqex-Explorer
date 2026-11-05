@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/PreferenceActivity;Ljava/util/ArrayList;Llibs/ml1;Llibs/ml1;ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/CharSequence;Z)V
-    .registers 10
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/ff2;->k:Lcom/mixplorer/activities/PreferenceActivity;
@@ -75,7 +75,7 @@
 
 # virtual methods
 .method public final z(Landroid/view/View;I)V
-    .registers 12
+    .locals 9
 
     .line 1
     iget-object p1, p0, Llibs/ff2;->c:Ljava/util/ArrayList;
@@ -126,7 +126,7 @@
     const/4 v2, 0x1
 
     .line 25
-    if-eq p1, v2, :cond_f6
+    if-eq p1, v2, :cond_8
 
     .line 26
     .line 27
@@ -140,7 +140,7 @@
 
     .line 30
     .line 31
-    if-eq p1, v4, :cond_c9
+    if-eq p1, v4, :cond_6
 
     .line 32
     .line 33
@@ -150,33 +150,33 @@
     const/4 v7, 0x0
 
     .line 35
-    if-eq p1, v6, :cond_8c
+    if-eq p1, v6, :cond_5
 
     .line 36
     .line 37
     const/4 p2, 0x4
 
     .line 38
-    if-eq p1, p2, :cond_3f
+    if-eq p1, p2, :cond_2
 
     .line 39
     .line 40
     const/4 p2, 0x5
 
     .line 41
-    if-eq p1, p2, :cond_2b
+    if-eq p1, p2, :cond_0
 
     .line 42
     .line 43
-    goto :goto_3e
+    goto :goto_0
 
     .line 44
-    :cond_2b
+    :cond_0
     sget-object p1, Llibs/va3;->Auth:Llibs/zl0;
 
     .line 45
     .line 46
-    if-eqz p1, :cond_3e
+    if-eqz p1, :cond_1
 
     .line 47
     .line 48
@@ -207,12 +207,12 @@
     .line 61
     .line 62
     .line 63
-    :cond_3e
-    :goto_3e
+    :cond_1
+    :goto_0
     return-void
 
     .line 64
-    :cond_3f
+    :cond_2
     sget-object p1, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 65
@@ -256,7 +256,7 @@
 
     .line 86
     .line 87
-    if-eqz p2, :cond_85
+    if-eqz p2, :cond_4
 
     .line 88
     .line 89
@@ -281,7 +281,7 @@
     move-result p2
 
     .line 100
-    if-nez p2, :cond_82
+    if-nez p2, :cond_3
 
     .line 101
     .line 102
@@ -340,13 +340,13 @@
 
     .line 130
     .line 131
-    :cond_82
+    :cond_3
     invoke-virtual {v3}, Lcom/mixplorer/activities/PreferenceActivity;->User()V
 
     .line 132
     .line 133
     .line 134
-    :cond_85
+    :cond_4
     invoke-virtual {v1}, Llibs/od;->dismiss()V
 
     .line 135
@@ -360,7 +360,7 @@
     return-void
 
     .line 141
-    :cond_8c
+    :cond_5
     new-instance p1, Ljava/lang/StringBuilder;
 
     .line 142
@@ -478,7 +478,7 @@
     return-void
 
     .line 202
-    :cond_c9
+    :cond_6
     invoke-virtual {v1}, Llibs/od;->dismiss()V
 
     .line 203
@@ -496,7 +496,7 @@
 
     .line 210
     .line 211
-    :try_start_d2
+    :try_start_0
     invoke-static {p1}, Llibs/va3;->y(Ljava/lang/CharSequence;)Ljava/util/ArrayList;
 
     .line 212
@@ -505,7 +505,7 @@
     move-result-object p1
 
     .line 215
-    if-eqz p1, :cond_df
+    if-eqz p1, :cond_7
 
     .line 216
     .line 217
@@ -517,17 +517,17 @@
     return-void
 
     .line 221
-    :catchall_dc
+    :catchall_0
     move-exception v0
 
     .line 222
     move-object p1, v0
 
     .line 223
-    goto :goto_e9
+    goto :goto_1
 
     .line 224
-    :cond_df
+    :cond_7
     sget p1, Llibs/bi2;->cannot_get_clipboard:I
 
     .line 225
@@ -541,8 +541,8 @@
 
     .line 230
     invoke-static {v3, p1, v8, v8}, Llibs/gx1;->c(Landroid/content/Context;Ljava/lang/Object;IZ)V
-    :try_end_e8
-    .catchall {:try_start_d2 .. :try_end_e8} :catchall_dc
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 231
     .line 232
@@ -550,7 +550,7 @@
     return-void
 
     .line 234
-    :goto_e9
+    :goto_1
     invoke-static {p1}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 235
@@ -576,7 +576,7 @@
     return-void
 
     .line 247
-    :cond_f6
+    :cond_8
     invoke-virtual {v1}, Llibs/od;->dismiss()V
 
     .line 248
@@ -590,18 +590,18 @@
 
     .line 253
     .line 254
-    if-eqz v1, :cond_100
+    if-eqz v1, :cond_9
 
     .line 255
     .line 256
-    goto :goto_101
+    goto :goto_2
 
     .line 257
-    :cond_100
+    :cond_9
     move-object p2, v0
 
     .line 258
-    :goto_101
+    :goto_2
     iget-object v0, p1, Llibs/p63;->Key:Landroid/content/SharedPreferences$Editor;
 
     .line 259

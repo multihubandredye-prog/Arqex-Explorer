@@ -33,7 +33,7 @@
 
 # direct methods
 .method public constructor <init>(ZZIIZZZIIZZZLjava/lang/String;)V
-    .registers 14
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -99,21 +99,21 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/vn;->m:Ljava/lang/String;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     return-object v0
 
     .line 6
-    :cond_5
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 7
@@ -127,7 +127,7 @@
 
     .line 12
     .line 13
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_1
 
     .line 14
     .line 15
@@ -140,12 +140,12 @@
     .line 18
     .line 19
     .line 20
-    :cond_13
+    :cond_1
     iget-boolean v1, p0, Llibs/vn;->b:Z
 
     .line 21
     .line 22
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_2
 
     .line 23
     .line 24
@@ -158,7 +158,7 @@
     .line 27
     .line 28
     .line 29
-    :cond_1c
+    :cond_2
     iget v1, p0, Llibs/vn;->c:I
 
     .line 30
@@ -170,7 +170,7 @@
     const/4 v3, -0x1
 
     .line 34
-    if-eq v1, v3, :cond_2e
+    if-eq v1, v3, :cond_3
 
     .line 35
     .line 36
@@ -193,12 +193,12 @@
     .line 45
     .line 46
     .line 47
-    :cond_2e
+    :cond_3
     iget v1, p0, Llibs/vn;->d:I
 
     .line 48
     .line 49
-    if-eq v1, v3, :cond_3d
+    if-eq v1, v3, :cond_4
 
     .line 50
     .line 51
@@ -221,12 +221,12 @@
     .line 60
     .line 61
     .line 62
-    :cond_3d
+    :cond_4
     iget-boolean v1, p0, Llibs/vn;->e:Z
 
     .line 63
     .line 64
-    if-eqz v1, :cond_46
+    if-eqz v1, :cond_5
 
     .line 65
     .line 66
@@ -239,12 +239,12 @@
     .line 69
     .line 70
     .line 71
-    :cond_46
+    :cond_5
     iget-boolean v1, p0, Llibs/vn;->f:Z
 
     .line 72
     .line 73
-    if-eqz v1, :cond_4f
+    if-eqz v1, :cond_6
 
     .line 74
     .line 75
@@ -257,12 +257,12 @@
     .line 78
     .line 79
     .line 80
-    :cond_4f
+    :cond_6
     iget-boolean v1, p0, Llibs/vn;->g:Z
 
     .line 81
     .line 82
-    if-eqz v1, :cond_58
+    if-eqz v1, :cond_7
 
     .line 83
     .line 84
@@ -275,12 +275,12 @@
     .line 87
     .line 88
     .line 89
-    :cond_58
+    :cond_7
     iget v1, p0, Llibs/vn;->h:I
 
     .line 90
     .line 91
-    if-eq v1, v3, :cond_67
+    if-eq v1, v3, :cond_8
 
     .line 92
     .line 93
@@ -303,12 +303,12 @@
     .line 102
     .line 103
     .line 104
-    :cond_67
+    :cond_8
     iget v1, p0, Llibs/vn;->i:I
 
     .line 105
     .line 106
-    if-eq v1, v3, :cond_76
+    if-eq v1, v3, :cond_9
 
     .line 107
     .line 108
@@ -331,12 +331,12 @@
     .line 117
     .line 118
     .line 119
-    :cond_76
+    :cond_9
     iget-boolean v1, p0, Llibs/vn;->j:Z
 
     .line 120
     .line 121
-    if-eqz v1, :cond_7f
+    if-eqz v1, :cond_a
 
     .line 122
     .line 123
@@ -349,12 +349,12 @@
     .line 126
     .line 127
     .line 128
-    :cond_7f
+    :cond_a
     iget-boolean v1, p0, Llibs/vn;->k:Z
 
     .line 129
     .line 130
-    if-eqz v1, :cond_88
+    if-eqz v1, :cond_b
 
     .line 131
     .line 132
@@ -367,12 +367,12 @@
     .line 135
     .line 136
     .line 137
-    :cond_88
+    :cond_b
     iget-boolean v1, p0, Llibs/vn;->l:Z
 
     .line 138
     .line 139
-    if-eqz v1, :cond_91
+    if-eqz v1, :cond_c
 
     .line 140
     .line 141
@@ -385,7 +385,7 @@
     .line 144
     .line 145
     .line 146
-    :cond_91
+    :cond_c
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     .line 147
@@ -394,7 +394,7 @@
     move-result v1
 
     .line 150
-    if-nez v1, :cond_9a
+    if-nez v1, :cond_d
 
     .line 151
     .line 152
@@ -402,10 +402,10 @@
 
     .line 153
     .line 154
-    goto :goto_ab
+    goto :goto_0
 
     .line 155
-    :cond_9a
+    :cond_d
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     .line 156
@@ -439,7 +439,7 @@
     move-result-object v0
 
     .line 172
-    :goto_ab
+    :goto_0
     iput-object v0, p0, Llibs/vn;->m:Ljava/lang/String;
 
     .line 173

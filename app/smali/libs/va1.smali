@@ -30,7 +30,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/util/LinkedHashSet;Llibs/rp0;Landroid/content/Intent;ZLjava/util/ArrayList;Ljava/util/HashMap;Ljava/util/ArrayList;Ljava/util/concurrent/atomic/AtomicInteger;Ljava/util/concurrent/atomic/AtomicBoolean;Ljava/util/ArrayList;)V
-    .registers 11
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -84,7 +84,7 @@
 
 # virtual methods
 .method public final c([Ljava/lang/Object;)Z
-    .registers 16
+    .locals 14
 
     .line 1
     const/4 v0, 0x0
@@ -133,7 +133,7 @@
 
     .line 22
     .line 23
-    if-eqz v5, :cond_108
+    if-eqz v5, :cond_9
 
     .line 24
     .line 25
@@ -185,20 +185,20 @@
     move-result v6
 
     .line 51
-    if-eqz v6, :cond_36
+    if-eqz v6, :cond_0
 
     .line 52
     .line 53
-    goto/16 :goto_108
+    goto/16 :goto_4
 
     .line 54
     .line 55
-    :cond_36
+    :cond_0
     iget-object v6, p0, Llibs/va1;->Y:Llibs/rp0;
 
     .line 56
     .line 57
-    if-eqz v6, :cond_87
+    if-eqz v6, :cond_3
 
     .line 58
     .line 59
@@ -222,7 +222,7 @@
     move-result v9
 
     .line 69
-    if-eqz v9, :cond_87
+    if-eqz v9, :cond_3
 
     .line 70
     .line 71
@@ -262,7 +262,7 @@
     move-result v10
 
     .line 89
-    if-eqz v10, :cond_87
+    if-eqz v10, :cond_3
 
     .line 90
     .line 91
@@ -278,7 +278,7 @@
     move-result v6
 
     .line 97
-    if-eqz v6, :cond_87
+    if-eqz v6, :cond_3
 
     .line 98
     .line 99
@@ -310,7 +310,7 @@
     move-result v6
 
     .line 113
-    if-eqz v6, :cond_75
+    if-eqz v6, :cond_1
 
     .line 114
     .line 115
@@ -318,10 +318,10 @@
 
     .line 116
     .line 117
-    goto :goto_80
+    goto :goto_0
 
     .line 118
-    :cond_75
+    :cond_1
     invoke-static {}, Llibs/t43;->Item()Z
 
     .line 119
@@ -330,7 +330,7 @@
     move-result v6
 
     .line 122
-    if-eqz v6, :cond_7e
+    if-eqz v6, :cond_2
 
     .line 123
     .line 124
@@ -338,15 +338,15 @@
 
     .line 125
     .line 126
-    goto :goto_80
+    goto :goto_0
 
     .line 127
-    :cond_7e
+    :cond_2
     const/high16 v6, 0x20000
 
     .line 128
     .line 129
-    :goto_80
+    :goto_0
     int-to-long v11, v6
 
     .line 130
@@ -354,15 +354,15 @@
 
     .line 131
     .line 132
-    if-ltz v6, :cond_87
+    if-ltz v6, :cond_3
 
     .line 133
     .line 134
-    goto/16 :goto_108
+    goto/16 :goto_4
 
     .line 135
     .line 136
-    :cond_87
+    :cond_3
     new-instance v6, Ljava/lang/StringBuilder;
 
     .line 137
@@ -404,7 +404,7 @@
 
     .line 158
     .line 159
-    if-nez v4, :cond_a8
+    if-nez v4, :cond_5
 
     .line 160
     .line 161
@@ -412,26 +412,26 @@
 
     .line 162
     .line 163
-    if-ge v1, v4, :cond_a5
+    if-ge v1, v4, :cond_4
 
     .line 164
     .line 165
-    goto :goto_a8
+    goto :goto_2
 
     .line 166
-    :cond_a5
+    :cond_4
     const/4 v1, 0x0
 
     .line 167
-    :goto_a6
+    :goto_1
     move-object v9, v1
 
     .line 168
-    goto :goto_ad
+    goto :goto_3
 
     .line 169
-    :cond_a8
-    :goto_a8
+    :cond_5
+    :goto_2
     invoke-static {v3}, Llibs/u92;->Work(Landroid/content/pm/ResolveInfo;)Ljava/lang/CharSequence;
 
     .line 170
@@ -440,10 +440,10 @@
     move-result-object v1
 
     .line 173
-    goto :goto_a6
+    goto :goto_1
 
     .line 174
-    :goto_ad
+    :goto_3
     iget-object v1, p0, Llibs/va1;->Mu:Ljava/util/ArrayList;
 
     .line 175
@@ -456,7 +456,7 @@
     move-result v1
 
     .line 180
-    if-eqz v1, :cond_bb
+    if-eqz v1, :cond_6
 
     .line 181
     .line 182
@@ -472,7 +472,7 @@
     return v2
 
     .line 188
-    :cond_bb
+    :cond_6
     const-string v1, "com.arqex.explorer"
 
     .line 189
@@ -489,7 +489,7 @@
 
     .line 195
     .line 196
-    if-eqz v1, :cond_dc
+    if-eqz v1, :cond_7
 
     .line 197
     .line 198
@@ -542,7 +542,7 @@
     return v2
 
     .line 221
-    :cond_dc
+    :cond_7
     iget-object v1, p0, Llibs/va1;->Pi:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     .line 222
@@ -555,7 +555,7 @@
     move-result v4
 
     .line 227
-    if-nez v4, :cond_ef
+    if-nez v4, :cond_8
 
     .line 228
     .line 229
@@ -571,7 +571,7 @@
     move-result v4
 
     .line 235
-    if-eqz v4, :cond_ef
+    if-eqz v4, :cond_8
 
     .line 236
     .line 237
@@ -580,7 +580,7 @@
     .line 238
     .line 239
     .line 240
-    :cond_ef
+    :cond_8
     new-instance v6, Llibs/r90;
 
     .line 241
@@ -632,7 +632,7 @@
     .line 263
     .line 264
     .line 265
-    :cond_108
-    :goto_108
+    :cond_9
+    :goto_4
     return v2
 .end method

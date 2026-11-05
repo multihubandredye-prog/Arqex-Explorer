@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
@@ -29,7 +29,7 @@
 .end method
 
 .method public static a(Ljava/lang/String;)V
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/jb3;->a:Ljava/util/concurrent/ConcurrentHashMap;
@@ -39,7 +39,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     invoke-interface {v0, p0}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 5
@@ -53,11 +53,11 @@
     .line 9
     .line 10
     monitor-exit v0
-    :try_end_a
-    .catchall {:try_start_3 .. :try_end_a} :catchall_21
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 11
-    if-eqz p0, :cond_20
+    if-eqz p0, :cond_0
 
     .line 12
     .line 13
@@ -69,7 +69,7 @@
     move-result-object p0
 
     .line 17
-    :goto_10
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 18
@@ -78,7 +78,7 @@
     move-result v0
 
     .line 21
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     .line 22
     .line 23
@@ -99,58 +99,58 @@
     .line 30
     .line 31
     .line 32
-    goto :goto_10
+    goto :goto_0
 
     .line 33
-    :cond_20
+    :cond_0
     return-void
 
     .line 34
-    :catchall_21
+    :catchall_0
     move-exception p0
 
     .line 35
-    :try_start_22
+    :try_start_1
     monitor-exit v0
-    :try_end_23
-    .catchall {:try_start_22 .. :try_end_23} :catchall_21
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 36
-    goto :goto_25
+    goto :goto_2
 
     .line 37
-    :goto_24
+    :goto_1
     throw p0
 
     .line 38
-    :goto_25
-    goto :goto_24
+    :goto_2
+    goto :goto_1
 .end method
 
 .method public static b(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, ""
 
     .line 2
     .line 3
-    if-nez p0, :cond_5
+    if-nez p0, :cond_0
 
     .line 4
     .line 5
     move-object p0, v0
 
     .line 6
-    :cond_5
-    if-nez p1, :cond_8
+    :cond_0
+    if-nez p1, :cond_1
 
     .line 7
     .line 8
     move-object p1, v0
 
     .line 9
-    :cond_8
+    :cond_1
     const-string v0, "\\"
 
     .line 10
@@ -179,10 +179,10 @@
 .end method
 
 .method public static c(Ljava/lang/String;Ljava/lang/String;Llibs/oo0;)V
-    .registers 4
+    .locals 1
 
     .line 1
-    if-eqz p0, :cond_27
+    if-eqz p0, :cond_1
 
     .line 2
     .line 3
@@ -201,7 +201,7 @@
     monitor-enter p1
 
     .line 10
-    :try_start_9
+    :try_start_0
     invoke-interface {p1, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 11
@@ -214,7 +214,7 @@
 
     .line 15
     .line 16
-    if-nez v0, :cond_20
+    if-nez v0, :cond_0
 
     .line 17
     .line 18
@@ -240,21 +240,21 @@
     .line 28
     .line 29
     .line 30
-    goto :goto_20
+    goto :goto_0
 
     .line 31
-    :catchall_1e
+    :catchall_0
     move-exception p0
 
     .line 32
-    goto :goto_25
+    goto :goto_1
 
     .line 33
-    :cond_20
-    :goto_20
+    :cond_0
+    :goto_0
     monitor-exit p1
-    :try_end_21
-    .catchall {:try_start_9 .. :try_end_21} :catchall_1e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 34
     invoke-interface {v0, p2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
@@ -265,25 +265,25 @@
     return-void
 
     .line 38
-    :goto_25
-    :try_start_25
+    :goto_1
+    :try_start_1
     monitor-exit p1
-    :try_end_26
-    .catchall {:try_start_25 .. :try_end_26} :catchall_1e
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 39
     throw p0
 
     .line 40
-    :cond_27
+    :cond_1
     return-void
 .end method
 
 .method public static d(Ljava/lang/String;Ljava/lang/String;Z)V
-    .registers 6
+    .locals 3
 
     .line 1
-    if-eqz p0, :cond_46
+    if-eqz p0, :cond_3
 
     .line 2
     .line 3
@@ -295,7 +295,7 @@
     move-result-object p0
 
     .line 7
-    if-eqz p2, :cond_38
+    if-eqz p2, :cond_2
 
     .line 8
     .line 9
@@ -311,17 +311,17 @@
     move-result p2
 
     .line 15
-    if-eqz p2, :cond_12
+    if-eqz p2, :cond_0
 
     .line 16
     .line 17
     move-object p2, p0
 
     .line 18
-    goto :goto_18
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     const-string p2, "\\"
 
     .line 20
@@ -334,7 +334,7 @@
     move-result-object p2
 
     .line 25
-    :goto_18
+    :goto_0
     sget-object v0, Llibs/jb3;->a:Ljava/util/concurrent/ConcurrentHashMap;
 
     .line 26
@@ -355,8 +355,8 @@
     move-result-object v0
 
     .line 35
-    :cond_22
-    :goto_22
+    :cond_1
+    :goto_1
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 36
@@ -365,7 +365,7 @@
     move-result v1
 
     .line 39
-    if-eqz v1, :cond_38
+    if-eqz v1, :cond_2
 
     .line 40
     .line 41
@@ -389,7 +389,7 @@
     move-result v2
 
     .line 51
-    if-eqz v2, :cond_22
+    if-eqz v2, :cond_1
 
     .line 52
     .line 53
@@ -398,10 +398,10 @@
     .line 54
     .line 55
     .line 56
-    goto :goto_22
+    goto :goto_1
 
     .line 57
-    :cond_38
+    :cond_2
     invoke-static {p0}, Llibs/jb3;->a(Ljava/lang/String;)V
 
     .line 58
@@ -414,7 +414,7 @@
     monitor-enter p0
 
     .line 63
-    :try_start_3e
+    :try_start_0
     invoke-interface {p0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     .line 64
@@ -426,31 +426,31 @@
     return-void
 
     .line 68
-    :catchall_43
+    :catchall_0
     move-exception p1
 
     .line 69
     monitor-exit p0
-    :try_end_45
-    .catchall {:try_start_3e .. :try_end_45} :catchall_43
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 70
     throw p1
 
     .line 71
-    :cond_46
+    :cond_3
     return-void
 .end method
 
 .method public static e(Ljava/lang/String;Ljava/lang/String;Llibs/oo0;)V
-    .registers 4
+    .locals 1
 
     .line 1
-    if-eqz p0, :cond_2c
+    if-eqz p0, :cond_1
 
     .line 2
     .line 3
-    if-eqz p1, :cond_2c
+    if-eqz p1, :cond_1
 
     .line 4
     .line 5
@@ -478,7 +478,7 @@
 
     .line 16
     .line 17
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_1
 
     .line 18
     .line 19
@@ -495,14 +495,14 @@
     move-result p2
 
     .line 26
-    if-eqz p2, :cond_2c
+    if-eqz p2, :cond_1
 
     .line 27
     .line 28
     monitor-enter p1
 
     .line 29
-    :try_start_1c
+    :try_start_0
     invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
 
     .line 30
@@ -511,7 +511,7 @@
     move-result p2
 
     .line 33
-    if-eqz p2, :cond_28
+    if-eqz p2, :cond_0
 
     .line 34
     .line 35
@@ -520,33 +520,33 @@
     .line 36
     .line 37
     .line 38
-    goto :goto_28
+    goto :goto_0
 
     .line 39
-    :catchall_26
+    :catchall_0
     move-exception p0
 
     .line 40
-    goto :goto_2a
+    goto :goto_1
 
     .line 41
-    :cond_28
-    :goto_28
+    :cond_0
+    :goto_0
     monitor-exit p1
 
     .line 42
     return-void
 
     .line 43
-    :goto_2a
+    :goto_1
     monitor-exit p1
-    :try_end_2b
-    .catchall {:try_start_1c .. :try_end_2b} :catchall_26
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 44
     throw p0
 
     .line 45
-    :cond_2c
+    :cond_1
     return-void
 .end method

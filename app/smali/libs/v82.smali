@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/util/ArrayList;
@@ -68,7 +68,7 @@
 .end method
 
 .method public constructor <init>(Ljava/io/InputStream;Ljava/lang/String;)V
-    .registers 7
+    .locals 4
 
     .line 1
     const-string v0, "unsupported encoding: "
@@ -101,7 +101,7 @@
 
     .line 16
     .line 17
-    :try_start_10
+    :try_start_0
     const-string v3, "PkiPath"
 
     .line 18
@@ -114,7 +114,7 @@
     move-result v3
 
     .line 23
-    if-eqz v3, :cond_68
+    if-eqz v3, :cond_1
 
     .line 24
     .line 25
@@ -139,7 +139,7 @@
 
     .line 35
     .line 36
-    if-eqz p2, :cond_60
+    if-eqz p2, :cond_0
 
     .line 37
     .line 38
@@ -176,7 +176,7 @@
     move-result-object p2
 
     .line 55
-    :goto_36
+    :goto_0
     invoke-interface {p1}, Ljava/util/Enumeration;->hasMoreElements()Z
 
     .line 56
@@ -185,7 +185,7 @@
     move-result v0
 
     .line 59
-    if-eqz v0, :cond_9f
+    if-eqz v0, :cond_4
 
     .line 60
     .line 61
@@ -250,24 +250,24 @@
     .line 90
     .line 91
     .line 92
-    goto :goto_36
+    goto :goto_0
 
     .line 93
-    :catch_5c
+    :catch_0
     move-exception p1
 
     .line 94
-    goto :goto_a8
+    goto :goto_3
 
     .line 95
-    :catch_5e
+    :catch_1
     move-exception p1
 
     .line 96
-    goto :goto_c0
+    goto :goto_4
 
     .line 97
-    :cond_60
+    :cond_0
     new-instance p1, Ljava/security/cert/CertificateException;
 
     .line 98
@@ -284,7 +284,7 @@
     throw p1
 
     .line 105
-    :cond_68
+    :cond_1
     const-string v3, "PKCS7"
 
     .line 106
@@ -297,7 +297,7 @@
     move-result v3
 
     .line 111
-    if-nez v3, :cond_83
+    if-nez v3, :cond_3
 
     .line 112
     .line 113
@@ -313,14 +313,14 @@
     move-result v3
 
     .line 119
-    if-eqz v3, :cond_79
+    if-eqz v3, :cond_2
 
     .line 120
     .line 121
-    goto :goto_83
+    goto :goto_1
 
     .line 122
-    :cond_79
+    :cond_2
     new-instance p1, Ljava/security/cert/CertificateException;
 
     .line 123
@@ -341,8 +341,8 @@
     throw p1
 
     .line 132
-    :cond_83
-    :goto_83
+    :cond_3
+    :goto_1
     new-instance p2, Llibs/zj;
 
     .line 133
@@ -373,7 +373,7 @@
     move-result-object p1
 
     .line 148
-    :goto_93
+    :goto_2
     invoke-virtual {p1, p2}, Ljava/security/cert/CertificateFactory;->generateCertificate(Ljava/io/InputStream;)Ljava/security/cert/Certificate;
 
     .line 149
@@ -382,7 +382,7 @@
     move-result-object v0
 
     .line 152
-    if-eqz v0, :cond_9f
+    if-eqz v0, :cond_4
 
     .line 153
     .line 154
@@ -391,17 +391,17 @@
     .line 155
     .line 156
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-    :try_end_9e
-    .catch Ljava/io/IOException; {:try_start_10 .. :try_end_9e} :catch_5e
-    .catch Ljava/security/NoSuchProviderException; {:try_start_10 .. :try_end_9e} :catch_5c
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/security/NoSuchProviderException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 157
     .line 158
     .line 159
-    goto :goto_93
+    goto :goto_2
 
     .line 160
-    :cond_9f
+    :cond_4
     iget-object p1, p0, Llibs/v82;->X:Ljava/util/List;
 
     .line 161
@@ -421,7 +421,7 @@
     return-void
 
     .line 169
-    :goto_a8
+    :goto_3
     new-instance p2, Ljava/security/cert/CertificateException;
 
     .line 170
@@ -468,7 +468,7 @@
     throw p2
 
     .line 193
-    :goto_c0
+    :goto_4
     new-instance p2, Ljava/security/cert/CertificateException;
 
     .line 194
@@ -512,19 +512,19 @@
     .line 214
     .line 215
     .line 216
-    goto :goto_d9
+    goto :goto_6
 
     .line 217
-    :goto_d8
+    :goto_5
     throw p2
 
     .line 218
-    :goto_d9
-    goto :goto_d8
+    :goto_6
+    goto :goto_5
 .end method
 
 .method public constructor <init>(Ljava/util/List;)V
-    .registers 3
+    .locals 1
 
     .line 219
     const-string v0, "X.509"
@@ -551,7 +551,7 @@
 .end method
 
 .method public static a(Ljava/util/List;)Ljava/util/List;
-    .registers 10
+    .locals 9
 
     .line 1
     invoke-interface {p0}, Ljava/util/List;->size()I
@@ -565,15 +565,15 @@
     const/4 v1, 0x2
 
     .line 6
-    if-ge v0, v1, :cond_9
+    if-ge v0, v1, :cond_0
 
     .line 7
     .line 8
-    goto/16 :goto_c0
+    goto/16 :goto_8
 
     .line 9
     .line 10
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
     .line 11
@@ -603,7 +603,7 @@
     const/4 v3, 0x1
 
     .line 23
-    :goto_16
+    :goto_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     .line 24
@@ -612,7 +612,7 @@
     move-result v4
 
     .line 27
-    if-eq v3, v4, :cond_c0
+    if-eq v3, v4, :cond_a
 
     .line 28
     .line 29
@@ -644,7 +644,7 @@
     move-result v1
 
     .line 43
-    if-eqz v1, :cond_39
+    if-eqz v1, :cond_1
 
     .line 44
     .line 45
@@ -672,10 +672,10 @@
 
     .line 56
     .line 57
-    goto :goto_16
+    goto :goto_0
 
     .line 58
-    :cond_39
+    :cond_1
     new-instance v1, Ljava/util/ArrayList;
 
     .line 59
@@ -705,7 +705,7 @@
     const/4 v4, 0x0
 
     .line 73
-    :goto_48
+    :goto_1
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     .line 74
@@ -714,7 +714,7 @@
     move-result v5
 
     .line 77
-    if-ge v4, v5, :cond_7c
+    if-ge v4, v5, :cond_4
 
     .line 78
     .line 79
@@ -741,7 +741,7 @@
     const/4 v7, 0x0
 
     .line 90
-    :goto_59
+    :goto_2
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     .line 91
@@ -750,7 +750,7 @@
     move-result v8
 
     .line 94
-    if-eq v7, v8, :cond_73
+    if-eq v7, v8, :cond_3
 
     .line 95
     .line 96
@@ -782,22 +782,22 @@
     move-result v8
 
     .line 110
-    if-eqz v8, :cond_70
+    if-eqz v8, :cond_2
 
     .line 111
     .line 112
-    goto :goto_79
+    goto :goto_3
 
     .line 113
-    :cond_70
+    :cond_2
     add-int/lit8 v7, v7, 0x1
 
     .line 114
     .line 115
-    goto :goto_59
+    goto :goto_2
 
     .line 116
-    :cond_73
+    :cond_3
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 117
@@ -808,15 +808,15 @@
     .line 120
     .line 121
     .line 122
-    :goto_79
+    :goto_3
     add-int/lit8 v4, v4, 0x1
 
     .line 123
     .line 124
-    goto :goto_48
+    goto :goto_1
 
     .line 125
-    :cond_7c
+    :cond_4
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     .line 126
@@ -825,18 +825,18 @@
     move-result v4
 
     .line 129
-    if-le v4, v2, :cond_83
+    if-le v4, v2, :cond_5
 
     .line 130
     .line 131
-    goto :goto_be
+    goto :goto_7
 
     .line 132
-    :cond_83
+    :cond_5
     const/4 v2, 0x0
 
     .line 133
-    :goto_84
+    :goto_4
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     .line 134
@@ -845,7 +845,7 @@
     move-result v4
 
     .line 137
-    if-eq v2, v4, :cond_b8
+    if-eq v2, v4, :cond_8
 
     .line 138
     .line 139
@@ -872,7 +872,7 @@
     const/4 v5, 0x0
 
     .line 150
-    :goto_95
+    :goto_5
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     .line 151
@@ -881,7 +881,7 @@
     move-result v6
 
     .line 154
-    if-ge v5, v6, :cond_b5
+    if-ge v5, v6, :cond_7
 
     .line 155
     .line 156
@@ -913,7 +913,7 @@
     move-result v7
 
     .line 170
-    if-eqz v7, :cond_b2
+    if-eqz v7, :cond_6
 
     .line 171
     .line 172
@@ -927,27 +927,27 @@
     .line 176
     .line 177
     .line 178
-    goto :goto_b5
+    goto :goto_6
 
     .line 179
-    :cond_b2
+    :cond_6
     add-int/lit8 v5, v5, 0x1
 
     .line 180
     .line 181
-    goto :goto_95
+    goto :goto_5
 
     .line 182
-    :cond_b5
-    :goto_b5
+    :cond_7
+    :goto_6
     add-int/lit8 v2, v2, 0x1
 
     .line 183
     .line 184
-    goto :goto_84
+    goto :goto_4
 
     .line 185
-    :cond_b8
+    :cond_8
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     .line 186
@@ -956,25 +956,25 @@
     move-result p0
 
     .line 189
-    if-lez p0, :cond_bf
+    if-lez p0, :cond_9
 
     .line 190
     .line 191
-    :goto_be
+    :goto_7
     return-object v3
 
     .line 192
-    :cond_bf
+    :cond_9
     return-object v1
 
     .line 193
-    :cond_c0
-    :goto_c0
+    :cond_a
+    :goto_8
     return-object p0
 .end method
 
 .method public static b(Ljava/security/cert/X509Certificate;)Llibs/Theme;
-    .registers 4
+    .locals 3
 
     .line 1
     :try_start_0
@@ -1001,14 +1001,14 @@
     .line 12
     .line 13
     move-result-object p0
-    :try_end_d
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_d} :catch_e
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 14
     return-object p0
 
     .line 15
-    :catch_e
+    :catch_0
     move-exception p0
 
     .line 16
@@ -1046,7 +1046,7 @@
 .end method
 
 .method public static c(Llibs/Auth;)[B
-    .registers 4
+    .locals 3
 
     .line 1
     :try_start_0
@@ -1068,14 +1068,14 @@
     .line 9
     .line 10
     move-result-object p0
-    :try_end_a
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_a} :catch_b
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 11
     return-object p0
 
     .line 12
-    :catch_b
+    :catch_0
     move-exception p0
 
     .line 13
@@ -1120,7 +1120,7 @@
 
 # virtual methods
 .method public final getCertificates()Ljava/util/List;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/util/ArrayList;
@@ -1148,7 +1148,7 @@
 .end method
 
 .method public final getEncoded()[B
-    .registers 3
+    .locals 2
 
     .line 222
     sget-object v0, Llibs/v82;->Y:Ljava/util/List;
@@ -1162,7 +1162,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_0
 
     .line 224
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -1172,7 +1172,7 @@
     .line 225
     instance-of v1, v0, Ljava/lang/String;
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_0
 
     .line 226
     check-cast v0, Ljava/lang/String;
@@ -1183,14 +1183,14 @@
 
     return-object v0
 
-    :cond_1b
+    :cond_0
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
 .method public final getEncoded(Ljava/lang/String;)[B
-    .registers 11
+    .locals 9
 
     .line 1
     const-string v0, "PkiPath"
@@ -1212,7 +1212,7 @@
 
     .line 9
     .line 10
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_1
 
     .line 11
     .line 12
@@ -1241,7 +1241,7 @@
     move-result-object v0
 
     .line 25
-    :goto_18
+    :goto_0
     invoke-interface {v0}, Ljava/util/ListIterator;->hasPrevious()Z
 
     .line 26
@@ -1250,7 +1250,7 @@
     move-result v1
 
     .line 29
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_0
 
     .line 30
     .line 31
@@ -1279,10 +1279,10 @@
     .line 42
     .line 43
     .line 44
-    goto :goto_18
+    goto :goto_0
 
     .line 45
-    :cond_2c
+    :cond_0
     new-instance v0, Llibs/p10;
 
     .line 46
@@ -1303,7 +1303,7 @@
     return-object p1
 
     .line 55
-    :cond_36
+    :cond_1
     const-string v0, "PKCS7"
 
     .line 56
@@ -1316,7 +1316,7 @@
     move-result v0
 
     .line 61
-    if-eqz v0, :cond_89
+    if-eqz v0, :cond_3
 
     .line 62
     .line 63
@@ -1348,7 +1348,7 @@
     const/4 v0, 0x0
 
     .line 77
-    :goto_4c
+    :goto_1
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     .line 78
@@ -1357,7 +1357,7 @@
     move-result v3
 
     .line 81
-    if-eq v0, v3, :cond_62
+    if-eq v0, v3, :cond_2
 
     .line 82
     .line 83
@@ -1390,10 +1390,10 @@
 
     .line 97
     .line 98
-    goto :goto_4c
+    goto :goto_1
 
     .line 99
-    :cond_62
+    :cond_2
     new-instance v3, Llibs/k93;
 
     .line 100
@@ -1467,7 +1467,7 @@
     return-object p1
 
     .line 138
-    :cond_89
+    :cond_3
     const-string v0, "PEM"
 
     .line 139
@@ -1480,7 +1480,7 @@
     move-result v0
 
     .line 144
-    if-eqz v0, :cond_cf
+    if-eqz v0, :cond_5
 
     .line 145
     .line 146
@@ -1511,8 +1511,8 @@
     .line 159
     .line 160
     .line 161
-    :goto_a0
-    :try_start_a0
+    :goto_2
+    :try_start_0
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     .line 162
@@ -1521,7 +1521,7 @@
     move-result v3
 
     .line 165
-    if-eq v1, v3, :cond_bf
+    if-eq v1, v3, :cond_4
 
     .line 166
     .line 167
@@ -1571,13 +1571,13 @@
 
     .line 190
     .line 191
-    goto :goto_a0
+    goto :goto_2
 
     .line 192
-    :cond_bf
+    :cond_4
     invoke-virtual {v0}, Ljava/io/Writer;->close()V
-    :try_end_c2
-    .catch Ljava/lang/Exception; {:try_start_a0 .. :try_end_c2} :catch_c7
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 193
     .line 194
@@ -1593,7 +1593,7 @@
     return-object p1
 
     .line 200
-    :catch_c7
+    :catch_0
     new-instance p1, Ljava/security/cert/CertificateEncodingException;
 
     .line 201
@@ -1610,7 +1610,7 @@
     throw p1
 
     .line 208
-    :cond_cf
+    :cond_5
     new-instance v0, Ljava/security/cert/CertificateEncodingException;
 
     .line 209
@@ -1632,19 +1632,19 @@
     .line 217
     .line 218
     .line 219
-    goto :goto_dc
+    goto :goto_4
 
     .line 220
-    :goto_db
+    :goto_3
     throw v0
 
     .line 221
-    :goto_dc
-    goto :goto_db
+    :goto_4
+    goto :goto_3
 .end method
 
 .method public final getEncodings()Ljava/util/Iterator;
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/v82;->Y:Ljava/util/List;

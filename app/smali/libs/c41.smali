@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/ArrayList;)V
-    .registers 2
+    .locals 0
 
     .line 12
     iput-object p1, p0, Llibs/c41;->X:Ljava/util/ArrayList;
@@ -50,7 +50,7 @@
 
 # virtual methods
 .method public a(Llibs/ov2;Llibs/rw2;)V
-    .registers 15
+    .locals 12
 
     .line 1
     iget-wide v0, p1, Llibs/ov2;->j:J
@@ -72,7 +72,7 @@
 
     .line 11
     .line 12
-    if-nez v4, :cond_1b
+    if-nez v4, :cond_0
 
     .line 13
     .line 14
@@ -102,7 +102,7 @@
     return-void
 
     .line 28
-    :cond_1b
+    :cond_0
     const-wide v2, 0x8000002dL
 
     .line 29
@@ -114,7 +114,7 @@
 
     .line 34
     .line 35
-    if-nez v4, :cond_86
+    if-nez v4, :cond_4
 
     .line 36
     .line 37
@@ -227,21 +227,21 @@
 
     .line 91
     .line 92
-    if-nez v3, :cond_5f
+    if-nez v3, :cond_1
 
     .line 93
     .line 94
     const/4 v3, 0x1
 
     .line 95
-    goto :goto_60
+    goto :goto_0
 
     .line 96
-    :cond_5f
+    :cond_1
     const/4 v3, 0x0
 
     .line 97
-    :goto_60
+    :goto_0
     iput-boolean v3, v0, Llibs/tu2;->a:Z
 
     .line 98
@@ -250,7 +250,7 @@
 
     .line 100
     .line 101
-    if-lez v5, :cond_71
+    if-lez v5, :cond_2
 
     .line 102
     .line 103
@@ -276,14 +276,14 @@
     move-result-object v4
 
     .line 113
-    goto :goto_72
+    goto :goto_1
 
     .line 114
-    :cond_71
+    :cond_2
     const/4 v4, 0x0
 
     .line 115
-    :goto_72
+    :goto_1
     iput v3, p2, Llibs/rw2;->c:I
 
     .line 116
@@ -292,7 +292,7 @@
 
     .line 118
     .line 119
-    if-lez v7, :cond_81
+    if-lez v7, :cond_3
 
     .line 120
     .line 121
@@ -315,7 +315,7 @@
     .line 128
     .line 129
     .line 130
-    :cond_81
+    :cond_3
     iput v2, p2, Llibs/rw2;->c:I
 
     .line 131
@@ -325,19 +325,19 @@
     .line 133
     .line 134
     .line 135
-    :cond_86
+    :cond_4
     return-void
 .end method
 
 .method public j(Llibs/rp0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public y(Llibs/rp0;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-static {}, Llibs/su0;->c()Z
@@ -348,7 +348,7 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -364,7 +364,7 @@
     return-void
 
     .line 13
-    :cond_c
+    :cond_0
     new-instance p1, Lexceptions/MiInterruptedException;
 
     .line 14

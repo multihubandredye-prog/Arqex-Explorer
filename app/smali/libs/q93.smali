@@ -32,7 +32,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/util/HashMap;Landroid/app/Activity;Llibs/rp0;[CLjava/lang/String;Llibs/qk0;Ljava/lang/String;ZZZLlibs/$d;)V
-    .registers 12
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -90,7 +90,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 21
+    .locals 19
 
     .line 1
     move-object/from16 v1, p0
@@ -168,7 +168,7 @@
     const/4 v13, 0x0
 
     .line 38
-    if-nez v11, :cond_31
+    if-nez v11, :cond_0
 
     .line 39
     .line 40
@@ -192,7 +192,7 @@
     return-void
 
     .line 50
-    :cond_31
+    :cond_0
     sget v11, Llibs/bi2;->enter_key_pass:I
 
     .line 51
@@ -278,15 +278,15 @@
 
     .line 92
     .line 93
-    :try_start_5c
+    :try_start_0
     invoke-virtual {v2, v13, v14}, Llibs/rp0;->Post(J)Ljava/io/InputStream;
 
     .line 94
     .line 95
     .line 96
     move-result-object v13
-    :try_end_60
-    .catch Ljava/lang/Exception; {:try_start_5c .. :try_end_60} :catch_118
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 97
     iget-object v14, v1, Llibs/q93;->Lambda:[C
@@ -301,18 +301,18 @@
 
     .line 102
     .line 103
-    if-nez v13, :cond_6a
+    if-nez v13, :cond_1
 
     .line 104
     .line 105
     const/4 v13, 0x0
 
     .line 106
-    goto :goto_77
+    goto :goto_0
 
     .line 107
-    :cond_6a
-    :try_start_6a
+    :cond_1
+    :try_start_1
     invoke-static {v13, v14, v4}, Llibs/i81;->u(Ljava/io/InputStream;[CLjava/lang/String;)Ljava/security/KeyStore;
 
     .line 108
@@ -340,8 +340,8 @@
 
     .line 119
     .line 120
-    :goto_77
-    if-eqz v13, :cond_122
+    :goto_0
+    if-eqz v13, :cond_2
 
     .line 121
     .line 122
@@ -649,8 +649,8 @@
     .line 276
     .line 277
     invoke-virtual {v8}, Llibs/od;->dismiss()V
-    :try_end_117
-    .catch Ljava/lang/Exception; {:try_start_6a .. :try_end_117} :catch_118
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 278
     .line 279
@@ -658,7 +658,7 @@
     return-void
 
     .line 281
-    :catch_118
+    :catch_0
     move-exception v0
 
     .line 282
@@ -679,7 +679,7 @@
     .line 289
     .line 290
     .line 291
-    :cond_122
+    :cond_2
     sget v0, Llibs/bi2;->failed:I
 
     .line 292

@@ -13,7 +13,7 @@
 
 # direct methods
 .method private constructor <init>(III)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
 .end method
 
 .method public synthetic constructor <init>(IIII)V
-    .registers 5
+    .locals 0
 
     .line 11
     invoke-direct {p0, p1, p2, p3}, Lorg/conscrypt/Conscrypt$Version;-><init>(III)V
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public major()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/Conscrypt$Version;->major:I
@@ -59,7 +59,7 @@
 .end method
 
 .method public minor()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/Conscrypt$Version;->minor:I
@@ -70,7 +70,7 @@
 .end method
 
 .method public patch()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/Conscrypt$Version;->patch:I

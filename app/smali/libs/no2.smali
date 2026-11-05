@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/uz;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final j(Llibs/t02;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object v0, p1, Llibs/t02;->e:Ljava/lang/String;
@@ -45,8 +45,8 @@
     const/4 v1, 0x0
 
     .line 12
-    :goto_b
-    if-ge v1, v0, :cond_1d
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     .line 13
     .line 14
@@ -79,10 +79,10 @@
 
     .line 28
     .line 29
-    goto :goto_b
+    goto :goto_0
 
     .line 30
-    :cond_1d
+    :cond_0
     const/4 p1, 0x1
 
     .line 31
@@ -90,7 +90,7 @@
 .end method
 
 .method public final t()Z
-    .registers 8
+    .locals 7
 
     .line 1
     const-string v0, "protocolInfo"
@@ -109,14 +109,14 @@
 
     .line 8
     .line 9
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 10
     .line 11
-    goto :goto_1b
+    goto :goto_0
 
     .line 12
-    :cond_b
+    :cond_0
     const-string v2, ":"
 
     .line 13
@@ -129,7 +129,7 @@
     move-result-object v0
 
     .line 18
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_2
 
     .line 19
     .line 20
@@ -139,38 +139,38 @@
     const/4 v3, 0x3
 
     .line 22
-    if-gt v2, v3, :cond_18
+    if-gt v2, v3, :cond_1
 
     .line 23
     .line 24
-    goto :goto_1b
+    goto :goto_0
 
     .line 25
-    :cond_18
+    :cond_1
     aget-object v0, v0, v3
 
     .line 26
     .line 27
-    goto :goto_1c
+    goto :goto_1
 
     .line 28
-    :cond_1b
-    :goto_1b
+    :cond_2
+    :goto_0
     move-object v0, v1
 
     .line 29
-    :goto_1c
+    :goto_1
     const/4 v2, 0x0
 
     .line 30
-    if-nez v0, :cond_20
+    if-nez v0, :cond_3
 
     .line 31
     .line 32
-    goto :goto_4d
+    goto :goto_3
 
     .line 33
-    :cond_20
+    :cond_3
     const-string v3, ";"
 
     .line 34
@@ -183,29 +183,29 @@
     move-result-object v0
 
     .line 39
-    if-eqz v0, :cond_4d
+    if-eqz v0, :cond_7
 
     .line 40
     .line 41
     array-length v3, v0
 
     .line 42
-    if-gtz v3, :cond_2c
+    if-gtz v3, :cond_4
 
     .line 43
     .line 44
-    goto :goto_4d
+    goto :goto_3
 
     .line 45
-    :cond_2c
+    :cond_4
     array-length v3, v0
 
     .line 46
     const/4 v4, 0x0
 
     .line 47
-    :goto_2e
-    if-ge v4, v3, :cond_4d
+    :goto_2
+    if-ge v4, v3, :cond_7
 
     .line 48
     .line 49
@@ -225,7 +225,7 @@
     move-result v6
 
     .line 57
-    if-nez v6, :cond_3d
+    if-nez v6, :cond_5
 
     .line 58
     .line 59
@@ -233,10 +233,10 @@
 
     .line 60
     .line 61
-    goto :goto_2e
+    goto :goto_2
 
     .line 62
-    :cond_3d
+    :cond_5
     const-string v0, "="
 
     .line 63
@@ -249,7 +249,7 @@
     move-result-object v0
 
     .line 68
-    if-eqz v0, :cond_4d
+    if-eqz v0, :cond_7
 
     .line 69
     .line 70
@@ -259,14 +259,14 @@
     const/4 v4, 0x2
 
     .line 72
-    if-ge v3, v4, :cond_4a
+    if-ge v3, v4, :cond_6
 
     .line 73
     .line 74
-    goto :goto_4d
+    goto :goto_3
 
     .line 75
-    :cond_4a
+    :cond_6
     const/4 v1, 0x1
 
     .line 76
@@ -274,16 +274,16 @@
 
     .line 77
     .line 78
-    :cond_4d
-    :goto_4d
-    if-nez v1, :cond_50
+    :cond_7
+    :goto_3
+    if-nez v1, :cond_8
 
     .line 79
     .line 80
     return v2
 
     .line 81
-    :cond_50
+    :cond_8
     const-string v0, "_TN"
 
     .line 82

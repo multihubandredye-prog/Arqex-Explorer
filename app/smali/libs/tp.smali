@@ -11,7 +11,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/io/Serializable;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/tp;->a:B
@@ -33,14 +33,14 @@
 
 # virtual methods
 .method public a()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/tp;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_16
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -56,7 +56,7 @@
     return v0
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     invoke-static {}, Llibs/t43;->Wait()Z
 
     .line 12
@@ -65,7 +65,7 @@
     move-result v0
 
     .line 15
-    :goto_e
+    :goto_0
     xor-int/lit8 v0, v0, 0x1
 
     .line 16
@@ -73,7 +73,7 @@
     return v0
 
     .line 18
-    :pswitch_11
+    :pswitch_1
     invoke-static {}, Llibs/t43;->Wait()Z
 
     .line 19
@@ -82,18 +82,18 @@
     move-result v0
 
     .line 22
-    goto :goto_e
+    goto :goto_0
 
     .line 23
-    :pswitch_data_16
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_11
-        :pswitch_a
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final e(Llibs/rp0;)Z
-    .registers 7
+    .locals 5
 
     .line 1
     iget-byte v0, p0, Llibs/tp;->a:B
@@ -103,7 +103,7 @@
     const/4 v1, 0x0
 
     .line 4
-    packed-switch v0, :pswitch_data_70
+    packed-switch v0, :pswitch_data_0
 
     .line 5
     .line 6
@@ -128,7 +128,7 @@
     move-result v2
 
     .line 17
-    if-eqz v2, :cond_17
+    if-eqz v2, :cond_0
 
     .line 18
     .line 19
@@ -143,7 +143,7 @@
     move-result-object v0
 
     .line 24
-    :cond_17
+    :cond_0
     new-instance v2, Llibs/ta3;
 
     .line 25
@@ -225,7 +225,7 @@
     return v1
 
     .line 67
-    :pswitch_42
+    :pswitch_0
     iget-object v0, p0, Llibs/tp;->b:Ljava/io/Serializable;
 
     .line 68
@@ -246,8 +246,8 @@
     return v1
 
     .line 77
-    :pswitch_4c
-    if-eqz p1, :cond_5f
+    :pswitch_1
+    if-eqz p1, :cond_1
 
     .line 78
     .line 79
@@ -262,7 +262,7 @@
     monitor-enter v0
 
     .line 84
-    :try_start_53
+    :try_start_0
     iget-object v2, p0, Llibs/tp;->b:Ljava/io/Serializable;
 
     .line 85
@@ -279,27 +279,27 @@
     monitor-exit v0
 
     .line 92
-    goto :goto_5f
+    goto :goto_0
 
     .line 93
-    :catchall_5c
+    :catchall_0
     move-exception p1
 
     .line 94
     monitor-exit v0
-    :try_end_5e
-    .catchall {:try_start_53 .. :try_end_5e} :catchall_5c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 95
     throw p1
 
     .line 96
-    :cond_5f
-    :goto_5f
+    :cond_1
+    :goto_0
     return v1
 
     .line 97
-    :pswitch_60
+    :pswitch_2
     iget-object v0, p0, Llibs/tp;->b:Ljava/io/Serializable;
 
     .line 98
@@ -316,7 +316,7 @@
     return v1
 
     .line 105
-    :pswitch_68
+    :pswitch_3
     iget-object v0, p0, Llibs/tp;->b:Ljava/io/Serializable;
 
     .line 106
@@ -333,11 +333,11 @@
     return v1
 
     .line 113
-    :pswitch_data_70
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_68
-        :pswitch_60
-        :pswitch_4c
-        :pswitch_42
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

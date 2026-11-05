@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/kh;
@@ -75,7 +75,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -93,7 +93,7 @@
 
 # virtual methods
 .method public final b(Llibs/Init;Ljava/lang/Object;)Ljava/util/List;
-    .registers 5
+    .locals 2
 
     .line 1
     check-cast p2, Llibs/ed0;
@@ -128,7 +128,7 @@
     move-result-object p1
 
     .line 17
-    :cond_10
+    :cond_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 18
@@ -141,7 +141,7 @@
 
     .line 22
     .line 23
-    if-eqz p2, :cond_2d
+    if-eqz p2, :cond_1
 
     .line 24
     .line 25
@@ -172,7 +172,7 @@
     move-result v1
 
     .line 38
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_0
 
     .line 39
     .line 40
@@ -185,14 +185,14 @@
     .line 43
     .line 44
     .line 45
-    goto :goto_2e
+    goto :goto_0
 
     .line 46
-    :cond_2d
+    :cond_1
     move-object p1, v0
 
     .line 47
-    :goto_2e
+    :goto_0
     invoke-virtual {p1}, Llibs/w52;->b()Z
 
     .line 48
@@ -201,14 +201,14 @@
     move-result p2
 
     .line 51
-    if-nez p2, :cond_35
+    if-nez p2, :cond_2
 
     .line 52
     .line 53
-    goto :goto_3f
+    goto :goto_1
 
     .line 54
-    :cond_35
+    :cond_2
     iget-object p1, p1, Llibs/w52;->a:Ljava/lang/Object;
 
     .line 55
@@ -229,19 +229,19 @@
     move-result-object v0
 
     .line 64
-    :goto_3f
+    :goto_1
     iget-object p1, v0, Llibs/w52;->a:Ljava/lang/Object;
 
     .line 65
     .line 66
-    if-eqz p1, :cond_44
+    if-eqz p1, :cond_3
 
     .line 67
     .line 68
-    goto :goto_52
+    goto :goto_2
 
     .line 69
-    :cond_44
+    :cond_3
     iget p1, p0, Llibs/kh;->a:I
 
     .line 70
@@ -249,7 +249,7 @@
     const/4 p2, 0x1
 
     .line 72
-    if-ne p1, p2, :cond_50
+    if-ne p1, p2, :cond_4
 
     .line 73
     .line 74
@@ -265,15 +265,15 @@
     move-result-object p1
 
     .line 80
-    goto :goto_52
+    goto :goto_2
 
     .line 81
-    :cond_50
+    :cond_4
     sget-object p1, Llibs/gz0;->a:Llibs/iz0;
 
     .line 82
     .line 83
-    :goto_52
+    :goto_2
     check-cast p1, Llibs/gz0;
 
     .line 84

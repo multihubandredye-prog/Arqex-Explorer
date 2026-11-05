@@ -13,14 +13,14 @@
 
 # direct methods
 .method public constructor <init>(BI)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/vn3;->Xray:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_1c
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -52,7 +52,7 @@
     return-void
 
     .line 19
-    :pswitch_12
+    :pswitch_0
     invoke-direct {p0}, Llibs/cc3;-><init>()V
 
     .line 20
@@ -75,23 +75,23 @@
     nop
 
     .line 29
-    :pswitch_data_1c
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_12
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/vn3;->Xray:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_34
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -141,7 +141,7 @@
     return-object v0
 
     .line 29
-    :pswitch_1c
+    :pswitch_0
     new-instance v0, Ljava/lang/String;
 
     .line 30
@@ -190,14 +190,14 @@
     nop
 
     .line 53
-    :pswitch_data_34
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1c
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final x(II[B)I
-    .registers 9
+    .locals 5
 
     .line 1
     iget-byte p2, p0, Llibs/vn3;->Xray:B
@@ -214,7 +214,7 @@
     const/4 v2, 0x0
 
     .line 7
-    packed-switch p2, :pswitch_data_10a
+    packed-switch p2, :pswitch_data_0
 
     .line 8
     .line 9
@@ -223,7 +223,7 @@
 
     .line 11
     .line 12
-    if-eq v1, p2, :cond_4d
+    if-eq v1, p2, :cond_3
 
     .line 13
     .line 14
@@ -231,14 +231,14 @@
 
     .line 15
     .line 16
-    if-eq v1, p2, :cond_12
+    if-eq v1, p2, :cond_0
 
     .line 17
     .line 18
-    goto :goto_7e
+    goto :goto_2
 
     .line 19
-    :cond_12
+    :cond_0
     new-instance p2, Llibs/yn3;
 
     .line 20
@@ -308,21 +308,21 @@
 
     .line 53
     .line 54
-    if-lez v1, :cond_39
+    if-lez v1, :cond_1
 
     .line 55
     .line 56
     const/4 v1, 0x1
 
     .line 57
-    goto :goto_3a
+    goto :goto_0
 
     .line 58
-    :cond_39
+    :cond_1
     const/4 v1, 0x0
 
     .line 59
-    :goto_3a
+    :goto_0
     iput-boolean v1, p2, Llibs/yn3;->Lambda:Z
 
     .line 60
@@ -339,18 +339,18 @@
 
     .line 66
     .line 67
-    if-lez p3, :cond_45
+    if-lez p3, :cond_2
 
     .line 68
     .line 69
-    goto :goto_46
+    goto :goto_1
 
     .line 70
-    :cond_45
+    :cond_2
     const/4 v0, 0x0
 
     .line 71
-    :goto_46
+    :goto_1
     iput-boolean v0, p2, Llibs/yn3;->Mu:Z
 
     .line 72
@@ -363,10 +363,10 @@
 
     .line 76
     .line 77
-    goto :goto_7e
+    goto :goto_2
 
     .line 78
-    :cond_4d
+    :cond_3
     new-instance p2, Llibs/xn3;
 
     .line 79
@@ -464,12 +464,12 @@
 
     .line 126
     .line 127
-    :goto_7e
+    :goto_2
     return v2
 
     .line 128
-    :pswitch_7f
-    if-eq v1, v0, :cond_dd
+    :pswitch_0
+    if-eq v1, v0, :cond_6
 
     .line 129
     .line 130
@@ -477,7 +477,7 @@
 
     .line 131
     .line 132
-    if-eq v1, p2, :cond_b5
+    if-eq v1, p2, :cond_5
 
     .line 133
     .line 134
@@ -485,15 +485,15 @@
 
     .line 135
     .line 136
-    if-eq v1, p2, :cond_8b
+    if-eq v1, p2, :cond_4
 
     .line 137
     .line 138
-    goto/16 :goto_109
+    goto/16 :goto_4
 
     .line 139
     .line 140
-    :cond_8b
+    :cond_4
     new-instance p2, Llibs/un3;
 
     .line 141
@@ -571,15 +571,15 @@
 
     .line 178
     .line 179
-    :goto_b2
+    :goto_3
     sub-int v2, p3, p1
 
     .line 180
     .line 181
-    goto :goto_109
+    goto :goto_4
 
     .line 182
-    :cond_b5
+    :cond_5
     new-instance p2, Llibs/un3;
 
     .line 183
@@ -657,10 +657,10 @@
 
     .line 220
     .line 221
-    goto :goto_b2
+    goto :goto_3
 
     .line 222
-    :cond_dd
+    :cond_6
     new-instance p2, Llibs/un3;
 
     .line 223
@@ -748,28 +748,28 @@
 
     .line 264
     .line 265
-    goto :goto_b2
+    goto :goto_3
 
     .line 266
-    :goto_109
+    :goto_4
     return v2
 
     .line 267
-    :pswitch_data_10a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_7f
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final y([B)I
-    .registers 2
+    .locals 0
 
     .line 1
     iget-byte p1, p0, Llibs/vn3;->Xray:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_a
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -780,7 +780,7 @@
     return p1
 
     .line 8
-    :pswitch_7
+    :pswitch_0
     const/4 p1, 0x0
 
     .line 9
@@ -790,8 +790,8 @@
     nop
 
     .line 11
-    :pswitch_data_a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_7
+        :pswitch_0
     .end packed-switch
 .end method

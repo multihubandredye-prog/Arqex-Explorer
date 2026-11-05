@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I

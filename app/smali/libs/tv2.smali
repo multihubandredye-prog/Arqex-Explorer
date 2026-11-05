@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/lv2;-><init>()V
@@ -23,7 +23,7 @@
 
 # virtual methods
 .method public final g(Llibs/rw2;)V
-    .registers 4
+    .locals 2
 
     .line 1
     const/4 v0, 0x2
@@ -54,7 +54,7 @@
     move-result v1
 
     .line 15
-    if-lez v0, :cond_19
+    if-lez v0, :cond_0
 
     .line 16
     .line 17
@@ -75,6 +75,6 @@
 
     .line 25
     .line 26
-    :cond_19
+    :cond_0
     return-void
 .end method

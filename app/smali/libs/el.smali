@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/el;->X:B
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 6
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/el;->X:B
@@ -40,7 +40,7 @@
     const/4 v1, 0x0
 
     .line 4
-    packed-switch v0, :pswitch_data_38
+    packed-switch v0, :pswitch_data_0
 
     .line 5
     .line 6
@@ -65,33 +65,33 @@
 
     .line 16
     .line 17
-    if-ge p1, p2, :cond_14
+    if-ge p1, p2, :cond_0
 
     .line 18
     .line 19
     const/4 v1, -0x1
 
     .line 20
-    goto :goto_18
+    goto :goto_0
 
     .line 21
-    :cond_14
-    if-ne p1, p2, :cond_17
+    :cond_0
+    if-ne p1, p2, :cond_1
 
     .line 22
     .line 23
-    goto :goto_18
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_1
     const/4 v1, 0x1
 
     .line 25
-    :goto_18
+    :goto_0
     return v1
 
     .line 26
-    :pswitch_19
+    :pswitch_0
     check-cast p1, [B
 
     .line 27
@@ -100,18 +100,18 @@
 
     .line 29
     .line 30
-    :goto_1d
+    :goto_1
     array-length v0, p1
 
     .line 31
-    if-ge v1, v0, :cond_32
+    if-ge v1, v0, :cond_3
 
     .line 32
     .line 33
     array-length v0, p2
 
     .line 34
-    if-ge v1, v0, :cond_32
+    if-ge v1, v0, :cond_3
 
     .line 35
     .line 36
@@ -134,22 +134,22 @@
     sub-int/2addr v0, v2
 
     .line 45
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_2
 
     .line 46
     .line 47
-    goto :goto_36
+    goto :goto_2
 
     .line 48
-    :cond_2f
+    :cond_2
     add-int/lit8 v1, v1, 0x1
 
     .line 49
     .line 50
-    goto :goto_1d
+    goto :goto_1
 
     .line 51
-    :cond_32
+    :cond_3
     array-length p1, p1
 
     .line 52
@@ -160,15 +160,15 @@
 
     .line 54
     .line 55
-    :goto_36
+    :goto_2
     return v0
 
     .line 56
     nop
 
     .line 57
-    :pswitch_data_38
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_19
+        :pswitch_0
     .end packed-switch
 .end method

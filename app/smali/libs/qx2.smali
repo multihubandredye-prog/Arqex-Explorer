@@ -30,7 +30,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/SQLiteEditorActivity;ZLcom/mixplorer/widgets/MiEditText;Landroid/widget/CheckBox;Ljava/lang/String;Lcom/mixplorer/widgets/MiCombo;Landroid/widget/CheckBox;ZLlibs/$d;Llibs/od;)V
-    .registers 11
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -84,7 +84,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 11
+    .locals 9
 
     .line 1
     sget v0, Lcom/mixplorer/activities/SQLiteEditorActivity;->III:I
@@ -95,15 +95,15 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
-    goto/16 :goto_db
+    goto/16 :goto_2
 
     .line 8
     .line 9
-    :cond_8
+    :cond_0
     sget v0, Llibs/bi2;->enter_name:I
 
     .line 10
@@ -124,15 +124,15 @@
     move-result v0
 
     .line 19
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     .line 20
     .line 21
-    goto/16 :goto_db
+    goto/16 :goto_2
 
     .line 22
     .line 23
-    :cond_16
+    :cond_1
     iget-object v0, p0, Llibs/qx2;->Lambda:Landroid/widget/CheckBox;
 
     .line 24
@@ -145,7 +145,7 @@
     move-result v3
 
     .line 29
-    if-eqz v3, :cond_2a
+    if-eqz v3, :cond_2
 
     .line 30
     .line 31
@@ -165,15 +165,15 @@
     move-result v3
 
     .line 39
-    if-eqz v3, :cond_2a
+    if-eqz v3, :cond_2
 
     .line 40
     .line 41
-    goto/16 :goto_db
+    goto/16 :goto_2
 
     .line 42
     .line 43
-    :cond_2a
+    :cond_2
     sget v3, Llibs/bi2;->def:I
 
     .line 44
@@ -309,7 +309,7 @@
 
     .line 113
     .line 114
-    if-eqz v6, :cond_88
+    if-eqz v6, :cond_3
 
     .line 115
     .line 116
@@ -351,14 +351,14 @@
     move-object v6, p1
 
     .line 136
-    goto :goto_89
+    goto :goto_0
 
     .line 137
-    :cond_88
+    :cond_3
     move-object v6, v2
 
     .line 138
-    :goto_89
+    :goto_0
     invoke-virtual {v0}, Landroid/widget/CompoundButton;->isChecked()Z
 
     .line 139
@@ -367,7 +367,7 @@
     move-result p1
 
     .line 142
-    if-eqz p1, :cond_a2
+    if-eqz p1, :cond_4
 
     .line 143
     .line 144
@@ -406,7 +406,7 @@
     move-result-object v2
 
     .line 163
-    :cond_a2
+    :cond_4
     move-object v7, v2
 
     .line 164
@@ -434,7 +434,7 @@
     const/4 v0, 0x0
 
     .line 176
-    if-nez p1, :cond_dc
+    if-nez p1, :cond_8
 
     .line 177
     .line 178
@@ -455,7 +455,7 @@
     .line 185
     .line 186
     .line 187
-    if-eqz v8, :cond_c0
+    if-eqz v8, :cond_5
 
     .line 188
     .line 189
@@ -464,15 +464,15 @@
     .line 190
     .line 191
     .line 192
-    goto :goto_cf
+    goto :goto_1
 
     .line 193
-    :cond_c0
+    :cond_5
     iget-object p1, v1, Lcom/mixplorer/activities/SQLiteEditorActivity;->Victor:Llibs/by2;
 
     .line 194
     .line 195
-    if-eqz p1, :cond_cf
+    if-eqz p1, :cond_6
 
     .line 196
     .line 197
@@ -488,7 +488,7 @@
     move-result p1
 
     .line 203
-    if-eqz p1, :cond_cf
+    if-eqz p1, :cond_6
 
     .line 204
     .line 205
@@ -497,8 +497,8 @@
     .line 206
     .line 207
     .line 208
-    :cond_cf
-    :goto_cf
+    :cond_6
+    :goto_1
     iget-object p1, p0, Llibs/qx2;->Pi:Llibs/$d;
 
     .line 209
@@ -512,7 +512,7 @@
 
     .line 214
     .line 215
-    if-eqz p1, :cond_db
+    if-eqz p1, :cond_7
 
     .line 216
     .line 217
@@ -521,12 +521,12 @@
     .line 218
     .line 219
     .line 220
-    :cond_db
-    :goto_db
+    :cond_7
+    :goto_2
     return-void
 
     .line 221
-    :cond_dc
+    :cond_8
     invoke-static {v1, p1, v0, v0}, Llibs/gx1;->c(Landroid/content/Context;Ljava/lang/Object;IZ)V
 
     .line 222

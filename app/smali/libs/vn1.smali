@@ -35,7 +35,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const-string v0, "([A-Z0-9-]+)=((?:\"[^\"]*\")|[^,]+)"
@@ -82,7 +82,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Llibs/mg3;-><init>()V
@@ -147,10 +147,10 @@
 .end method
 
 .method public static File(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 1
-    if-eqz p0, :cond_f
+    if-eqz p0, :cond_1
 
     .line 2
     .line 3
@@ -166,14 +166,14 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
-    goto :goto_f
+    goto :goto_0
 
     .line 12
-    :cond_b
+    :cond_0
     invoke-static {p1, p0}, Llibs/k42;->r(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 13
@@ -182,13 +182,13 @@
     move-result-object p0
 
     .line 16
-    :cond_f
-    :goto_f
+    :cond_1
+    :goto_0
     return-object p0
 .end method
 
 .method public static Path(Ljava/lang/String;Llibs/td2;Ljava/lang/String;)V
-    .registers 8
+    .locals 5
 
     .line 1
     const/16 v0, 0x3a
@@ -229,7 +229,7 @@
     move-result-object p0
 
     .line 19
-    :goto_12
+    :goto_0
     invoke-virtual {p0}, Ljava/util/regex/Matcher;->find()Z
 
     .line 20
@@ -238,7 +238,7 @@
     move-result v0
 
     .line 23
-    if-eqz v0, :cond_41
+    if-eqz v0, :cond_1
 
     .line 24
     .line 25
@@ -273,7 +273,7 @@
     move-result v4
 
     .line 40
-    if-eqz v4, :cond_33
+    if-eqz v4, :cond_0
 
     .line 41
     .line 42
@@ -285,7 +285,7 @@
     move-result v3
 
     .line 46
-    if-eqz v3, :cond_33
+    if-eqz v3, :cond_0
 
     .line 47
     .line 48
@@ -297,7 +297,7 @@
     move-result-object v2
 
     .line 52
-    :cond_33
+    :cond_0
     invoke-static {p2, v0}, Llibs/k42;->e(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 53
@@ -323,17 +323,17 @@
     .line 63
     .line 64
     .line 65
-    goto :goto_12
+    goto :goto_0
 
     .line 66
-    :cond_41
+    :cond_1
     return-void
 .end method
 
 
 # virtual methods
 .method public final Get(Ljava/io/InputStream;Llibs/kn;Ljava/nio/charset/Charset;)V
-    .registers 16
+    .locals 12
 
     .line 1
     const/4 v0, 0x0
@@ -423,8 +423,8 @@
     const/4 v4, 0x1
 
     .line 42
-    :cond_29
-    :goto_29
+    :cond_0
+    :goto_0
     invoke-virtual {v3}, Llibs/bk;->w()Ljava/lang/String;
 
     .line 43
@@ -433,11 +433,11 @@
     move-result-object v7
 
     .line 46
-    if-eqz v7, :cond_283
+    if-eqz v7, :cond_1f
 
     .line 47
     .line 48
-    if-eqz v4, :cond_45
+    if-eqz v4, :cond_2
 
     .line 49
     .line 50
@@ -449,7 +449,7 @@
     move-result v4
 
     .line 54
-    if-lez v4, :cond_44
+    if-lez v4, :cond_1
 
     .line 55
     .line 56
@@ -466,7 +466,7 @@
     .line 61
     .line 62
     .line 63
-    if-ne v4, v8, :cond_44
+    if-ne v4, v8, :cond_1
 
     .line 64
     .line 65
@@ -478,11 +478,11 @@
     move-result-object v7
 
     .line 69
-    :cond_44
+    :cond_1
     const/4 v4, 0x0
 
     .line 70
-    :cond_45
+    :cond_2
     invoke-virtual {v7}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     .line 71
@@ -499,14 +499,14 @@
     move-result v8
 
     .line 78
-    if-eqz v8, :cond_50
+    if-eqz v8, :cond_3
 
     .line 79
     .line 80
-    goto :goto_29
+    goto :goto_0
 
     .line 81
-    :cond_50
+    :cond_3
     const-string v8, "#"
 
     .line 82
@@ -523,7 +523,7 @@
 
     .line 88
     .line 89
-    if-nez v8, :cond_8f
+    if-nez v8, :cond_7
 
     .line 90
     .line 91
@@ -539,7 +539,7 @@
     move-result v8
 
     .line 97
-    if-nez v8, :cond_7d
+    if-nez v8, :cond_5
 
     .line 98
     .line 99
@@ -555,7 +555,7 @@
     move-result v8
 
     .line 105
-    if-nez v8, :cond_7d
+    if-nez v8, :cond_5
 
     .line 106
     .line 107
@@ -571,7 +571,7 @@
     move-result v8
 
     .line 113
-    if-nez v8, :cond_7d
+    if-nez v8, :cond_5
 
     .line 114
     .line 115
@@ -587,24 +587,24 @@
     move-result v8
 
     .line 121
-    if-eqz v8, :cond_7b
+    if-eqz v8, :cond_4
 
     .line 122
     .line 123
-    goto :goto_7d
+    goto :goto_2
 
     .line 124
-    :cond_7b
-    :goto_7b
+    :cond_4
+    :goto_1
     move-object v5, v1
 
     .line 125
-    goto :goto_29
+    goto :goto_0
 
     .line 126
-    :cond_7d
-    :goto_7d
-    if-nez v5, :cond_84
+    :cond_5
+    :goto_2
+    if-nez v5, :cond_6
 
     .line 127
     .line 128
@@ -617,7 +617,7 @@
     .line 131
     .line 132
     .line 133
-    :cond_84
+    :cond_6
     invoke-static {v7, v6}, Llibs/vn1;->File(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 134
@@ -636,10 +636,10 @@
     .line 141
     .line 142
     .line 143
-    goto :goto_7b
+    goto :goto_1
 
     .line 144
-    :cond_8f
+    :cond_7
     const-string v8, "#EXT"
 
     .line 145
@@ -652,14 +652,14 @@
     move-result v8
 
     .line 150
-    if-nez v8, :cond_98
+    if-nez v8, :cond_8
 
     .line 151
     .line 152
-    goto :goto_29
+    goto :goto_0
 
     .line 153
-    :cond_98
+    :cond_8
     const-string v8, "#EXTM3U"
 
     .line 154
@@ -672,14 +672,14 @@
     move-result v8
 
     .line 159
-    if-eqz v8, :cond_a1
+    if-eqz v8, :cond_9
 
     .line 160
     .line 161
-    goto :goto_29
+    goto :goto_0
 
     .line 162
-    :cond_a1
+    :cond_9
     const-string v8, "#EXT-X-BASE-URI:"
 
     .line 163
@@ -692,7 +692,7 @@
     move-result v8
 
     .line 168
-    if-eqz v8, :cond_bb
+    if-eqz v8, :cond_a
 
     .line 169
     .line 170
@@ -728,11 +728,11 @@
     move-result-object v6
 
     .line 186
-    goto/16 :goto_29
+    goto/16 :goto_0
 
     .line 187
     .line 188
-    :cond_bb
+    :cond_a
     const-string v8, "#EXTINF:"
 
     .line 189
@@ -745,11 +745,11 @@
     move-result v8
 
     .line 194
-    if-eqz v8, :cond_d7
+    if-eqz v8, :cond_c
 
     .line 195
     .line 196
-    if-nez v5, :cond_ca
+    if-nez v5, :cond_b
 
     .line 197
     .line 198
@@ -762,7 +762,7 @@
     .line 201
     .line 202
     .line 203
-    :cond_ca
+    :cond_b
     const/16 v8, 0x8
 
     .line 204
@@ -784,11 +784,11 @@
     .line 212
     .line 213
     .line 214
-    goto/16 :goto_29
+    goto/16 :goto_0
 
     .line 215
     .line 216
-    :cond_d7
+    :cond_c
     const-string v8, "#EXT-X-STREAM-INF:"
 
     .line 217
@@ -805,7 +805,7 @@
 
     .line 223
     .line 224
-    if-eqz v8, :cond_f6
+    if-eqz v8, :cond_e
 
     .line 225
     .line 226
@@ -813,7 +813,7 @@
 
     .line 227
     .line 228
-    if-nez v5, :cond_ea
+    if-nez v5, :cond_d
 
     .line 229
     .line 230
@@ -826,7 +826,7 @@
     .line 233
     .line 234
     .line 235
-    :cond_ea
+    :cond_d
     const-string v8, "IS_STREAM_INF"
 
     .line 236
@@ -845,11 +845,11 @@
     .line 243
     .line 244
     .line 245
-    goto/16 :goto_29
+    goto/16 :goto_0
 
     .line 246
     .line 247
-    :cond_f6
+    :cond_e
     const-string v8, "#EXT-X-I-FRAME-STREAM-INF:"
 
     .line 248
@@ -862,7 +862,7 @@
     move-result v8
 
     .line 253
-    if-eqz v8, :cond_125
+    if-eqz v8, :cond_10
 
     .line 254
     .line 255
@@ -905,7 +905,7 @@
     move-result-object v8
 
     .line 276
-    if-eqz v8, :cond_120
+    if-eqz v8, :cond_f
 
     .line 277
     .line 278
@@ -930,17 +930,17 @@
     .line 287
     .line 288
     .line 289
-    :cond_120
+    :cond_f
     invoke-virtual {p0, v5, p2}, Llibs/vn1;->Uri(Llibs/td2;Llibs/kn;)V
 
     .line 290
     .line 291
     .line 292
-    goto/16 :goto_7b
+    goto/16 :goto_1
 
     .line 293
     .line 294
-    :cond_125
+    :cond_10
     const-string v8, "#EXT-X-MEDIA:"
 
     .line 295
@@ -953,7 +953,7 @@
     move-result v8
 
     .line 300
-    if-eqz v8, :cond_154
+    if-eqz v8, :cond_12
 
     .line 301
     .line 302
@@ -996,7 +996,7 @@
     move-result-object v8
 
     .line 323
-    if-eqz v8, :cond_14f
+    if-eqz v8, :cond_11
 
     .line 324
     .line 325
@@ -1021,17 +1021,17 @@
     .line 334
     .line 335
     .line 336
-    :cond_14f
+    :cond_11
     invoke-virtual {p0, v5, p2}, Llibs/vn1;->Uri(Llibs/td2;Llibs/kn;)V
 
     .line 337
     .line 338
     .line 339
-    goto/16 :goto_7b
+    goto/16 :goto_1
 
     .line 340
     .line 341
-    :cond_154
+    :cond_12
     const-string v8, "#EXT-X-PART:"
 
     .line 342
@@ -1044,7 +1044,7 @@
     move-result v8
 
     .line 347
-    if-nez v8, :cond_25c
+    if-nez v8, :cond_1e
 
     .line 348
     .line 349
@@ -1060,7 +1060,7 @@
     move-result v8
 
     .line 355
-    if-eqz v8, :cond_16e
+    if-eqz v8, :cond_13
 
     .line 356
     .line 357
@@ -1076,15 +1076,15 @@
     move-result v8
 
     .line 363
-    if-eqz v8, :cond_16e
+    if-eqz v8, :cond_13
 
     .line 364
     .line 365
-    goto/16 :goto_25c
+    goto/16 :goto_3
 
     .line 366
     .line 367
-    :cond_16e
+    :cond_13
     const-string v8, "#EXT-X-BYTERANGE:"
 
     .line 368
@@ -1097,7 +1097,7 @@
     move-result v8
 
     .line 373
-    if-eqz v8, :cond_180
+    if-eqz v8, :cond_14
 
     .line 374
     .line 375
@@ -1117,11 +1117,11 @@
 
     .line 382
     .line 383
-    goto/16 :goto_29
+    goto/16 :goto_0
 
     .line 384
     .line 385
-    :cond_180
+    :cond_14
     const-string v8, "#EXT-X-KEY:"
 
     .line 386
@@ -1134,7 +1134,7 @@
     move-result v8
 
     .line 391
-    if-eqz v8, :cond_1ab
+    if-eqz v8, :cond_15
 
     .line 392
     .line 393
@@ -1172,7 +1172,7 @@
     move-result-object v7
 
     .line 411
-    if-eqz v7, :cond_29
+    if-eqz v7, :cond_0
 
     .line 412
     .line 413
@@ -1201,11 +1201,11 @@
     .line 424
     .line 425
     .line 426
-    goto/16 :goto_29
+    goto/16 :goto_0
 
     .line 427
     .line 428
-    :cond_1ab
+    :cond_15
     const-string v8, "#EXT-X-MAP:"
 
     .line 429
@@ -1218,7 +1218,7 @@
     move-result v8
 
     .line 434
-    if-eqz v8, :cond_1d8
+    if-eqz v8, :cond_16
 
     .line 435
     .line 436
@@ -1260,7 +1260,7 @@
     move-result-object v7
 
     .line 456
-    if-eqz v7, :cond_29
+    if-eqz v7, :cond_0
 
     .line 457
     .line 458
@@ -1289,11 +1289,11 @@
     .line 469
     .line 470
     .line 471
-    goto/16 :goto_29
+    goto/16 :goto_0
 
     .line 472
     .line 473
-    :cond_1d8
+    :cond_16
     const-string v8, "#EXT-X-DISCONTINUITY"
 
     .line 474
@@ -1306,7 +1306,7 @@
     move-result v8
 
     .line 479
-    if-eqz v8, :cond_1e4
+    if-eqz v8, :cond_17
 
     .line 480
     .line 481
@@ -1314,11 +1314,11 @@
 
     .line 482
     .line 483
-    goto/16 :goto_29
+    goto/16 :goto_0
 
     .line 484
     .line 485
-    :cond_1e4
+    :cond_17
     const-string v8, "#EXT-X-PROGRAM-DATE-TIME:"
 
     .line 486
@@ -1331,7 +1331,7 @@
     move-result v8
 
     .line 491
-    if-eqz v8, :cond_1f6
+    if-eqz v8, :cond_18
 
     .line 492
     .line 493
@@ -1351,11 +1351,11 @@
 
     .line 500
     .line 501
-    goto/16 :goto_29
+    goto/16 :goto_0
 
     .line 502
     .line 503
-    :cond_1f6
+    :cond_18
     const-string v8, "#EXT-X-VERSION:"
 
     .line 504
@@ -1368,7 +1368,7 @@
     move-result v8
 
     .line 509
-    if-eqz v8, :cond_20c
+    if-eqz v8, :cond_19
 
     .line 510
     .line 511
@@ -1396,11 +1396,11 @@
 
     .line 522
     .line 523
-    goto/16 :goto_29
+    goto/16 :goto_0
 
     .line 524
     .line 525
-    :cond_20c
+    :cond_19
     const-string v8, "#EXT-X-TARGETDURATION:"
 
     .line 526
@@ -1417,11 +1417,11 @@
 
     .line 532
     .line 533
-    if-eqz v8, :cond_22a
+    if-eqz v8, :cond_1b
 
     .line 534
     .line 535
-    if-nez v5, :cond_21d
+    if-nez v5, :cond_1a
 
     .line 536
     .line 537
@@ -1434,7 +1434,7 @@
     .line 540
     .line 541
     .line 542
-    :cond_21d
+    :cond_1a
     const-string v8, "TARGET-DURATION"
 
     .line 543
@@ -1456,11 +1456,11 @@
 
     .line 552
     .line 553
-    goto/16 :goto_29
+    goto/16 :goto_0
 
     .line 554
     .line 555
-    :cond_22a
+    :cond_1b
     const-string v8, "#EXT-X-MEDIA-SEQUENCE:"
 
     .line 556
@@ -1473,7 +1473,7 @@
     move-result v8
 
     .line 561
-    if-eqz v8, :cond_23e
+    if-eqz v8, :cond_1c
 
     .line 562
     .line 563
@@ -1497,11 +1497,11 @@
 
     .line 572
     .line 573
-    goto/16 :goto_29
+    goto/16 :goto_0
 
     .line 574
     .line 575
-    :cond_23e
+    :cond_1c
     const-string v8, "#EXT-X-PLAYLIST-TYPE:"
 
     .line 576
@@ -1514,7 +1514,7 @@
     move-result v8
 
     .line 581
-    if-eqz v8, :cond_250
+    if-eqz v8, :cond_1d
 
     .line 582
     .line 583
@@ -1534,11 +1534,11 @@
 
     .line 590
     .line 591
-    goto/16 :goto_29
+    goto/16 :goto_0
 
     .line 592
     .line 593
-    :cond_250
+    :cond_1d
     const-string v8, "#EXT-X-ENDLIST"
 
     .line 594
@@ -1551,7 +1551,7 @@
     move-result v7
 
     .line 599
-    if-eqz v7, :cond_29
+    if-eqz v7, :cond_0
 
     .line 600
     .line 601
@@ -1559,12 +1559,12 @@
 
     .line 602
     .line 603
-    goto/16 :goto_29
+    goto/16 :goto_0
 
     .line 604
     .line 605
-    :cond_25c
-    :goto_25c
+    :cond_1e
+    :goto_3
     new-instance v8, Llibs/td2;
 
     .line 606
@@ -1604,7 +1604,7 @@
     move-result-object v10
 
     .line 626
-    if-eqz v10, :cond_29
+    if-eqz v10, :cond_0
 
     .line 627
     .line 628
@@ -1634,16 +1634,16 @@
     .line 640
     .line 641
     .line 642
-    goto/16 :goto_29
+    goto/16 :goto_0
 
     .line 643
     .line 644
-    :cond_283
+    :cond_1f
     return-void
 .end method
 
 .method public final Uri(Llibs/td2;Llibs/kn;)V
-    .registers 10
+    .locals 7
 
     .line 1
     iget v0, p0, Llibs/vn1;->h:I
@@ -1679,7 +1679,7 @@
 
     .line 17
     .line 18
-    if-lez v0, :cond_1c
+    if-lez v0, :cond_0
 
     .line 19
     .line 20
@@ -1700,12 +1700,12 @@
     .line 27
     .line 28
     .line 29
-    :cond_1c
+    :cond_0
     iget-object v0, p0, Llibs/vn1;->p:Ljava/lang/String;
 
     .line 30
     .line 31
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     .line 32
     .line 33
@@ -1718,7 +1718,7 @@
     .line 36
     .line 37
     .line 38
-    :cond_25
+    :cond_1
     iget-boolean v0, p0, Llibs/vn1;->q:Z
 
     .line 39
@@ -1747,7 +1747,7 @@
     const/4 v1, -0x1
 
     .line 52
-    if-eq v0, v1, :cond_3e
+    if-eq v0, v1, :cond_2
 
     .line 53
     .line 54
@@ -1768,7 +1768,7 @@
     .line 61
     .line 62
     .line 63
-    :cond_3e
+    :cond_2
     iget-object v0, p0, Llibs/vn1;->i:Ljava/lang/String;
 
     .line 64
@@ -1776,7 +1776,7 @@
     const/4 v1, 0x0
 
     .line 66
-    if-eqz v0, :cond_4a
+    if-eqz v0, :cond_3
 
     .line 67
     .line 68
@@ -1793,7 +1793,7 @@
 
     .line 74
     .line 75
-    :cond_4a
+    :cond_3
     iget-boolean v0, p0, Llibs/vn1;->l:Z
 
     .line 76
@@ -1801,7 +1801,7 @@
     const/4 v2, 0x0
 
     .line 78
-    if-eqz v0, :cond_58
+    if-eqz v0, :cond_4
 
     .line 79
     .line 80
@@ -1822,12 +1822,12 @@
 
     .line 88
     .line 89
-    :cond_58
+    :cond_4
     iget-object v0, p0, Llibs/vn1;->m:Ljava/lang/String;
 
     .line 90
     .line 91
-    if-eqz v0, :cond_63
+    if-eqz v0, :cond_5
 
     .line 92
     .line 93
@@ -1844,12 +1844,12 @@
 
     .line 99
     .line 100
-    :cond_63
+    :cond_5
     iget-object v0, p0, Llibs/vn1;->j:Llibs/td2;
 
     .line 101
     .line 102
-    if-eqz v0, :cond_83
+    if-eqz v0, :cond_6
 
     .line 103
     .line 104
@@ -1867,8 +1867,8 @@
     const/4 v3, 0x0
 
     .line 110
-    :goto_6d
-    if-ge v3, v1, :cond_83
+    :goto_0
+    if-ge v3, v1, :cond_6
 
     .line 111
     .line 112
@@ -1909,15 +1909,15 @@
 
     .line 130
     .line 131
-    goto :goto_6d
+    goto :goto_0
 
     .line 132
-    :cond_83
+    :cond_6
     iget-object v0, p0, Llibs/vn1;->k:Llibs/td2;
 
     .line 133
     .line 134
-    if-eqz v0, :cond_9c
+    if-eqz v0, :cond_7
 
     .line 135
     .line 136
@@ -1932,8 +1932,8 @@
     array-length v1, v0
 
     .line 141
-    :goto_8c
-    if-ge v2, v1, :cond_9c
+    :goto_1
+    if-ge v2, v1, :cond_7
 
     .line 142
     .line 143
@@ -1962,10 +1962,10 @@
 
     .line 155
     .line 156
-    goto :goto_8c
+    goto :goto_1
 
     .line 157
-    :cond_9c
+    :cond_7
     const-string v0, "uri"
 
     .line 158
@@ -1990,7 +1990,7 @@
     move-result v1
 
     .line 169
-    if-nez v1, :cond_b6
+    if-nez v1, :cond_8
 
     .line 170
     .line 171
@@ -2014,11 +2014,11 @@
     move-result v0
 
     .line 181
-    if-eqz v0, :cond_bd
+    if-eqz v0, :cond_9
 
     .line 182
     .line 183
-    :cond_b6
+    :cond_8
     const-string v0, "IS_PARENT"
 
     .line 184
@@ -2032,7 +2032,7 @@
     .line 188
     .line 189
     .line 190
-    :cond_bd
+    :cond_9
     iget-object p2, p2, Llibs/kn;->b:Ljava/util/ArrayList;
 
     .line 191

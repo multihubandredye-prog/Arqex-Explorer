@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 9
+    .locals 8
 
     .line 1
     const-class v0, Landroid/graphics/drawable/Drawable;
@@ -97,7 +97,7 @@
     const/4 v6, 0x0
 
     .line 42
-    :try_start_29
+    :try_start_0
     invoke-virtual {v0, v4, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     .line 43
@@ -107,16 +107,16 @@
 
     .line 46
     iput-object v7, p0, Llibs/an2;->c:Ljava/lang/reflect/Method;
-    :try_end_2f
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_29 .. :try_end_2f} :catch_30
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 47
     .line 48
-    goto :goto_50
+    goto :goto_0
 
     .line 49
-    :catch_30
-    :try_start_30
+    :catch_0
+    :try_start_1
     invoke-virtual {v0, v4, v6}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     .line 50
@@ -130,16 +130,16 @@
     .line 54
     .line 55
     invoke-virtual {v7, v5}, Ljava/lang/reflect/Method;->setAccessible(Z)V
-    :try_end_39
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_30 .. :try_end_39} :catch_3a
+    :try_end_1
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 56
     .line 57
     .line 58
-    goto :goto_50
+    goto :goto_0
 
     .line 59
-    :catch_3a
+    :catch_1
     const-string v4, "is"
 
     .line 60
@@ -152,7 +152,7 @@
     move-result-object v4
 
     .line 65
-    :try_start_40
+    :try_start_2
     invoke-virtual {v0, v4, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     .line 66
@@ -162,16 +162,16 @@
 
     .line 69
     iput-object v7, p0, Llibs/an2;->c:Ljava/lang/reflect/Method;
-    :try_end_46
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_40 .. :try_end_46} :catch_47
+    :try_end_2
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_2 .. :try_end_2} :catch_2
 
     .line 70
     .line 71
-    goto :goto_50
+    goto :goto_0
 
     .line 72
-    :catch_47
-    :try_start_47
+    :catch_2
+    :try_start_3
     invoke-virtual {v0, v4, v6}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     .line 73
@@ -185,13 +185,13 @@
     .line 77
     .line 78
     invoke-virtual {v7, v5}, Ljava/lang/reflect/Method;->setAccessible(Z)V
-    :try_end_50
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_47 .. :try_end_50} :catch_90
+    :try_end_3
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_3 .. :try_end_3} :catch_3
 
     .line 79
     .line 80
     .line 81
-    :goto_50
+    :goto_0
     invoke-virtual {v7}, Ljava/lang/reflect/Method;->getReturnType()Ljava/lang/Class;
 
     .line 82
@@ -204,7 +204,7 @@
 
     .line 86
     .line 87
-    if-ne v1, v4, :cond_6c
+    if-ne v1, v4, :cond_0
 
     .line 88
     .line 89
@@ -220,7 +220,7 @@
     move-result-object v3
 
     .line 95
-    :try_start_5e
+    :try_start_4
     new-array v4, v5, [Ljava/lang/Class;
 
     .line 96
@@ -242,16 +242,16 @@
     .line 104
     .line 105
     invoke-virtual {v0, v5}, Ljava/lang/reflect/Method;->setAccessible(Z)V
-    :try_end_6b
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_5e .. :try_end_6b} :catch_96
+    :try_end_4
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_4 .. :try_end_4} :catch_4
 
     .line 106
     .line 107
     .line 108
-    goto :goto_96
+    goto :goto_1
 
     .line 109
-    :cond_6c
+    :cond_0
     invoke-virtual {v1}, Ljava/lang/Class;->isPrimitive()Z
 
     .line 110
@@ -318,8 +318,8 @@
     throw v0
 
     .line 145
-    :catch_90
-    :try_start_90
+    :catch_3
+    :try_start_5
     invoke-virtual {v0, v1}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     .line 146
@@ -329,17 +329,17 @@
 
     .line 149
     iput-object v0, p0, Llibs/an2;->d:Ljava/lang/reflect/Field;
-    :try_end_96
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_90 .. :try_end_96} :catch_97
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldException; {:try_start_5 .. :try_end_5} :catch_5
 
     .line 150
     .line 151
-    :catch_96
-    :goto_96
+    :catch_4
+    :goto_1
     return-void
 
     .line 152
-    :catch_97
+    :catch_5
     new-instance v0, Llibs/r02;
 
     .line 153
@@ -359,36 +359,36 @@
 
 # virtual methods
 .method public final a(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/an2;->c:Ljava/lang/reflect/Method;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     const/4 v1, 0x0
 
     .line 6
-    :try_start_5
+    :try_start_0
     invoke-virtual {v0, p1, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 7
     .line 8
     .line 9
     move-result-object p1
-    :try_end_9
-    .catch Ljava/lang/IllegalAccessException; {:try_start_5 .. :try_end_9} :catch_14
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_5 .. :try_end_9} :catch_a
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 10
     return-object p1
 
     .line 11
-    :catch_a
+    :catch_0
     move-exception p1
 
     .line 12
@@ -405,79 +405,79 @@
     .line 17
     .line 18
     .line 19
-    :goto_12
+    :goto_0
     const/4 p1, 0x0
 
     .line 20
     return-object p1
 
     .line 21
-    :catch_14
+    :catch_1
     invoke-static {}, Llibs/ic0;->w()V
 
     .line 22
     .line 23
     .line 24
-    goto :goto_12
+    goto :goto_0
 
     .line 25
-    :cond_18
+    :cond_0
     iget-object v0, p0, Llibs/an2;->d:Ljava/lang/reflect/Field;
 
     .line 26
     .line 27
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     .line 28
     .line 29
-    :try_start_1c
+    :try_start_1
     invoke-virtual {v0, p1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 30
     .line 31
     .line 32
     move-result-object p1
-    :try_end_20
-    .catch Ljava/lang/IllegalAccessException; {:try_start_1c .. :try_end_20} :catch_21
+    :try_end_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_2
 
     .line 33
     return-object p1
 
     .line 34
-    :catch_21
+    :catch_2
     invoke-static {}, Llibs/ic0;->w()V
 
     .line 35
     .line 36
     .line 37
-    goto :goto_12
+    goto :goto_0
 
     .line 38
-    :cond_25
+    :cond_1
     invoke-static {}, Llibs/ic0;->w()V
 
     .line 39
     .line 40
     .line 41
-    goto :goto_12
+    goto :goto_0
 .end method
 
 .method public final b(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 6
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/an2;->b:Ljava/lang/reflect/Method;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     const/4 v1, 0x1
 
     .line 6
-    :try_start_5
+    :try_start_0
     new-array v1, v1, [Ljava/lang/Object;
 
     .line 7
@@ -490,9 +490,9 @@
     .line 10
     .line 11
     invoke-virtual {v0, p1, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_d
-    .catch Ljava/lang/IllegalAccessException; {:try_start_5 .. :try_end_d} :catch_17
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_5 .. :try_end_d} :catch_e
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 12
     .line 13
@@ -500,7 +500,7 @@
     return-void
 
     .line 15
-    :catch_e
+    :catch_0
     move-exception p1
 
     .line 16
@@ -520,7 +520,7 @@
     return-void
 
     .line 24
-    :catch_17
+    :catch_1
     invoke-static {}, Llibs/ic0;->w()V
 
     .line 25
@@ -529,19 +529,19 @@
     return-void
 
     .line 28
-    :cond_1b
+    :cond_0
     iget-object v0, p0, Llibs/an2;->d:Ljava/lang/reflect/Field;
 
     .line 29
     .line 30
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_1
 
     .line 31
     .line 32
-    :try_start_1f
+    :try_start_1
     invoke-virtual {v0, p1, p2}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
-    :try_end_22
-    .catch Ljava/lang/IllegalAccessException; {:try_start_1f .. :try_end_22} :catch_23
+    :try_end_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_2
 
     .line 33
     .line 34
@@ -549,7 +549,7 @@
     return-void
 
     .line 36
-    :catch_23
+    :catch_2
     invoke-static {}, Llibs/ic0;->w()V
 
     .line 37
@@ -558,7 +558,7 @@
     return-void
 
     .line 40
-    :cond_27
+    :cond_1
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     .line 41

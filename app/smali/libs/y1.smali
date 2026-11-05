@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/q1;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -66,14 +66,14 @@
 
 # virtual methods
 .method public final a(Llibs/w1;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/y1;->Y:Ljava/util/ArrayList;
 
     .line 2
     .line 3
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -103,7 +103,7 @@
 
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     iget-object v0, p0, Llibs/y1;->Y:Ljava/util/ArrayList;
 
     .line 20
@@ -129,7 +129,7 @@
     move-result v0
 
     .line 32
-    if-nez v0, :cond_26
+    if-nez v0, :cond_1
 
     .line 33
     .line 34
@@ -142,12 +142,12 @@
     .line 37
     .line 38
     .line 39
-    :cond_26
+    :cond_1
     iget-object v0, p1, Llibs/y1;->Mu:Ljava/util/ArrayList;
 
     .line 40
     .line 41
-    if-nez v0, :cond_31
+    if-nez v0, :cond_2
 
     .line 42
     .line 43
@@ -164,7 +164,7 @@
 
     .line 49
     .line 50
-    :cond_31
+    :cond_2
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 51
@@ -174,7 +174,7 @@
 .end method
 
 .method public final b()Llibs/y1;
-    .registers 3
+    .locals 2
 
     .line 1
     :try_start_0
@@ -203,15 +203,15 @@
 
     .line 13
     iput-object v1, v0, Llibs/y1;->X:Llibs/q1;
-    :try_end_e
-    .catch Ljava/lang/CloneNotSupportedException; {:try_start_0 .. :try_end_e} :catch_f
+    :try_end_0
+    .catch Ljava/lang/CloneNotSupportedException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 14
     .line 15
     return-object v0
 
     .line 16
-    :catch_f
+    :catch_0
     invoke-static {}, Llibs/ic0;->w()V
 
     .line 17
@@ -224,7 +224,7 @@
 .end method
 
 .method public final bridge synthetic clone()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/y1;->b()Llibs/y1;

@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Z)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/vl1;-><init>(Landroid/content/Context;)V
@@ -37,14 +37,14 @@
 
 # virtual methods
 .method public final hasFocus()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/ol1;->Upsilon:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_d
+    if-nez v0, :cond_1
 
     .line 4
     .line 5
@@ -56,22 +56,22 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
-    goto :goto_d
+    goto :goto_0
 
     .line 12
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
     .line 13
     return v0
 
     .line 14
-    :cond_d
-    :goto_d
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
     .line 15
@@ -79,14 +79,14 @@
 .end method
 
 .method public final hasWindowFocus()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/ol1;->Upsilon:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_d
+    if-nez v0, :cond_1
 
     .line 4
     .line 5
@@ -98,22 +98,22 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
-    goto :goto_d
+    goto :goto_0
 
     .line 12
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
     .line 13
     return v0
 
     .line 14
-    :cond_d
-    :goto_d
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
     .line 15
@@ -121,14 +121,14 @@
 .end method
 
 .method public final isFocused()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/ol1;->Upsilon:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_d
+    if-nez v0, :cond_1
 
     .line 4
     .line 5
@@ -140,22 +140,22 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
-    goto :goto_d
+    goto :goto_0
 
     .line 12
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
     .line 13
     return v0
 
     .line 14
-    :cond_d
-    :goto_d
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
     .line 15
@@ -163,14 +163,14 @@
 .end method
 
 .method public final isInTouchMode()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/ol1;->Upsilon:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -178,11 +178,11 @@
 
     .line 6
     .line 7
-    if-nez v0, :cond_e
+    if-nez v0, :cond_1
 
     .line 8
     .line 9
-    :cond_8
+    :cond_0
     invoke-super {p0}, Landroid/widget/ListView;->isInTouchMode()Z
 
     .line 10
@@ -191,18 +191,18 @@
     move-result v0
 
     .line 13
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_2
 
     .line 14
     .line 15
-    :cond_e
+    :cond_1
     const/4 v0, 0x1
 
     .line 16
     return v0
 
     .line 17
-    :cond_10
+    :cond_2
     const/4 v0, 0x0
 
     .line 18

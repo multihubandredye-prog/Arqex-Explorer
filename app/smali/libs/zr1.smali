@@ -15,7 +15,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(BLjava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 18
     iput-byte p1, p0, Llibs/zr1;->X:B
@@ -28,7 +28,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -47,7 +47,7 @@
 .end method
 
 .method public constructor <init>([B)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x3
@@ -86,7 +86,7 @@
 
 # virtual methods
 .method public b()Ljavax/crypto/SecretKeyFactory;
-    .registers 3
+    .locals 2
 
     .line 1
     const-string v0, "PBKDF-OpenSSL"
@@ -109,7 +109,7 @@
 .end method
 
 .method public c()Llibs/le3;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/util/StringTokenizer;
@@ -137,7 +137,7 @@
     .line 12
     .line 13
     .line 14
-    :try_start_d
+    :try_start_0
     invoke-virtual {v0}, Ljava/util/StringTokenizer;->nextElement()Ljava/lang/Object;
 
     .line 15
@@ -211,14 +211,14 @@
     .line 51
     .line 52
     move-result-object v0
-    :try_end_34
-    .catchall {:try_start_d .. :try_end_34} :catchall_35
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 53
     return-object v0
 
     .line 54
-    :catchall_35
+    :catchall_0
     const-string v0, "Invalid SSH1 public key format"
 
     .line 55
@@ -235,7 +235,7 @@
 .end method
 
 .method public j(Ljava/lang/String;)Ljavax/crypto/Cipher;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/zr1;->Y:Ljava/lang/String;
@@ -254,7 +254,7 @@
 .end method
 
 .method public l(Ljava/lang/String;)Ljava/security/Signature;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/zr1;->Y:Ljava/lang/String;
@@ -273,7 +273,7 @@
 .end method
 
 .method public n(Ljava/lang/String;)Ljava/security/MessageDigest;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/zr1;->Y:Ljava/lang/String;
@@ -292,7 +292,7 @@
 .end method
 
 .method public p(Ljava/lang/String;)Ljava/security/KeyFactory;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/zr1;->Y:Ljava/lang/String;
@@ -311,7 +311,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/zr1;->X:B
@@ -322,12 +322,12 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_18
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
     .line 8
-    :pswitch_7
+    :pswitch_0
     invoke-super {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     .line 9
@@ -339,11 +339,11 @@
     return-object v0
 
     .line 13
-    :pswitch_c
+    :pswitch_1
     return-object v1
 
     .line 14
-    :pswitch_d
+    :pswitch_2
     const-string v0, "Namespace{"
 
     .line 15
@@ -363,19 +363,19 @@
     return-object v0
 
     .line 23
-    :pswitch_16
+    :pswitch_3
     return-object v1
 
     .line 24
     nop
 
     .line 25
-    :pswitch_data_18
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_16
-        :pswitch_7
-        :pswitch_d
-        :pswitch_7
-        :pswitch_c
+        :pswitch_3
+        :pswitch_0
+        :pswitch_2
+        :pswitch_0
+        :pswitch_1
     .end packed-switch
 .end method

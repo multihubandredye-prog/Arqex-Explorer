@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/gu0;-><init>()V
@@ -48,7 +48,7 @@
 .end method
 
 .method public constructor <init>(Llibs/xj2;)V
-    .registers 3
+    .locals 1
 
     .line 14
     invoke-direct {p0, p1}, Llibs/gu0;-><init>(Llibs/gu0;)V
@@ -67,7 +67,7 @@
 .end method
 
 .method public static m(IIIIII)I
-    .registers 6
+    .locals 0
 
     .line 1
     xor-int/2addr p1, p2
@@ -94,7 +94,7 @@
 .end method
 
 .method public static n(IIIIII)I
-    .registers 6
+    .locals 0
 
     .line 1
     and-int/2addr p2, p1
@@ -136,7 +136,7 @@
 .end method
 
 .method public static p(IIIIII)I
-    .registers 6
+    .locals 0
 
     .line 1
     xor-int/lit8 p2, p2, -0x1
@@ -175,7 +175,7 @@
 .end method
 
 .method public static q(IIIIII)I
-    .registers 6
+    .locals 0
 
     .line 1
     and-int/2addr p1, p3
@@ -217,7 +217,7 @@
 .end method
 
 .method public static r(IIIIII)I
-    .registers 6
+    .locals 0
 
     .line 1
     xor-int/2addr p1, p2
@@ -244,7 +244,7 @@
 .end method
 
 .method public static s(IIIIII)I
-    .registers 6
+    .locals 0
 
     .line 1
     and-int/2addr p2, p1
@@ -286,7 +286,7 @@
 .end method
 
 .method public static t(IIIIII)I
-    .registers 6
+    .locals 0
 
     .line 1
     xor-int/lit8 p2, p2, -0x1
@@ -325,7 +325,7 @@
 .end method
 
 .method public static u(IIIIII)I
-    .registers 6
+    .locals 0
 
     .line 1
     and-int/2addr p1, p3
@@ -367,7 +367,7 @@
 .end method
 
 .method public static v(II)I
-    .registers 3
+    .locals 1
 
     .line 1
     shl-int v0, p0, p1
@@ -388,7 +388,7 @@
 .end method
 
 .method public static x(II[B)V
-    .registers 5
+    .locals 2
 
     .line 1
     int-to-byte v0, p0
@@ -449,7 +449,7 @@
 
 # virtual methods
 .method public final b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "RIPEMD128"
@@ -460,7 +460,7 @@
 .end method
 
 .method public final c(I[B)I
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Llibs/gu0;->i()V
@@ -529,7 +529,7 @@
 .end method
 
 .method public final d()Llibs/ar1;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/xj2;
@@ -545,7 +545,7 @@
 .end method
 
 .method public final e()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x10
@@ -556,7 +556,7 @@
 .end method
 
 .method public final f(Llibs/ar1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     check-cast p1, Llibs/xj2;
@@ -572,7 +572,7 @@
 .end method
 
 .method public final j()V
-    .registers 58
+    .locals 57
 
     .line 1
     move-object/from16 v0, p0
@@ -4793,11 +4793,11 @@
     const/4 v1, 0x0
 
     .line 2033
-    :goto_7f0
+    :goto_0
     array-length v2, v8
 
     .line 2034
-    if-eq v1, v2, :cond_7f8
+    if-eq v1, v2, :cond_0
 
     .line 2035
     .line 2036
@@ -4809,15 +4809,15 @@
 
     .line 2039
     .line 2040
-    goto :goto_7f0
+    goto :goto_0
 
     .line 2041
-    :cond_7f8
+    :cond_0
     return-void
 .end method
 
 .method public final k(J)V
-    .registers 6
+    .locals 3
 
     .line 1
     iget v0, p0, Llibs/xj2;->i:I
@@ -4828,7 +4828,7 @@
 
     .line 4
     .line 5
-    if-le v0, v1, :cond_9
+    if-le v0, v1, :cond_0
 
     .line 6
     .line 7
@@ -4837,7 +4837,7 @@
     .line 8
     .line 9
     .line 10
-    :cond_9
+    :cond_0
     long-to-int v0, p1
 
     .line 11
@@ -4871,7 +4871,7 @@
 .end method
 
 .method public final l(I[B)V
-    .registers 8
+    .locals 5
 
     .line 1
     iget v0, p0, Llibs/xj2;->i:I
@@ -4962,7 +4962,7 @@
 
     .line 42
     .line 43
-    if-ne v1, v4, :cond_2f
+    if-ne v1, v4, :cond_0
 
     .line 44
     .line 45
@@ -4971,12 +4971,12 @@
     .line 46
     .line 47
     .line 48
-    :cond_2f
+    :cond_0
     return-void
 .end method
 
 .method public final reset()V
-    .registers 5
+    .locals 4
 
     .line 1
     invoke-super {p0}, Llibs/gu0;->reset()V
@@ -5030,7 +5030,7 @@
     const/4 v1, 0x0
 
     .line 28
-    :goto_1b
+    :goto_0
     iget-object v2, p0, Llibs/xj2;->h:[I
 
     .line 29
@@ -5038,7 +5038,7 @@
     array-length v3, v2
 
     .line 31
-    if-eq v1, v3, :cond_25
+    if-eq v1, v3, :cond_0
 
     .line 32
     .line 33
@@ -5050,15 +5050,15 @@
 
     .line 36
     .line 37
-    goto :goto_1b
+    goto :goto_0
 
     .line 38
-    :cond_25
+    :cond_0
     return-void
 .end method
 
 .method public final w(Llibs/xj2;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-virtual {p0, p1}, Llibs/gu0;->h(Llibs/gu0;)V

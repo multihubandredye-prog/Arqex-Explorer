@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 14
+    .locals 14
 
     .line 1
     const-string v0, "openssh-key-v1\u0000"
@@ -384,7 +384,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Llibs/rd;-><init>()V
@@ -421,7 +421,7 @@
 .end method
 
 .method public static d(Ljava/io/BufferedReader;)Z
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
@@ -432,8 +432,8 @@
     move-result-object v0
 
     .line 5
-    :goto_4
-    if-eqz v0, :cond_13
+    :goto_0
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -449,7 +449,7 @@
     move-result v1
 
     .line 13
-    if-nez v1, :cond_13
+    if-nez v1, :cond_0
 
     .line 14
     .line 15
@@ -461,11 +461,11 @@
     move-result-object v0
 
     .line 19
-    goto :goto_4
+    goto :goto_0
 
     .line 20
-    :cond_13
-    if-nez v0, :cond_17
+    :cond_0
+    if-nez v0, :cond_1
 
     .line 21
     .line 22
@@ -475,7 +475,7 @@
     return p0
 
     .line 24
-    :cond_17
+    :cond_1
     const/16 p0, 0xb
 
     .line 25
@@ -504,7 +504,7 @@
 .end method
 
 .method public static g(Ljava/io/BufferedReader;)Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -524,8 +524,8 @@
     move-result-object v1
 
     .line 10
-    :goto_9
-    if-eqz v1, :cond_20
+    :goto_0
+    if-eqz v1, :cond_1
 
     .line 11
     .line 12
@@ -541,7 +541,7 @@
     move-result v2
 
     .line 18
-    if-eqz v2, :cond_18
+    if-eqz v2, :cond_0
 
     .line 19
     .line 20
@@ -556,7 +556,7 @@
     return-object p0
 
     .line 25
-    :cond_18
+    :cond_0
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 26
@@ -570,10 +570,10 @@
     move-result-object v1
 
     .line 32
-    goto :goto_9
+    goto :goto_0
 
     .line 33
-    :cond_20
+    :cond_1
     const-string p0, "File footer not found [-----END OPENSSH PRIVATE KEY-----]"
 
     .line 34
@@ -590,7 +590,7 @@
 .end method
 
 .method public static h(Llibs/tj;Ljava/security/PublicKey;)Ljava/security/KeyPair;
-    .registers 14
+    .locals 12
 
     .line 1
     invoke-virtual {p0}, Llibs/uj;->a()I
@@ -608,7 +608,7 @@
     const/4 v1, 0x0
 
     .line 8
-    if-nez v0, :cond_115
+    if-nez v0, :cond_8
 
     .line 9
     .line 10
@@ -634,7 +634,7 @@
     long-to-int v3, v2
 
     .line 20
-    if-ne v0, v3, :cond_108
+    if-ne v0, v3, :cond_7
 
     .line 21
     .line 22
@@ -666,7 +666,7 @@
     move-result v3
 
     .line 36
-    if-eqz v3, :cond_a8
+    if-eqz v3, :cond_4
 
     .line 37
     .line 38
@@ -676,28 +676,28 @@
     const/4 v5, 0x1
 
     .line 40
-    if-eq v3, v4, :cond_90
+    if-eq v3, v4, :cond_3
 
     .line 41
     .line 42
     const/4 v4, 0x3
 
     .line 43
-    if-eq v3, v4, :cond_78
+    if-eq v3, v4, :cond_2
 
     .line 44
     .line 45
     const/4 v4, 0x4
 
     .line 46
-    if-eq v3, v4, :cond_5f
+    if-eq v3, v4, :cond_1
 
     .line 47
     .line 48
     const/4 p1, 0x5
 
     .line 49
-    if-ne v3, p1, :cond_53
+    if-ne v3, p1, :cond_0
 
     .line 50
     .line 51
@@ -758,11 +758,11 @@
     .line 80
     .line 81
     .line 82
-    goto/16 :goto_e6
+    goto/16 :goto_1
 
     .line 83
     .line 84
-    :cond_53
+    :cond_0
     const-string p0, "Cannot decode keytype "
 
     .line 85
@@ -787,7 +787,7 @@
     return-object v1
 
     .line 96
-    :cond_5f
+    :cond_1
     new-instance v0, Ljava/security/KeyPair;
 
     .line 97
@@ -831,14 +831,14 @@
     .line 117
     .line 118
     .line 119
-    :goto_76
+    :goto_0
     move-object v2, v0
 
     .line 120
-    goto :goto_e6
+    goto :goto_1
 
     .line 121
-    :cond_78
+    :cond_2
     new-instance v0, Ljava/security/KeyPair;
 
     .line 122
@@ -882,10 +882,10 @@
     .line 142
     .line 143
     .line 144
-    goto :goto_76
+    goto :goto_0
 
     .line 145
-    :cond_90
+    :cond_3
     new-instance v0, Ljava/security/KeyPair;
 
     .line 146
@@ -929,10 +929,10 @@
     .line 166
     .line 167
     .line 168
-    goto :goto_76
+    goto :goto_0
 
     .line 169
-    :cond_a8
+    :cond_4
     invoke-virtual {p0}, Llibs/uj;->w()Ljava/math/BigInteger;
 
     .line 170
@@ -1055,7 +1055,7 @@
     .line 229
     .line 230
     .line 231
-    :goto_e6
+    :goto_1
     invoke-virtual {p0}, Llibs/uj;->Object()V
 
     .line 232
@@ -1081,8 +1081,8 @@
     const/4 p0, 0x0
 
     .line 244
-    :goto_f3
-    if-ge p0, p1, :cond_107
+    :goto_2
+    if-ge p0, p1, :cond_6
 
     .line 245
     .line 246
@@ -1094,17 +1094,17 @@
 
     .line 249
     .line 250
-    if-ne v3, v4, :cond_fd
+    if-ne v3, v4, :cond_5
 
     .line 251
     .line 252
     move p0, v4
 
     .line 253
-    goto :goto_f3
+    goto :goto_2
 
     .line 254
-    :cond_fd
+    :cond_5
     const-string p1, "Padding of key format contained wrong byte at position: "
 
     .line 255
@@ -1125,11 +1125,11 @@
     return-object v1
 
     .line 264
-    :cond_107
+    :cond_6
     return-object v2
 
     .line 265
-    :cond_108
+    :cond_7
     new-instance p0, Llibs/yf1;
 
     .line 266
@@ -1155,7 +1155,7 @@
     throw p0
 
     .line 278
-    :cond_115
+    :cond_8
     const-string p0, "The private key section must be a multiple of the block size (8)"
 
     .line 279
@@ -1171,21 +1171,21 @@
 
 # virtual methods
 .method public final a()Ljava/security/PublicKey;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/b42;->e:Ljava/security/PublicKey;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     return-object v0
 
     .line 6
-    :cond_5
+    :cond_0
     invoke-super {p0}, Llibs/rd;->a()Ljava/security/PublicKey;
 
     .line 7
@@ -1198,18 +1198,18 @@
 .end method
 
 .method public final b(Ljava/io/InputStreamReader;Llibs/ye;)V
-    .registers 7
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/b42;->e:Ljava/security/PublicKey;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
-    :try_start_4
+    :try_start_0
     invoke-static {}, Llibs/ah;->t()Llibs/za;
 
     .line 6
@@ -1239,15 +1239,15 @@
     .line 18
     .line 19
     iput-object v0, p0, Llibs/b42;->e:Ljava/security/PublicKey;
-    :try_end_14
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_14} :catch_15
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 20
     .line 21
-    goto :goto_2a
+    goto :goto_0
 
     .line 22
-    :catch_15
+    :catch_0
     move-exception v0
 
     .line 23
@@ -1293,8 +1293,8 @@
     .line 41
     .line 42
     .line 43
-    :cond_2a
-    :goto_2a
+    :cond_0
+    :goto_0
     invoke-super {p0, p1, p2}, Llibs/rd;->b(Ljava/io/InputStreamReader;Llibs/ye;)V
 
     .line 44
@@ -1304,7 +1304,7 @@
 .end method
 
 .method public final c()Ljava/security/KeyPair;
-    .registers 7
+    .locals 6
 
     .line 1
     new-instance v0, Ljava/io/BufferedReader;
@@ -1334,7 +1334,7 @@
     const/4 v2, 0x1
 
     .line 14
-    :try_start_d
+    :try_start_0
     invoke-static {v0}, Llibs/b42;->d(Ljava/io/BufferedReader;)Z
 
     .line 15
@@ -1343,7 +1343,7 @@
     move-result v3
 
     .line 18
-    if-eqz v3, :cond_32
+    if-eqz v3, :cond_0
 
     .line 19
     .line 20
@@ -1378,10 +1378,10 @@
     .line 35
     .line 36
     move-result-object v3
-    :try_end_24
-    .catch Ljava/security/GeneralSecurityException; {:try_start_d .. :try_end_24} :catch_30
-    .catch Llibs/zb; {:try_start_d .. :try_end_24} :catch_2e
-    .catchall {:try_start_d .. :try_end_24} :catchall_2c
+    :try_end_0
+    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Llibs/zb; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 37
     new-array v2, v2, [Ljava/io/Closeable;
@@ -1400,29 +1400,29 @@
     return-object v3
 
     .line 45
-    :catchall_2c
+    :catchall_0
     move-exception v3
 
     .line 46
-    goto :goto_4a
+    goto :goto_2
 
     .line 47
-    :catch_2e
+    :catch_0
     move-exception v3
 
     .line 48
-    goto :goto_3a
+    goto :goto_0
 
     .line 49
-    :catch_30
+    :catch_1
     move-exception v3
 
     .line 50
-    goto :goto_42
+    goto :goto_1
 
     .line 51
-    :cond_32
-    :try_start_32
+    :cond_0
+    :try_start_1
     const-string v3, "File header not found [-----BEGIN OPENSSH PRIVATE KEY-----]"
 
     .line 52
@@ -1437,14 +1437,14 @@
     .line 57
     .line 58
     throw v4
-    :try_end_3a
-    .catch Ljava/security/GeneralSecurityException; {:try_start_32 .. :try_end_3a} :catch_30
-    .catch Llibs/zb; {:try_start_32 .. :try_end_3a} :catch_2e
-    .catchall {:try_start_32 .. :try_end_3a} :catchall_2c
+    :try_end_1
+    .catch Ljava/security/GeneralSecurityException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Llibs/zb; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 59
-    :goto_3a
-    :try_start_3a
+    :goto_0
+    :try_start_2
     new-instance v4, Llibs/qy2;
 
     .line 60
@@ -1461,7 +1461,7 @@
     throw v4
 
     .line 67
-    :goto_42
+    :goto_1
     new-instance v4, Llibs/qy2;
 
     .line 68
@@ -1476,11 +1476,11 @@
     .line 73
     .line 74
     throw v4
-    :try_end_4a
-    .catchall {:try_start_3a .. :try_end_4a} :catchall_2c
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 75
-    :goto_4a
+    :goto_2
     new-array v2, v2, [Ljava/io/Closeable;
 
     .line 76
@@ -1498,7 +1498,7 @@
 .end method
 
 .method public final e(Ljava/lang/String;[BLlibs/at;)V
-    .registers 25
+    .locals 21
 
     .line 1
     move-object/from16 v0, p1
@@ -1517,7 +1517,7 @@
     move-result v1
 
     .line 9
-    if-eqz v1, :cond_124
+    if-eqz v1, :cond_6
 
     .line 10
     .line 11
@@ -1549,7 +1549,7 @@
 
     .line 24
     .line 25
-    if-eqz v4, :cond_47
+    if-eqz v4, :cond_0
 
     .line 26
     .line 27
@@ -1642,7 +1642,7 @@
     move-object v2, v5
 
     .line 72
-    :cond_47
+    :cond_0
     invoke-interface/range {p3 .. p3}, Llibs/at;->f()I
 
     .line 73
@@ -1694,7 +1694,7 @@
     .line 95
     .line 96
     .line 97
-    :try_start_60
+    :try_start_0
     const-string v9, "SHA-512"
 
     .line 98
@@ -1753,8 +1753,8 @@
     const/4 v11, 0x1
 
     .line 125
-    :goto_7c
-    if-gt v11, v10, :cond_10b
+    :goto_0
+    if-gt v11, v10, :cond_5
 
     .line 126
     .line 127
@@ -1884,8 +1884,8 @@
     const/4 v13, 0x1
 
     .line 189
-    :goto_bc
-    if-ge v13, v0, :cond_eb
+    :goto_1
+    if-ge v13, v0, :cond_2
 
     .line 190
     .line 191
@@ -1920,12 +1920,12 @@
     const/4 v3, 0x0
 
     .line 208
-    :goto_cf
+    :goto_2
     const/16 v0, 0x20
 
     .line 209
     .line 210
-    if-ge v3, v0, :cond_e5
+    if-ge v3, v0, :cond_1
 
     .line 211
     .line 212
@@ -1952,31 +1952,31 @@
 
     .line 222
     .line 223
-    goto :goto_cf
+    goto :goto_2
 
     .line 224
-    :catch_df
+    :catch_0
     move-exception v0
 
     .line 225
-    goto :goto_120
+    goto :goto_4
 
     .line 226
-    :catch_e1
+    :catch_1
     move-exception v0
 
     .line 227
-    goto :goto_120
+    goto :goto_4
 
     .line 228
-    :catch_e3
+    :catch_2
     move-exception v0
 
     .line 229
-    goto :goto_120
+    goto :goto_4
 
     .line 230
-    :cond_e5
+    :cond_1
     add-int/lit8 v13, v13, 0x1
 
     .line 231
@@ -1988,10 +1988,10 @@
     const/4 v3, 0x0
 
     .line 235
-    goto :goto_bc
+    goto :goto_1
 
     .line 236
-    :cond_eb
+    :cond_2
     move/from16 v18, v0
 
     .line 237
@@ -2003,8 +2003,8 @@
 
     .line 240
     .line 241
-    :goto_f0
-    if-ge v3, v13, :cond_101
+    :goto_3
+    if-ge v3, v13, :cond_4
 
     .line 242
     .line 243
@@ -2020,7 +2020,7 @@
 
     .line 248
     .line 249
-    if-ge v0, v4, :cond_fe
+    if-ge v0, v4, :cond_3
 
     .line 250
     .line 251
@@ -2029,22 +2029,22 @@
     .line 252
     .line 253
     aput-byte v17, v6, v0
-    :try_end_fe
-    .catch Ljava/security/DigestException; {:try_start_60 .. :try_end_fe} :catch_e3
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_60 .. :try_end_fe} :catch_e1
-    .catch Ljava/security/NoSuchProviderException; {:try_start_60 .. :try_end_fe} :catch_df
+    :try_end_0
+    .catch Ljava/security/DigestException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/security/NoSuchProviderException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 254
     .line 255
-    :cond_fe
+    :cond_3
     add-int/lit8 v3, v3, 0x1
 
     .line 256
     .line 257
-    goto :goto_f0
+    goto :goto_3
 
     .line 258
-    :cond_101
+    :cond_4
     add-int/lit8 v11, v11, 0x1
 
     .line 259
@@ -2061,11 +2061,11 @@
 
     .line 265
     .line 266
-    goto/16 :goto_7c
+    goto/16 :goto_0
 
     .line 267
     .line 268
-    :cond_10b
+    :cond_5
     const/4 v3, 0x0
 
     .line 269
@@ -2109,7 +2109,7 @@
     return-void
 
     .line 289
-    :goto_120
+    :goto_4
     invoke-static {v0}, Llibs/ic0;->k(Ljava/lang/Throwable;)V
 
     .line 290
@@ -2118,7 +2118,7 @@
     return-void
 
     .line 293
-    :cond_124
+    :cond_6
     const-string v1, "OpenSSH Private Key encryption KDF not supported ["
 
     .line 294
@@ -2144,7 +2144,7 @@
 .end method
 
 .method public final f(Llibs/tj;)Ljava/security/KeyPair;
-    .registers 14
+    .locals 12
 
     .line 1
     const-string v0, "]"
@@ -2184,7 +2184,7 @@
     const/4 v2, 0x0
 
     .line 18
-    if-eqz v1, :cond_da
+    if-eqz v1, :cond_5
 
     .line 19
     .line 20
@@ -2230,7 +2230,7 @@
     const/4 v7, 0x1
 
     .line 40
-    if-ne v8, v7, :cond_c6
+    if-ne v8, v7, :cond_4
 
     .line 41
     .line 42
@@ -2238,7 +2238,7 @@
 
     .line 43
     .line 44
-    if-nez v7, :cond_43
+    if-nez v7, :cond_0
 
     .line 45
     .line 46
@@ -2283,16 +2283,16 @@
     move-result-object v7
 
     .line 67
-    goto :goto_46
+    goto :goto_0
 
     .line 68
-    :cond_43
+    :cond_0
     invoke-virtual {p1}, Llibs/uj;->v()[B
 
     .line 69
     .line 70
     .line 71
-    :goto_46
+    :goto_0
     invoke-virtual {p1}, Llibs/uj;->v()[B
 
     .line 72
@@ -2322,7 +2322,7 @@
     move-result v9
 
     .line 86
-    if-eqz v9, :cond_5c
+    if-eqz v9, :cond_1
 
     .line 87
     .line 88
@@ -2337,7 +2337,7 @@
     return-object p1
 
     .line 93
-    :cond_5c
+    :cond_1
     invoke-virtual {p1}, Llibs/uj;->a()I
 
     .line 94
@@ -2346,17 +2346,17 @@
     move-result v8
 
     .line 97
-    if-nez v8, :cond_64
+    if-nez v8, :cond_2
 
     .line 98
     .line 99
     move-object p1, v1
 
     .line 100
-    goto :goto_7c
+    goto :goto_1
 
     .line 101
-    :cond_64
+    :cond_2
     new-array v9, v8, [B
 
     .line 102
@@ -2403,7 +2403,7 @@
     .line 123
     .line 124
     .line 125
-    :goto_7c
+    :goto_1
     invoke-virtual {p1}, [B->clone()Ljava/lang/Object;
 
     .line 126
@@ -2419,7 +2419,7 @@
     array-length v1, v1
 
     .line 132
-    :try_start_83
+    :try_start_0
     sget-object v8, Llibs/b42;->h:Ljava/util/HashMap;
 
     .line 133
@@ -2432,7 +2432,7 @@
     move-result v9
 
     .line 138
-    if-eqz v9, :cond_98
+    if-eqz v9, :cond_3
 
     .line 139
     .line 140
@@ -2460,10 +2460,10 @@
 
     .line 151
     .line 152
-    goto :goto_a1
+    goto :goto_2
 
     .line 153
-    :cond_98
+    :cond_3
     const-string v8, "OpenSSH Key encryption cipher not supported ["
 
     .line 154
@@ -2481,15 +2481,15 @@
     .line 160
     .line 161
     .line 162
-    :goto_a1
+    :goto_2
     invoke-virtual {p0, v5, v6, v2}, Llibs/b42;->e(Ljava/lang/String;[BLlibs/at;)V
 
     .line 163
     .line 164
     .line 165
     invoke-interface {v2, p1, v4, v1}, Llibs/at;->update([BII)V
-    :try_end_a7
-    .catch Llibs/qy2; {:try_start_83 .. :try_end_a7} :catch_b4
+    :try_end_0
+    .catch Llibs/qy2; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 166
     .line 167
@@ -2519,7 +2519,7 @@
     return-object p1
 
     .line 181
-    :catch_b4
+    :catch_0
     move-exception p1
 
     .line 182
@@ -2556,7 +2556,7 @@
     throw v1
 
     .line 199
-    :cond_c6
+    :cond_4
     invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 200
@@ -2597,7 +2597,7 @@
     throw v0
 
     .line 219
-    :cond_da
+    :cond_5
     const-string p1, "This key does not contain the \'openssh-key-v1\' format magic header"
 
     .line 220

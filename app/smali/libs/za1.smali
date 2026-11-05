@@ -26,7 +26,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/app/Activity;Landroid/content/Intent;Landroid/net/Uri;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;Llibs/rp0;Z)V
-    .registers 9
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -72,7 +72,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 14
+    .locals 13
 
     .line 1
     iget-object v5, p0, Llibs/za1;->X:Ljava/lang/String;
@@ -93,26 +93,26 @@
     const/4 v11, 0x1
 
     .line 9
-    :try_start_8
+    :try_start_0
     invoke-static {v5}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
 
     .line 10
     .line 11
     .line 12
     move-result v0
-    :try_end_c
-    .catchall {:try_start_8 .. :try_end_c} :catchall_29
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 13
     iget-object v2, p0, Llibs/za1;->Y:Landroid/content/Intent;
 
     .line 14
     .line 15
-    if-nez v0, :cond_2c
+    if-nez v0, :cond_0
 
     .line 16
     .line 17
-    :try_start_10
+    :try_start_1
     const-string v0, "START"
 
     .line 18
@@ -126,13 +126,13 @@
     .line 22
     .line 23
     invoke-static {v9, v0, v3}, Llibs/vw1;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_19
-    .catchall {:try_start_10 .. :try_end_19} :catchall_29
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 24
     .line 25
     .line 26
-    :try_start_19
+    :try_start_2
     const-string v0, "URI"
 
     .line 27
@@ -154,37 +154,37 @@
     .line 35
     .line 36
     invoke-static {v9, v0, v4}, Llibs/vw1;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_26
-    .catchall {:try_start_19 .. :try_end_26} :catchall_27
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 37
     .line 38
     .line 39
-    goto :goto_2c
+    goto :goto_0
 
     .line 40
-    :catchall_27
+    :catchall_0
     nop
 
     .line 41
-    goto :goto_2c
+    goto :goto_0
 
     .line 42
-    :catchall_29
+    :catchall_1
     move-exception v0
 
     .line 43
-    goto/16 :goto_98
+    goto/16 :goto_2
 
     .line 44
     .line 45
-    :cond_2c
-    :goto_2c
-    if-eqz v5, :cond_38
+    :cond_0
+    :goto_0
+    if-eqz v5, :cond_1
 
     .line 46
     .line 47
-    :try_start_2e
+    :try_start_3
     const-string v0, "com.arqex.explorer"
 
     .line 48
@@ -195,25 +195,25 @@
     .line 51
     .line 52
     move-result v0
-    :try_end_34
-    .catchall {:try_start_2e .. :try_end_34} :catchall_29
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 53
-    if-eqz v0, :cond_38
+    if-eqz v0, :cond_1
 
     .line 54
     .line 55
     const/4 v8, 0x1
 
     .line 56
-    goto :goto_39
+    goto :goto_1
 
     .line 57
-    :cond_38
+    :cond_1
     const/4 v8, 0x0
 
     .line 58
-    :goto_39
+    :goto_1
     iget-object v7, p0, Llibs/za1;->Z:Llibs/rp0;
 
     .line 59
@@ -230,11 +230,11 @@
 
     .line 65
     .line 66
-    if-eqz v8, :cond_94
+    if-eqz v8, :cond_5
 
     .line 67
     .line 68
-    :try_start_43
+    :try_start_4
     const-string v0, "INTERNAL"
 
     .line 69
@@ -244,7 +244,7 @@
     .line 71
     .line 72
     .line 73
-    if-eqz v7, :cond_5b
+    if-eqz v7, :cond_2
 
     .line 74
     .line 75
@@ -260,7 +260,7 @@
     move-result v0
 
     .line 81
-    if-eqz v0, :cond_5b
+    if-eqz v0, :cond_2
 
     .line 82
     .line 83
@@ -278,11 +278,11 @@
     .line 89
     .line 90
     .line 91
-    goto :goto_af
+    goto :goto_3
 
     .line 92
-    :cond_5b
-    if-eqz v7, :cond_7c
+    :cond_2
+    if-eqz v7, :cond_4
 
     .line 93
     .line 94
@@ -302,7 +302,7 @@
     move-result v0
 
     .line 102
-    if-eqz v0, :cond_78
+    if-eqz v0, :cond_3
 
     .line 103
     .line 104
@@ -310,8 +310,8 @@
 
     .line 105
     sput-object v0, Llibs/xg0;->m:Ljava/lang/String;
-    :try_end_6a
-    .catchall {:try_start_43 .. :try_end_6a} :catchall_29
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 106
     .line 107
@@ -319,11 +319,11 @@
 
     .line 108
     .line 109
-    if-eqz v0, :cond_78
+    if-eqz v0, :cond_3
 
     .line 110
     .line 111
-    :try_start_6e
+    :try_start_5
     new-instance v0, Llibs/al0;
 
     .line 112
@@ -341,10 +341,10 @@
     .line 118
     .line 119
     .line 120
-    goto :goto_af
+    goto :goto_3
 
     .line 121
-    :cond_78
+    :cond_3
     iget-object v0, v7, Llibs/rp0;->Three:Ljava/lang/String;
 
     .line 122
@@ -353,7 +353,7 @@
 
     .line 124
     .line 125
-    :cond_7c
+    :cond_4
     const/high16 v0, 0x10000000
 
     .line 126
@@ -371,7 +371,7 @@
     move-result v0
 
     .line 134
-    if-eqz v0, :cond_94
+    if-eqz v0, :cond_5
 
     .line 135
     .line 136
@@ -387,7 +387,7 @@
     move-result v0
 
     .line 142
-    if-eqz v0, :cond_94
+    if-eqz v0, :cond_5
 
     .line 143
     .line 144
@@ -400,18 +400,18 @@
     .line 147
     .line 148
     .line 149
-    :cond_94
+    :cond_5
     invoke-static/range {v1 .. v8}, Llibs/xg0;->Any(Landroid/app/Activity;Landroid/content/Intent;Landroid/net/Uri;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;Llibs/rp0;Z)V
-    :try_end_97
-    .catchall {:try_start_6e .. :try_end_97} :catchall_29
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
     .line 150
     .line 151
     .line 152
-    goto :goto_af
+    goto :goto_3
 
     .line 153
-    :goto_98
+    :goto_2
     invoke-static {v0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 154
@@ -455,6 +455,6 @@
     .line 174
     .line 175
     .line 176
-    :goto_af
+    :goto_3
     return-void
 .end method

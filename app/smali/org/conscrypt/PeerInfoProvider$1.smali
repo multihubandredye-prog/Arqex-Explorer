@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/PeerInfoProvider;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public getHostname()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -29,7 +29,7 @@
 .end method
 
 .method public getHostnameOrIP()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -39,7 +39,7 @@
 .end method
 
 .method public getPort()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, -0x1

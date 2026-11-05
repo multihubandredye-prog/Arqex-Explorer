@@ -35,7 +35,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/view/ViewGroup;Llibs/bj3;Landroid/view/animation/Interpolator;Landroid/view/animation/Interpolator;)V
-    .registers 11
+    .locals 6
 
     .line 1
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -226,7 +226,7 @@
     const/4 v0, 0x0
 
     .line 93
-    if-eqz p3, :cond_6a
+    if-eqz p3, :cond_0
 
     .line 94
     .line 95
@@ -251,10 +251,10 @@
 
     .line 105
     .line 106
-    goto :goto_75
+    goto :goto_0
 
     .line 107
-    :cond_6a
+    :cond_0
     new-instance p3, Llibs/is;
 
     .line 108
@@ -276,8 +276,8 @@
 
     .line 117
     .line 118
-    :goto_75
-    if-eqz p4, :cond_83
+    :goto_0
+    if-eqz p4, :cond_1
 
     .line 119
     .line 120
@@ -302,10 +302,10 @@
 
     .line 130
     .line 131
-    goto :goto_8e
+    goto :goto_1
 
     .line 132
-    :cond_83
+    :cond_1
     new-instance p3, Llibs/is;
 
     .line 133
@@ -327,7 +327,7 @@
 
     .line 142
     .line 143
-    :goto_8e
+    :goto_1
     new-instance p3, Landroid/widget/FrameLayout$LayoutParams;
 
     .line 144
@@ -350,7 +350,7 @@
     move-result p3
 
     .line 155
-    if-ge p3, v1, :cond_9f
+    if-ge p3, v1, :cond_2
 
     .line 156
     .line 157
@@ -359,7 +359,7 @@
     .line 158
     .line 159
     .line 160
-    :cond_9f
+    :cond_2
     const/4 p3, 0x2
 
     .line 161
@@ -398,7 +398,7 @@
 
 # virtual methods
 .method public final a()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/aj3;->Omicron:I
@@ -408,14 +408,14 @@
     const/4 v1, 0x1
 
     .line 4
-    if-ne v0, v1, :cond_6
+    if-ne v0, v1, :cond_0
 
     .line 5
     .line 6
     return v1
 
     .line 7
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
     .line 8
@@ -423,7 +423,7 @@
 .end method
 
 .method public final b(Landroid/view/MotionEvent;)V
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/aj3;->Pi:Llibs/Init;
@@ -451,7 +451,7 @@
     move-result v0
 
     .line 14
-    if-eqz v0, :cond_93
+    if-eqz v0, :cond_7
 
     .line 15
     .line 16
@@ -462,35 +462,35 @@
     const/4 v2, 0x1
 
     .line 19
-    if-eq v0, v2, :cond_3c
+    if-eq v0, v2, :cond_3
 
     .line 20
     .line 21
     const/4 v3, 0x2
 
     .line 22
-    if-eq v0, v3, :cond_22
+    if-eq v0, v3, :cond_1
 
     .line 23
     .line 24
     const/4 p1, 0x3
 
     .line 25
-    if-eq v0, p1, :cond_1e
+    if-eq v0, p1, :cond_0
 
     .line 26
     .line 27
     const/4 p1, 0x4
 
     .line 28
-    if-eq v0, p1, :cond_1e
+    if-eq v0, p1, :cond_0
 
     .line 29
     .line 30
     return-void
 
     .line 31
-    :cond_1e
+    :cond_0
     invoke-virtual {p0}, Llibs/aj3;->c()V
 
     .line 32
@@ -499,7 +499,7 @@
     return-void
 
     .line 35
-    :cond_22
+    :cond_1
     iget v0, p0, Llibs/aj3;->Xi:I
 
     .line 36
@@ -525,7 +525,7 @@
 
     .line 45
     .line 46
-    if-ne v0, v2, :cond_38
+    if-ne v0, v2, :cond_2
 
     .line 47
     .line 48
@@ -548,7 +548,7 @@
     add-int/2addr p1, v0
 
     .line 57
-    :cond_38
+    :cond_2
     invoke-virtual {p0, p1}, Llibs/aj3;->d(I)V
 
     .line 58
@@ -557,12 +557,12 @@
     return-void
 
     .line 61
-    :cond_3c
+    :cond_3
     iget-boolean v0, p0, Llibs/aj3;->Sigma:Z
 
     .line 62
     .line 63
-    if-nez v0, :cond_58
+    if-nez v0, :cond_4
 
     .line 64
     .line 65
@@ -614,11 +614,11 @@
 
     .line 86
     .line 87
-    if-lez v0, :cond_8f
+    if-lez v0, :cond_6
 
     .line 88
     .line 89
-    :cond_58
+    :cond_4
     iget v0, p0, Llibs/aj3;->Xi:I
 
     .line 90
@@ -656,7 +656,7 @@
 
     .line 105
     .line 106
-    if-nez p1, :cond_8f
+    if-nez p1, :cond_6
 
     .line 107
     .line 108
@@ -672,7 +672,7 @@
 
     .line 113
     .line 114
-    if-ne v0, v2, :cond_80
+    if-ne v0, v2, :cond_5
 
     .line 115
     .line 116
@@ -700,10 +700,10 @@
     .line 126
     .line 127
     .line 128
-    goto :goto_8b
+    goto :goto_0
 
     .line 129
-    :cond_80
+    :cond_5
     invoke-virtual {p1}, Landroid/view/View;->getLeft()I
 
     .line 130
@@ -725,7 +725,7 @@
     .line 138
     .line 139
     .line 140
-    :goto_8b
+    :goto_0
     invoke-virtual {p0}, Landroid/view/View;->postInvalidate()V
 
     .line 141
@@ -734,7 +734,7 @@
     return-void
 
     .line 144
-    :cond_8f
+    :cond_6
     invoke-virtual {p0}, Llibs/aj3;->c()V
 
     .line 145
@@ -743,7 +743,7 @@
     return-void
 
     .line 148
-    :cond_93
+    :cond_7
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     .line 149
@@ -770,7 +770,7 @@
 .end method
 
 .method public final c()V
-    .registers 6
+    .locals 5
 
     .line 1
     const/4 v0, 0x0
@@ -795,7 +795,7 @@
 
     .line 10
     .line 11
-    if-ne v1, v2, :cond_1d
+    if-ne v1, v2, :cond_0
 
     .line 12
     .line 13
@@ -831,10 +831,10 @@
     .line 27
     .line 28
     .line 29
-    goto :goto_2a
+    goto :goto_0
 
     .line 30
-    :cond_1d
+    :cond_0
     invoke-virtual {v4}, Landroid/view/View;->getRight()I
 
     .line 31
@@ -860,7 +860,7 @@
     .line 41
     .line 42
     .line 43
-    :goto_2a
+    :goto_0
     invoke-virtual {p0}, Landroid/view/View;->postInvalidate()V
 
     .line 44
@@ -870,7 +870,7 @@
 .end method
 
 .method public final computeScroll()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/aj3;->Omicron:I
@@ -880,7 +880,7 @@
     const/4 v1, 0x1
 
     .line 4
-    if-ne v0, v1, :cond_20
+    if-ne v0, v1, :cond_0
 
     .line 5
     .line 6
@@ -896,7 +896,7 @@
     move-result v0
 
     .line 12
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_1
 
     .line 13
     .line 14
@@ -937,7 +937,7 @@
     return-void
 
     .line 33
-    :cond_20
+    :cond_0
     iget-object v0, p0, Llibs/aj3;->Chi:Llibs/is;
 
     .line 34
@@ -950,7 +950,7 @@
     move-result v0
 
     .line 39
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_1
 
     .line 40
     .line 41
@@ -995,12 +995,12 @@
     .line 60
     .line 61
     .line 62
-    :cond_3d
+    :cond_1
     return-void
 .end method
 
 .method public final d(I)V
-    .registers 8
+    .locals 6
 
     .line 1
     int-to-float v0, p1
@@ -1029,17 +1029,17 @@
 
     .line 12
     .line 13
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 14
     .line 15
     const/4 p1, 0x0
 
     .line 16
-    goto :goto_22
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     invoke-static {p1}, Ljava/lang/Math;->abs(I)I
 
     .line 18
@@ -1056,7 +1056,7 @@
     move-result v1
 
     .line 25
-    if-le v0, v1, :cond_22
+    if-le v0, v1, :cond_1
 
     .line 26
     .line 27
@@ -1076,8 +1076,8 @@
 
     .line 34
     .line 35
-    :cond_22
-    :goto_22
+    :cond_1
+    :goto_0
     neg-int v0, p1
 
     .line 36
@@ -1124,7 +1124,7 @@
     const/4 v4, 0x1
 
     .line 57
-    if-ne v3, v4, :cond_55
+    if-ne v3, v4, :cond_2
 
     .line 58
     .line 59
@@ -1185,7 +1185,7 @@
     return-void
 
     .line 86
-    :cond_55
+    :cond_2
     invoke-virtual {v2}, Landroid/view/View;->getWidth()I
 
     .line 87
@@ -1225,7 +1225,7 @@
 .end method
 
 .method public getContentView()Landroid/view/ViewGroup;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/aj3;->Mu:Landroid/view/ViewGroup;
@@ -1236,7 +1236,7 @@
 .end method
 
 .method public getMenuView()Llibs/bj3;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/aj3;->Nu:Llibs/bj3;
@@ -1247,7 +1247,7 @@
 .end method
 
 .method public getPosition()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/aj3;->Omega:I
@@ -1258,7 +1258,7 @@
 .end method
 
 .method public final onAttachedToWindow()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
@@ -1270,7 +1270,7 @@
 .end method
 
 .method public final onLayout(ZIIII)V
-    .registers 7
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
@@ -1312,7 +1312,7 @@
 
     .line 19
     .line 20
-    if-ne p1, p3, :cond_2a
+    if-ne p1, p3, :cond_0
 
     .line 21
     .line 22
@@ -1359,7 +1359,7 @@
     return-void
 
     .line 43
-    :cond_2a
+    :cond_0
     invoke-virtual {p5}, Landroid/view/View;->getMeasuredWidth()I
 
     .line 44
@@ -1388,7 +1388,7 @@
 .end method
 
 .method public final onMeasure(II)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
@@ -1440,7 +1440,7 @@
 .end method
 
 .method public final onSizeChanged(IIII)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->onSizeChanged(IIII)V
@@ -1452,7 +1452,7 @@
 .end method
 
 .method public setMenuHeight(I)V
-    .registers 5
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1528,7 +1528,7 @@
 
     .line 39
     .line 40
-    if-eq v2, p1, :cond_32
+    if-eq v2, p1, :cond_0
 
     .line 41
     .line 42
@@ -1549,12 +1549,12 @@
     .line 49
     .line 50
     .line 51
-    :cond_32
+    :cond_0
     return-void
 .end method
 
 .method public setPosition(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iput p1, p0, Llibs/aj3;->Omega:I
@@ -1573,7 +1573,7 @@
 .end method
 
 .method public setSwipeDirection(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput p1, p0, Llibs/aj3;->Lambda:I

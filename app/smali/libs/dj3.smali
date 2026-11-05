@@ -11,7 +11,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/hj3;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/dj3;->X:B
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final applyTransformation(FLandroid/view/animation/Transformation;)V
-    .registers 6
+    .locals 3
 
     .line 1
     iget-byte p2, p0, Llibs/dj3;->X:B
@@ -48,7 +48,7 @@
 
     .line 6
     .line 7
-    packed-switch p2, :pswitch_data_54
+    packed-switch p2, :pswitch_data_0
 
     .line 8
     .line 9
@@ -64,7 +64,7 @@
     return-void
 
     .line 15
-    :pswitch_e
+    :pswitch_0
     check-cast v1, Llibs/x00;
 
     .line 16
@@ -80,7 +80,7 @@
     return-void
 
     .line 22
-    :pswitch_15
+    :pswitch_1
     check-cast v1, Llibs/x00;
 
     .line 23
@@ -93,7 +93,7 @@
     return-void
 
     .line 28
-    :pswitch_1b
+    :pswitch_2
     check-cast v1, Llibs/x00;
 
     .line 29
@@ -106,7 +106,7 @@
 
     .line 33
     .line 34
-    if-nez p2, :cond_2a
+    if-nez p2, :cond_0
 
     .line 35
     .line 36
@@ -125,7 +125,7 @@
     sub-int/2addr v2, p2
 
     .line 43
-    :cond_2a
+    :cond_0
     iget p2, v1, Llibs/hj3;->Eight:I
 
     .line 44
@@ -185,7 +185,7 @@
 
     .line 69
     .line 70
-    if-eqz p2, :cond_4c
+    if-eqz p2, :cond_1
 
     .line 71
     .line 72
@@ -198,11 +198,11 @@
     .line 75
     .line 76
     .line 77
-    :cond_4c
+    :cond_1
     return-void
 
     .line 78
-    :pswitch_4d
+    :pswitch_3
     check-cast v1, Llibs/x00;
 
     .line 79
@@ -218,11 +218,11 @@
     nop
 
     .line 85
-    :pswitch_data_54
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_4d
-        :pswitch_1b
-        :pswitch_15
-        :pswitch_e
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

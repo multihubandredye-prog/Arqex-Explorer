@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/ru1;Landroid/media/MediaPlayer;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onSeekComplete(Landroid/media/MediaPlayer;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object p1, p0, Llibs/ou1;->a:Llibs/ru1;
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -60,10 +60,10 @@
     .line 10
     .line 11
     .line 12
-    goto :goto_11
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     iget-object v0, p1, Llibs/ru1;->c:Llibs/ld2;
 
     .line 14
@@ -73,12 +73,12 @@
     .line 16
     .line 17
     .line 18
-    :goto_11
+    :goto_0
     iget-boolean p1, p1, Llibs/ru1;->n:Z
 
     .line 19
     .line 20
-    if-nez p1, :cond_1a
+    if-nez p1, :cond_1
 
     .line 21
     .line 22
@@ -91,6 +91,6 @@
     .line 25
     .line 26
     .line 27
-    :cond_1a
+    :cond_1
     return-void
 .end method

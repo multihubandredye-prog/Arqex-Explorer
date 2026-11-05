@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/d7;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -36,7 +36,7 @@
 .end method
 
 .method public constructor <init>(Llibs/xp2;)V
-    .registers 4
+    .locals 2
 
     .line 1
     const/4 v0, 0x1
@@ -99,7 +99,7 @@
 
 # virtual methods
 .method public final hasNext()Z
-    .registers 10
+    .locals 9
 
     .line 1
     iget-byte v0, p0, Llibs/c7;->X:B
@@ -112,7 +112,7 @@
     const/4 v2, 0x1
 
     .line 5
-    packed-switch v0, :pswitch_data_3a
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -121,18 +121,18 @@
 
     .line 9
     .line 10
-    if-lez v0, :cond_c
+    if-lez v0, :cond_0
 
     .line 11
     .line 12
     const/4 v1, 0x1
 
     .line 13
-    :cond_c
+    :cond_0
     return v1
 
     .line 14
-    :pswitch_d
+    :pswitch_0
     iget-object v0, p0, Llibs/c7;->Lambda:Ljava/lang/Object;
 
     .line 15
@@ -149,18 +149,18 @@
 
     .line 21
     .line 22
-    if-eqz v3, :cond_19
+    if-eqz v3, :cond_1
 
     .line 23
     .line 24
-    :goto_17
+    :goto_0
     const/4 v1, 0x1
 
     .line 25
-    goto :goto_39
+    goto :goto_1
 
     .line 26
-    :cond_19
+    :cond_1
     iget v3, p0, Llibs/c7;->Y:I
 
     .line 27
@@ -180,14 +180,14 @@
 
     .line 34
     .line 35
-    if-lez v8, :cond_25
+    if-lez v8, :cond_2
 
     .line 36
     .line 37
-    goto :goto_39
+    goto :goto_1
 
     .line 38
-    :cond_25
+    :cond_2
     invoke-virtual {v0, v3}, Llibs/uy1;->d(I)I
 
     .line 39
@@ -196,14 +196,14 @@
     move-result v3
 
     .line 42
-    if-gtz v3, :cond_2c
+    if-gtz v3, :cond_3
 
     .line 43
     .line 44
-    goto :goto_39
+    goto :goto_1
 
     .line 45
-    :cond_2c
+    :cond_3
     new-instance v1, Llibs/e7;
 
     .line 46
@@ -228,28 +228,28 @@
 
     .line 56
     .line 57
-    goto :goto_17
+    goto :goto_0
 
     .line 58
-    :goto_39
+    :goto_1
     return v1
 
     .line 59
-    :pswitch_data_3a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_d
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final next()Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/c7;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_48
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -270,7 +270,7 @@
     move-result v0
 
     .line 14
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_0
 
     .line 15
     .line 16
@@ -303,7 +303,7 @@
 
     .line 30
     .line 31
-    :cond_1e
+    :cond_0
     iget v0, p0, Llibs/c7;->Y:I
 
     .line 32
@@ -343,7 +343,7 @@
     return-object v0
 
     .line 50
-    :pswitch_31
+    :pswitch_0
     invoke-virtual {p0}, Llibs/c7;->hasNext()Z
 
     .line 51
@@ -352,7 +352,7 @@
     move-result v0
 
     .line 54
-    if-eqz v0, :cond_3f
+    if-eqz v0, :cond_1
 
     .line 55
     .line 56
@@ -374,7 +374,7 @@
     return-object v0
 
     .line 64
-    :cond_3f
+    :cond_1
     new-instance v0, Ljava/util/NoSuchElementException;
 
     .line 65
@@ -394,21 +394,21 @@
     nop
 
     .line 73
-    :pswitch_data_48
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_31
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final remove()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/c7;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_12
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -425,7 +425,7 @@
     throw v0
 
     .line 12
-    :pswitch_b
+    :pswitch_0
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     .line 13
@@ -441,8 +441,8 @@
     nop
 
     .line 19
-    :pswitch_data_12
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_b
+        :pswitch_0
     .end packed-switch
 .end method

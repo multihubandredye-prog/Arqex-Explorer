@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,14 +17,14 @@
 .end method
 
 .method public static a(Ljava/security/PrivateKey;)Llibs/kt0;
-    .registers 6
+    .locals 5
 
     .line 1
     instance-of v0, p0, Llibs/ia;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -77,7 +77,7 @@
     return-object v1
 
     .line 30
-    :cond_1d
+    :cond_0
     const-string p0, "can\'t identify GOST3410 private key."
 
     .line 31
@@ -94,14 +94,14 @@
 .end method
 
 .method public static b(Ljava/security/PublicKey;)Llibs/ot0;
-    .registers 6
+    .locals 5
 
     .line 1
     instance-of v0, p0, Llibs/ja;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -154,7 +154,7 @@
     return-object v1
 
     .line 30
-    :cond_1d
+    :cond_0
     new-instance v0, Ljava/security/InvalidKeyException;
 
     .line 31

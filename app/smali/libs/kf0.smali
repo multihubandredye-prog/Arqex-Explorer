@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/lr0;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public a()Llibs/kf0;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/j43;
@@ -75,7 +75,7 @@
 .end method
 
 .method public b()Llibs/zd2;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/kf0;->g:Llibs/ps0;
@@ -86,7 +86,7 @@
 
     .line 4
     .line 5
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_0
 
     .line 6
     .line 7
@@ -102,7 +102,7 @@
     return-object v1
 
     .line 13
-    :cond_c
+    :cond_0
     new-instance v0, Llibs/or0;
 
     .line 14
@@ -119,7 +119,7 @@
 .end method
 
 .method public c(Ljava/math/BigInteger;Ljava/math/BigInteger;Z)Llibs/ig0;
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Llibs/kf0;->i(Ljava/math/BigInteger;)Llibs/xf3;
@@ -150,7 +150,7 @@
 .end method
 
 .method public d(Llibs/xf3;Llibs/xf3;Z)Llibs/ig0;
-    .registers 10
+    .locals 6
 
     .line 1
     new-instance v0, Llibs/hg0;
@@ -181,7 +181,7 @@
 .end method
 
 .method public e(Llibs/xf3;Llibs/xf3;[Llibs/xf3;Z)Llibs/ig0;
-    .registers 12
+    .locals 7
 
     .line 1
     new-instance v0, Llibs/hg0;
@@ -215,10 +215,10 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
-    if-eq p0, p1, :cond_11
+    if-eq p0, p1, :cond_1
 
     .line 2
     .line 3
@@ -226,7 +226,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -242,22 +242,22 @@
     move-result p1
 
     .line 13
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
     .line 14
     .line 15
-    goto :goto_11
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_0
     const/4 p1, 0x0
 
     .line 17
     return p1
 
     .line 18
-    :cond_11
-    :goto_11
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
     .line 19
@@ -265,7 +265,7 @@
 .end method
 
 .method public final f([B)Llibs/ig0;
-    .registers 11
+    .locals 9
 
     .line 1
     invoke-virtual {p0}, Llibs/kf0;->j()I
@@ -299,21 +299,21 @@
     const/4 v5, 0x1
 
     .line 14
-    if-eqz v3, :cond_a8
+    if-eqz v3, :cond_c
 
     .line 15
     .line 16
     const/4 v6, 0x2
 
     .line 17
-    if-eq v3, v6, :cond_86
+    if-eq v3, v6, :cond_9
 
     .line 18
     .line 19
     const/4 v6, 0x3
 
     .line 20
-    if-eq v3, v6, :cond_86
+    if-eq v3, v6, :cond_9
 
     .line 21
     .line 22
@@ -324,25 +324,25 @@
 
     .line 24
     .line 25
-    if-eq v3, v6, :cond_61
+    if-eq v3, v6, :cond_6
 
     .line 26
     .line 27
     const/4 v6, 0x6
 
     .line 28
-    if-eq v3, v6, :cond_2c
+    if-eq v3, v6, :cond_1
 
     .line 29
     .line 30
-    if-ne v3, v1, :cond_20
+    if-ne v3, v1, :cond_0
 
     .line 31
     .line 32
-    goto :goto_2c
+    goto :goto_0
 
     .line 33
-    :cond_20
+    :cond_0
     const/16 p1, 0x10
 
     .line 34
@@ -367,8 +367,8 @@
     return-object v4
 
     .line 45
-    :cond_2c
-    :goto_2c
+    :cond_1
+    :goto_0
     array-length v6, p1
 
     .line 46
@@ -379,7 +379,7 @@
     add-int/2addr v8, v5
 
     .line 49
-    if-ne v6, v8, :cond_5b
+    if-ne v6, v8, :cond_5
 
     .line 50
     .line 51
@@ -411,19 +411,19 @@
     move-result v0
 
     .line 65
-    if-ne v3, v1, :cond_43
+    if-ne v3, v1, :cond_2
 
     .line 66
     .line 67
-    goto :goto_44
+    goto :goto_1
 
     .line 68
-    :cond_43
+    :cond_2
     const/4 v5, 0x0
 
     .line 69
-    :goto_44
-    if-ne v0, v5, :cond_55
+    :goto_1
+    if-ne v0, v5, :cond_4
 
     .line 70
     .line 71
@@ -443,14 +443,14 @@
     move-result v0
 
     .line 79
-    if-eqz v0, :cond_51
+    if-eqz v0, :cond_3
 
     .line 80
     .line 81
-    goto :goto_af
+    goto :goto_2
 
     .line 82
-    :cond_51
+    :cond_3
     invoke-static {v7}, Llibs/ic0;->p(Ljava/lang/String;)V
 
     .line 83
@@ -459,7 +459,7 @@
     return-object v4
 
     .line 86
-    :cond_55
+    :cond_4
     const-string p1, "Inconsistent Y coordinate in hybrid encoding"
 
     .line 87
@@ -472,7 +472,7 @@
     return-object v4
 
     .line 92
-    :cond_5b
+    :cond_5
     const-string p1, "Incorrect length for hybrid encoding"
 
     .line 93
@@ -485,7 +485,7 @@
     return-object v4
 
     .line 98
-    :cond_61
+    :cond_6
     array-length v1, p1
 
     .line 99
@@ -496,7 +496,7 @@
     add-int/2addr v6, v5
 
     .line 102
-    if-ne v1, v6, :cond_80
+    if-ne v1, v6, :cond_8
 
     .line 103
     .line 104
@@ -536,14 +536,14 @@
     move-result v0
 
     .line 122
-    if-eqz v0, :cond_7c
+    if-eqz v0, :cond_7
 
     .line 123
     .line 124
-    goto :goto_af
+    goto :goto_2
 
     .line 125
-    :cond_7c
+    :cond_7
     invoke-static {v7}, Llibs/ic0;->p(Ljava/lang/String;)V
 
     .line 126
@@ -552,7 +552,7 @@
     return-object v4
 
     .line 129
-    :cond_80
+    :cond_8
     const-string p1, "Incorrect length for uncompressed encoding"
 
     .line 130
@@ -565,7 +565,7 @@
     return-object v4
 
     .line 135
-    :cond_86
+    :cond_9
     array-length v1, p1
 
     .line 136
@@ -573,7 +573,7 @@
 
     .line 137
     .line 138
-    if-ne v1, v2, :cond_a2
+    if-ne v1, v2, :cond_b
 
     .line 139
     .line 140
@@ -605,14 +605,14 @@
     move-result v0
 
     .line 154
-    if-eqz v0, :cond_9c
+    if-eqz v0, :cond_a
 
     .line 155
     .line 156
-    goto :goto_af
+    goto :goto_2
 
     .line 157
-    :cond_9c
+    :cond_a
     const-string p1, "Invalid point"
 
     .line 158
@@ -625,7 +625,7 @@
     return-object v4
 
     .line 163
-    :cond_a2
+    :cond_b
     const-string p1, "Incorrect length for compressed encoding"
 
     .line 164
@@ -638,11 +638,11 @@
     return-object v4
 
     .line 169
-    :cond_a8
+    :cond_c
     array-length p1, p1
 
     .line 170
-    if-ne p1, v5, :cond_bf
+    if-ne p1, v5, :cond_f
 
     .line 171
     .line 172
@@ -654,8 +654,8 @@
     move-result-object p1
 
     .line 176
-    :goto_af
-    if-eqz v3, :cond_be
+    :goto_2
+    if-eqz v3, :cond_e
 
     .line 177
     .line 178
@@ -667,14 +667,14 @@
     move-result v0
 
     .line 182
-    if-nez v0, :cond_b8
+    if-nez v0, :cond_d
 
     .line 183
     .line 184
-    goto :goto_be
+    goto :goto_3
 
     .line 185
-    :cond_b8
+    :cond_d
     const-string p1, "Invalid infinity encoding"
 
     .line 186
@@ -687,12 +687,12 @@
     return-object v4
 
     .line 191
-    :cond_be
-    :goto_be
+    :cond_e
+    :goto_3
     return-object p1
 
     .line 192
-    :cond_bf
+    :cond_f
     const-string p1, "Incorrect length for infinity encoding"
 
     .line 193
@@ -709,14 +709,14 @@
 .end method
 
 .method public final h(Llibs/kf0;)Z
-    .registers 4
+    .locals 2
 
     .line 1
-    if-eq p0, p1, :cond_35
+    if-eq p0, p1, :cond_1
 
     .line 2
     .line 3
-    if-eqz p1, :cond_33
+    if-eqz p1, :cond_0
 
     .line 4
     .line 5
@@ -736,7 +736,7 @@
     move-result v0
 
     .line 13
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_0
 
     .line 14
     .line 15
@@ -772,7 +772,7 @@
     move-result v0
 
     .line 31
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_0
 
     .line 32
     .line 33
@@ -808,22 +808,22 @@
     move-result p1
 
     .line 49
-    if-eqz p1, :cond_33
+    if-eqz p1, :cond_0
 
     .line 50
     .line 51
-    goto :goto_35
+    goto :goto_0
 
     .line 52
-    :cond_33
+    :cond_0
     const/4 p1, 0x0
 
     .line 53
     return p1
 
     .line 54
-    :cond_35
-    :goto_35
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
     .line 55
@@ -831,7 +831,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/kf0;->a:Llibs/lr0;
@@ -920,7 +920,7 @@
 .end method
 
 .method public i(Ljava/math/BigInteger;)Llibs/xf3;
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/i43;
@@ -936,7 +936,7 @@
 .end method
 
 .method public j()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x23b
@@ -950,13 +950,13 @@
 .end method
 
 .method public final l(Llibs/ig0;Ljava/lang/String;)Llibs/ge2;
-    .registers 5
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-eqz p1, :cond_19
+    if-eqz p1, :cond_1
 
     .line 3
     .line 4
@@ -964,26 +964,26 @@
 
     .line 5
     .line 6
-    if-ne p0, v1, :cond_19
+    if-ne p0, v1, :cond_1
 
     .line 7
     .line 8
     monitor-enter p1
 
     .line 9
-    :try_start_8
+    :try_start_0
     iget-object v1, p1, Llibs/ig0;->f:Ljava/util/Hashtable;
 
     .line 10
     .line 11
-    if-nez v1, :cond_d
+    if-nez v1, :cond_0
 
     .line 12
     .line 13
-    goto :goto_14
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     invoke-virtual {v1, p2}, Ljava/util/Hashtable;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 15
@@ -999,26 +999,26 @@
 
     .line 20
     .line 21
-    :goto_14
+    :goto_0
     monitor-exit p1
 
     .line 22
     return-object v0
 
     .line 23
-    :catchall_16
+    :catchall_0
     move-exception p2
 
     .line 24
     monitor-exit p1
-    :try_end_18
-    .catchall {:try_start_8 .. :try_end_18} :catchall_16
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 25
     throw p2
 
     .line 26
-    :cond_19
+    :cond_1
     const-string p1, "\'point\' must be non-null and on this curve"
 
     .line 27
@@ -1032,21 +1032,21 @@
 .end method
 
 .method public m(Llibs/ig0;)Llibs/ig0;
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p1, Llibs/ig0;->a:Llibs/kf0;
 
     .line 2
     .line 3
-    if-ne p0, v0, :cond_5
+    if-ne p0, v0, :cond_0
 
     .line 4
     .line 5
     return-object p1
 
     .line 6
-    :cond_5
+    :cond_0
     invoke-virtual {p1}, Llibs/ig0;->j()Z
 
     .line 7
@@ -1055,7 +1055,7 @@
     move-result v0
 
     .line 10
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_1
 
     .line 11
     .line 12
@@ -1070,7 +1070,7 @@
     return-object p1
 
     .line 17
-    :cond_10
+    :cond_1
     invoke-virtual {p1}, Llibs/ig0;->p()Llibs/ig0;
 
     .line 18
@@ -1127,14 +1127,14 @@
     move-result v0
 
     .line 45
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_2
 
     .line 46
     .line 47
     return-object p1
 
     .line 48
-    :cond_2f
+    :cond_2
     const-string p1, "Invalid point coordinates"
 
     .line 49
@@ -1151,10 +1151,10 @@
 .end method
 
 .method public n(Ljava/math/BigInteger;)Z
-    .registers 3
+    .locals 1
 
     .line 1
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_0
 
     .line 2
     .line 3
@@ -1166,7 +1166,7 @@
     move-result v0
 
     .line 7
-    if-ltz v0, :cond_14
+    if-ltz v0, :cond_0
 
     .line 8
     .line 9
@@ -1186,7 +1186,7 @@
     move-result v0
 
     .line 17
-    if-gt p1, v0, :cond_14
+    if-gt p1, v0, :cond_0
 
     .line 18
     .line 19
@@ -1196,7 +1196,7 @@
     return p1
 
     .line 21
-    :cond_14
+    :cond_0
     const/4 p1, 0x0
 
     .line 22
@@ -1204,14 +1204,14 @@
 .end method
 
 .method public final p([Llibs/ig0;IILlibs/xf3;)V
-    .registers 13
+    .locals 8
 
     .line 1
-    if-ltz p2, :cond_a5
+    if-ltz p2, :cond_d
 
     .line 2
     .line 3
-    if-ltz p3, :cond_a5
+    if-ltz p3, :cond_d
 
     .line 4
     .line 5
@@ -1221,7 +1221,7 @@
     sub-int/2addr v0, p3
 
     .line 7
-    if-gt p2, v0, :cond_a5
+    if-gt p2, v0, :cond_d
 
     .line 8
     .line 9
@@ -1231,8 +1231,8 @@
     const/4 v1, 0x0
 
     .line 11
-    :goto_a
-    if-ge v1, p3, :cond_20
+    :goto_0
+    if-ge v1, p3, :cond_2
 
     .line 12
     .line 13
@@ -1244,7 +1244,7 @@
 
     .line 16
     .line 17
-    if-eqz v2, :cond_1d
+    if-eqz v2, :cond_1
 
     .line 18
     .line 19
@@ -1252,14 +1252,14 @@
 
     .line 20
     .line 21
-    if-ne p0, v2, :cond_17
+    if-ne p0, v2, :cond_0
 
     .line 22
     .line 23
-    goto :goto_1d
+    goto :goto_1
 
     .line 24
-    :cond_17
+    :cond_0
     const-string p1, "\'points\' entries must be null or on this curve"
 
     .line 25
@@ -1272,28 +1272,28 @@
     return-void
 
     .line 30
-    :cond_1d
-    :goto_1d
+    :cond_1
+    :goto_1
     add-int/lit8 v1, v1, 0x1
 
     .line 31
     .line 32
-    goto :goto_a
+    goto :goto_0
 
     .line 33
-    :cond_20
+    :cond_2
     iget v1, p0, Llibs/kf0;->f:I
 
     .line 34
     .line 35
-    if-eqz v1, :cond_9c
+    if-eqz v1, :cond_a
 
     .line 36
     .line 37
     const/4 v2, 0x5
 
     .line 38
-    if-eq v1, v2, :cond_9c
+    if-eq v1, v2, :cond_a
 
     .line 39
     .line 40
@@ -1311,8 +1311,8 @@
     const/4 v4, 0x0
 
     .line 46
-    :goto_2d
-    if-ge v3, p3, :cond_4b
+    :goto_2
+    if-ge v3, p3, :cond_5
 
     .line 47
     .line 48
@@ -1324,11 +1324,11 @@
 
     .line 51
     .line 52
-    if-eqz v6, :cond_48
+    if-eqz v6, :cond_4
 
     .line 53
     .line 54
-    if-nez p4, :cond_3d
+    if-nez p4, :cond_3
 
     .line 55
     .line 56
@@ -1340,11 +1340,11 @@
     move-result v7
 
     .line 60
-    if-nez v7, :cond_48
+    if-nez v7, :cond_4
 
     .line 61
     .line 62
-    :cond_3d
+    :cond_3
     invoke-virtual {v6}, Llibs/ig0;->i()Llibs/xf3;
 
     .line 63
@@ -1368,23 +1368,23 @@
     move v4, v6
 
     .line 73
-    :cond_48
+    :cond_4
     add-int/lit8 v3, v3, 0x1
 
     .line 74
     .line 75
-    goto :goto_2d
+    goto :goto_2
 
     .line 76
-    :cond_4b
-    if-nez v4, :cond_4e
+    :cond_5
+    if-nez v4, :cond_6
 
     .line 77
     .line 78
-    goto :goto_9e
+    goto :goto_6
 
     .line 79
-    :cond_4e
+    :cond_6
     new-array p2, v4, [Llibs/xf3;
 
     .line 80
@@ -1400,12 +1400,12 @@
     const/4 p3, 0x0
 
     .line 86
-    :goto_55
+    :goto_3
     add-int/lit8 v3, p3, 0x1
 
     .line 87
     .line 88
-    if-ge v3, v4, :cond_65
+    if-ge v3, v4, :cond_7
 
     .line 89
     .line 90
@@ -1432,11 +1432,11 @@
     move p3, v3
 
     .line 101
-    goto :goto_55
+    goto :goto_3
 
     .line 102
-    :cond_65
-    if-eqz p4, :cond_6f
+    :cond_7
+    if-eqz p4, :cond_8
 
     .line 103
     .line 104
@@ -1456,7 +1456,7 @@
 
     .line 111
     .line 112
-    :cond_6f
+    :cond_8
     aget-object p4, p2, p3
 
     .line 113
@@ -1469,8 +1469,8 @@
     move-result-object p4
 
     .line 118
-    :goto_75
-    if-lez p3, :cond_89
+    :goto_4
+    if-lez p3, :cond_9
 
     .line 119
     .line 120
@@ -1509,16 +1509,16 @@
     move p3, v3
 
     .line 137
-    goto :goto_75
+    goto :goto_4
 
     .line 138
-    :cond_89
+    :cond_9
     aput-object p4, v1, v0
 
     .line 139
     .line 140
-    :goto_8b
-    if-ge v0, v4, :cond_9e
+    :goto_5
+    if-ge v0, v4, :cond_b
 
     .line 141
     .line 142
@@ -1550,20 +1550,20 @@
 
     .line 155
     .line 156
-    goto :goto_8b
+    goto :goto_5
 
     .line 157
-    :cond_9c
-    if-nez p4, :cond_9f
+    :cond_a
+    if-nez p4, :cond_c
 
     .line 158
     .line 159
-    :cond_9e
-    :goto_9e
+    :cond_b
+    :goto_6
     return-void
 
     .line 160
-    :cond_9f
+    :cond_c
     const-string p1, "\'iso\' not valid for affine coordinates"
 
     .line 161
@@ -1576,7 +1576,7 @@
     return-void
 
     .line 166
-    :cond_a5
+    :cond_d
     const-string p1, "invalid range specified for \'points\'"
 
     .line 167
@@ -1590,10 +1590,10 @@
 .end method
 
 .method public final q(Llibs/ig0;Ljava/lang/String;Llibs/ge2;)V
-    .registers 6
+    .locals 2
 
     .line 1
-    if-eqz p1, :cond_1d
+    if-eqz p1, :cond_1
 
     .line 2
     .line 3
@@ -1601,19 +1601,19 @@
 
     .line 4
     .line 5
-    if-ne p0, v0, :cond_1d
+    if-ne p0, v0, :cond_1
 
     .line 6
     .line 7
     monitor-enter p1
 
     .line 8
-    :try_start_7
+    :try_start_0
     iget-object v0, p1, Llibs/ig0;->f:Ljava/util/Hashtable;
 
     .line 9
     .line 10
-    if-nez v0, :cond_16
+    if-nez v0, :cond_0
 
     .line 11
     .line 12
@@ -1633,18 +1633,18 @@
 
     .line 19
     .line 20
-    goto :goto_16
+    goto :goto_0
 
     .line 21
-    :catchall_14
+    :catchall_0
     move-exception p2
 
     .line 22
-    goto :goto_1b
+    goto :goto_1
 
     .line 23
-    :cond_16
-    :goto_16
+    :cond_0
+    :goto_0
     invoke-virtual {v0, p2, p3}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 24
@@ -1656,16 +1656,16 @@
     return-void
 
     .line 28
-    :goto_1b
+    :goto_1
     monitor-exit p1
-    :try_end_1c
-    .catchall {:try_start_7 .. :try_end_1c} :catchall_14
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 29
     throw p2
 
     .line 30
-    :cond_1d
+    :cond_1
     const-string p1, "\'point\' must be non-null and on this curve"
 
     .line 31
@@ -1679,24 +1679,24 @@
 .end method
 
 .method public r(I)Z
-    .registers 4
+    .locals 2
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     .line 3
     .line 4
-    if-eq p1, v0, :cond_a
+    if-eq p1, v0, :cond_0
 
     .line 5
     .line 6
     const/4 v1, 0x6
 
     .line 7
-    if-eq p1, v1, :cond_a
+    if-eq p1, v1, :cond_0
 
     .line 8
     .line 9
@@ -1706,6 +1706,6 @@
     return p1
 
     .line 11
-    :cond_a
+    :cond_0
     return v0
 .end method

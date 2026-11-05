@@ -32,7 +32,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 7
+    .locals 7
 
     .line 1
     invoke-static {}, Lorg/conscrypt/metrics/ReflexiveStatsEvent$Builder;->initStatsEventBuilderClass()Ljava/lang/Class;
@@ -211,7 +211,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -250,7 +250,7 @@
 .end method
 
 .method public synthetic constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 18
     invoke-direct {p0}, Lorg/conscrypt/metrics/ReflexiveStatsEvent$Builder;-><init>()V
@@ -259,7 +259,7 @@
 .end method
 
 .method private static initStatsEventBuilderClass()Ljava/lang/Class;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -271,15 +271,15 @@
     .line 1
     :try_start_0
     const-class v0, Llibs/mg3;
-    :try_end_2
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_2} :catch_3
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 2
     .line 3
     return-object v0
 
     .line 4
-    :catch_3
+    :catch_0
     const/4 v0, 0x0
 
     .line 5
@@ -289,7 +289,7 @@
 
 # virtual methods
 .method public build()Lorg/conscrypt/metrics/ReflexiveStatsEvent;
-    .registers 5
+    .locals 4
 
     .line 1
     sget-object v0, Lorg/conscrypt/metrics/ReflexiveStatsEvent$Builder;->build:Lorg/conscrypt/metrics/OptionalMethod;
@@ -328,7 +328,7 @@
 .end method
 
 .method public setAtomId(I)Lorg/conscrypt/metrics/ReflexiveStatsEvent$Builder;
-    .registers 6
+    .locals 4
 
     .line 1
     sget-object v0, Lorg/conscrypt/metrics/ReflexiveStatsEvent$Builder;->setAtomId:Lorg/conscrypt/metrics/OptionalMethod;
@@ -370,7 +370,7 @@
 .end method
 
 .method public usePooledBuffer()V
-    .registers 4
+    .locals 3
 
     .line 1
     sget-object v0, Lorg/conscrypt/metrics/ReflexiveStatsEvent$Builder;->usePooledBuffer:Lorg/conscrypt/metrics/OptionalMethod;
@@ -397,7 +397,7 @@
 .end method
 
 .method public writeBoolean(Z)Lorg/conscrypt/metrics/ReflexiveStatsEvent$Builder;
-    .registers 6
+    .locals 4
 
     .line 1
     sget-object v0, Lorg/conscrypt/metrics/ReflexiveStatsEvent$Builder;->writeBoolean:Lorg/conscrypt/metrics/OptionalMethod;
@@ -439,7 +439,7 @@
 .end method
 
 .method public writeInt(I)Lorg/conscrypt/metrics/ReflexiveStatsEvent$Builder;
-    .registers 6
+    .locals 4
 
     .line 1
     sget-object v0, Lorg/conscrypt/metrics/ReflexiveStatsEvent$Builder;->writeInt:Lorg/conscrypt/metrics/OptionalMethod;
@@ -481,7 +481,7 @@
 .end method
 
 .method public writeIntArray([I)Lorg/conscrypt/metrics/ReflexiveStatsEvent$Builder;
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-static {}, Lorg/conscrypt/metrics/ReflexiveStatsEvent;->b()Z
@@ -492,7 +492,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -523,6 +523,6 @@
     .line 18
     .line 19
     .line 20
-    :cond_13
+    :cond_0
     return-object p0
 .end method

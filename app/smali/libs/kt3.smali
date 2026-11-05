@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic a(Landroid/view/WindowInsets;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/WindowInsets;->getSystemWindowInsetLeft()I
@@ -20,7 +20,7 @@
 .end method
 
 .method public static bridge synthetic b(Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/WindowInsets;->consumeSystemWindowInsets()Landroid/view/WindowInsets;
@@ -35,7 +35,7 @@
 .end method
 
 .method public static bridge synthetic c(Landroid/view/WindowInsets;IIII)Landroid/view/WindowInsets;
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/view/WindowInsets;->replaceSystemWindowInsets(IIII)Landroid/view/WindowInsets;
@@ -50,7 +50,7 @@
 .end method
 
 .method public static bridge synthetic d(Ljava/lang/Object;)Landroid/view/WindowInsets;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Landroid/view/WindowInsets;
@@ -61,7 +61,7 @@
 .end method
 
 .method public static bridge synthetic e(Landroid/view/View;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->requestApplyInsets()V
@@ -73,7 +73,7 @@
 .end method
 
 .method public static bridge synthetic f(Landroid/view/WindowInsets;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/WindowInsets;->isRound()Z
@@ -88,7 +88,7 @@
 .end method
 
 .method public static bridge synthetic g(Landroid/view/WindowInsets;Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/WindowInsets;->equals(Ljava/lang/Object;)Z
@@ -103,7 +103,7 @@
 .end method
 
 .method public static bridge synthetic h(Landroid/view/WindowInsets;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/WindowInsets;->getSystemWindowInsetTop()I
@@ -118,7 +118,7 @@
 .end method
 
 .method public static bridge synthetic i(Landroid/view/WindowInsets;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/WindowInsets;->getSystemWindowInsetRight()I
@@ -133,7 +133,7 @@
 .end method
 
 .method public static bridge synthetic j(Landroid/view/WindowInsets;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/WindowInsets;->getSystemWindowInsetBottom()I
@@ -148,7 +148,7 @@
 .end method
 
 .method public static bridge synthetic k(Landroid/view/WindowInsets;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/WindowInsets;->hashCode()I

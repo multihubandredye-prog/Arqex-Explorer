@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -30,7 +30,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -41,7 +41,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .registers 6
+    .locals 2
 
     .line 1
     const/4 p3, 0x0
@@ -203,7 +203,7 @@
     move-result p1
 
     .line 88
-    if-eqz p1, :cond_5c
+    if-eqz p1, :cond_0
 
     .line 89
     .line 90
@@ -212,14 +212,14 @@
     .line 91
     .line 92
     .line 93
-    :cond_5c
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final a(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiListView;->Lambda:Llibs/gu1;
@@ -230,7 +230,7 @@
 
     .line 4
     .line 5
-    if-eq p1, v1, :cond_d
+    if-eq p1, v1, :cond_0
 
     .line 6
     .line 7
@@ -247,12 +247,12 @@
     .line 12
     .line 13
     .line 14
-    :cond_d
+    :cond_0
     return-void
 .end method
 
 .method public final b()V
-    .registers 10
+    .locals 9
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiListView;->Lambda:Llibs/gu1;
@@ -293,14 +293,14 @@
     const/4 v6, 0x1
 
     .line 19
-    if-nez v2, :cond_15
+    if-nez v2, :cond_0
 
     .line 20
     .line 21
-    goto :goto_47
+    goto :goto_1
 
     .line 22
-    :cond_15
+    :cond_0
     invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
 
     .line 23
@@ -317,14 +317,14 @@
     move-result-object v7
 
     .line 30
-    if-nez v7, :cond_20
+    if-nez v7, :cond_1
 
     .line 31
     .line 32
-    goto :goto_47
+    goto :goto_1
 
     .line 33
-    :cond_20
+    :cond_1
     invoke-virtual {v7}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable()Landroid/graphics/drawable/Drawable;
 
     .line 34
@@ -341,7 +341,7 @@
 
     .line 40
     .line 41
-    if-eqz v8, :cond_39
+    if-eqz v8, :cond_2
 
     .line 42
     .line 43
@@ -373,10 +373,10 @@
 
     .line 56
     .line 57
-    goto :goto_45
+    goto :goto_0
 
     .line 58
-    :cond_39
+    :cond_2
     invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     .line 59
@@ -401,12 +401,12 @@
 
     .line 69
     .line 70
-    :goto_45
+    :goto_0
     iput-boolean v6, v0, Llibs/gu1;->x:Z
 
     .line 71
     .line 72
-    :goto_47
+    :goto_1
     iput-boolean v6, v0, Llibs/gu1;->c:Z
 
     .line 73
@@ -549,7 +549,7 @@
     move-result v2
 
     .line 146
-    if-lez v2, :cond_b8
+    if-lez v2, :cond_3
 
     .line 147
     .line 148
@@ -583,7 +583,7 @@
     sub-int/2addr v2, v7
 
     .line 162
-    if-lez v2, :cond_b8
+    if-lez v2, :cond_3
 
     .line 163
     .line 164
@@ -630,7 +630,7 @@
     .line 183
     .line 184
     .line 185
-    :cond_b8
+    :cond_3
     iput v3, v0, Llibs/gu1;->t:I
 
     .line 186
@@ -671,7 +671,7 @@
 .end method
 
 .method public final draw(Landroid/graphics/Canvas;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-super {p0, p1}, Landroid/widget/ListView;->draw(Landroid/graphics/Canvas;)V
@@ -683,7 +683,7 @@
 
     .line 5
     .line 6
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
     .line 7
     .line 8
@@ -695,7 +695,7 @@
     move-result v0
 
     .line 12
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_0
 
     .line 13
     .line 14
@@ -735,7 +735,7 @@
     return-void
 
     .line 32
-    :cond_1f
+    :cond_0
     iget-object v0, p0, Lcom/mixplorer/widgets/MiListView;->Lambda:Llibs/gu1;
 
     .line 33
@@ -745,12 +745,12 @@
     .line 35
     .line 36
     .line 37
-    :cond_24
+    :cond_1
     return-void
 .end method
 
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 9
+    .locals 7
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiListView;->Lambda:Llibs/gu1;
@@ -763,7 +763,7 @@
     const/4 v2, 0x1
 
     .line 5
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_2
 
     .line 6
     .line 7
@@ -783,25 +783,25 @@
     move-result v5
 
     .line 15
-    if-eqz v5, :cond_1c
+    if-eqz v5, :cond_1
 
     .line 16
     .line 17
-    if-eq v5, v2, :cond_16
+    if-eq v5, v2, :cond_0
 
     .line 18
     .line 19
     const/4 v6, 0x3
 
     .line 20
-    if-eq v5, v6, :cond_16
+    if-eq v5, v6, :cond_0
 
     .line 21
     .line 22
-    goto :goto_3b
+    goto :goto_0
 
     .line 23
-    :cond_16
+    :cond_0
     invoke-virtual {v4, v3}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     .line 24
@@ -811,15 +811,15 @@
 
     .line 27
     .line 28
-    goto :goto_3b
+    goto :goto_0
 
     .line 29
-    :cond_1c
+    :cond_1
     iget v5, v0, Llibs/gu1;->t:I
 
     .line 30
     .line 31
-    if-lez v5, :cond_3b
+    if-lez v5, :cond_2
 
     .line 32
     .line 33
@@ -847,7 +847,7 @@
     move-result v5
 
     .line 45
-    if-eqz v5, :cond_3b
+    if-eqz v5, :cond_2
 
     .line 46
     .line 47
@@ -876,8 +876,8 @@
     .line 58
     .line 59
     .line 60
-    :cond_3b
-    :goto_3b
+    :cond_2
+    :goto_0
     invoke-super {p0, p1}, Landroid/widget/ListView;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
     .line 61
@@ -886,19 +886,19 @@
     move-result p1
 
     .line 64
-    if-eqz p1, :cond_42
+    if-eqz p1, :cond_3
 
     .line 65
     .line 66
     return v2
 
     .line 67
-    :cond_42
+    :cond_3
     return v1
 .end method
 
 .method public onLayout(ZIIII)V
-    .registers 7
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -924,7 +924,7 @@
 .end method
 
 .method public onMeasure(II)V
-    .registers 15
+    .locals 12
 
     .line 1
     invoke-super {p0, p1, p2}, Landroid/widget/ListView;->onMeasure(II)V
@@ -936,14 +936,14 @@
 
     .line 5
     .line 6
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     .line 7
     .line 8
-    goto :goto_1b
+    goto :goto_0
 
     .line 9
-    :cond_8
+    :cond_0
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     .line 10
@@ -977,15 +977,15 @@
 
     .line 25
     .line 26
-    if-ne v0, v3, :cond_1c
+    if-ne v0, v3, :cond_1
 
     .line 27
     .line 28
-    :goto_1b
+    :goto_0
     return-void
 
     .line 29
-    :cond_1c
+    :cond_1
     invoke-virtual {p0}, Landroid/widget/ListView;->getAdapter()Landroid/widget/ListAdapter;
 
     .line 30
@@ -997,17 +997,17 @@
     const/4 v4, 0x0
 
     .line 34
-    if-nez v0, :cond_25
+    if-nez v0, :cond_2
 
     .line 35
     .line 36
     const/4 v0, 0x0
 
     .line 37
-    goto :goto_32
+    goto :goto_1
 
     .line 38
-    :cond_25
+    :cond_2
     invoke-virtual {p0}, Landroid/widget/ListView;->getAdapter()Landroid/widget/ListAdapter;
 
     .line 39
@@ -1035,8 +1035,8 @@
     move-result v0
 
     .line 51
-    :goto_32
-    if-lez v0, :cond_b2
+    :goto_1
+    if-lez v0, :cond_7
 
     .line 52
     .line 53
@@ -1052,8 +1052,8 @@
     const/4 v6, 0x0
 
     .line 57
-    :goto_38
-    if-ge v4, v0, :cond_8b
+    :goto_2
+    if-ge v4, v0, :cond_5
 
     .line 58
     .line 59
@@ -1073,14 +1073,14 @@
     move-result-object v7
 
     .line 67
-    if-nez v7, :cond_45
+    if-nez v7, :cond_3
 
     .line 68
     .line 69
-    goto :goto_88
+    goto :goto_3
 
     .line 70
-    :cond_45
+    :cond_3
     invoke-virtual {v7}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     .line 71
@@ -1089,7 +1089,7 @@
     move-result-object v8
 
     .line 74
-    if-nez v8, :cond_54
+    if-nez v8, :cond_4
 
     .line 75
     .line 76
@@ -1110,7 +1110,7 @@
     .line 83
     .line 84
     .line 85
-    :cond_54
+    :cond_4
     invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
 
     .line 86
@@ -1219,16 +1219,16 @@
     move v5, v8
 
     .line 137
-    :goto_88
+    :goto_3
     add-int/lit8 v4, v4, 0x1
 
     .line 138
     .line 139
-    goto :goto_38
+    goto :goto_2
 
     .line 140
-    :cond_8b
-    if-eqz v7, :cond_9d
+    :cond_5
+    if-eqz v7, :cond_6
 
     .line 141
     .line 142
@@ -1266,7 +1266,7 @@
     add-int/2addr v5, p2
 
     .line 158
-    :cond_9d
+    :cond_6
     invoke-virtual {p0}, Landroid/widget/ListView;->getAdapter()Landroid/widget/ListAdapter;
 
     .line 159
@@ -1309,14 +1309,14 @@
     move v4, v6
 
     .line 178
-    goto :goto_b3
+    goto :goto_4
 
     .line 179
-    :cond_b2
+    :cond_7
     const/4 p1, 0x0
 
     .line 180
-    :goto_b3
+    :goto_4
     invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
 
     .line 181
@@ -1339,7 +1339,7 @@
     add-int/2addr v0, v4
 
     .line 190
-    if-eq v1, v3, :cond_d4
+    if-eq v1, v3, :cond_9
 
     .line 191
     .line 192
@@ -1369,7 +1369,7 @@
 
     .line 203
     .line 204
-    if-ne v1, p1, :cond_d3
+    if-ne v1, p1, :cond_8
 
     .line 205
     .line 206
@@ -1384,15 +1384,15 @@
     move v2, p1
 
     .line 211
-    goto :goto_d4
+    goto :goto_5
 
     .line 212
-    :cond_d3
+    :cond_8
     move v2, v3
 
     .line 213
-    :cond_d4
-    :goto_d4
+    :cond_9
+    :goto_5
     iget p1, p0, Lcom/mixplorer/widgets/MiListView;->Pi:I
 
     .line 214
@@ -1418,7 +1418,7 @@
 .end method
 
 .method public onSizeChanged(IIII)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/ListView;->onSizeChanged(IIII)V
@@ -1430,7 +1430,7 @@
 
     .line 5
     .line 6
-    if-eqz p3, :cond_a
+    if-eqz p3, :cond_0
 
     .line 7
     .line 8
@@ -1439,12 +1439,12 @@
     .line 9
     .line 10
     .line 11
-    :cond_a
+    :cond_0
     return-void
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 19
+    .locals 17
 
     .line 1
     move-object/from16 v0, p0
@@ -1455,7 +1455,7 @@
 
     .line 4
     .line 5
-    if-eqz v1, :cond_c4
+    if-eqz v1, :cond_8
 
     .line 6
     .line 7
@@ -1471,15 +1471,15 @@
 
     .line 12
     .line 13
-    if-nez v4, :cond_10
+    if-nez v4, :cond_0
 
     .line 14
     .line 15
-    goto/16 :goto_c4
+    goto/16 :goto_0
 
     .line 16
     .line 17
-    :cond_10
+    :cond_0
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getAction()I
 
     .line 18
@@ -1491,7 +1491,7 @@
     const/4 v5, 0x1
 
     .line 22
-    if-nez v4, :cond_34
+    if-nez v4, :cond_1
 
     .line 23
     .line 24
@@ -1519,7 +1519,7 @@
     move-result v4
 
     .line 36
-    if-eqz v4, :cond_c4
+    if-eqz v4, :cond_8
 
     .line 37
     .line 38
@@ -1548,11 +1548,11 @@
     .line 49
     .line 50
     .line 51
-    goto/16 :goto_c4
+    goto/16 :goto_0
 
     .line 52
     .line 53
-    :cond_34
+    :cond_1
     const/4 v6, 0x0
 
     .line 54
@@ -1562,7 +1562,7 @@
     const/4 v8, 0x3
 
     .line 56
-    if-ne v4, v5, :cond_6c
+    if-ne v4, v5, :cond_3
 
     .line 57
     .line 58
@@ -1570,7 +1570,7 @@
 
     .line 59
     .line 60
-    if-eqz v4, :cond_4d
+    if-eqz v4, :cond_2
 
     .line 61
     .line 62
@@ -1604,12 +1604,12 @@
 
     .line 77
     .line 78
-    :cond_4d
+    :cond_2
     iget v2, v1, Llibs/gu1;->t:I
 
     .line 79
     .line 80
-    if-ne v2, v8, :cond_c4
+    if-ne v2, v8, :cond_8
 
     .line 81
     .line 82
@@ -1662,8 +1662,8 @@
     return v5
 
     .line 109
-    :cond_6c
-    if-ne v4, v7, :cond_bd
+    :cond_3
+    if-ne v4, v7, :cond_7
 
     .line 110
     .line 111
@@ -1671,7 +1671,7 @@
 
     .line 112
     .line 113
-    if-eqz v4, :cond_ae
+    if-eqz v4, :cond_6
 
     .line 114
     .line 115
@@ -1709,7 +1709,7 @@
 
     .line 130
     .line 131
-    if-lez v4, :cond_ae
+    if-lez v4, :cond_6
 
     .line 132
     .line 133
@@ -1722,7 +1722,7 @@
 
     .line 137
     .line 138
-    if-nez v4, :cond_8e
+    if-nez v4, :cond_4
 
     .line 139
     .line 140
@@ -1731,7 +1731,7 @@
     .line 141
     .line 142
     .line 143
-    :cond_8e
+    :cond_4
     invoke-virtual {v3, v5}, Landroid/widget/AbsListView;->requestDisallowInterceptTouchEvent(Z)V
 
     .line 144
@@ -1771,7 +1771,7 @@
     move-result-object v4
 
     .line 162
-    if-eqz v4, :cond_a9
+    if-eqz v4, :cond_5
 
     .line 163
     .line 164
@@ -1785,7 +1785,7 @@
     .line 168
     .line 169
     .line 170
-    :cond_a9
+    :cond_5
     invoke-virtual {v3, v2}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     .line 171
@@ -1795,12 +1795,12 @@
 
     .line 174
     .line 175
-    :cond_ae
+    :cond_6
     iget v2, v1, Llibs/gu1;->t:I
 
     .line 176
     .line 177
-    if-ne v2, v8, :cond_c4
+    if-ne v2, v8, :cond_8
 
     .line 178
     .line 179
@@ -1827,8 +1827,8 @@
     return v5
 
     .line 190
-    :cond_bd
-    if-ne v4, v8, :cond_c4
+    :cond_7
+    if-ne v4, v8, :cond_8
 
     .line 191
     .line 192
@@ -1841,8 +1841,8 @@
 
     .line 196
     .line 197
-    :cond_c4
-    :goto_c4
+    :cond_8
+    :goto_0
     invoke-super/range {p0 .. p1}, Landroid/widget/ListView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     .line 198
@@ -1855,7 +1855,7 @@
 .end method
 
 .method public final overScrollBy(IIIIIIIIZ)Z
-    .registers 10
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -1865,14 +1865,14 @@
 .end method
 
 .method public final requestLayout()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Lcom/mixplorer/widgets/MiListView;->Xi:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -1881,12 +1881,12 @@
     .line 6
     .line 7
     .line 8
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method public setDivider(Landroid/graphics/drawable/Drawable;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-super {p0, p1}, Landroid/widget/ListView;->setDivider(Landroid/graphics/drawable/Drawable;)V
@@ -1894,7 +1894,7 @@
     .line 2
     .line 3
     .line 4
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_0
 
     .line 5
     .line 6
@@ -1911,12 +1911,12 @@
     .line 11
     .line 12
     .line 13
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method public setFastScrollEnabled(Z)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiListView;->Lambda:Llibs/gu1;
@@ -1926,11 +1926,11 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_0
 
     .line 5
     .line 6
-    if-nez v0, :cond_21
+    if-nez v0, :cond_1
 
     .line 7
     .line 8
@@ -1960,8 +1960,8 @@
     return-void
 
     .line 22
-    :cond_15
-    if-eqz v0, :cond_21
+    :cond_0
+    if-eqz v0, :cond_1
 
     .line 23
     .line 24
@@ -1985,19 +1985,19 @@
     .line 32
     .line 33
     .line 34
-    :cond_21
+    :cond_1
     return-void
 .end method
 
 .method public setScrollbarPosition(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiListView;->Lambda:Llibs/gu1;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -2005,6 +2005,6 @@
 
     .line 6
     .line 7
-    :cond_6
+    :cond_0
     return-void
 .end method

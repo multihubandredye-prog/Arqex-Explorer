@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,7 +23,7 @@
 
 # virtual methods
 .method public a()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -33,7 +33,7 @@
 .end method
 
 .method public b()Landroid/graphics/Point;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-static {}, Llibs/sa3;->h()Landroid/graphics/Point;
@@ -54,7 +54,7 @@
 .end method
 
 .method public final e()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/x81;->a:I
@@ -74,7 +74,7 @@
 .end method
 
 .method public i()Z
-    .registers 2
+    .locals 1
 
     .line 1
     instance-of v0, p0, Llibs/eb3;
@@ -85,14 +85,14 @@
 .end method
 
 .method public j(J)V
-    .registers 3
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public k()Ljava/lang/Integer;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -102,7 +102,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "no path!!"

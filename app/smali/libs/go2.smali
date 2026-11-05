@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/wq1;JZLlibs/a2;ILjava/io/InputStream;Lcom/mixplorer/ProgressListener;Ljava/lang/Thread;)V
-    .registers 10
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/go2;->b:Llibs/wq1;
@@ -69,7 +69,7 @@
 
 # virtual methods
 .method public final Set(Llibs/ck;)V
-    .registers 9
+    .locals 7
 
     .line 1
     iget-boolean v0, p0, Llibs/go2;->d:Z
@@ -80,19 +80,19 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_2
 
     .line 6
     .line 7
     const/4 v0, 0x0
 
     .line 8
-    :try_start_7
+    :try_start_0
     iget-object v2, p0, Llibs/go2;->e:Llibs/a2;
 
     .line 9
     .line 10
-    if-eqz v2, :cond_17
+    if-eqz v2, :cond_0
 
     .line 11
     .line 12
@@ -112,21 +112,21 @@
     move-result-object p1
 
     .line 20
-    :goto_13
+    :goto_0
     move-object v0, p1
 
     .line 21
-    goto :goto_1c
+    goto :goto_1
 
     .line 22
-    :catchall_15
+    :catchall_0
     move-exception p1
 
     .line 23
-    goto :goto_36
+    goto :goto_3
 
     .line 24
-    :cond_17
+    :cond_0
     invoke-interface {p1}, Llibs/ck;->t()Ljava/io/OutputStream;
 
     .line 25
@@ -135,10 +135,10 @@
     move-result-object p1
 
     .line 28
-    goto :goto_13
+    goto :goto_0
 
     .line 29
-    :goto_1c
+    :goto_1
     iget p1, p0, Llibs/go2;->f:I
 
     .line 30
@@ -147,7 +147,7 @@
 
     .line 32
     .line 33
-    :goto_20
+    :goto_2
     invoke-virtual {v1, p1}, Ljava/io/InputStream;->read([B)I
 
     .line 34
@@ -156,7 +156,7 @@
     move-result v2
 
     .line 37
-    if-ltz v2, :cond_2f
+    if-ltz v2, :cond_1
 
     .line 38
     .line 39
@@ -172,16 +172,16 @@
 
     .line 44
     invoke-virtual {p0, v2, v3}, Llibs/go2;->View(J)V
-    :try_end_2e
-    .catchall {:try_start_7 .. :try_end_2e} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 45
     .line 46
     .line 47
-    goto :goto_20
+    goto :goto_2
 
     .line 48
-    :cond_2f
+    :cond_1
     invoke-static {v0}, Llibs/ur3;->c(Ljava/io/Closeable;)V
 
     .line 49
@@ -192,10 +192,10 @@
     .line 52
     .line 53
     .line 54
-    goto :goto_6a
+    goto :goto_5
 
     .line 55
-    :goto_36
+    :goto_3
     invoke-static {v0}, Llibs/ur3;->c(Ljava/io/Closeable;)V
 
     .line 56
@@ -209,7 +209,7 @@
     throw p1
 
     .line 62
-    :cond_3d
+    :cond_2
     new-instance v0, Llibs/en3;
 
     .line 63
@@ -223,7 +223,7 @@
 
     .line 68
     .line 69
-    if-eqz v1, :cond_72
+    if-eqz v1, :cond_4
 
     .line 70
     .line 71
@@ -236,8 +236,8 @@
     .line 74
     .line 75
     .line 76
-    :goto_4b
-    :try_start_4b
+    :goto_4
+    :try_start_1
     invoke-interface {p1}, Llibs/ck;->a()Llibs/vj;
 
     .line 77
@@ -266,7 +266,7 @@
 
     .line 89
     .line 90
-    if-eqz v0, :cond_64
+    if-eqz v0, :cond_3
 
     .line 91
     .line 92
@@ -276,23 +276,23 @@
     .line 94
     .line 95
     invoke-virtual {p0, v3, v4}, Llibs/go2;->View(J)V
-    :try_end_61
-    .catchall {:try_start_4b .. :try_end_61} :catchall_62
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 96
     .line 97
     .line 98
-    goto :goto_4b
+    goto :goto_4
 
     .line 99
-    :catchall_62
+    :catchall_1
     move-exception p1
 
     .line 100
-    goto :goto_6b
+    goto :goto_6
 
     .line 101
-    :cond_64
+    :cond_3
     invoke-static {v2}, Llibs/ur3;->c(Ljava/io/Closeable;)V
 
     .line 102
@@ -303,11 +303,11 @@
     .line 105
     .line 106
     .line 107
-    :goto_6a
+    :goto_5
     return-void
 
     .line 108
-    :goto_6b
+    :goto_6
     invoke-static {v2}, Llibs/ur3;->c(Ljava/io/Closeable;)V
 
     .line 109
@@ -321,7 +321,7 @@
     throw p1
 
     .line 115
-    :cond_72
+    :cond_4
     const-string p1, "in == null"
 
     .line 116
@@ -335,33 +335,33 @@
 .end method
 
 .method public final View(J)V
-    .registers 6
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/go2;->h:Lcom/mixplorer/ProgressListener;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
-    :try_start_4
+    :try_start_0
     iget-wide v1, p0, Llibs/go2;->c:J
 
     .line 6
     .line 7
     invoke-virtual {v0, p1, p2, v1, v2}, Lcom/mixplorer/ProgressListener;->onProgress(JJ)V
-    :try_end_9
-    .catch Ljava/lang/InterruptedException; {:try_start_4 .. :try_end_9} :catch_a
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 8
     .line 9
     .line 10
-    goto :goto_10
+    goto :goto_0
 
     .line 11
-    :catch_a
+    :catch_0
     new-instance p1, Ljava/io/InterruptedIOException;
 
     .line 12
@@ -374,8 +374,8 @@
     throw p1
 
     .line 17
-    :cond_10
-    :goto_10
+    :cond_0
+    :goto_0
     iget-object p1, p0, Llibs/go2;->i:Ljava/lang/Thread;
 
     .line 18
@@ -388,14 +388,14 @@
     move-result p1
 
     .line 23
-    if-nez p1, :cond_19
+    if-nez p1, :cond_1
 
     .line 24
     .line 25
     return-void
 
     .line 26
-    :cond_19
+    :cond_1
     new-instance p1, Ljava/io/InterruptedIOException;
 
     .line 27
@@ -409,7 +409,7 @@
 .end method
 
 .method public final a()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Llibs/go2;->c:J
@@ -420,7 +420,7 @@
 .end method
 
 .method public final b()Llibs/wq1;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/go2;->b:Llibs/wq1;

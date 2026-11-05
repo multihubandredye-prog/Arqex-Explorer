@@ -21,7 +21,7 @@
 
 # direct methods
 .method private constructor <init>(JLorg/conscrypt/SSLParametersImpl;Lorg/conscrypt/NativeCrypto$SSLHandshakeCallbacks;Lorg/conscrypt/SSLParametersImpl$AliasChooser;Lorg/conscrypt/SSLParametersImpl$PSKCallbacks;)V
-    .registers 8
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -66,7 +66,7 @@
 .end method
 
 .method public static bridge synthetic a(Lorg/conscrypt/NativeSsl;)Lorg/conscrypt/NativeCrypto$SSLHandshakeCallbacks;
-    .registers 1
+    .locals 0
 
     .line 1
     iget-object p0, p0, Lorg/conscrypt/NativeSsl;->handshakeCallbacks:Lorg/conscrypt/NativeCrypto$SSLHandshakeCallbacks;
@@ -77,7 +77,7 @@
 .end method
 
 .method public static bridge synthetic b(Lorg/conscrypt/NativeSsl;)Ljava/util/concurrent/locks/ReadWriteLock;
-    .registers 1
+    .locals 0
 
     .line 1
     iget-object p0, p0, Lorg/conscrypt/NativeSsl;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
@@ -88,7 +88,7 @@
 .end method
 
 .method public static bridge synthetic c(Lorg/conscrypt/NativeSsl;)J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
@@ -99,7 +99,7 @@
 .end method
 
 .method private enablePSKKeyManagerIfRequested()V
-    .registers 7
+    .locals 6
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->parameters:Lorg/conscrypt/SSLParametersImpl;
@@ -114,7 +114,7 @@
     move-result-object v0
 
     .line 7
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_2
 
     .line 8
     .line 9
@@ -132,8 +132,8 @@
     const/4 v3, 0x0
 
     .line 15
-    :goto_e
-    if-ge v3, v2, :cond_3b
+    :goto_0
+    if-ge v3, v2, :cond_2
 
     .line 16
     .line 17
@@ -141,7 +141,7 @@
 
     .line 18
     .line 19
-    if-eqz v4, :cond_38
+    if-eqz v4, :cond_1
 
     .line 20
     .line 21
@@ -157,7 +157,7 @@
     move-result v4
 
     .line 27
-    if-eqz v4, :cond_38
+    if-eqz v4, :cond_1
 
     .line 28
     .line 29
@@ -176,7 +176,7 @@
     const/4 v4, 0x1
 
     .line 36
-    if-eqz v1, :cond_29
+    if-eqz v1, :cond_0
 
     .line 37
     .line 38
@@ -188,7 +188,7 @@
     return-void
 
     .line 42
-    :cond_29
+    :cond_0
     invoke-static {v2, v3, p0, v4}, Lorg/conscrypt/NativeCrypto;->set_SSL_psk_server_callback_enabled(JLorg/conscrypt/NativeSsl;Z)V
 
     .line 43
@@ -218,20 +218,20 @@
     return-void
 
     .line 57
-    :cond_38
+    :cond_1
     add-int/lit8 v3, v3, 0x1
 
     .line 58
     .line 59
-    goto :goto_e
+    goto :goto_0
 
     .line 60
-    :cond_3b
+    :cond_2
     return-void
 .end method
 
 .method private getCipherKeyTypes()Ljava/util/Set;
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -269,8 +269,8 @@
     const/4 v3, 0x0
 
     .line 14
-    :goto_d
-    if-ge v3, v2, :cond_1d
+    :goto_0
+    if-ge v3, v2, :cond_1
 
     .line 15
     .line 16
@@ -286,7 +286,7 @@
     move-result-object v4
 
     .line 22
-    if-eqz v4, :cond_1a
+    if-eqz v4, :cond_0
 
     .line 23
     .line 24
@@ -295,20 +295,20 @@
     .line 25
     .line 26
     .line 27
-    :cond_1a
+    :cond_0
     add-int/lit8 v3, v3, 0x1
 
     .line 28
     .line 29
-    goto :goto_d
+    goto :goto_0
 
     .line 30
-    :cond_1d
+    :cond_1
     return-object v0
 .end method
 
 .method private isClient()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->parameters:Lorg/conscrypt/SSLParametersImpl;
@@ -327,7 +327,7 @@
 .end method
 
 .method public static newInstance(Lorg/conscrypt/SSLParametersImpl;Lorg/conscrypt/NativeCrypto$SSLHandshakeCallbacks;Lorg/conscrypt/SSLParametersImpl$AliasChooser;Lorg/conscrypt/SSLParametersImpl$PSKCallbacks;)Lorg/conscrypt/NativeSsl;
-    .registers 12
+    .locals 8
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/SSLParametersImpl;->getSessionContext()Lorg/conscrypt/AbstractSessionContext;
@@ -371,10 +371,10 @@
 .end method
 
 .method public static parseNamedGroupsProperty(Ljava/lang/String;)[I
-    .registers 3
+    .locals 2
 
     .line 1
-    if-eqz p0, :cond_15
+    if-eqz p0, :cond_0
 
     .line 2
     .line 3
@@ -417,7 +417,7 @@
     return-object p0
 
     .line 22
-    :cond_15
+    :cond_0
     const-string p0, "namedGroupsProperty is null"
 
     .line 23
@@ -434,17 +434,17 @@
 .end method
 
 .method private setCertificate(Ljava/lang/String;)V
-    .registers 7
+    .locals 5
 
     .line 1
-    if-nez p1, :cond_3
+    if-nez p1, :cond_0
 
     .line 2
     .line 3
-    goto :goto_1b
+    goto :goto_0
 
     .line 4
-    :cond_3
+    :cond_0
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->parameters:Lorg/conscrypt/SSLParametersImpl;
 
     .line 5
@@ -457,14 +457,14 @@
     move-result-object v0
 
     .line 10
-    if-nez v0, :cond_c
+    if-nez v0, :cond_1
 
     .line 11
     .line 12
-    goto :goto_1b
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_1
     invoke-interface {v0, p1}, Ljavax/net/ssl/X509KeyManager;->getPrivateKey(Ljava/lang/String;)Ljava/security/PrivateKey;
 
     .line 14
@@ -473,14 +473,14 @@
     move-result-object v1
 
     .line 17
-    if-nez v1, :cond_13
+    if-nez v1, :cond_2
 
     .line 18
     .line 19
-    goto :goto_1b
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_2
     invoke-interface {v0, p1}, Ljavax/net/ssl/X509KeyManager;->getCertificateChain(Ljava/lang/String;)[Ljava/security/cert/X509Certificate;
 
     .line 21
@@ -493,22 +493,22 @@
 
     .line 25
     .line 26
-    if-nez p1, :cond_1c
+    if-nez p1, :cond_3
 
     .line 27
     .line 28
-    :goto_1b
+    :goto_0
     return-void
 
     .line 29
-    :cond_1c
+    :cond_3
     array-length v0, p1
 
     .line 30
     const/4 v2, 0x0
 
     .line 31
-    if-lez v0, :cond_27
+    if-lez v0, :cond_4
 
     .line 32
     .line 33
@@ -524,20 +524,20 @@
     move-result-object p1
 
     .line 39
-    goto :goto_28
+    goto :goto_1
 
     .line 40
-    :cond_27
+    :cond_4
     const/4 p1, 0x0
 
     .line 41
-    :goto_28
+    :goto_1
     new-array v3, v0, [[B
 
     .line 42
     .line 43
-    :goto_2a
-    if-ge v2, v0, :cond_39
+    :goto_2
+    if-ge v2, v0, :cond_5
 
     .line 44
     .line 45
@@ -565,19 +565,19 @@
 
     .line 56
     .line 57
-    goto :goto_2a
+    goto :goto_2
 
     .line 58
-    :cond_39
-    :try_start_39
+    :cond_5
+    :try_start_0
     invoke-static {v1, p1}, Lorg/conscrypt/OpenSSLKey;->fromPrivateKeyForTLSStackOnly(Ljava/security/PrivateKey;Ljava/security/PublicKey;)Lorg/conscrypt/OpenSSLKey;
 
     .line 59
     .line 60
     .line 61
     move-result-object p1
-    :try_end_3d
-    .catch Ljava/security/InvalidKeyException; {:try_start_39 .. :try_end_3d} :catch_47
+    :try_end_0
+    .catch Ljava/security/InvalidKeyException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 62
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
@@ -600,7 +600,7 @@
     return-void
 
     .line 72
-    :catch_47
+    :catch_0
     move-exception p1
 
     .line 73
@@ -613,19 +613,19 @@
     .line 76
     .line 77
     .line 78
-    goto :goto_4f
+    goto :goto_4
 
     .line 79
-    :goto_4e
+    :goto_3
     throw v0
 
     .line 80
-    :goto_4f
-    goto :goto_4e
+    :goto_4
+    goto :goto_3
 .end method
 
 .method private setCertificateValidation()V
-    .registers 4
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/NativeSsl;->isClient()Z
@@ -636,7 +636,7 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_49
+    if-nez v0, :cond_2
 
     .line 6
     .line 7
@@ -652,7 +652,7 @@
     move-result v0
 
     .line 13
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 14
     .line 15
@@ -668,10 +668,10 @@
     .line 19
     .line 20
     .line 21
-    goto :goto_23
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->parameters:Lorg/conscrypt/SSLParametersImpl;
 
     .line 23
@@ -688,7 +688,7 @@
 
     .line 29
     .line 30
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_1
 
     .line 31
     .line 32
@@ -700,7 +700,7 @@
     .line 34
     .line 35
     .line 36
-    :goto_23
+    :goto_0
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->parameters:Lorg/conscrypt/SSLParametersImpl;
 
     .line 37
@@ -721,26 +721,26 @@
     move-result-object v0
 
     .line 46
-    if-eqz v0, :cond_49
+    if-eqz v0, :cond_2
 
     .line 47
     .line 48
     array-length v1, v0
 
     .line 49
-    if-eqz v1, :cond_49
+    if-eqz v1, :cond_2
 
     .line 50
     .line 51
-    :try_start_32
+    :try_start_0
     invoke-static {v0}, Lorg/conscrypt/SSLUtils;->encodeSubjectX509Principals([Ljava/security/cert/X509Certificate;)[[B
 
     .line 52
     .line 53
     .line 54
     move-result-object v0
-    :try_end_36
-    .catch Ljava/security/cert/CertificateEncodingException; {:try_start_32 .. :try_end_36} :catch_3c
+    :try_end_0
+    .catch Ljava/security/cert/CertificateEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 55
     iget-wide v1, p0, Lorg/conscrypt/NativeSsl;->ssl:J
@@ -755,7 +755,7 @@
     return-void
 
     .line 61
-    :catch_3c
+    :catch_0
     move-exception v0
 
     .line 62
@@ -775,7 +775,7 @@
     throw v1
 
     .line 70
-    :cond_45
+    :cond_1
     const/4 v0, 0x0
 
     .line 71
@@ -784,12 +784,12 @@
     .line 72
     .line 73
     .line 74
-    :cond_49
+    :cond_2
     return-void
 .end method
 
 .method private static setDefaultNamedGroups(JLorg/conscrypt/NativeSsl;)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -808,7 +808,7 @@
 .end method
 
 .method private setTlsChannelId(Lorg/conscrypt/OpenSSLKey;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->parameters:Lorg/conscrypt/SSLParametersImpl;
@@ -819,14 +819,14 @@
 
     .line 4
     .line 5
-    if-nez v1, :cond_7
+    if-nez v1, :cond_0
 
     .line 6
     .line 7
     return-void
 
     .line 8
-    :cond_7
+    :cond_0
     invoke-virtual {v0}, Lorg/conscrypt/SSLParametersImpl;->getUseClientMode()Z
 
     .line 9
@@ -835,11 +835,11 @@
     move-result v0
 
     .line 12
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_2
 
     .line 13
     .line 14
-    if-eqz p1, :cond_19
+    if-eqz p1, :cond_1
 
     .line 15
     .line 16
@@ -863,7 +863,7 @@
     return-void
 
     .line 26
-    :cond_19
+    :cond_1
     new-instance p1, Ljavax/net/ssl/SSLHandshakeException;
 
     .line 27
@@ -880,7 +880,7 @@
     throw p1
 
     .line 34
-    :cond_21
+    :cond_2
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
 
     .line 35
@@ -894,7 +894,7 @@
 .end method
 
 .method private static toBoringSslGroup(Ljava/lang/String;)I
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -913,20 +913,20 @@
     const/4 v1, -0x1
 
     .line 9
-    sparse-switch v0, :sswitch_data_a6
+    sparse-switch v0, :sswitch_data_0
 
     .line 10
     .line 11
     .line 12
-    :goto_b
+    :goto_0
     const/4 p0, -0x1
 
     .line 13
-    goto/16 :goto_8c
+    goto/16 :goto_1
 
     .line 14
     .line 15
-    :sswitch_e
+    :sswitch_0
     const-string v0, "MLKEM1024"
 
     .line 16
@@ -939,23 +939,23 @@
     move-result p0
 
     .line 21
-    if-nez p0, :cond_17
+    if-nez p0, :cond_0
 
     .line 22
     .line 23
-    goto :goto_b
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_0
     const/16 p0, 0xa
 
     .line 25
     .line 26
-    goto/16 :goto_8c
+    goto/16 :goto_1
 
     .line 27
     .line 28
-    :sswitch_1b
+    :sswitch_1
     const-string v0, "P-521"
 
     .line 29
@@ -968,23 +968,23 @@
     move-result p0
 
     .line 34
-    if-nez p0, :cond_24
+    if-nez p0, :cond_1
 
     .line 35
     .line 36
-    goto :goto_b
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_1
     const/16 p0, 0x9
 
     .line 38
     .line 39
-    goto/16 :goto_8c
+    goto/16 :goto_1
 
     .line 40
     .line 41
-    :sswitch_28
+    :sswitch_2
     const-string v0, "P-384"
 
     .line 42
@@ -997,23 +997,23 @@
     move-result p0
 
     .line 47
-    if-nez p0, :cond_31
+    if-nez p0, :cond_2
 
     .line 48
     .line 49
-    goto :goto_b
+    goto :goto_0
 
     .line 50
-    :cond_31
+    :cond_2
     const/16 p0, 0x8
 
     .line 51
     .line 52
-    goto/16 :goto_8c
+    goto/16 :goto_1
 
     .line 53
     .line 54
-    :sswitch_35
+    :sswitch_3
     const-string v0, "P-256"
 
     .line 55
@@ -1026,21 +1026,21 @@
     move-result p0
 
     .line 60
-    if-nez p0, :cond_3e
+    if-nez p0, :cond_3
 
     .line 61
     .line 62
-    goto :goto_b
+    goto :goto_0
 
     .line 63
-    :cond_3e
+    :cond_3
     const/4 p0, 0x7
 
     .line 64
-    goto :goto_8c
+    goto :goto_1
 
     .line 65
-    :sswitch_40
+    :sswitch_4
     const-string v0, "X25519MLKEM768"
 
     .line 66
@@ -1053,21 +1053,21 @@
     move-result p0
 
     .line 71
-    if-nez p0, :cond_49
+    if-nez p0, :cond_4
 
     .line 72
     .line 73
-    goto :goto_b
+    goto :goto_0
 
     .line 74
-    :cond_49
+    :cond_4
     const/4 p0, 0x6
 
     .line 75
-    goto :goto_8c
+    goto :goto_1
 
     .line 76
-    :sswitch_4b
+    :sswitch_5
     const-string v0, "x25519"
 
     .line 77
@@ -1080,21 +1080,21 @@
     move-result p0
 
     .line 82
-    if-nez p0, :cond_54
+    if-nez p0, :cond_5
 
     .line 83
     .line 84
-    goto :goto_b
+    goto :goto_0
 
     .line 85
-    :cond_54
+    :cond_5
     const/4 p0, 0x5
 
     .line 86
-    goto :goto_8c
+    goto :goto_1
 
     .line 87
-    :sswitch_56
+    :sswitch_6
     const-string v0, "secp521r1"
 
     .line 88
@@ -1107,21 +1107,21 @@
     move-result p0
 
     .line 93
-    if-nez p0, :cond_5f
+    if-nez p0, :cond_6
 
     .line 94
     .line 95
-    goto :goto_b
+    goto :goto_0
 
     .line 96
-    :cond_5f
+    :cond_6
     const/4 p0, 0x4
 
     .line 97
-    goto :goto_8c
+    goto :goto_1
 
     .line 98
-    :sswitch_61
+    :sswitch_7
     const-string v0, "secp384r1"
 
     .line 99
@@ -1134,21 +1134,21 @@
     move-result p0
 
     .line 104
-    if-nez p0, :cond_6a
+    if-nez p0, :cond_7
 
     .line 105
     .line 106
-    goto :goto_b
+    goto :goto_0
 
     .line 107
-    :cond_6a
+    :cond_7
     const/4 p0, 0x3
 
     .line 108
-    goto :goto_8c
+    goto :goto_1
 
     .line 109
-    :sswitch_6c
+    :sswitch_8
     const-string v0, "secp256r1"
 
     .line 110
@@ -1161,21 +1161,21 @@
     move-result p0
 
     .line 115
-    if-nez p0, :cond_75
+    if-nez p0, :cond_8
 
     .line 116
     .line 117
-    goto :goto_b
+    goto :goto_0
 
     .line 118
-    :cond_75
+    :cond_8
     const/4 p0, 0x2
 
     .line 119
-    goto :goto_8c
+    goto :goto_1
 
     .line 120
-    :sswitch_77
+    :sswitch_9
     const-string v0, "X25519"
 
     .line 121
@@ -1188,21 +1188,21 @@
     move-result p0
 
     .line 126
-    if-nez p0, :cond_80
+    if-nez p0, :cond_9
 
     .line 127
     .line 128
-    goto :goto_b
+    goto :goto_0
 
     .line 129
-    :cond_80
+    :cond_9
     const/4 p0, 0x1
 
     .line 130
-    goto :goto_8c
+    goto :goto_1
 
     .line 131
-    :sswitch_82
+    :sswitch_a
     const-string v0, "X25519Kyber768Draft00"
 
     .line 132
@@ -1215,19 +1215,19 @@
     move-result p0
 
     .line 137
-    if-nez p0, :cond_8b
+    if-nez p0, :cond_a
 
     .line 138
     .line 139
-    goto :goto_b
+    goto :goto_0
 
     .line 140
-    :cond_8b
+    :cond_a
     const/4 p0, 0x0
 
     .line 141
-    :goto_8c
-    packed-switch p0, :pswitch_data_d4
+    :goto_1
+    packed-switch p0, :pswitch_data_0
 
     .line 142
     .line 143
@@ -1235,7 +1235,7 @@
     return v1
 
     .line 145
-    :pswitch_90
+    :pswitch_0
     const/16 p0, 0x3c6
 
     .line 146
@@ -1243,7 +1243,7 @@
     return p0
 
     .line 148
-    :pswitch_93
+    :pswitch_1
     const/16 p0, 0x3c5
 
     .line 149
@@ -1251,7 +1251,7 @@
     return p0
 
     .line 151
-    :pswitch_96
+    :pswitch_2
     const/16 p0, 0x2cc
 
     .line 152
@@ -1259,7 +1259,7 @@
     return p0
 
     .line 154
-    :pswitch_99
+    :pswitch_3
     const/16 p0, 0x2cb
 
     .line 155
@@ -1267,7 +1267,7 @@
     return p0
 
     .line 157
-    :pswitch_9c
+    :pswitch_4
     const/16 p0, 0x19f
 
     .line 158
@@ -1275,7 +1275,7 @@
     return p0
 
     .line 160
-    :pswitch_9f
+    :pswitch_5
     const/16 p0, 0x3b4
 
     .line 161
@@ -1283,7 +1283,7 @@
     return p0
 
     .line 163
-    :pswitch_a2
+    :pswitch_6
     const/16 p0, 0x3c4
 
     .line 164
@@ -1294,19 +1294,19 @@
     nop
 
     .line 167
-    :sswitch_data_a6
+    :sswitch_data_0
     .sparse-switch
-        -0x72754bf9 -> :sswitch_82
-        -0x66fc0d5e -> :sswitch_77
-        -0x326a374d -> :sswitch_6c
-        -0x325aca31 -> :sswitch_61
-        -0x324160ac -> :sswitch_56
-        -0x3060f97e -> :sswitch_4b
-        -0x1ec016d9 -> :sswitch_40
-        0x47c8f56 -> :sswitch_35
-        0x47c9372 -> :sswitch_28
-        0x47c9a37 -> :sswitch_1b
-        0x68f486d5 -> :sswitch_e
+        -0x72754bf9 -> :sswitch_a
+        -0x66fc0d5e -> :sswitch_9
+        -0x326a374d -> :sswitch_8
+        -0x325aca31 -> :sswitch_7
+        -0x324160ac -> :sswitch_6
+        -0x3060f97e -> :sswitch_5
+        -0x1ec016d9 -> :sswitch_4
+        0x47c8f56 -> :sswitch_3
+        0x47c9372 -> :sswitch_2
+        0x47c9a37 -> :sswitch_1
+        0x68f486d5 -> :sswitch_0
     .end sparse-switch
 
     .line 168
@@ -1355,24 +1355,24 @@
     .line 211
     .line 212
     .line 213
-    :pswitch_data_d4
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a2
-        :pswitch_9f
-        :pswitch_9c
-        :pswitch_99
-        :pswitch_96
-        :pswitch_9f
-        :pswitch_93
-        :pswitch_9c
-        :pswitch_99
-        :pswitch_96
-        :pswitch_90
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_5
+        :pswitch_1
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static toBoringSslGroups([Ljava/lang/String;)[I
-    .registers 6
+    .locals 5
 
     .line 1
     array-length v0, p0
@@ -1391,8 +1391,8 @@
     const/4 v3, 0x0
 
     .line 7
-    :goto_6
-    if-ge v2, v1, :cond_17
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     .line 8
     .line 9
@@ -1408,7 +1408,7 @@
     move-result v4
 
     .line 15
-    if-lez v4, :cond_14
+    if-lez v4, :cond_0
 
     .line 16
     .line 17
@@ -1420,23 +1420,23 @@
 
     .line 20
     .line 21
-    :cond_14
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
     .line 22
     .line 23
-    goto :goto_6
+    goto :goto_0
 
     .line 24
-    :cond_17
-    if-eqz v3, :cond_22
+    :cond_1
+    if-eqz v3, :cond_3
 
     .line 25
     .line 26
     array-length p0, p0
 
     .line 27
-    if-ge v3, p0, :cond_21
+    if-ge v3, p0, :cond_2
 
     .line 28
     .line 29
@@ -1451,11 +1451,11 @@
     return-object p0
 
     .line 34
-    :cond_21
+    :cond_2
     return-object v0
 
     .line 35
-    :cond_22
+    :cond_3
     const-string v0, "No valid known group found in: "
 
     .line 36
@@ -1480,7 +1480,7 @@
 .end method
 
 .method private verifyWithSniMatchers(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-static {p1}, Lorg/conscrypt/AddressUtils;->isValidSniHostname(Ljava/lang/String;)Z
@@ -1491,14 +1491,14 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
-    goto :goto_f
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->parameters:Lorg/conscrypt/SSLParametersImpl;
 
     .line 9
@@ -1511,15 +1511,15 @@
     move-result v0
 
     .line 14
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_1
 
     .line 15
     .line 16
-    :goto_f
+    :goto_0
     return-void
 
     .line 17
-    :cond_10
+    :cond_1
     new-instance v0, Ljavax/net/ssl/SSLHandshakeException;
 
     .line 18
@@ -1547,7 +1547,7 @@
 
 # virtual methods
 .method public chooseClientCertificate([B[I[[B)V
-    .registers 8
+    .locals 4
 
     .line 1
     invoke-static {p1, p2}, Lorg/conscrypt/SSLUtils;->getSupportedClientKeyTypes([B[I)Ljava/util/Set;
@@ -1580,17 +1580,17 @@
     const/4 v0, 0x0
 
     .line 15
-    if-nez p3, :cond_12
+    if-nez p3, :cond_0
 
     .line 16
     .line 17
     move-object v1, v0
 
     .line 18
-    goto :goto_24
+    goto :goto_1
 
     .line 19
-    :cond_12
+    :cond_0
     array-length v1, p3
 
     .line 20
@@ -1598,11 +1598,11 @@
 
     .line 21
     .line 22
-    :goto_15
+    :goto_0
     array-length v2, p3
 
     .line 23
-    if-ge p2, v2, :cond_24
+    if-ge p2, v2, :cond_1
 
     .line 24
     .line 25
@@ -1627,11 +1627,11 @@
 
     .line 35
     .line 36
-    goto :goto_15
+    goto :goto_0
 
     .line 37
-    :cond_24
-    :goto_24
+    :cond_1
+    :goto_1
     iget-object p2, p0, Lorg/conscrypt/NativeSsl;->parameters:Lorg/conscrypt/SSLParametersImpl;
 
     .line 38
@@ -1644,7 +1644,7 @@
     move-result-object p2
 
     .line 43
-    if-eqz p2, :cond_32
+    if-eqz p2, :cond_2
 
     .line 44
     .line 45
@@ -1660,7 +1660,7 @@
     move-result-object v0
 
     .line 51
-    :cond_32
+    :cond_2
     invoke-direct {p0, v0}, Lorg/conscrypt/NativeSsl;->setCertificate(Ljava/lang/String;)V
 
     .line 52
@@ -1670,7 +1670,7 @@
 .end method
 
 .method public clientPSKKeyRequested(Ljava/lang/String;[B[B)I
-    .registers 11
+    .locals 7
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->parameters:Lorg/conscrypt/SSLParametersImpl;
@@ -1688,14 +1688,14 @@
     const/4 v1, 0x0
 
     .line 8
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     .line 9
     .line 10
     return v1
 
     .line 11
-    :cond_a
+    :cond_0
     iget-object v2, p0, Lorg/conscrypt/NativeSsl;->pskCallbacks:Lorg/conscrypt/SSLParametersImpl$PSKCallbacks;
 
     .line 12
@@ -1708,7 +1708,7 @@
     move-result-object v2
 
     .line 17
-    if-nez v2, :cond_17
+    if-nez v2, :cond_1
 
     .line 18
     .line 19
@@ -1720,10 +1720,10 @@
 
     .line 22
     .line 23
-    goto :goto_2a
+    goto :goto_1
 
     .line 24
-    :cond_17
+    :cond_1
     invoke-virtual {v2}, Ljava/lang/String;->isEmpty()Z
 
     .line 25
@@ -1732,7 +1732,7 @@
     move-result v3
 
     .line 28
-    if-eqz v3, :cond_23
+    if-eqz v3, :cond_2
 
     .line 29
     .line 30
@@ -1740,7 +1740,7 @@
 
     .line 31
     .line 32
-    :goto_1f
+    :goto_0
     move-object v6, v3
 
     .line 33
@@ -1750,10 +1750,10 @@
     move-object v2, v6
 
     .line 35
-    goto :goto_2a
+    goto :goto_1
 
     .line 36
-    :cond_23
+    :cond_2
     sget-object v3, Llibs/ue3;->c:Ljava/nio/charset/Charset;
 
     .line 37
@@ -1766,10 +1766,10 @@
     move-result-object v3
 
     .line 42
-    goto :goto_1f
+    goto :goto_0
 
     .line 43
-    :goto_2a
+    :goto_1
     array-length v4, v2
 
     .line 44
@@ -1780,18 +1780,18 @@
     array-length v5, p2
 
     .line 47
-    if-le v4, v5, :cond_31
+    if-le v4, v5, :cond_3
 
     .line 48
     .line 49
     return v1
 
     .line 50
-    :cond_31
+    :cond_3
     array-length v4, v2
 
     .line 51
-    if-lez v4, :cond_38
+    if-lez v4, :cond_4
 
     .line 52
     .line 53
@@ -1803,7 +1803,7 @@
     .line 55
     .line 56
     .line 57
-    :cond_38
+    :cond_4
     array-length v2, v2
 
     .line 58
@@ -1831,28 +1831,28 @@
     move-result-object p1
 
     .line 70
-    if-nez p1, :cond_48
+    if-nez p1, :cond_5
 
     .line 71
     .line 72
     return v1
 
     .line 73
-    :cond_48
+    :cond_5
     array-length p2, p1
 
     .line 74
     array-length v0, p3
 
     .line 75
-    if-le p2, v0, :cond_4d
+    if-le p2, v0, :cond_6
 
     .line 76
     .line 77
     return v1
 
     .line 78
-    :cond_4d
+    :cond_6
     array-length p2, p1
 
     .line 79
@@ -1868,7 +1868,7 @@
 .end method
 
 .method public close()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
@@ -1888,7 +1888,7 @@
     .line 8
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     invoke-virtual {p0}, Lorg/conscrypt/NativeSsl;->isClosed()Z
 
     .line 11
@@ -1897,7 +1897,7 @@
     move-result v0
 
     .line 14
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_0
 
     .line 15
     .line 16
@@ -1914,24 +1914,24 @@
     .line 21
     .line 22
     invoke-static {v0, v1, p0}, Lorg/conscrypt/NativeCrypto;->SSL_free(JLorg/conscrypt/NativeSsl;)V
-    :try_end_18
-    .catchall {:try_start_9 .. :try_end_18} :catchall_19
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 23
     .line 24
     .line 25
-    goto :goto_1b
+    goto :goto_0
 
     .line 26
-    :catchall_19
+    :catchall_0
     move-exception v0
 
     .line 27
-    goto :goto_25
+    goto :goto_1
 
     .line 28
-    :cond_1b
-    :goto_1b
+    :cond_0
+    :goto_0
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     .line 29
@@ -1952,7 +1952,7 @@
     return-void
 
     .line 38
-    :goto_25
+    :goto_1
     iget-object v1, p0, Lorg/conscrypt/NativeSsl;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     .line 39
@@ -1974,7 +1974,7 @@
 .end method
 
 .method public configureServerCertificate()V
-    .registers 5
+    .locals 4
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/NativeSsl;->getRequestedServerName()Ljava/lang/String;
@@ -1998,14 +1998,14 @@
     move-result v0
 
     .line 12
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 13
     .line 14
-    goto :goto_3b
+    goto :goto_1
 
     .line 15
-    :cond_e
+    :cond_0
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->parameters:Lorg/conscrypt/SSLParametersImpl;
 
     .line 16
@@ -2018,7 +2018,7 @@
     move-result-object v0
 
     .line 21
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_1
 
     .line 22
     .line 23
@@ -2038,7 +2038,7 @@
     move-result-object v1
 
     .line 31
-    :goto_1e
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 32
@@ -2047,7 +2047,7 @@
     move-result v2
 
     .line 35
-    if-eqz v2, :cond_3b
+    if-eqz v2, :cond_1
 
     .line 36
     .line 37
@@ -2063,7 +2063,7 @@
 
     .line 42
     .line 43
-    :try_start_2a
+    :try_start_0
     iget-object v3, p0, Lorg/conscrypt/NativeSsl;->aliasChooser:Lorg/conscrypt/SSLParametersImpl$AliasChooser;
 
     .line 44
@@ -2077,16 +2077,16 @@
 
     .line 49
     invoke-direct {p0, v2}, Lorg/conscrypt/NativeSsl;->setCertificate(Ljava/lang/String;)V
-    :try_end_33
-    .catch Ljava/security/cert/CertificateEncodingException; {:try_start_2a .. :try_end_33} :catch_34
+    :try_end_0
+    .catch Ljava/security/cert/CertificateEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 50
     .line 51
     .line 52
-    goto :goto_1e
+    goto :goto_0
 
     .line 53
-    :catch_34
+    :catch_0
     move-exception v0
 
     .line 54
@@ -2102,13 +2102,13 @@
     throw v1
 
     .line 60
-    :cond_3b
-    :goto_3b
+    :cond_1
+    :goto_1
     return-void
 .end method
 
 .method public doHandshake()I
-    .registers 4
+    .locals 3
 
     .line 65
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
@@ -2120,7 +2120,7 @@
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
 
     .line 66
-    :try_start_9
+    :try_start_0
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
 
     iget-object v2, p0, Lorg/conscrypt/NativeSsl;->handshakeCallbacks:Lorg/conscrypt/NativeCrypto$SSLHandshakeCallbacks;
@@ -2128,8 +2128,8 @@
     invoke-static {v0, v1, p0, v2}, Lorg/conscrypt/NativeCrypto;->ENGINE_SSL_do_handshake(JLorg/conscrypt/NativeSsl;Lorg/conscrypt/NativeCrypto$SSLHandshakeCallbacks;)I
 
     move-result v0
-    :try_end_11
-    .catchall {:try_start_9 .. :try_end_11} :catchall_1b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 67
     iget-object v1, p0, Lorg/conscrypt/NativeSsl;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
@@ -2142,7 +2142,7 @@
 
     return v0
 
-    :catchall_1b
+    :catchall_0
     move-exception v0
 
     iget-object v1, p0, Lorg/conscrypt/NativeSsl;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
@@ -2158,7 +2158,7 @@
 .end method
 
 .method public doHandshake(Ljava/io/FileDescriptor;I)V
-    .registers 10
+    .locals 7
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
@@ -2178,7 +2178,7 @@
     .line 8
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     invoke-virtual {p0}, Lorg/conscrypt/NativeSsl;->isClosed()Z
 
     .line 11
@@ -2187,11 +2187,11 @@
     move-result v0
 
     .line 14
-    if-nez v0, :cond_2e
+    if-nez v0, :cond_0
 
     .line 15
     .line 16
-    if-eqz p1, :cond_2e
+    if-eqz p1, :cond_0
 
     .line 17
     .line 18
@@ -2203,7 +2203,7 @@
     move-result v0
 
     .line 22
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_0
 
     .line 23
     .line 24
@@ -2225,8 +2225,8 @@
 
     .line 31
     invoke-static/range {v1 .. v6}, Lorg/conscrypt/NativeCrypto;->SSL_do_handshake(JLorg/conscrypt/NativeSsl;Ljava/io/FileDescriptor;Lorg/conscrypt/NativeCrypto$SSLHandshakeCallbacks;I)V
-    :try_end_21
-    .catchall {:try_start_9 .. :try_end_21} :catchall_2b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 32
     .line 33
@@ -2251,18 +2251,18 @@
     return-void
 
     .line 44
-    :catchall_2b
+    :catchall_0
     move-exception v0
 
     .line 45
     move-object p1, v0
 
     .line 46
-    goto :goto_36
+    goto :goto_0
 
     .line 47
-    :cond_2e
-    :try_start_2e
+    :cond_0
+    :try_start_1
     new-instance p1, Ljava/net/SocketException;
 
     .line 48
@@ -2277,11 +2277,11 @@
     .line 53
     .line 54
     throw p1
-    :try_end_36
-    .catchall {:try_start_2e .. :try_end_36} :catchall_2b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 55
-    :goto_36
+    :goto_0
     iget-object p2, p0, Lorg/conscrypt/NativeSsl;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     .line 56
@@ -2303,10 +2303,10 @@
 .end method
 
 .method public exportKeyingMaterial(Ljava/lang/String;[BI)[B
-    .registers 11
+    .locals 7
 
     .line 1
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     .line 2
     .line 3
@@ -2346,7 +2346,7 @@
     return-object p1
 
     .line 19
-    :cond_12
+    :cond_0
     const-string p1, "Label is null"
 
     .line 20
@@ -2363,13 +2363,13 @@
 .end method
 
 .method public finalize()V
-    .registers 2
+    .locals 1
 
     .line 1
     :try_start_0
     invoke-virtual {p0}, Lorg/conscrypt/NativeSsl;->close()V
-    :try_end_3
-    .catchall {:try_start_0 .. :try_end_3} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 2
     .line 3
@@ -2382,7 +2382,7 @@
     return-void
 
     .line 8
-    :catchall_7
+    :catchall_0
     move-exception v0
 
     .line 9
@@ -2395,7 +2395,7 @@
 .end method
 
 .method public forceRead()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
@@ -2415,7 +2415,7 @@
     .line 8
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
 
     .line 11
@@ -2425,8 +2425,8 @@
     .line 13
     .line 14
     invoke-static {v0, v1, p0, v2}, Lorg/conscrypt/NativeCrypto;->ENGINE_SSL_force_read(JLorg/conscrypt/NativeSsl;Lorg/conscrypt/NativeCrypto$SSLHandshakeCallbacks;)V
-    :try_end_10
-    .catchall {:try_start_9 .. :try_end_10} :catchall_1a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 15
     .line 16
@@ -2451,7 +2451,7 @@
     return-void
 
     .line 27
-    :catchall_1a
+    :catchall_0
     move-exception v0
 
     .line 28
@@ -2476,7 +2476,7 @@
 .end method
 
 .method public getApplicationProtocol()[B
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
@@ -2495,7 +2495,7 @@
 .end method
 
 .method public getCipherSuite()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
@@ -2522,7 +2522,7 @@
 .end method
 
 .method public getCurveNameForTesting()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
@@ -2541,7 +2541,7 @@
 .end method
 
 .method public getError(I)I
-    .registers 4
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
@@ -2560,7 +2560,7 @@
 .end method
 
 .method public getLocalCertificates()[Ljava/security/cert/X509Certificate;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->localCertificates:[Ljava/security/cert/X509Certificate;
@@ -2571,7 +2571,7 @@
 .end method
 
 .method public getMaxSealOverhead()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
@@ -2590,7 +2590,7 @@
 .end method
 
 .method public getPeerCertificateOcspData()[B
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
@@ -2609,7 +2609,7 @@
 .end method
 
 .method public getPeerCertificates()[Ljava/security/cert/X509Certificate;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
@@ -2624,7 +2624,7 @@
     move-result-object v0
 
     .line 7
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     .line 8
     .line 9
@@ -2634,7 +2634,7 @@
     return-object v0
 
     .line 11
-    :cond_a
+    :cond_0
     invoke-static {v0}, Lorg/conscrypt/SSLUtils;->decodeX509CertificateChain([[B)[Ljava/security/cert/X509Certificate;
 
     .line 12
@@ -2647,7 +2647,7 @@
 .end method
 
 .method public getPeerTlsSctData()[B
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
@@ -2666,7 +2666,7 @@
 .end method
 
 .method public getPendingReadableBytes()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
@@ -2686,7 +2686,7 @@
     .line 8
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     invoke-virtual {p0}, Lorg/conscrypt/NativeSsl;->isClosed()Z
 
     .line 11
@@ -2695,7 +2695,7 @@
     move-result v0
 
     .line 14
-    if-nez v0, :cond_21
+    if-nez v0, :cond_0
 
     .line 15
     .line 16
@@ -2709,8 +2709,8 @@
     .line 20
     .line 21
     move-result v0
-    :try_end_15
-    .catchall {:try_start_9 .. :try_end_15} :catchall_1f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 22
     iget-object v1, p0, Lorg/conscrypt/NativeSsl;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
@@ -2733,14 +2733,14 @@
     return v0
 
     .line 32
-    :catchall_1f
+    :catchall_0
     move-exception v0
 
     .line 33
-    goto :goto_2c
+    goto :goto_0
 
     .line 34
-    :cond_21
+    :cond_0
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     .line 35
@@ -2764,7 +2764,7 @@
     return v0
 
     .line 45
-    :goto_2c
+    :goto_0
     iget-object v1, p0, Lorg/conscrypt/NativeSsl;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     .line 46
@@ -2786,7 +2786,7 @@
 .end method
 
 .method public getRequestedServerName()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
@@ -2805,7 +2805,7 @@
 .end method
 
 .method public getSessionId()[B
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
@@ -2824,7 +2824,7 @@
 .end method
 
 .method public getTime()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
@@ -2843,7 +2843,7 @@
 .end method
 
 .method public getTimeout()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
@@ -2862,7 +2862,7 @@
 .end method
 
 .method public getTlsChannelId()[B
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
@@ -2881,7 +2881,7 @@
 .end method
 
 .method public getTlsUnique()[B
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
@@ -2900,7 +2900,7 @@
 .end method
 
 .method public getVersion()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
@@ -2919,7 +2919,7 @@
 .end method
 
 .method public initialize(Ljava/lang/String;Lorg/conscrypt/OpenSSLKey;)V
-    .registers 10
+    .locals 7
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->parameters:Lorg/conscrypt/SSLParametersImpl;
@@ -2934,7 +2934,7 @@
     move-result v0
 
     .line 7
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 8
     .line 9
@@ -2950,7 +2950,7 @@
     .line 13
     .line 14
     .line 15
-    :cond_e
+    :cond_0
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
 
     .line 16
@@ -2972,7 +2972,7 @@
 
     .line 25
     .line 26
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_1
 
     .line 27
     .line 28
@@ -3002,7 +3002,7 @@
     move-result v0
 
     .line 42
-    if-eqz v0, :cond_41
+    if-eqz v0, :cond_2
 
     .line 43
     .line 44
@@ -3015,10 +3015,10 @@
     .line 47
     .line 48
     .line 49
-    goto :goto_41
+    goto :goto_0
 
     .line 50
-    :cond_31
+    :cond_1
     invoke-static {v1, v2, p0}, Lorg/conscrypt/NativeCrypto;->SSL_set_accept_state(JLorg/conscrypt/NativeSsl;)V
 
     .line 51
@@ -3036,7 +3036,7 @@
     move-result-object v0
 
     .line 59
-    if-eqz v0, :cond_41
+    if-eqz v0, :cond_2
 
     .line 60
     .line 61
@@ -3049,8 +3049,8 @@
     .line 64
     .line 65
     .line 66
-    :cond_41
-    :goto_41
+    :cond_2
+    :goto_0
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->parameters:Lorg/conscrypt/SSLParametersImpl;
 
     .line 67
@@ -3066,7 +3066,7 @@
     array-length v0, v0
 
     .line 73
-    if-nez v0, :cond_59
+    if-nez v0, :cond_4
 
     .line 74
     .line 75
@@ -3078,14 +3078,14 @@
 
     .line 78
     .line 79
-    if-nez v0, :cond_51
+    if-nez v0, :cond_3
 
     .line 80
     .line 81
-    goto :goto_59
+    goto :goto_1
 
     .line 82
-    :cond_51
+    :cond_3
     new-instance p1, Ljavax/net/ssl/SSLHandshakeException;
 
     .line 83
@@ -3102,8 +3102,8 @@
     throw p1
 
     .line 90
-    :cond_59
-    :goto_59
+    :cond_4
+    :goto_1
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
 
     .line 91
@@ -3133,7 +3133,7 @@
     move-result v0
 
     .line 105
-    if-nez v0, :cond_75
+    if-nez v0, :cond_5
 
     .line 106
     .line 107
@@ -3158,7 +3158,7 @@
     .line 116
     .line 117
     .line 118
-    :cond_75
+    :cond_5
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->parameters:Lorg/conscrypt/SSLParametersImpl;
 
     .line 119
@@ -3171,7 +3171,7 @@
     move-result-object v0
 
     .line 124
-    if-eqz v0, :cond_87
+    if-eqz v0, :cond_6
 
     .line 125
     .line 126
@@ -3192,10 +3192,10 @@
     .line 133
     .line 134
     .line 135
-    goto :goto_a5
+    goto :goto_3
 
     .line 136
-    :cond_87
+    :cond_6
     const-string v0, "jdk.tls.namedGroups"
 
     .line 137
@@ -3208,7 +3208,7 @@
     move-result-object v0
 
     .line 142
-    if-eqz v0, :cond_a0
+    if-eqz v0, :cond_8
 
     .line 143
     .line 144
@@ -3220,14 +3220,14 @@
     move-result v1
 
     .line 148
-    if-eqz v1, :cond_96
+    if-eqz v1, :cond_7
 
     .line 149
     .line 150
-    goto :goto_a0
+    goto :goto_2
 
     .line 151
-    :cond_96
+    :cond_7
     invoke-static {v0}, Lorg/conscrypt/NativeSsl;->parseNamedGroupsProperty(Ljava/lang/String;)[I
 
     .line 152
@@ -3245,11 +3245,11 @@
     .line 158
     .line 159
     .line 160
-    goto :goto_a5
+    goto :goto_3
 
     .line 161
-    :cond_a0
-    :goto_a0
+    :cond_8
+    :goto_2
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
 
     .line 162
@@ -3259,7 +3259,7 @@
     .line 164
     .line 165
     .line 166
-    :goto_a5
+    :goto_3
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->parameters:Lorg/conscrypt/SSLParametersImpl;
 
     .line 167
@@ -3271,7 +3271,7 @@
     array-length v0, v0
 
     .line 171
-    if-lez v0, :cond_b9
+    if-lez v0, :cond_9
 
     .line 172
     .line 173
@@ -3300,7 +3300,7 @@
     .line 184
     .line 185
     .line 186
-    :cond_b9
+    :cond_9
     invoke-direct {p0}, Lorg/conscrypt/NativeSsl;->isClient()Z
 
     .line 187
@@ -3309,7 +3309,7 @@
     move-result v0
 
     .line 190
-    if-nez v0, :cond_cb
+    if-nez v0, :cond_a
 
     .line 191
     .line 192
@@ -3321,7 +3321,7 @@
 
     .line 195
     .line 196
-    if-eqz v0, :cond_cb
+    if-eqz v0, :cond_a
 
     .line 197
     .line 198
@@ -3337,7 +3337,7 @@
     .line 202
     .line 203
     .line 204
-    :cond_cb
+    :cond_a
     invoke-direct {p0}, Lorg/conscrypt/NativeSsl;->isClient()Z
 
     .line 205
@@ -3346,7 +3346,7 @@
     move-result v0
 
     .line 208
-    if-nez v0, :cond_f7
+    if-nez v0, :cond_c
 
     .line 209
     .line 210
@@ -3372,7 +3372,7 @@
 
     .line 221
     .line 222
-    if-eqz v0, :cond_e8
+    if-eqz v0, :cond_b
 
     .line 223
     .line 224
@@ -3393,7 +3393,7 @@
     .line 231
     .line 232
     .line 233
-    :cond_e8
+    :cond_b
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->parameters:Lorg/conscrypt/SSLParametersImpl;
 
     .line 234
@@ -3402,7 +3402,7 @@
 
     .line 236
     .line 237
-    if-eqz v0, :cond_f7
+    if-eqz v0, :cond_c
 
     .line 238
     .line 239
@@ -3423,7 +3423,7 @@
     .line 246
     .line 247
     .line 248
-    :cond_f7
+    :cond_c
     invoke-direct {p0}, Lorg/conscrypt/NativeSsl;->enablePSKKeyManagerIfRequested()V
 
     .line 249
@@ -3445,7 +3445,7 @@
 
     .line 258
     .line 259
-    if-eqz v0, :cond_108
+    if-eqz v0, :cond_d
 
     .line 260
     .line 261
@@ -3454,10 +3454,10 @@
     .line 262
     .line 263
     .line 264
-    goto :goto_112
+    goto :goto_4
 
     .line 265
-    :cond_108
+    :cond_d
     iget-wide v5, p0, Lorg/conscrypt/NativeSsl;->ssl:J
 
     .line 266
@@ -3478,7 +3478,7 @@
     .line 273
     .line 274
     .line 275
-    :goto_112
+    :goto_4
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->parameters:Lorg/conscrypt/SSLParametersImpl;
 
     .line 276
@@ -3491,7 +3491,7 @@
     move-result v0
 
     .line 281
-    if-eqz v0, :cond_125
+    if-eqz v0, :cond_e
 
     .line 282
     .line 283
@@ -3503,7 +3503,7 @@
     move-result v0
 
     .line 287
-    if-eqz v0, :cond_125
+    if-eqz v0, :cond_e
 
     .line 288
     .line 289
@@ -3516,7 +3516,7 @@
     .line 292
     .line 293
     .line 294
-    :cond_125
+    :cond_e
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
 
     .line 295
@@ -3542,7 +3542,7 @@
     move-result p1
 
     .line 307
-    if-nez p1, :cond_137
+    if-nez p1, :cond_f
 
     .line 308
     .line 309
@@ -3551,7 +3551,7 @@
     .line 310
     .line 311
     .line 312
-    :cond_137
+    :cond_f
     invoke-direct {p0, p2}, Lorg/conscrypt/NativeSsl;->setTlsChannelId(Lorg/conscrypt/OpenSSLKey;)V
 
     .line 313
@@ -3561,7 +3561,7 @@
 .end method
 
 .method public interrupt()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
@@ -3577,7 +3577,7 @@
 .end method
 
 .method public isClosed()Z
-    .registers 6
+    .locals 5
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
@@ -3592,7 +3592,7 @@
 
     .line 6
     .line 7
-    if-nez v4, :cond_a
+    if-nez v4, :cond_0
 
     .line 8
     .line 9
@@ -3602,7 +3602,7 @@
     return v0
 
     .line 11
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
     .line 12
@@ -3610,7 +3610,7 @@
 .end method
 
 .method public newBio()Lorg/conscrypt/NativeSsl$BioWrapper;
-    .registers 3
+    .locals 2
 
     .line 1
     :try_start_0
@@ -3622,8 +3622,8 @@
 
     .line 4
     invoke-direct {v0, p0, v1}, Lorg/conscrypt/NativeSsl$BioWrapper;-><init>(Lorg/conscrypt/NativeSsl;I)V
-    :try_end_6
-    .catch Ljavax/net/ssl/SSLException; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Ljavax/net/ssl/SSLException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 5
     .line 6
@@ -3631,7 +3631,7 @@
     return-object v0
 
     .line 8
-    :catch_7
+    :catch_0
     move-exception v0
 
     .line 9
@@ -3647,7 +3647,7 @@
 .end method
 
 .method public offerToResumeSession(J)V
-    .registers 5
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
@@ -3663,7 +3663,7 @@
 .end method
 
 .method public read(Ljava/io/FileDescriptor;[BIII)I
-    .registers 16
+    .locals 10
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
@@ -3683,7 +3683,7 @@
     .line 8
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     invoke-virtual {p0}, Lorg/conscrypt/NativeSsl;->isClosed()Z
 
     .line 11
@@ -3692,11 +3692,11 @@
     move-result v0
 
     .line 14
-    if-nez v0, :cond_32
+    if-nez v0, :cond_0
 
     .line 15
     .line 16
-    if-eqz p1, :cond_32
+    if-eqz p1, :cond_0
 
     .line 17
     .line 18
@@ -3708,7 +3708,7 @@
     move-result v0
 
     .line 22
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_0
 
     .line 23
     .line 24
@@ -3744,8 +3744,8 @@
     .line 36
     .line 37
     move-result p1
-    :try_end_25
-    .catchall {:try_start_9 .. :try_end_25} :catchall_2f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 38
     iget-object p2, p0, Lorg/conscrypt/NativeSsl;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
@@ -3768,18 +3768,18 @@
     return p1
 
     .line 48
-    :catchall_2f
+    :catchall_0
     move-exception v0
 
     .line 49
     move-object p1, v0
 
     .line 50
-    goto :goto_3a
+    goto :goto_0
 
     .line 51
-    :cond_32
-    :try_start_32
+    :cond_0
+    :try_start_1
     new-instance p1, Ljava/net/SocketException;
 
     .line 52
@@ -3794,11 +3794,11 @@
     .line 57
     .line 58
     throw p1
-    :try_end_3a
-    .catchall {:try_start_32 .. :try_end_3a} :catchall_2f
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 59
-    :goto_3a
+    :goto_0
     iget-object p2, p0, Lorg/conscrypt/NativeSsl;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     .line 60
@@ -3820,7 +3820,7 @@
 .end method
 
 .method public readDirectByteBuffer(JI)I
-    .registers 12
+    .locals 8
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
@@ -3840,7 +3840,7 @@
     .line 8
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     iget-wide v1, p0, Lorg/conscrypt/NativeSsl;->ssl:J
 
     .line 11
@@ -3864,8 +3864,8 @@
     .line 19
     .line 20
     move-result p1
-    :try_end_14
-    .catchall {:try_start_9 .. :try_end_14} :catchall_1e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 21
     iget-object p2, p0, Lorg/conscrypt/NativeSsl;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
@@ -3888,7 +3888,7 @@
     return p1
 
     .line 31
-    :catchall_1e
+    :catchall_0
     move-exception v0
 
     .line 32
@@ -3916,7 +3916,7 @@
 .end method
 
 .method public serverPSKKeyRequested(Ljava/lang/String;Ljava/lang/String;[B)I
-    .registers 7
+    .locals 3
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->parameters:Lorg/conscrypt/SSLParametersImpl;
@@ -3934,14 +3934,14 @@
     const/4 v1, 0x0
 
     .line 8
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     .line 9
     .line 10
     return v1
 
     .line 11
-    :cond_a
+    :cond_0
     iget-object v2, p0, Lorg/conscrypt/NativeSsl;->pskCallbacks:Lorg/conscrypt/SSLParametersImpl$PSKCallbacks;
 
     .line 12
@@ -3962,28 +3962,28 @@
     move-result-object p1
 
     .line 21
-    if-nez p1, :cond_17
+    if-nez p1, :cond_1
 
     .line 22
     .line 23
     return v1
 
     .line 24
-    :cond_17
+    :cond_1
     array-length p2, p1
 
     .line 25
     array-length v0, p3
 
     .line 26
-    if-le p2, v0, :cond_1c
+    if-le p2, v0, :cond_2
 
     .line 27
     .line 28
     return v1
 
     .line 29
-    :cond_1c
+    :cond_2
     array-length p2, p1
 
     .line 30
@@ -3999,7 +3999,7 @@
 .end method
 
 .method public setTimeout(J)V
-    .registers 5
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
@@ -4015,7 +4015,7 @@
 .end method
 
 .method public shutdown()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
@@ -4035,7 +4035,7 @@
     .line 8
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
 
     .line 11
@@ -4045,8 +4045,8 @@
     .line 13
     .line 14
     invoke-static {v0, v1, p0, v2}, Lorg/conscrypt/NativeCrypto;->ENGINE_SSL_shutdown(JLorg/conscrypt/NativeSsl;Lorg/conscrypt/NativeCrypto$SSLHandshakeCallbacks;)V
-    :try_end_10
-    .catchall {:try_start_9 .. :try_end_10} :catchall_1a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 15
     .line 16
@@ -4071,7 +4071,7 @@
     return-void
 
     .line 27
-    :catchall_1a
+    :catchall_0
     move-exception v0
 
     .line 28
@@ -4096,7 +4096,7 @@
 .end method
 
 .method public shutdown(Ljava/io/FileDescriptor;)V
-    .registers 5
+    .locals 3
 
     .line 38
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
@@ -4109,7 +4109,7 @@
 .end method
 
 .method public wasShutdownReceived()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
@@ -4129,7 +4129,7 @@
     .line 8
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
 
     .line 11
@@ -4140,29 +4140,29 @@
     .line 14
     .line 15
     move-result v0
-    :try_end_f
-    .catchall {:try_start_9 .. :try_end_f} :catchall_20
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 16
     and-int/lit8 v0, v0, 0x2
 
     .line 17
     .line 18
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 19
     .line 20
     const/4 v0, 0x1
 
     .line 21
-    goto :goto_16
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     const/4 v0, 0x0
 
     .line 23
-    :goto_16
+    :goto_0
     iget-object v1, p0, Lorg/conscrypt/NativeSsl;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     .line 24
@@ -4183,7 +4183,7 @@
     return v0
 
     .line 33
-    :catchall_20
+    :catchall_0
     move-exception v0
 
     .line 34
@@ -4208,7 +4208,7 @@
 .end method
 
 .method public wasShutdownSent()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
@@ -4228,7 +4228,7 @@
     .line 8
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     iget-wide v0, p0, Lorg/conscrypt/NativeSsl;->ssl:J
 
     .line 11
@@ -4239,8 +4239,8 @@
     .line 14
     .line 15
     move-result v0
-    :try_end_f
-    .catchall {:try_start_9 .. :try_end_f} :catchall_1f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 16
     const/4 v1, 0x1
@@ -4249,18 +4249,18 @@
     and-int/2addr v0, v1
 
     .line 18
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 19
     .line 20
-    goto :goto_15
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_0
     const/4 v1, 0x0
 
     .line 22
-    :goto_15
+    :goto_0
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     .line 23
@@ -4281,7 +4281,7 @@
     return v1
 
     .line 32
-    :catchall_1f
+    :catchall_0
     move-exception v0
 
     .line 33
@@ -4306,7 +4306,7 @@
 .end method
 
 .method public write(Ljava/io/FileDescriptor;[BIII)V
-    .registers 16
+    .locals 10
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
@@ -4326,7 +4326,7 @@
     .line 8
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     invoke-virtual {p0}, Lorg/conscrypt/NativeSsl;->isClosed()Z
 
     .line 11
@@ -4335,11 +4335,11 @@
     move-result v0
 
     .line 14
-    if-nez v0, :cond_31
+    if-nez v0, :cond_0
 
     .line 15
     .line 16
-    if-eqz p1, :cond_31
+    if-eqz p1, :cond_0
 
     .line 17
     .line 18
@@ -4351,7 +4351,7 @@
     move-result v0
 
     .line 22
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_0
 
     .line 23
     .line 24
@@ -4382,8 +4382,8 @@
 
     .line 34
     invoke-static/range {v1 .. v9}, Lorg/conscrypt/NativeCrypto;->SSL_write(JLorg/conscrypt/NativeSsl;Ljava/io/FileDescriptor;Lorg/conscrypt/NativeCrypto$SSLHandshakeCallbacks;[BIII)V
-    :try_end_24
-    .catchall {:try_start_9 .. :try_end_24} :catchall_2e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 35
     .line 36
@@ -4408,18 +4408,18 @@
     return-void
 
     .line 47
-    :catchall_2e
+    :catchall_0
     move-exception v0
 
     .line 48
     move-object p1, v0
 
     .line 49
-    goto :goto_39
+    goto :goto_0
 
     .line 50
-    :cond_31
-    :try_start_31
+    :cond_0
+    :try_start_1
     new-instance p1, Ljava/net/SocketException;
 
     .line 51
@@ -4434,11 +4434,11 @@
     .line 56
     .line 57
     throw p1
-    :try_end_39
-    .catchall {:try_start_31 .. :try_end_39} :catchall_2e
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 58
-    :goto_39
+    :goto_0
     iget-object p2, p0, Lorg/conscrypt/NativeSsl;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     .line 59
@@ -4460,7 +4460,7 @@
 .end method
 
 .method public writeDirectByteBuffer(JI)I
-    .registers 12
+    .locals 8
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/NativeSsl;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
@@ -4480,7 +4480,7 @@
     .line 8
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     iget-wide v1, p0, Lorg/conscrypt/NativeSsl;->ssl:J
 
     .line 11
@@ -4504,8 +4504,8 @@
     .line 19
     .line 20
     move-result p1
-    :try_end_14
-    .catchall {:try_start_9 .. :try_end_14} :catchall_1e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 21
     iget-object p2, p0, Lorg/conscrypt/NativeSsl;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
@@ -4528,7 +4528,7 @@
     return p1
 
     .line 31
-    :catchall_1e
+    :catchall_0
     move-exception v0
 
     .line 32

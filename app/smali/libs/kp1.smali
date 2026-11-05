@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/fi1;[B)V
-    .registers 5
+    .locals 2
 
     .line 1
     const-wide/16 v0, 0x0
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final r(J)Llibs/vq0;
-    .registers 14
+    .locals 11
 
     .line 1
     iget-object v0, p0, Llibs/sy1;->c:Llibs/fi1;
@@ -68,7 +68,7 @@
 
     .line 18
     .line 19
-    if-nez v10, :cond_1a
+    if-nez v10, :cond_0
 
     .line 20
     .line 21
@@ -84,12 +84,12 @@
 
     .line 26
     .line 27
-    :cond_1a
+    :cond_0
     cmp-long v8, v2, v6
 
     .line 28
     .line 29
-    if-gtz v8, :cond_2c
+    if-gtz v8, :cond_1
 
     .line 30
     .line 31
@@ -119,7 +119,7 @@
     return-object v1
 
     .line 45
-    :cond_2c
+    :cond_1
     const-string p1, "Attempt to read past the end of the MFT, offset: "
 
     .line 46

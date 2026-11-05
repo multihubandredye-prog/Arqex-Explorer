@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-static {p1}, Llibs/lz1;->a(I)Ljava/lang/String;
@@ -33,13 +33,13 @@
 .end method
 
 .method public static a(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, -0x1
 
     .line 2
-    if-eq p0, v0, :cond_20
+    if-eq p0, v0, :cond_1
 
     .line 3
     .line 4
@@ -47,11 +47,11 @@
 
     .line 5
     .line 6
-    if-eq p0, v0, :cond_1d
+    if-eq p0, v0, :cond_0
 
     .line 7
     .line 8
-    packed-switch p0, :pswitch_data_24
+    packed-switch p0, :pswitch_data_0
 
     .line 9
     .line 10
@@ -71,7 +71,7 @@
     return-object p0
 
     .line 18
-    :pswitch_11
+    :pswitch_0
     const-string p0, "ERR_SSN_SRVC/Called name present, but insufficient resources"
 
     .line 19
@@ -79,7 +79,7 @@
     return-object p0
 
     .line 21
-    :pswitch_14
+    :pswitch_1
     const-string p0, "ERR_SSN_SRVC/Called name not present"
 
     .line 22
@@ -87,7 +87,7 @@
     return-object p0
 
     .line 24
-    :pswitch_17
+    :pswitch_2
     const-string p0, "ERR_SSN_SRVC/Not listening for calling name"
 
     .line 25
@@ -95,7 +95,7 @@
     return-object p0
 
     .line 27
-    :pswitch_1a
+    :pswitch_3
     const-string p0, "ERR_SSN_SRVC/Not listening on called name"
 
     .line 28
@@ -103,7 +103,7 @@
     return-object p0
 
     .line 30
-    :cond_1d
+    :cond_0
     const-string p0, "ERR_SSN_SRVC/Unspecified error"
 
     .line 31
@@ -111,7 +111,7 @@
     return-object p0
 
     .line 33
-    :cond_20
+    :cond_1
     const-string p0, "ERR_SSN_SRVC/Connection refused"
 
     .line 34
@@ -122,19 +122,19 @@
     nop
 
     .line 37
-    :pswitch_data_24
+    :pswitch_data_0
     .packed-switch 0x80
-        :pswitch_1a
-        :pswitch_17
-        :pswitch_14
-        :pswitch_11
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/String;

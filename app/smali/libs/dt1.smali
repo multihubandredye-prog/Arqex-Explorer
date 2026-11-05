@@ -53,7 +53,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
@@ -182,7 +182,7 @@
 
 # virtual methods
 .method public final onDraw(Landroid/graphics/Canvas;)V
-    .registers 9
+    .locals 7
 
     .line 1
     iget v0, p0, Llibs/dt1;->Omicron:I
@@ -741,7 +741,7 @@
 
     .line 272
     .line 273
-    if-eqz v1, :cond_12b
+    if-eqz v1, :cond_0
 
     .line 274
     .line 275
@@ -794,12 +794,12 @@
     .line 298
     .line 299
     .line 300
-    :cond_12b
+    :cond_0
     return-void
 .end method
 
 .method public final onMeasure(II)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
@@ -823,7 +823,7 @@
 .end method
 
 .method public setTypeFace(Landroid/graphics/Typeface;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iput-object p1, p0, Llibs/dt1;->Chi:Landroid/graphics/Typeface;
@@ -838,35 +838,35 @@
     move-result p1
 
     .line 7
-    if-eqz p1, :cond_21
+    if-eqz p1, :cond_3
 
     .line 8
     .line 9
     const/4 v0, 0x1
 
     .line 10
-    if-eq p1, v0, :cond_1c
+    if-eq p1, v0, :cond_2
 
     .line 11
     .line 12
     const/4 v0, 0x2
 
     .line 13
-    if-eq p1, v0, :cond_17
+    if-eq p1, v0, :cond_1
 
     .line 14
     .line 15
     const/4 v0, 0x3
 
     .line 16
-    if-eq p1, v0, :cond_12
+    if-eq p1, v0, :cond_0
 
     .line 17
     .line 18
     return-void
 
     .line 19
-    :cond_12
+    :cond_0
     const-string p1, "BOLD_ITALIC"
 
     .line 20
@@ -878,7 +878,7 @@
     return-void
 
     .line 24
-    :cond_17
+    :cond_1
     const-string p1, "ITALIC"
 
     .line 25
@@ -890,7 +890,7 @@
     return-void
 
     .line 29
-    :cond_1c
+    :cond_2
     const-string p1, "BOLD"
 
     .line 30
@@ -902,7 +902,7 @@
     return-void
 
     .line 34
-    :cond_21
+    :cond_3
     const-string p1, "NORMAL"
 
     .line 35

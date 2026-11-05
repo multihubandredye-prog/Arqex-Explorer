@@ -26,7 +26,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/yr1;Landroid/app/Activity;ZZLlibs/rp0;Llibs/ek3;Landroid/text/Editable;)V
-    .registers 9
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -73,7 +73,7 @@
 .end method
 
 .method public synthetic constructor <init>(Llibs/yr1;ZZLlibs/rp0;Landroid/app/Activity;Llibs/ek3;Landroid/text/Editable;)V
-    .registers 9
+    .locals 1
 
     .line 22
     const/4 v0, 0x0
@@ -102,7 +102,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 20
+    .locals 19
 
     .line 1
     move-object/from16 v0, p0
@@ -137,7 +137,7 @@
 
     .line 14
     .line 15
-    packed-switch v1, :pswitch_data_9a
+    packed-switch v1, :pswitch_data_0
 
     .line 16
     .line 17
@@ -167,11 +167,11 @@
     .line 29
     .line 30
     .line 31
-    if-eqz v8, :cond_36
+    if-eqz v8, :cond_0
 
     .line 32
     .line 33
-    if-eqz v7, :cond_36
+    if-eqz v7, :cond_0
 
     .line 34
     .line 35
@@ -212,16 +212,16 @@
 
     .line 53
     .line 54
-    goto :goto_39
+    goto :goto_0
 
     .line 55
-    :cond_36
+    :cond_0
     invoke-virtual {v11, v4}, Llibs/od;->Exec(Z)V
 
     .line 56
     .line 57
     .line 58
-    :goto_39
+    :goto_0
     sget v1, Llibs/bi2;->copy:I
 
     .line 59
@@ -260,7 +260,7 @@
     return-void
 
     .line 78
-    :pswitch_4d
+    :pswitch_0
     iget-object v13, v0, Llibs/mr1;->Y:Llibs/yr1;
 
     .line 79
@@ -282,18 +282,18 @@
 
     .line 88
     .line 89
-    if-eqz v1, :cond_5b
+    if-eqz v1, :cond_1
 
     .line 90
     .line 91
-    goto :goto_5c
+    goto :goto_1
 
     .line 92
-    :cond_5b
+    :cond_1
     move-object v1, v5
 
     .line 93
-    :goto_5c
+    :goto_1
     sget v9, Llibs/bi2;->metadata:I
 
     .line 94
@@ -311,11 +311,11 @@
     .line 100
     .line 101
     .line 102
-    if-eqz v8, :cond_82
+    if-eqz v8, :cond_2
 
     .line 103
     .line 104
-    if-eqz v7, :cond_82
+    if-eqz v7, :cond_2
 
     .line 105
     .line 106
@@ -365,16 +365,16 @@
 
     .line 129
     .line 130
-    goto :goto_85
+    goto :goto_2
 
     .line 131
-    :cond_82
+    :cond_2
     invoke-virtual {v14, v4}, Llibs/od;->Exec(Z)V
 
     .line 132
     .line 133
     .line 134
-    :goto_85
+    :goto_2
     sget v1, Llibs/bi2;->copy:I
 
     .line 135
@@ -416,8 +416,8 @@
     nop
 
     .line 155
-    :pswitch_data_9a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_4d
+        :pswitch_0
     .end packed-switch
 .end method

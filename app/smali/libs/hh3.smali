@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/gh3;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,13 +27,13 @@
 
 # virtual methods
 .method public final a(J)Llibs/fh3;
-    .registers 6
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :goto_1
+    :goto_0
     iget-object v1, p0, Llibs/hh3;->a:Llibs/gh3;
 
     .line 3
@@ -46,18 +46,18 @@
     move-result-object v1
 
     .line 8
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_0
 
     .line 9
     .line 10
     return-object v1
 
     .line 11
-    :cond_a
+    :cond_0
     const/4 v1, 0x3
 
     .line 12
-    if-ge v0, v1, :cond_1c
+    if-ge v0, v1, :cond_1
 
     .line 13
     .line 14
@@ -78,23 +78,23 @@
 
     .line 22
     .line 23
-    :try_start_16
+    :try_start_0
     invoke-static {v1, v2}, Ljava/lang/Thread;->sleep(J)V
-    :try_end_19
-    .catchall {:try_start_16 .. :try_end_19} :catchall_19
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 24
     .line 25
     .line 26
-    :catchall_19
+    :catchall_0
     add-int/lit8 v0, v0, 0x1
 
     .line 27
     .line 28
-    goto :goto_1
+    goto :goto_0
 
     .line 29
-    :cond_1c
+    :cond_1
     new-instance p1, Lexceptions/ResumableInputException;
 
     .line 30
@@ -108,13 +108,13 @@
     .line 34
     .line 35
     .line 36
-    goto :goto_25
+    goto :goto_2
 
     .line 37
-    :goto_24
+    :goto_1
     throw p1
 
     .line 38
-    :goto_25
-    goto :goto_24
+    :goto_2
+    goto :goto_1
 .end method

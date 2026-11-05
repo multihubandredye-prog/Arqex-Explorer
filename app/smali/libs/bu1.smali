@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic a()Landroid/graphics/Shader$TileMode;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/Shader$TileMode;->DECAL:Landroid/graphics/Shader$TileMode;
@@ -16,7 +16,7 @@
 .end method
 
 .method public static bridge synthetic b(Landroid/app/PictureInPictureParams$Builder;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1

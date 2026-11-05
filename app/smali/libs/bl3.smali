@@ -22,7 +22,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/TextEditorActivity;ILcom/mixplorer/widgets/MiEditor;Landroid/text/Editable;II)V
-    .registers 7
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 15
+    .locals 14
 
     .line 1
     sget v0, Lcom/mixplorer/activities/TextEditorActivity;->$c:I
@@ -121,7 +121,7 @@
     const/4 v13, 0x7
 
     .line 25
-    if-ne v10, v13, :cond_3c
+    if-ne v10, v13, :cond_0
 
     .line 26
     .line 27
@@ -193,8 +193,8 @@
     return-void
 
     .line 61
-    :cond_3c
-    if-ne v10, v0, :cond_58
+    :cond_0
+    if-ne v10, v0, :cond_1
 
     .line 62
     .line 63
@@ -250,8 +250,8 @@
     return-void
 
     .line 89
-    :cond_58
-    if-ne v10, v5, :cond_74
+    :cond_1
+    if-ne v10, v5, :cond_2
 
     .line 90
     .line 91
@@ -307,8 +307,8 @@
     return-void
 
     .line 117
-    :cond_74
-    if-ne v10, v2, :cond_90
+    :cond_2
+    if-ne v10, v2, :cond_3
 
     .line 118
     .line 119
@@ -364,8 +364,8 @@
     return-void
 
     .line 145
-    :cond_90
-    if-ne v10, v6, :cond_ac
+    :cond_3
+    if-ne v10, v6, :cond_4
 
     .line 146
     .line 147
@@ -421,12 +421,12 @@
     return-void
 
     .line 173
-    :cond_ac
+    :cond_4
     const/16 v0, 0x8
 
     .line 174
     .line 175
-    if-ne v10, v0, :cond_ca
+    if-ne v10, v0, :cond_5
 
     .line 176
     .line 177
@@ -482,12 +482,12 @@
     return-void
 
     .line 203
-    :cond_ca
+    :cond_5
     const/16 v0, 0xa
 
     .line 204
     .line 205
-    if-ne v10, v0, :cond_e8
+    if-ne v10, v0, :cond_6
 
     .line 206
     .line 207
@@ -543,12 +543,12 @@
     return-void
 
     .line 233
-    :cond_e8
+    :cond_6
     const/16 v0, 0xc
 
     .line 234
     .line 235
-    if-ne v10, v0, :cond_102
+    if-ne v10, v0, :cond_7
 
     .line 236
     .line 237
@@ -596,12 +596,12 @@
     return-void
 
     .line 259
-    :cond_102
+    :cond_7
     const/16 v0, 0x9
 
     .line 260
     .line 261
-    if-ne v10, v0, :cond_11c
+    if-ne v10, v0, :cond_8
 
     .line 262
     .line 263
@@ -649,12 +649,12 @@
     return-void
 
     .line 285
-    :cond_11c
+    :cond_8
     const/16 v0, 0xb
 
     .line 286
     .line 287
-    if-ne v10, v0, :cond_13a
+    if-ne v10, v0, :cond_9
 
     .line 288
     .line 289
@@ -710,8 +710,8 @@
     return-void
 
     .line 315
-    :cond_13a
-    if-ne v10, v1, :cond_14e
+    :cond_9
+    if-ne v10, v1, :cond_a
 
     .line 316
     .line 317
@@ -751,7 +751,7 @@
     return-void
 
     .line 335
-    :cond_14e
+    :cond_a
     new-array v10, v5, [Ljava/util/regex/Pattern;
 
     .line 336

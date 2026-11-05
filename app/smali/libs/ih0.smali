@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/security/spec/X509EncodedKeySpec;)V
-    .registers 16
+    .locals 14
 
     .line 1
     new-instance v0, Llibs/jh0;
@@ -38,10 +38,10 @@
 
     .line 8
     .line 9
-    :try_start_8
+    :try_start_0
     aget-byte v2, p1, v1
-    :try_end_a
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_8 .. :try_end_a} :catch_6b
+    :try_end_0
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 10
     .line 11
@@ -62,7 +62,7 @@
     const/4 v7, 0x3
 
     .line 18
-    if-ne v2, v3, :cond_16
+    if-ne v2, v3, :cond_0
 
     .line 19
     .line 20
@@ -70,24 +70,24 @@
 
     .line 21
     .line 22
-    goto :goto_25
+    goto :goto_0
 
     .line 23
-    :cond_16
+    :cond_0
     const/16 v1, 0x70
 
     .line 24
     .line 25
-    if-ne v2, v1, :cond_bd
+    if-ne v2, v1, :cond_9
 
     .line 26
     .line 27
-    :try_start_1a
+    :try_start_1
     aget-byte v1, p1, v7
 
     .line 28
     .line 29
-    if-ne v1, v5, :cond_22
+    if-ne v1, v5, :cond_1
 
     .line 30
     .line 31
@@ -98,10 +98,10 @@
     const/4 v1, 0x7
 
     .line 34
-    goto :goto_25
+    goto :goto_0
 
     .line 35
-    :cond_22
+    :cond_1
     const/16 v8, 0x2c
 
     .line 36
@@ -109,11 +109,11 @@
     const/4 v1, 0x5
 
     .line 38
-    :goto_25
+    :goto_0
     array-length v9, p1
 
     .line 39
-    if-ne v9, v8, :cond_b5
+    if-ne v9, v8, :cond_8
 
     .line 40
     .line 41
@@ -128,7 +128,7 @@
 
     .line 45
     .line 46
-    if-ne v10, v11, :cond_af
+    if-ne v10, v11, :cond_7
 
     .line 47
     .line 48
@@ -145,7 +145,7 @@
     sub-int/2addr v8, v13
 
     .line 53
-    if-ne v12, v8, :cond_af
+    if-ne v12, v8, :cond_7
 
     .line 54
     .line 55
@@ -153,7 +153,7 @@
 
     .line 56
     .line 57
-    if-ne v8, v11, :cond_af
+    if-ne v8, v11, :cond_7
 
     .line 58
     .line 59
@@ -161,7 +161,7 @@
 
     .line 60
     .line 61
-    if-ne v8, v1, :cond_af
+    if-ne v8, v1, :cond_7
 
     .line 62
     .line 63
@@ -175,7 +175,7 @@
     const/4 v11, 0x6
 
     .line 67
-    if-ne v8, v11, :cond_af
+    if-ne v8, v11, :cond_7
 
     .line 68
     .line 69
@@ -183,7 +183,7 @@
 
     .line 70
     .line 71
-    if-ne v8, v7, :cond_af
+    if-ne v8, v7, :cond_7
 
     .line 72
     .line 73
@@ -195,7 +195,7 @@
 
     .line 76
     .line 77
-    if-ne v8, v11, :cond_af
+    if-ne v8, v11, :cond_7
 
     .line 78
     .line 79
@@ -207,7 +207,7 @@
 
     .line 82
     .line 83
-    if-ne v8, v11, :cond_af
+    if-ne v8, v11, :cond_7
 
     .line 84
     .line 85
@@ -223,7 +223,7 @@
 
     .line 90
     .line 91
-    if-ne v2, v3, :cond_73
+    if-ne v2, v3, :cond_3
 
     .line 92
     .line 93
@@ -231,7 +231,7 @@
 
     .line 94
     .line 95
-    if-ne v1, v11, :cond_6d
+    if-ne v1, v11, :cond_2
 
     .line 96
     .line 97
@@ -239,7 +239,7 @@
 
     .line 98
     .line 99
-    if-ne v1, v10, :cond_6d
+    if-ne v1, v10, :cond_2
 
     .line 100
     .line 101
@@ -247,7 +247,7 @@
 
     .line 102
     .line 103
-    if-ne v1, v10, :cond_6d
+    if-ne v1, v10, :cond_2
 
     .line 104
     .line 105
@@ -255,17 +255,17 @@
 
     .line 106
     .line 107
-    goto :goto_86
+    goto :goto_1
 
     .line 108
-    :catch_6b
+    :catch_0
     move-exception p1
 
     .line 109
-    goto :goto_c3
+    goto :goto_2
 
     .line 110
-    :cond_6d
+    :cond_2
     new-instance p1, Ljava/security/spec/InvalidKeySpecException;
 
     .line 111
@@ -278,8 +278,8 @@
     throw p1
 
     .line 116
-    :cond_73
-    if-ne v1, v5, :cond_84
+    :cond_3
+    if-ne v1, v5, :cond_5
 
     .line 117
     .line 118
@@ -287,7 +287,7 @@
 
     .line 119
     .line 120
-    if-ne v1, v4, :cond_7e
+    if-ne v1, v4, :cond_4
 
     .line 121
     .line 122
@@ -295,14 +295,14 @@
 
     .line 123
     .line 124
-    if-nez v1, :cond_7e
+    if-nez v1, :cond_4
 
     .line 125
     .line 126
-    goto :goto_86
+    goto :goto_1
 
     .line 127
-    :cond_7e
+    :cond_4
     new-instance p1, Ljava/security/spec/InvalidKeySpecException;
 
     .line 128
@@ -315,12 +315,12 @@
     throw p1
 
     .line 133
-    :cond_84
+    :cond_5
     const/16 v8, 0x9
 
     .line 134
     .line 135
-    :goto_86
+    :goto_1
     add-int/lit8 v1, v8, 0x1
 
     .line 136
@@ -329,7 +329,7 @@
 
     .line 138
     .line 139
-    if-ne v2, v7, :cond_a9
+    if-ne v2, v7, :cond_6
 
     .line 140
     .line 141
@@ -345,7 +345,7 @@
 
     .line 146
     .line 147
-    if-ne v1, v3, :cond_a9
+    if-ne v1, v3, :cond_6
 
     .line 148
     .line 149
@@ -356,7 +356,7 @@
 
     .line 151
     .line 152
-    if-nez v1, :cond_a9
+    if-nez v1, :cond_6
 
     .line 153
     .line 154
@@ -369,8 +369,8 @@
     .line 157
     .line 158
     invoke-static {p1, v8, v2, v9, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-    :try_end_a0
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_1a .. :try_end_a0} :catch_6b
+    :try_end_1
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 159
     .line 160
@@ -392,8 +392,8 @@
     return-void
 
     .line 170
-    :cond_a9
-    :try_start_a9
+    :cond_6
+    :try_start_2
     new-instance p1, Ljava/security/spec/InvalidKeySpecException;
 
     .line 171
@@ -406,7 +406,7 @@
     throw p1
 
     .line 176
-    :cond_af
+    :cond_7
     new-instance p1, Ljava/security/spec/InvalidKeySpecException;
 
     .line 177
@@ -419,7 +419,7 @@
     throw p1
 
     .line 182
-    :cond_b5
+    :cond_8
     new-instance p1, Ljava/security/spec/InvalidKeySpecException;
 
     .line 183
@@ -436,7 +436,7 @@
     throw p1
 
     .line 190
-    :cond_bd
+    :cond_9
     new-instance p1, Ljava/security/spec/InvalidKeySpecException;
 
     .line 191
@@ -447,11 +447,11 @@
     .line 194
     .line 195
     throw p1
-    :try_end_c3
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_a9 .. :try_end_c3} :catch_6b
+    :try_end_2
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 196
-    :goto_c3
+    :goto_2
     new-instance v0, Ljava/security/spec/InvalidKeySpecException;
 
     .line 197
@@ -465,7 +465,7 @@
 .end method
 
 .method public constructor <init>(Llibs/jh0;)V
-    .registers 3
+    .locals 1
 
     .line 202
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -500,20 +500,20 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v1, p1, Llibs/ih0;
 
     .line 6
@@ -521,14 +521,14 @@
     const/4 v2, 0x0
 
     .line 8
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     .line 9
     .line 10
     return v2
 
     .line 11
-    :cond_a
+    :cond_1
     check-cast p1, Llibs/ih0;
 
     .line 12
@@ -549,7 +549,7 @@
     move-result v1
 
     .line 21
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_2
 
     .line 22
     .line 23
@@ -569,19 +569,19 @@
     move-result p1
 
     .line 31
-    if-eqz p1, :cond_21
+    if-eqz p1, :cond_2
 
     .line 32
     .line 33
     return v0
 
     .line 34
-    :cond_21
+    :cond_2
     return v2
 .end method
 
 .method public final getAlgorithm()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "EdDSA"
@@ -592,7 +592,7 @@
 .end method
 
 .method public final getEncoded()[B
-    .registers 10
+    .locals 9
 
     .line 1
     iget-object v0, p0, Llibs/ih0;->Lambda:Llibs/eh0;
@@ -611,7 +611,7 @@
     move-result v0
 
     .line 9
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 10
     .line 11
@@ -621,7 +621,7 @@
     return-object v0
 
     .line 13
-    :cond_c
+    :cond_0
     iget-object v0, p0, Llibs/ih0;->Z:[B
 
     .line 14
@@ -772,7 +772,7 @@
 .end method
 
 .method public final getFormat()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "X.509"
@@ -783,7 +783,7 @@
 .end method
 
 .method public final getParams()Llibs/eh0;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ih0;->Lambda:Llibs/eh0;
@@ -794,7 +794,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ih0;->Z:[B

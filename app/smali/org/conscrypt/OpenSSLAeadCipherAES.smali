@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/conscrypt/OpenSSLCipher$Mode;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Lorg/conscrypt/OpenSSLAeadCipher;-><init>(Lorg/conscrypt/OpenSSLCipher$Mode;)V
@@ -23,14 +23,14 @@
 
 # virtual methods
 .method public checkSupportedKeySize(I)V
-    .registers 5
+    .locals 3
 
     .line 1
     const/16 v0, 0x10
 
     .line 2
     .line 3
-    if-eq p1, v0, :cond_17
+    if-eq p1, v0, :cond_1
 
     .line 4
     .line 5
@@ -38,14 +38,14 @@
 
     .line 6
     .line 7
-    if-ne p1, v0, :cond_9
+    if-ne p1, v0, :cond_0
 
     .line 8
     .line 9
-    goto :goto_17
+    goto :goto_0
 
     .line 10
-    :cond_9
+    :cond_0
     new-instance v0, Ljava/security/InvalidKeyException;
 
     .line 11
@@ -74,13 +74,13 @@
     throw v0
 
     .line 24
-    :cond_17
-    :goto_17
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public engineGetParameters()Ljava/security/AlgorithmParameters;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLCipher;->iv:[B
@@ -90,14 +90,14 @@
     const/4 v1, 0x0
 
     .line 4
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 5
     .line 6
     return-object v1
 
     .line 7
-    :cond_6
+    :cond_0
     iget v2, p0, Lorg/conscrypt/OpenSSLAeadCipher;->tagLengthInBytes:I
 
     .line 8
@@ -114,7 +114,7 @@
     move-result-object v0
 
     .line 15
-    if-nez v0, :cond_15
+    if-nez v0, :cond_1
 
     .line 16
     .line 17
@@ -129,8 +129,8 @@
     return-object v0
 
     .line 22
-    :cond_15
-    :try_start_15
+    :cond_1
+    :try_start_0
     const-string v2, "GCM"
 
     .line 23
@@ -144,9 +144,9 @@
 
     .line 28
     invoke-virtual {v2, v0}, Ljava/security/AlgorithmParameters;->init(Ljava/security/spec/AlgorithmParameterSpec;)V
-    :try_end_1e
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_15 .. :try_end_1e} :catch_1f
-    .catch Ljava/security/spec/InvalidParameterSpecException; {:try_start_15 .. :try_end_1e} :catch_21
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/security/spec/InvalidParameterSpecException; {:try_start_0 .. :try_end_0} :catch_1
 
     .line 29
     .line 30
@@ -154,18 +154,18 @@
     return-object v2
 
     .line 32
-    :catch_1f
+    :catch_0
     move-exception v0
 
     .line 33
-    goto :goto_22
+    goto :goto_0
 
     .line 34
-    :catch_21
+    :catch_1
     return-object v1
 
     .line 35
-    :goto_22
+    :goto_0
     new-instance v1, Ljava/lang/AssertionError;
 
     .line 36
@@ -195,7 +195,7 @@
 .end method
 
 .method public getBaseCipherName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "AES"
@@ -206,7 +206,7 @@
 .end method
 
 .method public getCipherBlockSize()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x10
@@ -217,7 +217,7 @@
 .end method
 
 .method public getOutputSizeForFinal(I)I
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLCipher;->isEncrypting()Z
@@ -232,7 +232,7 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -249,7 +249,7 @@
     return v1
 
     .line 14
-    :cond_d
+    :cond_0
     add-int/2addr v1, p1
 
     .line 15
@@ -275,10 +275,10 @@
 .end method
 
 .method public getParameterSpec(Ljava/security/AlgorithmParameters;)Ljava/security/spec/AlgorithmParameterSpec;
-    .registers 3
+    .locals 1
 
     .line 1
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_1
 
     .line 2
     .line 3
@@ -290,14 +290,14 @@
     move-result-object v0
 
     .line 7
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
     return-object v0
 
     .line 10
-    :cond_9
+    :cond_0
     invoke-super {p0, p1}, Lorg/conscrypt/OpenSSLCipher;->getParameterSpec(Ljava/security/AlgorithmParameters;)Ljava/security/spec/AlgorithmParameterSpec;
 
     .line 11
@@ -309,7 +309,7 @@
     return-object p1
 
     .line 15
-    :cond_e
+    :cond_1
     const/4 p1, 0x0
 
     .line 16

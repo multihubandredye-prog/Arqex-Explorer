@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/qr;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/or;->b:Llibs/qr;
@@ -29,18 +29,18 @@
 
 # virtual methods
 .method public final a()Llibs/xf3;
-    .registers 3
+    .locals 2
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Llibs/or;->a:Llibs/xf3;
 
     .line 3
     .line 4
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 5
     .line 6
@@ -50,14 +50,14 @@
     return-object v0
 
     .line 8
-    :catchall_7
+    :catchall_0
     move-exception v0
 
     .line 9
-    goto :goto_1d
+    goto :goto_0
 
     .line 10
-    :cond_9
+    :cond_0
     iget-object v0, p0, Llibs/or;->b:Llibs/qr;
 
     .line 11
@@ -78,7 +78,7 @@
 
     .line 19
     .line 20
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1
 
     .line 21
     .line 22
@@ -88,7 +88,7 @@
     return-object v0
 
     .line 24
-    :cond_17
+    :cond_1
     new-instance v0, Ljava/util/concurrent/TimeoutException;
 
     .line 25
@@ -101,10 +101,10 @@
     throw v0
 
     .line 30
-    :goto_1d
+    :goto_0
     monitor-exit p0
-    :try_end_1e
-    .catchall {:try_start_1 .. :try_end_1e} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 31
     throw v0

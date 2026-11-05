@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/tw0;-><init>()V
@@ -42,7 +42,7 @@
 .end method
 
 .method public constructor <init>(Llibs/ix2;)V
-    .registers 2
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1}, Llibs/tw0;-><init>(Llibs/tw0;)V
@@ -62,7 +62,7 @@
 .end method
 
 .method public constructor <init>(Llibs/tw0;)V
-    .registers 2
+    .locals 0
 
     .line 16
     invoke-direct {p0, p1}, Llibs/tw0;-><init>(Llibs/tw0;)V
@@ -86,14 +86,14 @@
 
 # virtual methods
 .method public final Object()Llibs/t02;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/ix2;->g:Llibs/t02;
 
     .line 2
     .line 3
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -103,7 +103,7 @@
     return-object v0
 
     .line 7
-    :cond_6
+    :cond_0
     const-string v1, "Body"
 
     .line 8
@@ -120,7 +120,7 @@
 .end method
 
 .method public final String(Llibs/t02;)V
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

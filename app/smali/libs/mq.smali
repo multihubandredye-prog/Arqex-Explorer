@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Param;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -41,7 +41,7 @@
     const/4 v2, 0x0
 
     .line 12
-    if-ne v0, v1, :cond_3e
+    if-ne v0, v1, :cond_2
 
     .line 13
     .line 14
@@ -60,7 +60,7 @@
 
     .line 20
     .line 21
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_0
 
     .line 22
     .line 23
@@ -71,11 +71,11 @@
 
     .line 25
     .line 26
-    goto :goto_25
+    goto :goto_0
 
     .line 27
-    :cond_1a
-    if-eqz v0, :cond_25
+    :cond_0
+    if-eqz v0, :cond_1
 
     .line 28
     .line 29
@@ -96,8 +96,8 @@
     .line 36
     .line 37
     .line 38
-    :cond_25
-    :goto_25
+    :cond_1
+    :goto_0
     iput-object v2, p0, Llibs/mq;->Y:Llibs/qj3;
 
     .line 39
@@ -151,7 +151,7 @@
     return-void
 
     .line 63
-    :cond_3e
+    :cond_2
     const-string p1, "sequence wrong size for a certificate"
 
     .line 64
@@ -165,14 +165,14 @@
 .end method
 
 .method public static g(Ljava/lang/Object;)Llibs/mq;
-    .registers 2
+    .locals 1
 
     .line 1
     instance-of v0, p0, Llibs/mq;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -183,8 +183,8 @@
     return-object p0
 
     .line 8
-    :cond_7
-    if-eqz p0, :cond_13
+    :cond_0
+    if-eqz p0, :cond_1
 
     .line 9
     .line 10
@@ -208,7 +208,7 @@
     return-object v0
 
     .line 20
-    :cond_13
+    :cond_1
     const/4 p0, 0x0
 
     .line 21
@@ -218,7 +218,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/mq;->X:Llibs/Param;

@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/c2;Llibs/rp0;Llibs/m52;Llibs/zl0;I)V
-    .registers 6
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/g52;->g:Llibs/c2;
@@ -55,7 +55,7 @@
 
 # virtual methods
 .method public final onFileExists(Llibs/rp0;Ljava/lang/String;Llibs/k52;)I
-    .registers 6
+    .locals 2
 
     .line 1
     iget-object p1, p0, Llibs/g52;->c:Llibs/rp0;
@@ -86,7 +86,7 @@
 .end method
 
 .method public final onProgress(JJ)V
-    .registers 6
+    .locals 1
 
     .line 1
     iget-object p3, p0, Llibs/g52;->d:Llibs/m52;
@@ -101,7 +101,7 @@
     move-result p4
 
     .line 7
-    if-nez p4, :cond_f
+    if-nez p4, :cond_0
 
     .line 8
     .line 9
@@ -120,7 +120,7 @@
     return-void
 
     .line 16
-    :cond_f
+    :cond_0
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 17
@@ -130,7 +130,7 @@
 .end method
 
 .method public final onProgressDone(Ljava/lang/String;Z)V
-    .registers 6
+    .locals 3
 
     .line 1
     iget-object p2, p0, Llibs/g52;->e:Llibs/zl0;
@@ -191,7 +191,7 @@
 .end method
 
 .method public final onProgressPath(Ljava/lang/String;Z)V
-    .registers 5
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/g52;->g:Llibs/c2;
@@ -220,7 +220,7 @@
     move-result p2
 
     .line 15
-    if-nez p2, :cond_18
+    if-nez p2, :cond_0
 
     .line 16
     .line 17
@@ -240,7 +240,7 @@
     return-void
 
     .line 25
-    :cond_18
+    :cond_0
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 26

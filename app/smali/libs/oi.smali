@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/BrowseActivity;Ljava/lang/String;Z)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final f(Llibs/t4;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object p1, p0, Llibs/oi;->Y:Ljava/lang/String;
@@ -65,7 +65,7 @@
     const/4 v1, 0x0
 
     .line 11
-    :try_start_a
+    :try_start_0
     invoke-static {p1}, Llibs/zo1;->g(Ljava/lang/String;)Llibs/zl0;
 
     .line 12
@@ -116,14 +116,14 @@
     .line 35
     .line 36
     move-result v1
-    :try_end_24
-    .catchall {:try_start_a .. :try_end_24} :catchall_25
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 37
-    goto :goto_38
+    goto :goto_0
 
     .line 38
-    :catchall_25
+    :catchall_0
     move-exception p1
 
     .line 39
@@ -161,15 +161,15 @@
     .line 55
     .line 56
     .line 57
-    :goto_38
-    if-nez v1, :cond_3b
+    :goto_0
+    if-nez v1, :cond_0
 
     .line 58
     .line 59
-    goto :goto_48
+    goto :goto_1
 
     .line 60
-    :cond_3b
+    :cond_0
     new-instance p1, Llibs/sc;
 
     .line 61
@@ -195,6 +195,6 @@
     .line 71
     .line 72
     .line 73
-    :goto_48
+    :goto_1
     return-void
 .end method

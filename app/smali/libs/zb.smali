@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/IOException;)V
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

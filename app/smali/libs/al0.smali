@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/app/Activity;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/al0;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/al0;->X:B
@@ -50,7 +50,7 @@
 
     .line 5
     .line 6
-    packed-switch v0, :pswitch_data_56
+    packed-switch v0, :pswitch_data_0
 
     .line 7
     .line 8
@@ -75,7 +75,7 @@
     return-void
 
     .line 19
-    :pswitch_12
+    :pswitch_0
     sget v0, Lcom/mixplorer/activities/SQLiteEditorActivity;->III:I
 
     .line 20
@@ -100,7 +100,7 @@
     return-void
 
     .line 31
-    :pswitch_1e
+    :pswitch_1
     sget v0, Llibs/bi2;->failed:I
 
     .line 32
@@ -121,7 +121,7 @@
     return-void
 
     .line 41
-    :pswitch_28
+    :pswitch_2
     sget v0, Llibs/bi2;->not_exists:I
 
     .line 42
@@ -142,7 +142,7 @@
     return-void
 
     .line 51
-    :pswitch_32
+    :pswitch_3
     invoke-static {}, Llibs/gx1;->a()V
 
     .line 52
@@ -168,7 +168,7 @@
     return-void
 
     .line 64
-    :pswitch_3f
+    :pswitch_4
     sget v0, Llibs/bi2;->failed:I
 
     .line 65
@@ -189,7 +189,7 @@
     return-void
 
     .line 74
-    :pswitch_49
+    :pswitch_5
     invoke-static {}, Llibs/gx1;->a()V
 
     .line 75
@@ -215,13 +215,13 @@
     return-void
 
     .line 87
-    :pswitch_data_56
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_49
-        :pswitch_3f
-        :pswitch_32
-        :pswitch_28
-        :pswitch_1e
-        :pswitch_12
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/Xray;->h:B
@@ -30,14 +30,14 @@
 
 # virtual methods
 .method public Intent()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/Xray;->h:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_c
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -53,21 +53,21 @@
     return v0
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     const/4 v0, 0x1
 
     .line 12
     return v0
 
     .line 13
-    :pswitch_data_c
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final Sync(FLandroid/view/View;)V
-    .registers 8
+    .locals 5
 
     .line 1
     iget-byte v0, p0, Llibs/Xray;->h:B
@@ -85,7 +85,7 @@
     const/4 v3, 0x0
 
     .line 8
-    packed-switch v0, :pswitch_data_f0
+    packed-switch v0, :pswitch_data_0
 
     .line 9
     .line 10
@@ -94,7 +94,7 @@
 
     .line 12
     .line 13
-    if-gez v0, :cond_11
+    if-gez v0, :cond_0
 
     .line 14
     .line 15
@@ -102,10 +102,10 @@
 
     .line 16
     .line 17
-    goto :goto_17
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     sub-float v0, v2, p1
 
     .line 19
@@ -118,7 +118,7 @@
     move-result v0
 
     .line 24
-    :goto_17
+    :goto_0
     invoke-static {v0, p2}, Llibs/mg3;->Buf(FLandroid/view/View;)V
 
     .line 25
@@ -177,7 +177,7 @@
 
     .line 53
     .line 54
-    if-ltz v1, :cond_3f
+    if-ltz v1, :cond_2
 
     .line 55
     .line 56
@@ -185,14 +185,14 @@
 
     .line 57
     .line 58
-    if-lez p1, :cond_3c
+    if-lez p1, :cond_1
 
     .line 59
     .line 60
-    goto :goto_3f
+    goto :goto_1
 
     .line 61
-    :cond_3c
+    :cond_1
     sub-float/2addr v0, v2
 
     .line 62
@@ -200,8 +200,8 @@
 
     .line 63
     .line 64
-    :cond_3f
-    :goto_3f
+    :cond_2
+    :goto_1
     invoke-static {v3, p2}, Llibs/mg3;->Any(FLandroid/view/View;)V
 
     .line 65
@@ -210,19 +210,19 @@
     return-void
 
     .line 68
-    :pswitch_43
+    :pswitch_0
     cmpg-float v0, p1, v3
 
     .line 69
     .line 70
-    if-gez v0, :cond_48
+    if-gez v0, :cond_3
 
     .line 71
     .line 72
-    goto :goto_50
+    goto :goto_2
 
     .line 73
-    :cond_48
+    :cond_3
     invoke-virtual {p2}, Landroid/view/View;->getWidth()I
 
     .line 74
@@ -241,7 +241,7 @@
 
     .line 80
     .line 81
-    :goto_50
+    :goto_2
     invoke-static {v3, p2}, Llibs/mg3;->Num(FLandroid/view/View;)V
 
     .line 82
@@ -250,7 +250,7 @@
     return-void
 
     .line 85
-    :pswitch_54
+    :pswitch_1
     const/high16 v0, 0x43340000    # 180.0f
 
     .line 86
@@ -267,7 +267,7 @@
 
     .line 92
     .line 93
-    if-gtz v0, :cond_64
+    if-gtz v0, :cond_4
 
     .line 94
     .line 95
@@ -279,15 +279,15 @@
 
     .line 98
     .line 99
-    if-gez v0, :cond_65
+    if-gez v0, :cond_5
 
     .line 100
     .line 101
-    :cond_64
+    :cond_4
     const/4 v2, 0x0
 
     .line 102
-    :cond_65
+    :cond_5
     invoke-static {v2, p2}, Llibs/mg3;->Any(FLandroid/view/View;)V
 
     .line 103
@@ -337,7 +337,7 @@
 
     .line 126
     .line 127
-    if-eqz v0, :cond_93
+    if-eqz v0, :cond_6
 
     .line 128
     .line 129
@@ -357,7 +357,7 @@
 
     .line 136
     .line 137
-    if-eqz v0, :cond_96
+    if-eqz v0, :cond_7
 
     .line 138
     .line 139
@@ -375,26 +375,26 @@
     .line 145
     .line 146
     .line 147
-    goto :goto_96
+    goto :goto_3
 
     .line 148
-    :cond_93
+    :cond_6
     invoke-static {p1, p2}, Llibs/mt3;->k(FLandroid/view/View;)V
 
     .line 149
     .line 150
     .line 151
-    :cond_96
-    :goto_96
+    :cond_7
+    :goto_3
     return-void
 
     .line 152
-    :pswitch_97
+    :pswitch_2
     cmpg-float v0, p1, v3
 
     .line 153
     .line 154
-    if-gtz v0, :cond_a5
+    if-gtz v0, :cond_8
 
     .line 155
     .line 156
@@ -413,15 +413,15 @@
     .line 163
     .line 164
     .line 165
-    goto :goto_d5
+    goto :goto_4
 
     .line 166
-    :cond_a5
+    :cond_8
     cmpg-float v0, p1, v2
 
     .line 167
     .line 168
-    if-gtz v0, :cond_d5
+    if-gtz v0, :cond_9
 
     .line 169
     .line 170
@@ -513,27 +513,27 @@
     .line 212
     .line 213
     .line 214
-    :cond_d5
-    :goto_d5
+    :cond_9
+    :goto_4
     return-void
 
     .line 215
-    :pswitch_d6
+    :pswitch_3
     cmpg-float v0, p1, v3
 
     .line 216
     .line 217
-    if-gez v0, :cond_dc
+    if-gez v0, :cond_a
 
     .line 218
     .line 219
     const/4 v0, 0x0
 
     .line 220
-    goto :goto_e1
+    goto :goto_5
 
     .line 221
-    :cond_dc
+    :cond_a
     invoke-virtual {p2}, Landroid/view/View;->getWidth()I
 
     .line 222
@@ -545,7 +545,7 @@
     int-to-float v0, v0
 
     .line 226
-    :goto_e1
+    :goto_5
     invoke-static {v0, p2}, Llibs/mg3;->Bit(FLandroid/view/View;)V
 
     .line 227
@@ -555,22 +555,22 @@
 
     .line 230
     .line 231
-    if-gez v0, :cond_ea
+    if-gez v0, :cond_b
 
     .line 232
     .line 233
     add-float/2addr p1, v2
 
     .line 234
-    goto :goto_ec
+    goto :goto_6
 
     .line 235
-    :cond_ea
+    :cond_b
     sub-float p1, v2, p1
 
     .line 236
     .line 237
-    :goto_ec
+    :goto_6
     invoke-static {p1, p2}, Llibs/mg3;->Buf(FLandroid/view/View;)V
 
     .line 238
@@ -579,11 +579,11 @@
     return-void
 
     .line 241
-    :pswitch_data_f0
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_d6
-        :pswitch_97
-        :pswitch_54
-        :pswitch_43
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

@@ -11,7 +11,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/ql1;->a:B
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final onChanged()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/ql1;->a:B
@@ -47,7 +47,7 @@
 
     .line 5
     .line 6
-    packed-switch v0, :pswitch_data_32
+    packed-switch v0, :pswitch_data_0
 
     .line 7
     .line 8
@@ -73,7 +73,7 @@
     return-void
 
     .line 20
-    :pswitch_13
+    :pswitch_0
     check-cast v2, Lcom/mixplorer/widgets/MiViewPager;
 
     .line 21
@@ -86,7 +86,7 @@
     return-void
 
     .line 26
-    :pswitch_19
+    :pswitch_1
     invoke-super {p0}, Landroid/database/DataSetObserver;->onChanged()V
 
     .line 27
@@ -108,7 +108,7 @@
     return-void
 
     .line 37
-    :pswitch_24
+    :pswitch_2
     check-cast v2, Llibs/tl1;
 
     .line 38
@@ -125,7 +125,7 @@
     move-result v0
 
     .line 45
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_0
 
     .line 46
     .line 47
@@ -134,20 +134,20 @@
     .line 48
     .line 49
     .line 50
-    :cond_31
+    :cond_0
     return-void
 
     .line 51
-    :pswitch_data_32
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_24
-        :pswitch_19
-        :pswitch_13
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final onInvalidated()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/ql1;->a:B
@@ -161,7 +161,7 @@
 
     .line 5
     .line 6
-    packed-switch v0, :pswitch_data_2a
+    packed-switch v0, :pswitch_data_0
 
     .line 7
     .line 8
@@ -187,7 +187,7 @@
     return-void
 
     .line 20
-    :pswitch_13
+    :pswitch_0
     check-cast v2, Lcom/mixplorer/widgets/MiViewPager;
 
     .line 21
@@ -200,7 +200,7 @@
     return-void
 
     .line 26
-    :pswitch_19
+    :pswitch_1
     invoke-super {p0}, Landroid/database/DataSetObserver;->onInvalidated()V
 
     .line 27
@@ -222,7 +222,7 @@
     return-void
 
     .line 37
-    :pswitch_24
+    :pswitch_2
     check-cast v2, Llibs/tl1;
 
     .line 38
@@ -235,10 +235,10 @@
     return-void
 
     .line 43
-    :pswitch_data_2a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_24
-        :pswitch_19
-        :pswitch_13
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

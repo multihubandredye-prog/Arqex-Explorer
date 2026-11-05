@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     sget-boolean v0, Lorg/conscrypt/SSLUtils;->USE_ENGINE_SOCKET_BY_DEFAULT:Z
@@ -32,7 +32,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljavax/net/ssl/SSLServerSocketFactory;-><init>()V
@@ -48,7 +48,7 @@
 
     .line 7
     .line 8
-    :try_start_7
+    :try_start_0
     invoke-static {}, Lorg/conscrypt/SSLParametersImpl;->getDefault()Lorg/conscrypt/SSLParametersImpl;
 
     .line 9
@@ -65,8 +65,8 @@
 
     .line 15
     invoke-virtual {v0, v1}, Lorg/conscrypt/SSLParametersImpl;->setUseClientMode(Z)V
-    :try_end_11
-    .catch Ljava/security/KeyManagementException; {:try_start_7 .. :try_end_11} :catch_12
+    :try_end_0
+    .catch Ljava/security/KeyManagementException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 16
     .line 17
@@ -74,7 +74,7 @@
     return-void
 
     .line 19
-    :catch_12
+    :catch_0
     move-exception v0
 
     .line 20
@@ -104,7 +104,7 @@
 .end method
 
 .method public constructor <init>(Lorg/conscrypt/SSLParametersImpl;)V
-    .registers 3
+    .locals 1
 
     .line 33
     invoke-direct {p0}, Ljavax/net/ssl/SSLServerSocketFactory;-><init>()V
@@ -132,7 +132,7 @@
 .end method
 
 .method public static setUseEngineSocketByDefault(Z)V
-    .registers 3
+    .locals 2
 
     .line 1
     sput-boolean p0, Lorg/conscrypt/OpenSSLServerSocketFactoryImpl;->useEngineSocketByDefault:Z
@@ -151,7 +151,7 @@
 
     .line 8
     .line 9
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     .line 10
     .line 11
@@ -164,14 +164,14 @@
     .line 14
     .line 15
     .line 16
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public createServerSocket()Ljava/net/ServerSocket;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Lorg/conscrypt/ConscryptServerSocket;
@@ -215,7 +215,7 @@
 .end method
 
 .method public createServerSocket(I)Ljava/net/ServerSocket;
-    .registers 4
+    .locals 2
 
     .line 21
     new-instance v0, Lorg/conscrypt/ConscryptServerSocket;
@@ -241,7 +241,7 @@
 .end method
 
 .method public createServerSocket(II)Ljava/net/ServerSocket;
-    .registers 5
+    .locals 2
 
     .line 23
     new-instance v0, Lorg/conscrypt/ConscryptServerSocket;
@@ -267,7 +267,7 @@
 .end method
 
 .method public createServerSocket(IILjava/net/InetAddress;)Ljava/net/ServerSocket;
-    .registers 6
+    .locals 2
 
     .line 25
     new-instance v0, Lorg/conscrypt/ConscryptServerSocket;
@@ -294,7 +294,7 @@
 .end method
 
 .method public getDefaultCipherSuites()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLServerSocketFactoryImpl;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -313,7 +313,7 @@
 .end method
 
 .method public getSupportedCipherSuites()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-static {}, Lorg/conscrypt/NativeCrypto;->getSupportedCipherSuites()[Ljava/lang/String;
@@ -328,7 +328,7 @@
 .end method
 
 .method public setUseEngineSocket(Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-boolean p1, p0, Lorg/conscrypt/OpenSSLServerSocketFactoryImpl;->useEngineSocket:Z

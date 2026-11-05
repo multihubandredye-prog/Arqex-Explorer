@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/security/PrivateKey;Ljava/security/cert/Certificate;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/b;->Lambda:Ljava/security/PrivateKey;
@@ -55,7 +55,7 @@
 
 # virtual methods
 .method public final c()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/b;->Z:Ljava/lang/Object;
@@ -65,12 +65,12 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Llibs/b;->X:Llibs/OoO;
 
     .line 5
     .line 6
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_0
 
     .line 7
     .line 8
@@ -82,7 +82,7 @@
     move-result v1
 
     .line 12
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_0
 
     .line 13
     .line 14
@@ -94,45 +94,45 @@
 
     .line 17
     .line 18
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_0
 
     .line 19
     .line 20
     const/4 v1, 0x1
 
     .line 21
-    goto :goto_18
+    goto :goto_0
 
     .line 22
-    :catchall_15
+    :catchall_0
     move-exception v1
 
     .line 23
-    goto :goto_1a
+    goto :goto_1
 
     .line 24
-    :cond_17
+    :cond_0
     const/4 v1, 0x0
 
     .line 25
-    :goto_18
+    :goto_0
     monitor-exit v0
 
     .line 26
     return v1
 
     .line 27
-    :goto_1a
+    :goto_1
     monitor-exit v0
-    :try_end_1b
-    .catchall {:try_start_3 .. :try_end_1b} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 28
     throw v1
 .end method
 
 .method public final close()V
-    .registers 2
+    .locals 1
 
     .line 1
     :try_start_0
@@ -141,25 +141,25 @@
     .line 2
     .line 3
     invoke-static {v0}, Llibs/Epsilon;->w(Ljava/security/PrivateKey;)V
-    :try_end_5
-    .catchall {:try_start_0 .. :try_end_5} :catchall_6
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 4
     .line 5
     .line 6
-    goto :goto_7
+    goto :goto_0
 
     .line 7
-    :catchall_6
+    :catchall_0
     nop
 
     .line 8
-    :goto_7
+    :goto_0
     iget-object v0, p0, Llibs/b;->X:Llibs/OoO;
 
     .line 9
     .line 10
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 11
     .line 12
@@ -175,6 +175,6 @@
 
     .line 17
     .line 18
-    :cond_11
+    :cond_0
     return-void
 .end method

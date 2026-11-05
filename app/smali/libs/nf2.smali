@@ -19,7 +19,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     .line 1
     new-instance v0, Ljava/util/HashMap;
@@ -205,7 +205,7 @@
 .end method
 
 .method public constructor <init>(Llibs/mf2;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -225,7 +225,7 @@
 .end method
 
 .method public static a(Ljava/lang/String;)Llibs/nf2;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/af;
@@ -262,7 +262,7 @@
     move-result v2
 
     .line 19
-    if-eqz v2, :cond_1b
+    if-eqz v2, :cond_0
 
     .line 20
     .line 21
@@ -279,7 +279,7 @@
     move-result-object v1
 
     .line 28
-    :cond_1b
+    :cond_0
     sget-object v2, Llibs/nf2;->c:Ljava/util/HashMap;
 
     .line 29
@@ -309,7 +309,7 @@
     move-result v2
 
     .line 43
-    if-nez v2, :cond_53
+    if-nez v2, :cond_3
 
     .line 44
     .line 45
@@ -338,7 +338,7 @@
     move-result v2
 
     .line 58
-    if-nez v2, :cond_51
+    if-nez v2, :cond_2
 
     .line 59
     .line 60
@@ -354,17 +354,17 @@
     move-result v0
 
     .line 66
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_1
 
     .line 67
     .line 68
     const/4 p0, 0x2
 
     .line 69
-    goto :goto_54
+    goto :goto_0
 
     .line 70
-    :cond_45
+    :cond_1
     new-instance v0, Llibs/b13;
 
     .line 71
@@ -389,18 +389,18 @@
     throw v0
 
     .line 82
-    :cond_51
+    :cond_2
     const/4 p0, 0x1
 
     .line 83
-    goto :goto_54
+    goto :goto_0
 
     .line 84
-    :cond_53
+    :cond_3
     const/4 p0, 0x0
 
     .line 85
-    :goto_54
+    :goto_0
     new-instance v0, Llibs/nf2;
 
     .line 86
@@ -416,25 +416,25 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     .line 1
-    if-ne p0, p1, :cond_3
+    if-ne p0, p1, :cond_0
 
     .line 2
     .line 3
-    goto :goto_1d
+    goto :goto_0
 
     .line 4
-    :cond_3
-    if-nez p1, :cond_6
+    :cond_0
+    if-nez p1, :cond_1
 
     .line 5
     .line 6
-    goto :goto_1f
+    goto :goto_1
 
     .line 7
-    :cond_6
+    :cond_1
     const-class v0, Llibs/nf2;
 
     .line 8
@@ -447,14 +447,14 @@
     move-result-object v1
 
     .line 13
-    if-eq v0, v1, :cond_f
+    if-eq v0, v1, :cond_2
 
     .line 14
     .line 15
-    goto :goto_1f
+    goto :goto_1
 
     .line 16
-    :cond_f
+    :cond_2
     check-cast p1, Llibs/nf2;
 
     .line 17
@@ -467,7 +467,7 @@
 
     .line 21
     .line 22
-    if-ne v0, v1, :cond_1f
+    if-ne v0, v1, :cond_3
 
     .line 23
     .line 24
@@ -479,19 +479,19 @@
 
     .line 27
     .line 28
-    if-ne v0, p1, :cond_1f
+    if-ne v0, p1, :cond_3
 
     .line 29
     .line 30
-    :goto_1d
+    :goto_0
     const/4 p1, 0x1
 
     .line 31
     return p1
 
     .line 32
-    :cond_1f
-    :goto_1f
+    :cond_3
+    :goto_1
     const/4 p1, 0x0
 
     .line 33
@@ -499,7 +499,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -536,14 +536,14 @@
 
     .line 18
     .line 19
-    if-eq v2, v1, :cond_1d
+    if-eq v2, v1, :cond_1
 
     .line 20
     .line 21
     const/4 v1, 0x2
 
     .line 22
-    if-eq v2, v1, :cond_1a
+    if-eq v2, v1, :cond_0
 
     .line 23
     .line 24
@@ -551,23 +551,23 @@
 
     .line 25
     .line 26
-    goto :goto_1f
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_0
     const-string v1, "slice"
 
     .line 28
     .line 29
-    goto :goto_1f
+    goto :goto_0
 
     .line 30
-    :cond_1d
+    :cond_1
     const-string v1, "meet"
 
     .line 31
     .line 32
-    :goto_1f
+    :goto_0
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 33

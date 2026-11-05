@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Llibs/ix2;-><init>()V
@@ -54,7 +54,7 @@
 .end method
 
 .method public constructor <init>(Llibs/ix2;)V
-    .registers 3
+    .locals 1
 
     .line 22
     invoke-direct {p0, p1}, Llibs/ix2;-><init>(Llibs/ix2;)V
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public final List()Llibs/gs;
-    .registers 7
+    .locals 6
 
     .line 1
     invoke-virtual {p0}, Llibs/ix2;->Object()Llibs/t02;
@@ -92,17 +92,17 @@
     const/4 v2, 0x0
 
     .line 8
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 9
     .line 10
     move-object v0, v2
 
     .line 11
-    goto :goto_f
+    goto :goto_0
 
     .line 12
-    :cond_b
+    :cond_0
     invoke-virtual {v0, v1}, Llibs/t02;->e(Ljava/lang/String;)Llibs/t02;
 
     .line 13
@@ -111,22 +111,22 @@
     move-result-object v0
 
     .line 16
-    :goto_f
+    :goto_0
     const-string v3, "detail"
 
     .line 17
     .line 18
-    if-nez v0, :cond_15
+    if-nez v0, :cond_1
 
     .line 19
     .line 20
     move-object v0, v2
 
     .line 21
-    goto :goto_19
+    goto :goto_1
 
     .line 22
-    :cond_15
+    :cond_1
     invoke-virtual {v0, v3}, Llibs/t02;->e(Ljava/lang/String;)Llibs/t02;
 
     .line 23
@@ -135,22 +135,22 @@
     move-result-object v0
 
     .line 26
-    :goto_19
+    :goto_1
     const-string v4, "UPnPError"
 
     .line 27
     .line 28
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_2
 
     .line 29
     .line 30
     move-object v0, v2
 
     .line 31
-    goto :goto_23
+    goto :goto_2
 
     .line 32
-    :cond_1f
+    :cond_2
     invoke-virtual {v0, v4}, Llibs/t02;->e(Ljava/lang/String;)Llibs/t02;
 
     .line 33
@@ -159,18 +159,18 @@
     move-result-object v0
 
     .line 36
-    :goto_23
-    if-nez v0, :cond_27
+    :goto_2
+    if-nez v0, :cond_3
 
     .line 37
     .line 38
     move-object v0, v2
 
     .line 39
-    goto :goto_2d
+    goto :goto_3
 
     .line 40
-    :cond_27
+    :cond_3
     const-string v5, "errorCode"
 
     .line 41
@@ -183,41 +183,41 @@
     move-result-object v0
 
     .line 46
-    :goto_2d
+    :goto_3
     const/4 v5, -0x1
 
     .line 47
-    if-nez v0, :cond_31
+    if-nez v0, :cond_4
 
     .line 48
     .line 49
-    goto :goto_39
+    goto :goto_4
 
     .line 50
-    :cond_31
+    :cond_4
     iget-object v0, v0, Llibs/t02;->e:Ljava/lang/String;
 
     .line 51
     .line 52
-    :try_start_33
+    :try_start_0
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     .line 53
     .line 54
     .line 55
     move-result v5
-    :try_end_37
-    .catch Ljava/lang/Exception; {:try_start_33 .. :try_end_37} :catch_38
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 56
-    goto :goto_39
+    goto :goto_4
 
     .line 57
-    :catch_38
+    :catch_0
     nop
 
     .line 58
-    :goto_39
+    :goto_4
     invoke-virtual {p0}, Llibs/ix2;->Object()Llibs/t02;
 
     .line 59
@@ -226,17 +226,17 @@
     move-result-object v0
 
     .line 62
-    if-nez v0, :cond_41
+    if-nez v0, :cond_5
 
     .line 63
     .line 64
     move-object v0, v2
 
     .line 65
-    goto :goto_45
+    goto :goto_5
 
     .line 66
-    :cond_41
+    :cond_5
     invoke-virtual {v0, v1}, Llibs/t02;->e(Ljava/lang/String;)Llibs/t02;
 
     .line 67
@@ -245,18 +245,18 @@
     move-result-object v0
 
     .line 70
-    :goto_45
-    if-nez v0, :cond_49
+    :goto_5
+    if-nez v0, :cond_6
 
     .line 71
     .line 72
     move-object v0, v2
 
     .line 73
-    goto :goto_4d
+    goto :goto_6
 
     .line 74
-    :cond_49
+    :cond_6
     invoke-virtual {v0, v3}, Llibs/t02;->e(Ljava/lang/String;)Llibs/t02;
 
     .line 75
@@ -265,18 +265,18 @@
     move-result-object v0
 
     .line 78
-    :goto_4d
-    if-nez v0, :cond_51
+    :goto_6
+    if-nez v0, :cond_7
 
     .line 79
     .line 80
     move-object v0, v2
 
     .line 81
-    goto :goto_55
+    goto :goto_7
 
     .line 82
-    :cond_51
+    :cond_7
     invoke-virtual {v0, v4}, Llibs/t02;->e(Ljava/lang/String;)Llibs/t02;
 
     .line 83
@@ -285,15 +285,15 @@
     move-result-object v0
 
     .line 86
-    :goto_55
-    if-nez v0, :cond_58
+    :goto_7
+    if-nez v0, :cond_8
 
     .line 87
     .line 88
-    goto :goto_5e
+    goto :goto_8
 
     .line 89
-    :cond_58
+    :cond_8
     const-string v1, "errorDescription"
 
     .line 90
@@ -306,8 +306,8 @@
     move-result-object v2
 
     .line 95
-    :goto_5e
-    if-nez v2, :cond_63
+    :goto_8
+    if-nez v2, :cond_9
 
     .line 96
     .line 97
@@ -315,15 +315,15 @@
 
     .line 98
     .line 99
-    goto :goto_65
+    goto :goto_9
 
     .line 100
-    :cond_63
+    :cond_9
     iget-object v0, v2, Llibs/t02;->e:Ljava/lang/String;
 
     .line 101
     .line 102
-    :goto_65
+    :goto_9
     iget-object v1, p0, Llibs/c00;->h:Llibs/gs;
 
     .line 103
@@ -340,7 +340,7 @@
 .end method
 
 .method public final Map(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-static {p1}, Llibs/gs;->a(I)Ljava/lang/String;
@@ -360,7 +360,7 @@
 .end method
 
 .method public final Set(ILjava/lang/String;)V
-    .registers 9
+    .locals 6
 
     .line 1
     const/16 v0, 0x1f4

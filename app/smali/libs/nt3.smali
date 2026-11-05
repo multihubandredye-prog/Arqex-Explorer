@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static a(Landroid/view/View;Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
-    .registers 3
+    .locals 1
 
     .line 1
     sget v0, Llibs/wt3;->a:I
@@ -24,7 +24,7 @@
 .end method
 
 .method public static b(Landroid/view/View;Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/View;->onApplyWindowInsets(Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
@@ -39,7 +39,7 @@
 .end method
 
 .method public static c(Landroid/view/View;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->requestApplyInsets()V

@@ -15,7 +15,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/bn1;
@@ -47,7 +47,7 @@
 .end method
 
 .method public constructor <init>(Llibs/b63;Llibs/w73;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/nv2;-><init>()V
@@ -69,7 +69,7 @@
 
 # virtual methods
 .method public final h(Llibs/mv2;)V
-    .registers 10
+    .locals 8
 
     .line 1
     invoke-virtual {p1}, Llibs/qj0;->b()Llibs/xw2;
@@ -96,7 +96,7 @@
 
     .line 12
     .line 13
-    if-nez v4, :cond_16
+    if-nez v4, :cond_0
 
     .line 14
     .line 15
@@ -116,7 +116,7 @@
     return-void
 
     .line 23
-    :cond_16
+    :cond_0
     invoke-virtual {p1}, Llibs/mv2;->g()Z
 
     .line 24
@@ -125,7 +125,7 @@
     move-result v0
 
     .line 27
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
     .line 28
     .line 29
@@ -145,7 +145,7 @@
     return-void
 
     .line 37
-    :cond_24
+    :cond_1
     invoke-virtual {p1}, Llibs/qj0;->b()Llibs/xw2;
 
     .line 38
@@ -181,7 +181,7 @@
 
     .line 53
     .line 54
-    if-eqz v0, :cond_9c
+    if-eqz v0, :cond_6
 
     .line 55
     .line 56
@@ -209,7 +209,7 @@
 
     .line 67
     .line 68
-    if-eqz v0, :cond_94
+    if-eqz v0, :cond_5
 
     .line 69
     .line 70
@@ -233,14 +233,14 @@
 
     .line 79
     .line 80
-    if-ne v0, v2, :cond_52
+    if-ne v0, v2, :cond_2
 
     .line 81
     .line 82
-    goto :goto_94
+    goto :goto_0
 
     .line 83
-    :cond_52
+    :cond_2
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     .line 84
@@ -257,7 +257,7 @@
     move-result-object v0
 
     .line 91
-    if-nez v0, :cond_6d
+    if-nez v0, :cond_3
 
     .line 92
     .line 93
@@ -294,7 +294,7 @@
     return-void
 
     .line 110
-    :cond_6d
+    :cond_3
     invoke-virtual {p1}, Llibs/qj0;->b()Llibs/xw2;
 
     .line 111
@@ -335,7 +335,7 @@
 
     .line 129
     .line 130
-    if-eqz v0, :cond_87
+    if-eqz v0, :cond_4
 
     .line 131
     .line 132
@@ -347,7 +347,7 @@
     return-void
 
     .line 136
-    :cond_87
+    :cond_4
     new-instance v0, Llibs/r70;
 
     .line 137
@@ -373,8 +373,8 @@
     return-void
 
     .line 149
-    :cond_94
-    :goto_94
+    :cond_5
+    :goto_0
     iget-object v0, p0, Llibs/Color;->a:Ljava/lang/Object;
 
     .line 150
@@ -391,7 +391,7 @@
     return-void
 
     .line 157
-    :cond_9c
+    :cond_6
     invoke-virtual {p1}, Llibs/qj0;->b()Llibs/xw2;
 
     .line 158
@@ -416,7 +416,7 @@
     move-result v0
 
     .line 169
-    if-nez v0, :cond_ef
+    if-nez v0, :cond_8
 
     .line 170
     .line 171
@@ -428,7 +428,7 @@
     move-result v0
 
     .line 175
-    if-nez v0, :cond_ef
+    if-nez v0, :cond_8
 
     .line 176
     .line 177
@@ -440,14 +440,14 @@
     move-result v0
 
     .line 181
-    if-eqz v0, :cond_b7
+    if-eqz v0, :cond_7
 
     .line 182
     .line 183
-    goto :goto_ef
+    goto :goto_1
 
     .line 184
-    :cond_b7
+    :cond_7
     invoke-virtual {p1}, Llibs/qj0;->b()Llibs/xw2;
 
     .line 185
@@ -480,7 +480,7 @@
     move-result-object v0
 
     .line 200
-    if-eqz v0, :cond_ef
+    if-eqz v0, :cond_8
 
     .line 201
     .line 202
@@ -492,7 +492,7 @@
 
     .line 205
     .line 206
-    if-eqz v0, :cond_ef
+    if-eqz v0, :cond_8
 
     .line 207
     .line 208
@@ -560,8 +560,8 @@
     return-void
 
     .line 240
-    :cond_ef
-    :goto_ef
+    :cond_8
+    :goto_1
     iget-object v0, p0, Llibs/Color;->a:Ljava/lang/Object;
 
     .line 241

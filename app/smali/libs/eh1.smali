@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 1
     const-string v0, "GOST3410"
@@ -58,7 +58,7 @@
 
 # virtual methods
 .method public final a(Llibs/ht0;Ljava/security/SecureRandom;)V
-    .registers 8
+    .locals 5
 
     .line 1
     iget-object v0, p1, Llibs/ht0;->X:Llibs/nt0;
@@ -123,14 +123,14 @@
 .end method
 
 .method public final generateKeyPair()Ljava/security/KeyPair;
-    .registers 6
+    .locals 5
 
     .line 1
     iget-boolean v0, p0, Llibs/eh1;->c:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -176,7 +176,7 @@
     .line 25
     .line 26
     .line 27
-    :cond_1a
+    :cond_0
     iget-object v0, p0, Llibs/eh1;->a:Llibs/Init;
 
     .line 28
@@ -248,21 +248,21 @@
 .end method
 
 .method public final initialize(ILjava/security/SecureRandom;)V
-    .registers 3
+    .locals 0
 
     .line 17
     return-void
 .end method
 
 .method public final initialize(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    .registers 4
+    .locals 1
 
     .line 1
     instance-of v0, p1, Llibs/ht0;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -278,7 +278,7 @@
     return-void
 
     .line 11
-    :cond_a
+    :cond_0
     const-string p1, "parameter object not a GOST3410ParameterSpec"
 
     .line 12

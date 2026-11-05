@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Param;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -30,7 +30,7 @@
     const/4 v1, 0x2
 
     .line 9
-    if-lt v0, v1, :cond_14
+    if-lt v0, v1, :cond_0
 
     .line 10
     .line 11
@@ -45,7 +45,7 @@
     const/4 v1, 0x3
 
     .line 16
-    if-gt v0, v1, :cond_14
+    if-gt v0, v1, :cond_0
 
     .line 17
     .line 18
@@ -56,7 +56,7 @@
     return-void
 
     .line 21
-    :cond_14
+    :cond_0
     const-string v0, "Bad sequence size: "
 
     .line 22
@@ -83,7 +83,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/mj3;->X:Llibs/Param;
@@ -94,14 +94,14 @@
 .end method
 
 .method public final g()Llibs/im0;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/mj3;->Y:Llibs/im0;
 
     .line 2
     .line 3
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -120,7 +120,7 @@
     const/4 v2, 0x3
 
     .line 12
-    if-ne v1, v2, :cond_18
+    if-ne v1, v2, :cond_0
 
     .line 13
     .line 14
@@ -147,7 +147,7 @@
 
     .line 24
     .line 25
-    :cond_18
+    :cond_0
     iget-object v0, p0, Llibs/mj3;->Y:Llibs/im0;
 
     .line 26

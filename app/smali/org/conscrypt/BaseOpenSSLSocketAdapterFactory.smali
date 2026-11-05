@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/conscrypt/OpenSSLSocketFactoryImpl;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljavax/net/ssl/SSLSocketFactory;-><init>()V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public createSocket()Ljava/net/Socket;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/BaseOpenSSLSocketAdapterFactory;->delegate:Lorg/conscrypt/OpenSSLSocketFactoryImpl;
@@ -58,7 +58,7 @@
 .end method
 
 .method public createSocket(Ljava/lang/String;I)Ljava/net/Socket;
-    .registers 4
+    .locals 1
 
     .line 14
     iget-object v0, p0, Lorg/conscrypt/BaseOpenSSLSocketAdapterFactory;->delegate:Lorg/conscrypt/OpenSSLSocketFactoryImpl;
@@ -77,7 +77,7 @@
 .end method
 
 .method public createSocket(Ljava/lang/String;ILjava/net/InetAddress;I)Ljava/net/Socket;
-    .registers 6
+    .locals 1
 
     .line 15
     iget-object v0, p0, Lorg/conscrypt/BaseOpenSSLSocketAdapterFactory;->delegate:Lorg/conscrypt/OpenSSLSocketFactoryImpl;
@@ -98,7 +98,7 @@
 .end method
 
 .method public createSocket(Ljava/net/InetAddress;I)Ljava/net/Socket;
-    .registers 4
+    .locals 1
 
     .line 18
     iget-object v0, p0, Lorg/conscrypt/BaseOpenSSLSocketAdapterFactory;->delegate:Lorg/conscrypt/OpenSSLSocketFactoryImpl;
@@ -117,7 +117,7 @@
 .end method
 
 .method public createSocket(Ljava/net/InetAddress;ILjava/net/InetAddress;I)Ljava/net/Socket;
-    .registers 6
+    .locals 1
 
     .line 19
     iget-object v0, p0, Lorg/conscrypt/BaseOpenSSLSocketAdapterFactory;->delegate:Lorg/conscrypt/OpenSSLSocketFactoryImpl;
@@ -138,7 +138,7 @@
 .end method
 
 .method public createSocket(Ljava/net/Socket;Ljava/lang/String;IZ)Ljava/net/Socket;
-    .registers 6
+    .locals 1
 
     .line 22
     iget-object v0, p0, Lorg/conscrypt/BaseOpenSSLSocketAdapterFactory;->delegate:Lorg/conscrypt/OpenSSLSocketFactoryImpl;
@@ -157,7 +157,7 @@
 .end method
 
 .method public getDefaultCipherSuites()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/BaseOpenSSLSocketAdapterFactory;->delegate:Lorg/conscrypt/OpenSSLSocketFactoryImpl;
@@ -176,7 +176,7 @@
 .end method
 
 .method public getSupportedCipherSuites()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/BaseOpenSSLSocketAdapterFactory;->delegate:Lorg/conscrypt/OpenSSLSocketFactoryImpl;

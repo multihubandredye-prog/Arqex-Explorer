@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic a(Llibs/xc0;Landroid/net/Uri;)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/provider/DocumentsProvider;->getTypeAnonymous(Landroid/net/Uri;)Ljava/lang/String;
@@ -20,7 +20,7 @@
 .end method
 
 .method public static bridge synthetic b()V
-    .registers 0
+    .locals 0
 
     .line 1
     invoke-static {}, Ldalvik/system/ZipPathValidator;->clearCallback()V

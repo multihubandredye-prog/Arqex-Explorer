@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/util/ArrayList;
@@ -44,10 +44,10 @@
     monitor-enter v2
 
     .line 17
-    :try_start_10
+    :try_start_0
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_13
-    .catchall {:try_start_10 .. :try_end_13} :catchall_1e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 18
     .line 19
@@ -75,21 +75,21 @@
     return-void
 
     .line 31
-    :catchall_1e
+    :catchall_0
     move-exception v0
 
     .line 32
-    :try_start_1f
+    :try_start_1
     monitor-exit v2
-    :try_end_20
-    .catchall {:try_start_1f .. :try_end_20} :catchall_1e
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 33
     throw v0
 .end method
 
 .method public static declared-synchronized a(Llibs/dr0;)V
-    .registers 3
+    .locals 2
 
     .line 1
     const-class v0, Llibs/ib2;
@@ -99,14 +99,14 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     sget-object v1, Llibs/ib2;->a:Ljava/util/ArrayList;
 
     .line 5
     .line 6
     invoke-virtual {v1, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_8
-    .catchall {:try_start_3 .. :try_end_8} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 7
     .line 8
@@ -117,14 +117,14 @@
     return-void
 
     .line 11
-    :catchall_a
+    :catchall_0
     move-exception p0
 
     .line 12
-    :try_start_b
+    :try_start_1
     monitor-exit v0
-    :try_end_c
-    .catchall {:try_start_b .. :try_end_c} :catchall_a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 13
     throw p0

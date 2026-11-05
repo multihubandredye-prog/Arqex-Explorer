@@ -9,7 +9,7 @@
 
 # direct methods
 .method public varargs constructor <init>([Llibs/kr0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/kr0;-><init>()V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final Nxt(Ljava/lang/String;ILjava/io/StringWriter;)I
-    .registers 7
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
@@ -36,11 +36,11 @@
     const/4 v1, 0x0
 
     .line 3
-    :goto_2
+    :goto_0
     const/4 v2, 0x6
 
     .line 4
-    if-ge v1, v2, :cond_13
+    if-ge v1, v2, :cond_1
 
     .line 5
     .line 6
@@ -60,21 +60,21 @@
     move-result v2
 
     .line 14
-    if-eqz v2, :cond_10
+    if-eqz v2, :cond_0
 
     .line 15
     .line 16
     return v2
 
     .line 17
-    :cond_10
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
     .line 18
     .line 19
-    goto :goto_2
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_1
     return v0
 .end method

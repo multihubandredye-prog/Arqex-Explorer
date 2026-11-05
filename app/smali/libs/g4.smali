@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic List(Landroid/database/MatrixCursor$RowBuilder;Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "document_id"
@@ -21,7 +21,7 @@
 .end method
 
 .method public static bridge synthetic Map(Landroid/database/MatrixCursor$RowBuilder;Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "summary"
@@ -37,7 +37,7 @@
 .end method
 
 .method public static bridge synthetic Object(Landroid/database/MatrixCursor$RowBuilder;Ljava/lang/Integer;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "icon"
@@ -53,7 +53,7 @@
 .end method
 
 .method public static bridge synthetic Set(Landroid/database/MatrixCursor$RowBuilder;Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "document_id"
@@ -69,7 +69,7 @@
 .end method
 
 .method public static bridge synthetic String(Landroid/database/MatrixCursor$RowBuilder;Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "title"
@@ -85,7 +85,7 @@
 .end method
 
 .method public static bridge synthetic a(Llibs/xc0;Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/provider/DocumentsProvider;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
@@ -100,7 +100,7 @@
 .end method
 
 .method public static bridge synthetic b(Llibs/xc0;Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2, p3}, Landroid/provider/DocumentsProvider;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
@@ -115,7 +115,7 @@
 .end method
 
 .method public static bridge synthetic c(Ljava/lang/Object;)Landroid/app/AppOpsManager;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Landroid/app/AppOpsManager;
@@ -126,7 +126,7 @@
 .end method
 
 .method public static bridge synthetic d(Ljava/lang/Object;)Landroid/content/UriPermission;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Landroid/content/UriPermission;
@@ -137,7 +137,7 @@
 .end method
 
 .method public static bridge synthetic e(Llibs/xc0;Landroid/net/Uri;Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2}, Landroid/provider/DocumentsProvider;->openAssetFile(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;
@@ -152,7 +152,7 @@
 .end method
 
 .method public static bridge synthetic f(Llibs/xc0;Landroid/net/Uri;Ljava/lang/String;Landroid/os/Bundle;Landroid/os/CancellationSignal;)Landroid/content/res/AssetFileDescriptor;
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/provider/DocumentsProvider;->openTypedAssetFile(Landroid/net/Uri;Ljava/lang/String;Landroid/os/Bundle;Landroid/os/CancellationSignal;)Landroid/content/res/AssetFileDescriptor;
@@ -167,7 +167,7 @@
 .end method
 
 .method public static bridge synthetic g(Llibs/xc0;Landroid/net/Uri;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/content/res/AssetFileDescriptor;
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2, p3}, Landroid/provider/DocumentsProvider;->openAssetFile(Landroid/net/Uri;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/content/res/AssetFileDescriptor;
@@ -182,7 +182,7 @@
 .end method
 
 .method public static bridge synthetic h(Llibs/xc0;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-virtual/range {p0 .. p5}, Landroid/provider/DocumentsProvider;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
@@ -197,7 +197,7 @@
 .end method
 
 .method public static bridge synthetic i(Landroid/content/UriPermission;)Landroid/net/Uri;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/content/UriPermission;->getUri()Landroid/net/Uri;
@@ -212,7 +212,7 @@
 .end method
 
 .method public static bridge synthetic j(Llibs/xc0;Landroid/net/Uri;)Landroid/net/Uri;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/provider/DocumentsProvider;->uncanonicalize(Landroid/net/Uri;)Landroid/net/Uri;
@@ -227,7 +227,7 @@
 .end method
 
 .method public static bridge synthetic k(Llibs/xc0;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2, p3}, Landroid/provider/DocumentsProvider;->call(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
@@ -242,7 +242,7 @@
 .end method
 
 .method public static bridge synthetic l(Landroid/content/ContentResolver;Landroid/net/Uri;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/os/ParcelFileDescriptor;
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2, p3}, Landroid/content/ContentResolver;->openFileDescriptor(Landroid/net/Uri;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/os/ParcelFileDescriptor;
@@ -257,7 +257,7 @@
 .end method
 
 .method public static bridge synthetic m(Llibs/xc0;Landroid/net/Uri;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/Object;Landroid/content/ContentProvider$PipeDataWriter;)Landroid/os/ParcelFileDescriptor;
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-virtual/range {p0 .. p5}, Landroid/provider/DocumentsProvider;->openPipeHelper(Landroid/net/Uri;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/Object;Landroid/content/ContentProvider$PipeDataWriter;)Landroid/os/ParcelFileDescriptor;
@@ -272,7 +272,7 @@
 .end method
 
 .method public static bridge synthetic n(Llibs/xc0;Landroid/net/Uri;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/os/ParcelFileDescriptor;
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2, p3}, Landroid/provider/DocumentsProvider;->openFile(Landroid/net/Uri;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/os/ParcelFileDescriptor;
@@ -287,7 +287,7 @@
 .end method
 
 .method public static bridge synthetic p()Ljava/lang/Class;
-    .registers 1
+    .locals 1
 
     .line 1
     const-class v0, Landroid/app/AppOpsManager;
@@ -298,7 +298,7 @@
 .end method
 
 .method public static bridge synthetic q(Llibs/xc0;Landroid/net/Uri;)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/provider/DocumentsProvider;->getType(Landroid/net/Uri;)Ljava/lang/String;
@@ -313,7 +313,7 @@
 .end method
 
 .method public static bridge synthetic r(Landroid/content/ContentResolver;)Ljava/util/List;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/content/ContentResolver;->getPersistedUriPermissions()Ljava/util/List;
@@ -328,7 +328,7 @@
 .end method
 
 .method public static bridge synthetic s(Landroid/content/ContentResolver;Landroid/net/Uri;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x3
@@ -343,7 +343,7 @@
 .end method
 
 .method public static bridge synthetic t(Landroid/database/MatrixCursor$RowBuilder;)V
-    .registers 3
+    .locals 2
 
     .line 1
     const-string v0, "mime_types"
@@ -362,7 +362,7 @@
 .end method
 
 .method public static bridge synthetic u(Landroid/database/MatrixCursor$RowBuilder;Ljava/lang/Integer;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "flags"
@@ -378,7 +378,7 @@
 .end method
 
 .method public static bridge synthetic v(Landroid/database/MatrixCursor$RowBuilder;Ljava/lang/Long;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "available_bytes"
@@ -394,7 +394,7 @@
 .end method
 
 .method public static bridge synthetic w(Landroid/database/MatrixCursor$RowBuilder;Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "root_id"
@@ -410,7 +410,7 @@
 .end method
 
 .method public static bridge synthetic x(Llibs/xc0;Landroid/content/Context;Landroid/content/pm/ProviderInfo;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2}, Landroid/provider/DocumentsProvider;->attachInfo(Landroid/content/Context;Landroid/content/pm/ProviderInfo;)V
@@ -422,7 +422,7 @@
 .end method
 
 .method public static bridge synthetic y(Landroid/content/UriPermission;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/content/UriPermission;->isReadPermission()Z
@@ -437,7 +437,7 @@
 .end method
 
 .method public static bridge synthetic z(Landroid/content/ContentResolver;Landroid/net/Uri;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x3

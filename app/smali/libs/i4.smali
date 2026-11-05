@@ -5,10 +5,10 @@
 
 # direct methods
 .method public static a(Landroid/app/AppOpsManager;Ljava/lang/String;ILjava/lang/String;)I
-    .registers 4
+    .locals 0
 
     .line 1
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     .line 2
     .line 3
@@ -18,7 +18,7 @@
     return p0
 
     .line 5
-    :cond_4
+    :cond_0
     invoke-virtual {p0, p1, p2, p3}, Landroid/app/AppOpsManager;->checkOpNoThrow(Ljava/lang/String;ILjava/lang/String;)I
 
     .line 6
@@ -31,7 +31,7 @@
 .end method
 
 .method public static b(Landroid/content/Context;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/content/Context;->getOpPackageName()Ljava/lang/String;
@@ -46,7 +46,7 @@
 .end method
 
 .method public static c(Landroid/content/Context;)Landroid/app/AppOpsManager;
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Landroid/app/AppOpsManager;

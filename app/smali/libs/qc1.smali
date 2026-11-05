@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Llibs/uz;-><init>()V
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method public final j(Llibs/t02;)Z
-    .registers 9
+    .locals 7
 
     .line 1
     iget-object v0, p1, Llibs/t02;->a:Llibs/y6;
@@ -103,8 +103,8 @@
     const/4 v3, 0x0
 
     .line 11
-    :goto_a
-    if-ge v3, v1, :cond_56
+    :goto_0
+    if-ge v3, v1, :cond_6
 
     .line 12
     .line 13
@@ -124,17 +124,17 @@
 
     .line 20
     .line 21
-    if-nez v5, :cond_18
+    if-nez v5, :cond_0
 
     .line 22
     .line 23
     const/4 v5, 0x0
 
     .line 24
-    goto :goto_1e
+    goto :goto_1
 
     .line 25
-    :cond_18
+    :cond_0
     const-string v6, "container"
 
     .line 26
@@ -147,30 +147,30 @@
     move-result v5
 
     .line 31
-    :goto_1e
-    if-eqz v5, :cond_21
+    :goto_1
+    if-eqz v5, :cond_1
 
     .line 32
     .line 33
-    goto :goto_53
+    goto :goto_4
 
     .line 34
-    :cond_21
+    :cond_1
     iget-object v5, v4, Llibs/t02;->d:Ljava/lang/String;
 
     .line 35
     .line 36
-    if-nez v5, :cond_27
+    if-nez v5, :cond_2
 
     .line 37
     .line 38
     const/4 v5, 0x0
 
     .line 39
-    goto :goto_2d
+    goto :goto_2
 
     .line 40
-    :cond_27
+    :cond_2
     const-string v6, "item"
 
     .line 41
@@ -183,30 +183,30 @@
     move-result v5
 
     .line 46
-    :goto_2d
-    if-eqz v5, :cond_30
+    :goto_2
+    if-eqz v5, :cond_3
 
     .line 47
     .line 48
-    goto :goto_53
+    goto :goto_4
 
     .line 49
-    :cond_30
+    :cond_3
     iget-object v5, v4, Llibs/t02;->d:Ljava/lang/String;
 
     .line 50
     .line 51
-    if-nez v5, :cond_36
+    if-nez v5, :cond_4
 
     .line 52
     .line 53
     const/4 v5, 0x0
 
     .line 54
-    goto :goto_3c
+    goto :goto_3
 
     .line 55
-    :cond_36
+    :cond_4
     const-string v6, "res"
 
     .line 56
@@ -219,8 +219,8 @@
     move-result v5
 
     .line 61
-    :goto_3c
-    if-eqz v5, :cond_4c
+    :goto_3
+    if-eqz v5, :cond_5
 
     .line 62
     .line 63
@@ -247,10 +247,10 @@
     .line 74
     .line 75
     .line 76
-    goto :goto_53
+    goto :goto_4
 
     .line 77
-    :cond_4c
+    :cond_5
     iget-object v5, v4, Llibs/t02;->d:Ljava/lang/String;
 
     .line 78
@@ -264,15 +264,15 @@
     .line 82
     .line 83
     .line 84
-    :goto_53
+    :goto_4
     add-int/lit8 v3, v3, 0x1
 
     .line 85
     .line 86
-    goto :goto_a
+    goto :goto_0
 
     .line 87
-    :cond_56
+    :cond_6
     invoke-virtual {v0}, Ljava/util/AbstractCollection;->size()I
 
     .line 88
@@ -281,8 +281,8 @@
     move-result p1
 
     .line 91
-    :goto_5a
-    if-ge v2, p1, :cond_6c
+    :goto_5
+    if-ge v2, p1, :cond_7
 
     .line 92
     .line 93
@@ -315,10 +315,10 @@
 
     .line 107
     .line 108
-    goto :goto_5a
+    goto :goto_5
 
     .line 109
-    :cond_6c
+    :cond_7
     const/4 p1, 0x1
 
     .line 110
@@ -326,7 +326,7 @@
 .end method
 
 .method public final t()J
-    .registers 7
+    .locals 6
 
     .line 1
     const-string v0, "dc:date"
@@ -345,7 +345,7 @@
 
     .line 8
     .line 9
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     .line 10
     .line 11
@@ -361,14 +361,14 @@
 
     .line 16
     .line 17
-    if-ge v3, v4, :cond_13
+    if-ge v3, v4, :cond_0
 
     .line 18
     .line 19
-    goto :goto_25
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     new-instance v3, Ljava/text/SimpleDateFormat;
 
     .line 21
@@ -386,7 +386,7 @@
     .line 27
     .line 28
     .line 29
-    :try_start_1c
+    :try_start_0
     invoke-virtual {v3, v0}, Ljava/text/DateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
 
     .line 30
@@ -401,15 +401,15 @@
     .line 35
     .line 36
     move-result-wide v0
-    :try_end_24
-    .catch Ljava/lang/Exception; {:try_start_1c .. :try_end_24} :catch_25
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 37
     return-wide v0
 
     .line 38
-    :catch_25
-    :cond_25
-    :goto_25
+    :catch_0
+    :cond_1
+    :goto_0
     return-wide v1
 .end method

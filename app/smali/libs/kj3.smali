@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ra;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/jz;-><init>()V

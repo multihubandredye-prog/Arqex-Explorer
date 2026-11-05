@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/t60;Llibs/kl;Llibs/kl;Ljava/util/ArrayList;Llibs/hq2;ILlibs/x52;)V
-    .registers 8
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -61,7 +61,7 @@
 .end method
 
 .method public static c(Ljava/security/PublicKey;ZZ)Ljava/util/List;
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-interface {p0}, Ljava/security/Key;->getAlgorithm()Ljava/lang/String;
@@ -84,7 +84,7 @@
     move-result v1
 
     .line 11
-    if-eqz v1, :cond_33
+    if-eqz v1, :cond_2
 
     .line 12
     .line 13
@@ -112,7 +112,7 @@
 
     .line 24
     .line 25
-    if-gt p0, p2, :cond_2c
+    if-gt p0, p2, :cond_1
 
     .line 26
     .line 27
@@ -134,7 +134,7 @@
     .line 35
     .line 36
     .line 37
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_0
 
     .line 38
     .line 39
@@ -147,11 +147,11 @@
     .line 42
     .line 43
     .line 44
-    :cond_2b
+    :cond_0
     return-object p0
 
     .line 45
-    :cond_2c
+    :cond_1
     sget-object p0, Llibs/y73;->Xi:Llibs/y73;
 
     .line 46
@@ -167,7 +167,7 @@
     return-object p0
 
     .line 52
-    :cond_33
+    :cond_2
     const-string v1, "DSA"
 
     .line 53
@@ -180,7 +180,7 @@
     move-result v1
 
     .line 58
-    if-eqz v1, :cond_52
+    if-eqz v1, :cond_5
 
     .line 59
     .line 60
@@ -193,7 +193,7 @@
     .line 63
     .line 64
     .line 65
-    if-eqz p2, :cond_45
+    if-eqz p2, :cond_3
 
     .line 66
     .line 67
@@ -201,21 +201,21 @@
 
     .line 68
     .line 69
-    goto :goto_47
+    goto :goto_0
 
     .line 70
-    :cond_45
+    :cond_3
     sget-object p2, Llibs/y73;->Rho:Llibs/y73;
 
     .line 71
     .line 72
-    :goto_47
+    :goto_0
     invoke-virtual {p0, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 73
     .line 74
     .line 75
-    if-eqz p1, :cond_51
+    if-eqz p1, :cond_4
 
     .line 76
     .line 77
@@ -228,11 +228,11 @@
     .line 80
     .line 81
     .line 82
-    :cond_51
+    :cond_4
     return-object p0
 
     .line 83
-    :cond_52
+    :cond_5
     const-string p2, "EC"
 
     .line 84
@@ -245,7 +245,7 @@
     move-result p2
 
     .line 89
-    if-eqz p2, :cond_85
+    if-eqz p2, :cond_8
 
     .line 90
     .line 91
@@ -281,7 +281,7 @@
 
     .line 106
     .line 107
-    if-gt p0, p2, :cond_7e
+    if-gt p0, p2, :cond_7
 
     .line 108
     .line 109
@@ -303,7 +303,7 @@
     .line 117
     .line 118
     .line 119
-    if-eqz p1, :cond_7d
+    if-eqz p1, :cond_6
 
     .line 120
     .line 121
@@ -316,11 +316,11 @@
     .line 124
     .line 125
     .line 126
-    :cond_7d
+    :cond_6
     return-object p0
 
     .line 127
-    :cond_7e
+    :cond_7
     sget-object p0, Llibs/y73;->Pi:Llibs/y73;
 
     .line 128
@@ -336,7 +336,7 @@
     return-object p0
 
     .line 134
-    :cond_85
+    :cond_8
     new-instance p0, Ljava/security/InvalidKeyException;
 
     .line 135
@@ -364,7 +364,7 @@
 
 # virtual methods
 .method public final a()Llibs/v1;
-    .registers 13
+    .locals 12
 
     .line 1
     iget-object v0, p0, Llibs/hs3;->a:Llibs/hq2;
@@ -449,11 +449,11 @@
     const/4 v9, 0x0
 
     .line 41
-    :goto_28
+    :goto_0
     const/4 v10, 0x1
 
     .line 42
-    if-ge v9, v6, :cond_52
+    if-ge v9, v6, :cond_0
 
     .line 43
     .line 44
@@ -476,16 +476,16 @@
     add-int/2addr v8, v10
 
     .line 53
-    :try_start_34
+    :try_start_0
     invoke-virtual {p0, v11, v0}, Llibs/hs3;->b(Llibs/s3;Ljava/util/Map;)[B
 
     .line 54
     .line 55
     .line 56
     move-result-object v10
-    :try_end_38
-    .catch Ljava/security/InvalidKeyException; {:try_start_34 .. :try_end_38} :catch_47
-    .catch Ljava/security/SignatureException; {:try_start_34 .. :try_end_38} :catch_3c
+    :try_end_0
+    .catch Ljava/security/InvalidKeyException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/security/SignatureException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 57
     invoke-virtual {v5, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -493,10 +493,10 @@
     .line 58
     .line 59
     .line 60
-    goto :goto_28
+    goto :goto_0
 
     .line 61
-    :catch_3c
+    :catch_0
     move-exception v0
 
     .line 62
@@ -520,7 +520,7 @@
     throw v1
 
     .line 72
-    :catch_47
+    :catch_1
     move-exception v0
 
     .line 73
@@ -544,7 +544,7 @@
     throw v1
 
     .line 83
-    :cond_52
+    :cond_0
     invoke-static {v5}, Llibs/zj0;->n(Ljava/util/ArrayList;)[B
 
     .line 84
@@ -602,7 +602,7 @@
 .end method
 
 .method public final b(Llibs/s3;Ljava/util/Map;)[B
-    .registers 16
+    .locals 13
 
     .line 1
     iget-object v0, p1, Llibs/s3;->b:Ljava/util/List;
@@ -617,7 +617,7 @@
     move-result v0
 
     .line 7
-    if-nez v0, :cond_1b1
+    if-nez v0, :cond_9
 
     .line 8
     .line 9
@@ -656,7 +656,7 @@
     move-result-object v0
 
     .line 26
-    :try_start_19
+    :try_start_0
     iget-object v2, p1, Llibs/s3;->b:Ljava/util/List;
 
     .line 27
@@ -667,8 +667,8 @@
     .line 30
     .line 31
     move-result-object v2
-    :try_end_1f
-    .catch Ljava/security/cert/CertificateEncodingException; {:try_start_19 .. :try_end_1f} :catch_1a8
+    :try_end_0
+    .catch Ljava/security/cert/CertificateEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 32
     new-instance v3, Ljava/util/ArrayList;
@@ -704,7 +704,7 @@
     move-result-object v4
 
     .line 49
-    :goto_30
+    :goto_0
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     .line 50
@@ -713,7 +713,7 @@
     move-result v5
 
     .line 53
-    if-eqz v5, :cond_74
+    if-eqz v5, :cond_1
 
     .line 54
     .line 55
@@ -745,7 +745,7 @@
 
     .line 68
     .line 69
-    if-eqz v7, :cond_55
+    if-eqz v7, :cond_0
 
     .line 70
     .line 71
@@ -775,10 +775,10 @@
     .line 83
     .line 84
     .line 85
-    goto :goto_30
+    goto :goto_0
 
     .line 86
-    :cond_55
+    :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
     .line 87
@@ -836,7 +836,7 @@
     throw p1
 
     .line 117
-    :cond_74
+    :cond_1
     iget p2, p1, Llibs/s3;->d:I
 
     .line 118
@@ -865,7 +865,7 @@
     const/4 v8, 0x4
 
     .line 131
-    if-eqz v6, :cond_a8
+    if-eqz v6, :cond_2
 
     .line 132
     .line 133
@@ -939,7 +939,7 @@
     .line 167
     .line 168
     .line 169
-    :cond_a8
+    :cond_2
     iget-boolean v6, p1, Llibs/s3;->f:Z
 
     .line 170
@@ -948,7 +948,7 @@
 
     .line 172
     .line 173
-    if-eqz v6, :cond_cc
+    if-eqz v6, :cond_3
 
     .line 174
     .line 175
@@ -957,7 +957,7 @@
     .line 176
     .line 177
     .line 178
-    if-ne v9, v6, :cond_cc
+    if-ne v9, v6, :cond_3
 
     .line 179
     .line 180
@@ -1006,7 +1006,7 @@
     .line 203
     .line 204
     .line 205
-    :cond_cc
+    :cond_3
     iget-object v6, p0, Llibs/hs3;->g:Llibs/x52;
 
     .line 206
@@ -1015,7 +1015,7 @@
 
     .line 208
     .line 209
-    if-eqz v8, :cond_102
+    if-eqz v8, :cond_5
 
     .line 210
     .line 211
@@ -1024,11 +1024,11 @@
     .line 212
     .line 213
     .line 214
-    if-ne v9, v10, :cond_102
+    if-ne v9, v10, :cond_5
 
     .line 215
     .line 216
-    if-eqz v8, :cond_fa
+    if-eqz v8, :cond_4
 
     .line 217
     .line 218
@@ -1090,10 +1090,10 @@
     .line 248
     .line 249
     .line 250
-    goto :goto_102
+    goto :goto_1
 
     .line 251
-    :cond_fa
+    :cond_4
     new-instance p1, Ljava/util/NoSuchElementException;
 
     .line 252
@@ -1110,8 +1110,8 @@
     throw p1
 
     .line 259
-    :cond_102
-    :goto_102
+    :cond_5
+    :goto_1
     invoke-static {v5}, Llibs/ah3;->w(Ljava/lang/Iterable;)Llibs/ah3;
 
     .line 260
@@ -1127,7 +1127,7 @@
     const/4 v9, 0x0
 
     .line 266
-    :goto_109
+    :goto_2
     invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
 
     .line 267
@@ -1136,7 +1136,7 @@
     move-result v10
 
     .line 270
-    if-eqz v10, :cond_118
+    if-eqz v10, :cond_6
 
     .line 271
     .line 272
@@ -1158,10 +1158,10 @@
     add-int/2addr v9, v10
 
     .line 280
-    goto :goto_109
+    goto :goto_2
 
     .line 281
-    :cond_118
+    :cond_6
     invoke-static {v6}, Llibs/ji0;->k(Ljava/io/Closeable;)V
 
     .line 282
@@ -1171,7 +1171,7 @@
 
     .line 285
     .line 286
-    if-nez v9, :cond_122
+    if-nez v9, :cond_7
 
     .line 287
     .line 288
@@ -1179,10 +1179,10 @@
 
     .line 289
     .line 290
-    goto :goto_139
+    goto :goto_4
 
     .line 291
-    :cond_122
+    :cond_7
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     .line 292
@@ -1197,8 +1197,8 @@
     const/4 v10, 0x0
 
     .line 297
-    :goto_128
-    if-ge v10, v8, :cond_139
+    :goto_3
+    if-ge v10, v8, :cond_8
 
     .line 298
     .line 299
@@ -1232,11 +1232,11 @@
     add-int/2addr v9, v11
 
     .line 313
-    goto :goto_128
+    goto :goto_3
 
     .line 314
-    :cond_139
-    :goto_139
+    :cond_8
+    :goto_4
     invoke-static {v3}, Llibs/kr0;->l(Ljava/util/ArrayList;)[B
 
     .line 315
@@ -1460,7 +1460,7 @@
     return-object p1
 
     .line 425
-    :catch_1a8
+    :catch_0
     move-exception p1
 
     .line 426
@@ -1480,7 +1480,7 @@
     throw p2
 
     .line 434
-    :cond_1b1
+    :cond_9
     const-string p1, "No certificates configured for signer"
 
     .line 435

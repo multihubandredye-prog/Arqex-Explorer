@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/a;Llibs/r31;Llibs/rp0;)V
-    .registers 5
+    .locals 1
 
     .line 1
     const/4 v0, 0x2
@@ -49,7 +49,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;B)V
-    .registers 5
+    .locals 0
 
     .line 14
     iput-byte p4, p0, Llibs/ne0;->X:B
@@ -66,7 +66,7 @@
 .end method
 
 .method public synthetic constructor <init>(Llibs/qe0;Ljava/util/ArrayList;Lcom/mixplorer/activities/a;Llibs/ui;)V
-    .registers 5
+    .locals 0
 
     .line 15
     const/4 p1, 0x0
@@ -87,7 +87,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 13
+    .locals 11
 
     .line 1
     iget-byte v0, p0, Llibs/ne0;->X:B
@@ -110,7 +110,7 @@
 
     .line 10
     .line 11
-    packed-switch v0, :pswitch_data_fe
+    packed-switch v0, :pswitch_data_0
 
     .line 12
     .line 13
@@ -143,18 +143,18 @@
     move-result p1
 
     .line 28
-    if-eqz p1, :cond_1e
+    if-eqz p1, :cond_0
 
     .line 29
     .line 30
-    goto :goto_1f
+    goto :goto_0
 
     .line 31
-    :cond_1e
+    :cond_0
     move-object v1, v3
 
     .line 32
-    :goto_1f
+    :goto_0
     invoke-static {v1}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
 
     .line 33
@@ -163,7 +163,7 @@
     move-result p1
 
     .line 36
-    if-nez p1, :cond_5e
+    if-nez p1, :cond_4
 
     .line 37
     .line 38
@@ -175,14 +175,14 @@
     move-result p1
 
     .line 42
-    if-eqz p1, :cond_2c
+    if-eqz p1, :cond_1
 
     .line 43
     .line 44
-    goto :goto_5e
+    goto :goto_1
 
     .line 45
-    :cond_2c
+    :cond_1
     iget-object p1, v4, Lcom/mixplorer/activities/PreferenceActivity;->Whiskey:Ljava/util/List;
 
     .line 46
@@ -204,7 +204,7 @@
     move-result v0
 
     .line 56
-    if-nez v0, :cond_5a
+    if-nez v0, :cond_3
 
     .line 57
     .line 58
@@ -255,7 +255,7 @@
     .line 81
     .line 82
     .line 83
-    if-nez p1, :cond_58
+    if-nez p1, :cond_2
 
     .line 84
     .line 85
@@ -267,22 +267,22 @@
     move-result-object p1
 
     .line 89
-    :cond_58
+    :cond_2
     iput-object p1, v0, Llibs/p63;->g:Ljava/util/List;
 
     .line 90
     .line 91
-    :cond_5a
+    :cond_3
     invoke-virtual {v4}, Lcom/mixplorer/activities/PreferenceActivity;->User()V
 
     .line 92
     .line 93
     .line 94
-    goto :goto_68
+    goto :goto_2
 
     .line 95
-    :cond_5e
-    :goto_5e
+    :cond_4
+    :goto_1
     iget-object p1, v4, Lcom/mixplorer/activities/PreferenceActivity;->Victor:Llibs/$d;
 
     .line 96
@@ -301,11 +301,11 @@
     .line 103
     .line 104
     .line 105
-    :goto_68
+    :goto_2
     return-void
 
     .line 106
-    :pswitch_69
+    :pswitch_0
     check-cast v4, Llibs/lj;
 
     .line 107
@@ -326,7 +326,7 @@
     return-void
 
     .line 116
-    :pswitch_73
+    :pswitch_1
     check-cast v4, Lcom/mixplorer/activities/PreferenceActivity;
 
     .line 117
@@ -376,7 +376,7 @@
     const/4 v3, 0x0
 
     .line 141
-    if-nez v0, :cond_9f
+    if-nez v0, :cond_6
 
     .line 142
     .line 143
@@ -388,7 +388,7 @@
     move-result-object v0
 
     .line 147
-    if-nez v0, :cond_9e
+    if-nez v0, :cond_5
 
     .line 148
     .line 149
@@ -409,14 +409,14 @@
     .line 156
     .line 157
     .line 158
-    goto :goto_c5
+    goto :goto_3
 
     .line 159
-    :cond_9e
+    :cond_5
     move-object v1, p1
 
     .line 160
-    :cond_9f
+    :cond_6
     sget-object p1, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 161
@@ -489,11 +489,11 @@
     .line 196
     .line 197
     .line 198
-    :goto_c5
+    :goto_3
     return-void
 
     .line 199
-    :pswitch_c6
+    :pswitch_2
     check-cast v4, Llibs/p32;
 
     .line 200
@@ -514,7 +514,7 @@
     return-void
 
     .line 209
-    :pswitch_d0
+    :pswitch_3
     move-object v8, v3
 
     .line 210
@@ -569,7 +569,7 @@
     return-void
 
     .line 235
-    :pswitch_ea
+    :pswitch_4
     check-cast v4, Landroid/app/Activity;
 
     .line 236
@@ -590,7 +590,7 @@
     return-void
 
     .line 245
-    :pswitch_f4
+    :pswitch_5
     check-cast v4, Ljava/util/ArrayList;
 
     .line 246
@@ -611,13 +611,13 @@
     return-void
 
     .line 255
-    :pswitch_data_fe
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_f4
-        :pswitch_ea
-        :pswitch_d0
-        :pswitch_c6
-        :pswitch_73
-        :pswitch_69
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

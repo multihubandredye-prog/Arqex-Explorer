@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(ZLjava/util/LinkedHashMap;JLlibs/cq1;)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,43 +53,43 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 11
+    .locals 9
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
+    :cond_0
     const/4 v1, 0x1
 
     .line 6
-    if-ne p1, p0, :cond_8
+    if-ne p1, p0, :cond_1
 
     .line 7
     .line 8
     return v1
 
     .line 9
-    :cond_8
+    :cond_1
     instance-of v2, p1, Llibs/mc1;
 
     .line 10
     .line 11
-    if-nez v2, :cond_d
+    if-nez v2, :cond_2
 
     .line 12
     .line 13
     return v0
 
     .line 14
-    :cond_d
+    :cond_2
     check-cast p1, Llibs/mc1;
 
     .line 15
@@ -114,26 +114,26 @@
 
     .line 25
     .line 26
-    if-ne v4, v5, :cond_21
+    if-ne v4, v5, :cond_4
 
     .line 27
     .line 28
-    if-nez v6, :cond_21
+    if-nez v6, :cond_4
 
     .line 29
     .line 30
-    if-nez v3, :cond_20
+    if-nez v3, :cond_3
 
     .line 31
     .line 32
     return v1
 
     .line 33
-    :cond_20
+    :cond_3
     return v0
 
     .line 34
-    :cond_21
+    :cond_4
     invoke-interface {v6, v3}, Ljava/util/Map;->equals(Ljava/lang/Object;)Z
 
     .line 35
@@ -146,7 +146,7 @@
 
     .line 39
     .line 40
-    if-eqz v3, :cond_37
+    if-eqz v3, :cond_6
 
     .line 41
     .line 42
@@ -162,26 +162,26 @@
 
     .line 47
     .line 48
-    if-nez p1, :cond_37
+    if-nez p1, :cond_6
 
     .line 49
     .line 50
-    if-nez v4, :cond_37
+    if-nez v4, :cond_6
 
     .line 51
     .line 52
-    if-nez v2, :cond_36
+    if-nez v2, :cond_5
 
     .line 53
     .line 54
     return v1
 
     .line 55
-    :cond_36
+    :cond_5
     return v0
 
     .line 56
-    :cond_37
+    :cond_6
     invoke-virtual {v4, v2}, Llibs/cq1;->equals(Ljava/lang/Object;)Z
 
     .line 57
@@ -194,7 +194,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 5
+    .locals 4
 
     .line 1
     iget-boolean v0, p0, Llibs/mc1;->a:Z
@@ -276,7 +276,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

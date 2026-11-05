@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 4
+    .locals 2
 
     .line 1
     iput-byte p1, p0, Llibs/iy2;->g:B
@@ -20,7 +20,7 @@
 
     .line 4
     .line 5
-    packed-switch p1, :pswitch_data_46
+    packed-switch p1, :pswitch_data_0
 
     .line 6
     .line 7
@@ -122,7 +122,7 @@
     return-void
 
     .line 59
-    :pswitch_3a
+    :pswitch_0
     invoke-direct {p0}, Llibs/tw0;-><init>()V
 
     .line 60
@@ -147,14 +147,14 @@
     nop
 
     .line 71
-    :pswitch_data_46
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_3a
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public constructor <init>(Llibs/tw0;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -169,7 +169,7 @@
 
 # virtual methods
 .method public List(J)V
-    .registers 6
+    .locals 3
 
     .line 1
     const-wide/16 v0, -0x1
@@ -180,7 +180,7 @@
 
     .line 4
     .line 5
-    if-nez v2, :cond_9
+    if-nez v2, :cond_0
 
     .line 6
     .line 7
@@ -188,10 +188,10 @@
 
     .line 8
     .line 9
-    goto :goto_1b
+    goto :goto_0
 
     .line 10
-    :cond_9
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 11
@@ -226,7 +226,7 @@
     move-result-object p1
 
     .line 28
-    :goto_1b
+    :goto_0
     const-string p2, "TIMEOUT"
 
     .line 29
@@ -240,7 +240,7 @@
 .end method
 
 .method public Object()V
-    .registers 3
+    .locals 2
 
     .line 1
     const/16 v0, 0x19c
@@ -264,7 +264,7 @@
 .end method
 
 .method public String(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "uuid:"
@@ -292,14 +292,14 @@
 .end method
 
 .method public v()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/iy2;->g:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_24
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -315,7 +315,7 @@
     return-object v0
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 12
@@ -366,8 +366,8 @@
     return-object v0
 
     .line 37
-    :pswitch_data_24
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method

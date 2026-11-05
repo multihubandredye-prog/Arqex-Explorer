@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/PlayerActivity;)V
-    .registers 4
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
@@ -38,7 +38,7 @@
     move-result p1
 
     .line 13
-    if-nez p1, :cond_16
+    if-nez p1, :cond_0
 
     .line 14
     .line 15
@@ -58,14 +58,14 @@
     .line 21
     .line 22
     .line 23
-    :cond_16
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final onDraw(Landroid/graphics/Canvas;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-super {p0, p1}, Landroid/view/SurfaceView;->onDraw(Landroid/graphics/Canvas;)V

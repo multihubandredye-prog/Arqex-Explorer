@@ -22,7 +22,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;B)V
-    .registers 7
+    .locals 0
 
     .line 1
     iput-byte p6, p0, Llibs/tl0;->X:B
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 7
+    .locals 6
 
     .line 1
     iget-byte v0, p0, Llibs/tl0;->X:B
@@ -87,7 +87,7 @@
 
     .line 12
     .line 13
-    packed-switch v0, :pswitch_data_4c
+    packed-switch v0, :pswitch_data_0
 
     .line 14
     .line 15
@@ -120,7 +120,7 @@
     return-void
 
     .line 30
-    :pswitch_1d
+    :pswitch_0
     check-cast v5, Llibs/rp0;
 
     .line 31
@@ -165,7 +165,7 @@
     move-result v0
 
     .line 52
-    if-eqz v0, :cond_40
+    if-eqz v0, :cond_0
 
     .line 53
     .line 54
@@ -187,10 +187,10 @@
     .line 62
     .line 63
     .line 64
-    goto :goto_4a
+    goto :goto_0
 
     .line 65
-    :cond_40
+    :cond_0
     new-instance v0, Llibs/j6;
 
     .line 66
@@ -209,15 +209,15 @@
     .line 73
     .line 74
     .line 75
-    :goto_4a
+    :goto_0
     return-void
 
     .line 76
     nop
 
     .line 77
-    :pswitch_data_4c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1d
+        :pswitch_0
     .end packed-switch
 .end method

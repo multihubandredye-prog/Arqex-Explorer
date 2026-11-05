@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/wi;Llibs/xt1;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/vi;->Y:Llibs/wi;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final varargs c([Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     const/4 v0, 0x0

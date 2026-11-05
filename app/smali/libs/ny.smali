@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -28,13 +28,13 @@
 
 # virtual methods
 .method public final a()[B
-    .registers 6
+    .locals 5
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v1, p0, Llibs/ny;->a:Ljava/lang/Object;
 
     .line 3
@@ -66,15 +66,15 @@
 
     .line 16
     check-cast v1, [B
-    :try_end_11
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_11} :catch_12
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 17
     .line 18
     return-object v1
 
     .line 19
-    :catch_12
+    :catch_0
     move-exception v1
 
     .line 20
@@ -87,7 +87,7 @@
 .end method
 
 .method public final b([B)V
-    .registers 8
+    .locals 6
 
     .line 1
     :try_start_0
@@ -108,7 +108,7 @@
     const/4 v3, 0x0
 
     .line 8
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_0
 
     .line 9
     .line 10
@@ -148,18 +148,18 @@
 
     .line 27
     .line 28
-    goto :goto_1e
+    goto :goto_0
 
     .line 29
-    :catch_1c
+    :catch_0
     move-exception p1
 
     .line 30
-    goto :goto_2b
+    goto :goto_1
 
     .line 31
-    :cond_1e
-    :goto_1e
+    :cond_0
+    :goto_0
     sget-object v4, Llibs/py;->g:Ljava/lang/reflect/Method;
 
     .line 32
@@ -180,8 +180,8 @@
     .line 39
     .line 40
     invoke-virtual {v4, v3, v5}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_2a
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_2a} :catch_1c
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 41
     .line 42
@@ -189,7 +189,7 @@
     return-void
 
     .line 44
-    :goto_2b
+    :goto_1
     new-instance v0, Llibs/q43;
 
     .line 45
@@ -203,7 +203,7 @@
 .end method
 
 .method public final reset()V
-    .registers 2
+    .locals 1
 
     .line 1
     :try_start_0
@@ -211,13 +211,13 @@
 
     .line 2
     .line 3
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     invoke-virtual {p0, v0}, Llibs/ny;->b([B)V
-    :try_end_7
-    .catch Llibs/q43; {:try_start_0 .. :try_end_7} :catch_8
+    :try_end_0
+    .catch Llibs/q43; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 6
     .line 7
@@ -225,18 +225,18 @@
     return-void
 
     .line 9
-    :catch_8
+    :catch_0
     move-exception v0
 
     .line 10
-    goto :goto_b
+    goto :goto_0
 
     .line 11
-    :cond_a
+    :cond_0
     return-void
 
     .line 12
-    :goto_b
+    :goto_0
     invoke-static {v0}, Llibs/ic0;->k(Ljava/lang/Throwable;)V
 
     .line 13
@@ -246,7 +246,7 @@
 .end method
 
 .method public final update([B)V
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -259,7 +259,7 @@
 .end method
 
 .method public final update([BII)V
-    .registers 8
+    .locals 4
 
     .line 1
     :try_start_0
@@ -326,8 +326,8 @@
 
     .line 29
     invoke-virtual {v1, p1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_1f
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_1f} :catch_20
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 30
     .line 31
@@ -335,7 +335,7 @@
     return-void
 
     .line 33
-    :catch_20
+    :catch_0
     move-exception p1
 
     .line 34

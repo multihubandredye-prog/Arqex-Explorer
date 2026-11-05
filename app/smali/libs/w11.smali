@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r31;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final onItemLongClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)Z
-    .registers 12
+    .locals 6
 
     .line 1
     iget-object v1, p0, Llibs/w11;->X:Llibs/r31;
@@ -57,7 +57,7 @@
     move-result p1
 
     .line 13
-    if-lez p1, :cond_1c
+    if-lez p1, :cond_0
 
     .line 14
     .line 15
@@ -85,32 +85,32 @@
 
     .line 26
     .line 27
-    :goto_1a
+    :goto_0
     move-object v3, p1
 
     .line 28
-    goto :goto_1e
+    goto :goto_1
 
     .line 29
-    :cond_1c
+    :cond_0
     const/4 p1, 0x0
 
     .line 30
-    goto :goto_1a
+    goto :goto_0
 
     .line 31
-    :goto_1e
+    :goto_1
     const/4 p1, 0x0
 
     .line 32
-    if-nez v3, :cond_22
+    if-nez v3, :cond_1
 
     .line 33
     .line 34
-    goto :goto_82
+    goto :goto_5
 
     .line 35
-    :cond_22
+    :cond_1
     invoke-virtual {v3, p1}, Llibs/r90;->d(I)Ljava/lang/Object;
 
     .line 36
@@ -142,7 +142,7 @@
     move-result-object p2
 
     .line 50
-    if-eqz p2, :cond_3a
+    if-eqz p2, :cond_2
 
     .line 51
     .line 52
@@ -154,14 +154,14 @@
     move-result p3
 
     .line 56
-    if-eqz p3, :cond_3a
+    if-eqz p3, :cond_2
 
     .line 57
     .line 58
-    goto :goto_82
+    goto :goto_5
 
     .line 59
-    :cond_3a
+    :cond_2
     const/16 p3, 0xf
 
     .line 60
@@ -186,7 +186,7 @@
     const/4 p4, 0x1
 
     .line 71
-    if-nez p3, :cond_4d
+    if-nez p3, :cond_3
 
     .line 72
     .line 73
@@ -199,8 +199,8 @@
     .line 76
     .line 77
     .line 78
-    :cond_4d
-    if-eqz p2, :cond_59
+    :cond_3
+    if-eqz p2, :cond_4
 
     .line 79
     .line 80
@@ -216,21 +216,21 @@
     move-result p2
 
     .line 86
-    if-eqz p2, :cond_59
+    if-eqz p2, :cond_4
 
     .line 87
     .line 88
     const/4 v2, 0x1
 
     .line 89
-    goto :goto_5a
+    goto :goto_2
 
     .line 90
-    :cond_59
+    :cond_4
     const/4 v2, 0x0
 
     .line 91
-    :goto_5a
+    :goto_2
     iget-object p1, v1, Llibs/r31;->a:Lcom/mixplorer/activities/BrowseActivity;
 
     .line 92
@@ -271,7 +271,7 @@
     move-result p2
 
     .line 111
-    if-nez p2, :cond_7c
+    if-nez p2, :cond_6
 
     .line 112
     .line 113
@@ -287,28 +287,28 @@
     move-result p2
 
     .line 119
-    if-nez p2, :cond_79
+    if-nez p2, :cond_5
 
     .line 120
     .line 121
-    goto :goto_7c
+    goto :goto_3
 
     .line 122
-    :cond_79
+    :cond_5
     const-wide/16 p2, 0x64
 
     .line 123
     .line 124
-    goto :goto_7e
+    goto :goto_4
 
     .line 125
-    :cond_7c
-    :goto_7c
+    :cond_6
+    :goto_3
     const-wide/16 p2, 0xa
 
     .line 126
     .line 127
-    :goto_7e
+    :goto_4
     invoke-virtual {p1, v0, p2, p3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 128
@@ -317,6 +317,6 @@
     const/4 p1, 0x1
 
     .line 131
-    :goto_82
+    :goto_5
     return p1
 .end method

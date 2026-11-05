@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/g8;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onReceiveValue(Ljava/lang/Object;)V
-    .registers 11
+    .locals 9
 
     .line 1
     iget-object v0, p0, Llibs/e8;->a:Llibs/g8;
@@ -82,7 +82,7 @@
 
     .line 21
     .line 22
-    if-nez v8, :cond_35
+    if-nez v8, :cond_0
 
     .line 23
     .line 24
@@ -142,7 +142,7 @@
     return-void
 
     .line 54
-    :cond_35
+    :cond_0
     aget-object v2, p1, v2
 
     .line 55

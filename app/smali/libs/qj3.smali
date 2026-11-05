@@ -31,7 +31,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Param;)V
-    .registers 8
+    .locals 6
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -61,7 +61,7 @@
     const/4 v2, 0x1
 
     .line 14
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_0
 
     .line 15
     .line 16
@@ -92,10 +92,10 @@
     const/4 v1, 0x0
 
     .line 29
-    goto :goto_27
+    goto :goto_0
 
     .line 30
-    :cond_1d
+    :cond_0
     new-instance v1, Llibs/Api;
 
     .line 31
@@ -116,7 +116,7 @@
     const/4 v1, -0x1
 
     .line 40
-    :goto_27
+    :goto_0
     add-int/lit8 v3, v1, 0x1
 
     .line 41
@@ -307,8 +307,8 @@
     sub-int/2addr v0, v2
 
     .line 134
-    :goto_85
-    if-lez v0, :cond_b5
+    :goto_1
+    if-lez v0, :cond_4
 
     .line 135
     .line 136
@@ -332,28 +332,28 @@
 
     .line 145
     .line 146
-    if-eq v4, v2, :cond_ac
+    if-eq v4, v2, :cond_3
 
     .line 147
     .line 148
     const/4 v5, 0x2
 
     .line 149
-    if-eq v4, v5, :cond_a5
+    if-eq v4, v5, :cond_2
 
     .line 150
     .line 151
     const/4 v5, 0x3
 
     .line 152
-    if-eq v4, v5, :cond_9a
+    if-eq v4, v5, :cond_1
 
     .line 153
     .line 154
-    goto :goto_b2
+    goto :goto_2
 
     .line 155
-    :cond_9a
+    :cond_1
     invoke-static {v3, v2}, Llibs/Param;->p(Llibs/Height;Z)Llibs/Param;
 
     .line 156
@@ -374,10 +374,10 @@
 
     .line 164
     .line 165
-    goto :goto_b2
+    goto :goto_2
 
     .line 166
-    :cond_a5
+    :cond_2
     invoke-static {v3}, Llibs/c10;->r(Llibs/Height;)Llibs/c10;
 
     .line 167
@@ -390,10 +390,10 @@
 
     .line 171
     .line 172
-    goto :goto_b2
+    goto :goto_2
 
     .line 173
-    :cond_ac
+    :cond_3
     invoke-static {v3}, Llibs/c10;->r(Llibs/Height;)Llibs/c10;
 
     .line 174
@@ -406,22 +406,22 @@
 
     .line 178
     .line 179
-    :goto_b2
+    :goto_2
     add-int/lit8 v0, v0, -0x1
 
     .line 180
     .line 181
-    goto :goto_85
+    goto :goto_1
 
     .line 182
-    :cond_b5
+    :cond_4
     return-void
 .end method
 
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/qj3;->X:Llibs/Param;

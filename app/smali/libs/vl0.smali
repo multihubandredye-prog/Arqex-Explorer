@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/zl0;Llibs/t61;Ljava/lang/String;)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/vl0;->c:Llibs/zl0;
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final d(Ljava/lang/String;Z)Z
-    .registers 5
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/vl0;->a:Llibs/t61;
@@ -54,7 +54,7 @@
     move-result v1
 
     .line 7
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
@@ -64,8 +64,8 @@
     return p1
 
     .line 11
-    :cond_a
-    if-eqz p2, :cond_21
+    :cond_0
+    if-eqz p2, :cond_2
 
     .line 12
     .line 13
@@ -93,14 +93,14 @@
     move-result-object p1
 
     .line 25
-    if-nez p1, :cond_1b
+    if-nez p1, :cond_1
 
     .line 26
     .line 27
-    goto :goto_21
+    goto :goto_0
 
     .line 28
-    :cond_1b
+    :cond_1
     new-instance p2, Lexceptions/FoundException;
 
     .line 29
@@ -113,8 +113,8 @@
     throw p2
 
     .line 34
-    :cond_21
-    :goto_21
+    :cond_2
+    :goto_0
     const/4 p1, 0x0
 
     .line 35
@@ -122,7 +122,7 @@
 .end method
 
 .method public final e(Llibs/rp0;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/vl0;->a:Llibs/t61;
@@ -137,7 +137,7 @@
     move-result v1
 
     .line 7
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
@@ -147,12 +147,12 @@
     return p1
 
     .line 11
-    :cond_a
+    :cond_0
     iget-boolean v1, p1, Llibs/rp0;->One:Z
 
     .line 12
     .line 13
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_2
 
     .line 14
     .line 15
@@ -164,7 +164,7 @@
     move-result v1
 
     .line 19
-    if-nez v1, :cond_25
+    if-nez v1, :cond_2
 
     .line 20
     .line 21
@@ -184,14 +184,14 @@
     move-result-object p1
 
     .line 29
-    if-nez p1, :cond_1f
+    if-nez p1, :cond_1
 
     .line 30
     .line 31
-    goto :goto_25
+    goto :goto_0
 
     .line 32
-    :cond_1f
+    :cond_1
     new-instance v0, Lexceptions/FoundException;
 
     .line 33
@@ -204,8 +204,8 @@
     throw v0
 
     .line 38
-    :cond_25
-    :goto_25
+    :cond_2
+    :goto_0
     const/4 p1, 0x0
 
     .line 39
@@ -213,7 +213,7 @@
 .end method
 
 .method public final f()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/vl0;->a:Llibs/t61;

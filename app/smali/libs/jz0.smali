@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,14 +30,14 @@
 
 # virtual methods
 .method public final b(Llibs/Eta;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1
     iget-byte p1, p1, Llibs/Eta;->X:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_18
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -45,10 +45,10 @@
     move-object p1, p0
 
     .line 7
-    goto :goto_16
+    goto :goto_0
 
     .line 8
-    :pswitch_7
+    :pswitch_0
     iget-object p1, p0, Llibs/jz0;->a:Ljava/lang/String;
 
     .line 9
@@ -61,7 +61,7 @@
     move-result p1
 
     .line 14
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     .line 15
     .line 16
@@ -69,10 +69,10 @@
 
     .line 17
     .line 18
-    goto :goto_16
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     invoke-static {p0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
     .line 20
@@ -81,21 +81,21 @@
     move-result-object p1
 
     .line 23
-    :goto_16
+    :goto_0
     return-object p1
 
     .line 24
     nop
 
     .line 25
-    :pswitch_data_18
+    :pswitch_data_0
     .packed-switch 0xf
-        :pswitch_7
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final c(Llibs/kz0;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object p1, p1, Llibs/kz0;->b:Ljava/lang/StringBuilder;

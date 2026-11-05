@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/vq0;I)V
-    .registers 31
+    .locals 28
 
     .line 1
     move-object/from16 v1, p0
@@ -55,7 +55,7 @@
     move-result v0
 
     .line 22
-    if-lez v0, :cond_f4
+    if-lez v0, :cond_8
 
     .line 23
     .line 24
@@ -69,21 +69,21 @@
     and-int/2addr v2, v9
 
     .line 28
-    if-eqz v2, :cond_1f
+    if-eqz v2, :cond_0
 
     .line 29
     .line 30
     const/4 v10, 0x1
 
     .line 31
-    goto :goto_20
+    goto :goto_0
 
     .line 32
-    :cond_1f
+    :cond_0
     const/4 v10, 0x0
 
     .line 33
-    :goto_20
+    :goto_0
     const/16 v2, 0x22
 
     .line 34
@@ -120,7 +120,7 @@
     move v2, v0
 
     .line 49
-    :goto_30
+    :goto_1
     invoke-virtual {v1, v2}, Llibs/uy1;->h(I)I
 
     .line 50
@@ -129,7 +129,7 @@
     move-result v0
 
     .line 53
-    if-eqz v0, :cond_e3
+    if-eqz v0, :cond_7
 
     .line 54
     .line 55
@@ -158,15 +158,15 @@
 
     .line 67
     .line 68
-    if-eqz v10, :cond_ce
+    if-eqz v10, :cond_5
 
     .line 69
     .line 70
-    if-eqz v3, :cond_70
+    if-eqz v3, :cond_2
 
     .line 71
     .line 72
-    if-eqz v12, :cond_70
+    if-eqz v12, :cond_2
 
     .line 73
     .line 74
@@ -174,7 +174,7 @@
 
     .line 75
     .line 76
-    if-le v12, v11, :cond_6c
+    if-le v12, v11, :cond_1
 
     .line 77
     .line 78
@@ -231,7 +231,7 @@
     int-to-long v12, v15
 
     .line 103
-    :goto_66
+    :goto_2
     add-long v17, v17, v12
 
     .line 104
@@ -242,11 +242,11 @@
     const/4 v13, 0x0
 
     .line 107
-    goto/16 :goto_da
+    goto/16 :goto_4
 
     .line 108
     .line 109
-    :cond_6c
+    :cond_1
     move-wide/from16 v19, v14
 
     .line 110
@@ -254,15 +254,15 @@
     const/4 v12, 0x0
 
     .line 112
-    goto :goto_da
+    goto :goto_4
 
     .line 113
-    :cond_70
+    :cond_2
     move-wide/from16 v19, v14
 
     .line 114
     .line 115
-    if-lt v4, v11, :cond_bb
+    if-lt v4, v11, :cond_4
 
     .line 116
     .line 117
@@ -270,7 +270,7 @@
 
     .line 118
     .line 119
-    if-eqz v24, :cond_ad
+    if-eqz v24, :cond_3
 
     .line 120
     .line 121
@@ -378,10 +378,10 @@
     const/4 v12, 0x1
 
     .line 173
-    goto :goto_b8
+    goto :goto_3
 
     .line 174
-    :cond_ad
+    :cond_3
     invoke-virtual {v8, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 175
@@ -405,15 +405,15 @@
 
     .line 184
     .line 185
-    :goto_b8
+    :goto_3
     move-wide/from16 v17, v26
 
     .line 186
     .line 187
-    goto :goto_da
+    goto :goto_4
 
     .line 188
-    :cond_bb
+    :cond_4
     new-instance v12, Llibs/xw;
 
     .line 189
@@ -452,10 +452,10 @@
     const/4 v12, 0x1
 
     .line 206
-    goto :goto_da
+    goto :goto_4
 
     .line 207
-    :cond_ce
+    :cond_5
     move-wide/from16 v19, v14
 
     .line 208
@@ -479,11 +479,11 @@
     int-to-long v12, v4
 
     .line 218
-    goto :goto_66
+    goto :goto_2
 
     .line 219
-    :goto_da
-    if-nez v3, :cond_de
+    :goto_4
+    if-nez v3, :cond_6
 
     .line 220
     .line 221
@@ -491,7 +491,7 @@
 
     .line 222
     .line 223
-    :cond_de
+    :cond_6
     iget v0, v0, Llibs/q60;->d:I
 
     .line 224
@@ -499,11 +499,11 @@
     add-int/2addr v2, v0
 
     .line 226
-    goto/16 :goto_30
+    goto/16 :goto_1
 
     .line 227
     .line 228
-    :cond_e3
+    :cond_7
     iget-object v0, v1, Llibs/ny1;->e:Llibs/vq0;
 
     .line 229
@@ -541,14 +541,14 @@
     div-long/2addr v2, v4
 
     .line 245
-    :cond_f4
+    :cond_8
     return-void
 .end method
 
 
 # virtual methods
 .method public final j(JI[B)I
-    .registers 16
+    .locals 11
 
     .line 1
     iget v0, p0, Llibs/ny1;->d:I
@@ -562,7 +562,7 @@
     const/4 v1, 0x0
 
     .line 6
-    if-nez v0, :cond_30
+    if-nez v0, :cond_2
 
     .line 7
     .line 8
@@ -593,8 +593,8 @@
     const/4 v2, 0x0
 
     .line 21
-    :goto_14
-    if-ge v2, v9, :cond_2f
+    :goto_0
+    if-ge v2, v9, :cond_1
 
     .line 22
     .line 23
@@ -637,14 +637,14 @@
     add-int/2addr v1, p1
 
     .line 40
-    if-ne v1, v6, :cond_2a
+    if-ne v1, v6, :cond_0
 
     .line 41
     .line 42
     return v1
 
     .line 43
-    :cond_2a
+    :cond_0
     move-wide p1, v3
 
     .line 44
@@ -657,14 +657,14 @@
     move v2, v10
 
     .line 47
-    goto :goto_14
+    goto :goto_0
 
     .line 48
-    :cond_2f
+    :cond_1
     return v1
 
     .line 49
-    :cond_30
+    :cond_2
     const-string p1, "Reading encrypted files is not supported"
 
     .line 50
@@ -678,7 +678,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 7
+    .locals 6
 
     .line 1
     iget v0, p0, Llibs/ny1;->c:I

@@ -13,7 +13,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/LocalizeActivity;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/nm1;->X:Lcom/mixplorer/activities/LocalizeActivity;
@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public b()V
-    .registers 2
+    .locals 1
 
     .line 1
     sget v0, Lcom/mixplorer/activities/LocalizeActivity;->OoO:I
@@ -51,7 +51,7 @@
 .end method
 
 .method public f(Llibs/t4;)V
-    .registers 9
+    .locals 7
 
     .line 1
     iget-object p1, p0, Llibs/nm1;->X:Lcom/mixplorer/activities/LocalizeActivity;
@@ -66,7 +66,7 @@
 
     .line 6
     .line 7
-    :try_start_6
+    :try_start_0
     invoke-virtual {p1}, Lcom/mixplorer/activities/LocalizeActivity;->Sync()Llibs/rp0;
 
     .line 8
@@ -75,14 +75,14 @@
     move-result-object v1
 
     .line 11
-    if-nez v1, :cond_d
+    if-nez v1, :cond_0
 
     .line 12
     .line 13
     return-void
 
     .line 14
-    :cond_d
+    :cond_0
     new-instance v2, Landroid/content/Intent;
 
     .line 15
@@ -243,8 +243,8 @@
     .line 96
     .line 97
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-    :try_end_63
-    .catchall {:try_start_6 .. :try_end_63} :catchall_64
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 98
     .line 99
@@ -252,7 +252,7 @@
     return-void
 
     .line 101
-    :catchall_64
+    :catchall_0
     move-exception p1
 
     .line 102

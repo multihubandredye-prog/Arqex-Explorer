@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/wq1;I[B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/fo2;->b:Llibs/wq1;
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final Set(Llibs/ck;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/fo2;->d:[B
@@ -59,7 +59,7 @@
 .end method
 
 .method public final a()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/fo2;->c:I
@@ -73,7 +73,7 @@
 .end method
 
 .method public final b()Llibs/wq1;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/fo2;->b:Llibs/wq1;

@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/bc;
@@ -32,7 +32,7 @@
 .end method
 
 .method public static a(Ljava/lang/String;)[B
-    .registers 4
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Ljava/lang/String;->length()I
@@ -60,14 +60,14 @@
     .line 12
     .line 13
     .line 14
-    :try_start_d
+    :try_start_0
     sget-object v0, Llibs/xb;->a:Llibs/bc;
 
     .line 15
     .line 16
     invoke-virtual {v0, p0, v1}, Llibs/bc;->c(Ljava/lang/String;Llibs/fl;)I
-    :try_end_12
-    .catch Ljava/lang/Exception; {:try_start_d .. :try_end_12} :catch_17
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 17
     .line 18
@@ -83,7 +83,7 @@
     return-object p0
 
     .line 24
-    :catch_17
+    :catch_0
     move-exception p0
 
     .line 25

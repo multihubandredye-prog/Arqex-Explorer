@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/b6;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/ed;-><init>()V
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public final a(Ljavax/crypto/spec/OAEPParameterSpec;)V
-    .registers 7
+    .locals 5
 
     .line 1
     invoke-virtual {p1}, Ljavax/crypto/spec/OAEPParameterSpec;->getMGFParameters()Ljava/security/spec/AlgorithmParameterSpec;
@@ -71,7 +71,7 @@
     move-result-object v1
 
     .line 15
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_0
 
     .line 16
     .line 17
@@ -133,7 +133,7 @@
     return-void
 
     .line 47
-    :cond_2e
+    :cond_0
     new-instance p1, Ljavax/crypto/NoSuchPaddingException;
 
     .line 48
@@ -181,7 +181,7 @@
 .end method
 
 .method public final engineDoFinal([BII[BI)I
-    .registers 9
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/pt;->b:Llibs/ap3;
@@ -193,7 +193,7 @@
     .line 4
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     iget-object p1, p0, Llibs/pt;->b:Llibs/ap3;
 
     .line 7
@@ -237,14 +237,14 @@
 
     .line 26
     .line 27
-    if-eqz p3, :cond_29
+    if-eqz p3, :cond_0
 
     .line 28
     .line 29
     const/4 p3, 0x0
 
     .line 30
-    :goto_1d
+    :goto_0
     iget-object v0, p1, Llibs/ap3;->Z:Ljava/lang/Object;
 
     .line 31
@@ -256,7 +256,7 @@
     array-length v2, v0
 
     .line 35
-    if-ge p3, v2, :cond_29
+    if-ge p3, v2, :cond_0
 
     .line 36
     .line 37
@@ -268,21 +268,21 @@
 
     .line 40
     .line 41
-    goto :goto_1d
+    goto :goto_0
 
     .line 42
-    :cond_29
+    :cond_0
     iput v1, p1, Llibs/ap3;->Y:I
-    :try_end_2b
-    .catch Llibs/qb1; {:try_start_5 .. :try_end_2b} :catch_39
+    :try_end_0
+    .catch Llibs/qb1; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 43
     .line 44
-    :goto_2b
+    :goto_1
     array-length p1, p2
 
     .line 45
-    if-eq v1, p1, :cond_37
+    if-eq v1, p1, :cond_1
 
     .line 46
     .line 47
@@ -302,17 +302,17 @@
 
     .line 54
     .line 55
-    goto :goto_2b
+    goto :goto_1
 
     .line 56
-    :cond_37
+    :cond_1
     array-length p1, p2
 
     .line 57
     return p1
 
     .line 58
-    :catch_39
+    :catch_0
     move-exception p1
 
     .line 59
@@ -333,19 +333,19 @@
     .line 66
     .line 67
     .line 68
-    goto :goto_45
+    goto :goto_3
 
     .line 69
-    :goto_44
+    :goto_2
     throw p2
 
     .line 70
-    :goto_45
-    goto :goto_44
+    :goto_3
+    goto :goto_2
 .end method
 
 .method public final engineDoFinal([BII)[B
-    .registers 7
+    .locals 3
 
     .line 71
     iget-object v0, p0, Llibs/pt;->b:Llibs/ap3;
@@ -353,7 +353,7 @@
     invoke-virtual {v0, p2, p3, p1}, Llibs/ap3;->m(II[B)V
 
     .line 72
-    :try_start_5
+    :try_start_0
     iget-object p1, p0, Llibs/pt;->b:Llibs/ap3;
 
     .line 73
@@ -379,36 +379,36 @@
 
     check-cast p3, [B
 
-    if-eqz p3, :cond_29
+    if-eqz p3, :cond_0
 
     const/4 p3, 0x0
 
     .line 76
-    :goto_1d
+    :goto_0
     iget-object v0, p1, Llibs/ap3;->Z:Ljava/lang/Object;
 
     check-cast v0, [B
 
     array-length v2, v0
 
-    if-ge p3, v2, :cond_29
+    if-ge p3, v2, :cond_0
 
     .line 77
     aput-byte v1, v0, p3
 
     add-int/lit8 p3, p3, 0x1
 
-    goto :goto_1d
+    goto :goto_0
 
     .line 78
-    :cond_29
+    :cond_0
     iput v1, p1, Llibs/ap3;->Y:I
-    :try_end_2b
-    .catch Llibs/qb1; {:try_start_5 .. :try_end_2b} :catch_2c
+    :try_end_0
+    .catch Llibs/qb1; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p2
 
-    :catch_2c
+    :catch_0
     move-exception p1
 
     .line 79
@@ -420,17 +420,17 @@
 
     invoke-direct {p2, p1}, Ljavax/crypto/BadPaddingException;-><init>(Ljava/lang/String;)V
 
-    goto :goto_38
+    goto :goto_2
 
-    :goto_37
+    :goto_1
     throw p2
 
-    :goto_38
-    goto :goto_37
+    :goto_2
+    goto :goto_1
 .end method
 
 .method public final engineGetBlockSize()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/pt;->b:Llibs/ap3;
@@ -457,14 +457,14 @@
 .end method
 
 .method public final engineGetKeySize(Ljava/security/Key;)I
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Llibs/uh0;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -495,12 +495,12 @@
     return p1
 
     .line 18
-    :cond_11
+    :cond_0
     instance-of v0, p1, Ljavax/crypto/interfaces/DHKey;
 
     .line 19
     .line 20
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
     .line 21
     .line 22
@@ -535,7 +535,7 @@
     return p1
 
     .line 37
-    :cond_24
+    :cond_1
     const-string p1, "not an ElGamal key!"
 
     .line 38
@@ -552,7 +552,7 @@
 .end method
 
 .method public final engineGetOutputSize(I)I
-    .registers 2
+    .locals 0
 
     .line 1
     iget-object p1, p0, Llibs/pt;->b:Llibs/ap3;
@@ -579,14 +579,14 @@
 .end method
 
 .method public final engineGetParameters()Ljava/security/AlgorithmParameters;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/pt;->d:Ljava/security/AlgorithmParameters;
 
     .line 2
     .line 3
-    if-nez v0, :cond_22
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -594,11 +594,11 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
-    :try_start_8
+    :try_start_0
     const-string v0, "OAEP"
 
     .line 10
@@ -632,16 +632,16 @@
     .line 24
     .line 25
     invoke-virtual {v0, v1}, Ljava/security/AlgorithmParameters;->init(Ljava/security/spec/AlgorithmParameterSpec;)V
-    :try_end_1b
-    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_1b} :catch_1c
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 26
     .line 27
     .line 28
-    goto :goto_22
+    goto :goto_0
 
     .line 29
-    :catch_1c
+    :catch_0
     move-exception v0
 
     .line 30
@@ -656,8 +656,8 @@
     return-object v0
 
     .line 35
-    :cond_22
-    :goto_22
+    :cond_0
+    :goto_0
     iget-object v0, p0, Llibs/pt;->d:Ljava/security/AlgorithmParameters;
 
     .line 36
@@ -666,7 +666,7 @@
 .end method
 
 .method public final engineInit(ILjava/security/Key;Ljava/security/AlgorithmParameters;Ljava/security/SecureRandom;)V
-    .registers 5
+    .locals 0
 
     .line 281
     new-instance p1, Ljava/security/InvalidAlgorithmParameterException;
@@ -679,7 +679,7 @@
 .end method
 
 .method public final engineInit(ILjava/security/Key;Ljava/security/SecureRandom;)V
-    .registers 5
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -690,10 +690,10 @@
 .end method
 
 .method public final engineInit(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    .registers 9
+    .locals 4
 
     .line 1
-    if-nez p3, :cond_112
+    if-nez p3, :cond_c
 
     .line 2
     .line 3
@@ -704,7 +704,7 @@
     const/4 v0, 0x0
 
     .line 6
-    if-eqz p3, :cond_4d
+    if-eqz p3, :cond_2
 
     .line 7
     .line 8
@@ -716,7 +716,7 @@
 
     .line 11
     .line 12
-    if-eqz p3, :cond_22
+    if-eqz p3, :cond_0
 
     .line 13
     .line 14
@@ -758,15 +758,15 @@
     .line 32
     .line 33
     .line 34
-    goto :goto_90
+    goto :goto_0
 
     .line 35
-    :cond_22
+    :cond_0
     instance-of p3, p2, Ljavax/crypto/interfaces/DHPublicKey;
 
     .line 36
     .line 37
-    if-eqz p3, :cond_47
+    if-eqz p3, :cond_1
 
     .line 38
     .line 39
@@ -832,10 +832,10 @@
     .line 69
     .line 70
     .line 71
-    goto :goto_90
+    goto :goto_0
 
     .line 72
-    :cond_47
+    :cond_1
     const-string p1, "can\'t identify public key for El Gamal."
 
     .line 73
@@ -848,12 +848,12 @@
     return-void
 
     .line 78
-    :cond_4d
+    :cond_2
     instance-of p3, p2, Llibs/ga;
 
     .line 79
     .line 80
-    if-eqz p3, :cond_10c
+    if-eqz p3, :cond_b
 
     .line 81
     .line 82
@@ -865,7 +865,7 @@
 
     .line 85
     .line 86
-    if-eqz p3, :cond_6c
+    if-eqz p3, :cond_3
 
     .line 87
     .line 88
@@ -907,15 +907,15 @@
     .line 106
     .line 107
     .line 108
-    goto :goto_90
+    goto :goto_0
 
     .line 109
-    :cond_6c
+    :cond_3
     instance-of p3, p2, Ljavax/crypto/interfaces/DHPrivateKey;
 
     .line 110
     .line 111
-    if-eqz p3, :cond_106
+    if-eqz p3, :cond_a
 
     .line 112
     .line 113
@@ -981,8 +981,8 @@
     .line 143
     .line 144
     .line 145
-    :goto_90
-    if-eqz p4, :cond_98
+    :goto_0
+    if-eqz p4, :cond_4
 
     .line 146
     .line 147
@@ -998,39 +998,39 @@
     move-object p3, p2
 
     .line 153
-    :cond_98
+    :cond_4
     const/4 p2, 0x1
 
     .line 154
-    if-eq p1, p2, :cond_dc
+    if-eq p1, p2, :cond_8
 
     .line 155
     .line 156
     const/4 p4, 0x2
 
     .line 157
-    if-eq p1, p4, :cond_b3
+    if-eq p1, p4, :cond_6
 
     .line 158
     .line 159
     const/4 p4, 0x3
 
     .line 160
-    if-eq p1, p4, :cond_dc
+    if-eq p1, p4, :cond_8
 
     .line 161
     .line 162
     const/4 p2, 0x4
 
     .line 163
-    if-ne p1, p2, :cond_a5
+    if-ne p1, p2, :cond_5
 
     .line 164
     .line 165
-    goto :goto_b3
+    goto :goto_1
 
     .line 166
-    :cond_a5
+    :cond_5
     new-instance p2, Ljava/security/InvalidParameterException;
 
     .line 167
@@ -1059,8 +1059,8 @@
     throw p2
 
     .line 180
-    :cond_b3
-    :goto_b3
+    :cond_6
+    :goto_1
     iget-object p1, p0, Llibs/pt;->b:Llibs/ap3;
 
     .line 181
@@ -1073,14 +1073,14 @@
 
     .line 185
     .line 186
-    if-eqz p2, :cond_c8
+    if-eqz p2, :cond_7
 
     .line 187
     .line 188
     const/4 p2, 0x0
 
     .line 189
-    :goto_bc
+    :goto_2
     iget-object p4, p1, Llibs/ap3;->Z:Ljava/lang/Object;
 
     .line 190
@@ -1092,7 +1092,7 @@
     array-length v1, p4
 
     .line 194
-    if-ge p2, v1, :cond_c8
+    if-ge p2, v1, :cond_7
 
     .line 195
     .line 196
@@ -1104,10 +1104,10 @@
 
     .line 199
     .line 200
-    goto :goto_bc
+    goto :goto_2
 
     .line 201
-    :cond_c8
+    :cond_7
     iput v0, p1, Llibs/ap3;->Y:I
 
     .line 202
@@ -1148,7 +1148,7 @@
     return-void
 
     .line 221
-    :cond_dc
+    :cond_8
     iget-object p1, p0, Llibs/pt;->b:Llibs/ap3;
 
     .line 222
@@ -1161,14 +1161,14 @@
 
     .line 226
     .line 227
-    if-eqz p4, :cond_f1
+    if-eqz p4, :cond_9
 
     .line 228
     .line 229
     const/4 p4, 0x0
 
     .line 230
-    :goto_e5
+    :goto_3
     iget-object v1, p1, Llibs/ap3;->Z:Ljava/lang/Object;
 
     .line 231
@@ -1180,7 +1180,7 @@
     array-length v2, v1
 
     .line 235
-    if-ge p4, v2, :cond_f1
+    if-ge p4, v2, :cond_9
 
     .line 236
     .line 237
@@ -1192,10 +1192,10 @@
 
     .line 240
     .line 241
-    goto :goto_e5
+    goto :goto_3
 
     .line 242
-    :cond_f1
+    :cond_9
     iput v0, p1, Llibs/ap3;->Y:I
 
     .line 243
@@ -1239,7 +1239,7 @@
     return-void
 
     .line 263
-    :cond_106
+    :cond_a
     const-string p1, "can\'t identify private key for El Gamal."
 
     .line 264
@@ -1252,7 +1252,7 @@
     return-void
 
     .line 269
-    :cond_10c
+    :cond_b
     const-string p1, "unknown key type passed to ElGamal"
 
     .line 270
@@ -1265,7 +1265,7 @@
     return-void
 
     .line 275
-    :cond_112
+    :cond_c
     const-string p1, "unknown parameter type."
 
     .line 276
@@ -1279,7 +1279,7 @@
 .end method
 
 .method public final engineSetMode(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-static {p1}, Llibs/yh3;->e(Ljava/lang/String;)Ljava/lang/String;
@@ -1302,7 +1302,7 @@
     move-result v1
 
     .line 11
-    if-nez v1, :cond_21
+    if-nez v1, :cond_1
 
     .line 12
     .line 13
@@ -1318,14 +1318,14 @@
     move-result v0
 
     .line 19
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 20
     .line 21
-    goto :goto_21
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     new-instance v0, Ljava/security/NoSuchAlgorithmException;
 
     .line 23
@@ -1350,13 +1350,13 @@
     throw v0
 
     .line 34
-    :cond_21
-    :goto_21
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public final engineSetPadding(Ljava/lang/String;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-static {p1}, Llibs/yh3;->e(Ljava/lang/String;)Ljava/lang/String;
@@ -1379,7 +1379,7 @@
     move-result v1
 
     .line 11
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_0
 
     .line 12
     .line 13
@@ -1408,7 +1408,7 @@
     return-void
 
     .line 26
-    :cond_19
+    :cond_0
     const-string v1, "PKCS1PADDING"
 
     .line 27
@@ -1421,7 +1421,7 @@
     move-result v1
 
     .line 32
-    if-eqz v1, :cond_33
+    if-eqz v1, :cond_1
 
     .line 33
     .line 34
@@ -1459,7 +1459,7 @@
     return-void
 
     .line 52
-    :cond_33
+    :cond_1
     const-string v1, "ISO9796-1PADDING"
 
     .line 53
@@ -1472,7 +1472,7 @@
     move-result v1
 
     .line 58
-    if-eqz v1, :cond_4d
+    if-eqz v1, :cond_2
 
     .line 59
     .line 60
@@ -1510,7 +1510,7 @@
     return-void
 
     .line 78
-    :cond_4d
+    :cond_2
     const-string v1, "OAEPPADDING"
 
     .line 79
@@ -1523,7 +1523,7 @@
     move-result v1
 
     .line 84
-    if-eqz v1, :cond_5b
+    if-eqz v1, :cond_3
 
     .line 85
     .line 86
@@ -1539,7 +1539,7 @@
     return-void
 
     .line 92
-    :cond_5b
+    :cond_3
     const-string v1, "OAEPWITHMD5ANDMGF1PADDING"
 
     .line 93
@@ -1556,7 +1556,7 @@
 
     .line 99
     .line 100
-    if-eqz v1, :cond_77
+    if-eqz v1, :cond_4
 
     .line 101
     .line 102
@@ -1594,7 +1594,7 @@
     return-void
 
     .line 120
-    :cond_77
+    :cond_4
     const-string v1, "OAEPWITHSHA1ANDMGF1PADDING"
 
     .line 121
@@ -1607,7 +1607,7 @@
     move-result v1
 
     .line 126
-    if-eqz v1, :cond_85
+    if-eqz v1, :cond_5
 
     .line 127
     .line 128
@@ -1623,7 +1623,7 @@
     return-void
 
     .line 134
-    :cond_85
+    :cond_5
     const-string v1, "OAEPWITHSHA224ANDMGF1PADDING"
 
     .line 135
@@ -1636,7 +1636,7 @@
     move-result v1
 
     .line 140
-    if-eqz v1, :cond_9f
+    if-eqz v1, :cond_6
 
     .line 141
     .line 142
@@ -1674,7 +1674,7 @@
     return-void
 
     .line 160
-    :cond_9f
+    :cond_6
     const-string v1, "OAEPWITHSHA256ANDMGF1PADDING"
 
     .line 161
@@ -1687,7 +1687,7 @@
     move-result v1
 
     .line 166
-    if-eqz v1, :cond_b6
+    if-eqz v1, :cond_7
 
     .line 167
     .line 168
@@ -1720,7 +1720,7 @@
     return-void
 
     .line 183
-    :cond_b6
+    :cond_7
     const-string v1, "OAEPWITHSHA384ANDMGF1PADDING"
 
     .line 184
@@ -1733,7 +1733,7 @@
     move-result v1
 
     .line 189
-    if-eqz v1, :cond_cd
+    if-eqz v1, :cond_8
 
     .line 190
     .line 191
@@ -1766,7 +1766,7 @@
     return-void
 
     .line 206
-    :cond_cd
+    :cond_8
     const-string v1, "OAEPWITHSHA512ANDMGF1PADDING"
 
     .line 207
@@ -1779,7 +1779,7 @@
     move-result v0
 
     .line 212
-    if-eqz v0, :cond_e4
+    if-eqz v0, :cond_9
 
     .line 213
     .line 214
@@ -1812,7 +1812,7 @@
     return-void
 
     .line 229
-    :cond_e4
+    :cond_9
     new-instance v0, Ljavax/crypto/NoSuchPaddingException;
 
     .line 230
@@ -1838,7 +1838,7 @@
 .end method
 
 .method public final engineUpdate([BII[BI)I
-    .registers 6
+    .locals 0
 
     .line 8
     iget-object p4, p0, Llibs/pt;->b:Llibs/ap3;
@@ -1851,7 +1851,7 @@
 .end method
 
 .method public final engineUpdate([BII)[B
-    .registers 5
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/pt;->b:Llibs/ap3;

@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -34,7 +34,7 @@
 .end method
 
 .method public synthetic constructor <init>(IIB)V
-    .registers 4
+    .locals 0
 
     .line 41
     iput-byte p3, p0, Llibs/on;->a:B
@@ -49,7 +49,7 @@
 .end method
 
 .method public constructor <init>(Llibs/dm1;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x3
@@ -124,14 +124,14 @@
 
 # virtual methods
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/on;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_24
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -147,7 +147,7 @@
     return-object v0
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 12
@@ -198,8 +198,8 @@
     nop
 
     .line 37
-    :pswitch_data_24
+    :pswitch_data_0
     .packed-switch 0x2
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method

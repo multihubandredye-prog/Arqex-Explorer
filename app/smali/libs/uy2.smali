@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/af;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,14 +37,14 @@
 
     .line 10
     .line 11
-    if-nez p1, :cond_d
+    if-nez p1, :cond_0
 
     .line 12
     .line 13
     return-void
 
     .line 14
-    :cond_d
+    :cond_0
     invoke-virtual {p1, p0}, Llibs/af;->r(Llibs/wz2;)V
 
     .line 15
@@ -56,7 +56,7 @@
 
 # virtual methods
 .method public final a(FF)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/uy2;->a:Landroid/graphics/Path;
@@ -80,7 +80,7 @@
 .end method
 
 .method public final b(FFFFFF)V
-    .registers 14
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/uy2;->a:Landroid/graphics/Path;
@@ -122,7 +122,7 @@
 .end method
 
 .method public final c(FFFZZFF)V
-    .registers 18
+    .locals 10
 
     .line 1
     iget v0, p0, Llibs/uy2;->b:F
@@ -176,7 +176,7 @@
 .end method
 
 .method public final close()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/uy2;->a:Landroid/graphics/Path;
@@ -192,7 +192,7 @@
 .end method
 
 .method public final d(FFFF)V
-    .registers 6
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/uy2;->a:Landroid/graphics/Path;
@@ -216,7 +216,7 @@
 .end method
 
 .method public final e(FF)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/uy2;->a:Landroid/graphics/Path;

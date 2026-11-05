@@ -5,7 +5,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/util/Hashtable;
@@ -21,7 +21,7 @@
 .end method
 
 .method public static a(Ljava/lang/String;)J
-    .registers 6
+    .locals 5
 
     .line 1
     const/16 v0, 0x2d
@@ -47,7 +47,7 @@
 
     .line 11
     .line 12
-    if-ne v0, v1, :cond_1e
+    if-ne v0, v1, :cond_0
 
     .line 13
     .line 14
@@ -55,21 +55,21 @@
 
     .line 15
     .line 16
-    :try_start_f
+    :try_start_0
     invoke-static {p0, v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;I)J
 
     .line 17
     .line 18
     .line 19
     move-result-wide v0
-    :try_end_13
-    .catch Ljava/lang/NumberFormatException; {:try_start_f .. :try_end_13} :catch_14
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 20
     return-wide v0
 
     .line 21
-    :catch_14
+    :catch_0
     const-string v0, "}; should be hex number"
 
     .line 22
@@ -90,7 +90,7 @@
     return-wide v2
 
     .line 31
-    :cond_1e
+    :cond_0
     const-string v0, "}"
 
     .line 32

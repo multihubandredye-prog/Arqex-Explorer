@@ -16,7 +16,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/16 v0, 0x10
@@ -27,7 +27,7 @@
 
     .line 4
     .line 5
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     .line 6
     .line 7
@@ -39,7 +39,7 @@
     return-void
 
     .line 11
-    :array_a
+    :array_0
     .array-data 2
         0x30s
         0x31s
@@ -61,7 +61,7 @@
 .end method
 
 .method public constructor <init>([B)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/Theme;-><init>()V
@@ -79,7 +79,7 @@
 
 # virtual methods
 .method public final c()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Ljava/lang/StringBuffer;
@@ -113,10 +113,10 @@
     .line 16
     .line 17
     .line 18
-    :try_start_11
+    :try_start_0
     invoke-virtual {v2, p0}, Llibs/v60;->Call(Llibs/Core;)V
-    :try_end_14
-    .catch Ljava/io/IOException; {:try_start_11 .. :try_end_14} :catch_3a
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 19
     .line 20
@@ -132,11 +132,11 @@
     const/4 v2, 0x0
 
     .line 26
-    :goto_19
+    :goto_0
     array-length v3, v1
 
     .line 27
-    if-eq v2, v3, :cond_35
+    if-eq v2, v3, :cond_0
 
     .line 28
     .line 29
@@ -186,10 +186,10 @@
 
     .line 52
     .line 53
-    goto :goto_19
+    goto :goto_0
 
     .line 54
-    :cond_35
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     .line 55
@@ -201,7 +201,7 @@
     return-object v0
 
     .line 59
-    :catch_3a
+    :catch_0
     const-string v0, "internal error encoding BitString"
 
     .line 60
@@ -218,14 +218,14 @@
 .end method
 
 .method public final g(Llibs/Theme;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Llibs/u10;
 
     .line 2
     .line 3
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -235,7 +235,7 @@
     return p1
 
     .line 7
-    :cond_6
+    :cond_0
     check-cast p1, Llibs/u10;
 
     .line 8
@@ -260,7 +260,7 @@
 .end method
 
 .method public final h(Llibs/v60;)V
-    .registers 4
+    .locals 2
 
     .line 1
     const/16 v0, 0x1c
@@ -280,7 +280,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/u10;->X:[B
@@ -299,7 +299,7 @@
 .end method
 
 .method public final i()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/u10;->X:[B
@@ -331,7 +331,7 @@
 .end method
 
 .method public final k()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -341,7 +341,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/u10;->c()Ljava/lang/String;

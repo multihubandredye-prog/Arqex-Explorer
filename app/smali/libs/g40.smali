@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/xr2;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final b(Llibs/g90;)V
-    .registers 3
+    .locals 1
 
     .line 1
     check-cast p1, Llibs/f40;
@@ -71,7 +71,7 @@
 .end method
 
 .method public final d(I[B)I
-    .registers 20
+    .locals 17
 
     .line 1
     move-object/from16 v1, p0
@@ -95,7 +95,7 @@
     const/4 v4, 0x0
 
     .line 10
-    if-ltz v3, :cond_af
+    if-ltz v3, :cond_3
 
     .line 11
     .line 12
@@ -113,7 +113,7 @@
 
     .line 19
     .line 20
-    if-gtz v3, :cond_a9
+    if-gtz v3, :cond_2
 
     .line 21
     .line 22
@@ -151,12 +151,12 @@
     const/4 v12, 0x0
 
     .line 36
-    :goto_23
+    :goto_0
     iget-object v13, v1, Llibs/g40;->X:Llibs/xr2;
 
     .line 37
     .line 38
-    if-ge v10, v3, :cond_a4
+    if-ge v10, v3, :cond_1
 
     .line 39
     .line 40
@@ -285,7 +285,7 @@
     .line 105
     .line 106
     .line 107
-    :try_start_6a
+    :try_start_0
     new-instance v3, Llibs/p10;
 
     .line 108
@@ -311,8 +311,8 @@
 
     .line 119
     invoke-virtual {v13, v3, v4, v7}, Llibs/gu0;->update([BII)V
-    :try_end_79
-    .catch Ljava/io/IOException; {:try_start_6a .. :try_end_79} :catch_94
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 120
     .line 121
@@ -326,7 +326,7 @@
 
     .line 126
     .line 127
-    if-le v0, v3, :cond_88
+    if-le v0, v3, :cond_0
 
     .line 128
     .line 129
@@ -343,16 +343,16 @@
 
     .line 135
     .line 136
-    goto :goto_8b
+    goto :goto_1
 
     .line 137
-    :cond_88
+    :cond_0
     invoke-static {v8, v4, v2, v12, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 138
     .line 139
     .line 140
-    :goto_8b
+    :goto_1
     add-int/lit8 v11, v11, 0x1
 
     .line 141
@@ -369,10 +369,10 @@
 
     .line 147
     .line 148
-    goto :goto_23
+    goto :goto_0
 
     .line 149
-    :catch_94
+    :catch_0
     move-exception v0
 
     .line 150
@@ -405,7 +405,7 @@
     return v4
 
     .line 165
-    :cond_a4
+    :cond_1
     invoke-virtual {v13}, Llibs/xr2;->reset()V
 
     .line 166
@@ -417,7 +417,7 @@
     return v0
 
     .line 170
-    :cond_a9
+    :cond_2
     const-string v0, "Output length too large"
 
     .line 171
@@ -430,7 +430,7 @@
     return v4
 
     .line 176
-    :cond_af
+    :cond_3
     const-string v0, "output buffer too small"
 
     .line 177

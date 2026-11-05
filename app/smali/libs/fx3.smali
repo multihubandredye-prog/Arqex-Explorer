@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ak;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/fx3;->Z:Llibs/ak;
@@ -34,7 +34,7 @@
 
 # virtual methods
 .method public final varargs c([Ljava/lang/Object;)Z
-    .registers 14
+    .locals 12
 
     .line 1
     iget-object v0, p0, Llibs/fx3;->Z:Llibs/ak;
@@ -44,7 +44,7 @@
     const/4 v1, 0x0
 
     .line 4
-    :try_start_3
+    :try_start_0
     aget-object v2, p1, v1
 
     .line 5
@@ -105,7 +105,7 @@
 
     .line 33
     .line 34
-    if-eqz p1, :cond_9a
+    if-eqz p1, :cond_4
 
     .line 35
     .line 36
@@ -118,8 +118,8 @@
     const/4 v5, 0x0
 
     .line 39
-    :goto_26
-    if-ge v4, v3, :cond_a5
+    :goto_0
+    if-ge v4, v3, :cond_5
 
     .line 40
     .line 41
@@ -128,20 +128,20 @@
     .line 42
     .line 43
     iget v7, p0, Llibs/fx3;->X:I
-    :try_end_2c
-    .catchall {:try_start_3 .. :try_end_2c} :catchall_b1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 44
     .line 45
-    if-le v5, v7, :cond_30
+    if-le v5, v7, :cond_0
 
     .line 46
     .line 47
-    goto/16 :goto_a5
+    goto/16 :goto_4
 
     .line 48
     .line 49
-    :cond_30
+    :cond_0
     const-string v8, "</td>"
 
     .line 50
@@ -150,11 +150,11 @@
 
     .line 52
     .line 53
-    if-ne v5, v7, :cond_6f
+    if-ne v5, v7, :cond_2
 
     .line 54
     .line 55
-    :try_start_36
+    :try_start_1
     iget-object v7, p0, Llibs/fx3;->Y:[Llibs/ix3;
 
     .line 56
@@ -169,7 +169,7 @@
 
     .line 60
     .line 61
-    if-ge v10, v11, :cond_6f
+    if-ge v10, v11, :cond_2
 
     .line 62
     .line 63
@@ -183,14 +183,14 @@
     sub-int/2addr v7, v5
 
     .line 67
-    if-nez v6, :cond_45
+    if-nez v6, :cond_1
 
     .line 68
     .line 69
-    goto :goto_49
+    goto :goto_1
 
     .line 70
-    :cond_45
+    :cond_1
     invoke-virtual {v6}, Llibs/ix3;->toString()Ljava/lang/String;
 
     .line 71
@@ -199,7 +199,7 @@
     move-result-object v9
 
     .line 74
-    :goto_49
+    :goto_1
     new-instance v6, Ljava/lang/StringBuilder;
 
     .line 75
@@ -267,22 +267,22 @@
     .line 109
     .line 110
     .line 111
-    goto :goto_95
+    goto :goto_3
 
     .line 112
-    :cond_6f
+    :cond_2
     sget-object v7, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
     .line 113
     .line 114
-    if-nez v6, :cond_74
+    if-nez v6, :cond_3
 
     .line 115
     .line 116
-    goto :goto_78
+    goto :goto_2
 
     .line 117
-    :cond_74
+    :cond_3
     invoke-virtual {v6}, Llibs/ix3;->toString()Ljava/lang/String;
 
     .line 118
@@ -291,7 +291,7 @@
     move-result-object v9
 
     .line 121
-    :goto_78
+    :goto_2
     new-instance v6, Ljava/lang/StringBuilder;
 
     .line 122
@@ -345,7 +345,7 @@
     .line 148
     .line 149
     .line 150
-    :goto_95
+    :goto_3
     add-int/lit8 v5, v5, 0x1
 
     .line 151
@@ -354,10 +354,10 @@
 
     .line 153
     .line 154
-    goto :goto_26
+    goto :goto_0
 
     .line 155
-    :cond_9a
+    :cond_4
     sget-object p1, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
     .line 156
@@ -379,8 +379,8 @@
     .line 164
     .line 165
     .line 166
-    :cond_a5
-    :goto_a5
+    :cond_5
+    :goto_4
     const-string p1, "</tr>"
 
     .line 167
@@ -398,8 +398,8 @@
 
     .line 174
     invoke-virtual {v0, p1}, Llibs/jr0;->write([B)V
-    :try_end_b0
-    .catchall {:try_start_36 .. :try_end_b0} :catchall_b1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 175
     .line 176
@@ -407,6 +407,6 @@
     return v2
 
     .line 178
-    :catchall_b1
+    :catchall_0
     return v1
 .end method

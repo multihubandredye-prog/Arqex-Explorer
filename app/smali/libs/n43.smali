@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/l6;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final a([Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 1
     check-cast p1, [Ljavax/net/ssl/SSLSocket;
@@ -29,7 +29,7 @@
     const/4 v0, 0x0
 
     .line 4
-    :try_start_3
+    :try_start_0
     aget-object p1, p1, v0
 
     .line 5
@@ -48,14 +48,14 @@
     .line 12
     .line 13
     move-result-object p1
-    :try_end_d
-    .catchall {:try_start_3 .. :try_end_d} :catchall_e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 14
     return-object p1
 
     .line 15
-    :catchall_e
+    :catchall_0
     const/4 p1, 0x0
 
     .line 16

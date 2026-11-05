@@ -32,7 +32,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const-string v0, "SocketConnection.in"
@@ -63,7 +63,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -90,14 +90,14 @@
 
 # virtual methods
 .method public final a()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-boolean v0, p0, Llibs/wc3;->h:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_3a
+    if-nez v0, :cond_3
 
     .line 4
     .line 5
@@ -111,7 +111,7 @@
     const/4 v2, 0x6
 
     .line 9
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     .line 10
     .line 11
@@ -123,11 +123,11 @@
     move-result v0
 
     .line 15
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     .line 16
     .line 17
-    :try_start_10
+    :try_start_0
     invoke-static {v2}, Llibs/zm1;->Context(I)Z
 
     .line 18
@@ -136,7 +136,7 @@
     move-result v0
 
     .line 21
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     .line 22
     .line 23
@@ -153,31 +153,31 @@
     .line 28
     .line 29
     .line 30
-    goto :goto_20
+    goto :goto_0
 
     .line 31
-    :catch_1e
+    :catch_0
     nop
 
     .line 32
-    goto :goto_25
+    goto :goto_1
 
     .line 33
-    :cond_20
-    :goto_20
+    :cond_0
+    :goto_0
     iget-object v0, p0, Llibs/wc3;->a:Ljava/nio/channels/SocketChannel;
 
     .line 34
     .line 35
     invoke-virtual {v0}, Ljava/nio/channels/spi/AbstractInterruptibleChannel;->close()V
-    :try_end_25
-    .catch Ljava/io/IOException; {:try_start_10 .. :try_end_25} :catch_1e
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 36
     .line 37
     .line 38
-    :cond_25
-    :goto_25
+    :cond_1
+    :goto_1
     invoke-static {v2}, Llibs/zm1;->Context(I)Z
 
     .line 39
@@ -186,7 +186,7 @@
     move-result v0
 
     .line 42
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_2
 
     .line 43
     .line 44
@@ -203,7 +203,7 @@
     .line 49
     .line 50
     .line 51
-    :cond_32
+    :cond_2
     iget-object v0, p0, Llibs/wc3;->b:Llibs/zo3;
 
     .line 52
@@ -220,12 +220,12 @@
 
     .line 58
     .line 59
-    :cond_3a
+    :cond_3
     return-void
 .end method
 
 .method public final b()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x5
@@ -235,7 +235,7 @@
 .end method
 
 .method public final c()Llibs/x43;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/wc3;->d:Llibs/x43;
@@ -246,7 +246,7 @@
 .end method
 
 .method public final d(Ljava/nio/channels/SelectionKey;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/wc3;->e:Ljava/nio/channels/SelectionKey;
@@ -257,7 +257,7 @@
 .end method
 
 .method public final e(Ljava/nio/channels/SelectableChannel;Ljava/nio/channels/SelectionKey;Llibs/x43;)V
-    .registers 12
+    .locals 8
 
     .line 1
     check-cast p1, Ljava/nio/channels/SocketChannel;
@@ -313,7 +313,7 @@
     const/4 v1, 0x0
 
     .line 26
-    if-eqz p2, :cond_40
+    if-eqz p2, :cond_0
 
     .line 27
     .line 28
@@ -390,7 +390,7 @@
     .line 63
     .line 64
     .line 65
-    :cond_40
+    :cond_0
     iget-object p2, p1, Llibs/zo3;->Top:Llibs/qe3;
 
     .line 66
@@ -444,7 +444,7 @@
     move-result v3
 
     .line 92
-    if-eqz v3, :cond_e2
+    if-eqz v3, :cond_8
 
     .line 93
     .line 94
@@ -452,7 +452,7 @@
 
     .line 95
     .line 96
-    :try_start_5f
+    :try_start_0
     move-object v4, v2
 
     .line 97
@@ -468,7 +468,7 @@
     move-result-object v4
 
     .line 103
-    if-nez v4, :cond_82
+    if-nez v4, :cond_3
 
     .line 104
     .line 105
@@ -491,7 +491,7 @@
     move-result v5
 
     .line 114
-    if-eqz v5, :cond_77
+    if-eqz v5, :cond_1
 
     .line 115
     .line 116
@@ -500,10 +500,10 @@
     .line 117
     .line 118
     .line 119
-    goto :goto_85
+    goto :goto_0
 
     .line 120
-    :cond_77
+    :cond_1
     invoke-virtual {v4}, Ljava/net/InetSocketAddress;->getAddress()Ljava/net/InetAddress;
 
     .line 121
@@ -512,29 +512,29 @@
     move-result-object v4
 
     .line 124
-    if-nez v4, :cond_7e
+    if-nez v4, :cond_2
 
     .line 125
     .line 126
-    goto :goto_85
+    goto :goto_0
 
     .line 127
-    :cond_7e
+    :cond_2
     invoke-virtual {v4}, Ljava/net/InetAddress;->getHostAddress()Ljava/lang/String;
 
     .line 128
     .line 129
     .line 130
-    goto :goto_85
+    goto :goto_0
 
     .line 131
-    :cond_82
+    :cond_3
     invoke-virtual {v4}, Ljava/net/InetAddress;->getHostAddress()Ljava/lang/String;
 
     .line 132
     .line 133
     .line 134
-    :goto_85
+    :goto_0
     invoke-virtual {v3}, Ljava/util/ArrayList;->isEmpty()Z
 
     .line 135
@@ -543,7 +543,7 @@
     move-result v4
 
     .line 138
-    if-nez v4, :cond_a4
+    if-nez v4, :cond_5
 
     .line 139
     .line 140
@@ -563,17 +563,17 @@
     move-result v4
 
     .line 148
-    if-nez v4, :cond_97
+    if-nez v4, :cond_4
 
     .line 149
     .line 150
     const/4 v3, 0x0
 
     .line 151
-    goto :goto_a5
+    goto :goto_1
 
     .line 152
-    :cond_97
+    :cond_4
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     .line 153
@@ -599,11 +599,11 @@
     throw p1
 
     .line 165
-    :cond_a4
+    :cond_5
     const/4 v3, 0x1
 
     .line 166
-    :goto_a5
+    :goto_1
     iget-object p2, p2, Llibs/c71;->b:Ljava/util/ArrayList;
 
     .line 167
@@ -624,7 +624,7 @@
     move-result v4
 
     .line 176
-    if-nez v4, :cond_cf
+    if-nez v4, :cond_7
 
     .line 177
     .line 178
@@ -639,7 +639,7 @@
     move-result p2
 
     .line 183
-    if-eqz p2, :cond_e3
+    if-eqz p2, :cond_9
 
     .line 184
     .line 185
@@ -655,7 +655,7 @@
     move-result-object v2
 
     .line 191
-    if-eqz v3, :cond_c3
+    if-eqz v3, :cond_6
 
     .line 192
     .line 193
@@ -663,15 +663,15 @@
 
     .line 194
     .line 195
-    goto :goto_c5
+    goto :goto_2
 
     .line 196
-    :cond_c3
+    :cond_6
     const-string v4, "denied"
 
     .line 197
     .line 198
-    :goto_c5
+    :goto_2
     new-array p3, p3, [Ljava/lang/Object;
 
     .line 199
@@ -689,10 +689,10 @@
     .line 205
     .line 206
     .line 207
-    goto :goto_e3
+    goto :goto_3
 
     .line 208
-    :cond_cf
+    :cond_7
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     .line 209
@@ -716,11 +716,11 @@
     .line 219
     .line 220
     throw p1
-    :try_end_dc
-    .catch Ljava/net/UnknownHostException; {:try_start_5f .. :try_end_dc} :catch_dc
+    :try_end_0
+    .catch Ljava/net/UnknownHostException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 221
-    :catch_dc
+    :catch_0
     const-string p1, "Invalid IP range"
 
     .line 222
@@ -733,12 +733,12 @@
     return-void
 
     .line 227
-    :cond_e2
+    :cond_8
     const/4 v3, 0x0
 
     .line 228
-    :cond_e3
-    :goto_e3
+    :cond_9
+    :goto_3
     const/4 p2, 0x5
 
     .line 229
@@ -750,7 +750,7 @@
     move-result p3
 
     .line 233
-    if-eqz p3, :cond_116
+    if-eqz p3, :cond_b
 
     .line 234
     .line 235
@@ -767,7 +767,7 @@
     .line 240
     .line 241
     .line 242
-    if-eqz v3, :cond_f6
+    if-eqz v3, :cond_a
 
     .line 243
     .line 244
@@ -775,15 +775,15 @@
 
     .line 245
     .line 246
-    goto :goto_f8
+    goto :goto_4
 
     .line 247
-    :cond_f6
+    :cond_a
     const-string v2, "denied"
 
     .line 248
     .line 249
-    :goto_f8
+    :goto_4
     invoke-virtual {p3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 250
@@ -840,15 +840,15 @@
     .line 277
     .line 278
     .line 279
-    :cond_116
-    if-nez v3, :cond_119
+    :cond_b
+    if-nez v3, :cond_c
 
     .line 280
     .line 281
-    goto :goto_15b
+    goto :goto_6
 
     .line 282
-    :cond_119
+    :cond_c
     sget-object p3, Llibs/zo3;->Ok:Ljava/lang/Object;
 
     .line 283
@@ -856,7 +856,7 @@
     monitor-enter p3
 
     .line 285
-    :try_start_11c
+    :try_start_1
     iget-object v2, p1, Llibs/zo3;->Top:Llibs/qe3;
 
     .line 286
@@ -901,11 +901,11 @@
     const/4 v7, -0x1
 
     .line 307
-    if-le v6, v7, :cond_16c
+    if-le v6, v7, :cond_f
 
     .line 308
     .line 309
-    if-lt v3, v6, :cond_16c
+    if-lt v3, v6, :cond_f
 
     .line 310
     .line 311
@@ -947,7 +947,7 @@
     move-result p1
 
     .line 331
-    if-eqz p1, :cond_157
+    if-eqz p1, :cond_d
 
     .line 332
     .line 333
@@ -964,30 +964,30 @@
     .line 338
     .line 339
     .line 340
-    goto :goto_157
+    goto :goto_5
 
     .line 341
-    :catchall_154
+    :catchall_0
     move-exception p1
 
     .line 342
-    goto/16 :goto_1ef
+    goto/16 :goto_8
 
     .line 343
     .line 344
-    :cond_157
-    :goto_157
+    :cond_d
+    :goto_5
     invoke-virtual {p0}, Llibs/wc3;->a()V
 
     .line 345
     .line 346
     .line 347
     monitor-exit p3
-    :try_end_15b
-    .catchall {:try_start_11c .. :try_end_15b} :catchall_154
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 348
-    :goto_15b
+    :goto_6
     invoke-static {p2}, Llibs/zm1;->Context(I)Z
 
     .line 349
@@ -996,7 +996,7 @@
     move-result p1
 
     .line 352
-    if-eqz p1, :cond_168
+    if-eqz p1, :cond_e
 
     .line 353
     .line 354
@@ -1013,7 +1013,7 @@
     .line 359
     .line 360
     .line 361
-    :cond_168
+    :cond_e
     invoke-virtual {p0}, Llibs/wc3;->a()V
 
     .line 362
@@ -1022,11 +1022,11 @@
     return-void
 
     .line 365
-    :cond_16c
-    :try_start_16c
+    :cond_f
+    :try_start_2
     monitor-exit p3
-    :try_end_16d
-    .catchall {:try_start_16c .. :try_end_16d} :catchall_154
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 366
     invoke-virtual {p1}, Llibs/zo3;->x()V
@@ -1059,7 +1059,7 @@
 
     .line 381
     .line 382
-    if-eqz p2, :cond_18c
+    if-eqz p2, :cond_10
 
     .line 383
     .line 384
@@ -1071,7 +1071,7 @@
     move-result v1
 
     .line 388
-    if-eqz v1, :cond_18c
+    if-eqz v1, :cond_10
 
     .line 389
     .line 390
@@ -1087,14 +1087,14 @@
 
     .line 395
     .line 396
-    goto :goto_18d
+    goto :goto_7
 
     .line 397
-    :cond_18c
+    :cond_10
     const/4 p2, 0x0
 
     .line 398
-    :goto_18d
+    :goto_7
     iput-object p2, p1, Llibs/zo3;->Cur:Llibs/qx;
 
     .line 399
@@ -1125,7 +1125,7 @@
 
     .line 413
     .line 414
-    if-nez p2, :cond_1ee
+    if-nez p2, :cond_11
 
     .line 415
     .line 416
@@ -1274,22 +1274,22 @@
     .line 493
     .line 494
     .line 495
-    :cond_1ee
+    :cond_11
     return-void
 
     .line 496
-    :goto_1ef
-    :try_start_1ef
+    :goto_8
+    :try_start_3
     monitor-exit p3
-    :try_end_1f0
-    .catchall {:try_start_1ef .. :try_end_1f0} :catchall_154
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 497
     throw p1
 .end method
 
 .method public final f()Z
-    .registers 10
+    .locals 9
 
     .line 1
     const-string v0, "Connection closed on socket read: "
@@ -1318,7 +1318,7 @@
     const/4 v5, 0x0
 
     .line 13
-    if-eqz v4, :cond_15
+    if-eqz v4, :cond_0
 
     .line 14
     .line 15
@@ -1335,33 +1335,33 @@
     .line 20
     .line 21
     .line 22
-    :cond_15
+    :cond_0
     const/4 v4, 0x1
 
     .line 23
     const/4 v6, 0x0
 
     .line 24
-    :try_start_17
+    :try_start_0
     invoke-virtual {p0}, Llibs/wc3;->n()Z
 
     .line 25
     .line 26
     .line 27
     move-result v7
-    :try_end_1b
-    .catchall {:try_start_17 .. :try_end_1b} :catchall_4a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 28
     iget-object v8, p0, Llibs/wc3;->f:Ljava/nio/ByteBuffer;
 
     .line 29
     .line 30
-    if-nez v7, :cond_3b
+    if-nez v7, :cond_2
 
     .line 31
     .line 32
-    if-eqz v8, :cond_15b
+    if-eqz v8, :cond_10
 
     .line 33
     .line 34
@@ -1373,7 +1373,7 @@
     move-result v0
 
     .line 38
-    if-nez v0, :cond_35
+    if-nez v0, :cond_1
 
     .line 39
     .line 40
@@ -1405,7 +1405,7 @@
     return v4
 
     .line 54
-    :cond_35
+    :cond_1
     iget-object v0, p0, Llibs/wc3;->f:Ljava/nio/ByteBuffer;
 
     .line 55
@@ -1418,12 +1418,12 @@
     return v4
 
     .line 60
-    :cond_3b
-    if-nez v8, :cond_4d
+    :cond_2
+    if-nez v8, :cond_3
 
     .line 61
     .line 62
-    :try_start_3d
+    :try_start_1
     iget-object v7, p0, Llibs/wc3;->c:Llibs/fi1;
 
     .line 63
@@ -1448,19 +1448,19 @@
 
     .line 73
     .line 74
-    goto :goto_4d
+    goto :goto_0
 
     .line 75
-    :catchall_4a
+    :catchall_0
     move-exception v1
 
     .line 76
-    goto/16 :goto_110
+    goto/16 :goto_1
 
     .line 77
     .line 78
-    :cond_4d
-    :goto_4d
+    :cond_3
+    :goto_0
     iget-object v7, p0, Llibs/wc3;->a:Ljava/nio/channels/SocketChannel;
 
     .line 79
@@ -1490,7 +1490,7 @@
     move-result v8
 
     .line 93
-    if-eqz v8, :cond_74
+    if-eqz v8, :cond_4
 
     .line 94
     .line 95
@@ -1534,11 +1534,11 @@
     .line 115
     .line 116
     .line 117
-    :cond_74
+    :cond_4
     const/4 v2, -0x1
 
     .line 118
-    if-ne v7, v2, :cond_a5
+    if-ne v7, v2, :cond_7
 
     .line 119
     .line 120
@@ -1550,7 +1550,7 @@
     move-result v1
 
     .line 124
-    if-eqz v1, :cond_84
+    if-eqz v1, :cond_5
 
     .line 125
     .line 126
@@ -1567,10 +1567,10 @@
     .line 131
     .line 132
     .line 133
-    :cond_84
+    :cond_5
     invoke-virtual {p0}, Llibs/wc3;->a()V
-    :try_end_87
-    .catchall {:try_start_3d .. :try_end_87} :catchall_4a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 134
     .line 135
@@ -1579,7 +1579,7 @@
 
     .line 137
     .line 138
-    if-eqz v0, :cond_15b
+    if-eqz v0, :cond_10
 
     .line 139
     .line 140
@@ -1591,7 +1591,7 @@
     move-result v0
 
     .line 144
-    if-nez v0, :cond_9f
+    if-nez v0, :cond_6
 
     .line 145
     .line 146
@@ -1623,7 +1623,7 @@
     return v4
 
     .line 160
-    :cond_9f
+    :cond_6
     iget-object v0, p0, Llibs/wc3;->f:Ljava/nio/ByteBuffer;
 
     .line 161
@@ -1636,8 +1636,8 @@
     return v4
 
     .line 166
-    :cond_a5
-    :try_start_a5
+    :cond_7
+    :try_start_2
     iget-object v2, p0, Llibs/wc3;->f:Ljava/nio/ByteBuffer;
 
     .line 167
@@ -1650,7 +1650,7 @@
     move-result v2
 
     .line 172
-    if-eqz v2, :cond_b4
+    if-eqz v2, :cond_8
 
     .line 173
     .line 174
@@ -1667,12 +1667,12 @@
     .line 179
     .line 180
     .line 181
-    :cond_b4
+    :cond_8
     iget-object v2, p0, Llibs/wc3;->f:Ljava/nio/ByteBuffer;
 
     .line 182
     .line 183
-    if-eqz v2, :cond_da
+    if-eqz v2, :cond_9
 
     .line 184
     .line 185
@@ -1684,7 +1684,7 @@
     move-result v2
 
     .line 189
-    if-eqz v2, :cond_da
+    if-eqz v2, :cond_9
 
     .line 190
     .line 191
@@ -1740,7 +1740,7 @@
     .line 217
     .line 218
     .line 219
-    :cond_da
+    :cond_9
     invoke-virtual {p0}, Llibs/wc3;->n()Z
 
     .line 220
@@ -1749,7 +1749,7 @@
     move-result v1
 
     .line 223
-    if-nez v1, :cond_ed
+    if-nez v1, :cond_a
 
     .line 224
     .line 225
@@ -1761,7 +1761,7 @@
     move-result v1
 
     .line 229
-    if-eqz v1, :cond_ed
+    if-eqz v1, :cond_a
 
     .line 230
     .line 231
@@ -1778,15 +1778,15 @@
     .line 236
     .line 237
     .line 238
-    :cond_ed
+    :cond_a
     invoke-virtual {p0}, Llibs/wc3;->n()Z
 
     .line 239
     .line 240
     .line 241
     move-result v0
-    :try_end_f1
-    .catchall {:try_start_a5 .. :try_end_f1} :catchall_4a
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 242
     xor-int/2addr v0, v4
@@ -1796,7 +1796,7 @@
 
     .line 244
     .line 245
-    if-eqz v1, :cond_10f
+    if-eqz v1, :cond_c
 
     .line 246
     .line 247
@@ -1808,7 +1808,7 @@
     move-result v1
 
     .line 251
-    if-nez v1, :cond_10a
+    if-nez v1, :cond_b
 
     .line 252
     .line 253
@@ -1840,7 +1840,7 @@
     return v0
 
     .line 267
-    :cond_10a
+    :cond_b
     iget-object v1, p0, Llibs/wc3;->f:Ljava/nio/ByteBuffer;
 
     .line 268
@@ -1850,12 +1850,12 @@
     .line 270
     .line 271
     .line 272
-    :cond_10f
+    :cond_c
     return v0
 
     .line 273
-    :goto_110
-    :try_start_110
+    :goto_1
+    :try_start_3
     invoke-static {v3}, Llibs/zm1;->Context(I)Z
 
     .line 274
@@ -1864,7 +1864,7 @@
     move-result v2
 
     .line 277
-    if-eqz v2, :cond_12e
+    if-eqz v2, :cond_d
 
     .line 278
     .line 279
@@ -1907,18 +1907,18 @@
     .line 298
     .line 299
     .line 300
-    goto :goto_12e
+    goto :goto_2
 
     .line 301
-    :catchall_12c
+    :catchall_1
     move-exception v0
 
     .line 302
-    goto :goto_15c
+    goto :goto_4
 
     .line 303
-    :cond_12e
-    :goto_12e
+    :cond_d
+    :goto_2
     invoke-static {v3}, Llibs/zm1;->Context(I)Z
 
     .line 304
@@ -1927,7 +1927,7 @@
     move-result v0
 
     .line 307
-    if-eqz v0, :cond_13b
+    if-eqz v0, :cond_e
 
     .line 308
     .line 309
@@ -1944,10 +1944,10 @@
     .line 314
     .line 315
     .line 316
-    :cond_13b
+    :cond_e
     invoke-virtual {p0}, Llibs/wc3;->a()V
-    :try_end_13e
-    .catchall {:try_start_110 .. :try_end_13e} :catchall_12c
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 317
     .line 318
@@ -1956,7 +1956,7 @@
 
     .line 320
     .line 321
-    if-eqz v0, :cond_15b
+    if-eqz v0, :cond_10
 
     .line 322
     .line 323
@@ -1968,7 +1968,7 @@
     move-result v0
 
     .line 327
-    if-nez v0, :cond_156
+    if-nez v0, :cond_f
 
     .line 328
     .line 329
@@ -1997,10 +1997,10 @@
 
     .line 341
     .line 342
-    goto :goto_15b
+    goto :goto_3
 
     .line 343
-    :cond_156
+    :cond_f
     iget-object v0, p0, Llibs/wc3;->f:Ljava/nio/ByteBuffer;
 
     .line 344
@@ -2010,17 +2010,17 @@
     .line 346
     .line 347
     .line 348
-    :cond_15b
-    :goto_15b
+    :cond_10
+    :goto_3
     return v4
 
     .line 349
-    :goto_15c
+    :goto_4
     iget-object v1, p0, Llibs/wc3;->f:Ljava/nio/ByteBuffer;
 
     .line 350
     .line 351
-    if-eqz v1, :cond_179
+    if-eqz v1, :cond_12
 
     .line 352
     .line 353
@@ -2032,7 +2032,7 @@
     move-result v1
 
     .line 357
-    if-nez v1, :cond_174
+    if-nez v1, :cond_11
 
     .line 358
     .line 359
@@ -2061,10 +2061,10 @@
 
     .line 371
     .line 372
-    goto :goto_179
+    goto :goto_5
 
     .line 373
-    :cond_174
+    :cond_11
     iget-object v1, p0, Llibs/wc3;->f:Ljava/nio/ByteBuffer;
 
     .line 374
@@ -2074,13 +2074,13 @@
     .line 376
     .line 377
     .line 378
-    :cond_179
-    :goto_179
+    :cond_12
+    :goto_5
     throw v0
 .end method
 
 .method public final g(Llibs/de3;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/wc3;->b:Llibs/zo3;
@@ -2105,7 +2105,7 @@
 .end method
 
 .method public final getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/wc3;->b:Llibs/zo3;
@@ -2125,7 +2125,7 @@
 .end method
 
 .method public final h(Llibs/x43;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/wc3;->d:Llibs/x43;
@@ -2136,7 +2136,7 @@
 .end method
 
 .method public final j()Z
-    .registers 9
+    .locals 8
 
     .line 1
     iget-object v0, p0, Llibs/wc3;->i:Ljava/util/LinkedList;
@@ -2161,7 +2161,7 @@
     const/4 v4, 0x0
 
     .line 11
-    if-eqz v3, :cond_13
+    if-eqz v3, :cond_0
 
     .line 12
     .line 13
@@ -2178,7 +2178,7 @@
     .line 18
     .line 19
     .line 20
-    :cond_13
+    :cond_0
     iget-object v3, p0, Llibs/wc3;->a:Ljava/nio/channels/SocketChannel;
 
     .line 21
@@ -2186,7 +2186,7 @@
     const/4 v5, 0x1
 
     .line 23
-    if-eqz v3, :cond_22b
+    if-eqz v3, :cond_1f
 
     .line 24
     .line 25
@@ -2198,20 +2198,20 @@
     move-result v3
 
     .line 29
-    if-nez v3, :cond_20
+    if-nez v3, :cond_1
 
     .line 30
     .line 31
-    goto/16 :goto_22b
+    goto/16 :goto_d
 
     .line 32
     .line 33
-    :cond_20
+    :cond_1
     iget-object v3, p0, Llibs/wc3;->g:Ljava/nio/ByteBuffer;
 
     .line 34
     .line 35
-    if-nez v3, :cond_30
+    if-nez v3, :cond_2
 
     .line 36
     .line 37
@@ -2239,11 +2239,11 @@
 
     .line 48
     .line 49
-    :cond_30
+    :cond_2
     const/4 v6, 0x0
 
     .line 50
-    :try_start_31
+    :try_start_0
     invoke-virtual {v3}, Ljava/nio/Buffer;->remaining()I
 
     .line 51
@@ -2264,7 +2264,7 @@
     move-result v7
 
     .line 60
-    if-ne v3, v7, :cond_56
+    if-ne v3, v7, :cond_3
 
     .line 61
     .line 62
@@ -2280,7 +2280,7 @@
     move-result v3
 
     .line 68
-    if-eqz v3, :cond_56
+    if-eqz v3, :cond_3
 
     .line 69
     .line 70
@@ -2300,7 +2300,7 @@
     move-result-object v3
 
     .line 78
-    if-eqz v3, :cond_56
+    if-eqz v3, :cond_3
 
     .line 79
     .line 80
@@ -2309,19 +2309,19 @@
     .line 81
     .line 82
     .line 83
-    goto :goto_56
+    goto :goto_0
 
     .line 84
-    :catchall_53
+    :catchall_0
     move-exception v1
 
     .line 85
-    goto/16 :goto_158
+    goto/16 :goto_5
 
     .line 86
     .line 87
-    :cond_56
-    :goto_56
+    :cond_3
+    :goto_0
     iget-object v3, p0, Llibs/wc3;->g:Ljava/nio/ByteBuffer;
 
     .line 88
@@ -2341,19 +2341,19 @@
     .line 96
     .line 97
     move-result v3
-    :try_end_61
-    .catchall {:try_start_31 .. :try_end_61} :catchall_53
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 98
     iget-object v7, p0, Llibs/wc3;->g:Ljava/nio/ByteBuffer;
 
     .line 99
     .line 100
-    if-nez v3, :cond_bb
+    if-nez v3, :cond_9
 
     .line 101
     .line 102
-    if-eqz v7, :cond_9d
+    if-eqz v7, :cond_7
 
     .line 103
     .line 104
@@ -2365,7 +2365,7 @@
     move-result v1
 
     .line 108
-    if-nez v1, :cond_98
+    if-nez v1, :cond_6
 
     .line 109
     .line 110
@@ -2402,8 +2402,8 @@
     move-result-object v1
 
     .line 127
-    :cond_7e
-    :goto_7e
+    :cond_4
+    :goto_1
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 128
@@ -2412,7 +2412,7 @@
     move-result v2
 
     .line 131
-    if-eqz v2, :cond_94
+    if-eqz v2, :cond_5
 
     .line 132
     .line 133
@@ -2436,7 +2436,7 @@
 
     .line 142
     .line 143
-    if-eqz v3, :cond_7e
+    if-eqz v3, :cond_4
 
     .line 144
     .line 145
@@ -2445,19 +2445,19 @@
     .line 146
     .line 147
     .line 148
-    goto :goto_7e
+    goto :goto_1
 
     .line 149
-    :cond_94
+    :cond_5
     invoke-virtual {v0}, Ljava/util/LinkedList;->clear()V
 
     .line 150
     .line 151
     .line 152
-    goto :goto_9d
+    goto :goto_2
 
     .line 153
-    :cond_98
+    :cond_6
     iget-object v0, p0, Llibs/wc3;->g:Ljava/nio/ByteBuffer;
 
     .line 154
@@ -2467,13 +2467,13 @@
     .line 156
     .line 157
     .line 158
-    :cond_9d
-    :goto_9d
+    :cond_7
+    :goto_2
     iget-object v0, p0, Llibs/wc3;->f:Ljava/nio/ByteBuffer;
 
     .line 159
     .line 160
-    if-eqz v0, :cond_22b
+    if-eqz v0, :cond_1f
 
     .line 161
     .line 162
@@ -2485,7 +2485,7 @@
     move-result v0
 
     .line 166
-    if-nez v0, :cond_b5
+    if-nez v0, :cond_8
 
     .line 167
     .line 168
@@ -2517,7 +2517,7 @@
     return v5
 
     .line 182
-    :cond_b5
+    :cond_8
     iget-object v0, p0, Llibs/wc3;->f:Ljava/nio/ByteBuffer;
 
     .line 183
@@ -2530,8 +2530,8 @@
     return v5
 
     .line 188
-    :cond_bb
-    :try_start_bb
+    :cond_9
+    :try_start_1
     invoke-virtual {v7}, Ljava/nio/Buffer;->hasRemaining()Z
 
     .line 189
@@ -2540,7 +2540,7 @@
     move-result v3
 
     .line 192
-    if-eqz v3, :cond_e5
+    if-eqz v3, :cond_a
 
     .line 193
     .line 194
@@ -2568,7 +2568,7 @@
     move-result v7
 
     .line 206
-    if-eqz v7, :cond_e5
+    if-eqz v7, :cond_a
 
     .line 207
     .line 208
@@ -2612,12 +2612,12 @@
     .line 228
     .line 229
     .line 230
-    :cond_e5
+    :cond_a
     iget-object v1, p0, Llibs/wc3;->f:Ljava/nio/ByteBuffer;
 
     .line 231
     .line 232
-    if-eqz v1, :cond_fb
+    if-eqz v1, :cond_b
 
     .line 233
     .line 234
@@ -2638,7 +2638,7 @@
     move-result v1
 
     .line 243
-    if-eqz v1, :cond_fb
+    if-eqz v1, :cond_b
 
     .line 244
     .line 245
@@ -2655,15 +2655,15 @@
     .line 250
     .line 251
     .line 252
-    :cond_fb
+    :cond_b
     invoke-virtual {p0}, Llibs/wc3;->n()Z
 
     .line 253
     .line 254
     .line 255
     move-result v1
-    :try_end_ff
-    .catchall {:try_start_bb .. :try_end_ff} :catchall_53
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 256
     xor-int/2addr v1, v5
@@ -2673,7 +2673,7 @@
 
     .line 258
     .line 259
-    if-eqz v2, :cond_13a
+    if-eqz v2, :cond_f
 
     .line 260
     .line 261
@@ -2685,7 +2685,7 @@
     move-result v2
 
     .line 265
-    if-nez v2, :cond_135
+    if-nez v2, :cond_e
 
     .line 266
     .line 267
@@ -2722,8 +2722,8 @@
     move-result-object v2
 
     .line 284
-    :cond_11b
-    :goto_11b
+    :cond_c
+    :goto_3
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     .line 285
@@ -2732,7 +2732,7 @@
     move-result v3
 
     .line 288
-    if-eqz v3, :cond_131
+    if-eqz v3, :cond_d
 
     .line 289
     .line 290
@@ -2756,7 +2756,7 @@
 
     .line 299
     .line 300
-    if-eqz v4, :cond_11b
+    if-eqz v4, :cond_c
 
     .line 301
     .line 302
@@ -2765,19 +2765,19 @@
     .line 303
     .line 304
     .line 305
-    goto :goto_11b
+    goto :goto_3
 
     .line 306
-    :cond_131
+    :cond_d
     invoke-virtual {v0}, Ljava/util/LinkedList;->clear()V
 
     .line 307
     .line 308
     .line 309
-    goto :goto_13a
+    goto :goto_4
 
     .line 310
-    :cond_135
+    :cond_e
     iget-object v0, p0, Llibs/wc3;->g:Ljava/nio/ByteBuffer;
 
     .line 311
@@ -2787,13 +2787,13 @@
     .line 313
     .line 314
     .line 315
-    :cond_13a
-    :goto_13a
+    :cond_f
+    :goto_4
     iget-object v0, p0, Llibs/wc3;->f:Ljava/nio/ByteBuffer;
 
     .line 316
     .line 317
-    if-eqz v0, :cond_157
+    if-eqz v0, :cond_11
 
     .line 318
     .line 319
@@ -2805,7 +2805,7 @@
     move-result v0
 
     .line 323
-    if-nez v0, :cond_152
+    if-nez v0, :cond_10
 
     .line 324
     .line 325
@@ -2837,7 +2837,7 @@
     return v1
 
     .line 339
-    :cond_152
+    :cond_10
     iget-object v0, p0, Llibs/wc3;->f:Ljava/nio/ByteBuffer;
 
     .line 340
@@ -2847,12 +2847,12 @@
     .line 342
     .line 343
     .line 344
-    :cond_157
+    :cond_11
     return v1
 
     .line 345
-    :goto_158
-    :try_start_158
+    :goto_5
+    :try_start_2
     invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
     .line 346
@@ -2866,7 +2866,7 @@
     move-result v3
 
     .line 352
-    if-eqz v3, :cond_16b
+    if-eqz v3, :cond_12
 
     .line 353
     .line 354
@@ -2883,18 +2883,18 @@
     .line 359
     .line 360
     .line 361
-    goto :goto_16b
+    goto :goto_6
 
     .line 362
-    :catchall_169
+    :catchall_1
     move-exception v1
 
     .line 363
-    goto :goto_1d3
+    goto :goto_9
 
     .line 364
-    :cond_16b
-    :goto_16b
+    :cond_12
+    :goto_6
     invoke-static {v2}, Llibs/zm1;->Context(I)Z
 
     .line 365
@@ -2903,7 +2903,7 @@
     move-result v2
 
     .line 368
-    if-eqz v2, :cond_178
+    if-eqz v2, :cond_13
 
     .line 369
     .line 370
@@ -2920,10 +2920,10 @@
     .line 375
     .line 376
     .line 377
-    :cond_178
+    :cond_13
     invoke-virtual {p0}, Llibs/wc3;->a()V
-    :try_end_17b
-    .catchall {:try_start_158 .. :try_end_17b} :catchall_169
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 378
     .line 379
@@ -2932,7 +2932,7 @@
 
     .line 381
     .line 382
-    if-eqz v1, :cond_1b5
+    if-eqz v1, :cond_17
 
     .line 383
     .line 384
@@ -2944,7 +2944,7 @@
     move-result v1
 
     .line 388
-    if-nez v1, :cond_1b0
+    if-nez v1, :cond_16
 
     .line 389
     .line 390
@@ -2981,8 +2981,8 @@
     move-result-object v1
 
     .line 407
-    :cond_196
-    :goto_196
+    :cond_14
+    :goto_7
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 408
@@ -2991,7 +2991,7 @@
     move-result v2
 
     .line 411
-    if-eqz v2, :cond_1ac
+    if-eqz v2, :cond_15
 
     .line 412
     .line 413
@@ -3015,7 +3015,7 @@
 
     .line 422
     .line 423
-    if-eqz v3, :cond_196
+    if-eqz v3, :cond_14
 
     .line 424
     .line 425
@@ -3024,19 +3024,19 @@
     .line 426
     .line 427
     .line 428
-    goto :goto_196
+    goto :goto_7
 
     .line 429
-    :cond_1ac
+    :cond_15
     invoke-virtual {v0}, Ljava/util/LinkedList;->clear()V
 
     .line 430
     .line 431
     .line 432
-    goto :goto_1b5
+    goto :goto_8
 
     .line 433
-    :cond_1b0
+    :cond_16
     iget-object v0, p0, Llibs/wc3;->g:Ljava/nio/ByteBuffer;
 
     .line 434
@@ -3046,13 +3046,13 @@
     .line 436
     .line 437
     .line 438
-    :cond_1b5
-    :goto_1b5
+    :cond_17
+    :goto_8
     iget-object v0, p0, Llibs/wc3;->f:Ljava/nio/ByteBuffer;
 
     .line 439
     .line 440
-    if-eqz v0, :cond_22b
+    if-eqz v0, :cond_1f
 
     .line 441
     .line 442
@@ -3064,7 +3064,7 @@
     move-result v0
 
     .line 446
-    if-nez v0, :cond_1cd
+    if-nez v0, :cond_18
 
     .line 447
     .line 448
@@ -3093,10 +3093,10 @@
 
     .line 460
     .line 461
-    goto :goto_22b
+    goto :goto_d
 
     .line 462
-    :cond_1cd
+    :cond_18
     iget-object v0, p0, Llibs/wc3;->f:Ljava/nio/ByteBuffer;
 
     .line 463
@@ -3106,15 +3106,15 @@
     .line 465
     .line 466
     .line 467
-    goto :goto_22b
+    goto :goto_d
 
     .line 468
-    :goto_1d3
+    :goto_9
     iget-object v2, p0, Llibs/wc3;->g:Ljava/nio/ByteBuffer;
 
     .line 469
     .line 470
-    if-eqz v2, :cond_20d
+    if-eqz v2, :cond_1c
 
     .line 471
     .line 472
@@ -3126,7 +3126,7 @@
     move-result v2
 
     .line 476
-    if-nez v2, :cond_208
+    if-nez v2, :cond_1b
 
     .line 477
     .line 478
@@ -3163,8 +3163,8 @@
     move-result-object v2
 
     .line 495
-    :cond_1ee
-    :goto_1ee
+    :cond_19
+    :goto_a
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     .line 496
@@ -3173,7 +3173,7 @@
     move-result v3
 
     .line 499
-    if-eqz v3, :cond_204
+    if-eqz v3, :cond_1a
 
     .line 500
     .line 501
@@ -3197,7 +3197,7 @@
 
     .line 510
     .line 511
-    if-eqz v4, :cond_1ee
+    if-eqz v4, :cond_19
 
     .line 512
     .line 513
@@ -3206,19 +3206,19 @@
     .line 514
     .line 515
     .line 516
-    goto :goto_1ee
+    goto :goto_a
 
     .line 517
-    :cond_204
+    :cond_1a
     invoke-virtual {v0}, Ljava/util/LinkedList;->clear()V
 
     .line 518
     .line 519
     .line 520
-    goto :goto_20d
+    goto :goto_b
 
     .line 521
-    :cond_208
+    :cond_1b
     iget-object v0, p0, Llibs/wc3;->g:Ljava/nio/ByteBuffer;
 
     .line 522
@@ -3228,13 +3228,13 @@
     .line 524
     .line 525
     .line 526
-    :cond_20d
-    :goto_20d
+    :cond_1c
+    :goto_b
     iget-object v0, p0, Llibs/wc3;->f:Ljava/nio/ByteBuffer;
 
     .line 527
     .line 528
-    if-eqz v0, :cond_22a
+    if-eqz v0, :cond_1e
 
     .line 529
     .line 530
@@ -3246,7 +3246,7 @@
     move-result v0
 
     .line 534
-    if-nez v0, :cond_225
+    if-nez v0, :cond_1d
 
     .line 535
     .line 536
@@ -3275,10 +3275,10 @@
 
     .line 548
     .line 549
-    goto :goto_22a
+    goto :goto_c
 
     .line 550
-    :cond_225
+    :cond_1d
     iget-object v0, p0, Llibs/wc3;->f:Ljava/nio/ByteBuffer;
 
     .line 551
@@ -3288,18 +3288,18 @@
     .line 553
     .line 554
     .line 555
-    :cond_22a
-    :goto_22a
+    :cond_1e
+    :goto_c
     throw v1
 
     .line 556
-    :cond_22b
-    :goto_22b
+    :cond_1f
+    :goto_d
     return v5
 .end method
 
 .method public final k()Z
-    .registers 7
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/wc3;->g:Ljava/nio/ByteBuffer;
@@ -3309,7 +3309,7 @@
     const/4 v1, 0x1
 
     .line 4
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 5
     .line 6
@@ -3321,11 +3321,11 @@
     move-result v0
 
     .line 10
-    if-nez v0, :cond_42
+    if-nez v0, :cond_5
 
     .line 11
     .line 12
-    :cond_b
+    :cond_0
     iget-object v0, p0, Llibs/wc3;->b:Llibs/zo3;
 
     .line 13
@@ -3333,7 +3333,7 @@
     const/4 v2, 0x0
 
     .line 15
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_6
 
     .line 16
     .line 17
@@ -3344,7 +3344,7 @@
     monitor-enter v3
 
     .line 20
-    :try_start_13
+    :try_start_0
     iget v4, v0, Llibs/zo3;->Result:I
 
     .line 21
@@ -3352,7 +3352,7 @@
     const/4 v5, 0x2
 
     .line 23
-    if-ne v4, v5, :cond_2b
+    if-ne v4, v5, :cond_2
 
     .line 24
     .line 25
@@ -3360,7 +3360,7 @@
 
     .line 26
     .line 27
-    if-eqz v4, :cond_2b
+    if-eqz v4, :cond_2
 
     .line 28
     .line 29
@@ -3376,35 +3376,35 @@
     move-result v0
 
     .line 35
-    if-lez v0, :cond_26
+    if-lez v0, :cond_1
 
     .line 36
     .line 37
     const/4 v0, 0x1
 
     .line 38
-    goto :goto_27
+    goto :goto_0
 
     .line 39
-    :cond_26
+    :cond_1
     const/4 v0, 0x0
 
     .line 40
-    :goto_27
+    :goto_0
     monitor-exit v3
 
     .line 41
-    goto :goto_40
+    goto :goto_3
 
     .line 42
-    :catchall_29
+    :catchall_0
     move-exception v0
 
     .line 43
-    goto :goto_43
+    goto :goto_4
 
     .line 44
-    :cond_2b
+    :cond_2
     iget-object v4, v0, Llibs/zo3;->t:Ljava/util/LinkedList;
 
     .line 45
@@ -3417,7 +3417,7 @@
     move-result v4
 
     .line 50
-    if-gtz v4, :cond_3e
+    if-gtz v4, :cond_4
 
     .line 51
     .line 52
@@ -3433,53 +3433,53 @@
     move-result v0
 
     .line 58
-    if-lez v0, :cond_3c
+    if-lez v0, :cond_3
 
     .line 59
     .line 60
-    goto :goto_3e
+    goto :goto_1
 
     .line 61
-    :cond_3c
+    :cond_3
     const/4 v0, 0x0
 
     .line 62
-    goto :goto_3f
+    goto :goto_2
 
     .line 63
-    :cond_3e
-    :goto_3e
+    :cond_4
+    :goto_1
     const/4 v0, 0x1
 
     .line 64
-    :goto_3f
+    :goto_2
     monitor-exit v3
 
     .line 65
-    :goto_40
-    if-eqz v0, :cond_45
+    :goto_3
+    if-eqz v0, :cond_6
 
     .line 66
     .line 67
-    :cond_42
+    :cond_5
     return v1
 
     .line 68
-    :goto_43
+    :goto_4
     monitor-exit v3
-    :try_end_44
-    .catchall {:try_start_13 .. :try_end_44} :catchall_29
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 69
     throw v0
 
     .line 70
-    :cond_45
+    :cond_6
     return v2
 .end method
 
 .method public final l()Llibs/qx;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/wc3;->b:Llibs/zo3;
@@ -3494,7 +3494,7 @@
 .end method
 
 .method public final m()Ljava/net/SocketAddress;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/wc3;->a:Ljava/nio/channels/SocketChannel;
@@ -3521,14 +3521,14 @@
 .end method
 
 .method public final n()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/wc3;->a:Ljava/nio/channels/SocketChannel;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -3540,7 +3540,7 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -3556,7 +3556,7 @@
     move-result v0
 
     .line 17
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 18
     .line 19
@@ -3566,7 +3566,7 @@
     return v0
 
     .line 21
-    :cond_14
+    :cond_0
     const/4 v0, 0x0
 
     .line 22

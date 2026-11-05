@@ -14,7 +14,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Lorg/conscrypt/metrics/StatsLogImpl;
@@ -50,7 +50,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -62,7 +62,7 @@
 .end method
 
 .method public static getInstance()Lorg/conscrypt/metrics/StatsLog;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/metrics/StatsLogImpl;->INSTANCE:Lorg/conscrypt/metrics/StatsLog;
@@ -73,7 +73,7 @@
 .end method
 
 .method private static logStoreStateToMetricsState(Lorg/conscrypt/ct/LogStore$State;)I
-    .registers 3
+    .locals 2
 
     .line 1
     sget-object v0, Lorg/conscrypt/metrics/StatsLogImpl$1;->$SwitchMap$org$conscrypt$ct$LogStore$State:[I
@@ -95,28 +95,28 @@
     const/4 v0, 0x3
 
     .line 10
-    if-eq p0, v0, :cond_1a
+    if-eq p0, v0, :cond_3
 
     .line 11
     .line 12
     const/4 v1, 0x4
 
     .line 13
-    if-eq p0, v1, :cond_19
+    if-eq p0, v1, :cond_2
 
     .line 14
     .line 15
     const/4 v0, 0x5
 
     .line 16
-    if-eq p0, v0, :cond_17
+    if-eq p0, v0, :cond_1
 
     .line 17
     .line 18
     const/4 v0, 0x6
 
     .line 19
-    if-eq p0, v0, :cond_16
+    if-eq p0, v0, :cond_0
 
     .line 20
     .line 21
@@ -126,22 +126,22 @@
     return p0
 
     .line 23
-    :cond_16
+    :cond_0
     return v1
 
     .line 24
-    :cond_17
+    :cond_1
     const/4 p0, 0x1
 
     .line 25
     return p0
 
     .line 26
-    :cond_19
+    :cond_2
     return v0
 
     .line 27
-    :cond_1a
+    :cond_3
     const/4 p0, 0x2
 
     .line 28
@@ -149,14 +149,14 @@
 .end method
 
 .method private static policyComplianceToMetrics(Lorg/conscrypt/ct/VerificationResult;Lorg/conscrypt/ct/PolicyCompliance;)I
-    .registers 3
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/ct/PolicyCompliance;->COMPLY:Lorg/conscrypt/ct/PolicyCompliance;
 
     .line 2
     .line 3
-    if-ne p1, v0, :cond_6
+    if-ne p1, v0, :cond_0
 
     .line 4
     .line 5
@@ -166,7 +166,7 @@
     return p0
 
     .line 7
-    :cond_6
+    :cond_0
     invoke-virtual {p0}, Lorg/conscrypt/ct/VerificationResult;->getValidSCTs()Ljava/util/List;
 
     .line 8
@@ -183,7 +183,7 @@
     move-result p0
 
     .line 15
-    if-nez p0, :cond_12
+    if-nez p0, :cond_1
 
     .line 16
     .line 17
@@ -193,12 +193,12 @@
     return p0
 
     .line 19
-    :cond_12
+    :cond_1
     sget-object p0, Lorg/conscrypt/ct/PolicyCompliance;->NOT_ENOUGH_SCTS:Lorg/conscrypt/ct/PolicyCompliance;
 
     .line 20
     .line 21
-    if-eq p1, p0, :cond_1d
+    if-eq p1, p0, :cond_3
 
     .line 22
     .line 23
@@ -206,22 +206,22 @@
 
     .line 24
     .line 25
-    if-ne p1, p0, :cond_1b
+    if-ne p1, p0, :cond_2
 
     .line 26
     .line 27
-    goto :goto_1d
+    goto :goto_0
 
     .line 28
-    :cond_1b
+    :cond_2
     const/4 p0, 0x0
 
     .line 29
     return p0
 
     .line 30
-    :cond_1d
-    :goto_1d
+    :cond_3
+    :goto_0
     const/4 p0, 0x4
 
     .line 31
@@ -229,7 +229,7 @@
 .end method
 
 .method private write(IIIIII)V
-    .registers 7
+    .locals 0
 
     .line 49
     invoke-static/range {p1 .. p6}, Lorg/conscrypt/metrics/ConscryptStatsLog;->write(IIIIII)V
@@ -238,7 +238,7 @@
 .end method
 
 .method private write(IIIIIIIII)V
-    .registers 10
+    .locals 0
 
     .line 50
     invoke-static/range {p1 .. p9}, Lorg/conscrypt/metrics/ConscryptStatsLog;->write(IIIIIIIII)V
@@ -247,14 +247,14 @@
 .end method
 
 .method private write(IZIIII[I)V
-    .registers 15
+    .locals 7
 
     .line 1
     sget-boolean v0, Lorg/conscrypt/metrics/StatsLogImpl;->sdkVersionBiggerThan32:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_25
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -317,7 +317,7 @@
     return-void
 
     .line 38
-    :cond_25
+    :cond_0
     move v0, p1
 
     .line 39
@@ -350,7 +350,7 @@
 
 # virtual methods
 .method public countTlsHandshake(ZLjava/lang/String;Ljava/lang/String;J)V
-    .registers 14
+    .locals 8
 
     .line 1
     invoke-static {p2}, Lorg/conscrypt/metrics/Protocol;->forName(Ljava/lang/String;)Lorg/conscrypt/metrics/Protocol;
@@ -431,7 +431,7 @@
 .end method
 
 .method public reportCTVerificationResult(Lorg/conscrypt/ct/LogStore;Lorg/conscrypt/ct/VerificationResult;Lorg/conscrypt/ct/PolicyCompliance;Lorg/conscrypt/metrics/CertificateTransparencyVerificationReason;)V
-    .registers 27
+    .locals 22
 
     .line 1
     invoke-interface/range {p1 .. p1}, Lorg/conscrypt/ct/LogStore;->getState()Lorg/conscrypt/ct/LogStore$State;
@@ -446,7 +446,7 @@
 
     .line 6
     .line 7
-    if-eq v0, v1, :cond_5c
+    if-eq v0, v1, :cond_3
 
     .line 8
     .line 9
@@ -462,14 +462,14 @@
 
     .line 14
     .line 15
-    if-ne v0, v1, :cond_11
+    if-ne v0, v1, :cond_0
 
     .line 16
     .line 17
-    goto :goto_5c
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     invoke-interface/range {p1 .. p1}, Lorg/conscrypt/ct/LogStore;->getState()Lorg/conscrypt/ct/LogStore$State;
 
     .line 19
@@ -482,7 +482,7 @@
 
     .line 23
     .line 24
-    if-ne v0, v1, :cond_2c
+    if-ne v0, v1, :cond_1
 
     .line 25
     .line 26
@@ -531,7 +531,7 @@
     return-void
 
     .line 45
-    :cond_2c
+    :cond_1
     invoke-interface/range {p1 .. p1}, Lorg/conscrypt/ct/LogStore;->getState()Lorg/conscrypt/ct/LogStore$State;
 
     .line 46
@@ -544,7 +544,7 @@
 
     .line 50
     .line 51
-    if-ne v0, v1, :cond_5b
+    if-ne v0, v1, :cond_2
 
     .line 52
     .line 53
@@ -625,12 +625,12 @@
     .line 90
     .line 91
     .line 92
-    :cond_5b
+    :cond_2
     return-void
 
     .line 93
-    :cond_5c
-    :goto_5c
+    :cond_3
+    :goto_0
     invoke-virtual/range {p4 .. p4}, Lorg/conscrypt/metrics/CertificateTransparencyVerificationReason;->getId()I
 
     .line 94
@@ -683,7 +683,7 @@
 .end method
 
 .method public updateCTLogListStatusChanged(Lorg/conscrypt/ct/LogStore;)V
-    .registers 10
+    .locals 8
 
     .line 1
     invoke-interface {p1}, Lorg/conscrypt/ct/LogStore;->getState()Lorg/conscrypt/ct/LogStore$State;

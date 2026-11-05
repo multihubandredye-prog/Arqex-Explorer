@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/kw;->X:B
@@ -30,14 +30,14 @@
 
 # virtual methods
 .method public final run()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/kw;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_6c
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -102,7 +102,7 @@
     return-void
 
     .line 38
-    :pswitch_25
+    :pswitch_0
     sget v0, Llibs/lw;->a:I
 
     .line 39
@@ -111,7 +111,7 @@
 
     .line 41
     .line 42
-    if-eq v0, v1, :cond_43
+    if-eq v0, v1, :cond_0
 
     .line 43
     .line 44
@@ -145,7 +145,7 @@
 
     .line 59
     .line 60
-    if-eqz v2, :cond_43
+    if-eqz v2, :cond_0
 
     .line 61
     .line 62
@@ -161,7 +161,7 @@
 
     .line 67
     .line 68
-    :cond_43
+    :cond_0
     sget v0, Llibs/lw;->d:I
 
     .line 69
@@ -170,7 +170,7 @@
 
     .line 71
     .line 72
-    if-eq v0, v1, :cond_6b
+    if-eq v0, v1, :cond_1
 
     .line 73
     .line 74
@@ -224,7 +224,7 @@
 
     .line 99
     .line 100
-    if-eqz v2, :cond_6b
+    if-eqz v2, :cond_1
 
     .line 101
     .line 102
@@ -240,12 +240,12 @@
 
     .line 107
     .line 108
-    :cond_6b
+    :cond_1
     return-void
 
     .line 109
-    :pswitch_data_6c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_25
+        :pswitch_0
     .end packed-switch
 .end method

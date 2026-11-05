@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/lp;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/hp;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/hp;->X:B
@@ -47,67 +47,67 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_1a
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
     .line 8
-    :try_start_7
+    :try_start_0
     iget-object v0, v1, Llibs/lp;->a:Llibs/d00;
 
     .line 9
     .line 10
     invoke-interface {v0}, Llibs/d00;->stop()V
-    :try_end_c
-    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_c} :catch_c
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 11
     .line 12
     .line 13
-    :catch_c
+    :catch_0
     return-void
 
     .line 14
-    :pswitch_d
-    :try_start_d
+    :pswitch_0
+    :try_start_1
     iget-object v0, v1, Llibs/lp;->a:Llibs/d00;
 
     .line 15
     .line 16
     invoke-interface {v0}, Llibs/d00;->j()V
-    :try_end_12
-    .catch Ljava/lang/Exception; {:try_start_d .. :try_end_12} :catch_12
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 17
     .line 18
     .line 19
-    :catch_12
+    :catch_1
     return-void
 
     .line 20
-    :pswitch_13
-    :try_start_13
+    :pswitch_1
+    :try_start_2
     iget-object v0, v1, Llibs/lp;->a:Llibs/d00;
 
     .line 21
     .line 22
     invoke-interface {v0}, Llibs/d00;->g()V
-    :try_end_18
-    .catch Ljava/lang/Exception; {:try_start_13 .. :try_end_18} :catch_18
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
 
     .line 23
     .line 24
     .line 25
-    :catch_18
+    :catch_2
     return-void
 
     .line 26
     nop
 
     .line 27
-    :pswitch_data_1a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_13
-        :pswitch_d
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ig0;Llibs/gg0;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p2}, Llibs/bg0;-><init>(Llibs/gg0;)V
@@ -21,7 +21,7 @@
 
     .line 5
     .line 6
-    if-eqz p2, :cond_e
+    if-eqz p2, :cond_0
 
     .line 7
     .line 8
@@ -40,7 +40,7 @@
     return-void
 
     .line 15
-    :cond_e
+    :cond_0
     iput-object p1, p0, Llibs/qg0;->Y:Llibs/ig0;
 
     .line 16

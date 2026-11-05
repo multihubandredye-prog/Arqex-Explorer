@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/sf0;Ljava/security/SecureRandom;)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p1, Llibs/sf0;->Lambda:Ljava/math/BigInteger;

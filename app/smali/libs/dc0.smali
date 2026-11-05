@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Param;)V
-    .registers 7
+    .locals 5
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -27,7 +27,7 @@
     const/4 v1, 0x0
 
     .line 6
-    :goto_5
+    :goto_0
     invoke-virtual {p1}, Llibs/Param;->size()I
 
     .line 7
@@ -36,7 +36,7 @@
     move-result v2
 
     .line 10
-    if-eq v1, v2, :cond_4b
+    if-eq v1, v2, :cond_4
 
     .line 11
     .line 12
@@ -60,28 +60,28 @@
 
     .line 21
     .line 22
-    if-eqz v3, :cond_35
+    if-eqz v3, :cond_2
 
     .line 23
     .line 24
     const/4 v4, 0x1
 
     .line 25
-    if-eq v3, v4, :cond_29
+    if-eq v3, v4, :cond_1
 
     .line 26
     .line 27
     const/4 v4, 0x2
 
     .line 28
-    if-eq v3, v4, :cond_1e
+    if-eq v3, v4, :cond_0
 
     .line 29
     .line 30
-    goto :goto_48
+    goto :goto_2
 
     .line 31
-    :cond_1e
+    :cond_0
     invoke-static {v2, v0}, Llibs/Param;->p(Llibs/Height;Z)Llibs/Param;
 
     .line 32
@@ -102,10 +102,10 @@
 
     .line 40
     .line 41
-    goto :goto_48
+    goto :goto_2
 
     .line 42
-    :cond_29
+    :cond_1
     new-instance v3, Llibs/h02;
 
     .line 43
@@ -127,10 +127,10 @@
 
     .line 52
     .line 53
-    goto :goto_48
+    goto :goto_2
 
     .line 54
-    :cond_35
+    :cond_2
     invoke-virtual {v2}, Llibs/Height;->p()Llibs/Theme;
 
     .line 55
@@ -143,7 +143,7 @@
 
     .line 59
     .line 60
-    if-eqz v2, :cond_43
+    if-eqz v2, :cond_3
 
     .line 61
     .line 62
@@ -156,10 +156,10 @@
     .line 65
     .line 66
     .line 67
-    goto :goto_46
+    goto :goto_1
 
     .line 68
-    :cond_43
+    :cond_3
     move-object v3, v2
 
     .line 69
@@ -167,25 +167,25 @@
 
     .line 70
     .line 71
-    :goto_46
+    :goto_1
     iput-object v3, p0, Llibs/dc0;->X:Llibs/ec0;
 
     .line 72
     .line 73
-    :goto_48
+    :goto_2
     add-int/lit8 v1, v1, 0x1
 
     .line 74
     .line 75
-    goto :goto_5
+    goto :goto_0
 
     .line 76
-    :cond_4b
+    :cond_4
     return-void
 .end method
 
 .method public static g(Ljava/lang/StringBuffer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 5
+    .locals 1
 
     .line 1
     const-string v0, "    "
@@ -242,7 +242,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Llibs/Init;
@@ -261,7 +261,7 @@
 
     .line 8
     .line 9
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_0
 
     .line 10
     .line 11
@@ -279,12 +279,12 @@
     .line 17
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     iget-object v2, p0, Llibs/dc0;->Y:Llibs/h02;
 
     .line 20
     .line 21
-    if-eqz v2, :cond_1f
+    if-eqz v2, :cond_1
 
     .line 22
     .line 23
@@ -305,12 +305,12 @@
     .line 30
     .line 31
     .line 32
-    :cond_1f
+    :cond_1
     iget-object v2, p0, Llibs/dc0;->Z:Llibs/iu0;
 
     .line 33
     .line 34
-    if-eqz v2, :cond_2c
+    if-eqz v2, :cond_2
 
     .line 35
     .line 36
@@ -331,7 +331,7 @@
     .line 43
     .line 44
     .line 45
-    :cond_2c
+    :cond_2
     new-instance v1, Llibs/p10;
 
     .line 46
@@ -345,7 +345,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     sget-object v0, Llibs/yh3;->a:Ljava/lang/String;
@@ -379,7 +379,7 @@
 
     .line 17
     .line 18
-    if-eqz v2, :cond_1c
+    if-eqz v2, :cond_0
 
     .line 19
     .line 20
@@ -400,12 +400,12 @@
     .line 27
     .line 28
     .line 29
-    :cond_1c
+    :cond_0
     iget-object v2, p0, Llibs/dc0;->Y:Llibs/h02;
 
     .line 30
     .line 31
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_1
 
     .line 32
     .line 33
@@ -426,12 +426,12 @@
     .line 40
     .line 41
     .line 42
-    :cond_29
+    :cond_1
     iget-object v2, p0, Llibs/dc0;->Z:Llibs/iu0;
 
     .line 43
     .line 44
-    if-eqz v2, :cond_36
+    if-eqz v2, :cond_2
 
     .line 45
     .line 46
@@ -452,7 +452,7 @@
     .line 53
     .line 54
     .line 55
-    :cond_36
+    :cond_2
     const-string v2, "]"
 
     .line 56

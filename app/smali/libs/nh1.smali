@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 1
     const/4 v0, 0x1
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final d(Ljava/security/Key;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "DSA"
@@ -57,7 +57,7 @@
 .end method
 
 .method public final g(Llibs/tj;)Ljava/security/PublicKey;
-    .registers 7
+    .locals 5
 
     .line 1
     :try_start_0
@@ -91,8 +91,8 @@
     .line 15
     .line 16
     move-result-object p1
-    :try_end_10
-    .catch Llibs/rj; {:try_start_0 .. :try_end_10} :catch_20
+    :try_end_0
+    .catch Llibs/rj; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 17
     const-string v3, "DSA"
@@ -127,7 +127,7 @@
     return-object p1
 
     .line 33
-    :catch_20
+    :catch_0
     move-exception p1
 
     .line 34
@@ -144,7 +144,7 @@
 .end method
 
 .method public final h(Ljava/security/PublicKey;Llibs/uj;)V
-    .registers 4
+    .locals 1
 
     .line 1
     check-cast p1, Ljava/security/interfaces/DSAPublicKey;

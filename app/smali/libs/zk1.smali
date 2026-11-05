@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public final a(Landroid/view/View;)V
-    .registers 9
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/zk1;->j:Ljava/util/List;
@@ -90,8 +90,8 @@
     const/4 v3, 0x0
 
     .line 12
-    :goto_b
-    if-ge v3, v0, :cond_3e
+    :goto_0
+    if-ge v3, v0, :cond_4
 
     .line 13
     .line 14
@@ -127,7 +127,7 @@
 
     .line 29
     .line 30
-    if-eq v4, p1, :cond_3b
+    if-eq v4, p1, :cond_3
 
     .line 31
     .line 32
@@ -139,14 +139,14 @@
     move-result v6
 
     .line 36
-    if-eqz v6, :cond_26
+    if-eqz v6, :cond_0
 
     .line 37
     .line 38
-    goto :goto_3b
+    goto :goto_1
 
     .line 39
-    :cond_26
+    :cond_0
     invoke-virtual {v5}, Llibs/km2;->a()I
 
     .line 40
@@ -170,44 +170,44 @@
 
     .line 49
     .line 50
-    if-gez v5, :cond_34
+    if-gez v5, :cond_1
 
     .line 51
     .line 52
-    goto :goto_3b
+    goto :goto_1
 
     .line 53
-    :cond_34
-    if-ge v5, v2, :cond_3b
+    :cond_1
+    if-ge v5, v2, :cond_3
 
     .line 54
     .line 55
     move-object v1, v4
 
     .line 56
-    if-nez v5, :cond_3a
+    if-nez v5, :cond_2
 
     .line 57
     .line 58
-    goto :goto_3e
+    goto :goto_2
 
     .line 59
-    :cond_3a
+    :cond_2
     move v2, v5
 
     .line 60
-    :cond_3b
-    :goto_3b
+    :cond_3
+    :goto_1
     add-int/lit8 v3, v3, 0x1
 
     .line 61
     .line 62
-    goto :goto_b
+    goto :goto_0
 
     .line 63
-    :cond_3e
-    :goto_3e
-    if-nez v1, :cond_44
+    :cond_4
+    :goto_2
+    if-nez v1, :cond_5
 
     .line 64
     .line 65
@@ -221,7 +221,7 @@
     return-void
 
     .line 69
-    :cond_44
+    :cond_5
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     .line 70
@@ -250,14 +250,14 @@
 .end method
 
 .method public final b(Llibs/om2;)Landroid/view/View;
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/zk1;->j:Ljava/util/List;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_3
 
     .line 4
     .line 5
@@ -272,8 +272,8 @@
     const/4 v0, 0x0
 
     .line 10
-    :goto_9
-    if-ge v0, p1, :cond_31
+    :goto_0
+    if-ge v0, p1, :cond_2
 
     .line 11
     .line 12
@@ -317,14 +317,14 @@
     move-result v3
 
     .line 32
-    if-eqz v3, :cond_22
+    if-eqz v3, :cond_0
 
     .line 33
     .line 34
-    goto :goto_2e
+    goto :goto_1
 
     .line 35
-    :cond_22
+    :cond_0
     iget v3, p0, Llibs/zk1;->d:I
 
     .line 36
@@ -337,7 +337,7 @@
     move-result v2
 
     .line 41
-    if-ne v3, v2, :cond_2e
+    if-ne v3, v2, :cond_1
 
     .line 42
     .line 43
@@ -349,23 +349,23 @@
     return-object v1
 
     .line 47
-    :cond_2e
-    :goto_2e
+    :cond_1
+    :goto_1
     add-int/lit8 v0, v0, 0x1
 
     .line 48
     .line 49
-    goto :goto_9
+    goto :goto_0
 
     .line 50
-    :cond_31
+    :cond_2
     const/4 p1, 0x0
 
     .line 51
     return-object p1
 
     .line 52
-    :cond_33
+    :cond_3
     iget v0, p0, Llibs/zk1;->d:I
 
     .line 53

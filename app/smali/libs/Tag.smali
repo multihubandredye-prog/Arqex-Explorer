@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/HashSet;[B)V
-    .registers 4
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/Size;->m:Llibs/Level;
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public final a()Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/util/HashSet;
@@ -60,7 +60,7 @@
 .end method
 
 .method public final iterator()Ljava/util/Iterator;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/util/HashSet;

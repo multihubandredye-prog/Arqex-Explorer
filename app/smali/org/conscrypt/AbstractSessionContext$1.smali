@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/conscrypt/AbstractSessionContext;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Lorg/conscrypt/AbstractSessionContext$1;->this$0:Lorg/conscrypt/AbstractSessionContext;
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public removeEldestEntry(Ljava/util/Map$Entry;)Z
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -62,7 +62,7 @@
     move-result v0
 
     .line 7
-    if-lez v0, :cond_21
+    if-lez v0, :cond_0
 
     .line 8
     .line 9
@@ -86,7 +86,7 @@
     move-result v1
 
     .line 19
-    if-le v0, v1, :cond_21
+    if-le v0, v1, :cond_0
 
     .line 20
     .line 21
@@ -117,7 +117,7 @@
     return p1
 
     .line 34
-    :cond_21
+    :cond_0
     const/4 p1, 0x0
 
     .line 35

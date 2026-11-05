@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     sget-object v0, Lorg/conscrypt/MlDsaAlgorithm;->ML_DSA_65:Lorg/conscrypt/MlDsaAlgorithm;
@@ -26,7 +26,7 @@
 
 # virtual methods
 .method public supportsAlgorithm(Lorg/conscrypt/MlDsaAlgorithm;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/MlDsaAlgorithm;->ML_DSA_65:Lorg/conscrypt/MlDsaAlgorithm;
@@ -41,7 +41,7 @@
     move-result v0
 
     .line 7
-    if-nez v0, :cond_13
+    if-nez v0, :cond_1
 
     .line 8
     .line 9
@@ -57,22 +57,22 @@
     move-result p1
 
     .line 15
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_0
 
     .line 16
     .line 17
-    goto :goto_13
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     const/4 p1, 0x0
 
     .line 19
     return p1
 
     .line 20
-    :cond_13
-    :goto_13
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
     .line 21

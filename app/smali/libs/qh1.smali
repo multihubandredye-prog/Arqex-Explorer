@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 1
     const/4 v0, 0x4
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final d(Ljava/security/Key;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     const/16 v0, 0x209
@@ -49,7 +49,7 @@
 .end method
 
 .method public final g(Llibs/tj;)Ljava/security/PublicKey;
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "521"
@@ -68,7 +68,7 @@
 .end method
 
 .method public final h(Ljava/security/PublicKey;Llibs/uj;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-static {p1, p2}, Llibs/rf0;->c(Ljava/security/PublicKey;Llibs/uj;)V

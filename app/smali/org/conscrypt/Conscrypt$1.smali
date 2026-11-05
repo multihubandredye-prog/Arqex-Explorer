@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Ljavax/net/ssl/HostnameVerifier;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public verify([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljavax/net/ssl/SSLSession;)Z
-    .registers 4
+    .locals 0
 
     .line 1
     iget-object p1, p0, Lorg/conscrypt/Conscrypt$1;->val$verifier:Ljavax/net/ssl/HostnameVerifier;

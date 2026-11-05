@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/kf0;[B)V
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -51,7 +51,7 @@
     move-result p2
 
     .line 17
-    if-eqz p2, :cond_17
+    if-eqz p2, :cond_0
 
     .line 18
     .line 19
@@ -66,7 +66,7 @@
     return-void
 
     .line 24
-    :cond_17
+    :cond_0
     iget-object p1, p1, Llibs/kf0;->a:Llibs/lr0;
 
     .line 25
@@ -82,7 +82,7 @@
     const/4 v1, 0x1
 
     .line 31
-    if-le p2, v1, :cond_35
+    if-le p2, v1, :cond_1
 
     .line 32
     .line 33
@@ -106,7 +106,7 @@
     move-result p2
 
     .line 43
-    if-eqz p2, :cond_35
+    if-eqz p2, :cond_1
 
     .line 44
     .line 45
@@ -114,7 +114,7 @@
 
     .line 46
     .line 47
-    if-eqz p1, :cond_35
+    if-eqz p1, :cond_1
 
     .line 48
     .line 49
@@ -129,7 +129,7 @@
     return-void
 
     .line 54
-    :cond_35
+    :cond_1
     const-string p1, "This type of ECCurve is not implemented"
 
     .line 55
@@ -145,7 +145,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Llibs/Init;
@@ -180,7 +180,7 @@
 
     .line 16
     .line 17
-    if-eqz v1, :cond_47
+    if-eqz v1, :cond_0
 
     .line 18
     .line 19
@@ -284,10 +284,10 @@
     .line 69
     .line 70
     .line 71
-    goto :goto_83
+    goto :goto_0
 
     .line 72
-    :cond_47
+    :cond_0
     sget-object v1, Llibs/dx3;->User:Llibs/App;
 
     .line 73
@@ -300,7 +300,7 @@
     move-result v1
 
     .line 78
-    if-eqz v1, :cond_83
+    if-eqz v1, :cond_1
 
     .line 79
     .line 80
@@ -404,13 +404,13 @@
     .line 130
     .line 131
     .line 132
-    :cond_83
-    :goto_83
+    :cond_1
+    :goto_0
     iget-object v1, p0, Llibs/yw3;->Y:[B
 
     .line 133
     .line 134
-    if-eqz v1, :cond_8f
+    if-eqz v1, :cond_2
 
     .line 135
     .line 136
@@ -428,7 +428,7 @@
     .line 142
     .line 143
     .line 144
-    :cond_8f
+    :cond_2
     new-instance v1, Llibs/p10;
 
     .line 145

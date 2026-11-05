@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/yz0;
@@ -29,7 +29,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,14 +43,14 @@
 
 # virtual methods
 .method public a(Llibs/e01;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public b(Llibs/l01;)V
-    .registers 4
+    .locals 2
 
     .line 1
     const/4 v0, 0x5

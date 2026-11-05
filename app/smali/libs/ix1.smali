@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const-string v0, "\r|\n"
@@ -32,13 +32,13 @@
 .end method
 
 .method public static a(Ljava/io/InputStream;Ljava/io/File;Ljava/lang/String;)Llibs/ff;
-    .registers 5
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :try_start_1
+    :try_start_0
     invoke-static {p0, p2}, Llibs/ix1;->b(Ljava/io/InputStream;Ljava/lang/String;)Ljava/io/InputStream;
 
     .line 3
@@ -52,14 +52,14 @@
     .line 7
     .line 8
     invoke-direct {p2}, Llibs/ff;-><init>()V
-    :try_end_a
-    .catch Llibs/yb; {:try_start_1 .. :try_end_a} :catch_28
-    .catchall {:try_start_1 .. :try_end_a} :catchall_26
+    :try_end_0
+    .catch Llibs/yb; {:try_start_0 .. :try_end_0} :catch_1
+    .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
     .line 9
     .line 10
     .line 11
-    :try_start_a
+    :try_start_1
     iput-object p1, p2, Llibs/ff;->a:Ljava/io/File;
 
     .line 12
@@ -73,18 +73,18 @@
     .line 16
     .line 17
     invoke-direct {p1, v1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
-    :try_end_13
-    .catch Llibs/yb; {:try_start_a .. :try_end_13} :catch_31
-    .catchall {:try_start_a .. :try_end_13} :catchall_24
+    :try_end_1
+    .catch Llibs/yb; {:try_start_1 .. :try_end_1} :catch_2
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 18
     .line 19
     .line 20
-    :try_start_13
+    :try_start_2
     invoke-static {p0, p1}, Llibs/ji0;->r(Ljava/io/InputStream;Ljava/io/OutputStream;)V
-    :try_end_16
-    .catch Llibs/yb; {:try_start_13 .. :try_end_16} :catch_20
-    .catchall {:try_start_13 .. :try_end_16} :catchall_1d
+    :try_end_2
+    .catch Llibs/yb; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 21
     .line 22
@@ -94,7 +94,7 @@
     .line 24
     .line 25
     .line 26
-    :goto_19
+    :goto_0
     invoke-static {p0}, Llibs/ji0;->k(Ljava/io/Closeable;)V
 
     .line 27
@@ -103,52 +103,52 @@
     return-object p2
 
     .line 30
-    :catchall_1d
+    :catchall_0
     move-exception p2
 
     .line 31
     move-object v0, p1
 
     .line 32
-    goto :goto_2a
+    goto :goto_2
 
     .line 33
-    :catch_20
+    :catch_0
     move-object v0, p1
 
     .line 34
-    goto :goto_31
+    goto :goto_3
 
     .line 35
-    :goto_22
+    :goto_1
     move-object p2, p1
 
     .line 36
-    goto :goto_2a
+    goto :goto_2
 
     .line 37
-    :catchall_24
+    :catchall_1
     move-exception p1
 
     .line 38
-    goto :goto_22
+    goto :goto_1
 
     .line 39
-    :catchall_26
+    :catchall_2
     move-exception p2
 
     .line 40
-    goto :goto_2a
+    goto :goto_2
 
     .line 41
-    :catch_28
+    :catch_1
     move-object p2, v0
 
     .line 42
-    goto :goto_31
+    goto :goto_3
 
     .line 43
-    :goto_2a
+    :goto_2
     invoke-static {v0}, Llibs/ji0;->k(Ljava/io/Closeable;)V
 
     .line 44
@@ -162,18 +162,18 @@
     throw p2
 
     .line 50
-    :catch_31
-    :goto_31
+    :catch_2
+    :goto_3
     invoke-static {v0}, Llibs/ji0;->k(Ljava/io/Closeable;)V
 
     .line 51
     .line 52
     .line 53
-    goto :goto_19
+    goto :goto_0
 .end method
 
 .method public static b(Ljava/io/InputStream;Ljava/lang/String;)Ljava/io/InputStream;
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-static {p1}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
@@ -184,21 +184,21 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_48
+    if-nez v0, :cond_3
 
     .line 6
     .line 7
-    if-nez p1, :cond_a
+    if-nez p1, :cond_0
 
     .line 8
     .line 9
     const/4 p1, 0x0
 
     .line 10
-    goto :goto_2c
+    goto :goto_0
 
     .line 11
-    :cond_a
+    :cond_0
     sget-object v0, Llibs/ix1;->a:Ljava/util/regex/Pattern;
 
     .line 12
@@ -219,7 +219,7 @@
     move-result v1
 
     .line 21
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_1
 
     .line 22
     .line 23
@@ -240,7 +240,7 @@
     move-result-object p1
 
     .line 32
-    :cond_1f
+    :cond_1
     const-string v0, ";"
 
     .line 33
@@ -268,7 +268,7 @@
     move-result-object p1
 
     .line 45
-    :goto_2c
+    :goto_0
     const-string v0, "quoted-printable"
 
     .line 46
@@ -281,7 +281,7 @@
     move-result v0
 
     .line 51
-    if-eqz v0, :cond_3a
+    if-eqz v0, :cond_2
 
     .line 52
     .line 53
@@ -297,7 +297,7 @@
     return-object p1
 
     .line 59
-    :cond_3a
+    :cond_2
     const-string v0, "base64"
 
     .line 60
@@ -310,7 +310,7 @@
     move-result p1
 
     .line 65
-    if-eqz p1, :cond_48
+    if-eqz p1, :cond_3
 
     .line 66
     .line 67
@@ -326,6 +326,6 @@
     return-object p1
 
     .line 73
-    :cond_48
+    :cond_3
     return-object p0
 .end method

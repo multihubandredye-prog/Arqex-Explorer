@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic a(Landroid/content/ClipData;)Landroid/content/ClipDescription;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/content/ClipData;->getDescription()Landroid/content/ClipDescription;
@@ -20,7 +20,7 @@
 .end method
 
 .method public static bridge synthetic b(Landroid/content/ClipData$Item;)Landroid/net/Uri;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/content/ClipData$Item;->getUri()Landroid/net/Uri;
@@ -35,7 +35,7 @@
 .end method
 
 .method public static bridge synthetic c(Landroid/content/ClipData$Item;)Ljava/lang/CharSequence;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/content/ClipData$Item;->getText()Ljava/lang/CharSequence;
@@ -50,7 +50,7 @@
 .end method
 
 .method public static bridge synthetic d(Landroid/content/ClipDescription;)Ljava/lang/CharSequence;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/content/ClipDescription;->getLabel()Ljava/lang/CharSequence;
@@ -65,7 +65,7 @@
 .end method
 
 .method public static bridge synthetic e(Landroid/content/ClipDescription;)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0

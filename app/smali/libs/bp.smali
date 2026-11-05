@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic a(Landroid/app/Notification$Builder;)Landroid/app/Notification;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/app/Notification$Builder;->build()Landroid/app/Notification;
@@ -20,7 +20,7 @@
 .end method
 
 .method public static bridge synthetic b(Landroid/content/Intent;)Landroid/content/ClipData;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/content/Intent;->getClipData()Landroid/content/ClipData;
@@ -35,7 +35,7 @@
 .end method
 
 .method public static bridge synthetic c(Landroid/content/ContentResolver;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/database/Cursor;
-    .registers 7
+    .locals 0
 
     .line 1
     invoke-virtual/range {p0 .. p6}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/database/Cursor;
@@ -50,7 +50,7 @@
 .end method
 
 .method public static bridge synthetic d(Ljava/lang/Object;)Landroid/os/CancellationSignal;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Landroid/os/CancellationSignal;
@@ -61,7 +61,7 @@
 .end method
 
 .method public static bridge synthetic e(Landroid/app/Notification$Builder;Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setSubText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
@@ -73,7 +73,7 @@
 .end method
 
 .method public static bridge synthetic f(Landroid/content/Context;Landroid/content/Intent;Landroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;Landroid/os/Bundle;)V
@@ -85,7 +85,7 @@
 .end method
 
 .method public static bridge synthetic g(Landroid/content/Intent;Landroid/content/ClipData;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/content/Intent;->setClipData(Landroid/content/ClipData;)V
@@ -97,7 +97,7 @@
 .end method
 
 .method public static bridge synthetic h(Landroid/os/CancellationSignal;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/os/CancellationSignal;->cancel()V
@@ -109,7 +109,7 @@
 .end method
 
 .method public static bridge synthetic i(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
@@ -121,7 +121,7 @@
 .end method
 
 .method public static bridge synthetic j(Lcom/mixplorer/widgets/MiDrawer;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->postInvalidateOnAnimation()V
@@ -133,7 +133,7 @@
 .end method
 
 .method public static bridge synthetic k(Ljava/lang/Object;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     instance-of p0, p0, Landroid/os/CancellationSignal;
@@ -144,7 +144,7 @@
 .end method
 
 .method public static bridge synthetic l(Ljava/lang/Throwable;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     instance-of p0, p0, Landroid/os/OperationCanceledException;

@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic a(Landroid/content/Context;Landroid/content/res/Configuration;)Landroid/content/Context;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/content/Context;->createConfigurationContext(Landroid/content/res/Configuration;)Landroid/content/Context;
@@ -20,7 +20,7 @@
 .end method
 
 .method public static bridge synthetic b()Landroid/os/UserHandle;
-    .registers 1
+    .locals 1
 
     .line 1
     invoke-static {}, Landroid/os/Process;->myUserHandle()Landroid/os/UserHandle;
@@ -35,7 +35,7 @@
 .end method
 
 .method public static bridge synthetic c(Ljava/lang/Object;)Landroid/os/UserHandle;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Landroid/os/UserHandle;
@@ -46,7 +46,7 @@
 .end method
 
 .method public static bridge synthetic d(Landroid/content/Context;Landroid/content/res/Configuration;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/content/Context;->createConfigurationContext(Landroid/content/res/Configuration;)Landroid/content/Context;
@@ -58,7 +58,7 @@
 .end method
 
 .method public static bridge synthetic e(Landroid/content/res/Configuration;Ljava/util/Locale;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/content/res/Configuration;->setLocale(Ljava/util/Locale;)V
@@ -70,7 +70,7 @@
 .end method
 
 .method public static bridge synthetic f(Landroid/view/Display;Landroid/graphics/Point;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/Display;->getRealSize(Landroid/graphics/Point;)V
@@ -82,7 +82,7 @@
 .end method
 
 .method public static bridge synthetic g(Landroid/app/Activity;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/app/Activity;->isDestroyed()Z

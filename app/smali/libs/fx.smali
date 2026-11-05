@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/ConfigServerActivity;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/fx;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 28
+    .locals 26
 
     .line 1
     move-object/from16 v0, p0
@@ -70,7 +70,7 @@
     const/4 v8, 0x0
 
     .line 14
-    packed-switch v2, :pswitch_data_184
+    packed-switch v2, :pswitch_data_0
 
     .line 15
     .line 16
@@ -95,7 +95,7 @@
     const/4 v10, 0x4
 
     .line 27
-    if-ne v9, v10, :cond_21
+    if-ne v9, v10, :cond_0
 
     .line 28
     .line 29
@@ -107,11 +107,11 @@
     move-result v9
 
     .line 33
-    goto :goto_41
+    goto :goto_0
 
     .line 34
-    :cond_21
-    if-nez v9, :cond_28
+    :cond_0
+    if-nez v9, :cond_1
 
     .line 35
     .line 36
@@ -123,11 +123,11 @@
     move-result v9
 
     .line 40
-    goto :goto_41
+    goto :goto_0
 
     .line 41
-    :cond_28
-    if-ne v9, v4, :cond_2f
+    :cond_1
+    if-ne v9, v4, :cond_2
 
     .line 42
     .line 43
@@ -139,11 +139,11 @@
     move-result v9
 
     .line 47
-    goto :goto_41
+    goto :goto_0
 
     .line 48
-    :cond_2f
-    if-ne v9, v5, :cond_36
+    :cond_2
+    if-ne v9, v5, :cond_3
 
     .line 49
     .line 50
@@ -155,11 +155,11 @@
     move-result v9
 
     .line 54
-    goto :goto_41
+    goto :goto_0
 
     .line 55
-    :cond_36
-    if-ne v9, v7, :cond_40
+    :cond_3
+    if-ne v9, v7, :cond_4
 
     .line 56
     .line 57
@@ -171,21 +171,21 @@
     move-result v9
 
     .line 61
-    if-eqz v9, :cond_40
+    if-eqz v9, :cond_4
 
     .line 62
     .line 63
     const/4 v9, 0x1
 
     .line 64
-    goto :goto_41
+    goto :goto_0
 
     .line 65
-    :cond_40
+    :cond_4
     const/4 v9, 0x0
 
     .line 66
-    :goto_41
+    :goto_0
     invoke-virtual {v1, v8}, Landroid/view/View;->setEnabled(Z)V
 
     .line 67
@@ -195,30 +195,30 @@
 
     .line 70
     .line 71
-    if-eqz v11, :cond_75
+    if-eqz v11, :cond_9
 
     .line 72
     .line 73
-    if-eq v11, v7, :cond_6c
+    if-eq v11, v7, :cond_8
 
     .line 74
     .line 75
-    if-eq v11, v4, :cond_63
+    if-eq v11, v4, :cond_7
 
     .line 76
     .line 77
-    if-eq v11, v5, :cond_5a
+    if-eq v11, v5, :cond_6
 
     .line 78
     .line 79
-    if-eq v11, v10, :cond_51
+    if-eq v11, v10, :cond_5
 
     .line 80
     .line 81
-    goto :goto_7d
+    goto :goto_1
 
     .line 82
-    :cond_51
+    :cond_5
     const-class v5, Lcom/mixplorer/services/DLNAServerService;
 
     .line 83
@@ -233,10 +233,10 @@
     .line 88
     .line 89
     .line 90
-    goto :goto_7d
+    goto :goto_1
 
     .line 91
-    :cond_5a
+    :cond_6
     const-class v5, Lcom/mixplorer/services/SMBServerService;
 
     .line 92
@@ -251,10 +251,10 @@
     .line 97
     .line 98
     .line 99
-    goto :goto_7d
+    goto :goto_1
 
     .line 100
-    :cond_63
+    :cond_7
     const-class v5, Lcom/mixplorer/services/SFTPServerService;
 
     .line 101
@@ -269,10 +269,10 @@
     .line 106
     .line 107
     .line 108
-    goto :goto_7d
+    goto :goto_1
 
     .line 109
-    :cond_6c
+    :cond_8
     const-class v5, Lcom/mixplorer/services/HTTPServerService;
 
     .line 110
@@ -287,10 +287,10 @@
     .line 115
     .line 116
     .line 117
-    goto :goto_7d
+    goto :goto_1
 
     .line 118
-    :cond_75
+    :cond_9
     const-class v5, Lcom/mixplorer/services/FTPServerService;
 
     .line 119
@@ -305,7 +305,7 @@
     .line 124
     .line 125
     .line 126
-    :goto_7d
+    :goto_1
     check-cast v1, Lcom/mixplorer/widgets/MiButton;
 
     .line 127
@@ -319,7 +319,7 @@
     .line 131
     .line 132
     .line 133
-    if-nez v9, :cond_8f
+    if-nez v9, :cond_a
 
     .line 134
     .line 135
@@ -327,7 +327,7 @@
 
     .line 136
     .line 137
-    if-eqz v1, :cond_8f
+    if-eqz v1, :cond_a
 
     .line 138
     .line 139
@@ -339,14 +339,14 @@
     move-result-object v1
 
     .line 143
-    goto :goto_90
+    goto :goto_2
 
     .line 144
-    :cond_8f
+    :cond_a
     move-object v1, v6
 
     .line 145
-    :goto_90
+    :goto_2
     invoke-static {v1}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
 
     .line 146
@@ -355,7 +355,7 @@
     move-result v3
 
     .line 149
-    if-eqz v3, :cond_9c
+    if-eqz v3, :cond_b
 
     .line 150
     .line 151
@@ -368,10 +368,10 @@
     .line 154
     .line 155
     .line 156
-    goto :goto_a9
+    goto :goto_3
 
     .line 157
-    :cond_9c
+    :cond_b
     new-instance v3, Llibs/xv1;
 
     .line 158
@@ -395,11 +395,11 @@
     .line 168
     .line 169
     .line 170
-    :goto_a9
+    :goto_3
     return-void
 
     .line 171
-    :pswitch_aa
+    :pswitch_0
     sget-boolean v2, Lcom/mixplorer/activities/ConfigServerActivity;->IlI:Z
 
     .line 172
@@ -420,7 +420,7 @@
 
     .line 180
     .line 181
-    if-ne v1, v2, :cond_bb
+    if-ne v1, v2, :cond_c
 
     .line 182
     .line 183
@@ -429,16 +429,16 @@
     .line 184
     .line 185
     .line 186
-    goto/16 :goto_183
+    goto/16 :goto_5
 
     .line 187
     .line 188
-    :cond_bb
+    :cond_c
     sget v2, Llibs/wh2;->add_shortcut:I
 
     .line 189
     .line 190
-    if-ne v1, v2, :cond_d4
+    if-ne v1, v2, :cond_e
 
     .line 191
     .line 192
@@ -446,15 +446,15 @@
 
     .line 193
     .line 194
-    if-eqz v1, :cond_c5
+    if-eqz v1, :cond_d
 
     .line 195
     .line 196
-    goto/16 :goto_183
+    goto/16 :goto_5
 
     .line 197
     .line 198
-    :cond_c5
+    :cond_d
     new-instance v1, Llibs/xv1;
 
     .line 199
@@ -478,16 +478,16 @@
     .line 209
     .line 210
     .line 211
-    goto/16 :goto_183
+    goto/16 :goto_5
 
     .line 212
     .line 213
-    :cond_d4
+    :cond_e
     sget v2, Llibs/wh2;->custom_key:I
 
     .line 214
     .line 215
-    if-ne v1, v2, :cond_16a
+    if-ne v1, v2, :cond_10
 
     .line 216
     .line 217
@@ -528,7 +528,7 @@
     move-result-object v1
 
     .line 236
-    if-eqz v1, :cond_f7
+    if-eqz v1, :cond_f
 
     .line 237
     .line 238
@@ -551,10 +551,10 @@
     move-object v3, v2
 
     .line 247
-    goto :goto_fa
+    goto :goto_4
 
     .line 248
-    :cond_f7
+    :cond_f
     move-object v1, v3
 
     .line 249
@@ -562,7 +562,7 @@
 
     .line 250
     .line 251
-    :goto_fa
+    :goto_4
     sget v2, Llibs/bi2;->enter_path:I
 
     .line 252
@@ -788,15 +788,15 @@
     .line 360
     .line 361
     .line 362
-    goto :goto_183
+    goto :goto_5
 
     .line 363
-    :cond_16a
+    :cond_10
     sget v2, Llibs/wh2;->certificate:I
 
     .line 364
     .line 365
-    if-ne v1, v2, :cond_17c
+    if-ne v1, v2, :cond_11
 
     .line 366
     .line 367
@@ -823,15 +823,15 @@
     .line 378
     .line 379
     .line 380
-    goto :goto_183
+    goto :goto_5
 
     .line 381
-    :cond_17c
+    :cond_11
     sget v2, Llibs/wh2;->toggle:I
 
     .line 382
     .line 383
-    if-ne v1, v2, :cond_183
+    if-ne v1, v2, :cond_12
 
     .line 384
     .line 385
@@ -840,13 +840,13 @@
     .line 386
     .line 387
     .line 388
-    :cond_183
-    :goto_183
+    :cond_12
+    :goto_5
     return-void
 
     .line 389
-    :pswitch_data_184
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_aa
+        :pswitch_0
     .end packed-switch
 .end method

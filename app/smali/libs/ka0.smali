@@ -25,7 +25,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 9
+    .locals 9
 
     .line 1
     new-instance v0, Ljava/math/BigInteger;
@@ -229,7 +229,7 @@
 .end method
 
 .method public static a(Llibs/qq3;)Llibs/ja0;
-    .registers 13
+    .locals 12
 
     .line 1
     const/4 v0, 0x5
@@ -250,7 +250,7 @@
     const/4 v3, 0x0
 
     .line 9
-    if-eqz v1, :cond_24
+    if-eqz v1, :cond_0
 
     .line 10
     .line 11
@@ -302,7 +302,7 @@
     .line 35
     .line 36
     .line 37
-    :cond_24
+    :cond_0
     new-instance v1, Ljava/util/ArrayList;
 
     .line 38
@@ -330,8 +330,8 @@
     const/4 v7, 0x0
 
     .line 50
-    :goto_31
-    if-ge v7, v5, :cond_59
+    :goto_0
+    if-ge v7, v5, :cond_3
 
     .line 51
     .line 52
@@ -371,14 +371,14 @@
     move-result v11
 
     .line 70
-    if-le v10, v11, :cond_48
+    if-le v10, v11, :cond_1
 
     .line 71
     .line 72
-    goto :goto_59
+    goto :goto_1
 
     .line 73
-    :cond_48
+    :cond_1
     invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
 
     .line 74
@@ -387,7 +387,7 @@
     move-result v10
 
     .line 77
-    if-ge v6, v10, :cond_55
+    if-ge v6, v10, :cond_2
 
     .line 78
     .line 79
@@ -404,17 +404,17 @@
     .line 84
     .line 85
     .line 86
-    :cond_55
+    :cond_2
     invoke-virtual {v1, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 87
     .line 88
     .line 89
-    goto :goto_31
+    goto :goto_0
 
     .line 90
-    :cond_59
-    :goto_59
+    :cond_3
+    :goto_1
     invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
 
     .line 91
@@ -423,7 +423,7 @@
     move-result v4
 
     .line 94
-    if-nez v4, :cond_73
+    if-nez v4, :cond_4
 
     .line 95
     .line 96
@@ -467,7 +467,7 @@
     return-object p0
 
     .line 116
-    :cond_73
+    :cond_4
     sget-object v1, Llibs/ka0;->h:Ljava/util/ArrayList;
 
     .line 117
@@ -487,8 +487,8 @@
     const/4 v6, 0x0
 
     .line 125
-    :goto_7c
-    if-ge v6, v4, :cond_93
+    :goto_2
+    if-ge v6, v4, :cond_6
 
     .line 126
     .line 127
@@ -524,22 +524,22 @@
     move-result v9
 
     .line 143
-    if-le v8, v9, :cond_91
+    if-le v8, v9, :cond_5
 
     .line 144
     .line 145
-    goto :goto_93
+    goto :goto_3
 
     .line 146
-    :cond_91
+    :cond_5
     move-object v5, v7
 
     .line 147
-    goto :goto_7c
+    goto :goto_2
 
     .line 148
-    :cond_93
-    :goto_93
+    :cond_6
+    :goto_3
     invoke-static {v0}, Llibs/zm1;->Context(I)Z
 
     .line 149
@@ -548,7 +548,7 @@
     move-result p0
 
     .line 152
-    if-eqz p0, :cond_b3
+    if-eqz p0, :cond_7
 
     .line 153
     .line 154
@@ -600,7 +600,7 @@
     .line 178
     .line 179
     .line 180
-    :cond_b3
+    :cond_7
     new-instance p0, Llibs/ja0;
 
     .line 181
@@ -634,7 +634,7 @@
 .end method
 
 .method public static b(Ljava/math/BigInteger;Ljava/math/BigInteger;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     sget-object v0, Ljava/math/BigInteger;->ONE:Ljava/math/BigInteger;
@@ -649,7 +649,7 @@
     move-result v1
 
     .line 7
-    if-lez v1, :cond_15
+    if-lez v1, :cond_1
 
     .line 8
     .line 9
@@ -669,22 +669,22 @@
     move-result p1
 
     .line 17
-    if-ltz p1, :cond_13
+    if-ltz p1, :cond_0
 
     .line 18
     .line 19
-    goto :goto_15
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     const/4 p0, 0x1
 
     .line 21
     return p0
 
     .line 22
-    :cond_15
-    :goto_15
+    :cond_1
+    :goto_0
     const/16 p1, 0x10
 
     .line 23

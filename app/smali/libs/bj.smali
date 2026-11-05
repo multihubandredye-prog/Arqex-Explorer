@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/bj;->X:B
@@ -34,70 +34,70 @@
 .end method
 
 .method private final a(Landroid/text/Editable;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final b(Landroid/text/Editable;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final c(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final d(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final e(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final f(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final g(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final h(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final i(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final j(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     .line 1
     return-void
@@ -106,7 +106,7 @@
 
 # virtual methods
 .method public final afterTextChanged(Landroid/text/Editable;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/bj;->X:B
@@ -117,7 +117,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_2e
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -125,7 +125,7 @@
     return-void
 
     .line 9
-    :pswitch_8
+    :pswitch_0
     check-cast v1, Lcom/mixplorer/activities/LocalizeActivity;
 
     .line 10
@@ -142,7 +142,7 @@
     return-void
 
     .line 17
-    :pswitch_10
+    :pswitch_1
     check-cast v1, Lcom/mixplorer/activities/ConfigServerActivity;
 
     .line 18
@@ -156,16 +156,16 @@
     .line 22
     .line 23
     .line 24
-    :pswitch_17
+    :pswitch_2
     return-void
 
     .line 25
-    :pswitch_18
+    :pswitch_3
     check-cast v1, Llibs/$d;
 
     .line 26
     .line 27
-    if-eqz p1, :cond_28
+    if-eqz p1, :cond_0
 
     .line 28
     .line 29
@@ -177,7 +177,7 @@
     move-result p1
 
     .line 33
-    if-lez p1, :cond_28
+    if-lez p1, :cond_0
 
     .line 34
     .line 35
@@ -190,10 +190,10 @@
     .line 38
     .line 39
     .line 40
-    goto :goto_2d
+    goto :goto_0
 
     .line 41
-    :cond_28
+    :cond_0
     sget p1, Llibs/bi2;->skip:I
 
     .line 42
@@ -203,21 +203,21 @@
     .line 44
     .line 45
     .line 46
-    :goto_2d
+    :goto_0
     return-void
 
     .line 47
-    :pswitch_data_2e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_18
-        :pswitch_17
-        :pswitch_10
-        :pswitch_8
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final beforeTextChanged(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     .line 1
     iget-byte p1, p0, Llibs/bj;->X:B
@@ -228,7 +228,7 @@
 .end method
 
 .method public final onTextChanged(Ljava/lang/CharSequence;III)V
-    .registers 6
+    .locals 1
 
     .line 1
     iget-byte p2, p0, Llibs/bj;->X:B
@@ -243,7 +243,7 @@
 
     .line 6
     .line 7
-    packed-switch p2, :pswitch_data_5a
+    packed-switch p2, :pswitch_data_0
 
     .line 8
     .line 9
@@ -263,7 +263,7 @@
     const/4 v0, 0x3
 
     .line 17
-    if-ge p2, v0, :cond_1e
+    if-ge p2, v0, :cond_0
 
     .line 18
     .line 19
@@ -287,11 +287,11 @@
     move-result p2
 
     .line 29
-    if-eqz p2, :cond_3a
+    if-eqz p2, :cond_1
 
     .line 30
     .line 31
-    :cond_1e
+    :cond_0
     new-instance p2, Ljava/lang/StringBuilder;
 
     .line 32
@@ -344,12 +344,12 @@
     .line 57
     .line 58
     .line 59
-    :cond_3a
-    :pswitch_3a
+    :cond_1
+    :pswitch_0
     return-void
 
     .line 60
-    :pswitch_3b
+    :pswitch_1
     check-cast p4, Llibs/al;
 
     .line 61
@@ -385,7 +385,7 @@
 
     .line 78
     .line 79
-    if-eqz p2, :cond_58
+    if-eqz p2, :cond_2
 
     .line 80
     .line 81
@@ -405,19 +405,19 @@
     .line 87
     .line 88
     .line 89
-    :cond_58
-    :pswitch_58
+    :cond_2
+    :pswitch_2
     return-void
 
     .line 90
     nop
 
     .line 91
-    :pswitch_data_5a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_58
-        :pswitch_3b
-        :pswitch_3a
-        :pswitch_3a
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
     .end packed-switch
 .end method

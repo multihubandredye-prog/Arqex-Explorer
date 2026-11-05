@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 12
     invoke-direct {p0}, Llibs/ei1;-><init>()V
@@ -23,7 +23,7 @@
 .end method
 
 .method public constructor <init>(FF)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/ei1;-><init>()V
@@ -52,7 +52,7 @@
 
 # virtual methods
 .method public final a()Llibs/ei1;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/bi1;
@@ -76,7 +76,7 @@
 .end method
 
 .method public final b()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/bi1;->Z:F
@@ -95,10 +95,10 @@
 .end method
 
 .method public final c(Ljava/lang/Object;)V
-    .registers 4
+    .locals 2
 
     .line 1
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_0
 
     .line 2
     .line 3
@@ -114,7 +114,7 @@
 
     .line 8
     .line 9
-    if-ne v0, v1, :cond_15
+    if-ne v0, v1, :cond_0
 
     .line 10
     .line 11
@@ -141,12 +141,12 @@
 
     .line 21
     .line 22
-    :cond_15
+    :cond_0
     return-void
 .end method
 
 .method public final clone()Ljava/lang/Object;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/bi1;

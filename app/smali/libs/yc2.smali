@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/PlayerActivity;Llibs/rp0;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/yc2;->d:Lcom/mixplorer/activities/PlayerActivity;
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final b()Landroid/graphics/Point;
-    .registers 2
+    .locals 1
 
     .line 1
     sget-boolean v0, Lcom/mixplorer/activities/PlayerActivity;->e0:Z
@@ -71,7 +71,7 @@
 .end method
 
 .method public final c()Llibs/rp0;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/yc2;->c:Llibs/rp0;
@@ -82,7 +82,7 @@
 .end method
 
 .method public final d()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -132,7 +132,7 @@
 .end method
 
 .method public final f()Ljava/io/InputStream;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/yc2;->c:Llibs/rp0;
@@ -147,7 +147,7 @@
     move-result-object v0
 
     .line 7
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -172,14 +172,14 @@
     .line 18
     .line 19
     .line 20
-    goto :goto_15
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_0
     const/4 v1, 0x0
 
     .line 22
-    :goto_15
+    :goto_0
     iget-object v0, p0, Llibs/yc2;->b:Ljava/util/ArrayList;
 
     .line 23
@@ -187,7 +187,7 @@
     monitor-enter v0
 
     .line 25
-    :try_start_18
+    :try_start_0
     iget-object v2, p0, Llibs/yc2;->b:Ljava/util/ArrayList;
 
     .line 26
@@ -203,20 +203,20 @@
     return-object v1
 
     .line 32
-    :catchall_1f
+    :catchall_0
     move-exception v1
 
     .line 33
     monitor-exit v0
-    :try_end_21
-    .catchall {:try_start_18 .. :try_end_21} :catchall_1f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 34
     throw v1
 .end method
 
 .method public final g()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/yc2;->c:Llibs/rp0;
@@ -231,7 +231,7 @@
 .end method
 
 .method public final h()Llibs/zl0;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/yc2;->c:Llibs/rp0;
@@ -250,7 +250,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/yc2;->c:Llibs/rp0;

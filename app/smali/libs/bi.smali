@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/BrowseActivity;ILjava/util/Map;B)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-byte p4, p0, Llibs/bi;->X:B
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 7
+    .locals 6
 
     .line 1
     iget-byte v0, p0, Llibs/bi;->X:B
@@ -67,7 +67,7 @@
 
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_28
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
@@ -84,7 +84,7 @@
     return-void
 
     .line 18
-    :pswitch_11
+    :pswitch_0
     sget-object v0, Lcom/mixplorer/activities/BrowseActivity;->Il:Ljava/lang/ThreadGroup;
 
     .line 19
@@ -97,14 +97,14 @@
     move-result-object v0
 
     .line 24
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_0
 
     .line 25
     .line 26
-    goto :goto_27
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_0
     iget-object v0, v0, Llibs/xt1;->T:Landroid/os/Handler;
 
     .line 28
@@ -130,12 +130,12 @@
     .line 38
     .line 39
     .line 40
-    :goto_27
+    :goto_0
     return-void
 
     .line 41
-    :pswitch_data_28
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_11
+        :pswitch_0
     .end packed-switch
 .end method

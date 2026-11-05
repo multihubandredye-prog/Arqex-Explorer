@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/nw;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final e(Llibs/en0;)V
-    .registers 12
+    .locals 10
 
     .line 1
     const/4 p1, 0x0
@@ -60,8 +60,8 @@
     const/4 v5, -0x1
 
     .line 17
-    :goto_10
-    if-ge v3, v1, :cond_3f
+    :goto_0
+    if-ge v3, v1, :cond_2
 
     .line 18
     .line 19
@@ -97,7 +97,7 @@
 
     .line 34
     .line 35
-    if-nez v9, :cond_37
+    if-nez v9, :cond_0
 
     .line 36
     .line 37
@@ -126,42 +126,42 @@
     move-result-object v6
 
     .line 50
-    if-gez v4, :cond_3c
+    if-gez v4, :cond_1
 
     .line 51
     .line 52
-    if-eqz v8, :cond_3c
+    if-eqz v8, :cond_1
 
     .line 53
     .line 54
     move v4, p1
 
     .line 55
-    goto :goto_3c
+    goto :goto_1
 
     .line 56
-    :cond_37
-    if-gez v5, :cond_3c
+    :cond_0
+    if-gez v5, :cond_1
 
     .line 57
     .line 58
-    if-eqz v8, :cond_3c
+    if-eqz v8, :cond_1
 
     .line 59
     .line 60
     move v5, p1
 
     .line 61
-    :cond_3c
-    :goto_3c
+    :cond_1
+    :goto_1
     add-int/lit8 p1, p1, 0x1
 
     .line 62
     .line 63
-    goto :goto_10
+    goto :goto_0
 
     .line 64
-    :cond_3f
+    :cond_2
     invoke-virtual {v6}, Ljava/lang/String;->length()I
 
     .line 65
@@ -170,7 +170,7 @@
     move-result p1
 
     .line 68
-    if-nez p1, :cond_4d
+    if-nez p1, :cond_3
 
     .line 69
     .line 70
@@ -190,7 +190,7 @@
     return-void
 
     .line 78
-    :cond_4d
+    :cond_3
     invoke-static {}, Llibs/fk;->b()Ljava/lang/String;
 
     .line 79
@@ -277,18 +277,18 @@
     .line 122
     .line 123
     .line 124
-    if-ltz v4, :cond_7e
+    if-ltz v4, :cond_4
 
     .line 125
     .line 126
-    goto :goto_7f
+    goto :goto_2
 
     .line 127
-    :cond_7e
+    :cond_4
     move v4, v5
 
     .line 128
-    :goto_7f
+    :goto_2
     invoke-virtual {p1, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 129

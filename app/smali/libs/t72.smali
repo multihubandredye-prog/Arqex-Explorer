@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/InputStream;Llibs/Eta;)V
-    .registers 10
+    .locals 7
 
     .line 1
     invoke-direct {p0}, Llibs/zj0;-><init>()V
@@ -37,7 +37,7 @@
 
     .line 12
     .line 13
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     .line 14
     .line 15
@@ -45,10 +45,10 @@
 
     .line 16
     .line 17
-    goto :goto_17
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     new-instance v1, Llibs/ra;
 
     .line 19
@@ -61,7 +61,7 @@
     move-object p1, v1
 
     .line 24
-    :goto_17
+    :goto_0
     invoke-virtual {p1}, Llibs/ra;->c()I
 
     .line 25
@@ -80,18 +80,18 @@
 
     .line 31
     .line 32
-    if-eq v1, v2, :cond_33
+    if-eq v1, v2, :cond_2
 
     .line 33
     .line 34
-    if-ne v1, v4, :cond_24
+    if-ne v1, v4, :cond_1
 
     .line 35
     .line 36
-    goto :goto_33
+    goto :goto_1
 
     .line 37
-    :cond_24
+    :cond_1
     new-instance p1, Ljava/lang/StringBuilder;
 
     .line 38
@@ -121,8 +121,8 @@
     throw v3
 
     .line 52
-    :cond_33
-    :goto_33
+    :cond_2
+    :goto_1
     invoke-virtual {p1}, Llibs/ra;->m()Llibs/k12;
 
     .line 53
@@ -177,7 +177,7 @@
     .line 80
     .line 81
     .line 82
-    :try_start_51
+    :try_start_0
     new-instance v2, Llibs/kk1;
 
     .line 83
@@ -195,7 +195,7 @@
     .line 89
     .line 90
     .line 91
-    :goto_5a
+    :goto_2
     invoke-virtual {p1}, Llibs/ra;->c()I
 
     .line 92
@@ -204,7 +204,7 @@
     move-result v0
 
     .line 95
-    if-ne v0, v4, :cond_79
+    if-ne v0, v4, :cond_3
 
     .line 96
     .line 97
@@ -244,27 +244,27 @@
     .line 115
     .line 116
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_76
-    .catch Llibs/o72; {:try_start_51 .. :try_end_76} :catch_77
+    :try_end_0
+    .catch Llibs/o72; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 117
     .line 118
     .line 119
-    goto :goto_5a
+    goto :goto_2
 
     .line 120
-    :catch_77
+    :catch_0
     move-exception p1
 
     .line 121
-    goto :goto_7a
+    goto :goto_3
 
     .line 122
-    :cond_79
+    :cond_3
     return-void
 
     .line 123
-    :goto_7a
+    :goto_3
     const-string p2, "processing exception: "
 
     .line 124
@@ -274,21 +274,21 @@
     .line 126
     .line 127
     .line 128
-    goto :goto_81
+    goto :goto_5
 
     .line 129
-    :goto_80
+    :goto_4
     throw v3
 
     .line 130
-    :goto_81
-    goto :goto_80
+    :goto_5
+    goto :goto_4
 .end method
 
 
 # virtual methods
 .method public final iterator()Ljava/util/Iterator;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/t72;->Omicron:Ljava/util/ArrayList;

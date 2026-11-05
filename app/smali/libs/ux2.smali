@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/SQLiteEditorActivity;Ljava/lang/String;Llibs/vx2;Llibs/$d;Llibs/ml1;)V
-    .registers 6
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/ux2;->Nu:Lcom/mixplorer/activities/SQLiteEditorActivity;
@@ -63,7 +63,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 8
+    .locals 6
 
     .line 1
     new-instance v0, Llibs/vk0;

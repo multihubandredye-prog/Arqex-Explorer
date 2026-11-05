@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/security/SignatureSpi;-><init>()V
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public engineGetParameter(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -50,7 +50,7 @@
 .end method
 
 .method public engineInitSign(Ljava/security/PrivateKey;)V
-    .registers 2
+    .locals 0
 
     .line 1
     check-cast p1, Lorg/conscrypt/OpenSslSlhDsaPrivateKey;
@@ -81,7 +81,7 @@
 .end method
 
 .method public engineInitVerify(Ljava/security/PublicKey;)V
-    .registers 2
+    .locals 0
 
     .line 1
     check-cast p1, Lorg/conscrypt/OpenSslSlhDsaPublicKey;
@@ -112,21 +112,21 @@
 .end method
 
 .method public engineSetParameter(Ljava/lang/String;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public engineSign()[B
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSslSignatureSlhDsa;->privateKey:Lorg/conscrypt/OpenSslSlhDsaPrivateKey;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -186,7 +186,7 @@
     return-object v0
 
     .line 33
-    :cond_20
+    :cond_0
     const-string v0, "No privateKey provided"
 
     .line 34
@@ -203,7 +203,7 @@
 .end method
 
 .method public engineUpdate(B)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSslSignatureSlhDsa;->buffer:Lorg/conscrypt/ExposedByteArrayOutputStream;
@@ -219,7 +219,7 @@
 .end method
 
 .method public engineUpdate([BII)V
-    .registers 5
+    .locals 1
 
     .line 7
     iget-object v0, p0, Lorg/conscrypt/OpenSslSignatureSlhDsa;->buffer:Lorg/conscrypt/ExposedByteArrayOutputStream;
@@ -230,14 +230,14 @@
 .end method
 
 .method public engineVerify([B)Z
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSslSignatureSlhDsa;->publicKey:Lorg/conscrypt/OpenSslSlhDsaPublicKey;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
@@ -297,21 +297,21 @@
     const/4 v0, 0x1
 
     .line 33
-    if-ne p1, v0, :cond_23
+    if-ne p1, v0, :cond_0
 
     .line 34
     .line 35
     return v0
 
     .line 36
-    :cond_23
+    :cond_0
     const/4 p1, 0x0
 
     .line 37
     return p1
 
     .line 38
-    :cond_25
+    :cond_1
     const-string p1, "No publicKey provided"
 
     .line 39

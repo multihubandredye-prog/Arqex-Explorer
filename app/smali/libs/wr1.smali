@@ -20,7 +20,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/app/Activity;Ljava/util/HashSet;ZLlibs/ek3;B)V
-    .registers 6
+    .locals 0
 
     .line 1
     iput-byte p5, p0, Llibs/wr1;->X:B
@@ -54,14 +54,14 @@
 
 # virtual methods
 .method public final run()V
-    .registers 8
+    .locals 7
 
     .line 1
     iget-byte v0, p0, Llibs/wr1;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_82
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -70,7 +70,7 @@
 
     .line 7
     .line 8
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 9
     .line 10
@@ -87,7 +87,7 @@
 
     .line 16
     .line 17
-    :cond_10
+    :cond_0
     iget-object v0, p0, Llibs/wr1;->Z:Ljava/util/HashSet;
 
     .line 18
@@ -124,7 +124,7 @@
 
     .line 34
     .line 35
-    if-nez v3, :cond_66
+    if-nez v3, :cond_2
 
     .line 36
     .line 37
@@ -132,7 +132,7 @@
 
     .line 38
     .line 39
-    if-nez v5, :cond_66
+    if-nez v5, :cond_2
 
     .line 40
     .line 41
@@ -148,7 +148,7 @@
     move-result v5
 
     .line 47
-    if-eqz v5, :cond_5b
+    if-eqz v5, :cond_1
 
     .line 48
     .line 49
@@ -168,7 +168,7 @@
     move-result v5
 
     .line 57
-    if-eqz v5, :cond_5b
+    if-eqz v5, :cond_1
 
     .line 58
     .line 59
@@ -189,7 +189,7 @@
 
     .line 67
     .line 68
-    if-nez v5, :cond_5b
+    if-nez v5, :cond_1
 
     .line 69
     .line 70
@@ -210,7 +210,7 @@
 
     .line 78
     .line 79
-    if-nez v5, :cond_5b
+    if-nez v5, :cond_1
 
     .line 80
     .line 81
@@ -230,14 +230,14 @@
     move-result v5
 
     .line 89
-    if-nez v5, :cond_5b
+    if-nez v5, :cond_1
 
     .line 90
     .line 91
-    goto :goto_66
+    goto :goto_0
 
     .line 92
-    :cond_5b
+    :cond_1
     new-instance v0, Llibs/bd0;
 
     .line 93
@@ -258,11 +258,11 @@
     .line 100
     .line 101
     .line 102
-    goto :goto_6b
+    goto :goto_1
 
     .line 103
-    :cond_66
-    :goto_66
+    :cond_2
+    :goto_0
     sget-object v1, Llibs/yr1;->b:Llibs/yr1;
 
     .line 104
@@ -272,11 +272,11 @@
     .line 106
     .line 107
     .line 108
-    :goto_6b
+    :goto_1
     return-void
 
     .line 109
-    :pswitch_6c
+    :pswitch_0
     invoke-static {}, Llibs/zt0;->j()Landroid/os/Handler;
 
     .line 110
@@ -321,8 +321,8 @@
     return-void
 
     .line 131
-    :pswitch_data_82
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_6c
+        :pswitch_0
     .end packed-switch
 .end method

@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public final clone()Ljava/lang/Object;
-    .registers 6
+    .locals 5
 
     .line 1
     invoke-super {p0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
@@ -62,7 +62,7 @@
     const/4 v2, 0x0
 
     .line 10
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_0
 
     .line 11
     .line 12
@@ -82,12 +82,12 @@
 
     .line 19
     .line 20
-    :cond_13
+    :cond_0
     iget-object v1, v0, Llibs/bu0;->Z:[B
 
     .line 21
     .line 22
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_1
 
     .line 23
     .line 24
@@ -107,12 +107,12 @@
 
     .line 31
     .line 32
-    :cond_1f
+    :cond_1
     iget-object v1, v0, Llibs/bu0;->Lambda:[B
 
     .line 33
     .line 34
-    if-eqz v1, :cond_2b
+    if-eqz v1, :cond_2
 
     .line 35
     .line 36
@@ -132,6 +132,6 @@
 
     .line 43
     .line 44
-    :cond_2b
+    :cond_2
     return-object v0
 .end method

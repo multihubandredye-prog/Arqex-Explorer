@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/LocalizeActivity;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/mm1;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 6
+    .locals 0
 
     .line 1
     iget-byte p2, p0, Llibs/mm1;->X:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch p2, :pswitch_data_7e
+    packed-switch p2, :pswitch_data_0
 
     .line 6
     .line 7
@@ -96,7 +96,7 @@
     const/4 p3, 0x1
 
     .line 30
-    if-ne p1, p2, :cond_30
+    if-ne p1, p2, :cond_1
 
     .line 31
     .line 32
@@ -104,7 +104,7 @@
 
     .line 33
     .line 34
-    if-eqz p1, :cond_27
+    if-eqz p1, :cond_0
 
     .line 35
     .line 36
@@ -113,10 +113,10 @@
     .line 37
     .line 38
     .line 39
-    goto :goto_66
+    goto :goto_0
 
     .line 40
-    :cond_27
+    :cond_0
     new-instance p1, Llibs/nm1;
 
     .line 41
@@ -131,15 +131,15 @@
     .line 46
     .line 47
     .line 48
-    goto :goto_66
+    goto :goto_0
 
     .line 49
-    :cond_30
+    :cond_1
     sget p2, Llibs/wh2;->menu_translate:I
 
     .line 50
     .line 51
-    if-ne p1, p2, :cond_3a
+    if-ne p1, p2, :cond_2
 
     .line 52
     .line 53
@@ -152,15 +152,15 @@
     .line 56
     .line 57
     .line 58
-    goto :goto_66
+    goto :goto_0
 
     .line 59
-    :cond_3a
+    :cond_2
     sget p2, Llibs/wh2;->menu_share:I
 
     .line 60
     .line 61
-    if-ne p1, p2, :cond_55
+    if-ne p1, p2, :cond_4
 
     .line 62
     .line 63
@@ -168,7 +168,7 @@
 
     .line 64
     .line 65
-    if-eqz p1, :cond_46
+    if-eqz p1, :cond_3
 
     .line 66
     .line 67
@@ -177,10 +177,10 @@
     .line 68
     .line 69
     .line 70
-    goto :goto_66
+    goto :goto_0
 
     .line 71
-    :cond_46
+    :cond_3
     new-instance p1, Llibs/xv1;
 
     .line 72
@@ -207,15 +207,15 @@
     .line 83
     .line 84
     .line 85
-    goto :goto_66
+    goto :goto_0
 
     .line 86
-    :cond_55
+    :cond_4
     sget p2, Llibs/wh2;->menu_export:I
 
     .line 87
     .line 88
-    if-ne p1, p2, :cond_66
+    if-ne p1, p2, :cond_6
 
     .line 89
     .line 90
@@ -223,7 +223,7 @@
 
     .line 91
     .line 92
-    if-eqz p1, :cond_61
+    if-eqz p1, :cond_5
 
     .line 93
     .line 94
@@ -232,10 +232,10 @@
     .line 95
     .line 96
     .line 97
-    goto :goto_66
+    goto :goto_0
 
     .line 98
-    :cond_61
+    :cond_5
     iget-object p1, p4, Lcom/mixplorer/activities/LocalizeActivity;->Oo:Llibs/rp0;
 
     .line 99
@@ -245,12 +245,12 @@
     .line 101
     .line 102
     .line 103
-    :cond_66
-    :goto_66
+    :cond_6
+    :goto_0
     return-void
 
     .line 104
-    :pswitch_67
+    :pswitch_0
     sget p1, Lcom/mixplorer/activities/LocalizeActivity;->OoO:I
 
     .line 105
@@ -296,8 +296,8 @@
     nop
 
     .line 127
-    :pswitch_data_7e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_67
+        :pswitch_0
     .end packed-switch
 .end method

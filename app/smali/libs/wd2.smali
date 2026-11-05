@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 8
+    .locals 8
 
     .line 1
     new-instance v0, Ljava/util/HashMap;
@@ -791,7 +791,7 @@
 
     .line 421
     .line 422
-    fill-array-data v0, :array_1ac
+    fill-array-data v0, :array_0
 
     .line 423
     .line 424
@@ -806,7 +806,7 @@
     nop
 
     .line 429
-    :array_1ac
+    :array_0
     .array-data 4
         0x1000005
         0x1000006
@@ -818,7 +818,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -830,7 +830,7 @@
 .end method
 
 .method public static a(Ljava/lang/String;Llibs/wd2;)V
-    .registers 6
+    .locals 4
 
     .line 1
     sget-object v0, Llibs/wd2;->a:Ljava/util/HashMap;
@@ -854,7 +854,7 @@
     move-result p0
 
     .line 12
-    if-eqz p0, :cond_34
+    if-eqz p0, :cond_0
 
     .line 13
     .line 14
@@ -870,7 +870,7 @@
     move-result-object p0
 
     .line 20
-    :goto_13
+    :goto_0
     move-object v1, p0
 
     .line 21
@@ -886,7 +886,7 @@
     move-result v2
 
     .line 27
-    if-eqz v2, :cond_34
+    if-eqz v2, :cond_0
 
     .line 28
     .line 29
@@ -933,15 +933,15 @@
     .line 50
     .line 51
     .line 52
-    goto :goto_13
+    goto :goto_0
 
     .line 53
-    :cond_34
+    :cond_0
     return-void
 .end method
 
 .method public static b(Ljava/lang/String;Llibs/wd2;)V
-    .registers 5
+    .locals 3
 
     .line 1
     const-string v0, " "
@@ -962,8 +962,8 @@
     const/4 v1, 0x0
 
     .line 9
-    :goto_8
-    if-ge v1, v0, :cond_12
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     .line 10
     .line 11
@@ -980,15 +980,15 @@
 
     .line 17
     .line 18
-    goto :goto_8
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     return-void
 .end method
 
 .method public static e(Ljava/util/Locale;)Llibs/wd2;
-    .registers 5
+    .locals 4
 
     .line 1
     invoke-virtual {p0}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
@@ -1019,7 +1019,7 @@
 
     .line 14
     .line 15
-    if-nez v1, :cond_2d
+    if-nez v1, :cond_0
 
     .line 16
     .line 17
@@ -1071,14 +1071,14 @@
 
     .line 42
     .line 43
-    if-eqz p0, :cond_2d
+    if-eqz p0, :cond_0
 
     .line 44
     .line 45
     return-object p0
 
     .line 46
-    :cond_2d
+    :cond_0
     invoke-virtual {v2, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 47
@@ -1091,14 +1091,14 @@
 
     .line 51
     .line 52
-    if-eqz p0, :cond_36
+    if-eqz p0, :cond_1
 
     .line 53
     .line 54
     return-object p0
 
     .line 55
-    :cond_36
+    :cond_1
     const-string p0, "root"
 
     .line 56
@@ -1115,14 +1115,14 @@
 
     .line 62
     .line 63
-    if-eqz p0, :cond_41
+    if-eqz p0, :cond_2
 
     .line 64
     .line 65
     return-object p0
 
     .line 66
-    :cond_41
+    :cond_2
     const-string p0, "No plural rule found for \'root\' locale."
 
     .line 67
@@ -1139,27 +1139,27 @@
 .end method
 
 .method public static f(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-eq p0, v0, :cond_20
+    if-eq p0, v0, :cond_4
 
     .line 3
     .line 4
     const/4 v0, 0x2
 
     .line 5
-    if-eq p0, v0, :cond_1d
+    if-eq p0, v0, :cond_3
 
     .line 6
     .line 7
     const/4 v0, 0x4
 
     .line 8
-    if-eq p0, v0, :cond_1a
+    if-eq p0, v0, :cond_2
 
     .line 9
     .line 10
@@ -1167,7 +1167,7 @@
 
     .line 11
     .line 12
-    if-eq p0, v0, :cond_17
+    if-eq p0, v0, :cond_1
 
     .line 13
     .line 14
@@ -1175,7 +1175,7 @@
 
     .line 15
     .line 16
-    if-eq p0, v0, :cond_14
+    if-eq p0, v0, :cond_0
 
     .line 17
     .line 18
@@ -1186,7 +1186,7 @@
     return-object p0
 
     .line 21
-    :cond_14
+    :cond_0
     const-string p0, "many"
 
     .line 22
@@ -1194,7 +1194,7 @@
     return-object p0
 
     .line 24
-    :cond_17
+    :cond_1
     const-string p0, "few"
 
     .line 25
@@ -1202,7 +1202,7 @@
     return-object p0
 
     .line 27
-    :cond_1a
+    :cond_2
     const-string p0, "two"
 
     .line 28
@@ -1210,7 +1210,7 @@
     return-object p0
 
     .line 30
-    :cond_1d
+    :cond_3
     const-string p0, "one"
 
     .line 31
@@ -1218,7 +1218,7 @@
     return-object p0
 
     .line 33
-    :cond_20
+    :cond_4
     const-string p0, "zero"
 
     .line 34
@@ -1232,7 +1232,7 @@
 .end method
 
 .method public final d(J)I
-    .registers 5
+    .locals 2
 
     .line 1
     long-to-double v0, p1

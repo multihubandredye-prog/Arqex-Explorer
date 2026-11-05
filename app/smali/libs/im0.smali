@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Param;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -53,7 +53,7 @@
     move-result-object p1
 
     .line 22
-    :goto_15
+    :goto_0
     invoke-interface {p1}, Ljava/util/Enumeration;->hasMoreElements()Z
 
     .line 23
@@ -62,7 +62,7 @@
     move-result v0
 
     .line 26
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_2
 
     .line 27
     .line 28
@@ -82,7 +82,7 @@
 
     .line 35
     .line 36
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_0
 
     .line 37
     .line 38
@@ -90,11 +90,11 @@
 
     .line 39
     .line 40
-    goto :goto_36
+    goto :goto_1
 
     .line 41
-    :cond_28
-    if-eqz v0, :cond_35
+    :cond_0
+    if-eqz v0, :cond_1
 
     .line 42
     .line 43
@@ -118,14 +118,14 @@
     move-object v0, v1
 
     .line 53
-    goto :goto_36
+    goto :goto_1
 
     .line 54
-    :cond_35
+    :cond_1
     const/4 v0, 0x0
 
     .line 55
-    :goto_36
+    :goto_1
     iget-object v1, p0, Llibs/im0;->X:Ljava/util/Hashtable;
 
     .line 56
@@ -152,22 +152,22 @@
     .line 67
     .line 68
     .line 69
-    goto :goto_15
+    goto :goto_0
 
     .line 70
-    :cond_45
+    :cond_2
     return-void
 .end method
 
 .method public static h(Llibs/Core;)Llibs/im0;
-    .registers 2
+    .locals 1
 
     .line 1
     instance-of v0, p0, Llibs/im0;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -178,8 +178,8 @@
     return-object p0
 
     .line 8
-    :cond_7
-    if-eqz p0, :cond_13
+    :cond_0
+    if-eqz p0, :cond_1
 
     .line 9
     .line 10
@@ -203,7 +203,7 @@
     return-object v0
 
     .line 20
-    :cond_13
+    :cond_1
     const/4 p0, 0x0
 
     .line 21
@@ -213,7 +213,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Llibs/Init;
@@ -240,7 +240,7 @@
     move-result-object v1
 
     .line 13
-    :goto_c
+    :goto_0
     invoke-interface {v1}, Ljava/util/Enumeration;->hasMoreElements()Z
 
     .line 14
@@ -249,7 +249,7 @@
     move-result v2
 
     .line 17
-    if-eqz v2, :cond_24
+    if-eqz v2, :cond_0
 
     .line 18
     .line 19
@@ -286,10 +286,10 @@
     .line 34
     .line 35
     .line 36
-    goto :goto_c
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_0
     new-instance v1, Llibs/p10;
 
     .line 38
@@ -303,7 +303,7 @@
 .end method
 
 .method public final g(Llibs/App;)Llibs/fm0;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/im0;->X:Ljava/util/Hashtable;

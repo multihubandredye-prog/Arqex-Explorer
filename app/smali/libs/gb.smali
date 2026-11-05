@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/OutputStream;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x0

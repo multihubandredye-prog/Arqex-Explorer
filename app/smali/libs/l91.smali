@@ -63,7 +63,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/16 v0, 0x11
@@ -74,7 +74,7 @@
 
     .line 4
     .line 5
-    fill-array-data v0, :array_14
+    fill-array-data v0, :array_0
 
     .line 6
     .line 7
@@ -91,7 +91,7 @@
 
     .line 13
     .line 14
-    fill-array-data v0, :array_3a
+    fill-array-data v0, :array_1
 
     .line 15
     .line 16
@@ -106,7 +106,7 @@
     nop
 
     .line 21
-    :array_14
+    :array_0
     .array-data 4
         0x0
         0x1
@@ -137,7 +137,7 @@
     .line 29
     .line 30
     .line 31
-    :array_3a
+    :array_1
     .array-data 4
         0x10
         0x11
@@ -162,7 +162,7 @@
 .end method
 
 .method public constructor <init>(Llibs/q91;I)V
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -302,18 +302,18 @@
     const/4 p2, 0x0
 
     .line 70
-    if-eqz p1, :cond_48
+    if-eqz p1, :cond_0
 
     .line 71
     .line 72
-    goto :goto_49
+    goto :goto_0
 
     .line 73
-    :cond_48
+    :cond_0
     const/4 v0, 0x0
 
     .line 74
-    :goto_49
+    :goto_0
     iput-boolean v0, p0, Llibs/l91;->x:Z
 
     .line 75
@@ -333,7 +333,7 @@
 
 # virtual methods
 .method public final a(I)I
-    .registers 14
+    .locals 12
 
     .line 1
     iget-object v0, p0, Llibs/l91;->z:Llibs/q91;
@@ -356,18 +356,18 @@
 
     .line 10
     .line 11
-    if-gt v2, v3, :cond_d
+    if-gt v2, v3, :cond_0
 
     .line 12
     .line 13
-    goto :goto_e
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     move v3, v4
 
     .line 15
-    :goto_e
+    :goto_0
     sub-int/2addr v3, v2
 
     .line 16
@@ -375,32 +375,32 @@
 
     .line 17
     .line 18
-    if-le v3, v5, :cond_14
+    if-le v3, v5, :cond_1
 
     .line 19
     .line 20
     move v3, v5
 
     .line 21
-    :cond_14
+    :cond_1
     const/4 v6, -0x5
 
     .line 22
     const/4 v7, 0x0
 
     .line 23
-    if-eqz v3, :cond_1b
+    if-eqz v3, :cond_2
 
     .line 24
     .line 25
-    if-ne p1, v6, :cond_1b
+    if-ne p1, v6, :cond_2
 
     .line 26
     .line 27
     const/4 p1, 0x0
 
     .line 28
-    :cond_1b
+    :cond_2
     sub-int/2addr v5, v3
 
     .line 29
@@ -430,11 +430,11 @@
 
     .line 40
     .line 41
-    if-eqz v8, :cond_31
+    if-eqz v8, :cond_3
 
     .line 42
     .line 43
-    if-lez v3, :cond_31
+    if-lez v3, :cond_3
 
     .line 44
     .line 45
@@ -447,7 +447,7 @@
     .line 48
     .line 49
     .line 50
-    :cond_31
+    :cond_3
     iget-object v9, v0, Llibs/gy3;->e:[B
 
     .line 51
@@ -463,7 +463,7 @@
     add-int/2addr v2, v3
 
     .line 57
-    if-ne v2, v4, :cond_63
+    if-ne v2, v4, :cond_8
 
     .line 58
     .line 59
@@ -471,7 +471,7 @@
 
     .line 60
     .line 61
-    if-ne v2, v4, :cond_41
+    if-ne v2, v4, :cond_4
 
     .line 62
     .line 63
@@ -482,31 +482,31 @@
     const/4 v2, 0x0
 
     .line 66
-    :cond_41
+    :cond_4
     iget v3, v0, Llibs/gy3;->g:I
 
     .line 67
     .line 68
-    if-le v2, v3, :cond_46
+    if-le v2, v3, :cond_5
 
     .line 69
     .line 70
     move v2, v3
 
     .line 71
-    :cond_46
-    if-eqz v2, :cond_4b
+    :cond_5
+    if-eqz v2, :cond_6
 
     .line 72
     .line 73
-    if-ne p1, v6, :cond_4b
+    if-ne p1, v6, :cond_6
 
     .line 74
     .line 75
     const/4 p1, 0x0
 
     .line 76
-    :cond_4b
+    :cond_6
     sub-int/2addr v3, v2
 
     .line 77
@@ -528,11 +528,11 @@
 
     .line 84
     .line 85
-    if-eqz v8, :cond_5d
+    if-eqz v8, :cond_7
 
     .line 86
     .line 87
-    if-lez v2, :cond_5d
+    if-lez v2, :cond_7
 
     .line 88
     .line 89
@@ -545,7 +545,7 @@
     .line 92
     .line 93
     .line 94
-    :cond_5d
+    :cond_7
     iget-object v3, v0, Llibs/gy3;->e:[B
 
     .line 95
@@ -558,7 +558,7 @@
     add-int/2addr v1, v2
 
     .line 100
-    :cond_63
+    :cond_8
     iput v1, v0, Llibs/gy3;->f:I
 
     .line 101
@@ -571,7 +571,7 @@
 .end method
 
 .method public final b()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -601,7 +601,7 @@
 
     .line 13
     .line 14
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 15
     .line 16
@@ -618,6 +618,6 @@
     .line 21
     .line 22
     .line 23
-    :cond_16
+    :cond_0
     return-void
 .end method

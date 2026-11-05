@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/security/spec/ECPrivateKeySpec;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,7 +29,7 @@
     .line 2
     .line 3
     .line 4
-    :try_start_3
+    :try_start_0
     invoke-virtual {p1}, Ljava/security/spec/ECPrivateKeySpec;->getParams()Ljava/security/spec/ECParameterSpec;
 
     .line 5
@@ -99,15 +99,15 @@
     .line 37
     .line 38
     iput-object v0, p0, Lorg/conscrypt/OpenSSLECPrivateKey;->key:Lorg/conscrypt/OpenSSLKey;
-    :try_end_27
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_27} :catch_28
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 39
     .line 40
     return-void
 
     .line 41
-    :catch_28
+    :catch_0
     move-exception p1
 
     .line 42
@@ -124,7 +124,7 @@
 .end method
 
 .method public constructor <init>(Lorg/conscrypt/OpenSSLECGroupContext;Lorg/conscrypt/OpenSSLKey;)V
-    .registers 3
+    .locals 0
 
     .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -139,7 +139,7 @@
 .end method
 
 .method public constructor <init>(Lorg/conscrypt/OpenSSLKey;)V
-    .registers 6
+    .locals 4
 
     .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -171,7 +171,7 @@
 .end method
 
 .method public static getInstance(Ljava/security/interfaces/ECPrivateKey;)Lorg/conscrypt/OpenSSLKey;
-    .registers 5
+    .locals 4
 
     .line 1
     :try_start_0
@@ -199,7 +199,7 @@
     move-result-object v1
 
     .line 13
-    if-nez v1, :cond_13
+    if-nez v1, :cond_0
 
     .line 14
     .line 15
@@ -214,7 +214,7 @@
     return-object p0
 
     .line 20
-    :cond_13
+    :cond_0
     invoke-interface {p0}, Ljava/security/interfaces/ECPrivateKey;->getS()Ljava/math/BigInteger;
 
     .line 21
@@ -255,8 +255,8 @@
 
     .line 39
     invoke-direct {v1, v2, v3}, Lorg/conscrypt/OpenSSLKey;-><init>(J)V
-    :try_end_29
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_29} :catch_2a
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 40
     .line 41
@@ -264,7 +264,7 @@
     return-object v1
 
     .line 43
-    :catch_2a
+    :catch_0
     move-exception p0
 
     .line 44
@@ -281,7 +281,7 @@
 .end method
 
 .method private getPrivateKey()Ljava/math/BigInteger;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/math/BigInteger;
@@ -317,7 +317,7 @@
 .end method
 
 .method private readObject(Ljava/io/ObjectInputStream;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
@@ -337,7 +337,7 @@
 
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     new-instance v0, Lorg/conscrypt/OpenSSLKey;
 
     .line 11
@@ -356,8 +356,8 @@
     .line 18
     .line 19
     iput-object v0, p0, Lorg/conscrypt/OpenSSLECPrivateKey;->key:Lorg/conscrypt/OpenSSLKey;
-    :try_end_14
-    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_9 .. :try_end_14} :catch_2b
+    :try_end_0
+    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 20
     .line 21
@@ -406,7 +406,7 @@
     return-void
 
     .line 44
-    :catch_2b
+    :catch_0
     move-exception p1
 
     .line 45
@@ -423,14 +423,14 @@
 .end method
 
 .method public static wrapJCAPrivateKeyForTLSStackOnly(Ljava/security/PrivateKey;Ljava/security/PublicKey;)Lorg/conscrypt/OpenSSLKey;
-    .registers 5
+    .locals 3
 
     .line 1
     instance-of v0, p0, Ljava/security/interfaces/ECKey;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -449,15 +449,15 @@
     move-result-object v0
 
     .line 12
-    goto :goto_19
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     instance-of v0, p1, Ljava/security/interfaces/ECKey;
 
     .line 14
     .line 15
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     .line 16
     .line 17
@@ -476,15 +476,15 @@
     move-result-object v0
 
     .line 24
-    goto :goto_19
+    goto :goto_0
 
     .line 25
-    :cond_18
+    :cond_1
     const/4 v0, 0x0
 
     .line 26
-    :goto_19
-    if-eqz v0, :cond_20
+    :goto_0
+    if-eqz v0, :cond_2
 
     .line 27
     .line 28
@@ -499,7 +499,7 @@
     return-object p0
 
     .line 33
-    :cond_20
+    :cond_2
     new-instance v0, Ljava/security/InvalidKeyException;
 
     .line 34
@@ -553,14 +553,14 @@
 .end method
 
 .method public static wrapJCAPrivateKeyForTLSStackOnly(Ljava/security/PrivateKey;Ljava/security/spec/ECParameterSpec;)Lorg/conscrypt/OpenSSLKey;
-    .registers 4
+    .locals 2
 
-    if-nez p1, :cond_d
+    if-nez p1, :cond_0
 
     .line 61
     instance-of v0, p0, Ljava/security/interfaces/ECKey;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 62
     move-object p1, p0
@@ -571,18 +571,18 @@
 
     move-result-object p1
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_1
 
     .line 63
-    :try_start_10
+    :try_start_0
     invoke-static {p1}, Lorg/conscrypt/OpenSSLECGroupContext;->getInstance(Ljava/security/spec/ECParameterSpec;)Lorg/conscrypt/OpenSSLECGroupContext;
 
     move-result-object p1
-    :try_end_14
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_10 .. :try_end_14} :catch_23
+    :try_end_0
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 64
     new-instance v0, Lorg/conscrypt/OpenSSLKey;
@@ -603,7 +603,7 @@
     return-object v0
 
     .line 66
-    :catch_23
+    :catch_0
     const-string p0, "Invalid EC parameters: "
 
     invoke-static {p1, p0}, Llibs/t22;->c(Ljava/lang/Object;Ljava/lang/String;)V
@@ -611,7 +611,7 @@
     return-object v0
 
     .line 67
-    :cond_29
+    :cond_1
     const-string p1, "EC parameters not available: "
 
     invoke-static {p0, p1}, Llibs/t22;->c(Ljava/lang/Object;Ljava/lang/String;)V
@@ -620,7 +620,7 @@
 .end method
 
 .method public static wrapPlatformKey(Ljava/security/interfaces/ECPrivateKey;)Lorg/conscrypt/OpenSSLKey;
-    .registers 3
+    .locals 2
 
     .line 1
     :try_start_0
@@ -638,8 +638,8 @@
     .line 7
     .line 8
     move-result-object v0
-    :try_end_8
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_0 .. :try_end_8} :catch_d
+    :try_end_0
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 9
     invoke-static {p0, v0}, Lorg/conscrypt/OpenSSLECPrivateKey;->wrapPlatformKey(Ljava/security/interfaces/ECPrivateKey;Lorg/conscrypt/OpenSSLECGroupContext;)Lorg/conscrypt/OpenSSLKey;
@@ -653,7 +653,7 @@
     return-object p0
 
     .line 14
-    :catch_d
+    :catch_0
     move-exception p0
 
     .line 15
@@ -674,7 +674,7 @@
 .end method
 
 .method private static wrapPlatformKey(Ljava/security/interfaces/ECPrivateKey;Lorg/conscrypt/OpenSSLECGroupContext;)Lorg/conscrypt/OpenSSLKey;
-    .registers 4
+    .locals 2
 
     .line 23
     new-instance v0, Lorg/conscrypt/OpenSSLKey;
@@ -697,7 +697,7 @@
 .end method
 
 .method private writeObject(Ljava/io/ObjectOutputStream;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLECPrivateKey;->key:Lorg/conscrypt/OpenSSLKey;
@@ -712,7 +712,7 @@
     move-result v0
 
     .line 7
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     .line 8
     .line 9
@@ -737,7 +737,7 @@
     return-void
 
     .line 20
-    :cond_13
+    :cond_0
     new-instance p1, Ljava/io/NotSerializableException;
 
     .line 21
@@ -757,25 +757,25 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 7
+    .locals 5
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v1, p1, Lorg/conscrypt/OpenSSLECPrivateKey;
 
     .line 6
     .line 7
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_1
 
     .line 8
     .line 9
@@ -802,7 +802,7 @@
     return p1
 
     .line 20
-    :cond_13
+    :cond_1
     instance-of v1, p1, Ljava/security/interfaces/ECPrivateKey;
 
     .line 21
@@ -810,14 +810,14 @@
     const/4 v2, 0x0
 
     .line 23
-    if-nez v1, :cond_19
+    if-nez v1, :cond_2
 
     .line 24
     .line 25
     return v2
 
     .line 26
-    :cond_19
+    :cond_2
     check-cast p1, Ljava/security/interfaces/ECPrivateKey;
 
     .line 27
@@ -846,14 +846,14 @@
     move-result v1
 
     .line 40
-    if-nez v1, :cond_2a
+    if-nez v1, :cond_3
 
     .line 41
     .line 42
     return v2
 
     .line 43
-    :cond_2a
+    :cond_3
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLECPrivateKey;->getParams()Ljava/security/spec/ECParameterSpec;
 
     .line 44
@@ -894,7 +894,7 @@
     move-result v3
 
     .line 63
-    if-eqz v3, :cond_67
+    if-eqz v3, :cond_4
 
     .line 64
     .line 65
@@ -922,7 +922,7 @@
     move-result v3
 
     .line 77
-    if-eqz v3, :cond_67
+    if-eqz v3, :cond_4
 
     .line 78
     .line 79
@@ -950,7 +950,7 @@
     move-result v3
 
     .line 91
-    if-eqz v3, :cond_67
+    if-eqz v3, :cond_4
 
     .line 92
     .line 93
@@ -970,19 +970,19 @@
     move-result p1
 
     .line 101
-    if-ne v1, p1, :cond_67
+    if-ne v1, p1, :cond_4
 
     .line 102
     .line 103
     return v0
 
     .line 104
-    :cond_67
+    :cond_4
     return v2
 .end method
 
 .method public getAlgorithm()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "EC"
@@ -993,7 +993,7 @@
 .end method
 
 .method public getEncoded()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLECPrivateKey;->key:Lorg/conscrypt/OpenSSLKey;
@@ -1008,7 +1008,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -1018,7 +1018,7 @@
     return-object v0
 
     .line 11
-    :cond_a
+    :cond_0
     iget-object v0, p0, Lorg/conscrypt/OpenSSLECPrivateKey;->key:Lorg/conscrypt/OpenSSLKey;
 
     .line 12
@@ -1043,7 +1043,7 @@
 .end method
 
 .method public getFormat()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLECPrivateKey;->key:Lorg/conscrypt/OpenSSLKey;
@@ -1058,7 +1058,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -1068,7 +1068,7 @@
     return-object v0
 
     .line 11
-    :cond_a
+    :cond_0
     const-string v0, "PKCS#8"
 
     .line 12
@@ -1077,7 +1077,7 @@
 .end method
 
 .method public getOpenSSLKey()Lorg/conscrypt/OpenSSLKey;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLECPrivateKey;->key:Lorg/conscrypt/OpenSSLKey;
@@ -1088,7 +1088,7 @@
 .end method
 
 .method public getParams()Ljava/security/spec/ECParameterSpec;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLECPrivateKey;->group:Lorg/conscrypt/OpenSSLECGroupContext;
@@ -1107,7 +1107,7 @@
 .end method
 
 .method public getS()Ljava/math/BigInteger;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLECPrivateKey;->key:Lorg/conscrypt/OpenSSLKey;
@@ -1122,7 +1122,7 @@
     move-result v0
 
     .line 7
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 8
     .line 9
@@ -1137,7 +1137,7 @@
     return-object v0
 
     .line 14
-    :cond_d
+    :cond_0
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     .line 15
@@ -1155,7 +1155,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLECPrivateKey;->key:Lorg/conscrypt/OpenSSLKey;
@@ -1190,7 +1190,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

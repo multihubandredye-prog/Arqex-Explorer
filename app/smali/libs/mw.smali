@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 4
+    .locals 2
 
     .line 1
     iput-byte p1, p0, Llibs/mw;->X:B
@@ -28,7 +28,7 @@
     const/4 v0, 0x0
 
     .line 4
-    packed-switch p1, :pswitch_data_7e
+    packed-switch p1, :pswitch_data_0
 
     .line 5
     .line 6
@@ -236,7 +236,7 @@
     return-void
 
     .line 112
-    :pswitch_6f
+    :pswitch_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 113
@@ -266,14 +266,14 @@
     return-void
 
     .line 127
-    :pswitch_data_7e
+    :pswitch_data_0
     .packed-switch 0x3
-        :pswitch_6f
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public synthetic constructor <init>(BZ)V
-    .registers 3
+    .locals 0
 
     .line 127
     iput-byte p1, p0, Llibs/mw;->X:B
@@ -292,7 +292,7 @@
 .end method
 
 .method public static c(I[B)J
-    .registers 7
+    .locals 5
 
     .line 1
     const-wide/16 v0, 0x0
@@ -302,8 +302,8 @@
     const/4 v2, 0x7
 
     .line 4
-    :goto_3
-    if-ltz v2, :cond_13
+    :goto_0
+    if-ltz v2, :cond_0
 
     .line 5
     .line 6
@@ -336,15 +336,15 @@
 
     .line 18
     .line 19
-    goto :goto_3
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     return-wide v0
 .end method
 
 .method public static d(I[B)I
-    .registers 4
+    .locals 2
 
     .line 1
     aget-byte v0, p1, p0
@@ -416,14 +416,14 @@
 .end method
 
 .method public static f(I)Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     const/16 v0, 0x20
 
     .line 2
     .line 3
-    if-ge p0, v0, :cond_1e
+    if-ge p0, v0, :cond_1
 
     .line 4
     .line 5
@@ -435,7 +435,7 @@
 
     .line 8
     .line 9
-    if-ge p0, v1, :cond_d
+    if-ge p0, v1, :cond_0
 
     .line 10
     .line 11
@@ -443,15 +443,15 @@
 
     .line 12
     .line 13
-    goto :goto_f
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     const-string v2, "\\x"
 
     .line 15
     .line 16
-    :goto_f
+    :goto_0
     invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     .line 17
@@ -481,7 +481,7 @@
     return-object p0
 
     .line 31
-    :cond_1e
+    :cond_1
     new-instance v0, Ljava/lang/String;
 
     .line 32
@@ -503,7 +503,7 @@
 
     .line 41
     .line 42
-    if-eq p0, v1, :cond_39
+    if-eq p0, v1, :cond_3
 
     .line 43
     .line 44
@@ -511,7 +511,7 @@
 
     .line 45
     .line 46
-    if-eq p0, v1, :cond_39
+    if-eq p0, v1, :cond_3
 
     .line 47
     .line 48
@@ -519,7 +519,7 @@
 
     .line 49
     .line 50
-    if-eq p0, v1, :cond_39
+    if-eq p0, v1, :cond_3
 
     .line 51
     .line 52
@@ -527,19 +527,19 @@
 
     .line 53
     .line 54
-    if-ne p0, v1, :cond_38
+    if-ne p0, v1, :cond_2
 
     .line 55
     .line 56
-    goto :goto_39
+    goto :goto_1
 
     .line 57
-    :cond_38
+    :cond_2
     return-object v0
 
     .line 58
-    :cond_39
-    :goto_39
+    :cond_3
+    :goto_1
     const-string p0, "\\"
 
     .line 59
@@ -556,21 +556,21 @@
 .end method
 
 .method private final g()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final h()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public static j(JJ)J
-    .registers 8
+    .locals 4
 
     .line 1
     const-wide/16 v0, 0x3f
@@ -607,7 +607,7 @@
 .end method
 
 .method public static k(II)I
-    .registers 3
+    .locals 1
 
     .line 1
     and-int/lit8 p1, p1, 0x1f
@@ -632,18 +632,18 @@
 .end method
 
 .method public static m(JI[B)V
-    .registers 8
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :goto_1
+    :goto_0
     const/16 v1, 0x8
 
     .line 3
     .line 4
-    if-ge v0, v1, :cond_f
+    if-ge v0, v1, :cond_0
 
     .line 5
     .line 6
@@ -668,15 +668,15 @@
 
     .line 14
     .line 15
-    goto :goto_1
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method public static n(II[B)V
-    .registers 5
+    .locals 2
 
     .line 1
     int-to-byte v0, p0
@@ -737,14 +737,14 @@
 
 # virtual methods
 .method public a(ZLlibs/et;)V
-    .registers 15
+    .locals 12
 
     .line 1
     iget-byte v0, p0, Llibs/mw;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_c6
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -753,7 +753,7 @@
 
     .line 7
     .line 8
-    if-eqz v0, :cond_93
+    if-eqz v0, :cond_3
 
     .line 9
     .line 10
@@ -798,11 +798,11 @@
     const/4 v2, 0x0
 
     .line 29
-    :goto_1c
+    :goto_0
     array-length v3, p1
 
     .line 30
-    if-eq v2, v3, :cond_33
+    if-eq v2, v3, :cond_0
 
     .line 31
     .line 32
@@ -847,10 +847,10 @@
 
     .line 50
     .line 51
-    goto :goto_1c
+    goto :goto_0
 
     .line 52
-    :cond_33
+    :cond_0
     iget p1, p0, Llibs/mw;->Y:I
 
     .line 53
@@ -887,7 +887,7 @@
     const/4 p1, 0x1
 
     .line 70
-    :goto_45
+    :goto_1
     iget-object v3, p0, Llibs/mw;->Lambda:Ljava/io/Serializable;
 
     .line 71
@@ -899,7 +899,7 @@
     array-length v4, v3
 
     .line 75
-    if-ge p1, v4, :cond_5b
+    if-ge p1, v4, :cond_1
 
     .line 76
     .line 77
@@ -929,14 +929,14 @@
 
     .line 90
     .line 91
-    goto :goto_45
+    goto :goto_1
 
     .line 92
-    :cond_5b
+    :cond_1
     array-length p1, v3
 
     .line 93
-    if-le p2, p1, :cond_61
+    if-le p2, p1, :cond_2
 
     .line 94
     .line 95
@@ -944,10 +944,10 @@
 
     .line 96
     .line 97
-    goto :goto_64
+    goto :goto_2
 
     .line 98
-    :cond_61
+    :cond_2
     array-length p1, v3
 
     .line 99
@@ -955,7 +955,7 @@
 
     .line 100
     .line 101
-    :goto_64
+    :goto_2
     const-wide/16 v3, 0x0
 
     .line 102
@@ -972,8 +972,8 @@
     const/4 v4, 0x0
 
     .line 107
-    :goto_6a
-    if-ge v1, p1, :cond_9c
+    :goto_3
+    if-ge v1, p1, :cond_4
 
     .line 108
     .line 109
@@ -1063,10 +1063,10 @@
 
     .line 146
     .line 147
-    goto :goto_6a
+    goto :goto_3
 
     .line 148
-    :cond_93
+    :cond_3
     const-string p1, "invalid parameter passed to RC564 init - "
 
     .line 149
@@ -1084,16 +1084,16 @@
     .line 155
     .line 156
     .line 157
-    :cond_9c
+    :cond_4
     return-void
 
     .line 158
-    :pswitch_9d
+    :pswitch_0
     instance-of v0, p2, Llibs/ij2;
 
     .line 159
     .line 160
-    if-eqz v0, :cond_ad
+    if-eqz v0, :cond_5
 
     .line 161
     .line 162
@@ -1118,15 +1118,15 @@
     .line 171
     .line 172
     .line 173
-    goto :goto_b8
+    goto :goto_4
 
     .line 174
-    :cond_ad
+    :cond_5
     instance-of v0, p2, Llibs/hh1;
 
     .line 175
     .line 176
-    if-eqz v0, :cond_bb
+    if-eqz v0, :cond_6
 
     .line 177
     .line 178
@@ -1143,15 +1143,15 @@
     .line 183
     .line 184
     .line 185
-    :goto_b8
+    :goto_4
     iput-boolean p1, p0, Llibs/mw;->Z:Z
 
     .line 186
     .line 187
-    goto :goto_c4
+    goto :goto_5
 
     .line 188
-    :cond_bb
+    :cond_6
     const-string p1, "invalid parameter passed to RC532 init - "
 
     .line 189
@@ -1169,28 +1169,28 @@
     .line 195
     .line 196
     .line 197
-    :goto_c4
+    :goto_5
     return-void
 
     .line 198
     nop
 
     .line 199
-    :pswitch_data_c6
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_9d
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/mw;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_c
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -1202,7 +1202,7 @@
     return-object v0
 
     .line 9
-    :pswitch_8
+    :pswitch_0
     const-string v0, "RC5-32"
 
     .line 10
@@ -1213,14 +1213,14 @@
     nop
 
     .line 13
-    :pswitch_data_c
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_8
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public e(Ljava/lang/String;)I
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
@@ -1238,14 +1238,14 @@
 
     .line 7
     .line 8
-    if-eq v0, v1, :cond_a
+    if-eq v0, v1, :cond_0
 
     .line 9
     .line 10
     return v0
 
     .line 11
-    :cond_a
+    :cond_0
     const/4 v0, 0x1
 
     .line 12
@@ -1285,7 +1285,7 @@
 
     .line 29
     .line 30
-    if-eqz v2, :cond_24
+    if-eqz v2, :cond_1
 
     .line 31
     .line 32
@@ -1300,12 +1300,12 @@
     return p1
 
     .line 37
-    :cond_24
+    :cond_1
     const/16 v2, 0x30
 
     .line 38
     .line 39
-    if-gt v2, v1, :cond_37
+    if-gt v2, v1, :cond_2
 
     .line 40
     .line 41
@@ -1313,7 +1313,7 @@
 
     .line 42
     .line 43
-    if-gt v1, v2, :cond_37
+    if-gt v1, v2, :cond_2
 
     .line 44
     .line 45
@@ -1340,12 +1340,12 @@
     return p1
 
     .line 56
-    :cond_37
+    :cond_2
     const/16 v2, 0x75
 
     .line 57
     .line 58
-    if-eq v1, v2, :cond_45
+    if-eq v1, v2, :cond_4
 
     .line 59
     .line 60
@@ -1353,14 +1353,14 @@
 
     .line 61
     .line 62
-    if-ne v1, v2, :cond_40
+    if-ne v1, v2, :cond_3
 
     .line 63
     .line 64
-    goto :goto_45
+    goto :goto_0
 
     .line 65
-    :cond_40
+    :cond_3
     invoke-virtual {p1, v0}, Ljava/lang/String;->codePointAt(I)I
 
     .line 66
@@ -1372,8 +1372,8 @@
     return p1
 
     .line 70
-    :cond_45
-    :goto_45
+    :cond_4
+    :goto_0
     const/4 v0, 0x2
 
     .line 71
@@ -1401,14 +1401,14 @@
 .end method
 
 .method public i()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/mw;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_c
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -1420,7 +1420,7 @@
     return v0
 
     .line 9
-    :pswitch_8
+    :pswitch_0
     const/16 v0, 0x8
 
     .line 10
@@ -1431,14 +1431,14 @@
     nop
 
     .line 13
-    :pswitch_data_c
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_8
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public l([B)V
-    .registers 13
+    .locals 11
 
     .line 1
     array-length v0, p1
@@ -1464,11 +1464,11 @@
     const/4 v4, 0x0
 
     .line 10
-    :goto_9
+    :goto_0
     array-length v5, p1
 
     .line 11
-    if-eq v4, v5, :cond_1f
+    if-eq v4, v5, :cond_0
 
     .line 12
     .line 13
@@ -1510,10 +1510,10 @@
 
     .line 30
     .line 31
-    goto :goto_9
+    goto :goto_0
 
     .line 32
-    :cond_1f
+    :cond_0
     iget p1, p0, Llibs/mw;->Y:I
 
     .line 33
@@ -1548,7 +1548,7 @@
     const/4 p1, 0x1
 
     .line 48
-    :goto_2f
+    :goto_1
     iget-object v5, p0, Llibs/mw;->Lambda:Ljava/io/Serializable;
 
     .line 49
@@ -1560,7 +1560,7 @@
     array-length v6, v5
 
     .line 53
-    if-ge p1, v6, :cond_43
+    if-ge p1, v6, :cond_1
 
     .line 54
     .line 55
@@ -1588,14 +1588,14 @@
 
     .line 66
     .line 67
-    goto :goto_2f
+    goto :goto_1
 
     .line 68
-    :cond_43
+    :cond_1
     array-length p1, v5
 
     .line 69
-    if-le v0, p1, :cond_49
+    if-le v0, p1, :cond_2
 
     .line 70
     .line 71
@@ -1603,10 +1603,10 @@
 
     .line 72
     .line 73
-    goto :goto_4c
+    goto :goto_2
 
     .line 74
-    :cond_49
+    :cond_2
     array-length p1, v5
 
     .line 75
@@ -1614,7 +1614,7 @@
 
     .line 76
     .line 77
-    :goto_4c
+    :goto_2
     const/4 v5, 0x0
 
     .line 78
@@ -1627,8 +1627,8 @@
     const/4 v8, 0x0
 
     .line 81
-    :goto_50
-    if-ge v3, p1, :cond_77
+    :goto_3
+    if-ge v3, p1, :cond_3
 
     .line 82
     .line 83
@@ -1714,15 +1714,15 @@
 
     .line 118
     .line 119
-    goto :goto_50
+    goto :goto_3
 
     .line 120
-    :cond_77
+    :cond_3
     return-void
 .end method
 
 .method public r(II[B[B)I
-    .registers 26
+    .locals 21
 
     .line 1
     move-object/from16 v0, p0
@@ -1759,7 +1759,7 @@
     const/4 v8, 0x1
 
     .line 17
-    packed-switch v5, :pswitch_data_146
+    packed-switch v5, :pswitch_data_0
 
     .line 18
     .line 19
@@ -1768,7 +1768,7 @@
 
     .line 21
     .line 22
-    if-eqz v5, :cond_5a
+    if-eqz v5, :cond_1
 
     .line 23
     .line 24
@@ -1824,12 +1824,12 @@
     const/4 v1, 0x1
 
     .line 48
-    :goto_2f
+    :goto_0
     iget v3, v0, Llibs/mw;->Y:I
 
     .line 49
     .line 50
-    if-gt v1, v3, :cond_51
+    if-gt v1, v3, :cond_0
 
     .line 51
     .line 52
@@ -1896,10 +1896,10 @@
 
     .line 80
     .line 81
-    goto :goto_2f
+    goto :goto_0
 
     .line 82
-    :cond_51
+    :cond_0
     invoke-static {v9, v10, v2, v4}, Llibs/mw;->m(JI[B)V
 
     .line 83
@@ -1914,10 +1914,10 @@
     .line 88
     .line 89
     .line 90
-    goto :goto_b3
+    goto :goto_2
 
     .line 91
-    :cond_5a
+    :cond_1
     invoke-static {v1, v3}, Llibs/mw;->c(I[B)J
 
     .line 92
@@ -1941,7 +1941,7 @@
 
     .line 101
     .line 102
-    :goto_65
+    :goto_1
     iget-object v3, v0, Llibs/mw;->Lambda:Ljava/io/Serializable;
 
     .line 103
@@ -1950,7 +1950,7 @@
 
     .line 105
     .line 106
-    if-lt v1, v8, :cond_9e
+    if-lt v1, v8, :cond_2
 
     .line 107
     .line 108
@@ -2064,10 +2064,10 @@
 
     .line 157
     .line 158
-    goto :goto_65
+    goto :goto_1
 
     .line 159
-    :cond_9e
+    :cond_2
     const/4 v15, 0x0
 
     .line 160
@@ -2111,7 +2111,7 @@
     .line 178
     .line 179
     .line 180
-    :goto_b3
+    :goto_2
     const/16 v1, 0x10
 
     .line 181
@@ -2119,7 +2119,7 @@
     return v1
 
     .line 183
-    :pswitch_b6
+    :pswitch_0
     const/4 v15, 0x0
 
     .line 184
@@ -2131,7 +2131,7 @@
 
     .line 187
     .line 188
-    if-eqz v5, :cond_101
+    if-eqz v5, :cond_4
 
     .line 189
     .line 190
@@ -2188,12 +2188,12 @@
     const/4 v3, 0x1
 
     .line 215
-    :goto_d6
+    :goto_3
     iget v6, v0, Llibs/mw;->Y:I
 
     .line 216
     .line 217
-    if-gt v3, v6, :cond_f8
+    if-gt v3, v6, :cond_3
 
     .line 218
     .line 219
@@ -2260,10 +2260,10 @@
 
     .line 247
     .line 248
-    goto :goto_d6
+    goto :goto_3
 
     .line 249
-    :cond_f8
+    :cond_3
     invoke-static {v5, v2, v4}, Llibs/mw;->n(II[B)V
 
     .line 250
@@ -2278,10 +2278,10 @@
     .line 255
     .line 256
     .line 257
-    goto :goto_144
+    goto :goto_5
 
     .line 258
-    :cond_101
+    :cond_4
     invoke-static {v1, v3}, Llibs/mw;->d(I[B)I
 
     .line 259
@@ -2306,7 +2306,7 @@
 
     .line 269
     .line 270
-    :goto_10d
+    :goto_4
     iget-object v6, v0, Llibs/mw;->Lambda:Ljava/io/Serializable;
 
     .line 271
@@ -2315,7 +2315,7 @@
 
     .line 273
     .line 274
-    if-lt v3, v8, :cond_132
+    if-lt v3, v8, :cond_5
 
     .line 275
     .line 276
@@ -2387,10 +2387,10 @@
 
     .line 305
     .line 306
-    goto :goto_10d
+    goto :goto_4
 
     .line 307
-    :cond_132
+    :cond_5
     aget v3, v6, v15
 
     .line 308
@@ -2427,21 +2427,21 @@
     .line 323
     .line 324
     .line 325
-    :goto_144
+    :goto_5
     return v16
 
     .line 326
     nop
 
     .line 327
-    :pswitch_data_146
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_b6
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public reset()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/mw;->X:B
@@ -2452,14 +2452,14 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/mw;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_2e
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -2475,7 +2475,7 @@
     return-object v0
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 12
@@ -2544,8 +2544,8 @@
     return-object v0
 
     .line 47
-    :pswitch_data_2e
+    :pswitch_data_0
     .packed-switch 0x3
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method

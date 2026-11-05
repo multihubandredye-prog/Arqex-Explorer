@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/rl3;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/ol3;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/ol3;->X:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_40
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -56,7 +56,7 @@
 
     .line 9
     .line 10
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 11
     .line 12
@@ -68,7 +68,7 @@
     move-result v1
 
     .line 16
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     .line 17
     .line 18
@@ -77,16 +77,16 @@
     .line 19
     .line 20
     .line 21
-    :cond_14
+    :cond_0
     return-void
 
     .line 22
-    :pswitch_15
+    :pswitch_0
     iget-object v0, v1, Llibs/rl3;->List:Llibs/ql3;
 
     .line 23
     .line 24
-    if-eqz v0, :cond_3f
+    if-eqz v0, :cond_2
 
     .line 25
     .line 26
@@ -98,7 +98,7 @@
     move-result v1
 
     .line 30
-    if-nez v1, :cond_3f
+    if-nez v1, :cond_2
 
     .line 31
     .line 32
@@ -114,7 +114,7 @@
 
     .line 37
     .line 38
-    if-eqz v2, :cond_3c
+    if-eqz v2, :cond_1
 
     .line 39
     .line 40
@@ -130,7 +130,7 @@
     move-result v2
 
     .line 46
-    if-nez v2, :cond_3f
+    if-nez v2, :cond_2
 
     .line 47
     .line 48
@@ -142,7 +142,7 @@
     move-result v2
 
     .line 52
-    if-eqz v2, :cond_3c
+    if-eqz v2, :cond_1
 
     .line 53
     .line 54
@@ -154,30 +154,30 @@
     move-result v1
 
     .line 58
-    if-eqz v1, :cond_3c
+    if-eqz v1, :cond_1
 
     .line 59
     .line 60
-    goto :goto_3f
+    goto :goto_0
 
     .line 61
-    :cond_3c
-    :try_start_3c
+    :cond_1
+    :try_start_0
     invoke-virtual {v0}, Landroid/app/Dialog;->show()V
-    :try_end_3f
-    .catch Landroid/view/WindowManager$BadTokenException; {:try_start_3c .. :try_end_3f} :catch_3f
+    :try_end_0
+    .catch Landroid/view/WindowManager$BadTokenException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 62
     .line 63
     .line 64
-    :catch_3f
-    :cond_3f
-    :goto_3f
+    :catch_0
+    :cond_2
+    :goto_0
     return-void
 
     .line 65
-    :pswitch_data_40
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_15
+        :pswitch_0
     .end packed-switch
 .end method

@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Lcom/mixplorer/activities/BrowseActivity;J)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/hf2;->c:Ljava/lang/String;
@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public final e(Llibs/rp0;)Z
-    .registers 8
+    .locals 6
 
     .line 1
     invoke-static {}, Llibs/su0;->c()Z
@@ -57,7 +57,7 @@
     const/4 v1, 0x0
 
     .line 6
-    if-nez v0, :cond_67
+    if-nez v0, :cond_2
 
     .line 7
     .line 8
@@ -117,7 +117,7 @@
 
     .line 35
     .line 36
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_0
 
     .line 37
     .line 38
@@ -129,7 +129,7 @@
     return v1
 
     .line 42
-    :cond_29
+    :cond_0
     const-wide/16 v2, 0x0
 
     .line 43
@@ -191,7 +191,7 @@
 
     .line 72
     .line 73
-    if-eqz p1, :cond_58
+    if-eqz p1, :cond_1
 
     .line 74
     .line 75
@@ -223,7 +223,7 @@
     .line 87
     .line 88
     .line 89
-    :cond_58
+    :cond_1
     iget-wide v2, p0, Llibs/hf2;->b:J
 
     .line 90
@@ -255,7 +255,7 @@
     return v1
 
     .line 104
-    :cond_67
+    :cond_2
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 105

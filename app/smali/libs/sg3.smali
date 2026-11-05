@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(ZLlibs/rp0;Ljava/lang/String;Llibs/zl0;)V
-    .registers 24
+    .locals 19
 
     .line 1
     move-object/from16 v0, p0
@@ -163,7 +163,7 @@
 
     .line 69
     .line 70
-    if-eqz v6, :cond_5a
+    if-eqz v6, :cond_0
 
     .line 71
     .line 72
@@ -203,10 +203,10 @@
 
     .line 89
     .line 90
-    goto :goto_5d
+    goto :goto_0
 
     .line 91
-    :cond_5a
+    :cond_0
     move/from16 v18, v6
 
     .line 92
@@ -214,28 +214,28 @@
     const/4 v5, 0x0
 
     .line 94
-    :goto_5d
-    if-eqz v9, :cond_9b
+    :goto_0
+    if-eqz v9, :cond_3
 
     .line 95
     .line 96
-    if-eqz v11, :cond_9b
+    if-eqz v11, :cond_3
 
     .line 97
     .line 98
-    if-nez v7, :cond_9b
+    if-nez v7, :cond_3
 
     .line 99
     .line 100
-    if-nez v8, :cond_9b
+    if-nez v8, :cond_3
 
     .line 101
     .line 102
-    if-nez v12, :cond_9b
+    if-nez v12, :cond_3
 
     .line 103
     .line 104
-    if-nez v14, :cond_9b
+    if-nez v14, :cond_3
 
     .line 105
     .line 106
@@ -267,7 +267,7 @@
     move-result v2
 
     .line 120
-    if-eqz v2, :cond_86
+    if-eqz v2, :cond_1
 
     .line 121
     .line 122
@@ -290,26 +290,26 @@
     move-result v3
 
     .line 131
-    if-eqz v3, :cond_86
+    if-eqz v3, :cond_1
 
     .line 132
     .line 133
     const/4 v3, 0x1
 
     .line 134
-    goto :goto_87
+    goto :goto_1
 
     .line 135
-    :cond_86
+    :cond_1
     const/4 v3, 0x0
 
     .line 136
-    :goto_87
+    :goto_1
     iput-boolean v3, v0, Llibs/sg3;->d:Z
 
     .line 137
     .line 138
-    if-eqz v2, :cond_97
+    if-eqz v2, :cond_2
 
     .line 139
     .line 140
@@ -332,18 +332,18 @@
     move-result v1
 
     .line 149
-    if-eqz v1, :cond_97
+    if-eqz v1, :cond_2
 
     .line 150
     .line 151
-    goto :goto_98
+    goto :goto_2
 
     .line 152
-    :cond_97
+    :cond_2
     const/4 v15, 0x0
 
     .line 153
-    :goto_98
+    :goto_2
     iput-boolean v15, v0, Llibs/sg3;->e:Z
 
     .line 154
@@ -351,28 +351,28 @@
     return-void
 
     .line 156
-    :cond_9b
-    if-eqz v12, :cond_d9
+    :cond_3
+    if-eqz v12, :cond_6
 
     .line 157
     .line 158
-    if-eqz v14, :cond_d9
+    if-eqz v14, :cond_6
 
     .line 159
     .line 160
-    if-nez v7, :cond_d9
+    if-nez v7, :cond_6
 
     .line 161
     .line 162
-    if-nez v8, :cond_d9
+    if-nez v8, :cond_6
 
     .line 163
     .line 164
-    if-nez v9, :cond_d9
+    if-nez v9, :cond_6
 
     .line 165
     .line 166
-    if-nez v11, :cond_d9
+    if-nez v11, :cond_6
 
     .line 167
     .line 168
@@ -404,7 +404,7 @@
     move-result v2
 
     .line 182
-    if-eqz v2, :cond_c4
+    if-eqz v2, :cond_4
 
     .line 183
     .line 184
@@ -427,26 +427,26 @@
     move-result v3
 
     .line 193
-    if-eqz v3, :cond_c4
+    if-eqz v3, :cond_4
 
     .line 194
     .line 195
     const/4 v3, 0x1
 
     .line 196
-    goto :goto_c5
+    goto :goto_3
 
     .line 197
-    :cond_c4
+    :cond_4
     const/4 v3, 0x0
 
     .line 198
-    :goto_c5
+    :goto_3
     iput-boolean v3, v0, Llibs/sg3;->d:Z
 
     .line 199
     .line 200
-    if-eqz v2, :cond_d5
+    if-eqz v2, :cond_5
 
     .line 201
     .line 202
@@ -469,18 +469,18 @@
     move-result v1
 
     .line 211
-    if-eqz v1, :cond_d5
+    if-eqz v1, :cond_5
 
     .line 212
     .line 213
-    goto :goto_d6
+    goto :goto_4
 
     .line 214
-    :cond_d5
+    :cond_5
     const/4 v15, 0x0
 
     .line 215
-    :goto_d6
+    :goto_4
     iput-boolean v15, v0, Llibs/sg3;->e:Z
 
     .line 216
@@ -488,28 +488,28 @@
     return-void
 
     .line 218
-    :cond_d9
-    if-eqz v7, :cond_10d
+    :cond_6
+    if-eqz v7, :cond_9
 
     .line 219
     .line 220
-    if-eqz v8, :cond_10d
+    if-eqz v8, :cond_9
 
     .line 221
     .line 222
-    if-nez v9, :cond_10d
+    if-nez v9, :cond_9
 
     .line 223
     .line 224
-    if-nez v11, :cond_10d
+    if-nez v11, :cond_9
 
     .line 225
     .line 226
-    if-nez v12, :cond_10d
+    if-nez v12, :cond_9
 
     .line 227
     .line 228
-    if-nez v14, :cond_10d
+    if-nez v14, :cond_9
 
     .line 229
     .line 230
@@ -541,7 +541,7 @@
     move-result v2
 
     .line 244
-    if-eqz v2, :cond_fd
+    if-eqz v2, :cond_7
 
     .line 245
     .line 246
@@ -553,26 +553,26 @@
     move-result v3
 
     .line 250
-    if-eqz v3, :cond_fd
+    if-eqz v3, :cond_7
 
     .line 251
     .line 252
     const/4 v3, 0x1
 
     .line 253
-    goto :goto_fe
+    goto :goto_5
 
     .line 254
-    :cond_fd
+    :cond_7
     const/4 v3, 0x0
 
     .line 255
-    :goto_fe
+    :goto_5
     iput-boolean v3, v0, Llibs/sg3;->d:Z
 
     .line 256
     .line 257
-    if-eqz v2, :cond_109
+    if-eqz v2, :cond_8
 
     .line 258
     .line 259
@@ -584,18 +584,18 @@
     move-result v1
 
     .line 263
-    if-eqz v1, :cond_109
+    if-eqz v1, :cond_8
 
     .line 264
     .line 265
-    goto :goto_10a
+    goto :goto_6
 
     .line 266
-    :cond_109
+    :cond_8
     const/4 v15, 0x0
 
     .line 267
-    :goto_10a
+    :goto_6
     iput-boolean v15, v0, Llibs/sg3;->e:Z
 
     .line 268
@@ -603,41 +603,41 @@
     return-void
 
     .line 270
-    :cond_10d
-    if-nez v7, :cond_1aa
+    :cond_9
+    if-nez v7, :cond_17
 
     .line 271
     .line 272
-    if-nez v8, :cond_1aa
+    if-nez v8, :cond_17
 
     .line 273
     .line 274
-    if-nez v9, :cond_1aa
+    if-nez v9, :cond_17
 
     .line 275
     .line 276
-    if-nez v11, :cond_1aa
+    if-nez v11, :cond_17
 
     .line 277
     .line 278
-    if-nez v12, :cond_1aa
+    if-nez v12, :cond_17
 
     .line 279
     .line 280
-    if-eqz v14, :cond_11b
+    if-eqz v14, :cond_a
 
     .line 281
     .line 282
-    goto/16 :goto_1aa
+    goto/16 :goto_10
 
     .line 283
     .line 284
-    :cond_11b
-    if-eqz v17, :cond_177
+    :cond_a
+    if-eqz v17, :cond_12
 
     .line 285
     .line 286
-    if-eqz v18, :cond_177
+    if-eqz v18, :cond_12
 
     .line 287
     .line 288
@@ -674,7 +674,7 @@
     move-result v4
 
     .line 305
-    if-eqz v4, :cond_144
+    if-eqz v4, :cond_b
 
     .line 306
     .line 307
@@ -686,7 +686,7 @@
     move-result v6
 
     .line 311
-    if-nez v6, :cond_144
+    if-nez v6, :cond_b
 
     .line 312
     .line 313
@@ -706,26 +706,26 @@
     move-result v6
 
     .line 321
-    if-eqz v6, :cond_144
+    if-eqz v6, :cond_b
 
     .line 322
     .line 323
     const/4 v6, 0x1
 
     .line 324
-    goto :goto_145
+    goto :goto_7
 
     .line 325
-    :cond_144
+    :cond_b
     const/4 v6, 0x0
 
     .line 326
-    :goto_145
+    :goto_7
     iput-boolean v6, v0, Llibs/sg3;->c:Z
 
     .line 327
     .line 328
-    if-eqz v4, :cond_157
+    if-eqz v4, :cond_d
 
     .line 329
     .line 330
@@ -737,7 +737,7 @@
     move-result v2
 
     .line 334
-    if-nez v2, :cond_155
+    if-nez v2, :cond_c
 
     .line 335
     .line 336
@@ -749,27 +749,27 @@
     move-result v2
 
     .line 340
-    if-nez v2, :cond_157
+    if-nez v2, :cond_d
 
     .line 341
     .line 342
-    :cond_155
+    :cond_c
     const/4 v2, 0x1
 
     .line 343
-    goto :goto_158
+    goto :goto_8
 
     .line 344
-    :cond_157
+    :cond_d
     const/4 v2, 0x0
 
     .line 345
-    :goto_158
+    :goto_8
     iput-boolean v2, v0, Llibs/sg3;->d:Z
 
     .line 346
     .line 347
-    if-eqz v1, :cond_162
+    if-eqz v1, :cond_e
 
     .line 348
     .line 349
@@ -777,22 +777,22 @@
 
     .line 350
     .line 351
-    if-ne v1, v15, :cond_162
+    if-ne v1, v15, :cond_e
 
     .line 352
     .line 353
     const/4 v1, 0x1
 
     .line 354
-    goto :goto_163
+    goto :goto_9
 
     .line 355
-    :cond_162
+    :cond_e
     const/4 v1, 0x0
 
     .line 356
-    :goto_163
-    if-eqz v5, :cond_16b
+    :goto_9
+    if-eqz v5, :cond_f
 
     .line 357
     .line 358
@@ -800,42 +800,42 @@
 
     .line 359
     .line 360
-    if-ne v2, v15, :cond_16b
+    if-ne v2, v15, :cond_f
 
     .line 361
     .line 362
     const/4 v2, 0x1
 
     .line 363
-    goto :goto_16c
+    goto :goto_a
 
     .line 364
-    :cond_16b
+    :cond_f
     const/4 v2, 0x0
 
     .line 365
-    :goto_16c
+    :goto_a
     iput-boolean v2, v0, Llibs/sg3;->h:Z
 
     .line 366
     .line 367
-    if-nez v2, :cond_174
+    if-nez v2, :cond_11
 
     .line 368
     .line 369
-    if-eqz v1, :cond_173
+    if-eqz v1, :cond_10
 
     .line 370
     .line 371
-    goto :goto_174
+    goto :goto_b
 
     .line 372
-    :cond_173
+    :cond_10
     const/4 v15, 0x0
 
     .line 373
-    :cond_174
-    :goto_174
+    :cond_11
+    :goto_b
     iput-boolean v15, v0, Llibs/sg3;->e:Z
 
     .line 374
@@ -843,12 +843,12 @@
     return-void
 
     .line 376
-    :cond_177
-    if-nez v17, :cond_1aa
+    :cond_12
+    if-nez v17, :cond_17
 
     .line 377
     .line 378
-    if-nez v18, :cond_1aa
+    if-nez v18, :cond_17
 
     .line 379
     .line 380
@@ -860,22 +860,22 @@
     move-result-object v2
 
     .line 384
-    if-ne v4, v2, :cond_183
+    if-ne v4, v2, :cond_13
 
     .line 385
     .line 386
     const/4 v2, 0x1
 
     .line 387
-    goto :goto_184
+    goto :goto_c
 
     .line 388
-    :cond_183
+    :cond_13
     const/4 v2, 0x0
 
     .line 389
-    :goto_184
-    if-eqz v2, :cond_18e
+    :goto_c
+    if-eqz v2, :cond_14
 
     .line 390
     .line 391
@@ -887,26 +887,26 @@
     move-result v3
 
     .line 395
-    if-eqz v3, :cond_18e
+    if-eqz v3, :cond_14
 
     .line 396
     .line 397
     const/4 v3, 0x1
 
     .line 398
-    goto :goto_18f
+    goto :goto_d
 
     .line 399
-    :cond_18e
+    :cond_14
     const/4 v3, 0x0
 
     .line 400
-    :goto_18f
+    :goto_d
     iput-boolean v3, v0, Llibs/sg3;->a:Z
 
     .line 401
     .line 402
-    if-eqz v2, :cond_19b
+    if-eqz v2, :cond_15
 
     .line 403
     .line 404
@@ -918,26 +918,26 @@
     move-result v3
 
     .line 408
-    if-eqz v3, :cond_19b
+    if-eqz v3, :cond_15
 
     .line 409
     .line 410
     const/4 v3, 0x1
 
     .line 411
-    goto :goto_19c
+    goto :goto_e
 
     .line 412
-    :cond_19b
+    :cond_15
     const/4 v3, 0x0
 
     .line 413
-    :goto_19c
+    :goto_e
     iput-boolean v3, v0, Llibs/sg3;->e:Z
 
     .line 414
     .line 415
-    if-eqz v2, :cond_1a7
+    if-eqz v2, :cond_16
 
     .line 416
     .line 417
@@ -949,29 +949,29 @@
     move-result v1
 
     .line 421
-    if-eqz v1, :cond_1a7
+    if-eqz v1, :cond_16
 
     .line 422
     .line 423
-    goto :goto_1a8
+    goto :goto_f
 
     .line 424
-    :cond_1a7
+    :cond_16
     const/4 v15, 0x0
 
     .line 425
-    :goto_1a8
+    :goto_f
     iput-boolean v15, v0, Llibs/sg3;->d:Z
 
     .line 426
     .line 427
-    :cond_1aa
-    :goto_1aa
+    :cond_17
+    :goto_10
     return-void
 .end method
 
 .method public static a(Ljava/lang/String;)Z
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-static {}, Llibs/t43;->Work()Z
@@ -982,7 +982,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -1033,11 +1033,11 @@
     move-result v0
 
     .line 32
-    if-nez v0, :cond_42
+    if-nez v0, :cond_1
 
     .line 33
     .line 34
-    :cond_21
+    :cond_0
     invoke-static {}, Llibs/t43;->Run()Z
 
     .line 35
@@ -1046,7 +1046,7 @@
     move-result v0
 
     .line 38
-    if-eqz v0, :cond_44
+    if-eqz v0, :cond_2
 
     .line 39
     .line 40
@@ -1097,18 +1097,18 @@
     move-result p0
 
     .line 65
-    if-eqz p0, :cond_44
+    if-eqz p0, :cond_2
 
     .line 66
     .line 67
-    :cond_42
+    :cond_1
     const/4 p0, 0x1
 
     .line 68
     return p0
 
     .line 69
-    :cond_44
+    :cond_2
     const/4 p0, 0x0
 
     .line 70

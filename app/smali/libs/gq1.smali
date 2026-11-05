@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic a(Landroid/graphics/BitmapRegionDecoder;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/graphics/BitmapRegionDecoder;->getWidth()I
@@ -20,7 +20,7 @@
 .end method
 
 .method public static bridge synthetic b(Landroid/graphics/BitmapRegionDecoder;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2}, Landroid/graphics/BitmapRegionDecoder;->decodeRegion(Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
@@ -35,7 +35,7 @@
 .end method
 
 .method public static bridge synthetic c(Ljava/io/FileDescriptor;)Landroid/graphics/BitmapRegionDecoder;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -53,7 +53,7 @@
 .end method
 
 .method public static bridge synthetic d(Ljava/lang/Object;)Landroid/graphics/BitmapRegionDecoder;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Landroid/graphics/BitmapRegionDecoder;
@@ -64,7 +64,7 @@
 .end method
 
 .method public static bridge synthetic e(Llibs/ep1;)Landroid/graphics/BitmapRegionDecoder;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -82,7 +82,7 @@
 .end method
 
 .method public static bridge synthetic f(Ljava/lang/Object;)Landroid/media/MediaMetadataRetriever;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Landroid/media/MediaMetadataRetriever;
@@ -93,7 +93,7 @@
 .end method
 
 .method public static bridge synthetic g(Landroid/media/MediaMetadataRetriever;I)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/media/MediaMetadataRetriever;->extractMetadata(I)Ljava/lang/String;
@@ -108,7 +108,7 @@
 .end method
 
 .method public static bridge synthetic h(Landroid/graphics/BitmapRegionDecoder;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/graphics/BitmapRegionDecoder;->recycle()V
@@ -120,7 +120,7 @@
 .end method
 
 .method public static bridge synthetic i(Landroid/media/MediaMetadataRetriever;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/media/MediaMetadataRetriever;->release()V
@@ -132,7 +132,7 @@
 .end method
 
 .method public static bridge synthetic j(Landroid/graphics/BitmapRegionDecoder;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/graphics/BitmapRegionDecoder;->isRecycled()Z
@@ -147,7 +147,7 @@
 .end method
 
 .method public static bridge synthetic k(Ljava/lang/Object;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     instance-of p0, p0, Landroid/media/MediaMetadataRetriever;
@@ -158,7 +158,7 @@
 .end method
 
 .method public static bridge synthetic l(Landroid/graphics/BitmapRegionDecoder;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/graphics/BitmapRegionDecoder;->getHeight()I

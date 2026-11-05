@@ -20,7 +20,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/ia2;ZIIB)V
-    .registers 6
+    .locals 0
 
     .line 1
     iput-byte p5, p0, Llibs/pm1;->a:B
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public final onDismiss(Landroid/content/DialogInterface;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-byte p1, p0, Llibs/pm1;->a:B
@@ -77,7 +77,7 @@
 
     .line 10
     .line 11
-    packed-switch p1, :pswitch_data_34
+    packed-switch p1, :pswitch_data_0
 
     .line 12
     .line 13
@@ -90,15 +90,15 @@
 
     .line 17
     .line 18
-    if-eqz v2, :cond_14
+    if-eqz v2, :cond_0
 
     .line 19
     .line 20
-    goto :goto_1f
+    goto :goto_0
 
     .line 21
-    :cond_14
-    :try_start_14
+    :cond_0
+    :try_start_0
     iget-object p1, v3, Lcom/mixplorer/activities/SQLiteEditorActivity;->Romeo:Llibs/rn0;
 
     .line 22
@@ -116,18 +116,18 @@
     .line 28
     .line 29
     invoke-virtual {p1, v1, v0}, Llibs/bl1;->Any(II)V
-    :try_end_1f
-    .catchall {:try_start_14 .. :try_end_1f} :catchall_1f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 30
     .line 31
     .line 32
-    :catchall_1f
-    :goto_1f
+    :catchall_0
+    :goto_0
     return-void
 
     .line 33
-    :pswitch_20
+    :pswitch_0
     check-cast v3, Lcom/mixplorer/activities/LocalizeActivity;
 
     .line 34
@@ -136,15 +136,15 @@
 
     .line 36
     .line 37
-    if-eqz v2, :cond_27
+    if-eqz v2, :cond_1
 
     .line 38
     .line 39
-    goto :goto_32
+    goto :goto_1
 
     .line 40
-    :cond_27
-    :try_start_27
+    :cond_1
+    :try_start_1
     iget-object p1, v3, Lcom/mixplorer/activities/LocalizeActivity;->Romeo:Llibs/rn0;
 
     .line 41
@@ -162,22 +162,22 @@
     .line 47
     .line 48
     invoke-virtual {p1, v1, v0}, Llibs/bl1;->Any(II)V
-    :try_end_32
-    .catchall {:try_start_27 .. :try_end_32} :catchall_32
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 49
     .line 50
     .line 51
-    :catchall_32
-    :goto_32
+    :catchall_1
+    :goto_1
     return-void
 
     .line 52
     nop
 
     .line 53
-    :pswitch_data_34
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_20
+        :pswitch_0
     .end packed-switch
 .end method

@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/InputStream;I)V
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
@@ -41,7 +41,7 @@
     move-result v0
 
     .line 12
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     .line 13
     .line 14
@@ -66,7 +66,7 @@
     move-object p1, v0
 
     .line 25
-    :cond_18
+    :cond_0
     iput-object p1, p0, Llibs/fp1;->X:Ljava/io/InputStream;
 
     .line 26
@@ -77,7 +77,7 @@
 
 # virtual methods
 .method public final available()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/fp1;->X:Ljava/io/InputStream;
@@ -96,7 +96,7 @@
 .end method
 
 .method public final c(JJ)V
-    .registers 10
+    .locals 5
 
     .line 1
     :goto_0
@@ -104,7 +104,7 @@
 
     .line 2
     .line 3
-    if-gez v0, :cond_1e
+    if-gez v0, :cond_2
 
     .line 4
     .line 5
@@ -132,7 +132,7 @@
 
     .line 16
     .line 17
-    if-nez v4, :cond_1c
+    if-nez v4, :cond_1
 
     .line 18
     .line 19
@@ -147,32 +147,32 @@
     const/4 v1, -0x1
 
     .line 24
-    if-ne v0, v1, :cond_1a
+    if-ne v0, v1, :cond_0
 
     .line 25
     .line 26
-    goto :goto_1e
+    goto :goto_1
 
     .line 27
-    :cond_1a
+    :cond_0
     const-wide/16 v0, 0x1
 
     .line 28
     .line 29
-    :cond_1c
+    :cond_1
     add-long/2addr p1, v0
 
     .line 30
     goto :goto_0
 
     .line 31
-    :cond_1e
-    :goto_1e
+    :cond_2
+    :goto_1
     return-void
 .end method
 
 .method public final close()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/fp1;->X:Ljava/io/InputStream;
@@ -188,7 +188,7 @@
 .end method
 
 .method public final mark(I)V
-    .registers 11
+    .locals 9
 
     .line 1
     iget-wide v0, p0, Llibs/fp1;->Y:J
@@ -209,14 +209,14 @@
 
     .line 8
     .line 9
-    if-gez p1, :cond_3c
+    if-gez p1, :cond_1
 
     .line 10
     .line 11
-    :try_start_a
+    :try_start_0
     iget-wide v6, p0, Llibs/fp1;->Z:J
-    :try_end_c
-    .catch Ljava/io/IOException; {:try_start_a .. :try_end_c} :catch_29
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 12
     .line 13
@@ -228,7 +228,7 @@
 
     .line 16
     .line 17
-    if-gez v8, :cond_2b
+    if-gez v8, :cond_0
 
     .line 18
     .line 19
@@ -236,11 +236,11 @@
 
     .line 20
     .line 21
-    if-gtz v6, :cond_2b
+    if-gtz v6, :cond_0
 
     .line 22
     .line 23
-    :try_start_16
+    :try_start_1
     invoke-virtual {p1}, Ljava/io/InputStream;->reset()V
 
     .line 24
@@ -275,17 +275,17 @@
     .line 39
     .line 40
     .line 41
-    goto :goto_33
+    goto :goto_0
 
     .line 42
-    :catch_29
+    :catch_0
     move-exception p1
 
     .line 43
-    goto :goto_36
+    goto :goto_1
 
     .line 44
-    :cond_2b
+    :cond_0
     iput-wide v0, p0, Llibs/fp1;->Z:J
 
     .line 45
@@ -302,17 +302,17 @@
     .line 50
     .line 51
     .line 52
-    :goto_33
+    :goto_0
     iput-wide v2, p0, Llibs/fp1;->Lambda:J
-    :try_end_35
-    .catch Ljava/io/IOException; {:try_start_16 .. :try_end_35} :catch_29
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 53
     .line 54
-    goto :goto_3c
+    goto :goto_2
 
     .line 55
-    :goto_36
+    :goto_1
     const-string v0, "Unable to mark: "
 
     .line 56
@@ -325,8 +325,8 @@
     return-void
 
     .line 61
-    :cond_3c
-    :goto_3c
+    :cond_1
+    :goto_2
     iget-wide v0, p0, Llibs/fp1;->Y:J
 
     .line 62
@@ -339,7 +339,7 @@
 .end method
 
 .method public final markSupported()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/fp1;->X:Ljava/io/InputStream;
@@ -358,7 +358,7 @@
 .end method
 
 .method public final read()I
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/fp1;->X:Ljava/io/InputStream;
@@ -376,7 +376,7 @@
     const/4 v1, -0x1
 
     .line 8
-    if-eq v0, v1, :cond_10
+    if-eq v0, v1, :cond_0
 
     .line 9
     .line 10
@@ -395,12 +395,12 @@
 
     .line 16
     .line 17
-    :cond_10
+    :cond_0
     return v0
 .end method
 
 .method public final read([B)I
-    .registers 6
+    .locals 4
 
     .line 18
     iget-object v0, p0, Llibs/fp1;->X:Ljava/io/InputStream;
@@ -411,7 +411,7 @@
 
     const/4 v0, -0x1
 
-    if-eq p1, v0, :cond_f
+    if-eq p1, v0, :cond_0
 
     .line 19
     iget-wide v0, p0, Llibs/fp1;->Y:J
@@ -422,12 +422,12 @@
 
     iput-wide v0, p0, Llibs/fp1;->Y:J
 
-    :cond_f
+    :cond_0
     return p1
 .end method
 
 .method public final read([BII)I
-    .registers 6
+    .locals 2
 
     .line 20
     iget-object v0, p0, Llibs/fp1;->X:Ljava/io/InputStream;
@@ -438,7 +438,7 @@
 
     const/4 p2, -0x1
 
-    if-eq p1, p2, :cond_f
+    if-eq p1, p2, :cond_0
 
     .line 21
     iget-wide p2, p0, Llibs/fp1;->Y:J
@@ -449,12 +449,12 @@
 
     iput-wide p2, p0, Llibs/fp1;->Y:J
 
-    :cond_f
+    :cond_0
     return p1
 .end method
 
 .method public final reset()V
-    .registers 8
+    .locals 7
 
     .line 1
     iget-wide v0, p0, Llibs/fp1;->Mu:J
@@ -473,7 +473,7 @@
 
     .line 8
     .line 9
-    if-gtz v6, :cond_1d
+    if-gtz v6, :cond_0
 
     .line 10
     .line 11
@@ -485,7 +485,7 @@
 
     .line 14
     .line 15
-    if-ltz v4, :cond_1d
+    if-ltz v4, :cond_0
 
     .line 16
     .line 17
@@ -514,7 +514,7 @@
     return-void
 
     .line 30
-    :cond_1d
+    :cond_0
     const-string v0, "Cannot reset"
 
     .line 31
@@ -528,7 +528,7 @@
 .end method
 
 .method public final skip(J)J
-    .registers 5
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/fp1;->X:Ljava/io/InputStream;

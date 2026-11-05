@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/b02;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/a02;->j:Llibs/b02;
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final varargs a([Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 16
+    .locals 14
 
     .line 1
     const/4 v1, 0x0
@@ -36,7 +36,7 @@
     const/4 v2, 0x1
 
     .line 3
-    :try_start_2
+    :try_start_0
     aget-object v0, p1, v1
 
     .line 4
@@ -51,8 +51,8 @@
     .line 9
     .line 10
     move-result v0
-    :try_end_a
-    .catchall {:try_start_2 .. :try_end_a} :catchall_21
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 11
     const/4 v3, 0x4
@@ -68,17 +68,17 @@
 
     .line 15
     .line 16
-    packed-switch v0, :pswitch_data_16a
+    packed-switch v0, :pswitch_data_0
 
     .line 17
     .line 18
     .line 19
-    goto/16 :goto_167
+    goto/16 :goto_1
 
     .line 20
     .line 21
-    :pswitch_14
-    :try_start_14
+    :pswitch_0
+    :try_start_1
     aget-object v0, p1, v2
 
     .line 22
@@ -106,18 +106,18 @@
     return-object p1
 
     .line 34
-    :catchall_21
+    :catchall_0
     move-exception v0
 
     .line 35
     move-object p1, v0
 
     .line 36
-    goto/16 :goto_158
+    goto/16 :goto_0
 
     .line 37
     .line 38
-    :pswitch_25
+    :pswitch_1
     aget-object v0, p1, v2
 
     .line 39
@@ -204,7 +204,7 @@
 
     .line 77
     .line 78
-    if-eqz p1, :cond_6a
+    if-eqz p1, :cond_0
 
     .line 79
     .line 80
@@ -267,7 +267,7 @@
     return-object p1
 
     .line 107
-    :cond_6a
+    :cond_0
     invoke-virtual/range {v6 .. v13}, Llibs/b02;->Firebase(Llibs/hh3;JLjava/lang/String;Lcom/mixplorer/ProgressListener;Ljava/util/Properties;Z)Llibs/rp0;
 
     .line 108
@@ -279,7 +279,7 @@
     return-object p1
 
     .line 112
-    :pswitch_6f
+    :pswitch_2
     aget-object v0, p1, v2
 
     .line 113
@@ -323,7 +323,7 @@
     return-object p1
 
     .line 133
-    :pswitch_84
+    :pswitch_3
     aget-object v0, p1, v2
 
     .line 134
@@ -406,7 +406,7 @@
     return-object p1
 
     .line 173
-    :pswitch_ac
+    :pswitch_4
     aget-object v0, p1, v2
 
     .line 174
@@ -450,7 +450,7 @@
     return-object p1
 
     .line 194
-    :pswitch_c1
+    :pswitch_5
     aget-object v0, p1, v2
 
     .line 195
@@ -510,7 +510,7 @@
     return-object p1
 
     .line 223
-    :pswitch_de
+    :pswitch_6
     aget-object v0, p1, v2
 
     .line 224
@@ -570,7 +570,7 @@
     return-object p1
 
     .line 252
-    :pswitch_fb
+    :pswitch_7
     aget-object v0, p1, v2
 
     .line 253
@@ -630,7 +630,7 @@
     return-object p1
 
     .line 281
-    :pswitch_118
+    :pswitch_8
     aget-object v0, p1, v2
 
     .line 282
@@ -666,7 +666,7 @@
     return-object p1
 
     .line 298
-    :pswitch_129
+    :pswitch_9
     aget-object v0, p1, v2
 
     .line 299
@@ -694,7 +694,7 @@
     return-object p1
 
     .line 311
-    :pswitch_136
+    :pswitch_a
     aget-object p1, p1, v2
 
     .line 312
@@ -714,7 +714,7 @@
     return-object p1
 
     .line 320
-    :pswitch_13f
+    :pswitch_b
     aget-object v0, p1, v2
 
     .line 321
@@ -761,14 +761,14 @@
     .line 342
     .line 343
     move-result-object p1
-    :try_end_157
-    .catchall {:try_start_14 .. :try_end_157} :catchall_21
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 344
     return-object p1
 
     .line 345
-    :goto_158
+    :goto_0
     invoke-static {p1}, Llibs/vl3;->Map(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 346
@@ -798,7 +798,7 @@
     .line 358
     .line 359
     .line 360
-    :goto_167
+    :goto_1
     const/4 p1, 0x0
 
     .line 361
@@ -808,19 +808,19 @@
     nop
 
     .line 363
-    :pswitch_data_16a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_13f
-        :pswitch_136
-        :pswitch_129
-        :pswitch_118
-        :pswitch_fb
-        :pswitch_de
-        :pswitch_c1
-        :pswitch_ac
-        :pswitch_84
-        :pswitch_6f
-        :pswitch_25
-        :pswitch_14
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

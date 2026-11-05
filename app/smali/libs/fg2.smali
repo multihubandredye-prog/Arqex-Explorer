@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -87,7 +87,7 @@
 
 # virtual methods
 .method public final a(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
-    .registers 14
+    .locals 10
 
     .line 1
     iget-object v0, p0, Llibs/fg2;->b:Ljava/lang/String;
@@ -107,23 +107,23 @@
     .line 8
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     iget-object v3, p0, Llibs/fg2;->f:Ljava/lang/Throwable;
 
     .line 11
     .line 12
-    if-nez v3, :cond_61
+    if-nez v3, :cond_4
 
     .line 13
     .line 14
     iget-object v3, p0, Llibs/fg2;->e:Llibs/lv2;
-    :try_end_f
-    .catch Ljava/lang/InterruptedException; {:try_start_9 .. :try_end_f} :catch_39
-    .catchall {:try_start_9 .. :try_end_f} :catchall_37
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 15
     .line 16
-    if-eqz v3, :cond_15
+    if-eqz v3, :cond_0
 
     .line 17
     .line 18
@@ -135,11 +135,11 @@
     return-object v3
 
     .line 22
-    :cond_15
+    :cond_0
     const/4 v3, 0x2
 
     .line 23
-    :try_start_16
+    :try_start_1
     new-array v4, v3, [Ljava/lang/Object;
 
     .line 24
@@ -163,9 +163,9 @@
     .line 32
     .line 33
     invoke-virtual {v1, v4}, Llibs/bn1;->b([Ljava/lang/Object;)V
-    :try_end_23
-    .catch Ljava/lang/InterruptedException; {:try_start_16 .. :try_end_23} :catch_39
-    .catchall {:try_start_16 .. :try_end_23} :catchall_37
+    :try_end_1
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 34
     .line 35
@@ -182,17 +182,17 @@
 
     .line 41
     .line 42
-    if-nez v9, :cond_3b
+    if-nez v9, :cond_1
 
     .line 43
     .line 44
-    :goto_2b
-    :try_start_2b
+    :goto_0
+    :try_start_2
     iget-object p1, p0, Llibs/fg2;->e:Llibs/lv2;
 
     .line 45
     .line 46
-    if-nez p1, :cond_46
+    if-nez p1, :cond_2
 
     .line 47
     .line 48
@@ -200,7 +200,7 @@
 
     .line 49
     .line 50
-    if-nez p1, :cond_46
+    if-nez p1, :cond_2
 
     .line 51
     .line 52
@@ -209,36 +209,36 @@
     .line 53
     .line 54
     .line 55
-    goto :goto_2b
+    goto :goto_0
 
     .line 56
-    :catchall_37
+    :catchall_0
     move-exception p1
 
     .line 57
-    goto :goto_68
+    goto :goto_2
 
     .line 58
-    :catch_39
+    :catch_0
     move-exception p1
 
     .line 59
-    goto :goto_62
+    goto :goto_1
 
     .line 60
-    :cond_3b
+    :cond_1
     invoke-interface {v4, p1, p2, p3}, Ljava/util/concurrent/locks/Condition;->await(JLjava/util/concurrent/TimeUnit;)Z
 
     .line 61
     .line 62
     .line 63
     move-result p1
-    :try_end_3f
-    .catch Ljava/lang/InterruptedException; {:try_start_2b .. :try_end_3f} :catch_39
-    .catchall {:try_start_2b .. :try_end_3f} :catchall_37
+    :try_end_2
+    .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 64
-    if-nez p1, :cond_46
+    if-nez p1, :cond_2
 
     .line 65
     .line 66
@@ -253,20 +253,20 @@
     return-object p1
 
     .line 71
-    :cond_46
-    :try_start_46
+    :cond_2
+    :try_start_3
     iget-object p1, p0, Llibs/fg2;->f:Ljava/lang/Throwable;
 
     .line 72
     .line 73
-    if-nez p1, :cond_50
+    if-nez p1, :cond_3
 
     .line 74
     .line 75
     iget-object p1, p0, Llibs/fg2;->e:Llibs/lv2;
-    :try_end_4c
-    .catch Ljava/lang/InterruptedException; {:try_start_46 .. :try_end_4c} :catch_39
-    .catchall {:try_start_46 .. :try_end_4c} :catchall_37
+    :try_end_3
+    .catch Ljava/lang/InterruptedException; {:try_start_3 .. :try_end_3} :catch_0
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 76
     .line 77
@@ -278,11 +278,11 @@
     return-object p1
 
     .line 81
-    :cond_50
+    :cond_3
     const/4 p2, 0x3
 
     .line 82
-    :try_start_51
+    :try_start_4
     new-array p2, p2, [Ljava/lang/Object;
 
     .line 83
@@ -315,15 +315,15 @@
     throw p1
 
     .line 98
-    :cond_61
+    :cond_4
     throw v3
-    :try_end_62
-    .catch Ljava/lang/InterruptedException; {:try_start_51 .. :try_end_62} :catch_39
-    .catchall {:try_start_51 .. :try_end_62} :catchall_37
+    :try_end_4
+    .catch Ljava/lang/InterruptedException; {:try_start_4 .. :try_end_4} :catch_0
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 99
-    :goto_62
-    :try_start_62
+    :goto_1
+    :try_start_5
     new-instance p2, Llibs/zw2;
 
     .line 100
@@ -334,29 +334,29 @@
     .line 103
     .line 104
     throw p2
-    :try_end_68
-    .catchall {:try_start_62 .. :try_end_68} :catchall_37
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 105
-    :goto_68
+    :goto_2
     invoke-virtual {v2}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 106
     .line 107
     .line 108
-    goto :goto_6d
+    goto :goto_4
 
     .line 109
-    :goto_6c
+    :goto_3
     throw p1
 
     .line 110
-    :goto_6d
-    goto :goto_6c
+    :goto_4
+    goto :goto_3
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/fg2;->b:Ljava/lang/String;

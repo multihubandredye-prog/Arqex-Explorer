@@ -13,7 +13,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/SQLiteEditorActivity;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/kx2;->X:Lcom/mixplorer/activities/SQLiteEditorActivity;
@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public a(J)Llibs/fh3;
-    .registers 11
+    .locals 8
 
     .line 1
     sget v0, Lcom/mixplorer/activities/SQLiteEditorActivity;->III:I
@@ -91,7 +91,7 @@
 .end method
 
 .method public b()V
-    .registers 2
+    .locals 1
 
     .line 1
     sget v0, Lcom/mixplorer/activities/SQLiteEditorActivity;->III:I

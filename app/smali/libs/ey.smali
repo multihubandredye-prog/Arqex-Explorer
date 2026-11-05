@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;[BB)V
-    .registers 4
+    .locals 0
 
     .line 27
     iput-byte p3, p0, Llibs/ey;->a:B
@@ -31,7 +31,7 @@
 .end method
 
 .method public synthetic constructor <init>(Llibs/ge3;Llibs/le3;B)V
-    .registers 4
+    .locals 0
 
     .line 26
     iput-byte p3, p0, Llibs/ey;->a:B
@@ -46,7 +46,7 @@
 .end method
 
 .method public constructor <init>(Llibs/zo3;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x3
@@ -101,7 +101,7 @@
 
 # virtual methods
 .method public final a(Ljava/nio/ByteBuffer;)V
-    .registers 8
+    .locals 6
 
     .line 1
     iget-byte v0, p0, Llibs/ey;->a:B
@@ -127,7 +127,7 @@
 
     .line 11
     .line 12
-    packed-switch v0, :pswitch_data_c0
+    packed-switch v0, :pswitch_data_0
 
     .line 13
     .line 14
@@ -160,7 +160,7 @@
     return-void
 
     .line 29
-    :pswitch_1c
+    :pswitch_0
     const/4 v0, 0x2
 
     .line 30
@@ -228,12 +228,12 @@
     return-void
 
     .line 62
-    :pswitch_3d
+    :pswitch_1
     check-cast v5, Llibs/bq2;
 
     .line 63
     .line 64
-    :try_start_3f
+    :try_start_0
     invoke-virtual {p1, v3}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
     .line 65
@@ -289,16 +289,16 @@
     .line 91
     .line 92
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
-    :try_end_5e
-    .catch Llibs/fe3; {:try_start_3f .. :try_end_5e} :catch_5f
+    :try_end_0
+    .catch Llibs/fe3; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 93
     .line 94
     .line 95
-    goto :goto_64
+    goto :goto_0
 
     .line 96
-    :catch_5f
+    :catch_0
     iget-object p1, v5, Llibs/ge3;->p:Llibs/zo3;
 
     .line 97
@@ -308,16 +308,16 @@
     .line 99
     .line 100
     .line 101
-    :goto_64
+    :goto_0
     return-void
 
     .line 102
-    :pswitch_65
+    :pswitch_2
     check-cast v5, Llibs/aq2;
 
     .line 103
     .line 104
-    :try_start_67
+    :try_start_1
     invoke-virtual {p1, v3}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
     .line 105
@@ -373,16 +373,16 @@
     .line 131
     .line 132
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
-    :try_end_86
-    .catch Llibs/fe3; {:try_start_67 .. :try_end_86} :catch_87
+    :try_end_1
+    .catch Llibs/fe3; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 133
     .line 134
     .line 135
-    goto :goto_8c
+    goto :goto_1
 
     .line 136
-    :catch_87
+    :catch_1
     iget-object p1, v5, Llibs/ge3;->p:Llibs/zo3;
 
     .line 137
@@ -392,11 +392,11 @@
     .line 139
     .line 140
     .line 141
-    :goto_8c
+    :goto_1
     return-void
 
     .line 142
-    :pswitch_8d
+    :pswitch_3
     const/16 v0, 0x5a
 
     .line 143
@@ -479,7 +479,7 @@
 
     .line 185
     .line 186
-    if-eqz v5, :cond_be
+    if-eqz v5, :cond_0
 
     .line 187
     .line 188
@@ -488,24 +488,24 @@
     .line 189
     .line 190
     .line 191
-    :cond_be
+    :cond_0
     return-void
 
     .line 192
     nop
 
     .line 193
-    :pswitch_data_c0
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_8d
-        :pswitch_65
-        :pswitch_3d
-        :pswitch_1c
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final b(Ljava/lang/Long;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-byte p1, p0, Llibs/ey;->a:B
@@ -526,7 +526,7 @@
     const/4 v3, 0x5
 
     .line 9
-    packed-switch p1, :pswitch_data_6e
+    packed-switch p1, :pswitch_data_0
 
     .line 10
     .line 11
@@ -539,7 +539,7 @@
     move-result p1
 
     .line 16
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_0
 
     .line 17
     .line 18
@@ -556,7 +556,7 @@
     .line 23
     .line 24
     .line 25
-    :cond_18
+    :cond_0
     check-cast v1, Llibs/zo3;
 
     .line 26
@@ -573,7 +573,7 @@
     return-void
 
     .line 33
-    :pswitch_20
+    :pswitch_0
     invoke-static {v3}, Llibs/zm1;->Context(I)Z
 
     .line 34
@@ -582,7 +582,7 @@
     move-result p1
 
     .line 37
-    if-eqz p1, :cond_2d
+    if-eqz p1, :cond_1
 
     .line 38
     .line 39
@@ -599,11 +599,11 @@
     .line 44
     .line 45
     .line 46
-    :cond_2d
+    :cond_1
     return-void
 
     .line 47
-    :pswitch_2e
+    :pswitch_1
     invoke-static {v3}, Llibs/zm1;->Context(I)Z
 
     .line 48
@@ -612,7 +612,7 @@
     move-result p1
 
     .line 51
-    if-eqz p1, :cond_39
+    if-eqz p1, :cond_2
 
     .line 52
     .line 53
@@ -625,11 +625,11 @@
     .line 56
     .line 57
     .line 58
-    :cond_39
+    :cond_2
     return-void
 
     .line 59
-    :pswitch_3a
+    :pswitch_2
     invoke-static {v3}, Llibs/zm1;->Context(I)Z
 
     .line 60
@@ -638,7 +638,7 @@
     move-result p1
 
     .line 63
-    if-eqz p1, :cond_45
+    if-eqz p1, :cond_3
 
     .line 64
     .line 65
@@ -651,11 +651,11 @@
     .line 68
     .line 69
     .line 70
-    :cond_45
+    :cond_3
     return-void
 
     .line 71
-    :pswitch_46
+    :pswitch_3
     check-cast v1, Llibs/on2;
 
     .line 72
@@ -668,7 +668,7 @@
     move-result p1
 
     .line 77
-    if-eqz p1, :cond_6d
+    if-eqz p1, :cond_4
 
     .line 78
     .line 79
@@ -729,15 +729,15 @@
     .line 108
     .line 109
     .line 110
-    :cond_6d
+    :cond_4
     return-void
 
     .line 111
-    :pswitch_data_6e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_46
-        :pswitch_3a
-        :pswitch_2e
-        :pswitch_20
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

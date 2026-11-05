@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>([B)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/Theme;-><init>()V
@@ -20,7 +20,7 @@
     .line 2
     .line 3
     .line 4
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     .line 5
     .line 6
@@ -31,7 +31,7 @@
     return-void
 
     .line 9
-    :cond_8
+    :cond_0
     const-string p1, "string cannot be null"
 
     .line 10
@@ -48,10 +48,10 @@
 .end method
 
 .method public static n(Ljava/lang/Object;)Llibs/Part;
-    .registers 4
+    .locals 3
 
     .line 1
-    if-eqz p0, :cond_4b
+    if-eqz p0, :cond_3
 
     .line 2
     .line 3
@@ -59,14 +59,14 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
-    goto :goto_4b
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     instance-of v0, p0, [B
 
     .line 9
@@ -74,11 +74,11 @@
     const/4 v1, 0x0
 
     .line 11
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_1
 
     .line 12
     .line 13
-    :try_start_c
+    :try_start_0
     check-cast p0, [B
 
     .line 14
@@ -97,14 +97,14 @@
     .line 21
     .line 22
     move-result-object p0
-    :try_end_16
-    .catch Ljava/io/IOException; {:try_start_c .. :try_end_16} :catch_17
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 23
     return-object p0
 
     .line 24
-    :catch_17
+    :catch_0
     move-exception p0
 
     .line 25
@@ -137,12 +137,12 @@
     return-object v1
 
     .line 40
-    :cond_27
+    :cond_1
     instance-of v0, p0, Llibs/Core;
 
     .line 41
     .line 42
-    if-eqz v0, :cond_39
+    if-eqz v0, :cond_2
 
     .line 43
     .line 44
@@ -165,7 +165,7 @@
 
     .line 52
     .line 53
-    if-eqz v2, :cond_39
+    if-eqz v2, :cond_2
 
     .line 54
     .line 55
@@ -176,7 +176,7 @@
     return-object v0
 
     .line 58
-    :cond_39
+    :cond_2
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 59
@@ -213,8 +213,8 @@
     return-object v1
 
     .line 76
-    :cond_4b
-    :goto_4b
+    :cond_3
+    :goto_0
     check-cast p0, Llibs/Part;
 
     .line 77
@@ -223,7 +223,7 @@
 .end method
 
 .method public static p(Llibs/Height;)Llibs/Part;
-    .registers 5
+    .locals 4
 
     .line 1
     invoke-virtual {p0}, Llibs/Height;->p()Llibs/Theme;
@@ -238,7 +238,7 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -253,7 +253,7 @@
     return-object p0
 
     .line 14
-    :cond_d
+    :cond_0
     invoke-static {p0}, Llibs/Param;->n(Ljava/lang/Object;)Llibs/Param;
 
     .line 15
@@ -285,7 +285,7 @@
     const/4 v1, 0x0
 
     .line 29
-    :goto_1c
+    :goto_0
     invoke-interface {p0}, Ljava/util/Enumeration;->hasMoreElements()Z
 
     .line 30
@@ -294,7 +294,7 @@
     move-result v2
 
     .line 33
-    if-eqz v2, :cond_2e
+    if-eqz v2, :cond_1
 
     .line 34
     .line 35
@@ -321,10 +321,10 @@
     move v1, v2
 
     .line 46
-    goto :goto_1c
+    goto :goto_0
 
     .line 47
-    :cond_2e
+    :cond_1
     new-instance p0, Llibs/eb;
 
     .line 48
@@ -340,7 +340,7 @@
 
 # virtual methods
 .method public final a()Ljava/io/InputStream;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/dl;
@@ -360,21 +360,21 @@
 .end method
 
 .method public final d()Llibs/Theme;
-    .registers 1
+    .locals 0
 
     .line 1
     return-object p0
 .end method
 
 .method public final g(Llibs/Theme;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Llibs/Part;
 
     .line 2
     .line 3
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -384,7 +384,7 @@
     return p1
 
     .line 7
-    :cond_6
+    :cond_0
     check-cast p1, Llibs/Part;
 
     .line 8
@@ -409,7 +409,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/Part;->q()[B
@@ -432,7 +432,7 @@
 .end method
 
 .method public final l()Llibs/Theme;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/m10;
@@ -452,7 +452,7 @@
 .end method
 
 .method public final m()Llibs/Theme;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/m10;
@@ -472,7 +472,7 @@
 .end method
 
 .method public q()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/Part;->X:[B
@@ -483,7 +483,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/String;

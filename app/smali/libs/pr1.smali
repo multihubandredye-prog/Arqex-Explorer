@@ -26,7 +26,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/yr1;Landroid/app/Activity;ZLlibs/xr1;ZLlibs/rp0;Llibs/ek3;Landroid/text/Editable;)V
-    .registers 9
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -72,7 +72,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 8
+    .locals 7
 
     .line 1
     iget-object v1, p0, Llibs/pr1;->X:Llibs/yr1;
@@ -128,7 +128,7 @@
 
     .line 27
     .line 28
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_0
 
     .line 29
     .line 30
@@ -136,7 +136,7 @@
 
     .line 31
     .line 32
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_0
 
     .line 33
     .line 34
@@ -173,16 +173,16 @@
 
     .line 50
     .line 51
-    goto :goto_36
+    goto :goto_0
 
     .line 52
-    :cond_33
+    :cond_0
     invoke-virtual {v2, v5}, Llibs/od;->Exec(Z)V
 
     .line 53
     .line 54
     .line 55
-    :goto_36
+    :goto_0
     sget v0, Llibs/bi2;->copy:I
 
     .line 56

@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/i03;-><init>()V
@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public final a()Ljava/util/List;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/jz2;->h:Ljava/util/ArrayList;
@@ -58,14 +58,14 @@
 .end method
 
 .method public final h(Llibs/k03;)V
-    .registers 5
+    .locals 3
 
     .line 1
     instance-of v0, p1, Llibs/c03;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -81,7 +81,7 @@
     return-void
 
     .line 11
-    :cond_a
+    :cond_0
     new-instance v0, Llibs/b13;
 
     .line 12

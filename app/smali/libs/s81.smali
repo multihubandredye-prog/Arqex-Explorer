@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/rp0;Landroid/graphics/Point;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/s81;->c:Llibs/rp0;
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final b()Landroid/graphics/Point;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/s81;->d:Landroid/graphics/Point;
@@ -59,7 +59,7 @@
 .end method
 
 .method public final c()Llibs/rp0;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/s81;->c:Llibs/rp0;
@@ -70,7 +70,7 @@
 .end method
 
 .method public final d()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -120,7 +120,7 @@
 .end method
 
 .method public final f()Ljava/io/InputStream;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/s81;->c:Llibs/rp0;
@@ -146,7 +146,7 @@
     monitor-enter v1
 
     .line 12
-    :try_start_b
+    :try_start_0
     iget-object v2, p0, Llibs/s81;->b:Ljava/util/ArrayList;
 
     .line 13
@@ -162,20 +162,20 @@
     return-object v0
 
     .line 19
-    :catchall_12
+    :catchall_0
     move-exception v0
 
     .line 20
     monitor-exit v1
-    :try_end_14
-    .catchall {:try_start_b .. :try_end_14} :catchall_12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 21
     throw v0
 .end method
 
 .method public final g()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/s81;->c:Llibs/rp0;
@@ -190,7 +190,7 @@
 .end method
 
 .method public final h()Llibs/zl0;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/s81;->c:Llibs/rp0;

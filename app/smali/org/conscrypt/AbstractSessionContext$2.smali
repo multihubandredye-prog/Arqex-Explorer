@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/conscrypt/AbstractSessionContext;Ljava/util/Iterator;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public hasMoreElements()Z
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/AbstractSessionContext$2;->next:Lorg/conscrypt/NativeSslSession;
@@ -57,14 +57,14 @@
     const/4 v1, 0x1
 
     .line 4
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     .line 5
     .line 6
     return v1
 
     .line 7
-    :cond_6
+    :cond_0
     iget-object v0, p0, Lorg/conscrypt/AbstractSessionContext$2;->val$iter:Ljava/util/Iterator;
 
     .line 8
@@ -77,7 +77,7 @@
     move-result v0
 
     .line 13
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1
 
     .line 14
     .line 15
@@ -105,7 +105,7 @@
     move-result v2
 
     .line 27
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_0
 
     .line 28
     .line 29
@@ -116,7 +116,7 @@
     return v1
 
     .line 32
-    :cond_1f
+    :cond_1
     const/4 v0, 0x0
 
     .line 33
@@ -131,7 +131,7 @@
 .end method
 
 .method public bridge synthetic nextElement()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 22
     invoke-virtual {p0}, Lorg/conscrypt/AbstractSessionContext$2;->nextElement()[B
@@ -142,7 +142,7 @@
 .end method
 
 .method public nextElement()[B
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/AbstractSessionContext$2;->hasMoreElements()Z
@@ -153,7 +153,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -179,7 +179,7 @@
     return-object v0
 
     .line 17
-    :cond_10
+    :cond_0
     invoke-static {}, Llibs/t22;->b()V
 
     .line 18

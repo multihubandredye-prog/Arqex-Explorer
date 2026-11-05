@@ -19,7 +19,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/io/Serializable;)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/a2;->X:Ljava/lang/Object;
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public a(Ljava/io/OutputStream;)Llibs/dt;
-    .registers 11
+    .locals 9
 
     .line 1
     iget-object v0, p0, Llibs/a2;->X:Ljava/lang/Object;
@@ -93,7 +93,7 @@
     const/4 v7, 0x0
 
     .line 20
-    :try_start_13
+    :try_start_0
     sget-object v3, Llibs/yq1;->a:Ljavax/crypto/spec/IvParameterSpec;
 
     .line 21
@@ -154,7 +154,7 @@
 
     .line 49
     .line 50
-    if-eqz v4, :cond_3b
+    if-eqz v4, :cond_0
 
     .line 51
     .line 52
@@ -167,39 +167,39 @@
     .line 55
     .line 56
     .line 57
-    :goto_38
+    :goto_0
     move-object v4, v3
 
     .line 58
     move-object v3, p1
 
     .line 59
-    goto :goto_3d
+    goto :goto_1
 
     .line 60
-    :cond_3b
+    :cond_0
     move-object v6, v7
 
     .line 61
-    goto :goto_38
+    goto :goto_0
 
     .line 62
-    :goto_3d
+    :goto_1
     invoke-direct/range {v1 .. v6}, Llibs/dt;-><init>([BLjava/io/OutputStream;Ljavax/crypto/Cipher;Ljavax/crypto/spec/SecretKeySpec;Ljava/io/FileOutputStream;)V
 
     .line 63
     .line 64
     .line 65
     iput-object v1, v0, Llibs/s20;->Y:Ljava/lang/Object;
-    :try_end_42
-    .catchall {:try_start_13 .. :try_end_42} :catchall_43
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 66
     .line 67
     return-object v1
 
     .line 68
-    :catchall_43
+    :catchall_0
     move-exception v0
 
     .line 69
@@ -223,7 +223,7 @@
 .end method
 
 .method public accept(Lcom/mixplorer/libs/MixBox$FileData;)Z
-    .registers 10
+    .locals 8
 
     .line 1
     iget-object v0, p0, Llibs/a2;->X:Ljava/lang/Object;
@@ -277,26 +277,26 @@
     const/4 v5, 0x1
 
     .line 26
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 27
     .line 28
     return v5
 
     .line 29
-    :cond_1c
+    :cond_0
     const/4 v0, 0x0
 
     .line 30
-    if-nez p1, :cond_20
+    if-nez p1, :cond_1
 
     .line 31
     .line 32
-    goto :goto_34
+    goto :goto_0
 
     .line 33
-    :cond_20
-    :try_start_20
+    :cond_1
+    :try_start_0
     iget-object v6, p1, Lcom/mixplorer/libs/MixBox$FileData;->name:Ljava/lang/String;
 
     .line 34
@@ -317,7 +317,7 @@
     move-result v7
 
     .line 43
-    if-eqz v7, :cond_37
+    if-eqz v7, :cond_2
 
     .line 44
     .line 45
@@ -333,22 +333,22 @@
     move-result v3
 
     .line 51
-    if-nez v3, :cond_37
+    if-nez v3, :cond_2
 
     .line 52
     .line 53
-    :goto_34
+    :goto_0
     return v0
 
     .line 54
-    :catchall_35
+    :catchall_0
     move-exception p1
 
     .line 55
-    goto :goto_45
+    goto :goto_1
 
     .line 56
-    :cond_37
+    :cond_2
     invoke-static {p1, v1}, Llibs/yw1;->State(Lcom/mixplorer/libs/MixBox$FileData;Ljava/lang/String;)Llibs/rp0;
 
     .line 57
@@ -365,13 +365,13 @@
     move-result v1
 
     .line 64
-    if-eqz v1, :cond_5b
+    if-eqz v1, :cond_4
 
     .line 65
     .line 66
     invoke-virtual {v4, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
-    :try_end_44
-    .catchall {:try_start_20 .. :try_end_44} :catchall_35
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 67
     .line 68
@@ -379,7 +379,7 @@
     return v5
 
     .line 70
-    :goto_45
+    :goto_1
     invoke-static {p1}, Llibs/hp0;->y(Ljava/lang/Throwable;)Z
 
     .line 71
@@ -388,14 +388,14 @@
     move-result v1
 
     .line 74
-    if-eqz v1, :cond_4c
+    if-eqz v1, :cond_3
 
     .line 75
     .line 76
-    goto :goto_5c
+    goto :goto_2
 
     .line 77
-    :cond_4c
+    :cond_3
     invoke-static {p1}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 78
@@ -425,16 +425,16 @@
     .line 90
     .line 91
     .line 92
-    :cond_5b
+    :cond_4
     const/4 v5, 0x0
 
     .line 93
-    :goto_5c
+    :goto_2
     return v5
 .end method
 
 .method public f(Llibs/t4;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object p1, p0, Llibs/a2;->X:Ljava/lang/Object;

@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Init;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Llibs/Theme;-><init>()V
@@ -43,7 +43,7 @@
     const/4 v3, 0x1
 
     .line 12
-    if-eqz v2, :cond_16
+    if-eqz v2, :cond_0
 
     .line 13
     .line 14
@@ -66,12 +66,12 @@
     const/4 v0, 0x1
 
     .line 23
-    :cond_16
+    :cond_0
     instance-of v2, v1, Llibs/Api;
 
     .line 24
     .line 25
-    if-eqz v2, :cond_24
+    if-eqz v2, :cond_1
 
     .line 26
     .line 27
@@ -95,12 +95,12 @@
     move-result-object v1
 
     .line 37
-    :cond_24
+    :cond_1
     instance-of v2, v1, Llibs/Height;
 
     .line 38
     .line 39
-    if-nez v2, :cond_30
+    if-nez v2, :cond_2
 
     .line 40
     .line 41
@@ -120,7 +120,7 @@
     move-result-object v1
 
     .line 49
-    :cond_30
+    :cond_2
     iget-object p1, p1, Llibs/Init;->Y:Ljava/lang/Object;
 
     .line 50
@@ -143,7 +143,7 @@
     const/4 v2, 0x0
 
     .line 59
-    if-ne p1, v0, :cond_62
+    if-ne p1, v0, :cond_5
 
     .line 60
     .line 61
@@ -151,7 +151,7 @@
 
     .line 62
     .line 63
-    if-eqz p1, :cond_5c
+    if-eqz p1, :cond_4
 
     .line 64
     .line 65
@@ -163,14 +163,14 @@
 
     .line 68
     .line 69
-    if-ltz p1, :cond_52
+    if-ltz p1, :cond_3
 
     .line 70
     .line 71
     const/4 v0, 0x2
 
     .line 72
-    if-gt p1, v0, :cond_52
+    if-gt p1, v0, :cond_3
 
     .line 73
     .line 74
@@ -193,7 +193,7 @@
     return-void
 
     .line 83
-    :cond_52
+    :cond_3
     const-string v0, "invalid encoding value: "
 
     .line 84
@@ -214,7 +214,7 @@
     throw v2
 
     .line 93
-    :cond_5c
+    :cond_4
     const-string p1, "No tagged object found in vector. Structure doesn\'t seem to be of type External"
 
     .line 94
@@ -227,7 +227,7 @@
     throw v2
 
     .line 99
-    :cond_62
+    :cond_5
     const-string p1, "input vector too large"
 
     .line 100
@@ -241,7 +241,7 @@
 .end method
 
 .method public static n(ILlibs/Init;)Llibs/Theme;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p1, Llibs/Init;->Y:Ljava/lang/Object;
@@ -260,7 +260,7 @@
     move-result v0
 
     .line 9
-    if-le v0, p0, :cond_13
+    if-le v0, p0, :cond_0
 
     .line 10
     .line 11
@@ -283,7 +283,7 @@
     return-object p0
 
     .line 20
-    :cond_13
+    :cond_0
     const-string p0, "too few objects in input vector"
 
     .line 21
@@ -302,7 +302,7 @@
 
 # virtual methods
 .method public final g(Llibs/Theme;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     instance-of v0, p1, Llibs/e10;
@@ -312,15 +312,15 @@
     const/4 v1, 0x0
 
     .line 4
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 5
     .line 6
     return v1
 
     .line 7
-    :cond_6
-    if-ne p0, p1, :cond_a
+    :cond_0
+    if-ne p0, p1, :cond_1
 
     .line 8
     .line 9
@@ -330,7 +330,7 @@
     return p1
 
     .line 11
-    :cond_a
+    :cond_1
     check-cast p1, Llibs/e10;
 
     .line 12
@@ -339,7 +339,7 @@
 
     .line 14
     .line 15
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_3
 
     .line 16
     .line 17
@@ -347,7 +347,7 @@
 
     .line 18
     .line 19
-    if-eqz v2, :cond_1a
+    if-eqz v2, :cond_2
 
     .line 20
     .line 21
@@ -359,20 +359,20 @@
     move-result v0
 
     .line 25
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_3
 
     .line 26
     .line 27
-    :cond_1a
+    :cond_2
     return v1
 
     .line 28
-    :cond_1b
+    :cond_3
     iget-object v0, p0, Llibs/e10;->Y:Llibs/Api;
 
     .line 29
     .line 30
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_5
 
     .line 31
     .line 32
@@ -380,7 +380,7 @@
 
     .line 33
     .line 34
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_4
 
     .line 35
     .line 36
@@ -392,20 +392,20 @@
     move-result v0
 
     .line 40
-    if-nez v0, :cond_2a
+    if-nez v0, :cond_5
 
     .line 41
     .line 42
-    :cond_29
+    :cond_4
     return v1
 
     .line 43
-    :cond_2a
+    :cond_5
     iget-object v0, p0, Llibs/e10;->Z:Llibs/Theme;
 
     .line 44
     .line 45
-    if-eqz v0, :cond_39
+    if-eqz v0, :cond_7
 
     .line 46
     .line 47
@@ -413,7 +413,7 @@
 
     .line 48
     .line 49
-    if-eqz v2, :cond_38
+    if-eqz v2, :cond_6
 
     .line 50
     .line 51
@@ -425,15 +425,15 @@
     move-result v0
 
     .line 55
-    if-nez v0, :cond_39
+    if-nez v0, :cond_7
 
     .line 56
     .line 57
-    :cond_38
+    :cond_6
     return v1
 
     .line 58
-    :cond_39
+    :cond_7
     iget-object v0, p0, Llibs/e10;->Mu:Llibs/Theme;
 
     .line 59
@@ -454,7 +454,7 @@
 .end method
 
 .method public final h(Llibs/v60;)V
-    .registers 8
+    .locals 6
 
     .line 1
     new-instance v0, Llibs/fl;
@@ -474,7 +474,7 @@
 
     .line 9
     .line 10
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_0
 
     .line 11
     .line 12
@@ -491,12 +491,12 @@
     .line 17
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     iget-object v2, p0, Llibs/e10;->Y:Llibs/Api;
 
     .line 20
     .line 21
-    if-eqz v2, :cond_1d
+    if-eqz v2, :cond_1
 
     .line 22
     .line 23
@@ -513,12 +513,12 @@
     .line 28
     .line 29
     .line 30
-    :cond_1d
+    :cond_1
     iget-object v2, p0, Llibs/e10;->Z:Llibs/Theme;
 
     .line 31
     .line 32
-    if-eqz v2, :cond_28
+    if-eqz v2, :cond_2
 
     .line 33
     .line 34
@@ -535,7 +535,7 @@
     .line 39
     .line 40
     .line 41
-    :cond_28
+    :cond_2
     new-instance v2, Llibs/s10;
 
     .line 42
@@ -607,14 +607,14 @@
 .end method
 
 .method public final hashCode()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/e10;->X:Llibs/App;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -630,19 +630,19 @@
     move-result v0
 
     .line 11
-    goto :goto_c
+    goto :goto_0
 
     .line 12
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
     .line 13
-    :goto_c
+    :goto_0
     iget-object v1, p0, Llibs/e10;->Y:Llibs/Api;
 
     .line 14
     .line 15
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_1
 
     .line 16
     .line 17
@@ -657,12 +657,12 @@
     xor-int/2addr v0, v1
 
     .line 22
-    :cond_15
+    :cond_1
     iget-object v1, p0, Llibs/e10;->Z:Llibs/Theme;
 
     .line 23
     .line 24
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_2
 
     .line 25
     .line 26
@@ -677,7 +677,7 @@
     xor-int/2addr v0, v1
 
     .line 31
-    :cond_1e
+    :cond_2
     iget-object v1, p0, Llibs/e10;->Mu:Llibs/Theme;
 
     .line 32
@@ -697,7 +697,7 @@
 .end method
 
 .method public final i()I
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/Auth;->e()[B
@@ -715,7 +715,7 @@
 .end method
 
 .method public final k()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1

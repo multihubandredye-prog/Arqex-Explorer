@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/r82;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final a()Ljava/security/PublicKey;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Llibs/rd;->a()Ljava/security/PublicKey;

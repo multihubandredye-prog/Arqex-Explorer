@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/m73;->a:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final binderDied()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/m73;->a:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_30
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -60,14 +60,14 @@
 
     .line 11
     .line 12
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 13
     .line 14
-    goto :goto_1d
+    goto :goto_0
 
     .line 15
-    :cond_e
+    :cond_0
     const/4 v0, 0x1
 
     .line 16
@@ -97,11 +97,11 @@
     .line 28
     .line 29
     .line 30
-    :goto_1d
+    :goto_0
     return-void
 
     .line 31
-    :pswitch_1e
+    :pswitch_0
     check-cast v1, Llibs/n73;
 
     .line 32
@@ -138,8 +138,8 @@
     return-void
 
     .line 49
-    :pswitch_data_30
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1e
+        :pswitch_0
     .end packed-switch
 .end method

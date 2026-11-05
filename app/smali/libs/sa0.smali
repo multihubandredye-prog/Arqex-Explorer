@@ -11,7 +11,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/io/FilterInputStream;Ljava/lang/Object;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/sa0;->X:B
@@ -33,14 +33,14 @@
 
 # virtual methods
 .method public final read()I
-    .registers 4
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/sa0;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_28
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -57,7 +57,7 @@
     move-result v0
 
     .line 12
-    if-ltz v0, :cond_15
+    if-ltz v0, :cond_0
 
     .line 13
     .line 14
@@ -77,11 +77,11 @@
     .line 20
     .line 21
     .line 22
-    :cond_15
+    :cond_0
     return v0
 
     .line 23
-    :pswitch_16
+    :pswitch_0
     iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
 
     .line 24
@@ -94,7 +94,7 @@
     move-result v0
 
     .line 29
-    if-ltz v0, :cond_26
+    if-ltz v0, :cond_1
 
     .line 30
     .line 31
@@ -114,25 +114,25 @@
     .line 37
     .line 38
     .line 39
-    :cond_26
+    :cond_1
     return v0
 
     .line 40
     nop
 
     .line 41
-    :pswitch_data_28
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_16
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final read([BII)I
-    .registers 5
+    .locals 1
 
     iget-byte v0, p0, Llibs/sa0;->X:B
 
-    packed-switch v0, :pswitch_data_26
+    packed-switch v0, :pswitch_data_0
 
     .line 41
     iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
@@ -141,7 +141,7 @@
 
     move-result p3
 
-    if-ltz p3, :cond_14
+    if-ltz p3, :cond_0
 
     .line 42
     iget-object v0, p0, Llibs/sa0;->Y:Ljava/lang/Object;
@@ -150,18 +150,18 @@
 
     invoke-virtual {v0, p1, p2, p3}, Llibs/lw0;->update([BII)V
 
-    :cond_14
+    :cond_0
     return p3
 
     .line 43
-    :pswitch_15
+    :pswitch_0
     iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
 
     invoke-virtual {v0, p1, p2, p3}, Ljava/io/InputStream;->read([BII)I
 
     move-result p3
 
-    if-lez p3, :cond_24
+    if-lez p3, :cond_1
 
     .line 44
     iget-object v0, p0, Llibs/sa0;->Y:Ljava/lang/Object;
@@ -170,13 +170,13 @@
 
     invoke-virtual {v0, p1, p2, p3}, Llibs/gu0;->update([BII)V
 
-    :cond_24
+    :cond_1
     return p3
 
     nop
 
-    :pswitch_data_26
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_15
+        :pswitch_0
     .end packed-switch
 .end method

@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(JLlibs/qc3;Llibs/i63;Llibs/jc3;Llibs/ux;Llibs/uw2;Ljava/util/Set;)V
-    .registers 9
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -67,7 +67,7 @@
     move-result p2
 
     .line 24
-    if-eqz p2, :cond_26
+    if-eqz p2, :cond_0
 
     .line 25
     .line 26
@@ -87,7 +87,7 @@
     move-result p1
 
     .line 34
-    if-eqz p1, :cond_26
+    if-eqz p1, :cond_0
 
     .line 35
     .line 36
@@ -96,14 +96,14 @@
     .line 37
     .line 38
     .line 39
-    :cond_26
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final a()V
-    .registers 10
+    .locals 9
 
     .line 1
     iget-wide v4, p0, Llibs/bp3;->a:J
@@ -122,7 +122,7 @@
 
     .line 8
     .line 9
-    :try_start_8
+    :try_start_0
     new-instance v0, Llibs/eu2;
 
     .line 10
@@ -165,12 +165,12 @@
     .line 29
     .line 30
     sget-object v3, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-    :try_end_1f
-    .catchall {:try_start_8 .. :try_end_1f} :catchall_5a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 31
     .line 32
-    :try_start_1f
+    :try_start_1
     iget-object v0, v0, Llibs/ap;->X:Llibs/gg2;
 
     .line 33
@@ -181,14 +181,14 @@
     .line 36
     .line 37
     move-result-object v0
-    :try_end_25
-    .catch Ljava/lang/InterruptedException; {:try_start_1f .. :try_end_25} :catch_60
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_1f .. :try_end_25} :catch_5e
-    .catch Ljava/util/concurrent/TimeoutException; {:try_start_1f .. :try_end_25} :catch_5c
-    .catchall {:try_start_1f .. :try_end_25} :catchall_5a
+    :try_end_1
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/util/concurrent/TimeoutException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 38
-    :try_start_25
+    :try_start_2
     check-cast v0, Llibs/lv2;
 
     .line 39
@@ -215,11 +215,11 @@
     .line 50
     .line 51
     move-result v1
-    :try_end_33
-    .catchall {:try_start_25 .. :try_end_33} :catchall_5a
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 52
-    if-eqz v1, :cond_40
+    if-eqz v1, :cond_0
 
     .line 53
     .line 54
@@ -244,8 +244,8 @@
     return-void
 
     .line 65
-    :cond_40
-    :try_start_40
+    :cond_0
+    :try_start_3
     new-instance v1, Llibs/qw2;
 
     .line 66
@@ -296,40 +296,40 @@
     throw v1
 
     .line 91
-    :catchall_5a
+    :catchall_0
     move-exception v0
 
     .line 92
-    goto :goto_7d
+    goto :goto_3
 
     .line 93
-    :catch_5c
+    :catch_0
     move-exception v0
 
     .line 94
-    goto :goto_62
+    goto :goto_0
 
     .line 95
-    :catch_5e
+    :catch_1
     move-exception v0
 
     .line 96
-    goto :goto_62
+    goto :goto_0
 
     .line 97
-    :catch_60
+    :catch_2
     move-exception v0
 
     .line 98
-    goto :goto_70
+    goto :goto_2
 
     .line 99
-    :goto_62
+    :goto_0
     instance-of v1, v0, Llibs/qo3;
 
     .line 100
     .line 101
-    if-eqz v1, :cond_69
+    if-eqz v1, :cond_1
 
     .line 102
     .line 103
@@ -337,10 +337,10 @@
 
     .line 104
     .line 105
-    goto :goto_6f
+    goto :goto_1
 
     .line 106
-    :cond_69
+    :cond_1
     new-instance v1, Llibs/qo3;
 
     .line 107
@@ -353,11 +353,11 @@
     move-object v0, v1
 
     .line 112
-    :goto_6f
+    :goto_1
     throw v0
 
     .line 113
-    :goto_70
+    :goto_2
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     .line 114
@@ -381,11 +381,11 @@
     .line 124
     .line 125
     throw v1
-    :try_end_7d
-    .catchall {:try_start_40 .. :try_end_7d} :catchall_5a
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 126
-    :goto_7d
+    :goto_3
     new-instance v1, Llibs/cp3;
 
     .line 127
@@ -408,7 +408,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

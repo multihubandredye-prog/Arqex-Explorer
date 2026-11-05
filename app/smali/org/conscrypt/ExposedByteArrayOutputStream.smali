@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/io/ByteArrayOutputStream;-><init>()V
@@ -17,7 +17,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 5
     invoke-direct {p0, p1}, Ljava/io/ByteArrayOutputStream;-><init>(I)V
@@ -28,7 +28,7 @@
 
 # virtual methods
 .method public array()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Ljava/io/ByteArrayOutputStream;->buf:[B
@@ -39,7 +39,7 @@
 .end method
 
 .method public setCountManually(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput p1, p0, Ljava/io/ByteArrayOutputStream;->count:I

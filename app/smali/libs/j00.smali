@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic a(Landroid/content/ClipData$Item;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/content/ClipData$Item;->getHtmlText()Ljava/lang/String;
@@ -20,7 +20,7 @@
 .end method
 
 .method public static bridge synthetic b(Landroid/os/CancellationSignal;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/os/CancellationSignal;->isCanceled()Z

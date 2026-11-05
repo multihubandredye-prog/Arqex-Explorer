@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/bs1;-><init>()V
@@ -23,7 +23,7 @@
 
 # virtual methods
 .method public final onCreate(Landroid/os/Bundle;)V
-    .registers 11
+    .locals 9
 
     .line 1
     const-string v0, "/xxx."
@@ -43,7 +43,7 @@
     move-result-object v5
 
     .line 10
-    if-nez v5, :cond_f
+    if-nez v5, :cond_0
 
     .line 11
     .line 12
@@ -55,7 +55,7 @@
     return-void
 
     .line 16
-    :cond_f
+    :cond_0
     invoke-virtual {v5}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     .line 17
@@ -79,7 +79,7 @@
     const/4 v7, 0x1
 
     .line 27
-    if-eqz v1, :cond_9b
+    if-eqz v1, :cond_4
 
     .line 28
     .line 29
@@ -94,7 +94,7 @@
     const/4 v0, 0x0
 
     .line 34
-    if-eqz p1, :cond_36
+    if-eqz p1, :cond_1
 
     .line 35
     .line 36
@@ -106,7 +106,7 @@
     move-result p1
 
     .line 40
-    if-nez p1, :cond_36
+    if-nez p1, :cond_1
 
     .line 41
     .line 42
@@ -135,7 +135,7 @@
     return-void
 
     .line 55
-    :cond_36
+    :cond_1
     new-instance v4, Ljava/util/ArrayList;
 
     .line 56
@@ -165,8 +165,8 @@
     move-result-object p1
 
     .line 70
-    :cond_45
-    :goto_45
+    :cond_2
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 71
@@ -178,7 +178,7 @@
     const/4 v2, 0x0
 
     .line 75
-    if-eqz v1, :cond_6d
+    if-eqz v1, :cond_3
 
     .line 76
     .line 77
@@ -210,7 +210,7 @@
     move-result v3
 
     .line 91
-    if-eqz v3, :cond_45
+    if-eqz v3, :cond_2
 
     .line 92
     .line 93
@@ -244,10 +244,10 @@
     .line 107
     .line 108
     .line 109
-    goto :goto_45
+    goto :goto_0
 
     .line 110
-    :cond_6d
+    :cond_3
     new-instance v3, Llibs/ml1;
 
     .line 111
@@ -336,7 +336,7 @@
     return-void
 
     .line 156
-    :cond_9b
+    :cond_4
     new-instance v1, Ljava/lang/StringBuilder;
 
     .line 157
@@ -381,7 +381,7 @@
     .line 178
     .line 179
     .line 180
-    :try_start_b3
+    :try_start_0
     invoke-static {v5}, Llibs/sw1;->i(Landroid/content/Intent;)Landroid/net/Uri;
 
     .line 181
@@ -390,7 +390,7 @@
     move-result-object v1
 
     .line 184
-    if-eqz v1, :cond_ec
+    if-eqz v1, :cond_5
 
     .line 185
     .line 186
@@ -410,7 +410,7 @@
     move-result v3
 
     .line 194
-    if-nez v3, :cond_ec
+    if-nez v3, :cond_5
 
     .line 195
     .line 196
@@ -468,11 +468,11 @@
     move-result v1
 
     .line 224
-    if-nez v1, :cond_ec
+    if-nez v1, :cond_5
 
     .line 225
     .line 226
-    if-eqz v0, :cond_ec
+    if-eqz v0, :cond_5
 
     .line 227
     .line 228
@@ -485,21 +485,21 @@
     .line 231
     .line 232
     .line 233
-    goto :goto_ec
+    goto :goto_1
 
     .line 234
-    :catchall_e9
+    :catchall_0
     move-exception v0
 
     .line 235
     move-object p1, v0
 
     .line 236
-    goto :goto_112
+    goto :goto_2
 
     .line 237
-    :cond_ec
-    :goto_ec
+    :cond_5
+    :goto_1
     invoke-static {p0, v5}, Lcom/mixplorer/activities/CopyActivity;->a(Llibs/bs1;Landroid/content/Intent;)V
 
     .line 238
@@ -558,8 +558,8 @@
     .line 267
     .line 268
     invoke-static {v0, v5, p1}, Llibs/sw1;->Data(Landroid/content/Context;Landroid/content/Intent;Landroid/os/Bundle;)V
-    :try_end_10e
-    .catchall {:try_start_b3 .. :try_end_10e} :catchall_e9
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 269
     .line 270
@@ -572,8 +572,8 @@
     return-void
 
     .line 275
-    :goto_112
-    :try_start_112
+    :goto_2
+    :try_start_1
     invoke-static {p1}, Llibs/vl3;->Map(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 276
@@ -600,8 +600,8 @@
 
     .line 288
     invoke-static {p1}, Llibs/gx1;->d(Ljava/lang/Object;)V
-    :try_end_122
-    .catchall {:try_start_112 .. :try_end_122} :catchall_126
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 289
     .line 290
@@ -614,7 +614,7 @@
     return-void
 
     .line 295
-    :catchall_126
+    :catchall_1
     move-exception v0
 
     .line 296
@@ -626,13 +626,13 @@
     .line 298
     .line 299
     .line 300
-    goto :goto_12d
+    goto :goto_4
 
     .line 301
-    :goto_12c
+    :goto_3
     throw p1
 
     .line 302
-    :goto_12d
-    goto :goto_12c
+    :goto_4
+    goto :goto_3
 .end method

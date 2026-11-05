@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
     move-result-object v0
 
     .line 8
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 9
     .line 10
@@ -37,10 +37,10 @@
     move-result-object p1
 
     .line 14
-    goto :goto_16
+    goto :goto_0
 
     .line 15
-    :cond_e
+    :cond_0
     invoke-static {p1}, Llibs/ad1;->c(Ljava/lang/String;)Ljava/security/Provider;
 
     .line 16
@@ -57,7 +57,7 @@
     move-result-object p1
 
     .line 23
-    :goto_16
+    :goto_0
     iput-object p1, p0, Llibs/Nu;->a:Ljava/security/MessageDigest;
 
     .line 24
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public final a(Ljava/math/BigInteger;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-virtual {p1}, Ljava/math/BigInteger;->toByteArray()[B
@@ -106,7 +106,7 @@
 .end method
 
 .method public final b([B)V
-    .registers 5
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
@@ -128,7 +128,7 @@
 .end method
 
 .method public final c(I)V
-    .registers 8
+    .locals 6
 
     .line 1
     sget v0, Llibs/n1;->Y:I
@@ -207,7 +207,7 @@
 .end method
 
 .method public final d(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p1}, Ljava/lang/String;->length()I

@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -24,22 +24,22 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 4
+    .locals 2
 
     iget-object v0, p0, Llibs/ModernUiTheme$TasksClickListener;->activity:Landroid/app/Activity;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/app/Activity;->isFinishing()Z
 
     move-result v1
 
-    if-nez v1, :cond_e
+    if-nez v1, :cond_0
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Llibs/e9;->e(Landroid/app/Activity;Z)V
 
-    :cond_e
+    :cond_0
     return-void
 .end method

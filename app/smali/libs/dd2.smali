@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/PlayerActivity;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/dd2;->a:Lcom/mixplorer/activities/PlayerActivity;
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .registers 3
+    .locals 0
 
     .line 1
     sget-boolean p1, Lcom/mixplorer/activities/PlayerActivity;->e0:Z

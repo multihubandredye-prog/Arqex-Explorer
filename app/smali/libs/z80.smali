@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,7 +55,7 @@
 .end method
 
 .method public static b(I)Z
-    .registers 3
+    .locals 2
 
     .line 1
     and-int/lit16 v0, p0, 0x80
@@ -66,7 +66,7 @@
 
     .line 4
     .line 5
-    if-ne v0, v1, :cond_c
+    if-ne v0, v1, :cond_0
 
     .line 6
     .line 7
@@ -74,7 +74,7 @@
 
     .line 8
     .line 9
-    if-nez p0, :cond_c
+    if-nez p0, :cond_0
 
     .line 10
     .line 11
@@ -84,7 +84,7 @@
     return p0
 
     .line 13
-    :cond_c
+    :cond_0
     const/4 p0, 0x0
 
     .line 14
@@ -94,7 +94,7 @@
 
 # virtual methods
 .method public final a([B)[B
-    .registers 20
+    .locals 18
 
     .line 1
     move-object/from16 v0, p0
@@ -127,7 +127,7 @@
 
     .line 14
     .line 15
-    :goto_e
+    :goto_0
     iget v1, v0, Llibs/z80;->d:I
 
     .line 16
@@ -160,7 +160,7 @@
 
     .line 30
     .line 31
-    if-ge v1, v3, :cond_12f
+    if-ge v1, v3, :cond_f
 
     .line 32
     .line 33
@@ -170,15 +170,15 @@
     const/4 v14, 0x4
 
     .line 35
-    if-ne v1, v3, :cond_26
+    if-ne v1, v3, :cond_0
 
     .line 36
     .line 37
-    goto/16 :goto_d2
+    goto/16 :goto_6
 
     .line 38
     .line 39
-    :cond_26
+    :cond_0
     iget-object v3, v0, Llibs/z80;->a:[B
 
     .line 40
@@ -198,7 +198,7 @@
     const/4 v4, 0x1
 
     .line 48
-    if-nez v16, :cond_cd
+    if-nez v16, :cond_8
 
     .line 49
     .line 50
@@ -206,7 +206,7 @@
 
     .line 51
     .line 52
-    if-nez v16, :cond_cd
+    if-nez v16, :cond_8
 
     .line 53
     .line 54
@@ -214,7 +214,7 @@
 
     .line 55
     .line 56
-    if-nez v15, :cond_cd
+    if-nez v15, :cond_8
 
     .line 57
     .line 58
@@ -226,7 +226,7 @@
 
     .line 61
     .line 62
-    if-nez v1, :cond_cd
+    if-nez v1, :cond_8
 
     .line 63
     .line 64
@@ -251,11 +251,11 @@
 
     .line 72
     .line 73
-    :goto_48
+    :goto_1
     const/4 v5, 0x3
 
     .line 74
-    if-ltz v1, :cond_5f
+    if-ltz v1, :cond_2
 
     .line 75
     .line 76
@@ -275,14 +275,14 @@
 
     .line 83
     .line 84
-    if-eqz v7, :cond_56
+    if-eqz v7, :cond_1
 
     .line 85
     .line 86
-    goto :goto_61
+    goto :goto_2
 
     .line 87
-    :cond_56
+    :cond_1
     move-object v7, v15
 
     .line 88
@@ -303,16 +303,16 @@
 
     .line 94
     .line 95
-    goto :goto_48
+    goto :goto_1
 
     .line 96
-    :cond_5f
+    :cond_2
     const/16 v17, -0x7e
 
     .line 97
     .line 98
-    :goto_61
-    if-ltz v1, :cond_c7
+    :goto_2
+    if-ltz v1, :cond_7
 
     .line 99
     .line 100
@@ -338,7 +338,7 @@
     add-int/2addr v7, v3
 
     .line 110
-    if-ge v7, v11, :cond_75
+    if-ge v7, v11, :cond_3
 
     .line 111
     .line 112
@@ -353,14 +353,14 @@
 
     .line 116
     .line 117
-    goto :goto_bc
+    goto :goto_4
 
     .line 118
-    :cond_75
+    :cond_3
     const/4 v3, 0x2
 
     .line 119
-    if-ge v7, v10, :cond_80
+    if-ge v7, v10, :cond_4
 
     .line 120
     .line 121
@@ -379,11 +379,11 @@
 
     .line 127
     .line 128
-    goto :goto_bc
+    goto :goto_4
 
     .line 129
-    :cond_80
-    if-ge v7, v8, :cond_90
+    :cond_4
+    if-ge v7, v8, :cond_5
 
     .line 130
     .line 131
@@ -413,15 +413,15 @@
 
     .line 142
     .line 143
-    :goto_8e
+    :goto_3
     move-object v3, v6
 
     .line 144
-    goto :goto_bc
+    goto :goto_4
 
     .line 145
-    :cond_90
-    if-ge v7, v6, :cond_a4
+    :cond_5
+    if-ge v7, v6, :cond_6
 
     .line 146
     .line 147
@@ -462,10 +462,10 @@
 
     .line 163
     .line 164
-    goto :goto_8e
+    goto :goto_3
 
     .line 165
-    :cond_a4
+    :cond_6
     const/4 v6, 0x5
 
     .line 166
@@ -517,10 +517,10 @@
 
     .line 187
     .line 188
-    goto :goto_8e
+    goto :goto_3
 
     .line 189
-    :goto_bc
+    :goto_4
     invoke-virtual {v12, v1, v3}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     .line 190
@@ -543,10 +543,10 @@
 
     .line 198
     .line 199
-    goto :goto_cd
+    goto :goto_5
 
     .line 200
-    :cond_c7
+    :cond_7
     const-string v1, "EOC does not have matching indefinite-length tag"
 
     .line 201
@@ -559,8 +559,8 @@
     return-object v13
 
     .line 206
-    :cond_cd
-    :goto_cd
+    :cond_8
+    :goto_5
     iget v1, v0, Llibs/z80;->d:I
 
     .line 207
@@ -572,23 +572,23 @@
 
     .line 210
     .line 211
-    :goto_d2
+    :goto_6
     iget v3, v0, Llibs/z80;->e:I
 
     .line 212
     .line 213
-    if-ne v1, v3, :cond_d8
+    if-ne v1, v3, :cond_9
 
     .line 214
     .line 215
-    :goto_d6
+    :goto_7
     const/4 v4, 0x0
 
     .line 216
-    goto :goto_128
+    goto :goto_9
 
     .line 217
-    :cond_d8
+    :cond_9
     iget-object v3, v0, Llibs/z80;->a:[B
 
     .line 218
@@ -617,7 +617,7 @@
     move-result v3
 
     .line 231
-    if-eqz v3, :cond_f3
+    if-eqz v3, :cond_a
 
     .line 232
     .line 233
@@ -639,15 +639,15 @@
     .line 241
     .line 242
     .line 243
-    goto :goto_d6
+    goto :goto_7
 
     .line 244
-    :cond_f3
+    :cond_a
     and-int/lit16 v3, v1, 0x80
 
     .line 245
     .line 246
-    if-ne v3, v11, :cond_126
+    if-ne v3, v11, :cond_d
 
     .line 247
     .line 248
@@ -655,7 +655,7 @@
 
     .line 249
     .line 250
-    if-gt v1, v14, :cond_120
+    if-gt v1, v14, :cond_c
 
     .line 251
     .line 252
@@ -674,7 +674,7 @@
 
     .line 258
     .line 259
-    if-lt v3, v4, :cond_11a
+    if-lt v3, v4, :cond_b
 
     .line 260
     .line 261
@@ -684,8 +684,8 @@
     const/4 v4, 0x0
 
     .line 263
-    :goto_106
-    if-ge v3, v1, :cond_128
+    :goto_8
+    if-ge v3, v1, :cond_e
 
     .line 264
     .line 265
@@ -724,10 +724,10 @@
 
     .line 281
     .line 282
-    goto :goto_106
+    goto :goto_8
 
     .line 283
-    :cond_11a
+    :cond_b
     const-string v1, "Too little data"
 
     .line 284
@@ -740,7 +740,7 @@
     return-object v13
 
     .line 289
-    :cond_120
+    :cond_c
     const-string v1, "Too much data"
 
     .line 290
@@ -753,13 +753,13 @@
     return-object v13
 
     .line 295
-    :cond_126
+    :cond_d
     and-int/lit8 v4, v1, 0x7f
 
     .line 296
     .line 297
-    :cond_128
-    :goto_128
+    :cond_e
+    :goto_9
     iget v1, v0, Llibs/z80;->d:I
 
     .line 298
@@ -771,11 +771,11 @@
 
     .line 301
     .line 302
-    goto/16 :goto_e
+    goto/16 :goto_0
 
     .line 303
     .line 304
-    :cond_12f
+    :cond_f
     const/16 p1, -0x7c
 
     .line 305
@@ -815,8 +815,8 @@
 
     .line 322
     .line 323
-    :cond_142
-    :goto_142
+    :cond_10
+    :goto_a
     iget v1, v0, Llibs/z80;->d:I
 
     .line 324
@@ -825,7 +825,7 @@
 
     .line 326
     .line 327
-    if-ge v1, v3, :cond_239
+    if-ge v1, v3, :cond_19
 
     .line 328
     .line 329
@@ -842,14 +842,14 @@
 
     .line 335
     .line 336
-    if-ne v1, v3, :cond_152
+    if-ne v1, v3, :cond_11
 
     .line 337
     .line 338
-    goto :goto_142
+    goto :goto_a
 
     .line 339
-    :cond_152
+    :cond_11
     iget-object v3, v0, Llibs/z80;->a:[B
 
     .line 340
@@ -878,7 +878,7 @@
     move-result v3
 
     .line 353
-    if-eqz v3, :cond_17d
+    if-eqz v3, :cond_12
 
     .line 354
     .line 355
@@ -936,15 +936,15 @@
 
     .line 380
     .line 381
-    goto :goto_142
+    goto :goto_a
 
     .line 382
-    :cond_17d
+    :cond_12
     and-int/lit16 v3, v1, 0x80
 
     .line 383
     .line 384
-    if-ne v3, v11, :cond_199
+    if-ne v3, v11, :cond_13
 
     .line 385
     .line 386
@@ -958,8 +958,8 @@
     const/4 v4, 0x0
 
     .line 390
-    :goto_185
-    if-ge v3, v1, :cond_19b
+    :goto_b
+    if-ge v3, v1, :cond_14
 
     .line 391
     .line 392
@@ -998,20 +998,20 @@
 
     .line 408
     .line 409
-    goto :goto_185
+    goto :goto_b
 
     .line 410
-    :cond_199
+    :cond_13
     and-int/lit8 v4, v1, 0x7f
 
     .line 411
     .line 412
-    :cond_19b
+    :cond_14
     iget-object v1, v0, Llibs/z80;->b:[B
 
     .line 413
     .line 414
-    if-ge v4, v11, :cond_1aa
+    if-ge v4, v11, :cond_15
 
     .line 415
     .line 416
@@ -1034,16 +1034,16 @@
 
     .line 424
     .line 425
-    goto/16 :goto_21f
+    goto/16 :goto_c
 
     .line 426
     .line 427
-    :cond_1aa
+    :cond_15
     iget v3, v0, Llibs/z80;->c:I
 
     .line 428
     .line 429
-    if-ge v4, v10, :cond_1bc
+    if-ge v4, v10, :cond_16
 
     .line 430
     .line 431
@@ -1074,11 +1074,11 @@
 
     .line 443
     .line 444
-    goto :goto_21f
+    goto :goto_c
 
     .line 445
-    :cond_1bc
-    if-ge v4, v8, :cond_1d5
+    :cond_16
+    if-ge v4, v8, :cond_17
 
     .line 446
     .line 447
@@ -1128,11 +1128,11 @@
 
     .line 468
     .line 469
-    goto :goto_21f
+    goto :goto_c
 
     .line 470
-    :cond_1d5
-    if-ge v4, v6, :cond_1f7
+    :cond_17
+    if-ge v4, v6, :cond_18
 
     .line 471
     .line 472
@@ -1201,10 +1201,10 @@
 
     .line 502
     .line 503
-    goto :goto_21f
+    goto :goto_c
 
     .line 504
-    :cond_1f7
+    :cond_18
     add-int/lit8 v5, v3, 0x1
 
     .line 505
@@ -1289,12 +1289,12 @@
 
     .line 543
     .line 544
-    :goto_21f
+    :goto_c
     const/4 v1, 0x0
 
     .line 545
-    :goto_220
-    if-ge v1, v4, :cond_142
+    :goto_d
+    if-ge v1, v4, :cond_10
 
     .line 546
     .line 547
@@ -1342,10 +1342,10 @@
 
     .line 568
     .line 569
-    goto :goto_220
+    goto :goto_d
 
     .line 570
-    :cond_239
+    :cond_19
     iget-object v1, v0, Llibs/z80;->b:[B
 
     .line 571
@@ -1354,7 +1354,7 @@
 .end method
 
 .method public final c()V
-    .registers 6
+    .locals 5
 
     .line 1
     iget v0, p0, Llibs/z80;->d:I
@@ -1365,14 +1365,14 @@
 
     .line 4
     .line 5
-    if-ne v0, v1, :cond_7
+    if-ne v0, v1, :cond_0
 
     .line 6
     .line 7
     return-void
 
     .line 8
-    :cond_7
+    :cond_0
     iget-object v1, p0, Llibs/z80;->a:[B
 
     .line 9
@@ -1393,7 +1393,7 @@
 
     .line 17
     .line 18
-    if-nez v4, :cond_27
+    if-nez v4, :cond_1
 
     .line 19
     .line 20
@@ -1401,7 +1401,7 @@
 
     .line 21
     .line 22
-    if-nez v4, :cond_27
+    if-nez v4, :cond_1
 
     .line 23
     .line 24
@@ -1409,7 +1409,7 @@
 
     .line 25
     .line 26
-    if-nez v4, :cond_27
+    if-nez v4, :cond_1
 
     .line 27
     .line 28
@@ -1417,7 +1417,7 @@
 
     .line 29
     .line 30
-    if-nez v1, :cond_27
+    if-nez v1, :cond_1
 
     .line 31
     .line 32
@@ -1437,7 +1437,7 @@
     return-void
 
     .line 40
-    :cond_27
+    :cond_1
     iget-object v0, p0, Llibs/z80;->b:[B
 
     .line 41

@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(BLjava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/u31;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 6
+    .locals 5
 
     .line 1
     iget-byte v0, p0, Llibs/u31;->X:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_34
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -60,7 +60,7 @@
     return-void
 
     .line 12
-    :pswitch_b
+    :pswitch_0
     invoke-static {v1}, Llibs/u92;->b(Ljava/lang/String;)Z
 
     .line 13
@@ -69,7 +69,7 @@
     return-void
 
     .line 16
-    :pswitch_f
+    :pswitch_1
     invoke-static {v1}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
 
     .line 17
@@ -78,7 +78,7 @@
     move-result v0
 
     .line 20
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_0
 
     .line 21
     .line 22
@@ -90,10 +90,10 @@
     move-result-object v0
 
     .line 26
-    goto :goto_22
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_0
     invoke-static {}, Llibs/vg3;->Call()Ljava/lang/String;
 
     .line 28
@@ -110,7 +110,7 @@
     move-result-object v0
 
     .line 35
-    :goto_22
+    :goto_0
     const/4 v2, 0x1
 
     .line 36
@@ -149,9 +149,9 @@
     nop
 
     .line 53
-    :pswitch_data_34
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_f
-        :pswitch_b
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

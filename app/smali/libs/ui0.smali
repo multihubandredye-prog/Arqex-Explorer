@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Throwable;Landroid/app/Activity;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/ui0;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/ui0;->X:B
@@ -60,7 +60,7 @@
 
     .line 7
     .line 8
-    packed-switch v0, :pswitch_data_5a
+    packed-switch v0, :pswitch_data_0
 
     .line 9
     .line 10
@@ -73,7 +73,7 @@
     move-result v0
 
     .line 15
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 16
     .line 17
@@ -94,15 +94,15 @@
     .line 24
     .line 25
     .line 26
-    goto :goto_31
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_0
     instance-of v0, v3, Lexceptions/AlreadyExistsException;
 
     .line 28
     .line 29
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_1
 
     .line 30
     .line 31
@@ -123,10 +123,10 @@
     .line 38
     .line 39
     .line 40
-    goto :goto_31
+    goto :goto_0
 
     .line 41
-    :cond_28
+    :cond_1
     sget v0, Llibs/bi2;->failed:I
 
     .line 42
@@ -144,11 +144,11 @@
     .line 48
     .line 49
     .line 50
-    :goto_31
+    :goto_0
     return-void
 
     .line 51
-    :pswitch_32
+    :pswitch_0
     invoke-static {v3}, Llibs/hp0;->y(Ljava/lang/Throwable;)Z
 
     .line 52
@@ -157,7 +157,7 @@
     move-result v0
 
     .line 55
-    if-eqz v0, :cond_42
+    if-eqz v0, :cond_2
 
     .line 56
     .line 57
@@ -178,15 +178,15 @@
     .line 64
     .line 65
     .line 66
-    goto :goto_59
+    goto :goto_1
 
     .line 67
-    :cond_42
+    :cond_2
     instance-of v0, v3, Lexceptions/AlreadyExistsException;
 
     .line 68
     .line 69
-    if-eqz v0, :cond_50
+    if-eqz v0, :cond_3
 
     .line 70
     .line 71
@@ -207,10 +207,10 @@
     .line 78
     .line 79
     .line 80
-    goto :goto_59
+    goto :goto_1
 
     .line 81
-    :cond_50
+    :cond_3
     sget v0, Llibs/bi2;->failed:I
 
     .line 82
@@ -228,12 +228,12 @@
     .line 88
     .line 89
     .line 90
-    :goto_59
+    :goto_1
     return-void
 
     .line 91
-    :pswitch_data_5a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_32
+        :pswitch_0
     .end packed-switch
 .end method

@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r4;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/p4;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 12
+    .locals 6
 
     .line 1
     iget-byte p1, p0, Llibs/p4;->X:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch p1, :pswitch_data_cc
+    packed-switch p1, :pswitch_data_0
 
     .line 6
     .line 7
@@ -68,7 +68,7 @@
     return-void
 
     .line 16
-    :pswitch_f
+    :pswitch_0
     invoke-virtual {p2}, Llibs/r4;->App()V
 
     .line 17
@@ -82,7 +82,7 @@
     return-void
 
     .line 23
-    :pswitch_16
+    :pswitch_1
     invoke-virtual {p2}, Llibs/r4;->App()V
 
     .line 24
@@ -91,7 +91,7 @@
     return-void
 
     .line 27
-    :pswitch_1a
+    :pswitch_2
     invoke-virtual {p2}, Llibs/r4;->App()V
 
     .line 28
@@ -100,7 +100,7 @@
     return-void
 
     .line 31
-    :pswitch_1e
+    :pswitch_3
     iget-object p1, p2, Llibs/r4;->Sierra:Llibs/q4;
 
     .line 32
@@ -157,7 +157,7 @@
     move-result v2
 
     .line 59
-    if-nez v2, :cond_46
+    if-nez v2, :cond_0
 
     .line 60
     .line 61
@@ -173,15 +173,15 @@
     move-result v1
 
     .line 67
-    if-nez v1, :cond_46
+    if-nez v1, :cond_0
 
     .line 68
     .line 69
-    goto/16 :goto_bf
+    goto/16 :goto_0
 
     .line 70
     .line 71
-    :cond_46
+    :cond_0
     const/4 v1, 0x1
 
     .line 72
@@ -192,7 +192,7 @@
     const/4 v3, 0x4
 
     .line 75
-    if-eq p3, v1, :cond_ad
+    if-eq p3, v1, :cond_5
 
     .line 76
     .line 77
@@ -203,7 +203,7 @@
 
     .line 79
     .line 80
-    if-eq p3, v4, :cond_9b
+    if-eq p3, v4, :cond_4
 
     .line 81
     .line 82
@@ -214,7 +214,7 @@
 
     .line 84
     .line 85
-    if-eq p3, v1, :cond_89
+    if-eq p3, v1, :cond_3
 
     .line 86
     .line 87
@@ -232,7 +232,7 @@
 
     .line 92
     .line 93
-    if-eq p3, v1, :cond_75
+    if-eq p3, v1, :cond_2
 
     .line 94
     .line 95
@@ -240,14 +240,14 @@
 
     .line 96
     .line 97
-    if-eq p3, v1, :cond_63
+    if-eq p3, v1, :cond_1
 
     .line 98
     .line 99
-    goto :goto_bf
+    goto :goto_0
 
     .line 100
-    :cond_63
+    :cond_1
     const-string p3, "64m"
 
     .line 101
@@ -279,10 +279,10 @@
     .line 115
     .line 116
     .line 117
-    goto :goto_bf
+    goto :goto_0
 
     .line 118
-    :cond_75
+    :cond_2
     const-string p3, "32m"
 
     .line 119
@@ -318,10 +318,10 @@
     .line 135
     .line 136
     .line 137
-    goto :goto_bf
+    goto :goto_0
 
     .line 138
-    :cond_89
+    :cond_3
     const-string p3, "16m"
 
     .line 139
@@ -353,10 +353,10 @@
     .line 153
     .line 154
     .line 155
-    goto :goto_bf
+    goto :goto_0
 
     .line 156
-    :cond_9b
+    :cond_4
     const-string p3, "1m"
 
     .line 157
@@ -388,10 +388,10 @@
     .line 171
     .line 172
     .line 173
-    goto :goto_bf
+    goto :goto_0
 
     .line 174
-    :cond_ad
+    :cond_5
     const-string p3, "64k"
 
     .line 175
@@ -426,7 +426,7 @@
     .line 190
     .line 191
     .line 192
-    :goto_bf
+    :goto_0
     invoke-virtual {p2}, Llibs/r4;->App()V
 
     .line 193
@@ -435,7 +435,7 @@
     return-void
 
     .line 196
-    :pswitch_c3
+    :pswitch_4
     iget-object p1, p2, Llibs/r4;->Sierra:Llibs/q4;
 
     .line 197
@@ -455,12 +455,12 @@
     nop
 
     .line 205
-    :pswitch_data_cc
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_c3
-        :pswitch_1e
-        :pswitch_1a
-        :pswitch_16
-        :pswitch_f
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

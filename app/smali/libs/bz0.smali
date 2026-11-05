@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 63
+    .locals 63
 
     .line 1
     new-instance v0, Llibs/px0;
@@ -1525,11 +1525,11 @@
     .line 782
     .line 783
     .line 784
-    :goto_30f
+    :goto_0
     array-length v3, v1
 
     .line 785
-    if-ge v2, v3, :cond_32a
+    if-ge v2, v3, :cond_1
 
     .line 786
     .line 787
@@ -1549,7 +1549,7 @@
     move-result v3
 
     .line 795
-    if-nez v3, :cond_327
+    if-nez v3, :cond_0
 
     .line 796
     .line 797
@@ -1574,15 +1574,15 @@
     .line 806
     .line 807
     .line 808
-    :cond_327
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
     .line 809
     .line 810
-    goto :goto_30f
+    goto :goto_0
 
     .line 811
-    :cond_32a
+    :cond_1
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
 
     .line 812
@@ -1599,7 +1599,7 @@
 .end method
 
 .method public static a(Llibs/ql;)V
-    .registers 5
+    .locals 4
 
     .line 1
     invoke-virtual {p0}, Llibs/ql;->l()I
@@ -1613,8 +1613,8 @@
     const/4 v1, 0x0
 
     .line 6
-    :goto_5
-    if-ge v1, v0, :cond_21
+    :goto_0
+    if-ge v1, v0, :cond_2
 
     .line 7
     .line 8
@@ -1630,7 +1630,7 @@
 
     .line 13
     .line 14
-    if-lt v2, v3, :cond_1e
+    if-lt v2, v3, :cond_1
 
     .line 15
     .line 16
@@ -1638,14 +1638,14 @@
 
     .line 17
     .line 18
-    if-le v2, v3, :cond_14
+    if-le v2, v3, :cond_0
 
     .line 19
     .line 20
-    goto :goto_1e
+    goto :goto_1
 
     .line 21
-    :cond_14
+    :cond_0
     const-string v0, "PROTOCOL_ERROR response malformed: mixed case name: "
 
     .line 22
@@ -1666,15 +1666,15 @@
     return-void
 
     .line 31
-    :cond_1e
-    :goto_1e
+    :cond_1
+    :goto_1
     add-int/lit8 v1, v1, 0x1
 
     .line 32
     .line 33
-    goto :goto_5
+    goto :goto_0
 
     .line 34
-    :cond_21
+    :cond_2
     return-void
 .end method

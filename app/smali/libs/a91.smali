@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/ImageViewerActivity;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/a91;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final c([Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/a91;->X:B
@@ -53,7 +53,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_62
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -83,7 +83,7 @@
     return v2
 
     .line 23
-    :pswitch_16
+    :pswitch_0
     sget v0, Lcom/mixplorer/activities/ImageViewerActivity;->OO:I
 
     .line 24
@@ -113,7 +113,7 @@
     return v2
 
     .line 38
-    :pswitch_25
+    :pswitch_1
     sget v0, Lcom/mixplorer/activities/ImageViewerActivity;->OO:I
 
     .line 39
@@ -138,14 +138,14 @@
 
     .line 49
     .line 50
-    if-nez v0, :cond_34
+    if-nez v0, :cond_0
 
     .line 51
     .line 52
-    goto :goto_60
+    goto :goto_0
 
     .line 53
-    :cond_34
+    :cond_0
     invoke-virtual {v0}, Lcom/mixplorer/widgets/MiSliderLayout;->getCurrentPosition()I
 
     .line 54
@@ -234,16 +234,16 @@
     const/4 v1, 0x1
 
     .line 97
-    :goto_60
+    :goto_0
     return v1
 
     .line 98
     nop
 
     .line 99
-    :pswitch_data_62
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_25
-        :pswitch_16
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

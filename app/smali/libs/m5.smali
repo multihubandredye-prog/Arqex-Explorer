@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>([Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final hasNext()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/m5;->Y:I
@@ -53,7 +53,7 @@
     array-length v1, v1
 
     .line 6
-    if-ge v0, v1, :cond_9
+    if-ge v0, v1, :cond_0
 
     .line 7
     .line 8
@@ -63,7 +63,7 @@
     return v0
 
     .line 10
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
     .line 11
@@ -71,7 +71,7 @@
 .end method
 
 .method public final next()Ljava/lang/Object;
-    .registers 5
+    .locals 4
 
     .line 1
     iget v0, p0, Llibs/m5;->Y:I
@@ -85,7 +85,7 @@
     array-length v2, v1
 
     .line 6
-    if-eq v0, v2, :cond_e
+    if-eq v0, v2, :cond_0
 
     .line 7
     .line 8
@@ -104,7 +104,7 @@
     return-object v0
 
     .line 15
-    :cond_e
+    :cond_0
     new-instance v0, Ljava/util/NoSuchElementException;
 
     .line 16
@@ -148,7 +148,7 @@
 .end method
 
 .method public final remove()V
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/UnsupportedOperationException;

@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/math/BigInteger;Ljava/math/BigInteger;Llibs/wr2;)V
-    .registers 5
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/y30;
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final b(Llibs/z30;)V
-    .registers 5
+    .locals 3
 
     .line 1
     new-instance v0, Ljavax/crypto/spec/DHParameterSpec;

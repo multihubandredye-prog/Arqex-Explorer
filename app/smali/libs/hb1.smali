@@ -31,7 +31,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/net/Uri;Llibs/rp0;Ljava/util/concurrent/atomic/AtomicBoolean;Llibs/ml1;Ljava/lang/String;Landroid/net/Uri;Ljava/util/ArrayList;ZLandroid/app/Activity;ZZZ)V
-    .registers 13
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/hb1;->c:Landroid/net/Uri;
@@ -93,7 +93,7 @@
 
 # virtual methods
 .method public final z(Landroid/view/View;I)V
-    .registers 16
+    .locals 13
 
     .line 1
     iget-object p1, p0, Llibs/hb1;->d:Llibs/rp0;
@@ -112,28 +112,28 @@
     move-result-object v1
 
     .line 9
-    :try_start_8
+    :try_start_0
     sget-object v2, Llibs/zo1;->d:Ljava/util/HashMap;
 
     .line 10
     .line 11
     monitor-enter v2
-    :try_end_b
-    .catchall {:try_start_8 .. :try_end_b} :catchall_20
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 12
-    :try_start_b
+    :try_start_1
     invoke-virtual {v2, v1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 13
     .line 14
     .line 15
     monitor-exit v2
-    :try_end_f
-    .catchall {:try_start_b .. :try_end_f} :catchall_1d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 16
-    :try_start_f
+    :try_start_2
     iget-object v0, p1, Llibs/rp0;->Three:Ljava/lang/String;
 
     .line 17
@@ -153,68 +153,68 @@
     .line 25
     .line 26
     invoke-static {v0}, Llibs/zo1;->e(Ljava/lang/String;)V
-    :try_end_1c
-    .catchall {:try_start_f .. :try_end_1c} :catchall_20
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 27
     .line 28
     .line 29
-    goto :goto_21
+    goto :goto_0
 
     .line 30
-    :catchall_1d
+    :catchall_0
     move-exception v0
 
     .line 31
-    :try_start_1e
+    :try_start_3
     monitor-exit v2
-    :try_end_1f
-    .catchall {:try_start_1e .. :try_end_1f} :catchall_1d
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 32
-    :try_start_1f
+    :try_start_4
     throw v0
-    :try_end_20
-    .catchall {:try_start_1f .. :try_end_20} :catchall_20
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 33
-    :catchall_20
+    :catchall_1
     nop
 
     .line 34
-    :goto_21
+    :goto_0
     const/4 v0, 0x1
 
     .line 35
-    if-eq p2, v0, :cond_69
+    if-eq p2, v0, :cond_6
 
     .line 36
     .line 37
     const/4 v0, 0x2
 
     .line 38
-    if-eq p2, v0, :cond_66
+    if-eq p2, v0, :cond_5
 
     .line 39
     .line 40
     const/4 v0, 0x3
 
     .line 41
-    if-eq p2, v0, :cond_63
+    if-eq p2, v0, :cond_4
 
     .line 42
     .line 43
     const/4 v0, 0x4
 
     .line 44
-    if-eq p2, v0, :cond_37
+    if-eq p2, v0, :cond_1
 
     .line 45
     .line 46
     const/4 p1, 0x5
 
     .line 47
-    if-eq p2, p1, :cond_34
+    if-eq p2, p1, :cond_0
 
     .line 48
     .line 49
@@ -222,22 +222,22 @@
 
     .line 50
     .line 51
-    :goto_32
+    :goto_1
     move-object v1, p1
 
     .line 52
-    goto :goto_6c
+    goto :goto_3
 
     .line 53
-    :cond_34
+    :cond_0
     const-string p1, "all"
 
     .line 54
     .line 55
-    goto :goto_32
+    goto :goto_1
 
     .line 56
-    :cond_37
+    :cond_1
     iget-wide v2, p1, Llibs/rp0;->Pi:J
 
     .line 57
@@ -254,7 +254,7 @@
 
     .line 63
     .line 64
-    if-nez v6, :cond_4c
+    if-nez v6, :cond_2
 
     .line 65
     .line 66
@@ -266,7 +266,7 @@
     move-result-object v2
 
     .line 70
-    if-eqz v2, :cond_4c
+    if-eqz v2, :cond_2
 
     .line 71
     .line 72
@@ -278,10 +278,10 @@
     move-result-object v2
 
     .line 76
-    goto :goto_59
+    goto :goto_2
 
     .line 77
-    :cond_4c
+    :cond_2
     sget-object v2, Llibs/_g;->d:Llibs/_f;
 
     .line 78
@@ -294,7 +294,7 @@
     move-result v2
 
     .line 83
-    if-eqz v2, :cond_57
+    if-eqz v2, :cond_3
 
     .line 84
     .line 85
@@ -302,16 +302,16 @@
 
     .line 86
     .line 87
-    goto :goto_59
+    goto :goto_2
 
     .line 88
-    :cond_57
+    :cond_3
     const-string v2, "application/zip"
 
     .line 89
     .line 90
-    :goto_59
-    :try_start_59
+    :goto_2
+    :try_start_5
     invoke-static {v1, v0}, Llibs/zo1;->x(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 91
@@ -322,44 +322,44 @@
     .line 94
     .line 95
     invoke-static {p1, v0}, Llibs/zo1;->x(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_61
-    .catchall {:try_start_59 .. :try_end_61} :catchall_61
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_2
 
     .line 96
     .line 97
     .line 98
-    :catchall_61
+    :catchall_2
     move-object v1, v2
 
     .line 99
-    goto :goto_6c
+    goto :goto_3
 
     .line 100
-    :cond_63
+    :cond_4
     const-string p1, "video/*"
 
     .line 101
     .line 102
-    goto :goto_32
+    goto :goto_1
 
     .line 103
-    :cond_66
+    :cond_5
     const-string p1, "audio/*"
 
     .line 104
     .line 105
-    goto :goto_32
+    goto :goto_1
 
     .line 106
-    :cond_69
+    :cond_6
     const-string p1, "image/*"
 
     .line 107
     .line 108
-    goto :goto_32
+    goto :goto_1
 
     .line 109
-    :goto_6c
+    :goto_3
     iget-object p1, p0, Llibs/hb1;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     .line 110

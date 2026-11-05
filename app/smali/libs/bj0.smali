@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/s20;Ljava/util/concurrent/locks/ReentrantLock;Llibs/dn1;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/e00;-><init>()V
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public final a()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x2
@@ -61,7 +61,7 @@
 .end method
 
 .method public final b(Llibs/at;Llibs/ce;Llibs/bz3;)V
-    .registers 5
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/bj0;->k:Ljava/util/concurrent/locks/ReentrantLock;
@@ -73,10 +73,10 @@
     .line 4
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     invoke-super {p0, p1, p2, p3}, Llibs/e00;->b(Llibs/at;Llibs/ce;Llibs/bz3;)V
-    :try_end_8
-    .catchall {:try_start_5 .. :try_end_8} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 7
     .line 8
@@ -89,7 +89,7 @@
     return-void
 
     .line 13
-    :catchall_c
+    :catchall_0
     move-exception p1
 
     .line 14
@@ -102,7 +102,7 @@
 .end method
 
 .method public final c(Llibs/oy2;)V
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/e00;->c:Llibs/bz3;
@@ -154,7 +154,7 @@
     .line 24
     .line 25
     .line 26
-    :cond_19
+    :cond_0
     iget-object v2, v0, Llibs/bz3;->b:Llibs/u80;
 
     .line 27
@@ -186,7 +186,7 @@
     move-result v2
 
     .line 41
-    if-nez v2, :cond_39
+    if-nez v2, :cond_1
 
     .line 42
     .line 43
@@ -214,14 +214,14 @@
 
     .line 54
     .line 55
-    if-eqz v2, :cond_19
+    if-eqz v2, :cond_0
 
     .line 56
     .line 57
     return-void
 
     .line 58
-    :cond_39
+    :cond_1
     new-instance p1, Llibs/qy2;
 
     .line 59
@@ -243,19 +243,19 @@
     .line 67
     .line 68
     .line 69
-    goto :goto_46
+    goto :goto_1
 
     .line 70
-    :goto_45
+    :goto_0
     throw p1
 
     .line 71
-    :goto_46
-    goto :goto_45
+    :goto_1
+    goto :goto_0
 .end method
 
 .method public final d(Llibs/oy2;)J
-    .registers 15
+    .locals 13
 
     .line 1
     iget-object v0, p0, Llibs/bj0;->k:Ljava/util/concurrent/locks/ReentrantLock;
@@ -267,7 +267,7 @@
     .line 4
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     iget-object v1, p0, Llibs/bj0;->i:Llibs/bn1;
 
     .line 7
@@ -286,7 +286,7 @@
     const/4 v6, 0x1
 
     .line 14
-    if-eqz v2, :cond_35
+    if-eqz v2, :cond_0
 
     .line 15
     .line 16
@@ -360,24 +360,24 @@
     .line 48
     .line 49
     .line 50
-    goto :goto_35
+    goto :goto_0
 
     .line 51
-    :catchall_32
+    :catchall_0
     move-exception p1
 
     .line 52
-    goto/16 :goto_f4
+    goto/16 :goto_3
 
     .line 53
     .line 54
-    :cond_35
-    :goto_35
+    :cond_0
+    :goto_0
     iget-object v1, p0, Llibs/e00;->c:Llibs/bz3;
 
     .line 55
     .line 56
-    if-eqz v1, :cond_42
+    if-eqz v1, :cond_2
 
     .line 57
     .line 58
@@ -385,7 +385,7 @@
 
     .line 59
     .line 60
-    if-nez v2, :cond_41
+    if-nez v2, :cond_1
 
     .line 61
     .line 62
@@ -393,16 +393,16 @@
 
     .line 63
     .line 64
-    if-nez v1, :cond_42
+    if-nez v1, :cond_2
 
     .line 65
     .line 66
-    :cond_41
+    :cond_1
     const/4 v3, 0x1
 
     .line 67
-    :cond_42
-    if-eqz v3, :cond_47
+    :cond_2
+    if-eqz v3, :cond_3
 
     .line 68
     .line 69
@@ -411,7 +411,7 @@
     .line 70
     .line 71
     .line 72
-    :cond_47
+    :cond_3
     invoke-virtual {p1}, Llibs/uj;->a()I
 
     .line 73
@@ -424,7 +424,7 @@
 
     .line 77
     .line 78
-    if-eqz v2, :cond_52
+    if-eqz v2, :cond_4
 
     .line 79
     .line 80
@@ -432,15 +432,15 @@
 
     .line 81
     .line 82
-    goto :goto_54
+    goto :goto_1
 
     .line 83
-    :cond_52
+    :cond_4
     add-int/lit8 v2, v1, 0x5
 
     .line 84
     .line 85
-    :goto_54
+    :goto_1
     iget v3, p0, Llibs/e00;->d:I
 
     .line 86
@@ -455,7 +455,7 @@
     const/4 v7, 0x4
 
     .line 91
-    if-lt v2, v7, :cond_62
+    if-lt v2, v7, :cond_5
 
     .line 92
     .line 93
@@ -463,19 +463,19 @@
 
     .line 94
     .line 95
-    if-eqz v8, :cond_63
+    if-eqz v8, :cond_6
 
     .line 96
     .line 97
-    if-ge v2, v3, :cond_63
+    if-ge v2, v3, :cond_6
 
     .line 98
     .line 99
-    :cond_62
+    :cond_5
     add-int/2addr v2, v3
 
     .line 100
-    :cond_63
+    :cond_6
     iget v8, p1, Llibs/uj;->b:I
 
     .line 101
@@ -495,7 +495,7 @@
 
     .line 108
     .line 109
-    if-ge v10, v11, :cond_71
+    if-ge v10, v11, :cond_7
 
     .line 110
     .line 111
@@ -506,12 +506,12 @@
 
     .line 113
     .line 114
-    :cond_71
+    :cond_7
     iget-boolean v11, p0, Llibs/e00;->h:Z
 
     .line 115
     .line 116
-    if-eqz v11, :cond_7e
+    if-eqz v11, :cond_8
 
     .line 117
     .line 118
@@ -519,7 +519,7 @@
 
     .line 119
     .line 120
-    if-eqz v11, :cond_7e
+    if-eqz v11, :cond_8
 
     .line 121
     .line 122
@@ -536,7 +536,7 @@
 
     .line 126
     .line 127
-    :cond_7e
+    :cond_8
     sub-int/2addr v8, v6
 
     .line 128
@@ -612,7 +612,7 @@
 
     .line 165
     .line 166
-    if-eqz v2, :cond_ce
+    if-eqz v2, :cond_a
 
     .line 167
     .line 168
@@ -644,7 +644,7 @@
     move-result v1
 
     .line 182
-    if-eqz v1, :cond_c6
+    if-eqz v1, :cond_9
 
     .line 183
     .line 184
@@ -674,10 +674,10 @@
     .line 196
     .line 197
     .line 198
-    goto :goto_ec
+    goto :goto_2
 
     .line 199
-    :cond_c6
+    :cond_9
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     .line 200
@@ -694,12 +694,12 @@
     throw p1
 
     .line 207
-    :cond_ce
+    :cond_a
     iget-boolean v2, p0, Llibs/e00;->g:Z
 
     .line 208
     .line 209
-    if-eqz v2, :cond_dd
+    if-eqz v2, :cond_b
 
     .line 210
     .line 211
@@ -721,15 +721,15 @@
     .line 219
     .line 220
     .line 221
-    goto :goto_ec
+    goto :goto_2
 
     .line 222
-    :cond_dd
+    :cond_b
     iget-object v2, p0, Llibs/e00;->b:Llibs/ce;
 
     .line 223
     .line 224
-    if-eqz v2, :cond_e4
+    if-eqz v2, :cond_c
 
     .line 225
     .line 226
@@ -738,7 +738,7 @@
     .line 227
     .line 228
     .line 229
-    :cond_e4
+    :cond_c
     iget-object v1, p0, Llibs/e00;->a:Llibs/at;
 
     .line 230
@@ -755,14 +755,14 @@
     .line 235
     .line 236
     .line 237
-    :goto_ec
+    :goto_2
     iput v9, p1, Llibs/uj;->b:I
 
     .line 238
     .line 239
     iget-wide v1, p0, Llibs/e00;->e:J
-    :try_end_f0
-    .catchall {:try_start_5 .. :try_end_f0} :catchall_32
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 240
     .line 241
@@ -774,7 +774,7 @@
     return-wide v1
 
     .line 245
-    :goto_f4
+    :goto_3
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
     .line 246
@@ -784,7 +784,7 @@
 .end method
 
 .method public final e(Llibs/oy2;II)V
-    .registers 7
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/e00;->b:Llibs/ce;

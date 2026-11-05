@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/rz0;Llibs/e11;)V
-    .registers 5
+    .locals 2
 
     .line 1
     iput-object p1, p0, Llibs/nz0;->Xi:Llibs/rz0;
@@ -52,26 +52,26 @@
 
 # virtual methods
 .method public final close()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/lz0;->Y:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     iget-boolean v0, p0, Llibs/nz0;->Nu:Z
 
     .line 7
     .line 8
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1
 
     .line 9
     .line 10
@@ -79,26 +79,26 @@
 
     .line 11
     .line 12
-    :try_start_b
+    :try_start_0
     invoke-static {p0, v0}, Llibs/ur3;->q(Llibs/ed3;I)Z
 
     .line 13
     .line 14
     .line 15
     move-result v0
-    :try_end_f
-    .catch Ljava/io/IOException; {:try_start_b .. :try_end_f} :catch_10
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 16
-    goto :goto_11
+    goto :goto_0
 
     .line 17
-    :catch_10
+    :catch_0
     const/4 v0, 0x0
 
     .line 18
-    :goto_11
-    if-nez v0, :cond_1f
+    :goto_0
+    if-nez v0, :cond_1
 
     .line 19
     .line 20
@@ -124,7 +124,7 @@
     .line 30
     .line 31
     .line 32
-    :cond_1f
+    :cond_1
     const/4 v0, 0x1
 
     .line 33
@@ -136,7 +136,7 @@
 .end method
 
 .method public final e(JLlibs/vj;)J
-    .registers 12
+    .locals 8
 
     .line 1
     iget-object p1, p0, Llibs/nz0;->Xi:Llibs/rz0;
@@ -159,7 +159,7 @@
 
     .line 10
     .line 11
-    if-nez v0, :cond_b9
+    if-nez v0, :cond_8
 
     .line 12
     .line 13
@@ -171,14 +171,14 @@
 
     .line 16
     .line 17
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     .line 18
     .line 19
-    goto :goto_6a
+    goto :goto_1
 
     .line 20
-    :cond_13
+    :cond_0
     iget-wide v5, p0, Llibs/nz0;->Mu:J
 
     .line 21
@@ -187,7 +187,7 @@
 
     .line 23
     .line 24
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_1
 
     .line 25
     .line 26
@@ -195,11 +195,11 @@
 
     .line 27
     .line 28
-    if-nez v0, :cond_6b
+    if-nez v0, :cond_5
 
     .line 29
     .line 30
-    :cond_1d
+    :cond_1
     const-string v0, "expected chunk size and optional extensions but was \""
 
     .line 31
@@ -208,7 +208,7 @@
 
     .line 33
     .line 34
-    if-eqz v7, :cond_26
+    if-eqz v7, :cond_2
 
     .line 35
     .line 36
@@ -217,8 +217,8 @@
     .line 37
     .line 38
     .line 39
-    :cond_26
-    :try_start_26
+    :cond_2
+    :try_start_0
     invoke-interface {p2}, Llibs/dk;->u()J
 
     .line 40
@@ -255,7 +255,7 @@
 
     .line 56
     .line 57
-    if-ltz v7, :cond_93
+    if-ltz v7, :cond_7
 
     .line 58
     .line 59
@@ -267,7 +267,7 @@
     move-result v5
 
     .line 63
-    if-nez v5, :cond_4b
+    if-nez v5, :cond_3
 
     .line 64
     .line 65
@@ -281,26 +281,26 @@
     .line 69
     .line 70
     move-result v5
-    :try_end_46
-    .catch Ljava/lang/NumberFormatException; {:try_start_26 .. :try_end_46} :catch_49
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 71
-    if-eqz v5, :cond_93
+    if-eqz v5, :cond_7
 
     .line 72
     .line 73
-    goto :goto_4b
+    goto :goto_0
 
     .line 74
-    :catch_49
+    :catch_0
     move-exception p1
 
     .line 75
-    goto :goto_af
+    goto :goto_2
 
     .line 76
-    :cond_4b
-    :goto_4b
+    :cond_3
+    :goto_0
     iget-wide v5, p0, Llibs/nz0;->Mu:J
 
     .line 77
@@ -309,7 +309,7 @@
 
     .line 79
     .line 80
-    if-nez p2, :cond_66
+    if-nez p2, :cond_4
 
     .line 81
     .line 82
@@ -354,20 +354,20 @@
     .line 101
     .line 102
     .line 103
-    :cond_66
+    :cond_4
     iget-boolean p2, p0, Llibs/nz0;->Nu:Z
 
     .line 104
     .line 105
-    if-nez p2, :cond_6b
+    if-nez p2, :cond_5
 
     .line 106
     .line 107
-    :goto_6a
+    :goto_1
     return-wide v3
 
     .line 108
-    :cond_6b
+    :cond_5
     iget-wide v0, p0, Llibs/nz0;->Mu:J
 
     .line 109
@@ -396,7 +396,7 @@
 
     .line 121
     .line 122
-    if-eqz v0, :cond_81
+    if-eqz v0, :cond_6
 
     .line 123
     .line 124
@@ -414,7 +414,7 @@
     return-wide p2
 
     .line 130
-    :cond_81
+    :cond_6
     iget-object p1, p1, Llibs/rz0;->d:Ljava/lang/Object;
 
     .line 131
@@ -449,8 +449,8 @@
     throw p1
 
     .line 148
-    :cond_93
-    :try_start_93
+    :cond_7
+    :try_start_1
     new-instance p1, Ljava/net/ProtocolException;
 
     .line 149
@@ -501,11 +501,11 @@
     .line 174
     .line 175
     throw p1
-    :try_end_af
-    .catch Ljava/lang/NumberFormatException; {:try_start_93 .. :try_end_af} :catch_49
+    :try_end_1
+    .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 176
-    :goto_af
+    :goto_2
     new-instance p2, Ljava/net/ProtocolException;
 
     .line 177
@@ -526,7 +526,7 @@
     throw p2
 
     .line 186
-    :cond_b9
+    :cond_8
     const-string p1, "closed"
 
     .line 187

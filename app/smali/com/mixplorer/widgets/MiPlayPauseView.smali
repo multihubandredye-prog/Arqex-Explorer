@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
@@ -210,7 +210,7 @@
 
 # virtual methods
 .method public final a(ZZ)V
-    .registers 8
+    .locals 5
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiPlayPauseView;->Nu:Llibs/xu1;
@@ -221,7 +221,7 @@
 
     .line 4
     .line 5
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
     .line 6
     .line 7
@@ -233,15 +233,15 @@
     move-result v1
 
     .line 11
-    if-eq v1, p1, :cond_d
+    if-eq v1, p1, :cond_0
 
     .line 12
     .line 13
     return-void
 
     .line 14
-    :cond_d
-    if-eqz p1, :cond_12
+    :cond_0
+    if-eqz p1, :cond_1
 
     .line 15
     .line 16
@@ -249,15 +249,15 @@
 
     .line 17
     .line 18
-    goto :goto_14
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_1
     sget v1, Llibs/bi2;->pause:I
 
     .line 20
     .line 21
-    :goto_14
+    :goto_0
     invoke-static {v1}, Llibs/ho2;->Add(I)Ljava/lang/String;
 
     .line 22
@@ -298,7 +298,7 @@
 
     .line 40
     .line 41
-    if-nez p1, :cond_2d
+    if-nez p1, :cond_2
 
     .line 42
     .line 43
@@ -306,27 +306,27 @@
 
     .line 44
     .line 45
-    goto :goto_2e
+    goto :goto_1
 
     .line 46
-    :cond_2d
+    :cond_2
     const/4 v4, 0x0
 
     .line 47
-    :goto_2e
-    if-nez p1, :cond_31
+    :goto_1
+    if-nez p1, :cond_3
 
     .line 48
     .line 49
-    goto :goto_33
+    goto :goto_2
 
     .line 50
-    :cond_31
+    :cond_3
     const/high16 v2, 0x3f800000    # 1.0f
 
     .line 51
     .line 52
-    :goto_33
+    :goto_2
     const/4 p1, 0x2
 
     .line 53
@@ -380,7 +380,7 @@
 
     .line 78
     .line 79
-    if-eqz p2, :cond_53
+    if-eqz p2, :cond_4
 
     .line 80
     .line 81
@@ -388,15 +388,15 @@
 
     .line 82
     .line 83
-    goto :goto_55
+    goto :goto_3
 
     .line 84
-    :cond_53
+    :cond_4
     const-wide/16 p1, 0xc8
 
     .line 85
     .line 86
-    :goto_55
+    :goto_3
     invoke-virtual {v2, p1, p2}, Llibs/h32;->f(J)Llibs/q1;
 
     .line 87
@@ -411,7 +411,7 @@
 .end method
 
 .method public final b(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iput-boolean p1, p0, Lcom/mixplorer/widgets/MiPlayPauseView;->Mu:Z
@@ -436,7 +436,7 @@
 .end method
 
 .method public final onDraw(Landroid/graphics/Canvas;)V
-    .registers 7
+    .locals 5
 
     .line 1
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
@@ -452,7 +452,7 @@
     move-result v0
 
     .line 8
-    if-nez v0, :cond_13
+    if-nez v0, :cond_1
 
     .line 9
     .line 10
@@ -464,28 +464,28 @@
     move-result v0
 
     .line 14
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 15
     .line 16
-    goto :goto_13
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     iget v0, p0, Lcom/mixplorer/widgets/MiPlayPauseView;->Omicron:I
 
     .line 18
     .line 19
-    goto :goto_15
+    goto :goto_1
 
     .line 20
-    :cond_13
-    :goto_13
+    :cond_1
+    :goto_0
     iget v0, p0, Lcom/mixplorer/widgets/MiPlayPauseView;->Pi:I
 
     .line 21
     .line 22
-    :goto_15
+    :goto_1
     iget-object v1, p0, Lcom/mixplorer/widgets/MiPlayPauseView;->Xi:Landroid/graphics/Paint;
 
     .line 23
@@ -559,7 +559,7 @@
 
     .line 56
     .line 57
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_2
 
     .line 58
     .line 59
@@ -575,7 +575,7 @@
     move-result p1
 
     .line 65
-    if-eqz p1, :cond_45
+    if-eqz p1, :cond_2
 
     .line 66
     .line 67
@@ -584,12 +584,12 @@
     .line 68
     .line 69
     .line 70
-    :cond_45
+    :cond_2
     return-void
 .end method
 
 .method public final onSizeChanged(IIII)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->onSizeChanged(IIII)V
@@ -625,7 +625,7 @@
     move-result p3
 
     .line 18
-    if-eqz p3, :cond_24
+    if-eqz p3, :cond_1
 
     .line 19
     .line 20
@@ -637,7 +637,7 @@
     move-result p3
 
     .line 24
-    if-eqz p3, :cond_21
+    if-eqz p3, :cond_0
 
     .line 25
     .line 26
@@ -655,13 +655,13 @@
     .line 32
     .line 33
     .line 34
-    :cond_21
+    :cond_0
     invoke-static {p0}, Llibs/Golf;->x(Lcom/mixplorer/widgets/MiPlayPauseView;)V
 
     .line 35
     .line 36
     .line 37
-    :cond_24
+    :cond_1
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     .line 38
@@ -709,7 +709,7 @@
 .end method
 
 .method public final onTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->postInvalidate()V
@@ -729,7 +729,7 @@
 .end method
 
 .method public setTagDescription(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
@@ -746,14 +746,14 @@
 .end method
 
 .method public final verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/widgets/MiPlayPauseView;->Nu:Llibs/xu1;
 
     .line 2
     .line 3
-    if-eq p1, v0, :cond_d
+    if-eq p1, v0, :cond_1
 
     .line 4
     .line 5
@@ -765,22 +765,22 @@
     move-result p1
 
     .line 9
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 10
     .line 11
-    goto :goto_d
+    goto :goto_0
 
     .line 12
-    :cond_b
+    :cond_0
     const/4 p1, 0x0
 
     .line 13
     return p1
 
     .line 14
-    :cond_d
-    :goto_d
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
     .line 15

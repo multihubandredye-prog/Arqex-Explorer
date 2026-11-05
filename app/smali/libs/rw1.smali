@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic a(Ljava/net/Socket;)V
-    .registers 3
+    .locals 2
 
     .line 1
     sget-object v0, Ljava/net/StandardSocketOptions;->TCP_NODELAY:Ljava/net/SocketOption;

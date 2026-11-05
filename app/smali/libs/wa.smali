@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/$f;
@@ -48,7 +48,7 @@
 .end method
 
 .method public constructor <init>(Ljava/security/interfaces/RSAPublicKey;)V
-    .registers 3
+    .locals 1
 
     .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -76,7 +76,7 @@
 .end method
 
 .method public constructor <init>(Ljava/security/spec/RSAPublicKeySpec;)V
-    .registers 3
+    .locals 1
 
     .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -104,7 +104,7 @@
 .end method
 
 .method public constructor <init>(Llibs/ji3;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -115,7 +115,7 @@
     const/4 v0, 0x0
 
     .line 5
-    :try_start_4
+    :try_start_0
     invoke-virtual {p1}, Llibs/ji3;->i()Llibs/Theme;
 
     .line 6
@@ -124,7 +124,7 @@
     move-result-object v1
 
     .line 9
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     .line 10
     .line 11
@@ -145,14 +145,14 @@
     .line 18
     .line 19
     .line 20
-    goto :goto_15
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_0
     move-object v2, v0
 
     .line 22
-    :goto_15
+    :goto_0
     iget-object p1, p1, Llibs/ji3;->X:Llibs/$f;
 
     .line 23
@@ -174,15 +174,15 @@
     .line 31
     .line 32
     iput-object p1, p0, Llibs/wa;->Y:Ljava/math/BigInteger;
-    :try_end_21
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_21} :catch_22
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 33
     .line 34
     return-void
 
     .line 35
-    :catch_22
+    :catch_0
     const-string p1, "invalid info structure in RSA public key"
 
     .line 36
@@ -196,7 +196,7 @@
 .end method
 
 .method public constructor <init>(Llibs/uk2;)V
-    .registers 3
+    .locals 1
 
     .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -224,20 +224,20 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v1, p1, Ljava/security/interfaces/RSAPublicKey;
 
     .line 6
@@ -245,14 +245,14 @@
     const/4 v2, 0x0
 
     .line 8
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     .line 9
     .line 10
     return v2
 
     .line 11
-    :cond_a
+    :cond_1
     check-cast p1, Ljava/security/interfaces/RSAPublicKey;
 
     .line 12
@@ -277,7 +277,7 @@
     move-result v1
 
     .line 23
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_2
 
     .line 24
     .line 25
@@ -301,19 +301,19 @@
     move-result p1
 
     .line 35
-    if-eqz p1, :cond_25
+    if-eqz p1, :cond_2
 
     .line 36
     .line 37
     return v0
 
     .line 38
-    :cond_25
+    :cond_2
     return v2
 .end method
 
 .method public final getAlgorithm()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "RSA"
@@ -324,7 +324,7 @@
 .end method
 
 .method public final getEncoded()[B
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/yk2;
@@ -360,7 +360,7 @@
 .end method
 
 .method public final getFormat()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "X.509"
@@ -371,7 +371,7 @@
 .end method
 
 .method public final getModulus()Ljava/math/BigInteger;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/wa;->X:Ljava/math/BigInteger;
@@ -382,7 +382,7 @@
 .end method
 
 .method public final getPublicExponent()Ljava/math/BigInteger;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/wa;->Y:Ljava/math/BigInteger;
@@ -393,7 +393,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/wa;->X:Ljava/math/BigInteger;
@@ -427,7 +427,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/StringBuffer;

@@ -39,7 +39,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 15
+    .locals 15
 
     .line 1
     new-instance v0, Llibs/mh1;
@@ -323,7 +323,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
@@ -339,7 +339,7 @@
 .end method
 
 .method public static a(Ljava/security/Key;)Llibs/wh1;
-    .registers 8
+    .locals 7
 
     .line 1
     invoke-static {}, Llibs/wh1;->values()[Llibs/wh1;
@@ -363,8 +363,8 @@
     move-object v4, v2
 
     .line 10
-    :goto_9
-    if-ge v3, v1, :cond_24
+    :goto_0
+    if-ge v3, v1, :cond_3
 
     .line 11
     .line 12
@@ -380,30 +380,30 @@
     move-result v6
 
     .line 18
-    if-eqz v6, :cond_21
+    if-eqz v6, :cond_2
 
     .line 19
     .line 20
-    if-eq v4, v2, :cond_20
+    if-eq v4, v2, :cond_1
 
     .line 21
     .line 22
     move-object v6, v5
 
     .line 23
-    :goto_16
-    if-eqz v6, :cond_21
+    :goto_1
+    if-eqz v6, :cond_2
 
     .line 24
     .line 25
-    if-ne v4, v6, :cond_1b
+    if-ne v4, v6, :cond_0
 
     .line 26
     .line 27
-    goto :goto_20
+    goto :goto_2
 
     .line 28
-    :cond_1b
+    :cond_0
     invoke-virtual {v6}, Llibs/wh1;->c()Llibs/wh1;
 
     .line 29
@@ -412,28 +412,28 @@
     move-result-object v6
 
     .line 32
-    goto :goto_16
+    goto :goto_1
 
     .line 33
-    :cond_20
-    :goto_20
+    :cond_1
+    :goto_2
     move-object v4, v5
 
     .line 34
-    :cond_21
+    :cond_2
     add-int/lit8 v3, v3, 0x1
 
     .line 35
     .line 36
-    goto :goto_9
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_3
     return-object v4
 .end method
 
 .method public static b(Ljava/lang/String;)Llibs/wh1;
-    .registers 6
+    .locals 5
 
     .line 1
     invoke-static {}, Llibs/wh1;->values()[Llibs/wh1;
@@ -450,8 +450,8 @@
     const/4 v2, 0x0
 
     .line 7
-    :goto_6
-    if-ge v2, v1, :cond_16
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     .line 8
     .line 9
@@ -471,22 +471,22 @@
     move-result v4
 
     .line 17
-    if-eqz v4, :cond_13
+    if-eqz v4, :cond_0
 
     .line 18
     .line 19
     return-object v3
 
     .line 20
-    :cond_13
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
     .line 21
     .line 22
-    goto :goto_6
+    goto :goto_0
 
     .line 23
-    :cond_16
+    :cond_1
     sget-object p0, Llibs/wh1;->Phi:Llibs/lh1;
 
     .line 24
@@ -495,7 +495,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Llibs/wh1;
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Llibs/wh1;
@@ -518,7 +518,7 @@
 .end method
 
 .method public static values()[Llibs/wh1;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/wh1;->Chi:[Llibs/wh1;
@@ -543,7 +543,7 @@
 
 # virtual methods
 .method public c()Llibs/wh1;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -553,7 +553,7 @@
 .end method
 
 .method public d(Ljava/security/Key;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/wh1;->Lambda:Llibs/oh1;
@@ -572,7 +572,7 @@
 .end method
 
 .method public f(Ljava/security/PublicKey;Llibs/uj;)V
-    .registers 5
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/wh1;->X:Ljava/lang/String;
@@ -597,7 +597,7 @@
 .end method
 
 .method public g(Llibs/tj;)Ljava/security/PublicKey;
-    .registers 3
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/wh1;->Lambda:Llibs/oh1;
@@ -616,7 +616,7 @@
 .end method
 
 .method public h(Ljava/security/PublicKey;Llibs/uj;)V
-    .registers 4
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/wh1;->Lambda:Llibs/oh1;
@@ -632,7 +632,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/wh1;->X:Ljava/lang/String;

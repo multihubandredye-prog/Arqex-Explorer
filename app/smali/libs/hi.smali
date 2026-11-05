@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(BI)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/hi;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/hi;->X:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_20
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -60,7 +60,7 @@
     return-void
 
     .line 12
-    :pswitch_b
+    :pswitch_0
     invoke-static {v1}, Llibs/su0;->h(I)V
 
     .line 13
@@ -69,7 +69,7 @@
     return-void
 
     .line 16
-    :pswitch_f
+    :pswitch_1
     sget-object v0, Lcom/mixplorer/activities/BrowseActivity;->Il:Ljava/lang/ThreadGroup;
 
     .line 17
@@ -86,7 +86,7 @@
     return-void
 
     .line 24
-    :pswitch_17
+    :pswitch_2
     sget-object v0, Lcom/mixplorer/activities/BrowseActivity;->Il:Ljava/lang/ThreadGroup;
 
     .line 25
@@ -106,10 +106,10 @@
     nop
 
     .line 33
-    :pswitch_data_20
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_17
-        :pswitch_f
-        :pswitch_b
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

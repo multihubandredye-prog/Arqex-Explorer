@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/mn2;JI)V
-    .registers 8
+    .locals 3
 
     .line 1
     iget-object p1, p1, Llibs/mn2;->Pi:Llibs/kn2;
@@ -78,7 +78,7 @@
 .end method
 
 .method public static bridge synthetic a(Llibs/ln2;)I
-    .registers 1
+    .locals 0
 
     .line 1
     iget p0, p0, Llibs/ln2;->c:I
@@ -89,7 +89,7 @@
 .end method
 
 .method public static bridge synthetic b(Llibs/ln2;)J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Llibs/ln2;->a:J
@@ -100,7 +100,7 @@
 .end method
 
 .method public static bridge synthetic c(Llibs/ln2;)Llibs/eg2;
-    .registers 1
+    .locals 0
 
     .line 1
     iget-object p0, p0, Llibs/ln2;->b:Llibs/eg2;
@@ -113,7 +113,7 @@
 
 # virtual methods
 .method public final d()Llibs/eg2;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ln2;->b:Llibs/eg2;

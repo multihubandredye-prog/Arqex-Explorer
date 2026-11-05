@@ -11,10 +11,10 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
-    packed-switch p1, :pswitch_data_28
+    packed-switch p1, :pswitch_data_0
 
     .line 2
     .line 3
@@ -53,7 +53,7 @@
     return-void
 
     .line 22
-    :pswitch_15
+    :pswitch_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 23
@@ -91,16 +91,16 @@
     nop
 
     .line 41
-    :pswitch_data_28
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_15
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public a(Ljava/lang/Long;)Llibs/i63;
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/b63;->a:Ljava/util/concurrent/locks/ReentrantLock;
@@ -112,7 +112,7 @@
     .line 4
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     iget-object v1, p0, Llibs/b63;->b:Ljava/util/HashMap;
 
     .line 7
@@ -126,8 +126,8 @@
 
     .line 12
     check-cast p1, Llibs/i63;
-    :try_end_d
-    .catchall {:try_start_5 .. :try_end_d} :catchall_11
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 13
     .line 14
@@ -139,7 +139,7 @@
     return-object p1
 
     .line 18
-    :catchall_11
+    :catchall_0
     move-exception p1
 
     .line 19

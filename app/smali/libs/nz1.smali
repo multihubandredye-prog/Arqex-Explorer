@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/i81;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final f(Llibs/mz1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p1}, Llibs/mz1;->c()I
@@ -49,7 +49,7 @@
 .end method
 
 .method public final h(Llibs/mz1;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/nz1;->Lambda:I

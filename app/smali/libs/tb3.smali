@@ -15,7 +15,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-string v0, "jcifs.smb.client.OpenAndX.ReadAndX"
@@ -41,7 +41,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;II)V
-    .registers 6
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
@@ -77,7 +77,7 @@
     const/4 v0, 0x2
 
     .line 16
-    if-ne p2, p1, :cond_14
+    if-ne p2, p1, :cond_0
 
     .line 17
     .line 18
@@ -88,7 +88,7 @@
     const/4 p2, 0x2
 
     .line 21
-    :cond_14
+    :cond_0
     const/16 p1, 0x40
 
     .line 22
@@ -112,7 +112,7 @@
 
     .line 31
     .line 32
-    if-ne p2, p1, :cond_2d
+    if-ne p2, p1, :cond_2
 
     .line 33
     .line 34
@@ -120,7 +120,7 @@
 
     .line 35
     .line 36
-    if-ne p1, v1, :cond_2a
+    if-ne p1, v1, :cond_1
 
     .line 37
     .line 38
@@ -135,7 +135,7 @@
     return-void
 
     .line 43
-    :cond_2a
+    :cond_1
     iput v0, p0, Llibs/tb3;->Golf:I
 
     .line 44
@@ -143,12 +143,12 @@
     return-void
 
     .line 46
-    :cond_2d
+    :cond_2
     and-int/lit8 p1, p3, 0x10
 
     .line 47
     .line 48
-    if-ne p1, v1, :cond_3f
+    if-ne p1, v1, :cond_4
 
     .line 49
     .line 50
@@ -160,7 +160,7 @@
 
     .line 53
     .line 54
-    if-ne p2, p1, :cond_3a
+    if-ne p2, p1, :cond_3
 
     .line 55
     .line 56
@@ -171,7 +171,7 @@
     return-void
 
     .line 59
-    :cond_3a
+    :cond_3
     const/16 p1, 0x11
 
     .line 60
@@ -183,7 +183,7 @@
     return-void
 
     .line 64
-    :cond_3f
+    :cond_4
     const/4 p1, 0x1
 
     .line 65
@@ -197,7 +197,7 @@
 
 # virtual methods
 .method public final e(I[B)I
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -207,7 +207,7 @@
 .end method
 
 .method public final j(I[B)I
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -217,14 +217,14 @@
 .end method
 
 .method public final q(I[B)I
-    .registers 6
+    .locals 3
 
     .line 1
     iget-boolean v0, p0, Llibs/c63;->Psi:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -239,14 +239,14 @@
 
     .line 9
     .line 10
-    goto :goto_b
+    goto :goto_0
 
     .line 11
-    :cond_a
+    :cond_0
     move v1, p1
 
     .line 12
-    :goto_b
+    :goto_0
     iget-object v2, p0, Llibs/c63;->Six:Ljava/lang/String;
 
     .line 13
@@ -269,7 +269,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 8
+    .locals 7
 
     .line 1
     new-instance v0, Ljava/lang/String;
@@ -455,7 +455,7 @@
 .end method
 
 .method public final v(I[B)I
-    .registers 8
+    .locals 5
 
     .line 1
     const-wide/16 v0, 0x0
@@ -549,12 +549,12 @@
     const/4 v2, 0x0
 
     .line 48
-    :goto_2f
+    :goto_0
     const/16 v3, 0x8
 
     .line 49
     .line 50
-    if-ge v2, v3, :cond_3b
+    if-ge v2, v3, :cond_0
 
     .line 51
     .line 52
@@ -573,10 +573,10 @@
     move v0, v3
 
     .line 59
-    goto :goto_2f
+    goto :goto_0
 
     .line 60
-    :cond_3b
+    :cond_0
     sub-int/2addr v0, p1
 
     .line 61
@@ -584,14 +584,14 @@
 .end method
 
 .method public final x(B)I
-    .registers 3
+    .locals 1
 
     .line 1
     const/16 v0, 0x2e
 
     .line 2
     .line 3
-    if-ne p1, v0, :cond_7
+    if-ne p1, v0, :cond_0
 
     .line 4
     .line 5
@@ -602,7 +602,7 @@
     return p1
 
     .line 8
-    :cond_7
+    :cond_0
     const/4 p1, 0x0
 
     .line 9

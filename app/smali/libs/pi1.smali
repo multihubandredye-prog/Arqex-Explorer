@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/File;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final read()I
-    .registers 5
+    .locals 4
 
     .line 34
     invoke-super {p0}, Ljava/io/FileInputStream;->read()I
@@ -57,12 +57,12 @@
 
     const/4 v1, -0x1
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_0
 
     return v1
 
     .line 35
-    :cond_8
+    :cond_0
     iget v1, p0, Llibs/pi1;->Y:I
 
     add-int/lit8 v2, v1, 0x1
@@ -85,7 +85,7 @@
 .end method
 
 .method public final read([BII)I
-    .registers 10
+    .locals 6
 
     .line 1
     invoke-super {p0, p1, p2, p3}, Ljava/io/FileInputStream;->read([BII)I
@@ -96,15 +96,15 @@
     move-result p3
 
     .line 5
-    if-lez p3, :cond_20
+    if-lez p3, :cond_0
 
     .line 6
     .line 7
     const/4 v0, 0x0
 
     .line 8
-    :goto_7
-    if-ge v0, p3, :cond_20
+    :goto_0
+    if-ge v0, p3, :cond_0
 
     .line 9
     .line 10
@@ -156,9 +156,9 @@
 
     .line 31
     .line 32
-    goto :goto_7
+    goto :goto_0
 
     .line 33
-    :cond_20
+    :cond_0
     return p3
 .end method

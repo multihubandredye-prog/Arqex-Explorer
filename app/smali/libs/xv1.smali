@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
@@ -42,7 +42,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Runnable;)V
-    .registers 2
+    .locals 0
 
     .line 12
     invoke-direct {p0, p1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
@@ -58,7 +58,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Runnable;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 14
     invoke-direct {p0, p1, p2}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
@@ -74,7 +74,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;)V
-    .registers 4
+    .locals 0
 
     .line 16
     invoke-direct {p0, p1, p2, p3}, Ljava/lang/Thread;-><init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;)V
@@ -92,7 +92,7 @@
 
 # virtual methods
 .method public interrupt()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -120,14 +120,14 @@
 .end method
 
 .method public final isInterrupted()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/xv1;->X:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_d
+    if-nez v0, :cond_1
 
     .line 4
     .line 5
@@ -139,22 +139,22 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
-    goto :goto_d
+    goto :goto_0
 
     .line 12
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
     .line 13
     return v0
 
     .line 14
-    :cond_d
-    :goto_d
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
     .line 15
@@ -162,7 +162,7 @@
 .end method
 
 .method public run()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-static {}, Llibs/sw1;->Bundle()V
@@ -186,7 +186,7 @@
 .end method
 
 .method public declared-synchronized start()V
-    .registers 2
+    .locals 1
 
     .line 1
     monitor-enter p0
@@ -195,14 +195,14 @@
     const/4 v0, 0x1
 
     .line 3
-    :try_start_2
+    :try_start_0
     iput-boolean v0, p0, Llibs/xv1;->Y:Z
 
     .line 4
     .line 5
     invoke-super {p0}, Ljava/lang/Thread;->start()V
-    :try_end_7
-    .catchall {:try_start_2 .. :try_end_7} :catchall_9
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 6
     .line 7
@@ -213,14 +213,14 @@
     return-void
 
     .line 10
-    :catchall_9
+    :catchall_0
     move-exception v0
 
     .line 11
-    :try_start_a
+    :try_start_1
     monitor-exit p0
-    :try_end_b
-    .catchall {:try_start_a .. :try_end_b} :catchall_9
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 12
     throw v0

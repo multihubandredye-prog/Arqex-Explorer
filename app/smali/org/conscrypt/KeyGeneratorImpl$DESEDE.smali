@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 1
     const/16 v0, 0xc0
@@ -30,14 +30,14 @@
 
 # virtual methods
 .method public checkKeySize(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/16 v0, 0x70
 
     .line 2
     .line 3
-    if-eq p1, v0, :cond_e
+    if-eq p1, v0, :cond_1
 
     .line 4
     .line 5
@@ -45,14 +45,14 @@
 
     .line 6
     .line 7
-    if-ne p1, v0, :cond_9
+    if-ne p1, v0, :cond_0
 
     .line 8
     .line 9
-    goto :goto_e
+    goto :goto_0
 
     .line 10
-    :cond_9
+    :cond_0
     const-string p1, "Key size must be either 112 or 168 bits"
 
     .line 11
@@ -62,13 +62,13 @@
     .line 13
     .line 14
     .line 15
-    :cond_e
-    :goto_e
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public doKeyGeneration(I)[B
-    .registers 7
+    .locals 5
 
     .line 1
     const/16 v0, 0x18
@@ -94,8 +94,8 @@
     const/4 v3, 0x0
 
     .line 12
-    :goto_b
-    if-ge v3, v0, :cond_21
+    :goto_0
+    if-ge v3, v0, :cond_1
 
     .line 13
     .line 14
@@ -115,7 +115,7 @@
 
     .line 21
     .line 22
-    if-nez v4, :cond_1e
+    if-nez v4, :cond_0
 
     .line 23
     .line 24
@@ -134,20 +134,20 @@
 
     .line 30
     .line 31
-    :cond_1e
+    :cond_0
     add-int/lit8 v3, v3, 0x1
 
     .line 32
     .line 33
-    goto :goto_b
+    goto :goto_0
 
     .line 34
-    :cond_21
+    :cond_1
     const/16 v0, 0xe
 
     .line 35
     .line 36
-    if-ne p1, v0, :cond_2c
+    if-ne p1, v0, :cond_2
 
     .line 37
     .line 38
@@ -164,6 +164,6 @@
     .line 43
     .line 44
     .line 45
-    :cond_2c
+    :cond_2
     return-object v1
 .end method

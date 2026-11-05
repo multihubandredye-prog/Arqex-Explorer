@@ -26,7 +26,7 @@
 
 # direct methods
 .method static synthetic constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 1
     const/16 v0, 0x12
@@ -37,7 +37,7 @@
 
     .line 4
     .line 5
-    fill-array-data v0, :array_38
+    fill-array-data v0, :array_0
 
     .line 6
     .line 7
@@ -54,7 +54,7 @@
 
     .line 13
     .line 14
-    fill-array-data v0, :array_60
+    fill-array-data v0, :array_1
 
     .line 15
     .line 16
@@ -71,7 +71,7 @@
 
     .line 22
     .line 23
-    fill-array-data v0, :array_864
+    fill-array-data v0, :array_2
 
     .line 24
     .line 25
@@ -88,7 +88,7 @@
 
     .line 31
     .line 32
-    fill-array-data v0, :array_8e8
+    fill-array-data v0, :array_3
 
     .line 33
     .line 34
@@ -135,7 +135,7 @@
     nop
 
     .line 57
-    :array_38
+    :array_0
     .array-data 4
         0x243f6a88
         -0x7a5cf72d
@@ -197,7 +197,7 @@
     .line 95
     .line 96
     .line 97
-    :array_60
+    :array_1
     .array-data 4
         -0x2ecef45a
         -0x67204a54
@@ -325,7 +325,7 @@
         0x3b52ec6f
         0x6dfc511f
         -0x64cf6ad4
-        -0x337ebabc    # -6.7775008E7f
+        -0x337ebabc    # -6.777501E7f
         -0x50a142f7
         -0x411c2ffc
         -0x21ccb503
@@ -477,9 +477,9 @@
         -0x6608c02a
         -0x5e2d63f9
         -0x1017cf0b
-        0x4d2d38e6    # 1.81636704E8f
+        0x4d2d38e6    # 1.816367E8f
         -0xfdaa23f
-        0x4cdd2086    # 1.15934256E8f
+        0x4cdd2086    # 1.1593426E8f
         -0x7b8f14da
         0x6382e9c6
         0x21ecc5e
@@ -519,7 +519,7 @@
         0x3bea0e2f
         0x3280bba1
         0x183eb331
-        0x4e548b38    # 8.9147341E8f
+        0x4e548b38    # 8.914734E8f
         0x4f6db908    # 3.9883264E9f
         0x6f420d03
         -0x9f5fb41
@@ -572,7 +572,7 @@
         0x2965dcb9
         -0x6618e2f1
         -0x7fc1762a
-        0x5266c825    # 2.47800087E11f
+        0x5266c825    # 2.4780009E11f
         0x2e4cc978
         -0x63ef4c96
         -0x39eaf146
@@ -722,7 +722,7 @@
         -0x2bf7db8f
         0x3320f46a
         0x43b7d4b7
-        0x500061af    # 8.6155418E9f
+        0x500061af    # 8.615542E9f
         0x1e39f62e
         -0x68dbbaba
         0x14214f74
@@ -777,7 +777,7 @@
         -0x2f696ab5
         0x55a867bc
         -0x5eea65a8
-        -0x3356d69d    # -8.8689432E7f
+        -0x3356d69d    # -8.868943E7f
         -0x661e24cd
         -0x59d5b5aa
         0x3f3125f9
@@ -887,7 +887,7 @@
         -0x421751dc
         0x55464299
         -0x40a7d19f
-        0x4e58f48f    # 9.0997651E8f
+        0x4e58f48f    # 9.099765E8f
         -0xd22025e
         -0xb8b10c8
         -0x7876423e
@@ -923,7 +923,7 @@
         0x573906fe
         -0x5e1d3165
         0x4fcd7f52
-        0x50115e01    # 9.7554278E9f
+        0x50115e01    # 9.755428E9f
         -0x58f97c06
         -0x5ffd4a3c
         0xde6d027
@@ -954,7 +954,7 @@
         -0x12abaa88
         0x8fca5b5
         -0x27c2832d
-        0x4dad0fc4    # 3.62936448E8f
+        0x4dad0fc4    # 3.6293645E8f
         0x1e50ef5e
         -0x4e9e1908
         -0x5d7aeb27
@@ -975,7 +975,7 @@
         0x4fa33742
         -0x2c7dd8c0
         -0x66436442
-        -0x2aee7163    # -1.00026066E13f
+        -0x2aee7163    # -1.0002607E13f
         -0x40f08ceb
         -0x29d2e382
         -0x38ff3b85
@@ -990,7 +990,7 @@
         0x530ff8ee
         0x468dde7d
         -0x2a8cf5e3
-        0x4cd04dc6    # 1.09211184E8f
+        0x4cd04dc6    # 1.0921118E8f
         0x2939bbdb
         -0x5645b9b0
         -0x536ad918
@@ -1062,8 +1062,8 @@
         0x28517711
         -0x3df52608
         -0x5433ae99
-        -0x33526da1    # -9.1001592E7f
-        0x4de81751    # 4.86730272E8f
+        -0x33526da1    # -9.100159E7f
+        0x4de81751    # 4.8673027E8f
         0x3830dc8e
         0x379d5862
         -0x6cdf066f
@@ -1104,7 +1104,7 @@
         -0x78de98f
         -0x50ac82a3
         0x4040cb08
-        0x4eb4e2cc    # 1.51738112E9f
+        0x4eb4e2cc    # 1.5173811E9f
         0x34d2466a
         0x115af84
         -0x1e4ffbd8
@@ -1153,7 +1153,7 @@
         -0x34fc5bbe    # -8627266.0f
         -0x1f1391f2
         0x1698db3b
-        0x4c98a0be    # 8.0020976E7f
+        0x4c98a0be    # 8.002098E7f
         0x3278e964
         -0x60e06ace
         -0x1f2c6d21
@@ -1241,7 +1241,7 @@
     .line 111
     .line 112
     .line 113
-    :array_864
+    :array_2
     .array-data 1
         -0x2at
         -0x70t
@@ -1501,7 +1501,7 @@
         0x48t
     .end array-data
 
-    :array_8e8
+    :array_3
     .array-data 4
         0x70e15
         0x1c232a31
@@ -1539,10 +1539,10 @@
 .end method
 
 .method public constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
-    packed-switch p1, :pswitch_data_10
+    packed-switch p1, :pswitch_data_0
 
     .line 2
     .line 3
@@ -1555,7 +1555,7 @@
     return-void
 
     .line 8
-    :pswitch_7
+    :pswitch_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 9
@@ -1575,14 +1575,14 @@
     return-void
 
     .line 17
-    :pswitch_data_10
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_7
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static c(I)I
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-static {p0}, Llibs/ya;->j(I)I
@@ -1656,7 +1656,7 @@
 .end method
 
 .method public static d(I)I
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-static {p0}, Llibs/ya;->j(I)I
@@ -1701,7 +1701,7 @@
 .end method
 
 .method public static g(II)I
-    .registers 3
+    .locals 1
 
     .line 1
     shl-int v0, p0, p1
@@ -1721,7 +1721,7 @@
 .end method
 
 .method public static h(I[B[I)I
-    .registers 8
+    .locals 5
 
     .line 1
     const/4 v0, 0x0
@@ -1737,11 +1737,11 @@
     const/4 v3, 0x0
 
     .line 6
-    :goto_5
+    :goto_0
     const/4 v4, 0x4
 
     .line 7
-    if-ge v2, v4, :cond_15
+    if-ge v2, v4, :cond_0
 
     .line 8
     .line 9
@@ -1771,10 +1771,10 @@
 
     .line 20
     .line 21
-    goto :goto_5
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     aput v1, p2, v0
 
     .line 23
@@ -1783,7 +1783,7 @@
 .end method
 
 .method public static j(I)I
-    .registers 5
+    .locals 4
 
     .line 1
     shr-int/lit8 v0, p0, 0x18
@@ -1877,14 +1877,14 @@
 
 # virtual methods
 .method public a(ZLlibs/et;)V
-    .registers 14
+    .locals 11
 
     .line 1
     instance-of v0, p2, Llibs/hh1;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_137
+    if-eqz v0, :cond_3
 
     .line 4
     .line 5
@@ -1903,7 +1903,7 @@
 
     .line 11
     .line 12
-    if-ne v0, v1, :cond_131
+    if-ne v0, v1, :cond_2
 
     .line 13
     .line 14
@@ -2038,7 +2038,7 @@
 
     .line 74
     .line 75
-    if-eqz p1, :cond_b7
+    if-eqz p1, :cond_0
 
     .line 76
     .line 77
@@ -2206,8 +2206,8 @@
 
     .line 150
     .line 151
-    :goto_96
-    if-ge v4, v0, :cond_12e
+    :goto_0
+    if-ge v4, v0, :cond_1
 
     .line 152
     .line 153
@@ -2275,10 +2275,10 @@
 
     .line 182
     .line 183
-    goto :goto_96
+    goto :goto_0
 
     .line 184
-    :cond_b7
+    :cond_0
     aget p1, p2, v2
 
     .line 185
@@ -2463,8 +2463,8 @@
 
     .line 267
     .line 268
-    :goto_10b
-    if-ltz p1, :cond_12e
+    :goto_1
+    if-ltz p1, :cond_1
 
     .line 269
     .line 270
@@ -2536,10 +2536,10 @@
 
     .line 301
     .line 302
-    goto :goto_10b
+    goto :goto_1
 
     .line 303
-    :cond_12e
+    :cond_1
     iput-object v1, p0, Llibs/ya;->Y:[I
 
     .line 304
@@ -2547,7 +2547,7 @@
     return-void
 
     .line 306
-    :cond_131
+    :cond_2
     const-string p1, "SM4 requires a 128 bit key"
 
     .line 307
@@ -2560,7 +2560,7 @@
     return-void
 
     .line 312
-    :cond_137
+    :cond_3
     const-string p1, "invalid parameter passed to SM4 init - "
 
     .line 313
@@ -2582,7 +2582,7 @@
 .end method
 
 .method public b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "SM4"
@@ -2593,7 +2593,7 @@
 .end method
 
 .method public e(I[I)V
-    .registers 11
+    .locals 8
 
     .line 1
     aget v0, p2, p1
@@ -2619,7 +2619,7 @@
 
     .line 11
     .line 12
-    :goto_b
+    :goto_0
     xor-int/2addr v0, v3
 
     .line 13
@@ -2627,7 +2627,7 @@
 
     .line 14
     .line 15
-    if-gt v4, v3, :cond_5e
+    if-gt v4, v3, :cond_0
 
     .line 16
     .line 17
@@ -2794,10 +2794,10 @@
     xor-int/2addr v3, v5
 
     .line 94
-    goto :goto_b
+    goto :goto_0
 
     .line 95
-    :cond_5e
+    :cond_0
     iget-object v3, p0, Llibs/ya;->X:[I
 
     .line 96
@@ -2825,7 +2825,7 @@
 .end method
 
 .method public f([B)V
-    .registers 12
+    .locals 10
 
     .line 1
     array-length v0, p1
@@ -2867,8 +2867,8 @@
     const/4 v6, 0x0
 
     .line 18
-    :goto_11
-    if-ge v6, v4, :cond_21
+    :goto_0
+    if-ge v6, v4, :cond_0
 
     .line 19
     .line 20
@@ -2899,18 +2899,18 @@
 
     .line 32
     .line 33
-    goto :goto_11
+    goto :goto_0
 
     .line 34
-    :cond_21
+    :cond_0
     const/4 p1, 0x0
 
     .line 35
-    :goto_22
+    :goto_1
     const/4 v0, 0x1
 
     .line 36
-    if-ge p1, v4, :cond_37
+    if-ge p1, v4, :cond_1
 
     .line 37
     .line 38
@@ -2947,15 +2947,15 @@
 
     .line 54
     .line 55
-    goto :goto_22
+    goto :goto_1
 
     .line 56
-    :cond_37
+    :cond_1
     const/4 p1, 0x0
 
     .line 57
-    :goto_38
-    if-ge p1, v5, :cond_4c
+    :goto_2
+    if-ge p1, v5, :cond_2
 
     .line 58
     .line 59
@@ -2992,15 +2992,15 @@
 
     .line 75
     .line 76
-    goto :goto_38
+    goto :goto_2
 
     .line 77
-    :cond_4c
+    :cond_2
     return-void
 .end method
 
 .method public i()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x10
@@ -3011,7 +3011,7 @@
 .end method
 
 .method public r(II[B[B)I
-    .registers 14
+    .locals 9
 
     .line 1
     iget-object v0, p0, Llibs/ya;->X:[I
@@ -3025,7 +3025,7 @@
     const/4 v2, 0x0
 
     .line 6
-    if-eqz v1, :cond_d3
+    if-eqz v1, :cond_3
 
     .line 7
     .line 8
@@ -3036,7 +3036,7 @@
     array-length v3, p3
 
     .line 11
-    if-gt v1, v3, :cond_cd
+    if-gt v1, v3, :cond_2
 
     .line 12
     .line 13
@@ -3047,7 +3047,7 @@
     array-length v3, p4
 
     .line 16
-    if-gt v1, v3, :cond_c7
+    if-gt v1, v3, :cond_1
 
     .line 17
     .line 18
@@ -3123,12 +3123,12 @@
     const/4 p1, 0x0
 
     .line 52
-    :goto_33
+    :goto_0
     const/16 v1, 0x20
 
     .line 53
     .line 54
-    if-ge p1, v1, :cond_92
+    if-ge p1, v1, :cond_0
 
     .line 55
     .line 56
@@ -3328,10 +3328,10 @@
 
     .line 145
     .line 146
-    goto :goto_33
+    goto :goto_0
 
     .line 147
-    :cond_92
+    :cond_0
     aget p1, v0, v2
 
     .line 148
@@ -3441,7 +3441,7 @@
     return p1
 
     .line 200
-    :cond_c7
+    :cond_1
     const-string p1, "output buffer too short"
 
     .line 201
@@ -3454,7 +3454,7 @@
     return v2
 
     .line 206
-    :cond_cd
+    :cond_2
     const-string p1, "input buffer too short"
 
     .line 207
@@ -3467,7 +3467,7 @@
     return v2
 
     .line 212
-    :cond_d3
+    :cond_3
     const-string p1, "SM4 not initialised"
 
     .line 213
@@ -3481,7 +3481,7 @@
 .end method
 
 .method public reset()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void

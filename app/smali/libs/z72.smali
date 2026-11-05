@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>([B)V
-    .registers 7
+    .locals 5
 
     .line 1
     const-string v0, "malformed data: "
@@ -19,7 +19,7 @@
     const/4 v1, 0x1
 
     .line 4
-    :try_start_3
+    :try_start_0
     invoke-static {p1}, Llibs/Theme;->j([B)Llibs/Theme;
 
     .line 5
@@ -28,7 +28,7 @@
     move-result-object p1
 
     .line 8
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_0
 
     .line 9
     .line 10
@@ -45,21 +45,21 @@
 
     .line 16
     invoke-direct {v2, p1}, Llibs/cr;-><init>(Llibs/Param;)V
-    :try_end_12
-    .catch Ljava/lang/ClassCastException; {:try_start_3 .. :try_end_12} :catch_31
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_3 .. :try_end_12} :catch_1a
+    :try_end_0
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 17
     .line 18
     .line 19
-    goto :goto_14
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     const/4 v2, 0x0
 
     .line 21
-    :goto_14
+    :goto_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 22
@@ -72,7 +72,7 @@
     return-void
 
     .line 27
-    :catch_1a
+    :catch_0
     move-exception p1
 
     .line 28
@@ -118,7 +118,7 @@
     throw v2
 
     .line 50
-    :catch_31
+    :catch_1
     move-exception p1
 
     .line 51
@@ -167,10 +167,10 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     .line 2
     .line 3
@@ -180,12 +180,12 @@
     return p1
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v0, p1, Llibs/z72;
 
     .line 6
     .line 7
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     .line 8
     .line 9
@@ -195,7 +195,7 @@
     return p1
 
     .line 11
-    :cond_a
+    :cond_1
     check-cast p1, Llibs/z72;
 
     .line 12
@@ -220,7 +220,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/z72;->a:Llibs/cr;

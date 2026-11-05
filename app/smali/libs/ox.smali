@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/rb2;Llibs/rx;)V
-    .registers 3
+    .locals 0
 
     .line 1
     sget-object p1, Llibs/rx;->Omega:Llibs/bn1;
@@ -29,7 +29,7 @@
 .end method
 
 .method public constructor <init>(Llibs/rx;)V
-    .registers 2
+    .locals 0
 
     .line 9
     iput-object p1, p0, Llibs/ox;->a:Llibs/rx;

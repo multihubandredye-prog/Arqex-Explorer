@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 5
+    .locals 4
 
     .line 1
     const/16 v0, 0x10
@@ -41,7 +41,7 @@
 
 # virtual methods
 .method public final e([BI[B)V
-    .registers 10
+    .locals 6
 
     .line 1
     invoke-super {p0, p1, p2, p3}, Llibs/Chi;->e([BI[B)V
@@ -74,11 +74,11 @@
 
     .line 16
     .line 17
-    if-eqz p3, :cond_34
+    if-eqz p3, :cond_1
 
     .line 18
     .line 19
-    :try_start_12
+    :try_start_0
     invoke-static {}, Llibs/py;->e()Ljava/lang/Object;
 
     .line 20
@@ -111,7 +111,7 @@
 
     .line 34
     .line 35
-    if-eqz p3, :cond_34
+    if-eqz p3, :cond_1
 
     .line 36
     .line 37
@@ -123,7 +123,7 @@
 
     .line 40
     .line 41
-    if-nez p2, :cond_2e
+    if-nez p2, :cond_0
 
     .line 42
     .line 43
@@ -133,41 +133,41 @@
     const/4 v5, 0x1
 
     .line 45
-    :goto_2c
+    :goto_0
     move-object v4, p1
 
     .line 46
-    goto :goto_31
+    goto :goto_1
 
     .line 47
-    :cond_2e
+    :cond_0
     const/4 p2, 0x0
 
     .line 48
     const/4 v5, 0x0
 
     .line 49
-    goto :goto_2c
+    goto :goto_0
 
     .line 50
-    :goto_31
+    :goto_1
     invoke-static/range {v0 .. v5}, Llibs/py;->a(Ljava/lang/Object;J[B[BZ)V
-    :try_end_34
-    .catch Ljava/lang/Exception; {:try_start_12 .. :try_end_34} :catch_34
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 51
     .line 52
     .line 53
-    :catch_34
-    :cond_34
+    :catch_0
+    :cond_1
     return-void
 .end method
 
 .method public final g(III[B[B)V
-    .registers 12
+    .locals 6
 
     .line 1
-    if-lez p3, :cond_18
+    if-lez p3, :cond_0
 
     .line 2
     .line 3
@@ -175,7 +175,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -183,7 +183,7 @@
 
     .line 8
     .line 9
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_0
 
     .line 10
     .line 11
@@ -202,10 +202,10 @@
     move-object v1, p5
 
     .line 16
-    :try_start_f
+    :try_start_0
     invoke-static/range {v0 .. v5}, Llibs/py;->b(Ljava/lang/Object;[BI[BII)V
-    :try_end_12
-    .catchall {:try_start_f .. :try_end_12} :catchall_13
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 17
     .line 18
@@ -213,7 +213,7 @@
     return-void
 
     .line 20
-    :catchall_13
+    :catchall_0
     move-object p5, v1
 
     .line 21
@@ -229,7 +229,7 @@
     move p3, v5
 
     .line 25
-    :cond_18
+    :cond_0
     invoke-super/range {p0 .. p5}, Llibs/Chi;->g(III[B[B)V
 
     .line 26

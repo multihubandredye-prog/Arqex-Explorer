@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/nio/charset/Charset;ZLjava/lang/String;ZZZJLjava/lang/String;I)V
-    .registers 12
+    .locals 0
 
     .line 1
     invoke-direct/range {p0 .. p11}, Llibs/vd;-><init>(Ljava/lang/String;Ljava/nio/charset/Charset;ZLjava/lang/String;ZZZJLjava/lang/String;I)V
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public final Add(Llibs/rp0;Ljava/lang/String;Z)Ljava/lang/String;
-    .registers 9
+    .locals 5
 
     .line 1
     invoke-virtual {p0}, Llibs/n2;->h()V
@@ -100,22 +100,22 @@
 
     .line 15
     .line 16
-    if-eqz p3, :cond_13
+    if-eqz p3, :cond_0
 
     .line 17
     .line 18
     move-object p3, v1
 
     .line 19
-    goto :goto_15
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     const-string p3, "company"
 
     .line 21
     .line 22
-    :goto_15
+    :goto_0
     const-string v2, "{\"shared_link\": {\"access\": \""
 
     .line 23
@@ -148,7 +148,7 @@
 
     .line 37
     .line 38
-    if-eqz p1, :cond_2a
+    if-eqz p1, :cond_1
 
     .line 39
     .line 40
@@ -156,15 +156,15 @@
 
     .line 41
     .line 42
-    goto :goto_2c
+    goto :goto_1
 
     .line 43
-    :cond_2a
+    :cond_1
     const-string p1, "https://api.box.com/2.0/files/%s"
 
     .line 44
     .line 45
-    :goto_2c
+    :goto_1
     const/4 v2, 0x1
 
     .line 46
@@ -358,7 +358,7 @@
 
     .line 145
     .line 146
-    if-eqz p2, :cond_a0
+    if-eqz p2, :cond_2
 
     .line 147
     .line 148
@@ -382,14 +382,14 @@
     move-result v1
 
     .line 158
-    if-eqz v1, :cond_a0
+    if-eqz v1, :cond_2
 
     .line 159
     .line 160
     const/4 v0, 0x1
 
     .line 161
-    :cond_a0
+    :cond_2
     invoke-direct {p3, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
     .line 162
@@ -408,7 +408,7 @@
 
     .line 170
     .line 171
-    if-eqz p1, :cond_af
+    if-eqz p1, :cond_3
 
     .line 172
     .line 173
@@ -416,15 +416,15 @@
 
     .line 174
     .line 175
-    goto :goto_b1
+    goto :goto_2
 
     .line 176
-    :cond_af
+    :cond_3
     const-string p1, "url"
 
     .line 177
     .line 178
-    :goto_b1
+    :goto_2
     invoke-virtual {p2, p1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
 
     .line 179
@@ -437,7 +437,7 @@
 .end method
 
 .method public final Bundle(Ljava/lang/String;)Ljava/util/List;
-    .registers 8
+    .locals 6
 
     .line 1
     invoke-virtual {p0}, Llibs/n2;->h()V
@@ -572,7 +572,7 @@
     move-result-object p1
 
     .line 69
-    if-nez p1, :cond_4c
+    if-nez p1, :cond_0
 
     .line 70
     .line 71
@@ -588,7 +588,7 @@
     return-object p1
 
     .line 77
-    :cond_4c
+    :cond_0
     new-instance v1, Ljava/util/ArrayList;
 
     .line 78
@@ -614,8 +614,8 @@
     move-result-object v3
 
     .line 90
-    :goto_59
-    if-ge v0, v2, :cond_71
+    :goto_0
+    if-ge v0, v2, :cond_2
 
     .line 91
     .line 92
@@ -627,14 +627,14 @@
     move-result v4
 
     .line 96
-    if-eqz v4, :cond_62
+    if-eqz v4, :cond_1
 
     .line 97
     .line 98
-    goto :goto_71
+    goto :goto_1
 
     .line 99
-    :cond_62
+    :cond_1
     new-instance v4, Llibs/ic1;
 
     .line 100
@@ -661,11 +661,11 @@
 
     .line 112
     .line 113
-    goto :goto_59
+    goto :goto_0
 
     .line 114
-    :cond_71
-    :goto_71
+    :cond_2
+    :goto_1
     invoke-virtual {p0}, Llibs/vd;->Wait()V
 
     .line 115
@@ -675,7 +675,7 @@
 .end method
 
 .method public final Context(JLjava/lang/String;)Llibs/d11;
-    .registers 8
+    .locals 4
 
     .line 1
     invoke-virtual {p0}, Llibs/n2;->h()V
@@ -807,7 +807,7 @@
 .end method
 
 .method public final Item(Ljava/lang/String;Ljava/lang/String;Z)Llibs/qd;
-    .registers 7
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Llibs/n2;->h()V
@@ -892,7 +892,7 @@
     move-result-object p2
 
     .line 43
-    if-eqz p3, :cond_2f
+    if-eqz p3, :cond_0
 
     .line 44
     .line 45
@@ -900,15 +900,15 @@
 
     .line 46
     .line 47
-    goto :goto_31
+    goto :goto_0
 
     .line 48
-    :cond_2f
+    :cond_0
     const-string p3, "https://api.box.com/2.0/files/%s"
 
     .line 49
     .line 50
-    :goto_31
+    :goto_0
     const/4 v0, 0x1
 
     .line 51
@@ -1054,7 +1054,7 @@
 .end method
 
 .method public final Map(Ljava/lang/String;II)Llibs/rr0;
-    .registers 5
+    .locals 1
 
     .line 1
     const-string p2, "/thumbnail.jpg?min_width=128&min_height=128"
@@ -1065,7 +1065,7 @@
 
     .line 4
     .line 5
-    :try_start_4
+    :try_start_0
     invoke-virtual {p0}, Llibs/n2;->h()V
 
     .line 6
@@ -1133,14 +1133,14 @@
     .line 40
     .line 41
     move-result-object p1
-    :try_end_29
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_29} :catch_2a
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 42
     return-object p1
 
     .line 43
-    :catch_2a
+    :catch_0
     const/4 p1, 0x0
 
     .line 44
@@ -1148,7 +1148,7 @@
 .end method
 
 .method public final Put(Ljava/lang/String;Ljava/lang/String;JJLjava/io/InputStream;ZLcom/mixplorer/ProgressListener;)Llibs/qd;
-    .registers 23
+    .locals 13
 
     .line 1
     invoke-virtual {p0}, Llibs/n2;->h()V
@@ -1374,7 +1374,7 @@
 .end method
 
 .method public final Run(Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
-    .registers 7
+    .locals 4
 
     .line 1
     invoke-virtual {p0}, Llibs/n2;->h()V
@@ -1504,14 +1504,14 @@
     move-result-object p1
 
     .line 68
-    if-nez p1, :cond_46
+    if-nez p1, :cond_0
 
     .line 69
     .line 70
     return-object p2
 
     .line 71
-    :cond_46
+    :cond_0
     invoke-virtual {p1}, Lorg/json/JSONArray;->length()I
 
     .line 72
@@ -1532,8 +1532,8 @@
     const/4 v1, 0x0
 
     .line 81
-    :goto_50
-    if-ge v1, p2, :cond_63
+    :goto_0
+    if-ge v1, p2, :cond_1
 
     .line 82
     .line 83
@@ -1567,15 +1567,15 @@
 
     .line 98
     .line 99
-    goto :goto_50
+    goto :goto_0
 
     .line 100
-    :cond_63
+    :cond_1
     return-object v0
 .end method
 
 .method public final Set()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "Box"
@@ -1586,7 +1586,7 @@
 .end method
 
 .method public final Task(Ljava/lang/String;Ljava/lang/String;Z)Llibs/qd;
-    .registers 7
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Llibs/n2;->h()V
@@ -1644,7 +1644,7 @@
     move-result-object p2
 
     .line 28
-    if-eqz p3, :cond_20
+    if-eqz p3, :cond_0
 
     .line 29
     .line 30
@@ -1652,15 +1652,15 @@
 
     .line 31
     .line 32
-    goto :goto_22
+    goto :goto_0
 
     .line 33
-    :cond_20
+    :cond_0
     const-string p3, "https://api.box.com/2.0/files/%s"
 
     .line 34
     .line 35
-    :goto_22
+    :goto_0
     const/4 v1, 0x1
 
     .line 36
@@ -1797,7 +1797,7 @@
 .end method
 
 .method public final Top()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/vd;->Object:Llibs/in3;
@@ -1820,7 +1820,7 @@
     move-result v0
 
     .line 11
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
@@ -1830,7 +1830,7 @@
     return v0
 
     .line 15
-    :cond_e
+    :cond_0
     iget-object v0, p0, Llibs/vd;->Object:Llibs/in3;
 
     .line 16
@@ -1851,7 +1851,7 @@
     move-result v0
 
     .line 25
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_1
 
     .line 26
     .line 27
@@ -1861,7 +1861,7 @@
     return v0
 
     .line 29
-    :cond_1c
+    :cond_1
     const/4 v0, 0x0
 
     .line 30
@@ -1869,7 +1869,7 @@
 .end method
 
 .method public final d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 12
+    .locals 7
 
     .line 1
     invoke-static {p2}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
@@ -1880,7 +1880,7 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_6e
+    if-nez v0, :cond_5
 
     .line 6
     .line 7
@@ -1892,7 +1892,7 @@
     move-result v0
 
     .line 11
-    if-nez v0, :cond_6e
+    if-nez v0, :cond_5
 
     .line 12
     .line 13
@@ -1904,14 +1904,14 @@
     move-result v0
 
     .line 17
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 18
     .line 19
-    goto :goto_63
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     new-instance v1, Llibs/in3;
 
     .line 21
@@ -1946,7 +1946,7 @@
     move-result p2
 
     .line 36
-    if-nez p2, :cond_28
+    if-nez p2, :cond_1
 
     .line 37
     .line 38
@@ -1955,7 +1955,7 @@
     .line 39
     .line 40
     .line 41
-    :cond_28
+    :cond_1
     iget-object p2, p0, Llibs/vd;->Object:Llibs/in3;
 
     .line 42
@@ -1968,7 +1968,7 @@
     move-result-object p2
 
     .line 47
-    if-eqz p2, :cond_64
+    if-eqz p2, :cond_4
 
     .line 48
     .line 49
@@ -1992,7 +1992,7 @@
     move-result p2
 
     .line 59
-    if-nez p2, :cond_63
+    if-nez p2, :cond_3
 
     .line 60
     .line 61
@@ -2016,7 +2016,7 @@
     move-result p2
 
     .line 71
-    if-nez p2, :cond_60
+    if-nez p2, :cond_2
 
     .line 72
     .line 73
@@ -2040,7 +2040,7 @@
     move-result p2
 
     .line 83
-    if-nez p2, :cond_60
+    if-nez p2, :cond_2
 
     .line 84
     .line 85
@@ -2064,11 +2064,11 @@
     move-result p1
 
     .line 95
-    if-eqz p1, :cond_63
+    if-eqz p1, :cond_3
 
     .line 96
     .line 97
-    :cond_60
+    :cond_2
     const/4 p1, 0x1
 
     .line 98
@@ -2076,12 +2076,12 @@
 
     .line 99
     .line 100
-    :cond_63
-    :goto_63
+    :cond_3
+    :goto_0
     return-void
 
     .line 101
-    :cond_64
+    :cond_4
     const-string p2, "UriItem Null > "
 
     .line 102
@@ -2102,7 +2102,7 @@
     return-void
 
     .line 111
-    :cond_6e
+    :cond_5
     invoke-static {}, Llibs/ic0;->d()V
 
     .line 112
@@ -2112,7 +2112,7 @@
 .end method
 
 .method public final h()V
-    .registers 8
+    .locals 7
 
     .line 1
     invoke-super {p0}, Llibs/vd;->h()V
@@ -2128,14 +2128,14 @@
     move-result v0
 
     .line 8
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 9
     .line 10
     return-void
 
     .line 11
-    :cond_a
+    :cond_0
     iget-object v0, p0, Llibs/vd;->Object:Llibs/in3;
 
     .line 12
@@ -2284,7 +2284,7 @@
     move-result v1
 
     .line 87
-    if-nez v1, :cond_7d
+    if-nez v1, :cond_1
 
     .line 88
     .line 89
@@ -2363,7 +2363,7 @@
     return-void
 
     .line 126
-    :cond_7d
+    :cond_1
     new-instance v1, Lexceptions/UnauthorizedException;
 
     .line 127
@@ -2385,7 +2385,7 @@
 .end method
 
 .method public final j(Ljava/lang/String;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-static {p1}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
@@ -2396,7 +2396,7 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -2412,7 +2412,7 @@
     move-result v0
 
     .line 13
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 14
     .line 15
@@ -2428,7 +2428,7 @@
     move-result p1
 
     .line 21
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_0
 
     .line 22
     .line 23
@@ -2438,7 +2438,7 @@
     return p1
 
     .line 25
-    :cond_18
+    :cond_0
     const/4 p1, 0x0
 
     .line 26
@@ -2446,7 +2446,7 @@
 .end method
 
 .method public final k(Ljava/lang/String;Ljava/lang/String;ZZ)Llibs/qd;
-    .registers 7
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Llibs/n2;->h()V
@@ -2531,7 +2531,7 @@
     move-result-object p2
 
     .line 43
-    if-eqz p3, :cond_2f
+    if-eqz p3, :cond_0
 
     .line 44
     .line 45
@@ -2539,15 +2539,15 @@
 
     .line 46
     .line 47
-    goto :goto_31
+    goto :goto_0
 
     .line 48
-    :cond_2f
+    :cond_0
     const-string p3, "https://api.box.com/2.0/files/%s/copy"
 
     .line 49
     .line 50
-    :goto_31
+    :goto_0
     const/4 p4, 0x1
 
     .line 51
@@ -2672,7 +2672,7 @@
 .end method
 
 .method public final l(Ljava/lang/String;Ljava/lang/String;)Llibs/qd;
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Llibs/n2;->h()V
@@ -2710,7 +2710,7 @@
     move-result v2
 
     .line 18
-    if-eqz v2, :cond_17
+    if-eqz v2, :cond_0
 
     .line 19
     .line 20
@@ -2722,7 +2722,7 @@
     move-result-object p1
 
     .line 24
-    :cond_17
+    :cond_0
     new-array v1, v1, [Ljava/lang/Object;
 
     .line 25
@@ -2871,7 +2871,7 @@
 .end method
 
 .method public final m(Ljava/lang/String;ZZ)V
-    .registers 5
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/n2;->h()V
@@ -2901,7 +2901,7 @@
 
     .line 13
     .line 14
-    if-eqz p2, :cond_12
+    if-eqz p2, :cond_0
 
     .line 15
     .line 16
@@ -2909,15 +2909,15 @@
 
     .line 17
     .line 18
-    goto :goto_14
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     const-string p2, "https://api.box.com/2.0/files/%s"
 
     .line 20
     .line 21
-    :goto_14
+    :goto_0
     const/4 v0, 0x1
 
     .line 22
@@ -3001,7 +3001,7 @@
 .end method
 
 .method public final w()Llibs/ec;
-    .registers 5
+    .locals 4
 
     .line 1
     invoke-virtual {p0}, Llibs/n2;->h()V
@@ -3088,7 +3088,7 @@
 .end method
 
 .method public final x(Ljava/lang/String;Ljava/lang/String;)Llibs/in3;
-    .registers 9
+    .locals 6
 
     .line 1
     const-string p2, "code"
@@ -3325,7 +3325,7 @@
 .end method
 
 .method public final y()Ljava/lang/String;
-    .registers 7
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/vd;->z:Llibs/in3;

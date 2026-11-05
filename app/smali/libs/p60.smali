@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/fl;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/jr0;-><init>(Ljava/io/OutputStream;)V
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public final c(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/p60;->Z:I
@@ -59,7 +59,7 @@
     add-int/2addr v0, p1
 
     .line 4
-    if-gez v0, :cond_8
+    if-gez v0, :cond_0
 
     .line 5
     .line 6
@@ -68,7 +68,7 @@
     .line 7
     .line 8
     .line 9
-    :cond_8
+    :cond_0
     iput v0, p0, Llibs/p60;->Z:I
 
     .line 10
@@ -77,7 +77,7 @@
 .end method
 
 .method public final flush()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/jr0;->Y:Ljava/io/OutputStream;
@@ -93,13 +93,13 @@
 .end method
 
 .method public final declared-synchronized write(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Llibs/jr0;->Y:Ljava/io/OutputStream;
 
     .line 3
@@ -113,8 +113,8 @@
 
     .line 8
     invoke-virtual {p0, p1}, Llibs/p60;->c(I)V
-    :try_end_a
-    .catchall {:try_start_1 .. :try_end_a} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 9
     .line 10
@@ -125,53 +125,53 @@
     return-void
 
     .line 13
-    :catchall_c
+    :catchall_0
     move-exception p1
 
     .line 14
-    :try_start_d
+    :try_start_1
     monitor-exit p0
-    :try_end_e
-    .catchall {:try_start_d .. :try_end_e} :catchall_c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 15
     throw p1
 .end method
 
 .method public final declared-synchronized write([BII)V
-    .registers 5
+    .locals 1
 
     monitor-enter p0
 
     .line 16
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Llibs/jr0;->Y:Ljava/io/OutputStream;
 
     invoke-virtual {v0, p1, p2, p3}, Ljava/io/OutputStream;->write([BII)V
 
     .line 17
     invoke-virtual {p0, p3}, Llibs/p60;->c(I)V
-    :try_end_9
-    .catchall {:try_start_1 .. :try_end_9} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 18
     monitor-exit p0
 
     return-void
 
-    :catchall_b
+    :catchall_0
     move-exception p1
 
-    :try_start_c
+    :try_start_1
     monitor-exit p0
-    :try_end_d
-    .catchall {:try_start_c .. :try_end_d} :catchall_b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method
 
 .method public final writeBoolean(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/jr0;->Y:Ljava/io/OutputStream;
@@ -195,7 +195,7 @@
 .end method
 
 .method public final writeByte(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/jr0;->Y:Ljava/io/OutputStream;
@@ -219,7 +219,7 @@
 .end method
 
 .method public final writeBytes(Ljava/lang/String;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -233,8 +233,8 @@
     const/4 v1, 0x0
 
     .line 6
-    :goto_5
-    if-ge v1, v0, :cond_14
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     .line 7
     .line 8
@@ -262,10 +262,10 @@
 
     .line 19
     .line 20
-    goto :goto_5
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_0
     invoke-virtual {p0, v0}, Llibs/p60;->c(I)V
 
     .line 22
@@ -275,7 +275,7 @@
 .end method
 
 .method public final writeChar(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     ushr-int/lit8 v0, p1, 0x8
@@ -320,7 +320,7 @@
 .end method
 
 .method public final writeChars(Ljava/lang/String;)V
-    .registers 7
+    .locals 5
 
     .line 1
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -334,8 +334,8 @@
     const/4 v1, 0x0
 
     .line 6
-    :goto_5
-    if-ge v1, v0, :cond_1c
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     .line 7
     .line 8
@@ -377,10 +377,10 @@
 
     .line 27
     .line 28
-    goto :goto_5
+    goto :goto_0
 
     .line 29
-    :cond_1c
+    :cond_0
     mul-int/lit8 v0, v0, 0x2
 
     .line 30
@@ -394,7 +394,7 @@
 .end method
 
 .method public final writeDouble(D)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-static {p1, p2}, Ljava/lang/Double;->doubleToLongBits(D)J
@@ -414,7 +414,7 @@
 .end method
 
 .method public final writeFloat(F)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p1}, Ljava/lang/Float;->floatToIntBits(F)I
@@ -434,7 +434,7 @@
 .end method
 
 .method public final writeInt(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     ushr-int/lit8 v0, p1, 0x18
@@ -513,7 +513,7 @@
 .end method
 
 .method public final writeLong(J)V
-    .registers 8
+    .locals 5
 
     .line 1
     const/16 v0, 0x38
@@ -698,7 +698,7 @@
 .end method
 
 .method public final writeShort(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     ushr-int/lit8 v0, p1, 0x8
@@ -743,7 +743,7 @@
 .end method
 
 .method public final writeUTF(Ljava/lang/String;)V
-    .registers 16
+    .locals 14
 
     .line 1
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -763,7 +763,7 @@
     const/4 v3, 0x0
 
     .line 8
-    :goto_7
+    :goto_0
     const/16 v4, 0x7ff
 
     .line 9
@@ -775,7 +775,7 @@
     const/4 v6, 0x1
 
     .line 13
-    if-ge v2, v0, :cond_23
+    if-ge v2, v0, :cond_2
 
     .line 14
     .line 15
@@ -787,11 +787,11 @@
     move-result v7
 
     .line 19
-    if-lt v7, v6, :cond_19
+    if-lt v7, v6, :cond_0
 
     .line 20
     .line 21
-    if-gt v7, v5, :cond_19
+    if-gt v7, v5, :cond_0
 
     .line 22
     .line 23
@@ -799,11 +799,11 @@
 
     .line 24
     .line 25
-    goto :goto_20
+    goto :goto_1
 
     .line 26
-    :cond_19
-    if-le v7, v4, :cond_1e
+    :cond_0
+    if-le v7, v4, :cond_1
 
     .line 27
     .line 28
@@ -811,29 +811,29 @@
 
     .line 29
     .line 30
-    goto :goto_20
+    goto :goto_1
 
     .line 31
-    :cond_1e
+    :cond_1
     add-int/lit8 v3, v3, 0x2
 
     .line 32
     .line 33
-    :goto_20
+    :goto_1
     add-int/lit8 v2, v2, 0x1
 
     .line 34
     .line 35
-    goto :goto_7
+    goto :goto_0
 
     .line 36
-    :cond_23
+    :cond_2
     const v2, 0xffff
 
     .line 37
     .line 38
     .line 39
-    if-gt v3, v2, :cond_aa
+    if-gt v3, v2, :cond_a
 
     .line 40
     .line 41
@@ -844,7 +844,7 @@
     const/4 v7, 0x2
 
     .line 44
-    if-eqz v2, :cond_32
+    if-eqz v2, :cond_3
 
     .line 45
     .line 46
@@ -855,11 +855,11 @@
 
     .line 48
     .line 49
-    if-ge v8, v9, :cond_39
+    if-ge v8, v9, :cond_4
 
     .line 50
     .line 51
-    :cond_32
+    :cond_3
     mul-int/lit8 v2, v3, 0x2
 
     .line 52
@@ -875,7 +875,7 @@
 
     .line 57
     .line 58
-    :cond_39
+    :cond_4
     ushr-int/lit8 v8, v3, 0x8
 
     .line 59
@@ -908,8 +908,8 @@
     const/4 v9, 0x2
 
     .line 72
-    :goto_47
-    if-ge v8, v0, :cond_5b
+    :goto_2
+    if-ge v8, v0, :cond_6
 
     .line 73
     .line 74
@@ -921,18 +921,18 @@
     move-result v10
 
     .line 78
-    if-lt v10, v6, :cond_5b
+    if-lt v10, v6, :cond_6
 
     .line 79
     .line 80
-    if-le v10, v5, :cond_52
+    if-le v10, v5, :cond_5
 
     .line 81
     .line 82
-    goto :goto_5b
+    goto :goto_3
 
     .line 83
-    :cond_52
+    :cond_5
     add-int/lit8 v11, v9, 0x1
 
     .line 84
@@ -951,12 +951,12 @@
     move v9, v11
 
     .line 91
-    goto :goto_47
+    goto :goto_2
 
     .line 92
-    :cond_5b
-    :goto_5b
-    if-ge v8, v0, :cond_a5
+    :cond_6
+    :goto_3
+    if-ge v8, v0, :cond_9
 
     .line 93
     .line 94
@@ -968,11 +968,11 @@
     move-result v10
 
     .line 98
-    if-lt v10, v6, :cond_6c
+    if-lt v10, v6, :cond_7
 
     .line 99
     .line 100
-    if-gt v10, v5, :cond_6c
+    if-gt v10, v5, :cond_7
 
     .line 101
     .line 102
@@ -990,11 +990,11 @@
     move v9, v11
 
     .line 108
-    goto :goto_a2
+    goto :goto_4
 
     .line 109
-    :cond_6c
-    if-le v10, v4, :cond_8e
+    :cond_7
+    if-le v10, v4, :cond_8
 
     .line 110
     .line 111
@@ -1063,10 +1063,10 @@
 
     .line 141
     .line 142
-    goto :goto_a2
+    goto :goto_4
 
     .line 143
-    :cond_8e
+    :cond_8
     add-int/lit8 v11, v9, 0x1
 
     .line 144
@@ -1109,15 +1109,15 @@
 
     .line 162
     .line 163
-    :goto_a2
+    :goto_4
     add-int/lit8 v8, v8, 0x1
 
     .line 164
     .line 165
-    goto :goto_5b
+    goto :goto_3
 
     .line 166
-    :cond_a5
+    :cond_9
     add-int/2addr v3, v7
 
     .line 167
@@ -1129,7 +1129,7 @@
     return-void
 
     .line 171
-    :cond_aa
+    :cond_a
     new-instance p1, Ljava/io/UTFDataFormatException;
 
     .line 172
@@ -1155,13 +1155,13 @@
     .line 182
     .line 183
     .line 184
-    goto :goto_b9
+    goto :goto_6
 
     .line 185
-    :goto_b8
+    :goto_5
     throw p1
 
     .line 186
-    :goto_b9
-    goto :goto_b8
+    :goto_6
+    goto :goto_5
 .end method

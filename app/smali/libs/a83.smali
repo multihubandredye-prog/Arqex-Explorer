@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     sget-object v0, Llibs/wh1;->Y:Llibs/mh1;
@@ -31,13 +31,13 @@
 
 # virtual methods
 .method public final e([B)Z
-    .registers 8
+    .locals 6
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :try_start_1
+    :try_start_0
     const-string v1, "ssh-dss"
 
     .line 3
@@ -113,29 +113,29 @@
     .line 39
     .line 40
     move-result p1
-    :try_end_28
-    .catch Ljava/security/SignatureException; {:try_start_1 .. :try_end_28} :catch_2b
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_28} :catch_29
+    :try_end_0
+    .catch Ljava/security/SignatureException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 41
     return p1
 
     .line 42
-    :catch_29
+    :catch_0
     move-exception p1
 
     .line 43
-    goto :goto_2d
+    goto :goto_0
 
     .line 44
-    :catch_2b
+    :catch_1
     move-exception p1
 
     .line 45
-    goto :goto_35
+    goto :goto_1
 
     .line 46
-    :goto_2d
+    :goto_0
     invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     .line 47
@@ -152,7 +152,7 @@
     return v0
 
     .line 54
-    :goto_35
+    :goto_1
     invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     .line 55

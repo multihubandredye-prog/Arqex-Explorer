@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ob2;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "keyboard-interactive"
@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public final a()Llibs/oy2;
-    .registers 7
+    .locals 6
 
     .line 1
     invoke-super {p0}, Llibs/Kappa;->a()Llibs/oy2;
@@ -99,7 +99,7 @@
     move-result-object v2
 
     .line 34
-    :goto_21
+    :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     .line 35
@@ -108,7 +108,7 @@
     move-result v4
 
     .line 38
-    if-eqz v4, :cond_3c
+    if-eqz v4, :cond_1
 
     .line 39
     .line 40
@@ -132,7 +132,7 @@
     move-result v5
 
     .line 50
-    if-lez v5, :cond_38
+    if-lez v5, :cond_0
 
     .line 51
     .line 52
@@ -145,16 +145,16 @@
     .line 55
     .line 56
     .line 57
-    :cond_38
+    :cond_0
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 58
     .line 59
     .line 60
-    goto :goto_21
+    goto :goto_0
 
     .line 61
-    :cond_3c
+    :cond_1
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 62
@@ -187,7 +187,7 @@
 .end method
 
 .method public final c(Llibs/cr1;Llibs/oy2;)V
-    .registers 16
+    .locals 13
 
     .line 1
     iget-object v0, p0, Llibs/j7;->Lambda:Llibs/ob2;
@@ -198,11 +198,11 @@
 
     .line 4
     .line 5
-    if-ne p1, v1, :cond_a1
+    if-ne p1, v1, :cond_3
 
     .line 6
     .line 7
-    :try_start_6
+    :try_start_0
     invoke-virtual {p0}, Llibs/Kappa;->b()Llibs/lI;
 
     .line 8
@@ -297,8 +297,8 @@
     const/4 v4, 0x0
 
     .line 53
-    :goto_34
-    if-ge v4, p1, :cond_76
+    :goto_0
+    if-ge v4, p1, :cond_1
 
     .line 54
     .line 55
@@ -363,7 +363,7 @@
 
     .line 85
     .line 86
-    if-nez v8, :cond_6a
+    if-nez v8, :cond_0
 
     .line 87
     .line 88
@@ -387,7 +387,7 @@
     move-result v7
 
     .line 98
-    if-eqz v7, :cond_6a
+    if-eqz v7, :cond_0
 
     .line 99
     .line 100
@@ -403,23 +403,23 @@
     move-result-object v7
 
     .line 106
-    goto :goto_6c
+    goto :goto_1
 
     .line 107
-    :cond_6a
+    :cond_0
     sget-object v7, Llibs/ob2;->e:[C
 
     .line 108
     .line 109
-    :goto_6c
+    :goto_1
     invoke-direct {v9, v7}, Llibs/v60;-><init>(Ljava/lang/Object;)V
 
     .line 110
     .line 111
     .line 112
     aput-object v9, v2, v4
-    :try_end_71
-    .catch Llibs/rj; {:try_start_6 .. :try_end_71} :catch_74
+    :try_end_0
+    .catch Llibs/rj; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 113
     .line 114
@@ -427,17 +427,17 @@
 
     .line 115
     .line 116
-    goto :goto_34
+    goto :goto_0
 
     .line 117
-    :catch_74
+    :catch_0
     move-exception p1
 
     .line 118
-    goto :goto_9b
+    goto :goto_3
 
     .line 119
-    :cond_76
+    :cond_1
     new-instance p2, Llibs/oy2;
 
     .line 120
@@ -459,8 +459,8 @@
     .line 128
     .line 129
     .line 130
-    :goto_81
-    if-ge v6, p1, :cond_8f
+    :goto_2
+    if-ge v6, p1, :cond_2
 
     .line 131
     .line 132
@@ -485,10 +485,10 @@
 
     .line 142
     .line 143
-    goto :goto_81
+    goto :goto_2
 
     .line 144
-    :cond_8f
+    :cond_2
     iget-object p1, p0, Llibs/Kappa;->Z:Llibs/o7;
 
     .line 145
@@ -513,7 +513,7 @@
     return-void
 
     .line 156
-    :goto_9b
+    :goto_3
     new-instance p2, Llibs/nr3;
 
     .line 157
@@ -526,7 +526,7 @@
     throw p2
 
     .line 162
-    :cond_a1
+    :cond_3
     invoke-super {p0, p1, p2}, Llibs/Kappa;->c(Llibs/cr1;Llibs/oy2;)V
 
     .line 163
@@ -535,19 +535,19 @@
     const/4 p1, 0x0
 
     .line 166
-    goto :goto_a7
+    goto :goto_5
 
     .line 167
-    :goto_a6
+    :goto_4
     throw p1
 
     .line 168
-    :goto_a7
-    goto :goto_a6
+    :goto_5
+    goto :goto_4
 .end method
 
 .method public final d()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/j7;->Lambda:Llibs/ob2;

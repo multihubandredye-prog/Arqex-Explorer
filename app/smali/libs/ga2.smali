@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ia2;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/ga2;->a:Llibs/ia2;
@@ -27,17 +27,17 @@
 
 # virtual methods
 .method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .registers 5
+    .locals 2
 
     .line 1
-    if-nez p2, :cond_3
+    if-nez p2, :cond_0
 
     .line 2
     .line 3
-    goto :goto_60
+    goto :goto_2
 
     .line 4
-    :cond_3
+    :cond_0
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     .line 5
@@ -46,14 +46,14 @@
     move-result-object p1
 
     .line 8
-    if-nez p1, :cond_a
+    if-nez p1, :cond_1
 
     .line 9
     .line 10
-    goto :goto_60
+    goto :goto_2
 
     .line 11
-    :cond_a
+    :cond_1
     const-string v0, "android.intent.action.MEDIA_UNMOUNTED"
 
     .line 12
@@ -66,7 +66,7 @@
     move-result v0
 
     .line 17
-    if-nez v0, :cond_25
+    if-nez v0, :cond_3
 
     .line 18
     .line 19
@@ -82,7 +82,7 @@
     move-result v0
 
     .line 25
-    if-nez v0, :cond_25
+    if-nez v0, :cond_3
 
     .line 26
     .line 27
@@ -98,27 +98,27 @@
     move-result v0
 
     .line 33
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_2
 
     .line 34
     .line 35
-    goto :goto_25
+    goto :goto_0
 
     .line 36
-    :cond_23
+    :cond_2
     const/4 v0, 0x0
 
     .line 37
-    goto :goto_26
+    goto :goto_1
 
     .line 38
-    :cond_25
-    :goto_25
+    :cond_3
+    :goto_0
     const/4 v0, 0x1
 
     .line 39
-    :goto_26
-    if-eqz v0, :cond_2d
+    :goto_1
+    if-eqz v0, :cond_4
 
     .line 40
     .line 41
@@ -131,8 +131,8 @@
     .line 44
     .line 45
     .line 46
-    :cond_2d
-    if-nez v0, :cond_61
+    :cond_4
+    if-nez v0, :cond_6
 
     .line 47
     .line 48
@@ -148,7 +148,7 @@
     move-result v0
 
     .line 54
-    if-nez v0, :cond_61
+    if-nez v0, :cond_6
 
     .line 55
     .line 56
@@ -164,7 +164,7 @@
     move-result v0
 
     .line 62
-    if-nez v0, :cond_61
+    if-nez v0, :cond_6
 
     .line 63
     .line 64
@@ -180,7 +180,7 @@
     move-result v0
 
     .line 70
-    if-nez v0, :cond_61
+    if-nez v0, :cond_6
 
     .line 71
     .line 72
@@ -196,7 +196,7 @@
     move-result v0
 
     .line 78
-    if-nez v0, :cond_61
+    if-nez v0, :cond_6
 
     .line 79
     .line 80
@@ -212,7 +212,7 @@
     move-result v0
 
     .line 86
-    if-nez v0, :cond_61
+    if-nez v0, :cond_6
 
     .line 87
     .line 88
@@ -228,20 +228,20 @@
     move-result v0
 
     .line 94
-    if-eqz v0, :cond_60
+    if-eqz v0, :cond_5
 
     .line 95
     .line 96
-    goto :goto_61
+    goto :goto_3
 
     .line 97
-    :cond_60
-    :goto_60
+    :cond_5
+    :goto_2
     return-void
 
     .line 98
-    :cond_61
-    :goto_61
+    :cond_6
+    :goto_3
     new-instance v0, Llibs/sv;
 
     .line 99

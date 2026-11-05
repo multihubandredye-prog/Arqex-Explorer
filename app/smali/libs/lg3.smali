@@ -29,7 +29,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 10
+    .locals 10
 
     .line 1
     const/16 v0, 0x240
@@ -40,7 +40,7 @@
 
     .line 4
     .line 5
-    fill-array-data v2, :array_40
+    fill-array-data v2, :array_0
 
     .line 6
     .line 7
@@ -57,7 +57,7 @@
 
     .line 13
     .line 14
-    fill-array-data v0, :array_284
+    fill-array-data v0, :array_1
 
     .line 15
     .line 16
@@ -162,7 +162,7 @@
     nop
 
     .line 65
-    :array_40
+    :array_0
     .array-data 2
         0xcs
         0x8s
@@ -790,7 +790,7 @@
     .line 111
     .line 112
     .line 113
-    :array_284
+    :array_1
     .array-data 2
         0x0s
         0x5s
@@ -856,7 +856,7 @@
 .end method
 
 .method public constructor <init>([S[IIII)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

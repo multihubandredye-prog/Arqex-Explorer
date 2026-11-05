@@ -9,7 +9,7 @@
 
 # direct methods
 .method private constructor <init>(Lorg/conscrypt/MlDsaAlgorithm;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/security/KeyFactorySpi;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lorg/conscrypt/MlDsaAlgorithm;I)V
-    .registers 3
+    .locals 0
 
     .line 7
     invoke-direct {p0, p1}, Lorg/conscrypt/OpenSslMlDsaKeyFactory;-><init>(Lorg/conscrypt/MlDsaAlgorithm;)V
@@ -34,7 +34,7 @@
 .end method
 
 .method public static getMlDsaAlgorithm(Lorg/conscrypt/OpenSSLKey;)Lorg/conscrypt/MlDsaAlgorithm;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/OpenSSLKey;->getNativeRef()Lorg/conscrypt/NativeRef$EVP_PKEY;
@@ -57,7 +57,7 @@
 
     .line 10
     .line 11
-    if-ne p0, v0, :cond_f
+    if-ne p0, v0, :cond_0
 
     .line 12
     .line 13
@@ -68,12 +68,12 @@
     return-object p0
 
     .line 16
-    :cond_f
+    :cond_0
     const/16 v0, 0x3c9
 
     .line 17
     .line 18
-    if-ne p0, v0, :cond_16
+    if-ne p0, v0, :cond_1
 
     .line 19
     .line 20
@@ -84,7 +84,7 @@
     return-object p0
 
     .line 23
-    :cond_16
+    :cond_1
     const-string p0, "Unsupported key type"
 
     .line 24
@@ -101,14 +101,14 @@
 .end method
 
 .method public static getPKeyType(Lorg/conscrypt/MlDsaAlgorithm;)I
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/MlDsaAlgorithm;->ML_DSA_65:Lorg/conscrypt/MlDsaAlgorithm;
 
     .line 2
     .line 3
-    if-ne p0, v0, :cond_7
+    if-ne p0, v0, :cond_0
 
     .line 4
     .line 5
@@ -119,12 +119,12 @@
     return p0
 
     .line 8
-    :cond_7
+    :cond_0
     sget-object v0, Lorg/conscrypt/MlDsaAlgorithm;->ML_DSA_87:Lorg/conscrypt/MlDsaAlgorithm;
 
     .line 9
     .line 10
-    if-ne p0, v0, :cond_e
+    if-ne p0, v0, :cond_1
 
     .line 11
     .line 12
@@ -135,7 +135,7 @@
     return p0
 
     .line 15
-    :cond_e
+    :cond_1
     const-string v0, "Unsupported algorithm: "
 
     .line 16
@@ -152,7 +152,7 @@
 .end method
 
 .method private makePrivateKey(Lorg/conscrypt/OpenSSLKey;)Lorg/conscrypt/OpenSslMlDsaPrivateKey;
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-static {p1}, Lorg/conscrypt/OpenSslMlDsaKeyFactory;->getMlDsaAlgorithm(Lorg/conscrypt/OpenSSLKey;)Lorg/conscrypt/MlDsaAlgorithm;
@@ -171,18 +171,18 @@
     move-result v1
 
     .line 9
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_0
 
     .line 10
     .line 11
-    :try_start_a
+    :try_start_0
     new-instance v1, Lorg/conscrypt/OpenSslMlDsaPrivateKey;
 
     .line 12
     .line 13
     invoke-direct {v1, p1, v0}, Lorg/conscrypt/OpenSslMlDsaPrivateKey;-><init>(Lorg/conscrypt/OpenSSLKey;Lorg/conscrypt/MlDsaAlgorithm;)V
-    :try_end_f
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_a .. :try_end_f} :catch_10
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 14
     .line 15
@@ -190,7 +190,7 @@
     return-object v1
 
     .line 17
-    :catch_10
+    :catch_0
     move-exception p1
 
     .line 18
@@ -210,7 +210,7 @@
     throw v0
 
     .line 26
-    :cond_19
+    :cond_0
     const-string p1, "Unsupported algorithm: "
 
     .line 27
@@ -227,7 +227,7 @@
 .end method
 
 .method private makePrivateKeyFromSeed([BLorg/conscrypt/MlDsaAlgorithm;)Lorg/conscrypt/OpenSslMlDsaPrivateKey;
-    .registers 7
+    .locals 4
 
     .line 1
     invoke-virtual {p0, p2}, Lorg/conscrypt/OpenSslMlDsaKeyFactory;->supportsAlgorithm(Lorg/conscrypt/MlDsaAlgorithm;)Z
@@ -241,7 +241,7 @@
     const/4 v1, 0x0
 
     .line 6
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1
 
     .line 7
     .line 8
@@ -256,18 +256,18 @@
 
     .line 12
     .line 13
-    if-ne v0, v2, :cond_1b
+    if-ne v0, v2, :cond_0
 
     .line 14
     .line 15
-    :try_start_e
+    :try_start_0
     new-instance v0, Lorg/conscrypt/OpenSslMlDsaPrivateKey;
 
     .line 16
     .line 17
     invoke-direct {v0, p1, p2}, Lorg/conscrypt/OpenSslMlDsaPrivateKey;-><init>([BLorg/conscrypt/MlDsaAlgorithm;)V
-    :try_end_13
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_e .. :try_end_13} :catch_14
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 18
     .line 19
@@ -275,7 +275,7 @@
     return-object v0
 
     .line 21
-    :catch_14
+    :catch_0
     move-exception p1
 
     .line 22
@@ -291,7 +291,7 @@
     throw p2
 
     .line 28
-    :cond_1b
+    :cond_0
     invoke-static {v3}, Llibs/t22;->d(Ljava/lang/String;)V
 
     .line 29
@@ -300,7 +300,7 @@
     return-object v1
 
     .line 32
-    :cond_1f
+    :cond_1
     const-string p1, "Unsupported algorithm: "
 
     .line 33
@@ -314,7 +314,7 @@
 .end method
 
 .method private makePublicKey(Lorg/conscrypt/OpenSSLKey;)Lorg/conscrypt/OpenSslMlDsaPublicKey;
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-static {p1}, Lorg/conscrypt/OpenSslMlDsaKeyFactory;->getMlDsaAlgorithm(Lorg/conscrypt/OpenSSLKey;)Lorg/conscrypt/MlDsaAlgorithm;
@@ -333,18 +333,18 @@
     move-result v1
 
     .line 9
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_0
 
     .line 10
     .line 11
-    :try_start_a
+    :try_start_0
     new-instance v1, Lorg/conscrypt/OpenSslMlDsaPublicKey;
 
     .line 12
     .line 13
     invoke-direct {v1, p1, v0}, Lorg/conscrypt/OpenSslMlDsaPublicKey;-><init>(Lorg/conscrypt/OpenSSLKey;Lorg/conscrypt/MlDsaAlgorithm;)V
-    :try_end_f
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_a .. :try_end_f} :catch_10
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 14
     .line 15
@@ -352,7 +352,7 @@
     return-object v1
 
     .line 17
-    :catch_10
+    :catch_0
     move-exception p1
 
     .line 18
@@ -372,7 +372,7 @@
     throw v0
 
     .line 26
-    :cond_19
+    :cond_0
     const-string p1, "Unsupported algorithm: "
 
     .line 27
@@ -389,7 +389,7 @@
 .end method
 
 .method private makePublicKeyFromRaw([BLorg/conscrypt/MlDsaAlgorithm;)Lorg/conscrypt/OpenSslMlDsaPublicKey;
-    .registers 7
+    .locals 4
 
     .line 1
     invoke-virtual {p0, p2}, Lorg/conscrypt/OpenSslMlDsaKeyFactory;->supportsAlgorithm(Lorg/conscrypt/MlDsaAlgorithm;)Z
@@ -403,7 +403,7 @@
     const/4 v1, 0x0
 
     .line 6
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_1
 
     .line 7
     .line 8
@@ -422,18 +422,18 @@
 
     .line 14
     .line 15
-    if-ne v0, v2, :cond_1d
+    if-ne v0, v2, :cond_0
 
     .line 16
     .line 17
-    :try_start_10
+    :try_start_0
     new-instance v0, Lorg/conscrypt/OpenSslMlDsaPublicKey;
 
     .line 18
     .line 19
     invoke-direct {v0, p1, p2}, Lorg/conscrypt/OpenSslMlDsaPublicKey;-><init>([BLorg/conscrypt/MlDsaAlgorithm;)V
-    :try_end_15
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_10 .. :try_end_15} :catch_16
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 20
     .line 21
@@ -441,7 +441,7 @@
     return-object v0
 
     .line 23
-    :catch_16
+    :catch_0
     move-exception p1
 
     .line 24
@@ -457,7 +457,7 @@
     throw p2
 
     .line 30
-    :cond_1d
+    :cond_0
     invoke-static {v3}, Llibs/t22;->d(Ljava/lang/String;)V
 
     .line 31
@@ -466,7 +466,7 @@
     return-object v1
 
     .line 34
-    :cond_21
+    :cond_1
     const-string p1, "Unsupported algorithm: "
 
     .line 35
@@ -482,13 +482,13 @@
 
 # virtual methods
 .method public engineGeneratePrivate(Ljava/security/spec/KeySpec;)Ljava/security/PrivateKey;
-    .registers 5
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-eqz p1, :cond_69
+    if-eqz p1, :cond_3
 
     .line 3
     .line 4
@@ -496,7 +496,7 @@
 
     .line 5
     .line 6
-    if-eqz v1, :cond_55
+    if-eqz v1, :cond_2
 
     .line 7
     .line 8
@@ -524,7 +524,7 @@
     move-result v1
 
     .line 20
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_0
 
     .line 21
     .line 22
@@ -551,7 +551,7 @@
     return-object p1
 
     .line 33
-    :cond_20
+    :cond_0
     invoke-virtual {p1}, Ljava/security/spec/EncodedKeySpec;->getFormat()Ljava/lang/String;
 
     .line 34
@@ -572,7 +572,7 @@
     move-result v1
 
     .line 43
-    if-eqz v1, :cond_4f
+    if-eqz v1, :cond_1
 
     .line 44
     .line 45
@@ -584,7 +584,7 @@
     move-result-object p1
 
     .line 49
-    :try_start_30
+    :try_start_0
     new-instance v0, Lorg/conscrypt/OpenSSLKey;
 
     .line 50
@@ -624,14 +624,14 @@
     .line 68
     .line 69
     move-result-object p1
-    :try_end_45
-    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_30 .. :try_end_45} :catch_46
+    :try_end_0
+    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 70
     return-object p1
 
     .line 71
-    :catch_46
+    :catch_0
     move-exception p1
 
     .line 72
@@ -651,7 +651,7 @@
     throw v0
 
     .line 80
-    :cond_4f
+    :cond_1
     const-string p1, "Encoding must be in PKCS#8 format"
 
     .line 81
@@ -664,7 +664,7 @@
     return-object v0
 
     .line 86
-    :cond_55
+    :cond_2
     new-instance v0, Ljava/security/spec/InvalidKeySpecException;
 
     .line 87
@@ -705,7 +705,7 @@
     throw v0
 
     .line 106
-    :cond_69
+    :cond_3
     const-string p1, "keySpec == null"
 
     .line 107
@@ -719,13 +719,13 @@
 .end method
 
 .method public engineGeneratePublic(Ljava/security/spec/KeySpec;)Ljava/security/PublicKey;
-    .registers 5
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-eqz p1, :cond_69
+    if-eqz p1, :cond_3
 
     .line 3
     .line 4
@@ -733,7 +733,7 @@
 
     .line 5
     .line 6
-    if-eqz v1, :cond_55
+    if-eqz v1, :cond_2
 
     .line 7
     .line 8
@@ -761,7 +761,7 @@
     move-result v1
 
     .line 20
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_0
 
     .line 21
     .line 22
@@ -788,7 +788,7 @@
     return-object p1
 
     .line 33
-    :cond_20
+    :cond_0
     invoke-virtual {p1}, Ljava/security/spec/EncodedKeySpec;->getFormat()Ljava/lang/String;
 
     .line 34
@@ -809,7 +809,7 @@
     move-result v1
 
     .line 43
-    if-eqz v1, :cond_4f
+    if-eqz v1, :cond_1
 
     .line 44
     .line 45
@@ -821,7 +821,7 @@
     move-result-object p1
 
     .line 49
-    :try_start_30
+    :try_start_0
     new-instance v0, Lorg/conscrypt/OpenSSLKey;
 
     .line 50
@@ -861,14 +861,14 @@
     .line 68
     .line 69
     move-result-object p1
-    :try_end_45
-    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_30 .. :try_end_45} :catch_46
+    :try_end_0
+    .catch Lorg/conscrypt/OpenSSLX509CertificateFactory$ParsingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 70
     return-object p1
 
     .line 71
-    :catch_46
+    :catch_0
     move-exception p1
 
     .line 72
@@ -888,7 +888,7 @@
     throw v0
 
     .line 80
-    :cond_4f
+    :cond_1
     const-string p1, "Encoding must be in X.509 format"
 
     .line 81
@@ -901,7 +901,7 @@
     return-object v0
 
     .line 86
-    :cond_55
+    :cond_2
     new-instance v0, Ljava/security/spec/InvalidKeySpecException;
 
     .line 87
@@ -942,7 +942,7 @@
     throw v0
 
     .line 106
-    :cond_69
+    :cond_3
     const-string p1, "keySpec == null"
 
     .line 107
@@ -956,7 +956,7 @@
 .end method
 
 .method public engineGetKeySpec(Ljava/security/Key;Ljava/lang/Class;)Ljava/security/spec/KeySpec;
-    .registers 8
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -972,11 +972,11 @@
     const/4 v0, 0x0
 
     .line 2
-    if-eqz p1, :cond_b5
+    if-eqz p1, :cond_8
 
     .line 3
     .line 4
-    if-eqz p2, :cond_af
+    if-eqz p2, :cond_7
 
     .line 5
     .line 6
@@ -1000,7 +1000,7 @@
     move-result v1
 
     .line 16
-    if-eqz v1, :cond_a9
+    if-eqz v1, :cond_6
 
     .line 17
     .line 18
@@ -1016,7 +1016,7 @@
 
     .line 23
     .line 24
-    if-eqz v1, :cond_4b
+    if-eqz v1, :cond_2
 
     .line 25
     .line 26
@@ -1043,7 +1043,7 @@
     move-result v4
 
     .line 37
-    if-eqz v4, :cond_47
+    if-eqz v4, :cond_1
 
     .line 38
     .line 39
@@ -1059,7 +1059,7 @@
     move-result v0
 
     .line 45
-    if-eqz v0, :cond_38
+    if-eqz v0, :cond_0
 
     .line 46
     .line 47
@@ -1083,7 +1083,7 @@
     return-object p2
 
     .line 57
-    :cond_38
+    :cond_0
     invoke-virtual {v2, p2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
     .line 58
@@ -1092,7 +1092,7 @@
     move-result v0
 
     .line 61
-    if-eqz v0, :cond_81
+    if-eqz v0, :cond_5
 
     .line 62
     .line 63
@@ -1115,7 +1115,7 @@
     return-object p1
 
     .line 72
-    :cond_47
+    :cond_1
     invoke-static {v3}, Llibs/t22;->d(Ljava/lang/String;)V
 
     .line 73
@@ -1124,12 +1124,12 @@
     return-object v0
 
     .line 76
-    :cond_4b
+    :cond_2
     instance-of v1, p1, Lorg/conscrypt/OpenSslMlDsaPrivateKey;
 
     .line 77
     .line 78
-    if-eqz v1, :cond_81
+    if-eqz v1, :cond_5
 
     .line 79
     .line 80
@@ -1156,7 +1156,7 @@
     move-result v4
 
     .line 91
-    if-eqz v4, :cond_7d
+    if-eqz v4, :cond_4
 
     .line 92
     .line 93
@@ -1172,7 +1172,7 @@
     move-result v0
 
     .line 99
-    if-eqz v0, :cond_6e
+    if-eqz v0, :cond_3
 
     .line 100
     .line 101
@@ -1196,7 +1196,7 @@
     return-object p2
 
     .line 111
-    :cond_6e
+    :cond_3
     invoke-virtual {v2, p2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
     .line 112
@@ -1205,7 +1205,7 @@
     move-result v0
 
     .line 115
-    if-eqz v0, :cond_81
+    if-eqz v0, :cond_5
 
     .line 116
     .line 117
@@ -1228,7 +1228,7 @@
     return-object p1
 
     .line 126
-    :cond_7d
+    :cond_4
     invoke-static {v3}, Llibs/t22;->d(Ljava/lang/String;)V
 
     .line 127
@@ -1237,7 +1237,7 @@
     return-object v0
 
     .line 130
-    :cond_81
+    :cond_5
     new-instance v0, Ljava/security/spec/InvalidKeySpecException;
 
     .line 131
@@ -1314,7 +1314,7 @@
     throw v0
 
     .line 170
-    :cond_a9
+    :cond_6
     const-string p1, "Key must be an ML-DSA key"
 
     .line 171
@@ -1327,7 +1327,7 @@
     return-object v0
 
     .line 176
-    :cond_af
+    :cond_7
     const-string p1, "keySpec == null"
 
     .line 177
@@ -1340,7 +1340,7 @@
     return-object v0
 
     .line 182
-    :cond_b5
+    :cond_8
     const-string p1, "key == null"
 
     .line 183
@@ -1354,7 +1354,7 @@
 .end method
 
 .method public engineTranslateKey(Ljava/security/Key;)Ljava/security/Key;
-    .registers 5
+    .locals 3
 
     .line 1
     instance-of v0, p1, Lorg/conscrypt/OpenSslMlDsaPublicKey;
@@ -1368,7 +1368,7 @@
 
     .line 5
     .line 6
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     .line 7
     .line 8
@@ -1392,14 +1392,14 @@
     move-result v0
 
     .line 18
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 19
     .line 20
     return-object p1
 
     .line 21
-    :cond_14
+    :cond_0
     invoke-static {v2}, Llibs/bf0;->k(Ljava/lang/String;)V
 
     .line 22
@@ -1408,12 +1408,12 @@
     return-object v1
 
     .line 25
-    :cond_18
+    :cond_1
     instance-of v0, p1, Lorg/conscrypt/OpenSslMlDsaPrivateKey;
 
     .line 26
     .line 27
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_3
 
     .line 28
     .line 29
@@ -1440,14 +1440,14 @@
     move-result v0
 
     .line 40
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_2
 
     .line 41
     .line 42
     return-object p1
 
     .line 43
-    :cond_2a
+    :cond_2
     invoke-static {v2}, Llibs/bf0;->k(Ljava/lang/String;)V
 
     .line 44
@@ -1456,12 +1456,12 @@
     return-object v1
 
     .line 47
-    :cond_2e
+    :cond_3
     instance-of v0, p1, Ljava/security/PrivateKey;
 
     .line 48
     .line 49
-    if-eqz v0, :cond_53
+    if-eqz v0, :cond_4
 
     .line 50
     .line 51
@@ -1485,7 +1485,7 @@
     move-result v0
 
     .line 61
-    if-eqz v0, :cond_53
+    if-eqz v0, :cond_4
 
     .line 62
     .line 63
@@ -1497,7 +1497,7 @@
     move-result-object p1
 
     .line 67
-    :try_start_42
+    :try_start_0
     new-instance v0, Ljava/security/spec/PKCS8EncodedKeySpec;
 
     .line 68
@@ -1513,14 +1513,14 @@
     .line 74
     .line 75
     move-result-object p1
-    :try_end_4b
-    .catch Ljava/security/spec/InvalidKeySpecException; {:try_start_42 .. :try_end_4b} :catch_4c
+    :try_end_0
+    .catch Ljava/security/spec/InvalidKeySpecException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 76
     return-object p1
 
     .line 77
-    :catch_4c
+    :catch_0
     move-exception p1
 
     .line 78
@@ -1536,12 +1536,12 @@
     throw v0
 
     .line 84
-    :cond_53
+    :cond_4
     instance-of v0, p1, Ljava/security/PublicKey;
 
     .line 85
     .line 86
-    if-eqz v0, :cond_78
+    if-eqz v0, :cond_5
 
     .line 87
     .line 88
@@ -1565,7 +1565,7 @@
     move-result v0
 
     .line 98
-    if-eqz v0, :cond_78
+    if-eqz v0, :cond_5
 
     .line 99
     .line 100
@@ -1577,7 +1577,7 @@
     move-result-object p1
 
     .line 104
-    :try_start_67
+    :try_start_1
     new-instance v0, Ljava/security/spec/X509EncodedKeySpec;
 
     .line 105
@@ -1593,14 +1593,14 @@
     .line 111
     .line 112
     move-result-object p1
-    :try_end_70
-    .catch Ljava/security/spec/InvalidKeySpecException; {:try_start_67 .. :try_end_70} :catch_71
+    :try_end_1
+    .catch Ljava/security/spec/InvalidKeySpecException; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 113
     return-object p1
 
     .line 114
-    :catch_71
+    :catch_1
     move-exception p1
 
     .line 115
@@ -1616,7 +1616,7 @@
     throw v0
 
     .line 121
-    :cond_78
+    :cond_5
     const-string p1, "Unable to translate key into ML-DSA key"
 
     .line 122

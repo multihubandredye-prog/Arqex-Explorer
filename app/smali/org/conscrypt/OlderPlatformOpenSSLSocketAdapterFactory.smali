@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/conscrypt/OpenSSLSocketFactoryImpl;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Lorg/conscrypt/BaseOpenSSLSocketAdapterFactory;-><init>(Lorg/conscrypt/OpenSSLSocketFactoryImpl;)V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public wrap(Lorg/conscrypt/OpenSSLSocketImpl;)Ljava/net/Socket;
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance v0, Lorg/conscrypt/OlderPlatformOpenSSLSocketImplAdapter;

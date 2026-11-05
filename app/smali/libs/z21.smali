@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r31;Z)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/z21;->X:Llibs/r31;
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    :try_start_4
+    :try_start_0
     sget-object v2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 6
@@ -60,7 +60,7 @@
     move-result v2
 
     .line 11
-    if-eqz v2, :cond_1b
+    if-eqz v2, :cond_0
 
     .line 12
     .line 13
@@ -89,14 +89,14 @@
     return-void
 
     .line 26
-    :catchall_19
+    :catchall_0
     move-exception v0
 
     .line 27
-    goto :goto_23
+    goto :goto_0
 
     .line 28
-    :cond_1b
+    :cond_0
     sget-object v0, Lcom/mixplorer/AppImpl;->X:Llibs/k70;
 
     .line 29
@@ -106,8 +106,8 @@
     .line 31
     .line 32
     invoke-virtual {v0, v1}, Llibs/k70;->Intent(I)V
-    :try_end_22
-    .catchall {:try_start_4 .. :try_end_22} :catchall_19
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 33
     .line 34
@@ -115,7 +115,7 @@
     return-void
 
     .line 36
-    :goto_23
+    :goto_0
     invoke-static {v0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 37

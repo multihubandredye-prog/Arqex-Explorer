@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(ZLlibs/l40;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/d6;-><init>(Z)V
@@ -27,14 +27,14 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Llibs/j40;
 
     .line 2
     .line 3
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -44,7 +44,7 @@
     return p1
 
     .line 7
-    :cond_6
+    :cond_0
     check-cast p1, Llibs/j40;
 
     .line 8
@@ -69,7 +69,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-boolean v0, p0, Llibs/d6;->a:Z

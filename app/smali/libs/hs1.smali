@@ -31,7 +31,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/widgets/MiDraggableListView;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/hs1;->Rho:Lcom/mixplorer/widgets/MiDraggableListView;
@@ -56,14 +56,14 @@
 
 # virtual methods
 .method public final a(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-boolean v0, p0, Llibs/hs1;->Xi:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_20
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -125,12 +125,12 @@
     .line 31
     .line 32
     .line 33
-    :cond_20
+    :cond_0
     return-void
 .end method
 
 .method public final b()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/hs1;->Rho:Lcom/mixplorer/widgets/MiDraggableListView;
@@ -153,7 +153,7 @@
 .end method
 
 .method public final onScroll(Landroid/widget/AbsListView;III)V
-    .registers 6
+    .locals 1
 
     .line 1
     iget-object p1, p0, Llibs/hs1;->Rho:Lcom/mixplorer/widgets/MiDraggableListView;
@@ -164,7 +164,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -173,16 +173,16 @@
     .line 8
     .line 9
     .line 10
-    :cond_9
+    :cond_0
     iget-boolean p4, p0, Llibs/hs1;->Xi:Z
 
     .line 11
     .line 12
-    if-eqz p4, :cond_67
+    if-eqz p4, :cond_2
 
     .line 13
     .line 14
-    if-eqz p3, :cond_67
+    if-eqz p3, :cond_2
 
     .line 15
     .line 16
@@ -190,7 +190,7 @@
 
     .line 17
     .line 18
-    if-gt p2, p4, :cond_38
+    if-gt p2, p4, :cond_1
 
     .line 19
     .line 20
@@ -228,7 +228,7 @@
     move-result p2
 
     .line 36
-    if-ge p3, p2, :cond_67
+    if-ge p3, p2, :cond_2
 
     .line 37
     .line 38
@@ -271,7 +271,7 @@
     return-void
 
     .line 57
-    :cond_38
+    :cond_1
     add-int/2addr p3, p2
 
     .line 58
@@ -279,7 +279,7 @@
 
     .line 59
     .line 60
-    if-le p3, p4, :cond_67
+    if-le p3, p4, :cond_2
 
     .line 61
     .line 62
@@ -324,7 +324,7 @@
     move-result p2
 
     .line 81
-    if-le p3, p2, :cond_67
+    if-le p3, p2, :cond_2
 
     .line 82
     .line 83
@@ -371,19 +371,19 @@
     .line 102
     .line 103
     .line 104
-    :cond_67
+    :cond_2
     return-void
 .end method
 
 .method public final onScrollStateChanged(Landroid/widget/AbsListView;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final run()V
-    .registers 10
+    .locals 9
 
     .line 1
     iget-boolean v0, p0, Llibs/hs1;->X:Z
@@ -393,7 +393,7 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 5
     .line 6
@@ -404,7 +404,7 @@
     return-void
 
     .line 9
-    :cond_8
+    :cond_0
     iget v0, p0, Llibs/hs1;->Mu:I
 
     .line 10
@@ -413,7 +413,7 @@
 
     .line 12
     .line 13
-    if-nez v0, :cond_24
+    if-nez v0, :cond_1
 
     .line 14
     .line 15
@@ -458,10 +458,10 @@
 
     .line 35
     .line 36
-    goto :goto_39
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_1
     iget v0, v2, Lcom/mixplorer/widgets/MiDraggableListView;->O:I
 
     .line 38
@@ -503,7 +503,7 @@
 
     .line 57
     .line 58
-    :goto_39
+    :goto_0
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     .line 59
@@ -554,7 +554,7 @@
 
     .line 81
     .line 82
-    if-nez v0, :cond_63
+    if-nez v0, :cond_2
 
     .line 83
     .line 84
@@ -592,7 +592,7 @@
     return-void
 
     .line 100
-    :cond_63
+    :cond_2
     invoke-virtual {v2}, Landroid/widget/AdapterView;->getFirstVisiblePosition()I
 
     .line 101
@@ -654,11 +654,11 @@
     const/4 v8, 0x1
 
     .line 129
-    if-lez v7, :cond_9d
+    if-lez v7, :cond_4
 
     .line 130
     .line 131
-    if-nez v0, :cond_93
+    if-nez v0, :cond_3
 
     .line 132
     .line 133
@@ -682,7 +682,7 @@
     move-result v3
 
     .line 143
-    if-ne v3, v5, :cond_93
+    if-ne v3, v5, :cond_3
 
     .line 144
     .line 145
@@ -693,7 +693,7 @@
     return-void
 
     .line 148
-    :cond_93
+    :cond_3
     iget v1, p0, Llibs/hs1;->Z:I
 
     .line 149
@@ -713,14 +713,14 @@
     move v3, v0
 
     .line 157
-    goto :goto_bb
+    goto :goto_1
 
     .line 158
-    :cond_9d
+    :cond_4
     sub-int/2addr v4, v8
 
     .line 159
-    if-ne v3, v4, :cond_b2
+    if-ne v3, v4, :cond_5
 
     .line 160
     .line 161
@@ -751,7 +751,7 @@
     add-int/2addr v5, v6
 
     .line 174
-    if-gt v4, v5, :cond_b2
+    if-gt v4, v5, :cond_5
 
     .line 175
     .line 176
@@ -762,7 +762,7 @@
     return-void
 
     .line 179
-    :cond_b2
+    :cond_5
     neg-int v1, v6
 
     .line 180
@@ -782,7 +782,7 @@
 
     .line 187
     .line 188
-    :goto_bb
+    :goto_1
     sub-int v0, v3, v0
 
     .line 189
@@ -830,7 +830,7 @@
 
     .line 210
     .line 211
-    if-eq v1, v4, :cond_f3
+    if-eq v1, v4, :cond_8
 
     .line 212
     .line 213
@@ -838,11 +838,11 @@
 
     .line 214
     .line 215
-    if-ne v5, v8, :cond_e3
+    if-ne v5, v8, :cond_6
 
     .line 216
     .line 217
-    if-ne v1, v3, :cond_e3
+    if-ne v1, v3, :cond_6
 
     .line 218
     .line 219
@@ -864,27 +864,27 @@
     sub-int/2addr v0, v5
 
     .line 227
-    goto :goto_f3
+    goto :goto_2
 
     .line 228
-    :cond_e3
-    if-ge v1, v3, :cond_f3
+    :cond_6
+    if-ge v1, v3, :cond_8
 
     .line 229
     .line 230
-    if-eqz v5, :cond_eb
+    if-eqz v5, :cond_7
 
     .line 231
     .line 232
-    if-ne v5, v8, :cond_f3
+    if-ne v5, v8, :cond_8
 
     .line 233
     .line 234
-    if-ne v3, v4, :cond_f3
+    if-ne v3, v4, :cond_8
 
     .line 235
     .line 236
-    :cond_eb
+    :cond_7
     iget v4, v2, Lcom/mixplorer/widgets/MiDraggableListView;->Sierra:I
 
     .line 237
@@ -903,8 +903,8 @@
     add-int/2addr v0, v5
 
     .line 244
-    :cond_f3
-    :goto_f3
+    :cond_8
+    :goto_2
     invoke-virtual {v2, v1}, Lcom/mixplorer/widgets/MiDraggableListView;->p(I)Z
 
     .line 245

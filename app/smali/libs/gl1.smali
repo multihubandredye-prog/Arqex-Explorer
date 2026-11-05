@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Llibs/Two;-><init>()V
@@ -84,7 +84,7 @@
 
 # virtual methods
 .method public final a(Llibs/je2;)Z
-    .registers 21
+    .locals 19
 
     .line 1
     move-object/from16 v1, p0
@@ -103,7 +103,7 @@
     const/4 v6, 0x0
 
     .line 7
-    :cond_6
+    :cond_0
     iget-object v7, v1, Llibs/gl1;->Mu:Ljava/util/concurrent/locks/ReentrantLock;
 
     .line 8
@@ -113,11 +113,11 @@
     .line 10
     .line 11
     .line 12
-    if-nez v3, :cond_2c
+    if-nez v3, :cond_4
 
     .line 13
     .line 14
-    :try_start_d
+    :try_start_0
     iget-object v4, v1, Llibs/gl1;->X:Llibs/dj;
 
     .line 15
@@ -125,8 +125,8 @@
     move-object v3, v4
 
     .line 17
-    :goto_10
-    if-eqz v3, :cond_2a
+    :goto_0
+    if-eqz v3, :cond_3
 
     .line 18
     .line 19
@@ -134,7 +134,7 @@
 
     .line 20
     .line 21
-    if-eqz v8, :cond_1d
+    if-eqz v8, :cond_1
 
     .line 22
     .line 23
@@ -146,14 +146,14 @@
 
     .line 26
     .line 27
-    if-ne v5, v8, :cond_1d
+    if-ne v5, v8, :cond_1
 
     .line 28
     .line 29
-    goto :goto_2a
+    goto :goto_1
 
     .line 30
-    :cond_1d
+    :cond_1
     iget-object v8, v3, Llibs/dj;->d:Ljava/lang/Object;
 
     .line 31
@@ -162,7 +162,7 @@
 
     .line 33
     .line 34
-    if-ne v3, v8, :cond_26
+    if-ne v3, v8, :cond_2
 
     .line 35
     .line 36
@@ -170,39 +170,39 @@
 
     .line 37
     .line 38
-    goto :goto_10
+    goto :goto_0
 
     .line 39
-    :cond_26
+    :cond_2
     move-object v3, v8
 
     .line 40
-    goto :goto_10
+    goto :goto_0
 
     .line 41
-    :catchall_28
+    :catchall_0
     move-exception v0
 
     .line 42
-    goto :goto_41
+    goto :goto_4
 
     .line 43
-    :cond_2a
-    :goto_2a
+    :cond_3
+    :goto_1
     new-array v3, v5, [Llibs/dj;
 
     .line 44
     .line 45
-    :cond_2c
+    :cond_4
     const/4 v8, 0x0
 
     .line 46
-    :goto_2d
-    if-eqz v4, :cond_45
+    :goto_2
+    if-eqz v4, :cond_6
 
     .line 47
     .line 48
-    if-ge v8, v5, :cond_45
+    if-ge v8, v5, :cond_6
 
     .line 49
     .line 50
@@ -222,31 +222,31 @@
 
     .line 57
     .line 58
-    if-ne v4, v8, :cond_3e
+    if-ne v4, v8, :cond_5
 
     .line 59
     .line 60
     iget-object v4, v1, Llibs/gl1;->X:Llibs/dj;
-    :try_end_3d
-    .catchall {:try_start_d .. :try_end_3d} :catchall_28
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 61
     .line 62
-    goto :goto_3f
+    goto :goto_3
 
     .line 63
-    :cond_3e
+    :cond_5
     move-object v4, v8
 
     .line 64
-    :goto_3f
+    :goto_3
     move v8, v9
 
     .line 65
-    goto :goto_2d
+    goto :goto_2
 
     .line 66
-    :goto_41
+    :goto_4
     invoke-virtual {v7}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 67
@@ -255,7 +255,7 @@
     throw v0
 
     .line 70
-    :cond_45
+    :cond_6
     invoke-virtual {v7}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 71
@@ -271,12 +271,12 @@
     const/4 v11, 0x0
 
     .line 77
-    :goto_4c
+    :goto_5
     const-wide/16 v14, 0x1
 
     .line 78
     .line 79
-    if-ge v11, v8, :cond_65
+    if-ge v11, v8, :cond_8
 
     .line 80
     .line 81
@@ -296,7 +296,7 @@
 
     .line 88
     .line 89
-    if-eqz v0, :cond_62
+    if-eqz v0, :cond_7
 
     .line 90
     .line 91
@@ -308,7 +308,7 @@
     move-result v0
 
     .line 95
-    if-eqz v0, :cond_62
+    if-eqz v0, :cond_7
 
     .line 96
     .line 97
@@ -318,15 +318,15 @@
     or-long/2addr v12, v14
 
     .line 99
-    :cond_62
+    :cond_7
     add-int/lit8 v11, v11, 0x1
 
     .line 100
     .line 101
-    goto :goto_4c
+    goto :goto_5
 
     .line 102
-    :cond_65
+    :cond_8
     move-object/from16 v2, p1
 
     .line 103
@@ -339,7 +339,7 @@
 
     .line 107
     .line 108
-    if-eqz v0, :cond_96
+    if-eqz v0, :cond_b
 
     .line 109
     .line 110
@@ -351,8 +351,8 @@
     const/4 v0, 0x0
 
     .line 114
-    :goto_71
-    if-ge v0, v8, :cond_93
+    :goto_6
+    if-ge v0, v8, :cond_a
 
     .line 115
     .line 116
@@ -368,11 +368,11 @@
 
     .line 121
     .line 122
-    if-eqz v11, :cond_88
+    if-eqz v11, :cond_9
 
     .line 123
     .line 124
-    :try_start_7b
+    :try_start_1
     aget-object v11, v3, v0
 
     .line 125
@@ -381,7 +381,7 @@
 
     .line 127
     .line 128
-    if-eqz v9, :cond_88
+    if-eqz v9, :cond_9
 
     .line 129
     .line 130
@@ -393,21 +393,21 @@
     const/4 v6, 0x1
 
     .line 134
-    goto :goto_88
+    goto :goto_7
 
     .line 135
-    :catchall_86
+    :catchall_1
     move-exception v0
 
     .line 136
-    goto :goto_8f
+    goto :goto_8
 
     .line 137
-    :cond_88
-    :goto_88
+    :cond_9
+    :goto_7
     aput-object v16, v3, v0
-    :try_end_8a
-    .catchall {:try_start_7b .. :try_end_8a} :catchall_86
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 138
     .line 139
@@ -419,10 +419,10 @@
 
     .line 142
     .line 143
-    goto :goto_71
+    goto :goto_6
 
     .line 144
-    :goto_8f
+    :goto_8
     invoke-virtual {v7}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 145
@@ -431,27 +431,27 @@
     throw v0
 
     .line 148
-    :cond_93
+    :cond_a
     invoke-virtual {v7}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 149
     .line 150
     .line 151
-    :cond_96
-    if-lez v8, :cond_9a
+    :cond_b
+    if-lez v8, :cond_c
 
     .line 152
     .line 153
-    if-nez v4, :cond_6
+    if-nez v4, :cond_0
 
     .line 154
     .line 155
-    :cond_9a
+    :cond_c
     return v6
 .end method
 
 .method public final add(Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Llibs/gl1;->offerLast(Ljava/lang/Object;)Z
@@ -462,7 +462,7 @@
     move-result p1
 
     .line 5
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     .line 6
     .line 7
@@ -472,7 +472,7 @@
     return p1
 
     .line 9
-    :cond_8
+    :cond_0
     const-string p1, "Deque full"
 
     .line 10
@@ -489,13 +489,13 @@
 .end method
 
 .method public final addAll(Ljava/util/Collection;)Z
-    .registers 9
+    .locals 7
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-eq p1, p0, :cond_60
+    if-eq p1, p0, :cond_5
 
     .line 3
     .line 4
@@ -516,7 +516,7 @@
     const/4 v4, 0x0
 
     .line 11
-    :goto_a
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 12
@@ -525,7 +525,7 @@
     move-result v5
 
     .line 15
-    if-eqz v5, :cond_28
+    if-eqz v5, :cond_1
 
     .line 16
     .line 17
@@ -555,17 +555,17 @@
     .line 29
     .line 30
     .line 31
-    if-nez v2, :cond_22
+    if-nez v2, :cond_0
 
     .line 32
     .line 33
     move-object v2, v6
 
     .line 34
-    goto :goto_26
+    goto :goto_1
 
     .line 35
-    :cond_22
+    :cond_0
     iput-object v6, v3, Llibs/dj;->d:Ljava/lang/Object;
 
     .line 36
@@ -574,22 +574,22 @@
 
     .line 38
     .line 39
-    :goto_26
+    :goto_1
     move-object v3, v6
 
     .line 40
-    goto :goto_a
+    goto :goto_0
 
     .line 41
-    :cond_28
-    if-nez v2, :cond_2b
+    :cond_1
+    if-nez v2, :cond_2
 
     .line 42
     .line 43
     return v0
 
     .line 44
-    :cond_2b
+    :cond_2
     iget-object v0, p0, Llibs/gl1;->Mu:Ljava/util/concurrent/locks/ReentrantLock;
 
     .line 45
@@ -599,7 +599,7 @@
     .line 47
     .line 48
     .line 49
-    :try_start_30
+    :try_start_0
     iget v1, p0, Llibs/gl1;->Z:I
 
     .line 50
@@ -611,7 +611,7 @@
 
     .line 53
     .line 54
-    if-gt v1, v4, :cond_54
+    if-gt v1, v4, :cond_4
 
     .line 55
     .line 56
@@ -627,7 +627,7 @@
 
     .line 61
     .line 62
-    if-nez v4, :cond_44
+    if-nez v4, :cond_3
 
     .line 63
     .line 64
@@ -635,22 +635,22 @@
 
     .line 65
     .line 66
-    goto :goto_46
+    goto :goto_2
 
     .line 67
-    :catchall_42
+    :catchall_0
     move-exception p1
 
     .line 68
-    goto :goto_5c
+    goto :goto_3
 
     .line 69
-    :cond_44
+    :cond_3
     iput-object v2, p1, Llibs/dj;->d:Ljava/lang/Object;
 
     .line 70
     .line 71
-    :goto_46
+    :goto_2
     iput-object v3, p0, Llibs/gl1;->Y:Llibs/dj;
 
     .line 72
@@ -664,8 +664,8 @@
     .line 76
     .line 77
     invoke-interface {p1}, Ljava/util/concurrent/locks/Condition;->signalAll()V
-    :try_end_4f
-    .catchall {:try_start_30 .. :try_end_4f} :catchall_42
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 78
     .line 79
@@ -681,7 +681,7 @@
     return p1
 
     .line 85
-    :cond_54
+    :cond_4
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 86
@@ -698,7 +698,7 @@
     return p1
 
     .line 93
-    :goto_5c
+    :goto_3
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 94
@@ -707,7 +707,7 @@
     throw p1
 
     .line 97
-    :cond_60
+    :cond_5
     invoke-static {}, Llibs/ic0;->l()V
 
     .line 98
@@ -717,7 +717,7 @@
 .end method
 
 .method public final b()Ljava/lang/Object;
-    .registers 7
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/gl1;->Mu:Ljava/util/concurrent/locks/ReentrantLock;
@@ -736,19 +736,19 @@
     .line 9
     .line 10
     .line 11
-    :goto_a
-    :try_start_a
+    :goto_0
+    :try_start_0
     invoke-virtual {p0}, Llibs/gl1;->f()Ljava/lang/Object;
 
     .line 12
     .line 13
     .line 14
     move-result-object v3
-    :try_end_e
-    .catchall {:try_start_a .. :try_end_e} :catchall_22
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 15
-    if-nez v3, :cond_24
+    if-nez v3, :cond_1
 
     .line 16
     .line 17
@@ -760,7 +760,7 @@
 
     .line 20
     .line 21
-    if-gtz v5, :cond_1b
+    if-gtz v5, :cond_0
 
     .line 22
     .line 23
@@ -775,8 +775,8 @@
     return-object v0
 
     .line 28
-    :cond_1b
-    :try_start_1b
+    :cond_0
+    :try_start_1
     iget-object v3, p0, Llibs/gl1;->Nu:Ljava/util/concurrent/locks/Condition;
 
     .line 29
@@ -787,21 +787,21 @@
     .line 32
     .line 33
     move-result-wide v1
-    :try_end_21
-    .catchall {:try_start_1b .. :try_end_21} :catchall_22
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 34
-    goto :goto_a
+    goto :goto_0
 
     .line 35
-    :catchall_22
+    :catchall_0
     move-exception v1
 
     .line 36
-    goto :goto_28
+    goto :goto_1
 
     .line 37
-    :cond_24
+    :cond_1
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 38
@@ -810,25 +810,25 @@
     return-object v3
 
     .line 41
-    :goto_28
+    :goto_1
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 42
     .line 43
     .line 44
-    goto :goto_2d
+    goto :goto_3
 
     .line 45
-    :goto_2c
+    :goto_2
     throw v1
 
     .line 46
-    :goto_2d
-    goto :goto_2c
+    :goto_3
+    goto :goto_2
 .end method
 
 .method public final c(Llibs/dj;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p1, Llibs/dj;->c:Ljava/lang/Object;
@@ -847,7 +847,7 @@
 
     .line 8
     .line 9
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 10
     .line 11
@@ -859,8 +859,8 @@
     return-void
 
     .line 15
-    :cond_e
-    if-nez v1, :cond_14
+    :cond_0
+    if-nez v1, :cond_1
 
     .line 16
     .line 17
@@ -872,7 +872,7 @@
     return-void
 
     .line 21
-    :cond_14
+    :cond_1
     iput-object v1, v0, Llibs/dj;->d:Ljava/lang/Object;
 
     .line 22
@@ -913,7 +913,7 @@
 .end method
 
 .method public final clear()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/gl1;->Mu:Ljava/util/concurrent/locks/ReentrantLock;
@@ -925,16 +925,16 @@
     .line 4
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     iget-object v1, p0, Llibs/gl1;->X:Llibs/dj;
 
     .line 7
     .line 8
-    :goto_7
+    :goto_0
     const/4 v2, 0x0
 
     .line 9
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_0
 
     .line 10
     .line 11
@@ -961,17 +961,17 @@
     move-object v1, v3
 
     .line 22
-    goto :goto_7
+    goto :goto_0
 
     .line 23
-    :catchall_16
+    :catchall_0
     move-exception v1
 
     .line 24
-    goto :goto_28
+    goto :goto_1
 
     .line 25
-    :cond_18
+    :cond_0
     iput-object v2, p0, Llibs/gl1;->Y:Llibs/dj;
 
     .line 26
@@ -992,8 +992,8 @@
     .line 33
     .line 34
     invoke-interface {v1}, Ljava/util/concurrent/locks/Condition;->signalAll()V
-    :try_end_24
-    .catchall {:try_start_5 .. :try_end_24} :catchall_16
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 35
     .line 36
@@ -1006,38 +1006,38 @@
     return-void
 
     .line 41
-    :goto_28
+    :goto_1
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 42
     .line 43
     .line 44
-    goto :goto_2d
+    goto :goto_3
 
     .line 45
-    :goto_2c
+    :goto_2
     throw v1
 
     .line 46
-    :goto_2d
-    goto :goto_2c
+    :goto_3
+    goto :goto_2
 .end method
 
 .method public final contains(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
+    :cond_0
     iget-object v1, p0, Llibs/gl1;->Mu:Ljava/util/concurrent/locks/ReentrantLock;
 
     .line 6
@@ -1047,13 +1047,13 @@
     .line 8
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     iget-object v2, p0, Llibs/gl1;->X:Llibs/dj;
 
     .line 11
     .line 12
-    :goto_b
-    if-eqz v2, :cond_21
+    :goto_0
+    if-eqz v2, :cond_2
 
     .line 13
     .line 14
@@ -1067,11 +1067,11 @@
     .line 18
     .line 19
     move-result v3
-    :try_end_13
-    .catchall {:try_start_9 .. :try_end_13} :catchall_1f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 20
-    if-eqz v3, :cond_1a
+    if-eqz v3, :cond_1
 
     .line 21
     .line 22
@@ -1086,29 +1086,29 @@
     return p1
 
     .line 27
-    :cond_1a
-    :try_start_1a
+    :cond_1
+    :try_start_1
     iget-object v2, v2, Llibs/dj;->d:Ljava/lang/Object;
 
     .line 28
     .line 29
     check-cast v2, Llibs/dj;
-    :try_end_1e
-    .catchall {:try_start_1a .. :try_end_1e} :catchall_1f
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 30
     .line 31
-    goto :goto_b
+    goto :goto_0
 
     .line 32
-    :catchall_1f
+    :catchall_0
     move-exception p1
 
     .line 33
-    goto :goto_25
+    goto :goto_1
 
     .line 34
-    :cond_21
+    :cond_2
     invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 35
@@ -1117,25 +1117,25 @@
     return v0
 
     .line 38
-    :goto_25
+    :goto_1
     invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 39
     .line 40
     .line 41
-    goto :goto_2a
+    goto :goto_3
 
     .line 42
-    :goto_29
+    :goto_2
     throw p1
 
     .line 43
-    :goto_2a
-    goto :goto_29
+    :goto_3
+    goto :goto_2
 .end method
 
 .method public final d()Ljava/lang/Object;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/gl1;->X:Llibs/dj;
@@ -1145,14 +1145,14 @@
     const/4 v1, 0x0
 
     .line 4
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 5
     .line 6
     return-object v1
 
     .line 7
-    :cond_6
+    :cond_0
     iget-object v2, v0, Llibs/dj;->d:Ljava/lang/Object;
 
     .line 8
@@ -1177,7 +1177,7 @@
 
     .line 18
     .line 19
-    if-nez v2, :cond_17
+    if-nez v2, :cond_1
 
     .line 20
     .line 21
@@ -1185,15 +1185,15 @@
 
     .line 22
     .line 23
-    goto :goto_19
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_1
     iput-object v1, v2, Llibs/dj;->c:Ljava/lang/Object;
 
     .line 25
     .line 26
-    :goto_19
+    :goto_0
     iget v0, p0, Llibs/gl1;->Z:I
 
     .line 27
@@ -1219,7 +1219,7 @@
 .end method
 
 .method public final element()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/gl1;->peekFirst()Ljava/lang/Object;
@@ -1230,14 +1230,14 @@
     move-result-object v0
 
     .line 5
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
     return-object v0
 
     .line 8
-    :cond_7
+    :cond_0
     invoke-static {}, Llibs/t22;->b()V
 
     .line 9
@@ -1250,7 +1250,7 @@
 .end method
 
 .method public final f()Ljava/lang/Object;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/gl1;->Y:Llibs/dj;
@@ -1260,14 +1260,14 @@
     const/4 v1, 0x0
 
     .line 4
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 5
     .line 6
     return-object v1
 
     .line 7
-    :cond_6
+    :cond_0
     iget-object v2, v0, Llibs/dj;->c:Ljava/lang/Object;
 
     .line 8
@@ -1292,7 +1292,7 @@
 
     .line 18
     .line 19
-    if-nez v2, :cond_17
+    if-nez v2, :cond_1
 
     .line 20
     .line 21
@@ -1300,15 +1300,15 @@
 
     .line 22
     .line 23
-    goto :goto_19
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_1
     iput-object v1, v2, Llibs/dj;->d:Ljava/lang/Object;
 
     .line 25
     .line 26
-    :goto_19
+    :goto_0
     iget v0, p0, Llibs/gl1;->Z:I
 
     .line 27
@@ -1334,7 +1334,7 @@
 .end method
 
 .method public final iterator()Ljava/util/Iterator;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/fl1;
@@ -1350,7 +1350,7 @@
 .end method
 
 .method public final offer(Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Llibs/gl1;->offerLast(Ljava/lang/Object;)Z
@@ -1365,7 +1365,7 @@
 .end method
 
 .method public final offerLast(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -1391,7 +1391,7 @@
     .line 12
     .line 13
     .line 14
-    :try_start_d
+    :try_start_0
     iget v1, p0, Llibs/gl1;->Z:I
 
     .line 15
@@ -1400,17 +1400,17 @@
 
     .line 17
     .line 18
-    if-lt v1, v2, :cond_15
+    if-lt v1, v2, :cond_0
 
     .line 19
     .line 20
     const/4 v0, 0x0
 
     .line 21
-    goto :goto_2d
+    goto :goto_1
 
     .line 22
-    :cond_15
+    :cond_0
     iget-object v2, p0, Llibs/gl1;->Y:Llibs/dj;
 
     .line 23
@@ -1427,7 +1427,7 @@
 
     .line 29
     .line 30
-    if-nez v3, :cond_22
+    if-nez v3, :cond_1
 
     .line 31
     .line 32
@@ -1435,15 +1435,15 @@
 
     .line 33
     .line 34
-    goto :goto_24
+    goto :goto_0
 
     .line 35
-    :cond_22
+    :cond_1
     iput-object v0, v2, Llibs/dj;->d:Ljava/lang/Object;
 
     .line 36
     .line 37
-    :goto_24
+    :goto_0
     const/4 v0, 0x1
 
     .line 38
@@ -1459,13 +1459,13 @@
     .line 42
     .line 43
     invoke-interface {v1}, Ljava/util/concurrent/locks/Condition;->signal()V
-    :try_end_2d
-    .catchall {:try_start_d .. :try_end_2d} :catchall_31
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 44
     .line 45
     .line 46
-    :goto_2d
+    :goto_1
     invoke-virtual {p1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 47
@@ -1474,7 +1474,7 @@
     return v0
 
     .line 50
-    :catchall_31
+    :catchall_0
     move-exception v0
 
     .line 51
@@ -1487,7 +1487,7 @@
 .end method
 
 .method public final peek()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/gl1;->peekFirst()Ljava/lang/Object;
@@ -1502,7 +1502,7 @@
 .end method
 
 .method public final peekFirst()Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/gl1;->Mu:Ljava/util/concurrent/locks/ReentrantLock;
@@ -1514,29 +1514,29 @@
     .line 4
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     iget-object v1, p0, Llibs/gl1;->X:Llibs/dj;
 
     .line 7
     .line 8
-    if-nez v1, :cond_b
+    if-nez v1, :cond_0
 
     .line 9
     .line 10
     const/4 v1, 0x0
 
     .line 11
-    goto :goto_d
+    goto :goto_0
 
     .line 12
-    :cond_b
+    :cond_0
     iget-object v1, v1, Llibs/dj;->b:Ljava/lang/Object;
-    :try_end_d
-    .catchall {:try_start_5 .. :try_end_d} :catchall_11
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 13
     .line 14
-    :goto_d
+    :goto_0
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 15
@@ -1545,7 +1545,7 @@
     return-object v1
 
     .line 18
-    :catchall_11
+    :catchall_0
     move-exception v1
 
     .line 19
@@ -1558,7 +1558,7 @@
 .end method
 
 .method public final poll()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/gl1;->pollFirst()Ljava/lang/Object;
@@ -1573,7 +1573,7 @@
 .end method
 
 .method public final pollFirst()Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/gl1;->Mu:Ljava/util/concurrent/locks/ReentrantLock;
@@ -1585,15 +1585,15 @@
     .line 4
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     invoke-virtual {p0}, Llibs/gl1;->d()Ljava/lang/Object;
 
     .line 7
     .line 8
     .line 9
     move-result-object v1
-    :try_end_9
-    .catchall {:try_start_5 .. :try_end_9} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 10
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
@@ -1604,7 +1604,7 @@
     return-object v1
 
     .line 14
-    :catchall_d
+    :catchall_0
     move-exception v1
 
     .line 15
@@ -1617,19 +1617,19 @@
 .end method
 
 .method public final remove()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 47
     invoke-virtual {p0}, Llibs/gl1;->pollFirst()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     return-object v0
 
     .line 48
-    :cond_7
+    :cond_0
     invoke-static {}, Llibs/t22;->b()V
 
     const/4 v0, 0x0
@@ -1638,20 +1638,20 @@
 .end method
 
 .method public final remove(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
+    :cond_0
     iget-object v1, p0, Llibs/gl1;->Mu:Ljava/util/concurrent/locks/ReentrantLock;
 
     .line 6
@@ -1661,13 +1661,13 @@
     .line 8
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     iget-object v2, p0, Llibs/gl1;->X:Llibs/dj;
 
     .line 11
     .line 12
-    :goto_b
-    if-eqz v2, :cond_24
+    :goto_0
+    if-eqz v2, :cond_2
 
     .line 13
     .line 14
@@ -1683,13 +1683,13 @@
     move-result v3
 
     .line 20
-    if-eqz v3, :cond_1f
+    if-eqz v3, :cond_1
 
     .line 21
     .line 22
     invoke-virtual {p0, v2}, Llibs/gl1;->c(Llibs/dj;)V
-    :try_end_18
-    .catchall {:try_start_9 .. :try_end_18} :catchall_1d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 23
     .line 24
@@ -1705,29 +1705,29 @@
     return p1
 
     .line 30
-    :catchall_1d
+    :catchall_0
     move-exception p1
 
     .line 31
-    goto :goto_28
+    goto :goto_1
 
     .line 32
-    :cond_1f
-    :try_start_1f
+    :cond_1
+    :try_start_1
     iget-object v2, v2, Llibs/dj;->d:Ljava/lang/Object;
 
     .line 33
     .line 34
     check-cast v2, Llibs/dj;
-    :try_end_23
-    .catchall {:try_start_1f .. :try_end_23} :catchall_1d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 35
     .line 36
-    goto :goto_b
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_2
     invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 38
@@ -1736,25 +1736,25 @@
     return v0
 
     .line 41
-    :goto_28
+    :goto_1
     invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 42
     .line 43
     .line 44
-    goto :goto_2d
+    goto :goto_3
 
     .line 45
-    :goto_2c
+    :goto_2
     throw p1
 
     .line 46
-    :goto_2d
-    goto :goto_2c
+    :goto_3
+    goto :goto_2
 .end method
 
 .method public final removeAll(Ljava/util/Collection;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -1786,7 +1786,7 @@
 .end method
 
 .method public final retainAll(Ljava/util/Collection;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -1818,7 +1818,7 @@
 .end method
 
 .method public final size()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/gl1;->Mu:Ljava/util/concurrent/locks/ReentrantLock;
@@ -1830,10 +1830,10 @@
     .line 4
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     iget v1, p0, Llibs/gl1;->Z:I
-    :try_end_7
-    .catchall {:try_start_5 .. :try_end_7} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 7
     .line 8
@@ -1845,7 +1845,7 @@
     return v1
 
     .line 12
-    :catchall_b
+    :catchall_0
     move-exception v1
 
     .line 13
@@ -1858,7 +1858,7 @@
 .end method
 
 .method public final toArray()[Ljava/lang/Object;
-    .registers 7
+    .locals 6
 
     .line 63
     iget-object v0, p0, Llibs/gl1;->Mu:Ljava/util/concurrent/locks/ReentrantLock;
@@ -1866,7 +1866,7 @@
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
 
     .line 64
-    :try_start_5
+    :try_start_0
     iget v1, p0, Llibs/gl1;->Z:I
 
     new-array v1, v1, [Ljava/lang/Object;
@@ -1876,8 +1876,8 @@
 
     const/4 v3, 0x0
 
-    :goto_c
-    if-eqz v2, :cond_1c
+    :goto_0
+    if-eqz v2, :cond_0
 
     add-int/lit8 v4, v3, 0x1
 
@@ -1890,39 +1890,39 @@
     iget-object v2, v2, Llibs/dj;->d:Ljava/lang/Object;
 
     check-cast v2, Llibs/dj;
-    :try_end_18
-    .catchall {:try_start_5 .. :try_end_18} :catchall_1a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move v3, v4
 
-    goto :goto_c
+    goto :goto_0
 
-    :catchall_1a
+    :catchall_0
     move-exception v1
 
-    goto :goto_20
+    goto :goto_1
 
     .line 68
-    :cond_1c
+    :cond_0
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     return-object v1
 
-    :goto_20
+    :goto_1
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 69
-    goto :goto_25
+    goto :goto_3
 
-    :goto_24
+    :goto_2
     throw v1
 
-    :goto_25
-    goto :goto_24
+    :goto_3
+    goto :goto_2
 .end method
 
 .method public final toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/gl1;->Mu:Ljava/util/concurrent/locks/ReentrantLock;
@@ -1934,7 +1934,7 @@
     .line 4
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     array-length v1, p1
 
     .line 7
@@ -1942,7 +1942,7 @@
 
     .line 8
     .line 9
-    if-ge v1, v2, :cond_1d
+    if-ge v1, v2, :cond_0
 
     .line 10
     .line 11
@@ -1978,18 +1978,18 @@
 
     .line 26
     .line 27
-    goto :goto_1d
+    goto :goto_0
 
     .line 28
-    :catchall_1b
+    :catchall_0
     move-exception p1
 
     .line 29
-    goto :goto_38
+    goto :goto_2
 
     .line 30
-    :cond_1d
-    :goto_1d
+    :cond_0
+    :goto_0
     iget-object v1, p0, Llibs/gl1;->X:Llibs/dj;
 
     .line 31
@@ -1997,8 +1997,8 @@
     const/4 v2, 0x0
 
     .line 33
-    :goto_20
-    if-eqz v1, :cond_2e
+    :goto_1
+    if-eqz v1, :cond_1
 
     .line 34
     .line 35
@@ -2025,14 +2025,14 @@
     move v2, v3
 
     .line 46
-    goto :goto_20
+    goto :goto_1
 
     .line 47
-    :cond_2e
+    :cond_1
     array-length v1, p1
 
     .line 48
-    if-le v1, v2, :cond_34
+    if-le v1, v2, :cond_2
 
     .line 49
     .line 50
@@ -2040,12 +2040,12 @@
 
     .line 51
     aput-object v1, p1, v2
-    :try_end_34
-    .catchall {:try_start_5 .. :try_end_34} :catchall_1b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 52
     .line 53
-    :cond_34
+    :cond_2
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 54
@@ -2054,25 +2054,25 @@
     return-object p1
 
     .line 57
-    :goto_38
+    :goto_2
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 58
     .line 59
     .line 60
-    goto :goto_3d
+    goto :goto_4
 
     .line 61
-    :goto_3c
+    :goto_3
     throw p1
 
     .line 62
-    :goto_3d
-    goto :goto_3c
+    :goto_4
+    goto :goto_3
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 9
+    .locals 8
 
     .line 1
     invoke-virtual {p0}, Llibs/gl1;->toArray()[Ljava/lang/Object;
@@ -2086,7 +2086,7 @@
     array-length v1, v0
 
     .line 6
-    if-nez v1, :cond_a
+    if-nez v1, :cond_0
 
     .line 7
     .line 8
@@ -2097,7 +2097,7 @@
     return-object v0
 
     .line 11
-    :cond_a
+    :cond_0
     const/4 v2, 0x0
 
     .line 12
@@ -2107,8 +2107,8 @@
     const/4 v4, 0x0
 
     .line 14
-    :goto_d
-    if-ge v3, v1, :cond_2a
+    :goto_0
+    if-ge v3, v1, :cond_4
 
     .line 15
     .line 16
@@ -2116,7 +2116,7 @@
 
     .line 17
     .line 18
-    if-ne v5, p0, :cond_16
+    if-ne v5, p0, :cond_1
 
     .line 19
     .line 20
@@ -2124,11 +2124,11 @@
 
     .line 21
     .line 22
-    goto :goto_20
+    goto :goto_1
 
     .line 23
-    :cond_16
-    if-eqz v5, :cond_1e
+    :cond_1
+    if-eqz v5, :cond_2
 
     .line 24
     .line 25
@@ -2140,17 +2140,17 @@
     move-result-object v5
 
     .line 29
-    if-nez v5, :cond_20
+    if-nez v5, :cond_3
 
     .line 30
     .line 31
-    :cond_1e
+    :cond_2
     const-string v5, "null"
 
     .line 32
     .line 33
-    :cond_20
-    :goto_20
+    :cond_3
+    :goto_1
     aput-object v5, v0, v3
 
     .line 34
@@ -2170,10 +2170,10 @@
 
     .line 41
     .line 42
-    goto :goto_d
+    goto :goto_0
 
     .line 43
-    :cond_2a
+    :cond_4
     mul-int/lit8 v3, v1, 0x2
 
     .line 44
@@ -2199,12 +2199,12 @@
     const/4 v5, 0x0
 
     .line 54
-    :goto_35
-    if-ge v5, v1, :cond_54
+    :goto_2
+    if-ge v5, v1, :cond_6
 
     .line 55
     .line 56
-    if-lez v5, :cond_45
+    if-lez v5, :cond_5
 
     .line 57
     .line 58
@@ -2232,7 +2232,7 @@
 
     .line 69
     .line 70
-    :cond_45
+    :cond_5
     aget-object v6, v0, v5
 
     .line 71
@@ -2261,10 +2261,10 @@
 
     .line 83
     .line 84
-    goto :goto_35
+    goto :goto_2
 
     .line 85
-    :cond_54
+    :cond_6
     const/16 v0, 0x5d
 
     .line 86

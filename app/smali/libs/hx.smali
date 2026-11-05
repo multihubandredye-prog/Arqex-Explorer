@@ -34,7 +34,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/ConfigServerActivity;Lcom/mixplorer/widgets/MiEditText;Lcom/mixplorer/widgets/MiEditText;Landroid/widget/CheckBox;Lcom/mixplorer/widgets/MiEditText;Landroid/widget/CheckBox;Landroid/widget/CheckBox;Lcom/mixplorer/widgets/MiEditText;ZLjava/lang/String;ZLlibs/$d;)V
-    .registers 13
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -96,7 +96,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 19
+    .locals 17
 
     .line 1
     move-object/from16 v0, p0
@@ -127,14 +127,14 @@
     move-result v1
 
     .line 15
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     .line 16
     .line 17
     return-void
 
     .line 18
-    :cond_11
+    :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     .line 19
@@ -264,7 +264,7 @@
 
     .line 84
     .line 85
-    if-eqz v3, :cond_61
+    if-eqz v3, :cond_1
 
     .line 86
     .line 87
@@ -288,14 +288,14 @@
     move-object v12, v3
 
     .line 97
-    goto :goto_62
+    goto :goto_0
 
     .line 98
-    :cond_61
+    :cond_1
     move-object v12, v4
 
     .line 99
-    :goto_62
+    :goto_0
     const-string v3, "anonymous"
 
     .line 100
@@ -308,18 +308,18 @@
     move-result v3
 
     .line 105
-    if-eqz v3, :cond_6b
+    if-eqz v3, :cond_2
 
     .line 106
     .line 107
-    goto :goto_6c
+    goto :goto_1
 
     .line 108
-    :cond_6b
+    :cond_2
     move-object v4, v1
 
     .line 109
-    :goto_6c
+    :goto_1
     invoke-static {v4}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
 
     .line 110
@@ -331,7 +331,7 @@
     const/4 v3, 0x2
 
     .line 114
-    if-nez v1, :cond_9d
+    if-nez v1, :cond_6
 
     .line 115
     .line 116
@@ -339,7 +339,7 @@
 
     .line 117
     .line 118
-    if-eqz v1, :cond_9d
+    if-eqz v1, :cond_6
 
     .line 119
     .line 120
@@ -350,7 +350,7 @@
     const/4 v5, 0x3
 
     .line 123
-    if-ne v1, v5, :cond_88
+    if-ne v1, v5, :cond_3
 
     .line 124
     .line 125
@@ -374,26 +374,26 @@
     move-result-object v1
 
     .line 135
-    :goto_86
+    :goto_2
     move-object v4, v1
 
     .line 136
-    goto :goto_9d
+    goto :goto_4
 
     .line 137
-    :cond_88
-    if-eqz v1, :cond_92
+    :cond_3
+    if-eqz v1, :cond_5
 
     .line 138
     .line 139
-    if-ne v1, v3, :cond_8d
+    if-ne v1, v3, :cond_4
 
     .line 140
     .line 141
-    goto :goto_92
+    goto :goto_3
 
     .line 142
-    :cond_8d
+    :cond_4
     invoke-static {v6, v4}, Llibs/zm1;->y(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 143
@@ -402,11 +402,11 @@
     move-result-object v1
 
     .line 146
-    goto :goto_86
+    goto :goto_2
 
     .line 147
-    :cond_92
-    :goto_92
+    :cond_5
+    :goto_3
     invoke-virtual {v4}, Ljava/lang/String;->getBytes()[B
 
     .line 148
@@ -427,11 +427,11 @@
     move-result-object v1
 
     .line 157
-    goto :goto_86
+    goto :goto_2
 
     .line 158
-    :cond_9d
-    :goto_9d
+    :cond_6
+    :goto_4
     move-object v7, v4
 
     .line 159
@@ -452,7 +452,7 @@
 
     .line 167
     .line 168
-    if-eqz v4, :cond_ab
+    if-eqz v4, :cond_7
 
     .line 169
     .line 170
@@ -460,11 +460,11 @@
 
     .line 171
     .line 172
-    :cond_ab
+    :cond_7
     move-object v10, v6
 
     .line 173
-    if-eqz v4, :cond_b0
+    if-eqz v4, :cond_8
 
     .line 174
     .line 175
@@ -472,7 +472,7 @@
 
     .line 176
     .line 177
-    :cond_b0
+    :cond_8
     move v12, v8
 
     .line 178
@@ -519,7 +519,7 @@
 
     .line 198
     .line 199
-    if-ltz v1, :cond_cc
+    if-ltz v1, :cond_9
 
     .line 200
     .line 201
@@ -528,16 +528,16 @@
     .line 202
     .line 203
     .line 204
-    goto :goto_cf
+    goto :goto_5
 
     .line 205
-    :cond_cc
+    :cond_9
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 206
     .line 207
     .line 208
-    :goto_cf
+    :goto_5
     new-instance v1, Llibs/ex;
 
     .line 209

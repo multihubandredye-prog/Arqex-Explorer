@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/h03;-><init>()V
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public final a()Ljava/util/List;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/f03;->i:Ljava/util/ArrayList;
@@ -78,7 +78,7 @@
 .end method
 
 .method public final b()Ljava/util/Set;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/f03;->j:Ljava/util/HashSet;
@@ -89,7 +89,7 @@
 .end method
 
 .method public final c(Ljava/util/HashSet;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/f03;->m:Ljava/util/HashSet;
@@ -100,7 +100,7 @@
 .end method
 
 .method public final d(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/f03;->k:Ljava/lang/String;
@@ -111,7 +111,7 @@
 .end method
 
 .method public final e(Ljava/util/HashSet;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/f03;->l:Ljava/util/HashSet;
@@ -122,14 +122,14 @@
 .end method
 
 .method public final f(Ljava/util/HashSet;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public h(Llibs/k03;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/f03;->i:Ljava/util/ArrayList;
@@ -145,7 +145,7 @@
 .end method
 
 .method public final i()Ljava/util/Set;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -155,7 +155,7 @@
 .end method
 
 .method public final j()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/f03;->k:Ljava/lang/String;
@@ -166,7 +166,7 @@
 .end method
 
 .method public final l(Ljava/util/HashSet;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/f03;->j:Ljava/util/HashSet;
@@ -177,7 +177,7 @@
 .end method
 
 .method public final m()Ljava/util/Set;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/f03;->l:Ljava/util/HashSet;
@@ -188,7 +188,7 @@
 .end method
 
 .method public final n()Ljava/util/Set;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/f03;->m:Ljava/util/HashSet;

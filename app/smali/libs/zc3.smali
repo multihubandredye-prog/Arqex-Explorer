@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ad3;Llibs/wd3;I)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/zc3;->Nu:Llibs/ad3;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final b()V
-    .registers 7
+    .locals 6
 
     .line 1
     :try_start_0
@@ -53,10 +53,10 @@
 
     .line 8
     .line 9
-    :goto_8
+    :goto_0
     iget v2, p0, Llibs/zc3;->Mu:I
-    :try_end_a
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_a} :catch_37
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 10
     .line 11
@@ -67,21 +67,21 @@
     const/4 v4, 0x0
 
     .line 14
-    if-lez v2, :cond_3c
+    if-lez v2, :cond_0
 
     .line 15
     .line 16
-    :try_start_f
+    :try_start_1
     iget-object v2, v3, Llibs/ad3;->z:Ljava/nio/ByteBuffer;
 
     .line 17
     .line 18
     monitor-enter v2
-    :try_end_12
-    .catch Ljava/io/IOException; {:try_start_f .. :try_end_12} :catch_37
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 19
-    :try_start_12
+    :try_start_2
     iget v3, p0, Llibs/zc3;->Mu:I
 
     .line 20
@@ -143,47 +143,47 @@
     .line 48
     .line 49
     monitor-exit v2
-    :try_end_31
-    .catchall {:try_start_12 .. :try_end_31} :catchall_39
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 50
-    :try_start_31
+    :try_start_3
     iget-object v2, p0, Llibs/zc3;->Nu:Llibs/ad3;
 
     .line 51
     .line 52
     invoke-virtual {v2, v4, v3, v1}, Llibs/as;->Run(II[B)V
-    :try_end_36
-    .catch Ljava/io/IOException; {:try_start_31 .. :try_end_36} :catch_37
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
 
     .line 53
     .line 54
     .line 55
-    goto :goto_8
+    goto :goto_0
 
     .line 56
-    :catch_37
+    :catch_0
     move-exception v0
 
     .line 57
-    goto :goto_58
+    goto :goto_1
 
     .line 58
-    :catchall_39
+    :catchall_0
     move-exception v0
 
     .line 59
-    :try_start_3a
+    :try_start_4
     monitor-exit v2
-    :try_end_3b
-    .catchall {:try_start_3a .. :try_end_3b} :catchall_39
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 60
-    :try_start_3b
+    :try_start_5
     throw v0
 
     .line 61
-    :cond_3c
+    :cond_0
     iget-object v0, v3, Llibs/ad3;->v:Llibs/x43;
 
     .line 62
@@ -210,7 +210,7 @@
 
     .line 74
     .line 75
-    if-eqz v1, :cond_57
+    if-eqz v1, :cond_1
 
     .line 76
     .line 77
@@ -222,7 +222,7 @@
     move-result v0
 
     .line 81
-    if-eqz v0, :cond_57
+    if-eqz v0, :cond_1
 
     .line 82
     .line 83
@@ -231,17 +231,17 @@
     .line 84
     .line 85
     invoke-virtual {v0, v4}, Llibs/as;->p(Z)V
-    :try_end_57
-    .catch Ljava/io/IOException; {:try_start_3b .. :try_end_57} :catch_37
+    :try_end_5
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_0
 
     .line 86
     .line 87
     .line 88
-    :cond_57
+    :cond_1
     return-void
 
     .line 89
-    :goto_58
+    :goto_1
     iget-object v1, p0, Llibs/zc3;->Nu:Llibs/ad3;
 
     .line 90

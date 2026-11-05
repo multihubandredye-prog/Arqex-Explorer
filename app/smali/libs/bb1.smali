@@ -36,7 +36,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/util/concurrent/atomic/AtomicBoolean;Llibs/ml1;Landroid/app/Activity;ZLlibs/rp0;Landroid/net/Uri;Landroid/net/Uri;Ljava/util/ArrayList;Ljava/lang/String;ZZZI)V
-    .registers 14
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -102,7 +102,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 14
+    .locals 12
 
     .line 1
     const/4 p1, 0x0

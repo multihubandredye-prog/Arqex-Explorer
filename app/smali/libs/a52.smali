@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/c2;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/a52;->c:Llibs/c2;
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final onServiceDisconnected(Landroid/content/ComponentName;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-super {p0, p1}, Llibs/dx1;->onServiceDisconnected(Landroid/content/ComponentName;)V

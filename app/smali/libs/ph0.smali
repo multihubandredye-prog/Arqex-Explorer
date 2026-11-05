@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static a(Landroid/content/Context;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Landroid/widget/EdgeEffect;

@@ -13,7 +13,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljavax/crypto/KeyGeneratorSpi;-><init>()V
@@ -33,7 +33,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/String;II)V
-    .registers 4
+    .locals 0
 
     .line 9
     invoke-direct {p0, p1, p2}, Lorg/conscrypt/KeyGeneratorImpl;-><init>(Ljava/lang/String;I)V
@@ -44,17 +44,17 @@
 
 # virtual methods
 .method public checkKeySize(I)V
-    .registers 2
+    .locals 0
 
     .line 1
-    if-lez p1, :cond_3
+    if-lez p1, :cond_0
 
     .line 2
     .line 3
     return-void
 
     .line 4
-    :cond_3
+    :cond_0
     const-string p1, "Key size must be positive"
 
     .line 5
@@ -68,7 +68,7 @@
 .end method
 
 .method public doKeyGeneration(I)[B
-    .registers 3
+    .locals 1
 
     .line 1
     new-array p1, p1, [B
@@ -88,14 +88,14 @@
 .end method
 
 .method public engineGenerateKey()Ljavax/crypto/SecretKey;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/KeyGeneratorImpl;->secureRandom:Ljava/security/SecureRandom;
 
     .line 2
     .line 3
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -112,7 +112,7 @@
 
     .line 11
     .line 12
-    :cond_b
+    :cond_0
     new-instance v0, Ljavax/crypto/spec/SecretKeySpec;
 
     .line 13
@@ -150,7 +150,7 @@
 .end method
 
 .method public engineInit(ILjava/security/SecureRandom;)V
-    .registers 3
+    .locals 0
 
     .line 32
     invoke-virtual {p0, p1}, Lorg/conscrypt/KeyGeneratorImpl;->checkKeySize(I)V
@@ -165,7 +165,7 @@
 .end method
 
 .method public engineInit(Ljava/security/SecureRandom;)V
-    .registers 2
+    .locals 0
 
     .line 31
     iput-object p1, p0, Lorg/conscrypt/KeyGeneratorImpl;->secureRandom:Ljava/security/SecureRandom;
@@ -174,10 +174,10 @@
 .end method
 
 .method public engineInit(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    .registers 4
+    .locals 1
 
     .line 1
-    if-nez p1, :cond_a
+    if-nez p1, :cond_0
 
     .line 2
     .line 3
@@ -197,7 +197,7 @@
     throw p1
 
     .line 11
-    :cond_a
+    :cond_0
     new-instance p2, Ljava/security/InvalidAlgorithmParameterException;
 
     .line 12

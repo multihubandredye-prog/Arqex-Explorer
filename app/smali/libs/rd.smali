@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,14 +29,14 @@
 
 # virtual methods
 .method public a()Ljava/security/PublicKey;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/rd;->c:Ljava/security/KeyPair;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -51,7 +51,7 @@
     return-object v0
 
     .line 10
-    :cond_9
+    :cond_0
     invoke-virtual {p0}, Llibs/rd;->c()Ljava/security/KeyPair;
 
     .line 11
@@ -76,7 +76,7 @@
 .end method
 
 .method public b(Ljava/io/InputStreamReader;Llibs/ye;)V
-    .registers 4
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/lI;

@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ev3;Landroid/view/WindowInsets;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Llibs/yu3;-><init>(Llibs/ev3;Landroid/view/WindowInsets;)V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final a()Llibs/ev3;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/xu3;->c:Landroid/view/WindowInsets;
@@ -49,7 +49,7 @@
 .end method
 
 .method public final e()Llibs/cc0;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/xu3;->c:Landroid/view/WindowInsets;
@@ -64,7 +64,7 @@
     move-result-object v0
 
     .line 7
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     .line 8
     .line 9
@@ -74,7 +74,7 @@
     return-object v0
 
     .line 11
-    :cond_a
+    :cond_0
     new-instance v1, Llibs/cc0;
 
     .line 12
@@ -88,20 +88,20 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v1, p1, Llibs/zu3;
 
     .line 6
@@ -109,14 +109,14 @@
     const/4 v2, 0x0
 
     .line 8
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     .line 9
     .line 10
-    goto :goto_29
+    goto :goto_0
 
     .line 11
-    :cond_a
+    :cond_1
     check-cast p1, Llibs/zu3;
 
     .line 12
@@ -129,11 +129,11 @@
 
     .line 16
     .line 17
-    if-eq v1, v3, :cond_1a
+    if-eq v1, v3, :cond_2
 
     .line 18
     .line 19
-    if-eqz v1, :cond_29
+    if-eqz v1, :cond_3
 
     .line 20
     .line 21
@@ -145,11 +145,11 @@
     move-result v1
 
     .line 25
-    if-eqz v1, :cond_29
+    if-eqz v1, :cond_3
 
     .line 26
     .line 27
-    :cond_1a
+    :cond_2
     iget-object v1, p0, Llibs/xu3;->e:Llibs/na1;
 
     .line 28
@@ -158,11 +158,11 @@
 
     .line 30
     .line 31
-    if-eq v1, v3, :cond_2a
+    if-eq v1, v3, :cond_4
 
     .line 32
     .line 33
-    if-eqz v1, :cond_29
+    if-eqz v1, :cond_3
 
     .line 34
     .line 35
@@ -174,20 +174,20 @@
     move-result v1
 
     .line 39
-    if-eqz v1, :cond_29
+    if-eqz v1, :cond_3
 
     .line 40
     .line 41
-    goto :goto_2a
+    goto :goto_1
 
     .line 42
-    :cond_29
-    :goto_29
+    :cond_3
+    :goto_0
     return v2
 
     .line 43
-    :cond_2a
-    :goto_2a
+    :cond_4
+    :goto_1
     iget v1, p0, Llibs/xu3;->f:I
 
     .line 44
@@ -204,19 +204,19 @@
 
     .line 50
     .line 51
-    if-ne v1, p1, :cond_35
+    if-ne v1, p1, :cond_5
 
     .line 52
     .line 53
     return v0
 
     .line 54
-    :cond_35
+    :cond_5
     return v2
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/xu3;->c:Landroid/view/WindowInsets;

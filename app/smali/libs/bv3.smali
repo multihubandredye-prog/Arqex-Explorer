@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     invoke-static {}, Llibs/Foxtrot;->c()Landroid/view/WindowInsets;
@@ -39,7 +39,7 @@
 .end method
 
 .method public constructor <init>(Llibs/ev3;Landroid/view/WindowInsets;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Llibs/av3;-><init>(Llibs/ev3;Landroid/view/WindowInsets;)V
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public final d(Landroid/view/View;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void

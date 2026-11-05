@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 5
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -196,7 +196,7 @@
 
 # virtual methods
 .method public final c(ILjava/lang/String;)V
-    .registers 5
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/pe3;->X:Llibs/ee3;
@@ -271,7 +271,7 @@
 
     .line 38
     .line 39
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_0
 
     .line 40
     .line 41
@@ -279,7 +279,7 @@
 
     .line 42
     .line 43
-    if-nez v0, :cond_2f
+    if-nez v0, :cond_0
 
     .line 44
     .line 45
@@ -288,12 +288,12 @@
     .line 46
     .line 47
     .line 48
-    :cond_2f
+    :cond_0
     return-void
 .end method
 
 .method public final close()V
-    .registers 5
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
@@ -316,7 +316,7 @@
 
     .line 10
     .line 11
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
@@ -334,12 +334,12 @@
     .line 19
     .line 20
     .line 21
-    :cond_14
+    :cond_0
     return-void
 .end method
 
 .method public final i(Llibs/fi1;)Llibs/qe3;
-    .registers 7
+    .locals 5
 
     .line 1
     new-instance v0, Llibs/qe3;
@@ -374,7 +374,7 @@
     const/4 v2, 0x0
 
     .line 17
-    if-nez v1, :cond_24
+    if-nez v1, :cond_0
 
     .line 18
     .line 19
@@ -386,8 +386,8 @@
     move-result v1
 
     .line 23
-    :goto_16
-    if-ge v2, v1, :cond_4e
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     .line 24
     .line 25
@@ -412,10 +412,10 @@
     .line 34
     .line 35
     .line 36
-    goto :goto_16
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_0
     new-instance v1, Ljava/io/File;
 
     .line 38
@@ -441,7 +441,7 @@
     .line 48
     .line 49
     .line 50
-    :try_start_31
+    :try_start_0
     invoke-virtual {v0, v1}, Llibs/qe3;->h(Ljava/io/File;)Llibs/he3;
 
     .line 51
@@ -451,18 +451,18 @@
 
     .line 54
     invoke-virtual {p1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_38
-    .catch Ljava/io/IOException; {:try_start_31 .. :try_end_38} :catch_39
-    .catch Llibs/ub1; {:try_start_31 .. :try_end_38} :catch_39
-    .catch Llibs/fe3; {:try_start_31 .. :try_end_38} :catch_39
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Llibs/ub1; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Llibs/fe3; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 55
     .line 56
     .line 57
-    goto :goto_48
+    goto :goto_1
 
     .line 58
-    :catch_39
+    :catch_0
     const/4 v3, 0x1
 
     .line 59
@@ -492,7 +492,7 @@
     .line 71
     .line 72
     .line 73
-    :goto_48
+    :goto_1
     invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
 
     .line 74
@@ -501,11 +501,11 @@
     move-result p1
 
     .line 77
-    if-nez p1, :cond_a4
+    if-nez p1, :cond_4
 
     .line 78
     .line 79
-    :cond_4e
+    :cond_1
     iget-object p1, p0, Llibs/pe3;->Mu:Ljava/util/ArrayList;
 
     .line 80
@@ -522,7 +522,7 @@
 
     .line 86
     .line 87
-    if-eqz v1, :cond_64
+    if-eqz v1, :cond_2
 
     .line 88
     .line 89
@@ -547,10 +547,10 @@
     .line 98
     .line 99
     .line 100
-    goto :goto_6d
+    goto :goto_2
 
     .line 101
-    :cond_64
+    :cond_2
     invoke-virtual {v0, v2}, Llibs/xd3;->d(Ljava/lang/Class;)Ljava/lang/Object;
 
     .line 102
@@ -568,7 +568,7 @@
     .line 108
     .line 109
     .line 110
-    :goto_6d
+    :goto_2
     iget-object p1, p0, Llibs/pe3;->Pi:Llibs/Init;
 
     .line 111
@@ -605,7 +605,7 @@
 
     .line 127
     .line 128
-    if-eqz p1, :cond_8e
+    if-eqz p1, :cond_3
 
     .line 129
     .line 130
@@ -634,7 +634,7 @@
     .line 141
     .line 142
     .line 143
-    :cond_8e
+    :cond_3
     iget-object p1, p0, Llibs/pe3;->Omicron:Llibs/ds0;
 
     .line 144
@@ -679,7 +679,7 @@
     return-object v0
 
     .line 165
-    :cond_a4
+    :cond_4
     const-string p1, "There are no host keys available"
 
     .line 166
@@ -696,7 +696,7 @@
 .end method
 
 .method public final m(ILlibs/kk1;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput p1, p0, Llibs/pe3;->Rho:I
@@ -721,7 +721,7 @@
     monitor-enter p1
 
     .line 11
-    :try_start_a
+    :try_start_0
     invoke-static {}, Ljava/lang/System;->getProperties()Ljava/util/Properties;
 
     .line 12
@@ -736,14 +736,14 @@
     .line 17
     .line 18
     move-result p2
-    :try_end_12
-    .catchall {:try_start_a .. :try_end_12} :catchall_28
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 19
     monitor-exit p1
 
     .line 20
-    if-eqz p2, :cond_22
+    if-eqz p2, :cond_0
 
     .line 21
     .line 22
@@ -772,7 +772,7 @@
     return-void
 
     .line 35
-    :cond_22
+    :cond_0
     const-string p1, "Server failed to start"
 
     .line 36
@@ -785,14 +785,14 @@
     return-void
 
     .line 41
-    :catchall_28
+    :catchall_0
     move-exception p2
 
     .line 42
-    :try_start_29
+    :try_start_1
     monitor-exit p1
-    :try_end_2a
-    .catchall {:try_start_29 .. :try_end_2a} :catchall_28
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 43
     throw p2

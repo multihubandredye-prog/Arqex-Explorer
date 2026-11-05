@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/CodeEditorActivity;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iput-object p1, p0, Llibs/tv;->g:Lcom/mixplorer/activities/CodeEditorActivity;
@@ -70,20 +70,20 @@
 
 # virtual methods
 .method public final a(Landroid/widget/TextView;)Z
-    .registers 10
+    .locals 8
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     .line 3
     .line 4
-    goto :goto_a
+    goto :goto_0
 
     .line 5
-    :cond_4
+    :cond_0
     iget-object v1, p0, Llibs/tv;->g:Lcom/mixplorer/activities/CodeEditorActivity;
 
     .line 6
@@ -92,15 +92,15 @@
 
     .line 8
     .line 9
-    if-nez v2, :cond_b
+    if-nez v2, :cond_1
 
     .line 10
     .line 11
-    :goto_a
+    :goto_0
     return v0
 
     .line 12
-    :cond_b
+    :cond_1
     new-instance v3, Ljava/lang/StringBuilder;
 
     .line 13
@@ -154,20 +154,20 @@
     const/4 v5, -0x1
 
     .line 39
-    sparse-switch v3, :sswitch_data_288
+    sparse-switch v3, :sswitch_data_0
 
     .line 40
     .line 41
     .line 42
-    :goto_29
+    :goto_1
     const/4 v3, 0x1
 
     .line 43
-    goto/16 :goto_151
+    goto/16 :goto_2
 
     .line 44
     .line 45
-    :sswitch_2c
+    :sswitch_0
     const-string v3, "pgup"
 
     .line 46
@@ -180,22 +180,22 @@
     move-result v3
 
     .line 51
-    if-nez v3, :cond_35
+    if-nez v3, :cond_2
 
     .line 52
     .line 53
-    goto :goto_29
+    goto :goto_1
 
     .line 54
-    :cond_35
+    :cond_2
     const/16 v5, 0x16
 
     .line 55
     .line 56
-    goto :goto_29
+    goto :goto_1
 
     .line 57
-    :sswitch_38
+    :sswitch_1
     const-string v3, "pgdn"
 
     .line 58
@@ -208,22 +208,22 @@
     move-result v3
 
     .line 63
-    if-nez v3, :cond_41
+    if-nez v3, :cond_3
 
     .line 64
     .line 65
-    goto :goto_29
+    goto :goto_1
 
     .line 66
-    :cond_41
+    :cond_3
     const/16 v5, 0x15
 
     .line 67
     .line 68
-    goto :goto_29
+    goto :goto_1
 
     .line 69
-    :sswitch_44
+    :sswitch_2
     const-string v3, "ctrl"
 
     .line 70
@@ -236,22 +236,22 @@
     move-result v3
 
     .line 75
-    if-nez v3, :cond_4d
+    if-nez v3, :cond_4
 
     .line 76
     .line 77
-    goto :goto_29
+    goto :goto_1
 
     .line 78
-    :cond_4d
+    :cond_4
     const/16 v5, 0x14
 
     .line 79
     .line 80
-    goto :goto_29
+    goto :goto_1
 
     .line 81
-    :sswitch_50
+    :sswitch_3
     const-string v3, "alt"
 
     .line 82
@@ -264,22 +264,22 @@
     move-result v3
 
     .line 87
-    if-nez v3, :cond_59
+    if-nez v3, :cond_5
 
     .line 88
     .line 89
-    goto :goto_29
+    goto :goto_1
 
     .line 90
-    :cond_59
+    :cond_5
     const/16 v5, 0x13
 
     .line 91
     .line 92
-    goto :goto_29
+    goto :goto_1
 
     .line 93
-    :sswitch_5c
+    :sswitch_4
     const-string v3, "\u2b06"
 
     .line 94
@@ -292,22 +292,22 @@
     move-result v3
 
     .line 99
-    if-nez v3, :cond_65
+    if-nez v3, :cond_6
 
     .line 100
     .line 101
-    goto :goto_29
+    goto :goto_1
 
     .line 102
-    :cond_65
+    :cond_6
     const/16 v5, 0x12
 
     .line 103
     .line 104
-    goto :goto_29
+    goto :goto_1
 
     .line 105
-    :sswitch_68
+    :sswitch_5
     const-string v3, "\u25c1"
 
     .line 106
@@ -320,22 +320,22 @@
     move-result v3
 
     .line 111
-    if-nez v3, :cond_71
+    if-nez v3, :cond_7
 
     .line 112
     .line 113
-    goto :goto_29
+    goto :goto_1
 
     .line 114
-    :cond_71
+    :cond_7
     const/16 v5, 0x11
 
     .line 115
     .line 116
-    goto :goto_29
+    goto :goto_1
 
     .line 117
-    :sswitch_74
+    :sswitch_6
     const-string v3, "\u25bd"
 
     .line 118
@@ -348,22 +348,22 @@
     move-result v3
 
     .line 123
-    if-nez v3, :cond_7d
+    if-nez v3, :cond_8
 
     .line 124
     .line 125
-    goto :goto_29
+    goto :goto_1
 
     .line 126
-    :cond_7d
+    :cond_8
     const/16 v5, 0x10
 
     .line 127
     .line 128
-    goto :goto_29
+    goto :goto_1
 
     .line 129
-    :sswitch_80
+    :sswitch_7
     const-string v3, "\u25b7"
 
     .line 130
@@ -376,22 +376,22 @@
     move-result v3
 
     .line 135
-    if-nez v3, :cond_89
+    if-nez v3, :cond_9
 
     .line 136
     .line 137
-    goto :goto_29
+    goto :goto_1
 
     .line 138
-    :cond_89
+    :cond_9
     const/16 v5, 0xf
 
     .line 139
     .line 140
-    goto :goto_29
+    goto :goto_1
 
     .line 141
-    :sswitch_8c
+    :sswitch_8
     const-string v3, "\u25b3"
 
     .line 142
@@ -404,22 +404,22 @@
     move-result v3
 
     .line 147
-    if-nez v3, :cond_95
+    if-nez v3, :cond_a
 
     .line 148
     .line 149
-    goto :goto_29
+    goto :goto_1
 
     .line 150
-    :cond_95
+    :cond_a
     const/16 v5, 0xe
 
     .line 151
     .line 152
-    goto :goto_29
+    goto :goto_1
 
     .line 153
-    :sswitch_98
+    :sswitch_9
     const-string v3, "\u23b5"
 
     .line 154
@@ -432,22 +432,22 @@
     move-result v3
 
     .line 159
-    if-nez v3, :cond_a1
+    if-nez v3, :cond_b
 
     .line 160
     .line 161
-    goto :goto_29
+    goto :goto_1
 
     .line 162
-    :cond_a1
+    :cond_b
     const/16 v5, 0xd
 
     .line 163
     .line 164
-    goto :goto_29
+    goto :goto_1
 
     .line 165
-    :sswitch_a4
+    :sswitch_a
     const-string v3, "\u232b"
 
     .line 166
@@ -460,24 +460,24 @@
     move-result v3
 
     .line 171
-    if-nez v3, :cond_ae
+    if-nez v3, :cond_c
 
     .line 172
     .line 173
-    goto/16 :goto_29
+    goto/16 :goto_1
 
     .line 174
     .line 175
-    :cond_ae
+    :cond_c
     const/16 v5, 0xc
 
     .line 176
     .line 177
-    goto/16 :goto_29
+    goto/16 :goto_1
 
     .line 178
     .line 179
-    :sswitch_b2
+    :sswitch_b
     const-string v3, "\u2326"
 
     .line 180
@@ -490,24 +490,24 @@
     move-result v3
 
     .line 185
-    if-nez v3, :cond_bc
+    if-nez v3, :cond_d
 
     .line 186
     .line 187
-    goto/16 :goto_29
+    goto/16 :goto_1
 
     .line 188
     .line 189
-    :cond_bc
+    :cond_d
     const/16 v5, 0xb
 
     .line 190
     .line 191
-    goto/16 :goto_29
+    goto/16 :goto_1
 
     .line 192
     .line 193
-    :sswitch_c0
+    :sswitch_c
     const-string v3, "\u21e5"
 
     .line 194
@@ -520,24 +520,24 @@
     move-result v3
 
     .line 199
-    if-nez v3, :cond_ca
+    if-nez v3, :cond_e
 
     .line 200
     .line 201
-    goto/16 :goto_29
+    goto/16 :goto_1
 
     .line 202
     .line 203
-    :cond_ca
+    :cond_e
     const/16 v5, 0xa
 
     .line 204
     .line 205
-    goto/16 :goto_29
+    goto/16 :goto_1
 
     .line 206
     .line 207
-    :sswitch_ce
+    :sswitch_d
     const-string v3, "\u21e4"
 
     .line 208
@@ -550,24 +550,24 @@
     move-result v3
 
     .line 213
-    if-nez v3, :cond_d8
+    if-nez v3, :cond_f
 
     .line 214
     .line 215
-    goto/16 :goto_29
+    goto/16 :goto_1
 
     .line 216
     .line 217
-    :cond_d8
+    :cond_f
     const/16 v5, 0x9
 
     .line 218
     .line 219
-    goto/16 :goto_29
+    goto/16 :goto_1
 
     .line 220
     .line 221
-    :sswitch_dc
+    :sswitch_e
     const-string v3, "\u21b2"
 
     .line 222
@@ -580,24 +580,24 @@
     move-result v3
 
     .line 227
-    if-nez v3, :cond_e6
+    if-nez v3, :cond_10
 
     .line 228
     .line 229
-    goto/16 :goto_29
+    goto/16 :goto_1
 
     .line 230
     .line 231
-    :cond_e6
+    :cond_10
     const/16 v5, 0x8
 
     .line 232
     .line 233
-    goto/16 :goto_29
+    goto/16 :goto_1
 
     .line 234
     .line 235
-    :sswitch_ea
+    :sswitch_f
     const-string v3, "\u21a0"
 
     .line 236
@@ -610,23 +610,23 @@
     move-result v3
 
     .line 241
-    if-nez v3, :cond_f4
+    if-nez v3, :cond_11
 
     .line 242
     .line 243
-    goto/16 :goto_29
+    goto/16 :goto_1
 
     .line 244
     .line 245
-    :cond_f4
+    :cond_11
     const/4 v5, 0x7
 
     .line 246
-    goto/16 :goto_29
+    goto/16 :goto_1
 
     .line 247
     .line 248
-    :sswitch_f7
+    :sswitch_10
     const-string v3, "\u219e"
 
     .line 249
@@ -639,23 +639,23 @@
     move-result v3
 
     .line 254
-    if-nez v3, :cond_101
+    if-nez v3, :cond_12
 
     .line 255
     .line 256
-    goto/16 :goto_29
+    goto/16 :goto_1
 
     .line 257
     .line 258
-    :cond_101
+    :cond_12
     const/4 v5, 0x6
 
     .line 259
-    goto/16 :goto_29
+    goto/16 :goto_1
 
     .line 260
     .line 261
-    :sswitch_104
+    :sswitch_11
     const-string v3, "{}"
 
     .line 262
@@ -668,23 +668,23 @@
     move-result v3
 
     .line 267
-    if-nez v3, :cond_10e
+    if-nez v3, :cond_13
 
     .line 268
     .line 269
-    goto/16 :goto_29
+    goto/16 :goto_1
 
     .line 270
     .line 271
-    :cond_10e
+    :cond_13
     const/4 v5, 0x5
 
     .line 272
-    goto/16 :goto_29
+    goto/16 :goto_1
 
     .line 273
     .line 274
-    :sswitch_111
+    :sswitch_12
     const-string v3, "[]"
 
     .line 275
@@ -697,23 +697,23 @@
     move-result v3
 
     .line 280
-    if-nez v3, :cond_11b
+    if-nez v3, :cond_14
 
     .line 281
     .line 282
-    goto/16 :goto_29
+    goto/16 :goto_1
 
     .line 283
     .line 284
-    :cond_11b
+    :cond_14
     const/4 v5, 0x4
 
     .line 285
-    goto/16 :goto_29
+    goto/16 :goto_1
 
     .line 286
     .line 287
-    :sswitch_11e
+    :sswitch_13
     const-string v3, "<>"
 
     .line 288
@@ -726,23 +726,23 @@
     move-result v3
 
     .line 293
-    if-nez v3, :cond_128
+    if-nez v3, :cond_15
 
     .line 294
     .line 295
-    goto/16 :goto_29
+    goto/16 :goto_1
 
     .line 296
     .line 297
-    :cond_128
+    :cond_15
     const/4 v5, 0x3
 
     .line 298
-    goto/16 :goto_29
+    goto/16 :goto_1
 
     .line 299
     .line 300
-    :sswitch_12b
+    :sswitch_14
     const-string v3, "()"
 
     .line 301
@@ -755,23 +755,23 @@
     move-result v3
 
     .line 306
-    if-nez v3, :cond_135
+    if-nez v3, :cond_16
 
     .line 307
     .line 308
-    goto/16 :goto_29
+    goto/16 :goto_1
 
     .line 309
     .line 310
-    :cond_135
+    :cond_16
     const/4 v5, 0x2
 
     .line 311
-    goto/16 :goto_29
+    goto/16 :goto_1
 
     .line 312
     .line 313
-    :sswitch_138
+    :sswitch_15
     const-string v3, "\'\'"
 
     .line 314
@@ -784,25 +784,25 @@
     move-result v3
 
     .line 319
-    if-nez v3, :cond_142
+    if-nez v3, :cond_17
 
     .line 320
     .line 321
-    goto/16 :goto_29
+    goto/16 :goto_1
 
     .line 322
     .line 323
-    :cond_142
+    :cond_17
     const/4 v3, 0x1
 
     .line 324
     const/4 v5, 0x1
 
     .line 325
-    goto :goto_151
+    goto :goto_2
 
     .line 326
-    :sswitch_145
+    :sswitch_16
     const-string v3, "\"\""
 
     .line 327
@@ -815,26 +815,26 @@
     move-result v3
 
     .line 332
-    if-nez v3, :cond_14f
+    if-nez v3, :cond_18
 
     .line 333
     .line 334
-    goto/16 :goto_29
+    goto/16 :goto_1
 
     .line 335
     .line 336
-    :cond_14f
+    :cond_18
     const/4 v3, 0x1
 
     .line 337
     const/4 v5, 0x0
 
     .line 338
-    :goto_151
+    :goto_2
     const/4 v4, 0x0
 
     .line 339
-    packed-switch v5, :pswitch_data_2e6
+    packed-switch v5, :pswitch_data_0
 
     .line 340
     .line 341
@@ -843,7 +843,7 @@
 
     .line 343
     .line 344
-    if-eqz v1, :cond_177
+    if-eqz v1, :cond_1a
 
     .line 345
     .line 346
@@ -855,7 +855,7 @@
 
     .line 349
     .line 350
-    if-eqz v2, :cond_177
+    if-eqz v2, :cond_1a
 
     .line 351
     .line 352
@@ -867,7 +867,7 @@
     move-result-object v0
 
     .line 356
-    if-eqz v0, :cond_176
+    if-eqz v0, :cond_19
 
     .line 357
     .line 358
@@ -879,7 +879,7 @@
 
     .line 361
     .line 362
-    if-eqz v0, :cond_176
+    if-eqz v0, :cond_19
 
     .line 363
     .line 364
@@ -904,15 +904,15 @@
     .line 373
     .line 374
     .line 375
-    :cond_176
+    :cond_19
     return v3
 
     .line 376
-    :cond_177
+    :cond_1a
     return v0
 
     .line 377
-    :pswitch_178
+    :pswitch_0
     iget-boolean v5, p0, Llibs/tv;->b:Z
 
     .line 378
@@ -940,7 +940,7 @@
     return p1
 
     .line 390
-    :pswitch_185
+    :pswitch_1
     iget-boolean v5, p0, Llibs/tv;->b:Z
 
     .line 391
@@ -968,7 +968,7 @@
     return p1
 
     .line 403
-    :pswitch_192
+    :pswitch_2
     iget-boolean v6, p0, Llibs/tv;->c:Z
 
     .line 404
@@ -1000,7 +1000,7 @@
     return p1
 
     .line 418
-    :pswitch_1a1
+    :pswitch_3
     iget-boolean v7, p0, Llibs/tv;->d:Z
 
     .line 419
@@ -1032,7 +1032,7 @@
     return p1
 
     .line 433
-    :pswitch_1b0
+    :pswitch_4
     iget-boolean v5, p0, Llibs/tv;->b:Z
 
     .line 434
@@ -1064,7 +1064,7 @@
     return p1
 
     .line 448
-    :pswitch_1bf
+    :pswitch_5
     iget-boolean v5, p0, Llibs/tv;->b:Z
 
     .line 449
@@ -1092,7 +1092,7 @@
     return p1
 
     .line 461
-    :pswitch_1cc
+    :pswitch_6
     iget-boolean v5, p0, Llibs/tv;->b:Z
 
     .line 462
@@ -1120,7 +1120,7 @@
     return p1
 
     .line 474
-    :pswitch_1d9
+    :pswitch_7
     iget-boolean v5, p0, Llibs/tv;->b:Z
 
     .line 475
@@ -1148,7 +1148,7 @@
     return p1
 
     .line 487
-    :pswitch_1e6
+    :pswitch_8
     iget-boolean v5, p0, Llibs/tv;->b:Z
 
     .line 488
@@ -1176,7 +1176,7 @@
     return p1
 
     .line 500
-    :pswitch_1f3
+    :pswitch_9
     iget-boolean v5, p0, Llibs/tv;->b:Z
 
     .line 501
@@ -1204,7 +1204,7 @@
     return p1
 
     .line 513
-    :pswitch_200
+    :pswitch_a
     iget-boolean v5, p0, Llibs/tv;->b:Z
 
     .line 514
@@ -1232,7 +1232,7 @@
     return p1
 
     .line 526
-    :pswitch_20d
+    :pswitch_b
     iget-boolean v5, p0, Llibs/tv;->b:Z
 
     .line 527
@@ -1260,7 +1260,7 @@
     return p1
 
     .line 539
-    :pswitch_21a
+    :pswitch_c
     iget-boolean v5, p0, Llibs/tv;->b:Z
 
     .line 540
@@ -1288,7 +1288,7 @@
     return p1
 
     .line 552
-    :pswitch_227
+    :pswitch_d
     iget-boolean v5, p0, Llibs/tv;->b:Z
 
     .line 553
@@ -1316,7 +1316,7 @@
     return p1
 
     .line 565
-    :pswitch_234
+    :pswitch_e
     iget-boolean v5, p0, Llibs/tv;->b:Z
 
     .line 566
@@ -1344,7 +1344,7 @@
     return p1
 
     .line 578
-    :pswitch_241
+    :pswitch_f
     iget-boolean v5, p0, Llibs/tv;->b:Z
 
     .line 579
@@ -1372,7 +1372,7 @@
     return p1
 
     .line 591
-    :pswitch_24e
+    :pswitch_10
     iget-boolean v6, p0, Llibs/tv;->c:Z
 
     .line 592
@@ -1399,12 +1399,12 @@
     return p1
 
     .line 603
-    :pswitch_25a
+    :pswitch_11
     iget-object v1, v1, Lcom/mixplorer/activities/CodeEditorActivity;->ll:Llibs/cv;
 
     .line 604
     .line 605
-    if-eqz v1, :cond_27c
+    if-eqz v1, :cond_1c
 
     .line 606
     .line 607
@@ -1416,7 +1416,7 @@
 
     .line 610
     .line 611
-    if-eqz v4, :cond_27c
+    if-eqz v4, :cond_1c
 
     .line 612
     .line 613
@@ -1428,7 +1428,7 @@
     move-result-object v0
 
     .line 617
-    if-eqz v0, :cond_27b
+    if-eqz v0, :cond_1b
 
     .line 618
     .line 619
@@ -1440,7 +1440,7 @@
 
     .line 622
     .line 623
-    if-eqz v0, :cond_27b
+    if-eqz v0, :cond_1b
 
     .line 624
     .line 625
@@ -1465,12 +1465,12 @@
     .line 634
     .line 635
     .line 636
-    :cond_27b
+    :cond_1b
     const/4 v0, 0x1
 
     .line 637
-    :cond_27c
-    if-eqz v0, :cond_286
+    :cond_1c
+    if-eqz v0, :cond_1d
 
     .line 638
     .line 639
@@ -1490,38 +1490,38 @@
     .line 645
     .line 646
     .line 647
-    :cond_286
+    :cond_1d
     return v0
 
     .line 648
     nop
 
     .line 649
-    :sswitch_data_288
+    :sswitch_data_0
     .sparse-switch
-        0x440 -> :sswitch_145
-        0x4e0 -> :sswitch_138
-        0x501 -> :sswitch_12b
-        0x782 -> :sswitch_11e
-        0xb62 -> :sswitch_111
-        0xf62 -> :sswitch_104
-        0x219e -> :sswitch_f7
-        0x21a0 -> :sswitch_ea
-        0x21b2 -> :sswitch_dc
-        0x21e4 -> :sswitch_ce
-        0x21e5 -> :sswitch_c0
-        0x2326 -> :sswitch_b2
-        0x232b -> :sswitch_a4
-        0x23b5 -> :sswitch_98
-        0x25b3 -> :sswitch_8c
-        0x25b7 -> :sswitch_80
-        0x25bd -> :sswitch_74
-        0x25c1 -> :sswitch_68
-        0x2b06 -> :sswitch_5c
-        0x179a9 -> :sswitch_50
-        0x2ec26b -> :sswitch_44
-        0x3478c1 -> :sswitch_38
-        0x347ad2 -> :sswitch_2c
+        0x440 -> :sswitch_16
+        0x4e0 -> :sswitch_15
+        0x501 -> :sswitch_14
+        0x782 -> :sswitch_13
+        0xb62 -> :sswitch_12
+        0xf62 -> :sswitch_11
+        0x219e -> :sswitch_10
+        0x21a0 -> :sswitch_f
+        0x21b2 -> :sswitch_e
+        0x21e4 -> :sswitch_d
+        0x21e5 -> :sswitch_c
+        0x2326 -> :sswitch_b
+        0x232b -> :sswitch_a
+        0x23b5 -> :sswitch_9
+        0x25b3 -> :sswitch_8
+        0x25b7 -> :sswitch_7
+        0x25bd -> :sswitch_6
+        0x25c1 -> :sswitch_5
+        0x2b06 -> :sswitch_4
+        0x179a9 -> :sswitch_3
+        0x2ec26b -> :sswitch_2
+        0x3478c1 -> :sswitch_1
+        0x347ad2 -> :sswitch_0
     .end sparse-switch
 
     .line 650
@@ -1618,36 +1618,36 @@
     .line 741
     .line 742
     .line 743
-    :pswitch_data_2e6
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_25a
-        :pswitch_25a
-        :pswitch_25a
-        :pswitch_25a
-        :pswitch_25a
-        :pswitch_25a
-        :pswitch_24e
-        :pswitch_241
-        :pswitch_234
-        :pswitch_227
-        :pswitch_21a
-        :pswitch_20d
-        :pswitch_200
-        :pswitch_1f3
-        :pswitch_1e6
-        :pswitch_1d9
-        :pswitch_1cc
-        :pswitch_1bf
-        :pswitch_1b0
-        :pswitch_1a1
-        :pswitch_192
-        :pswitch_185
-        :pswitch_178
+        :pswitch_11
+        :pswitch_11
+        :pswitch_11
+        :pswitch_11
+        :pswitch_11
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .registers 10
+    .locals 7
 
     .line 1
     invoke-static {p2}, Llibs/wx1;->b(Landroid/view/MotionEvent;)I
@@ -1676,26 +1676,26 @@
     const/4 v5, 0x1
 
     .line 13
-    if-eqz v0, :cond_7a
+    if-eqz v0, :cond_5
 
     .line 14
     .line 15
-    if-eq v0, v5, :cond_15
+    if-eq v0, v5, :cond_0
 
     .line 16
     .line 17
     const/4 v6, 0x3
 
     .line 18
-    if-eq v0, v6, :cond_15
+    if-eq v0, v6, :cond_0
 
     .line 19
     .line 20
-    goto/16 :goto_e5
+    goto/16 :goto_0
 
     .line 21
     .line 22
-    :cond_15
+    :cond_0
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     .line 23
@@ -1708,7 +1708,7 @@
 
     .line 27
     .line 28
-    if-ne v0, v6, :cond_2f
+    if-ne v0, v6, :cond_1
 
     .line 29
     .line 30
@@ -1748,7 +1748,7 @@
     return v5
 
     .line 48
-    :cond_2f
+    :cond_1
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     .line 49
@@ -1761,7 +1761,7 @@
 
     .line 53
     .line 54
-    if-ne v0, v6, :cond_49
+    if-ne v0, v6, :cond_2
 
     .line 55
     .line 56
@@ -1801,7 +1801,7 @@
     return v5
 
     .line 74
-    :cond_49
+    :cond_2
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     .line 75
@@ -1814,7 +1814,7 @@
 
     .line 79
     .line 80
-    if-ne v0, v6, :cond_63
+    if-ne v0, v6, :cond_3
 
     .line 81
     .line 82
@@ -1854,12 +1854,12 @@
     return v5
 
     .line 100
-    :cond_63
+    :cond_3
     iget-object v0, p0, Llibs/tv;->e:Landroid/view/View;
 
     .line 101
     .line 102
-    if-eqz v0, :cond_e5
+    if-eqz v0, :cond_9
 
     .line 103
     .line 104
@@ -1876,7 +1876,7 @@
     move-result p2
 
     .line 111
-    if-ne p2, v5, :cond_73
+    if-ne p2, v5, :cond_4
 
     .line 112
     .line 113
@@ -1885,7 +1885,7 @@
     .line 114
     .line 115
     .line 116
-    :cond_73
+    :cond_4
     invoke-virtual {p1, v4}, Landroid/view/View;->setPressed(Z)V
 
     .line 117
@@ -1901,7 +1901,7 @@
     return v5
 
     .line 123
-    :cond_7a
+    :cond_5
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     .line 124
@@ -1918,7 +1918,7 @@
 
     .line 130
     .line 131
-    if-ne p2, v0, :cond_99
+    if-ne p2, v0, :cond_6
 
     .line 132
     .line 133
@@ -1963,7 +1963,7 @@
     return v5
 
     .line 154
-    :cond_99
+    :cond_6
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     .line 155
@@ -1976,7 +1976,7 @@
 
     .line 159
     .line 160
-    if-ne p2, v0, :cond_b6
+    if-ne p2, v0, :cond_7
 
     .line 161
     .line 162
@@ -2021,7 +2021,7 @@
     return v5
 
     .line 183
-    :cond_b6
+    :cond_7
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     .line 184
@@ -2034,7 +2034,7 @@
 
     .line 188
     .line 189
-    if-ne p2, v0, :cond_d3
+    if-ne p2, v0, :cond_8
 
     .line 190
     .line 191
@@ -2079,12 +2079,12 @@
     return v5
 
     .line 212
-    :cond_d3
+    :cond_8
     iget-object p2, p0, Llibs/tv;->e:Landroid/view/View;
 
     .line 213
     .line 214
-    if-nez p2, :cond_e5
+    if-nez p2, :cond_9
 
     .line 215
     .line 216
@@ -2114,7 +2114,7 @@
     return v5
 
     .line 230
-    :cond_e5
-    :goto_e5
+    :cond_9
+    :goto_0
     return v4
 .end method

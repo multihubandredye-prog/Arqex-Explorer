@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/TextEditorActivity;III)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/jl3;->Mu:Lcom/mixplorer/activities/TextEditorActivity;
@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 8
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/jl3;->Mu:Lcom/mixplorer/activities/TextEditorActivity;
@@ -65,7 +65,7 @@
     const/4 v2, 0x0
 
     .line 8
-    :try_start_7
+    :try_start_0
     invoke-virtual {p1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     .line 9
@@ -94,11 +94,11 @@
     move-result v5
 
     .line 22
-    if-ltz v4, :cond_59
+    if-ltz v4, :cond_1
 
     .line 23
     .line 24
-    if-le v5, v4, :cond_59
+    if-le v5, v4, :cond_1
 
     .line 25
     .line 26
@@ -130,7 +130,7 @@
     move-result v4
 
     .line 40
-    if-nez v4, :cond_30
+    if-nez v4, :cond_0
 
     .line 41
     .line 42
@@ -142,18 +142,18 @@
     move-result-object v3
 
     .line 46
-    goto :goto_30
+    goto :goto_0
 
     .line 47
-    :catchall_2e
+    :catchall_0
     move-exception v1
 
     .line 48
-    goto :goto_40
+    goto :goto_1
 
     .line 49
-    :cond_30
-    :goto_30
+    :cond_0
+    :goto_0
     new-instance v1, Landroid/content/Intent;
 
     .line 50
@@ -179,16 +179,16 @@
 
     .line 61
     invoke-static {v0, v1, v3}, Llibs/sw1;->Data(Landroid/content/Context;Landroid/content/Intent;Landroid/os/Bundle;)V
-    :try_end_3f
-    .catchall {:try_start_7 .. :try_end_3f} :catchall_2e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 62
     .line 63
     .line 64
-    goto :goto_59
+    goto :goto_2
 
     .line 65
-    :goto_40
+    :goto_1
     invoke-static {v1}, Llibs/vl3;->Map(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 66
@@ -238,8 +238,8 @@
     .line 88
     .line 89
     .line 90
-    :cond_59
-    :goto_59
+    :cond_1
+    :goto_2
     invoke-virtual {p1}, Landroid/view/View;->postInvalidate()V
 
     .line 91
@@ -249,7 +249,7 @@
 .end method
 
 .method public final updateDrawState(Landroid/text/TextPaint;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-super {p0, p1}, Landroid/text/style/ClickableSpan;->updateDrawState(Landroid/text/TextPaint;)V
@@ -261,7 +261,7 @@
 
     .line 5
     .line 6
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
@@ -269,15 +269,15 @@
 
     .line 9
     .line 10
-    goto :goto_c
+    goto :goto_0
 
     .line 11
-    :cond_a
+    :cond_0
     iget v0, p0, Llibs/jl3;->Z:I
 
     .line 12
     .line 13
-    :goto_c
+    :goto_0
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 14
@@ -290,7 +290,7 @@
     const/4 v1, 0x0
 
     .line 19
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1
 
     .line 20
     .line 21
@@ -298,14 +298,14 @@
 
     .line 22
     .line 23
-    goto :goto_18
+    goto :goto_1
 
     .line 24
-    :cond_17
+    :cond_1
     const/4 v0, 0x0
 
     .line 25
-    :goto_18
+    :goto_1
     iput v0, p1, Landroid/text/TextPaint;->bgColor:I
 
     .line 26

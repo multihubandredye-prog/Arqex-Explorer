@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/rd2;IB)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/kd2;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 7
+    .locals 6
 
     .line 1
     iget-byte v0, p0, Llibs/kd2;->X:B
@@ -61,7 +61,7 @@
 
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_3a
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
@@ -79,7 +79,7 @@
     return-void
 
     .line 19
-    :pswitch_12
+    :pswitch_0
     iget-object v0, v4, Llibs/rd2;->g:Ljava/util/ArrayList;
 
     .line 20
@@ -88,14 +88,14 @@
 
     .line 22
     .line 23
-    if-nez v5, :cond_19
+    if-nez v5, :cond_0
 
     .line 24
     .line 25
-    goto :goto_2b
+    goto :goto_0
 
     .line 26
-    :cond_19
+    :cond_0
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     .line 27
@@ -104,15 +104,15 @@
     move-result v5
 
     .line 30
-    if-lt v3, v5, :cond_20
+    if-lt v3, v5, :cond_1
 
     .line 31
     .line 32
     const/4 v3, 0x0
 
     .line 33
-    :cond_20
-    if-gez v3, :cond_28
+    :cond_1
+    if-gez v3, :cond_2
 
     .line 34
     .line 35
@@ -128,13 +128,13 @@
 
     .line 40
     .line 41
-    :cond_28
+    :cond_2
     invoke-virtual {v4, v3}, Llibs/rd2;->w(I)V
 
     .line 42
     .line 43
     .line 44
-    :goto_2b
+    :goto_0
     invoke-virtual {v4}, Llibs/rd2;->l()Z
 
     .line 45
@@ -143,7 +143,7 @@
     move-result v0
 
     .line 48
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_3
 
     .line 49
     .line 50
@@ -156,7 +156,7 @@
     .line 53
     .line 54
     .line 55
-    :cond_36
+    :cond_3
     invoke-virtual {v4, v1, v2}, Llibs/rd2;->q(J)V
 
     .line 56
@@ -165,8 +165,8 @@
     return-void
 
     .line 59
-    :pswitch_data_3a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_12
+        :pswitch_0
     .end packed-switch
 .end method

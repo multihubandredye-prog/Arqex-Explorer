@@ -23,7 +23,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -41,7 +41,7 @@
 .end method
 
 .method public constructor <init>([Ljava/lang/String;Ljava/util/AbstractMap;Ljava/lang/String;J)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,19 +53,19 @@
 
     .line 5
     .line 6
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     .line 7
     .line 8
-    goto :goto_a
+    goto :goto_0
 
     .line 9
-    :cond_8
+    :cond_0
     sget-object p1, Llibs/tn;->Mu:[Ljava/lang/String;
 
     .line 10
     .line 11
-    :goto_a
+    :goto_0
     iput-object p1, p0, Llibs/tn;->Lambda:[Ljava/lang/String;
 
     .line 12
@@ -84,7 +84,7 @@
 
 # virtual methods
 .method public final iterator()Ljava/util/Iterator;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/tn;->Lambda:[Ljava/lang/String;
@@ -111,7 +111,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

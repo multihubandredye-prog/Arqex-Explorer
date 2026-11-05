@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/bn1;
@@ -45,7 +45,7 @@
 .end method
 
 .method public constructor <init>(Llibs/f62;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/nv2;-><init>()V
@@ -63,7 +63,7 @@
 
 # virtual methods
 .method public final h(Llibs/mv2;)V
-    .registers 8
+    .locals 6
 
     .line 1
     invoke-virtual {p1}, Llibs/mv2;->e()J
@@ -103,7 +103,7 @@
     .line 18
     .line 19
     .line 20
-    :try_start_13
+    :try_start_0
     iget-object v3, v3, Llibs/f62;->b:Ljava/util/HashMap;
 
     .line 21
@@ -114,8 +114,8 @@
     .line 24
     .line 25
     move-result v2
-    :try_end_19
-    .catchall {:try_start_13 .. :try_end_19} :catchall_55
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 26
     invoke-virtual {v4}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;->readLock()Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;
@@ -131,7 +131,7 @@
     .line 31
     .line 32
     .line 33
-    if-nez v2, :cond_4d
+    if-nez v2, :cond_0
 
     .line 34
     .line 35
@@ -143,7 +143,7 @@
     move-result v2
 
     .line 39
-    if-nez v2, :cond_4d
+    if-nez v2, :cond_0
 
     .line 40
     .line 41
@@ -222,7 +222,7 @@
     return-void
 
     .line 78
-    :cond_4d
+    :cond_0
     iget-object v0, p0, Llibs/Color;->a:Ljava/lang/Object;
 
     .line 79
@@ -239,7 +239,7 @@
     return-void
 
     .line 86
-    :catchall_55
+    :catchall_0
     move-exception p1
 
     .line 87

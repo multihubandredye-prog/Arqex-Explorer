@@ -20,7 +20,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/BrowseActivity;Llibs/zl0;Ljava/lang/String;ZLlibs/xt1;)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public final f(Llibs/t4;)V
-    .registers 9
+    .locals 7
 
     .line 1
     iget-object v1, p0, Llibs/ni;->X:Lcom/mixplorer/activities/BrowseActivity;
@@ -76,10 +76,10 @@
     const/4 p1, 0x0
 
     .line 10
-    :try_start_9
+    :try_start_0
     instance-of v0, v4, Llibs/yi0;
-    :try_end_b
-    .catchall {:try_start_9 .. :try_end_b} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 11
     .line 12
@@ -91,11 +91,11 @@
 
     .line 15
     .line 16
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 17
     .line 18
-    :try_start_11
+    :try_start_1
     move-object v0, v4
 
     .line 19
@@ -108,25 +108,25 @@
     .line 22
     .line 23
     .line 24
-    goto :goto_25
+    goto :goto_0
 
     .line 25
-    :catchall_18
+    :catchall_0
     move-exception v0
 
     .line 26
     move-object v2, v0
 
     .line 27
-    goto :goto_44
+    goto :goto_1
 
     .line 28
-    :cond_1b
+    :cond_0
     instance-of v0, v4, Llibs/yu0;
 
     .line 29
     .line 30
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     .line 31
     .line 32
@@ -142,8 +142,8 @@
     .line 36
     .line 37
     .line 38
-    :cond_25
-    :goto_25
+    :cond_1
+    :goto_0
     invoke-static {}, Llibs/su0;->c()Z
 
     .line 39
@@ -152,7 +152,7 @@
     move-result v0
 
     .line 42
-    if-nez v0, :cond_3e
+    if-nez v0, :cond_2
 
     .line 43
     .line 44
@@ -193,7 +193,7 @@
     return-void
 
     .line 63
-    :cond_3e
+    :cond_2
     new-instance v0, Ljava/lang/InterruptedException;
 
     .line 64
@@ -204,12 +204,12 @@
     .line 67
     .line 68
     throw v0
-    :try_end_44
-    .catchall {:try_start_11 .. :try_end_44} :catchall_18
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 69
-    :goto_44
-    :try_start_44
+    :goto_1
+    :try_start_2
     instance-of v0, v4, Llibs/yi0;
 
     .line 70
@@ -217,7 +217,7 @@
     const/4 v5, 0x0
 
     .line 72
-    if-eqz v0, :cond_50
+    if-eqz v0, :cond_3
 
     .line 73
     .line 74
@@ -233,15 +233,15 @@
     .line 78
     .line 79
     .line 80
-    goto :goto_5a
+    goto :goto_2
 
     .line 81
-    :cond_50
+    :cond_3
     instance-of v0, v4, Llibs/yu0;
 
     .line 82
     .line 83
-    if-eqz v0, :cond_5a
+    if-eqz v0, :cond_4
 
     .line 84
     .line 85
@@ -253,15 +253,15 @@
     .line 87
     .line 88
     invoke-virtual {v0, p1, v5}, Llibs/yu0;->Key(Ljava/lang/String;Z)V
-    :try_end_5a
-    .catchall {:try_start_44 .. :try_end_5a} :catchall_5a
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 89
     .line 90
     .line 91
-    :catchall_5a
-    :cond_5a
-    :goto_5a
+    :catchall_1
+    :cond_4
+    :goto_2
     new-instance v0, Llibs/wh;
 
     .line 92

@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic a(Landroid/hardware/usb/UsbDeviceConnection;Landroid/hardware/usb/UsbEndpoint;[BIII)I
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-virtual/range {p0 .. p5}, Landroid/hardware/usb/UsbDeviceConnection;->bulkTransfer(Landroid/hardware/usb/UsbEndpoint;[BIII)I
@@ -20,7 +20,7 @@
 .end method
 
 .method public static bridge synthetic b(Landroid/view/accessibility/AccessibilityNodeInfo;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->getViewIdResourceName()Ljava/lang/String;
@@ -35,7 +35,7 @@
 .end method
 
 .method public static bridge synthetic c()V
-    .registers 0
+    .locals 0
 
     .line 1
     invoke-static {}, Landroid/os/Trace;->endSection()V
@@ -47,7 +47,7 @@
 .end method
 
 .method public static bridge synthetic d(Ljava/lang/String;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-static {p0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V

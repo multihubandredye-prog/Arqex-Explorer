@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/cc3;-><init>()V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/String;
@@ -166,7 +166,7 @@
 .end method
 
 .method public final x(II[B)I
-    .registers 10
+    .locals 6
 
     .line 1
     iget p2, p0, Llibs/cc3;->Victor:I
@@ -196,12 +196,12 @@
     const/4 v1, 0x0
 
     .line 12
-    :goto_b
+    :goto_0
     iget v4, p0, Llibs/cc3;->Victor:I
 
     .line 13
     .line 14
-    if-ge v1, v4, :cond_5e
+    if-ge v1, v4, :cond_1
 
     .line 15
     .line 16
@@ -343,7 +343,7 @@
     const/4 v5, 0x4
 
     .line 84
-    if-lt v3, v5, :cond_5a
+    if-lt v3, v5, :cond_0
 
     .line 85
     .line 86
@@ -356,7 +356,7 @@
     .line 89
     .line 90
     .line 91
-    :cond_5a
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
     .line 92
@@ -364,23 +364,23 @@
     move-object v3, v4
 
     .line 94
-    goto :goto_b
+    goto :goto_0
 
     .line 95
-    :cond_5e
-    if-nez v4, :cond_61
+    :cond_1
+    if-nez v4, :cond_2
 
     .line 96
     .line 97
-    goto :goto_63
+    goto :goto_1
 
     .line 98
-    :cond_61
+    :cond_2
     iget-object p2, v3, Llibs/d02;->a:Ljava/lang/String;
 
     .line 99
     .line 100
-    :goto_63
+    :goto_1
     iput-object p2, p0, Llibs/e02;->Zulu:Ljava/lang/String;
 
     .line 101
@@ -392,7 +392,7 @@
 .end method
 
 .method public final y([B)I
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x0

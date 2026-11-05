@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Double;Llibs/bq1;Ljava/util/LinkedHashMap;Ljava/util/HashMap;Ljava/util/LinkedHashMap;Ljava/util/ArrayList;)V
-    .registers 9
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,17 +43,17 @@
 
     .line 11
     .line 12
-    if-nez p5, :cond_f
+    if-nez p5, :cond_0
 
     .line 13
     .line 14
     const/4 p1, 0x0
 
     .line 15
-    goto :goto_13
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_0
     invoke-static {p5}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
 
     .line 17
@@ -62,7 +62,7 @@
     move-result-object p1
 
     .line 20
-    :goto_13
+    :goto_0
     iput-object p1, p0, Llibs/cq1;->f:Ljava/util/Map;
 
     .line 21
@@ -79,28 +79,28 @@
 
     .line 27
     .line 28
-    if-nez p7, :cond_1e
+    if-nez p7, :cond_1
 
     .line 29
     .line 30
-    goto :goto_21
+    goto :goto_1
 
     .line 31
-    :cond_1e
+    :cond_1
     invoke-static {p7}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
 
     .line 32
     .line 33
     .line 34
-    :goto_21
-    if-nez p8, :cond_24
+    :goto_1
+    if-nez p8, :cond_2
 
     .line 35
     .line 36
     return-void
 
     .line 37
-    :cond_24
+    :cond_2
     invoke-static {p8}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     .line 38
@@ -112,37 +112,37 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
-    if-nez p1, :cond_3
+    if-nez p1, :cond_0
 
     .line 2
     .line 3
-    goto :goto_37
+    goto :goto_1
 
     .line 4
-    :cond_3
-    if-ne p1, p0, :cond_6
+    :cond_0
+    if-ne p1, p0, :cond_1
 
     .line 5
     .line 6
-    goto :goto_35
+    goto :goto_0
 
     .line 7
-    :cond_6
+    :cond_1
     instance-of v0, p1, Llibs/cq1;
 
     .line 8
     .line 9
-    if-nez v0, :cond_b
+    if-nez v0, :cond_2
 
     .line 10
     .line 11
-    goto :goto_37
+    goto :goto_1
 
     .line 12
-    :cond_b
+    :cond_2
     check-cast p1, Llibs/cq1;
 
     .line 13
@@ -167,18 +167,18 @@
 
     .line 23
     .line 24
-    if-nez v3, :cond_1c
+    if-nez v3, :cond_3
 
     .line 25
     .line 26
-    if-nez p1, :cond_37
+    if-nez p1, :cond_5
 
     .line 27
     .line 28
-    goto :goto_35
+    goto :goto_0
 
     .line 29
-    :cond_1c
+    :cond_3
     invoke-virtual {v3, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     .line 30
@@ -191,22 +191,22 @@
 
     .line 34
     .line 35
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_4
 
     .line 36
     .line 37
-    if-nez v3, :cond_29
+    if-nez v3, :cond_4
 
     .line 38
     .line 39
-    if-nez v2, :cond_37
+    if-nez v2, :cond_5
 
     .line 40
     .line 41
-    goto :goto_35
+    goto :goto_0
 
     .line 42
-    :cond_29
+    :cond_4
     invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     .line 43
@@ -219,34 +219,34 @@
 
     .line 47
     .line 48
-    if-eqz p1, :cond_39
+    if-eqz p1, :cond_6
 
     .line 49
     .line 50
-    if-nez v2, :cond_39
+    if-nez v2, :cond_6
 
     .line 51
     .line 52
-    if-nez v1, :cond_37
+    if-nez v1, :cond_5
 
     .line 53
     .line 54
-    :goto_35
+    :goto_0
     const/4 p1, 0x1
 
     .line 55
     return p1
 
     .line 56
-    :cond_37
-    :goto_37
+    :cond_5
+    :goto_1
     const/4 p1, 0x0
 
     .line 57
     return p1
 
     .line 58
-    :cond_39
+    :cond_6
     invoke-virtual {v2, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     .line 59
@@ -268,7 +268,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 4
+    .locals 3
 
     .line 1
     const/4 v0, 0x4
@@ -334,7 +334,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     const-string v0, ", contentType: "

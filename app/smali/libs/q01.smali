@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public final a(Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-virtual {p0, p1}, Llibs/q01;->c(Ljava/lang/String;)Ljava/lang/String;
@@ -51,7 +51,7 @@
     move-result-object v0
 
     .line 5
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -61,7 +61,7 @@
     return-object p1
 
     .line 9
-    :cond_8
+    :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     .line 10
@@ -111,7 +111,7 @@
 .end method
 
 .method public final b(Ljava/lang/String;Z)Ljava/lang/String;
-    .registers 6
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -123,7 +123,7 @@
     .line 4
     .line 5
     .line 6
-    if-eqz p2, :cond_b
+    if-eqz p2, :cond_0
 
     .line 7
     .line 8
@@ -135,7 +135,7 @@
     move-result-object p1
 
     .line 12
-    :cond_b
+    :cond_0
     iget-object p2, p0, Llibs/q01;->X:Ljava/util/TreeMap;
 
     .line 13
@@ -156,7 +156,7 @@
 
     .line 21
     .line 22
-    if-nez p2, :cond_27
+    if-nez p2, :cond_1
 
     .line 23
     .line 24
@@ -190,7 +190,7 @@
     return-object p1
 
     .line 40
-    :cond_27
+    :cond_1
     invoke-interface {p2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     .line 41
@@ -199,8 +199,8 @@
     move-result-object p2
 
     .line 44
-    :cond_2b
-    :goto_2b
+    :cond_2
+    :goto_0
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     .line 45
@@ -209,7 +209,7 @@
     move-result v2
 
     .line 48
-    if-eqz v2, :cond_4c
+    if-eqz v2, :cond_3
 
     .line 49
     .line 50
@@ -248,7 +248,7 @@
     move-result v2
 
     .line 69
-    if-eqz v2, :cond_2b
+    if-eqz v2, :cond_2
 
     .line 70
     .line 71
@@ -261,10 +261,10 @@
     .line 74
     .line 75
     .line 76
-    goto :goto_2b
+    goto :goto_0
 
     .line 77
-    :cond_4c
+    :cond_3
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 78
@@ -277,7 +277,7 @@
 .end method
 
 .method public final c(Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/q01;->X:Ljava/util/TreeMap;
@@ -296,7 +296,7 @@
 
     .line 8
     .line 9
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_1
 
     .line 10
     .line 11
@@ -308,14 +308,14 @@
     move-result v0
 
     .line 15
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 16
     .line 17
-    goto :goto_18
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     invoke-interface {p1}, Ljava/util/SortedSet;->first()Ljava/lang/Object;
 
     .line 19
@@ -331,8 +331,8 @@
     return-object p1
 
     .line 25
-    :cond_18
-    :goto_18
+    :cond_1
+    :goto_0
     const/4 p1, 0x0
 
     .line 26
@@ -340,7 +340,7 @@
 .end method
 
 .method public final clear()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/q01;->X:Ljava/util/TreeMap;
@@ -356,7 +356,7 @@
 .end method
 
 .method public final containsKey(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/q01;->X:Ljava/util/TreeMap;
@@ -375,7 +375,7 @@
 .end method
 
 .method public final containsValue(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/q01;->X:Ljava/util/TreeMap;
@@ -398,7 +398,7 @@
     move-result-object v0
 
     .line 11
-    :cond_a
+    :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 12
@@ -407,7 +407,7 @@
     move-result v1
 
     .line 15
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_1
 
     .line 16
     .line 17
@@ -431,7 +431,7 @@
     move-result v1
 
     .line 27
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_0
 
     .line 28
     .line 29
@@ -441,7 +441,7 @@
     return p1
 
     .line 31
-    :cond_1e
+    :cond_1
     const/4 p1, 0x0
 
     .line 32
@@ -449,7 +449,7 @@
 .end method
 
 .method public final d()Llibs/q01;
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Llibs/q01;
@@ -481,8 +481,8 @@
     move-result-object v1
 
     .line 16
-    :cond_f
-    :goto_f
+    :cond_0
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 17
@@ -491,7 +491,7 @@
     move-result v2
 
     .line 20
-    if-eqz v2, :cond_40
+    if-eqz v2, :cond_2
 
     .line 21
     .line 22
@@ -531,7 +531,7 @@
     move-result v4
 
     .line 40
-    if-nez v4, :cond_31
+    if-nez v4, :cond_1
 
     .line 41
     .line 42
@@ -547,11 +547,11 @@
     move-result v4
 
     .line 48
-    if-eqz v4, :cond_f
+    if-eqz v4, :cond_0
 
     .line 49
     .line 50
-    :cond_31
+    :cond_1
     invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     .line 51
@@ -580,15 +580,15 @@
 
     .line 63
     .line 64
-    goto :goto_f
+    goto :goto_0
 
     .line 65
-    :cond_40
+    :cond_2
     return-object v0
 .end method
 
 .method public final entrySet()Ljava/util/Set;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/q01;->X:Ljava/util/TreeMap;
@@ -607,10 +607,10 @@
 .end method
 
 .method public final f(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
-    .registers 6
+    .locals 2
 
     .line 1
-    if-eqz p3, :cond_6
+    if-eqz p3, :cond_0
 
     .line 2
     .line 3
@@ -622,7 +622,7 @@
     move-result-object p1
 
     .line 7
-    :cond_6
+    :cond_0
     iget-object v0, p0, Llibs/q01;->X:Ljava/util/TreeMap;
 
     .line 8
@@ -639,7 +639,7 @@
 
     .line 14
     .line 15
-    if-nez v1, :cond_18
+    if-nez v1, :cond_1
 
     .line 16
     .line 17
@@ -657,12 +657,12 @@
     .line 23
     .line 24
     .line 25
-    :cond_18
-    if-eqz p2, :cond_23
+    :cond_1
+    if-eqz p2, :cond_3
 
     .line 26
     .line 27
-    if-eqz p3, :cond_20
+    if-eqz p3, :cond_2
 
     .line 28
     .line 29
@@ -674,25 +674,25 @@
     move-result-object p2
 
     .line 33
-    :cond_20
+    :cond_2
     invoke-interface {v1, p2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     .line 34
     .line 35
     .line 36
-    :cond_23
+    :cond_3
     return-object p2
 .end method
 
 .method public final g(Ljava/util/Map;Z)V
-    .registers 8
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/q01;->X:Ljava/util/TreeMap;
 
     .line 2
     .line 3
-    if-eqz p2, :cond_41
+    if-eqz p2, :cond_2
 
     .line 4
     .line 5
@@ -712,7 +712,7 @@
     move-result-object p2
 
     .line 13
-    :goto_c
+    :goto_0
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     .line 14
@@ -721,7 +721,7 @@
     move-result v1
 
     .line 17
-    if-eqz v1, :cond_40
+    if-eqz v1, :cond_1
 
     .line 18
     .line 19
@@ -769,7 +769,7 @@
     move-result-object v2
 
     .line 41
-    :goto_28
+    :goto_1
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     .line 42
@@ -778,7 +778,7 @@
     move-result v3
 
     .line 45
-    if-eqz v3, :cond_39
+    if-eqz v3, :cond_0
 
     .line 46
     .line 47
@@ -802,10 +802,10 @@
     .line 55
     .line 56
     .line 57
-    goto :goto_28
+    goto :goto_1
 
     .line 58
-    :cond_39
+    :cond_0
     invoke-virtual {v0, v1}, Ljava/util/TreeMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 59
@@ -818,14 +818,14 @@
 
     .line 63
     .line 64
-    goto :goto_c
+    goto :goto_0
 
     .line 65
-    :cond_40
+    :cond_1
     return-void
 
     .line 66
-    :cond_41
+    :cond_2
     invoke-virtual {v0, p1}, Ljava/util/TreeMap;->putAll(Ljava/util/Map;)V
 
     .line 67
@@ -835,7 +835,7 @@
 .end method
 
 .method public final get(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/q01;->X:Ljava/util/TreeMap;
@@ -858,7 +858,7 @@
 .end method
 
 .method public final isEmpty()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/q01;->X:Ljava/util/TreeMap;
@@ -877,7 +877,7 @@
 .end method
 
 .method public final keySet()Ljava/util/Set;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/q01;->X:Ljava/util/TreeMap;
@@ -896,7 +896,7 @@
 .end method
 
 .method public final put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
 
     .line 1
     check-cast p1, Ljava/lang/String;
@@ -927,7 +927,7 @@
 .end method
 
 .method public final putAll(Ljava/util/Map;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/q01;->X:Ljava/util/TreeMap;
@@ -943,7 +943,7 @@
 .end method
 
 .method public final remove(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/q01;->X:Ljava/util/TreeMap;
@@ -966,7 +966,7 @@
 .end method
 
 .method public final size()I
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/q01;->X:Ljava/util/TreeMap;
@@ -992,7 +992,7 @@
     const/4 v2, 0x0
 
     .line 12
-    :goto_b
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 13
@@ -1001,7 +1001,7 @@
     move-result v3
 
     .line 16
-    if-eqz v3, :cond_23
+    if-eqz v3, :cond_0
 
     .line 17
     .line 18
@@ -1040,15 +1040,15 @@
     add-int/2addr v2, v3
 
     .line 35
-    goto :goto_b
+    goto :goto_0
 
     .line 36
-    :cond_23
+    :cond_0
     return v2
 .end method
 
 .method public final values()Ljava/util/Collection;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/q01;->X:Ljava/util/TreeMap;

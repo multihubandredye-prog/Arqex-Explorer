@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/_h;Ljava/net/Proxy;Ljava/net/InetSocketAddress;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -21,7 +21,7 @@
     .line 2
     .line 3
     .line 4
-    if-eqz p3, :cond_c
+    if-eqz p3, :cond_0
 
     .line 5
     .line 6
@@ -40,7 +40,7 @@
     return-void
 
     .line 13
-    :cond_c
+    :cond_0
     const-string p1, "inetSocketAddress == null"
 
     .line 14
@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public final a()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/yp2;->a:Llibs/_h;
@@ -70,7 +70,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -90,7 +90,7 @@
 
     .line 14
     .line 15
-    if-ne v0, v1, :cond_12
+    if-ne v0, v1, :cond_0
 
     .line 16
     .line 17
@@ -100,7 +100,7 @@
     return v0
 
     .line 19
-    :cond_12
+    :cond_0
     const/4 v0, 0x0
 
     .line 20
@@ -108,14 +108,14 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     instance-of v0, p1, Llibs/yp2;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -139,7 +139,7 @@
     move-result v0
 
     .line 15
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_0
 
     .line 16
     .line 17
@@ -159,7 +159,7 @@
     move-result v0
 
     .line 25
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_0
 
     .line 26
     .line 27
@@ -179,7 +179,7 @@
     move-result p1
 
     .line 35
-    if-eqz p1, :cond_26
+    if-eqz p1, :cond_0
 
     .line 36
     .line 37
@@ -189,7 +189,7 @@
     return p1
 
     .line 39
-    :cond_26
+    :cond_0
     const/4 p1, 0x0
 
     .line 40
@@ -197,7 +197,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/yp2;->a:Llibs/_h;
@@ -258,7 +258,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

@@ -5,14 +5,14 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     const/16 v0, 0xe0
 
     .line 2
     .line 3
-    if-eq p1, v0, :cond_1e
+    if-eq p1, v0, :cond_1
 
     .line 4
     .line 5
@@ -20,7 +20,7 @@
 
     .line 6
     .line 7
-    if-eq p1, v0, :cond_1e
+    if-eq p1, v0, :cond_1
 
     .line 8
     .line 9
@@ -28,7 +28,7 @@
 
     .line 10
     .line 11
-    if-eq p1, v0, :cond_1e
+    if-eq p1, v0, :cond_1
 
     .line 12
     .line 13
@@ -36,14 +36,14 @@
 
     .line 14
     .line 15
-    if-ne p1, v0, :cond_11
+    if-ne p1, v0, :cond_0
 
     .line 16
     .line 17
-    goto :goto_1e
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     const-string v0, "\'bitLength\' "
 
     .line 19
@@ -71,8 +71,8 @@
     throw p1
 
     .line 31
-    :cond_1e
-    :goto_1e
+    :cond_1
+    :goto_0
     invoke-direct {p0, p1}, Llibs/pe1;-><init>(I)V
 
     .line 32
@@ -82,7 +82,7 @@
 .end method
 
 .method public constructor <init>(Llibs/ys2;)V
-    .registers 2
+    .locals 0
 
     .line 35
     invoke-direct {p0, p1}, Llibs/pe1;-><init>(Llibs/pe1;)V
@@ -93,7 +93,7 @@
 
 # virtual methods
 .method public final b()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -130,7 +130,7 @@
 .end method
 
 .method public final c(I[B)I
-    .registers 7
+    .locals 4
 
     .line 1
     const/4 v0, 0x1

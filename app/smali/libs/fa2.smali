@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/cg;)V
-    .registers 5
+    .locals 3
 
     .line 20
     new-instance v0, Llibs/s73;
@@ -26,7 +26,7 @@
 .end method
 
 .method public constructor <init>(Llibs/cg;Llibs/eg;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/yj;-><init>()V
@@ -71,7 +71,7 @@
 
 # virtual methods
 .method public final a(I[B)I
-    .registers 8
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/yj;->d:Llibs/cg;
@@ -101,11 +101,11 @@
     const/4 v4, 0x0
 
     .line 14
-    if-eqz v1, :cond_40
+    if-eqz v1, :cond_2
 
     .line 15
     .line 16
-    if-ne v2, v0, :cond_2c
+    if-ne v2, v0, :cond_1
 
     .line 17
     .line 18
@@ -119,7 +119,7 @@
     array-length v1, p2
 
     .line 22
-    if-gt v0, v1, :cond_23
+    if-gt v0, v1, :cond_0
 
     .line 23
     .line 24
@@ -146,10 +146,10 @@
     const/4 v2, 0x0
 
     .line 35
-    goto :goto_2d
+    goto :goto_0
 
     .line 36
-    :cond_23
+    :cond_0
     invoke-virtual {p0}, Llibs/yj;->f()V
 
     .line 37
@@ -167,11 +167,11 @@
     return v4
 
     .line 45
-    :cond_2c
+    :cond_1
     const/4 v0, 0x0
 
     .line 46
-    :goto_2d
+    :goto_0
     iget-object v1, p0, Llibs/yj;->a:[B
 
     .line 47
@@ -211,8 +211,8 @@
     return p1
 
     .line 65
-    :cond_40
-    if-ne v2, v0, :cond_61
+    :cond_2
+    if-ne v2, v0, :cond_3
 
     .line 66
     .line 67
@@ -236,7 +236,7 @@
 
     .line 76
     .line 77
-    :try_start_4c
+    :try_start_0
     iget-object v1, p0, Llibs/yj;->a:[B
 
     .line 78
@@ -257,8 +257,8 @@
     .line 85
     .line 86
     invoke-static {v1, v4, p2, p1, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-    :try_end_58
-    .catchall {:try_start_4c .. :try_end_58} :catchall_5c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 87
     .line 88
@@ -271,7 +271,7 @@
     return v0
 
     .line 93
-    :catchall_5c
+    :catchall_0
     move-exception p1
 
     .line 94
@@ -283,7 +283,7 @@
     throw p1
 
     .line 98
-    :cond_61
+    :cond_3
     invoke-virtual {p0}, Llibs/yj;->f()V
 
     .line 99
@@ -302,7 +302,7 @@
 .end method
 
 .method public final b(I)I
-    .registers 4
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/yj;->b:I
@@ -323,7 +323,7 @@
 
     .line 8
     .line 9
-    if-nez v1, :cond_11
+    if-nez v1, :cond_1
 
     .line 10
     .line 11
@@ -331,33 +331,33 @@
 
     .line 12
     .line 13
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_0
 
     .line 14
     .line 15
     array-length v0, v0
 
     .line 16
-    :goto_f
+    :goto_0
     add-int/2addr p1, v0
 
     .line 17
-    :cond_10
+    :cond_0
     return p1
 
     .line 18
-    :cond_11
+    :cond_1
     sub-int/2addr p1, v1
 
     .line 19
     array-length v0, v0
 
     .line 20
-    goto :goto_f
+    goto :goto_0
 .end method
 
 .method public final c(I)I
-    .registers 4
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/yj;->b:I
@@ -378,7 +378,7 @@
 
     .line 8
     .line 9
-    if-nez v1, :cond_12
+    if-nez v1, :cond_0
 
     .line 10
     .line 11
@@ -402,7 +402,7 @@
     return p1
 
     .line 19
-    :cond_12
+    :cond_0
     sub-int/2addr p1, v1
 
     .line 20
@@ -410,7 +410,7 @@
 .end method
 
 .method public final d(ZLlibs/et;)V
-    .registers 5
+    .locals 2
 
     .line 1
     iput-boolean p1, p0, Llibs/yj;->c:Z
@@ -430,7 +430,7 @@
 
     .line 9
     .line 10
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 11
     .line 12
@@ -463,7 +463,7 @@
     return-void
 
     .line 27
-    :cond_1a
+    :cond_0
     const/4 v0, 0x0
 
     .line 28
@@ -485,13 +485,13 @@
 .end method
 
 .method public final e(III[B[B)I
-    .registers 11
+    .locals 5
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-ltz p2, :cond_4e
+    if-ltz p2, :cond_3
 
     .line 3
     .line 4
@@ -515,7 +515,7 @@
     move-result v2
 
     .line 14
-    if-lez v2, :cond_1a
+    if-lez v2, :cond_1
 
     .line 15
     .line 16
@@ -525,14 +525,14 @@
     array-length v3, p5
 
     .line 18
-    if-gt v2, v3, :cond_14
+    if-gt v2, v3, :cond_0
 
     .line 19
     .line 20
-    goto :goto_1a
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_0
     const-string p1, "output buffer too short"
 
     .line 22
@@ -545,8 +545,8 @@
     return v0
 
     .line 27
-    :cond_1a
-    :goto_1a
+    :cond_1
+    :goto_0
     iget-object v2, p0, Llibs/yj;->a:[B
 
     .line 28
@@ -561,7 +561,7 @@
     sub-int/2addr v3, v4
 
     .line 33
-    if-le p2, v3, :cond_43
+    if-le p2, v3, :cond_2
 
     .line 34
     .line 35
@@ -599,7 +599,7 @@
     move v0, v2
 
     .line 51
-    :goto_32
+    :goto_1
     iget-object v2, p0, Llibs/yj;->a:[B
 
     .line 52
@@ -607,7 +607,7 @@
     array-length v3, v2
 
     .line 54
-    if-le p2, v3, :cond_43
+    if-le p2, v3, :cond_2
 
     .line 55
     .line 56
@@ -636,10 +636,10 @@
     add-int/2addr p1, v1
 
     .line 67
-    goto :goto_32
+    goto :goto_1
 
     .line 68
-    :cond_43
+    :cond_2
     iget p3, p0, Llibs/yj;->b:I
 
     .line 69
@@ -663,7 +663,7 @@
     return v0
 
     .line 79
-    :cond_4e
+    :cond_3
     const-string p1, "Can\'t have a negative input length!"
 
     .line 80

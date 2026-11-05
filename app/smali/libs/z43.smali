@@ -32,7 +32,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/widgets/MiCombo;Lcom/mixplorer/widgets/MiEditText;ZLjava/lang/String;Ljava/util/LinkedHashSet;Landroid/app/Activity;Ljava/lang/String;Llibs/v1;Ljava/util/List;Llibs/r90;Llibs/$d;)V
-    .registers 12
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -90,7 +90,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 13
+    .locals 11
 
     .line 1
     new-instance p1, Ljava/lang/StringBuilder;

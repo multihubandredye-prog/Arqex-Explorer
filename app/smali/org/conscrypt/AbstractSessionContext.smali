@@ -33,7 +33,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -95,7 +95,7 @@
 .end method
 
 .method public static bridge synthetic a(Lorg/conscrypt/AbstractSessionContext;)I
-    .registers 1
+    .locals 0
 
     .line 1
     iget p0, p0, Lorg/conscrypt/AbstractSessionContext;->maximumSize:I
@@ -106,7 +106,7 @@
 .end method
 
 .method private freeNative()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/AbstractSessionContext;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
@@ -126,7 +126,7 @@
     .line 8
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     invoke-direct {p0}, Lorg/conscrypt/AbstractSessionContext;->isValid()Z
 
     .line 11
@@ -135,7 +135,7 @@
     move-result v0
 
     .line 14
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 15
     .line 16
@@ -152,24 +152,24 @@
     .line 21
     .line 22
     invoke-static {v0, v1, p0}, Lorg/conscrypt/NativeCrypto;->SSL_CTX_free(JLorg/conscrypt/AbstractSessionContext;)V
-    :try_end_18
-    .catchall {:try_start_9 .. :try_end_18} :catchall_19
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 23
     .line 24
     .line 25
-    goto :goto_1b
+    goto :goto_0
 
     .line 26
-    :catchall_19
+    :catchall_0
     move-exception v0
 
     .line 27
-    goto :goto_25
+    goto :goto_1
 
     .line 28
-    :cond_1b
-    :goto_1b
+    :cond_0
+    :goto_0
     iget-object v0, p0, Lorg/conscrypt/AbstractSessionContext;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     .line 29
@@ -190,7 +190,7 @@
     return-void
 
     .line 38
-    :goto_25
+    :goto_1
     iget-object v1, p0, Lorg/conscrypt/AbstractSessionContext;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     .line 39
@@ -212,7 +212,7 @@
 .end method
 
 .method private isValid()Z
-    .registers 6
+    .locals 5
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/AbstractSessionContext;->sslCtxNativePointer:J
@@ -227,7 +227,7 @@
 
     .line 6
     .line 7
-    if-eqz v4, :cond_a
+    if-eqz v4, :cond_0
 
     .line 8
     .line 9
@@ -237,7 +237,7 @@
     return v0
 
     .line 11
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
     .line 12
@@ -245,7 +245,7 @@
 .end method
 
 .method private setTimeout(I)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/AbstractSessionContext;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
@@ -265,7 +265,7 @@
     .line 8
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     invoke-direct {p0}, Lorg/conscrypt/AbstractSessionContext;->isValid()Z
 
     .line 11
@@ -274,7 +274,7 @@
     move-result v0
 
     .line 14
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 15
     .line 16
@@ -286,24 +286,24 @@
 
     .line 19
     invoke-static {v0, v1, p0, v2, v3}, Lorg/conscrypt/NativeCrypto;->SSL_CTX_set_timeout(JLorg/conscrypt/AbstractSessionContext;J)J
-    :try_end_15
-    .catchall {:try_start_9 .. :try_end_15} :catchall_16
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 20
     .line 21
     .line 22
-    goto :goto_18
+    goto :goto_0
 
     .line 23
-    :catchall_16
+    :catchall_0
     move-exception p1
 
     .line 24
-    goto :goto_22
+    goto :goto_1
 
     .line 25
-    :cond_18
-    :goto_18
+    :cond_0
+    :goto_0
     iget-object p1, p0, Lorg/conscrypt/AbstractSessionContext;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     .line 26
@@ -324,7 +324,7 @@
     return-void
 
     .line 35
-    :goto_22
+    :goto_1
     iget-object v0, p0, Lorg/conscrypt/AbstractSessionContext;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     .line 36
@@ -346,7 +346,7 @@
 .end method
 
 .method private trimToSize()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/AbstractSessionContext;->sessions:Ljava/util/Map;
@@ -356,7 +356,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Lorg/conscrypt/AbstractSessionContext;->sessions:Ljava/util/Map;
 
     .line 5
@@ -373,7 +373,7 @@
 
     .line 11
     .line 12
-    if-le v1, v2, :cond_2e
+    if-le v1, v2, :cond_0
 
     .line 13
     .line 14
@@ -404,12 +404,12 @@
     move-result-object v2
 
     .line 27
-    :goto_1a
+    :goto_0
     add-int/lit8 v3, v1, -0x1
 
     .line 28
     .line 29
-    if-lez v1, :cond_2e
+    if-lez v1, :cond_0
 
     .line 30
     .line 31
@@ -438,44 +438,44 @@
     move v1, v3
 
     .line 44
-    goto :goto_1a
+    goto :goto_0
 
     .line 45
-    :catchall_2c
+    :catchall_0
     move-exception v1
 
     .line 46
-    goto :goto_30
+    goto :goto_1
 
     .line 47
-    :cond_2e
+    :cond_0
     monitor-exit v0
 
     .line 48
     return-void
 
     .line 49
-    :goto_30
+    :goto_1
     monitor-exit v0
-    :try_end_31
-    .catchall {:try_start_3 .. :try_end_31} :catchall_2c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 50
-    goto :goto_33
+    goto :goto_3
 
     .line 51
-    :goto_32
+    :goto_2
     throw v1
 
     .line 52
-    :goto_33
-    goto :goto_32
+    :goto_3
+    goto :goto_2
 .end method
 
 
 # virtual methods
 .method public final cacheSession(Lorg/conscrypt/NativeSslSession;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-virtual {p1}, Lorg/conscrypt/NativeSslSession;->getId()[B
@@ -486,21 +486,21 @@
     move-result-object v0
 
     .line 5
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_2
 
     .line 6
     .line 7
     array-length v1, v0
 
     .line 8
-    if-nez v1, :cond_a
+    if-nez v1, :cond_0
 
     .line 9
     .line 10
-    goto :goto_34
+    goto :goto_2
 
     .line 11
-    :cond_a
+    :cond_0
     iget-object v1, p0, Lorg/conscrypt/AbstractSessionContext;->sessions:Ljava/util/Map;
 
     .line 12
@@ -508,7 +508,7 @@
     monitor-enter v1
 
     .line 14
-    :try_start_d
+    :try_start_0
     new-instance v2, Lorg/conscrypt/ByteArray;
 
     .line 15
@@ -530,7 +530,7 @@
     move-result v0
 
     .line 25
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_1
 
     .line 26
     .line 27
@@ -555,18 +555,18 @@
     .line 36
     .line 37
     .line 38
-    goto :goto_28
+    goto :goto_0
 
     .line 39
-    :catchall_26
+    :catchall_0
     move-exception p1
 
     .line 40
-    goto :goto_32
+    goto :goto_1
 
     .line 41
-    :cond_28
-    :goto_28
+    :cond_1
+    :goto_0
     invoke-virtual {p0, p1}, Lorg/conscrypt/AbstractSessionContext;->onBeforeAddSession(Lorg/conscrypt/NativeSslSession;)V
 
     .line 42
@@ -587,28 +587,28 @@
     return-void
 
     .line 51
-    :goto_32
+    :goto_1
     monitor-exit v1
-    :try_end_33
-    .catchall {:try_start_d .. :try_end_33} :catchall_26
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 52
     throw p1
 
     .line 53
-    :cond_34
-    :goto_34
+    :cond_2
+    :goto_2
     return-void
 .end method
 
 .method public finalize()V
-    .registers 2
+    .locals 1
 
     .line 1
     :try_start_0
     invoke-direct {p0}, Lorg/conscrypt/AbstractSessionContext;->freeNative()V
-    :try_end_3
-    .catchall {:try_start_0 .. :try_end_3} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 2
     .line 3
@@ -621,7 +621,7 @@
     return-void
 
     .line 8
-    :catchall_7
+    :catchall_0
     move-exception v0
 
     .line 9
@@ -634,7 +634,7 @@
 .end method
 
 .method public final getIds()Ljava/util/Enumeration;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -651,7 +651,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Lorg/conscrypt/AbstractSessionContext;->sessions:Ljava/util/Map;
 
     .line 5
@@ -700,8 +700,8 @@
 
     .line 27
     monitor-exit v0
-    :try_end_1b
-    .catchall {:try_start_3 .. :try_end_1b} :catchall_21
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 28
     new-instance v0, Lorg/conscrypt/AbstractSessionContext$2;
@@ -716,27 +716,27 @@
     return-object v0
 
     .line 34
-    :catchall_21
+    :catchall_0
     move-exception v1
 
     .line 35
-    :try_start_22
+    :try_start_1
     monitor-exit v0
-    :try_end_23
-    .catchall {:try_start_22 .. :try_end_23} :catchall_21
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 36
     throw v1
 .end method
 
 .method public final getSession([B)Ljavax/net/ssl/SSLSession;
-    .registers 5
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-eqz p1, :cond_25
+    if-eqz p1, :cond_1
 
     .line 3
     .line 4
@@ -756,7 +756,7 @@
     monitor-enter p1
 
     .line 12
-    :try_start_b
+    :try_start_0
     iget-object v2, p0, Lorg/conscrypt/AbstractSessionContext;->sessions:Ljava/util/Map;
 
     .line 13
@@ -774,11 +774,11 @@
     .line 19
     .line 20
     monitor-exit p1
-    :try_end_14
-    .catchall {:try_start_b .. :try_end_14} :catchall_22
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 21
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_0
 
     .line 22
     .line 23
@@ -790,7 +790,7 @@
     move-result p1
 
     .line 27
-    if-eqz p1, :cond_21
+    if-eqz p1, :cond_0
 
     .line 28
     .line 29
@@ -805,24 +805,24 @@
     return-object p1
 
     .line 34
-    :cond_21
+    :cond_0
     return-object v0
 
     .line 35
-    :catchall_22
+    :catchall_0
     move-exception v0
 
     .line 36
-    :try_start_23
+    :try_start_1
     monitor-exit p1
-    :try_end_24
-    .catchall {:try_start_23 .. :try_end_24} :catchall_22
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 37
     throw v0
 
     .line 38
-    :cond_25
+    :cond_1
     const-string p1, "sessionId"
 
     .line 39
@@ -836,7 +836,7 @@
 .end method
 
 .method public final getSessionCacheSize()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/AbstractSessionContext;->maximumSize:I
@@ -847,10 +847,10 @@
 .end method
 
 .method public final getSessionFromCache([B)Lorg/conscrypt/NativeSslSession;
-    .registers 5
+    .locals 3
 
     .line 1
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     .line 2
     .line 3
@@ -860,7 +860,7 @@
     return-object p1
 
     .line 5
-    :cond_4
+    :cond_0
     iget-object v0, p0, Lorg/conscrypt/AbstractSessionContext;->sessions:Ljava/util/Map;
 
     .line 6
@@ -868,7 +868,7 @@
     monitor-enter v0
 
     .line 8
-    :try_start_7
+    :try_start_0
     iget-object v1, p0, Lorg/conscrypt/AbstractSessionContext;->sessions:Ljava/util/Map;
 
     .line 9
@@ -895,11 +895,11 @@
     .line 20
     .line 21
     monitor-exit v0
-    :try_end_15
-    .catchall {:try_start_7 .. :try_end_15} :catchall_2c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 22
-    if-eqz v1, :cond_27
+    if-eqz v1, :cond_2
 
     .line 23
     .line 24
@@ -911,7 +911,7 @@
     move-result v0
 
     .line 28
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_2
 
     .line 29
     .line 30
@@ -923,7 +923,7 @@
     move-result p1
 
     .line 34
-    if-eqz p1, :cond_26
+    if-eqz p1, :cond_1
 
     .line 35
     .line 36
@@ -932,11 +932,11 @@
     .line 37
     .line 38
     .line 39
-    :cond_26
+    :cond_1
     return-object v1
 
     .line 40
-    :cond_27
+    :cond_2
     invoke-virtual {p0, p1}, Lorg/conscrypt/AbstractSessionContext;->getSessionFromPersistentCache([B)Lorg/conscrypt/NativeSslSession;
 
     .line 41
@@ -948,14 +948,14 @@
     return-object p1
 
     .line 45
-    :catchall_2c
+    :catchall_0
     move-exception p1
 
     .line 46
-    :try_start_2d
+    :try_start_1
     monitor-exit v0
-    :try_end_2e
-    .catchall {:try_start_2d .. :try_end_2e} :catchall_2c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 47
     throw p1
@@ -965,7 +965,7 @@
 .end method
 
 .method public final getSessionTimeout()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/AbstractSessionContext;->timeout:I
@@ -976,7 +976,7 @@
 .end method
 
 .method public initSpake(Lorg/conscrypt/SSLParametersImpl;)V
-    .registers 11
+    .locals 9
 
     .line 1
     invoke-virtual {p1}, Lorg/conscrypt/SSLParametersImpl;->getSpake2PlusKeyManager()Lorg/conscrypt/Spake2PlusKeyManager;
@@ -1052,7 +1052,7 @@
     .line 36
     .line 37
     .line 38
-    :try_start_25
+    :try_start_0
     invoke-direct {p0}, Lorg/conscrypt/AbstractSessionContext;->isValid()Z
 
     .line 39
@@ -1061,7 +1061,7 @@
     move-result p1
 
     .line 42
-    if-eqz p1, :cond_35
+    if-eqz p1, :cond_0
 
     .line 43
     .line 44
@@ -1073,27 +1073,27 @@
 
     .line 47
     invoke-static/range {v0 .. v8}, Lorg/conscrypt/NativeCrypto;->SSL_CTX_set_spake_credential([B[B[B[BZIJLorg/conscrypt/AbstractSessionContext;)V
-    :try_end_31
-    .catchall {:try_start_25 .. :try_end_31} :catchall_32
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 48
     .line 49
     .line 50
-    goto :goto_35
+    goto :goto_0
 
     .line 51
-    :catchall_32
+    :catchall_0
     move-exception v0
 
     .line 52
     move-object p1, v0
 
     .line 53
-    goto :goto_3f
+    goto :goto_1
 
     .line 54
-    :cond_35
-    :goto_35
+    :cond_0
+    :goto_0
     iget-object p1, p0, Lorg/conscrypt/AbstractSessionContext;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     .line 55
@@ -1114,7 +1114,7 @@
     return-void
 
     .line 64
-    :goto_3f
+    :goto_1
     iget-object v0, p0, Lorg/conscrypt/AbstractSessionContext;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     .line 65
@@ -1136,7 +1136,7 @@
 .end method
 
 .method public newSsl()J
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/AbstractSessionContext;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
@@ -1156,7 +1156,7 @@
     .line 8
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     invoke-direct {p0}, Lorg/conscrypt/AbstractSessionContext;->isValid()Z
 
     .line 11
@@ -1165,7 +1165,7 @@
     move-result v0
 
     .line 14
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_0
 
     .line 15
     .line 16
@@ -1179,8 +1179,8 @@
     .line 20
     .line 21
     move-result-wide v0
-    :try_end_15
-    .catchall {:try_start_9 .. :try_end_15} :catchall_1f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 22
     iget-object v2, p0, Lorg/conscrypt/AbstractSessionContext;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
@@ -1203,15 +1203,15 @@
     return-wide v0
 
     .line 32
-    :catchall_1f
+    :catchall_0
     move-exception v0
 
     .line 33
-    goto :goto_29
+    goto :goto_0
 
     .line 34
-    :cond_21
-    :try_start_21
+    :cond_0
+    :try_start_1
     new-instance v0, Ljavax/net/ssl/SSLException;
 
     .line 35
@@ -1226,11 +1226,11 @@
     .line 40
     .line 41
     throw v0
-    :try_end_29
-    .catchall {:try_start_21 .. :try_end_29} :catchall_1f
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 42
-    :goto_29
+    :goto_0
     iget-object v1, p0, Lorg/conscrypt/AbstractSessionContext;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     .line 43
@@ -1258,7 +1258,7 @@
 .end method
 
 .method public final removeSession(Lorg/conscrypt/NativeSslSession;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-virtual {p1}, Lorg/conscrypt/NativeSslSession;->getId()[B
@@ -1269,21 +1269,21 @@
     move-result-object v0
 
     .line 5
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1
 
     .line 6
     .line 7
     array-length v1, v0
 
     .line 8
-    if-nez v1, :cond_a
+    if-nez v1, :cond_0
 
     .line 9
     .line 10
-    goto :goto_1f
+    goto :goto_0
 
     .line 11
-    :cond_a
+    :cond_0
     invoke-virtual {p0, p1}, Lorg/conscrypt/AbstractSessionContext;->onBeforeRemoveSession(Lorg/conscrypt/NativeSslSession;)V
 
     .line 12
@@ -1305,7 +1305,7 @@
     monitor-enter v0
 
     .line 22
-    :try_start_15
+    :try_start_0
     iget-object v1, p0, Lorg/conscrypt/AbstractSessionContext;->sessions:Ljava/util/Map;
 
     .line 23
@@ -1321,28 +1321,28 @@
     return-void
 
     .line 29
-    :catchall_1c
+    :catchall_0
     move-exception p1
 
     .line 30
     monitor-exit v0
-    :try_end_1e
-    .catchall {:try_start_15 .. :try_end_1e} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 31
     throw p1
 
     .line 32
-    :cond_1f
-    :goto_1f
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public final setSessionCacheSize(I)V
-    .registers 3
+    .locals 1
 
     .line 1
-    if-ltz p1, :cond_c
+    if-ltz p1, :cond_1
 
     .line 2
     .line 3
@@ -1354,7 +1354,7 @@
 
     .line 6
     .line 7
-    if-ge p1, v0, :cond_b
+    if-ge p1, v0, :cond_0
 
     .line 8
     .line 9
@@ -1363,11 +1363,11 @@
     .line 10
     .line 11
     .line 12
-    :cond_b
+    :cond_0
     return-void
 
     .line 13
-    :cond_c
+    :cond_1
     const-string p1, "size < 0"
 
     .line 14
@@ -1381,10 +1381,10 @@
 .end method
 
 .method public final setSessionTimeout(I)V
-    .registers 5
+    .locals 3
 
     .line 1
-    if-ltz p1, :cond_39
+    if-ltz p1, :cond_3
 
     .line 2
     .line 3
@@ -1395,25 +1395,25 @@
     monitor-enter v0
 
     .line 6
-    :try_start_5
+    :try_start_0
     iput p1, p0, Lorg/conscrypt/AbstractSessionContext;->timeout:I
 
     .line 7
     .line 8
-    if-lez p1, :cond_a
+    if-lez p1, :cond_0
 
     .line 9
     .line 10
-    goto :goto_d
+    goto :goto_0
 
     .line 11
-    :cond_a
+    :cond_0
     const p1, 0x7fffffff
 
     .line 12
     .line 13
     .line 14
-    :goto_d
+    :goto_0
     invoke-direct {p0, p1}, Lorg/conscrypt/AbstractSessionContext;->setTimeout(I)V
 
     .line 15
@@ -1439,8 +1439,8 @@
     move-result-object p1
 
     .line 27
-    :cond_1a
-    :goto_1a
+    :cond_1
+    :goto_1
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 28
@@ -1449,7 +1449,7 @@
     move-result v1
 
     .line 31
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_2
 
     .line 32
     .line 33
@@ -1473,7 +1473,7 @@
     move-result v2
 
     .line 43
-    if-nez v2, :cond_1a
+    if-nez v2, :cond_1
 
     .line 44
     .line 45
@@ -1487,33 +1487,33 @@
     .line 49
     .line 50
     .line 51
-    goto :goto_1a
+    goto :goto_1
 
     .line 52
-    :catchall_33
+    :catchall_0
     move-exception p1
 
     .line 53
-    goto :goto_37
+    goto :goto_2
 
     .line 54
-    :cond_35
+    :cond_2
     monitor-exit v0
 
     .line 55
     return-void
 
     .line 56
-    :goto_37
+    :goto_2
     monitor-exit v0
-    :try_end_38
-    .catchall {:try_start_5 .. :try_end_38} :catchall_33
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 57
     throw p1
 
     .line 58
-    :cond_39
+    :cond_3
     const-string p1, "seconds < 0"
 
     .line 59
@@ -1527,7 +1527,7 @@
 .end method
 
 .method public setSesssionIdContext([B)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/AbstractSessionContext;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
@@ -1547,7 +1547,7 @@
     .line 8
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     invoke-direct {p0}, Lorg/conscrypt/AbstractSessionContext;->isValid()Z
 
     .line 11
@@ -1556,7 +1556,7 @@
     move-result v0
 
     .line 14
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     .line 15
     .line 16
@@ -1565,24 +1565,24 @@
     .line 17
     .line 18
     invoke-static {v0, v1, p0, p1}, Lorg/conscrypt/NativeCrypto;->SSL_CTX_set_session_id_context(JLorg/conscrypt/AbstractSessionContext;[B)V
-    :try_end_14
-    .catchall {:try_start_9 .. :try_end_14} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 19
     .line 20
     .line 21
-    goto :goto_17
+    goto :goto_0
 
     .line 22
-    :catchall_15
+    :catchall_0
     move-exception p1
 
     .line 23
-    goto :goto_21
+    goto :goto_1
 
     .line 24
-    :cond_17
-    :goto_17
+    :cond_0
+    :goto_0
     iget-object p1, p0, Lorg/conscrypt/AbstractSessionContext;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     .line 25
@@ -1603,7 +1603,7 @@
     return-void
 
     .line 34
-    :goto_21
+    :goto_1
     iget-object v0, p0, Lorg/conscrypt/AbstractSessionContext;->lock:Ljava/util/concurrent/locks/ReadWriteLock;
 
     .line 35

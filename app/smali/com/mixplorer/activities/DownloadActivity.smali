@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/bs1;-><init>()V
@@ -17,7 +17,7 @@
 .end method
 
 .method public static a(Landroid/content/Intent;)V
-    .registers 5
+    .locals 4
 
     .line 1
     :try_start_0
@@ -125,7 +125,7 @@
     move-result v2
 
     .line 55
-    if-eqz v2, :cond_45
+    if-eqz v2, :cond_0
 
     .line 56
     .line 57
@@ -153,10 +153,10 @@
     move-result-object p0
 
     .line 69
-    goto :goto_49
+    goto :goto_0
 
     .line 70
-    :cond_45
+    :cond_0
     invoke-static {p0}, Llibs/ji0;->Mid(Ljava/lang/String;)Landroid/net/Uri;
 
     .line 71
@@ -165,7 +165,7 @@
     move-result-object p0
 
     .line 74
-    :goto_49
+    :goto_0
     const-string v1, "dst"
 
     .line 75
@@ -200,8 +200,8 @@
     .line 90
     .line 91
     invoke-virtual {p0, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
-    :try_end_5d
-    .catchall {:try_start_0 .. :try_end_5d} :catchall_5e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 92
     .line 93
@@ -209,7 +209,7 @@
     return-void
 
     .line 95
-    :catchall_5e
+    :catchall_0
     move-exception p0
 
     .line 96
@@ -236,7 +236,7 @@
 
 # virtual methods
 .method public final onCreate(Landroid/os/Bundle;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-super {p0, p1}, Llibs/bs1;->onCreate(Landroid/os/Bundle;)V
@@ -244,7 +244,7 @@
     .line 2
     .line 3
     .line 4
-    :try_start_3
+    :try_start_0
     invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
     .line 5
@@ -254,8 +254,8 @@
 
     .line 8
     invoke-static {p1}, Lcom/mixplorer/activities/DownloadActivity;->a(Landroid/content/Intent;)V
-    :try_end_a
-    .catchall {:try_start_3 .. :try_end_a} :catchall_e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 9
     .line 10
@@ -268,7 +268,7 @@
     return-void
 
     .line 15
-    :catchall_e
+    :catchall_0
     move-exception p1
 
     .line 16

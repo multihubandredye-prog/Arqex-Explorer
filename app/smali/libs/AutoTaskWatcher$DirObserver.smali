@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;I)V
-    .registers 4
+    .locals 1
 
     const/16 v0, 0xd8a
 
@@ -33,13 +33,13 @@
 
 # virtual methods
 .method public final onEvent(ILjava/lang/String;)V
-    .registers 7
+    .locals 4
 
     const v0, 0x8c00
 
     and-int/2addr v0, p1
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -53,18 +53,18 @@
 
     return-void
 
-    :cond_11
+    :cond_0
     and-int/lit16 v0, p1, 0x18a
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
-    if-eqz p2, :cond_24
+    if-eqz p2, :cond_1
 
     invoke-static {p2}, Llibs/AutoTaskWatcher;->isTempFileName(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-nez v0, :cond_24
+    if-nez v0, :cond_1
 
     iget v0, p0, Llibs/AutoTaskWatcher$DirObserver;->taskId:I
 
@@ -72,6 +72,6 @@
 
     invoke-static {v0, v2, v3}, Llibs/AutoTaskWatcher;->scheduleTrigger(IJ)V
 
-    :cond_24
+    :cond_1
     return-void
 .end method

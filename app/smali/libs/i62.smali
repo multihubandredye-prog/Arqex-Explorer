@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,13 +17,13 @@
 .end method
 
 .method public static a(ILjavax/crypto/spec/PBEKeySpec;)[B
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x2
 
     .line 2
-    if-ne p0, v0, :cond_c
+    if-ne p0, v0, :cond_0
 
     .line 3
     .line 4
@@ -46,25 +46,25 @@
     return-object p0
 
     .line 13
-    :cond_c
+    :cond_0
     const/4 v0, 0x5
 
     .line 14
-    if-eq p0, v0, :cond_1c
+    if-eq p0, v0, :cond_2
 
     .line 15
     .line 16
     const/4 v0, 0x4
 
     .line 17
-    if-ne p0, v0, :cond_13
+    if-ne p0, v0, :cond_1
 
     .line 18
     .line 19
-    goto :goto_1c
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_1
     invoke-virtual {p1}, Ljavax/crypto/spec/PBEKeySpec;->getPassword()[C
 
     .line 21
@@ -84,8 +84,8 @@
     return-object p0
 
     .line 29
-    :cond_1c
-    :goto_1c
+    :cond_2
+    :goto_0
     invoke-virtual {p1}, Ljavax/crypto/spec/PBEKeySpec;->getPassword()[C
 
     .line 30
@@ -94,7 +94,7 @@
     move-result-object p0
 
     .line 33
-    if-eqz p0, :cond_38
+    if-eqz p0, :cond_3
 
     .line 34
     .line 35
@@ -111,10 +111,10 @@
     .line 40
     .line 41
     .line 42
-    :try_start_29
+    :try_start_0
     invoke-static {p0, p1}, Llibs/yh3;->d([CLlibs/fl;)V
-    :try_end_2c
-    .catch Ljava/io/IOException; {:try_start_29 .. :try_end_2c} :catch_31
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 43
     .line 44
@@ -130,7 +130,7 @@
     return-object p0
 
     .line 50
-    :catch_31
+    :catch_0
     const-string p0, "cannot encode string to byte array!"
 
     .line 51
@@ -146,7 +146,7 @@
     return-object p0
 
     .line 57
-    :cond_38
+    :cond_3
     const/4 p0, 0x0
 
     .line 58
@@ -158,7 +158,7 @@
 .end method
 
 .method public static b(II)Llibs/pe;
-    .registers 5
+    .locals 3
 
     .line 1
     const/4 v0, 0x5
@@ -167,42 +167,42 @@
     const/4 v1, 0x1
 
     .line 3
-    if-eqz p0, :cond_c5
+    if-eqz p0, :cond_4
 
     .line 4
     .line 5
     const/4 v2, 0x4
 
     .line 6
-    if-ne p0, v2, :cond_9
+    if-ne p0, v2, :cond_0
 
     .line 7
     .line 8
-    goto/16 :goto_c5
+    goto/16 :goto_1
 
     .line 9
     .line 10
-    :cond_9
-    if-eq p0, v1, :cond_6e
+    :cond_0
+    if-eq p0, v1, :cond_3
 
     .line 11
     .line 12
-    if-ne p0, v0, :cond_e
+    if-ne p0, v0, :cond_1
 
     .line 13
     .line 14
-    goto :goto_6e
+    goto :goto_0
 
     .line 15
-    :cond_e
+    :cond_1
     const/4 v0, 0x2
 
     .line 16
-    if-ne p0, v0, :cond_68
+    if-ne p0, v0, :cond_2
 
     .line 17
     .line 18
-    packed-switch p1, :pswitch_data_f4
+    packed-switch p1, :pswitch_data_0
 
     .line 19
     .line 20
@@ -222,7 +222,7 @@
     return-object p0
 
     .line 28
-    :pswitch_1b
+    :pswitch_0
     new-instance p0, Llibs/l82;
 
     .line 29
@@ -244,7 +244,7 @@
     return-object p0
 
     .line 39
-    :pswitch_26
+    :pswitch_1
     new-instance p0, Llibs/l82;
 
     .line 40
@@ -266,7 +266,7 @@
     return-object p0
 
     .line 50
-    :pswitch_31
+    :pswitch_2
     new-instance p0, Llibs/l82;
 
     .line 51
@@ -288,7 +288,7 @@
     return-object p0
 
     .line 61
-    :pswitch_3c
+    :pswitch_3
     new-instance p0, Llibs/l82;
 
     .line 62
@@ -310,7 +310,7 @@
     return-object p0
 
     .line 72
-    :pswitch_47
+    :pswitch_4
     new-instance p0, Llibs/l82;
 
     .line 73
@@ -332,7 +332,7 @@
     return-object p0
 
     .line 83
-    :pswitch_52
+    :pswitch_5
     new-instance p0, Llibs/l82;
 
     .line 84
@@ -354,7 +354,7 @@
     return-object p0
 
     .line 94
-    :pswitch_5d
+    :pswitch_6
     new-instance p0, Llibs/l82;
 
     .line 95
@@ -376,7 +376,7 @@
     return-object p0
 
     .line 105
-    :cond_68
+    :cond_2
     new-instance p0, Llibs/h42;
 
     .line 106
@@ -389,9 +389,9 @@
     return-object p0
 
     .line 111
-    :cond_6e
-    :goto_6e
-    packed-switch p1, :pswitch_data_106
+    :cond_3
+    :goto_0
+    packed-switch p1, :pswitch_data_1
 
     .line 112
     .line 113
@@ -411,7 +411,7 @@
     return-object p0
 
     .line 121
-    :pswitch_78
+    :pswitch_7
     new-instance p0, Llibs/p82;
 
     .line 122
@@ -433,7 +433,7 @@
     return-object p0
 
     .line 132
-    :pswitch_83
+    :pswitch_8
     new-instance p0, Llibs/p82;
 
     .line 133
@@ -455,7 +455,7 @@
     return-object p0
 
     .line 143
-    :pswitch_8e
+    :pswitch_9
     new-instance p0, Llibs/p82;
 
     .line 144
@@ -477,7 +477,7 @@
     return-object p0
 
     .line 154
-    :pswitch_99
+    :pswitch_a
     new-instance p0, Llibs/p82;
 
     .line 155
@@ -499,7 +499,7 @@
     return-object p0
 
     .line 165
-    :pswitch_a4
+    :pswitch_b
     new-instance p0, Llibs/p82;
 
     .line 166
@@ -521,7 +521,7 @@
     return-object p0
 
     .line 176
-    :pswitch_af
+    :pswitch_c
     new-instance p0, Llibs/p82;
 
     .line 177
@@ -543,7 +543,7 @@
     return-object p0
 
     .line 187
-    :pswitch_ba
+    :pswitch_d
     new-instance p0, Llibs/p82;
 
     .line 188
@@ -565,17 +565,17 @@
     return-object p0
 
     .line 198
-    :cond_c5
-    :goto_c5
-    if-eqz p1, :cond_e8
+    :cond_4
+    :goto_1
+    if-eqz p1, :cond_7
 
     .line 199
     .line 200
-    if-eq p1, v1, :cond_dd
+    if-eq p1, v1, :cond_6
 
     .line 201
     .line 202
-    if-ne p1, v0, :cond_d6
+    if-ne p1, v0, :cond_5
 
     .line 203
     .line 204
@@ -600,7 +600,7 @@
     return-object p0
 
     .line 215
-    :cond_d6
+    :cond_5
     const-string p0, "PKCS5 scheme 1 only supports MD2, MD5 and SHA1."
 
     .line 216
@@ -616,7 +616,7 @@
     return-object p0
 
     .line 222
-    :cond_dd
+    :cond_6
     new-instance p0, Llibs/h42;
 
     .line 223
@@ -638,7 +638,7 @@
     return-object p0
 
     .line 233
-    :cond_e8
+    :cond_7
     new-instance p0, Llibs/h42;
 
     .line 234
@@ -663,15 +663,15 @@
     nop
 
     .line 245
-    :pswitch_data_f4
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_5d
-        :pswitch_52
-        :pswitch_47
-        :pswitch_3c
-        :pswitch_31
-        :pswitch_26
-        :pswitch_1b
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 
     .line 246
@@ -692,20 +692,20 @@
     .line 261
     .line 262
     .line 263
-    :pswitch_data_106
+    :pswitch_data_1
     .packed-switch 0x0
-        :pswitch_ba
-        :pswitch_af
-        :pswitch_a4
-        :pswitch_99
-        :pswitch_8e
-        :pswitch_83
-        :pswitch_78
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
     .end packed-switch
 .end method
 
 .method public static c(Ljavax/crypto/spec/PBEKeySpec;III)Llibs/et;
-    .registers 5
+    .locals 1
 
     .line 1
     invoke-static {p1, p2}, Llibs/i62;->b(II)Llibs/pe;
@@ -759,11 +759,11 @@
     const/4 p3, 0x0
 
     .line 26
-    :goto_19
+    :goto_0
     array-length v0, p1
 
     .line 27
-    if-eq p3, v0, :cond_21
+    if-eq p3, v0, :cond_0
 
     .line 28
     .line 29
@@ -775,15 +775,15 @@
 
     .line 32
     .line 33
-    goto :goto_19
+    goto :goto_0
 
     .line 34
-    :cond_21
+    :cond_0
     return-object p0
 .end method
 
 .method public static d(Ljavax/crypto/spec/PBEKeySpec;IIII)Llibs/et;
-    .registers 6
+    .locals 1
 
     .line 1
     invoke-static {p1, p2}, Llibs/i62;->b(II)Llibs/pe;
@@ -823,7 +823,7 @@
     .line 18
     .line 19
     .line 20
-    if-eqz p4, :cond_1a
+    if-eqz p4, :cond_0
 
     .line 21
     .line 22
@@ -835,10 +835,10 @@
     move-result-object p0
 
     .line 26
-    goto :goto_1e
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_0
     invoke-virtual {p2, p3}, Llibs/pe;->f(I)Llibs/hh1;
 
     .line 28
@@ -847,18 +847,18 @@
     move-result-object p0
 
     .line 31
-    :goto_1e
+    :goto_0
     const/4 p2, 0x0
 
     .line 32
     const/4 p3, 0x0
 
     .line 33
-    :goto_20
+    :goto_1
     array-length p4, p1
 
     .line 34
-    if-eq p3, p4, :cond_28
+    if-eq p3, p4, :cond_1
 
     .line 35
     .line 36
@@ -870,15 +870,15 @@
 
     .line 39
     .line 40
-    goto :goto_20
+    goto :goto_1
 
     .line 41
-    :cond_28
+    :cond_1
     return-object p0
 .end method
 
 .method public static e(Llibs/pa;Ljavax/crypto/spec/PBEParameterSpec;Ljava/lang/String;)Llibs/et;
-    .registers 6
+    .locals 3
 
     .line 1
     iget v0, p0, Llibs/pa;->Z:I
@@ -934,7 +934,7 @@
 
     .line 27
     .line 28
-    if-eqz p1, :cond_22
+    if-eqz p1, :cond_0
 
     .line 29
     .line 30
@@ -946,10 +946,10 @@
     move-result-object p0
 
     .line 34
-    goto :goto_26
+    goto :goto_0
 
     .line 35
-    :cond_22
+    :cond_0
     invoke-virtual {v0, p0}, Llibs/pe;->f(I)Llibs/hh1;
 
     .line 36
@@ -958,7 +958,7 @@
     move-result-object p0
 
     .line 39
-    :goto_26
+    :goto_0
     const-string p1, "DES"
 
     .line 40
@@ -971,7 +971,7 @@
     move-result p1
 
     .line 45
-    if-eqz p1, :cond_47
+    if-eqz p1, :cond_2
 
     .line 46
     .line 47
@@ -979,7 +979,7 @@
 
     .line 48
     .line 49
-    if-eqz p1, :cond_3f
+    if-eqz p1, :cond_1
 
     .line 50
     .line 51
@@ -1007,10 +1007,10 @@
     .line 61
     .line 62
     .line 63
-    goto :goto_47
+    goto :goto_1
 
     .line 64
-    :cond_3f
+    :cond_1
     move-object p1, p0
 
     .line 65
@@ -1027,19 +1027,19 @@
     .line 70
     .line 71
     .line 72
-    :cond_47
-    :goto_47
+    :cond_2
+    :goto_1
     const/4 p1, 0x0
 
     .line 73
     const/4 p2, 0x0
 
     .line 74
-    :goto_49
+    :goto_2
     array-length v0, v1
 
     .line 75
-    if-eq p2, v0, :cond_51
+    if-eq p2, v0, :cond_3
 
     .line 76
     .line 77
@@ -1051,18 +1051,18 @@
 
     .line 80
     .line 81
-    goto :goto_49
+    goto :goto_2
 
     .line 82
-    :cond_51
+    :cond_3
     return-object p0
 .end method
 
 .method public static f([BIIIILjava/security/spec/AlgorithmParameterSpec;Ljava/lang/String;)Llibs/et;
-    .registers 8
+    .locals 1
 
     .line 1
-    if-eqz p5, :cond_4e
+    if-eqz p5, :cond_4
 
     .line 2
     .line 3
@@ -1070,7 +1070,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_4e
+    if-eqz v0, :cond_4
 
     .line 6
     .line 7
@@ -1107,7 +1107,7 @@
     .line 22
     .line 23
     .line 24
-    if-eqz p4, :cond_1e
+    if-eqz p4, :cond_0
 
     .line 25
     .line 26
@@ -1119,10 +1119,10 @@
     move-result-object p1
 
     .line 30
-    goto :goto_22
+    goto :goto_0
 
     .line 31
-    :cond_1e
+    :cond_0
     invoke-virtual {p1, p3}, Llibs/pe;->f(I)Llibs/hh1;
 
     .line 32
@@ -1131,7 +1131,7 @@
     move-result-object p1
 
     .line 35
-    :goto_22
+    :goto_0
     const-string p2, "DES"
 
     .line 36
@@ -1144,7 +1144,7 @@
     move-result p2
 
     .line 41
-    if-eqz p2, :cond_43
+    if-eqz p2, :cond_2
 
     .line 42
     .line 43
@@ -1152,7 +1152,7 @@
 
     .line 44
     .line 45
-    if-eqz p2, :cond_3b
+    if-eqz p2, :cond_1
 
     .line 46
     .line 47
@@ -1180,10 +1180,10 @@
     .line 57
     .line 58
     .line 59
-    goto :goto_43
+    goto :goto_1
 
     .line 60
-    :cond_3b
+    :cond_1
     move-object p2, p1
 
     .line 61
@@ -1200,19 +1200,19 @@
     .line 66
     .line 67
     .line 68
-    :cond_43
-    :goto_43
+    :cond_2
+    :goto_1
     const/4 p2, 0x0
 
     .line 69
     const/4 p3, 0x0
 
     .line 70
-    :goto_45
+    :goto_2
     array-length p4, p0
 
     .line 71
-    if-eq p3, p4, :cond_4d
+    if-eq p3, p4, :cond_3
 
     .line 72
     .line 73
@@ -1224,14 +1224,14 @@
 
     .line 76
     .line 77
-    goto :goto_45
+    goto :goto_2
 
     .line 78
-    :cond_4d
+    :cond_3
     return-object p1
 
     .line 79
-    :cond_4e
+    :cond_4
     const-string p0, "Need a PBEParameter spec with a PBE key."
 
     .line 80

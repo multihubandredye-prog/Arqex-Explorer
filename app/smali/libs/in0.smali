@@ -37,7 +37,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;IZLjava/util/ArrayList;)V
-    .registers 9
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -118,7 +118,7 @@
 
 # virtual methods
 .method public final a(Ljava/net/Socket;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-boolean v0, p0, Llibs/in0;->b:Z
@@ -129,11 +129,11 @@
 
     .line 4
     .line 5
-    if-eqz v1, :cond_56
+    if-eqz v1, :cond_3
 
     .line 6
     .line 7
-    :try_start_6
+    :try_start_0
     move-object v1, p1
 
     .line 8
@@ -150,7 +150,7 @@
     .line 13
     .line 14
     .line 15
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_1
 
     .line 16
     .line 17
@@ -182,14 +182,14 @@
     move-result v1
 
     .line 31
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_0
 
     .line 32
     .line 33
-    goto :goto_29
+    goto :goto_0
 
     .line 34
-    :cond_21
+    :cond_0
     new-instance v1, Ljava/io/IOException;
 
     .line 35
@@ -206,8 +206,8 @@
     throw v1
 
     .line 42
-    :cond_29
-    :goto_29
+    :cond_1
+    :goto_0
     move-object v1, p1
 
     .line 43
@@ -232,8 +232,8 @@
     .line 52
     .line 53
     invoke-interface {v1, v2, v3}, Ljavax/net/ssl/SSLSession;->putValue(Ljava/lang/String;Ljava/lang/Object;)V
-    :try_end_37
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_37} :catch_38
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 54
     .line 55
@@ -241,11 +241,11 @@
     return-void
 
     .line 57
-    :catch_38
+    :catch_0
     move-exception v1
 
     .line 58
-    if-eqz v0, :cond_55
+    if-eqz v0, :cond_2
 
     .line 59
     .line 60
@@ -297,16 +297,16 @@
     .line 84
     .line 85
     .line 86
-    :cond_55
+    :cond_2
     throw v1
 
     .line 87
-    :cond_56
+    :cond_3
     return-void
 .end method
 
 .method public final b(Llibs/gn0;)V
-    .registers 9
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/in0;->n:Ljava/util/ArrayList;
@@ -316,7 +316,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Llibs/in0;->n:Ljava/util/ArrayList;
 
     .line 5
@@ -333,7 +333,7 @@
 
     .line 11
     .line 12
-    if-lt v1, v2, :cond_1e
+    if-lt v1, v2, :cond_0
 
     .line 13
     .line 14
@@ -365,15 +365,15 @@
     return-void
 
     .line 28
-    :catchall_1b
+    :catchall_0
     move-exception p1
 
     .line 29
-    goto/16 :goto_a0
+    goto/16 :goto_1
 
     .line 30
     .line 31
-    :cond_1e
+    :cond_0
     iget-object v1, p1, Llibs/gn0;->X:Ljava/net/Socket;
 
     .line 32
@@ -397,7 +397,7 @@
     const/4 v2, 0x0
 
     .line 42
-    if-eqz v1, :cond_4f
+    if-eqz v1, :cond_2
 
     .line 43
     .line 44
@@ -416,9 +416,9 @@
     const/4 v5, 0x0
 
     .line 51
-    :cond_32
-    :goto_32
-    if-ge v5, v4, :cond_4f
+    :cond_1
+    :goto_0
+    if-ge v5, v4, :cond_2
 
     .line 52
     .line 53
@@ -466,7 +466,7 @@
     move-result v6
 
     .line 75
-    if-eqz v6, :cond_32
+    if-eqz v6, :cond_1
 
     .line 76
     .line 77
@@ -474,15 +474,15 @@
 
     .line 78
     .line 79
-    goto :goto_32
+    goto :goto_0
 
     .line 80
-    :cond_4f
+    :cond_2
     const/16 v3, 0x32
 
     .line 81
     .line 82
-    if-lt v2, v3, :cond_75
+    if-lt v2, v3, :cond_3
 
     .line 83
     .line 84
@@ -550,7 +550,7 @@
     return-void
 
     .line 118
-    :cond_75
+    :cond_3
     iget-object v1, p0, Llibs/in0;->n:Ljava/util/ArrayList;
 
     .line 119
@@ -561,8 +561,8 @@
     .line 122
     .line 123
     monitor-exit v0
-    :try_end_7b
-    .catchall {:try_start_3 .. :try_end_7b} :catchall_1b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 124
     new-instance v0, Llibs/xv1;
@@ -636,26 +636,26 @@
     return-void
 
     .line 161
-    :goto_a0
-    :try_start_a0
+    :goto_1
+    :try_start_1
     monitor-exit v0
-    :try_end_a1
-    .catchall {:try_start_a0 .. :try_end_a1} :catchall_1b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 162
-    goto :goto_a3
+    goto :goto_3
 
     .line 163
-    :goto_a2
+    :goto_2
     throw p1
 
     .line 164
-    :goto_a3
-    goto :goto_a2
+    :goto_3
+    goto :goto_2
 .end method
 
 .method public final c(Llibs/gn0;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/in0;->n:Ljava/util/ArrayList;
@@ -665,7 +665,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Llibs/in0;->n:Ljava/util/ArrayList;
 
     .line 5
@@ -681,26 +681,26 @@
     return-void
 
     .line 11
-    :catchall_a
+    :catchall_0
     move-exception p1
 
     .line 12
     monitor-exit v0
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 13
     throw p1
 .end method
 
 .method public final d(ZZLjavax/net/ssl/SSLContext;Llibs/kk1;I)V
-    .registers 8
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_0
 
     .line 3
     .line 4
@@ -708,26 +708,26 @@
 
     .line 5
     .line 6
-    goto :goto_7
+    goto :goto_0
 
     .line 7
-    :cond_6
+    :cond_0
     move-object p1, v0
 
     .line 8
-    :goto_7
-    if-eqz p2, :cond_a
+    :goto_0
+    if-eqz p2, :cond_1
 
     .line 9
     .line 10
-    goto :goto_b
+    goto :goto_1
 
     .line 11
-    :cond_a
+    :cond_1
     move-object v0, p3
 
     .line 12
-    :goto_b
+    :goto_1
     iget p2, p0, Llibs/in0;->a:I
 
     .line 13

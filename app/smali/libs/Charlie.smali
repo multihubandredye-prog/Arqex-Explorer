@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-static {}, Llibs/t43;->Context()Z
@@ -25,7 +25,7 @@
     const/4 v1, 0x0
 
     .line 6
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
@@ -38,14 +38,14 @@
     .line 11
     .line 12
     .line 13
-    goto :goto_e
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     move-object v0, v1
 
     .line 15
-    :goto_e
+    :goto_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 16
@@ -63,7 +63,7 @@
     move-result v0
 
     .line 24
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_1
 
     .line 25
     .line 26
@@ -83,7 +83,7 @@
     return-void
 
     .line 34
-    :cond_21
+    :cond_1
     iput-object v1, p0, Llibs/Charlie;->b:Llibs/Bravo;
 
     .line 35
@@ -94,7 +94,7 @@
 
 # virtual methods
 .method public a(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-static {}, Llibs/t43;->Context()Z
@@ -105,7 +105,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -118,12 +118,12 @@
     .line 10
     .line 11
     .line 12
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public b(Landroid/view/View;Llibs/Oscar;)V
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-static {}, Llibs/t43;->Context()Z
@@ -134,7 +134,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1
 
     .line 6
     .line 7
@@ -150,7 +150,7 @@
     move-result v1
 
     .line 13
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     .line 14
     .line 15
@@ -166,25 +166,25 @@
     move-result-object p2
 
     .line 21
-    goto :goto_16
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     const/4 p2, 0x0
 
     .line 23
-    :goto_16
+    :goto_0
     invoke-static {v0, p1, p2}, Llibs/Nine;->g(Landroid/view/View$AccessibilityDelegate;Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     .line 24
     .line 25
     .line 26
-    :cond_19
+    :cond_1
     return-void
 .end method
 
 .method public c(Landroid/view/View;ILandroid/os/Bundle;)Z
-    .registers 9
+    .locals 5
 
     .line 1
     sget v0, Llibs/wh2;->tag_accessibility_actions:I
@@ -203,7 +203,7 @@
 
     .line 8
     .line 9
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 10
     .line 11
@@ -211,14 +211,14 @@
 
     .line 12
     .line 13
-    :cond_c
+    :cond_0
     const/4 v1, 0x0
 
     .line 14
     const/4 v2, 0x0
 
     .line 15
-    :goto_e
+    :goto_0
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     .line 16
@@ -227,7 +227,7 @@
     move-result v3
 
     .line 19
-    if-ge v2, v3, :cond_35
+    if-ge v2, v3, :cond_3
 
     .line 20
     .line 21
@@ -256,7 +256,7 @@
     move-result v4
 
     .line 34
-    if-eqz v4, :cond_2e
+    if-eqz v4, :cond_1
 
     .line 35
     .line 36
@@ -280,31 +280,31 @@
     move-result v3
 
     .line 46
-    goto :goto_2f
+    goto :goto_1
 
     .line 47
-    :cond_2e
+    :cond_1
     const/4 v3, 0x0
 
     .line 48
-    :goto_2f
-    if-ne v3, p2, :cond_32
+    :goto_1
+    if-ne v3, p2, :cond_2
 
     .line 49
     .line 50
-    goto :goto_35
+    goto :goto_2
 
     .line 51
-    :cond_32
+    :cond_2
     add-int/lit8 v2, v2, 0x1
 
     .line 52
     .line 53
-    goto :goto_e
+    goto :goto_0
 
     .line 54
-    :cond_35
-    :goto_35
+    :cond_3
+    :goto_2
     invoke-static {}, Llibs/t43;->Intent()Z
 
     .line 55
@@ -313,7 +313,7 @@
     move-result v0
 
     .line 58
-    if-eqz v0, :cond_42
+    if-eqz v0, :cond_4
 
     .line 59
     .line 60
@@ -329,15 +329,15 @@
     move-result v0
 
     .line 66
-    goto :goto_43
+    goto :goto_3
 
     .line 67
-    :cond_42
+    :cond_4
     const/4 v0, 0x0
 
     .line 68
-    :goto_43
-    if-nez v0, :cond_a4
+    :goto_3
+    if-nez v0, :cond_8
 
     .line 69
     .line 70
@@ -345,7 +345,7 @@
 
     .line 71
     .line 72
-    if-ne p2, v2, :cond_a4
+    if-ne p2, v2, :cond_8
 
     .line 73
     .line 74
@@ -380,7 +380,7 @@
 
     .line 88
     .line 89
-    if-eqz p3, :cond_a3
+    if-eqz p3, :cond_7
 
     .line 90
     .line 91
@@ -396,7 +396,7 @@
 
     .line 96
     .line 97
-    if-eqz p2, :cond_a3
+    if-eqz p2, :cond_7
 
     .line 98
     .line 99
@@ -412,7 +412,7 @@
 
     .line 104
     .line 105
-    if-eqz p2, :cond_a3
+    if-eqz p2, :cond_7
 
     .line 106
     .line 107
@@ -424,7 +424,7 @@
     move-result p3
 
     .line 111
-    if-eqz p3, :cond_a3
+    if-eqz p3, :cond_7
 
     .line 112
     .line 113
@@ -448,7 +448,7 @@
 
     .line 122
     .line 123
-    if-eqz v0, :cond_8c
+    if-eqz v0, :cond_5
 
     .line 124
     .line 125
@@ -483,26 +483,26 @@
 
     .line 139
     .line 140
-    goto :goto_8d
+    goto :goto_4
 
     .line 141
-    :cond_8c
+    :cond_5
     const/4 p3, 0x0
 
     .line 142
-    :goto_8d
+    :goto_4
     const/4 v0, 0x0
 
     .line 143
-    :goto_8e
-    if-eqz p3, :cond_a3
+    :goto_5
+    if-eqz p3, :cond_7
 
     .line 144
     .line 145
     array-length v2, p3
 
     .line 146
-    if-ge v0, v2, :cond_a3
+    if-ge v0, v2, :cond_7
 
     .line 147
     .line 148
@@ -518,7 +518,7 @@
     move-result v2
 
     .line 154
-    if-eqz v2, :cond_a0
+    if-eqz v2, :cond_6
 
     .line 155
     .line 156
@@ -533,18 +533,18 @@
     return p1
 
     .line 161
-    :cond_a0
+    :cond_6
     add-int/lit8 v0, v0, 0x1
 
     .line 162
     .line 163
-    goto :goto_8e
+    goto :goto_5
 
     .line 164
-    :cond_a3
+    :cond_7
     return v1
 
     .line 165
-    :cond_a4
+    :cond_8
     return v0
 .end method

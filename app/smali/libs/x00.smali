@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ia2;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/hj3;-><init>(Llibs/ia2;)V
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public getNestedScrollAxes()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/hj3;->Rho:Llibs/lh;
@@ -48,7 +48,7 @@
 .end method
 
 .method public getProgressCircleDiameter()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/hj3;->India:I
@@ -59,7 +59,7 @@
 .end method
 
 .method public getProgressViewEndOffset()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/hj3;->Zero:I
@@ -70,7 +70,7 @@
 .end method
 
 .method public getProgressViewStartOffset()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/hj3;->Nine:I
@@ -81,7 +81,7 @@
 .end method
 
 .method public final onDraw(Landroid/graphics/Canvas;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->onDraw(Landroid/graphics/Canvas;)V
@@ -93,7 +93,7 @@
 .end method
 
 .method public setColorSchemeColors([I)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Llibs/hj3;->b()V
@@ -132,7 +132,7 @@
 .end method
 
 .method public setDistanceToTriggerSync(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     int-to-float p1, p1
@@ -146,7 +146,7 @@
 .end method
 
 .method public bridge synthetic setEnabled(Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-super {p0, p1}, Llibs/hj3;->setEnabled(Z)V
@@ -158,7 +158,7 @@
 .end method
 
 .method public bridge synthetic setNestedScrollingEnabled(Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-super {p0, p1}, Llibs/hj3;->setNestedScrollingEnabled(Z)V
@@ -170,7 +170,7 @@
 .end method
 
 .method public setOnChildScrollUpCallback(Llibs/fj3;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/hj3;->Kilo:Llibs/fj3;
@@ -181,7 +181,7 @@
 .end method
 
 .method public setOnRefreshListener(Llibs/gj3;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/hj3;->Mu:Llibs/gj3;
@@ -192,7 +192,7 @@
 .end method
 
 .method public setProgressBackgroundColorSchemeColor(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/hj3;->Six:Llibs/tt;
@@ -208,13 +208,13 @@
 .end method
 
 .method public setRefreshing(Z)V
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-eqz p1, :cond_43
+    if-eqz p1, :cond_2
 
     .line 3
     .line 4
@@ -222,7 +222,7 @@
 
     .line 5
     .line 6
-    if-eq v1, p1, :cond_43
+    if-eq v1, p1, :cond_2
 
     .line 7
     .line 8
@@ -238,7 +238,7 @@
 
     .line 13
     .line 14
-    if-nez p1, :cond_12
+    if-nez p1, :cond_0
 
     .line 15
     .line 16
@@ -249,7 +249,7 @@
     add-int/2addr v1, p1
 
     .line 19
-    :cond_12
+    :cond_0
     iget p1, p0, Llibs/hj3;->Psi:I
 
     .line 20
@@ -320,7 +320,7 @@
 
     .line 54
     .line 55
-    if-eqz v0, :cond_3a
+    if-eqz v0, :cond_1
 
     .line 56
     .line 57
@@ -328,7 +328,7 @@
 
     .line 58
     .line 59
-    :cond_3a
+    :cond_1
     invoke-virtual {p1}, Landroid/view/View;->clearAnimation()V
 
     .line 60
@@ -346,7 +346,7 @@
     return-void
 
     .line 68
-    :cond_43
+    :cond_2
     invoke-virtual {p0, p1, v0}, Llibs/hj3;->h(ZZ)V
 
     .line 69
@@ -356,24 +356,24 @@
 .end method
 
 .method public setSize(I)V
-    .registers 4
+    .locals 2
 
     .line 1
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_0
 
     .line 2
     .line 3
     const/4 v0, 0x1
 
     .line 4
-    if-eq p1, v0, :cond_6
+    if-eq p1, v0, :cond_0
 
     .line 5
     .line 6
     return-void
 
     .line 7
-    :cond_6
+    :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     .line 8
@@ -390,7 +390,7 @@
     move-result-object v0
 
     .line 15
-    if-nez p1, :cond_1a
+    if-nez p1, :cond_1
 
     .line 16
     .line 17
@@ -413,10 +413,10 @@
 
     .line 25
     .line 26
-    goto :goto_23
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_1
     const/high16 v1, 0x42200000    # 40.0f
 
     .line 28
@@ -436,7 +436,7 @@
 
     .line 35
     .line 36
-    :goto_23
+    :goto_0
     iget-object v0, p0, Llibs/hj3;->Six:Llibs/tt;
 
     .line 37

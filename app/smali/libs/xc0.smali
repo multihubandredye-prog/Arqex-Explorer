@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/providers/DocProvider;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iput-object p1, p0, Llibs/xc0;->Z:Lcom/mixplorer/providers/DocProvider;
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public final copyDocument(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 13
+    .locals 10
 
     .line 1
     iget-object v0, p0, Llibs/xc0;->Z:Lcom/mixplorer/providers/DocProvider;
@@ -94,7 +94,7 @@
     const/4 v1, 0x1
 
     .line 16
-    :try_start_f
+    :try_start_0
     invoke-virtual {v0}, Llibs/rp0;->View()Llibs/zl0;
 
     .line 17
@@ -149,7 +149,7 @@
     move-result-object p1
 
     .line 42
-    if-eqz p1, :cond_46
+    if-eqz p1, :cond_0
 
     .line 43
     .line 44
@@ -167,14 +167,14 @@
     .line 50
     .line 51
     move-result-object p1
-    :try_end_33
-    .catchall {:try_start_f .. :try_end_33} :catchall_34
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 52
     return-object p1
 
     .line 53
-    :catchall_34
+    :catchall_0
     move-exception v0
 
     .line 54
@@ -213,7 +213,7 @@
     .line 69
     .line 70
     .line 71
-    :cond_46
+    :cond_0
     new-instance p1, Ljava/io/FileNotFoundException;
 
     .line 72
@@ -231,7 +231,7 @@
 .end method
 
 .method public final createDocument(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 10
+    .locals 6
 
     .line 1
     invoke-static {p1, p3}, Lcom/mixplorer/providers/DocProvider;->i(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -263,7 +263,7 @@
     const/4 v2, 0x0
 
     .line 14
-    :try_start_d
+    :try_start_0
     iget-object v3, p0, Llibs/xc0;->Z:Lcom/mixplorer/providers/DocProvider;
 
     .line 15
@@ -318,7 +318,7 @@
     move-result p2
 
     .line 42
-    if-eqz p2, :cond_43
+    if-eqz p2, :cond_1
 
     .line 43
     .line 44
@@ -330,14 +330,14 @@
     move-result-object p2
 
     .line 48
-    if-nez p2, :cond_32
+    if-nez p2, :cond_0
 
     .line 49
     .line 50
     return-object v2
 
     .line 51
-    :cond_32
+    :cond_0
     invoke-virtual {v4}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
     .line 52
@@ -369,14 +369,14 @@
     return-object p1
 
     .line 66
-    :catchall_41
+    :catchall_0
     move-exception p1
 
     .line 67
-    goto :goto_49
+    goto :goto_0
 
     .line 68
-    :cond_43
+    :cond_1
     new-instance p1, Ljava/lang/InterruptedException;
 
     .line 69
@@ -387,11 +387,11 @@
     .line 72
     .line 73
     throw p1
-    :try_end_49
-    .catchall {:try_start_d .. :try_end_49} :catchall_41
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 74
-    :goto_49
+    :goto_0
     invoke-static {p1}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 75
@@ -425,7 +425,7 @@
 .end method
 
 .method public final deleteDocument(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/xc0;->Z:Lcom/mixplorer/providers/DocProvider;
@@ -455,14 +455,14 @@
     move-result v0
 
     .line 14
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 15
     .line 16
     return-void
 
     .line 17
-    :cond_10
+    :cond_0
     new-instance v0, Ljava/io/FileNotFoundException;
 
     .line 18
@@ -488,17 +488,17 @@
 .end method
 
 .method public final ejectRoot(Ljava/lang/String;)V
-    .registers 8
+    .locals 6
 
     .line 1
-    if-nez p1, :cond_3
+    if-nez p1, :cond_0
 
     .line 2
     .line 3
-    goto :goto_48
+    goto :goto_1
 
     .line 4
-    :cond_3
+    :cond_0
     iget-object v0, p0, Llibs/xc0;->Z:Lcom/mixplorer/providers/DocProvider;
 
     .line 5
@@ -515,7 +515,7 @@
     move-result v0
 
     .line 12
-    if-nez v0, :cond_48
+    if-nez v0, :cond_2
 
     .line 13
     .line 14
@@ -535,21 +535,21 @@
     move-result v0
 
     .line 22
-    if-nez v0, :cond_18
+    if-nez v0, :cond_1
 
     .line 23
     .line 24
-    goto :goto_48
+    goto :goto_1
 
     .line 25
-    :cond_18
+    :cond_1
     const/4 v0, 0x0
 
     .line 26
     const/4 v1, 0x1
 
     .line 27
-    :try_start_1a
+    :try_start_0
     iget-object v2, p0, Llibs/xc0;->Z:Lcom/mixplorer/providers/DocProvider;
 
     .line 28
@@ -590,16 +590,16 @@
     .line 45
     .line 46
     invoke-virtual {v2, v3, v4}, Llibs/zl0;->Post(Ljava/lang/String;Llibs/t61;)Llibs/rp0;
-    :try_end_30
-    .catchall {:try_start_1a .. :try_end_30} :catchall_31
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 47
     .line 48
     .line 49
-    goto :goto_41
+    goto :goto_0
 
     .line 50
-    :catchall_31
+    :catchall_0
     move-exception p1
 
     .line 51
@@ -632,8 +632,8 @@
     .line 64
     .line 65
     .line 66
-    :goto_41
-    :try_start_41
+    :goto_0
+    :try_start_1
     sget-object p1, Lcom/mixplorer/providers/DocProvider;->Omicron:Landroid/net/Uri;
 
     .line 67
@@ -643,20 +643,20 @@
     .line 69
     .line 70
     invoke-static {v0, p1}, Lcom/mixplorer/providers/DocProvider;->k(Landroid/content/Context;Landroid/net/Uri;)V
-    :try_end_48
-    .catchall {:try_start_41 .. :try_end_48} :catchall_48
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 71
     .line 72
     .line 73
-    :catchall_48
-    :cond_48
-    :goto_48
+    :catchall_1
+    :cond_2
+    :goto_1
     return-void
 .end method
 
 .method public final getDocumentType(Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/xc0;->Z:Lcom/mixplorer/providers/DocProvider;
@@ -679,7 +679,7 @@
 
     .line 10
     .line 11
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
@@ -690,7 +690,7 @@
     return-object p1
 
     .line 16
-    :cond_f
+    :cond_0
     invoke-virtual {p1}, Llibs/rp0;->l()Ljava/lang/String;
 
     .line 17
@@ -707,7 +707,7 @@
     move-result v0
 
     .line 24
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_1
 
     .line 25
     .line 26
@@ -718,7 +718,7 @@
     return-object p1
 
     .line 29
-    :cond_1c
+    :cond_1
     invoke-virtual {p1}, Llibs/rp0;->l()Ljava/lang/String;
 
     .line 30
@@ -731,10 +731,10 @@
 .end method
 
 .method public final isChildDocument(Ljava/lang/String;Ljava/lang/String;)Z
-    .registers 5
+    .locals 2
 
     .line 1
-    if-nez p2, :cond_4
+    if-nez p2, :cond_0
 
     .line 2
     .line 3
@@ -744,7 +744,7 @@
     return p1
 
     .line 5
-    :cond_4
+    :cond_0
     const-string v0, ""
 
     .line 6
@@ -796,7 +796,7 @@
 .end method
 
 .method public final moveDocument(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 6
+    .locals 2
 
     .line 1
     iget-object p2, p0, Llibs/xc0;->Z:Lcom/mixplorer/providers/DocProvider;
@@ -827,7 +827,7 @@
     move-result-object p2
 
     .line 15
-    :try_start_e
+    :try_start_0
     invoke-virtual {p2}, Llibs/rp0;->View()Llibs/zl0;
 
     .line 16
@@ -851,7 +851,7 @@
     move-result-object p1
 
     .line 26
-    if-eqz p1, :cond_36
+    if-eqz p1, :cond_0
 
     .line 27
     .line 28
@@ -869,14 +869,14 @@
     .line 34
     .line 35
     move-result-object p1
-    :try_end_23
-    .catchall {:try_start_e .. :try_end_23} :catchall_24
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 36
     return-object p1
 
     .line 37
-    :catchall_24
+    :catchall_0
     move-exception p1
 
     .line 38
@@ -915,7 +915,7 @@
     .line 53
     .line 54
     .line 55
-    :cond_36
+    :cond_0
     new-instance p1, Ljava/io/FileNotFoundException;
 
     .line 56
@@ -933,7 +933,7 @@
 .end method
 
 .method public final onCreate()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -943,7 +943,7 @@
 .end method
 
 .method public final openDocument(Ljava/lang/String;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/os/ParcelFileDescriptor;
-    .registers 9
+    .locals 5
 
     .line 1
     const/4 v0, 0x1
@@ -952,7 +952,7 @@
     const/4 v1, 0x0
 
     .line 3
-    :try_start_2
+    :try_start_0
     const-string v2, "r"
 
     .line 4
@@ -963,19 +963,19 @@
     .line 7
     .line 8
     move-result v2
-    :try_end_8
-    .catchall {:try_start_2 .. :try_end_8} :catchall_2d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 9
     iget-object v3, p0, Llibs/xc0;->Z:Lcom/mixplorer/providers/DocProvider;
 
     .line 10
     .line 11
-    if-eqz v2, :cond_13
+    if-eqz v2, :cond_0
 
     .line 12
     .line 13
-    :try_start_c
+    :try_start_1
     sget-object v2, Lcom/mixplorer/providers/DocProvider;->Lambda:Ljava/lang/String;
 
     .line 14
@@ -988,10 +988,10 @@
     move-result-object v2
 
     .line 19
-    goto :goto_27
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     sget-object v2, Lcom/mixplorer/providers/DocProvider;->Lambda:Ljava/lang/String;
 
     .line 21
@@ -1032,7 +1032,7 @@
     move-result-object v2
 
     .line 40
-    :goto_27
+    :goto_0
     const/4 v3, 0x0
 
     .line 41
@@ -1042,14 +1042,14 @@
     .line 43
     .line 44
     move-result-object p1
-    :try_end_2c
-    .catchall {:try_start_c .. :try_end_2c} :catchall_2d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 45
     return-object p1
 
     .line 46
-    :catchall_2d
+    :catchall_0
     move-exception p2
 
     .line 47
@@ -1107,14 +1107,14 @@
 .end method
 
 .method public final queryChildDocuments(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-    .registers 15
+    .locals 11
 
     .line 1
     sget-object v0, Lcom/mixplorer/providers/DocProvider;->Lambda:Ljava/lang/String;
 
     .line 2
     .line 3
-    if-nez p2, :cond_6
+    if-nez p2, :cond_0
 
     .line 4
     .line 5
@@ -1122,7 +1122,7 @@
 
     .line 6
     .line 7
-    :cond_6
+    :cond_0
     new-instance v7, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     .line 8
@@ -1160,7 +1160,7 @@
     monitor-enter v1
 
     .line 26
-    :try_start_19
+    :try_start_0
     iget-object v0, p0, Llibs/xc0;->X:Ljava/util/HashMap;
 
     .line 27
@@ -1185,7 +1185,7 @@
 
     .line 37
     .line 38
-    if-eqz v0, :cond_44
+    if-eqz v0, :cond_2
 
     .line 39
     .line 40
@@ -1193,7 +1193,7 @@
 
     .line 41
     .line 42
-    if-eqz v2, :cond_3a
+    if-eqz v2, :cond_1
 
     .line 43
     .line 44
@@ -1209,7 +1209,7 @@
     move-result v2
 
     .line 50
-    if-nez v2, :cond_3a
+    if-nez v2, :cond_1
 
     .line 51
     .line 52
@@ -1223,17 +1223,17 @@
     return-object p1
 
     .line 56
-    :catchall_37
+    :catchall_0
     move-exception v0
 
     .line 57
     move-object p1, v0
 
     .line 58
-    goto :goto_6c
+    goto :goto_0
 
     .line 59
-    :cond_3a
+    :cond_1
     iget-object v0, v0, Llibs/uc0;->a:Llibs/tc0;
 
     .line 60
@@ -1252,7 +1252,7 @@
     .line 67
     .line 68
     .line 69
-    :cond_44
+    :cond_2
     new-instance v4, Llibs/uc0;
 
     .line 70
@@ -1292,8 +1292,8 @@
     .line 88
     .line 89
     monitor-exit v1
-    :try_end_59
-    .catchall {:try_start_19 .. :try_end_59} :catchall_37
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 90
     new-instance v0, Llibs/vc0;
@@ -1325,7 +1325,7 @@
     move-result p1
 
     .line 103
-    if-eqz p1, :cond_6b
+    if-eqz p1, :cond_3
 
     .line 104
     .line 105
@@ -1334,29 +1334,29 @@
     .line 106
     .line 107
     .line 108
-    :cond_6b
+    :cond_3
     return-object v9
 
     .line 109
-    :goto_6c
-    :try_start_6c
+    :goto_0
+    :try_start_1
     monitor-exit v1
-    :try_end_6d
-    .catchall {:try_start_6c .. :try_end_6d} :catchall_37
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 110
     throw p1
 .end method
 
 .method public final queryDocument(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
-    .registers 7
+    .locals 4
 
     .line 1
     sget-object v0, Lcom/mixplorer/providers/DocProvider;->Lambda:Ljava/lang/String;
 
     .line 2
     .line 3
-    if-nez p2, :cond_6
+    if-nez p2, :cond_0
 
     .line 4
     .line 5
@@ -1364,7 +1364,7 @@
 
     .line 6
     .line 7
-    :cond_6
+    :cond_0
     new-instance v0, Landroid/os/Bundle;
 
     .line 8
@@ -1386,7 +1386,7 @@
     .line 16
     .line 17
     .line 18
-    :try_start_11
+    :try_start_0
     iget-object p2, p0, Llibs/xc0;->Z:Lcom/mixplorer/providers/DocProvider;
 
     .line 19
@@ -1400,8 +1400,8 @@
 
     .line 24
     invoke-static {p1, v1, p2}, Lcom/mixplorer/providers/DocProvider;->b(Ljava/lang/String;Llibs/tc0;Llibs/rp0;)V
-    :try_end_1a
-    .catchall {:try_start_11 .. :try_end_1a} :catchall_1b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 25
     .line 26
@@ -1409,11 +1409,11 @@
     return-object v1
 
     .line 28
-    :catchall_1b
+    :catchall_0
     move-exception p1
 
     .line 29
-    :try_start_1c
+    :try_start_1
     const-string p2, "DOC"
 
     .line 30
@@ -1442,8 +1442,8 @@
     .line 41
     .line 42
     invoke-static {p2, v0, v3}, Llibs/vw1;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_2c
-    .catchall {:try_start_1c .. :try_end_2c} :catchall_2d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 43
     .line 44
@@ -1451,17 +1451,17 @@
     return-object v1
 
     .line 46
-    :catchall_2d
+    :catchall_1
     move-exception p1
 
     .line 47
-    :try_start_2e
+    :try_start_2
     throw p1
-    :try_end_2f
-    .catchall {:try_start_2e .. :try_end_2f} :catchall_2f
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
     .line 48
-    :catchall_2f
+    :catchall_2
     invoke-static {v1}, Llibs/ji0;->i(Landroid/database/Cursor;)V
 
     .line 49
@@ -1480,14 +1480,14 @@
 .end method
 
 .method public final queryRecentDocuments(Ljava/lang/String;[Ljava/lang/String;Landroid/os/Bundle;Landroid/os/CancellationSignal;)Landroid/database/Cursor;
-    .registers 6
+    .locals 1
 
     .line 1
     sget-object v0, Lcom/mixplorer/providers/DocProvider;->Lambda:Ljava/lang/String;
 
     .line 2
     .line 3
-    if-nez p2, :cond_6
+    if-nez p2, :cond_0
 
     .line 4
     .line 5
@@ -1495,7 +1495,7 @@
 
     .line 6
     .line 7
-    :cond_6
+    :cond_0
     invoke-super {p0, p1, p2, p3, p4}, Landroid/provider/DocumentsProvider;->queryRecentDocuments(Ljava/lang/String;[Ljava/lang/String;Landroid/os/Bundle;Landroid/os/CancellationSignal;)Landroid/database/Cursor;
 
     .line 8
@@ -1508,7 +1508,7 @@
 .end method
 
 .method public final queryRoots([Ljava/lang/String;)Landroid/database/Cursor;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/xc0;->Z:Lcom/mixplorer/providers/DocProvider;
@@ -1527,14 +1527,14 @@
 .end method
 
 .method public final querySearchDocuments(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
-    .registers 15
+    .locals 11
 
     .line 1
     sget-object v0, Lcom/mixplorer/providers/DocProvider;->Lambda:Ljava/lang/String;
 
     .line 2
     .line 3
-    if-nez p3, :cond_6
+    if-nez p3, :cond_0
 
     .line 4
     .line 5
@@ -1542,7 +1542,7 @@
 
     .line 6
     .line 7
-    :cond_6
+    :cond_0
     new-instance v7, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     .line 8
@@ -1580,7 +1580,7 @@
     monitor-enter v1
 
     .line 26
-    :try_start_19
+    :try_start_0
     iget-object v0, p0, Llibs/xc0;->Y:Ljava/util/HashMap;
 
     .line 27
@@ -1605,7 +1605,7 @@
 
     .line 37
     .line 38
-    if-eqz v0, :cond_44
+    if-eqz v0, :cond_2
 
     .line 39
     .line 40
@@ -1613,7 +1613,7 @@
 
     .line 41
     .line 42
-    if-eqz v2, :cond_3a
+    if-eqz v2, :cond_1
 
     .line 43
     .line 44
@@ -1629,7 +1629,7 @@
     move-result v2
 
     .line 50
-    if-nez v2, :cond_3a
+    if-nez v2, :cond_1
 
     .line 51
     .line 52
@@ -1643,17 +1643,17 @@
     return-object p1
 
     .line 56
-    :catchall_37
+    :catchall_0
     move-exception v0
 
     .line 57
     move-object p1, v0
 
     .line 58
-    goto :goto_6c
+    goto :goto_0
 
     .line 59
-    :cond_3a
+    :cond_1
     iget-object v0, v0, Llibs/uc0;->a:Llibs/tc0;
 
     .line 60
@@ -1672,7 +1672,7 @@
     .line 67
     .line 68
     .line 69
-    :cond_44
+    :cond_2
     new-instance v4, Llibs/uc0;
 
     .line 70
@@ -1712,8 +1712,8 @@
     .line 88
     .line 89
     monitor-exit v1
-    :try_end_59
-    .catchall {:try_start_19 .. :try_end_59} :catchall_37
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 90
     new-instance v0, Llibs/vc0;
@@ -1745,7 +1745,7 @@
     move-result p1
 
     .line 103
-    if-eqz p1, :cond_6b
+    if-eqz p1, :cond_3
 
     .line 104
     .line 105
@@ -1754,22 +1754,22 @@
     .line 106
     .line 107
     .line 108
-    :cond_6b
+    :cond_3
     return-object v9
 
     .line 109
-    :goto_6c
-    :try_start_6c
+    :goto_0
+    :try_start_1
     monitor-exit v1
-    :try_end_6d
-    .catchall {:try_start_6c .. :try_end_6d} :catchall_37
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 110
     throw p1
 .end method
 
 .method public final renameDocument(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 8
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/xc0;->Z:Lcom/mixplorer/providers/DocProvider;
@@ -1794,7 +1794,7 @@
     const/4 v2, 0x1
 
     .line 11
-    :try_start_a
+    :try_start_0
     new-instance v3, Ljava/util/concurrent/atomic/AtomicReference;
 
     .line 12
@@ -1821,7 +1821,7 @@
     move-result v0
 
     .line 25
-    if-eqz v0, :cond_48
+    if-eqz v0, :cond_1
 
     .line 26
     .line 27
@@ -1833,7 +1833,7 @@
     move-result-object v0
 
     .line 31
-    if-eqz v0, :cond_5d
+    if-eqz v0, :cond_2
 
     .line 32
     .line 33
@@ -1849,7 +1849,7 @@
     move-result v0
 
     .line 39
-    if-lez v0, :cond_2d
+    if-lez v0, :cond_0
 
     .line 40
     .line 41
@@ -1861,10 +1861,10 @@
     move-result-object v0
 
     .line 45
-    goto :goto_37
+    goto :goto_0
 
     .line 46
-    :cond_2d
+    :cond_0
     const/16 v0, 0x3a
 
     .line 47
@@ -1885,7 +1885,7 @@
     move-result-object v0
 
     .line 56
-    :goto_37
+    :goto_0
     invoke-virtual {v3}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
     .line 57
@@ -1917,14 +1917,14 @@
     return-object p1
 
     .line 71
-    :catchall_46
+    :catchall_0
     move-exception v0
 
     .line 72
-    goto :goto_4e
+    goto :goto_1
 
     .line 73
-    :cond_48
+    :cond_1
     new-instance v0, Ljava/lang/InterruptedException;
 
     .line 74
@@ -1935,11 +1935,11 @@
     .line 77
     .line 78
     throw v0
-    :try_end_4e
-    .catchall {:try_start_a .. :try_end_4e} :catchall_46
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 79
-    :goto_4e
+    :goto_1
     invoke-static {v0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 80
@@ -1969,7 +1969,7 @@
     .line 92
     .line 93
     .line 94
-    :cond_5d
+    :cond_2
     new-instance v0, Ljava/io/FileNotFoundException;
 
     .line 95

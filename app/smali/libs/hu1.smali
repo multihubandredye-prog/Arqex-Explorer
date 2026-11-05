@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/ru1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final onInfo(Landroid/media/MediaPlayer;II)Z
-    .registers 7
+    .locals 3
 
     .line 1
     iget-object p1, p0, Llibs/hu1;->a:Llibs/ru1;
@@ -47,7 +47,7 @@
     const/4 v1, 0x1
 
     .line 7
-    if-eq p2, v0, :cond_21
+    if-eq p2, v0, :cond_3
 
     .line 8
     .line 9
@@ -58,7 +58,7 @@
     const/4 v2, 0x0
 
     .line 12
-    if-eq p2, v0, :cond_1e
+    if-eq p2, v0, :cond_2
 
     .line 13
     .line 14
@@ -66,7 +66,7 @@
 
     .line 15
     .line 16
-    if-eq p2, p1, :cond_1a
+    if-eq p2, p1, :cond_1
 
     .line 17
     .line 18
@@ -74,14 +74,14 @@
 
     .line 19
     .line 20
-    if-eq p2, p1, :cond_16
+    if-eq p2, p1, :cond_0
 
     .line 21
     .line 22
     return v2
 
     .line 23
-    :cond_16
+    :cond_0
     invoke-virtual {p3}, Llibs/k3;->onBufferingEnd()V
 
     .line 24
@@ -90,7 +90,7 @@
     return v1
 
     .line 27
-    :cond_1a
+    :cond_1
     invoke-virtual {p3}, Llibs/k3;->onBufferingStart()V
 
     .line 28
@@ -99,7 +99,7 @@
     return v1
 
     .line 31
-    :cond_1e
+    :cond_2
     iput-boolean v2, p1, Llibs/ru1;->m:Z
 
     .line 32
@@ -107,7 +107,7 @@
     return v1
 
     .line 34
-    :cond_21
+    :cond_3
     invoke-virtual {p3}, Llibs/k3;->onRenderingStarted()V
 
     .line 35

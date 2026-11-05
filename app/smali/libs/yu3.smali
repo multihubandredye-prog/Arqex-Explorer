@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ev3;Landroid/view/WindowInsets;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Llibs/xu3;-><init>(Llibs/ev3;Landroid/view/WindowInsets;)V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final b()Llibs/ev3;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/xu3;->c:Landroid/view/WindowInsets;
@@ -60,7 +60,7 @@
 .end method
 
 .method public final c()Llibs/ev3;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/xu3;->c:Landroid/view/WindowInsets;
@@ -90,14 +90,14 @@
 .end method
 
 .method public final f()Llibs/na1;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/yu3;->l:Llibs/na1;
 
     .line 2
     .line 3
-    if-nez v0, :cond_22
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -161,12 +161,12 @@
 
     .line 34
     .line 35
-    :cond_22
+    :cond_0
     return-object v0
 .end method
 
 .method public final h()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/xu3;->c:Landroid/view/WindowInsets;
@@ -185,7 +185,7 @@
 .end method
 
 .method public l(Llibs/na1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/yu3;->l:Llibs/na1;

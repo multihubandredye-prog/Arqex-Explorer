@@ -27,7 +27,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const-string v0, ":"
@@ -130,7 +130,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 23
     invoke-static {p1}, Llibs/ql;->d(Ljava/lang/String;)Llibs/ql;
@@ -147,7 +147,7 @@
 .end method
 
 .method public constructor <init>(Llibs/ql;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 22
     invoke-static {p2}, Llibs/ql;->d(Ljava/lang/String;)Llibs/ql;
@@ -160,7 +160,7 @@
 .end method
 
 .method public constructor <init>(Llibs/ql;Llibs/ql;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -209,7 +209,7 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     instance-of v0, p1, Llibs/px0;
@@ -219,7 +219,7 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     .line 5
     .line 6
@@ -243,7 +243,7 @@
     move-result v0
 
     .line 16
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     .line 17
     .line 18
@@ -263,7 +263,7 @@
     move-result p1
 
     .line 26
-    if-eqz p1, :cond_1d
+    if-eqz p1, :cond_0
 
     .line 27
     .line 28
@@ -273,12 +273,12 @@
     return p1
 
     .line 30
-    :cond_1d
+    :cond_0
     return v1
 .end method
 
 .method public final hashCode()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/px0;->a:Llibs/ql;
@@ -320,7 +320,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/px0;->a:Llibs/ql;

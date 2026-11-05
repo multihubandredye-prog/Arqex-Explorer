@@ -19,7 +19,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/io/File;
@@ -56,7 +56,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/security/SecureRandomSpi;-><init>()V
@@ -68,7 +68,7 @@
 .end method
 
 .method public static a()[B
-    .registers 4
+    .locals 4
 
     .line 1
     :try_start_0
@@ -166,14 +166,14 @@
     .line 51
     .line 52
     move-result-object v0
-    :try_end_34
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_34} :catch_35
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 53
     return-object v0
 
     .line 54
-    :catch_35
+    :catch_0
     move-exception v0
 
     .line 55
@@ -194,7 +194,7 @@
 .end method
 
 .method public static b()[B
-    .registers 4
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -210,7 +210,7 @@
 
     .line 7
     .line 8
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_0
 
     .line 9
     .line 10
@@ -219,11 +219,11 @@
     .line 11
     .line 12
     .line 13
-    :cond_c
+    :cond_0
     const/4 v1, 0x0
 
     .line 14
-    :try_start_d
+    :try_start_0
     const-class v2, Landroid/os/Build;
 
     .line 15
@@ -249,12 +249,12 @@
 
     .line 26
     check-cast v2, Ljava/lang/String;
-    :try_end_1b
-    .catch Ljava/lang/Exception; {:try_start_d .. :try_end_1b} :catch_30
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
     .line 27
     .line 28
-    if-eqz v2, :cond_20
+    if-eqz v2, :cond_1
 
     .line 29
     .line 30
@@ -263,8 +263,8 @@
     .line 31
     .line 32
     .line 33
-    :cond_20
-    :try_start_20
+    :cond_1
+    :try_start_1
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 34
@@ -283,14 +283,14 @@
     .line 41
     .line 42
     move-result-object v0
-    :try_end_2a
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_20 .. :try_end_2a} :catch_2b
+    :try_end_1
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 43
     return-object v0
 
     .line 44
-    :catch_2b
+    :catch_0
     const-string v0, "UTF-8 encoding not supported"
 
     .line 45
@@ -300,12 +300,12 @@
     .line 47
     .line 48
     .line 49
-    :catch_30
+    :catch_1
     return-object v1
 .end method
 
 .method public static c()Ljava/io/DataInputStream;
-    .registers 5
+    .locals 5
 
     .line 1
     const-string v0, "Failed to open "
@@ -319,18 +319,18 @@
     monitor-enter v1
 
     .line 6
-    :try_start_5
+    :try_start_0
     sget-object v2, Llibs/jl1;->Lambda:Ljava/io/DataInputStream;
-    :try_end_7
-    .catchall {:try_start_5 .. :try_end_7} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 7
     .line 8
-    if-nez v2, :cond_34
+    if-nez v2, :cond_0
 
     .line 9
     .line 10
-    :try_start_9
+    :try_start_1
     new-instance v2, Ljava/io/DataInputStream;
 
     .line 11
@@ -354,27 +354,27 @@
     .line 21
     .line 22
     sput-object v2, Llibs/jl1;->Lambda:Ljava/io/DataInputStream;
-    :try_end_17
-    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_17} :catch_1a
-    .catchall {:try_start_9 .. :try_end_17} :catchall_18
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 23
     .line 24
-    goto :goto_34
+    goto :goto_0
 
     .line 25
-    :catchall_18
+    :catchall_0
     move-exception v0
 
     .line 26
-    goto :goto_36
+    goto :goto_1
 
     .line 27
-    :catch_1a
+    :catch_0
     move-exception v2
 
     .line 28
-    :try_start_1b
+    :try_start_2
     new-instance v3, Ljava/lang/SecurityException;
 
     .line 29
@@ -422,25 +422,25 @@
     throw v3
 
     .line 53
-    :cond_34
-    :goto_34
+    :cond_0
+    :goto_0
     monitor-exit v1
 
     .line 54
     return-object v2
 
     .line 55
-    :goto_36
+    :goto_1
     monitor-exit v1
-    :try_end_37
-    .catchall {:try_start_1b .. :try_end_37} :catchall_18
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 56
     throw v0
 .end method
 
 .method public static d()Ljava/io/OutputStream;
-    .registers 3
+    .locals 3
 
     .line 1
     sget-object v0, Llibs/jl1;->Z:Ljava/lang/Object;
@@ -450,12 +450,12 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     sget-object v1, Llibs/jl1;->Mu:Ljava/io/FileOutputStream;
 
     .line 5
     .line 6
-    if-nez v1, :cond_13
+    if-nez v1, :cond_0
 
     .line 7
     .line 8
@@ -476,28 +476,28 @@
 
     .line 16
     .line 17
-    goto :goto_13
+    goto :goto_0
 
     .line 18
-    :catchall_11
+    :catchall_0
     move-exception v1
 
     .line 19
-    goto :goto_15
+    goto :goto_1
 
     .line 20
-    :cond_13
-    :goto_13
+    :cond_0
+    :goto_0
     monitor-exit v0
 
     .line 21
     return-object v1
 
     .line 22
-    :goto_15
+    :goto_1
     monitor-exit v0
-    :try_end_16
-    .catchall {:try_start_3 .. :try_end_16} :catchall_11
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 23
     throw v1
@@ -506,7 +506,7 @@
 
 # virtual methods
 .method public final engineGenerateSeed(I)[B
-    .registers 2
+    .locals 0
 
     .line 1
     new-array p1, p1, [B
@@ -522,14 +522,14 @@
 .end method
 
 .method public final engineNextBytes([B)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-boolean v0, p0, Llibs/jl1;->X:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -546,18 +546,18 @@
     .line 10
     .line 11
     .line 12
-    :cond_b
-    :try_start_b
+    :cond_0
+    :try_start_0
     sget-object v0, Llibs/jl1;->Z:Ljava/lang/Object;
 
     .line 13
     .line 14
     monitor-enter v0
-    :try_end_e
-    .catch Ljava/io/IOException; {:try_start_b .. :try_end_e} :catch_1c
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 15
-    :try_start_e
+    :try_start_1
     invoke-static {}, Llibs/jl1;->c()Ljava/io/DataInputStream;
 
     .line 16
@@ -567,17 +567,17 @@
 
     .line 19
     monitor-exit v0
-    :try_end_13
-    .catchall {:try_start_e .. :try_end_13} :catchall_1e
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 20
-    :try_start_13
+    :try_start_2
     monitor-enter v1
-    :try_end_14
-    .catch Ljava/io/IOException; {:try_start_13 .. :try_end_14} :catch_1c
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 21
-    :try_start_14
+    :try_start_3
     invoke-virtual {v1, p1}, Ljava/io/DataInputStream;->readFully([B)V
 
     .line 22
@@ -589,45 +589,45 @@
     return-void
 
     .line 26
-    :catchall_19
+    :catchall_0
     move-exception p1
 
     .line 27
     monitor-exit v1
-    :try_end_1b
-    .catchall {:try_start_14 .. :try_end_1b} :catchall_19
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 28
-    :try_start_1b
+    :try_start_4
     throw p1
-    :try_end_1c
-    .catch Ljava/io/IOException; {:try_start_1b .. :try_end_1c} :catch_1c
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
 
     .line 29
-    :catch_1c
+    :catch_0
     move-exception p1
 
     .line 30
-    goto :goto_21
+    goto :goto_0
 
     .line 31
-    :catchall_1e
+    :catchall_1
     move-exception p1
 
     .line 32
-    :try_start_1f
+    :try_start_5
     monitor-exit v0
-    :try_end_20
-    .catchall {:try_start_1f .. :try_end_20} :catchall_1e
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
     .line 33
-    :try_start_20
+    :try_start_6
     throw p1
-    :try_end_21
-    .catch Ljava/io/IOException; {:try_start_20 .. :try_end_21} :catch_1c
+    :try_end_6
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_0
 
     .line 34
-    :goto_21
+    :goto_0
     new-instance v0, Ljava/lang/SecurityException;
 
     .line 35
@@ -671,24 +671,24 @@
 .end method
 
 .method public final engineSetSeed([B)V
-    .registers 5
+    .locals 3
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    :try_start_1
+    :try_start_0
     sget-object v1, Llibs/jl1;->Z:Ljava/lang/Object;
 
     .line 3
     .line 4
     monitor-enter v1
-    :try_end_4
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_4} :catch_17
-    .catchall {:try_start_1 .. :try_end_4} :catchall_12
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 5
-    :try_start_4
+    :try_start_1
     invoke-static {}, Llibs/jl1;->d()Ljava/io/OutputStream;
 
     .line 6
@@ -698,20 +698,20 @@
 
     .line 9
     monitor-exit v1
-    :try_end_9
-    .catchall {:try_start_4 .. :try_end_9} :catchall_14
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 10
-    :try_start_9
+    :try_start_2
     invoke-virtual {v2, p1}, Ljava/io/OutputStream;->write([B)V
 
     .line 11
     .line 12
     .line 13
     invoke-virtual {v2}, Ljava/io/OutputStream;->flush()V
-    :try_end_f
-    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_f} :catch_17
-    .catchall {:try_start_9 .. :try_end_f} :catchall_12
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 14
     .line 15
@@ -723,32 +723,32 @@
     return-void
 
     .line 19
-    :catchall_12
+    :catchall_0
     move-exception p1
 
     .line 20
-    goto :goto_36
+    goto :goto_0
 
     .line 21
-    :catchall_14
+    :catchall_1
     move-exception p1
 
     .line 22
-    :try_start_15
+    :try_start_3
     monitor-exit v1
-    :try_end_16
-    .catchall {:try_start_15 .. :try_end_16} :catchall_14
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 23
-    :try_start_16
+    :try_start_4
     throw p1
-    :try_end_17
-    .catch Ljava/io/IOException; {:try_start_16 .. :try_end_17} :catch_17
-    .catchall {:try_start_16 .. :try_end_17} :catchall_12
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 24
-    :catch_17
-    :try_start_17
+    :catch_0
+    :try_start_5
     const-class p1, Llibs/a92;
 
     .line 25
@@ -797,8 +797,8 @@
 
     .line 49
     invoke-static {p1, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_33
-    .catchall {:try_start_17 .. :try_end_33} :catchall_12
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 50
     .line 51
@@ -810,7 +810,7 @@
     return-void
 
     .line 55
-    :goto_36
+    :goto_0
     iput-boolean v0, p0, Llibs/jl1;->X:Z
 
     .line 56

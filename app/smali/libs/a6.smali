@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/m0;-><init>()V
@@ -17,7 +17,7 @@
 .end method
 
 .method public static b(Llibs/mx;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Llibs/App;)V
-    .registers 9
+    .locals 4
 
     .line 1
     const-string v0, "WITH"
@@ -190,7 +190,7 @@
 .end method
 
 .method public static c(Llibs/mx;Llibs/App;Ljava/lang/String;Llibs/ae;)V
-    .registers 6
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -264,7 +264,7 @@
 .end method
 
 .method public static d(Ljava/lang/String;Llibs/App;Llibs/mx;)V
-    .registers 5
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

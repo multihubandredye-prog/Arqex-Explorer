@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/a;Ljava/util/ArrayList;Llibs/rp0;Llibs/r31;)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-object p2, p0, Llibs/d41;->c:Ljava/util/ArrayList;
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public final z(Landroid/view/View;I)V
-    .registers 9
+    .locals 6
 
     .line 1
     iget-object p1, p0, Llibs/d41;->c:Ljava/util/ArrayList;

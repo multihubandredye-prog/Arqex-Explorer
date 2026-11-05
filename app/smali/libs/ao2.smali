@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/ao2;
@@ -68,7 +68,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     const-string v0, "INSTANCE"
@@ -100,7 +100,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Llibs/ao2;
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Llibs/ao2;
@@ -123,7 +123,7 @@
 .end method
 
 .method public static values()[Llibs/ao2;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/ao2;->Lambda:[Llibs/ao2;

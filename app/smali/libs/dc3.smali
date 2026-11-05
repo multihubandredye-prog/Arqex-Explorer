@@ -23,7 +23,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 1
     const-string v0, "jcifs.smb.client.disablePlainTextPasswords"
@@ -53,7 +53,7 @@
 
     .line 13
     .line 14
-    fill-array-data v0, :array_8e
+    fill-array-data v0, :array_0
 
     .line 15
     .line 16
@@ -78,7 +78,7 @@
     move-result-object v2
 
     .line 27
-    if-eqz v2, :cond_23
+    if-eqz v2, :cond_0
 
     .line 28
     .line 29
@@ -97,7 +97,7 @@
 
     .line 35
     .line 36
-    :cond_23
+    :cond_0
     const-string v2, "jcifs.smb.client.TreeConnectAndX.CreateDirectory"
 
     .line 37
@@ -110,7 +110,7 @@
     move-result-object v2
 
     .line 42
-    if-eqz v2, :cond_32
+    if-eqz v2, :cond_1
 
     .line 43
     .line 44
@@ -129,7 +129,7 @@
 
     .line 50
     .line 51
-    :cond_32
+    :cond_1
     const-string v2, "jcifs.smb.client.TreeConnectAndX.Delete"
 
     .line 52
@@ -142,7 +142,7 @@
     move-result-object v2
 
     .line 57
-    if-eqz v2, :cond_41
+    if-eqz v2, :cond_2
 
     .line 58
     .line 59
@@ -161,7 +161,7 @@
 
     .line 65
     .line 66
-    :cond_41
+    :cond_2
     const-string v2, "jcifs.smb.client.TreeConnectAndX.DeleteDirectory"
 
     .line 67
@@ -174,7 +174,7 @@
     move-result-object v2
 
     .line 72
-    if-eqz v2, :cond_50
+    if-eqz v2, :cond_3
 
     .line 73
     .line 74
@@ -193,7 +193,7 @@
 
     .line 80
     .line 81
-    :cond_50
+    :cond_3
     const-string v2, "jcifs.smb.client.TreeConnectAndX.OpenAndX"
 
     .line 82
@@ -206,7 +206,7 @@
     move-result-object v2
 
     .line 87
-    if-eqz v2, :cond_5f
+    if-eqz v2, :cond_4
 
     .line 88
     .line 89
@@ -225,7 +225,7 @@
 
     .line 95
     .line 96
-    :cond_5f
+    :cond_4
     const-string v2, "jcifs.smb.client.TreeConnectAndX.Rename"
 
     .line 97
@@ -238,7 +238,7 @@
     move-result-object v2
 
     .line 102
-    if-eqz v2, :cond_6e
+    if-eqz v2, :cond_5
 
     .line 103
     .line 104
@@ -257,7 +257,7 @@
 
     .line 110
     .line 111
-    :cond_6e
+    :cond_5
     const-string v2, "jcifs.smb.client.TreeConnectAndX.Transaction"
 
     .line 112
@@ -270,7 +270,7 @@
     move-result-object v2
 
     .line 117
-    if-eqz v2, :cond_7d
+    if-eqz v2, :cond_6
 
     .line 118
     .line 119
@@ -289,7 +289,7 @@
 
     .line 125
     .line 126
-    :cond_7d
+    :cond_6
     const-string v2, "jcifs.smb.client.TreeConnectAndX.QueryInformation"
 
     .line 127
@@ -302,7 +302,7 @@
     move-result-object v1
 
     .line 132
-    if-eqz v1, :cond_8d
+    if-eqz v1, :cond_7
 
     .line 133
     .line 134
@@ -322,11 +322,11 @@
 
     .line 141
     .line 142
-    :cond_8d
+    :cond_7
     return-void
 
     .line 143
-    :array_8e
+    :array_0
     .array-data 1
         0x1t
         0x1t
@@ -341,7 +341,7 @@
 .end method
 
 .method public constructor <init>(Llibs/rc3;Ljava/lang/String;Ljava/lang/String;Llibs/c63;)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0, p4}, Llibs/d1;-><init>(Llibs/c63;)V
@@ -375,7 +375,7 @@
 
 # virtual methods
 .method public final e(I[B)I
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -385,7 +385,7 @@
 .end method
 
 .method public final j(I[B)I
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -395,7 +395,7 @@
 .end method
 
 .method public final q(I[B)I
-    .registers 8
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/dc3;->Golf:Ljava/lang/String;
@@ -421,7 +421,7 @@
     const/4 v3, 0x0
 
     .line 12
-    if-nez v2, :cond_27
+    if-nez v2, :cond_0
 
     .line 13
     .line 14
@@ -450,7 +450,7 @@
     move-result v1
 
     .line 27
-    if-lez v1, :cond_27
+    if-lez v1, :cond_0
 
     .line 28
     .line 29
@@ -474,10 +474,10 @@
     add-int/2addr v1, p1
 
     .line 39
-    goto :goto_2b
+    goto :goto_0
 
     .line 40
-    :cond_27
+    :cond_0
     add-int/lit8 v1, p1, 0x1
 
     .line 41
@@ -486,7 +486,7 @@
 
     .line 43
     .line 44
-    :goto_2b
+    :goto_0
     iget-object v2, p0, Llibs/dc3;->Juliet:Ljava/lang/String;
 
     .line 45
@@ -506,7 +506,7 @@
     add-int/2addr v2, v1
 
     .line 53
-    :try_start_34
+    :try_start_0
     const-string v1, "ASCII"
 
     .line 54
@@ -528,8 +528,8 @@
 
     .line 63
     invoke-static {v1, v3, p2, v2, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-    :try_end_41
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_34 .. :try_end_41} :catch_4c
+    :try_end_0
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 64
     .line 65
@@ -559,12 +559,12 @@
     return v1
 
     .line 77
-    :catch_4c
+    :catch_0
     return v3
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/String;
@@ -696,7 +696,7 @@
 .end method
 
 .method public final v(I[B)I
-    .registers 8
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/dc3;->Foxtrot:Llibs/rc3;
@@ -721,7 +721,7 @@
     const/4 v3, 0x1
 
     .line 11
-    if-nez v1, :cond_57
+    if-nez v1, :cond_2
 
     .line 12
     .line 13
@@ -750,7 +750,7 @@
     move-result v1
 
     .line 26
-    if-lez v1, :cond_57
+    if-lez v1, :cond_2
 
     .line 27
     .line 28
@@ -766,7 +766,7 @@
 
     .line 33
     .line 34
-    if-eqz v4, :cond_31
+    if-eqz v4, :cond_0
 
     .line 35
     .line 36
@@ -797,15 +797,15 @@
 
     .line 48
     .line 49
-    goto :goto_59
+    goto :goto_0
 
     .line 50
-    :cond_31
+    :cond_0
     sget-boolean v1, Llibs/dc3;->Kilo:Z
 
     .line 51
     .line 52
-    if-nez v1, :cond_51
+    if-nez v1, :cond_1
 
     .line 53
     .line 54
@@ -864,10 +864,10 @@
 
     .line 80
     .line 81
-    goto :goto_59
+    goto :goto_0
 
     .line 82
-    :cond_51
+    :cond_1
     const-string p1, "Plain text passwords are disabled"
 
     .line 83
@@ -880,12 +880,12 @@
     return v2
 
     .line 88
-    :cond_57
+    :cond_2
     iput v3, p0, Llibs/dc3;->India:I
 
     .line 89
     .line 90
-    :goto_59
+    :goto_0
     add-int/lit8 v0, p1, 0x1
 
     .line 91
@@ -917,7 +917,7 @@
 .end method
 
 .method public final x(B)I
-    .registers 6
+    .locals 4
 
     .line 1
     and-int/lit16 p1, p1, 0xff
@@ -928,28 +928,28 @@
 
     .line 4
     .line 5
-    if-eqz p1, :cond_39
+    if-eqz p1, :cond_7
 
     .line 6
     .line 7
     const/4 v1, 0x1
 
     .line 8
-    if-eq p1, v1, :cond_35
+    if-eq p1, v1, :cond_6
 
     .line 9
     .line 10
     const/4 v1, 0x6
 
     .line 11
-    if-eq p1, v1, :cond_31
+    if-eq p1, v1, :cond_5
 
     .line 12
     .line 13
     const/4 v2, 0x7
 
     .line 14
-    if-eq p1, v2, :cond_2e
+    if-eq p1, v2, :cond_4
 
     .line 15
     .line 16
@@ -957,7 +957,7 @@
 
     .line 17
     .line 18
-    if-eq p1, v1, :cond_2b
+    if-eq p1, v1, :cond_3
 
     .line 19
     .line 20
@@ -968,7 +968,7 @@
     const/4 v3, 0x0
 
     .line 23
-    if-eq p1, v1, :cond_28
+    if-eq p1, v1, :cond_2
 
     .line 24
     .line 25
@@ -976,7 +976,7 @@
 
     .line 26
     .line 27
-    if-eq p1, v1, :cond_25
+    if-eq p1, v1, :cond_1
 
     .line 28
     .line 29
@@ -984,14 +984,14 @@
 
     .line 30
     .line 31
-    if-eq p1, v1, :cond_21
+    if-eq p1, v1, :cond_0
 
     .line 32
     .line 33
     return v3
 
     .line 34
-    :cond_21
+    :cond_0
     const/4 p1, 0x5
 
     .line 35
@@ -1002,7 +1002,7 @@
     return p1
 
     .line 38
-    :cond_25
+    :cond_1
     aget-byte p1, v0, v2
 
     .line 39
@@ -1010,7 +1010,7 @@
     return p1
 
     .line 41
-    :cond_28
+    :cond_2
     aget-byte p1, v0, v3
 
     .line 42
@@ -1018,7 +1018,7 @@
     return p1
 
     .line 44
-    :cond_2b
+    :cond_3
     aget-byte p1, v0, v1
 
     .line 45
@@ -1026,7 +1026,7 @@
     return p1
 
     .line 47
-    :cond_2e
+    :cond_4
     aget-byte p1, v0, v1
 
     .line 48
@@ -1034,7 +1034,7 @@
     return p1
 
     .line 50
-    :cond_31
+    :cond_5
     const/4 p1, 0x3
 
     .line 51
@@ -1045,7 +1045,7 @@
     return p1
 
     .line 54
-    :cond_35
+    :cond_6
     const/4 p1, 0x4
 
     .line 55
@@ -1056,7 +1056,7 @@
     return p1
 
     .line 58
-    :cond_39
+    :cond_7
     const/4 p1, 0x2
 
     .line 59

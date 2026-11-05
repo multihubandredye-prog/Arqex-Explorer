@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/bn1;
@@ -49,7 +49,7 @@
 .end method
 
 .method public constructor <init>(Llibs/ac0;Llibs/k00;Ljava/lang/String;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -75,7 +75,7 @@
 
 # virtual methods
 .method public final a(Llibs/ml;)Llibs/ko3;
-    .registers 26
+    .locals 24
 
     .line 1
     move-object/from16 v0, p0
@@ -95,7 +95,7 @@
     .line 8
     .line 9
     .line 10
-    :goto_9
+    :goto_0
     invoke-virtual {v1}, Llibs/ml;->m()Z
 
     .line 11
@@ -107,7 +107,7 @@
     const/4 v4, 0x2
 
     .line 15
-    if-eqz v3, :cond_79
+    if-eqz v3, :cond_1
 
     .line 16
     .line 17
@@ -201,14 +201,14 @@
     move-result v14
 
     .line 61
-    if-gtz v14, :cond_3f
+    if-gtz v14, :cond_0
 
     .line 62
     .line 63
-    goto :goto_79
+    goto :goto_1
 
     .line 64
-    :cond_3f
+    :cond_0
     new-instance v22, Llibs/f5;
 
     .line 65
@@ -322,11 +322,11 @@
 
     .line 120
     .line 121
-    goto :goto_9
+    goto :goto_0
 
     .line 122
-    :cond_79
-    :goto_79
+    :cond_1
+    :goto_1
     invoke-static {v2}, Llibs/xg0;->All(Ljava/util/ArrayList;)Llibs/b53;
 
     .line 123

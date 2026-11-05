@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic a()Landroid/graphics/BlendMode;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/BlendMode;->OVERLAY:Landroid/graphics/BlendMode;
@@ -16,7 +16,7 @@
 .end method
 
 .method public static bridge synthetic b(Landroid/view/WindowInsets$Builder;)Landroid/view/WindowInsets;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/WindowInsets$Builder;->build()Landroid/view/WindowInsets;
@@ -31,7 +31,7 @@
 .end method
 
 .method public static bridge synthetic c(Landroid/graphics/Paint;)V
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/BlendMode;->SCREEN:Landroid/graphics/BlendMode;
@@ -47,7 +47,7 @@
 .end method
 
 .method public static bridge synthetic d(Landroid/graphics/Paint;F)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/graphics/Paint;->setWordSpacing(F)V
@@ -59,7 +59,7 @@
 .end method
 
 .method public static bridge synthetic e(Landroid/view/WindowInsets$Builder;Landroid/graphics/Insets;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/WindowInsets$Builder;->setSystemWindowInsets(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;
@@ -71,7 +71,7 @@
 .end method
 
 .method public static bridge synthetic f()Landroid/graphics/BlendMode;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/BlendMode;->DARKEN:Landroid/graphics/BlendMode;
@@ -82,7 +82,7 @@
 .end method
 
 .method public static bridge synthetic g(Landroid/graphics/Paint;)V
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/BlendMode;->OVERLAY:Landroid/graphics/BlendMode;
@@ -98,7 +98,7 @@
 .end method
 
 .method public static bridge synthetic h(Landroid/view/WindowInsets$Builder;Landroid/graphics/Insets;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/WindowInsets$Builder;->setStableInsets(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;
@@ -110,7 +110,7 @@
 .end method
 
 .method public static bridge synthetic i()Landroid/graphics/BlendMode;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/BlendMode;->LIGHTEN:Landroid/graphics/BlendMode;
@@ -121,7 +121,7 @@
 .end method
 
 .method public static bridge synthetic j(Landroid/graphics/Paint;)V
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/BlendMode;->DARKEN:Landroid/graphics/BlendMode;
@@ -137,7 +137,7 @@
 .end method
 
 .method public static bridge synthetic k()Landroid/graphics/BlendMode;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/BlendMode;->MULTIPLY:Landroid/graphics/BlendMode;
@@ -148,7 +148,7 @@
 .end method
 
 .method public static bridge synthetic l(Landroid/graphics/Paint;)V
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/BlendMode;->LIGHTEN:Landroid/graphics/BlendMode;
@@ -164,7 +164,7 @@
 .end method
 
 .method public static bridge synthetic m()Landroid/graphics/BlendMode;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/BlendMode;->COLOR_DODGE:Landroid/graphics/BlendMode;

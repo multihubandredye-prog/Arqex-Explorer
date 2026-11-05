@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/c2;Llibs/m52;JLlibs/rp0;Ljava/lang/String;Llibs/zl0;Llibs/zl0;I)V
-    .registers 10
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/v42;->h:Llibs/c2;
@@ -69,7 +69,7 @@
 
 # virtual methods
 .method public final onProgress(JJ)V
-    .registers 11
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/v42;->a:Llibs/m52;
@@ -84,7 +84,7 @@
     move-result v1
 
     .line 7
-    if-nez v1, :cond_1f
+    if-nez v1, :cond_1
 
     .line 8
     .line 9
@@ -100,7 +100,7 @@
 
     .line 14
     .line 15
-    if-nez v5, :cond_18
+    if-nez v5, :cond_0
 
     .line 16
     .line 17
@@ -122,7 +122,7 @@
 
     .line 24
     .line 25
-    :cond_18
+    :cond_0
     iget-object p3, p0, Llibs/v42;->h:Llibs/c2;
 
     .line 26
@@ -138,7 +138,7 @@
     return-void
 
     .line 32
-    :cond_1f
+    :cond_1
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 33
@@ -148,7 +148,7 @@
 .end method
 
 .method public final onProgressDone(Ljava/lang/String;ZJJ)V
-    .registers 9
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/v42;->f:Llibs/zl0;
@@ -227,7 +227,7 @@
 .end method
 
 .method public final onProgressFi(Llibs/rp0;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/v42;->h:Llibs/c2;
@@ -243,7 +243,7 @@
 .end method
 
 .method public final onProgressPath(Ljava/lang/String;ZJJ)Ljava/lang/String;
-    .registers 11
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/v42;->a:Llibs/m52;
@@ -258,7 +258,7 @@
     move-result v1
 
     .line 7
-    if-nez v1, :cond_48
+    if-nez v1, :cond_1
 
     .line 8
     .line 9
@@ -327,7 +327,7 @@
 
     .line 41
     .line 42
-    if-nez p2, :cond_3c
+    if-nez p2, :cond_0
 
     .line 43
     .line 44
@@ -357,14 +357,14 @@
     move-result p4
 
     .line 58
-    if-eqz p4, :cond_3c
+    if-eqz p4, :cond_0
 
     .line 59
     .line 60
     return-object p1
 
     .line 61
-    :cond_3c
+    :cond_0
     invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 62
@@ -387,7 +387,7 @@
     return-object p1
 
     .line 73
-    :cond_48
+    :cond_1
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 74

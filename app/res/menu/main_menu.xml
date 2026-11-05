@@ -2,23 +2,27 @@
 <menu
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
+        android:icon="@drawable/arqex_menu_undo"
         android:id="@id/menu_undo_recycle"
-        android:title="@string/undo"  android:icon="@drawable/arqex_menu_undo" />
+        android:title="@string/undo" />
     <item
         android:id="@id/menu_log_out"
         android:title="@string/log_out" />
     <item
+        android:icon="@drawable/arqex_menu_lock"
         android:id="@id/menu_lock"
-        android:title="@string/lock"  android:icon="@drawable/arqex_menu_lock" />
+        android:title="@string/lock" />
     <item
+        android:icon="@drawable/arqex_menu_tools"
         android:id="@id/menu_tools"
-        android:title="@string/tools"  android:icon="@drawable/arqex_menu_tools" />
+        android:title="@string/tools" />
     <item
         android:id="@id/menu_extract_main"
         android:title="@string/extract" />
     <item
+        android:icon="@drawable/arqex_menu_filter"
         android:id="@id/menu_filter"
-        android:title="@string/filter"  android:icon="@drawable/arqex_menu_filter" />
+        android:title="@string/filter" />
     <item
         android:id="@id/menu_search"
         android:title="@string/search" />
@@ -35,26 +39,30 @@
         android:id="@id/menu_sort"
         android:title="@string/sort" />
     <item
+        android:icon="@drawable/arqex_menu_servers"
         android:id="@id/menu_servers"
-        android:title="@string/servers"  android:icon="@drawable/arqex_menu_servers" />
+        android:title="@string/servers" />
     <item
         android:id="@id/menu_charset"
         android:title="@string/charset" />
     <item
+        android:icon="@drawable/arqex_menu_execute"
         android:id="@id/menu_execute"
-        android:title="@string/execute"  android:icon="@drawable/arqex_menu_execute" />
+        android:title="@string/execute" />
     <item
         android:id="@id/menu_rewrite"
         android:title="@string/rewrite" />
     <item
+        android:icon="@drawable/arqex_menu_tasks"
         android:id="@id/menu_auto_tasks"
-        android:title="@string/auto_tasks"  android:icon="@drawable/arqex_menu_tasks" />
+        android:title="@string/auto_tasks" />
     <item
         android:id="@id/menu_magic_packet"
         android:title="@string/magic_packet" />
     <item
+        android:icon="@drawable/arqex_menu_log"
         android:id="@id/menu_send_log"
-        android:title="@string/send_log"  android:icon="@drawable/arqex_menu_log" />
+        android:title="@string/send_log" />
     <item
         android:id="@id/menu_busybox"
         android:title="BusyBox" />
@@ -65,15 +73,18 @@
         android:id="@id/menu_remount_as"
         android:title="@string/remount_as" />
     <item
+        android:icon="@drawable/arqex_menu_terminal"
         android:id="@id/menu_open_in_terminal"
-        android:title="@string/open_in_terminal"  android:icon="@drawable/arqex_menu_terminal" />
+        android:title="@string/open_in_terminal" />
     <item
         android:id="@id/menu_sync"
         android:title="@string/sync" />
     <item
+        android:icon="@drawable/arqex_menu_settings"
         android:id="@id/menu_settings"
-        android:title="@string/settings"  android:icon="@drawable/arqex_menu_settings" />
+        android:title="@string/settings" />
     <item
+        android:icon="@drawable/arqex_menu_exit"
         android:id="@id/menu_exit"
-        android:title="@string/exit"  android:icon="@drawable/arqex_menu_exit" />
+        android:title="@string/exit" />
 </menu>

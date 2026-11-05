@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Ljavax/crypto/interfaces/DHPrivateKey;)V
-    .registers 4
+    .locals 2
 
     .line 53
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -64,7 +64,7 @@
 .end method
 
 .method public constructor <init>(Ljavax/crypto/spec/DHPrivateKeySpec;)V
-    .registers 4
+    .locals 2
 
     .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -102,7 +102,7 @@
 .end method
 
 .method public constructor <init>(Llibs/bg2;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -208,7 +208,7 @@
 .end method
 
 .method public constructor <init>(Llibs/ga;)V
-    .registers 3
+    .locals 1
 
     .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -236,7 +236,7 @@
 .end method
 
 .method public constructor <init>(Llibs/zh0;)V
-    .registers 4
+    .locals 2
 
     .line 67
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -277,7 +277,7 @@
 
 # virtual methods
 .method public final a()Llibs/xh0;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ga;->Y:Llibs/xh0;
@@ -288,7 +288,7 @@
 .end method
 
 .method public final b(Llibs/App;)Llibs/Core;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ga;->Z:Llibs/c82;
@@ -307,7 +307,7 @@
 .end method
 
 .method public final c(Llibs/App;Llibs/Core;)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ga;->Z:Llibs/c82;
@@ -323,7 +323,7 @@
 .end method
 
 .method public final d()Ljava/util/Enumeration;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ga;->Z:Llibs/c82;
@@ -346,7 +346,7 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     instance-of v0, p1, Ljavax/crypto/interfaces/DHPrivateKey;
@@ -356,14 +356,14 @@
     const/4 v1, 0x0
 
     .line 4
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 5
     .line 6
     return v1
 
     .line 7
-    :cond_6
+    :cond_0
     check-cast p1, Ljavax/crypto/interfaces/DHPrivateKey;
 
     .line 8
@@ -388,7 +388,7 @@
     move-result v0
 
     .line 19
-    if-eqz v0, :cond_54
+    if-eqz v0, :cond_1
 
     .line 20
     .line 21
@@ -432,7 +432,7 @@
     move-result v0
 
     .line 41
-    if-eqz v0, :cond_54
+    if-eqz v0, :cond_1
 
     .line 42
     .line 43
@@ -476,7 +476,7 @@
     move-result v0
 
     .line 63
-    if-eqz v0, :cond_54
+    if-eqz v0, :cond_1
 
     .line 64
     .line 65
@@ -512,7 +512,7 @@
     move-result p1
 
     .line 81
-    if-ne v0, p1, :cond_54
+    if-ne v0, p1, :cond_1
 
     .line 82
     .line 83
@@ -522,12 +522,12 @@
     return p1
 
     .line 85
-    :cond_54
+    :cond_1
     return v1
 .end method
 
 .method public final getAlgorithm()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "ElGamal"
@@ -538,7 +538,7 @@
 .end method
 
 .method public final getEncoded()[B
-    .registers 7
+    .locals 6
 
     .line 1
     :try_start_0
@@ -608,14 +608,14 @@
     .line 35
     .line 36
     move-result-object v0
-    :try_end_24
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_24} :catch_25
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 37
     return-object v0
 
     .line 38
-    :catch_25
+    :catch_0
     const/4 v0, 0x0
 
     .line 39
@@ -623,7 +623,7 @@
 .end method
 
 .method public final getFormat()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "PKCS#8"
@@ -634,7 +634,7 @@
 .end method
 
 .method public final getParams()Ljavax/crypto/spec/DHParameterSpec;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljavax/crypto/spec/DHParameterSpec;
@@ -662,7 +662,7 @@
 .end method
 
 .method public final getX()Ljava/math/BigInteger;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ga;->X:Ljava/math/BigInteger;
@@ -673,7 +673,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/ga;->X:Ljava/math/BigInteger;

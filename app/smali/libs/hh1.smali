@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(II[B)V
-    .registers 6
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 .end method
 
 .method public constructor <init>([B)V
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 

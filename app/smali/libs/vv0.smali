@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-static {}, Llibs/zt0;->j()Landroid/os/Handler;
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final deliverSelfNotifications()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1

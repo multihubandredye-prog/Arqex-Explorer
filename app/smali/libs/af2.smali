@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/PreferenceActivity;Ljava/lang/String;Llibs/ml1;I)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/af2;->f:Lcom/mixplorer/activities/PreferenceActivity;
@@ -45,35 +45,35 @@
 
 # virtual methods
 .method public final declared-synchronized z(Landroid/view/View;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     monitor-enter p0
 
     .line 2
-    if-eqz p2, :cond_61
+    if-eqz p2, :cond_3
 
     .line 3
     .line 4
     const/4 p1, 0x1
 
     .line 5
-    if-eq p2, p1, :cond_51
+    if-eq p2, p1, :cond_2
 
     .line 6
     .line 7
     const/4 p1, 0x2
 
     .line 8
-    if-eq p2, p1, :cond_a
+    if-eq p2, p1, :cond_0
 
     .line 9
     .line 10
-    goto :goto_68
+    goto :goto_0
 
     .line 11
-    :cond_a
-    :try_start_a
+    :cond_0
+    :try_start_0
     iget-object p1, p0, Llibs/af2;->c:Ljava/lang/String;
 
     .line 12
@@ -86,7 +86,7 @@
     move-result p1
 
     .line 17
-    if-nez p1, :cond_1f
+    if-nez p1, :cond_1
 
     .line 18
     .line 19
@@ -103,8 +103,8 @@
 
     .line 25
     invoke-static {p1}, Llibs/gx1;->d(Ljava/lang/Object;)V
-    :try_end_1b
-    .catchall {:try_start_a .. :try_end_1b} :catchall_1d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 26
     .line 27
@@ -115,15 +115,15 @@
     return-void
 
     .line 30
-    :catchall_1d
+    :catchall_0
     move-exception p1
 
     .line 31
-    goto :goto_6f
+    goto :goto_1
 
     .line 32
-    :cond_1f
-    :try_start_1f
+    :cond_1
+    :try_start_1
     iget-object p1, p0, Llibs/af2;->d:Llibs/ml1;
 
     .line 33
@@ -186,7 +186,7 @@
     move-result p1
 
     .line 64
-    if-eqz p1, :cond_68
+    if-eqz p1, :cond_4
 
     .line 65
     .line 66
@@ -217,10 +217,10 @@
     .line 79
     .line 80
     .line 81
-    goto :goto_68
+    goto :goto_0
 
     .line 82
-    :cond_51
+    :cond_2
     iget-object p1, p0, Llibs/af2;->c:Ljava/lang/String;
 
     .line 83
@@ -250,10 +250,10 @@
     .line 95
     .line 96
     .line 97
-    goto :goto_68
+    goto :goto_0
 
     .line 98
-    :cond_61
+    :cond_3
     iget-object p1, p0, Llibs/af2;->f:Lcom/mixplorer/activities/PreferenceActivity;
 
     .line 99
@@ -267,15 +267,15 @@
     .line 103
     .line 104
     .line 105
-    :cond_68
-    :goto_68
+    :cond_4
+    :goto_0
     iget-object p1, p0, Llibs/af2;->d:Llibs/ml1;
 
     .line 106
     .line 107
     invoke-virtual {p1}, Llibs/od;->dismiss()V
-    :try_end_6d
-    .catchall {:try_start_1f .. :try_end_6d} :catchall_1d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 108
     .line 109
@@ -286,11 +286,11 @@
     return-void
 
     .line 112
-    :goto_6f
-    :try_start_6f
+    :goto_1
+    :try_start_2
     monitor-exit p0
-    :try_end_70
-    .catchall {:try_start_6f .. :try_end_70} :catchall_1d
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 113
     throw p1

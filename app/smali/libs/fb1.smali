@@ -32,7 +32,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(ZLandroid/app/Activity;ZLjava/util/Set;Llibs/rp0;ZZZZIZ)V
-    .registers 12
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -90,7 +90,7 @@
 
 # virtual methods
 .method public final f(Llibs/t4;)V
-    .registers 15
+    .locals 13
 
     .line 1
     iget-boolean v0, p0, Llibs/fb1;->X:Z
@@ -133,7 +133,7 @@
 
     .line 20
     .line 21
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     .line 22
     .line 23
@@ -154,7 +154,7 @@
     return-void
 
     .line 30
-    :cond_1d
+    :cond_0
     const/4 v6, 0x0
 
     .line 31

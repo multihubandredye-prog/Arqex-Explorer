@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Llibs/wh1;Ljava/lang/String;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p3}, Llibs/Five;-><init>(Ljava/lang/String;Ljava/lang/String;)V
@@ -27,14 +27,14 @@
 
 # virtual methods
 .method public final a([B)[B
-    .registers 2
+    .locals 0
 
     .line 1
     return-object p1
 .end method
 
 .method public final c(Ljava/security/PublicKey;)V
-    .registers 4
+    .locals 2
 
     .line 1
     :try_start_0
@@ -52,24 +52,24 @@
     .line 7
     .line 8
     move-result v0
-    :try_end_8
-    .catch Ljava/security/InvalidKeyException; {:try_start_0 .. :try_end_8} :catch_18
+    :try_end_0
+    .catch Ljava/security/InvalidKeyException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 9
     iget-object v1, p0, Llibs/Five;->a:Ljava/security/Signature;
 
     .line 10
     .line 11
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
-    :try_start_c
+    :try_start_1
     instance-of v0, p1, Llibs/lq;
 
     .line 14
     .line 15
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 16
     .line 17
@@ -89,17 +89,17 @@
     return-void
 
     .line 25
-    :catch_18
+    :catch_0
     move-exception p1
 
     .line 26
-    goto :goto_1e
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_0
     invoke-virtual {v1, p1}, Ljava/security/Signature;->initVerify(Ljava/security/PublicKey;)V
-    :try_end_1d
-    .catch Ljava/security/InvalidKeyException; {:try_start_c .. :try_end_1d} :catch_18
+    :try_end_1
+    .catch Ljava/security/InvalidKeyException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 28
     .line 29
@@ -107,7 +107,7 @@
     return-void
 
     .line 31
-    :goto_1e
+    :goto_0
     invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     .line 32
@@ -125,7 +125,7 @@
 .end method
 
 .method public final e([B)Z
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/Five;->b:Ljava/lang/String;
@@ -140,7 +140,7 @@
     move-result-object p1
 
     .line 7
-    :try_start_6
+    :try_start_0
     iget-object v0, p0, Llibs/Five;->a:Ljava/security/Signature;
 
     .line 8
@@ -151,14 +151,14 @@
     .line 11
     .line 12
     move-result p1
-    :try_end_c
-    .catch Ljava/security/SignatureException; {:try_start_6 .. :try_end_c} :catch_d
+    :try_end_0
+    .catch Ljava/security/SignatureException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 13
     return p1
 
     .line 14
-    :catch_d
+    :catch_0
     move-exception p1
 
     .line 15

@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;IB)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/lc0;->X:B
@@ -42,14 +42,14 @@
 
 # virtual methods
 .method public final c([Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte p1, p0, Llibs/lc0;->X:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_38
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -73,7 +73,7 @@
     monitor-enter v1
 
     .line 15
-    :try_start_e
+    :try_start_0
     invoke-static {p1}, Llibs/ox0;->c(Landroid/net/Uri;)I
 
     .line 16
@@ -96,8 +96,8 @@
     .line 25
     .line 26
     monitor-exit v1
-    :try_end_1a
-    .catchall {:try_start_e .. :try_end_1a} :catchall_2a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 27
     sget-object p1, Lcom/mixplorer/providers/FileProvider;->Y:Ljava/util/HashMap;
@@ -107,7 +107,7 @@
     monitor-enter p1
 
     .line 30
-    :try_start_1d
+    :try_start_1
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 31
@@ -130,32 +130,32 @@
     return p1
 
     .line 40
-    :catchall_27
+    :catchall_0
     move-exception v0
 
     .line 41
     monitor-exit p1
-    :try_end_29
-    .catchall {:try_start_1d .. :try_end_29} :catchall_27
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 42
     throw v0
 
     .line 43
-    :catchall_2a
+    :catchall_1
     move-exception p1
 
     .line 44
-    :try_start_2b
+    :try_start_2
     monitor-exit v1
-    :try_end_2c
-    .catchall {:try_start_2b .. :try_end_2c} :catchall_2a
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 45
     throw p1
 
     .line 46
-    :pswitch_2d
+    :pswitch_0
     iget-object p1, p0, Llibs/lc0;->Z:Ljava/lang/Object;
 
     .line 47
@@ -179,8 +179,8 @@
     return p1
 
     .line 57
-    :pswitch_data_38
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2d
+        :pswitch_0
     .end packed-switch
 .end method

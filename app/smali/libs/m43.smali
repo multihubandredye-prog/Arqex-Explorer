@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/hl;J)V
-    .registers 5
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -72,7 +72,7 @@
 
 # virtual methods
 .method public final a(I)I
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/m43;->a:Ljava/nio/ByteBuffer;
@@ -99,7 +99,7 @@
 .end method
 
 .method public final b(I)J
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/m43;->a:Ljava/nio/ByteBuffer;
@@ -121,7 +121,7 @@
 .end method
 
 .method public final c(I)I
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/m43;->a:Ljava/nio/ByteBuffer;

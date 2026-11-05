@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>([B)V
-    .registers 4
+    .locals 2
 
     .line 1
     const/16 v0, 0x80
@@ -28,7 +28,7 @@
 
     .line 8
     .line 9
-    if-ne v0, v1, :cond_13
+    if-ne v0, v1, :cond_0
 
     .line 10
     .line 11
@@ -51,7 +51,7 @@
     return-void
 
     .line 20
-    :cond_13
+    :cond_0
     const-string v0, "GCM nonce must be 12 bytes, but given len="
 
     .line 21
@@ -73,7 +73,7 @@
 
 # virtual methods
 .method public final getIV()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/cu0;->X:[B

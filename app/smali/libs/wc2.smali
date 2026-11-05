@@ -13,7 +13,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/wc2;->X:Ljava/lang/Object;
@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public a()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/wc2;->X:Ljava/lang/Object;
@@ -63,7 +63,7 @@
 .end method
 
 .method public apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/wc2;->X:Ljava/lang/Object;
@@ -94,7 +94,7 @@
     move-result v2
 
     .line 15
-    if-nez v2, :cond_13
+    if-nez v2, :cond_0
 
     .line 16
     .line 17
@@ -102,10 +102,10 @@
 
     .line 18
     .line 19
-    goto :goto_2c
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     iget-object p1, p1, Llibs/w52;->a:Ljava/lang/Object;
 
     .line 21
@@ -153,24 +153,24 @@
     move-result-object p1
 
     .line 45
-    :goto_2c
+    :goto_0
     iget-object p1, p1, Llibs/w52;->a:Ljava/lang/Object;
 
     .line 46
     .line 47
-    if-eqz p1, :cond_31
+    if-eqz p1, :cond_1
 
     .line 48
     .line 49
-    goto :goto_33
+    goto :goto_1
 
     .line 50
-    :cond_31
+    :cond_1
     const-string p1, ""
 
     .line 51
     .line 52
-    :goto_33
+    :goto_1
     check-cast p1, Ljava/lang/String;
 
     .line 53

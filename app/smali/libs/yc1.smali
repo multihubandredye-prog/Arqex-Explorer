@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/yc;-><init>()V
@@ -23,14 +23,14 @@
 
 # virtual methods
 .method public final b(Ljava/lang/Class;)Ljava/security/spec/AlgorithmParameterSpec;
-    .registers 3
+    .locals 1
 
     .line 1
     const-class v0, Ljavax/crypto/spec/IvParameterSpec;
 
     .line 2
     .line 3
-    if-ne p1, v0, :cond_c
+    if-ne p1, v0, :cond_0
 
     .line 4
     .line 5
@@ -50,7 +50,7 @@
     return-object p1
 
     .line 13
-    :cond_c
+    :cond_0
     const-string p1, "unknown parameter spec passed to IV parameters object."
 
     .line 14
@@ -67,7 +67,7 @@
 .end method
 
 .method public final engineGetEncoded()[B
-    .registers 2
+    .locals 1
 
     .line 38
     const-string v0, "ASN.1"
@@ -80,7 +80,7 @@
 .end method
 
 .method public final engineGetEncoded(Ljava/lang/String;)[B
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-static {p1}, Llibs/yc;->a(Ljava/lang/String;)Z
@@ -95,7 +95,7 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -127,7 +127,7 @@
     return-object p1
 
     .line 23
-    :cond_16
+    :cond_0
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     .line 24
@@ -136,7 +136,7 @@
     move-result p1
 
     .line 27
-    if-eqz p1, :cond_23
+    if-eqz p1, :cond_1
 
     .line 28
     .line 29
@@ -155,7 +155,7 @@
     return-object p1
 
     .line 36
-    :cond_23
+    :cond_1
     const/4 p1, 0x0
 
     .line 37
@@ -163,12 +163,12 @@
 .end method
 
 .method public final engineInit(Ljava/security/spec/AlgorithmParameterSpec;)V
-    .registers 3
+    .locals 1
 
     .line 50
     instance-of v0, p1, Ljavax/crypto/spec/IvParameterSpec;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 51
     check-cast p1, Ljavax/crypto/spec/IvParameterSpec;
@@ -182,7 +182,7 @@
     return-void
 
     .line 52
-    :cond_d
+    :cond_0
     const-string p1, "IvParameterSpec required to initialise a IV parameters algorithm parameters object"
 
     invoke-static {p1}, Llibs/bf0;->d(Ljava/lang/String;)V
@@ -191,14 +191,14 @@
 .end method
 
 .method public final engineInit([B)V
-    .registers 4
+    .locals 2
 
     .line 46
     array-length v0, p1
 
     rem-int/lit8 v0, v0, 0x8
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
@@ -206,7 +206,7 @@
 
     const/4 v1, 0x4
 
-    if-ne v0, v1, :cond_1d
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
@@ -216,7 +216,7 @@
 
     add-int/lit8 v1, v1, -0x2
 
-    if-ne v0, v1, :cond_1d
+    if-ne v0, v1, :cond_0
 
     .line 47
     invoke-static {p1}, Llibs/Theme;->j([B)Llibs/Theme;
@@ -231,7 +231,7 @@
     move-result-object p1
 
     .line 49
-    :cond_1d
+    :cond_0
     invoke-static {p1}, Llibs/t43;->g([B)[B
 
     move-result-object p1
@@ -242,7 +242,7 @@
 .end method
 
 .method public final engineInit([BLjava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-static {p2}, Llibs/yc;->a(Ljava/lang/String;)Z
@@ -253,11 +253,11 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
-    :try_start_6
+    :try_start_0
     invoke-static {p1}, Llibs/Theme;->j([B)Llibs/Theme;
 
     .line 8
@@ -279,8 +279,8 @@
 
     .line 17
     invoke-virtual {p0, p1}, Llibs/yc1;->engineInit([B)V
-    :try_end_13
-    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_13} :catch_14
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 18
     .line 19
@@ -288,7 +288,7 @@
     return-void
 
     .line 21
-    :catch_14
+    :catch_0
     move-exception p1
 
     .line 22
@@ -304,7 +304,7 @@
     return-void
 
     .line 28
-    :cond_1b
+    :cond_0
     const-string v0, "RAW"
 
     .line 29
@@ -317,7 +317,7 @@
     move-result p2
 
     .line 34
-    if-eqz p2, :cond_27
+    if-eqz p2, :cond_1
 
     .line 35
     .line 36
@@ -329,7 +329,7 @@
     return-void
 
     .line 40
-    :cond_27
+    :cond_1
     const-string p1, "Unknown parameters format in IV parameters object"
 
     .line 41
@@ -343,7 +343,7 @@
 .end method
 
 .method public engineToString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "IV Parameters"

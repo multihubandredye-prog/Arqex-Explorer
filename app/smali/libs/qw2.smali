@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(JLjava/lang/String;Ljava/lang/Exception;)V
-    .registers 5
+    .locals 0
 
     .line 9
     invoke-direct {p0, p3, p4}, Llibs/zw2;-><init>(Ljava/lang/String;Ljava/lang/Exception;)V
@@ -21,7 +21,7 @@
 .end method
 
 .method public constructor <init>(Llibs/ov2;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p2}, Llibs/zw2;-><init>(Ljava/lang/String;)V
@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public final getMessage()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     iget-wide v0, p0, Llibs/qw2;->X:J

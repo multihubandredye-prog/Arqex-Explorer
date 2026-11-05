@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>([CI)V
-    .registers 13
+    .locals 10
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,14 +25,14 @@
     const/4 v0, 0x0
 
     .line 5
-    if-eqz p1, :cond_69
+    if-eqz p1, :cond_3
 
     .line 6
     .line 7
     array-length v1, p1
 
     .line 8
-    if-lez v1, :cond_69
+    if-lez v1, :cond_3
 
     .line 9
     .line 10
@@ -64,7 +64,7 @@
     array-length v3, p1
 
     .line 24
-    if-lez v3, :cond_63
+    if-lez v3, :cond_2
 
     .line 25
     .line 26
@@ -92,8 +92,8 @@
     const/4 v6, 0x0
 
     .line 38
-    :goto_25
-    if-ge v6, v2, :cond_40
+    :goto_0
+    if-ge v6, v2, :cond_0
 
     .line 39
     .line 40
@@ -147,10 +147,10 @@
 
     .line 63
     .line 64
-    goto :goto_25
+    goto :goto_0
 
     .line 65
-    :cond_40
+    :cond_0
     iput-object v3, p0, Llibs/ve3;->b:[B
 
     .line 66
@@ -197,7 +197,7 @@
     array-length p2, p1
 
     .line 87
-    if-lt p2, v2, :cond_5d
+    if-lt p2, v2, :cond_1
 
     .line 88
     .line 89
@@ -212,7 +212,7 @@
     return-void
 
     .line 94
-    :cond_5d
+    :cond_1
     const-string p1, "invalid header bytes generated, cannot perform standard encryption"
 
     .line 95
@@ -225,7 +225,7 @@
     throw v0
 
     .line 100
-    :cond_63
+    :cond_2
     const-string p1, "input password is null or empty, cannot initialize standard encrypter"
 
     .line 101
@@ -238,7 +238,7 @@
     throw v0
 
     .line 106
-    :cond_69
+    :cond_3
     const-string p1, "input password is null or empty in standard encrypter constructor"
 
     .line 107
@@ -248,43 +248,43 @@
     .line 109
     .line 110
     .line 111
-    goto :goto_70
+    goto :goto_2
 
     .line 112
-    :goto_6f
+    :goto_1
     throw v0
 
     .line 113
-    :goto_70
-    goto :goto_6f
+    :goto_2
+    goto :goto_1
 .end method
 
 
 # virtual methods
 .method public final a(II[B)I
-    .registers 9
+    .locals 5
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-ltz p2, :cond_22
+    if-ltz p2, :cond_1
 
     .line 3
     .line 4
     move v1, p1
 
     .line 5
-    :goto_4
+    :goto_0
     add-int v2, p1, p2
 
     .line 6
     .line 7
-    if-ge v1, v2, :cond_21
+    if-ge v1, v2, :cond_0
 
     .line 8
     .line 9
-    :try_start_8
+    :try_start_0
     aget-byte v2, p3, v1
 
     .line 10
@@ -317,8 +317,8 @@
     .line 23
     .line 24
     aput-byte v4, p3, v1
-    :try_end_19
-    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_19} :catch_1c
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 25
     .line 26
@@ -326,10 +326,10 @@
 
     .line 27
     .line 28
-    goto :goto_4
+    goto :goto_0
 
     .line 29
-    :catch_1c
+    :catch_0
     move-exception p1
 
     .line 30
@@ -341,11 +341,11 @@
     return v0
 
     .line 34
-    :cond_21
+    :cond_0
     return p2
 
     .line 35
-    :cond_22
+    :cond_1
     const-string p1, "invalid length specified to decrypt data"
 
     .line 36

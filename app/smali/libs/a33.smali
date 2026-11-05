@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/BrowseActivity;JLlibs/$d;)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 13
+    .locals 11
 
     .line 1
     iget-object v0, p0, Llibs/a33;->X:Lcom/mixplorer/activities/BrowseActivity;
@@ -150,7 +150,7 @@
     move-result p1
 
     .line 56
-    :try_start_37
+    :try_start_0
     new-instance v2, Landroid/content/Intent;
 
     .line 57
@@ -200,8 +200,8 @@
     .line 81
     .line 82
     sget-object v5, Llibs/aq;->a:[Ljava/lang/String;
-    :try_end_53
-    .catchall {:try_start_37 .. :try_end_53} :catchall_199
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 83
     .line 84
@@ -220,15 +220,15 @@
 
     .line 90
     .line 91
-    if-nez v10, :cond_5e
+    if-nez v10, :cond_0
 
     .line 92
     .line 93
-    goto/16 :goto_179
+    goto/16 :goto_0
 
     .line 94
     .line 95
-    :cond_5e
+    :cond_0
     const-wide/16 v5, 0x4000
 
     .line 96
@@ -237,18 +237,18 @@
 
     .line 98
     .line 99
-    if-nez v10, :cond_67
+    if-nez v10, :cond_1
 
     .line 100
     .line 101
     const/4 v9, 0x1
 
     .line 102
-    goto/16 :goto_179
+    goto/16 :goto_0
 
     .line 103
     .line 104
-    :cond_67
+    :cond_1
     const-wide/32 v5, 0x8000
 
     .line 105
@@ -258,18 +258,18 @@
 
     .line 108
     .line 109
-    if-nez v10, :cond_71
+    if-nez v10, :cond_2
 
     .line 110
     .line 111
     const/4 v9, 0x2
 
     .line 112
-    goto/16 :goto_179
+    goto/16 :goto_0
 
     .line 113
     .line 114
-    :cond_71
+    :cond_2
     const-wide/32 v5, 0x10000
 
     .line 115
@@ -279,18 +279,18 @@
 
     .line 118
     .line 119
-    if-nez v10, :cond_7b
+    if-nez v10, :cond_3
 
     .line 120
     .line 121
     const/4 v9, 0x3
 
     .line 122
-    goto/16 :goto_179
+    goto/16 :goto_0
 
     .line 123
     .line 124
-    :cond_7b
+    :cond_3
     const-wide/32 v5, 0x20000
 
     .line 125
@@ -300,18 +300,18 @@
 
     .line 128
     .line 129
-    if-nez v10, :cond_85
+    if-nez v10, :cond_4
 
     .line 130
     .line 131
     const/4 v9, 0x4
 
     .line 132
-    goto/16 :goto_179
+    goto/16 :goto_0
 
     .line 133
     .line 134
-    :cond_85
+    :cond_4
     const-wide/32 v5, 0x40000
 
     .line 135
@@ -321,18 +321,18 @@
 
     .line 138
     .line 139
-    if-nez v10, :cond_8f
+    if-nez v10, :cond_5
 
     .line 140
     .line 141
     const/4 v9, 0x5
 
     .line 142
-    goto/16 :goto_179
+    goto/16 :goto_0
 
     .line 143
     .line 144
-    :cond_8f
+    :cond_5
     const-wide/32 v5, 0x80000
 
     .line 145
@@ -342,18 +342,18 @@
 
     .line 148
     .line 149
-    if-nez v10, :cond_99
+    if-nez v10, :cond_6
 
     .line 150
     .line 151
     const/4 v9, 0x6
 
     .line 152
-    goto/16 :goto_179
+    goto/16 :goto_0
 
     .line 153
     .line 154
-    :cond_99
+    :cond_6
     const-wide/32 v5, 0x100000
 
     .line 155
@@ -363,18 +363,18 @@
 
     .line 158
     .line 159
-    if-nez v10, :cond_a3
+    if-nez v10, :cond_7
 
     .line 160
     .line 161
     const/4 v9, 0x7
 
     .line 162
-    goto/16 :goto_179
+    goto/16 :goto_0
 
     .line 163
     .line 164
-    :cond_a3
+    :cond_7
     const-wide/32 v5, 0x200000
 
     .line 165
@@ -384,7 +384,7 @@
 
     .line 168
     .line 169
-    if-nez v10, :cond_ae
+    if-nez v10, :cond_8
 
     .line 170
     .line 171
@@ -392,11 +392,11 @@
 
     .line 172
     .line 173
-    goto/16 :goto_179
+    goto/16 :goto_0
 
     .line 174
     .line 175
-    :cond_ae
+    :cond_8
     const-wide/32 v5, 0x400000
 
     .line 176
@@ -406,7 +406,7 @@
 
     .line 179
     .line 180
-    if-nez v10, :cond_b9
+    if-nez v10, :cond_9
 
     .line 181
     .line 182
@@ -414,11 +414,11 @@
 
     .line 183
     .line 184
-    goto/16 :goto_179
+    goto/16 :goto_0
 
     .line 185
     .line 186
-    :cond_b9
+    :cond_9
     const-wide/32 v5, 0x800000
 
     .line 187
@@ -428,7 +428,7 @@
 
     .line 190
     .line 191
-    if-nez v10, :cond_c4
+    if-nez v10, :cond_a
 
     .line 192
     .line 193
@@ -436,11 +436,11 @@
 
     .line 194
     .line 195
-    goto/16 :goto_179
+    goto/16 :goto_0
 
     .line 196
     .line 197
-    :cond_c4
+    :cond_a
     const-wide/32 v5, 0x1000000
 
     .line 198
@@ -450,7 +450,7 @@
 
     .line 201
     .line 202
-    if-nez v10, :cond_cf
+    if-nez v10, :cond_b
 
     .line 203
     .line 204
@@ -458,11 +458,11 @@
 
     .line 205
     .line 206
-    goto/16 :goto_179
+    goto/16 :goto_0
 
     .line 207
     .line 208
-    :cond_cf
+    :cond_b
     const-wide/32 v5, 0x2000000
 
     .line 209
@@ -472,7 +472,7 @@
 
     .line 212
     .line 213
-    if-nez v10, :cond_da
+    if-nez v10, :cond_c
 
     .line 214
     .line 215
@@ -480,11 +480,11 @@
 
     .line 216
     .line 217
-    goto/16 :goto_179
+    goto/16 :goto_0
 
     .line 218
     .line 219
-    :cond_da
+    :cond_c
     const-wide/32 v5, 0x8000000
 
     .line 220
@@ -494,7 +494,7 @@
 
     .line 223
     .line 224
-    if-nez v10, :cond_e5
+    if-nez v10, :cond_d
 
     .line 225
     .line 226
@@ -502,11 +502,11 @@
 
     .line 227
     .line 228
-    goto/16 :goto_179
+    goto/16 :goto_0
 
     .line 229
     .line 230
-    :cond_e5
+    :cond_d
     const-wide/32 v5, 0x10000000
 
     .line 231
@@ -516,7 +516,7 @@
 
     .line 234
     .line 235
-    if-nez v10, :cond_f0
+    if-nez v10, :cond_e
 
     .line 236
     .line 237
@@ -524,11 +524,11 @@
 
     .line 238
     .line 239
-    goto/16 :goto_179
+    goto/16 :goto_0
 
     .line 240
     .line 241
-    :cond_f0
+    :cond_e
     const-wide/32 v5, 0x20000000
 
     .line 242
@@ -538,7 +538,7 @@
 
     .line 245
     .line 246
-    if-nez v10, :cond_fb
+    if-nez v10, :cond_f
 
     .line 247
     .line 248
@@ -546,11 +546,11 @@
 
     .line 249
     .line 250
-    goto/16 :goto_179
+    goto/16 :goto_0
 
     .line 251
     .line 252
-    :cond_fb
+    :cond_f
     const-wide/32 v5, 0x40000000
 
     .line 253
@@ -560,7 +560,7 @@
 
     .line 256
     .line 257
-    if-nez v10, :cond_106
+    if-nez v10, :cond_10
 
     .line 258
     .line 259
@@ -568,11 +568,11 @@
 
     .line 260
     .line 261
-    goto/16 :goto_179
+    goto/16 :goto_0
 
     .line 262
     .line 263
-    :cond_106
+    :cond_10
     const-wide v5, 0x80000000L
 
     .line 264
@@ -584,7 +584,7 @@
 
     .line 269
     .line 270
-    if-nez v10, :cond_113
+    if-nez v10, :cond_11
 
     .line 271
     .line 272
@@ -592,11 +592,11 @@
 
     .line 273
     .line 274
-    goto/16 :goto_179
+    goto/16 :goto_0
 
     .line 275
     .line 276
-    :cond_113
+    :cond_11
     const-wide v5, 0x100000000L
 
     .line 277
@@ -608,7 +608,7 @@
 
     .line 282
     .line 283
-    if-nez v10, :cond_11f
+    if-nez v10, :cond_12
 
     .line 284
     .line 285
@@ -616,10 +616,10 @@
 
     .line 286
     .line 287
-    goto :goto_179
+    goto :goto_0
 
     .line 288
-    :cond_11f
+    :cond_12
     const-wide v5, 0x200000000L
 
     .line 289
@@ -631,7 +631,7 @@
 
     .line 294
     .line 295
-    if-nez v10, :cond_12b
+    if-nez v10, :cond_13
 
     .line 296
     .line 297
@@ -639,10 +639,10 @@
 
     .line 298
     .line 299
-    goto :goto_179
+    goto :goto_0
 
     .line 300
-    :cond_12b
+    :cond_13
     const-wide v5, 0x400000000L
 
     .line 301
@@ -654,7 +654,7 @@
 
     .line 306
     .line 307
-    if-nez v10, :cond_137
+    if-nez v10, :cond_14
 
     .line 308
     .line 309
@@ -662,10 +662,10 @@
 
     .line 310
     .line 311
-    goto :goto_179
+    goto :goto_0
 
     .line 312
-    :cond_137
+    :cond_14
     const-wide v5, 0x800000000L
 
     .line 313
@@ -677,7 +677,7 @@
 
     .line 318
     .line 319
-    if-nez v10, :cond_143
+    if-nez v10, :cond_15
 
     .line 320
     .line 321
@@ -685,10 +685,10 @@
 
     .line 322
     .line 323
-    goto :goto_179
+    goto :goto_0
 
     .line 324
-    :cond_143
+    :cond_15
     const-wide v5, 0x1000000000L
 
     .line 325
@@ -700,7 +700,7 @@
 
     .line 330
     .line 331
-    if-nez v10, :cond_14f
+    if-nez v10, :cond_16
 
     .line 332
     .line 333
@@ -708,10 +708,10 @@
 
     .line 334
     .line 335
-    goto :goto_179
+    goto :goto_0
 
     .line 336
-    :cond_14f
+    :cond_16
     const-wide v5, 0x1000000001L
 
     .line 337
@@ -723,7 +723,7 @@
 
     .line 342
     .line 343
-    if-nez v10, :cond_15b
+    if-nez v10, :cond_17
 
     .line 344
     .line 345
@@ -731,10 +731,10 @@
 
     .line 346
     .line 347
-    goto :goto_179
+    goto :goto_0
 
     .line 348
-    :cond_15b
+    :cond_17
     const-wide v5, 0x1000000002L
 
     .line 349
@@ -746,7 +746,7 @@
 
     .line 354
     .line 355
-    if-nez v10, :cond_167
+    if-nez v10, :cond_18
 
     .line 356
     .line 357
@@ -754,10 +754,10 @@
 
     .line 358
     .line 359
-    goto :goto_179
+    goto :goto_0
 
     .line 360
-    :cond_167
+    :cond_18
     const-wide v5, 0x1000000003L
 
     .line 361
@@ -769,7 +769,7 @@
 
     .line 366
     .line 367
-    if-nez v10, :cond_173
+    if-nez v10, :cond_19
 
     .line 368
     .line 369
@@ -777,15 +777,15 @@
 
     .line 370
     .line 371
-    goto :goto_179
+    goto :goto_0
 
     .line 372
-    :cond_173
+    :cond_19
     cmp-long v10, v7, v5
 
     .line 373
     .line 374
-    if-lez v10, :cond_179
+    if-lez v10, :cond_1a
 
     .line 375
     .line 376
@@ -793,9 +793,9 @@
 
     .line 377
     .line 378
-    :cond_179
-    :goto_179
-    :try_start_179
+    :cond_1a
+    :goto_0
+    :try_start_1
     invoke-virtual {v3, v4, v9}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     .line 379
@@ -849,16 +849,16 @@
 
     .line 406
     invoke-static {v0, v2, p1}, Llibs/sw1;->Data(Landroid/content/Context;Landroid/content/Intent;Landroid/os/Bundle;)V
-    :try_end_198
-    .catchall {:try_start_179 .. :try_end_198} :catchall_199
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 407
     .line 408
     .line 409
-    goto :goto_1a3
+    goto :goto_1
 
     .line 410
-    :catchall_199
+    :catchall_0
     move-exception p1
 
     .line 411
@@ -879,7 +879,7 @@
     .line 418
     .line 419
     .line 420
-    :goto_1a3
+    :goto_1
     iget-object p1, p0, Llibs/a33;->Z:Llibs/$d;
 
     .line 421

@@ -18,10 +18,10 @@
 
 # direct methods
 .method public constructor <init>(Llibs/jk0;B)V
-    .registers 3
+    .locals 0
 
     .line 1
-    packed-switch p2, :pswitch_data_16
+    packed-switch p2, :pswitch_data_0
 
     .line 2
     .line 3
@@ -53,7 +53,7 @@
     return-void
 
     .line 17
-    :pswitch_10
+    :pswitch_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 18
@@ -66,14 +66,14 @@
     return-void
 
     .line 23
-    :pswitch_data_16
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_10
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static a(Llibs/wq3;Ljava/lang/String;)I
-    .registers 8
+    .locals 6
 
     .line 1
     const/4 v0, 0x0
@@ -82,7 +82,7 @@
     const/4 v1, 0x0
 
     .line 3
-    :goto_2
+    :goto_0
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     .line 4
@@ -96,7 +96,7 @@
     .line 8
     .line 9
     .line 10
-    if-ge v0, v2, :cond_2e
+    if-ge v0, v2, :cond_1
 
     .line 11
     .line 12
@@ -119,19 +119,19 @@
     array-length v5, v4
 
     .line 21
-    if-lt v2, v5, :cond_17
+    if-lt v2, v5, :cond_0
 
     .line 22
     .line 23
-    goto :goto_19
+    goto :goto_1
 
     .line 24
-    :cond_17
+    :cond_0
     aget-char v2, v4, v2
 
     .line 25
     .line 26
-    :goto_19
+    :goto_1
     shl-int/lit8 v4, v1, 0xf
 
     .line 27
@@ -178,10 +178,10 @@
 
     .line 45
     .line 46
-    goto :goto_2
+    goto :goto_0
 
     .line 47
-    :cond_2e
+    :cond_1
     and-int p0, v1, v3
 
     .line 48
@@ -192,7 +192,7 @@
 
 # virtual methods
 .method public l(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/dk0;->Lambda:Ljava/lang/String;
@@ -203,14 +203,14 @@
 .end method
 
 .method public n(Llibs/u02;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public t(Llibs/ob0;JJJ)V
-    .registers 26
+    .locals 18
 
     .line 1
     move-object/from16 v0, p0
@@ -233,7 +233,7 @@
 
     .line 10
     .line 11
-    if-nez v4, :cond_103
+    if-nez v4, :cond_7
 
     .line 12
     .line 13
@@ -250,7 +250,7 @@
 
     .line 19
     .line 20
-    if-eqz v4, :cond_f9
+    if-eqz v4, :cond_6
 
     .line 21
     .line 22
@@ -263,7 +263,7 @@
 
     .line 26
     .line 27
-    if-gtz v4, :cond_f9
+    if-gtz v4, :cond_6
 
     .line 28
     .line 29
@@ -279,7 +279,7 @@
 
     .line 34
     .line 35
-    if-nez v4, :cond_f9
+    if-nez v4, :cond_6
 
     .line 36
     .line 37
@@ -333,7 +333,7 @@
     const/4 v6, 0x0
 
     .line 61
-    :goto_3c
+    :goto_0
     int-to-long v13, v6
 
     .line 62
@@ -341,7 +341,7 @@
 
     .line 63
     .line 64
-    if-gez v15, :cond_86
+    if-gez v15, :cond_1
 
     .line 65
     .line 66
@@ -353,7 +353,7 @@
     move-result v15
 
     .line 70
-    if-nez v15, :cond_86
+    if-nez v15, :cond_1
 
     .line 71
     .line 72
@@ -420,8 +420,8 @@
     const/4 v5, 0x0
 
     .line 103
-    :goto_66
-    if-ge v5, v6, :cond_75
+    :goto_1
+    if-ge v5, v6, :cond_0
 
     .line 104
     .line 105
@@ -449,10 +449,10 @@
 
     .line 116
     .line 117
-    goto :goto_66
+    goto :goto_1
 
     .line 118
-    :cond_75
+    :cond_0
     add-int v6, p2, v6
 
     .line 119
@@ -485,10 +485,10 @@
 
     .line 133
     .line 134
-    goto :goto_3c
+    goto :goto_0
 
     .line 135
-    :cond_86
+    :cond_1
     move-object/from16 v17, v5
 
     .line 136
@@ -501,7 +501,7 @@
 
     .line 140
     .line 141
-    if-ltz v5, :cond_f3
+    if-ltz v5, :cond_5
 
     .line 142
     .line 143
@@ -525,8 +525,8 @@
     const/4 v13, 0x0
 
     .line 153
-    :goto_98
-    if-ge v13, v4, :cond_b9
+    :goto_2
+    if-ge v13, v4, :cond_2
 
     .line 154
     .line 155
@@ -598,15 +598,15 @@
 
     .line 184
     .line 185
-    goto :goto_98
+    goto :goto_2
 
     .line 186
-    :cond_b9
+    :cond_2
     cmp-long v3, p6, v6
 
     .line 187
     .line 188
-    if-nez v3, :cond_ca
+    if-nez v3, :cond_4
 
     .line 189
     .line 190
@@ -618,7 +618,7 @@
 
     .line 193
     .line 194
-    if-nez v3, :cond_c6
+    if-nez v3, :cond_3
 
     .line 195
     .line 196
@@ -629,7 +629,7 @@
     return-void
 
     .line 199
-    :cond_c6
+    :cond_3
     invoke-static/range {v17 .. v17}, Llibs/ic0;->h(Ljava/lang/String;)V
 
     .line 200
@@ -638,7 +638,7 @@
     return-void
 
     .line 203
-    :cond_ca
+    :cond_4
     new-instance v1, Ljava/io/IOException;
 
     .line 204
@@ -716,7 +716,7 @@
     throw v1
 
     .line 244
-    :cond_f3
+    :cond_5
     const-string v1, "unexpected end of upcase table"
 
     .line 245
@@ -729,7 +729,7 @@
     return-void
 
     .line 250
-    :cond_f9
+    :cond_6
     const-string v1, "bad upcase table size "
 
     .line 251
@@ -750,7 +750,7 @@
     return-void
 
     .line 260
-    :cond_103
+    :cond_7
     move-object/from16 v17, v5
 
     .line 261
@@ -764,14 +764,14 @@
 .end method
 
 .method public w(JJ)V
-    .registers 8
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/dk0;->Y:Llibs/cu;
 
     .line 2
     .line 3
-    if-nez v0, :cond_23
+    if-nez v0, :cond_1
 
     .line 4
     .line 5
@@ -815,7 +815,7 @@
 
     .line 24
     .line 25
-    if-ltz v1, :cond_1d
+    if-ltz v1, :cond_0
 
     .line 26
     .line 27
@@ -826,7 +826,7 @@
     return-void
 
     .line 30
-    :cond_1d
+    :cond_0
     const-string p1, "cluster bitmap too small"
 
     .line 31
@@ -839,7 +839,7 @@
     return-void
 
     .line 36
-    :cond_23
+    :cond_1
     const-string p1, "already had a bitmap"
 
     .line 37

@@ -31,7 +31,7 @@
 
 # direct methods
 .method constructor <init>(Llibs/ArqexUpdater$Check;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 6
+    .locals 0
 
     .line 391
     iput-object p1, p0, Llibs/ArqexUpdater$Check$1;->this$0:Llibs/ArqexUpdater$Check;
@@ -52,19 +52,17 @@
 
 # virtual methods
 .method public run()V
-    .registers 8
+    .locals 7
 
     .line 393
     iget-object v0, p0, Llibs/ArqexUpdater$Check$1;->this$0:Llibs/ArqexUpdater$Check;
 
-    # getter for: Llibs/ArqexUpdater$Check;->ctx:Landroid/content/Context;
     invoke-static {v0}, Llibs/ArqexUpdater$Check;->access$200(Llibs/ArqexUpdater$Check;)Landroid/content/Context;
 
     move-result-object v1
 
     iget-object v0, p0, Llibs/ArqexUpdater$Check$1;->this$0:Llibs/ArqexUpdater$Check;
 
-    # getter for: Llibs/ArqexUpdater$Check;->mode:I
     invoke-static {v0}, Llibs/ArqexUpdater$Check;->access$300(Llibs/ArqexUpdater$Check;)I
 
     move-result v2
@@ -77,7 +75,6 @@
 
     iget-object v6, p0, Llibs/ArqexUpdater$Check$1;->val$fError:Ljava/lang/String;
 
-    # invokes: Llibs/ArqexUpdater;->onResult(Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     invoke-static/range {v1 .. v6}, Llibs/ArqexUpdater;->access$400(Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void

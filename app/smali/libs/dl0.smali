@@ -32,7 +32,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/v1;Llibs/m52;Ljava/util/Properties;ZLjava/lang/String;Llibs/zl0;Llibs/zl0;Llibs/rp0;Landroid/app/Activity;Ljava/lang/String;)V
-    .registers 11
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -84,53 +84,53 @@
 .end method
 
 .method private final a()V
-    .registers 4
+    .locals 3
 
     iget-object v0, p0, Llibs/dl0;->Y:Llibs/m52;
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Llibs/m52;->Set()Z
 
     move-result v1
 
-    if-nez v1, :cond_25
+    if-nez v1, :cond_1
 
     sget-object v1, Lcom/mixplorer/AppImpl;->Mu:Llibs/c2;
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     invoke-virtual {v1, v0}, Llibs/c2;->All(Llibs/m52;)V
 
-    :cond_11
+    :cond_0
     iget-object v0, p0, Llibs/dl0;->X:Llibs/v1;
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     iget-object v0, v0, Llibs/v1;->Y:Ljava/lang/Object;
 
     instance-of v1, v0, Lcom/mixplorer/activities/BrowseActivity;
 
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_1
 
     check-cast v0, Lcom/mixplorer/activities/BrowseActivity;
 
     iget-object v0, v0, Lcom/mixplorer/activities/BrowseActivity;->Romeo:Llibs/r31;
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     const/4 v1, -0x1
 
     invoke-virtual {v0, v1}, Llibs/r31;->Url(I)V
 
-    :cond_25
+    :cond_1
     return-void
 .end method
 
 
 # virtual methods
 .method public final onCancel(Landroid/content/DialogInterface;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Llibs/dl0;->a()V
 
@@ -138,7 +138,7 @@
 .end method
 
 .method public final onClick(Landroid/view/View;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Llibs/dl0;->a()V
 
@@ -146,7 +146,7 @@
 .end method
 
 .method public final run()V
-    .registers 29
+    .locals 28
 
     .line 1
     move-object/from16 v0, p0
@@ -198,7 +198,7 @@
     const/4 v11, 0x0
 
     .line 24
-    if-ne v4, v5, :cond_144
+    if-ne v4, v5, :cond_6
 
     .line 25
     .line 26
@@ -209,7 +209,7 @@
 
     .line 28
     .line 29
-    if-eqz v6, :cond_2e
+    if-eqz v6, :cond_0
 
     .line 30
     .line 31
@@ -241,11 +241,11 @@
     move-result v5
 
     .line 45
-    if-nez v5, :cond_33
+    if-nez v5, :cond_1
 
     .line 46
     .line 47
-    :cond_2e
+    :cond_0
     move-object v5, v9
 
     .line 48
@@ -258,10 +258,10 @@
     move-object v4, v8
 
     .line 51
-    goto :goto_95
+    goto :goto_0
 
     .line 52
-    :cond_33
+    :cond_1
     sget-object v5, Llibs/ou0;->h:Ljava/lang/String;
 
     .line 53
@@ -288,7 +288,7 @@
     .line 64
     .line 65
     .line 66
-    if-eqz v7, :cond_81
+    if-eqz v7, :cond_2
 
     .line 67
     .line 68
@@ -308,7 +308,7 @@
     move-result v5
 
     .line 76
-    if-eqz v5, :cond_81
+    if-eqz v5, :cond_2
 
     .line 77
     .line 78
@@ -409,7 +409,7 @@
     return-void
 
     .line 125
-    :cond_81
+    :cond_2
     move-object v3, v4
 
     .line 126
@@ -454,7 +454,7 @@
     return-void
 
     .line 145
-    :goto_95
+    :goto_0
     sget v8, Llibs/bi2;->separate_folder:I
 
     .line 146
@@ -511,7 +511,7 @@
 
     .line 172
     .line 173
-    if-nez v15, :cond_df
+    if-nez v15, :cond_4
 
     .line 174
     .line 175
@@ -537,7 +537,7 @@
     const/4 v11, 0x3
 
     .line 185
-    if-ne v15, v11, :cond_df
+    if-ne v15, v11, :cond_4
 
     .line 186
     .line 187
@@ -560,14 +560,14 @@
 
     .line 195
     .line 196
-    if-ne v11, v13, :cond_cb
+    if-ne v11, v13, :cond_3
 
     .line 197
     .line 198
-    goto :goto_ce
+    goto :goto_1
 
     .line 199
-    :cond_cb
+    :cond_3
     aget v11, v8, v17
 
     .line 200
@@ -575,7 +575,7 @@
     move v13, v11
 
     .line 202
-    :goto_ce
+    :goto_1
     aget-object v11, v12, v18
 
     .line 203
@@ -610,10 +610,10 @@
 
     .line 217
     .line 218
-    goto :goto_e2
+    goto :goto_2
 
     .line 219
-    :cond_df
+    :cond_4
     move-object/from16 v24, v14
 
     .line 220
@@ -621,7 +621,7 @@
     const/4 v12, 0x0
 
     .line 222
-    :goto_e2
+    :goto_2
     new-instance v11, Llibs/$d;
 
     .line 223
@@ -698,7 +698,7 @@
     .line 258
     .line 259
     .line 260
-    if-eqz v7, :cond_11c
+    if-eqz v7, :cond_5
 
     .line 261
     .line 262
@@ -735,14 +735,14 @@
 
     .line 278
     .line 279
-    goto :goto_11d
+    goto :goto_3
 
     .line 280
-    :cond_11c
+    :cond_5
     move-object v8, v11
 
     .line 281
-    :goto_11d
+    :goto_3
     sget v1, Llibs/bi2;->delete_source:I
 
     .line 282
@@ -815,14 +815,14 @@
     return-void
 
     .line 315
-    :cond_144
+    :cond_6
     move-object v4, v8
 
     .line 316
     move-object v5, v9
 
     .line 317
-    if-eqz v7, :cond_175
+    if-eqz v7, :cond_7
 
     .line 318
     .line 319
@@ -838,7 +838,7 @@
     move-result v7
 
     .line 325
-    if-eqz v7, :cond_175
+    if-eqz v7, :cond_7
 
     .line 326
     .line 327
@@ -915,7 +915,7 @@
     return-void
 
     .line 364
-    :cond_175
+    :cond_7
     iget v1, v3, Llibs/m52;->One:I
 
     .line 365

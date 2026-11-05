@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 7
     invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
@@ -18,7 +18,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/io/IOException;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final getCause()Ljava/lang/Throwable;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/qb1;->X:Ljava/io/IOException;

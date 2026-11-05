@@ -26,7 +26,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/ga1;Lcom/mixplorer/widgets/MiEditText;Landroid/widget/CheckBox;Landroid/widget/CheckBox;ZIILlibs/ml1;)V
-    .registers 9
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -72,7 +72,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 12
+    .locals 10
 
     .line 1
     new-instance p1, Ljava/lang/StringBuilder;
@@ -108,14 +108,14 @@
     move-result v0
 
     .line 18
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 19
     .line 20
-    goto :goto_1b
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_0
     const/4 v0, -0x1
 
     .line 22
@@ -127,15 +127,15 @@
     move-result v5
 
     .line 26
-    if-ne v5, v0, :cond_1c
+    if-ne v5, v0, :cond_1
 
     .line 27
     .line 28
-    :goto_1b
+    :goto_0
     return-void
 
     .line 29
-    :cond_1c
+    :cond_1
     iget-object p1, p0, Llibs/ba1;->Z:Landroid/widget/CheckBox;
 
     .line 30
@@ -146,7 +146,7 @@
     const/4 v1, 0x1
 
     .line 33
-    if-eqz p1, :cond_2a
+    if-eqz p1, :cond_2
 
     .line 34
     .line 35
@@ -158,26 +158,26 @@
     move-result p1
 
     .line 39
-    if-eqz p1, :cond_2a
+    if-eqz p1, :cond_2
 
     .line 40
     .line 41
     const/4 v6, 0x1
 
     .line 42
-    goto :goto_2b
+    goto :goto_1
 
     .line 43
-    :cond_2a
+    :cond_2
     const/4 v6, 0x0
 
     .line 44
-    :goto_2b
+    :goto_1
     iget-object p1, p0, Llibs/ba1;->Lambda:Landroid/widget/CheckBox;
 
     .line 45
     .line 46
-    if-eqz p1, :cond_37
+    if-eqz p1, :cond_3
 
     .line 47
     .line 48
@@ -189,21 +189,21 @@
     move-result p1
 
     .line 52
-    if-eqz p1, :cond_37
+    if-eqz p1, :cond_3
 
     .line 53
     .line 54
     const/4 v3, 0x1
 
     .line 55
-    goto :goto_38
+    goto :goto_2
 
     .line 56
-    :cond_37
+    :cond_3
     const/4 v3, 0x0
 
     .line 57
-    :goto_38
+    :goto_2
     invoke-static {}, Llibs/gx1;->a()V
 
     .line 58
@@ -229,14 +229,14 @@
     move-result-object v7
 
     .line 70
-    if-nez v7, :cond_48
+    if-nez v7, :cond_4
 
     .line 71
     .line 72
-    goto :goto_5b
+    goto :goto_3
 
     .line 73
-    :cond_48
+    :cond_4
     new-instance p1, Llibs/xv1;
 
     .line 74
@@ -272,7 +272,7 @@
     .line 90
     .line 91
     .line 92
-    :goto_5b
+    :goto_3
     iget-object p1, p0, Llibs/ba1;->Omicron:Llibs/ml1;
 
     .line 93

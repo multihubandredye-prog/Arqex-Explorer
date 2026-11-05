@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Param;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -35,7 +35,7 @@
     const/4 v2, 0x2
 
     .line 10
-    if-eq v0, v2, :cond_1d
+    if-eq v0, v2, :cond_1
 
     .line 11
     .line 12
@@ -47,14 +47,14 @@
     move-result v0
 
     .line 16
-    if-ne v0, v1, :cond_12
+    if-ne v0, v1, :cond_0
 
     .line 17
     .line 18
-    goto :goto_1d
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     const-string v0, "Bad sequence size: "
 
     .line 20
@@ -78,8 +78,8 @@
     throw p1
 
     .line 30
-    :cond_1d
-    :goto_1d
+    :cond_1
+    :goto_0
     const/4 v0, 0x0
 
     .line 31
@@ -134,7 +134,7 @@
     move-result v0
 
     .line 56
-    if-ne v0, v1, :cond_43
+    if-ne v0, v1, :cond_2
 
     .line 57
     .line 58
@@ -158,12 +158,12 @@
 
     .line 67
     .line 68
-    :cond_43
+    :cond_2
     return-void
 .end method
 
 .method public static g(Llibs/Height;Z)Llibs/yb1;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p0, p1}, Llibs/Param;->p(Llibs/Height;Z)Llibs/Param;
@@ -174,7 +174,7 @@
     move-result-object p0
 
     .line 5
-    if-eqz p0, :cond_10
+    if-eqz p0, :cond_0
 
     .line 6
     .line 7
@@ -198,7 +198,7 @@
     return-object p1
 
     .line 17
-    :cond_10
+    :cond_0
     const/4 p0, 0x0
 
     .line 18
@@ -208,7 +208,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/Init;
@@ -245,7 +245,7 @@
 
     .line 18
     .line 19
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_0
 
     .line 20
     .line 21
@@ -254,7 +254,7 @@
     .line 22
     .line 23
     .line 24
-    :cond_17
+    :cond_0
     new-instance v1, Llibs/p10;
 
     .line 25

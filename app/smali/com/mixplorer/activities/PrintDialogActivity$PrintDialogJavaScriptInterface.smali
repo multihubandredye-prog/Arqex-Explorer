@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/PrintDialogActivity;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Lcom/mixplorer/activities/PrintDialogActivity$PrintDialogJavaScriptInterface;->this$0:Lcom/mixplorer/activities/PrintDialogActivity;
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public getContent()Ljava/lang/String;
-    .registers 7
+    .locals 6
     .annotation runtime Landroid/webkit/JavascriptInterface;
     .end annotation
 
@@ -39,7 +39,7 @@
     const/4 v1, 0x0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget-object v2, p0, Lcom/mixplorer/activities/PrintDialogActivity$PrintDialogJavaScriptInterface;->this$0:Lcom/mixplorer/activities/PrintDialogActivity;
 
     .line 5
@@ -48,14 +48,14 @@
 
     .line 7
     .line 8
-    if-nez v2, :cond_a
+    if-nez v2, :cond_0
 
     .line 9
     .line 10
     return-object v0
 
     .line 11
-    :cond_a
+    :cond_0
     invoke-static {v2}, Llibs/sw1;->i(Landroid/content/Intent;)Landroid/net/Uri;
 
     .line 12
@@ -72,14 +72,14 @@
     move-result-object v2
 
     .line 19
-    if-nez v2, :cond_15
+    if-nez v2, :cond_1
 
     .line 20
     .line 21
     return-object v0
 
     .line 22
-    :cond_15
+    :cond_1
     new-instance v3, Llibs/fl;
 
     .line 23
@@ -105,8 +105,8 @@
     move-result v5
 
     .line 35
-    :goto_22
-    if-ltz v5, :cond_2e
+    :goto_0
+    if-ltz v5, :cond_2
 
     .line 36
     .line 37
@@ -123,17 +123,17 @@
     move-result v5
 
     .line 44
-    goto :goto_22
+    goto :goto_0
 
     .line 45
-    :catchall_2c
+    :catchall_0
     move-exception v2
 
     .line 46
-    goto :goto_3d
+    goto :goto_1
 
     .line 47
-    :cond_2e
+    :cond_2
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
 
     .line 48
@@ -158,14 +158,14 @@
     .line 59
     .line 60
     move-result-object v0
-    :try_end_3c
-    .catchall {:try_start_3 .. :try_end_3c} :catchall_2c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 61
     return-object v0
 
     .line 62
-    :goto_3d
+    :goto_1
     iget-object v3, p0, Lcom/mixplorer/activities/PrintDialogActivity$PrintDialogJavaScriptInterface;->this$0:Lcom/mixplorer/activities/PrintDialogActivity;
 
     .line 63
@@ -197,7 +197,7 @@
 .end method
 
 .method public getEncoding()Ljava/lang/String;
-    .registers 2
+    .locals 1
     .annotation runtime Landroid/webkit/JavascriptInterface;
     .end annotation
 
@@ -210,7 +210,7 @@
 .end method
 
 .method public getTitle()Ljava/lang/String;
-    .registers 4
+    .locals 3
     .annotation runtime Landroid/webkit/JavascriptInterface;
     .end annotation
 
@@ -219,7 +219,7 @@
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     iget-object v1, p0, Lcom/mixplorer/activities/PrintDialogActivity$PrintDialogJavaScriptInterface;->this$0:Lcom/mixplorer/activities/PrintDialogActivity;
 
     .line 4
@@ -228,7 +228,7 @@
 
     .line 6
     .line 7
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
@@ -242,17 +242,17 @@
     .line 13
     .line 14
     move-result-object v0
-    :try_end_e
-    .catchall {:try_start_2 .. :try_end_e} :catchall_e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 15
-    :catchall_e
-    :cond_e
+    :catchall_0
+    :cond_0
     return-object v0
 .end method
 
 .method public getType()Ljava/lang/String;
-    .registers 3
+    .locals 2
     .annotation runtime Landroid/webkit/JavascriptInterface;
     .end annotation
 
@@ -261,7 +261,7 @@
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     iget-object v1, p0, Lcom/mixplorer/activities/PrintDialogActivity$PrintDialogJavaScriptInterface;->this$0:Lcom/mixplorer/activities/PrintDialogActivity;
 
     .line 4
@@ -270,7 +270,7 @@
 
     .line 6
     .line 7
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
@@ -280,26 +280,26 @@
     .line 11
     .line 12
     move-result-object v0
-    :try_end_c
-    .catchall {:try_start_2 .. :try_end_c} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 13
-    :catchall_c
-    :cond_c
+    :catchall_0
+    :cond_0
     return-object v0
 .end method
 
 .method public onPostMessage(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
     .annotation runtime Landroid/webkit/JavascriptInterface;
     .end annotation
 
     .line 1
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_0
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     const-string v0, "cp-dialog-on-close"
 
     .line 4
@@ -312,7 +312,7 @@
     move-result p1
 
     .line 9
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_0
 
     .line 10
     .line 11
@@ -334,13 +334,13 @@
     .line 19
     .line 20
     invoke-virtual {p1}, Landroid/app/Activity;->finish()V
-    :try_end_16
-    .catchall {:try_start_2 .. :try_end_16} :catchall_16
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 21
     .line 22
     .line 23
-    :catchall_16
-    :cond_16
+    :catchall_0
+    :cond_0
     return-void
 .end method

@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/rp0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public buffer()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/addons/Tagger$FileInfoListener;->fi:Llibs/rp0;
@@ -49,7 +49,7 @@
 .end method
 
 .method public bytes(J)[B
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2}, Lcom/mixplorer/addons/Tagger$FileInfoListener;->stream(J)Ljava/io/InputStream;
@@ -80,7 +80,7 @@
 .end method
 
 .method public canWrite()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/addons/Tagger$FileInfoListener;->fi:Llibs/rp0;
@@ -95,7 +95,7 @@
 .end method
 
 .method public contentPath()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/addons/Tagger$FileInfoListener;->fi:Llibs/rp0;
@@ -114,7 +114,7 @@
 .end method
 
 .method public createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Object;
-    .registers 8
+    .locals 4
 
     .line 1
     :try_start_0
@@ -179,8 +179,8 @@
 
     .line 33
     invoke-direct {v0, p1}, Lcom/mixplorer/addons/Tagger$FileInfoListener;-><init>(Llibs/rp0;)V
-    :try_end_23
-    .catchall {:try_start_0 .. :try_end_23} :catchall_24
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 34
     .line 35
@@ -188,7 +188,7 @@
     return-object v0
 
     .line 37
-    :catchall_24
+    :catchall_0
     move-exception p1
 
     .line 38
@@ -212,7 +212,7 @@
 .end method
 
 .method public decodeBytes([BLjava/lang/String;II)Landroid/graphics/Bitmap;
-    .registers 15
+    .locals 10
 
     .line 1
     new-instance v0, Llibs/jt1;
@@ -287,17 +287,17 @@
     const/4 p2, 0x0
 
     .line 37
-    if-nez p1, :cond_28
+    if-nez p1, :cond_0
 
     .line 38
     .line 39
     move-object p1, p2
 
     .line 40
-    goto :goto_3a
+    goto :goto_0
 
     .line 41
-    :cond_28
+    :cond_0
     new-instance v1, Llibs/dl;
 
     .line 42
@@ -340,8 +340,8 @@
     move-result-object p1
 
     .line 59
-    :goto_3a
-    if-eqz p1, :cond_3f
+    :goto_0
+    if-eqz p1, :cond_1
 
     .line 60
     .line 61
@@ -352,12 +352,12 @@
     return-object p1
 
     .line 64
-    :cond_3f
+    :cond_1
     return-object p2
 .end method
 
 .method public delete()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/addons/Tagger$FileInfoListener;->fi:Llibs/rp0;
@@ -379,7 +379,7 @@
 .end method
 
 .method public directory()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/addons/Tagger$FileInfoListener;->fi:Llibs/rp0;
@@ -394,7 +394,7 @@
 .end method
 
 .method public exists()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/addons/Tagger$FileInfoListener;->fi:Llibs/rp0;
@@ -425,7 +425,7 @@
 .end method
 
 .method public extension()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/addons/Tagger$FileInfoListener;->fi:Llibs/rp0;
@@ -440,7 +440,7 @@
 .end method
 
 .method public httpLink()Landroid/net/Uri;
-    .registers 7
+    .locals 6
 
     .line 1
     sget-object v0, Llibs/kh3;->y:Ljava/lang/Object;
@@ -450,12 +450,12 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     sget-object v1, Llibs/kh3;->v:Llibs/kh3;
 
     .line 5
     .line 6
-    if-nez v1, :cond_3c
+    if-nez v1, :cond_2
 
     .line 7
     .line 8
@@ -467,7 +467,7 @@
     move-result v1
 
     .line 12
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_0
 
     .line 13
     .line 14
@@ -475,10 +475,10 @@
 
     .line 15
     .line 16
-    goto :goto_1d
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     invoke-static {}, Llibs/_g;->d()Z
 
     .line 18
@@ -487,7 +487,7 @@
     move-result v1
 
     .line 21
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_1
 
     .line 22
     .line 23
@@ -496,16 +496,16 @@
     .line 24
     .line 25
     .line 26
-    goto :goto_1d
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_1
     const v1, 0x8763
 
     .line 28
     .line 29
     .line 30
-    :goto_1d
+    :goto_0
     new-instance v2, Llibs/kh3;
 
     .line 31
@@ -558,21 +558,21 @@
     .line 56
     .line 57
     .line 58
-    goto :goto_3c
+    goto :goto_1
 
     .line 59
-    :catchall_3a
+    :catchall_0
     move-exception v1
 
     .line 60
-    goto :goto_46
+    goto :goto_2
 
     .line 61
-    :cond_3c
-    :goto_3c
+    :cond_2
+    :goto_1
     monitor-exit v0
-    :try_end_3d
-    .catchall {:try_start_3 .. :try_end_3d} :catchall_3a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 62
     sget-object v0, Llibs/kh3;->v:Llibs/kh3;
@@ -594,18 +594,18 @@
     return-object v0
 
     .line 71
-    :goto_46
-    :try_start_46
+    :goto_2
+    :try_start_1
     monitor-exit v0
-    :try_end_47
-    .catchall {:try_start_46 .. :try_end_47} :catchall_3a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 72
     throw v1
 .end method
 
 .method public lastModified()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/addons/Tagger$FileInfoListener;->fi:Llibs/rp0;
@@ -620,7 +620,7 @@
 .end method
 
 .method public mimeType()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/addons/Tagger$FileInfoListener;->fi:Llibs/rp0;
@@ -639,7 +639,7 @@
 .end method
 
 .method public name()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/addons/Tagger$FileInfoListener;->fi:Llibs/rp0;
@@ -658,7 +658,7 @@
 .end method
 
 .method public newFile(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 6
+    .locals 4
 
     .line 1
     new-instance v0, Lcom/mixplorer/addons/Tagger$FileInfoListener;
@@ -701,7 +701,7 @@
 .end method
 
 .method public notifyFileCreated(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p1}, Llibs/u73;->Intent(Ljava/lang/String;)Llibs/rp0;
@@ -721,7 +721,7 @@
 .end method
 
 .method public outputStream()Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/addons/Tagger$FileInfoListener;->fi:Llibs/rp0;
@@ -743,7 +743,7 @@
 .end method
 
 .method public parent()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/addons/Tagger$FileInfoListener;->fi:Llibs/rp0;
@@ -762,7 +762,7 @@
 .end method
 
 .method public parentFile()Ljava/lang/Object;
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Lcom/mixplorer/addons/Tagger$FileInfoListener;
@@ -817,7 +817,7 @@
 .end method
 
 .method public path()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/addons/Tagger$FileInfoListener;->fi:Llibs/rp0;
@@ -832,7 +832,7 @@
 .end method
 
 .method public randomAccessFile(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
 
     .line 1
     :try_start_0
@@ -850,8 +850,8 @@
     .line 7
     .line 8
     invoke-direct {v1, v0, p1}, Llibs/di2;-><init>(Llibs/rp0;Ljava/lang/String;)V
-    :try_end_a
-    .catchall {:try_start_0 .. :try_end_a} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 9
     .line 10
@@ -859,7 +859,7 @@
     return-object v1
 
     .line 12
-    :catchall_b
+    :catchall_0
     new-instance p1, Ljava/io/FileNotFoundException;
 
     .line 13
@@ -873,13 +873,13 @@
 .end method
 
 .method public renameTo(Ljava/lang/String;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v1, p0, Lcom/mixplorer/addons/Tagger$FileInfoListener;->fi:Llibs/rp0;
 
     .line 3
@@ -902,19 +902,19 @@
     .line 12
     .line 13
     move-result-object p1
-    :try_end_d
-    .catchall {:try_start_1 .. :try_end_d} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 14
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_0
 
     .line 15
     .line 16
     const/4 v0, 0x1
 
     .line 17
-    :catchall_10
-    :cond_10
+    :catchall_0
+    :cond_0
     iget-object p1, p0, Lcom/mixplorer/addons/Tagger$FileInfoListener;->fi:Llibs/rp0;
 
     .line 18
@@ -932,7 +932,7 @@
 .end method
 
 .method public setLastModified(J)Z
-    .registers 10
+    .locals 7
 
     .line 1
     :try_start_0
@@ -967,14 +967,14 @@
     .line 14
     .line 15
     move-result p1
-    :try_end_f
-    .catchall {:try_start_0 .. :try_end_f} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 16
     return p1
 
     .line 17
-    :catchall_10
+    :catchall_0
     const/4 p1, 0x0
 
     .line 18
@@ -982,7 +982,7 @@
 .end method
 
 .method public size()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/addons/Tagger$FileInfoListener;->fi:Llibs/rp0;
@@ -1009,7 +1009,7 @@
     move-result-object v0
 
     .line 13
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 14
     .line 15
@@ -1024,7 +1024,7 @@
     return-wide v0
 
     .line 20
-    :cond_13
+    :cond_0
     const-wide/16 v0, 0x0
 
     .line 21
@@ -1033,7 +1033,7 @@
 .end method
 
 .method public stream(J)Ljava/io/InputStream;
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lcom/mixplorer/addons/Tagger$FileInfoListener;->fi:Llibs/rp0;

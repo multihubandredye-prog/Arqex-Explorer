@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(III)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -77,7 +77,7 @@
 
 # virtual methods
 .method public convertAead(I)Lorg/conscrypt/HpkeSuite$AEAD;
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -94,7 +94,7 @@
 .end method
 
 .method public convertKdf(I)Lorg/conscrypt/HpkeSuite$KDF;
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -111,7 +111,7 @@
 .end method
 
 .method public convertKem(I)Lorg/conscrypt/HpkeSuite$KEM;
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -128,7 +128,7 @@
 .end method
 
 .method public getAead()Lorg/conscrypt/HpkeSuite$AEAD;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/HpkeSuite;->mAead:Lorg/conscrypt/HpkeSuite$AEAD;
@@ -139,7 +139,7 @@
 .end method
 
 .method public getKdf()Lorg/conscrypt/HpkeSuite$KDF;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/HpkeSuite;->mKdf:Lorg/conscrypt/HpkeSuite$KDF;
@@ -150,7 +150,7 @@
 .end method
 
 .method public getKem()Lorg/conscrypt/HpkeSuite$KEM;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/HpkeSuite;->mKem:Lorg/conscrypt/HpkeSuite$KEM;
@@ -161,7 +161,7 @@
 .end method
 
 .method public name()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/HpkeSuite;->mKem:Lorg/conscrypt/HpkeSuite$KEM;

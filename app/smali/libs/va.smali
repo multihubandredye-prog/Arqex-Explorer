@@ -21,7 +21,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-wide/16 v0, 0x0
@@ -44,7 +44,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 .end method
 
 .method public constructor <init>(Ljava/security/interfaces/RSAPrivateKey;)V
-    .registers 3
+    .locals 1
 
     .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -90,7 +90,7 @@
 .end method
 
 .method public constructor <init>(Ljava/security/spec/RSAPrivateKeySpec;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -139,7 +139,7 @@
 .end method
 
 .method public constructor <init>(Llibs/vk2;)V
-    .registers 3
+    .locals 1
 
     .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -167,7 +167,7 @@
 .end method
 
 .method public constructor <init>(Llibs/wk2;)V
-    .registers 3
+    .locals 1
 
     .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -197,7 +197,7 @@
 
 # virtual methods
 .method public final b(Llibs/App;)Llibs/Core;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/va;->Z:Llibs/c82;
@@ -216,7 +216,7 @@
 .end method
 
 .method public final c(Llibs/App;Llibs/Core;)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/va;->Z:Llibs/c82;
@@ -232,7 +232,7 @@
 .end method
 
 .method public final d()Ljava/util/Enumeration;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/va;->Z:Llibs/c82;
@@ -255,7 +255,7 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     instance-of v0, p1, Ljava/security/interfaces/RSAPrivateKey;
@@ -265,25 +265,25 @@
     const/4 v1, 0x0
 
     .line 4
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 5
     .line 6
     return v1
 
     .line 7
-    :cond_6
+    :cond_0
     const/4 v0, 0x1
 
     .line 8
-    if-ne p1, p0, :cond_a
+    if-ne p1, p0, :cond_1
 
     .line 9
     .line 10
     return v0
 
     .line 11
-    :cond_a
+    :cond_1
     check-cast p1, Ljava/security/interfaces/RSAPrivateKey;
 
     .line 12
@@ -308,7 +308,7 @@
     move-result v2
 
     .line 23
-    if-eqz v2, :cond_25
+    if-eqz v2, :cond_2
 
     .line 24
     .line 25
@@ -332,19 +332,19 @@
     move-result p1
 
     .line 35
-    if-eqz p1, :cond_25
+    if-eqz p1, :cond_2
 
     .line 36
     .line 37
     return v0
 
     .line 38
-    :cond_25
+    :cond_2
     return v1
 .end method
 
 .method public final getAlgorithm()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "RSA"
@@ -355,7 +355,7 @@
 .end method
 
 .method public getEncoded()[B
-    .registers 13
+    .locals 12
 
     .line 1
     new-instance v0, Llibs/$f;
@@ -423,7 +423,7 @@
 .end method
 
 .method public getFormat()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "PKCS#8"
@@ -434,7 +434,7 @@
 .end method
 
 .method public final getModulus()Ljava/math/BigInteger;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/va;->X:Ljava/math/BigInteger;
@@ -445,7 +445,7 @@
 .end method
 
 .method public final getPrivateExponent()Ljava/math/BigInteger;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/va;->Y:Ljava/math/BigInteger;
@@ -456,7 +456,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/va;->X:Ljava/math/BigInteger;

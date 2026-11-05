@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r31;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/i21;->X:Llibs/r31;
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public a(Ljava/lang/String;Llibs/$d;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iget-object p1, p0, Llibs/i21;->X:Llibs/r31;

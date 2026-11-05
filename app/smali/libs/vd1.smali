@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>([B[B)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 
     .line 14
     .line 15
-    if-nez p2, :cond_15
+    if-nez p2, :cond_0
 
     .line 16
     .line 17
@@ -59,10 +59,10 @@
 
     .line 20
     .line 21
-    goto :goto_1b
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     invoke-static {p2}, Llibs/t43;->g([B)[B
 
     .line 23
@@ -75,6 +75,6 @@
 
     .line 27
     .line 28
-    :goto_1b
+    :goto_0
     return-void
 .end method

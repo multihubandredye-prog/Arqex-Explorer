@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;Ljava/io/Serializable;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/$a;->a:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final onDismiss(Landroid/content/DialogInterface;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-byte p1, p0, Llibs/$a;->a:B
@@ -57,7 +57,7 @@
 
     .line 6
     .line 7
-    packed-switch p1, :pswitch_data_34
+    packed-switch p1, :pswitch_data_0
 
     .line 8
     .line 9
@@ -92,7 +92,7 @@
     return-void
 
     .line 24
-    :pswitch_17
+    :pswitch_0
     check-cast v1, Llibs/za;
 
     .line 25
@@ -121,7 +121,7 @@
     return-void
 
     .line 38
-    :pswitch_25
+    :pswitch_1
     check-cast v1, Llibs/za;
 
     .line 39
@@ -153,9 +153,9 @@
     nop
 
     .line 53
-    :pswitch_data_34
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_25
-        :pswitch_17
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

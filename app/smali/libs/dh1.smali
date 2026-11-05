@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 1
     const-string v0, "ElGamal"
@@ -91,7 +91,7 @@
 
 # virtual methods
 .method public final generateKeyPair()Ljava/security/KeyPair;
-    .registers 8
+    .locals 7
 
     .line 1
     iget-boolean v0, p0, Llibs/dh1;->e:Z
@@ -102,7 +102,7 @@
 
     .line 4
     .line 5
-    if-nez v0, :cond_4d
+    if-nez v0, :cond_1
 
     .line 6
     .line 7
@@ -122,7 +122,7 @@
     move-result-object v0
 
     .line 15
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_0
 
     .line 16
     .line 17
@@ -172,10 +172,10 @@
     .line 39
     .line 40
     .line 41
-    goto :goto_45
+    goto :goto_0
 
     .line 42
-    :cond_29
+    :cond_0
     iget v0, p0, Llibs/dh1;->b:I
 
     .line 43
@@ -232,7 +232,7 @@
     move-object v2, v3
 
     .line 70
-    :goto_45
+    :goto_0
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 71
@@ -249,7 +249,7 @@
 
     .line 77
     .line 78
-    :cond_4d
+    :cond_1
     invoke-virtual {v1}, Llibs/Init;->x()Llibs/v1;
 
     .line 79
@@ -313,7 +313,7 @@
 .end method
 
 .method public final initialize(ILjava/security/SecureRandom;)V
-    .registers 3
+    .locals 0
 
     .line 71
     iput p1, p0, Llibs/dh1;->b:I
@@ -325,14 +325,14 @@
 .end method
 
 .method public final initialize(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    .registers 7
+    .locals 4
 
     .line 1
     instance-of v0, p1, Llibs/xh0;
 
     .line 2
     .line 3
-    if-nez v0, :cond_f
+    if-nez v0, :cond_1
 
     .line 4
     .line 5
@@ -340,14 +340,14 @@
 
     .line 6
     .line 7
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
-    goto :goto_f
+    goto :goto_0
 
     .line 10
-    :cond_9
+    :cond_0
     const-string p1, "parameter object not a DHParameterSpec or an ElGamalParameterSpec"
 
     .line 11
@@ -360,9 +360,9 @@
     return-void
 
     .line 16
-    :cond_f
-    :goto_f
-    if-eqz v0, :cond_23
+    :cond_1
+    :goto_0
+    if-eqz v0, :cond_2
 
     .line 17
     .line 18
@@ -399,10 +399,10 @@
     .line 33
     .line 34
     .line 35
-    goto :goto_3b
+    goto :goto_1
 
     .line 36
-    :cond_23
+    :cond_2
     check-cast p1, Ljavax/crypto/spec/DHParameterSpec;
 
     .line 37
@@ -449,7 +449,7 @@
     .line 58
     .line 59
     .line 60
-    :goto_3b
+    :goto_1
     iget-object p1, p0, Llibs/dh1;->a:Llibs/Init;
 
     .line 61

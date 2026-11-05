@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>([Llibs/zm0;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/zm0;-><init>()V
@@ -36,14 +36,14 @@
 
 # virtual methods
 .method public final b(Ljava/lang/String;)Llibs/ym0;
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/vw;->b:Llibs/zm0;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -58,7 +58,7 @@
     return-object p1
 
     .line 10
-    :cond_9
+    :cond_0
     iget-object v0, p0, Llibs/vw;->a:[Llibs/zm0;
 
     .line 11
@@ -69,8 +69,8 @@
     const/4 v2, 0x0
 
     .line 14
-    :goto_d
-    if-ge v2, v1, :cond_1d
+    :goto_0
+    if-ge v2, v1, :cond_2
 
     .line 15
     .line 16
@@ -86,7 +86,7 @@
     move-result-object v4
 
     .line 22
-    if-eqz v4, :cond_1a
+    if-eqz v4, :cond_1
 
     .line 23
     .line 24
@@ -97,15 +97,15 @@
     return-object v4
 
     .line 27
-    :cond_1a
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
     .line 28
     .line 29
-    goto :goto_d
+    goto :goto_0
 
     .line 30
-    :cond_1d
+    :cond_2
     const/4 p1, 0x0
 
     .line 31

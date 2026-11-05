@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     invoke-static {}, Llibs/t43;->Set()Z
@@ -20,7 +20,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -40,7 +40,7 @@
     return-void
 
     .line 15
-    :cond_e
+    :cond_0
     new-instance v0, Llibs/Eta;
 
     .line 16
@@ -62,7 +62,7 @@
 .end method
 
 .method public static a(Landroid/view/KeyEvent;)Z
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/bg1;->a:Llibs/Eta;

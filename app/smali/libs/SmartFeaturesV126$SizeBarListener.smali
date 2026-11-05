@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/xt1;I)V
-    .registers 3
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,22 +41,22 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 6
+    .locals 4
 
     iget-object v0, p0, Llibs/SmartFeaturesV126$SizeBarListener;->seekBar:Landroid/widget/SeekBar;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
-    :cond_5
+    :cond_0
     iget-object v1, p0, Llibs/SmartFeaturesV126$SizeBarListener;->btnReset:Landroid/view/View;
 
     const/4 v2, 0x0
 
     const/4 v3, 0x1
 
-    if-ne p1, v1, :cond_1d
+    if-ne p1, v1, :cond_1
 
     iput-boolean v3, p0, Llibs/SmartFeaturesV126$SizeBarListener;->suppress:Z
 
@@ -76,27 +76,27 @@
 
     return-void
 
-    :cond_1d
+    :cond_1
     invoke-virtual {v0}, Landroid/widget/ProgressBar;->getProgress()I
 
     move-result v1
 
     iget-object v2, p0, Llibs/SmartFeaturesV126$SizeBarListener;->btnMinus:Landroid/view/View;
 
-    if-ne p1, v2, :cond_2b
+    if-ne p1, v2, :cond_2
 
     add-int/lit8 v1, v1, -0x1
 
-    if-gez v1, :cond_38
+    if-gez v1, :cond_3
 
     const/4 v1, 0x0
 
-    goto :goto_38
+    goto :goto_0
 
-    :cond_2b
+    :cond_2
     iget-object v2, p0, Llibs/SmartFeaturesV126$SizeBarListener;->btnPlus:Landroid/view/View;
 
-    if-ne p1, v2, :cond_49
+    if-ne p1, v2, :cond_4
 
     add-int/lit8 v1, v1, 0x1
 
@@ -104,12 +104,12 @@
 
     move-result p1
 
-    if-le v1, p1, :cond_38
+    if-le v1, p1, :cond_3
 
     move v1, p1
 
-    :cond_38
-    :goto_38
+    :cond_3
+    :goto_0
     iput-boolean v3, p0, Llibs/SmartFeaturesV126$SizeBarListener;->suppress:Z
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setProgress(I)V
@@ -126,22 +126,22 @@
 
     invoke-static {p1, v0, v1, v3, v2}, Llibs/SmartFeaturesV126;->applyStepAndRefreshLabel(Llibs/xt1;IIZLandroid/widget/TextView;)V
 
-    :cond_49
+    :cond_4
     return-void
 .end method
 
 .method public onProgressChanged(Landroid/widget/SeekBar;IZ)V
-    .registers 6
+    .locals 2
 
     iget-boolean p1, p0, Llibs/SmartFeaturesV126$SizeBarListener;->suppress:Z
 
-    if-nez p1, :cond_11
+    if-nez p1, :cond_1
 
-    if-nez p3, :cond_7
+    if-nez p3, :cond_0
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     iget-object p1, p0, Llibs/SmartFeaturesV126$SizeBarListener;->page:Llibs/xt1;
 
     iget p3, p0, Llibs/SmartFeaturesV126$SizeBarListener;->mode:I
@@ -152,25 +152,25 @@
 
     invoke-static {p1, p3, p2, v0, v1}, Llibs/SmartFeaturesV126;->applyStepAndRefreshLabel(Llibs/xt1;IIZLandroid/widget/TextView;)V
 
-    :cond_11
-    :goto_11
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public onStartTrackingTouch(Landroid/widget/SeekBar;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onStopTrackingTouch(Landroid/widget/SeekBar;)V
-    .registers 6
+    .locals 4
 
-    if-nez p1, :cond_3
+    if-nez p1, :cond_0
 
     return-void
 
-    :cond_3
+    :cond_0
     invoke-virtual {p1}, Landroid/widget/ProgressBar;->getProgress()I
 
     move-result p1

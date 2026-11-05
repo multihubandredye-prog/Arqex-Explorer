@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(I[B)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Llibs/AdMob;-><init>(I[B)V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final h(Llibs/v60;)V
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/AdMob;->X:[B
@@ -71,7 +71,7 @@
 .end method
 
 .method public final i()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/AdMob;->X:[B
@@ -111,7 +111,7 @@
 .end method
 
 .method public final k()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0

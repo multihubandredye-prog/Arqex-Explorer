@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic List(Landroid/webkit/CookieManager;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -20,7 +20,7 @@
 .end method
 
 .method public static bridge synthetic Map(Lcom/mixplorer/widgets/MiEditText;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "\'liga\' 1, \'calt\' 1"
@@ -36,7 +36,7 @@
 .end method
 
 .method public static bridge synthetic Object(Landroid/graphics/drawable/Drawable;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->canApplyTheme()Z
@@ -51,7 +51,7 @@
 .end method
 
 .method public static bridge synthetic Set(Landroid/webkit/CookieManager;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/webkit/CookieManager;->flush()V
@@ -63,7 +63,7 @@
 .end method
 
 .method public static bridge synthetic String(Llibs/vm2;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getClipToPadding()Z
@@ -78,7 +78,7 @@
 .end method
 
 .method public static bridge synthetic a(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->getId()I
@@ -93,7 +93,7 @@
 .end method
 
 .method public static bridge synthetic b(Ljava/lang/Object;)Landroid/app/job/JobScheduler;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Landroid/app/job/JobScheduler;
@@ -104,7 +104,7 @@
 .end method
 
 .method public static bridge synthetic c(Landroid/graphics/drawable/Drawable;)Landroid/graphics/ColorFilter;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getColorFilter()Landroid/graphics/ColorFilter;
@@ -119,7 +119,7 @@
 .end method
 
 .method public static bridge synthetic d(Ljava/lang/Object;)Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
@@ -130,7 +130,7 @@
 .end method
 
 .method public static bridge synthetic e(II)Landroid/view/accessibility/AccessibilityNodeInfo$CollectionInfo;
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -148,7 +148,7 @@
 .end method
 
 .method public static bridge synthetic f(ZIIII)Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;
-    .registers 11
+    .locals 6
 
     .line 1
     const/4 v5, 0x0
@@ -181,7 +181,7 @@
 .end method
 
 .method public static bridge synthetic g(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)Ljava/lang/CharSequence;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->getLabel()Ljava/lang/CharSequence;
@@ -196,7 +196,7 @@
 .end method
 
 .method public static bridge synthetic h(Landroid/media/MediaCodec;I)Ljava/nio/ByteBuffer;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/media/MediaCodec;->getInputBuffer(I)Ljava/nio/ByteBuffer;
@@ -211,7 +211,7 @@
 .end method
 
 .method public static bridge synthetic i(Landroid/view/accessibility/AccessibilityNodeInfo;)Ljava/util/List;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->getActionList()Ljava/util/List;
@@ -226,7 +226,7 @@
 .end method
 
 .method public static bridge synthetic j(ILandroid/graphics/drawable/Drawable;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setTint(I)V
@@ -238,7 +238,7 @@
 .end method
 
 .method public static bridge synthetic k(Landroid/app/job/JobScheduler;I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/app/job/JobScheduler;->cancel(I)V
@@ -250,7 +250,7 @@
 .end method
 
 .method public static bridge synthetic l(Landroid/graphics/Outline;II)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -265,7 +265,7 @@
 .end method
 
 .method public static bridge synthetic m(Landroid/graphics/drawable/Drawable;FF)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2}, Landroid/graphics/drawable/Drawable;->setHotspot(FF)V
@@ -277,7 +277,7 @@
 .end method
 
 .method public static bridge synthetic n(Landroid/graphics/drawable/Drawable;IIII)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/graphics/drawable/Drawable;->setHotspotBounds(IIII)V
@@ -289,7 +289,7 @@
 .end method
 
 .method public static bridge synthetic p(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->setTintList(Landroid/content/res/ColorStateList;)V
@@ -301,7 +301,7 @@
 .end method
 
 .method public static bridge synthetic q(Landroid/graphics/drawable/Drawable;Landroid/content/res/Resources$Theme;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->applyTheme(Landroid/content/res/Resources$Theme;)V
@@ -313,7 +313,7 @@
 .end method
 
 .method public static bridge synthetic r(Landroid/graphics/drawable/Drawable;Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/graphics/drawable/Drawable;->inflate(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V
@@ -325,7 +325,7 @@
 .end method
 
 .method public static bridge synthetic s(Landroid/graphics/drawable/Drawable;Landroid/graphics/PorterDuff$Mode;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->setTintMode(Landroid/graphics/PorterDuff$Mode;)V
@@ -337,7 +337,7 @@
 .end method
 
 .method public static bridge synthetic t(Landroid/view/accessibility/AccessibilityNodeInfo;Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V
@@ -349,7 +349,7 @@
 .end method
 
 .method public static bridge synthetic u(Landroid/webkit/CookieManager;)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/webkit/CookieManager;->flush()V
@@ -361,7 +361,7 @@
 .end method
 
 .method public static bridge synthetic v(Landroid/widget/EdgeEffect;FF)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2}, Landroid/widget/EdgeEffect;->onPull(FF)V
@@ -373,7 +373,7 @@
 .end method
 
 .method public static bridge synthetic w(Lcom/mixplorer/widgets/MiEditText;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -388,7 +388,7 @@
 .end method
 
 .method public static bridge synthetic x(Lcom/mixplorer/widgets/MiPlayPauseView;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -403,7 +403,7 @@
 .end method
 
 .method public static bridge synthetic y(Lcom/mixplorer/widgets/MiPlayPauseView;Llibs/yu1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
@@ -415,7 +415,7 @@
 .end method
 
 .method public static bridge synthetic z(Lcom/mixplorer/widgets/MiTextView;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1

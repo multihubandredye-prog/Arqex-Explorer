@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/android/org/conscrypt/SSLParametersImpl;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljavax/net/ssl/SSLSocket;-><init>()V
@@ -33,7 +33,7 @@
 .end method
 
 .method public constructor <init>(Lcom/android/org/conscrypt/SSLParametersImpl;[Ljava/lang/String;[Ljava/lang/String;)V
-    .registers 4
+    .locals 0
 
     .line 12
     invoke-direct {p0}, Ljavax/net/ssl/SSLSocket;-><init>()V
@@ -49,7 +49,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;ILcom/android/org/conscrypt/SSLParametersImpl;)V
-    .registers 4
+    .locals 0
 
     .line 14
     invoke-direct {p0}, Ljavax/net/ssl/SSLSocket;-><init>()V
@@ -65,7 +65,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;ILjava/net/InetAddress;ILcom/android/org/conscrypt/SSLParametersImpl;)V
-    .registers 6
+    .locals 0
 
     .line 18
     invoke-direct {p0}, Ljavax/net/ssl/SSLSocket;-><init>()V
@@ -81,7 +81,7 @@
 .end method
 
 .method public constructor <init>(Ljava/net/InetAddress;ILcom/android/org/conscrypt/SSLParametersImpl;)V
-    .registers 4
+    .locals 0
 
     .line 16
     invoke-direct {p0}, Ljavax/net/ssl/SSLSocket;-><init>()V
@@ -97,7 +97,7 @@
 .end method
 
 .method public constructor <init>(Ljava/net/InetAddress;ILjava/net/InetAddress;ILcom/android/org/conscrypt/SSLParametersImpl;)V
-    .registers 6
+    .locals 0
 
     .line 20
     invoke-direct {p0}, Ljavax/net/ssl/SSLSocket;-><init>()V
@@ -113,7 +113,7 @@
 .end method
 
 .method public constructor <init>(Ljava/net/Socket;Ljava/lang/String;IZLcom/android/org/conscrypt/SSLParametersImpl;)V
-    .registers 6
+    .locals 0
 
     .line 22
     invoke-direct {p0}, Ljavax/net/ssl/SSLSocket;-><init>()V
@@ -131,7 +131,7 @@
 
 # virtual methods
 .method public addHandshakeCompletedListener(Ljavax/net/ssl/HandshakeCompletedListener;)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -151,7 +151,7 @@
 .end method
 
 .method public clientCertificateRequested([B[[B)V
-    .registers 3
+    .locals 0
 
     .line 1
     new-instance p1, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -171,7 +171,7 @@
 .end method
 
 .method public close()V
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -191,7 +191,7 @@
 .end method
 
 .method public getChannelId()[B
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -211,7 +211,7 @@
 .end method
 
 .method public getEnableSessionCreation()Z
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -231,7 +231,7 @@
 .end method
 
 .method public getEnabledCipherSuites()[Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -251,7 +251,7 @@
 .end method
 
 .method public getEnabledProtocols()[Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -271,7 +271,7 @@
 .end method
 
 .method public getFileDescriptor$()Ljava/io/FileDescriptor;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -291,7 +291,7 @@
 .end method
 
 .method public getInputStream()Ljava/io/InputStream;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -311,7 +311,7 @@
 .end method
 
 .method public getNeedClientAuth()Z
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -331,7 +331,7 @@
 .end method
 
 .method public getNpnSelectedProtocol()[B
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -351,7 +351,7 @@
 .end method
 
 .method public getOutputStream()Ljava/io/OutputStream;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -371,7 +371,7 @@
 .end method
 
 .method public getSession()Ljavax/net/ssl/SSLSession;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -391,7 +391,7 @@
 .end method
 
 .method public getSoTimeout()I
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -411,7 +411,7 @@
 .end method
 
 .method public getSoWriteTimeout()I
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -431,7 +431,7 @@
 .end method
 
 .method public getSupportedCipherSuites()[Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -451,7 +451,7 @@
 .end method
 
 .method public getSupportedProtocols()[Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -471,7 +471,7 @@
 .end method
 
 .method public getUseClientMode()Z
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -491,7 +491,7 @@
 .end method
 
 .method public getWantClientAuth()Z
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -511,7 +511,7 @@
 .end method
 
 .method public handshakeCompleted()V
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -531,7 +531,7 @@
 .end method
 
 .method public removeHandshakeCompletedListener(Ljavax/net/ssl/HandshakeCompletedListener;)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -551,7 +551,7 @@
 .end method
 
 .method public sendUrgentData(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -571,7 +571,7 @@
 .end method
 
 .method public setChannelIdEnabled(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -591,7 +591,7 @@
 .end method
 
 .method public setChannelIdPrivateKey(Ljava/security/PrivateKey;)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -611,7 +611,7 @@
 .end method
 
 .method public setEnableSessionCreation(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -631,7 +631,7 @@
 .end method
 
 .method public setEnabledCipherSuites([Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -651,7 +651,7 @@
 .end method
 
 .method public setEnabledProtocols([Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -671,7 +671,7 @@
 .end method
 
 .method public setHandshakeTimeout(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -691,7 +691,7 @@
 .end method
 
 .method public setHostname(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -711,7 +711,7 @@
 .end method
 
 .method public setNeedClientAuth(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -731,7 +731,7 @@
 .end method
 
 .method public setNpnProtocols([B)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -751,7 +751,7 @@
 .end method
 
 .method public setOOBInline(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -771,7 +771,7 @@
 .end method
 
 .method public setSoTimeout(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -791,7 +791,7 @@
 .end method
 
 .method public setSoWriteTimeout(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -811,7 +811,7 @@
 .end method
 
 .method public setUseClientMode(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -831,7 +831,7 @@
 .end method
 
 .method public setUseSessionTickets(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -851,7 +851,7 @@
 .end method
 
 .method public setWantClientAuth(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance p1, Lcom/android/org/conscrypt/CryptoRuntimeException;
@@ -871,13 +871,13 @@
 .end method
 
 .method public declared-synchronized startHandshake()V
-    .registers 3
+    .locals 2
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     new-instance v0, Lcom/android/org/conscrypt/CryptoRuntimeException;
 
     .line 3
@@ -894,20 +894,20 @@
     throw v0
 
     .line 10
-    :catchall_9
+    :catchall_0
     move-exception v0
 
     .line 11
     monitor-exit p0
-    :try_end_b
-    .catchall {:try_start_1 .. :try_end_b} :catchall_9
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 12
     throw v0
 .end method
 
 .method public verifyCertificateChain([[BLjava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 1
     new-instance p1, Lcom/android/org/conscrypt/CryptoRuntimeException;

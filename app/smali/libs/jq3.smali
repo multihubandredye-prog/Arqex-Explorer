@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/r73;Ljava/lang/String;ILjava/net/InetAddress;)V
-    .registers 6
+    .locals 1
 
     .line 1
     const-string v0, "JCIFS-QueryThread: "
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 5
+    .locals 4
 
     .line 1
     :try_start_0
@@ -93,10 +93,10 @@
 
     .line 11
     iput-object v0, p0, Llibs/jq3;->Lambda:Llibs/kz1;
-    :try_end_c
-    .catch Ljava/net/UnknownHostException; {:try_start_0 .. :try_end_c} :catch_23
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_c} :catch_21
-    .catchall {:try_start_0 .. :try_end_c} :catchall_1f
+    :try_end_0
+    .catch Ljava/net/UnknownHostException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 12
     .line 13
@@ -107,7 +107,7 @@
     monitor-enter v0
 
     .line 16
-    :try_start_f
+    :try_start_1
     iget-object v1, p0, Llibs/jq3;->X:Llibs/r73;
 
     .line 17
@@ -135,41 +135,41 @@
     return-void
 
     .line 29
-    :catchall_1c
+    :catchall_0
     move-exception v1
 
     .line 30
     monitor-exit v0
-    :try_end_1e
-    .catchall {:try_start_f .. :try_end_1e} :catchall_1c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 31
     throw v1
 
     .line 32
-    :catchall_1f
+    :catchall_1
     move-exception v0
 
     .line 33
-    goto :goto_58
+    goto :goto_3
 
     .line 34
-    :catch_21
+    :catch_0
     move-exception v0
 
     .line 35
-    goto :goto_25
+    goto :goto_0
 
     .line 36
-    :catch_23
+    :catch_1
     move-exception v0
 
     .line 37
-    goto :goto_43
+    goto :goto_1
 
     .line 38
-    :goto_25
-    :try_start_25
+    :goto_0
+    :try_start_2
     new-instance v1, Ljava/net/UnknownHostException;
 
     .line 39
@@ -188,8 +188,8 @@
     .line 46
     .line 47
     iput-object v1, p0, Llibs/jq3;->Nu:Ljava/net/UnknownHostException;
-    :try_end_30
-    .catchall {:try_start_25 .. :try_end_30} :catchall_1f
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 48
     .line 49
@@ -200,7 +200,7 @@
     monitor-enter v0
 
     .line 52
-    :try_start_33
+    :try_start_3
     iget-object v1, p0, Llibs/jq3;->X:Llibs/r73;
 
     .line 53
@@ -225,26 +225,26 @@
     monitor-exit v0
 
     .line 64
-    goto :goto_54
+    goto :goto_2
 
     .line 65
-    :catchall_40
+    :catchall_2
     move-exception v1
 
     .line 66
     monitor-exit v0
-    :try_end_42
-    .catchall {:try_start_33 .. :try_end_42} :catchall_40
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
     .line 67
     throw v1
 
     .line 68
-    :goto_43
-    :try_start_43
+    :goto_1
+    :try_start_4
     iput-object v0, p0, Llibs/jq3;->Nu:Ljava/net/UnknownHostException;
-    :try_end_45
-    .catchall {:try_start_43 .. :try_end_45} :catchall_1f
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 69
     .line 70
@@ -255,7 +255,7 @@
     monitor-enter v0
 
     .line 73
-    :try_start_48
+    :try_start_5
     iget-object v1, p0, Llibs/jq3;->X:Llibs/r73;
 
     .line 74
@@ -280,23 +280,23 @@
     monitor-exit v0
 
     .line 85
-    :goto_54
+    :goto_2
     return-void
 
     .line 86
-    :catchall_55
+    :catchall_3
     move-exception v1
 
     .line 87
     monitor-exit v0
-    :try_end_57
-    .catchall {:try_start_48 .. :try_end_57} :catchall_55
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_3
 
     .line 88
     throw v1
 
     .line 89
-    :goto_58
+    :goto_3
     iget-object v1, p0, Llibs/jq3;->X:Llibs/r73;
 
     .line 90
@@ -304,7 +304,7 @@
     monitor-enter v1
 
     .line 92
-    :try_start_5b
+    :try_start_6
     iget-object v2, p0, Llibs/jq3;->X:Llibs/r73;
 
     .line 93
@@ -327,21 +327,21 @@
     .line 102
     .line 103
     monitor-exit v1
-    :try_end_67
-    .catchall {:try_start_5b .. :try_end_67} :catchall_68
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_4
 
     .line 104
     throw v0
 
     .line 105
-    :catchall_68
+    :catchall_4
     move-exception v0
 
     .line 106
-    :try_start_69
+    :try_start_7
     monitor-exit v1
-    :try_end_6a
-    .catchall {:try_start_69 .. :try_end_6a} :catchall_68
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_4
 
     .line 107
     throw v0

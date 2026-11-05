@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const v0, 0x88b8
 
@@ -16,7 +16,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     add-int/lit8 p1, p1, 0x4
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public final List()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Ljava/io/ByteArrayOutputStream;->buf:[B
@@ -128,7 +128,7 @@
 .end method
 
 .method public final Map()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Ljava/io/ByteArrayOutputStream;->count:I
@@ -139,7 +139,7 @@
 .end method
 
 .method public final Set(I)I
-    .registers 3
+    .locals 1
 
     .line 1
     iget v0, p0, Ljava/io/ByteArrayOutputStream;->count:I
@@ -154,7 +154,7 @@
 .end method
 
 .method public final reset()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Ljava/io/ByteArrayOutputStream;->reset()V
@@ -165,14 +165,14 @@
     const/4 v0, 0x0
 
     .line 5
-    :try_start_4
+    :try_start_0
     invoke-virtual {p0, v0}, Llibs/n1;->x(I)V
-    :try_end_7
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_7} :catch_7
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 6
     .line 7
     .line 8
-    :catch_7
+    :catch_0
     return-void
 .end method

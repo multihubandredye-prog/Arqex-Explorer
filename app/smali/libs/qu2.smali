@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/hv2;->Z:Llibs/hv2;
@@ -38,7 +38,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/ArrayList;)V
-    .registers 3
+    .locals 1
 
     .line 14
     sget-object v0, Llibs/hv2;->Z:Llibs/hv2;
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public final c(Llibs/rw2;)V
-    .registers 8
+    .locals 6
 
     .line 1
     iget-object v0, p1, Llibs/rw2;->b:Llibs/oj0;
@@ -72,8 +72,8 @@
     const/4 v1, 0x0
 
     .line 8
-    :goto_7
-    if-ge v1, v0, :cond_21
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     .line 9
     .line 10
@@ -124,15 +124,15 @@
 
     .line 32
     .line 33
-    goto :goto_7
+    goto :goto_0
 
     .line 34
-    :cond_21
+    :cond_0
     return-void
 .end method
 
 .method public final d(Llibs/rw2;)I
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/qu2;->b:Ljava/util/ArrayList;
@@ -150,7 +150,7 @@
     const/4 v2, 0x0
 
     .line 8
-    if-nez v1, :cond_2f
+    if-nez v1, :cond_1
 
     .line 9
     .line 10
@@ -175,8 +175,8 @@
     move-result v1
 
     .line 21
-    :goto_14
-    if-ge v2, v1, :cond_26
+    :goto_0
+    if-ge v2, v1, :cond_0
 
     .line 22
     .line 23
@@ -211,10 +211,10 @@
     .line 36
     .line 37
     .line 38
-    goto :goto_14
+    goto :goto_0
 
     .line 39
-    :cond_26
+    :cond_0
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     .line 40
@@ -234,7 +234,7 @@
     return p1
 
     .line 48
-    :cond_2f
+    :cond_1
     const-string p1, "Cannot serialize an empty or null cipherList"
 
     .line 49

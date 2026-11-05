@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;)V
-    .registers 19
+    .locals 10
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -32,7 +32,7 @@
     move-result-object v1
 
     .line 10
-    if-nez v1, :cond_10
+    if-nez v1, :cond_0
 
     .line 11
     .line 12
@@ -44,10 +44,10 @@
     move-result-object v0
 
     .line 16
-    goto :goto_18
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     invoke-static {v0}, Llibs/ad1;->c(Ljava/lang/String;)Ljava/security/Provider;
 
     .line 18
@@ -64,7 +64,7 @@
     move-result-object v0
 
     .line 25
-    :goto_18
+    :goto_0
     new-instance v1, Ljava/security/spec/RSAPrivateCrtKeySpec;
 
     .line 26
@@ -121,7 +121,7 @@
 .end method
 
 .method public constructor <init>(Ljava/security/interfaces/RSAPrivateCrtKey;)V
-    .registers 2
+    .locals 0
 
     .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -135,7 +135,7 @@
 
 # virtual methods
 .method public final a()Ljava/security/PrivateKey;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/rd3;->a:Ljava/security/interfaces/RSAPrivateCrtKey;
@@ -146,7 +146,7 @@
 .end method
 
 .method public final b(Ljava/lang/String;[B)[B
-    .registers 10
+    .locals 7
 
     .line 1
     const-string v0, "SHA256WithRSA"
@@ -189,7 +189,7 @@
 
     .line 20
     .line 21
-    if-nez v3, :cond_78
+    if-nez v3, :cond_3
 
     .line 22
     .line 23
@@ -205,11 +205,11 @@
     move-result p1
 
     .line 29
-    if-nez p1, :cond_4b
+    if-nez p1, :cond_1
 
     .line 30
     .line 31
-    :try_start_1e
+    :try_start_0
     invoke-static {v2}, Llibs/ad1;->c(Ljava/lang/String;)Ljava/security/Provider;
 
     .line 32
@@ -218,7 +218,7 @@
     move-result-object p1
 
     .line 35
-    if-nez p1, :cond_2b
+    if-nez p1, :cond_0
 
     .line 36
     .line 37
@@ -230,17 +230,17 @@
     move-result-object p1
 
     .line 41
-    goto :goto_33
+    goto :goto_0
 
     .line 42
-    :catch_29
+    :catch_0
     move-exception p1
 
     .line 43
-    goto :goto_3e
+    goto :goto_1
 
     .line 44
-    :cond_2b
+    :cond_0
     invoke-static {v2}, Llibs/ad1;->c(Ljava/lang/String;)Ljava/security/Provider;
 
     .line 45
@@ -257,7 +257,7 @@
     move-result-object p1
 
     .line 52
-    :goto_33
+    :goto_0
     invoke-virtual {p1, v6}, Ljava/security/Signature;->initSign(Ljava/security/PrivateKey;)V
 
     .line 53
@@ -274,14 +274,14 @@
     .line 60
     .line 61
     move-result-object p1
-    :try_end_3d
-    .catch Ljava/lang/Exception; {:try_start_1e .. :try_end_3d} :catch_29
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 62
     return-object p1
 
     .line 63
-    :goto_3e
+    :goto_1
     new-instance p2, Ljava/lang/StringBuilder;
 
     .line 64
@@ -307,8 +307,8 @@
     return-object v4
 
     .line 76
-    :cond_4b
-    :try_start_4b
+    :cond_1
+    :try_start_1
     invoke-static {v1}, Llibs/ad1;->c(Ljava/lang/String;)Ljava/security/Provider;
 
     .line 77
@@ -317,7 +317,7 @@
     move-result-object p1
 
     .line 80
-    if-nez p1, :cond_58
+    if-nez p1, :cond_2
 
     .line 81
     .line 82
@@ -329,17 +329,17 @@
     move-result-object p1
 
     .line 86
-    goto :goto_60
+    goto :goto_2
 
     .line 87
-    :catch_56
+    :catch_1
     move-exception p1
 
     .line 88
-    goto :goto_6b
+    goto :goto_3
 
     .line 89
-    :cond_58
+    :cond_2
     invoke-static {v1}, Llibs/ad1;->c(Ljava/lang/String;)Ljava/security/Provider;
 
     .line 90
@@ -356,7 +356,7 @@
     move-result-object p1
 
     .line 97
-    :goto_60
+    :goto_2
     invoke-virtual {p1, v6}, Ljava/security/Signature;->initSign(Ljava/security/PrivateKey;)V
 
     .line 98
@@ -373,14 +373,14 @@
     .line 105
     .line 106
     move-result-object p1
-    :try_end_6a
-    .catch Ljava/lang/Exception; {:try_start_4b .. :try_end_6a} :catch_56
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 107
     return-object p1
 
     .line 108
-    :goto_6b
+    :goto_3
     new-instance p2, Ljava/lang/StringBuilder;
 
     .line 109
@@ -406,8 +406,8 @@
     return-object v4
 
     .line 121
-    :cond_78
-    :try_start_78
+    :cond_3
+    :try_start_2
     invoke-static {v0}, Llibs/ad1;->c(Ljava/lang/String;)Ljava/security/Provider;
 
     .line 122
@@ -416,7 +416,7 @@
     move-result-object p1
 
     .line 125
-    if-nez p1, :cond_85
+    if-nez p1, :cond_4
 
     .line 126
     .line 127
@@ -428,17 +428,17 @@
     move-result-object p1
 
     .line 131
-    goto :goto_8d
+    goto :goto_4
 
     .line 132
-    :catch_83
+    :catch_2
     move-exception p1
 
     .line 133
-    goto :goto_98
+    goto :goto_5
 
     .line 134
-    :cond_85
+    :cond_4
     invoke-static {v0}, Llibs/ad1;->c(Ljava/lang/String;)Ljava/security/Provider;
 
     .line 135
@@ -455,7 +455,7 @@
     move-result-object p1
 
     .line 142
-    :goto_8d
+    :goto_4
     invoke-virtual {p1, v6}, Ljava/security/Signature;->initSign(Ljava/security/PrivateKey;)V
 
     .line 143
@@ -472,14 +472,14 @@
     .line 150
     .line 151
     move-result-object p1
-    :try_end_97
-    .catch Ljava/lang/Exception; {:try_start_78 .. :try_end_97} :catch_83
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
 
     .line 152
     return-object p1
 
     .line 153
-    :goto_98
+    :goto_5
     new-instance p2, Ljava/lang/StringBuilder;
 
     .line 154
@@ -506,7 +506,7 @@
 .end method
 
 .method public final c([B)[B
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "ssh-rsa"
@@ -525,10 +525,10 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     .line 2
     .line 3
@@ -538,12 +538,12 @@
     return p1
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v0, p1, Llibs/rd3;
 
     .line 6
     .line 7
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_1
 
     .line 8
     .line 9
@@ -555,7 +555,7 @@
 
     .line 12
     .line 13
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_1
 
     .line 14
     .line 15
@@ -574,7 +574,7 @@
     return p1
 
     .line 22
-    :cond_15
+    :cond_1
     const/4 p1, 0x0
 
     .line 23
@@ -582,7 +582,7 @@
 .end method
 
 .method public final getAlgorithm()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "ssh-rsa"
@@ -593,7 +593,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/rd3;->a:Ljava/security/interfaces/RSAPrivateCrtKey;

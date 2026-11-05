@@ -24,7 +24,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
@@ -39,7 +39,7 @@
 .end method
 
 .method public constructor <init>(ILlibs/sn1;Ljava/util/Set;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -85,33 +85,33 @@
 
 # virtual methods
 .method public final a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
-    .registers 7
+    .locals 3
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Llibs/qn1;->X:Llibs/sn1;
 
     .line 3
     .line 4
-    if-eqz p3, :cond_7
+    if-eqz p3, :cond_0
 
     .line 5
     .line 6
     move-object v1, p3
 
     .line 7
-    goto :goto_9
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     sget-object v1, Llibs/qn1;->Nu:Landroid/graphics/Bitmap$Config;
 
     .line 9
     .line 10
-    :goto_9
+    :goto_0
     invoke-interface {v0, p1, p2, v1}, Llibs/sn1;->a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     .line 11
@@ -120,7 +120,7 @@
     move-result-object v0
 
     .line 14
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_1
 
     .line 15
     .line 16
@@ -151,28 +151,28 @@
 
     .line 28
     invoke-static {v0, v1}, Llibs/sw1;->y(Landroid/graphics/Bitmap;Z)V
-    :try_end_1e
-    .catchall {:try_start_1 .. :try_end_1e} :catchall_1f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 29
     .line 30
     .line 31
-    goto :goto_21
+    goto :goto_1
 
     .line 32
-    :catchall_1f
+    :catchall_0
     move-exception p1
 
     .line 33
-    goto :goto_34
+    goto :goto_2
 
     .line 34
-    :cond_21
-    :goto_21
+    :cond_1
+    :goto_1
     monitor-exit p0
 
     .line 35
-    if-nez v0, :cond_29
+    if-nez v0, :cond_2
 
     .line 36
     .line 37
@@ -187,7 +187,7 @@
     return-object p1
 
     .line 42
-    :cond_29
+    :cond_2
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->hasAlpha()Z
 
     .line 43
@@ -196,7 +196,7 @@
     move-result p1
 
     .line 46
-    if-eqz p1, :cond_33
+    if-eqz p1, :cond_3
 
     .line 47
     .line 48
@@ -208,32 +208,32 @@
     .line 50
     .line 51
     .line 52
-    :cond_33
+    :cond_3
     return-object v0
 
     .line 53
-    :goto_34
-    :try_start_34
+    :goto_2
+    :try_start_1
     monitor-exit p0
-    :try_end_35
-    .catchall {:try_start_34 .. :try_end_35} :catchall_1f
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 54
     throw p1
 .end method
 
 .method public final declared-synchronized b(Landroid/graphics/Bitmap;)V
-    .registers 4
+    .locals 2
 
     .line 1
     monitor-enter p0
 
     .line 2
-    if-eqz p1, :cond_4d
+    if-eqz p1, :cond_3
 
     .line 3
     .line 4
-    :try_start_3
+    :try_start_0
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->isRecycled()Z
 
     .line 5
@@ -242,14 +242,14 @@
     move-result v0
 
     .line 8
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 9
     .line 10
-    goto :goto_4d
+    goto :goto_2
 
     .line 11
-    :cond_a
+    :cond_0
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->isMutable()Z
 
     .line 12
@@ -258,7 +258,7 @@
     move-result v0
 
     .line 15
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_2
 
     .line 16
     .line 17
@@ -278,7 +278,7 @@
 
     .line 24
     .line 25
-    if-gt v0, v1, :cond_46
+    if-gt v0, v1, :cond_2
 
     .line 26
     .line 27
@@ -290,7 +290,7 @@
     move-result-object v0
 
     .line 31
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_2
 
     .line 32
     .line 33
@@ -314,14 +314,14 @@
     move-result v0
 
     .line 43
-    if-nez v0, :cond_2d
+    if-nez v0, :cond_1
 
     .line 44
     .line 45
-    goto :goto_46
+    goto :goto_0
 
     .line 46
-    :cond_2d
+    :cond_1
     iget-object v0, p0, Llibs/qn1;->X:Llibs/sn1;
 
     .line 47
@@ -359,8 +359,8 @@
     .line 63
     .line 64
     invoke-virtual {p0, p1}, Llibs/qn1;->c(I)V
-    :try_end_42
-    .catchall {:try_start_3 .. :try_end_42} :catchall_44
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 65
     .line 66
@@ -371,19 +371,19 @@
     return-void
 
     .line 69
-    :catchall_44
+    :catchall_0
     move-exception p1
 
     .line 70
-    goto :goto_4b
+    goto :goto_1
 
     .line 71
-    :cond_46
-    :goto_46
-    :try_start_46
+    :cond_2
+    :goto_0
+    :try_start_1
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->recycle()V
-    :try_end_49
-    .catchall {:try_start_46 .. :try_end_49} :catchall_44
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 72
     .line 73
@@ -394,18 +394,18 @@
     return-void
 
     .line 76
-    :goto_4b
-    :try_start_4b
+    :goto_1
+    :try_start_2
     monitor-exit p0
-    :try_end_4c
-    .catchall {:try_start_4b .. :try_end_4c} :catchall_44
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 77
     throw p1
 
     .line 78
-    :cond_4d
-    :goto_4d
+    :cond_3
+    :goto_2
     monitor-exit p0
 
     .line 79
@@ -413,19 +413,19 @@
 .end method
 
 .method public final declared-synchronized c(I)V
-    .registers 5
+    .locals 3
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :goto_1
-    :try_start_1
+    :goto_0
+    :try_start_0
     iget v0, p0, Llibs/qn1;->Mu:I
 
     .line 3
     .line 4
-    if-le v0, p1, :cond_23
+    if-le v0, p1, :cond_1
 
     .line 5
     .line 6
@@ -441,7 +441,7 @@
     move-result-object v0
 
     .line 12
-    if-nez v0, :cond_14
+    if-nez v0, :cond_0
 
     .line 13
     .line 14
@@ -449,8 +449,8 @@
 
     .line 15
     iput p1, p0, Llibs/qn1;->Mu:I
-    :try_end_10
-    .catchall {:try_start_1 .. :try_end_10} :catchall_12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 16
     .line 17
@@ -460,15 +460,15 @@
     return-void
 
     .line 19
-    :catchall_12
+    :catchall_0
     move-exception p1
 
     .line 20
-    goto :goto_25
+    goto :goto_1
 
     .line 21
-    :cond_14
-    :try_start_14
+    :cond_0
+    :try_start_1
     iget v1, p0, Llibs/qn1;->Mu:I
 
     .line 22
@@ -493,48 +493,48 @@
     .line 31
     .line 32
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
-    :try_end_22
-    .catchall {:try_start_14 .. :try_end_22} :catchall_12
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 33
     .line 34
     .line 35
-    goto :goto_1
+    goto :goto_0
 
     .line 36
-    :cond_23
+    :cond_1
     monitor-exit p0
 
     .line 37
     return-void
 
     .line 38
-    :goto_25
-    :try_start_25
+    :goto_1
+    :try_start_2
     monitor-exit p0
-    :try_end_26
-    .catchall {:try_start_25 .. :try_end_26} :catchall_12
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 39
-    goto :goto_28
+    goto :goto_3
 
     .line 40
-    :goto_27
+    :goto_2
     throw p1
 
     .line 41
-    :goto_28
-    goto :goto_27
+    :goto_3
+    goto :goto_2
 .end method
 
 .method public final declared-synchronized i()V
-    .registers 3
+    .locals 2
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget v0, p0, Llibs/qn1;->Z:I
 
     .line 3
@@ -563,8 +563,8 @@
     .line 14
     .line 15
     invoke-virtual {p0, v0}, Llibs/qn1;->c(I)V
-    :try_end_11
-    .catchall {:try_start_1 .. :try_end_11} :catchall_13
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 16
     .line 17
@@ -575,21 +575,21 @@
     return-void
 
     .line 20
-    :catchall_13
+    :catchall_0
     move-exception v0
 
     .line 21
-    :try_start_14
+    :try_start_1
     monitor-exit p0
-    :try_end_15
-    .catchall {:try_start_14 .. :try_end_15} :catchall_13
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 22
     throw v0
 .end method
 
 .method public final k(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2, p3}, Llibs/qn1;->a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
@@ -604,14 +604,14 @@
 .end method
 
 .method public final p(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/16 v0, 0x28
 
     .line 2
     .line 3
-    if-lt p1, v0, :cond_9
+    if-lt p1, v0, :cond_0
 
     .line 4
     .line 5
@@ -626,12 +626,12 @@
     return-void
 
     .line 10
-    :cond_9
+    :cond_0
     const/16 v0, 0x14
 
     .line 11
     .line 12
-    if-lt p1, v0, :cond_14
+    if-lt p1, v0, :cond_1
 
     .line 13
     .line 14
@@ -648,12 +648,12 @@
     .line 19
     .line 20
     .line 21
-    :cond_14
+    :cond_1
     return-void
 .end method
 
 .method public final s()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0

@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(I[B)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public final a(I)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget v0, p0, Llibs/mz1;->c:I
@@ -84,7 +84,7 @@
 
     .line 13
     .line 14
-    if-le v1, v3, :cond_12
+    if-le v1, v3, :cond_0
 
     .line 15
     .line 16
@@ -95,12 +95,12 @@
 
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     return-void
 .end method
 
 .method public final b(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     add-int/lit8 p1, p1, -0x1
@@ -141,7 +141,7 @@
 .end method
 
 .method public final c()I
-    .registers 4
+    .locals 3
 
     .line 1
     const/4 v0, 0x4
@@ -177,7 +177,7 @@
 .end method
 
 .method public final d()I
-    .registers 4
+    .locals 3
 
     .line 1
     const/4 v0, 0x2
@@ -213,7 +213,7 @@
 .end method
 
 .method public final e()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/mz1;->a:[B
@@ -244,7 +244,7 @@
 .end method
 
 .method public final f()Ljava/lang/String;
-    .registers 8
+    .locals 7
 
     .line 1
     const/4 v0, 0x4
@@ -278,15 +278,15 @@
     const/4 v3, 0x0
 
     .line 16
-    if-eqz v2, :cond_43
+    if-eqz v2, :cond_3
 
     .line 17
     .line 18
     const/4 v4, 0x0
 
     .line 19
-    :goto_12
-    if-ge v4, v2, :cond_25
+    :goto_0
+    if-ge v4, v2, :cond_1
 
     .line 20
     .line 21
@@ -301,7 +301,7 @@
 
     .line 25
     .line 26
-    if-nez v6, :cond_22
+    if-nez v6, :cond_0
 
     .line 27
     .line 28
@@ -313,31 +313,31 @@
 
     .line 31
     .line 32
-    if-nez v5, :cond_22
+    if-nez v5, :cond_0
 
     .line 33
     .line 34
-    goto :goto_26
+    goto :goto_1
 
     .line 35
-    :cond_22
+    :cond_0
     add-int/lit8 v4, v4, 0x1
 
     .line 36
     .line 37
-    goto :goto_12
+    goto :goto_0
 
     .line 38
-    :cond_25
+    :cond_1
     move v4, v2
 
     .line 39
-    :goto_26
+    :goto_1
     mul-int/lit8 v4, v4, 0x2
 
     .line 40
     .line 41
-    if-ltz v4, :cond_38
+    if-ltz v4, :cond_2
 
     .line 42
     .line 43
@@ -346,11 +346,11 @@
     .line 44
     .line 45
     .line 46
-    if-gt v4, v5, :cond_38
+    if-gt v4, v5, :cond_2
 
     .line 47
     .line 48
-    :try_start_2f
+    :try_start_0
     new-instance v5, Ljava/lang/String;
 
     .line 49
@@ -367,10 +367,10 @@
     move-object v3, v5
 
     .line 56
-    goto :goto_40
+    goto :goto_2
 
     .line 57
-    :cond_38
+    :cond_2
     new-instance v1, Llibs/o70;
 
     .line 58
@@ -385,12 +385,12 @@
     .line 63
     .line 64
     throw v1
-    :try_end_40
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_2f .. :try_end_40} :catch_40
+    :try_end_0
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 65
-    :catch_40
-    :goto_40
+    :catch_0
+    :goto_2
     mul-int/lit8 v2, v2, 0x2
 
     .line 66
@@ -398,7 +398,7 @@
     add-int/2addr v0, v2
 
     .line 68
-    :cond_43
+    :cond_3
     iget v1, p0, Llibs/mz1;->c:I
 
     .line 69
@@ -415,7 +415,7 @@
 .end method
 
 .method public final g(I)Llibs/mz1;
-    .registers 5
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/mz1;
@@ -451,7 +451,7 @@
 .end method
 
 .method public final h(I)V
-    .registers 5
+    .locals 3
 
     .line 1
     const/4 v0, 0x4
@@ -484,10 +484,10 @@
 .end method
 
 .method public final i(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 1
-    if-nez p1, :cond_7
+    if-nez p1, :cond_0
 
     .line 2
     .line 3
@@ -502,7 +502,7 @@
     return-void
 
     .line 8
-    :cond_7
+    :cond_0
     invoke-static {p1}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     .line 9
@@ -520,7 +520,7 @@
 .end method
 
 .method public final j(I)V
-    .registers 7
+    .locals 5
 
     .line 1
     const/4 v0, 0x2
@@ -581,7 +581,7 @@
 .end method
 
 .method public final k(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/mz1;->c:I
@@ -615,7 +615,7 @@
 .end method
 
 .method public final l(Ljava/lang/String;)V
-    .registers 8
+    .locals 6
 
     .line 1
     const/4 v0, 0x4
@@ -676,7 +676,7 @@
 
     .line 30
     .line 31
-    :try_start_1e
+    :try_start_0
     const-string v2, "UTF-16LE"
 
     .line 32
@@ -694,13 +694,13 @@
     .line 38
     .line 39
     invoke-static {p1, v5, v3, v0, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-    :try_end_29
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_1e .. :try_end_29} :catch_29
+    :try_end_0
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 40
     .line 41
     .line 42
-    :catch_29
+    :catch_0
     mul-int/lit8 v1, v1, 0x2
 
     .line 43
@@ -740,7 +740,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

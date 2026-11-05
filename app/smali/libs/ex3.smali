@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/x92;
@@ -107,7 +107,7 @@
 .end method
 
 .method public static a([B[B[BII[BI)V
-    .registers 24
+    .locals 17
 
     .line 1
     move-object/from16 v0, p1
@@ -177,12 +177,12 @@
     const/4 v4, 0x0
 
     .line 34
-    :goto_21
+    :goto_0
     const/16 v6, 0x8
 
     .line 35
     .line 36
-    if-ge v4, v6, :cond_34
+    if-ge v4, v6, :cond_0
 
     .line 37
     .line 38
@@ -214,10 +214,10 @@
 
     .line 51
     .line 52
-    goto :goto_21
+    goto :goto_0
 
     .line 53
-    :cond_34
+    :cond_0
     const/16 v4, 0xd
 
     .line 54
@@ -285,7 +285,7 @@
 
     .line 85
     .line 86
-    if-nez v4, :cond_5c
+    if-nez v4, :cond_1
 
     .line 87
     .line 88
@@ -298,7 +298,7 @@
     .line 91
     .line 92
     .line 93
-    :cond_5c
+    :cond_1
     sget-object v0, Llibs/ex3;->d:Llibs/x92;
 
     .line 94
@@ -319,7 +319,7 @@
 
     .line 102
     .line 103
-    if-nez v6, :cond_6d
+    if-nez v6, :cond_2
 
     .line 104
     .line 105
@@ -332,7 +332,7 @@
     .line 108
     .line 109
     .line 110
-    :cond_6d
+    :cond_2
     const-wide/16 v8, 0x1
 
     .line 111
@@ -343,8 +343,8 @@
     const/4 v0, 0x0
 
     .line 114
-    :goto_71
-    if-ge v0, v1, :cond_b6
+    :goto_1
+    if-ge v0, v1, :cond_6
 
     .line 115
     .line 116
@@ -371,12 +371,12 @@
     const/4 v10, 0x0
 
     .line 127
-    :goto_7e
+    :goto_2
     const/16 v11, 0xa
 
     .line 128
     .line 129
-    if-ge v10, v11, :cond_88
+    if-ge v10, v11, :cond_3
 
     .line 130
     .line 131
@@ -389,15 +389,15 @@
 
     .line 135
     .line 136
-    goto :goto_7e
+    goto :goto_2
 
     .line 137
-    :cond_88
+    :cond_3
     const/4 v10, 0x0
 
     .line 138
-    :goto_89
-    if-ge v10, v2, :cond_98
+    :goto_3
+    if-ge v10, v2, :cond_4
 
     .line 139
     .line 140
@@ -425,10 +425,10 @@
 
     .line 151
     .line 152
-    goto :goto_89
+    goto :goto_3
 
     .line 153
-    :cond_98
+    :cond_4
     sub-int v10, v1, v0
 
     .line 154
@@ -444,8 +444,8 @@
     const/4 v11, 0x0
 
     .line 160
-    :goto_9f
-    if-ge v11, v10, :cond_b3
+    :goto_4
+    if-ge v11, v10, :cond_5
 
     .line 161
     .line 162
@@ -486,25 +486,25 @@
 
     .line 178
     .line 179
-    goto :goto_9f
+    goto :goto_4
 
     .line 180
-    :cond_b3
+    :cond_5
     add-int/2addr v0, v10
 
     .line 181
     move-wide v10, v12
 
     .line 182
-    goto :goto_71
+    goto :goto_1
 
     .line 183
-    :cond_b6
+    :cond_6
     return-void
 .end method
 
 .method public static b([B[B[B)V
-    .registers 9
+    .locals 6
 
     .line 1
     const/16 v0, 0x10
@@ -566,12 +566,12 @@
     const/4 v2, 0x0
 
     .line 30
-    :goto_1d
+    :goto_0
     const/16 v4, 0x8
 
     .line 31
     .line 32
-    if-ge v2, v4, :cond_2e
+    if-ge v2, v4, :cond_0
 
     .line 33
     .line 34
@@ -599,10 +599,10 @@
 
     .line 45
     .line 46
-    goto :goto_1d
+    goto :goto_0
 
     .line 47
-    :cond_2e
+    :cond_0
     const/16 p0, 0xc
 
     .line 48
@@ -678,7 +678,7 @@
 
     .line 83
     .line 84
-    if-nez p1, :cond_5a
+    if-nez p1, :cond_1
 
     .line 85
     .line 86
@@ -691,7 +691,7 @@
     .line 89
     .line 90
     .line 91
-    :cond_5a
+    :cond_1
     invoke-static {v1, v3, p1, v3, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 92
@@ -700,12 +700,12 @@
     const/4 p0, 0x0
 
     .line 95
-    :goto_5e
+    :goto_1
     const/16 v2, 0xa
 
     .line 96
     .line 97
-    if-ge p0, v2, :cond_68
+    if-ge p0, v2, :cond_2
 
     .line 98
     .line 99
@@ -718,12 +718,12 @@
 
     .line 103
     .line 104
-    goto :goto_5e
+    goto :goto_1
 
     .line 105
-    :cond_68
-    :goto_68
-    if-ge v3, v0, :cond_77
+    :cond_2
+    :goto_2
+    if-ge v3, v0, :cond_3
 
     .line 106
     .line 107
@@ -751,15 +751,15 @@
 
     .line 118
     .line 119
-    goto :goto_68
+    goto :goto_2
 
     .line 120
-    :cond_77
+    :cond_3
     return-void
 .end method
 
 .method public static c([B[B[B[BI[B)V
-    .registers 28
+    .locals 22
 
     .line 1
     move-object/from16 v0, p1
@@ -782,7 +782,7 @@
 
     .line 10
     .line 11
-    if-nez v2, :cond_13
+    if-nez v2, :cond_0
 
     .line 12
     .line 13
@@ -799,7 +799,7 @@
     .line 18
     .line 19
     .line 20
-    :cond_13
+    :cond_0
     move-object v3, v2
 
     .line 21
@@ -819,7 +819,7 @@
 
     .line 28
     .line 29
-    if-nez v2, :cond_25
+    if-nez v2, :cond_1
 
     .line 30
     .line 31
@@ -836,7 +836,7 @@
     .line 36
     .line 37
     .line 38
-    :cond_25
+    :cond_1
     move-object/from16 v1, p0
 
     .line 39
@@ -897,7 +897,7 @@
 
     .line 65
     .line 66
-    if-eqz v0, :cond_52
+    if-eqz v0, :cond_2
 
     .line 67
     .line 68
@@ -921,10 +921,10 @@
 
     .line 77
     .line 78
-    :try_start_4d
+    :try_start_0
     invoke-static/range {v3 .. v13}, Llibs/py;->f(J[BI[BI[B[BII[B)I
-    :try_end_50
-    .catchall {:try_start_4d .. :try_end_50} :catchall_51
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 79
     .line 80
@@ -932,11 +932,11 @@
     return-void
 
     .line 82
-    :catchall_51
+    :catchall_0
     nop
 
     .line 83
-    :cond_52
+    :cond_2
     add-int/lit8 v19, p4, -0x10
 
     .line 84
@@ -961,7 +961,7 @@
 
     .line 94
     .line 95
-    if-nez v2, :cond_65
+    if-nez v2, :cond_3
 
     .line 96
     .line 97
@@ -974,7 +974,7 @@
     .line 100
     .line 101
     .line 102
-    :cond_65
+    :cond_3
     move-object v15, v2
 
     .line 103
@@ -999,7 +999,7 @@
 
     .line 113
     .line 114
-    if-nez v2, :cond_78
+    if-nez v2, :cond_4
 
     .line 115
     .line 116
@@ -1012,7 +1012,7 @@
     .line 119
     .line 120
     .line 121
-    :cond_78
+    :cond_4
     move-object/from16 v20, v2
 
     .line 122
@@ -1044,8 +1044,8 @@
     const/4 v0, 0x0
 
     .line 136
-    :goto_87
-    if-ge v1, v14, :cond_94
+    :goto_0
+    if-ge v1, v14, :cond_5
 
     .line 137
     .line 138
@@ -1071,11 +1071,11 @@
 
     .line 147
     .line 148
-    goto :goto_87
+    goto :goto_0
 
     .line 149
-    :cond_94
-    if-nez v0, :cond_a4
+    :cond_5
+    if-nez v0, :cond_6
 
     .line 150
     .line 151
@@ -1111,7 +1111,7 @@
     return-void
 
     .line 165
-    :cond_a4
+    :cond_6
     new-instance v0, Ljava/lang/SecurityException;
 
     .line 166
@@ -1125,19 +1125,19 @@
     .line 170
     .line 171
     .line 172
-    goto :goto_ad
+    goto :goto_2
 
     .line 173
-    :goto_ac
+    :goto_1
     throw v0
 
     .line 174
-    :goto_ad
-    goto :goto_ac
+    :goto_2
+    goto :goto_1
 .end method
 
 .method public static d([I)V
-    .registers 17
+    .locals 16
 
     .line 1
     move-object/from16 v0, p0
@@ -1247,7 +1247,7 @@
 .end method
 
 .method public static e([B[B[B[BII[BI)V
-    .registers 25
+    .locals 17
 
     .line 1
     move-object/from16 v0, p1
@@ -1270,7 +1270,7 @@
 
     .line 10
     .line 11
-    if-nez v2, :cond_13
+    if-nez v2, :cond_0
 
     .line 12
     .line 13
@@ -1287,7 +1287,7 @@
     .line 18
     .line 19
     .line 20
-    :cond_13
+    :cond_0
     move-object v3, v2
 
     .line 21
@@ -1307,7 +1307,7 @@
 
     .line 28
     .line 29
-    if-nez v2, :cond_25
+    if-nez v2, :cond_1
 
     .line 30
     .line 31
@@ -1324,7 +1324,7 @@
     .line 36
     .line 37
     .line 38
-    :cond_25
+    :cond_1
     move-object/from16 v1, p0
 
     .line 39
@@ -1376,7 +1376,7 @@
 
     .line 62
     .line 63
-    if-eqz v2, :cond_53
+    if-eqz v2, :cond_2
 
     .line 64
     .line 65
@@ -1408,10 +1408,10 @@
 
     .line 78
     .line 79
-    :try_start_4e
+    :try_start_0
     invoke-static/range {v3 .. v13}, Llibs/py;->g(J[BI[BI[B[BII[B)I
-    :try_end_51
-    .catchall {:try_start_4e .. :try_end_51} :catchall_52
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 80
     .line 81
@@ -1419,11 +1419,11 @@
     return-void
 
     .line 83
-    :catchall_52
+    :catchall_0
     nop
 
     .line 84
-    :cond_53
+    :cond_2
     sget-object v0, Llibs/ex3;->c:Llibs/x92;
 
     .line 85
@@ -1440,7 +1440,7 @@
 
     .line 91
     .line 92
-    if-nez v1, :cond_64
+    if-nez v1, :cond_3
 
     .line 93
     .line 94
@@ -1457,7 +1457,7 @@
     .line 99
     .line 100
     .line 101
-    :cond_64
+    :cond_3
     move-object v10, v1
 
     .line 102
@@ -1530,7 +1530,7 @@
 .end method
 
 .method public static f([B[B[B)V
-    .registers 12
+    .locals 9
 
     .line 1
     sget-object v0, Llibs/ex3;->e:Llibs/x92;
@@ -1553,7 +1553,7 @@
 
     .line 10
     .line 11
-    if-nez v1, :cond_11
+    if-nez v1, :cond_0
 
     .line 12
     .line 13
@@ -1566,7 +1566,7 @@
     .line 16
     .line 17
     .line 18
-    :cond_11
+    :cond_0
     const v0, 0x61707865
 
     .line 19
@@ -1618,12 +1618,12 @@
     const/4 v0, 0x0
 
     .line 43
-    :goto_2a
+    :goto_0
     const/16 v7, 0x8
 
     .line 44
     .line 45
-    if-ge v0, v7, :cond_3b
+    if-ge v0, v7, :cond_1
 
     .line 46
     .line 47
@@ -1651,18 +1651,18 @@
 
     .line 58
     .line 59
-    goto :goto_2a
+    goto :goto_0
 
     .line 60
-    :cond_3b
+    :cond_1
     const/4 p0, 0x0
 
     .line 61
-    :goto_3c
+    :goto_1
     const/4 v0, 0x4
 
     .line 62
-    if-ge p0, v0, :cond_4c
+    if-ge p0, v0, :cond_2
 
     .line 63
     .line 64
@@ -1690,19 +1690,19 @@
 
     .line 75
     .line 76
-    goto :goto_3c
+    goto :goto_1
 
     .line 77
-    :cond_4c
+    :cond_2
     const/4 p0, 0x0
 
     .line 78
-    :goto_4d
+    :goto_2
     const/16 p1, 0xa
 
     .line 79
     .line 80
-    if-ge p0, p1, :cond_57
+    if-ge p0, p1, :cond_3
 
     .line 81
     .line 82
@@ -1715,10 +1715,10 @@
 
     .line 86
     .line 87
-    goto :goto_4d
+    goto :goto_2
 
     .line 88
-    :cond_57
+    :cond_3
     aget p0, v1, v3
 
     .line 89
@@ -1823,7 +1823,7 @@
 .end method
 
 .method public static g(I[B)I
-    .registers 4
+    .locals 2
 
     .line 1
     aget-byte v0, p1, p0
@@ -1895,7 +1895,7 @@
 .end method
 
 .method public static h(I[B)J
-    .registers 9
+    .locals 7
 
     .line 1
     aget-byte v0, p1, p0
@@ -1988,7 +1988,7 @@
 .end method
 
 .method public static i([B[B[BII[BI)V
-    .registers 74
+    .locals 67
 
     .line 1
     move-object/from16 v0, p0
@@ -2209,7 +2209,7 @@
 
     .line 110
     .line 111
-    if-lez v6, :cond_198
+    if-lez v6, :cond_6
 
     .line 112
     .line 113
@@ -2236,7 +2236,7 @@
     const/4 v6, 0x0
 
     .line 124
-    :goto_7b
+    :goto_0
     const/16 v55, 0x8
 
     .line 125
@@ -2244,7 +2244,7 @@
     array-length v12, v1
 
     .line 127
-    if-ge v6, v12, :cond_195
+    if-ge v6, v12, :cond_5
 
     .line 128
     .line 129
@@ -2262,7 +2262,7 @@
     move-result v12
 
     .line 135
-    if-ne v12, v15, :cond_a2
+    if-ne v12, v15, :cond_1
 
     .line 136
     .line 137
@@ -2310,7 +2310,7 @@
     move-result-wide v62
 
     .line 159
-    :cond_9e
+    :cond_0
     move-wide/from16 v65, v7
 
     .line 160
@@ -2318,10 +2318,10 @@
     move v8, v6
 
     .line 162
-    goto :goto_db
+    goto :goto_3
 
     .line 163
-    :cond_a2
+    :cond_1
     move-wide/from16 v56, v43
 
     .line 164
@@ -2341,8 +2341,8 @@
     const/4 v15, 0x0
 
     .line 172
-    :goto_ab
-    if-ge v15, v12, :cond_9e
+    :goto_1
+    if-ge v15, v12, :cond_0
 
     .line 173
     .line 174
@@ -2382,7 +2382,7 @@
     const/4 v9, 0x4
 
     .line 190
-    if-ge v15, v9, :cond_c2
+    if-ge v15, v9, :cond_2
 
     .line 191
     .line 192
@@ -2390,15 +2390,15 @@
 
     .line 193
     .line 194
-    goto :goto_d2
+    goto :goto_2
 
     .line 195
-    :cond_c2
+    :cond_2
     const/16 v9, 0x8
 
     .line 196
     .line 197
-    if-ge v15, v9, :cond_c9
+    if-ge v15, v9, :cond_3
 
     .line 198
     .line 199
@@ -2406,15 +2406,15 @@
 
     .line 200
     .line 201
-    goto :goto_d2
+    goto :goto_2
 
     .line 202
-    :cond_c9
+    :cond_3
     const/16 v9, 0xc
 
     .line 203
     .line 204
-    if-ge v15, v9, :cond_d0
+    if-ge v15, v9, :cond_4
 
     .line 205
     .line 206
@@ -2422,15 +2422,15 @@
 
     .line 207
     .line 208
-    goto :goto_d2
+    goto :goto_2
 
     .line 209
-    :cond_d0
+    :cond_4
     or-long v62, v62, v6
 
     .line 210
     .line 211
-    :goto_d2
+    :goto_2
     add-int/lit8 v15, v15, 0x1
 
     .line 212
@@ -2449,10 +2449,10 @@
 
     .line 218
     .line 219
-    goto :goto_ab
+    goto :goto_1
 
     .line 220
-    :goto_db
+    :goto_3
     and-long v6, v56, v18
 
     .line 221
@@ -2823,20 +2823,20 @@
 
     .line 403
     .line 404
-    goto/16 :goto_7b
+    goto/16 :goto_0
 
     .line 405
     .line 406
-    :cond_195
-    :goto_195
+    :cond_5
+    :goto_4
     move-wide/from16 v65, v7
 
     .line 407
     .line 408
-    goto :goto_1a3
+    goto :goto_5
 
     .line 409
-    :cond_198
+    :cond_6
     move-wide/from16 v45, v43
 
     .line 410
@@ -2857,15 +2857,15 @@
 
     .line 418
     .line 419
-    goto :goto_195
+    goto :goto_4
 
     .line 420
-    :goto_1a3
+    :goto_5
     const/4 v6, 0x0
 
     .line 421
-    :goto_1a4
-    if-ge v6, v3, :cond_2b7
+    :goto_6
+    if-ge v6, v3, :cond_c
 
     .line 422
     .line 423
@@ -2885,7 +2885,7 @@
     move-result v7
 
     .line 431
-    if-ne v7, v8, :cond_1ce
+    if-ne v7, v8, :cond_8
 
     .line 432
     .line 433
@@ -2941,7 +2941,7 @@
     move-result-wide v60
 
     .line 459
-    :cond_1ca
+    :cond_7
     move/from16 v62, v6
 
     .line 460
@@ -2949,10 +2949,10 @@
     const/4 v15, 0x4
 
     .line 462
-    goto :goto_208
+    goto :goto_9
 
     .line 463
-    :cond_1ce
+    :cond_8
     move-wide/from16 v8, v43
 
     .line 464
@@ -2972,8 +2972,8 @@
     const/4 v12, 0x0
 
     .line 472
-    :goto_1d7
-    if-ge v12, v7, :cond_1ca
+    :goto_7
+    if-ge v12, v7, :cond_7
 
     .line 473
     .line 474
@@ -3021,18 +3021,18 @@
     const/4 v15, 0x4
 
     .line 494
-    if-ge v12, v15, :cond_1f1
+    if-ge v12, v15, :cond_9
 
     .line 495
     .line 496
     or-long/2addr v8, v6
 
     .line 497
-    goto :goto_1ff
+    goto :goto_8
 
     .line 498
-    :cond_1f1
-    if-ge v12, v2, :cond_1f6
+    :cond_9
+    if-ge v12, v2, :cond_a
 
     .line 499
     .line 500
@@ -3040,15 +3040,15 @@
 
     .line 501
     .line 502
-    goto :goto_1ff
+    goto :goto_8
 
     .line 503
-    :cond_1f6
+    :cond_a
     const/16 v2, 0xc
 
     .line 504
     .line 505
-    if-ge v12, v2, :cond_1fd
+    if-ge v12, v2, :cond_b
 
     .line 506
     .line 507
@@ -3056,15 +3056,15 @@
 
     .line 508
     .line 509
-    goto :goto_1ff
+    goto :goto_8
 
     .line 510
-    :cond_1fd
+    :cond_b
     or-long v60, v60, v6
 
     .line 511
     .line 512
-    :goto_1ff
+    :goto_8
     add-int/lit8 v12, v12, 0x1
 
     .line 513
@@ -3081,10 +3081,10 @@
 
     .line 519
     .line 520
-    goto :goto_1d7
+    goto :goto_7
 
     .line 521
-    :goto_208
+    :goto_9
     and-long v6, v8, v18
 
     .line 522
@@ -3440,11 +3440,11 @@
 
     .line 693
     .line 694
-    goto/16 :goto_1a4
+    goto/16 :goto_6
 
     .line 695
     .line 696
-    :cond_2b7
+    :cond_c
     array-length v1, v1
 
     .line 697
@@ -4160,7 +4160,7 @@
 .end method
 
 .method public static j(IIII[I)V
-    .registers 7
+    .locals 2
 
     .line 1
     aget v0, p4, p0
@@ -4319,7 +4319,7 @@
 .end method
 
 .method public static k(II[B)V
-    .registers 5
+    .locals 2
 
     .line 1
     int-to-byte v0, p1

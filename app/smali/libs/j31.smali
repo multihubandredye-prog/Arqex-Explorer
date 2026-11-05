@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/widget/CheckBox;Landroid/widget/CheckBox;Landroid/widget/CheckBox;Landroid/app/Activity;Llibs/qk0;)V
-    .registers 7
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -58,7 +58,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/Object;Ljava/util/ArrayList;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;B)V
-    .registers 7
+    .locals 0
 
     .line 18
     iput-byte p6, p0, Llibs/j31;->c:B
@@ -81,7 +81,7 @@
 
 # virtual methods
 .method public final z(Landroid/view/View;I)V
-    .registers 39
+    .locals 36
 
     .line 1
     move-object/from16 v1, p0
@@ -99,7 +99,7 @@
     const/4 v3, 0x0
 
     .line 8
-    packed-switch v2, :pswitch_data_31c
+    packed-switch v2, :pswitch_data_0
 
     .line 9
     .line 10
@@ -140,29 +140,29 @@
 
     .line 28
     .line 29
-    if-eq v2, v5, :cond_20
+    if-eq v2, v5, :cond_0
 
     .line 30
     .line 31
     const/4 v4, 0x1
 
     .line 32
-    goto :goto_21
+    goto :goto_0
 
     .line 33
-    :cond_20
+    :cond_0
     const/4 v4, 0x0
 
     .line 34
-    :goto_21
-    if-eqz v4, :cond_24
+    :goto_0
+    if-eqz v4, :cond_1
 
     .line 35
     .line 36
-    goto :goto_29
+    goto :goto_1
 
     .line 37
-    :cond_24
+    :cond_1
     iget-object v2, v1, Llibs/j31;->f:Ljava/lang/Object;
 
     .line 38
@@ -174,7 +174,7 @@
 
     .line 41
     .line 42
-    :goto_29
+    :goto_1
     iput-object v5, v0, Llibs/r90;->Lambda:Landroid/graphics/drawable/Drawable;
 
     .line 43
@@ -209,7 +209,7 @@
 
     .line 59
     .line 60
-    if-eqz v4, :cond_4c
+    if-eqz v4, :cond_2
 
     .line 61
     .line 62
@@ -241,10 +241,10 @@
 
     .line 75
     .line 76
-    goto :goto_60
+    goto :goto_2
 
     .line 77
-    :cond_4c
+    :cond_2
     iget-object v5, v2, Llibs/e73;->k:Llibs/il1;
 
     .line 78
@@ -252,7 +252,7 @@
     monitor-enter v5
 
     .line 80
-    :try_start_4f
+    :try_start_0
     iget-object v2, v2, Llibs/e73;->k:Llibs/il1;
 
     .line 81
@@ -263,8 +263,8 @@
     .line 84
     .line 85
     monitor-exit v5
-    :try_end_55
-    .catchall {:try_start_4f .. :try_end_55} :catchall_70
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 86
     iget-object v2, v1, Llibs/j31;->g:Ljava/lang/Object;
@@ -290,7 +290,7 @@
 
     .line 96
     .line 97
-    :goto_60
+    :goto_2
     iget-object v0, v1, Llibs/j31;->h:Ljava/lang/Object;
 
     .line 98
@@ -323,20 +323,20 @@
     return-void
 
     .line 113
-    :catchall_70
+    :catchall_0
     move-exception v0
 
     .line 114
-    :try_start_71
+    :try_start_1
     monitor-exit v5
-    :try_end_72
-    .catchall {:try_start_71 .. :try_end_72} :catchall_70
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 115
     throw v0
 
     .line 116
-    :pswitch_73
+    :pswitch_0
     iget-object v2, v1, Llibs/j31;->h:Ljava/lang/Object;
 
     .line 117
@@ -392,23 +392,23 @@
     const/4 v12, 0x2
 
     .line 141
-    if-eqz v0, :cond_a5
+    if-eqz v0, :cond_7
 
     .line 142
     .line 143
-    if-eq v0, v12, :cond_a2
+    if-eq v0, v12, :cond_6
 
     .line 144
     .line 145
-    if-eq v0, v11, :cond_9f
+    if-eq v0, v11, :cond_5
 
     .line 146
     .line 147
-    if-eq v0, v9, :cond_9c
+    if-eq v0, v9, :cond_4
 
     .line 148
     .line 149
-    if-eq v0, v8, :cond_99
+    if-eq v0, v8, :cond_3
 
     .line 150
     .line 151
@@ -416,46 +416,46 @@
 
     .line 152
     .line 153
-    goto :goto_a6
+    goto :goto_3
 
     .line 154
-    :cond_99
+    :cond_3
     const-string v0, "TESTKEY"
 
     .line 155
     .line 156
-    goto :goto_a6
+    goto :goto_3
 
     .line 157
-    :cond_9c
+    :cond_4
     const-string v0, "SHARED"
 
     .line 158
     .line 159
-    goto :goto_a6
+    goto :goto_3
 
     .line 160
-    :cond_9f
+    :cond_5
     const-string v0, "MEDIA"
 
     .line 161
     .line 162
-    goto :goto_a6
+    goto :goto_3
 
     .line 163
-    :cond_a2
+    :cond_6
     const-string v0, "PLATFORM"
 
     .line 164
     .line 165
-    goto :goto_a6
+    goto :goto_3
 
     .line 166
-    :cond_a5
+    :cond_7
     move-object v0, v2
 
     .line 167
-    :goto_a6
+    :goto_3
     invoke-virtual {v7}, Landroid/widget/CompoundButton;->isChecked()Z
 
     .line 168
@@ -464,7 +464,7 @@
     move-result v13
 
     .line 171
-    if-nez v13, :cond_ba
+    if-nez v13, :cond_8
 
     .line 172
     .line 173
@@ -476,7 +476,7 @@
     move-result v13
 
     .line 177
-    if-nez v13, :cond_ba
+    if-nez v13, :cond_8
 
     .line 178
     .line 179
@@ -488,15 +488,15 @@
     move-result v13
 
     .line 183
-    if-nez v13, :cond_ba
+    if-nez v13, :cond_8
 
     .line 184
     .line 185
-    goto/16 :goto_239
+    goto/16 :goto_8
 
     .line 186
     .line 187
-    :cond_ba
+    :cond_8
     invoke-virtual {v0, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     .line 188
@@ -511,7 +511,7 @@
     const/4 v15, 0x0
 
     .line 193
-    if-eqz v2, :cond_1ed
+    if-eqz v2, :cond_c
 
     .line 194
     .line 195
@@ -583,7 +583,7 @@
     move-result v8
 
     .line 229
-    if-nez v8, :cond_152
+    if-nez v8, :cond_b
 
     .line 230
     .line 231
@@ -603,7 +603,7 @@
     move-result v11
 
     .line 239
-    if-lez v11, :cond_14f
+    if-lez v11, :cond_a
 
     .line 240
     .line 241
@@ -651,7 +651,7 @@
 
     .line 262
     .line 263
-    if-le v8, v14, :cond_117
+    if-le v8, v14, :cond_9
 
     .line 264
     .line 265
@@ -683,10 +683,10 @@
     move-result v7
 
     .line 279
-    goto :goto_11c
+    goto :goto_4
 
     .line 280
-    :cond_117
+    :cond_9
     invoke-virtual {v7, v14}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     .line 281
@@ -698,7 +698,7 @@
     const/4 v7, 0x0
 
     .line 285
-    :goto_11c
+    :goto_4
     new-instance v8, Ljava/lang/StringBuilder;
 
     .line 286
@@ -799,27 +799,27 @@
 
     .line 334
     .line 335
-    goto :goto_159
+    goto :goto_7
 
     .line 336
-    :cond_14f
-    :goto_14f
+    :cond_a
+    :goto_5
     const/16 v18, 0x1
 
     .line 337
     .line 338
-    goto :goto_155
+    goto :goto_6
 
     .line 339
-    :cond_152
+    :cond_b
     const/16 p1, 0x3
 
     .line 340
     .line 341
-    goto :goto_14f
+    goto :goto_5
 
     .line 342
-    :goto_155
+    :goto_6
     move-object v9, v6
 
     .line 343
@@ -830,7 +830,7 @@
     const/4 v11, 0x0
 
     .line 346
-    :goto_159
+    :goto_7
     new-instance v8, Llibs/$d;
 
     .line 347
@@ -1120,10 +1120,10 @@
     .line 491
     .line 492
     .line 493
-    goto :goto_239
+    goto :goto_8
 
     .line 494
-    :cond_1ed
+    :cond_c
     const/16 p1, 0x3
 
     .line 495
@@ -1276,11 +1276,11 @@
     .line 568
     .line 569
     .line 570
-    :goto_239
+    :goto_8
     return-void
 
     .line 571
-    :pswitch_23a
+    :pswitch_1
     const/16 v18, 0x1
 
     .line 572
@@ -1329,7 +1329,7 @@
 
     .line 594
     .line 595
-    if-ne v0, v5, :cond_261
+    if-ne v0, v5, :cond_d
 
     .line 596
     .line 597
@@ -1354,16 +1354,16 @@
     .line 606
     .line 607
     .line 608
-    goto/16 :goto_31a
+    goto/16 :goto_9
 
     .line 609
     .line 610
-    :cond_261
+    :cond_d
     sget v5, Llibs/bi2;->analyze:I
 
     .line 611
     .line 612
-    if-ne v0, v5, :cond_2ad
+    if-ne v0, v5, :cond_e
 
     .line 613
     .line 614
@@ -1504,10 +1504,10 @@
     .line 683
     .line 684
     .line 685
-    goto :goto_31a
+    goto :goto_9
 
     .line 686
-    :cond_2ad
+    :cond_e
     const/4 v5, 0x1
 
     .line 687
@@ -1515,19 +1515,19 @@
 
     .line 688
     .line 689
-    if-ne v0, v6, :cond_2b3
+    if-ne v0, v6, :cond_f
 
     .line 690
     .line 691
-    goto :goto_31a
+    goto :goto_9
 
     .line 692
-    :cond_2b3
+    :cond_f
     sget v6, Llibs/bi2;->remnants:I
 
     .line 693
     .line 694
-    if-ne v0, v6, :cond_311
+    if-ne v0, v6, :cond_10
 
     .line 695
     .line 696
@@ -1700,15 +1700,15 @@
     .line 783
     .line 784
     .line 785
-    goto :goto_31a
+    goto :goto_9
 
     .line 786
-    :cond_311
+    :cond_10
     sget v2, Llibs/bi2;->files:I
 
     .line 787
     .line 788
-    if-ne v0, v2, :cond_31a
+    if-ne v0, v2, :cond_11
 
     .line 789
     .line 790
@@ -1721,17 +1721,17 @@
     .line 793
     .line 794
     .line 795
-    :cond_31a
-    :goto_31a
+    :cond_11
+    :goto_9
     return-void
 
     .line 796
     nop
 
     .line 797
-    :pswitch_data_31c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_23a
-        :pswitch_73
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

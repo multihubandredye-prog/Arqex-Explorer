@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/al;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/zk;->Lambda:Llibs/al;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/xv1;

@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     const-string v0, "ML-DSA-65"
@@ -24,7 +24,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public generateKeyPair()Ljava/security/KeyPair;
-    .registers 6
+    .locals 5
 
     .line 1
     const/16 v0, 0x20

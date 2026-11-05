@@ -24,7 +24,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/zl0;Llibs/rp0;ZLlibs/zl0;Ljava/util/concurrent/atomic/AtomicInteger;Llibs/m52;[B)V
-    .registers 8
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public final a(J)Llibs/fh3;
-    .registers 12
+    .locals 9
 
     .line 1
     iget-object v5, p0, Llibs/o42;->Nu:Llibs/m52;

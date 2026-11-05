@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/nio/charset/Charset;ZLjava/lang/String;ZZZJLjava/lang/String;I)V
-    .registers 24
+    .locals 12
 
     .line 1
     invoke-direct {p0}, Llibs/b02;-><init>()V
@@ -69,7 +69,7 @@
 
 # virtual methods
 .method public final True()[Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     const/4 v0, 0x1
@@ -94,7 +94,7 @@
 .end method
 
 .method public final a()Ljava/util/LinkedHashMap;
-    .registers 4
+    .locals 3
 
     .line 1
     invoke-super {p0}, Llibs/b02;->a()Ljava/util/LinkedHashMap;

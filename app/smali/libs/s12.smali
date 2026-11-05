@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/s12;
@@ -29,7 +29,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/List;)V
-    .registers 9
+    .locals 7
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
     move-result-object p1
 
     .line 13
-    :goto_c
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 14
@@ -63,7 +63,7 @@
     move-result v1
 
     .line 17
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_1
 
     .line 18
     .line 19
@@ -94,7 +94,7 @@
     move-result-object v3
 
     .line 32
-    if-nez v3, :cond_29
+    if-nez v3, :cond_0
 
     .line 33
     .line 34
@@ -112,7 +112,7 @@
     .line 40
     .line 41
     .line 42
-    :cond_29
+    :cond_0
     check-cast v3, Ljava/util/List;
 
     .line 43
@@ -122,10 +122,10 @@
     .line 45
     .line 46
     .line 47
-    goto :goto_c
+    goto :goto_0
 
     .line 48
-    :cond_2f
+    :cond_1
     new-instance p1, Ljava/util/HashMap;
 
     .line 49
@@ -151,7 +151,7 @@
     move-result-object v0
 
     .line 61
-    :goto_3c
+    :goto_1
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 62
@@ -160,7 +160,7 @@
     move-result v1
 
     .line 65
-    if-eqz v1, :cond_7f
+    if-eqz v1, :cond_3
 
     .line 66
     .line 67
@@ -213,7 +213,7 @@
     move-result-object v1
 
     .line 92
-    :goto_5b
+    :goto_2
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 93
@@ -222,7 +222,7 @@
     move-result v4
 
     .line 96
-    if-eqz v4, :cond_7b
+    if-eqz v4, :cond_2
 
     .line 97
     .line 98
@@ -275,19 +275,19 @@
     .line 121
     .line 122
     .line 123
-    goto :goto_5b
+    goto :goto_2
 
     .line 124
-    :cond_7b
+    :cond_2
     invoke-virtual {p1, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 125
     .line 126
     .line 127
-    goto :goto_3c
+    goto :goto_1
 
     .line 128
-    :cond_7f
+    :cond_3
     iput-object p1, p0, Llibs/s12;->a:Ljava/util/HashMap;
 
     .line 129

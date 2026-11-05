@@ -15,7 +15,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/util/ArrayList;
@@ -56,7 +56,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/LinkedHashSet;Llibs/t43;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -76,7 +76,7 @@
 .end method
 
 .method public static b(Ljava/security/cert/X509Certificate;)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-static {p0}, Llibs/sk1;->Object(Ljava/lang/Object;)Z
@@ -87,7 +87,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -132,7 +132,7 @@
 
     .line 27
     .line 28
-    :try_start_1b
+    :try_start_0
     invoke-static {v1}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
 
     .line 29
@@ -159,8 +159,8 @@
     .line 40
     .line 41
     move-result-object p0
-    :try_end_29
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_1b .. :try_end_29} :catch_35
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 42
     invoke-virtual {p0}, Llibs/ql;->a()Ljava/lang/String;
@@ -187,7 +187,7 @@
     return-object p0
 
     .line 54
-    :catch_35
+    :catch_0
     move-exception p0
 
     .line 55
@@ -203,7 +203,7 @@
     throw v0
 
     .line 61
-    :cond_3c
+    :cond_0
     const-string p0, "Certificate pinning requires X509 certificates"
 
     .line 62
@@ -222,7 +222,7 @@
 
 # virtual methods
 .method public final a(Ljava/lang/String;Ljava/util/List;)V
-    .registers 10
+    .locals 7
 
     .line 1
     sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
@@ -249,7 +249,7 @@
     move-result v2
 
     .line 13
-    if-nez v2, :cond_a5
+    if-nez v2, :cond_7
 
     .line 14
     .line 15
@@ -261,19 +261,19 @@
     move-result v1
 
     .line 19
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     .line 20
     .line 21
     return-void
 
     .line 22
-    :cond_15
+    :cond_0
     iget-object v1, p0, Llibs/vq;->b:Llibs/t43;
 
     .line 23
     .line 24
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_1
 
     .line 25
     .line 26
@@ -285,7 +285,7 @@
     move-result-object p2
 
     .line 30
-    :cond_1d
+    :cond_1
     invoke-interface {p2}, Ljava/util/List;->size()I
 
     .line 31
@@ -300,8 +300,8 @@
     const/4 v3, 0x0
 
     .line 36
-    :goto_23
-    if-ge v3, v1, :cond_41
+    :goto_0
+    if-ge v3, v1, :cond_3
 
     .line 37
     .line 38
@@ -325,7 +325,7 @@
     move-result v4
 
     .line 48
-    if-gtz v4, :cond_34
+    if-gtz v4, :cond_2
 
     .line 49
     .line 50
@@ -333,10 +333,10 @@
 
     .line 51
     .line 52
-    goto :goto_23
+    goto :goto_0
 
     .line 53
-    :cond_34
+    :cond_2
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     .line 54
@@ -362,7 +362,7 @@
     throw p1
 
     .line 66
-    :cond_41
+    :cond_3
     new-instance v1, Ljava/lang/StringBuilder;
 
     .line 67
@@ -387,8 +387,8 @@
     const/4 v4, 0x0
 
     .line 78
-    :goto_4d
-    if-ge v4, v3, :cond_74
+    :goto_1
+    if-ge v4, v3, :cond_4
 
     .line 79
     .line 80
@@ -460,10 +460,10 @@
 
     .line 115
     .line 116
-    goto :goto_4d
+    goto :goto_1
 
     .line 117
-    :cond_74
+    :cond_4
     const-string p2, "\n  Pinned certificates for "
 
     .line 118
@@ -495,8 +495,8 @@
     move-result p1
 
     .line 134
-    :goto_85
-    if-ge v2, p1, :cond_9b
+    :goto_2
+    if-ge v2, p1, :cond_6
 
     .line 135
     .line 136
@@ -508,7 +508,7 @@
     move-result-object p2
 
     .line 140
-    if-nez p2, :cond_95
+    if-nez p2, :cond_5
 
     .line 141
     .line 142
@@ -525,10 +525,10 @@
 
     .line 148
     .line 149
-    goto :goto_85
+    goto :goto_2
 
     .line 150
-    :cond_95
+    :cond_5
     new-instance p1, Ljava/lang/ClassCastException;
 
     .line 151
@@ -541,7 +541,7 @@
     throw p1
 
     .line 156
-    :cond_9b
+    :cond_6
     new-instance p1, Ljavax/net/ssl/SSLPeerUnverifiedException;
 
     .line 157
@@ -562,7 +562,7 @@
     throw p1
 
     .line 166
-    :cond_a5
+    :cond_7
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     .line 167
@@ -585,34 +585,34 @@
     .line 176
     .line 177
     .line 178
-    goto :goto_b3
+    goto :goto_4
 
     .line 179
-    :goto_b2
+    :goto_3
     throw p1
 
     .line 180
-    :goto_b3
-    goto :goto_b2
+    :goto_4
+    goto :goto_3
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     .line 1
-    if-ne p1, p0, :cond_3
+    if-ne p1, p0, :cond_0
 
     .line 2
     .line 3
-    goto :goto_1d
+    goto :goto_0
 
     .line 4
-    :cond_3
+    :cond_0
     instance-of v0, p1, Llibs/vq;
 
     .line 5
     .line 6
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1
 
     .line 7
     .line 8
@@ -636,7 +636,7 @@
     move-result v0
 
     .line 18
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1
 
     .line 19
     .line 20
@@ -656,18 +656,18 @@
     move-result p1
 
     .line 28
-    if-eqz p1, :cond_1f
+    if-eqz p1, :cond_1
 
     .line 29
     .line 30
-    :goto_1d
+    :goto_0
     const/4 p1, 0x1
 
     .line 31
     return p1
 
     .line 32
-    :cond_1f
+    :cond_1
     const/4 p1, 0x0
 
     .line 33
@@ -675,7 +675,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 3
+    .locals 2
 
     .line 1
     sget-object v0, Llibs/vl3;->a:Ljava/util/HashMap;
@@ -686,7 +686,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -698,14 +698,14 @@
     move-result v0
 
     .line 11
-    goto :goto_c
+    goto :goto_0
 
     .line 12
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
     .line 13
-    :goto_c
+    :goto_0
     mul-int/lit8 v0, v0, 0x1f
 
     .line 14

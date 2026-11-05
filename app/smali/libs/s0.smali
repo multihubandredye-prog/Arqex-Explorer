@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/app/Activity;Llibs/h23;)V
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -37,7 +37,7 @@
 .end method
 
 .method public synthetic constructor <init>(Llibs/h23;)V
-    .registers 3
+    .locals 1
 
     .line 10
     const/4 v0, 0x1
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/s0;->X:B
@@ -65,7 +65,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_34
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -78,8 +78,8 @@
     return-void
 
     .line 12
-    :pswitch_b
-    :try_start_b
+    :pswitch_0
+    :try_start_0
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     .line 13
@@ -117,15 +117,15 @@
 
     .line 30
     check-cast p1, Llibs/r90;
-    :try_end_1f
-    .catchall {:try_start_b .. :try_end_1f} :catchall_20
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 31
     .line 32
-    goto :goto_32
+    goto :goto_0
 
     .line 33
-    :catchall_20
+    :catchall_0
     move-exception p1
 
     .line 34
@@ -164,15 +164,15 @@
     .line 49
     .line 50
     .line 51
-    :goto_32
+    :goto_0
     return-void
 
     .line 52
     nop
 
     .line 53
-    :pswitch_data_34
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_b
+        :pswitch_0
     .end packed-switch
 .end method

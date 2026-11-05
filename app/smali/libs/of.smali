@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/io/ObjectStreamField;
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final a()V
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/of;->X:[J
@@ -49,14 +49,14 @@
     array-length v1, v0
 
     .line 4
-    if-ltz v1, :cond_16
+    if-ltz v1, :cond_2
 
     .line 5
     .line 6
     array-length v1, v0
 
     .line 7
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_1
 
     .line 8
     .line 9
@@ -75,25 +75,25 @@
 
     .line 15
     .line 16
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     .line 17
     .line 18
-    goto :goto_15
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     invoke-static {}, Llibs/ic0;->w()V
 
     .line 20
     .line 21
     .line 22
-    :cond_15
-    :goto_15
+    :cond_1
+    :goto_0
     return-void
 
     .line 23
-    :cond_16
+    :cond_2
     invoke-static {}, Llibs/ic0;->w()V
 
     .line 24
@@ -103,10 +103,10 @@
 .end method
 
 .method public final b(I)I
-    .registers 8
+    .locals 6
 
     .line 1
-    if-ltz p1, :cond_2b
+    if-ltz p1, :cond_3
 
     .line 2
     .line 3
@@ -119,14 +119,14 @@
 
     .line 7
     .line 8
-    if-ltz v0, :cond_a
+    if-ltz v0, :cond_0
 
     .line 9
     .line 10
-    goto :goto_24
+    goto :goto_1
 
     .line 11
-    :cond_a
+    :cond_0
     iget-object v1, p0, Llibs/of;->X:[J
 
     .line 12
@@ -145,7 +145,7 @@
     and-long/2addr v2, v4
 
     .line 19
-    :goto_12
+    :goto_0
     const-wide/16 v4, 0x0
 
     .line 20
@@ -154,7 +154,7 @@
 
     .line 22
     .line 23
-    if-eqz p1, :cond_20
+    if-eqz p1, :cond_1
 
     .line 24
     .line 25
@@ -176,23 +176,23 @@
     return p1
 
     .line 33
-    :cond_20
+    :cond_1
     add-int/lit8 v0, v0, 0x1
 
     .line 34
     .line 35
-    if-nez v0, :cond_26
+    if-nez v0, :cond_2
 
     .line 36
     .line 37
-    :goto_24
+    :goto_1
     const/4 p1, -0x1
 
     .line 38
     return p1
 
     .line 39
-    :cond_26
+    :cond_2
     iget-object p1, p0, Llibs/of;->X:[J
 
     .line 40
@@ -201,10 +201,10 @@
 
     .line 42
     .line 43
-    goto :goto_12
+    goto :goto_0
 
     .line 44
-    :cond_2b
+    :cond_3
     const-string v0, "fromIndex < 0: "
 
     .line 45
@@ -229,7 +229,7 @@
 .end method
 
 .method public final clone()Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/of;->X:[J
@@ -239,7 +239,7 @@
     array-length v1, v0
 
     .line 4
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     .line 5
     .line 6
@@ -263,8 +263,8 @@
     .line 14
     .line 15
     .line 16
-    :cond_f
-    :try_start_f
+    :cond_0
+    :try_start_0
     invoke-super {p0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     .line 17
@@ -298,8 +298,8 @@
     .line 31
     .line 32
     invoke-virtual {v0}, Llibs/of;->a()V
-    :try_end_22
-    .catch Ljava/lang/CloneNotSupportedException; {:try_start_f .. :try_end_22} :catch_23
+    :try_end_0
+    .catch Ljava/lang/CloneNotSupportedException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 33
     .line 34
@@ -307,7 +307,7 @@
     return-object v0
 
     .line 36
-    :catch_23
+    :catch_0
     move-exception v0
 
     .line 37
@@ -323,14 +323,14 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Llibs/of;
 
     .line 2
     .line 3
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -340,18 +340,18 @@
     return p1
 
     .line 7
-    :cond_6
+    :cond_0
     const/4 v0, 0x1
 
     .line 8
-    if-ne p0, p1, :cond_a
+    if-ne p0, p1, :cond_1
 
     .line 9
     .line 10
     return v0
 
     .line 11
-    :cond_a
+    :cond_1
     check-cast p1, Llibs/of;
 
     .line 12
@@ -370,7 +370,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x4d2
@@ -381,7 +381,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 12
+    .locals 11
 
     .line 1
     invoke-virtual {p0}, Llibs/of;->a()V
@@ -424,7 +424,7 @@
     const/4 v3, -0x1
 
     .line 21
-    if-eq v2, v3, :cond_6b
+    if-eq v2, v3, :cond_7
 
     .line 22
     .line 23
@@ -433,19 +433,19 @@
     .line 24
     .line 25
     .line 26
-    :goto_19
+    :goto_0
     add-int/lit8 v2, v2, 0x1
 
     .line 27
     .line 28
-    if-gez v2, :cond_1e
+    if-gez v2, :cond_0
 
     .line 29
     .line 30
-    goto :goto_6b
+    goto :goto_3
 
     .line 31
-    :cond_1e
+    :cond_0
     invoke-virtual {p0, v2}, Llibs/of;->b(I)I
 
     .line 32
@@ -454,15 +454,15 @@
     move-result v2
 
     .line 35
-    if-gez v2, :cond_25
+    if-gez v2, :cond_1
 
     .line 36
     .line 37
-    goto :goto_6b
+    goto :goto_3
 
     .line 38
-    :cond_25
-    if-ltz v2, :cond_60
+    :cond_1
+    if-ltz v2, :cond_6
 
     .line 39
     .line 40
@@ -475,17 +475,17 @@
 
     .line 44
     .line 45
-    if-ltz v3, :cond_30
+    if-ltz v3, :cond_2
 
     .line 46
     .line 47
     move v4, v2
 
     .line 48
-    goto :goto_4d
+    goto :goto_2
 
     .line 49
-    :cond_30
+    :cond_2
     iget-object v4, p0, Llibs/of;->X:[J
 
     .line 50
@@ -508,7 +508,7 @@
     and-long/2addr v5, v9
 
     .line 59
-    :goto_3a
+    :goto_1
     const-wide/16 v9, 0x0
 
     .line 60
@@ -517,7 +517,7 @@
 
     .line 62
     .line 63
-    if-eqz v4, :cond_48
+    if-eqz v4, :cond_3
 
     .line 64
     .line 65
@@ -536,23 +536,23 @@
     add-int/2addr v4, v3
 
     .line 72
-    goto :goto_4d
+    goto :goto_2
 
     .line 73
-    :cond_48
+    :cond_3
     add-int/lit8 v3, v3, 0x1
 
     .line 74
     .line 75
-    if-nez v3, :cond_5a
+    if-nez v3, :cond_5
 
     .line 76
     .line 77
     const/4 v4, 0x0
 
     .line 78
-    :cond_4d
-    :goto_4d
+    :cond_4
+    :goto_2
     const-string v3, ", "
 
     .line 79
@@ -571,14 +571,14 @@
 
     .line 87
     .line 88
-    if-ne v2, v4, :cond_4d
+    if-ne v2, v4, :cond_4
 
     .line 89
     .line 90
-    goto :goto_19
+    goto :goto_0
 
     .line 91
-    :cond_5a
+    :cond_5
     iget-object v4, p0, Llibs/of;->X:[J
 
     .line 92
@@ -590,10 +590,10 @@
     xor-long/2addr v5, v7
 
     .line 96
-    goto :goto_3a
+    goto :goto_1
 
     .line 97
-    :cond_60
+    :cond_6
     const-string v0, "fromIndex < 0: "
 
     .line 98
@@ -617,8 +617,8 @@
     return-object v0
 
     .line 108
-    :cond_6b
-    :goto_6b
+    :cond_7
+    :goto_3
     const/16 v1, 0x7d
 
     .line 109

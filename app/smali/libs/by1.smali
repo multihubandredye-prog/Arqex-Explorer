@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const-string v0, "\\\\"
@@ -85,7 +85,7 @@
 
 # virtual methods
 .method public final Call()[Llibs/ip0;
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/by1;->Upsilon:Llibs/i81;
@@ -107,12 +107,12 @@
     const/4 v2, 0x0
 
     .line 10
-    :goto_9
+    :goto_0
     iget v3, v0, Llibs/gz3;->Lambda:I
 
     .line 11
     .line 12
-    if-ge v2, v3, :cond_1b
+    if-ge v2, v3, :cond_0
 
     .line 13
     .line 14
@@ -141,15 +141,15 @@
 
     .line 26
     .line 27
-    goto :goto_9
+    goto :goto_0
 
     .line 28
-    :cond_1b
+    :cond_0
     return-object v1
 .end method
 
 .method public final Node(Llibs/mz1;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p1}, Llibs/mz1;->c()I
@@ -177,7 +177,7 @@
     move-result v0
 
     .line 14
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 15
     .line 16
@@ -194,7 +194,7 @@
     .line 21
     .line 22
     .line 23
-    :cond_16
+    :cond_0
     invoke-virtual {p1}, Llibs/mz1;->c()I
 
     .line 24
@@ -228,7 +228,7 @@
 .end method
 
 .method public final State(Llibs/mz1;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/by1;->Sigma:Ljava/lang/String;
@@ -302,7 +302,7 @@
 .end method
 
 .method public final Task()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0xf

@@ -8,7 +8,7 @@
 
 # direct methods
 .method public synthetic constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,7 +22,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 6
+    .locals 4
 
     .line 1
     const/16 v0, 0x7d
@@ -52,35 +52,35 @@
 
     .line 13
     .line 14
-    if-ne v1, v3, :cond_11
+    if-ne v1, v3, :cond_0
 
     .line 15
     .line 16
     const/4 v1, 0x1
 
     .line 17
-    goto :goto_12
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     const/4 v1, 0x0
 
     .line 19
-    :goto_12
-    if-eqz v1, :cond_15
+    :goto_0
+    if-eqz v1, :cond_1
 
     .line 20
     .line 21
     const/4 v3, 0x0
 
     .line 22
-    :cond_15
+    :cond_1
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
     .line 23
     .line 24
     .line 25
-    if-nez v1, :cond_24
+    if-nez v1, :cond_3
 
     .line 26
     .line 27
@@ -88,7 +88,7 @@
 
     .line 28
     .line 29
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_2
 
     .line 30
     .line 31
@@ -96,23 +96,23 @@
 
     .line 32
     .line 33
-    goto :goto_26
+    goto :goto_1
 
     .line 34
-    :cond_21
+    :cond_2
     sget v0, Llibs/vh2;->icon_arrow_right:I
 
     .line 35
     .line 36
-    goto :goto_26
+    goto :goto_1
 
     .line 37
-    :cond_24
+    :cond_3
     sget v0, Llibs/vh2;->icon_arrow_down:I
 
     .line 38
     .line 39
-    :goto_26
+    :goto_1
     invoke-static {v0, v2, v2}, Llibs/va3;->k(IZZ)Landroid/graphics/drawable/Drawable;
 
     .line 40
@@ -132,33 +132,33 @@
     const/4 v2, 0x0
 
     .line 48
-    if-eqz v1, :cond_33
+    if-eqz v1, :cond_4
 
     .line 49
     .line 50
     move-object v3, v2
 
     .line 51
-    goto :goto_34
+    goto :goto_2
 
     .line 52
-    :cond_33
+    :cond_4
     move-object v3, v0
 
     .line 53
-    :goto_34
-    if-eqz v1, :cond_37
+    :goto_2
+    if-eqz v1, :cond_5
 
     .line 54
     .line 55
-    goto :goto_38
+    goto :goto_3
 
     .line 56
-    :cond_37
+    :cond_5
     move-object v0, v2
 
     .line 57
-    :goto_38
+    :goto_3
     invoke-virtual {p1, v3, v2, v0, v2}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     .line 58

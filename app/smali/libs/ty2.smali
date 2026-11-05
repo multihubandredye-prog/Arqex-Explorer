@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(FFFF)V
-    .registers 8
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -81,7 +81,7 @@
 
     .line 29
     .line 30
-    if-eqz v2, :cond_2f
+    if-eqz v2, :cond_0
 
     .line 31
     .line 32
@@ -121,14 +121,14 @@
 
     .line 47
     .line 48
-    :cond_2f
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final a(FF)V
-    .registers 8
+    .locals 5
 
     .line 1
     iget v0, p0, Llibs/ty2;->a:F
@@ -175,7 +175,7 @@
 
     .line 20
     .line 21
-    if-eqz v4, :cond_22
+    if-eqz v4, :cond_0
 
     .line 22
     .line 23
@@ -207,7 +207,7 @@
     double-to-float p2, v2
 
     .line 35
-    :cond_22
+    :cond_0
     iget v0, p0, Llibs/ty2;->c:F
 
     .line 36
@@ -219,7 +219,7 @@
 
     .line 39
     .line 40
-    if-nez v1, :cond_39
+    if-nez v1, :cond_1
 
     .line 41
     .line 42
@@ -234,7 +234,7 @@
 
     .line 46
     .line 47
-    if-nez v1, :cond_39
+    if-nez v1, :cond_1
 
     .line 48
     .line 49
@@ -259,7 +259,7 @@
     return-void
 
     .line 58
-    :cond_39
+    :cond_1
     add-float/2addr v0, p1
 
     .line 59
@@ -282,7 +282,7 @@
 .end method
 
 .method public final b(Llibs/ty2;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget v0, p1, Llibs/ty2;->c:F
@@ -300,7 +300,7 @@
 
     .line 7
     .line 8
-    if-nez v2, :cond_1d
+    if-nez v2, :cond_0
 
     .line 9
     .line 10
@@ -319,7 +319,7 @@
 
     .line 16
     .line 17
-    if-nez v3, :cond_1d
+    if-nez v3, :cond_0
 
     .line 18
     .line 19
@@ -348,7 +348,7 @@
     return-void
 
     .line 30
-    :cond_1d
+    :cond_0
     add-float/2addr v1, v0
 
     .line 31
@@ -375,7 +375,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

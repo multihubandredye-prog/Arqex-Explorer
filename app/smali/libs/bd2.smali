@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/dg0;II)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/bd2;->X:Llibs/dg0;
@@ -64,7 +64,7 @@
     const/4 v2, 0x2
 
     .line 10
-    if-ne v1, v2, :cond_18
+    if-ne v1, v2, :cond_1
 
     .line 11
     .line 12
@@ -76,21 +76,21 @@
 
     .line 15
     .line 16
-    if-le v1, v2, :cond_13
+    if-le v1, v2, :cond_0
 
     .line 17
     .line 18
     const/4 v1, 0x0
 
     .line 19
-    goto :goto_14
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     const/4 v1, 0x1
 
     .line 21
-    :goto_14
+    :goto_0
     invoke-virtual {v0, v1}, Lcom/mixplorer/activities/a;->Object(I)V
 
     .line 22
@@ -99,7 +99,7 @@
     return-void
 
     .line 25
-    :cond_18
+    :cond_1
     sget-boolean v1, Lcom/mixplorer/activities/PlayerActivity;->e0:Z
 
     .line 26
@@ -113,14 +113,14 @@
 
     .line 31
     .line 32
-    if-nez v0, :cond_22
+    if-nez v0, :cond_2
 
     .line 33
     .line 34
     return-void
 
     .line 35
-    :cond_22
+    :cond_2
     invoke-virtual {v0}, Llibs/rd2;->k()Z
 
     .line 36

@@ -21,7 +21,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/16 v0, 0xa0
@@ -76,7 +76,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -129,7 +129,7 @@
 
 # virtual methods
 .method public a()Ljava/util/List;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/util/ArrayList;
@@ -145,7 +145,7 @@
 .end method
 
 .method public final b(Ljava/util/ArrayList;)V
-    .registers 7
+    .locals 5
 
     .line 1
     new-instance v0, Ljava/util/ArrayList;
@@ -168,8 +168,8 @@
     const/4 v2, 0x0
 
     .line 11
-    :goto_a
-    if-ge v2, v1, :cond_1d
+    :goto_0
+    if-ge v2, v1, :cond_0
 
     .line 12
     .line 13
@@ -203,10 +203,10 @@
     .line 27
     .line 28
     .line 29
-    goto :goto_a
+    goto :goto_0
 
     .line 30
-    :cond_1d
+    :cond_0
     iput-object v0, p0, Llibs/xi1;->b:Ljava/util/ArrayList;
 
     .line 31
@@ -215,7 +215,7 @@
 .end method
 
 .method public final c(Ljava/util/ArrayList;)V
-    .registers 7
+    .locals 5
 
     .line 1
     new-instance v0, Ljava/util/ArrayList;
@@ -238,8 +238,8 @@
     const/4 v2, 0x0
 
     .line 11
-    :goto_a
-    if-ge v2, v1, :cond_1d
+    :goto_0
+    if-ge v2, v1, :cond_0
 
     .line 12
     .line 13
@@ -273,10 +273,10 @@
     .line 27
     .line 28
     .line 29
-    goto :goto_a
+    goto :goto_0
 
     .line 30
-    :cond_1d
+    :cond_0
     iput-object v0, p0, Llibs/xi1;->a:Ljava/util/ArrayList;
 
     .line 31

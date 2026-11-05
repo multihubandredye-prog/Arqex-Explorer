@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/FileDescriptor;Ljava/lang/String;J)V
-    .registers 8
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/nio/channels/FileChannel;-><init>()V
@@ -39,7 +39,7 @@
     move-result p3
 
     .line 12
-    if-eqz p3, :cond_1b
+    if-eqz p3, :cond_0
 
     .line 13
     .line 14
@@ -71,7 +71,7 @@
     return-void
 
     .line 28
-    :cond_1b
+    :cond_0
     new-instance p3, Ljava/io/File;
 
     .line 29
@@ -184,7 +184,7 @@
 
 # virtual methods
 .method public final force(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ys1;->X:Ljava/nio/channels/FileChannel;
@@ -200,14 +200,14 @@
 .end method
 
 .method public final implCloseChannel()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/ys1;->X:Ljava/nio/channels/FileChannel;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -219,20 +219,20 @@
     move-result v1
 
     .line 9
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
     .line 10
     .line 11
-    :try_start_a
+    :try_start_0
     invoke-virtual {v0}, Ljava/nio/channels/spi/AbstractInterruptibleChannel;->close()V
-    :try_end_d
-    .catchall {:try_start_a .. :try_end_d} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 12
     .line 13
     .line 14
-    :catchall_d
-    :cond_d
+    :catchall_0
+    :cond_0
     iget-object v0, p0, Llibs/ys1;->Z:Ljava/io/FileInputStream;
 
     .line 15
@@ -255,7 +255,7 @@
 .end method
 
 .method public final lock(JJZ)Ljava/nio/channels/FileLock;
-    .registers 6
+    .locals 0
 
     .line 1
     iget-object p1, p0, Llibs/ys1;->X:Ljava/nio/channels/FileChannel;
@@ -274,7 +274,7 @@
 .end method
 
 .method public final map(Ljava/nio/channels/FileChannel$MapMode;JJ)Ljava/nio/MappedByteBuffer;
-    .registers 12
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/ys1;->X:Ljava/nio/channels/FileChannel;
@@ -302,7 +302,7 @@
 .end method
 
 .method public final position()J
-    .registers 3
+    .locals 2
 
     .line 9
     iget-object v0, p0, Llibs/ys1;->X:Ljava/nio/channels/FileChannel;
@@ -315,7 +315,7 @@
 .end method
 
 .method public final position(J)Ljava/nio/channels/FileChannel;
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ys1;->X:Ljava/nio/channels/FileChannel;
@@ -334,7 +334,7 @@
 .end method
 
 .method public final position(J)Ljava/nio/channels/SeekableByteChannel;
-    .registers 4
+    .locals 1
 
     .line 8
     iget-object v0, p0, Llibs/ys1;->X:Ljava/nio/channels/FileChannel;
@@ -347,7 +347,7 @@
 .end method
 
 .method public final read(Ljava/nio/ByteBuffer;)I
-    .registers 3
+    .locals 1
 
     .line 21
     :try_start_0
@@ -356,12 +356,12 @@
     invoke-virtual {v0, p1}, Ljava/nio/channels/FileChannel;->read(Ljava/nio/ByteBuffer;)I
 
     move-result p1
-    :try_end_6
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     return p1
 
-    :catch_7
+    :catch_0
     move-exception p1
 
     .line 22
@@ -379,7 +379,7 @@
 .end method
 
 .method public final read(Ljava/nio/ByteBuffer;J)I
-    .registers 5
+    .locals 1
 
     .line 23
     :try_start_0
@@ -388,12 +388,12 @@
     invoke-virtual {v0, p1, p2, p3}, Ljava/nio/channels/FileChannel;->read(Ljava/nio/ByteBuffer;J)I
 
     move-result p1
-    :try_end_6
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     return p1
 
-    :catch_7
+    :catch_0
     move-exception p1
 
     .line 24
@@ -411,7 +411,7 @@
 .end method
 
 .method public final read([Ljava/nio/ByteBuffer;II)J
-    .registers 5
+    .locals 1
 
     .line 1
     :try_start_0
@@ -425,14 +425,14 @@
     .line 5
     .line 6
     move-result-wide p1
-    :try_end_6
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 7
     return-wide p1
 
     .line 8
-    :catch_7
+    :catch_0
     move-exception p1
 
     .line 9
@@ -461,7 +461,7 @@
 .end method
 
 .method public final size()J
-    .registers 3
+    .locals 2
 
     .line 1
     :try_start_0
@@ -475,14 +475,14 @@
     .line 5
     .line 6
     move-result-wide v0
-    :try_end_6
-    .catchall {:try_start_0 .. :try_end_6} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 7
     return-wide v0
 
     .line 8
-    :catchall_7
+    :catchall_0
     iget-wide v0, p0, Llibs/ys1;->Lambda:J
 
     .line 9
@@ -491,7 +491,7 @@
 .end method
 
 .method public final transferFrom(Ljava/nio/channels/ReadableByteChannel;JJ)J
-    .registers 12
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/ys1;->X:Ljava/nio/channels/FileChannel;
@@ -519,7 +519,7 @@
 .end method
 
 .method public final transferTo(JJLjava/nio/channels/WritableByteChannel;)J
-    .registers 12
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/ys1;->X:Ljava/nio/channels/FileChannel;
@@ -547,7 +547,7 @@
 .end method
 
 .method public final truncate(J)Ljava/nio/channels/FileChannel;
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ys1;->X:Ljava/nio/channels/FileChannel;
@@ -566,7 +566,7 @@
 .end method
 
 .method public final truncate(J)Ljava/nio/channels/SeekableByteChannel;
-    .registers 4
+    .locals 1
 
     .line 8
     iget-object v0, p0, Llibs/ys1;->X:Ljava/nio/channels/FileChannel;
@@ -579,7 +579,7 @@
 .end method
 
 .method public final tryLock(JJZ)Ljava/nio/channels/FileLock;
-    .registers 6
+    .locals 0
 
     .line 1
     iget-object p1, p0, Llibs/ys1;->X:Ljava/nio/channels/FileChannel;
@@ -598,7 +598,7 @@
 .end method
 
 .method public final write(Ljava/nio/ByteBuffer;)I
-    .registers 3
+    .locals 1
 
     .line 21
     :try_start_0
@@ -607,12 +607,12 @@
     invoke-virtual {v0, p1}, Ljava/nio/channels/FileChannel;->write(Ljava/nio/ByteBuffer;)I
 
     move-result p1
-    :try_end_6
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     return p1
 
-    :catch_7
+    :catch_0
     move-exception p1
 
     .line 22
@@ -630,7 +630,7 @@
 .end method
 
 .method public final write(Ljava/nio/ByteBuffer;J)I
-    .registers 5
+    .locals 1
 
     .line 23
     :try_start_0
@@ -639,12 +639,12 @@
     invoke-virtual {v0, p1, p2, p3}, Ljava/nio/channels/FileChannel;->write(Ljava/nio/ByteBuffer;J)I
 
     move-result p1
-    :try_end_6
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     return p1
 
-    :catch_7
+    :catch_0
     move-exception p1
 
     .line 24
@@ -662,7 +662,7 @@
 .end method
 
 .method public final write([Ljava/nio/ByteBuffer;II)J
-    .registers 5
+    .locals 1
 
     .line 1
     :try_start_0
@@ -676,14 +676,14 @@
     .line 5
     .line 6
     move-result-wide p1
-    :try_end_6
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 7
     return-wide p1
 
     .line 8
-    :catch_7
+    :catch_0
     move-exception p1
 
     .line 9

@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/sr;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final b(Llibs/as;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-virtual {p1}, Llibs/as;->v()Z
@@ -30,7 +30,7 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -45,7 +45,7 @@
 
     .line 11
     .line 12
-    fill-array-data v0, :array_1c
+    fill-array-data v0, :array_0
 
     .line 13
     .line 14
@@ -75,11 +75,11 @@
     .line 26
     .line 27
     .line 28
-    :cond_1b
+    :cond_0
     return-void
 
     .line 29
-    :array_1c
+    :array_0
     .array-data 1
         0x0t
         0x0t

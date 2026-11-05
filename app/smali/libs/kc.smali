@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/a;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final onApplyWindowInsets(Landroid/view/View;Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
-    .registers 6
+    .locals 3
 
     .line 1
     iget-object p1, p0, Llibs/kc;->a:Lcom/mixplorer/activities/a;
@@ -50,7 +50,7 @@
 
     .line 9
     .line 10
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 11
     .line 12
@@ -59,7 +59,7 @@
     .line 13
     .line 14
     .line 15
-    :cond_e
+    :cond_0
     new-instance v0, Llibs/qc;
 
     .line 16

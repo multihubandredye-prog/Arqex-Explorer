@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/c2;Ljava/lang/String;Ljava/lang/String;Llibs/m52;Z)V
-    .registers 6
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/w42;->h:Llibs/c2;
@@ -61,7 +61,7 @@
 
 # virtual methods
 .method public final onProgress(JJ)V
-    .registers 7
+    .locals 2
 
     .line 1
     iget-object p3, p0, Llibs/w42;->f:Llibs/m52;
@@ -76,7 +76,7 @@
     move-result p4
 
     .line 7
-    if-nez p4, :cond_14
+    if-nez p4, :cond_0
 
     .line 8
     .line 9
@@ -106,7 +106,7 @@
     return-void
 
     .line 21
-    :cond_14
+    :cond_0
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 22
@@ -116,7 +116,7 @@
 .end method
 
 .method public final onProgressFi(Llibs/rp0;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/w42;->h:Llibs/c2;
@@ -153,7 +153,7 @@
 .end method
 
 .method public final onProgressPath(Ljava/lang/String;Z)V
-    .registers 5
+    .locals 2
 
     .line 1
     iput-object p1, p0, Llibs/w42;->b:Ljava/lang/String;
@@ -172,7 +172,7 @@
 
     .line 8
     .line 9
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_0
 
     .line 10
     .line 11
@@ -181,7 +181,7 @@
     .line 12
     .line 13
     .line 14
-    :cond_d
+    :cond_0
     invoke-virtual {v0}, Llibs/m52;->List()Z
 
     .line 15
@@ -190,7 +190,7 @@
     move-result p1
 
     .line 18
-    if-nez p1, :cond_2f
+    if-nez p1, :cond_1
 
     .line 19
     .line 20
@@ -250,7 +250,7 @@
     return-void
 
     .line 48
-    :cond_2f
+    :cond_1
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 49

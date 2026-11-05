@@ -57,7 +57,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -90,14 +90,14 @@
 
 # virtual methods
 .method public final a()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/np0;->y:Ljava/lang/String;
 
     .line 2
     .line 3
-    if-nez v0, :cond_19
+    if-nez v0, :cond_1
 
     .line 4
     .line 5
@@ -109,19 +109,19 @@
 
     .line 8
     .line 9
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_0
 
     .line 10
     .line 11
-    goto :goto_d
+    goto :goto_0
 
     .line 12
-    :cond_b
+    :cond_0
     sget-object v1, Llibs/js;->e:Ljava/nio/charset/Charset;
 
     .line 13
     .line 14
-    :goto_d
+    :goto_0
     invoke-static {v0, v1}, Llibs/vl3;->Intent([BLjava/nio/charset/Charset;)Ljava/lang/String;
 
     .line 15
@@ -146,12 +146,12 @@
 
     .line 25
     .line 26
-    :cond_19
+    :cond_1
     return-object v0
 .end method
 
 .method public final b()J
-    .registers 10
+    .locals 9
 
     .line 1
     iget v0, p0, Llibs/np0;->f:I

@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "DH"
@@ -29,7 +29,7 @@
 
 # virtual methods
 .method public final a([B)V
-    .registers 6
+    .locals 4
 
     .line 1
     const-string v0, "DH"
@@ -115,14 +115,14 @@
 .end method
 
 .method public final b(Ljava/security/spec/AlgorithmParameterSpec;)V
-    .registers 4
+    .locals 2
 
     .line 1
     instance-of v0, p1, Ljavax/crypto/spec/DHParameterSpec;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -226,7 +226,7 @@
     return-void
 
     .line 55
-    :cond_36
+    :cond_0
     new-instance p1, Llibs/qy2;
 
     .line 56

@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,7 +22,7 @@
 
 # virtual methods
 .method public final createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/n13;
@@ -38,7 +38,7 @@
 .end method
 
 .method public final newArray(I)[Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1
     new-array p1, p1, [Llibs/n13;

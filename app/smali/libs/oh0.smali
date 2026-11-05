@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     invoke-static {}, Llibs/t43;->Item()Z
@@ -24,7 +24,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -44,7 +44,7 @@
     return-void
 
     .line 15
-    :cond_e
+    :cond_0
     invoke-static {}, Llibs/t43;->Context()Z
 
     .line 16
@@ -53,7 +53,7 @@
     move-result v0
 
     .line 19
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_1
 
     .line 20
     .line 21
@@ -77,7 +77,7 @@
     return-void
 
     .line 31
-    :cond_1e
+    :cond_1
     new-instance v0, Llibs/Eta;
 
     .line 32
@@ -99,7 +99,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 7
+    .locals 5
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -115,7 +115,7 @@
 
     .line 7
     .line 8
-    packed-switch v0, :pswitch_data_44
+    packed-switch v0, :pswitch_data_0
 
     .line 9
     .line 10
@@ -128,10 +128,10 @@
     move-result-object p1
 
     .line 15
-    goto :goto_41
+    goto :goto_0
 
     .line 16
-    :pswitch_f
+    :pswitch_0
     const-string v0, "android"
 
     .line 17
@@ -149,7 +149,7 @@
     .line 23
     .line 24
     .line 25
-    :try_start_18
+    :try_start_0
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     .line 26
@@ -227,16 +227,16 @@
 
     .line 63
     iput-object p1, v2, Llibs/nh0;->b:Landroid/graphics/drawable/Drawable;
-    :try_end_40
-    .catchall {:try_start_18 .. :try_end_40} :catchall_40
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 64
     .line 65
-    :catchall_40
+    :catchall_0
     move-object p1, v2
 
     .line 66
-    :goto_41
+    :goto_0
     iput-object p1, p0, Llibs/oh0;->a:Ljava/lang/Object;
 
     .line 67
@@ -244,16 +244,16 @@
     return-void
 
     .line 69
-    :pswitch_data_44
+    :pswitch_data_0
     .packed-switch 0xb
-        :pswitch_f
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public final a(Landroid/graphics/Canvas;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/oh0;->b:Llibs/Eta;
@@ -264,7 +264,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_14
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -289,25 +289,25 @@
     move-result p1
 
     .line 18
-    goto :goto_13
+    goto :goto_0
 
     .line 19
-    :pswitch_12
+    :pswitch_0
     const/4 p1, 0x0
 
     .line 20
-    :goto_13
+    :goto_0
     return p1
 
     .line 21
-    :pswitch_data_14
+    :pswitch_data_0
     .packed-switch 0xb
-        :pswitch_12
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final b()Z
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/oh0;->b:Llibs/Eta;
@@ -318,7 +318,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_14
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -343,25 +343,25 @@
     move-result v0
 
     .line 18
-    goto :goto_13
+    goto :goto_0
 
     .line 19
-    :pswitch_12
+    :pswitch_0
     const/4 v0, 0x1
 
     .line 20
-    :goto_13
+    :goto_0
     return v0
 
     .line 21
-    :pswitch_data_14
+    :pswitch_data_0
     .packed-switch 0xb
-        :pswitch_12
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final c(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/oh0;->b:Llibs/Eta;
@@ -372,7 +372,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_12
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -394,21 +394,21 @@
     .line 15
     .line 16
     .line 17
-    :pswitch_10
+    :pswitch_0
     return-void
 
     .line 18
     nop
 
     .line 19
-    :pswitch_data_12
+    :pswitch_data_0
     .packed-switch 0xb
-        :pswitch_10
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final d(FF)Z
-    .registers 5
+    .locals 2
 
     .line 1
     sget-object v0, Llibs/oh0;->b:Llibs/Eta;
@@ -431,7 +431,7 @@
 .end method
 
 .method public final e()Z
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/oh0;->b:Llibs/Eta;
@@ -442,7 +442,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_18
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -472,28 +472,28 @@
     move-result v0
 
     .line 21
-    goto :goto_16
+    goto :goto_0
 
     .line 22
-    :pswitch_15
+    :pswitch_0
     const/4 v0, 0x0
 
     .line 23
-    :goto_16
+    :goto_0
     return v0
 
     .line 24
     nop
 
     .line 25
-    :pswitch_data_18
+    :pswitch_data_0
     .packed-switch 0xb
-        :pswitch_15
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final f(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     sget-object v0, Llibs/oh0;->b:Llibs/Eta;
@@ -513,7 +513,7 @@
 .end method
 
 .method public final g(II)V
-    .registers 4
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/oh0;->b:Llibs/Eta;
@@ -524,7 +524,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_12
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -546,15 +546,15 @@
     .line 15
     .line 16
     .line 17
-    :pswitch_10
+    :pswitch_0
     return-void
 
     .line 18
     nop
 
     .line 19
-    :pswitch_data_12
+    :pswitch_data_0
     .packed-switch 0xb
-        :pswitch_10
+        :pswitch_0
     .end packed-switch
 .end method

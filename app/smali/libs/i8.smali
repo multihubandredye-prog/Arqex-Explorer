@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/app/Activity;Lcom/mixplorer/widgets/MiEditText;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/i8;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 19
+    .locals 17
 
     .line 1
     move-object/from16 v0, p0
@@ -57,7 +57,7 @@
 
     .line 6
     .line 7
-    packed-switch v1, :pswitch_data_30
+    packed-switch v1, :pswitch_data_0
 
     .line 8
     .line 9
@@ -103,7 +103,7 @@
     return-void
 
     .line 29
-    :pswitch_1c
+    :pswitch_0
     new-instance v11, Llibs/p8;
 
     .line 30
@@ -148,8 +148,8 @@
     nop
 
     .line 49
-    :pswitch_data_30
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1c
+        :pswitch_0
     .end packed-switch
 .end method

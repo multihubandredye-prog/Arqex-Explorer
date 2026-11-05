@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(JI)V
-    .registers 5
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -32,7 +32,7 @@
 
 # virtual methods
 .method public doFinal()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLMac$Hmac;->ctx:Lorg/conscrypt/NativeRef$HMAC_CTX;
@@ -51,7 +51,7 @@
 .end method
 
 .method public engineUpdate([BII)V
-    .registers 5
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLMac$Hmac;->ctx:Lorg/conscrypt/NativeRef$HMAC_CTX;
@@ -67,7 +67,7 @@
 .end method
 
 .method public initContext([B)V
-    .registers 5
+    .locals 3
 
     .line 1
     new-instance v0, Lorg/conscrypt/NativeRef$HMAC_CTX;
@@ -104,7 +104,7 @@
 .end method
 
 .method public resetContext()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLMac$Hmac;->ctx:Lorg/conscrypt/NativeRef$HMAC_CTX;
@@ -120,7 +120,7 @@
 .end method
 
 .method public updateDirect(JI)V
-    .registers 5
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSSLMac$Hmac;->ctx:Lorg/conscrypt/NativeRef$HMAC_CTX;

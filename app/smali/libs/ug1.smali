@@ -23,7 +23,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/util/Hashtable;
@@ -223,7 +223,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 5
+    .locals 4
 
     .line 1
     const-string v0, "EC"
@@ -302,7 +302,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Llibs/pg2;)V
-    .registers 6
+    .locals 3
 
     .line 38
     invoke-direct {p0, p1}, Llibs/bh1;-><init>(Ljava/lang/String;)V
@@ -348,7 +348,7 @@
 .end method
 
 .method public static a(Ljava/security/spec/ECParameterSpec;Ljava/security/SecureRandom;)Llibs/zf0;
-    .registers 9
+    .locals 7
 
     .line 1
     invoke-virtual {p0}, Ljava/security/spec/ECParameterSpec;->getCurve()Ljava/security/spec/EllipticCurve;
@@ -437,14 +437,14 @@
 
 # virtual methods
 .method public final generateKeyPair()Ljava/security/KeyPair;
-    .registers 9
+    .locals 8
 
     .line 1
     iget-boolean v0, p0, Llibs/ug1;->d:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -466,7 +466,7 @@
     .line 13
     .line 14
     .line 15
-    :cond_e
+    :cond_0
     iget-object v0, p0, Llibs/ug1;->a:Llibs/v1;
 
     .line 16
@@ -522,7 +522,7 @@
 
     .line 41
     .line 42
-    if-eqz v2, :cond_43
+    if-eqz v2, :cond_1
 
     .line 43
     .line 44
@@ -574,11 +574,11 @@
     return-object v0
 
     .line 68
-    :cond_43
+    :cond_1
     move-object v2, v5
 
     .line 69
-    if-nez v0, :cond_56
+    if-nez v0, :cond_2
 
     .line 70
     .line 71
@@ -612,7 +612,7 @@
     return-object v0
 
     .line 87
-    :cond_56
+    :cond_2
     move-object v6, v0
 
     .line 88
@@ -659,7 +659,7 @@
 .end method
 
 .method public final initialize(ILjava/security/SecureRandom;)V
-    .registers 4
+    .locals 1
 
     .line 221
     iput p1, p0, Llibs/ug1;->c:I
@@ -679,18 +679,18 @@
 
     check-cast p1, Ljava/security/spec/ECGenParameterSpec;
 
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_0
 
     .line 225
-    :try_start_10
+    :try_start_0
     invoke-virtual {p0, p1, p2}, Llibs/ug1;->initialize(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    :try_end_13
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_10 .. :try_end_13} :catch_14
+    :try_end_0
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
     .line 226
-    :catch_14
+    :catch_0
     const-string p1, "key size not configurable."
 
     invoke-static {p1}, Llibs/bf0;->m(Ljava/lang/String;)V
@@ -698,7 +698,7 @@
     return-void
 
     .line 227
-    :cond_1a
+    :cond_0
     const-string p1, "unknown key size."
 
     invoke-static {p1}, Llibs/bf0;->m(Ljava/lang/String;)V
@@ -707,13 +707,13 @@
 .end method
 
 .method public final initialize(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    .registers 11
+    .locals 8
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-nez p1, :cond_27
+    if-nez p1, :cond_1
 
     .line 3
     .line 4
@@ -733,7 +733,7 @@
     move-result-object p1
 
     .line 12
-    if-eqz p1, :cond_21
+    if-eqz p1, :cond_0
 
     .line 13
     .line 14
@@ -771,11 +771,11 @@
     .line 30
     .line 31
     .line 32
-    goto/16 :goto_bc
+    goto/16 :goto_2
 
     .line 33
     .line 34
-    :cond_21
+    :cond_0
     const-string p1, "null parameter passed but no implicitCA set"
 
     .line 35
@@ -788,12 +788,12 @@
     return-void
 
     .line 40
-    :cond_27
+    :cond_1
     instance-of v1, p1, Llibs/gg0;
 
     .line 41
     .line 42
-    if-eqz v1, :cond_41
+    if-eqz v1, :cond_2
 
     .line 43
     .line 44
@@ -835,16 +835,16 @@
     .line 62
     .line 63
     .line 64
-    goto/16 :goto_bc
+    goto/16 :goto_2
 
     .line 65
     .line 66
-    :cond_41
+    :cond_2
     instance-of v1, p1, Ljava/security/spec/ECParameterSpec;
 
     .line 67
     .line 68
-    if-eqz v1, :cond_4f
+    if-eqz v1, :cond_3
 
     .line 69
     .line 70
@@ -864,16 +864,16 @@
     move-result-object v0
 
     .line 78
-    goto/16 :goto_bc
+    goto/16 :goto_2
 
     .line 79
     .line 80
-    :cond_4f
+    :cond_3
     instance-of v1, p1, Ljava/security/spec/ECGenParameterSpec;
 
     .line 81
     .line 82
-    if-eqz v1, :cond_d6
+    if-eqz v1, :cond_b
 
     .line 83
     .line 84
@@ -901,11 +901,11 @@
     move-result-object v1
 
     .line 96
-    if-nez v1, :cond_a3
+    if-nez v1, :cond_9
 
     .line 97
     .line 98
-    :try_start_61
+    :try_start_0
     new-instance v1, Llibs/App;
 
     .line 99
@@ -923,7 +923,7 @@
     move-result-object v3
 
     .line 107
-    if-nez v3, :cond_70
+    if-nez v3, :cond_4
 
     .line 108
     .line 109
@@ -935,8 +935,8 @@
     move-result-object v3
 
     .line 113
-    :cond_70
-    if-nez v3, :cond_76
+    :cond_4
+    if-nez v3, :cond_5
 
     .line 114
     .line 115
@@ -948,8 +948,8 @@
     move-result-object v3
 
     .line 119
-    :cond_76
-    if-nez v3, :cond_88
+    :cond_5
+    if-nez v3, :cond_7
 
     .line 120
     .line 121
@@ -969,14 +969,14 @@
 
     .line 128
     .line 129
-    if-nez v1, :cond_83
+    if-nez v1, :cond_6
 
     .line 130
     .line 131
-    goto :goto_89
+    goto :goto_0
 
     .line 132
-    :cond_83
+    :cond_6
     invoke-virtual {v1}, Llibs/ax3;->b()Llibs/zw3;
 
     .line 133
@@ -985,25 +985,25 @@
     move-result-object v0
 
     .line 136
-    goto :goto_89
+    goto :goto_0
 
     .line 137
-    :cond_88
+    :cond_7
     move-object v0, v3
 
     .line 138
-    :goto_89
-    if-eqz v0, :cond_8d
+    :goto_0
+    if-eqz v0, :cond_8
 
     .line 139
     .line 140
     move-object v1, v0
 
     .line 141
-    goto :goto_a3
+    goto :goto_1
 
     .line 142
-    :cond_8d
+    :cond_8
     new-instance p2, Ljava/security/InvalidAlgorithmParameterException;
 
     .line 143
@@ -1022,11 +1022,11 @@
     .line 150
     .line 151
     throw p2
-    :try_end_97
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_61 .. :try_end_97} :catch_97
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 152
-    :catch_97
+    :catch_0
     new-instance p1, Ljava/security/InvalidAlgorithmParameterException;
 
     .line 153
@@ -1051,8 +1051,8 @@
     throw p1
 
     .line 164
-    :cond_a3
-    :goto_a3
+    :cond_9
+    :goto_1
     new-instance p1, Llibs/fg0;
 
     .line 165
@@ -1104,7 +1104,7 @@
     move-result-object v0
 
     .line 189
-    :goto_bc
+    :goto_2
     iget-object p1, p0, Llibs/ug1;->a:Llibs/v1;
 
     .line 190
@@ -1130,7 +1130,7 @@
 
     .line 201
     .line 202
-    if-nez p2, :cond_d2
+    if-nez p2, :cond_a
 
     .line 203
     .line 204
@@ -1147,7 +1147,7 @@
 
     .line 210
     .line 211
-    :cond_d2
+    :cond_a
     const/4 p1, 0x1
 
     .line 212
@@ -1158,7 +1158,7 @@
     return-void
 
     .line 215
-    :cond_d6
+    :cond_b
     const-string p1, "parameter object not a ECParameterSpec"
 
     .line 216

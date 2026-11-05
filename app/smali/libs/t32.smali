@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/u32;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/t32;->j:Llibs/u32;
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public final onDoubleTap(Landroid/view/MotionEvent;)Z
-    .registers 8
+    .locals 6
 
     .line 1
     iget-object p1, p0, Llibs/t32;->j:Llibs/u32;
@@ -63,7 +63,7 @@
     const/4 v0, 0x0
 
     .line 8
-    if-eqz p1, :cond_53
+    if-eqz p1, :cond_4
 
     .line 9
     .line 10
@@ -90,7 +90,7 @@
     const/4 v4, 0x1
 
     .line 21
-    if-le v2, p1, :cond_52
+    if-le v2, p1, :cond_3
 
     .line 22
     .line 23
@@ -113,15 +113,15 @@
     sub-int/2addr v5, p1
 
     .line 32
-    if-lt v2, v5, :cond_22
+    if-lt v2, v5, :cond_0
 
     .line 33
     .line 34
-    goto :goto_52
+    goto :goto_1
 
     .line 35
-    :cond_22
-    :try_start_22
+    :cond_0
+    :try_start_0
     iput-boolean v4, v3, Lcom/mixplorer/activities/PlayerActivity;->ll:Z
 
     .line 36
@@ -150,7 +150,7 @@
 
     .line 48
     .line 49
-    if-ge v1, v2, :cond_3c
+    if-ge v1, v2, :cond_1
 
     .line 50
     .line 51
@@ -159,8 +159,8 @@
     .line 52
     .line 53
     invoke-virtual {v3, v0, p1}, Lcom/mixplorer/activities/PlayerActivity;->Add(ZI)V
-    :try_end_37
-    .catchall {:try_start_22 .. :try_end_37} :catchall_3a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 54
     .line 55
@@ -172,15 +172,15 @@
     return v4
 
     .line 59
-    :catchall_3a
+    :catchall_0
     move-exception p1
 
     .line 60
-    goto :goto_4f
+    goto :goto_0
 
     .line 61
-    :cond_3c
-    if-le v1, p1, :cond_46
+    :cond_1
+    if-le v1, p1, :cond_2
 
     .line 62
     .line 63
@@ -188,10 +188,10 @@
 
     .line 64
     .line 65
-    :try_start_40
+    :try_start_1
     invoke-virtual {v3, v4, p1}, Lcom/mixplorer/activities/PlayerActivity;->Add(ZI)V
-    :try_end_43
-    .catchall {:try_start_40 .. :try_end_43} :catchall_3a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 66
     .line 67
@@ -203,16 +203,16 @@
     return v4
 
     .line 71
-    :cond_46
-    :try_start_46
+    :cond_2
+    :try_start_2
     invoke-virtual {v3}, Lcom/mixplorer/activities/PlayerActivity;->Run()V
 
     .line 72
     .line 73
     .line 74
     invoke-virtual {v3}, Lcom/mixplorer/activities/PlayerActivity;->Firebase()V
-    :try_end_4c
-    .catchall {:try_start_46 .. :try_end_4c} :catchall_3a
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 75
     .line 76
@@ -224,7 +224,7 @@
     return v4
 
     .line 80
-    :goto_4f
+    :goto_0
     iput-boolean v0, v3, Lcom/mixplorer/activities/PlayerActivity;->ll:Z
 
     .line 81
@@ -232,17 +232,17 @@
     throw p1
 
     .line 83
-    :cond_52
-    :goto_52
+    :cond_3
+    :goto_1
     return v4
 
     .line 84
-    :cond_53
+    :cond_4
     return v0
 .end method
 
 .method public final onDown(Landroid/view/MotionEvent;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
@@ -323,7 +323,7 @@
 .end method
 
 .method public final onLongPress(Landroid/view/MotionEvent;)V
-    .registers 7
+    .locals 5
 
     .line 1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
@@ -337,14 +337,14 @@
     const/4 v0, 0x2
 
     .line 6
-    if-lt p1, v0, :cond_8
+    if-lt p1, v0, :cond_0
 
     .line 7
     .line 8
-    goto :goto_38
+    goto :goto_0
 
     .line 9
-    :cond_8
+    :cond_0
     iget-object p1, p0, Llibs/t32;->j:Llibs/u32;
 
     .line 10
@@ -357,7 +357,7 @@
 
     .line 14
     .line 15
-    if-eqz p1, :cond_38
+    if-eqz p1, :cond_3
 
     .line 16
     .line 17
@@ -377,14 +377,14 @@
 
     .line 24
     .line 25
-    if-nez v2, :cond_1b
+    if-nez v2, :cond_1
 
     .line 26
     .line 27
-    goto :goto_38
+    goto :goto_0
 
     .line 28
-    :cond_1b
+    :cond_1
     const/4 v3, 0x0
 
     .line 29
@@ -416,15 +416,15 @@
 
     .line 42
     .line 43
-    if-ge v1, v4, :cond_2d
+    if-ge v1, v4, :cond_2
 
     .line 44
     .line 45
-    goto :goto_38
+    goto :goto_0
 
     .line 46
-    :cond_2d
-    if-le v1, v3, :cond_38
+    :cond_2
+    if-le v1, v3, :cond_3
 
     .line 47
     .line 48
@@ -445,13 +445,13 @@
     .line 55
     .line 56
     .line 57
-    :cond_38
-    :goto_38
+    :cond_3
+    :goto_0
     return-void
 .end method
 
 .method public final onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
-    .registers 12
+    .locals 7
 
     .line 1
     iget-object p1, p0, Llibs/t32;->j:Llibs/u32;
@@ -480,15 +480,15 @@
     const/4 v0, 0x2
 
     .line 13
-    if-lt p3, v0, :cond_10
+    if-lt p3, v0, :cond_0
 
     .line 14
     .line 15
-    goto/16 :goto_10f
+    goto/16 :goto_3
 
     .line 16
     .line 17
-    :cond_10
+    :cond_0
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
 
     .line 18
@@ -578,7 +578,7 @@
     const/4 v3, 0x1
 
     .line 58
-    if-le v1, p3, :cond_93
+    if-le v1, p3, :cond_5
 
     .line 59
     .line 60
@@ -586,7 +586,7 @@
 
     .line 61
     .line 62
-    if-nez p3, :cond_10f
+    if-nez p3, :cond_c
 
     .line 63
     .line 64
@@ -594,11 +594,11 @@
 
     .line 65
     .line 66
-    if-eqz p3, :cond_10f
+    if-eqz p3, :cond_c
 
     .line 67
     .line 68
-    if-le v1, v2, :cond_10f
+    if-le v1, v2, :cond_c
 
     .line 69
     .line 70
@@ -626,7 +626,7 @@
 
     .line 81
     .line 82
-    if-le v1, p1, :cond_10f
+    if-le v1, p1, :cond_c
 
     .line 83
     .line 84
@@ -649,16 +649,16 @@
     sub-int/2addr v6, p1
 
     .line 93
-    if-lt v1, v6, :cond_60
+    if-lt v1, v6, :cond_1
 
     .line 94
     .line 95
-    goto/16 :goto_10f
+    goto/16 :goto_3
 
     .line 96
     .line 97
-    :cond_60
-    if-le v0, v4, :cond_10f
+    :cond_1
+    if-le v0, v4, :cond_c
 
     .line 98
     .line 99
@@ -677,15 +677,15 @@
     sub-int/2addr p1, v4
 
     .line 106
-    if-lt v0, p1, :cond_6d
+    if-lt v0, p1, :cond_2
 
     .line 107
     .line 108
-    goto/16 :goto_10f
+    goto/16 :goto_3
 
     .line 109
     .line 110
-    :cond_6d
+    :cond_2
     iput-boolean v3, v5, Lcom/mixplorer/activities/PlayerActivity;->ll:Z
 
     .line 111
@@ -702,19 +702,19 @@
     move-result p1
 
     .line 118
-    if-lez p3, :cond_78
+    if-lez p3, :cond_3
 
     .line 119
     .line 120
-    goto :goto_7a
+    goto :goto_0
 
     .line 121
-    :cond_78
+    :cond_3
     const/16 v2, -0xa
 
     .line 122
     .line 123
-    :goto_7a
+    :goto_0
     add-int/2addr v2, p1
 
     .line 124
@@ -733,7 +733,7 @@
     move-result p3
 
     .line 131
-    if-eq p1, p3, :cond_89
+    if-eq p1, p3, :cond_4
 
     .line 132
     .line 133
@@ -746,7 +746,7 @@
     .line 136
     .line 137
     .line 138
-    :cond_89
+    :cond_4
     iput-boolean v3, p0, Llibs/t32;->c:Z
 
     .line 139
@@ -769,12 +769,12 @@
     return v3
 
     .line 148
-    :cond_93
+    :cond_5
     iget-boolean v1, p0, Llibs/t32;->c:Z
 
     .line 149
     .line 150
-    if-nez v1, :cond_10f
+    if-nez v1, :cond_c
 
     .line 151
     .line 152
@@ -782,11 +782,11 @@
 
     .line 153
     .line 154
-    if-eqz v1, :cond_10f
+    if-eqz v1, :cond_c
 
     .line 155
     .line 156
-    if-le p3, v2, :cond_10f
+    if-le p3, v2, :cond_c
 
     .line 157
     .line 158
@@ -810,7 +810,7 @@
 
     .line 167
     .line 168
-    if-le v2, p1, :cond_10f
+    if-le v2, p1, :cond_c
 
     .line 169
     .line 170
@@ -833,7 +833,7 @@
     sub-int/2addr v5, p1
 
     .line 179
-    if-ge v2, v5, :cond_10f
+    if-ge v2, v5, :cond_c
 
     .line 180
     .line 181
@@ -852,7 +852,7 @@
     div-int/2addr p1, v0
 
     .line 188
-    if-ge p3, p1, :cond_f3
+    if-ge p3, p1, :cond_8
 
     .line 189
     .line 190
@@ -864,14 +864,14 @@
     move-result p1
 
     .line 194
-    if-lez v1, :cond_c4
+    if-lez v1, :cond_6
 
     .line 195
     .line 196
     const/4 v0, -0x2
 
     .line 197
-    :cond_c4
+    :cond_6
     add-int/2addr p1, v0
 
     .line 198
@@ -891,7 +891,7 @@
     move-result v0
 
     .line 206
-    if-nez v0, :cond_105
+    if-nez v0, :cond_b
 
     .line 207
     .line 208
@@ -907,7 +907,7 @@
     move-result v0
 
     .line 214
-    if-eqz v0, :cond_dc
+    if-eqz v0, :cond_7
 
     .line 215
     .line 216
@@ -920,7 +920,7 @@
     .line 219
     .line 220
     .line 221
-    :cond_dc
+    :cond_7
     iget-object v0, v4, Lcom/mixplorer/activities/PlayerActivity;->ooo:Lcom/mixplorer/widgets/MiSeekBar;
 
     .line 222
@@ -963,15 +963,15 @@
     .line 241
     .line 242
     .line 243
-    goto :goto_105
+    goto :goto_2
 
     .line 244
-    :cond_f3
+    :cond_8
     iget-object p1, v4, Lcom/mixplorer/activities/PlayerActivity;->lIl:Landroid/media/AudioManager;
 
     .line 245
     .line 246
-    if-eqz p1, :cond_fc
+    if-eqz p1, :cond_9
 
     .line 247
     .line 248
@@ -986,22 +986,22 @@
     move-result p4
 
     .line 253
-    :cond_fc
-    if-lez v1, :cond_100
+    :cond_9
+    if-lez v1, :cond_a
 
     .line 254
     .line 255
     const/4 p1, -0x1
 
     .line 256
-    goto :goto_101
+    goto :goto_1
 
     .line 257
-    :cond_100
+    :cond_a
     const/4 p1, 0x1
 
     .line 258
-    :goto_101
+    :goto_1
     add-int/2addr p4, p1
 
     .line 259
@@ -1010,8 +1010,8 @@
     .line 260
     .line 261
     .line 262
-    :cond_105
-    :goto_105
+    :cond_b
+    :goto_2
     iput-boolean v3, p0, Llibs/t32;->d:Z
 
     .line 263
@@ -1034,13 +1034,13 @@
     return v3
 
     .line 272
-    :cond_10f
-    :goto_10f
+    :cond_c
+    :goto_3
     return p4
 .end method
 
 .method public final onSingleTapConfirmed(Landroid/view/MotionEvent;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object p1, p0, Llibs/t32;->j:Llibs/u32;
@@ -1058,7 +1058,7 @@
     const/4 v0, 0x0
 
     .line 8
-    if-eqz p1, :cond_20
+    if-eqz p1, :cond_1
 
     .line 9
     .line 10
@@ -1094,14 +1094,14 @@
     const/4 v2, 0x1
 
     .line 26
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_0
 
     .line 27
     .line 28
     const/4 v0, 0x1
 
     .line 29
-    :cond_1c
+    :cond_0
     invoke-virtual {p1, v0}, Lcom/mixplorer/activities/PlayerActivity;->False(Z)V
 
     .line 30
@@ -1110,6 +1110,6 @@
     return v2
 
     .line 33
-    :cond_20
+    :cond_1
     return v0
 .end method

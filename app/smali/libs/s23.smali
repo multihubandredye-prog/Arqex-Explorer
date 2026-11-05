@@ -17,14 +17,14 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 4
+    .locals 2
 
     .line 1
     iput-byte p1, p0, Llibs/s23;->e:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_14
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -44,7 +44,7 @@
     return-void
 
     .line 13
-    :pswitch_c
+    :pswitch_0
     const/4 p1, 0x1
 
     .line 14
@@ -63,16 +63,16 @@
     return-void
 
     .line 21
-    :pswitch_data_14
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_c
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public final a(Ljava/nio/ByteBuffer;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/s23;->e:B
@@ -82,7 +82,7 @@
     const/4 v1, 0x0
 
     .line 4
-    packed-switch v0, :pswitch_data_48
+    packed-switch v0, :pswitch_data_0
 
     .line 5
     .line 6
@@ -146,7 +146,7 @@
     return-void
 
     .line 40
-    :pswitch_27
+    :pswitch_0
     invoke-super {p0, p1}, Llibs/ow;->a(Ljava/nio/ByteBuffer;)V
 
     .line 41
@@ -206,21 +206,21 @@
     return-void
 
     .line 73
-    :pswitch_data_48
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_27
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/s23;->e:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_76
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -329,7 +329,7 @@
     return-object v0
 
     .line 62
-    :pswitch_3d
+    :pswitch_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 63
@@ -437,8 +437,8 @@
     nop
 
     .line 119
-    :pswitch_data_76
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_3d
+        :pswitch_0
     .end packed-switch
 .end method

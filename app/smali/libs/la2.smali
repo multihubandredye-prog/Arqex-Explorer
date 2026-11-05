@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,31 +33,31 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
     .line 6
-    if-nez p1, :cond_8
+    if-nez p1, :cond_1
 
     .line 7
     .line 8
     return v1
 
     .line 9
-    :cond_8
+    :cond_1
     const-class v2, Llibs/la2;
 
     .line 10
@@ -70,14 +70,14 @@
     move-result-object v3
 
     .line 15
-    if-eq v2, v3, :cond_11
+    if-eq v2, v3, :cond_2
 
     .line 16
     .line 17
     return v1
 
     .line 18
-    :cond_11
+    :cond_2
     check-cast p1, Llibs/la2;
 
     .line 19
@@ -90,18 +90,18 @@
 
     .line 23
     .line 24
-    if-nez v3, :cond_1c
+    if-nez v3, :cond_3
 
     .line 25
     .line 26
-    if-eqz v2, :cond_23
+    if-eqz v2, :cond_4
 
     .line 27
     .line 28
     return v1
 
     .line 29
-    :cond_1c
+    :cond_3
     invoke-virtual {v3, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     .line 30
@@ -110,14 +110,14 @@
     move-result v2
 
     .line 33
-    if-nez v2, :cond_23
+    if-nez v2, :cond_4
 
     .line 34
     .line 35
     return v1
 
     .line 36
-    :cond_23
+    :cond_4
     iget-object p1, p1, Llibs/la2;->b:Ljava/lang/Object;
 
     .line 37
@@ -126,18 +126,18 @@
 
     .line 39
     .line 40
-    if-nez v2, :cond_2c
+    if-nez v2, :cond_5
 
     .line 41
     .line 42
-    if-eqz p1, :cond_33
+    if-eqz p1, :cond_6
 
     .line 43
     .line 44
     return v1
 
     .line 45
-    :cond_2c
+    :cond_5
     invoke-virtual {v2, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     .line 46
@@ -146,19 +146,19 @@
     move-result p1
 
     .line 49
-    if-nez p1, :cond_33
+    if-nez p1, :cond_6
 
     .line 50
     .line 51
     return v1
 
     .line 52
-    :cond_33
+    :cond_6
     return v0
 .end method
 
 .method public final hashCode()I
-    .registers 4
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
@@ -168,17 +168,17 @@
 
     .line 3
     .line 4
-    if-nez v1, :cond_7
+    if-nez v1, :cond_0
 
     .line 5
     .line 6
     const/4 v1, 0x0
 
     .line 7
-    goto :goto_b
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
     .line 9
@@ -187,7 +187,7 @@
     move-result v1
 
     .line 12
-    :goto_b
+    :goto_0
     const/16 v2, 0x1f
 
     .line 13
@@ -203,14 +203,14 @@
 
     .line 18
     .line 19
-    if-nez v2, :cond_15
+    if-nez v2, :cond_1
 
     .line 20
     .line 21
-    goto :goto_19
+    goto :goto_1
 
     .line 22
-    :cond_15
+    :cond_1
     invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
     .line 23
@@ -219,7 +219,7 @@
     move-result v0
 
     .line 26
-    :goto_19
+    :goto_1
     add-int/2addr v1, v0
 
     .line 27

@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/r31;Ljava/util/ArrayList;Llibs/ml1;Llibs/xt1;Llibs/yt3;Ljava/lang/String;Ljava/util/concurrent/atomic/AtomicBoolean;)V
-    .registers 8
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/l31;->i:Llibs/r31;
@@ -63,7 +63,7 @@
 
 # virtual methods
 .method public final z(Landroid/view/View;I)V
-    .registers 27
+    .locals 24
 
     .line 1
     move-object/from16 v0, p0
@@ -140,7 +140,7 @@
     const/4 v15, 0x0
 
     .line 37
-    if-ne v3, v4, :cond_134
+    if-ne v3, v4, :cond_2
 
     .line 38
     .line 39
@@ -294,7 +294,7 @@
     move-result v9
 
     .line 115
-    if-lez v9, :cond_7b
+    if-lez v9, :cond_0
 
     .line 116
     .line 117
@@ -310,10 +310,10 @@
     move-result v9
 
     .line 123
-    goto :goto_7f
+    goto :goto_0
 
     .line 124
-    :cond_7b
+    :cond_0
     iget-object v9, v0, Llibs/l31;->f:Llibs/yt3;
 
     .line 125
@@ -322,7 +322,7 @@
 
     .line 127
     .line 128
-    :goto_7f
+    :goto_0
     invoke-static {v8, v9}, Ljava/lang/Math;->min(II)I
 
     .line 129
@@ -474,7 +474,7 @@
 
     .line 204
     .line 205
-    if-ne v11, v15, :cond_d0
+    if-ne v11, v15, :cond_1
 
     .line 206
     .line 207
@@ -482,7 +482,7 @@
 
     .line 208
     .line 209
-    :cond_d0
+    :cond_1
     sput v12, Llibs/lw;->e:I
 
     .line 210
@@ -677,16 +677,16 @@
     const/4 v4, 0x0
 
     .line 307
-    goto/16 :goto_507
+    goto/16 :goto_7
 
     .line 308
     .line 309
-    :cond_134
+    :cond_2
     sget v4, Llibs/bi2;->thumb_quality:I
 
     .line 310
     .line 311
-    if-ne v3, v4, :cond_1a9
+    if-ne v3, v4, :cond_3
 
     .line 312
     .line 313
@@ -907,7 +907,7 @@
     return-void
 
     .line 426
-    :cond_1a9
+    :cond_3
     const/4 v4, 0x0
 
     .line 427
@@ -915,7 +915,7 @@
 
     .line 428
     .line 429
-    if-ne v3, v5, :cond_1cd
+    if-ne v3, v5, :cond_4
 
     .line 430
     .line 431
@@ -965,7 +965,7 @@
 
     .line 454
     .line 455
-    if-eqz v1, :cond_508
+    if-eqz v1, :cond_26
 
     .line 456
     .line 457
@@ -974,16 +974,16 @@
     .line 458
     .line 459
     .line 460
-    goto/16 :goto_508
+    goto/16 :goto_8
 
     .line 461
     .line 462
-    :cond_1cd
+    :cond_4
     sget v5, Llibs/bi2;->show_hidden_globally:I
 
     .line 463
     .line 464
-    if-ne v3, v5, :cond_1e2
+    if-ne v3, v5, :cond_5
 
     .line 465
     .line 466
@@ -1016,16 +1016,16 @@
     .line 479
     .line 480
     .line 481
-    goto/16 :goto_508
+    goto/16 :goto_8
 
     .line 482
     .line 483
-    :cond_1e2
+    :cond_5
     sget v5, Llibs/bi2;->show_hidden_recursively:I
 
     .line 484
     .line 485
-    if-ne v3, v5, :cond_21a
+    if-ne v3, v5, :cond_6
 
     .line 486
     .line 487
@@ -1127,16 +1127,16 @@
     .line 535
     .line 536
     .line 537
-    goto/16 :goto_508
+    goto/16 :goto_8
 
     .line 538
     .line 539
-    :cond_21a
+    :cond_6
     sget v5, Llibs/bi2;->pinch_to_zoom:I
 
     .line 540
     .line 541
-    if-ne v3, v5, :cond_243
+    if-ne v3, v5, :cond_8
 
     .line 542
     .line 543
@@ -1186,7 +1186,7 @@
 
     .line 566
     .line 567
-    if-eqz v1, :cond_23b
+    if-eqz v1, :cond_7
 
     .line 568
     .line 569
@@ -1195,7 +1195,7 @@
     .line 570
     .line 571
     .line 572
-    :cond_23b
+    :cond_7
     sget-object v1, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 573
@@ -1208,11 +1208,11 @@
     .line 576
     .line 577
     .line 578
-    goto/16 :goto_508
+    goto/16 :goto_8
 
     .line 579
     .line 580
-    :cond_243
+    :cond_8
     const/4 v5, 0x1
 
     .line 581
@@ -1220,7 +1220,7 @@
 
     .line 582
     .line 583
-    if-ne v3, v6, :cond_257
+    if-ne v3, v6, :cond_9
 
     .line 584
     .line 585
@@ -1249,16 +1249,16 @@
     .line 596
     .line 597
     .line 598
-    goto/16 :goto_508
+    goto/16 :goto_8
 
     .line 599
     .line 600
-    :cond_257
+    :cond_9
     sget v6, Llibs/bi2;->drag_drop:I
 
     .line 601
     .line 602
-    if-ne v3, v6, :cond_278
+    if-ne v3, v6, :cond_a
 
     .line 603
     .line 604
@@ -1304,7 +1304,7 @@
 
     .line 625
     .line 626
-    if-eqz v1, :cond_508
+    if-eqz v1, :cond_26
 
     .line 627
     .line 628
@@ -1313,16 +1313,16 @@
     .line 629
     .line 630
     .line 631
-    goto/16 :goto_508
+    goto/16 :goto_8
 
     .line 632
     .line 633
-    :cond_278
+    :cond_a
     sget v5, Llibs/bi2;->show_hide_bars_scroll:I
 
     .line 634
     .line 635
-    if-ne v3, v5, :cond_29b
+    if-ne v3, v5, :cond_b
 
     .line 636
     .line 637
@@ -1372,7 +1372,7 @@
 
     .line 660
     .line 661
-    if-eqz v1, :cond_508
+    if-eqz v1, :cond_26
 
     .line 662
     .line 663
@@ -1381,16 +1381,16 @@
     .line 664
     .line 665
     .line 666
-    goto/16 :goto_508
+    goto/16 :goto_8
 
     .line 667
     .line 668
-    :cond_29b
+    :cond_b
     sget v5, Llibs/bi2;->swipe_down_refresh:I
 
     .line 669
     .line 670
-    if-ne v3, v5, :cond_2e3
+    if-ne v3, v5, :cond_10
 
     .line 671
     .line 672
@@ -1436,7 +1436,7 @@
 
     .line 693
     .line 694
-    if-eqz v6, :cond_2ba
+    if-eqz v6, :cond_c
 
     .line 695
     .line 696
@@ -1445,7 +1445,7 @@
     .line 697
     .line 698
     .line 699
-    :cond_2ba
+    :cond_c
     iget-object v1, v1, Lcom/mixplorer/activities/BrowseActivity;->Sierra:Lcom/mixplorer/widgets/MiPager;
 
     .line 700
@@ -1464,8 +1464,8 @@
     const/4 v7, 0x0
 
     .line 707
-    :goto_2c2
-    if-ge v7, v6, :cond_2e0
+    :goto_1
+    if-ge v7, v6, :cond_f
 
     .line 708
     .line 709
@@ -1485,7 +1485,7 @@
 
     .line 716
     .line 717
-    if-eqz v3, :cond_2d9
+    if-eqz v3, :cond_e
 
     .line 718
     .line 719
@@ -1501,26 +1501,26 @@
     move-result v9
 
     .line 725
-    if-eqz v9, :cond_2d7
+    if-eqz v9, :cond_d
 
     .line 726
     .line 727
-    goto :goto_2d9
+    goto :goto_2
 
     .line 728
-    :cond_2d7
+    :cond_d
     const/4 v9, 0x0
 
     .line 729
-    goto :goto_2da
+    goto :goto_3
 
     .line 730
-    :cond_2d9
-    :goto_2d9
+    :cond_e
+    :goto_2
     const/4 v9, 0x1
 
     .line 731
-    :goto_2da
+    :goto_3
     invoke-virtual {v8, v9}, Landroid/view/View;->setEnabled(Z)V
 
     .line 732
@@ -1530,23 +1530,23 @@
 
     .line 735
     .line 736
-    goto :goto_2c2
+    goto :goto_1
 
     .line 737
-    :cond_2e0
+    :cond_f
     move v15, v5
 
     .line 738
-    goto/16 :goto_508
+    goto/16 :goto_8
 
     .line 739
     .line 740
-    :cond_2e3
+    :cond_10
     sget v5, Llibs/bi2;->swipe_down_show_hide:I
 
     .line 741
     .line 742
-    if-ne v3, v5, :cond_328
+    if-ne v3, v5, :cond_14
 
     .line 743
     .line 744
@@ -1592,7 +1592,7 @@
 
     .line 765
     .line 766
-    if-eqz v6, :cond_302
+    if-eqz v6, :cond_11
 
     .line 767
     .line 768
@@ -1601,7 +1601,7 @@
     .line 769
     .line 770
     .line 771
-    :cond_302
+    :cond_11
     iget-object v1, v1, Lcom/mixplorer/activities/BrowseActivity;->Sierra:Lcom/mixplorer/widgets/MiPager;
 
     .line 772
@@ -1620,8 +1620,8 @@
     const/4 v7, 0x0
 
     .line 779
-    :goto_30a
-    if-ge v7, v6, :cond_2e0
+    :goto_4
+    if-ge v7, v6, :cond_f
 
     .line 780
     .line 781
@@ -1641,7 +1641,7 @@
 
     .line 788
     .line 789
-    if-eqz v3, :cond_321
+    if-eqz v3, :cond_13
 
     .line 790
     .line 791
@@ -1657,26 +1657,26 @@
     move-result v9
 
     .line 797
-    if-eqz v9, :cond_31f
+    if-eqz v9, :cond_12
 
     .line 798
     .line 799
-    goto :goto_321
+    goto :goto_5
 
     .line 800
-    :cond_31f
+    :cond_12
     const/4 v9, 0x0
 
     .line 801
-    goto :goto_322
+    goto :goto_6
 
     .line 802
-    :cond_321
-    :goto_321
+    :cond_13
+    :goto_5
     const/4 v9, 0x1
 
     .line 803
-    :goto_322
+    :goto_6
     invoke-virtual {v8, v9}, Landroid/view/View;->setEnabled(Z)V
 
     .line 804
@@ -1686,15 +1686,15 @@
 
     .line 807
     .line 808
-    goto :goto_30a
+    goto :goto_4
 
     .line 809
-    :cond_328
+    :cond_14
     sget v5, Llibs/bi2;->more_details:I
 
     .line 810
     .line 811
-    if-ne v3, v5, :cond_34b
+    if-ne v3, v5, :cond_15
 
     .line 812
     .line 813
@@ -1744,7 +1744,7 @@
 
     .line 836
     .line 837
-    if-eqz v1, :cond_508
+    if-eqz v1, :cond_26
 
     .line 838
     .line 839
@@ -1753,16 +1753,16 @@
     .line 840
     .line 841
     .line 842
-    goto/16 :goto_508
+    goto/16 :goto_8
 
     .line 843
     .line 844
-    :cond_34b
+    :cond_15
     sget v5, Llibs/bi2;->thumbs_scrolling:I
 
     .line 845
     .line 846
-    if-ne v3, v5, :cond_36c
+    if-ne v3, v5, :cond_16
 
     .line 847
     .line 848
@@ -1808,7 +1808,7 @@
 
     .line 869
     .line 870
-    if-eqz v1, :cond_508
+    if-eqz v1, :cond_26
 
     .line 871
     .line 872
@@ -1817,16 +1817,16 @@
     .line 873
     .line 874
     .line 875
-    goto/16 :goto_508
+    goto/16 :goto_8
 
     .line 876
     .line 877
-    :cond_36c
+    :cond_16
     sget v5, Llibs/bi2;->settings_cache_thumbs:I
 
     .line 878
     .line 879
-    if-ne v3, v5, :cond_38f
+    if-ne v3, v5, :cond_17
 
     .line 880
     .line 881
@@ -1876,7 +1876,7 @@
 
     .line 904
     .line 905
-    if-eqz v1, :cond_508
+    if-eqz v1, :cond_26
 
     .line 906
     .line 907
@@ -1885,16 +1885,16 @@
     .line 908
     .line 909
     .line 910
-    goto/16 :goto_508
+    goto/16 :goto_8
 
     .line 911
     .line 912
-    :cond_38f
+    :cond_17
     sget v5, Llibs/bi2;->settings_highlight_visited:I
 
     .line 913
     .line 914
-    if-ne v3, v5, :cond_3b2
+    if-ne v3, v5, :cond_18
 
     .line 915
     .line 916
@@ -1944,7 +1944,7 @@
 
     .line 939
     .line 940
-    if-eqz v1, :cond_508
+    if-eqz v1, :cond_26
 
     .line 941
     .line 942
@@ -1953,16 +1953,16 @@
     .line 943
     .line 944
     .line 945
-    goto/16 :goto_508
+    goto/16 :goto_8
 
     .line 946
     .line 947
-    :cond_3b2
+    :cond_18
     sget v5, Llibs/bi2;->crop_thumbnails:I
 
     .line 948
     .line 949
-    if-ne v3, v5, :cond_3d5
+    if-ne v3, v5, :cond_19
 
     .line 950
     .line 951
@@ -2012,7 +2012,7 @@
 
     .line 974
     .line 975
-    if-eqz v1, :cond_508
+    if-eqz v1, :cond_26
 
     .line 976
     .line 977
@@ -2021,16 +2021,16 @@
     .line 978
     .line 979
     .line 980
-    goto/16 :goto_508
+    goto/16 :goto_8
 
     .line 981
     .line 982
-    :cond_3d5
+    :cond_19
     sget v5, Llibs/bi2;->show_extensions:I
 
     .line 983
     .line 984
-    if-ne v3, v5, :cond_3f8
+    if-ne v3, v5, :cond_1a
 
     .line 985
     .line 986
@@ -2080,7 +2080,7 @@
 
     .line 1009
     .line 1010
-    if-eqz v1, :cond_508
+    if-eqz v1, :cond_26
 
     .line 1011
     .line 1012
@@ -2089,16 +2089,16 @@
     .line 1013
     .line 1014
     .line 1015
-    goto/16 :goto_508
+    goto/16 :goto_8
 
     .line 1016
     .line 1017
-    :cond_3f8
+    :cond_1a
     sget v5, Llibs/bi2;->show_long_names:I
 
     .line 1018
     .line 1019
-    if-ne v3, v5, :cond_41b
+    if-ne v3, v5, :cond_1b
 
     .line 1020
     .line 1021
@@ -2148,7 +2148,7 @@
 
     .line 1044
     .line 1045
-    if-eqz v1, :cond_508
+    if-eqz v1, :cond_26
 
     .line 1046
     .line 1047
@@ -2157,16 +2157,16 @@
     .line 1048
     .line 1049
     .line 1050
-    goto/16 :goto_508
+    goto/16 :goto_8
 
     .line 1051
     .line 1052
-    :cond_41b
+    :cond_1b
     sget v5, Llibs/bi2;->dual_panel_landscape:I
 
     .line 1053
     .line 1054
-    if-ne v3, v5, :cond_445
+    if-ne v3, v5, :cond_1d
 
     .line 1055
     .line 1056
@@ -2216,7 +2216,7 @@
 
     .line 1079
     .line 1080
-    if-eqz v3, :cond_43c
+    if-eqz v3, :cond_1c
 
     .line 1081
     .line 1082
@@ -2225,12 +2225,12 @@
     .line 1083
     .line 1084
     .line 1085
-    :cond_43c
+    :cond_1c
     iget-object v1, v1, Lcom/mixplorer/activities/BrowseActivity;->Sierra:Lcom/mixplorer/widgets/MiPager;
 
     .line 1086
     .line 1087
-    if-eqz v1, :cond_508
+    if-eqz v1, :cond_26
 
     .line 1088
     .line 1089
@@ -2239,16 +2239,16 @@
     .line 1090
     .line 1091
     .line 1092
-    goto/16 :goto_508
+    goto/16 :goto_8
 
     .line 1093
     .line 1094
-    :cond_445
+    :cond_1d
     sget v5, Llibs/bi2;->full_dual_panel:I
 
     .line 1095
     .line 1096
-    if-ne v3, v5, :cond_46f
+    if-ne v3, v5, :cond_1f
 
     .line 1097
     .line 1098
@@ -2298,7 +2298,7 @@
 
     .line 1121
     .line 1122
-    if-eqz v3, :cond_466
+    if-eqz v3, :cond_1e
 
     .line 1123
     .line 1124
@@ -2307,12 +2307,12 @@
     .line 1125
     .line 1126
     .line 1127
-    :cond_466
+    :cond_1e
     iget-object v1, v1, Lcom/mixplorer/activities/BrowseActivity;->Sierra:Lcom/mixplorer/widgets/MiPager;
 
     .line 1128
     .line 1129
-    if-eqz v1, :cond_508
+    if-eqz v1, :cond_26
 
     .line 1130
     .line 1131
@@ -2321,16 +2321,16 @@
     .line 1132
     .line 1133
     .line 1134
-    goto/16 :goto_508
+    goto/16 :goto_8
 
     .line 1135
     .line 1136
-    :cond_46f
+    :cond_1f
     sget v1, Llibs/bi2;->settings_folder_preview:I
 
     .line 1137
     .line 1138
-    if-ne v3, v1, :cond_49a
+    if-ne v3, v1, :cond_21
 
     .line 1139
     .line 1140
@@ -2380,7 +2380,7 @@
 
     .line 1163
     .line 1164
-    if-eqz v1, :cond_490
+    if-eqz v1, :cond_20
 
     .line 1165
     .line 1166
@@ -2389,7 +2389,7 @@
     .line 1167
     .line 1168
     .line 1169
-    :cond_490
+    :cond_20
     sget-object v1, Lcom/mixplorer/AppImpl;->Upsilon:Llibs/za;
 
     .line 1170
@@ -2407,15 +2407,15 @@
     .line 1176
     .line 1177
     .line 1178
-    goto :goto_508
+    goto :goto_8
 
     .line 1179
-    :cond_49a
+    :cond_21
     sget v1, Llibs/bi2;->folder_media_symbols:I
 
     .line 1180
     .line 1181
-    if-ne v3, v1, :cond_4bc
+    if-ne v3, v1, :cond_22
 
     .line 1182
     .line 1183
@@ -2465,7 +2465,7 @@
 
     .line 1206
     .line 1207
-    if-eqz v1, :cond_508
+    if-eqz v1, :cond_26
 
     .line 1208
     .line 1209
@@ -2474,15 +2474,15 @@
     .line 1210
     .line 1211
     .line 1212
-    goto :goto_508
+    goto :goto_8
 
     .line 1213
-    :cond_4bc
+    :cond_22
     sget v1, Llibs/bi2;->show_thumbnails:I
 
     .line 1214
     .line 1215
-    if-ne v3, v1, :cond_4e5
+    if-ne v3, v1, :cond_24
 
     .line 1216
     .line 1217
@@ -2528,7 +2528,7 @@
 
     .line 1238
     .line 1239
-    if-eqz v1, :cond_4db
+    if-eqz v1, :cond_23
 
     .line 1240
     .line 1241
@@ -2537,7 +2537,7 @@
     .line 1242
     .line 1243
     .line 1244
-    :cond_4db
+    :cond_23
     sget-object v1, Lcom/mixplorer/AppImpl;->Upsilon:Llibs/za;
 
     .line 1245
@@ -2555,15 +2555,15 @@
     .line 1251
     .line 1252
     .line 1253
-    goto :goto_508
+    goto :goto_8
 
     .line 1254
-    :cond_4e5
+    :cond_24
     sget v1, Llibs/bi2;->global_view_mode:I
 
     .line 1255
     .line 1256
-    if-ne v3, v1, :cond_507
+    if-ne v3, v1, :cond_25
 
     .line 1257
     .line 1258
@@ -2613,7 +2613,7 @@
 
     .line 1281
     .line 1282
-    if-eqz v1, :cond_508
+    if-eqz v1, :cond_26
 
     .line 1283
     .line 1284
@@ -2622,16 +2622,16 @@
     .line 1285
     .line 1286
     .line 1287
-    goto :goto_508
+    goto :goto_8
 
     .line 1288
-    :cond_507
-    :goto_507
+    :cond_25
+    :goto_7
     const/4 v15, 0x0
 
     .line 1289
-    :cond_508
-    :goto_508
+    :cond_26
+    :goto_8
     iget-object v1, v0, Llibs/l31;->h:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     .line 1290
@@ -2644,7 +2644,7 @@
     .line 1293
     .line 1294
     .line 1295
-    if-eqz v15, :cond_513
+    if-eqz v15, :cond_27
 
     .line 1296
     .line 1297
@@ -2652,15 +2652,15 @@
 
     .line 1298
     .line 1299
-    goto :goto_515
+    goto :goto_9
 
     .line 1300
-    :cond_513
+    :cond_27
     iget-object v1, v13, Llibs/ml1;->Echo:Landroid/graphics/drawable/Drawable;
 
     .line 1301
     .line 1302
-    :goto_515
+    :goto_9
     iput-object v1, v2, Llibs/r90;->Omicron:Landroid/graphics/drawable/Drawable;
 
     .line 1303

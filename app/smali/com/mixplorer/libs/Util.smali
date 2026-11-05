@@ -5,7 +5,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     :try_start_0
@@ -14,8 +14,8 @@
     .line 2
     .line 3
     invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
-    :try_end_5
-    .catchall {:try_start_0 .. :try_end_5} :catchall_6
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 4
     .line 5
@@ -23,7 +23,7 @@
     return-void
 
     .line 7
-    :catchall_6
+    :catchall_0
     move-exception v0
 
     .line 8
@@ -48,7 +48,7 @@
 .end method
 
 .method public static a()Ljava/lang/String;
-    .registers 2
+    .locals 2
 
     .line 1
     :try_start_0
@@ -60,20 +60,20 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
     const-string v0, ", errno: 000"
-    :try_end_8
-    .catchall {:try_start_0 .. :try_end_8} :catchall_9
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 8
     .line 9
     return-object v0
 
     .line 10
-    :catchall_9
+    :catchall_0
     move-exception v0
 
     .line 11
@@ -94,7 +94,7 @@
     .line 18
     .line 19
     .line 20
-    :cond_13
+    :cond_0
     const-string v0, ""
 
     .line 21

@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 5
+    .locals 3
 
     const-wide/16 v0, -0x1
 
@@ -32,7 +32,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;JLcom/mixplorer/ProgressListener;)V
-    .registers 10
+    .locals 5
 
     .line 1
     invoke-direct {p0}, Ljava/io/OutputStream;-><init>()V
@@ -48,7 +48,7 @@
 
     .line 7
     .line 8
-    if-ltz v2, :cond_18
+    if-ltz v2, :cond_1
 
     .line 9
     .line 10
@@ -61,14 +61,14 @@
 
     .line 14
     .line 15
-    if-ltz v4, :cond_11
+    if-ltz v4, :cond_0
 
     .line 16
     .line 17
-    goto :goto_18
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     const-string p1, "split length less than minimum: 65536 bytes"
 
     .line 19
@@ -84,8 +84,8 @@
     throw p1
 
     .line 25
-    :cond_18
-    :goto_18
+    :cond_1
+    :goto_0
     new-instance v2, Llibs/di2;
 
     .line 26
@@ -132,14 +132,14 @@
 
 # virtual methods
 .method public final c(I)Z
-    .registers 8
+    .locals 6
 
     .line 1
-    if-ltz p1, :cond_2d
+    if-ltz p1, :cond_3
 
     .line 2
     .line 3
-    if-ltz p1, :cond_27
+    if-ltz p1, :cond_2
 
     .line 4
     .line 5
@@ -156,7 +156,7 @@
 
     .line 11
     .line 12
-    if-ltz v4, :cond_25
+    if-ltz v4, :cond_1
 
     .line 13
     .line 14
@@ -174,15 +174,15 @@
 
     .line 19
     .line 20
-    if-gtz p1, :cond_16
+    if-gtz p1, :cond_0
 
     .line 21
     .line 22
-    goto :goto_25
+    goto :goto_1
 
     .line 23
-    :cond_16
-    :try_start_16
+    :cond_0
+    :try_start_0
     invoke-virtual {p0}, Llibs/hd3;->i()V
 
     .line 24
@@ -193,8 +193,8 @@
     .line 27
     .line 28
     iput-wide v0, p0, Llibs/hd3;->Mu:J
-    :try_end_1d
-    .catch Ljava/io/IOException; {:try_start_16 .. :try_end_1d} :catch_1f
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 29
     .line 30
@@ -204,7 +204,7 @@
     return p1
 
     .line 32
-    :catch_1f
+    :catch_0
     move-exception p1
 
     .line 33
@@ -213,22 +213,22 @@
     .line 34
     .line 35
     .line 36
-    :goto_23
+    :goto_0
     const/4 p1, 0x0
 
     .line 37
     return p1
 
     .line 38
-    :cond_25
-    :goto_25
+    :cond_1
+    :goto_1
     const/4 p1, 0x0
 
     .line 39
     return p1
 
     .line 40
-    :cond_27
+    :cond_2
     const-string p1, "negative buffersize for isBuffSizeFitForcurrSplitFile"
 
     .line 41
@@ -238,10 +238,10 @@
     .line 43
     .line 44
     .line 45
-    goto :goto_23
+    goto :goto_0
 
     .line 46
-    :cond_2d
+    :cond_3
     const-string p1, "negative buffersize for checkBuffSizeAndStartNextSplitFile"
 
     .line 47
@@ -251,11 +251,11 @@
     .line 49
     .line 50
     .line 51
-    goto :goto_23
+    goto :goto_0
 .end method
 
 .method public final close()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/hd3;->X:Llibs/di2;
@@ -271,14 +271,14 @@
 .end method
 
 .method public final flush()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final i()V
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/hd3;->X:Llibs/di2;
@@ -298,7 +298,7 @@
 
     .line 9
     .line 10
-    if-ge v0, v1, :cond_e
+    if-ge v0, v1, :cond_0
 
     .line 11
     .line 12
@@ -306,15 +306,15 @@
 
     .line 13
     .line 14
-    goto :goto_10
+    goto :goto_0
 
     .line 15
-    :cond_e
+    :cond_0
     const-string v0, ".z"
 
     .line 16
     .line 17
-    :goto_10
+    :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     .line 18
@@ -378,7 +378,7 @@
     move-result-object v0
 
     .line 50
-    :try_start_31
+    :try_start_0
     invoke-static {v2}, Llibs/zo1;->g(Ljava/lang/String;)Llibs/zl0;
 
     .line 51
@@ -407,7 +407,7 @@
     move-result-object v0
 
     .line 64
-    if-eqz v0, :cond_5b
+    if-eqz v0, :cond_2
 
     .line 65
     .line 66
@@ -415,29 +415,29 @@
 
     .line 67
     .line 68
-    if-eqz v1, :cond_4b
+    if-eqz v1, :cond_1
 
     .line 69
     .line 70
     invoke-virtual {v1, v0}, Lcom/mixplorer/ProgressListener;->onProgressFi(Llibs/rp0;)V
-    :try_end_48
-    .catch Ljava/lang/Exception; {:try_start_31 .. :try_end_48} :catch_49
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 71
     .line 72
     .line 73
-    goto :goto_4b
+    goto :goto_1
 
     .line 74
-    :catch_49
+    :catch_0
     move-exception v0
 
     .line 75
-    goto :goto_63
+    goto :goto_2
 
     .line 76
-    :cond_4b
-    :goto_4b
+    :cond_1
+    :goto_1
     new-instance v0, Llibs/di2;
 
     .line 77
@@ -470,8 +470,8 @@
     return-void
 
     .line 92
-    :cond_5b
-    :try_start_5b
+    :cond_2
+    :try_start_1
     new-instance v0, Ljava/io/IOException;
 
     .line 93
@@ -486,11 +486,11 @@
     .line 98
     .line 99
     throw v0
-    :try_end_63
-    .catch Ljava/lang/Exception; {:try_start_5b .. :try_end_63} :catch_49
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 100
-    :goto_63
+    :goto_2
     invoke-static {v0}, Llibs/t;->d(Ljava/lang/Object;)V
 
     .line 101
@@ -500,7 +500,7 @@
 .end method
 
 .method public final write(I)V
-    .registers 5
+    .locals 3
 
     int-to-byte p1, p1
 
@@ -520,7 +520,7 @@
 .end method
 
 .method public final write([B)V
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -533,7 +533,7 @@
 .end method
 
 .method public final write([BII)V
-    .registers 21
+    .locals 17
 
     .line 1
     move-object/from16 v0, p0
@@ -552,14 +552,14 @@
 
     .line 8
     .line 9
-    if-gtz v3, :cond_b
+    if-gtz v3, :cond_0
 
     .line 10
     .line 11
     return-void
 
     .line 12
-    :cond_b
+    :cond_0
     const-wide/16 v4, -0x1
 
     .line 13
@@ -572,7 +572,7 @@
 
     .line 17
     .line 18
-    if-eqz v8, :cond_98
+    if-eqz v8, :cond_7
 
     .line 19
     .line 20
@@ -585,7 +585,7 @@
 
     .line 24
     .line 25
-    if-ltz v8, :cond_92
+    if-ltz v8, :cond_6
 
     .line 26
     .line 27
@@ -597,7 +597,7 @@
 
     .line 30
     .line 31
-    if-ltz v8, :cond_2c
+    if-ltz v8, :cond_1
 
     .line 32
     .line 33
@@ -625,7 +625,7 @@
     return-void
 
     .line 45
-    :cond_2c
+    :cond_1
     int-to-long v8, v3
 
     .line 46
@@ -636,11 +636,11 @@
 
     .line 48
     .line 49
-    if-lez v10, :cond_87
+    if-lez v10, :cond_5
 
     .line 50
     .line 51
-    if-eqz v1, :cond_65
+    if-eqz v1, :cond_4
 
     .line 52
     .line 53
@@ -650,14 +650,14 @@
     const/4 v5, 0x4
 
     .line 55
-    if-ge v4, v5, :cond_39
+    if-ge v4, v5, :cond_2
 
     .line 56
     .line 57
-    goto :goto_65
+    goto :goto_1
 
     .line 58
-    :cond_39
+    :cond_2
     invoke-static {v1}, Llibs/i81;->x([B)I
 
     .line 59
@@ -678,7 +678,7 @@
 
     .line 67
     .line 68
-    fill-array-data v10, :array_a4
+    fill-array-data v10, :array_0
 
     .line 69
     .line 70
@@ -686,8 +686,8 @@
     const/4 v11, 0x0
 
     .line 72
-    :goto_47
-    if-ge v11, v5, :cond_65
+    :goto_0
+    if-ge v11, v5, :cond_4
 
     .line 73
     .line 74
@@ -704,7 +704,7 @@
 
     .line 80
     .line 81
-    if-eqz v16, :cond_62
+    if-eqz v16, :cond_3
 
     .line 82
     .line 83
@@ -715,7 +715,7 @@
 
     .line 85
     .line 86
-    if-nez v16, :cond_62
+    if-nez v16, :cond_3
 
     .line 87
     .line 88
@@ -740,16 +740,16 @@
     return-void
 
     .line 99
-    :cond_62
+    :cond_3
     add-int/lit8 v11, v11, 0x1
 
     .line 100
     .line 101
-    goto :goto_47
+    goto :goto_0
 
     .line 102
-    :cond_65
-    :goto_65
+    :cond_4
+    :goto_1
     iget-object v3, v0, Llibs/hd3;->X:Llibs/di2;
 
     .line 103
@@ -822,7 +822,7 @@
     return-void
 
     .line 136
-    :cond_87
+    :cond_5
     iget-object v4, v0, Llibs/hd3;->X:Llibs/di2;
 
     .line 137
@@ -846,7 +846,7 @@
     return-void
 
     .line 147
-    :cond_92
+    :cond_6
     const-string v1, "split length less than minimum allowed split length of 65536 Bytes"
 
     .line 148
@@ -859,7 +859,7 @@
     return-void
 
     .line 153
-    :cond_98
+    :cond_7
     iget-object v4, v0, Llibs/hd3;->X:Llibs/di2;
 
     .line 154
@@ -886,7 +886,7 @@
     return-void
 
     .line 165
-    :array_a4
+    :array_0
     .array-data 8
         0x4034b50
         0x8074b50

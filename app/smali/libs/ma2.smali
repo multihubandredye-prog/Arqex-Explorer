@@ -9,7 +9,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/ma2;->a:B
@@ -27,14 +27,14 @@
 
 # virtual methods
 .method public final a([F)Z
-    .registers 3
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/ma2;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_1c
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -45,7 +45,7 @@
     return p1
 
     .line 8
-    :pswitch_7
+    :pswitch_0
     const/4 v0, 0x2
 
     .line 9
@@ -62,7 +62,7 @@
 
     .line 15
     .line 16
-    if-gez v0, :cond_1a
+    if-gez v0, :cond_0
 
     .line 17
     .line 18
@@ -75,26 +75,26 @@
 
     .line 22
     .line 23
-    if-lez p1, :cond_1a
+    if-lez p1, :cond_0
 
     .line 24
     .line 25
     const/4 p1, 0x1
 
     .line 26
-    goto :goto_1b
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_0
     const/4 p1, 0x0
 
     .line 28
-    :goto_1b
+    :goto_0
     return p1
 
     .line 29
-    :pswitch_data_1c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_7
+        :pswitch_0
     .end packed-switch
 .end method

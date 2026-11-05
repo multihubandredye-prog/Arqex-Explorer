@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/cg;)V
-    .registers 7
+    .locals 5
 
     .line 1
     new-instance v0, Llibs/s32;

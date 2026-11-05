@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +52,7 @@
 .end method
 
 .method private getMac([B)Ljavax/crypto/Mac;
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/Hkdf;->hmacName:Ljava/lang/String;
@@ -91,7 +91,7 @@
 
 # virtual methods
 .method public expand([B[BI)[B
-    .registers 12
+    .locals 8
 
     .line 1
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -110,21 +110,21 @@
     const/4 v1, 0x0
 
     .line 9
-    if-ltz p3, :cond_c
+    if-ltz p3, :cond_0
 
     .line 10
     .line 11
     const/4 v2, 0x1
 
     .line 12
-    goto :goto_d
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     const/4 v2, 0x0
 
     .line 14
-    :goto_d
+    :goto_0
     const-string v3, "Negative length"
 
     .line 15
@@ -146,21 +146,21 @@
 
     .line 24
     .line 25
-    if-ge p3, v2, :cond_1c
+    if-ge p3, v2, :cond_1
 
     .line 26
     .line 27
     const/4 v2, 0x1
 
     .line 28
-    goto :goto_1d
+    goto :goto_1
 
     .line 29
-    :cond_1c
+    :cond_1
     const/4 v2, 0x0
 
     .line 30
-    :goto_1d
+    :goto_1
     const-string v3, "Length too long"
 
     .line 31
@@ -205,8 +205,8 @@
     const/4 v6, 0x0
 
     .line 52
-    :goto_33
-    if-ge v6, p3, :cond_50
+    :goto_2
+    if-ge v6, p3, :cond_2
 
     .line 53
     .line 54
@@ -262,15 +262,15 @@
     add-int/2addr v6, v7
 
     .line 80
-    goto :goto_33
+    goto :goto_2
 
     .line 81
-    :cond_50
+    :cond_2
     return-object v4
 .end method
 
 .method public extract([B[B)[B
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -286,21 +286,21 @@
     array-length v0, p2
 
     .line 8
-    if-lez v0, :cond_b
+    if-lez v0, :cond_0
 
     .line 9
     .line 10
     const/4 v0, 0x1
 
     .line 11
-    goto :goto_c
+    goto :goto_0
 
     .line 12
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
     .line 13
-    :goto_c
+    :goto_0
     const-string v1, "Empty keying material"
 
     .line 14
@@ -313,7 +313,7 @@
     array-length v0, p1
 
     .line 19
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_1
 
     .line 20
     .line 21
@@ -329,7 +329,7 @@
 
     .line 26
     .line 27
-    :cond_1a
+    :cond_1
     invoke-direct {p0, p1}, Lorg/conscrypt/Hkdf;->getMac([B)Ljavax/crypto/Mac;
 
     .line 28
@@ -350,7 +350,7 @@
 .end method
 
 .method public getMacLength()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/Hkdf;->macLength:I

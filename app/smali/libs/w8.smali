@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/w8;->X:B
@@ -28,7 +28,7 @@
 .end method
 
 .method private final a(Landroid/view/View;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/w8;->X:B
@@ -47,7 +47,7 @@
     const/4 v1, 0x0
 
     .line 4
-    packed-switch v0, :pswitch_data_30
+    packed-switch v0, :pswitch_data_0
 
     .line 5
     .line 6
@@ -60,7 +60,7 @@
     return-void
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     sget p1, Lcom/mixplorer/activities/SQLiteEditorActivity;->III:I
 
     .line 12
@@ -68,7 +68,7 @@
     return-void
 
     .line 14
-    :pswitch_d
+    :pswitch_1
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     .line 15
@@ -122,7 +122,7 @@
     return-void
 
     .line 41
-    :pswitch_28
+    :pswitch_2
     invoke-virtual {p1, v1}, Landroid/view/View;->setEnabled(Z)V
 
     .line 42
@@ -131,22 +131,22 @@
     return-void
 
     .line 45
-    :pswitch_2c
+    :pswitch_3
     invoke-virtual {p1, v1}, Landroid/view/View;->setEnabled(Z)V
 
     .line 46
     .line 47
     .line 48
-    :pswitch_2f
+    :pswitch_4
     return-void
 
     .line 49
-    :pswitch_data_30
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2f
-        :pswitch_2c
-        :pswitch_28
-        :pswitch_d
-        :pswitch_a
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

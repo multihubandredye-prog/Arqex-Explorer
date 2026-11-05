@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/al;IILlibs/xt1;)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 11
+    .locals 10
 
     .line 1
     iget-object v0, p0, Llibs/rk;->X:Llibs/al;
@@ -71,14 +71,14 @@
     move-result v2
 
     .line 11
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_0
 
     .line 12
     .line 13
-    goto :goto_43
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     sget-object v2, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
 
     .line 15
@@ -115,11 +115,11 @@
 
     .line 31
     .line 32
-    if-eq v4, v3, :cond_44
+    if-eq v4, v3, :cond_2
 
     .line 33
     .line 34
-    if-nez v2, :cond_44
+    if-nez v2, :cond_2
 
     .line 35
     .line 36
@@ -182,20 +182,20 @@
     move-result v2
 
     .line 65
-    if-eqz v2, :cond_43
+    if-eqz v2, :cond_1
 
     .line 66
     .line 67
-    goto :goto_44
+    goto :goto_1
 
     .line 68
-    :cond_43
-    :goto_43
+    :cond_1
+    :goto_0
     return-void
 
     .line 69
-    :cond_44
-    :goto_44
+    :cond_2
+    :goto_1
     iget-object v1, v1, Llibs/r31;->a:Lcom/mixplorer/activities/BrowseActivity;
 
     .line 70

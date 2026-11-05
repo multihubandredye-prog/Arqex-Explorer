@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Landroid/graphics/Paint;
@@ -58,7 +58,7 @@
     move-result v0
 
     .line 23
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_0
 
     .line 24
     .line 25
@@ -74,7 +74,7 @@
 
     .line 30
     .line 31
-    if-ne v0, v2, :cond_26
+    if-ne v0, v2, :cond_0
 
     .line 32
     .line 33
@@ -87,10 +87,10 @@
     .line 36
     .line 37
     .line 38
-    goto :goto_2b
+    goto :goto_0
 
     .line 39
-    :cond_26
+    :cond_0
     new-instance v0, Llibs/io3;
 
     .line 40
@@ -100,7 +100,7 @@
     .line 42
     .line 43
     .line 44
-    :goto_2b
+    :goto_0
     sput-object v0, Llibs/jo3;->b:Ljava/util/concurrent/locks/Lock;
 
     .line 45

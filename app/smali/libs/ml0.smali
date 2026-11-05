@@ -26,7 +26,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
@@ -49,7 +49,7 @@
 .end method
 
 .method public constructor <init>(Ljava/io/InputStream;)V
-    .registers 5
+    .locals 3
 
     .line 1
     sget-object v0, Ljava/nio/ByteOrder;->BIG_ENDIAN:Ljava/nio/ByteOrder;
@@ -114,7 +114,7 @@
 .end method
 
 .method public constructor <init>([B)V
-    .registers 3
+    .locals 1
 
     .line 32
     new-instance v0, Ljava/io/ByteArrayInputStream;
@@ -129,13 +129,13 @@
 
 # virtual methods
 .method public final declared-synchronized available()I
-    .registers 2
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Llibs/ml0;->X:Ljava/io/DataInputStream;
 
     .line 3
@@ -146,8 +146,8 @@
     .line 6
     .line 7
     move-result v0
-    :try_end_7
-    .catchall {:try_start_1 .. :try_end_7} :catchall_9
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 8
     monitor-exit p0
@@ -156,30 +156,30 @@
     return v0
 
     .line 10
-    :catchall_9
+    :catchall_0
     move-exception v0
 
     .line 11
-    :try_start_a
+    :try_start_1
     monitor-exit p0
-    :try_end_b
-    .catchall {:try_start_a .. :try_end_b} :catchall_9
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 12
     throw v0
 .end method
 
 .method public final declared-synchronized c()I
-    .registers 2
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget v0, p0, Llibs/ml0;->Mu:I
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 3
     .line 4
@@ -189,35 +189,35 @@
     return v0
 
     .line 6
-    :catchall_5
+    :catchall_0
     move-exception v0
 
     .line 7
-    :try_start_6
+    :try_start_1
     monitor-exit p0
-    :try_end_7
-    .catchall {:try_start_6 .. :try_end_7} :catchall_5
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 8
     throw v0
 .end method
 
 .method public final declared-synchronized i()J
-    .registers 5
+    .locals 4
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     invoke-virtual {p0}, Llibs/ml0;->readInt()I
 
     .line 3
     .line 4
     .line 5
     move-result v0
-    :try_end_5
-    .catchall {:try_start_1 .. :try_end_5} :catchall_e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 6
     int-to-long v0, v0
@@ -239,27 +239,27 @@
     return-wide v0
 
     .line 15
-    :catchall_e
+    :catchall_0
     move-exception v0
 
     .line 16
-    :try_start_f
+    :try_start_1
     monitor-exit p0
-    :try_end_10
-    .catchall {:try_start_f .. :try_end_10} :catchall_e
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 17
     throw v0
 .end method
 
 .method public final declared-synchronized m(J)V
-    .registers 7
+    .locals 4
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget v0, p0, Llibs/ml0;->Mu:I
 
     .line 3
@@ -271,7 +271,7 @@
 
     .line 6
     .line 7
-    if-lez v3, :cond_1a
+    if-lez v3, :cond_0
 
     .line 8
     .line 9
@@ -304,24 +304,24 @@
     .line 22
     .line 23
     .line 24
-    goto :goto_1c
+    goto :goto_0
 
     .line 25
-    :catchall_18
+    :catchall_0
     move-exception p1
 
     .line 26
-    goto :goto_2d
+    goto :goto_1
 
     .line 27
-    :cond_1a
+    :cond_0
     int-to-long v0, v0
 
     .line 28
     sub-long/2addr p1, v0
 
     .line 29
-    :goto_1c
+    :goto_0
     long-to-int p2, p1
 
     .line 30
@@ -331,11 +331,11 @@
     .line 32
     .line 33
     move-result p1
-    :try_end_21
-    .catchall {:try_start_1 .. :try_end_21} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 34
-    if-ne p1, p2, :cond_25
+    if-ne p1, p2, :cond_1
 
     .line 35
     .line 36
@@ -345,8 +345,8 @@
     return-void
 
     .line 38
-    :cond_25
-    :try_start_25
+    :cond_1
+    :try_start_1
     new-instance p1, Ljava/io/IOException;
 
     .line 39
@@ -363,23 +363,23 @@
     throw p1
 
     .line 46
-    :goto_2d
+    :goto_1
     monitor-exit p0
-    :try_end_2e
-    .catchall {:try_start_25 .. :try_end_2e} :catchall_18
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 47
     throw p1
 .end method
 
 .method public final declared-synchronized read()I
-    .registers 2
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget v0, p0, Llibs/ml0;->Mu:I
 
     .line 3
@@ -402,8 +402,8 @@
     .line 12
     .line 13
     move-result v0
-    :try_end_d
-    .catchall {:try_start_1 .. :try_end_d} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 14
     monitor-exit p0
@@ -412,27 +412,27 @@
     return v0
 
     .line 16
-    :catchall_f
+    :catchall_0
     move-exception v0
 
     .line 17
-    :try_start_10
+    :try_start_1
     monitor-exit p0
-    :try_end_11
-    .catchall {:try_start_10 .. :try_end_11} :catchall_f
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 18
     throw v0
 .end method
 
 .method public final declared-synchronized readBoolean()Z
-    .registers 2
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget v0, p0, Llibs/ml0;->Mu:I
 
     .line 3
@@ -455,8 +455,8 @@
     .line 12
     .line 13
     move-result v0
-    :try_end_d
-    .catchall {:try_start_1 .. :try_end_d} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 14
     monitor-exit p0
@@ -465,27 +465,27 @@
     return v0
 
     .line 16
-    :catchall_f
+    :catchall_0
     move-exception v0
 
     .line 17
-    :try_start_10
+    :try_start_1
     monitor-exit p0
-    :try_end_11
-    .catchall {:try_start_10 .. :try_end_11} :catchall_f
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 18
     throw v0
 .end method
 
 .method public final declared-synchronized readByte()B
-    .registers 3
+    .locals 2
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget v0, p0, Llibs/ml0;->Mu:I
 
     .line 3
@@ -502,7 +502,7 @@
 
     .line 9
     .line 10
-    if-gt v0, v1, :cond_1e
+    if-gt v0, v1, :cond_1
 
     .line 11
     .line 12
@@ -516,11 +516,11 @@
     .line 16
     .line 17
     move-result v0
-    :try_end_11
-    .catchall {:try_start_1 .. :try_end_11} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 18
-    if-ltz v0, :cond_16
+    if-ltz v0, :cond_0
 
     .line 19
     .line 20
@@ -533,8 +533,8 @@
     return v0
 
     .line 23
-    :cond_16
-    :try_start_16
+    :cond_0
+    :try_start_1
     new-instance v0, Ljava/io/EOFException;
 
     .line 24
@@ -547,14 +547,14 @@
     throw v0
 
     .line 29
-    :catchall_1c
+    :catchall_0
     move-exception v0
 
     .line 30
-    goto :goto_24
+    goto :goto_0
 
     .line 31
-    :cond_1e
+    :cond_1
     new-instance v0, Ljava/io/EOFException;
 
     .line 32
@@ -567,23 +567,23 @@
     throw v0
 
     .line 37
-    :goto_24
+    :goto_0
     monitor-exit p0
-    :try_end_25
-    .catchall {:try_start_16 .. :try_end_25} :catchall_1c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 38
     throw v0
 .end method
 
 .method public final declared-synchronized readChar()C
-    .registers 2
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget v0, p0, Llibs/ml0;->Mu:I
 
     .line 3
@@ -606,8 +606,8 @@
     .line 12
     .line 13
     move-result v0
-    :try_end_d
-    .catchall {:try_start_1 .. :try_end_d} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 14
     monitor-exit p0
@@ -616,27 +616,27 @@
     return v0
 
     .line 16
-    :catchall_f
+    :catchall_0
     move-exception v0
 
     .line 17
-    :try_start_10
+    :try_start_1
     monitor-exit p0
-    :try_end_11
-    .catchall {:try_start_10 .. :try_end_11} :catchall_f
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 18
     throw v0
 .end method
 
 .method public final declared-synchronized readDouble()D
-    .registers 3
+    .locals 2
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     invoke-virtual {p0}, Llibs/ml0;->readLong()J
 
     .line 3
@@ -651,8 +651,8 @@
     .line 8
     .line 9
     move-result-wide v0
-    :try_end_9
-    .catchall {:try_start_1 .. :try_end_9} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 10
     monitor-exit p0
@@ -661,27 +661,27 @@
     return-wide v0
 
     .line 12
-    :catchall_b
+    :catchall_0
     move-exception v0
 
     .line 13
-    :try_start_c
+    :try_start_1
     monitor-exit p0
-    :try_end_d
-    .catchall {:try_start_c .. :try_end_d} :catchall_b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 14
     throw v0
 .end method
 
 .method public final declared-synchronized readFloat()F
-    .registers 2
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     invoke-virtual {p0}, Llibs/ml0;->readInt()I
 
     .line 3
@@ -696,8 +696,8 @@
     .line 8
     .line 9
     move-result v0
-    :try_end_9
-    .catchall {:try_start_1 .. :try_end_9} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 10
     monitor-exit p0
@@ -706,27 +706,27 @@
     return v0
 
     .line 12
-    :catchall_b
+    :catchall_0
     move-exception v0
 
     .line 13
-    :try_start_c
+    :try_start_1
     monitor-exit p0
-    :try_end_d
-    .catchall {:try_start_c .. :try_end_d} :catchall_b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 14
     throw v0
 .end method
 
 .method public final declared-synchronized readFully([B)V
-    .registers 5
+    .locals 3
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget v0, p0, Llibs/ml0;->Mu:I
 
     .line 3
@@ -745,7 +745,7 @@
 
     .line 9
     .line 10
-    if-gt v0, v1, :cond_22
+    if-gt v0, v1, :cond_1
 
     .line 11
     .line 12
@@ -768,11 +768,11 @@
 
     .line 20
     array-length p1, p1
-    :try_end_14
-    .catchall {:try_start_1 .. :try_end_14} :catchall_20
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 21
-    if-ne v0, p1, :cond_18
+    if-ne v0, p1, :cond_0
 
     .line 22
     .line 23
@@ -782,8 +782,8 @@
     return-void
 
     .line 25
-    :cond_18
-    :try_start_18
+    :cond_0
+    :try_start_1
     new-instance p1, Ljava/io/IOException;
 
     .line 26
@@ -800,14 +800,14 @@
     throw p1
 
     .line 33
-    :catchall_20
+    :catchall_0
     move-exception p1
 
     .line 34
-    goto :goto_28
+    goto :goto_0
 
     .line 35
-    :cond_22
+    :cond_1
     new-instance p1, Ljava/io/EOFException;
 
     .line 36
@@ -820,22 +820,22 @@
     throw p1
 
     .line 41
-    :goto_28
+    :goto_0
     monitor-exit p0
-    :try_end_29
-    .catchall {:try_start_18 .. :try_end_29} :catchall_20
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 42
     throw p1
 .end method
 
 .method public final declared-synchronized readFully([BII)V
-    .registers 6
+    .locals 2
 
     monitor-enter p0
 
     .line 43
-    :try_start_1
+    :try_start_0
     iget v0, p0, Llibs/ml0;->Mu:I
 
     add-int/2addr v0, p3
@@ -845,7 +845,7 @@
     .line 44
     iget v1, p0, Llibs/ml0;->Lambda:I
 
-    if-gt v0, v1, :cond_1e
+    if-gt v0, v1, :cond_1
 
     .line 45
     iget-object v0, p0, Llibs/ml0;->X:Ljava/io/DataInputStream;
@@ -853,10 +853,10 @@
     invoke-virtual {v0, p1, p2, p3}, Ljava/io/DataInputStream;->read([BII)I
 
     move-result p1
-    :try_end_10
-    .catchall {:try_start_1 .. :try_end_10} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-ne p1, p3, :cond_14
+    if-ne p1, p3, :cond_0
 
     .line 46
     monitor-exit p0
@@ -864,8 +864,8 @@
     return-void
 
     .line 47
-    :cond_14
-    :try_start_14
+    :cond_0
+    :try_start_1
     new-instance p1, Ljava/io/IOException;
 
     const-string p2, "Couldn\'t read up to the length of buffer"
@@ -874,13 +874,13 @@
 
     throw p1
 
-    :catchall_1c
+    :catchall_0
     move-exception p1
 
-    goto :goto_24
+    goto :goto_0
 
     .line 48
-    :cond_1e
+    :cond_1
     new-instance p1, Ljava/io/EOFException;
 
     invoke-direct {p1}, Ljava/io/EOFException;-><init>()V
@@ -888,16 +888,16 @@
     throw p1
 
     .line 49
-    :goto_24
+    :goto_0
     monitor-exit p0
-    :try_end_25
-    .catchall {:try_start_14 .. :try_end_25} :catchall_1c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method
 
 .method public final declared-synchronized readInt()I
-    .registers 8
+    .locals 7
 
     .line 1
     const-string v0, "Invalid byte order: "
@@ -907,7 +907,7 @@
     monitor-enter p0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget v1, p0, Llibs/ml0;->Mu:I
 
     .line 5
@@ -924,7 +924,7 @@
 
     .line 11
     .line 12
-    if-gt v1, v2, :cond_67
+    if-gt v1, v2, :cond_3
 
     .line 13
     .line 14
@@ -986,7 +986,7 @@
     or-int/2addr v5, v4
 
     .line 42
-    if-ltz v5, :cond_61
+    if-ltz v5, :cond_2
 
     .line 43
     .line 44
@@ -995,12 +995,12 @@
     .line 45
     .line 46
     sget-object v6, Llibs/ml0;->Nu:Ljava/nio/ByteOrder;
-    :try_end_2f
-    .catchall {:try_start_3 .. :try_end_2f} :catchall_5f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 47
     .line 48
-    if-ne v5, v6, :cond_3c
+    if-ne v5, v6, :cond_0
 
     .line 49
     .line 50
@@ -1031,15 +1031,15 @@
     return v0
 
     .line 61
-    :cond_3c
-    :try_start_3c
+    :cond_0
+    :try_start_1
     sget-object v6, Llibs/ml0;->Xi:Ljava/nio/ByteOrder;
-    :try_end_3e
-    .catchall {:try_start_3c .. :try_end_3e} :catchall_5f
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 62
     .line 63
-    if-ne v5, v6, :cond_4b
+    if-ne v5, v6, :cond_1
 
     .line 64
     .line 65
@@ -1070,8 +1070,8 @@
     return v0
 
     .line 76
-    :cond_4b
-    :try_start_4b
+    :cond_1
+    :try_start_2
     new-instance v1, Ljava/io/IOException;
 
     .line 77
@@ -1110,14 +1110,14 @@
     throw v1
 
     .line 96
-    :catchall_5f
+    :catchall_0
     move-exception v0
 
     .line 97
-    goto :goto_6d
+    goto :goto_0
 
     .line 98
-    :cond_61
+    :cond_2
     new-instance v0, Ljava/io/EOFException;
 
     .line 99
@@ -1130,7 +1130,7 @@
     throw v0
 
     .line 104
-    :cond_67
+    :cond_3
     new-instance v0, Ljava/io/EOFException;
 
     .line 105
@@ -1143,17 +1143,17 @@
     throw v0
 
     .line 110
-    :goto_6d
+    :goto_0
     monitor-exit p0
-    :try_end_6e
-    .catchall {:try_start_4b .. :try_end_6e} :catchall_5f
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 111
     throw v0
 .end method
 
 .method public final readLine()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -1163,7 +1163,7 @@
 .end method
 
 .method public final declared-synchronized readLong()J
-    .registers 21
+    .locals 20
 
     .line 1
     move-object/from16 v1, p0
@@ -1177,7 +1177,7 @@
     monitor-enter p0
 
     .line 6
-    :try_start_5
+    :try_start_0
     iget v2, v1, Llibs/ml0;->Mu:I
 
     .line 7
@@ -1197,7 +1197,7 @@
 
     .line 14
     .line 15
-    if-gt v2, v4, :cond_bc
+    if-gt v2, v4, :cond_3
 
     .line 16
     .line 17
@@ -1319,7 +1319,7 @@
     or-int/2addr v11, v10
 
     .line 73
-    if-ltz v11, :cond_b6
+    if-ltz v11, :cond_2
 
     .line 74
     .line 75
@@ -1328,8 +1328,8 @@
     .line 76
     .line 77
     sget-object v12, Llibs/ml0;->Nu:Ljava/nio/ByteOrder;
-    :try_end_4e
-    .catchall {:try_start_5 .. :try_end_4e} :catchall_b4
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 78
     .line 79
@@ -1349,7 +1349,7 @@
 
     .line 86
     .line 87
-    if-ne v11, v12, :cond_79
+    if-ne v11, v12, :cond_0
 
     .line 88
     .line 89
@@ -1438,7 +1438,7 @@
     return-wide v10
 
     .line 122
-    :cond_79
+    :cond_0
     const/16 v12, 0x10
 
     .line 123
@@ -1447,14 +1447,14 @@
 
     .line 125
     .line 126
-    :try_start_7d
+    :try_start_1
     sget-object v13, Llibs/ml0;->Xi:Ljava/nio/ByteOrder;
-    :try_end_7f
-    .catchall {:try_start_7d .. :try_end_7f} :catchall_b4
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 127
     .line 128
-    if-ne v11, v13, :cond_a0
+    if-ne v11, v13, :cond_1
 
     .line 129
     .line 130
@@ -1539,8 +1539,8 @@
     return-wide v13
 
     .line 161
-    :cond_a0
-    :try_start_a0
+    :cond_1
+    :try_start_2
     new-instance v2, Ljava/io/IOException;
 
     .line 162
@@ -1579,14 +1579,14 @@
     throw v2
 
     .line 181
-    :catchall_b4
+    :catchall_0
     move-exception v0
 
     .line 182
-    goto :goto_c2
+    goto :goto_0
 
     .line 183
-    :cond_b6
+    :cond_2
     new-instance v0, Ljava/io/EOFException;
 
     .line 184
@@ -1599,7 +1599,7 @@
     throw v0
 
     .line 189
-    :cond_bc
+    :cond_3
     new-instance v0, Ljava/io/EOFException;
 
     .line 190
@@ -1612,17 +1612,17 @@
     throw v0
 
     .line 195
-    :goto_c2
+    :goto_0
     monitor-exit p0
-    :try_end_c3
-    .catchall {:try_start_a0 .. :try_end_c3} :catchall_b4
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 196
     throw v0
 .end method
 
 .method public final declared-synchronized readShort()S
-    .registers 6
+    .locals 5
 
     .line 1
     const-string v0, "Invalid byte order: "
@@ -1632,7 +1632,7 @@
     monitor-enter p0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget v1, p0, Llibs/ml0;->Mu:I
 
     .line 5
@@ -1649,7 +1649,7 @@
 
     .line 11
     .line 12
-    if-gt v1, v2, :cond_4f
+    if-gt v1, v2, :cond_3
 
     .line 13
     .line 14
@@ -1681,7 +1681,7 @@
 
     .line 27
     .line 28
-    if-ltz v3, :cond_49
+    if-ltz v3, :cond_2
 
     .line 29
     .line 30
@@ -1690,12 +1690,12 @@
     .line 31
     .line 32
     sget-object v4, Llibs/ml0;->Nu:Ljava/nio/ByteOrder;
-    :try_end_21
-    .catchall {:try_start_3 .. :try_end_21} :catchall_47
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 33
     .line 34
-    if-ne v3, v4, :cond_29
+    if-ne v3, v4, :cond_0
 
     .line 35
     .line 36
@@ -1715,15 +1715,15 @@
     return v0
 
     .line 42
-    :cond_29
-    :try_start_29
+    :cond_0
+    :try_start_1
     sget-object v4, Llibs/ml0;->Xi:Ljava/nio/ByteOrder;
-    :try_end_2b
-    .catchall {:try_start_29 .. :try_end_2b} :catchall_47
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 43
     .line 44
-    if-ne v3, v4, :cond_33
+    if-ne v3, v4, :cond_1
 
     .line 45
     .line 46
@@ -1743,8 +1743,8 @@
     return v0
 
     .line 52
-    :cond_33
-    :try_start_33
+    :cond_1
+    :try_start_2
     new-instance v1, Ljava/io/IOException;
 
     .line 53
@@ -1783,14 +1783,14 @@
     throw v1
 
     .line 72
-    :catchall_47
+    :catchall_0
     move-exception v0
 
     .line 73
-    goto :goto_55
+    goto :goto_0
 
     .line 74
-    :cond_49
+    :cond_2
     new-instance v0, Ljava/io/EOFException;
 
     .line 75
@@ -1803,7 +1803,7 @@
     throw v0
 
     .line 80
-    :cond_4f
+    :cond_3
     new-instance v0, Ljava/io/EOFException;
 
     .line 81
@@ -1816,23 +1816,23 @@
     throw v0
 
     .line 86
-    :goto_55
+    :goto_0
     monitor-exit p0
-    :try_end_56
-    .catchall {:try_start_33 .. :try_end_56} :catchall_47
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 87
     throw v0
 .end method
 
 .method public final declared-synchronized readUTF()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget v0, p0, Llibs/ml0;->Mu:I
 
     .line 3
@@ -1855,8 +1855,8 @@
     .line 12
     .line 13
     move-result-object v0
-    :try_end_d
-    .catchall {:try_start_1 .. :try_end_d} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 14
     monitor-exit p0
@@ -1865,27 +1865,27 @@
     return-object v0
 
     .line 16
-    :catchall_f
+    :catchall_0
     move-exception v0
 
     .line 17
-    :try_start_10
+    :try_start_1
     monitor-exit p0
-    :try_end_11
-    .catchall {:try_start_10 .. :try_end_11} :catchall_f
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 18
     throw v0
 .end method
 
 .method public final declared-synchronized readUnsignedByte()I
-    .registers 2
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget v0, p0, Llibs/ml0;->Mu:I
 
     .line 3
@@ -1908,8 +1908,8 @@
     .line 12
     .line 13
     move-result v0
-    :try_end_d
-    .catchall {:try_start_1 .. :try_end_d} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 14
     monitor-exit p0
@@ -1918,21 +1918,21 @@
     return v0
 
     .line 16
-    :catchall_f
+    :catchall_0
     move-exception v0
 
     .line 17
-    :try_start_10
+    :try_start_1
     monitor-exit p0
-    :try_end_11
-    .catchall {:try_start_10 .. :try_end_11} :catchall_f
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 18
     throw v0
 .end method
 
 .method public final declared-synchronized readUnsignedShort()I
-    .registers 6
+    .locals 5
 
     .line 1
     const-string v0, "Invalid byte order: "
@@ -1942,7 +1942,7 @@
     monitor-enter p0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget v1, p0, Llibs/ml0;->Mu:I
 
     .line 5
@@ -1959,7 +1959,7 @@
 
     .line 11
     .line 12
-    if-gt v1, v2, :cond_4d
+    if-gt v1, v2, :cond_3
 
     .line 13
     .line 14
@@ -1991,7 +1991,7 @@
 
     .line 27
     .line 28
-    if-ltz v3, :cond_47
+    if-ltz v3, :cond_2
 
     .line 29
     .line 30
@@ -2000,12 +2000,12 @@
     .line 31
     .line 32
     sget-object v4, Llibs/ml0;->Nu:Ljava/nio/ByteOrder;
-    :try_end_21
-    .catchall {:try_start_3 .. :try_end_21} :catchall_45
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 33
     .line 34
-    if-ne v3, v4, :cond_28
+    if-ne v3, v4, :cond_0
 
     .line 35
     .line 36
@@ -2022,15 +2022,15 @@
     return v0
 
     .line 41
-    :cond_28
-    :try_start_28
+    :cond_0
+    :try_start_1
     sget-object v4, Llibs/ml0;->Xi:Ljava/nio/ByteOrder;
-    :try_end_2a
-    .catchall {:try_start_28 .. :try_end_2a} :catchall_45
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 42
     .line 43
-    if-ne v3, v4, :cond_31
+    if-ne v3, v4, :cond_1
 
     .line 44
     .line 45
@@ -2047,8 +2047,8 @@
     return v0
 
     .line 50
-    :cond_31
-    :try_start_31
+    :cond_1
+    :try_start_2
     new-instance v1, Ljava/io/IOException;
 
     .line 51
@@ -2087,14 +2087,14 @@
     throw v1
 
     .line 70
-    :catchall_45
+    :catchall_0
     move-exception v0
 
     .line 71
-    goto :goto_53
+    goto :goto_0
 
     .line 72
-    :cond_47
+    :cond_2
     new-instance v0, Ljava/io/EOFException;
 
     .line 73
@@ -2107,7 +2107,7 @@
     throw v0
 
     .line 78
-    :cond_4d
+    :cond_3
     new-instance v0, Ljava/io/EOFException;
 
     .line 79
@@ -2120,23 +2120,23 @@
     throw v0
 
     .line 84
-    :goto_53
+    :goto_0
     monitor-exit p0
-    :try_end_54
-    .catchall {:try_start_31 .. :try_end_54} :catchall_45
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 85
     throw v0
 .end method
 
 .method public final declared-synchronized skipBytes(I)I
-    .registers 5
+    .locals 3
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget v0, p0, Llibs/ml0;->Lambda:I
 
     .line 3
@@ -2159,8 +2159,8 @@
     const/4 v0, 0x0
 
     .line 12
-    :goto_b
-    if-ge v0, p1, :cond_1b
+    :goto_0
+    if-ge v0, p1, :cond_0
 
     .line 13
     .line 14
@@ -2180,24 +2180,24 @@
     move-result v1
 
     .line 22
-    if-lez v1, :cond_1b
+    if-lez v1, :cond_0
 
     .line 23
     .line 24
     add-int/2addr v0, v1
 
     .line 25
-    goto :goto_b
+    goto :goto_0
 
     .line 26
-    :catchall_19
+    :catchall_0
     move-exception p1
 
     .line 27
-    goto :goto_22
+    goto :goto_1
 
     .line 28
-    :cond_1b
+    :cond_0
     iget p1, p0, Llibs/ml0;->Mu:I
 
     .line 29
@@ -2206,8 +2206,8 @@
 
     .line 31
     iput p1, p0, Llibs/ml0;->Mu:I
-    :try_end_20
-    .catchall {:try_start_1 .. :try_end_20} :catchall_19
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 32
     .line 33
@@ -2217,20 +2217,20 @@
     return v0
 
     .line 35
-    :goto_22
-    :try_start_22
+    :goto_1
+    :try_start_1
     monitor-exit p0
-    :try_end_23
-    .catchall {:try_start_22 .. :try_end_23} :catchall_19
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 36
-    goto :goto_25
+    goto :goto_3
 
     .line 37
-    :goto_24
+    :goto_2
     throw p1
 
     .line 38
-    :goto_25
-    goto :goto_24
+    :goto_3
+    goto :goto_2
 .end method

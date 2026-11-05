@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     sget-object v0, Lorg/conscrypt/OpenSSLCipher$Mode;->ECB:Lorg/conscrypt/OpenSSLCipher$Mode;
@@ -27,21 +27,21 @@
 
 # virtual methods
 .method public checkSupportedKeySize(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public checkSupportedMode(Lorg/conscrypt/OpenSSLCipher$Mode;)V
-    .registers 5
+    .locals 3
 
     .line 1
     sget-object v0, Lorg/conscrypt/OpenSSLCipher$Mode;->NONE:Lorg/conscrypt/OpenSSLCipher$Mode;
 
     .line 2
     .line 3
-    if-eq p1, v0, :cond_21
+    if-eq p1, v0, :cond_1
 
     .line 4
     .line 5
@@ -49,14 +49,14 @@
 
     .line 6
     .line 7
-    if-ne p1, v0, :cond_9
+    if-ne p1, v0, :cond_0
 
     .line 8
     .line 9
-    goto :goto_21
+    goto :goto_0
 
     .line 10
-    :cond_9
+    :cond_0
     new-instance v0, Ljava/security/NoSuchAlgorithmException;
 
     .line 11
@@ -103,27 +103,27 @@
     throw v0
 
     .line 34
-    :cond_21
-    :goto_21
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public checkSupportedPadding(Lorg/conscrypt/OpenSSLCipher$Padding;)V
-    .registers 5
+    .locals 3
 
     .line 1
     sget-object v0, Lorg/conscrypt/OpenSSLCipher$Padding;->NOPADDING:Lorg/conscrypt/OpenSSLCipher$Padding;
 
     .line 2
     .line 3
-    if-ne p1, v0, :cond_5
+    if-ne p1, v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     new-instance v0, Ljavax/crypto/NoSuchPaddingException;
 
     .line 7
@@ -171,7 +171,7 @@
 .end method
 
 .method public getBaseCipherName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "ARCFOUR"
@@ -182,7 +182,7 @@
 .end method
 
 .method public getCipherBlockSize()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -192,7 +192,7 @@
 .end method
 
 .method public getCipherName(ILorg/conscrypt/OpenSSLCipher$Mode;)Ljava/lang/String;
-    .registers 3
+    .locals 0
 
     .line 1
     const-string p1, "rc4"
@@ -203,7 +203,7 @@
 .end method
 
 .method public supportsVariableSizeKey()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1

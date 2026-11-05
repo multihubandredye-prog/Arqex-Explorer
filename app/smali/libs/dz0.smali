@@ -12,7 +12,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/dz0;
@@ -32,7 +32,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,14 +46,14 @@
 
 # virtual methods
 .method public final b(Llibs/Eta;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1
     iget-byte p1, p1, Llibs/Eta;->X:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_c
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -61,10 +61,10 @@
     move-object p1, p0
 
     .line 7
-    goto :goto_b
+    goto :goto_0
 
     .line 8
-    :pswitch_7
+    :pswitch_0
     invoke-static {p0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
     .line 9
@@ -73,18 +73,18 @@
     move-result-object p1
 
     .line 12
-    :goto_b
+    :goto_0
     return-object p1
 
     .line 13
-    :pswitch_data_c
+    :pswitch_data_0
     .packed-switch 0xf
-        :pswitch_7
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final c(Llibs/kz0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void

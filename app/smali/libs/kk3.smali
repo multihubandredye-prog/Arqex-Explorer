@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/bn1;
@@ -45,7 +45,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -72,7 +72,7 @@
 
 # virtual methods
 .method public final a(Llibs/f9;)Llibs/g9;
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/kk3;->a:Ljava/util/ArrayList;
@@ -90,8 +90,8 @@
     const/4 v2, 0x0
 
     .line 8
-    :cond_7
-    if-ge v2, v1, :cond_16
+    :cond_0
+    if-ge v2, v1, :cond_1
 
     .line 9
     .line 10
@@ -115,14 +115,14 @@
 
     .line 19
     .line 20
-    if-ne v4, p1, :cond_7
+    if-ne v4, p1, :cond_0
 
     .line 21
     .line 22
     return-object v3
 
     .line 23
-    :cond_16
+    :cond_1
     const/4 p1, 0x0
 
     .line 24
@@ -130,7 +130,7 @@
 .end method
 
 .method public final b(Llibs/f9;)Z
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/kk3;->a:Ljava/util/ArrayList;
@@ -151,8 +151,8 @@
     const/4 v3, 0x0
 
     .line 9
-    :cond_8
-    if-ge v3, v1, :cond_18
+    :cond_0
+    if-ge v3, v1, :cond_1
 
     .line 10
     .line 11
@@ -176,7 +176,7 @@
 
     .line 20
     .line 21
-    if-ne v4, p1, :cond_8
+    if-ne v4, p1, :cond_0
 
     .line 22
     .line 23
@@ -186,12 +186,12 @@
     return p1
 
     .line 25
-    :cond_18
+    :cond_1
     return v2
 .end method
 
 .method public final c(Llibs/g9;)V
-    .registers 8
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/kk3;->a:Ljava/util/ArrayList;
@@ -209,8 +209,8 @@
     const/4 v2, 0x0
 
     .line 8
-    :cond_7
-    if-ge v2, v1, :cond_1c
+    :cond_0
+    if-ge v2, v1, :cond_1
 
     .line 9
     .line 10
@@ -238,7 +238,7 @@
 
     .line 21
     .line 22
-    if-ne v4, v5, :cond_7
+    if-ne v4, v5, :cond_0
 
     .line 23
     .line 24
@@ -251,7 +251,7 @@
     .line 27
     .line 28
     .line 29
-    :cond_1c
+    :cond_1
     iget-object v0, p0, Llibs/kk3;->a:Ljava/util/ArrayList;
 
     .line 30
@@ -265,7 +265,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

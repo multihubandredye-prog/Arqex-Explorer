@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/al;Llibs/xt1;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/gk;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 11
+    .locals 10
 
     .line 1
     iget-byte v0, p0, Llibs/gk;->X:B
@@ -55,7 +55,7 @@
     const/4 v2, 0x1
 
     .line 5
-    packed-switch v0, :pswitch_data_c2
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -97,7 +97,7 @@
 
     .line 26
     .line 27
-    if-eqz v1, :cond_2b
+    if-eqz v1, :cond_1
 
     .line 28
     .line 29
@@ -113,7 +113,7 @@
 
     .line 34
     .line 35
-    if-nez v1, :cond_27
+    if-nez v1, :cond_0
 
     .line 36
     .line 37
@@ -122,26 +122,26 @@
     .line 38
     .line 39
     .line 40
-    :cond_27
+    :cond_0
     invoke-virtual {v0}, Llibs/al;->View()V
 
     .line 41
     .line 42
     .line 43
-    goto :goto_2e
+    goto :goto_0
 
     .line 44
-    :cond_2b
+    :cond_1
     invoke-virtual {v0, v2}, Llibs/al;->j(Z)V
 
     .line 45
     .line 46
     .line 47
-    :goto_2e
+    :goto_0
     return-void
 
     .line 48
-    :pswitch_2f
+    :pswitch_0
     iget-object v0, p0, Llibs/gk;->Y:Llibs/al;
 
     .line 49
@@ -162,7 +162,7 @@
 
     .line 57
     .line 58
-    if-eqz v4, :cond_41
+    if-eqz v4, :cond_2
 
     .line 59
     .line 60
@@ -175,10 +175,10 @@
     .line 63
     .line 64
     .line 65
-    goto :goto_50
+    goto :goto_1
 
     .line 66
-    :cond_41
+    :cond_2
     invoke-virtual {v3}, Llibs/xt1;->getIAdapter()Llibs/sv0;
 
     .line 67
@@ -191,7 +191,7 @@
 
     .line 71
     .line 72
-    if-eqz v0, :cond_50
+    if-eqz v0, :cond_3
 
     .line 73
     .line 74
@@ -208,8 +208,8 @@
     .line 79
     .line 80
     .line 81
-    :cond_50
-    :goto_50
+    :cond_3
+    :goto_1
     invoke-virtual {v3, v1}, Llibs/xt1;->Raw(Z)V
 
     .line 82
@@ -223,14 +223,14 @@
     move-result v0
 
     .line 88
-    if-nez v0, :cond_5a
+    if-nez v0, :cond_4
 
     .line 89
     .line 90
     const/4 v1, 0x1
 
     .line 91
-    :cond_5a
+    :cond_4
     invoke-virtual {v3, v1}, Llibs/xt1;->Old(Z)V
 
     .line 92
@@ -239,7 +239,7 @@
     return-void
 
     .line 95
-    :pswitch_5e
+    :pswitch_1
     iget-object v0, p0, Llibs/gk;->Y:Llibs/al;
 
     .line 96
@@ -271,8 +271,8 @@
     array-length v5, v4
 
     .line 110
-    :goto_6d
-    if-ge v1, v5, :cond_b5
+    :goto_2
+    if-ge v1, v5, :cond_6
 
     .line 111
     .line 112
@@ -304,7 +304,7 @@
     move-result v7
 
     .line 126
-    if-nez v7, :cond_99
+    if-nez v7, :cond_5
 
     .line 127
     .line 128
@@ -323,7 +323,7 @@
     monitor-enter v8
 
     .line 135
-    :try_start_86
+    :try_start_0
     iget-object v7, v7, Llibs/sv0;->e:Ljava/util/HashMap;
 
     .line 136
@@ -334,8 +334,8 @@
     .line 139
     .line 140
     monitor-exit v8
-    :try_end_8c
-    .catchall {:try_start_86 .. :try_end_8c} :catchall_96
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 141
     invoke-virtual {v6}, Llibs/xt1;->getIAdapter()Llibs/sv0;
@@ -357,24 +357,24 @@
     .line 148
     .line 149
     .line 150
-    goto :goto_99
+    goto :goto_3
 
     .line 151
-    :catchall_96
+    :catchall_0
     move-exception v0
 
     .line 152
-    :try_start_97
+    :try_start_1
     monitor-exit v8
-    :try_end_98
-    .catchall {:try_start_97 .. :try_end_98} :catchall_96
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 153
     throw v0
 
     .line 154
-    :cond_99
-    :goto_99
+    :cond_5
+    :goto_3
     iget-object v7, v0, Llibs/al;->a:Llibs/r31;
 
     .line 155
@@ -426,10 +426,10 @@
 
     .line 180
     .line 181
-    goto :goto_6d
+    goto :goto_2
 
     .line 182
-    :cond_b5
+    :cond_6
     iget-object v1, v0, Llibs/al;->y:Landroid/os/Handler;
 
     .line 183
@@ -457,9 +457,9 @@
     nop
 
     .line 195
-    :pswitch_data_c2
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_5e
-        :pswitch_2f
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

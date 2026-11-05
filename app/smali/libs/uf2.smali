@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/PrintDialogActivity;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/uf2;->a:Lcom/mixplorer/activities/PrintDialogActivity;
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 1
     const-string v0, "https://www.google.com/cloudprint/dialog.html"
@@ -42,7 +42,7 @@
     move-result p2
 
     .line 7
-    if-eqz p2, :cond_12
+    if-eqz p2, :cond_0
 
     .line 8
     .line 9
@@ -64,12 +64,12 @@
     .line 17
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     return-void
 .end method
 
 .method public final shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
-    .registers 6
+    .locals 3
 
     .line 1
     const-string v0, "http://zxing.appspot.com"
@@ -84,7 +84,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_1
 
     .line 8
     .line 9
@@ -114,7 +114,7 @@
     .line 21
     .line 22
     .line 23
-    :try_start_16
+    :try_start_0
     iget-object v1, p0, Llibs/uf2;->a:Lcom/mixplorer/activities/PrintDialogActivity;
 
     .line 24
@@ -127,7 +127,7 @@
     move-result v2
 
     .line 29
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_0
 
     .line 30
     .line 31
@@ -136,38 +136,38 @@
     .line 32
     .line 33
     .line 34
-    :cond_21
+    :cond_0
     const v2, 0x100cf
 
     .line 35
     .line 36
     .line 37
     invoke-static {v1, v0, v2}, Llibs/sw1;->Item(Landroid/app/Activity;Landroid/content/Intent;I)V
-    :try_end_27
-    .catch Landroid/content/ActivityNotFoundException; {:try_start_16 .. :try_end_27} :catch_28
+    :try_end_0
+    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 38
     .line 39
     .line 40
-    goto :goto_2f
+    goto :goto_0
 
     .line 41
-    :catch_28
+    :catch_0
     invoke-virtual {p1, p2}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
 
     .line 42
     .line 43
     .line 44
-    goto :goto_2f
+    goto :goto_0
 
     .line 45
-    :cond_2c
+    :cond_1
     invoke-virtual {p1, p2}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
 
     .line 46
     .line 47
     .line 48
-    :goto_2f
+    :goto_0
     const/4 p1, 0x0
 
     .line 49

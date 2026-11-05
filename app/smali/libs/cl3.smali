@@ -24,7 +24,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/widgets/MiEditor;Landroid/text/Spannable;IIII[Landroid/text/style/CharacterStyle;)V
-    .registers 8
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 11
+    .locals 10
 
     .line 1
     iget-object v0, p0, Llibs/cl3;->Y:Landroid/text/Spannable;
@@ -118,18 +118,18 @@
     .line 24
     .line 25
     .line 26
-    if-ltz v1, :cond_34
+    if-ltz v1, :cond_2
 
     .line 27
     .line 28
-    if-ge v2, v1, :cond_1e
+    if-ge v2, v1, :cond_0
 
     .line 29
     .line 30
-    goto :goto_34
+    goto :goto_1
 
     .line 31
-    :cond_1e
+    :cond_0
     const/4 v4, 0x1
 
     .line 32
@@ -150,8 +150,8 @@
     const/4 v7, 0x0
 
     .line 39
-    :goto_26
-    if-ge v7, v5, :cond_32
+    :goto_0
+    if-ge v7, v5, :cond_1
 
     .line 40
     .line 41
@@ -163,28 +163,28 @@
 
     .line 44
     .line 45
-    :try_start_2c
+    :try_start_0
     invoke-interface {v0, v8, v1, v2, v9}, Landroid/text/Spannable;->setSpan(Ljava/lang/Object;III)V
-    :try_end_2f
-    .catchall {:try_start_2c .. :try_end_2f} :catchall_2f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 46
     .line 47
     .line 48
-    :catchall_2f
+    :catchall_0
     add-int/lit8 v7, v7, 0x1
 
     .line 49
     .line 50
-    goto :goto_26
+    goto :goto_0
 
     .line 51
-    :cond_32
+    :cond_1
     iput-boolean v6, v3, Lcom/mixplorer/widgets/MiEditText;->Mu:Z
 
     .line 52
     .line 53
-    :cond_34
-    :goto_34
+    :cond_2
+    :goto_1
     return-void
 .end method

@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     const-string v0, "PBKDF-OpenSSL"
@@ -26,7 +26,7 @@
 
 # virtual methods
 .method public final engineGenerateSecret(Ljava/security/spec/KeySpec;)Ljavax/crypto/SecretKey;
-    .registers 13
+    .locals 11
 
     .line 1
     instance-of v0, p1, Ljavax/crypto/spec/PBEKeySpec;
@@ -36,7 +36,7 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_b6
+    if-eqz v0, :cond_7
 
     .line 5
     .line 6
@@ -52,7 +52,7 @@
     move-result-object v0
 
     .line 12
-    if-eqz v0, :cond_b0
+    if-eqz v0, :cond_6
 
     .line 13
     .line 14
@@ -64,7 +64,7 @@
     move-result v0
 
     .line 18
-    if-lez v0, :cond_98
+    if-lez v0, :cond_5
 
     .line 19
     .line 20
@@ -76,7 +76,7 @@
     move-result v0
 
     .line 24
-    if-lez v0, :cond_80
+    if-lez v0, :cond_4
 
     .line 25
     .line 26
@@ -91,7 +91,7 @@
     array-length v0, v0
 
     .line 31
-    if-eqz v0, :cond_7a
+    if-eqz v0, :cond_3
 
     .line 32
     .line 33
@@ -129,8 +129,8 @@
     const/4 v5, 0x0
 
     .line 49
-    :goto_30
-    if-eq v5, v2, :cond_3a
+    :goto_0
+    if-eq v5, v2, :cond_0
 
     .line 50
     .line 51
@@ -149,10 +149,10 @@
 
     .line 57
     .line 58
-    goto :goto_30
+    goto :goto_0
 
     .line 59
-    :cond_3a
+    :cond_0
     invoke-virtual {p1}, Ljavax/crypto/spec/PBEKeySpec;->getSalt()[B
 
     .line 60
@@ -195,7 +195,7 @@
     const/4 v9, 0x0
 
     .line 79
-    :goto_4e
+    :goto_1
     array-length v10, v3
 
     .line 80
@@ -217,7 +217,7 @@
     .line 88
     .line 89
     .line 90
-    if-le v1, v6, :cond_5e
+    if-le v1, v6, :cond_1
 
     .line 91
     .line 92
@@ -225,14 +225,14 @@
 
     .line 93
     .line 94
-    goto :goto_5f
+    goto :goto_2
 
     .line 95
-    :cond_5e
+    :cond_1
     move v10, v1
 
     .line 96
-    :goto_5f
+    :goto_2
     invoke-static {v7, v4, v8, v9, v10}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 97
@@ -244,7 +244,7 @@
     sub-int/2addr v1, v10
 
     .line 101
-    if-nez v1, :cond_73
+    if-nez v1, :cond_2
 
     .line 102
     .line 103
@@ -273,7 +273,7 @@
     return-object v5
 
     .line 116
-    :cond_73
+    :cond_2
     invoke-virtual {v0}, Llibs/mo1;->reset()V
 
     .line 117
@@ -284,10 +284,10 @@
     .line 120
     .line 121
     .line 122
-    goto :goto_4e
+    goto :goto_1
 
     .line 123
-    :cond_7a
+    :cond_3
     const-string p1, "password empty"
 
     .line 124
@@ -300,7 +300,7 @@
     return-object v1
 
     .line 129
-    :cond_80
+    :cond_4
     new-instance v0, Ljava/security/spec/InvalidKeySpecException;
 
     .line 130
@@ -347,7 +347,7 @@
     throw v0
 
     .line 153
-    :cond_98
+    :cond_5
     new-instance v0, Ljava/security/spec/InvalidKeySpecException;
 
     .line 154
@@ -394,7 +394,7 @@
     throw v0
 
     .line 177
-    :cond_b0
+    :cond_6
     const-string p1, "missing required salt"
 
     .line 178
@@ -407,7 +407,7 @@
     return-object v1
 
     .line 183
-    :cond_b6
+    :cond_7
     const-string p1, "Invalid KeySpec"
 
     .line 184

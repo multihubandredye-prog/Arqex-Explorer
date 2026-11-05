@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/ga1;ILlibs/rp0;)V
-    .registers 5
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -49,7 +49,7 @@
 .end method
 
 .method public synthetic constructor <init>(Llibs/ga1;Llibs/rp0;I)V
-    .registers 5
+    .locals 1
 
     .line 14
     const/4 v0, 0x1
@@ -70,7 +70,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 7
+    .locals 6
 
     .line 1
     iget-byte v0, p0, Llibs/u91;->X:B
@@ -89,7 +89,7 @@
 
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_48
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
@@ -102,11 +102,11 @@
     move-result-object v0
 
     .line 16
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_0
 
     .line 17
     .line 18
-    if-eq v0, v2, :cond_24
+    if-eq v0, v2, :cond_0
 
     .line 19
     .line 20
@@ -141,16 +141,16 @@
     .line 35
     .line 36
     .line 37
-    :cond_24
+    :cond_0
     return-void
 
     .line 38
-    :pswitch_25
+    :pswitch_0
     iget v0, v3, Llibs/ga1;->o0:I
 
     .line 39
     .line 40
-    if-ne v0, v1, :cond_2b
+    if-ne v0, v1, :cond_1
 
     .line 41
     .line 42
@@ -158,7 +158,7 @@
 
     .line 43
     .line 44
-    :cond_2b
+    :cond_1
     iget-object v0, v3, Llibs/ga1;->Six:Lcom/mixplorer/widgets/MiViewPager;
 
     .line 45
@@ -197,7 +197,7 @@
     move-result-object v0
 
     .line 64
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_2
 
     .line 65
     .line 66
@@ -210,15 +210,15 @@
     .line 69
     .line 70
     .line 71
-    :cond_46
+    :cond_2
     return-void
 
     .line 72
     nop
 
     .line 73
-    :pswitch_data_48
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_25
+        :pswitch_0
     .end packed-switch
 .end method

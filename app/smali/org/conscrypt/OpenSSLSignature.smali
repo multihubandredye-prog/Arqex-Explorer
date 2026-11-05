@@ -21,7 +21,7 @@
 
 # direct methods
 .method private constructor <init>(JLorg/conscrypt/OpenSSLSignature$EngineType;)V
-    .registers 5
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/security/SignatureSpi;-><init>()V
@@ -52,7 +52,7 @@
 .end method
 
 .method public synthetic constructor <init>(JLorg/conscrypt/OpenSSLSignature$EngineType;I)V
-    .registers 5
+    .locals 0
 
     .line 14
     invoke-direct {p0, p1, p2, p3}, Lorg/conscrypt/OpenSSLSignature;-><init>(JLorg/conscrypt/OpenSSLSignature$EngineType;)V
@@ -61,7 +61,7 @@
 .end method
 
 .method private checkEngineType(Lorg/conscrypt/OpenSSLKey;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-virtual {p1}, Lorg/conscrypt/OpenSSLKey;->getNativeRef()Lorg/conscrypt/NativeRef$EVP_PKEY;
@@ -96,14 +96,14 @@
 
     .line 16
     .line 17
-    if-eqz v0, :cond_49
+    if-eqz v0, :cond_2
 
     .line 18
     .line 19
     const/4 v2, 0x1
 
     .line 20
-    if-ne v0, v2, :cond_33
+    if-ne v0, v2, :cond_1
 
     .line 21
     .line 22
@@ -111,14 +111,14 @@
 
     .line 23
     .line 24
-    if-ne p1, v0, :cond_1a
+    if-ne p1, v0, :cond_0
 
     .line 25
     .line 26
-    goto :goto_4c
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_0
     new-instance p1, Ljava/security/InvalidKeyException;
 
     .line 28
@@ -166,7 +166,7 @@
     throw p1
 
     .line 52
-    :cond_33
+    :cond_1
     new-instance p1, Ljava/security/InvalidKeyException;
 
     .line 53
@@ -209,19 +209,19 @@
     throw p1
 
     .line 74
-    :cond_49
+    :cond_2
     const/4 v0, 0x6
 
     .line 75
-    if-ne p1, v0, :cond_4d
+    if-ne p1, v0, :cond_3
 
     .line 76
     .line 77
-    :goto_4c
+    :goto_0
     return-void
 
     .line 78
-    :cond_4d
+    :cond_3
     new-instance p1, Ljava/security/InvalidKeyException;
 
     .line 79
@@ -270,7 +270,7 @@
 .end method
 
 .method private initInternal(Lorg/conscrypt/OpenSSLKey;Z)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Lorg/conscrypt/OpenSSLSignature;->checkEngineType(Lorg/conscrypt/OpenSSLKey;)V
@@ -286,10 +286,10 @@
 
     .line 7
     .line 8
-    :try_start_7
+    :try_start_0
     invoke-direct {p0}, Lorg/conscrypt/OpenSSLSignature;->resetContext()V
-    :try_end_a
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_7 .. :try_end_a} :catch_b
+    :try_end_0
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 9
     .line 10
@@ -297,7 +297,7 @@
     return-void
 
     .line 12
-    :catch_b
+    :catch_0
     move-exception p1
 
     .line 13
@@ -314,7 +314,7 @@
 .end method
 
 .method private resetContext()V
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Lorg/conscrypt/NativeRef$EVP_MD_CTX;
@@ -342,7 +342,7 @@
 
     .line 13
     .line 14
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_0
 
     .line 15
     .line 16
@@ -370,10 +370,10 @@
 
     .line 27
     .line 28
-    goto :goto_28
+    goto :goto_0
 
     .line 29
-    :cond_1c
+    :cond_0
     iget-object v1, p0, Lorg/conscrypt/OpenSSLSignature;->key:Lorg/conscrypt/OpenSSLKey;
 
     .line 30
@@ -398,7 +398,7 @@
 
     .line 40
     .line 41
-    :goto_28
+    :goto_0
     invoke-virtual {p0, v1, v2}, Lorg/conscrypt/OpenSSLSignature;->configureEVP_PKEY_CTX(J)V
 
     .line 42
@@ -414,14 +414,14 @@
 
 # virtual methods
 .method public configureEVP_PKEY_CTX(J)V
-    .registers 3
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public engineGetParameter(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -433,7 +433,7 @@
 .end method
 
 .method public engineInitSign(Ljava/security/PrivateKey;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-static {p1}, Lorg/conscrypt/OpenSSLKey;->fromPrivateKey(Ljava/security/PrivateKey;)Lorg/conscrypt/OpenSSLKey;
@@ -456,7 +456,7 @@
 .end method
 
 .method public engineInitVerify(Ljava/security/PublicKey;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-static {p1}, Lorg/conscrypt/OpenSSLKey;->fromPublicKey(Ljava/security/PublicKey;)Lorg/conscrypt/OpenSSLKey;
@@ -479,7 +479,7 @@
 .end method
 
 .method public engineSetParameter(Ljava/lang/String;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -488,7 +488,7 @@
 .end method
 
 .method public engineSign()[B
-    .registers 4
+    .locals 3
 
     .line 1
     const-string v0, "Reset of context failed after it was successful once"
@@ -499,22 +499,22 @@
 
     .line 4
     .line 5
-    :try_start_4
+    :try_start_0
     invoke-static {v1}, Lorg/conscrypt/NativeCrypto;->EVP_DigestSignFinal(Lorg/conscrypt/NativeRef$EVP_MD_CTX;)[B
 
     .line 6
     .line 7
     .line 8
     move-result-object v1
-    :try_end_8
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_8} :catch_14
-    .catchall {:try_start_4 .. :try_end_8} :catchall_12
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 9
-    :try_start_8
+    :try_start_1
     invoke-direct {p0}, Lorg/conscrypt/OpenSSLSignature;->resetContext()V
-    :try_end_b
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_8 .. :try_end_b} :catch_c
+    :try_end_1
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 10
     .line 11
@@ -522,7 +522,7 @@
     return-object v1
 
     .line 13
-    :catch_c
+    :catch_0
     new-instance v1, Ljava/lang/AssertionError;
 
     .line 14
@@ -535,18 +535,18 @@
     throw v1
 
     .line 19
-    :catchall_12
+    :catchall_0
     move-exception v1
 
     .line 20
-    goto :goto_1b
+    goto :goto_0
 
     .line 21
-    :catch_14
+    :catch_1
     move-exception v1
 
     .line 22
-    :try_start_15
+    :try_start_2
     new-instance v2, Ljava/security/SignatureException;
 
     .line 23
@@ -557,15 +557,15 @@
     .line 26
     .line 27
     throw v2
-    :try_end_1b
-    .catchall {:try_start_15 .. :try_end_1b} :catchall_12
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 28
-    :goto_1b
-    :try_start_1b
+    :goto_0
+    :try_start_3
     invoke-direct {p0}, Lorg/conscrypt/OpenSSLSignature;->resetContext()V
-    :try_end_1e
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_1b .. :try_end_1e} :catch_1f
+    :try_end_3
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_3 .. :try_end_3} :catch_2
 
     .line 29
     .line 30
@@ -573,7 +573,7 @@
     throw v1
 
     .line 32
-    :catch_1f
+    :catch_2
     new-instance v1, Ljava/lang/AssertionError;
 
     .line 33
@@ -587,7 +587,7 @@
 .end method
 
 .method public engineUpdate(B)V
-    .registers 4
+    .locals 2
 
     .line 80
     iget-object v0, p0, Lorg/conscrypt/OpenSSLSignature;->singleByte:[B
@@ -605,7 +605,7 @@
 .end method
 
 .method public engineUpdate(Ljava/nio/ByteBuffer;)V
-    .registers 8
+    .locals 6
 
     .line 1
     invoke-virtual {p1}, Ljava/nio/Buffer;->hasRemaining()Z
@@ -616,14 +616,14 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
     return-void
 
     .line 8
-    :cond_7
+    :cond_0
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->isDirect()Z
 
     .line 9
@@ -632,7 +632,7 @@
     move-result v0
 
     .line 12
-    if-nez v0, :cond_11
+    if-nez v0, :cond_1
 
     .line 13
     .line 14
@@ -644,7 +644,7 @@
     return-void
 
     .line 18
-    :cond_11
+    :cond_1
     invoke-static {p1}, Lorg/conscrypt/NativeCrypto;->getDirectBufferAddress(Ljava/nio/Buffer;)J
 
     .line 19
@@ -661,7 +661,7 @@
 
     .line 25
     .line 26
-    if-nez v4, :cond_1f
+    if-nez v4, :cond_2
 
     .line 27
     .line 28
@@ -673,7 +673,7 @@
     return-void
 
     .line 32
-    :cond_1f
+    :cond_2
     invoke-virtual {p1}, Ljava/nio/Buffer;->position()I
 
     .line 33
@@ -682,7 +682,7 @@
     move-result v2
 
     .line 36
-    if-ltz v2, :cond_45
+    if-ltz v2, :cond_5
 
     .line 37
     .line 38
@@ -700,7 +700,7 @@
     move-result v3
 
     .line 44
-    if-ltz v3, :cond_3f
+    if-ltz v3, :cond_4
 
     .line 45
     .line 46
@@ -712,7 +712,7 @@
 
     .line 49
     .line 50
-    if-eqz v5, :cond_37
+    if-eqz v5, :cond_3
 
     .line 51
     .line 52
@@ -721,16 +721,16 @@
     .line 53
     .line 54
     .line 55
-    goto :goto_3a
+    goto :goto_0
 
     .line 56
-    :cond_37
+    :cond_3
     invoke-static {v4, v0, v1, v3}, Lorg/conscrypt/NativeCrypto;->EVP_DigestVerifyUpdateDirect(Lorg/conscrypt/NativeRef$EVP_MD_CTX;JI)V
 
     .line 57
     .line 58
     .line 59
-    :goto_3a
+    :goto_0
     add-int/2addr v2, v3
 
     .line 60
@@ -742,7 +742,7 @@
     return-void
 
     .line 64
-    :cond_3f
+    :cond_4
     const-string p1, "Negative remaining amount"
 
     .line 65
@@ -755,7 +755,7 @@
     return-void
 
     .line 70
-    :cond_45
+    :cond_5
     const-string p1, "Negative position"
 
     .line 71
@@ -769,7 +769,7 @@
 .end method
 
 .method public engineUpdate([BII)V
-    .registers 6
+    .locals 2
 
     .line 76
     iget-object v0, p0, Lorg/conscrypt/OpenSSLSignature;->ctx:Lorg/conscrypt/NativeRef$EVP_MD_CTX;
@@ -777,7 +777,7 @@
     .line 77
     iget-boolean v1, p0, Lorg/conscrypt/OpenSSLSignature;->signing:Z
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_0
 
     .line 78
     invoke-static {v0, p1, p2, p3}, Lorg/conscrypt/NativeCrypto;->EVP_DigestSignUpdate(Lorg/conscrypt/NativeRef$EVP_MD_CTX;[BII)V
@@ -785,14 +785,14 @@
     return-void
 
     .line 79
-    :cond_a
+    :cond_0
     invoke-static {v0, p1, p2, p3}, Lorg/conscrypt/NativeCrypto;->EVP_DigestVerifyUpdate(Lorg/conscrypt/NativeRef$EVP_MD_CTX;[BII)V
 
     return-void
 .end method
 
 .method public engineVerify([B)Z
-    .registers 6
+    .locals 4
 
     .line 1
     const-string v0, "Reset of context failed after it was successful once"
@@ -803,7 +803,7 @@
 
     .line 4
     .line 5
-    :try_start_4
+    :try_start_0
     array-length v2, p1
 
     .line 6
@@ -816,15 +816,15 @@
     .line 9
     .line 10
     move-result p1
-    :try_end_a
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_a} :catch_16
-    .catchall {:try_start_4 .. :try_end_a} :catchall_14
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 11
-    :try_start_a
+    :try_start_1
     invoke-direct {p0}, Lorg/conscrypt/OpenSSLSignature;->resetContext()V
-    :try_end_d
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_a .. :try_end_d} :catch_e
+    :try_end_1
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 12
     .line 13
@@ -832,7 +832,7 @@
     return p1
 
     .line 15
-    :catch_e
+    :catch_0
     new-instance p1, Ljava/lang/AssertionError;
 
     .line 16
@@ -845,18 +845,18 @@
     throw p1
 
     .line 21
-    :catchall_14
+    :catchall_0
     move-exception p1
 
     .line 22
-    goto :goto_1d
+    goto :goto_0
 
     .line 23
-    :catch_16
+    :catch_1
     move-exception p1
 
     .line 24
-    :try_start_17
+    :try_start_2
     new-instance v1, Ljava/security/SignatureException;
 
     .line 25
@@ -867,15 +867,15 @@
     .line 28
     .line 29
     throw v1
-    :try_end_1d
-    .catchall {:try_start_17 .. :try_end_1d} :catchall_14
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 30
-    :goto_1d
-    :try_start_1d
+    :goto_0
+    :try_start_3
     invoke-direct {p0}, Lorg/conscrypt/OpenSSLSignature;->resetContext()V
-    :try_end_20
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_1d .. :try_end_20} :catch_21
+    :try_end_3
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_3 .. :try_end_3} :catch_2
 
     .line 31
     .line 32
@@ -883,7 +883,7 @@
     throw p1
 
     .line 34
-    :catch_21
+    :catch_2
     new-instance p1, Ljava/lang/AssertionError;
 
     .line 35
@@ -897,7 +897,7 @@
 .end method
 
 .method public final getEVP_PKEY_CTX()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/OpenSSLSignature;->evpPkeyCtx:J

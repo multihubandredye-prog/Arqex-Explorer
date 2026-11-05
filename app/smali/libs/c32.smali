@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/Iterator;Ljava/util/Iterator;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/tn1;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final a()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-boolean v0, p0, Llibs/c32;->Nu:Z
@@ -55,7 +55,7 @@
     const/4 v2, 0x1
 
     .line 5
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1
 
     .line 6
     .line 7
@@ -71,7 +71,7 @@
     move-result v3
 
     .line 13
-    if-eqz v3, :cond_17
+    if-eqz v3, :cond_0
 
     .line 14
     .line 15
@@ -94,12 +94,12 @@
     return-void
 
     .line 24
-    :cond_17
+    :cond_0
     iput-boolean v1, p0, Llibs/c32;->Nu:Z
 
     .line 25
     .line 26
-    :cond_19
+    :cond_1
     iget-object v0, p0, Llibs/c32;->Mu:Ljava/util/Iterator;
 
     .line 27
@@ -112,7 +112,7 @@
     move-result v3
 
     .line 32
-    if-eqz v3, :cond_2a
+    if-eqz v3, :cond_2
 
     .line 33
     .line 34
@@ -135,7 +135,7 @@
     return-void
 
     .line 43
-    :cond_2a
+    :cond_2
     iput-boolean v1, p0, Llibs/tn1;->Y:Z
 
     .line 44

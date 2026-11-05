@@ -9,14 +9,14 @@
 
 # direct methods
 .method public constructor <init>(Llibs/j10;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/i02;->Y:B
 
     .line 2
     .line 3
-    packed-switch p2, :pswitch_data_1a
+    packed-switch p2, :pswitch_data_0
 
     .line 4
     .line 5
@@ -41,7 +41,7 @@
     return-void
 
     .line 16
-    :pswitch_f
+    :pswitch_0
     iget-object p1, p1, Llibs/j10;->X:[B
 
     .line 17
@@ -65,16 +65,16 @@
     nop
 
     .line 27
-    :pswitch_data_1a
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_f
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/i02;->Y:B
@@ -85,7 +85,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_1e
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -113,7 +113,7 @@
     return-object v0
 
     .line 19
-    :pswitch_12
+    :pswitch_0
     invoke-static {v1}, Llibs/yh3;->a([B)Ljava/lang/String;
 
     .line 20
@@ -140,8 +140,8 @@
     nop
 
     .line 31
-    :pswitch_data_1e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_12
+        :pswitch_0
     .end packed-switch
 .end method

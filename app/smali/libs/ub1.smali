@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 9
     const-string v0, "The passphrase supplied was invalid!"
@@ -16,7 +16,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Exception;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;

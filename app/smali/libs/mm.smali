@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,7 +49,7 @@
 .end method
 
 .method public constructor <init>(Llibs/ww2;Ljava/lang/String;ZLlibs/t61;)V
-    .registers 5
+    .locals 0
 
     .line 15
     iput-object p1, p0, Llibs/mm;->e:Ljava/lang/Object;
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public a([Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/mm;->e:Ljava/lang/Object;
@@ -103,7 +103,7 @@
 
     .line 16
     .line 17
-    if-eqz v2, :cond_25
+    if-eqz v2, :cond_0
 
     .line 18
     .line 19
@@ -127,7 +127,7 @@
     move-result v1
 
     .line 29
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_0
 
     .line 30
     .line 31
@@ -146,7 +146,7 @@
 
     .line 37
     .line 38
-    :cond_25
+    :cond_0
     iget-object v1, p0, Llibs/mm;->b:Ljava/lang/Object;
 
     .line 39
@@ -159,7 +159,7 @@
 
     .line 43
     .line 44
-    if-eqz v1, :cond_44
+    if-eqz v1, :cond_1
 
     .line 45
     .line 46
@@ -183,7 +183,7 @@
     move-result p1
 
     .line 56
-    if-eqz p1, :cond_44
+    if-eqz p1, :cond_1
 
     .line 57
     .line 58
@@ -208,7 +208,7 @@
     .line 67
     .line 68
     .line 69
-    :cond_44
+    :cond_1
     iget-object p1, p0, Llibs/mm;->d:Ljava/lang/Object;
 
     .line 70

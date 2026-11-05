@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(JLjava/util/ArrayList;Llibs/ml1;Llibs/g11;)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 12
+    .locals 10
 
     .line 1
     sget-object p1, Llibs/aq;->a:[Ljava/lang/String;
@@ -102,12 +102,12 @@
     const/4 v7, 0x0
 
     .line 26
-    :cond_19
-    :goto_19
+    :cond_0
+    :goto_0
     const/4 v8, 0x1
 
     .line 27
-    if-ge v7, v5, :cond_3b
+    if-ge v7, v5, :cond_1
 
     .line 28
     .line 29
@@ -147,7 +147,7 @@
     move-result v8
 
     .line 47
-    if-eqz v8, :cond_19
+    if-eqz v8, :cond_0
 
     .line 48
     .line 49
@@ -169,10 +169,10 @@
     .line 57
     .line 58
     .line 59
-    goto :goto_19
+    goto :goto_0
 
     .line 60
-    :cond_3b
+    :cond_1
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->length()I
 
     .line 61
@@ -181,7 +181,7 @@
     move-result v3
 
     .line 64
-    if-le v3, v8, :cond_85
+    if-le v3, v8, :cond_7
 
     .line 65
     .line 66
@@ -213,7 +213,7 @@
 
     .line 79
     .line 80
-    if-nez v4, :cond_54
+    if-nez v4, :cond_2
 
     .line 81
     .line 82
@@ -221,10 +221,10 @@
 
     .line 83
     .line 84
-    goto :goto_85
+    goto :goto_1
 
     .line 85
-    :cond_54
+    :cond_2
     const-wide/32 v2, 0x8000
 
     .line 86
@@ -234,7 +234,7 @@
 
     .line 89
     .line 90
-    if-nez v4, :cond_5e
+    if-nez v4, :cond_3
 
     .line 91
     .line 92
@@ -242,10 +242,10 @@
 
     .line 93
     .line 94
-    goto :goto_85
+    goto :goto_1
 
     .line 95
-    :cond_5e
+    :cond_3
     const-wide/32 v2, 0x10000
 
     .line 96
@@ -255,7 +255,7 @@
 
     .line 99
     .line 100
-    if-nez v4, :cond_68
+    if-nez v4, :cond_4
 
     .line 101
     .line 102
@@ -263,10 +263,10 @@
 
     .line 103
     .line 104
-    goto :goto_85
+    goto :goto_1
 
     .line 105
-    :cond_68
+    :cond_4
     const-wide/32 v2, 0x20000
 
     .line 106
@@ -276,7 +276,7 @@
 
     .line 109
     .line 110
-    if-nez v4, :cond_72
+    if-nez v4, :cond_5
 
     .line 111
     .line 112
@@ -284,10 +284,10 @@
 
     .line 113
     .line 114
-    goto :goto_85
+    goto :goto_1
 
     .line 115
-    :cond_72
+    :cond_5
     const-wide/32 v2, 0x40000
 
     .line 116
@@ -297,7 +297,7 @@
 
     .line 119
     .line 120
-    if-nez v4, :cond_7c
+    if-nez v4, :cond_6
 
     .line 121
     .line 122
@@ -305,10 +305,10 @@
 
     .line 123
     .line 124
-    goto :goto_85
+    goto :goto_1
 
     .line 125
-    :cond_7c
+    :cond_6
     const-wide/32 v2, 0x80000
 
     .line 126
@@ -318,7 +318,7 @@
 
     .line 129
     .line 130
-    if-nez v4, :cond_85
+    if-nez v4, :cond_7
 
     .line 131
     .line 132
@@ -326,8 +326,8 @@
 
     .line 133
     .line 134
-    :cond_85
-    :goto_85
+    :cond_7
+    :goto_1
     iget-object p1, p0, Llibs/z23;->Z:Llibs/ml1;
 
     .line 135

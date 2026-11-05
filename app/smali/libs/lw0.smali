@@ -24,7 +24,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/util/Hashtable;
@@ -205,7 +205,7 @@
 .end method
 
 .method public constructor <init>(Llibs/dm0;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-interface {p1}, Llibs/dm0;->g()I
@@ -266,7 +266,7 @@
 
 # virtual methods
 .method public final a(B)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/lw0;->a:Llibs/dm0;
@@ -282,7 +282,7 @@
 .end method
 
 .method public final b()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/lw0;->a:Llibs/dm0;
@@ -313,7 +313,7 @@
 .end method
 
 .method public final c(Llibs/et;)V
-    .registers 8
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/lw0;->a:Llibs/dm0;
@@ -347,7 +347,7 @@
 
     .line 15
     .line 16
-    if-le v1, v4, :cond_1a
+    if-le v1, v4, :cond_0
 
     .line 17
     .line 18
@@ -365,20 +365,20 @@
 
     .line 25
     .line 26
-    goto :goto_1d
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_0
     invoke-static {p1, v3, v2, v3, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 28
     .line 29
     .line 30
-    :goto_1d
+    :goto_0
     array-length p1, v2
 
     .line 31
-    if-ge v1, p1, :cond_25
+    if-ge v1, p1, :cond_1
 
     .line 32
     .line 33
@@ -390,10 +390,10 @@
 
     .line 36
     .line 37
-    goto :goto_1d
+    goto :goto_0
 
     .line 38
-    :cond_25
+    :cond_1
     iget-object p1, p0, Llibs/lw0;->g:[B
 
     .line 39
@@ -406,8 +406,8 @@
     const/4 v1, 0x0
 
     .line 44
-    :goto_2b
-    if-ge v1, v4, :cond_37
+    :goto_1
+    if-ge v1, v4, :cond_2
 
     .line 45
     .line 46
@@ -430,15 +430,15 @@
 
     .line 54
     .line 55
-    goto :goto_2b
+    goto :goto_1
 
     .line 56
-    :cond_37
+    :cond_2
     const/4 v1, 0x0
 
     .line 57
-    :goto_38
-    if-ge v1, v4, :cond_44
+    :goto_2
+    if-ge v1, v4, :cond_3
 
     .line 58
     .line 59
@@ -461,15 +461,15 @@
 
     .line 67
     .line 68
-    goto :goto_38
+    goto :goto_2
 
     .line 69
-    :cond_44
+    :cond_3
     instance-of v1, v0, Llibs/ar1;
 
     .line 70
     .line 71
-    if-eqz v1, :cond_56
+    if-eqz v1, :cond_4
 
     .line 72
     .line 73
@@ -501,7 +501,7 @@
     .line 85
     .line 86
     .line 87
-    :cond_56
+    :cond_4
     array-length p1, v2
 
     .line 88
@@ -510,7 +510,7 @@
     .line 89
     .line 90
     .line 91
-    if-eqz v1, :cond_64
+    if-eqz v1, :cond_5
 
     .line 92
     .line 93
@@ -530,12 +530,12 @@
 
     .line 100
     .line 101
-    :cond_64
+    :cond_5
     return-void
 .end method
 
 .method public final d([B)I
-    .registers 8
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/lw0;->a:Llibs/dm0;
@@ -562,7 +562,7 @@
     const/4 v4, 0x0
 
     .line 13
-    if-eqz v3, :cond_1c
+    if-eqz v3, :cond_0
 
     .line 14
     .line 15
@@ -591,10 +591,10 @@
     .line 26
     .line 27
     .line 28
-    goto :goto_20
+    goto :goto_0
 
     .line 29
-    :cond_1c
+    :cond_0
     array-length v3, v2
 
     .line 30
@@ -603,7 +603,7 @@
     .line 31
     .line 32
     .line 33
-    :goto_20
+    :goto_0
     invoke-interface {v0, v4, p1}, Llibs/la0;->c(I[B)I
 
     .line 34
@@ -612,11 +612,11 @@
     move-result p1
 
     .line 37
-    :goto_24
+    :goto_1
     array-length v3, v2
 
     .line 38
-    if-ge v1, v3, :cond_2c
+    if-ge v1, v3, :cond_1
 
     .line 39
     .line 40
@@ -628,15 +628,15 @@
 
     .line 43
     .line 44
-    goto :goto_24
+    goto :goto_1
 
     .line 45
-    :cond_2c
+    :cond_1
     iget-object v1, p0, Llibs/lw0;->d:Llibs/ar1;
 
     .line 46
     .line 47
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_2
 
     .line 48
     .line 49
@@ -652,7 +652,7 @@
     return p1
 
     .line 55
-    :cond_36
+    :cond_2
     iget-object v1, p0, Llibs/lw0;->f:[B
 
     .line 56
@@ -669,7 +669,7 @@
 .end method
 
 .method public final e()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/lw0;->b:I
@@ -680,7 +680,7 @@
 .end method
 
 .method public final reset()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/lw0;->a:Llibs/dm0;
@@ -711,7 +711,7 @@
 .end method
 
 .method public final update([BII)V
-    .registers 5
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/lw0;->a:Llibs/dm0;

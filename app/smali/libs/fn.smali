@@ -19,7 +19,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 49
+    .locals 49
 
     .line 1
     new-instance v0, Llibs/fn;
@@ -738,8 +738,8 @@
     const/4 v2, 0x0
 
     .line 367
-    :goto_16e
-    if-ge v2, v1, :cond_18a
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     .line 368
     .line 369
@@ -751,7 +751,7 @@
 
     .line 372
     .line 373
-    if-eq v3, v4, :cond_187
+    if-eq v3, v4, :cond_0
 
     .line 374
     .line 375
@@ -788,20 +788,20 @@
     .line 390
     .line 391
     .line 392
-    :cond_187
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
     .line 393
     .line 394
-    goto :goto_16e
+    goto :goto_0
 
     .line 395
-    :cond_18a
+    :cond_1
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
@@ -813,7 +813,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Llibs/fn;
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Llibs/fn;
@@ -836,7 +836,7 @@
 .end method
 
 .method public static values()[Llibs/fn;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/fn;->Nu:[Llibs/fn;

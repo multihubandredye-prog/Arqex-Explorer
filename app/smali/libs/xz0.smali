@@ -15,7 +15,7 @@
 
 # direct methods
 .method public varargs constructor <init>(Llibs/e01;[Ljava/lang/Object;ILlibs/vj;IZ)V
-    .registers 7
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/xz0;->Mu:Llibs/e01;
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public final a()V
-    .registers 5
+    .locals 4
 
     .line 1
     :try_start_0
@@ -107,11 +107,11 @@
     .line 27
     .line 28
     monitor-enter v0
-    :try_end_1c
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_1c} :catch_2e
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 29
-    :try_start_1c
+    :try_start_1
     iget-object v1, p0, Llibs/xz0;->Mu:Llibs/e01;
 
     .line 30
@@ -143,21 +143,21 @@
     return-void
 
     .line 44
-    :catchall_2b
+    :catchall_0
     move-exception v1
 
     .line 45
     monitor-exit v0
-    :try_end_2d
-    .catchall {:try_start_1c .. :try_end_2d} :catchall_2b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 46
-    :try_start_2d
+    :try_start_2
     throw v1
-    :try_end_2e
-    .catch Ljava/io/IOException; {:try_start_2d .. :try_end_2e} :catch_2e
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 47
-    :catch_2e
+    :catch_0
     return-void
 .end method

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/x92;->a:B
@@ -27,14 +27,14 @@
 
 # virtual methods
 .method public final initialValue()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/x92;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_42
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -50,7 +50,7 @@
     return-object v0
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     const/16 v0, 0x40
 
     .line 12
@@ -62,7 +62,7 @@
     return-object v0
 
     .line 16
-    :pswitch_f
+    :pswitch_1
     const/16 v0, 0x40
 
     .line 17
@@ -74,7 +74,7 @@
     return-object v0
 
     .line 21
-    :pswitch_14
+    :pswitch_2
     const/16 v0, 0xc
 
     .line 22
@@ -86,7 +86,7 @@
     return-object v0
 
     .line 26
-    :pswitch_19
+    :pswitch_3
     const/16 v0, 0x20
 
     .line 27
@@ -98,7 +98,7 @@
     return-object v0
 
     .line 31
-    :pswitch_1e
+    :pswitch_4
     new-instance v0, Ljava/util/ArrayList;
 
     .line 32
@@ -111,7 +111,7 @@
     return-object v0
 
     .line 37
-    :pswitch_24
+    :pswitch_5
     new-instance v0, Ljava/util/ArrayList;
 
     .line 38
@@ -124,7 +124,7 @@
     return-object v0
 
     .line 43
-    :pswitch_2a
+    :pswitch_6
     new-instance v0, Ljava/util/ArrayList;
 
     .line 44
@@ -137,7 +137,7 @@
     return-object v0
 
     .line 49
-    :pswitch_30
+    :pswitch_7
     new-instance v0, Ljava/util/ArrayList;
 
     .line 50
@@ -150,7 +150,7 @@
     return-object v0
 
     .line 55
-    :pswitch_36
+    :pswitch_8
     new-instance v0, Ljava/util/ArrayList;
 
     .line 56
@@ -163,7 +163,7 @@
     return-object v0
 
     .line 61
-    :pswitch_3c
+    :pswitch_9
     new-instance v0, Ljava/util/WeakHashMap;
 
     .line 62
@@ -176,17 +176,17 @@
     return-object v0
 
     .line 67
-    :pswitch_data_42
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_3c
-        :pswitch_36
-        :pswitch_30
-        :pswitch_2a
-        :pswitch_24
-        :pswitch_1e
-        :pswitch_19
-        :pswitch_14
-        :pswitch_f
-        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

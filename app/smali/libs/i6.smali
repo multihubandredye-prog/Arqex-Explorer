@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/os/Looper;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final handleMessage(Landroid/os/Message;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -37,21 +37,21 @@
     const/4 v1, 0x1
 
     .line 8
-    if-eq p1, v1, :cond_10
+    if-eq p1, v1, :cond_1
 
     .line 9
     .line 10
     const/4 v1, 0x2
 
     .line 11
-    if-eq p1, v1, :cond_d
+    if-eq p1, v1, :cond_0
 
     .line 12
     .line 13
     return-void
 
     .line 14
-    :cond_d
+    :cond_0
     iget-object p1, v0, Llibs/h6;->a:Llibs/l6;
 
     .line 15
@@ -59,7 +59,7 @@
     return-void
 
     .line 17
-    :cond_10
+    :cond_1
     iget-object p1, v0, Llibs/h6;->a:Llibs/l6;
 
     .line 18
@@ -87,7 +87,7 @@
     move-result v1
 
     .line 30
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_2
 
     .line 31
     .line 32
@@ -96,16 +96,16 @@
     .line 33
     .line 34
     .line 35
-    goto :goto_26
+    goto :goto_0
 
     .line 36
-    :cond_23
+    :cond_2
     invoke-virtual {p1, v0}, Llibs/l6;->d(Ljava/lang/Object;)V
 
     .line 37
     .line 38
     .line 39
-    :goto_26
+    :goto_0
     const/4 v0, 0x3
 
     .line 40

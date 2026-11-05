@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>([CZ)V
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public final getAlgorithm()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "PKCS12"
@@ -65,7 +65,7 @@
 .end method
 
 .method public final getEncoded()[B
-    .registers 3
+    .locals 2
 
     .line 1
     iget-boolean v0, p0, Llibs/d82;->Y:Z
@@ -76,14 +76,14 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
     array-length v0, v1
 
     .line 8
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 9
     .line 10
@@ -97,7 +97,7 @@
     return-object v0
 
     .line 14
-    :cond_d
+    :cond_0
     invoke-static {v1}, Llibs/pe;->a([C)[B
 
     .line 15
@@ -110,7 +110,7 @@
 .end method
 
 .method public final getFormat()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "PKCS12"

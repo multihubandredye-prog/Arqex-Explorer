@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ex0;Ljava/net/Socket;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/yw0;->Lambda:Llibs/ex0;
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public final a()V
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/xv1;
@@ -98,7 +98,7 @@
 .end method
 
 .method public final run()V
-    .registers 11
+    .locals 10
 
     .line 1
     const-string v1, "HTTPd"
@@ -119,7 +119,7 @@
     const/4 v9, 0x1
 
     .line 9
-    :try_start_8
+    :try_start_0
     invoke-virtual {v0}, Ljava/net/Socket;->getInetAddress()Ljava/net/InetAddress;
 
     .line 10
@@ -177,8 +177,8 @@
     const/4 v4, 0x1
 
     .line 38
-    :cond_25
-    :goto_25
+    :cond_0
+    :goto_0
     invoke-virtual {v0}, Ljava/net/Socket;->isClosed()Z
 
     .line 39
@@ -187,11 +187,11 @@
     move-result v5
 
     .line 42
-    if-nez v5, :cond_5d
+    if-nez v5, :cond_2
 
     .line 43
     .line 44
-    if-eqz v4, :cond_5d
+    if-eqz v4, :cond_2
 
     .line 45
     .line 46
@@ -242,7 +242,7 @@
     move-result v5
 
     .line 71
-    if-eqz v5, :cond_25
+    if-eqz v5, :cond_0
 
     .line 72
     .line 73
@@ -250,7 +250,7 @@
 
     .line 74
     .line 75
-    if-eqz v5, :cond_55
+    if-eqz v5, :cond_1
 
     .line 76
     .line 77
@@ -262,21 +262,21 @@
     move-result v5
 
     .line 81
-    if-eqz v5, :cond_55
+    if-eqz v5, :cond_1
 
     .line 82
     .line 83
-    goto :goto_5d
+    goto :goto_1
 
     .line 84
-    :catchall_53
+    :catchall_0
     move-exception v0
 
     .line 85
-    goto :goto_64
+    goto :goto_2
 
     .line 86
-    :cond_55
+    :cond_1
     iget-object v5, v3, Llibs/ex0;->n:Llibs/vw0;
 
     .line 87
@@ -286,17 +286,17 @@
     .line 89
     .line 90
     invoke-virtual {v5, v6}, Llibs/vw0;->c([Ljava/lang/Object;)Z
-    :try_end_5c
-    .catchall {:try_start_8 .. :try_end_5c} :catchall_53
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 91
     .line 92
     .line 93
-    goto :goto_25
+    goto :goto_0
 
     .line 94
-    :cond_5d
-    :goto_5d
+    :cond_2
+    :goto_1
     invoke-virtual {v3, p0}, Llibs/ex0;->e(Llibs/yw0;)V
 
     .line 95
@@ -310,13 +310,13 @@
     return-void
 
     .line 101
-    :goto_64
-    :try_start_64
+    :goto_2
+    :try_start_1
     instance-of v2, v0, Ljava/io/EOFException;
 
     .line 102
     .line 103
-    if-nez v2, :cond_5d
+    if-nez v2, :cond_2
 
     .line 104
     .line 105
@@ -341,16 +341,16 @@
     .line 114
     .line 115
     invoke-static {v1, v2, v4}, Llibs/vw1;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_75
-    .catchall {:try_start_64 .. :try_end_75} :catchall_76
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 116
     .line 117
     .line 118
-    goto :goto_5d
+    goto :goto_1
 
     .line 119
-    :catchall_76
+    :catchall_1
     move-exception v0
 
     .line 120
@@ -364,13 +364,13 @@
     .line 124
     .line 125
     .line 126
-    goto :goto_7f
+    goto :goto_4
 
     .line 127
-    :goto_7e
+    :goto_3
     throw v0
 
     .line 128
-    :goto_7f
-    goto :goto_7e
+    :goto_4
+    goto :goto_3
 .end method

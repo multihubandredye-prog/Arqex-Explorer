@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;ILlibs/ct;)V
-    .registers 5
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljavax/crypto/KeyGeneratorSpi;-><init>()V
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public engineGenerateKey()Ljavax/crypto/SecretKey;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-boolean v0, p0, Llibs/be;->d:Z
@@ -59,7 +59,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -97,7 +97,7 @@
 
     .line 24
     .line 25
-    :cond_18
+    :cond_0
     new-instance v0, Ljavax/crypto/spec/SecretKeySpec;
 
     .line 26
@@ -123,14 +123,14 @@
 .end method
 
 .method public engineInit(ILjava/security/SecureRandom;)V
-    .registers 5
+    .locals 2
 
     .line 1
-    if-nez p2, :cond_a
+    if-nez p2, :cond_0
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     new-instance p2, Ljava/security/SecureRandom;
 
     .line 4
@@ -140,18 +140,18 @@
     .line 6
     .line 7
     .line 8
-    goto :goto_a
+    goto :goto_0
 
     .line 9
-    :catch_8
+    :catch_0
     move-exception p1
 
     .line 10
-    goto :goto_18
+    goto :goto_1
 
     .line 11
-    :cond_a
-    :goto_a
+    :cond_0
+    :goto_0
     iget-object v0, p0, Llibs/be;->c:Llibs/ct;
 
     .line 12
@@ -174,15 +174,15 @@
 
     .line 22
     iput-boolean p1, p0, Llibs/be;->d:Z
-    :try_end_17
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_2 .. :try_end_17} :catch_8
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 23
     .line 24
     return-void
 
     .line 25
-    :goto_18
+    :goto_1
     new-instance p2, Ljava/security/InvalidParameterException;
 
     .line 26
@@ -204,9 +204,9 @@
 .end method
 
 .method public final engineInit(Ljava/security/SecureRandom;)V
-    .registers 4
+    .locals 2
 
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_0
 
     .line 35
     new-instance v0, Llibs/ct;
@@ -224,12 +224,12 @@
     .line 36
     iput-boolean p1, p0, Llibs/be;->d:Z
 
-    :cond_11
+    :cond_0
     return-void
 .end method
 
 .method public final engineInit(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    .registers 3
+    .locals 0
 
     .line 37
     new-instance p1, Ljava/security/InvalidAlgorithmParameterException;

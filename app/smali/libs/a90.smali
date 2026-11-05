@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>(I[B)V
-    .registers 3
+    .locals 0
 
     .line 5
     invoke-direct {p0, p1, p2}, Llibs/dl;-><init>(I[B)V
@@ -17,7 +17,7 @@
 .end method
 
 .method public constructor <init>([B)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/dl;-><init>([B)V
@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public final c()Llibs/a90;
-    .registers 3
+    .locals 2
 
     .line 1
     :try_start_0
@@ -52,15 +52,15 @@
     .line 8
     .line 9
     iput v1, v0, Llibs/dl;->Z:I
-    :try_end_a
-    .catch Ljava/lang/CloneNotSupportedException; {:try_start_0 .. :try_end_a} :catch_b
+    :try_end_0
+    .catch Ljava/lang/CloneNotSupportedException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 10
     .line 11
     return-object v0
 
     .line 12
-    :catch_b
+    :catch_0
     move-exception v0
 
     .line 13
@@ -85,14 +85,14 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Llibs/a90;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -111,7 +111,7 @@
     return p1
 
     .line 12
-    :cond_b
+    :cond_0
     const/4 p1, 0x0
 
     .line 13
@@ -119,7 +119,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 7
+    .locals 6
 
     .line 1
     invoke-virtual {p0}, Llibs/dl;->available()I
@@ -140,8 +140,8 @@
     const/4 v3, 0x0
 
     .line 9
-    :goto_8
-    if-ge v2, v0, :cond_16
+    :goto_0
+    if-ge v2, v0, :cond_0
 
     .line 10
     .line 11
@@ -168,28 +168,28 @@
 
     .line 21
     .line 22
-    goto :goto_8
+    goto :goto_0
 
     .line 23
-    :cond_16
+    :cond_0
     return v3
 .end method
 
 .method public final i(Llibs/a90;)Z
-    .registers 9
+    .locals 7
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
+    :cond_0
     invoke-virtual {p0}, Llibs/dl;->available()I
 
     .line 6
@@ -209,19 +209,19 @@
     const/4 v3, 0x0
 
     .line 14
-    if-eq v2, v1, :cond_10
+    if-eq v2, v1, :cond_1
 
     .line 15
     .line 16
     return v3
 
     .line 17
-    :cond_10
+    :cond_1
     const/4 v2, 0x0
 
     .line 18
-    :goto_11
-    if-ge v2, v1, :cond_27
+    :goto_0
+    if-ge v2, v1, :cond_3
 
     .line 19
     .line 20
@@ -255,27 +255,27 @@
 
     .line 33
     .line 34
-    if-eq v4, v5, :cond_24
+    if-eq v4, v5, :cond_2
 
     .line 35
     .line 36
     return v3
 
     .line 37
-    :cond_24
+    :cond_2
     add-int/lit8 v2, v2, 0x1
 
     .line 38
     .line 39
-    goto :goto_11
+    goto :goto_0
 
     .line 40
-    :cond_27
+    :cond_3
     return v0
 .end method
 
 .method public final m(I)Ljava/math/BigInteger;
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-virtual {p0}, Llibs/dl;->available()I
@@ -286,11 +286,11 @@
     move-result v0
 
     .line 5
-    if-gt p1, v0, :cond_23
+    if-gt p1, v0, :cond_1
 
     .line 6
     .line 7
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_0
 
     .line 8
     .line 9
@@ -334,7 +334,7 @@
     return-object p1
 
     .line 29
-    :cond_1c
+    :cond_0
     const-string p1, "Invalid encoding: zero length Int value"
 
     .line 30
@@ -350,7 +350,7 @@
     return-object p1
 
     .line 36
-    :cond_23
+    :cond_1
     const-string p1, "short read of integer"
 
     .line 37
@@ -367,7 +367,7 @@
 .end method
 
 .method public final w(ZI)Ljava/util/Date;
-    .registers 22
+    .locals 19
 
     .line 1
     move-object/from16 v0, p0
@@ -386,7 +386,7 @@
 
     .line 8
     .line 9
-    if-eqz p1, :cond_4a
+    if-eqz p1, :cond_0
 
     .line 10
     .line 11
@@ -523,10 +523,10 @@
 
     .line 73
     .line 74
-    goto :goto_73
+    goto :goto_1
 
     .line 75
-    :cond_4a
+    :cond_0
     add-int/lit8 v4, v1, 0x1
 
     .line 76
@@ -592,7 +592,7 @@
 
     .line 105
     .line 106
-    if-ge v4, v1, :cond_70
+    if-ge v4, v1, :cond_1
 
     .line 107
     .line 108
@@ -600,23 +600,23 @@
 
     .line 109
     .line 110
-    :goto_6d
+    :goto_0
     move/from16 v1, p2
 
     .line 111
     .line 112
-    goto :goto_73
+    goto :goto_1
 
     .line 113
-    :cond_70
+    :cond_1
     add-int/lit16 v4, v4, 0x76c
 
     .line 114
     .line 115
-    goto :goto_6d
+    goto :goto_0
 
     .line 116
-    :goto_73
+    :goto_1
     iget v6, v0, Llibs/dl;->Y:I
 
     .line 117
@@ -888,11 +888,11 @@
 
     .line 244
     .line 245
-    if-le v6, v11, :cond_1c1
+    if-le v6, v11, :cond_8
 
     .line 246
     .line 247
-    if-ge v6, v15, :cond_1c1
+    if-ge v6, v15, :cond_8
 
     .line 248
     .line 249
@@ -977,7 +977,7 @@
 
     .line 287
     .line 288
-    if-eq v2, v13, :cond_129
+    if-eq v2, v13, :cond_3
 
     .line 289
     .line 290
@@ -985,23 +985,23 @@
 
     .line 291
     .line 292
-    if-ne v2, v13, :cond_126
+    if-ne v2, v13, :cond_2
 
     .line 293
     .line 294
-    goto :goto_129
+    goto :goto_2
 
     .line 295
-    :cond_126
+    :cond_2
     const/4 v1, 0x0
 
     .line 296
-    goto/16 :goto_1c3
+    goto/16 :goto_6
 
     .line 297
     .line 298
-    :cond_129
-    :goto_129
+    :cond_3
+    :goto_2
     add-int/lit8 v1, v1, -0xd
 
     .line 299
@@ -1017,12 +1017,12 @@
     const/4 v2, 0x0
 
     .line 305
-    :goto_130
+    :goto_3
     aget-byte v6, v3, v15
 
     .line 306
     .line 307
-    if-eq v6, v14, :cond_141
+    if-eq v6, v14, :cond_4
 
     .line 308
     .line 309
@@ -1030,7 +1030,7 @@
 
     .line 310
     .line 311
-    if-eq v6, v13, :cond_141
+    if-eq v6, v13, :cond_4
 
     .line 312
     .line 313
@@ -1038,7 +1038,7 @@
 
     .line 314
     .line 315
-    if-eq v6, v13, :cond_141
+    if-eq v6, v13, :cond_4
 
     .line 316
     .line 317
@@ -1050,28 +1050,28 @@
 
     .line 320
     .line 321
-    goto :goto_130
+    goto :goto_3
 
     .line 322
-    :cond_141
+    :cond_4
     const/4 v6, 0x1
 
     .line 323
-    if-eq v2, v6, :cond_1aa
+    if-eq v2, v6, :cond_7
 
     .line 324
     .line 325
     const/4 v6, 0x2
 
     .line 326
-    if-eq v2, v6, :cond_186
+    if-eq v2, v6, :cond_6
 
     .line 327
     .line 328
     const/4 v6, 0x3
 
     .line 329
-    if-ne v2, v6, :cond_17c
+    if-ne v2, v6, :cond_5
 
     .line 330
     .line 331
@@ -1174,15 +1174,15 @@
     add-int/2addr v6, v14
 
     .line 378
-    :goto_179
+    :goto_4
     move/from16 v16, v6
 
     .line 379
     .line 380
-    goto :goto_1bc
+    goto :goto_5
 
     .line 381
-    :cond_17c
+    :cond_5
     const-string v1, " time, unsupported precision for seconds value"
 
     .line 382
@@ -1203,7 +1203,7 @@
     return-object p1
 
     .line 391
-    :cond_186
+    :cond_6
     iget v6, v0, Llibs/dl;->Y:I
 
     .line 392
@@ -1277,10 +1277,10 @@
 
     .line 425
     .line 426
-    goto :goto_1bc
+    goto :goto_5
 
     .line 427
-    :cond_1aa
+    :cond_7
     const/16 v13, 0xa
 
     .line 428
@@ -1316,10 +1316,10 @@
 
     .line 443
     .line 444
-    goto :goto_179
+    goto :goto_4
 
     .line 445
-    :goto_1bc
+    :goto_5
     sub-int v6, v1, v2
 
     .line 446
@@ -1328,22 +1328,22 @@
 
     .line 448
     .line 449
-    goto :goto_1c3
+    goto :goto_6
 
     .line 450
-    :cond_1c1
+    :cond_8
     const/4 v1, 0x0
 
     .line 451
     const/4 v11, 0x0
 
     .line 452
-    :goto_1c3
-    if-eqz v7, :cond_2e7
+    :goto_6
+    if-eqz v7, :cond_10
 
     .line 453
     .line 454
-    if-eqz v8, :cond_2e7
+    if-eqz v8, :cond_10
 
     .line 455
     .line 456
@@ -1351,7 +1351,7 @@
 
     .line 457
     .line 458
-    if-gt v7, v2, :cond_2e7
+    if-gt v7, v2, :cond_10
 
     .line 459
     .line 460
@@ -1359,7 +1359,7 @@
 
     .line 461
     .line 462
-    if-gt v8, v2, :cond_2e7
+    if-gt v8, v2, :cond_10
 
     .line 463
     .line 464
@@ -1367,7 +1367,7 @@
 
     .line 465
     .line 466
-    if-ge v9, v2, :cond_2e7
+    if-ge v9, v2, :cond_10
 
     .line 467
     .line 468
@@ -1375,11 +1375,11 @@
 
     .line 469
     .line 470
-    if-ge v10, v13, :cond_2e7
+    if-ge v10, v13, :cond_10
 
     .line 471
     .line 472
-    if-ge v11, v13, :cond_2e7
+    if-ge v11, v13, :cond_10
 
     .line 473
     .line 474
@@ -1480,18 +1480,18 @@
     move-result-wide v7
 
     .line 525
-    if-eq v6, v15, :cond_21b
+    if-eq v6, v15, :cond_a
 
     .line 526
     .line 527
-    if-ne v6, v4, :cond_211
+    if-ne v6, v4, :cond_9
 
     .line 528
     .line 529
-    goto :goto_21b
+    goto :goto_7
 
     .line 530
-    :cond_211
+    :cond_9
     const-string v1, " time, invalid offset"
 
     .line 531
@@ -1512,8 +1512,8 @@
     return-object p1
 
     .line 540
-    :cond_21b
-    :goto_21b
+    :cond_a
+    :goto_7
     iget v1, v0, Llibs/dl;->Y:I
 
     .line 541
@@ -1539,7 +1539,7 @@
 
     .line 552
     .line 553
-    if-eq v6, v10, :cond_290
+    if-eq v6, v10, :cond_e
 
     .line 554
     .line 555
@@ -1547,7 +1547,7 @@
 
     .line 556
     .line 557
-    if-eq v6, v10, :cond_23e
+    if-eq v6, v10, :cond_c
 
     .line 558
     .line 559
@@ -1555,15 +1555,15 @@
 
     .line 560
     .line 561
-    if-ne v6, v10, :cond_234
+    if-ne v6, v10, :cond_b
 
     .line 562
     .line 563
-    goto/16 :goto_2d7
+    goto/16 :goto_8
 
     .line 564
     .line 565
-    :cond_234
+    :cond_b
     const-string v1, " time, garbage offset"
 
     .line 566
@@ -1584,7 +1584,7 @@
     return-object p1
 
     .line 575
-    :cond_23e
+    :cond_c
     const/16 v17, 0x2
 
     .line 576
@@ -1711,11 +1711,11 @@
     add-int/2addr v3, v1
 
     .line 635
-    if-ge v6, v2, :cond_286
+    if-ge v6, v2, :cond_d
 
     .line 636
     .line 637
-    if-ge v3, v13, :cond_286
+    if-ge v3, v13, :cond_d
 
     .line 638
     .line 639
@@ -1736,10 +1736,10 @@
     add-long/2addr v7, v1
 
     .line 646
-    goto :goto_2d7
+    goto :goto_8
 
     .line 647
-    :cond_286
+    :cond_d
     const-string v1, " time, -hhmm"
 
     .line 648
@@ -1760,7 +1760,7 @@
     return-object p1
 
     .line 657
-    :cond_290
+    :cond_e
     const/16 v17, 0x2
 
     .line 658
@@ -1887,11 +1887,11 @@
     add-int/2addr v3, v1
 
     .line 717
-    if-ge v6, v2, :cond_2dd
+    if-ge v6, v2, :cond_f
 
     .line 718
     .line 719
-    if-ge v3, v13, :cond_2dd
+    if-ge v3, v13, :cond_f
 
     .line 720
     .line 721
@@ -1912,7 +1912,7 @@
     sub-long/2addr v7, v1
 
     .line 728
-    :goto_2d7
+    :goto_8
     new-instance v1, Ljava/util/Date;
 
     .line 729
@@ -1925,7 +1925,7 @@
     return-object v1
 
     .line 734
-    :cond_2dd
+    :cond_f
     const-string v1, " time, +hhmm"
 
     .line 735
@@ -1946,7 +1946,7 @@
     return-object p1
 
     .line 744
-    :cond_2e7
+    :cond_10
     const-string v1, " time, invalid format"
 
     .line 745
@@ -1968,7 +1968,7 @@
 .end method
 
 .method public final x(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/dl;->available()I
@@ -1979,7 +1979,7 @@
     move-result v0
 
     .line 5
-    if-gt p1, v0, :cond_c
+    if-gt p1, v0, :cond_0
 
     .line 6
     .line 7
@@ -1997,7 +1997,7 @@
     return-void
 
     .line 13
-    :cond_c
+    :cond_0
     const-string p1, "insufficient data"
 
     .line 14

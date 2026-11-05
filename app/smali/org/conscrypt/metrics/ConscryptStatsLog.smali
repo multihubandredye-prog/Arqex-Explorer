@@ -195,7 +195,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -207,7 +207,7 @@
 .end method
 
 .method public static write(IIIII)V
-    .registers 6
+    .locals 1
 
     .line 43
     invoke-static {}, Lorg/conscrypt/metrics/ReflexiveStatsEvent;->newBuilder()Lorg/conscrypt/metrics/ReflexiveStatsEvent$Builder;
@@ -243,7 +243,7 @@
 .end method
 
 .method public static write(IIIIII)V
-    .registers 7
+    .locals 1
 
     .line 51
     invoke-static {}, Lorg/conscrypt/metrics/ReflexiveStatsEvent;->newBuilder()Lorg/conscrypt/metrics/ReflexiveStatsEvent$Builder;
@@ -282,7 +282,7 @@
 .end method
 
 .method public static write(IIIIIIIII)V
-    .registers 10
+    .locals 1
 
     .line 1
     invoke-static {}, Lorg/conscrypt/metrics/ReflexiveStatsEvent;->newBuilder()Lorg/conscrypt/metrics/ReflexiveStatsEvent$Builder;
@@ -360,7 +360,7 @@
 .end method
 
 .method public static write(IZIIII[I)V
-    .registers 8
+    .locals 1
 
     .line 60
     invoke-static {}, Lorg/conscrypt/metrics/ReflexiveStatsEvent;->newBuilder()Lorg/conscrypt/metrics/ReflexiveStatsEvent$Builder;
@@ -385,14 +385,14 @@
     .line 66
     invoke-virtual {v0, p5}, Lorg/conscrypt/metrics/ReflexiveStatsEvent$Builder;->writeInt(I)Lorg/conscrypt/metrics/ReflexiveStatsEvent$Builder;
 
-    if-nez p6, :cond_1b
+    if-nez p6, :cond_0
 
     const/4 p0, 0x0
 
     .line 67
     new-array p6, p0, [I
 
-    :cond_1b
+    :cond_0
     invoke-virtual {v0, p6}, Lorg/conscrypt/metrics/ReflexiveStatsEvent$Builder;->writeIntArray([I)Lorg/conscrypt/metrics/ReflexiveStatsEvent$Builder;
 
     .line 68

@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>(Lorg/conscrypt/HpkeSuite;)V
-    .registers 2
+    .locals 0
 
     .line 5
     invoke-direct {p0, p1}, Lorg/conscrypt/HpkeImpl;-><init>(Lorg/conscrypt/HpkeSuite;)V
@@ -14,7 +14,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lorg/conscrypt/HpkeSuite;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Lorg/conscrypt/HpkeImpl$HpkeX25519Impl;-><init>(Lorg/conscrypt/HpkeSuite;)V
@@ -28,14 +28,14 @@
 
 # virtual methods
 .method public getPrivateRecipientKeyBytes(Ljava/security/PrivateKey;)[B
-    .registers 5
+    .locals 3
 
     .line 1
     instance-of v0, p1, Lorg/conscrypt/OpenSSLX25519PrivateKey;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -54,7 +54,7 @@
     return-object p1
 
     .line 12
-    :cond_b
+    :cond_0
     new-instance v0, Ljava/security/InvalidKeyException;
 
     .line 13
@@ -102,14 +102,14 @@
 .end method
 
 .method public getRecipientPublicKeyBytes(Ljava/security/PublicKey;)[B
-    .registers 5
+    .locals 3
 
     .line 1
     instance-of v0, p1, Lorg/conscrypt/OpenSSLX25519PublicKey;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -128,7 +128,7 @@
     return-object p1
 
     .line 12
-    :cond_b
+    :cond_0
     new-instance v0, Ljava/security/InvalidKeyException;
 
     .line 13

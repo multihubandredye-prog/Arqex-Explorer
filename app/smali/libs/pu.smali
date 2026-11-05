@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const-string v0, "\\S+"
@@ -32,7 +32,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/nw;-><init>()V
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public final e(Llibs/en0;)V
-    .registers 11
+    .locals 9
 
     .line 1
     invoke-virtual {p0}, Llibs/nw;->l()Ljava/lang/String;
@@ -79,7 +79,7 @@
 
     .line 14
     .line 15
-    if-ge v0, v1, :cond_16
+    if-ge v0, v1, :cond_0
 
     .line 16
     .line 17
@@ -95,7 +95,7 @@
     return-void
 
     .line 23
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
     .line 24
@@ -103,7 +103,7 @@
 
     .line 25
     .line 26
-    :try_start_19
+    :try_start_0
     sget-object v1, Llibs/b70;->d:Llibs/vg;
 
     .line 27
@@ -139,8 +139,8 @@
     .line 43
     .line 44
     move-result-wide v5
-    :try_end_2c
-    .catchall {:try_start_19 .. :try_end_2c} :catchall_7a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 45
     const/4 v1, 0x1
@@ -166,7 +166,7 @@
     move-result-object v4
 
     .line 56
-    if-nez v4, :cond_3f
+    if-nez v4, :cond_1
 
     .line 57
     .line 58
@@ -182,7 +182,7 @@
     return-void
 
     .line 64
-    :cond_3f
+    :cond_1
     invoke-virtual {v4}, Llibs/rp0;->View()Llibs/zl0;
 
     .line 65
@@ -205,7 +205,7 @@
     move-result v1
 
     .line 74
-    if-nez v1, :cond_5d
+    if-nez v1, :cond_2
 
     .line 75
     .line 76
@@ -243,7 +243,7 @@
     return-void
 
     .line 94
-    :cond_5d
+    :cond_2
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 95
@@ -299,7 +299,7 @@
     return-void
 
     .line 123
-    :catchall_7a
+    :catchall_0
     const/16 p1, 0x1f5
 
     .line 124

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/yg2;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Llibs/bh2;-><init>()V
@@ -25,25 +25,25 @@
     move-result p1
 
     .line 8
-    if-ltz p1, :cond_24
+    if-ltz p1, :cond_1
 
     .line 9
     .line 10
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_0
 
     .line 11
     .line 12
     const/4 p1, 0x1
 
     .line 13
-    goto :goto_e
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     const/4 p1, 0x0
 
     .line 15
-    :goto_e
+    :goto_0
     iput-boolean p1, p0, Llibs/ug2;->Y:Z
 
     .line 16
@@ -86,7 +86,7 @@
     return-void
 
     .line 37
-    :cond_24
+    :cond_1
     invoke-static {}, Llibs/ic0;->u()V
 
     .line 38
@@ -101,7 +101,7 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

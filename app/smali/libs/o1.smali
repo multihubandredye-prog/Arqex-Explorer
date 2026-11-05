@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     const/16 v0, 0xec
@@ -22,7 +22,7 @@
 
     .line 4
     .line 5
-    fill-array-data v0, :array_20
+    fill-array-data v0, :array_0
 
     .line 6
     .line 7
@@ -45,7 +45,7 @@
     const/4 v0, 0x0
 
     .line 16
-    :goto_f
+    :goto_0
     sget-object v1, Llibs/o1;->b:[B
 
     .line 17
@@ -53,7 +53,7 @@
     array-length v2, v1
 
     .line 19
-    if-ge v0, v2, :cond_1e
+    if-ge v0, v2, :cond_0
 
     .line 20
     .line 21
@@ -76,17 +76,17 @@
 
     .line 29
     .line 30
-    goto :goto_f
+    goto :goto_0
 
     .line 31
-    :cond_1e
+    :cond_0
     return-void
 
     .line 32
     nop
 
     .line 33
-    :array_20
+    :array_0
     .array-data 4
         0x0
         0x1
@@ -328,7 +328,7 @@
 .end method
 
 .method public static a(Ljava/math/BigInteger;)[B
-    .registers 8
+    .locals 7
 
     .line 1
     const/16 v0, 0x100
@@ -360,8 +360,8 @@
     const/4 v5, 0x0
 
     .line 14
-    :goto_d
-    if-ge v5, v2, :cond_1a
+    :goto_0
+    if-ge v5, v2, :cond_0
 
     .line 15
     .line 16
@@ -385,11 +385,11 @@
 
     .line 25
     .line 26
-    goto :goto_d
+    goto :goto_0
 
     .line 27
-    :cond_1a
-    if-ge v0, v2, :cond_2d
+    :cond_0
+    if-ge v0, v2, :cond_3
 
     .line 28
     .line 29
@@ -400,8 +400,8 @@
     const/4 v5, 0x0
 
     .line 32
-    :goto_1f
-    if-ge p0, v2, :cond_28
+    :goto_1
+    if-ge p0, v2, :cond_1
 
     .line 33
     .line 34
@@ -419,29 +419,29 @@
 
     .line 39
     .line 40
-    goto :goto_1f
+    goto :goto_1
 
     .line 41
-    :cond_28
-    if-nez v5, :cond_2b
+    :cond_1
+    if-nez v5, :cond_2
 
     .line 42
     .line 43
-    goto :goto_2e
+    goto :goto_2
 
     .line 44
-    :cond_2b
+    :cond_2
     const/4 p0, 0x0
 
     .line 45
     return-object p0
 
     .line 46
-    :cond_2d
+    :cond_3
     move v0, v2
 
     .line 47
-    :goto_2e
+    :goto_2
     invoke-static {v3, v4, v1, v4, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 48
@@ -451,7 +451,7 @@
 .end method
 
 .method public static b(Ljava/security/PrivateKey;[B)[B
-    .registers 4
+    .locals 2
 
     .line 1
     const-string v0, "RSA/ECB/NoPadding"
@@ -495,7 +495,7 @@
 .end method
 
 .method public static c(Ljava/security/interfaces/RSAPublicKey;Ljava/lang/String;)[B
-    .registers 8
+    .locals 6
 
     .line 1
     const-wide v0, 0x4065d55555555555L    # 174.66666666666666
@@ -570,7 +570,7 @@
 
     .line 36
     .line 37
-    if-lt v2, v3, :cond_b3
+    if-lt v2, v3, :cond_0
 
     .line 38
     .line 39
@@ -847,7 +847,7 @@
     return-object p0
 
     .line 180
-    :cond_b3
+    :cond_0
     new-instance p1, Ljava/security/InvalidKeyException;
 
     .line 181

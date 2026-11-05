@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/i81;-><init>()V
@@ -25,7 +25,7 @@
 
 # virtual methods
 .method public final f(Llibs/mz1;)V
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x4
@@ -56,7 +56,7 @@
     move-result v0
 
     .line 15
-    if-eqz v0, :cond_51
+    if-eqz v0, :cond_3
 
     .line 16
     .line 17
@@ -89,11 +89,11 @@
 
     .line 31
     .line 32
-    if-nez v2, :cond_35
+    if-nez v2, :cond_1
 
     .line 33
     .line 34
-    if-ltz v0, :cond_2d
+    if-ltz v0, :cond_0
 
     .line 35
     .line 36
@@ -102,7 +102,7 @@
     .line 37
     .line 38
     .line 39
-    if-gt v0, v2, :cond_2d
+    if-gt v0, v2, :cond_0
 
     .line 40
     .line 41
@@ -114,10 +114,10 @@
 
     .line 44
     .line 45
-    goto :goto_35
+    goto :goto_0
 
     .line 46
-    :cond_2d
+    :cond_0
     new-instance p1, Llibs/o70;
 
     .line 47
@@ -134,8 +134,8 @@
     throw p1
 
     .line 54
-    :cond_35
-    :goto_35
+    :cond_1
+    :goto_0
     invoke-virtual {p1, v1}, Llibs/mz1;->g(I)Llibs/mz1;
 
     .line 55
@@ -147,8 +147,8 @@
     const/4 v1, 0x0
 
     .line 59
-    :goto_3a
-    if-ge v1, v0, :cond_51
+    :goto_1
+    if-ge v1, v0, :cond_3
 
     .line 60
     .line 61
@@ -160,7 +160,7 @@
 
     .line 64
     .line 65
-    if-nez v3, :cond_49
+    if-nez v3, :cond_2
 
     .line 66
     .line 67
@@ -177,7 +177,7 @@
 
     .line 73
     .line 74
-    :cond_49
+    :cond_2
     aget-object v2, v2, v1
 
     .line 75
@@ -191,15 +191,15 @@
 
     .line 80
     .line 81
-    goto :goto_3a
+    goto :goto_1
 
     .line 82
-    :cond_51
+    :cond_3
     return-void
 .end method
 
 .method public final h(Llibs/mz1;)V
-    .registers 5
+    .locals 3
 
     .line 1
     const/4 v0, 0x4
@@ -232,7 +232,7 @@
 
     .line 16
     .line 17
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_0
 
     .line 18
     .line 19
@@ -273,8 +273,8 @@
     const/4 v1, 0x0
 
     .line 38
-    :goto_25
-    if-ge v1, v0, :cond_31
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     .line 39
     .line 40
@@ -295,9 +295,9 @@
 
     .line 48
     .line 49
-    goto :goto_25
+    goto :goto_0
 
     .line 50
-    :cond_31
+    :cond_0
     return-void
 .end method

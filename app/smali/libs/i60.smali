@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 32
+    .locals 32
 
     .line 1
     const-wide/16 v0, 0x0
@@ -1418,7 +1418,7 @@
     const/4 v14, 0x0
 
     .line 709
-    :goto_2c4
+    :goto_0
     sget-object v0, Llibs/i60;->a:[Llibs/sf0;
 
     .line 710
@@ -1426,7 +1426,7 @@
     array-length v1, v0
 
     .line 712
-    if-ge v14, v1, :cond_2dd
+    if-ge v14, v1, :cond_0
 
     .line 713
     .line 714
@@ -1467,14 +1467,14 @@
 
     .line 732
     .line 733
-    goto :goto_2c4
+    goto :goto_0
 
     .line 734
-    :cond_2dd
+    :cond_0
     const/4 v14, 0x0
 
     .line 735
-    :goto_2de
+    :goto_1
     sget-object v0, Llibs/i60;->b:[Llibs/App;
 
     .line 736
@@ -1482,7 +1482,7 @@
     array-length v1, v0
 
     .line 738
-    if-ge v14, v1, :cond_2fe
+    if-ge v14, v1, :cond_1
 
     .line 739
     .line 740
@@ -1534,15 +1534,15 @@
 
     .line 765
     .line 766
-    goto :goto_2de
+    goto :goto_1
 
     .line 767
-    :cond_2fe
+    :cond_1
     return-void
 .end method
 
 .method public static a(Llibs/App;)Llibs/sf0;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object p0, p0, Llibs/App;->X:Ljava/lang/String;
@@ -1561,7 +1561,7 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -1604,7 +1604,7 @@
     return-object p0
 
     .line 30
-    :cond_1d
+    :cond_0
     const/4 p0, 0x0
 
     .line 31

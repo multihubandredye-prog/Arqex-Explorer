@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;)V
-    .registers 5
+    .locals 1
 
     .line 1
     const/16 v0, 0x8
@@ -25,7 +25,7 @@
     .line 4
     .line 5
     .line 6
-    if-eqz p3, :cond_1a
+    if-eqz p3, :cond_0
 
     .line 7
     .line 8
@@ -37,7 +37,7 @@
     move-result v0
 
     .line 12
-    if-ltz v0, :cond_1a
+    if-ltz v0, :cond_0
 
     .line 13
     .line 14
@@ -49,7 +49,7 @@
     move-result v0
 
     .line 18
-    if-gez v0, :cond_1a
+    if-gez v0, :cond_0
 
     .line 19
     .line 20
@@ -68,7 +68,7 @@
     return-void
 
     .line 27
-    :cond_1a
+    :cond_0
     const-string p1, "x value invalid in Fp field element"
 
     .line 28
@@ -85,7 +85,7 @@
 .end method
 
 .method public static Dao(Ljava/math/BigInteger;)Ljava/math/BigInteger;
-    .registers 7
+    .locals 6
 
     .line 1
     invoke-virtual {p0}, Ljava/math/BigInteger;->bitLength()I
@@ -100,7 +100,7 @@
 
     .line 6
     .line 7
-    if-lt v0, v1, :cond_23
+    if-lt v0, v1, :cond_0
 
     .line 8
     .line 9
@@ -132,7 +132,7 @@
 
     .line 22
     .line 23
-    if-nez v5, :cond_23
+    if-nez v5, :cond_0
 
     .line 24
     .line 25
@@ -159,7 +159,7 @@
     return-object p0
 
     .line 36
-    :cond_23
+    :cond_0
     const/4 p0, 0x0
 
     .line 37
@@ -169,7 +169,7 @@
 
 # virtual methods
 .method public final All()Llibs/xf3;
-    .registers 24
+    .locals 23
 
     .line 1
     move-object/from16 v0, p0
@@ -184,7 +184,7 @@
     move-result v1
 
     .line 7
-    if-nez v1, :cond_237
+    if-nez v1, :cond_13
 
     .line 8
     .line 9
@@ -196,15 +196,15 @@
     move-result v1
 
     .line 13
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_0
 
     .line 14
     .line 15
-    goto/16 :goto_237
+    goto/16 :goto_7
 
     .line 16
     .line 17
-    :cond_10
+    :cond_0
     iget-object v1, v0, Llibs/uf0;->Chi:Ljava/math/BigInteger;
 
     .line 18
@@ -223,7 +223,7 @@
     const/4 v4, 0x0
 
     .line 25
-    if-eqz v3, :cond_22f
+    if-eqz v3, :cond_12
 
     .line 26
     .line 27
@@ -253,7 +253,7 @@
 
     .line 38
     .line 39
-    if-eqz v5, :cond_45
+    if-eqz v5, :cond_2
 
     .line 40
     .line 41
@@ -306,18 +306,18 @@
     move-result v1
 
     .line 66
-    if-eqz v1, :cond_44
+    if-eqz v1, :cond_1
 
     .line 67
     .line 68
     return-object v3
 
     .line 69
-    :cond_44
+    :cond_1
     return-object v4
 
     .line 70
-    :cond_45
+    :cond_2
     invoke-virtual {v1, v6}, Ljava/math/BigInteger;->testBit(I)Z
 
     .line 71
@@ -330,7 +330,7 @@
 
     .line 75
     .line 76
-    if-eqz v5, :cond_96
+    if-eqz v5, :cond_6
 
     .line 77
     .line 78
@@ -377,7 +377,7 @@
     move-result v2
 
     .line 99
-    if-eqz v2, :cond_75
+    if-eqz v2, :cond_4
 
     .line 100
     .line 101
@@ -406,18 +406,18 @@
     move-result v1
 
     .line 114
-    if-eqz v1, :cond_74
+    if-eqz v1, :cond_3
 
     .line 115
     .line 116
     return-object v2
 
     .line 117
-    :cond_74
+    :cond_3
     return-object v4
 
     .line 118
-    :cond_75
+    :cond_4
     invoke-virtual {v1, v6}, Ljava/math/BigInteger;->shiftRight(I)Ljava/math/BigInteger;
 
     .line 119
@@ -475,18 +475,18 @@
     move-result v1
 
     .line 147
-    if-eqz v1, :cond_95
+    if-eqz v1, :cond_5
 
     .line 148
     .line 149
     return-object v3
 
     .line 150
-    :cond_95
+    :cond_5
     return-object v4
 
     .line 151
-    :cond_96
+    :cond_6
     invoke-virtual {v1, v3}, Ljava/math/BigInteger;->shiftRight(I)Ljava/math/BigInteger;
 
     .line 152
@@ -511,7 +511,7 @@
     move-result v11
 
     .line 163
-    if-nez v11, :cond_a8
+    if-nez v11, :cond_7
 
     .line 164
     .line 165
@@ -519,11 +519,11 @@
 
     .line 166
     .line 167
-    goto/16 :goto_20b
+    goto/16 :goto_5
 
     .line 168
     .line 169
-    :cond_a8
+    :cond_7
     invoke-virtual {v8, v3}, Ljava/math/BigInteger;->shiftLeft(I)Ljava/math/BigInteger;
 
     .line 170
@@ -540,7 +540,7 @@
     move-result v12
 
     .line 177
-    if-ltz v12, :cond_b6
+    if-ltz v12, :cond_8
 
     .line 178
     .line 179
@@ -552,7 +552,7 @@
     move-result-object v11
 
     .line 183
-    :cond_b6
+    :cond_8
     invoke-virtual {v11, v3}, Ljava/math/BigInteger;->shiftLeft(I)Ljava/math/BigInteger;
 
     .line 184
@@ -569,7 +569,7 @@
     move-result v12
 
     .line 191
-    if-ltz v12, :cond_c4
+    if-ltz v12, :cond_9
 
     .line 192
     .line 193
@@ -581,7 +581,7 @@
     move-result-object v11
 
     .line 197
-    :cond_c4
+    :cond_9
     invoke-virtual {v5, v9}, Ljava/math/BigInteger;->add(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
     .line 198
@@ -607,7 +607,7 @@
     .line 208
     .line 209
     .line 210
-    :goto_d1
+    :goto_0
     new-instance v15, Ljava/math/BigInteger;
 
     .line 211
@@ -637,7 +637,7 @@
     move-result v4
 
     .line 225
-    if-gez v4, :cond_225
+    if-gez v4, :cond_11
 
     .line 226
     .line 227
@@ -681,7 +681,7 @@
     move-result v4
 
     .line 247
-    if-eqz v4, :cond_225
+    if-eqz v4, :cond_11
 
     .line 248
     .line 249
@@ -732,7 +732,7 @@
     move-object v14, v15
 
     .line 270
-    :goto_10d
+    :goto_1
     move-object/from16 v21, v13
 
     .line 271
@@ -741,7 +741,7 @@
 
     .line 273
     .line 274
-    if-lt v4, v13, :cond_182
+    if-lt v4, v13, :cond_b
 
     .line 275
     .line 276
@@ -761,7 +761,7 @@
     move-result v3
 
     .line 284
-    if-eqz v3, :cond_14a
+    if-eqz v3, :cond_a
 
     .line 285
     .line 286
@@ -852,14 +852,14 @@
     move-result-object v4
 
     .line 329
-    :goto_148
+    :goto_2
     move-object v14, v4
 
     .line 330
-    goto :goto_17d
+    goto :goto_3
 
     .line 331
-    :cond_14a
+    :cond_a
     move/from16 v22, v4
 
     .line 332
@@ -964,10 +964,10 @@
     move-object v3, v6
 
     .line 381
-    goto :goto_148
+    goto :goto_2
 
     .line 382
-    :goto_17d
+    :goto_3
     add-int/lit8 v4, v22, -0x1
 
     .line 383
@@ -976,10 +976,10 @@
 
     .line 385
     .line 386
-    goto :goto_10d
+    goto :goto_1
 
     .line 387
-    :cond_182
+    :cond_b
     invoke-virtual {v0, v6, v3}, Llibs/uf0;->Base(Ljava/math/BigInteger;Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
     .line 388
@@ -1071,8 +1071,8 @@
     const/4 v14, 0x1
 
     .line 432
-    :goto_1af
-    if-gt v14, v2, :cond_1d1
+    :goto_4
+    if-gt v14, v2, :cond_c
 
     .line 433
     .line 434
@@ -1139,10 +1139,10 @@
 
     .line 464
     .line 465
-    goto :goto_1af
+    goto :goto_4
 
     .line 466
-    :cond_1d1
+    :cond_c
     const/4 v3, 0x2
 
     .line 467
@@ -1185,7 +1185,7 @@
     move-result v5
 
     .line 486
-    if-eqz v5, :cond_1fc
+    if-eqz v5, :cond_e
 
     .line 487
     .line 488
@@ -1204,7 +1204,7 @@
     move-result v4
 
     .line 495
-    if-eqz v4, :cond_1f4
+    if-eqz v4, :cond_d
 
     .line 496
     .line 497
@@ -1216,7 +1216,7 @@
     move-result-object v2
 
     .line 501
-    :cond_1f4
+    :cond_d
     invoke-virtual {v2, v10}, Ljava/math/BigInteger;->shiftRight(I)Ljava/math/BigInteger;
 
     .line 502
@@ -1233,7 +1233,7 @@
     return-object v3
 
     .line 509
-    :cond_1fc
+    :cond_e
     const/4 v5, 0x0
 
     .line 510
@@ -1245,7 +1245,7 @@
     move-result v2
 
     .line 514
-    if-nez v2, :cond_21a
+    if-nez v2, :cond_10
 
     .line 515
     .line 516
@@ -1261,15 +1261,15 @@
     move-result v4
 
     .line 522
-    if-nez v4, :cond_20c
+    if-nez v4, :cond_f
 
     .line 523
     .line 524
-    :goto_20b
+    :goto_5
     return-object v16
 
     .line 525
-    :cond_20c
+    :cond_f
     move-object v13, v2
 
     .line 526
@@ -1289,7 +1289,7 @@
 
     .line 533
     .line 534
-    :goto_215
+    :goto_6
     const/4 v2, 0x0
 
     .line 535
@@ -1299,11 +1299,11 @@
     const/4 v6, 0x2
 
     .line 537
-    goto/16 :goto_d1
+    goto/16 :goto_0
 
     .line 538
     .line 539
-    :cond_21a
+    :cond_10
     move-object/from16 v4, v16
 
     .line 540
@@ -1324,10 +1324,10 @@
 
     .line 548
     .line 549
-    goto :goto_215
+    goto :goto_6
 
     .line 550
-    :cond_225
+    :cond_11
     move-object/from16 v19, v10
 
     .line 551
@@ -1346,11 +1346,11 @@
     const/4 v3, 0x1
 
     .line 558
-    goto/16 :goto_d1
+    goto/16 :goto_0
 
     .line 559
     .line 560
-    :cond_22f
+    :cond_12
     move-object/from16 v16, v4
 
     .line 561
@@ -1367,13 +1367,13 @@
     return-object v16
 
     .line 568
-    :cond_237
-    :goto_237
+    :cond_13
+    :goto_7
     return-object v0
 .end method
 
 .method public final Android()Ljava/math/BigInteger;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/uf0;->Omega:Ljava/math/BigInteger;
@@ -1384,7 +1384,7 @@
 .end method
 
 .method public final Base(Ljava/math/BigInteger;Ljava/math/BigInteger;)Ljava/math/BigInteger;
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p1, p2}, Ljava/math/BigInteger;->multiply(Ljava/math/BigInteger;)Ljava/math/BigInteger;
@@ -1407,7 +1407,7 @@
 .end method
 
 .method public final Bit()Llibs/xf3;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Llibs/uf0;
@@ -1443,7 +1443,7 @@
 .end method
 
 .method public final Core(Ljava/math/BigInteger;)Ljava/math/BigInteger;
-    .registers 9
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/uf0;->Chi:Ljava/math/BigInteger;
@@ -1454,7 +1454,7 @@
 
     .line 4
     .line 5
-    if-eqz v1, :cond_56
+    if-eqz v1, :cond_6
 
     .line 6
     .line 7
@@ -1466,22 +1466,22 @@
     move-result v2
 
     .line 11
-    if-gez v2, :cond_e
+    if-gez v2, :cond_0
 
     .line 12
     .line 13
     const/4 v2, 0x1
 
     .line 14
-    goto :goto_f
+    goto :goto_0
 
     .line 15
-    :cond_e
+    :cond_0
     const/4 v2, 0x0
 
     .line 16
-    :goto_f
-    if-eqz v2, :cond_15
+    :goto_0
+    if-eqz v2, :cond_1
 
     .line 17
     .line 18
@@ -1493,7 +1493,7 @@
     move-result-object p1
 
     .line 22
-    :cond_15
+    :cond_1
     invoke-virtual {v0}, Ljava/math/BigInteger;->bitLength()I
 
     .line 23
@@ -1514,7 +1514,7 @@
     move-result v4
 
     .line 32
-    :goto_1f
+    :goto_1
     invoke-virtual {p1}, Ljava/math/BigInteger;->bitLength()I
 
     .line 33
@@ -1527,7 +1527,7 @@
 
     .line 37
     .line 38
-    if-le v5, v6, :cond_3e
+    if-le v5, v6, :cond_3
 
     .line 39
     .line 40
@@ -1555,7 +1555,7 @@
     move-result-object p1
 
     .line 52
-    if-nez v4, :cond_39
+    if-nez v4, :cond_2
 
     .line 53
     .line 54
@@ -1567,7 +1567,7 @@
     move-result-object v5
 
     .line 58
-    :cond_39
+    :cond_2
     invoke-virtual {v5, p1}, Ljava/math/BigInteger;->add(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
     .line 59
@@ -1576,11 +1576,11 @@
     move-result-object p1
 
     .line 62
-    goto :goto_1f
+    goto :goto_1
 
     .line 63
-    :cond_3e
-    :goto_3e
+    :cond_3
+    :goto_2
     invoke-virtual {p1, v0}, Ljava/math/BigInteger;->compareTo(Ljava/math/BigInteger;)I
 
     .line 64
@@ -1589,7 +1589,7 @@
     move-result v1
 
     .line 67
-    if-ltz v1, :cond_49
+    if-ltz v1, :cond_4
 
     .line 68
     .line 69
@@ -1601,11 +1601,11 @@
     move-result-object p1
 
     .line 73
-    goto :goto_3e
+    goto :goto_2
 
     .line 74
-    :cond_49
-    if-eqz v2, :cond_55
+    :cond_4
+    if-eqz v2, :cond_5
 
     .line 75
     .line 76
@@ -1617,7 +1617,7 @@
     move-result v1
 
     .line 80
-    if-eqz v1, :cond_55
+    if-eqz v1, :cond_5
 
     .line 81
     .line 82
@@ -1629,11 +1629,11 @@
     move-result-object p1
 
     .line 86
-    :cond_55
+    :cond_5
     return-object p1
 
     .line 87
-    :cond_56
+    :cond_6
     invoke-virtual {p1, v0}, Ljava/math/BigInteger;->mod(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
     .line 88
@@ -1646,7 +1646,7 @@
 .end method
 
 .method public final Link(Llibs/xf3;)Llibs/xf3;
-    .registers 5
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/uf0;
@@ -1690,7 +1690,7 @@
 .end method
 
 .method public final Ok(Llibs/xf3;Llibs/xf3;)Llibs/xf3;
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-virtual {p1}, Llibs/xf3;->Android()Ljava/math/BigInteger;
@@ -1766,7 +1766,7 @@
 .end method
 
 .method public final Post()Llibs/xf3;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/uf0;->Omega:Ljava/math/BigInteger;
@@ -1781,14 +1781,14 @@
     move-result v1
 
     .line 7
-    if-nez v1, :cond_9
+    if-nez v1, :cond_0
 
     .line 8
     .line 9
     return-object p0
 
     .line 10
-    :cond_9
+    :cond_0
     new-instance v1, Llibs/uf0;
 
     .line 11
@@ -1818,7 +1818,7 @@
 .end method
 
 .method public final Result()Llibs/xf3;
-    .registers 7
+    .locals 6
 
     .line 1
     new-instance v0, Llibs/uf0;
@@ -1895,7 +1895,7 @@
 .end method
 
 .method public final Sync(Llibs/xf3;Llibs/xf3;Llibs/xf3;)Llibs/xf3;
-    .registers 5
+    .locals 1
 
     .line 1
     invoke-virtual {p1}, Llibs/xf3;->Android()Ljava/math/BigInteger;
@@ -1979,7 +1979,7 @@
 .end method
 
 .method public final True(Llibs/xf3;)Llibs/xf3;
-    .registers 5
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/uf0;
@@ -2018,7 +2018,7 @@
 
     .line 18
     .line 19
-    if-gez v1, :cond_18
+    if-gez v1, :cond_0
 
     .line 20
     .line 21
@@ -2030,7 +2030,7 @@
     move-result-object p1
 
     .line 25
-    :cond_18
+    :cond_0
     iget-object v1, p0, Llibs/uf0;->Psi:Ljava/math/BigInteger;
 
     .line 26
@@ -2044,7 +2044,7 @@
 .end method
 
 .method public final Wait(Llibs/xf3;Llibs/xf3;Llibs/xf3;)Llibs/xf3;
-    .registers 5
+    .locals 1
 
     .line 1
     invoke-virtual {p1}, Llibs/xf3;->Android()Ljava/math/BigInteger;
@@ -2128,7 +2128,7 @@
 .end method
 
 .method public final b(Llibs/xf3;)Llibs/xf3;
-    .registers 5
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/uf0;
@@ -2167,7 +2167,7 @@
     move-result v2
 
     .line 19
-    if-ltz v2, :cond_18
+    if-ltz v2, :cond_0
 
     .line 20
     .line 21
@@ -2179,7 +2179,7 @@
     move-result-object p1
 
     .line 25
-    :cond_18
+    :cond_0
     iget-object v2, p0, Llibs/uf0;->Psi:Ljava/math/BigInteger;
 
     .line 26
@@ -2193,20 +2193,20 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v1, p1, Llibs/uf0;
 
     .line 6
@@ -2214,14 +2214,14 @@
     const/4 v2, 0x0
 
     .line 8
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     .line 9
     .line 10
     return v2
 
     .line 11
-    :cond_a
+    :cond_1
     check-cast p1, Llibs/uf0;
 
     .line 12
@@ -2242,7 +2242,7 @@
     move-result v1
 
     .line 21
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_2
 
     .line 22
     .line 23
@@ -2262,19 +2262,19 @@
     move-result p1
 
     .line 31
-    if-eqz p1, :cond_21
+    if-eqz p1, :cond_2
 
     .line 32
     .line 33
     return v0
 
     .line 34
-    :cond_21
+    :cond_2
     return v2
 .end method
 
 .method public final f()Llibs/xf3;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/uf0;->Omega:Ljava/math/BigInteger;
@@ -2305,7 +2305,7 @@
     move-result v2
 
     .line 15
-    if-nez v2, :cond_12
+    if-nez v2, :cond_0
 
     .line 16
     .line 17
@@ -2313,7 +2313,7 @@
 
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     new-instance v2, Llibs/uf0;
 
     .line 20
@@ -2331,7 +2331,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/uf0;->Chi:Ljava/math/BigInteger;
@@ -2365,7 +2365,7 @@
 .end method
 
 .method public final p(Llibs/xf3;)Llibs/xf3;
-    .registers 7
+    .locals 5
 
     .line 1
     new-instance v0, Llibs/uf0;
@@ -2458,7 +2458,7 @@
 .end method
 
 .method public final w()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/uf0;->Chi:Ljava/math/BigInteger;

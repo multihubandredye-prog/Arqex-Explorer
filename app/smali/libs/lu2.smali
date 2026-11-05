@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/pu2;JJILjava/util/Set;Ljava/util/Set;Ljava/util/Set;ILjava/util/Set;Llibs/qc3;)V
-    .registers 21
+    .locals 8
 
     .line 1
     const/16 v1, 0x39
@@ -49,18 +49,18 @@
     .line 10
     .line 11
     .line 12
-    if-eqz p6, :cond_e
+    if-eqz p6, :cond_0
 
     .line 13
     .line 14
-    goto :goto_f
+    goto :goto_0
 
     .line 15
-    :cond_e
+    :cond_0
     const/4 p6, 0x2
 
     .line 16
-    :goto_f
+    :goto_0
     iput p6, p0, Llibs/lu2;->k:I
 
     .line 17
@@ -69,7 +69,7 @@
 
     .line 19
     .line 20
-    if-nez p8, :cond_1c
+    if-nez p8, :cond_1
 
     .line 21
     .line 22
@@ -85,20 +85,20 @@
     move-result-object p1
 
     .line 28
-    goto :goto_1e
+    goto :goto_1
 
     .line 29
-    :cond_1c
+    :cond_1
     move-object/from16 p1, p8
 
     .line 30
     .line 31
-    :goto_1e
+    :goto_1
     iput-object p1, p0, Llibs/lu2;->e:Ljava/util/Set;
 
     .line 32
     .line 33
-    if-nez p9, :cond_29
+    if-nez p9, :cond_2
 
     .line 34
     .line 35
@@ -114,20 +114,20 @@
     move-result-object p1
 
     .line 41
-    goto :goto_2b
+    goto :goto_2
 
     .line 42
-    :cond_29
+    :cond_2
     move-object/from16 p1, p9
 
     .line 43
     .line 44
-    :goto_2b
+    :goto_2
     iput-object p1, p0, Llibs/lu2;->f:Ljava/util/Set;
 
     .line 45
     .line 46
-    if-eqz p10, :cond_32
+    if-eqz p10, :cond_3
 
     .line 47
     .line 48
@@ -135,19 +135,19 @@
 
     .line 49
     .line 50
-    goto :goto_33
+    goto :goto_3
 
     .line 51
-    :cond_32
+    :cond_3
     const/4 p1, 0x4
 
     .line 52
-    :goto_33
+    :goto_3
     iput p1, p0, Llibs/lu2;->g:I
 
     .line 53
     .line 54
-    if-nez p11, :cond_3e
+    if-nez p11, :cond_4
 
     .line 55
     .line 56
@@ -163,15 +163,15 @@
     move-result-object p1
 
     .line 62
-    goto :goto_40
+    goto :goto_4
 
     .line 63
-    :cond_3e
+    :cond_4
     move-object/from16 p1, p11
 
     .line 64
     .line 65
-    :goto_40
+    :goto_4
     iput-object p1, p0, Llibs/lu2;->h:Ljava/util/Set;
 
     .line 66
@@ -190,7 +190,7 @@
 
 # virtual methods
 .method public final i(Llibs/rw2;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget v0, p0, Llibs/lv2;->c:I
@@ -349,7 +349,7 @@
 
     .line 82
     .line 83
-    if-eqz v2, :cond_6d
+    if-eqz v2, :cond_1
 
     .line 84
     .line 85
@@ -369,14 +369,14 @@
     move-result v3
 
     .line 93
-    if-nez v3, :cond_5f
+    if-nez v3, :cond_0
 
     .line 94
     .line 95
-    goto :goto_6d
+    goto :goto_0
 
     .line 96
-    :cond_5f
+    :cond_0
     sget-object v1, Llibs/ks;->d:Ljava/nio/charset/Charset;
 
     .line 97
@@ -402,11 +402,11 @@
     .line 107
     .line 108
     .line 109
-    goto :goto_76
+    goto :goto_1
 
     .line 110
-    :cond_6d
-    :goto_6d
+    :cond_1
+    :goto_0
     invoke-virtual {p1, v0}, Llibs/rw2;->m(I)V
 
     .line 111
@@ -424,7 +424,7 @@
 
     .line 118
     .line 119
-    :goto_76
+    :goto_1
     const-wide/16 v2, 0x0
 
     .line 120

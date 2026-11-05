@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/security/KeyFactorySpi;-><init>()V
@@ -19,10 +19,10 @@
 
 # virtual methods
 .method public engineGeneratePrivate(Ljava/security/spec/KeySpec;)Ljava/security/PrivateKey;
-    .registers 4
+    .locals 2
 
     .line 1
-    if-eqz p1, :cond_22
+    if-eqz p1, :cond_1
 
     .line 2
     .line 3
@@ -30,7 +30,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -50,7 +50,7 @@
     return-object v0
 
     .line 15
-    :cond_e
+    :cond_0
     new-instance v0, Ljava/security/spec/InvalidKeySpecException;
 
     .line 16
@@ -91,7 +91,7 @@
     throw v0
 
     .line 35
-    :cond_22
+    :cond_1
     const-string p1, "keySpec == null"
 
     .line 36
@@ -108,10 +108,10 @@
 .end method
 
 .method public engineGeneratePublic(Ljava/security/spec/KeySpec;)Ljava/security/PublicKey;
-    .registers 4
+    .locals 2
 
     .line 1
-    if-eqz p1, :cond_22
+    if-eqz p1, :cond_1
 
     .line 2
     .line 3
@@ -119,7 +119,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -139,7 +139,7 @@
     return-object v0
 
     .line 15
-    :cond_e
+    :cond_0
     new-instance v0, Ljava/security/spec/InvalidKeySpecException;
 
     .line 16
@@ -180,7 +180,7 @@
     throw v0
 
     .line 35
-    :cond_22
+    :cond_1
     const-string p1, "keySpec == null"
 
     .line 36
@@ -197,7 +197,7 @@
 .end method
 
 .method public engineGetKeySpec(Ljava/security/Key;Ljava/lang/Class;)Ljava/security/spec/KeySpec;
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -213,11 +213,11 @@
     const/4 v0, 0x0
 
     .line 2
-    if-eqz p1, :cond_81
+    if-eqz p1, :cond_5
 
     .line 3
     .line 4
-    if-eqz p2, :cond_7b
+    if-eqz p2, :cond_4
 
     .line 5
     .line 6
@@ -229,7 +229,7 @@
 
     .line 9
     .line 10
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_1
 
     .line 11
     .line 12
@@ -252,7 +252,7 @@
     move-result v2
 
     .line 21
-    if-nez v2, :cond_25
+    if-nez v2, :cond_0
 
     .line 22
     .line 23
@@ -264,7 +264,7 @@
     move-result v1
 
     .line 27
-    if-eqz v1, :cond_53
+    if-eqz v1, :cond_3
 
     .line 28
     .line 29
@@ -287,7 +287,7 @@
     return-object p1
 
     .line 38
-    :cond_25
+    :cond_0
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     .line 39
@@ -304,12 +304,12 @@
     throw p1
 
     .line 46
-    :cond_2d
+    :cond_1
     instance-of v0, p1, Lorg/conscrypt/OpenSslSlhDsaPrivateKey;
 
     .line 47
     .line 48
-    if-eqz v0, :cond_53
+    if-eqz v0, :cond_3
 
     .line 49
     .line 50
@@ -332,7 +332,7 @@
     move-result v2
 
     .line 59
-    if-nez v2, :cond_4b
+    if-nez v2, :cond_2
 
     .line 60
     .line 61
@@ -344,7 +344,7 @@
     move-result v1
 
     .line 65
-    if-eqz v1, :cond_53
+    if-eqz v1, :cond_3
 
     .line 66
     .line 67
@@ -367,7 +367,7 @@
     return-object p1
 
     .line 76
-    :cond_4b
+    :cond_2
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     .line 77
@@ -384,7 +384,7 @@
     throw p1
 
     .line 84
-    :cond_53
+    :cond_3
     new-instance v0, Ljava/security/spec/InvalidKeySpecException;
 
     .line 85
@@ -461,7 +461,7 @@
     throw v0
 
     .line 124
-    :cond_7b
+    :cond_4
     const-string p1, "keySpec == null"
 
     .line 125
@@ -474,7 +474,7 @@
     return-object v0
 
     .line 130
-    :cond_81
+    :cond_5
     const-string p1, "key == null"
 
     .line 131
@@ -488,13 +488,13 @@
 .end method
 
 .method public engineTranslateKey(Ljava/security/Key;)Ljava/security/Key;
-    .registers 4
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_2
 
     .line 3
     .line 4
@@ -502,7 +502,7 @@
 
     .line 5
     .line 6
-    if-nez v1, :cond_12
+    if-nez v1, :cond_1
 
     .line 7
     .line 8
@@ -510,14 +510,14 @@
 
     .line 9
     .line 10
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_0
 
     .line 11
     .line 12
     return-object p1
 
     .line 13
-    :cond_c
+    :cond_0
     const-string p1, "Key must be OpenSslSlhDsaPublicKey or OpenSslSlhDsaPrivateKey"
 
     .line 14
@@ -530,11 +530,11 @@
     return-object v0
 
     .line 19
-    :cond_12
+    :cond_1
     return-object p1
 
     .line 20
-    :cond_13
+    :cond_2
     const-string p1, "key == null"
 
     .line 21

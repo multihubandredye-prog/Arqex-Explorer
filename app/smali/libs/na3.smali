@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 21
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -64,7 +64,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -110,7 +110,7 @@
 .end method
 
 .method public static h(IJ)J
-    .registers 5
+    .locals 2
 
     .line 1
     shl-long v0, p1, p0
@@ -133,7 +133,7 @@
 
 # virtual methods
 .method public final a(B)V
-    .registers 9
+    .locals 7
 
     .line 1
     iget-wide v0, p0, Llibs/na3;->i:J
@@ -183,7 +183,7 @@
 
     .line 21
     .line 22
-    if-ne p1, v2, :cond_1d
+    if-ne p1, v2, :cond_0
 
     .line 23
     .line 24
@@ -199,12 +199,12 @@
 
     .line 29
     .line 30
-    :cond_1d
+    :cond_0
     return-void
 .end method
 
 .method public final b()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -259,14 +259,14 @@
 .end method
 
 .method public final c(Llibs/et;)V
-    .registers 4
+    .locals 2
 
     .line 1
     instance-of v0, p1, Llibs/hh1;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
@@ -285,7 +285,7 @@
 
     .line 11
     .line 12
-    if-ne v0, v1, :cond_20
+    if-ne v0, v1, :cond_0
 
     .line 13
     .line 14
@@ -328,7 +328,7 @@
     return-void
 
     .line 33
-    :cond_20
+    :cond_0
     const-string p1, "\'params\' must be a 128-bit key"
 
     .line 34
@@ -341,7 +341,7 @@
     return-void
 
     .line 39
-    :cond_26
+    :cond_1
     const-string p1, "\'params\' must be an instance of KeyParameter"
 
     .line 40
@@ -355,7 +355,7 @@
 .end method
 
 .method public final d([B)I
-    .registers 10
+    .locals 8
 
     .line 1
     iget-wide v0, p0, Llibs/na3;->i:J
@@ -486,7 +486,7 @@
 .end method
 
 .method public final e()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x8
@@ -497,7 +497,7 @@
 .end method
 
 .method public final f(I)V
-    .registers 13
+    .locals 11
 
     .line 1
     iget-wide v0, p0, Llibs/na3;->e:J
@@ -519,8 +519,8 @@
     const/4 v8, 0x0
 
     .line 10
-    :goto_9
-    if-ge v8, p1, :cond_38
+    :goto_0
+    if-ge v8, p1, :cond_0
 
     .line 11
     .line 12
@@ -620,10 +620,10 @@
 
     .line 55
     .line 56
-    goto :goto_9
+    goto :goto_0
 
     .line 57
-    :cond_38
+    :cond_0
     iput-wide v0, p0, Llibs/na3;->e:J
 
     .line 58
@@ -644,7 +644,7 @@
 .end method
 
 .method public final g()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget v0, p0, Llibs/na3;->k:I
@@ -702,7 +702,7 @@
 .end method
 
 .method public final reset()V
-    .registers 7
+    .locals 6
 
     .line 1
     iget-wide v0, p0, Llibs/na3;->c:J
@@ -792,7 +792,7 @@
 .end method
 
 .method public final update([BII)V
-    .registers 22
+    .locals 18
 
     .line 1
     move-object/from16 v0, p0
@@ -830,12 +830,12 @@
     const/4 v9, 0x0
 
     .line 18
-    if-nez v4, :cond_3c
+    if-nez v4, :cond_2
 
     .line 19
     .line 20
-    :goto_13
-    if-ge v9, v3, :cond_23
+    :goto_0
+    if-ge v9, v3, :cond_0
 
     .line 21
     .line 22
@@ -864,12 +864,12 @@
 
     .line 34
     .line 35
-    goto :goto_13
+    goto :goto_0
 
     .line 36
-    :cond_23
-    :goto_23
-    if-ge v9, v2, :cond_37
+    :cond_0
+    :goto_1
+    if-ge v9, v2, :cond_1
 
     .line 37
     .line 38
@@ -912,10 +912,10 @@
 
     .line 54
     .line 55
-    goto :goto_23
+    goto :goto_1
 
     .line 56
-    :cond_37
+    :cond_1
     sub-int v1, v2, v3
 
     .line 57
@@ -927,7 +927,7 @@
     return-void
 
     .line 61
-    :cond_3c
+    :cond_2
     shl-int/lit8 v4, v4, 0x3
 
     .line 62
@@ -935,8 +935,8 @@
     const/4 v10, 0x0
 
     .line 64
-    :goto_3f
-    if-ge v10, v3, :cond_60
+    :goto_2
+    if-ge v10, v3, :cond_3
 
     .line 65
     .line 66
@@ -1002,10 +1002,10 @@
 
     .line 95
     .line 96
-    goto :goto_3f
+    goto :goto_2
 
     .line 97
-    :cond_60
+    :cond_3
     move-wide/from16 v16, v6
 
     .line 98
@@ -1014,8 +1014,8 @@
 
     .line 100
     .line 101
-    :goto_64
-    if-ge v10, v2, :cond_86
+    :goto_3
+    if-ge v10, v2, :cond_5
 
     .line 102
     .line 103
@@ -1067,7 +1067,7 @@
 
     .line 124
     .line 125
-    if-ne v3, v8, :cond_83
+    if-ne v3, v8, :cond_4
 
     .line 126
     .line 127
@@ -1080,14 +1080,14 @@
 
     .line 131
     .line 132
-    :cond_83
+    :cond_4
     add-int/lit8 v10, v10, 0x1
 
     .line 133
     .line 134
-    goto :goto_64
+    goto :goto_3
 
     .line 135
-    :cond_86
+    :cond_5
     return-void
 .end method

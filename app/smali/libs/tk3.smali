@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/a;Landroid/view/KeyEvent$Callback;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/tk3;->a:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final onDismiss(Landroid/content/DialogInterface;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte p1, p0, Llibs/tk3;->a:B
@@ -57,7 +57,7 @@
 
     .line 6
     .line 7
-    packed-switch p1, :pswitch_data_2c
+    packed-switch p1, :pswitch_data_0
 
     .line 8
     .line 9
@@ -93,7 +93,7 @@
     return-void
 
     .line 25
-    :pswitch_18
+    :pswitch_0
     check-cast v1, Lcom/mixplorer/activities/TextEditorActivity;
 
     .line 26
@@ -114,7 +114,7 @@
     return-void
 
     .line 35
-    :pswitch_22
+    :pswitch_1
     check-cast v1, Lcom/mixplorer/activities/TextEditorActivity;
 
     .line 36
@@ -135,9 +135,9 @@
     return-void
 
     .line 45
-    :pswitch_data_2c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_22
-        :pswitch_18
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

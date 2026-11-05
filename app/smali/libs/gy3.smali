@@ -31,7 +31,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/a_;
@@ -58,7 +58,7 @@
 
 # virtual methods
 .method public final a()V
-    .registers 7
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/gy3;->j:Llibs/t80;
@@ -73,22 +73,22 @@
 
     .line 6
     .line 7
-    if-le v1, v2, :cond_9
+    if-le v1, v2, :cond_0
 
     .line 8
     .line 9
     move v1, v2
 
     .line 10
-    :cond_9
-    if-nez v1, :cond_c
+    :cond_0
+    if-nez v1, :cond_1
 
     .line 11
     .line 12
-    goto :goto_48
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_1
     iget-object v2, v0, Llibs/t80;->Z:[B
 
     .line 14
@@ -100,7 +100,7 @@
 
     .line 17
     .line 18
-    if-le v3, v0, :cond_20
+    if-le v3, v0, :cond_2
 
     .line 19
     .line 20
@@ -115,7 +115,7 @@
 
     .line 24
     .line 25
-    if-le v4, v5, :cond_20
+    if-le v4, v5, :cond_2
 
     .line 26
     .line 27
@@ -126,14 +126,14 @@
 
     .line 29
     .line 30
-    if-lt v4, v5, :cond_20
+    if-lt v4, v5, :cond_2
 
     .line 31
     .line 32
     array-length v3, v3
 
     .line 33
-    :cond_20
+    :cond_2
     iget-object v3, p0, Llibs/gy3;->e:[B
 
     .line 34
@@ -209,7 +209,7 @@
 
     .line 67
     .line 68
-    if-nez v2, :cond_48
+    if-nez v2, :cond_3
 
     .line 69
     .line 70
@@ -220,7 +220,7 @@
 
     .line 72
     .line 73
-    :cond_48
-    :goto_48
+    :cond_3
+    :goto_0
     return-void
 .end method

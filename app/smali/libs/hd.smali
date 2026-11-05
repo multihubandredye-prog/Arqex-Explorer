@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/String;Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onCheckedChanged(Landroid/widget/CompoundButton;Z)V
-    .registers 7
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/hd;->a:Ljava/lang/String;
@@ -51,7 +51,7 @@
     move-result v1
 
     .line 7
-    if-nez v1, :cond_20
+    if-nez v1, :cond_0
 
     .line 8
     .line 9
@@ -99,12 +99,12 @@
     .line 31
     .line 32
     .line 33
-    :cond_20
+    :cond_0
     iget-object v0, p0, Llibs/hd;->b:Landroid/widget/CompoundButton$OnCheckedChangeListener;
 
     .line 34
     .line 35
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_1
 
     .line 36
     .line 37
@@ -113,6 +113,6 @@
     .line 38
     .line 39
     .line 40
-    :cond_27
+    :cond_1
     return-void
 .end method

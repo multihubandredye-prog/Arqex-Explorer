@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/nio/channels/FileChannel;)V
-    .registers 4
+    .locals 2
 
     .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .end method
 
 .method public constructor <init>(Ljava/nio/channels/FileChannel;JJ)V
-    .registers 10
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
 
     .line 8
     .line 9
-    if-ltz v3, :cond_1f
+    if-ltz v3, :cond_1
 
     .line 10
     .line 11
@@ -65,7 +65,7 @@
 
     .line 12
     .line 13
-    if-ltz v3, :cond_15
+    if-ltz v3, :cond_0
 
     .line 14
     .line 15
@@ -84,7 +84,7 @@
     return-void
 
     .line 22
-    :cond_15
+    :cond_0
     const-string p1, "size: "
 
     .line 23
@@ -105,7 +105,7 @@
     throw v0
 
     .line 32
-    :cond_1f
+    :cond_1
     const-string p1, "offset: "
 
     .line 33
@@ -127,7 +127,7 @@
 .end method
 
 .method public static e(JJJ)V
-    .registers 13
+    .locals 7
 
     .line 1
     const-wide/16 v0, 0x0
@@ -138,7 +138,7 @@
 
     .line 4
     .line 5
-    if-ltz v2, :cond_5f
+    if-ltz v2, :cond_4
 
     .line 6
     .line 7
@@ -146,7 +146,7 @@
 
     .line 8
     .line 9
-    if-ltz v2, :cond_55
+    if-ltz v2, :cond_3
 
     .line 10
     .line 11
@@ -166,7 +166,7 @@
 
     .line 18
     .line 19
-    if-gtz v3, :cond_49
+    if-gtz v3, :cond_2
 
     .line 20
     .line 21
@@ -182,7 +182,7 @@
 
     .line 26
     .line 27
-    if-ltz v6, :cond_3b
+    if-ltz v6, :cond_1
 
     .line 28
     .line 29
@@ -190,14 +190,14 @@
 
     .line 30
     .line 31
-    if-gtz v6, :cond_21
+    if-gtz v6, :cond_0
 
     .line 32
     .line 33
     return-void
 
     .line 34
-    :cond_21
+    :cond_0
     new-instance v3, Ljava/lang/IndexOutOfBoundsException;
 
     .line 35
@@ -246,7 +246,7 @@
     throw v3
 
     .line 60
-    :cond_3b
+    :cond_1
     invoke-static {p0, p1, v2, v5}, Llibs/sk1;->u(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 61
@@ -275,7 +275,7 @@
     return-void
 
     .line 74
-    :cond_49
+    :cond_2
     invoke-static {p0, p1, v2, v1}, Llibs/sk1;->u(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 75
@@ -300,7 +300,7 @@
     return-void
 
     .line 86
-    :cond_55
+    :cond_3
     const-string p0, "size: "
 
     .line 87
@@ -321,7 +321,7 @@
     return-void
 
     .line 96
-    :cond_5f
+    :cond_4
     const-string p2, "offset: "
 
     .line 97
@@ -345,7 +345,7 @@
 
 # virtual methods
 .method public final a(JJ)Llibs/t60;
-    .registers 11
+    .locals 6
 
     .line 1
     invoke-virtual {p0}, Llibs/xo0;->size()J
@@ -375,7 +375,7 @@
 
     .line 13
     .line 14
-    if-nez p3, :cond_14
+    if-nez p3, :cond_0
 
     .line 15
     .line 16
@@ -383,14 +383,14 @@
 
     .line 17
     .line 18
-    if-nez p1, :cond_14
+    if-nez p1, :cond_0
 
     .line 19
     .line 20
     return-object p0
 
     .line 21
-    :cond_14
+    :cond_0
     move-wide p1, v0
 
     .line 22
@@ -424,7 +424,7 @@
 .end method
 
 .method public final b(JJLlibs/s60;)V
-    .registers 15
+    .locals 9
 
     .line 1
     invoke-virtual {p0}, Llibs/xo0;->size()J
@@ -454,14 +454,14 @@
 
     .line 13
     .line 14
-    if-nez p3, :cond_10
+    if-nez p3, :cond_0
 
     .line 15
     .line 16
-    goto :goto_63
+    goto :goto_3
 
     .line 17
-    :cond_10
+    :cond_0
     iget-wide p3, p0, Llibs/xo0;->b:J
 
     .line 18
@@ -502,12 +502,12 @@
     move-wide p3, v7
 
     .line 35
-    :goto_22
+    :goto_0
     cmp-long v3, p3, p1
 
     .line 36
     .line 37
-    if-lez v3, :cond_63
+    if-lez v3, :cond_3
 
     .line 38
     .line 39
@@ -545,7 +545,7 @@
     monitor-enter v3
 
     .line 55
-    :try_start_36
+    :try_start_0
     iget-object v5, p0, Llibs/xo0;->a:Ljava/nio/channels/FileChannel;
 
     .line 56
@@ -558,8 +558,8 @@
     move v5, v4
 
     .line 61
-    :goto_3c
-    if-lez v5, :cond_53
+    :goto_1
+    if-lez v5, :cond_2
 
     .line 62
     .line 63
@@ -575,17 +575,17 @@
     move-result v6
 
     .line 69
-    if-ltz v6, :cond_48
+    if-ltz v6, :cond_1
 
     .line 70
     .line 71
     sub-int/2addr v5, v6
 
     .line 72
-    goto :goto_3c
+    goto :goto_1
 
     .line 73
-    :cond_48
+    :cond_1
     new-instance p1, Ljava/io/IOException;
 
     .line 74
@@ -602,20 +602,20 @@
     throw p1
 
     .line 81
-    :catchall_50
+    :catchall_0
     move-exception v0
 
     .line 82
     move-object p1, v0
 
     .line 83
-    goto :goto_61
+    goto :goto_2
 
     .line 84
-    :cond_53
+    :cond_2
     monitor-exit v3
-    :try_end_54
-    .catchall {:try_start_36 .. :try_end_54} :catchall_50
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 85
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->flip()Ljava/nio/Buffer;
@@ -642,29 +642,29 @@
     sub-long/2addr p3, v3
 
     .line 97
-    goto :goto_22
+    goto :goto_0
 
     .line 98
-    :goto_61
-    :try_start_61
+    :goto_2
+    :try_start_1
     monitor-exit v3
-    :try_end_62
-    .catchall {:try_start_61 .. :try_end_62} :catchall_50
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 99
     throw p1
 
     .line 100
-    :cond_63
-    :goto_63
+    :cond_3
+    :goto_3
     return-void
 .end method
 
 .method public final c(IJ)Ljava/nio/ByteBuffer;
-    .registers 5
+    .locals 1
 
     .line 1
-    if-ltz p1, :cond_d
+    if-ltz p1, :cond_0
 
     .line 2
     .line 3
@@ -689,7 +689,7 @@
     return-object v0
 
     .line 14
-    :cond_d
+    :cond_0
     const-string p2, "size: "
 
     .line 15
@@ -714,7 +714,7 @@
 .end method
 
 .method public final d(IJLjava/nio/ByteBuffer;)V
-    .registers 11
+    .locals 6
 
     .line 1
     invoke-virtual {p0}, Llibs/xo0;->size()J
@@ -736,14 +736,14 @@
     .line 8
     .line 9
     .line 10
-    if-nez p1, :cond_c
+    if-nez p1, :cond_0
 
     .line 11
     .line 12
     return-void
 
     .line 13
-    :cond_c
+    :cond_0
     invoke-virtual {p4}, Ljava/nio/Buffer;->remaining()I
 
     .line 14
@@ -752,7 +752,7 @@
     move-result p2
 
     .line 17
-    if-gt p1, p2, :cond_45
+    if-gt p1, p2, :cond_2
 
     .line 18
     .line 19
@@ -771,7 +771,7 @@
     move-result v1
 
     .line 26
-    :try_start_19
+    :try_start_0
     invoke-virtual {p4}, Ljava/nio/Buffer;->position()I
 
     .line 27
@@ -788,8 +788,8 @@
     .line 32
     .line 33
     .line 34
-    :goto_21
-    if-lez p1, :cond_3d
+    :goto_0
+    if-lez p1, :cond_1
 
     .line 35
     .line 36
@@ -798,11 +798,11 @@
     .line 37
     .line 38
     monitor-enter v2
-    :try_end_26
-    .catchall {:try_start_19 .. :try_end_26} :catchall_3a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 39
-    :try_start_26
+    :try_start_1
     iget-object v0, p0, Llibs/xo0;->a:Ljava/nio/channels/FileChannel;
 
     .line 40
@@ -836,10 +836,10 @@
     sub-int/2addr p1, v0
 
     .line 54
-    goto :goto_21
+    goto :goto_0
 
     .line 55
-    :catchall_36
+    :catchall_0
     move-exception v0
 
     .line 56
@@ -847,27 +847,27 @@
 
     .line 57
     monitor-exit v2
-    :try_end_39
-    .catchall {:try_start_26 .. :try_end_39} :catchall_36
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 58
-    :try_start_39
+    :try_start_2
     throw p1
-    :try_end_3a
-    .catchall {:try_start_39 .. :try_end_3a} :catchall_3a
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 59
-    :catchall_3a
+    :catchall_1
     move-exception v0
 
     .line 60
     move-object p1, v0
 
     .line 61
-    goto :goto_41
+    goto :goto_1
 
     .line 62
-    :cond_3d
+    :cond_1
     invoke-virtual {p4, v1}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
     .line 63
@@ -876,7 +876,7 @@
     return-void
 
     .line 66
-    :goto_41
+    :goto_1
     invoke-virtual {p4, v1}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
     .line 67
@@ -885,7 +885,7 @@
     throw p1
 
     .line 70
-    :cond_45
+    :cond_2
     new-instance p1, Ljava/nio/BufferOverflowException;
 
     .line 71
@@ -895,19 +895,19 @@
     .line 73
     .line 74
     .line 75
-    goto :goto_4c
+    goto :goto_3
 
     .line 76
-    :goto_4b
+    :goto_2
     throw p1
 
     .line 77
-    :goto_4c
-    goto :goto_4b
+    :goto_3
+    goto :goto_2
 .end method
 
 .method public final size()J
-    .registers 6
+    .locals 5
 
     .line 1
     const-wide/16 v0, -0x1
@@ -922,11 +922,11 @@
 
     .line 6
     .line 7
-    if-nez v4, :cond_12
+    if-nez v4, :cond_0
 
     .line 8
     .line 9
-    :try_start_8
+    :try_start_0
     iget-object v0, p0, Llibs/xo0;->a:Ljava/nio/channels/FileChannel;
 
     .line 10
@@ -937,14 +937,14 @@
     .line 13
     .line 14
     move-result-wide v0
-    :try_end_e
-    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_e} :catch_f
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 15
     return-wide v0
 
     .line 16
-    :catch_f
+    :catch_0
     const-wide/16 v0, 0x0
 
     .line 17
@@ -952,6 +952,6 @@
     return-wide v0
 
     .line 19
-    :cond_12
+    :cond_0
     return-wide v2
 .end method

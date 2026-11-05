@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 8
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,7 +29,7 @@
     const/4 v0, 0x0
 
     .line 5
-    :try_start_4
+    :try_start_0
     new-instance v1, Llibs/App;
 
     .line 6
@@ -52,15 +52,15 @@
 
     .line 16
     check-cast v1, Llibs/gt0;
-    :try_end_11
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_4 .. :try_end_11} :catch_12
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 17
     .line 18
-    goto :goto_29
+    goto :goto_0
 
     .line 19
-    :catch_12
+    :catch_0
     nop
 
     .line 20
@@ -80,7 +80,7 @@
 
     .line 27
     .line 28
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_0
 
     .line 29
     .line 30
@@ -104,15 +104,15 @@
 
     .line 39
     .line 40
-    goto :goto_29
+    goto :goto_0
 
     .line 41
-    :cond_28
+    :cond_0
     move-object v1, v0
 
     .line 42
-    :goto_29
-    if-eqz v1, :cond_4b
+    :goto_0
+    if-eqz v1, :cond_1
 
     .line 43
     .line 44
@@ -180,7 +180,7 @@
     return-void
 
     .line 76
-    :cond_4b
+    :cond_1
     const-string p1, "no key parameter set for passed in name/OID."
 
     .line 77
@@ -194,7 +194,7 @@
 .end method
 
 .method public constructor <init>(Llibs/nt0;)V
-    .registers 2
+    .locals 0
 
     .line 82
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -222,7 +222,7 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
 
     .line 1
     instance-of v0, p1, Llibs/ht0;
@@ -232,7 +232,7 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_1
 
     .line 5
     .line 6
@@ -256,7 +256,7 @@
     move-result v0
 
     .line 16
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_1
 
     .line 17
     .line 18
@@ -276,7 +276,7 @@
     move-result v0
 
     .line 26
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_1
 
     .line 27
     .line 28
@@ -288,11 +288,11 @@
 
     .line 31
     .line 32
-    if-eq v0, p1, :cond_29
+    if-eq v0, p1, :cond_0
 
     .line 33
     .line 34
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_1
 
     .line 35
     .line 36
@@ -304,23 +304,23 @@
     move-result p1
 
     .line 40
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_1
 
     .line 41
     .line 42
-    :cond_29
+    :cond_0
     const/4 p1, 0x1
 
     .line 43
     return p1
 
     .line 44
-    :cond_2b
+    :cond_1
     return v1
 .end method
 
 .method public final hashCode()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/ht0;->X:Llibs/nt0;
@@ -354,7 +354,7 @@
 
     .line 15
     .line 16
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_0
 
     .line 17
     .line 18
@@ -366,14 +366,14 @@
     move-result v1
 
     .line 22
-    goto :goto_17
+    goto :goto_0
 
     .line 23
-    :cond_16
+    :cond_0
     const/4 v1, 0x0
 
     .line 24
-    :goto_17
+    :goto_0
     xor-int/2addr v0, v1
 
     .line 25

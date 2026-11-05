@@ -11,10 +11,10 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
-    packed-switch p1, :pswitch_data_10
+    packed-switch p1, :pswitch_data_0
 
     .line 2
     .line 3
@@ -27,7 +27,7 @@
     return-void
 
     .line 8
-    :pswitch_7
+    :pswitch_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 9
@@ -47,16 +47,16 @@
     nop
 
     .line 17
-    :pswitch_data_10
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_7
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public a()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/rk2;->b:Ljava/lang/Object;
@@ -83,7 +83,7 @@
 
     .line 12
     .line 13
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     .line 14
     .line 15
@@ -102,7 +102,7 @@
     return v0
 
     .line 22
-    :cond_15
+    :cond_0
     add-int/lit8 v0, v0, 0x7
 
     .line 23
@@ -115,7 +115,7 @@
 .end method
 
 .method public b()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/rk2;->b:Ljava/lang/Object;
@@ -142,7 +142,7 @@
 
     .line 12
     .line 13
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_0
 
     .line 14
     .line 15
@@ -157,7 +157,7 @@
     return v0
 
     .line 20
-    :cond_13
+    :cond_0
     add-int/lit8 v0, v0, 0x7
 
     .line 21
@@ -174,7 +174,7 @@
 .end method
 
 .method public c(CLjava/nio/CharBuffer;)I
-    .registers 7
+    .locals 4
 
     .line 1
     invoke-static {p1}, Ljava/lang/Character;->isHighSurrogate(C)Z
@@ -194,7 +194,7 @@
     const/4 v3, -0x1
 
     .line 8
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_2
 
     .line 9
     .line 10
@@ -206,7 +206,7 @@
     move-result v0
 
     .line 14
-    if-nez v0, :cond_14
+    if-nez v0, :cond_0
 
     .line 15
     .line 16
@@ -221,7 +221,7 @@
     return v3
 
     .line 21
-    :cond_14
+    :cond_0
     invoke-virtual {p2}, Ljava/nio/CharBuffer;->get()C
 
     .line 22
@@ -238,7 +238,7 @@
     move-result v0
 
     .line 29
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_1
 
     .line 30
     .line 31
@@ -261,7 +261,7 @@
     return p1
 
     .line 40
-    :cond_27
+    :cond_1
     invoke-static {v2}, Ljava/nio/charset/CoderResult;->malformedForLength(I)Ljava/nio/charset/CoderResult;
 
     .line 41
@@ -277,7 +277,7 @@
     return v3
 
     .line 47
-    :cond_2e
+    :cond_2
     invoke-static {p1}, Ljava/lang/Character;->isLowSurrogate(C)Z
 
     .line 48
@@ -286,7 +286,7 @@
     move-result p2
 
     .line 51
-    if-eqz p2, :cond_3b
+    if-eqz p2, :cond_3
 
     .line 52
     .line 53
@@ -305,7 +305,7 @@
     return v3
 
     .line 60
-    :cond_3b
+    :cond_3
     const/4 p2, 0x0
 
     .line 61
@@ -321,7 +321,7 @@
 .end method
 
 .method public d(Ljava/math/BigInteger;)Ljava/math/BigInteger;
-    .registers 8
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/rk2;->b:Ljava/lang/Object;
@@ -336,7 +336,7 @@
 
     .line 6
     .line 7
-    if-eqz v1, :cond_39
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
@@ -439,7 +439,7 @@
     return-object p1
 
     .line 58
-    :cond_39
+    :cond_0
     iget-object v1, v0, Llibs/uk2;->c:Ljava/math/BigInteger;
 
     .line 59

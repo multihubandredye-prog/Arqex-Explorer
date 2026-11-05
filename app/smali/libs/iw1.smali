@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/ow1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final onDownloadStart(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
-    .registers 7
+    .locals 0
 
     .line 1
     iget-object p2, p0, Llibs/iw1;->a:Llibs/ow1;
@@ -41,7 +41,7 @@
 
     .line 4
     .line 5
-    if-eqz p2, :cond_9
+    if-eqz p2, :cond_0
 
     .line 6
     .line 7
@@ -50,6 +50,6 @@
     .line 8
     .line 9
     .line 10
-    :cond_9
+    :cond_0
     return-void
 .end method

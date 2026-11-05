@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(J)V
-    .registers 3
+    .locals 0
 
     .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public constructor <init>(Llibs/rx;Llibs/eo2;J)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/px;->c:Ljava/lang/Object;
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public a()V
-    .registers 10
+    .locals 9
 
     .line 1
     new-instance v0, Llibs/du2;
@@ -113,7 +113,7 @@
     .line 28
     .line 29
     .line 30
-    :try_start_1d
+    :try_start_0
     iget-object v1, v8, Llibs/rx;->Lambda:Llibs/b63;
 
     .line 31
@@ -139,8 +139,8 @@
 
     .line 42
     invoke-virtual {v1, v0}, Llibs/i63;->z(Llibs/lv2;)Llibs/ap;
-    :try_end_2c
-    .catch Llibs/qo3; {:try_start_1d .. :try_end_2c} :catch_2d
+    :try_end_0
+    .catch Llibs/qo3; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 43
     .line 44
@@ -148,7 +148,7 @@
     return-void
 
     .line 46
-    :catch_2d
+    :catch_0
     sget-object v1, Llibs/rx;->Omega:Llibs/bn1;
 
     .line 47

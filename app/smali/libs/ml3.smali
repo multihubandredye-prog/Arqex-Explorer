@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/CharSequence;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final charAt(I)C
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-static {}, Ljava/lang/Thread;->interrupted()Z
@@ -41,7 +41,7 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -60,7 +60,7 @@
     return p1
 
     .line 14
-    :cond_d
+    :cond_0
     new-instance p1, Ljava/lang/InterruptedException;
 
     .line 15
@@ -82,7 +82,7 @@
 .end method
 
 .method public final length()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ml3;->X:Ljava/lang/CharSequence;
@@ -101,7 +101,7 @@
 .end method
 
 .method public final subSequence(II)Ljava/lang/CharSequence;
-    .registers 5
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/ml3;
@@ -129,7 +129,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ml3;->X:Ljava/lang/CharSequence;

@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 63
+    .locals 63
 
     .line 1
     const-string v0, "2.5.4.15"
@@ -1821,7 +1821,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/f3;-><init>()V
@@ -1860,7 +1860,7 @@
 
 # virtual methods
 .method public final Put(Llibs/nv3;)Ljava/lang/String;
-    .registers 8
+    .locals 6
 
     .line 1
     new-instance v0, Ljava/lang/StringBuffer;
@@ -1897,22 +1897,22 @@
     sub-int/2addr v1, p1
 
     .line 17
-    :goto_10
-    if-ltz v1, :cond_25
+    :goto_0
+    if-ltz v1, :cond_1
 
     .line 18
     .line 19
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_0
 
     .line 20
     .line 21
     const/4 p1, 0x0
 
     .line 22
-    goto :goto_1b
+    goto :goto_1
 
     .line 23
-    :cond_16
+    :cond_0
     const/16 v4, 0x2c
 
     .line 24
@@ -1922,7 +1922,7 @@
     .line 26
     .line 27
     .line 28
-    :goto_1b
+    :goto_1
     aget-object v4, v2, v1
 
     .line 29
@@ -1940,10 +1940,10 @@
 
     .line 36
     .line 37
-    goto :goto_10
+    goto :goto_0
 
     .line 38
-    :cond_25
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     .line 39

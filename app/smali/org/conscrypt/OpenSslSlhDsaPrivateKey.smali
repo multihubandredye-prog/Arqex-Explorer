@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/security/spec/EncodedKeySpec;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
     const/4 v1, 0x0
 
     .line 19
-    if-eqz p1, :cond_22
+    if-eqz p1, :cond_1
 
     .line 20
     .line 21
@@ -68,7 +68,7 @@
 
     .line 23
     .line 24
-    if-ne p1, v2, :cond_1c
+    if-ne p1, v2, :cond_0
 
     .line 25
     .line 26
@@ -79,7 +79,7 @@
     return-void
 
     .line 29
-    :cond_1c
+    :cond_0
     const-string p1, "Invalid key size"
 
     .line 30
@@ -92,7 +92,7 @@
     throw v1
 
     .line 35
-    :cond_22
+    :cond_1
     const-string p1, "Encoding must be in raw format"
 
     .line 36
@@ -106,7 +106,7 @@
 .end method
 
 .method public constructor <init>([B)V
-    .registers 4
+    .locals 2
 
     .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -116,7 +116,7 @@
 
     const/16 v1, 0x40
 
-    if-ne v0, v1, :cond_11
+    if-ne v0, v1, :cond_0
 
     .line 43
     invoke-virtual {p1}, [B->clone()Ljava/lang/Object;
@@ -130,7 +130,7 @@
     return-void
 
     .line 44
-    :cond_11
+    :cond_0
     const-string p1, "Invalid key size"
 
     invoke-static {p1}, Llibs/ic0;->p(Ljava/lang/String;)V
@@ -141,7 +141,7 @@
 .end method
 
 .method private readObject(Ljava/io/ObjectInputStream;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
@@ -160,14 +160,14 @@
 
     .line 8
     .line 9
-    if-ne p1, v0, :cond_b
+    if-ne p1, v0, :cond_0
 
     .line 10
     .line 11
     return-void
 
     .line 12
-    :cond_b
+    :cond_0
     const-string p1, "Invalid key size"
 
     .line 13
@@ -181,7 +181,7 @@
 .end method
 
 .method private writeObject(Ljava/io/ObjectOutputStream;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
@@ -195,14 +195,14 @@
 
 # virtual methods
 .method public destroy()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSslSlhDsaPrivateKey;->raw:[B
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -221,15 +221,15 @@
 
     .line 11
     .line 12
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     .line 2
     .line 3
@@ -239,12 +239,12 @@
     return p1
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v0, p1, Lorg/conscrypt/OpenSslSlhDsaPrivateKey;
 
     .line 6
     .line 7
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     .line 8
     .line 9
@@ -254,7 +254,7 @@
     return p1
 
     .line 11
-    :cond_a
+    :cond_1
     check-cast p1, Lorg/conscrypt/OpenSslSlhDsaPrivateKey;
 
     .line 12
@@ -279,7 +279,7 @@
 .end method
 
 .method public getAlgorithm()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "SLH-DSA-SHA2-128S"
@@ -290,7 +290,7 @@
 .end method
 
 .method public getEncoded()[B
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -310,7 +310,7 @@
 .end method
 
 .method public getFormat()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -330,14 +330,14 @@
 .end method
 
 .method public getRaw()[B
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSslSlhDsaPrivateKey;->raw:[B
 
     .line 2
     .line 3
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -356,7 +356,7 @@
     return-object v0
 
     .line 12
-    :cond_b
+    :cond_0
     const-string v0, "key is destroyed"
 
     .line 13
@@ -373,7 +373,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSslSlhDsaPrivateKey;->raw:[B
@@ -392,14 +392,14 @@
 .end method
 
 .method public isDestroyed()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/OpenSslSlhDsaPrivateKey;->raw:[B
 
     .line 2
     .line 3
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -409,7 +409,7 @@
     return v0
 
     .line 7
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
     .line 8

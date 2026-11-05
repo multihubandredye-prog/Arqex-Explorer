@@ -12,10 +12,10 @@
 
 # direct methods
 .method public constructor <init>(Ljava/nio/ByteBuffer;B)V
-    .registers 3
+    .locals 0
 
     .line 1
-    packed-switch p2, :pswitch_data_18
+    packed-switch p2, :pswitch_data_0
 
     .line 2
     .line 3
@@ -25,7 +25,7 @@
     .line 5
     .line 6
     .line 7
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 8
     .line 9
@@ -36,7 +36,7 @@
     return-void
 
     .line 12
-    :cond_b
+    :cond_0
     const-string p1, "buf == null"
 
     .line 13
@@ -52,7 +52,7 @@
     throw p1
 
     .line 19
-    :pswitch_12
+    :pswitch_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 20
@@ -65,16 +65,16 @@
     return-void
 
     .line 25
-    :pswitch_data_18
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_12
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public a()Llibs/af;
-    .registers 14
+    .locals 13
 
     .line 1
     iget-object v0, p0, Llibs/jl;->X:Ljava/nio/ByteBuffer;
@@ -97,7 +97,7 @@
     move-result v2
 
     .line 11
-    if-nez v2, :cond_e
+    if-nez v2, :cond_0
 
     .line 12
     .line 13
@@ -107,7 +107,7 @@
     return-object v0
 
     .line 15
-    :cond_e
+    :cond_0
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->get()B
 
     .line 16
@@ -131,14 +131,14 @@
 
     .line 25
     .line 26
-    if-ne v3, v6, :cond_44
+    if-ne v3, v6, :cond_4
 
     .line 27
     .line 28
     const/4 v3, 0x0
 
     .line 29
-    :cond_1c
+    :cond_1
     invoke-virtual {v0}, Ljava/nio/Buffer;->hasRemaining()Z
 
     .line 30
@@ -147,7 +147,7 @@
     move-result v6
 
     .line 33
-    if-eqz v6, :cond_3c
+    if-eqz v6, :cond_3
 
     .line 34
     .line 35
@@ -164,7 +164,7 @@
     .line 40
     .line 41
     .line 42
-    if-gt v3, v7, :cond_34
+    if-gt v3, v7, :cond_2
 
     .line 43
     .line 44
@@ -182,14 +182,14 @@
     and-int/2addr v6, v4
 
     .line 50
-    if-nez v6, :cond_1c
+    if-nez v6, :cond_1
 
     .line 51
     .line 52
-    goto :goto_44
+    goto :goto_0
 
     .line 53
-    :cond_34
+    :cond_2
     new-instance v0, Llibs/bf;
 
     .line 54
@@ -206,7 +206,7 @@
     throw v0
 
     .line 61
-    :cond_3c
+    :cond_3
     new-instance v0, Llibs/bf;
 
     .line 62
@@ -223,8 +223,8 @@
     throw v0
 
     .line 69
-    :cond_44
-    :goto_44
+    :cond_4
+    :goto_0
     and-int/lit8 v6, v2, 0x20
 
     .line 70
@@ -232,21 +232,21 @@
     const/4 v7, 0x1
 
     .line 72
-    if-eqz v6, :cond_4b
+    if-eqz v6, :cond_5
 
     .line 73
     .line 74
     const/4 v6, 0x1
 
     .line 75
-    goto :goto_4c
+    goto :goto_1
 
     .line 76
-    :cond_4b
+    :cond_5
     const/4 v6, 0x0
 
     .line 77
-    :goto_4c
+    :goto_1
     invoke-virtual {v0}, Ljava/nio/Buffer;->hasRemaining()Z
 
     .line 78
@@ -255,7 +255,7 @@
     move-result v8
 
     .line 81
-    if-eqz v8, :cond_168
+    if-eqz v8, :cond_13
 
     .line 82
     .line 83
@@ -275,7 +275,7 @@
 
     .line 90
     .line 91
-    if-nez v10, :cond_68
+    if-nez v10, :cond_6
 
     .line 92
     .line 93
@@ -299,12 +299,12 @@
     .line 101
     .line 102
     .line 103
-    goto/16 :goto_11d
+    goto/16 :goto_7
 
     .line 104
     .line 105
-    :cond_68
-    if-eq v9, v4, :cond_b3
+    :cond_6
+    if-eq v9, v4, :cond_b
 
     .line 106
     .line 107
@@ -315,15 +315,15 @@
     const/4 v6, 0x4
 
     .line 110
-    if-gt v4, v6, :cond_a5
+    if-gt v4, v6, :cond_a
 
     .line 111
     .line 112
     const/4 v6, 0x0
 
     .line 113
-    :goto_70
-    if-ge v5, v4, :cond_99
+    :goto_2
+    if-ge v5, v4, :cond_9
 
     .line 114
     .line 115
@@ -335,7 +335,7 @@
     move-result v7
 
     .line 119
-    if-eqz v7, :cond_91
+    if-eqz v7, :cond_8
 
     .line 120
     .line 121
@@ -352,7 +352,7 @@
     .line 126
     .line 127
     .line 128
-    if-gt v6, v8, :cond_89
+    if-gt v6, v8, :cond_7
 
     .line 129
     .line 130
@@ -371,10 +371,10 @@
 
     .line 136
     .line 137
-    goto :goto_70
+    goto :goto_2
 
     .line 138
-    :cond_89
+    :cond_7
     new-instance v0, Llibs/bf;
 
     .line 139
@@ -391,7 +391,7 @@
     throw v0
 
     .line 146
-    :cond_91
+    :cond_8
     new-instance v0, Llibs/bf;
 
     .line 147
@@ -408,7 +408,7 @@
     throw v0
 
     .line 154
-    :cond_99
+    :cond_9
     invoke-virtual {v0}, Ljava/nio/Buffer;->position()I
 
     .line 155
@@ -426,15 +426,15 @@
     .line 161
     .line 162
     .line 163
-    :goto_a2
+    :goto_3
     move v4, v6
 
     .line 164
-    goto/16 :goto_11d
+    goto/16 :goto_7
 
     .line 165
     .line 166
-    :cond_a5
+    :cond_a
     new-instance v0, Llibs/bf;
 
     .line 167
@@ -463,7 +463,7 @@
     throw v0
 
     .line 180
-    :cond_b3
+    :cond_b
     invoke-virtual {v0}, Ljava/nio/Buffer;->position()I
 
     .line 181
@@ -483,7 +483,7 @@
 
     .line 188
     .line 189
-    if-eqz v6, :cond_105
+    if-eqz v6, :cond_e
 
     .line 190
     .line 191
@@ -495,7 +495,7 @@
     move-result v5
 
     .line 195
-    :goto_c2
+    :goto_4
     invoke-virtual {v0}, Ljava/nio/Buffer;->hasRemaining()Z
 
     .line 196
@@ -504,7 +504,7 @@
     move-result v6
 
     .line 199
-    if-eqz v6, :cond_eb
+    if-eqz v6, :cond_d
 
     .line 200
     .line 201
@@ -516,7 +516,7 @@
     move-result v6
 
     .line 205
-    if-le v6, v7, :cond_e7
+    if-le v6, v7, :cond_c
 
     .line 206
     .line 207
@@ -536,7 +536,7 @@
     move-result v6
 
     .line 215
-    if-nez v6, :cond_e7
+    if-nez v6, :cond_c
 
     .line 216
     .line 217
@@ -568,19 +568,19 @@
     .line 229
     .line 230
     .line 231
-    goto :goto_11b
+    goto :goto_6
 
     .line 232
-    :cond_e7
+    :cond_c
     invoke-virtual {p0}, Llibs/jl;->a()Llibs/af;
 
     .line 233
     .line 234
     .line 235
-    goto :goto_c2
+    goto :goto_4
 
     .line 236
-    :cond_eb
+    :cond_d
     new-instance v1, Llibs/bf;
 
     .line 237
@@ -631,14 +631,14 @@
     throw v1
 
     .line 262
-    :cond_105
+    :cond_e
     const/4 v6, 0x0
 
     .line 263
     const/4 v10, 0x0
 
     .line 264
-    :goto_107
+    :goto_5
     invoke-virtual {v0}, Ljava/nio/Buffer;->hasRemaining()Z
 
     .line 265
@@ -647,7 +647,7 @@
     move-result v11
 
     .line 268
-    if-eqz v11, :cond_15e
+    if-eqz v11, :cond_12
 
     .line 269
     .line 270
@@ -663,15 +663,15 @@
 
     .line 275
     .line 276
-    if-ltz v12, :cond_156
+    if-ltz v12, :cond_11
 
     .line 277
     .line 278
-    if-nez v11, :cond_153
+    if-nez v11, :cond_10
 
     .line 279
     .line 280
-    if-eqz v10, :cond_151
+    if-eqz v10, :cond_f
 
     .line 281
     .line 282
@@ -679,14 +679,14 @@
 
     .line 283
     .line 284
-    :goto_11b
+    :goto_6
     move v5, v4
 
     .line 285
-    goto :goto_a2
+    goto :goto_3
 
     .line 286
-    :goto_11d
+    :goto_7
     invoke-virtual {v0}, Ljava/nio/Buffer;->position()I
 
     .line 287
@@ -785,25 +785,25 @@
     return-object v1
 
     .line 338
-    :cond_151
+    :cond_f
     const/4 v10, 0x1
 
     .line 339
-    goto :goto_154
+    goto :goto_8
 
     .line 340
-    :cond_153
+    :cond_10
     const/4 v10, 0x0
 
     .line 341
-    :goto_154
+    :goto_8
     move v6, v12
 
     .line 342
-    goto :goto_107
+    goto :goto_5
 
     .line 343
-    :cond_156
+    :cond_11
     new-instance v0, Llibs/bf;
 
     .line 344
@@ -820,7 +820,7 @@
     throw v0
 
     .line 351
-    :cond_15e
+    :cond_12
     new-instance v0, Llibs/bf;
 
     .line 352
@@ -841,7 +841,7 @@
     throw v0
 
     .line 361
-    :cond_168
+    :cond_13
     new-instance v0, Llibs/bf;
 
     .line 362
@@ -855,19 +855,19 @@
     .line 366
     .line 367
     .line 368
-    goto :goto_171
+    goto :goto_a
 
     .line 369
-    :goto_170
+    :goto_9
     throw v0
 
     .line 370
-    :goto_171
-    goto :goto_170
+    :goto_a
+    goto :goto_9
 .end method
 
 .method public b(I)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/jl;->X:Ljava/nio/ByteBuffer;
@@ -882,7 +882,7 @@
     move-result v1
 
     .line 7
-    if-lt v1, p1, :cond_11
+    if-lt v1, p1, :cond_0
 
     .line 8
     .line 9
@@ -905,7 +905,7 @@
     return-void
 
     .line 18
-    :cond_11
+    :cond_0
     new-instance v1, Llibs/bf;
 
     .line 19
@@ -956,7 +956,7 @@
 .end method
 
 .method public i(Ljava/nio/ByteBuffer;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-virtual {p1}, Ljava/nio/Buffer;->remaining()I
@@ -967,14 +967,14 @@
     move-result v0
 
     .line 5
-    :try_start_4
+    :try_start_0
     iget-object v1, p0, Llibs/jl;->X:Ljava/nio/ByteBuffer;
 
     .line 6
     .line 7
     invoke-virtual {v1, p1}, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
-    :try_end_9
-    .catch Ljava/nio/BufferOverflowException; {:try_start_4 .. :try_end_9} :catch_a
+    :try_end_0
+    .catch Ljava/nio/BufferOverflowException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 8
     .line 9
@@ -982,7 +982,7 @@
     return-void
 
     .line 11
-    :catch_a
+    :catch_0
     move-exception p1
 
     .line 12
@@ -1033,7 +1033,7 @@
 .end method
 
 .method public m(II[B)V
-    .registers 5
+    .locals 1
 
     .line 1
     :try_start_0
@@ -1045,8 +1045,8 @@
 
     .line 4
     invoke-virtual {p1, p3, v0, p2}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
-    :try_end_6
-    .catch Ljava/nio/BufferOverflowException; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Ljava/nio/BufferOverflowException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 5
     .line 6
@@ -1054,7 +1054,7 @@
     return-void
 
     .line 8
-    :catch_7
+    :catch_0
     move-exception p1
 
     .line 9

@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/rp0;Z)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/Iota;-><init>()V
@@ -33,7 +33,7 @@
 .end method
 
 .method public static bridge synthetic y(Llibs/r92;)Llibs/rp0;
-    .registers 1
+    .locals 0
 
     .line 1
     iget-object p0, p0, Llibs/r92;->Omicron:Llibs/rp0;
@@ -46,14 +46,14 @@
 
 # virtual methods
 .method public final c(Ljava/lang/String;)[B
-    .registers 6
+    .locals 4
 
     .line 1
     iget-boolean v0, p0, Llibs/r92;->Pi:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -69,7 +69,7 @@
     move-result v0
 
     .line 11
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 12
     .line 13
@@ -79,7 +79,7 @@
     return-object p1
 
     .line 15
-    :cond_e
+    :cond_0
     const-string v0, "/"
 
     .line 16
@@ -100,7 +100,7 @@
 
     .line 24
     .line 25
-    if-nez v0, :cond_22
+    if-nez v0, :cond_1
 
     .line 26
     .line 27
@@ -120,7 +120,7 @@
 
     .line 34
     .line 35
-    :cond_22
+    :cond_1
     new-instance v2, Llibs/cd0;
 
     .line 36
@@ -153,7 +153,7 @@
 .end method
 
 .method public final close()V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -167,7 +167,7 @@
 
     .line 5
     .line 6
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
@@ -176,6 +176,6 @@
     .line 9
     .line 10
     .line 11
-    :cond_a
+    :cond_0
     return-void
 .end method

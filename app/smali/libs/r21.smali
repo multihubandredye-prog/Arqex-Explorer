@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/r21;->a:Ljava/lang/Object;
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public a()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/r21;->a:Ljava/lang/Object;
@@ -45,7 +45,7 @@
 
     .line 6
     .line 7
-    :try_start_6
+    :try_start_0
     iget-object v2, v0, Llibs/m72;->a:Llibs/ka1;
 
     .line 8
@@ -54,7 +54,7 @@
 
     .line 10
     .line 11
-    if-eqz v2, :cond_1a
+    if-eqz v2, :cond_0
 
     .line 12
     .line 13
@@ -66,7 +66,7 @@
     move-result v0
 
     .line 17
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_0
 
     .line 18
     .line 19
@@ -75,8 +75,8 @@
     .line 20
     .line 21
     invoke-static {v1, v0}, Llibs/vw1;->v(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_17
-    .catchall {:try_start_6 .. :try_end_17} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 22
     .line 23
@@ -84,18 +84,18 @@
     return-void
 
     .line 25
-    :catchall_18
+    :catchall_0
     move-exception v0
 
     .line 26
-    goto :goto_1b
+    goto :goto_0
 
     .line 27
-    :cond_1a
+    :cond_0
     return-void
 
     .line 28
-    :goto_1b
+    :goto_0
     invoke-static {v0}, Llibs/vl3;->Map(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 29

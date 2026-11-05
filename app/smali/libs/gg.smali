@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public final c()Ljava/lang/Object;
-    .registers 7
+    .locals 6
 
     .line 1
     new-instance v0, Llibs/dg;
@@ -114,7 +114,7 @@
 .end method
 
 .method public final getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/gg;->Lambda:Ljava/lang/String;
@@ -125,7 +125,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/gg;->Lambda:Ljava/lang/String;

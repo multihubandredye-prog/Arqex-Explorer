@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-wide/16 v0, 0x1
@@ -59,7 +59,7 @@
 .end method
 
 .method public static a(Ljava/math/BigInteger;)V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Ljava/math/BigInteger;->signum()I
@@ -73,7 +73,7 @@
     const/4 v1, 0x1
 
     .line 6
-    if-lt v0, v1, :cond_f
+    if-lt v0, v1, :cond_0
 
     .line 7
     .line 8
@@ -88,14 +88,14 @@
     const/4 v0, 0x2
 
     .line 13
-    if-lt p0, v0, :cond_f
+    if-lt p0, v0, :cond_0
 
     .line 14
     .line 15
     return-void
 
     .line 16
-    :cond_f
+    :cond_0
     const-string p0, "\'candidate\' must be non-null and >= 2"
 
     .line 17

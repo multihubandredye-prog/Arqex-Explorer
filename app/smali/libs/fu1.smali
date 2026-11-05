@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/fu1;->X:B
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public final a()I
-    .registers 11
+    .locals 10
 
     .line 1
     iget-byte v0, p0, Llibs/fu1;->X:B
@@ -54,7 +54,7 @@
 
     .line 5
     .line 6
-    packed-switch v0, :pswitch_data_4e
+    packed-switch v0, :pswitch_data_0
 
     .line 7
     .line 8
@@ -70,7 +70,7 @@
     const/4 v2, 0x5
 
     .line 14
-    if-ne v0, v2, :cond_27
+    if-ne v0, v2, :cond_0
 
     .line 15
     .line 16
@@ -101,7 +101,7 @@
 
     .line 28
     .line 29
-    if-gtz v0, :cond_29
+    if-gtz v0, :cond_1
 
     .line 30
     .line 31
@@ -125,20 +125,20 @@
     long-to-int v1, v0
 
     .line 39
-    goto :goto_29
+    goto :goto_0
 
     .line 40
-    :cond_27
+    :cond_0
     const/16 v1, 0xc8
 
     .line 41
     .line 42
-    :cond_29
-    :goto_29
+    :cond_1
+    :goto_0
     return v1
 
     .line 43
-    :pswitch_2a
+    :pswitch_0
     check-cast v2, Llibs/gu1;
 
     .line 44
@@ -150,7 +150,7 @@
     const/4 v2, 0x4
 
     .line 48
-    if-eq v0, v2, :cond_34
+    if-eq v0, v2, :cond_2
 
     .line 49
     .line 50
@@ -158,10 +158,10 @@
 
     .line 51
     .line 52
-    goto :goto_4c
+    goto :goto_1
 
     .line 53
-    :cond_34
+    :cond_2
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     .line 54
@@ -189,14 +189,14 @@
 
     .line 65
     .line 66
-    if-lez v0, :cond_44
+    if-lez v0, :cond_3
 
     .line 67
     .line 68
-    goto :goto_4c
+    goto :goto_1
 
     .line 69
-    :cond_44
+    :cond_3
     sub-long/2addr v2, v4
 
     .line 70
@@ -217,21 +217,21 @@
     long-to-int v1, v0
 
     .line 77
-    :goto_4c
+    :goto_1
     return v1
 
     .line 78
     nop
 
     .line 79
-    :pswitch_data_4e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2a
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final run()V
-    .registers 7
+    .locals 6
 
     .line 1
     iget-byte v0, p0, Llibs/fu1;->X:B
@@ -245,7 +245,7 @@
 
     .line 5
     .line 6
-    packed-switch v0, :pswitch_data_52
+    packed-switch v0, :pswitch_data_0
 
     .line 7
     .line 8
@@ -261,7 +261,7 @@
     const/4 v3, 0x5
 
     .line 14
-    if-eq v0, v3, :cond_1d
+    if-eq v0, v3, :cond_0
 
     .line 15
     .line 16
@@ -290,10 +290,10 @@
     .line 27
     .line 28
     .line 29
-    goto :goto_2c
+    goto :goto_0
 
     .line 30
-    :cond_1d
+    :cond_0
     invoke-virtual {p0}, Llibs/fu1;->a()I
 
     .line 31
@@ -302,7 +302,7 @@
     move-result v0
 
     .line 34
-    if-lez v0, :cond_29
+    if-lez v0, :cond_1
 
     .line 35
     .line 36
@@ -315,20 +315,20 @@
     .line 39
     .line 40
     .line 41
-    goto :goto_2c
+    goto :goto_0
 
     .line 42
-    :cond_29
+    :cond_1
     invoke-virtual {v2, v1}, Llibs/gv1;->f(I)V
 
     .line 43
     .line 44
     .line 45
-    :goto_2c
+    :goto_0
     return-void
 
     .line 46
-    :pswitch_2d
+    :pswitch_0
     check-cast v2, Llibs/gu1;
 
     .line 47
@@ -340,7 +340,7 @@
     const/4 v3, 0x4
 
     .line 51
-    if-eq v0, v3, :cond_41
+    if-eq v0, v3, :cond_2
 
     .line 52
     .line 53
@@ -369,7 +369,7 @@
     .line 64
     .line 65
     .line 66
-    :cond_41
+    :cond_2
     invoke-virtual {p0}, Llibs/fu1;->a()I
 
     .line 67
@@ -378,7 +378,7 @@
     move-result v0
 
     .line 70
-    if-lez v0, :cond_4d
+    if-lez v0, :cond_3
 
     .line 71
     .line 72
@@ -391,24 +391,24 @@
     .line 75
     .line 76
     .line 77
-    goto :goto_50
+    goto :goto_1
 
     .line 78
-    :cond_4d
+    :cond_3
     invoke-virtual {v2, v1}, Llibs/gu1;->j(I)V
 
     .line 79
     .line 80
     .line 81
-    :goto_50
+    :goto_1
     return-void
 
     .line 82
     nop
 
     .line 83
-    :pswitch_data_52
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2d
+        :pswitch_0
     .end packed-switch
 .end method

@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;ZLjava/lang/String;)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/xl0;->a:Ljava/lang/String;
@@ -39,14 +39,14 @@
 
 # virtual methods
 .method public final d(Ljava/lang/String;Z)Z
-    .registers 3
+    .locals 0
 
     .line 1
     iget-boolean p2, p0, Llibs/xl0;->b:Z
 
     .line 2
     .line 3
-    if-eqz p2, :cond_e
+    if-eqz p2, :cond_0
 
     .line 4
     .line 5
@@ -62,7 +62,7 @@
     move-result p1
 
     .line 11
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
     .line 12
     .line 13
@@ -72,7 +72,7 @@
     return p1
 
     .line 15
-    :cond_e
+    :cond_0
     const/4 p1, 0x0
 
     .line 16
@@ -80,7 +80,7 @@
 .end method
 
 .method public final e(Llibs/rp0;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object p1, p1, Llibs/rp0;->Three:Ljava/lang/String;
@@ -99,7 +99,7 @@
     move-result p1
 
     .line 9
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_1
 
     .line 10
     .line 11
@@ -107,7 +107,7 @@
 
     .line 12
     .line 13
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_0
 
     .line 14
     .line 15
@@ -117,14 +117,14 @@
     return p1
 
     .line 17
-    :cond_10
+    :cond_0
     const/4 p1, 0x0
 
     .line 18
     throw p1
 
     .line 19
-    :cond_12
+    :cond_1
     const/4 p1, 0x0
 
     .line 20

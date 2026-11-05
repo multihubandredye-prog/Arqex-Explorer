@@ -5,7 +5,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/ll;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/ll;-><init>(Llibs/ll;)V

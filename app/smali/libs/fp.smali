@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/fp;->X:B
@@ -28,7 +28,7 @@
 .end method
 
 .method private final a()V
-    .registers 5
+    .locals 4
 
     .line 1
     sget-object v0, Llibs/fq1;->e:Ljava/util/HashMap;
@@ -38,7 +38,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     new-instance v1, Ljava/util/HashMap;
 
     .line 5
@@ -54,15 +54,15 @@
     .line 11
     .line 12
     monitor-exit v0
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_27
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 13
     sget-object v0, Llibs/fq1;->h:Ljava/util/concurrent/ExecutorService;
 
     .line 14
     .line 15
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_0
 
     .line 16
     .line 17
@@ -90,7 +90,7 @@
 
     .line 28
     .line 29
-    :cond_1c
+    :cond_0
     new-instance v2, Llibs/z8;
 
     .line 30
@@ -112,21 +112,21 @@
     return-void
 
     .line 40
-    :catchall_27
+    :catchall_0
     move-exception v1
 
     .line 41
-    :try_start_28
+    :try_start_1
     monitor-exit v0
-    :try_end_29
-    .catchall {:try_start_28 .. :try_end_29} :catchall_27
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 42
     throw v1
 .end method
 
 .method private final b()V
-    .registers 6
+    .locals 5
 
     .line 1
     :try_start_0
@@ -135,16 +135,16 @@
     .line 2
     .line 3
     monitor-enter v0
-    :try_end_3
-    .catchall {:try_start_0 .. :try_end_3} :catchall_1b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 4
-    :try_start_3
+    :try_start_1
     sget-object v1, Llibs/kh3;->w:Llibs/kh3;
 
     .line 5
     .line 6
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_0
 
     .line 7
     .line 8
@@ -160,24 +160,24 @@
 
     .line 13
     .line 14
-    goto :goto_10
+    goto :goto_0
 
     .line 15
-    :catchall_e
+    :catchall_0
     move-exception v1
 
     .line 16
-    goto :goto_19
+    goto :goto_2
 
     .line 17
-    :cond_10
-    :goto_10
+    :cond_0
+    :goto_0
     monitor-exit v0
-    :try_end_11
-    .catchall {:try_start_3 .. :try_end_11} :catchall_e
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 18
-    :goto_11
+    :goto_1
     const-string v0, "LocalServer"
 
     .line 19
@@ -194,24 +194,24 @@
     return-void
 
     .line 26
-    :goto_19
-    :try_start_19
+    :goto_2
+    :try_start_2
     monitor-exit v0
-    :try_end_1a
-    .catchall {:try_start_19 .. :try_end_1a} :catchall_e
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 27
-    :try_start_1a
+    :try_start_3
     throw v1
-    :try_end_1b
-    .catchall {:try_start_1a .. :try_end_1b} :catchall_1b
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 28
-    :catchall_1b
+    :catchall_1
     move-exception v0
 
     .line 29
-    :try_start_1c
+    :try_start_4
     const-string v1, "LocalServer"
 
     .line 30
@@ -243,16 +243,16 @@
     .line 42
     .line 43
     invoke-static {v1, v2, v3}, Llibs/vw1;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_2d
-    .catchall {:try_start_1c .. :try_end_2d} :catchall_2e
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
     .line 44
     .line 45
     .line 46
-    goto :goto_11
+    goto :goto_1
 
     .line 47
-    :catchall_2e
+    :catchall_2
     move-exception v0
 
     .line 48
@@ -269,19 +269,19 @@
     .line 53
     .line 54
     .line 55
-    goto :goto_38
+    goto :goto_4
 
     .line 56
-    :goto_37
+    :goto_3
     throw v0
 
     .line 57
-    :goto_38
-    goto :goto_37
+    :goto_4
+    goto :goto_3
 .end method
 
 .method private final c()V
-    .registers 7
+    .locals 6
 
     .line 1
     sget-object v0, Llibs/kh3;->x:Ljava/lang/Object;
@@ -294,12 +294,12 @@
     const/4 v1, 0x0
 
     .line 5
-    :try_start_4
+    :try_start_0
     sget-object v2, Llibs/kh3;->u:Llibs/kh3;
 
     .line 6
     .line 7
-    if-eqz v2, :cond_16
+    if-eqz v2, :cond_0
 
     .line 8
     .line 9
@@ -320,53 +320,53 @@
     .line 16
     .line 17
     invoke-static {}, Lcom/mixplorer/services/LocalServerService;->i()V
-    :try_end_13
-    .catchall {:try_start_4 .. :try_end_13} :catchall_14
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 18
     .line 19
     .line 20
-    goto :goto_16
+    goto :goto_0
 
     .line 21
-    :catchall_14
+    :catchall_0
     move-exception v2
 
     .line 22
-    goto :goto_20
+    goto :goto_2
 
     .line 23
-    :cond_16
-    :goto_16
-    :try_start_16
+    :cond_0
+    :goto_0
+    :try_start_1
     const-string v1, "LocalServer"
 
     .line 24
     .line 25
-    :goto_18
+    :goto_1
     const-string v2, "Locale Server closed."
 
     .line 26
     .line 27
     invoke-static {v1, v2}, Llibs/vw1;->e(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_1d
-    .catchall {:try_start_16 .. :try_end_1d} :catchall_1e
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 28
     .line 29
     .line 30
-    goto :goto_33
+    goto :goto_3
 
     .line 31
-    :catchall_1e
+    :catchall_1
     move-exception v1
 
     .line 32
-    goto :goto_3e
+    goto :goto_4
 
     .line 33
-    :goto_20
-    :try_start_20
+    :goto_2
+    :try_start_2
     const-string v3, "LocalServer"
 
     .line 34
@@ -395,28 +395,28 @@
     .line 45
     .line 46
     invoke-static {v3, v4, v5}, Llibs/vw1;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_30
-    .catchall {:try_start_20 .. :try_end_30} :catchall_35
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
     .line 47
     .line 48
     .line 49
-    :try_start_30
+    :try_start_3
     const-string v1, "LocalServer"
 
     .line 50
     .line 51
-    goto :goto_18
+    goto :goto_1
 
     .line 52
-    :goto_33
+    :goto_3
     monitor-exit v0
 
     .line 53
     return-void
 
     .line 54
-    :catchall_35
+    :catchall_2
     move-exception v1
 
     .line 55
@@ -436,25 +436,25 @@
     throw v1
 
     .line 63
-    :goto_3e
+    :goto_4
     monitor-exit v0
-    :try_end_3f
-    .catchall {:try_start_30 .. :try_end_3f} :catchall_1e
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 64
-    goto :goto_41
+    goto :goto_6
 
     .line 65
-    :goto_40
+    :goto_5
     throw v1
 
     .line 66
-    :goto_41
-    goto :goto_40
+    :goto_6
+    goto :goto_5
 .end method
 
 .method private final d()V
-    .registers 6
+    .locals 5
 
     .line 1
     :try_start_0
@@ -463,16 +463,16 @@
     .line 2
     .line 3
     monitor-enter v0
-    :try_end_3
-    .catchall {:try_start_0 .. :try_end_3} :catchall_3b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_3
 
     .line 4
-    :try_start_3
+    :try_start_1
     sget-object v1, Llibs/kh3;->v:Llibs/kh3;
 
     .line 5
     .line 6
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_0
 
     .line 7
     .line 8
@@ -488,34 +488,34 @@
 
     .line 13
     .line 14
-    goto :goto_10
+    goto :goto_0
 
     .line 15
-    :catchall_e
+    :catchall_0
     move-exception v1
 
     .line 16
-    goto :goto_3d
+    goto :goto_3
 
     .line 17
-    :cond_10
-    :goto_10
+    :cond_0
+    :goto_0
     monitor-exit v0
-    :try_end_11
-    .catchall {:try_start_3 .. :try_end_11} :catchall_e
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 18
-    :try_start_11
+    :try_start_2
     sget-object v0, Llibs/kh3;->Object:Ljava/util/HashSet;
 
     .line 19
     .line 20
     monitor-enter v0
-    :try_end_14
-    .catchall {:try_start_11 .. :try_end_14} :catchall_3b
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_3
 
     .line 21
-    :try_start_14
+    :try_start_3
     invoke-virtual {v0}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
     .line 22
@@ -524,7 +524,7 @@
     move-result-object v1
 
     .line 25
-    :goto_18
+    :goto_1
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 26
@@ -533,7 +533,7 @@
     move-result v2
 
     .line 29
-    if-eqz v2, :cond_2f
+    if-eqz v2, :cond_1
 
     .line 30
     .line 31
@@ -563,24 +563,24 @@
     .line 43
     .line 44
     invoke-interface {v1}, Ljava/util/Iterator;->remove()V
-    :try_end_2e
-    .catchall {:try_start_14 .. :try_end_2e} :catchall_2f
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 45
     .line 46
     .line 47
-    goto :goto_18
+    goto :goto_1
 
     .line 48
-    :catchall_2f
-    :cond_2f
-    :try_start_2f
+    :catchall_1
+    :cond_1
+    :try_start_4
     monitor-exit v0
-    :try_end_30
-    .catchall {:try_start_2f .. :try_end_30} :catchall_38
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
     .line 49
-    :goto_30
+    :goto_2
     const-string v0, "LocalServer"
 
     .line 50
@@ -594,47 +594,47 @@
     .line 54
     .line 55
     .line 56
-    goto :goto_51
+    goto :goto_5
 
     .line 57
-    :catchall_38
+    :catchall_2
     move-exception v1
 
     .line 58
-    :try_start_39
+    :try_start_5
     monitor-exit v0
-    :try_end_3a
-    .catchall {:try_start_39 .. :try_end_3a} :catchall_38
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_2
 
     .line 59
-    :try_start_3a
+    :try_start_6
     throw v1
-    :try_end_3b
-    .catchall {:try_start_3a .. :try_end_3b} :catchall_3b
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_3
 
     .line 60
-    :catchall_3b
+    :catchall_3
     move-exception v0
 
     .line 61
-    goto :goto_3f
+    goto :goto_4
 
     .line 62
-    :goto_3d
-    :try_start_3d
+    :goto_3
+    :try_start_7
     monitor-exit v0
-    :try_end_3e
-    .catchall {:try_start_3d .. :try_end_3e} :catchall_e
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
     .line 63
-    :try_start_3e
+    :try_start_8
     throw v1
-    :try_end_3f
-    .catchall {:try_start_3e .. :try_end_3f} :catchall_3b
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_3
 
     .line 64
-    :goto_3f
-    :try_start_3f
+    :goto_4
+    :try_start_9
     const-string v1, "LocalServer"
 
     .line 65
@@ -666,20 +666,20 @@
     .line 77
     .line 78
     invoke-static {v1, v2, v3}, Llibs/vw1;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_50
-    .catchall {:try_start_3f .. :try_end_50} :catchall_52
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_4
 
     .line 79
     .line 80
     .line 81
-    goto :goto_30
+    goto :goto_2
 
     .line 82
-    :goto_51
+    :goto_5
     return-void
 
     .line 83
-    :catchall_52
+    :catchall_4
     move-exception v0
 
     .line 84
@@ -696,28 +696,28 @@
     .line 89
     .line 90
     .line 91
-    goto :goto_5c
+    goto :goto_7
 
     .line 92
-    :goto_5b
+    :goto_6
     throw v0
 
     .line 93
-    :goto_5c
-    goto :goto_5b
+    :goto_7
+    goto :goto_6
 .end method
 
 
 # virtual methods
 .method public final run()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/fp;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_c8
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -751,7 +751,7 @@
     return-void
 
     .line 21
-    :pswitch_14
+    :pswitch_0
     const-string v0, "TAG_HELPER"
 
     .line 22
@@ -764,7 +764,7 @@
     return-void
 
     .line 27
-    :pswitch_1a
+    :pswitch_1
     invoke-direct {p0}, Llibs/fp;->d()V
 
     .line 28
@@ -773,7 +773,7 @@
     return-void
 
     .line 31
-    :pswitch_1e
+    :pswitch_2
     invoke-direct {p0}, Llibs/fp;->c()V
 
     .line 32
@@ -782,7 +782,7 @@
     return-void
 
     .line 35
-    :pswitch_22
+    :pswitch_3
     invoke-direct {p0}, Llibs/fp;->b()V
 
     .line 36
@@ -791,7 +791,7 @@
     return-void
 
     .line 39
-    :pswitch_26
+    :pswitch_4
     sget-object v0, Lcom/mixplorer/AppImpl;->X:Llibs/k70;
 
     .line 40
@@ -816,7 +816,7 @@
     return-void
 
     .line 51
-    :pswitch_32
+    :pswitch_5
     invoke-direct {p0}, Llibs/fp;->a()V
 
     .line 52
@@ -825,7 +825,7 @@
     return-void
 
     .line 55
-    :pswitch_36
+    :pswitch_6
     sget v0, Llibs/bi2;->failed:I
 
     .line 56
@@ -846,7 +846,7 @@
     return-void
 
     .line 65
-    :pswitch_40
+    :pswitch_7
     sget v0, Llibs/bi2;->failed:I
 
     .line 66
@@ -867,7 +867,7 @@
     return-void
 
     .line 75
-    :pswitch_4a
+    :pswitch_8
     sget v0, Lcom/mixplorer/activities/ImageViewerActivity;->OO:I
 
     .line 76
@@ -892,7 +892,7 @@
     return-void
 
     .line 87
-    :pswitch_56
+    :pswitch_9
     sget v0, Lcom/mixplorer/activities/ImageViewerActivity;->OO:I
 
     .line 88
@@ -917,7 +917,7 @@
     return-void
 
     .line 99
-    :pswitch_62
+    :pswitch_a
     sget v0, Lcom/mixplorer/activities/ImageViewerActivity;->OO:I
 
     .line 100
@@ -942,7 +942,7 @@
     return-void
 
     .line 111
-    :pswitch_6e
+    :pswitch_b
     sget v0, Lcom/mixplorer/activities/ImageViewerActivity;->OO:I
 
     .line 112
@@ -967,7 +967,7 @@
     return-void
 
     .line 123
-    :pswitch_7a
+    :pswitch_c
     sget v0, Lcom/mixplorer/activities/EBookReaderActivity;->_d:I
 
     .line 124
@@ -992,7 +992,7 @@
     return-void
 
     .line 135
-    :pswitch_86
+    :pswitch_d
     sget v0, Lcom/mixplorer/activities/EBookReaderActivity;->_d:I
 
     .line 136
@@ -1017,7 +1017,7 @@
     return-void
 
     .line 147
-    :pswitch_92
+    :pswitch_e
     sget v0, Lcom/mixplorer/activities/EBookReaderActivity;->_d:I
 
     .line 148
@@ -1034,7 +1034,7 @@
     return-void
 
     .line 155
-    :pswitch_9a
+    :pswitch_f
     sget v0, Lcom/mixplorer/activities/ContentViewerActivity;->III:I
 
     .line 156
@@ -1051,7 +1051,7 @@
     return-void
 
     .line 163
-    :pswitch_a2
+    :pswitch_10
     sget-object v0, Llibs/lp;->l:Ljava/util/Map;
 
     .line 164
@@ -1059,7 +1059,7 @@
     monitor-enter v0
 
     .line 166
-    :try_start_a5
+    :try_start_0
     invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
 
     .line 167
@@ -1076,7 +1076,7 @@
     move-result-object v1
 
     .line 174
-    :goto_ad
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 175
@@ -1085,7 +1085,7 @@
     move-result v2
 
     .line 178
-    if-eqz v2, :cond_c2
+    if-eqz v2, :cond_0
 
     .line 179
     .line 180
@@ -1111,58 +1111,58 @@
     .line 190
     .line 191
     .line 192
-    goto :goto_ad
+    goto :goto_0
 
     .line 193
-    :catchall_c0
+    :catchall_0
     move-exception v1
 
     .line 194
-    goto :goto_c4
+    goto :goto_1
 
     .line 195
-    :cond_c2
+    :cond_0
     monitor-exit v0
 
     .line 196
     return-void
 
     .line 197
-    :goto_c4
+    :goto_1
     monitor-exit v0
-    :try_end_c5
-    .catchall {:try_start_a5 .. :try_end_c5} :catchall_c0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 198
-    goto :goto_c7
+    goto :goto_3
 
     .line 199
-    :goto_c6
+    :goto_2
     throw v1
 
     .line 200
-    :goto_c7
-    goto :goto_c6
+    :goto_3
+    goto :goto_2
 
     .line 201
-    :pswitch_data_c8
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a2
-        :pswitch_9a
-        :pswitch_92
-        :pswitch_86
-        :pswitch_7a
-        :pswitch_6e
-        :pswitch_62
-        :pswitch_56
-        :pswitch_4a
-        :pswitch_40
-        :pswitch_36
-        :pswitch_32
-        :pswitch_26
-        :pswitch_22
-        :pswitch_1e
-        :pswitch_1a
-        :pswitch_14
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

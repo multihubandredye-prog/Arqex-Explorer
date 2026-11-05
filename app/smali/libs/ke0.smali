@@ -36,7 +36,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/String;Ljava/util/ArrayList;ZJLjava/lang/String;JJLjava/lang/String;ZZZLlibs/l21;Z)V
-    .registers 17
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -106,7 +106,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 20
+    .locals 19
 
     .line 1
     move-object/from16 v0, p0

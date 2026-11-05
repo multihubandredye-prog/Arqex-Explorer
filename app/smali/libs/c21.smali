@@ -11,7 +11,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/c21;->a:Ljava/lang/Object;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public a(Ljava/lang/String;ZZIJJJJJZZZZ)V
-    .registers 41
+    .locals 22
 
     .line 1
     move-object/from16 v0, p0

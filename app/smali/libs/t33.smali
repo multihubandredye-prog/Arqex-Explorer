@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/math/BigInteger;
@@ -48,7 +48,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 1
     sget-object v0, Llibs/t33;->j:Ljava/math/BigInteger;
@@ -204,7 +204,7 @@
 
 # virtual methods
 .method public final a()Llibs/kf0;
-    .registers 2
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/t33;
@@ -220,7 +220,7 @@
 .end method
 
 .method public final d(Llibs/xf3;Llibs/xf3;Z)Llibs/ig0;
-    .registers 5
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/r00;
@@ -236,7 +236,7 @@
 .end method
 
 .method public final e(Llibs/xf3;Llibs/xf3;[Llibs/xf3;Z)Llibs/ig0;
-    .registers 12
+    .locals 7
 
     .line 1
     new-instance v0, Llibs/r00;
@@ -271,7 +271,7 @@
 .end method
 
 .method public final i(Ljava/math/BigInteger;)Llibs/xf3;
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/u33;
@@ -287,7 +287,7 @@
 .end method
 
 .method public final j()I
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/t33;->j:Ljava/math/BigInteger;
@@ -306,7 +306,7 @@
 .end method
 
 .method public final k()Llibs/ig0;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/t33;->i:Llibs/r00;
@@ -317,13 +317,13 @@
 .end method
 
 .method public final r(I)Z
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x2
 
     .line 2
-    if-eq p1, v0, :cond_5
+    if-eq p1, v0, :cond_0
 
     .line 3
     .line 4
@@ -333,7 +333,7 @@
     return p1
 
     .line 6
-    :cond_5
+    :cond_0
     const/4 p1, 0x1
 
     .line 7

@@ -21,7 +21,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-string v0, "jcifs.smb.client.ReadAndX.Close"
@@ -47,7 +47,7 @@
 .end method
 
 .method public constructor <init>(IIJ)V
-    .registers 6
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -88,7 +88,7 @@
 
 # virtual methods
 .method public final e(I[B)I
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -98,7 +98,7 @@
 .end method
 
 .method public final j(I[B)I
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -108,7 +108,7 @@
 .end method
 
 .method public final q(I[B)I
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -118,7 +118,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 7
+    .locals 6
 
     .line 1
     new-instance v0, Ljava/lang/String;
@@ -277,7 +277,7 @@
 .end method
 
 .method public final v(I[B)I
-    .registers 8
+    .locals 5
 
     .line 1
     iget v0, p0, Llibs/wb3;->Golf:I
@@ -393,13 +393,13 @@
 .end method
 
 .method public final x(B)I
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x4
 
     .line 2
-    if-ne p1, v0, :cond_6
+    if-ne p1, v0, :cond_0
 
     .line 3
     .line 4
@@ -410,7 +410,7 @@
     return p1
 
     .line 7
-    :cond_6
+    :cond_0
     const/4 p1, 0x0
 
     .line 8

@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/Param;-><init>()V
@@ -17,7 +17,7 @@
 .end method
 
 .method public constructor <init>(Llibs/Init;)V
-    .registers 2
+    .locals 0
 
     .line 6
     invoke-direct {p0, p1}, Llibs/Param;-><init>(Llibs/Init;)V
@@ -26,7 +26,7 @@
 .end method
 
 .method public constructor <init>(Llibs/Theme;)V
-    .registers 2
+    .locals 0
 
     .line 5
     invoke-direct {p0, p1}, Llibs/Param;-><init>(Llibs/Core;)V
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public final h(Llibs/v60;)V
-    .registers 4
+    .locals 2
 
     .line 1
     const/16 v0, 0x30
@@ -70,7 +70,7 @@
     move-result-object v0
 
     .line 17
-    :goto_10
+    :goto_0
     invoke-interface {v0}, Ljava/util/Enumeration;->hasMoreElements()Z
 
     .line 18
@@ -79,7 +79,7 @@
     move-result v1
 
     .line 21
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_0
 
     .line 22
     .line 23
@@ -100,10 +100,10 @@
     .line 30
     .line 31
     .line 32
-    goto :goto_10
+    goto :goto_0
 
     .line 33
-    :cond_20
+    :cond_0
     const/4 v0, 0x0
 
     .line 34
@@ -121,7 +121,7 @@
 .end method
 
 .method public final i()I
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/Param;->X:Ljava/util/Vector;
@@ -139,7 +139,7 @@
     const/4 v1, 0x0
 
     .line 8
-    :goto_7
+    :goto_0
     invoke-interface {v0}, Ljava/util/Enumeration;->hasMoreElements()Z
 
     .line 9
@@ -148,7 +148,7 @@
     move-result v2
 
     .line 12
-    if-eqz v2, :cond_1d
+    if-eqz v2, :cond_0
 
     .line 13
     .line 14
@@ -183,10 +183,10 @@
     add-int/2addr v1, v2
 
     .line 29
-    goto :goto_7
+    goto :goto_0
 
     .line 30
-    :cond_1d
+    :cond_0
     add-int/lit8 v1, v1, 0x4
 
     .line 31

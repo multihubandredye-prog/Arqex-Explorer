@@ -31,7 +31,7 @@
 
 # direct methods
 .method private static synthetic $values()[Lorg/conscrypt/metrics/Source;
-    .registers 3
+    .locals 3
 
     .line 1
     const/4 v0, 0x4
@@ -89,7 +89,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Lorg/conscrypt/metrics/Source;
@@ -188,7 +188,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;II)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
@@ -209,7 +209,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lorg/conscrypt/metrics/Source;
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Lorg/conscrypt/metrics/Source;
@@ -232,7 +232,7 @@
 .end method
 
 .method public static values()[Lorg/conscrypt/metrics/Source;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/metrics/Source;->$VALUES:[Lorg/conscrypt/metrics/Source;
@@ -257,7 +257,7 @@
 
 # virtual methods
 .method public getId()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Lorg/conscrypt/metrics/Source;->id:I

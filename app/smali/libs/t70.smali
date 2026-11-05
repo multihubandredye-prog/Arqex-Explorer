@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/t70;
@@ -33,7 +33,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 .end method
 
 .method public static final a(Ljava/lang/Exception;)V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
@@ -76,10 +76,10 @@
     monitor-enter v0
 
     .line 11
-    :try_start_a
+    :try_start_0
     iget-object v1, v0, Llibs/t70;->a:Ljava/io/PrintStream;
-    :try_end_c
-    .catchall {:try_start_a .. :try_end_c} :catchall_11
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 12
     .line 13
@@ -94,21 +94,21 @@
     return-void
 
     .line 18
-    :catchall_11
+    :catchall_0
     move-exception p0
 
     .line 19
-    :try_start_12
+    :try_start_1
     monitor-exit v0
-    :try_end_13
-    .catchall {:try_start_12 .. :try_end_13} :catchall_11
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 20
     throw p0
 .end method
 
 .method public static final b(Ljava/lang/String;)V
-    .registers 4
+    .locals 3
 
     .line 1
     sget-object v0, Llibs/t70;->b:Llibs/t70;
@@ -118,10 +118,10 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget-object v1, v0, Llibs/t70;->a:Ljava/io/PrintStream;
-    :try_end_5
-    .catchall {:try_start_3 .. :try_end_5} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 5
     .line 6
@@ -162,14 +162,14 @@
     return-void
 
     .line 25
-    :catchall_18
+    :catchall_0
     move-exception p0
 
     .line 26
-    :try_start_19
+    :try_start_1
     monitor-exit v0
-    :try_end_1a
-    .catchall {:try_start_19 .. :try_end_1a} :catchall_18
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 27
     throw p0

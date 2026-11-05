@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>([B)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/gm0;-><init>()V
@@ -91,7 +91,7 @@
 
 # virtual methods
 .method public final a(Llibs/c90;)V
-    .registers 5
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/c90;
@@ -107,7 +107,7 @@
 
     .line 7
     .line 8
-    if-nez v1, :cond_28
+    if-nez v1, :cond_1
 
     .line 9
     .line 10
@@ -130,7 +130,7 @@
 
     .line 18
     .line 19
-    if-nez v1, :cond_18
+    if-nez v1, :cond_0
 
     .line 20
     .line 21
@@ -141,10 +141,10 @@
 
     .line 23
     .line 24
-    goto :goto_28
+    goto :goto_0
 
     .line 25
-    :cond_18
+    :cond_0
     new-instance v2, Llibs/c90;
 
     .line 26
@@ -175,8 +175,8 @@
 
     .line 40
     .line 41
-    :cond_28
-    :goto_28
+    :cond_1
+    :goto_0
     invoke-virtual {p0, v0}, Llibs/gm0;->b(Llibs/c90;)V
 
     .line 42
@@ -199,7 +199,7 @@
 .end method
 
 .method public final getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "SubjectKeyIdentifier"
@@ -210,7 +210,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

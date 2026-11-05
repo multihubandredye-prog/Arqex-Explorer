@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/wr2;)V
-    .registers 4
+    .locals 2
 
     .line 1
     const/4 v0, 0x1
@@ -89,7 +89,7 @@
 .end method
 
 .method public constructor <init>(Llibs/z30;Llibs/wr2;)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -119,7 +119,7 @@
 .end method
 
 .method public constructor <init>(Llibs/z30;Llibs/wr2;B)V
-    .registers 4
+    .locals 0
 
     .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -136,7 +136,7 @@
 
 # virtual methods
 .method public final a(Llibs/to3;Ljava/lang/String;Ljava/lang/String;[B[B)V
-    .registers 10
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/Mu;->j:B
@@ -154,7 +154,7 @@
 
     .line 7
     .line 8
-    packed-switch v0, :pswitch_data_9c
+    packed-switch v0, :pswitch_data_0
 
     .line 9
     .line 10
@@ -206,7 +206,7 @@
     .line 32
     .line 33
     .line 34
-    :try_start_21
+    :try_start_0
     iget-object p2, v3, Llibs/wr2;->a:Ljava/lang/String;
 
     .line 35
@@ -220,8 +220,8 @@
 
     .line 40
     iput-object p2, v3, Llibs/wr2;->b:Ljava/security/MessageDigest;
-    :try_end_29
-    .catch Ljava/security/GeneralSecurityException; {:try_start_21 .. :try_end_29} :catch_50
+    :try_end_0
+    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 41
     .line 42
@@ -297,10 +297,10 @@
     .line 78
     .line 79
     .line 80
-    goto :goto_58
+    goto :goto_0
 
     .line 81
-    :catch_50
+    :catch_0
     move-exception p1
 
     .line 82
@@ -317,11 +317,11 @@
     .line 87
     .line 88
     .line 89
-    :goto_58
+    :goto_0
     return-void
 
     .line 90
-    :pswitch_59
+    :pswitch_0
     iput-object p1, p0, Llibs/Mu;->a:Llibs/to3;
 
     .line 91
@@ -369,7 +369,7 @@
     .line 111
     .line 112
     .line 113
-    :try_start_70
+    :try_start_1
     iget-object p2, v3, Llibs/wr2;->a:Ljava/lang/String;
 
     .line 114
@@ -383,8 +383,8 @@
 
     .line 119
     iput-object p2, v3, Llibs/wr2;->b:Ljava/security/MessageDigest;
-    :try_end_78
-    .catch Ljava/security/GeneralSecurityException; {:try_start_70 .. :try_end_78} :catch_93
+    :try_end_1
+    .catch Ljava/security/GeneralSecurityException; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 120
     .line 121
@@ -436,10 +436,10 @@
     .line 145
     .line 146
     .line 147
-    goto :goto_9b
+    goto :goto_1
 
     .line 148
-    :catch_93
+    :catch_1
     move-exception p1
 
     .line 149
@@ -456,18 +456,18 @@
     .line 154
     .line 155
     .line 156
-    :goto_9b
+    :goto_1
     return-void
 
     .line 157
-    :pswitch_data_9c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_59
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public b(Llibs/z30;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/Mu;->a:Llibs/to3;
@@ -494,7 +494,7 @@
 .end method
 
 .method public final c()Llibs/tj;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Llibs/tj;
@@ -559,7 +559,7 @@
 .end method
 
 .method public final d(Llibs/cr1;Llibs/oy2;)Z
-    .registers 14
+    .locals 11
 
     .line 1
     iget-byte v0, p0, Llibs/Mu;->j:B
@@ -579,7 +579,7 @@
     const/4 v4, 0x0
 
     .line 8
-    packed-switch v0, :pswitch_data_14c
+    packed-switch v0, :pswitch_data_0
 
     .line 9
     .line 10
@@ -609,7 +609,7 @@
     .line 22
     .line 23
     .line 24
-    :try_start_17
+    :try_start_0
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
 
     .line 25
@@ -622,7 +622,7 @@
 
     .line 29
     .line 30
-    if-eq v1, v2, :cond_3b
+    if-eq v1, v2, :cond_1
 
     .line 31
     .line 32
@@ -630,7 +630,7 @@
 
     .line 33
     .line 34
-    if-ne v1, v2, :cond_29
+    if-ne v1, v2, :cond_0
 
     .line 35
     .line 36
@@ -639,17 +639,17 @@
     .line 37
     .line 38
     .line 39
-    goto :goto_3f
+    goto :goto_0
 
     .line 40
-    :catch_27
+    :catch_0
     move-exception p1
 
     .line 41
-    goto :goto_40
+    goto :goto_1
 
     .line 42
-    :cond_29
+    :cond_0
     new-instance p2, Llibs/po3;
 
     .line 43
@@ -684,10 +684,10 @@
     throw p2
 
     .line 60
-    :cond_3b
+    :cond_1
     invoke-virtual {p0, p2}, Llibs/Mu;->e(Llibs/oy2;)V
-    :try_end_3e
-    .catch Llibs/rj; {:try_start_17 .. :try_end_3e} :catch_27
+    :try_end_0
+    .catch Llibs/rj; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 61
     .line 62
@@ -695,11 +695,11 @@
     const/4 v3, 0x0
 
     .line 64
-    :goto_3f
+    :goto_0
     return v3
 
     .line 65
-    :goto_40
+    :goto_1
     new-instance p2, Llibs/po3;
 
     .line 66
@@ -712,7 +712,7 @@
     throw p2
 
     .line 71
-    :pswitch_46
+    :pswitch_0
     sget-object v0, Llibs/cr1;->Rho:Llibs/cr1;
 
     .line 72
@@ -721,7 +721,7 @@
 
     .line 74
     .line 75
-    if-ne p1, v0, :cond_137
+    if-ne p1, v0, :cond_6
 
     .line 76
     .line 77
@@ -734,7 +734,7 @@
     .line 80
     .line 81
     .line 82
-    :try_start_51
+    :try_start_1
     invoke-virtual {p2}, Llibs/uj;->v()[B
 
     .line 83
@@ -777,8 +777,8 @@
 
     .line 103
     iput-object v6, p0, Llibs/Mu;->d:Ljava/security/PublicKey;
-    :try_end_68
-    .catch Llibs/rj; {:try_start_51 .. :try_end_68} :catch_130
+    :try_end_1
+    .catch Llibs/rj; {:try_start_1 .. :try_end_1} :catch_5
 
     .line 104
     .line 105
@@ -909,7 +909,7 @@
 
     .line 169
     .line 170
-    if-eqz v7, :cond_b3
+    if-eqz v7, :cond_2
 
     .line 171
     .line 172
@@ -926,16 +926,16 @@
     .line 177
     .line 178
     .line 179
-    goto :goto_b6
+    goto :goto_2
 
     .line 180
-    :cond_b3
+    :cond_2
     invoke-virtual {v0, v6}, Llibs/Five;->c(Ljava/security/PublicKey;)V
 
     .line 181
     .line 182
     .line 183
-    :goto_b6
+    :goto_2
     iget-object v6, p0, Llibs/Mu;->c:[B
 
     .line 184
@@ -956,7 +956,7 @@
     move-result p2
 
     .line 193
-    if-eqz p2, :cond_128
+    if-eqz p2, :cond_5
 
     .line 194
     .line 195
@@ -972,7 +972,7 @@
 
     .line 200
     .line 201
-    if-eqz v6, :cond_127
+    if-eqz v6, :cond_4
 
     .line 202
     .line 203
@@ -996,7 +996,7 @@
     const/4 v6, 0x0
 
     .line 213
-    :try_start_d4
+    :try_start_2
     new-instance v7, Llibs/tj;
 
     .line 214
@@ -1020,19 +1020,19 @@
     .line 224
     .line 225
     move-result-object v7
-    :try_end_e1
-    .catch Llibs/rj; {:try_start_d4 .. :try_end_e1} :catch_e2
+    :try_end_2
+    .catch Llibs/rj; {:try_start_2 .. :try_end_2} :catch_1
 
     .line 226
-    goto :goto_e3
+    goto :goto_3
 
     .line 227
-    :catch_e2
+    :catch_1
     move-object v7, v6
 
     .line 228
-    :goto_e3
-    :try_start_e3
+    :goto_3
+    :try_start_3
     new-instance v8, Llibs/tj;
 
     .line 229
@@ -1056,11 +1056,11 @@
     .line 239
     .line 240
     move-result-object v6
-    :try_end_f0
-    .catch Llibs/rj; {:try_start_e3 .. :try_end_f0} :catch_f0
+    :try_end_3
+    .catch Llibs/rj; {:try_start_3 .. :try_end_3} :catch_2
 
     .line 241
-    :catch_f0
+    :catch_2
     iget-wide v8, v0, Llibs/lq;->Lambda:J
 
     .line 242
@@ -1108,7 +1108,7 @@
     .line 262
     .line 263
     .line 264
-    :try_start_107
+    :try_start_4
     iget-object v1, p0, Llibs/Mu;->a:Llibs/to3;
 
     .line 265
@@ -1129,14 +1129,14 @@
     move-result-object p1
 
     .line 274
-    if-nez p1, :cond_114
+    if-nez p1, :cond_3
 
     .line 275
     .line 276
-    goto :goto_127
+    goto :goto_5
 
     .line 277
-    :cond_114
+    :cond_3
     new-instance v0, Llibs/po3;
 
     .line 278
@@ -1155,23 +1155,23 @@
     .line 285
     .line 286
     throw v0
-    :try_end_11e
-    .catch Llibs/rj; {:try_start_107 .. :try_end_11e} :catch_120
-    .catch Llibs/qy2; {:try_start_107 .. :try_end_11e} :catch_11e
+    :try_end_4
+    .catch Llibs/rj; {:try_start_4 .. :try_end_4} :catch_4
+    .catch Llibs/qy2; {:try_start_4 .. :try_end_4} :catch_3
 
     .line 287
-    :catch_11e
+    :catch_3
     move-exception p1
 
     .line 288
-    goto :goto_121
+    goto :goto_4
 
     .line 289
-    :catch_120
+    :catch_4
     move-exception p1
 
     .line 290
-    :goto_121
+    :goto_4
     new-instance p2, Llibs/po3;
 
     .line 291
@@ -1184,12 +1184,12 @@
     throw p2
 
     .line 296
-    :cond_127
-    :goto_127
+    :cond_4
+    :goto_5
     return v3
 
     .line 297
-    :cond_128
+    :cond_5
     new-instance p1, Llibs/po3;
 
     .line 298
@@ -1206,7 +1206,7 @@
     throw p1
 
     .line 305
-    :catch_130
+    :catch_5
     move-exception p1
 
     .line 306
@@ -1222,7 +1222,7 @@
     throw p2
 
     .line 312
-    :cond_137
+    :cond_6
     new-instance p2, Llibs/po3;
 
     .line 313
@@ -1264,14 +1264,14 @@
     nop
 
     .line 333
-    :pswitch_data_14c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_46
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public e(Llibs/oy2;)V
-    .registers 8
+    .locals 6
 
     .line 1
     invoke-virtual {p1}, Llibs/uj;->w()Ljava/math/BigInteger;
@@ -1302,7 +1302,7 @@
 
     .line 14
     .line 15
-    if-lt v1, v2, :cond_56
+    if-lt v1, v2, :cond_0
 
     .line 16
     .line 17
@@ -1310,7 +1310,7 @@
 
     .line 18
     .line 19
-    if-gt v1, v2, :cond_56
+    if-gt v1, v2, :cond_0
 
     .line 20
     .line 21
@@ -1444,7 +1444,7 @@
     return-void
 
     .line 87
-    :cond_56
+    :cond_0
     new-instance p1, Ljava/security/GeneralSecurityException;
 
     .line 88
@@ -1474,7 +1474,7 @@
 .end method
 
 .method public f(Llibs/oy2;)V
-    .registers 11
+    .locals 9
 
     .line 1
     invoke-virtual {p1}, Llibs/uj;->v()[B
@@ -1704,7 +1704,7 @@
 
     .line 117
     .line 118
-    if-eqz v2, :cond_7f
+    if-eqz v2, :cond_0
 
     .line 119
     .line 120
@@ -1721,16 +1721,16 @@
     .line 125
     .line 126
     .line 127
-    goto :goto_82
+    goto :goto_0
 
     .line 128
-    :cond_7f
+    :cond_0
     invoke-virtual {v0, v1}, Llibs/Five;->c(Ljava/security/PublicKey;)V
 
     .line 129
     .line 130
     .line 131
-    :goto_82
+    :goto_0
     iget-object v1, p0, Llibs/Mu;->c:[B
 
     .line 132
@@ -1751,14 +1751,14 @@
     move-result p1
 
     .line 141
-    if-eqz p1, :cond_8f
+    if-eqz p1, :cond_1
 
     .line 142
     .line 143
     return-void
 
     .line 144
-    :cond_8f
+    :cond_1
     new-instance p1, Llibs/po3;
 
     .line 145

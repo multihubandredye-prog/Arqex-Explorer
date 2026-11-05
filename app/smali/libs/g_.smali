@@ -22,7 +22,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(ILjava/lang/String;Ljava/lang/String;Llibs/lj;Landroid/app/Activity;)V
-    .registers 7
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -61,7 +61,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lcom/mixplorer/widgets/MiEditText;ILjava/util/concurrent/atomic/AtomicReference;Llibs/$d;Llibs/za;)V
-    .registers 7
+    .locals 1
 
     .line 18
     const/4 v0, 0x0
@@ -86,7 +86,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 13
+    .locals 11
 
     .line 1
     iget-byte v0, p0, Llibs/g_;->X:B
@@ -109,7 +109,7 @@
 
     .line 10
     .line 11
-    packed-switch v0, :pswitch_data_56
+    packed-switch v0, :pswitch_data_0
 
     .line 12
     .line 13
@@ -157,7 +157,7 @@
     return-void
 
     .line 33
-    :pswitch_20
+    :pswitch_0
     check-cast v4, Landroid/widget/EditText;
 
     .line 34
@@ -174,7 +174,7 @@
 
     .line 40
     .line 41
-    if-eqz v4, :cond_33
+    if-eqz v4, :cond_0
 
     .line 42
     .line 43
@@ -194,15 +194,15 @@
     move-result-object p1
 
     .line 51
-    goto :goto_35
+    goto :goto_0
 
     .line 52
-    :cond_33
+    :cond_0
     const-string p1, "xxx"
 
     .line 53
     .line 54
-    :goto_35
+    :goto_0
     invoke-static {p1}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
 
     .line 55
@@ -211,7 +211,7 @@
     move-result v0
 
     .line 58
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_1
 
     .line 59
     .line 60
@@ -232,10 +232,10 @@
     .line 67
     .line 68
     .line 69
-    goto :goto_54
+    goto :goto_1
 
     .line 70
-    :cond_45
+    :cond_1
     invoke-virtual {v3, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
     .line 71
@@ -263,15 +263,15 @@
     .line 83
     .line 84
     .line 85
-    :goto_54
+    :goto_1
     return-void
 
     .line 86
     nop
 
     .line 87
-    :pswitch_data_56
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_20
+        :pswitch_0
     .end packed-switch
 .end method

@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 6
+    .locals 6
 
     .line 1
     new-instance v0, Ljava/util/HashMap;
@@ -284,7 +284,7 @@
 .end method
 
 .method public static a(Llibs/dd1;[CLjava/lang/String;I[BZ)Ljavax/crypto/spec/SecretKeySpec;
-    .registers 9
+    .locals 3
 
     .line 1
     :try_start_0
@@ -332,7 +332,7 @@
     move-result-object p0
 
     .line 23
-    if-eqz p5, :cond_23
+    if-eqz p5, :cond_0
 
     .line 24
     .line 25
@@ -343,7 +343,7 @@
 
     .line 27
     .line 28
-    if-lt p1, p3, :cond_23
+    if-lt p1, p3, :cond_0
 
     .line 29
     .line 30
@@ -359,14 +359,14 @@
     .line 34
     .line 35
     .line 36
-    :cond_23
+    :cond_0
     new-instance p1, Ljavax/crypto/spec/SecretKeySpec;
 
     .line 37
     .line 38
     invoke-direct {p1, p0, p2}, Ljavax/crypto/spec/SecretKeySpec;-><init>([BLjava/lang/String;)V
-    :try_end_28
-    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_28} :catch_29
+    :try_end_0
+    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 39
     .line 40
@@ -374,7 +374,7 @@
     return-object p1
 
     .line 42
-    :catch_29
+    :catch_0
     move-exception p0
 
     .line 43

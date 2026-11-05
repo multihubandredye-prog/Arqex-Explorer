@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;ILjavax/net/ssl/SSLContext;Z)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -62,7 +62,7 @@
 
 # virtual methods
 .method public final a()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/l12;->h:Ljava/net/ServerSocket;
@@ -96,7 +96,7 @@
 .end method
 
 .method public final b(Z)I
-    .registers 12
+    .locals 10
 
     .line 1
     invoke-virtual {p0}, Llibs/l12;->a()V
@@ -107,10 +107,10 @@
     const/4 v0, 0x0
 
     .line 5
-    :try_start_4
+    :try_start_0
     invoke-static {}, Llibs/sw1;->Bundle()V
-    :try_end_7
-    .catchall {:try_start_4 .. :try_end_7} :catchall_64
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 6
     .line 7
@@ -133,19 +133,19 @@
     const/4 v5, 0x5
 
     .line 16
-    if-lez v3, :cond_66
+    if-lez v3, :cond_1
 
     .line 17
     .line 18
     const/4 v6, 0x0
 
     .line 19
-    :goto_12
+    :goto_0
     const/16 v7, 0x64
 
     .line 20
     .line 21
-    if-ge v6, v7, :cond_66
+    if-ge v6, v7, :cond_1
 
     .line 22
     .line 23
@@ -153,11 +153,11 @@
 
     .line 24
     .line 25
-    if-eqz p1, :cond_3f
+    if-eqz p1, :cond_0
 
     .line 26
     .line 27
-    :try_start_1a
+    :try_start_1
     invoke-virtual {v2}, Ljavax/net/ssl/SSLContext;->getServerSocketFactory()Ljavax/net/ssl/SSLServerSocketFactory;
 
     .line 28
@@ -226,10 +226,10 @@
     .line 61
     .line 62
     .line 63
-    goto :goto_46
+    goto :goto_1
 
     .line 64
-    :cond_3f
+    :cond_0
     new-instance v8, Ljava/net/ServerSocket;
 
     .line 65
@@ -243,7 +243,7 @@
 
     .line 70
     .line 71
-    :goto_46
+    :goto_1
     iget-object v8, p0, Llibs/l12;->h:Ljava/net/ServerSocket;
 
     .line 72
@@ -281,15 +281,15 @@
     .line 90
     .line 91
     move-result p1
-    :try_end_5b
-    .catchall {:try_start_1a .. :try_end_5b} :catchall_5c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 92
     return p1
 
     .line 93
-    :catchall_5c
-    :try_start_5c
+    :catchall_0
+    :try_start_2
     iget-object v7, p0, Llibs/l12;->h:Ljava/net/ServerSocket;
 
     .line 94
@@ -303,18 +303,18 @@
 
     .line 99
     .line 100
-    goto :goto_12
+    goto :goto_0
 
     .line 101
-    :catchall_64
+    :catchall_1
     move-exception p1
 
     .line 102
-    goto :goto_a2
+    goto :goto_3
 
     .line 103
-    :cond_66
-    if-eqz p1, :cond_87
+    :cond_1
+    if-eqz p1, :cond_2
 
     .line 104
     .line 105
@@ -374,10 +374,10 @@
     .line 133
     .line 134
     .line 135
-    goto :goto_9b
+    goto :goto_2
 
     .line 136
-    :cond_87
+    :cond_2
     new-instance p1, Ljava/net/ServerSocket;
 
     .line 137
@@ -414,7 +414,7 @@
     .line 154
     .line 155
     .line 156
-    :goto_9b
+    :goto_2
     iget-object p1, p0, Llibs/l12;->h:Ljava/net/ServerSocket;
 
     .line 157
@@ -425,14 +425,14 @@
     .line 160
     .line 161
     move-result p1
-    :try_end_a1
-    .catchall {:try_start_5c .. :try_end_a1} :catchall_64
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 162
     return p1
 
     .line 163
-    :goto_a2
+    :goto_3
     new-instance v1, Ljava/lang/StringBuilder;
 
     .line 164
@@ -481,7 +481,7 @@
 .end method
 
 .method public final c(Ljava/net/InetAddress;I)I
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Llibs/l12;->a()V
@@ -501,7 +501,7 @@
 .end method
 
 .method public final d(Ljavax/net/ssl/SSLSession;)Ljava/net/Socket;
-    .registers 9
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/l12;->h:Ljava/net/ServerSocket;
@@ -511,25 +511,25 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_0
 
     .line 5
     .line 6
-    :try_start_5
+    :try_start_0
     invoke-virtual {v0}, Ljava/net/ServerSocket;->accept()Ljava/net/Socket;
 
     .line 7
     .line 8
     .line 9
     move-result-object v0
-    :try_end_9
-    .catchall {:try_start_5 .. :try_end_9} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 10
-    goto :goto_21
+    goto :goto_0
 
     .line 11
-    :catchall_a
+    :catchall_0
     move-exception v0
 
     .line 12
@@ -575,21 +575,21 @@
     move-object v0, v1
 
     .line 34
-    :goto_21
+    :goto_0
     invoke-virtual {p0}, Llibs/l12;->a()V
 
     .line 35
     .line 36
     .line 37
-    goto :goto_26
+    goto :goto_1
 
     .line 38
-    :cond_25
+    :cond_0
     move-object v0, v1
 
     .line 39
-    :goto_26
-    if-nez v0, :cond_6d
+    :goto_1
+    if-nez v0, :cond_2
 
     .line 40
     .line 41
@@ -597,7 +597,7 @@
 
     .line 42
     .line 43
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_1
 
     .line 44
     .line 45
@@ -605,11 +605,11 @@
 
     .line 46
     .line 47
-    if-lez v0, :cond_46
+    if-lez v0, :cond_1
 
     .line 48
     .line 49
-    :try_start_30
+    :try_start_1
     new-instance v0, Ljava/net/Socket;
 
     .line 50
@@ -628,8 +628,8 @@
     .line 57
     .line 58
     invoke-static {v0}, Llibs/sw1;->View(Ljava/net/Socket;)V
-    :try_end_3c
-    .catchall {:try_start_30 .. :try_end_3c} :catchall_48
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
     .line 59
     .line 60
@@ -639,32 +639,32 @@
     .line 62
     .line 63
     .line 64
-    :try_start_3f
+    :try_start_2
     invoke-virtual {v0, v2}, Ljava/net/Socket;->setSoTimeout(I)V
-    :try_end_42
-    .catchall {:try_start_3f .. :try_end_42} :catchall_43
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 65
     .line 66
     .line 67
-    goto :goto_6d
+    goto :goto_3
 
     .line 68
-    :catchall_43
+    :catchall_1
     invoke-virtual {p0}, Llibs/l12;->a()V
 
     .line 69
     .line 70
     .line 71
-    :cond_46
-    :goto_46
+    :cond_1
+    :goto_2
     move-object v0, v1
 
     .line 72
-    goto :goto_6d
+    goto :goto_3
 
     .line 73
-    :catchall_48
+    :catchall_2
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 74
@@ -731,16 +731,16 @@
     .line 107
     .line 108
     .line 109
-    goto :goto_46
+    goto :goto_2
 
     .line 110
-    :cond_6d
-    :goto_6d
+    :cond_2
+    :goto_3
     instance-of v2, v0, Ljavax/net/ssl/SSLSocket;
 
     .line 111
     .line 112
-    if-eqz v2, :cond_e1
+    if-eqz v2, :cond_b
 
     .line 113
     .line 114
@@ -781,7 +781,7 @@
     .line 131
     .line 132
     .line 133
-    if-eqz v4, :cond_9d
+    if-eqz v4, :cond_4
 
     .line 134
     .line 135
@@ -813,14 +813,14 @@
     move-result v3
 
     .line 149
-    if-eqz v3, :cond_97
+    if-eqz v3, :cond_3
 
     .line 150
     .line 151
-    goto :goto_9d
+    goto :goto_4
 
     .line 152
-    :cond_97
+    :cond_3
     const-string p1, "TLSv1.3 required"
 
     .line 153
@@ -833,8 +833,8 @@
     return-object v1
 
     .line 158
-    :cond_9d
-    :goto_9d
+    :cond_4
+    :goto_4
     invoke-virtual {v2}, Ljavax/net/ssl/SSLSocket;->getSession()Ljavax/net/ssl/SSLSession;
 
     .line 159
@@ -843,7 +843,7 @@
     move-result-object v2
 
     .line 162
-    if-eqz p1, :cond_a7
+    if-eqz p1, :cond_5
 
     .line 163
     .line 164
@@ -855,7 +855,7 @@
     move-result-object v1
 
     .line 168
-    :cond_a7
+    :cond_5
     invoke-interface {v2}, Ljavax/net/ssl/SSLSession;->getId()[B
 
     .line 169
@@ -882,37 +882,37 @@
     const/4 v6, 0x1
 
     .line 180
-    if-eqz v4, :cond_b7
+    if-eqz v4, :cond_6
 
     .line 181
     .line 182
     const/4 v4, 0x1
 
     .line 183
-    goto :goto_b8
+    goto :goto_5
 
     .line 184
-    :cond_b7
+    :cond_6
     const/4 v4, 0x0
 
     .line 185
-    :goto_b8
-    if-eqz p1, :cond_eb
+    :goto_5
+    if-eqz p1, :cond_c
 
     .line 186
     .line 187
-    if-nez v4, :cond_d5
+    if-nez v4, :cond_a
 
     .line 188
     .line 189
-    if-eqz v1, :cond_c7
+    if-eqz v1, :cond_7
 
     .line 190
     .line 191
     array-length v4, v1
 
     .line 192
-    if-lez v4, :cond_c7
+    if-lez v4, :cond_7
 
     .line 193
     .line 194
@@ -924,11 +924,11 @@
     move-result v1
 
     .line 198
-    if-nez v1, :cond_d3
+    if-nez v1, :cond_8
 
     .line 199
     .line 200
-    :cond_c7
+    :cond_7
     invoke-interface {p1}, Ljavax/net/ssl/SSLSession;->getCreationTime()J
 
     .line 201
@@ -949,20 +949,20 @@
 
     .line 209
     .line 210
-    if-nez p1, :cond_d4
+    if-nez p1, :cond_9
 
     .line 211
     .line 212
-    :cond_d3
+    :cond_8
     const/4 v5, 0x1
 
     .line 213
-    :cond_d4
+    :cond_9
     move v4, v5
 
     .line 214
-    :cond_d5
-    if-nez v4, :cond_eb
+    :cond_a
+    if-nez v4, :cond_c
 
     .line 215
     .line 216
@@ -983,11 +983,11 @@
     .line 223
     .line 224
     .line 225
-    goto :goto_eb
+    goto :goto_6
 
     .line 226
-    :cond_e1
-    if-nez v0, :cond_eb
+    :cond_b
+    if-nez v0, :cond_c
 
     .line 227
     .line 228
@@ -1005,7 +1005,7 @@
     .line 234
     .line 235
     .line 236
-    :cond_eb
-    :goto_eb
+    :cond_c
+    :goto_6
     return-object v0
 .end method

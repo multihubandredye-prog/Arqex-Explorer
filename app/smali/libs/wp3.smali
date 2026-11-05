@@ -15,7 +15,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 9
+    .locals 9
 
     .line 1
     const-string v0, "jcifs.smb.client.useUnicode"
@@ -60,23 +60,23 @@
 
     .line 20
     .line 21
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 22
     .line 23
-    :try_start_16
+    :try_start_0
     invoke-virtual {v0, v4}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
 
     .line 24
     .line 25
     .line 26
     move-result-object v3
-    :try_end_1a
-    .catch Ljava/io/IOException; {:try_start_16 .. :try_end_1a} :catch_1a
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 27
-    :catch_1a
-    :cond_1a
+    :catch_0
+    :cond_0
     array-length v0, v3
 
     .line 28
@@ -84,7 +84,7 @@
 
     .line 29
     .line 30
-    :try_start_1d
+    :try_start_1
     sget-object v6, Llibs/kz1;->p:Llibs/kz1;
 
     .line 31
@@ -95,39 +95,39 @@
     .line 34
     .line 35
     move-result-object v6
-    :try_end_23
-    .catch Ljava/lang/Exception; {:try_start_1d .. :try_end_23} :catch_2a
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 36
-    if-eqz v6, :cond_2b
+    if-eqz v6, :cond_1
 
     .line 37
     .line 38
-    :try_start_25
+    :try_start_2
     invoke-virtual {v6, v4}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
 
     .line 39
     .line 40
     .line 41
     move-result-object v5
-    :try_end_29
-    .catch Ljava/io/IOException; {:try_start_25 .. :try_end_29} :catch_2a
-    .catch Ljava/lang/Exception; {:try_start_25 .. :try_end_29} :catch_2a
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
     .line 42
-    goto :goto_2b
+    goto :goto_0
 
     .line 43
-    :catch_2a
+    :catch_1
     nop
 
     .line 44
-    :cond_2b
-    :goto_2b
+    :cond_1
+    :goto_0
     array-length v4, v5
 
     .line 45
-    if-lez v0, :cond_31
+    if-lez v0, :cond_2
 
     .line 46
     .line 47
@@ -135,15 +135,15 @@
 
     .line 48
     .line 49
-    goto :goto_32
+    goto :goto_1
 
     .line 50
-    :cond_31
+    :cond_2
     const/4 v6, 0x0
 
     .line 51
-    :goto_32
-    if-lez v4, :cond_37
+    :goto_1
+    if-lez v4, :cond_3
 
     .line 52
     .line 53
@@ -151,14 +151,14 @@
 
     .line 54
     .line 55
-    goto :goto_38
+    goto :goto_2
 
     .line 56
-    :cond_37
+    :cond_3
     const/4 v7, 0x0
 
     .line 57
-    :goto_38
+    :goto_2
     add-int/2addr v6, v7
 
     .line 58
@@ -172,7 +172,7 @@
 
     .line 61
     .line 62
-    if-lez v0, :cond_4b
+    if-lez v0, :cond_4
 
     .line 63
     .line 64
@@ -197,15 +197,15 @@
     add-int/2addr v0, v7
 
     .line 75
-    goto :goto_4c
+    goto :goto_3
 
     .line 76
-    :cond_4b
+    :cond_4
     const/4 v0, 0x0
 
     .line 77
-    :goto_4c
-    if-lez v4, :cond_5a
+    :goto_3
+    if-lez v4, :cond_5
 
     .line 78
     .line 79
@@ -231,12 +231,12 @@
     .line 89
     .line 90
     .line 91
-    :cond_5a
+    :cond_5
     return-void
 .end method
 
 .method public constructor <init>([B)V
-    .registers 9
+    .locals 7
 
     .line 1
     invoke-direct {p0}, Llibs/c22;-><init>()V
@@ -250,7 +250,7 @@
     const/4 v1, 0x0
 
     .line 6
-    :goto_5
+    :goto_0
     const/4 v2, 0x0
 
     .line 7
@@ -258,7 +258,7 @@
 
     .line 8
     .line 9
-    if-ge v1, v3, :cond_1b
+    if-ge v1, v3, :cond_1
 
     .line 10
     .line 11
@@ -274,7 +274,7 @@
 
     .line 16
     .line 17
-    if-ne v3, v4, :cond_15
+    if-ne v3, v4, :cond_0
 
     .line 18
     .line 19
@@ -282,10 +282,10 @@
 
     .line 20
     .line 21
-    goto :goto_5
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     const-string p1, "Not an NTLMSSP message."
 
     .line 23
@@ -298,7 +298,7 @@
     throw v2
 
     .line 28
-    :cond_1b
+    :cond_1
     invoke-static {v3, p1}, Llibs/c22;->b(I[B)I
 
     .line 29
@@ -310,7 +310,7 @@
     const/4 v4, 0x2
 
     .line 33
-    if-ne v1, v4, :cond_8b
+    if-ne v1, v4, :cond_b
 
     .line 34
     .line 35
@@ -345,7 +345,7 @@
     array-length v5, v4
 
     .line 50
-    if-eqz v5, :cond_41
+    if-eqz v5, :cond_3
 
     .line 51
     .line 52
@@ -357,7 +357,7 @@
 
     .line 55
     .line 56
-    if-eqz v1, :cond_3c
+    if-eqz v1, :cond_2
 
     .line 57
     .line 58
@@ -365,21 +365,21 @@
 
     .line 59
     .line 60
-    goto :goto_3e
+    goto :goto_1
 
     .line 61
-    :cond_3c
+    :cond_2
     sget-object v1, Llibs/c22;->c:Ljava/lang/String;
 
     .line 62
     .line 63
-    :goto_3e
+    :goto_1
     invoke-direct {v2, v4, v1}, Ljava/lang/String;-><init>([BLjava/lang/String;)V
 
     .line 64
     .line 65
     .line 66
-    :cond_41
+    :cond_3
     iput-object v2, p0, Llibs/wp3;->e:Ljava/lang/String;
 
     .line 67
@@ -392,12 +392,12 @@
 
     .line 71
     .line 72
-    :goto_47
+    :goto_2
     const/16 v4, 0x20
 
     .line 73
     .line 74
-    if-ge v2, v4, :cond_5a
+    if-ge v2, v4, :cond_5
 
     .line 75
     .line 76
@@ -405,7 +405,7 @@
 
     .line 77
     .line 78
-    if-eqz v5, :cond_57
+    if-eqz v5, :cond_4
 
     .line 79
     .line 80
@@ -422,19 +422,19 @@
 
     .line 86
     .line 87
-    goto :goto_5a
+    goto :goto_3
 
     .line 88
-    :cond_57
+    :cond_4
     add-int/lit8 v2, v2, 0x1
 
     .line 89
     .line 90
-    goto :goto_47
+    goto :goto_2
 
     .line 91
-    :cond_5a
-    :goto_5a
+    :cond_5
+    :goto_3
     const/16 v1, 0x10
 
     .line 92
@@ -447,31 +447,31 @@
     move-result v1
 
     .line 97
-    if-eq v1, v4, :cond_8a
+    if-eq v1, v4, :cond_a
 
     .line 98
     .line 99
     array-length v2, p1
 
     .line 100
-    if-ne v2, v4, :cond_66
+    if-ne v2, v4, :cond_6
 
     .line 101
     .line 102
-    goto :goto_8a
+    goto :goto_6
 
     .line 103
-    :cond_66
+    :cond_6
     const/16 v2, 0x20
 
     .line 104
     .line 105
-    :goto_68
+    :goto_4
     const/16 v5, 0x28
 
     .line 106
     .line 107
-    if-ge v2, v5, :cond_7b
+    if-ge v2, v5, :cond_8
 
     .line 108
     .line 109
@@ -479,7 +479,7 @@
 
     .line 110
     .line 111
-    if-eqz v6, :cond_78
+    if-eqz v6, :cond_7
 
     .line 112
     .line 113
@@ -496,34 +496,34 @@
 
     .line 119
     .line 120
-    goto :goto_7b
+    goto :goto_5
 
     .line 121
-    :cond_78
+    :cond_7
     add-int/lit8 v2, v2, 0x1
 
     .line 122
     .line 123
-    goto :goto_68
+    goto :goto_4
 
     .line 124
-    :cond_7b
-    :goto_7b
-    if-eq v1, v5, :cond_8a
+    :cond_8
+    :goto_5
+    if-eq v1, v5, :cond_a
 
     .line 125
     .line 126
     array-length v0, p1
 
     .line 127
-    if-ne v0, v5, :cond_81
+    if-ne v0, v5, :cond_9
 
     .line 128
     .line 129
-    goto :goto_8a
+    goto :goto_6
 
     .line 130
-    :cond_81
+    :cond_9
     invoke-static {v5, p1}, Llibs/c22;->a(I[B)[B
 
     .line 131
@@ -535,7 +535,7 @@
     array-length v0, p1
 
     .line 135
-    if-eqz v0, :cond_8a
+    if-eqz v0, :cond_a
 
     .line 136
     .line 137
@@ -543,12 +543,12 @@
 
     .line 138
     .line 139
-    :cond_8a
-    :goto_8a
+    :cond_a
+    :goto_6
     return-void
 
     .line 140
-    :cond_8b
+    :cond_b
     const-string p1, "Not a Type 2 message."
 
     .line 141
@@ -558,21 +558,21 @@
     .line 143
     .line 144
     .line 145
-    goto :goto_92
+    goto :goto_8
 
     .line 146
-    :goto_91
+    :goto_7
     throw v2
 
     .line 147
-    :goto_92
-    goto :goto_91
+    :goto_8
+    goto :goto_7
 .end method
 
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 7
+    .locals 6
 
     .line 1
     const-string v0, "Type2Message[target="
@@ -611,17 +611,17 @@
 
     .line 18
     .line 19
-    if-nez v4, :cond_16
+    if-nez v4, :cond_0
 
     .line 20
     .line 21
     move-object v4, v3
 
     .line 22
-    goto :goto_20
+    goto :goto_0
 
     .line 23
-    :cond_16
+    :cond_0
     new-instance v5, Ljava/lang/StringBuilder;
 
     .line 24
@@ -642,7 +642,7 @@
     move-result-object v4
 
     .line 33
-    :goto_20
+    :goto_0
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 34
@@ -661,17 +661,17 @@
 
     .line 42
     .line 43
-    if-nez v4, :cond_2e
+    if-nez v4, :cond_1
 
     .line 44
     .line 45
     move-object v4, v3
 
     .line 46
-    goto :goto_38
+    goto :goto_1
 
     .line 47
-    :cond_2e
+    :cond_1
     new-instance v5, Ljava/lang/StringBuilder;
 
     .line 48
@@ -692,7 +692,7 @@
     move-result-object v4
 
     .line 57
-    :goto_38
+    :goto_1
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 58
@@ -711,14 +711,14 @@
 
     .line 66
     .line 67
-    if-nez v4, :cond_45
+    if-nez v4, :cond_2
 
     .line 68
     .line 69
-    goto :goto_4f
+    goto :goto_2
 
     .line 70
-    :cond_45
+    :cond_2
     new-instance v3, Ljava/lang/StringBuilder;
 
     .line 71
@@ -739,7 +739,7 @@
     move-result-object v3
 
     .line 80
-    :goto_4f
+    :goto_2
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 81

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/security/AlgorithmParametersSpi;-><init>()V
@@ -23,7 +23,7 @@
 
 # virtual methods
 .method public final engineGetEncoded()[B
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Llibs/mt0;
@@ -86,7 +86,7 @@
     .line 31
     .line 32
     .line 33
-    :try_start_20
+    :try_start_0
     const-string v1, "DER"
 
     .line 34
@@ -97,14 +97,14 @@
     .line 37
     .line 38
     move-result-object v0
-    :try_end_26
-    .catch Ljava/io/IOException; {:try_start_20 .. :try_end_26} :catch_27
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 39
     return-object v0
 
     .line 40
-    :catch_27
+    :catch_0
     const-string v0, "Error encoding GOST3410Parameters"
 
     .line 41
@@ -121,9 +121,9 @@
 .end method
 
 .method public final engineGetEncoded(Ljava/lang/String;)[B
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_2
 
     .line 47
     const-string v0, "ASN.1"
@@ -132,30 +132,30 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
-    goto :goto_16
+    goto :goto_0
 
     .line 48
-    :cond_b
+    :cond_0
     const-string v0, "X.509"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_1
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_14
+    :cond_1
     const/4 p1, 0x0
 
     return-object p1
 
     .line 49
-    :cond_16
-    :goto_16
+    :cond_2
+    :goto_0
     invoke-virtual {p0}, Llibs/i0;->engineGetEncoded()[B
 
     move-result-object p1
@@ -164,13 +164,13 @@
 .end method
 
 .method public final engineGetParameterSpec(Ljava/lang/Class;)Ljava/security/spec/AlgorithmParameterSpec;
-    .registers 4
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_2
 
     .line 3
     .line 4
@@ -178,7 +178,7 @@
 
     .line 5
     .line 6
-    if-eq p1, v1, :cond_12
+    if-eq p1, v1, :cond_1
 
     .line 7
     .line 8
@@ -186,14 +186,14 @@
 
     .line 9
     .line 10
-    if-ne p1, v1, :cond_c
+    if-ne p1, v1, :cond_0
 
     .line 11
     .line 12
-    goto :goto_12
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     const-string p1, "unknown parameter spec passed to GOST3410 parameters object."
 
     .line 14
@@ -206,8 +206,8 @@
     return-object v0
 
     .line 19
-    :cond_12
-    :goto_12
+    :cond_1
+    :goto_0
     iget-object p1, p0, Llibs/i0;->a:Llibs/ht0;
 
     .line 20
@@ -215,7 +215,7 @@
     return-object p1
 
     .line 22
-    :cond_15
+    :cond_2
     const-string p1, "argument to getParameterSpec must not be null"
 
     .line 23
@@ -229,12 +229,12 @@
 .end method
 
 .method public final engineInit(Ljava/security/spec/AlgorithmParameterSpec;)V
-    .registers 3
+    .locals 1
 
     .line 73
     instance-of v0, p1, Llibs/ht0;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 74
     check-cast p1, Llibs/ht0;
@@ -244,7 +244,7 @@
     return-void
 
     .line 75
-    :cond_9
+    :cond_0
     const-string p1, "GOST3410ParameterSpec required to initialise a GOST3410 algorithm parameters object"
 
     invoke-static {p1}, Llibs/bf0;->d(Ljava/lang/String;)V
@@ -253,14 +253,14 @@
 .end method
 
 .method public final engineInit([B)V
-    .registers 8
+    .locals 6
 
     .line 1
     const-string v0, "Not a valid GOST3410 Parameter encoding."
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     invoke-static {p1}, Llibs/Theme;->j([B)Llibs/Theme;
 
     .line 4
@@ -317,7 +317,7 @@
     const/4 v5, 0x2
 
     .line 29
-    if-le v3, v5, :cond_25
+    if-le v3, v5, :cond_0
 
     .line 30
     .line 31
@@ -333,15 +333,15 @@
 
     .line 36
     .line 37
-    goto :goto_26
+    goto :goto_0
 
     .line 38
-    :cond_25
+    :cond_0
     move-object p1, v4
 
     .line 39
-    :goto_26
-    if-eqz p1, :cond_34
+    :goto_0
+    if-eqz p1, :cond_1
 
     .line 40
     .line 41
@@ -366,10 +366,10 @@
     .line 50
     .line 51
     .line 52
-    goto :goto_3d
+    goto :goto_1
 
     .line 53
-    :cond_34
+    :cond_1
     new-instance v3, Llibs/ht0;
 
     .line 54
@@ -387,18 +387,18 @@
     .line 60
     .line 61
     .line 62
-    :goto_3d
+    :goto_1
     iput-object v3, p0, Llibs/i0;->a:Llibs/ht0;
-    :try_end_3f
-    .catch Ljava/lang/ClassCastException; {:try_start_2 .. :try_end_3f} :catch_44
-    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_2 .. :try_end_3f} :catch_40
+    :try_end_0
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 63
     .line 64
     return-void
 
     .line 65
-    :catch_40
+    :catch_0
     invoke-static {v0}, Llibs/ic0;->t(Ljava/lang/String;)V
 
     .line 66
@@ -407,7 +407,7 @@
     return-void
 
     .line 69
-    :catch_44
+    :catch_1
     invoke-static {v0}, Llibs/ic0;->t(Ljava/lang/String;)V
 
     .line 70
@@ -417,9 +417,9 @@
 .end method
 
 .method public final engineInit([BLjava/lang/String;)V
-    .registers 4
+    .locals 1
 
-    if-eqz p2, :cond_1e
+    if-eqz p2, :cond_2
 
     .line 76
     const-string v0, "ASN.1"
@@ -428,24 +428,24 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 77
-    :cond_b
+    :cond_0
     const-string v0, "X.509"
 
     invoke-virtual {p2, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_1
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 78
-    :cond_14
+    :cond_1
     const-string p1, "Unknown parameter format "
 
     invoke-virtual {p1, p2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
@@ -457,15 +457,15 @@
     return-void
 
     .line 79
-    :cond_1e
-    :goto_1e
+    :cond_2
+    :goto_0
     invoke-virtual {p0, p1}, Llibs/i0;->engineInit([B)V
 
     return-void
 .end method
 
 .method public final engineToString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "GOST3410 Parameters"

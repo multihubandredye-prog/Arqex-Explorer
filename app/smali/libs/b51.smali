@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(I[B)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Llibs/y41;-><init>(I[B)V
@@ -17,7 +17,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;[B)V
-    .registers 3
+    .locals 0
 
     .line 5
     invoke-direct {p0, p1, p2}, Llibs/y41;-><init>(Ljava/lang/String;[B)V
@@ -28,7 +28,7 @@
 
 # virtual methods
 .method public final a()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/y41;->b:I
@@ -43,7 +43,7 @@
 .end method
 
 .method public final c([B)V
-    .registers 2
+    .locals 0
 
     .line 1
     new-instance p1, Llibs/n12;
@@ -59,7 +59,7 @@
 .end method
 
 .method public final d(I[B)V
-    .registers 5
+    .locals 2
 
     .line 1
     add-int/lit8 v0, p1, 0x3
@@ -105,31 +105,31 @@
 .end method
 
 .method public final e(I[B)I
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x3
 
     .line 2
-    :try_start_1
+    :try_start_0
     invoke-static {p1, v0, p2}, Llibs/mg3;->j(II[B)Ljava/lang/String;
 
     .line 3
     .line 4
     .line 5
     move-result-object v0
-    :try_end_5
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_1 .. :try_end_5} :catch_6
+    :try_end_0
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 6
-    goto :goto_7
+    goto :goto_0
 
     .line 7
-    :catch_6
+    :catch_0
     const/4 v0, 0x0
 
     .line 8
-    :goto_7
+    :goto_0
     iput-object v0, p0, Llibs/y41;->a:Ljava/lang/String;
 
     .line 9

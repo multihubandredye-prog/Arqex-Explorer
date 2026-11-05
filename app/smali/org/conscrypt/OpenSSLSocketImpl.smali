@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/AbstractConscryptSocket;-><init>()V
@@ -17,7 +17,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
 
     .line 5
     invoke-direct {p0, p1, p2}, Lorg/conscrypt/AbstractConscryptSocket;-><init>(Ljava/lang/String;I)V
@@ -26,7 +26,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;ILjava/net/InetAddress;I)V
-    .registers 5
+    .locals 0
 
     .line 7
     invoke-direct {p0, p1, p2, p3, p4}, Lorg/conscrypt/AbstractConscryptSocket;-><init>(Ljava/lang/String;ILjava/net/InetAddress;I)V
@@ -35,7 +35,7 @@
 .end method
 
 .method public constructor <init>(Ljava/net/InetAddress;I)V
-    .registers 3
+    .locals 0
 
     .line 6
     invoke-direct {p0, p1, p2}, Lorg/conscrypt/AbstractConscryptSocket;-><init>(Ljava/net/InetAddress;I)V
@@ -44,7 +44,7 @@
 .end method
 
 .method public constructor <init>(Ljava/net/InetAddress;ILjava/net/InetAddress;I)V
-    .registers 5
+    .locals 0
 
     .line 8
     invoke-direct {p0, p1, p2, p3, p4}, Lorg/conscrypt/AbstractConscryptSocket;-><init>(Ljava/net/InetAddress;ILjava/net/InetAddress;I)V
@@ -53,7 +53,7 @@
 .end method
 
 .method public constructor <init>(Ljava/net/Socket;Ljava/lang/String;IZ)V
-    .registers 5
+    .locals 0
 
     .line 9
     invoke-direct {p0, p1, p2, p3, p4}, Lorg/conscrypt/AbstractConscryptSocket;-><init>(Ljava/net/Socket;Ljava/lang/String;IZ)V
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public bridge synthetic addHandshakeCompletedListener(Ljavax/net/ssl/HandshakeCompletedListener;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-super {p0, p1}, Lorg/conscrypt/AbstractConscryptSocket;->addHandshakeCompletedListener(Ljavax/net/ssl/HandshakeCompletedListener;)V
@@ -76,7 +76,7 @@
 .end method
 
 .method public bridge synthetic bind(Ljava/net/SocketAddress;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-super {p0, p1}, Lorg/conscrypt/AbstractConscryptSocket;->bind(Ljava/net/SocketAddress;)V
@@ -88,7 +88,7 @@
 .end method
 
 .method public bridge synthetic close()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/AbstractConscryptSocket;->close()V
@@ -100,7 +100,7 @@
 .end method
 
 .method public final getAlpnSelectedProtocol()[B
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -125,7 +125,7 @@
 .end method
 
 .method public bridge synthetic getChannel()Ljava/nio/channels/SocketChannel;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/AbstractConscryptSocket;->getChannel()Ljava/nio/channels/SocketChannel;
@@ -146,7 +146,7 @@
 .end method
 
 .method public getFileDescriptor$()Ljava/io/FileDescriptor;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/AbstractConscryptSocket;->getFileDescriptor$()Ljava/io/FileDescriptor;
@@ -164,7 +164,7 @@
 .end method
 
 .method public getHostname()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/AbstractConscryptSocket;->getHostname()Ljava/lang/String;
@@ -179,7 +179,7 @@
 .end method
 
 .method public getHostnameOrIP()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/AbstractConscryptSocket;->getHostnameOrIP()Ljava/lang/String;
@@ -194,7 +194,7 @@
 .end method
 
 .method public bridge synthetic getInetAddress()Ljava/net/InetAddress;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/AbstractConscryptSocket;->getInetAddress()Ljava/net/InetAddress;
@@ -209,7 +209,7 @@
 .end method
 
 .method public bridge synthetic getInputStream()Ljava/io/InputStream;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/AbstractConscryptSocket;->getInputStream()Ljava/io/InputStream;
@@ -224,7 +224,7 @@
 .end method
 
 .method public bridge synthetic getKeepAlive()Z
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/AbstractConscryptSocket;->getKeepAlive()Z
@@ -239,7 +239,7 @@
 .end method
 
 .method public bridge synthetic getLocalAddress()Ljava/net/InetAddress;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/AbstractConscryptSocket;->getLocalAddress()Ljava/net/InetAddress;
@@ -254,7 +254,7 @@
 .end method
 
 .method public bridge synthetic getLocalPort()I
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/AbstractConscryptSocket;->getLocalPort()I
@@ -269,7 +269,7 @@
 .end method
 
 .method public bridge synthetic getLocalSocketAddress()Ljava/net/SocketAddress;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/AbstractConscryptSocket;->getLocalSocketAddress()Ljava/net/SocketAddress;
@@ -284,7 +284,7 @@
 .end method
 
 .method public final getNpnSelectedProtocol()[B
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -296,7 +296,7 @@
 .end method
 
 .method public bridge synthetic getOOBInline()Z
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/AbstractConscryptSocket;->getOOBInline()Z
@@ -311,7 +311,7 @@
 .end method
 
 .method public bridge synthetic getOutputStream()Ljava/io/OutputStream;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/AbstractConscryptSocket;->getOutputStream()Ljava/io/OutputStream;
@@ -326,7 +326,7 @@
 .end method
 
 .method public bridge synthetic getReceiveBufferSize()I
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/AbstractConscryptSocket;->getReceiveBufferSize()I
@@ -341,7 +341,7 @@
 .end method
 
 .method public bridge synthetic getRemoteSocketAddress()Ljava/net/SocketAddress;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/AbstractConscryptSocket;->getRemoteSocketAddress()Ljava/net/SocketAddress;
@@ -356,7 +356,7 @@
 .end method
 
 .method public bridge synthetic getReuseAddress()Z
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/AbstractConscryptSocket;->getReuseAddress()Z
@@ -371,7 +371,7 @@
 .end method
 
 .method public bridge synthetic getSendBufferSize()I
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/AbstractConscryptSocket;->getSendBufferSize()I
@@ -386,7 +386,7 @@
 .end method
 
 .method public bridge synthetic getSoLinger()I
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/AbstractConscryptSocket;->getSoLinger()I
@@ -401,7 +401,7 @@
 .end method
 
 .method public getSoWriteTimeout()I
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/AbstractConscryptSocket;->getSoWriteTimeout()I
@@ -416,7 +416,7 @@
 .end method
 
 .method public bridge synthetic getTcpNoDelay()Z
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/AbstractConscryptSocket;->getTcpNoDelay()Z
@@ -431,7 +431,7 @@
 .end method
 
 .method public bridge synthetic getTrafficClass()I
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/AbstractConscryptSocket;->getTrafficClass()I
@@ -446,7 +446,7 @@
 .end method
 
 .method public bridge synthetic isBound()Z
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/AbstractConscryptSocket;->isBound()Z
@@ -461,7 +461,7 @@
 .end method
 
 .method public bridge synthetic isClosed()Z
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/AbstractConscryptSocket;->isClosed()Z
@@ -476,7 +476,7 @@
 .end method
 
 .method public bridge synthetic isConnected()Z
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/AbstractConscryptSocket;->isConnected()Z
@@ -491,7 +491,7 @@
 .end method
 
 .method public bridge synthetic isInputShutdown()Z
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/AbstractConscryptSocket;->isInputShutdown()Z
@@ -506,7 +506,7 @@
 .end method
 
 .method public bridge synthetic isOutputShutdown()Z
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/AbstractConscryptSocket;->isOutputShutdown()Z
@@ -521,7 +521,7 @@
 .end method
 
 .method public bridge synthetic removeHandshakeCompletedListener(Ljavax/net/ssl/HandshakeCompletedListener;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-super {p0, p1}, Lorg/conscrypt/AbstractConscryptSocket;->removeHandshakeCompletedListener(Ljavax/net/ssl/HandshakeCompletedListener;)V
@@ -533,12 +533,12 @@
 .end method
 
 .method public final setAlpnProtocols([B)V
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 1
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     .line 2
     .line 3
@@ -546,7 +546,7 @@
 
     .line 4
     .line 5
-    :cond_4
+    :cond_0
     invoke-static {p1}, Lorg/conscrypt/SSLUtils;->decodeProtocols([B)[Ljava/lang/String;
 
     .line 6
@@ -564,16 +564,16 @@
 .end method
 
 .method public final setAlpnProtocols([Ljava/lang/String;)V
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     .line 13
     sget-object p1, Lorg/conscrypt/EmptyArray;->STRING:[Ljava/lang/String;
 
-    :cond_4
+    :cond_0
     invoke-virtual {p0, p1}, Lorg/conscrypt/AbstractConscryptSocket;->setApplicationProtocols([Ljava/lang/String;)V
 
     return-void
@@ -586,7 +586,7 @@
 .end method
 
 .method public setHandshakeTimeout(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-super {p0, p1}, Lorg/conscrypt/AbstractConscryptSocket;->setHandshakeTimeout(I)V
@@ -598,7 +598,7 @@
 .end method
 
 .method public setHostname(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-super {p0, p1}, Lorg/conscrypt/AbstractConscryptSocket;->setHostname(Ljava/lang/String;)V
@@ -610,7 +610,7 @@
 .end method
 
 .method public bridge synthetic setKeepAlive(Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-super {p0, p1}, Lorg/conscrypt/AbstractConscryptSocket;->setKeepAlive(Z)V
@@ -622,7 +622,7 @@
 .end method
 
 .method public final setNpnProtocols([B)V
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -631,7 +631,7 @@
 .end method
 
 .method public bridge synthetic setPerformancePreferences(III)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-super {p0, p1, p2, p3}, Lorg/conscrypt/AbstractConscryptSocket;->setPerformancePreferences(III)V
@@ -643,7 +643,7 @@
 .end method
 
 .method public bridge synthetic setReceiveBufferSize(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-super {p0, p1}, Lorg/conscrypt/AbstractConscryptSocket;->setReceiveBufferSize(I)V
@@ -655,7 +655,7 @@
 .end method
 
 .method public bridge synthetic setReuseAddress(Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-super {p0, p1}, Lorg/conscrypt/AbstractConscryptSocket;->setReuseAddress(Z)V
@@ -667,7 +667,7 @@
 .end method
 
 .method public bridge synthetic setSendBufferSize(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-super {p0, p1}, Lorg/conscrypt/AbstractConscryptSocket;->setSendBufferSize(I)V
@@ -679,7 +679,7 @@
 .end method
 
 .method public bridge synthetic setSoLinger(ZI)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-super {p0, p1, p2}, Lorg/conscrypt/AbstractConscryptSocket;->setSoLinger(ZI)V
@@ -691,7 +691,7 @@
 .end method
 
 .method public setSoWriteTimeout(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-super {p0, p1}, Lorg/conscrypt/AbstractConscryptSocket;->setSoWriteTimeout(I)V
@@ -703,7 +703,7 @@
 .end method
 
 .method public bridge synthetic setTcpNoDelay(Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-super {p0, p1}, Lorg/conscrypt/AbstractConscryptSocket;->setTcpNoDelay(Z)V
@@ -715,7 +715,7 @@
 .end method
 
 .method public bridge synthetic setTrafficClass(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-super {p0, p1}, Lorg/conscrypt/AbstractConscryptSocket;->setTrafficClass(I)V
@@ -730,7 +730,7 @@
 .end method
 
 .method public bridge synthetic shutdownInput()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/AbstractConscryptSocket;->shutdownInput()V
@@ -742,7 +742,7 @@
 .end method
 
 .method public bridge synthetic shutdownOutput()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/AbstractConscryptSocket;->shutdownOutput()V
@@ -754,7 +754,7 @@
 .end method
 
 .method public bridge synthetic toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Lorg/conscrypt/AbstractConscryptSocket;->toString()Ljava/lang/String;

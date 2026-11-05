@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>([B)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/gw2;
@@ -28,7 +28,7 @@
 
 # virtual methods
 .method public final e()[B
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/qj0;->b:Ljava/lang/Object;
@@ -73,7 +73,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

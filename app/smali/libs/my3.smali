@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 12
     invoke-direct {p0}, Ljava/lang/RuntimeException;-><init>()V
@@ -23,7 +23,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 10
     invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
@@ -37,7 +37,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
 
     .line 14
     invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
@@ -49,7 +49,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Throwable;)V
-    .registers 2
+    .locals 0
 
     .line 16
     invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
@@ -63,7 +63,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Throwable;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     const-string p2, "CHECK_EXISTS"
@@ -86,7 +86,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Throwable;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 18
     invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V

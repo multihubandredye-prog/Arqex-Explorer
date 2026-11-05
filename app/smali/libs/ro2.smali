@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(II)V
-    .registers 6
+    .locals 3
 
     .line 1
     const/4 v0, 0x2

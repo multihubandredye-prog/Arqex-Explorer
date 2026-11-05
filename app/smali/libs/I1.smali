@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Llibs/c00;-><init>()V
@@ -30,7 +30,7 @@
 .end method
 
 .method public constructor <init>(Llibs/ix2;)V
-    .registers 3
+    .locals 1
 
     .line 12
     invoke-direct {p0, p1}, Llibs/c00;-><init>(Llibs/ix2;)V
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final Context(Llibs/ll;)V
-    .registers 10
+    .locals 8
 
     .line 1
     const/16 v0, 0xc8
@@ -147,8 +147,8 @@
     const/4 v4, 0x0
 
     .line 49
-    :goto_30
-    if-ge v4, v1, :cond_68
+    :goto_0
+    if-ge v4, v1, :cond_2
 
     .line 50
     .line 51
@@ -180,17 +180,17 @@
     move-result-object v6
 
     .line 65
-    if-nez v6, :cond_44
+    if-nez v6, :cond_0
 
     .line 66
     .line 67
     const/4 v6, 0x0
 
     .line 68
-    goto :goto_4a
+    goto :goto_1
 
     .line 69
-    :cond_44
+    :cond_0
     const-string v7, "in"
 
     .line 70
@@ -203,15 +203,15 @@
     move-result v6
 
     .line 75
-    :goto_4a
-    if-eqz v6, :cond_4d
+    :goto_1
+    if-eqz v6, :cond_1
 
     .line 76
     .line 77
-    goto :goto_65
+    goto :goto_2
 
     .line 78
-    :cond_4d
+    :cond_1
     new-instance v6, Llibs/t02;
 
     .line 79
@@ -258,15 +258,15 @@
     .line 100
     .line 101
     .line 102
-    :goto_65
+    :goto_2
     add-int/lit8 v4, v4, 0x1
 
     .line 103
     .line 104
-    goto :goto_30
+    goto :goto_0
 
     .line 105
-    :cond_68
+    :cond_2
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 106
@@ -298,7 +298,7 @@
 .end method
 
 .method public final View()Llibs/oO;
-    .registers 10
+    .locals 9
 
     .line 1
     new-instance v0, Llibs/oO;
@@ -321,7 +321,7 @@
     const/4 v2, 0x0
 
     .line 11
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_1
 
     .line 12
     .line 13
@@ -333,14 +333,14 @@
     move-result v3
 
     .line 17
-    if-nez v3, :cond_13
+    if-nez v3, :cond_0
 
     .line 18
     .line 19
-    goto :goto_18
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     invoke-virtual {v1, v2}, Llibs/t02;->c(I)Llibs/t02;
 
     .line 21
@@ -349,23 +349,23 @@
     move-result-object v1
 
     .line 24
-    goto :goto_19
+    goto :goto_1
 
     .line 25
-    :cond_18
-    :goto_18
+    :cond_1
+    :goto_0
     const/4 v1, 0x0
 
     .line 26
-    :goto_19
-    if-nez v1, :cond_1c
+    :goto_1
+    if-nez v1, :cond_2
 
     .line 27
     .line 28
-    goto :goto_41
+    goto :goto_3
 
     .line 29
-    :cond_1c
+    :cond_2
     iget-object v3, v1, Llibs/t02;->b:Llibs/y6;
 
     .line 30
@@ -378,8 +378,8 @@
     move-result v3
 
     .line 35
-    :goto_22
-    if-ge v2, v3, :cond_41
+    :goto_2
+    if-ge v2, v3, :cond_3
 
     .line 36
     .line 37
@@ -435,10 +435,10 @@
 
     .line 64
     .line 65
-    goto :goto_22
+    goto :goto_2
 
     .line 66
-    :cond_41
-    :goto_41
+    :cond_3
+    :goto_3
     return-object v0
 .end method

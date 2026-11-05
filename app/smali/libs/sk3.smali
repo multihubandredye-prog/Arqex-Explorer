@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/TextEditorActivity;Lcom/mixplorer/widgets/MiEditor;ZI)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object p1, p0, Llibs/sk3;->Y:Lcom/mixplorer/widgets/MiEditor;
@@ -63,10 +63,10 @@
 
     .line 6
     .line 7
-    :try_start_6
+    :try_start_0
     iget-boolean v1, p1, Lcom/mixplorer/widgets/MiEditor;->Three:Z
-    :try_end_8
-    .catchall {:try_start_6 .. :try_end_8} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 8
     .line 9
@@ -78,11 +78,11 @@
 
     .line 12
     .line 13
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_0
 
     .line 14
     .line 15
-    :try_start_e
+    :try_start_1
     invoke-virtual {v2, p1, v3}, Lcom/mixplorer/activities/TextEditorActivity;->Err(Lcom/mixplorer/widgets/MiEditor;Z)V
 
     .line 16
@@ -91,14 +91,14 @@
     return-void
 
     .line 19
-    :cond_12
+    :cond_0
     invoke-virtual {v2, v0, p1, v3}, Lcom/mixplorer/activities/TextEditorActivity;->Ok(ILcom/mixplorer/widgets/MiEditor;Z)V
-    :try_end_15
-    .catchall {:try_start_e .. :try_end_15} :catchall_15
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 20
     .line 21
     .line 22
-    :catchall_15
+    :catchall_0
     return-void
 .end method

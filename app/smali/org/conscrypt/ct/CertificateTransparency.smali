@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/conscrypt/ct/LogStore;Lorg/conscrypt/ct/Policy;Lorg/conscrypt/ct/Verifier;Lorg/conscrypt/metrics/StatsLog;)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -65,7 +65,7 @@
 
 # virtual methods
 .method public checkCT(Ljava/util/List;[B[BLjava/lang/String;)V
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -94,7 +94,7 @@
 
     .line 8
     .line 9
-    if-eq v0, v1, :cond_17
+    if-eq v0, v1, :cond_0
 
     .line 10
     .line 11
@@ -125,7 +125,7 @@
     return-void
 
     .line 24
-    :cond_17
+    :cond_0
     iget-object v0, p0, Lorg/conscrypt/ct/CertificateTransparency;->verifier:Lorg/conscrypt/ct/Verifier;
 
     .line 25
@@ -190,14 +190,14 @@
 
     .line 55
     .line 56
-    if-ne p1, p2, :cond_3a
+    if-ne p1, p2, :cond_1
 
     .line 57
     .line 58
     return-void
 
     .line 59
-    :cond_3a
+    :cond_1
     new-instance p2, Ljava/security/cert/CertificateException;
 
     .line 60
@@ -245,7 +245,7 @@
 .end method
 
 .method public isCTVerificationRequired(Ljava/lang/String;)Z
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p1}, Lorg/conscrypt/Platform;->isCTVerificationRequired(Ljava/lang/String;)Z
@@ -260,7 +260,7 @@
 .end method
 
 .method public reasonCTVerificationRequired(Ljava/lang/String;)Lorg/conscrypt/metrics/CertificateTransparencyVerificationReason;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p1}, Lorg/conscrypt/Platform;->reasonCTVerificationRequired(Ljava/lang/String;)Lorg/conscrypt/metrics/CertificateTransparencyVerificationReason;

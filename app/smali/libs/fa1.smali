@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/ga1;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/fa1;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/fa1;->X:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_28
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -78,7 +78,7 @@
     return-void
 
     .line 20
-    :pswitch_13
+    :pswitch_0
     iget v0, v1, Llibs/ga1;->O0:I
 
     .line 21
@@ -87,7 +87,7 @@
 
     .line 23
     .line 24
-    if-eq v0, v2, :cond_27
+    if-eq v0, v2, :cond_0
 
     .line 25
     .line 26
@@ -117,12 +117,12 @@
     .line 38
     .line 39
     .line 40
-    :cond_27
+    :cond_0
     return-void
 
     .line 41
-    :pswitch_data_28
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_13
+        :pswitch_0
     .end packed-switch
 .end method

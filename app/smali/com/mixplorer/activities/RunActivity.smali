@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/bs1;-><init>()V
@@ -23,7 +23,7 @@
 
 # virtual methods
 .method public final onCreate(Landroid/os/Bundle;)V
-    .registers 12
+    .locals 10
 
     .line 1
     invoke-super {p0, p1}, Llibs/bs1;->onCreate(Landroid/os/Bundle;)V
@@ -43,7 +43,7 @@
 
     .line 9
     .line 10
-    if-eqz p1, :cond_19e
+    if-eqz p1, :cond_b
 
     .line 11
     .line 12
@@ -94,7 +94,7 @@
     move-result v2
 
     .line 37
-    if-nez v2, :cond_1a3
+    if-nez v2, :cond_c
 
     .line 38
     .line 39
@@ -113,7 +113,7 @@
     const/4 v2, 0x0
 
     .line 46
-    if-eqz v1, :cond_61
+    if-eqz v1, :cond_0
 
     .line 47
     .line 48
@@ -207,11 +207,11 @@
     .line 94
     .line 95
     .line 96
-    goto/16 :goto_1a3
+    goto/16 :goto_3
 
     .line 97
     .line 98
-    :cond_61
+    :cond_0
     const-string v1, "com.arqex.explorer.ACTION_SERVER"
 
     .line 99
@@ -232,7 +232,7 @@
     move-result v1
 
     .line 108
-    if-eqz v1, :cond_72
+    if-eqz v1, :cond_1
 
     .line 109
     .line 110
@@ -241,11 +241,11 @@
     .line 111
     .line 112
     .line 113
-    goto/16 :goto_1a3
+    goto/16 :goto_3
 
     .line 114
     .line 115
-    :cond_72
+    :cond_1
     invoke-static {p1}, Llibs/sw1;->i(Landroid/content/Intent;)Landroid/net/Uri;
 
     .line 116
@@ -254,7 +254,7 @@
     move-result-object p1
 
     .line 119
-    if-eqz p1, :cond_1a3
+    if-eqz p1, :cond_c
 
     .line 120
     .line 121
@@ -290,7 +290,7 @@
     move-result v1
 
     .line 137
-    if-eqz v1, :cond_1a3
+    if-eqz v1, :cond_c
 
     .line 138
     .line 139
@@ -349,7 +349,7 @@
 
     .line 167
     .line 168
-    :try_start_a7
+    :try_start_0
     invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
 
     .line 169
@@ -408,7 +408,7 @@
     const/4 v9, 0x3
 
     .line 196
-    if-le v1, v9, :cond_ec
+    if-le v1, v9, :cond_2
 
     .line 197
     .line 198
@@ -428,7 +428,7 @@
     move-result v1
 
     .line 206
-    if-nez v1, :cond_ec
+    if-nez v1, :cond_2
 
     .line 207
     .line 208
@@ -487,19 +487,19 @@
     move-result-object v3
 
     .line 233
-    goto :goto_ec
+    goto :goto_0
 
     .line 234
-    :catchall_e9
+    :catchall_0
     move-exception p1
 
     .line 235
-    goto/16 :goto_196
+    goto/16 :goto_2
 
     .line 236
     .line 237
-    :cond_ec
-    :goto_ec
+    :cond_2
+    :goto_0
     new-instance p1, Ljava/lang/StringBuilder;
 
     .line 238
@@ -553,7 +553,7 @@
     move-result p1
 
     .line 266
-    if-eqz p1, :cond_13e
+    if-eqz p1, :cond_6
 
     .line 267
     .line 268
@@ -570,15 +570,15 @@
     .line 273
     .line 274
     .line 275
-    if-eq p1, v1, :cond_116
+    if-eq p1, v1, :cond_3
 
     .line 276
     .line 277
-    goto/16 :goto_1a3
+    goto/16 :goto_3
 
     .line 278
     .line 279
-    :cond_116
+    :cond_3
     const-string p1, "media_store"
 
     .line 280
@@ -591,7 +591,7 @@
     move-result p1
 
     .line 285
-    if-eqz p1, :cond_1a3
+    if-eqz p1, :cond_c
 
     .line 286
     .line 287
@@ -603,19 +603,19 @@
 
     .line 290
     .line 291
-    if-eqz p1, :cond_125
+    if-eqz p1, :cond_4
 
     .line 292
     .line 293
-    goto :goto_126
+    goto :goto_1
 
     .line 294
-    :cond_125
+    :cond_4
     const/4 p1, 0x0
 
     .line 295
-    :goto_126
-    if-eqz p1, :cond_130
+    :goto_1
+    if-eqz p1, :cond_5
 
     .line 296
     .line 297
@@ -627,15 +627,15 @@
     move-result p1
 
     .line 301
-    if-nez p1, :cond_130
+    if-nez p1, :cond_5
 
     .line 302
     .line 303
-    goto/16 :goto_1a3
+    goto/16 :goto_3
 
     .line 304
     .line 305
-    :cond_130
+    :cond_5
     new-instance p1, Llibs/xv1;
 
     .line 306
@@ -659,10 +659,10 @@
     .line 316
     .line 317
     .line 318
-    goto :goto_1a3
+    goto :goto_3
 
     .line 319
-    :cond_13e
+    :cond_6
     const-string p1, "trigger"
 
     .line 320
@@ -675,7 +675,7 @@
     move-result p1
 
     .line 325
-    if-eqz p1, :cond_1a3
+    if-eqz p1, :cond_c
 
     .line 326
     .line 327
@@ -691,7 +691,7 @@
     move-result p1
 
     .line 333
-    if-eqz p1, :cond_156
+    if-eqz p1, :cond_7
 
     .line 334
     .line 335
@@ -708,10 +708,10 @@
     .line 340
     .line 341
     .line 342
-    goto :goto_1a3
+    goto :goto_3
 
     .line 343
-    :cond_156
+    :cond_7
     const-string p1, "ftp"
 
     .line 344
@@ -724,7 +724,7 @@
     move-result p1
 
     .line 349
-    if-eqz p1, :cond_166
+    if-eqz p1, :cond_8
 
     .line 350
     .line 351
@@ -741,10 +741,10 @@
     .line 356
     .line 357
     .line 358
-    goto :goto_1a3
+    goto :goto_3
 
     .line 359
-    :cond_166
+    :cond_8
     const-string p1, "http"
 
     .line 360
@@ -757,7 +757,7 @@
     move-result p1
 
     .line 365
-    if-eqz p1, :cond_176
+    if-eqz p1, :cond_9
 
     .line 366
     .line 367
@@ -774,10 +774,10 @@
     .line 372
     .line 373
     .line 374
-    goto :goto_1a3
+    goto :goto_3
 
     .line 375
-    :cond_176
+    :cond_9
     const-string p1, "sftp"
 
     .line 376
@@ -790,7 +790,7 @@
     move-result p1
 
     .line 381
-    if-eqz p1, :cond_186
+    if-eqz p1, :cond_a
 
     .line 382
     .line 383
@@ -807,10 +807,10 @@
     .line 388
     .line 389
     .line 390
-    goto :goto_1a3
+    goto :goto_3
 
     .line 391
-    :cond_186
+    :cond_a
     const-string p1, "smb"
 
     .line 392
@@ -823,7 +823,7 @@
     move-result p1
 
     .line 397
-    if-eqz p1, :cond_1a3
+    if-eqz p1, :cond_c
 
     .line 398
     .line 399
@@ -836,16 +836,16 @@
 
     .line 403
     invoke-static {v6, v3, p1}, Llibs/s53;->i(Ljava/lang/String;Ljava/lang/String;Z)V
-    :try_end_195
-    .catchall {:try_start_a7 .. :try_end_195} :catchall_e9
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 404
     .line 405
     .line 406
-    goto :goto_1a3
+    goto :goto_3
 
     .line 407
-    :goto_196
+    :goto_2
     invoke-static {p1}, Llibs/vl3;->Map(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 408
@@ -859,10 +859,10 @@
     .line 412
     .line 413
     .line 414
-    goto :goto_1a3
+    goto :goto_3
 
     .line 415
-    :cond_19e
+    :cond_b
     const-string p1, "intent = null!"
 
     .line 416
@@ -872,8 +872,8 @@
     .line 418
     .line 419
     .line 420
-    :cond_1a3
-    :goto_1a3
+    :cond_c
+    :goto_3
     invoke-virtual {p0}, Landroid/app/Activity;->finish()V
 
     .line 421

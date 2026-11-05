@@ -11,7 +11,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/k01;->j:B
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public l(Ljava/io/IOException;)Ljava/io/IOException;
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/k01;->j:B
@@ -44,7 +44,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_22
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -60,7 +60,7 @@
     return-object p1
 
     .line 13
-    :pswitch_c
+    :pswitch_0
     new-instance v0, Ljava/net/SocketTimeoutException;
 
     .line 14
@@ -70,7 +70,7 @@
     .line 16
     .line 17
     .line 18
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_0
 
     .line 19
     .line 20
@@ -79,11 +79,11 @@
     .line 21
     .line 22
     .line 23
-    :cond_16
+    :cond_0
     return-object v0
 
     .line 24
-    :pswitch_17
+    :pswitch_1
     new-instance v0, Ljava/net/SocketTimeoutException;
 
     .line 25
@@ -93,7 +93,7 @@
     .line 27
     .line 28
     .line 29
-    if-eqz p1, :cond_21
+    if-eqz p1, :cond_1
 
     .line 30
     .line 31
@@ -102,19 +102,19 @@
     .line 32
     .line 33
     .line 34
-    :cond_21
+    :cond_1
     return-object v0
 
     .line 35
-    :pswitch_data_22
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_17
-        :pswitch_c
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final m()V
-    .registers 7
+    .locals 6
 
     .line 1
     iget-byte v0, p0, Llibs/k01;->j:B
@@ -125,7 +125,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_64
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -142,7 +142,7 @@
     return-void
 
     .line 14
-    :pswitch_d
+    :pswitch_0
     const-string v0, "Failed to close timed out socket "
 
     .line 15
@@ -151,19 +151,19 @@
 
     .line 17
     .line 18
-    :try_start_11
+    :try_start_0
     invoke-virtual {v1}, Ljava/net/Socket;->close()V
-    :try_end_14
-    .catch Ljava/lang/Exception; {:try_start_11 .. :try_end_14} :catch_43
-    .catch Ljava/lang/AssertionError; {:try_start_11 .. :try_end_14} :catch_15
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/AssertionError; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 19
     .line 20
     .line 21
-    goto :goto_57
+    goto :goto_0
 
     .line 22
-    :catch_15
+    :catch_0
     move-exception v2
 
     .line 23
@@ -175,7 +175,7 @@
     move-result-object v3
 
     .line 27
-    if-eqz v3, :cond_42
+    if-eqz v3, :cond_0
 
     .line 28
     .line 29
@@ -187,7 +187,7 @@
     move-result-object v3
 
     .line 33
-    if-eqz v3, :cond_42
+    if-eqz v3, :cond_0
 
     .line 34
     .line 35
@@ -211,7 +211,7 @@
     move-result v3
 
     .line 45
-    if-eqz v3, :cond_42
+    if-eqz v3, :cond_0
 
     .line 46
     .line 47
@@ -250,14 +250,14 @@
     .line 64
     .line 65
     .line 66
-    goto :goto_57
+    goto :goto_0
 
     .line 67
-    :cond_42
+    :cond_0
     throw v2
 
     .line 68
-    :catch_43
+    :catch_1
     move-exception v2
 
     .line 69
@@ -296,11 +296,11 @@
     .line 86
     .line 87
     .line 88
-    :goto_57
+    :goto_0
     return-void
 
     .line 89
-    :pswitch_58
+    :pswitch_1
     check-cast v1, Llibs/l01;
 
     .line 90
@@ -325,15 +325,15 @@
     return-void
 
     .line 101
-    :pswitch_data_64
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_58
-        :pswitch_d
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public n()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/p6;->k()Z
@@ -344,14 +344,14 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
     return-void
 
     .line 8
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
     .line 9

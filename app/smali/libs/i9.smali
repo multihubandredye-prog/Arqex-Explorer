@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 11
     sget-object v0, Llibs/f9;->Mu:Llibs/f9;
@@ -16,7 +16,7 @@
 .end method
 
 .method public constructor <init>(J)V
-    .registers 4
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/f9;->Mu:Llibs/f9;

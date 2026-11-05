@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
 .end method
 
 .method public static c(I[B)I
-    .registers 5
+    .locals 3
 
     .line 1
     add-int/lit8 v0, p0, 0x1
@@ -109,7 +109,7 @@
 .end method
 
 .method public static d(II[B)V
-    .registers 6
+    .locals 3
 
     .line 1
     add-int/lit8 v0, p1, 0x1
@@ -170,14 +170,14 @@
 
 # virtual methods
 .method public final a(ZLlibs/et;)V
-    .registers 4
+    .locals 1
 
     .line 1
     instance-of v0, p2, Llibs/hh1;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_37
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
@@ -207,7 +207,7 @@
 
     .line 16
     .line 17
-    if-ne p2, v0, :cond_31
+    if-ne p2, v0, :cond_0
 
     .line 18
     .line 19
@@ -276,7 +276,7 @@
     return-void
 
     .line 50
-    :cond_31
+    :cond_0
     const-string p1, "Key size must be 128 bits."
 
     .line 51
@@ -289,7 +289,7 @@
     return-void
 
     .line 56
-    :cond_37
+    :cond_1
     const-string p1, "invalid parameter passed to TEA init - "
 
     .line 57
@@ -311,7 +311,7 @@
 .end method
 
 .method public final b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "TEA"
@@ -322,7 +322,7 @@
 .end method
 
 .method public final i()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x8
@@ -333,7 +333,7 @@
 .end method
 
 .method public final r(II[B[B)I
-    .registers 13
+    .locals 8
 
     .line 1
     iget-boolean v0, p0, Llibs/wj3;->Mu:Z
@@ -343,7 +343,7 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_98
+    if-eqz v0, :cond_5
 
     .line 5
     .line 6
@@ -354,7 +354,7 @@
     array-length v2, p3
 
     .line 9
-    if-gt v0, v2, :cond_92
+    if-gt v0, v2, :cond_4
 
     .line 10
     .line 11
@@ -365,7 +365,7 @@
     array-length v2, p4
 
     .line 14
-    if-gt v0, v2, :cond_8c
+    if-gt v0, v2, :cond_3
 
     .line 15
     .line 16
@@ -386,7 +386,7 @@
 
     .line 24
     .line 25
-    if-eqz v0, :cond_52
+    if-eqz v0, :cond_1
 
     .line 26
     .line 27
@@ -413,8 +413,8 @@
     const/4 p3, 0x0
 
     .line 38
-    :goto_25
-    if-eq v1, v3, :cond_49
+    :goto_0
+    if-eq v1, v3, :cond_0
 
     .line 39
     .line 40
@@ -495,10 +495,10 @@
 
     .line 72
     .line 73
-    goto :goto_25
+    goto :goto_0
 
     .line 74
-    :cond_49
+    :cond_0
     invoke-static {v0, p2, p4}, Llibs/wj3;->d(II[B)V
 
     .line 75
@@ -516,7 +516,7 @@
     return v4
 
     .line 83
-    :cond_52
+    :cond_1
     invoke-static {p1, p3}, Llibs/wj3;->c(I[B)I
 
     .line 84
@@ -542,8 +542,8 @@
     .line 94
     .line 95
     .line 96
-    :goto_5f
-    if-eq v1, v3, :cond_83
+    :goto_1
+    if-eq v1, v3, :cond_2
 
     .line 97
     .line 98
@@ -624,10 +624,10 @@
 
     .line 130
     .line 131
-    goto :goto_5f
+    goto :goto_1
 
     .line 132
-    :cond_83
+    :cond_2
     invoke-static {v0, p2, p4}, Llibs/wj3;->d(II[B)V
 
     .line 133
@@ -645,7 +645,7 @@
     return v4
 
     .line 141
-    :cond_8c
+    :cond_3
     const-string p1, "output buffer too short"
 
     .line 142
@@ -658,7 +658,7 @@
     return v1
 
     .line 147
-    :cond_92
+    :cond_4
     const-string p1, "input buffer too short"
 
     .line 148
@@ -671,7 +671,7 @@
     return v1
 
     .line 153
-    :cond_98
+    :cond_5
     const-string p1, "TEA not initialised"
 
     .line 154
@@ -685,7 +685,7 @@
 .end method
 
 .method public final reset()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void

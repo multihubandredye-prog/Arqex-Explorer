@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/vq0;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Llibs/uy1;-><init>(Llibs/uy1;I)V
@@ -62,7 +62,7 @@
 
 # virtual methods
 .method public final i()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     const/16 v0, 0x9
@@ -77,7 +77,7 @@
     move-result v0
 
     .line 7
-    if-lez v0, :cond_25
+    if-lez v0, :cond_1
 
     .line 8
     .line 9
@@ -100,8 +100,8 @@
     const/4 v3, 0x0
 
     .line 18
-    :goto_11
-    if-ge v3, v0, :cond_1f
+    :goto_0
+    if-ge v3, v0, :cond_0
 
     .line 19
     .line 20
@@ -128,10 +128,10 @@
 
     .line 30
     .line 31
-    goto :goto_11
+    goto :goto_0
 
     .line 32
-    :cond_1f
+    :cond_0
     new-instance v0, Ljava/lang/String;
 
     .line 33
@@ -144,7 +144,7 @@
     return-object v0
 
     .line 38
-    :cond_25
+    :cond_1
     const/4 v0, 0x0
 
     .line 39

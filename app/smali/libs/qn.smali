@@ -42,7 +42,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 20
+    .locals 20
 
     .line 1
     new-instance v0, Llibs/qn;
@@ -555,7 +555,7 @@
 .end method
 
 .method public constructor <init>(CLjava/lang/Character;ILjava/lang/Character;Ljava/lang/Character;ZZLjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;[Ljava/lang/String;ZZZZZ)V
-    .registers 20
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -613,17 +613,17 @@
     const/4 p2, 0x0
 
     .line 28
-    if-nez p10, :cond_1f
+    if-nez p10, :cond_0
 
     .line 29
     .line 30
     move-object p3, p2
 
     .line 31
-    goto :goto_35
+    goto :goto_2
 
     .line 32
-    :cond_1f
+    :cond_0
     array-length p3, p10
 
     .line 33
@@ -634,11 +634,11 @@
     const/4 p4, 0x0
 
     .line 36
-    :goto_23
+    :goto_0
     array-length p5, p10
 
     .line 37
-    if-ge p4, p5, :cond_35
+    if-ge p4, p5, :cond_2
 
     .line 38
     .line 39
@@ -646,17 +646,17 @@
 
     .line 40
     .line 41
-    if-nez p5, :cond_2c
+    if-nez p5, :cond_1
 
     .line 42
     .line 43
     move-object p5, p2
 
     .line 44
-    goto :goto_30
+    goto :goto_1
 
     .line 45
-    :cond_2c
+    :cond_1
     invoke-virtual {p5}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     .line 46
@@ -665,7 +665,7 @@
     move-result-object p5
 
     .line 49
-    :goto_30
+    :goto_1
     aput-object p5, p3, p4
 
     .line 50
@@ -674,26 +674,26 @@
 
     .line 52
     .line 53
-    goto :goto_23
+    goto :goto_0
 
     .line 54
-    :cond_35
-    :goto_35
+    :cond_2
+    :goto_2
     iput-object p3, p0, Llibs/qn;->Nu:[Ljava/lang/String;
 
     .line 55
     .line 56
-    if-nez p11, :cond_3b
+    if-nez p11, :cond_3
 
     .line 57
     .line 58
     move-object p3, p2
 
     .line 59
-    goto :goto_41
+    goto :goto_3
 
     .line 60
-    :cond_3b
+    :cond_3
     invoke-virtual {p11}, [Ljava/lang/String;->clone()Ljava/lang/Object;
 
     .line 61
@@ -706,7 +706,7 @@
 
     .line 65
     .line 66
-    :goto_41
+    :goto_3
     iput-object p3, p0, Llibs/qn;->Mu:[Ljava/lang/String;
 
     .line 67
@@ -759,7 +759,7 @@
 
     .line 91
     .line 92
-    if-eq v0, v1, :cond_eb
+    if-eq v0, v1, :cond_12
 
     .line 93
     .line 94
@@ -767,7 +767,7 @@
 
     .line 95
     .line 96
-    if-eq v0, v1, :cond_eb
+    if-eq v0, v1, :cond_12
 
     .line 97
     .line 98
@@ -775,7 +775,7 @@
 
     .line 99
     .line 100
-    if-eqz p4, :cond_72
+    if-eqz p4, :cond_5
 
     .line 101
     .line 102
@@ -787,14 +787,14 @@
     move-result v2
 
     .line 106
-    if-eq v0, v2, :cond_6c
+    if-eq v0, v2, :cond_4
 
     .line 107
     .line 108
-    goto :goto_72
+    goto :goto_4
 
     .line 109
-    :cond_6c
+    :cond_4
     const-string p1, "The quoteChar character and the delimiter cannot be the same (\'"
 
     .line 110
@@ -807,9 +807,9 @@
     throw p2
 
     .line 115
-    :cond_72
-    :goto_72
-    if-eqz p5, :cond_81
+    :cond_5
+    :goto_4
+    if-eqz p5, :cond_7
 
     .line 116
     .line 117
@@ -821,14 +821,14 @@
     move-result v2
 
     .line 121
-    if-eq v0, v2, :cond_7b
+    if-eq v0, v2, :cond_6
 
     .line 122
     .line 123
-    goto :goto_81
+    goto :goto_5
 
     .line 124
-    :cond_7b
+    :cond_6
     const-string p1, "The escape character and the delimiter cannot be the same (\'"
 
     .line 125
@@ -841,9 +841,9 @@
     throw p2
 
     .line 130
-    :cond_81
-    :goto_81
-    if-eqz p6, :cond_90
+    :cond_7
+    :goto_5
+    if-eqz p6, :cond_9
 
     .line 131
     .line 132
@@ -855,14 +855,14 @@
     move-result v2
 
     .line 136
-    if-eq v0, v2, :cond_8a
+    if-eq v0, v2, :cond_8
 
     .line 137
     .line 138
-    goto :goto_90
+    goto :goto_6
 
     .line 139
-    :cond_8a
+    :cond_8
     const-string p1, "The comment start character and the delimiter cannot be the same (\'"
 
     .line 140
@@ -875,9 +875,9 @@
     throw p2
 
     .line 145
-    :cond_90
-    :goto_90
-    if-eqz p4, :cond_9f
+    :cond_9
+    :goto_6
+    if-eqz p4, :cond_b
 
     .line 146
     .line 147
@@ -889,14 +889,14 @@
     move-result p4
 
     .line 151
-    if-nez p4, :cond_99
+    if-nez p4, :cond_a
 
     .line 152
     .line 153
-    goto :goto_9f
+    goto :goto_7
 
     .line 154
-    :cond_99
+    :cond_a
     const-string p1, "The comment start character and the quoteChar cannot be the same (\'"
 
     .line 155
@@ -909,9 +909,9 @@
     throw p2
 
     .line 160
-    :cond_9f
-    :goto_9f
-    if-eqz p5, :cond_ae
+    :cond_b
+    :goto_7
+    if-eqz p5, :cond_d
 
     .line 161
     .line 162
@@ -923,14 +923,14 @@
     move-result p4
 
     .line 166
-    if-nez p4, :cond_a8
+    if-nez p4, :cond_c
 
     .line 167
     .line 168
-    goto :goto_ae
+    goto :goto_8
 
     .line 169
-    :cond_a8
+    :cond_c
     const-string p1, "The comment start and the escape character cannot be the same (\'"
 
     .line 170
@@ -943,9 +943,9 @@
     throw p2
 
     .line 175
-    :cond_ae
-    :goto_ae
-    if-nez p5, :cond_bc
+    :cond_d
+    :goto_8
+    if-nez p5, :cond_f
 
     .line 176
     .line 177
@@ -956,14 +956,14 @@
     const/4 p5, 0x4
 
     .line 180
-    if-eq p4, p5, :cond_b6
+    if-eq p4, p5, :cond_e
 
     .line 181
     .line 182
-    goto :goto_bc
+    goto :goto_9
 
     .line 183
-    :cond_b6
+    :cond_e
     const-string p1, "No quotes mode set but no escape character is set"
 
     .line 184
@@ -976,9 +976,9 @@
     throw p2
 
     .line 189
-    :cond_bc
-    :goto_bc
-    if-eqz p3, :cond_ea
+    :cond_f
+    :goto_9
+    if-eqz p3, :cond_11
 
     .line 190
     .line 191
@@ -994,8 +994,8 @@
     array-length p4, p3
 
     .line 197
-    :goto_c4
-    if-ge p1, p4, :cond_ea
+    :goto_a
+    if-ge p1, p4, :cond_11
 
     .line 198
     .line 199
@@ -1011,7 +1011,7 @@
     move-result p6
 
     .line 205
-    if-eqz p6, :cond_d1
+    if-eqz p6, :cond_10
 
     .line 206
     .line 207
@@ -1019,10 +1019,10 @@
 
     .line 208
     .line 209
-    goto :goto_c4
+    goto :goto_a
 
     .line 210
-    :cond_d1
+    :cond_10
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     .line 211
@@ -1072,11 +1072,11 @@
     throw p1
 
     .line 235
-    :cond_ea
+    :cond_11
     return-void
 
     .line 236
-    :cond_eb
+    :cond_12
     const-string p1, "The delimiter cannot be a line break"
 
     .line 237
@@ -1086,21 +1086,21 @@
     .line 239
     .line 240
     .line 241
-    goto :goto_f2
+    goto :goto_c
 
     .line 242
-    :goto_f1
+    :goto_b
     throw p2
 
     .line 243
-    :goto_f2
-    goto :goto_f1
+    :goto_c
+    goto :goto_b
 .end method
 
 
 # virtual methods
 .method public final a(C)Llibs/qn;
-    .registers 20
+    .locals 18
 
     .line 1
     move-object/from16 v0, p0
@@ -1115,7 +1115,7 @@
 
     .line 6
     .line 7
-    if-eq v2, v1, :cond_34
+    if-eq v2, v1, :cond_0
 
     .line 8
     .line 9
@@ -1123,7 +1123,7 @@
 
     .line 10
     .line 11
-    if-eq v2, v1, :cond_34
+    if-eq v2, v1, :cond_0
 
     .line 12
     .line 13
@@ -1207,7 +1207,7 @@
     return-object v1
 
     .line 53
-    :cond_34
+    :cond_0
     const-string v1, "The delimiter cannot be a line break"
 
     .line 54
@@ -1224,7 +1224,7 @@
 .end method
 
 .method public final b(Ljava/lang/Character;)Llibs/qn;
-    .registers 22
+    .locals 20
 
     .line 1
     move-object/from16 v0, p0
@@ -1243,7 +1243,7 @@
 
     .line 8
     .line 9
-    if-eq v1, v2, :cond_3c
+    if-eq v1, v2, :cond_0
 
     .line 10
     .line 11
@@ -1251,7 +1251,7 @@
 
     .line 12
     .line 13
-    if-eq v1, v2, :cond_3c
+    if-eq v1, v2, :cond_0
 
     .line 14
     .line 15
@@ -1347,7 +1347,7 @@
     return-object v3
 
     .line 61
-    :cond_3c
+    :cond_0
     const-string v1, "The escape character cannot be a line break"
 
     .line 62
@@ -1364,7 +1364,7 @@
 .end method
 
 .method public final varargs c([Ljava/lang/String;)Llibs/qn;
-    .registers 20
+    .locals 18
 
     .line 1
     move-object/from16 v0, p0
@@ -1456,7 +1456,7 @@
 .end method
 
 .method public final d()Llibs/qn;
-    .registers 19
+    .locals 18
 
     .line 1
     move-object/from16 v0, p0
@@ -1547,31 +1547,31 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
     .line 6
-    if-nez p1, :cond_8
+    if-nez p1, :cond_1
 
     .line 7
     .line 8
     return v1
 
     .line 9
-    :cond_8
+    :cond_1
     const-class v2, Llibs/qn;
 
     .line 10
@@ -1584,14 +1584,14 @@
     move-result-object v3
 
     .line 15
-    if-eq v2, v3, :cond_11
+    if-eq v2, v3, :cond_2
 
     .line 16
     .line 17
     return v1
 
     .line 18
-    :cond_11
+    :cond_2
     check-cast p1, Llibs/qn;
 
     .line 19
@@ -1604,14 +1604,14 @@
 
     .line 23
     .line 24
-    if-eq v2, v3, :cond_1a
+    if-eq v2, v3, :cond_3
 
     .line 25
     .line 26
     return v1
 
     .line 27
-    :cond_1a
+    :cond_3
     iget v2, p0, Llibs/qn;->Tau:I
 
     .line 28
@@ -1620,14 +1620,14 @@
 
     .line 30
     .line 31
-    if-eq v2, v3, :cond_21
+    if-eq v2, v3, :cond_4
 
     .line 32
     .line 33
     return v1
 
     .line 34
-    :cond_21
+    :cond_4
     iget-object v2, p1, Llibs/qn;->Sigma:Ljava/lang/Character;
 
     .line 35
@@ -1636,18 +1636,18 @@
 
     .line 37
     .line 38
-    if-nez v3, :cond_2a
+    if-nez v3, :cond_5
 
     .line 39
     .line 40
-    if-eqz v2, :cond_31
+    if-eqz v2, :cond_6
 
     .line 41
     .line 42
     return v1
 
     .line 43
-    :cond_2a
+    :cond_5
     invoke-virtual {v3, v2}, Ljava/lang/Character;->equals(Ljava/lang/Object;)Z
 
     .line 44
@@ -1656,14 +1656,14 @@
     move-result v2
 
     .line 47
-    if-nez v2, :cond_31
+    if-nez v2, :cond_6
 
     .line 48
     .line 49
     return v1
 
     .line 50
-    :cond_31
+    :cond_6
     iget-object v2, p1, Llibs/qn;->Y:Ljava/lang/Character;
 
     .line 51
@@ -1672,18 +1672,18 @@
 
     .line 53
     .line 54
-    if-nez v3, :cond_3a
+    if-nez v3, :cond_7
 
     .line 55
     .line 56
-    if-eqz v2, :cond_41
+    if-eqz v2, :cond_8
 
     .line 57
     .line 58
     return v1
 
     .line 59
-    :cond_3a
+    :cond_7
     invoke-virtual {v3, v2}, Ljava/lang/Character;->equals(Ljava/lang/Object;)Z
 
     .line 60
@@ -1692,14 +1692,14 @@
     move-result v2
 
     .line 63
-    if-nez v2, :cond_41
+    if-nez v2, :cond_8
 
     .line 64
     .line 65
     return v1
 
     .line 66
-    :cond_41
+    :cond_8
     iget-object v2, p1, Llibs/qn;->Lambda:Ljava/lang/Character;
 
     .line 67
@@ -1708,18 +1708,18 @@
 
     .line 69
     .line 70
-    if-nez v3, :cond_4a
+    if-nez v3, :cond_9
 
     .line 71
     .line 72
-    if-eqz v2, :cond_51
+    if-eqz v2, :cond_a
 
     .line 73
     .line 74
     return v1
 
     .line 75
-    :cond_4a
+    :cond_9
     invoke-virtual {v3, v2}, Ljava/lang/Character;->equals(Ljava/lang/Object;)Z
 
     .line 76
@@ -1728,14 +1728,14 @@
     move-result v2
 
     .line 79
-    if-nez v2, :cond_51
+    if-nez v2, :cond_a
 
     .line 80
     .line 81
     return v1
 
     .line 82
-    :cond_51
+    :cond_a
     iget-object v2, p1, Llibs/qn;->Rho:Ljava/lang/String;
 
     .line 83
@@ -1744,18 +1744,18 @@
 
     .line 85
     .line 86
-    if-nez v3, :cond_5a
+    if-nez v3, :cond_b
 
     .line 87
     .line 88
-    if-eqz v2, :cond_61
+    if-eqz v2, :cond_c
 
     .line 89
     .line 90
     return v1
 
     .line 91
-    :cond_5a
+    :cond_b
     invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     .line 92
@@ -1764,14 +1764,14 @@
     move-result v2
 
     .line 95
-    if-nez v2, :cond_61
+    if-nez v2, :cond_c
 
     .line 96
     .line 97
     return v1
 
     .line 98
-    :cond_61
+    :cond_c
     iget-object v2, p0, Llibs/qn;->Mu:[Ljava/lang/String;
 
     .line 99
@@ -1788,14 +1788,14 @@
     move-result v2
 
     .line 106
-    if-nez v2, :cond_6c
+    if-nez v2, :cond_d
 
     .line 107
     .line 108
     return v1
 
     .line 109
-    :cond_6c
+    :cond_d
     iget-boolean v2, p0, Llibs/qn;->Pi:Z
 
     .line 110
@@ -1804,14 +1804,14 @@
 
     .line 112
     .line 113
-    if-eq v2, v3, :cond_73
+    if-eq v2, v3, :cond_e
 
     .line 114
     .line 115
     return v1
 
     .line 116
-    :cond_73
+    :cond_e
     iget-boolean v2, p0, Llibs/qn;->Xi:Z
 
     .line 117
@@ -1820,14 +1820,14 @@
 
     .line 119
     .line 120
-    if-eq v2, v3, :cond_7a
+    if-eq v2, v3, :cond_f
 
     .line 121
     .line 122
     return v1
 
     .line 123
-    :cond_7a
+    :cond_f
     iget-boolean v2, p0, Llibs/qn;->Phi:Z
 
     .line 124
@@ -1836,14 +1836,14 @@
 
     .line 126
     .line 127
-    if-eq v2, v3, :cond_81
+    if-eq v2, v3, :cond_10
 
     .line 128
     .line 129
     return v1
 
     .line 130
-    :cond_81
+    :cond_10
     iget-object p1, p1, Llibs/qn;->Upsilon:Ljava/lang/String;
 
     .line 131
@@ -1852,18 +1852,18 @@
 
     .line 133
     .line 134
-    if-nez v2, :cond_8a
+    if-nez v2, :cond_11
 
     .line 135
     .line 136
-    if-eqz p1, :cond_91
+    if-eqz p1, :cond_12
 
     .line 137
     .line 138
     return v1
 
     .line 139
-    :cond_8a
+    :cond_11
     invoke-virtual {v2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     .line 140
@@ -1872,19 +1872,19 @@
     move-result p1
 
     .line 143
-    if-nez p1, :cond_91
+    if-nez p1, :cond_12
 
     .line 144
     .line 145
     return v1
 
     .line 146
-    :cond_91
+    :cond_12
     return v0
 .end method
 
 .method public final f(Ljava/lang/String;)Llibs/qn;
-    .registers 20
+    .locals 18
 
     .line 1
     move-object/from16 v0, p0
@@ -1976,14 +1976,14 @@
 .end method
 
 .method public final g(Ljava/lang/Character;)Llibs/qn;
-    .registers 21
+    .locals 19
 
     .line 1
     move-object/from16 v0, p0
 
     .line 2
     .line 3
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_1
 
     .line 4
     .line 5
@@ -1999,7 +1999,7 @@
 
     .line 10
     .line 11
-    if-eq v1, v2, :cond_11
+    if-eq v1, v2, :cond_0
 
     .line 12
     .line 13
@@ -2007,14 +2007,14 @@
 
     .line 14
     .line 15
-    if-eq v1, v2, :cond_11
+    if-eq v1, v2, :cond_0
 
     .line 16
     .line 17
-    goto :goto_18
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_0
     const-string v1, "The quoteChar cannot be a line break"
 
     .line 19
@@ -2030,8 +2030,8 @@
     return-object v1
 
     .line 25
-    :cond_18
-    :goto_18
+    :cond_1
+    :goto_0
     new-instance v2, Llibs/qn;
 
     .line 26
@@ -2121,7 +2121,7 @@
 .end method
 
 .method public final h()V
-    .registers 19
+    .locals 18
 
     .line 1
     move-object/from16 v0, p0
@@ -2212,7 +2212,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 7
+    .locals 6
 
     .line 1
     iget-char v0, p0, Llibs/qn;->Z:C
@@ -2248,17 +2248,17 @@
 
     .line 15
     .line 16
-    if-nez v3, :cond_13
+    if-nez v3, :cond_0
 
     .line 17
     .line 18
     const/4 v3, 0x0
 
     .line 19
-    goto :goto_17
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_0
     invoke-virtual {v3}, Ljava/lang/Character;->hashCode()I
 
     .line 21
@@ -2267,7 +2267,7 @@
     move-result v3
 
     .line 24
-    :goto_17
+    :goto_0
     add-int/2addr v0, v3
 
     .line 25
@@ -2279,17 +2279,17 @@
 
     .line 28
     .line 29
-    if-nez v3, :cond_20
+    if-nez v3, :cond_1
 
     .line 30
     .line 31
     const/4 v3, 0x0
 
     .line 32
-    goto :goto_24
+    goto :goto_1
 
     .line 33
-    :cond_20
+    :cond_1
     invoke-virtual {v3}, Ljava/lang/Character;->hashCode()I
 
     .line 34
@@ -2298,7 +2298,7 @@
     move-result v3
 
     .line 37
-    :goto_24
+    :goto_1
     add-int/2addr v0, v3
 
     .line 38
@@ -2310,17 +2310,17 @@
 
     .line 41
     .line 42
-    if-nez v3, :cond_2d
+    if-nez v3, :cond_2
 
     .line 43
     .line 44
     const/4 v3, 0x0
 
     .line 45
-    goto :goto_31
+    goto :goto_2
 
     .line 46
-    :cond_2d
+    :cond_2
     invoke-virtual {v3}, Ljava/lang/Character;->hashCode()I
 
     .line 47
@@ -2329,7 +2329,7 @@
     move-result v3
 
     .line 50
-    :goto_31
+    :goto_2
     add-int/2addr v0, v3
 
     .line 51
@@ -2341,17 +2341,17 @@
 
     .line 54
     .line 55
-    if-nez v3, :cond_3a
+    if-nez v3, :cond_3
 
     .line 56
     .line 57
     const/4 v3, 0x0
 
     .line 58
-    goto :goto_3e
+    goto :goto_3
 
     .line 59
-    :cond_3a
+    :cond_3
     invoke-virtual {v3}, Ljava/lang/String;->hashCode()I
 
     .line 60
@@ -2360,7 +2360,7 @@
     move-result v3
 
     .line 63
-    :goto_3e
+    :goto_3
     add-int/2addr v0, v3
 
     .line 64
@@ -2380,7 +2380,7 @@
 
     .line 71
     .line 72
-    if-eqz v3, :cond_4c
+    if-eqz v3, :cond_4
 
     .line 73
     .line 74
@@ -2388,15 +2388,15 @@
 
     .line 75
     .line 76
-    goto :goto_4e
+    goto :goto_4
 
     .line 77
-    :cond_4c
+    :cond_4
     const/16 v3, 0x4d5
 
     .line 78
     .line 79
-    :goto_4e
+    :goto_4
     add-int/2addr v0, v3
 
     .line 80
@@ -2408,7 +2408,7 @@
 
     .line 83
     .line 84
-    if-eqz v3, :cond_58
+    if-eqz v3, :cond_5
 
     .line 85
     .line 86
@@ -2416,15 +2416,15 @@
 
     .line 87
     .line 88
-    goto :goto_5a
+    goto :goto_5
 
     .line 89
-    :cond_58
+    :cond_5
     const/16 v3, 0x4d5
 
     .line 90
     .line 91
-    :goto_5a
+    :goto_5
     add-int/2addr v0, v3
 
     .line 92
@@ -2436,7 +2436,7 @@
 
     .line 95
     .line 96
-    if-eqz v3, :cond_64
+    if-eqz v3, :cond_6
 
     .line 97
     .line 98
@@ -2444,15 +2444,15 @@
 
     .line 99
     .line 100
-    goto :goto_66
+    goto :goto_6
 
     .line 101
-    :cond_64
+    :cond_6
     const/16 v3, 0x4d5
 
     .line 102
     .line 103
-    :goto_66
+    :goto_6
     add-int/2addr v0, v3
 
     .line 104
@@ -2464,7 +2464,7 @@
 
     .line 107
     .line 108
-    if-eqz v3, :cond_6f
+    if-eqz v3, :cond_7
 
     .line 109
     .line 110
@@ -2472,7 +2472,7 @@
 
     .line 111
     .line 112
-    :cond_6f
+    :cond_7
     add-int/2addr v0, v4
 
     .line 113
@@ -2484,14 +2484,14 @@
 
     .line 116
     .line 117
-    if-nez v3, :cond_77
+    if-nez v3, :cond_8
 
     .line 118
     .line 119
-    goto :goto_7b
+    goto :goto_7
 
     .line 120
-    :cond_77
+    :cond_8
     invoke-virtual {v3}, Ljava/lang/String;->hashCode()I
 
     .line 121
@@ -2500,7 +2500,7 @@
     move-result v2
 
     .line 124
-    :goto_7b
+    :goto_7
     add-int/2addr v0, v2
 
     .line 125
@@ -2527,7 +2527,7 @@
 .end method
 
 .method public final i()Llibs/qn;
-    .registers 20
+    .locals 19
 
     .line 1
     move-object/from16 v0, p0
@@ -2631,7 +2631,7 @@
 .end method
 
 .method public final j()Llibs/qn;
-    .registers 19
+    .locals 18
 
     .line 1
     move-object/from16 v0, p0
@@ -2722,7 +2722,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2760,7 +2760,7 @@
 
     .line 19
     .line 20
-    if-eqz v2, :cond_20
+    if-eqz v2, :cond_0
 
     .line 21
     .line 22
@@ -2783,12 +2783,12 @@
     .line 31
     .line 32
     .line 33
-    :cond_20
+    :cond_0
     iget-object v2, p0, Llibs/qn;->Sigma:Ljava/lang/Character;
 
     .line 34
     .line 35
-    if-eqz v2, :cond_2f
+    if-eqz v2, :cond_1
 
     .line 36
     .line 37
@@ -2811,12 +2811,12 @@
     .line 46
     .line 47
     .line 48
-    :cond_2f
+    :cond_1
     iget-object v2, p0, Llibs/qn;->Y:Ljava/lang/Character;
 
     .line 49
     .line 50
-    if-eqz v2, :cond_3e
+    if-eqz v2, :cond_2
 
     .line 51
     .line 52
@@ -2839,12 +2839,12 @@
     .line 61
     .line 62
     .line 63
-    :cond_3e
+    :cond_2
     iget-object v2, p0, Llibs/qn;->Rho:Ljava/lang/String;
 
     .line 64
     .line 65
-    if-eqz v2, :cond_4d
+    if-eqz v2, :cond_3
 
     .line 66
     .line 67
@@ -2867,12 +2867,12 @@
     .line 76
     .line 77
     .line 78
-    :cond_4d
+    :cond_3
     iget-object v2, p0, Llibs/qn;->Upsilon:Ljava/lang/String;
 
     .line 79
     .line 80
-    if-eqz v2, :cond_5c
+    if-eqz v2, :cond_4
 
     .line 81
     .line 82
@@ -2895,12 +2895,12 @@
     .line 91
     .line 92
     .line 93
-    :cond_5c
+    :cond_4
     iget-boolean v1, p0, Llibs/qn;->Xi:Z
 
     .line 94
     .line 95
-    if-eqz v1, :cond_65
+    if-eqz v1, :cond_5
 
     .line 96
     .line 97
@@ -2913,12 +2913,12 @@
     .line 100
     .line 101
     .line 102
-    :cond_65
+    :cond_5
     iget-boolean v1, p0, Llibs/qn;->Pi:Z
 
     .line 103
     .line 104
-    if-eqz v1, :cond_6e
+    if-eqz v1, :cond_6
 
     .line 105
     .line 106
@@ -2931,12 +2931,12 @@
     .line 109
     .line 110
     .line 111
-    :cond_6e
+    :cond_6
     iget-boolean v1, p0, Llibs/qn;->Omicron:Z
 
     .line 112
     .line 113
-    if-eqz v1, :cond_77
+    if-eqz v1, :cond_7
 
     .line 114
     .line 115
@@ -2949,7 +2949,7 @@
     .line 118
     .line 119
     .line 120
-    :cond_77
+    :cond_7
     const-string v1, " SkipHeaderRecord:"
 
     .line 121
@@ -2972,7 +2972,7 @@
 
     .line 131
     .line 132
-    if-eqz v1, :cond_91
+    if-eqz v1, :cond_8
 
     .line 133
     .line 134
@@ -2998,12 +2998,12 @@
     .line 144
     .line 145
     .line 146
-    :cond_91
+    :cond_8
     iget-object v1, p0, Llibs/qn;->Mu:[Ljava/lang/String;
 
     .line 147
     .line 148
-    if-eqz v1, :cond_a1
+    if-eqz v1, :cond_9
 
     .line 149
     .line 150
@@ -3029,7 +3029,7 @@
     .line 160
     .line 161
     .line 162
-    :cond_a1
+    :cond_9
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 163

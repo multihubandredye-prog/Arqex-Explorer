@@ -48,7 +48,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 1
     new-instance v0, Llibs/k00;
@@ -63,7 +63,7 @@
 
     .line 6
     .line 7
-    fill-array-data v2, :array_3e
+    fill-array-data v2, :array_0
 
     .line 8
     .line 9
@@ -72,7 +72,7 @@
 
     .line 11
     .line 12
-    fill-array-data v1, :array_46
+    fill-array-data v1, :array_1
 
     .line 13
     .line 14
@@ -169,7 +169,7 @@
     return-void
 
     .line 63
-    :array_3e
+    :array_0
     .array-data 1
         -0x1t
         -0x1t
@@ -189,7 +189,7 @@
     .line 69
     .line 70
     .line 71
-    :array_46
+    :array_1
     .array-data 1
         -0x1t
         -0x1t
@@ -203,7 +203,7 @@
 .end method
 
 .method public constructor <init>(Llibs/qc3;Llibs/bp3;)V
-    .registers 7
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -367,7 +367,7 @@
 .end method
 
 .method public static m(Llibs/ap;Ljava/lang/String;Ljava/lang/Object;Llibs/og3;J)Llibs/lv2;
-    .registers 9
+    .locals 3
 
     .line 1
     const-wide/16 v0, 0x0
@@ -378,18 +378,18 @@
 
     .line 4
     .line 5
-    if-lez v2, :cond_30
+    if-lez v2, :cond_1
 
     .line 6
     .line 7
-    :try_start_6
+    :try_start_0
     sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-    :try_end_8
-    .catch Llibs/qo3; {:try_start_6 .. :try_end_8} :catch_64
+    :try_end_0
+    .catch Llibs/qo3; {:try_start_0 .. :try_end_0} :catch_3
 
     .line 8
     .line 9
-    :try_start_8
+    :try_start_1
     iget-object p0, p0, Llibs/ap;->X:Llibs/gg2;
 
     .line 10
@@ -400,38 +400,38 @@
     .line 13
     .line 14
     move-result-object p0
-    :try_end_e
-    .catch Ljava/lang/InterruptedException; {:try_start_8 .. :try_end_e} :catch_22
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_8 .. :try_end_e} :catch_13
-    .catch Ljava/util/concurrent/TimeoutException; {:try_start_8 .. :try_end_e} :catch_11
-    .catch Llibs/qo3; {:try_start_8 .. :try_end_e} :catch_64
+    :try_end_1
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/util/concurrent/TimeoutException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Llibs/qo3; {:try_start_1 .. :try_end_1} :catch_3
 
     .line 15
-    :try_start_e
+    :try_start_2
     check-cast p0, Llibs/lv2;
 
     .line 16
     .line 17
-    goto :goto_38
+    goto :goto_2
 
     .line 18
-    :catch_11
+    :catch_0
     move-exception p0
 
     .line 19
-    goto :goto_14
+    goto :goto_0
 
     .line 20
-    :catch_13
+    :catch_1
     move-exception p0
 
     .line 21
-    :goto_14
+    :goto_0
     instance-of p1, p0, Llibs/qo3;
 
     .line 22
     .line 23
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_0
 
     .line 24
     .line 25
@@ -439,10 +439,10 @@
 
     .line 26
     .line 27
-    goto :goto_21
+    goto :goto_1
 
     .line 28
-    :cond_1b
+    :cond_0
     new-instance p1, Llibs/qo3;
 
     .line 29
@@ -455,11 +455,11 @@
     move-object p0, p1
 
     .line 34
-    :goto_21
+    :goto_1
     throw p0
 
     .line 35
-    :catch_22
+    :catch_2
     move-exception p0
 
     .line 36
@@ -486,12 +486,12 @@
     .line 47
     .line 48
     throw p1
-    :try_end_30
-    .catch Llibs/qo3; {:try_start_e .. :try_end_30} :catch_64
+    :try_end_2
+    .catch Llibs/qo3; {:try_start_2 .. :try_end_2} :catch_3
 
     .line 49
-    :cond_30
-    :try_start_30
+    :cond_1
+    :try_start_3
     iget-object p0, p0, Llibs/ap;->X:Llibs/gg2;
 
     .line 50
@@ -502,20 +502,20 @@
     .line 53
     .line 54
     move-result-object p0
-    :try_end_36
-    .catch Ljava/lang/InterruptedException; {:try_start_30 .. :try_end_36} :catch_6d
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_30 .. :try_end_36} :catch_66
-    .catch Llibs/qo3; {:try_start_30 .. :try_end_36} :catch_64
+    :try_end_3
+    .catch Ljava/lang/InterruptedException; {:try_start_3 .. :try_end_3} :catch_5
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_3 .. :try_end_3} :catch_4
+    .catch Llibs/qo3; {:try_start_3 .. :try_end_3} :catch_3
 
     .line 55
-    :try_start_36
+    :try_start_4
     check-cast p0, Llibs/lv2;
-    :try_end_38
-    .catch Llibs/qo3; {:try_start_36 .. :try_end_38} :catch_64
+    :try_end_4
+    .catch Llibs/qo3; {:try_start_4 .. :try_end_4} :catch_3
 
     .line 56
     .line 57
-    :goto_38
+    :goto_2
     invoke-virtual {p0}, Llibs/lv2;->b()Llibs/xw2;
 
     .line 58
@@ -540,14 +540,14 @@
     move-result p3
 
     .line 69
-    if-eqz p3, :cond_47
+    if-eqz p3, :cond_2
 
     .line 70
     .line 71
     return-object p0
 
     .line 72
-    :cond_47
+    :cond_2
     new-instance p3, Llibs/qw2;
 
     .line 73
@@ -603,18 +603,18 @@
     throw p3
 
     .line 101
-    :catch_64
+    :catch_3
     move-exception p0
 
     .line 102
-    goto :goto_7b
+    goto :goto_3
 
     .line 103
-    :catch_66
+    :catch_4
     move-exception p0
 
     .line 104
-    :try_start_67
+    :try_start_5
     new-instance p1, Llibs/qo3;
 
     .line 105
@@ -627,7 +627,7 @@
     throw p1
 
     .line 110
-    :catch_6d
+    :catch_5
     move-exception p0
 
     .line 111
@@ -654,11 +654,11 @@
     .line 122
     .line 123
     throw p1
-    :try_end_7b
-    .catch Llibs/qo3; {:try_start_67 .. :try_end_7b} :catch_64
+    :try_end_5
+    .catch Llibs/qo3; {:try_start_5 .. :try_end_5} :catch_3
 
     .line 124
-    :goto_7b
+    :goto_3
     new-instance p1, Llibs/zw2;
 
     .line 125
@@ -674,7 +674,7 @@
 
 # virtual methods
 .method public final c(Llibs/k00;)V
-    .registers 9
+    .locals 7
 
     .line 1
     new-instance v0, Llibs/uu2;
@@ -731,7 +731,7 @@
 .end method
 
 .method public final close()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/d73;->Upsilon:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -749,7 +749,7 @@
     move-result v0
 
     .line 8
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 9
     .line 10
@@ -762,30 +762,30 @@
     .line 13
     .line 14
     .line 15
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     .line 1
-    if-ne p0, p1, :cond_3
+    if-ne p0, p1, :cond_0
 
     .line 2
     .line 3
-    goto :goto_1f
+    goto :goto_1
 
     .line 4
-    :cond_3
-    if-nez p1, :cond_6
+    :cond_0
+    if-nez p1, :cond_1
 
     .line 5
     .line 6
-    goto :goto_1d
+    goto :goto_0
 
     .line 7
-    :cond_6
+    :cond_1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 8
@@ -802,14 +802,14 @@
     move-result-object v1
 
     .line 15
-    if-eq v0, v1, :cond_11
+    if-eq v0, v1, :cond_2
 
     .line 16
     .line 17
-    goto :goto_1d
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_2
     check-cast p1, Llibs/d73;
 
     .line 19
@@ -830,19 +830,19 @@
     move-result p1
 
     .line 28
-    if-nez p1, :cond_1f
+    if-nez p1, :cond_3
 
     .line 29
     .line 30
-    :goto_1d
+    :goto_0
     const/4 p1, 0x0
 
     .line 31
     return p1
 
     .line 32
-    :cond_1f
-    :goto_1f
+    :cond_3
+    :goto_1
     const/4 p1, 0x1
 
     .line 33
@@ -850,7 +850,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/d73;->X:Llibs/qc3;
@@ -873,7 +873,7 @@
 .end method
 
 .method public final i(Llibs/k00;JLlibs/ml;)Llibs/ap;
-    .registers 17
+    .locals 12
 
     .line 1
     invoke-virtual/range {p4 .. p4}, Llibs/ml;->c()I
@@ -888,7 +888,7 @@
 
     .line 6
     .line 7
-    if-gt v0, v11, :cond_1c
+    if-gt v0, v11, :cond_0
 
     .line 8
     .line 9
@@ -934,7 +934,7 @@
     return-object p1
 
     .line 29
-    :cond_1c
+    :cond_0
     new-instance p1, Llibs/zw2;
 
     .line 30
@@ -996,7 +996,7 @@
 .end method
 
 .method public final w(Llibs/lv2;)Llibs/ap;
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/d73;->Upsilon:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -1011,11 +1011,11 @@
     move-result v0
 
     .line 7
-    if-nez v0, :cond_16
+    if-nez v0, :cond_0
 
     .line 8
     .line 9
-    :try_start_8
+    :try_start_0
     iget-object v0, p0, Llibs/d73;->Lambda:Llibs/i63;
 
     .line 10
@@ -1026,14 +1026,14 @@
     .line 13
     .line 14
     move-result-object p1
-    :try_end_e
-    .catch Llibs/qo3; {:try_start_8 .. :try_end_e} :catch_f
+    :try_end_0
+    .catch Llibs/qo3; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 15
     return-object p1
 
     .line 16
-    :catch_f
+    :catch_0
     move-exception p1
 
     .line 17
@@ -1049,7 +1049,7 @@
     throw v0
 
     .line 23
-    :cond_16
+    :cond_0
     new-instance p1, Llibs/zw2;
 
     .line 24
@@ -1091,7 +1091,7 @@
 .end method
 
 .method public final x(Llibs/lv2;Ljava/lang/String;Ljava/lang/Object;Llibs/og3;J)Llibs/lv2;
-    .registers 7
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Llibs/d73;->w(Llibs/lv2;)Llibs/ap;

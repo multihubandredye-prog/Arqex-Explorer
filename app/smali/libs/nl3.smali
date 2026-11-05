@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/TextEditorActivity;Ljava/lang/String;IZLjava/lang/String;Z)V
-    .registers 7
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/nl3;->j:Lcom/mixplorer/activities/TextEditorActivity;
@@ -75,18 +75,18 @@
 
     .line 23
     .line 24
-    if-eqz p6, :cond_1c
+    if-eqz p6, :cond_0
 
     .line 25
     .line 26
-    if-eqz p4, :cond_1c
+    if-eqz p4, :cond_0
 
     .line 27
     .line 28
     const/4 p1, 0x1
 
     .line 29
-    :cond_1c
+    :cond_0
     iput-boolean p1, p0, Llibs/nl3;->h:Z
 
     .line 30
@@ -97,7 +97,7 @@
 
 # virtual methods
 .method public final a()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/nl3;->a:Llibs/il1;
@@ -108,7 +108,7 @@
 
     .line 4
     .line 5
-    if-lez v1, :cond_13
+    if-lez v1, :cond_0
 
     .line 6
     .line 7
@@ -139,7 +139,7 @@
     return v0
 
     .line 20
-    :cond_13
+    :cond_0
     const/4 v0, -0x1
 
     .line 21
@@ -147,7 +147,7 @@
 .end method
 
 .method public final b()Z
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/nl3;->a:Llibs/il1;
@@ -161,7 +161,7 @@
     const/4 v1, 0x0
 
     .line 6
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
     .line 7
     .line 8
@@ -197,12 +197,12 @@
     return v0
 
     .line 24
-    :cond_17
+    :cond_0
     return v1
 .end method
 
 .method public final c()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget v0, p0, Llibs/nl3;->b:I
@@ -222,12 +222,12 @@
 
     .line 9
     .line 10
-    :goto_9
+    :goto_0
     iget v2, v1, Llibs/il1;->X:I
 
     .line 11
     .line 12
-    if-ge v0, v2, :cond_2b
+    if-ge v0, v2, :cond_0
 
     .line 13
     .line 14
@@ -290,10 +290,10 @@
 
     .line 42
     .line 43
-    goto :goto_9
+    goto :goto_0
 
     .line 44
-    :cond_2b
+    :cond_0
     iget v0, p0, Llibs/nl3;->b:I
 
     .line 45

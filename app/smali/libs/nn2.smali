@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(IJLlibs/kn2;)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-object p4, p0, Llibs/nn2;->Mu:Llibs/kn2;
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public final close()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Llibs/nn2;->flush()V
@@ -79,7 +79,7 @@
 .end method
 
 .method public final flush()V
-    .registers 4
+    .locals 3
 
     .line 1
     :goto_0
@@ -95,7 +95,7 @@
     move-result v1
 
     .line 7
-    if-nez v1, :cond_21
+    if-nez v1, :cond_0
 
     .line 8
     .line 9
@@ -148,12 +148,12 @@
     goto :goto_0
 
     .line 34
-    :cond_21
+    :cond_0
     return-void
 .end method
 
 .method public final write(I)V
-    .registers 4
+    .locals 2
 
     int-to-byte p1, p1
 
@@ -173,7 +173,7 @@
 .end method
 
 .method public final write([BII)V
-    .registers 10
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/nn2;->Mu:Llibs/kn2;
@@ -200,7 +200,7 @@
 
     .line 12
     .line 13
-    if-le v3, v4, :cond_22
+    if-le v3, v4, :cond_0
 
     .line 14
     .line 15
@@ -242,7 +242,7 @@
     .line 33
     .line 34
     .line 35
-    :cond_22
+    :cond_0
     iget-wide v3, p0, Llibs/nn2;->Lambda:J
 
     .line 36

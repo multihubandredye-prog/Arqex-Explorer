@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/HashSet;Z)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final filter(Ljava/lang/CharSequence;IILandroid/text/Spanned;II)Ljava/lang/CharSequence;
-    .registers 10
+    .locals 3
 
     .line 1
     new-instance p4, Llibs/md;
@@ -63,8 +63,8 @@
     const/4 p2, 0x0
 
     .line 13
-    :goto_c
-    if-ge p2, p3, :cond_3e
+    :goto_0
+    if-ge p2, p3, :cond_3
 
     .line 14
     .line 15
@@ -83,7 +83,7 @@
     monitor-enter v0
 
     .line 22
-    :try_start_15
+    :try_start_0
     iget-object v1, p0, Llibs/nd;->X:Ljava/util/HashSet;
 
     .line 23
@@ -104,7 +104,7 @@
     move-result v1
 
     .line 32
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_0
 
     .line 33
     .line 34
@@ -112,23 +112,23 @@
 
     .line 35
     .line 36
-    if-eqz v2, :cond_35
+    if-eqz v2, :cond_2
 
     .line 37
     .line 38
-    goto :goto_28
+    goto :goto_1
 
     .line 39
-    :catchall_26
+    :catchall_0
     move-exception p1
 
     .line 40
-    goto :goto_3c
+    goto :goto_2
 
     .line 41
-    :cond_28
-    :goto_28
-    if-nez v1, :cond_2e
+    :cond_0
+    :goto_1
+    if-nez v1, :cond_1
 
     .line 42
     .line 43
@@ -136,11 +136,11 @@
 
     .line 44
     .line 45
-    if-nez v1, :cond_35
+    if-nez v1, :cond_2
 
     .line 46
     .line 47
-    :cond_2e
+    :cond_1
     invoke-static {p6}, Ljava/lang/Character;->toChars(I)[C
 
     .line 48
@@ -154,10 +154,10 @@
     .line 52
     .line 53
     .line 54
-    :cond_35
+    :cond_2
     monitor-exit v0
-    :try_end_36
-    .catchall {:try_start_15 .. :try_end_36} :catchall_26
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 55
     invoke-static {p6}, Ljava/lang/Character;->charCount(I)I
@@ -171,20 +171,20 @@
     add-int/2addr p2, p6
 
     .line 60
-    goto :goto_c
+    goto :goto_0
 
     .line 61
-    :goto_3c
-    :try_start_3c
+    :goto_2
+    :try_start_1
     monitor-exit v0
-    :try_end_3d
-    .catchall {:try_start_3c .. :try_end_3d} :catchall_26
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 62
     throw p1
 
     .line 63
-    :cond_3e
+    :cond_3
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     .line 64
@@ -201,7 +201,7 @@
     move-result p3
 
     .line 71
-    if-eq p2, p3, :cond_57
+    if-eq p2, p3, :cond_5
 
     .line 72
     .line 73
@@ -209,7 +209,7 @@
 
     .line 74
     .line 75
-    if-eqz p1, :cond_52
+    if-eqz p1, :cond_4
 
     .line 76
     .line 77
@@ -225,7 +225,7 @@
     return-object p1
 
     .line 83
-    :cond_52
+    :cond_4
     invoke-virtual {p5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 84
@@ -237,7 +237,7 @@
     return-object p1
 
     .line 88
-    :cond_57
+    :cond_5
     const/4 p1, 0x0
 
     .line 89

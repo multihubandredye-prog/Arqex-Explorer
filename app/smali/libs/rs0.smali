@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/is0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final a(B)V
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/rs0;->a:Llibs/is0;
@@ -61,7 +61,7 @@
 
     .line 14
     .line 15
-    if-ne v2, p1, :cond_24
+    if-ne v2, p1, :cond_0
 
     .line 16
     .line 17
@@ -105,12 +105,12 @@
 
     .line 36
     .line 37
-    :cond_24
+    :cond_0
     return-void
 .end method
 
 .method public final b()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/rs0;->a:Llibs/is0;
@@ -145,14 +145,14 @@
 .end method
 
 .method public final c(Llibs/et;)V
-    .registers 6
+    .locals 4
 
     .line 1
     instance-of v0, p1, Llibs/ta2;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -203,7 +203,7 @@
     return-void
 
     .line 28
-    :cond_1b
+    :cond_0
     const-string p1, "GMAC requires ParametersWithIV"
 
     .line 29
@@ -217,7 +217,7 @@
 .end method
 
 .method public final d([B)I
-    .registers 4
+    .locals 2
 
     .line 1
     :try_start_0
@@ -234,14 +234,14 @@
     .line 6
     .line 7
     move-result p1
-    :try_end_7
-    .catch Llibs/qb1; {:try_start_0 .. :try_end_7} :catch_8
+    :try_end_0
+    .catch Llibs/qb1; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 8
     return p1
 
     .line 9
-    :catch_8
+    :catch_0
     move-exception p1
 
     .line 10
@@ -266,7 +266,7 @@
 .end method
 
 .method public final e()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x10
@@ -277,7 +277,7 @@
 .end method
 
 .method public final reset()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/rs0;->a:Llibs/is0;
@@ -296,7 +296,7 @@
 .end method
 
 .method public final update([BII)V
-    .registers 5
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/rs0;->a:Llibs/is0;

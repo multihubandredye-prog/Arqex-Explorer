@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/16 v0, 0x10
@@ -24,7 +24,7 @@
 
     .line 4
     .line 5
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     .line 6
     .line 7
@@ -36,7 +36,7 @@
     return-void
 
     .line 11
-    :array_a
+    :array_0
     .array-data 2
         0x30s
         0x31s
@@ -58,7 +58,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 8
+    .locals 7
 
     .line 1
     invoke-direct {p0}, Llibs/lq3;-><init>()V
@@ -82,7 +82,7 @@
     move-result v0
 
     .line 12
-    if-nez v0, :cond_53
+    if-nez v0, :cond_5
 
     .line 13
     .line 14
@@ -111,8 +111,8 @@
 
     .line 24
     .line 25
-    :goto_18
-    if-ge v4, v1, :cond_23
+    :goto_0
+    if-ge v4, v1, :cond_0
 
     .line 26
     .line 27
@@ -132,10 +132,10 @@
 
     .line 34
     .line 35
-    goto :goto_18
+    goto :goto_0
 
     .line 36
-    :cond_23
+    :cond_0
     const/4 v1, 0x1
 
     .line 37
@@ -150,12 +150,12 @@
 
     .line 41
     .line 42
-    :goto_29
+    :goto_1
     const/16 v6, 0x39
 
     .line 43
     .line 44
-    if-gt v5, v6, :cond_32
+    if-gt v5, v6, :cond_1
 
     .line 45
     .line 46
@@ -167,20 +167,20 @@
 
     .line 49
     .line 50
-    goto :goto_29
+    goto :goto_1
 
     .line 51
-    :cond_32
+    :cond_1
     const/16 v5, 0x41
 
     .line 52
     .line 53
-    :goto_34
+    :goto_2
     const/16 v6, 0x5a
 
     .line 54
     .line 55
-    if-gt v5, v6, :cond_3d
+    if-gt v5, v6, :cond_2
 
     .line 56
     .line 57
@@ -192,16 +192,16 @@
 
     .line 60
     .line 61
-    goto :goto_34
+    goto :goto_2
 
     .line 62
-    :cond_3d
+    :cond_2
     const/16 v5, 0x61
 
     .line 63
     .line 64
-    :goto_3f
-    if-gt v5, v2, :cond_46
+    :goto_3
+    if-gt v5, v2, :cond_3
 
     .line 65
     .line 66
@@ -213,15 +213,15 @@
 
     .line 69
     .line 70
-    goto :goto_3f
+    goto :goto_3
 
     .line 71
-    :cond_46
+    :cond_3
     array-length v2, v0
 
     .line 72
-    :goto_47
-    if-ge v3, v2, :cond_50
+    :goto_4
+    if-ge v3, v2, :cond_4
 
     .line 73
     .line 74
@@ -237,10 +237,10 @@
 
     .line 79
     .line 80
-    goto :goto_47
+    goto :goto_4
 
     .line 81
-    :cond_50
+    :cond_4
     iput-object v4, p0, Llibs/cc2;->b:[Z
 
     .line 82
@@ -248,7 +248,7 @@
     return-void
 
     .line 84
-    :cond_53
+    :cond_5
     const-string v0, "Alphanumeric characters are always \'safe\' and should not be explicitly specified"
 
     .line 85
@@ -261,13 +261,13 @@
     const/4 v0, 0x0
 
     .line 90
-    goto :goto_5b
+    goto :goto_6
 
     .line 91
-    :goto_5a
+    :goto_5
     throw v0
 
     .line 92
-    :goto_5b
-    goto :goto_5a
+    :goto_6
+    goto :goto_5
 .end method

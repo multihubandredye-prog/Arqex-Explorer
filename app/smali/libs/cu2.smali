@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/bn1;
@@ -45,7 +45,7 @@
 .end method
 
 .method public constructor <init>(Llibs/f62;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/nv2;-><init>()V
@@ -63,7 +63,7 @@
 
 # virtual methods
 .method public final h(Llibs/mv2;)V
-    .registers 11
+    .locals 9
 
     .line 1
     invoke-virtual {p1}, Llibs/qj0;->b()Llibs/xw2;
@@ -182,7 +182,7 @@
     move-result v3
 
     .line 57
-    if-eqz v3, :cond_5e
+    if-eqz v3, :cond_0
 
     .line 58
     .line 59
@@ -258,7 +258,7 @@
     return-void
 
     .line 95
-    :cond_5e
+    :cond_0
     iget-object v0, p0, Llibs/Color;->a:Ljava/lang/Object;
 
     .line 96

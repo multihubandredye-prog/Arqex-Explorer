@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/c10;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/xh1;->X:Llibs/c10;
@@ -38,7 +38,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/xh1;->X:Llibs/c10;
@@ -66,7 +66,7 @@
     const/4 v4, 0x1
 
     .line 12
-    if-ne v1, v4, :cond_1b
+    if-ne v1, v4, :cond_0
 
     .line 13
     .line 14
@@ -98,7 +98,7 @@
     return-object v0
 
     .line 28
-    :cond_1b
+    :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     .line 29

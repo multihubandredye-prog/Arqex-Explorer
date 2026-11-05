@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     const-string v0, "DSTU4145"
@@ -64,14 +64,14 @@
 
 # virtual methods
 .method public final generateKeyPair()Ljava/security/KeyPair;
-    .registers 7
+    .locals 6
 
     .line 1
     iget-boolean v0, p0, Llibs/ah1;->d:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_54
+    if-eqz v0, :cond_2
 
     .line 4
     .line 5
@@ -123,7 +123,7 @@
 
     .line 28
     .line 29
-    if-eqz v3, :cond_30
+    if-eqz v3, :cond_0
 
     .line 30
     .line 31
@@ -161,8 +161,8 @@
     return-object v1
 
     .line 49
-    :cond_30
-    if-nez v2, :cond_42
+    :cond_0
+    if-nez v2, :cond_1
 
     .line 50
     .line 51
@@ -196,7 +196,7 @@
     return-object v2
 
     .line 67
-    :cond_42
+    :cond_1
     check-cast v2, Ljava/security/spec/ECParameterSpec;
 
     .line 68
@@ -231,7 +231,7 @@
     return-object v1
 
     .line 85
-    :cond_54
+    :cond_2
     const-string v0, "DSTU Key Pair Generator not initialised"
 
     .line 86
@@ -248,25 +248,25 @@
 .end method
 
 .method public final initialize(ILjava/security/SecureRandom;)V
-    .registers 3
+    .locals 0
 
     .line 324
     iget-object p1, p0, Llibs/ah1;->a:Ljava/security/spec/AlgorithmParameterSpec;
 
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_0
 
     .line 325
-    :try_start_4
+    :try_start_0
     check-cast p1, Ljava/security/spec/ECGenParameterSpec;
 
     invoke-virtual {p0, p1, p2}, Llibs/ah1;->initialize(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    :try_end_9
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_4 .. :try_end_9} :catch_a
+    :try_end_0
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
     .line 326
-    :catch_a
+    :catch_0
     const-string p1, "key size not configurable."
 
     invoke-static {p1}, Llibs/bf0;->m(Ljava/lang/String;)V
@@ -274,7 +274,7 @@
     return-void
 
     .line 327
-    :cond_10
+    :cond_0
     const-string p1, "unknown key size."
 
     invoke-static {p1}, Llibs/bf0;->m(Ljava/lang/String;)V
@@ -283,7 +283,7 @@
 .end method
 
 .method public final initialize(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    .registers 13
+    .locals 10
 
     .line 1
     instance-of v0, p1, Llibs/gg0;
@@ -297,7 +297,7 @@
 
     .line 5
     .line 6
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_1
 
     .line 7
     .line 8
@@ -355,7 +355,7 @@
 
     .line 35
     .line 36
-    if-nez p2, :cond_2c
+    if-nez p2, :cond_0
 
     .line 37
     .line 38
@@ -372,7 +372,7 @@
 
     .line 44
     .line 45
-    :cond_2c
+    :cond_0
     iput-boolean v1, p0, Llibs/ah1;->d:Z
 
     .line 46
@@ -380,12 +380,12 @@
     return-void
 
     .line 48
-    :cond_2f
+    :cond_1
     instance-of v0, p1, Ljava/security/spec/ECParameterSpec;
 
     .line 49
     .line 50
-    if-eqz v0, :cond_73
+    if-eqz v0, :cond_3
 
     .line 51
     .line 52
@@ -493,7 +493,7 @@
 
     .line 103
     .line 104
-    if-nez p2, :cond_70
+    if-nez p2, :cond_2
 
     .line 105
     .line 106
@@ -510,7 +510,7 @@
 
     .line 112
     .line 113
-    :cond_70
+    :cond_2
     iput-boolean v1, p0, Llibs/ah1;->d:Z
 
     .line 114
@@ -518,16 +518,16 @@
     return-void
 
     .line 116
-    :cond_73
+    :cond_3
     instance-of v0, p1, Ljava/security/spec/ECGenParameterSpec;
 
     .line 117
     .line 118
-    if-nez v0, :cond_ce
+    if-nez v0, :cond_7
 
     .line 119
     .line 120
-    if-nez p1, :cond_aa
+    if-nez p1, :cond_5
 
     .line 121
     .line 122
@@ -543,7 +543,7 @@
     move-result-object v3
 
     .line 128
-    if-eqz v3, :cond_aa
+    if-eqz v3, :cond_5
 
     .line 129
     .line 130
@@ -602,7 +602,7 @@
 
     .line 158
     .line 159
-    if-nez p2, :cond_a7
+    if-nez p2, :cond_4
 
     .line 160
     .line 161
@@ -619,7 +619,7 @@
 
     .line 167
     .line 168
-    :cond_a7
+    :cond_4
     iput-boolean v1, p0, Llibs/ah1;->d:Z
 
     .line 169
@@ -627,8 +627,8 @@
     return-void
 
     .line 171
-    :cond_aa
-    if-nez p1, :cond_ba
+    :cond_5
+    if-nez p1, :cond_6
 
     .line 172
     .line 173
@@ -644,7 +644,7 @@
     move-result-object p2
 
     .line 179
-    if-nez p2, :cond_ba
+    if-nez p2, :cond_6
 
     .line 180
     .line 181
@@ -660,7 +660,7 @@
     return-void
 
     .line 187
-    :cond_ba
+    :cond_6
     new-instance p2, Ljava/security/InvalidAlgorithmParameterException;
 
     .line 188
@@ -701,8 +701,8 @@
     throw p2
 
     .line 207
-    :cond_ce
-    if-eqz v0, :cond_13d
+    :cond_7
+    if-eqz v0, :cond_a
 
     .line 208
     .line 209
@@ -735,7 +735,7 @@
     move-result-object p1
 
     .line 224
-    if-eqz p1, :cond_131
+    if-eqz p1, :cond_9
 
     .line 225
     .line 226
@@ -873,7 +873,7 @@
 
     .line 293
     .line 294
-    if-nez p2, :cond_12e
+    if-nez p2, :cond_8
 
     .line 295
     .line 296
@@ -890,7 +890,7 @@
 
     .line 302
     .line 303
-    :cond_12e
+    :cond_8
     iput-boolean v1, p0, Llibs/ah1;->d:Z
 
     .line 304
@@ -898,7 +898,7 @@
     return-void
 
     .line 306
-    :cond_131
+    :cond_9
     new-instance p1, Ljava/security/InvalidAlgorithmParameterException;
 
     .line 307
@@ -923,7 +923,7 @@
     throw p1
 
     .line 318
-    :cond_13d
+    :cond_a
     new-instance p1, Ljava/lang/ClassCastException;
 
     .line 319

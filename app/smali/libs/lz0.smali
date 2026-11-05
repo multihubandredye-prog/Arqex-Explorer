@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/rz0;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iput-object p1, p0, Llibs/lz0;->Z:Llibs/rz0;
@@ -63,7 +63,7 @@
 
 # virtual methods
 .method public final b()Llibs/en3;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/lz0;->X:Llibs/es0;
@@ -74,7 +74,7 @@
 .end method
 
 .method public final c()V
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/lz0;->Z:Llibs/rz0;
@@ -88,18 +88,18 @@
     const/4 v2, 0x6
 
     .line 6
-    if-ne v1, v2, :cond_8
+    if-ne v1, v2, :cond_0
 
     .line 7
     .line 8
     return-void
 
     .line 9
-    :cond_8
+    :cond_0
     const/4 v3, 0x5
 
     .line 10
-    if-ne v1, v3, :cond_1c
+    if-ne v1, v3, :cond_1
 
     .line 11
     .line 12
@@ -136,7 +136,7 @@
     return-void
 
     .line 29
-    :cond_1c
+    :cond_1
     const-string v1, "state: "
 
     .line 30
@@ -154,14 +154,14 @@
 .end method
 
 .method public e(JLlibs/vj;)J
-    .registers 6
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/lz0;->Z:Llibs/rz0;
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     iget-object v1, v0, Llibs/rz0;->e:Ljava/lang/Object;
 
     .line 4
@@ -176,14 +176,14 @@
     .line 9
     .line 10
     move-result-wide p1
-    :try_end_a
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_a} :catch_b
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 11
     return-wide p1
 
     .line 12
-    :catch_b
+    :catch_0
     move-exception p1
 
     .line 13

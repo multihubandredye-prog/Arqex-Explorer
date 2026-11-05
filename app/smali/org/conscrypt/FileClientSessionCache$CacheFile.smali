@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/File;Ljava/lang/String;)V
-    .registers 5
+    .locals 2
 
     .line 1
     invoke-direct {p0, p1, p2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public compareTo(Ljava/io/File;)I
-    .registers 7
+    .locals 5
 
     .line 1
     invoke-virtual {p0}, Lorg/conscrypt/FileClientSessionCache$CacheFile;->lastModified()J
@@ -67,7 +67,7 @@
 
     .line 13
     .line 14
-    if-nez v4, :cond_14
+    if-nez v4, :cond_0
 
     .line 15
     .line 16
@@ -82,12 +82,12 @@
     return p1
 
     .line 21
-    :cond_14
+    :cond_0
     cmp-long p1, v0, v2
 
     .line 22
     .line 23
-    if-gez p1, :cond_1a
+    if-gez p1, :cond_1
 
     .line 24
     .line 25
@@ -97,7 +97,7 @@
     return p1
 
     .line 27
-    :cond_1a
+    :cond_1
     const/4 p1, 0x1
 
     .line 28
@@ -105,7 +105,7 @@
 .end method
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
-    .registers 2
+    .locals 0
 
     .line 29
     check-cast p1, Ljava/io/File;
@@ -118,7 +118,7 @@
 .end method
 
 .method public lastModified()J
-    .registers 6
+    .locals 5
 
     .line 1
     iget-wide v0, p0, Lorg/conscrypt/FileClientSessionCache$CacheFile;->lastModified:J
@@ -133,7 +133,7 @@
 
     .line 6
     .line 7
-    if-nez v4, :cond_e
+    if-nez v4, :cond_0
 
     .line 8
     .line 9
@@ -149,6 +149,6 @@
 
     .line 14
     .line 15
-    :cond_e
+    :cond_0
     return-wide v0
 .end method

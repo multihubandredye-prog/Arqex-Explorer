@@ -33,7 +33,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 396
     invoke-direct {p0}, Llibs/qd;-><init>()V
@@ -56,7 +56,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Lorg/json/JSONObject;)V
-    .registers 12
+    .locals 8
 
     .line 1
     invoke-direct {p0}, Llibs/qd;-><init>()V
@@ -107,7 +107,7 @@
     const/4 v4, 0x1
 
     .line 25
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_1
 
     .line 26
     .line 27
@@ -135,7 +135,7 @@
     move-result v5
 
     .line 39
-    if-eqz v5, :cond_2e
+    if-eqz v5, :cond_0
 
     .line 40
     .line 41
@@ -151,11 +151,11 @@
 
     .line 46
     .line 47
-    :cond_2e
+    :cond_0
     move-object p3, v1
 
     .line 48
-    :cond_2f
+    :cond_1
     const-string v1, "id"
 
     .line 49
@@ -184,7 +184,7 @@
     move-result v6
 
     .line 62
-    if-eqz v6, :cond_45
+    if-eqz v6, :cond_2
 
     .line 63
     .line 64
@@ -200,7 +200,7 @@
 
     .line 69
     .line 70
-    :cond_45
+    :cond_2
     iget-object v3, p0, Llibs/dc1;->Y:Ljava/lang/String;
 
     .line 71
@@ -213,7 +213,7 @@
     move-result v3
 
     .line 76
-    if-eqz v3, :cond_53
+    if-eqz v3, :cond_3
 
     .line 77
     .line 78
@@ -229,7 +229,7 @@
 
     .line 83
     .line 84
-    :cond_53
+    :cond_3
     iget-object v2, p0, Llibs/dc1;->Y:Ljava/lang/String;
 
     .line 85
@@ -246,7 +246,7 @@
 
     .line 91
     .line 92
-    if-eqz v2, :cond_83
+    if-eqz v2, :cond_5
 
     .line 93
     .line 94
@@ -293,7 +293,7 @@
     move-result v2
 
     .line 117
-    if-eqz v2, :cond_7b
+    if-eqz v2, :cond_4
 
     .line 118
     .line 119
@@ -305,10 +305,10 @@
 
     .line 122
     .line 123
-    goto :goto_83
+    goto :goto_0
 
     .line 124
-    :cond_7b
+    :cond_4
     const-string v2, "NO NAME - "
 
     .line 125
@@ -325,8 +325,8 @@
 
     .line 131
     .line 132
-    :cond_83
-    :goto_83
+    :cond_5
+    :goto_0
     const-string v2, "custom_name"
 
     .line 133
@@ -358,7 +358,7 @@
     const/4 v5, 0x0
 
     .line 147
-    if-eqz v2, :cond_b8
+    if-eqz v2, :cond_7
 
     .line 148
     .line 149
@@ -398,7 +398,7 @@
     move-result v6
 
     .line 167
-    if-eqz v6, :cond_ac
+    if-eqz v6, :cond_6
 
     .line 168
     .line 169
@@ -410,12 +410,12 @@
     move-result-object v5
 
     .line 173
-    :cond_ac
+    :cond_6
     iget-boolean v1, p0, Llibs/dc1;->Upsilon:Z
 
     .line 174
     .line 175
-    if-eqz v1, :cond_b8
+    if-eqz v1, :cond_7
 
     .line 176
     .line 177
@@ -435,7 +435,7 @@
 
     .line 184
     .line 185
-    :cond_b8
+    :cond_7
     invoke-static {v5}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
 
     .line 186
@@ -444,7 +444,7 @@
     move-result v1
 
     .line 189
-    if-nez v1, :cond_c2
+    if-nez v1, :cond_8
 
     .line 190
     .line 191
@@ -455,15 +455,15 @@
     move-object p2, v5
 
     .line 194
-    goto :goto_c4
+    goto :goto_1
 
     .line 195
-    :cond_c2
+    :cond_8
     iput-object p2, p0, Llibs/dc1;->Sigma:Ljava/lang/String;
 
     .line 196
     .line 197
-    :goto_c4
+    :goto_1
     invoke-static {p2}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
 
     .line 198
@@ -472,7 +472,7 @@
     move-result p2
 
     .line 201
-    if-eqz p2, :cond_cc
+    if-eqz p2, :cond_9
 
     .line 202
     .line 203
@@ -480,7 +480,7 @@
 
     .line 204
     .line 205
-    :cond_cc
+    :cond_9
     invoke-static {p1}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
 
     .line 206
@@ -489,7 +489,7 @@
     move-result p1
 
     .line 209
-    if-eqz p1, :cond_d4
+    if-eqz p1, :cond_a
 
     .line 210
     .line 211
@@ -497,7 +497,7 @@
 
     .line 212
     .line 213
-    :cond_d4
+    :cond_a
     const-string p1, "lastModifiedDateTime"
 
     .line 214
@@ -518,7 +518,7 @@
     move-result p2
 
     .line 223
-    if-nez p2, :cond_12d
+    if-nez p2, :cond_f
 
     .line 224
     .line 225
@@ -534,7 +534,7 @@
 
     .line 230
     .line 231
-    if-ne p2, v1, :cond_f1
+    if-ne p2, v1, :cond_b
 
     .line 232
     .line 233
@@ -554,10 +554,10 @@
 
     .line 240
     .line 241
-    goto :goto_12d
+    goto :goto_2
 
     .line 242
-    :cond_f1
+    :cond_b
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     .line 243
@@ -570,7 +570,7 @@
 
     .line 247
     .line 248
-    if-ne p2, v1, :cond_102
+    if-ne p2, v1, :cond_c
 
     .line 249
     .line 250
@@ -590,10 +590,10 @@
 
     .line 257
     .line 258
-    goto :goto_12d
+    goto :goto_2
 
     .line 259
-    :cond_102
+    :cond_c
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     .line 260
@@ -606,7 +606,7 @@
 
     .line 264
     .line 265
-    if-ne p2, v1, :cond_113
+    if-ne p2, v1, :cond_d
 
     .line 266
     .line 267
@@ -626,10 +626,10 @@
 
     .line 274
     .line 275
-    goto :goto_12d
+    goto :goto_2
 
     .line 276
-    :cond_113
+    :cond_d
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     .line 277
@@ -642,7 +642,7 @@
 
     .line 281
     .line 282
-    if-ne p2, v1, :cond_124
+    if-ne p2, v1, :cond_e
 
     .line 283
     .line 284
@@ -662,10 +662,10 @@
 
     .line 291
     .line 292
-    goto :goto_12d
+    goto :goto_2
 
     .line 293
-    :cond_124
+    :cond_e
     const-string p2, "Unknown date format > "
 
     .line 294
@@ -683,8 +683,8 @@
     .line 300
     .line 301
     .line 302
-    :cond_12d
-    :goto_12d
+    :cond_f
+    :goto_2
     const-string p1, "folder"
 
     .line 303
@@ -701,7 +701,7 @@
 
     .line 309
     .line 310
-    if-eqz p1, :cond_142
+    if-eqz p1, :cond_10
 
     .line 311
     .line 312
@@ -723,10 +723,10 @@
     .line 320
     .line 321
     .line 322
-    goto :goto_148
+    goto :goto_3
 
     .line 323
-    :cond_142
+    :cond_10
     invoke-virtual {p3, p2}, Lorg/json/JSONObject;->optLong(Ljava/lang/String;)J
 
     .line 324
@@ -739,7 +739,7 @@
 
     .line 328
     .line 329
-    :goto_148
+    :goto_3
     new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     .line 330
@@ -756,18 +756,18 @@
     move-result-object p2
 
     .line 337
-    if-eqz p2, :cond_153
+    if-eqz p2, :cond_11
 
     .line 338
     .line 339
-    goto :goto_154
+    goto :goto_4
 
     .line 340
-    :cond_153
+    :cond_11
     const/4 v4, 0x0
 
     .line 341
-    :goto_154
+    :goto_4
     invoke-direct {p1, v4}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
     .line 342
@@ -789,7 +789,7 @@
     move-result-object p1
 
     .line 352
-    if-eqz p1, :cond_18a
+    if-eqz p1, :cond_13
 
     .line 353
     .line 354
@@ -805,7 +805,7 @@
     move-result p3
 
     .line 360
-    if-eqz p3, :cond_18a
+    if-eqz p3, :cond_13
 
     .line 361
     .line 362
@@ -817,7 +817,7 @@
     move-result-object p1
 
     .line 366
-    if-eqz p1, :cond_18a
+    if-eqz p1, :cond_13
 
     .line 367
     .line 368
@@ -825,7 +825,7 @@
 
     .line 369
     .line 370
-    if-eqz p2, :cond_182
+    if-eqz p2, :cond_12
 
     .line 371
     .line 372
@@ -841,7 +841,7 @@
     move-result p3
 
     .line 378
-    if-eqz p3, :cond_182
+    if-eqz p3, :cond_12
 
     .line 379
     .line 380
@@ -860,7 +860,7 @@
     return-void
 
     .line 387
-    :cond_182
+    :cond_12
     const-string p2, "quickXorHash"
 
     .line 388
@@ -877,14 +877,14 @@
 
     .line 394
     .line 395
-    :cond_18a
+    :cond_13
     return-void
 .end method
 
 
 # virtual methods
 .method public final a()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/dc1;->Z:Ljava/lang/String;
@@ -895,7 +895,7 @@
 .end method
 
 .method public final b()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/dc1;->Lambda:Z
@@ -906,7 +906,7 @@
 .end method
 
 .method public final c()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/dc1;->Pi:Ljava/lang/String;
@@ -917,7 +917,7 @@
 .end method
 
 .method public final d()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, ""
@@ -928,7 +928,7 @@
 .end method
 
 .method public final e()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, ""
@@ -939,7 +939,7 @@
 .end method
 
 .method public final f()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/dc1;->Omicron:Ljava/lang/String;
@@ -950,7 +950,7 @@
 .end method
 
 .method public final g()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, ""
@@ -961,7 +961,7 @@
 .end method
 
 .method public final h()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/dc1;->X:Ljava/lang/String;
@@ -976,7 +976,7 @@
     move-result v1
 
     .line 7
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
@@ -987,7 +987,7 @@
     return-object v0
 
     .line 12
-    :cond_b
+    :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     .line 13
@@ -1046,7 +1046,7 @@
 .end method
 
 .method public final i()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Llibs/dc1;->Mu:J
@@ -1057,7 +1057,7 @@
 .end method
 
 .method public final j()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -1067,7 +1067,7 @@
 .end method
 
 .method public final k()[Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -1077,7 +1077,7 @@
 .end method
 
 .method public final l()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -1087,7 +1087,7 @@
 .end method
 
 .method public final m()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/dc1;->Y:Ljava/lang/String;
@@ -1098,7 +1098,7 @@
 .end method
 
 .method public final n()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -1108,7 +1108,7 @@
 .end method
 
 .method public final p()Ljava/util/concurrent/atomic/AtomicBoolean;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/dc1;->Xi:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -1119,7 +1119,7 @@
 .end method
 
 .method public final q()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Llibs/dc1;->Nu:J
@@ -1130,7 +1130,7 @@
 .end method
 
 .method public final r()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/dc1;->h()Ljava/lang/String;

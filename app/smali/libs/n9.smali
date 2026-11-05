@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/o9;Llibs/kn;Ljava/nio/charset/Charset;)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-object p2, p0, Llibs/n9;->b:Llibs/kn;
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final startElement(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/xml/sax/Attributes;)V
-    .registers 5
+    .locals 0
 
     .line 1
     const-string p1, "track"
@@ -57,7 +57,7 @@
     move-result p2
 
     .line 7
-    if-eqz p2, :cond_2e
+    if-eqz p2, :cond_0
 
     .line 8
     .line 9
@@ -73,7 +73,7 @@
     move-result-object p2
 
     .line 15
-    if-eqz p2, :cond_2e
+    if-eqz p2, :cond_0
 
     .line 16
     .line 17
@@ -133,6 +133,6 @@
     .line 45
     .line 46
     .line 47
-    :cond_2e
+    :cond_0
     return-void
 .end method

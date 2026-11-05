@@ -9,14 +9,14 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 3
+    .locals 0
 
     .line 1
-    if-nez p1, :cond_f
+    if-nez p1, :cond_1
 
     .line 2
     .line 3
-    if-nez p2, :cond_7
+    if-nez p2, :cond_0
 
     .line 4
     .line 5
@@ -24,10 +24,10 @@
 
     .line 6
     .line 7
-    goto :goto_f
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 9
@@ -44,8 +44,8 @@
     move-result-object p1
 
     .line 16
-    :cond_f
-    :goto_f
+    :cond_1
+    :goto_0
     invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
     .line 17
@@ -61,7 +61,7 @@
 
 # virtual methods
 .method public final getCause()Ljava/lang/Throwable;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/fe3;->X:Ljava/lang/Throwable;

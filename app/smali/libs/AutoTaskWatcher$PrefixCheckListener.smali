@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/widgets/MiEditText;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -24,13 +24,13 @@
 
 # virtual methods
 .method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
-    .registers 5
+    .locals 2
 
     iget-object v0, p0, Llibs/AutoTaskWatcher$PrefixCheckListener;->editView:Lcom/mixplorer/widgets/MiEditText;
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_1
 
-    if-eqz p2, :cond_e
+    if-eqz p2, :cond_0
 
     const/4 v1, 0x0
 
@@ -40,11 +40,11 @@
 
     return-void
 
-    :cond_e
+    :cond_0
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_13
+    :cond_1
     return-void
 .end method

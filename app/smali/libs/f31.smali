@@ -9,7 +9,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/f31;->a:B
@@ -25,14 +25,14 @@
 .end method
 
 .method private final a(JJ)V
-    .registers 5
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method private final b(JJ)V
-    .registers 5
+    .locals 0
 
     .line 1
     return-void
@@ -41,14 +41,14 @@
 
 # virtual methods
 .method public interrupted()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/f31;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_14
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -61,7 +61,7 @@
     return-void
 
     .line 10
-    :pswitch_9
+    :pswitch_0
     invoke-static {}, Llibs/su0;->c()Z
 
     .line 11
@@ -70,59 +70,59 @@
     move-result v0
 
     .line 14
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 15
     .line 16
-    goto :goto_13
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 18
     .line 19
     .line 20
-    :goto_13
+    :goto_0
     return-void
 
     .line 21
-    :pswitch_data_14
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_9
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public onProgress(JJ)V
-    .registers 6
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/f31;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_a
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
     .line 6
-    :pswitch_5
+    :pswitch_0
     invoke-super {p0, p1, p2, p3, p4}, Lcom/mixplorer/ProgressListener;->onProgress(JJ)V
 
     .line 7
     .line 8
     .line 9
-    :pswitch_8
+    :pswitch_1
     return-void
 
     .line 10
     nop
 
     .line 11
-    :pswitch_data_a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_8
-        :pswitch_5
-        :pswitch_8
+        :pswitch_1
+        :pswitch_0
+        :pswitch_1
     .end packed-switch
 .end method

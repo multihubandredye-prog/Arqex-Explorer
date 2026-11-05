@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(ZILjava/util/List;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final b(Llibs/Init;Ljava/lang/Object;)Ljava/util/List;
-    .registers 7
+    .locals 4
 
     .line 1
     check-cast p2, Llibs/ed0;
@@ -53,7 +53,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -61,15 +61,15 @@
 
     .line 8
     .line 9
-    goto :goto_b
+    goto :goto_0
 
     .line 10
-    :cond_9
+    :cond_0
     const-string v0, "td"
 
     .line 11
     .line 12
-    :goto_b
+    :goto_0
     new-instance v1, Ljava/util/HashMap;
 
     .line 13
@@ -86,7 +86,7 @@
 
     .line 19
     .line 20
-    if-eq v3, v2, :cond_1e
+    if-eq v3, v2, :cond_1
 
     .line 21
     .line 22
@@ -107,7 +107,7 @@
     .line 29
     .line 30
     .line 31
-    :cond_1e
+    :cond_1
     iget-object p1, p1, Llibs/Init;->Y:Ljava/lang/Object;
 
     .line 32

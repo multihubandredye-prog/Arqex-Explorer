@@ -14,7 +14,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/pw2;
@@ -52,7 +52,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     const-string v0, "SHA_512"
@@ -71,7 +71,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Llibs/pw2;
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Llibs/pw2;
@@ -94,7 +94,7 @@
 .end method
 
 .method public static values()[Llibs/pw2;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/pw2;->Y:[Llibs/pw2;
@@ -119,7 +119,7 @@
 
 # virtual methods
 .method public final getValue()J
-    .registers 3
+    .locals 2
 
     .line 1
     const-wide/16 v0, 0x1

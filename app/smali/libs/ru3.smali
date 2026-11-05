@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(JILlibs/dn1;)V
-    .registers 6
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -70,7 +70,7 @@
 
 # virtual methods
 .method public a(J)V
-    .registers 8
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/ru3;->b:Ljava/lang/Object;
@@ -80,7 +80,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget-wide v1, p0, Llibs/ru3;->d:J
 
     .line 5
@@ -165,7 +165,7 @@
 
     .line 43
     .line 44
-    if-ltz v3, :cond_31
+    if-ltz v3, :cond_0
 
     .line 45
     .line 46
@@ -175,14 +175,14 @@
     return-void
 
     .line 48
-    :catchall_2f
+    :catchall_0
     move-exception p1
 
     .line 49
-    goto :goto_39
+    goto :goto_0
 
     .line 50
-    :cond_31
+    :cond_0
     new-instance p1, Llibs/vx;
 
     .line 51
@@ -199,17 +199,17 @@
     throw p1
 
     .line 58
-    :goto_39
+    :goto_0
     monitor-exit v0
-    :try_end_3a
-    .catchall {:try_start_3 .. :try_end_3a} :catchall_2f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 59
     throw p1
 .end method
 
 .method public final b(J)V
-    .registers 8
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/ru3;->b:Ljava/lang/Object;
@@ -219,7 +219,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget-wide v1, p0, Llibs/ru3;->d:J
 
     .line 5
@@ -307,20 +307,20 @@
     return-void
 
     .line 45
-    :catchall_2c
+    :catchall_0
     move-exception p1
 
     .line 46
     monitor-exit v0
-    :try_end_2e
-    .catchall {:try_start_3 .. :try_end_2e} :catchall_2c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 47
     throw p1
 .end method
 
 .method public final c()J
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/ru3;->b:Ljava/lang/Object;
@@ -330,7 +330,7 @@
     monitor-enter v0
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget-wide v1, p0, Llibs/ru3;->d:J
 
     .line 5
@@ -341,20 +341,20 @@
     return-wide v1
 
     .line 8
-    :catchall_7
+    :catchall_0
     move-exception v1
 
     .line 9
     monitor-exit v0
-    :try_end_9
-    .catchall {:try_start_3 .. :try_end_9} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 10
     throw v1
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

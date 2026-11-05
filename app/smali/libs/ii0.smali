@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "Malformed file name (too short)"
@@ -21,7 +21,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/Exception;)V
-    .registers 2
+    .locals 0
 
     .line 7
     invoke-direct {p0, p1}, Llibs/ki0;-><init>(Ljava/lang/Exception;)V
@@ -30,7 +30,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 8
     invoke-direct {p0, p1}, Llibs/ki0;-><init>(Ljava/lang/String;)V

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Size;)V
-    .registers 2
+    .locals 0
 
     .line 7
     invoke-direct {p0, p1}, Llibs/Sign;-><init>(Llibs/Size;)V
@@ -18,7 +18,7 @@
 .end method
 
 .method public constructor <init>(Llibs/Size;[B)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/Sign;-><init>(Llibs/Size;)V

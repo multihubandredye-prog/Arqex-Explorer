@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/function/BiFunction;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Lorg/conscrypt/Java8EngineSocket$1;->val$selector:Ljava/util/function/BiFunction;
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public selectApplicationProtocol(Ljavax/net/ssl/SSLEngine;Ljava/util/List;)Ljava/lang/String;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -48,7 +48,7 @@
 .end method
 
 .method public selectApplicationProtocol(Ljavax/net/ssl/SSLSocket;Ljava/util/List;)Ljava/lang/String;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

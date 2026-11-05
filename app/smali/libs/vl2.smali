@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/rb2;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/vl2;->c:Llibs/rb2;

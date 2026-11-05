@@ -13,7 +13,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/widgets/MiEditText;Llibs/$d;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/cj;->p:B
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final Call()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/cj;->p:B
@@ -50,7 +50,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_14
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -67,7 +67,7 @@
     return-void
 
     .line 14
-    :pswitch_d
+    :pswitch_0
     iget-object v0, v1, Llibs/od;->Y:Lcom/mixplorer/widgets/MiButton;
 
     .line 15
@@ -83,14 +83,14 @@
     nop
 
     .line 21
-    :pswitch_data_14
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_d
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final Run(Ljava/lang/String;Z)V
-    .registers 5
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/cj;->p:B
@@ -101,7 +101,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_18
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -111,7 +111,7 @@
     .line 9
     .line 10
     .line 11
-    if-eqz p2, :cond_13
+    if-eqz p2, :cond_0
 
     .line 12
     .line 13
@@ -128,11 +128,11 @@
     .line 18
     .line 19
     .line 20
-    :cond_13
+    :cond_0
     return-void
 
     .line 21
-    :pswitch_14
+    :pswitch_0
     invoke-virtual {v1, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 22
@@ -141,14 +141,14 @@
     return-void
 
     .line 25
-    :pswitch_data_18
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_14
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final Sync()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/cj;->p:B
@@ -163,7 +163,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_12
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -176,7 +176,7 @@
     return-void
 
     .line 14
-    :pswitch_d
+    :pswitch_0
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 15
@@ -188,8 +188,8 @@
     nop
 
     .line 19
-    :pswitch_data_12
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_d
+        :pswitch_0
     .end packed-switch
 .end method

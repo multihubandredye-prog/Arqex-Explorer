@@ -24,7 +24,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/widget/EditText;Lcom/mixplorer/activities/BrowseActivity;Ljava/lang/String;Llibs/$d;Llibs/pp1;Llibs/xt1;Z)V
-    .registers 8
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 9
+    .locals 7
 
     .line 1
     iget-object v2, p0, Llibs/di;->Nu:Ljava/lang/String;

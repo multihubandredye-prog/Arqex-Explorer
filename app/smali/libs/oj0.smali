@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const/4 v0, 0x2
@@ -27,7 +27,7 @@
 
     .line 3
     .line 4
-    fill-array-data v0, :array_1a
+    fill-array-data v0, :array_0
 
     .line 5
     .line 6
@@ -74,7 +74,7 @@
     nop
 
     .line 27
-    :array_1a
+    :array_0
     .array-data 1
         0x0t
         0x0t
@@ -82,7 +82,7 @@
 .end method
 
 .method public constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/oj0;->a:B
@@ -98,7 +98,7 @@
 .end method
 
 .method public static b(Llibs/rw2;Ljava/nio/charset/Charset;)Ljava/lang/String;
-    .registers 7
+    .locals 5
 
     .line 1
     new-instance v0, Ljava/io/ByteArrayOutputStream;
@@ -127,7 +127,7 @@
     .line 13
     .line 14
     .line 15
-    :goto_e
+    :goto_0
     const/4 v3, 0x0
 
     .line 16
@@ -135,7 +135,7 @@
 
     .line 17
     .line 18
-    if-nez v4, :cond_23
+    if-nez v4, :cond_1
 
     .line 19
     .line 20
@@ -146,14 +146,14 @@
 
     .line 22
     .line 23
-    if-eqz v4, :cond_19
+    if-eqz v4, :cond_0
 
     .line 24
     .line 25
-    goto :goto_23
+    goto :goto_1
 
     .line 26
-    :cond_19
+    :cond_0
     new-instance p0, Ljava/lang/String;
 
     .line 27
@@ -174,8 +174,8 @@
     return-object p0
 
     .line 36
-    :cond_23
-    :goto_23
+    :cond_1
+    :goto_1
     invoke-virtual {v0, v2, v3, v1}, Ljava/io/ByteArrayOutputStream;->write([BII)V
 
     .line 37
@@ -186,11 +186,11 @@
     .line 40
     .line 41
     .line 42
-    goto :goto_e
+    goto :goto_0
 .end method
 
 .method public static f(Llibs/rw2;ILjava/nio/charset/Charset;)Ljava/lang/String;
-    .registers 4
+    .locals 1
 
     .line 1
     mul-int/lit8 p1, p1, 0x2
@@ -221,7 +221,7 @@
 
 # virtual methods
 .method public final a(Llibs/rw2;)J
-    .registers 8
+    .locals 6
 
     .line 1
     iget-byte v0, p0, Llibs/oj0;->a:B
@@ -236,7 +236,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_36
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -258,8 +258,8 @@
     const/4 p1, 0x7
 
     .line 19
-    :goto_12
-    if-ltz p1, :cond_1e
+    :goto_0
+    if-ltz p1, :cond_0
 
     .line 20
     .line 21
@@ -284,14 +284,14 @@
 
     .line 29
     .line 30
-    goto :goto_12
+    goto :goto_0
 
     .line 31
-    :cond_1e
+    :cond_0
     return-wide v2
 
     .line 32
-    :pswitch_1f
+    :pswitch_0
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 33
@@ -309,8 +309,8 @@
     const/4 p1, 0x0
 
     .line 41
-    :goto_28
-    if-ge p1, v1, :cond_34
+    :goto_1
+    if-ge p1, v1, :cond_1
 
     .line 42
     .line 43
@@ -335,24 +335,24 @@
 
     .line 51
     .line 52
-    goto :goto_28
+    goto :goto_1
 
     .line 53
-    :cond_34
+    :cond_1
     return-wide v2
 
     .line 54
     nop
 
     .line 55
-    :pswitch_data_36
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1f
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public c(Llibs/rw2;)I
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -409,7 +409,7 @@
 .end method
 
 .method public d(Llibs/rw2;)J
-    .registers 10
+    .locals 8
 
     .line 1
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -527,7 +527,7 @@
 .end method
 
 .method public e(Llibs/rw2;)J
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-virtual {p0, p1}, Llibs/oj0;->d(Llibs/rw2;)J
@@ -574,14 +574,14 @@
 
     .line 22
     .line 23
-    if-ltz p1, :cond_19
+    if-ltz p1, :cond_0
 
     .line 24
     .line 25
     return-wide v0
 
     .line 26
-    :cond_19
+    :cond_0
     new-instance p1, Llibs/sj;
 
     .line 27
@@ -599,7 +599,7 @@
 .end method
 
 .method public final g(Llibs/rw2;J)V
-    .registers 28
+    .locals 24
 
     .line 1
     move-object/from16 v0, p1
@@ -656,7 +656,7 @@
 
     .line 26
     .line 27
-    packed-switch v4, :pswitch_data_9e
+    packed-switch v4, :pswitch_data_0
 
     .line 28
     .line 29
@@ -816,7 +816,7 @@
     return-void
 
     .line 97
-    :pswitch_60
+    :pswitch_0
     const/4 v10, 0x2
 
     .line 98
@@ -959,17 +959,17 @@
     nop
 
     .line 159
-    :pswitch_data_9e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_60
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public h(Llibs/rw2;I)V
-    .registers 7
+    .locals 4
 
     .line 1
-    if-ltz p2, :cond_18
+    if-ltz p2, :cond_0
 
     .line 2
     .line 3
@@ -978,7 +978,7 @@
     .line 4
     .line 5
     .line 6
-    if-gt p2, v0, :cond_18
+    if-gt p2, v0, :cond_0
 
     .line 7
     .line 8
@@ -1021,7 +1021,7 @@
     return-void
 
     .line 25
-    :cond_18
+    :cond_0
     const-string p1, "Invalid uint16 value: "
 
     .line 26
@@ -1043,14 +1043,14 @@
 .end method
 
 .method public final i(Llibs/rw2;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/oj0;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_22
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -1083,7 +1083,7 @@
     return-void
 
     .line 20
-    :pswitch_13
+    :pswitch_0
     sget-object v0, Llibs/ks;->c:Ljava/nio/charset/Charset;
 
     .line 21
@@ -1115,21 +1115,21 @@
     nop
 
     .line 35
-    :pswitch_data_22
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_13
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/oj0;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_c
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -1141,7 +1141,7 @@
     return-object v0
 
     .line 9
-    :pswitch_8
+    :pswitch_0
     const-string v0, "big endian"
 
     .line 10
@@ -1152,8 +1152,8 @@
     nop
 
     .line 13
-    :pswitch_data_c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_8
+        :pswitch_0
     .end packed-switch
 .end method

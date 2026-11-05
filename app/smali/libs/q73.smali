@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/util/HashMap;
@@ -37,7 +37,7 @@
 .end method
 
 .method public static a(Llibs/p73;)V
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Ljava/util/ArrayList;
@@ -69,8 +69,8 @@
     move-result-object v2
 
     .line 16
-    :cond_f
-    :goto_f
+    :cond_0
+    :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     .line 17
@@ -79,7 +79,7 @@
     move-result v3
 
     .line 20
-    if-eqz v3, :cond_2b
+    if-eqz v3, :cond_1
 
     .line 21
     .line 22
@@ -103,7 +103,7 @@
     move-result-object v4
 
     .line 32
-    if-ne v4, p0, :cond_f
+    if-ne v4, p0, :cond_0
 
     .line 33
     .line 34
@@ -124,10 +124,10 @@
     .line 41
     .line 42
     .line 43
-    goto :goto_f
+    goto :goto_0
 
     .line 44
-    :cond_2b
+    :cond_1
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     .line 45
@@ -139,8 +139,8 @@
     const/4 v2, 0x0
 
     .line 49
-    :goto_30
-    if-ge v2, p0, :cond_3e
+    :goto_1
+    if-ge v2, p0, :cond_2
 
     .line 50
     .line 51
@@ -165,9 +165,9 @@
     .line 60
     .line 61
     .line 62
-    goto :goto_30
+    goto :goto_1
 
     .line 63
-    :cond_3e
+    :cond_2
     return-void
 .end method

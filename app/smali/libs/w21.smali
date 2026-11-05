@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r31;Llibs/xl1;Ljava/util/ArrayList;Llibs/xt1;)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 6
+    .locals 0
 
     .line 1
     iget-object p1, p0, Llibs/w21;->X:Llibs/r31;
@@ -67,7 +67,7 @@
 
     .line 8
     .line 9
-    if-eqz p4, :cond_27
+    if-eqz p4, :cond_0
 
     .line 10
     .line 11
@@ -102,7 +102,7 @@
 
     .line 25
     .line 26
-    if-eqz p1, :cond_32
+    if-eqz p1, :cond_1
 
     .line 27
     .line 28
@@ -114,7 +114,7 @@
     move-result p1
 
     .line 32
-    if-eqz p1, :cond_32
+    if-eqz p1, :cond_1
 
     .line 33
     .line 34
@@ -127,10 +127,10 @@
     .line 37
     .line 38
     .line 39
-    goto :goto_32
+    goto :goto_0
 
     .line 40
-    :cond_27
+    :cond_0
     invoke-interface {p5, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     .line 41
@@ -152,7 +152,7 @@
     .line 49
     .line 50
     .line 51
-    :cond_32
-    :goto_32
+    :cond_1
+    :goto_0
     return-void
 .end method

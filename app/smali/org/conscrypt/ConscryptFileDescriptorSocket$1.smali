@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/conscrypt/ConscryptFileDescriptorSocket;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket$1;->this$0:Lorg/conscrypt/ConscryptFileDescriptorSocket;
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public provideSession()Lorg/conscrypt/ConscryptSession;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptFileDescriptorSocket$1;->this$0:Lorg/conscrypt/ConscryptFileDescriptorSocket;

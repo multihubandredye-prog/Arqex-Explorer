@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/OpenSSLCipher$Mode;->GCM:Lorg/conscrypt/OpenSSLCipher$Mode;
@@ -23,21 +23,21 @@
 
 # virtual methods
 .method public checkSupportedMode(Lorg/conscrypt/OpenSSLCipher$Mode;)V
-    .registers 3
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/OpenSSLCipher$Mode;->GCM:Lorg/conscrypt/OpenSSLCipher$Mode;
 
     .line 2
     .line 3
-    if-ne p1, v0, :cond_5
+    if-ne p1, v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     new-instance p1, Ljava/security/NoSuchAlgorithmException;
 
     .line 7
@@ -55,14 +55,14 @@
 .end method
 
 .method public getEVP_AEAD(I)J
-    .registers 4
+    .locals 2
 
     .line 1
     const/16 v0, 0x10
 
     .line 2
     .line 3
-    if-ne p1, v0, :cond_9
+    if-ne p1, v0, :cond_0
 
     .line 4
     .line 5
@@ -77,12 +77,12 @@
     return-wide v0
 
     .line 10
-    :cond_9
+    :cond_0
     const/16 v0, 0x20
 
     .line 11
     .line 12
-    if-ne p1, v0, :cond_12
+    if-ne p1, v0, :cond_1
 
     .line 13
     .line 14
@@ -97,7 +97,7 @@
     return-wide v0
 
     .line 19
-    :cond_12
+    :cond_1
     const-string v0, "Unexpected key length: "
 
     .line 20

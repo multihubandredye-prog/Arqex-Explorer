@@ -22,7 +22,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 10
+    .locals 10
 
     .line 1
     const/16 v0, 0x80
@@ -33,7 +33,7 @@
 
     .line 4
     .line 5
-    fill-array-data v1, :array_7c
+    fill-array-data v1, :array_0
 
     .line 6
     .line 7
@@ -46,7 +46,7 @@
 
     .line 11
     .line 12
-    fill-array-data v2, :array_c0
+    fill-array-data v2, :array_1
 
     .line 13
     .line 14
@@ -55,7 +55,7 @@
 
     .line 16
     .line 17
-    fill-array-data v3, :array_104
+    fill-array-data v3, :array_2
 
     .line 18
     .line 19
@@ -64,7 +64,7 @@
 
     .line 21
     .line 22
-    fill-array-data v4, :array_148
+    fill-array-data v4, :array_3
 
     .line 23
     .line 24
@@ -73,7 +73,7 @@
 
     .line 26
     .line 27
-    fill-array-data v5, :array_18c
+    fill-array-data v5, :array_4
 
     .line 28
     .line 29
@@ -82,7 +82,7 @@
 
     .line 31
     .line 32
-    fill-array-data v6, :array_1d0
+    fill-array-data v6, :array_5
 
     .line 33
     .line 34
@@ -91,7 +91,7 @@
 
     .line 36
     .line 37
-    fill-array-data v7, :array_214
+    fill-array-data v7, :array_6
 
     .line 38
     .line 39
@@ -100,7 +100,7 @@
 
     .line 41
     .line 42
-    fill-array-data v0, :array_258
+    fill-array-data v0, :array_7
 
     .line 43
     .line 44
@@ -257,7 +257,7 @@
     return-void
 
     .line 125
-    :array_7c
+    :array_0
     .array-data 1
         0x4t
         0xat
@@ -457,7 +457,7 @@
     .line 191
     .line 192
     .line 193
-    :array_c0
+    :array_1
     .array-data 1
         0x4t
         0x2t
@@ -657,7 +657,7 @@
     .line 259
     .line 260
     .line 261
-    :array_104
+    :array_2
     .array-data 1
         0x9t
         0x6t
@@ -857,7 +857,7 @@
     .line 327
     .line 328
     .line 329
-    :array_148
+    :array_3
     .array-data 1
         0x8t
         0x4t
@@ -1043,7 +1043,7 @@
     .line 381
     .line 382
     .line 383
-    :array_18c
+    :array_4
     .array-data 1
         0x1t
         0xbt
@@ -1175,7 +1175,7 @@
         0x8t
     .end array-data
 
-    :array_1d0
+    :array_5
     .array-data 1
         0xft
         0xct
@@ -1307,7 +1307,7 @@
         0xet
     .end array-data
 
-    :array_214
+    :array_6
     .array-data 1
         0x4t
         0xat
@@ -1439,7 +1439,7 @@
         0xct
     .end array-data
 
-    :array_258
+    :array_7
     .array-data 1
         0xat
         0x4t
@@ -1573,7 +1573,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -1600,7 +1600,7 @@
 .end method
 
 .method public static d(I[B)I
-    .registers 5
+    .locals 3
 
     .line 1
     add-int/lit8 v0, p0, 0x3
@@ -1682,7 +1682,7 @@
 .end method
 
 .method public static f(II[B)V
-    .registers 5
+    .locals 2
 
     .line 1
     add-int/lit8 v0, p1, 0x3
@@ -1743,14 +1743,14 @@
 
 # virtual methods
 .method public final a(ZLlibs/et;)V
-    .registers 6
+    .locals 3
 
     .line 1
     instance-of v0, p2, Llibs/va2;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
@@ -1769,7 +1769,7 @@
 
     .line 11
     .line 12
-    if-ne v1, v2, :cond_22
+    if-ne v1, v2, :cond_0
 
     .line 13
     .line 14
@@ -1789,7 +1789,7 @@
 
     .line 21
     .line 22
-    if-eqz p2, :cond_39
+    if-eqz p2, :cond_3
 
     .line 23
     .line 24
@@ -1816,7 +1816,7 @@
     return-void
 
     .line 35
-    :cond_22
+    :cond_0
     const-string p1, "invalid S-box passed to GOST28147 init"
 
     .line 36
@@ -1829,12 +1829,12 @@
     return-void
 
     .line 41
-    :cond_28
+    :cond_1
     instance-of v0, p2, Llibs/hh1;
 
     .line 42
     .line 43
-    if-eqz v0, :cond_37
+    if-eqz v0, :cond_2
 
     .line 44
     .line 45
@@ -1861,16 +1861,16 @@
     return-void
 
     .line 56
-    :cond_37
-    if-nez p2, :cond_3a
+    :cond_2
+    if-nez p2, :cond_4
 
     .line 57
     .line 58
-    :cond_39
+    :cond_3
     return-void
 
     .line 59
-    :cond_3a
+    :cond_4
     const-string p1, "invalid parameter passed to GOST28147 init - "
 
     .line 60
@@ -1892,7 +1892,7 @@
 .end method
 
 .method public final b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "GOST28147"
@@ -1903,7 +1903,7 @@
 .end method
 
 .method public final c(II)I
-    .registers 5
+    .locals 2
 
     .line 1
     add-int/2addr p2, p1
@@ -2097,7 +2097,7 @@
 .end method
 
 .method public final e(Z[B)[I
-    .registers 6
+    .locals 3
 
     .line 1
     iput-boolean p1, p0, Llibs/at0;->Y:Z
@@ -2111,7 +2111,7 @@
 
     .line 5
     .line 6
-    if-ne p1, v0, :cond_1a
+    if-ne p1, v0, :cond_1
 
     .line 7
     .line 8
@@ -2126,8 +2126,8 @@
     const/4 v1, 0x0
 
     .line 13
-    :goto_c
-    if-eq v1, p1, :cond_19
+    :goto_0
+    if-eq v1, p1, :cond_0
 
     .line 14
     .line 15
@@ -2151,14 +2151,14 @@
 
     .line 24
     .line 25
-    goto :goto_c
+    goto :goto_0
 
     .line 26
-    :cond_19
+    :cond_0
     return-object v0
 
     .line 27
-    :cond_1a
+    :cond_1
     const-string p1, "Key length invalid. Key needs to be 32 byte - 256 bit!!!"
 
     .line 28
@@ -2175,7 +2175,7 @@
 .end method
 
 .method public final i()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x8
@@ -2186,7 +2186,7 @@
 .end method
 
 .method public final r(II[B[B)I
-    .registers 14
+    .locals 9
 
     .line 1
     iget-object v0, p0, Llibs/at0;->X:[I
@@ -2196,7 +2196,7 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_92
+    if-eqz v0, :cond_9
 
     .line 5
     .line 6
@@ -2207,7 +2207,7 @@
     array-length v3, p3
 
     .line 9
-    if-gt v2, v3, :cond_8c
+    if-gt v2, v3, :cond_8
 
     .line 10
     .line 11
@@ -2218,7 +2218,7 @@
     array-length v3, p4
 
     .line 14
-    if-gt v2, v3, :cond_86
+    if-gt v2, v3, :cond_7
 
     .line 15
     .line 16
@@ -2256,23 +2256,23 @@
     const/4 v5, 0x3
 
     .line 32
-    if-eqz p3, :cond_48
+    if-eqz p3, :cond_2
 
     .line 33
     .line 34
     const/4 p3, 0x0
 
     .line 35
-    :goto_22
-    if-ge p3, v5, :cond_37
+    :goto_0
+    if-ge p3, v5, :cond_1
 
     .line 36
     .line 37
     const/4 v6, 0x0
 
     .line 38
-    :goto_25
-    if-ge v6, v3, :cond_34
+    :goto_1
+    if-ge v6, v3, :cond_0
 
     .line 39
     .line 40
@@ -2304,26 +2304,26 @@
     move p1, v8
 
     .line 52
-    goto :goto_25
+    goto :goto_1
 
     .line 53
-    :cond_34
+    :cond_0
     add-int/lit8 p3, p3, 0x1
 
     .line 54
     .line 55
-    goto :goto_22
+    goto :goto_0
 
     .line 56
-    :cond_37
+    :cond_1
     move p3, p1
 
     .line 57
     move p1, v2
 
     .line 58
-    :goto_39
-    if-lez v4, :cond_76
+    :goto_2
+    if-lez v4, :cond_6
 
     .line 59
     .line 60
@@ -2355,15 +2355,15 @@
     move p1, v8
 
     .line 72
-    goto :goto_39
+    goto :goto_2
 
     .line 73
-    :cond_48
+    :cond_2
     const/4 p3, 0x0
 
     .line 74
-    :goto_49
-    if-ge p3, v3, :cond_58
+    :goto_3
+    if-ge p3, v3, :cond_3
 
     .line 75
     .line 76
@@ -2395,10 +2395,10 @@
     move p1, v8
 
     .line 88
-    goto :goto_49
+    goto :goto_3
 
     .line 89
-    :cond_58
+    :cond_3
     move p3, p1
 
     .line 90
@@ -2408,34 +2408,34 @@
     const/4 v2, 0x0
 
     .line 92
-    :goto_5b
-    if-ge v2, v5, :cond_76
+    :goto_4
+    if-ge v2, v5, :cond_6
 
     .line 93
     .line 94
     const/4 v6, 0x7
 
     .line 95
-    :goto_5e
-    if-ltz v6, :cond_73
+    :goto_5
+    if-ltz v6, :cond_5
 
     .line 96
     .line 97
     const/4 v7, 0x2
 
     .line 98
-    if-ne v2, v7, :cond_66
+    if-ne v2, v7, :cond_4
 
     .line 99
     .line 100
-    if-nez v6, :cond_66
+    if-nez v6, :cond_4
 
     .line 101
     .line 102
-    goto :goto_73
+    goto :goto_6
 
     .line 103
-    :cond_66
+    :cond_4
     aget v7, v0, v6
 
     .line 104
@@ -2464,19 +2464,19 @@
     move p1, v8
 
     .line 115
-    goto :goto_5e
+    goto :goto_5
 
     .line 116
-    :cond_73
-    :goto_73
+    :cond_5
+    :goto_6
     add-int/lit8 v2, v2, 0x1
 
     .line 117
     .line 118
-    goto :goto_5b
+    goto :goto_4
 
     .line 119
-    :cond_76
+    :cond_6
     aget v0, v0, v1
 
     .line 120
@@ -2509,7 +2509,7 @@
     return v3
 
     .line 135
-    :cond_86
+    :cond_7
     const-string p1, "output buffer too short"
 
     .line 136
@@ -2522,7 +2522,7 @@
     return v1
 
     .line 141
-    :cond_8c
+    :cond_8
     const-string p1, "input buffer too short"
 
     .line 142
@@ -2535,7 +2535,7 @@
     return v1
 
     .line 147
-    :cond_92
+    :cond_9
     const-string p1, "GOST28147 engine not initialised"
 
     .line 148
@@ -2549,7 +2549,7 @@
 .end method
 
 .method public final reset()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void

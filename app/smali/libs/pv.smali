@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/pv;->a:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onFocusChange(Landroid/view/View;Z)V
-    .registers 6
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/pv;->a:B
@@ -50,7 +50,7 @@
 
     .line 5
     .line 6
-    packed-switch v0, :pswitch_data_4c
+    packed-switch v0, :pswitch_data_0
 
     .line 7
     .line 8
@@ -63,7 +63,7 @@
 
     .line 12
     .line 13
-    if-eqz p2, :cond_20
+    if-eqz p2, :cond_1
 
     .line 14
     .line 15
@@ -71,11 +71,11 @@
 
     .line 16
     .line 17
-    if-eq p1, p2, :cond_20
+    if-eq p1, p2, :cond_1
 
     .line 18
     .line 19
-    if-eqz p2, :cond_17
+    if-eqz p2, :cond_0
 
     .line 20
     .line 21
@@ -84,7 +84,7 @@
     .line 22
     .line 23
     .line 24
-    :cond_17
+    :cond_0
     check-cast p1, Lcom/mixplorer/widgets/MiEditor;
 
     .line 25
@@ -102,11 +102,11 @@
     .line 31
     .line 32
     .line 33
-    :cond_20
+    :cond_1
     return-void
 
     .line 34
-    :pswitch_21
+    :pswitch_0
     check-cast v2, Llibs/ml1;
 
     .line 35
@@ -115,7 +115,7 @@
 
     .line 37
     .line 38
-    if-nez p2, :cond_2b
+    if-nez p2, :cond_2
 
     .line 39
     .line 40
@@ -124,10 +124,10 @@
     .line 41
     .line 42
     .line 43
-    goto :goto_35
+    goto :goto_0
 
     .line 44
-    :cond_2b
+    :cond_2
     new-instance p2, Llibs/z8;
 
     .line 45
@@ -146,11 +146,11 @@
     .line 52
     .line 53
     .line 54
-    :goto_35
+    :goto_0
     return-void
 
     .line 55
-    :pswitch_36
+    :pswitch_1
     check-cast v2, Lcom/mixplorer/activities/CodeEditorActivity;
 
     .line 56
@@ -159,7 +159,7 @@
 
     .line 58
     .line 59
-    if-eqz p2, :cond_4a
+    if-eqz p2, :cond_4
 
     .line 60
     .line 61
@@ -167,11 +167,11 @@
 
     .line 62
     .line 63
-    if-eq p1, p2, :cond_4a
+    if-eq p1, p2, :cond_4
 
     .line 64
     .line 65
-    if-eqz p2, :cond_45
+    if-eqz p2, :cond_3
 
     .line 66
     .line 67
@@ -180,7 +180,7 @@
     .line 68
     .line 69
     .line 70
-    :cond_45
+    :cond_3
     check-cast p1, Llibs/cv;
 
     .line 71
@@ -190,15 +190,15 @@
     .line 73
     .line 74
     .line 75
-    :cond_4a
+    :cond_4
     return-void
 
     .line 76
     nop
 
-    :pswitch_data_4c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_36
-        :pswitch_21
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

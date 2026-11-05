@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/InputStream;J)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/ir0;-><init>(Ljava/io/InputStream;)V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final available()I
-    .registers 5
+    .locals 4
 
     .line 1
     iget-wide v0, p0, Llibs/ee2;->Pi:J
@@ -84,7 +84,7 @@
 .end method
 
 .method public final mark(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-super {p0, p1}, Llibs/ir0;->mark(I)V
@@ -104,7 +104,7 @@
 .end method
 
 .method public final markSupported()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;
@@ -123,7 +123,7 @@
 .end method
 
 .method public final read()I
-    .registers 6
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;
@@ -138,7 +138,7 @@
     move-result v0
 
     .line 7
-    if-ltz v0, :cond_f
+    if-ltz v0, :cond_0
 
     .line 8
     .line 9
@@ -157,12 +157,12 @@
 
     .line 15
     .line 16
-    :cond_f
+    :cond_0
     return v0
 .end method
 
 .method public final read([B)I
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -177,7 +177,7 @@
 .end method
 
 .method public final read([BII)I
-    .registers 6
+    .locals 2
 
     .line 18
     iget-object v0, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;
@@ -186,7 +186,7 @@
 
     move-result p1
 
-    if-lez p1, :cond_e
+    if-lez p1, :cond_0
 
     .line 19
     iget-wide p2, p0, Llibs/ee2;->Rho:J
@@ -197,18 +197,18 @@
 
     iput-wide p2, p0, Llibs/ee2;->Rho:J
 
-    :cond_e
+    :cond_0
     return p1
 .end method
 
 .method public final declared-synchronized reset()V
-    .registers 3
+    .locals 2
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     invoke-super {p0}, Llibs/ir0;->reset()V
 
     .line 3
@@ -219,8 +219,8 @@
     .line 6
     .line 7
     iput-wide v0, p0, Llibs/ee2;->Rho:J
-    :try_end_8
-    .catchall {:try_start_1 .. :try_end_8} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 8
     .line 9
@@ -230,27 +230,27 @@
     return-void
 
     .line 11
-    :catchall_a
+    :catchall_0
     move-exception v0
 
     .line 12
-    :try_start_b
+    :try_start_1
     monitor-exit p0
-    :try_end_c
-    .catchall {:try_start_b .. :try_end_c} :catchall_a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 13
     throw v0
 .end method
 
 .method public final declared-synchronized skip(J)J
-    .registers 6
+    .locals 3
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Llibs/ir0;->Xi:Ljava/io/InputStream;
 
     .line 3
@@ -271,7 +271,7 @@
 
     .line 11
     .line 12
-    if-lez v2, :cond_15
+    if-lez v2, :cond_0
 
     .line 13
     .line 14
@@ -283,34 +283,34 @@
 
     .line 17
     iput-wide v0, p0, Llibs/ee2;->Rho:J
-    :try_end_12
-    .catchall {:try_start_1 .. :try_end_12} :catchall_13
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 18
     .line 19
-    goto :goto_15
+    goto :goto_0
 
     .line 20
-    :catchall_13
+    :catchall_0
     move-exception p1
 
     .line 21
-    goto :goto_17
+    goto :goto_1
 
     .line 22
-    :cond_15
-    :goto_15
+    :cond_0
+    :goto_0
     monitor-exit p0
 
     .line 23
     return-wide p1
 
     .line 24
-    :goto_17
-    :try_start_17
+    :goto_1
+    :try_start_1
     monitor-exit p0
-    :try_end_18
-    .catchall {:try_start_17 .. :try_end_18} :catchall_13
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 25
     throw p1

@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public final declared-synchronized a(Z)V
-    .registers 8
+    .locals 6
 
     .line 1
     monitor-enter p0
@@ -60,7 +60,7 @@
     const/4 v0, 0x1
 
     .line 3
-    :try_start_2
+    :try_start_0
     iput-boolean v0, p0, Llibs/Three;->X:Z
 
     .line 4
@@ -87,9 +87,9 @@
     const/4 v2, 0x0
 
     .line 15
-    :cond_e
-    :goto_e
-    if-ge v2, v0, :cond_34
+    :cond_0
+    :goto_0
+    if-ge v2, v0, :cond_2
 
     .line 16
     .line 17
@@ -117,7 +117,7 @@
 
     .line 28
     .line 29
-    if-nez v4, :cond_e
+    if-nez v4, :cond_0
 
     .line 30
     .line 31
@@ -132,7 +132,7 @@
     move-result v4
 
     .line 36
-    if-eqz v4, :cond_2c
+    if-eqz v4, :cond_1
 
     .line 37
     .line 38
@@ -145,44 +145,44 @@
     .line 41
     .line 42
     invoke-static {v4, v5}, Llibs/zm1;->i(Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_2c
-    .catchall {:try_start_2 .. :try_end_2c} :catchall_32
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 43
     .line 44
     .line 45
-    :cond_2c
-    :try_start_2c
+    :cond_1
+    :try_start_1
     invoke-virtual {v3}, Ljava/nio/channels/spi/AbstractInterruptibleChannel;->close()V
-    :try_end_2f
-    .catch Ljava/io/IOException; {:try_start_2c .. :try_end_2f} :catch_30
-    .catchall {:try_start_2c .. :try_end_2f} :catchall_32
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 46
     .line 47
     .line 48
-    goto :goto_e
+    goto :goto_0
 
     .line 49
-    :catch_30
+    :catch_0
     nop
 
     .line 50
-    goto :goto_e
+    goto :goto_0
 
     .line 51
-    :catchall_32
+    :catchall_0
     move-exception p1
 
     .line 52
-    goto :goto_39
+    goto :goto_1
 
     .line 53
-    :cond_34
-    :try_start_34
+    :cond_2
+    :try_start_2
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
-    :try_end_37
-    .catchall {:try_start_34 .. :try_end_37} :catchall_32
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 54
     .line 55
@@ -193,20 +193,20 @@
     return-void
 
     .line 58
-    :goto_39
-    :try_start_39
+    :goto_1
+    :try_start_3
     monitor-exit p0
-    :try_end_3a
-    .catchall {:try_start_39 .. :try_end_3a} :catchall_32
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 59
-    goto :goto_3c
+    goto :goto_3
 
     .line 60
-    :goto_3b
+    :goto_2
     throw p1
 
     .line 61
-    :goto_3c
-    goto :goto_3b
+    :goto_3
+    goto :goto_2
 .end method

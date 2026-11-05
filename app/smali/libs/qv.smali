@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/rp0;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/qv;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final a(J)Llibs/fh3;
-    .registers 15
+    .locals 12
 
     .line 1
     iget-byte v0, p0, Llibs/qv;->X:B
@@ -51,7 +51,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_66
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -88,7 +88,7 @@
     return-object v4
 
     .line 26
-    :pswitch_19
+    :pswitch_0
     invoke-virtual {v3, p1, p2}, Llibs/rp0;->Post(J)Ljava/io/InputStream;
 
     .line 27
@@ -117,7 +117,7 @@
     return-object v5
 
     .line 40
-    :pswitch_27
+    :pswitch_1
     sget p1, Lcom/mixplorer/activities/SQLiteEditorActivity;->III:I
 
     .line 41
@@ -154,7 +154,7 @@
     return-object v4
 
     .line 58
-    :pswitch_39
+    :pswitch_2
     invoke-virtual {v3, p1, p2}, Llibs/rp0;->Get(J)Ljava/io/InputStream;
 
     .line 59
@@ -183,7 +183,7 @@
     return-object v5
 
     .line 72
-    :pswitch_47
+    :pswitch_3
     invoke-virtual {v3, v1, v2}, Llibs/rp0;->Post(J)Ljava/io/InputStream;
 
     .line 73
@@ -212,7 +212,7 @@
     return-object v6
 
     .line 86
-    :pswitch_55
+    :pswitch_4
     sget v0, Lcom/mixplorer/activities/CodeEditorActivity;->_d:I
 
     .line 87
@@ -248,12 +248,12 @@
     nop
 
     .line 103
-    :pswitch_data_66
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_55
-        :pswitch_47
-        :pswitch_39
-        :pswitch_27
-        :pswitch_19
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Xi;Llibs/to3;Llibs/qu3;)V
-    .registers 5
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/io/OutputStream;-><init>()V
@@ -90,13 +90,13 @@
 
 # virtual methods
 .method public final declared-synchronized close()V
-    .registers 6
+    .locals 5
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Llibs/ds;->Nu:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     .line 3
@@ -112,7 +112,7 @@
     move-result v0
 
     .line 9
-    if-nez v0, :cond_3c
+    if-nez v0, :cond_1
 
     .line 10
     .line 11
@@ -125,13 +125,13 @@
     .line 14
     .line 15
     invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
-    :try_end_11
-    .catchall {:try_start_1 .. :try_end_11} :catchall_3a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 16
     .line 17
     .line 18
-    :try_start_11
+    :try_start_1
     invoke-virtual {v0}, Llibs/Xi;->isOpen()Z
 
     .line 19
@@ -140,7 +140,7 @@
     move-result v0
 
     .line 22
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_0
 
     .line 23
     .line 24
@@ -190,23 +190,23 @@
     .line 46
     .line 47
     invoke-virtual {v0, v2}, Llibs/to3;->k(Llibs/oy2;)J
-    :try_end_31
-    .catchall {:try_start_11 .. :try_end_31} :catchall_35
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 48
     .line 49
     .line 50
-    :cond_31
-    :try_start_31
+    :cond_0
+    :try_start_2
     invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 51
     .line 52
     .line 53
-    goto :goto_3c
+    goto :goto_0
 
     .line 54
-    :catchall_35
+    :catchall_0
     move-exception v0
 
     .line 55
@@ -216,43 +216,43 @@
     .line 57
     .line 58
     throw v0
-    :try_end_3a
-    .catchall {:try_start_31 .. :try_end_3a} :catchall_3a
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 59
-    :catchall_3a
+    :catchall_1
     move-exception v0
 
     .line 60
-    goto :goto_3e
+    goto :goto_1
 
     .line 61
-    :cond_3c
-    :goto_3c
+    :cond_1
+    :goto_0
     monitor-exit p0
 
     .line 62
     return-void
 
     .line 63
-    :goto_3e
-    :try_start_3e
+    :goto_1
+    :try_start_3
     monitor-exit p0
-    :try_end_3f
-    .catchall {:try_start_3e .. :try_end_3f} :catchall_3a
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 64
     throw v0
 .end method
 
 .method public final declared-synchronized flush()V
-    .registers 4
+    .locals 3
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Llibs/ds;->Nu:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     .line 3
@@ -265,7 +265,7 @@
     move-result v0
 
     .line 8
-    if-nez v0, :cond_25
+    if-nez v0, :cond_1
 
     .line 9
     .line 10
@@ -281,14 +281,14 @@
     move-result v0
 
     .line 16
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     .line 17
     .line 18
-    goto :goto_25
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     iget-object v0, p0, Llibs/ds;->Lambda:Llibs/cs;
 
     .line 20
@@ -316,8 +316,8 @@
 
     .line 31
     invoke-virtual {v0, v2, v1}, Llibs/cs;->c(ZI)Z
-    :try_end_21
-    .catchall {:try_start_1 .. :try_end_21} :catchall_23
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 32
     .line 33
@@ -328,28 +328,28 @@
     return-void
 
     .line 36
-    :catchall_23
+    :catchall_0
     move-exception v0
 
     .line 37
-    goto :goto_32
+    goto :goto_1
 
     .line 38
-    :cond_25
-    :goto_25
-    :try_start_25
+    :cond_1
+    :goto_0
+    :try_start_1
     iget-object v0, p0, Llibs/ds;->Xi:Llibs/ny2;
 
     .line 39
     .line 40
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_2
 
     .line 41
     .line 42
     throw v0
 
     .line 43
-    :cond_2a
+    :cond_2
     new-instance v0, Llibs/vx;
 
     .line 44
@@ -366,26 +366,26 @@
     throw v0
 
     .line 51
-    :goto_32
+    :goto_1
     monitor-exit p0
-    :try_end_33
-    .catchall {:try_start_25 .. :try_end_33} :catchall_23
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 52
     throw v0
 .end method
 
 .method public final declared-synchronized i(Llibs/ny2;)V
-    .registers 2
+    .locals 0
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iput-object p1, p0, Llibs/ds;->Xi:Llibs/ny2;
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 3
     .line 4
@@ -395,21 +395,21 @@
     return-void
 
     .line 6
-    :catchall_5
+    :catchall_0
     move-exception p1
 
     .line 7
-    :try_start_6
+    :try_start_1
     monitor-exit p0
-    :try_end_7
-    .catchall {:try_start_6 .. :try_end_7} :catchall_5
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 8
     throw p1
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -449,12 +449,12 @@
 .end method
 
 .method public final declared-synchronized write(I)V
-    .registers 4
+    .locals 2
 
     monitor-enter p0
 
     .line 80
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Llibs/ds;->Mu:[B
 
     int-to-byte p1, p1
@@ -467,33 +467,33 @@
 
     .line 81
     invoke-virtual {p0, v0, v1, p1}, Llibs/ds;->write([BII)V
-    :try_end_b
-    .catchall {:try_start_1 .. :try_end_b} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 82
     monitor-exit p0
 
     return-void
 
-    :catchall_d
+    :catchall_0
     move-exception p1
 
-    :try_start_e
+    :try_start_1
     monitor-exit p0
-    :try_end_f
-    .catchall {:try_start_e .. :try_end_f} :catchall_d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method
 
 .method public final declared-synchronized write([BII)V
-    .registers 8
+    .locals 4
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Llibs/ds;->Nu:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     .line 3
@@ -506,7 +506,7 @@
     move-result v0
 
     .line 8
-    if-nez v0, :cond_3e
+    if-nez v0, :cond_3
 
     .line 9
     .line 10
@@ -522,16 +522,16 @@
     move-result v0
 
     .line 16
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     .line 17
     .line 18
-    goto :goto_3e
+    goto :goto_2
 
     .line 19
-    :cond_12
-    :goto_12
-    if-lez p3, :cond_3c
+    :cond_0
+    :goto_0
+    if-lez p3, :cond_2
 
     .line 20
     .line 21
@@ -574,7 +574,7 @@
 
     .line 39
     .line 40
-    if-lt v2, v3, :cond_2f
+    if-lt v2, v3, :cond_1
 
     .line 41
     .line 42
@@ -589,10 +589,10 @@
     const/4 v0, 0x0
 
     .line 47
-    goto :goto_37
+    goto :goto_1
 
     .line 48
-    :cond_2f
+    :cond_1
     sub-int/2addr v3, v2
 
     .line 49
@@ -605,51 +605,51 @@
 
     .line 53
     invoke-virtual {v1, p2, v0, p1}, Llibs/uj;->j(II[B)V
-    :try_end_37
-    .catchall {:try_start_1 .. :try_end_37} :catchall_3a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 54
     .line 55
     .line 56
-    :goto_37
+    :goto_1
     add-int/2addr p2, v0
 
     .line 57
     sub-int/2addr p3, v0
 
     .line 58
-    goto :goto_12
+    goto :goto_0
 
     .line 59
-    :catchall_3a
+    :catchall_0
     move-exception p1
 
     .line 60
-    goto :goto_4b
+    goto :goto_3
 
     .line 61
-    :cond_3c
+    :cond_2
     monitor-exit p0
 
     .line 62
     return-void
 
     .line 63
-    :cond_3e
-    :goto_3e
-    :try_start_3e
+    :cond_3
+    :goto_2
+    :try_start_1
     iget-object p1, p0, Llibs/ds;->Xi:Llibs/ny2;
 
     .line 64
     .line 65
-    if-eqz p1, :cond_43
+    if-eqz p1, :cond_4
 
     .line 66
     .line 67
     throw p1
 
     .line 68
-    :cond_43
+    :cond_4
     new-instance p1, Llibs/vx;
 
     .line 69
@@ -666,19 +666,19 @@
     throw p1
 
     .line 76
-    :goto_4b
+    :goto_3
     monitor-exit p0
-    :try_end_4c
-    .catchall {:try_start_3e .. :try_end_4c} :catchall_3a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 77
-    goto :goto_4e
+    goto :goto_5
 
     .line 78
-    :goto_4d
+    :goto_4
     throw p1
 
     .line 79
-    :goto_4e
-    goto :goto_4d
+    :goto_5
+    goto :goto_4
 .end method

@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/util/HashMap;
@@ -528,7 +528,7 @@
 .end method
 
 .method public static a(Llibs/rw2;)Llibs/yq0;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/rw2;->b:Llibs/oj0;
@@ -566,21 +566,21 @@
     move-result v0
 
     .line 20
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     .line 21
     .line 22
     const/4 v0, 0x1
 
     .line 23
-    goto :goto_18
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_0
     const/4 v0, 0x0
 
     .line 25
-    :goto_18
+    :goto_0
     const/4 v3, 0x2
 
     .line 26
@@ -602,7 +602,7 @@
 .end method
 
 .method public static b(Llibs/wq0;Llibs/rw2;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -625,7 +625,7 @@
 
     .line 10
     .line 11
-    fill-array-data v1, :array_2c
+    fill-array-data v1, :array_0
 
     .line 12
     .line 13
@@ -691,7 +691,7 @@
     return-void
 
     .line 45
-    :array_2c
+    :array_0
     .array-data 1
         0x0t
         0x0t

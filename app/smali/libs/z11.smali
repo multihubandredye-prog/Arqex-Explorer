@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/util/ArrayList;Lcom/mixplorer/widgets/MiEditText;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 7
+    .locals 1
 
     .line 1
     iget-object p1, p0, Llibs/z11;->X:Ljava/util/ArrayList;
@@ -75,7 +75,7 @@
     move-result p5
 
     .line 19
-    if-eqz p5, :cond_1b
+    if-eqz p5, :cond_0
 
     .line 20
     .line 21
@@ -91,10 +91,10 @@
     move-result-object p4
 
     .line 27
-    goto :goto_23
+    goto :goto_0
 
     .line 28
-    :cond_1b
+    :cond_0
     invoke-interface {p4}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     .line 29
@@ -111,7 +111,7 @@
     move-result-object p4
 
     .line 36
-    :goto_23
+    :goto_0
     new-instance p5, Ljava/lang/StringBuilder;
 
     .line 37

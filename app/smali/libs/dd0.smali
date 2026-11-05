@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/gd0;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/dd0;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 20
+    .locals 18
 
     .line 1
     move-object/from16 v0, p0
@@ -85,7 +85,7 @@
     const/4 v12, 0x1
 
     .line 23
-    packed-switch v1, :pswitch_data_114
+    packed-switch v1, :pswitch_data_0
 
     .line 24
     .line 25
@@ -332,7 +332,7 @@
     return-object v1
 
     .line 148
-    :pswitch_93
+    :pswitch_0
     const/16 v16, 0x0
 
     .line 149
@@ -373,11 +373,11 @@
 
     .line 167
     .line 168
-    if-eqz v13, :cond_b4
+    if-eqz v13, :cond_1
 
     .line 169
     .line 170
-    if-ne v13, v12, :cond_ae
+    if-ne v13, v12, :cond_0
 
     .line 171
     .line 172
@@ -385,10 +385,10 @@
 
     .line 173
     .line 174
-    goto :goto_b5
+    goto :goto_0
 
     .line 175
-    :cond_ae
+    :cond_0
     new-instance v1, Ljava/lang/UnsupportedOperationException;
 
     .line 176
@@ -401,11 +401,11 @@
     throw v1
 
     .line 181
-    :cond_b4
+    :cond_1
     move-object v13, v15
 
     .line 182
-    :goto_b5
+    :goto_0
     invoke-virtual {v9, v13, v14}, Llibs/gd0;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 183
@@ -426,11 +426,11 @@
     move-result v11
 
     .line 192
-    if-eqz v11, :cond_cc
+    if-eqz v11, :cond_3
 
     .line 193
     .line 194
-    if-ne v11, v12, :cond_c6
+    if-ne v11, v12, :cond_2
 
     .line 195
     .line 196
@@ -438,10 +438,10 @@
 
     .line 197
     .line 198
-    goto :goto_cc
+    goto :goto_1
 
     .line 199
-    :cond_c6
+    :cond_2
     new-instance v1, Ljava/lang/UnsupportedOperationException;
 
     .line 200
@@ -454,8 +454,8 @@
     throw v1
 
     .line 205
-    :cond_cc
-    :goto_cc
+    :cond_3
+    :goto_1
     invoke-virtual {v9, v15, v14}, Llibs/gd0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 206
@@ -600,8 +600,8 @@
     return-object v1
 
     .line 277
-    :pswitch_data_114
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_93
+        :pswitch_0
     .end packed-switch
 .end method

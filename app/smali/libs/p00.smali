@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "X25519"
@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public final a([B)V
-    .registers 7
+    .locals 5
 
     .line 1
     const-string v0, "X25519"
@@ -161,7 +161,7 @@
 .end method
 
 .method public final b(Ljava/security/spec/AlgorithmParameterSpec;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-object p1, p0, Llibs/z30;->a:Ljava/security/KeyPairGenerator;

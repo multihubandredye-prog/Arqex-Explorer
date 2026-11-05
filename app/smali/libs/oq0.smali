@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/ContentProvider$PipeDataWriter;[Landroid/os/ParcelFileDescriptor;Landroid/net/Uri;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/Object;)V
-    .registers 7
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/oq0;->j:Landroid/content/ContentProvider$PipeDataWriter;
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public final varargs a([Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 10
+    .locals 8
 
     .line 1
     iget-object p1, p0, Llibs/oq0;->k:[Landroid/os/ParcelFileDescriptor;
@@ -67,7 +67,7 @@
     const/4 v1, 0x1
 
     .line 4
-    :try_start_3
+    :try_start_0
     iget-object v2, p0, Llibs/oq0;->j:Landroid/content/ContentProvider$PipeDataWriter;
 
     .line 5
@@ -93,8 +93,8 @@
     .line 15
     .line 16
     invoke-static/range {v2 .. v7}, Llibs/ce0;->m(Landroid/content/ContentProvider$PipeDataWriter;Landroid/os/ParcelFileDescriptor;Landroid/net/Uri;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/Object;)V
-    :try_end_12
-    .catchall {:try_start_3 .. :try_end_12} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 17
     .line 18
@@ -103,20 +103,20 @@
 
     .line 20
     .line 21
-    :goto_14
+    :goto_0
     invoke-static {p1}, Llibs/ji0;->j(Landroid/os/ParcelFileDescriptor;)V
 
     .line 22
     .line 23
     .line 24
-    goto :goto_2c
+    goto :goto_1
 
     .line 25
-    :catchall_18
+    :catchall_0
     move-exception v0
 
     .line 26
-    :try_start_19
+    :try_start_1
     const-string v2, "FileProvider"
 
     .line 27
@@ -145,8 +145,8 @@
     .line 38
     .line 39
     invoke-static {v2, v3, v4}, Llibs/vw1;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_29
-    .catchall {:try_start_19 .. :try_end_29} :catchall_2e
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 40
     .line 41
@@ -155,17 +155,17 @@
 
     .line 43
     .line 44
-    goto :goto_14
+    goto :goto_0
 
     .line 45
-    :goto_2c
+    :goto_1
     const/4 p1, 0x0
 
     .line 46
     return-object p1
 
     .line 47
-    :catchall_2e
+    :catchall_1
     move-exception v0
 
     .line 48
@@ -178,13 +178,13 @@
     .line 51
     .line 52
     .line 53
-    goto :goto_36
+    goto :goto_3
 
     .line 54
-    :goto_35
+    :goto_2
     throw v0
 
     .line 55
-    :goto_36
-    goto :goto_35
+    :goto_3
+    goto :goto_2
 .end method

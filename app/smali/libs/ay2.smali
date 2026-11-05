@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 5
+    .locals 3
 
     .line 1
     sget-object v0, Llibs/zt0;->g:Landroid/content/Context;
@@ -29,7 +29,7 @@
 
 # virtual methods
 .method public final onConfigure(Landroid/database/sqlite/SQLiteDatabase;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-super {p0, p1}, Landroid/database/sqlite/SQLiteOpenHelper;->onConfigure(Landroid/database/sqlite/SQLiteDatabase;)V
@@ -45,7 +45,7 @@
     move-result v0
 
     .line 8
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 9
     .line 10
@@ -57,12 +57,12 @@
     .line 12
     .line 13
     .line 14
-    :cond_d
+    :cond_0
     return-void
 .end method
 
 .method public final declared-synchronized onCreate(Landroid/database/sqlite/SQLiteDatabase;)V
-    .registers 2
+    .locals 0
 
     .line 1
     monitor-enter p0
@@ -75,14 +75,14 @@
 .end method
 
 .method public final onDowngrade(Landroid/database/sqlite/SQLiteDatabase;II)V
-    .registers 4
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final declared-synchronized onUpgrade(Landroid/database/sqlite/SQLiteDatabase;II)V
-    .registers 4
+    .locals 0
 
     .line 1
     monitor-enter p0

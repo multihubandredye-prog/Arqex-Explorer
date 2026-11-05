@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,7 +22,7 @@
 
 # virtual methods
 .method public d(Ljava/lang/String;Ljava/lang/String;)Z
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0

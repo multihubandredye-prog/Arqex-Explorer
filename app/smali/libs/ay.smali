@@ -19,7 +19,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/util/HashMap;
@@ -39,7 +39,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 5
+    .locals 4
 
     .line 1
     const-string v0, "server"
@@ -57,10 +57,10 @@
     monitor-enter v1
 
     .line 8
-    :try_start_7
+    :try_start_0
     iget-object v2, v1, Llibs/m80;->b:Ljava/util/Properties;
-    :try_end_9
-    .catchall {:try_start_7 .. :try_end_9} :catchall_43
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 9
     .line 10
@@ -134,7 +134,7 @@
     move-result v3
 
     .line 46
-    if-nez v3, :cond_3c
+    if-nez v3, :cond_0
 
     .line 47
     .line 48
@@ -163,7 +163,7 @@
     return-void
 
     .line 61
-    :cond_3c
+    :cond_0
     const-string v0, "There is already a connection manager registered named server"
 
     .line 62
@@ -179,14 +179,14 @@
     throw v0
 
     .line 68
-    :catchall_43
+    :catchall_0
     move-exception v0
 
     .line 69
-    :try_start_44
+    :try_start_1
     monitor-exit v1
-    :try_end_45
-    .catchall {:try_start_44 .. :try_end_45} :catchall_43
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 70
     throw v0

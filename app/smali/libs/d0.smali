@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/k0;-><init>()V
@@ -23,14 +23,14 @@
 
 # virtual methods
 .method public final a(Ljava/lang/Class;)Ljava/security/spec/AlgorithmParameterSpec;
-    .registers 3
+    .locals 1
 
     .line 1
     const-class v0, Ljavax/crypto/spec/OAEPParameterSpec;
 
     .line 2
     .line 3
-    if-eq p1, v0, :cond_10
+    if-eq p1, v0, :cond_1
 
     .line 4
     .line 5
@@ -38,14 +38,14 @@
 
     .line 6
     .line 7
-    if-ne p1, v0, :cond_9
+    if-ne p1, v0, :cond_0
 
     .line 8
     .line 9
-    goto :goto_10
+    goto :goto_0
 
     .line 10
-    :cond_9
+    :cond_0
     const-string p1, "unknown parameter spec passed to OAEP parameters object."
 
     .line 11
@@ -61,8 +61,8 @@
     return-object p1
 
     .line 17
-    :cond_10
-    :goto_10
+    :cond_1
+    :goto_0
     iget-object p1, p0, Llibs/d0;->a:Ljavax/crypto/spec/OAEPParameterSpec;
 
     .line 18
@@ -71,7 +71,7 @@
 .end method
 
 .method public final engineGetEncoded()[B
-    .registers 8
+    .locals 7
 
     .line 1
     new-instance v0, Llibs/$f;
@@ -228,7 +228,7 @@
     .line 79
     .line 80
     .line 81
-    :try_start_50
+    :try_start_0
     const-string v0, "DER"
 
     .line 82
@@ -239,14 +239,14 @@
     .line 85
     .line 86
     move-result-object v0
-    :try_end_56
-    .catch Ljava/io/IOException; {:try_start_50 .. :try_end_56} :catch_57
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 87
     return-object v0
 
     .line 88
-    :catch_57
+    :catch_0
     const-string v0, "Error encoding OAEPParameters"
 
     .line 89
@@ -263,9 +263,9 @@
 .end method
 
 .method public final engineGetEncoded(Ljava/lang/String;)[B
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_2
 
     .line 95
     const-string v0, "ASN.1"
@@ -274,30 +274,30 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
-    goto :goto_16
+    goto :goto_0
 
     .line 96
-    :cond_b
+    :cond_0
     const-string v0, "X.509"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_1
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_14
+    :cond_1
     const/4 p1, 0x0
 
     return-object p1
 
     .line 97
-    :cond_16
-    :goto_16
+    :cond_2
+    :goto_0
     invoke-virtual {p0}, Llibs/d0;->engineGetEncoded()[B
 
     move-result-object p1
@@ -306,12 +306,12 @@
 .end method
 
 .method public final engineInit(Ljava/security/spec/AlgorithmParameterSpec;)V
-    .registers 3
+    .locals 1
 
     .line 86
     instance-of v0, p1, Ljavax/crypto/spec/OAEPParameterSpec;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 87
     check-cast p1, Ljavax/crypto/spec/OAEPParameterSpec;
@@ -321,7 +321,7 @@
     return-void
 
     .line 88
-    :cond_9
+    :cond_0
     const-string p1, "OAEPParameterSpec required to initialise an OAEP algorithm parameters object"
 
     invoke-static {p1}, Llibs/bf0;->d(Ljava/lang/String;)V
@@ -330,14 +330,14 @@
 .end method
 
 .method public final engineInit([B)V
-    .registers 8
+    .locals 6
 
     .line 1
     const-string v0, "Not a valid OAEP Parameter encoding."
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     sget-object v1, Llibs/sk2;->Lambda:Llibs/$f;
 
     .line 4
@@ -346,7 +346,7 @@
 
     .line 6
     .line 7
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
@@ -354,11 +354,11 @@
 
     .line 10
     .line 11
-    goto :goto_19
+    goto :goto_0
 
     .line 12
-    :cond_b
-    if-eqz p1, :cond_18
+    :cond_0
+    if-eqz p1, :cond_1
 
     .line 13
     .line 14
@@ -382,14 +382,14 @@
     move-object p1, v1
 
     .line 24
-    goto :goto_19
+    goto :goto_0
 
     .line 25
-    :cond_18
+    :cond_1
     const/4 p1, 0x0
 
     .line 26
-    :goto_19
+    :goto_0
     new-instance v1, Ljavax/crypto/spec/OAEPParameterSpec;
 
     .line 27
@@ -486,16 +486,16 @@
     .line 74
     .line 75
     iput-object v1, p0, Llibs/d0;->a:Ljavax/crypto/spec/OAEPParameterSpec;
-    :try_end_4c
-    .catch Ljava/lang/ClassCastException; {:try_start_2 .. :try_end_4c} :catch_51
-    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_2 .. :try_end_4c} :catch_4d
+    :try_end_0
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 76
     .line 77
     return-void
 
     .line 78
-    :catch_4d
+    :catch_0
     invoke-static {v0}, Llibs/ic0;->t(Ljava/lang/String;)V
 
     .line 79
@@ -504,7 +504,7 @@
     return-void
 
     .line 82
-    :catch_51
+    :catch_1
     invoke-static {v0}, Llibs/ic0;->t(Ljava/lang/String;)V
 
     .line 83
@@ -514,7 +514,7 @@
 .end method
 
 .method public final engineInit([BLjava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 89
     const-string v0, "X.509"
@@ -523,7 +523,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_1
 
     const-string v0, "ASN.1"
 
@@ -532,12 +532,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
-    goto :goto_1b
+    goto :goto_0
 
     .line 91
-    :cond_11
+    :cond_0
     const-string p1, "Unknown parameter format "
 
     invoke-virtual {p1, p2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
@@ -549,15 +549,15 @@
     return-void
 
     .line 92
-    :cond_1b
-    :goto_1b
+    :cond_1
+    :goto_0
     invoke-virtual {p0, p1}, Llibs/d0;->engineInit([B)V
 
     return-void
 .end method
 
 .method public final engineToString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "OAEP Parameters"

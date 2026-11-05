@@ -11,7 +11,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/mr;->X:B
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/mr;->X:B
@@ -44,7 +44,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_2a
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -74,8 +74,8 @@
     return-void
 
     .line 21
-    :pswitch_14
-    :try_start_14
+    :pswitch_0
+    :try_start_0
     check-cast v1, Llibs/qr;
 
     .line 22
@@ -98,16 +98,16 @@
     .line 31
     .line 32
     invoke-virtual {v1, v0, v2, v3}, Llibs/qr;->String(Ljava/lang/String;Llibs/bf3;Ljava/lang/String;)V
-    :try_end_22
-    .catch Ljava/io/IOException; {:try_start_14 .. :try_end_22} :catch_23
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 33
     .line 34
     .line 35
-    goto :goto_29
+    goto :goto_0
 
     .line 36
-    :catch_23
+    :catch_0
     move-exception v0
 
     .line 37
@@ -120,12 +120,12 @@
     .line 40
     .line 41
     .line 42
-    :goto_29
+    :goto_0
     return-void
 
     .line 43
-    :pswitch_data_2a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_14
+        :pswitch_0
     .end packed-switch
 .end method

@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/CodeEditorActivity;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/dv;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 6
+    .locals 5
 
     .line 1
     iget-byte v0, p0, Llibs/dv;->X:B
@@ -53,7 +53,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_86
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -70,7 +70,7 @@
     return-void
 
     .line 16
-    :pswitch_f
+    :pswitch_0
     sget v0, Lcom/mixplorer/activities/CodeEditorActivity;->_d:I
 
     .line 17
@@ -100,7 +100,7 @@
     return-void
 
     .line 31
-    :pswitch_1e
+    :pswitch_1
     sget v0, Lcom/mixplorer/activities/CodeEditorActivity;->_d:I
 
     .line 32
@@ -138,7 +138,7 @@
     return-void
 
     .line 50
-    :pswitch_31
+    :pswitch_2
     sget v0, Lcom/mixplorer/activities/CodeEditorActivity;->_d:I
 
     .line 51
@@ -158,7 +158,7 @@
     return-void
 
     .line 59
-    :pswitch_3a
+    :pswitch_3
     sget v0, Lcom/mixplorer/activities/CodeEditorActivity;->_d:I
 
     .line 60
@@ -167,7 +167,7 @@
 
     .line 62
     .line 63
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_0
 
     .line 64
     .line 65
@@ -176,11 +176,11 @@
     .line 66
     .line 67
     .line 68
-    :cond_43
+    :cond_0
     return-void
 
     .line 69
-    :pswitch_44
+    :pswitch_4
     sget v0, Lcom/mixplorer/activities/CodeEditorActivity;->_d:I
 
     .line 70
@@ -205,12 +205,12 @@
     return-void
 
     .line 81
-    :pswitch_50
+    :pswitch_5
     sget v0, Lcom/mixplorer/activities/CodeEditorActivity;->_d:I
 
     .line 82
     .line 83
-    :try_start_52
+    :try_start_0
     invoke-virtual {v3}, Lcom/mixplorer/activities/CodeEditorActivity;->Run()Llibs/aw;
 
     .line 84
@@ -227,7 +227,7 @@
 
     .line 90
     .line 91
-    if-eqz v4, :cond_6a
+    if-eqz v4, :cond_1
 
     .line 92
     .line 93
@@ -235,7 +235,7 @@
 
     .line 94
     .line 95
-    if-eqz v3, :cond_6a
+    if-eqz v3, :cond_1
 
     .line 96
     .line 97
@@ -251,26 +251,26 @@
     move-result v3
 
     .line 103
-    if-le v3, v1, :cond_6a
+    if-le v3, v1, :cond_1
 
     .line 104
     .line 105
     const/4 v3, 0x2
 
     .line 106
-    goto :goto_6b
+    goto :goto_0
 
     .line 107
-    :cond_6a
+    :cond_1
     const/4 v3, 0x1
 
     .line 108
-    :goto_6b
+    :goto_0
     iget v4, v0, Llibs/aw;->e:I
 
     .line 109
     .line 110
-    if-eq v3, v4, :cond_85
+    if-eq v3, v4, :cond_2
 
     .line 111
     .line 112
@@ -279,16 +279,16 @@
     .line 113
     .line 114
     invoke-virtual {v0}, Llibs/ja2;->h()V
-    :try_end_74
-    .catchall {:try_start_52 .. :try_end_74} :catchall_75
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 115
     .line 116
     .line 117
-    goto :goto_85
+    goto :goto_1
 
     .line 118
-    :catchall_75
+    :catchall_0
     move-exception v0
 
     .line 119
@@ -321,18 +321,18 @@
     .line 132
     .line 133
     .line 134
-    :cond_85
-    :goto_85
+    :cond_2
+    :goto_1
     return-void
 
     .line 135
-    :pswitch_data_86
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_50
-        :pswitch_44
-        :pswitch_3a
-        :pswitch_31
-        :pswitch_1e
-        :pswitch_f
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

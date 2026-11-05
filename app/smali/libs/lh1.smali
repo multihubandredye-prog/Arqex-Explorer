@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 1
     const/16 v0, 0xc
@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public final d(Ljava/security/Key;)Z
-    .registers 2
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -41,7 +41,7 @@
 .end method
 
 .method public final f(Ljava/security/PublicKey;Llibs/uj;)V
-    .registers 5
+    .locals 2
 
     .line 1
     new-instance p2, Ljava/lang/UnsupportedOperationException;
@@ -83,7 +83,7 @@
 .end method
 
 .method public final g(Llibs/tj;)Ljava/security/PublicKey;
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -129,7 +129,7 @@
 .end method
 
 .method public final h(Ljava/security/PublicKey;Llibs/uj;)V
-    .registers 5
+    .locals 2
 
     .line 1
     new-instance p2, Ljava/lang/UnsupportedOperationException;

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/gr3;->a:Ljava/lang/Object;
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public a(JLjava/lang/String;)Llibs/nr0;
-    .registers 11
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/gr3;->a:Ljava/lang/Object;
@@ -54,7 +54,7 @@
 
     .line 12
     .line 13
-    if-nez p3, :cond_10
+    if-nez p3, :cond_0
 
     .line 14
     .line 15
@@ -64,7 +64,7 @@
     return-object p1
 
     .line 17
-    :cond_10
+    :cond_0
     new-instance v0, Llibs/nr0;
 
     .line 18

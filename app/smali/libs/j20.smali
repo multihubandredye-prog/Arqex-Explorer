@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/t20;
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final engineGenerateKey()Ljavax/crypto/SecretKey;
-    .registers 5
+    .locals 4
 
     .line 1
     iget-boolean v0, p0, Llibs/be;->d:Z
@@ -50,7 +50,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -88,7 +88,7 @@
 
     .line 24
     .line 25
-    :cond_18
+    :cond_0
     new-instance v0, Ljavax/crypto/spec/SecretKeySpec;
 
     .line 26

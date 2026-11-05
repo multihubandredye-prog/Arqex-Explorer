@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,24 +33,24 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 7
+    .locals 5
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     .line 3
     .line 4
     return v0
 
     .line 5
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
     .line 6
-    if-eqz p1, :cond_37
+    if-eqz p1, :cond_6
 
     .line 7
     .line 8
@@ -66,14 +66,14 @@
     move-result-object v3
 
     .line 14
-    if-eq v2, v3, :cond_10
+    if-eq v2, v3, :cond_1
 
     .line 15
     .line 16
-    goto :goto_37
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_1
     check-cast p1, Llibs/yx3;
 
     .line 18
@@ -90,35 +90,35 @@
 
     .line 24
     .line 25
-    if-nez v3, :cond_1d
+    if-nez v3, :cond_2
 
     .line 26
     .line 27
-    if-eqz p1, :cond_1d
+    if-eqz p1, :cond_2
 
     .line 28
     .line 29
     return v1
 
     .line 30
-    :cond_1d
+    :cond_2
     iget-object v4, p0, Llibs/yx3;->b:Ljava/lang/String;
 
     .line 31
     .line 32
-    if-nez v4, :cond_24
+    if-nez v4, :cond_3
 
     .line 33
     .line 34
-    if-eqz v2, :cond_24
+    if-eqz v2, :cond_3
 
     .line 35
     .line 36
     return v1
 
     .line 37
-    :cond_24
-    if-eqz v3, :cond_2d
+    :cond_3
+    if-eqz v3, :cond_4
 
     .line 38
     .line 39
@@ -130,15 +130,15 @@
     move-result p1
 
     .line 43
-    if-nez p1, :cond_2d
+    if-nez p1, :cond_4
 
     .line 44
     .line 45
     return v1
 
     .line 46
-    :cond_2d
-    if-eqz v4, :cond_36
+    :cond_4
+    if-eqz v4, :cond_5
 
     .line 47
     .line 48
@@ -150,24 +150,24 @@
     move-result p1
 
     .line 52
-    if-nez p1, :cond_36
+    if-nez p1, :cond_5
 
     .line 53
     .line 54
     return v1
 
     .line 55
-    :cond_36
+    :cond_5
     return v0
 
     .line 56
-    :cond_37
-    :goto_37
+    :cond_6
+    :goto_0
     return v1
 .end method
 
 .method public final hashCode()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/yx3;->a:Ljava/lang/String;

@@ -13,10 +13,10 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
-    packed-switch p1, :pswitch_data_12
+    packed-switch p1, :pswitch_data_0
 
     .line 2
     .line 3
@@ -44,7 +44,7 @@
     return-void
 
     .line 15
-    :pswitch_e
+    :pswitch_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 16
@@ -53,29 +53,29 @@
     return-void
 
     .line 19
-    :pswitch_data_12
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_e
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static k(Ljava/util/Set;Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     .line 1
-    if-ne p0, p1, :cond_3
+    if-ne p0, p1, :cond_0
 
     .line 2
     .line 3
-    goto :goto_19
+    goto :goto_0
 
     .line 4
-    :cond_3
+    :cond_0
     instance-of v0, p1, Ljava/util/Set;
 
     .line 5
     .line 6
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_1
 
     .line 7
     .line 8
@@ -83,7 +83,7 @@
 
     .line 9
     .line 10
-    :try_start_9
+    :try_start_0
     invoke-interface {p0}, Ljava/util/Set;->size()I
 
     .line 11
@@ -100,7 +100,7 @@
     move-result v1
 
     .line 18
-    if-ne v0, v1, :cond_1b
+    if-ne v0, v1, :cond_1
 
     .line 19
     .line 20
@@ -110,24 +110,24 @@
     .line 22
     .line 23
     move-result p0
-    :try_end_17
-    .catch Ljava/lang/NullPointerException; {:try_start_9 .. :try_end_17} :catch_1b
-    .catch Ljava/lang/ClassCastException; {:try_start_9 .. :try_end_17} :catch_1b
+    :try_end_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 24
-    if-eqz p0, :cond_1b
+    if-eqz p0, :cond_1
 
     .line 25
     .line 26
-    :goto_19
+    :goto_0
     const/4 p0, 0x1
 
     .line 27
     return p0
 
     .line 28
-    :catch_1b
-    :cond_1b
+    :catch_0
+    :cond_1
     const/4 p0, 0x0
 
     .line 29
@@ -137,7 +137,7 @@
 
 # virtual methods
 .method public a()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/qw0;->Y:Ljava/lang/Object;
@@ -148,15 +148,15 @@
 
     .line 4
     .line 5
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
     return-void
 
     .line 8
-    :cond_7
-    :try_start_7
+    :cond_0
+    :try_start_0
     iget-object v1, p0, Llibs/qw0;->X:Ljava/lang/Object;
 
     .line 9
@@ -195,12 +195,12 @@
 
     .line 27
     iput-object v0, p0, Llibs/qw0;->Y:Ljava/lang/Object;
-    :try_end_1c
-    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_1c} :catch_1c
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 28
     .line 29
-    :catch_1c
+    :catch_0
     return-void
 .end method
 
@@ -211,7 +211,7 @@
 .end method
 
 .method public d()Ljava/util/Map;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -246,7 +246,7 @@
 .end method
 
 .method public j(ILjava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 1
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -266,7 +266,7 @@
 .end method
 
 .method public l()Llibs/bp1;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/qw0;->X:Ljava/lang/Object;
@@ -277,7 +277,7 @@
 
     .line 4
     .line 5
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -297,12 +297,12 @@
 
     .line 14
     .line 15
-    :cond_e
+    :cond_0
     return-object v0
 .end method
 
 .method public m()Llibs/bp1;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/qw0;->Y:Ljava/lang/Object;
@@ -313,7 +313,7 @@
 
     .line 4
     .line 5
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -333,12 +333,12 @@
 
     .line 14
     .line 15
-    :cond_e
+    :cond_0
     return-object v0
 .end method
 
 .method public n()Llibs/dp1;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/qw0;->Z:Ljava/lang/Object;
@@ -349,7 +349,7 @@
 
     .line 4
     .line 5
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -366,12 +366,12 @@
 
     .line 13
     .line 14
-    :cond_d
+    :cond_0
     return-object v0
 .end method
 
 .method public p(Ljava/lang/String;Ljava/net/InetAddress;)Z
-    .registers 7
+    .locals 4
 
     .line 1
     :try_start_0
@@ -475,8 +475,8 @@
     .line 51
     .line 52
     invoke-virtual {p2, v0, p1}, Ljava/net/MulticastSocket;->joinGroup(Ljava/net/SocketAddress;Ljava/net/NetworkInterface;)V
-    :try_end_36
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_36} :catch_37
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 53
     .line 54
@@ -484,7 +484,7 @@
     return v1
 
     .line 56
-    :catch_37
+    :catch_0
     move-exception p1
 
     .line 57
@@ -500,7 +500,7 @@
 .end method
 
 .method public q()Llibs/dj;
-    .registers 7
+    .locals 6
 
     .line 1
     const/16 v0, 0x400
@@ -532,7 +532,7 @@
 
     .line 15
     .line 16
-    if-eqz v0, :cond_49
+    if-eqz v0, :cond_3
 
     .line 17
     .line 18
@@ -544,14 +544,14 @@
 
     .line 21
     .line 22
-    if-nez v3, :cond_18
+    if-nez v3, :cond_0
 
     .line 23
     .line 24
-    goto :goto_49
+    goto :goto_0
 
     .line 25
-    :cond_18
+    :cond_0
     invoke-virtual {v0}, Ljava/net/InetSocketAddress;->getAddress()Ljava/net/InetAddress;
 
     .line 26
@@ -576,7 +576,7 @@
     move-result-object v3
 
     .line 37
-    :cond_24
+    :cond_1
     invoke-interface {v3}, Ljava/util/Enumeration;->hasMoreElements()Z
 
     .line 38
@@ -585,7 +585,7 @@
     move-result v4
 
     .line 41
-    if-eqz v4, :cond_49
+    if-eqz v4, :cond_3
 
     .line 42
     .line 43
@@ -605,7 +605,7 @@
 
     .line 50
     .line 51
-    if-eqz v5, :cond_3d
+    if-eqz v5, :cond_2
 
     .line 52
     .line 53
@@ -613,7 +613,7 @@
 
     .line 54
     .line 55
-    if-eqz v5, :cond_3d
+    if-eqz v5, :cond_2
 
     .line 56
     .line 57
@@ -625,15 +625,15 @@
     move-result-object v2
 
     .line 61
-    goto :goto_49
+    goto :goto_0
 
     .line 62
-    :cond_3d
+    :cond_2
     instance-of v5, v0, Ljava/net/Inet4Address;
 
     .line 63
     .line 64
-    if-eqz v5, :cond_24
+    if-eqz v5, :cond_1
 
     .line 65
     .line 66
@@ -641,7 +641,7 @@
 
     .line 67
     .line 68
-    if-eqz v5, :cond_24
+    if-eqz v5, :cond_1
 
     .line 69
     .line 70
@@ -653,8 +653,8 @@
     move-result-object v2
 
     .line 74
-    :cond_49
-    :goto_49
+    :cond_3
+    :goto_0
     iput-object v2, v1, Llibs/dj;->b:Ljava/lang/Object;
 
     .line 75
@@ -667,7 +667,7 @@
 
     .line 79
     .line 80
-    if-eqz v0, :cond_5c
+    if-eqz v0, :cond_4
 
     .line 81
     .line 82
@@ -692,7 +692,7 @@
     return-object v1
 
     .line 93
-    :cond_5c
+    :cond_4
     const-string v0, "Multicast socket has already been closed."
 
     .line 94
@@ -709,7 +709,7 @@
 .end method
 
 .method public r(I[Ljava/lang/Object;)[Ljava/lang/Object;
-    .registers 6
+    .locals 3
 
     .line 1
     invoke-virtual {p0}, Llibs/qw0;->e()I
@@ -723,7 +723,7 @@
     array-length v1, p2
 
     .line 6
-    if-ge v1, v0, :cond_15
+    if-ge v1, v0, :cond_0
 
     .line 7
     .line 8
@@ -755,12 +755,12 @@
 
     .line 21
     .line 22
-    :cond_15
+    :cond_0
     const/4 v1, 0x0
 
     .line 23
-    :goto_16
-    if-ge v1, v0, :cond_21
+    :goto_0
+    if-ge v1, v0, :cond_1
 
     .line 24
     .line 25
@@ -780,14 +780,14 @@
 
     .line 32
     .line 33
-    goto :goto_16
+    goto :goto_0
 
     .line 34
-    :cond_21
+    :cond_1
     array-length p1, p2
 
     .line 35
-    if-le p1, v0, :cond_27
+    if-le p1, v0, :cond_2
 
     .line 36
     .line 37
@@ -798,6 +798,6 @@
 
     .line 39
     .line 40
-    :cond_27
+    :cond_2
     return-object p2
 .end method

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/util/LinkedHashMap;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final clear()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Ljava/util/LinkedHashMap;->clear()V
@@ -49,7 +49,7 @@
 .end method
 
 .method public final get(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-super {p0, p1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -68,7 +68,7 @@
 .end method
 
 .method public final put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
 
     .line 1
     check-cast p1, Ljava/lang/Long;
@@ -79,7 +79,7 @@
 
     .line 4
     .line 5
-    if-eqz p2, :cond_f
+    if-eqz p2, :cond_0
 
     .line 6
     .line 7
@@ -102,7 +102,7 @@
 
     .line 15
     .line 16
-    :cond_f
+    :cond_0
     invoke-super {p0, p1, p2}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 17
@@ -119,7 +119,7 @@
 .end method
 
 .method public final remove(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-super {p0, p1}, Ljava/util/LinkedHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -134,7 +134,7 @@
 
     .line 6
     .line 7
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_0
 
     .line 8
     .line 9
@@ -157,12 +157,12 @@
 
     .line 17
     .line 18
-    :cond_11
+    :cond_0
     return-object p1
 .end method
 
 .method public final removeEldestEntry(Ljava/util/Map$Entry;)Z
-    .registers 7
+    .locals 5
 
     .line 1
     iget v0, p0, Llibs/wn;->X:I
@@ -176,7 +176,7 @@
     const/4 v2, 0x0
 
     .line 6
-    if-le v0, v1, :cond_5a
+    if-le v0, v1, :cond_1
 
     .line 7
     .line 8
@@ -319,7 +319,7 @@
 
     .line 78
     .line 79
-    if-eqz p1, :cond_59
+    if-eqz p1, :cond_0
 
     .line 80
     .line 81
@@ -342,10 +342,10 @@
 
     .line 89
     .line 90
-    :cond_59
+    :cond_0
     return v1
 
     .line 91
-    :cond_5a
+    :cond_1
     return v2
 .end method

@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ck3;Llibs/zf3;)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -38,7 +38,7 @@
 .end method
 
 .method public constructor <init>(Llibs/sx3;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -55,14 +55,14 @@
 
 # virtual methods
 .method public c()V
-    .registers 6
+    .locals 5
 
     .line 1
     iget-byte v0, p0, Llibs/mj0;->e:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_4c
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -70,7 +70,7 @@
     return-void
 
     .line 7
-    :pswitch_6
+    :pswitch_0
     iget-object v0, p0, Llibs/xs;->b:Llibs/xs;
 
     .line 8
@@ -115,8 +115,8 @@
     const/4 v2, 0x0
 
     .line 29
-    :goto_1c
-    if-ge v2, v1, :cond_38
+    :goto_0
+    if-ge v2, v1, :cond_0
 
     .line 30
     .line 31
@@ -144,7 +144,7 @@
 
     .line 42
     .line 43
-    if-ltz v3, :cond_38
+    if-ltz v3, :cond_0
 
     .line 44
     .line 45
@@ -169,10 +169,10 @@
     .line 54
     .line 55
     .line 56
-    goto :goto_1c
+    goto :goto_0
 
     .line 57
-    :cond_38
+    :cond_0
     iget-object v0, p0, Llibs/xs;->c:Llibs/qx0;
 
     .line 58
@@ -215,21 +215,21 @@
     return-void
 
     .line 77
-    :pswitch_data_4c
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_6
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final g(Llibs/f1;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/mj0;->e:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_3a
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -250,7 +250,7 @@
     move-result-object v0
 
     .line 14
-    :goto_d
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 15
@@ -259,7 +259,7 @@
     move-result v1
 
     .line 18
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_0
 
     .line 19
     .line 20
@@ -288,14 +288,14 @@
     .line 31
     .line 32
     .line 33
-    goto :goto_d
+    goto :goto_0
 
     .line 34
-    :cond_21
+    :cond_0
     return-void
 
     .line 35
-    :pswitch_22
+    :pswitch_0
     iget-object v0, p0, Llibs/mj0;->f:Ljava/lang/Object;
 
     .line 36
@@ -344,8 +344,8 @@
     return-void
 
     .line 59
-    :pswitch_data_3a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_22
+        :pswitch_0
     .end packed-switch
 .end method

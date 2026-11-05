@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/OutputStream;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/io/Writer;-><init>()V
@@ -42,13 +42,13 @@
 
 # virtual methods
 .method public final c(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     new-instance v0, Ljava/io/OutputStreamWriter;
 
     .line 3
@@ -72,26 +72,26 @@
     return-void
 
     .line 13
-    :catchall_c
+    :catchall_0
     move-exception p1
 
     .line 14
     monitor-exit p0
-    :try_end_e
-    .catchall {:try_start_1 .. :try_end_e} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 15
     throw p1
 .end method
 
 .method public final close()V
-    .registers 2
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Llibs/yy1;->Y:Ljava/io/OutputStreamWriter;
 
     .line 3
@@ -107,26 +107,26 @@
     return-void
 
     .line 9
-    :catchall_8
+    :catchall_0
     move-exception v0
 
     .line 10
     monitor-exit p0
-    :try_end_a
-    .catchall {:try_start_1 .. :try_end_a} :catchall_8
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 11
     throw v0
 .end method
 
 .method public final flush()V
-    .registers 2
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Llibs/yy1;->Y:Ljava/io/OutputStreamWriter;
 
     .line 3
@@ -142,26 +142,26 @@
     return-void
 
     .line 9
-    :catchall_8
+    :catchall_0
     move-exception v0
 
     .line 10
     monitor-exit p0
-    :try_end_a
-    .catchall {:try_start_1 .. :try_end_a} :catchall_8
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 11
     throw v0
 .end method
 
 .method public final write([CII)V
-    .registers 5
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Llibs/yy1;->Y:Ljava/io/OutputStreamWriter;
 
     .line 3
@@ -177,13 +177,13 @@
     return-void
 
     .line 9
-    :catchall_8
+    :catchall_0
     move-exception p1
 
     .line 10
     monitor-exit p0
-    :try_end_a
-    .catchall {:try_start_1 .. :try_end_a} :catchall_8
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 11
     throw p1

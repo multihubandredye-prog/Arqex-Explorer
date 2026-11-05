@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(ILjava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 15
     invoke-direct {p0, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
@@ -21,14 +21,14 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/Exception;)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/16 v0, 0x190
 
     .line 2
     .line 3
-    if-nez p1, :cond_8
+    if-nez p1, :cond_0
 
     .line 4
     .line 5
@@ -40,7 +40,7 @@
     move-result-object p1
 
     .line 9
-    :cond_8
+    :cond_0
     invoke-direct {p0, p1, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 10

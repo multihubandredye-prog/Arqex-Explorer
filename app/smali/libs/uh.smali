@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/BrowseActivity;Landroid/content/Intent;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/uh;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 10
+    .locals 9
 
     .line 1
     iget-byte v0, p0, Llibs/uh;->X:B
@@ -67,7 +67,7 @@
     const/4 v5, 0x1
 
     .line 11
-    packed-switch v0, :pswitch_data_b2
+    packed-switch v0, :pswitch_data_0
 
     .line 12
     .line 13
@@ -84,7 +84,7 @@
 
     .line 19
     .line 20
-    :try_start_13
+    :try_start_0
     const-string v7, "copy shared files\u2026"
 
     .line 21
@@ -110,7 +110,7 @@
     move-result v8
 
     .line 33
-    if-eqz v8, :cond_28
+    if-eqz v8, :cond_0
 
     .line 34
     .line 35
@@ -119,17 +119,17 @@
     .line 36
     .line 37
     .line 38
-    goto :goto_4d
+    goto :goto_1
 
     .line 39
-    :catchall_26
+    :catchall_0
     move-exception v0
 
     .line 40
-    goto :goto_38
+    goto :goto_0
 
     .line 41
-    :cond_28
+    :cond_0
     invoke-virtual {v2, v0, v4}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     .line 42
@@ -138,7 +138,7 @@
     move-result v6
 
     .line 45
-    if-eqz v6, :cond_32
+    if-eqz v6, :cond_1
 
     .line 46
     .line 47
@@ -147,25 +147,25 @@
     .line 48
     .line 49
     .line 50
-    goto :goto_4d
+    goto :goto_1
 
     .line 51
-    :cond_32
+    :cond_1
     const-string v0, "extra_copy_to"
 
     .line 52
     .line 53
     invoke-virtual {v3, v7, v0, v2, v5}, Lcom/mixplorer/activities/BrowseActivity;->Wait(Ljava/util/HashSet;Ljava/lang/String;Landroid/content/Intent;Z)V
-    :try_end_37
-    .catchall {:try_start_13 .. :try_end_37} :catchall_26
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 54
     .line 55
     .line 56
-    goto :goto_4d
+    goto :goto_1
 
     .line 57
-    :goto_38
+    :goto_0
     invoke-static {v0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 58
@@ -205,16 +205,16 @@
     .line 76
     .line 77
     .line 78
-    :goto_4d
+    :goto_1
     return-void
 
     .line 79
-    :pswitch_4e
+    :pswitch_0
     sget-object v0, Lcom/mixplorer/activities/BrowseActivity;->Il:Ljava/lang/ThreadGroup;
 
     .line 80
     .line 81
-    :try_start_50
+    :try_start_1
     invoke-static {v2}, Llibs/sw1;->i(Landroid/content/Intent;)Landroid/net/Uri;
 
     .line 82
@@ -232,7 +232,7 @@
     .line 88
     .line 89
     .line 90
-    if-nez v0, :cond_87
+    if-nez v0, :cond_4
 
     .line 91
     .line 92
@@ -244,7 +244,7 @@
     move-result-object v0
 
     .line 96
-    if-nez v0, :cond_68
+    if-nez v0, :cond_2
 
     .line 97
     .line 98
@@ -256,19 +256,19 @@
     move-result-object v0
 
     .line 102
-    goto :goto_68
+    goto :goto_2
 
     .line 103
-    :catchall_66
+    :catchall_1
     move-exception v0
 
     .line 104
-    goto :goto_9c
+    goto :goto_4
 
     .line 105
-    :cond_68
-    :goto_68
-    if-eqz v0, :cond_92
+    :cond_2
+    :goto_2
+    if-eqz v0, :cond_5
 
     .line 106
     .line 107
@@ -283,9 +283,9 @@
     const/4 v7, 0x0
 
     .line 112
-    :cond_6f
-    :goto_6f
-    if-ge v7, v2, :cond_92
+    :cond_3
+    :goto_3
+    if-ge v7, v2, :cond_5
 
     .line 113
     .line 114
@@ -305,7 +305,7 @@
 
     .line 121
     .line 122
-    if-eqz v8, :cond_6f
+    if-eqz v8, :cond_3
 
     .line 123
     .line 124
@@ -330,10 +330,10 @@
     .line 133
     .line 134
     .line 135
-    goto :goto_6f
+    goto :goto_3
 
     .line 136
-    :cond_87
+    :cond_4
     invoke-virtual {v0}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
     .line 137
@@ -355,7 +355,7 @@
     .line 145
     .line 146
     .line 147
-    :cond_92
+    :cond_5
     new-instance v0, Llibs/j6;
 
     .line 148
@@ -369,16 +369,16 @@
     .line 152
     .line 153
     invoke-virtual {v3, v0}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
-    :try_end_9b
-    .catchall {:try_start_50 .. :try_end_9b} :catchall_66
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 154
     .line 155
     .line 156
-    goto :goto_b1
+    goto :goto_5
 
     .line 157
-    :goto_9c
+    :goto_4
     invoke-static {v0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 158
@@ -418,12 +418,12 @@
     .line 176
     .line 177
     .line 178
-    :goto_b1
+    :goto_5
     return-void
 
     .line 179
-    :pswitch_data_b2
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_4e
+        :pswitch_0
     .end packed-switch
 .end method

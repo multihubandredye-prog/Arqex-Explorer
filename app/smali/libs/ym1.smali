@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/mixplorer/activities/LocalizeActivity;Landroid/content/Context;I)V
-    .registers 7
+    .locals 3
 
     .line 1
     iput-object p1, p0, Llibs/ym1;->Pi:Lcom/mixplorer/activities/LocalizeActivity;
@@ -176,7 +176,7 @@
 
     .line 80
     .line 81
-    if-eqz v0, :cond_60
+    if-eqz v0, :cond_0
 
     .line 82
     .line 83
@@ -184,7 +184,7 @@
 
     .line 84
     .line 85
-    if-eqz v0, :cond_60
+    if-eqz v0, :cond_0
 
     .line 86
     .line 87
@@ -203,34 +203,34 @@
     array-length v1, p2
 
     .line 94
-    if-ne v0, v1, :cond_60
+    if-ne v0, v1, :cond_0
 
     .line 95
     .line 96
-    goto :goto_61
+    goto :goto_0
 
     .line 97
-    :cond_60
+    :cond_0
     const/4 p2, 0x0
 
     .line 98
-    :goto_61
-    if-eqz p2, :cond_7c
+    :goto_0
+    if-eqz p2, :cond_1
 
     .line 99
     .line 100
     array-length v0, p2
 
     .line 101
-    if-gt v0, p3, :cond_7c
+    if-gt v0, p3, :cond_1
 
     .line 102
     .line 103
     const/4 v0, 0x0
 
     .line 104
-    :goto_67
-    if-ge v0, p3, :cond_7c
+    :goto_1
+    if-ge v0, p3, :cond_1
 
     .line 105
     .line 106
@@ -268,22 +268,22 @@
 
     .line 123
     .line 124
-    goto :goto_67
+    goto :goto_1
 
     .line 125
-    :cond_7c
+    :cond_1
     return-void
 .end method
 
 .method public static a(Landroid/widget/TextView;ZZ)V
-    .registers 5
+    .locals 2
 
     .line 1
     const/16 v0, 0x11
 
     .line 2
     .line 3
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_0
 
     .line 4
     .line 5
@@ -316,7 +316,7 @@
 
     .line 19
     .line 20
-    if-lt p1, v0, :cond_3b
+    if-lt p1, v0, :cond_2
 
     .line 21
     .line 22
@@ -331,7 +331,7 @@
     return-void
 
     .line 27
-    :cond_1a
+    :cond_0
     const p1, 0x800003
 
     .line 28
@@ -366,7 +366,7 @@
 
     .line 44
     .line 45
-    if-lt p1, v0, :cond_32
+    if-lt p1, v0, :cond_1
 
     .line 46
     .line 47
@@ -378,8 +378,8 @@
     .line 49
     .line 50
     .line 51
-    :cond_32
-    if-eqz p2, :cond_3b
+    :cond_1
+    if-eqz p2, :cond_2
 
     .line 52
     .line 53
@@ -396,6 +396,6 @@
     .line 58
     .line 59
     .line 60
-    :cond_3b
+    :cond_2
     return-void
 .end method

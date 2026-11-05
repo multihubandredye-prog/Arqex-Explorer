@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/a;Llibs/r31;Ljava/util/ArrayList;B)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-byte p4, p0, Llibs/oc;->X:B
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 6
+    .locals 5
 
     .line 1
     iget-byte v0, p0, Llibs/oc;->X:B
@@ -67,7 +67,7 @@
 
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_1a
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
@@ -80,7 +80,7 @@
     return-void
 
     .line 16
-    :pswitch_f
+    :pswitch_0
     new-instance v0, Llibs/oc;
 
     .line 17
@@ -104,8 +104,8 @@
     nop
 
     .line 27
-    :pswitch_data_1a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_f
+        :pswitch_0
     .end packed-switch
 .end method

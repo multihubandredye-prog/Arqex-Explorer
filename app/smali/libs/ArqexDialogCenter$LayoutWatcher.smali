@@ -12,7 +12,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/app/Dialog;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -24,14 +24,14 @@
 
 # virtual methods
 .method public onLayoutChange(Landroid/view/View;IIIIIIII)V
-    .registers 11
+    .locals 1
 
     iget-object v0, p0, Llibs/ArqexDialogCenter$LayoutWatcher;->dialog:Landroid/app/Dialog;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     invoke-static {v0}, Llibs/ArqexDialogCenter;->center(Landroid/app/Dialog;)V
 
-    :cond_7
+    :cond_0
     return-void
 .end method

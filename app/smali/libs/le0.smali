@@ -38,7 +38,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/s20;Ljava/lang/String;Ljava/util/ArrayList;ZJLjava/lang/String;JJLjava/lang/String;ZZZLlibs/l21;Z)V
-    .registers 18
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/le0;->Phi:Llibs/s20;
@@ -116,14 +116,14 @@
 
 # virtual methods
 .method public final h()V
-    .registers 1
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final i()V
-    .registers 19
+    .locals 18
 
     .line 1
     move-object/from16 v0, p0

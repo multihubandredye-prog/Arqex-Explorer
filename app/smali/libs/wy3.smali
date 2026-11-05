@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/nio/charset/Charset;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -62,7 +62,7 @@
 
 # virtual methods
 .method public final clone()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Ljava/lang/Object;->clone()Ljava/lang/Object;

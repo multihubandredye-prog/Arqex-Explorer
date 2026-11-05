@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/e;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/s9;->b:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final a(I[B)V
-    .registers 5
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
@@ -55,7 +55,7 @@
 .end method
 
 .method public final b(I[B)[B
-    .registers 9
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/s9;->a:Llibs/e;
@@ -95,7 +95,7 @@
 .end method
 
 .method public final c(I[B)[B
-    .registers 9
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/s9;->a:Llibs/e;
@@ -134,10 +134,10 @@
     move-result p1
 
     .line 17
-    :try_start_10
+    :try_start_0
     invoke-interface {v0, p1, v5}, Llibs/e;->c(I[B)I
-    :try_end_13
-    .catch Llibs/qb1; {:try_start_10 .. :try_end_13} :catch_14
+    :try_end_0
+    .catch Llibs/qb1; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 18
     .line 19
@@ -145,7 +145,7 @@
     return-object v5
 
     .line 21
-    :catch_14
+    :catch_0
     move-exception v0
 
     .line 22
@@ -165,7 +165,7 @@
 .end method
 
 .method public final d(I[BLlibs/js0;)V
-    .registers 10
+    .locals 6
 
     .line 1
     const/4 v0, 0x0
@@ -174,18 +174,18 @@
     const/4 v1, 0x1
 
     .line 3
-    if-ne p1, v1, :cond_5
+    if-ne p1, v1, :cond_0
 
     .line 4
     .line 5
-    goto :goto_6
+    goto :goto_0
 
     .line 6
-    :cond_5
+    :cond_0
     const/4 v1, 0x0
 
     .line 7
-    :goto_6
+    :goto_0
     iget-byte p1, p0, Llibs/s9;->b:B
 
     .line 8
@@ -197,7 +197,7 @@
     const/4 v3, 0x0
 
     .line 12
-    packed-switch p1, :pswitch_data_44
+    packed-switch p1, :pswitch_data_0
 
     .line 13
     .line 14
@@ -206,17 +206,17 @@
 
     .line 16
     .line 17
-    if-nez p2, :cond_14
+    if-nez p2, :cond_1
 
     .line 18
     .line 19
     move-object v4, v3
 
     .line 20
-    goto :goto_1a
+    goto :goto_1
 
     .line 21
-    :cond_14
+    :cond_1
     new-instance v4, Llibs/hh1;
 
     .line 22
@@ -229,7 +229,7 @@
     .line 25
     .line 26
     .line 27
-    :goto_1a
+    :goto_1
     iget-object p2, p3, Llibs/js0;->X:[B
 
     .line 28
@@ -251,25 +251,25 @@
     .line 36
     .line 37
     .line 38
-    goto :goto_3d
+    goto :goto_3
 
     .line 39
-    :pswitch_26
+    :pswitch_0
     new-instance p1, Llibs/g;
 
     .line 40
     .line 41
-    if-nez p2, :cond_2c
+    if-nez p2, :cond_2
 
     .line 42
     .line 43
     move-object v4, v3
 
     .line 44
-    goto :goto_32
+    goto :goto_2
 
     .line 45
-    :cond_2c
+    :cond_2
     new-instance v4, Llibs/hh1;
 
     .line 46
@@ -282,7 +282,7 @@
     .line 49
     .line 50
     .line 51
-    :goto_32
+    :goto_2
     iget-object p2, p3, Llibs/js0;->X:[B
 
     .line 52
@@ -304,7 +304,7 @@
     .line 60
     .line 61
     .line 62
-    :goto_3d
+    :goto_3
     iget-object p2, p0, Llibs/s9;->a:Llibs/e;
 
     .line 63
@@ -320,14 +320,14 @@
     nop
 
     .line 69
-    :pswitch_data_44
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_26
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final reset()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/s9;->a:Llibs/e;

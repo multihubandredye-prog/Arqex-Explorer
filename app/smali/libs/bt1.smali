@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/os/ParcelFileDescriptor;Llibs/rg2;JLlibs/o7;)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Landroid/os/ParcelFileDescriptor;-><init>(Landroid/os/ParcelFileDescriptor;)V
@@ -41,21 +41,21 @@
 
 # virtual methods
 .method public final close()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-boolean v0, p0, Llibs/bt1;->Lambda:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     const/4 v0, 0x1
 
     .line 7
@@ -80,7 +80,7 @@
     move-result v0
 
     .line 18
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_1
 
     .line 19
     .line 20
@@ -88,7 +88,7 @@
 
     .line 21
     .line 22
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_1
 
     .line 23
     .line 24
@@ -96,7 +96,7 @@
 
     .line 25
     .line 26
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_1
 
     .line 27
     .line 28
@@ -109,21 +109,21 @@
     .line 31
     .line 32
     .line 33
-    :cond_20
-    :try_start_20
+    :cond_1
+    :try_start_0
     invoke-super {p0}, Landroid/os/ParcelFileDescriptor;->close()V
-    :try_end_23
-    .catchall {:try_start_20 .. :try_end_23} :catchall_23
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 34
     .line 35
     .line 36
-    :catchall_23
+    :catchall_0
     return-void
 .end method
 
 .method public final getStatSize()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Llibs/bt1;->X:J

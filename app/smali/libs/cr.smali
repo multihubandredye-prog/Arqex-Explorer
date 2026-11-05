@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/Param;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -51,7 +51,7 @@
 
     .line 17
     .line 18
-    if-eqz v2, :cond_17
+    if-eqz v2, :cond_0
 
     .line 19
     .line 20
@@ -62,11 +62,11 @@
 
     .line 22
     .line 23
-    goto :goto_22
+    goto :goto_0
 
     .line 24
-    :cond_17
-    if-eqz v1, :cond_22
+    :cond_0
+    if-eqz v1, :cond_1
 
     .line 25
     .line 26
@@ -87,8 +87,8 @@
     .line 33
     .line 34
     .line 35
-    :cond_22
-    :goto_22
+    :cond_1
+    :goto_0
     iput-object v0, p0, Llibs/cr;->X:Llibs/dr;
 
     .line 36
@@ -141,7 +141,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/Init;

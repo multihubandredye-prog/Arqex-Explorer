@@ -22,7 +22,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/widget/LinearLayout;Lcom/mixplorer/widgets/MiCombo;Landroid/widget/TextView;Lcom/mixplorer/widgets/MiEditText;Lcom/mixplorer/widgets/MiCombo;Lcom/mixplorer/widgets/MiEditText;)V
-    .registers 7
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 10
+    .locals 4
 
     .line 1
     iget-object p1, p0, Llibs/k8;->X:Landroid/widget/LinearLayout;
@@ -77,7 +77,7 @@
     const/4 p5, 0x2
 
     .line 7
-    if-ne p3, p5, :cond_12
+    if-ne p3, p5, :cond_0
 
     .line 8
     .line 9
@@ -89,7 +89,7 @@
     move-result v0
 
     .line 13
-    if-ne v0, p4, :cond_12
+    if-ne v0, p4, :cond_0
 
     .line 14
     .line 15
@@ -98,11 +98,11 @@
     .line 16
     .line 17
     .line 18
-    goto :goto_1d
+    goto :goto_0
 
     .line 19
-    :cond_12
-    if-eq p3, p5, :cond_1d
+    :cond_0
+    if-eq p3, p5, :cond_1
 
     .line 20
     .line 21
@@ -114,7 +114,7 @@
     move-result v0
 
     .line 25
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_1
 
     .line 26
     .line 27
@@ -123,8 +123,8 @@
     .line 28
     .line 29
     .line 30
-    :cond_1d
-    :goto_1d
+    :cond_1
+    :goto_0
     iget-object p1, p0, Llibs/k8;->Y:Lcom/mixplorer/widgets/MiCombo;
 
     .line 31
@@ -139,19 +139,19 @@
     const/4 v2, 0x4
 
     .line 36
-    if-eq p3, p5, :cond_29
+    if-eq p3, p5, :cond_2
 
     .line 37
     .line 38
-    if-eq p3, v2, :cond_29
+    if-eq p3, v2, :cond_2
 
     .line 39
     .line 40
-    if-ne p3, v1, :cond_36
+    if-ne p3, v1, :cond_3
 
     .line 41
     .line 42
-    :cond_29
+    :cond_2
     invoke-virtual {p1}, Landroid/view/View;->getVisibility()I
 
     .line 43
@@ -160,7 +160,7 @@
     move-result v3
 
     .line 46
-    if-nez v3, :cond_36
+    if-nez v3, :cond_3
 
     .line 47
     .line 48
@@ -174,19 +174,19 @@
     .line 52
     .line 53
     .line 54
-    goto :goto_48
+    goto :goto_1
 
     .line 55
-    :cond_36
-    if-eq p3, p5, :cond_48
+    :cond_3
+    if-eq p3, p5, :cond_4
 
     .line 56
     .line 57
-    if-eq p3, v2, :cond_48
+    if-eq p3, v2, :cond_4
 
     .line 58
     .line 59
-    if-eq p3, v1, :cond_48
+    if-eq p3, v1, :cond_4
 
     .line 60
     .line 61
@@ -198,7 +198,7 @@
     move-result v1
 
     .line 65
-    if-ne v1, p4, :cond_48
+    if-ne v1, p4, :cond_4
 
     .line 66
     .line 67
@@ -212,8 +212,8 @@
     .line 71
     .line 72
     .line 73
-    :cond_48
-    :goto_48
+    :cond_4
+    :goto_1
     iget-object v0, p0, Llibs/k8;->Lambda:Lcom/mixplorer/widgets/MiEditText;
 
     .line 74
@@ -222,15 +222,15 @@
 
     .line 76
     .line 77
-    if-eq p3, p5, :cond_50
+    if-eq p3, p5, :cond_5
 
     .line 78
     .line 79
-    if-ne p3, v2, :cond_5d
+    if-ne p3, v2, :cond_6
 
     .line 80
     .line 81
-    :cond_50
+    :cond_5
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
     .line 82
@@ -239,7 +239,7 @@
     move-result v3
 
     .line 85
-    if-nez v3, :cond_5d
+    if-nez v3, :cond_6
 
     .line 86
     .line 87
@@ -253,15 +253,15 @@
     .line 91
     .line 92
     .line 93
-    goto :goto_6d
+    goto :goto_2
 
     .line 94
-    :cond_5d
-    if-eq p3, p5, :cond_6d
+    :cond_6
+    if-eq p3, p5, :cond_7
 
     .line 95
     .line 96
-    if-eq p3, v2, :cond_6d
+    if-eq p3, v2, :cond_7
 
     .line 97
     .line 98
@@ -273,7 +273,7 @@
     move-result p5
 
     .line 102
-    if-ne p5, p4, :cond_6d
+    if-ne p5, p4, :cond_7
 
     .line 103
     .line 104
@@ -287,8 +287,8 @@
     .line 108
     .line 109
     .line 110
-    :cond_6d
-    :goto_6d
+    :cond_7
+    :goto_2
     iget-object p5, p0, Llibs/k8;->Mu:Lcom/mixplorer/widgets/MiCombo;
 
     .line 111
@@ -300,7 +300,7 @@
     const/4 v1, 0x3
 
     .line 115
-    if-ne p3, v1, :cond_81
+    if-ne p3, v1, :cond_8
 
     .line 116
     .line 117
@@ -312,7 +312,7 @@
     move-result v2
 
     .line 121
-    if-ne v2, p4, :cond_81
+    if-ne v2, p4, :cond_8
 
     .line 122
     .line 123
@@ -326,11 +326,11 @@
     .line 127
     .line 128
     .line 129
-    goto :goto_8f
+    goto :goto_3
 
     .line 130
-    :cond_81
-    if-eq p3, v1, :cond_8f
+    :cond_8
+    if-eq p3, v1, :cond_9
 
     .line 131
     .line 132
@@ -342,7 +342,7 @@
     move-result v1
 
     .line 136
-    if-nez v1, :cond_8f
+    if-nez v1, :cond_9
 
     .line 137
     .line 138
@@ -356,8 +356,8 @@
     .line 142
     .line 143
     .line 144
-    :cond_8f
-    :goto_8f
+    :cond_9
+    :goto_3
     invoke-virtual {p1}, Lcom/mixplorer/widgets/MiCombo;->getSelectedIndex()I
 
     .line 145
@@ -369,14 +369,14 @@
     const/4 p5, 0x1
 
     .line 149
-    if-nez p3, :cond_97
+    if-nez p3, :cond_a
 
     .line 150
     .line 151
     const/4 p2, 0x1
 
     .line 152
-    :cond_97
+    :cond_a
     invoke-static {p2}, Llibs/e9;->k(Z)[Llibs/r90;
 
     .line 153

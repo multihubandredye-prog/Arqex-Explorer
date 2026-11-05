@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(IILjava/net/InetAddress;Lorg/conscrypt/SSLParametersImpl;)V
-    .registers 5
+    .locals 0
 
     .line 11
     invoke-direct {p0, p1, p2, p3}, Ljavax/net/ssl/SSLServerSocket;-><init>(IILjava/net/InetAddress;)V
@@ -25,7 +25,7 @@
 .end method
 
 .method public constructor <init>(IILorg/conscrypt/SSLParametersImpl;)V
-    .registers 4
+    .locals 0
 
     .line 9
     invoke-direct {p0, p1, p2}, Ljavax/net/ssl/SSLServerSocket;-><init>(II)V
@@ -37,7 +37,7 @@
 .end method
 
 .method public constructor <init>(ILorg/conscrypt/SSLParametersImpl;)V
-    .registers 3
+    .locals 0
 
     .line 7
     invoke-direct {p0, p1}, Ljavax/net/ssl/SSLServerSocket;-><init>(I)V
@@ -49,7 +49,7 @@
 .end method
 
 .method public constructor <init>(Lorg/conscrypt/SSLParametersImpl;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljavax/net/ssl/SSLServerSocket;-><init>()V
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public accept()Ljava/net/Socket;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-boolean v0, p0, Lorg/conscrypt/ConscryptServerSocket;->useEngineSocket:Z
@@ -78,7 +78,7 @@
 
     .line 4
     .line 5
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -90,10 +90,10 @@
     move-result-object v0
 
     .line 11
-    goto :goto_f
+    goto :goto_0
 
     .line 12
-    :cond_b
+    :cond_0
     invoke-static {v1}, Lorg/conscrypt/Platform;->createFileDescriptorSocket(Lorg/conscrypt/SSLParametersImpl;)Lorg/conscrypt/ConscryptFileDescriptorSocket;
 
     .line 13
@@ -102,7 +102,7 @@
     move-result-object v0
 
     .line 16
-    :goto_f
+    :goto_0
     iget-boolean v1, p0, Lorg/conscrypt/ConscryptServerSocket;->channelIdEnabled:Z
 
     .line 17
@@ -121,7 +121,7 @@
 .end method
 
 .method public getEnableSessionCreation()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptServerSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -140,7 +140,7 @@
 .end method
 
 .method public getEnabledCipherSuites()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptServerSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -159,7 +159,7 @@
 .end method
 
 .method public getEnabledProtocols()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptServerSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -178,7 +178,7 @@
 .end method
 
 .method public getNeedClientAuth()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptServerSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -197,7 +197,7 @@
 .end method
 
 .method public getSupportedCipherSuites()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-static {}, Lorg/conscrypt/NativeCrypto;->getSupportedCipherSuites()[Ljava/lang/String;
@@ -212,7 +212,7 @@
 .end method
 
 .method public getSupportedProtocols()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-static {}, Lorg/conscrypt/NativeCrypto;->getSupportedProtocols()[Ljava/lang/String;
@@ -227,7 +227,7 @@
 .end method
 
 .method public getUseClientMode()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptServerSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -246,7 +246,7 @@
 .end method
 
 .method public getWantClientAuth()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptServerSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -265,7 +265,7 @@
 .end method
 
 .method public isChannelIdEnabled()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Lorg/conscrypt/ConscryptServerSocket;->channelIdEnabled:Z
@@ -276,7 +276,7 @@
 .end method
 
 .method public setChannelIdEnabled(Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-boolean p1, p0, Lorg/conscrypt/ConscryptServerSocket;->channelIdEnabled:Z
@@ -287,7 +287,7 @@
 .end method
 
 .method public setEnableSessionCreation(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptServerSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -303,7 +303,7 @@
 .end method
 
 .method public setEnabledCipherSuites([Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptServerSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -319,7 +319,7 @@
 .end method
 
 .method public setEnabledProtocols([Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptServerSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -335,7 +335,7 @@
 .end method
 
 .method public setNeedClientAuth(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptServerSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -351,7 +351,7 @@
 .end method
 
 .method public setUseClientMode(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptServerSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;
@@ -367,7 +367,7 @@
 .end method
 
 .method public setUseEngineSocket(Z)Lorg/conscrypt/ConscryptServerSocket;
-    .registers 2
+    .locals 0
 
     .line 1
     iput-boolean p1, p0, Lorg/conscrypt/ConscryptServerSocket;->useEngineSocket:Z
@@ -378,7 +378,7 @@
 .end method
 
 .method public setWantClientAuth(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/ConscryptServerSocket;->sslParameters:Lorg/conscrypt/SSLParametersImpl;

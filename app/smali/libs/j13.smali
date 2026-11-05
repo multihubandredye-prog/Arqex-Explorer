@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/xmlpull/v1/XmlPullParser;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final getIndex(Ljava/lang/String;)I
-    .registers 2
+    .locals 0
 
     .line 3
     const/4 p1, -0x1
@@ -39,7 +39,7 @@
 .end method
 
 .method public final getIndex(Ljava/lang/String;Ljava/lang/String;)I
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, -0x1
@@ -49,7 +49,7 @@
 .end method
 
 .method public final getLength()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/j13;->a:Lorg/xmlpull/v1/XmlPullParser;
@@ -68,7 +68,7 @@
 .end method
 
 .method public final getLocalName(I)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/j13;->a:Lorg/xmlpull/v1/XmlPullParser;
@@ -87,7 +87,7 @@
 .end method
 
 .method public final getQName(I)Ljava/lang/String;
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/j13;->a:Lorg/xmlpull/v1/XmlPullParser;
@@ -110,7 +110,7 @@
     move-result-object v2
 
     .line 11
-    if-eqz v2, :cond_25
+    if-eqz v2, :cond_0
 
     .line 12
     .line 13
@@ -161,12 +161,12 @@
     return-object p1
 
     .line 38
-    :cond_25
+    :cond_0
     return-object v1
 .end method
 
 .method public final getType(I)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -176,7 +176,7 @@
 .end method
 
 .method public final getType(Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     .line 4
     const/4 p1, 0x0
@@ -185,7 +185,7 @@
 .end method
 
 .method public final getType(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 0
 
     .line 3
     const/4 p1, 0x0
@@ -194,7 +194,7 @@
 .end method
 
 .method public final getURI(I)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/j13;->a:Lorg/xmlpull/v1/XmlPullParser;
@@ -213,7 +213,7 @@
 .end method
 
 .method public final getValue(I)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/j13;->a:Lorg/xmlpull/v1/XmlPullParser;
@@ -232,7 +232,7 @@
 .end method
 
 .method public final getValue(Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     .line 9
     const/4 p1, 0x0
@@ -241,7 +241,7 @@
 .end method
 
 .method public final getValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 0
 
     .line 8
     const/4 p1, 0x0

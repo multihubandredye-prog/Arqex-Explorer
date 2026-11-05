@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(J[B)V
-    .registers 5
+    .locals 1
 
     .line 1
     const/4 v0, 0x0

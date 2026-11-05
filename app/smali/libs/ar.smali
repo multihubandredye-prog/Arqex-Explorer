@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 117
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,7 +26,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 115
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 .end method
 
 .method public constructor <init>(Llibs/d90;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -67,7 +67,7 @@
 
     .line 12
     .line 13
-    if-ne v1, v2, :cond_71
+    if-ne v1, v2, :cond_4
 
     .line 14
     .line 15
@@ -79,7 +79,7 @@
 
     .line 18
     .line 19
-    if-ne v0, v1, :cond_71
+    if-ne v0, v1, :cond_4
 
     .line 20
     .line 21
@@ -109,7 +109,7 @@
     const/4 v3, 0x0
 
     .line 33
-    if-ne v1, v2, :cond_69
+    if-ne v1, v2, :cond_3
 
     .line 34
     .line 35
@@ -158,7 +158,7 @@
     move-result v1
 
     .line 58
-    if-ltz v1, :cond_63
+    if-ltz v1, :cond_2
 
     .line 59
     .line 60
@@ -183,7 +183,7 @@
     move-result v1
 
     .line 71
-    if-gtz v1, :cond_5d
+    if-gtz v1, :cond_1
 
     .line 72
     .line 73
@@ -211,14 +211,14 @@
     move-result p1
 
     .line 85
-    if-nez p1, :cond_57
+    if-nez p1, :cond_0
 
     .line 86
     .line 87
     return-void
 
     .line 88
-    :cond_57
+    :cond_0
     const-string p1, "X.509 version, bad format"
 
     .line 89
@@ -231,7 +231,7 @@
     throw v3
 
     .line 94
-    :cond_5d
+    :cond_1
     const-string p1, "Integer exceeds maximum valid value"
 
     .line 95
@@ -244,7 +244,7 @@
     throw v3
 
     .line 100
-    :cond_63
+    :cond_2
     const-string p1, "Integer below minimum valid value"
 
     .line 101
@@ -257,7 +257,7 @@
     throw v3
 
     .line 106
-    :cond_69
+    :cond_3
     const-string v0, "DerValue.getInteger, not an int "
 
     .line 107
@@ -274,28 +274,28 @@
     throw v3
 
     .line 114
-    :cond_71
+    :cond_4
     return-void
 .end method
 
 
 # virtual methods
 .method public final a(Llibs/c90;)V
-    .registers 13
+    .locals 11
 
     .line 1
     iget v0, p0, Llibs/ar;->a:I
 
     .line 2
     .line 3
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     new-instance v0, Llibs/c90;
 
     .line 7
@@ -407,7 +407,7 @@
 
     .line 56
     .line 57
-    if-ne v1, v8, :cond_4c
+    if-ne v1, v8, :cond_1
 
     .line 58
     .line 59
@@ -417,8 +417,8 @@
     const/4 v9, 0x0
 
     .line 61
-    :goto_3c
-    if-ge v1, v6, :cond_61
+    :goto_0
+    if-ge v1, v6, :cond_3
 
     .line 62
     .line 63
@@ -426,7 +426,7 @@
 
     .line 64
     .line 65
-    if-ne v10, v8, :cond_61
+    if-ne v10, v8, :cond_3
 
     .line 66
     .line 67
@@ -441,7 +441,7 @@
     and-int/2addr v10, v7
 
     .line 72
-    if-ne v10, v7, :cond_61
+    if-ne v10, v7, :cond_3
 
     .line 73
     .line 74
@@ -449,11 +449,11 @@
 
     .line 75
     .line 76
-    goto :goto_3c
+    goto :goto_0
 
     .line 77
-    :cond_4c
-    if-nez v1, :cond_60
+    :cond_1
+    if-nez v1, :cond_2
 
     .line 78
     .line 79
@@ -463,8 +463,8 @@
     const/4 v9, 0x0
 
     .line 81
-    :goto_50
-    if-ge v1, v6, :cond_61
+    :goto_1
+    if-ge v1, v6, :cond_3
 
     .line 82
     .line 83
@@ -472,7 +472,7 @@
 
     .line 84
     .line 85
-    if-nez v8, :cond_61
+    if-nez v8, :cond_3
 
     .line 86
     .line 87
@@ -487,7 +487,7 @@
     and-int/2addr v8, v7
 
     .line 92
-    if-nez v8, :cond_61
+    if-nez v8, :cond_3
 
     .line 93
     .line 94
@@ -495,14 +495,14 @@
 
     .line 95
     .line 96
-    goto :goto_50
+    goto :goto_1
 
     .line 97
-    :cond_60
+    :cond_2
     const/4 v9, 0x0
 
     .line 98
-    :cond_61
+    :cond_3
     rsub-int/lit8 v1, v9, 0x4
 
     .line 99
@@ -512,8 +512,8 @@
     .line 101
     .line 102
     .line 103
-    :goto_66
-    if-ge v9, v3, :cond_70
+    :goto_2
+    if-ge v9, v3, :cond_4
 
     .line 104
     .line 105
@@ -530,10 +530,10 @@
 
     .line 111
     .line 112
-    goto :goto_66
+    goto :goto_2
 
     .line 113
-    :cond_70
+    :cond_4
     new-instance v1, Llibs/c90;
 
     .line 114
@@ -573,7 +573,7 @@
 .end method
 
 .method public final getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "version"
@@ -584,7 +584,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

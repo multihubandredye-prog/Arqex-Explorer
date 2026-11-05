@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,55 +17,55 @@
 .end method
 
 .method public static closeQuietly(Ljava/io/Closeable;)V
-    .registers 1
+    .locals 0
 
     .line 1
-    if-eqz p0, :cond_8
+    if-eqz p0, :cond_0
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     invoke-interface {p0}, Ljava/io/Closeable;->close()V
-    :try_end_5
-    .catch Ljava/lang/RuntimeException; {:try_start_2 .. :try_end_5} :catch_6
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_5} :catch_5
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 4
     .line 5
     .line 6
-    :catch_5
+    :catch_0
     return-void
 
     .line 7
-    :catch_6
+    :catch_1
     move-exception p0
 
     .line 8
     throw p0
 
     .line 9
-    :cond_8
+    :cond_0
     return-void
 .end method
 
 .method public static closeQuietly(Ljava/net/Socket;)V
-    .registers 1
+    .locals 0
 
-    if-eqz p0, :cond_5
+    if-eqz p0, :cond_0
 
     .line 10
-    :try_start_2
+    :try_start_0
     invoke-virtual {p0}, Ljava/net/Socket;->close()V
-    :try_end_5
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_5} :catch_5
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_5
-    :cond_5
+    :catch_0
+    :cond_0
     return-void
 .end method
 
 .method public static throwInterruptedIoException()V
-    .registers 1
+    .locals 1
 
     .line 1
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;

@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Llibs/wd3;Ljava/lang/String;ILjava/nio/channels/SocketChannel;Llibs/xd3;)V
-    .registers 7
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -47,7 +47,7 @@
 .end method
 
 .method public constructor <init>(Llibs/wd3;Ljava/lang/String;ILjava/nio/channels/SocketChannel;Llibs/xd3;)V
-    .registers 7
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -95,7 +95,7 @@
 
 # virtual methods
 .method public final Context()V
-    .registers 4
+    .locals 3
 
     .line 1
     :try_start_0
@@ -120,8 +120,8 @@
     .line 10
     .line 11
     invoke-virtual {v0, p0, v1}, Llibs/ee3;->b(Llibs/bd3;Ljava/nio/channels/SelectableChannel;)V
-    :try_end_d
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_d} :catch_e
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 12
     .line 13
@@ -129,7 +129,7 @@
     return-void
 
     .line 15
-    :catch_e
+    :catch_0
     move-exception v0
 
     .line 16
@@ -144,7 +144,7 @@
     move-result v1
 
     .line 21
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_0
 
     .line 22
     .line 23
@@ -164,12 +164,12 @@
     .line 29
     .line 30
     .line 31
-    :cond_1e
+    :cond_0
     return-void
 .end method
 
 .method public final Cur()[B
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/as;->a:Llibs/hy;
@@ -220,7 +220,7 @@
     move-result v0
 
     .line 25
-    if-nez v0, :cond_69
+    if-nez v0, :cond_2
 
     .line 26
     .line 27
@@ -238,7 +238,7 @@
     const/4 v1, 0x0
 
     .line 33
-    if-eqz v0, :cond_4d
+    if-eqz v0, :cond_0
 
     .line 34
     .line 35
@@ -321,23 +321,23 @@
     .line 76
     .line 77
     .line 78
-    :cond_4d
-    :try_start_4d
+    :cond_0
+    :try_start_0
     iget-object v0, p0, Llibs/ad3;->u:Ljava/nio/channels/SocketChannel;
 
     .line 79
     .line 80
     invoke-virtual {v0}, Ljava/nio/channels/spi/AbstractInterruptibleChannel;->close()V
-    :try_end_52
-    .catchall {:try_start_4d .. :try_end_52} :catchall_53
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 81
     .line 82
     .line 83
-    goto :goto_62
+    goto :goto_0
 
     .line 84
-    :catchall_53
+    :catchall_0
     move-exception v0
 
     .line 85
@@ -352,7 +352,7 @@
     move-result v2
 
     .line 90
-    if-eqz v2, :cond_62
+    if-eqz v2, :cond_1
 
     .line 91
     .line 92
@@ -369,8 +369,8 @@
     .line 97
     .line 98
     .line 99
-    :cond_62
-    :goto_62
+    :cond_1
+    :goto_0
     const-string v0, "Cannot create channel because access has been denied by forwarding policy"
 
     .line 100
@@ -386,7 +386,7 @@
     return-object v0
 
     .line 106
-    :cond_69
+    :cond_2
     new-instance v0, Llibs/n1;
 
     .line 107
@@ -396,7 +396,7 @@
     .line 109
     .line 110
     .line 111
-    :try_start_6e
+    :try_start_1
     iget-object v1, p0, Llibs/as;->b:Ljava/lang/String;
 
     .line 112
@@ -413,7 +413,7 @@
     move-result v1
 
     .line 119
-    if-nez v1, :cond_85
+    if-nez v1, :cond_3
 
     .line 120
     .line 121
@@ -435,18 +435,18 @@
     .line 129
     .line 130
     .line 131
-    goto :goto_85
+    goto :goto_1
 
     .line 132
-    :catchall_83
+    :catchall_1
     move-exception v1
 
     .line 133
-    goto :goto_b7
+    goto :goto_2
 
     .line 134
-    :cond_85
-    :goto_85
+    :cond_3
+    :goto_1
     iget-object v1, p0, Llibs/ad3;->u:Ljava/nio/channels/SocketChannel;
 
     .line 135
@@ -535,8 +535,8 @@
     .line 178
     .line 179
     move-result-object v1
-    :try_end_b3
-    .catchall {:try_start_6e .. :try_end_b3} :catchall_83
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 180
     invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
@@ -547,7 +547,7 @@
     return-object v1
 
     .line 184
-    :goto_b7
+    :goto_2
     invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
 
     .line 185
@@ -557,7 +557,7 @@
 .end method
 
 .method public final Intent()V
-    .registers 2
+    .locals 1
 
     .line 1
     :try_start_0
@@ -566,18 +566,18 @@
     .line 2
     .line 3
     invoke-virtual {v0}, Ljava/nio/channels/spi/AbstractInterruptibleChannel;->close()V
-    :try_end_5
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_5} :catch_5
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 4
     .line 5
     .line 6
-    :catch_5
+    :catch_0
     return-void
 .end method
 
 .method public final Old()V
-    .registers 4
+    .locals 3
 
     .line 1
     const/4 v0, 0x6
@@ -591,7 +591,7 @@
     move-result v0
 
     .line 6
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
@@ -630,12 +630,12 @@
     .line 23
     .line 24
     .line 25
-    :cond_18
+    :cond_0
     return-void
 .end method
 
 .method public final State([B)[B
-    .registers 7
+    .locals 5
 
     .line 1
     const-string v0, "Failed to read channel request data"
@@ -651,7 +651,7 @@
     .line 6
     .line 7
     .line 8
-    :try_start_7
+    :try_start_0
     sget-object p1, Llibs/gl;->X:Ljava/lang/String;
 
     .line 9
@@ -757,7 +757,7 @@
     move-result-object p1
 
     .line 63
-    if-nez p1, :cond_4b
+    if-nez p1, :cond_0
 
     .line 64
     .line 65
@@ -780,14 +780,14 @@
     throw p1
 
     .line 74
-    :catchall_49
+    :catchall_0
     move-exception p1
 
     .line 75
-    goto :goto_51
+    goto :goto_0
 
     .line 76
-    :cond_4b
+    :cond_0
     new-instance p1, Ljava/lang/ClassCastException;
 
     .line 77
@@ -798,48 +798,48 @@
     .line 80
     .line 81
     throw p1
-    :try_end_51
-    .catchall {:try_start_7 .. :try_end_51} :catchall_49
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 82
-    :goto_51
-    :try_start_51
+    :goto_0
+    :try_start_1
     iget-object v2, p0, Llibs/ad3;->u:Ljava/nio/channels/SocketChannel;
-    :try_end_53
-    .catchall {:try_start_51 .. :try_end_53} :catchall_5a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 83
     .line 84
-    if-nez v2, :cond_56
+    if-nez v2, :cond_1
 
     .line 85
     .line 86
-    goto :goto_5c
+    goto :goto_1
 
     .line 87
-    :cond_56
-    :try_start_56
+    :cond_1
+    :try_start_2
     invoke-interface {v2}, Ljava/io/Closeable;->close()V
-    :try_end_59
-    .catch Ljava/io/IOException; {:try_start_56 .. :try_end_59} :catch_5c
-    .catchall {:try_start_56 .. :try_end_59} :catchall_5a
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 88
     .line 89
     .line 90
-    goto :goto_5c
+    goto :goto_1
 
     .line 91
-    :catchall_5a
+    :catchall_1
     move-exception p1
 
     .line 92
-    goto :goto_73
+    goto :goto_2
 
     .line 93
-    :catch_5c
-    :goto_5c
-    :try_start_5c
+    :catch_0
+    :goto_1
+    :try_start_3
     new-instance v2, Llibs/bs;
 
     .line 94
@@ -883,11 +883,11 @@
     .line 114
     .line 115
     throw v2
-    :try_end_73
-    .catchall {:try_start_5c .. :try_end_73} :catchall_5a
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 116
-    :goto_73
+    :goto_2
     invoke-virtual {v1}, Llibs/gl;->close()V
 
     .line 117
@@ -897,20 +897,20 @@
 .end method
 
 .method public final declared-synchronized i()V
-    .registers 13
+    .locals 12
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Llibs/ad3;->u:Ljava/nio/channels/SocketChannel;
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_31
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 3
     .line 4
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     .line 5
     .line 6
@@ -920,8 +920,8 @@
     return-void
 
     .line 8
-    :cond_7
-    :try_start_7
+    :cond_0
+    :try_start_1
     iget-boolean v0, p0, Llibs/on2;->Map:Z
 
     .line 9
@@ -938,7 +938,7 @@
     const/4 v4, 0x1
 
     .line 14
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_2
 
     .line 15
     .line 16
@@ -950,7 +950,7 @@
     move-result v0
 
     .line 20
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_1
 
     .line 21
     .line 22
@@ -1003,44 +1003,44 @@
     .line 45
     .line 46
     invoke-static {v0, v3}, Llibs/zm1;->Err(Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_30
-    .catchall {:try_start_7 .. :try_end_30} :catchall_31
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 47
     .line 48
     .line 49
-    goto :goto_34
+    goto :goto_0
 
     .line 50
-    :catchall_31
+    :catchall_0
     move-exception v0
 
     .line 51
-    goto/16 :goto_ca
+    goto/16 :goto_5
 
     .line 52
     .line 53
-    :cond_34
-    :goto_34
+    :cond_1
+    :goto_0
     monitor-exit p0
 
     .line 54
     return-void
 
     .line 55
-    :cond_36
-    :try_start_36
+    :cond_2
+    :try_start_2
     iput-boolean v4, p0, Llibs/on2;->Map:Z
-    :try_end_38
-    .catchall {:try_start_36 .. :try_end_38} :catchall_31
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 56
     .line 57
-    :goto_38
+    :goto_1
     const/4 v0, 0x4
 
     .line 58
-    :try_start_39
+    :try_start_3
     iget-object v5, p0, Llibs/ad3;->u:Ljava/nio/channels/SocketChannel;
 
     .line 59
@@ -1053,14 +1053,14 @@
     move-result v5
 
     .line 64
-    if-nez v5, :cond_42
+    if-nez v5, :cond_3
 
     .line 65
     .line 66
-    goto :goto_38
+    goto :goto_1
 
     .line 67
-    :cond_42
+    :cond_3
     invoke-static {v0}, Llibs/zm1;->Context(I)Z
 
     .line 68
@@ -1069,7 +1069,7 @@
     move-result v5
 
     .line 71
-    if-eqz v5, :cond_74
+    if-eqz v5, :cond_4
 
     .line 72
     .line 73
@@ -1081,7 +1081,7 @@
     move-result v5
 
     .line 77
-    if-eqz v5, :cond_74
+    if-eqz v5, :cond_4
 
     .line 78
     .line 79
@@ -1154,18 +1154,18 @@
     .line 112
     .line 113
     .line 114
-    goto :goto_74
+    goto :goto_2
 
     .line 115
-    :catch_72
+    :catch_0
     move-exception v5
 
     .line 116
-    goto :goto_85
+    goto :goto_3
 
     .line 117
-    :cond_74
-    :goto_74
+    :cond_4
+    :goto_2
     iget-object v5, p0, Llibs/as;->a:Llibs/hy;
 
     .line 118
@@ -1192,18 +1192,18 @@
     .line 129
     .line 130
     invoke-virtual {p0}, Llibs/as;->r()V
-    :try_end_84
-    .catch Ljava/io/IOException; {:try_start_39 .. :try_end_84} :catch_72
-    .catchall {:try_start_39 .. :try_end_84} :catchall_31
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 131
     .line 132
     .line 133
-    goto :goto_c8
+    goto :goto_4
 
     .line 134
-    :goto_85
-    :try_start_85
+    :goto_3
+    :try_start_4
     invoke-static {v0}, Llibs/zm1;->Context(I)Z
 
     .line 135
@@ -1212,7 +1212,7 @@
     move-result v6
 
     .line 138
-    if-eqz v6, :cond_b5
+    if-eqz v6, :cond_5
 
     .line 139
     .line 140
@@ -1300,7 +1300,7 @@
     .line 180
     .line 181
     .line 182
-    :cond_b5
+    :cond_5
     iget-object v0, p0, Llibs/as;->a:Llibs/hy;
 
     .line 183
@@ -1332,33 +1332,33 @@
     .line 197
     .line 198
     invoke-virtual {v0, p0}, Llibs/hy;->l(Llibs/as;)V
-    :try_end_c8
-    .catchall {:try_start_85 .. :try_end_c8} :catchall_31
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 199
     .line 200
     .line 201
-    :goto_c8
+    :goto_4
     monitor-exit p0
 
     .line 202
     return-void
 
     .line 203
-    :goto_ca
-    :try_start_ca
+    :goto_5
+    :try_start_5
     monitor-exit p0
-    :try_end_cb
-    .catchall {:try_start_ca .. :try_end_cb} :catchall_31
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 204
-    goto :goto_cd
+    goto :goto_7
 
     .line 205
-    :goto_cc
+    :goto_6
     throw v0
 
     .line 206
-    :goto_cd
-    goto :goto_cc
+    :goto_7
+    goto :goto_6
 .end method

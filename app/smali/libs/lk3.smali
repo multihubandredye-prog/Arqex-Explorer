@@ -24,7 +24,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/m52;Ljava/lang/String;JLlibs/zl0;Ljava/lang/String;Llibs/q4;Ljava/util/Properties;)V
-    .registers 9
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 13
+    .locals 12
 
     .line 1
     sget-object v0, Lcom/mixplorer/AppImpl;->Mu:Llibs/c2;

@@ -11,7 +11,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;B)V
-    .registers 3
+    .locals 0
 
     .line 10
     iput-byte p2, p0, Llibs/tf;->a:B
@@ -24,7 +24,7 @@
 .end method
 
 .method public constructor <init>(Llibs/tc1;Llibs/eu1;)V
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x4
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public final c(Llibs/q1;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte p1, p0, Llibs/tf;->a:B
@@ -63,7 +63,7 @@
 
     .line 5
     .line 6
-    packed-switch p1, :pswitch_data_78
+    packed-switch p1, :pswitch_data_0
 
     .line 7
     .line 8
@@ -90,7 +90,7 @@
     return-void
 
     .line 21
-    :pswitch_14
+    :pswitch_0
     check-cast v1, Ljava/lang/Runnable;
 
     .line 22
@@ -103,7 +103,7 @@
     return-void
 
     .line 27
-    :pswitch_1a
+    :pswitch_1
     check-cast v1, Llibs/op1;
 
     .line 28
@@ -115,7 +115,7 @@
     return-void
 
     .line 32
-    :pswitch_1f
+    :pswitch_2
     check-cast v1, Llibs/eu1;
 
     .line 33
@@ -141,7 +141,7 @@
     return-void
 
     .line 45
-    :pswitch_2c
+    :pswitch_3
     check-cast v1, Llibs/al;
 
     .line 46
@@ -163,7 +163,7 @@
     return-void
 
     .line 56
-    :pswitch_37
+    :pswitch_4
     check-cast v1, Llibs/zi;
 
     .line 57
@@ -176,7 +176,7 @@
 
     .line 61
     .line 62
-    if-eqz v1, :cond_47
+    if-eqz v1, :cond_0
 
     .line 63
     .line 64
@@ -194,11 +194,11 @@
     .line 70
     .line 71
     .line 72
-    :cond_47
+    :cond_0
     return-void
 
     .line 73
-    :pswitch_48
+    :pswitch_5
     check-cast v1, Llibs/uf;
 
     .line 74
@@ -236,7 +236,7 @@
 
     .line 91
     .line 92
-    if-eq v0, v1, :cond_62
+    if-eq v0, v1, :cond_1
 
     .line 93
     .line 94
@@ -249,7 +249,7 @@
     .line 97
     .line 98
     .line 99
-    :cond_62
+    :cond_1
     invoke-virtual {p1}, Lcom/mixplorer/activities/b;->Work()V
 
     .line 100
@@ -258,7 +258,7 @@
     return-void
 
     .line 103
-    :pswitch_66
+    :pswitch_6
     check-cast v1, Lcom/mixplorer/activities/b;
 
     .line 104
@@ -293,14 +293,14 @@
     return-void
 
     .line 121
-    :pswitch_data_78
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_66
-        :pswitch_48
-        :pswitch_37
-        :pswitch_2c
-        :pswitch_1f
-        :pswitch_1a
-        :pswitch_14
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/g7;->b:B
@@ -30,14 +30,14 @@
 
 # virtual methods
 .method public final h()Llibs/ae2;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/g7;->b:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_18
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -54,7 +54,7 @@
     return-object v0
 
     .line 12
-    :pswitch_b
+    :pswitch_0
     new-instance v0, Llibs/on1;
 
     .line 13
@@ -67,7 +67,7 @@
     return-object v0
 
     .line 18
-    :pswitch_11
+    :pswitch_1
     new-instance v0, Llibs/f7;
 
     .line 19
@@ -83,9 +83,9 @@
     nop
 
     .line 25
-    :pswitch_data_18
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_11
-        :pswitch_b
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

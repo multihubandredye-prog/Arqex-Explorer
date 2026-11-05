@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Llibs/f3;Ljava/util/List;Z)V
-    .registers 6
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     move-result v0
 
     .line 8
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
     .line 9
     .line 10
@@ -67,7 +67,7 @@
     return-void
 
     .line 24
-    :cond_17
+    :cond_0
     const-string p1, "Empty name"
 
     .line 25

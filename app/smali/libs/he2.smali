@@ -9,14 +9,14 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/he2;->b:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_4e
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -33,7 +33,7 @@
     return-void
 
     .line 12
-    :pswitch_b
+    :pswitch_0
     const-string p1, "scaleX"
 
     .line 13
@@ -46,7 +46,7 @@
     return-void
 
     .line 18
-    :pswitch_11
+    :pswitch_1
     const-string p1, "rotationY"
 
     .line 19
@@ -59,7 +59,7 @@
     return-void
 
     .line 24
-    :pswitch_17
+    :pswitch_2
     const-string p1, "rotationX"
 
     .line 25
@@ -72,7 +72,7 @@
     return-void
 
     .line 30
-    :pswitch_1d
+    :pswitch_3
     const-string p1, "rotation"
 
     .line 31
@@ -85,7 +85,7 @@
     return-void
 
     .line 36
-    :pswitch_23
+    :pswitch_4
     const-string p1, "translationY"
 
     .line 37
@@ -98,7 +98,7 @@
     return-void
 
     .line 42
-    :pswitch_29
+    :pswitch_5
     const-string p1, "translationX"
 
     .line 43
@@ -111,7 +111,7 @@
     return-void
 
     .line 48
-    :pswitch_2f
+    :pswitch_6
     const-string p1, "pivotY"
 
     .line 49
@@ -124,7 +124,7 @@
     return-void
 
     .line 54
-    :pswitch_35
+    :pswitch_7
     const-string p1, "pivotX"
 
     .line 55
@@ -137,7 +137,7 @@
     return-void
 
     .line 60
-    :pswitch_3b
+    :pswitch_8
     const-string p1, "alpha"
 
     .line 61
@@ -150,7 +150,7 @@
     return-void
 
     .line 66
-    :pswitch_41
+    :pswitch_9
     const-string p1, "y"
 
     .line 67
@@ -163,7 +163,7 @@
     return-void
 
     .line 72
-    :pswitch_47
+    :pswitch_a
     const-string p1, "x"
 
     .line 73
@@ -179,24 +179,24 @@
     nop
 
     .line 79
-    :pswitch_data_4e
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_47
-        :pswitch_41
-        :pswitch_3b
-        :pswitch_35
-        :pswitch_2f
-        :pswitch_29
-        :pswitch_23
-        :pswitch_1d
-        :pswitch_17
-        :pswitch_11
-        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 79
     invoke-direct {p0, p1}, Llibs/jg2;-><init>(Ljava/lang/String;)V
@@ -207,7 +207,7 @@
 
 # virtual methods
 .method public final a(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/he2;->b:B
@@ -217,7 +217,7 @@
     const/4 v1, 0x0
 
     .line 4
-    packed-switch v0, :pswitch_data_c6
+    packed-switch v0, :pswitch_data_0
 
     .line 5
     .line 6
@@ -249,7 +249,7 @@
     return-object p1
 
     .line 20
-    :pswitch_13
+    :pswitch_0
     check-cast p1, Landroid/view/View;
 
     .line 21
@@ -277,7 +277,7 @@
     return-object p1
 
     .line 33
-    :pswitch_20
+    :pswitch_1
     check-cast p1, Landroid/view/View;
 
     .line 34
@@ -305,7 +305,7 @@
     return-object p1
 
     .line 46
-    :pswitch_2d
+    :pswitch_2
     check-cast p1, Landroid/view/View;
 
     .line 47
@@ -333,7 +333,7 @@
     return-object p1
 
     .line 59
-    :pswitch_3a
+    :pswitch_3
     check-cast p1, Landroid/view/View;
 
     .line 60
@@ -361,7 +361,7 @@
     return-object p1
 
     .line 72
-    :pswitch_47
+    :pswitch_4
     check-cast p1, Landroid/view/View;
 
     .line 73
@@ -389,7 +389,7 @@
     return-object p1
 
     .line 85
-    :pswitch_54
+    :pswitch_5
     check-cast p1, Landroid/view/View;
 
     .line 86
@@ -417,7 +417,7 @@
     return-object p1
 
     .line 98
-    :pswitch_61
+    :pswitch_6
     check-cast p1, Landroid/view/View;
 
     .line 99
@@ -445,7 +445,7 @@
     return-object p1
 
     .line 111
-    :pswitch_6e
+    :pswitch_7
     check-cast p1, Landroid/view/View;
 
     .line 112
@@ -473,7 +473,7 @@
     return-object p1
 
     .line 124
-    :pswitch_7b
+    :pswitch_8
     check-cast p1, Landroid/view/View;
 
     .line 125
@@ -502,14 +502,14 @@
 
     .line 137
     .line 138
-    if-nez v0, :cond_8c
+    if-nez v0, :cond_0
 
     .line 139
     .line 140
-    goto :goto_95
+    goto :goto_0
 
     .line 141
-    :cond_8c
+    :cond_0
     invoke-virtual {v0}, Landroid/view/View;->getTop()I
 
     .line 142
@@ -529,7 +529,7 @@
 
     .line 149
     .line 150
-    :goto_95
+    :goto_0
     invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     .line 151
@@ -541,7 +541,7 @@
     return-object p1
 
     .line 155
-    :pswitch_9a
+    :pswitch_9
     check-cast p1, Landroid/view/View;
 
     .line 156
@@ -570,14 +570,14 @@
 
     .line 168
     .line 169
-    if-nez v0, :cond_ab
+    if-nez v0, :cond_1
 
     .line 170
     .line 171
-    goto :goto_b4
+    goto :goto_1
 
     .line 172
-    :cond_ab
+    :cond_1
     invoke-virtual {v0}, Landroid/view/View;->getLeft()I
 
     .line 173
@@ -597,7 +597,7 @@
 
     .line 180
     .line 181
-    :goto_b4
+    :goto_1
     invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     .line 182
@@ -609,7 +609,7 @@
     return-object p1
 
     .line 186
-    :pswitch_b9
+    :pswitch_a
     check-cast p1, Landroid/view/View;
 
     .line 187
@@ -637,24 +637,24 @@
     return-object p1
 
     .line 199
-    :pswitch_data_c6
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_b9
-        :pswitch_9a
-        :pswitch_7b
-        :pswitch_6e
-        :pswitch_61
-        :pswitch_54
-        :pswitch_47
-        :pswitch_3a
-        :pswitch_2d
-        :pswitch_20
-        :pswitch_13
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final b(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 1
     check-cast p2, Ljava/lang/Float;
@@ -678,7 +678,7 @@
 .end method
 
 .method public final c(FLjava/lang/Object;)V
-    .registers 5
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/he2;->b:B
@@ -688,7 +688,7 @@
     const/4 v1, 0x1
 
     .line 4
-    packed-switch v0, :pswitch_data_136
+    packed-switch v0, :pswitch_data_0
 
     .line 5
     .line 6
@@ -713,7 +713,7 @@
 
     .line 16
     .line 17
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 18
     .line 19
@@ -731,11 +731,11 @@
     .line 25
     .line 26
     .line 27
-    :cond_1a
+    :cond_0
     return-void
 
     .line 28
-    :pswitch_1b
+    :pswitch_0
     check-cast p2, Landroid/view/View;
 
     .line 29
@@ -756,7 +756,7 @@
 
     .line 37
     .line 38
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_1
 
     .line 39
     .line 40
@@ -774,11 +774,11 @@
     .line 46
     .line 47
     .line 48
-    :cond_2f
+    :cond_1
     return-void
 
     .line 49
-    :pswitch_30
+    :pswitch_1
     check-cast p2, Landroid/view/View;
 
     .line 50
@@ -799,7 +799,7 @@
 
     .line 58
     .line 59
-    if-eqz v0, :cond_44
+    if-eqz v0, :cond_2
 
     .line 60
     .line 61
@@ -817,11 +817,11 @@
     .line 67
     .line 68
     .line 69
-    :cond_44
+    :cond_2
     return-void
 
     .line 70
-    :pswitch_45
+    :pswitch_2
     check-cast p2, Landroid/view/View;
 
     .line 71
@@ -842,7 +842,7 @@
 
     .line 79
     .line 80
-    if-eqz v0, :cond_59
+    if-eqz v0, :cond_3
 
     .line 81
     .line 82
@@ -860,11 +860,11 @@
     .line 88
     .line 89
     .line 90
-    :cond_59
+    :cond_3
     return-void
 
     .line 91
-    :pswitch_5a
+    :pswitch_3
     check-cast p2, Landroid/view/View;
 
     .line 92
@@ -885,7 +885,7 @@
 
     .line 100
     .line 101
-    if-eqz v0, :cond_6e
+    if-eqz v0, :cond_4
 
     .line 102
     .line 103
@@ -903,11 +903,11 @@
     .line 109
     .line 110
     .line 111
-    :cond_6e
+    :cond_4
     return-void
 
     .line 112
-    :pswitch_6f
+    :pswitch_4
     check-cast p2, Landroid/view/View;
 
     .line 113
@@ -928,7 +928,7 @@
 
     .line 121
     .line 122
-    if-eqz v0, :cond_83
+    if-eqz v0, :cond_5
 
     .line 123
     .line 124
@@ -946,11 +946,11 @@
     .line 130
     .line 131
     .line 132
-    :cond_83
+    :cond_5
     return-void
 
     .line 133
-    :pswitch_84
+    :pswitch_5
     check-cast p2, Landroid/view/View;
 
     .line 134
@@ -967,7 +967,7 @@
 
     .line 140
     .line 141
-    if-eqz v0, :cond_94
+    if-eqz v0, :cond_6
 
     .line 142
     .line 143
@@ -979,11 +979,11 @@
 
     .line 146
     .line 147
-    if-eqz v0, :cond_9e
+    if-eqz v0, :cond_7
 
     .line 148
     .line 149
-    :cond_94
+    :cond_6
     invoke-virtual {p2}, Llibs/s1;->c()V
 
     .line 150
@@ -1002,11 +1002,11 @@
     .line 157
     .line 158
     .line 159
-    :cond_9e
+    :cond_7
     return-void
 
     .line 160
-    :pswitch_9f
+    :pswitch_6
     check-cast p2, Landroid/view/View;
 
     .line 161
@@ -1023,7 +1023,7 @@
 
     .line 167
     .line 168
-    if-eqz v0, :cond_af
+    if-eqz v0, :cond_8
 
     .line 169
     .line 170
@@ -1035,11 +1035,11 @@
 
     .line 173
     .line 174
-    if-eqz v0, :cond_b9
+    if-eqz v0, :cond_9
 
     .line 175
     .line 176
-    :cond_af
+    :cond_8
     invoke-virtual {p2}, Llibs/s1;->c()V
 
     .line 177
@@ -1058,11 +1058,11 @@
     .line 184
     .line 185
     .line 186
-    :cond_b9
+    :cond_9
     return-void
 
     .line 187
-    :pswitch_ba
+    :pswitch_7
     check-cast p2, Landroid/view/View;
 
     .line 188
@@ -1083,7 +1083,7 @@
 
     .line 196
     .line 197
-    if-eqz v0, :cond_d5
+    if-eqz v0, :cond_a
 
     .line 198
     .line 199
@@ -1107,7 +1107,7 @@
 
     .line 208
     .line 209
-    if-eqz p1, :cond_d5
+    if-eqz p1, :cond_a
 
     .line 210
     .line 211
@@ -1116,11 +1116,11 @@
     .line 212
     .line 213
     .line 214
-    :cond_d5
+    :cond_a
     return-void
 
     .line 215
-    :pswitch_d6
+    :pswitch_8
     check-cast p2, Landroid/view/View;
 
     .line 216
@@ -1149,7 +1149,7 @@
 
     .line 228
     .line 229
-    if-eqz v0, :cond_fa
+    if-eqz v0, :cond_b
 
     .line 230
     .line 231
@@ -1175,7 +1175,7 @@
 
     .line 240
     .line 241
-    if-eqz v0, :cond_fa
+    if-eqz v0, :cond_b
 
     .line 242
     .line 243
@@ -1193,11 +1193,11 @@
     .line 249
     .line 250
     .line 251
-    :cond_fa
+    :cond_b
     return-void
 
     .line 252
-    :pswitch_fb
+    :pswitch_9
     check-cast p2, Landroid/view/View;
 
     .line 253
@@ -1226,7 +1226,7 @@
 
     .line 265
     .line 266
-    if-eqz v0, :cond_11f
+    if-eqz v0, :cond_c
 
     .line 267
     .line 268
@@ -1252,7 +1252,7 @@
 
     .line 277
     .line 278
-    if-eqz v0, :cond_11f
+    if-eqz v0, :cond_c
 
     .line 279
     .line 280
@@ -1270,11 +1270,11 @@
     .line 286
     .line 287
     .line 288
-    :cond_11f
+    :cond_c
     return-void
 
     .line 289
-    :pswitch_120
+    :pswitch_a
     check-cast p2, Landroid/view/View;
 
     .line 290
@@ -1295,7 +1295,7 @@
 
     .line 298
     .line 299
-    if-eqz v0, :cond_134
+    if-eqz v0, :cond_d
 
     .line 300
     .line 301
@@ -1313,25 +1313,25 @@
     .line 307
     .line 308
     .line 309
-    :cond_134
+    :cond_d
     return-void
 
     .line 310
     nop
 
     .line 311
-    :pswitch_data_136
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_120
-        :pswitch_fb
-        :pswitch_d6
-        :pswitch_ba
-        :pswitch_9f
-        :pswitch_84
-        :pswitch_6f
-        :pswitch_5a
-        :pswitch_45
-        :pswitch_30
-        :pswitch_1b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

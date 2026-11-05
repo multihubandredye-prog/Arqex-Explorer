@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic a(Landroid/view/MotionEvent;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/MotionEvent;->getButtonState()I
@@ -20,7 +20,7 @@
 .end method
 
 .method public static bridge synthetic b(Ljava/lang/Object;)Landroid/widget/EdgeEffect;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Landroid/widget/EdgeEffect;
@@ -31,7 +31,7 @@
 .end method
 
 .method public static bridge synthetic c(I)V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-static {p0}, Landroid/net/TrafficStats;->setThreadStatsTag(I)V
@@ -43,7 +43,7 @@
 .end method
 
 .method public static bridge synthetic d(Landroid/app/Notification$Builder;IZ)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/16 v0, 0x64
@@ -59,7 +59,7 @@
 .end method
 
 .method public static bridge synthetic e(Landroid/view/ViewGroup;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -74,7 +74,7 @@
 .end method
 
 .method public static bridge synthetic f(Ljava/lang/ClassLoader;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     instance-of p0, p0, Ldalvik/system/BaseDexClassLoader;

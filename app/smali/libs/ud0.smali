@@ -42,7 +42,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/an2;
@@ -62,7 +62,7 @@
 .end method
 
 .method public constructor <init>(Lcom/mixplorer/activities/BrowseActivity;)V
-    .registers 5
+    .locals 3
 
     .line 1
     const/4 v0, 0x0
@@ -228,7 +228,7 @@
 .end method
 
 .method private setSelectionOnLayout(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p0, p1}, Llibs/vm2;->x(I)Llibs/um2;
@@ -239,7 +239,7 @@
     move-result-object p1
 
     .line 5
-    if-eqz p1, :cond_17
+    if-eqz p1, :cond_1
 
     .line 6
     .line 7
@@ -255,7 +255,7 @@
     move-result v0
 
     .line 13
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 14
     .line 15
@@ -267,7 +267,7 @@
     return-void
 
     .line 19
-    :cond_12
+    :cond_0
     iget-object v0, p0, Llibs/ud0;->e_:Llibs/sr0;
 
     .line 20
@@ -277,15 +277,15 @@
     .line 22
     .line 23
     .line 24
-    :cond_17
+    :cond_1
     return-void
 .end method
 
 .method private setSelectorCallback(Landroid/graphics/drawable/Drawable;)V
-    .registers 3
+    .locals 1
 
     .line 1
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_0
 
     .line 2
     .line 3
@@ -298,14 +298,14 @@
     .line 6
     .line 7
     .line 8
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final Add(Landroid/view/View;Landroid/view/View;)V
-    .registers 11
+    .locals 8
 
     .line 1
     iget-object v0, p0, Llibs/ud0;->$d:[Landroid/graphics/drawable/Drawable;
@@ -321,8 +321,8 @@
     const/4 v3, 0x0
 
     .line 6
-    :goto_5
-    if-ge v3, v1, :cond_f
+    :goto_0
+    if-ge v3, v1, :cond_1
 
     .line 7
     .line 8
@@ -330,26 +330,26 @@
 
     .line 9
     .line 10
-    if-eqz v4, :cond_c
+    if-eqz v4, :cond_0
 
     .line 11
     .line 12
-    goto :goto_10
+    goto :goto_1
 
     .line 13
-    :cond_c
+    :cond_0
     add-int/lit8 v3, v3, 0x1
 
     .line 14
     .line 15
-    goto :goto_5
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_1
     const/4 v4, 0x0
 
     .line 17
-    :goto_10
+    :goto_1
     invoke-virtual {p0}, Llibs/vm2;->getScrollState()I
 
     .line 18
@@ -358,11 +358,11 @@
     move-result v0
 
     .line 21
-    if-eqz v4, :cond_9c
+    if-eqz v4, :cond_5
 
     .line 22
     .line 23
-    if-nez v0, :cond_9c
+    if-nez v0, :cond_5
 
     .line 24
     .line 25
@@ -420,7 +420,7 @@
 
     .line 52
     .line 53
-    if-eqz v4, :cond_39
+    if-eqz v4, :cond_2
 
     .line 54
     .line 55
@@ -429,7 +429,7 @@
     .line 56
     .line 57
     .line 58
-    :cond_39
+    :cond_2
     new-instance v4, Llibs/z1;
 
     .line 59
@@ -446,7 +446,7 @@
     const/4 v4, 0x0
 
     .line 66
-    :goto_41
+    :goto_2
     iget-object v5, p0, Llibs/ud0;->$e:Llibs/z1;
 
     .line 67
@@ -454,7 +454,7 @@
     const/4 v6, 0x2
 
     .line 69
-    if-ge v4, v6, :cond_55
+    if-ge v4, v6, :cond_3
 
     .line 70
     .line 71
@@ -486,10 +486,10 @@
 
     .line 84
     .line 85
-    goto :goto_41
+    goto :goto_2
 
     .line 86
-    :cond_55
+    :cond_3
     iget-object v4, p0, Llibs/ud0;->$b:Landroid/view/animation/LinearInterpolator;
 
     .line 87
@@ -512,7 +512,7 @@
 
     .line 97
     .line 98
-    if-lez p2, :cond_8e
+    if-lez p2, :cond_4
 
     .line 99
     .line 100
@@ -605,7 +605,7 @@
     double-to-int v2, v4
 
     .line 143
-    :cond_8e
+    :cond_4
     iget-object p2, p0, Llibs/ud0;->$e:Llibs/z1;
 
     .line 144
@@ -632,15 +632,15 @@
     .line 155
     .line 156
     .line 157
-    :cond_9c
+    :cond_5
     return-void
 .end method
 
 .method public final Data(I)V
-    .registers 2
+    .locals 0
 
     .line 1
-    if-nez p1, :cond_9
+    if-nez p1, :cond_0
 
     .line 2
     .line 3
@@ -657,22 +657,22 @@
     .line 8
     .line 9
     .line 10
-    :cond_9
+    :cond_0
     return-void
 .end method
 
 .method public final Put(ILandroid/graphics/drawable/Drawable;)V
-    .registers 7
+    .locals 4
 
     .line 1
-    if-ltz p1, :cond_2a
+    if-ltz p1, :cond_0
 
     .line 2
     .line 3
     const/4 v0, 0x2
 
     .line 4
-    if-ge p1, v0, :cond_2a
+    if-ge p1, v0, :cond_0
 
     .line 5
     .line 6
@@ -751,7 +751,7 @@
     return-void
 
     .line 43
-    :cond_2a
+    :cond_0
     const-string p1, "Passed index is not in valid range which is [0; 2)."
 
     .line 44
@@ -765,7 +765,7 @@
 .end method
 
 .method public final addFocusables(Ljava/util/ArrayList;II)V
-    .registers 5
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->hasFocus()Z
@@ -776,7 +776,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -788,7 +788,7 @@
     return-void
 
     .line 11
-    :cond_a
+    :cond_0
     invoke-virtual {p0}, Landroid/view/View;->isFocusable()Z
 
     .line 12
@@ -797,7 +797,7 @@
     move-result p2
 
     .line 15
-    if-eqz p2, :cond_13
+    if-eqz p2, :cond_1
 
     .line 16
     .line 17
@@ -806,12 +806,12 @@
     .line 18
     .line 19
     .line 20
-    :cond_13
+    :cond_1
     return-void
 .end method
 
 .method public final dispatchKeyEvent(Landroid/view/KeyEvent;)Z
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
@@ -831,7 +831,7 @@
 .end method
 
 .method public getBackgroundSelector()Landroid/graphics/drawable/Drawable;
-    .registers 3
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
@@ -849,7 +849,7 @@
 .end method
 
 .method public final getFocusedRect(Landroid/graphics/Rect;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/View;->getDrawingRect(Landroid/graphics/Rect;)V
@@ -861,7 +861,7 @@
 .end method
 
 .method public getForegroundSelector()Landroid/graphics/drawable/Drawable;
-    .registers 3
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
@@ -879,7 +879,7 @@
 .end method
 
 .method public getOnItemClickListener()Llibs/rd0;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -889,7 +889,7 @@
 .end method
 
 .method public getOnItemSelectedListener()Llibs/sd0;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -899,7 +899,7 @@
 .end method
 
 .method public getSelectedItemPosition()I
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getFocusedChild()Landroid/view/View;
@@ -922,7 +922,7 @@
 .end method
 
 .method public getSelectorVelocity()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/ud0;->$f:I
@@ -933,7 +933,7 @@
 .end method
 
 .method public getSmoothScrolling()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/ud0;->g_:Z
@@ -944,7 +944,7 @@
 .end method
 
 .method public final onAttachedToWindow()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Llibs/vm2;->onAttachedToWindow()V
@@ -969,7 +969,7 @@
 .end method
 
 .method public final onDetachedFromWindow()V
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-super {p0}, Llibs/vm2;->onDetachedFromWindow()V
@@ -994,7 +994,7 @@
 .end method
 
 .method public final onDraw(Landroid/graphics/Canvas;)V
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/ud0;->$d:[Landroid/graphics/drawable/Drawable;
@@ -1008,7 +1008,7 @@
 
     .line 5
     .line 6
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_0
 
     .line 7
     .line 8
@@ -1020,7 +1020,7 @@
     move-result v2
 
     .line 12
-    if-eqz v2, :cond_10
+    if-eqz v2, :cond_0
 
     .line 13
     .line 14
@@ -1029,7 +1029,7 @@
     .line 15
     .line 16
     .line 17
-    :cond_10
+    :cond_0
     invoke-super {p0, p1}, Llibs/vm2;->onDraw(Landroid/graphics/Canvas;)V
 
     .line 18
@@ -1042,7 +1042,7 @@
 
     .line 22
     .line 23
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_1
 
     .line 24
     .line 25
@@ -1054,7 +1054,7 @@
     move-result v1
 
     .line 29
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_1
 
     .line 30
     .line 31
@@ -1063,12 +1063,12 @@
     .line 32
     .line 33
     .line 34
-    :cond_21
+    :cond_1
     return-void
 .end method
 
 .method public final onFocusChanged(ZILandroid/graphics/Rect;)V
-    .registers 6
+    .locals 2
 
     .line 1
     invoke-super {p0, p1, p2, p3}, Landroid/view/ViewGroup;->onFocusChanged(ZILandroid/graphics/Rect;)V
@@ -1076,7 +1076,7 @@
     .line 2
     .line 3
     .line 4
-    if-eqz p1, :cond_38
+    if-eqz p1, :cond_5
 
     .line 5
     .line 6
@@ -1087,25 +1087,25 @@
     const/4 v0, 0x0
 
     .line 9
-    if-nez p1, :cond_e
+    if-nez p1, :cond_0
 
     .line 10
     .line 11
-    if-eqz p3, :cond_e
+    if-eqz p3, :cond_0
 
     .line 12
     .line 13
     const/4 p1, 0x1
 
     .line 14
-    goto :goto_f
+    goto :goto_0
 
     .line 15
-    :cond_e
+    :cond_0
     const/4 p1, 0x0
 
     .line 16
-    :goto_f
+    :goto_0
     iget-object v1, p0, Llibs/ud0;->e_:Llibs/sr0;
 
     .line 17
@@ -1118,18 +1118,18 @@
     move-result-object v1
 
     .line 22
-    if-nez p1, :cond_1e
+    if-nez p1, :cond_2
 
     .line 23
     .line 24
-    if-nez v1, :cond_1a
+    if-nez v1, :cond_1
 
     .line 25
     .line 26
-    goto :goto_1e
+    goto :goto_1
 
     .line 27
-    :cond_1a
+    :cond_1
     invoke-virtual {v1}, Landroid/view/View;->requestFocus()Z
 
     .line 28
@@ -1138,8 +1138,8 @@
     return-void
 
     .line 31
-    :cond_1e
-    :goto_1e
+    :cond_2
+    :goto_1
     invoke-static {}, Landroid/view/FocusFinder;->getInstance()Landroid/view/FocusFinder;
 
     .line 32
@@ -1148,7 +1148,7 @@
     move-result-object p1
 
     .line 35
-    if-nez p3, :cond_29
+    if-nez p3, :cond_3
 
     .line 36
     .line 37
@@ -1161,7 +1161,7 @@
     .line 40
     .line 41
     .line 42
-    :cond_29
+    :cond_3
     invoke-virtual {p1, p0, p3, p2}, Landroid/view/FocusFinder;->findNextFocusFromRect(Landroid/view/ViewGroup;Landroid/graphics/Rect;I)Landroid/view/View;
 
     .line 43
@@ -1170,7 +1170,7 @@
     move-result-object p1
 
     .line 46
-    if-nez p1, :cond_33
+    if-nez p1, :cond_4
 
     .line 47
     .line 48
@@ -1182,8 +1182,8 @@
     move-result-object p1
 
     .line 52
-    :cond_33
-    if-eqz p1, :cond_38
+    :cond_4
+    if-eqz p1, :cond_5
 
     .line 53
     .line 54
@@ -1192,12 +1192,12 @@
     .line 55
     .line 56
     .line 57
-    :cond_38
+    :cond_5
     return-void
 .end method
 
 .method public final onGlobalFocusChanged(Landroid/view/View;Landroid/view/View;)V
-    .registers 7
+    .locals 4
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->isInTouchMode()Z
@@ -1219,25 +1219,25 @@
     const/4 v0, 0x0
 
     .line 10
-    if-nez p1, :cond_f
+    if-nez p1, :cond_0
 
     .line 11
     .line 12
-    if-eqz p2, :cond_f
+    if-eqz p2, :cond_0
 
     .line 13
     .line 14
     const/4 p1, 0x1
 
     .line 15
-    goto :goto_10
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_0
     const/4 p1, 0x0
 
     .line 17
-    :goto_10
+    :goto_0
     iget-object p2, p0, Llibs/ud0;->$d:[Landroid/graphics/drawable/Drawable;
 
     .line 18
@@ -1248,8 +1248,8 @@
     const/4 v2, 0x0
 
     .line 21
-    :goto_14
-    if-ge v2, v1, :cond_20
+    :goto_1
+    if-ge v2, v1, :cond_2
 
     .line 22
     .line 23
@@ -1257,7 +1257,7 @@
 
     .line 24
     .line 25
-    if-eqz v3, :cond_1d
+    if-eqz v3, :cond_1
 
     .line 26
     .line 27
@@ -1266,20 +1266,20 @@
     .line 28
     .line 29
     .line 30
-    :cond_1d
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
     .line 31
     .line 32
-    goto :goto_14
+    goto :goto_1
 
     .line 33
-    :cond_20
+    :cond_2
     return-void
 .end method
 
 .method public onLayout(ZIIII)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-super/range {p0 .. p5}, Llibs/vm2;->onLayout(ZIIII)V
@@ -1294,7 +1294,7 @@
     const/4 p2, -0x1
 
     .line 7
-    if-eq p1, p2, :cond_d
+    if-eq p1, p2, :cond_0
 
     .line 8
     .line 9
@@ -1307,12 +1307,12 @@
 
     .line 13
     .line 14
-    :cond_d
+    :cond_0
     return-void
 .end method
 
 .method public requestChildFocus(Landroid/view/View;Landroid/view/View;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-super {p0, p1, p2}, Llibs/vm2;->requestChildFocus(Landroid/view/View;Landroid/view/View;)V
@@ -1329,7 +1329,7 @@
 .end method
 
 .method public setAdapter(Llibs/dm2;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-virtual {p0}, Llibs/vm2;->getAdapter()Llibs/dm2;
@@ -1344,7 +1344,7 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -1353,13 +1353,13 @@
     .line 10
     .line 11
     .line 12
-    :cond_b
+    :cond_0
     invoke-super {p0, p1}, Llibs/rn0;->setAdapter(Llibs/dm2;)V
 
     .line 13
     .line 14
     .line 15
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_1
 
     .line 16
     .line 17
@@ -1368,12 +1368,12 @@
     .line 18
     .line 19
     .line 20
-    :cond_13
+    :cond_1
     return-void
 .end method
 
 .method public setBackgroundSelector(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-static {}, Llibs/t43;->Item()Z
@@ -1384,7 +1384,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -1420,10 +1420,10 @@
     move-result-object p1
 
     .line 23
-    goto :goto_1f
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     .line 25
@@ -1440,7 +1440,7 @@
     move-result-object p1
 
     .line 32
-    :goto_1f
+    :goto_0
     invoke-virtual {p0, p1}, Llibs/ud0;->setBackgroundSelector(Landroid/graphics/drawable/Drawable;)V
 
     .line 33
@@ -1450,7 +1450,7 @@
 .end method
 
 .method public setBackgroundSelector(Landroid/graphics/drawable/Drawable;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -1461,7 +1461,7 @@
 .end method
 
 .method public setEnabled(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->setEnabled(Z)V
@@ -1469,7 +1469,7 @@
     .line 2
     .line 3
     .line 4
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     .line 5
     .line 6
@@ -1477,15 +1477,15 @@
 
     .line 7
     .line 8
-    goto :goto_a
+    goto :goto_0
 
     .line 9
-    :cond_8
+    :cond_0
     const/high16 v0, 0x60000
 
     .line 10
     .line 11
-    :goto_a
+    :goto_0
     invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->setDescendantFocusability(I)V
 
     .line 12
@@ -1500,7 +1500,7 @@
 .end method
 
 .method public setForegroundSelector(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-static {}, Llibs/t43;->Item()Z
@@ -1511,7 +1511,7 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
@@ -1547,10 +1547,10 @@
     move-result-object p1
 
     .line 23
-    goto :goto_1f
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     .line 25
@@ -1567,7 +1567,7 @@
     move-result-object p1
 
     .line 32
-    :goto_1f
+    :goto_0
     invoke-virtual {p0, p1}, Llibs/ud0;->setForegroundSelector(Landroid/graphics/drawable/Drawable;)V
 
     .line 33
@@ -1577,7 +1577,7 @@
 .end method
 
 .method public setForegroundSelector(Landroid/graphics/drawable/Drawable;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -1588,21 +1588,21 @@
 .end method
 
 .method public setOnItemClickListener(Llibs/rd0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public setOnItemSelectedListener(Llibs/sd0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public setRememberLastFocus(Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-boolean p1, p0, Llibs/ud0;->f_:Z
@@ -1613,7 +1613,7 @@
 .end method
 
 .method public setSelection(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Llibs/vm2;->Call(I)V
@@ -1629,7 +1629,7 @@
 .end method
 
 .method public setSelectorVelocity(I)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput p1, p0, Llibs/ud0;->$f:I
@@ -1640,7 +1640,7 @@
 .end method
 
 .method public setSmoothScrolling(Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-boolean p1, p0, Llibs/ud0;->g_:Z

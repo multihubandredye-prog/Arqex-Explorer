@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 162
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -89,7 +89,7 @@
 .end method
 
 .method public constructor <init>(Llibs/ct3;Llibs/j5;)V
-    .registers 8
+    .locals 5
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -242,7 +242,7 @@
 
     .line 76
     .line 77
-    if-eqz v2, :cond_51
+    if-eqz v2, :cond_0
 
     .line 78
     .line 79
@@ -251,7 +251,7 @@
     .line 80
     .line 81
     .line 82
-    :cond_51
+    :cond_0
     iget-object v2, p1, Llibs/ct3;->j:Landroid/graphics/Matrix;
 
     .line 83
@@ -268,7 +268,7 @@
     const/4 v0, 0x0
 
     .line 90
-    :goto_59
+    :goto_0
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     .line 91
@@ -277,7 +277,7 @@
     move-result v2
 
     .line 94
-    if-ge v0, v2, :cond_a0
+    if-ge v0, v2, :cond_5
 
     .line 95
     .line 96
@@ -293,7 +293,7 @@
 
     .line 101
     .line 102
-    if-eqz v3, :cond_74
+    if-eqz v3, :cond_1
 
     .line 103
     .line 104
@@ -319,15 +319,15 @@
     .line 114
     .line 115
     .line 116
-    goto :goto_97
+    goto :goto_2
 
     .line 117
-    :cond_74
+    :cond_1
     instance-of v3, v2, Llibs/bt3;
 
     .line 118
     .line 119
-    if-eqz v3, :cond_80
+    if-eqz v3, :cond_2
 
     .line 120
     .line 121
@@ -344,15 +344,15 @@
     .line 126
     .line 127
     .line 128
-    goto :goto_8b
+    goto :goto_1
 
     .line 129
-    :cond_80
+    :cond_2
     instance-of v3, v2, Llibs/at3;
 
     .line 130
     .line 131
-    if-eqz v3, :cond_9a
+    if-eqz v3, :cond_4
 
     .line 132
     .line 133
@@ -369,7 +369,7 @@
     .line 138
     .line 139
     .line 140
-    :goto_8b
+    :goto_1
     iget-object v2, p0, Llibs/ct3;->b:Ljava/util/ArrayList;
 
     .line 141
@@ -383,7 +383,7 @@
 
     .line 146
     .line 147
-    if-eqz v2, :cond_97
+    if-eqz v2, :cond_3
 
     .line 148
     .line 149
@@ -392,16 +392,16 @@
     .line 150
     .line 151
     .line 152
-    :cond_97
-    :goto_97
+    :cond_3
+    :goto_2
     add-int/lit8 v0, v0, 0x1
 
     .line 153
     .line 154
-    goto :goto_59
+    goto :goto_0
 
     .line 155
-    :cond_9a
+    :cond_4
     const-string p1, "Unknown object in the tree!"
 
     .line 156
@@ -414,6 +414,6 @@
     throw v1
 
     .line 161
-    :cond_a0
+    :cond_5
     return-void
 .end method

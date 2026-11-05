@@ -46,7 +46,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 14
+    .locals 14
 
     .line 1
     new-instance v0, Llibs/Eta;
@@ -254,7 +254,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -291,7 +291,7 @@
 .end method
 
 .method public constructor <init>(Llibs/jg2;)V
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -342,7 +342,7 @@
 
     .line 24
     .line 25
-    if-eqz p1, :cond_1e
+    if-eqz p1, :cond_0
 
     .line 26
     .line 27
@@ -354,14 +354,14 @@
 
     .line 30
     .line 31
-    :cond_1e
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public a(F)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/mg2;->Nu:Llibs/fi1;
@@ -384,7 +384,7 @@
 .end method
 
 .method public b()Llibs/mg2;
-    .registers 3
+    .locals 2
 
     .line 1
     :try_start_0
@@ -437,15 +437,15 @@
     .line 24
     .line 25
     iput-object v1, v0, Llibs/mg2;->Pi:Llibs/zp3;
-    :try_end_1a
-    .catch Ljava/lang/CloneNotSupportedException; {:try_start_0 .. :try_end_1a} :catch_1b
+    :try_end_0
+    .catch Ljava/lang/CloneNotSupportedException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 26
     .line 27
     return-object v0
 
     .line 28
-    :catch_1b
+    :catch_0
     const/4 v0, 0x0
 
     .line 29
@@ -453,7 +453,7 @@
 .end method
 
 .method public c()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/mg2;->Rho:Ljava/lang/Object;
@@ -464,7 +464,7 @@
 .end method
 
 .method public bridge synthetic clone()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/mg2;->b()Llibs/mg2;
@@ -479,7 +479,7 @@
 .end method
 
 .method public final d(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    .registers 12
+    .locals 8
 
     .line 1
     iget-object v0, p0, Llibs/mg2;->X:Ljava/lang/String;
@@ -492,7 +492,7 @@
     const/4 v2, 0x1
 
     .line 5
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_1
 
     .line 6
     .line 7
@@ -504,14 +504,14 @@
     move-result v3
 
     .line 11
-    if-nez v3, :cond_d
+    if-nez v3, :cond_0
 
     .line 12
     .line 13
-    goto :goto_28
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     invoke-virtual {v0, v1}, Ljava/lang/String;->charAt(I)C
 
     .line 15
@@ -563,8 +563,8 @@
     move-result-object p2
 
     .line 41
-    :cond_28
-    :goto_28
+    :cond_1
+    :goto_0
     const-string v0, "PropertyValuesHolder"
 
     .line 42
@@ -572,29 +572,29 @@
     const/4 v3, 0x0
 
     .line 44
-    if-nez p3, :cond_58
+    if-nez p3, :cond_2
 
     .line 45
     .line 46
-    :try_start_2d
+    :try_start_0
     invoke-virtual {p1, p2, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     .line 47
     .line 48
     .line 49
     move-result-object p1
-    :try_end_31
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_2d .. :try_end_31} :catch_32
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 50
     return-object p1
 
     .line 51
-    :catch_32
+    :catch_0
     move-exception p3
 
     .line 52
-    :try_start_33
+    :try_start_1
     invoke-virtual {p1, p2, v3}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     .line 53
@@ -604,17 +604,17 @@
 
     .line 56
     invoke-virtual {v3, v2}, Ljava/lang/reflect/Method;->setAccessible(Z)V
-    :try_end_3a
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_33 .. :try_end_3a} :catch_3c
+    :try_end_1
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 57
     .line 58
     .line 59
-    goto/16 :goto_c0
+    goto/16 :goto_3
 
     .line 60
     .line 61
-    :catch_3c
+    :catch_1
     new-instance p1, Ljava/lang/StringBuilder;
 
     .line 62
@@ -664,10 +664,10 @@
     .line 86
     .line 87
     .line 88
-    goto :goto_c0
+    goto :goto_3
 
     .line 89
-    :cond_58
+    :cond_2
     iget-object p3, p0, Llibs/mg2;->Mu:Ljava/lang/Class;
 
     .line 90
@@ -684,7 +684,7 @@
     move-result p3
 
     .line 97
-    if-eqz p3, :cond_65
+    if-eqz p3, :cond_3
 
     .line 98
     .line 99
@@ -692,10 +692,10 @@
 
     .line 100
     .line 101
-    goto :goto_85
+    goto :goto_1
 
     .line 102
-    :cond_65
+    :cond_3
     iget-object p3, p0, Llibs/mg2;->Mu:Ljava/lang/Class;
 
     .line 103
@@ -712,7 +712,7 @@
     move-result p3
 
     .line 110
-    if-eqz p3, :cond_72
+    if-eqz p3, :cond_4
 
     .line 111
     .line 112
@@ -720,10 +720,10 @@
 
     .line 113
     .line 114
-    goto :goto_85
+    goto :goto_1
 
     .line 115
-    :cond_72
+    :cond_4
     iget-object p3, p0, Llibs/mg2;->Mu:Ljava/lang/Class;
 
     .line 116
@@ -740,7 +740,7 @@
     move-result p3
 
     .line 123
-    if-eqz p3, :cond_7f
+    if-eqz p3, :cond_5
 
     .line 124
     .line 125
@@ -748,10 +748,10 @@
 
     .line 126
     .line 127
-    goto :goto_85
+    goto :goto_1
 
     .line 128
-    :cond_7f
+    :cond_5
     new-array p3, v2, [Ljava/lang/Class;
 
     .line 129
@@ -764,15 +764,15 @@
 
     .line 133
     .line 134
-    :goto_85
+    :goto_1
     array-length v4, p3
 
     .line 135
     const/4 v5, 0x0
 
     .line 136
-    :goto_87
-    if-ge v5, v4, :cond_a3
+    :goto_2
+    if-ge v5, v4, :cond_6
 
     .line 137
     .line 138
@@ -788,7 +788,7 @@
 
     .line 143
     .line 144
-    :try_start_8f
+    :try_start_2
     invoke-virtual {p1, p2, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     .line 145
@@ -798,16 +798,16 @@
 
     .line 148
     iput-object v6, p0, Llibs/mg2;->Mu:Ljava/lang/Class;
-    :try_end_95
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_8f .. :try_end_95} :catch_96
+    :try_end_2
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_2 .. :try_end_2} :catch_2
 
     .line 149
     .line 150
     return-object v3
 
     .line 151
-    :catch_96
-    :try_start_96
+    :catch_2
+    :try_start_3
     invoke-virtual {p1, p2, v7}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     .line 152
@@ -822,23 +822,23 @@
     .line 157
     .line 158
     iput-object v6, p0, Llibs/mg2;->Mu:Ljava/lang/Class;
-    :try_end_9f
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_96 .. :try_end_9f} :catch_a0
+    :try_end_3
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_3 .. :try_end_3} :catch_3
 
     .line 159
     .line 160
     return-object v3
 
     .line 161
-    :catch_a0
+    :catch_3
     add-int/lit8 v5, v5, 0x1
 
     .line 162
     .line 163
-    goto :goto_87
+    goto :goto_2
 
     .line 164
-    :cond_a3
+    :cond_6
     new-instance p1, Ljava/lang/StringBuilder;
 
     .line 165
@@ -892,12 +892,12 @@
     .line 191
     .line 192
     .line 193
-    :goto_c0
+    :goto_3
     return-object v3
 .end method
 
 .method public e(Ljava/lang/Object;)V
-    .registers 6
+    .locals 4
 
     .line 1
     const-string v0, "PropertyValuesHolder"
@@ -912,7 +912,7 @@
 
     .line 6
     .line 7
-    if-eqz v2, :cond_f
+    if-eqz v2, :cond_0
 
     .line 8
     .line 9
@@ -929,16 +929,16 @@
     .line 14
     .line 15
     .line 16
-    :cond_f
+    :cond_0
     iget-object v2, p0, Llibs/mg2;->Z:Ljava/lang/reflect/Method;
 
     .line 17
     .line 18
-    if-eqz v2, :cond_33
+    if-eqz v2, :cond_1
 
     .line 19
     .line 20
-    :try_start_13
+    :try_start_0
     invoke-virtual {p0}, Llibs/mg2;->c()Ljava/lang/Object;
 
     .line 21
@@ -959,9 +959,9 @@
     .line 28
     .line 29
     invoke-virtual {v2, p1, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_1f
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_13 .. :try_end_1f} :catch_22
-    .catch Ljava/lang/IllegalAccessException; {:try_start_13 .. :try_end_1f} :catch_20
+    :try_end_0
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 30
     .line 31
@@ -969,21 +969,21 @@
     return-void
 
     .line 33
-    :catch_20
+    :catch_0
     move-exception p1
 
     .line 34
-    goto :goto_24
+    goto :goto_0
 
     .line 35
-    :catch_22
+    :catch_1
     move-exception p1
 
     .line 36
-    goto :goto_2c
+    goto :goto_1
 
     .line 37
-    :goto_24
+    :goto_0
     invoke-virtual {p1}, Ljava/lang/IllegalAccessException;->toString()Ljava/lang/String;
 
     .line 38
@@ -997,10 +997,10 @@
     .line 42
     .line 43
     .line 44
-    goto :goto_33
+    goto :goto_2
 
     .line 45
-    :goto_2c
+    :goto_1
     invoke-virtual {p1}, Ljava/lang/reflect/InvocationTargetException;->toString()Ljava/lang/String;
 
     .line 46
@@ -1014,13 +1014,13 @@
     .line 50
     .line 51
     .line 52
-    :cond_33
-    :goto_33
+    :cond_1
+    :goto_2
     return-void
 .end method
 
 .method public varargs f([F)V
-    .registers 9
+    .locals 7
 
     .line 1
     sget-object v0, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
@@ -1055,7 +1055,7 @@
     const/4 v3, 0x1
 
     .line 15
-    if-ne v0, v3, :cond_23
+    if-ne v0, v3, :cond_0
 
     .line 16
     .line 17
@@ -1093,10 +1093,10 @@
 
     .line 34
     .line 35
-    goto :goto_40
+    goto :goto_1
 
     .line 36
-    :cond_23
+    :cond_0
     aget v4, p1, v2
 
     .line 37
@@ -1117,8 +1117,8 @@
 
     .line 45
     .line 46
-    :goto_2d
-    if-ge v3, v0, :cond_40
+    :goto_0
+    if-ge v3, v0, :cond_1
 
     .line 47
     .line 48
@@ -1156,11 +1156,11 @@
 
     .line 63
     .line 64
-    goto :goto_2d
+    goto :goto_0
 
     .line 65
-    :cond_40
-    :goto_40
+    :cond_1
+    :goto_1
     new-instance p1, Llibs/qr0;
 
     .line 66
@@ -1178,7 +1178,7 @@
 .end method
 
 .method public varargs g([I)V
-    .registers 9
+    .locals 7
 
     .line 1
     sget-object v0, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -1213,7 +1213,7 @@
     const/4 v3, 0x1
 
     .line 15
-    if-ne v0, v3, :cond_23
+    if-ne v0, v3, :cond_0
 
     .line 16
     .line 17
@@ -1251,10 +1251,10 @@
 
     .line 34
     .line 35
-    goto :goto_40
+    goto :goto_1
 
     .line 36
-    :cond_23
+    :cond_0
     aget v4, p1, v2
 
     .line 37
@@ -1275,8 +1275,8 @@
 
     .line 45
     .line 46
-    :goto_2d
-    if-ge v3, v0, :cond_40
+    :goto_0
+    if-ge v3, v0, :cond_1
 
     .line 47
     .line 48
@@ -1314,11 +1314,11 @@
 
     .line 63
     .line 64
-    goto :goto_2d
+    goto :goto_0
 
     .line 65
-    :cond_40
-    :goto_40
+    :cond_1
+    :goto_1
     new-instance p1, Llibs/qa1;
 
     .line 66
@@ -1336,7 +1336,7 @@
 .end method
 
 .method public final varargs h([Ljava/lang/Object;)V
-    .registers 9
+    .locals 7
 
     .line 1
     const/4 v0, 0x0
@@ -1382,7 +1382,7 @@
     const/4 v4, 0x1
 
     .line 20
-    if-ne v1, v4, :cond_29
+    if-ne v1, v4, :cond_0
 
     .line 21
     .line 22
@@ -1423,10 +1423,10 @@
 
     .line 40
     .line 41
-    goto :goto_45
+    goto :goto_1
 
     .line 42
-    :cond_29
+    :cond_0
     aget-object v5, p1, v0
 
     .line 43
@@ -1444,8 +1444,8 @@
 
     .line 50
     .line 51
-    :goto_32
-    if-ge v4, v1, :cond_45
+    :goto_0
+    if-ge v4, v1, :cond_1
 
     .line 52
     .line 53
@@ -1483,11 +1483,11 @@
 
     .line 68
     .line 69
-    goto :goto_32
+    goto :goto_0
 
     .line 70
-    :cond_45
-    :goto_45
+    :cond_1
+    :goto_1
     new-instance p1, Llibs/fi1;
 
     .line 71
@@ -1505,7 +1505,7 @@
 .end method
 
 .method public i(Ljava/lang/Class;)V
-    .registers 5
+    .locals 3
 
     .line 1
     const-string v0, "set"
@@ -1536,14 +1536,14 @@
 .end method
 
 .method public final j(Ljava/lang/Class;Ljava/util/HashMap;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    .registers 8
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/mg2;->Xi:Ljava/util/concurrent/locks/ReentrantReadWriteLock;
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;->writeLock()Ljava/util/concurrent/locks/ReentrantReadWriteLock$WriteLock;
 
     .line 4
@@ -1569,7 +1569,7 @@
 
     .line 15
     .line 16
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_0
 
     .line 17
     .line 18
@@ -1589,22 +1589,22 @@
 
     .line 25
     .line 26
-    goto :goto_1d
+    goto :goto_0
 
     .line 27
-    :catchall_1a
+    :catchall_0
     move-exception p1
 
     .line 28
-    goto :goto_3a
+    goto :goto_1
 
     .line 29
-    :cond_1c
+    :cond_0
     const/4 v2, 0x0
 
     .line 30
-    :goto_1d
-    if-nez v2, :cond_32
+    :goto_0
+    if-nez v2, :cond_2
 
     .line 31
     .line 32
@@ -1616,7 +1616,7 @@
     move-result-object v2
 
     .line 36
-    if-nez v1, :cond_2d
+    if-nez v1, :cond_1
 
     .line 37
     .line 38
@@ -1634,19 +1634,19 @@
     .line 44
     .line 45
     .line 46
-    :cond_2d
+    :cond_1
     iget-object p1, p0, Llibs/mg2;->X:Ljava/lang/String;
 
     .line 47
     .line 48
     invoke-virtual {v1, p1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_32
-    .catchall {:try_start_2 .. :try_end_32} :catchall_1a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 49
     .line 50
     .line 51
-    :cond_32
+    :cond_2
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;->writeLock()Ljava/util/concurrent/locks/ReentrantReadWriteLock$WriteLock;
 
     .line 52
@@ -1663,7 +1663,7 @@
     return-object v2
 
     .line 59
-    :goto_3a
+    :goto_1
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;->writeLock()Ljava/util/concurrent/locks/ReentrantReadWriteLock$WriteLock;
 
     .line 60
@@ -1681,7 +1681,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

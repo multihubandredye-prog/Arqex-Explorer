@@ -11,10 +11,10 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 3
+    .locals 1
 
     .line 1
-    packed-switch p1, :pswitch_data_24
+    packed-switch p1, :pswitch_data_0
 
     .line 2
     .line 3
@@ -35,7 +35,7 @@
     return-void
 
     .line 12
-    :pswitch_b
+    :pswitch_0
     const-string p1, "SHA-512"
 
     .line 13
@@ -52,7 +52,7 @@
     return-void
 
     .line 20
-    :pswitch_13
+    :pswitch_1
     const-string p1, "SHA-384"
 
     .line 21
@@ -69,7 +69,7 @@
     return-void
 
     .line 28
-    :pswitch_1b
+    :pswitch_2
     const-string p1, "SHA-256"
 
     .line 29
@@ -89,16 +89,16 @@
     nop
 
     .line 37
-    :pswitch_data_24
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_1b
-        :pswitch_13
-        :pswitch_b
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
 
     .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -112,7 +112,7 @@
 
 # virtual methods
 .method public final a([BII)V
-    .registers 5
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/wr2;->b:Ljava/security/MessageDigest;

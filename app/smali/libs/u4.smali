@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/z4;Llibs/rp0;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/u4;->d:Llibs/z4;
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public final a(J)Ljava/io/InputStream;
-    .registers 9
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/u4;->d:Llibs/z4;
@@ -51,11 +51,11 @@
 
     .line 4
     .line 5
-    if-nez v1, :cond_31
+    if-nez v1, :cond_1
 
     .line 6
     .line 7
-    :try_start_6
+    :try_start_0
     invoke-virtual {v0}, Llibs/z4;->Uri()Llibs/rp0;
 
     .line 8
@@ -76,7 +76,7 @@
 
     .line 16
     .line 17
-    if-lez v5, :cond_29
+    if-lez v5, :cond_0
 
     .line 18
     .line 19
@@ -96,7 +96,7 @@
 
     .line 26
     .line 27
-    if-ltz v2, :cond_29
+    if-ltz v2, :cond_0
 
     .line 28
     .line 29
@@ -120,17 +120,17 @@
 
     .line 38
     .line 39
-    goto :goto_31
+    goto :goto_0
 
     .line 40
-    :catchall_27
+    :catchall_0
     nop
 
     .line 41
-    goto :goto_31
+    goto :goto_0
 
     .line 42
-    :cond_29
+    :cond_0
     iget-object v0, p0, Llibs/u4;->c:Llibs/rp0;
 
     .line 43
@@ -144,25 +144,25 @@
 
     .line 48
     iput-object p1, p0, Llibs/u4;->a:Ljava/io/InputStream;
-    :try_end_31
-    .catchall {:try_start_6 .. :try_end_31} :catchall_27
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 49
     .line 50
-    :cond_31
-    :goto_31
+    :cond_1
+    :goto_0
     iget-object p1, p0, Llibs/u4;->a:Ljava/io/InputStream;
 
     .line 51
     .line 52
-    if-eqz p1, :cond_36
+    if-eqz p1, :cond_2
 
     .line 53
     .line 54
     return-object p1
 
     .line 55
-    :cond_36
+    :cond_2
     const-string p1, "NULL!"
 
     .line 56
@@ -179,7 +179,7 @@
 .end method
 
 .method public final close()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/u4;->a:Ljava/io/InputStream;
@@ -210,7 +210,7 @@
 .end method
 
 .method public final getFilePointer()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-wide v0, p0, Llibs/u4;->b:J
@@ -221,7 +221,7 @@
 .end method
 
 .method public final getInputStream(Ljava/lang/String;)Ljava/io/InputStream;
-    .registers 2
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -231,7 +231,7 @@
 .end method
 
 .method public final length()J
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/u4;->c:Llibs/rp0;
@@ -246,7 +246,7 @@
 .end method
 
 .method public final read([BII)I
-    .registers 6
+    .locals 2
 
     .line 1
     const-wide/16 v0, 0x0
@@ -269,7 +269,7 @@
     move-result p1
 
     .line 11
-    if-lez p1, :cond_12
+    if-lez p1, :cond_0
 
     .line 12
     .line 13
@@ -287,12 +287,12 @@
 
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     return p1
 .end method
 
 .method public final seek(J)V
-    .registers 9
+    .locals 6
 
     .line 1
     iget-wide v0, p0, Llibs/u4;->b:J
@@ -303,19 +303,19 @@
 
     .line 4
     .line 5
-    if-nez v2, :cond_7
+    if-nez v2, :cond_0
 
     .line 6
     .line 7
     return-void
 
     .line 8
-    :cond_7
+    :cond_0
     iget-object v2, p0, Llibs/u4;->a:Ljava/io/InputStream;
 
     .line 9
     .line 10
-    if-eqz v2, :cond_1b
+    if-eqz v2, :cond_1
 
     .line 11
     .line 12
@@ -327,7 +327,7 @@
 
     .line 15
     .line 16
-    if-ltz v5, :cond_1b
+    if-ltz v5, :cond_1
 
     .line 17
     .line 18
@@ -335,7 +335,7 @@
 
     .line 19
     .line 20
-    if-ltz v3, :cond_1b
+    if-ltz v3, :cond_1
 
     .line 21
     .line 22
@@ -348,10 +348,10 @@
     .line 25
     .line 26
     .line 27
-    goto :goto_21
+    goto :goto_0
 
     .line 28
-    :cond_1b
+    :cond_1
     invoke-virtual {p0}, Llibs/u4;->close()V
 
     .line 29
@@ -362,7 +362,7 @@
     .line 32
     .line 33
     .line 34
-    :goto_21
+    :goto_0
     iput-wide p1, p0, Llibs/u4;->b:J
 
     .line 35
@@ -371,14 +371,14 @@
 .end method
 
 .method public final setLength(J)V
-    .registers 3
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public final write([BII)V
-    .registers 4
+    .locals 0
 
     .line 1
     return-void

@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic List(Landroid/app/Notification$Builder;Ljava/lang/CharSequence;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
@@ -17,7 +17,7 @@
 .end method
 
 .method public static bridge synthetic Map(Landroid/graphics/BitmapFactory$Options;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -31,7 +31,7 @@
 .end method
 
 .method public static bridge synthetic Object(Ljava/lang/Object;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     instance-of p0, p0, Landroid/app/Notification$Builder;
@@ -42,7 +42,7 @@
 .end method
 
 .method public static bridge synthetic Set(Landroid/graphics/BitmapFactory$Options;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -56,7 +56,7 @@
 .end method
 
 .method public static bridge synthetic String(Landroid/content/ClipData$Item;Landroid/content/Context;)Ljava/lang/CharSequence;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/content/ClipData$Item;->coerceToText(Landroid/content/Context;)Ljava/lang/CharSequence;
@@ -71,7 +71,7 @@
 .end method
 
 .method public static bridge synthetic a(Landroid/content/ClipData;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/content/ClipData;->getItemCount()I
@@ -86,7 +86,7 @@
 .end method
 
 .method public static bridge synthetic b(Landroid/database/Cursor;I)I
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-interface {p0, p1}, Landroid/database/Cursor;->getType(I)I
@@ -101,7 +101,7 @@
 .end method
 
 .method public static bridge synthetic c(Landroid/view/View;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->getSystemUiVisibility()I
@@ -116,7 +116,7 @@
 .end method
 
 .method public static bridge synthetic d(Ljava/lang/Object;)Landroid/app/Notification$Builder;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Landroid/app/Notification$Builder;
@@ -127,7 +127,7 @@
 .end method
 
 .method public static bridge synthetic e(Landroid/content/ClipData;)Landroid/content/ClipData$Item;
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -145,7 +145,7 @@
 .end method
 
 .method public static bridge synthetic f(Landroid/content/ClipboardManager;)Landroid/content/ClipData;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/content/ClipboardManager;->getPrimaryClip()Landroid/content/ClipData;
@@ -160,7 +160,7 @@
 .end method
 
 .method public static bridge synthetic g(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/content/ClipData;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-static {p0, p1}, Landroid/content/ClipData;->newPlainText(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/content/ClipData;
@@ -175,7 +175,7 @@
 .end method
 
 .method public static bridge synthetic h(Ljava/lang/Object;)Landroid/content/ClipData;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Landroid/content/ClipData;
@@ -186,7 +186,7 @@
 .end method
 
 .method public static bridge synthetic i(Ljava/lang/Object;)Landroid/content/ClipboardManager;
-    .registers 1
+    .locals 0
 
     .line 1
     check-cast p0, Landroid/content/ClipboardManager;
@@ -197,7 +197,7 @@
 .end method
 
 .method public static bridge synthetic j(Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
-    .registers 1
+    .locals 0
 
     .line 1
     iget-object p0, p0, Landroid/graphics/BitmapFactory$Options;->inBitmap:Landroid/graphics/Bitmap;
@@ -208,7 +208,7 @@
 .end method
 
 .method public static bridge synthetic k()Landroid/net/Uri;
-    .registers 1
+    .locals 1
 
     .line 1
     const-string v0, "external"
@@ -227,7 +227,7 @@
 .end method
 
 .method public static bridge synthetic l(Landroid/content/ContentResolver;Landroid/net/Uri;Landroid/os/Bundle;)Landroid/os/Bundle;
-    .registers 5
+    .locals 2
 
     .line 1
     const-string v0, "getBinder"
@@ -249,7 +249,7 @@
 .end method
 
 .method public static bridge synthetic m(Landroid/content/ClipData$Item;)Ljava/lang/CharSequence;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/content/ClipData$Item;->getText()Ljava/lang/CharSequence;
@@ -264,7 +264,7 @@
 .end method
 
 .method public static bridge synthetic n(Landroid/content/ClipData$Item;Landroid/content/Context;)Ljava/lang/CharSequence;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/content/ClipData$Item;->coerceToText(Landroid/content/Context;)Ljava/lang/CharSequence;
@@ -279,7 +279,7 @@
 .end method
 
 .method public static bridge synthetic p(Landroid/app/Notification$Builder;Landroid/graphics/Bitmap;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setLargeIcon(Landroid/graphics/Bitmap;)Landroid/app/Notification$Builder;
@@ -291,7 +291,7 @@
 .end method
 
 .method public static bridge synthetic q(Landroid/app/Notification$Builder;Ljava/lang/CharSequence;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
@@ -303,7 +303,7 @@
 .end method
 
 .method public static bridge synthetic r(Landroid/content/ClipboardManager;Landroid/content/ClipData;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/content/ClipboardManager;->setPrimaryClip(Landroid/content/ClipData;)V
@@ -315,7 +315,7 @@
 .end method
 
 .method public static bridge synthetic s(Landroid/graphics/BitmapFactory$Options;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -329,7 +329,7 @@
 .end method
 
 .method public static bridge synthetic t(Landroid/graphics/BitmapFactory$Options;Landroid/graphics/Bitmap;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Landroid/graphics/BitmapFactory$Options;->inBitmap:Landroid/graphics/Bitmap;
@@ -340,7 +340,7 @@
 .end method
 
 .method public static bridge synthetic u(Landroid/view/View;I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/View;->setSystemUiVisibility(I)V
@@ -352,7 +352,7 @@
 .end method
 
 .method public static bridge synthetic v(Landroid/widget/TextView;Z)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTextIsSelectable(Z)V
@@ -364,7 +364,7 @@
 .end method
 
 .method public static bridge synthetic w(Lcom/mixplorer/widgets/MiEditText;Llibs/ha2;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/widget/EditText;->setCustomSelectionActionModeCallback(Landroid/view/ActionMode$Callback;)V
@@ -376,7 +376,7 @@
 .end method
 
 .method public static bridge synthetic x()Z
-    .registers 1
+    .locals 1
 
     .line 1
     invoke-static {}, Landroid/os/Environment;->isExternalStorageEmulated()Z
@@ -391,7 +391,7 @@
 .end method
 
 .method public static bridge synthetic y(Landroid/content/ClipboardManager;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/content/ClipboardManager;->hasPrimaryClip()Z
@@ -406,7 +406,7 @@
 .end method
 
 .method public static bridge synthetic z(Landroid/view/KeyEvent;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/KeyEvent;->isCtrlPressed()Z

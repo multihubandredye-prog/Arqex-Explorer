@@ -9,7 +9,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/or0;->h:B
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final Call(Llibs/ig0;Ljava/math/BigInteger;)Llibs/ig0;
-    .registers 22
+    .locals 19
 
     .line 1
     move-object/from16 v0, p1
@@ -58,7 +58,7 @@
     const/4 v6, -0x1
 
     .line 12
-    packed-switch v3, :pswitch_data_5d4
+    packed-switch v3, :pswitch_data_0
 
     .line 13
     .line 14
@@ -67,7 +67,7 @@
 
     .line 16
     .line 17
-    if-eqz v3, :cond_383
+    if-eqz v3, :cond_2c
 
     .line 18
     .line 19
@@ -115,33 +115,33 @@
 
     .line 40
     .line 41
-    if-nez v9, :cond_2c
+    if-nez v9, :cond_0
 
     .line 42
     .line 43
     const/4 v10, -0x1
 
     .line 44
-    goto :goto_2d
+    goto :goto_0
 
     .line 45
-    :cond_2c
+    :cond_0
     const/4 v10, 0x1
 
     .line 46
-    :goto_2d
+    :goto_0
     int-to-byte v10, v10
 
     .line 47
     monitor-enter v3
 
     .line 48
-    :try_start_2f
+    :try_start_0
     iget-object v11, v3, Llibs/gf0;->i:[Ljava/math/BigInteger;
 
     .line 49
     .line 50
-    if-nez v11, :cond_3d
+    if-nez v11, :cond_1
 
     .line 51
     .line 52
@@ -154,28 +154,28 @@
 
     .line 56
     iput-object v11, v3, Llibs/gf0;->i:[Ljava/math/BigInteger;
-    :try_end_39
-    .catchall {:try_start_2f .. :try_end_39} :catchall_3a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 57
     .line 58
-    goto :goto_3d
+    goto :goto_1
 
     .line 59
-    :catchall_3a
+    :catchall_0
     move-exception v0
 
     .line 60
-    goto/16 :goto_381
+    goto/16 :goto_23
 
     .line 61
     .line 62
-    :cond_3d
-    :goto_3d
+    :cond_1
+    :goto_1
     monitor-exit v3
 
     .line 63
-    if-ne v10, v5, :cond_49
+    if-ne v10, v5, :cond_2
 
     .line 64
     .line 65
@@ -195,10 +195,10 @@
     move-result-object v12
 
     .line 73
-    goto :goto_51
+    goto :goto_2
 
     .line 74
-    :cond_49
+    :cond_2
     aget-object v12, v11, v4
 
     .line 75
@@ -215,7 +215,7 @@
     move-result-object v12
 
     .line 82
-    :goto_51
+    :goto_2
     invoke-static {v10, v8, v5}, Llibs/gn3;->b(BIZ)[Ljava/math/BigInteger;
 
     .line 83
@@ -256,18 +256,18 @@
 
     .line 101
     .line 102
-    if-eq v10, v5, :cond_72
+    if-eq v10, v5, :cond_4
 
     .line 103
     .line 104
-    if-ne v10, v6, :cond_6a
+    if-ne v10, v6, :cond_3
 
     .line 105
     .line 106
-    goto :goto_72
+    goto :goto_4
 
     .line 107
-    :cond_6a
+    :cond_3
     const-string v0, "mu must be 1 or -1"
 
     .line 108
@@ -277,16 +277,16 @@
     .line 110
     .line 111
     .line 112
-    :goto_6f
+    :goto_3
     const/4 v7, 0x0
 
     .line 113
-    goto/16 :goto_38a
+    goto/16 :goto_24
 
     .line 114
     .line 115
-    :cond_72
-    :goto_72
+    :cond_4
+    :goto_4
     invoke-virtual {v14}, Llibs/da3;->c()Ljava/math/BigInteger;
 
     .line 116
@@ -380,7 +380,7 @@
     const/4 v6, 0x1
 
     .line 162
-    if-ne v10, v6, :cond_a8
+    if-ne v10, v6, :cond_5
 
     .line 163
     .line 164
@@ -392,10 +392,10 @@
     move-result-object v6
 
     .line 168
-    goto :goto_be
+    goto :goto_5
 
     .line 169
-    :cond_a8
+    :cond_5
     invoke-virtual {v8}, Ljava/math/BigInteger;->negate()Ljava/math/BigInteger;
 
     .line 170
@@ -412,7 +412,7 @@
 
     .line 176
     .line 177
-    if-ne v8, v1, :cond_37a
+    if-ne v8, v1, :cond_2b
 
     .line 178
     .line 179
@@ -440,7 +440,7 @@
     move-object v6, v1
 
     .line 191
-    :goto_be
+    :goto_5
     invoke-virtual {v5, v5}, Llibs/da3;->a(Llibs/da3;)Llibs/da3;
 
     .line 192
@@ -468,7 +468,7 @@
     const/4 v8, 0x1
 
     .line 204
-    if-ne v10, v8, :cond_fb
+    if-ne v10, v8, :cond_8
 
     .line 205
     .line 206
@@ -488,7 +488,7 @@
 
     .line 213
     .line 214
-    if-ltz v1, :cond_f4
+    if-ltz v1, :cond_7
 
     .line 215
     .line 216
@@ -496,7 +496,7 @@
 
     .line 217
     .line 218
-    if-ne v14, v1, :cond_ed
+    if-ne v14, v1, :cond_6
 
     .line 219
     .line 220
@@ -533,10 +533,10 @@
     move-result-object v5
 
     .line 237
-    goto :goto_11a
+    goto :goto_6
 
     .line 238
-    :cond_ed
+    :cond_6
     const-string v0, "Only SimpleBigDecimal of same scale allowed in arithmetic operations"
 
     .line 239
@@ -546,11 +546,11 @@
     .line 241
     .line 242
     .line 243
-    goto/16 :goto_6f
+    goto/16 :goto_3
 
     .line 244
     .line 245
-    :cond_f4
+    :cond_7
     const-string v0, "scale may not be negative"
 
     .line 246
@@ -560,11 +560,11 @@
     .line 248
     .line 249
     .line 250
-    goto/16 :goto_6f
+    goto/16 :goto_3
 
     .line 251
     .line 252
-    :cond_fb
+    :cond_8
     move/from16 p1, v9
 
     .line 253
@@ -593,7 +593,7 @@
 
     .line 265
     .line 266
-    if-ltz v5, :cond_373
+    if-ltz v5, :cond_2a
 
     .line 267
     .line 268
@@ -601,7 +601,7 @@
 
     .line 269
     .line 270
-    if-ne v9, v5, :cond_36c
+    if-ne v9, v5, :cond_29
 
     .line 271
     .line 272
@@ -626,7 +626,7 @@
     .line 281
     .line 282
     .line 283
-    :goto_11a
+    :goto_6
     sget-object v7, Llibs/ff0;->g:Ljava/math/BigInteger;
 
     .line 284
@@ -639,7 +639,7 @@
     move-result v8
 
     .line 289
-    if-ltz v8, :cond_12c
+    if-ltz v8, :cond_a
 
     .line 290
     .line 291
@@ -651,25 +651,25 @@
     move-result v8
 
     .line 295
-    if-gez v8, :cond_129
+    if-gez v8, :cond_9
 
     .line 296
     .line 297
-    goto :goto_134
+    goto :goto_8
 
     .line 298
-    :cond_129
+    :cond_9
     const/4 v8, 0x1
 
     .line 299
-    :goto_12a
+    :goto_7
     const/4 v9, 0x0
 
     .line 300
-    goto :goto_139
+    goto :goto_9
 
     .line 301
-    :cond_12c
+    :cond_a
     sget-object v8, Llibs/ff0;->h:Ljava/math/BigInteger;
 
     .line 302
@@ -682,28 +682,28 @@
     move-result v8
 
     .line 307
-    if-ltz v8, :cond_137
+    if-ltz v8, :cond_b
 
     .line 308
     .line 309
-    :goto_134
+    :goto_8
     move v9, v10
 
     .line 310
     const/4 v8, 0x0
 
     .line 311
-    goto :goto_139
+    goto :goto_9
 
     .line 312
-    :cond_137
+    :cond_b
     const/4 v8, 0x0
 
     .line 313
-    goto :goto_12a
+    goto :goto_7
 
     .line 314
-    :goto_139
+    :goto_9
     invoke-virtual {v6, v13}, Llibs/da3;->b(Ljava/math/BigInteger;)I
 
     .line 315
@@ -712,7 +712,7 @@
     move-result v6
 
     .line 318
-    if-gez v6, :cond_14a
+    if-gez v6, :cond_d
 
     .line 319
     .line 320
@@ -724,28 +724,28 @@
     move-result v1
 
     .line 324
-    if-ltz v1, :cond_148
+    if-ltz v1, :cond_c
 
     .line 325
     .line 326
-    :goto_145
+    :goto_a
     neg-int v1, v10
 
     .line 327
     int-to-byte v9, v1
 
     .line 328
-    goto :goto_153
+    goto :goto_b
 
     .line 329
-    :cond_148
+    :cond_c
     const/4 v8, -0x1
 
     .line 330
-    goto :goto_153
+    goto :goto_b
 
     .line 331
-    :cond_14a
+    :cond_d
     sget-object v1, Llibs/gn3;->b:Ljava/math/BigInteger;
 
     .line 332
@@ -758,15 +758,15 @@
     move-result v1
 
     .line 337
-    if-gez v1, :cond_153
+    if-gez v1, :cond_e
 
     .line 338
     .line 339
-    goto :goto_145
+    goto :goto_a
 
     .line 340
-    :cond_153
-    :goto_153
+    :cond_e
+    :goto_b
     int-to-long v5, v8
 
     .line 341
@@ -909,7 +909,7 @@
     move-result-object v3
 
     .line 410
-    if-nez p1, :cond_19f
+    if-nez p1, :cond_f
 
     .line 411
     .line 412
@@ -917,23 +917,23 @@
 
     .line 413
     .line 414
-    :goto_19d
+    :goto_c
     const/4 v6, 0x1
 
     .line 415
-    goto :goto_1a2
+    goto :goto_d
 
     .line 416
-    :cond_19f
+    :cond_f
     sget-object v4, Llibs/gn3;->e:[Llibs/dy2;
 
     .line 417
     .line 418
-    goto :goto_19d
+    goto :goto_c
 
     .line 419
-    :goto_1a2
-    if-ne v10, v6, :cond_1ab
+    :goto_d
+    if-ne v10, v6, :cond_10
 
     .line 420
     .line 421
@@ -949,10 +949,10 @@
     move-result-object v5
 
     .line 427
-    goto :goto_1b1
+    goto :goto_e
 
     .line 428
-    :cond_1ab
+    :cond_10
     const-wide/16 v7, 0xa
 
     .line 429
@@ -965,7 +965,7 @@
     move-result-object v5
 
     .line 434
-    :goto_1b1
+    :goto_e
     const-wide/16 v7, 0x10
 
     .line 435
@@ -982,32 +982,32 @@
 
     .line 441
     .line 442
-    if-eq v10, v6, :cond_1c4
+    if-eq v10, v6, :cond_12
 
     .line 443
     .line 444
     const/4 v9, -0x1
 
     .line 445
-    if-ne v10, v9, :cond_1bf
+    if-ne v10, v9, :cond_11
 
     .line 446
     .line 447
-    goto :goto_1c4
+    goto :goto_f
 
     .line 448
-    :cond_1bf
+    :cond_11
     invoke-static {v8}, Llibs/ic0;->p(Ljava/lang/String;)V
 
     .line 449
     .line 450
     .line 451
-    goto/16 :goto_6f
+    goto/16 :goto_3
 
     .line 452
     .line 453
-    :cond_1c4
-    :goto_1c4
+    :cond_12
+    :goto_f
     invoke-virtual {v2, v2}, Ljava/math/BigInteger;->multiply(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
     .line 454
@@ -1040,7 +1040,7 @@
     move-result-object v12
 
     .line 469
-    if-ne v10, v6, :cond_1df
+    if-ne v10, v6, :cond_13
 
     .line 470
     .line 471
@@ -1060,14 +1060,14 @@
     move-result-object v6
 
     .line 479
-    goto :goto_1ea
+    goto :goto_10
 
     .line 480
-    :cond_1df
+    :cond_13
     const/4 v6, -0x1
 
     .line 481
-    if-ne v10, v6, :cond_367
+    if-ne v10, v6, :cond_28
 
     .line 482
     .line 483
@@ -1087,7 +1087,7 @@
     move-result-object v6
 
     .line 491
-    :goto_1ea
+    :goto_10
     invoke-virtual {v6}, Ljava/math/BigInteger;->bitLength()I
 
     .line 492
@@ -1100,7 +1100,7 @@
 
     .line 496
     .line 497
-    if-le v6, v8, :cond_1f5
+    if-le v6, v8, :cond_14
 
     .line 498
     .line 499
@@ -1108,15 +1108,15 @@
 
     .line 500
     .line 501
-    goto :goto_1f7
+    goto :goto_11
 
     .line 502
-    :cond_1f5
+    :cond_14
     const/16 v6, 0x26
 
     .line 503
     .line 504
-    :goto_1f7
+    :goto_11
     new-array v9, v6, [B
 
     .line 505
@@ -1135,7 +1135,7 @@
     const/4 v8, 0x0
 
     .line 512
-    :goto_1ff
+    :goto_12
     sget-object v12, Llibs/ff0;->f:Ljava/math/BigInteger;
 
     .line 513
@@ -1148,7 +1148,7 @@
     move-result v13
 
     .line 518
-    if-eqz v13, :cond_20d
+    if-eqz v13, :cond_15
 
     .line 519
     .line 520
@@ -1160,19 +1160,19 @@
     move-result v12
 
     .line 524
-    if-nez v12, :cond_210
+    if-nez v12, :cond_16
 
     .line 525
     .line 526
-    :cond_20d
+    :cond_15
     const/4 v12, 0x0
 
     .line 527
-    goto/16 :goto_2df
+    goto/16 :goto_1c
 
     .line 528
     .line 529
-    :cond_210
+    :cond_16
     iget-object v1, v0, Llibs/ig0;->a:Llibs/kf0;
 
     .line 530
@@ -1204,7 +1204,7 @@
     move-result v4
 
     .line 544
-    if-eqz v3, :cond_22b
+    if-eqz v3, :cond_18
 
     .line 545
     .line 546
@@ -1212,14 +1212,14 @@
 
     .line 547
     .line 548
-    if-nez v5, :cond_226
+    if-nez v5, :cond_17
 
     .line 549
     .line 550
-    goto :goto_22b
+    goto :goto_13
 
     .line 551
-    :cond_226
+    :cond_17
     check-cast v3, Llibs/cu3;
 
     .line 552
@@ -1228,12 +1228,12 @@
 
     .line 554
     .line 555
-    goto :goto_292
+    goto :goto_18
 
     .line 556
-    :cond_22b
-    :goto_22b
-    if-nez v4, :cond_230
+    :cond_18
+    :goto_13
+    if-nez v4, :cond_19
 
     .line 557
     .line 558
@@ -1241,15 +1241,15 @@
 
     .line 559
     .line 560
-    goto :goto_232
+    goto :goto_14
 
     .line 561
-    :cond_230
+    :cond_19
     sget-object v3, Llibs/gn3;->f:[[B
 
     .line 562
     .line 563
-    :goto_232
+    :goto_14
     array-length v4, v3
 
     .line 564
@@ -1279,8 +1279,8 @@
     const/4 v8, 0x3
 
     .line 576
-    :goto_23f
-    if-ge v8, v7, :cond_27d
+    :goto_15
+    if-ge v8, v7, :cond_1e
 
     .line 577
     .line 578
@@ -1330,8 +1330,8 @@
     const/4 v15, 0x0
 
     .line 600
-    :goto_257
-    if-ltz v14, :cond_272
+    :goto_16
+    if-ltz v14, :cond_1c
 
     .line 601
     .line 602
@@ -1343,7 +1343,7 @@
 
     .line 605
     .line 606
-    if-eqz v17, :cond_26f
+    if-eqz v17, :cond_1b
 
     .line 607
     .line 608
@@ -1355,21 +1355,21 @@
     move-result-object v12
 
     .line 612
-    if-lez v17, :cond_267
+    if-lez v17, :cond_1a
 
     .line 613
     .line 614
     move-object v15, v0
 
     .line 615
-    goto :goto_268
+    goto :goto_17
 
     .line 616
-    :cond_267
+    :cond_1a
     move-object v15, v13
 
     .line 617
-    :goto_268
+    :goto_17
     invoke-virtual {v12, v15}, Llibs/ig0;->a(Llibs/ig0;)Llibs/ig0;
 
     .line 618
@@ -1385,16 +1385,16 @@
     const/4 v15, 0x0
 
     .line 624
-    :cond_26f
+    :cond_1b
     add-int/lit8 v14, v14, -0x1
 
     .line 625
     .line 626
-    goto :goto_257
+    goto :goto_16
 
     .line 627
-    :cond_272
-    if-lez v15, :cond_278
+    :cond_1c
+    if-lez v15, :cond_1d
 
     .line 628
     .line 629
@@ -1406,7 +1406,7 @@
     move-result-object v12
 
     .line 633
-    :cond_278
+    :cond_1d
     aput-object v12, v5, v10
 
     .line 634
@@ -1415,10 +1415,10 @@
 
     .line 636
     .line 637
-    goto :goto_23f
+    goto :goto_15
 
     .line 638
-    :cond_27d
+    :cond_1e
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 639
@@ -1460,7 +1460,7 @@
     move-object v0, v5
 
     .line 659
-    :goto_292
+    :goto_18
     array-length v2, v0
 
     .line 660
@@ -1471,11 +1471,11 @@
     const/4 v3, 0x0
 
     .line 663
-    :goto_296
+    :goto_19
     array-length v4, v0
 
     .line 664
-    if-ge v3, v4, :cond_2a6
+    if-ge v3, v4, :cond_1f
 
     .line 665
     .line 666
@@ -1503,10 +1503,10 @@
 
     .line 677
     .line 678
-    goto :goto_296
+    goto :goto_19
 
     .line 679
-    :cond_2a6
+    :cond_1f
     invoke-virtual {v1}, Llibs/kf0;->k()Llibs/ig0;
 
     .line 680
@@ -1533,8 +1533,8 @@
     const/4 v1, 0x0
 
     .line 691
-    :goto_2b2
-    if-ltz v6, :cond_2d7
+    :goto_1a
+    if-ltz v6, :cond_22
 
     .line 692
     .line 693
@@ -1546,7 +1546,7 @@
 
     .line 696
     .line 697
-    if-eqz v3, :cond_2d4
+    if-eqz v3, :cond_21
 
     .line 698
     .line 699
@@ -1558,7 +1558,7 @@
     move-result-object v1
 
     .line 703
-    if-lez v3, :cond_2c5
+    if-lez v3, :cond_20
 
     .line 704
     .line 705
@@ -1570,10 +1570,10 @@
 
     .line 708
     .line 709
-    goto :goto_2cc
+    goto :goto_1b
 
     .line 710
-    :cond_2c5
+    :cond_20
     neg-int v3, v3
 
     .line 711
@@ -1589,7 +1589,7 @@
 
     .line 716
     .line 717
-    :goto_2cc
+    :goto_1b
     invoke-virtual {v1, v3}, Llibs/ig0;->a(Llibs/ig0;)Llibs/ig0;
 
     .line 718
@@ -1608,16 +1608,16 @@
     const/4 v1, 0x0
 
     .line 725
-    :cond_2d4
+    :cond_21
     add-int/lit8 v6, v6, -0x1
 
     .line 726
     .line 727
-    goto :goto_2b2
+    goto :goto_1a
 
     .line 728
-    :cond_2d7
-    if-lez v1, :cond_38a
+    :cond_22
+    if-lez v1, :cond_2d
 
     .line 729
     .line 730
@@ -1629,11 +1629,11 @@
     move-result-object v7
 
     .line 734
-    goto/16 :goto_38a
+    goto/16 :goto_24
 
     .line 735
     .line 736
-    :goto_2df
+    :goto_1c
     invoke-virtual {v2, v12}, Ljava/math/BigInteger;->testBit(I)Z
 
     .line 737
@@ -1642,7 +1642,7 @@
     move-result v13
 
     .line 740
-    if-eqz v13, :cond_33c
+    if-eqz v13, :cond_26
 
     .line 741
     .line 742
@@ -1678,7 +1678,7 @@
     move-result v13
 
     .line 758
-    if-ltz v13, :cond_301
+    if-ltz v13, :cond_23
 
     .line 759
     .line 760
@@ -1698,14 +1698,14 @@
     move-result v12
 
     .line 768
-    :goto_2ff
+    :goto_1d
     int-to-byte v12, v12
 
     .line 769
-    goto :goto_306
+    goto :goto_1e
 
     .line 770
-    :cond_301
+    :cond_23
     invoke-virtual {v12}, Ljava/math/BigInteger;->intValue()I
 
     .line 771
@@ -1714,15 +1714,15 @@
     move-result v12
 
     .line 774
-    goto :goto_2ff
+    goto :goto_1d
 
     .line 775
-    :goto_306
+    :goto_1e
     aput-byte v12, v9, v8
 
     .line 776
     .line 777
-    if-gez v12, :cond_30e
+    if-gez v12, :cond_24
 
     .line 778
     .line 779
@@ -1735,15 +1735,15 @@
     const/4 v13, 0x0
 
     .line 782
-    goto :goto_30f
+    goto :goto_1f
 
     .line 783
-    :cond_30e
+    :cond_24
     const/4 v13, 0x1
 
     .line 784
-    :goto_30f
-    if-eqz v13, :cond_326
+    :goto_1f
+    if-eqz v13, :cond_25
 
     .line 785
     .line 786
@@ -1787,10 +1787,10 @@
     move-result-object v1
 
     .line 806
-    goto :goto_33a
+    goto :goto_20
 
     .line 807
-    :cond_326
+    :cond_25
     aget-object v13, v4, v12
 
     .line 808
@@ -1831,14 +1831,14 @@
     move-result-object v1
 
     .line 827
-    :goto_33a
+    :goto_20
     const/4 v12, 0x1
 
     .line 828
-    goto :goto_341
+    goto :goto_21
 
     .line 829
-    :cond_33c
+    :cond_26
     const/16 v16, 0x0
 
     .line 830
@@ -1847,11 +1847,11 @@
 
     .line 832
     .line 833
-    goto :goto_33a
+    goto :goto_20
 
     .line 834
-    :goto_341
-    if-ne v10, v12, :cond_34c
+    :goto_21
+    if-ne v10, v12, :cond_27
 
     .line 835
     .line 836
@@ -1871,10 +1871,10 @@
     move-result-object v1
 
     .line 844
-    goto :goto_354
+    goto :goto_22
 
     .line 845
-    :cond_34c
+    :cond_27
     invoke-virtual {v2, v12}, Ljava/math/BigInteger;->shiftRight(I)Ljava/math/BigInteger;
 
     .line 846
@@ -1891,7 +1891,7 @@
     move-result-object v1
 
     .line 853
-    :goto_354
+    :goto_22
     invoke-virtual {v2, v12}, Ljava/math/BigInteger;->shiftRight(I)Ljava/math/BigInteger;
 
     .line 854
@@ -1927,21 +1927,21 @@
 
     .line 869
     .line 870
-    goto/16 :goto_1ff
+    goto/16 :goto_12
 
     .line 871
     .line 872
-    :cond_367
+    :cond_28
     invoke-static {v8}, Llibs/ic0;->p(Ljava/lang/String;)V
 
     .line 873
     .line 874
     .line 875
-    goto/16 :goto_6f
+    goto/16 :goto_3
 
     .line 876
     .line 877
-    :cond_36c
+    :cond_29
     const-string v0, "Only SimpleBigDecimal of same scale allowed in arithmetic operations"
 
     .line 878
@@ -1951,11 +1951,11 @@
     .line 880
     .line 881
     .line 882
-    goto/16 :goto_6f
+    goto/16 :goto_3
 
     .line 883
     .line 884
-    :cond_373
+    :cond_2a
     const-string v0, "scale may not be negative"
 
     .line 885
@@ -1965,11 +1965,11 @@
     .line 887
     .line 888
     .line 889
-    goto/16 :goto_6f
+    goto/16 :goto_3
 
     .line 890
     .line 891
-    :cond_37a
+    :cond_2b
     const-string v0, "Only SimpleBigDecimal of same scale allowed in arithmetic operations"
 
     .line 892
@@ -1979,21 +1979,21 @@
     .line 894
     .line 895
     .line 896
-    goto/16 :goto_6f
+    goto/16 :goto_3
 
     .line 897
     .line 898
-    :goto_381
-    :try_start_381
+    :goto_23
+    :try_start_1
     monitor-exit v3
-    :try_end_382
-    .catchall {:try_start_381 .. :try_end_382} :catchall_3a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 899
     throw v0
 
     .line 900
-    :cond_383
+    :cond_2c
     const-string v0, "Only ECPoint.AbstractF2m can be used in WTauNafMultiplier"
 
     .line 901
@@ -2003,16 +2003,16 @@
     .line 903
     .line 904
     .line 905
-    goto/16 :goto_6f
+    goto/16 :goto_3
 
     .line 906
     .line 907
-    :cond_38a
-    :goto_38a
+    :cond_2d
+    :goto_24
     return-object v7
 
     .line 908
-    :pswitch_38b
+    :pswitch_0
     invoke-virtual {v2}, Ljava/math/BigInteger;->bitLength()I
 
     .line 909
@@ -2076,7 +2076,7 @@
 
     .line 938
     .line 939
-    if-ne v1, v4, :cond_412
+    if-ne v1, v4, :cond_34
 
     .line 940
     .line 941
@@ -2091,7 +2091,7 @@
     ushr-int/2addr v4, v3
 
     .line 946
-    if-nez v4, :cond_40c
+    if-nez v4, :cond_33
 
     .line 947
     .line 948
@@ -2103,15 +2103,15 @@
     move-result v4
 
     .line 952
-    if-nez v4, :cond_3bb
+    if-nez v4, :cond_2e
 
     .line 953
     .line 954
-    goto/16 :goto_474
+    goto/16 :goto_2c
 
     .line 955
     .line 956
-    :cond_3bb
+    :cond_2e
     const/4 v8, 0x1
 
     .line 957
@@ -2167,8 +2167,8 @@
     const/4 v13, 0x1
 
     .line 981
-    :goto_3d4
-    if-ge v13, v9, :cond_3f8
+    :goto_25
+    if-ge v13, v9, :cond_31
 
     .line 982
     .line 983
@@ -2180,7 +2180,7 @@
     move-result v14
 
     .line 987
-    if-nez v14, :cond_3e1
+    if-nez v14, :cond_2f
 
     .line 988
     .line 989
@@ -2188,15 +2188,15 @@
 
     .line 990
     .line 991
-    :goto_3de
+    :goto_26
     const/16 v18, 0x1
 
     .line 992
     .line 993
-    goto :goto_3f5
+    goto :goto_28
 
     .line 994
-    :cond_3e1
+    :cond_2f
     invoke-virtual {v2, v13}, Ljava/math/BigInteger;->testBit(I)Z
 
     .line 995
@@ -2205,21 +2205,21 @@
     move-result v14
 
     .line 998
-    if-eqz v14, :cond_3e9
+    if-eqz v14, :cond_30
 
     .line 999
     .line 1000
     const/4 v14, -0x1
 
     .line 1001
-    goto :goto_3ea
+    goto :goto_27
 
     .line 1002
-    :cond_3e9
+    :cond_30
     const/4 v14, 0x1
 
     .line 1003
-    :goto_3ea
+    :goto_27
     add-int/lit8 v15, v8, 0x1
 
     .line 1004
@@ -2244,18 +2244,18 @@
     const/4 v12, 0x1
 
     .line 1013
-    goto :goto_3de
+    goto :goto_26
 
     .line 1014
-    :goto_3f5
+    :goto_28
     add-int/lit8 v13, v13, 0x1
 
     .line 1015
     .line 1016
-    goto :goto_3d4
+    goto :goto_25
 
     .line 1017
-    :cond_3f8
+    :cond_31
     add-int/lit8 v2, v8, 0x1
 
     .line 1018
@@ -2271,7 +2271,7 @@
 
     .line 1023
     .line 1024
-    if-le v10, v2, :cond_409
+    if-le v10, v2, :cond_32
 
     .line 1025
     .line 1026
@@ -2287,38 +2287,38 @@
     .line 1030
     .line 1031
     .line 1032
-    goto/16 :goto_474
+    goto/16 :goto_2c
 
     .line 1033
     .line 1034
-    :cond_409
+    :cond_32
     move-object v9, v11
 
     .line 1035
-    goto/16 :goto_474
+    goto/16 :goto_2c
 
     .line 1036
     .line 1037
-    :cond_40c
+    :cond_33
     invoke-static {v8}, Llibs/ic0;->p(Ljava/lang/String;)V
 
     .line 1038
     .line 1039
     .line 1040
-    :goto_40f
+    :goto_29
     const/4 v7, 0x0
 
     .line 1041
-    goto/16 :goto_4f3
+    goto/16 :goto_32
 
     .line 1042
     .line 1043
-    :cond_412
-    if-lt v1, v4, :cond_4ec
+    :cond_34
+    if-lt v1, v4, :cond_43
 
     .line 1044
     .line 1045
-    if-gt v1, v3, :cond_4ec
+    if-gt v1, v3, :cond_43
 
     .line 1046
     .line 1047
@@ -2333,7 +2333,7 @@
     ushr-int/2addr v4, v3
 
     .line 1052
-    if-nez v4, :cond_4e7
+    if-nez v4, :cond_42
 
     .line 1053
     .line 1054
@@ -2345,14 +2345,14 @@
     move-result v4
 
     .line 1058
-    if-nez v4, :cond_424
+    if-nez v4, :cond_35
 
     .line 1059
     .line 1060
-    goto :goto_474
+    goto :goto_2c
 
     .line 1061
-    :cond_424
+    :cond_35
     invoke-virtual {v2}, Ljava/math/BigInteger;->bitLength()I
 
     .line 1062
@@ -2397,7 +2397,7 @@
     const/4 v13, 0x0
 
     .line 1081
-    :goto_438
+    :goto_2a
     invoke-virtual {v2}, Ljava/math/BigInteger;->bitLength()I
 
     .line 1082
@@ -2406,7 +2406,7 @@
     move-result v14
 
     .line 1085
-    if-gt v11, v14, :cond_46b
+    if-gt v11, v14, :cond_3b
 
     .line 1086
     .line 1087
@@ -2418,7 +2418,7 @@
     move-result v14
 
     .line 1091
-    if-ne v14, v13, :cond_447
+    if-ne v14, v13, :cond_36
 
     .line 1092
     .line 1093
@@ -2426,10 +2426,10 @@
 
     .line 1094
     .line 1095
-    goto :goto_438
+    goto :goto_2a
 
     .line 1096
-    :cond_447
+    :cond_36
     invoke-virtual {v2, v11}, Ljava/math/BigInteger;->shiftRight(I)Ljava/math/BigInteger;
 
     .line 1097
@@ -2449,7 +2449,7 @@
     and-int/2addr v14, v8
 
     .line 1105
-    if-eqz v13, :cond_454
+    if-eqz v13, :cond_37
 
     .line 1106
     .line 1107
@@ -2457,35 +2457,35 @@
 
     .line 1108
     .line 1109
-    :cond_454
+    :cond_37
     and-int v13, v14, v10
 
     .line 1110
     .line 1111
-    if-eqz v13, :cond_45a
+    if-eqz v13, :cond_38
 
     .line 1112
     .line 1113
     const/4 v13, 0x1
 
     .line 1114
-    goto :goto_45b
+    goto :goto_2b
 
     .line 1115
-    :cond_45a
+    :cond_38
     const/4 v13, 0x0
 
     .line 1116
-    :goto_45b
-    if-eqz v13, :cond_45e
+    :goto_2b
+    if-eqz v13, :cond_39
 
     .line 1117
     .line 1118
     sub-int/2addr v14, v6
 
     .line 1119
-    :cond_45e
-    if-lez v12, :cond_462
+    :cond_39
+    if-lez v12, :cond_3a
 
     .line 1120
     .line 1121
@@ -2493,7 +2493,7 @@
 
     .line 1122
     .line 1123
-    :cond_462
+    :cond_3a
     add-int/lit8 v15, v12, 0x1
 
     .line 1124
@@ -2514,11 +2514,11 @@
     move v12, v15
 
     .line 1131
-    goto :goto_438
+    goto :goto_2a
 
     .line 1132
-    :cond_46b
-    if-le v4, v12, :cond_474
+    :cond_3b
+    if-le v4, v12, :cond_3c
 
     .line 1133
     .line 1134
@@ -2537,8 +2537,8 @@
     move-object v9, v2
 
     .line 1141
-    :cond_474
-    :goto_474
+    :cond_3c
+    :goto_2c
     iget-object v0, v0, Llibs/ig0;->a:Llibs/kf0;
 
     .line 1142
@@ -2562,7 +2562,7 @@
     const/4 v8, 0x1
 
     .line 1152
-    if-le v2, v8, :cond_4c3
+    if-le v2, v8, :cond_3f
 
     .line 1153
     .line 1154
@@ -2589,21 +2589,21 @@
     move-result v6
 
     .line 1165
-    if-gez v4, :cond_490
+    if-gez v4, :cond_3d
 
     .line 1166
     .line 1167
     move-object v4, v5
 
     .line 1168
-    goto :goto_491
+    goto :goto_2d
 
     .line 1169
-    :cond_490
+    :cond_3d
     move-object v4, v7
 
     .line 1170
-    :goto_491
+    :goto_2d
     shl-int/lit8 v8, v6, 0x2
 
     .line 1171
@@ -2616,7 +2616,7 @@
 
     .line 1175
     .line 1176
-    if-ge v8, v10, :cond_4bb
+    if-ge v8, v10, :cond_3e
 
     .line 1177
     .line 1178
@@ -2689,10 +2689,10 @@
     sub-int/2addr v0, v10
 
     .line 1211
-    goto :goto_4bf
+    goto :goto_2e
 
     .line 1212
-    :cond_4bb
+    :cond_3e
     ushr-int/lit8 v1, v6, 0x1
 
     .line 1213
@@ -2701,7 +2701,7 @@
 
     .line 1215
     .line 1216
-    :goto_4bf
+    :goto_2e
     invoke-virtual {v1, v0}, Llibs/ig0;->w(I)Llibs/ig0;
 
     .line 1217
@@ -2710,9 +2710,9 @@
     move-result-object v0
 
     .line 1220
-    :cond_4c3
-    :goto_4c3
-    if-lez v2, :cond_4e5
+    :cond_3f
+    :goto_2f
+    if-lez v2, :cond_41
 
     .line 1221
     .line 1222
@@ -2739,29 +2739,29 @@
     move-result v6
 
     .line 1233
-    if-gez v4, :cond_4d6
+    if-gez v4, :cond_40
 
     .line 1234
     .line 1235
     move-object v4, v5
 
     .line 1236
-    :goto_4d3
+    :goto_30
     const/16 v18, 0x1
 
     .line 1237
     .line 1238
-    goto :goto_4d8
+    goto :goto_31
 
     .line 1239
-    :cond_4d6
+    :cond_40
     move-object v4, v7
 
     .line 1240
-    goto :goto_4d3
+    goto :goto_30
 
     .line 1241
-    :goto_4d8
+    :goto_31
     ushr-int/lit8 v6, v6, 0x1
 
     .line 1242
@@ -2786,27 +2786,27 @@
     move-result-object v0
 
     .line 1253
-    goto :goto_4c3
+    goto :goto_2f
 
     .line 1254
-    :cond_4e5
+    :cond_41
     move-object v7, v0
 
     .line 1255
-    goto :goto_4f3
+    goto :goto_32
 
     .line 1256
-    :cond_4e7
+    :cond_42
     invoke-static {v8}, Llibs/ic0;->p(Ljava/lang/String;)V
 
     .line 1257
     .line 1258
     .line 1259
-    goto/16 :goto_40f
+    goto/16 :goto_29
 
     .line 1260
     .line 1261
-    :cond_4ec
+    :cond_43
     const-string v0, "\'width\' must be in the range [2, 16]"
 
     .line 1262
@@ -2816,15 +2816,15 @@
     .line 1264
     .line 1265
     .line 1266
-    goto/16 :goto_40f
+    goto/16 :goto_29
 
     .line 1267
     .line 1268
-    :goto_4f3
+    :goto_32
     return-object v7
 
     .line 1269
-    :pswitch_4f4
+    :pswitch_1
     iget-object v1, v0, Llibs/ig0;->a:Llibs/kf0;
 
     .line 1270
@@ -2833,7 +2833,7 @@
 
     .line 1272
     .line 1273
-    if-nez v3, :cond_503
+    if-nez v3, :cond_44
 
     .line 1274
     .line 1275
@@ -2853,10 +2853,10 @@
 
     .line 1282
     .line 1283
-    goto :goto_507
+    goto :goto_33
 
     .line 1284
-    :cond_503
+    :cond_44
     invoke-virtual {v3}, Ljava/math/BigInteger;->bitLength()I
 
     .line 1285
@@ -2865,7 +2865,7 @@
     move-result v3
 
     .line 1288
-    :goto_507
+    :goto_33
     invoke-virtual {v2}, Ljava/math/BigInteger;->bitLength()I
 
     .line 1289
@@ -2874,7 +2874,7 @@
     move-result v4
 
     .line 1292
-    if-gt v4, v3, :cond_5cb
+    if-gt v4, v3, :cond_4f
 
     .line 1293
     .line 1294
@@ -2882,21 +2882,21 @@
 
     .line 1295
     .line 1296
-    if-le v3, v4, :cond_513
+    if-le v3, v4, :cond_45
 
     .line 1297
     .line 1298
     const/4 v4, 0x6
 
     .line 1299
-    goto :goto_514
+    goto :goto_34
 
     .line 1300
-    :cond_513
+    :cond_45
     const/4 v4, 0x5
 
     .line 1301
-    :goto_514
+    :goto_34
     iget-object v5, v0, Llibs/ig0;->a:Llibs/kf0;
 
     .line 1302
@@ -2921,7 +2921,7 @@
     move-result-object v8
 
     .line 1313
-    if-eqz v8, :cond_529
+    if-eqz v8, :cond_46
 
     .line 1314
     .line 1315
@@ -2929,7 +2929,7 @@
 
     .line 1316
     .line 1317
-    if-eqz v9, :cond_529
+    if-eqz v9, :cond_46
 
     .line 1318
     .line 1319
@@ -2937,10 +2937,10 @@
 
     .line 1320
     .line 1321
-    goto :goto_52e
+    goto :goto_35
 
     .line 1322
-    :cond_529
+    :cond_46
     new-instance v8, Llibs/pr0;
 
     .line 1323
@@ -2950,39 +2950,39 @@
     .line 1325
     .line 1326
     .line 1327
-    :goto_52e
+    :goto_35
     iget-object v9, v8, Llibs/pr0;->a:[Llibs/ig0;
 
     .line 1328
     .line 1329
-    if-eqz v9, :cond_538
+    if-eqz v9, :cond_48
 
     .line 1330
     .line 1331
     array-length v9, v9
 
     .line 1332
-    if-ge v9, v6, :cond_536
+    if-ge v9, v6, :cond_47
 
     .line 1333
     .line 1334
-    goto :goto_538
+    goto :goto_36
 
     .line 1335
-    :cond_536
+    :cond_47
     const/4 v12, 0x0
 
     .line 1336
-    goto :goto_59a
+    goto :goto_3b
 
     .line 1337
-    :cond_538
-    :goto_538
+    :cond_48
+    :goto_36
     iget-object v9, v5, Llibs/kf0;->d:Ljava/math/BigInteger;
 
     .line 1338
     .line 1339
-    if-nez v9, :cond_545
+    if-nez v9, :cond_49
 
     .line 1340
     .line 1341
@@ -3002,10 +3002,10 @@
 
     .line 1348
     .line 1349
-    goto :goto_54b
+    goto :goto_37
 
     .line 1350
-    :cond_545
+    :cond_49
     const/16 v18, 0x1
 
     .line 1351
@@ -3018,7 +3018,7 @@
     move-result v9
 
     .line 1356
-    :goto_54b
+    :goto_37
     add-int/2addr v9, v4
 
     .line 1357
@@ -3043,8 +3043,8 @@
     const/4 v11, 0x1
 
     .line 1366
-    :goto_555
-    if-ge v11, v4, :cond_564
+    :goto_38
+    if-ge v11, v4, :cond_4a
 
     .line 1367
     .line 1368
@@ -3072,10 +3072,10 @@
 
     .line 1379
     .line 1380
-    goto :goto_555
+    goto :goto_38
 
     .line 1381
-    :cond_564
+    :cond_4a
     const/4 v11, 0x0
 
     .line 1382
@@ -3104,8 +3104,8 @@
 
     .line 1394
     .line 1395
-    :goto_572
-    if-ltz v11, :cond_58e
+    :goto_39
+    if-ltz v11, :cond_4c
 
     .line 1396
     .line 1397
@@ -3124,8 +3124,8 @@
     move v14, v13
 
     .line 1404
-    :goto_57b
-    if-ge v14, v6, :cond_58b
+    :goto_3a
+    if-ge v14, v6, :cond_4b
 
     .line 1405
     .line 1406
@@ -3156,18 +3156,18 @@
     add-int/2addr v14, v15
 
     .line 1419
-    goto :goto_57b
+    goto :goto_3a
 
     .line 1420
-    :cond_58b
+    :cond_4b
     add-int/lit8 v11, v11, -0x1
 
     .line 1421
     .line 1422
-    goto :goto_572
+    goto :goto_39
 
     .line 1423
-    :cond_58e
+    :cond_4c
     const/4 v11, 0x0
 
     .line 1424
@@ -3192,7 +3192,7 @@
     .line 1433
     .line 1434
     .line 1435
-    :goto_59a
+    :goto_3b
     iget-object v0, v8, Llibs/pr0;->a:[Llibs/ig0;
 
     .line 1436
@@ -3237,8 +3237,8 @@
     const/4 v1, 0x0
 
     .line 1455
-    :goto_5ae
-    if-ge v1, v3, :cond_5d2
+    :goto_3c
+    if-ge v1, v3, :cond_50
 
     .line 1456
     .line 1457
@@ -3252,8 +3252,8 @@
     const/4 v5, 0x0
 
     .line 1461
-    :goto_5b4
-    if-ltz v6, :cond_5c2
+    :goto_3d
+    if-ltz v6, :cond_4e
 
     .line 1462
     .line 1463
@@ -3269,7 +3269,7 @@
     move-result v8
 
     .line 1469
-    if-eqz v8, :cond_5c0
+    if-eqz v8, :cond_4d
 
     .line 1470
     .line 1471
@@ -3277,14 +3277,14 @@
 
     .line 1472
     .line 1473
-    :cond_5c0
+    :cond_4d
     sub-int/2addr v6, v3
 
     .line 1474
-    goto :goto_5b4
+    goto :goto_3d
 
     .line 1475
-    :cond_5c2
+    :cond_4e
     aget-object v5, v0, v5
 
     .line 1476
@@ -3301,10 +3301,10 @@
 
     .line 1482
     .line 1483
-    goto :goto_5ae
+    goto :goto_3c
 
     .line 1484
-    :cond_5cb
+    :cond_4f
     const/4 v11, 0x0
 
     .line 1485
@@ -3320,16 +3320,16 @@
     move-object v7, v11
 
     .line 1491
-    :cond_5d2
+    :cond_50
     return-object v7
 
     .line 1492
     nop
 
     .line 1493
-    :pswitch_data_5d4
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_4f4
-        :pswitch_38b
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

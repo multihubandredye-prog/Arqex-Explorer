@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -20,7 +20,7 @@
 
     .line 4
     .line 5
-    if-lt v0, v1, :cond_e
+    if-lt v0, v1, :cond_0
 
     .line 6
     .line 7
@@ -40,12 +40,12 @@
     return-void
 
     .line 15
-    :cond_e
+    :cond_0
     const/16 v1, 0x15
 
     .line 16
     .line 17
-    if-lt v0, v1, :cond_1a
+    if-lt v0, v1, :cond_1
 
     .line 18
     .line 19
@@ -65,12 +65,12 @@
     return-void
 
     .line 27
-    :cond_1a
+    :cond_1
     const/16 v1, 0x13
 
     .line 28
     .line 29
-    if-lt v0, v1, :cond_26
+    if-lt v0, v1, :cond_2
 
     .line 30
     .line 31
@@ -90,12 +90,12 @@
     return-void
 
     .line 39
-    :cond_26
+    :cond_2
     const/16 v1, 0x11
 
     .line 40
     .line 41
-    if-lt v0, v1, :cond_32
+    if-lt v0, v1, :cond_3
 
     .line 42
     .line 43
@@ -115,12 +115,12 @@
     return-void
 
     .line 51
-    :cond_32
+    :cond_3
     const/16 v1, 0xb
 
     .line 52
     .line 53
-    if-lt v0, v1, :cond_3e
+    if-lt v0, v1, :cond_4
 
     .line 54
     .line 55
@@ -140,7 +140,7 @@
     return-void
 
     .line 63
-    :cond_3e
+    :cond_4
     new-instance v0, Llibs/Eta;
 
     .line 64

@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/TextEditorActivity;Lcom/mixplorer/widgets/MiEditor;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/yk3;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 12
+    .locals 11
 
     .line 1
     iget-byte v0, p0, Llibs/yk3;->X:B
@@ -60,7 +60,7 @@
 
     .line 7
     .line 8
-    packed-switch v0, :pswitch_data_94
+    packed-switch v0, :pswitch_data_0
 
     .line 9
     .line 10
@@ -77,7 +77,7 @@
     move-result v0
 
     .line 17
-    if-nez v0, :cond_15
+    if-nez v0, :cond_0
 
     .line 18
     .line 19
@@ -86,7 +86,7 @@
     .line 20
     .line 21
     .line 22
-    :cond_15
+    :cond_0
     invoke-static {v3, v2, v1}, Llibs/tr3;->z(Landroid/app/Activity;Landroid/view/View;Z)V
 
     .line 23
@@ -95,7 +95,7 @@
     return-void
 
     .line 26
-    :pswitch_19
+    :pswitch_0
     sget v0, Lcom/mixplorer/activities/TextEditorActivity;->$c:I
 
     .line 27
@@ -104,7 +104,7 @@
 
     .line 29
     .line 30
-    if-ne v2, v0, :cond_29
+    if-ne v2, v0, :cond_1
 
     .line 31
     .line 32
@@ -126,11 +126,11 @@
     .line 40
     .line 41
     .line 42
-    :cond_29
+    :cond_1
     return-void
 
     .line 43
-    :pswitch_2a
+    :pswitch_1
     sget v0, Lcom/mixplorer/activities/TextEditorActivity;->$c:I
 
     .line 44
@@ -170,7 +170,7 @@
     return-void
 
     .line 62
-    :pswitch_3d
+    :pswitch_2
     sget v0, Lcom/mixplorer/activities/TextEditorActivity;->$c:I
 
     .line 63
@@ -208,7 +208,7 @@
     return-void
 
     .line 81
-    :pswitch_50
+    :pswitch_3
     sget v0, Lcom/mixplorer/activities/TextEditorActivity;->$c:I
 
     .line 82
@@ -221,7 +221,7 @@
     return-void
 
     .line 87
-    :pswitch_56
+    :pswitch_4
     iget-object v4, p0, Llibs/yk3;->Y:Lcom/mixplorer/activities/TextEditorActivity;
 
     .line 88
@@ -234,7 +234,7 @@
 
     .line 92
     .line 93
-    :try_start_5c
+    :try_start_0
     invoke-virtual {v5}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     .line 94
@@ -286,16 +286,16 @@
     .line 116
     .line 117
     invoke-virtual {v4, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
-    :try_end_77
-    .catchall {:try_start_5c .. :try_end_77} :catchall_78
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 118
     .line 119
     .line 120
-    goto :goto_8b
+    goto :goto_0
 
     .line 121
-    :catchall_78
+    :catchall_0
     move-exception v0
 
     .line 122
@@ -333,11 +333,11 @@
     .line 138
     .line 139
     .line 140
-    :goto_8b
+    :goto_0
     return-void
 
     .line 141
-    :pswitch_8c
+    :pswitch_5
     sget v0, Lcom/mixplorer/activities/TextEditorActivity;->$c:I
 
     .line 142
@@ -356,13 +356,13 @@
     nop
 
     .line 149
-    :pswitch_data_94
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_8c
-        :pswitch_56
-        :pswitch_50
-        :pswitch_3d
-        :pswitch_2a
-        :pswitch_19
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

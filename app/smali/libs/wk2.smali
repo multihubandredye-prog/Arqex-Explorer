@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;)V
-    .registers 11
+    .locals 2
 
     .line 154
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -74,7 +74,7 @@
 .end method
 
 .method public constructor <init>(Llibs/Param;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -125,7 +125,7 @@
     move-result v2
 
     .line 25
-    if-eqz v2, :cond_28
+    if-eqz v2, :cond_1
 
     .line 26
     .line 27
@@ -140,14 +140,14 @@
     const/4 v3, 0x1
 
     .line 32
-    if-ne v2, v3, :cond_22
+    if-ne v2, v3, :cond_0
 
     .line 33
     .line 34
-    goto :goto_28
+    goto :goto_0
 
     .line 35
-    :cond_22
+    :cond_0
     const-string p1, "wrong version for RSA private key"
 
     .line 36
@@ -160,8 +160,8 @@
     throw v0
 
     .line 41
-    :cond_28
-    :goto_28
+    :cond_1
+    :goto_0
     iput-object v1, p0, Llibs/wk2;->X:Ljava/math/BigInteger;
 
     .line 42
@@ -366,7 +366,7 @@
     move-result v0
 
     .line 143
-    if-eqz v0, :cond_98
+    if-eqz v0, :cond_2
 
     .line 144
     .line 145
@@ -386,19 +386,19 @@
 
     .line 152
     .line 153
-    :cond_98
+    :cond_2
     return-void
 .end method
 
 .method public static g(Ljava/lang/Object;)Llibs/wk2;
-    .registers 2
+    .locals 1
 
     .line 1
     instance-of v0, p0, Llibs/wk2;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -409,8 +409,8 @@
     return-object p0
 
     .line 8
-    :cond_7
-    if-eqz p0, :cond_13
+    :cond_0
+    if-eqz p0, :cond_1
 
     .line 9
     .line 10
@@ -434,7 +434,7 @@
     return-object v0
 
     .line 20
-    :cond_13
+    :cond_1
     const/4 p0, 0x0
 
     .line 21
@@ -444,7 +444,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/Init;
@@ -625,7 +625,7 @@
 
     .line 98
     .line 99
-    if-eqz v1, :cond_67
+    if-eqz v1, :cond_0
 
     .line 100
     .line 101
@@ -634,7 +634,7 @@
     .line 102
     .line 103
     .line 104
-    :cond_67
+    :cond_0
     new-instance v1, Llibs/p10;
 
     .line 105

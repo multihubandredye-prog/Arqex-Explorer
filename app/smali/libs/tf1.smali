@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Llibs/le;Llibs/e90;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p3}, Llibs/vc;-><init>(Ljava/lang/String;Llibs/e90;)V
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public final a(Ljava/math/BigInteger;)[B
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/tf1;->i:Llibs/sf0;
@@ -74,7 +74,7 @@
 .end method
 
 .method public final b(Ljava/security/Key;)V
-    .registers 8
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/tf1;->j:Llibs/le;
@@ -101,7 +101,7 @@
 
     .line 12
     .line 13
-    if-nez v1, :cond_46
+    if-nez v1, :cond_1
 
     .line 14
     .line 15
@@ -109,7 +109,7 @@
 
     .line 16
     .line 17
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_0
 
     .line 18
     .line 19
@@ -145,7 +145,7 @@
     return-void
 
     .line 35
-    :cond_22
+    :cond_0
     new-instance p1, Ljava/security/InvalidKeyException;
 
     .line 36
@@ -216,7 +216,7 @@
     throw p1
 
     .line 71
-    :cond_46
+    :cond_1
     new-instance p1, Ljava/security/InvalidKeyException;
 
     .line 72
@@ -288,7 +288,7 @@
 .end method
 
 .method public final engineDoPhase(Ljava/security/Key;Z)Ljava/security/Key;
-    .registers 6
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/tf1;->i:Llibs/sf0;
@@ -302,11 +302,11 @@
 
     .line 5
     .line 6
-    if-eqz v0, :cond_5d
+    if-eqz v0, :cond_3
 
     .line 7
     .line 8
-    if-eqz p2, :cond_53
+    if-eqz p2, :cond_2
 
     .line 9
     .line 10
@@ -318,7 +318,7 @@
 
     .line 13
     .line 14
-    if-nez v0, :cond_4a
+    if-nez v0, :cond_1
 
     .line 15
     .line 16
@@ -326,7 +326,7 @@
 
     .line 17
     .line 18
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     .line 19
     .line 20
@@ -357,7 +357,7 @@
     return-object v1
 
     .line 33
-    :cond_20
+    :cond_0
     new-instance p1, Ljava/security/InvalidKeyException;
 
     .line 34
@@ -440,7 +440,7 @@
     throw p1
 
     .line 75
-    :cond_4a
+    :cond_1
     check-cast p1, Ljava/security/PublicKey;
 
     .line 76
@@ -460,7 +460,7 @@
     throw v1
 
     .line 84
-    :cond_53
+    :cond_2
     const-string p1, " can only be between two parties."
 
     .line 85
@@ -481,7 +481,7 @@
     return-object v1
 
     .line 94
-    :cond_5d
+    :cond_3
     const-string p1, " not initialised."
 
     .line 95
@@ -503,7 +503,7 @@
 .end method
 
 .method public final engineInit(Ljava/security/Key;Ljava/security/SecureRandom;)V
-    .registers 3
+    .locals 0
 
     .line 13
     invoke-virtual {p0, p1}, Llibs/tf1;->b(Ljava/security/Key;)V
@@ -512,10 +512,10 @@
 .end method
 
 .method public final engineInit(Ljava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    .registers 4
+    .locals 0
 
     .line 1
-    if-nez p2, :cond_6
+    if-nez p2, :cond_0
 
     .line 2
     .line 3
@@ -527,7 +527,7 @@
     return-void
 
     .line 7
-    :cond_6
+    :cond_0
     const-string p1, "No algorithm parameters supported"
 
     .line 8

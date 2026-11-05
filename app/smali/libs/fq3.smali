@@ -23,7 +23,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     const/16 v0, 0x10
@@ -34,7 +34,7 @@
 
     .line 4
     .line 5
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     .line 6
     .line 7
@@ -46,7 +46,7 @@
     return-void
 
     .line 11
-    :array_a
+    :array_0
     .array-data 2
         0x30s
         0x31s
@@ -68,7 +68,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 7
+    .locals 5
 
     .line 1
     invoke-direct {p0}, Llibs/i81;-><init>()V
@@ -386,19 +386,19 @@
 .end method
 
 .method public static Item(II)Ljava/lang/String;
-    .registers 5
+    .locals 3
 
     .line 1
     new-array v0, p1, [C
 
     .line 2
     .line 3
-    :goto_2
+    :goto_0
     add-int/lit8 v1, p1, -0x1
 
     .line 4
     .line 5
-    if-lez p1, :cond_12
+    if-lez p1, :cond_0
 
     .line 6
     .line 7
@@ -425,10 +425,10 @@
     move p1, v1
 
     .line 18
-    goto :goto_2
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     new-instance p0, Ljava/lang/String;
 
     .line 20
@@ -442,7 +442,7 @@
 .end method
 
 .method public static Node([CII)I
-    .registers 8
+    .locals 5
 
     .line 1
     const/4 v0, 0x0
@@ -457,15 +457,15 @@
     const/4 v3, 0x0
 
     .line 5
-    :goto_4
+    :goto_0
     array-length v4, p0
 
     .line 6
-    if-ge v1, v4, :cond_2f
+    if-ge v1, v4, :cond_0
 
     .line 7
     .line 8
-    if-ge v2, p2, :cond_2f
+    if-ge v2, p2, :cond_0
 
     .line 9
     .line 10
@@ -477,17 +477,17 @@
 
     .line 13
     .line 14
-    packed-switch v4, :pswitch_data_30
+    packed-switch v4, :pswitch_data_0
 
     .line 15
     .line 16
     .line 17
-    packed-switch v4, :pswitch_data_48
+    packed-switch v4, :pswitch_data_1
 
     .line 18
     .line 19
     .line 20
-    packed-switch v4, :pswitch_data_58
+    packed-switch v4, :pswitch_data_2
 
     .line 21
     .line 22
@@ -509,38 +509,38 @@
     return v0
 
     .line 32
-    :pswitch_1f
+    :pswitch_0
     add-int/lit8 v4, v4, -0x57
 
     .line 33
     .line 34
-    :goto_21
+    :goto_1
     add-int/2addr v4, v3
 
     .line 35
     move v3, v4
 
     .line 36
-    goto :goto_2a
+    goto :goto_2
 
     .line 37
-    :pswitch_24
+    :pswitch_1
     add-int/lit8 v4, v4, -0x37
 
     .line 38
     .line 39
-    goto :goto_21
+    goto :goto_1
 
     .line 40
-    :pswitch_27
+    :pswitch_2
     add-int/lit8 v4, v4, -0x30
 
     .line 41
     .line 42
-    goto :goto_21
+    goto :goto_1
 
     .line 43
-    :goto_2a
+    :goto_2
     add-int/lit8 v2, v2, 0x1
 
     .line 44
@@ -549,25 +549,25 @@
 
     .line 46
     .line 47
-    goto :goto_4
+    goto :goto_0
 
     .line 48
-    :cond_2f
+    :cond_0
     return v3
 
     .line 49
-    :pswitch_data_30
+    :pswitch_data_0
     .packed-switch 0x30
-        :pswitch_27
-        :pswitch_27
-        :pswitch_27
-        :pswitch_27
-        :pswitch_27
-        :pswitch_27
-        :pswitch_27
-        :pswitch_27
-        :pswitch_27
-        :pswitch_27
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
     .end packed-switch
 
     .line 50
@@ -594,14 +594,14 @@
     .line 71
     .line 72
     .line 73
-    :pswitch_data_48
+    :pswitch_data_1
     .packed-switch 0x41
-        :pswitch_24
-        :pswitch_24
-        :pswitch_24
-        :pswitch_24
-        :pswitch_24
-        :pswitch_24
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
     .end packed-switch
 
     .line 74
@@ -620,21 +620,21 @@
     .line 87
     .line 88
     .line 89
-    :pswitch_data_58
+    :pswitch_data_2
     .packed-switch 0x61
-        :pswitch_1f
-        :pswitch_1f
-        :pswitch_1f
-        :pswitch_1f
-        :pswitch_1f
-        :pswitch_1f
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public final f(Llibs/mz1;)V
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x4
@@ -740,8 +740,8 @@
     const/4 v0, 0x0
 
     .line 50
-    :goto_31
-    if-ge v0, v1, :cond_3f
+    :goto_0
+    if-ge v0, v1, :cond_0
 
     .line 51
     .line 52
@@ -768,15 +768,15 @@
 
     .line 62
     .line 63
-    goto :goto_31
+    goto :goto_0
 
     .line 64
-    :cond_3f
+    :cond_0
     return-void
 .end method
 
 .method public final h(Llibs/mz1;)V
-    .registers 5
+    .locals 3
 
     .line 1
     const/4 v0, 0x4
@@ -855,8 +855,8 @@
     const/4 v0, 0x0
 
     .line 41
-    :goto_28
-    if-ge v0, v1, :cond_34
+    :goto_0
+    if-ge v0, v1, :cond_0
 
     .line 42
     .line 43
@@ -877,15 +877,15 @@
 
     .line 51
     .line 52
-    goto :goto_28
+    goto :goto_0
 
     .line 53
-    :cond_34
+    :cond_0
     return-void
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

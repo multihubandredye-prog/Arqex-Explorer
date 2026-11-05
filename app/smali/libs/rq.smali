@@ -27,7 +27,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/oa2;
@@ -68,7 +68,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/security/cert/CertificateFactorySpi;-><init>()V
@@ -125,14 +125,14 @@
 
 # virtual methods
 .method public final a()Llibs/uv3;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/rq;->e:Llibs/ID;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
@@ -152,14 +152,14 @@
     move-result v0
 
     .line 13
-    if-lt v1, v0, :cond_f
+    if-lt v1, v0, :cond_0
 
     .line 14
     .line 15
-    goto :goto_27
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_0
     iget-object v0, p0, Llibs/rq;->e:Llibs/ID;
 
     .line 17
@@ -208,8 +208,8 @@
     return-object v1
 
     .line 40
-    :cond_27
-    :goto_27
+    :cond_1
+    :goto_0
     const/4 v0, 0x0
 
     .line 41
@@ -217,18 +217,18 @@
 .end method
 
 .method public final b()Llibs/bw3;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/rq;->b:Llibs/ID;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
-    :cond_4
+    :cond_0
     iget v0, p0, Llibs/rq;->c:I
 
     .line 6
@@ -249,7 +249,7 @@
     move-result v1
 
     .line 15
-    if-ge v0, v1, :cond_2c
+    if-ge v0, v1, :cond_1
 
     .line 16
     .line 17
@@ -281,7 +281,7 @@
 
     .line 30
     .line 31
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_0
 
     .line 32
     .line 33
@@ -309,7 +309,7 @@
     return-object v1
 
     .line 45
-    :cond_2c
+    :cond_1
     const/4 v0, 0x0
 
     .line 46
@@ -317,7 +317,7 @@
 .end method
 
 .method public final c(Llibs/Uri;)Llibs/uv3;
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-virtual {p1}, Llibs/Uri;->Object()Llibs/Theme;
@@ -343,7 +343,7 @@
     const/4 v1, 0x1
 
     .line 12
-    if-le v0, v1, :cond_42
+    if-le v0, v1, :cond_1
 
     .line 13
     .line 14
@@ -362,7 +362,7 @@
 
     .line 20
     .line 21
-    if-eqz v2, :cond_42
+    if-eqz v2, :cond_1
 
     .line 22
     .line 23
@@ -386,7 +386,7 @@
     move-result v0
 
     .line 33
-    if-eqz v0, :cond_42
+    if-eqz v0, :cond_1
 
     .line 34
     .line 35
@@ -410,7 +410,7 @@
     move-result-object p1
 
     .line 45
-    if-eqz p1, :cond_38
+    if-eqz p1, :cond_0
 
     .line 46
     .line 47
@@ -431,14 +431,14 @@
     .line 54
     .line 55
     .line 56
-    goto :goto_39
+    goto :goto_0
 
     .line 57
-    :cond_38
+    :cond_0
     const/4 v0, 0x0
 
     .line 58
-    :goto_39
+    :goto_0
     iget-object p1, v0, Llibs/k93;->Mu:Llibs/ID;
 
     .line 59
@@ -458,7 +458,7 @@
     return-object p1
 
     .line 67
-    :cond_42
+    :cond_1
     invoke-static {p1}, Llibs/uq;->g(Llibs/Core;)Llibs/uq;
 
     .line 68
@@ -484,7 +484,7 @@
 .end method
 
 .method public final d(Llibs/Uri;)Llibs/bw3;
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-virtual {p1}, Llibs/Uri;->Object()Llibs/Theme;
@@ -510,7 +510,7 @@
     const/4 v1, 0x1
 
     .line 12
-    if-le v0, v1, :cond_42
+    if-le v0, v1, :cond_1
 
     .line 13
     .line 14
@@ -529,7 +529,7 @@
 
     .line 20
     .line 21
-    if-eqz v2, :cond_42
+    if-eqz v2, :cond_1
 
     .line 22
     .line 23
@@ -553,7 +553,7 @@
     move-result v0
 
     .line 33
-    if-eqz v0, :cond_42
+    if-eqz v0, :cond_1
 
     .line 34
     .line 35
@@ -577,7 +577,7 @@
     move-result-object p1
 
     .line 45
-    if-eqz p1, :cond_38
+    if-eqz p1, :cond_0
 
     .line 46
     .line 47
@@ -598,14 +598,14 @@
     .line 54
     .line 55
     .line 56
-    goto :goto_39
+    goto :goto_0
 
     .line 57
-    :cond_38
+    :cond_0
     const/4 v0, 0x0
 
     .line 58
-    :goto_39
+    :goto_0
     iget-object p1, v0, Llibs/k93;->Lambda:Llibs/ID;
 
     .line 59
@@ -625,7 +625,7 @@
     return-object p1
 
     .line 67
-    :cond_42
+    :cond_1
     new-instance v0, Llibs/bw3;
 
     .line 68
@@ -651,7 +651,7 @@
 .end method
 
 .method public final engineGenerateCRL(Ljava/io/InputStream;)Ljava/security/cert/CRL;
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/rq;->g:Ljava/io/InputStream;
@@ -664,7 +664,7 @@
     const/4 v2, 0x0
 
     .line 5
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -680,11 +680,11 @@
 
     .line 12
     .line 13
-    goto :goto_15
+    goto :goto_0
 
     .line 14
-    :cond_d
-    if-eq v0, p1, :cond_15
+    :cond_0
+    if-eq v0, p1, :cond_1
 
     .line 15
     .line 16
@@ -700,14 +700,14 @@
 
     .line 21
     .line 22
-    :cond_15
-    :goto_15
-    :try_start_15
+    :cond_1
+    :goto_0
+    :try_start_0
     iget-object v0, p0, Llibs/rq;->e:Llibs/ID;
 
     .line 23
     .line 24
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_3
 
     .line 25
     .line 26
@@ -727,7 +727,7 @@
     move-result v0
 
     .line 34
-    if-eq p1, v0, :cond_2c
+    if-eq p1, v0, :cond_2
 
     .line 35
     .line 36
@@ -742,21 +742,21 @@
     return-object p1
 
     .line 41
-    :catch_28
+    :catch_0
     move-exception p1
 
     .line 42
-    goto :goto_64
+    goto :goto_2
 
     .line 43
-    :catch_2a
+    :catch_1
     move-exception p1
 
     .line 44
-    goto :goto_6e
+    goto :goto_3
 
     .line 45
-    :cond_2c
+    :cond_2
     iput-object v2, p0, Llibs/rq;->e:Llibs/ID;
 
     .line 46
@@ -768,7 +768,7 @@
     return-object v2
 
     .line 50
-    :cond_31
+    :cond_3
     new-instance v0, Ljava/io/PushbackInputStream;
 
     .line 51
@@ -789,14 +789,14 @@
     const/4 v1, -0x1
 
     .line 60
-    if-ne p1, v1, :cond_3e
+    if-ne p1, v1, :cond_4
 
     .line 61
     .line 62
-    goto :goto_59
+    goto :goto_1
 
     .line 63
-    :cond_3e
+    :cond_4
     invoke-virtual {v0, p1}, Ljava/io/PushbackInputStream;->unread(I)V
 
     .line 64
@@ -806,7 +806,7 @@
 
     .line 67
     .line 68
-    if-eq p1, v1, :cond_5a
+    if-eq p1, v1, :cond_6
 
     .line 69
     .line 70
@@ -822,7 +822,7 @@
     move-result-object p1
 
     .line 76
-    if-eqz p1, :cond_59
+    if-eqz p1, :cond_5
 
     .line 77
     .line 78
@@ -850,12 +850,12 @@
     return-object v0
 
     .line 90
-    :cond_59
-    :goto_59
+    :cond_5
+    :goto_1
     return-object v2
 
     .line 91
-    :cond_5a
+    :cond_6
     new-instance p1, Llibs/Uri;
 
     .line 92
@@ -871,15 +871,15 @@
     .line 98
     .line 99
     move-result-object p1
-    :try_end_63
-    .catch Ljava/security/cert/CRLException; {:try_start_15 .. :try_end_63} :catch_2a
-    .catch Ljava/lang/Exception; {:try_start_15 .. :try_end_63} :catch_28
+    :try_end_0
+    .catch Ljava/security/cert/CRLException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 100
     return-object p1
 
     .line 101
-    :goto_64
+    :goto_2
     new-instance v0, Ljava/security/cert/CRLException;
 
     .line 102
@@ -900,12 +900,12 @@
     throw v0
 
     .line 111
-    :goto_6e
+    :goto_3
     throw p1
 .end method
 
 .method public final engineGenerateCRLs(Ljava/io/InputStream;)Ljava/util/Collection;
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/util/ArrayList;
@@ -917,7 +917,7 @@
     .line 4
     .line 5
     .line 6
-    :goto_5
+    :goto_0
     invoke-virtual {p0, p1}, Llibs/rq;->engineGenerateCRL(Ljava/io/InputStream;)Ljava/security/cert/CRL;
 
     .line 7
@@ -926,7 +926,7 @@
     move-result-object v1
 
     .line 10
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     .line 11
     .line 12
@@ -935,15 +935,15 @@
     .line 13
     .line 14
     .line 15
-    goto :goto_5
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_0
     return-object v0
 .end method
 
 .method public final engineGenerateCertPath(Ljava/io/InputStream;)Ljava/security/cert/CertPath;
-    .registers 4
+    .locals 2
 
     .line 53
     new-instance v0, Llibs/v82;
@@ -956,7 +956,7 @@
 .end method
 
 .method public final engineGenerateCertPath(Ljava/io/InputStream;Ljava/lang/String;)Ljava/security/cert/CertPath;
-    .registers 4
+    .locals 1
 
     .line 52
     new-instance v0, Llibs/v82;
@@ -967,7 +967,7 @@
 .end method
 
 .method public final engineGenerateCertPath(Ljava/util/List;)Ljava/security/cert/CertPath;
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -978,8 +978,8 @@
     move-result-object v0
 
     .line 5
-    :cond_4
-    :goto_4
+    :cond_0
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 6
@@ -988,7 +988,7 @@
     move-result v1
 
     .line 9
-    if-eqz v1, :cond_2d
+    if-eqz v1, :cond_2
 
     .line 10
     .line 11
@@ -1000,7 +1000,7 @@
     move-result-object v1
 
     .line 15
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_0
 
     .line 16
     .line 17
@@ -1008,14 +1008,14 @@
 
     .line 18
     .line 19
-    if-eqz v2, :cond_15
+    if-eqz v2, :cond_1
 
     .line 20
     .line 21
-    goto :goto_4
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_1
     new-instance p1, Ljava/security/cert/CertificateException;
 
     .line 23
@@ -1062,7 +1062,7 @@
     throw p1
 
     .line 46
-    :cond_2d
+    :cond_2
     new-instance v0, Llibs/v82;
 
     .line 47
@@ -1076,7 +1076,7 @@
 .end method
 
 .method public final engineGenerateCertificate(Ljava/io/InputStream;)Ljava/security/cert/Certificate;
-    .registers 5
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/rq;->d:Ljava/io/InputStream;
@@ -1089,7 +1089,7 @@
     const/4 v2, 0x0
 
     .line 5
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -1105,11 +1105,11 @@
 
     .line 12
     .line 13
-    goto :goto_15
+    goto :goto_0
 
     .line 14
-    :cond_d
-    if-eq v0, p1, :cond_15
+    :cond_0
+    if-eq v0, p1, :cond_1
 
     .line 15
     .line 16
@@ -1125,14 +1125,14 @@
 
     .line 21
     .line 22
-    :cond_15
-    :goto_15
-    :try_start_15
+    :cond_1
+    :goto_0
+    :try_start_0
     iget-object v0, p0, Llibs/rq;->b:Llibs/ID;
 
     .line 23
     .line 24
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_3
 
     .line 25
     .line 26
@@ -1152,7 +1152,7 @@
     move-result v0
 
     .line 34
-    if-eq p1, v0, :cond_2a
+    if-eq p1, v0, :cond_2
 
     .line 35
     .line 36
@@ -1167,14 +1167,14 @@
     return-object p1
 
     .line 41
-    :catch_28
+    :catch_0
     move-exception p1
 
     .line 42
-    goto :goto_62
+    goto :goto_2
 
     .line 43
-    :cond_2a
+    :cond_2
     iput-object v2, p0, Llibs/rq;->b:Llibs/ID;
 
     .line 44
@@ -1186,7 +1186,7 @@
     return-object v2
 
     .line 48
-    :cond_2f
+    :cond_3
     new-instance v0, Ljava/io/PushbackInputStream;
 
     .line 49
@@ -1207,14 +1207,14 @@
     const/4 v1, -0x1
 
     .line 58
-    if-ne p1, v1, :cond_3c
+    if-ne p1, v1, :cond_4
 
     .line 59
     .line 60
-    goto :goto_57
+    goto :goto_1
 
     .line 61
-    :cond_3c
+    :cond_4
     invoke-virtual {v0, p1}, Ljava/io/PushbackInputStream;->unread(I)V
 
     .line 62
@@ -1224,7 +1224,7 @@
 
     .line 65
     .line 66
-    if-eq p1, v1, :cond_58
+    if-eq p1, v1, :cond_6
 
     .line 67
     .line 68
@@ -1240,7 +1240,7 @@
     move-result-object p1
 
     .line 74
-    if-eqz p1, :cond_57
+    if-eqz p1, :cond_5
 
     .line 75
     .line 76
@@ -1268,12 +1268,12 @@
     return-object v0
 
     .line 88
-    :cond_57
-    :goto_57
+    :cond_5
+    :goto_1
     return-object v2
 
     .line 89
-    :cond_58
+    :cond_6
     new-instance p1, Llibs/Uri;
 
     .line 90
@@ -1289,14 +1289,14 @@
     .line 96
     .line 97
     move-result-object p1
-    :try_end_61
-    .catch Ljava/lang/Exception; {:try_start_15 .. :try_end_61} :catch_28
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 98
     return-object p1
 
     .line 99
-    :goto_62
+    :goto_2
     new-instance v0, Llibs/qq;
 
     .line 100
@@ -1310,7 +1310,7 @@
 .end method
 
 .method public final engineGenerateCertificates(Ljava/io/InputStream;)Ljava/util/Collection;
-    .registers 4
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/util/ArrayList;
@@ -1322,7 +1322,7 @@
     .line 4
     .line 5
     .line 6
-    :goto_5
+    :goto_0
     invoke-virtual {p0, p1}, Llibs/rq;->engineGenerateCertificate(Ljava/io/InputStream;)Ljava/security/cert/Certificate;
 
     .line 7
@@ -1331,7 +1331,7 @@
     move-result-object v1
 
     .line 10
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     .line 11
     .line 12
@@ -1340,15 +1340,15 @@
     .line 13
     .line 14
     .line 15
-    goto :goto_5
+    goto :goto_0
 
     .line 16
-    :cond_f
+    :cond_0
     return-object v0
 .end method
 
 .method public final engineGetCertPathEncodings()Ljava/util/Iterator;
-    .registers 2
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/v82;->Y:Ljava/util/List;

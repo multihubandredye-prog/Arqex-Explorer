@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Ljavax/crypto/interfaces/DHPrivateKey;)V
-    .registers 3
+    .locals 1
 
     .line 149
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,7 +49,7 @@
 .end method
 
 .method public constructor <init>(Ljavax/crypto/spec/DHPrivateKeySpec;)V
-    .registers 4
+    .locals 2
 
     .line 145
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -87,7 +87,7 @@
 .end method
 
 .method public constructor <init>(Llibs/bg2;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -172,7 +172,7 @@
     move-result p1
 
     .line 43
-    if-eqz p1, :cond_62
+    if-eqz p1, :cond_1
 
     .line 44
     .line 45
@@ -200,7 +200,7 @@
 
     .line 56
     .line 57
-    if-eqz v0, :cond_52
+    if-eqz v0, :cond_0
 
     .line 58
     .line 59
@@ -252,7 +252,7 @@
     return-void
 
     .line 83
-    :cond_52
+    :cond_0
     new-instance p1, Ljavax/crypto/spec/DHParameterSpec;
 
     .line 84
@@ -285,7 +285,7 @@
     return-void
 
     .line 99
-    :cond_62
+    :cond_1
     sget-object p1, Llibs/dx3;->Kappa:Llibs/App;
 
     .line 100
@@ -301,11 +301,11 @@
     const/4 v1, 0x0
 
     .line 106
-    if-eqz p1, :cond_8a
+    if-eqz p1, :cond_3
 
     .line 107
     .line 108
-    if-eqz v0, :cond_76
+    if-eqz v0, :cond_2
 
     .line 109
     .line 110
@@ -326,7 +326,7 @@
     .line 117
     .line 118
     .line 119
-    :cond_76
+    :cond_2
     new-instance p1, Ljavax/crypto/spec/DHParameterSpec;
 
     .line 120
@@ -367,7 +367,7 @@
     return-void
 
     .line 139
-    :cond_8a
+    :cond_3
     const-string p1, "unknown algorithm type: "
 
     .line 140
@@ -381,7 +381,7 @@
 .end method
 
 .method public constructor <init>(Llibs/o40;)V
-    .registers 5
+    .locals 3
 
     .line 153
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -425,7 +425,7 @@
 
 # virtual methods
 .method public final b(Llibs/App;)Llibs/Core;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/u9;->Lambda:Llibs/c82;
@@ -444,7 +444,7 @@
 .end method
 
 .method public final c(Llibs/App;Llibs/Core;)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/u9;->Lambda:Llibs/c82;
@@ -460,7 +460,7 @@
 .end method
 
 .method public final d()Ljava/util/Enumeration;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/u9;->Lambda:Llibs/c82;
@@ -483,7 +483,7 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     instance-of v0, p1, Ljavax/crypto/interfaces/DHPrivateKey;
@@ -493,14 +493,14 @@
     const/4 v1, 0x0
 
     .line 4
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 5
     .line 6
     return v1
 
     .line 7
-    :cond_6
+    :cond_0
     check-cast p1, Ljavax/crypto/interfaces/DHPrivateKey;
 
     .line 8
@@ -525,7 +525,7 @@
     move-result v0
 
     .line 19
-    if-eqz v0, :cond_4a
+    if-eqz v0, :cond_1
 
     .line 20
     .line 21
@@ -565,7 +565,7 @@
     move-result v2
 
     .line 39
-    if-eqz v2, :cond_4a
+    if-eqz v2, :cond_1
 
     .line 40
     .line 41
@@ -601,7 +601,7 @@
     move-result v2
 
     .line 57
-    if-eqz v2, :cond_4a
+    if-eqz v2, :cond_1
 
     .line 58
     .line 59
@@ -629,7 +629,7 @@
     move-result p1
 
     .line 71
-    if-ne v0, p1, :cond_4a
+    if-ne v0, p1, :cond_1
 
     .line 72
     .line 73
@@ -639,12 +639,12 @@
     return p1
 
     .line 75
-    :cond_4a
+    :cond_1
     return v1
 .end method
 
 .method public final getAlgorithm()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "DH"
@@ -655,17 +655,17 @@
 .end method
 
 .method public final getEncoded()[B
-    .registers 9
+    .locals 8
 
     .line 1
     iget-object v0, p0, Llibs/u9;->Y:Ljavax/crypto/spec/DHParameterSpec;
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     iget-object v1, p0, Llibs/u9;->Z:Llibs/bg2;
-    :try_end_4
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_4} :catch_3a
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 4
     .line 5
@@ -673,11 +673,11 @@
 
     .line 6
     .line 7
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
-    :try_start_8
+    :try_start_1
     invoke-virtual {v1, v2}, Llibs/Auth;->f(Ljava/lang/String;)[B
 
     .line 10
@@ -689,7 +689,7 @@
     return-object v0
 
     .line 14
-    :cond_d
+    :cond_0
     new-instance v1, Llibs/bg2;
 
     .line 15
@@ -772,14 +772,14 @@
     .line 56
     .line 57
     move-result-object v0
-    :try_end_39
-    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_39} :catch_3a
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 58
     return-object v0
 
     .line 59
-    :catch_3a
+    :catch_0
     const/4 v0, 0x0
 
     .line 60
@@ -787,7 +787,7 @@
 .end method
 
 .method public final getFormat()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "PKCS#8"
@@ -798,7 +798,7 @@
 .end method
 
 .method public final getParams()Ljavax/crypto/spec/DHParameterSpec;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/u9;->Y:Ljavax/crypto/spec/DHParameterSpec;
@@ -809,7 +809,7 @@
 .end method
 
 .method public final getX()Ljava/math/BigInteger;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/u9;->X:Ljava/math/BigInteger;
@@ -820,7 +820,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/u9;->X:Ljava/math/BigInteger;

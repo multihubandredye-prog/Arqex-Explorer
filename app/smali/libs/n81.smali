@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/s73;
@@ -40,7 +40,7 @@
 .end method
 
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/n81;->c:B
@@ -58,14 +58,14 @@
 
 # virtual methods
 .method public final e()Llibs/_f;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/n81;->c:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_c
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -77,7 +77,7 @@
     return-object v0
 
     .line 9
-    :pswitch_8
+    :pswitch_0
     sget-object v0, Llibs/_g;->e:Llibs/_f;
 
     .line 10
@@ -88,21 +88,21 @@
     nop
 
     .line 13
-    :pswitch_data_c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_8
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final f()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/n81;->c:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_1c
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -130,7 +130,7 @@
     return-object v0
 
     .line 17
-    :pswitch_10
+    :pswitch_0
     sget-object v0, Llibs/_g;->e:Llibs/_f;
 
     .line 18
@@ -157,14 +157,14 @@
     nop
 
     .line 29
-    :pswitch_data_1c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_10
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public h(Ljava/lang/String;Ljava/io/OutputStream;Ljava/lang/String;)V
-    .registers 15
+    .locals 11
 
     .line 1
     :try_start_0
@@ -293,8 +293,8 @@
     .line 58
     .line 59
     invoke-virtual {p0, v0, v2, v1}, Llibs/uc;->d(Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_3d
-    .catchall {:try_start_0 .. :try_end_3d} :catchall_3e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 60
     .line 61
@@ -302,7 +302,7 @@
     return-void
 
     .line 63
-    :catchall_3e
+    :catchall_0
     move-exception p1
 
     .line 64
@@ -327,13 +327,13 @@
 .end method
 
 .method public i(Ljava/io/InputStream;Landroid/graphics/BitmapFactory$Options;IZ)[Landroid/graphics/Bitmap;
-    .registers 16
+    .locals 11
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :try_start_1
+    :try_start_0
     const-string v1, "decodeAvif"
 
     .line 3
@@ -464,30 +464,30 @@
 
     .line 63
     check-cast p1, [Landroid/graphics/Bitmap;
-    :try_end_40
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_40} :catch_43
-    .catchall {:try_start_1 .. :try_end_40} :catchall_41
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 64
     .line 65
     return-object p1
 
     .line 66
-    :catchall_41
+    :catchall_0
     move-exception p1
 
     .line 67
-    goto :goto_45
+    goto :goto_0
 
     .line 68
-    :catch_43
+    :catch_0
     move-exception p1
 
     .line 69
-    goto :goto_4d
+    goto :goto_1
 
     .line 70
-    :goto_45
+    :goto_0
     invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     .line 71
@@ -504,12 +504,12 @@
     return-object v0
 
     .line 78
-    :goto_4d
+    :goto_1
     throw p1
 .end method
 
 .method public j(Ljava/io/InputStream;Landroid/graphics/BitmapFactory$Options;Ljava/lang/Object;Llibs/s73;)Landroid/graphics/Bitmap;
-    .registers 13
+    .locals 8
 
     .line 1
     :try_start_0
@@ -593,30 +593,30 @@
 
     .line 38
     check-cast p1, Landroid/graphics/Bitmap;
-    :try_end_27
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_27} :catch_2a
-    .catchall {:try_start_0 .. :try_end_27} :catchall_28
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 39
     .line 40
     return-object p1
 
     .line 41
-    :catchall_28
+    :catchall_0
     move-exception p1
 
     .line 42
-    goto :goto_2c
+    goto :goto_0
 
     .line 43
-    :catch_2a
+    :catch_0
     move-exception p1
 
     .line 44
-    goto :goto_35
+    goto :goto_1
 
     .line 45
-    :goto_2c
+    :goto_0
     invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     .line 46
@@ -636,12 +636,12 @@
     return-object p1
 
     .line 54
-    :goto_35
+    :goto_1
     throw p1
 .end method
 
 .method public k(Ljava/io/InputStream;IILlibs/s73;)Landroid/graphics/Bitmap;
-    .registers 13
+    .locals 8
 
     .line 1
     :try_start_0
@@ -688,7 +688,7 @@
     const/4 v5, 0x1
 
     .line 22
-    if-ne v2, v4, :cond_23
+    if-ne v2, v4, :cond_0
 
     .line 23
     .line 24
@@ -700,7 +700,7 @@
 
     .line 27
     .line 28
-    if-ne p1, v2, :cond_23
+    if-ne p1, v2, :cond_0
 
     .line 29
     .line 30
@@ -716,7 +716,7 @@
     move-object v0, p1
 
     .line 36
-    :cond_23
+    :cond_0
     const-string p1, "decodeTgs"
 
     .line 37
@@ -804,15 +804,15 @@
 
     .line 78
     check-cast p1, Landroid/graphics/Bitmap;
-    :try_end_4f
-    .catchall {:try_start_0 .. :try_end_4f} :catchall_50
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 79
     .line 80
     return-object p1
 
     .line 81
-    :catchall_50
+    :catchall_0
     const/4 p1, 0x0
 
     .line 82
@@ -820,13 +820,13 @@
 .end method
 
 .method public l(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;IZ)[Landroid/graphics/Bitmap;
-    .registers 23
+    .locals 18
 
     .line 1
     const/4 v1, 0x0
 
     .line 2
-    :try_start_1
+    :try_start_0
     invoke-static {}, Llibs/ho2;->String()Ljava/text/NumberFormat;
 
     .line 3
@@ -1017,9 +1017,9 @@
     .line 92
     .line 93
     aput-object v3, v5, v12
-    :try_end_5e
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_5e} :catch_6f
-    .catchall {:try_start_1 .. :try_end_5e} :catchall_6b
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 94
     .line 95
@@ -1027,7 +1027,7 @@
 
     .line 96
     .line 97
-    :try_start_60
+    :try_start_1
     invoke-virtual {v2, v4, v6, v5}, Llibs/uc;->d(Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 98
@@ -1037,30 +1037,30 @@
 
     .line 101
     check-cast v0, [Landroid/graphics/Bitmap;
-    :try_end_66
-    .catch Ljava/io/IOException; {:try_start_60 .. :try_end_66} :catch_69
-    .catchall {:try_start_60 .. :try_end_66} :catchall_67
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 102
     .line 103
     return-object v0
 
     .line 104
-    :catchall_67
+    :catchall_0
     move-exception v0
 
     .line 105
-    goto :goto_73
+    goto :goto_0
 
     .line 106
-    :catch_69
+    :catch_0
     move-exception v0
 
     .line 107
-    goto :goto_7b
+    goto :goto_1
 
     .line 108
-    :catchall_6b
+    :catchall_1
     move-exception v0
 
     .line 109
@@ -1068,10 +1068,10 @@
 
     .line 110
     .line 111
-    goto :goto_73
+    goto :goto_0
 
     .line 112
-    :catch_6f
+    :catch_1
     move-exception v0
 
     .line 113
@@ -1079,10 +1079,10 @@
 
     .line 114
     .line 115
-    goto :goto_7b
+    goto :goto_1
 
     .line 116
-    :goto_73
+    :goto_0
     invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     .line 117
@@ -1099,12 +1099,12 @@
     return-object v1
 
     .line 124
-    :goto_7b
+    :goto_1
     throw v0
 .end method
 
 .method public m(ILjava/lang/Object;)Ljava/lang/Object;
-    .registers 8
+    .locals 5
 
     .line 1
     const/4 v0, 0x2
@@ -1172,7 +1172,7 @@
 .end method
 
 .method public n(Ljava/lang/String;IIZZ)Landroid/graphics/Bitmap;
-    .registers 15
+    .locals 9
 
     .line 1
     :try_start_0
@@ -1299,30 +1299,30 @@
 
     .line 59
     check-cast p1, Landroid/graphics/Bitmap;
-    :try_end_3c
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_3c} :catch_3f
-    .catchall {:try_start_0 .. :try_end_3c} :catchall_3d
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 60
     .line 61
     return-object p1
 
     .line 62
-    :catchall_3d
+    :catchall_0
     move-exception p1
 
     .line 63
-    goto :goto_41
+    goto :goto_0
 
     .line 64
-    :catch_3f
+    :catch_0
     move-exception p1
 
     .line 65
-    goto :goto_4a
+    goto :goto_1
 
     .line 66
-    :goto_41
+    :goto_0
     invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     .line 67
@@ -1342,12 +1342,12 @@
     return-object p1
 
     .line 75
-    :goto_4a
+    :goto_1
     throw p1
 .end method
 
 .method public p(ILjava/lang/Object;)Ljava/lang/String;
-    .registers 8
+    .locals 5
 
     .line 1
     const/4 v0, 0x2
@@ -1419,7 +1419,7 @@
 .end method
 
 .method public q(Ljava/lang/Object;)[Ljava/lang/Object;
-    .registers 7
+    .locals 5
 
     .line 1
     const/4 v0, 0x2
@@ -1491,7 +1491,7 @@
 .end method
 
 .method public r(Ljava/lang/Object;)[Ljava/lang/Object;
-    .registers 6
+    .locals 4
 
     .line 1
     const/4 v0, 0x1
@@ -1540,7 +1540,7 @@
 .end method
 
 .method public s(Ljava/lang/Object;II)Ljava/lang/Object;
-    .registers 10
+    .locals 6
 
     .line 1
     const/4 v0, 0x3
@@ -1627,7 +1627,7 @@
 .end method
 
 .method public t(Ljava/lang/Object;)V
-    .registers 7
+    .locals 5
 
     .line 1
     :try_start_0
@@ -1662,12 +1662,12 @@
     .line 14
     .line 15
     invoke-virtual {p0, v0, v2, v1}, Llibs/uc;->d(Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_11
-    .catchall {:try_start_0 .. :try_end_11} :catchall_11
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 16
     .line 17
     .line 18
-    :catchall_11
+    :catchall_0
     return-void
 .end method

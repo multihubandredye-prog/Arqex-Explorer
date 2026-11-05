@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>([I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,10 +35,10 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     .line 2
     .line 3
@@ -48,12 +48,12 @@
     return p1
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v0, p1, Llibs/ns0;
 
     .line 6
     .line 7
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     .line 8
     .line 9
@@ -63,7 +63,7 @@
     return p1
 
     .line 11
-    :cond_a
+    :cond_1
     check-cast p1, Llibs/ns0;
 
     .line 12
@@ -88,14 +88,14 @@
 .end method
 
 .method public final hashCode()I
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/ns0;->a:[I
 
     .line 2
     .line 3
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
@@ -105,7 +105,7 @@
     return v0
 
     .line 7
-    :cond_6
+    :cond_0
     array-length v1, v0
 
     .line 8
@@ -113,12 +113,12 @@
 
     .line 9
     .line 10
-    :goto_9
+    :goto_0
     add-int/lit8 v1, v1, -0x1
 
     .line 11
     .line 12
-    if-ltz v1, :cond_13
+    if-ltz v1, :cond_1
 
     .line 13
     .line 14
@@ -133,9 +133,9 @@
     xor-int/2addr v2, v3
 
     .line 19
-    goto :goto_9
+    goto :goto_0
 
     .line 20
-    :cond_13
+    :cond_1
     return v2
 .end method

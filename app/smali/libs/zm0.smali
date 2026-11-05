@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,14 +22,14 @@
 .end method
 
 .method public c(Llibs/il1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     return-void
 .end method
 
 .method public d(Llibs/bk;)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p1}, Llibs/bk;->w()Ljava/lang/String;

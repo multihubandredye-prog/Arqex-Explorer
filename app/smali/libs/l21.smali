@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/r31;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final c([Ljava/lang/Object;)Z
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/l21;->X:Llibs/r31;
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    if-nez v1, :cond_8
+    if-nez v1, :cond_0
 
     .line 6
     .line 7
@@ -57,7 +57,7 @@
     return p1
 
     .line 9
-    :cond_8
+    :cond_0
     new-instance v2, Llibs/sv;
 
     .line 10

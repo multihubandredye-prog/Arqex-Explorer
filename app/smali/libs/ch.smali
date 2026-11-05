@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/hi3;Llibs/q22;Llibs/dn2;Llibs/wz;Llibs/b91;Llibs/e72;)V
-    .registers 7
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public final a(Ljava/util/List;)Llibs/hl2;
-    .registers 9
+    .locals 7
 
     .line 1
     new-instance v0, Llibs/kg3;

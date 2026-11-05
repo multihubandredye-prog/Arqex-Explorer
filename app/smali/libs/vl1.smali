@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 4
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
@@ -38,7 +38,7 @@
 
     .line 12
     .line 13
-    :try_start_c
+    :try_start_0
     const-class p1, Landroid/widget/AbsListView;
 
     .line 14
@@ -59,20 +59,20 @@
 
     .line 22
     invoke-virtual {p1, v0}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
-    :try_end_18
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_c .. :try_end_18} :catch_18
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 23
     .line 24
     .line 25
-    :catch_18
+    :catch_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final dispatchDraw(Landroid/graphics/Canvas;)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/vl1;->Rho:Landroid/graphics/Rect;
@@ -87,7 +87,7 @@
     move-result v1
 
     .line 7
-    if-nez v1, :cond_12
+    if-nez v1, :cond_0
 
     .line 8
     .line 9
@@ -109,7 +109,7 @@
     .line 17
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     invoke-super {p0, p1}, Landroid/widget/ListView;->dispatchDraw(Landroid/graphics/Canvas;)V
 
     .line 20
@@ -119,7 +119,7 @@
 .end method
 
 .method public final drawableStateChanged()V
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-super {p0}, Landroid/widget/ListView;->drawableStateChanged()V
@@ -131,7 +131,7 @@
 
     .line 5
     .line 6
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
@@ -142,7 +142,7 @@
 
     .line 10
     .line 11
-    :cond_a
+    :cond_0
     invoke-virtual {p0}, Landroid/widget/AbsListView;->getSelector()Landroid/graphics/drawable/Drawable;
 
     .line 12
@@ -152,7 +152,7 @@
 .end method
 
 .method public setSelector(Landroid/graphics/drawable/Drawable;)V
-    .registers 3
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/ul1;
@@ -191,14 +191,14 @@
 .end method
 
 .method public setSelectorEnabled(Z)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/vl1;->Sigma:Llibs/ul1;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -206,6 +206,6 @@
 
     .line 6
     .line 7
-    :cond_6
+    :cond_0
     return-void
 .end method

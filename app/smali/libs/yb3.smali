@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Llibs/c63;-><init>()V
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public final e(I[B)I
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -50,7 +50,7 @@
 .end method
 
 .method public final j(I[B)I
-    .registers 3
+    .locals 0
 
     .line 1
     const/4 p1, 0x0
@@ -60,7 +60,7 @@
 .end method
 
 .method public final q(I[B)I
-    .registers 7
+    .locals 4
 
     .line 1
     add-int/lit8 v0, p1, 0x1
@@ -105,7 +105,7 @@
 
     .line 20
     .line 21
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_0
 
     .line 22
     .line 23
@@ -123,7 +123,7 @@
     move v0, v2
 
     .line 29
-    :cond_1c
+    :cond_0
     iget-object v2, p0, Llibs/yb3;->Charlie:Ljava/lang/String;
 
     .line 30
@@ -146,7 +146,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/String;
@@ -260,7 +260,7 @@
 .end method
 
 .method public final v(I[B)I
-    .registers 5
+    .locals 2
 
     .line 1
     const-wide/16 v0, 0x16

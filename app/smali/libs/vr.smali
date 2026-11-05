@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/as;Ljava/nio/ByteBuffer;I)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/vr;->e:Llibs/as;
@@ -58,7 +58,7 @@
 
 # virtual methods
 .method public final a(Ljava/nio/ByteBuffer;)V
-    .registers 5
+    .locals 3
 
     .line 1
     const/4 v0, 0x1
@@ -72,7 +72,7 @@
 
     .line 5
     .line 6
-    if-lt v2, v0, :cond_15
+    if-lt v2, v0, :cond_0
 
     .line 7
     .line 8
@@ -99,10 +99,10 @@
     .line 19
     .line 20
     .line 21
-    goto :goto_1f
+    goto :goto_0
 
     .line 22
-    :cond_15
+    :cond_0
     const/16 v0, 0x5e
 
     .line 23
@@ -121,7 +121,7 @@
     .line 30
     .line 31
     .line 32
-    :goto_1f
+    :goto_0
     iget v0, p0, Llibs/vr;->c:I
 
     .line 33
@@ -151,7 +151,7 @@
 .end method
 
 .method public final declared-synchronized b(Ljava/lang/Long;)V
-    .registers 9
+    .locals 7
 
     .line 1
     monitor-enter p0
@@ -160,7 +160,7 @@
     const/4 v0, 0x5
 
     .line 3
-    :try_start_2
+    :try_start_0
     invoke-static {v0}, Llibs/zm1;->Context(I)Z
 
     .line 4
@@ -172,7 +172,7 @@
     const/4 v1, 0x1
 
     .line 8
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_1
 
     .line 9
     .line 10
@@ -188,7 +188,7 @@
 
     .line 15
     .line 16
-    if-lez v3, :cond_16
+    if-lez v3, :cond_0
 
     .line 17
     .line 18
@@ -196,22 +196,22 @@
 
     .line 19
     .line 20
-    goto :goto_18
+    goto :goto_0
 
     .line 21
-    :catchall_14
+    :catchall_0
     move-exception p1
 
     .line 22
-    goto :goto_37
+    goto :goto_1
 
     .line 23
-    :cond_16
+    :cond_0
     const-string v3, "SSH_MSG_CHANNEL_DATA"
 
     .line 24
     .line 25
-    :goto_18
+    :goto_0
     iget v4, p0, Llibs/vr;->c:I
 
     .line 26
@@ -262,14 +262,14 @@
     .line 47
     .line 48
     .line 49
-    :cond_30
+    :cond_1
     iput-boolean v1, p0, Llibs/vr;->d:Z
 
     .line 50
     .line 51
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
-    :try_end_35
-    .catchall {:try_start_2 .. :try_end_35} :catchall_14
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 52
     .line 53
@@ -280,27 +280,27 @@
     return-void
 
     .line 56
-    :goto_37
-    :try_start_37
+    :goto_1
+    :try_start_1
     monitor-exit p0
-    :try_end_38
-    .catchall {:try_start_37 .. :try_end_38} :catchall_14
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 57
     throw p1
 .end method
 
 .method public final declared-synchronized c()Z
-    .registers 2
+    .locals 1
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Llibs/vr;->d:Z
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 3
     .line 4
@@ -310,14 +310,14 @@
     return v0
 
     .line 6
-    :catchall_5
+    :catchall_0
     move-exception v0
 
     .line 7
-    :try_start_6
+    :try_start_1
     monitor-exit p0
-    :try_end_7
-    .catchall {:try_start_6 .. :try_end_7} :catchall_5
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 8
     throw v0

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/bx0;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/zw0;->X:Llibs/bx0;
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
 
     .line 1
     check-cast p1, Ljava/lang/String;
@@ -46,17 +46,17 @@
 
     .line 8
     .line 9
-    if-nez p1, :cond_c
+    if-nez p1, :cond_0
 
     .line 10
     .line 11
     const/4 v1, 0x0
 
     .line 12
-    goto :goto_12
+    goto :goto_0
 
     .line 13
-    :cond_c
+    :cond_0
     sget-object v1, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
     .line 14
@@ -69,7 +69,7 @@
     move-result-object v1
 
     .line 19
-    :goto_12
+    :goto_0
     invoke-virtual {v0, v1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 20

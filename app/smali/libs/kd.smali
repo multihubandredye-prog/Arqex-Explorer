@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/widget/ImageView;Llibs/rp0;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/kd;->X:B
@@ -42,14 +42,14 @@
 
 # virtual methods
 .method public final run()V
-    .registers 10
+    .locals 9
 
     .line 1
     iget-byte v0, p0, Llibs/kd;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_1e
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -70,7 +70,7 @@
     return-void
 
     .line 14
-    :pswitch_d
+    :pswitch_0
     sget-object v2, Lcom/mixplorer/AppImpl;->Upsilon:Llibs/za;
 
     .line 15
@@ -108,8 +108,8 @@
     nop
 
     .line 31
-    :pswitch_data_1e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_d
+        :pswitch_0
     .end packed-switch
 .end method

@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -22,7 +22,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 4
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -88,14 +88,14 @@
 
 # virtual methods
 .method public final onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     iget v0, p0, Lcom/mixplorer/widgets/MiHorizontalScrollView;->Mu:I
 
     .line 2
     .line 3
-    if-lez v0, :cond_6
+    if-lez v0, :cond_0
 
     .line 4
     .line 5
@@ -105,7 +105,7 @@
     return p1
 
     .line 7
-    :cond_6
+    :cond_0
     invoke-super {p0, p1}, Landroid/widget/HorizontalScrollView;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
     .line 8
@@ -118,7 +118,7 @@
 .end method
 
 .method public final onScrollChanged(IIII)V
-    .registers 7
+    .locals 2
 
     .line 1
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/HorizontalScrollView;->onScrollChanged(IIII)V
@@ -130,7 +130,7 @@
 
     .line 5
     .line 6
-    if-eqz p2, :cond_24
+    if-eqz p2, :cond_1
 
     .line 7
     .line 8
@@ -162,7 +162,7 @@
 
     .line 21
     .line 22
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     .line 23
     .line 24
@@ -178,12 +178,12 @@
     .line 28
     .line 29
     .line 30
-    :cond_1d
+    :cond_0
     iget-object p2, p2, Lcom/mixplorer/widgets/MiScrollView;->Lambda:Llibs/gv1;
 
     .line 31
     .line 32
-    if-eqz p2, :cond_24
+    if-eqz p2, :cond_1
 
     .line 33
     .line 34
@@ -192,19 +192,19 @@
     .line 35
     .line 36
     .line 37
-    :cond_24
+    :cond_1
     return-void
 .end method
 
 .method public final onTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     iget v0, p0, Lcom/mixplorer/widgets/MiHorizontalScrollView;->Mu:I
 
     .line 2
     .line 3
-    if-lez v0, :cond_6
+    if-lez v0, :cond_0
 
     .line 4
     .line 5
@@ -214,7 +214,7 @@
     return p1
 
     .line 7
-    :cond_6
+    :cond_0
     invoke-super {p0, p1}, Landroid/widget/HorizontalScrollView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     .line 8
@@ -227,7 +227,7 @@
 .end method
 
 .method public setOnScrollChanged(Llibs/yt1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Lcom/mixplorer/widgets/MiHorizontalScrollView;->Lambda:Llibs/yt1;

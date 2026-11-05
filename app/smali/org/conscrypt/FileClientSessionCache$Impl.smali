@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/File;)V
-    .registers 4
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,7 +55,7 @@
     move-result v0
 
     .line 14
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_1
 
     .line 15
     .line 16
@@ -67,14 +67,14 @@
     move-result v1
 
     .line 20
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_0
 
     .line 21
     .line 22
-    goto :goto_2d
+    goto :goto_0
 
     .line 23
-    :cond_16
+    :cond_0
     new-instance v0, Ljava/io/IOException;
 
     .line 24
@@ -118,9 +118,9 @@
     throw v0
 
     .line 46
-    :cond_2d
-    :goto_2d
-    if-eqz v0, :cond_57
+    :cond_1
+    :goto_0
+    if-eqz v0, :cond_3
 
     .line 47
     .line 48
@@ -136,7 +136,7 @@
 
     .line 53
     .line 54
-    if-eqz v0, :cond_40
+    if-eqz v0, :cond_2
 
     .line 55
     .line 56
@@ -156,10 +156,10 @@
 
     .line 63
     .line 64
-    goto :goto_60
+    goto :goto_1
 
     .line 65
-    :cond_40
+    :cond_2
     new-instance v0, Ljava/io/IOException;
 
     .line 66
@@ -203,7 +203,7 @@
     throw v0
 
     .line 88
-    :cond_57
+    :cond_3
     invoke-virtual {p1}, Ljava/io/File;->mkdirs()Z
 
     .line 89
@@ -212,7 +212,7 @@
     move-result v0
 
     .line 92
-    if-eqz v0, :cond_63
+    if-eqz v0, :cond_4
 
     .line 93
     .line 94
@@ -223,7 +223,7 @@
 
     .line 96
     .line 97
-    :goto_60
+    :goto_1
     iput-object p1, p0, Lorg/conscrypt/FileClientSessionCache$Impl;->directory:Ljava/io/File;
 
     .line 98
@@ -231,7 +231,7 @@
     return-void
 
     .line 100
-    :cond_63
+    :cond_4
     const-string v0, "Creation of "
 
     .line 101
@@ -252,7 +252,7 @@
 .end method
 
 .method private delete(Ljava/io/File;)V
-    .registers 5
+    .locals 3
 
     .line 1
     invoke-virtual {p1}, Ljava/io/File;->delete()Z
@@ -263,7 +263,7 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_2b
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -336,7 +336,7 @@
     .line 42
     .line 43
     .line 44
-    :cond_2b
+    :cond_0
     iget p1, p0, Lorg/conscrypt/FileClientSessionCache$Impl;->size:I
 
     .line 45
@@ -353,10 +353,10 @@
 .end method
 
 .method private static fileName(Ljava/lang/String;I)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 1
-    if-eqz p0, :cond_14
+    if-eqz p0, :cond_0
 
     .line 2
     .line 3
@@ -394,7 +394,7 @@
     return-object p0
 
     .line 21
-    :cond_14
+    :cond_0
     const-string p0, "host == null"
 
     .line 22
@@ -411,14 +411,14 @@
 .end method
 
 .method private indexFiles()V
-    .registers 8
+    .locals 7
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/FileClientSessionCache$Impl;->initialFiles:[Ljava/lang/String;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_4e
+    if-eqz v0, :cond_3
 
     .line 4
     .line 5
@@ -444,8 +444,8 @@
     const/4 v3, 0x0
 
     .line 15
-    :goto_e
-    if-ge v3, v2, :cond_27
+    :goto_0
+    if-ge v3, v2, :cond_1
 
     .line 16
     .line 17
@@ -465,7 +465,7 @@
     move-result v5
 
     .line 25
-    if-nez v5, :cond_24
+    if-nez v5, :cond_0
 
     .line 26
     .line 27
@@ -487,15 +487,15 @@
     .line 35
     .line 36
     .line 37
-    :cond_24
+    :cond_0
     add-int/lit8 v3, v3, 0x1
 
     .line 38
     .line 39
-    goto :goto_e
+    goto :goto_0
 
     .line 40
-    :cond_27
+    :cond_1
     invoke-virtual {v1}, Ljava/util/TreeSet;->isEmpty()Z
 
     .line 41
@@ -504,7 +504,7 @@
     move-result v0
 
     .line 44
-    if-nez v0, :cond_4e
+    if-nez v0, :cond_3
 
     .line 45
     .line 46
@@ -524,7 +524,7 @@
     move-result-object v1
 
     .line 54
-    :goto_35
+    :goto_1
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 55
@@ -533,7 +533,7 @@
     move-result v2
 
     .line 58
-    if-eqz v2, :cond_47
+    if-eqz v2, :cond_2
 
     .line 59
     .line 60
@@ -558,10 +558,10 @@
     .line 69
     .line 70
     .line 71
-    goto :goto_35
+    goto :goto_1
 
     .line 72
-    :cond_47
+    :cond_2
     iget-object v1, p0, Lorg/conscrypt/FileClientSessionCache$Impl;->accessOrder:Ljava/util/Map;
 
     .line 73
@@ -575,12 +575,12 @@
 
     .line 78
     .line 79
-    :cond_4e
+    :cond_3
     return-void
 .end method
 
 .method public static logReadError(Ljava/lang/String;Ljava/io/File;Ljava/lang/Throwable;)V
-    .registers 7
+    .locals 4
 
     .line 1
     invoke-static {}, Lorg/conscrypt/FileClientSessionCache;->a()Ljava/util/logging/Logger;
@@ -653,7 +653,7 @@
 .end method
 
 .method public static logWriteError(Ljava/lang/String;Ljava/io/File;Ljava/lang/Throwable;)V
-    .registers 7
+    .locals 4
 
     .line 1
     invoke-static {}, Lorg/conscrypt/FileClientSessionCache;->a()Ljava/util/logging/Logger;
@@ -726,7 +726,7 @@
 .end method
 
 .method private makeRoom()V
-    .registers 4
+    .locals 3
 
     .line 1
     iget v0, p0, Lorg/conscrypt/FileClientSessionCache$Impl;->size:I
@@ -737,14 +737,14 @@
 
     .line 4
     .line 5
-    if-gt v0, v1, :cond_7
+    if-gt v0, v1, :cond_0
 
     .line 6
     .line 7
-    goto :goto_27
+    goto :goto_0
 
     .line 8
-    :cond_7
+    :cond_0
     invoke-direct {p0}, Lorg/conscrypt/FileClientSessionCache$Impl;->indexFiles()V
 
     .line 9
@@ -777,7 +777,7 @@
     move-result-object v1
 
     .line 24
-    :cond_17
+    :cond_1
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     .line 25
@@ -804,16 +804,16 @@
 
     .line 37
     .line 38
-    if-gtz v0, :cond_17
+    if-gtz v0, :cond_1
 
     .line 39
     .line 40
-    :goto_27
+    :goto_0
     return-void
 .end method
 
 .method private static newAccessOrder()Ljava/util/Map;
-    .registers 4
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -851,13 +851,13 @@
 
 # virtual methods
 .method public declared-synchronized getSessionData(Ljava/lang/String;I)[B
-    .registers 7
+    .locals 4
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     invoke-static {p1, p2}, Lorg/conscrypt/FileClientSessionCache$Impl;->fileName(Ljava/lang/String;I)Ljava/lang/String;
 
     .line 3
@@ -885,17 +885,17 @@
     const/4 v1, 0x0
 
     .line 15
-    if-nez v0, :cond_2d
+    if-nez v0, :cond_2
 
     .line 16
     .line 17
     iget-object v0, p0, Lorg/conscrypt/FileClientSessionCache$Impl;->initialFiles:[Ljava/lang/String;
-    :try_end_12
-    .catchall {:try_start_1 .. :try_end_12} :catchall_2b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 18
     .line 19
-    if-nez v0, :cond_16
+    if-nez v0, :cond_0
 
     .line 20
     .line 21
@@ -905,19 +905,19 @@
     return-object v1
 
     .line 23
-    :cond_16
-    :try_start_16
+    :cond_0
+    :try_start_1
     invoke-static {v0, p2}, Ljava/util/Arrays;->binarySearch([Ljava/lang/Object;Ljava/lang/Object;)I
 
     .line 24
     .line 25
     .line 26
     move-result v0
-    :try_end_1a
-    .catchall {:try_start_16 .. :try_end_1a} :catchall_2b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 27
-    if-gez v0, :cond_1e
+    if-gez v0, :cond_1
 
     .line 28
     .line 29
@@ -927,8 +927,8 @@
     return-object v1
 
     .line 31
-    :cond_1e
-    :try_start_1e
+    :cond_1
+    :try_start_2
     new-instance v0, Ljava/io/File;
 
     .line 32
@@ -947,38 +947,38 @@
     .line 39
     .line 40
     invoke-interface {v2, p2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_2a
-    .catchall {:try_start_1e .. :try_end_2a} :catchall_2b
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 41
     .line 42
     .line 43
-    goto :goto_2d
+    goto :goto_0
 
     .line 44
-    :catchall_2b
+    :catchall_0
     move-exception p1
 
     .line 45
-    goto :goto_5b
+    goto :goto_2
 
     .line 46
-    :cond_2d
-    :goto_2d
-    :try_start_2d
+    :cond_2
+    :goto_0
+    :try_start_3
     new-instance p2, Ljava/io/FileInputStream;
 
     .line 47
     .line 48
     invoke-direct {p2, v0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
-    :try_end_32
-    .catch Ljava/io/FileNotFoundException; {:try_start_2d .. :try_end_32} :catch_55
-    .catchall {:try_start_2d .. :try_end_32} :catchall_2b
+    :try_end_3
+    .catch Ljava/io/FileNotFoundException; {:try_start_3 .. :try_end_3} :catch_1
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 49
     .line 50
     .line 51
-    :try_start_32
+    :try_start_4
     invoke-virtual {v0}, Ljava/io/File;->length()J
 
     .line 52
@@ -1004,17 +1004,17 @@
     .line 62
     .line 63
     invoke-virtual {v3, v2}, Ljava/io/DataInputStream;->readFully([B)V
-    :try_end_41
-    .catch Ljava/io/IOException; {:try_start_32 .. :try_end_41} :catch_48
-    .catchall {:try_start_32 .. :try_end_41} :catchall_46
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 64
     .line 65
     .line 66
-    :try_start_41
+    :try_start_5
     invoke-static {p2}, Lorg/conscrypt/io/IoUtils;->closeQuietly(Ljava/io/Closeable;)V
-    :try_end_44
-    .catchall {:try_start_41 .. :try_end_44} :catchall_2b
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 67
     .line 68
@@ -1025,29 +1025,29 @@
     return-object v2
 
     .line 71
-    :catchall_46
+    :catchall_1
     move-exception p1
 
     .line 72
-    goto :goto_51
+    goto :goto_1
 
     .line 73
-    :catch_48
+    :catch_0
     move-exception v2
 
     .line 74
-    :try_start_49
+    :try_start_6
     invoke-static {p1, v0, v2}, Lorg/conscrypt/FileClientSessionCache$Impl;->logReadError(Ljava/lang/String;Ljava/io/File;Ljava/lang/Throwable;)V
-    :try_end_4c
-    .catchall {:try_start_49 .. :try_end_4c} :catchall_46
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
     .line 75
     .line 76
     .line 77
-    :try_start_4c
+    :try_start_7
     invoke-static {p2}, Lorg/conscrypt/io/IoUtils;->closeQuietly(Ljava/io/Closeable;)V
-    :try_end_4f
-    .catchall {:try_start_4c .. :try_end_4f} :catchall_2b
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
     .line 78
     .line 79
@@ -1058,8 +1058,8 @@
     return-object v1
 
     .line 82
-    :goto_51
-    :try_start_51
+    :goto_1
+    :try_start_8
     invoke-static {p2}, Lorg/conscrypt/io/IoUtils;->closeQuietly(Ljava/io/Closeable;)V
 
     .line 83
@@ -1068,13 +1068,13 @@
     throw p1
 
     .line 86
-    :catch_55
+    :catch_1
     move-exception p2
 
     .line 87
     invoke-static {p1, v0, p2}, Lorg/conscrypt/FileClientSessionCache$Impl;->logReadError(Ljava/lang/String;Ljava/io/File;Ljava/lang/Throwable;)V
-    :try_end_59
-    .catchall {:try_start_51 .. :try_end_59} :catchall_2b
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_0
 
     .line 88
     .line 89
@@ -1085,24 +1085,24 @@
     return-object v1
 
     .line 92
-    :goto_5b
-    :try_start_5b
+    :goto_2
+    :try_start_9
     monitor-exit p0
-    :try_end_5c
-    .catchall {:try_start_5b .. :try_end_5c} :catchall_2b
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_0
 
     .line 93
     throw p1
 .end method
 
 .method public declared-synchronized putSessionData(Ljavax/net/ssl/SSLSession;[B)V
-    .registers 7
+    .locals 4
 
     .line 1
     monitor-enter p0
 
     .line 2
-    :try_start_1
+    :try_start_0
     invoke-interface {p1}, Ljavax/net/ssl/SSLSession;->getPeerHost()Ljava/lang/String;
 
     .line 3
@@ -1111,7 +1111,7 @@
     move-result-object v0
 
     .line 6
-    if-eqz p2, :cond_76
+    if-eqz p2, :cond_1
 
     .line 7
     .line 8
@@ -1150,28 +1150,28 @@
     .line 25
     .line 26
     move-result v2
-    :try_end_1a
-    .catchall {:try_start_1 .. :try_end_1a} :catchall_2b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 27
-    :try_start_1a
+    :try_start_1
     new-instance v3, Ljava/io/FileOutputStream;
 
     .line 28
     .line 29
     invoke-direct {v3, v1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
-    :try_end_1f
-    .catch Ljava/io/FileNotFoundException; {:try_start_1a .. :try_end_1f} :catch_70
-    .catchall {:try_start_1a .. :try_end_1f} :catchall_2b
+    :try_end_1
+    .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_1} :catch_4
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 30
     .line 31
     .line 32
-    if-nez v2, :cond_2d
+    if-nez v2, :cond_0
 
     .line 33
     .line 34
-    :try_start_21
+    :try_start_2
     iget v2, p0, Lorg/conscrypt/FileClientSessionCache$Impl;->size:I
 
     .line 35
@@ -1185,203 +1185,203 @@
     .line 39
     .line 40
     invoke-direct {p0}, Lorg/conscrypt/FileClientSessionCache$Impl;->makeRoom()V
-    :try_end_2a
-    .catchall {:try_start_21 .. :try_end_2a} :catchall_2b
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 41
     .line 42
     .line 43
-    goto :goto_2d
+    goto :goto_0
 
     .line 44
-    :catchall_2b
+    :catchall_0
     move-exception p1
 
     .line 45
-    goto :goto_7e
+    goto :goto_8
 
     .line 46
-    :cond_2d
-    :goto_2d
-    :try_start_2d
+    :cond_0
+    :goto_0
+    :try_start_3
     invoke-virtual {v3, p2}, Ljava/io/FileOutputStream;->write([B)V
-    :try_end_30
-    .catch Ljava/io/IOException; {:try_start_2d .. :try_end_30} :catch_49
-    .catchall {:try_start_2d .. :try_end_30} :catchall_47
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
+    .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
     .line 47
     .line 48
     .line 49
-    :try_start_30
+    :try_start_4
     invoke-virtual {v3}, Ljava/io/FileOutputStream;->close()V
-    :try_end_33
-    .catch Ljava/io/IOException; {:try_start_30 .. :try_end_33} :catch_3b
-    .catchall {:try_start_30 .. :try_end_33} :catchall_39
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 50
     .line 51
     .line 52
-    :try_start_33
+    :try_start_5
     iget-object p2, p0, Lorg/conscrypt/FileClientSessionCache$Impl;->accessOrder:Ljava/util/Map;
 
     .line 53
     .line 54
     invoke-interface {p2, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_38
-    .catchall {:try_start_33 .. :try_end_38} :catchall_2b
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 55
     .line 56
     .line 57
-    goto :goto_58
+    goto :goto_3
 
     .line 58
-    :catchall_39
+    :catchall_1
     move-exception p1
 
     .line 59
-    goto :goto_43
+    goto :goto_2
 
     .line 60
-    :catch_3b
+    :catch_0
     move-exception p1
 
     .line 61
-    :try_start_3c
+    :try_start_6
     invoke-static {v0, v1, p1}, Lorg/conscrypt/FileClientSessionCache$Impl;->logWriteError(Ljava/lang/String;Ljava/io/File;Ljava/lang/Throwable;)V
-    :try_end_3f
-    .catchall {:try_start_3c .. :try_end_3f} :catchall_39
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
     .line 62
     .line 63
     .line 64
-    :goto_3f
-    :try_start_3f
+    :goto_1
+    :try_start_7
     invoke-direct {p0, v1}, Lorg/conscrypt/FileClientSessionCache$Impl;->delete(Ljava/io/File;)V
 
     .line 65
     .line 66
     .line 67
-    goto :goto_58
+    goto :goto_3
 
     .line 68
-    :goto_43
+    :goto_2
     invoke-direct {p0, v1}, Lorg/conscrypt/FileClientSessionCache$Impl;->delete(Ljava/io/File;)V
 
     .line 69
     .line 70
     .line 71
     throw p1
-    :try_end_47
-    .catchall {:try_start_3f .. :try_end_47} :catchall_2b
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
     .line 72
-    :catchall_47
+    :catchall_2
     move-exception p1
 
     .line 73
-    goto :goto_5e
+    goto :goto_5
 
     .line 74
-    :catch_49
+    :catch_1
     move-exception p1
 
     .line 75
-    :try_start_4a
+    :try_start_8
     invoke-static {v0, v1, p1}, Lorg/conscrypt/FileClientSessionCache$Impl;->logWriteError(Ljava/lang/String;Ljava/io/File;Ljava/lang/Throwable;)V
-    :try_end_4d
-    .catchall {:try_start_4a .. :try_end_4d} :catchall_47
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_2
 
     .line 76
     .line 77
     .line 78
-    :try_start_4d
+    :try_start_9
     invoke-virtual {v3}, Ljava/io/FileOutputStream;->close()V
-    :try_end_50
-    .catch Ljava/io/IOException; {:try_start_4d .. :try_end_50} :catch_53
-    .catchall {:try_start_4d .. :try_end_50} :catchall_51
+    :try_end_9
+    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_2
+    .catchall {:try_start_9 .. :try_end_9} :catchall_3
 
     .line 79
     .line 80
     .line 81
-    goto :goto_3f
+    goto :goto_1
 
     .line 82
-    :catchall_51
+    :catchall_3
     move-exception p1
 
     .line 83
-    goto :goto_5a
+    goto :goto_4
 
     .line 84
-    :catch_53
+    :catch_2
     move-exception p1
 
     .line 85
-    :try_start_54
+    :try_start_a
     invoke-static {v0, v1, p1}, Lorg/conscrypt/FileClientSessionCache$Impl;->logWriteError(Ljava/lang/String;Ljava/io/File;Ljava/lang/Throwable;)V
-    :try_end_57
-    .catchall {:try_start_54 .. :try_end_57} :catchall_51
+    :try_end_a
+    .catchall {:try_start_a .. :try_end_a} :catchall_3
 
     .line 86
     .line 87
     .line 88
-    goto :goto_3f
+    goto :goto_1
 
     .line 89
-    :goto_58
+    :goto_3
     monitor-exit p0
 
     .line 90
     return-void
 
     .line 91
-    :goto_5a
-    :try_start_5a
+    :goto_4
+    :try_start_b
     invoke-direct {p0, v1}, Lorg/conscrypt/FileClientSessionCache$Impl;->delete(Ljava/io/File;)V
 
     .line 92
     .line 93
     .line 94
     throw p1
-    :try_end_5e
-    .catchall {:try_start_5a .. :try_end_5e} :catchall_2b
+    :try_end_b
+    .catchall {:try_start_b .. :try_end_b} :catchall_0
 
     .line 95
-    :goto_5e
-    :try_start_5e
+    :goto_5
+    :try_start_c
     invoke-virtual {v3}, Ljava/io/FileOutputStream;->close()V
-    :try_end_61
-    .catch Ljava/io/IOException; {:try_start_5e .. :try_end_61} :catch_64
-    .catchall {:try_start_5e .. :try_end_61} :catchall_62
+    :try_end_c
+    .catch Ljava/io/IOException; {:try_start_c .. :try_end_c} :catch_3
+    .catchall {:try_start_c .. :try_end_c} :catchall_4
 
     .line 96
     .line 97
     .line 98
-    goto :goto_68
+    goto :goto_6
 
     .line 99
-    :catchall_62
+    :catchall_4
     move-exception p1
 
     .line 100
-    goto :goto_6c
+    goto :goto_7
 
     .line 101
-    :catch_64
+    :catch_3
     move-exception p2
 
     .line 102
-    :try_start_65
+    :try_start_d
     invoke-static {v0, v1, p2}, Lorg/conscrypt/FileClientSessionCache$Impl;->logWriteError(Ljava/lang/String;Ljava/io/File;Ljava/lang/Throwable;)V
-    :try_end_68
-    .catchall {:try_start_65 .. :try_end_68} :catchall_62
+    :try_end_d
+    .catchall {:try_start_d .. :try_end_d} :catchall_4
 
     .line 103
     .line 104
     .line 105
-    :goto_68
-    :try_start_68
+    :goto_6
+    :try_start_e
     invoke-direct {p0, v1}, Lorg/conscrypt/FileClientSessionCache$Impl;->delete(Ljava/io/File;)V
 
     .line 106
@@ -1390,7 +1390,7 @@
     throw p1
 
     .line 109
-    :goto_6c
+    :goto_7
     invoke-direct {p0, v1}, Lorg/conscrypt/FileClientSessionCache$Impl;->delete(Ljava/io/File;)V
 
     .line 110
@@ -1399,13 +1399,13 @@
     throw p1
 
     .line 113
-    :catch_70
+    :catch_4
     move-exception p1
 
     .line 114
     invoke-static {v0, v1, p1}, Lorg/conscrypt/FileClientSessionCache$Impl;->logWriteError(Ljava/lang/String;Ljava/io/File;Ljava/lang/Throwable;)V
-    :try_end_74
-    .catchall {:try_start_68 .. :try_end_74} :catchall_2b
+    :try_end_e
+    .catchall {:try_start_e .. :try_end_e} :catchall_0
 
     .line 115
     .line 116
@@ -1416,8 +1416,8 @@
     return-void
 
     .line 119
-    :cond_76
-    :try_start_76
+    :cond_1
+    :try_start_f
     new-instance p1, Ljava/lang/NullPointerException;
 
     .line 120
@@ -1434,19 +1434,19 @@
     throw p1
 
     .line 127
-    :goto_7e
+    :goto_8
     monitor-exit p0
-    :try_end_7f
-    .catchall {:try_start_76 .. :try_end_7f} :catchall_2b
+    :try_end_f
+    .catchall {:try_start_f .. :try_end_f} :catchall_0
 
     .line 128
-    goto :goto_81
+    goto :goto_a
 
     .line 129
-    :goto_80
+    :goto_9
     throw p1
 
     .line 130
-    :goto_81
-    goto :goto_80
+    :goto_a
+    goto :goto_9
 .end method

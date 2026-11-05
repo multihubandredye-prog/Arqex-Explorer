@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/rp0;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/lang/String;Ljava/util/concurrent/atomic/AtomicBoolean;I)V
-    .registers 9
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/ib1;->a:Llibs/rp0;
@@ -69,7 +69,7 @@
 
 # virtual methods
 .method public final e(Llibs/rp0;)Z
-    .registers 11
+    .locals 9
 
     .line 1
     iget-object v7, p0, Llibs/ib1;->g:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -115,14 +115,14 @@
     move-result p1
 
     .line 22
-    if-nez p1, :cond_18
+    if-nez p1, :cond_0
 
     .line 23
     .line 24
-    goto :goto_47
+    goto :goto_0
 
     .line 25
-    :cond_18
+    :cond_0
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     .line 26
@@ -135,7 +135,7 @@
 
     .line 30
     .line 31
-    if-nez p1, :cond_47
+    if-nez p1, :cond_1
 
     .line 32
     .line 33
@@ -204,7 +204,7 @@
 
     .line 67
     .line 68
-    if-ltz p1, :cond_47
+    if-ltz p1, :cond_1
 
     .line 69
     .line 70
@@ -214,8 +214,8 @@
     return p1
 
     .line 72
-    :cond_47
-    :goto_47
+    :cond_1
+    :goto_0
     const/4 p1, 0x0
 
     .line 73

@@ -9,14 +9,14 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 5
+    .locals 3
 
     .line 1
     iput-byte p1, p0, Llibs/q0;->X:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_84
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -29,7 +29,7 @@
     return-void
 
     .line 10
-    :pswitch_9
+    :pswitch_0
     invoke-direct {p0}, Ljava/util/HashMap;-><init>()V
 
     .line 11
@@ -271,23 +271,23 @@
     return-void
 
     .line 133
-    :pswitch_data_84
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_9
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public get(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/q0;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_1e
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -303,7 +303,7 @@
     return-object p1
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     invoke-super {p0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 12
@@ -316,7 +316,7 @@
 
     .line 16
     .line 17
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_0
 
     .line 18
     .line 19
@@ -338,15 +338,15 @@
     .line 27
     .line 28
     .line 29
-    :cond_1c
+    :cond_0
     return-object v0
 
     .line 30
     nop
 
     .line 31
-    :pswitch_data_1e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method

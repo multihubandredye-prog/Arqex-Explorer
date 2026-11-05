@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/String;Landroid/widget/RadioGroup$OnCheckedChangeListener;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onCheckedChanged(Landroid/widget/RadioGroup;I)V
-    .registers 8
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/gd;->a:Ljava/lang/String;
@@ -51,7 +51,7 @@
     move-result v1
 
     .line 7
-    if-nez v1, :cond_28
+    if-nez v1, :cond_0
 
     .line 8
     .line 9
@@ -115,12 +115,12 @@
     .line 39
     .line 40
     .line 41
-    :cond_28
+    :cond_0
     iget-object v0, p0, Llibs/gd;->b:Landroid/widget/RadioGroup$OnCheckedChangeListener;
 
     .line 42
     .line 43
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_1
 
     .line 44
     .line 45
@@ -129,6 +129,6 @@
     .line 46
     .line 47
     .line 48
-    :cond_2f
+    :cond_1
     return-void
 .end method

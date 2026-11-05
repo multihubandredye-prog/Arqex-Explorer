@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/util/HashMap;
@@ -57,15 +57,15 @@
     monitor-enter v0
 
     .line 20
-    :try_start_13
+    :try_start_0
     invoke-static {}, Llibs/js;->b()V
 
     .line 21
     .line 22
     .line 23
     monitor-exit v0
-    :try_end_17
-    .catchall {:try_start_13 .. :try_end_17} :catchall_26
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 24
     new-instance v0, Llibs/p41;
@@ -97,21 +97,21 @@
     return-void
 
     .line 39
-    :catchall_26
+    :catchall_0
     move-exception v1
 
     .line 40
-    :try_start_27
+    :try_start_1
     monitor-exit v0
-    :try_end_28
-    .catchall {:try_start_27 .. :try_end_28} :catchall_26
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 41
     throw v1
 .end method
 
 .method public static varargs a(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 6
+    .locals 4
 
     .line 1
     new-instance v0, Llibs/cj0;
@@ -135,7 +135,7 @@
     move-result v2
 
     .line 12
-    if-nez v2, :cond_14
+    if-nez v2, :cond_0
 
     .line 13
     .line 14
@@ -151,21 +151,21 @@
     move-result-object v2
 
     .line 20
-    goto :goto_16
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_0
     const-string v2, ""
 
     .line 22
     .line 23
-    :goto_16
+    :goto_0
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 24
     .line 25
     .line 26
-    if-eqz p1, :cond_24
+    if-eqz p1, :cond_1
 
     .line 27
     .line 28
@@ -185,14 +185,14 @@
     move-result-object p1
 
     .line 36
-    goto :goto_25
+    goto :goto_1
 
     .line 37
-    :cond_24
+    :cond_1
     move-object p1, p0
 
     .line 38
-    :goto_25
+    :goto_1
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 39
@@ -233,7 +233,7 @@
 .end method
 
 .method public static b()V
-    .registers 10
+    .locals 10
 
     .line 1
     const-string v0, ""
@@ -794,7 +794,7 @@
 .end method
 
 .method public static c(Llibs/n81;[BLjava/lang/String;)Ljava/lang/String;
-    .registers 9
+    .locals 6
 
     .line 1
     const/4 v0, 0x1
@@ -803,11 +803,11 @@
     const/4 v1, 0x0
 
     .line 3
-    if-nez p0, :cond_1d
+    if-nez p0, :cond_0
 
     .line 4
     .line 5
-    :try_start_4
+    :try_start_0
     sget-object v2, Llibs/_g;->d:Llibs/_f;
 
     .line 6
@@ -820,7 +820,7 @@
     move-result v2
 
     .line 11
-    if-eqz v2, :cond_1d
+    if-eqz v2, :cond_0
 
     .line 12
     .line 13
@@ -829,16 +829,16 @@
     .line 14
     .line 15
     invoke-direct {p0, v0}, Llibs/n81;-><init>(B)V
-    :try_end_11
-    .catchall {:try_start_4 .. :try_end_11} :catchall_12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 16
     .line 17
     .line 18
-    goto :goto_1d
+    goto :goto_0
 
     .line 19
-    :catchall_12
+    :catchall_0
     move-exception p0
 
     .line 20
@@ -859,16 +859,16 @@
     .line 27
     .line 28
     .line 29
-    goto :goto_46
+    goto :goto_1
 
     .line 30
-    :cond_1d
-    :goto_1d
-    if-eqz p0, :cond_46
+    :cond_0
+    :goto_0
+    if-eqz p0, :cond_2
 
     .line 31
     .line 32
-    :try_start_1f
+    :try_start_1
     const-string v2, "detectCharset"
 
     .line 33
@@ -920,7 +920,7 @@
     move-result p1
 
     .line 57
-    if-nez p1, :cond_46
+    if-nez p1, :cond_2
 
     .line 58
     .line 59
@@ -934,30 +934,30 @@
     .line 63
     .line 64
     move-result p1
-    :try_end_40
-    .catchall {:try_start_1f .. :try_end_40} :catchall_45
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 65
-    if-eqz p1, :cond_43
+    if-eqz p1, :cond_1
 
     .line 66
     .line 67
-    goto :goto_46
+    goto :goto_1
 
     .line 68
-    :cond_43
+    :cond_1
     move-object v1, p0
 
     .line 69
-    goto :goto_46
+    goto :goto_1
 
     .line 70
-    :catchall_45
+    :catchall_1
     nop
 
     .line 71
-    :cond_46
-    :goto_46
+    :cond_2
+    :goto_1
     invoke-static {v1}, Llibs/vl3;->z(Ljava/lang/CharSequence;)Z
 
     .line 72
@@ -966,44 +966,44 @@
     move-result p0
 
     .line 75
-    if-eqz p0, :cond_4d
+    if-eqz p0, :cond_3
 
     .line 76
     .line 77
-    goto :goto_4e
+    goto :goto_2
 
     .line 78
-    :cond_4d
+    :cond_3
     move-object p2, v1
 
     .line 79
-    :goto_4e
+    :goto_2
     return-object p2
 .end method
 
 .method public static d([BLjava/nio/charset/Charset;)Ljava/nio/charset/Charset;
-    .registers 4
+    .locals 2
 
     .line 1
-    if-eqz p0, :cond_1e
+    if-eqz p0, :cond_2
 
     .line 2
     .line 3
     array-length v0, p0
 
     .line 4
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 5
     .line 6
-    goto :goto_1e
+    goto :goto_1
 
     .line 7
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
     .line 8
-    :try_start_7
+    :try_start_0
     invoke-static {v0, p0, v0}, Llibs/js;->c(Llibs/n81;[BLjava/lang/String;)Ljava/lang/String;
 
     .line 9
@@ -1018,14 +1018,14 @@
     .line 14
     .line 15
     move-result-object v0
-    :try_end_f
-    .catchall {:try_start_7 .. :try_end_f} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 16
-    goto :goto_1a
+    goto :goto_0
 
     .line 17
-    :catchall_10
+    :catchall_0
     move-exception p0
 
     .line 18
@@ -1046,25 +1046,25 @@
     .line 25
     .line 26
     .line 27
-    :goto_1a
-    if-nez v0, :cond_1d
+    :goto_0
+    if-nez v0, :cond_1
 
     .line 28
     .line 29
-    goto :goto_1e
+    goto :goto_1
 
     .line 30
-    :cond_1d
+    :cond_1
     move-object p1, v0
 
     .line 31
-    :cond_1e
-    :goto_1e
+    :cond_2
+    :goto_1
     return-object p1
 .end method
 
 .method public static e(Ljava/lang/String;)Ljava/nio/charset/Charset;
-    .registers 3
+    .locals 2
 
     .line 1
     :try_start_0
@@ -1080,7 +1080,7 @@
     move-result v0
 
     .line 7
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 8
     .line 9
@@ -1091,29 +1091,29 @@
     return-object p0
 
     .line 12
-    :catchall_b
+    :catchall_0
     nop
 
     .line 13
-    goto :goto_12
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     invoke-static {p0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
 
     .line 15
     .line 16
     .line 17
     move-result-object p0
-    :try_end_11
-    .catchall {:try_start_0 .. :try_end_11} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 18
     return-object p0
 
     .line 19
-    :goto_12
-    if-eqz p0, :cond_56
+    :goto_0
+    if-eqz p0, :cond_2
 
     .line 20
     .line 21
@@ -1137,7 +1137,7 @@
     move-result v1
 
     .line 31
-    if-nez v1, :cond_57
+    if-nez v1, :cond_3
 
     .line 32
     .line 33
@@ -1157,7 +1157,7 @@
     move-result v1
 
     .line 41
-    if-nez v1, :cond_57
+    if-nez v1, :cond_3
 
     .line 42
     .line 43
@@ -1177,14 +1177,14 @@
     move-result v1
 
     .line 51
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_1
 
     .line 52
     .line 53
-    goto :goto_57
+    goto :goto_1
 
     .line 54
-    :cond_35
+    :cond_1
     sget-object v0, Llibs/js;->d:Llibs/o41;
 
     .line 55
@@ -1205,7 +1205,7 @@
     move-result v1
 
     .line 64
-    if-nez v1, :cond_57
+    if-nez v1, :cond_3
 
     .line 65
     .line 66
@@ -1225,7 +1225,7 @@
     move-result v1
 
     .line 74
-    if-nez v1, :cond_57
+    if-nez v1, :cond_3
 
     .line 75
     .line 76
@@ -1245,27 +1245,27 @@
     move-result v1
 
     .line 84
-    if-eqz v1, :cond_56
+    if-eqz v1, :cond_2
 
     .line 85
     .line 86
-    goto :goto_57
+    goto :goto_1
 
     .line 87
-    :cond_56
+    :cond_2
     const/4 v0, 0x0
 
     .line 88
-    :cond_57
-    :goto_57
-    if-eqz v0, :cond_5a
+    :cond_3
+    :goto_1
+    if-eqz v0, :cond_4
 
     .line 89
     .line 90
     return-object v0
 
     .line 91
-    :cond_5a
+    :cond_4
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 92
@@ -1314,7 +1314,7 @@
 .end method
 
 .method public static f(Ljava/lang/String;Ljava/nio/charset/Charset;)Ljava/nio/charset/Charset;
-    .registers 3
+    .locals 1
 
     .line 1
     :try_start_0
@@ -1326,28 +1326,28 @@
     move-result v0
 
     .line 5
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
     return-object p1
 
     .line 8
-    :cond_7
+    :cond_0
     invoke-static {p0}, Llibs/js;->e(Ljava/lang/String;)Ljava/nio/charset/Charset;
 
     .line 9
     .line 10
     .line 11
     move-result-object p0
-    :try_end_b
-    .catchall {:try_start_0 .. :try_end_b} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 12
     return-object p0
 
     .line 13
-    :catchall_c
+    :catchall_0
     move-exception p0
 
     .line 14

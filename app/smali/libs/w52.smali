@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Llibs/w52;
@@ -33,7 +33,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 10
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -68,10 +68,10 @@
 .end method
 
 .method public static d(Ljava/lang/Object;)Llibs/w52;
-    .registers 2
+    .locals 1
 
     .line 1
-    if-nez p0, :cond_5
+    if-nez p0, :cond_0
 
     .line 2
     .line 3
@@ -82,7 +82,7 @@
     return-object p0
 
     .line 6
-    :cond_5
+    :cond_0
     new-instance v0, Llibs/w52;
 
     .line 7
@@ -98,7 +98,7 @@
 
 # virtual methods
 .method public final a(Llibs/gs0;)Llibs/w52;
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/w52;->b()Z
@@ -109,7 +109,7 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -120,7 +120,7 @@
     return-object p1
 
     .line 10
-    :cond_9
+    :cond_0
     iget-object v0, p0, Llibs/w52;->a:Ljava/lang/Object;
 
     .line 11
@@ -146,14 +146,14 @@
 .end method
 
 .method public final b()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/w52;->a:Ljava/lang/Object;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -163,7 +163,7 @@
     return v0
 
     .line 7
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
     .line 8
@@ -171,7 +171,7 @@
 .end method
 
 .method public final c(Llibs/gs0;)Llibs/w52;
-    .registers 3
+    .locals 1
 
     .line 1
     invoke-virtual {p0}, Llibs/w52;->b()Z
@@ -182,7 +182,7 @@
     move-result v0
 
     .line 5
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
@@ -193,7 +193,7 @@
     return-object p1
 
     .line 10
-    :cond_9
+    :cond_0
     iget-object v0, p0, Llibs/w52;->a:Ljava/lang/Object;
 
     .line 11
@@ -218,21 +218,21 @@
 .end method
 
 .method public final e()Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/w52;->a:Ljava/lang/Object;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     return-object v0
 
     .line 6
-    :cond_5
+    :cond_0
     new-instance v0, Ljava/util/NoSuchElementException;
 
     .line 7
@@ -250,10 +250,10 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     .line 2
     .line 3
@@ -263,12 +263,12 @@
     return p1
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v0, p1, Llibs/w52;
 
     .line 6
     .line 7
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     .line 8
     .line 9
@@ -278,7 +278,7 @@
     return p1
 
     .line 11
-    :cond_a
+    :cond_1
     check-cast p1, Llibs/w52;
 
     .line 12
@@ -303,14 +303,14 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/w52;->a:Ljava/lang/Object;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -325,7 +325,7 @@
     return v0
 
     .line 10
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
     .line 11
@@ -333,14 +333,14 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/w52;->a:Ljava/lang/Object;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -373,7 +373,7 @@
     return-object v0
 
     .line 18
-    :cond_11
+    :cond_0
     const-string v0, "Optional.empty"
 
     .line 19

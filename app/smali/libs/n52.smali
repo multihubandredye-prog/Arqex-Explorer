@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/sv0;Llibs/xt1;IB)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-byte p4, p0, Llibs/n52;->X:B
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/n52;->X:B
@@ -67,7 +67,7 @@
 
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_20
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
@@ -80,7 +80,7 @@
     move-result-object v0
 
     .line 16
-    if-ne v3, v0, :cond_14
+    if-ne v3, v0, :cond_0
 
     .line 17
     .line 18
@@ -89,11 +89,11 @@
     .line 19
     .line 20
     .line 21
-    :cond_14
+    :cond_0
     return-void
 
     .line 22
-    :pswitch_15
+    :pswitch_0
     invoke-virtual {v2}, Llibs/xt1;->getIAdapter()Llibs/sv0;
 
     .line 23
@@ -102,7 +102,7 @@
     move-result-object v0
 
     .line 26
-    if-ne v3, v0, :cond_1e
+    if-ne v3, v0, :cond_1
 
     .line 27
     .line 28
@@ -111,15 +111,15 @@
     .line 29
     .line 30
     .line 31
-    :cond_1e
+    :cond_1
     return-void
 
     .line 32
     nop
 
     .line 33
-    :pswitch_data_20
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_15
+        :pswitch_0
     .end packed-switch
 .end method

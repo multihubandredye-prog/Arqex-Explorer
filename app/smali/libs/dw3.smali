@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/$e;Llibs/nf;)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -58,7 +58,7 @@
 .end method
 
 .method public static a(Llibs/$e;Llibs/nf;)Ljava/security/PublicKey;
-    .registers 8
+    .locals 6
 
     .line 1
     const-string v0, "PublicKey.X.509."
@@ -174,7 +174,7 @@
     .line 58
     .line 59
     .line 60
-    :try_start_3b
+    :try_start_0
     invoke-virtual {p0}, Llibs/$e;->f()Ljava/lang/String;
 
     .line 61
@@ -197,15 +197,15 @@
     .line 70
     .line 71
     move-result-object p0
-    :try_end_47
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_3b .. :try_end_47} :catch_53
-    .catch Ljava/security/spec/InvalidKeySpecException; {:try_start_3b .. :try_end_47} :catch_48
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/security/spec/InvalidKeySpecException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 72
     return-object p0
 
     .line 73
-    :catch_48
+    :catch_0
     move-exception p0
 
     .line 74
@@ -229,7 +229,7 @@
     throw p1
 
     .line 84
-    :catch_53
+    :catch_1
     const-string v1, ""
 
     .line 85
@@ -237,7 +237,7 @@
     const/4 v2, 0x0
 
     .line 87
-    :try_start_56
+    :try_start_1
     const-string v3, "SUN"
 
     .line 88
@@ -250,7 +250,7 @@
     move-result-object v3
 
     .line 93
-    if-eqz v3, :cond_a2
+    if-eqz v3, :cond_3
 
     .line 94
     .line 95
@@ -290,34 +290,34 @@
     .line 113
     .line 114
     move-result-object v1
-    :try_end_72
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_56 .. :try_end_72} :catch_b2
-    .catch Ljava/lang/InstantiationException; {:try_start_56 .. :try_end_72} :catch_b2
-    .catch Ljava/lang/IllegalAccessException; {:try_start_56 .. :try_end_72} :catch_a8
+    :try_end_1
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_1 .. :try_end_1} :catch_4
+    .catch Ljava/lang/InstantiationException; {:try_start_1 .. :try_end_1} :catch_4
+    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_3
 
     .line 115
-    if-eqz v1, :cond_9c
+    if-eqz v1, :cond_2
 
     .line 116
     .line 117
-    :try_start_74
+    :try_start_2
     invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     .line 118
     .line 119
     .line 120
     move-result-object v0
-    :try_end_78
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_74 .. :try_end_78} :catch_79
-    .catch Ljava/lang/InstantiationException; {:try_start_74 .. :try_end_78} :catch_b2
-    .catch Ljava/lang/IllegalAccessException; {:try_start_74 .. :try_end_78} :catch_a8
+    :try_end_2
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_2 .. :try_end_2} :catch_2
+    .catch Ljava/lang/InstantiationException; {:try_start_2 .. :try_end_2} :catch_4
+    .catch Ljava/lang/IllegalAccessException; {:try_start_2 .. :try_end_2} :catch_3
 
     .line 121
-    goto :goto_85
+    goto :goto_0
 
     .line 122
-    :catch_79
-    :try_start_79
+    :catch_2
+    :try_start_3
     invoke-static {}, Ljava/lang/ClassLoader;->getSystemClassLoader()Ljava/lang/ClassLoader;
 
     .line 123
@@ -326,7 +326,7 @@
     move-result-object v0
 
     .line 126
-    if-eqz v0, :cond_84
+    if-eqz v0, :cond_0
 
     .line 127
     .line 128
@@ -338,15 +338,15 @@
     move-result-object v0
 
     .line 132
-    goto :goto_85
+    goto :goto_0
 
     .line 133
-    :cond_84
+    :cond_0
     move-object v0, v2
 
     .line 134
-    :goto_85
-    if-eqz v0, :cond_8c
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 135
     .line 136
@@ -358,19 +358,19 @@
     move-result-object v0
 
     .line 140
-    goto :goto_8d
+    goto :goto_1
 
     .line 141
-    :cond_8c
+    :cond_1
     move-object v0, v2
 
     .line 142
-    :goto_8d
+    :goto_1
     instance-of v3, v0, Llibs/dw3;
 
     .line 143
     .line 144
-    if-eqz v3, :cond_b2
+    if-eqz v3, :cond_4
 
     .line 145
     .line 146
@@ -395,7 +395,7 @@
     return-object v0
 
     .line 157
-    :cond_9c
+    :cond_2
     new-instance v0, Ljava/lang/InstantiationException;
 
     .line 158
@@ -408,7 +408,7 @@
     throw v0
 
     .line 163
-    :cond_a2
+    :cond_3
     new-instance v0, Ljava/lang/InstantiationException;
 
     .line 164
@@ -419,13 +419,13 @@
     .line 167
     .line 168
     throw v0
-    :try_end_a8
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_79 .. :try_end_a8} :catch_b2
-    .catch Ljava/lang/InstantiationException; {:try_start_79 .. :try_end_a8} :catch_b2
-    .catch Ljava/lang/IllegalAccessException; {:try_start_79 .. :try_end_a8} :catch_a8
+    :try_end_3
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_3 .. :try_end_3} :catch_4
+    .catch Ljava/lang/InstantiationException; {:try_start_3 .. :try_end_3} :catch_4
+    .catch Ljava/lang/IllegalAccessException; {:try_start_3 .. :try_end_3} :catch_3
 
     .line 169
-    :catch_a8
+    :catch_3
     const-string p0, " [internal error]"
 
     .line 170
@@ -446,8 +446,8 @@
     return-object v2
 
     .line 179
-    :catch_b2
-    :cond_b2
+    :catch_4
+    :cond_4
     new-instance v0, Llibs/dw3;
 
     .line 180
@@ -461,7 +461,7 @@
 .end method
 
 .method public static d(Llibs/d90;)Ljava/security/PublicKey;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Llibs/d90;->a:B
@@ -479,7 +479,7 @@
     const/4 v2, 0x0
 
     .line 8
-    if-ne v0, v1, :cond_33
+    if-ne v0, v1, :cond_1
 
     .line 9
     .line 10
@@ -499,7 +499,7 @@
     move-result-object v0
 
     .line 18
-    :try_start_11
+    :try_start_0
     invoke-virtual {p0}, Llibs/b90;->g()Llibs/nf;
 
     .line 19
@@ -514,8 +514,8 @@
     .line 24
     .line 25
     move-result-object v0
-    :try_end_19
-    .catch Ljava/security/InvalidKeyException; {:try_start_11 .. :try_end_19} :catch_28
+    :try_end_0
+    .catch Ljava/security/InvalidKeyException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 26
     iget-object p0, p0, Llibs/b90;->a:Llibs/a90;
@@ -530,14 +530,14 @@
     move-result p0
 
     .line 32
-    if-nez p0, :cond_22
+    if-nez p0, :cond_0
 
     .line 33
     .line 34
     return-object v0
 
     .line 35
-    :cond_22
+    :cond_0
     const-string p0, "excess subject key"
 
     .line 36
@@ -550,7 +550,7 @@
     return-object v2
 
     .line 41
-    :catch_28
+    :catch_0
     move-exception p0
 
     .line 42
@@ -574,7 +574,7 @@
     return-object v2
 
     .line 52
-    :cond_33
+    :cond_1
     const-string p0, "corrupt subject key"
 
     .line 53
@@ -590,7 +590,7 @@
 
 # virtual methods
 .method public final b(Llibs/c90;)V
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/dw3;->X:Llibs/$e;
@@ -719,18 +719,18 @@
 .end method
 
 .method public final c()[B
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/dw3;->Lambda:[B
 
     .line 2
     .line 3
-    if-nez v0, :cond_25
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
-    :try_start_4
+    :try_start_0
     new-instance v0, Llibs/c90;
 
     .line 6
@@ -751,8 +751,8 @@
     .line 15
     .line 16
     move-result-object v0
-    :try_end_10
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_10} :catch_13
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 17
     iput-object v0, p0, Llibs/dw3;->Lambda:[B
@@ -762,7 +762,7 @@
     return-object v0
 
     .line 20
-    :catch_13
+    :catch_0
     move-exception v0
 
     .line 21
@@ -799,15 +799,15 @@
     throw v1
 
     .line 38
-    :cond_25
+    :cond_0
     return-object v0
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
 
     .line 1
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     .line 2
     .line 3
@@ -817,7 +817,7 @@
     return p1
 
     .line 5
-    :cond_4
+    :cond_0
     instance-of v0, p1, Ljava/security/Key;
 
     .line 6
@@ -825,15 +825,15 @@
     const/4 v1, 0x0
 
     .line 8
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     .line 9
     .line 10
     return v1
 
     .line 11
-    :cond_a
-    :try_start_a
+    :cond_1
+    :try_start_0
     invoke-virtual {p0}, Llibs/dw3;->c()[B
 
     .line 12
@@ -846,7 +846,7 @@
 
     .line 16
     .line 17
-    if-eqz v2, :cond_19
+    if-eqz v2, :cond_2
 
     .line 18
     .line 19
@@ -862,10 +862,10 @@
     move-result-object p1
 
     .line 25
-    goto :goto_1f
+    goto :goto_0
 
     .line 26
-    :cond_19
+    :cond_2
     check-cast p1, Ljava/security/Key;
 
     .line 27
@@ -878,26 +878,26 @@
     move-result-object p1
 
     .line 32
-    :goto_1f
+    :goto_0
     invoke-static {v0, p1}, Ljava/util/Arrays;->equals([B[B)Z
 
     .line 33
     .line 34
     .line 35
     move-result p1
-    :try_end_23
-    .catch Ljava/security/InvalidKeyException; {:try_start_a .. :try_end_23} :catch_24
+    :try_end_0
+    .catch Ljava/security/InvalidKeyException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 36
     return p1
 
     .line 37
-    :catch_24
+    :catch_0
     return v1
 .end method
 
 .method public final f(Llibs/nf;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget v0, p1, Llibs/nf;->b:I
@@ -928,22 +928,22 @@
 
     .line 14
     .line 15
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     .line 16
     .line 17
     const/4 p1, 0x0
 
     .line 18
-    goto :goto_14
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     rsub-int/lit8 p1, v0, 0x8
 
     .line 20
     .line 21
-    :goto_14
+    :goto_0
     iput p1, p0, Llibs/dw3;->Z:I
 
     .line 22
@@ -952,7 +952,7 @@
 .end method
 
 .method public final getAlgorithm()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/dw3;->X:Llibs/$e;
@@ -971,7 +971,7 @@
 .end method
 
 .method public final getEncoded()[B
-    .registers 2
+    .locals 1
 
     .line 1
     :try_start_0
@@ -992,15 +992,15 @@
 
     .line 9
     check-cast v0, [B
-    :try_end_a
-    .catch Ljava/security/InvalidKeyException; {:try_start_0 .. :try_end_a} :catch_b
+    :try_end_0
+    .catch Ljava/security/InvalidKeyException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 10
     .line 11
     return-object v0
 
     .line 12
-    :catch_b
+    :catch_0
     const/4 v0, 0x0
 
     .line 13
@@ -1008,7 +1008,7 @@
 .end method
 
 .method public final getFormat()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "X.509"
@@ -1019,13 +1019,13 @@
 .end method
 
 .method public final hashCode()I
-    .registers 6
+    .locals 5
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :try_start_1
+    :try_start_0
     invoke-virtual {p0}, Llibs/dw3;->c()[B
 
     .line 3
@@ -1040,17 +1040,17 @@
     const/4 v3, 0x0
 
     .line 8
-    :goto_7
+    :goto_0
     array-length v4, v1
 
     .line 9
-    if-ge v3, v4, :cond_14
+    if-ge v3, v4, :cond_0
 
     .line 10
     .line 11
     aget-byte v4, v1, v3
-    :try_end_c
-    .catch Ljava/security/InvalidKeyException; {:try_start_1 .. :try_end_c} :catch_15
+    :try_end_0
+    .catch Ljava/security/InvalidKeyException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 12
     .line 13
@@ -1069,19 +1069,19 @@
 
     .line 19
     .line 20
-    goto :goto_7
+    goto :goto_0
 
     .line 21
-    :cond_14
+    :cond_0
     return v2
 
     .line 22
-    :catch_15
+    :catch_0
     return v0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Llibs/ux0;

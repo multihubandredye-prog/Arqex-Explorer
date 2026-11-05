@@ -43,7 +43,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 441
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +52,7 @@
 .end method
 
 .method public constructor <init>(Llibs/uu0;)V
-    .registers 21
+    .locals 19
 
     .line 1
     move-object/from16 v0, p0
@@ -68,7 +68,7 @@
     .line 6
     .line 7
     .line 8
-    :try_start_7
+    :try_start_0
     invoke-virtual {v1}, Llibs/uu0;->b()Ljava/lang/String;
 
     .line 9
@@ -85,7 +85,7 @@
     move-result-object v3
 
     .line 16
-    if-eqz v3, :cond_1b
+    if-eqz v3, :cond_0
 
     .line 17
     .line 18
@@ -103,27 +103,27 @@
     .line 24
     .line 25
     move-result-object v3
-    :try_end_19
-    .catchall {:try_start_7 .. :try_end_19} :catchall_1a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 26
-    goto :goto_1c
+    goto :goto_0
 
     .line 27
-    :catchall_1a
+    :catchall_0
     nop
 
     .line 28
-    :cond_1b
+    :cond_0
     const/4 v3, 0x0
 
     .line 29
-    :goto_1c
-    if-nez v3, :cond_3f
+    :goto_0
+    if-nez v3, :cond_1
 
     .line 30
     .line 31
-    :try_start_1e
+    :try_start_1
     new-instance v4, Ljava/lang/StringBuilder;
 
     .line 32
@@ -167,7 +167,7 @@
     move-result-object v4
 
     .line 54
-    if-eqz v4, :cond_3f
+    if-eqz v4, :cond_1
 
     .line 55
     .line 56
@@ -181,20 +181,20 @@
     .line 60
     .line 61
     move-result-object v3
-    :try_end_3d
-    .catchall {:try_start_1e .. :try_end_3d} :catchall_3e
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 62
-    goto :goto_3f
+    goto :goto_1
 
     .line 63
-    :catchall_3e
+    :catchall_1
     nop
 
     .line 64
-    :cond_3f
-    :goto_3f
-    if-eqz v3, :cond_1ad
+    :cond_1
+    :goto_1
+    if-eqz v3, :cond_11
 
     .line 65
     .line 66
@@ -280,7 +280,7 @@
     move-result v4
 
     .line 108
-    if-eqz v4, :cond_142
+    if-eqz v4, :cond_d
 
     .line 109
     .line 110
@@ -329,7 +329,7 @@
 
     .line 126
     .line 127
-    :goto_7e
+    :goto_2
     invoke-virtual {v1}, Lorg/json/JSONArray;->length()I
 
     .line 128
@@ -338,7 +338,7 @@
     move-result v2
 
     .line 131
-    if-ge v4, v2, :cond_14e
+    if-ge v4, v2, :cond_e
 
     .line 132
     .line 133
@@ -383,16 +383,16 @@
 
     .line 153
     .line 154
-    sparse-switch v5, :sswitch_data_1b8
+    sparse-switch v5, :sswitch_data_0
 
     .line 155
     .line 156
     .line 157
-    goto/16 :goto_127
+    goto/16 :goto_3
 
     .line 158
     .line 159
-    :sswitch_9e
+    :sswitch_0
     const-string v5, "emenames"
 
     .line 160
@@ -405,24 +405,24 @@
     move-result v2
 
     .line 165
-    if-nez v2, :cond_a8
+    if-nez v2, :cond_2
 
     .line 166
     .line 167
-    goto/16 :goto_127
+    goto/16 :goto_3
 
     .line 168
     .line 169
-    :cond_a8
+    :cond_2
     const/16 v18, 0xa
 
     .line 170
     .line 171
-    goto/16 :goto_127
+    goto/16 :goto_3
 
     .line 172
     .line 173
-    :sswitch_ac
+    :sswitch_1
     const-string v5, "plaintextnames"
 
     .line 174
@@ -435,24 +435,24 @@
     move-result v2
 
     .line 179
-    if-nez v2, :cond_b6
+    if-nez v2, :cond_3
 
     .line 180
     .line 181
-    goto/16 :goto_127
+    goto/16 :goto_3
 
     .line 182
     .line 183
-    :cond_b6
+    :cond_3
     const/16 v18, 0x9
 
     .line 184
     .line 185
-    goto/16 :goto_127
+    goto/16 :goto_3
 
     .line 186
     .line 187
-    :sswitch_ba
+    :sswitch_2
     const-string v5, "longnames"
 
     .line 188
@@ -465,24 +465,24 @@
     move-result v2
 
     .line 193
-    if-nez v2, :cond_c4
+    if-nez v2, :cond_4
 
     .line 194
     .line 195
-    goto/16 :goto_127
+    goto/16 :goto_3
 
     .line 196
     .line 197
-    :cond_c4
+    :cond_4
     const/16 v18, 0x8
 
     .line 198
     .line 199
-    goto/16 :goto_127
+    goto/16 :goto_3
 
     .line 200
     .line 201
-    :sswitch_c8
+    :sswitch_3
     const-string v5, "raw64"
 
     .line 202
@@ -495,22 +495,22 @@
     move-result v2
 
     .line 207
-    if-nez v2, :cond_d1
+    if-nez v2, :cond_5
 
     .line 208
     .line 209
-    goto :goto_127
+    goto :goto_3
 
     .line 210
-    :cond_d1
+    :cond_5
     const/16 v18, 0x7
 
     .line 211
     .line 212
-    goto :goto_127
+    goto :goto_3
 
     .line 213
-    :sswitch_d4
+    :sswitch_4
     const-string v5, "diriv"
 
     .line 214
@@ -523,22 +523,22 @@
     move-result v2
 
     .line 219
-    if-nez v2, :cond_dd
+    if-nez v2, :cond_6
 
     .line 220
     .line 221
-    goto :goto_127
+    goto :goto_3
 
     .line 222
-    :cond_dd
+    :cond_6
     const/16 v18, 0x6
 
     .line 223
     .line 224
-    goto :goto_127
+    goto :goto_3
 
     .line 225
-    :sswitch_e0
+    :sswitch_5
     const-string v5, "forcedecode"
 
     .line 226
@@ -551,22 +551,22 @@
     move-result v2
 
     .line 231
-    if-nez v2, :cond_e9
+    if-nez v2, :cond_7
 
     .line 232
     .line 233
-    goto :goto_127
+    goto :goto_3
 
     .line 234
-    :cond_e9
+    :cond_7
     const/16 v18, 0x5
 
     .line 235
     .line 236
-    goto :goto_127
+    goto :goto_3
 
     .line 237
-    :sswitch_ec
+    :sswitch_6
     const-string v5, "gcmiv128"
 
     .line 238
@@ -579,22 +579,22 @@
     move-result v2
 
     .line 243
-    if-nez v2, :cond_f5
+    if-nez v2, :cond_8
 
     .line 244
     .line 245
-    goto :goto_127
+    goto :goto_3
 
     .line 246
-    :cond_f5
+    :cond_8
     const/16 v18, 0x4
 
     .line 247
     .line 248
-    goto :goto_127
+    goto :goto_3
 
     .line 249
-    :sswitch_f8
+    :sswitch_7
     const-string v5, "hkdf"
 
     .line 250
@@ -607,22 +607,22 @@
     move-result v2
 
     .line 255
-    if-nez v2, :cond_101
+    if-nez v2, :cond_9
 
     .line 256
     .line 257
-    goto :goto_127
+    goto :goto_3
 
     .line 258
-    :cond_101
+    :cond_9
     const/16 v18, 0x3
 
     .line 259
     .line 260
-    goto :goto_127
+    goto :goto_3
 
     .line 261
-    :sswitch_104
+    :sswitch_8
     const-string v5, "aessivcustom"
 
     .line 262
@@ -635,22 +635,22 @@
     move-result v2
 
     .line 267
-    if-nez v2, :cond_10d
+    if-nez v2, :cond_a
 
     .line 268
     .line 269
-    goto :goto_127
+    goto :goto_3
 
     .line 270
-    :cond_10d
+    :cond_a
     const/16 v18, 0x2
 
     .line 271
     .line 272
-    goto :goto_127
+    goto :goto_3
 
     .line 273
-    :sswitch_110
+    :sswitch_9
     const-string v5, "aessiv"
 
     .line 274
@@ -663,22 +663,22 @@
     move-result v2
 
     .line 279
-    if-nez v2, :cond_119
+    if-nez v2, :cond_b
 
     .line 280
     .line 281
-    goto :goto_127
+    goto :goto_3
 
     .line 282
-    :cond_119
+    :cond_b
     const/16 v18, 0x1
 
     .line 283
     .line 284
-    goto :goto_127
+    goto :goto_3
 
     .line 285
-    :sswitch_11c
+    :sswitch_a
     const-string v5, "xchacha20poly1305"
 
     .line 286
@@ -691,104 +691,104 @@
     move-result v2
 
     .line 291
-    if-nez v2, :cond_125
+    if-nez v2, :cond_c
 
     .line 292
     .line 293
-    goto :goto_127
+    goto :goto_3
 
     .line 294
-    :cond_125
+    :cond_c
     const/16 v18, 0x0
 
     .line 295
     .line 296
-    :goto_127
-    packed-switch v18, :pswitch_data_1e6
+    :goto_3
+    packed-switch v18, :pswitch_data_0
 
     .line 297
     .line 298
     .line 299
-    goto :goto_13e
+    goto :goto_4
 
     .line 300
-    :pswitch_12b
+    :pswitch_0
     const/4 v13, 0x1
 
     .line 301
-    goto :goto_13e
+    goto :goto_4
 
     .line 302
-    :pswitch_12d
+    :pswitch_1
     const/4 v6, 0x1
 
     .line 303
-    goto :goto_13e
+    goto :goto_4
 
     .line 304
-    :pswitch_12f
+    :pswitch_2
     const/4 v10, 0x1
 
     .line 305
-    goto :goto_13e
+    goto :goto_4
 
     .line 306
-    :pswitch_131
+    :pswitch_3
     const/4 v11, 0x1
 
     .line 307
-    goto :goto_13e
+    goto :goto_4
 
     .line 308
-    :pswitch_133
+    :pswitch_4
     const/4 v7, 0x1
 
     .line 309
-    goto :goto_13e
+    goto :goto_4
 
     .line 310
-    :pswitch_135
+    :pswitch_5
     const/4 v14, 0x1
 
     .line 311
-    goto :goto_13e
+    goto :goto_4
 
     .line 312
-    :pswitch_137
+    :pswitch_6
     const/4 v8, 0x1
 
     .line 313
-    goto :goto_13e
+    goto :goto_4
 
     .line 314
-    :pswitch_139
+    :pswitch_7
     const/4 v9, 0x1
 
     .line 315
-    goto :goto_13e
+    goto :goto_4
 
     .line 316
-    :pswitch_13b
+    :pswitch_8
     const/4 v12, 0x1
 
     .line 317
-    goto :goto_13e
+    goto :goto_4
 
     .line 318
-    :pswitch_13d
+    :pswitch_9
     const/4 v15, 0x1
 
     .line 319
-    :goto_13e
+    :goto_4
     add-int/lit8 v4, v4, 0x1
 
     .line 320
     .line 321
-    goto/16 :goto_7e
+    goto/16 :goto_2
 
     .line 322
     .line 323
-    :cond_142
+    :cond_d
     const/16 v16, 0x0
 
     .line 324
@@ -823,7 +823,7 @@
     const/4 v15, 0x0
 
     .line 335
-    :cond_14e
+    :cond_e
     iput-boolean v6, v0, Llibs/zu0;->c:Z
 
     .line 336
@@ -864,18 +864,18 @@
 
     .line 354
     .line 355
-    if-eqz v15, :cond_16d
+    if-eqz v15, :cond_10
 
     .line 356
     .line 357
-    if-nez v8, :cond_167
+    if-nez v8, :cond_f
 
     .line 358
     .line 359
-    goto :goto_16d
+    goto :goto_5
 
     .line 360
-    :cond_167
+    :cond_f
     const-string v1, "XChaCha20Poly1305 has conflicts with GCMIV128."
 
     .line 361
@@ -888,8 +888,8 @@
     throw v16
 
     .line 366
-    :cond_16d
-    :goto_16d
+    :cond_10
+    :goto_5
     const-string v1, "ScryptObject"
 
     .line 367
@@ -1020,7 +1020,7 @@
     return-void
 
     .line 430
-    :cond_1ad
+    :cond_11
     const/16 v16, 0x0
 
     .line 431
@@ -1034,33 +1034,33 @@
     .line 435
     .line 436
     .line 437
-    goto :goto_1b6
+    goto :goto_7
 
     .line 438
-    :goto_1b5
+    :goto_6
     throw v16
 
     .line 439
-    :goto_1b6
-    goto :goto_1b5
+    :goto_7
+    goto :goto_6
 
     .line 440
     nop
 
     .line 441
-    :sswitch_data_1b8
+    :sswitch_data_0
     .sparse-switch
-        -0x72bc5f57 -> :sswitch_11c
-        -0x54b4a24f -> :sswitch_110
-        -0x52a8df9e -> :sswitch_104
-        0x30e4c5 -> :sswitch_f8
-        0xa03979 -> :sswitch_ec
-        0xbd0099 -> :sswitch_e0
-        0x5b2a27a -> :sswitch_d4
-        0x67454e6 -> :sswitch_c8
-        0x86dbe4c -> :sswitch_ba
-        0x26ed4fb1 -> :sswitch_ac
-        0x34733cab -> :sswitch_9e
+        -0x72bc5f57 -> :sswitch_a
+        -0x54b4a24f -> :sswitch_9
+        -0x52a8df9e -> :sswitch_8
+        0x30e4c5 -> :sswitch_7
+        0xa03979 -> :sswitch_6
+        0xbd0099 -> :sswitch_5
+        0x5b2a27a -> :sswitch_4
+        0x67454e6 -> :sswitch_3
+        0x86dbe4c -> :sswitch_2
+        0x26ed4fb1 -> :sswitch_1
+        0x34733cab -> :sswitch_0
     .end sparse-switch
 
     .line 442
@@ -1109,38 +1109,38 @@
     .line 485
     .line 486
     .line 487
-    :pswitch_data_1e6
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_13d
-        :pswitch_13b
-        :pswitch_13b
-        :pswitch_139
-        :pswitch_137
-        :pswitch_135
-        :pswitch_133
-        :pswitch_131
-        :pswitch_12f
-        :pswitch_12d
-        :pswitch_12b
+        :pswitch_9
+        :pswitch_8
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static b([BI[B[B)[B
-    .registers 10
+    .locals 6
 
     .line 1
-    if-eqz p2, :cond_5
+    if-eqz p2, :cond_0
 
     .line 2
     .line 3
     array-length v0, p2
 
     .line 4
-    if-nez v0, :cond_9
+    if-nez v0, :cond_1
 
     .line 5
     .line 6
-    :cond_5
+    :cond_0
     const/16 p2, 0x20
 
     .line 7
@@ -1149,7 +1149,7 @@
 
     .line 9
     .line 10
-    :cond_9
+    :cond_1
     const-string v0, "HmacSHA256"
 
     .line 11
@@ -1238,8 +1238,8 @@
     const/4 v3, 0x1
 
     .line 54
-    :goto_35
-    if-gt v3, p0, :cond_5a
+    :goto_0
+    if-gt v3, p0, :cond_2
 
     .line 55
     .line 56
@@ -1313,10 +1313,10 @@
     move-object v0, v4
 
     .line 90
-    goto :goto_35
+    goto :goto_0
 
     .line 91
-    :cond_5a
+    :cond_2
     invoke-static {v0, p1}, Ljava/util/Arrays;->copyOf([BI)[B
 
     .line 92
@@ -1331,21 +1331,21 @@
 
 # virtual methods
 .method public final a(Ljava/lang/String;[BI)[B
-    .registers 5
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/zu0;->f:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
     return-object p2
 
     .line 6
-    :cond_5
+    :cond_0
     sget-object v0, Llibs/ue3;->b:Ljava/nio/charset/Charset;
 
     .line 7
@@ -1373,7 +1373,7 @@
 .end method
 
 .method public final c(Llibs/uu0;)V
-    .registers 8
+    .locals 6
 
     .line 1
     new-instance v0, Lorg/json/JSONObject;
@@ -1474,7 +1474,7 @@
 
     .line 52
     .line 53
-    if-eqz v3, :cond_3b
+    if-eqz v3, :cond_0
 
     .line 54
     .line 55
@@ -1487,12 +1487,12 @@
     .line 58
     .line 59
     .line 60
-    :cond_3b
+    :cond_0
     iget-boolean v3, p0, Llibs/zu0;->d:Z
 
     .line 61
     .line 62
-    if-eqz v3, :cond_44
+    if-eqz v3, :cond_1
 
     .line 63
     .line 64
@@ -1505,12 +1505,12 @@
     .line 67
     .line 68
     .line 69
-    :cond_44
+    :cond_1
     iget-boolean v3, p0, Llibs/zu0;->e:Z
 
     .line 70
     .line 71
-    if-eqz v3, :cond_4d
+    if-eqz v3, :cond_2
 
     .line 72
     .line 73
@@ -1523,12 +1523,12 @@
     .line 76
     .line 77
     .line 78
-    :cond_4d
+    :cond_2
     iget-boolean v3, p0, Llibs/zu0;->f:Z
 
     .line 79
     .line 80
-    if-eqz v3, :cond_56
+    if-eqz v3, :cond_3
 
     .line 81
     .line 82
@@ -1541,12 +1541,12 @@
     .line 85
     .line 86
     .line 87
-    :cond_56
+    :cond_3
     iget-boolean v3, p0, Llibs/zu0;->g:Z
 
     .line 88
     .line 89
-    if-eqz v3, :cond_5f
+    if-eqz v3, :cond_4
 
     .line 90
     .line 91
@@ -1559,12 +1559,12 @@
     .line 94
     .line 95
     .line 96
-    :cond_5f
+    :cond_4
     iget-boolean v3, p0, Llibs/zu0;->h:Z
 
     .line 97
     .line 98
-    if-eqz v3, :cond_68
+    if-eqz v3, :cond_5
 
     .line 99
     .line 100
@@ -1577,12 +1577,12 @@
     .line 103
     .line 104
     .line 105
-    :cond_68
+    :cond_5
     iget-boolean v3, p0, Llibs/zu0;->i:Z
 
     .line 106
     .line 107
-    if-eqz v3, :cond_71
+    if-eqz v3, :cond_6
 
     .line 108
     .line 109
@@ -1595,12 +1595,12 @@
     .line 112
     .line 113
     .line 114
-    :cond_71
+    :cond_6
     iget-boolean v3, p0, Llibs/zu0;->j:Z
 
     .line 115
     .line 116
-    if-eqz v3, :cond_7a
+    if-eqz v3, :cond_7
 
     .line 117
     .line 118
@@ -1613,12 +1613,12 @@
     .line 121
     .line 122
     .line 123
-    :cond_7a
+    :cond_7
     iget-boolean v3, p0, Llibs/zu0;->k:Z
 
     .line 124
     .line 125
-    if-eqz v3, :cond_83
+    if-eqz v3, :cond_8
 
     .line 126
     .line 127
@@ -1631,12 +1631,12 @@
     .line 130
     .line 131
     .line 132
-    :cond_83
+    :cond_8
     iget-boolean v3, p0, Llibs/zu0;->l:Z
 
     .line 133
     .line 134
-    if-eqz v3, :cond_8c
+    if-eqz v3, :cond_9
 
     .line 135
     .line 136
@@ -1649,7 +1649,7 @@
     .line 139
     .line 140
     .line 141
-    :cond_8c
+    :cond_9
     new-instance v3, Lorg/json/JSONObject;
 
     .line 142

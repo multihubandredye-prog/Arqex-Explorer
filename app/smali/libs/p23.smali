@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/xy0;I)V
-    .registers 7
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -201,7 +201,7 @@
 
 # virtual methods
 .method public final declared-synchronized a(Ljava/nio/ByteBuffer;J)V
-    .registers 7
+    .locals 3
 
     .line 1
     monitor-enter p0
@@ -218,11 +218,11 @@
 
     .line 8
     .line 9
-    if-gtz v2, :cond_41
+    if-gtz v2, :cond_3
 
     .line 10
     .line 11
-    :try_start_a
+    :try_start_0
     invoke-virtual {p1}, Ljava/nio/Buffer;->remaining()I
 
     .line 12
@@ -243,14 +243,14 @@
     .line 19
     .line 20
     .line 21
-    if-le v0, v1, :cond_17
+    if-le v0, v1, :cond_0
 
     .line 22
     .line 23
-    goto :goto_41
+    goto :goto_1
 
     .line 24
-    :cond_17
+    :cond_0
     iget-object v0, p0, Llibs/p23;->h:Llibs/r23;
 
     .line 25
@@ -293,24 +293,24 @@
     rem-int/2addr v1, v2
 
     .line 44
-    if-eqz v1, :cond_3a
+    if-eqz v1, :cond_2
 
     .line 45
     .line 46
     const/4 p3, 0x1
 
     .line 47
-    if-gt p2, p3, :cond_32
+    if-gt p2, p3, :cond_1
 
     .line 48
     .line 49
     const/4 p2, 0x1
 
     .line 50
-    goto :goto_3a
+    goto :goto_0
 
     .line 51
-    :cond_32
+    :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     .line 52
@@ -327,8 +327,8 @@
     throw p1
 
     .line 59
-    :cond_3a
-    :goto_3a
+    :cond_2
+    :goto_0
     iput-short p2, v0, Llibs/r23;->i:S
 
     .line 60
@@ -337,18 +337,18 @@
 
     .line 62
     .line 63
-    goto :goto_56
+    goto :goto_2
 
     .line 64
-    :catchall_3f
+    :catchall_0
     move-exception p1
 
     .line 65
-    goto :goto_62
+    goto :goto_3
 
     .line 66
-    :cond_41
-    :goto_41
+    :cond_3
+    :goto_1
     iget-object v0, p0, Llibs/p23;->i:Llibs/s23;
 
     .line 67
@@ -392,7 +392,7 @@
 
     .line 86
     .line 87
-    :goto_56
+    :goto_2
     invoke-virtual {p0, p2, p1}, Llibs/p23;->e(Llibs/ow;Ljava/nio/ByteBuffer;)V
 
     .line 88
@@ -407,8 +407,8 @@
 
     .line 94
     invoke-virtual {p1, p2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
-    :try_end_60
-    .catchall {:try_start_a .. :try_end_60} :catchall_3f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 95
     .line 96
@@ -419,18 +419,18 @@
     return-void
 
     .line 99
-    :goto_62
-    :try_start_62
+    :goto_3
+    :try_start_1
     monitor-exit p0
-    :try_end_63
-    .catchall {:try_start_62 .. :try_end_63} :catchall_3f
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 100
     throw p1
 .end method
 
 .method public final declared-synchronized b(Ljava/nio/ByteBuffer;J)V
-    .registers 7
+    .locals 3
 
     .line 1
     monitor-enter p0
@@ -447,11 +447,11 @@
 
     .line 8
     .line 9
-    if-gtz v2, :cond_30
+    if-gtz v2, :cond_1
 
     .line 10
     .line 11
-    :try_start_a
+    :try_start_0
     invoke-virtual {p1}, Ljava/nio/Buffer;->remaining()I
 
     .line 12
@@ -472,14 +472,14 @@
     .line 19
     .line 20
     .line 21
-    if-le v0, v1, :cond_17
+    if-le v0, v1, :cond_0
 
     .line 22
     .line 23
-    goto :goto_30
+    goto :goto_0
 
     .line 24
-    :cond_17
+    :cond_0
     iget-object v0, p0, Llibs/p23;->f:Llibs/r23;
 
     .line 25
@@ -526,18 +526,18 @@
 
     .line 45
     .line 46
-    goto :goto_45
+    goto :goto_1
 
     .line 47
-    :catchall_2e
+    :catchall_0
     move-exception p1
 
     .line 48
-    goto :goto_51
+    goto :goto_2
 
     .line 49
-    :cond_30
-    :goto_30
+    :cond_1
+    :goto_0
     iget-object v0, p0, Llibs/p23;->g:Llibs/s23;
 
     .line 50
@@ -581,7 +581,7 @@
 
     .line 69
     .line 70
-    :goto_45
+    :goto_1
     invoke-virtual {p0, p2, p1}, Llibs/p23;->e(Llibs/ow;Ljava/nio/ByteBuffer;)V
 
     .line 71
@@ -596,8 +596,8 @@
 
     .line 77
     invoke-virtual {p1, p2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
-    :try_end_4f
-    .catchall {:try_start_a .. :try_end_4f} :catchall_2e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 78
     .line 79
@@ -608,18 +608,18 @@
     return-void
 
     .line 82
-    :goto_51
-    :try_start_51
+    :goto_2
+    :try_start_1
     monitor-exit p0
-    :try_end_52
-    .catchall {:try_start_51 .. :try_end_52} :catchall_2e
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 83
     throw p1
 .end method
 
 .method public final c()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/p23;->d:I
@@ -630,7 +630,7 @@
 .end method
 
 .method public final d()V
-    .registers 7
+    .locals 6
 
     .line 1
     const/16 v0, 0x24
@@ -724,11 +724,11 @@
     .line 46
     .line 47
     .line 48
-    if-nez v2, :cond_af
+    if-nez v2, :cond_1
 
     .line 49
     .line 50
-    if-nez v1, :cond_af
+    if-nez v1, :cond_1
 
     .line 51
     .line 52
@@ -825,7 +825,7 @@
 
     .line 100
     .line 101
-    if-nez v0, :cond_86
+    if-nez v0, :cond_0
 
     .line 102
     .line 103
@@ -891,7 +891,7 @@
     move-wide v2, v0
 
     .line 135
-    :cond_86
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 136
@@ -969,7 +969,7 @@
     return-void
 
     .line 176
-    :cond_af
+    :cond_1
     const-string v0, "unsupported PeripheralQualifier or PeripheralDeviceType"
 
     .line 177
@@ -983,7 +983,7 @@
 .end method
 
 .method public final e(Llibs/ow;Ljava/nio/ByteBuffer;)V
-    .registers 10
+    .locals 7
 
     .line 1
     iget-object v0, p0, Llibs/p23;->b:Ljava/nio/ByteBuffer;
@@ -1048,7 +1048,7 @@
     array-length v1, v1
 
     .line 33
-    if-ne v0, v1, :cond_fa
+    if-ne v0, v1, :cond_d
 
     .line 34
     .line 35
@@ -1056,7 +1056,7 @@
 
     .line 36
     .line 37
-    if-lez v0, :cond_78
+    if-lez v0, :cond_5
 
     .line 38
     .line 39
@@ -1068,14 +1068,14 @@
 
     .line 42
     .line 43
-    if-nez v1, :cond_5d
+    if-nez v1, :cond_2
 
     .line 44
     .line 45
     const/4 v1, 0x0
 
     .line 46
-    :cond_2d
+    :cond_0
     invoke-virtual {p2}, Ljava/nio/Buffer;->remaining()I
 
     .line 47
@@ -1107,18 +1107,18 @@
     add-int/2addr v1, v4
 
     .line 61
-    if-lt v1, v0, :cond_2d
+    if-lt v1, v0, :cond_0
 
     .line 62
     .line 63
-    if-ne v1, v0, :cond_41
+    if-ne v1, v0, :cond_1
 
     .line 64
     .line 65
-    goto :goto_78
+    goto :goto_0
 
     .line 66
-    :cond_41
+    :cond_1
     new-instance p2, Ljava/io/IOException;
 
     .line 67
@@ -1171,11 +1171,11 @@
     throw p2
 
     .line 94
-    :cond_5d
+    :cond_2
     const/4 v1, 0x0
 
     .line 95
-    :cond_5e
+    :cond_3
     invoke-virtual {p2}, Ljava/nio/Buffer;->remaining()I
 
     .line 96
@@ -1207,18 +1207,18 @@
     add-int/2addr v1, v4
 
     .line 110
-    if-lt v1, v0, :cond_5e
+    if-lt v1, v0, :cond_3
 
     .line 111
     .line 112
-    if-ne v1, v0, :cond_72
+    if-ne v1, v0, :cond_4
 
     .line 113
     .line 114
-    goto :goto_78
+    goto :goto_0
 
     .line 115
-    :cond_72
+    :cond_4
     const-string p2, "Could not write all bytes: "
 
     .line 116
@@ -1231,8 +1231,8 @@
     return-void
 
     .line 121
-    :cond_78
-    :goto_78
+    :cond_5
+    :goto_0
     iget-object p1, p0, Llibs/p23;->c:Ljava/nio/ByteBuffer;
 
     .line 122
@@ -1266,7 +1266,7 @@
 
     .line 137
     .line 138
-    if-ne p2, v0, :cond_f4
+    if-ne p2, v0, :cond_c
 
     .line 139
     .line 140
@@ -1297,7 +1297,7 @@
     .line 153
     .line 154
     .line 155
-    if-eq p2, v0, :cond_af
+    if-eq p2, v0, :cond_6
 
     .line 156
     .line 157
@@ -1336,7 +1336,7 @@
     .line 174
     .line 175
     .line 176
-    :cond_af
+    :cond_6
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->getInt()I
 
     .line 177
@@ -1369,38 +1369,38 @@
     const/4 p2, 0x1
 
     .line 192
-    if-eqz p1, :cond_c3
+    if-eqz p1, :cond_7
 
     .line 193
     .line 194
     const/4 p1, 0x1
 
     .line 195
-    goto :goto_c4
+    goto :goto_1
 
     .line 196
-    :cond_c3
+    :cond_7
     const/4 p1, 0x0
 
     .line 197
-    :goto_c4
+    :goto_1
     iget v0, v0, Llibs/lh;->Y:I
 
     .line 198
     .line 199
-    if-eqz v0, :cond_c9
+    if-eqz v0, :cond_8
 
     .line 200
     .line 201
-    goto :goto_ca
+    goto :goto_2
 
     .line 202
-    :cond_c9
+    :cond_8
     move p2, p1
 
     .line 203
-    :goto_ca
-    if-eqz p2, :cond_f3
+    :goto_2
+    if-eqz p2, :cond_b
 
     .line 204
     .line 205
@@ -1412,7 +1412,7 @@
 
     .line 208
     .line 209
-    if-nez p2, :cond_e1
+    if-nez p2, :cond_9
 
     .line 210
     .line 211
@@ -1445,7 +1445,7 @@
 
     .line 225
     .line 226
-    :cond_e1
+    :cond_9
     invoke-virtual {p2}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
     .line 227
@@ -1454,7 +1454,7 @@
     move-result p1
 
     .line 230
-    if-nez p1, :cond_f3
+    if-nez p1, :cond_b
 
     .line 231
     .line 232
@@ -1466,14 +1466,14 @@
 
     .line 235
     .line 236
-    if-eq p1, p2, :cond_ee
+    if-eq p1, p2, :cond_a
 
     .line 237
     .line 238
-    goto :goto_f3
+    goto :goto_3
 
     .line 239
-    :cond_ee
+    :cond_a
     const-string p1, "Sector size: 1024"
 
     .line 240
@@ -1483,12 +1483,12 @@
     .line 242
     .line 243
     .line 244
-    :cond_f3
-    :goto_f3
+    :cond_b
+    :goto_3
     return-void
 
     .line 245
-    :cond_f4
+    :cond_c
     const-string p1, "Unexpected command size while expecting csw"
 
     .line 246
@@ -1501,7 +1501,7 @@
     return-void
 
     .line 251
-    :cond_fa
+    :cond_d
     const-string p2, "Writing all bytes on command "
 
     .line 252

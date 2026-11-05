@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/app/Activity;Landroid/content/Intent;I)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final c([Ljava/lang/Object;)Z
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object p1, p0, Llibs/mc0;->X:Landroid/app/Activity;
@@ -60,18 +60,18 @@
     const/4 v2, 0x1
 
     .line 8
-    :try_start_7
+    :try_start_0
     invoke-static {p1, v0, v1}, Llibs/sw1;->Item(Landroid/app/Activity;Landroid/content/Intent;I)V
-    :try_end_a
-    .catchall {:try_start_7 .. :try_end_a} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 9
     .line 10
     .line 11
-    goto :goto_24
+    goto :goto_0
 
     .line 12
-    :catchall_b
+    :catchall_0
     move-exception v0
 
     .line 13
@@ -121,6 +121,6 @@
     .line 35
     .line 36
     .line 37
-    :goto_24
+    :goto_0
     return v2
 .end method

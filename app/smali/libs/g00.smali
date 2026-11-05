@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,7 +23,7 @@
 
 # virtual methods
 .method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 9
+    .locals 6
 
     .line 1
     check-cast p1, Llibs/f00;
@@ -50,7 +50,7 @@
     move-result v0
 
     .line 13
-    if-nez v0, :cond_3a
+    if-nez v0, :cond_4
 
     .line 14
     .line 15
@@ -73,17 +73,17 @@
 
     .line 23
     .line 24
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_0
 
     .line 25
     .line 26
     move-object v0, v4
 
     .line 27
-    goto :goto_25
+    goto :goto_0
 
     .line 28
-    :cond_1b
+    :cond_0
     invoke-virtual {v0, v3}, Ljava/lang/String;->indexOf(I)I
 
     .line 29
@@ -92,7 +92,7 @@
     move-result v5
 
     .line 32
-    if-ne v5, v2, :cond_25
+    if-ne v5, v2, :cond_1
 
     .line 33
     .line 34
@@ -104,20 +104,20 @@
     move-result-object v0
 
     .line 38
-    :cond_25
-    :goto_25
+    :cond_1
+    :goto_0
     iget-object v5, p2, Llibs/f00;->d:Ljava/lang/String;
 
     .line 39
     .line 40
-    if-nez v5, :cond_2a
+    if-nez v5, :cond_2
 
     .line 41
     .line 42
-    goto :goto_36
+    goto :goto_1
 
     .line 43
-    :cond_2a
+    :cond_2
     invoke-virtual {v5, v3}, Ljava/lang/String;->indexOf(I)I
 
     .line 44
@@ -126,7 +126,7 @@
     move-result v3
 
     .line 47
-    if-ne v3, v2, :cond_35
+    if-ne v3, v2, :cond_3
 
     .line 48
     .line 49
@@ -138,14 +138,14 @@
     move-result-object v4
 
     .line 53
-    goto :goto_36
+    goto :goto_1
 
     .line 54
-    :cond_35
+    :cond_3
     move-object v4, v5
 
     .line 55
-    :goto_36
+    :goto_1
     invoke-virtual {v0, v4}, Ljava/lang/String;->compareToIgnoreCase(Ljava/lang/String;)I
 
     .line 56
@@ -154,8 +154,8 @@
     move-result v0
 
     .line 59
-    :cond_3a
-    if-nez v0, :cond_45
+    :cond_4
+    if-nez v0, :cond_5
 
     .line 60
     .line 61
@@ -178,6 +178,6 @@
     return p1
 
     .line 70
-    :cond_45
+    :cond_5
     return v0
 .end method

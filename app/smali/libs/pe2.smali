@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/PreferenceActivity;Llibs/ml1;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/pe2;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 7
+    .locals 6
 
     .line 1
     iget-byte v0, p0, Llibs/pe2;->X:B
@@ -60,7 +60,7 @@
     const/4 v3, 0x0
 
     .line 8
-    packed-switch v0, :pswitch_data_90
+    packed-switch v0, :pswitch_data_0
 
     .line 9
     .line 10
@@ -94,7 +94,7 @@
     return-void
 
     .line 26
-    :pswitch_19
+    :pswitch_0
     sget-boolean v0, Lcom/mixplorer/activities/PreferenceActivity;->O:Z
 
     .line 27
@@ -103,7 +103,7 @@
 
     .line 29
     .line 30
-    :try_start_1d
+    :try_start_0
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     .line 31
@@ -120,7 +120,7 @@
     move-result v5
 
     .line 38
-    if-eqz v5, :cond_2c
+    if-eqz v5, :cond_0
 
     .line 39
     .line 40
@@ -128,22 +128,22 @@
 
     .line 41
     .line 42
-    goto :goto_2e
+    goto :goto_0
 
     .line 43
-    :catchall_2a
+    :catchall_0
     move-exception v0
 
     .line 44
-    goto :goto_77
+    goto :goto_1
 
     .line 45
-    :cond_2c
+    :cond_0
     const-string v5, "http://mixplorer.com"
 
     .line 46
     .line 47
-    :goto_2e
+    :goto_0
     invoke-virtual {v5, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     .line 48
@@ -180,7 +180,7 @@
     move-result-object v0
 
     .line 65
-    if-eqz v0, :cond_6b
+    if-eqz v0, :cond_2
 
     .line 66
     .line 67
@@ -203,7 +203,7 @@
     move-result v4
 
     .line 76
-    if-nez v4, :cond_8f
+    if-nez v4, :cond_3
 
     .line 77
     .line 78
@@ -215,14 +215,14 @@
     move-result v4
 
     .line 82
-    if-nez v4, :cond_54
+    if-nez v4, :cond_1
 
     .line 83
     .line 84
-    goto :goto_8f
+    goto :goto_2
 
     .line 85
-    :cond_54
+    :cond_1
     sget v4, Llibs/vh2;->btn_check_off:I
 
     .line 86
@@ -265,10 +265,10 @@
     .line 105
     .line 106
     .line 107
-    goto :goto_8f
+    goto :goto_2
 
     .line 108
-    :cond_6b
+    :cond_2
     new-instance v0, Ljava/lang/NullPointerException;
 
     .line 109
@@ -291,11 +291,11 @@
     .line 118
     .line 119
     throw v0
-    :try_end_77
-    .catchall {:try_start_1d .. :try_end_77} :catchall_2a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 120
-    :goto_77
+    :goto_1
     invoke-static {v0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 121
@@ -342,13 +342,13 @@
     .line 142
     .line 143
     .line 144
-    :cond_8f
-    :goto_8f
+    :cond_3
+    :goto_2
     return-void
 
     .line 145
-    :pswitch_data_90
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_19
+        :pswitch_0
     .end packed-switch
 .end method

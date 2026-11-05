@@ -25,7 +25,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1
     new-instance v0, Ljava/util/Hashtable;
@@ -58,7 +58,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     const-string v0, "DH"
@@ -128,14 +128,14 @@
 
 # virtual methods
 .method public final generateKeyPair()Ljava/security/KeyPair;
-    .registers 8
+    .locals 7
 
     .line 1
     iget-boolean v0, p0, Llibs/gh1;->f:Z
 
     .line 2
     .line 3
-    if-nez v0, :cond_83
+    if-nez v0, :cond_3
 
     .line 4
     .line 5
@@ -163,7 +163,7 @@
     move-result v2
 
     .line 17
-    if-eqz v2, :cond_1b
+    if-eqz v2, :cond_0
 
     .line 18
     .line 19
@@ -183,10 +183,10 @@
 
     .line 26
     .line 27
-    goto :goto_74
+    goto :goto_1
 
     .line 28
-    :cond_1b
+    :cond_0
     sget-object v2, Llibs/hh;->X:Llibs/ih;
 
     .line 29
@@ -203,7 +203,7 @@
     move-result-object v2
 
     .line 36
-    if-eqz v2, :cond_40
+    if-eqz v2, :cond_1
 
     .line 37
     .line 38
@@ -257,10 +257,10 @@
 
     .line 63
     .line 64
-    goto :goto_74
+    goto :goto_1
 
     .line 65
-    :cond_40
+    :cond_1
     sget-object v2, Llibs/gh1;->h:Ljava/lang/Object;
 
     .line 66
@@ -268,7 +268,7 @@
     monitor-enter v2
 
     .line 68
-    :try_start_43
+    :try_start_0
     invoke-virtual {v1, v0}, Ljava/util/Hashtable;->containsKey(Ljava/lang/Object;)Z
 
     .line 69
@@ -277,7 +277,7 @@
     move-result v3
 
     .line 72
-    if-eqz v3, :cond_54
+    if-eqz v3, :cond_2
 
     .line 73
     .line 74
@@ -297,17 +297,17 @@
 
     .line 81
     .line 82
-    goto :goto_73
+    goto :goto_0
 
     .line 83
-    :catchall_52
+    :catchall_0
     move-exception v0
 
     .line 84
-    goto :goto_81
+    goto :goto_2
 
     .line 85
-    :cond_54
+    :cond_2
     new-instance v3, Llibs/m40;
 
     .line 86
@@ -367,13 +367,13 @@
     .line 114
     .line 115
     .line 116
-    :goto_73
+    :goto_0
     monitor-exit v2
-    :try_end_74
-    .catchall {:try_start_43 .. :try_end_74} :catchall_52
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 117
-    :goto_74
+    :goto_1
     iget-object v0, p0, Llibs/gh1;->b:Llibs/a40;
 
     .line 118
@@ -398,21 +398,21 @@
 
     .line 128
     .line 129
-    goto :goto_83
+    goto :goto_3
 
     .line 130
-    :goto_81
-    :try_start_81
+    :goto_2
+    :try_start_1
     monitor-exit v2
-    :try_end_82
-    .catchall {:try_start_81 .. :try_end_82} :catchall_52
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 131
     throw v0
 
     .line 132
-    :cond_83
-    :goto_83
+    :cond_3
+    :goto_3
     iget-object v0, p0, Llibs/gh1;->b:Llibs/a40;
 
     .line 133
@@ -480,7 +480,7 @@
 .end method
 
 .method public final initialize(ILjava/security/SecureRandom;)V
-    .registers 3
+    .locals 0
 
     .line 48
     iput p1, p0, Llibs/gh1;->c:I
@@ -492,14 +492,14 @@
 .end method
 
 .method public final initialize(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V
-    .registers 7
+    .locals 4
 
     .line 1
     instance-of v0, p1, Ljavax/crypto/spec/DHParameterSpec;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -576,7 +576,7 @@
     return-void
 
     .line 42
-    :cond_29
+    :cond_0
     const-string p1, "parameter object not a DHParameterSpec"
 
     .line 43

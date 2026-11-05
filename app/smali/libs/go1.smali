@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1
     const-string v0, "MD4"
@@ -85,7 +85,7 @@
 
 # virtual methods
 .method public final a(I[B)V
-    .registers 29
+    .locals 26
 
     .line 1
     move-object/from16 v0, p0
@@ -126,7 +126,7 @@
     const/4 v9, 0x0
 
     .line 19
-    :goto_12
+    :goto_0
     const/4 v10, 0x4
 
     .line 20
@@ -134,7 +134,7 @@
 
     .line 21
     .line 22
-    if-ge v9, v5, :cond_3b
+    if-ge v9, v5, :cond_0
 
     .line 23
     .line 24
@@ -213,10 +213,10 @@
 
     .line 58
     .line 59
-    goto :goto_12
+    goto :goto_0
 
     .line 60
-    :cond_3b
+    :cond_0
     iget v5, v0, Llibs/go1;->a:I
 
     .line 61
@@ -2026,16 +2026,16 @@
 .end method
 
 .method public final engineDigest([BII)I
-    .registers 6
+    .locals 2
 
-    if-ltz p2, :cond_16
+    if-ltz p2, :cond_0
 
     add-int v0, p2, p3
 
     .line 168
     array-length v1, p1
 
-    if-ge v0, v1, :cond_16
+    if-ge v0, v1, :cond_0
 
     const/16 v0, 0x10
 
@@ -2056,7 +2056,7 @@
     return p3
 
     .line 171
-    :cond_16
+    :cond_0
     new-instance p1, Ljava/security/DigestException;
 
     const-string p2, "Wrong offset or not enough space to store the digest"
@@ -2067,7 +2067,7 @@
 .end method
 
 .method public final engineDigest()[B
-    .registers 21
+    .locals 20
 
     .line 1
     move-object/from16 v0, p0
@@ -2093,7 +2093,7 @@
 
     .line 11
     .line 12
-    if-ge v4, v3, :cond_10
+    if-ge v4, v3, :cond_0
 
     .line 13
     .line 14
@@ -2101,15 +2101,15 @@
 
     .line 15
     .line 16
-    goto :goto_12
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     rsub-int v3, v4, 0x80
 
     .line 18
     .line 19
-    :goto_12
+    :goto_0
     new-array v4, v3, [B
 
     .line 20
@@ -2138,12 +2138,12 @@
     const/4 v8, 0x0
 
     .line 31
-    :goto_1e
+    :goto_1
     const/16 v9, 0x8
 
     .line 32
     .line 33
-    if-ge v8, v9, :cond_30
+    if-ge v8, v9, :cond_1
 
     .line 34
     .line 35
@@ -2176,10 +2176,10 @@
     move v7, v9
 
     .line 48
-    goto :goto_1e
+    goto :goto_1
 
     .line 49
-    :cond_30
+    :cond_1
     invoke-virtual {v0, v4, v6, v3}, Llibs/go1;->engineUpdate([BII)V
 
     .line 50
@@ -2440,7 +2440,7 @@
 .end method
 
 .method public final engineGetDigestLength()I
-    .registers 2
+    .locals 1
 
     .line 1
     const/16 v0, 0x10
@@ -2451,7 +2451,7 @@
 .end method
 
 .method public final engineReset()V
-    .registers 3
+    .locals 2
 
     .line 1
     const v0, 0x67452301
@@ -2502,7 +2502,7 @@
 .end method
 
 .method public final engineUpdate(B)V
-    .registers 8
+    .locals 6
 
     .line 47
     iget-wide v0, p0, Llibs/go1;->e:J
@@ -2527,19 +2527,19 @@
 
     const/16 p1, 0x3f
 
-    if-ne v3, p1, :cond_18
+    if-ne v3, p1, :cond_0
 
     const/4 p1, 0x0
 
     .line 50
     invoke-virtual {p0, p1, v2}, Llibs/go1;->a(I[B)V
 
-    :cond_18
+    :cond_0
     return-void
 .end method
 
 .method public final engineUpdate([BII)V
-    .registers 10
+    .locals 6
 
     .line 1
     iget-wide v0, p0, Llibs/go1;->e:J
@@ -2578,7 +2578,7 @@
     const/4 v1, 0x0
 
     .line 17
-    if-lt p3, v2, :cond_26
+    if-lt p3, v2, :cond_1
 
     .line 18
     .line 19
@@ -2592,7 +2592,7 @@
     .line 23
     .line 24
     .line 25
-    :goto_18
+    :goto_0
     add-int/lit8 v3, v2, 0x40
 
     .line 26
@@ -2601,7 +2601,7 @@
 
     .line 28
     .line 29
-    if-ge v4, p3, :cond_24
+    if-ge v4, p3, :cond_0
 
     .line 30
     .line 31
@@ -2616,18 +2616,18 @@
     move v2, v3
 
     .line 36
-    goto :goto_18
+    goto :goto_0
 
     .line 37
-    :cond_24
+    :cond_0
     move v1, v2
 
     .line 38
     const/4 v3, 0x0
 
     .line 39
-    :cond_26
-    if-ge v1, p3, :cond_2d
+    :cond_1
+    if-ge v1, p3, :cond_2
 
     .line 40
     .line 41
@@ -2642,6 +2642,6 @@
     .line 44
     .line 45
     .line 46
-    :cond_2d
+    :cond_2
     return-void
 .end method

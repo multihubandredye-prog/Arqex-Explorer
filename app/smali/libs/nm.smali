@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/cg;I)V
-    .registers 4
+    .locals 1
 
     .line 1
     invoke-direct {p0, p1}, Llibs/bh3;-><init>(Llibs/cg;)V
@@ -105,7 +105,7 @@
 
 # virtual methods
 .method public final a(ZLlibs/et;)V
-    .registers 10
+    .locals 7
 
     .line 1
     iput-boolean p1, p0, Llibs/nm;->Omicron:Z
@@ -123,7 +123,7 @@
     const/4 v1, 0x1
 
     .line 8
-    if-eqz p1, :cond_35
+    if-eqz p1, :cond_2
 
     .line 9
     .line 10
@@ -148,7 +148,7 @@
     const/4 v5, 0x0
 
     .line 19
-    if-ge v2, v4, :cond_26
+    if-ge v2, v4, :cond_0
 
     .line 20
     .line 21
@@ -172,7 +172,7 @@
     const/4 v2, 0x0
 
     .line 29
-    :goto_1c
+    :goto_0
     array-length v4, v3
 
     .line 30
@@ -182,7 +182,7 @@
     sub-int/2addr v4, v6
 
     .line 32
-    if-ge v2, v4, :cond_2a
+    if-ge v2, v4, :cond_1
 
     .line 33
     .line 34
@@ -194,10 +194,10 @@
 
     .line 37
     .line 38
-    goto :goto_1c
+    goto :goto_0
 
     .line 39
-    :cond_26
+    :cond_0
     array-length v2, v3
 
     .line 40
@@ -206,7 +206,7 @@
     .line 41
     .line 42
     .line 43
-    :cond_2a
+    :cond_1
     invoke-virtual {p0}, Llibs/nm;->reset()V
 
     .line 44
@@ -216,7 +216,7 @@
 
     .line 47
     .line 48
-    if-eqz p1, :cond_3d
+    if-eqz p1, :cond_3
 
     .line 49
     .line 50
@@ -228,13 +228,13 @@
     return-void
 
     .line 54
-    :cond_35
+    :cond_2
     invoke-virtual {p0}, Llibs/nm;->reset()V
 
     .line 55
     .line 56
     .line 57
-    if-eqz p2, :cond_3d
+    if-eqz p2, :cond_3
 
     .line 58
     .line 59
@@ -243,12 +243,12 @@
     .line 60
     .line 61
     .line 62
-    :cond_3d
+    :cond_3
     return-void
 .end method
 
 .method public final b()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -306,7 +306,7 @@
 .end method
 
 .method public final c(B)B
-    .registers 10
+    .locals 8
 
     .line 1
     iget-boolean v0, p0, Llibs/nm;->Omicron:Z
@@ -340,11 +340,11 @@
 
     .line 15
     .line 16
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_2
 
     .line 17
     .line 18
-    if-nez v1, :cond_16
+    if-nez v1, :cond_0
 
     .line 19
     .line 20
@@ -353,7 +353,7 @@
     .line 21
     .line 22
     .line 23
-    :cond_16
+    :cond_0
     iget v0, p0, Llibs/nm;->Pi:I
 
     .line 24
@@ -380,7 +380,7 @@
 
     .line 34
     .line 35
-    if-ne v1, v7, :cond_30
+    if-ne v1, v7, :cond_1
 
     .line 36
     .line 37
@@ -410,12 +410,12 @@
     .line 47
     .line 48
     .line 49
-    :cond_30
+    :cond_1
     return p1
 
     .line 50
-    :cond_31
-    if-nez v1, :cond_36
+    :cond_2
+    if-nez v1, :cond_3
 
     .line 51
     .line 52
@@ -424,7 +424,7 @@
     .line 53
     .line 54
     .line 55
-    :cond_36
+    :cond_3
     iget v0, p0, Llibs/nm;->Pi:I
 
     .line 56
@@ -451,7 +451,7 @@
     int-to-byte p1, p1
 
     .line 67
-    if-ne v1, v7, :cond_50
+    if-ne v1, v7, :cond_4
 
     .line 68
     .line 69
@@ -481,12 +481,12 @@
     .line 79
     .line 80
     .line 81
-    :cond_50
+    :cond_4
     return p1
 .end method
 
 .method public final i()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/nm;->Nu:I
@@ -497,7 +497,7 @@
 .end method
 
 .method public final r(II[B[B)I
-    .registers 11
+    .locals 6
 
     .line 1
     iget v2, p0, Llibs/nm;->Nu:I
@@ -532,7 +532,7 @@
 .end method
 
 .method public final reset()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-object v0, p0, Llibs/nm;->Z:[B

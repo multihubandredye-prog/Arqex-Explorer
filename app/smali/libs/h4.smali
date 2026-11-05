@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static a(Landroid/content/Context;Ljava/lang/Class;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -20,7 +20,7 @@
 .end method
 
 .method public static b(Landroid/app/AppOpsManager;Ljava/lang/String;Ljava/lang/String;)I
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1, p2}, Landroid/app/AppOpsManager;->noteProxyOpNoThrow(Ljava/lang/String;Ljava/lang/String;)I
@@ -35,7 +35,7 @@
 .end method
 
 .method public static c(Ljava/lang/String;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-static {p0}, Landroid/app/AppOpsManager;->permissionToOp(Ljava/lang/String;)Ljava/lang/String;

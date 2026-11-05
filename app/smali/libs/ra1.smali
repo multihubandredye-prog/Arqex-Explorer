@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -35,14 +35,14 @@
 
     .line 9
     .line 10
-    if-ltz p1, :cond_c
+    if-ltz p1, :cond_0
 
     .line 11
     .line 12
     const/4 v0, 0x1
 
     .line 13
-    :cond_c
+    :cond_0
     iput-boolean v0, p0, Llibs/ra1;->Lambda:Z
 
     .line 14
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public final hasNext()Z
-    .registers 2
+    .locals 1
 
     .line 1
     iget-boolean v0, p0, Llibs/ra1;->Lambda:Z
@@ -64,7 +64,7 @@
 .end method
 
 .method public final nextInt()I
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/ra1;->Z:I
@@ -75,7 +75,7 @@
 
     .line 4
     .line 5
-    if-lt v0, v1, :cond_a
+    if-lt v0, v1, :cond_0
 
     .line 6
     .line 7
@@ -89,7 +89,7 @@
     return v1
 
     .line 11
-    :cond_a
+    :cond_0
     add-int/lit8 v1, v0, 0x1
 
     .line 12

@@ -11,7 +11,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Object;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/ij;->c:B
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public Node(I)Llibs/r90;
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/ij;->d:Ljava/lang/Object;
@@ -51,7 +51,7 @@
     monitor-enter v0
 
     .line 8
-    :try_start_7
+    :try_start_0
     iget-object v1, p0, Llibs/ij;->d:Ljava/lang/Object;
 
     .line 9
@@ -82,27 +82,27 @@
     return-object p1
 
     .line 22
-    :catchall_15
+    :catchall_0
     move-exception p1
 
     .line 23
     monitor-exit v0
-    :try_end_17
-    .catchall {:try_start_7 .. :try_end_17} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 24
     throw p1
 .end method
 
 .method public Object(Landroid/view/View;I)Z
-    .registers 7
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/ij;->c:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_4a
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -118,7 +118,7 @@
     return p1
 
     .line 11
-    :pswitch_a
+    :pswitch_0
     iget-object p1, p0, Llibs/ij;->d:Ljava/lang/Object;
 
     .line 12
@@ -133,12 +133,12 @@
     const/4 v1, 0x0
 
     .line 17
-    :try_start_10
+    :try_start_0
     iget-boolean v2, p1, Llibs/lj;->Juliet:Z
 
     .line 18
     .line 19
-    if-eqz v2, :cond_36
+    if-eqz v2, :cond_0
 
     .line 20
     .line 21
@@ -178,7 +178,7 @@
     move-result v2
 
     .line 39
-    if-nez v2, :cond_36
+    if-nez v2, :cond_0
 
     .line 40
     .line 41
@@ -197,31 +197,31 @@
     .line 48
     .line 49
     invoke-virtual {p1}, Llibs/ml1;->App()V
-    :try_end_33
-    .catchall {:try_start_10 .. :try_end_33} :catchall_34
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 50
     .line 51
     .line 52
-    goto :goto_48
+    goto :goto_2
 
     .line 53
-    :catchall_34
+    :catchall_0
     move-exception p1
 
     .line 54
-    goto :goto_38
+    goto :goto_1
 
     .line 55
-    :cond_36
-    :goto_36
+    :cond_0
+    :goto_0
     const/4 v0, 0x0
 
     .line 56
-    goto :goto_48
+    goto :goto_2
 
     .line 57
-    :goto_38
+    :goto_1
     invoke-static {p1}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 58
@@ -251,24 +251,24 @@
     .line 70
     .line 71
     .line 72
-    goto :goto_36
+    goto :goto_0
 
     .line 73
-    :goto_48
+    :goto_2
     return v0
 
     .line 74
     nop
 
     .line 75
-    :pswitch_data_4a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final z(Landroid/view/View;I)V
-    .registers 9
+    .locals 6
 
     .line 1
     iget-byte v0, p0, Llibs/ij;->c:B
@@ -282,7 +282,7 @@
     const/4 v2, 0x0
 
     .line 6
-    packed-switch v0, :pswitch_data_88
+    packed-switch v0, :pswitch_data_0
 
     .line 7
     .line 8
@@ -304,7 +304,7 @@
 
     .line 17
     .line 18
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_1
 
     .line 19
     .line 20
@@ -320,14 +320,14 @@
     move-result v0
 
     .line 26
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_0
 
     .line 27
     .line 28
-    goto :goto_29
+    goto :goto_0
 
     .line 29
-    :cond_1c
+    :cond_0
     new-instance v0, Llibs/xv1;
 
     .line 30
@@ -351,12 +351,12 @@
     .line 40
     .line 41
     .line 42
-    :cond_29
-    :goto_29
+    :cond_1
+    :goto_0
     return-void
 
     .line 43
-    :pswitch_2a
+    :pswitch_0
     check-cast v1, Llibs/lj;
 
     .line 44
@@ -364,7 +364,7 @@
     const/4 v0, 0x1
 
     .line 46
-    :try_start_2d
+    :try_start_0
     invoke-virtual {p0, p2}, Llibs/ij;->Node(I)Llibs/r90;
 
     .line 47
@@ -389,7 +389,7 @@
 
     .line 57
     .line 58
-    if-eqz v5, :cond_55
+    if-eqz v5, :cond_3
 
     .line 59
     .line 60
@@ -405,7 +405,7 @@
     move-result p1
 
     .line 66
-    if-eqz p1, :cond_49
+    if-eqz p1, :cond_2
 
     .line 67
     .line 68
@@ -414,23 +414,23 @@
     .line 69
     .line 70
     .line 71
-    goto :goto_4c
+    goto :goto_1
 
     .line 72
-    :catchall_47
+    :catchall_0
     move-exception p1
 
     .line 73
-    goto :goto_78
+    goto :goto_3
 
     .line 74
-    :cond_49
+    :cond_2
     invoke-virtual {v1, v3, v0}, Llibs/lj;->Flag(Llibs/r90;Z)V
 
     .line 75
     .line 76
     .line 77
-    :goto_4c
+    :goto_1
     iget-object p1, v1, Llibs/ml1;->Zero:Lcom/mixplorer/widgets/MiDraggableListView;
 
     .line 78
@@ -445,15 +445,15 @@
     .line 83
     .line 84
     .line 85
-    goto :goto_87
+    goto :goto_4
 
     .line 86
-    :cond_55
+    :cond_3
     iget-boolean v3, v4, Llibs/rp0;->One:Z
 
     .line 87
     .line 88
-    if-eqz v3, :cond_68
+    if-eqz v3, :cond_5
 
     .line 89
     .line 90
@@ -465,7 +465,7 @@
     move-result p1
 
     .line 94
-    if-eqz p1, :cond_62
+    if-eqz p1, :cond_4
 
     .line 95
     .line 96
@@ -473,29 +473,29 @@
 
     .line 97
     .line 98
-    goto :goto_64
+    goto :goto_2
 
     .line 99
-    :cond_62
+    :cond_4
     iget-object p1, v4, Llibs/rp0;->Three:Ljava/lang/String;
 
     .line 100
     .line 101
-    :goto_64
+    :goto_2
     invoke-virtual {v1, p1}, Llibs/lj;->Param(Ljava/lang/String;)V
 
     .line 102
     .line 103
     .line 104
-    goto :goto_87
+    goto :goto_4
 
     .line 105
-    :cond_68
+    :cond_5
     iget-boolean v3, v1, Llibs/lj;->Juliet:Z
 
     .line 106
     .line 107
-    if-eqz v3, :cond_70
+    if-eqz v3, :cond_6
 
     .line 108
     .line 109
@@ -504,29 +504,29 @@
     .line 110
     .line 111
     .line 112
-    goto :goto_87
+    goto :goto_4
 
     .line 113
-    :cond_70
+    :cond_6
     iget-object p1, v1, Llibs/lj;->Oscar:Llibs/kj;
 
     .line 114
     .line 115
-    if-eqz p1, :cond_87
+    if-eqz p1, :cond_7
 
     .line 116
     .line 117
     invoke-interface {p1, v4}, Llibs/kj;->n(Llibs/rp0;)V
-    :try_end_77
-    .catchall {:try_start_2d .. :try_end_77} :catchall_47
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 118
     .line 119
     .line 120
-    goto :goto_87
+    goto :goto_4
 
     .line 121
-    :goto_78
+    :goto_3
     invoke-static {p1}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 122
@@ -556,13 +556,13 @@
     .line 134
     .line 135
     .line 136
-    :cond_87
-    :goto_87
+    :cond_7
+    :goto_4
     return-void
 
     .line 137
-    :pswitch_data_88
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2a
+        :pswitch_0
     .end packed-switch
 .end method

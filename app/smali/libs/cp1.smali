@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/qw0;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iput-object p1, p0, Llibs/cp1;->Lambda:Llibs/qw0;
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 1
     iget-boolean v0, p0, Llibs/cp1;->Z:Z
@@ -77,7 +77,7 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_5
 
     .line 5
     .line 6
@@ -85,14 +85,14 @@
 
     .line 7
     .line 8
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     .line 9
     .line 10
     return v1
 
     .line 11
-    :cond_a
+    :cond_0
     check-cast p1, Ljava/util/Map$Entry;
 
     .line 12
@@ -121,11 +121,11 @@
     move-result-object v2
 
     .line 25
-    if-eq v0, v2, :cond_24
+    if-eq v0, v2, :cond_2
 
     .line 26
     .line 27
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_1
 
     .line 28
     .line 29
@@ -137,19 +137,19 @@
     move-result v0
 
     .line 33
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_1
 
     .line 34
     .line 35
-    goto :goto_24
+    goto :goto_0
 
     .line 36
-    :cond_23
+    :cond_1
     return v1
 
     .line 37
-    :cond_24
-    :goto_24
+    :cond_2
+    :goto_0
     invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     .line 38
@@ -173,11 +173,11 @@
     move-result-object v0
 
     .line 48
-    if-eq p1, v0, :cond_3b
+    if-eq p1, v0, :cond_4
 
     .line 49
     .line 50
-    if-eqz p1, :cond_3a
+    if-eqz p1, :cond_3
 
     .line 51
     .line 52
@@ -189,23 +189,23 @@
     move-result p1
 
     .line 56
-    if-eqz p1, :cond_3a
+    if-eqz p1, :cond_3
 
     .line 57
     .line 58
-    goto :goto_3b
+    goto :goto_1
 
     .line 59
-    :cond_3a
+    :cond_3
     return v1
 
     .line 60
-    :cond_3b
-    :goto_3b
+    :cond_4
+    :goto_1
     return v2
 
     .line 61
-    :cond_3c
+    :cond_5
     const-string p1, "This container does not support retaining Map.Entry objects"
 
     .line 62
@@ -219,14 +219,14 @@
 .end method
 
 .method public final getKey()Ljava/lang/Object;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-boolean v0, p0, Llibs/cp1;->Z:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -252,7 +252,7 @@
     return-object v0
 
     .line 15
-    :cond_e
+    :cond_0
     const-string v0, "This container does not support retaining Map.Entry objects"
 
     .line 16
@@ -269,14 +269,14 @@
 .end method
 
 .method public final getValue()Ljava/lang/Object;
-    .registers 4
+    .locals 3
 
     .line 1
     iget-boolean v0, p0, Llibs/cp1;->Z:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -302,7 +302,7 @@
     return-object v0
 
     .line 15
-    :cond_e
+    :cond_0
     const-string v0, "This container does not support retaining Map.Entry objects"
 
     .line 16
@@ -319,7 +319,7 @@
 .end method
 
 .method public final hasNext()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/cp1;->Y:I
@@ -330,7 +330,7 @@
 
     .line 4
     .line 5
-    if-ge v0, v1, :cond_8
+    if-ge v0, v1, :cond_0
 
     .line 6
     .line 7
@@ -340,7 +340,7 @@
     return v0
 
     .line 9
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 10
@@ -348,7 +348,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 6
+    .locals 5
 
     .line 1
     iget-boolean v0, p0, Llibs/cp1;->Z:Z
@@ -358,7 +358,7 @@
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_2
 
     .line 5
     .line 6
@@ -393,17 +393,17 @@
     move-result-object v2
 
     .line 21
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     .line 22
     .line 23
     const/4 v0, 0x0
 
     .line 24
-    goto :goto_1c
+    goto :goto_0
 
     .line 25
-    :cond_18
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     .line 26
@@ -412,15 +412,15 @@
     move-result v0
 
     .line 29
-    :goto_1c
-    if-nez v2, :cond_1f
+    :goto_0
+    if-nez v2, :cond_1
 
     .line 30
     .line 31
-    goto :goto_23
+    goto :goto_1
 
     .line 32
-    :cond_1f
+    :cond_1
     invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
     .line 33
@@ -429,14 +429,14 @@
     move-result v1
 
     .line 36
-    :goto_23
+    :goto_1
     xor-int/2addr v0, v1
 
     .line 37
     return v0
 
     .line 38
-    :cond_25
+    :cond_2
     const-string v0, "This container does not support retaining Map.Entry objects"
 
     .line 39
@@ -450,7 +450,7 @@
 .end method
 
 .method public final next()Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/cp1;->Y:I
@@ -475,14 +475,14 @@
 .end method
 
 .method public final remove()V
-    .registers 3
+    .locals 2
 
     .line 1
     iget-boolean v0, p0, Llibs/cp1;->Z:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -533,7 +533,7 @@
     return-void
 
     .line 28
-    :cond_1b
+    :cond_0
     invoke-static {}, Llibs/ic0;->r()V
 
     .line 29
@@ -543,14 +543,14 @@
 .end method
 
 .method public final setValue(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
 
     .line 1
     iget-boolean v0, p0, Llibs/cp1;->Z:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -573,7 +573,7 @@
     return-object p1
 
     .line 14
-    :cond_d
+    :cond_0
     const-string p1, "This container does not support retaining Map.Entry objects"
 
     .line 15
@@ -590,7 +590,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;

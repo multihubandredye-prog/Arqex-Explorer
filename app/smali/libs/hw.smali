@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/iw;II)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/hw;->j:Llibs/iw;
@@ -58,7 +58,7 @@
 
 # virtual methods
 .method public final a()V
-    .registers 14
+    .locals 13
 
     .line 1
     iget-object v0, p0, Llibs/hw;->j:Llibs/iw;
@@ -125,12 +125,12 @@
     const/4 v8, 0x0
 
     .line 33
-    :goto_20
+    :goto_0
     iget v10, p0, Llibs/hw;->b:I
 
     .line 34
     .line 35
-    if-gt v9, v10, :cond_48
+    if-gt v9, v10, :cond_6
 
     .line 36
     .line 37
@@ -165,62 +165,62 @@
 
     .line 51
     .line 52
-    if-le v11, v5, :cond_36
+    if-le v11, v5, :cond_0
 
     .line 53
     .line 54
     move v5, v11
 
     .line 55
-    :cond_36
-    if-ge v11, v2, :cond_39
+    :cond_0
+    if-ge v11, v2, :cond_1
 
     .line 56
     .line 57
     move v2, v11
 
     .line 58
-    :cond_39
-    if-le v12, v6, :cond_3c
+    :cond_1
+    if-le v12, v6, :cond_2
 
     .line 59
     .line 60
     move v6, v12
 
     .line 61
-    :cond_3c
-    if-ge v12, v3, :cond_3f
+    :cond_2
+    if-ge v12, v3, :cond_3
 
     .line 62
     .line 63
     move v3, v12
 
     .line 64
-    :cond_3f
-    if-le v10, v7, :cond_42
+    :cond_3
+    if-le v10, v7, :cond_4
 
     .line 65
     .line 66
     move v7, v10
 
     .line 67
-    :cond_42
-    if-ge v10, v4, :cond_45
+    :cond_4
+    if-ge v10, v4, :cond_5
 
     .line 68
     .line 69
     move v4, v10
 
     .line 70
-    :cond_45
+    :cond_5
     add-int/lit8 v9, v9, 0x1
 
     .line 71
     .line 72
-    goto :goto_20
+    goto :goto_0
 
     .line 73
-    :cond_48
+    :cond_6
     iput v2, p0, Llibs/hw;->d:I
 
     .line 74
@@ -253,7 +253,7 @@
 .end method
 
 .method public final b()I
-    .registers 4
+    .locals 3
 
     .line 1
     iget v0, p0, Llibs/hw;->e:I

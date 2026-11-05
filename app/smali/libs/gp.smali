@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(BJLjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/gp;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 5
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/gp;->X:B
@@ -57,7 +57,7 @@
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_40
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
@@ -78,7 +78,7 @@
     return-void
 
     .line 18
-    :pswitch_11
+    :pswitch_0
     check-cast v3, Llibs/rd2;
 
     .line 19
@@ -95,12 +95,12 @@
     return-void
 
     .line 26
-    :pswitch_19
+    :pswitch_1
     check-cast v3, Llibs/lp;
 
     .line 27
     .line 28
-    :try_start_1b
+    :try_start_0
     iget-object v0, v3, Llibs/lp;->a:Llibs/d00;
 
     .line 29
@@ -119,16 +119,16 @@
 
     .line 35
     invoke-interface {v0, v1, v2}, Llibs/d00;->f(D)V
-    :try_end_25
-    .catch Ljava/lang/Exception; {:try_start_1b .. :try_end_25} :catch_26
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 36
     .line 37
     .line 38
-    goto :goto_3e
+    goto :goto_0
 
     .line 39
-    :catch_26
+    :catch_0
     move-exception v0
 
     .line 40
@@ -175,16 +175,16 @@
     .line 61
     .line 62
     .line 63
-    :goto_3e
+    :goto_0
     return-void
 
     .line 64
     nop
 
     .line 65
-    :pswitch_data_40
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_19
-        :pswitch_11
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

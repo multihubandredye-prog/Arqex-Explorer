@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/ig;Llibs/hb2;)V
-    .registers 9
+    .locals 6
 
     .line 1
     invoke-virtual {p2}, Llibs/hb2;->a()J
@@ -47,7 +47,7 @@
 .end method
 
 .method public static d(ILlibs/ir3;Llibs/hb2;Ljava/nio/ByteBuffer;)Llibs/fb2;
-    .registers 10
+    .locals 6
 
     .line 1
     const-string v0, "Partition"
@@ -63,7 +63,7 @@
     const/4 v3, 0x1
 
     .line 6
-    :try_start_5
+    :try_start_0
     new-instance v4, Llibs/fb2;
 
     .line 7
@@ -119,30 +119,30 @@
 
     .line 34
     iput-object p0, v4, Llibs/fb2;->e:Ljava/lang/String;
-    :try_end_23
-    .catch Llibs/br0; {:try_start_5 .. :try_end_23} :catch_26
-    .catchall {:try_start_5 .. :try_end_23} :catchall_24
+    :try_end_0
+    .catch Llibs/br0; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 35
     .line 36
     return-object v4
 
     .line 37
-    :catchall_24
+    :catchall_0
     move-exception p0
 
     .line 38
-    goto :goto_28
+    goto :goto_0
 
     .line 39
-    :catch_26
+    :catch_0
     move-exception p0
 
     .line 40
-    goto :goto_44
+    goto :goto_1
 
     .line 41
-    :goto_28
+    :goto_0
     invoke-static {p0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 42
@@ -172,7 +172,7 @@
 
     .line 55
     .line 56
-    if-nez p1, :cond_41
+    if-nez p1, :cond_0
 
     .line 57
     .line 58
@@ -192,7 +192,7 @@
     return-object v1
 
     .line 66
-    :cond_41
+    :cond_0
     check-cast p0, Ljava/io/IOException;
 
     .line 67
@@ -200,7 +200,7 @@
     throw p0
 
     .line 69
-    :goto_44
+    :goto_1
     invoke-static {p0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 70
@@ -232,7 +232,7 @@
 
 # virtual methods
 .method public final e()Llibs/ir3;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/fb2;->f:Llibs/ir3;

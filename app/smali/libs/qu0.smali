@@ -20,7 +20,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(ILandroid/app/Activity;Llibs/ru0;ZZ)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 6
+    .locals 5
 
     .line 1
     iget-boolean v0, p0, Llibs/qu0;->Lambda:Z

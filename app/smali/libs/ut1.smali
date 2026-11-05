@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/xt1;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/ut1;->a:Llibs/xt1;
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final a(I)V
-    .registers 8
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/ut1;->a:Llibs/xt1;
@@ -51,21 +51,21 @@
     const/4 v4, 0x2
 
     .line 10
-    if-ne p1, v4, :cond_d
+    if-ne p1, v4, :cond_0
 
     .line 11
     .line 12
     const/4 v5, 0x1
 
     .line 13
-    goto :goto_e
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     const/4 v5, 0x0
 
     .line 15
-    :goto_e
+    :goto_0
     iput-boolean v5, v1, Llibs/sv0;->List:Z
 
     .line 16
@@ -95,7 +95,7 @@
     move-result v5
 
     .line 30
-    if-eqz v5, :cond_28
+    if-eqz v5, :cond_2
 
     .line 31
     .line 32
@@ -103,56 +103,56 @@
 
     .line 33
     .line 34
-    if-eqz p1, :cond_25
+    if-eqz p1, :cond_1
 
     .line 35
     .line 36
     const/4 v5, 0x1
 
     .line 37
-    goto :goto_26
+    goto :goto_1
 
     .line 38
-    :cond_25
+    :cond_1
     const/4 v5, 0x0
 
     .line 39
-    :goto_26
+    :goto_1
     iput-boolean v5, v1, Llibs/tc1;->c:Z
 
     .line 40
     .line 41
-    :cond_28
+    :cond_2
     iget v1, v0, Llibs/xt1;->E:I
 
     .line 42
     .line 43
-    if-nez v1, :cond_31
+    if-nez v1, :cond_4
 
     .line 44
     .line 45
-    if-eq p1, v4, :cond_2f
+    if-eq p1, v4, :cond_3
 
     .line 46
     .line 47
-    goto :goto_31
+    goto :goto_2
 
     .line 48
-    :cond_2f
+    :cond_3
     move p1, v1
 
     .line 49
-    goto :goto_33
+    goto :goto_3
 
     .line 50
-    :cond_31
-    :goto_31
+    :cond_4
+    :goto_2
     iput p1, v0, Llibs/xt1;->E:I
 
     .line 51
     .line 52
-    :goto_33
-    if-ne p1, v4, :cond_50
+    :goto_3
+    if-ne p1, v4, :cond_5
 
     .line 53
     .line 54
@@ -168,7 +168,7 @@
     move-result p1
 
     .line 60
-    if-eqz p1, :cond_62
+    if-eqz p1, :cond_6
 
     .line 61
     .line 62
@@ -206,10 +206,10 @@
     .line 78
     .line 79
     .line 80
-    goto :goto_62
+    goto :goto_4
 
     .line 81
-    :cond_50
+    :cond_5
     sget-object p1, Lcom/mixplorer/AppImpl;->Upsilon:Llibs/za;
 
     .line 82
@@ -244,13 +244,13 @@
     .line 97
     .line 98
     .line 99
-    :cond_62
-    :goto_62
+    :cond_6
+    :goto_4
     iget p1, v0, Llibs/xt1;->E:I
 
     .line 100
     .line 101
-    if-nez p1, :cond_73
+    if-nez p1, :cond_7
 
     .line 102
     .line 103
@@ -258,7 +258,7 @@
 
     .line 104
     .line 105
-    if-nez p1, :cond_73
+    if-nez p1, :cond_7
 
     .line 106
     .line 107
@@ -266,7 +266,7 @@
 
     .line 108
     .line 109
-    if-eqz p1, :cond_73
+    if-eqz p1, :cond_7
 
     .line 110
     .line 111
@@ -279,12 +279,12 @@
     .line 114
     .line 115
     .line 116
-    :cond_73
+    :cond_7
     return-void
 .end method
 
 .method public final b(I)V
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/ut1;->a:Llibs/xt1;
@@ -299,14 +299,14 @@
     move-result v1
 
     .line 7
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_0
 
     .line 8
     .line 9
     return-void
 
     .line 10
-    :cond_9
+    :cond_0
     int-to-float p1, p1
 
     .line 11

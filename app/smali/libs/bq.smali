@@ -11,7 +11,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Thread;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/bq;->a:B
@@ -33,14 +33,14 @@
 
 # virtual methods
 .method public final onProgress(JJ)V
-    .registers 5
+    .locals 0
 
     .line 1
     iget-byte p1, p0, Llibs/bq;->a:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_20
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -57,24 +57,24 @@
     move-result p1
 
     .line 12
-    if-nez p1, :cond_e
+    if-nez p1, :cond_0
 
     .line 13
     .line 14
-    goto :goto_11
+    goto :goto_0
 
     .line 15
-    :cond_e
+    :cond_0
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 16
     .line 17
     .line 18
-    :goto_11
+    :goto_0
     return-void
 
     .line 19
-    :pswitch_12
+    :pswitch_0
     iget-object p1, p0, Llibs/bq;->b:Ljava/lang/Thread;
 
     .line 20
@@ -87,41 +87,41 @@
     move-result p1
 
     .line 25
-    if-nez p1, :cond_1b
+    if-nez p1, :cond_1
 
     .line 26
     .line 27
-    goto :goto_1e
+    goto :goto_1
 
     .line 28
-    :cond_1b
+    :cond_1
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 29
     .line 30
     .line 31
-    :goto_1e
+    :goto_1
     return-void
 
     .line 32
     nop
 
     .line 33
-    :pswitch_data_20
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_12
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public onProgressPath(Ljava/lang/String;Z)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/bq;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_16
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -134,7 +134,7 @@
     return-void
 
     .line 10
-    :pswitch_9
+    :pswitch_0
     iget-object p1, p0, Llibs/bq;->b:Ljava/lang/Thread;
 
     .line 11
@@ -147,25 +147,25 @@
     move-result p1
 
     .line 16
-    if-nez p1, :cond_12
+    if-nez p1, :cond_0
 
     .line 17
     .line 18
-    goto :goto_15
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 20
     .line 21
     .line 22
-    :goto_15
+    :goto_0
     return-void
 
     .line 23
-    :pswitch_data_16
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_9
+        :pswitch_0
     .end packed-switch
 .end method

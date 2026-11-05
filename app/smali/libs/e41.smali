@@ -9,7 +9,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/e41;->a:B
@@ -27,14 +27,14 @@
 
 # virtual methods
 .method public onProgress(JJ)V
-    .registers 6
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/e41;->a:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_14
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -47,7 +47,7 @@
     return-void
 
     .line 10
-    :pswitch_9
+    :pswitch_0
     invoke-static {}, Llibs/su0;->c()Z
 
     .line 11
@@ -56,25 +56,25 @@
     move-result p1
 
     .line 14
-    if-nez p1, :cond_10
+    if-nez p1, :cond_0
 
     .line 15
     .line 16
-    goto :goto_13
+    goto :goto_0
 
     .line 17
-    :cond_10
+    :cond_0
     invoke-static {}, Llibs/cr2;->a()V
 
     .line 18
     .line 19
     .line 20
-    :goto_13
+    :goto_0
     return-void
 
     .line 21
-    :pswitch_data_14
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_9
+        :pswitch_0
     .end packed-switch
 .end method

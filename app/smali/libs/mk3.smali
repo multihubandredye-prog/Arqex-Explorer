@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/regex/Pattern;JLjava/util/LinkedHashSet;)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/mk3;->a:Ljava/util/regex/Pattern;
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final e(Llibs/rp0;)Z
-    .registers 7
+    .locals 5
 
     .line 1
     iget-object v0, p0, Llibs/mk3;->a:Ljava/util/regex/Pattern;
@@ -70,7 +70,7 @@
     move-result v0
 
     .line 15
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_1
 
     .line 16
     .line 17
@@ -78,7 +78,7 @@
 
     .line 18
     .line 19
-    if-nez v0, :cond_22
+    if-nez v0, :cond_0
 
     .line 20
     .line 21
@@ -94,7 +94,7 @@
 
     .line 26
     .line 27
-    if-lez v4, :cond_22
+    if-lez v4, :cond_0
 
     .line 28
     .line 29
@@ -106,11 +106,11 @@
 
     .line 32
     .line 33
-    if-gtz v4, :cond_27
+    if-gtz v4, :cond_1
 
     .line 34
     .line 35
-    :cond_22
+    :cond_0
     iget-object v0, p0, Llibs/mk3;->c:Ljava/util/LinkedHashSet;
 
     .line 36
@@ -120,7 +120,7 @@
     .line 38
     .line 39
     .line 40
-    :cond_27
+    :cond_1
     const/4 p1, 0x0
 
     .line 41

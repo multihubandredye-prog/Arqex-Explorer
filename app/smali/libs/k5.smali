@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/l5;)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-object p1, p0, Llibs/k5;->Lambda:Llibs/l5;
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final b()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/k5;->Lambda:Llibs/l5;
@@ -46,7 +46,7 @@
 .end method
 
 .method public final c(II)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 1
     iget-object p2, p0, Llibs/k5;->Lambda:Llibs/l5;
@@ -65,7 +65,7 @@
 .end method
 
 .method public final e()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/k5;->Lambda:Llibs/l5;
@@ -80,7 +80,7 @@
 .end method
 
 .method public final f(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/k5;->Lambda:Llibs/l5;
@@ -99,7 +99,7 @@
 .end method
 
 .method public final g(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/k5;->Lambda:Llibs/l5;
@@ -118,7 +118,7 @@
 .end method
 
 .method public final h(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 1
     iget-object p2, p0, Llibs/k5;->Lambda:Llibs/l5;
@@ -134,7 +134,7 @@
 .end method
 
 .method public final i(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/k5;->Lambda:Llibs/l5;

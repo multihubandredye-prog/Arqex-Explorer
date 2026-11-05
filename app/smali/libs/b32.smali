@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>([Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public final a()Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/b32;->Z:I
@@ -66,7 +66,7 @@
 .end method
 
 .method public final hasNext()Z
-    .registers 3
+    .locals 2
 
     .line 1
     iget v0, p0, Llibs/b32;->Z:I
@@ -80,7 +80,7 @@
     array-length v1, v1
 
     .line 6
-    if-ge v0, v1, :cond_9
+    if-ge v0, v1, :cond_0
 
     .line 7
     .line 8
@@ -90,7 +90,7 @@
     return v0
 
     .line 10
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
     .line 11

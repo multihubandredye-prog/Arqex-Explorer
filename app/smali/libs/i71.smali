@@ -14,14 +14,14 @@
 
 # direct methods
 .method public constructor <init>(B)V
-    .registers 2
+    .locals 0
 
     .line 1
     iput-byte p1, p0, Llibs/i71;->X:B
 
     .line 2
     .line 3
-    packed-switch p1, :pswitch_data_10
+    packed-switch p1, :pswitch_data_0
 
     .line 4
     .line 5
@@ -34,7 +34,7 @@
     return-void
 
     .line 10
-    :pswitch_9
+    :pswitch_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 11
@@ -50,16 +50,16 @@
     return-void
 
     .line 17
-    :pswitch_data_10
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_9
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public final f([B)I
-    .registers 4
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/i71;->X:B
@@ -70,7 +70,7 @@
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_2a
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
@@ -93,14 +93,14 @@
     array-length p1, p1
 
     .line 16
-    if-gt v0, p1, :cond_12
+    if-gt v0, p1, :cond_0
 
     .line 17
     .line 18
     return v0
 
     .line 19
-    :cond_12
+    :cond_0
     new-instance p1, Llibs/qb1;
 
     .line 20
@@ -113,7 +113,7 @@
     throw p1
 
     .line 25
-    :pswitch_18
+    :pswitch_0
     array-length v0, p1
 
     .line 26
@@ -132,14 +132,14 @@
     array-length p1, p1
 
     .line 33
-    if-gt v0, p1, :cond_23
+    if-gt v0, p1, :cond_1
 
     .line 34
     .line 35
     return v0
 
     .line 36
-    :cond_23
+    :cond_1
     new-instance p1, Llibs/qb1;
 
     .line 37
@@ -155,21 +155,21 @@
     nop
 
     .line 43
-    :pswitch_data_2a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_18
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final q(Ljava/security/SecureRandom;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-byte v0, p0, Llibs/i71;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_16
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -181,8 +181,8 @@
     return-void
 
     .line 9
-    :pswitch_8
-    if-eqz p1, :cond_d
+    :pswitch_0
+    if-eqz p1, :cond_0
 
     .line 10
     .line 11
@@ -190,10 +190,10 @@
 
     .line 12
     .line 13
-    goto :goto_14
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     new-instance p1, Ljava/security/SecureRandom;
 
     .line 15
@@ -207,28 +207,28 @@
 
     .line 20
     .line 21
-    :goto_14
+    :goto_0
     return-void
 
     .line 22
     nop
 
     .line 23
-    :pswitch_data_16
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_8
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final t(I[B)I
-    .registers 5
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/i71;->X:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_3a
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
@@ -242,7 +242,7 @@
     int-to-byte v0, v0
 
     .line 9
-    :goto_8
+    :goto_0
     array-length v1, p2
 
     .line 10
@@ -250,7 +250,7 @@
 
     .line 11
     .line 12
-    if-ge p1, v1, :cond_1f
+    if-ge p1, v1, :cond_1
 
     .line 13
     .line 14
@@ -258,7 +258,7 @@
 
     .line 15
     .line 16
-    if-nez v1, :cond_15
+    if-nez v1, :cond_0
 
     .line 17
     .line 18
@@ -269,10 +269,10 @@
 
     .line 20
     .line 21
-    goto :goto_1c
+    goto :goto_1
 
     .line 22
-    :cond_15
+    :cond_0
     invoke-virtual {v1}, Ljava/util/Random;->nextInt()I
 
     .line 23
@@ -288,15 +288,15 @@
 
     .line 28
     .line 29
-    :goto_1c
+    :goto_1
     add-int/lit8 p1, p1, 0x1
 
     .line 30
     .line 31
-    goto :goto_8
+    goto :goto_0
 
     .line 32
-    :cond_1f
+    :cond_1
     aput-byte v0, p2, p1
 
     .line 33
@@ -304,7 +304,7 @@
     return v0
 
     .line 35
-    :pswitch_22
+    :pswitch_0
     array-length v0, p2
 
     .line 36
@@ -314,7 +314,7 @@
     int-to-byte v0, v0
 
     .line 38
-    :goto_25
+    :goto_2
     array-length v1, p2
 
     .line 39
@@ -322,7 +322,7 @@
 
     .line 40
     .line 41
-    if-ge p1, v1, :cond_36
+    if-ge p1, v1, :cond_2
 
     .line 42
     .line 43
@@ -349,10 +349,10 @@
 
     .line 53
     .line 54
-    goto :goto_25
+    goto :goto_2
 
     .line 55
-    :cond_36
+    :cond_2
     aput-byte v0, p2, p1
 
     .line 56
@@ -363,8 +363,8 @@
     nop
 
     .line 59
-    :pswitch_data_3a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_22
+        :pswitch_0
     .end packed-switch
 .end method

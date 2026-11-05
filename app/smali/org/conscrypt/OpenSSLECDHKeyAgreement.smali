@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Lorg/conscrypt/OpenSSLBaseDHKeyAgreement;-><init>()V
@@ -29,7 +29,7 @@
 
 # virtual methods
 .method public bridge synthetic computeKey([BLjava/lang/Object;Ljava/lang/Object;)I
-    .registers 4
+    .locals 0
 
     .line 15
     check-cast p2, Lorg/conscrypt/OpenSSLKey;
@@ -44,7 +44,7 @@
 .end method
 
 .method public computeKey([BLorg/conscrypt/OpenSSLKey;Lorg/conscrypt/OpenSSLKey;)I
-    .registers 5
+    .locals 1
 
     .line 1
     invoke-virtual {p2}, Lorg/conscrypt/OpenSSLKey;->getNativeRef()Lorg/conscrypt/NativeRef$EVP_PKEY;
@@ -78,7 +78,7 @@
 .end method
 
 .method public bridge synthetic convertPrivateKey(Ljava/security/PrivateKey;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Lorg/conscrypt/OpenSSLECDHKeyAgreement;->convertPrivateKey(Ljava/security/PrivateKey;)Lorg/conscrypt/OpenSSLKey;
@@ -93,7 +93,7 @@
 .end method
 
 .method public convertPrivateKey(Ljava/security/PrivateKey;)Lorg/conscrypt/OpenSSLKey;
-    .registers 2
+    .locals 0
 
     .line 6
     invoke-static {p1}, Lorg/conscrypt/OpenSSLKey;->fromPrivateKey(Ljava/security/PrivateKey;)Lorg/conscrypt/OpenSSLKey;
@@ -104,7 +104,7 @@
 .end method
 
 .method public bridge synthetic convertPublicKey(Ljava/security/PublicKey;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Lorg/conscrypt/OpenSSLECDHKeyAgreement;->convertPublicKey(Ljava/security/PublicKey;)Lorg/conscrypt/OpenSSLKey;
@@ -119,7 +119,7 @@
 .end method
 
 .method public convertPublicKey(Ljava/security/PublicKey;)Lorg/conscrypt/OpenSSLKey;
-    .registers 2
+    .locals 0
 
     .line 6
     invoke-static {p1}, Lorg/conscrypt/OpenSSLKey;->fromPublicKey(Ljava/security/PublicKey;)Lorg/conscrypt/OpenSSLKey;
@@ -130,7 +130,7 @@
 .end method
 
 .method public bridge synthetic getOutputSize(Ljava/lang/Object;)I
-    .registers 2
+    .locals 0
 
     .line 23
     check-cast p1, Lorg/conscrypt/OpenSSLKey;
@@ -143,7 +143,7 @@
 .end method
 
 .method public getOutputSize(Lorg/conscrypt/OpenSSLKey;)I
-    .registers 5
+    .locals 3
 
     .line 1
     new-instance v0, Lorg/conscrypt/NativeRef$EC_GROUP;

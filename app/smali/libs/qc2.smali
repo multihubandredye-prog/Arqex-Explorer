@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/PlayerActivity;B)V
-    .registers 3
+    .locals 0
 
     .line 1
     iput-byte p2, p0, Llibs/qc2;->X:B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-byte p1, p0, Llibs/qc2;->X:B
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    packed-switch p1, :pswitch_data_38
+    packed-switch p1, :pswitch_data_0
 
     .line 6
     .line 7
@@ -85,7 +85,7 @@
     return-void
 
     .line 25
-    :pswitch_18
+    :pswitch_0
     sget-boolean p1, Lcom/mixplorer/activities/PlayerActivity;->e0:Z
 
     .line 26
@@ -94,7 +94,7 @@
 
     .line 28
     .line 29
-    if-eqz p1, :cond_36
+    if-eqz p1, :cond_0
 
     .line 30
     .line 31
@@ -113,7 +113,7 @@
     const/4 v2, 0x1
 
     .line 38
-    if-le v1, v2, :cond_36
+    if-le v1, v2, :cond_0
 
     .line 39
     .line 40
@@ -144,15 +144,15 @@
     .line 53
     .line 54
     .line 55
-    :cond_36
+    :cond_0
     return-void
 
     .line 56
     nop
 
     .line 57
-    :pswitch_data_38
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_18
+        :pswitch_0
     .end packed-switch
 .end method

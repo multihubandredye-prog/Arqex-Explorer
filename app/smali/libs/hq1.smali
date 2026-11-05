@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Llibs/rp0;Landroid/os/CancellationSignal;[Landroid/os/ParcelFileDescriptor;B)V
-    .registers 5
+    .locals 0
 
     .line 1
     iput-byte p4, p0, Llibs/hq1;->X:B
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 6
+    .locals 5
 
     .line 1
     iget-byte v0, p0, Llibs/hq1;->X:B
@@ -69,7 +69,7 @@
 
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_1c
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
@@ -90,7 +90,7 @@
     return-void
 
     .line 20
-    :pswitch_13
+    :pswitch_0
     iget-object v0, p0, Llibs/hq1;->Z:Landroid/os/CancellationSignal;
 
     .line 21
@@ -110,8 +110,8 @@
     nop
 
     .line 29
-    :pswitch_data_1c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_13
+        :pswitch_0
     .end packed-switch
 .end method

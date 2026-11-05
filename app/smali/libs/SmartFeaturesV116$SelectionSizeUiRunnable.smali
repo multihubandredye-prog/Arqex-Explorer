@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/al;Ljava/lang/String;I)V
-    .registers 4
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,7 +32,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 4
+    .locals 3
 
     iget-object v0, p0, Llibs/SmartFeaturesV116$SelectionSizeUiRunnable;->bar:Llibs/al;
 

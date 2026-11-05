@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1
     :try_start_0
@@ -14,14 +14,14 @@
     .line 2
     .line 3
     invoke-static {}, Llibs/r43;->g()V
-    :try_end_5
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_5} :catch_1a
-    .catch Ljava/security/NoSuchProviderException; {:try_start_0 .. :try_end_5} :catch_18
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/security/NoSuchProviderException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 4
     .line 5
     .line 6
-    :try_start_5
+    :try_start_1
     sget-object v1, Llibs/r43;->d:Llibs/hh;
 
     .line 7
@@ -32,27 +32,27 @@
     .line 10
     .line 11
     move-result-object v0
-    :try_end_b
-    .catchall {:try_start_5 .. :try_end_b} :catchall_c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 12
-    goto :goto_10
+    goto :goto_0
 
     .line 13
-    :catchall_c
-    :try_start_c
+    :catchall_0
+    :try_start_2
     invoke-static {v0}, Ljava/security/Signature;->getInstance(Ljava/lang/String;)Ljava/security/Signature;
 
     .line 14
     .line 15
     .line 16
     move-result-object v0
-    :try_end_10
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_c .. :try_end_10} :catch_1a
-    .catch Ljava/security/NoSuchProviderException; {:try_start_c .. :try_end_10} :catch_18
+    :try_end_2
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_2 .. :try_end_2} :catch_1
+    .catch Ljava/security/NoSuchProviderException; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 17
-    :goto_10
+    :goto_0
     sget-object v1, Llibs/wh1;->Xi:Llibs/rh1;
 
     .line 18
@@ -69,18 +69,18 @@
     return-void
 
     .line 25
-    :catch_18
+    :catch_0
     move-exception v0
 
     .line 26
-    goto :goto_1b
+    goto :goto_1
 
     .line 27
-    :catch_1a
+    :catch_1
     move-exception v0
 
     .line 28
-    :goto_1b
+    :goto_1
     const-string v1, "Ed25519 Signatures not supported"
 
     .line 29
@@ -99,14 +99,14 @@
 
 # virtual methods
 .method public final a([B)[B
-    .registers 2
+    .locals 0
 
     .line 1
     return-object p1
 .end method
 
 .method public final e([B)Z
-    .registers 4
+    .locals 2
 
     .line 1
     :try_start_0
@@ -132,14 +132,14 @@
     .line 11
     .line 12
     move-result p1
-    :try_end_c
-    .catch Ljava/security/SignatureException; {:try_start_0 .. :try_end_c} :catch_d
+    :try_end_0
+    .catch Ljava/security/SignatureException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 13
     return p1
 
     .line 14
-    :catch_d
+    :catch_0
     move-exception p1
 
     .line 15

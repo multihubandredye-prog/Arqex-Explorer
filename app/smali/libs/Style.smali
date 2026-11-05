@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -24,7 +24,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/Exception;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/Style;->X:B
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public final getCause()Ljava/lang/Throwable;
-    .registers 3
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Llibs/Style;->X:B

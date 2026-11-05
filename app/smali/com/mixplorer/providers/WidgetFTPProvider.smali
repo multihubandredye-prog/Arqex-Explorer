@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Landroid/appwidget/AppWidgetProvider;-><init>()V
@@ -23,7 +23,7 @@
 
 # virtual methods
 .method public final onAppWidgetOptionsChanged(Landroid/content/Context;Landroid/appwidget/AppWidgetManager;ILandroid/os/Bundle;)V
-    .registers 5
+    .locals 0
 
     .line 1
     invoke-static {}, Llibs/t53;->g()Z
@@ -43,7 +43,7 @@
 .end method
 
 .method public final onUpdate(Landroid/content/Context;Landroid/appwidget/AppWidgetManager;[I)V
-    .registers 9
+    .locals 5
 
     .line 1
     invoke-static {}, Llibs/t53;->g()Z
@@ -60,8 +60,8 @@
     const/4 v2, 0x0
 
     .line 7
-    :goto_6
-    if-ge v2, v1, :cond_19
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     .line 8
     .line 9
@@ -77,7 +77,7 @@
     move-result v4
 
     .line 15
-    if-eqz v4, :cond_13
+    if-eqz v4, :cond_0
 
     .line 16
     .line 17
@@ -86,7 +86,7 @@
     .line 18
     .line 19
     .line 20
-    :cond_13
+    :cond_0
     invoke-static {p1, p2, v3, v0}, Llibs/t53;->l(Landroid/content/Context;Landroid/appwidget/AppWidgetManager;IZ)V
 
     .line 21
@@ -96,9 +96,9 @@
 
     .line 24
     .line 25
-    goto :goto_6
+    goto :goto_0
 
     .line 26
-    :cond_19
+    :cond_1
     return-void
 .end method

@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/TextEditorActivity;Lcom/mixplorer/widgets/MiEditor;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/uk3;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 13
+    .locals 11
 
     .line 1
     iget-byte v0, p0, Llibs/uk3;->X:B
@@ -67,7 +67,7 @@
 
     .line 10
     .line 11
-    packed-switch v0, :pswitch_data_11e
+    packed-switch v0, :pswitch_data_0
 
     .line 12
     .line 13
@@ -76,24 +76,24 @@
 
     .line 15
     .line 16
-    :try_start_f
+    :try_start_0
     invoke-virtual {v5}, Lcom/mixplorer/activities/TextEditorActivity;->Any()V
 
     .line 17
     .line 18
     .line 19
     invoke-virtual {v5, v4}, Lcom/mixplorer/activities/TextEditorActivity;->Work(Lcom/mixplorer/widgets/MiEditor;)V
-    :try_end_15
-    .catchall {:try_start_f .. :try_end_15} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 20
     .line 21
     .line 22
-    :catchall_15
+    :catchall_0
     return-void
 
     .line 23
-    :pswitch_16
+    :pswitch_0
     iget-object v0, p0, Llibs/uk3;->Y:Lcom/mixplorer/activities/TextEditorActivity;
 
     .line 24
@@ -106,7 +106,7 @@
 
     .line 28
     .line 29
-    :try_start_1c
+    :try_start_1
     sget v5, Llibs/bi2;->enter_text:I
 
     .line 30
@@ -135,15 +135,15 @@
     move-result v6
 
     .line 43
-    if-eqz v6, :cond_2e
+    if-eqz v6, :cond_0
 
     .line 44
     .line 45
-    goto/16 :goto_ae
+    goto/16 :goto_1
 
     .line 46
     .line 47
-    :cond_2e
+    :cond_0
     invoke-virtual {v5}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     .line 48
@@ -312,7 +312,7 @@
     move-result v10
 
     .line 131
-    if-eqz v10, :cond_94
+    if-eqz v10, :cond_1
 
     .line 132
     .line 133
@@ -343,14 +343,14 @@
     move-result-object v5
 
     .line 148
-    goto :goto_95
+    goto :goto_0
 
     .line 149
-    :cond_94
+    :cond_1
     move v2, v9
 
     .line 150
-    :goto_95
+    :goto_0
     sget v3, Llibs/bi2;->replace_all:I
 
     .line 151
@@ -402,40 +402,40 @@
 
     .line 172
     invoke-virtual/range {v0 .. v8}, Lcom/mixplorer/activities/TextEditorActivity;->Sync(Lcom/mixplorer/widgets/MiEditor;Ljava/lang/String;ZZZZLjava/lang/String;Landroid/view/View;)V
-    :try_end_ae
-    .catchall {:try_start_1c .. :try_end_ae} :catchall_ae
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 173
     .line 174
     .line 175
-    :catchall_ae
-    :goto_ae
+    :catchall_1
+    :goto_1
     return-void
 
     .line 176
-    :pswitch_af
+    :pswitch_1
     sget v0, Lcom/mixplorer/activities/TextEditorActivity;->$c:I
 
     .line 177
     .line 178
-    :try_start_b1
+    :try_start_2
     invoke-virtual {v5}, Lcom/mixplorer/activities/TextEditorActivity;->Any()V
 
     .line 179
     .line 180
     .line 181
     invoke-virtual {v5, v4}, Lcom/mixplorer/activities/TextEditorActivity;->Work(Lcom/mixplorer/widgets/MiEditor;)V
-    :try_end_b7
-    .catchall {:try_start_b1 .. :try_end_b7} :catchall_b7
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
     .line 182
     .line 183
     .line 184
-    :catchall_b7
+    :catchall_2
     return-void
 
     .line 185
-    :pswitch_b8
+    :pswitch_2
     iget-object v0, p0, Llibs/uk3;->Y:Lcom/mixplorer/activities/TextEditorActivity;
 
     .line 186
@@ -448,7 +448,7 @@
 
     .line 190
     .line 191
-    :try_start_be
+    :try_start_3
     sget v5, Llibs/bi2;->enter_text:I
 
     .line 192
@@ -477,14 +477,14 @@
     move-result v6
 
     .line 205
-    if-eqz v6, :cond_cf
+    if-eqz v6, :cond_2
 
     .line 206
     .line 207
-    goto :goto_11c
+    goto :goto_3
 
     .line 208
-    :cond_cf
+    :cond_2
     invoke-virtual {v5}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     .line 209
@@ -573,7 +573,7 @@
     move-result v9
 
     .line 252
-    if-eqz v9, :cond_10d
+    if-eqz v9, :cond_3
 
     .line 253
     .line 254
@@ -604,14 +604,14 @@
     move-result-object v5
 
     .line 269
-    goto :goto_10e
+    goto :goto_2
 
     .line 270
-    :cond_10d
+    :cond_3
     move v2, v7
 
     .line 271
-    :goto_10e
+    :goto_2
     invoke-virtual {p1, v1}, Landroid/view/View;->setEnabled(Z)V
 
     .line 272
@@ -642,24 +642,24 @@
 
     .line 282
     invoke-virtual/range {v0 .. v8}, Lcom/mixplorer/activities/TextEditorActivity;->Sync(Lcom/mixplorer/widgets/MiEditor;Ljava/lang/String;ZZZZLjava/lang/String;Landroid/view/View;)V
-    :try_end_11c
-    .catchall {:try_start_be .. :try_end_11c} :catchall_11c
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_3
 
     .line 283
     .line 284
     .line 285
-    :catchall_11c
-    :goto_11c
+    :catchall_3
+    :goto_3
     return-void
 
     .line 286
     nop
 
     .line 287
-    :pswitch_data_11e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_b8
-        :pswitch_af
-        :pswitch_16
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

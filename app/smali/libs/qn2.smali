@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/qb2;Llibs/to0;)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,14 +33,14 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 1
     instance-of v0, p1, Llibs/qn2;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -64,7 +64,7 @@
     move-result p1
 
     .line 15
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     .line 16
     .line 17
@@ -74,7 +74,7 @@
     return p1
 
     .line 19
-    :cond_12
+    :cond_0
     const/4 p1, 0x0
 
     .line 20
@@ -82,7 +82,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/qn2;->a:Llibs/qb2;
@@ -105,7 +105,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -133,7 +133,7 @@
 
     .line 13
     .line 14
-    packed-switch v1, :pswitch_data_3e
+    packed-switch v1, :pswitch_data_0
 
     .line 15
     .line 16
@@ -142,71 +142,71 @@
 
     .line 18
     .line 19
-    goto :goto_2a
+    goto :goto_0
 
     .line 20
-    :pswitch_13
+    :pswitch_0
     const-string v1, "UNKNOWN"
 
     .line 21
     .line 22
-    goto :goto_2a
+    goto :goto_0
 
     .line 23
-    :pswitch_16
+    :pswitch_1
     const-string v1, "SYMLINK"
 
     .line 24
     .line 25
-    goto :goto_2a
+    goto :goto_0
 
     .line 26
-    :pswitch_19
+    :pswitch_2
     const-string v1, "DIRECTORY"
 
     .line 27
     .line 28
-    goto :goto_2a
+    goto :goto_0
 
     .line 29
-    :pswitch_1c
+    :pswitch_3
     const-string v1, "REGULAR"
 
     .line 30
     .line 31
-    goto :goto_2a
+    goto :goto_0
 
     .line 32
-    :pswitch_1f
+    :pswitch_4
     const-string v1, "SOCKET_SPECIAL"
 
     .line 33
     .line 34
-    goto :goto_2a
+    goto :goto_0
 
     .line 35
-    :pswitch_22
+    :pswitch_5
     const-string v1, "FIFO_SPECIAL"
 
     .line 36
     .line 37
-    goto :goto_2a
+    goto :goto_0
 
     .line 38
-    :pswitch_25
+    :pswitch_6
     const-string v1, "CHAR_SPECIAL"
 
     .line 39
     .line 40
-    goto :goto_2a
+    goto :goto_0
 
     .line 41
-    :pswitch_28
+    :pswitch_7
     const-string v1, "BLOCK_SPECIAL"
 
     .line 42
     .line 43
-    :goto_2a
+    :goto_0
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 44
@@ -245,15 +245,15 @@
     return-object v0
 
     .line 63
-    :pswitch_data_3e
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_28
-        :pswitch_25
-        :pswitch_22
-        :pswitch_1f
-        :pswitch_1c
-        :pswitch_19
-        :pswitch_16
-        :pswitch_13
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

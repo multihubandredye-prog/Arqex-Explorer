@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static bridge synthetic a()I
-    .registers 1
+    .locals 1
 
     .line 1
     invoke-static {}, Landroid/view/View;->generateViewId()I
@@ -20,7 +20,7 @@
 .end method
 
 .method public static bridge synthetic b(Landroid/view/View;)I
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/view/View;->getLayoutDirection()I
@@ -35,7 +35,7 @@
 .end method
 
 .method public static bridge synthetic c(Landroid/view/View;I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/View;->setLayoutDirection(I)V
@@ -47,7 +47,7 @@
 .end method
 
 .method public static bridge synthetic d(Landroid/webkit/WebSettings;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -62,7 +62,7 @@
 .end method
 
 .method public static bridge synthetic e(Landroid/widget/TextView;I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/View;->setTextDirection(I)V
@@ -74,7 +74,7 @@
 .end method
 
 .method public static bridge synthetic f(Landroid/app/Activity;)Z
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/app/Activity;->isDestroyed()Z
@@ -89,7 +89,7 @@
 .end method
 
 .method public static bridge synthetic g(Landroid/webkit/WebSettings;)V
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -104,7 +104,7 @@
 .end method
 
 .method public static bridge synthetic h(Landroid/widget/TextView;I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0, p1}, Landroid/view/View;->setTextAlignment(I)V

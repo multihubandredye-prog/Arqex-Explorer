@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/mixplorer/activities/a;[JJLjava/lang/Thread;)V
-    .registers 6
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final onProgress(J)Z
-    .registers 15
+    .locals 12
 
     .line 1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -63,7 +63,7 @@
 
     .line 6
     .line 7
-    if-eqz v2, :cond_20
+    if-eqz v2, :cond_1
 
     .line 8
     .line 9
@@ -94,7 +94,7 @@
 
     .line 21
     .line 22
-    if-gtz v11, :cond_1b
+    if-gtz v11, :cond_0
 
     .line 23
     .line 24
@@ -102,11 +102,11 @@
 
     .line 25
     .line 26
-    if-nez v5, :cond_20
+    if-nez v5, :cond_1
 
     .line 27
     .line 28
-    :cond_1b
+    :cond_0
     aput-wide v0, v3, v4
 
     .line 29
@@ -116,7 +116,7 @@
     .line 31
     .line 32
     .line 33
-    :cond_20
+    :cond_1
     iget-object p1, p0, Llibs/ev1;->Lambda:Ljava/lang/Thread;
 
     .line 34

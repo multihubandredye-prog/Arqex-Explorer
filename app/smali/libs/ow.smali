@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(IIB)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,7 +31,7 @@
 
     .line 7
     .line 8
-    if-nez p2, :cond_d
+    if-nez p2, :cond_0
 
     .line 9
     .line 10
@@ -43,7 +43,7 @@
 
     .line 13
     .line 14
-    :cond_d
+    :cond_0
     iput-byte p3, p0, Llibs/ow;->c:B
 
     .line 15
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public a(Ljava/nio/ByteBuffer;)V
-    .registers 4
+    .locals 2
 
     .line 1
     sget-object v0, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;

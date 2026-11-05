@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 5
     invoke-direct {p0, p1}, Ljava/security/KeyPairGenerator;-><init>(Ljava/lang/String;)V
@@ -14,7 +14,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Lorg/conscrypt/OpenSslMlDsaKeyPairGenerator;-><init>(Ljava/lang/String;)V
@@ -28,20 +28,20 @@
 
 # virtual methods
 .method public initialize(I)V
-    .registers 3
+    .locals 1
 
     .line 1
     const/4 v0, -0x1
 
     .line 2
-    if-ne p1, v0, :cond_4
+    if-ne p1, v0, :cond_0
 
     .line 3
     .line 4
     return-void
 
     .line 5
-    :cond_4
+    :cond_0
     const-string p1, "ML-DSA only supports -1 for bits"
 
     .line 6

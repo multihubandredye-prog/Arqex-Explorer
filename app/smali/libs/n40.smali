@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1
     const-wide/16 v0, 0x1
@@ -50,7 +50,7 @@
 .end method
 
 .method public static a(IILjava/security/SecureRandom;)[Ljava/math/BigInteger;
-    .registers 9
+    .locals 6
 
     .line 1
     add-int/lit8 v0, p0, -0x1
@@ -63,7 +63,7 @@
     ushr-int/2addr p0, v1
 
     .line 5
-    :goto_4
+    :goto_0
     new-instance v2, Ljava/math/BigInteger;
 
     .line 6
@@ -104,15 +104,15 @@
     move-result v5
 
     .line 25
-    if-nez v5, :cond_1b
+    if-nez v5, :cond_0
 
     .line 26
     .line 27
-    goto :goto_4
+    goto :goto_0
 
     .line 28
-    :cond_1b
-    if-le p1, v1, :cond_26
+    :cond_0
+    if-le p1, v1, :cond_1
 
     .line 29
     .line 30
@@ -128,14 +128,14 @@
     move-result v5
 
     .line 36
-    if-nez v5, :cond_26
+    if-nez v5, :cond_1
 
     .line 37
     .line 38
-    goto :goto_4
+    goto :goto_0
 
     .line 39
-    :cond_26
+    :cond_1
     invoke-static {v4}, Llibs/zm1;->Object(Ljava/math/BigInteger;)I
 
     .line 40
@@ -144,14 +144,14 @@
     move-result v5
 
     .line 43
-    if-ge v5, p0, :cond_2d
+    if-ge v5, p0, :cond_2
 
     .line 44
     .line 45
-    goto :goto_4
+    goto :goto_0
 
     .line 46
-    :cond_2d
+    :cond_2
     new-array p0, v1, [Ljava/math/BigInteger;
 
     .line 47
@@ -171,7 +171,7 @@
 .end method
 
 .method public static b(Ljava/math/BigInteger;Ljava/security/SecureRandom;)Ljava/math/BigInteger;
-    .registers 6
+    .locals 4
 
     .line 1
     sget-object v0, Llibs/n40;->b:Ljava/math/BigInteger;
@@ -186,7 +186,7 @@
     move-result-object v1
 
     .line 7
-    :cond_6
+    :cond_0
     invoke-static {v0, v1, p1}, Llibs/ef;->c(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/security/SecureRandom;)Ljava/math/BigInteger;
 
     .line 8
@@ -215,7 +215,7 @@
     move-result v3
 
     .line 21
-    if-nez v3, :cond_6
+    if-nez v3, :cond_0
 
     .line 22
     .line 23

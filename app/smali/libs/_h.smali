@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;ILlibs/ic0;Ljavax/net/SocketFactory;Ljavax/net/ssl/SSLSocketFactory;Ljavax/net/ssl/HostnameVerifier;Llibs/vq;Llibs/u7;Ljava/net/Proxy;Ljava/util/List;Ljava/util/List;Ljava/net/ProxySelector;)V
-    .registers 26
+    .locals 13
 
     .line 1
     move-object/from16 v1, p3
@@ -77,21 +77,21 @@
 
     .line 23
     .line 24
-    if-eqz v3, :cond_1b
+    if-eqz v3, :cond_0
 
     .line 25
     .line 26
     move-object v10, v9
 
     .line 27
-    goto :goto_1c
+    goto :goto_0
 
     .line 28
-    :cond_1b
+    :cond_0
     move-object v10, v8
 
     .line 29
-    :goto_1c
+    :goto_0
     invoke-virtual {v10, v8}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     .line 30
@@ -103,7 +103,7 @@
     const/4 v12, 0x0
 
     .line 34
-    if-eqz v11, :cond_26
+    if-eqz v11, :cond_1
 
     .line 35
     .line 36
@@ -111,10 +111,10 @@
 
     .line 37
     .line 38
-    goto :goto_2e
+    goto :goto_1
 
     .line 39
-    :cond_26
+    :cond_1
     invoke-virtual {v10, v9}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     .line 40
@@ -123,7 +123,7 @@
     move-result v8
 
     .line 43
-    if-eqz v8, :cond_bc
+    if-eqz v8, :cond_b
 
     .line 44
     .line 45
@@ -131,8 +131,8 @@
 
     .line 46
     .line 47
-    :goto_2e
-    if-eqz p1, :cond_b6
+    :goto_1
+    if-eqz p1, :cond_a
 
     .line 48
     .line 49
@@ -160,7 +160,7 @@
     move-result-object v7
 
     .line 61
-    if-eqz v7, :cond_ac
+    if-eqz v7, :cond_9
 
     .line 62
     .line 63
@@ -168,7 +168,7 @@
 
     .line 64
     .line 65
-    if-lez p2, :cond_a2
+    if-lez p2, :cond_8
 
     .line 66
     .line 67
@@ -177,7 +177,7 @@
     .line 68
     .line 69
     .line 70
-    if-gt p2, p1, :cond_a2
+    if-gt p2, p1, :cond_8
 
     .line 71
     .line 72
@@ -197,7 +197,7 @@
 
     .line 79
     .line 80
-    if-eqz v1, :cond_9c
+    if-eqz v1, :cond_7
 
     .line 81
     .line 82
@@ -205,7 +205,7 @@
 
     .line 83
     .line 84
-    if-eqz v2, :cond_96
+    if-eqz v2, :cond_6
 
     .line 85
     .line 86
@@ -213,7 +213,7 @@
 
     .line 87
     .line 88
-    if-eqz v4, :cond_90
+    if-eqz v4, :cond_5
 
     .line 89
     .line 90
@@ -221,7 +221,7 @@
 
     .line 91
     .line 92
-    if-eqz p10, :cond_8a
+    if-eqz p10, :cond_4
 
     .line 93
     .line 94
@@ -237,7 +237,7 @@
 
     .line 99
     .line 100
-    if-eqz p11, :cond_84
+    if-eqz p11, :cond_3
 
     .line 101
     .line 102
@@ -253,7 +253,7 @@
 
     .line 107
     .line 108
-    if-eqz v5, :cond_7e
+    if-eqz v5, :cond_2
 
     .line 109
     .line 110
@@ -292,7 +292,7 @@
     return-void
 
     .line 127
-    :cond_7e
+    :cond_2
     const-string p1, "proxySelector == null"
 
     .line 128
@@ -305,7 +305,7 @@
     throw v12
 
     .line 133
-    :cond_84
+    :cond_3
     const-string p1, "connectionSpecs == null"
 
     .line 134
@@ -318,7 +318,7 @@
     throw v12
 
     .line 139
-    :cond_8a
+    :cond_4
     const-string p1, "protocols == null"
 
     .line 140
@@ -331,7 +331,7 @@
     throw v12
 
     .line 145
-    :cond_90
+    :cond_5
     const-string p1, "proxyAuthenticator == null"
 
     .line 146
@@ -344,7 +344,7 @@
     throw v12
 
     .line 151
-    :cond_96
+    :cond_6
     const-string p1, "socketFactory == null"
 
     .line 152
@@ -357,7 +357,7 @@
     throw v12
 
     .line 157
-    :cond_9c
+    :cond_7
     const-string p1, "dns == null"
 
     .line 158
@@ -370,7 +370,7 @@
     throw v12
 
     .line 163
-    :cond_a2
+    :cond_8
     const-string p1, "unexpected port: "
 
     .line 164
@@ -391,7 +391,7 @@
     throw v12
 
     .line 173
-    :cond_ac
+    :cond_9
     const-string v0, "unexpected host: "
 
     .line 174
@@ -412,7 +412,7 @@
     throw v12
 
     .line 183
-    :cond_b6
+    :cond_a
     const-string p1, "host == null"
 
     .line 184
@@ -425,7 +425,7 @@
     throw v12
 
     .line 189
-    :cond_bc
+    :cond_b
     const-string p1, "unexpected scheme: "
 
     .line 190
@@ -449,7 +449,7 @@
 
 # virtual methods
 .method public final a(Llibs/_h;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     iget-object v0, p0, Llibs/_h;->b:Llibs/ic0;
@@ -468,7 +468,7 @@
     move-result v0
 
     .line 9
-    if-eqz v0, :cond_66
+    if-eqz v0, :cond_0
 
     .line 10
     .line 11
@@ -488,7 +488,7 @@
     move-result v0
 
     .line 19
-    if-eqz v0, :cond_66
+    if-eqz v0, :cond_0
 
     .line 20
     .line 21
@@ -508,7 +508,7 @@
     move-result v0
 
     .line 29
-    if-eqz v0, :cond_66
+    if-eqz v0, :cond_0
 
     .line 30
     .line 31
@@ -528,7 +528,7 @@
     move-result v0
 
     .line 39
-    if-eqz v0, :cond_66
+    if-eqz v0, :cond_0
 
     .line 40
     .line 41
@@ -548,7 +548,7 @@
     move-result v0
 
     .line 49
-    if-eqz v0, :cond_66
+    if-eqz v0, :cond_0
 
     .line 50
     .line 51
@@ -568,7 +568,7 @@
     move-result v0
 
     .line 59
-    if-eqz v0, :cond_66
+    if-eqz v0, :cond_0
 
     .line 60
     .line 61
@@ -588,7 +588,7 @@
     move-result v0
 
     .line 69
-    if-eqz v0, :cond_66
+    if-eqz v0, :cond_0
 
     .line 70
     .line 71
@@ -608,7 +608,7 @@
     move-result v0
 
     .line 79
-    if-eqz v0, :cond_66
+    if-eqz v0, :cond_0
 
     .line 80
     .line 81
@@ -628,7 +628,7 @@
     move-result v0
 
     .line 89
-    if-eqz v0, :cond_66
+    if-eqz v0, :cond_0
 
     .line 90
     .line 91
@@ -648,7 +648,7 @@
 
     .line 98
     .line 99
-    if-ne v0, p1, :cond_66
+    if-ne v0, p1, :cond_0
 
     .line 100
     .line 101
@@ -658,7 +658,7 @@
     return p1
 
     .line 103
-    :cond_66
+    :cond_0
     const/4 p1, 0x0
 
     .line 104
@@ -666,14 +666,14 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     .line 1
     instance-of v0, p1, Llibs/_h;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -697,7 +697,7 @@
     move-result v0
 
     .line 15
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 16
     .line 17
@@ -709,7 +709,7 @@
     move-result p1
 
     .line 21
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_0
 
     .line 22
     .line 23
@@ -719,7 +719,7 @@
     return p1
 
     .line 25
-    :cond_18
+    :cond_0
     const/4 p1, 0x0
 
     .line 26
@@ -727,7 +727,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 4
+    .locals 3
 
     .line 1
     iget-object v0, p0, Llibs/_h;->a:Llibs/e11;
@@ -860,7 +860,7 @@
 
     .line 62
     .line 63
-    if-eqz v2, :cond_45
+    if-eqz v2, :cond_0
 
     .line 64
     .line 65
@@ -872,14 +872,14 @@
     move-result v2
 
     .line 69
-    goto :goto_46
+    goto :goto_0
 
     .line 70
-    :cond_45
+    :cond_0
     const/4 v2, 0x0
 
     .line 71
-    :goto_46
+    :goto_0
     add-int/2addr v2, v1
 
     .line 72
@@ -891,7 +891,7 @@
 
     .line 75
     .line 76
-    if-eqz v1, :cond_52
+    if-eqz v1, :cond_1
 
     .line 77
     .line 78
@@ -903,14 +903,14 @@
     move-result v1
 
     .line 82
-    goto :goto_53
+    goto :goto_1
 
     .line 83
-    :cond_52
+    :cond_1
     const/4 v1, 0x0
 
     .line 84
-    :goto_53
+    :goto_1
     add-int/2addr v1, v2
 
     .line 85
@@ -922,7 +922,7 @@
 
     .line 88
     .line 89
-    if-eqz v2, :cond_5f
+    if-eqz v2, :cond_2
 
     .line 90
     .line 91
@@ -934,14 +934,14 @@
     move-result v2
 
     .line 95
-    goto :goto_60
+    goto :goto_2
 
     .line 96
-    :cond_5f
+    :cond_2
     const/4 v2, 0x0
 
     .line 97
-    :goto_60
+    :goto_2
     add-int/2addr v2, v1
 
     .line 98
@@ -953,7 +953,7 @@
 
     .line 101
     .line 102
-    if-eqz v1, :cond_6b
+    if-eqz v1, :cond_3
 
     .line 103
     .line 104
@@ -965,7 +965,7 @@
     move-result v0
 
     .line 108
-    :cond_6b
+    :cond_3
     add-int/2addr v0, v2
 
     .line 109
@@ -973,7 +973,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1024,7 +1024,7 @@
 
     .line 26
     .line 27
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_0
 
     .line 28
     .line 29
@@ -1042,10 +1042,10 @@
     .line 35
     .line 36
     .line 37
-    goto :goto_2f
+    goto :goto_0
 
     .line 38
-    :cond_25
+    :cond_0
     const-string v1, ", proxySelector="
 
     .line 39
@@ -1064,7 +1064,7 @@
     .line 46
     .line 47
     .line 48
-    :goto_2f
+    :goto_0
     const-string v1, "}"
 
     .line 49

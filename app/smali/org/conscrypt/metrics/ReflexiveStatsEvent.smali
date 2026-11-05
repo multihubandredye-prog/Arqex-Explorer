@@ -24,7 +24,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 1
     invoke-static {}, Lorg/conscrypt/metrics/ReflexiveStatsEvent;->initStatsEventClass()Ljava/lang/Class;
@@ -83,7 +83,7 @@
 .end method
 
 .method public synthetic constructor <init>(ILjava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 7
     invoke-direct {p0, p2}, Lorg/conscrypt/metrics/ReflexiveStatsEvent;-><init>(Ljava/lang/Object;)V
@@ -92,7 +92,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -108,7 +108,7 @@
 .end method
 
 .method public static bridge synthetic a()Lorg/conscrypt/metrics/OptionalMethod;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Lorg/conscrypt/metrics/ReflexiveStatsEvent;->newBuilder:Lorg/conscrypt/metrics/OptionalMethod;
@@ -119,7 +119,7 @@
 .end method
 
 .method public static bridge synthetic b()Z
-    .registers 1
+    .locals 1
 
     .line 1
     sget-boolean v0, Lorg/conscrypt/metrics/ReflexiveStatsEvent;->sdkVersionBiggerThan32:Z
@@ -130,7 +130,7 @@
 .end method
 
 .method public static buildEvent(IZIIII)Lorg/conscrypt/metrics/ReflexiveStatsEvent;
-    .registers 7
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -169,7 +169,7 @@
 .end method
 
 .method public static buildEvent(IZIIII[I)Lorg/conscrypt/metrics/ReflexiveStatsEvent;
-    .registers 8
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -234,7 +234,7 @@
 .end method
 
 .method private static initStatsEventClass()Ljava/lang/Class;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -252,7 +252,7 @@
 .end method
 
 .method public static newBuilder()Lorg/conscrypt/metrics/ReflexiveStatsEvent$Builder;
-    .registers 2
+    .locals 2
 
     .line 1
     new-instance v0, Lorg/conscrypt/metrics/ReflexiveStatsEvent$Builder;
@@ -273,7 +273,7 @@
 
 # virtual methods
 .method public getStatsEvent()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Lorg/conscrypt/metrics/ReflexiveStatsEvent;->statsEvent:Ljava/lang/Object;

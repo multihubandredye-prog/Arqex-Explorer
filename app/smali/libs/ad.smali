@@ -16,7 +16,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     .line 1
     const-string v0, "javax.crypto.AEADBadTagException"
@@ -30,7 +30,7 @@
     const/4 v1, 0x0
 
     .line 6
-    :try_start_5
+    :try_start_0
     const-class v2, Llibs/cd;
 
     .line 7
@@ -49,29 +49,29 @@
     .line 14
     .line 15
     move-result-object v0
-    :try_end_f
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_f} :catch_10
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 16
-    goto :goto_12
+    goto :goto_0
 
     .line 17
-    :catch_10
+    :catch_0
     nop
 
     .line 18
     move-object v0, v1
 
     .line 19
-    :goto_12
-    if-eqz v0, :cond_23
+    :goto_0
+    if-eqz v0, :cond_0
 
     .line 20
     .line 21
     const/4 v2, 0x1
 
     .line 22
-    :try_start_15
+    :try_start_1
     new-array v2, v2, [Ljava/lang/Class;
 
     .line 23
@@ -93,11 +93,11 @@
     .line 31
     .line 32
     move-result-object v1
-    :try_end_20
-    .catch Ljava/lang/Exception; {:try_start_15 .. :try_end_20} :catch_20
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 33
-    :catch_20
+    :catch_1
     sput-object v1, Llibs/ad;->Y:Ljava/lang/reflect/Constructor;
 
     .line 34
@@ -105,7 +105,7 @@
     return-void
 
     .line 36
-    :cond_23
+    :cond_0
     sput-object v1, Llibs/ad;->Y:Ljava/lang/reflect/Constructor;
 
     .line 37
@@ -114,7 +114,7 @@
 .end method
 
 .method public constructor <init>(Llibs/e;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -132,7 +132,7 @@
 
 # virtual methods
 .method public final a(ZLlibs/et;)V
-    .registers 4
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ad;->X:Llibs/e;
@@ -148,7 +148,7 @@
 .end method
 
 .method public final b()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ad;->X:Llibs/e;
@@ -175,7 +175,7 @@
 .end method
 
 .method public final c(I[B)I
-    .registers 6
+    .locals 3
 
     .line 1
     :try_start_0
@@ -189,14 +189,14 @@
     .line 5
     .line 6
     move-result p1
-    :try_end_6
-    .catch Llibs/qb1; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Llibs/qb1; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 7
     return p1
 
     .line 8
-    :catch_7
+    :catch_0
     move-exception p1
 
     .line 9
@@ -204,11 +204,11 @@
 
     .line 10
     .line 11
-    if-eqz p2, :cond_21
+    if-eqz p2, :cond_0
 
     .line 12
     .line 13
-    :try_start_c
+    :try_start_1
     invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     .line 14
@@ -240,27 +240,27 @@
 
     .line 27
     check-cast p2, Ljavax/crypto/BadPaddingException;
-    :try_end_1c
-    .catch Ljava/lang/Exception; {:try_start_c .. :try_end_1c} :catch_1d
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 28
     .line 29
-    goto :goto_1e
+    goto :goto_0
 
     .line 30
-    :catch_1d
+    :catch_1
     const/4 p2, 0x0
 
     .line 31
-    :goto_1e
-    if-eqz p2, :cond_21
+    :goto_0
+    if-eqz p2, :cond_0
 
     .line 32
     .line 33
     throw p2
 
     .line 34
-    :cond_21
+    :cond_0
     new-instance p2, Ljavax/crypto/BadPaddingException;
 
     .line 35
@@ -282,7 +282,7 @@
 .end method
 
 .method public final d(III[B[B)I
-    .registers 12
+    .locals 6
 
     .line 1
     iget-object v0, p0, Llibs/ad;->X:Llibs/e;
@@ -316,7 +316,7 @@
 .end method
 
 .method public final e()Llibs/cg;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ad;->X:Llibs/e;
@@ -335,7 +335,7 @@
 .end method
 
 .method public final f(I)I
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ad;->X:Llibs/e;
@@ -354,7 +354,7 @@
 .end method
 
 .method public final h(I)I
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ad;->X:Llibs/e;
@@ -373,7 +373,7 @@
 .end method
 
 .method public final q()Z
-    .registers 2
+    .locals 1
 
     .line 1
     const/4 v0, 0x0
@@ -383,7 +383,7 @@
 .end method
 
 .method public final s(II[B)V
-    .registers 5
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/ad;->X:Llibs/e;

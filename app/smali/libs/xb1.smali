@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>([B)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/i93;-><init>([B)V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final a()J
-    .registers 7
+    .locals 6
 
     .line 1
     const/4 v0, 0x0

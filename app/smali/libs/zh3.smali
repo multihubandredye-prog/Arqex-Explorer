@@ -15,7 +15,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 35
+    .locals 35
 
     .line 1
     new-instance v0, Llibs/zh3;
@@ -490,8 +490,8 @@
     const/4 v2, 0x0
 
     .line 241
-    :goto_f0
-    if-ge v2, v1, :cond_10c
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     .line 242
     .line 243
@@ -503,7 +503,7 @@
 
     .line 246
     .line 247
-    if-eq v3, v4, :cond_109
+    if-eq v3, v4, :cond_0
 
     .line 248
     .line 249
@@ -540,20 +540,20 @@
     .line 264
     .line 265
     .line 266
-    :cond_109
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
     .line 267
     .line 268
-    goto :goto_f0
+    goto :goto_0
 
     .line 269
-    :cond_10c
+    :cond_1
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
@@ -565,7 +565,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Llibs/zh3;
-    .registers 2
+    .locals 1
 
     .line 1
     const-class v0, Llibs/zh3;
@@ -588,7 +588,7 @@
 .end method
 
 .method public static values()[Llibs/zh3;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Llibs/zh3;->Lambda:[Llibs/zh3;

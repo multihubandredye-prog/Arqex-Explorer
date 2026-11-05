@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Llibs/lv2;-><init>()V
@@ -25,7 +25,7 @@
 
 # virtual methods
 .method public final g(Llibs/rw2;)V
-    .registers 7
+    .locals 5
 
     .line 1
     invoke-virtual {p1}, Llibs/rw2;->v()V

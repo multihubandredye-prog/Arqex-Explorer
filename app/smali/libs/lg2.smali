@@ -13,7 +13,7 @@
 
 # direct methods
 .method public varargs constructor <init>(Ljava/lang/String;[I)V
-    .registers 3
+    .locals 0
 
     .line 18
     invoke-direct {p0, p1}, Llibs/mg2;-><init>(Ljava/lang/String;)V
@@ -25,7 +25,7 @@
 .end method
 
 .method public varargs constructor <init>(Llibs/jg2;[I)V
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-direct {p0, p1}, Llibs/mg2;-><init>(Llibs/jg2;)V
@@ -42,7 +42,7 @@
 
     .line 8
     .line 9
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_0
 
     .line 10
     .line 11
@@ -58,14 +58,14 @@
 
     .line 16
     .line 17
-    :cond_10
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final a(F)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/lg2;->Two:Llibs/qa1;
@@ -88,7 +88,7 @@
 .end method
 
 .method public final b()Llibs/mg2;
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-super {p0}, Llibs/mg2;->b()Llibs/mg2;
@@ -119,7 +119,7 @@
 .end method
 
 .method public final c()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1
     iget v0, p0, Llibs/lg2;->Three:I
@@ -138,7 +138,7 @@
 .end method
 
 .method public final clone()Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     .line 1
     invoke-super {p0}, Llibs/mg2;->b()Llibs/mg2;
@@ -169,7 +169,7 @@
 .end method
 
 .method public final e(Ljava/lang/Object;)V
-    .registers 6
+    .locals 4
 
     .line 1
     const-string v0, "PropertyValuesHolder"
@@ -184,7 +184,7 @@
 
     .line 6
     .line 7
-    if-eqz v2, :cond_3f
+    if-eqz v2, :cond_1
 
     .line 8
     .line 9
@@ -196,7 +196,7 @@
 
     .line 12
     .line 13
-    packed-switch v1, :pswitch_data_74
+    packed-switch v1, :pswitch_data_0
 
     .line 14
     .line 15
@@ -229,7 +229,7 @@
 
     .line 29
     .line 30
-    if-eqz p1, :cond_3e
+    if-eqz p1, :cond_0
 
     .line 31
     .line 32
@@ -246,10 +246,10 @@
     .line 37
     .line 38
     .line 39
-    goto :goto_3e
+    goto :goto_0
 
     .line 40
-    :pswitch_27
+    :pswitch_0
     check-cast p1, Landroid/view/View;
 
     .line 41
@@ -278,7 +278,7 @@
 
     .line 53
     .line 54
-    if-eqz p1, :cond_3e
+    if-eqz p1, :cond_0
 
     .line 55
     .line 56
@@ -295,17 +295,17 @@
     .line 61
     .line 62
     .line 63
-    :cond_3e
-    :goto_3e
+    :cond_0
+    :goto_0
     return-void
 
     .line 64
-    :cond_3f
+    :cond_1
     iget-object v2, p0, Llibs/mg2;->Y:Llibs/jg2;
 
     .line 65
     .line 66
-    if-eqz v2, :cond_4d
+    if-eqz v2, :cond_2
 
     .line 67
     .line 68
@@ -329,16 +329,16 @@
     return-void
 
     .line 78
-    :cond_4d
+    :cond_2
     iget-object v2, p0, Llibs/mg2;->Z:Ljava/lang/reflect/Method;
 
     .line 79
     .line 80
-    if-eqz v2, :cond_73
+    if-eqz v2, :cond_3
 
     .line 81
     .line 82
-    :try_start_51
+    :try_start_0
     iget v2, p0, Llibs/lg2;->Three:I
 
     .line 83
@@ -363,9 +363,9 @@
     .line 92
     .line 93
     invoke-virtual {v2, p1, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_5f
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_51 .. :try_end_5f} :catch_62
-    .catch Ljava/lang/IllegalAccessException; {:try_start_51 .. :try_end_5f} :catch_60
+    :try_end_0
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 94
     .line 95
@@ -373,21 +373,21 @@
     return-void
 
     .line 97
-    :catch_60
+    :catch_0
     move-exception p1
 
     .line 98
-    goto :goto_64
+    goto :goto_1
 
     .line 99
-    :catch_62
+    :catch_1
     move-exception p1
 
     .line 100
-    goto :goto_6c
+    goto :goto_2
 
     .line 101
-    :goto_64
+    :goto_1
     invoke-virtual {p1}, Ljava/lang/IllegalAccessException;->toString()Ljava/lang/String;
 
     .line 102
@@ -401,10 +401,10 @@
     .line 106
     .line 107
     .line 108
-    goto :goto_73
+    goto :goto_3
 
     .line 109
-    :goto_6c
+    :goto_2
     invoke-virtual {p1}, Ljava/lang/reflect/InvocationTargetException;->toString()Ljava/lang/String;
 
     .line 110
@@ -418,19 +418,19 @@
     .line 114
     .line 115
     .line 116
-    :cond_73
-    :goto_73
+    :cond_3
+    :goto_3
     return-void
 
     .line 117
-    :pswitch_data_74
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_27
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final varargs g([I)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-super {p0, p1}, Llibs/mg2;->g([I)V
@@ -454,21 +454,21 @@
 .end method
 
 .method public final i(Ljava/lang/Class;)V
-    .registers 3
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/mg2;->Y:Llibs/jg2;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     return-void
 
     .line 6
-    :cond_5
+    :cond_0
     invoke-super {p0, p1}, Llibs/mg2;->i(Ljava/lang/Class;)V
 
     .line 7

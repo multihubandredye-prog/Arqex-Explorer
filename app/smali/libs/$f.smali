@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Llibs/App;)V
-    .registers 2
+    .locals 0
 
     .line 59
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -23,7 +23,7 @@
 .end method
 
 .method public constructor <init>(Llibs/App;Llibs/Core;)V
-    .registers 3
+    .locals 0
 
     .line 56
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -38,7 +38,7 @@
 .end method
 
 .method public constructor <init>(Llibs/Param;)V
-    .registers 6
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Llibs/Auth;-><init>()V
@@ -60,7 +60,7 @@
     const/4 v2, 0x1
 
     .line 10
-    if-lt v0, v2, :cond_2d
+    if-lt v0, v2, :cond_1
 
     .line 11
     .line 12
@@ -75,7 +75,7 @@
     const/4 v3, 0x2
 
     .line 17
-    if-gt v0, v3, :cond_2d
+    if-gt v0, v3, :cond_1
 
     .line 18
     .line 19
@@ -110,7 +110,7 @@
     move-result v0
 
     .line 34
-    if-ne v0, v3, :cond_2a
+    if-ne v0, v3, :cond_0
 
     .line 35
     .line 36
@@ -129,7 +129,7 @@
     return-void
 
     .line 43
-    :cond_2a
+    :cond_0
     iput-object v1, p0, Llibs/$f;->Y:Llibs/Core;
 
     .line 44
@@ -137,7 +137,7 @@
     return-void
 
     .line 46
-    :cond_2d
+    :cond_1
     const-string v0, "Bad sequence size: "
 
     .line 47
@@ -159,14 +159,14 @@
 .end method
 
 .method public static h(Ljava/lang/Object;)Llibs/$f;
-    .registers 2
+    .locals 1
 
     .line 1
     instance-of v0, p0, Llibs/$f;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
@@ -177,8 +177,8 @@
     return-object p0
 
     .line 8
-    :cond_7
-    if-eqz p0, :cond_13
+    :cond_0
+    if-eqz p0, :cond_1
 
     .line 9
     .line 10
@@ -202,7 +202,7 @@
     return-object v0
 
     .line 20
-    :cond_13
+    :cond_1
     const/4 p0, 0x0
 
     .line 21
@@ -212,7 +212,7 @@
 
 # virtual methods
 .method public final b()Llibs/Theme;
-    .registers 3
+    .locals 2
 
     .line 1
     new-instance v0, Llibs/Init;
@@ -240,7 +240,7 @@
 
     .line 13
     .line 14
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_0
 
     .line 15
     .line 16
@@ -249,7 +249,7 @@
     .line 17
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     new-instance v1, Llibs/p10;
 
     .line 20
@@ -263,7 +263,7 @@
 .end method
 
 .method public final g()Llibs/App;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/$f;->X:Llibs/App;

@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/InputStream;JLlibs/jb0;)V
-    .registers 9
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
@@ -111,7 +111,7 @@
 
     .line 41
     .line 42
-    if-eqz p2, :cond_32
+    if-eqz p2, :cond_0
 
     .line 43
     .line 44
@@ -123,18 +123,18 @@
 
     .line 47
     .line 48
-    if-ne p1, p2, :cond_32
+    if-ne p1, p2, :cond_0
 
     .line 49
     .line 50
-    goto :goto_33
+    goto :goto_0
 
     .line 51
-    :cond_32
+    :cond_0
     const/4 v0, 0x0
 
     .line 52
-    :goto_33
+    :goto_0
     iput-boolean v0, p0, Llibs/eb2;->Pi:Z
 
     .line 53
@@ -145,7 +145,7 @@
 
 # virtual methods
 .method public available()I
-    .registers 6
+    .locals 5
 
     .line 1
     iget-wide v0, p0, Llibs/eb2;->Z:J
@@ -168,7 +168,7 @@
 
     .line 10
     .line 11
-    if-lez v4, :cond_10
+    if-lez v4, :cond_0
 
     .line 12
     .line 13
@@ -180,7 +180,7 @@
     return v0
 
     .line 17
-    :cond_10
+    :cond_0
     long-to-int v1, v0
 
     .line 18
@@ -188,14 +188,14 @@
 .end method
 
 .method public final c()V
-    .registers 8
+    .locals 7
 
     .line 1
     iget-boolean v0, p0, Llibs/eb2;->Pi:Z
 
     .line 2
     .line 3
-    if-eqz v0, :cond_58
+    if-eqz v0, :cond_3
 
     .line 4
     .line 5
@@ -203,7 +203,7 @@
 
     .line 6
     .line 7
-    if-eqz v0, :cond_58
+    if-eqz v0, :cond_3
 
     .line 8
     .line 9
@@ -211,7 +211,7 @@
 
     .line 10
     .line 11
-    if-eqz v1, :cond_58
+    if-eqz v1, :cond_3
 
     .line 12
     .line 13
@@ -223,14 +223,14 @@
 
     .line 16
     .line 17
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 18
     .line 19
-    goto :goto_58
+    goto :goto_1
 
     .line 20
-    :cond_13
+    :cond_0
     const/16 v0, 0xa
 
     .line 21
@@ -255,7 +255,7 @@
 
     .line 31
     .line 32
-    if-eq v2, v0, :cond_50
+    if-eq v2, v0, :cond_2
 
     .line 33
     .line 34
@@ -271,7 +271,7 @@
 
     .line 39
     .line 40
-    if-eqz v0, :cond_4a
+    if-eqz v0, :cond_1
 
     .line 41
     .line 42
@@ -337,10 +337,10 @@
     .line 72
     .line 73
     .line 74
-    goto :goto_50
+    goto :goto_0
 
     .line 75
-    :cond_4a
+    :cond_1
     const-string v0, "Error occurred while reading stored AES authentication bytes"
 
     .line 76
@@ -353,8 +353,8 @@
     return-void
 
     .line 81
-    :cond_50
-    :goto_50
+    :cond_2
+    :goto_0
     iget-object v0, v3, Llibs/jb0;->g:Ljava/lang/Object;
 
     .line 82
@@ -371,13 +371,13 @@
 
     .line 88
     .line 89
-    :cond_58
-    :goto_58
+    :cond_3
+    :goto_1
     return-void
 .end method
 
 .method public close()V
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/eb2;->X:Ljava/io/InputStream;
@@ -393,7 +393,7 @@
 .end method
 
 .method public i()Llibs/jb0;
-    .registers 2
+    .locals 1
 
     .line 1
     iget-object v0, p0, Llibs/eb2;->Lambda:Llibs/jb0;
@@ -404,7 +404,7 @@
 .end method
 
 .method public read()I
-    .registers 7
+    .locals 6
 
     .line 152
     iget-wide v0, p0, Llibs/eb2;->Y:J
@@ -415,52 +415,52 @@
 
     cmp-long v5, v0, v2
 
-    if-ltz v5, :cond_a
+    if-ltz v5, :cond_0
 
-    goto :goto_37
+    goto :goto_3
 
     .line 153
-    :cond_a
+    :cond_0
     iget-boolean v0, p0, Llibs/eb2;->Pi:Z
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_4
 
     .line 154
     iget v0, p0, Llibs/eb2;->Omicron:I
 
     iget-object v2, p0, Llibs/eb2;->Xi:[B
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_2
 
     const/16 v3, 0x10
 
-    if-ne v0, v3, :cond_1a
+    if-ne v0, v3, :cond_1
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_1a
+    :cond_1
     move v1, v0
 
-    goto :goto_25
+    goto :goto_1
 
     .line 155
-    :cond_1c
-    :goto_1c
+    :cond_2
+    :goto_0
     invoke-virtual {p0, v2}, Llibs/eb2;->read([B)I
 
     move-result v0
 
-    if-ne v0, v4, :cond_23
+    if-ne v0, v4, :cond_3
 
-    goto :goto_37
+    goto :goto_3
 
     .line 156
-    :cond_23
+    :cond_3
     iput v1, p0, Llibs/eb2;->Omicron:I
 
-    :goto_25
+    :goto_1
     add-int/lit8 v0, v1, 0x1
 
     .line 157
@@ -468,13 +468,13 @@
 
     aget-byte v0, v2, v1
 
-    :goto_2b
+    :goto_2
     and-int/lit16 v0, v0, 0xff
 
     return v0
 
     .line 158
-    :cond_2e
+    :cond_4
     iget-object v0, p0, Llibs/eb2;->Nu:[B
 
     const/4 v2, 0x1
@@ -483,19 +483,19 @@
 
     move-result v2
 
-    if-ne v2, v4, :cond_38
+    if-ne v2, v4, :cond_5
 
-    :goto_37
+    :goto_3
     return v4
 
-    :cond_38
+    :cond_5
     aget-byte v0, v0, v1
 
-    goto :goto_2b
+    goto :goto_2
 .end method
 
 .method public read([B)I
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -510,7 +510,7 @@
 .end method
 
 .method public read([BII)I
-    .registers 14
+    .locals 10
 
     .line 1
     iget-wide v0, p0, Llibs/eb2;->Y:J
@@ -528,14 +528,14 @@
 
     .line 7
     .line 8
-    if-ltz v5, :cond_a
+    if-ltz v5, :cond_0
 
     .line 9
     .line 10
     return v4
 
     .line 11
-    :cond_a
+    :cond_0
     int-to-long v5, p3
 
     .line 12
@@ -547,14 +547,14 @@
 
     .line 15
     .line 16
-    if-lez v9, :cond_18
+    if-lez v9, :cond_1
 
     .line 17
     .line 18
     long-to-int p3, v7
 
     .line 19
-    if-nez p3, :cond_18
+    if-nez p3, :cond_1
 
     .line 20
     .line 21
@@ -566,7 +566,7 @@
     return v4
 
     .line 25
-    :cond_18
+    :cond_1
     iget-object v4, p0, Llibs/eb2;->Lambda:Llibs/jb0;
 
     .line 26
@@ -583,7 +583,7 @@
 
     .line 32
     .line 33
-    if-eqz v4, :cond_2d
+    if-eqz v4, :cond_2
 
     .line 34
     .line 35
@@ -597,7 +597,7 @@
 
     .line 38
     .line 39
-    if-gez v4, :cond_2d
+    if-gez v4, :cond_2
 
     .line 40
     .line 41
@@ -605,14 +605,14 @@
 
     .line 42
     .line 43
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_2
 
     .line 44
     .line 45
     sub-int/2addr p3, v0
 
     .line 46
-    :cond_2d
+    :cond_2
     iget-object v0, p0, Llibs/eb2;->X:Ljava/io/InputStream;
 
     .line 47
@@ -620,7 +620,7 @@
     monitor-enter v0
 
     .line 49
-    :try_start_30
+    :try_start_0
     iget-object v1, p0, Llibs/eb2;->X:Ljava/io/InputStream;
 
     .line 50
@@ -636,7 +636,7 @@
     const/4 v2, 0x0
 
     .line 56
-    if-ge v1, p3, :cond_6e
+    if-ge v1, p3, :cond_4
 
     .line 57
     .line 58
@@ -656,7 +656,7 @@
 
     .line 65
     .line 66
-    if-eqz v3, :cond_6e
+    if-eqz v3, :cond_4
 
     .line 67
     .line 68
@@ -717,14 +717,14 @@
 
     .line 96
     .line 97
-    if-gez v1, :cond_63
+    if-gez v1, :cond_3
 
     .line 98
     .line 99
     const/4 v1, 0x0
 
     .line 100
-    :cond_63
+    :cond_3
     sub-int/2addr p3, v1
 
     .line 101
@@ -736,31 +736,31 @@
     move-result p3
 
     .line 105
-    if-lez p3, :cond_6e
+    if-lez p3, :cond_4
 
     .line 106
     .line 107
     add-int/2addr v1, p3
 
     .line 108
-    goto :goto_6e
+    goto :goto_0
 
     .line 109
-    :catchall_6c
+    :catchall_0
     move-exception p1
 
     .line 110
-    goto :goto_94
+    goto :goto_2
 
     .line 111
-    :cond_6e
-    :goto_6e
+    :cond_4
+    :goto_0
     monitor-exit v0
-    :try_end_6f
-    .catchall {:try_start_30 .. :try_end_6f} :catchall_6c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 112
-    if-lez v1, :cond_88
+    if-lez v1, :cond_6
 
     .line 113
     .line 114
@@ -768,22 +768,22 @@
 
     .line 115
     .line 116
-    if-eqz p3, :cond_82
+    if-eqz p3, :cond_5
 
     .line 117
     .line 118
-    :try_start_75
+    :try_start_1
     invoke-interface {p3, p2, v1, p1}, Llibs/q51;->s(II[B)I
-    :try_end_78
-    .catch Llibs/my3; {:try_start_75 .. :try_end_78} :catch_79
+    :try_end_1
+    .catch Llibs/my3; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 119
     .line 120
     .line 121
-    goto :goto_82
+    goto :goto_1
 
     .line 122
-    :catch_79
+    :catch_0
     move-exception p1
 
     .line 123
@@ -803,8 +803,8 @@
     return v2
 
     .line 131
-    :cond_82
-    :goto_82
+    :cond_5
+    :goto_1
     iget-wide p1, p0, Llibs/eb2;->Y:J
 
     .line 132
@@ -819,7 +819,7 @@
 
     .line 136
     .line 137
-    :cond_88
+    :cond_6
     iget-wide p1, p0, Llibs/eb2;->Y:J
 
     .line 138
@@ -832,7 +832,7 @@
 
     .line 142
     .line 143
-    if-ltz p3, :cond_93
+    if-ltz p3, :cond_7
 
     .line 144
     .line 145
@@ -841,22 +841,22 @@
     .line 146
     .line 147
     .line 148
-    :cond_93
+    :cond_7
     return v1
 
     .line 149
-    :goto_94
-    :try_start_94
+    :goto_2
+    :try_start_2
     monitor-exit v0
-    :try_end_95
-    .catchall {:try_start_94 .. :try_end_95} :catchall_6c
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 150
     throw p1
 .end method
 
 .method public skip(J)J
-    .registers 10
+    .locals 7
 
     .line 1
     const-wide/16 v0, 0x0
@@ -867,7 +867,7 @@
 
     .line 4
     .line 5
-    if-ltz v2, :cond_16
+    if-ltz v2, :cond_1
 
     .line 6
     .line 7
@@ -887,7 +887,7 @@
 
     .line 14
     .line 15
-    if-lez v6, :cond_12
+    if-lez v6, :cond_0
 
     .line 16
     .line 17
@@ -895,7 +895,7 @@
 
     .line 18
     .line 19
-    :cond_12
+    :cond_0
     add-long/2addr v0, p1
 
     .line 20
@@ -906,7 +906,7 @@
     return-wide p1
 
     .line 23
-    :cond_16
+    :cond_1
     invoke-static {}, Llibs/ic0;->l()V
 
     .line 24

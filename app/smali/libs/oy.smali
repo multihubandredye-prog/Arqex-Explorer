@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,13 +36,13 @@
 
 # virtual methods
 .method public final a()[B
-    .registers 6
+    .locals 5
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    :try_start_1
+    :try_start_0
     iget-object v1, p0, Llibs/oy;->a:Ljava/lang/Object;
 
     .line 3
@@ -74,15 +74,15 @@
 
     .line 16
     check-cast v1, [B
-    :try_end_11
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_11} :catch_12
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 17
     .line 18
     return-object v1
 
     .line 19
-    :catch_12
+    :catch_0
     move-exception v1
 
     .line 20
@@ -95,14 +95,14 @@
 .end method
 
 .method public final b([B)V
-    .registers 12
+    .locals 10
 
     .line 1
     const-string v0, "Unknown digest: "
 
     .line 2
     .line 3
-    :try_start_2
+    :try_start_0
     iput-object p1, p0, Llibs/oy;->b:[B
 
     .line 4
@@ -120,7 +120,7 @@
     const/4 v4, 0x0
 
     .line 10
-    if-nez v1, :cond_5d
+    if-nez v1, :cond_2
 
     .line 11
     .line 12
@@ -196,7 +196,7 @@
     move-result v5
 
     .line 48
-    if-eqz v5, :cond_36
+    if-eqz v5, :cond_0
 
     .line 49
     .line 50
@@ -204,18 +204,18 @@
 
     .line 51
     .line 52
-    goto :goto_36
+    goto :goto_0
 
     .line 53
-    :catch_34
+    :catch_0
     move-exception p1
 
     .line 54
-    goto :goto_75
+    goto :goto_2
 
     .line 55
-    :cond_36
-    :goto_36
+    :cond_0
+    :goto_0
     invoke-virtual {v1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     .line 56
@@ -268,14 +268,14 @@
 
     .line 80
     .line 81
-    if-eqz v9, :cond_53
+    if-eqz v9, :cond_1
 
     .line 82
     .line 83
-    goto :goto_5d
+    goto :goto_1
 
     .line 84
-    :cond_53
+    :cond_1
     new-instance p1, Llibs/q43;
 
     .line 85
@@ -296,8 +296,8 @@
     throw p1
 
     .line 94
-    :cond_5d
-    :goto_5d
+    :cond_2
+    :goto_1
     iget-object v0, p0, Llibs/oy;->a:Ljava/lang/Object;
 
     .line 95
@@ -341,8 +341,8 @@
     .line 113
     .line 114
     invoke-virtual {v1, v4, v6}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_74
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_74} :catch_34
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 115
     .line 116
@@ -350,7 +350,7 @@
     return-void
 
     .line 118
-    :goto_75
+    :goto_2
     new-instance v0, Llibs/q43;
 
     .line 119
@@ -364,7 +364,7 @@
 .end method
 
 .method public final reset()V
-    .registers 2
+    .locals 1
 
     .line 1
     :try_start_0
@@ -372,13 +372,13 @@
 
     .line 2
     .line 3
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
     invoke-virtual {p0, v0}, Llibs/oy;->b([B)V
-    :try_end_7
-    .catch Llibs/q43; {:try_start_0 .. :try_end_7} :catch_8
+    :try_end_0
+    .catch Llibs/q43; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 6
     .line 7
@@ -386,18 +386,18 @@
     return-void
 
     .line 9
-    :catch_8
+    :catch_0
     move-exception v0
 
     .line 10
-    goto :goto_b
+    goto :goto_0
 
     .line 11
-    :cond_a
+    :cond_0
     return-void
 
     .line 12
-    :goto_b
+    :goto_0
     invoke-static {v0}, Llibs/ic0;->k(Ljava/lang/Throwable;)V
 
     .line 13
@@ -407,7 +407,7 @@
 .end method
 
 .method public final update([B)V
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -420,7 +420,7 @@
 .end method
 
 .method public final update([BII)V
-    .registers 8
+    .locals 4
 
     .line 1
     :try_start_0
@@ -487,8 +487,8 @@
 
     .line 29
     invoke-virtual {v1, p1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_1f
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_1f} :catch_20
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 30
     .line 31
@@ -496,7 +496,7 @@
     return-void
 
     .line 33
-    :catch_20
+    :catch_0
     move-exception p1
 
     .line 34

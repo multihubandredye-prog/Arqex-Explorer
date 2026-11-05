@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/util/HashMap;Landroid/app/Activity;B)V
-    .registers 4
+    .locals 0
 
     .line 1
     iput-byte p3, p0, Llibs/o93;->X:B
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .registers 6
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Llibs/o93;->X:B
@@ -61,7 +61,7 @@
 
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_78
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
@@ -74,14 +74,14 @@
     move-result v0
 
     .line 16
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     .line 17
     .line 18
-    goto :goto_3a
+    goto :goto_0
 
     .line 19
-    :cond_12
+    :cond_0
     sget v0, Llibs/bi2;->alias:I
 
     .line 20
@@ -158,11 +158,11 @@
     .line 57
     .line 58
     .line 59
-    :goto_3a
+    :goto_0
     return-void
 
     .line 60
-    :pswitch_3b
+    :pswitch_0
     invoke-interface {v3}, Ljava/util/Map;->size()I
 
     .line 61
@@ -171,7 +171,7 @@
     move-result v0
 
     .line 64
-    if-nez v0, :cond_4f
+    if-nez v0, :cond_1
 
     .line 65
     .line 66
@@ -200,10 +200,10 @@
     .line 77
     .line 78
     .line 79
-    goto :goto_77
+    goto :goto_1
 
     .line 80
-    :cond_4f
+    :cond_1
     sget v0, Llibs/bi2;->alias:I
 
     .line 81
@@ -280,12 +280,12 @@
     .line 118
     .line 119
     .line 120
-    :goto_77
+    :goto_1
     return-void
 
     .line 121
-    :pswitch_data_78
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_3b
+        :pswitch_0
     .end packed-switch
 .end method

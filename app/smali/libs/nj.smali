@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static a(Ljava/lang/String;)V
-    .registers 5
+    .locals 4
 
     .line 1
     const/16 v0, 0xe
@@ -26,8 +26,8 @@
     const/4 v2, 0x0
 
     .line 9
-    :goto_8
-    if-ge v2, v1, :cond_44
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     .line 10
     .line 11
@@ -35,7 +35,7 @@
 
     .line 12
     .line 13
-    packed-switch v3, :pswitch_data_46
+    packed-switch v3, :pswitch_data_0
 
     .line 14
     .line 15
@@ -46,116 +46,116 @@
     throw p0
 
     .line 18
-    :pswitch_11
+    :pswitch_0
     const-string v3, "UNKNOWN"
 
     .line 19
     .line 20
-    goto :goto_3a
+    goto :goto_1
 
     .line 21
-    :pswitch_14
+    :pswitch_1
     const-string v3, "USR2"
 
     .line 22
     .line 23
-    goto :goto_3a
+    goto :goto_1
 
     .line 24
-    :pswitch_17
+    :pswitch_2
     const-string v3, "USR1"
 
     .line 25
     .line 26
-    goto :goto_3a
+    goto :goto_1
 
     .line 27
-    :pswitch_1a
+    :pswitch_3
     const-string v3, "TERM"
 
     .line 28
     .line 29
-    goto :goto_3a
+    goto :goto_1
 
     .line 30
-    :pswitch_1d
+    :pswitch_4
     const-string v3, "SEGV"
 
     .line 31
     .line 32
-    goto :goto_3a
+    goto :goto_1
 
     .line 33
-    :pswitch_20
+    :pswitch_5
     const-string v3, "QUIT"
 
     .line 34
     .line 35
-    goto :goto_3a
+    goto :goto_1
 
     .line 36
-    :pswitch_23
+    :pswitch_6
     const-string v3, "PIPE"
 
     .line 37
     .line 38
-    goto :goto_3a
+    goto :goto_1
 
     .line 39
-    :pswitch_26
+    :pswitch_7
     const-string v3, "KILL"
 
     .line 40
     .line 41
-    goto :goto_3a
+    goto :goto_1
 
     .line 42
-    :pswitch_29
+    :pswitch_8
     const-string v3, "INT"
 
     .line 43
     .line 44
-    goto :goto_3a
+    goto :goto_1
 
     .line 45
-    :pswitch_2c
+    :pswitch_9
     const-string v3, "ILL"
 
     .line 46
     .line 47
-    goto :goto_3a
+    goto :goto_1
 
     .line 48
-    :pswitch_2f
+    :pswitch_a
     const-string v3, "HUP"
 
     .line 49
     .line 50
-    goto :goto_3a
+    goto :goto_1
 
     .line 51
-    :pswitch_32
+    :pswitch_b
     const-string v3, "FPE"
 
     .line 52
     .line 53
-    goto :goto_3a
+    goto :goto_1
 
     .line 54
-    :pswitch_35
+    :pswitch_c
     const-string v3, "ALRM"
 
     .line 55
     .line 56
-    goto :goto_3a
+    goto :goto_1
 
     .line 57
-    :pswitch_38
+    :pswitch_d
     const-string v3, "ABRT"
 
     .line 58
     .line 59
-    :goto_3a
+    :goto_1
     invoke-virtual {v3, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     .line 60
@@ -164,102 +164,102 @@
     move-result v3
 
     .line 63
-    if-eqz v3, :cond_41
+    if-eqz v3, :cond_0
 
     .line 64
     .line 65
     return-void
 
     .line 66
-    :cond_41
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
     .line 67
     .line 68
-    goto :goto_8
+    goto :goto_0
 
     .line 69
-    :cond_44
+    :cond_1
     return-void
 
     .line 70
     nop
 
     .line 71
-    :pswitch_data_46
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_38
-        :pswitch_35
-        :pswitch_32
-        :pswitch_2f
-        :pswitch_2c
-        :pswitch_29
-        :pswitch_26
-        :pswitch_23
-        :pswitch_20
-        :pswitch_1d
-        :pswitch_1a
-        :pswitch_17
-        :pswitch_14
-        :pswitch_11
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static final b(I)J
-    .registers 3
+    .locals 2
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-eq p0, v0, :cond_11
+    if-eq p0, v0, :cond_2
 
     .line 3
     .line 4
     const/4 v1, 0x2
 
     .line 5
-    if-eq p0, v1, :cond_12
+    if-eq p0, v1, :cond_3
 
     .line 6
     .line 7
     const/4 v0, 0x3
 
     .line 8
-    if-eq p0, v0, :cond_f
+    if-eq p0, v0, :cond_1
 
     .line 9
     .line 10
     const/4 v0, 0x4
 
     .line 11
-    if-ne p0, v0, :cond_d
+    if-ne p0, v0, :cond_0
 
     .line 12
     .line 13
-    goto :goto_12
+    goto :goto_0
 
     .line 14
-    :cond_d
+    :cond_0
     const/4 p0, 0x0
 
     .line 15
     throw p0
 
     .line 16
-    :cond_f
+    :cond_1
     const/4 v0, 0x2
 
     .line 17
-    goto :goto_12
+    goto :goto_0
 
     .line 18
-    :cond_11
+    :cond_2
     const/4 v0, 0x0
 
     .line 19
-    :cond_12
-    :goto_12
+    :cond_3
+    :goto_0
     int-to-long v0, v0
 
     .line 20
@@ -267,7 +267,7 @@
 .end method
 
 .method public static c(IIII)I
-    .registers 4
+    .locals 0
 
     .line 1
     add-int/2addr p0, p1
@@ -283,7 +283,7 @@
 .end method
 
 .method public static d(ILjava/lang/String;Ljava/lang/StringBuilder;)Ljava/lang/String;
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-static {p0}, Llibs/ho2;->Add(I)Ljava/lang/String;
@@ -316,7 +316,7 @@
 .end method
 
 .method public static e(Lcom/mixplorer/widgets/MiEditText;Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
@@ -349,7 +349,7 @@
 .end method
 
 .method public static f(Ljava/lang/Exception;Ljava/lang/StringBuilder;)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     .line 1
     invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
@@ -377,7 +377,7 @@
 .end method
 
 .method public static g(IILjava/lang/StringBuilder;Ljava/lang/String;)V
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-static {p0, p1}, Llibs/yx0;->c(II)Ljava/lang/String;
@@ -402,10 +402,10 @@
 .end method
 
 .method public static synthetic h(I)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1
-    packed-switch p0, :pswitch_data_68
+    packed-switch p0, :pswitch_data_0
 
     .line 2
     .line 3
@@ -416,7 +416,7 @@
     throw p0
 
     .line 6
-    :pswitch_5
+    :pswitch_0
     const-string p0, "NO_MATCHING_BYTE_RANGE_LOCK"
 
     .line 7
@@ -424,7 +424,7 @@
     return-object p0
 
     .line 9
-    :pswitch_8
+    :pswitch_1
     const-string p0, "GROUP_INVALID"
 
     .line 10
@@ -432,7 +432,7 @@
     return-object p0
 
     .line 12
-    :pswitch_b
+    :pswitch_2
     const-string p0, "OWNER_INVALID"
 
     .line 13
@@ -440,7 +440,7 @@
     return-object p0
 
     .line 15
-    :pswitch_e
+    :pswitch_3
     const-string p0, "FILE_CORRUPT"
 
     .line 16
@@ -448,7 +448,7 @@
     return-object p0
 
     .line 18
-    :pswitch_11
+    :pswitch_4
     const-string p0, "DELETE_PENDING"
 
     .line 19
@@ -456,7 +456,7 @@
     return-object p0
 
     .line 21
-    :pswitch_14
+    :pswitch_5
     const-string p0, "BYTE_RANGE_LOCK_REFUSED"
 
     .line 22
@@ -464,7 +464,7 @@
     return-object p0
 
     .line 24
-    :pswitch_17
+    :pswitch_6
     const-string p0, "BYTE_RANGE_LOCK_CONFLICT"
 
     .line 25
@@ -472,7 +472,7 @@
     return-object p0
 
     .line 27
-    :pswitch_1a
+    :pswitch_7
     const-string p0, "FILE_IS_A_DIRECTORY"
 
     .line 28
@@ -480,7 +480,7 @@
     return-object p0
 
     .line 30
-    :pswitch_1d
+    :pswitch_8
     const-string p0, "INVALID_PARAMETER"
 
     .line 31
@@ -488,7 +488,7 @@
     return-object p0
 
     .line 33
-    :pswitch_20
+    :pswitch_9
     const-string p0, "CANNOT_DELETE"
 
     .line 34
@@ -496,7 +496,7 @@
     return-object p0
 
     .line 36
-    :pswitch_23
+    :pswitch_a
     const-string p0, "LINK_LOOP"
 
     .line 37
@@ -504,7 +504,7 @@
     return-object p0
 
     .line 39
-    :pswitch_26
+    :pswitch_b
     const-string p0, "INVALID_FILENAME"
 
     .line 40
@@ -512,7 +512,7 @@
     return-object p0
 
     .line 42
-    :pswitch_29
+    :pswitch_c
     const-string p0, "NOT_A_DIRECTORY"
 
     .line 43
@@ -520,7 +520,7 @@
     return-object p0
 
     .line 45
-    :pswitch_2c
+    :pswitch_d
     const-string p0, "DIR_NOT_EMPTY"
 
     .line 46
@@ -528,7 +528,7 @@
     return-object p0
 
     .line 48
-    :pswitch_2f
+    :pswitch_e
     const-string p0, "LOCK_CONFLICT"
 
     .line 49
@@ -536,7 +536,7 @@
     return-object p0
 
     .line 51
-    :pswitch_32
+    :pswitch_f
     const-string p0, "UNKNOWN_PRINCIPAL"
 
     .line 52
@@ -544,7 +544,7 @@
     return-object p0
 
     .line 54
-    :pswitch_35
+    :pswitch_10
     const-string p0, "QUOTA_EXCEEDED"
 
     .line 55
@@ -552,7 +552,7 @@
     return-object p0
 
     .line 57
-    :pswitch_38
+    :pswitch_11
     const-string p0, "NO_SPACE_ON_FILESYSTEM"
 
     .line 58
@@ -560,7 +560,7 @@
     return-object p0
 
     .line 60
-    :pswitch_3b
+    :pswitch_12
     const-string p0, "NO_MEDIA"
 
     .line 61
@@ -568,7 +568,7 @@
     return-object p0
 
     .line 63
-    :pswitch_3e
+    :pswitch_13
     const-string p0, "WRITE_PROTECT"
 
     .line 64
@@ -576,7 +576,7 @@
     return-object p0
 
     .line 66
-    :pswitch_41
+    :pswitch_14
     const-string p0, "FILE_ALREADY_EXISTS"
 
     .line 67
@@ -584,7 +584,7 @@
     return-object p0
 
     .line 69
-    :pswitch_44
+    :pswitch_15
     const-string p0, "NO_SUCH_PATH"
 
     .line 70
@@ -592,7 +592,7 @@
     return-object p0
 
     .line 72
-    :pswitch_47
+    :pswitch_16
     const-string p0, "INVALID_HANDLE"
 
     .line 73
@@ -600,7 +600,7 @@
     return-object p0
 
     .line 75
-    :pswitch_4a
+    :pswitch_17
     const-string p0, "OP_UNSUPPORTED"
 
     .line 76
@@ -608,7 +608,7 @@
     return-object p0
 
     .line 78
-    :pswitch_4d
+    :pswitch_18
     const-string p0, "CONNECITON_LOST"
 
     .line 79
@@ -616,7 +616,7 @@
     return-object p0
 
     .line 81
-    :pswitch_50
+    :pswitch_19
     const-string p0, "NO_CONNECTION"
 
     .line 82
@@ -624,7 +624,7 @@
     return-object p0
 
     .line 84
-    :pswitch_53
+    :pswitch_1a
     const-string p0, "BAD_MESSAGE"
 
     .line 85
@@ -632,7 +632,7 @@
     return-object p0
 
     .line 87
-    :pswitch_56
+    :pswitch_1b
     const-string p0, "FAILURE"
 
     .line 88
@@ -640,7 +640,7 @@
     return-object p0
 
     .line 90
-    :pswitch_59
+    :pswitch_1c
     const-string p0, "PERMISSION_DENIED"
 
     .line 91
@@ -648,7 +648,7 @@
     return-object p0
 
     .line 93
-    :pswitch_5c
+    :pswitch_1d
     const-string p0, "NO_SUCH_FILE"
 
     .line 94
@@ -656,7 +656,7 @@
     return-object p0
 
     .line 96
-    :pswitch_5f
+    :pswitch_1e
     const-string p0, "EOF"
 
     .line 97
@@ -664,7 +664,7 @@
     return-object p0
 
     .line 99
-    :pswitch_62
+    :pswitch_1f
     const-string p0, "OK"
 
     .line 100
@@ -672,7 +672,7 @@
     return-object p0
 
     .line 102
-    :pswitch_65
+    :pswitch_20
     const-string p0, "UNKNOWN"
 
     .line 103
@@ -680,40 +680,40 @@
     return-object p0
 
     .line 105
-    :pswitch_data_68
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_65
-        :pswitch_62
-        :pswitch_5f
-        :pswitch_5c
-        :pswitch_59
-        :pswitch_56
-        :pswitch_53
-        :pswitch_50
-        :pswitch_4d
-        :pswitch_4a
-        :pswitch_47
-        :pswitch_44
-        :pswitch_41
-        :pswitch_3e
-        :pswitch_3b
-        :pswitch_38
-        :pswitch_35
-        :pswitch_32
-        :pswitch_2f
-        :pswitch_2c
-        :pswitch_29
-        :pswitch_26
-        :pswitch_23
         :pswitch_20
+        :pswitch_1f
+        :pswitch_1e
         :pswitch_1d
+        :pswitch_1c
+        :pswitch_1b
         :pswitch_1a
+        :pswitch_19
+        :pswitch_18
         :pswitch_17
+        :pswitch_16
+        :pswitch_15
         :pswitch_14
+        :pswitch_13
+        :pswitch_12
         :pswitch_11
+        :pswitch_10
+        :pswitch_f
         :pswitch_e
+        :pswitch_d
+        :pswitch_c
         :pswitch_b
+        :pswitch_a
+        :pswitch_9
         :pswitch_8
+        :pswitch_7
+        :pswitch_6
         :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
