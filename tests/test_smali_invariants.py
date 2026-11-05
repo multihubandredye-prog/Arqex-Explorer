@@ -6,7 +6,8 @@ Uso: python3 tests/test_smali_invariants.py <dir_smali> [<dir_recursos>]
 Garante as correcoes E que nada mais foi removido do aplicativo.
 Retorna != 0 se qualquer invariante falhar.
 """
-import os, re, sys, glob
+import os
+import re, re, sys, glob
 
 SMALI = sys.argv[1]
 RES = sys.argv[2] if len(sys.argv) > 2 else None
@@ -596,10 +597,15 @@ _shot = open(os.path.join(SMALI, "libs", "fx1.smali"), encoding="utf-8").read()
 _icon = os.path.join(SMALI, "libs", "ArqexIcon.smali")
 _icontxt = open(_icon, encoding="utf-8").read() if os.path.exists(_icon) else ""
 _n8 = open(os.path.join(SMALI, "libs", "n8.smali"), encoding="utf-8").read()
-check("16i. atalho da tarefa usa o desenho do icone do app (nao o de notificacao)", (
+import base64 as _b64
+_chunks = re.findall(r'const-string v3, "([A-Za-z0-9+/=]+)"', _icontxt)
+_png = _b64.b64decode("".join(_chunks)) if _chunks else b""
+_png_ok = _png[:8] == b"\x89PNG\r\n\x1a\n" and len(_png) > 5000
+check("16i. atalho da tarefa usa o PNG do proprio icone do app (nao o de notificacao)", (
       "ArqexIcon;->Bitmap" in _shot
       and "Icon;->createWithBitmap" in _shot
-      and "getApplicationIcon" in _icontxt
+      and "BitmapFactory;->decodeByteArray" in _icontxt
+      and _png_ok
       and "notification_task" not in _n8))
 check("16i2. atalho de PASTA continua com a miniatura real (nao foi trocado pelo icone do app)", (
       "ArqexIcon" not in open(os.path.join(SMALI, "libs", "ModernUiTheme$ShortcutApi26.smali"),
