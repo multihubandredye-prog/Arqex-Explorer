@@ -626,6 +626,13 @@ check("16l. backup das tarefas leva tambem as opcoes marcadas (filtro/prefixo/no
       and "putString" in _abk and "putBoolean" in _abk and "commit()Z" in _abk
       and "prefs_backup.txt" in _abk))
 _ami = open(os.path.join(SMALI, "libs", "ArqexMenuIcon.smali"), encoding="utf-8").read()
+_mm = open(os.path.join("app", "res", "menu", "main_menu.xml"), encoding="utf-8").read()
+check("16n. icones do menu declarados no proprio XML do menu (mesmo caminho do item Ajuda)", (
+      _mm.count("android:icon=\"@drawable/arqex_menu_") == 11
+      and all(os.path.exists(os.path.join("app", "res", "drawable", "arqex_menu_%s.xml" % n))
+              for n in ["undo","lock","tools","filter","servers","execute","tasks","log","terminal","settings","exit"])
+      and all(("android:id=\"@id/menu_%s\"" % i) in _mm
+              for i in ["undo_recycle","lock","tools","filter","servers","execute","auto_tasks","send_log","open_in_terminal","settings","exit"])))
 _rb = open(os.path.join(SMALI, "libs", "r90.smali"), encoding="utf-8").read()
 _hg = open(os.path.join(SMALI, "libs", "HelpGuideV127.smali"), encoding="utf-8").read()
 _mu = open(os.path.join(SMALI, "libs", "ModernUiTheme.smali"), encoding="utf-8").read()
