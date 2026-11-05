@@ -3227,6 +3227,8 @@
     :cond_259
     invoke-static {v4}, Llibs/HelpGuideV127;->insertHelpAfterExit(Ljava/util/ArrayList;)V
 
+    invoke-static {v4}, Llibs/HelpGuideV127;->applyMenuIcons(Ljava/util/ArrayList;)V
+
     if-nez p1, :cond_267
 
     .line 603

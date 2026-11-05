@@ -1524,6 +1524,185 @@
     return-object v0
 .end method
 
+# Arqex: dá icone a todos os itens do menu (antes so o item Ajuda tinha icone).
+.method public static applyMenuIcons(Ljava/util/ArrayList;)V
+    .registers 12
+
+    if-nez p0, :arqex_am_fim
+
+    :try_start_0
+    const-string v0, "TEXT_POPUP_PRIMARY"
+
+    const-string v1, "#FFEFF3F8"
+
+    invoke-static {v0, v1}, Llibs/va3;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v0
+
+    const/high16 v1, 0x41b00000    # 22.0f
+
+    invoke-static {v1}, Llibs/ModernUiTheme;->dp(F)I
+
+    move-result v1
+
+    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
+
+    move-result v2
+
+    const/4 v3, 0x0
+
+    :arqex_am_loop
+    if-ge v3, v2, :arqex_am_fim
+
+    invoke-virtual {p0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    add-int/lit8 v3, v3, 0x1
+
+    instance-of v5, v4, Llibs/r90;
+
+    if-eqz v5, :arqex_am_loop
+
+    check-cast v4, Llibs/r90;
+
+    iget-object v5, v4, Llibs/r90;->Lambda:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v5, :arqex_am_loop
+
+    iget v5, v4, Llibs/r90;->Z:I
+
+    invoke-static {v5}, Llibs/HelpGuideV127;->menuIconType(I)I
+
+    move-result v5
+
+    if-gtz v5, :arqex_am_loop
+
+    new-instance v6, Llibs/ArqexMenuIcon;
+
+    invoke-direct {v6, v0, v1, v5}, Llibs/ArqexMenuIcon;-><init>(III)V
+
+    const/4 v7, 0x0
+
+    invoke-virtual {v6, v7, v7, v1, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+
+    iput-object v6, v4, Llibs/r90;->Lambda:Landroid/graphics/drawable/Drawable;
+
+    goto :arqex_am_loop
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :catchall_0
+    :arqex_am_fim
+    return-void
+.end method
+.method private static menuIconType(I)I
+    .registers 3
+
+    sget v0, Llibs/wh2;->menu_undo_recycle:I
+
+    if-ne p0, v0, :arqex_mit_2
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :arqex_mit_2
+    sget v0, Llibs/wh2;->menu_lock:I
+
+    if-ne p0, v0, :arqex_mit_3
+
+    const/4 v0, 0x2
+
+    return v0
+
+    :arqex_mit_3
+    sget v0, Llibs/wh2;->menu_tools:I
+
+    if-ne p0, v0, :arqex_mit_4
+
+    const/4 v0, 0x3
+
+    return v0
+
+    :arqex_mit_4
+    sget v0, Llibs/wh2;->menu_filter:I
+
+    if-ne p0, v0, :arqex_mit_5
+
+    const/4 v0, 0x4
+
+    return v0
+
+    :arqex_mit_5
+    sget v0, Llibs/wh2;->menu_servers:I
+
+    if-ne p0, v0, :arqex_mit_6
+
+    const/4 v0, 0x5
+
+    return v0
+
+    :arqex_mit_6
+    sget v0, Llibs/wh2;->menu_execute:I
+
+    if-ne p0, v0, :arqex_mit_7
+
+    const/4 v0, 0x6
+
+    return v0
+
+    :arqex_mit_7
+    sget v0, Llibs/wh2;->menu_auto_tasks:I
+
+    if-ne p0, v0, :arqex_mit_8
+
+    const/4 v0, 0x7
+
+    return v0
+
+    :arqex_mit_8
+    sget v0, Llibs/wh2;->menu_send_log:I
+
+    if-ne p0, v0, :arqex_mit_9
+
+    const/16 v0, 0x8
+
+    return v0
+
+    :arqex_mit_9
+    sget v0, Llibs/wh2;->menu_open_in_terminal:I
+
+    if-ne p0, v0, :arqex_mit_10
+
+    const/16 v0, 0x9
+
+    return v0
+
+    :arqex_mit_10
+    sget v0, Llibs/wh2;->menu_settings:I
+
+    if-ne p0, v0, :arqex_mit_11
+
+    const/16 v0, 0xa
+
+    return v0
+
+    :arqex_mit_11
+    sget v0, Llibs/wh2;->menu_exit:I
+
+    if-ne p0, v0, :arqex_mit_0
+
+    const/16 v0, 0xb
+
+    return v0
+
+    :arqex_mit_0
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
 .method public static insertHelpAfterExit(Ljava/util/ArrayList;)V
     .registers 9
 
@@ -1620,11 +1799,9 @@
 
     new-instance v0, Llibs/r90;
 
-    const-string v4, "arqex_help_menu"
+    const v4, 0x7f0e035a
 
-    const-string v7, "Help"
-
-    invoke-static {v4, v7}, Llibs/ArqexStrings;->global(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v4}, Llibs/ho2;->Add(I)Ljava/lang/String;
 
     move-result-object v4
 

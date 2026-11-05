@@ -625,6 +625,20 @@ check("16l. backup das tarefas leva tambem as opcoes marcadas (filtro/prefixo/no
       and "getAll()Ljava/util/Map;" in _abk
       and "putString" in _abk and "putBoolean" in _abk and "commit()Z" in _abk
       and "prefs_backup.txt" in _abk))
+_hg = open(os.path.join(SMALI, "libs", "HelpGuideV127.smali"), encoding="utf-8").read()
+_mu = open(os.path.join(SMALI, "libs", "ModernUiTheme.smali"), encoding="utf-8").read()
+_al = open(os.path.join(SMALI, "libs", "al.smali"), encoding="utf-8").read()
+check("16m. menu com icone em todos os itens e textos pelo idioma do app", (
+      os.path.exists(os.path.join(SMALI, "libs", "ArqexMenuIcon.smali"))
+      and ".method public static applyMenuIcons" in _hg
+      and "HelpGuideV127;->applyMenuIcons" in _al
+      and "HelpGuideV127;->menuIconType" in _hg
+      and "r90;->Lambda" in _hg
+      and "ho2;->Add" in _hg
+      and "const v4, 0x7f0e035a" in _hg
+      and '"Tarefas"' not in _mu
+      and "const v0, 0x7f0e0036" in _mu
+      and "ho2;->Add" in _mu))
 _n8 = open(os.path.join(SMALI, "libs", "n8.smali"), encoding="utf-8").read()
 _e9 = open(os.path.join(SMALI, "libs", "e9.smali"), encoding="utf-8").read()
 check("16i. 'Criar atalho' removido do dialogo e nenhum atalho e criado ao salvar a tarefa", (

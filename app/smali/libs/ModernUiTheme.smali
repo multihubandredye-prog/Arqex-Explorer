@@ -39,7 +39,11 @@
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setId(I)V
 
-    const-string v0, "Tarefas"
+    const v0, 0x7f0e0036
+
+    invoke-static {v0}, Llibs/ho2;->Add(I)Ljava/lang/String;
+
+    move-result-object v0
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
