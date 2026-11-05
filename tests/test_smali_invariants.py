@@ -596,9 +596,10 @@ _shot = open(os.path.join(SMALI, "libs", "fx1.smali"), encoding="utf-8").read()
 _icon = os.path.join(SMALI, "libs", "ArqexIcon.smali")
 _icontxt = open(_icon, encoding="utf-8").read() if os.path.exists(_icon) else ""
 _n8 = open(os.path.join(SMALI, "libs", "n8.smali"), encoding="utf-8").read()
-check("16i. atalho da tarefa usa o icone adaptativo do app (nao o de notificacao)", (
-      "ArqexIcon;->Icon" in _shot
-      and "Icon;->createWithResource" in _icontxt
+check("16i. atalho da tarefa usa o desenho do icone do app (nao o de notificacao)", (
+      "ArqexIcon;->Bitmap" in _shot
+      and "Icon;->createWithBitmap" in _shot
+      and "getApplicationIcon" in _icontxt
       and "notification_task" not in _n8))
 check("16i2. atalho de PASTA continua com a miniatura real (nao foi trocado pelo icone do app)", (
       "ArqexIcon" not in open(os.path.join(SMALI, "libs", "ModernUiTheme$ShortcutApi26.smali"),

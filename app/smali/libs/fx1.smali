@@ -1085,10 +1085,17 @@
     .line 67
     :cond_42
     :goto_42
-    # Arqex: atalho sem bitmap (tarefa) passa a levar o icone adaptativo do app.
+    # Arqex: atalho sem bitmap (tarefa) recebe o desenho do icone do app (bitmap cheio,
+    # sem passar pelo recorte de adaptive-icon, que estava saindo como circulo cinza).
     if-eqz p3, :arqex_shot_icone
 
-    invoke-static {p0}, Llibs/ArqexIcon;->Icon(Landroid/content/Context;)Landroid/graphics/drawable/Icon;
+    invoke-static {p0}, Llibs/ArqexIcon;->Bitmap(Landroid/content/Context;)Landroid/graphics/Bitmap;
+
+    move-result-object p3
+
+    if-nez p3, :arqex_shot_icone
+
+    invoke-static {p3}, Landroid/graphics/drawable/Icon;->createWithBitmap(Landroid/graphics/Bitmap;)Landroid/graphics/drawable/Icon;
 
     move-result-object p2
 
