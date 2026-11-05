@@ -591,9 +591,11 @@ _wf = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
 _sc = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
                   ".method public static scanChildFolders") or ""
 check("16h. pasta com filtro por nome entra inteira, inclusive quando esta DENTRO da origem", (
-      _atw.count("AutoTaskWatcher;->expandFilteredFolders") == 2
+      _atw.count("AutoTaskWatcher;->expandFilteredFolders") == 3
       and "matchesNameFilter" in _ex
       and "AutoTaskWatcher;->scanChildFolders" in _ex
+      and "AutoTaskWatcher;->walkFilteredFolder" in _ex
+      and "Iterator;->remove" in _ex
       and "matchesNameFilter" in _sc
       and "AutoTaskWatcher;->walkFilteredFolder" in _sc
       and "matchesExtFilter" in _wf
