@@ -7564,8 +7564,12 @@
 
     move-object v0, v5
 
+    goto :arqex_manual_filtrado
+
     :arqex_manual_sem_pastas
     invoke-static {p0, v0}, Llibs/AutoTaskWatcher;->filterTaskItems(Llibs/d9;Ljava/util/Collection;)V
+
+    :arqex_manual_filtrado
 
     if-eqz v0, :cond_25
 
@@ -7996,24 +8000,31 @@
     goto :arqex_ex_next
 
     :arqex_ex_fora
-    new-instance v8, Ljava/lang/StringBuilder;
-    const-string v9, "PASTA-FORA "
-    invoke-direct {v8, v9}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    const-string v9, " filtro="
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    invoke-virtual {v8, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    move-result-object v8
-    invoke-static {v8}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
+    # Arqex: o nome da origem nao bateu, mas a pasta procurada pode estar DENTRO dela
+    # (ex.: origem Download, filtro "Teste" -> Download/Teste). Varre os filhos.
+    invoke-static {v5, v1, v3, v0}, Llibs/AutoTaskWatcher;->scanChildFolders(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/LinkedHashSet;)V
 
     :arqex_ex_next
     add-int/lit8 v4, v4, 0x1
     goto :arqex_ex_loop
 
     :arqex_ex_fim
+    invoke-virtual {v0}, Ljava/util/AbstractCollection;->isEmpty()Z
+
+    move-result v6
+
+    if-eqz v6, :arqex_ex_vazio
+
     invoke-static {v0}, Llibs/ArqexLog;->logItens(Ljava/util/Collection;)V
 
+    return-object v0
+
+    :arqex_ex_vazio
+    const-string v6, "SEM MATCH: filtro nao achou pasta nem arquivo nas origens"
+
+    invoke-static {v6}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
+
+    const/4 v0, 0x0
     return-object v0
 
     :arqex_ex_nada
@@ -8235,5 +8246,130 @@
 
     :catchall_arqex_nf
     :arqex_nf_fim
+    return-void
+.end method
+
+# Arqex: varre os FILHOS de uma origem (um nivel) atras do nome do filtro.
+# Pasta que casa entra inteira (com subpastas/arquivos); arquivo que casa entra sozinho.
+.method public static scanChildFolders(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/LinkedHashSet;)V
+    .registers 12
+
+    new-instance v0, Ljava/io/File;
+
+    invoke-direct {v0, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Ljava/io/File;->listFiles()[Ljava/io/File;
+
+    move-result-object v0
+
+    if-nez v0, :arqex_sc_fim
+
+    const/4 v1, 0x0
+
+    :arqex_sc_loop
+    array-length v6, v0
+
+    if-ge v1, v6, :arqex_sc_fim
+
+    aget-object v2, v0, v1
+
+    if-nez v2, :arqex_sc_next
+
+    invoke-virtual {v2}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3, p1}, Llibs/AutoTaskWatcher;->matchesNameFilter(Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v6
+
+    if-nez v6, :arqex_sc_next
+
+    invoke-virtual {v2}, Ljava/io/File;->isDirectory()Z
+
+    move-result v6
+
+    if-nez v6, :arqex_sc_arquivo
+
+    invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4, v4, p2, p3}, Llibs/AutoTaskWatcher;->walkFilteredFolder(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/LinkedHashSet;)V
+
+    invoke-static {v4}, Llibs/u73;->Intent(Ljava/lang/String;)Llibs/rp0;
+
+    move-result-object v5
+
+    if-eqz v5, :arqex_sc_log_pasta
+
+    invoke-virtual {p3, v5}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
+
+    :arqex_sc_log_pasta
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    const-string v7, "PASTA-OK "
+
+    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v6}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
+
+    goto :arqex_sc_next
+
+    :arqex_sc_arquivo
+    if-nez p2, :arqex_sc_add
+
+    invoke-virtual {p2}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v6
+
+    if-eqz v6, :arqex_sc_add
+
+    invoke-static {v3, p2}, Llibs/AutoTaskWatcher;->matchesExtFilter(Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v6
+
+    if-eqz v6, :arqex_sc_next
+
+    :arqex_sc_add
+    invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Llibs/u73;->Intent(Ljava/lang/String;)Llibs/rp0;
+
+    move-result-object v5
+
+    if-eqz v5, :arqex_sc_log_file
+
+    invoke-virtual {p3, v5}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
+
+    :arqex_sc_log_file
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    const-string v7, "ARQUIVO-OK "
+
+    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v6}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
+
+    :arqex_sc_next
+    add-int/lit8 v1, v1, 0x1
+
+    goto :arqex_sc_loop
+
+    :arqex_sc_fim
     return-void
 .end method

@@ -588,11 +588,20 @@ _ex = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
                   ".method public static expandFilteredFolders") or ""
 _wf = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
                   ".method public static walkFilteredFolder") or ""
-check("16h. pasta com filtro por nome entra inteira (caminho automatico e manual)", (
+_sc = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
+                  ".method public static scanChildFolders") or ""
+check("16h. pasta com filtro por nome entra inteira, inclusive quando esta DENTRO da origem", (
       _atw.count("AutoTaskWatcher;->expandFilteredFolders") == 2
       and "matchesNameFilter" in _ex
+      and "AutoTaskWatcher;->scanChildFolders" in _ex
+      and "matchesNameFilter" in _sc
+      and "AutoTaskWatcher;->walkFilteredFolder" in _sc
       and "matchesExtFilter" in _wf
       and "listFiles" in _wf))
+check("16h2. depois de expandir a pasta, o filtro por nome nao roda de novo (senao o conteudo cai)", (
+      _ex.count("arqex_ex_fora") == 1
+      and "goto :arqex_filtrado" in _atw
+      and "goto :arqex_manual_filtrado" in _atw))
 _n8 = open(os.path.join(SMALI, "libs", "n8.smali"), encoding="utf-8").read()
 _e9 = open(os.path.join(SMALI, "libs", "e9.smali"), encoding="utf-8").read()
 check("16i. 'Criar atalho' removido do dialogo e nenhum atalho e criado ao salvar a tarefa", (
