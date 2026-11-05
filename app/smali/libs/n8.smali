@@ -1178,22 +1178,10 @@
 
     .line 492
     .line 493
-    sget v6, Llibs/vh2;->notification_task:I
-
-    .line 494
-    .line 495
-    const/4 v7, 0x0
-
-    .line 496
-    const/4 v8, 0x0
-
-    .line 497
-    invoke-static {v6, v7, v8}, Llibs/va3;->a(ILandroid/graphics/BitmapFactory$Options;Z)Landroid/graphics/Bitmap;
-
-    .line 498
-    .line 499
-    .line 500
-    move-result-object v6
+    # Arqex: aqui nascia o icone do atalho da tarefa, e era o drawable de notificacao
+    # de notificacao: pequeno e escuro, que na tela inicial virava o quadrado
+    # apagado. Sem bitmap, o atalho usa o icone adaptativo do proprio app.
+    const/4 v6, 0x0
 
     .line 501
     invoke-static {v2, v4, v5, v6}, Llibs/fx1;->b(Landroid/app/Activity;Landroid/content/Intent;Ljava/lang/String;Landroid/graphics/Bitmap;)V

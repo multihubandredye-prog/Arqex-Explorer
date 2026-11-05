@@ -592,13 +592,17 @@ check("16h. pasta com filtro por nome entra inteira (caminho automatico e manual
       and "matchesNameFilter" in _ex
       and "matchesExtFilter" in _wf
       and "listFiles" in _wf))
-_shot = open(os.path.join(SMALI, "libs", "ModernUiTheme$ShortcutApi26.smali"),
-             encoding="utf-8").read()
+_shot = open(os.path.join(SMALI, "libs", "fx1.smali"), encoding="utf-8").read()
 _icon = os.path.join(SMALI, "libs", "ArqexIcon.smali")
 _icontxt = open(_icon, encoding="utf-8").read() if os.path.exists(_icon) else ""
-check("16i. icone do atalho vem do icone do app (adaptive, nao bitmap ofuscado)", (
+_n8 = open(os.path.join(SMALI, "libs", "n8.smali"), encoding="utf-8").read()
+check("16i. atalho da tarefa usa o icone adaptativo do app (nao o de notificacao)", (
       "ArqexIcon;->Icon" in _shot
-      and "Icon;->createWithResource" in _icontxt))
+      and "Icon;->createWithResource" in _icontxt
+      and "notification_task" not in _n8))
+check("16i2. atalho de PASTA continua com a miniatura real (nao foi trocado pelo icone do app)", (
+      "ArqexIcon" not in open(os.path.join(SMALI, "libs", "ModernUiTheme$ShortcutApi26.smali"),
+                              encoding="utf-8").read()))
 _caf = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
                    ".method private static checkAndFire") or ""
 check("16j. tarefa 'ao detectar arquivo' nao copia em loop (marca de visto preservada)", (

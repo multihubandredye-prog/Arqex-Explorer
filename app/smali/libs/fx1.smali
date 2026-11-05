@@ -1085,6 +1085,18 @@
     .line 67
     :cond_42
     :goto_42
+    # Arqex: atalho sem bitmap (tarefa) passa a levar o icone adaptativo do app.
+    if-eqz p3, :arqex_shot_icone
+
+    invoke-static {p0}, Llibs/ArqexIcon;->Icon(Landroid/content/Context;)Landroid/graphics/drawable/Icon;
+
+    move-result-object p2
+
+    if-nez p2, :arqex_shot_icone
+
+    invoke-virtual {p1, p2}, Landroid/content/pm/ShortcutInfo$Builder;->setIcon(Landroid/graphics/drawable/Icon;)Landroid/content/pm/ShortcutInfo$Builder;
+
+    :arqex_shot_icone
     invoke-virtual {p1}, Landroid/content/pm/ShortcutInfo$Builder;->build()Landroid/content/pm/ShortcutInfo;
 
     .line 68
