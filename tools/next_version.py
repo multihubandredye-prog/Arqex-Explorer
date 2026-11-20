@@ -3,6 +3,7 @@
 Nao assume v1.39: usa a maior versao estavel valida encontrada; sem nenhuma, usa 1.38.
 """
 import json, os, re, sys, urllib.request, urllib.error
+from pathlib import Path
 
 API = "https://api.github.com"
 REPO = os.environ["GITHUB_REPOSITORY"]
@@ -58,6 +59,14 @@ if patch == 0:
     nxt = (major, minor + 1, 0)
 else:
     nxt = (major, minor, patch + 1)
+# Se tags/releases antigas forem removidas, a versão estável preparada no
+# projeto continua sendo o piso, evitando relançar com um número menor.
+if IS_DEFAULT:
+    metadata = Path(__file__).resolve().parents[1] / 'app' / 'apktool.json'
+    if metadata.is_file():
+        configured = parse(json.loads(metadata.read_text(encoding='utf-8'))['VersionInfo']['versionName'])
+        if configured:
+            nxt = max(nxt, configured)
 base = "%d.%d.%d" % nxt
 
 prerelease = not IS_DEFAULT

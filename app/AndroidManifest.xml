@@ -22,9 +22,6 @@
     <attribution
         android:label="@string/app_info"
         android:tag="appManagement" />
-    <attribution
-        android:label="@string/__"
-        android:tag="@string/__" />
     <uses-feature
         android:name="android.hardware.type.pc"
         android:required="false" />
