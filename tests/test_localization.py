@@ -45,3 +45,6 @@ for locale in ('values-pt', 'values-pt-rBR', 'values-pt-rPT'):
     print(f'{locale}: {len(missing)} chaves faltantes (sem ajuda)')
     if args.listar:
         print('\n'.join(missing))
+    assert not missing, f'{locale}: complete os recursos antes de publicar'
+    assert all(translated[k] or not base[k] for k in base.keys() & translated.keys()
+               if not k.startswith('arqex_help_')), f'{locale}: chave traduzível vazia'

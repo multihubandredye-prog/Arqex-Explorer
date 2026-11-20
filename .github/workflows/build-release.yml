@@ -301,6 +301,10 @@ jobs:
           if [ ! -s changelog.txt ]; then
             echo "- Melhorias de estabilidade e correcoes internas." > changelog.txt
           fi
+          # Notas estáveis revisadas para a tela de atualização do app.
+          if [ "$PRERELEASE" = "false" ] && [ -s "docs/release-notes/$TAG.md" ]; then
+            cp "docs/release-notes/$TAG.md" changelog.txt
+          fi
 
           {
             echo "**Arqex Explorer $TAG**"
