@@ -510,6 +510,8 @@
     .line 225
     iput-object p1, p0, Llibs/al;->a:Llibs/r31;
 
+    invoke-static {p0}, Llibs/ArqexQueue;->setAl(Llibs/al;)V
+
     .line 226
     .line 227
     iget-object p1, p1, Llibs/r31;->a:Lcom/mixplorer/activities/BrowseActivity;
@@ -3115,6 +3117,10 @@
     .line 547
     if-ne v8, v6, :cond_29
 
+    invoke-interface/range {v22 .. v22}, Ljava/util/Iterator;->remove()V
+
+    goto/16 :goto_c
+
     .line 548
     .line 549
     sget-object v6, Lcom/mixplorer/AppImpl;->Z:Llibs/p63;
@@ -3790,7 +3796,7 @@
 
     .line 70
     :cond_3
-    const-wide/16 v1, 0x3a98
+    const-wide/16 v1, 0x0
 
     .line 71
     .line 72
@@ -5291,7 +5297,7 @@
 
     .line 317
     :pswitch_d
-    sget v12, Llibs/bi2;->copy:I
+    sget v12, Llibs/bi2;->paste:I
 
     .line 318
     .line 319

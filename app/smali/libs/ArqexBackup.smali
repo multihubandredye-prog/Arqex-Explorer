@@ -146,7 +146,6 @@
 .method public static restore(Ljava/lang/String;)Ljava/lang/String;
     .locals 6
 
-    invoke-static {}, Llibs/ArqexBackup;->restorePrefs()V
 
     if-eqz p0, :cond_0
 
@@ -159,6 +158,9 @@
     return-object p0
 
     :cond_0
+
+    invoke-static {}, Llibs/ArqexBackup;->restorePrefs()V
+
     :try_start_0
     new-instance v0, Ljava/io/File;
 
@@ -239,7 +241,7 @@
     :try_start_0
     sget-object v0, Llibs/zt0;->g:Landroid/content/Context;
 
-    if-nez v0, :cond_5
+    if-eqz v0, :cond_5
 
     const-string v1, "auto_watch_config"
 
@@ -249,7 +251,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_5
+    if-eqz v0, :cond_5
 
     const-string v1, "/storage/emulated/0/.Arqex/.prefs_backup.txt"
 
@@ -269,7 +271,7 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_5
+    if-eqz v2, :cond_5
 
     const-string v3, "\n"
 
@@ -297,13 +299,13 @@
 
     move-result-object v5
 
-    if-nez v5, :cond_0
+    if-eqz v5, :cond_0
 
     array-length v6, v5
 
     const/4 v7, 0x3
 
-    if-ge v6, v7, :cond_0
+    if-lt v6, v7, :cond_0
 
     const/4 v6, 0x0
 
@@ -335,7 +337,7 @@
 
     move-result v9
 
-    if-nez v9, :cond_1
+    if-eqz v9, :cond_1
 
     invoke-static {v8}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
 
@@ -352,7 +354,7 @@
 
     move-result v9
 
-    if-nez v9, :cond_2
+    if-eqz v9, :cond_2
 
     invoke-static {v8}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
@@ -369,7 +371,7 @@
 
     move-result v9
 
-    if-nez v9, :cond_3
+    if-eqz v9, :cond_3
 
     invoke-static {v8}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
@@ -445,7 +447,7 @@
     :try_start_0
     sget-object v0, Llibs/zt0;->g:Landroid/content/Context;
 
-    if-nez v0, :cond_2
+    if-eqz v0, :cond_2
 
     const-string v1, "auto_watch_config"
 
@@ -455,13 +457,13 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_2
+    if-eqz v0, :cond_2
 
     invoke-interface {v0}, Landroid/content/SharedPreferences;->getAll()Ljava/util/Map;
 
     move-result-object v0
 
-    if-nez v0, :cond_2
+    if-eqz v0, :cond_2
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -487,7 +489,7 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_0
+    if-eqz v2, :cond_0
 
     check-cast v2, Ljava/util/Map$Entry;
 
@@ -501,7 +503,7 @@
 
     move-result-object v2
 
-    if-nez v3, :cond_0
+    if-eqz v3, :cond_0
 
     invoke-static {v1, v3, v2}, Llibs/ArqexBackup;->appendPref(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/Object;)V
 

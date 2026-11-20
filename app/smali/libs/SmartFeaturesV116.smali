@@ -2374,7 +2374,7 @@
 
     if-lez v6, :cond_8
 
-    const-string v7, "\n"
+    const-string v7, ","
 
     invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2441,6 +2441,8 @@
     invoke-virtual {v0, v1}, Landroid/content/ClipboardManager;->setPrimaryClip(Landroid/content/ClipData;)V
 
     invoke-static {p0, v5, v6, v4}, Llibs/SmartFeaturesV116;->showCopyPathToast(Landroid/content/Context;Ljava/lang/String;II)V
+
+    invoke-static {p0}, Llibs/ArqexSel;->deselect(Landroid/app/Activity;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 

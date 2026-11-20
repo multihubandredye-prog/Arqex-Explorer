@@ -39,9 +39,7 @@
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setId(I)V
 
-    const v0, 0x7f0e0036
-
-    invoke-static {v0}, Llibs/ho2;->Add(I)Ljava/lang/String;
+    invoke-static {p0}, Llibs/ArqexTasks;->label(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 

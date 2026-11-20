@@ -5584,6 +5584,9 @@
     .line 1720
     invoke-virtual {v1, v0}, Llibs/c2;->All(Llibs/m52;)V
 
+    invoke-static {v0}, Llibs/ArqexQueue;->refresh(Llibs/m52;)V
+
+
     .line 1721
     .line 1722
     .line 1723

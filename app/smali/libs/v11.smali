@@ -168,6 +168,8 @@
     .line 62
     check-cast p1, Ljava/lang/String;
 
+    invoke-static {p1}, Llibs/ArqexRoot;->onNavigate(Ljava/lang/String;)V
+
     .line 63
     .line 64
     sget-object p3, Lcom/mixplorer/AppImpl;->X:Llibs/k70;

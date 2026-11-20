@@ -21321,6 +21321,8 @@
 
     invoke-static {v0, v5, v3}, Llibs/ArqexUpdater;->appendUpdateRow(Lcom/mixplorer/activities/PreferenceActivity;Landroid/view/ViewGroup;Landroid/graphics/drawable/Drawable;)V
 
+    invoke-static {v0, v5, v3}, Llibs/ArqexAI;->appendRow(Lcom/mixplorer/activities/PreferenceActivity;Landroid/view/ViewGroup;Landroid/graphics/drawable/Drawable;)V
+
     invoke-static {v5}, Llibs/ArqexSettingsAnim;->decorateList(Landroid/view/ViewGroup;)V
 
     .line 1007
@@ -23115,9 +23117,10 @@
     :goto_e
     sget v8, Llibs/bi2;->settings_merge_tasks:I
 
+    invoke-static {v8}, Llibs/ho2;->Add(I)Ljava/lang/String;
+
     .line 629
     .line 630
-    invoke-static {v8}, Llibs/ho2;->Add(I)Ljava/lang/String;
 
     .line 631
     .line 632

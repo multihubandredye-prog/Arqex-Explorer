@@ -30,7 +30,7 @@
 
     if-eqz v0, :cond_0
 
-    const-string v1, "Tarefas Autom\u00e1ticas"
+    const-string v1, "Tarefas"
 
     const/4 v2, 0x0
 

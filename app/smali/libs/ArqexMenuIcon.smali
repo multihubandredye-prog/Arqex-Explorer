@@ -1041,6 +1041,216 @@
 
     goto :goto_0
 
+    :pswitch_n12
+    move-object v5, p1
+
+    invoke-direct {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
+
+    move-result-object v10
+
+    const v6, -0x40cccccd
+
+    const v7, -0x41666666
+
+    const v8, 0x3f333333
+
+    const v9, -0x41666666
+
+    invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
+    const v6, 0x3ecccccd
+
+    const v7, -0x40e66666
+
+    const v8, 0x3f333333
+
+    const v9, -0x41666666
+
+    invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
+    const v6, 0x3ecccccd
+
+    const v7, 0x0
+
+    const v8, 0x3f333333
+
+    const v9, -0x41666666
+
+    invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
+    const v6, 0x3f333333
+
+    const v7, 0x3e99999a
+
+    const v8, -0x40cccccd
+
+    const v9, 0x3e99999a
+
+    invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
+    const v6, -0x41333333
+
+    const v7, 0x0
+
+    const v8, -0x40cccccd
+
+    const v9, 0x3e99999a
+
+    invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
+    const v6, -0x41333333
+
+    const v7, 0x3f19999a
+
+    const v8, -0x40cccccd
+
+    const v9, 0x3e99999a
+
+    invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
+    goto :goto_0
+
+    :pswitch_n13
+    move-object v5, p1
+
+    invoke-direct {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
+
+    move-result-object v10
+
+    const v6, -0x41666666
+
+    const v7, 0x3f333333
+
+    const v8, -0x41666666
+
+    const v9, -0x40cccccd
+
+    invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
+    const v6, -0x40e66666
+
+    const v7, -0x41333333
+
+    const v8, -0x41666666
+
+    const v9, -0x40cccccd
+
+    invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
+    const v6, 0x0
+
+    const v7, -0x41333333
+
+    const v8, -0x41666666
+
+    const v9, -0x40cccccd
+
+    invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
+    const v6, 0x3e99999a
+
+    const v7, -0x40cccccd
+
+    const v8, 0x3e99999a
+
+    const v9, 0x3f333333
+
+    invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
+    const v6, 0x0
+
+    const v7, 0x3ecccccd
+
+    const v8, 0x3e99999a
+
+    const v9, 0x3f333333
+
+    invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
+    const v6, 0x3f19999a
+
+    const v7, 0x3ecccccd
+
+    const v8, 0x3e99999a
+
+    const v9, 0x3f333333
+
+    invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
+    goto :goto_0
+
+    :pswitch_n14
+    move-object v5, p1
+
+    invoke-direct {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
+
+    move-result-object v10
+
+    const v6, 0x3e4ccccd
+
+    const v7, -0x4099999a
+
+    const v8, -0x41333333
+
+    const v9, 0x3dcccccd
+
+    invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
+    const v6, -0x41333333
+
+    const v7, 0x3dcccccd
+
+    const v8, 0x3dcccccd
+
+    const v9, 0x3dcccccd
+
+    invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
+    const v6, 0x3dcccccd
+
+    const v7, 0x3dcccccd
+
+    const v8, -0x41b33333
+
+    const v9, 0x3f666666
+
+    invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
+    goto :goto_0
+
+    :pswitch_n15
+    move-object v5, p1
+
+    invoke-direct {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
+
+    move-result-object v10
+
+    const v6, -0x40a66666
+
+    const v7, -0x4119999a
+
+    const v8, 0x3f59999a
+
+    const v9, 0x3ee66666
+
+    invoke-direct {p0, v6, v7, v8, v9}, Llibs/ArqexMenuIcon;->rect(FFFF)Landroid/graphics/RectF;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6, v10}, Landroid/graphics/Canvas;->drawOval(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
+
+    const v6, 0x0
+
+    const v7, 0x0
+
+    const v8, 0x3e4ccccd
+
+    move-object v9, v10
+
+    invoke-virtual/range {v5 .. v9}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+
+    goto :goto_0
+
     :cond_0
     :goto_0
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
@@ -1060,6 +1270,10 @@
         :pswitch_8
         :pswitch_9
         :pswitch_a
+        :pswitch_n12
+        :pswitch_n13
+        :pswitch_n14
+        :pswitch_n15
     .end packed-switch
 .end method
 

@@ -652,8 +652,9 @@ check("16m. menu com icone em todos os itens e textos pelo idioma do app", (
       and "ho2;->Add" in _hg
       and "const v4, 0x7f0e035a" in _hg
       and '"Tarefas"' not in _mu
-      and "const v0, 0x7f0e0036" in _mu
-      and "ho2;->Add" in _mu
+      and "ArqexTasks;->label(Landroid/content/Context;)Ljava/lang/String;" in _mu
+      and '"arqex_tasks_label"' in open(L("libs/ArqexTasks.smali"), encoding="utf-8").read()
+      and "ArqexStrings;->get" in open(L("libs/ArqexTasks.smali"), encoding="utf-8").read()
       and "ArqexMenuIcon;->forItem" in _rb
       and ".method public static menuIconType" in _hg
       and "ArqexMenuIcon;-><init>" in _hg

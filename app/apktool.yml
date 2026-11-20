@@ -1,5 +1,5 @@
 !!brut.androlib.meta.MetaInfo
-apkFileName: Arqex-v1.63.0-beta.56_src.apk
+apkFileName: Arqex-v1.66.0-beta.162_src.apk
 compressionType: false
 doNotCompress:
 - resources.arsc
@@ -24,5 +24,5 @@ usesFramework:
   tag: null
 version: 2.4.0-261014
 versionInfo:
-  versionCode: 26090468
-  versionName: 1.63.0-beta.56
+  versionCode: 26090574
+  versionName: 1.66.0-beta.162-v38

@@ -1273,15 +1273,14 @@
 
     .line 543
     .line 544
-    sget v0, Llibs/bi2;->auto_tasks:I
+    move-object/from16 v3, p0
 
-    .line 545
-    .line 546
-    invoke-static {v0}, Llibs/ho2;->Add(I)Ljava/lang/String;
+    iget-object v3, v3, Llibs/t8;->Z:Ljava/lang/Object;
 
-    .line 547
-    .line 548
-    .line 549
+    check-cast v3, Landroid/app/Activity;
+
+    invoke-static {v3}, Llibs/ArqexTasks;->label(Landroid/content/Context;)Ljava/lang/String;
+
     move-result-object v0
 
     .line 550

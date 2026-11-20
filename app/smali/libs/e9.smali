@@ -2550,6 +2550,14 @@
     .line 1169
     .line 1170
     .line 1171
+    move-object/from16 v1, p0
+
+    move-object/from16 v2, p1
+
+    move-object/from16 v3, p3
+
+    invoke-static {v12, v1, v2, v3}, Llibs/ArqexAI;->addEditorButton(Llibs/od;Landroid/app/Activity;Llibs/d9;Llibs/xl1;)V
+
     invoke-virtual {v12}, Llibs/od;->show()V
 
     .line 1172

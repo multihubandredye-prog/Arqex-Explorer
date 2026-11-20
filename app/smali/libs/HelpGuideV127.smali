@@ -73,7 +73,7 @@
 
     const-string v6, "Copiar caminho, olho de ocultos, soma de pastas e limpeza seletiva"
 
-    const-string v7, "\u00a7 Bot\u00f5es R\u00e1pidos na Barra Superior da P\u00e1gina Principal\n\u25b8 \u00cdcone Copiar Caminho: Copia com 1 toque o endere\u00e7o completo da pasta aberta para a \u00e1rea de transfer\u00eancia (toque longo mostra o nome da fun\u00e7\u00e3o).\n\u25b8 \u00cdcone de Olho (Arquivos Ocultos): Mostra ou esconde na hora pastas e arquivos iniciados por ponto (.nomedia, .git, .config). Quando ativado, o olho fica iluminado na cor de destaque do tema!\n\u25b8 \u00cdcone ? (Ajuda): Abre este Guia Completo de qualquer pasta com 1 toque.\n\u25b8 Bot\u00e3o \"Tarefas\": Acesso direto ao painel de Tarefas Autom\u00e1ticas.\n\n\u00a7 Bot\u00e3o Inteligente \"Apagar pastas vazias\"\n\u25b8 Detec\u00e7\u00e3o Autom\u00e1tica: Aparece discretamente sobre a p\u00e1gina apenas quando existem subpastas vazias no diret\u00f3rio atual (sem empurrar a lista de arquivos!).\n\u25b8 Escolha Seletiva com CheckBoxes: Ao tocar nele, exibe todas as pastas vazias encontradas j\u00e1 marcadas \u2014 basta desmarcar qualquer pasta que deseje manter antes de confirmar a limpeza.\n\n\u00a7 Sele\u00e7\u00e3o M\u00faltipla Aprimorada (Toque Longo)\n\u25b8 Layout Fixo sem Pulo Vertical: Selecionar arquivos com toque longo nunca desloca a lista sob o seu dedo.\n\u25b8 Tamanho Total Real (Pastas + Arquivos): Calcula em segundo plano a soma real de todos os arquivos e subpastas selecionados.\n\u25b8 Copiar Caminhos Selecionados: Na barra de sele\u00e7\u00e3o, toque no \u00edcone Copiar Caminho para copiar a lista completa de caminhos dos itens marcados."
+    const-string v7, "\u00a7 Bot\u00f5es R\u00e1pidos na Barra Superior da P\u00e1gina Principal\n\u25b8 \u00cdcone Copiar Caminho: Copia com 1 toque o endere\u00e7o completo da pasta aberta para a \u00e1rea de transfer\u00eancia (toque longo mostra o nome da fun\u00e7\u00e3o).\n\u25b8 \u00cdcone de Olho (Arquivos Ocultos): Mostra ou esconde na hora pastas e arquivos iniciados por ponto (.nomedia, .git, .config). Quando ativado, o olho fica iluminado na cor de destaque do tema!\n\u25b8 \u00cdcone ? (Ajuda): Abre este Guia Completo de qualquer pasta com 1 toque.\n\u25b8 Bot\u00e3o \"Tarefas\": Acesso direto ao painel de Tarefas.\n\n\u00a7 Bot\u00e3o Inteligente \"Apagar pastas vazias\"\n\u25b8 Detec\u00e7\u00e3o Autom\u00e1tica: Aparece discretamente sobre a p\u00e1gina apenas quando existem subpastas vazias no diret\u00f3rio atual (sem empurrar a lista de arquivos!).\n\u25b8 Escolha Seletiva com CheckBoxes: Ao tocar nele, exibe todas as pastas vazias encontradas j\u00e1 marcadas \u2014 basta desmarcar qualquer pasta que deseje manter antes de confirmar a limpeza.\n\n\u00a7 Sele\u00e7\u00e3o M\u00faltipla Aprimorada (Toque Longo)\n\u25b8 Layout Fixo sem Pulo Vertical: Selecionar arquivos com toque longo nunca desloca a lista sob o seu dedo.\n\u25b8 Tamanho Total Real (Pastas + Arquivos): Calcula em segundo plano a soma real de todos os arquivos e subpastas selecionados.\n\u25b8 Copiar Caminhos Selecionados: Na barra de sele\u00e7\u00e3o, toque no \u00edcone Copiar Caminho para copiar a lista completa de caminhos dos itens marcados."
 
     invoke-static/range {v0 .. v7}, Llibs/HelpGuideV127;->addChapterCard(Landroid/widget/LinearLayout;Llibs/HelpGuideV127$DialogState;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
@@ -83,7 +83,7 @@
 
     const-string v4, "05"
 
-    const-string v5, "Tarefas Autom\u00e1ticas (Ao Detectar Arquivo e Agendadas)"
+    const-string v5, "Tarefas (Ao Detectar Arquivo e Agendadas)"
 
     const-string v6, "Monitoramento em tempo real, filtros de extens\u00e3o, sil\u00eancio e bot\u00e3o Play"
 
@@ -1742,6 +1742,32 @@
     iput-boolean v2, v0, Llibs/r90;->Pi:Z
 
     :goto_1
+
+    # AI item - null drawable, uses v7 as new r90
+    new-instance v7, Llibs/r90;
+
+    const-string v2, "arqex_ai_row_title"
+
+    const-string v5, "AI ASSISTANT"
+
+    invoke-static {v2, v5}, Llibs/ArqexStrings;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const v5, 0x7f0803f9
+
+    const/4 v3, 0x0
+
+    invoke-direct {v7, v5, v3, v2}, Llibs/r90;-><init>(ILandroid/graphics/drawable/Drawable;Ljava/lang/CharSequence;)V
+
+    const/4 v2, 0x1
+
+    iput-boolean v2, v7, Llibs/r90;->Xi:Z
+
+    iput-boolean v3, v7, Llibs/r90;->Pi:Z
+
+    invoke-virtual {p0, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
     if-ltz v1, :cond_6
 
     add-int/lit8 v1, v1, 0x1
@@ -1867,6 +1893,42 @@
     return v0
 
     :cond_a
+    sget v0, Llibs/wh2;->menu_remount_as:I
+
+    if-ne p0, v0, :cond_x0
+
+    const/16 v0, 0xc
+
+    return v0
+
+    :cond_x0
+    sget v0, Llibs/wh2;->menu_sync:I
+
+    if-ne p0, v0, :cond_x1
+
+    const/16 v0, 0xd
+
+    return v0
+
+    :cond_x1
+    sget v0, Llibs/wh2;->menu_magic_packet:I
+
+    if-ne p0, v0, :cond_x2
+
+    const/16 v0, 0xe
+
+    return v0
+
+    :cond_x2
+    sget v0, Llibs/wh2;->menu_show_hidden_globally:I
+
+    if-ne p0, v0, :cond_x3
+
+    const/16 v0, 0xf
+
+    return v0
+
+    :cond_x3
     const/4 v0, 0x0
 
     return v0

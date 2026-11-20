@@ -2,6 +2,7 @@ name: Arqex Explorer - build, verificar e publicar
 
 # Regras:
 #  - push em qualquer branch  -> testes + build + pre-release (branch de trabalho) ou release estavel (branch padrao)
+#  - workflow_dispatch em ajustes-arqex -> publica apenas pre-release
 #  - pull_request             -> apenas testes/build; nunca publica release
 #  - nenhuma tag/release existente e sobrescrita
 
@@ -97,13 +98,14 @@ jobs:
         run: |
           python3 tests/test_smali_invariants.py out/fontes_smali app/res
           python3 tests/test_dex_consistency.py out/fontes_smali
+          python3 tests/test_localization.py app/res
           # teste puro de logica do verificador de atualizacao (roda na JVM, sem aparelho)
           TMP_UPD="$(mktemp -d)"
-          javac -source 8 -target 8 -nowarn -d "$TMP_UPD/c" \
+          javac -encoding UTF-8 -source 8 -target 8 -nowarn -d "$TMP_UPD/c" \
             $(find tools/updater/stubs -name '*.java') $(find tools/updater/src -name '*.java') tests/updater/VTest.java
           java -cp "$TMP_UPD/c" libs.VTest
           # teste de comportamento: a notificacao tem que ser realmente postada
-          javac -source 8 -target 8 -nowarn -cp "$TMP_UPD/c" -d "$TMP_UPD/c" tests/updater/UpdateNotifyTest.java
+          javac -encoding UTF-8 -source 8 -target 8 -nowarn -cp "$TMP_UPD/c" -d "$TMP_UPD/c" tests/updater/UpdateNotifyTest.java
           java -cp "$TMP_UPD/c" libs.UpdateNotifyTest
 
       - name: Conferir tipos dos registradores (evita VerifyError no aparelho)
@@ -234,9 +236,9 @@ jobs:
           retention-days: 30
 
   release:
-    name: Publicar release (somente push, nunca em PR)
+    name: Publicar release (nunca em PR)
     needs: build
-    if: github.event_name == 'push'
+    if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/ajustes-arqex')
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -263,6 +265,12 @@ jobs:
           REF: ${{ github.ref_name }}
         run: |
           set -euo pipefail
+          if [ "$REF" = "ajustes-arqex" ]; then
+            if [ "$PRERELEASE" != "true" ] || [[ ! "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+-beta\.[0-9]+(\.[0-9]+)*$ ]]; then
+              echo "::error::ajustes-arqex só pode publicar uma pré-release beta."
+              exit 1
+            fi
+          fi
           if gh release view "$TAG" >/dev/null 2>&1; then
             echo "::warning::A release $TAG ja existe. Nada sera sobrescrito."
             exit 0

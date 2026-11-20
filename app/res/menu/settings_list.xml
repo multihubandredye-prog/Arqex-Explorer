@@ -18,7 +18,7 @@
         android:title="@string/settings_more" />
     <item
         android:id="@id/settings_tasks"
-        android:title="@string/auto_tasks" />
+        android:title="@string/arqex_settings_tasks" />
     <item
         android:id="@id/settings_components"
         android:title="@string/components" />
